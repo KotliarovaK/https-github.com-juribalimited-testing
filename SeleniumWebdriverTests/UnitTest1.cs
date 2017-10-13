@@ -1,12 +1,12 @@
 ﻿using Microsoft.VisualStudio.TestTools.UnitTesting;
 using OpenQA.Selenium;
 using OpenQA.Selenium.Chrome;
-using System;
 
 namespace SeleniumWebdriverTests
 {
+    [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Design", "CA1001:TypesThatOwnDisposableFieldsShouldBeDisposable")]
     [TestClass]
-    public class UnitTest1 : IDisposable
+    public class UnitTest1
     {
         private IWebDriver driver;
 
@@ -29,22 +29,6 @@ namespace SeleniumWebdriverTests
         public void MyTestCleanup()
         {
             driver.Quit();
-        }
-
-        protected virtual void Dispose(bool disposing)
-        {
-            if (disposing)
-            {
-                // dispose managed resources
-                driver.Close();
-            }
-            // free native resources
-        }
-
-        public void Dispose()
-        {
-            Dispose(true);
-            GC.SuppressFinalize(this);
         }
     }
 }
