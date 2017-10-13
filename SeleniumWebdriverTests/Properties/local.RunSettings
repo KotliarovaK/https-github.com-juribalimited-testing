@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<RunSettings>
+    <RunConfiguration>
+        <!--<ResultsDirectory>C:\Program Files\Juriba\Dashworks Support Files\Logs</ResultsDirectory>-->
+        <ResultsDirectory>.\..\TestResults</ResultsDirectory>
+    </RunConfiguration>
+</RunSettings>
