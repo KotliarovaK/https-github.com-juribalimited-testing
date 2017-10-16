@@ -103,10 +103,6 @@ namespace SeleniumWebdriverTests.StepDefinitions.Dashworks
                 GenericHelper.TakeScreenShot();
             }
         }
-
-
         #endregion Then
-
-
     }
 }

@@ -101,11 +101,13 @@
     <Compile Include="PageObject\LoginPage.cs" />
     <Compile Include="Settings\AppConfigKeys.cs" />
     <Compile Include="Settings\ObjectRepository.cs" />
+    <Compile Include="StepDefinitions\Dashworks\Dashworks_LoginAndLogout.cs" />
     <Compile Include="StepDefinitions\Dashworks\EvergreenJnr-AddColumns.cs" />
     <Compile Include="StepDefinitions\Dashworks\EvergreenJnr-MenuNavigation.cs" />
     <Compile Include="StepDefinitions\Dashworks\EvergreenJnr_ListMenu.cs" />
     <Compile Include="StepDefinitions\Dashworks\EvergreenJnr_agGridSearch.cs" />
     <Compile Include="StepDefinitions\Dashworks\EvergreenJnr-QueryStrings.cs" />
+    <Compile Include="StepDefinitions\Dashworks\EvergreenJnr_MainObjectLists.cs" />
     <Compile Include="TestScript\AutoSuggest\TestAutoSuggest.cs" />
     <Compile Include="TestScript\BrowserActions\TestBrowserActions.cs" />
     <Compile Include="TestScript\Button\TestButton.cs" />

@@ -1,5 +1,6 @@
 ﻿using Microsoft.VisualStudio.TestTools.UnitTesting;
 using OpenQA.Selenium;
+using OpenQA.Selenium.Interactions;
 using SeleniumWebdriverTests.ComponentHelper;
 using SeleniumWebdriverTests.Settings;
 using System;
@@ -44,6 +45,22 @@ namespace SeleniumWebdriverTests.StepDefinitions.Dashworks
                 default:
                     break;
             }
+            Thread.Sleep(5000);
+        }
+
+        [When(@"User clicks the Switch to Evergreen link")]
+        public void WhenUserClicksTheSwitchToEvergreenLink()
+        {
+            //Moves the mouse to the 'Analysis' link and then moves the mouse and clicks the 'Evergreen' link
+            Actions act = new Actions(ObjectRepository.Driver);
+            IWebElement analysisLink = ObjectRepository.Driver.FindElement(By.XPath("//a[@title='Switch Sites']"));
+            IWebElement evergreenLink = ObjectRepository.Driver.FindElement(By.XPath("//a[@title='Evergreen']"));
+
+            act.MoveToElement(analysisLink)
+                .MoveToElement(evergreenLink)
+                .Click()
+                .Build()
+                .Perform();
             Thread.Sleep(5000);
         }
 
@@ -96,6 +113,21 @@ namespace SeleniumWebdriverTests.StepDefinitions.Dashworks
                     break;
             }
             GenericHelper.TakeScreenShot();
+        }
+
+        [Then(@"Evergreen Dashboards page should be displayed to the user")]
+        public void ThenEvergreenDashboardsPageShouldBeDisplayedToTheUser()
+        {
+            ObjectRepository.Driver.Manage().Timeouts().ImplicitWait = TimeSpan.FromSeconds(1);
+            if (GenericHelper.IsElementPresent(By.XPath("//div[@class='status-code']")))
+            {
+                GenericHelper.TakeScreenShot();
+                Console.WriteLine("500 error was displayed");
+                Assert.IsFalse(GenericHelper.IsElementPresent(By.XPath("//div[@class='status-code']")));
+            }
+            ObjectRepository.Driver.Manage().Timeouts().ImplicitWait = TimeSpan.FromSeconds(10);
+            Assert.IsTrue(GenericHelper.IsElementPresent(By.XPath("//input[@class='form-control search-input ng-untouched ng-pristine ng-valid']")));
+            Console.WriteLine("Evergreen Dashboards page is displayed");
         }
 
         #endregion Then
