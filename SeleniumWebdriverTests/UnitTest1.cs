@@ -1,4 +1,4 @@
-﻿using Microsoft.VisualStudio.TestTools.UnitTesting;
+using Microsoft.VisualStudio.TestTools.UnitTesting;
 using OpenQA.Selenium;
 using OpenQA.Selenium.Chrome;
 
@@ -16,7 +16,7 @@ namespace SeleniumWebdriverTests
         public void MyTestInitialize()
         {
             driver = new ChromeDriver();
-            driver.Navigate().GoToUrl("http://www.google.co.uk"); //this will open the webpage
+            driver.Navigate().GoToUrl("http://www.google.co.uk"); //this will open the target webpage
         }
 
         [TestMethod]
