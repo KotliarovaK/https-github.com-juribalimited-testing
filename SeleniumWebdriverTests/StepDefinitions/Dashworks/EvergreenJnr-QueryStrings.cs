@@ -24,6 +24,7 @@ namespace SeleniumWebdriverTests.StepDefinitions
            
             foreach (var row in table.Rows)
             {
+                url = "http://automation.corp.juriba.com/";
                 combinedURL = url + row["QueryStringURL"];
                 NavigationHelper.NagigateToURL(combinedURL);
                 Thread.Sleep(4000);
@@ -50,6 +51,7 @@ namespace SeleniumWebdriverTests.StepDefinitions
         {
             foreach (var row in table.Rows)
             {
+                url = "http://automation.corp.juriba.com/";
                 combinedURL = url + row["QueryStringURL"];
                 NavigationHelper.NagigateToURL(combinedURL);
                 Thread.Sleep(6000);
