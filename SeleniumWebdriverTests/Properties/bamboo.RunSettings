@@ -1,7 +1,0 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<RunSettings>
-    <RunConfiguration>
-        <!--<ResultsDirectory>D:\bamboo\bamboo-home\xml-data\build-dir\DAS-SGT-JOB1\TestResults</ResultsDirectory>-->
-        <ResultsDirectory>.\..\..\TestResults</ResultsDirectory>
-    </RunConfiguration>
-</RunSettings>
