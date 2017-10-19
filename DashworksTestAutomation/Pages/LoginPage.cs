@@ -1,0 +1,43 @@
+﻿using System.Collections.Generic;
+using DashworksTestAutomation.Base;
+using OpenQA.Selenium;
+using OpenQA.Selenium.Support.PageObjects;
+
+namespace DashworksTestAutomation.Pages
+{
+    class LoginPage : SeleniumBasePage
+    {
+        [FindsBy(How = How.Id, Using = "ctl00_MainContent_P_Login")]
+        public IWebElement LoginGroupbox { get; set; }
+
+        [FindsBy(How = How.Id, Using = "ctl00_MainContent_TB_UserName")]
+        public IWebElement UserNameTextbox { get; set; }
+
+        [FindsBy(How = How.Id, Using = "ctl00_MainContent_TB_Password")]
+        public IWebElement PasswordTextbox { get; set; }
+
+        [FindsBy(How = How.Id, Using = "ctl00_MainContent_Btn_Login")]
+        public IWebElement LoginButton { get; set; }
+
+        #region Login Splash page
+
+        [FindsBy(How = How.Id, Using = "loginsplash-panel")]
+        public IWebElement SplasLoginGroupbox { get; set; }
+
+        [FindsBy(How = How.Id, Using = "ctl00_MainContent_TB_UserName")]
+        public IWebElement SplashUserNameTextbox { get; set; }
+
+        [FindsBy(How = How.Id, Using = "ctl00_MainContent_TB_Password")]
+        public IWebElement SplashPasswordTextbox { get; set; }
+
+        [FindsBy(How = How.Id, Using = "ctl00_MainContent_Btn_Login")]
+        public IWebElement SplashLoginButton { get; set; }
+
+        #endregion
+
+        public override List<By> GetPageIdentitySelectors()
+        {
+            return new List<By> { };
+        }
+    }
+}
