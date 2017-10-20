@@ -107,3 +107,15 @@ Scenario: Evergreen Jnr_Devices List_agGrid Search_No Devices Found
 	When User clicks the Logout button
 	Then Signed Out page is displayed to the user
 	And User is logged out
+
+@Evergreen @Search @Devices
+Scenario: Evergreen Jnr_Devices List_agGrid Search_Usign Actions withing all results
+	When User provides the Login and Password and clicks on the login button
+	Then Dashworks homepage is displayed to the user in a logged in state
+	When User clicks the Switch to Evergreen link
+	Then Evergreen Dashboards page should be displayed to the user
+	When User clicks "Devices" on the left-hand menu
+	Then "Devices" list should be displayed to the user
+	When User clicks the Actions button
+	Then Actions panel is displayed to the user
+	When I have selected all rows int the table using Actions

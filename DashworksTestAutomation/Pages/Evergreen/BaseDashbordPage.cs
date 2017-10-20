@@ -11,8 +11,14 @@ namespace DashworksTestAutomation.Pages.Evergreen
         [FindsBy(How = How.XPath, Using = ".//div[@id='pagetitle-text']/descendant::h1")]
         public IWebElement Heading { get; set; }
 
-        [FindsBy(How = How.Id, Using = "_clmnBtn")]
-        public IWebElement Column { get; set; }
+        [FindsBy(How = How.XPath, Using = ".//button[@id='_staticListModeBtn']")]
+        public IWebElement ActionsButton { get; set; }
+
+        [FindsBy(How = How.XPath, Using = ".//button[@id='_clmnBtn']")]
+        public IWebElement ColumnButton { get; set; }
+
+        [FindsBy(How = How.XPath, Using = ".//div[@role='presentation']//div[@class='ag-header-cell']//header-cell//input")]
+        public IWebElement SelectAllRowsAction { get; set; }
 
         [FindsBy(How = How.XPath, Using = ".//input[contains(@class,'test-dg-vsbl')]")]
         public IWebElement SearchTextbox { get; set; }

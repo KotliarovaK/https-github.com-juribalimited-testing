@@ -160,6 +160,7 @@
     <Compile Include="Extensions\WebDriverExtentions.cs" />
     <Compile Include="Extensions\WebElementExtensions.cs" />
     <Compile Include="Pages\EvergreenDashboardsPage.cs" />
+    <Compile Include="Pages\Evergreen\ActionsElement.cs" />
     <Compile Include="Pages\Evergreen\ApplicationsPage.cs" />
     <Compile Include="Pages\Evergreen\BaseDashbordPage.cs" />
     <Compile Include="Pages\Evergreen\ColumnsElement.cs" />
@@ -177,7 +178,8 @@
     <Compile Include="Providers\UserProvider.cs" />
     <Compile Include="Steps\Base\OpenWebsite.cs" />
     <Compile Include="Providers\UrlProvider.cs" />
-    <Compile Include="Steps\Dashworks\EvergreenJnr_AddColumns.cs" />
+    <Compile Include="Steps\Dashworks\EvergreenJnr_ActionsPanel.cs" />
+    <Compile Include="Steps\Dashworks\EvergreenJnr_ButtonsOnDashbordsPage.cs" />
     <Compile Include="Steps\Dashworks\EvergreenJnr_ColumnsPanel.cs" />
     <Compile Include="Steps\Dashworks\EvergreenJnr_ListSearch.cs" />
     <Compile Include="Steps\Dashworks\EvergreenJnr_Login.cs" />
