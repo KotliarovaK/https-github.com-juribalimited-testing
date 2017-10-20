@@ -8,7 +8,7 @@ namespace DashworksTestAutomation.Pages.Evergreen
 {
     class ColumnsElement : SeleniumBasePage
     {
-        [FindsBy(How = How.CssSelector, Using = ".columns-panel")]
+        [FindsBy(How = How.XPath, Using = ".//div[@class='columns-panel']")]
         public IWebElement ColumnsPanel { get; set; }
 
         [FindsBy(How = How.XPath, Using = ".//input[@name='search']")]
@@ -31,9 +31,11 @@ namespace DashworksTestAutomation.Pages.Evergreen
         public void AddColumn(string columnName)
         {
             SearchTextbox.SendKeys(columnName);
-            var selector = By.XPath($".//span[.='{columnName}']");
+            var selector = By.XPath($".//div[@class='columns-panel']//span[text()='{columnName}']");
+
             Driver.WaitWhileControlIsNotDisplayed(selector);
             Driver.FindElement(selector).Click();
+
             Driver.WaitForDataLoading();
         }
     }

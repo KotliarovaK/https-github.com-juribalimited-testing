@@ -38,6 +38,7 @@ namespace DashworksTestAutomation.Steps.Dashworks
             }
             //Minimise the Selected Columns
             columnElement.MinimizeGroupButton.Click();
+            _driver.WaitWhileControlIsDisplayed<ColumnsElement>(() => columnElement.MinimizeGroupButton);
             //Close the Columns Panel
             var listpageMenu = _driver.NowAt<BaseDashbordPage>();
             listpageMenu.Column.Click();
@@ -49,7 +50,8 @@ namespace DashworksTestAutomation.Steps.Dashworks
             var listpageMenu = _driver.NowAt<BaseDashbordPage>();
             foreach (var row in table.Rows)
             {
-                listpageMenu.IsColumnPresent(row["ColumnName"]);
+                Assert.IsTrue(listpageMenu.IsColumnPresent(row["ColumnName"]),
+                    $"Column '{row["ColumnName"]}' is not exists in the table");
             }
         }
     }
