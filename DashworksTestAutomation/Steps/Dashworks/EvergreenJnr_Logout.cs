@@ -19,6 +19,7 @@ namespace DashworksTestAutomation.Steps.Dashworks
         public void WhenUserClicksTheLogoutButton()
         {
             var header = _driver.NowAt<HeaderElement>();
+
             header.LogOut();
         }
     }
