@@ -22,7 +22,7 @@ namespace DashworksTestAutomation.Steps.Dashworks
         {
             var page = _driver.NowAt<BaseDashbordPage>();
 
-            Assert.IsFalse(page.SaveCustomListButton.Displayed(), "Save Custom list displayed when user just perform search");
+            Assert.IsFalse(page.SaveCustomListButton.Displayed(), "Save Custom list is displayed when the user just performs an agGrid search");
 
             Logger.Write("The Save to Custom List Element was NOT displayed");
         }
