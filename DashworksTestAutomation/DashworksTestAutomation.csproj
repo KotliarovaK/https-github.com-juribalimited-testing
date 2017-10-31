@@ -160,6 +160,7 @@
     <Compile Include="Extensions\WebDriverExtentions.cs" />
     <Compile Include="Extensions\WebElementExtensions.cs" />
     <Compile Include="Pages\EvergreenDashboardsPage.cs" />
+    <Compile Include="Pages\Evergreen\ActionsElement.cs" />
     <Compile Include="Pages\Evergreen\ApplicationsPage.cs" />
     <Compile Include="Pages\Evergreen\BaseDashbordPage.cs" />
     <Compile Include="Pages\Evergreen\ColumnsElement.cs" />
@@ -177,6 +178,8 @@
     <Compile Include="Providers\UserProvider.cs" />
     <Compile Include="Steps\Base\OpenWebsite.cs" />
     <Compile Include="Providers\UrlProvider.cs" />
+    <Compile Include="Steps\Dashworks\EvergreenJnr_Actions.cs" />
+    <Compile Include="Steps\Dashworks\EvergreenJnr_ActionsPanel.cs" />
     <Compile Include="Steps\Dashworks\EvergreenJnr_AddColumns.cs" />
     <Compile Include="Steps\Dashworks\EvergreenJnr_ColumnsPanel.cs" />
     <Compile Include="Steps\Dashworks\EvergreenJnr_ListSearch.cs" />
@@ -225,14 +228,14 @@
     <Service Include="{82A7F48D-3B50-4B1E-B82E-3ADA8210C358}" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
-  <Import Project="..\packages\Selenium.Chrome.WebDriver.2.32\build\Selenium.Chrome.WebDriver.targets" Condition="Exists('..\packages\Selenium.Chrome.WebDriver.2.32\build\Selenium.Chrome.WebDriver.targets')" />
   <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
     <PropertyGroup>
       <ErrorText>This project references NuGet package(s) that are missing on this computer. Use NuGet Package Restore to download them.  For more information, see http://go.microsoft.com/fwlink/?LinkID=322105. The missing file is {0}.</ErrorText>
     </PropertyGroup>
-    <Error Condition="!Exists('..\packages\Selenium.Chrome.WebDriver.2.32\build\Selenium.Chrome.WebDriver.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Selenium.Chrome.WebDriver.2.32\build\Selenium.Chrome.WebDriver.targets'))" />
     <Error Condition="!Exists('..\packages\xunit.core.2.3.0\build\xunit.core.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\xunit.core.2.3.0\build\xunit.core.props'))" />
     <Error Condition="!Exists('..\packages\xunit.core.2.3.0\build\xunit.core.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\xunit.core.2.3.0\build\xunit.core.targets'))" />
+    <Error Condition="!Exists('..\packages\Selenium.Chrome.WebDriver.2.33\build\Selenium.Chrome.WebDriver.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Selenium.Chrome.WebDriver.2.33\build\Selenium.Chrome.WebDriver.targets'))" />
   </Target>
   <Import Project="..\packages\xunit.core.2.3.0\build\xunit.core.targets" Condition="Exists('..\packages\xunit.core.2.3.0\build\xunit.core.targets')" />
+  <Import Project="..\packages\Selenium.Chrome.WebDriver.2.33\build\Selenium.Chrome.WebDriver.targets" Condition="Exists('..\packages\Selenium.Chrome.WebDriver.2.33\build\Selenium.Chrome.WebDriver.targets')" />
 </Project>

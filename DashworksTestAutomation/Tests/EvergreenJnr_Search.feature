@@ -107,3 +107,25 @@ Scenario: Evergreen Jnr_Devices List_agGrid Search_No Devices Found
 	When User clicks the Logout button
 	Then Signed Out page is displayed to the user
 	And User is logged out
+
+@Evergreen @Search @Devices
+Scenario: Evergreen Jnr_Devices Search withing all rows
+	When User provides the Login and Password and clicks on the login button
+	Then Dashworks homepage is displayed to the user in a logged in state
+	When User clicks the Switch to Evergreen link
+	Then Evergreen Dashboards page should be displayed to the user
+	When User clicks "Devices" on the left-hand menu
+	Then "Devices" list should be displayed to the user
+	When User clicks Actions button
+	Then Actions panel is displayed to user
+	When User select all rows
+	Then User enters SearchCriteria into the agGrid Search Box and the correct NumberOfRows are returned
+	| SearchCriteria  | NumberOfRows |
+	| Mary            | 17           |
+	| Henry           | 34           |
+	| Yolande Sylvain | 1            |
+	And Clearing the agGrid Search Box
+	Then "17,271" rows are displayed in the agGrid
+	When User clicks the Logout button
+	Then Signed Out page is displayed to the user
+	And User is logged out
