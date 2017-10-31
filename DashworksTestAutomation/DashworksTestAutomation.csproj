@@ -176,9 +176,8 @@
     <Compile Include="Providers\UserProvider.cs" />
     <Compile Include="Steps\Base\OpenWebsite.cs" />
     <Compile Include="Providers\UrlProvider.cs" />
-    <Compile Include="Steps\Dashworks\EvergreenJnr_Actions.cs" />
     <Compile Include="Steps\Dashworks\EvergreenJnr_ActionsPanel.cs" />
-    <Compile Include="Steps\Dashworks\EvergreenJnr_AddColumns.cs" />
+    <Compile Include="Steps\Dashworks\EvergreenJnr_ButtonsOnDashbordsPage.cs" />
     <Compile Include="Steps\Dashworks\EvergreenJnr_ColumnsPanel.cs" />
     <Compile Include="Steps\Dashworks\EvergreenJnr_ListSearch.cs" />
     <Compile Include="Steps\Dashworks\EvergreenJnr_Login.cs" />

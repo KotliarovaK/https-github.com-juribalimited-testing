@@ -116,8 +116,8 @@ Scenario: Evergreen Jnr_Devices Search withing all rows
 	Then Evergreen Dashboards page should be displayed to the user
 	When User clicks "Devices" on the left-hand menu
 	Then "Devices" list should be displayed to the user
-	When User clicks Actions button
-	Then Actions panel is displayed to user
+	When User clicks the Actions button
+	Then Actions panel is displayed to the user
 	When User select all rows
 	Then User enters SearchCriteria into the agGrid Search Box and the correct NumberOfRows are returned
 	| SearchCriteria  | NumberOfRows |
