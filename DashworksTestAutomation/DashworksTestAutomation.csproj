@@ -163,6 +163,7 @@
     <Compile Include="Pages\Evergreen\BaseDashbordPage.cs" />
     <Compile Include="Pages\Evergreen\ColumnsElement.cs" />
     <Compile Include="Pages\Evergreen\DevicesPage.cs" />
+    <Compile Include="Pages\Evergreen\FiltersElement.cs" />
     <Compile Include="Pages\Evergreen\HeaderElement.cs" />
     <Compile Include="Pages\Evergreen\LeftHandMenuElement.cs" />
     <Compile Include="Pages\Evergreen\MailboxesPage.cs" />
@@ -179,6 +180,7 @@
     <Compile Include="Steps\Dashworks\EvergreenJnr_ActionsPanel.cs" />
     <Compile Include="Steps\Dashworks\EvergreenJnr_ButtonsOnDashbordsPage.cs" />
     <Compile Include="Steps\Dashworks\EvergreenJnr_ColumnsPanel.cs" />
+    <Compile Include="Steps\Dashworks\EvergreenJnr_FiltersPanel.cs" />
     <Compile Include="Steps\Dashworks\EvergreenJnr_ListSearch.cs" />
     <Compile Include="Steps\Dashworks\EvergreenJnr_Login.cs" />
     <Compile Include="Steps\Dashworks\EvergreenJnr_Logout.cs" />
@@ -195,6 +197,11 @@
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>EvergreenJnr_Search.feature</DependentUpon>
+    </Compile>
+    <Compile Include="Tests\EvergreenJnr_TableActions.feature.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>EvergreenJnr_TableActions.feature</DependentUpon>
     </Compile>
     <Compile Include="Utils\ByFactory.cs" />
     <Compile Include="Utils\FileSystemHelper.cs" />
@@ -216,6 +223,10 @@
     <None Include="Tests\EvergreenJnr_Search.feature">
       <Generator>SpecFlowSingleFileGenerator</Generator>
       <LastGenOutput>EvergreenJnr_Search.feature.cs</LastGenOutput>
+    </None>
+    <None Include="Tests\EvergreenJnr_TableActions.feature">
+      <Generator>SpecFlowSingleFileGenerator</Generator>
+      <LastGenOutput>EvergreenJnr_TableActions.feature.cs</LastGenOutput>
     </None>
   </ItemGroup>
   <ItemGroup>
