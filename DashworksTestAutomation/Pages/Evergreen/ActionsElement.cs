@@ -1,8 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using System.Collections.Generic;
 using DashworksTestAutomation.Base;
 using DashworksTestAutomation.Extensions;
 using OpenQA.Selenium;
@@ -12,15 +8,24 @@ namespace DashworksTestAutomation.Pages.Evergreen
 {
     class ActionsElement : SeleniumBasePage
     {
-        [FindsBy(How = How.XPath, Using = ".//div[@class='device-context-panel']/div[@class='device-context-header']/span[text()='Actions']")]
+        [FindsBy(How = How.XPath, Using = ".//div[@class='actions-container']")]
         public IWebElement ActionsPanel { get; set; }
+
+        [FindsBy(How = How.XPath, Using = ".//input[@placeholder='List name']")]
+        public IWebElement ListNameTextbox { get; set; }
+
+        [FindsBy(How = How.XPath, Using = ".//span[text()='CREATE']//ancestor::button")]
+        public IWebElement CreateButton { get; set; }
+
+        [FindsBy(How = How.XPath, Using = ".//button[@title='Cancel']")]
+        public IWebElement CancelButton { get; set; }
 
         public override List<By> GetPageIdentitySelectors()
         {
             Driver.WaitForDataLoading();
             return new List<By>
             {
-                SelectorFor(this, p=> p.ActionsPanel)
+                SelectorFor(this, p => p.ActionsPanel),
             };
         }
     }

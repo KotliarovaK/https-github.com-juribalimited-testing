@@ -30,10 +30,11 @@ namespace DashworksTestAutomation.Steps.Dashworks
             Logger.Write("Actions Panel panel is visible");
         }
 
-        [When(@"I have selected all rows int the table using Actions")]
-        public void WhenIHaveSelectedAllRowsIntTheTableUsingActions()
+        [When(@"User select all rows")]
+        public void WhenUserSelectAllRows()
         {
-            //ScenarioContext.Current.Pending();
+            var dashboardPage = _driver.NowAt<BaseDashbordPage>();
+            dashboardPage.SelectAllCheckbox.Click();
         }
     }
 }
