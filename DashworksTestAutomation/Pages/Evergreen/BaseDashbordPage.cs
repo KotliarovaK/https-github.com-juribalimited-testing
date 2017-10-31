@@ -29,6 +29,9 @@ namespace DashworksTestAutomation.Pages.Evergreen
         [FindsBy(How = How.XPath, Using = ".//span[@class='rowCount']")]
         public IWebElement ResultsOnPageCount { get; set; }
 
+        [FindsBy(How = How.XPath, Using = ".//span[@class='checkbox-styled selectBox']")]
+        public IWebElement SelectAllCheckbox { get; set; }
+
         [FindsBy(How = How.XPath, Using = ".//div[@class='ag-body-container']")]
         public IWebElement TableBody { get; set; }
 
@@ -44,8 +47,8 @@ namespace DashworksTestAutomation.Pages.Evergreen
 
             return new List<By>
             {
-                SelectorFor(this, p=> p.Heading),
-                SelectorFor(this, p=> p.List)
+                SelectorFor(this, p => p.Heading),
+                SelectorFor(this, p => p.List)
             };
         }
 
