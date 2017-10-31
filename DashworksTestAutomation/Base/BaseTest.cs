@@ -18,7 +18,7 @@ namespace DashworksTestAutomation.Base
             {
                 case "Chrome":
                     ChromeOptions options = new ChromeOptions();
-                    options.AddArgument("--window-size=2000,1600");
+                    options.AddArgument($"--window-size={Browser.Resolution}");
                     var driver = new ChromeDriver(options);
                     return driver;
                 case "Firefox":
