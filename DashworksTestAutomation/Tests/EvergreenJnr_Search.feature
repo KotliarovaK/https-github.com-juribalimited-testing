@@ -129,3 +129,32 @@ Scenario: Evergreen Jnr_Devices Search withing all rows
 	When User clicks the Logout button
 	Then Signed Out page is displayed to the user
 	And User is logged out
+
+@Evergreen @Search @Devices
+Scenario: Evergreen Jnr_Devices Select All selectbox status check after search
+	When User provides the Login and Password and clicks on the login button
+	Then Dashworks homepage is displayed to the user in a logged in state
+	When User clicks the Switch to Evergreen link
+	Then Evergreen Dashboards page should be displayed to the user
+	When User clicks "Users" on the left-hand menu
+	Then "Users" list should be displayed to the user
+	When User clicks the Actions button
+	Then Actions panel is displayed to the user
+	When User select all rows
+	Then The number of rows selected matches the number of rows of the main object list
+	Then User enters SearchCriteria into the agGrid Search Box and the correct NumberOfRows are returned
+	| SearchCriteria | NumberOfRows |
+	| alain          | 42           |
+	#Then Select All selectbox is checked
+	Then "42" rows are displayed in the agGrid
+	Then "38271" selected rows are displayed in the Actions panel
+	When User is diselect all rows
+	And User select all rows
+	Then The number of rows selected matches the number of rows of the main object list
+	And Clearing the agGrid Search Box
+	Then "42" selected rows are displayed in the Actions panel
+	When User clicks the Logout button
+	Then Signed Out page is displayed to the user
+	And User is logged out
+
+

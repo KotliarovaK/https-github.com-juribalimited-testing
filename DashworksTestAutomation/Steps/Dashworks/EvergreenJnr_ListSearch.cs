@@ -38,7 +38,8 @@ namespace DashworksTestAutomation.Steps.Dashworks
         }
 
         [Then(@"User enters invalid SearchCriteria into the agGrid Search Box and ""(.*)"" message is displayed")]
-        public void ThenUserEntersInvalidSearchCriteriaIntoTheAgGridSearchBoxAndMessageIsDisplayed(string message, Table table)
+        public void ThenUserEntersInvalidSearchCriteriaIntoTheAgGridSearchBoxAndMessageIsDisplayed(string message,
+            Table table)
         {
             foreach (var row in table.Rows)
             {
@@ -68,7 +69,7 @@ namespace DashworksTestAutomation.Steps.Dashworks
         {
             var listPageElement = _driver.NowAt<BaseDashbordPage>();
 
-            _driver.WaitWhileControlIsNotDisplayed<BaseDashbordPage>(()=> listPageElement.ResultsOnPageCount);
+            _driver.WaitWhileControlIsNotDisplayed<BaseDashbordPage>(() => listPageElement.ResultsOnPageCount);
 
             StringAssert.AreEqualIgnoringCase($"{numberOfRows} rows", listPageElement.ResultsOnPageCount.Text);
             Logger.Write($"Evergreen agGrid Search returned the correct number of rows for: {numberOfRows}  search");
