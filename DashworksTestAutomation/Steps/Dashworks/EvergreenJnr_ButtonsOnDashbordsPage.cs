@@ -7,20 +7,28 @@ using TechTalk.SpecFlow;
 namespace DashworksTestAutomation.Steps.Dashworks
 {
     [Binding]
-    class EvergreenJnr_AddColumns : SpecFlowContext
+    class EvergreenJnr_ButtonsOnDashbordsPage : SpecFlowContext
     {
         private readonly RemoteWebDriver _driver;
 
-        public EvergreenJnr_AddColumns(RemoteWebDriver driver)
+        public EvergreenJnr_ButtonsOnDashbordsPage(RemoteWebDriver driver)
         {
             _driver = driver;
+        }
+
+        [When(@"User clicks the Actions button")]
+        public void WhenUserClicksTheActionsButton()
+        {
+            var menu = _driver.NowAt<BaseDashbordPage>();
+            menu.ActionsButton.Click();
+            Logger.Write("Actions button was clicked");
         }
 
         [When(@"User clicks the Columns button")]
         public void WhenUserClicksTheColumnsButton()
         {
             var menu = _driver.NowAt<BaseDashbordPage>();
-            menu.Column.Click();
+            menu.ColumnButton.Click();
             Logger.Write("Column button was clicked");
         }
     }

@@ -1,4 +1,5 @@
-﻿using DashworksTestAutomation.Extensions;
+﻿using System;
+using DashworksTestAutomation.Extensions;
 using DashworksTestAutomation.Pages;
 using DashworksTestAutomation.Utils;
 using NUnit.Framework;
@@ -28,7 +29,15 @@ namespace DashworksTestAutomation.Steps
 
             var logoutPage = _driver.NowAt<LogoutPage>();
 
-            Assert.AreEqual("You have been successfully logged out", logoutPage.SignedOutMessage.Text);
+            //Messge is different depending on the language
+            try
+            {
+                Assert.AreEqual("You have been successfully logged out", logoutPage.SignedOutMessage.Text);
+            }
+            catch
+            {
+                Assert.AreEqual("You have successfully been logged out", logoutPage.SignedOutMessage.Text);
+            }
 
             Logger.Write("Dashworks Signed Out page is displayed");
         }

@@ -1,7 +1,12 @@
-﻿using NUnit.Framework;
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
 using DashworksTestAutomation.Extensions;
 using DashworksTestAutomation.Pages.Evergreen;
 using DashworksTestAutomation.Utils;
+using NUnit.Framework;
 using OpenQA.Selenium.Remote;
 using TechTalk.SpecFlow;
 
@@ -17,12 +22,18 @@ namespace DashworksTestAutomation.Steps.Dashworks
             _driver = driver;
         }
 
-        [Then(@"Actions panel is displayed to user")]
-        public void ThenActionsPanelIsDisplayedToUser()
+        [Then(@"Actions panel is displayed to the user")]
+        public void ThenActionsPanelIsDisplayedToTheUser()
         {
-            var actionsElement = _driver.NowAt<ActionsElement>();
-            Assert.IsTrue(actionsElement.ActionsPanel.Displayed());
-            Logger.Write("Actions panel is visible");
+            var columnElement = _driver.NowAt<ActionsElement>();
+            Assert.IsTrue(columnElement.ActionsPanel.Displayed(), "Actions panel was not displayed");
+            Logger.Write("Actions Panel panel is visible");
+        }
+
+        [When(@"I have selected all rows int the table using Actions")]
+        public void WhenIHaveSelectedAllRowsIntTheTableUsingActions()
+        {
+            //ScenarioContext.Current.Pending();
         }
     }
 }

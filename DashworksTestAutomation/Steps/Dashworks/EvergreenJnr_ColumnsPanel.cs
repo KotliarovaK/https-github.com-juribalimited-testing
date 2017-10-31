@@ -21,7 +21,7 @@ namespace DashworksTestAutomation.Steps.Dashworks
         public void ThenColumnsPanelIsDisplayedToTheUser()
         {
             var columnElement = _driver.NowAt<ColumnsElement>();
-            Assert.IsTrue(columnElement.ColumnsPanel.Displayed());
+            Assert.IsTrue(columnElement.ColumnsPanel.Displayed(), "Columns panel is not displayed");
             Logger.Write("Columns panel is visible");
         }
 
@@ -41,7 +41,7 @@ namespace DashworksTestAutomation.Steps.Dashworks
             _driver.WaitWhileControlIsDisplayed<ColumnsElement>(() => columnElement.MinimizeGroupButton);
             //Close the Columns Panel
             var listpageMenu = _driver.NowAt<BaseDashbordPage>();
-            listpageMenu.Column.Click();
+            listpageMenu.ColumnButton.Click();
         }
 
         [Then(@"ColumnName is added to the list")]
