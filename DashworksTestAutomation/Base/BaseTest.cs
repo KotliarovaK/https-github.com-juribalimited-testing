@@ -17,6 +17,9 @@ namespace DashworksTestAutomation.Base
             switch (Browser.Type)
             {
                 case "Chrome":
+                    //ChromeOptions options = new ChromeOptions();
+                    //options.AddArgument($"--window-size={Browser.Resolution}");
+                    //var driver = new ChromeDriver(options);
                     return new ChromeDriver();
                 case "Firefox":
                     return new FirefoxDriver();

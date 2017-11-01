@@ -20,7 +20,8 @@ namespace DashworksTestAutomation.Pages.Evergreen
         [FindsBy(How = How.XPath, Using = ".//button[@id='_fltrBtn']")]
         public IWebElement FilterButton { get; set; }
 
-        [FindsBy(How = How.XPath, Using = ".//div[@role='presentation']//div[@class='ag-header-cell']//header-cell//input")]
+        [FindsBy(How = How.XPath,
+            Using = ".//div[@role='presentation']//div[@class='ag-header-cell']//header-cell//input")]
         public IWebElement SelectAllRowsAction { get; set; }
 
         [FindsBy(How = How.XPath, Using = ".//input[contains(@class,'test-dg-vsbl')]")]
@@ -32,7 +33,7 @@ namespace DashworksTestAutomation.Pages.Evergreen
         [FindsBy(How = How.XPath, Using = ".//span[@class='rowCount']")]
         public IWebElement ResultsOnPageCount { get; set; }
 
-        [FindsBy(How = How.XPath, Using = ".//span[@class='checkbox-styled selectBox']")]
+        [FindsBy(How = How.XPath, Using = ".//span[@class='checkbox-styled selectBox']/input")]
         public IWebElement SelectAllCheckbox { get; set; }
 
         [FindsBy(How = How.XPath, Using = ".//div[@class='ag-body-container']")]
@@ -60,5 +61,7 @@ namespace DashworksTestAutomation.Pages.Evergreen
             var selector = By.XPath($"//div[@role='presentation']/span[text()='{columnName}']");
             return Driver.IsElementDisplayed(selector);
         }
+
+        public bool SelectAllChecboxState => SelectAllCheckbox.Selected;
     }
 }
