@@ -29,36 +29,3 @@ Scenario: Evergreen Jnr_Applications add custom column action
 	| A Star Packages |
 	| A Star Packages |
 	| A Star Packages |
-
-@Evergreen @TableActions
-Scenario: Evergreen Jnr_Applications check filter and search status in navigation
-	When User clicks "Devices" on the left-hand menu
-	Then "Devices" list should be displayed to the user
-	Then User enters SearchCriteria into the agGrid Search Box and the correct NumberOfRows are returned
-	| SearchCriteria | NumberOfRows |
-	| Smith          | 11           |
-	When User clicks "Users" on the left-hand menu
-	Then "Users" list should be displayed to the user
-	Then "38,271" rows are displayed in the agGrid
-	Then Search field is empty
-	Then User enters SearchCriteria into the agGrid Search Box and the correct NumberOfRows are returned
-	| SearchCriteria | NumberOfRows |
-	| Smith          | 58           |
-	When User clicks "Applications" on the left-hand menu
-	Then "Applications" list should be displayed to the user
-	Then "3,305" rows are displayed in the agGrid
-	Then Search field is empty
-	Then User enters SearchCriteria into the agGrid Search Box and the correct NumberOfRows are returned
-	| SearchCriteria | NumberOfRows |
-	| Python          | 7           |
-	When User clicks "Mailboxes" on the left-hand menu
-	Then "Mailboxes" list should be displayed to the user
-	Then "13,779" rows are displayed in the agGrid
-	Then Search field is empty
-	Then User enters SearchCriteria into the agGrid Search Box and the correct NumberOfRows are returned
-	| SearchCriteria | NumberOfRows |
-	| Smith          | 44           |
-	When User clicks "Devices" on the left-hand menu
-	Then "Devices" list should be displayed to the user
-	Then "17,271" rows are displayed in the agGrid
-	Then Search field is empty

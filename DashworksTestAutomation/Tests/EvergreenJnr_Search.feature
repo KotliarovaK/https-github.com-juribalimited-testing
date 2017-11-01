@@ -113,3 +113,36 @@ Scenario: Evergreen Jnr_Devices Search withing all rows
 	When User clicks the Logout button
 	Then Signed Out page is displayed to the user
 	And User is logged out
+
+@Evergreen @Search @Devices @Applications @Users @Mailboxes
+Scenario: Evergreen Jnr_Main check search filter and table content during navigation between pages
+	When User clicks "Devices" on the left-hand menu
+	Then "Devices" list should be displayed to the user
+	Then User enters SearchCriteria into the agGrid Search Box and the correct NumberOfRows are returned
+	| SearchCriteria | NumberOfRows |
+	| Smith          | 11           |
+	When User clicks "Users" on the left-hand menu
+	Then "Users" list should be displayed to the user
+	Then "38,271" rows are displayed in the agGrid
+	Then Search field is empty
+	Then User enters SearchCriteria into the agGrid Search Box and the correct NumberOfRows are returned
+	| SearchCriteria | NumberOfRows |
+	| Smith          | 58           |
+	When User clicks "Applications" on the left-hand menu
+	Then "Applications" list should be displayed to the user
+	Then "3,305" rows are displayed in the agGrid
+	Then Search field is empty
+	Then User enters SearchCriteria into the agGrid Search Box and the correct NumberOfRows are returned
+	| SearchCriteria | NumberOfRows |
+	| Python          | 7           |
+	When User clicks "Mailboxes" on the left-hand menu
+	Then "Mailboxes" list should be displayed to the user
+	Then "13,779" rows are displayed in the agGrid
+	Then Search field is empty
+	Then User enters SearchCriteria into the agGrid Search Box and the correct NumberOfRows are returned
+	| SearchCriteria | NumberOfRows |
+	| Smith          | 44           |
+	When User clicks "Devices" on the left-hand menu
+	Then "Devices" list should be displayed to the user
+	Then "17,271" rows are displayed in the agGrid
+	Then Search field is empty
