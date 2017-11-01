@@ -62,6 +62,6 @@ namespace DashworksTestAutomation.Pages.Evergreen
             return Driver.IsElementDisplayed(selector);
         }
 
-        public bool SelectAllChecboxState => SelectAllCheckbox.Selected;
+        public bool SelectAllCheckboxState => SelectAllCheckbox.Selected;
     }
 }

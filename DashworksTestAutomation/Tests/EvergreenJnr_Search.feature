@@ -137,5 +137,3 @@ Scenario: Evergreen Jnr_Devices Select All selectbox status check after search
 	When User clicks the Logout button
 	Then Signed Out page is displayed to the user
 	And User is logged out
-
-

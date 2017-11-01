@@ -282,6 +282,11 @@ namespace DashworksTestAutomation.Extensions
             WebDriverWait wait = new WebDriverWait(driver, TimeSpan.FromSeconds(waitSec));
             wait.Until(ExpectedConditions.TextToBePresentInElementLocated(by, textToAppear));
         }
+        public static void WaitToBeSelected(this RemoteWebDriver driver, IWebElement checkbox, bool selectorState, int waitSec = 35)
+        {
+            WebDriverWait wait = new WebDriverWait(driver, TimeSpan.FromSeconds(waitSec));
+            wait.Until(ExpectedConditions.ElementToBeSelected(checkbox, selectorState));
+        }
 
         public static void WaitForDataLoading(this RemoteWebDriver driver)
         {
