@@ -39,26 +39,6 @@ namespace DashworksTestAutomation.Steps.Dashworks
             _driver.WaitWhileControlIsDisplayed<FiltersElement>(() => filterElement.MinimizeGroupButton);
         }
 
-
-        [Then(@"Filter options are displayed")]
-        public void ThenFilterOptionsAreDisplayed()
-        {
-            var filterElement = _driver.NowAt<FiltersElement>();
-            Assert.IsTrue(filterElement.AStarPackegesCheckbox.Displayed(), "A Star Packeges checkbox was not visible");
-            Logger.Write("A Star Packeges checkbox is visible");
-            Assert.IsTrue(filterElement.NoneCheckbox.Displayed(), "None checkbox was not visible");
-            Logger.Write("None Checkbox panel is visible");
-            Assert.IsTrue(filterElement.BStarPackegesCheckbox.Displayed(), "B Star Packeges checkbox was not visible");
-            Logger.Write("B Star Packeges Panel panel is visible");
-            Assert.IsTrue(filterElement.AddCategoryColumnCheckbox.Displayed(),
-                "Add category column checkbox was not visible");
-            Logger.Write("Add Category Column Checkbox is visible");
-            Assert.IsTrue(filterElement.SaveButton.Displayed(), "Save button was not visible");
-            Logger.Write("Sve button is visible");
-            Assert.IsTrue(filterElement.CancelButton.Displayed(), "Cancel button was not visible");
-            Logger.Write("Cancel button is visible");
-        }
-
         [When(@"User have selected following options and clicks save button")]
         public void WhenUserHaveSelectedFollowingOptionsAndClicksSaveButton(Table table)
         {
@@ -76,7 +56,7 @@ namespace DashworksTestAutomation.Steps.Dashworks
         public void ThenFilterIsAddedToTheList(string filterName)
         {
             var filterElement = _driver.NowAt<FiltersElement>();
-            Assert.Contains(filterName, filterElement.GetFilterName());
+            Assert.Contains(filterName, filterElement.GetFiltersNames());
         }
 
         [Then(@"FilterData is displayed for FilterName column")]
@@ -97,7 +77,7 @@ namespace DashworksTestAutomation.Steps.Dashworks
             var valuesList = new List<string>();
             foreach (var row in table.Rows)
             {
-                valuesList.AddRange(row.Values.ToList());
+                valuesList.Add(row.Values.ToList().First());
             }
             Assert.AreEqual(valuesList, filterElement.GetFilterColumData());
         }

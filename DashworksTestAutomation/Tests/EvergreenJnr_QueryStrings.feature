@@ -7,14 +7,14 @@ Background: Pre-Conditions
 	And Login link is visible
 	When User clicks on the Login link
 	Then Login Page is displayed to the user
-
-@Evergreen @QueryStrings
-Scenario: Evergreen Jnr_QueryString_SortByKeys
-Runs Evergreen URL query strings which include being sorted by object key columns.
 	When User provides the Login and Password and clicks on the login button
 	Then Dashworks homepage is displayed to the user in a logged in state
 	When User clicks the Switch to Evergreen link
 	Then Evergreen Dashboards page should be displayed to the user
+
+@Evergreen @QueryStrings
+Scenario: Evergreen Jnr_QueryString_SortByKeys
+Runs Evergreen URL query strings which include being sorted by object key columns.
 	When Evergreen QueryStringURL is entered for Simple QueryType
 	| QueryType                       | QueryStringURL                                                                                                                                                                                                                                                                                                                                                                                                                                                       |
 	| Sort by device key              | evergreen/#/devices?$select=hostname,chassisCategory,oSCategory,ownerDisplayName,monitorCount,videoCardCount,computerKey&$orderby=computerKey%20desc                                                                                                                                                                                                                                                                                                                 |
@@ -29,10 +29,6 @@ Runs Evergreen URL query strings which include being sorted by object key column
 @Evergreen @QueryStrings
 Scenario: Evergreen Jnr_QueryString_AllLists
 Runs Evergreen URL query strings for the 4 default all lists.
-	When User provides the Login and Password and clicks on the login button
-	Then Dashworks homepage is displayed to the user in a logged in state
-	When User clicks the Switch to Evergreen link
-	Then Evergreen Dashboards page should be displayed to the user
 	When Evergreen QueryStringURL is entered for Simple QueryType
 	| QueryType                       | QueryStringURL                                                                                                                                                                                                                                                                                                                                                                                                                                                                                     |
 	| All Devices                     | evergreen/#/devices?$select=hostname,chassisCategory,oSCategory,ownerDisplayName                                                                                                                                                                                                                                                                                                                                                                                     |
@@ -47,10 +43,6 @@ Runs Evergreen URL query strings for the 4 default all lists.
 @Evergreen @QueryStrings
 Scenario: Evergreen Jnr_QueryString_DateCombo_And_Apostrophe
 Runs Evergreen URL query strings which include a date field combos query and filters using apostrophes.
-	When User provides the Login and Password and clicks on the login button
-	Then Dashworks homepage is displayed to the user in a logged in state
-	When User clicks the Switch to Evergreen link
-	Then Evergreen Dashboards page should be displayed to the user
 	When Evergreen QueryStringURL is entered for Simple QueryType
 	| QueryType                       | QueryStringURL                                                                                                                                                                                                                                                                                                                                                                                                                                                                                     |
 	| Date field combo                | evergreen/#/devices?$select=hostname,chassisCategory,oSCategory,ownerDisplayName,bootupDate,buildDate,lastSeenDate,firstSeenDate,purchaseDate,warrantyDate,ownerLastLogoffDate,ownerLastLogonDate,project_task_1_9950_2_Task,project_task_1_250_2_Task,project_task_41_12903_2_Task,project_task_41_12785_2_Task,project_task_1_1_2_Task,project_task_1_4_2_Task,project_task_1_3_2_Task,project_task_1_2_2_Task                                                     |
@@ -65,10 +57,6 @@ Runs Evergreen URL query strings which include a date field combos query and fil
 @Evergreen @QueryStrings
 Scenario: Evergreen Jnr_QueryString_Complex
 Runs Evergreen URL query strings that are complex, with lots of columns and advanced filters applied
-	When User provides the Login and Password and clicks on the login button
-	Then Dashworks homepage is displayed to the user in a logged in state
-	When User clicks the Switch to Evergreen link
-	Then Evergreen Dashboards page should be displayed to the user
 	When Evergreen QueryStringURL is entered for Complex QueryType
 	| QueryType                  | QueryStringURL                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                        |
 	| Devices complex query      | evergreen/#/devices?$select=hostname,chassisCategory,oSCategory,ownerDisplayName,migrationRAG,computerKey,distributionType,lastSeenDate,manufacturer,model,oSVersion,oSServicePackName,ownerMigrationRAG,entitledApplications,installedApplications,usedApplications,costCentre&$filter=(migrationRAG%20EQUALS%20('Red'%2C'Amber'%2C'Unknown')%20%20AND%20chassisCategory%20EQUALS%20('Desktop'%2C'Laptop'%2C'Mobile')%20%20AND%20installedApplications%20%3E%3D%201%20)&$orderby=migrationRAG%20asc%2ClastSeenDate%20desc                                                                                                                                                                                                                                                                                                                                                                                                                            |

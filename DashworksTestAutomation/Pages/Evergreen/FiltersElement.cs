@@ -68,26 +68,17 @@ namespace DashworksTestAutomation.Pages.Evergreen
 
         public void SelectOption(string optionName)
         {
-            switch (optionName)
+            if (optionName == "Add Category column")
             {
-                case "None":
-                    NoneCheckbox.Click();
-                    break;
-                case "A Star Packeges":
-                    AStarPackegesCheckbox.Click();
-                    break;
-                case "B Star Packeges":
-                    BStarPackegesCheckbox.Click();
-                    break;
-                case "Add Category column":
-                    AddCategoryColumnCheckbox.Click();
-                    break;
-                default:
-                    throw new Exception("Appropriate option is not found");
+                AddCategoryColumnCheckbox.Click();
+            }
+            else
+            {
+                Driver.FindElement(By.XPath($".//span[text()='{optionName}']")).Click();
             }
         }
 
-        public List<string> GetFilterName()
+        public List<string> GetFiltersNames()
         {
             var namesListElements = Driver.FindElements(By.XPath(".//span[@class='filter-label-name']"));
             return namesListElements.Select(name => name.Text).ToList();

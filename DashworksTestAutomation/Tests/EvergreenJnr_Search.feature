@@ -7,13 +7,13 @@ Background: Pre-Conditions
 	And Login link is visible
 	When User clicks on the Login link
 	Then Login Page is displayed to the user
-
-@Evergreen @Search @Devices
-Scenario: Evergreen Jnr_Devices List_agGrid Search Tests
 	When User provides the Login and Password and clicks on the login button
 	Then Dashworks homepage is displayed to the user in a logged in state
 	When User clicks the Switch to Evergreen link
 	Then Evergreen Dashboards page should be displayed to the user
+
+@Evergreen @Search @Devices
+Scenario: Evergreen Jnr_Devices List_agGrid Search Tests
 	When User clicks "Devices" on the left-hand menu
 	Then "Devices" list should be displayed to the user
 	When User clicks the Columns button
@@ -44,10 +44,6 @@ Scenario: Evergreen Jnr_Devices List_agGrid Search Tests
 
 @Evergreen @Search @Devices
 Scenario: Evergreen Jnr_Devices List_agGrid Search_Does Not Trigger_Update List
-	When User provides the Login and Password and clicks on the login button
-	Then Dashworks homepage is displayed to the user in a logged in state
-	When User clicks the Switch to Evergreen link
-	Then Evergreen Dashboards page should be displayed to the user
 	When User clicks "Devices" on the left-hand menu
 	Then "Devices" list should be displayed to the user
 	And User enters SearchCriteria into the agGrid Search Box and the correct NumberOfRows are returned
@@ -60,10 +56,6 @@ Scenario: Evergreen Jnr_Devices List_agGrid Search_Does Not Trigger_Update List
 
 @Evergreen @Search @Devices
 Scenario: Evergreen Jnr_Devices List_Clearing agGrid Search_returns the full data set
-	When User provides the Login and Password and clicks on the login button
-	Then Dashworks homepage is displayed to the user in a logged in state
-	When User clicks the Switch to Evergreen link
-	Then Evergreen Dashboards page should be displayed to the user
 	When User clicks "Devices" on the left-hand menu
 	Then "Devices" list should be displayed to the user
 	And User enters SearchCriteria into the agGrid Search Box and the correct NumberOfRows are returned
@@ -77,10 +69,6 @@ Scenario: Evergreen Jnr_Devices List_Clearing agGrid Search_returns the full dat
 
 @Evergreen @Search @Devices
 Scenario: Evergreen Jnr_Devices List_agGrid Search_No Devices Found
-	When User provides the Login and Password and clicks on the login button
-	Then Dashworks homepage is displayed to the user in a logged in state
-	When User clicks the Switch to Evergreen link
-	Then Evergreen Dashboards page should be displayed to the user
 	When User clicks "Devices" on the left-hand menu
 	Then "Devices" list should be displayed to the user
 	When User clicks the Columns button
@@ -110,10 +98,6 @@ Scenario: Evergreen Jnr_Devices List_agGrid Search_No Devices Found
 
 @Evergreen @Search @Devices
 Scenario: Evergreen Jnr_Devices Search withing all rows
-	When User provides the Login and Password and clicks on the login button
-	Then Dashworks homepage is displayed to the user in a logged in state
-	When User clicks the Switch to Evergreen link
-	Then Evergreen Dashboards page should be displayed to the user
 	When User clicks "Devices" on the left-hand menu
 	Then "Devices" list should be displayed to the user
 	When User clicks the Actions button
