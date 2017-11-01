@@ -12,7 +12,7 @@ Background: Pre-Conditions
 	When User clicks the Switch to Evergreen link
 	Then Evergreen Dashboards page should be displayed to the user
 
-@Evergreen @TableActions @Applications
+@Evergreen @TableActions @Applications @DAS-10734
 Scenario: Evergreen Jnr_Applications add custom column action
 	When User clicks "Applications" on the left-hand menu
 	Then "Applications" list should be displayed to the user

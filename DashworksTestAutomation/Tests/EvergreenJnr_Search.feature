@@ -96,7 +96,7 @@ Scenario: Evergreen Jnr_Devices List_agGrid Search_No Devices Found
 	Then Signed Out page is displayed to the user
 	And User is logged out
 
-@Evergreen @Search @Devices
+@Evergreen @Search @Devices @DAS-10772
 Scenario: Evergreen Jnr_Devices Search withing all rows
 	When User clicks "Devices" on the left-hand menu
 	Then "Devices" list should be displayed to the user
@@ -114,7 +114,7 @@ Scenario: Evergreen Jnr_Devices Search withing all rows
 	Then Signed Out page is displayed to the user
 	And User is logged out
 
-@Evergreen @Search @Users
+@Evergreen @Search @Users @DAS-10769
 Scenario: Evergreen Jnr_Devices Select All selectbox status check after search
 	When User clicks "Users" on the left-hand menu
 	Then "Users" list should be displayed to the user
@@ -138,7 +138,7 @@ Scenario: Evergreen Jnr_Devices Select All selectbox status check after search
 	Then Signed Out page is displayed to the user
 	And User is logged out
 	
-@Evergreen @Search @Devices @Applications @Users @Mailboxes
+@Evergreen @Search @Devices @Applications @Users @Mailboxes @DAS-10580
 Scenario: Evergreen Jnr_Main check search filter and table content during navigation between pages
 	When User clicks "Devices" on the left-hand menu
 	Then "Devices" list should be displayed to the user
