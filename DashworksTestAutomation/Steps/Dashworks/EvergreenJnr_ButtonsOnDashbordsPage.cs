@@ -31,5 +31,13 @@ namespace DashworksTestAutomation.Steps.Dashworks
             menu.ColumnButton.Click();
             Logger.Write("Column button was clicked");
         }
+
+        [When(@"User clicks the Filters button")]
+        public void WhenUserClicksTheFiltersButton()
+        {
+            var menu = _driver.NowAt<BaseDashbordPage>();
+            menu.FilterButton.Click();
+            Logger.Write("Filters button was clicked");
+        }
     }
 }

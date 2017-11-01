@@ -42,14 +42,16 @@ namespace DashworksTestAutomation.Steps.Dashworks
         public void ThenSelectAllSelectboxIsChecked()
         {
             var dashboardPage = _driver.NowAt<BaseDashbordPage>();
-            Assert.IsTrue(dashboardPage.SelectAllChecboxState, "Select All checkbox is unchecked");
+            _driver.WaitToBeSelected(dashboardPage.SelectAllCheckbox, true);
+            Assert.IsTrue(dashboardPage.SelectAllCheckboxState, "Select All checkbox is unchecked");
         }
 
         [Then(@"Select All selectbox is unchecked")]
         public void ThenSelectAllSelectboxIsUnchecked()
         {
             var dashboardPage = _driver.NowAt<BaseDashbordPage>();
-            Assert.IsFalse(dashboardPage.SelectAllChecboxState, "Select All checkbox is checked");
+            _driver.WaitToBeSelected(dashboardPage.SelectAllCheckbox, false);
+            Assert.IsFalse(dashboardPage.SelectAllCheckboxState, "Select All checkbox is checked");
         }
 
         [Then(@"""(.*)"" selected rows are displayed in the Actions panel")]

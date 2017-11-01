@@ -46,7 +46,8 @@ namespace DashworksTestAutomation.Extensions
             }
         }
 
-        public static IWebElement UntilElementHasChilds(this IWebElement element, RemoteWebDriver driver, By locator, TimeSpan timeOut, int childsCount = 4)
+        public static IWebElement UntilElementHasChilds(this IWebElement element, RemoteWebDriver driver, By locator,
+            TimeSpan timeOut, int childsCount = 4)
         {
             new WebDriverWait(driver, timeOut).Until(d => element.FindElements(locator).Count >= childsCount);
 

@@ -74,5 +74,14 @@ namespace DashworksTestAutomation.Steps.Dashworks
             StringAssert.AreEqualIgnoringCase($"{numberOfRows} rows", listPageElement.ResultsOnPageCount.Text);
             Logger.Write($"Evergreen agGrid Search returned the correct number of rows for: {numberOfRows}  search");
         }
+
+        [Then(@"Search field is empty")]
+        public void ThenSearchFieldIsEmpty()
+        {
+            var listPageElement = _driver.NowAt<BaseDashbordPage>();
+
+            _driver.WaitWhileControlIsNotDisplayed<BaseDashbordPage>(() => listPageElement.ResultsOnPageCount);
+            Assert.IsEmpty(listPageElement.SearchTextbox.GetAttribute("value"), "Search textbox is not empty");
+        }
     }
 }
