@@ -30,7 +30,7 @@ namespace DashworksTestAutomation.Steps.Dashworks
             Logger.Write("Actions Panel panel is visible");
         }
 
-        [When(@"User is diselect all rows")]
+        [When(@"User is deselect all rows")]
         [When(@"User select all rows")]
         public void WhenUserSelectAllRows()
         {
@@ -42,14 +42,22 @@ namespace DashworksTestAutomation.Steps.Dashworks
         public void ThenSelectAllSelectboxIsChecked()
         {
             var dashboardPage = _driver.NowAt<BaseDashbordPage>();
+            Assert.IsTrue(dashboardPage.SelectAllChecboxState, "Select All checkbox is unchecked");
+        }
 
+        [Then(@"Select All selectbox is unchecked")]
+        public void ThenSelectAllSelectboxIsUnchecked()
+        {
+            var dashboardPage = _driver.NowAt<BaseDashbordPage>();
+            Assert.IsFalse(dashboardPage.SelectAllChecboxState, "Select All checkbox is checked");
         }
 
         [Then(@"""(.*)"" selected rows are displayed in the Actions panel")]
         public void ThenSelectedRowsAreDisplayedInTheActionsPanel(string selectedRowsCount)
         {
             var actionsPanel = _driver.NowAt<ActionsElement>();
-            Assert.AreEqual(selectedRowsCount, actionsPanel.GetSelectedRowsCount());
+            Assert.AreEqual(selectedRowsCount, actionsPanel.GetSelectedRowsCount(),
+                $"Number of rows is not {selectedRowsCount}");
         }
 
         [Then(@"The number of rows selected matches the number of rows of the main object list")]
