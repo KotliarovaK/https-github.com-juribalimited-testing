@@ -12,7 +12,7 @@ Background: Pre-Conditions
 	When User clicks the Switch to Evergreen link
 	Then Evergreen Dashboards page should be displayed to the user
 
-@Evergreen @QueryStrings
+@Evergreen @QueryStrings @DAS-10598
 Scenario: Evergreen Jnr_QueryString_SortByKeys
 Runs Evergreen URL query strings which include being sorted by object key columns.
 	When Evergreen QueryStringURL is entered for Simple QueryType
@@ -40,7 +40,7 @@ Runs Evergreen URL query strings for the 4 default all lists.
 	Then Signed Out page is displayed to the user
 	And User is logged out
 
-@Evergreen @QueryStrings
+@Evergreen @QueryStrings @DAS-10753 @DAS-10615 @DAS-10475
 Scenario: Evergreen Jnr_QueryString_DateCombo_And_Apostrophe
 Runs Evergreen URL query strings which include a date field combos query and filters using apostrophes.
 	When Evergreen QueryStringURL is entered for Simple QueryType
@@ -54,7 +54,7 @@ Runs Evergreen URL query strings which include a date field combos query and fil
 	Then Signed Out page is displayed to the user
 	And User is logged out
 
-@Evergreen @QueryStrings
+@Evergreen @QueryStrings @DAS-10782
 Scenario: Evergreen Jnr_QueryString_Complex
 Runs Evergreen URL query strings that are complex, with lots of columns and advanced filters applied
 	When Evergreen QueryStringURL is entered for Complex QueryType

@@ -13,7 +13,7 @@ Background: Pre-Conditions
 	Then Evergreen Dashboards page should be displayed to the user
 
 @Evergreen @TableActions @Applications @DAS-10734
-Scenario: Evergreen Jnr_Applications add custom column action
+Scenario: Evergreen Jnr_ApplicationsList_Add Custom Column Action
 	When User clicks "Applications" on the left-hand menu
 	Then "Applications" list should be displayed to the user
 	When User clicks the Filters button
@@ -34,7 +34,7 @@ Scenario: Evergreen Jnr_Applications add custom column action
 	And User is logged out
 
 @Evergreen @TableActions @Users @DAS-10612
-Scenario: Evergreen Jnr_Users check sort by Date functionality
+Scenario: Evergreen Jnr_AllLists_Check Sort By Date Functionality
 	When User clicks "Devices" on the left-hand menu
 	Then "Devices" list should be displayed to the user
 	When User clicks the Columns button
