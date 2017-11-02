@@ -92,6 +92,8 @@ Scenario: Evergreen Jnr_Devices List_agGrid Search_No Devices Found
 	| Windows 2001      |
 	| 192.168.7         |
 	| demo.juriba.co.uk |
+	| 67#               |
+	| #12               |
 	When User clicks the Logout button
 	Then Signed Out page is displayed to the user
 	And User is logged out

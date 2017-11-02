@@ -277,6 +277,10 @@ namespace DashworksTestAutomation.Tests
                         "192.168.7"});
             table8.AddRow(new string[] {
                         "demo.juriba.co.uk"});
+            table8.AddRow(new string[] {
+                        "67#"});
+            table8.AddRow(new string[] {
+                        "#12"});
             testRunner.And("User enters invalid SearchCriteria into the agGrid Search Box and \"No devices fou" +
                     "nd\" message is displayed", ((string)(null)), table8, "And ");
             testRunner.When("User clicks the Logout button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
