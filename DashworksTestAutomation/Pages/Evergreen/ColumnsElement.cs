@@ -1,8 +1,10 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using DashworksTestAutomation.Base;
 using DashworksTestAutomation.Extensions;
 using OpenQA.Selenium;
 using OpenQA.Selenium.Support.PageObjects;
+using TechTalk.SpecFlow;
 
 namespace DashworksTestAutomation.Pages.Evergreen
 {
@@ -22,19 +24,28 @@ namespace DashworksTestAutomation.Pages.Evergreen
             Driver.WaitForDataLoading();
             return new List<By>
             {
-                SelectorFor(this, p=> p.ColumnsPanel),
-                SelectorFor(this, p=> p.SearchTextbox),
-                SelectorFor(this, p=> p.MinimizeGroupButton)
+                SelectorFor(this, p => p.ColumnsPanel),
+                SelectorFor(this, p => p.SearchTextbox),
+                SelectorFor(this, p => p.MinimizeGroupButton)
             };
         }
 
         public void AddColumn(string columnName)
         {
             SearchTextbox.SendKeys(columnName);
-            var selector = By.XPath($".//div[@class='columns-panel']//span[text()='{columnName}']");
-
-            Driver.WaitWhileControlIsNotDisplayed(selector);
-            Driver.FindElement(selector).Click();
+            var selector = String.Empty;
+            if (columnName.Contains("'"))
+            {
+                var strings = columnName.Split('\'');
+                selector =
+                    $".//div[@class='columns-panel']//span[contains(text(),'{strings[0]}')][contains(text(), '{strings[1]}')]";
+            }
+            else
+            {
+                selector = $".//div[@class='columns-panel']//span[text()='{columnName}']";
+            }
+            Driver.WaitWhileControlIsNotDisplayed(By.XPath(selector));
+            Driver.FindElement(By.XPath(selector)).Click();
 
             Driver.WaitForDataLoading();
         }
