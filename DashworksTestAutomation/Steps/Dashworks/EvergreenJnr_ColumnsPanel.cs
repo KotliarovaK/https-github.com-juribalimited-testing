@@ -124,5 +124,18 @@ namespace DashworksTestAutomation.Steps.Dashworks
                 }
             }
         }
+
+        [Then(@"Content is present in the newly added column")]
+        public void ThenContentIsPresentInTheNewlyAddedColumn(Table table)
+        {
+            var listpageMenu = _driver.NowAt<BaseDashbordPage>();
+
+            foreach (var row in table.Rows)
+            {
+                var content = listpageMenu.GetColumnContent(row["ColumnName"]);
+                //Check that at least 10 cells has some content
+                Assert.IsTrue(content.Select(string.IsNullOrEmpty).Count() > 10);
+            }
+        }
     }
 }
