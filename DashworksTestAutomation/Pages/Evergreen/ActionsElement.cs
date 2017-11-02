@@ -1,4 +1,6 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
 using DashworksTestAutomation.Base;
 using DashworksTestAutomation.Extensions;
 using OpenQA.Selenium;
@@ -10,6 +12,8 @@ namespace DashworksTestAutomation.Pages.Evergreen
     {
         [FindsBy(How = How.XPath, Using = ".//div[@class='actions-container']")]
         public IWebElement ActionsPanel { get; set; }
+
+        private const string RowsSelectedCountSelctor = ".//div[@class='actions-container-row-select']";
 
         [FindsBy(How = How.XPath, Using = ".//input[@placeholder='List name']")]
         public IWebElement ListNameTextbox { get; set; }
@@ -27,6 +31,11 @@ namespace DashworksTestAutomation.Pages.Evergreen
             {
                 SelectorFor(this, p => p.ActionsPanel),
             };
+        }
+
+        public string GetSelectedRowsCount()
+        {
+            return Driver.FindElement(By.XPath(RowsSelectedCountSelctor)).Text.Split(' ').First();
         }
     }
 }

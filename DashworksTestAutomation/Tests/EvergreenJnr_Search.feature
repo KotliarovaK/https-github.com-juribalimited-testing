@@ -7,13 +7,13 @@ Background: Pre-Conditions
 	And Login link is visible
 	When User clicks on the Login link
 	Then Login Page is displayed to the user
-
-@Evergreen @Search @Devices
-Scenario: Evergreen Jnr_Devices List_agGrid Search Tests
 	When User provides the Login and Password and clicks on the login button
 	Then Dashworks homepage is displayed to the user in a logged in state
 	When User clicks the Switch to Evergreen link
 	Then Evergreen Dashboards page should be displayed to the user
+
+@Evergreen @Search @Devices
+Scenario: Evergreen Jnr_Devices List_agGrid	_Search Tests
 	When User clicks "Devices" on the left-hand menu
 	Then "Devices" list should be displayed to the user
 	When User clicks the Columns button
@@ -42,12 +42,8 @@ Scenario: Evergreen Jnr_Devices List_agGrid Search Tests
 	Then Signed Out page is displayed to the user
 	And User is logged out
 
-@Evergreen @Search @Devices
-Scenario: Evergreen Jnr_Devices List_agGrid Search_Does Not Trigger_Update List
-	When User provides the Login and Password and clicks on the login button
-	Then Dashworks homepage is displayed to the user in a logged in state
-	When User clicks the Switch to Evergreen link
-	Then Evergreen Dashboards page should be displayed to the user
+@Evergreen @Search @Devices @DAS-10998
+Scenario: Evergreen Jnr_Devices List_agGrid Search_Does Not Trigger_New Custom List
 	When User clicks "Devices" on the left-hand menu
 	Then "Devices" list should be displayed to the user
 	And User enters SearchCriteria into the agGrid Search Box and the correct NumberOfRows are returned
@@ -59,11 +55,7 @@ Scenario: Evergreen Jnr_Devices List_agGrid Search_Does Not Trigger_Update List
 	And User is logged out
 
 @Evergreen @Search @Devices
-Scenario: Evergreen Jnr_Devices List_Clearing agGrid Search_returns the full data set
-	When User provides the Login and Password and clicks on the login button
-	Then Dashworks homepage is displayed to the user in a logged in state
-	When User clicks the Switch to Evergreen link
-	Then Evergreen Dashboards page should be displayed to the user
+Scenario: Evergreen Jnr_Devices List_agGrid_Clearing search returns the full data set
 	When User clicks "Devices" on the left-hand menu
 	Then "Devices" list should be displayed to the user
 	And User enters SearchCriteria into the agGrid Search Box and the correct NumberOfRows are returned
@@ -77,10 +69,6 @@ Scenario: Evergreen Jnr_Devices List_Clearing agGrid Search_returns the full dat
 
 @Evergreen @Search @Devices
 Scenario: Evergreen Jnr_Devices List_agGrid Search_No Devices Found
-	When User provides the Login and Password and clicks on the login button
-	Then Dashworks homepage is displayed to the user in a logged in state
-	When User clicks the Switch to Evergreen link
-	Then Evergreen Dashboards page should be displayed to the user
 	When User clicks "Devices" on the left-hand menu
 	Then "Devices" list should be displayed to the user
 	When User clicks the Columns button
@@ -104,16 +92,14 @@ Scenario: Evergreen Jnr_Devices List_agGrid Search_No Devices Found
 	| Windows 2001      |
 	| 192.168.7         |
 	| demo.juriba.co.uk |
+	| 67#               |
+	| #12               |
 	When User clicks the Logout button
 	Then Signed Out page is displayed to the user
 	And User is logged out
 
-@Evergreen @Search @Devices
-Scenario: Evergreen Jnr_Devices Search withing all rows
-	When User provides the Login and Password and clicks on the login button
-	Then Dashworks homepage is displayed to the user in a logged in state
-	When User clicks the Switch to Evergreen link
-	Then Evergreen Dashboards page should be displayed to the user
+@Evergreen @Search @Devices @DAS-10772
+Scenario: Evergreen Jnr_DevicesList_Search Within All Rows
 	When User clicks "Devices" on the left-hand menu
 	Then "Devices" list should be displayed to the user
 	When User clicks the Actions button
@@ -129,3 +115,60 @@ Scenario: Evergreen Jnr_Devices Search withing all rows
 	When User clicks the Logout button
 	Then Signed Out page is displayed to the user
 	And User is logged out
+
+@Evergreen @Search @Users @DAS-10769
+Scenario: Evergreen Jnr_DevicesList_Select All Checkbox Status Check After Search
+	When User clicks "Users" on the left-hand menu
+	Then "Users" list should be displayed to the user
+	When User clicks the Actions button
+	Then Actions panel is displayed to the user
+	When User select all rows
+	Then The number of rows selected matches the number of rows of the main object list
+	Then User enters SearchCriteria into the agGrid Search Box and the correct NumberOfRows are returned
+	| SearchCriteria | NumberOfRows |
+	| alain          | 42           |
+	Then Select All selectbox is checked
+	Then "42" rows are displayed in the agGrid
+	Then "38271" selected rows are displayed in the Actions panel
+	When User is deselect all rows
+	And User select all rows
+	Then The number of rows selected matches the number of rows of the main object list
+	And Clearing the agGrid Search Box
+	Then Select All selectbox is checked
+	Then "42" selected rows are displayed in the Actions panel
+	When User clicks the Logout button
+	Then Signed Out page is displayed to the user
+	And User is logged out
+	
+@Evergreen @Search @Devices @Applications @Users @Mailboxes @DAS-10580 @DAS-10667 @DAS-10624
+Scenario: Evergreen Jnr_AllLists_Check search filter and table content during navigation between pages
+	When User clicks "Devices" on the left-hand menu
+	Then "Devices" list should be displayed to the user
+	Then User enters SearchCriteria into the agGrid Search Box and the correct NumberOfRows are returned
+	| SearchCriteria | NumberOfRows |
+	| Smith          | 11           |
+	When User clicks "Users" on the left-hand menu
+	Then "Users" list should be displayed to the user
+	Then "38,271" rows are displayed in the agGrid
+	Then Search field is empty
+	Then User enters SearchCriteria into the agGrid Search Box and the correct NumberOfRows are returned
+	| SearchCriteria | NumberOfRows |
+	| Smith          | 58           |
+	When User clicks "Applications" on the left-hand menu
+	Then "Applications" list should be displayed to the user
+	Then "3,305" rows are displayed in the agGrid
+	Then Search field is empty
+	Then User enters SearchCriteria into the agGrid Search Box and the correct NumberOfRows are returned
+	| SearchCriteria | NumberOfRows |
+	| Python          | 7           |
+	When User clicks "Mailboxes" on the left-hand menu
+	Then "Mailboxes" list should be displayed to the user
+	Then "13,779" rows are displayed in the agGrid
+	Then Search field is empty
+	Then User enters SearchCriteria into the agGrid Search Box and the correct NumberOfRows are returned
+	| SearchCriteria | NumberOfRows |
+	| Smith          | 44           |
+	When User clicks "Devices" on the left-hand menu
+	Then "Devices" list should be displayed to the user
+	Then "17,271" rows are displayed in the agGrid
+	Then Search field is empty
