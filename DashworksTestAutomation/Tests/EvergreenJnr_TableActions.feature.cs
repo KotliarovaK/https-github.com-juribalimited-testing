@@ -298,7 +298,7 @@ namespace DashworksTestAutomation.Tests
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("FeatureTitle", "EvergreenJnr_TableActions")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("Evergreen")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("TableActions")]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("Users")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("Devices")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("DAS-10966")]
         public virtual void EvergreenJnr_UsersCheckThat500ErrorPageIsNotDisplayedAfterRemovengColumn()
         {
@@ -306,7 +306,7 @@ namespace DashworksTestAutomation.Tests
                     "umn", new string[] {
                         "Evergreen",
                         "TableActions",
-                        "Users",
+                        "Devices",
                         "DAS-10966"});
             this.ScenarioSetup(scenarioInfo);
             this.FeatureBackground();
@@ -374,6 +374,7 @@ namespace DashworksTestAutomation.Tests
                         "evergreen/#/devices?$listid=3&$select=hostname,chassisCategory,oSCategory,ownerDi" +
                             "splayName,buildDate"});
             testRunner.When("User is removed column by URL", ((string)(null)), table22, "When ");
+            testRunner.When("User is removed custom list with \"TestList\" name", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
             testRunner.When("User clicks the Logout button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
             testRunner.Then("Signed Out page is displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
             testRunner.And("User is logged out", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");

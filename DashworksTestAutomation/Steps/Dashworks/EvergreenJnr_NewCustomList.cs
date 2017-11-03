@@ -32,9 +32,9 @@ namespace DashworksTestAutomation.Steps.Dashworks
         public void WhenUserCreateCustomListWithName(string listName)
         {
             var listElement = _driver.NowAt<CustomListElemnt>();
-            _driver.WaitWhileControlIsNotDisplayed<CustomListElemnt>(() => listElement.CreateCustomListElement);
-            listElement.CreateCustomListElement.Click();
-            var t = _driver.PageSource;
+
+            _driver.WaitWhileControlIsNotDisplayed<CustomListElemnt>(() => listElement.CreateNewListButton);
+            listElement.CreateNewListButton.Click();
             _driver.WaitWhileControlIsNotDisplayed<CustomListElemnt>(() => listElement.SaveButton);
             listElement.ListNameTextbox.SendKeys(listName);
             listElement.SaveButton.Click();
@@ -46,6 +46,19 @@ namespace DashworksTestAutomation.Steps.Dashworks
             var page = _driver.NowAt<BaseDashbordPage>();
 
             Assert.AreEqual(listName, page.ActiveCustomListName());
+        }
+
+        [When(@"User is removed custom list with ""(.*)"" name")]
+        public void WhenUserIsRemovedCustomListWithName(string listName)
+        {
+            var listElement = _driver.NowAt<CustomListElemnt>();
+
+            _driver.MouseHover(listElement.GetSettingsButtonByListName(listName));
+            listElement.GetSettingsButtonByListName(listName).Click();
+            _driver.WaitWhileControlIsNotDisplayed<CustomListElemnt>(() => listElement.DeleteButton);
+            listElement.DeleteButton.Click();
+            _driver.WaitWhileControlIsNotDisplayed<CustomListElemnt>(() => listElement.DeleteConfirmationMessage);
+            listElement.ConfirmDeleteButton.Click();
         }
     }
 }

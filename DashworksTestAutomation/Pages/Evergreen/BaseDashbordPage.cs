@@ -112,6 +112,7 @@ namespace DashworksTestAutomation.Pages.Evergreen
 
         public string ActiveCustomListName()
         {
+            Driver.WaitWhileControlIsNotDisplayed(By.XPath(".//div[@class='active-list-wrapper']//span"));
             return Driver.FindElement(By.XPath(".//div[@class='active-list-wrapper']//span")).Text;
         }
 
