@@ -189,6 +189,11 @@
     <Compile Include="Steps\Dashworks\EvergreenJnr_NewCustomList.cs" />
     <Compile Include="Steps\Dashworks\EvergreenJnr_QueryStrings.cs" />
     <Compile Include="Steps\Logout.cs" />
+    <Compile Include="Tests\EvergreenJnr_AddColumnToDevices.feature.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>EvergreenJnr_AddColumnToDevices.feature</DependentUpon>
+    </Compile>
     <Compile Include="Tests\EvergreenJnr_QueryStrings.feature.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -216,6 +221,10 @@
     </None>
     <None Include="packages.config">
       <SubType>Designer</SubType>
+    </None>
+    <None Include="Tests\EvergreenJnr_AddColumnToDevices.feature">
+      <Generator>SpecFlowSingleFileGenerator</Generator>
+      <LastGenOutput>EvergreenJnr_AddColumnToDevices.feature.cs</LastGenOutput>
     </None>
     <None Include="Tests\EvergreenJnr_QueryStrings.feature">
       <Generator>SpecFlowSingleFileGenerator</Generator>
