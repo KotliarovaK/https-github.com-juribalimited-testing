@@ -33,8 +33,8 @@ Scenario: Evergreen Jnr_ApplicationsList_Add Custom Column Action
 	Then Signed Out page is displayed to the user
 	And User is logged out
 
-@Evergreen @TableActions @Users @DAS-10612
-Scenario: Evergreen Jnr_AllLists_Check Sort By Date Functionality
+@Evergreen @TableActions @Devices @DAS-10612
+Scenario: Evergreen Jnr_DevicesList_Check Sort By Date Functionality
 	When User clicks "Devices" on the left-hand menu
 	Then "Devices" list should be displayed to the user
 	When User clicks the Columns button
@@ -58,6 +58,12 @@ Scenario: Evergreen Jnr_AllLists_Check Sort By Date Functionality
 	Then data in table is sorted by 'Windows7Mi: Date & Time Task' column in descenting order
 	When User click on 'Windows7Mi: Date & Time Task' column header
 	Then data in table is sorted by 'Windows7Mi: Date & Time Task' column in ascending order
+	When User clicks the Logout button
+	Then Signed Out page is displayed to the user
+	And User is logged out
+
+@Evergreen @TableActions @Users @DAS-10612
+Scenario: Evergreen Jnr_UsersList_Check Sort By Date Functionality
 	When User clicks "Users" on the left-hand menu
 	Then "Users" list should be displayed to the user
 	When User clicks the Columns button
@@ -81,6 +87,12 @@ Scenario: Evergreen Jnr_AllLists_Check Sort By Date Functionality
 	Then data in table is sorted by 'MigrationP: Migrated Date' column in descenting order
 	When User click on 'MigrationP: Migrated Date' column header
 	Then data in table is sorted by 'MigrationP: Migrated Date' column in ascending order
+	When User clicks the Logout button
+	Then Signed Out page is displayed to the user
+	And User is logged out
+	
+@Evergreen @TableActions @Applications @DAS-10612
+Scenario: Evergreen Jnr_ApplicationsList_Check Sort By Date Functionality
 	When User clicks "Applications" on the left-hand menu
 	Then "Applications" list should be displayed to the user
 	When User clicks the Columns button
@@ -98,6 +110,12 @@ Scenario: Evergreen Jnr_AllLists_Check Sort By Date Functionality
 	Then data in table is sorted by 'Barry'sUse: Package Delivery Date' column in descenting order
 	When User click on 'Barry'sUse: Package Delivery Date' column header
 	Then data in table is sorted by 'Barry'sUse: Package Delivery Date' column in ascending order
+	When User clicks the Logout button
+	Then Signed Out page is displayed to the user
+	And User is logged out
+	
+@Evergreen @TableActions @Mailboxes @DAS-10612
+Scenario: Evergreen Jnr_MailboxesList_Check Sort By Date Functionality
 	When User clicks "Mailboxes" on the left-hand menu
 	Then "Mailboxes" list should be displayed to the user
 	When User clicks the Columns button
@@ -126,7 +144,7 @@ Scenario: Evergreen Jnr_AllLists_Check Sort By Date Functionality
 	And User is logged out
 
 @Evergreen @TableActions @Devices @DAS-10966
-Scenario: Evergreen Jnr_Users check that 500 error page is not displayed after removeng column
+Scenario: Evergreen Jnr_DevicesList check that 500 error page is not displayed after removing column in default list
 	When User clicks "Devices" on the left-hand menu
 	Then "Devices" list should be displayed to the user
 	When User clicks the Columns button
@@ -146,6 +164,14 @@ Scenario: Evergreen Jnr_Users check that 500 error page is not displayed after r
 	When User is removed column by URL
 	| ColumnName                   | Url                                                                                                                         |
 	| Windows7Mi: Date & Time Task | evergreen/#/devices?$select=hostname,chassisCategory,oSCategory,ownerDisplayName&$orderby=project_task_1_9950_2_Task%20desc |
+	Then "Devices" list should be displayed to the user
+	When User clicks the Logout button
+	Then Signed Out page is displayed to the user
+	And User is logged out
+
+@Evergreen @TableActions @Devices @DAS-10966
+Scenario: Evergreen Jnr_DevicesList check that 500 error page is not displayed after removing column in custom list
+	When User clicks "Devices" on the left-hand menu
 	Then "Devices" list should be displayed to the user
 	Then Columns panel is displayed to the user
 	When ColumnName is entered into the search box and the selection is clicked
