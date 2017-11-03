@@ -124,3 +124,49 @@ Scenario: Evergreen Jnr_Users check sort by Date functionality
 	When User clicks the Logout button
 	Then Signed Out page is displayed to the user
 	And User is logged out
+
+@Evergreen @TableActions @Users @DAS-10966
+Scenario: Evergreen Jnr_Users check that 500 error page is not displayed after removeng column
+	When User clicks "Devices" on the left-hand menu
+	Then "Devices" list should be displayed to the user
+	When User clicks the Columns button
+	Then Columns panel is displayed to the user
+	When ColumnName is entered into the search box and the selection is clicked
+	| ColumnName                   |
+	| Boot Up Date                 |
+	| Windows7Mi: Date & Time Task |
+	Then ColumnName is added to the list
+	| ColumnName                   |
+	| Boot Up Date                 |
+	| Windows7Mi: Date & Time Task |
+	When User clicks the Columns button
+	Then Columns panel is displayed to the user
+	When User is removed "Boot Up Date" column by Column panel
+	Then "Devices" list should be displayed to the user
+	When User is removed column by URL
+	| ColumnName                   | Url                                                                                                                                    |
+	| Windows7Mi: Date & Time Task | evergreen/#/devices?$select=hostname,chassisCategory,oSCategory,ownerDisplayName&$orderby=project_task_1_9950_2_Task%20desc |
+	Then "Devices" list should be displayed to the user
+	Then Columns panel is displayed to the user
+	When ColumnName is entered into the search box and the selection is clicked
+	| ColumnName |
+	| Build Date |
+	Then ColumnName is added to the list
+	| ColumnName |
+	| Build Date |
+	When User create custom list with "TestList" name
+	Then "TestList" is displayed to user
+	When User clicks the Columns button
+	Then Columns panel is displayed to the user
+	When ColumnName is entered into the search box and the selection is clicked
+	| ColumnName    |
+	| Boot Up Date |
+	Then ColumnName is added to the list
+	| ColumnName   |
+	| Boot Up Date |
+	When User is removed column by URL
+	| ColumnName   | Url                                                                                                  |
+	| Boot Up Date | evergreen/#/devices?$listid=3&$select=hostname,chassisCategory,oSCategory,ownerDisplayName,buildDate |
+	When User clicks the Logout button
+	Then Signed Out page is displayed to the user
+	And User is logged out

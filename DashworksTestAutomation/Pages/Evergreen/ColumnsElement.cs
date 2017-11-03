@@ -26,7 +26,6 @@ namespace DashworksTestAutomation.Pages.Evergreen
             {
                 SelectorFor(this, p => p.ColumnsPanel),
                 SelectorFor(this, p => p.SearchTextbox),
-                SelectorFor(this, p => p.MinimizeGroupButton)
             };
         }
 
@@ -48,6 +47,17 @@ namespace DashworksTestAutomation.Pages.Evergreen
             Driver.FindElement(By.XPath(selector)).Click();
 
             Driver.WaitForDataLoading();
+        }
+
+        public IWebElement GetDeleteColumnButton(string columnName)
+        {
+            return Driver.FindElement(By.XPath(
+                $".//div[@class='columns-panel']//span[text()='{columnName}']/ancestor::div[@class='sub-categories-item selected-column']//button"));
+        }
+
+        public void ExpandFilterSectionsByName(string sectionsName)
+        {
+            Driver.FindElement(By.XPath($".//div[contains(@class, 'filter-category-label')][text()='{sectionsName}']")).Click();
         }
     }
 }

@@ -4,11 +4,14 @@ using System.ComponentModel;
 using System.Globalization;
 using System.Linq;
 using DashworksTestAutomation.Extensions;
+using DashworksTestAutomation.Pages;
 using DashworksTestAutomation.Pages.Evergreen;
 using DashworksTestAutomation.Utils;
 using NUnit.Framework;
 using OpenQA.Selenium.Remote;
 using TechTalk.SpecFlow;
+using System.Reflection.Emit;
+using DashworksTestAutomation.DTO.RuntimeVariables;
 
 namespace DashworksTestAutomation.Steps.Dashworks
 {
@@ -16,10 +19,12 @@ namespace DashworksTestAutomation.Steps.Dashworks
     class EvergreenJnr_ColumnsPanel : SpecFlowContext
     {
         private readonly RemoteWebDriver _driver;
+        private readonly WebsiteUrl _url;
 
-        public EvergreenJnr_ColumnsPanel(RemoteWebDriver driver)
+        public EvergreenJnr_ColumnsPanel(RemoteWebDriver driver, WebsiteUrl url)
         {
             _driver = driver;
+            _url = url;
         }
 
         [Then(@"Columns panel is displayed to the user")]
@@ -121,6 +126,31 @@ namespace DashworksTestAutomation.Steps.Dashworks
                 {
                     Assert.AreEqual(unsortedList.OrderByDescending(x => x.Key).Select(x => x.Value).ToArray()[i],
                         expectedList[i]);
+                }
+            }
+        }
+
+        [When(@"User is removed ""(.*)"" column by Column panel")]
+        public void WhenUserIsRemovedColumnByColumnPanel(string columnName)
+        {
+            var columnElement = _driver.NowAt<ColumnsElement>();
+            columnElement.ExpandFilterSectionsByName("Selected Columns");
+            columnElement.GetDeleteColumnButton(columnName).Click();
+        }
+
+        [When(@"User is removed column by URL")]
+        public void WhenUserIsRemovedColumnByURL(Table table)
+        {
+            foreach (var row in table.Rows)
+            {
+                var combinedURL = "http://automation.corp.juriba.com/" + row["Url"];
+                _driver.NagigateToURL(combinedURL);
+
+                var page = _driver.NowAt<EvergreenDashboardsPage>();
+
+                if (page.StatusCodeLabel.Displayed())
+                {
+                    throw new Exception($"500 error was returned for: {row["ColumnName"]} column");
                 }
             }
         }
