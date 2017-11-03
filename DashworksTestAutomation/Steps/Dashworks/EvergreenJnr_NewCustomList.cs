@@ -22,9 +22,43 @@ namespace DashworksTestAutomation.Steps.Dashworks
         {
             var page = _driver.NowAt<BaseDashbordPage>();
 
-            Assert.IsFalse(page.SaveCustomListButton.Displayed(), "Save Custom list is displayed when the user just performs an agGrid search");
+            Assert.IsFalse(page.SaveCustomListButton.Displayed(),
+                "Save Custom list is displayed when the user just performs an agGrid search");
 
             Logger.Write("The Save to Custom List Element was NOT displayed");
+        }
+
+        [When(@"User create custom list with ""(.*)"" name")]
+        public void WhenUserCreateCustomListWithName(string listName)
+        {
+            var listElement = _driver.NowAt<CustomListElemnt>();
+
+            _driver.WaitWhileControlIsNotDisplayed<CustomListElemnt>(() => listElement.CreateNewListButton);
+            listElement.CreateNewListButton.Click();
+            _driver.WaitWhileControlIsNotDisplayed<CustomListElemnt>(() => listElement.SaveButton);
+            listElement.ListNameTextbox.SendKeys(listName);
+            listElement.SaveButton.Click();
+        }
+
+        [Then(@"""(.*)"" is displayed to user")]
+        public void ThenIsDisplayedToUser(string listName)
+        {
+            var page = _driver.NowAt<BaseDashbordPage>();
+
+            Assert.AreEqual(listName, page.ActiveCustomListName());
+        }
+
+        [When(@"User is removed custom list with ""(.*)"" name")]
+        public void WhenUserIsRemovedCustomListWithName(string listName)
+        {
+            var listElement = _driver.NowAt<CustomListElemnt>();
+
+            _driver.MouseHover(listElement.GetSettingsButtonByListName(listName));
+            listElement.GetSettingsButtonByListName(listName).Click();
+            _driver.WaitWhileControlIsNotDisplayed<CustomListElemnt>(() => listElement.DeleteButton);
+            listElement.DeleteButton.Click();
+            _driver.WaitWhileControlIsNotDisplayed<CustomListElemnt>(() => listElement.DeleteConfirmationMessage);
+            listElement.ConfirmDeleteButton.Click();
         }
     }
 }

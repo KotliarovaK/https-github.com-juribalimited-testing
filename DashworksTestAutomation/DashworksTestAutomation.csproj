@@ -162,6 +162,7 @@
     <Compile Include="Pages\Evergreen\ApplicationsPage.cs" />
     <Compile Include="Pages\Evergreen\BaseDashbordPage.cs" />
     <Compile Include="Pages\Evergreen\ColumnsElement.cs" />
+    <Compile Include="Pages\Evergreen\CustomListElement.cs" />
     <Compile Include="Pages\Evergreen\DevicesPage.cs" />
     <Compile Include="Pages\Evergreen\FiltersElement.cs" />
     <Compile Include="Pages\Evergreen\HeaderElement.cs" />
