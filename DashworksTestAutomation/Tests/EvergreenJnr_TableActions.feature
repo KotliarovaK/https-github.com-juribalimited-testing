@@ -173,6 +173,7 @@ Scenario: Evergreen Jnr_DevicesList check that 500 error page is not displayed a
 Scenario: Evergreen Jnr_DevicesList check that 500 error page is not displayed after removing column in custom list
 	When User clicks "Devices" on the left-hand menu
 	Then "Devices" list should be displayed to the user
+	When User clicks the Columns button
 	Then Columns panel is displayed to the user
 	When ColumnName is entered into the search box and the selection is clicked
 	| ColumnName |
