@@ -110,6 +110,12 @@ namespace DashworksTestAutomation.Pages.Evergreen
                 .Select(x => x.Text).ToList();
         }
 
+        public string ActiveCustomListName()
+        {
+            Driver.WaitWhileControlIsNotDisplayed(By.XPath(".//div[@class='active-list-wrapper']//span"));
+            return Driver.FindElement(By.XPath(".//div[@class='active-list-wrapper']//span")).Text;
+        }
+
         public bool SelectAllCheckboxState => SelectAllCheckbox.Selected;
     }
 }
