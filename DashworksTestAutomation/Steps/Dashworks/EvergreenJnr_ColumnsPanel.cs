@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel;
+using System.Diagnostics;
 using System.Globalization;
 using System.Linq;
 using DashworksTestAutomation.Extensions;
@@ -62,6 +63,17 @@ namespace DashworksTestAutomation.Steps.Dashworks
             {
                 Assert.IsTrue(listpageMenu.IsColumnPresent(row["ColumnName"]),
                     $"Column '{row["ColumnName"]}' is not exists in the table");
+            }
+        }
+
+        [When(@"I add all Columns from specific category")]
+        public void WhenIAddAllColumnsFromSpecificCategory(Table table)
+        {
+            var columnElement = _driver.NowAt<ColumnsElement>();
+
+            foreach (var row in table.Rows)
+            {
+                columnElement.AddAllColumnsFromCategory(row["CategoryName"]);
             }
         }
 
@@ -166,6 +178,21 @@ namespace DashworksTestAutomation.Steps.Dashworks
                 //Check that at least 10 cells has some content
                 Assert.IsTrue(content.Select(string.IsNullOrEmpty).Count() > 10);
             }
+        }
+
+        [Then(@"""(.*)"" subcategories is displayed for ""(.*)"" category")]
+        public void ThenSubcategoriesIsDisplayedForCategory(int subCategoriesCount, string categoryName)
+        {
+            var columnElement = _driver.NowAt<ColumnsElement>();
+            Assert.AreEqual(subCategoriesCount, columnElement.GetSubcategoriesCountByCategoryName(categoryName));
+        }
+
+        [Then(@"Maximize or Minimize button is not displayed for ""(.*)"" category")]
+        public void ThenMaximizeOrMinimizeButtonIsNotDisplayedForCategory(string categoryName)
+        {
+            var columnElement = _driver.NowAt<ColumnsElement>();
+            Assert.IsFalse(columnElement.MaximizeOrMinimizeButtonByCategory(categoryName).Displayed(),
+                $"Maximize/Minimize button is displayed for empty {categoryName} category");
         }
     }
 }
