@@ -1,10 +1,13 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Linq;
+using System.Threading;
 using DashworksTestAutomation.Base;
 using DashworksTestAutomation.Extensions;
 using OpenQA.Selenium;
 using OpenQA.Selenium.Support.PageObjects;
 using TechTalk.SpecFlow;
+using TechTalk.SpecFlow.Plugins;
 
 namespace DashworksTestAutomation.Pages.Evergreen
 {
@@ -49,6 +52,39 @@ namespace DashworksTestAutomation.Pages.Evergreen
             Driver.WaitForDataLoading();
         }
 
+        private IWebElement FilterCategory(string filterCategoryName)
+        {
+            return Driver.FindElement(By.XPath(
+                $".//div[contains(@class,'filter-category-label')][text()='{filterCategoryName}']/ancestor::div[@class='filter-category']"));
+        }
+
+        public void AddAllColumnsFromCategory(string categoryName)
+        {
+            var filterCategory = FilterCategory(categoryName);
+            filterCategory.FindElement(By.XPath(".//div[contains(@class,'filter-category-title')]")).Click();
+            //Small wait for subcategoris display
+            Thread.Sleep(350);
+            var subCategories = filterCategory.FindElements(By.XPath(".//div[@class='sub-categories']/div"));
+            while (subCategories.Any())
+            {
+                subCategories.First().Click();
+                Driver.WaitForDataLoading();
+                subCategories = filterCategory.FindElements(By.XPath(".//div[@class='sub-categories']/div"));
+            }
+        }
+
+        public int GetSubcategoriesCountByCategoryName(string categoryName)
+        {
+            var filterCategory = FilterCategory(categoryName);
+            return Convert.ToInt32(filterCategory.FindElement(By.XPath("//strong")).Text);
+        }
+
+        public IWebElement MaximizeOrMinimizeButtonByCategory(string categoryName)
+        {
+            var filterCategory = FilterCategory(categoryName);
+            return filterCategory.FindElement(By.XPath("//button"));
+        }
+
         public IWebElement GetDeleteColumnButton(string columnName)
         {
             return Driver.FindElement(By.XPath(
@@ -57,7 +93,8 @@ namespace DashworksTestAutomation.Pages.Evergreen
 
         public void ExpandFilterSectionsByName(string sectionsName)
         {
-            Driver.FindElement(By.XPath($".//div[contains(@class, 'filter-category-label')][text()='{sectionsName}']")).Click();
+            Driver.FindElement(By.XPath($".//div[contains(@class, 'filter-category-label')][text()='{sectionsName}']"))
+                .Click();
         }
     }
 }
