@@ -46,7 +46,7 @@ namespace DashworksTestAutomation.Pages.Evergreen
 
         [FindsBy(How = How.XPath, Using = ".//div[@class='save-action-bar']//span[text()='Save']")]
         public IWebElement SaveCustomListButton { get; set; }
-
+    
         #region TableColumns
 
         [FindsBy(How = How.XPath, Using = ".//div[@colid='lastLogonDate'][@role='gridcell']")]
@@ -117,5 +117,10 @@ namespace DashworksTestAutomation.Pages.Evergreen
         }
 
         public bool SelectAllCheckboxState => SelectAllCheckbox.Selected;
+
+        public IWebElement GetListElementByName(string listName)
+        {
+            return Driver.FindElement(By.XPath($".//div[@id='submenuBlock']//div[text()='{listName}']"));
+        }
     }
 }

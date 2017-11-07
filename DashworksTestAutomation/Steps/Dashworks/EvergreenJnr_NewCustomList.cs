@@ -60,5 +60,12 @@ namespace DashworksTestAutomation.Steps.Dashworks
             _driver.WaitWhileControlIsNotDisplayed<CustomListElemnt>(() => listElement.DeleteConfirmationMessage);
             listElement.ConfirmDeleteButton.Click();
         }
+
+        [When(@"User navigates to the ""(.*)"" list")]
+        public void WhenUserNavigatesToTheList(string listName)
+        {
+            var page = _driver.NowAt<BaseDashbordPage>();
+            page.GetListElementByName(listName).Click();
+        }
     }
 }
