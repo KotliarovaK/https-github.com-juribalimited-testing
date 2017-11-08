@@ -14,8 +14,8 @@ namespace DashworksTestAutomation.Steps.Base
             _driver = driver;
         }
 
-        [Given(@"I have opened google website")]
-        public void GivenIHaveOpenedGoogleWebsite()
+        [Given(@"I have opened Juriba website")]
+        public void GivenIHaveOpenedJuribaWebsite()
         {
             _driver.Navigate().GoToUrl(UrlProvider.Url);
         }

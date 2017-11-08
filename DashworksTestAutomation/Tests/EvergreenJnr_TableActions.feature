@@ -143,8 +143,8 @@ Scenario: Evergreen Jnr_MailboxesList_Check Sort By Date Functionality
 	Then Signed Out page is displayed to the user
 	And User is logged out
 
-@Evergreen @TableActions @Devices @DAS-10966
-Scenario: Evergreen Jnr_DevicesList check that 500 error page is not displayed after removing column in default list
+@Evergreen @TableActions @Devices @DAS-10966 @DAS-10973
+Scenario: Evergreen Jnr_DevicesList check that 500 error page is not displayed after removing sorted column in default list
 	When User clicks "Devices" on the left-hand menu
 	Then "Devices" list should be displayed to the user
 	When User clicks the Columns button
@@ -159,18 +159,25 @@ Scenario: Evergreen Jnr_DevicesList check that 500 error page is not displayed a
 	| Windows7Mi: Date & Time Task |
 	When User clicks the Columns button
 	Then Columns panel is displayed to the user
+	When User click on 'Boot Up Date' column header
 	When User is removed "Boot Up Date" column by Column panel
-	Then "Devices" list should be displayed to the user
+	Then ColumnName is removed from the list
+	| ColumnName   |
+	| Boot Up Date |
+	When User click on 'Windows7Mi: Date & Time Task' column header
 	When User is removed column by URL
-	| ColumnName                   | Url                                                                                                                         |
-	| Windows7Mi: Date & Time Task | evergreen/#/devices?$select=hostname,chassisCategory,oSCategory,ownerDisplayName&$orderby=project_task_1_9950_2_Task%20desc |
+	| ColumnName                   |
+	| Windows7Mi: Date & Time Task |
 	Then "Devices" list should be displayed to the user
+	Then ColumnName is removed from the list
+	| ColumnName                   |
+	| Windows7Mi: Date & Time Task |
 	When User clicks the Logout button
 	Then Signed Out page is displayed to the user
 	And User is logged out
 
-@Evergreen @TableActions @Devices @DAS-10966
-Scenario: Evergreen Jnr_DevicesList check that 500 error page is not displayed after removing column in custom list
+@Evergreen @TableActions @Devices @DAS-10966 @DAS-10973
+Scenario: Evergreen Jnr_DevicesList check that 500 error page is not displayed after removing sorted column in custom list
 	When User clicks "Devices" on the left-hand menu
 	Then "Devices" list should be displayed to the user
 	When User clicks the Columns button
@@ -191,9 +198,208 @@ Scenario: Evergreen Jnr_DevicesList check that 500 error page is not displayed a
 	Then ColumnName is added to the list
 	| ColumnName   |
 	| Boot Up Date |
+	When User click on 'Build Date' column header
+	When User clicks the Columns button
+	Then Columns panel is displayed to the user
+	When User is removed "Build Date" column by Column panel
+	Then "Devices" list should be displayed to the user
+	Then ColumnName is removed from the list
+	| ColumnName |
+	| Build Date |
+	When User click on 'Boot Up Date' column header
 	When User is removed column by URL
-	| ColumnName   | Url                                                                                                  |
-	| Boot Up Date | evergreen/#/devices?$listid=3&$select=hostname,chassisCategory,oSCategory,ownerDisplayName,buildDate |
+	| ColumnName   |
+	| Boot Up Date |
+	Then ColumnName is removed from the list
+	| ColumnName   |
+	| Boot Up Date |
+	When User update current custom list
+	When User is removed custom list with "TestList" name
+	When User clicks the Logout button
+	Then Signed Out page is displayed to the user
+	And User is logged out
+
+@Evergreen @TableActions @Devices @DAS-10966 @DAS-10973
+Scenario: Evergreen Jnr_DevicesList check that 500 error page is not displayed after removing multiple sorted column in default list
+	When User clicks "Devices" on the left-hand menu
+	Then "Devices" list should be displayed to the user
+	When User clicks the Columns button
+	Then Columns panel is displayed to the user
+	When ColumnName is entered into the search box and the selection is clicked
+	| ColumnName                   |
+	| Boot Up Date                 |
+	| Windows7Mi: Date & Time Task |
+	| Build Date                   |
+	Then ColumnName is added to the list
+	| ColumnName                   |
+	| Boot Up Date                 |
+	| Windows7Mi: Date & Time Task |
+	| Build Date                   |
+	When User clicks the Columns button
+	Then Columns panel is displayed to the user
+	When User sort table by multiple columns
+	| ColumnName                   |
+	| Boot Up Date                 |
+	| Windows7Mi: Date & Time Task |
+	| Build Date                   |
+	When User is removed "Boot Up Date" column by Column panel
+	Then "Devices" list should be displayed to the user
+	Then ColumnName is removed from the list
+	| ColumnName   |
+	| Boot Up Date |
+	Then data in table is sorted by 'Windows7Mi: Date & Time Task' column in descenting order
+	When User is removed column by URL
+	| ColumnName                   |
+	| Windows7Mi: Date & Time Task |
+	Then "Devices" list should be displayed to the user
+	Then ColumnName is removed from the list
+	| ColumnName                   |
+	| Windows7Mi: Date & Time Task |
+	Then data in table is sorted by 'Build Date' column in descenting order
+		When User clicks the Logout button
+	Then Signed Out page is displayed to the user
+	And User is logged out
+
+@Evergreen @TableActions @Devices @DAS-10966 @DAS-10973
+Scenario: Evergreen Jnr_DevicesList check that 500 error page is not displayed after removing multiple sorted column in custom list
+	When User clicks "Devices" on the left-hand menu
+	Then "Devices" list should be displayed to the user
+	When User clicks the Columns button
+	Then Columns panel is displayed to the user
+	When ColumnName is entered into the search box and the selection is clicked
+	| ColumnName |
+	| Build Date |
+	Then ColumnName is added to the list
+	| ColumnName |
+	| Build Date |
+	When User create custom list with "TestList" name
+	Then "TestList" is displayed to user
+	When User clicks the Columns button
+	Then Columns panel is displayed to the user
+	When ColumnName is entered into the search box and the selection is clicked
+	| ColumnName    |
+	| Boot Up Date |
+	Then ColumnName is added to the list
+	| ColumnName   |
+	| Boot Up Date |
+	When User sort table by multiple columns
+	| ColumnName                   |
+	| Boot Up Date                 |
+	| Build Date                   |
+	When User clicks the Columns button
+	Then Columns panel is displayed to the user
+	When User is removed "Build Date" column by Column panel
+	Then "Devices" list should be displayed to the user
+	Then ColumnName is removed from the list
+	| ColumnName |
+	| Build Date |
+	Then data in table is sorted by 'Boot Up Date' column in ascending order
+	When User is removed column by URL
+	| ColumnName   |
+	| Boot Up Date |
+	When User update current custom list
+	Then ColumnName is removed from the list
+	| ColumnName   |
+	| Boot Up Date |
+	When User is removed custom list with "TestList" name
+	When User clicks the Logout button
+	Then Signed Out page is displayed to the user
+	And User is logged out
+
+@Evergreen @TableActions @Devices @DAS-10966 @DAS-10973
+Scenario: Evergreen Jnr_DevicesList check that 500 error page is not displayed after removing sorted column in default list throw filters
+	When User clicks "Devices" on the left-hand menu
+	Then "Devices" list should be displayed to the user
+	When User clicks the Filters button
+	Then Filters panel is displayed to the user
+	When user select "Windows7Mi: Category" filter
+	When User have selected following options and clicks save button
+	| SelectedOptionName  |
+	| None                |
+	| Add Category column |
+	Then "Windows7Mi: Category" filter is added to the list
+	When user select "Directory Type" filter
+	When User have selected following options and clicks save button
+	| SelectedOptionName  |
+	| Generic             |
+	| Add Category column |
+	Then "Directory Type" filter is added to the list
+	When User click on 'Windows7Mi: Category' column header
+	When User clicks the Columns button
+	Then Columns panel is displayed to the user
+	Then User is expand "Selected Columns" columns category
+	When User is removed "Windows7Mi: Category" column by Column panel
+	Then "Devices" list should be displayed to the user
+	Then ColumnName is removed from the list
+	| ColumnName           |
+	| Windows7Mi: Category |
+	When User clicks the Filters button
+	Then Filters panel is displayed to the user
+	Then "Windows7Mi: Category" filter is added to the list
+	When User click on 'Directory Type' column header
+	When User is removed column by URL
+	| ColumnName     |
+	| Directory Type |
+	Then "Devices" list should be displayed to the user
+	When User clicks the Columns button
+	Then Columns panel is displayed to the user
+	Then ColumnName is removed from the list
+	| ColumnName     |
+	| Directory Type |
+	When User clicks the Filters button
+	Then Filters panel is displayed to the user
+	Then "Directory Type" filter is added to the list
+	When User clicks the Logout button
+	Then Signed Out page is displayed to the user
+	And User is logged out
+
+@Evergreen @TableActions @Devices @DAS-10966 @DAS-10973
+Scenario: Evergreen Jnr_DevicesList check that 500 error page is not displayed after removing sorted column in custom list throw filters
+	When User clicks "Devices" on the left-hand menu
+	Then "Devices" list should be displayed to the user
+	When User clicks the Filters button
+	Then Filters panel is displayed to the user
+	When user select "Windows7Mi: Category" filter
+	When User have selected following options and clicks save button
+	| SelectedOptionName  |
+	| None                |
+	| Add Category column |
+	Then "Windows7Mi: Category" filter is added to the list
+	When User create custom list with "TestList" name
+	Then "TestList" is displayed to user
+	When User clicks the Filters button
+	Then Filters panel is displayed to the user
+	When user select "Directory Type" filter
+	When User have selected following options and clicks save button
+	| SelectedOptionName  |
+	| Generic             |
+	| Add Category column |
+	Then "Directory Type" filter is added to the list
+	When User click on 'Windows7Mi: Category' column header
+	When User clicks the Columns button
+	Then Columns panel is displayed to the user
+	Then User is expand "Selected Columns" columns category
+	When User is removed "Windows7Mi: Category" column by Column panel
+	Then "Devices" list should be displayed to the user
+	Then ColumnName is removed from the list
+	| ColumnName           |
+	| Windows7Mi: Category |
+	When User clicks the Filters button
+	Then Filters panel is displayed to the user
+	Then "Windows7Mi: Category" filter is added to the list
+	When User click on 'Directory Type' column header
+	When User is removed column by URL
+	| ColumnName     |
+	| Directory Type |
+	When User clicks the Columns button
+	Then Columns panel is displayed to the user
+	Then ColumnName is removed from the list
+	| ColumnName     |
+	| Directory Type |
+	When User clicks the Filters button
+	Then Filters panel is displayed to the user
+	Then "Directory Type" filter is added to the list
+	When User update current custom list
 	When User is removed custom list with "TestList" name
 	When User clicks the Logout button
 	Then Signed Out page is displayed to the user
@@ -205,10 +411,10 @@ Scenario: Evergreen Jnr_ApplicationsList_Check category heading when all columns
 	Then "Devices" list should be displayed to the user
 	When User clicks the Columns button
 	Then Columns panel is displayed to the user
-	When I add all Columns from specific category
+	When User add all Columns from specific category
 	| CategoryName |
 	| Application  |
-	Then "0" subcategories is displayed for "Applications" category
+	Then "0" subcategories is displayed for "Application" category
 	#Maximize/Minimize button is still displayed even category is empty. This is known issue
 	#Because of this below assertion is commented
 	#Then Maximize or Minimize button is not displayed for "Applications" category
