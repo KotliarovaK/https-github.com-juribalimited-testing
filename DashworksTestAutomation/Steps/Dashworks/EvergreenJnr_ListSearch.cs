@@ -24,6 +24,13 @@ namespace DashworksTestAutomation.Steps.Dashworks
             listPageElement.SearchTextbox.Clear();
             _driver.WaitForDataLoading();
             listPageElement.SearchTextbox.SendKeys(searchTerm);
+            _driver.WaitForDataLoading();
+        }
+
+        [When(@"User perform search by ""(.*)""")]
+        public void WhenUserPerformSearchBy(string searchTerm)
+        {
+            PerformSearch(searchTerm);
         }
 
         [Then(@"User enters SearchCriteria into the agGrid Search Box and the correct NumberOfRows are returned")]
@@ -82,6 +89,14 @@ namespace DashworksTestAutomation.Steps.Dashworks
 
             _driver.WaitWhileControlIsNotDisplayed<BaseDashbordPage>(() => listPageElement.ResultsOnPageCount);
             Assert.IsEmpty(listPageElement.SearchTextbox.GetAttribute("value"), "Search textbox is not empty");
+        }
+
+        [When(@"User click content from ""(.*)"" column")]
+        public void WhenUserClickContentFromColumn(string columnName)
+        {
+            var tableElement = _driver.NowAt<BaseDashbordPage>();
+
+            tableElement.ClickContentByColumnName(columnName);
         }
     }
 }

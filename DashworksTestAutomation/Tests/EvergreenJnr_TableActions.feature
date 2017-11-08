@@ -217,14 +217,49 @@ Scenario: Evergreen Jnr_ApplicationsList_Check category heading when all columns
 	And User is logged out
 
 @Evergreen @TableActions @Devices @DAS-10438
-Scenario: Evergreen Jnr_DevicesList_Details All empty fields in item details are displayed as Unknown
+Scenario: Evergreen Jnr_DevicesList_Details_All empty fields in item details are displayed as Unknown
 	When User clicks "Devices" on the left-hand menu
 	Then "Devices" list should be displayed to the user
-	When User opens item details for "01BQIYGGUW5PRP6"
+	When User perform search by "01BQIYGGUW5PRP6"
+	And User click content from "Hostname" column
 	When User navigates to the "Details" tab
-	Then Following empty Fields are displayed
-	| fildName |
-	|          |
+	Then Fields with empty information are displayed
+	When User clicks the Logout button
+	Then Signed Out page is displayed to the user
+	And User is logged out
+
+@Evergreen @TableActions @Users @DAS-10438
+Scenario: Evergreen Jnr_UsersList_Details_All empty fields in item details are displayed as Unknown
+	When User clicks "Users" on the left-hand menu
+	Then "Users" list should be displayed to the user
+	When User perform search by "ABW1509426"
+	And User click content from "Username" column
+	When User navigates to the "Details" tab
+	Then Fields with empty information are displayed
+	When User clicks the Logout button
+	Then Signed Out page is displayed to the user
+	And User is logged out
+
+@Evergreen @TableActions @Applications @DAS-10438
+Scenario: Evergreen Jnr_ApplicationsList_Details_All empty fields in item details are displayed as Unknown
+	When User clicks "Applications" on the left-hand menu
+	Then "Applications" list should be displayed to the user
+	When User perform search by "Python 2.2a4"
+	And User click content from "Application" column
+	When User navigates to the "Details" tab
+	Then Fields with empty information are displayed
+	When User clicks the Logout button
+	Then Signed Out page is displayed to the user
+	And User is logged out
+
+@Evergreen @TableActions @Mailboxes @DAS-10438
+Scenario: Evergreen Jnr_MailboxesList_Details_All empty fields in item details are displayed as Unknown
+	When User clicks "Mailboxes" on the left-hand menu
+	Then "Mailboxes" list should be displayed to the user
+	When User perform search by "abel.z.warner@dwlabs.local"
+	And User click content from "Email Address" column
+	When User navigates to the "Details" tab
+	Then Fields with empty information are displayed
 	When User clicks the Logout button
 	Then Signed Out page is displayed to the user
 	And User is logged out
