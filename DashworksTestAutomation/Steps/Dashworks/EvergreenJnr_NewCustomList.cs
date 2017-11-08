@@ -31,11 +31,11 @@ namespace DashworksTestAutomation.Steps.Dashworks
         [When(@"User create custom list with ""(.*)"" name")]
         public void WhenUserCreateCustomListWithName(string listName)
         {
-            var listElement = _driver.NowAt<CustomListElemnt>();
+            var listElement = _driver.NowAt<CustomListElement>();
 
-            _driver.WaitWhileControlIsNotDisplayed<CustomListElemnt>(() => listElement.CreateNewListButton);
+            _driver.WaitWhileControlIsNotDisplayed<CustomListElement>(() => listElement.CreateNewListButton);
             listElement.CreateNewListButton.Click();
-            _driver.WaitWhileControlIsNotDisplayed<CustomListElemnt>(() => listElement.SaveButton);
+            _driver.WaitWhileControlIsNotDisplayed<CustomListElement>(() => listElement.SaveButton);
             listElement.ListNameTextbox.SendKeys(listName);
             listElement.SaveButton.Click();
         }
@@ -48,16 +48,25 @@ namespace DashworksTestAutomation.Steps.Dashworks
             Assert.AreEqual(listName, page.ActiveCustomListName());
         }
 
+        [When(@"User update current custom list")]
+        public void WhenUserUpdateCurrentCustomList()
+        {
+            var listElement = _driver.NowAt<CustomListElement>();
+
+            listElement.SaveAsDropdown.Click();
+            _driver.WaitWhileControlIsNotDisplayed<CustomListElement>(() => listElement.UpdateCurrentListButton);
+            listElement.UpdateCurrentListButton.Click();
+        }
+
         [When(@"User is removed custom list with ""(.*)"" name")]
         public void WhenUserIsRemovedCustomListWithName(string listName)
         {
-            var listElement = _driver.NowAt<CustomListElemnt>();
+            var listElement = _driver.NowAt<CustomListElement>();
 
-            _driver.MouseHover(listElement.GetSettingsButtonByListName(listName));
-            listElement.GetSettingsButtonByListName(listName).Click();
-            _driver.WaitWhileControlIsNotDisplayed<CustomListElemnt>(() => listElement.DeleteButton);
+            listElement.ClickSettingsButtonByListName(listName);
+            _driver.WaitWhileControlIsNotDisplayed<CustomListElement>(() => listElement.DeleteButton);
             listElement.DeleteButton.Click();
-            _driver.WaitWhileControlIsNotDisplayed<CustomListElemnt>(() => listElement.DeleteConfirmationMessage);
+            _driver.WaitWhileControlIsNotDisplayed<CustomListElement>(() => listElement.DeleteConfirmationMessage);
             listElement.ConfirmDeleteButton.Click();
         }
 

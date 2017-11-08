@@ -27,16 +27,17 @@ namespace DashworksTestAutomation.Pages.Evergreen
             Driver.WaitForDataLoading();
             return new List<By>
             {
-                SelectorFor(this, p=> p.UserNameDropdown)
+                SelectorFor(this, p => p.UserNameDropdown)
             };
         }
 
         public void LogOut()
         {
             UserNameDropdown.Click();
-            Driver.WaitWhileControlIsNotDisplayed<HeaderElement>(()=> LogOutButton);
+            Driver.WaitWhileControlIsNotDisplayed<HeaderElement>(() => LogOutButton);
 
             //Verifies DAS-10827
+
             #region Check menu Items
 
             Logger.Write("Check User account menu items count");

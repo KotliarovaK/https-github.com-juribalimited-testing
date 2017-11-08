@@ -88,12 +88,13 @@ namespace DashworksTestAutomation.Pages.Evergreen
             {
                 var strings = columnName.Split('\'');
                 selector =
-                    $".//div[@role='presentation']/span[contains(text(),'{strings[0]}')][contains(text(), '{strings[1]}')]";
+                    $".//div[@role='presentation']/span[contains(text(),'{strings[0]}')][contains(text(), '{strings[1]}')]/..";
             }
             else
             {
-                selector = $".//div[@role='presentation']/span[text()='{columnName}']";
+                selector = $".//div[@role='presentation']/span[text()='{columnName}']/..";
             }
+            Driver.WaitWhileControlIsNotDisplayed(By.XPath(selector));
             return Driver.FindElement(By.XPath(selector));
         }
 
