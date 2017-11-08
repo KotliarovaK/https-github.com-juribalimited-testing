@@ -46,7 +46,7 @@ namespace DashworksTestAutomation.Pages.Evergreen
 
         [FindsBy(How = How.XPath, Using = ".//div[@class='save-action-bar']//span[text()='Save']")]
         public IWebElement SaveCustomListButton { get; set; }
-    
+
         #region TableColumns
 
         [FindsBy(How = How.XPath, Using = ".//div[@colid='lastLogonDate'][@role='gridcell']")]
@@ -115,7 +115,8 @@ namespace DashworksTestAutomation.Pages.Evergreen
         public List<string> GetColumnContent(string columnName)
         {
             return Driver.FindElements(
-                    By.XPath($".//div[@class='ag-body']//div[@class='ag-body-container']/div/div[{GetColumNumberByName(columnName)}]"))
+                    By.XPath(
+                        $".//div[@class='ag-body']//div[@class='ag-body-container']/div/div[{GetColumNumberByName(columnName)}]"))
                 .Select(x => x.Text).ToList();
         }
 
@@ -127,6 +128,8 @@ namespace DashworksTestAutomation.Pages.Evergreen
 
         public void ClickContentByColumnName(string columnName)
         {
+            Driver.WaitWhileControlIsNotDisplayed(
+                By.XPath($".//div[@class='ag-body-container']/div[1]/div[{GetColumNumberByName(columnName)}]//a"));
             TableBody.FindElement(By.XPath($"./div[1]/div[{GetColumNumberByName(columnName)}]//a")).Click();
         }
 
