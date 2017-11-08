@@ -507,6 +507,39 @@ namespace DashworksTestAutomation.Tests
             testRunner.And("User is logged out", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
             this.ScenarioCleanup();
         }
+        
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestMethodAttribute()]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.DescriptionAttribute("Evergreen Jnr_DevicesList_Details All empty fields in item details are displayed " +
+            "as Unknown")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("FeatureTitle", "EvergreenJnr_TableActions")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("Evergreen")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("TableActions")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("Devices")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("DAS-10438")]
+        public virtual void EvergreenJnr_DevicesList_DetailsAllEmptyFieldsInItemDetailsAreDisplayedAsUnknown()
+        {
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Evergreen Jnr_DevicesList_Details All empty fields in item details are displayed " +
+                    "as Unknown", new string[] {
+                        "Evergreen",
+                        "TableActions",
+                        "Devices",
+                        "DAS-10438"});
+            this.ScenarioSetup(scenarioInfo);
+            this.FeatureBackground();
+            testRunner.When("User clicks \"Devices\" on the left-hand menu", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+            testRunner.Then("\"Devices\" list should be displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+            testRunner.When("User opens item details for \"01BQIYGGUW5PRP6\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+            testRunner.When("User navigates to the \"Details\" tab", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+            TechTalk.SpecFlow.Table table24 = new TechTalk.SpecFlow.Table(new string[] {
+                        "fildName"});
+            table24.AddRow(new string[] {
+                        ""});
+            testRunner.Then("Following empty Fields are displayed", ((string)(null)), table24, "Then ");
+            testRunner.When("User clicks the Logout button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+            testRunner.Then("Signed Out page is displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+            testRunner.And("User is logged out", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+            this.ScenarioCleanup();
+        }
     }
 }
 #pragma warning restore

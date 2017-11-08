@@ -215,3 +215,16 @@ Scenario: Evergreen Jnr_ApplicationsList_Check category heading when all columns
 	When User clicks the Logout button
 	Then Signed Out page is displayed to the user
 	And User is logged out
+
+@Evergreen @TableActions @Devices @DAS-10438
+Scenario: Evergreen Jnr_DevicesList_Details All empty fields in item details are displayed as Unknown
+	When User clicks "Devices" on the left-hand menu
+	Then "Devices" list should be displayed to the user
+	When User opens item details for "01BQIYGGUW5PRP6"
+	When User navigates to the "Details" tab
+	Then Following empty Fields are displayed
+	| fildName |
+	|          |
+	When User clicks the Logout button
+	Then Signed Out page is displayed to the user
+	And User is logged out
