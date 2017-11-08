@@ -19,8 +19,8 @@ namespace DashworksTestAutomation.Pages
             Driver.WaitForDataLoading();
             return new List<By>
             {
-                SelectorFor(this, p=> p.SignedOutLabel),
-                SelectorFor(this, p=> p.SignedOutMessage)
+                SelectorFor(this, p => p.SignedOutLabel),
+                SelectorFor(this, p => p.SignedOutMessage)
             };
         }
     }
