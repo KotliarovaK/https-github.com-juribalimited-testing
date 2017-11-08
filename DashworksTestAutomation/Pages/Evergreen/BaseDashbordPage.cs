@@ -46,13 +46,15 @@ namespace DashworksTestAutomation.Pages.Evergreen
 
         [FindsBy(How = How.XPath, Using = ".//div[@class='save-action-bar']//span[text()='Save']")]
         public IWebElement SaveCustomListButton { get; set; }
-    
+
         #region TableColumns
 
         [FindsBy(How = How.XPath, Using = ".//div[@colid='lastLogonDate'][@role='gridcell']")]
         public IList<IWebElement> LastLogonColumnData { get; set; }
 
         #endregion
+
+        public bool SelectAllCheckboxState => SelectAllCheckbox.Selected;
 
         public override List<By> GetPageIdentitySelectors()
         {
@@ -98,7 +100,7 @@ namespace DashworksTestAutomation.Pages.Evergreen
             return Driver.FindElement(By.XPath(selector));
         }
 
-        public List<string> GetColumnContent(string columnName)
+        public int GetColumNumberByName(string columnName)
         {
             var allHeaders = Driver.FindElements(By.XPath(".//div[@class='ag-header-container']/div/div"));
             if (!allHeaders.Any())
@@ -106,8 +108,15 @@ namespace DashworksTestAutomation.Pages.Evergreen
             var columnNumber =
                 allHeaders.IndexOf(allHeaders.First(x =>
                     x.FindElement(By.XPath(".//span[@class='ag-header-cell-text']")).Text.Equals(columnName))) + 1;
+
+            return columnNumber;
+        }
+
+        public List<string> GetColumnContent(string columnName)
+        {
             return Driver.FindElements(
-                    By.XPath($".//div[@class='ag-body']//div[@class='ag-body-container']/div/div[{columnNumber}]"))
+                    By.XPath(
+                        $".//div[@class='ag-body']//div[@class='ag-body-container']/div/div[{GetColumNumberByName(columnName)}]"))
                 .Select(x => x.Text).ToList();
         }
 
@@ -117,7 +126,12 @@ namespace DashworksTestAutomation.Pages.Evergreen
             return Driver.FindElement(By.XPath(".//div[@class='active-list-wrapper']//span")).Text;
         }
 
-        public bool SelectAllCheckboxState => SelectAllCheckbox.Selected;
+        public void ClickContentByColumnName(string columnName)
+        {
+            Driver.WaitWhileControlIsNotDisplayed(
+                By.XPath($".//div[@class='ag-body-container']/div[1]/div[{GetColumNumberByName(columnName)}]//a"));
+            TableBody.FindElement(By.XPath($"./div[1]/div[{GetColumNumberByName(columnName)}]//a")).Click();
+        }
 
         public IWebElement GetListElementByName(string listName)
         {
