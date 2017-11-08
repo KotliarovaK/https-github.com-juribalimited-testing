@@ -144,7 +144,7 @@ Scenario: Evergreen Jnr_MailboxesList_Check Sort By Date Functionality
 	And User is logged out
 
 @Evergreen @TableActions @Devices @DAS-10966 @DAS-10973
-Scenario: Evergreen Jnr_DevicesList check that 500 error page is not displayed after removing sorted column in default list
+Scenario: Evergreen Jnr_DevicesList_Check that 500 error page is not displayed after removing sorted column in default list
 	When User clicks "Devices" on the left-hand menu
 	Then "Devices" list should be displayed to the user
 	When User clicks the Columns button
@@ -177,7 +177,7 @@ Scenario: Evergreen Jnr_DevicesList check that 500 error page is not displayed a
 	And User is logged out
 
 @Evergreen @TableActions @Devices @DAS-10966 @DAS-10973
-Scenario: Evergreen Jnr_DevicesList check that 500 error page is not displayed after removing sorted column in custom list
+Scenario: Evergreen Jnr_DevicesList_Check that 500 error page is not displayed after removing sorted column in custom list
 	When User clicks "Devices" on the left-hand menu
 	Then "Devices" list should be displayed to the user
 	When User clicks the Columns button
@@ -220,7 +220,7 @@ Scenario: Evergreen Jnr_DevicesList check that 500 error page is not displayed a
 	And User is logged out
 
 @Evergreen @TableActions @Devices @DAS-10966 @DAS-10973
-Scenario: Evergreen Jnr_DevicesList check that 500 error page is not displayed after removing multiple sorted column in default list
+Scenario: Evergreen Jnr_DevicesList_Check that 500 error page is not displayed after removing multiple sorted column in default list
 	When User clicks "Devices" on the left-hand menu
 	Then "Devices" list should be displayed to the user
 	When User clicks the Columns button
@@ -261,7 +261,7 @@ Scenario: Evergreen Jnr_DevicesList check that 500 error page is not displayed a
 	And User is logged out
 
 @Evergreen @TableActions @Devices @DAS-10966 @DAS-10973
-Scenario: Evergreen Jnr_DevicesList check that 500 error page is not displayed after removing multiple sorted column in custom list
+Scenario: Evergreen Jnr_DevicesList_Check that 500 error page is not displayed after removing multiple sorted column in custom list
 	When User clicks "Devices" on the left-hand menu
 	Then "Devices" list should be displayed to the user
 	When User clicks the Columns button
@@ -307,7 +307,7 @@ Scenario: Evergreen Jnr_DevicesList check that 500 error page is not displayed a
 	And User is logged out
 
 @Evergreen @TableActions @Devices @DAS-10966 @DAS-10973
-Scenario: Evergreen Jnr_DevicesList check that 500 error page is not displayed after removing sorted column in default list throw filters
+Scenario: Evergreen Jnr_DevicesList_Check that 500 error page is not displayed after removing sorted column in default list throw filters
 	When User clicks "Devices" on the left-hand menu
 	Then "Devices" list should be displayed to the user
 	When User clicks the Filters button
@@ -354,7 +354,7 @@ Scenario: Evergreen Jnr_DevicesList check that 500 error page is not displayed a
 	And User is logged out
 
 @Evergreen @TableActions @Devices @DAS-10966 @DAS-10973
-Scenario: Evergreen Jnr_DevicesList check that 500 error page is not displayed after removing sorted column in custom list throw filters
+Scenario: Evergreen Jnr_DevicesList_Check that 500 error page is not displayed after removing sorted column in custom list throw filters
 	When User clicks "Devices" on the left-hand menu
 	Then "Devices" list should be displayed to the user
 	When User clicks the Filters button
@@ -418,6 +418,102 @@ Scenario: Evergreen Jnr_ApplicationsList_Check category heading when all columns
 	#Maximize/Minimize button is still displayed even category is empty. This is known issue
 	#Because of this below assertion is commented
 	#Then Maximize or Minimize button is not displayed for "Applications" category
+	When User clicks the Logout button
+	Then Signed Out page is displayed to the user
+	And User is logged out
+
+@Evergreen @TableActions @Devices @DAS-11003
+Scenario: Evergreen Jnr_DevicesList_Check that custom list creation block is not displayed when deleting a filter in default list
+	When User clicks "Devices" on the left-hand menu
+	Then "Devices" list should be displayed to the user
+	When User clicks the Filters button
+	Then Filters panel is displayed to the user
+	When user select "Windows7Mi: Category" filter
+	When User have selected following options and clicks save button
+	| SelectedOptionName  |
+	| None                |
+	Then "Windows7Mi: Category" filter is added to the list
+	When User have removed "Windows7Mi: Category" filter
+	Then Save to New Custom List element is NOT displayed
+	When User clicks the Logout button
+	Then Signed Out page is displayed to the user
+	And User is logged out
+
+@Evergreen @TableActions @Devices @DAS-11003
+Scenario: Evergreen Jnr_DevicesList_Check that custom list creation block is not displayed when reseting a filter in default list
+	When User clicks "Devices" on the left-hand menu
+	Then "Devices" list should be displayed to the user
+	When User clicks the Filters button
+	Then Filters panel is displayed to the user
+	When user select "Windows7Mi: Category" filter
+	When User have selected following options and clicks save button
+	| SelectedOptionName  |
+	| None                |
+	Then "Windows7Mi: Category" filter is added to the list
+	When User have reset all filters
+	Then Save to New Custom List element is NOT displayed
+	When User clicks the Logout button
+	Then Signed Out page is displayed to the user
+	And User is logged out
+
+@Evergreen @TableActions @Devices @DAS-11017
+Scenario: Evergreen Jnr_DevicesList_Check that custom list creation block is not displayed when deleting a filter in custom list
+	When User clicks "Devices" on the left-hand menu
+	Then "Devices" list should be displayed to the user
+	When User clicks the Filters button
+	Then Filters panel is displayed to the user
+	When user select "Windows7Mi: Category" filter
+	When User have selected following options and clicks save button
+	| SelectedOptionName  |
+	| None                |
+	| Add Category column |
+	Then "Windows7Mi: Category" filter is added to the list
+	When User create custom list with "TestList" name
+	Then "TestList" is displayed to user
+	When User clicks the Filters button
+	Then Filters panel is displayed to the user
+	When user select "Directory Type" filter
+	When User have selected following options and clicks save button
+	| SelectedOptionName  |
+	| Generic             |
+	| Add Category column |
+	Then "Directory Type" filter is added to the list
+	When User have removed "Windows7Mi: Category" filter
+	Then Edit List menu is displayed
+	When User have removed "Directory Type" filter
+	Then Edit List menu is displayed
+	When User update current custom list
+	When User is removed custom list with "TestList" name
+	When User clicks the Logout button
+	Then Signed Out page is displayed to the user
+	And User is logged out
+
+@Evergreen @TableActions @Devices @DAS-11017
+Scenario: Evergreen Jnr_DevicesList_Check that custom list creation block is not displayed when reseting a filter in custom list
+	When User clicks "Devices" on the left-hand menu
+	Then "Devices" list should be displayed to the user
+	When User clicks the Filters button
+	Then Filters panel is displayed to the user
+	When user select "Windows7Mi: Category" filter
+	When User have selected following options and clicks save button
+	| SelectedOptionName  |
+	| None                |
+	| Add Category column |
+	Then "Windows7Mi: Category" filter is added to the list
+	When User create custom list with "TestList" name
+	Then "TestList" is displayed to user
+	When User clicks the Filters button
+	Then Filters panel is displayed to the user
+	When user select "Directory Type" filter
+	When User have selected following options and clicks save button
+	| SelectedOptionName  |
+	| Generic             |
+	| Add Category column |
+	Then "Directory Type" filter is added to the list
+	When User have reset all filters
+	Then Edit List menu is displayed
+	When User update current custom list
+	When User is removed custom list with "TestList" name
 	When User clicks the Logout button
 	Then Signed Out page is displayed to the user
 	And User is logged out

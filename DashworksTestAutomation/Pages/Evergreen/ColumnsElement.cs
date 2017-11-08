@@ -99,7 +99,9 @@ namespace DashworksTestAutomation.Pages.Evergreen
                         $".//div[contains(@class, 'filter-category-label')][text()='{sectionsName}']//ancestor::div[contains(@class, 'filter-category-title')]//button[@title='Maximize Group']"))
                     .Click();
             }
-            catch {}
+            catch
+            {
+            }
         }
     }
 }

@@ -45,6 +45,12 @@ namespace DashworksTestAutomation.Pages.Evergreen
         [FindsBy(How = How.XPath, Using = ".//button[@class='mat-raised-button']")]
         public IWebElement CancelButton { get; set; }
 
+        [FindsBy(How = How.XPath, Using = ".//div[@class='filterAddPanel']//button[@title='Remove Filter']")]
+        public IWebElement RemoveFilterButton { get; set; }
+
+        [FindsBy(How = How.XPath, Using = ".//button[@title='Reset Filter']")]
+        public IWebElement ResetFiltersButton { get; set; }
+
         public override List<By> GetPageIdentitySelectors()
         {
             Driver.WaitForDataLoading();
@@ -64,6 +70,7 @@ namespace DashworksTestAutomation.Pages.Evergreen
             Driver.FindElement(selector).Click();
 
             Driver.WaitForDataLoading();
+            Driver.WaitWhileControlIsDisplayed<FiltersElement>(() => AddNewFilterButton);
         }
 
         public void SelectOption(string optionName)
@@ -89,6 +96,13 @@ namespace DashworksTestAutomation.Pages.Evergreen
             var filterColumnDataElements =
                 Driver.FindElements(By.XPath(".//div[@role='gridcell'][@colid='project_1_subCategory']"));
             return filterColumnDataElements.Select(name => name.Text).ToList();
+        }
+
+        public IWebElement GetEditFilterButton(string filterName)
+        {
+            var deditFilterSelector =
+                $".//span[@class='filter-label-name'][text()='{filterName}']//ancestor::div[@class='filter-group no-border-bottom']//button";
+            return Driver.FindElement(By.XPath(deditFilterSelector));
         }
     }
 }
