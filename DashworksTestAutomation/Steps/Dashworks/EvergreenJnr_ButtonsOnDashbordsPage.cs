@@ -20,6 +20,7 @@ namespace DashworksTestAutomation.Steps.Dashworks
         public void WhenUserClicksTheActionsButton()
         {
             var menu = _driver.NowAt<BaseDashbordPage>();
+            _driver.WaitWhileControlIsNotDisplayed<BaseDashbordPage>(() => menu.ActionsButton);
             menu.ActionsButton.Click();
             Logger.Write("Actions button was clicked");
         }
@@ -28,6 +29,7 @@ namespace DashworksTestAutomation.Steps.Dashworks
         public void WhenUserClicksTheColumnsButton()
         {
             var menu = _driver.NowAt<BaseDashbordPage>();
+            _driver.WaitWhileControlIsNotDisplayed<BaseDashbordPage>(() => menu.ColumnButton);
             menu.ColumnButton.Click();
             Logger.Write("Column button was clicked");
         }
@@ -36,6 +38,7 @@ namespace DashworksTestAutomation.Steps.Dashworks
         public void WhenUserClicksTheFiltersButton()
         {
             var menu = _driver.NowAt<BaseDashbordPage>();
+            _driver.WaitWhileControlIsNotDisplayed<BaseDashbordPage>(() => menu.FilterButton);
             menu.FilterButton.Click();
             Logger.Write("Filters button was clicked");
         }

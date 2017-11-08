@@ -1,8 +1,5 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.ComponentModel;
-using System.Diagnostics;
-using System.Globalization;
 using System.Linq;
 using DashworksTestAutomation.Extensions;
 using DashworksTestAutomation.Pages;
@@ -11,8 +8,10 @@ using DashworksTestAutomation.Utils;
 using NUnit.Framework;
 using OpenQA.Selenium.Remote;
 using TechTalk.SpecFlow;
-using System.Reflection.Emit;
-using DashworksTestAutomation.DTO.RuntimeVariables;
+using System.Text.RegularExpressions;
+using DashworksTestAutomation.Helpers;
+using DashworksTestAutomation.Providers;
+using OpenQA.Selenium.Interactions;
 
 namespace DashworksTestAutomation.Steps.Dashworks
 {
@@ -20,12 +19,12 @@ namespace DashworksTestAutomation.Steps.Dashworks
     class EvergreenJnr_ColumnsPanel : SpecFlowContext
     {
         private readonly RemoteWebDriver _driver;
-        private readonly WebsiteUrl _url;
+        private readonly ColumnNameToUrlConvertor _convertor;
 
-        public EvergreenJnr_ColumnsPanel(RemoteWebDriver driver, WebsiteUrl url)
+        public EvergreenJnr_ColumnsPanel(RemoteWebDriver driver, ColumnNameToUrlConvertor convertor)
         {
             _driver = driver;
-            _url = url;
+            _convertor = convertor;
         }
 
         [Then(@"Columns panel is displayed to the user")]
@@ -58,16 +57,27 @@ namespace DashworksTestAutomation.Steps.Dashworks
         [Then(@"ColumnName is added to the list")]
         public void ThenColumnNameIsAddedToTheList(Table table)
         {
+            CheckColumnDisplayedState(table, true);
+        }
+
+        [Then(@"ColumnName is removed from the list")]
+        public void ThenColumnNameIsRemovedFromTheList(Table table)
+        {
+            CheckColumnDisplayedState(table, false);
+        }
+
+        private void CheckColumnDisplayedState(Table table, bool displayedState)
+        {
             var listpageMenu = _driver.NowAt<BaseDashbordPage>();
             foreach (var row in table.Rows)
             {
-                Assert.IsTrue(listpageMenu.IsColumnPresent(row["ColumnName"]),
-                    $"Column '{row["ColumnName"]}' is not exists in the table");
+                Assert.AreEqual(displayedState, listpageMenu.IsColumnPresent(row["ColumnName"]),
+                    $"Column '{row["ColumnName"]}' displayed state should be {displayedState}");
             }
         }
 
-        [When(@"I add all Columns from specific category")]
-        public void WhenIAddAllColumnsFromSpecificCategory(Table table)
+        [When(@"User add all Columns from specific category")]
+        public void WhenUserAddAllColumnsFromSpecificCategory(Table table)
         {
             var columnElement = _driver.NowAt<ColumnsElement>();
 
@@ -82,6 +92,18 @@ namespace DashworksTestAutomation.Steps.Dashworks
         {
             var listpageMenu = _driver.NowAt<BaseDashbordPage>();
             listpageMenu.GetColumnHeaderByName(columnName).Click();
+        }
+
+        [When(@"User sort table by multiple columns")]
+        public void WhenUserSortTableByMultipleColumns(Table table)
+        {
+            var page = _driver.NowAt<BaseDashbordPage>();
+            foreach (var row in table.Rows)
+            {
+                Actions shiftClick = new Actions(_driver);
+                shiftClick.KeyDown(OpenQA.Selenium.Keys.Shift).Click(page.GetColumnHeaderByName(row["ColumnName"]))
+                    .KeyUp(OpenQA.Selenium.Keys.Shift).Perform();
+            }
         }
 
         [Then(@"data in table is sorted by '(.*)' column in descenting order")]
@@ -146,20 +168,22 @@ namespace DashworksTestAutomation.Steps.Dashworks
         public void WhenUserIsRemovedColumnByColumnPanel(string columnName)
         {
             var columnElement = _driver.NowAt<ColumnsElement>();
-            columnElement.ExpandFilterSectionsByName("Selected Columns");
+            columnElement.ExpandColumnsSectionByName("Selected Columns");
             columnElement.GetDeleteColumnButton(columnName).Click();
         }
 
         [When(@"User is removed column by URL")]
         public void WhenUserIsRemovedColumnByURL(Table table)
         {
+            var currentUrl = _driver.Url;
+            const string pattern = @"select=(.*)\&\$orderby";
             foreach (var row in table.Rows)
             {
-                var combinedURL = "http://automation.corp.juriba.com/" + row["Url"];
-                _driver.NagigateToURL(combinedURL);
+                var originalPart = Regex.Match(currentUrl, pattern).Groups[1].Value;
+                var changedPart = originalPart.Replace($",{_convertor.Convert(row["ColumnName"])}", string.Empty);
+                _driver.NagigateToURL(currentUrl.Replace(originalPart, changedPart));
 
                 var page = _driver.NowAt<EvergreenDashboardsPage>();
-
                 if (page.StatusCodeLabel.Displayed())
                 {
                     throw new Exception($"500 error was returned for: {row["ColumnName"]} column");
@@ -184,6 +208,7 @@ namespace DashworksTestAutomation.Steps.Dashworks
         public void ThenSubcategoriesIsDisplayedForCategory(int subCategoriesCount, string categoryName)
         {
             var columnElement = _driver.NowAt<ColumnsElement>();
+            var t = columnElement.GetSubcategoriesCountByCategoryName(categoryName);
             Assert.AreEqual(subCategoriesCount, columnElement.GetSubcategoriesCountByCategoryName(categoryName));
         }
 
@@ -193,6 +218,13 @@ namespace DashworksTestAutomation.Steps.Dashworks
             var columnElement = _driver.NowAt<ColumnsElement>();
             Assert.IsFalse(columnElement.MaximizeOrMinimizeButtonByCategory(categoryName).Displayed(),
                 $"Maximize/Minimize button is displayed for empty {categoryName} category");
+        }
+
+        [Then(@"User is expand ""(.*)"" columns category")]
+        public void ThenUserIsExpandColumnsCategory(string categoryName)
+        {
+            var columnElement = _driver.NowAt<ColumnsElement>();
+            columnElement.ExpandColumnsSectionByName(categoryName);
         }
     }
 }

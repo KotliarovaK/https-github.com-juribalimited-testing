@@ -76,13 +76,13 @@ namespace DashworksTestAutomation.Pages.Evergreen
         public int GetSubcategoriesCountByCategoryName(string categoryName)
         {
             var filterCategory = FilterCategory(categoryName);
-            return Convert.ToInt32(filterCategory.FindElement(By.XPath("//strong")).Text);
+            return Convert.ToInt32(filterCategory.FindElement(By.XPath(".//strong")).Text);
         }
 
         public IWebElement MaximizeOrMinimizeButtonByCategory(string categoryName)
         {
             var filterCategory = FilterCategory(categoryName);
-            return filterCategory.FindElement(By.XPath("//button"));
+            return filterCategory.FindElement(By.XPath(".//button"));
         }
 
         public IWebElement GetDeleteColumnButton(string columnName)
@@ -91,10 +91,15 @@ namespace DashworksTestAutomation.Pages.Evergreen
                 $".//div[@class='columns-panel']//span[text()='{columnName}']/ancestor::div[@class='sub-categories-item selected-column']//button"));
         }
 
-        public void ExpandFilterSectionsByName(string sectionsName)
+        public void ExpandColumnsSectionByName(string sectionsName)
         {
-            Driver.FindElement(By.XPath($".//div[contains(@class, 'filter-category-label')][text()='{sectionsName}']"))
-                .Click();
+            try
+            {
+                Driver.FindElement(By.XPath(
+                        $".//div[contains(@class, 'filter-category-label')][text()='{sectionsName}']//ancestor::div[contains(@class, 'filter-category-title')]//button[@title='Maximize Group']"))
+                    .Click();
+            }
+            catch {}
         }
     }
 }

@@ -11,7 +11,8 @@ namespace DashworksTestAutomation.Pages
         [FindsBy(How = How.XPath, Using = ".//div[@class='status-code']")]
         public IWebElement StatusCodeLabel { get; set; }
 
-        [FindsBy(How = How.XPath, Using = ".//input[@class='form-control search-input ng-untouched ng-pristine ng-valid']")]
+        [FindsBy(How = How.XPath,
+            Using = ".//input[@class='form-control search-input ng-untouched ng-pristine ng-valid']")]
         public IWebElement SearchTextbox { get; set; }
 
         public override List<By> GetPageIdentitySelectors()
@@ -19,7 +20,7 @@ namespace DashworksTestAutomation.Pages
             Driver.WaitForDataLoading();
             return new List<By>
             {
-                SelectorFor(this, p=> p.SearchTextbox)
+                SelectorFor(this, p => p.SearchTextbox)
             };
         }
     }
