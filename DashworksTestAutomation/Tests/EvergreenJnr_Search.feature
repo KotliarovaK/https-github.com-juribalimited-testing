@@ -172,6 +172,9 @@ Scenario: Evergreen Jnr_AllLists_Check search filter and table content during na
 	Then "Devices" list should be displayed to the user
 	Then "17,271" rows are displayed in the agGrid
 	Then Search field is empty
+	When User clicks the Logout button
+	Then Signed Out page is displayed to the user
+	And User is logged out
 
 @Evergreen @Search @Devices @DAS-10704
 Scenario: Evergreen Jnr_Devices List_agGrid	Check that quick search doesn't triggers new list menu
@@ -180,7 +183,7 @@ Scenario: Evergreen Jnr_Devices List_agGrid	Check that quick search doesn't trig
 	Then User enters SearchCriteria into the agGrid Search Box and the correct NumberOfRows are returned
 	| SearchCriteria | NumberOfRows |
 	| Smith          | 11           |
-	Then Save to New Custom List element should NOT be displayed
+	Then Save to New Custom List element is NOT displayed
 	When User clicks the Logout button
 	Then Signed Out page is displayed to the user
 	And User is logged out

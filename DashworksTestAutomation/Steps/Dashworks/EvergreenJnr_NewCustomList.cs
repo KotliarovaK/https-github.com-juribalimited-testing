@@ -17,13 +17,13 @@ namespace DashworksTestAutomation.Steps.Dashworks
             _driver = driver;
         }
 
-        [Then(@"Save to New Custom List element should NOT be displayed")]
-        public void ThenSaveToNewCustomListElementShouldNOTBeDisplayed()
+        [Then(@"Save to New Custom List element is NOT displayed")]
+        public void SaveToNewCustomListElementIsNOTDisplayed()
         {
             var page = _driver.NowAt<BaseDashbordPage>();
-
+            _driver.WaitWhileControlIsDisplayed<BaseDashbordPage>(() => page.SaveCustomListButton);
             Assert.IsFalse(page.SaveCustomListButton.Displayed(),
-                "Save Custom list is displayed when the user just performs an agGrid search");
+                "Save Custom list is displayed");
 
             Logger.Write("The Save to Custom List Element was NOT displayed");
         }

@@ -36,7 +36,6 @@ namespace DashworksTestAutomation.Steps.Dashworks
         {
             var filterElement = _driver.NowAt<FiltersElement>();
             filterElement.AddFilter(filterName);
-            _driver.WaitWhileControlIsDisplayed<FiltersElement>(() => filterElement.MinimizeGroupButton);
         }
 
         [When(@"User have selected following options and clicks save button")]
@@ -80,6 +79,24 @@ namespace DashworksTestAutomation.Steps.Dashworks
                 valuesList.Add(row.Values.ToList().First());
             }
             Assert.AreEqual(valuesList, filterElement.GetFilterColumData());
+        }
+
+        [When(@"User have removed ""(.*)"" filter")]
+        public void WhenUserHaveRemovedFilter(string filterName)
+        {
+            var filterElement = _driver.NowAt<FiltersElement>();
+
+            filterElement.GetEditFilterButton(filterName).Click();
+            _driver.WaitWhileControlIsNotDisplayed<FiltersElement>(() => filterElement.RemoveFilterButton);
+            filterElement.RemoveFilterButton.Click();
+        }
+
+        [When(@"User have reset all filters")]
+        public void WhenUserHaveResetAllFilters()
+        {
+            var filterElement = _driver.NowAt<FiltersElement>();
+            _driver.WaitWhileControlIsNotDisplayed<FiltersElement>(() => filterElement.ResetFiltersButton);
+            filterElement.ResetFiltersButton.Click();
         }
     }
 }
