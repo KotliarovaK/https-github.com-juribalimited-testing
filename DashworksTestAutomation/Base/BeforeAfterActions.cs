@@ -1,16 +1,16 @@
-﻿using System;
-using System.Configuration;
-using System.Reflection;
-using BoDi;
+﻿using BoDi;
 using DashworksTestAutomation.Extensions;
 using DashworksTestAutomation.Utils;
 using OpenQA.Selenium.Remote;
+using System;
+using System.Configuration;
+using System.Reflection;
 using TechTalk.SpecFlow;
 
 namespace DashworksTestAutomation.Base
 {
     [Binding]
-    class BeforeAfterActions : BaseTest
+    internal class BeforeAfterActions : BaseTest
     {
         private readonly IObjectContainer _objectContainer;
         private readonly ScenarioContext _scenarioContext;
@@ -26,7 +26,7 @@ namespace DashworksTestAutomation.Base
         {
             var driverInstance = CreateBrowserDriver();
 
-            driverInstance.Manage().Window.Maximize();
+            //driverInstance.Manage().Window.Maximize();
 
             _objectContainer.RegisterInstanceAs<RemoteWebDriver>(driverInstance);
         }
