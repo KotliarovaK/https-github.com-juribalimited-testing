@@ -73,18 +73,6 @@ namespace DashworksTestAutomation.Pages.Evergreen
             Driver.WaitWhileControlIsDisplayed<FiltersElement>(() => AddNewFilterButton);
         }
 
-        public void SelectOption(string optionName)
-        {
-            if (optionName == "Add Category column")
-            {
-                AddCategoryColumnCheckbox.Click();
-            }
-            else
-            {
-                Driver.FindElement(By.XPath($".//span[text()='{optionName}']")).Click();
-            }
-        }
-
         public List<string> GetFiltersNames()
         {
             var namesListElements = Driver.FindElements(By.XPath(".//span[@class='filter-label-name']"));
@@ -100,9 +88,9 @@ namespace DashworksTestAutomation.Pages.Evergreen
 
         public IWebElement GetEditFilterButton(string filterName)
         {
-            var deditFilterSelector =
+            var editFilterSelector =
                 $".//span[@class='filter-label-name'][text()='{filterName}']//ancestor::div[@class='filter-group no-border-bottom']//button";
-            return Driver.FindElement(By.XPath(deditFilterSelector));
+            return Driver.FindElement(By.XPath(editFilterSelector));
         }
     }
 }
