@@ -7,6 +7,7 @@ using DashworksTestAutomation.Extensions;
 using DashworksTestAutomation.Pages.Evergreen;
 using OpenQA.Selenium;
 using OpenQA.Selenium.Remote;
+using TechTalk.SpecFlow;
 
 namespace DashworksTestAutomation.Helpers
 {
@@ -29,12 +30,16 @@ namespace DashworksTestAutomation.Helpers
             _driver.SelectCustomSelectbox(selectbox, _operatorValue);
         }
 
-        public virtual void Do() { }
+        public virtual void Do()
+        {
+        }
 
         public void SaveFilter()
         {
             if (_acceptCheckbox)
-                _driver.FindElement(By.XPath(".//div[@class='filterAddPanel']//md-checkbox//div[@class='mat-checkbox-inner-container']")).Click();
+                _driver.FindElement(By.XPath(
+                        ".//div[@class='filterAddPanel']//md-checkbox//div[@class='mat-checkbox-inner-container']"))
+                    .Click();
             _driver.FindElement(By.XPath(".//button[@title='Update Filter Set']")).Click();
         }
     }
@@ -43,7 +48,8 @@ namespace DashworksTestAutomation.Helpers
     {
         private string _dateValue { get; set; }
 
-        public DateFilter(RemoteWebDriver driver, string operatorValue, bool acceptCheckbox, string dateValue) : base(driver, operatorValue, acceptCheckbox)
+        public DateFilter(RemoteWebDriver driver, string operatorValue, bool acceptCheckbox, string dateValue) : base(
+            driver, operatorValue, acceptCheckbox)
         {
             _dateValue = dateValue;
         }
@@ -60,7 +66,8 @@ namespace DashworksTestAutomation.Helpers
     {
         private string _value { get; set; }
 
-        public LookupFilter(RemoteWebDriver driver, string operatorValue, bool acceptCheckbox, string value) : base(driver, operatorValue, acceptCheckbox)
+        public LookupFilter(RemoteWebDriver driver, string operatorValue, bool acceptCheckbox, string value) : base(
+            driver, operatorValue, acceptCheckbox)
         {
             _value = value;
         }
@@ -69,8 +76,32 @@ namespace DashworksTestAutomation.Helpers
         {
             SelectOperator();
             _driver.WaitForDataLoading();
-            _driver.FindElement(By.XPath(".//div[@class='filterAddPanel']//input[@placeholder='Search']")).SendKeys(_value);
+            _driver.FindElement(By.XPath(".//div[@class='filterAddPanel']//input[@placeholder='Search']"))
+                .SendKeys(_value);
             _driver.FindElement(By.XPath(".//div[@class='filterAddPanel']//span[text()='London']")).Click();
+            SaveFilter();
+        }
+    }
+
+    public class CheckBoxesFilter : BaseFilter
+    {
+        private Table _optionsTable { get; set; }
+
+        public CheckBoxesFilter(RemoteWebDriver driver, string operatorValue, bool acceptCheckbox, Table optionsTable) :
+            base(driver, operatorValue, acceptCheckbox)
+        {
+            _optionsTable = optionsTable;
+        }
+
+        public override void Do()
+        {
+            SelectOperator();
+            _driver.WaitForDataLoading();
+            foreach (var row in _optionsTable.Rows)
+            {
+                _driver.FindElement(
+                    By.XPath($".//div[@class='filterAddPanel']//span[text()='{row["SelectedCheckboxes"]}']")).Click();
+            }
             SaveFilter();
         }
     }

@@ -1,8 +1,5 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using DashworksTestAutomation.Extensions;
 using DashworksTestAutomation.Helpers;
 using DashworksTestAutomation.Pages.Evergreen;
@@ -10,7 +7,6 @@ using DashworksTestAutomation.Utils;
 using NUnit.Framework;
 using OpenQA.Selenium.Remote;
 using TechTalk.SpecFlow;
-using TechTalk.SpecFlow.Assist;
 
 namespace DashworksTestAutomation.Steps.Dashworks
 {
@@ -39,20 +35,14 @@ namespace DashworksTestAutomation.Steps.Dashworks
             filterElement.AddFilter(filterName);
         }
 
-        [When(@"User have selected following options and clicks save button")]
-        public void WhenUserHaveSelectedFollowingOptionsAndClicksSaveButton(Table table)
+        [When(@"User have created filter with ""(.*)"" column checkbox and following options:")]
+        public void WhenUserHaveCreatedFilterWithColumnCheckboxAndFollowingOptions(bool columnOption, Table table)
         {
-            //var filter = new LookupFilter(_driver, "Equals", true, "London");
-            //filter.Do();
             var filterElement = _driver.NowAt<FiltersElement>();
-
-            foreach (var row in table.Rows)
-            {
-                filterElement.SelectOption(row["SelectedOptionName"]);
-            }
-            filterElement.SaveButton.Click();
-            _driver.WaitWhileControlIsDisplayed<FiltersElement>(() => filterElement.SaveButton);
+            var filter = new CheckBoxesFilter(_driver, "Equals", columnOption, table);
+            filter.Do();
         }
+
 
         [Then(@"""(.*)"" filter is added to the list")]
         public void ThenFilterIsAddedToTheList(string filterName)
