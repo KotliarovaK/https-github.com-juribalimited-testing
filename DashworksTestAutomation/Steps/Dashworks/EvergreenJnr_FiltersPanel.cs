@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using DashworksTestAutomation.Extensions;
+using DashworksTestAutomation.Helpers;
 using DashworksTestAutomation.Pages.Evergreen;
 using DashworksTestAutomation.Utils;
 using NUnit.Framework;
@@ -41,6 +42,8 @@ namespace DashworksTestAutomation.Steps.Dashworks
         [When(@"User have selected following options and clicks save button")]
         public void WhenUserHaveSelectedFollowingOptionsAndClicksSaveButton(Table table)
         {
+            //var filter = new LookupFilter(_driver, "Equals", true, "London");
+            //filter.Do();
             var filterElement = _driver.NowAt<FiltersElement>();
 
             foreach (var row in table.Rows)
