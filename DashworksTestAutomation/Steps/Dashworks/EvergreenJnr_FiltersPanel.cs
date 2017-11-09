@@ -1,15 +1,12 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using DashworksTestAutomation.Extensions;
+using DashworksTestAutomation.Helpers;
 using DashworksTestAutomation.Pages.Evergreen;
 using DashworksTestAutomation.Utils;
 using NUnit.Framework;
 using OpenQA.Selenium.Remote;
 using TechTalk.SpecFlow;
-using TechTalk.SpecFlow.Assist;
 
 namespace DashworksTestAutomation.Steps.Dashworks
 {
@@ -36,21 +33,16 @@ namespace DashworksTestAutomation.Steps.Dashworks
         {
             var filterElement = _driver.NowAt<FiltersElement>();
             filterElement.AddFilter(filterName);
-            _driver.WaitWhileControlIsDisplayed<FiltersElement>(() => filterElement.MinimizeGroupButton);
         }
 
-        [When(@"User have selected following options and clicks save button")]
-        public void WhenUserHaveSelectedFollowingOptionsAndClicksSaveButton(Table table)
+        [When(@"User have created filter with ""(.*)"" column checkbox and following options:")]
+        public void WhenUserHaveCreatedFilterWithColumnCheckboxAndFollowingOptions(bool columnOption, Table table)
         {
             var filterElement = _driver.NowAt<FiltersElement>();
-
-            foreach (var row in table.Rows)
-            {
-                filterElement.SelectOption(row["SelectedOptionName"]);
-            }
-            filterElement.SaveButton.Click();
-            _driver.WaitWhileControlIsDisplayed<FiltersElement>(() => filterElement.SaveButton);
+            var filter = new CheckBoxesFilter(_driver, "Equals", columnOption, table);
+            filter.Do();
         }
+
 
         [Then(@"""(.*)"" filter is added to the list")]
         public void ThenFilterIsAddedToTheList(string filterName)
@@ -80,6 +72,24 @@ namespace DashworksTestAutomation.Steps.Dashworks
                 valuesList.Add(row.Values.ToList().First());
             }
             Assert.AreEqual(valuesList, filterElement.GetFilterColumData());
+        }
+
+        [When(@"User have removed ""(.*)"" filter")]
+        public void WhenUserHaveRemovedFilter(string filterName)
+        {
+            var filterElement = _driver.NowAt<FiltersElement>();
+
+            filterElement.GetEditFilterButton(filterName).Click();
+            _driver.WaitWhileControlIsNotDisplayed<FiltersElement>(() => filterElement.RemoveFilterButton);
+            filterElement.RemoveFilterButton.Click();
+        }
+
+        [When(@"User have reset all filters")]
+        public void WhenUserHaveResetAllFilters()
+        {
+            var filterElement = _driver.NowAt<FiltersElement>();
+            _driver.WaitWhileControlIsNotDisplayed<FiltersElement>(() => filterElement.ResetFiltersButton);
+            filterElement.ResetFiltersButton.Click();
         }
     }
 }
