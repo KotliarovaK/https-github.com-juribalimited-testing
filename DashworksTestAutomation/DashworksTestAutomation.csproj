@@ -157,6 +157,7 @@
     <Compile Include="Extensions\StringExtensions.cs" />
     <Compile Include="Extensions\WebDriverExtentions.cs" />
     <Compile Include="Extensions\WebElementExtensions.cs" />
+    <Compile Include="Helpers\BaseFilter.cs" />
     <Compile Include="Helpers\ColumnNameToUrlConvertor.cs" />
     <Compile Include="Pages\EvergreenDashboardsPage.cs" />
     <Compile Include="Pages\Evergreen\ActionsElement.cs" />
