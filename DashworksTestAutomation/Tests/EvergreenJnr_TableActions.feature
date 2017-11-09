@@ -458,20 +458,18 @@ Scenario: Evergreen Jnr_DevicesList_Check that custom list creation block is not
 	When User clicks the Filters button
 	Then Filters panel is displayed to the user
 	When user select "Windows7Mi: Category" filter
-	When User have selected following options and clicks save button
-	| SelectedOptionName  |
+	When User have created filter with "true" column checkbox and following options:
+	| SelectedCheckboxes  |
 	| None                |
-	| Add Category column |
 	Then "Windows7Mi: Category" filter is added to the list
 	When User create custom list with "TestList" name
 	Then "TestList" is displayed to user
 	When User clicks the Filters button
 	Then Filters panel is displayed to the user
 	When user select "Directory Type" filter
-	When User have selected following options and clicks save button
-	| SelectedOptionName  |
+	When User have created filter with "true" column checkbox and following options:
+	| SelectedCheckboxes  |
 	| Generic             |
-	| Add Category column |
 	Then "Directory Type" filter is added to the list
 	When User have removed "Windows7Mi: Category" filter
 	Then Edit List menu is displayed
@@ -490,20 +488,18 @@ Scenario: Evergreen Jnr_DevicesList_Check that custom list creation block is not
 	When User clicks the Filters button
 	Then Filters panel is displayed to the user
 	When user select "Windows7Mi: Category" filter
-	When User have selected following options and clicks save button
-	| SelectedOptionName  |
+	When User have created filter with "true" column checkbox and following options:
+	| SelectedCheckboxes  |
 	| None                |
-	| Add Category column |
 	Then "Windows7Mi: Category" filter is added to the list
 	When User create custom list with "TestList" name
 	Then "TestList" is displayed to user
 	When User clicks the Filters button
 	Then Filters panel is displayed to the user
 	When user select "Directory Type" filter
-	When User have selected following options and clicks save button
-	| SelectedOptionName  |
+	When User have created filter with "true" column checkbox and following options:
+	| SelectedCheckboxes  |
 	| Generic             |
-	| Add Category column |
 	Then "Directory Type" filter is added to the list
 	When User have reset all filters
 	Then Edit List menu is displayed

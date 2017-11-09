@@ -948,12 +948,10 @@ namespace DashworksTestAutomation.Tests
             testRunner.Then("Filters panel is displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
             testRunner.When("user select \"Windows7Mi: Category\" filter", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
             TechTalk.SpecFlow.Table table54 = new TechTalk.SpecFlow.Table(new string[] {
-                        "SelectedOptionName"});
+                        "SelectedCheckboxes"});
             table54.AddRow(new string[] {
                         "None"});
-            table54.AddRow(new string[] {
-                        "Add Category column"});
-            testRunner.When("User have selected following options and clicks save button", ((string)(null)), table54, "When ");
+            testRunner.When("User have created filter with \"true\" column checkbox and following options:", ((string)(null)), table54, "When ");
             testRunner.Then("\"Windows7Mi: Category\" filter is added to the list", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
             testRunner.When("User create custom list with \"TestList\" name", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
             testRunner.Then("\"TestList\" is displayed to user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
@@ -961,12 +959,10 @@ namespace DashworksTestAutomation.Tests
             testRunner.Then("Filters panel is displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
             testRunner.When("user select \"Directory Type\" filter", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
             TechTalk.SpecFlow.Table table55 = new TechTalk.SpecFlow.Table(new string[] {
-                        "SelectedOptionName"});
+                        "SelectedCheckboxes"});
             table55.AddRow(new string[] {
                         "Generic"});
-            table55.AddRow(new string[] {
-                        "Add Category column"});
-            testRunner.When("User have selected following options and clicks save button", ((string)(null)), table55, "When ");
+            testRunner.When("User have created filter with \"true\" column checkbox and following options:", ((string)(null)), table55, "When ");
             testRunner.Then("\"Directory Type\" filter is added to the list", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
             testRunner.When("User have removed \"Windows7Mi: Category\" filter", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
             testRunner.Then("Edit List menu is displayed", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
@@ -1004,12 +1000,10 @@ namespace DashworksTestAutomation.Tests
             testRunner.Then("Filters panel is displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
             testRunner.When("user select \"Windows7Mi: Category\" filter", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
             TechTalk.SpecFlow.Table table56 = new TechTalk.SpecFlow.Table(new string[] {
-                        "SelectedOptionName"});
+                        "SelectedCheckboxes"});
             table56.AddRow(new string[] {
                         "None"});
-            table56.AddRow(new string[] {
-                        "Add Category column"});
-            testRunner.When("User have selected following options and clicks save button", ((string)(null)), table56, "When ");
+            testRunner.When("User have created filter with \"true\" column checkbox and following options:", ((string)(null)), table56, "When ");
             testRunner.Then("\"Windows7Mi: Category\" filter is added to the list", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
             testRunner.When("User create custom list with \"TestList\" name", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
             testRunner.Then("\"TestList\" is displayed to user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
@@ -1017,12 +1011,10 @@ namespace DashworksTestAutomation.Tests
             testRunner.Then("Filters panel is displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
             testRunner.When("user select \"Directory Type\" filter", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
             TechTalk.SpecFlow.Table table57 = new TechTalk.SpecFlow.Table(new string[] {
-                        "SelectedOptionName"});
+                        "SelectedCheckboxes"});
             table57.AddRow(new string[] {
                         "Generic"});
-            table57.AddRow(new string[] {
-                        "Add Category column"});
-            testRunner.When("User have selected following options and clicks save button", ((string)(null)), table57, "When ");
+            testRunner.When("User have created filter with \"true\" column checkbox and following options:", ((string)(null)), table57, "When ");
             testRunner.Then("\"Directory Type\" filter is added to the list", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
             testRunner.When("User have reset all filters", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
             testRunner.Then("Edit List menu is displayed", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
