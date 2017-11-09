@@ -19,8 +19,8 @@ namespace DashworksTestAutomation.Steps.Dashworks
         [When(@"User clicks the Actions button")]
         public void WhenUserClicksTheActionsButton()
         {
-            var menu = _driver.NowAt<BaseDashbordPage>();
-            _driver.WaitWhileControlIsNotDisplayed<BaseDashbordPage>(() => menu.ActionsButton);
+            var menu = _driver.NowAt<BaseDashboardPage>();
+            _driver.WaitWhileControlIsNotDisplayed<BaseDashboardPage>(() => menu.ActionsButton);
             menu.ActionsButton.Click();
             Logger.Write("Actions button was clicked");
         }
@@ -28,8 +28,8 @@ namespace DashworksTestAutomation.Steps.Dashworks
         [When(@"User clicks the Columns button")]
         public void WhenUserClicksTheColumnsButton()
         {
-            var menu = _driver.NowAt<BaseDashbordPage>();
-            _driver.WaitWhileControlIsNotDisplayed<BaseDashbordPage>(() => menu.ColumnButton);
+            var menu = _driver.NowAt<BaseDashboardPage>();
+            _driver.WaitWhileControlIsNotDisplayed<BaseDashboardPage>(() => menu.ColumnButton);
             menu.ColumnButton.Click();
             Logger.Write("Column button was clicked");
         }
@@ -37,8 +37,8 @@ namespace DashworksTestAutomation.Steps.Dashworks
         [When(@"User clicks the Filters button")]
         public void WhenUserClicksTheFiltersButton()
         {
-            var menu = _driver.NowAt<BaseDashbordPage>();
-            _driver.WaitWhileControlIsNotDisplayed<BaseDashbordPage>(() => menu.FilterButton);
+            var menu = _driver.NowAt<BaseDashboardPage>();
+            _driver.WaitWhileControlIsNotDisplayed<BaseDashboardPage>(() => menu.FilterButton);
             menu.FilterButton.Click();
             Logger.Write("Filters button was clicked");
         }

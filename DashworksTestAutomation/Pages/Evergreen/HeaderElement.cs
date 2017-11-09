@@ -10,7 +10,7 @@ namespace DashworksTestAutomation.Pages.Evergreen
 {
     class HeaderElement : SeleniumBasePage
     {
-        [FindsBy(How = How.XPath, Using = ".//span[@class='col-ds-visible user-area']")]
+        [FindsBy(How = How.XPath, Using = ".//span[@class='col-ds-visible user-area user-name-words']")]
         public IWebElement UserNameDropdown { get; set; }
 
         [FindsBy(How = How.XPath, Using = ".//i[@class='material-icons md-profile']")]

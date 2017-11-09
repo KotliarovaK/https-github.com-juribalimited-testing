@@ -34,14 +34,14 @@ namespace DashworksTestAutomation.Steps.Dashworks
         [When(@"User select all rows")]
         public void WhenUserSelectAllRows()
         {
-            var dashboardPage = _driver.NowAt<BaseDashbordPage>();
+            var dashboardPage = _driver.NowAt<BaseDashboardPage>();
             dashboardPage.SelectAllCheckbox.Click();
         }
 
         [Then(@"Select All selectbox is checked")]
         public void ThenSelectAllSelectboxIsChecked()
         {
-            var dashboardPage = _driver.NowAt<BaseDashbordPage>();
+            var dashboardPage = _driver.NowAt<BaseDashboardPage>();
             _driver.WaitToBeSelected(dashboardPage.SelectAllCheckbox, true);
             Assert.IsTrue(dashboardPage.SelectAllCheckboxState, "Select All checkbox is unchecked");
         }
@@ -49,7 +49,7 @@ namespace DashworksTestAutomation.Steps.Dashworks
         [Then(@"Select All selectbox is unchecked")]
         public void ThenSelectAllSelectboxIsUnchecked()
         {
-            var dashboardPage = _driver.NowAt<BaseDashbordPage>();
+            var dashboardPage = _driver.NowAt<BaseDashboardPage>();
             _driver.WaitToBeSelected(dashboardPage.SelectAllCheckbox, false);
             Assert.IsFalse(dashboardPage.SelectAllCheckboxState, "Select All checkbox is checked");
         }
@@ -65,8 +65,8 @@ namespace DashworksTestAutomation.Steps.Dashworks
         [Then(@"The number of rows selected matches the number of rows of the main object list")]
         public void ThenTheNumberOfRowsSelectedMatchesTheNumberOfRowsOfTheMainObjectList()
         {
-            var dashboardPage = _driver.NowAt<BaseDashbordPage>();
-            _driver.WaitWhileControlIsNotDisplayed<BaseDashbordPage>(() => dashboardPage.ResultsOnPageCount);
+            var dashboardPage = _driver.NowAt<BaseDashboardPage>();
+            _driver.WaitWhileControlIsNotDisplayed<BaseDashboardPage>(() => dashboardPage.ResultsOnPageCount);
             if (!dashboardPage.ResultsOnPageCount.Text.Split(' ').Any() &&
                 string.IsNullOrEmpty(dashboardPage.ResultsOnPageCount.Text.Split(' ').First()))
                 throw new Exception("Rows count in table is missed");

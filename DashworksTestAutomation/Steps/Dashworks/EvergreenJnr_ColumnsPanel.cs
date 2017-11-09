@@ -50,7 +50,7 @@ namespace DashworksTestAutomation.Steps.Dashworks
             columnElement.MinimizeGroupButton.Click();
             _driver.WaitWhileControlIsDisplayed<ColumnsElement>(() => columnElement.MinimizeGroupButton);
             //Close the Columns Panel
-            var listpageMenu = _driver.NowAt<BaseDashbordPage>();
+            var listpageMenu = _driver.NowAt<BaseDashboardPage>();
             listpageMenu.ColumnButton.Click();
         }
 
@@ -68,7 +68,7 @@ namespace DashworksTestAutomation.Steps.Dashworks
 
         private void CheckColumnDisplayedState(Table table, bool displayedState)
         {
-            var listpageMenu = _driver.NowAt<BaseDashbordPage>();
+            var listpageMenu = _driver.NowAt<BaseDashboardPage>();
             foreach (var row in table.Rows)
             {
                 Assert.AreEqual(displayedState, listpageMenu.IsColumnPresent(row["ColumnName"]),
@@ -90,14 +90,14 @@ namespace DashworksTestAutomation.Steps.Dashworks
         [When(@"User click on '(.*)' column header")]
         public void WhenUserClickOnColumnHeader(string columnName)
         {
-            var listpageMenu = _driver.NowAt<BaseDashbordPage>();
+            var listpageMenu = _driver.NowAt<BaseDashboardPage>();
             listpageMenu.GetColumnHeaderByName(columnName).Click();
         }
 
         [When(@"User sort table by multiple columns")]
         public void WhenUserSortTableByMultipleColumns(Table table)
         {
-            var page = _driver.NowAt<BaseDashbordPage>();
+            var page = _driver.NowAt<BaseDashboardPage>();
             foreach (var row in table.Rows)
             {
                 Actions shiftClick = new Actions(_driver);
@@ -109,7 +109,7 @@ namespace DashworksTestAutomation.Steps.Dashworks
         [Then(@"data in table is sorted by '(.*)' column in descenting order")]
         public void ThenDataInTableIsSortedByColumnInDescentingOrder(string columnName)
         {
-            var listpageMenu = _driver.NowAt<BaseDashbordPage>();
+            var listpageMenu = _driver.NowAt<BaseDashboardPage>();
 
             List<string> expectedList = listpageMenu.GetColumnContent(columnName).Where(x => !x.Equals("")).ToList();
             List<KeyValuePair<DateTime, string>> unsortedList = new List<KeyValuePair<DateTime, string>>();
@@ -138,7 +138,7 @@ namespace DashworksTestAutomation.Steps.Dashworks
         [Then(@"data in table is sorted by '(.*)' column in ascending order")]
         public void ThenDataInTableIsSortedByColumnInAscendingOrder(string columnName)
         {
-            var listpageMenu = _driver.NowAt<BaseDashbordPage>();
+            var listpageMenu = _driver.NowAt<BaseDashboardPage>();
 
             List<string> expectedList = listpageMenu.GetColumnContent(columnName).Where(x => !x.Equals("")).ToList();
             List<KeyValuePair<DateTime, string>> unsortedList = new List<KeyValuePair<DateTime, string>>();
@@ -194,7 +194,7 @@ namespace DashworksTestAutomation.Steps.Dashworks
         [Then(@"Content is present in the newly added column")]
         public void ThenContentIsPresentInTheNewlyAddedColumn(Table table)
         {
-            var listpageMenu = _driver.NowAt<BaseDashbordPage>();
+            var listpageMenu = _driver.NowAt<BaseDashboardPage>();
 
             foreach (var row in table.Rows)
             {
