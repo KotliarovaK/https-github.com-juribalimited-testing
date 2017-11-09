@@ -49,7 +49,7 @@ Scenario: Evergreen Jnr_Devices List_agGrid Search_Does Not Trigger_New Custom L
 	And User enters SearchCriteria into the agGrid Search Box and the correct NumberOfRows are returned
 	| SearchCriteria | NumberOfRows |
 	| Henry          | 34           |
-	Then Save to New Custom List element should NOT be displayed
+	Then Save to New Custom List element is NOT displayed
 	When User clicks the Logout button
 	Then Signed Out page is displayed to the user
 	And User is logged out

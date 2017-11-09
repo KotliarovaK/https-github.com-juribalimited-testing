@@ -21,7 +21,7 @@ namespace DashworksTestAutomation.Steps.Dashworks
         public void SaveToNewCustomListElementIsNOTDisplayed()
         {
             var page = _driver.NowAt<BaseDashboardPage>();
-            _driver.WaitWhileControlIsDisplayed<BaseDashbordPage>(() => page.SaveCustomListButton);
+            _driver.WaitWhileControlIsDisplayed<BaseDashboardPage>(() => page.SaveCustomListButton);
             Assert.IsFalse(page.SaveCustomListButton.Displayed(),
                 "Save Custom list is displayed");
 
