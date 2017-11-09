@@ -153,9 +153,18 @@ namespace DashworksTestAutomation.Pages.Evergreen
             return Driver.FindElement(By.XPath($".//span[@id='eName'][text()='{settingName}']"));
         }
 
-        public IList<IWebElement> GetColumnHeadersNames()
+        public string GetPinnedColumnName(string pinStatus)
         {
-            return Driver.FindElements(By.XPath(".//span[@class='ag-header-cell-text']"));
+            switch (pinStatus)
+            {
+                case "Left":
+                    return Driver.FindElement(By.XPath(".//div[@class='ag-pinned-left-header']//span[@ref='eText']"))
+                        .Text;
+                case "Right":
+                    return Driver.FindElement(By.XPath(".//div[@class='ag-pinned-right-header']//span[@ref='eText']"))
+                        .Text;
+                default: throw new Exception($"{pinStatus} is not valid Pin Value");
+            }
         }
     }
 }

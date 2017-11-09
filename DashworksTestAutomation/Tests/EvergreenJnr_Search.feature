@@ -209,27 +209,37 @@ Scenario: Evergreen Jnr_DevicesList_agGrid_Check that quick search reset when mo
 	Then Signed Out page is displayed to the user
 	And User is logged out
 
+@Evergreen @Search @Devices @DAS-10836
+Scenario: Evergreen Jnr_DevicesList_agGrid_Check that columns order saved after search
+	When User clicks "Devices" on the left-hand menu
+	Then "Devices" list should be displayed to the user
+	When User have opened column settings for "Owner Display Name" column
+	When User have select "Pin Left" option from column settings
+	Then "Owner Display Name" column is "Left" Pinned
+	Then User enters SearchCriteria into the agGrid Search Box and the correct NumberOfRows are returned
+	| SearchCriteria | NumberOfRows |
+	| Smith          | 11           |
+	Then "Owner Display Name" column is "Left" Pinned
+	When User clicks the Logout button
+	Then Signed Out page is displayed to the user
+	And User is logged out
+
 @Evergreen @Search @Users @DAS-10836
 Scenario: Evergreen Jnr_UsersList_agGrid_Check that columns order saved after search
 	When User clicks "Users" on the left-hand menu
 	Then "Users" list should be displayed to the user
-	When User have opened column settings for "Display Name" column
-	When User have select "Pin Left" option from column settings
-	Then Columns is displayed to user in following order
-	| Columnname         |
-	| Display Name       |
-	| Username           |
-	| Domain             |
-	| Distinguished Name |
+	When User clicks the Columns button
+	Then Columns panel is displayed to the user
+	When ColumnName is entered into the search box and the selection is clicked
+	| ColumnName          |
+	| Compliance          |
+	When User have opened column settings for "Compliance" column
+	When User have select "Pin Right" option from column settings
+	Then "Compliance" column is "Right" Pinned
 	Then User enters SearchCriteria into the agGrid Search Box and the correct NumberOfRows are returned
 	| SearchCriteria | NumberOfRows |
 	| Smith          | 58           |
-	Then Columns is displayed to user in following order
-	| Columnname         |
-	| Display Name       |
-	| Username           |
-	| Domain             |
-	| Distinguished Name |
+	Then "Compliance" column is "Right" Pinned
 	When User clicks the Logout button
 	Then Signed Out page is displayed to the user
 	And User is logged out

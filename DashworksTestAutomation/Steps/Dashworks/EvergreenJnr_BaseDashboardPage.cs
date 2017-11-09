@@ -35,21 +35,11 @@ namespace DashworksTestAutomation.Steps.Dashworks
             page.GetSettingButtonByName(settingName).Click();
         }
 
-        [Then(@"Columns is displayed to user in following order")]
-        public void ThenColumnsIsDisplayedToUserInFollowingOrder(Table table)
+        [Then(@"""(.*)"" column is ""(.*)"" Pinned")]
+        public void ThenColumnIsPinned(string columnName, string pinStatus)
         {
-            List<string> columnnNames = new List<string>();
-            List<string> expectedList = new List<string>();
             var page = _driver.NowAt<BaseDashboardPage>();
-            foreach (var column in page.GetColumnHeadersNames())
-            {
-                columnnNames.Add(column.Text);
-            }
-            foreach (var row in table.Rows)
-            {
-                expectedList.AddRange(row.Values);
-            }
-            Assert.AreEqual(expectedList, columnnNames, "Column headers order is uncorrect");
+            Assert.AreEqual(columnName, page.GetPinnedColumnName(pinStatus), "Column is pinned incorrectly");
         }
     }
 }
