@@ -20,7 +20,7 @@ namespace DashworksTestAutomation.Steps.Dashworks
         [Then(@"Save to New Custom List element should NOT be displayed")]
         public void ThenSaveToNewCustomListElementShouldNOTBeDisplayed()
         {
-            var page = _driver.NowAt<BaseDashbordPage>();
+            var page = _driver.NowAt<BaseDashboardPage>();
 
             Assert.IsFalse(page.SaveCustomListButton.Displayed(),
                 "Save Custom list is displayed when the user just performs an agGrid search");
@@ -43,7 +43,7 @@ namespace DashworksTestAutomation.Steps.Dashworks
         [Then(@"""(.*)"" is displayed to user")]
         public void ThenIsDisplayedToUser(string listName)
         {
-            var page = _driver.NowAt<BaseDashbordPage>();
+            var page = _driver.NowAt<BaseDashboardPage>();
 
             Assert.AreEqual(listName, page.ActiveCustomListName());
         }
@@ -73,7 +73,7 @@ namespace DashworksTestAutomation.Steps.Dashworks
         [When(@"User navigates to the ""(.*)"" list")]
         public void WhenUserNavigatesToTheList(string listName)
         {
-            var page = _driver.NowAt<BaseDashbordPage>();
+            var page = _driver.NowAt<BaseDashboardPage>();
             page.GetListElementByName(listName).Click();
         }
     }

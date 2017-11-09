@@ -174,7 +174,7 @@ Scenario: Evergreen Jnr_AllLists_Check search filter and table content during na
 	Then Search field is empty
 
 @Evergreen @Search @Devices @DAS-10704
-Scenario: Evergreen Jnr_Devices List_agGrid	Check that quick search doesn't triggers new list menu
+Scenario: Evergreen Jnr_DevicesList_agGrid_Check that quick search doesn't triggers new list menu
 	When User clicks "Devices" on the left-hand menu
 	Then "Devices" list should be displayed to the user
 	Then User enters SearchCriteria into the agGrid Search Box and the correct NumberOfRows are returned
@@ -186,7 +186,7 @@ Scenario: Evergreen Jnr_Devices List_agGrid	Check that quick search doesn't trig
 	And User is logged out
 
 @Evergreen @Search @Devices @DAS-10704
-Scenario: Evergreen Jnr_Devices List_agGrid	Check that quick search reset when moving between lists
+Scenario: Evergreen Jnr_DevicesList_agGrid_Check that quick search reset when moving between lists
 	When User clicks "Devices" on the left-hand menu
 	Then "Devices" list should be displayed to the user
 	When User clicks the Columns button
@@ -205,6 +205,31 @@ Scenario: Evergreen Jnr_Devices List_agGrid	Check that quick search reset when m
 	When User navigates to the "All Devices" list
 	Then Search field is empty
 	When User is removed custom list with "TestList" name
+	When User clicks the Logout button
+	Then Signed Out page is displayed to the user
+	And User is logged out
+
+@Evergreen @Search @Users @DAS-10836
+Scenario: Evergreen Jnr_UsersList_agGrid_Check that columns order saved after search
+	When User clicks "Users" on the left-hand menu
+	Then "Users" list should be displayed to the user
+	When User have opened column settings for "Display Name" column
+	When User have select "Pin Left" option from column settings
+	Then Columns is displayed to user in following order
+	| Columnname         |
+	| Display Name       |
+	| Username           |
+	| Domain             |
+	| Distinguished Name |
+	Then User enters SearchCriteria into the agGrid Search Box and the correct NumberOfRows are returned
+	| SearchCriteria | NumberOfRows |
+	| Smith          | 58           |
+	Then Columns is displayed to user in following order
+	| Columnname         |
+	| Display Name       |
+	| Username           |
+	| Domain             |
+	| Distinguished Name |
 	When User clicks the Logout button
 	Then Signed Out page is displayed to the user
 	And User is logged out

@@ -8,7 +8,7 @@ using OpenQA.Selenium.Support.PageObjects;
 
 namespace DashworksTestAutomation.Pages.Evergreen
 {
-    class BaseDashbordPage : SeleniumBasePage
+    class BaseDashboardPage : SeleniumBasePage
     {
         [FindsBy(How = How.XPath, Using = ".//div[@id='pagetitle-text']/descendant::h1")]
         public IWebElement Heading { get; set; }
@@ -136,6 +136,26 @@ namespace DashworksTestAutomation.Pages.Evergreen
         public IWebElement GetListElementByName(string listName)
         {
             return Driver.FindElement(By.XPath($".//div[@id='submenuBlock']//div[text()='{listName}']"));
+        }
+
+        public void OpenColumnSettingsByName(string columnName)
+        {
+            string columnSettingsSelector =
+                $".//div[@role='presentation']/span[text()='{columnName}']/ancestor::div[@class='ag-header-cell ag-header-cell-sortable']//span[@ref='eMenu']";
+            Driver.MouseHover(By.XPath(columnSettingsSelector));
+            Driver.WaitWhileControlIsNotDisplayed(By.XPath(columnSettingsSelector));
+            Driver.FindElement(By.XPath(columnSettingsSelector)).Click();
+        }
+
+        public IWebElement GetSettingButtonByName(string settingName)
+        {
+            Driver.WaitWhileControlIsNotDisplayed(By.XPath($".//span[@id='eName'][text()='{settingName}']"));
+            return Driver.FindElement(By.XPath($".//span[@id='eName'][text()='{settingName}']"));
+        }
+
+        public IList<IWebElement> GetColumnHeadersNames()
+        {
+            return Driver.FindElements(By.XPath(".//span[@class='ag-header-cell-text']"));
         }
     }
 }

@@ -461,17 +461,17 @@ namespace DashworksTestAutomation.Tests
         }
         
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestMethodAttribute()]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.DescriptionAttribute("Evergreen Jnr_Devices List_agGrid\tCheck that quick search doesn\'t triggers new li" +
-            "st menu")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.DescriptionAttribute("Evergreen Jnr_DevicesList_agGrid_Check that quick search doesn\'t triggers new lis" +
+            "t menu")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("FeatureTitle", "EvergreenJnr_Search")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("Evergreen")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("Search")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("Devices")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("DAS-10704")]
-        public virtual void EvergreenJnr_DevicesList_AgGridCheckThatQuickSearchDoesntTriggersNewListMenu()
+        public virtual void EvergreenJnr_DevicesList_AgGrid_CheckThatQuickSearchDoesntTriggersNewListMenu()
         {
-            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Evergreen Jnr_Devices List_agGrid\tCheck that quick search doesn\'t triggers new li" +
-                    "st menu", new string[] {
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Evergreen Jnr_DevicesList_agGrid_Check that quick search doesn\'t triggers new lis" +
+                    "t menu", new string[] {
                         "Evergreen",
                         "Search",
                         "Devices",
@@ -496,17 +496,17 @@ namespace DashworksTestAutomation.Tests
         }
         
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestMethodAttribute()]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.DescriptionAttribute("Evergreen Jnr_Devices List_agGrid\tCheck that quick search reset when moving betwe" +
-            "en lists")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.DescriptionAttribute("Evergreen Jnr_DevicesList_agGrid_Check that quick search reset when moving betwee" +
+            "n lists")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("FeatureTitle", "EvergreenJnr_Search")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("Evergreen")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("Search")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("Devices")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("DAS-10704")]
-        public virtual void EvergreenJnr_DevicesList_AgGridCheckThatQuickSearchResetWhenMovingBetweenLists()
+        public virtual void EvergreenJnr_DevicesList_AgGrid_CheckThatQuickSearchResetWhenMovingBetweenLists()
         {
-            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Evergreen Jnr_Devices List_agGrid\tCheck that quick search reset when moving betwe" +
-                    "en lists", new string[] {
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Evergreen Jnr_DevicesList_agGrid_Check that quick search reset when moving betwee" +
+                    "n lists", new string[] {
                         "Evergreen",
                         "Search",
                         "Devices",
@@ -540,6 +540,62 @@ namespace DashworksTestAutomation.Tests
             testRunner.When("User navigates to the \"All Devices\" list", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
             testRunner.Then("Search field is empty", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
             testRunner.When("User is removed custom list with \"TestList\" name", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+            testRunner.When("User clicks the Logout button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+            testRunner.Then("Signed Out page is displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+            testRunner.And("User is logged out", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+            this.ScenarioCleanup();
+        }
+        
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestMethodAttribute()]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.DescriptionAttribute("Evergreen Jnr_UsersList_agGrid_Check that columns order saved after search")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("FeatureTitle", "EvergreenJnr_Search")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("Evergreen")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("Search")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("Users")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("DAS-10836")]
+        public virtual void EvergreenJnr_UsersList_AgGrid_CheckThatColumnsOrderSavedAfterSearch()
+        {
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Evergreen Jnr_UsersList_agGrid_Check that columns order saved after search", new string[] {
+                        "Evergreen",
+                        "Search",
+                        "Users",
+                        "DAS-10836"});
+            this.ScenarioSetup(scenarioInfo);
+            this.FeatureBackground();
+            testRunner.When("User clicks \"Users\" on the left-hand menu", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+            testRunner.Then("\"Users\" list should be displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+            testRunner.When("User have opened column settings for \"Display Name\" column", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+            testRunner.When("User have select \"Pin Left\" option from column settings", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+            TechTalk.SpecFlow.Table table19 = new TechTalk.SpecFlow.Table(new string[] {
+                        "Columnname"});
+            table19.AddRow(new string[] {
+                        "Display Name"});
+            table19.AddRow(new string[] {
+                        "Username"});
+            table19.AddRow(new string[] {
+                        "Domain"});
+            table19.AddRow(new string[] {
+                        "Distinguished Name"});
+            testRunner.Then("Columns is displayed to user in following order", ((string)(null)), table19, "Then ");
+            TechTalk.SpecFlow.Table table20 = new TechTalk.SpecFlow.Table(new string[] {
+                        "SearchCriteria",
+                        "NumberOfRows"});
+            table20.AddRow(new string[] {
+                        "Smith",
+                        "58"});
+            testRunner.Then("User enters SearchCriteria into the agGrid Search Box and the correct NumberOfRow" +
+                    "s are returned", ((string)(null)), table20, "Then ");
+            TechTalk.SpecFlow.Table table21 = new TechTalk.SpecFlow.Table(new string[] {
+                        "Columnname"});
+            table21.AddRow(new string[] {
+                        "Display Name"});
+            table21.AddRow(new string[] {
+                        "Username"});
+            table21.AddRow(new string[] {
+                        "Domain"});
+            table21.AddRow(new string[] {
+                        "Distinguished Name"});
+            testRunner.Then("Columns is displayed to user in following order", ((string)(null)), table21, "Then ");
             testRunner.When("User clicks the Logout button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
             testRunner.Then("Signed Out page is displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
             testRunner.And("User is logged out", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
