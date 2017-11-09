@@ -508,3 +508,86 @@ Scenario: Evergreen Jnr_DevicesList_Check that custom list creation block is not
 	When User clicks the Logout button
 	Then Signed Out page is displayed to the user
 	And User is logged out
+
+@Evergreen @TableActions @Devices @DAS-10438
+Scenario: Evergreen Jnr_DevicesList_Details_All empty fields in item details are displayed as Unknown
+	When User clicks "Devices" on the left-hand menu
+	Then "Devices" list should be displayed to the user
+	When User perform search by "01BQIYGGUW5PRP6"
+	And User click content from "Hostname" column
+	When User navigates to the "Details" tab
+	Then Fields with empty information are displayed
+	When User clicks the Logout button
+	Then Signed Out page is displayed to the user
+	And User is logged out
+
+@Evergreen @TableActions @Users @DAS-10438
+Scenario: Evergreen Jnr_UsersList_Details_All empty fields in item details are displayed as Unknown
+	When User clicks "Users" on the left-hand menu
+	Then "Users" list should be displayed to the user
+	When User perform search by "ABW1509426"
+	And User click content from "Username" column
+	When User navigates to the "Details" tab
+	Then Fields with empty information are displayed
+	When User clicks the Logout button
+	Then Signed Out page is displayed to the user
+	And User is logged out
+
+@Evergreen @TableActions @Applications @DAS-10438
+Scenario: Evergreen Jnr_ApplicationsList_Details_All empty fields in item details are displayed as Unknown
+	When User clicks "Applications" on the left-hand menu
+	Then "Applications" list should be displayed to the user
+	When User perform search by "Python 2.2a4"
+	And User click content from "Application" column
+	When User navigates to the "Details" tab
+	Then Fields with empty information are displayed
+	When User clicks the Logout button
+	Then Signed Out page is displayed to the user
+	And User is logged out
+
+@Evergreen @TableActions @Mailboxes @DAS-10438
+Scenario: Evergreen Jnr_MailboxesList_Details_All empty fields in item details are displayed as Unknown
+	When User clicks "Mailboxes" on the left-hand menu
+	Then "Mailboxes" list should be displayed to the user
+	When User perform search by "abel.z.warner@dwlabs.local"
+	And User click content from "Email Address" column
+	When User navigates to the "Details" tab
+	Then Fields with empty information are displayed
+	When User clicks the Logout button
+	Then Signed Out page is displayed to the user
+	And User is logged out
+
+@Evergreen @TableActions @Devices @DAS-10836
+Scenario: Evergreen Jnr_DevicesList_Check that columns order saved after search
+	When User clicks "Devices" on the left-hand menu
+	Then "Devices" list should be displayed to the user
+	When User have opened column settings for "Owner Display Name" column
+	When User have select "Pin Left" option from column settings
+	Then "Owner Display Name" column is "Left" Pinned
+	Then User enters SearchCriteria into the agGrid Search Box and the correct NumberOfRows are returned
+	| SearchCriteria | NumberOfRows |
+	| Smith          | 11           |
+	Then "Owner Display Name" column is "Left" Pinned
+	When User clicks the Logout button
+	Then Signed Out page is displayed to the user
+	And User is logged out
+
+@Evergreen @TableActions @Users @DAS-10836
+Scenario: Evergreen Jnr_UsersList_Check that columns order saved after search
+	When User clicks "Users" on the left-hand menu
+	Then "Users" list should be displayed to the user
+	When User clicks the Columns button
+	Then Columns panel is displayed to the user
+	When ColumnName is entered into the search box and the selection is clicked
+	| ColumnName          |
+	| Compliance          |
+	When User have opened column settings for "Compliance" column
+	When User have select "Pin Right" option from column settings
+	Then "Compliance" column is "Right" Pinned
+	Then User enters SearchCriteria into the agGrid Search Box and the correct NumberOfRows are returned
+	| SearchCriteria | NumberOfRows |
+	| Smith          | 58           |
+	Then "Compliance" column is "Right" Pinned
+	When User clicks the Logout button
+	Then Signed Out page is displayed to the user
+	And User is logged out

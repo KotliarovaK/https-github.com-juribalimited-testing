@@ -162,9 +162,12 @@
     <Compile Include="Pages\EvergreenDashboardsPage.cs" />
     <Compile Include="Pages\Evergreen\ActionsElement.cs" />
     <Compile Include="Pages\Evergreen\ApplicationsPage.cs" />
-    <Compile Include="Pages\Evergreen\BaseDashbordPage.cs" />
+    <Compile Include="Pages\Evergreen\BaseDashboardPage.cs" />
     <Compile Include="Pages\Evergreen\ColumnsElement.cs" />
     <Compile Include="Pages\Evergreen\CustomListElement.cs" />
+    <Compile Include="Pages\Evergreen\DetailsPage.cs" />
+    <Compile Include="Pages\Evergreen\DetailsTabsMenu\BaseDetailsTabsMenu.cs" />
+    <Compile Include="Pages\Evergreen\DetailsTabsMenu\DevicesDetailsTabsMenu.cs" />
     <Compile Include="Pages\Evergreen\DevicesPage.cs" />
     <Compile Include="Pages\Evergreen\FiltersElement.cs" />
     <Compile Include="Pages\Evergreen\HeaderElement.cs" />
@@ -181,8 +184,10 @@
     <Compile Include="Steps\Base\OpenWebsite.cs" />
     <Compile Include="Providers\UrlProvider.cs" />
     <Compile Include="Steps\Dashworks\EvergreenJnr_ActionsPanel.cs" />
+    <Compile Include="Steps\Dashworks\EvergreenJnr_BaseDashboardPage.cs" />
     <Compile Include="Steps\Dashworks\EvergreenJnr_ButtonsOnDashbordsPage.cs" />
     <Compile Include="Steps\Dashworks\EvergreenJnr_ColumnsPanel.cs" />
+    <Compile Include="Steps\Dashworks\EvergreenJnr_DetailsPage.cs" />
     <Compile Include="Steps\Dashworks\EvergreenJnr_FiltersPanel.cs" />
     <Compile Include="Steps\Dashworks\EvergreenJnr_ListSearch.cs" />
     <Compile Include="Steps\Dashworks\EvergreenJnr_Login.cs" />

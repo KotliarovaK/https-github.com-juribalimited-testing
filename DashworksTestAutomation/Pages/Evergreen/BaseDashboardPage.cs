@@ -8,7 +8,7 @@ using OpenQA.Selenium.Support.PageObjects;
 
 namespace DashworksTestAutomation.Pages.Evergreen
 {
-    class BaseDashbordPage : SeleniumBasePage
+    class BaseDashboardPage : SeleniumBasePage
     {
         [FindsBy(How = How.XPath, Using = ".//div[@id='pagetitle-text']/descendant::h1")]
         public IWebElement Heading { get; set; }
@@ -54,6 +54,8 @@ namespace DashworksTestAutomation.Pages.Evergreen
 
         #endregion
 
+        public bool SelectAllCheckboxState => SelectAllCheckbox.Selected;
+
         public override List<By> GetPageIdentitySelectors()
         {
             Driver.WaitForDataLoading();
@@ -98,7 +100,7 @@ namespace DashworksTestAutomation.Pages.Evergreen
             return Driver.FindElement(By.XPath(selector));
         }
 
-        public List<string> GetColumnContent(string columnName)
+        public int GetColumNumberByName(string columnName)
         {
             var allHeaders = Driver.FindElements(By.XPath(".//div[@class='ag-header-container']/div/div"));
             if (!allHeaders.Any())
@@ -106,8 +108,15 @@ namespace DashworksTestAutomation.Pages.Evergreen
             var columnNumber =
                 allHeaders.IndexOf(allHeaders.First(x =>
                     x.FindElement(By.XPath(".//span[@class='ag-header-cell-text']")).Text.Equals(columnName))) + 1;
+
+            return columnNumber;
+        }
+
+        public List<string> GetColumnContent(string columnName)
+        {
             return Driver.FindElements(
-                    By.XPath($".//div[@class='ag-body']//div[@class='ag-body-container']/div/div[{columnNumber}]"))
+                    By.XPath(
+                        $".//div[@class='ag-body']//div[@class='ag-body-container']/div/div[{GetColumNumberByName(columnName)}]"))
                 .Select(x => x.Text).ToList();
         }
 
@@ -117,11 +126,45 @@ namespace DashworksTestAutomation.Pages.Evergreen
             return Driver.FindElement(By.XPath(".//div[@class='active-list-wrapper']//span")).Text;
         }
 
-        public bool SelectAllCheckboxState => SelectAllCheckbox.Selected;
+        public void ClickContentByColumnName(string columnName)
+        {
+            Driver.WaitWhileControlIsNotDisplayed(
+                By.XPath($".//div[@class='ag-body-container']/div[1]/div[{GetColumNumberByName(columnName)}]//a"));
+            TableBody.FindElement(By.XPath($"./div[1]/div[{GetColumNumberByName(columnName)}]//a")).Click();
+        }
 
         public IWebElement GetListElementByName(string listName)
         {
             return Driver.FindElement(By.XPath($".//div[@id='submenuBlock']//div[text()='{listName}']"));
+        }
+
+        public void OpenColumnSettingsByName(string columnName)
+        {
+            string columnSettingsSelector =
+                $".//div[@role='presentation']/span[text()='{columnName}']/ancestor::div[@class='ag-header-cell ag-header-cell-sortable']//span[@ref='eMenu']";
+            Driver.MouseHover(By.XPath(columnSettingsSelector));
+            Driver.WaitWhileControlIsNotDisplayed(By.XPath(columnSettingsSelector));
+            Driver.FindElement(By.XPath(columnSettingsSelector)).Click();
+        }
+
+        public IWebElement GetSettingButtonByName(string settingName)
+        {
+            Driver.WaitWhileControlIsNotDisplayed(By.XPath($".//span[@id='eName'][text()='{settingName}']"));
+            return Driver.FindElement(By.XPath($".//span[@id='eName'][text()='{settingName}']"));
+        }
+
+        public string GetPinnedColumnName(string pinStatus)
+        {
+            switch (pinStatus)
+            {
+                case "Left":
+                    return Driver.FindElement(By.XPath(".//div[@class='ag-pinned-left-header']//span[@ref='eText']"))
+                        .Text;
+                case "Right":
+                    return Driver.FindElement(By.XPath(".//div[@class='ag-pinned-right-header']//span[@ref='eText']"))
+                        .Text;
+                default: throw new Exception($"{pinStatus} is not valid Pin Value");
+            }
         }
     }
 }

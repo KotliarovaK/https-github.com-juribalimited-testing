@@ -19,11 +19,18 @@ namespace DashworksTestAutomation.Steps.Dashworks
 
         private void PerformSearch(string searchTerm)
         {
-            var listPageElement = _driver.NowAt<BaseDashbordPage>();
+            var listPageElement = _driver.NowAt<BaseDashboardPage>();
 
             listPageElement.SearchTextbox.Clear();
             _driver.WaitForDataLoading();
             listPageElement.SearchTextbox.SendKeys(searchTerm);
+            _driver.WaitForDataLoading();
+        }
+
+        [When(@"User perform search by ""(.*)""")]
+        public void WhenUserPerformSearchBy(string searchTerm)
+        {
+            PerformSearch(searchTerm);
         }
 
         [Then(@"User enters SearchCriteria into the agGrid Search Box and the correct NumberOfRows are returned")]
@@ -45,7 +52,7 @@ namespace DashworksTestAutomation.Steps.Dashworks
             {
                 PerformSearch(row["SearchCriteria"]);
 
-                var page = _driver.NowAt<BaseDashbordPage>();
+                var page = _driver.NowAt<BaseDashboardPage>();
 
                 Assert.AreEqual(message, page.NoResultsFoundMessage.Text);
             }
@@ -54,7 +61,7 @@ namespace DashworksTestAutomation.Steps.Dashworks
         [Then(@"Clearing the agGrid Search Box")]
         public void ThenClearingTheAgGridSearchBox()
         {
-            var listPageElement = _driver.NowAt<BaseDashbordPage>();
+            var listPageElement = _driver.NowAt<BaseDashboardPage>();
 
             var inputLength = listPageElement.SearchTextbox.GetAttribute("value").Length;
             for (int i = 0; i < inputLength; i++)
@@ -67,9 +74,9 @@ namespace DashworksTestAutomation.Steps.Dashworks
         [Then(@"""(.*)"" rows are displayed in the agGrid")]
         public void ThenRowsAreDisplayedInTheAgGrid(string numberOfRows)
         {
-            var listPageElement = _driver.NowAt<BaseDashbordPage>();
+            var listPageElement = _driver.NowAt<BaseDashboardPage>();
 
-            _driver.WaitWhileControlIsNotDisplayed<BaseDashbordPage>(() => listPageElement.ResultsOnPageCount);
+            _driver.WaitWhileControlIsNotDisplayed<BaseDashboardPage>(() => listPageElement.ResultsOnPageCount);
 
             StringAssert.AreEqualIgnoringCase($"{numberOfRows} rows", listPageElement.ResultsOnPageCount.Text);
             Logger.Write($"Evergreen agGrid Search returned the correct number of rows for: {numberOfRows}  search");
@@ -78,10 +85,18 @@ namespace DashworksTestAutomation.Steps.Dashworks
         [Then(@"Search field is empty")]
         public void ThenSearchFieldIsEmpty()
         {
-            var listPageElement = _driver.NowAt<BaseDashbordPage>();
+            var listPageElement = _driver.NowAt<BaseDashboardPage>();
 
-            _driver.WaitWhileControlIsNotDisplayed<BaseDashbordPage>(() => listPageElement.ResultsOnPageCount);
+            _driver.WaitWhileControlIsNotDisplayed<BaseDashboardPage>(() => listPageElement.ResultsOnPageCount);
             Assert.IsEmpty(listPageElement.SearchTextbox.GetAttribute("value"), "Search textbox is not empty");
+        }
+
+        [When(@"User click content from ""(.*)"" column")]
+        public void WhenUserClickContentFromColumn(string columnName)
+        {
+            var tableElement = _driver.NowAt<BaseDashboardPage>();
+
+            tableElement.ClickContentByColumnName(columnName);
         }
     }
 }

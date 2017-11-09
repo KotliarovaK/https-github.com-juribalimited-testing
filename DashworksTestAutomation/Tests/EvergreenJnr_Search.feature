@@ -177,7 +177,7 @@ Scenario: Evergreen Jnr_AllLists_Check search filter and table content during na
 	And User is logged out
 
 @Evergreen @Search @Devices @DAS-10704
-Scenario: Evergreen Jnr_Devices List_agGrid	Check that quick search doesn't triggers new list menu
+Scenario: Evergreen Jnr_DevicesList_agGrid_Check that quick search doesn't triggers new list menu
 	When User clicks "Devices" on the left-hand menu
 	Then "Devices" list should be displayed to the user
 	Then User enters SearchCriteria into the agGrid Search Box and the correct NumberOfRows are returned
@@ -189,7 +189,7 @@ Scenario: Evergreen Jnr_Devices List_agGrid	Check that quick search doesn't trig
 	And User is logged out
 
 @Evergreen @Search @Devices @DAS-10704
-Scenario: Evergreen Jnr_Devices List_agGrid	Check that quick search reset when moving between lists
+Scenario: Evergreen Jnr_DevicesList_agGrid_Check that quick search reset when moving between lists
 	When User clicks "Devices" on the left-hand menu
 	Then "Devices" list should be displayed to the user
 	When User clicks the Columns button

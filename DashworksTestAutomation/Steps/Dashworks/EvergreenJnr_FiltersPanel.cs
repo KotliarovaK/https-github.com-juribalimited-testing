@@ -54,7 +54,7 @@ namespace DashworksTestAutomation.Steps.Dashworks
         [Then(@"FilterData is displayed for FilterName column")]
         public void ThenFilterDataIsDisplayedForFilterNameColumn(Table table)
         {
-            var listpageMenu = _driver.NowAt<BaseDashbordPage>();
+            var listpageMenu = _driver.NowAt<BaseDashboardPage>();
             foreach (var row in table.Rows)
             {
                 Assert.IsTrue(listpageMenu.IsColumnPresent(row["FilterName"]),
