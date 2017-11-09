@@ -255,7 +255,7 @@ Scenario: Evergreen Jnr_DevicesList_Check that 500 error page is not displayed a
 	| ColumnName                   |
 	| Windows7Mi: Date & Time Task |
 	Then data in table is sorted by 'Build Date' column in descenting order
-		When User clicks the Logout button
+	When User clicks the Logout button
 	Then Signed Out page is displayed to the user
 	And User is logged out
 
@@ -588,6 +588,18 @@ Scenario: Evergreen Jnr_UsersList_Check that columns order saved after search
 	| SearchCriteria | NumberOfRows |
 	| Smith          | 58           |
 	Then "Compliance" column is "Right" Pinned
+	When User clicks the Logout button
+	Then Signed Out page is displayed to the user
+	And User is logged out
+
+@Evergreen @DeviceList @Filter @DAS-10781
+Scenario: Evergreen Device_Compliance_Filter does not have 'Add Compliance column' available
+	When User clicks "Devices" on the left-hand menu
+	Then "Devices" list should be displayed to the user
+	When User clicks the Filters button
+	Then Filters panel is displayed to the user
+	When user select "Compliance" filter
+	Then "Add Compliance column" checkbox is displayed
 	When User clicks the Logout button
 	Then Signed Out page is displayed to the user
 	And User is logged out

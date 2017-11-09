@@ -91,5 +91,13 @@ namespace DashworksTestAutomation.Steps.Dashworks
             _driver.WaitWhileControlIsNotDisplayed<FiltersElement>(() => filterElement.ResetFiltersButton);
             filterElement.ResetFiltersButton.Click();
         }
+
+        [Then(@"""(.*)"" checkbox is displayed")]
+        public void ThenCheckboxIsDisplayed(string filterName)
+        {
+            var filterElement = _driver.NowAt<FiltersElement>();
+            Assert.IsTrue(filterElement.AddCategoryColumnCheckbox.Displayed(), $"{filterName} tick box is not displayed");
+            Logger.Write($"{filterName} tick box is displayed");
+        }
     }
 }

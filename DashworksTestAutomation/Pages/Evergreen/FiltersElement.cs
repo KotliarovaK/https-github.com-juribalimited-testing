@@ -36,14 +36,14 @@ namespace DashworksTestAutomation.Pages.Evergreen
         [FindsBy(How = How.XPath, Using = ".//span[text()='B Star Packages']")]
         public IWebElement BStarPackegesCheckbox { get; set; }
 
-        [FindsBy(How = How.XPath, Using = ".//span[@class='mat-checkbox-label']")]
-        public IWebElement AddCategoryColumnCheckbox { get; set; }
-
         [FindsBy(How = How.XPath, Using = ".//button[@class='mat-primary mat-raised-button']")]
         public IWebElement SaveButton { get; set; }
 
         [FindsBy(How = How.XPath, Using = ".//button[@class='mat-raised-button']")]
         public IWebElement CancelButton { get; set; }
+
+        [FindsBy(How = How.XPath, Using = ".//div[@class='mat-checkbox-frame']")]
+        public IWebElement AddCategoryColumnCheckbox { get; set; }
 
         [FindsBy(How = How.XPath, Using = ".//div[@class='filterAddPanel']//button[@title='Remove Filter']")]
         public IWebElement RemoveFilterButton { get; set; }
