@@ -196,25 +196,70 @@
     <Compile Include="Steps\Dashworks\EvergreenJnr_NewCustomList.cs" />
     <Compile Include="Steps\Dashworks\EvergreenJnr_QueryStrings.cs" />
     <Compile Include="Steps\Logout.cs" />
-    <Compile Include="Tests\EvergreenJnr_AddColumnToDevices.feature.cs">
+    <Compile Include="Tests\EvergreenJnr_Columns\AddColumnAction.feature.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>EvergreenJnr_AddColumnToDevices.feature</DependentUpon>
+      <DependentUpon>AddColumnAction.feature</DependentUpon>
     </Compile>
-    <Compile Include="Tests\EvergreenJnr_QueryStrings.feature.cs">
+    <Compile Include="Tests\EvergreenJnr_Columns\ColumnSectionDisplay.feature.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>EvergreenJnr_QueryStrings.feature</DependentUpon>
+      <DependentUpon>ColumnSectionDisplay.feature</DependentUpon>
     </Compile>
-    <Compile Include="Tests\EvergreenJnr_Search.feature.cs">
+    <Compile Include="Tests\EvergreenJnr_ListPanel\DisplayCustomListCreation.feature.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>EvergreenJnr_Search.feature</DependentUpon>
+      <DependentUpon>DisplayCustomListCreation.feature</DependentUpon>
     </Compile>
-    <Compile Include="Tests\EvergreenJnr_TableActions.feature.cs">
+    <Compile Include="Tests\EvergreenJnr_DynamicLists\RemoveColumn.feature.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>EvergreenJnr_TableActions.feature</DependentUpon>
+      <DependentUpon>RemoveColumn.feature</DependentUpon>
+    </Compile>
+    <Compile Include="Tests\EvergreenJnr_DynamicLists\Search.feature.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Search.feature</DependentUpon>
+    </Compile>
+    <Compile Include="Tests\EvergreenJnr_FiltersFeature\AllCheckbox.feature.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>AllCheckbox.feature</DependentUpon>
+    </Compile>
+    <Compile Include="Tests\EvergreenJnr_FiltersFeature\FiltersDisplay.feature.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>FiltersDisplay.feature</DependentUpon>
+    </Compile>
+    <Compile Include="Tests\EvergreenJnr_StaticLists\ColumnOrder.feature.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ColumnOrder.feature</DependentUpon>
+    </Compile>
+    <Compile Include="Tests\EvergreenJnr_StaticLists\Display.feature.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Display.feature</DependentUpon>
+    </Compile>
+    <Compile Include="Tests\EvergreenJnr_ListDetails\ItemDetailsDisplay.feature.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ItemDetailsDisplay.feature</DependentUpon>
+    </Compile>
+    <Compile Include="Tests\EvergreenJnr_StaticLists\RemoveColumn.feature.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>RemoveColumn.feature</DependentUpon>
+    </Compile>
+    <Compile Include="Tests\EvergreenJnr_StaticLists\Search.feature.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Search.feature</DependentUpon>
+    </Compile>
+    <Compile Include="Tests\EvergreenJnr_StaticLists\TableSorting.feature.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>TableSorting.feature</DependentUpon>
     </Compile>
     <Compile Include="Utils\ByFactory.cs" />
     <Compile Include="Utils\FileSystemHelper.cs" />
@@ -229,21 +274,57 @@
     <None Include="packages.config">
       <SubType>Designer</SubType>
     </None>
-    <None Include="Tests\EvergreenJnr_AddColumnToDevices.feature">
+    <None Include="Tests\EvergreenJnr_Columns\AddColumnAction.feature">
       <Generator>SpecFlowSingleFileGenerator</Generator>
-      <LastGenOutput>EvergreenJnr_AddColumnToDevices.feature.cs</LastGenOutput>
+      <LastGenOutput>AddColumnAction.feature.cs</LastGenOutput>
     </None>
-    <None Include="Tests\EvergreenJnr_QueryStrings.feature">
+    <None Include="Tests\EvergreenJnr_Columns\ColumnSectionDisplay.feature">
       <Generator>SpecFlowSingleFileGenerator</Generator>
-      <LastGenOutput>EvergreenJnr_QueryStrings.feature.cs</LastGenOutput>
+      <LastGenOutput>ColumnSectionDisplay.feature.cs</LastGenOutput>
     </None>
-    <None Include="Tests\EvergreenJnr_Search.feature">
+    <None Include="Tests\EvergreenJnr_ListPanel\DisplayCustomListCreation.feature">
       <Generator>SpecFlowSingleFileGenerator</Generator>
-      <LastGenOutput>EvergreenJnr_Search.feature.cs</LastGenOutput>
+      <LastGenOutput>DisplayCustomListCreation.feature.cs</LastGenOutput>
     </None>
-    <None Include="Tests\EvergreenJnr_TableActions.feature">
+    <None Include="Tests\EvergreenJnr_DynamicLists\RemoveColumn.feature">
       <Generator>SpecFlowSingleFileGenerator</Generator>
-      <LastGenOutput>EvergreenJnr_TableActions.feature.cs</LastGenOutput>
+      <LastGenOutput>RemoveColumn.feature.cs</LastGenOutput>
+    </None>
+    <None Include="Tests\EvergreenJnr_DynamicLists\Search.feature">
+      <Generator>SpecFlowSingleFileGenerator</Generator>
+      <LastGenOutput>Search.feature.cs</LastGenOutput>
+    </None>
+    <None Include="Tests\EvergreenJnr_FiltersFeature\AllCheckbox.feature">
+      <Generator>SpecFlowSingleFileGenerator</Generator>
+      <LastGenOutput>AllCheckbox.feature.cs</LastGenOutput>
+    </None>
+    <None Include="Tests\EvergreenJnr_FiltersFeature\FiltersDisplay.feature">
+      <Generator>SpecFlowSingleFileGenerator</Generator>
+      <LastGenOutput>FiltersDisplay.feature.cs</LastGenOutput>
+    </None>
+    <None Include="Tests\EvergreenJnr_StaticLists\ColumnOrder.feature">
+      <Generator>SpecFlowSingleFileGenerator</Generator>
+      <LastGenOutput>ColumnOrder.feature.cs</LastGenOutput>
+    </None>
+    <None Include="Tests\EvergreenJnr_StaticLists\Display.feature">
+      <Generator>SpecFlowSingleFileGenerator</Generator>
+      <LastGenOutput>Display.feature.cs</LastGenOutput>
+    </None>
+    <None Include="Tests\EvergreenJnr_ListDetails\ItemDetailsDisplay.feature">
+      <Generator>SpecFlowSingleFileGenerator</Generator>
+      <LastGenOutput>ItemDetailsDisplay.feature.cs</LastGenOutput>
+    </None>
+    <None Include="Tests\EvergreenJnr_StaticLists\RemoveColumn.feature">
+      <Generator>SpecFlowSingleFileGenerator</Generator>
+      <LastGenOutput>RemoveColumn.feature.cs</LastGenOutput>
+    </None>
+    <None Include="Tests\EvergreenJnr_StaticLists\Search.feature">
+      <Generator>SpecFlowSingleFileGenerator</Generator>
+      <LastGenOutput>Search.feature.cs</LastGenOutput>
+    </None>
+    <None Include="Tests\EvergreenJnr_StaticLists\TableSorting.feature">
+      <Generator>SpecFlowSingleFileGenerator</Generator>
+      <LastGenOutput>TableSorting.feature.cs</LastGenOutput>
     </None>
   </ItemGroup>
   <ItemGroup>
@@ -251,6 +332,10 @@
   </ItemGroup>
   <ItemGroup>
     <Service Include="{82A7F48D-3B50-4B1E-B82E-3ADA8210C358}" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Tests\EvergreenJnr_ActionsPanel\" />
+    <Folder Include="Tests\EvergreenJnr_GlobalSearch\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
