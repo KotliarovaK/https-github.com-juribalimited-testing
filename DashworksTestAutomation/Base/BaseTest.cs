@@ -22,7 +22,8 @@ namespace DashworksTestAutomation.Base
                     //options.AddArgument("start-fullscreen");
                     //options.AddArgument(string.Format("window-size={0}", Browser.Resolution));
                     options.AddArgument("start-maximized");
-                    //options.AddArgument("cast-initial-screen-width=100");
+                    //options.AddArgument(@"user-data-dir=C:\Users\stuar\AppData\Local\Google\Chrome\User Data");
+                    //options.AddArgument("cast-initial-screen-width=4000");
                     //options.AddArgument("desktop-window-1080p");
                     //options.AddArgument("ash-host-window-bounds=80x60*2");
                     return new ChromeDriver(options);
