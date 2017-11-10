@@ -1,6 +1,5 @@
-﻿#@retry:3
-Feature: EvergreenJnr_Search
-	Runs Evergreen Search related tests
+﻿Feature: Search
+	Runs Search related tests
 
 Background: Pre-Conditions
 	Given User is on Dashworks Homepage
@@ -12,7 +11,7 @@ Background: Pre-Conditions
 	When User clicks the Switch to Evergreen link
 	Then Evergreen Dashboards page should be displayed to the user
 
-@Evergreen @Search @Devices
+@Evergreen @Search @Devices @EvergreenJnr_StaticList
 Scenario: Evergreen Jnr_Devices List_agGrid	_Search Tests
 	When User clicks "Devices" on the left-hand menu
 	Then "Devices" list should be displayed to the user
@@ -42,19 +41,7 @@ Scenario: Evergreen Jnr_Devices List_agGrid	_Search Tests
 	Then Signed Out page is displayed to the user
 	And User is logged out
 
-@Evergreen @Search @Devices @DAS-10998
-Scenario: Evergreen Jnr_Devices List_agGrid Search_Does Not Trigger_New Custom List
-	When User clicks "Devices" on the left-hand menu
-	Then "Devices" list should be displayed to the user
-	And User enters SearchCriteria into the agGrid Search Box and the correct NumberOfRows are returned
-	| SearchCriteria | NumberOfRows |
-	| Henry          | 34           |
-	Then Save to New Custom List element is NOT displayed
-	When User clicks the Logout button
-	Then Signed Out page is displayed to the user
-	And User is logged out
-
-@Evergreen @Search @Devices
+@Evergreen @Search @Devices @EvergreenJnr_StaticList
 Scenario: Evergreen Jnr_Devices List_agGrid_Clearing search returns the full data set
 	When User clicks "Devices" on the left-hand menu
 	Then "Devices" list should be displayed to the user
@@ -67,7 +54,7 @@ Scenario: Evergreen Jnr_Devices List_agGrid_Clearing search returns the full dat
 	Then Signed Out page is displayed to the user
 	And User is logged out
 
-@Evergreen @Search @Devices
+@Evergreen @Search @Devices @EvergreenJnr_StaticList
 Scenario: Evergreen Jnr_Devices List_agGrid Search_No Devices Found
 	When User clicks "Devices" on the left-hand menu
 	Then "Devices" list should be displayed to the user
@@ -98,7 +85,7 @@ Scenario: Evergreen Jnr_Devices List_agGrid Search_No Devices Found
 	Then Signed Out page is displayed to the user
 	And User is logged out
 
-@Evergreen @Search @Devices @DAS-10772
+@Evergreen @Search @Devices @Search @EvergreenJnr_StaticList @DAS-10772
 Scenario: Evergreen Jnr_DevicesList_Search Within All Rows
 	When User clicks "Devices" on the left-hand menu
 	Then "Devices" list should be displayed to the user
@@ -116,31 +103,7 @@ Scenario: Evergreen Jnr_DevicesList_Search Within All Rows
 	Then Signed Out page is displayed to the user
 	And User is logged out
 
-@Evergreen @Search @Users @DAS-10769
-Scenario: Evergreen Jnr_DevicesList_Select All Checkbox Status Check After Search
-	When User clicks "Users" on the left-hand menu
-	Then "Users" list should be displayed to the user
-	When User clicks the Actions button
-	Then Actions panel is displayed to the user
-	When User select all rows
-	Then The number of rows selected matches the number of rows of the main object list
-	Then User enters SearchCriteria into the agGrid Search Box and the correct NumberOfRows are returned
-	| SearchCriteria | NumberOfRows |
-	| alain          | 42           |
-	Then Select All selectbox is checked
-	Then "42" rows are displayed in the agGrid
-	Then "38271" selected rows are displayed in the Actions panel
-	When User is deselect all rows
-	And User select all rows
-	Then The number of rows selected matches the number of rows of the main object list
-	And Clearing the agGrid Search Box
-	Then Select All selectbox is checked
-	Then "42" selected rows are displayed in the Actions panel
-	When User clicks the Logout button
-	Then Signed Out page is displayed to the user
-	And User is logged out
-	
-@Evergreen @Search @Devices @Applications @Users @Mailboxes @DAS-10580 @DAS-10667 @DAS-10624
+@Evergreen @Search @Devices @Applications @Users @Mailboxes @EvergreenJnr_StaticList @DAS-10580 @DAS-10667 @DAS-10624
 Scenario: Evergreen Jnr_AllLists_Check search filter and table content during navigation between pages
 	When User clicks "Devices" on the left-hand menu
 	Then "Devices" list should be displayed to the user
@@ -172,42 +135,6 @@ Scenario: Evergreen Jnr_AllLists_Check search filter and table content during na
 	Then "Devices" list should be displayed to the user
 	Then "17,271" rows are displayed in the agGrid
 	Then Search field is empty
-	When User clicks the Logout button
-	Then Signed Out page is displayed to the user
-	And User is logged out
-
-@Evergreen @Search @Devices @DAS-10704
-Scenario: Evergreen Jnr_DevicesList_agGrid_Check that quick search doesn't triggers new list menu
-	When User clicks "Devices" on the left-hand menu
-	Then "Devices" list should be displayed to the user
-	Then User enters SearchCriteria into the agGrid Search Box and the correct NumberOfRows are returned
-	| SearchCriteria | NumberOfRows |
-	| Smith          | 11           |
-	Then Save to New Custom List element is NOT displayed
-	When User clicks the Logout button
-	Then Signed Out page is displayed to the user
-	And User is logged out
-
-@Evergreen @Search @Devices @DAS-10704
-Scenario: Evergreen Jnr_DevicesList_agGrid_Check that quick search reset when moving between lists
-	When User clicks "Devices" on the left-hand menu
-	Then "Devices" list should be displayed to the user
-	When User clicks the Columns button
-	Then Columns panel is displayed to the user
-	When ColumnName is entered into the search box and the selection is clicked
-	| ColumnName |
-	| Build Date |
-	Then ColumnName is added to the list
-	| ColumnName |
-	| Build Date |
-	When User create custom list with "TestList" name
-	Then "TestList" is displayed to user
-	Then User enters SearchCriteria into the agGrid Search Box and the correct NumberOfRows are returned
-	| SearchCriteria | NumberOfRows |
-	| Smith          | 11           |
-	When User navigates to the "All Devices" list
-	Then Search field is empty
-	When User is removed custom list with "TestList" name
 	When User clicks the Logout button
 	Then Signed Out page is displayed to the user
 	And User is logged out
