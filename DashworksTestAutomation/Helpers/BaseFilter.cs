@@ -78,7 +78,7 @@ namespace DashworksTestAutomation.Helpers
             _driver.WaitForDataLoading();
             _driver.FindElement(By.XPath(".//div[@class='filterAddPanel']//input[@placeholder='Search']"))
                 .SendKeys(_value);
-            _driver.FindElement(By.XPath(".//div[@class='filterAddPanel']//span[text()='London']")).Click();
+            _driver.FindElement(By.XPath($".//div[@class='filterAddPanel']//span[text()='{_value}']")).Click();
             SaveFilter();
         }
     }
@@ -102,6 +102,26 @@ namespace DashworksTestAutomation.Helpers
                 _driver.FindElement(
                     By.XPath($".//div[@class='filterAddPanel']//span[text()='{row["SelectedCheckboxes"]}']")).Click();
             }
+            SaveFilter();
+        }
+    }
+
+    public class ValueFilter : BaseFilter
+    {
+        private string _value { get; set; }
+
+        public ValueFilter(RemoteWebDriver driver, string operatorValue, bool acceptCheckbox, string value) :
+            base(driver, operatorValue, acceptCheckbox)
+        {
+            _value = value;
+        }
+
+        public override void Do()
+        {
+            SelectOperator();
+            _driver.WaitForDataLoading();
+            _driver.FindElement(By.XPath(".//div[@class='filterAddPanel']//input[@id='chipInput']"))
+                .SendKeys(_value);
             SaveFilter();
         }
     }

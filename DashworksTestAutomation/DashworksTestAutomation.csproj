@@ -206,6 +206,11 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>ColumnSectionDisplay.feature</DependentUpon>
     </Compile>
+    <Compile Include="Tests\EvergreenJnr_FiltersFeature\Functionality.feature.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Functionality.feature</DependentUpon>
+    </Compile>
     <Compile Include="Tests\EvergreenJnr_ListPanel\DisplayCustomListCreation.feature.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -221,7 +226,7 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>Search.feature</DependentUpon>
     </Compile>
-    <Compile Include="Tests\EvergreenJnr_FiltersFeature\AllCheckbox.feature.cs">
+    <Compile Include="Tests\EvergreenJnr_ActionsPanel\AllCheckbox.feature.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>AllCheckbox.feature</DependentUpon>
@@ -282,6 +287,10 @@
       <Generator>SpecFlowSingleFileGenerator</Generator>
       <LastGenOutput>ColumnSectionDisplay.feature.cs</LastGenOutput>
     </None>
+    <None Include="Tests\EvergreenJnr_FiltersFeature\Functionality.feature">
+      <Generator>SpecFlowSingleFileGenerator</Generator>
+      <LastGenOutput>Functionality.feature.cs</LastGenOutput>
+    </None>
     <None Include="Tests\EvergreenJnr_ListPanel\DisplayCustomListCreation.feature">
       <Generator>SpecFlowSingleFileGenerator</Generator>
       <LastGenOutput>DisplayCustomListCreation.feature.cs</LastGenOutput>
@@ -294,7 +303,7 @@
       <Generator>SpecFlowSingleFileGenerator</Generator>
       <LastGenOutput>Search.feature.cs</LastGenOutput>
     </None>
-    <None Include="Tests\EvergreenJnr_FiltersFeature\AllCheckbox.feature">
+    <None Include="Tests\EvergreenJnr_ActionsPanel\AllCheckbox.feature">
       <Generator>SpecFlowSingleFileGenerator</Generator>
       <LastGenOutput>AllCheckbox.feature.cs</LastGenOutput>
     </None>
@@ -334,7 +343,6 @@
     <Service Include="{82A7F48D-3B50-4B1E-B82E-3ADA8210C358}" />
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="Tests\EvergreenJnr_ActionsPanel\" />
     <Folder Include="Tests\EvergreenJnr_GlobalSearch\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

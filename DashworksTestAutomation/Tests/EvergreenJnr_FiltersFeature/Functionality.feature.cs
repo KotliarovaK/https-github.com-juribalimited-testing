@@ -18,7 +18,7 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_FiltersFeature
     [System.CodeDom.Compiler.GeneratedCodeAttribute("TechTalk.SpecFlow", "2.2.0.0")]
     [System.Runtime.CompilerServices.CompilerGeneratedAttribute()]
     [Microsoft.VisualStudio.TestTools.UnitTesting.TestClassAttribute()]
-    public partial class AllCheckboxFeature
+    public partial class FunctionalityFeature
     {
         
         private static TechTalk.SpecFlow.ITestRunner testRunner;
@@ -41,7 +41,7 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_FiltersFeature
         public static void FeatureSetup(Microsoft.VisualStudio.TestTools.UnitTesting.TestContext testContext)
         {
             testRunner = TechTalk.SpecFlow.TestRunnerManager.GetTestRunner(null, 0);
-            TechTalk.SpecFlow.FeatureInfo featureInfo = new TechTalk.SpecFlow.FeatureInfo(new System.Globalization.CultureInfo("en-US"), "AllCheckbox", "\tRuns All Checkbox related tests", ProgrammingLanguage.CSharp, ((string[])(null)));
+            TechTalk.SpecFlow.FeatureInfo featureInfo = new TechTalk.SpecFlow.FeatureInfo(new System.Globalization.CultureInfo("en-US"), "Functionality", "\tRuns Filters Functionality related tests", ProgrammingLanguage.CSharp, ((string[])(null)));
             testRunner.OnFeatureStart(featureInfo);
         }
         
@@ -56,9 +56,9 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_FiltersFeature
         public virtual void TestInitialize()
         {
             if (((testRunner.FeatureContext != null) 
-                        && (testRunner.FeatureContext.FeatureInfo.Title != "AllCheckbox")))
+                        && (testRunner.FeatureContext.FeatureInfo.Title != "Functionality")))
             {
-                global::DashworksTestAutomation.Tests.EvergreenJnr_FiltersFeature.AllCheckboxFeature.FeatureSetup(null);
+                global::DashworksTestAutomation.Tests.EvergreenJnr_FiltersFeature.FunctionalityFeature.FeatureSetup(null);
             }
         }
         
@@ -92,46 +92,32 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_FiltersFeature
         }
         
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestMethodAttribute()]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.DescriptionAttribute("Evergreen Jnr_DevicesList_Select All Checkbox Status Check After Search")]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("FeatureTitle", "AllCheckbox")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.DescriptionAttribute("Evergreen Jnr_DevicesList_Check Sort By Date Functionality")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("FeatureTitle", "Functionality")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("Evergreen")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("Users")]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("AllCheckbox")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("Evergreen_FiltersFeature")]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("DAS-10769")]
-        public virtual void EvergreenJnr_DevicesList_SelectAllCheckboxStatusCheckAfterSearch()
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("Functionality")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("DAS-10612")]
+        public virtual void EvergreenJnr_DevicesList_CheckSortByDateFunctionality()
         {
-            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Evergreen Jnr_DevicesList_Select All Checkbox Status Check After Search", new string[] {
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Evergreen Jnr_DevicesList_Check Sort By Date Functionality", new string[] {
                         "Evergreen",
                         "Users",
-                        "AllCheckbox",
                         "Evergreen_FiltersFeature",
-                        "DAS-10769"});
+                        "Functionality",
+                        "DAS-10612"});
             this.ScenarioSetup(scenarioInfo);
             this.FeatureBackground();
             testRunner.When("User clicks \"Users\" on the left-hand menu", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
             testRunner.Then("\"Users\" list should be displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-            testRunner.When("User clicks the Actions button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-            testRunner.Then("Actions panel is displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-            testRunner.When("User select all rows", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-            testRunner.Then("The number of rows selected matches the number of rows of the main object list", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-            TechTalk.SpecFlow.Table table1 = new TechTalk.SpecFlow.Table(new string[] {
-                        "SearchCriteria",
-                        "NumberOfRows"});
-            table1.AddRow(new string[] {
-                        "alain",
-                        "42"});
-            testRunner.Then("User enters SearchCriteria into the agGrid Search Box and the correct NumberOfRow" +
-                    "s are returned", ((string)(null)), table1, "Then ");
-            testRunner.Then("Select All selectbox is checked", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-            testRunner.Then("\"42\" rows are displayed in the agGrid", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-            testRunner.Then("\"38271\" selected rows are displayed in the Actions panel", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-            testRunner.When("User is deselect all rows", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-            testRunner.And("User select all rows", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-            testRunner.Then("The number of rows selected matches the number of rows of the main object list", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-            testRunner.And("Clearing the agGrid Search Box", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-            testRunner.Then("Select All selectbox is checked", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-            testRunner.Then("\"42\" selected rows are displayed in the Actions panel", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+            testRunner.When("User clicks the Filters button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+            testRunner.Then("Filters panel is displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+            testRunner.When("user select \"Display Name\" filter", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+            testRunner.When("User have created filter with \"true\" column checkbox and \"Jeremiah S. O\'Connor\" o" +
+                    "ption", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+            testRunner.Then("\"Display Name\" filter is added to the list", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+            testRunner.Then("\"2\" rows are displayed in the agGrid", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
             testRunner.When("User clicks the Logout button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
             testRunner.Then("Signed Out page is displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
             testRunner.And("User is logged out", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");

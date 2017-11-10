@@ -11,7 +11,7 @@ Background: Pre-Conditions
 	When User clicks the Switch to Evergreen link
 	Then Evergreen Dashboards page should be displayed to the user
 
-@Evergreen @Search @Users @AllCheckbox @Evergreen_FiltersFeature @DAS-10769
+@Evergreen @Search @Users @AllCheckbox @Evergreen_ActionsPanel @DAS-10769
 Scenario: Evergreen Jnr_DevicesList_Select All Checkbox Status Check After Search
 	When User clicks "Users" on the left-hand menu
 	Then "Users" list should be displayed to the user
