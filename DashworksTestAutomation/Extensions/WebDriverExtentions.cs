@@ -443,5 +443,18 @@ namespace DashworksTestAutomation.Extensions
         }
 
         #endregion
+
+        #region Web element extensions
+
+        public static void SelectCustomSelectbox(this IWebDriver driver, IWebElement selectbox, string option)
+        {
+            selectbox.Click();
+            //Small wait for dropdown display
+            Thread.Sleep(200);
+            var options = driver.FindElements(By.XPath(".//div[contains(@class,'mat-select-content')]/md-option"));
+            options.First(x => x.Text.Contains(option)).Click();
+        }
+
+        #endregion
     }
 }

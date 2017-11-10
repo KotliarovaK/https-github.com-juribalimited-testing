@@ -36,14 +36,23 @@ namespace DashworksTestAutomation.Pages.Evergreen
         [FindsBy(How = How.XPath, Using = ".//span[text()='B Star Packages']")]
         public IWebElement BStarPackegesCheckbox { get; set; }
 
-        [FindsBy(How = How.XPath, Using = ".//span[@class='mat-checkbox-label']")]
-        public IWebElement AddCategoryColumnCheckbox { get; set; }
-
         [FindsBy(How = How.XPath, Using = ".//button[@class='mat-primary mat-raised-button']")]
         public IWebElement SaveButton { get; set; }
 
         [FindsBy(How = How.XPath, Using = ".//button[@class='mat-raised-button']")]
         public IWebElement CancelButton { get; set; }
+
+        [FindsBy(How = How.XPath, Using = ".//div[@class='mat-checkbox-frame']")]
+        public IWebElement AddCategoryColumnCheckbox { get; set; }
+
+        [FindsBy(How = How.XPath, Using = ".//div[@class='filterAddPanel']//button[@title='Remove Filter']")]
+        public IWebElement RemoveFilterButton { get; set; }
+
+        [FindsBy(How = How.XPath, Using = ".//button[@title='Reset Filter']")]
+        public IWebElement ResetFiltersButton { get; set; }
+
+        [FindsBy(How = How.XPath, Using = ".//span[@class='filter-label-value']")]
+        public IList<IWebElement> FilterValues { get; set; }
 
         public override List<By> GetPageIdentitySelectors()
         {
@@ -64,18 +73,7 @@ namespace DashworksTestAutomation.Pages.Evergreen
             Driver.FindElement(selector).Click();
 
             Driver.WaitForDataLoading();
-        }
-
-        public void SelectOption(string optionName)
-        {
-            if (optionName == "Add Category column")
-            {
-                AddCategoryColumnCheckbox.Click();
-            }
-            else
-            {
-                Driver.FindElement(By.XPath($".//span[text()='{optionName}']")).Click();
-            }
+            Driver.WaitWhileControlIsDisplayed<FiltersElement>(() => AddNewFilterButton);
         }
 
         public List<string> GetFiltersNames()
@@ -89,6 +87,20 @@ namespace DashworksTestAutomation.Pages.Evergreen
             var filterColumnDataElements =
                 Driver.FindElements(By.XPath(".//div[@role='gridcell'][@colid='project_1_subCategory']"));
             return filterColumnDataElements.Select(name => name.Text).ToList();
+        }
+
+        public IWebElement GetEditFilterButton(string filterName)
+        {
+            var editFilterSelector =
+                $".//span[@class='filter-label-name'][text()='{filterName}']//ancestor::div[@class='filter-group no-border-bottom']//button";
+            return Driver.FindElement(By.XPath(editFilterSelector));
+        }
+
+        public IWebElement GetBooleanCheckboxImg(string booleanValue)
+        {
+            var imgSelector =
+                $".//li//span[text()='{booleanValue}']/ancestor::span[@class='boolean-icon text-container']/img";
+            return Driver.FindElement(By.XPath(imgSelector));
         }
     }
 }

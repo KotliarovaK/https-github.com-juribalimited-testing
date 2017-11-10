@@ -49,7 +49,7 @@ Scenario: Evergreen Jnr_Devices List_agGrid Search_Does Not Trigger_New Custom L
 	And User enters SearchCriteria into the agGrid Search Box and the correct NumberOfRows are returned
 	| SearchCriteria | NumberOfRows |
 	| Henry          | 34           |
-	Then Save to New Custom List element should NOT be displayed
+	Then Save to New Custom List element is NOT displayed
 	When User clicks the Logout button
 	Then Signed Out page is displayed to the user
 	And User is logged out
@@ -172,21 +172,24 @@ Scenario: Evergreen Jnr_AllLists_Check search filter and table content during na
 	Then "Devices" list should be displayed to the user
 	Then "17,271" rows are displayed in the agGrid
 	Then Search field is empty
-
-@Evergreen @Search @Devices @DAS-10704
-Scenario: Evergreen Jnr_Devices List_agGrid	Check that quick search doesn't triggers new list menu
-	When User clicks "Devices" on the left-hand menu
-	Then "Devices" list should be displayed to the user
-	Then User enters SearchCriteria into the agGrid Search Box and the correct NumberOfRows are returned
-	| SearchCriteria | NumberOfRows |
-	| Smith          | 11           |
-	Then Save to New Custom List element should NOT be displayed
 	When User clicks the Logout button
 	Then Signed Out page is displayed to the user
 	And User is logged out
 
 @Evergreen @Search @Devices @DAS-10704
-Scenario: Evergreen Jnr_Devices List_agGrid	Check that quick search reset when moving between lists
+Scenario: Evergreen Jnr_DevicesList_agGrid_Check that quick search doesn't triggers new list menu
+	When User clicks "Devices" on the left-hand menu
+	Then "Devices" list should be displayed to the user
+	Then User enters SearchCriteria into the agGrid Search Box and the correct NumberOfRows are returned
+	| SearchCriteria | NumberOfRows |
+	| Smith          | 11           |
+	Then Save to New Custom List element is NOT displayed
+	When User clicks the Logout button
+	Then Signed Out page is displayed to the user
+	And User is logged out
+
+@Evergreen @Search @Devices @DAS-10704
+Scenario: Evergreen Jnr_DevicesList_agGrid_Check that quick search reset when moving between lists
 	When User clicks "Devices" on the left-hand menu
 	Then "Devices" list should be displayed to the user
 	When User clicks the Columns button

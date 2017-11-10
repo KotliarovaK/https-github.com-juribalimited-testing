@@ -110,9 +110,9 @@ namespace DashworksTestAutomation.Steps.Dashworks
         [Then(@"agGrid Main Object List is returned with data")]
         public void ThenAgGridMainObjectListIsReturnedWithData()
         {
-            var dashboardPage = _driver.NowAt<BaseDashbordPage>();
+            var dashboardPage = _driver.NowAt<BaseDashboardPage>();
 
-            _driver.WaitWhileControlIsNotDisplayed<BaseDashbordPage>(() => dashboardPage.ResultsOnPageCount);
+            _driver.WaitWhileControlIsNotDisplayed<BaseDashboardPage>(() => dashboardPage.ResultsOnPageCount);
 
             Assert.IsTrue(dashboardPage.ResultsOnPageCount.Displayed());
             Assert.IsTrue(dashboardPage.TableBody.Displayed());

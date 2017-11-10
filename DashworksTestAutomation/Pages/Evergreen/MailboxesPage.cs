@@ -4,7 +4,7 @@ using OpenQA.Selenium;
 
 namespace DashworksTestAutomation.Pages.Evergreen
 {
-    class MailboxesPage : BaseDashbordPage
+    class MailboxesPage : BaseDashboardPage
     {
         public override List<By> GetPageIdentitySelectors()
         {

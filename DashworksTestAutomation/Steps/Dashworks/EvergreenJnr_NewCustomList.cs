@@ -17,13 +17,13 @@ namespace DashworksTestAutomation.Steps.Dashworks
             _driver = driver;
         }
 
-        [Then(@"Save to New Custom List element should NOT be displayed")]
-        public void ThenSaveToNewCustomListElementShouldNOTBeDisplayed()
+        [Then(@"Save to New Custom List element is NOT displayed")]
+        public void SaveToNewCustomListElementIsNOTDisplayed()
         {
-            var page = _driver.NowAt<BaseDashbordPage>();
-
+            var page = _driver.NowAt<BaseDashboardPage>();
+            _driver.WaitWhileControlIsDisplayed<BaseDashboardPage>(() => page.SaveCustomListButton);
             Assert.IsFalse(page.SaveCustomListButton.Displayed(),
-                "Save Custom list is displayed when the user just performs an agGrid search");
+                "Save Custom list is displayed");
 
             Logger.Write("The Save to Custom List Element was NOT displayed");
         }
@@ -43,7 +43,7 @@ namespace DashworksTestAutomation.Steps.Dashworks
         [Then(@"""(.*)"" is displayed to user")]
         public void ThenIsDisplayedToUser(string listName)
         {
-            var page = _driver.NowAt<BaseDashbordPage>();
+            var page = _driver.NowAt<BaseDashboardPage>();
 
             Assert.AreEqual(listName, page.ActiveCustomListName());
         }
@@ -56,6 +56,15 @@ namespace DashworksTestAutomation.Steps.Dashworks
             listElement.SaveAsDropdown.Click();
             _driver.WaitWhileControlIsNotDisplayed<CustomListElement>(() => listElement.UpdateCurrentListButton);
             listElement.UpdateCurrentListButton.Click();
+        }
+
+        [Then(@"Edit List menu is displayed")]
+        public void ThenEditListMenuIsDisplayed()
+        {
+            var listElement = _driver.NowAt<CustomListElement>();
+
+            _driver.WaitWhileControlIsNotDisplayed<CustomListElement>(() => listElement.SaveAsDropdown);
+            Assert.IsTrue(listElement.SaveAsDropdown.Displayed(), "Edit List menu is not displayed");
         }
 
         [When(@"User is removed custom list with ""(.*)"" name")]
@@ -73,7 +82,7 @@ namespace DashworksTestAutomation.Steps.Dashworks
         [When(@"User navigates to the ""(.*)"" list")]
         public void WhenUserNavigatesToTheList(string listName)
         {
-            var page = _driver.NowAt<BaseDashbordPage>();
+            var page = _driver.NowAt<BaseDashboardPage>();
             page.GetListElementByName(listName).Click();
         }
     }
