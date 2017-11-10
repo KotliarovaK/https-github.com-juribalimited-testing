@@ -604,34 +604,24 @@ Scenario: Evergreen Device_Compliance_Check that 'Add column' option as availabl
 	Then Signed Out page is displayed to the user
 	And User is logged out
 
-@Evergreen @TableActions @Applications @DAS-10734
-Scenario: Evergreen Jnr_ApplicationsList_Check true-false options in filter info
-	When User clicks "Applications" on the left-hand menu
-	Then "Applications" list should be displayed to the user
-	When User clicks the Filters button
-	Then Filters panel is displayed to the user
-	When user select "Windows7Mi: Hide from End Users" filter
-	When User have created filter with "false" column checkbox and following options:
-	| SelectedCheckboxes |
-	| TRUE               |
-	| FALSE              |
-	Then "Windows7Mi: Hide from End Users" filter is added to the list
-	Then Values is displayed in added filter info
-	| Values |
-	| true   |
-	| false  |
-	When User clicks the Logout button
-	Then Signed Out page is displayed to the user
-	And User is logged out
-
-@Evergreen @TableActions @Applications @DAS-10734
-Scenario: Evergreen Jnr_ApplicationsList_Check true-false options in filter settings
+@Evergreen @TableActions @Applications @DAS-10651
+Scenario: Evergreen Jnr_ApplicationsList_Check true-false options and images in filter info
 	When User clicks "Applications" on the left-hand menu
 	Then "Applications" list should be displayed to the user
 	When User clicks the Filters button
 	Then Filters panel is displayed to the user
 	When user select "Windows7Mi: Hide from End Users" filter
 	Then correct true and false options are displayed in filter settings
+	When User have created filter with "false" column checkbox and following options:
+	| SelectedCheckboxes |
+	| TRUE               |
+	| FALSE              |
+	| UNKNOWN            |
+	Then "Windows7Mi: Hide from End Users" filter is added to the list
+	Then Values is displayed in added filter info
+	| Values      |
+	| true, false |
+	| Unknown     |
 	When User clicks the Logout button
 	Then Signed Out page is displayed to the user
 	And User is logged out

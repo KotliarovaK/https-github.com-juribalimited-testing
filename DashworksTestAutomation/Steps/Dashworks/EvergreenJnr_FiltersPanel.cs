@@ -3,6 +3,7 @@ using System.Linq;
 using DashworksTestAutomation.Extensions;
 using DashworksTestAutomation.Helpers;
 using DashworksTestAutomation.Pages.Evergreen;
+using DashworksTestAutomation.Providers;
 using DashworksTestAutomation.Utils;
 using NUnit.Framework;
 using OpenQA.Selenium.Remote;
@@ -114,11 +115,11 @@ namespace DashworksTestAutomation.Steps.Dashworks
         public void ThenCorrectTrueAndFalseOptionsAreDisplayedInFilterSettings()
         {
             var filterElement = _driver.NowAt<FiltersElement>();
-            Assert.AreEqual("http://automation.corp.juriba.com/evergreen/img/tick.png",
+            Assert.AreEqual($"{UrlProvider.Url}evergreen/img/tick.png",
                 filterElement.GetBooleanCheckboxImg("TRUE").GetAttribute("src"), "Incorrect image for True value");
-            Assert.AreEqual("http://automation.corp.juriba.com/evergreen/img/cross.png",
+            Assert.AreEqual($"{UrlProvider.Url}evergreen/img/cross.png",
                 filterElement.GetBooleanCheckboxImg("FALSE").GetAttribute("src"), "Incorrect image for False value");
-            Assert.AreEqual("http://automation.corp.juriba.com/evergreen/img/unknown.png",
+            Assert.AreEqual($"{UrlProvider.Url}evergreen/img/unknown.png",
                 filterElement.GetBooleanCheckboxImg("UNKNOWN").GetAttribute("src"),
                 "Incorrect image for Unknown value");
         }
