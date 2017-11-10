@@ -3,6 +3,7 @@ using System.Linq;
 using DashworksTestAutomation.Extensions;
 using DashworksTestAutomation.Helpers;
 using DashworksTestAutomation.Pages.Evergreen;
+using DashworksTestAutomation.Providers;
 using DashworksTestAutomation.Utils;
 using NUnit.Framework;
 using OpenQA.Selenium.Remote;
@@ -96,8 +97,31 @@ namespace DashworksTestAutomation.Steps.Dashworks
         public void ThenCheckboxIsDisplayed(string filterName)
         {
             var filterElement = _driver.NowAt<FiltersElement>();
-            Assert.IsTrue(filterElement.AddCategoryColumnCheckbox.Displayed(), $"{filterName} tick box is not displayed");
+            Assert.IsTrue(filterElement.AddCategoryColumnCheckbox.Displayed(),
+                $"{filterName} tick box is not displayed");
             Logger.Write($"{filterName} tick box is displayed");
+        }
+
+        [Then(@"Values is displayed in added filter info")]
+        public void ThenValuesIsDisplayedInAddedFilterInfo(Table table)
+        {
+            var filterElement = _driver.NowAt<FiltersElement>();
+            var expectedList = table.Rows.SelectMany(row => row.Values);
+            var actualList = filterElement.FilterValues.Select(value => value.Text);
+            Assert.AreEqual(expectedList, actualList, "Filter settings values are different");
+        }
+
+        [Then(@"correct true and false options are displayed in filter settings")]
+        public void ThenCorrectTrueAndFalseOptionsAreDisplayedInFilterSettings()
+        {
+            var filterElement = _driver.NowAt<FiltersElement>();
+            Assert.AreEqual($"{UrlProvider.Url}evergreen/img/tick.png",
+                filterElement.GetBooleanCheckboxImg("TRUE").GetAttribute("src"), "Incorrect image for True value");
+            Assert.AreEqual($"{UrlProvider.Url}evergreen/img/cross.png",
+                filterElement.GetBooleanCheckboxImg("FALSE").GetAttribute("src"), "Incorrect image for False value");
+            Assert.AreEqual($"{UrlProvider.Url}evergreen/img/unknown.png",
+                filterElement.GetBooleanCheckboxImg("UNKNOWN").GetAttribute("src"),
+                "Incorrect image for Unknown value");
         }
     }
 }
