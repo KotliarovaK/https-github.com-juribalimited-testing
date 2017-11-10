@@ -51,6 +51,9 @@ namespace DashworksTestAutomation.Pages.Evergreen
         [FindsBy(How = How.XPath, Using = ".//button[@title='Reset Filter']")]
         public IWebElement ResetFiltersButton { get; set; }
 
+        [FindsBy(How = How.XPath, Using = ".//span[@class='filter-label-value']")]
+        public IList<IWebElement> FilterValues { get; set; }
+
         public override List<By> GetPageIdentitySelectors()
         {
             Driver.WaitForDataLoading();
@@ -91,6 +94,13 @@ namespace DashworksTestAutomation.Pages.Evergreen
             var editFilterSelector =
                 $".//span[@class='filter-label-name'][text()='{filterName}']//ancestor::div[@class='filter-group no-border-bottom']//button";
             return Driver.FindElement(By.XPath(editFilterSelector));
+        }
+
+        public IWebElement GetBooleanCheckboxImg(string booleanValue)
+        {
+            var imgSelector =
+                $".//li//span[text()='{booleanValue}']/ancestor::span[@class='boolean-icon text-container']/img";
+            return Driver.FindElement(By.XPath(imgSelector));
         }
     }
 }
