@@ -45,3 +45,36 @@ Scenario: Evergreen Jnr_ApplicationsList_Check true-false options and images in 
 	When User clicks the Logout button
 	Then Signed Out page is displayed to the user
 	And User is logged out
+
+
+@Evergreen @Applications @FiltersDisplay @Evergreen_FiltersFeature @DAS-10651
+Scenario: Evergreen Jnr_ApplicationsList_Check special charecters display in filter info
+	When User clicks "Users" on the left-hand menu
+	Then "Users" list should be displayed to the user
+	When User clicks the Filters button
+	Then Filters panel is displayed to the user
+	When user select "Display Name" filter
+	When User have created filter with "true" column checkbox and "O'Connor" option
+	Then "Display Name" filter is added to the list
+	Then Values is displayed in added filter info
+	| Values   |
+	| O'Connor |
+	When User create custom list with "TestList" name
+	Then "TestList" is displayed to user
+	When User clicks the Filters button
+	Then Filters panel is displayed to the user
+	Then Values is displayed in added filter info
+	| Values   |
+	| O'Connor |
+	When User navigates to the "All Users" list
+	When User navigates to the "TestList" list
+	Then "TestList" is displayed to user
+	When User clicks the Filters button
+	Then Filters panel is displayed to the user
+	Then Values is displayed in added filter info
+	| Values   |
+	| O'Connor |
+	When User is removed custom list with "TestList" name
+	When User clicks the Logout button
+	Then Signed Out page is displayed to the user
+	And User is logged out
