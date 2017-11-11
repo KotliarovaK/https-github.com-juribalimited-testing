@@ -135,7 +135,14 @@ namespace DashworksTestAutomation.Pages.Evergreen
 
         public IWebElement GetListElementByName(string listName)
         {
-            return Driver.FindElement(By.XPath($".//div[@id='submenuBlock']//div[text()='{listName}']"));
+            try
+            {
+                return Driver.FindElement(By.XPath($".//div[@id='submenuBlock']//div[text()='{listName}']"));
+            }
+            catch (Exception e)
+            {
+                return Driver.FindElement(By.XPath($".//div[@id='submenuBlock']//span[text()='{listName}']"));
+            }
         }
 
         public void OpenColumnSettingsByName(string columnName)
