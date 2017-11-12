@@ -52,7 +52,7 @@ namespace DashworksTestAutomation.Steps.Dashworks
         public void WhenUserUpdateCurrentCustomList()
         {
             var listElement = _driver.NowAt<CustomListElement>();
-
+            _driver.WaitWhileControlIsNotDisplayed<CustomListElement>(() => listElement.SaveAsDropdown);
             listElement.SaveAsDropdown.Click();
             _driver.WaitWhileControlIsNotDisplayed<CustomListElement>(() => listElement.UpdateCurrentListButton);
             listElement.UpdateCurrentListButton.Click();
