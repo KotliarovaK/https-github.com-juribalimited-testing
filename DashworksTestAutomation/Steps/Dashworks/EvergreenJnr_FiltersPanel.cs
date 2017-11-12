@@ -36,6 +36,14 @@ namespace DashworksTestAutomation.Steps.Dashworks
             filterElement.AddFilter(filterName);
         }
 
+        [Then(@"""(.*)"" filter is not presented in the filters list")]
+        public void ThenFilterIsNotPresentedInTheFiltersList(string filterName)
+        {
+            var filterElement = _driver.NowAt<FiltersElement>();
+            Assert.IsFalse(filterElement.CheckFilterAvailability(filterName), $"{filterName} is available in the search");
+        }
+
+
         [When(@"User have created filter with ""(.*)"" column checkbox and following options:")]
         public void WhenUserHaveCreatedFilterWithColumnCheckboxAndFollowingOptions(bool columnOption, Table table)
         {

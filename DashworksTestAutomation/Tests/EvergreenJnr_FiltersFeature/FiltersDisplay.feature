@@ -78,3 +78,18 @@ Scenario: Evergreen Jnr_ApplicationsList_Check special charecters display in fil
 	When User clicks the Logout button
 	Then Signed Out page is displayed to the user
 	And User is logged out
+
+@Evergreen @DeviceList @FiltersDisplay @Evergreen_FiltersFeature @DAS-10781
+Scenario: Evergreen Applications_Filters_Check that 'Group' and 'Team' related filters is not presented in the list
+	When User clicks "Applications" on the left-hand menu
+	Then "Applications" list should be displayed to the user
+	When User clicks the Filters button
+	Then Filters panel is displayed to the user
+	Then "Windows7Mi: Group" filter is not presented in the filters list
+	Then "Windows7Mi: Group Key" filter is not presented in the filters list
+	Then "Windows7Mi: Team" filter is not presented in the filters list
+	Then "Windows7Mi: Team Key" filter is not presented in the filters list
+	When User clicks the Logout button
+	Then Signed Out page is displayed to the user
+	And User is logged out
+
