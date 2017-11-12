@@ -77,5 +77,12 @@ namespace DashworksTestAutomation.Steps.Dashworks
             Assert.AreEqual(numberoOfRowsInTable, numberOfRowsInActions,
                 "Number of rows are not equal in table and in Actions");
         }
+
+        [Then(@"Select all checkbox is not displayed")]
+        public void ThenSelectAllCheckboxIsNotDisplayed()
+        {
+            var dashboardPage = _driver.NowAt<BaseDashboardPage>();
+            Assert.IsFalse(dashboardPage.SelectAllCheckbox.Displayed(), "Select All checkbox is displayed");
+        }
     }
 }
