@@ -97,8 +97,8 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_ListDetails
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("FeatureTitle", "ItemDetailsDisplay")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("Evergreen")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("Devices")]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("ItemDetailsDisplay")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("EvergreenJnr_ListDetails")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("ItemDetailsDisplay")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("DAS-10438")]
         public virtual void EvergreenJnr_DevicesList_Details_AllEmptyFieldsInItemDetailsAreDisplayedAsUnknown()
         {
@@ -106,8 +106,8 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_ListDetails
                     "as Unknown", new string[] {
                         "Evergreen",
                         "Devices",
-                        "ItemDetailsDisplay",
                         "EvergreenJnr_ListDetails",
+                        "ItemDetailsDisplay",
                         "DAS-10438"});
             this.ScenarioSetup(scenarioInfo);
             this.FeatureBackground();
@@ -129,8 +129,8 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_ListDetails
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("FeatureTitle", "ItemDetailsDisplay")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("Evergreen")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("Users")]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("ItemDetailsDisplay")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("EvergreenJnr_ListDetails")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("ItemDetailsDisplay")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("DAS-10438")]
         public virtual void EvergreenJnr_UsersList_Details_AllEmptyFieldsInItemDetailsAreDisplayedAsUnknown()
         {
@@ -138,8 +138,8 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_ListDetails
                     " Unknown", new string[] {
                         "Evergreen",
                         "Users",
-                        "ItemDetailsDisplay",
                         "EvergreenJnr_ListDetails",
+                        "ItemDetailsDisplay",
                         "DAS-10438"});
             this.ScenarioSetup(scenarioInfo);
             this.FeatureBackground();
@@ -161,8 +161,8 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_ListDetails
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("FeatureTitle", "ItemDetailsDisplay")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("Evergreen")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("Applications")]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("ItemDetailsDisplay")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("EvergreenJnr_ListDetails")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("ItemDetailsDisplay")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("DAS-10438")]
         public virtual void EvergreenJnr_ApplicationsList_Details_AllEmptyFieldsInItemDetailsAreDisplayedAsUnknown()
         {
@@ -170,8 +170,8 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_ListDetails
                     "ayed as Unknown", new string[] {
                         "Evergreen",
                         "Applications",
-                        "ItemDetailsDisplay",
                         "EvergreenJnr_ListDetails",
+                        "ItemDetailsDisplay",
                         "DAS-10438"});
             this.ScenarioSetup(scenarioInfo);
             this.FeatureBackground();

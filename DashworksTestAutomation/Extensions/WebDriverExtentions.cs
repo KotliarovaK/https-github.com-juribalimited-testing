@@ -352,6 +352,12 @@ namespace DashworksTestAutomation.Extensions
             action.MoveToElement(element).Perform();
         }
 
+        public static void DragAndDrop(this RemoteWebDriver driver, IWebElement elementToBeMoved, IWebElement moveToElement)
+        {
+            Actions action = new Actions(driver);
+            action.DragAndDrop(elementToBeMoved, moveToElement).Perform();
+        }
+
         #endregion
 
         #region Actions with Javascript

@@ -96,10 +96,9 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_DynamicLists
             "ng sorted column in custom list")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("FeatureTitle", "RemoveColumn")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("Evergreen")]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("TableActions")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("Devices")]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("RemoveColumn")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("EvergreenJnr_DynamicLists")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("RemoveColumn")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("DAS-10966")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("DAS-10973")]
         public virtual void EvergreenJnr_DevicesList_CheckThat500ErrorPageIsNotDisplayedAfterRemovingSortedColumnInCustomList()
@@ -107,10 +106,9 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_DynamicLists
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Evergreen Jnr_DevicesList_Check that 500 error page is not displayed after removi" +
                     "ng sorted column in custom list", new string[] {
                         "Evergreen",
-                        "TableActions",
                         "Devices",
-                        "RemoveColumn",
                         "EvergreenJnr_DynamicLists",
+                        "RemoveColumn",
                         "DAS-10966",
                         "DAS-10973"});
             this.ScenarioSetup(scenarioInfo);
@@ -178,8 +176,8 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_DynamicLists
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("FeatureTitle", "RemoveColumn")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("Evergreen")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("Devices")]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("RemoveColumn")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("EvergreenJnr_DynamicLists")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("RemoveColumn")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("DAS-10966")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("DAS-10973")]
         public virtual void EvergreenJnr_DevicesList_CheckThat500ErrorPageIsNotDisplayedAfterRemovingMultipleSortedColumnInCustomList()
@@ -188,8 +186,8 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_DynamicLists
                     "ng multiple sorted column in custom list", new string[] {
                         "Evergreen",
                         "Devices",
-                        "RemoveColumn",
                         "EvergreenJnr_DynamicLists",
+                        "RemoveColumn",
                         "DAS-10966",
                         "DAS-10973"});
             this.ScenarioSetup(scenarioInfo);
@@ -250,6 +248,7 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_DynamicLists
             table15.AddRow(new string[] {
                         "Boot Up Date"});
             testRunner.Then("ColumnName is removed from the list", ((string)(null)), table15, "Then ");
+            testRunner.When("User update current custom list", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
             testRunner.When("User is removed custom list with \"TestList\" name", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
             testRunner.When("User clicks the Logout button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
             testRunner.Then("Signed Out page is displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
@@ -263,8 +262,8 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_DynamicLists
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("FeatureTitle", "RemoveColumn")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("Evergreen")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("Devices")]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("RemoveColumn")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("EvergreenJnr_DynamicLists")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("RemoveColumn")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("DAS-10966")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("DAS-10973")]
         public virtual void EvergreenJnr_DevicesList_CheckThat500ErrorPageIsNotDisplayedAfterRemovingSortedColumnInCustomListThrowFilters()
@@ -273,8 +272,8 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_DynamicLists
                     "ng sorted column in custom list throw filters", new string[] {
                         "Evergreen",
                         "Devices",
-                        "RemoveColumn",
                         "EvergreenJnr_DynamicLists",
+                        "RemoveColumn",
                         "DAS-10966",
                         "DAS-10973"});
             this.ScenarioSetup(scenarioInfo);
@@ -288,7 +287,8 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_DynamicLists
                         "SelectedCheckboxes"});
             table16.AddRow(new string[] {
                         "None"});
-            testRunner.When("User have created filter with \"true\" column checkbox and following options:", ((string)(null)), table16, "When ");
+            testRunner.When("User have created \"Equals\" filter with \"true\" column checkbox and following optio" +
+                    "ns:", ((string)(null)), table16, "When ");
             testRunner.Then("\"Windows7Mi: Category\" filter is added to the list", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
             testRunner.When("User create custom list with \"TestList\" name", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
             testRunner.Then("\"TestList\" is displayed to user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
@@ -299,7 +299,8 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_DynamicLists
                         "SelectedCheckboxes"});
             table17.AddRow(new string[] {
                         "Generic"});
-            testRunner.When("User have created filter with \"true\" column checkbox and following options:", ((string)(null)), table17, "When ");
+            testRunner.When("User have created \"Equals\" filter with \"true\" column checkbox and following optio" +
+                    "ns:", ((string)(null)), table17, "When ");
             testRunner.Then("\"Directory Type\" filter is added to the list", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
             testRunner.When("User click on \'Windows7Mi: Category\' column header", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
             testRunner.When("User clicks the Columns button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");

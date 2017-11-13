@@ -206,15 +206,15 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>ColumnSectionDisplay.feature</DependentUpon>
     </Compile>
-    <Compile Include="Tests\EvergreenJnr_FiltersFeature\Functionality.feature.cs">
+    <Compile Include="Tests\EvergreenJnr_FiltersFeature\FiltersFunctionality.feature.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>Functionality.feature</DependentUpon>
+      <DependentUpon>FiltersFunctionality.feature</DependentUpon>
     </Compile>
-    <Compile Include="Tests\EvergreenJnr_ListPanel\DisplayCustomListCreation.feature.cs">
+    <Compile Include="Tests\EvergreenJnr_ListPanel\CustomListDisplay.feature.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>DisplayCustomListCreation.feature</DependentUpon>
+      <DependentUpon>CustomListDisplay.feature</DependentUpon>
     </Compile>
     <Compile Include="Tests\EvergreenJnr_DynamicLists\RemoveColumn.feature.cs">
       <AutoGen>True</AutoGen>
@@ -241,10 +241,10 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>ColumnOrder.feature</DependentUpon>
     </Compile>
-    <Compile Include="Tests\EvergreenJnr_StaticLists\Display.feature.cs">
+    <Compile Include="Tests\EvergreenJnr_StaticLists\Query.feature.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>Display.feature</DependentUpon>
+      <DependentUpon>Query.feature</DependentUpon>
     </Compile>
     <Compile Include="Tests\EvergreenJnr_ListDetails\ItemDetailsDisplay.feature.cs">
       <AutoGen>True</AutoGen>
@@ -287,13 +287,13 @@
       <Generator>SpecFlowSingleFileGenerator</Generator>
       <LastGenOutput>ColumnSectionDisplay.feature.cs</LastGenOutput>
     </None>
-    <None Include="Tests\EvergreenJnr_FiltersFeature\Functionality.feature">
+    <None Include="Tests\EvergreenJnr_FiltersFeature\FiltersFunctionality.feature">
       <Generator>SpecFlowSingleFileGenerator</Generator>
-      <LastGenOutput>Functionality.feature.cs</LastGenOutput>
+      <LastGenOutput>FiltersFunctionality.feature.cs</LastGenOutput>
     </None>
-    <None Include="Tests\EvergreenJnr_ListPanel\DisplayCustomListCreation.feature">
+    <None Include="Tests\EvergreenJnr_ListPanel\CustomListDisplay.feature">
       <Generator>SpecFlowSingleFileGenerator</Generator>
-      <LastGenOutput>DisplayCustomListCreation.feature.cs</LastGenOutput>
+      <LastGenOutput>CustomListDisplay.feature.cs</LastGenOutput>
     </None>
     <None Include="Tests\EvergreenJnr_DynamicLists\RemoveColumn.feature">
       <Generator>SpecFlowSingleFileGenerator</Generator>
@@ -315,9 +315,9 @@
       <Generator>SpecFlowSingleFileGenerator</Generator>
       <LastGenOutput>ColumnOrder.feature.cs</LastGenOutput>
     </None>
-    <None Include="Tests\EvergreenJnr_StaticLists\Display.feature">
+    <None Include="Tests\EvergreenJnr_StaticLists\Query.feature">
       <Generator>SpecFlowSingleFileGenerator</Generator>
-      <LastGenOutput>Display.feature.cs</LastGenOutput>
+      <LastGenOutput>Query.feature.cs</LastGenOutput>
     </None>
     <None Include="Tests\EvergreenJnr_ListDetails\ItemDetailsDisplay.feature">
       <Generator>SpecFlowSingleFileGenerator</Generator>

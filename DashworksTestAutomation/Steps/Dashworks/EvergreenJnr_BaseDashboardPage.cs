@@ -47,9 +47,8 @@ namespace DashworksTestAutomation.Steps.Dashworks
         public void WhenUserMoveColumnToColumn(string columnName, string columnNameToMove)
         {
             var page = _driver.NowAt<BaseDashboardPage>();
-            Actions dragAndDrop = new Actions(_driver);
-            dragAndDrop.DragAndDrop(page.GetColumnHeaderByName(columnName),
-                page.GetColumnHeaderByName(columnNameToMove)).Perform();
+            _driver.DragAndDrop(page.GetColumnHeaderByName(columnName),
+                page.GetColumnHeaderByName(columnNameToMove));
         }
 
         [When(@"User click on '(.*)' column header")]

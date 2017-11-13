@@ -11,7 +11,7 @@ Background: Pre-Conditions
 	When User clicks the Switch to Evergreen link
 	Then Evergreen Dashboards page should be displayed to the user
 
-@Evergreen @Devices @Search @EvergreenJnr_DynamicLists @DAS-10704
+@Evergreen @Devices @EvergreenJnr_DynamicLists @Search @DAS-10704
 Scenario: Evergreen Jnr_DevicesList_agGrid_Check that quick search reset when moving between lists
 	When User clicks "Devices" on the left-hand menu
 	Then "Devices" list should be displayed to the user

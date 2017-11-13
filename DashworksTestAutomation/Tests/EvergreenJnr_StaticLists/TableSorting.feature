@@ -11,7 +11,7 @@ Background: Pre-Conditions
 	When User clicks the Switch to Evergreen link
 	Then Evergreen Dashboards page should be displayed to the user
 
-@Evergreen @Devices @TableSorting @DAS-10612
+@Evergreen @Devices @EvergreenJnr_StaticLists @TableSorting @DAS-10612
 Scenario: Evergreen Jnr_DevicesList_Check Sort By Date Functionality
 	When User clicks "Devices" on the left-hand menu
 	Then "Devices" list should be displayed to the user
@@ -40,7 +40,7 @@ Scenario: Evergreen Jnr_DevicesList_Check Sort By Date Functionality
 	Then Signed Out page is displayed to the user
 	And User is logged out
 
-@Evergreen @Applications @TableSorting @DAS-10612
+@Evergreen @Applications @EvergreenJnr_StaticLists @TableSorting @DAS-10612
 Scenario: Evergreen Jnr_ApplicationsList_Check Sort By Date Functionality
 	When User clicks "Applications" on the left-hand menu
 	Then "Applications" list should be displayed to the user
@@ -63,7 +63,7 @@ Scenario: Evergreen Jnr_ApplicationsList_Check Sort By Date Functionality
 	Then Signed Out page is displayed to the user
 	And User is logged out
 	
-@Evergreen @TableActions @Mailboxes @DAS-10612
+@Evergreen @Mailboxes @EvergreenJnr_StaticLists @TableSorting @DAS-10612
 Scenario: Evergreen Jnr_MailboxesList_Check Sort By Date Functionality
 	When User clicks "Mailboxes" on the left-hand menu
 	Then "Mailboxes" list should be displayed to the user
@@ -92,8 +92,8 @@ Scenario: Evergreen Jnr_MailboxesList_Check Sort By Date Functionality
 	Then Signed Out page is displayed to the user
 	And User is logged out
 
-@Evergreen @Users @TableSorting @DAS-10612
-Scenario: Evergreen Jnr_UsersList_Check Sort By Date Functionality
+@Evergreen @Users @EvergreenJnr_StaticLists @TableSorting @DAS-10612
+Scenario: EvergreenJnr_UsersList_Check Sort By Date Functionality
 	When User clicks "Users" on the left-hand menu
 	Then "Users" list should be displayed to the user
 	When User clicks the Columns button
@@ -121,8 +121,8 @@ Scenario: Evergreen Jnr_UsersList_Check Sort By Date Functionality
 	Then Signed Out page is displayed to the user
 	And User is logged out
 
-@Evergreen @QueryStrings @Users @Mailboxes @Devices @Applications @TableSorting @DAS-10598
-Scenario: Evergreen Jnr_QueryString_SortByKeys
+@Evergreen @Users @Mailboxes @Devices @Applications @EvergreenJnr_StaticLists @TableSorting @DAS-10598
+Scenario: EvergreenJnr_QueryString_AllLists_SortByKeys
 Runs Evergreen URL query strings which include being sorted by object key columns.
 	When Evergreen QueryStringURL is entered for Simple QueryType
 	| QueryType                       | QueryStringURL                                                                                                                                                                                                                                                                                                                                                                                                                                                       |
@@ -130,20 +130,6 @@ Runs Evergreen URL query strings which include being sorted by object key column
 	| Sort by user key                | evergreen/#/users?$select=username,directoryName,displayName,fullyDistinguishedObjectName,objectKey&$orderby=objectKey%20desc                                                                                                                                                                                                                                                                                                                                        |
 	| Sort by application key         | evergreen/#/applications?$select=packageName,packageManufacturer,packageVersion,packageKey&$orderby=packageKey%20asc                                                                                                                                                                                                                                                                                                                                                 |
 	| Sort by mailbox key             | evergreen/#/mailboxes?$select=principalEmailAddress,mailboxPlatform,serverName,mailboxType,ownerDisplayName,mailboxKey&$orderby=mailboxKey%20asc                                                                                                                                                                                                                                                                                                                     |
-	Then agGrid Main Object List is returned with data
-	When User clicks the Logout button
-	Then Signed Out page is displayed to the user
-	And User is logged out
-
-@Evergreen @QueryStrings @Users @Mailboxes @Devices @Applications @TableSorting
-Scenario: Evergreen Jnr_QueryString_AllLists
-Runs Evergreen URL query strings for the 4 default all lists.
-	When Evergreen QueryStringURL is entered for Simple QueryType
-	| QueryType                       | QueryStringURL                                                                                                                                                                                                                                                                                                                                                                                                                                                                                     |
-	| All Devices                     | evergreen/#/devices?$select=hostname,chassisCategory,oSCategory,ownerDisplayName                                                                                                                                                                                                                                                                                                                                                                                     |
-	| All Users                       | evergreen/#/users?$select=username,directoryName,displayName,fullyDistinguishedObjectName                                                                                                                                                                                                                                                                                                                                                                            |
-	| All Applications                | evergreen/#/applications?$select=packageName,packageManufacturer,packageVersion                                                                                                                                                                                                                                                                                                                                                                                      |
-	| All Mailboxes                   | evergreen/#/mailboxes?$select=principalEmailAddress,mailboxPlatform,serverName,mailboxType,ownerDisplayName                                                                                                                                                                                                                                                                                                                                                          |
 	Then agGrid Main Object List is returned with data
 	When User clicks the Logout button
 	Then Signed Out page is displayed to the user
