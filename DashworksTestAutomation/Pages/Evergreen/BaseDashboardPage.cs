@@ -173,5 +173,11 @@ namespace DashworksTestAutomation.Pages.Evergreen
                 default: throw new Exception($"{pinStatus} is not valid Pin Value");
             }
         }
+
+        public IList<IWebElement> GetAllColumnHeaders()
+        {
+            return Driver.FindElements(
+                By.XPath(".//div[@class='ag-header-cell ag-header-cell-sortable']//span[@ref='eText']"));
+        }
     }
 }
