@@ -14,32 +14,45 @@ namespace DashworksTestAutomation.Base
 
         public RemoteWebDriver CreateBrowserDriver()
         {
-            switch (Browser.Type)
-            {
-                case "Chrome":
-                    ChromeOptions options = new ChromeOptions();
-                    //options.AddArgument("window-position=0,0");
-                    //options.AddArgument("start-fullscreen");
-                    //options.AddArgument(string.Format("window-size={0}", Browser.Resolution));
-                    options.AddArgument("start-maximized");
-                    //options.AddArgument(@"user-data-dir=C:\Users\stuar\AppData\Local\Google\Chrome\User Data");
-                    //options.AddArgument("cast-initial-screen-width=4000");
-                    //options.AddArgument("desktop-window-1080p");
-                    //options.AddArgument("ash-host-window-bounds=80x60*2");
-                    return new ChromeDriver(options);
+            if (Boolean.Parse(Browser.UserRemoteDriver))
+                switch (Browser.Type)
+                {
+                    case "Chrome":
+                        DesiredCapabilities chCap = DesiredCapabilities.Chrome();
+                        return new RemoteWebDriver(new Uri(Browser.HubUri), chCap);
+                    case "Firefox":
+                        DesiredCapabilities ffCap = DesiredCapabilities.Firefox();
+                        return new RemoteWebDriver(new Uri(Browser.HubUri), ffCap);
 
-                case "Firefox":
-                    return new FirefoxDriver();
+                    case "InternetExplorer":
+                        DesiredCapabilities ieCap = DesiredCapabilities.InternetExplorer();
+                        return new RemoteWebDriver(new Uri(Browser.HubUri), ieCap);
 
-                case "InternetExplorer":
-                    return new InternetExplorerDriver();
+                    case "Edge":
+                        DesiredCapabilities eCap = DesiredCapabilities.Edge();
+                        return new RemoteWebDriver(new Uri(Browser.HubUri), eCap);
 
-                case "Edge":
-                    return new EdgeDriver();
+                    default:
+                        throw new Exception($"Browser type '{Browser.Type}' was not identified");
+                }
+            else
+                switch (Browser.Type)
+                {
+                    case "Chrome":
+                        return new ChromeDriver();
 
-                default:
-                    throw new Exception($"Browser type '{Browser.Type}' was not identified");
-            }
+                    case "Firefox":
+                        return new FirefoxDriver();
+
+                    case "InternetExplorer":
+                        return new InternetExplorerDriver();
+
+                    case "Edge":
+                        return new EdgeDriver();
+
+                    default:
+                        throw new Exception($"Browser type '{Browser.Type}' was not identified");
+                }
         }
     }
 }
