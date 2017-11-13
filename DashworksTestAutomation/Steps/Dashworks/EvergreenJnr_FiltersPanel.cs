@@ -40,7 +40,8 @@ namespace DashworksTestAutomation.Steps.Dashworks
         public void ThenFilterIsNotPresentedInTheFiltersList(string filterName)
         {
             var filterElement = _driver.NowAt<FiltersElement>();
-            Assert.IsFalse(filterElement.CheckFilterAvailability(filterName), $"{filterName} is available in the search");
+            Assert.IsFalse(filterElement.CheckFilterAvailability(filterName),
+                $"{filterName} is available in the search");
         }
 
 

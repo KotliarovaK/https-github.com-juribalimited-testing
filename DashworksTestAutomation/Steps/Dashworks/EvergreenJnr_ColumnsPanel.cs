@@ -87,83 +87,6 @@ namespace DashworksTestAutomation.Steps.Dashworks
             }
         }
 
-        [When(@"User click on '(.*)' column header")]
-        public void WhenUserClickOnColumnHeader(string columnName)
-        {
-            var listpageMenu = _driver.NowAt<BaseDashboardPage>();
-            listpageMenu.GetColumnHeaderByName(columnName).Click();
-        }
-
-        [When(@"User sort table by multiple columns")]
-        public void WhenUserSortTableByMultipleColumns(Table table)
-        {
-            var page = _driver.NowAt<BaseDashboardPage>();
-            foreach (var row in table.Rows)
-            {
-                Actions shiftClick = new Actions(_driver);
-                shiftClick.KeyDown(OpenQA.Selenium.Keys.Shift).Click(page.GetColumnHeaderByName(row["ColumnName"]))
-                    .KeyUp(OpenQA.Selenium.Keys.Shift).Perform();
-            }
-        }
-
-        [Then(@"data in table is sorted by '(.*)' column in descenting order")]
-        public void ThenDataInTableIsSortedByColumnInDescentingOrder(string columnName)
-        {
-            var listpageMenu = _driver.NowAt<BaseDashboardPage>();
-
-            List<string> expectedList = listpageMenu.GetColumnContent(columnName).Where(x => !x.Equals("")).ToList();
-            List<KeyValuePair<DateTime, string>> unsortedList = new List<KeyValuePair<DateTime, string>>();
-            DateTime datevalue;
-            foreach (var date in expectedList)
-            {
-                var unconvertedDate = DateTime.TryParse(date, out datevalue);
-                unsortedList.Add(unconvertedDate
-                    ? new KeyValuePair<DateTime, string>(datevalue, date)
-                    : new KeyValuePair<DateTime, string>(DateTime.MinValue, date));
-            }
-            try
-            {
-                Assert.AreEqual(unsortedList.OrderByDescending(x => x.Key).Select(x => x.Value), expectedList);
-            }
-            catch (Exception e)
-            {
-                for (int i = 0; i < expectedList.Count; i++)
-                {
-                    Assert.AreEqual(unsortedList.OrderByDescending(x => x.Key).Select(x => x.Value).ToArray()[i],
-                        expectedList[i]);
-                }
-            }
-        }
-
-        [Then(@"data in table is sorted by '(.*)' column in ascending order")]
-        public void ThenDataInTableIsSortedByColumnInAscendingOrder(string columnName)
-        {
-            var listpageMenu = _driver.NowAt<BaseDashboardPage>();
-
-            List<string> expectedList = listpageMenu.GetColumnContent(columnName).Where(x => !x.Equals("")).ToList();
-            List<KeyValuePair<DateTime, string>> unsortedList = new List<KeyValuePair<DateTime, string>>();
-            DateTime datevalue;
-            foreach (var date in expectedList)
-            {
-                var unconvertedDate = DateTime.TryParse(date, out datevalue);
-                unsortedList.Add(unconvertedDate
-                    ? new KeyValuePair<DateTime, string>(datevalue, date)
-                    : new KeyValuePair<DateTime, string>(DateTime.MinValue, date));
-            }
-            try
-            {
-                Assert.AreEqual(unsortedList.OrderBy(x => x.Key).Select(x => x.Value), expectedList);
-            }
-            catch (Exception e)
-            {
-                for (int i = 0; i < expectedList.Count; i++)
-                {
-                    Assert.AreEqual(unsortedList.OrderByDescending(x => x.Key).Select(x => x.Value).ToArray()[i],
-                        expectedList[i]);
-                }
-            }
-        }
-
         [When(@"User is removed ""(.*)"" column by Column panel")]
         public void WhenUserIsRemovedColumnByColumnPanel(string columnName)
         {
@@ -188,19 +111,6 @@ namespace DashworksTestAutomation.Steps.Dashworks
                 {
                     throw new Exception($"500 error was returned for: {row["ColumnName"]} column");
                 }
-            }
-        }
-
-        [Then(@"Content is present in the newly added column")]
-        public void ThenContentIsPresentInTheNewlyAddedColumn(Table table)
-        {
-            var listpageMenu = _driver.NowAt<BaseDashboardPage>();
-
-            foreach (var row in table.Rows)
-            {
-                var content = listpageMenu.GetColumnContent(row["ColumnName"]);
-                //Check that at least 10 cells has some content
-                Assert.IsTrue(content.Select(string.IsNullOrEmpty).Count() > 10);
             }
         }
 
