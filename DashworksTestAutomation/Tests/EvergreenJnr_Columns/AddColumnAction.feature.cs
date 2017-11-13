@@ -96,16 +96,16 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_Columns
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("FeatureTitle", "AddColumnAction")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("Evergreen")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("Devices")]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("AddColumnAction")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("EvergreenJnr_Columns")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("AddColumnAction")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("DAS-10665")]
         public virtual void EvergreenJnr_DevicesAddTheDeviceKeyColumnToTheDevicesList()
         {
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Evergreen Jnr_Devices Add the Device key column to the devices list", new string[] {
                         "Evergreen",
                         "Devices",
-                        "AddColumnAction",
                         "EvergreenJnr_Columns",
+                        "AddColumnAction",
                         "DAS-10665"});
             this.ScenarioSetup(scenarioInfo);
             this.FeatureBackground();
@@ -139,16 +139,16 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_Columns
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("FeatureTitle", "AddColumnAction")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("Evergreen")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("Applications")]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("AddColumnAction")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("EvergreenJnr_Columns")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("AddColumnAction")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("DAS-10734")]
         public virtual void EvergreenJnr_ApplicationsList_AddCustomColumnAction()
         {
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Evergreen Jnr_ApplicationsList_Add Custom Column Action", new string[] {
                         "Evergreen",
                         "Applications",
-                        "AddColumnAction",
                         "EvergreenJnr_Columns",
+                        "AddColumnAction",
                         "DAS-10734"});
             this.ScenarioSetup(scenarioInfo);
             this.FeatureBackground();
@@ -161,7 +161,8 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_Columns
                         "SelectedCheckboxes"});
             table4.AddRow(new string[] {
                         "A Star Packages"});
-            testRunner.When("User have created filter with \"true\" column checkbox and following options:", ((string)(null)), table4, "When ");
+            testRunner.When("User have created \"Equals\" filter with \"true\" column checkbox and following optio" +
+                    "ns:", ((string)(null)), table4, "When ");
             testRunner.Then("\"Windows7Mi: Category\" filter is added to the list", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
             TechTalk.SpecFlow.Table table5 = new TechTalk.SpecFlow.Table(new string[] {
                         "FilterData"});

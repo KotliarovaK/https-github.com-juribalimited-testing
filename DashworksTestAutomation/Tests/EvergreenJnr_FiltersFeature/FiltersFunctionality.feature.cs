@@ -92,23 +92,25 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_FiltersFeature
         }
         
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestMethodAttribute()]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.DescriptionAttribute("Evergreen Jnr_DevicesList_Check that 500 error is not returned for filter with sp" +
-            "ecial charecter")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.DescriptionAttribute("Evergreen Jnr_UsersList_Check that 500 error is not returned for filter with spec" +
+            "ial charecter")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("FeatureTitle", "Functionality")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("Evergreen")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("Users")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("Evergreen_FiltersFeature")]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("Functionality")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("FiltersFunctionality")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("DAS-10612")]
-        public virtual void EvergreenJnr_DevicesList_CheckThat500ErrorIsNotReturnedForFilterWithSpecialCharecter()
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("Delete_Newly_Created_List")]
+        public virtual void EvergreenJnr_UsersList_CheckThat500ErrorIsNotReturnedForFilterWithSpecialCharecter()
         {
-            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Evergreen Jnr_DevicesList_Check that 500 error is not returned for filter with sp" +
-                    "ecial charecter", new string[] {
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Evergreen Jnr_UsersList_Check that 500 error is not returned for filter with spec" +
+                    "ial charecter", new string[] {
                         "Evergreen",
                         "Users",
                         "Evergreen_FiltersFeature",
-                        "Functionality",
-                        "DAS-10612"});
+                        "FiltersFunctionality",
+                        "DAS-10612",
+                        "Delete_Newly_Created_List"});
             this.ScenarioSetup(scenarioInfo);
             this.FeatureBackground();
             testRunner.When("User clicks \"Users\" on the left-hand menu", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
@@ -116,8 +118,8 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_FiltersFeature
             testRunner.When("User clicks the Filters button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
             testRunner.Then("Filters panel is displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
             testRunner.When("user select \"Display Name\" filter", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-            testRunner.When("User have created filter with \"true\" column checkbox and \"Jeremiah S. O\'Connor\" o" +
-                    "ption", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+            testRunner.When("User have created \"Equals\" filter with \"true\" column checkbox and \"Jeremiah S. O\'" +
+                    "Connor\" option", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
             testRunner.Then("\"Display Name\" filter is added to the list", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
             testRunner.Then("\"2\" rows are displayed in the agGrid", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
             testRunner.When("User clicks the Logout button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
@@ -132,7 +134,8 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_FiltersFeature
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("FeatureTitle", "Functionality")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("Evergreen")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("Applications")]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("Evergreen_FiltersFeature_Functionality")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("Evergreen_FiltersFeature")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("FiltersFunctionality")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("DAS-10639")]
         public virtual void EvergreenJnr_ApplicationsList_Check500ErrorIsNotReturnedForBooleanFilterWithUnknownOption()
         {
@@ -140,7 +143,8 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_FiltersFeature
                     " with Unknown option", new string[] {
                         "Evergreen",
                         "Applications",
-                        "Evergreen_FiltersFeature_Functionality",
+                        "Evergreen_FiltersFeature",
+                        "FiltersFunctionality",
                         "DAS-10639"});
             this.ScenarioSetup(scenarioInfo);
             this.FeatureBackground();
@@ -157,7 +161,8 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_FiltersFeature
                         "FALSE"});
             table1.AddRow(new string[] {
                         "UNKNOWN"});
-            testRunner.When("User have created filter with \"false\" column checkbox and following options:", ((string)(null)), table1, "When ");
+            testRunner.When("User have created \"Equals\" filter with \"false\" column checkbox and following opti" +
+                    "ons:", ((string)(null)), table1, "When ");
             testRunner.Then("\"Windows7Mi: Hide from End Users\" filter is added to the list", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
             testRunner.Then("\"3,305\" rows are displayed in the agGrid", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
             testRunner.When("User have removed \"Windows7Mi: Hide from End Users\" filter", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
@@ -168,7 +173,8 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_FiltersFeature
                         "FALSE"});
             table2.AddRow(new string[] {
                         "UNKNOWN"});
-            testRunner.When("User have created filter with \"false\" column checkbox and following options:", ((string)(null)), table2, "When ");
+            testRunner.When("User have created \"Equals\" filter with \"false\" column checkbox and following opti" +
+                    "ons:", ((string)(null)), table2, "When ");
             testRunner.Then("\"Windows7Mi: Hide from End Users\" filter is added to the list", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
             testRunner.Then("\"3,305\" rows are displayed in the agGrid", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
             testRunner.When("User have removed \"Windows7Mi: Hide from End Users\" filter", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
@@ -179,7 +185,8 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_FiltersFeature
                         "TRUE"});
             table3.AddRow(new string[] {
                         "UNKNOWN"});
-            testRunner.When("User have created filter with \"false\" column checkbox and following options:", ((string)(null)), table3, "When ");
+            testRunner.When("User have created \"Equals\" filter with \"false\" column checkbox and following opti" +
+                    "ons:", ((string)(null)), table3, "When ");
             testRunner.Then("\"Windows7Mi: Hide from End Users\" filter is added to the list", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
             testRunner.Then("\"2,238\" rows are displayed in the agGrid", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
             testRunner.When("User clicks the Logout button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");

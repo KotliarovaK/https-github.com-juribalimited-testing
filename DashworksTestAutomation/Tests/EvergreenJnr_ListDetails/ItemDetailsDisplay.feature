@@ -12,7 +12,7 @@ Background: Pre-Conditions
 	When User clicks the Switch to Evergreen link
 	Then Evergreen Dashboards page should be displayed to the user
 
-@Evergreen @Devices @ItemDetailsDisplay @EvergreenJnr_ListDetails @DAS-10438
+@Evergreen @Devices @EvergreenJnr_ListDetails @ItemDetailsDisplay @DAS-10438
 Scenario: Evergreen Jnr_DevicesList_Details_All empty fields in item details are displayed as Unknown
 	When User clicks "Devices" on the left-hand menu
 	Then "Devices" list should be displayed to the user
@@ -24,7 +24,7 @@ Scenario: Evergreen Jnr_DevicesList_Details_All empty fields in item details are
 	Then Signed Out page is displayed to the user
 	And User is logged out
 
-@Evergreen @Users @ItemDetailsDisplay @EvergreenJnr_ListDetails @DAS-10438
+@Evergreen @Users @EvergreenJnr_ListDetails @ItemDetailsDisplay @DAS-10438
 Scenario: Evergreen Jnr_UsersList_Details_All empty fields in item details are displayed as Unknown
 	When User clicks "Users" on the left-hand menu
 	Then "Users" list should be displayed to the user
@@ -36,7 +36,7 @@ Scenario: Evergreen Jnr_UsersList_Details_All empty fields in item details are d
 	Then Signed Out page is displayed to the user
 	And User is logged out
 
-@Evergreen @Applications @ItemDetailsDisplay @EvergreenJnr_ListDetails @DAS-10438
+@Evergreen @Applications @EvergreenJnr_ListDetails @ItemDetailsDisplay @DAS-10438
 Scenario: Evergreen Jnr_ApplicationsList_Details_All empty fields in item details are displayed as Unknown
 	When User clicks "Applications" on the left-hand menu
 	Then "Applications" list should be displayed to the user

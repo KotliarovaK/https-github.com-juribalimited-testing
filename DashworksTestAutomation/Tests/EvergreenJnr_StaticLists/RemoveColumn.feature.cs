@@ -97,8 +97,8 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_StaticLists
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("FeatureTitle", "RemoveColumn")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("Evergreen")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("Devices")]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("RemoveColumn")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("EvergreenJnr_StaticList")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("RemoveColumn")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("DAS-10966")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("DAS-10973")]
         public virtual void EvergreenJnr_DevicesList_CheckThat500ErrorPageIsNotDisplayedAfterRemovingSortedColumnInDefaultList()
@@ -107,8 +107,8 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_StaticLists
                     "ng sorted column in default list", new string[] {
                         "Evergreen",
                         "Devices",
-                        "RemoveColumn",
                         "EvergreenJnr_StaticList",
+                        "RemoveColumn",
                         "DAS-10966",
                         "DAS-10973"});
             this.ScenarioSetup(scenarioInfo);
@@ -164,8 +164,8 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_StaticLists
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("FeatureTitle", "RemoveColumn")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("Evergreen")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("Devices")]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("RemoveColumn")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("EvergreenJnr_StaticList")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("RemoveColumn")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("DAS-10966")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("DAS-10973")]
         public virtual void EvergreenJnr_DevicesList_CheckThat500ErrorPageIsNotDisplayedAfterRemovingMultipleSortedColumnInDefaultList()
@@ -174,8 +174,8 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_StaticLists
                     "ng multiple sorted column in default list", new string[] {
                         "Evergreen",
                         "Devices",
-                        "RemoveColumn",
                         "EvergreenJnr_StaticList",
+                        "RemoveColumn",
                         "DAS-10966",
                         "DAS-10973"});
             this.ScenarioSetup(scenarioInfo);
@@ -246,8 +246,8 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_StaticLists
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("FeatureTitle", "RemoveColumn")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("Evergreen")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("Devices")]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("RemoveColumn")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("EvergreenJnr_StaticList")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("RemoveColumn")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("DAS-10966")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("DAS-10973")]
         public virtual void EvergreenJnr_DevicesList_CheckThat500ErrorPageIsNotDisplayedAfterRemovingSortedColumnInDefaultListThrowFilters()
@@ -256,8 +256,8 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_StaticLists
                     "ng sorted column in default list throw filters", new string[] {
                         "Evergreen",
                         "Devices",
-                        "RemoveColumn",
                         "EvergreenJnr_StaticList",
+                        "RemoveColumn",
                         "DAS-10966",
                         "DAS-10973"});
             this.ScenarioSetup(scenarioInfo);
@@ -271,14 +271,16 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_StaticLists
                         "SelectedCheckboxes"});
             table12.AddRow(new string[] {
                         "None"});
-            testRunner.When("User have created filter with \"true\" column checkbox and following options:", ((string)(null)), table12, "When ");
+            testRunner.When("User have created \"Equals\" filter with \"true\" column checkbox and following optio" +
+                    "ns:", ((string)(null)), table12, "When ");
             testRunner.Then("\"Windows7Mi: Category\" filter is added to the list", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
             testRunner.When("user select \"Directory Type\" filter", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
             TechTalk.SpecFlow.Table table13 = new TechTalk.SpecFlow.Table(new string[] {
                         "SelectedCheckboxes"});
             table13.AddRow(new string[] {
                         "Generic"});
-            testRunner.When("User have created filter with \"true\" column checkbox and following options:", ((string)(null)), table13, "When ");
+            testRunner.When("User have created \"Equals\" filter with \"true\" column checkbox and following optio" +
+                    "ns:", ((string)(null)), table13, "When ");
             testRunner.Then("\"Directory Type\" filter is added to the list", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
             testRunner.When("User click on \'Windows7Mi: Category\' column header", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
             testRunner.When("User clicks the Columns button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");

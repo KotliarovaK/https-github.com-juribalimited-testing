@@ -11,7 +11,7 @@ Background: Pre-Conditions
 	When User clicks the Switch to Evergreen link
 	Then Evergreen Dashboards page should be displayed to the user
 
-@Evergreen @Devices @RemoveColumn @EvergreenJnr_StaticList @DAS-10966 @DAS-10973
+@Evergreen @Devices @EvergreenJnr_StaticList @RemoveColumn @DAS-10966 @DAS-10973
 Scenario: Evergreen Jnr_DevicesList_Check that 500 error page is not displayed after removing sorted column in default list
 	When User clicks "Devices" on the left-hand menu
 	Then "Devices" list should be displayed to the user
@@ -44,7 +44,7 @@ Scenario: Evergreen Jnr_DevicesList_Check that 500 error page is not displayed a
 	Then Signed Out page is displayed to the user
 	And User is logged out
 
-@Evergreen @Devices @RemoveColumn @EvergreenJnr_StaticList @DAS-10966 @DAS-10973
+@Evergreen @Devices @EvergreenJnr_StaticList @RemoveColumn @DAS-10966 @DAS-10973
 Scenario: Evergreen Jnr_DevicesList_Check that 500 error page is not displayed after removing multiple sorted column in default list
 	When User clicks "Devices" on the left-hand menu
 	Then "Devices" list should be displayed to the user
@@ -85,20 +85,19 @@ Scenario: Evergreen Jnr_DevicesList_Check that 500 error page is not displayed a
 	Then Signed Out page is displayed to the user
 	And User is logged out
 
-
-@Evergreen @Devices @RemoveColumn @EvergreenJnr_StaticList @DAS-10966 @DAS-10973
+@Evergreen @Devices @EvergreenJnr_StaticList @RemoveColumn @DAS-10966 @DAS-10973
 Scenario: Evergreen Jnr_DevicesList_Check that 500 error page is not displayed after removing sorted column in default list throw filters
 	When User clicks "Devices" on the left-hand menu
 	Then "Devices" list should be displayed to the user
 	When User clicks the Filters button
 	Then Filters panel is displayed to the user
 	When user select "Windows7Mi: Category" filter
-	When User have created filter with "true" column checkbox and following options:
+	When User have created "Equals" filter with "true" column checkbox and following options:
 	| SelectedCheckboxes  |
 	| None                |
 	Then "Windows7Mi: Category" filter is added to the list
 	When user select "Directory Type" filter
-	When User have created filter with "true" column checkbox and following options:
+	When User have created "Equals" filter with "true" column checkbox and following options:
 	| SelectedCheckboxes  |
 	| Generic             |
 	Then "Directory Type" filter is added to the list

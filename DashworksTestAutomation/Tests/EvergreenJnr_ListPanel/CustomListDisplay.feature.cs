@@ -97,8 +97,8 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_ListPanel
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("FeatureTitle", "DisplayCustomListCreation")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("Evergreen")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("Devices")]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("DisplayCustomListCreation")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("EvergreenJnr_ListPanel")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("CustomListDisplay")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("DAS-11003")]
         public virtual void EvergreenJnr_DevicesList_CheckThatCustomListCreationBlockIsNotDisplayedWhenDeletingAFilterInDefaultList()
         {
@@ -106,8 +106,8 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_ListPanel
                     "when deleting a filter in default list", new string[] {
                         "Evergreen",
                         "Devices",
-                        "DisplayCustomListCreation",
                         "EvergreenJnr_ListPanel",
+                        "CustomListDisplay",
                         "DAS-11003"});
             this.ScenarioSetup(scenarioInfo);
             this.FeatureBackground();
@@ -120,7 +120,8 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_ListPanel
                         "SelectedCheckboxes"});
             table1.AddRow(new string[] {
                         "None"});
-            testRunner.When("User have created filter with \"false\" column checkbox and following options:", ((string)(null)), table1, "When ");
+            testRunner.When("User have created \"Equals\" filter with \"false\" column checkbox and following opti" +
+                    "ons:", ((string)(null)), table1, "When ");
             testRunner.Then("\"Windows7Mi: Category\" filter is added to the list", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
             testRunner.When("User have removed \"Windows7Mi: Category\" filter", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
             testRunner.Then("Save to New Custom List element is NOT displayed", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
@@ -136,8 +137,8 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_ListPanel
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("FeatureTitle", "DisplayCustomListCreation")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("Evergreen")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("Devices")]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("DisplayCustomListCreation")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("EvergreenJnr_ListPanel")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("CustomListDisplay")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("DAS-11003")]
         public virtual void EvergreenJnr_DevicesList_CheckThatCustomListCreationBlockIsNotDisplayedWhenResetingAFilterInDefaultList()
         {
@@ -145,8 +146,8 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_ListPanel
                     "when reseting a filter in default list", new string[] {
                         "Evergreen",
                         "Devices",
-                        "DisplayCustomListCreation",
                         "EvergreenJnr_ListPanel",
+                        "CustomListDisplay",
                         "DAS-11003"});
             this.ScenarioSetup(scenarioInfo);
             this.FeatureBackground();
@@ -159,7 +160,8 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_ListPanel
                         "SelectedCheckboxes"});
             table2.AddRow(new string[] {
                         "None"});
-            testRunner.When("User have created filter with \"false\" column checkbox and following options:", ((string)(null)), table2, "When ");
+            testRunner.When("User have created \"Equals\" filter with \"false\" column checkbox and following opti" +
+                    "ons:", ((string)(null)), table2, "When ");
             testRunner.Then("\"Windows7Mi: Category\" filter is added to the list", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
             testRunner.When("User have reset all filters", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
             testRunner.Then("Save to New Custom List element is NOT displayed", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
@@ -175,8 +177,8 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_ListPanel
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("FeatureTitle", "DisplayCustomListCreation")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("Evergreen")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("Devices")]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("DisplayCustomListCreation")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("EvergreenJnr_ListPanel")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("CustomListDisplay")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("DAS-11017")]
         public virtual void EvergreenJnr_DevicesList_CheckThatCustomListCreationBlockIsNotDisplayedWhenDeletingAFilterInCustomList()
         {
@@ -184,8 +186,8 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_ListPanel
                     "when deleting a filter in custom list", new string[] {
                         "Evergreen",
                         "Devices",
-                        "DisplayCustomListCreation",
                         "EvergreenJnr_ListPanel",
+                        "CustomListDisplay",
                         "DAS-11017"});
             this.ScenarioSetup(scenarioInfo);
             this.FeatureBackground();
@@ -198,7 +200,8 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_ListPanel
                         "SelectedCheckboxes"});
             table3.AddRow(new string[] {
                         "None"});
-            testRunner.When("User have created filter with \"true\" column checkbox and following options:", ((string)(null)), table3, "When ");
+            testRunner.When("User have created \"Equals\" filter with \"true\" column checkbox and following optio" +
+                    "ns:", ((string)(null)), table3, "When ");
             testRunner.Then("\"Windows7Mi: Category\" filter is added to the list", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
             testRunner.When("User create custom list with \"TestList\" name", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
             testRunner.Then("\"TestList\" is displayed to user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
@@ -209,7 +212,8 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_ListPanel
                         "SelectedCheckboxes"});
             table4.AddRow(new string[] {
                         "Generic"});
-            testRunner.When("User have created filter with \"true\" column checkbox and following options:", ((string)(null)), table4, "When ");
+            testRunner.When("User have created \"Equals\" filter with \"true\" column checkbox and following optio" +
+                    "ns:", ((string)(null)), table4, "When ");
             testRunner.Then("\"Directory Type\" filter is added to the list", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
             testRunner.When("User have removed \"Windows7Mi: Category\" filter", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
             testRunner.Then("Edit List menu is displayed", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
@@ -229,8 +233,8 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_ListPanel
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("FeatureTitle", "DisplayCustomListCreation")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("Evergreen")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("Devices")]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("DisplayCustomListCreation")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("EvergreenJnr_ListPanel")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("CustomListDisplay")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("DAS-11017")]
         public virtual void EvergreenJnr_DevicesList_CheckThatCustomListCreationBlockIsNotDisplayedWhenResetingAFilterInCustomList()
         {
@@ -238,8 +242,8 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_ListPanel
                     "when reseting a filter in custom list", new string[] {
                         "Evergreen",
                         "Devices",
-                        "DisplayCustomListCreation",
                         "EvergreenJnr_ListPanel",
+                        "CustomListDisplay",
                         "DAS-11017"});
             this.ScenarioSetup(scenarioInfo);
             this.FeatureBackground();
@@ -252,7 +256,8 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_ListPanel
                         "SelectedCheckboxes"});
             table5.AddRow(new string[] {
                         "None"});
-            testRunner.When("User have created filter with \"true\" column checkbox and following options:", ((string)(null)), table5, "When ");
+            testRunner.When("User have created \"Equals\" filter with \"true\" column checkbox and following optio" +
+                    "ns:", ((string)(null)), table5, "When ");
             testRunner.Then("\"Windows7Mi: Category\" filter is added to the list", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
             testRunner.When("User create custom list with \"TestList\" name", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
             testRunner.Then("\"TestList\" is displayed to user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
@@ -263,7 +268,8 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_ListPanel
                         "SelectedCheckboxes"});
             table6.AddRow(new string[] {
                         "Generic"});
-            testRunner.When("User have created filter with \"true\" column checkbox and following options:", ((string)(null)), table6, "When ");
+            testRunner.When("User have created \"Equals\" filter with \"true\" column checkbox and following optio" +
+                    "ns:", ((string)(null)), table6, "When ");
             testRunner.Then("\"Directory Type\" filter is added to the list", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
             testRunner.When("User have reset all filters", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
             testRunner.Then("Edit List menu is displayed", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
@@ -276,20 +282,22 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_ListPanel
         }
         
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestMethodAttribute()]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.DescriptionAttribute("Evergreen Jnr_Devices List_agGrid Search_Does Not Trigger_New Custom List")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.DescriptionAttribute("Evergreen Jnr_DevicesList_agGrid_Check that Search does not trigger new Custom Li" +
+            "st")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("FeatureTitle", "DisplayCustomListCreation")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("Evergreen")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("Devices")]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("DisplayCustomListCreation")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("EvergreenJnr_ListPanel")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("CustomListDisplay")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("DAS-10998")]
-        public virtual void EvergreenJnr_DevicesList_AgGridSearch_DoesNotTrigger_NewCustomList()
+        public virtual void EvergreenJnr_DevicesList_AgGrid_CheckThatSearchDoesNotTriggerNewCustomList()
         {
-            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Evergreen Jnr_Devices List_agGrid Search_Does Not Trigger_New Custom List", new string[] {
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Evergreen Jnr_DevicesList_agGrid_Check that Search does not trigger new Custom Li" +
+                    "st", new string[] {
                         "Evergreen",
                         "Devices",
-                        "DisplayCustomListCreation",
                         "EvergreenJnr_ListPanel",
+                        "CustomListDisplay",
                         "DAS-10998"});
             this.ScenarioSetup(scenarioInfo);
             this.FeatureBackground();
@@ -316,8 +324,8 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_ListPanel
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("FeatureTitle", "DisplayCustomListCreation")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("Evergreen")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("Devices")]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("DisplayCustomListCreation")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("EvergreenJnr_ListPanel")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("CustomListDisplay")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("DAS-10704")]
         public virtual void EvergreenJnr_DevicesList_AgGrid_CheckThatQuickSearchDoesntTriggersNewListMenu()
         {
@@ -325,8 +333,8 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_ListPanel
                     "t menu", new string[] {
                         "Evergreen",
                         "Devices",
-                        "DisplayCustomListCreation",
                         "EvergreenJnr_ListPanel",
+                        "CustomListDisplay",
                         "DAS-10704"});
             this.ScenarioSetup(scenarioInfo);
             this.FeatureBackground();

@@ -12,7 +12,7 @@ Background: Pre-Conditions
 	When User clicks the Switch to Evergreen link
 	Then Evergreen Dashboards page should be displayed to the user
 
-@Evergreen @Devices @ColumnOrder @EvergreenJnr_StaticLists @DAS-10836
+@Evergreen @Devices @EvergreenJnr_StaticLists @ColumnOrder @DAS-10836
 Scenario: Evergreen Jnr_DevicesList_Check that columns order saved after search
 	When User clicks "Devices" on the left-hand menu
 	Then "Devices" list should be displayed to the user
@@ -27,7 +27,7 @@ Scenario: Evergreen Jnr_DevicesList_Check that columns order saved after search
 	Then Signed Out page is displayed to the user
 	And User is logged out
 
-@Evergreen @Users @ColumnOrder @EvergreenJnr_StaticLists @DAS-10836
+@Evergreen @Users @EvergreenJnr_StaticLists @ColumnOrder @DAS-10836
 Scenario: Evergreen Jnr_UsersList_Check that columns order saved after search
 	When User clicks "Users" on the left-hand menu
 	Then "Users" list should be displayed to the user
@@ -46,3 +46,42 @@ Scenario: Evergreen Jnr_UsersList_Check that columns order saved after search
 	When User clicks the Logout button
 	Then Signed Out page is displayed to the user
 	And User is logged out
+
+@Evergreen @Devices @EvergreenJnr_StaticLists @ColumnOrder @DAS-10621
+Scenario: Evergreen Jnr_DevicesList_Check that columns order saved after adding a filter
+	When User clicks "Devices" on the left-hand menu
+	Then "Devices" list should be displayed to the user
+	When User clicks the Columns button
+	Then Columns panel is displayed to the user
+	When ColumnName is entered into the search box and the selection is clicked
+	| ColumnName   |
+	| Compliance   |
+	| Boot Up Date |
+	When User move 'Boot Up Date' column to 'Hostname' column
+	Then Column is displayed in following order:
+	| ColumnName         |
+	| Hostname           |
+	| Boot Up Date       |
+	| Device Type        |
+	| Operating System   |
+	| Owner Display Name |
+	| Compliance         |
+	When User clicks the Filters button
+	Then Filters panel is displayed to the user
+	When user select "Windows7Mi: Category" filter
+	When User have created "Equals" filter with "true" column checkbox and following options:
+	| SelectedCheckboxes |
+	| None               |
+	Then Column is displayed in following order:
+	| ColumnName           |
+	| Hostname             |
+	| Boot Up Date         |
+	| Device Type          |
+	| Operating System     |
+	| Owner Display Name   |
+	| Compliance           |
+	| Windows7Mi: Category |
+	When User clicks the Logout button
+	Then Signed Out page is displayed to the user
+	And User is logged out
+	

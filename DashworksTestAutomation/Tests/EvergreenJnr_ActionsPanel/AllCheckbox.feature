@@ -11,7 +11,7 @@ Background: Pre-Conditions
 	When User clicks the Switch to Evergreen link
 	Then Evergreen Dashboards page should be displayed to the user
 
-@Evergreen @Search @Users @AllCheckbox @Evergreen_ActionsPanel @DAS-10769
+@Evergreen @Users @Evergreen_ActionsPanel @AllCheckbox @DAS-10769
 Scenario: Evergreen Jnr_UsersList_Select All Checkbox Status Check After Search
 	When User clicks "Users" on the left-hand menu
 	Then "Users" list should be displayed to the user
@@ -35,7 +35,7 @@ Scenario: Evergreen Jnr_UsersList_Select All Checkbox Status Check After Search
 	Then Signed Out page is displayed to the user
 	And User is logged out
 
-@Evergreen @Devices @AllCheckbox @Evergreen_ActionsPanel @DAS-10775
+@Evergreen @Devices @Evergreen_ActionsPanel @AllCheckbox @DAS-10775
 Scenario: Evergreen Jnr_DevicesList_Select All Checkbox status after closing action panel
 	When User clicks "Devices" on the left-hand menu
 	Then "Devices" list should be displayed to the user
@@ -48,7 +48,7 @@ Scenario: Evergreen Jnr_DevicesList_Select All Checkbox status after closing act
 	Then Signed Out page is displayed to the user
 	And User is logged out
 
-@Evergreen @Users @AllCheckbox @Evergreen_ActionsPanel @DAS-10775
+@Evergreen @Users @Evergreen_ActionsPanel @AllCheckbox @DAS-10775
 Scenario: Evergreen Jnr_UsersList_Select All Checkbox status after closing action panel
 	When User clicks "Users" on the left-hand menu
 	Then "Users" list should be displayed to the user
@@ -61,7 +61,7 @@ Scenario: Evergreen Jnr_UsersList_Select All Checkbox status after closing actio
 	Then Signed Out page is displayed to the user
 	And User is logged out
 
-@Evergreen @Applications @AllCheckbox @Evergreen_ActionsPanel @DAS-10775
+@Evergreen @Applications @Evergreen_ActionsPanel @AllCheckbox @DAS-10775
 Scenario: Evergreen Jnr_ApplicationsList_Select All Checkbox status after closing action panel
 	When User clicks "Applications" on the left-hand menu
 	Then "Applications" list should be displayed to the user
@@ -74,7 +74,7 @@ Scenario: Evergreen Jnr_ApplicationsList_Select All Checkbox status after closin
 	Then Signed Out page is displayed to the user
 	And User is logged out
 
-@Evergreen @Mailboxes @AllCheckbox @Evergreen_ActionsPanel @DAS-10775
+@Evergreen @Mailboxes @Evergreen_ActionsPanel @AllCheckbox @DAS-10775
 Scenario: Evergreen Jnr_MailboxesList_Select All Checkbox status after closing action panel
 	When User clicks "Mailboxes" on the left-hand menu
 	Then "Mailboxes" list should be displayed to the user

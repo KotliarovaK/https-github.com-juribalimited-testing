@@ -40,23 +40,24 @@ namespace DashworksTestAutomation.Steps.Dashworks
         public void ThenFilterIsNotPresentedInTheFiltersList(string filterName)
         {
             var filterElement = _driver.NowAt<FiltersElement>();
-            Assert.IsFalse(filterElement.CheckFilterAvailability(filterName), $"{filterName} is available in the search");
+            Assert.IsFalse(filterElement.CheckFilterAvailability(filterName),
+                $"{filterName} is available in the search");
         }
 
-
-        [When(@"User have created filter with ""(.*)"" column checkbox and following options:")]
-        public void WhenUserHaveCreatedFilterWithColumnCheckboxAndFollowingOptions(bool columnOption, Table table)
+        [When(@"User have created ""(.*)"" filter with ""(.*)"" column checkbox and following options:")]
+        public void WhenUserHaveCreatedFilterWithColumnCheckboxAndFollowingOptions(string filterType, bool columnOption, Table table)
         {
             var filterElement = _driver.NowAt<FiltersElement>();
-            var filter = new CheckBoxesFilter(_driver, "Equals", columnOption, table);
+            var filter = new CheckBoxesFilter(_driver, filterType, columnOption, table);
             filter.Do();
         }
 
-        [When(@"User have created filter with ""(.*)"" column checkbox and ""(.*)"" option")]
-        public void WhenUserHaveCreatedFilterWithColumnCheckboxAndOption(bool columnOption, string filterValue)
+        [When(@"User have created ""(.*)"" filter with ""(.*)"" column checkbox and ""(.*)"" option")]
+        public void WhenUserHaveCreatedFilterWithColumnCheckboxAndOption(string filterType, bool columnOption,
+            string filterValue)
         {
             var filterElement = _driver.NowAt<FiltersElement>();
-            var filter = new ValueFilter(_driver, "Equals", columnOption, filterValue);
+            var filter = new ValueFilter(_driver, filterType, columnOption, filterValue);
             filter.Do();
         }
 
@@ -82,11 +83,7 @@ namespace DashworksTestAutomation.Steps.Dashworks
         public void ThenFilterDataIsDisplayedForApropriateColumn(Table table)
         {
             var filterElement = _driver.NowAt<FiltersElement>();
-            var valuesList = new List<string>();
-            foreach (var row in table.Rows)
-            {
-                valuesList.Add(row.Values.ToList().First());
-            }
+            var valuesList = table.Rows.Select(row => row.Values.ToList().First()).ToList();
             Assert.AreEqual(valuesList, filterElement.GetFilterColumData());
         }
 

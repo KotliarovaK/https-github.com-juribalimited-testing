@@ -11,7 +11,7 @@ Background: Pre-Conditions
 	When User clicks the Switch to Evergreen link
 	Then Evergreen Dashboards page should be displayed to the user
 
-@Evergreen @Search @Devices @EvergreenJnr_StaticList
+@Evergreen @Devices @EvergreenJnr_StaticList @Search
 Scenario: Evergreen Jnr_Devices List_agGrid	_Search Tests
 	When User clicks "Devices" on the left-hand menu
 	Then "Devices" list should be displayed to the user
@@ -41,7 +41,7 @@ Scenario: Evergreen Jnr_Devices List_agGrid	_Search Tests
 	Then Signed Out page is displayed to the user
 	And User is logged out
 
-@Evergreen @Search @Devices @EvergreenJnr_StaticList
+@Evergreen @Devices @EvergreenJnr_StaticList @Search
 Scenario: Evergreen Jnr_Devices List_agGrid_Clearing search returns the full data set
 	When User clicks "Devices" on the left-hand menu
 	Then "Devices" list should be displayed to the user
@@ -54,7 +54,7 @@ Scenario: Evergreen Jnr_Devices List_agGrid_Clearing search returns the full dat
 	Then Signed Out page is displayed to the user
 	And User is logged out
 
-@Evergreen @Search @Devices @EvergreenJnr_StaticList
+@Evergreen @Devices @EvergreenJnr_StaticList @Search
 Scenario: Evergreen Jnr_Devices List_agGrid Search_No Devices Found
 	When User clicks "Devices" on the left-hand menu
 	Then "Devices" list should be displayed to the user
@@ -85,7 +85,7 @@ Scenario: Evergreen Jnr_Devices List_agGrid Search_No Devices Found
 	Then Signed Out page is displayed to the user
 	And User is logged out
 
-@Evergreen @Search @Devices @Search @EvergreenJnr_StaticList @DAS-10772
+@Evergreen @Devices @EvergreenJnr_StaticList @Search  @DAS-10772
 Scenario: Evergreen Jnr_DevicesList_Search Within All Rows
 	When User clicks "Devices" on the left-hand menu
 	Then "Devices" list should be displayed to the user
@@ -103,7 +103,7 @@ Scenario: Evergreen Jnr_DevicesList_Search Within All Rows
 	Then Signed Out page is displayed to the user
 	And User is logged out
 
-@Evergreen @Search @Devices @Applications @Users @Mailboxes @EvergreenJnr_StaticList @DAS-10580 @DAS-10667 @DAS-10624
+@Evergreen @Devices @Applications @Users @Mailboxes @EvergreenJnr_StaticList @Search @DAS-10580 @DAS-10667 @DAS-10624
 Scenario: Evergreen Jnr_AllLists_Check search filter and table content during navigation between pages
 	When User clicks "Devices" on the left-hand menu
 	Then "Devices" list should be displayed to the user

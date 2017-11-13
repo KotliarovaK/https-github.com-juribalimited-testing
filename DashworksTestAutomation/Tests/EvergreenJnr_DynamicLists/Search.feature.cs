@@ -97,8 +97,8 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_DynamicLists
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("FeatureTitle", "Search")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("Evergreen")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("Devices")]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("Search")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("EvergreenJnr_DynamicLists")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("Search")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("DAS-10704")]
         public virtual void EvergreenJnr_DevicesList_AgGrid_CheckThatQuickSearchResetWhenMovingBetweenLists()
         {
@@ -106,8 +106,8 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_DynamicLists
                     "n lists", new string[] {
                         "Evergreen",
                         "Devices",
-                        "Search",
                         "EvergreenJnr_DynamicLists",
+                        "Search",
                         "DAS-10704"});
             this.ScenarioSetup(scenarioInfo);
             this.FeatureBackground();
