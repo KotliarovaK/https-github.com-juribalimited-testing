@@ -11,7 +11,7 @@ Background: Pre-Conditions
 	When User clicks the Switch to Evergreen link
 	Then Evergreen Dashboards page should be displayed to the user
 
-@Evergreen @Users @Evergreen_FiltersFeature @FiltersFunctionality @DAS-10612 @Delete_Newly_Created_List
+@Evergreen @Users @Evergreen_FiltersFeature @FiltersFunctionality @DAS-10612
 Scenario: Evergreen Jnr_UsersList_Check that 500 error is not returned for filter with special charecter
 	When User clicks "Users" on the left-hand menu
 	Then "Users" list should be displayed to the user
