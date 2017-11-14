@@ -89,3 +89,12 @@ Scenario: Evergreen Jnr_Applications_Filters_Check that 'Group' and 'Team' relat
 	Then Signed Out page is displayed to the user
 	And User is logged out
 
+@Evergreen @Devices @Evergreen_FiltersFeature @FiltersDisplay @DAS-10776
+Scenario: Evergreen Jnr_Devices_Filters_Check that "Empty" and "Not Empty" options is availdable for ObjectKey filter
+	When User clicks "Devices" on the left-hand menu
+	Then "Devices" list should be displayed to the user
+	When User clicks the Filters button
+	Then Filters panel is displayed to the user
+	When user select "AD Object Key" filter
+	Then "Empty" option is available for this filter
+	Then "Not empty" option is available for this filter
