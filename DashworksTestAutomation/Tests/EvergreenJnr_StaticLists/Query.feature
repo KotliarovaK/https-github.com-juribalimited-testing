@@ -53,3 +53,16 @@ Runs Evergreen URL query strings for the 4 default all lists.
 	When User clicks the Logout button
 	Then Signed Out page is displayed to the user
 	And User is logged out
+
+@Evergreen @Applications @EvergreenJnr_StaticLists @Query
+Scenario: EvergreenJnr_QueryString_Applicaions
+Runs Evergreen URL query strings for the Applications List.
+	When Evergreen QueryStringURL is entered for Simple QueryType
+	| QueryType   | QueryStringURL                                                                                                                                                                                                                                                                                                                                                                                      |
+	| Target App  | evergreen/#/applications?$select=packageName,packageManufacturer,packageVersion,project_1_applicationRationalisation,project_1_applicationReadiness,project_1_coreApplication,project_1_hideFromEndUsers,project_1_inScope,project_1_objectID,project_1_projectID,project_1_ragStatus,project_1_ragStatusId,project_1_requestType,project_1_requestTypeId,project_1_tag,project_1_targetApplication |
+	| Category ID | evergreen/#/applications?$select=packageName,packageManufacturer,packageVersion,project_1_subCategory                                                                                                                                                                                                                                                                                               |
+	| Category    | evergreen/#/applications?$select=packageName,packageManufacturer,packageVersion,project_1_subCategoryId                                                                                                                                                                                                                                                                                             |
+	Then agGrid Main Object List is returned with data
+	When User clicks the Logout button
+	Then Signed Out page is displayed to the user
+	And User is logged out
