@@ -47,7 +47,7 @@ Scenario: Evergreen Jnr_ApplicationsList_Check true-false options and images in 
 	And User is logged out
 
 
-@Evergreen @Applications @Evergreen_FiltersFeature @FiltersDisplay @DAS-10754
+@Evergreen @Applications @Evergreen_FiltersFeature @FiltersDisplay @DAS-10754 @Delete_Newly_Created_List
 Scenario: Evergreen Jnr_ApplicationsList_Check special characters display in filter info
 	When User clicks "Users" on the left-hand menu
 	Then "Users" list should be displayed to the user
@@ -74,10 +74,6 @@ Scenario: Evergreen Jnr_ApplicationsList_Check special characters display in fil
 	Then Values is displayed in added filter info
 	| Values          |
 	| O'Conn"/\or#@!() |
-	When User is removed custom list with "TestList" name
-	When User clicks the Logout button
-	Then Signed Out page is displayed to the user
-	And User is logged out
 
 @Evergreen @Applications @Evergreen_FiltersFeature @FiltersDisplay @DAS-10781
 Scenario: Evergreen Jnr_Applications_Filters_Check that 'Group' and 'Team' related filters is not presented in the list

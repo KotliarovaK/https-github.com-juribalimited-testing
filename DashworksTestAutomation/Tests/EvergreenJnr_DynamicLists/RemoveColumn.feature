@@ -11,7 +11,7 @@ Background: Pre-Conditions
 	When User clicks the Switch to Evergreen link
 	Then Evergreen Dashboards page should be displayed to the user
 
-@Evergreen @Devices @EvergreenJnr_DynamicLists @RemoveColumn @DAS-10966 @DAS-10973
+@Evergreen @Devices @EvergreenJnr_DynamicLists @RemoveColumn @DAS-10966 @DAS-10973 @Delete_Newly_Created_List
 Scenario: Evergreen Jnr_DevicesList_Check that 500 error page is not displayed after removing sorted column in custom list
 	When User clicks "Devices" on the left-hand menu
 	Then "Devices" list should be displayed to the user
@@ -49,12 +49,8 @@ Scenario: Evergreen Jnr_DevicesList_Check that 500 error page is not displayed a
 	| ColumnName   |
 	| Boot Up Date |
 	When User update current custom list
-	When User is removed custom list with "TestList" name
-	When User clicks the Logout button
-	Then Signed Out page is displayed to the user
-	And User is logged out
 
-@Evergreen @Devices @EvergreenJnr_DynamicLists @RemoveColumn @DAS-10966 @DAS-10973
+@Evergreen @Devices @EvergreenJnr_DynamicLists @RemoveColumn @DAS-10966 @DAS-10973 @Delete_Newly_Created_List
 Scenario: Evergreen Jnr_DevicesList_Check that 500 error page is not displayed after removing multiple sorted column in custom list
 	When User clicks "Devices" on the left-hand menu
 	Then "Devices" list should be displayed to the user
@@ -95,13 +91,8 @@ Scenario: Evergreen Jnr_DevicesList_Check that 500 error page is not displayed a
 	Then ColumnName is removed from the list
 	| ColumnName   |
 	| Boot Up Date |
-	When User update current custom list
-	When User is removed custom list with "TestList" name
-	When User clicks the Logout button
-	Then Signed Out page is displayed to the user
-	And User is logged out
 
-@Evergreen @Devices @EvergreenJnr_DynamicLists @RemoveColumn @DAS-10966 @DAS-10973
+@Evergreen @Devices @EvergreenJnr_DynamicLists @RemoveColumn @DAS-10966 @DAS-10973 @Delete_Newly_Created_List
 Scenario: Evergreen Jnr_DevicesList_Check that 500 error page is not displayed after removing sorted column in custom list throw filters
 	When User clicks "Devices" on the left-hand menu
 	Then "Devices" list should be displayed to the user
@@ -146,7 +137,3 @@ Scenario: Evergreen Jnr_DevicesList_Check that 500 error page is not displayed a
 	Then Filters panel is displayed to the user
 	Then "Directory Type" filter is added to the list
 	When User update current custom list
-	When User is removed custom list with "TestList" name
-	When User clicks the Logout button
-	Then Signed Out page is displayed to the user
-	And User is logged out

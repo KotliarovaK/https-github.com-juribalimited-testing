@@ -25,6 +25,9 @@ namespace DashworksTestAutomation.Pages.Evergreen
         [FindsBy(How = How.XPath, Using = ".//button[@title='Cancel']")]
         public IWebElement CancelButton { get; set; }
 
+        [FindsBy(How = How.XPath, Using = ".//li//i[@title='Settings']")]
+        public IList<IWebElement> SettingsButtons { get; set; }
+
         #region ListSettings
 
         [FindsBy(How = How.XPath, Using = ".//li[text()='Manage']")]
@@ -34,7 +37,7 @@ namespace DashworksTestAutomation.Pages.Evergreen
         public IWebElement MakeFavoriteButton { get; set; }
 
         [FindsBy(How = How.XPath, Using = ".//li[text()='Duplicate']")]
-        public IWebElement BuplicateButton { get; set; }
+        public IWebElement DuplicateButton { get; set; }
 
         [FindsBy(How = How.XPath, Using = ".//li[text()='Delete']")]
         public IWebElement DeleteButton { get; set; }
@@ -77,7 +80,6 @@ namespace DashworksTestAutomation.Pages.Evergreen
         {
             var settingsButton =
                 $".//span[@class='submenu-actions-list-name'][text()='{listName}']//ancestor::li//i[@title='Settings']";
-            var t = Driver.PageSource;
             Driver.WaitWhileControlIsDisplayed<CustomListElement>(() => UpdateCurrentListButton);
             Driver.MouseHover(By.XPath(settingsButton));
             Driver.FindElement(By.XPath(settingsButton)).Click();

@@ -45,7 +45,7 @@ Scenario: Evergreen Jnr_DevicesList_Check that custom list creation block is not
 	Then Signed Out page is displayed to the user
 	And User is logged out
 
-@Evergreen @Devices @EvergreenJnr_ListPanel @CustomListDisplay @DAS-11017
+@Evergreen @Devices @EvergreenJnr_ListPanel @CustomListDisplay @DAS-11017 @Delete_Newly_Created_List
 Scenario: Evergreen Jnr_DevicesList_Check that custom list creation block is not displayed when deleting a filter in custom list
 	When User clicks "Devices" on the left-hand menu
 	Then "Devices" list should be displayed to the user
@@ -70,12 +70,8 @@ Scenario: Evergreen Jnr_DevicesList_Check that custom list creation block is not
 	When User have removed "Directory Type" filter
 	Then Edit List menu is displayed
 	When User update current custom list
-	When User is removed custom list with "TestList" name
-	When User clicks the Logout button
-	Then Signed Out page is displayed to the user
-	And User is logged out
 
-@Evergreen @Devices @EvergreenJnr_ListPanel @CustomListDisplay @DAS-11017
+@Evergreen @Devices @EvergreenJnr_ListPanel @CustomListDisplay @DAS-11017 @Delete_Newly_Created_List
 Scenario: Evergreen Jnr_DevicesList_Check that custom list creation block is not displayed when reseting a filter in custom list
 	When User clicks "Devices" on the left-hand menu
 	Then "Devices" list should be displayed to the user
@@ -98,10 +94,6 @@ Scenario: Evergreen Jnr_DevicesList_Check that custom list creation block is not
 	When User have reset all filters
 	Then Edit List menu is displayed
 	When User update current custom list
-	When User is removed custom list with "TestList" name
-	When User clicks the Logout button
-	Then Signed Out page is displayed to the user
-	And User is logged out
 
 @Evergreen @Devices @EvergreenJnr_ListPanel @CustomListDisplay @DAS-10998
 Scenario: Evergreen Jnr_DevicesList_agGrid_Check that Search does not trigger new Custom List
