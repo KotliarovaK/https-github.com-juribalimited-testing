@@ -54,7 +54,7 @@ Runs Evergreen URL query strings for the 4 default all lists.
 	Then Signed Out page is displayed to the user
 	And User is logged out
 
-@Evergreen @Applications @EvergreenJnr_StaticLists @Query
+@Evergreen @Applications @EvergreenJnr_StaticLists @Query @DAS-11023
 Scenario: EvergreenJnr_QueryString_Applicaions
 Runs Evergreen URL query strings for the Applications List.
 	When Evergreen QueryStringURL is entered for Simple QueryType
@@ -62,6 +62,17 @@ Runs Evergreen URL query strings for the Applications List.
 	| Target App  | evergreen/#/applications?$select=packageName,packageManufacturer,packageVersion,project_1_applicationRationalisation,project_1_applicationReadiness,project_1_coreApplication,project_1_hideFromEndUsers,project_1_inScope,project_1_objectID,project_1_projectID,project_1_ragStatus,project_1_ragStatusId,project_1_requestType,project_1_requestTypeId,project_1_tag,project_1_targetApplication |
 	| Category ID | evergreen/#/applications?$select=packageName,packageManufacturer,packageVersion,project_1_subCategory                                                                                                                                                                                                                                                                                               |
 	| Category    | evergreen/#/applications?$select=packageName,packageManufacturer,packageVersion,project_1_subCategoryId                                                                                                                                                                                                                                                                                             |
+	Then agGrid Main Object List is returned with data
+	When User clicks the Logout button
+	Then Signed Out page is displayed to the user
+	And User is logged out
+
+@Evergreen @Devices @EvergreenJnr_StaticLists @Query @DAS-10789
+Scenario: EvergreenJnr_QueryString_Applicaions On Devices List
+Runs Evergreen URL query strings for the Applications on Devices List.
+	When Evergreen QueryStringURL is entered for Simple QueryType
+	| QueryType                   | QueryStringURL                                                                                                                                                                                                                                                        |
+	| Apps On Devices | evergreen/#/devices?$select=hostname,chassisCategory,oSCategory,ownerDisplayName&$filter=(application%20EQUALS%20('451')%20WHERE%20(Used%20on%20device,Entitled%20to%20device,Installed%20on%20device,Used%20by%20device's%20owner,Entitled%20to%20device's%20owner)) |
 	Then agGrid Main Object List is returned with data
 	When User clicks the Logout button
 	Then Signed Out page is displayed to the user
