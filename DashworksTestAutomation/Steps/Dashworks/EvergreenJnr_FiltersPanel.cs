@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using System.Linq;
 using DashworksTestAutomation.Extensions;
 using DashworksTestAutomation.Helpers;
@@ -134,6 +135,21 @@ namespace DashworksTestAutomation.Steps.Dashworks
             Assert.AreEqual($"{UrlProvider.Url}evergreen/img/unknown.png",
                 filterElement.GetBooleanCheckboxImg("UNKNOWN").GetAttribute("src"),
                 "Incorrect image for Unknown value");
+        }
+
+        [Then(@"""(.*)"" option is available for this filter")]
+        public void ThenOptionIsAvailableForThisFilter(string optionName)
+        {
+            var filterElement = _driver.NowAt<FiltersElement>();
+            try
+            {
+                filterElement.OperatorDropdown.Click();
+            }
+            catch (Exception e)
+            {
+            }
+            var actualOptionsList = filterElement.OperatorOptions.Select(value => value.Text).ToList();
+            Assert.Contains(optionName, actualOptionsList, $"{optionName} is not found in Filter Options");
         }
     }
 }

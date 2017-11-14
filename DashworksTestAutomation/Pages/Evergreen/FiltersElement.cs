@@ -54,6 +54,12 @@ namespace DashworksTestAutomation.Pages.Evergreen
         [FindsBy(How = How.XPath, Using = ".//span[@class='filter-label-value']")]
         public IList<IWebElement> FilterValues { get; set; }
 
+        [FindsBy(How = How.XPath, Using = ".//span[@class='mat-select-value-text']")]
+        public IWebElement OperatorDropdown { get; set; }
+
+        [FindsBy(How = How.XPath, Using = ".//div[contains(@class,'mat-select-content')]/md-option")]
+        public IList<IWebElement> OperatorOptions { get; set; }
+
         public override List<By> GetPageIdentitySelectors()
         {
             Driver.WaitForDataLoading();
