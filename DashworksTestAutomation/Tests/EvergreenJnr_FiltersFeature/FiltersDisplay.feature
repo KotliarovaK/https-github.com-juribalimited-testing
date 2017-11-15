@@ -122,3 +122,51 @@ Scenario: EvergreenJnr_Devices_Filters_Check that 'Add column' option as availab
 	When User clicks the Logout button
 	Then Signed Out page is displayed to the user
 	And User is logged out
+
+@Evergreen @Devices @Evergreen_FiltersFeature @FiltersDisplay @DAS-10795
+Scenario: EvergreenJnr_Devices_Filters_Check that 'Add column' option as available for filter in 'Devices'
+	When User clicks "Devices" on the left-hand menu
+	Then "Devices" list should be displayed to the user
+	When User clicks the Filters button
+	Then Filters panel is displayed to the user
+	When user select "ComputerWarranty" filter
+	Then "Add column" checkbox is displayed
+	When User clicks the Logout button
+	Then Signed Out page is displayed to the user
+	And User is logged out
+
+@Evergreen @Users @Evergreen_FiltersFeature @FiltersDisplay @DAS-10795
+Scenario: EvergreenJnr_Devices_Filters_Check that 'Add column' option as available for filter in 'Users'
+	When User clicks "Users" on the left-hand menu
+	Then "Users" list should be displayed to the user
+	When User clicks the Filters button
+	Then Filters panel is displayed to the user
+	When user select "Zip Code" filter
+	Then "Add column" checkbox is displayed
+	When User clicks the Logout button
+	Then Signed Out page is displayed to the user
+	And User is logged out
+
+@Evergreen @Applications @Evergreen_FiltersFeature @FiltersDisplay @DAS-10795
+Scenario: EvergreenJnr_Devices_Filters_Check that 'Add column' option as available for filter in 'Applications'
+	When User clicks "Applications" on the left-hand menu
+	Then "Applications" list should be displayed to the user
+	When User clicks the Filters button
+	Then Filters panel is displayed to the user
+	When user select "UserSchedu: Radio Non Rag Date Owner App Req A" filter
+	Then "Add column" checkbox is displayed
+	When User clicks the Logout button
+	Then Signed Out page is displayed to the user
+	And User is logged out
+
+@Evergreen @Mailboxes @Evergreen_FiltersFeature @FiltersDisplay @DAS-10795
+Scenario: EvergreenJnr_Devices_Filters_Check that 'Add column' option as available for filter in 'Mailboxes'
+	When User clicks "Mailboxes" on the left-hand menu
+	Then "Mailboxes" list should be displayed to the user
+	When User clicks the Filters button
+	Then Filters panel is displayed to the user
+	When user select "Alias" filter
+	Then "Add column" checkbox is displayed
+	When User clicks the Logout button
+	Then Signed Out page is displayed to the user
+	And User is logged out
