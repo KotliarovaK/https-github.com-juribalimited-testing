@@ -46,7 +46,6 @@ Scenario: Evergreen Jnr_ApplicationsList_Check true-false options and images in 
 	Then Signed Out page is displayed to the user
 	And User is logged out
 
-
 @Evergreen @Applications @Evergreen_FiltersFeature @FiltersDisplay @DAS-10754 @Delete_Newly_Created_List
 Scenario: Evergreen Jnr_ApplicationsList_Check special characters display in filter info
 	When User clicks "Users" on the left-hand menu
@@ -129,7 +128,7 @@ Scenario: EvergreenJnr_Devices_Filters_Check that 'Add column' option as availab
 	Then "Devices" list should be displayed to the user
 	When User clicks the Filters button
 	Then Filters panel is displayed to the user
-	When user select "ComputerWarranty" filter
+	When user select "Computer Warranty" filter
 	Then "Add column" checkbox is displayed
 	When User clicks the Logout button
 	Then Signed Out page is displayed to the user
@@ -153,7 +152,7 @@ Scenario: EvergreenJnr_Devices_Filters_Check that 'Add column' option as availab
 	Then "Applications" list should be displayed to the user
 	When User clicks the Filters button
 	Then Filters panel is displayed to the user
-	When user select "UserSchedu: Radio Non Rag Date Owner App Req A" filter
+	When user select "Application Owner" filter
 	Then "Add column" checkbox is displayed
 	When User clicks the Logout button
 	Then Signed Out page is displayed to the user
@@ -165,7 +164,7 @@ Scenario: EvergreenJnr_Devices_Filters_Check that 'Add column' option as availab
 	Then "Mailboxes" list should be displayed to the user
 	When User clicks the Filters button
 	Then Filters panel is displayed to the user
-	When user select "Alias" filter
+	When user select "Mailbox Filter 1" filter
 	Then "Add column" checkbox is displayed
 	When User clicks the Logout button
 	Then Signed Out page is displayed to the user

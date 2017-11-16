@@ -14,6 +14,9 @@ namespace DashworksTestAutomation.Base
 
         public RemoteWebDriver CreateBrowserDriver()
         {
+#if DEBUG
+            return new ChromeDriver();
+#else
             if (Boolean.Parse(Browser.UserRemoteDriver))
                 switch (Browser.Type)
                 {
@@ -53,6 +56,7 @@ namespace DashworksTestAutomation.Base
                     default:
                         throw new Exception($"Browser type '{Browser.Type}' was not identified");
                 }
+#endif
         }
     }
 }
