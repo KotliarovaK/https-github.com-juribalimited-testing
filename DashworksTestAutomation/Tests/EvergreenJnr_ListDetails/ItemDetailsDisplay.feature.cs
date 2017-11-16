@@ -116,7 +116,7 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_ListDetails
             testRunner.When("User perform search by \"01BQIYGGUW5PRP6\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
             testRunner.And("User click content from \"Hostname\" column", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
             testRunner.When("User navigates to the \"Details\" tab", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-            testRunner.Then("Fields with empty information are displayed", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+            testRunner.Then("Unknown text is displayed for empty fields for \"Department and Location\" section", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
             testRunner.When("User clicks the Logout button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
             testRunner.Then("Signed Out page is displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
             testRunner.And("User is logged out", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
@@ -148,7 +148,7 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_ListDetails
             testRunner.When("User perform search by \"ABW1509426\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
             testRunner.And("User click content from \"Username\" column", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
             testRunner.When("User navigates to the \"Details\" tab", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-            testRunner.Then("Fields with empty information are displayed", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+            testRunner.Then("Unknown text is displayed for empty fields for \"Department and Location\" section", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
             testRunner.When("User clicks the Logout button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
             testRunner.Then("Signed Out page is displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
             testRunner.And("User is logged out", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
@@ -180,7 +180,7 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_ListDetails
             testRunner.When("User perform search by \"Python 2.2a4\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
             testRunner.And("User click content from \"Application\" column", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
             testRunner.When("User navigates to the \"Details\" tab", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-            testRunner.Then("Fields with empty information are displayed", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+            testRunner.Then("Unknown text is displayed for empty fields for \"Department and Location\" section", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
             testRunner.When("User clicks the Logout button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
             testRunner.Then("Signed Out page is displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
             testRunner.And("User is logged out", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
@@ -209,10 +209,10 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_ListDetails
             this.FeatureBackground();
             testRunner.When("User clicks \"Mailboxes\" on the left-hand menu", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
             testRunner.Then("\"Mailboxes\" list should be displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-            testRunner.When("User perform search by \"abel.z.warner@dwlabs.local\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+            testRunner.When("User perform search by \"azuresync3@juriba1.onmicrosoft.com\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
             testRunner.And("User click content from \"Email Address\" column", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
             testRunner.When("User navigates to the \"Details\" tab", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-            testRunner.Then("Fields with empty information are displayed", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+            testRunner.Then("Unknown text is displayed for empty fields for \"Department and Location\" section", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
             testRunner.When("User clicks the Logout button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
             testRunner.Then("Signed Out page is displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
             testRunner.And("User is logged out", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");

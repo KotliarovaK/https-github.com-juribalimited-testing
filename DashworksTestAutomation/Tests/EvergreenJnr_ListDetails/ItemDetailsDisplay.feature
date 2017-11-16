@@ -19,7 +19,7 @@ Scenario: Evergreen Jnr_DevicesList_Details_All empty fields in item details are
 	When User perform search by "01BQIYGGUW5PRP6"
 	And User click content from "Hostname" column
 	When User navigates to the "Details" tab
-	Then Fields with empty information are displayed
+	Then Unknown text is displayed for empty fields for "Department and Location" section
 	When User clicks the Logout button
 	Then Signed Out page is displayed to the user
 	And User is logged out
@@ -31,7 +31,7 @@ Scenario: Evergreen Jnr_UsersList_Details_All empty fields in item details are d
 	When User perform search by "ABW1509426"
 	And User click content from "Username" column
 	When User navigates to the "Details" tab
-	Then Fields with empty information are displayed
+	Then Unknown text is displayed for empty fields for "Department and Location" section
 	When User clicks the Logout button
 	Then Signed Out page is displayed to the user
 	And User is logged out
@@ -43,7 +43,7 @@ Scenario: Evergreen Jnr_ApplicationsList_Details_All empty fields in item detail
 	When User perform search by "Python 2.2a4"
 	And User click content from "Application" column
 	When User navigates to the "Details" tab
-	Then Fields with empty information are displayed
+	Then Unknown text is displayed for empty fields for "Department and Location" section
 	When User clicks the Logout button
 	Then Signed Out page is displayed to the user
 	And User is logged out
@@ -52,10 +52,10 @@ Scenario: Evergreen Jnr_ApplicationsList_Details_All empty fields in item detail
 Scenario: Evergreen Jnr_MailboxesList_Details_All empty fields in item details are displayed as Unknown
 	When User clicks "Mailboxes" on the left-hand menu
 	Then "Mailboxes" list should be displayed to the user
-	When User perform search by "abel.z.warner@dwlabs.local"
+	When User perform search by "azuresync3@juriba1.onmicrosoft.com"
 	And User click content from "Email Address" column
 	When User navigates to the "Details" tab
-	Then Fields with empty information are displayed
+	Then Unknown text is displayed for empty fields for "Department and Location" section
 	When User clicks the Logout button
 	Then Signed Out page is displayed to the user
 	And User is logged out
