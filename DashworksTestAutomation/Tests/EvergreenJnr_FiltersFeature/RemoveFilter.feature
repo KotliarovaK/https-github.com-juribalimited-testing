@@ -82,7 +82,7 @@ Scenario: Evergreen Jnr_UsersList_Check that delete part of filter from url is u
 	Then Signed Out page is displayed to the user
 	And User is logged out
 
-@Evergreen @Users @Evergreen_FilterFeature @RemoveFilter @DAS-10996
+@Evergreen @Mailboxes @Evergreen_FilterFeature @RemoveFilter @DAS-10996
 Scenario: Evergreen Jnr_MailboxesList_Check that filters is reset and data on the grid updated back to the full data set
 	When User clicks "Mailboxes" on the left-hand menu
 	Then "Mailboxes" list should be displayed to the user
@@ -100,6 +100,7 @@ Scenario: Evergreen Jnr_MailboxesList_Check that filters is reset and data on th
 	| ColumnName |
 	| City       |
 	And "4,835" rows are displayed in the agGrid
+	And "City" filter is removed from filters
 	When User clicks the Logout button
 	Then Signed Out page is displayed to the user
 	And User is logged out

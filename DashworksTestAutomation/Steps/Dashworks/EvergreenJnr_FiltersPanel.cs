@@ -139,10 +139,10 @@ namespace DashworksTestAutomation.Steps.Dashworks
         }
 
         [Then(@"""(.*)"" filter is removed from filters")]
-        public void ThenFilterIsRemovedFromFilters(string listName)
+        public void ThenFilterIsRemovedFromFilters(string filterName)
         {
             var filterElement = _driver.NowAt<FiltersElement>();
-            Assert.IsFalse(filterElement.CheckThatFilterIsRemoved(listName));
+            Assert.IsFalse(filterElement.CheckThatFilterIsRemoved(filterName));
         }
 
         [When(@"User have reset all filters")]
