@@ -105,13 +105,11 @@ namespace DashworksTestAutomation.Steps.Dashworks
                 }
                 foreach (var filtersName in filtersNames)
                 {
-                    var t = filterElement.GetFilterValuesByFilterName(filtersName);
                     foreach (var filterValue in filterElement.GetFilterValuesByFilterName(filtersName))
                     {
                         if (string.IsNullOrEmpty(allColumns.First(x => x.Key.Equals(filtersName)).Value[i].ToLower()))
                             continue;
-                        //allColumns.First(x => x.Key.Equals(filtersName)).Value[i].ToLower()
-                        //    .Contains(filterValue.ToLower())
+ 
                         if (filterValue.ToLower()
                             .Contains(allColumns.First(x => x.Key.Equals(filtersName)).Value[i].ToLower()))
                         {
