@@ -118,7 +118,6 @@ namespace DashworksTestAutomation.Steps.Dashworks
         public void ThenSubcategoriesIsDisplayedForCategory(int subCategoriesCount, string categoryName)
         {
             var columnElement = _driver.NowAt<ColumnsElement>();
-            var t = columnElement.GetSubcategoriesCountByCategoryName(categoryName);
             Assert.AreEqual(subCategoriesCount, columnElement.GetSubcategoriesCountByCategoryName(categoryName));
         }
 

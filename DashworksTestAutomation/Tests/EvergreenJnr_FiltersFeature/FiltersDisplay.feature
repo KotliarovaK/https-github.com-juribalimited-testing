@@ -13,7 +13,7 @@ Background: Pre-Conditions
 	Then Evergreen Dashboards page should be displayed to the user
 
 @Evergreen @Devices @Evergreen_FiltersFeature @FiltersDisplay @DAS-10781
-Scenario: Evergreen Device_Compliance_Check that 'Add column' option as available
+Scenario: Evergreen Device_Compliance_Check that 'Add column' option as available for "Compliance" filter
 	When User clicks "Devices" on the left-hand menu
 	Then "Devices" list should be displayed to the user
 	When User clicks the Filters button
@@ -46,9 +46,8 @@ Scenario: Evergreen Jnr_ApplicationsList_Check true-false options and images in 
 	Then Signed Out page is displayed to the user
 	And User is logged out
 
-
-@Evergreen @Applications @Evergreen_FiltersFeature @FiltersDisplay @DAS-10754 @Delete_Newly_Created_List
-Scenario: Evergreen Jnr_ApplicationsList_Check special characters display in filter info
+@Evergreen @Users @Evergreen_FiltersFeature @FiltersDisplay @DAS-10754 @DAS-11142 @Delete_Newly_Created_List
+Scenario: Evergreen Jnr_UsersList_Check special characters display in filter info
 	When User clicks "Users" on the left-hand menu
 	Then "Users" list should be displayed to the user
 	When User clicks the Filters button
@@ -57,14 +56,14 @@ Scenario: Evergreen Jnr_ApplicationsList_Check special characters display in fil
 	When User have created "Equals" filter with "true" column checkbox and "O'Conn"/\or#@!()" option
 	Then "Display Name" filter is added to the list
 	Then Values is displayed in added filter info
-	| Values          |
+	| Values           |
 	| O'Conn"/\or#@!() |
 	When User create custom list with "TestList" name
 	Then "TestList" is displayed to user
 	When User clicks the Filters button
 	Then Filters panel is displayed to the user
 	Then Values is displayed in added filter info
-	| Values          |
+	| Values           |
 	| O'Conn"/\or#@!() |
 	When User navigates to the "All Users" list
 	When User navigates to the "TestList" list
@@ -72,7 +71,7 @@ Scenario: Evergreen Jnr_ApplicationsList_Check special characters display in fil
 	When User clicks the Filters button
 	Then Filters panel is displayed to the user
 	Then Values is displayed in added filter info
-	| Values          |
+	| Values           |
 	| O'Conn"/\or#@!() |
 
 @Evergreen @Applications @Evergreen_FiltersFeature @FiltersDisplay @DAS-10781
@@ -98,3 +97,75 @@ Scenario: Evergreen Jnr_Devices_Filters_Check that "Empty" and "Not Empty" optio
 	When user select "AD Object Key" filter
 	Then "Empty" option is available for this filter
 	Then "Not empty" option is available for this filter
+
+@Evergreen @Devices @Evergreen_FiltersFeature @FiltersDisplay @DAS-10795
+Scenario: EvergreenJnr_Devices_Filters_Check that 'Add column' option as available for "Operating System" filter
+	When User clicks "Devices" on the left-hand menu
+	Then "Devices" list should be displayed to the user
+	When User clicks the Filters button
+	Then Filters panel is displayed to the user
+	When user select "Operating System" filter
+	Then "Add Operating System column" checkbox is displayed
+	When User clicks the Logout button
+	Then Signed Out page is displayed to the user
+	And User is logged out
+
+@Evergreen @Devices @Evergreen_FiltersFeature @FiltersDisplay @DAS-10795
+Scenario: EvergreenJnr_Devices_Filters_Check that 'Add column' option as available for "City" filter
+	When User clicks "Devices" on the left-hand menu
+	Then "Devices" list should be displayed to the user
+	When User clicks the Filters button
+	Then Filters panel is displayed to the user
+	When user select "City" filter
+	Then "Add City column" checkbox is displayed
+	When User clicks the Logout button
+	Then Signed Out page is displayed to the user
+	And User is logged out
+
+@Evergreen @Devices @Evergreen_FiltersFeature @FiltersDisplay @DAS-10795
+Scenario: EvergreenJnr_Devices_Filters_Check that 'Add column' option as available for filter in 'Devices'
+	When User clicks "Devices" on the left-hand menu
+	Then "Devices" list should be displayed to the user
+	When User clicks the Filters button
+	Then Filters panel is displayed to the user
+	When user select "Computer Warranty" filter
+	Then "Add column" checkbox is displayed
+	When User clicks the Logout button
+	Then Signed Out page is displayed to the user
+	And User is logged out
+
+@Evergreen @Users @Evergreen_FiltersFeature @FiltersDisplay @DAS-10795
+Scenario: EvergreenJnr_Devices_Filters_Check that 'Add column' option as available for filter in 'Users'
+	When User clicks "Users" on the left-hand menu
+	Then "Users" list should be displayed to the user
+	When User clicks the Filters button
+	Then Filters panel is displayed to the user
+	When user select "Zip Code" filter
+	Then "Add column" checkbox is displayed
+	When User clicks the Logout button
+	Then Signed Out page is displayed to the user
+	And User is logged out
+
+@Evergreen @Applications @Evergreen_FiltersFeature @FiltersDisplay @DAS-10795
+Scenario: EvergreenJnr_Devices_Filters_Check that 'Add column' option as available for filter in 'Applications'
+	When User clicks "Applications" on the left-hand menu
+	Then "Applications" list should be displayed to the user
+	When User clicks the Filters button
+	Then Filters panel is displayed to the user
+	When user select "Application Owner" filter
+	Then "Add column" checkbox is displayed
+	When User clicks the Logout button
+	Then Signed Out page is displayed to the user
+	And User is logged out
+
+@Evergreen @Mailboxes @Evergreen_FiltersFeature @FiltersDisplay @DAS-10795
+Scenario: EvergreenJnr_Devices_Filters_Check that 'Add column' option as available for filter in 'Mailboxes'
+	When User clicks "Mailboxes" on the left-hand menu
+	Then "Mailboxes" list should be displayed to the user
+	When User clicks the Filters button
+	Then Filters panel is displayed to the user
+	When user select "Mailbox Filter 1" filter
+	Then "Add column" checkbox is displayed
+	When User clicks the Logout button
+	Then Signed Out page is displayed to the user
+	And User is logged out

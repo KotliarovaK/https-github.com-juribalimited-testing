@@ -69,6 +69,13 @@ namespace DashworksTestAutomation.Pages.Evergreen
             };
         }
 
+        public List<string> GetFilterValuesByFilterName(string filterName)
+        {
+            return Driver.FindElements(By.XPath(
+                    $".//span[@class='filter-label-name'][text()='{filterName}']/ancestor::div[@class='filter-label']//span[@class='filter-label-value']"))
+                .Select(x => x.Text.TrimStart(' ').TrimEnd(' ')).ToList();
+        }
+
         public void AddFilter(string filterName)
         {
             if (AddNewFilterButton.Displayed())
@@ -103,11 +110,9 @@ namespace DashworksTestAutomation.Pages.Evergreen
             return namesListElements.Select(name => name.Text).ToList();
         }
 
-        public List<string> GetFilterColumData()
+        public bool CheckThatFilterIsRemoved(string filterName)
         {
-            var filterColumnDataElements =
-                Driver.FindElements(By.XPath(".//div[@role='gridcell'][@colid='project_1_subCategory']"));
-            return filterColumnDataElements.Select(name => name.Text).ToList();
+            return Driver.IsElementDisplayed(By.XPath($".//span[@class='filter-label-name'][text()='{filterName}]"));
         }
 
         public IWebElement GetEditFilterButton(string filterName)

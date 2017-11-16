@@ -30,23 +30,3 @@ Scenario: Evergreen Jnr_Devices Add the Device key column to the devices list
 	When User clicks the Logout button
 	Then Signed Out page is displayed to the user
 	And User is logged out
-
-@Evergreen @Applications @EvergreenJnr_Columns @AddColumnAction @DAS-10734
-Scenario: Evergreen Jnr_ApplicationsList_Add Custom Column Action
-	When User clicks "Applications" on the left-hand menu
-	Then "Applications" list should be displayed to the user
-	When User clicks the Filters button
-	Then Filters panel is displayed to the user
-	When user select "Windows7Mi: Category" filter
-	When User have created "Equals" filter with "true" column checkbox and following options:
-	| SelectedCheckboxes  |
-	| A Star Packages     |
-	Then "Windows7Mi: Category" filter is added to the list
-	Then FilterData is displayed for apropriate column
-	| FilterData      |
-	| A Star Packages |
-	| A Star Packages |
-	| A Star Packages |
-	When User clicks the Logout button
-	Then Signed Out page is displayed to the user
-	And User is logged out

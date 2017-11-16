@@ -133,7 +133,9 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_StaticLists
                         @"evergreen/#/users?$select=username,directoryName,displayName,fullyDistinguishedObjectName&$filter=(displayName%20CONTAINS%20('O''Connell')%20)%20OR%20(displayName%20CONTAINS%20('O''Neal')%20)%20OR%20(displayName%20CONTAINS%20('O''Neill')%20)%20OR%20(displayName%20CONTAINS%20('O''Connor')%20)%20OR%20(displayName%20CONTAINS%20('O''Donnell')%20)%20OR%20(displayName%20CONTAINS%20('O''Brian')%20)"});
             table1.AddRow(new string[] {
                         "Mailboxes with apostrophes",
-                        @"evergreen/#/mailboxes?$select=mailboxPlatform,serverName,mailboxType,ownerDisplayName,emailAddresses,principalEmailAddress&$filter=(emailAddresses%20CONTAINS%20('o''connell')%20)%20OR%20(emailAddresses%20CONTAINS%20('o''neal')%20)%20OR%20(emailAddresses%20CONTAINS%20('o''neill')%20)%20OR%20(emailAddresses%20CONTAINS%20('o''donnell')%20)%20OR%20(emailAddresses%20CONTAINS%20('o''brien')%20)%20OR%20(principalEmailAddress%20CONTAINS%20('o''connor')%20)"});
+                        "evergreen/#/mailboxes?$filter=(displayName%20CONTAINS%20(\'o\'\'donnell\'%2C\'o\'\'brien" +
+                            "\'%2C\'o\'\'neil\')%20)&$select=principalEmailAddress,mailboxPlatform,serverName,mail" +
+                            "boxType,ownerDisplayName,displayName"});
             testRunner.When("Evergreen QueryStringURL is entered for Simple QueryType", ((string)(null)), table1, "When ");
             testRunner.Then("agGrid Main Object List is returned with data", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
             testRunner.When("User clicks the Logout button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");

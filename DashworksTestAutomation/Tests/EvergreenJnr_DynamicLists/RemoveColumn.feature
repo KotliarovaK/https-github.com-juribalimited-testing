@@ -67,7 +67,7 @@ Scenario: Evergreen Jnr_DevicesList_Check that 500 error page is not displayed a
 	When User clicks the Columns button
 	Then Columns panel is displayed to the user
 	When ColumnName is entered into the search box and the selection is clicked
-	| ColumnName    |
+	| ColumnName   |
 	| Boot Up Date |
 	Then ColumnName is added to the list
 	| ColumnName   |

@@ -41,7 +41,7 @@ Scenario: Evergreen Jnr_UsersList_Check that columns order saved after search
 	Then "Compliance" column is "Right" Pinned
 	Then User enters SearchCriteria into the agGrid Search Box and the correct NumberOfRows are returned
 	| SearchCriteria | NumberOfRows |
-	| Smith          | 58           |
+	| Smith          | 59           |
 	Then "Compliance" column is "Right" Pinned
 	When User clicks the Logout button
 	Then Signed Out page is displayed to the user

@@ -24,7 +24,7 @@ Scenario: Evergreen Jnr_UsersList_Select All Checkbox Status Check After Search
 	| alain          | 42           |
 	Then Select All selectbox is checked
 	Then "42" rows are displayed in the agGrid
-	Then "38271" selected rows are displayed in the Actions panel
+	Then "41335" selected rows are displayed in the Actions panel
 	When User is deselect all rows
 	And User select all rows
 	Then The number of rows selected matches the number of rows of the main object list

@@ -1,8 +1,10 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Text.RegularExpressions;
 using DashworksTestAutomation.Extensions;
 using DashworksTestAutomation.Helpers;
+using DashworksTestAutomation.Pages;
 using DashworksTestAutomation.Pages.Evergreen;
 using DashworksTestAutomation.Providers;
 using DashworksTestAutomation.Utils;
@@ -46,7 +48,8 @@ namespace DashworksTestAutomation.Steps.Dashworks
         }
 
         [When(@"User have created ""(.*)"" filter with ""(.*)"" column checkbox and following options:")]
-        public void WhenUserHaveCreatedFilterWithColumnCheckboxAndFollowingOptions(string filterType, bool columnOption, Table table)
+        public void WhenUserHaveCreatedFilterWithColumnCheckboxAndFollowingOptions(string filterType, bool columnOption,
+            Table table)
         {
             var filterElement = _driver.NowAt<FiltersElement>();
             var filter = new CheckBoxesFilter(_driver, filterType, columnOption, table);
@@ -80,12 +83,49 @@ namespace DashworksTestAutomation.Steps.Dashworks
             }
         }
 
-        [Then(@"FilterData is displayed for apropriate column")]
-        public void ThenFilterDataIsDisplayedForApropriateColumn(Table table)
+        [Then(@"table data is filtred currectly")]
+        public void ThenTableDataIsFiltredCurrectly()
         {
             var filterElement = _driver.NowAt<FiltersElement>();
-            var valuesList = table.Rows.Select(row => row.Values.ToList().First()).ToList();
-            Assert.AreEqual(valuesList, filterElement.GetFilterColumData());
+            var basePage = _driver.NowAt<BaseDashboardPage>();
+            var filtersNames = filterElement.GetFiltersNames();
+            var allColumns = filtersNames.Select(filtersName =>
+                new KeyValuePair<string, List<string>>(filtersName, basePage.GetColumnContent(filtersName))).ToList();
+            for (int i = 0; i < allColumns.First().Value.Count; i++)
+            {
+                bool result = false;
+                //Check that all values in the row are empty
+                //This happens after 22 row when data is not loading
+                var allValuesAreEmpty = allColumns.Select(column => column.Value[i])
+                    .All(rowValue => string.IsNullOrEmpty(rowValue));
+                if (allValuesAreEmpty)
+                {
+                    result = true;
+                    continue;
+                }
+                foreach (var filtersName in filtersNames)
+                {
+                    var t = filterElement.GetFilterValuesByFilterName(filtersName);
+                    foreach (var filterValue in filterElement.GetFilterValuesByFilterName(filtersName))
+                    {
+                        if (string.IsNullOrEmpty(allColumns.First(x => x.Key.Equals(filtersName)).Value[i].ToLower()))
+                            continue;
+                        //allColumns.First(x => x.Key.Equals(filtersName)).Value[i].ToLower()
+                        //    .Contains(filterValue.ToLower())
+                        if (filterValue.ToLower()
+                            .Contains(allColumns.First(x => x.Key.Equals(filtersName)).Value[i].ToLower()))
+                        {
+                            result = true;
+                            break;
+                        }
+                    }
+                    if (result)
+                    {
+                        break;
+                    }
+                }
+                Assert.IsTrue(result, "Table data is filtered incorrectly");
+            }
         }
 
         [When(@"User have removed ""(.*)"" filter")]
@@ -98,11 +138,19 @@ namespace DashworksTestAutomation.Steps.Dashworks
             filterElement.RemoveFilterButton.Click();
         }
 
+        [Then(@"""(.*)"" filter is removed from filters")]
+        public void ThenFilterIsRemovedFromFilters(string listName)
+        {
+            var filterElement = _driver.NowAt<FiltersElement>();
+            Assert.IsFalse(filterElement.CheckThatFilterIsRemoved(listName));
+        }
+
         [When(@"User have reset all filters")]
         public void WhenUserHaveResetAllFilters()
         {
             var filterElement = _driver.NowAt<FiltersElement>();
             _driver.WaitWhileControlIsNotDisplayed<FiltersElement>(() => filterElement.ResetFiltersButton);
+            _driver.MouseHover(filterElement.ResetFiltersButton);
             filterElement.ResetFiltersButton.Click();
         }
 
@@ -150,6 +198,38 @@ namespace DashworksTestAutomation.Steps.Dashworks
             }
             var actualOptionsList = filterElement.OperatorOptions.Select(value => value.Text).ToList();
             Assert.Contains(optionName, actualOptionsList, $"{optionName} is not found in Filter Options");
+        }
+
+        [When(@"User is remove filter by URL")]
+        public void WhenUserIsRemoveFilterByURL()
+        {
+            var currentUrl = _driver.Url;
+            const string pattern = @"\$filter=(.*)\&";
+            var originalPart = Regex.Match(currentUrl, pattern).Value;
+            var urlToNavigate = currentUrl.Replace(originalPart, string.Empty);
+            _driver.NagigateToURL(urlToNavigate);
+
+            var page = _driver.NowAt<EvergreenDashboardsPage>();
+            if (page.StatusCodeLabel.Displayed())
+            {
+                throw new Exception("500 error was returned");
+            }
+        }
+
+        [When(@"User is remove part of filter by URL")]
+        public void WhenUserIsRemovePartOfFilterByURL()
+        {
+            var currentUrl = _driver.Url;
+            const string pattern = @"\$filter=(.*)\&";
+            var originalPart = Regex.Match(currentUrl, pattern).Groups[1].Value;
+            var urlToNavigate = currentUrl.Replace(originalPart, string.Empty);
+            _driver.NagigateToURL(urlToNavigate);
+
+            var page = _driver.NowAt<EvergreenDashboardsPage>();
+            if (page.StatusCodeLabel.Displayed())
+            {
+                throw new Exception("500 error was returned");
+            }
         }
     }
 }
