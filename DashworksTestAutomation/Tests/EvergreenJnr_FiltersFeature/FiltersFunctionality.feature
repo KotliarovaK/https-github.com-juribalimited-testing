@@ -38,7 +38,7 @@ Scenario: Evergreen Jnr_ApplicationsList_Check 500 error is not returned for boo
 	| FALSE              |
 	| UNKNOWN            |
 	Then "Windows7Mi: Hide from End Users" filter is added to the list
-	Then "3,305" rows are displayed in the agGrid
+	Then "2,223" rows are displayed in the agGrid
 	When User have removed "Windows7Mi: Hide from End Users" filter
 	When user select "Windows7Mi: Hide from End Users" filter
 	When User have created "Equals" filter with "false" column checkbox and following options:
@@ -46,7 +46,7 @@ Scenario: Evergreen Jnr_ApplicationsList_Check 500 error is not returned for boo
 	| FALSE              |
 	| UNKNOWN            |
 	Then "Windows7Mi: Hide from End Users" filter is added to the list
-	Then "3,305" rows are displayed in the agGrid
+	Then "2,223" rows are displayed in the agGrid
 	When User have removed "Windows7Mi: Hide from End Users" filter
 	When user select "Windows7Mi: Hide from End Users" filter
 	When User have created "Equals" filter with "false" column checkbox and following options:
@@ -54,7 +54,23 @@ Scenario: Evergreen Jnr_ApplicationsList_Check 500 error is not returned for boo
 	| TRUE               |
 	| UNKNOWN            |
 	Then "Windows7Mi: Hide from End Users" filter is added to the list
-	Then "2,238" rows are displayed in the agGrid
+	Then "1,156" rows are displayed in the agGrid
+	When User clicks the Logout button
+	Then Signed Out page is displayed to the user
+	And User is logged out
+
+@Evergreen @Applications @EvergreenJnr_FiltersFeature @FilterFunctionality @DAS-10734
+Scenario: Evergreen Jnr_ApplicationsList_Check that add column checkbox works currectly
+	When User clicks "Applications" on the left-hand menu
+	Then "Applications" list should be displayed to the user
+	When User clicks the Filters button
+	Then Filters panel is displayed to the user
+	When user select "Windows7Mi: Category" filter
+	When User have created "Equals" filter with "true" column checkbox and following options:
+	| SelectedCheckboxes  |
+	| A Star Packages     |
+	Then "Windows7Mi: Category" filter is added to the list
+	Then table data is filtred currectly
 	When User clicks the Logout button
 	Then Signed Out page is displayed to the user
 	And User is logged out

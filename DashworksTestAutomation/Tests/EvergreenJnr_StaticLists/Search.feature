@@ -30,7 +30,7 @@ Scenario: Evergreen Jnr_Devices List_agGrid	_Search Tests
 	And User enters SearchCriteria into the agGrid Search Box and the correct NumberOfRows are returned
 	| SearchCriteria      | NumberOfRows |
 	| Véronique Duplessis | 1            |
-	| Virtual             | 2,030        |
+	| Virtual             | 1,996        |
 	| Windows Vista       | 475          |
 	| O'Connor            | 13           |
 	| @demo.juriba.com    | 16,717       |
@@ -49,7 +49,7 @@ Scenario: Evergreen Jnr_Devices List_agGrid_Clearing search returns the full dat
 	| SearchCriteria | NumberOfRows |
 	| Mary           | 17           |
 	And Clearing the agGrid Search Box
-	Then "17,271" rows are displayed in the agGrid
+	Then "17,225" rows are displayed in the agGrid
 	When User clicks the Logout button
 	Then Signed Out page is displayed to the user
 	And User is logged out
@@ -98,7 +98,7 @@ Scenario: Evergreen Jnr_DevicesList_Search Within All Rows
 	| Henry           | 34           |
 	| Yolande Sylvain | 1            |
 	And Clearing the agGrid Search Box
-	Then "17,271" rows are displayed in the agGrid
+	Then "17,225" rows are displayed in the agGrid
 	When User clicks the Logout button
 	Then Signed Out page is displayed to the user
 	And User is logged out
@@ -112,28 +112,28 @@ Scenario: Evergreen Jnr_AllLists_Check search filter and table content during na
 	| Smith          | 11           |
 	When User clicks "Users" on the left-hand menu
 	Then "Users" list should be displayed to the user
-	Then "38,271" rows are displayed in the agGrid
+	Then "41,335" rows are displayed in the agGrid
 	Then Search field is empty
 	Then User enters SearchCriteria into the agGrid Search Box and the correct NumberOfRows are returned
 	| SearchCriteria | NumberOfRows |
-	| Smith          | 58           |
+	| Smith          | 59           |
 	When User clicks "Applications" on the left-hand menu
 	Then "Applications" list should be displayed to the user
-	Then "3,305" rows are displayed in the agGrid
+	Then "2,223" rows are displayed in the agGrid
 	Then Search field is empty
 	Then User enters SearchCriteria into the agGrid Search Box and the correct NumberOfRows are returned
 	| SearchCriteria | NumberOfRows |
 	| Python          | 7           |
 	When User clicks "Mailboxes" on the left-hand menu
 	Then "Mailboxes" list should be displayed to the user
-	Then "13,779" rows are displayed in the agGrid
+	Then "4,835" rows are displayed in the agGrid
 	Then Search field is empty
 	Then User enters SearchCriteria into the agGrid Search Box and the correct NumberOfRows are returned
 	| SearchCriteria | NumberOfRows |
-	| Smith          | 44           |
+	| Smith          | 39           |
 	When User clicks "Devices" on the left-hand menu
 	Then "Devices" list should be displayed to the user
-	Then "17,271" rows are displayed in the agGrid
+	Then "17,225" rows are displayed in the agGrid
 	Then Search field is empty
 	When User clicks the Logout button
 	Then Signed Out page is displayed to the user

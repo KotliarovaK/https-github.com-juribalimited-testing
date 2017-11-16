@@ -132,7 +132,7 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_StaticLists
                         "NumberOfRows"});
             table3.AddRow(new string[] {
                         "Windows XP",
-                        "15,153"});
+                        "15,152"});
             testRunner.Then("User enters SearchCriteria into the agGrid Search Box and the correct NumberOfRow" +
                     "s are returned", ((string)(null)), table3, "Then ");
             testRunner.When("User click on \'Boot Up Date\' column header", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
@@ -188,7 +188,7 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_StaticLists
                         "NumberOfRows"});
             table6.AddRow(new string[] {
                         "Software",
-                        "142"});
+                        "94"});
             testRunner.Then("User enters SearchCriteria into the agGrid Search Box and the correct NumberOfRow" +
                     "s are returned", ((string)(null)), table6, "Then ");
             testRunner.When("User click on \'Barry\'sUse: Package Delivery Date\' column header", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
@@ -244,7 +244,7 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_StaticLists
                         "NumberOfRows"});
             table9.AddRow(new string[] {
                         "Sonja",
-                        "4"});
+                        "1"});
             testRunner.Then("User enters SearchCriteria into the agGrid Search Box and the correct NumberOfRow" +
                     "s are returned", ((string)(null)), table9, "Then ");
             testRunner.When("User click on \'Created Date\' column header", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
@@ -304,7 +304,7 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_StaticLists
                         "NumberOfRows"});
             table12.AddRow(new string[] {
                         "Tim",
-                        "140"});
+                        "147"});
             testRunner.Then("User enters SearchCriteria into the agGrid Search Box and the correct NumberOfRow" +
                     "s are returned", ((string)(null)), table12, "Then ");
             testRunner.When("User click on \'Last Logon Date\' column header", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");

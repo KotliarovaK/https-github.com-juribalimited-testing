@@ -47,8 +47,8 @@ Scenario: Evergreen Jnr_ApplicationsList_Check true-false options and images in 
 	And User is logged out
 
 
-@Evergreen @Applications @Evergreen_FiltersFeature @FiltersDisplay @DAS-10754 @Delete_Newly_Created_List
-Scenario: Evergreen Jnr_ApplicationsList_Check special characters display in filter info
+@Evergreen @Users @Evergreen_FiltersFeature @FiltersDisplay @DAS-10754 @DAS-11142 @Delete_Newly_Created_List
+Scenario: Evergreen Jnr_UsersList_Check special characters display in filter info
 	When User clicks "Users" on the left-hand menu
 	Then "Users" list should be displayed to the user
 	When User clicks the Filters button
@@ -57,14 +57,14 @@ Scenario: Evergreen Jnr_ApplicationsList_Check special characters display in fil
 	When User have created "Equals" filter with "true" column checkbox and "O'Conn"/\or#@!()" option
 	Then "Display Name" filter is added to the list
 	Then Values is displayed in added filter info
-	| Values          |
+	| Values           |
 	| O'Conn"/\or#@!() |
 	When User create custom list with "TestList" name
 	Then "TestList" is displayed to user
 	When User clicks the Filters button
 	Then Filters panel is displayed to the user
 	Then Values is displayed in added filter info
-	| Values          |
+	| Values           |
 	| O'Conn"/\or#@!() |
 	When User navigates to the "All Users" list
 	When User navigates to the "TestList" list
@@ -72,7 +72,7 @@ Scenario: Evergreen Jnr_ApplicationsList_Check special characters display in fil
 	When User clicks the Filters button
 	Then Filters panel is displayed to the user
 	Then Values is displayed in added filter info
-	| Values          |
+	| Values           |
 	| O'Conn"/\or#@!() |
 
 @Evergreen @Applications @Evergreen_FiltersFeature @FiltersDisplay @DAS-10781
