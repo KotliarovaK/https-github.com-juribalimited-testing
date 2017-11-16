@@ -58,7 +58,7 @@ Scenario: Evergreen Jnr_DevicesList_Check that delete by url is updating row cou
 	And User is logged out
 
 @Evergreen @Users @Evergreen_FiltersFeature @RemoveFilter @DAS-11009
-Scenario: Evergreen Jnr_DevicesList_Check that delete part of filter from url is updating row count
+Scenario: Evergreen Jnr_UsersList_Check that delete part of filter from url is updating row count
 	When User clicks "Users" on the left-hand menu
 	Then "Users" list should be displayed to the user
 	When User clicks the Filters button
@@ -78,6 +78,28 @@ Scenario: Evergreen Jnr_DevicesList_Check that delete part of filter from url is
 	| Compliance |
 	And "41,335" rows are displayed in the agGrid
 	Then "Compliance" filter is removed from filters
+	When User clicks the Logout button
+	Then Signed Out page is displayed to the user
+	And User is logged out
+
+@Evergreen @Users @Evergreen_FilterFeature @RemoveFilter @DAS-10996
+Scenario: Evergreen Jnr_MailboxesList_Check that filters is reset and data on the grid updated back to the full data set
+	When User clicks "Mailboxes" on the left-hand menu
+	Then "Mailboxes" list should be displayed to the user
+	When User clicks the Filters button
+	Then Filters panel is displayed to the user
+	When user select "City" filter
+	And User have created "Equals" filter with "true" column checkbox and following options:
+	| SelectedCheckboxes |
+	| London             |
+	Then "City" filter is added to the list
+	And "1,000" rows are displayed in the agGrid
+	And table data is filtred currectly
+	When User have reset all filters
+	Then ColumnName is added to the list
+	| ColumnName |
+	| City       |
+	And "4,835" rows are displayed in the agGrid
 	When User clicks the Logout button
 	Then Signed Out page is displayed to the user
 	And User is logged out
