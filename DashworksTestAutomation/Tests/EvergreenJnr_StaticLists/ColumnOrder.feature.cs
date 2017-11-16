@@ -164,7 +164,7 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_StaticLists
                         "NumberOfRows"});
             table3.AddRow(new string[] {
                         "Smith",
-                        "58"});
+                        "59"});
             testRunner.Then("User enters SearchCriteria into the agGrid Search Box and the correct NumberOfRow" +
                     "s are returned", ((string)(null)), table3, "Then ");
             testRunner.Then("\"Compliance\" column is \"Right\" Pinned", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");

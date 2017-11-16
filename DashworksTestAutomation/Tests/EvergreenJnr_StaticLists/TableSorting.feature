@@ -27,7 +27,7 @@ Scenario: Evergreen Jnr_DevicesList_Check Sort By Date Functionality
 	| Windows7Mi: Date & Time Task |
 	Then User enters SearchCriteria into the agGrid Search Box and the correct NumberOfRows are returned
 	| SearchCriteria | NumberOfRows |
-	| Windows XP     | 15,153       |
+	| Windows XP     | 15,152       |
 	When User click on 'Boot Up Date' column header
 	Then data in table is sorted by 'Boot Up Date' column in descenting order
 	When User click on 'Boot Up Date' column header
@@ -54,7 +54,7 @@ Scenario: Evergreen Jnr_ApplicationsList_Check Sort By Date Functionality
 	| Barry'sUse: Package Delivery Date |
 	Then User enters SearchCriteria into the agGrid Search Box and the correct NumberOfRows are returned
 	| SearchCriteria | NumberOfRows |
-	| Software       | 142          |
+	| Software       | 94           |
 	When User click on 'Barry'sUse: Package Delivery Date' column header
 	Then data in table is sorted by 'Barry'sUse: Package Delivery Date' column in descenting order
 	When User click on 'Barry'sUse: Package Delivery Date' column header
@@ -79,7 +79,7 @@ Scenario: Evergreen Jnr_MailboxesList_Check Sort By Date Functionality
 	| EmailMigra: Scheduled date |
 	Then User enters SearchCriteria into the agGrid Search Box and the correct NumberOfRows are returned
 	| SearchCriteria | NumberOfRows |
-	| Sonja            | 4          |
+	| Sonja            | 1          |
 	When User click on 'Created Date' column header
 	Then data in table is sorted by 'Created Date' column in descenting order
 	When User click on 'Created Date' column header
@@ -108,7 +108,7 @@ Scenario: EvergreenJnr_UsersList_Check Sort By Date Functionality
 	| MigrationP: Migrated Date |
 	Then User enters SearchCriteria into the agGrid Search Box and the correct NumberOfRows are returned
 	| SearchCriteria | NumberOfRows |
-	| Tim            | 140          |
+	| Tim            | 147          |
 	When User click on 'Last Logon Date' column header
 	Then data in table is sorted by 'Last Logon Date' column in descenting order
 	When User click on 'Last Logon Date' column header
