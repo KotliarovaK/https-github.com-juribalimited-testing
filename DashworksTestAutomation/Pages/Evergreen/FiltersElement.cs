@@ -128,5 +128,10 @@ namespace DashworksTestAutomation.Pages.Evergreen
                 $".//li//span[text()='{booleanValue}']/ancestor::span[@class='boolean-icon text-container']/img";
             return Driver.FindElement(By.XPath(imgSelector));
         }
+
+        public IList<IWebElement> GetSelectBoxes()
+        {
+            return Driver.FindElements(By.XPath(".//span[@class='text-container']"));
+        }
     }
 }
