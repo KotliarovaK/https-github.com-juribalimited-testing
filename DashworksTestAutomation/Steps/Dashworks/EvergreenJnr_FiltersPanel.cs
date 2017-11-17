@@ -160,6 +160,13 @@ namespace DashworksTestAutomation.Steps.Dashworks
                 $"{filterName} tick box is not displayed");
             Logger.Write($"{filterName} tick box is displayed");
         }
+        
+        [Then(@"""(.*)"" option is available at first place")]
+        public void ThenOptionIsAvailableAtFirstPlace(string optionName)
+        {
+            var filterElement = _driver.NowAt<FiltersElement>();
+            Assert.AreEqual(optionName, filterElement.GetSelectBoxes().First().Text);
+        }
 
         [Then(@"Values is displayed in added filter info")]
         public void ThenValuesIsDisplayedInAddedFilterInfo(Table table)

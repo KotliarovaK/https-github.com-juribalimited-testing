@@ -25,7 +25,7 @@ Scenario: Evergreen Device_Compliance_Check that 'Add column' option as availabl
 	And User is logged out
 
 @Evergreen @Applications @Evergreen_FiltersFeature @FiltersDisplay @DAS-10651
-Scenario: Evergreen Jnr_ApplicationsList_Check true-false options and images in filter info
+Scenario: EvergreenJnr_ApplicationsList_Check true-false options and images in filter info
 	When User clicks "Applications" on the left-hand menu
 	Then "Applications" list should be displayed to the user
 	When User clicks the Filters button
@@ -47,7 +47,7 @@ Scenario: Evergreen Jnr_ApplicationsList_Check true-false options and images in 
 	And User is logged out
 
 @Evergreen @Users @Evergreen_FiltersFeature @FiltersDisplay @DAS-10754 @DAS-11142 @Delete_Newly_Created_List
-Scenario: Evergreen Jnr_UsersList_Check special characters display in filter info
+Scenario: EvergreenJnr_UsersList_Check special characters display in filter info
 	When User clicks "Users" on the left-hand menu
 	Then "Users" list should be displayed to the user
 	When User clicks the Filters button
@@ -75,7 +75,7 @@ Scenario: Evergreen Jnr_UsersList_Check special characters display in filter inf
 	| O'Conn"/\or#@!() |
 
 @Evergreen @Applications @Evergreen_FiltersFeature @FiltersDisplay @DAS-10781
-Scenario: Evergreen Jnr_Applications_Filters_Check that 'Group' and 'Team' related filters is not presented in the list
+Scenario: EvergreenJnr_ApplicationsList_Check that 'Group' and 'Team' related filters is not presented in the list
 	When User clicks "Applications" on the left-hand menu
 	Then "Applications" list should be displayed to the user
 	When User clicks the Filters button
@@ -89,7 +89,7 @@ Scenario: Evergreen Jnr_Applications_Filters_Check that 'Group' and 'Team' relat
 	And User is logged out
 
 @Evergreen @Devices @Evergreen_FiltersFeature @FiltersDisplay @DAS-10776
-Scenario: Evergreen Jnr_Devices_Filters_Check that "Empty" and "Not Empty" options is availdable for ObjectKey filter
+Scenario: EvergreenJnr_DevicesList_Check that "Empty" and "Not Empty" options is availdable for ObjectKey filter
 	When User clicks "Devices" on the left-hand menu
 	Then "Devices" list should be displayed to the user
 	When User clicks the Filters button
@@ -99,7 +99,7 @@ Scenario: Evergreen Jnr_Devices_Filters_Check that "Empty" and "Not Empty" optio
 	Then "Not empty" option is available for this filter
 
 @Evergreen @Devices @Evergreen_FiltersFeature @FiltersDisplay @DAS-10795
-Scenario: EvergreenJnr_Devices_Filters_Check that 'Add column' option as available for "Operating System" filter
+Scenario: EvergreenJnr_DevicesList_Check that 'Add column' option as available for "Operating System" filter
 	When User clicks "Devices" on the left-hand menu
 	Then "Devices" list should be displayed to the user
 	When User clicks the Filters button
@@ -111,7 +111,7 @@ Scenario: EvergreenJnr_Devices_Filters_Check that 'Add column' option as availab
 	And User is logged out
 
 @Evergreen @Devices @Evergreen_FiltersFeature @FiltersDisplay @DAS-10795
-Scenario: EvergreenJnr_Devices_Filters_Check that 'Add column' option as available for "City" filter
+Scenario: EvergreenJnr_DevicesList_Check that 'Add column' option as available for "City" filter
 	When User clicks "Devices" on the left-hand menu
 	Then "Devices" list should be displayed to the user
 	When User clicks the Filters button
@@ -123,7 +123,7 @@ Scenario: EvergreenJnr_Devices_Filters_Check that 'Add column' option as availab
 	And User is logged out
 
 @Evergreen @Devices @Evergreen_FiltersFeature @FiltersDisplay @DAS-10795
-Scenario: EvergreenJnr_Devices_Filters_Check that 'Add column' option as available for filter in 'Devices'
+Scenario: EvergreenJnr_DevicesList_Check that 'Add column' option as available for filter
 	When User clicks "Devices" on the left-hand menu
 	Then "Devices" list should be displayed to the user
 	When User clicks the Filters button
@@ -135,7 +135,7 @@ Scenario: EvergreenJnr_Devices_Filters_Check that 'Add column' option as availab
 	And User is logged out
 
 @Evergreen @Users @Evergreen_FiltersFeature @FiltersDisplay @DAS-10795
-Scenario: EvergreenJnr_Devices_Filters_Check that 'Add column' option as available for filter in 'Users'
+Scenario: EvergreenJnr_UsersList_Check that 'Add column' option as available for filter
 	When User clicks "Users" on the left-hand menu
 	Then "Users" list should be displayed to the user
 	When User clicks the Filters button
@@ -147,7 +147,7 @@ Scenario: EvergreenJnr_Devices_Filters_Check that 'Add column' option as availab
 	And User is logged out
 
 @Evergreen @Applications @Evergreen_FiltersFeature @FiltersDisplay @DAS-10795
-Scenario: EvergreenJnr_Devices_Filters_Check that 'Add column' option as available for filter in 'Applications'
+Scenario: EvergreenJnr_ApplicationsList_Check that 'Add column' option as available for filter
 	When User clicks "Applications" on the left-hand menu
 	Then "Applications" list should be displayed to the user
 	When User clicks the Filters button
@@ -159,13 +159,61 @@ Scenario: EvergreenJnr_Devices_Filters_Check that 'Add column' option as availab
 	And User is logged out
 
 @Evergreen @Mailboxes @Evergreen_FiltersFeature @FiltersDisplay @DAS-10795
-Scenario: EvergreenJnr_Devices_Filters_Check that 'Add column' option as available for filter in 'Mailboxes'
+Scenario: EvergreenJnr_MailboxesList_Check that 'Add column' option as available for filter
 	When User clicks "Mailboxes" on the left-hand menu
 	Then "Mailboxes" list should be displayed to the user
 	When User clicks the Filters button
 	Then Filters panel is displayed to the user
 	When user select "Mailbox Filter 1" filter
 	Then "Add column" checkbox is displayed
+	When User clicks the Logout button
+	Then Signed Out page is displayed to the user
+	And User is logged out
+
+@Evergreen @Devices @Evergreen_FiltersFeature @FiltersDisplay @DAS-10771
+Scenario: EvergreenJnr_DevicesList_Check that 'None' option as available for filter
+	When User clicks "Devices" on the left-hand menu
+	Then "Devices" list should be displayed to the user
+	When User clicks the Filters button
+	Then Filters panel is displayed to the user
+	When user select "Windows7Mi: Category" filter
+	Then "None" option is available at first place
+	When User clicks the Logout button
+	Then Signed Out page is displayed to the user
+	And User is logged out
+
+@Evergreen @Users @Evergreen_FiltersFeature @FiltersDisplay @DAS-10771
+Scenario: EvergreenJnr_UsersList_Check that 'None' option as available for filter
+	When User clicks "Users" on the left-hand menu
+	Then "Users" list should be displayed to the user
+	When User clicks the Filters button
+	Then Filters panel is displayed to the user
+	When user select "UserSchedu: Category" filter
+	Then "None" option is available at first place
+	When User clicks the Logout button
+	Then Signed Out page is displayed to the user
+	And User is logged out
+
+@Evergreen @Applications @Evergreen_FiltersFeature @FiltersDisplay @DAS-10771
+Scenario: EvergreenJnr_ApplicationsList_Check that 'None' option as available for filter
+	When User clicks "Applications" on the left-hand menu
+	Then "Applications" list should be displayed to the user
+	When User clicks the Filters button
+	Then Filters panel is displayed to the user
+	When user select "Havoc(BigD: Category" filter
+	Then "None" option is available at first place
+	When User clicks the Logout button
+	Then Signed Out page is displayed to the user
+	And User is logged out
+
+@Evergreen @Mailboxes @Evergreen_FiltersFeature @FiltersDisplay @DAS-10771
+Scenario: EvergreenJnr_MailboxesList_Check that 'None' option as available for filter
+	When User clicks "Mailboxes" on the left-hand menu
+	Then "Mailboxes" list should be displayed to the user
+	When User clicks the Filters button
+	Then Filters panel is displayed to the user
+	When user select "EmailMigra: Category" filter
+	Then "None" option is available at first place
 	When User clicks the Logout button
 	Then Signed Out page is displayed to the user
 	And User is logged out
