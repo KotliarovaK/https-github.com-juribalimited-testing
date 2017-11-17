@@ -28,6 +28,9 @@ namespace DashworksTestAutomation.Pages.Evergreen
         [FindsBy(How = How.XPath, Using = ".//li//i[@title='Settings']")]
         public IList<IWebElement> SettingsButtons { get; set; }
 
+        [FindsBy(How = How.XPath, Using = ".//div[@class='inline-success']")]
+        public IWebElement SuccessCreateMessage { get; set; }
+
         #region ListSettings
 
         [FindsBy(How = How.XPath, Using = ".//li[text()='Manage']")]

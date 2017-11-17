@@ -102,6 +102,14 @@ namespace DashworksTestAutomation.Steps.Dashworks
             page.GetListElementByName(listName).Click();
         }
 
+        [Then(@"""(.*)"" message is displayed")]
+        public void ThenMessageIsDisplayed(string message)
+        {
+            var listElement = _driver.NowAt<CustomListElement>();
+            _driver.WaitWhileControlIsNotDisplayed<CustomListElement>(() => listElement.SuccessCreateMessage);
+            Assert.AreEqual(message, listElement.SuccessCreateMessage.Text);
+        }
+
         public void RemoveAllCustomLists()
         {
             var listElement = _driver.NowAt<CustomListElement>();
