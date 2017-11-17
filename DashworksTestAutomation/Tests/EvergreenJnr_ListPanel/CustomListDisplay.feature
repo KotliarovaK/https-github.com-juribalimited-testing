@@ -118,3 +118,10 @@ Scenario: Evergreen Jnr_DevicesList_agGrid_Check that quick search doesn't trigg
 	When User clicks the Logout button
 	Then Signed Out page is displayed to the user
 	And User is logged out
+
+@Evergreen @Devices @EvergreenJnr_ListPanel @CustomListDisplay @DAS-11081
+Scenario: Evergreen Jnr_DevicesList_agGrid_Check that 'new list created' message is displayed
+	When User clicks "Devices" on the left-hand menu
+	Then "Devices" list should be displayed to the user
+	When User clicks the Columns button
+	Then Columns panel is displayed to the user
