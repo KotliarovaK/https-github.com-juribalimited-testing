@@ -119,9 +119,18 @@ Scenario: Evergreen Jnr_DevicesList_agGrid_Check that quick search doesn't trigg
 	Then Signed Out page is displayed to the user
 	And User is logged out
 
-@Evergreen @Devices @EvergreenJnr_ListPanel @CustomListDisplay @DAS-11081
+@Evergreen @Devices @EvergreenJnr_ListPanel @CustomListDisplay @DAS-11081 @Delete_Newly_Created_List
 Scenario: Evergreen Jnr_DevicesList_agGrid_Check that 'new list created' message is displayed
 	When User clicks "Devices" on the left-hand menu
 	Then "Devices" list should be displayed to the user
 	When User clicks the Columns button
 	Then Columns panel is displayed to the user
+	When ColumnName is entered into the search box and the selection is clicked
+	| ColumnName |
+	| Import     |
+	Then ColumnName is added to the list
+	| ColumnName |
+	| Import     |
+	When User create custom list with "TestList" name
+	Then "TestList" is displayed to user
+	And "New list created" message is displayed
