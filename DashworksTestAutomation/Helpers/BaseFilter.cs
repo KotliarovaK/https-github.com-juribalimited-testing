@@ -16,12 +16,19 @@ namespace DashworksTestAutomation.Helpers
         protected RemoteWebDriver _driver { get; set; }
         protected string _operatorValue { get; set; }
         protected bool _acceptCheckbox { get; set; }
+        protected Table _table { get; set; }
 
         public BaseFilter(RemoteWebDriver driver, string operatorValue, bool acceptCheckbox)
         {
             _driver = driver;
             _operatorValue = operatorValue;
             _acceptCheckbox = acceptCheckbox;
+        }
+
+        public BaseFilter(RemoteWebDriver driver, Table table)
+        {
+            _driver = driver;
+            _table = table;
         }
 
         public void SelectOperator()
@@ -118,10 +125,41 @@ namespace DashworksTestAutomation.Helpers
 
         public override void Do()
         {
+            var filterValueSelector = By.XPath(
+                ".//div[@class='filterAddPanel']//div[@class='mat-input-infix mat-form-field-infix']//input");
             SelectOperator();
             _driver.WaitForDataLoading();
-            _driver.FindElement(By.XPath(".//div[@class='filterAddPanel']//input[@id='chipInput']"))
-                .SendKeys(_value);
+            if (_driver.IsElementDisplayed(filterValueSelector))
+            {
+                _driver.FindElement(filterValueSelector).SendKeys(_value);
+            }
+            SaveFilter();
+        }
+    }
+
+    public class ListFilter : BaseFilter
+    {
+        private string _value { get; set; }
+
+        public ListFilter(RemoteWebDriver driver, Table table) :
+            base(driver, table)
+        {
+            _table = table;
+        }
+
+        public override void Do()
+        {
+            _driver.WaitForDataLoading();
+            foreach (var row in _table.Rows)
+            {
+                _driver.FindElement(By.XPath(
+                    $".//div[@id='perfectScrolBar']//span[text()='{row["SelectedList"]}']")).Click();
+            }
+            foreach (var row in _table.Rows)
+            {
+                _driver.FindElement(By.XPath(".//div[@id='context']//input[@placeholder='Search']")).Click();
+                _driver.FindElement(By.XPath($".//li//span[text()='{row["Association"]}']")).Click();
+            }
             SaveFilter();
         }
     }

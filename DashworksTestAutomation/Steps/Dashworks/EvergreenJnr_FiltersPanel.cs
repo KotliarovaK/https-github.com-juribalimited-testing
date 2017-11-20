@@ -65,6 +65,15 @@ namespace DashworksTestAutomation.Steps.Dashworks
             filter.Do();
         }
 
+        [When(@"User have created ""(.*)"" filter with SelectedList list and following Association:")]
+        public void WhenUserHaveCreatedFilterWithSelectedListListAndFollowingAssociation(string filterType, Table table)
+        {
+            var filterElement = _driver.NowAt<FiltersElement>();
+            var filter = new ListFilter(_driver, table);
+            filter.Do();
+        }
+
+
         [Then(@"""(.*)"" filter is added to the list")]
         public void ThenFilterIsAddedToTheList(string filterName)
         {
@@ -109,7 +118,7 @@ namespace DashworksTestAutomation.Steps.Dashworks
                     {
                         if (string.IsNullOrEmpty(allColumns.First(x => x.Key.Equals(filtersName)).Value[i].ToLower()))
                             continue;
- 
+
                         if (filterValue.ToLower()
                             .Contains(allColumns.First(x => x.Key.Equals(filtersName)).Value[i].ToLower()))
                         {
@@ -227,6 +236,25 @@ namespace DashworksTestAutomation.Steps.Dashworks
             if (page.StatusCodeLabel.Displayed())
             {
                 throw new Exception("500 error was returned");
+            }
+        }
+
+        [Then(@"Options is displayed in added filter info")]
+        public void ThenOptionsIsDisplayedInAddedFilterInfo(Table table)
+        {
+            var filterElement = _driver.NowAt<FiltersElement>();
+            var expectedList = table.Rows.SelectMany(row => row.Values);
+            var actualList = filterElement.FilterOptions.Select(value => value.Text);
+            Assert.AreEqual(expectedList, actualList, "Filter settings options are different");
+        }
+
+        [Then(@"Associations is displayed in the filter")]
+        public void ThenAssociationsIsDisplayedInTheFilter(Table table)
+        {
+            var filterElement = _driver.NowAt<FiltersElement>();
+            foreach (var row in table.Rows)
+            {
+                filterElement.GetAssociationsList().Select(value => value.Text).ToList().Contains(row.Values.First());
             }
         }
     }

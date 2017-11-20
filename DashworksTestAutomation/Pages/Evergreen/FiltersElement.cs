@@ -54,6 +54,9 @@ namespace DashworksTestAutomation.Pages.Evergreen
         [FindsBy(How = How.XPath, Using = ".//span[@class='filter-label-value']")]
         public IList<IWebElement> FilterValues { get; set; }
 
+        [FindsBy(How = How.XPath, Using = ".//span[@class='filter-label-op']")]
+        public IList<IWebElement> FilterOptions { get; set; }
+
         [FindsBy(How = How.XPath, Using = ".//span[@class='mat-select-value-text']")]
         public IWebElement OperatorDropdown { get; set; }
 
@@ -127,6 +130,13 @@ namespace DashworksTestAutomation.Pages.Evergreen
             var imgSelector =
                 $".//li//span[text()='{booleanValue}']/ancestor::span[@class='boolean-icon text-container']/img";
             return Driver.FindElement(By.XPath(imgSelector));
+        }
+
+        public IList<IWebElement> GetAssociationsList()
+        {
+            Driver.FindElement(By.XPath(".//div[@id='context']//input[@placeholder='Search']")).Click();
+            return Driver.FindElements(By.XPath(
+                ".//div[@id='context']//input[@placeholder='Search']//ancestor::div[@class='associationmultiselect-parent btn-group dropdown-associationmultiselect']//li//span"));
         }
     }
 }
