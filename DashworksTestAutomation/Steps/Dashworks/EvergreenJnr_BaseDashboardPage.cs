@@ -150,5 +150,11 @@ namespace DashworksTestAutomation.Steps.Dashworks
             var expectedList = table.Rows.SelectMany(row => row.Values).ToList();
             Assert.AreEqual(expectedList, columnNames, "Columns order is incorrect");
         }
+
+        [Then(@"URL is ""(.*)""")]
+        public void ThenURLIs(string url)
+        {
+            Assert.AreEqual(url, _driver.Url, "URL is changing whe user perform search");
+        }
     }
 }

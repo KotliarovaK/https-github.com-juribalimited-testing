@@ -12,7 +12,7 @@ Background: Pre-Conditions
 	Then Evergreen Dashboards page should be displayed to the user
 
 @Evergreen @Devices @EvergreenJnr_StaticList @Search
-Scenario: Evergreen Jnr_Devices List_agGrid	_Search Tests
+Scenario: EvergreenJnr_DevicesList_agGrid	_Search Tests
 	When User clicks "Devices" on the left-hand menu
 	Then "Devices" list should be displayed to the user
 	When User clicks the Columns button
@@ -42,20 +42,22 @@ Scenario: Evergreen Jnr_Devices List_agGrid	_Search Tests
 	And User is logged out
 
 @Evergreen @Devices @EvergreenJnr_StaticList @Search
-Scenario: Evergreen Jnr_Devices List_agGrid_Clearing search returns the full data set
+Scenario: EvergreenJnr_DevicesList_agGrid_Clearing search returns the full data set
 	When User clicks "Devices" on the left-hand menu
 	Then "Devices" list should be displayed to the user
 	And User enters SearchCriteria into the agGrid Search Box and the correct NumberOfRows are returned
 	| SearchCriteria | NumberOfRows |
 	| Mary           | 17           |
+	Then URL is "http://automation.corp.juriba.com/evergreen/#/devices"
 	And Clearing the agGrid Search Box
 	Then "17,225" rows are displayed in the agGrid
+	Then URL is "http://automation.corp.juriba.com/evergreen/#/devices"
 	When User clicks the Logout button
 	Then Signed Out page is displayed to the user
 	And User is logged out
 
 @Evergreen @Devices @EvergreenJnr_StaticList @Search
-Scenario: Evergreen Jnr_Devices List_agGrid Search_No Devices Found
+Scenario: EvergreenJnr_DevicesList_agGrid Search_No Devices Found
 	When User clicks "Devices" on the left-hand menu
 	Then "Devices" list should be displayed to the user
 	When User clicks the Columns button
@@ -86,7 +88,7 @@ Scenario: Evergreen Jnr_Devices List_agGrid Search_No Devices Found
 	And User is logged out
 
 @Evergreen @Devices @EvergreenJnr_StaticList @Search  @DAS-10772
-Scenario: Evergreen Jnr_DevicesList_Search Within All Rows
+Scenario: EvergreenJnr_DevicesList_Search Within All Rows
 	When User clicks "Devices" on the left-hand menu
 	Then "Devices" list should be displayed to the user
 	When User clicks the Actions button
@@ -104,7 +106,7 @@ Scenario: Evergreen Jnr_DevicesList_Search Within All Rows
 	And User is logged out
 
 @Evergreen @Devices @Applications @Users @Mailboxes @EvergreenJnr_StaticList @Search @DAS-10580 @DAS-10667 @DAS-10624
-Scenario: Evergreen Jnr_AllLists_Check search filter and table content during navigation between pages
+Scenario: EvergreenJnr_AllLists_Check search filter and table content during navigation between pages
 	When User clicks "Devices" on the left-hand menu
 	Then "Devices" list should be displayed to the user
 	Then User enters SearchCriteria into the agGrid Search Box and the correct NumberOfRows are returned
