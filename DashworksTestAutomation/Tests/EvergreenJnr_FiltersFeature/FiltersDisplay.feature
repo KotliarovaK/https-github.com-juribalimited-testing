@@ -13,7 +13,7 @@ Background: Pre-Conditions
 	Then Evergreen Dashboards page should be displayed to the user
 
 @Evergreen @Devices @Evergreen_FiltersFeature @FiltersDisplay @DAS-10781
-Scenario: Evergreen Device_Compliance_Check that 'Add column' option as available for "Compliance" filter
+Scenario: EvergreenDevice_Compliance_Check that 'Add column' option as available for "Compliance" filter
 	When User clicks "Devices" on the left-hand menu
 	Then "Devices" list should be displayed to the user
 	When User clicks the Filters button

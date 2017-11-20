@@ -1,4 +1,5 @@
-﻿using DashworksTestAutomation.Extensions;
+﻿using System;
+using DashworksTestAutomation.Extensions;
 using DashworksTestAutomation.Pages.Evergreen;
 using DashworksTestAutomation.Utils;
 using NUnit.Framework;
@@ -75,11 +76,18 @@ namespace DashworksTestAutomation.Steps.Dashworks
         public void ThenRowsAreDisplayedInTheAgGrid(string numberOfRows)
         {
             var listPageElement = _driver.NowAt<BaseDashboardPage>();
+            if (!String.IsNullOrWhiteSpace(numberOfRows))
+            {
+                _driver.WaitWhileControlIsNotDisplayed<BaseDashboardPage>(() => listPageElement.ResultsOnPageCount);
 
-            _driver.WaitWhileControlIsNotDisplayed<BaseDashboardPage>(() => listPageElement.ResultsOnPageCount);
-
-            StringAssert.AreEqualIgnoringCase($"{numberOfRows} rows", listPageElement.ResultsOnPageCount.Text);
-            Logger.Write($"Evergreen agGrid Search returned the correct number of rows for: {numberOfRows}  search");
+                StringAssert.AreEqualIgnoringCase($"{numberOfRows} rows", listPageElement.ResultsOnPageCount.Text);
+                Logger.Write($"Evergreen agGrid Search returned the correct number of rows for: {numberOfRows}  search");
+            }
+            else
+            {
+                _driver.IsElementDisplayed(listPageElement.NoResultsFoundMessage);
+                Logger.Write($"Evergreen agGrid Search returned '{listPageElement.NoResultsFoundMessage.Text}' message");
+            }
         }
 
         [Then(@"Search field is empty")]
