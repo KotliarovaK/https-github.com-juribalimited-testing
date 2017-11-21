@@ -12,8 +12,8 @@ Background: Pre-Conditions
 	When User clicks the Switch to Evergreen link
 	Then Evergreen Dashboards page should be displayed to the user
 
-@Evergreen @Devices @EvergreenJnr_ListDetails @ItemDetailsDisplay @DAS-10438
-Scenario: Evergreen Jnr_DevicesList_Details_All empty fields in item details are displayed as Unknown
+@Evergreen @Devices @EvergreenJnr_ItemDetails @ItemDetailsDisplay @DAS-10438
+Scenario: EvergreenJnr_DevicesList_All empty fields in item details are displayed as Unknown
 	When User clicks "Devices" on the left-hand menu
 	Then "Devices" list should be displayed to the user
 	When User perform search by "01BQIYGGUW5PRP6"
@@ -24,8 +24,8 @@ Scenario: Evergreen Jnr_DevicesList_Details_All empty fields in item details are
 	Then Signed Out page is displayed to the user
 	And User is logged out
 
-@Evergreen @Users @EvergreenJnr_ListDetails @ItemDetailsDisplay @DAS-10438
-Scenario: Evergreen Jnr_UsersList_Details_All empty fields in item details are displayed as Unknown
+@Evergreen @Users @EvergreenJnr_ItemDetails @ItemDetailsDisplay @DAS-10438
+Scenario: EvergreenJnr_UsersList_All empty fields in item details are displayed as Unknown
 	When User clicks "Users" on the left-hand menu
 	Then "Users" list should be displayed to the user
 	When User perform search by "ABW1509426"
@@ -36,8 +36,8 @@ Scenario: Evergreen Jnr_UsersList_Details_All empty fields in item details are d
 	Then Signed Out page is displayed to the user
 	And User is logged out
 
-@Evergreen @Applications @EvergreenJnr_ListDetails @ItemDetailsDisplay @DAS-10438
-Scenario: Evergreen Jnr_ApplicationsList_Details_All empty fields in item details are displayed as Unknown
+@Evergreen @Applications @EvergreenJnr_ItemDetails @ItemDetailsDisplay @DAS-10438
+Scenario: EvergreenJnr_ApplicationsList_All empty fields in item details are displayed as Unknown
 	When User clicks "Applications" on the left-hand menu
 	Then "Applications" list should be displayed to the user
 	When User perform search by "Python 2.2a4"
@@ -48,8 +48,8 @@ Scenario: Evergreen Jnr_ApplicationsList_Details_All empty fields in item detail
 	Then Signed Out page is displayed to the user
 	And User is logged out
 
-@Evergreen @Mailboxes @ItemDetailsDisplay @EvergreenJnr_ListDetails @DAS-10438
-Scenario: Evergreen Jnr_MailboxesList_Details_All empty fields in item details are displayed as Unknown
+@Evergreen @Mailboxes @EvergreenJnr_ItemDetails @ItemDetailsDisplay @DAS-10438
+Scenario: EvergreenJnr_MailboxesList_All empty fields in item details are displayed as Unknown
 	When User clicks "Mailboxes" on the left-hand menu
 	Then "Mailboxes" list should be displayed to the user
 	When User perform search by "azuresync3@juriba1.onmicrosoft.com"
