@@ -221,12 +221,12 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>CustomListDisplay.feature</DependentUpon>
     </Compile>
-    <Compile Include="Tests\EvergreenJnr_DynamicLists\RemoveColumn.feature.cs">
+    <Compile Include="Tests\EvergreenJnr_Columns\RemoveColumn.feature.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>RemoveColumn.feature</DependentUpon>
     </Compile>
-    <Compile Include="Tests\EvergreenJnr_DynamicLists\Search.feature.cs">
+    <Compile Include="Tests\EvergreenJnr_Search\Search.feature.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>Search.feature</DependentUpon>
@@ -241,32 +241,22 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>FiltersDisplay.feature</DependentUpon>
     </Compile>
-    <Compile Include="Tests\EvergreenJnr_StaticLists\ColumnOrder.feature.cs">
+    <Compile Include="Tests\EvergreenJnr_GridActions\ColumnOrder.feature.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>ColumnOrder.feature</DependentUpon>
     </Compile>
-    <Compile Include="Tests\EvergreenJnr_StaticLists\Query.feature.cs">
+    <Compile Include="Tests\EvergreenJnr_QueryStrings\Query.feature.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>Query.feature</DependentUpon>
     </Compile>
-    <Compile Include="Tests\EvergreenJnr_ListDetails\ItemDetailsDisplay.feature.cs">
+    <Compile Include="Tests\EvergreenJnr_ItemDetails\ItemDetailsDisplay.feature.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>ItemDetailsDisplay.feature</DependentUpon>
     </Compile>
-    <Compile Include="Tests\EvergreenJnr_StaticLists\RemoveColumn.feature.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>RemoveColumn.feature</DependentUpon>
-    </Compile>
-    <Compile Include="Tests\EvergreenJnr_StaticLists\Search.feature.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>Search.feature</DependentUpon>
-    </Compile>
-    <Compile Include="Tests\EvergreenJnr_StaticLists\TableSorting.feature.cs">
+    <Compile Include="Tests\EvergreenJnr_GridActions\TableSorting.feature.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>TableSorting.feature</DependentUpon>
@@ -304,11 +294,11 @@
       <Generator>SpecFlowSingleFileGenerator</Generator>
       <LastGenOutput>CustomListDisplay.feature.cs</LastGenOutput>
     </None>
-    <None Include="Tests\EvergreenJnr_DynamicLists\RemoveColumn.feature">
+    <None Include="Tests\EvergreenJnr_Columns\RemoveColumn.feature">
       <Generator>SpecFlowSingleFileGenerator</Generator>
       <LastGenOutput>RemoveColumn.feature.cs</LastGenOutput>
     </None>
-    <None Include="Tests\EvergreenJnr_DynamicLists\Search.feature">
+    <None Include="Tests\EvergreenJnr_Search\Search.feature">
       <Generator>SpecFlowSingleFileGenerator</Generator>
       <LastGenOutput>Search.feature.cs</LastGenOutput>
     </None>
@@ -320,27 +310,19 @@
       <Generator>SpecFlowSingleFileGenerator</Generator>
       <LastGenOutput>FiltersDisplay.feature.cs</LastGenOutput>
     </None>
-    <None Include="Tests\EvergreenJnr_StaticLists\ColumnOrder.feature">
+    <None Include="Tests\EvergreenJnr_GridActions\ColumnOrder.feature">
       <Generator>SpecFlowSingleFileGenerator</Generator>
       <LastGenOutput>ColumnOrder.feature.cs</LastGenOutput>
     </None>
-    <None Include="Tests\EvergreenJnr_StaticLists\Query.feature">
+    <None Include="Tests\EvergreenJnr_QueryStrings\Query.feature">
       <Generator>SpecFlowSingleFileGenerator</Generator>
       <LastGenOutput>Query.feature.cs</LastGenOutput>
     </None>
-    <None Include="Tests\EvergreenJnr_ListDetails\ItemDetailsDisplay.feature">
+    <None Include="Tests\EvergreenJnr_ItemDetails\ItemDetailsDisplay.feature">
       <Generator>SpecFlowSingleFileGenerator</Generator>
       <LastGenOutput>ItemDetailsDisplay.feature.cs</LastGenOutput>
     </None>
-    <None Include="Tests\EvergreenJnr_StaticLists\RemoveColumn.feature">
-      <Generator>SpecFlowSingleFileGenerator</Generator>
-      <LastGenOutput>RemoveColumn.feature.cs</LastGenOutput>
-    </None>
-    <None Include="Tests\EvergreenJnr_StaticLists\Search.feature">
-      <Generator>SpecFlowSingleFileGenerator</Generator>
-      <LastGenOutput>Search.feature.cs</LastGenOutput>
-    </None>
-    <None Include="Tests\EvergreenJnr_StaticLists\TableSorting.feature">
+    <None Include="Tests\EvergreenJnr_GridActions\TableSorting.feature">
       <Generator>SpecFlowSingleFileGenerator</Generator>
       <LastGenOutput>TableSorting.feature.cs</LastGenOutput>
     </None>
@@ -352,7 +334,10 @@
     <Service Include="{82A7F48D-3B50-4B1E-B82E-3ADA8210C358}" />
   </ItemGroup>
   <ItemGroup>
+    <Folder Include="Tests\EvergreenJnr_DynamicLists\" />
     <Folder Include="Tests\EvergreenJnr_GlobalSearch\" />
+    <Folder Include="Tests\EvergreenJnr_ListDetails\" />
+    <Folder Include="Tests\EvergreenJnr_StaticLists\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">

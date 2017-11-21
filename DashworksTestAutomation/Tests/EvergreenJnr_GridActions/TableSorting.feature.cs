@@ -10,7 +10,7 @@
 // ------------------------------------------------------------------------------
 #region Designer generated code
 #pragma warning disable
-namespace DashworksTestAutomation.Tests.EvergreenJnr_StaticLists
+namespace DashworksTestAutomation.Tests.EvergreenJnr_GridActions
 {
     using TechTalk.SpecFlow;
     
@@ -58,7 +58,7 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_StaticLists
             if (((testRunner.FeatureContext != null) 
                         && (testRunner.FeatureContext.FeatureInfo.Title != "TableSorting")))
             {
-                global::DashworksTestAutomation.Tests.EvergreenJnr_StaticLists.TableSortingFeature.FeatureSetup(null);
+                global::DashworksTestAutomation.Tests.EvergreenJnr_GridActions.TableSortingFeature.FeatureSetup(null);
             }
         }
         
@@ -92,19 +92,19 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_StaticLists
         }
         
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestMethodAttribute()]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.DescriptionAttribute("Evergreen Jnr_DevicesList_Check Sort By Date Functionality")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.DescriptionAttribute("EvergreenJnr_DevicesList_Check Sort By Date Functionality")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("FeatureTitle", "TableSorting")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("Evergreen")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("Devices")]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("EvergreenJnr_StaticLists")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("EvergreenJnr_GridActions")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("TableSorting")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("DAS-10612")]
         public virtual void EvergreenJnr_DevicesList_CheckSortByDateFunctionality()
         {
-            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Evergreen Jnr_DevicesList_Check Sort By Date Functionality", new string[] {
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("EvergreenJnr_DevicesList_Check Sort By Date Functionality", new string[] {
                         "Evergreen",
                         "Devices",
-                        "EvergreenJnr_StaticLists",
+                        "EvergreenJnr_GridActions",
                         "TableSorting",
                         "DAS-10612"});
             this.ScenarioSetup(scenarioInfo);
@@ -152,19 +152,19 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_StaticLists
         }
         
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestMethodAttribute()]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.DescriptionAttribute("Evergreen Jnr_ApplicationsList_Check Sort By Date Functionality")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.DescriptionAttribute("EvergreenJnr_ApplicationsList_Check Sort By Date Functionality")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("FeatureTitle", "TableSorting")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("Evergreen")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("Applications")]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("EvergreenJnr_StaticLists")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("EvergreenJnr_GridActions")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("TableSorting")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("DAS-10612")]
         public virtual void EvergreenJnr_ApplicationsList_CheckSortByDateFunctionality()
         {
-            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Evergreen Jnr_ApplicationsList_Check Sort By Date Functionality", new string[] {
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("EvergreenJnr_ApplicationsList_Check Sort By Date Functionality", new string[] {
                         "Evergreen",
                         "Applications",
-                        "EvergreenJnr_StaticLists",
+                        "EvergreenJnr_GridActions",
                         "TableSorting",
                         "DAS-10612"});
             this.ScenarioSetup(scenarioInfo);
@@ -204,19 +204,19 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_StaticLists
         }
         
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestMethodAttribute()]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.DescriptionAttribute("Evergreen Jnr_MailboxesList_Check Sort By Date Functionality")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.DescriptionAttribute("EvergreenJnr_MailboxesList_Check Sort By Date Functionality")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("FeatureTitle", "TableSorting")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("Evergreen")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("Mailboxes")]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("EvergreenJnr_StaticLists")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("EvergreenJnr_GridActions")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("TableSorting")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("DAS-10612")]
         public virtual void EvergreenJnr_MailboxesList_CheckSortByDateFunctionality()
         {
-            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Evergreen Jnr_MailboxesList_Check Sort By Date Functionality", new string[] {
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("EvergreenJnr_MailboxesList_Check Sort By Date Functionality", new string[] {
                         "Evergreen",
                         "Mailboxes",
-                        "EvergreenJnr_StaticLists",
+                        "EvergreenJnr_GridActions",
                         "TableSorting",
                         "DAS-10612"});
             this.ScenarioSetup(scenarioInfo);
@@ -268,7 +268,7 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_StaticLists
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("FeatureTitle", "TableSorting")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("Evergreen")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("Users")]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("EvergreenJnr_StaticLists")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("EvergreenJnr_GridActions")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("TableSorting")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("DAS-10612")]
         public virtual void EvergreenJnr_UsersList_CheckSortByDateFunctionality()
@@ -276,7 +276,7 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_StaticLists
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("EvergreenJnr_UsersList_Check Sort By Date Functionality", new string[] {
                         "Evergreen",
                         "Users",
-                        "EvergreenJnr_StaticLists",
+                        "EvergreenJnr_GridActions",
                         "TableSorting",
                         "DAS-10612"});
             this.ScenarioSetup(scenarioInfo);
@@ -316,57 +316,6 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_StaticLists
                     "", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
             testRunner.When("User click on \'MigrationP: Migrated Date\' column header", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
             testRunner.Then("data in table is sorted by \'MigrationP: Migrated Date\' column in ascending order", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-            testRunner.When("User clicks the Logout button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-            testRunner.Then("Signed Out page is displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-            testRunner.And("User is logged out", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-            this.ScenarioCleanup();
-        }
-        
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestMethodAttribute()]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.DescriptionAttribute("EvergreenJnr_QueryString_AllLists_SortByKeys")]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("FeatureTitle", "TableSorting")]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("Evergreen")]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("Users")]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("Mailboxes")]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("Devices")]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("Applications")]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("EvergreenJnr_StaticLists")]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("TableSorting")]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("DAS-10598")]
-        public virtual void EvergreenJnr_QueryString_AllLists_SortByKeys()
-        {
-            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("EvergreenJnr_QueryString_AllLists_SortByKeys", new string[] {
-                        "Evergreen",
-                        "Users",
-                        "Mailboxes",
-                        "Devices",
-                        "Applications",
-                        "EvergreenJnr_StaticLists",
-                        "TableSorting",
-                        "DAS-10598"});
-            this.ScenarioSetup(scenarioInfo);
-            this.FeatureBackground();
-            TechTalk.SpecFlow.Table table13 = new TechTalk.SpecFlow.Table(new string[] {
-                        "QueryType",
-                        "QueryStringURL"});
-            table13.AddRow(new string[] {
-                        "Sort by device key",
-                        "evergreen/#/devices?$select=hostname,chassisCategory,oSCategory,ownerDisplayName," +
-                            "monitorCount,videoCardCount,computerKey&$orderby=computerKey%20desc"});
-            table13.AddRow(new string[] {
-                        "Sort by user key",
-                        "evergreen/#/users?$select=username,directoryName,displayName,fullyDistinguishedOb" +
-                            "jectName,objectKey&$orderby=objectKey%20desc"});
-            table13.AddRow(new string[] {
-                        "Sort by application key",
-                        "evergreen/#/applications?$select=packageName,packageManufacturer,packageVersion,p" +
-                            "ackageKey&$orderby=packageKey%20asc"});
-            table13.AddRow(new string[] {
-                        "Sort by mailbox key",
-                        "evergreen/#/mailboxes?$select=principalEmailAddress,mailboxPlatform,serverName,ma" +
-                            "ilboxType,ownerDisplayName,mailboxKey&$orderby=mailboxKey%20asc"});
-            testRunner.When("Evergreen QueryStringURL is entered for Simple QueryType", ((string)(null)), table13, "When ");
-            testRunner.Then("agGrid Main Object List is returned with data", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
             testRunner.When("User clicks the Logout button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
             testRunner.Then("Signed Out page is displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
             testRunner.And("User is logged out", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");

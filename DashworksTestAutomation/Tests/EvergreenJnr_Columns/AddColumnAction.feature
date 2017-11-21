@@ -13,7 +13,7 @@ Background: Pre-Conditions
 	Then Evergreen Dashboards page should be displayed to the user
 
 @Evergreen @Devices @EvergreenJnr_Columns @AddColumnAction @DAS-10665
-Scenario: Evergreen Jnr_Devices Add the Device key column to the devices list
+Scenario: EvergreenJnr_DevicesList_Add the Device key column to the devices list
 	When User clicks "Devices" on the left-hand menu
 	Then "Devices" list should be displayed to the user
 	When User clicks the Columns button

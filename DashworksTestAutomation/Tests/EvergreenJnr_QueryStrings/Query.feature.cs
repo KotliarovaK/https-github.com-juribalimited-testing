@@ -10,7 +10,7 @@
 // ------------------------------------------------------------------------------
 #region Designer generated code
 #pragma warning disable
-namespace DashworksTestAutomation.Tests.EvergreenJnr_StaticLists
+namespace DashworksTestAutomation.Tests.EvergreenJnr_QueryStrings
 {
     using TechTalk.SpecFlow;
     
@@ -58,7 +58,7 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_StaticLists
             if (((testRunner.FeatureContext != null) 
                         && (testRunner.FeatureContext.FeatureInfo.Title != "Query")))
             {
-                global::DashworksTestAutomation.Tests.EvergreenJnr_StaticLists.QueryFeature.FeatureSetup(null);
+                global::DashworksTestAutomation.Tests.EvergreenJnr_QueryStrings.QueryFeature.FeatureSetup(null);
             }
         }
         
@@ -92,27 +92,27 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_StaticLists
         }
         
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestMethodAttribute()]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.DescriptionAttribute("Evergreen Jnr_QueryString_DateCombo_And_Apostrophe")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.DescriptionAttribute("EvergreenJnr_QueryString_DateCombo_And_Apostrophe")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("FeatureTitle", "Query")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("Evergreen")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("Users")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("Mailboxes")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("Devices")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("Applications")]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("EvergreenJnr_StaticLists")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("EvergreenJnr_QueryStrings")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("Query")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("DAS-10753")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("DAS-10615")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("DAS-10475")]
         public virtual void EvergreenJnr_QueryString_DateCombo_And_Apostrophe()
         {
-            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Evergreen Jnr_QueryString_DateCombo_And_Apostrophe", new string[] {
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("EvergreenJnr_QueryString_DateCombo_And_Apostrophe", new string[] {
                         "Evergreen",
                         "Users",
                         "Mailboxes",
                         "Devices",
                         "Applications",
-                        "EvergreenJnr_StaticLists",
+                        "EvergreenJnr_QueryStrings",
                         "Query",
                         "DAS-10753",
                         "DAS-10615",
@@ -145,25 +145,25 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_StaticLists
         }
         
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestMethodAttribute()]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.DescriptionAttribute("Evergreen Jnr_QueryString_Complex")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.DescriptionAttribute("EvergreenJnr_QueryString_Complex")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("FeatureTitle", "Query")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("Evergreen")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("Users")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("Mailboxes")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("Devices")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("Applications")]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("EvergreenJnr_StaticLists")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("EvergreenJnr_QueryStrings")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("Query")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("DAS-10782")]
         public virtual void EvergreenJnr_QueryString_Complex()
         {
-            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Evergreen Jnr_QueryString_Complex", new string[] {
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("EvergreenJnr_QueryString_Complex", new string[] {
                         "Evergreen",
                         "Users",
                         "Mailboxes",
                         "Devices",
                         "Applications",
-                        "EvergreenJnr_StaticLists",
+                        "EvergreenJnr_QueryStrings",
                         "Query",
                         "DAS-10782"});
             this.ScenarioSetup(scenarioInfo);
@@ -192,24 +192,24 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_StaticLists
         }
         
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestMethodAttribute()]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.DescriptionAttribute("Evergreen Jnr_QueryString_AllLists")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.DescriptionAttribute("EvergreenJnr_QueryString_AllLists")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("FeatureTitle", "Query")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("Evergreen")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("Users")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("Mailboxes")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("Devices")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("Applications")]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("EvergreenJnr_StaticLists")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("EvergreenJnr_QueryStrings")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("Query")]
         public virtual void EvergreenJnr_QueryString_AllLists()
         {
-            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Evergreen Jnr_QueryString_AllLists", new string[] {
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("EvergreenJnr_QueryString_AllLists", new string[] {
                         "Evergreen",
                         "Users",
                         "Mailboxes",
                         "Devices",
                         "Applications",
-                        "EvergreenJnr_StaticLists",
+                        "EvergreenJnr_QueryStrings",
                         "Query"});
             this.ScenarioSetup(scenarioInfo);
             this.FeatureBackground();
@@ -243,7 +243,7 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_StaticLists
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("FeatureTitle", "Query")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("Evergreen")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("Applications")]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("EvergreenJnr_StaticLists")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("EvergreenJnr_QueryStrings")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("Query")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("DAS-11023")]
         public virtual void EvergreenJnr_QueryString_Applicaions()
@@ -251,7 +251,7 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_StaticLists
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("EvergreenJnr_QueryString_Applicaions", new string[] {
                         "Evergreen",
                         "Applications",
-                        "EvergreenJnr_StaticLists",
+                        "EvergreenJnr_QueryStrings",
                         "Query",
                         "DAS-11023"});
             this.ScenarioSetup(scenarioInfo);
@@ -279,19 +279,19 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_StaticLists
         }
         
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestMethodAttribute()]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.DescriptionAttribute("EvergreenJnr_QueryString_Applicaions On Devices List")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.DescriptionAttribute("EvergreenJnr_QueryString_Applications On Devices List")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("FeatureTitle", "Query")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("Evergreen")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("Devices")]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("EvergreenJnr_StaticLists")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("EvergreenJnr_QueryStrings")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("Query")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("DAS-10789")]
-        public virtual void EvergreenJnr_QueryString_ApplicaionsOnDevicesList()
+        public virtual void EvergreenJnr_QueryString_ApplicationsOnDevicesList()
         {
-            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("EvergreenJnr_QueryString_Applicaions On Devices List", new string[] {
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("EvergreenJnr_QueryString_Applications On Devices List", new string[] {
                         "Evergreen",
                         "Devices",
-                        "EvergreenJnr_StaticLists",
+                        "EvergreenJnr_QueryStrings",
                         "Query",
                         "DAS-10789"});
             this.ScenarioSetup(scenarioInfo);
@@ -303,6 +303,57 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_StaticLists
                         "Apps On Devices",
                         @"evergreen/#/devices?$select=hostname,chassisCategory,oSCategory,ownerDisplayName&$filter=(application%20EQUALS%20('451')%20WHERE%20(Used%20on%20device,Entitled%20to%20device,Installed%20on%20device,Used%20by%20device's%20owner,Entitled%20to%20device's%20owner))"});
             testRunner.When("Evergreen QueryStringURL is entered for Simple QueryType", ((string)(null)), table5, "When ");
+            testRunner.Then("agGrid Main Object List is returned with data", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+            testRunner.When("User clicks the Logout button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+            testRunner.Then("Signed Out page is displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+            testRunner.And("User is logged out", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+            this.ScenarioCleanup();
+        }
+        
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestMethodAttribute()]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.DescriptionAttribute("EvergreenJnr_QueryString_AllLists Sort By Keys")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("FeatureTitle", "Query")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("Evergreen")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("Users")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("Mailboxes")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("Devices")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("Applications")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("EvergreenJnr_QueryStrings")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("TableSorting")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("DAS-10598")]
+        public virtual void EvergreenJnr_QueryString_AllListsSortByKeys()
+        {
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("EvergreenJnr_QueryString_AllLists Sort By Keys", new string[] {
+                        "Evergreen",
+                        "Users",
+                        "Mailboxes",
+                        "Devices",
+                        "Applications",
+                        "EvergreenJnr_QueryStrings",
+                        "TableSorting",
+                        "DAS-10598"});
+            this.ScenarioSetup(scenarioInfo);
+            this.FeatureBackground();
+            TechTalk.SpecFlow.Table table6 = new TechTalk.SpecFlow.Table(new string[] {
+                        "QueryType",
+                        "QueryStringURL"});
+            table6.AddRow(new string[] {
+                        "Sort by device key",
+                        "evergreen/#/devices?$select=hostname,chassisCategory,oSCategory,ownerDisplayName," +
+                            "monitorCount,videoCardCount,computerKey&$orderby=computerKey%20desc"});
+            table6.AddRow(new string[] {
+                        "Sort by user key",
+                        "evergreen/#/users?$select=username,directoryName,displayName,fullyDistinguishedOb" +
+                            "jectName,objectKey&$orderby=objectKey%20desc"});
+            table6.AddRow(new string[] {
+                        "Sort by application key",
+                        "evergreen/#/applications?$select=packageName,packageManufacturer,packageVersion,p" +
+                            "ackageKey&$orderby=packageKey%20asc"});
+            table6.AddRow(new string[] {
+                        "Sort by mailbox key",
+                        "evergreen/#/mailboxes?$select=principalEmailAddress,mailboxPlatform,serverName,ma" +
+                            "ilboxType,ownerDisplayName,mailboxKey&$orderby=mailboxKey%20asc"});
+            testRunner.When("Evergreen QueryStringURL is entered for Simple QueryType", ((string)(null)), table6, "When ");
             testRunner.Then("agGrid Main Object List is returned with data", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
             testRunner.When("User clicks the Logout button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
             testRunner.Then("Signed Out page is displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");

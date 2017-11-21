@@ -92,7 +92,7 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_ActionsPanel
         }
         
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestMethodAttribute()]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.DescriptionAttribute("Evergreen Jnr_UsersList_Select All Checkbox Status Check After Search")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.DescriptionAttribute("EvergreenJnr_UsersList_Select All Checkbox Status Check After Search")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("FeatureTitle", "AllCheckbox")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("Evergreen")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("Users")]
@@ -101,7 +101,7 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_ActionsPanel
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("DAS-10769")]
         public virtual void EvergreenJnr_UsersList_SelectAllCheckboxStatusCheckAfterSearch()
         {
-            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Evergreen Jnr_UsersList_Select All Checkbox Status Check After Search", new string[] {
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("EvergreenJnr_UsersList_Select All Checkbox Status Check After Search", new string[] {
                         "Evergreen",
                         "Users",
                         "Evergreen_ActionsPanel",
@@ -139,7 +139,7 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_ActionsPanel
         }
         
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestMethodAttribute()]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.DescriptionAttribute("Evergreen Jnr_DevicesList_Select All Checkbox status after closing action panel")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.DescriptionAttribute("EvergreenJnr_DevicesList_Select All Checkbox status after closing action panel")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("FeatureTitle", "AllCheckbox")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("Evergreen")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("Devices")]
@@ -148,7 +148,7 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_ActionsPanel
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("DAS-10775")]
         public virtual void EvergreenJnr_DevicesList_SelectAllCheckboxStatusAfterClosingActionPanel()
         {
-            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Evergreen Jnr_DevicesList_Select All Checkbox status after closing action panel", new string[] {
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("EvergreenJnr_DevicesList_Select All Checkbox status after closing action panel", new string[] {
                         "Evergreen",
                         "Devices",
                         "Evergreen_ActionsPanel",
@@ -170,7 +170,7 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_ActionsPanel
         }
         
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestMethodAttribute()]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.DescriptionAttribute("Evergreen Jnr_UsersList_Select All Checkbox status after closing action panel")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.DescriptionAttribute("EvergreenJnr_UsersList_Select All Checkbox status after closing action panel")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("FeatureTitle", "AllCheckbox")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("Evergreen")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("Users")]
@@ -179,7 +179,7 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_ActionsPanel
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("DAS-10775")]
         public virtual void EvergreenJnr_UsersList_SelectAllCheckboxStatusAfterClosingActionPanel()
         {
-            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Evergreen Jnr_UsersList_Select All Checkbox status after closing action panel", new string[] {
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("EvergreenJnr_UsersList_Select All Checkbox status after closing action panel", new string[] {
                         "Evergreen",
                         "Users",
                         "Evergreen_ActionsPanel",
@@ -201,8 +201,8 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_ActionsPanel
         }
         
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestMethodAttribute()]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.DescriptionAttribute("Evergreen Jnr_ApplicationsList_Select All Checkbox status after closing action pa" +
-            "nel")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.DescriptionAttribute("EvergreenJnr_ApplicationsList_Select All Checkbox status after closing action pan" +
+            "el")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("FeatureTitle", "AllCheckbox")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("Evergreen")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("Applications")]
@@ -211,8 +211,8 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_ActionsPanel
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("DAS-10775")]
         public virtual void EvergreenJnr_ApplicationsList_SelectAllCheckboxStatusAfterClosingActionPanel()
         {
-            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Evergreen Jnr_ApplicationsList_Select All Checkbox status after closing action pa" +
-                    "nel", new string[] {
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("EvergreenJnr_ApplicationsList_Select All Checkbox status after closing action pan" +
+                    "el", new string[] {
                         "Evergreen",
                         "Applications",
                         "Evergreen_ActionsPanel",
@@ -234,8 +234,7 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_ActionsPanel
         }
         
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestMethodAttribute()]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.DescriptionAttribute("Evergreen Jnr_MailboxesList_Select All Checkbox status after closing action panel" +
-            "")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.DescriptionAttribute("EvergreenJnr_MailboxesList_Select All Checkbox status after closing action panel")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("FeatureTitle", "AllCheckbox")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("Evergreen")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("Mailboxes")]
@@ -244,8 +243,7 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_ActionsPanel
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("DAS-10775")]
         public virtual void EvergreenJnr_MailboxesList_SelectAllCheckboxStatusAfterClosingActionPanel()
         {
-            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Evergreen Jnr_MailboxesList_Select All Checkbox status after closing action panel" +
-                    "", new string[] {
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("EvergreenJnr_MailboxesList_Select All Checkbox status after closing action panel", new string[] {
                         "Evergreen",
                         "Mailboxes",
                         "Evergreen_ActionsPanel",
@@ -260,6 +258,51 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_ActionsPanel
             testRunner.When("User select all rows", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
             testRunner.When("User clicks the Actions button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
             testRunner.Then("Select all checkbox is not displayed", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+            testRunner.When("User clicks the Logout button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+            testRunner.Then("Signed Out page is displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+            testRunner.And("User is logged out", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+            this.ScenarioCleanup();
+        }
+        
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestMethodAttribute()]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.DescriptionAttribute("EvergreenJnr_DevicesList_Search Within All Rows")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("FeatureTitle", "AllCheckbox")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("Evergreen")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("Devices")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("Evergreen_ActionsPanel")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("AllCheckbox")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("DAS-10772")]
+        public virtual void EvergreenJnr_DevicesList_SearchWithinAllRows()
+        {
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("EvergreenJnr_DevicesList_Search Within All Rows", new string[] {
+                        "Evergreen",
+                        "Devices",
+                        "Evergreen_ActionsPanel",
+                        "AllCheckbox",
+                        "DAS-10772"});
+            this.ScenarioSetup(scenarioInfo);
+            this.FeatureBackground();
+            testRunner.When("User clicks \"Devices\" on the left-hand menu", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+            testRunner.Then("\"Devices\" list should be displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+            testRunner.When("User clicks the Actions button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+            testRunner.Then("Actions panel is displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+            testRunner.When("User select all rows", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+            TechTalk.SpecFlow.Table table2 = new TechTalk.SpecFlow.Table(new string[] {
+                        "SearchCriteria",
+                        "NumberOfRows"});
+            table2.AddRow(new string[] {
+                        "Mary",
+                        "17"});
+            table2.AddRow(new string[] {
+                        "Henry",
+                        "34"});
+            table2.AddRow(new string[] {
+                        "Yolande Sylvain",
+                        "1"});
+            testRunner.Then("User enters SearchCriteria into the agGrid Search Box and the correct NumberOfRow" +
+                    "s are returned", ((string)(null)), table2, "Then ");
+            testRunner.And("Clearing the agGrid Search Box", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+            testRunner.Then("\"17,225\" rows are displayed in the agGrid", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
             testRunner.When("User clicks the Logout button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
             testRunner.Then("Signed Out page is displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
             testRunner.And("User is logged out", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");

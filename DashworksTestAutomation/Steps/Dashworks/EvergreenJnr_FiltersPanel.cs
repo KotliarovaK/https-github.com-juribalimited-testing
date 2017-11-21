@@ -92,8 +92,8 @@ namespace DashworksTestAutomation.Steps.Dashworks
             }
         }
 
-        [Then(@"table data is filtred currectly")]
-        public void ThenTableDataIsFiltredCurrectly()
+        [Then(@"table data is filtred correctly")]
+        public void ThenTableDataIsFiltredCorrectly()
         {
             var filterElement = _driver.NowAt<FiltersElement>();
             var basePage = _driver.NowAt<BaseDashboardPage>();

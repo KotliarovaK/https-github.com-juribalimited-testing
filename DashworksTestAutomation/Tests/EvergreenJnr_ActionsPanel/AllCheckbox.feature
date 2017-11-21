@@ -12,7 +12,7 @@ Background: Pre-Conditions
 	Then Evergreen Dashboards page should be displayed to the user
 
 @Evergreen @Users @Evergreen_ActionsPanel @AllCheckbox @DAS-10769
-Scenario: Evergreen Jnr_UsersList_Select All Checkbox Status Check After Search
+Scenario: EvergreenJnr_UsersList_Select All Checkbox Status Check After Search
 	When User clicks "Users" on the left-hand menu
 	Then "Users" list should be displayed to the user
 	When User clicks the Actions button
@@ -36,7 +36,7 @@ Scenario: Evergreen Jnr_UsersList_Select All Checkbox Status Check After Search
 	And User is logged out
 
 @Evergreen @Devices @Evergreen_ActionsPanel @AllCheckbox @DAS-10775
-Scenario: Evergreen Jnr_DevicesList_Select All Checkbox status after closing action panel
+Scenario: EvergreenJnr_DevicesList_Select All Checkbox status after closing action panel
 	When User clicks "Devices" on the left-hand menu
 	Then "Devices" list should be displayed to the user
 	When User clicks the Actions button
@@ -49,7 +49,7 @@ Scenario: Evergreen Jnr_DevicesList_Select All Checkbox status after closing act
 	And User is logged out
 
 @Evergreen @Users @Evergreen_ActionsPanel @AllCheckbox @DAS-10775
-Scenario: Evergreen Jnr_UsersList_Select All Checkbox status after closing action panel
+Scenario: EvergreenJnr_UsersList_Select All Checkbox status after closing action panel
 	When User clicks "Users" on the left-hand menu
 	Then "Users" list should be displayed to the user
 	When User clicks the Actions button
@@ -62,7 +62,7 @@ Scenario: Evergreen Jnr_UsersList_Select All Checkbox status after closing actio
 	And User is logged out
 
 @Evergreen @Applications @Evergreen_ActionsPanel @AllCheckbox @DAS-10775
-Scenario: Evergreen Jnr_ApplicationsList_Select All Checkbox status after closing action panel
+Scenario: EvergreenJnr_ApplicationsList_Select All Checkbox status after closing action panel
 	When User clicks "Applications" on the left-hand menu
 	Then "Applications" list should be displayed to the user
 	When User clicks the Actions button
@@ -75,7 +75,7 @@ Scenario: Evergreen Jnr_ApplicationsList_Select All Checkbox status after closin
 	And User is logged out
 
 @Evergreen @Mailboxes @Evergreen_ActionsPanel @AllCheckbox @DAS-10775
-Scenario: Evergreen Jnr_MailboxesList_Select All Checkbox status after closing action panel
+Scenario: EvergreenJnr_MailboxesList_Select All Checkbox status after closing action panel
 	When User clicks "Mailboxes" on the left-hand menu
 	Then "Mailboxes" list should be displayed to the user
 	When User clicks the Actions button
@@ -83,6 +83,24 @@ Scenario: Evergreen Jnr_MailboxesList_Select All Checkbox status after closing a
 	When User select all rows
 	When User clicks the Actions button
 	Then Select all checkbox is not displayed
+	When User clicks the Logout button
+	Then Signed Out page is displayed to the user
+	And User is logged out
+
+@Evergreen @Devices @Evergreen_ActionsPanel @AllCheckbox  @DAS-10772
+Scenario: EvergreenJnr_DevicesList_Search Within All Rows
+	When User clicks "Devices" on the left-hand menu
+	Then "Devices" list should be displayed to the user
+	When User clicks the Actions button
+	Then Actions panel is displayed to the user
+	When User select all rows
+	Then User enters SearchCriteria into the agGrid Search Box and the correct NumberOfRows are returned
+	| SearchCriteria  | NumberOfRows |
+	| Mary            | 17           |
+	| Henry           | 34           |
+	| Yolande Sylvain | 1            |
+	And Clearing the agGrid Search Box
+	Then "17,225" rows are displayed in the agGrid
 	When User clicks the Logout button
 	Then Signed Out page is displayed to the user
 	And User is logged out

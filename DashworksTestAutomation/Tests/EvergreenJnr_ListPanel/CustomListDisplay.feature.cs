@@ -92,8 +92,8 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_ListPanel
         }
         
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestMethodAttribute()]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.DescriptionAttribute("Evergreen Jnr_DevicesList_Check that custom list creation block is not displayed " +
-            "when deleting a filter in default list")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.DescriptionAttribute("EvergreenJnr_DevicesList_Check that custom list creation block is not displayed w" +
+            "hen deleting a filter in default list")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("FeatureTitle", "DisplayCustomListCreation")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("Evergreen")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("Devices")]
@@ -102,8 +102,8 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_ListPanel
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("DAS-11003")]
         public virtual void EvergreenJnr_DevicesList_CheckThatCustomListCreationBlockIsNotDisplayedWhenDeletingAFilterInDefaultList()
         {
-            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Evergreen Jnr_DevicesList_Check that custom list creation block is not displayed " +
-                    "when deleting a filter in default list", new string[] {
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("EvergreenJnr_DevicesList_Check that custom list creation block is not displayed w" +
+                    "hen deleting a filter in default list", new string[] {
                         "Evergreen",
                         "Devices",
                         "EvergreenJnr_ListPanel",
@@ -132,8 +132,8 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_ListPanel
         }
         
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestMethodAttribute()]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.DescriptionAttribute("Evergreen Jnr_DevicesList_Check that custom list creation block is not displayed " +
-            "when reseting a filter in default list")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.DescriptionAttribute("EvergreenJnr_DevicesList_Check that custom list creation block is not displayed w" +
+            "hen reseting a filter in default list")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("FeatureTitle", "DisplayCustomListCreation")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("Evergreen")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("Devices")]
@@ -142,8 +142,8 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_ListPanel
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("DAS-11003")]
         public virtual void EvergreenJnr_DevicesList_CheckThatCustomListCreationBlockIsNotDisplayedWhenResetingAFilterInDefaultList()
         {
-            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Evergreen Jnr_DevicesList_Check that custom list creation block is not displayed " +
-                    "when reseting a filter in default list", new string[] {
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("EvergreenJnr_DevicesList_Check that custom list creation block is not displayed w" +
+                    "hen reseting a filter in default list", new string[] {
                         "Evergreen",
                         "Devices",
                         "EvergreenJnr_ListPanel",
@@ -172,8 +172,8 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_ListPanel
         }
         
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestMethodAttribute()]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.DescriptionAttribute("Evergreen Jnr_DevicesList_Check that custom list creation block is not displayed " +
-            "when deleting a filter in custom list")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.DescriptionAttribute("EvergreenJnr_DevicesList_Check that custom list creation block is not displayed w" +
+            "hen deleting a filter in custom list")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("FeatureTitle", "DisplayCustomListCreation")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("Evergreen")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("Devices")]
@@ -183,8 +183,8 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_ListPanel
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("Delete_Newly_Created_List")]
         public virtual void EvergreenJnr_DevicesList_CheckThatCustomListCreationBlockIsNotDisplayedWhenDeletingAFilterInCustomList()
         {
-            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Evergreen Jnr_DevicesList_Check that custom list creation block is not displayed " +
-                    "when deleting a filter in custom list", new string[] {
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("EvergreenJnr_DevicesList_Check that custom list creation block is not displayed w" +
+                    "hen deleting a filter in custom list", new string[] {
                         "Evergreen",
                         "Devices",
                         "EvergreenJnr_ListPanel",
@@ -226,8 +226,8 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_ListPanel
         }
         
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestMethodAttribute()]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.DescriptionAttribute("Evergreen Jnr_DevicesList_Check that custom list creation block is not displayed " +
-            "when reseting a filter in custom list")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.DescriptionAttribute("EvergreenJnr_DevicesList_Check that custom list creation block is not displayed w" +
+            "hen reseting a filter in custom list")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("FeatureTitle", "DisplayCustomListCreation")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("Evergreen")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("Devices")]
@@ -237,8 +237,8 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_ListPanel
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("Delete_Newly_Created_List")]
         public virtual void EvergreenJnr_DevicesList_CheckThatCustomListCreationBlockIsNotDisplayedWhenResetingAFilterInCustomList()
         {
-            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Evergreen Jnr_DevicesList_Check that custom list creation block is not displayed " +
-                    "when reseting a filter in custom list", new string[] {
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("EvergreenJnr_DevicesList_Check that custom list creation block is not displayed w" +
+                    "hen reseting a filter in custom list", new string[] {
                         "Evergreen",
                         "Devices",
                         "EvergreenJnr_ListPanel",
@@ -278,8 +278,8 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_ListPanel
         }
         
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestMethodAttribute()]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.DescriptionAttribute("Evergreen Jnr_DevicesList_agGrid_Check that Search does not trigger new Custom Li" +
-            "st")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.DescriptionAttribute("EvergreenJnr_DevicesList_agGrid_Check that Search does not trigger new Custom Lis" +
+            "t")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("FeatureTitle", "DisplayCustomListCreation")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("Evergreen")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("Devices")]
@@ -288,8 +288,8 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_ListPanel
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("DAS-10998")]
         public virtual void EvergreenJnr_DevicesList_AgGrid_CheckThatSearchDoesNotTriggerNewCustomList()
         {
-            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Evergreen Jnr_DevicesList_agGrid_Check that Search does not trigger new Custom Li" +
-                    "st", new string[] {
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("EvergreenJnr_DevicesList_agGrid_Check that Search does not trigger new Custom Lis" +
+                    "t", new string[] {
                         "Evergreen",
                         "Devices",
                         "EvergreenJnr_ListPanel",
@@ -315,8 +315,8 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_ListPanel
         }
         
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestMethodAttribute()]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.DescriptionAttribute("Evergreen Jnr_DevicesList_agGrid_Check that quick search doesn\'t triggers new lis" +
-            "t menu")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.DescriptionAttribute("EvergreenJnr_DevicesList_agGrid_Check that quick search doesn\'t triggers new list" +
+            " menu")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("FeatureTitle", "DisplayCustomListCreation")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("Evergreen")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("Devices")]
@@ -325,8 +325,8 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_ListPanel
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("DAS-10704")]
         public virtual void EvergreenJnr_DevicesList_AgGrid_CheckThatQuickSearchDoesntTriggersNewListMenu()
         {
-            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Evergreen Jnr_DevicesList_agGrid_Check that quick search doesn\'t triggers new lis" +
-                    "t menu", new string[] {
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("EvergreenJnr_DevicesList_agGrid_Check that quick search doesn\'t triggers new list" +
+                    " menu", new string[] {
                         "Evergreen",
                         "Devices",
                         "EvergreenJnr_ListPanel",
@@ -352,8 +352,8 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_ListPanel
         }
         
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestMethodAttribute()]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.DescriptionAttribute("Evergreen Jnr_DevicesList_agGrid_Check that \'new list created\' message is display" +
-            "ed")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.DescriptionAttribute("EvergreenJnr_DevicesList_agGrid_Check that \'new list created\' message is displaye" +
+            "d")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("FeatureTitle", "DisplayCustomListCreation")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("Evergreen")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("Devices")]
@@ -363,8 +363,8 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_ListPanel
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("Delete_Newly_Created_List")]
         public virtual void EvergreenJnr_DevicesList_AgGrid_CheckThatNewListCreatedMessageIsDisplayed()
         {
-            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Evergreen Jnr_DevicesList_agGrid_Check that \'new list created\' message is display" +
-                    "ed", new string[] {
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("EvergreenJnr_DevicesList_agGrid_Check that \'new list created\' message is displaye" +
+                    "d", new string[] {
                         "Evergreen",
                         "Devices",
                         "EvergreenJnr_ListPanel",

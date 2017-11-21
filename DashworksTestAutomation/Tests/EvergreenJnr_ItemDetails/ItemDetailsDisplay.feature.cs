@@ -10,7 +10,7 @@
 // ------------------------------------------------------------------------------
 #region Designer generated code
 #pragma warning disable
-namespace DashworksTestAutomation.Tests.EvergreenJnr_ListDetails
+namespace DashworksTestAutomation.Tests.EvergreenJnr_ItemDetails
 {
     using TechTalk.SpecFlow;
     
@@ -58,7 +58,7 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_ListDetails
             if (((testRunner.FeatureContext != null) 
                         && (testRunner.FeatureContext.FeatureInfo.Title != "ItemDetailsDisplay")))
             {
-                global::DashworksTestAutomation.Tests.EvergreenJnr_ListDetails.ItemDetailsDisplayFeature.FeatureSetup(null);
+                global::DashworksTestAutomation.Tests.EvergreenJnr_ItemDetails.ItemDetailsDisplayFeature.FeatureSetup(null);
             }
         }
         
@@ -92,21 +92,21 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_ListDetails
         }
         
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestMethodAttribute()]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.DescriptionAttribute("Evergreen Jnr_DevicesList_Details_All empty fields in item details are displayed " +
-            "as Unknown")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.DescriptionAttribute("EvergreenJnr_DevicesList_All empty fields in item details are displayed as Unknow" +
+            "n")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("FeatureTitle", "ItemDetailsDisplay")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("Evergreen")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("Devices")]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("EvergreenJnr_ListDetails")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("EvergreenJnr_ItemDetails")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("ItemDetailsDisplay")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("DAS-10438")]
-        public virtual void EvergreenJnr_DevicesList_Details_AllEmptyFieldsInItemDetailsAreDisplayedAsUnknown()
+        public virtual void EvergreenJnr_DevicesList_AllEmptyFieldsInItemDetailsAreDisplayedAsUnknown()
         {
-            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Evergreen Jnr_DevicesList_Details_All empty fields in item details are displayed " +
-                    "as Unknown", new string[] {
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("EvergreenJnr_DevicesList_All empty fields in item details are displayed as Unknow" +
+                    "n", new string[] {
                         "Evergreen",
                         "Devices",
-                        "EvergreenJnr_ListDetails",
+                        "EvergreenJnr_ItemDetails",
                         "ItemDetailsDisplay",
                         "DAS-10438"});
             this.ScenarioSetup(scenarioInfo);
@@ -124,21 +124,19 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_ListDetails
         }
         
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestMethodAttribute()]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.DescriptionAttribute("Evergreen Jnr_UsersList_Details_All empty fields in item details are displayed as" +
-            " Unknown")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.DescriptionAttribute("EvergreenJnr_UsersList_All empty fields in item details are displayed as Unknown")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("FeatureTitle", "ItemDetailsDisplay")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("Evergreen")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("Users")]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("EvergreenJnr_ListDetails")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("EvergreenJnr_ItemDetails")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("ItemDetailsDisplay")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("DAS-10438")]
-        public virtual void EvergreenJnr_UsersList_Details_AllEmptyFieldsInItemDetailsAreDisplayedAsUnknown()
+        public virtual void EvergreenJnr_UsersList_AllEmptyFieldsInItemDetailsAreDisplayedAsUnknown()
         {
-            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Evergreen Jnr_UsersList_Details_All empty fields in item details are displayed as" +
-                    " Unknown", new string[] {
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("EvergreenJnr_UsersList_All empty fields in item details are displayed as Unknown", new string[] {
                         "Evergreen",
                         "Users",
-                        "EvergreenJnr_ListDetails",
+                        "EvergreenJnr_ItemDetails",
                         "ItemDetailsDisplay",
                         "DAS-10438"});
             this.ScenarioSetup(scenarioInfo);
@@ -156,21 +154,21 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_ListDetails
         }
         
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestMethodAttribute()]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.DescriptionAttribute("Evergreen Jnr_ApplicationsList_Details_All empty fields in item details are displ" +
-            "ayed as Unknown")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.DescriptionAttribute("EvergreenJnr_ApplicationsList_All empty fields in item details are displayed as U" +
+            "nknown")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("FeatureTitle", "ItemDetailsDisplay")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("Evergreen")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("Applications")]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("EvergreenJnr_ListDetails")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("EvergreenJnr_ItemDetails")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("ItemDetailsDisplay")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("DAS-10438")]
-        public virtual void EvergreenJnr_ApplicationsList_Details_AllEmptyFieldsInItemDetailsAreDisplayedAsUnknown()
+        public virtual void EvergreenJnr_ApplicationsList_AllEmptyFieldsInItemDetailsAreDisplayedAsUnknown()
         {
-            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Evergreen Jnr_ApplicationsList_Details_All empty fields in item details are displ" +
-                    "ayed as Unknown", new string[] {
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("EvergreenJnr_ApplicationsList_All empty fields in item details are displayed as U" +
+                    "nknown", new string[] {
                         "Evergreen",
                         "Applications",
-                        "EvergreenJnr_ListDetails",
+                        "EvergreenJnr_ItemDetails",
                         "ItemDetailsDisplay",
                         "DAS-10438"});
             this.ScenarioSetup(scenarioInfo);
@@ -188,22 +186,22 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_ListDetails
         }
         
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestMethodAttribute()]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.DescriptionAttribute("Evergreen Jnr_MailboxesList_Details_All empty fields in item details are displaye" +
-            "d as Unknown")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.DescriptionAttribute("EvergreenJnr_MailboxesList_All empty fields in item details are displayed as Unkn" +
+            "own")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("FeatureTitle", "ItemDetailsDisplay")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("Evergreen")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("Mailboxes")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("EvergreenJnr_ItemDetails")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("ItemDetailsDisplay")]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("EvergreenJnr_ListDetails")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("DAS-10438")]
-        public virtual void EvergreenJnr_MailboxesList_Details_AllEmptyFieldsInItemDetailsAreDisplayedAsUnknown()
+        public virtual void EvergreenJnr_MailboxesList_AllEmptyFieldsInItemDetailsAreDisplayedAsUnknown()
         {
-            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Evergreen Jnr_MailboxesList_Details_All empty fields in item details are displaye" +
-                    "d as Unknown", new string[] {
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("EvergreenJnr_MailboxesList_All empty fields in item details are displayed as Unkn" +
+                    "own", new string[] {
                         "Evergreen",
                         "Mailboxes",
+                        "EvergreenJnr_ItemDetails",
                         "ItemDetailsDisplay",
-                        "EvergreenJnr_ListDetails",
                         "DAS-10438"});
             this.ScenarioSetup(scenarioInfo);
             this.FeatureBackground();

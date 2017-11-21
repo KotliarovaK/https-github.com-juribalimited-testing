@@ -12,8 +12,8 @@ Background: Pre-Conditions
 	When User clicks the Switch to Evergreen link
 	Then Evergreen Dashboards page should be displayed to the user
 
-@Evergreen @Devices @ColumnSectionDisplay @EvergreenJnr_Columns @DAS-10584
-Scenario: Evergreen Jnr_ApplicationsList_Check category heading when all columns from category are added
+@Evergreen @Devices @EvergreenJnr_Columns @ColumnSectionDisplay @DAS-10584
+Scenario: EvergreenJnr_DevicesList_Check category heading when all columns from category are added
 	When User clicks "Devices" on the left-hand menu
 	Then "Devices" list should be displayed to the user
 	When User clicks the Columns button
