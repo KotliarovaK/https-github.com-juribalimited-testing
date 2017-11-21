@@ -12,8 +12,8 @@ Background: Pre-Conditions
 	When User clicks the Switch to Evergreen link
 	Then Evergreen Dashboards page should be displayed to the user
 	
-@Evergreen @Users @Mailboxes @Devices @Applications @EvergreenJnr_StaticLists @Query @DAS-10753 @DAS-10615 @DAS-10475
-Scenario: Evergreen Jnr_QueryString_DateCombo_And_Apostrophe
+@Evergreen @Users @Mailboxes @Devices @Applications @EvergreenJnr_QueryStrings @Query @DAS-10753 @DAS-10615 @DAS-10475
+Scenario: EvergreenJnr_QueryString_DateCombo_And_Apostrophe
 Runs Evergreen URL query strings which include a date field combos query and filters using apostrophes.
 	When Evergreen QueryStringURL is entered for Simple QueryType
 	| QueryType                       | QueryStringURL                                                                                                                                                                                                                                                                                                                                                                                                   |
@@ -26,8 +26,8 @@ Runs Evergreen URL query strings which include a date field combos query and fil
 	Then Signed Out page is displayed to the user
 	And User is logged out
 
-@Evergreen @Users @Mailboxes @Devices @Applications @EvergreenJnr_StaticLists @Query @DAS-10782
-Scenario: Evergreen Jnr_QueryString_Complex
+@Evergreen @Users @Mailboxes @Devices @Applications @EvergreenJnr_QueryStrings @Query @DAS-10782
+Scenario: EvergreenJnr_QueryString_Complex
 Runs Evergreen URL query strings that are complex, with lots of columns and advanced filters applied
 	When Evergreen QueryStringURL is entered for Complex QueryType
 	| QueryType                  | QueryStringURL                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                        |
@@ -40,8 +40,8 @@ Runs Evergreen URL query strings that are complex, with lots of columns and adva
 	Then Signed Out page is displayed to the user
 	And User is logged out
 
-@Evergreen @Users @Mailboxes @Devices @Applications @EvergreenJnr_StaticLists @Query
-Scenario: Evergreen Jnr_QueryString_AllLists
+@Evergreen @Users @Mailboxes @Devices @Applications @EvergreenJnr_QueryStrings @Query
+Scenario: EvergreenJnr_QueryString_AllLists
 Runs Evergreen URL query strings for the 4 default all lists.
 	When Evergreen QueryStringURL is entered for Simple QueryType
 	| QueryType        | QueryStringURL                                                                                              |
@@ -54,7 +54,7 @@ Runs Evergreen URL query strings for the 4 default all lists.
 	Then Signed Out page is displayed to the user
 	And User is logged out
 
-@Evergreen @Applications @EvergreenJnr_StaticLists @Query @DAS-11023
+@Evergreen @Applications @EvergreenJnr_QueryStrings @Query @DAS-11023
 Scenario: EvergreenJnr_QueryString_Applicaions
 Runs Evergreen URL query strings for the Applications List.
 	When Evergreen QueryStringURL is entered for Simple QueryType
@@ -67,12 +67,26 @@ Runs Evergreen URL query strings for the Applications List.
 	Then Signed Out page is displayed to the user
 	And User is logged out
 
-@Evergreen @Devices @EvergreenJnr_StaticLists @Query @DAS-10789
-Scenario: EvergreenJnr_QueryString_Applicaions On Devices List
+@Evergreen @Devices @EvergreenJnr_QueryStrings @Query @DAS-10789
+Scenario: EvergreenJnr_QueryString_Applications On Devices List
 Runs Evergreen URL query strings for the Applications on Devices List.
 	When Evergreen QueryStringURL is entered for Simple QueryType
 	| QueryType       | QueryStringURL                                                                                                                                                                                                                                                        |
 	| Apps On Devices | evergreen/#/devices?$select=hostname,chassisCategory,oSCategory,ownerDisplayName&$filter=(application%20EQUALS%20('451')%20WHERE%20(Used%20on%20device,Entitled%20to%20device,Installed%20on%20device,Used%20by%20device's%20owner,Entitled%20to%20device's%20owner)) |
+	Then agGrid Main Object List is returned with data
+	When User clicks the Logout button
+	Then Signed Out page is displayed to the user
+	And User is logged out
+
+@Evergreen @Users @Mailboxes @Devices @Applications @EvergreenJnr_QueryStrings @TableSorting @DAS-10598
+Scenario: EvergreenJnr_QueryString_AllLists Sort By Keys
+Runs Evergreen URL query strings which include being sorted by object key columns.
+	When Evergreen QueryStringURL is entered for Simple QueryType
+	| QueryType                       | QueryStringURL                                                                                                                                                                                                                                                                                                                                                                                                                                                       |
+	| Sort by device key              | evergreen/#/devices?$select=hostname,chassisCategory,oSCategory,ownerDisplayName,monitorCount,videoCardCount,computerKey&$orderby=computerKey%20desc                                                                                                                                                                                                                                                                                                                 |
+	| Sort by user key                | evergreen/#/users?$select=username,directoryName,displayName,fullyDistinguishedObjectName,objectKey&$orderby=objectKey%20desc                                                                                                                                                                                                                                                                                                                                        |
+	| Sort by application key         | evergreen/#/applications?$select=packageName,packageManufacturer,packageVersion,packageKey&$orderby=packageKey%20asc                                                                                                                                                                                                                                                                                                                                                 |
+	| Sort by mailbox key             | evergreen/#/mailboxes?$select=principalEmailAddress,mailboxPlatform,serverName,mailboxType,ownerDisplayName,mailboxKey&$orderby=mailboxKey%20asc                                                                                                                                                                                                                                                                                                                     |
 	Then agGrid Main Object List is returned with data
 	When User clicks the Logout button
 	Then Signed Out page is displayed to the user

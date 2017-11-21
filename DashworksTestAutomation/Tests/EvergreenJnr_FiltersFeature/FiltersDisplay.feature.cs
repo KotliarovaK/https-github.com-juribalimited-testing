@@ -92,18 +92,18 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_FiltersFeature
         }
         
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestMethodAttribute()]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.DescriptionAttribute("EvergreenDevice_Compliance_Check that \'Add column\' option as available for \"Compl" +
-            "iance\" filter")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.DescriptionAttribute("EvergreenJnr_DevicesList_Check that \'Add column\' option as available for \"Complia" +
+            "nce\" filter")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("FeatureTitle", "FiltersDisplay")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("Evergreen")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("Devices")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("Evergreen_FiltersFeature")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("FiltersDisplay")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("DAS-10781")]
-        public virtual void EvergreenDevice_Compliance_CheckThatAddColumnOptionAsAvailableForComplianceFilter()
+        public virtual void EvergreenJnr_DevicesList_CheckThatAddColumnOptionAsAvailableForComplianceFilter()
         {
-            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("EvergreenDevice_Compliance_Check that \'Add column\' option as available for \"Compl" +
-                    "iance\" filter", new string[] {
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("EvergreenJnr_DevicesList_Check that \'Add column\' option as available for \"Complia" +
+                    "nce\" filter", new string[] {
                         "Evergreen",
                         "Devices",
                         "Evergreen_FiltersFeature",
@@ -842,7 +842,7 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_FiltersFeature
             this.ScenarioCleanup();
         }
         
-        public virtual void EvergreenJnr_DevicesList_Filters_CheckThatFilterOperatorsIsCorrectInFilterInfo(string operatorValue, string filterOption, string rowsCount, string operatorValueInInfo, string[] exampleTags)
+        public virtual void EvergreenJnr_DevicesList_CheckThatFilterOperatorsIsCorrectInFilterInfo(string operatorValue, string filterOption, string rowsCount, string operatorValueInInfo, string[] exampleTags)
         {
             string[] @__tags = new string[] {
                     "Evergreen",
@@ -854,8 +854,7 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_FiltersFeature
             {
                 @__tags = System.Linq.Enumerable.ToArray(System.Linq.Enumerable.Concat(@__tags, exampleTags));
             }
-            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("EvergreenJnr_DevicesList_Filters_ Check that filter Operators is correct in filte" +
-                    "r info", @__tags);
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("EvergreenJnr_DevicesList_Check that filter Operators is correct in filter info", @__tags);
             this.ScenarioSetup(scenarioInfo);
             this.FeatureBackground();
             testRunner.When("User clicks \"Devices\" on the left-hand menu", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
@@ -878,8 +877,8 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_FiltersFeature
         }
         
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestMethodAttribute()]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.DescriptionAttribute("EvergreenJnr_DevicesList_Filters_ Check that filter Operators is correct in filte" +
-            "r info: Equals")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.DescriptionAttribute("EvergreenJnr_DevicesList_Check that filter Operators is correct in filter info: E" +
+            "quals")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("FeatureTitle", "FiltersDisplay")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("Evergreen")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("Devices")]
@@ -891,14 +890,14 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_FiltersFeature
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:filterOption", "00BDM1JUR8IF419")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:rowsCount", "1")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:operatorValueInInfo", "is")]
-        public virtual void EvergreenJnr_DevicesList_Filters_CheckThatFilterOperatorsIsCorrectInFilterInfo_Equals()
+        public virtual void EvergreenJnr_DevicesList_CheckThatFilterOperatorsIsCorrectInFilterInfo_Equals()
         {
-            this.EvergreenJnr_DevicesList_Filters_CheckThatFilterOperatorsIsCorrectInFilterInfo("Equals", "00BDM1JUR8IF419", "1", "is", ((string[])(null)));
+            this.EvergreenJnr_DevicesList_CheckThatFilterOperatorsIsCorrectInFilterInfo("Equals", "00BDM1JUR8IF419", "1", "is", ((string[])(null)));
         }
         
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestMethodAttribute()]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.DescriptionAttribute("EvergreenJnr_DevicesList_Filters_ Check that filter Operators is correct in filte" +
-            "r info: Does not equal")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.DescriptionAttribute("EvergreenJnr_DevicesList_Check that filter Operators is correct in filter info: D" +
+            "oes not equal")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("FeatureTitle", "FiltersDisplay")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("Evergreen")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("Devices")]
@@ -910,14 +909,14 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_FiltersFeature
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:filterOption", "00BDM1JUR8IF419")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:rowsCount", "17,224")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:operatorValueInInfo", "is not")]
-        public virtual void EvergreenJnr_DevicesList_Filters_CheckThatFilterOperatorsIsCorrectInFilterInfo_DoesNotEqual()
+        public virtual void EvergreenJnr_DevicesList_CheckThatFilterOperatorsIsCorrectInFilterInfo_DoesNotEqual()
         {
-            this.EvergreenJnr_DevicesList_Filters_CheckThatFilterOperatorsIsCorrectInFilterInfo("Does not equal", "00BDM1JUR8IF419", "17,224", "is not", ((string[])(null)));
+            this.EvergreenJnr_DevicesList_CheckThatFilterOperatorsIsCorrectInFilterInfo("Does not equal", "00BDM1JUR8IF419", "17,224", "is not", ((string[])(null)));
         }
         
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestMethodAttribute()]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.DescriptionAttribute("EvergreenJnr_DevicesList_Filters_ Check that filter Operators is correct in filte" +
-            "r info: Contains")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.DescriptionAttribute("EvergreenJnr_DevicesList_Check that filter Operators is correct in filter info: C" +
+            "ontains")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("FeatureTitle", "FiltersDisplay")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("Evergreen")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("Devices")]
@@ -929,14 +928,14 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_FiltersFeature
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:filterOption", "00B")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:rowsCount", "6")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:operatorValueInInfo", "contains")]
-        public virtual void EvergreenJnr_DevicesList_Filters_CheckThatFilterOperatorsIsCorrectInFilterInfo_Contains()
+        public virtual void EvergreenJnr_DevicesList_CheckThatFilterOperatorsIsCorrectInFilterInfo_Contains()
         {
-            this.EvergreenJnr_DevicesList_Filters_CheckThatFilterOperatorsIsCorrectInFilterInfo("Contains", "00B", "6", "contains", ((string[])(null)));
+            this.EvergreenJnr_DevicesList_CheckThatFilterOperatorsIsCorrectInFilterInfo("Contains", "00B", "6", "contains", ((string[])(null)));
         }
         
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestMethodAttribute()]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.DescriptionAttribute("EvergreenJnr_DevicesList_Filters_ Check that filter Operators is correct in filte" +
-            "r info: Does not contain")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.DescriptionAttribute("EvergreenJnr_DevicesList_Check that filter Operators is correct in filter info: D" +
+            "oes not contain")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("FeatureTitle", "FiltersDisplay")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("Evergreen")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("Devices")]
@@ -948,14 +947,14 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_FiltersFeature
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:filterOption", "00BDM1J")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:rowsCount", "17,224")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:operatorValueInInfo", "does not contain")]
-        public virtual void EvergreenJnr_DevicesList_Filters_CheckThatFilterOperatorsIsCorrectInFilterInfo_DoesNotContain()
+        public virtual void EvergreenJnr_DevicesList_CheckThatFilterOperatorsIsCorrectInFilterInfo_DoesNotContain()
         {
-            this.EvergreenJnr_DevicesList_Filters_CheckThatFilterOperatorsIsCorrectInFilterInfo("Does not contain", "00BDM1J", "17,224", "does not contain", ((string[])(null)));
+            this.EvergreenJnr_DevicesList_CheckThatFilterOperatorsIsCorrectInFilterInfo("Does not contain", "00BDM1J", "17,224", "does not contain", ((string[])(null)));
         }
         
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestMethodAttribute()]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.DescriptionAttribute("EvergreenJnr_DevicesList_Filters_ Check that filter Operators is correct in filte" +
-            "r info: Begins with")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.DescriptionAttribute("EvergreenJnr_DevicesList_Check that filter Operators is correct in filter info: B" +
+            "egins with")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("FeatureTitle", "FiltersDisplay")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("Evergreen")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("Devices")]
@@ -967,14 +966,14 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_FiltersFeature
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:filterOption", "00")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:rowsCount", "14")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:operatorValueInInfo", "begins with")]
-        public virtual void EvergreenJnr_DevicesList_Filters_CheckThatFilterOperatorsIsCorrectInFilterInfo_BeginsWith()
+        public virtual void EvergreenJnr_DevicesList_CheckThatFilterOperatorsIsCorrectInFilterInfo_BeginsWith()
         {
-            this.EvergreenJnr_DevicesList_Filters_CheckThatFilterOperatorsIsCorrectInFilterInfo("Begins with", "00", "14", "begins with", ((string[])(null)));
+            this.EvergreenJnr_DevicesList_CheckThatFilterOperatorsIsCorrectInFilterInfo("Begins with", "00", "14", "begins with", ((string[])(null)));
         }
         
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestMethodAttribute()]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.DescriptionAttribute("EvergreenJnr_DevicesList_Filters_ Check that filter Operators is correct in filte" +
-            "r info: Ends with")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.DescriptionAttribute("EvergreenJnr_DevicesList_Check that filter Operators is correct in filter info: E" +
+            "nds with")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("FeatureTitle", "FiltersDisplay")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("Evergreen")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("Devices")]
@@ -986,14 +985,14 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_FiltersFeature
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:filterOption", "41")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:rowsCount", "7")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:operatorValueInInfo", "ends with")]
-        public virtual void EvergreenJnr_DevicesList_Filters_CheckThatFilterOperatorsIsCorrectInFilterInfo_EndsWith()
+        public virtual void EvergreenJnr_DevicesList_CheckThatFilterOperatorsIsCorrectInFilterInfo_EndsWith()
         {
-            this.EvergreenJnr_DevicesList_Filters_CheckThatFilterOperatorsIsCorrectInFilterInfo("Ends with", "41", "7", "ends with", ((string[])(null)));
+            this.EvergreenJnr_DevicesList_CheckThatFilterOperatorsIsCorrectInFilterInfo("Ends with", "41", "7", "ends with", ((string[])(null)));
         }
         
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestMethodAttribute()]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.DescriptionAttribute("EvergreenJnr_DevicesList_Filters_ Check that filter Operators is correct in filte" +
-            "r info: Empty")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.DescriptionAttribute("EvergreenJnr_DevicesList_Check that filter Operators is correct in filter info: E" +
+            "mpty")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("FeatureTitle", "FiltersDisplay")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("Evergreen")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("Devices")]
@@ -1005,14 +1004,14 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_FiltersFeature
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:filterOption", "")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:rowsCount", "")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:operatorValueInInfo", "is empty")]
-        public virtual void EvergreenJnr_DevicesList_Filters_CheckThatFilterOperatorsIsCorrectInFilterInfo_Empty()
+        public virtual void EvergreenJnr_DevicesList_CheckThatFilterOperatorsIsCorrectInFilterInfo_Empty()
         {
-            this.EvergreenJnr_DevicesList_Filters_CheckThatFilterOperatorsIsCorrectInFilterInfo("Empty", "", "", "is empty", ((string[])(null)));
+            this.EvergreenJnr_DevicesList_CheckThatFilterOperatorsIsCorrectInFilterInfo("Empty", "", "", "is empty", ((string[])(null)));
         }
         
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestMethodAttribute()]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.DescriptionAttribute("EvergreenJnr_DevicesList_Filters_ Check that filter Operators is correct in filte" +
-            "r info: Not empty")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.DescriptionAttribute("EvergreenJnr_DevicesList_Check that filter Operators is correct in filter info: N" +
+            "ot empty")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("FeatureTitle", "FiltersDisplay")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("Evergreen")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("Devices")]
@@ -1024,12 +1023,12 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_FiltersFeature
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:filterOption", "")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:rowsCount", "17,225")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:operatorValueInInfo", "is not empty")]
-        public virtual void EvergreenJnr_DevicesList_Filters_CheckThatFilterOperatorsIsCorrectInFilterInfo_NotEmpty()
+        public virtual void EvergreenJnr_DevicesList_CheckThatFilterOperatorsIsCorrectInFilterInfo_NotEmpty()
         {
-            this.EvergreenJnr_DevicesList_Filters_CheckThatFilterOperatorsIsCorrectInFilterInfo("Not empty", "", "17,225", "is not empty", ((string[])(null)));
+            this.EvergreenJnr_DevicesList_CheckThatFilterOperatorsIsCorrectInFilterInfo("Not empty", "", "17,225", "is not empty", ((string[])(null)));
         }
         
-        public virtual void EvergreenJnr_UsersList_Filters_CheckThatFilterOperatorsIsCorrectInFilterInfo(string operatorValue, string filterOption, string rowsCount, string operatorValueInInfo, string[] exampleTags)
+        public virtual void EvergreenJnr_UsersList_CheckThatFilterOperatorsIsCorrectInFilterInfo(string operatorValue, string filterOption, string rowsCount, string operatorValueInInfo, string[] exampleTags)
         {
             string[] @__tags = new string[] {
                     "Evergreen",
@@ -1041,8 +1040,7 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_FiltersFeature
             {
                 @__tags = System.Linq.Enumerable.ToArray(System.Linq.Enumerable.Concat(@__tags, exampleTags));
             }
-            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("EvergreenJnr_UsersList_Filters_ Check that filter Operators is correct in filter " +
-                    "info", @__tags);
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("EvergreenJnr_UsersList_Check that filter Operators is correct in filter info", @__tags);
             this.ScenarioSetup(scenarioInfo);
             this.FeatureBackground();
             testRunner.When("User clicks \"Users\" on the left-hand menu", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
@@ -1070,8 +1068,8 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_FiltersFeature
         }
         
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestMethodAttribute()]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.DescriptionAttribute("EvergreenJnr_UsersList_Filters_ Check that filter Operators is correct in filter " +
-            "info: Equals")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.DescriptionAttribute("EvergreenJnr_UsersList_Check that filter Operators is correct in filter info: Equ" +
+            "als")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("FeatureTitle", "FiltersDisplay")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("Evergreen")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("Users")]
@@ -1083,14 +1081,14 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_FiltersFeature
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:filterOption", "Red")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:rowsCount", "9,438")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:operatorValueInInfo", "is")]
-        public virtual void EvergreenJnr_UsersList_Filters_CheckThatFilterOperatorsIsCorrectInFilterInfo_Equals()
+        public virtual void EvergreenJnr_UsersList_CheckThatFilterOperatorsIsCorrectInFilterInfo_Equals()
         {
-            this.EvergreenJnr_UsersList_Filters_CheckThatFilterOperatorsIsCorrectInFilterInfo("Equals", "Red", "9,438", "is", ((string[])(null)));
+            this.EvergreenJnr_UsersList_CheckThatFilterOperatorsIsCorrectInFilterInfo("Equals", "Red", "9,438", "is", ((string[])(null)));
         }
         
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestMethodAttribute()]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.DescriptionAttribute("EvergreenJnr_UsersList_Filters_ Check that filter Operators is correct in filter " +
-            "info: Does not equal")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.DescriptionAttribute("EvergreenJnr_UsersList_Check that filter Operators is correct in filter info: Doe" +
+            "s not equal")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("FeatureTitle", "FiltersDisplay")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("Evergreen")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("Users")]
@@ -1102,12 +1100,12 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_FiltersFeature
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:filterOption", "Red")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:rowsCount", "31,897")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:operatorValueInInfo", "is not")]
-        public virtual void EvergreenJnr_UsersList_Filters_CheckThatFilterOperatorsIsCorrectInFilterInfo_DoesNotEqual()
+        public virtual void EvergreenJnr_UsersList_CheckThatFilterOperatorsIsCorrectInFilterInfo_DoesNotEqual()
         {
-            this.EvergreenJnr_UsersList_Filters_CheckThatFilterOperatorsIsCorrectInFilterInfo("Does not equal", "Red", "31,897", "is not", ((string[])(null)));
+            this.EvergreenJnr_UsersList_CheckThatFilterOperatorsIsCorrectInFilterInfo("Does not equal", "Red", "31,897", "is not", ((string[])(null)));
         }
         
-        public virtual void EvergreenJnr_ApplicationsList_Filters_CheckThatFilterOperatorsIsCorrectInFilterInfo(string operatorValue, string filterOption, string rowsCount, string operatorValueInInfo, string[] exampleTags)
+        public virtual void EvergreenJnr_ApplicationsList_CheckThatFilterOperatorsIsCorrectInFilterInfo(string operatorValue, string filterOption, string rowsCount, string operatorValueInInfo, string[] exampleTags)
         {
             string[] @__tags = new string[] {
                     "Evergreen",
@@ -1119,8 +1117,8 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_FiltersFeature
             {
                 @__tags = System.Linq.Enumerable.ToArray(System.Linq.Enumerable.Concat(@__tags, exampleTags));
             }
-            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("EvergreenJnr_ApplicationsList_Filters_ Check that filter Operators is correct in " +
-                    "filter info", @__tags);
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("EvergreenJnr_ApplicationsList_Check that filter Operators is correct in filter in" +
+                    "fo", @__tags);
             this.ScenarioSetup(scenarioInfo);
             this.FeatureBackground();
             testRunner.When("User clicks \"Applications\" on the left-hand menu", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
@@ -1143,8 +1141,8 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_FiltersFeature
         }
         
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestMethodAttribute()]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.DescriptionAttribute("EvergreenJnr_ApplicationsList_Filters_ Check that filter Operators is correct in " +
-            "filter info: Equals")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.DescriptionAttribute("EvergreenJnr_ApplicationsList_Check that filter Operators is correct in filter in" +
+            "fo: Equals")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("FeatureTitle", "FiltersDisplay")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("Evergreen")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("Applications")]
@@ -1156,14 +1154,14 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_FiltersFeature
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:filterOption", "1")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:rowsCount", "2")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:operatorValueInInfo", "is")]
-        public virtual void EvergreenJnr_ApplicationsList_Filters_CheckThatFilterOperatorsIsCorrectInFilterInfo_Equals()
+        public virtual void EvergreenJnr_ApplicationsList_CheckThatFilterOperatorsIsCorrectInFilterInfo_Equals()
         {
-            this.EvergreenJnr_ApplicationsList_Filters_CheckThatFilterOperatorsIsCorrectInFilterInfo("Equals", "1", "2", "is", ((string[])(null)));
+            this.EvergreenJnr_ApplicationsList_CheckThatFilterOperatorsIsCorrectInFilterInfo("Equals", "1", "2", "is", ((string[])(null)));
         }
         
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestMethodAttribute()]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.DescriptionAttribute("EvergreenJnr_ApplicationsList_Filters_ Check that filter Operators is correct in " +
-            "filter info: Does not equal")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.DescriptionAttribute("EvergreenJnr_ApplicationsList_Check that filter Operators is correct in filter in" +
+            "fo: Does not equal")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("FeatureTitle", "FiltersDisplay")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("Evergreen")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("Applications")]
@@ -1175,14 +1173,14 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_FiltersFeature
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:filterOption", "1")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:rowsCount", "2,221")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:operatorValueInInfo", "is not")]
-        public virtual void EvergreenJnr_ApplicationsList_Filters_CheckThatFilterOperatorsIsCorrectInFilterInfo_DoesNotEqual()
+        public virtual void EvergreenJnr_ApplicationsList_CheckThatFilterOperatorsIsCorrectInFilterInfo_DoesNotEqual()
         {
-            this.EvergreenJnr_ApplicationsList_Filters_CheckThatFilterOperatorsIsCorrectInFilterInfo("Does not equal", "1", "2,221", "is not", ((string[])(null)));
+            this.EvergreenJnr_ApplicationsList_CheckThatFilterOperatorsIsCorrectInFilterInfo("Does not equal", "1", "2,221", "is not", ((string[])(null)));
         }
         
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestMethodAttribute()]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.DescriptionAttribute("EvergreenJnr_ApplicationsList_Filters_ Check that filter Operators is correct in " +
-            "filter info: Greater than")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.DescriptionAttribute("EvergreenJnr_ApplicationsList_Check that filter Operators is correct in filter in" +
+            "fo: Greater than")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("FeatureTitle", "FiltersDisplay")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("Evergreen")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("Applications")]
@@ -1194,14 +1192,14 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_FiltersFeature
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:filterOption", "1")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:rowsCount", "1,057")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:operatorValueInInfo", "is greater than")]
-        public virtual void EvergreenJnr_ApplicationsList_Filters_CheckThatFilterOperatorsIsCorrectInFilterInfo_GreaterThan()
+        public virtual void EvergreenJnr_ApplicationsList_CheckThatFilterOperatorsIsCorrectInFilterInfo_GreaterThan()
         {
-            this.EvergreenJnr_ApplicationsList_Filters_CheckThatFilterOperatorsIsCorrectInFilterInfo("Greater than", "1", "1,057", "is greater than", ((string[])(null)));
+            this.EvergreenJnr_ApplicationsList_CheckThatFilterOperatorsIsCorrectInFilterInfo("Greater than", "1", "1,057", "is greater than", ((string[])(null)));
         }
         
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestMethodAttribute()]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.DescriptionAttribute("EvergreenJnr_ApplicationsList_Filters_ Check that filter Operators is correct in " +
-            "filter info: Greater than or equal to")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.DescriptionAttribute("EvergreenJnr_ApplicationsList_Check that filter Operators is correct in filter in" +
+            "fo: Greater than or equal to")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("FeatureTitle", "FiltersDisplay")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("Evergreen")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("Applications")]
@@ -1213,14 +1211,14 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_FiltersFeature
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:filterOption", "1")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:rowsCount", "1,059")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:operatorValueInInfo", "is greater than or equal to")]
-        public virtual void EvergreenJnr_ApplicationsList_Filters_CheckThatFilterOperatorsIsCorrectInFilterInfo_GreaterThanOrEqualTo()
+        public virtual void EvergreenJnr_ApplicationsList_CheckThatFilterOperatorsIsCorrectInFilterInfo_GreaterThanOrEqualTo()
         {
-            this.EvergreenJnr_ApplicationsList_Filters_CheckThatFilterOperatorsIsCorrectInFilterInfo("Greater than or equal to", "1", "1,059", "is greater than or equal to", ((string[])(null)));
+            this.EvergreenJnr_ApplicationsList_CheckThatFilterOperatorsIsCorrectInFilterInfo("Greater than or equal to", "1", "1,059", "is greater than or equal to", ((string[])(null)));
         }
         
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestMethodAttribute()]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.DescriptionAttribute("EvergreenJnr_ApplicationsList_Filters_ Check that filter Operators is correct in " +
-            "filter info: Less than")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.DescriptionAttribute("EvergreenJnr_ApplicationsList_Check that filter Operators is correct in filter in" +
+            "fo: Less than")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("FeatureTitle", "FiltersDisplay")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("Evergreen")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("Applications")]
@@ -1232,14 +1230,14 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_FiltersFeature
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:filterOption", "1")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:rowsCount", "1,164")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:operatorValueInInfo", "is less than")]
-        public virtual void EvergreenJnr_ApplicationsList_Filters_CheckThatFilterOperatorsIsCorrectInFilterInfo_LessThan()
+        public virtual void EvergreenJnr_ApplicationsList_CheckThatFilterOperatorsIsCorrectInFilterInfo_LessThan()
         {
-            this.EvergreenJnr_ApplicationsList_Filters_CheckThatFilterOperatorsIsCorrectInFilterInfo("Less than", "1", "1,164", "is less than", ((string[])(null)));
+            this.EvergreenJnr_ApplicationsList_CheckThatFilterOperatorsIsCorrectInFilterInfo("Less than", "1", "1,164", "is less than", ((string[])(null)));
         }
         
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestMethodAttribute()]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.DescriptionAttribute("EvergreenJnr_ApplicationsList_Filters_ Check that filter Operators is correct in " +
-            "filter info: Less than or equal to")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.DescriptionAttribute("EvergreenJnr_ApplicationsList_Check that filter Operators is correct in filter in" +
+            "fo: Less than or equal to")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("FeatureTitle", "FiltersDisplay")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("Evergreen")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("Applications")]
@@ -1251,12 +1249,12 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_FiltersFeature
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:filterOption", "1")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:rowsCount", "1,166")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:operatorValueInInfo", "is less than or equal to")]
-        public virtual void EvergreenJnr_ApplicationsList_Filters_CheckThatFilterOperatorsIsCorrectInFilterInfo_LessThanOrEqualTo()
+        public virtual void EvergreenJnr_ApplicationsList_CheckThatFilterOperatorsIsCorrectInFilterInfo_LessThanOrEqualTo()
         {
-            this.EvergreenJnr_ApplicationsList_Filters_CheckThatFilterOperatorsIsCorrectInFilterInfo("Less than or equal to", "1", "1,166", "is less than or equal to", ((string[])(null)));
+            this.EvergreenJnr_ApplicationsList_CheckThatFilterOperatorsIsCorrectInFilterInfo("Less than or equal to", "1", "1,166", "is less than or equal to", ((string[])(null)));
         }
         
-        public virtual void EvergreenJnr_MailboxesList_Filters_CheckThatFilterOperatorsIsCorrectInFilterInfo(string operatorValue, string filterOption, string rowsCount, string operatorValueInInfo, string[] exampleTags)
+        public virtual void EvergreenJnr_MailboxesList_CheckThatFilterOperatorsIsCorrectInFilterInfo(string operatorValue, string filterOption, string rowsCount, string operatorValueInInfo, string[] exampleTags)
         {
             string[] @__tags = new string[] {
                     "Evergreen",
@@ -1268,8 +1266,7 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_FiltersFeature
             {
                 @__tags = System.Linq.Enumerable.ToArray(System.Linq.Enumerable.Concat(@__tags, exampleTags));
             }
-            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("EvergreenJnr_MailboxesList_Filters_ Check that filter Operators is correct in fil" +
-                    "ter info", @__tags);
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("EvergreenJnr_MailboxesList_Check that filter Operators is correct in filter info", @__tags);
             this.ScenarioSetup(scenarioInfo);
             this.FeatureBackground();
             testRunner.When("User clicks \"Mailboxes\" on the left-hand menu", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
@@ -1292,8 +1289,8 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_FiltersFeature
         }
         
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestMethodAttribute()]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.DescriptionAttribute("EvergreenJnr_MailboxesList_Filters_ Check that filter Operators is correct in fil" +
-            "ter info: Equals")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.DescriptionAttribute("EvergreenJnr_MailboxesList_Check that filter Operators is correct in filter info:" +
+            " Equals")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("FeatureTitle", "FiltersDisplay")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("Evergreen")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("Mailboxes")]
@@ -1305,14 +1302,14 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_FiltersFeature
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:filterOption", "08 Mar 2016")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:rowsCount", "3")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:operatorValueInInfo", "is")]
-        public virtual void EvergreenJnr_MailboxesList_Filters_CheckThatFilterOperatorsIsCorrectInFilterInfo_Equals()
+        public virtual void EvergreenJnr_MailboxesList_CheckThatFilterOperatorsIsCorrectInFilterInfo_Equals()
         {
-            this.EvergreenJnr_MailboxesList_Filters_CheckThatFilterOperatorsIsCorrectInFilterInfo("Equals", "08 Mar 2016", "3", "is", ((string[])(null)));
+            this.EvergreenJnr_MailboxesList_CheckThatFilterOperatorsIsCorrectInFilterInfo("Equals", "08 Mar 2016", "3", "is", ((string[])(null)));
         }
         
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestMethodAttribute()]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.DescriptionAttribute("EvergreenJnr_MailboxesList_Filters_ Check that filter Operators is correct in fil" +
-            "ter info: Does not equal")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.DescriptionAttribute("EvergreenJnr_MailboxesList_Check that filter Operators is correct in filter info:" +
+            " Does not equal")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("FeatureTitle", "FiltersDisplay")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("Evergreen")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("Mailboxes")]
@@ -1324,14 +1321,14 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_FiltersFeature
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:filterOption", "08 Mar 2016")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:rowsCount", "4,832")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:operatorValueInInfo", "is not")]
-        public virtual void EvergreenJnr_MailboxesList_Filters_CheckThatFilterOperatorsIsCorrectInFilterInfo_DoesNotEqual()
+        public virtual void EvergreenJnr_MailboxesList_CheckThatFilterOperatorsIsCorrectInFilterInfo_DoesNotEqual()
         {
-            this.EvergreenJnr_MailboxesList_Filters_CheckThatFilterOperatorsIsCorrectInFilterInfo("Does not equal", "08 Mar 2016", "4,832", "is not", ((string[])(null)));
+            this.EvergreenJnr_MailboxesList_CheckThatFilterOperatorsIsCorrectInFilterInfo("Does not equal", "08 Mar 2016", "4,832", "is not", ((string[])(null)));
         }
         
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestMethodAttribute()]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.DescriptionAttribute("EvergreenJnr_MailboxesList_Filters_ Check that filter Operators is correct in fil" +
-            "ter info: Before")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.DescriptionAttribute("EvergreenJnr_MailboxesList_Check that filter Operators is correct in filter info:" +
+            " Before")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("FeatureTitle", "FiltersDisplay")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("Evergreen")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("Mailboxes")]
@@ -1343,14 +1340,14 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_FiltersFeature
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:filterOption", "08 Mar 2016")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:rowsCount", "33")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:operatorValueInInfo", "is before")]
-        public virtual void EvergreenJnr_MailboxesList_Filters_CheckThatFilterOperatorsIsCorrectInFilterInfo_Before()
+        public virtual void EvergreenJnr_MailboxesList_CheckThatFilterOperatorsIsCorrectInFilterInfo_Before()
         {
-            this.EvergreenJnr_MailboxesList_Filters_CheckThatFilterOperatorsIsCorrectInFilterInfo("Before", "08 Mar 2016", "33", "is before", ((string[])(null)));
+            this.EvergreenJnr_MailboxesList_CheckThatFilterOperatorsIsCorrectInFilterInfo("Before", "08 Mar 2016", "33", "is before", ((string[])(null)));
         }
         
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestMethodAttribute()]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.DescriptionAttribute("EvergreenJnr_MailboxesList_Filters_ Check that filter Operators is correct in fil" +
-            "ter info: After")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.DescriptionAttribute("EvergreenJnr_MailboxesList_Check that filter Operators is correct in filter info:" +
+            " After")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("FeatureTitle", "FiltersDisplay")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("Evergreen")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("Mailboxes")]
@@ -1362,14 +1359,14 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_FiltersFeature
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:filterOption", "08 Mar 2016")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:rowsCount", "4,799")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:operatorValueInInfo", "is after")]
-        public virtual void EvergreenJnr_MailboxesList_Filters_CheckThatFilterOperatorsIsCorrectInFilterInfo_After()
+        public virtual void EvergreenJnr_MailboxesList_CheckThatFilterOperatorsIsCorrectInFilterInfo_After()
         {
-            this.EvergreenJnr_MailboxesList_Filters_CheckThatFilterOperatorsIsCorrectInFilterInfo("After", "08 Mar 2016", "4,799", "is after", ((string[])(null)));
+            this.EvergreenJnr_MailboxesList_CheckThatFilterOperatorsIsCorrectInFilterInfo("After", "08 Mar 2016", "4,799", "is after", ((string[])(null)));
         }
         
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestMethodAttribute()]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.DescriptionAttribute("EvergreenJnr_MailboxesList_Filters_ Check that filter Operators is correct in fil" +
-            "ter info: Empty")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.DescriptionAttribute("EvergreenJnr_MailboxesList_Check that filter Operators is correct in filter info:" +
+            " Empty")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("FeatureTitle", "FiltersDisplay")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("Evergreen")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("Mailboxes")]
@@ -1381,14 +1378,14 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_FiltersFeature
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:filterOption", "")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:rowsCount", "")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:operatorValueInInfo", "is empty")]
-        public virtual void EvergreenJnr_MailboxesList_Filters_CheckThatFilterOperatorsIsCorrectInFilterInfo_Empty()
+        public virtual void EvergreenJnr_MailboxesList_CheckThatFilterOperatorsIsCorrectInFilterInfo_Empty()
         {
-            this.EvergreenJnr_MailboxesList_Filters_CheckThatFilterOperatorsIsCorrectInFilterInfo("Empty", "", "", "is empty", ((string[])(null)));
+            this.EvergreenJnr_MailboxesList_CheckThatFilterOperatorsIsCorrectInFilterInfo("Empty", "", "", "is empty", ((string[])(null)));
         }
         
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestMethodAttribute()]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.DescriptionAttribute("EvergreenJnr_MailboxesList_Filters_ Check that filter Operators is correct in fil" +
-            "ter info: Not empty")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.DescriptionAttribute("EvergreenJnr_MailboxesList_Check that filter Operators is correct in filter info:" +
+            " Not empty")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("FeatureTitle", "FiltersDisplay")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("Evergreen")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("Mailboxes")]
@@ -1400,12 +1397,12 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_FiltersFeature
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:filterOption", "")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:rowsCount", "4,835")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:operatorValueInInfo", "is not empty")]
-        public virtual void EvergreenJnr_MailboxesList_Filters_CheckThatFilterOperatorsIsCorrectInFilterInfo_NotEmpty()
+        public virtual void EvergreenJnr_MailboxesList_CheckThatFilterOperatorsIsCorrectInFilterInfo_NotEmpty()
         {
-            this.EvergreenJnr_MailboxesList_Filters_CheckThatFilterOperatorsIsCorrectInFilterInfo("Not empty", "", "4,835", "is not empty", ((string[])(null)));
+            this.EvergreenJnr_MailboxesList_CheckThatFilterOperatorsIsCorrectInFilterInfo("Not empty", "", "4,835", "is not empty", ((string[])(null)));
         }
         
-        public virtual void EvergreenJnr_DevicesList_Filters_CheckThatFilterOperatorsIsCorrectInFilterInfoDatetime(string operatorValue, string filterOption, string rowsCount, string operatorValueInInfo, string[] exampleTags)
+        public virtual void EvergreenJnr_DevicesList_CheckThatFilterOperatorsIsCorrectInFilterInfoDatetime(string operatorValue, string filterOption, string rowsCount, string operatorValueInInfo, string[] exampleTags)
         {
             string[] @__tags = new string[] {
                     "Evergreen",
@@ -1417,8 +1414,8 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_FiltersFeature
             {
                 @__tags = System.Linq.Enumerable.ToArray(System.Linq.Enumerable.Concat(@__tags, exampleTags));
             }
-            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("EvergreenJnr_DevicesList_Filters_ Check that filter Operators is correct in filte" +
-                    "r info (datetime)", @__tags);
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("EvergreenJnr_DevicesList_Check that filter Operators is correct in filter info (d" +
+                    "atetime)", @__tags);
             this.ScenarioSetup(scenarioInfo);
             this.FeatureBackground();
             testRunner.When("User clicks \"Devices\" on the left-hand menu", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
@@ -1441,8 +1438,8 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_FiltersFeature
         }
         
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestMethodAttribute()]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.DescriptionAttribute("EvergreenJnr_DevicesList_Filters_ Check that filter Operators is correct in filte" +
-            "r info (datetime): Equals")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.DescriptionAttribute("EvergreenJnr_DevicesList_Check that filter Operators is correct in filter info (d" +
+            "atetime): Equals")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("FeatureTitle", "FiltersDisplay")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("Evergreen")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("Devices")]
@@ -1454,14 +1451,14 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_FiltersFeature
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:filterOption", "22 Nov 2012")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:rowsCount", "16")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:operatorValueInInfo", "is")]
-        public virtual void EvergreenJnr_DevicesList_Filters_CheckThatFilterOperatorsIsCorrectInFilterInfoDatetime_Equals()
+        public virtual void EvergreenJnr_DevicesList_CheckThatFilterOperatorsIsCorrectInFilterInfoDatetime_Equals()
         {
-            this.EvergreenJnr_DevicesList_Filters_CheckThatFilterOperatorsIsCorrectInFilterInfoDatetime("Equals", "22 Nov 2012", "16", "is", ((string[])(null)));
+            this.EvergreenJnr_DevicesList_CheckThatFilterOperatorsIsCorrectInFilterInfoDatetime("Equals", "22 Nov 2012", "16", "is", ((string[])(null)));
         }
         
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestMethodAttribute()]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.DescriptionAttribute("EvergreenJnr_DevicesList_Filters_ Check that filter Operators is correct in filte" +
-            "r info (datetime): Does not equal")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.DescriptionAttribute("EvergreenJnr_DevicesList_Check that filter Operators is correct in filter info (d" +
+            "atetime): Does not equal")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("FeatureTitle", "FiltersDisplay")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("Evergreen")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("Devices")]
@@ -1473,14 +1470,14 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_FiltersFeature
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:filterOption", "22 Nov 2012")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:rowsCount", "17,209")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:operatorValueInInfo", "is not")]
-        public virtual void EvergreenJnr_DevicesList_Filters_CheckThatFilterOperatorsIsCorrectInFilterInfoDatetime_DoesNotEqual()
+        public virtual void EvergreenJnr_DevicesList_CheckThatFilterOperatorsIsCorrectInFilterInfoDatetime_DoesNotEqual()
         {
-            this.EvergreenJnr_DevicesList_Filters_CheckThatFilterOperatorsIsCorrectInFilterInfoDatetime("Does not equal", "22 Nov 2012", "17,209", "is not", ((string[])(null)));
+            this.EvergreenJnr_DevicesList_CheckThatFilterOperatorsIsCorrectInFilterInfoDatetime("Does not equal", "22 Nov 2012", "17,209", "is not", ((string[])(null)));
         }
         
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestMethodAttribute()]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.DescriptionAttribute("EvergreenJnr_DevicesList_Filters_ Check that filter Operators is correct in filte" +
-            "r info (datetime): Before")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.DescriptionAttribute("EvergreenJnr_DevicesList_Check that filter Operators is correct in filter info (d" +
+            "atetime): Before")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("FeatureTitle", "FiltersDisplay")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("Evergreen")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("Devices")]
@@ -1492,14 +1489,14 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_FiltersFeature
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:filterOption", "22 Nov 2012")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:rowsCount", "1")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:operatorValueInInfo", "is before")]
-        public virtual void EvergreenJnr_DevicesList_Filters_CheckThatFilterOperatorsIsCorrectInFilterInfoDatetime_Before()
+        public virtual void EvergreenJnr_DevicesList_CheckThatFilterOperatorsIsCorrectInFilterInfoDatetime_Before()
         {
-            this.EvergreenJnr_DevicesList_Filters_CheckThatFilterOperatorsIsCorrectInFilterInfoDatetime("Before", "22 Nov 2012", "1", "is before", ((string[])(null)));
+            this.EvergreenJnr_DevicesList_CheckThatFilterOperatorsIsCorrectInFilterInfoDatetime("Before", "22 Nov 2012", "1", "is before", ((string[])(null)));
         }
         
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestMethodAttribute()]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.DescriptionAttribute("EvergreenJnr_DevicesList_Filters_ Check that filter Operators is correct in filte" +
-            "r info (datetime): After")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.DescriptionAttribute("EvergreenJnr_DevicesList_Check that filter Operators is correct in filter info (d" +
+            "atetime): After")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("FeatureTitle", "FiltersDisplay")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("Evergreen")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("Devices")]
@@ -1511,14 +1508,14 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_FiltersFeature
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:filterOption", "14 May 2012")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:rowsCount", "16")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:operatorValueInInfo", "is after")]
-        public virtual void EvergreenJnr_DevicesList_Filters_CheckThatFilterOperatorsIsCorrectInFilterInfoDatetime_After()
+        public virtual void EvergreenJnr_DevicesList_CheckThatFilterOperatorsIsCorrectInFilterInfoDatetime_After()
         {
-            this.EvergreenJnr_DevicesList_Filters_CheckThatFilterOperatorsIsCorrectInFilterInfoDatetime("After", "14 May 2012", "16", "is after", ((string[])(null)));
+            this.EvergreenJnr_DevicesList_CheckThatFilterOperatorsIsCorrectInFilterInfoDatetime("After", "14 May 2012", "16", "is after", ((string[])(null)));
         }
         
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestMethodAttribute()]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.DescriptionAttribute("EvergreenJnr_DevicesList_Filters_ Check that filter Operators is correct in filte" +
-            "r info (datetime): Empty")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.DescriptionAttribute("EvergreenJnr_DevicesList_Check that filter Operators is correct in filter info (d" +
+            "atetime): Empty")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("FeatureTitle", "FiltersDisplay")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("Evergreen")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("Devices")]
@@ -1530,14 +1527,14 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_FiltersFeature
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:filterOption", "")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:rowsCount", "17,208")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:operatorValueInInfo", "is empty")]
-        public virtual void EvergreenJnr_DevicesList_Filters_CheckThatFilterOperatorsIsCorrectInFilterInfoDatetime_Empty()
+        public virtual void EvergreenJnr_DevicesList_CheckThatFilterOperatorsIsCorrectInFilterInfoDatetime_Empty()
         {
-            this.EvergreenJnr_DevicesList_Filters_CheckThatFilterOperatorsIsCorrectInFilterInfoDatetime("Empty", "", "17,208", "is empty", ((string[])(null)));
+            this.EvergreenJnr_DevicesList_CheckThatFilterOperatorsIsCorrectInFilterInfoDatetime("Empty", "", "17,208", "is empty", ((string[])(null)));
         }
         
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestMethodAttribute()]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.DescriptionAttribute("EvergreenJnr_DevicesList_Filters_ Check that filter Operators is correct in filte" +
-            "r info (datetime): Not empty")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.DescriptionAttribute("EvergreenJnr_DevicesList_Check that filter Operators is correct in filter info (d" +
+            "atetime): Not empty")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("FeatureTitle", "FiltersDisplay")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("Evergreen")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("Devices")]
@@ -1549,12 +1546,12 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_FiltersFeature
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:filterOption", "")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:rowsCount", "17")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:operatorValueInInfo", "is not empty")]
-        public virtual void EvergreenJnr_DevicesList_Filters_CheckThatFilterOperatorsIsCorrectInFilterInfoDatetime_NotEmpty()
+        public virtual void EvergreenJnr_DevicesList_CheckThatFilterOperatorsIsCorrectInFilterInfoDatetime_NotEmpty()
         {
-            this.EvergreenJnr_DevicesList_Filters_CheckThatFilterOperatorsIsCorrectInFilterInfoDatetime("Not empty", "", "17", "is not empty", ((string[])(null)));
+            this.EvergreenJnr_DevicesList_CheckThatFilterOperatorsIsCorrectInFilterInfoDatetime("Not empty", "", "17", "is not empty", ((string[])(null)));
         }
         
-        public virtual void EvergreenJnr_UsersList_Filters_CheckThatFilterOperatorsIsCorrectInFilterInfoEnabled(string operatorValue, string filterOption, string rowsCount, string operatorValueInInfo, string[] exampleTags)
+        public virtual void EvergreenJnr_UsersList_CheckThatFilterOperatorsIsCorrectInFilterInfoEnabled(string operatorValue, string filterOption, string rowsCount, string operatorValueInInfo, string[] exampleTags)
         {
             string[] @__tags = new string[] {
                     "Evergreen",
@@ -1566,8 +1563,8 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_FiltersFeature
             {
                 @__tags = System.Linq.Enumerable.ToArray(System.Linq.Enumerable.Concat(@__tags, exampleTags));
             }
-            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("EvergreenJnr_UsersList_Filters_ Check that filter Operators is correct in filter " +
-                    "info (Enabled)", @__tags);
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("EvergreenJnr_UsersList_Check that filter Operators is correct in filter info (Ena" +
+                    "bled)", @__tags);
             this.ScenarioSetup(scenarioInfo);
             this.FeatureBackground();
             testRunner.When("User clicks \"Users\" on the left-hand menu", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
@@ -1595,8 +1592,8 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_FiltersFeature
         }
         
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestMethodAttribute()]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.DescriptionAttribute("EvergreenJnr_UsersList_Filters_ Check that filter Operators is correct in filter " +
-            "info (Enabled): Equals")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.DescriptionAttribute("EvergreenJnr_UsersList_Check that filter Operators is correct in filter info (Ena" +
+            "bled): Equals")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("FeatureTitle", "FiltersDisplay")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("Evergreen")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("Users")]
@@ -1608,14 +1605,14 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_FiltersFeature
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:filterOption", "TRUE")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:rowsCount", "41,228")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:operatorValueInInfo", "is")]
-        public virtual void EvergreenJnr_UsersList_Filters_CheckThatFilterOperatorsIsCorrectInFilterInfoEnabled_Equals()
+        public virtual void EvergreenJnr_UsersList_CheckThatFilterOperatorsIsCorrectInFilterInfoEnabled_Equals()
         {
-            this.EvergreenJnr_UsersList_Filters_CheckThatFilterOperatorsIsCorrectInFilterInfoEnabled("Equals", "TRUE", "41,228", "is", ((string[])(null)));
+            this.EvergreenJnr_UsersList_CheckThatFilterOperatorsIsCorrectInFilterInfoEnabled("Equals", "TRUE", "41,228", "is", ((string[])(null)));
         }
         
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestMethodAttribute()]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.DescriptionAttribute("EvergreenJnr_UsersList_Filters_ Check that filter Operators is correct in filter " +
-            "info (Enabled): Does not equal")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.DescriptionAttribute("EvergreenJnr_UsersList_Check that filter Operators is correct in filter info (Ena" +
+            "bled): Does not equal")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("FeatureTitle", "FiltersDisplay")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("Evergreen")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("Users")]
@@ -1627,14 +1624,13 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_FiltersFeature
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:filterOption", "TRUE")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:rowsCount", "107")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:operatorValueInInfo", "is not")]
-        public virtual void EvergreenJnr_UsersList_Filters_CheckThatFilterOperatorsIsCorrectInFilterInfoEnabled_DoesNotEqual()
+        public virtual void EvergreenJnr_UsersList_CheckThatFilterOperatorsIsCorrectInFilterInfoEnabled_DoesNotEqual()
         {
-            this.EvergreenJnr_UsersList_Filters_CheckThatFilterOperatorsIsCorrectInFilterInfoEnabled("Does not equal", "TRUE", "107", "is not", ((string[])(null)));
+            this.EvergreenJnr_UsersList_CheckThatFilterOperatorsIsCorrectInFilterInfoEnabled("Does not equal", "TRUE", "107", "is not", ((string[])(null)));
         }
         
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestMethodAttribute()]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.DescriptionAttribute("EvergreenJnr_DevicesList_Filters_ Check that Applications filter is working corre" +
-            "ct")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.DescriptionAttribute("EvergreenJnr_DevicesList_Check that Applications filter is working correct")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("FeatureTitle", "FiltersDisplay")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("Evergreen")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("Devices")]
@@ -1642,10 +1638,9 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_FiltersFeature
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("FiltersDisplay")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("DAS-10696")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("Delete_Newly_Created_List")]
-        public virtual void EvergreenJnr_DevicesList_Filters_CheckThatApplicationsFilterIsWorkingCorrect()
+        public virtual void EvergreenJnr_DevicesList_CheckThatApplicationsFilterIsWorkingCorrect()
         {
-            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("EvergreenJnr_DevicesList_Filters_ Check that Applications filter is working corre" +
-                    "ct", new string[] {
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("EvergreenJnr_DevicesList_Check that Applications filter is working correct", new string[] {
                         "Evergreen",
                         "Devices",
                         "Evergreen_FiltersFeature",
@@ -1689,8 +1684,8 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_FiltersFeature
         }
         
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestMethodAttribute()]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.DescriptionAttribute("EvergreenJnr_DevicesList_Filters_ Check that Applications filter is contains all " +
-            "expected associations")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.DescriptionAttribute("EvergreenJnr_DevicesList_Check that Applications filter is contains all expected " +
+            "associations")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("FeatureTitle", "FiltersDisplay")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("Evergreen")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("Devices")]
@@ -1698,10 +1693,10 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_FiltersFeature
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("FiltersDisplay")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("DAS-10696")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("Delete_Newly_Created_List")]
-        public virtual void EvergreenJnr_DevicesList_Filters_CheckThatApplicationsFilterIsContainsAllExpectedAssociations()
+        public virtual void EvergreenJnr_DevicesList_CheckThatApplicationsFilterIsContainsAllExpectedAssociations()
         {
-            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("EvergreenJnr_DevicesList_Filters_ Check that Applications filter is contains all " +
-                    "expected associations", new string[] {
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("EvergreenJnr_DevicesList_Check that Applications filter is contains all expected " +
+                    "associations", new string[] {
                         "Evergreen",
                         "Devices",
                         "Evergreen_FiltersFeature",

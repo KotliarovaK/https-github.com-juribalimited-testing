@@ -12,7 +12,7 @@ Background: Pre-Conditions
 	Then Evergreen Dashboards page should be displayed to the user
 
 @Evergreen @Devices @Evergreen_FiltersFeature @RemoveFilter @DAS-11009
-Scenario: Evergreen Jnr_DevicesList_Check that reset is updating row count
+Scenario: EvergreenJnr_DevicesList_Check that reset is updating row count
 	When User clicks "Devices" on the left-hand menu
 	Then "Devices" list should be displayed to the user
 	When User clicks the Filters button
@@ -34,7 +34,7 @@ Scenario: Evergreen Jnr_DevicesList_Check that reset is updating row count
 	And User is logged out
 
 @Evergreen @Devices @Evergreen_FiltersFeature @RemoveFilter @DAS-11044
-Scenario: Evergreen Jnr_DevicesList_Check that delete by url is updating row count
+Scenario: EvergreenJnr_DevicesList_Check that delete by url is updating row count
 	When User clicks "Devices" on the left-hand menu
 	Then "Devices" list should be displayed to the user
 	When User clicks the Filters button
@@ -58,7 +58,7 @@ Scenario: Evergreen Jnr_DevicesList_Check that delete by url is updating row cou
 	And User is logged out
 
 @Evergreen @Users @Evergreen_FiltersFeature @RemoveFilter @DAS-11009
-Scenario: Evergreen Jnr_UsersList_Check that delete part of filter from url is updating row count
+Scenario: EvergreenJnr_UsersList_Check that delete part of filter from url is updating row count
 	When User clicks "Users" on the left-hand menu
 	Then "Users" list should be displayed to the user
 	When User clicks the Filters button
@@ -83,7 +83,7 @@ Scenario: Evergreen Jnr_UsersList_Check that delete part of filter from url is u
 	And User is logged out
 
 @Evergreen @Mailboxes @Evergreen_FilterFeature @RemoveFilter @DAS-10996
-Scenario: Evergreen Jnr_MailboxesList_Check that filters is reset and data on the grid updated back to the full data set
+Scenario: EvergreenJnr_MailboxesList_Check that filters is reset and data on the grid updated back to the full data set
 	When User clicks "Mailboxes" on the left-hand menu
 	Then "Mailboxes" list should be displayed to the user
 	When User clicks the Filters button

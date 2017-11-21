@@ -12,7 +12,7 @@ Background: Pre-Conditions
 	Then Evergreen Dashboards page should be displayed to the user
 
 @Evergreen @Users @Evergreen_FiltersFeature @FiltersFunctionality @DAS-10612
-Scenario: Evergreen Jnr_UsersList_Check that 500 error is not returned for filter with special charecter
+Scenario: EvergreenJnr_UsersList_Check that 500 error is not returned for filter with special charecter
 	When User clicks "Users" on the left-hand menu
 	Then "Users" list should be displayed to the user
 	When User clicks the Filters button
@@ -26,7 +26,7 @@ Scenario: Evergreen Jnr_UsersList_Check that 500 error is not returned for filte
 	And User is logged out
 
 @Evergreen @Applications @Evergreen_FiltersFeature @FiltersFunctionality @DAS-10639
-Scenario: Evergreen Jnr_ApplicationsList_Check 500 error is not returned for boolean filter with Unknown option
+Scenario: EvergreenJnr_ApplicationsList_Check 500 error is not returned for boolean filter with Unknown option
 	When User clicks "Applications" on the left-hand menu
 	Then "Applications" list should be displayed to the user
 	When User clicks the Filters button
@@ -60,7 +60,7 @@ Scenario: Evergreen Jnr_ApplicationsList_Check 500 error is not returned for boo
 	And User is logged out
 
 @Evergreen @Applications @EvergreenJnr_FiltersFeature @FilterFunctionality @DAS-10734
-Scenario: Evergreen Jnr_ApplicationsList_Check that add column checkbox works currectly
+Scenario: EvergreenJnr_ApplicationsList_Check that add column checkbox works currectly
 	When User clicks "Applications" on the left-hand menu
 	Then "Applications" list should be displayed to the user
 	When User clicks the Filters button
@@ -70,7 +70,7 @@ Scenario: Evergreen Jnr_ApplicationsList_Check that add column checkbox works cu
 	| SelectedCheckboxes  |
 	| A Star Packages     |
 	Then "Windows7Mi: Category" filter is added to the list
-	Then table data is filtred currectly
+	Then table data is filtred correctly
 	When User clicks the Logout button
 	Then Signed Out page is displayed to the user
 	And User is logged out

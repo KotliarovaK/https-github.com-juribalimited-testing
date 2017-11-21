@@ -92,22 +92,22 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_Columns
         }
         
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestMethodAttribute()]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.DescriptionAttribute("Evergreen Jnr_ApplicationsList_Check category heading when all columns from categ" +
-            "ory are added")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.DescriptionAttribute("EvergreenJnr_DevicesList_Check category heading when all columns from category ar" +
+            "e added")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("FeatureTitle", "ColumnSectionDisplay")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("Evergreen")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("Devices")]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("ColumnSectionDisplay")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("EvergreenJnr_Columns")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("ColumnSectionDisplay")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("DAS-10584")]
-        public virtual void EvergreenJnr_ApplicationsList_CheckCategoryHeadingWhenAllColumnsFromCategoryAreAdded()
+        public virtual void EvergreenJnr_DevicesList_CheckCategoryHeadingWhenAllColumnsFromCategoryAreAdded()
         {
-            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Evergreen Jnr_ApplicationsList_Check category heading when all columns from categ" +
-                    "ory are added", new string[] {
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("EvergreenJnr_DevicesList_Check category heading when all columns from category ar" +
+                    "e added", new string[] {
                         "Evergreen",
                         "Devices",
-                        "ColumnSectionDisplay",
                         "EvergreenJnr_Columns",
+                        "ColumnSectionDisplay",
                         "DAS-10584"});
             this.ScenarioSetup(scenarioInfo);
             this.FeatureBackground();
