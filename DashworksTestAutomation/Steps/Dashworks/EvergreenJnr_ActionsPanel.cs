@@ -84,5 +84,14 @@ namespace DashworksTestAutomation.Steps.Dashworks
             var dashboardPage = _driver.NowAt<BaseDashboardPage>();
             Assert.IsFalse(dashboardPage.SelectAllCheckbox.Displayed(), "Select All checkbox is displayed");
         }
+
+        [Then(@"User create static list with ""(.*)"" name")]
+        public void ThenUserCreateStaticListWithName(string listName)
+        {
+            var listElement = _driver.NowAt<ActionsElement>();
+            _driver.WaitWhileControlIsNotDisplayed<ActionsElement>(() => listElement.CreateButton);
+            listElement.ListNameTextbox.SendKeys(listName);
+            listElement.CreateButton.Click();
+        }
     }
 }

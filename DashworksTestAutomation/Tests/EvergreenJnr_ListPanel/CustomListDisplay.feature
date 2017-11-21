@@ -12,7 +12,7 @@ Background: Pre-Conditions
 	Then Evergreen Dashboards page should be displayed to the user
 
 @Evergreen @Devices @EvergreenJnr_ListPanel @CustomListDisplay @DAS-11003
-Scenario: Evergreen Jnr_DevicesList_Check that custom list creation block is not displayed when deleting a filter in default list
+Scenario: EvergreenJnr_DevicesList_Check that custom list creation block is not displayed when deleting a filter in default list
 	When User clicks "Devices" on the left-hand menu
 	Then "Devices" list should be displayed to the user
 	When User clicks the Filters button
@@ -29,7 +29,7 @@ Scenario: Evergreen Jnr_DevicesList_Check that custom list creation block is not
 	And User is logged out
 
 @Evergreen @Devices @EvergreenJnr_ListPanel @CustomListDisplay @DAS-11003
-Scenario: Evergreen Jnr_DevicesList_Check that custom list creation block is not displayed when reseting a filter in default list
+Scenario: EvergreenJnr_DevicesList_Check that custom list creation block is not displayed when reseting a filter in default list
 	When User clicks "Devices" on the left-hand menu
 	Then "Devices" list should be displayed to the user
 	When User clicks the Filters button
@@ -46,7 +46,7 @@ Scenario: Evergreen Jnr_DevicesList_Check that custom list creation block is not
 	And User is logged out
 
 @Evergreen @Devices @EvergreenJnr_ListPanel @CustomListDisplay @DAS-11017 @Delete_Newly_Created_List
-Scenario: Evergreen Jnr_DevicesList_Check that custom list creation block is not displayed when deleting a filter in custom list
+Scenario: EvergreenJnr_DevicesList_Check that custom list creation block is not displayed when deleting a filter in custom list
 	When User clicks "Devices" on the left-hand menu
 	Then "Devices" list should be displayed to the user
 	When User clicks the Filters button
@@ -72,7 +72,7 @@ Scenario: Evergreen Jnr_DevicesList_Check that custom list creation block is not
 	When User update current custom list
 
 @Evergreen @Devices @EvergreenJnr_ListPanel @CustomListDisplay @DAS-11017 @Delete_Newly_Created_List
-Scenario: Evergreen Jnr_DevicesList_Check that custom list creation block is not displayed when reseting a filter in custom list
+Scenario: EvergreenJnr_DevicesList_Check that custom list creation block is not displayed when reseting a filter in custom list
 	When User clicks "Devices" on the left-hand menu
 	Then "Devices" list should be displayed to the user
 	When User clicks the Filters button
@@ -96,7 +96,7 @@ Scenario: Evergreen Jnr_DevicesList_Check that custom list creation block is not
 	When User update current custom list
 
 @Evergreen @Devices @EvergreenJnr_ListPanel @CustomListDisplay @DAS-10998
-Scenario: Evergreen Jnr_DevicesList_agGrid_Check that Search does not trigger new Custom List
+Scenario: EvergreenJnr_DevicesList_agGrid_Check that Search does not trigger new Custom List
 	When User clicks "Devices" on the left-hand menu
 	Then "Devices" list should be displayed to the user
 	And User enters SearchCriteria into the agGrid Search Box and the correct NumberOfRows are returned
@@ -108,7 +108,7 @@ Scenario: Evergreen Jnr_DevicesList_agGrid_Check that Search does not trigger ne
 	And User is logged out
 
 @Evergreen @Devices @EvergreenJnr_ListPanel @CustomListDisplay @DAS-10704
-Scenario: Evergreen Jnr_DevicesList_agGrid_Check that quick search doesn't triggers new list menu
+Scenario: EvergreenJnr_DevicesList_agGrid_Check that quick search doesn't triggers new list menu
 	When User clicks "Devices" on the left-hand menu
 	Then "Devices" list should be displayed to the user
 	Then User enters SearchCriteria into the agGrid Search Box and the correct NumberOfRows are returned
@@ -120,17 +120,17 @@ Scenario: Evergreen Jnr_DevicesList_agGrid_Check that quick search doesn't trigg
 	And User is logged out
 
 @Evergreen @Devices @EvergreenJnr_ListPanel @CustomListDisplay @DAS-11081 @Delete_Newly_Created_List
-Scenario: Evergreen Jnr_DevicesList_agGrid_Check that 'new list created' message is displayed
+Scenario: EvergreenJnr_DevicesList_agGrid_Check that 'new list created' message for static list is displayed
 	When User clicks "Devices" on the left-hand menu
 	Then "Devices" list should be displayed to the user
-	When User clicks the Columns button
-	Then Columns panel is displayed to the user
-	When ColumnName is entered into the search box and the selection is clicked
-	| ColumnName |
-	| Import     |
-	Then ColumnName is added to the list
-	| ColumnName |
-	| Import     |
-	When User create custom list with "TestList" name
+	When User clicks the Actions button
+	Then Actions panel is displayed to the user
+	When User select all rows
+	Then Actions panel is displayed to the user
+	And User create static list with "TestList" name
 	Then "TestList" is displayed to user
+	When User click on 'Hostname' column header
+	Then data in table is sorted by 'Hostname' column in descenting order
+	Then User save change in list with "UnbelievableTestList" name
+	Then "UnbelievableTestList" is displayed to user
 	And "New list created" message is displayed
