@@ -74,3 +74,11 @@ Scenario: EvergreenJnr_ApplicationsList_Check that add column checkbox works cur
 	When User clicks the Logout button
 	Then Signed Out page is displayed to the user
 	And User is logged out
+
+@Evergreen @Applications @EvergreenJnr_FiltersFeature @FilterFunctionality @DAS-11166
+Scenario: EvergreenJnr_ApplicationsList_Check thet filter be restored after going back to the list again
+	When User clicks "Applications" on the left-hand menu
+	Then "Applications" list should be displayed to the user
+	When User clicks the Filters button
+	Then Filters panel is displayed to the user
+	When user select "Application" filter
