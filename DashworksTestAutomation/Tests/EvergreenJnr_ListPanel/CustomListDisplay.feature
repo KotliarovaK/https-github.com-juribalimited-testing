@@ -57,7 +57,7 @@ Scenario: EvergreenJnr_DevicesList_Check that custom list creation block is not 
 	| None                |
 	Then "Windows7Mi: Category" filter is added to the list
 	When User create custom list with "TestList" name
-	Then "TestList" is displayed to user
+	Then "TestList" list is displayed to user
 	When User clicks the Filters button
 	Then Filters panel is displayed to the user
 	When user select "Directory Type" filter
@@ -83,7 +83,7 @@ Scenario: EvergreenJnr_DevicesList_Check that custom list creation block is not 
 	| None                |
 	Then "Windows7Mi: Category" filter is added to the list
 	When User create custom list with "TestList" name
-	Then "TestList" is displayed to user
+	Then "TestList" list is displayed to user
 	When User clicks the Filters button
 	Then Filters panel is displayed to the user
 	When user select "Directory Type" filter
@@ -128,9 +128,9 @@ Scenario: EvergreenJnr_DevicesList_agGrid_Check that 'new list created' message 
 	When User select all rows
 	Then Actions panel is displayed to the user
 	And User create static list with "TestList" name
-	Then "TestList" is displayed to user
+	Then "TestList" list is displayed to user
 	When User click on 'Hostname' column header
 	Then data in table is sorted by 'Hostname' column in descenting order
 	Then User save change in list with "UnbelievableTestList" name
-	Then "UnbelievableTestList" is displayed to user
+	Then "UnbelievableTestList" list is displayed to user
 	And "New list created" message is displayed

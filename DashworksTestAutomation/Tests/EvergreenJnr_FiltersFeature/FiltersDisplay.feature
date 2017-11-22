@@ -59,7 +59,7 @@ Scenario: EvergreenJnr_UsersList_Check special characters display in filter info
 	| Values           |
 	| O'Conn"/\or#@!() |
 	When User create custom list with "TestList" name
-	Then "TestList" is displayed to user
+	Then "TestList" list is displayed to user
 	When User clicks the Filters button
 	Then Filters panel is displayed to the user
 	Then Values is displayed in added filter info
@@ -67,7 +67,7 @@ Scenario: EvergreenJnr_UsersList_Check special characters display in filter info
 	| O'Conn"/\or#@!() |
 	When User navigates to the "All Users" list
 	When User navigates to the "TestList" list
-	Then "TestList" is displayed to user
+	Then "TestList" list is displayed to user
 	When User clicks the Filters button
 	Then Filters panel is displayed to the user
 	Then Values is displayed in added filter info
@@ -231,7 +231,7 @@ Scenario: EvergreenJnr_DevicesList_Check that filter data is displayed correctly
 	| Values          |
 	| 00BDM1JUR8IF419 |
 	When User create custom list with "TestList" name
-	Then "TestList" is displayed to user
+	Then "TestList" list is displayed to user
 	When User clicks the Filters button
 	Then Filters panel is displayed to the user
 	Then Values is displayed in added filter info
@@ -239,7 +239,7 @@ Scenario: EvergreenJnr_DevicesList_Check that filter data is displayed correctly
 	| 00BDM1JUR8IF419 |
 	When User navigates to the "All Devices" list
 	When User navigates to the "TestList" list
-	Then "TestList" is displayed to user
+	Then "TestList" list is displayed to user
 	When User clicks the Filters button
 	Then Filters panel is displayed to the user
 	Then Values is displayed in added filter info
@@ -264,7 +264,7 @@ Scenario: EvergreenJnr_UsersList_Check that filter data is displayed correctly w
 	| Red, Amber |
 	| Green      |
 	When User create custom list with "TestList" name
-	Then "TestList" is displayed to user
+	Then "TestList" list is displayed to user
 	When User clicks the Filters button
 	Then Filters panel is displayed to the user
 	Then Values is displayed in added filter info
@@ -273,7 +273,7 @@ Scenario: EvergreenJnr_UsersList_Check that filter data is displayed correctly w
 	| Green      |
 	When User navigates to the "All Users" list
 	When User navigates to the "TestList" list
-	Then "TestList" is displayed to user
+	Then "TestList" list is displayed to user
 	When User clicks the Filters button
 	Then Filters panel is displayed to the user
 	Then Values is displayed in added filter info
@@ -294,7 +294,7 @@ Scenario: EvergreenJnr_ApplicationsList_Check that filter data is displayed corr
 	| Values |
 	| 1      |
 	When User create custom list with "TestList" name
-	Then "TestList" is displayed to user
+	Then "TestList" list is displayed to user
 	When User clicks the Filters button
 	Then Filters panel is displayed to the user
 	Then Values is displayed in added filter info
@@ -302,7 +302,7 @@ Scenario: EvergreenJnr_ApplicationsList_Check that filter data is displayed corr
 	| 1      |
 	When User navigates to the "All Applications" list
 	When User navigates to the "TestList" list
-	Then "TestList" is displayed to user
+	Then "TestList" list is displayed to user
 	When User clicks the Filters button
 	Then Filters panel is displayed to the user
 	Then Values is displayed in added filter info
@@ -322,7 +322,7 @@ Scenario: EvergreenJnr_MailboxesList_Check that filter data is displayed correct
 	| Values      |
 	| 17 Nov 2017 |
 	When User create custom list with "TestList" name
-	Then "TestList" is displayed to user
+	Then "TestList" list is displayed to user
 	When User clicks the Filters button
 	Then Filters panel is displayed to the user
 	Then Values is displayed in added filter info
@@ -330,7 +330,7 @@ Scenario: EvergreenJnr_MailboxesList_Check that filter data is displayed correct
 	| 17 Nov 2017 |
 	When User navigates to the "All mailboxes" list
 	When User navigates to the "TestList" list
-	Then "TestList" is displayed to user
+	Then "TestList" list is displayed to user
 	When User clicks the Filters button
 	Then Filters panel is displayed to the user
 	Then Values is displayed in added filter info
@@ -501,7 +501,7 @@ Scenario: EvergreenJnr_DevicesList_Check that Applications filter is working cor
 	| ColumnName      |
 	| Application Key |
 	When User create custom list with "TestList" name
-	Then "TestList" is displayed to user
+	Then "TestList" list is displayed to user
 	When User clicks "Devices" on the left-hand menu
 	Then "Devices" list should be displayed to the user
 	When User clicks the Filters button
@@ -526,7 +526,7 @@ Scenario: EvergreenJnr_DevicesList_Check that Applications filter is contains al
 	| ColumnName      |
 	| Application Key |
 	When User create custom list with "TestList" name
-	Then "TestList" is displayed to user
+	Then "TestList" list is displayed to user
 	When User clicks "Devices" on the left-hand menu
 	Then "Devices" list should be displayed to the user
 	When User clicks the Filters button

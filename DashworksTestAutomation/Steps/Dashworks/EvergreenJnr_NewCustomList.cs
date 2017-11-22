@@ -42,8 +42,8 @@ namespace DashworksTestAutomation.Steps.Dashworks
             listElement.SaveButton.Click();
         }
 
-        [Then(@"""(.*)"" is displayed to user")]
-        public void ThenIsDisplayedToUser(string listName)
+        [Then(@"""(.*)"" list is displayed to user")]
+        public void ThenListIsDisplayedToUser(string listName)
         {
             var page = _driver.NowAt<BaseDashboardPage>();
 
