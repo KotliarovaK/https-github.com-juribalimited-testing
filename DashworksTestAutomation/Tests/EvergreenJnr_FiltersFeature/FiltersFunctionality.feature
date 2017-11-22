@@ -18,7 +18,9 @@ Scenario: EvergreenJnr_UsersList_Check that 500 error is not returned for filter
 	When User clicks the Filters button
 	Then Filters panel is displayed to the user
 	When user select "Display Name" filter
-	When User have created "Equals" filter with "true" column checkbox and "Jeremiah S. O'Connor" option
+	And User have create "Equals" Values filter with column and following options:
+	| Values               |
+	| Jeremiah S. O'Connor |
 	Then "Display Name" filter is added to the list
 	Then "2" rows are displayed in the agGrid
 	When User clicks the Logout button
@@ -75,10 +77,26 @@ Scenario: EvergreenJnr_ApplicationsList_Check that add column checkbox works cur
 	Then Signed Out page is displayed to the user
 	And User is logged out
 
-@Evergreen @Applications @EvergreenJnr_FiltersFeature @FilterFunctionality @DAS-11166
-Scenario: EvergreenJnr_ApplicationsList_Check thet filter be restored after going back to the list again
+@Evergreen @Applications @EvergreenJnr_FiltersFeature @FilterFunctionality @DAS-11166 @Delete_Newly_Created_List
+Scenario: EvergreenJnr_ApplicationsList_Check that filter is restored after going back to the list again
 	When User clicks "Applications" on the left-hand menu
 	Then "Applications" list should be displayed to the user
 	When User clicks the Filters button
 	Then Filters panel is displayed to the user
 	When user select "Application" filter
+	And User have create "Equals" Values filter with column and following options:
+	| Values                                       |
+	| Microsoft Office 97, Professional Edition    |
+	| Microsoft Office 97, Developer Edition Tools |
+	| Microsoft Office 97, Standard Edition        |
+	Then "Application" filter is added to the list
+	When User create custom list with "TestList" name
+	Then "TestList" list is displayed to user
+	And "9" rows are displayed in the agGrid
+	When User navigates to the "All Applications" list
+	Then "Applications" list should be displayed to the user
+	When User navigates to the "TestList" list
+	Then "9" rows are displayed in the agGrid
+	When User clicks the Logout button
+	Then Signed Out page is displayed to the user
+	And User is logged out

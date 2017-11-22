@@ -56,12 +56,11 @@ namespace DashworksTestAutomation.Steps.Dashworks
             filter.Do();
         }
 
-        [When(@"User have created ""(.*)"" filter with ""(.*)"" column checkbox and ""(.*)"" option")]
-        public void WhenUserHaveCreatedFilterWithColumnCheckboxAndOption(string filterType, bool columnOption,
-            string filterValue)
+        [When(@"User have create ""(.*)"" Values filter with column and following options:")]
+        public void WhenUserHaveCreateValuesFilterWithColumnAndFollowingOptions(string filterType, Table table)
         {
             var filterElement = _driver.NowAt<FiltersElement>();
-            var filter = new ValueFilter(_driver, filterType, columnOption, filterValue);
+            var filter = new ValueFilter(_driver, filterType, true, table);
             filter.Do();
         }
 
@@ -72,7 +71,6 @@ namespace DashworksTestAutomation.Steps.Dashworks
             var filter = new ListFilter(_driver, table);
             filter.Do();
         }
-
 
         [Then(@"""(.*)"" filter is added to the list")]
         public void ThenFilterIsAddedToTheList(string filterName)
