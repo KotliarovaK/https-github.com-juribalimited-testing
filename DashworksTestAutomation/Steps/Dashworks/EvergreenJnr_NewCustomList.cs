@@ -42,8 +42,8 @@ namespace DashworksTestAutomation.Steps.Dashworks
             listElement.SaveButton.Click();
         }
 
-        [Then(@"""(.*)"" is displayed to user")]
-        public void ThenIsDisplayedToUser(string listName)
+        [Then(@"""(.*)"" list is displayed to user")]
+        public void ThenListIsDisplayedToUser(string listName)
         {
             var page = _driver.NowAt<BaseDashboardPage>();
 
@@ -58,6 +58,19 @@ namespace DashworksTestAutomation.Steps.Dashworks
             listElement.SaveAsDropdown.Click();
             _driver.WaitWhileControlIsNotDisplayed<CustomListElement>(() => listElement.UpdateCurrentListButton);
             listElement.UpdateCurrentListButton.Click();
+        }
+
+        [Then(@"User save change in list with ""(.*)"" name")]
+        public void ThenUserSaveChangeInListWithName(string listName)
+        {
+            var listElement = _driver.NowAt<CustomListElement>();
+            _driver.WaitWhileControlIsNotDisplayed<CustomListElement>(() => listElement.SaveAsDropdown);
+            listElement.SaveAsDropdown.Click();
+            _driver.WaitWhileControlIsNotDisplayed<CustomListElement>(() => listElement.SaveAsNewListButton);
+            listElement.SaveAsNewListButton.Click();
+            _driver.WaitWhileControlIsNotDisplayed<CustomListElement>(() => listElement.SaveButton);
+            listElement.ListNameTextbox.SendKeys(listName);
+            listElement.SaveButton.Click();
         }
 
         [Then(@"Edit List menu is displayed")]

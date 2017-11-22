@@ -24,7 +24,7 @@ Scenario: EvergreenJnr_DevicesList_agGrid_Check that quick search reset when mov
 	| ColumnName |
 	| Build Date |
 	When User create custom list with "TestList" name
-	Then "TestList" is displayed to user
+	Then "TestList" list is displayed to user
 	Then User enters SearchCriteria into the agGrid Search Box and the correct NumberOfRows are returned
 	| SearchCriteria | NumberOfRows |
 	| Smith          | 11           |
