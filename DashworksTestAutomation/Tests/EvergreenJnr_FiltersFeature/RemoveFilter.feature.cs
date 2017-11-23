@@ -118,11 +118,10 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_FiltersFeature
                         "SelectedCheckboxes"});
             table1.AddRow(new string[] {
                         "Unknown"});
-            testRunner.And("User have created \"Equals\" filter with \"true\" column checkbox and following optio" +
-                    "ns:", ((string)(null)), table1, "And ");
+            testRunner.And("User have created \"Equals\" filter with column and following options:", ((string)(null)), table1, "And ");
             testRunner.Then("\"Compliance\" filter is added to the list", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
             testRunner.And("\"75\" rows are displayed in the agGrid", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-            testRunner.And("table data is filtred currectly", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+            testRunner.And("table data is filtred correctly", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
             testRunner.When("User have reset all filters", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
             TechTalk.SpecFlow.Table table2 = new TechTalk.SpecFlow.Table(new string[] {
                         "ColumnName"});
@@ -163,11 +162,10 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_FiltersFeature
                         "SelectedCheckboxes"});
             table3.AddRow(new string[] {
                         "Unknown"});
-            testRunner.And("User have created \"Equals\" filter with \"true\" column checkbox and following optio" +
-                    "ns:", ((string)(null)), table3, "And ");
+            testRunner.And("User have created \"Equals\" filter with column and following options:", ((string)(null)), table3, "And ");
             testRunner.Then("\"Compliance\" filter is added to the list", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
             testRunner.And("\"75\" rows are displayed in the agGrid", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-            testRunner.And("table data is filtred currectly", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+            testRunner.And("table data is filtred correctly", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
             testRunner.When("User is remove filter by URL", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
             TechTalk.SpecFlow.Table table4 = new TechTalk.SpecFlow.Table(new string[] {
                         "ColumnName"});
@@ -216,11 +214,10 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_FiltersFeature
                         "Amber"});
             table5.AddRow(new string[] {
                         "Green"});
-            testRunner.And("User have created \"Equals\" filter with \"true\" column checkbox and following optio" +
-                    "ns:", ((string)(null)), table5, "And ");
+            testRunner.And("User have created \"Equals\" filter with column and following options:", ((string)(null)), table5, "And ");
             testRunner.Then("\"Compliance\" filter is added to the list", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
             testRunner.And("\"41,161\" rows are displayed in the agGrid", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-            testRunner.And("table data is filtred currectly", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+            testRunner.And("table data is filtred correctly", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
             testRunner.When("User is remove part of filter by URL", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
             TechTalk.SpecFlow.Table table6 = new TechTalk.SpecFlow.Table(new string[] {
                         "ColumnName"});
@@ -264,11 +261,10 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_FiltersFeature
                         "SelectedCheckboxes"});
             table7.AddRow(new string[] {
                         "London"});
-            testRunner.And("User have created \"Equals\" filter with \"true\" column checkbox and following optio" +
-                    "ns:", ((string)(null)), table7, "And ");
+            testRunner.And("User have created \"Equals\" filter with column and following options:", ((string)(null)), table7, "And ");
             testRunner.Then("\"City\" filter is added to the list", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
             testRunner.And("\"1,000\" rows are displayed in the agGrid", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-            testRunner.And("table data is filtred currectly", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+            testRunner.And("table data is filtred correctly", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
             testRunner.When("User have reset all filters", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
             TechTalk.SpecFlow.Table table8 = new TechTalk.SpecFlow.Table(new string[] {
                         "ColumnName"});

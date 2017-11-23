@@ -86,10 +86,19 @@ namespace DashworksTestAutomation.Pages.Evergreen
                 AddNewFilterButton.Click();
             }
             SearchTextbox.SendKeys(filterName);
-            var selector = By.XPath($".//div[contains(@class, 'filter-add')][text()='{filterName}']");
-
-            Driver.WaitWhileControlIsNotDisplayed(selector);
-            Driver.FindElement(selector).Click();
+            var selector = string.Empty;
+            if (filterName.Contains("'"))
+            {
+                var strings = filterName.Split('\'');
+                selector =
+                    $".//div[contains(@class, 'filter-add')][contains(text(),'{strings[0]}')][contains(text(), '{strings[1]}')]";
+            }
+            else
+            {
+                selector = $".//div[contains(@class, 'filter-add')][text()='{filterName}']";
+            }
+            Driver.WaitWhileControlIsNotDisplayed(By.XPath(selector));
+            Driver.FindElement(By.XPath(selector)).Click();
 
             Driver.WaitForDataLoading();
             Driver.WaitWhileControlIsDisplayed<FiltersElement>(() => AddNewFilterButton);

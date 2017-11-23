@@ -32,7 +32,7 @@ Scenario: EvergreenJnr_ApplicationsList_Check true-false options and images in f
 	Then Filters panel is displayed to the user
 	When user select "Windows7Mi: Hide from End Users" filter
 	Then correct true and false options are displayed in filter settings
-	When User have created "Equals" filter with "false" column checkbox and following options:
+	When User have created "Equals" filter without column and following options:
 	| SelectedCheckboxes |
 	| TRUE               |
 	| FALSE              |
@@ -53,7 +53,9 @@ Scenario: EvergreenJnr_UsersList_Check special characters display in filter info
 	When User clicks the Filters button
 	Then Filters panel is displayed to the user
 	When user select "Display Name" filter
-	When User have created "Equals" filter with "true" column checkbox and "O'Conn"/\or#@!()" option
+	When User have create "Equals" Values filter with column and following options:
+	| Values           |
+	| O'Conn"/\or#@!() |
 	Then "Display Name" filter is added to the list
 	Then Values is displayed in added filter info
 	| Values           |
@@ -95,8 +97,7 @@ Scenario: EvergreenJnr_DevicesList_Check that "Empty" and "Not Empty" options is
 	When User clicks the Filters button
 	Then Filters panel is displayed to the user
 	When user select "AD Object Key" filter
-	Then "Empty" option is available for this filter
-	Then "Not empty" option is available for this filter
+	Then "Empty, Not empty" option is available for this filter
 
 @Evergreen @Devices @Evergreen_FiltersFeature @FiltersDisplay @DAS-10795
 Scenario: EvergreenJnr_DevicesList_Check that 'Add column' option as available for "Operating System" filter
@@ -225,7 +226,9 @@ Scenario: EvergreenJnr_DevicesList_Check that filter data is displayed correctly
 	When User clicks the Filters button
 	Then Filters panel is displayed to the user
 	When user select "Hostname" filter
-	When User have created "Equals" filter with "true" column checkbox and "00BDM1JUR8IF419" option
+	And User have create "Equals" Values filter with column and following options:
+	| Values          |
+	| 00BDM1JUR8IF419 |
 	Then "Hostname" filter is added to the list
 	Then Values is displayed in added filter info
 	| Values          |
@@ -253,7 +256,7 @@ Scenario: EvergreenJnr_UsersList_Check that filter data is displayed correctly w
 	When User clicks the Filters button
 	Then Filters panel is displayed to the user
 	When user select "Compliance" filter
-	When User have created "Does not equal" filter with "true" column checkbox and following options:
+	When User have created "Does not equal" filter with column and following options:
 	| SelectedCheckboxes |
 	| Red                |
 	| Amber              |
@@ -288,7 +291,9 @@ Scenario: EvergreenJnr_ApplicationsList_Check that filter data is displayed corr
 	When User clicks the Filters button
 	Then Filters panel is displayed to the user
 	When user select "Device Count (Entitled)" filter
-	When User have created "Greater than or equal to" filter with "true" column checkbox and "1" option
+	When User have create "Greater than or equal to" Values filter with column and following options:
+	| Values |
+	| 1      |
 	Then "Device Count (Entitled)" filter is added to the list
 	Then Values is displayed in added filter info
 	| Values |
@@ -316,7 +321,9 @@ Scenario: EvergreenJnr_MailboxesList_Check that filter data is displayed correct
 	When User clicks the Filters button
 	Then Filters panel is displayed to the user
 	When user select "Created Date" filter
-	When User have created "Before" filter with "true" column checkbox and "Fri Nov 17 2017" option
+	And User have create "Before" Values filter with column and following options:
+	| Values          |
+	| Fri Nov 17 2017 |
 	Then "Created Date" filter is added to the list
 	Then Values is displayed in added filter info
 	| Values      |
@@ -344,7 +351,9 @@ Scenario Outline: EvergreenJnr_DevicesList_Check that filter Operators is correc
 	When User clicks the Filters button
 	Then Filters panel is displayed to the user
 	When user select "Hostname" filter
-	When User have created "<operatorValue>" filter with "true" column checkbox and "<filterOption>" option
+	And User have create "<operatorValue>" Values filter with column and following options:
+	| Values                                    |
+	| <filterOption> |
 	Then "Hostname" filter is added to the list
 	Then "<rowsCount>" rows are displayed in the agGrid
 	Then Options is displayed in added filter info
@@ -396,7 +405,9 @@ Scenario Outline: EvergreenJnr_ApplicationsList_Check that filter Operators is c
 	When User clicks the Filters button
 	Then Filters panel is displayed to the user
 	When user select "Device Count (Entitled)" filter
-	When User have created "<operatorValue>" filter with "true" column checkbox and "<filterOption>" option
+	And User have create "<operatorValue>" Values filter with column and following options:
+	| Values         |
+	| <filterOption> |
 	Then "Device Count (Entitled)" filter is added to the list
 	Then "<rowsCount>" rows are displayed in the agGrid
 	Then Options is displayed in added filter info
@@ -422,7 +433,9 @@ Scenario Outline: EvergreenJnr_MailboxesList_Check that filter Operators is corr
 	When User clicks the Filters button
 	Then Filters panel is displayed to the user
 	When user select "Created Date" filter
-	When User have created "<operatorValue>" filter with "true" column checkbox and "<filterOption>" option
+	And User have create "<operatorValue>" Values filter with column and following options:
+	| Values         |
+	| <filterOption> |
 	Then "Created Date" filter is added to the list
 	Then "<rowsCount>" rows are displayed in the agGrid
 	Then Options is displayed in added filter info
@@ -448,7 +461,9 @@ Scenario Outline: EvergreenJnr_DevicesList_Check that filter Operators is correc
 	When User clicks the Filters button
 	Then Filters panel is displayed to the user
 	When user select "Windows7Mi: Date & Time Task" filter
-	When User have created "<operatorValue>" filter with "true" column checkbox and "<filterOption>" option
+	And User have create "<operatorValue>" Values filter with column and following options:
+	| Values         |
+	| <filterOption> |
 	Then "Windows7Mi: Date & Time Task" filter is added to the list
 	Then "<rowsCount>" rows are displayed in the agGrid
 	Then Options is displayed in added filter info
