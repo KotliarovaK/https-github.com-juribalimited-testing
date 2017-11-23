@@ -85,7 +85,7 @@ namespace DashworksTestAutomation.Helpers
             _driver.WaitForDataLoading();
             _driver.FindElement(By.XPath(".//div[@class='filterAddPanel']//input[@placeholder='Search']"))
                 .SendKeys(_value);
-            _driver.FindElement(By.XPath($".//div[@class='filterAddPanel']//span[text()='{_value}']")).Click();
+            _driver.FindElement(By.XPath($".//div[@class='filterAddPanel']//span[contains(text(),'{_value}')]")).Click();
             SaveFilter();
         }
     }

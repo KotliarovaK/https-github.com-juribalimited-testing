@@ -284,8 +284,7 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_Columns
                         "SelectedCheckboxes"});
             table16.AddRow(new string[] {
                         "None"});
-            testRunner.When("User have created \"Equals\" filter with \"true\" column checkbox and following optio" +
-                    "ns:", ((string)(null)), table16, "When ");
+            testRunner.When("User have created \"Equals\" filter with column and following options:", ((string)(null)), table16, "When ");
             testRunner.Then("\"Windows7Mi: Category\" filter is added to the list", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
             testRunner.When("User create custom list with \"TestList\" name", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
             testRunner.Then("\"TestList\" is displayed to user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
@@ -296,8 +295,7 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_Columns
                         "SelectedCheckboxes"});
             table17.AddRow(new string[] {
                         "Generic"});
-            testRunner.When("User have created \"Equals\" filter with \"true\" column checkbox and following optio" +
-                    "ns:", ((string)(null)), table17, "When ");
+            testRunner.When("User have created \"Equals\" filter with column and following options:", ((string)(null)), table17, "When ");
             testRunner.Then("\"Directory Type\" filter is added to the list", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
             testRunner.When("User click on \'Windows7Mi: Category\' column header", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
             testRunner.When("User clicks the Columns button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
@@ -513,16 +511,14 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_Columns
                         "SelectedCheckboxes"});
             table32.AddRow(new string[] {
                         "None"});
-            testRunner.When("User have created \"Equals\" filter with \"true\" column checkbox and following optio" +
-                    "ns:", ((string)(null)), table32, "When ");
+            testRunner.When("User have created \"Equals\" filter with column and following options:", ((string)(null)), table32, "When ");
             testRunner.Then("\"Windows7Mi: Category\" filter is added to the list", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
             testRunner.When("user select \"Directory Type\" filter", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
             TechTalk.SpecFlow.Table table33 = new TechTalk.SpecFlow.Table(new string[] {
                         "SelectedCheckboxes"});
             table33.AddRow(new string[] {
                         "Generic"});
-            testRunner.When("User have created \"Equals\" filter with \"true\" column checkbox and following optio" +
-                    "ns:", ((string)(null)), table33, "When ");
+            testRunner.When("User have created \"Equals\" filter with column and following options:", ((string)(null)), table33, "When ");
             testRunner.Then("\"Directory Type\" filter is added to the list", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
             testRunner.When("User click on \'Windows7Mi: Category\' column header", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
             testRunner.When("User clicks the Columns button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");

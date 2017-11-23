@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 using DashworksTestAutomation.Extensions;
 using DashworksTestAutomation.Pages.Evergreen;
 using NUnit.Framework;
+using OpenQA.Selenium;
 using OpenQA.Selenium.Interactions;
 using OpenQA.Selenium.Remote;
 using TechTalk.SpecFlow;
@@ -70,7 +71,7 @@ namespace DashworksTestAutomation.Steps.Dashworks
             }
         }
 
-        [Then(@"data in table is sorted by '(.*)' column in descenting order")]
+        [Then(@"data in table is sorted by '(.*)' column in descending order")]
         public void ThenDataInTableIsSortedByColumnInDescentingOrder(string columnName)
         {
             var listpageMenu = _driver.NowAt<BaseDashboardPage>();

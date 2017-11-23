@@ -226,8 +226,7 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_GridActions
                         "SelectedCheckboxes"});
             table6.AddRow(new string[] {
                         "None"});
-            testRunner.When("User have created \"Equals\" filter with \"true\" column checkbox and following optio" +
-                    "ns:", ((string)(null)), table6, "When ");
+            testRunner.When("User have created \"Equals\" filter with column and following options:", ((string)(null)), table6, "When ");
             TechTalk.SpecFlow.Table table7 = new TechTalk.SpecFlow.Table(new string[] {
                         "ColumnName"});
             table7.AddRow(new string[] {

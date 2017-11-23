@@ -99,7 +99,7 @@ Scenario: EvergreenJnr_DevicesList_Check that 500 error page is not displayed af
 	When User clicks the Filters button
 	Then Filters panel is displayed to the user
 	When user select "Windows7Mi: Category" filter
-	When User have created "Equals" filter with "true" column checkbox and following options:
+	When User have created "Equals" filter with column and following options:
 	| SelectedCheckboxes  |
 	| None                |
 	Then "Windows7Mi: Category" filter is added to the list
@@ -108,7 +108,7 @@ Scenario: EvergreenJnr_DevicesList_Check that 500 error page is not displayed af
 	When User clicks the Filters button
 	Then Filters panel is displayed to the user
 	When user select "Directory Type" filter
-	When User have created "Equals" filter with "true" column checkbox and following options:
+	When User have created "Equals" filter with column and following options:
 	| SelectedCheckboxes  |
 	| Generic             |
 	Then "Directory Type" filter is added to the list
@@ -219,12 +219,12 @@ Scenario: EvergreenJnr_DevicesList_Check that 500 error page is not displayed af
 	When User clicks the Filters button
 	Then Filters panel is displayed to the user
 	When user select "Windows7Mi: Category" filter
-	When User have created "Equals" filter with "true" column checkbox and following options:
+	When User have created "Equals" filter with column and following options:
 	| SelectedCheckboxes  |
 	| None                |
 	Then "Windows7Mi: Category" filter is added to the list
 	When user select "Directory Type" filter
-	When User have created "Equals" filter with "true" column checkbox and following options:
+	When User have created "Equals" filter with column and following options:
 	| SelectedCheckboxes  |
 	| Generic             |
 	Then "Directory Type" filter is added to the list

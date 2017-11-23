@@ -69,7 +69,7 @@ Scenario: EvergreenJnr_DevicesList_Check that columns order saved after adding a
 	When User clicks the Filters button
 	Then Filters panel is displayed to the user
 	When user select "Windows7Mi: Category" filter
-	When User have created "Equals" filter with "true" column checkbox and following options:
+	When User have created "Equals" filter with column and following options:
 	| SelectedCheckboxes |
 	| None               |
 	Then Column is displayed in following order:

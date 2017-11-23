@@ -18,12 +18,12 @@ Scenario: EvergreenJnr_DevicesList_Check that reset is updating row count
 	When User clicks the Filters button
 	Then Filters panel is displayed to the user
 	When user select "Compliance" filter
-	And User have created "Equals" filter with "true" column checkbox and following options:
+	And User have created "Equals" filter with column and following options:
 	| SelectedCheckboxes |
 	| Unknown            |
 	Then "Compliance" filter is added to the list
 	And "75" rows are displayed in the agGrid
-	And table data is filtred currectly
+	And table data is filtred correctly
 	When User have reset all filters
 	Then ColumnName is added to the list
 	| ColumnName |
@@ -40,12 +40,12 @@ Scenario: EvergreenJnr_DevicesList_Check that delete by url is updating row coun
 	When User clicks the Filters button
 	Then Filters panel is displayed to the user
 	When user select "Compliance" filter
-	And User have created "Equals" filter with "true" column checkbox and following options:
+	And User have created "Equals" filter with column and following options:
 	| SelectedCheckboxes |
 	| Unknown            |
 	Then "Compliance" filter is added to the list
 	And "75" rows are displayed in the agGrid
-	And table data is filtred currectly
+	And table data is filtred correctly
 	When User is remove filter by URL
 	Then ColumnName is added to the list
 	| ColumnName |
@@ -64,14 +64,14 @@ Scenario: EvergreenJnr_UsersList_Check that delete part of filter from url is up
 	When User clicks the Filters button
 	Then Filters panel is displayed to the user
 	When user select "Compliance" filter
-	And User have created "Equals" filter with "true" column checkbox and following options:
+	And User have created "Equals" filter with column and following options:
 	| SelectedCheckboxes |
 	| Red                |
 	| Amber              |
 	| Green              |
 	Then "Compliance" filter is added to the list
 	And "41,161" rows are displayed in the agGrid
-	And table data is filtred currectly
+	And table data is filtred correctly
 	When User is remove part of filter by URL
 	Then ColumnName is added to the list
 	| ColumnName |
@@ -89,12 +89,12 @@ Scenario: EvergreenJnr_MailboxesList_Check that filters is reset and data on the
 	When User clicks the Filters button
 	Then Filters panel is displayed to the user
 	When user select "City" filter
-	And User have created "Equals" filter with "true" column checkbox and following options:
+	And User have created "Equals" filter with column and following options:
 	| SelectedCheckboxes |
 	| London             |
 	Then "City" filter is added to the list
 	And "1,000" rows are displayed in the agGrid
-	And table data is filtred currectly
+	And table data is filtred correctly
 	When User have reset all filters
 	Then ColumnName is added to the list
 	| ColumnName |

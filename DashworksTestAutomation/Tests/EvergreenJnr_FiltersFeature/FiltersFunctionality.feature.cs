@@ -159,8 +159,7 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_FiltersFeature
                         "FALSE"});
             table1.AddRow(new string[] {
                         "UNKNOWN"});
-            testRunner.When("User have created \"Equals\" filter with \"false\" column checkbox and following opti" +
-                    "ons:", ((string)(null)), table1, "When ");
+            testRunner.When("User have created \"Equals\" filter without column and following options:", ((string)(null)), table1, "When ");
             testRunner.Then("\"Windows7Mi: Hide from End Users\" filter is added to the list", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
             testRunner.Then("\"2,223\" rows are displayed in the agGrid", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
             testRunner.When("User have removed \"Windows7Mi: Hide from End Users\" filter", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
@@ -171,8 +170,7 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_FiltersFeature
                         "FALSE"});
             table2.AddRow(new string[] {
                         "UNKNOWN"});
-            testRunner.When("User have created \"Equals\" filter with \"false\" column checkbox and following opti" +
-                    "ons:", ((string)(null)), table2, "When ");
+            testRunner.When("User have created \"Equals\" filter without column and following options:", ((string)(null)), table2, "When ");
             testRunner.Then("\"Windows7Mi: Hide from End Users\" filter is added to the list", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
             testRunner.Then("\"2,223\" rows are displayed in the agGrid", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
             testRunner.When("User have removed \"Windows7Mi: Hide from End Users\" filter", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
@@ -183,8 +181,7 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_FiltersFeature
                         "TRUE"});
             table3.AddRow(new string[] {
                         "UNKNOWN"});
-            testRunner.When("User have created \"Equals\" filter with \"false\" column checkbox and following opti" +
-                    "ons:", ((string)(null)), table3, "When ");
+            testRunner.When("User have created \"Equals\" filter without column and following options:", ((string)(null)), table3, "When ");
             testRunner.Then("\"Windows7Mi: Hide from End Users\" filter is added to the list", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
             testRunner.Then("\"1,156\" rows are displayed in the agGrid", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
             testRunner.When("User clicks the Logout button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
@@ -220,8 +217,7 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_FiltersFeature
                         "SelectedCheckboxes"});
             table4.AddRow(new string[] {
                         "A Star Packages"});
-            testRunner.When("User have created \"Equals\" filter with \"true\" column checkbox and following optio" +
-                    "ns:", ((string)(null)), table4, "When ");
+            testRunner.When("User have created \"Equals\" filter with column and following options:", ((string)(null)), table4, "When ");
             testRunner.Then("\"Windows7Mi: Category\" filter is added to the list", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
             testRunner.Then("table data is filtred correctly", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
             testRunner.When("User clicks the Logout button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
