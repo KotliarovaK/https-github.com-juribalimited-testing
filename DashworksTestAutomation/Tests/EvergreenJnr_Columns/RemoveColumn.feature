@@ -24,7 +24,7 @@ Scenario: EvergreenJnr_DevicesList_Check that 500 error page is not displayed af
 	| ColumnName |
 	| Build Date |
 	When User create custom list with "TestList" name
-	Then "TestList" is displayed to user
+	Then "TestList" list is displayed to user
 	When User clicks the Columns button
 	Then Columns panel is displayed to the user
 	When ColumnName is entered into the search box and the selection is clicked
@@ -63,7 +63,7 @@ Scenario: EvergreenJnr_DevicesList_Check that 500 error page is not displayed af
 	| ColumnName |
 	| Build Date |
 	When User create custom list with "TestList" name
-	Then "TestList" is displayed to user
+	Then "TestList" list is displayed to user
 	When User clicks the Columns button
 	Then Columns panel is displayed to the user
 	When ColumnName is entered into the search box and the selection is clicked
@@ -104,7 +104,7 @@ Scenario: EvergreenJnr_DevicesList_Check that 500 error page is not displayed af
 	| None                |
 	Then "Windows7Mi: Category" filter is added to the list
 	When User create custom list with "TestList" name
-	Then "TestList" is displayed to user
+	Then "TestList" list is displayed to user
 	When User clicks the Filters button
 	Then Filters panel is displayed to the user
 	When user select "Directory Type" filter

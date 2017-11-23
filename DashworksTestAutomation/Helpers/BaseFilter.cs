@@ -115,23 +115,26 @@ namespace DashworksTestAutomation.Helpers
 
     public class ValueFilter : BaseFilter
     {
-        private string _value { get; set; }
+        private Table _optionsTable { get; set; }
 
-        public ValueFilter(RemoteWebDriver driver, string operatorValue, bool acceptCheckbox, string value) :
+        public ValueFilter(RemoteWebDriver driver, string operatorValue, bool acceptCheckbox, Table optionsTable) :
             base(driver, operatorValue, acceptCheckbox)
         {
-            _value = value;
+            _optionsTable = optionsTable;
         }
 
         public override void Do()
         {
             var filterValueSelector = By.XPath(
                 ".//div[@class='filterAddPanel']//div[@class='mat-input-infix mat-form-field-infix']//input");
+            var addButtonSelector = By.XPath(".//div[@class='filterAddPanel']//button[@title='Add']");
             SelectOperator();
             _driver.WaitForDataLoading();
-            if (_driver.IsElementDisplayed(filterValueSelector))
+            foreach (var row in _optionsTable.Rows)
             {
-                _driver.FindElement(filterValueSelector).SendKeys(_value);
+                if (!_driver.IsElementDisplayed(filterValueSelector)) continue;
+                _driver.FindElement(filterValueSelector).SendKeys(row["Values"]);
+                _driver.FindElement(addButtonSelector).Click();
             }
             SaveFilter();
         }

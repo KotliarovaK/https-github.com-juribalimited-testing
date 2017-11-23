@@ -57,7 +57,7 @@ Scenario: EvergreenJnr_DevicesList_Check that custom list creation block is not 
 	| None                |
 	Then "Windows7Mi: Category" filter is added to the list
 	When User create custom list with "TestList" name
-	Then "TestList" is displayed to user
+	Then "TestList" list is displayed to user
 	When User clicks the Filters button
 	Then Filters panel is displayed to the user
 	When user select "Directory Type" filter
@@ -83,7 +83,7 @@ Scenario: EvergreenJnr_DevicesList_Check that custom list creation block is not 
 	| None                |
 	Then "Windows7Mi: Category" filter is added to the list
 	When User create custom list with "TestList" name
-	Then "TestList" is displayed to user
+	Then "TestList" list is displayed to user
 	When User clicks the Filters button
 	Then Filters panel is displayed to the user
 	When user select "Directory Type" filter
@@ -120,17 +120,17 @@ Scenario: EvergreenJnr_DevicesList_agGrid_Check that quick search doesn't trigge
 	And User is logged out
 
 @Evergreen @Devices @EvergreenJnr_ListPanel @CustomListDisplay @DAS-11081 @Delete_Newly_Created_List
-Scenario: EvergreenJnr_DevicesList_agGrid_Check that 'new list created' message is displayed
+Scenario: EvergreenJnr_DevicesList_agGrid_Check that 'new list created' message for static list is displayed
 	When User clicks "Devices" on the left-hand menu
 	Then "Devices" list should be displayed to the user
-	When User clicks the Columns button
-	Then Columns panel is displayed to the user
-	When ColumnName is entered into the search box and the selection is clicked
-	| ColumnName |
-	| Import     |
-	Then ColumnName is added to the list
-	| ColumnName |
-	| Import     |
-	When User create custom list with "TestList" name
-	Then "TestList" is displayed to user
+	When User clicks the Actions button
+	Then Actions panel is displayed to the user
+	When User select all rows
+	Then Actions panel is displayed to the user
+	And User create static list with "TestList" name
+	Then "TestList" list is displayed to user
+	When User click on 'Hostname' column header
+	Then data in table is sorted by 'Hostname' column in descenting order
+	Then User save change in list with "UnbelievableTestList" name
+	Then "UnbelievableTestList" list is displayed to user
 	And "New list created" message is displayed
