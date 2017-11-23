@@ -352,7 +352,7 @@ Scenario Outline: EvergreenJnr_DevicesList_Check that filter Operators is correc
 	Then Filters panel is displayed to the user
 	When user select "Hostname" filter
 	And User have create "<operatorValue>" Values filter with column and following options:
-	| Values                                    |
+	| Values         |
 	| <filterOption> |
 	Then "Hostname" filter is added to the list
 	Then "<rowsCount>" rows are displayed in the agGrid
@@ -381,7 +381,7 @@ Scenario Outline: EvergreenJnr_UsersList_Check that filter Operators is correct 
 	When User clicks the Filters button
 	Then Filters panel is displayed to the user
 	When user select "Compliance" filter
-	When User have created "<operatorValue>" filter with "true" column checkbox and following options:
+	When User have created "<operatorValue>" filter with column and following options:
 	| SelectedCheckboxes |
 	| <filterOption>     |
 	Then "Compliance" filter is added to the list
@@ -489,7 +489,7 @@ Scenario Outline: EvergreenJnr_UsersList_Check that filter Operators is correct 
 	When User clicks the Filters button
 	Then Filters panel is displayed to the user
 	When user select "Enabled" filter
-	When User have created "<operatorValue>" filter with "true" column checkbox and following options:
+	When User have created "<operatorValue>" filter with column and following options:
 	| SelectedCheckboxes |
 	| <filterOption>     |
 	Then "Enabled" filter is added to the list

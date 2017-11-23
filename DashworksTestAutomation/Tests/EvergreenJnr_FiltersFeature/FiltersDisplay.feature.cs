@@ -1066,8 +1066,7 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_FiltersFeature
                         "SelectedCheckboxes"});
             table25.AddRow(new string[] {
                         string.Format("{0}", filterOption)});
-            testRunner.When(string.Format("User have created \"{0}\" filter with \"true\" column checkbox and following options:" +
-                        "", operatorValue), ((string)(null)), table25, "When ");
+            testRunner.When(string.Format("User have created \"{0}\" filter with column and following options:", operatorValue), ((string)(null)), table25, "When ");
             testRunner.Then("\"Compliance\" filter is added to the list", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
             testRunner.Then(string.Format("\"{0}\" rows are displayed in the agGrid", rowsCount), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
             TechTalk.SpecFlow.Table table26 = new TechTalk.SpecFlow.Table(new string[] {
@@ -1602,8 +1601,7 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_FiltersFeature
                         "SelectedCheckboxes"});
             table33.AddRow(new string[] {
                         string.Format("{0}", filterOption)});
-            testRunner.When(string.Format("User have created \"{0}\" filter with \"true\" column checkbox and following options:" +
-                        "", operatorValue), ((string)(null)), table33, "When ");
+            testRunner.When(string.Format("User have created \"{0}\" filter with column and following options:", operatorValue), ((string)(null)), table33, "When ");
             testRunner.Then("\"Enabled\" filter is added to the list", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
             testRunner.Then(string.Format("\"{0}\" rows are displayed in the agGrid", rowsCount), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
             TechTalk.SpecFlow.Table table34 = new TechTalk.SpecFlow.Table(new string[] {
