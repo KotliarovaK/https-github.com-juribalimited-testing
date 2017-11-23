@@ -134,7 +134,10 @@ namespace DashworksTestAutomation.Helpers
             {
                 if (!_driver.IsElementDisplayed(filterValueSelector)) continue;
                 _driver.FindElement(filterValueSelector).SendKeys(row["Values"]);
-                _driver.FindElement(addButtonSelector).Click();
+                if (_driver.IsElementDisplayed(addButtonSelector))
+                {
+                    _driver.FindElement(addButtonSelector);
+                }
             }
             SaveFilter();
         }

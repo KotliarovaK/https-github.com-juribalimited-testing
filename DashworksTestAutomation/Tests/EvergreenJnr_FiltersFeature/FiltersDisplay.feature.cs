@@ -696,8 +696,7 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_FiltersFeature
                         "Amber"});
             table11.AddRow(new string[] {
                         "Green"});
-            testRunner.When("User have created \"Does not equal\" filter with column and following options:", ((string)(null)), table9, "When ");
-                    "ng options:", ((string)(null)), table11, "When ");
+            testRunner.When("User have created \"Does not equal\" filter with column and following options:", ((string)(null)), table11, "When ");
             testRunner.Then("\"Compliance\" filter is added to the list", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
             TechTalk.SpecFlow.Table table12 = new TechTalk.SpecFlow.Table(new string[] {
                         "Values"});
