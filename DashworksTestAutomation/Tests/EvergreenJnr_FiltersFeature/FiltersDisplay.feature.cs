@@ -155,8 +155,7 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_FiltersFeature
                         "FALSE"});
             table1.AddRow(new string[] {
                         "UNKNOWN"});
-            testRunner.When("User have created \"Equals\" filter with \"false\" column checkbox and following opti" +
-                    "ons:", ((string)(null)), table1, "When ");
+            testRunner.When("User have created \"Equals\" filter without column and following options:", ((string)(null)), table1, "When ");
             testRunner.Then("\"Windows7Mi: Hide from End Users\" filter is added to the list", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
             TechTalk.SpecFlow.Table table2 = new TechTalk.SpecFlow.Table(new string[] {
                         "Values"});
@@ -290,8 +289,7 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_FiltersFeature
             testRunner.When("User clicks the Filters button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
             testRunner.Then("Filters panel is displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
             testRunner.When("user select \"AD Object Key\" filter", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-            testRunner.Then("\"Empty\" option is available for this filter", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-            testRunner.Then("\"Not empty\" option is available for this filter", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+            testRunner.Then("\"Empty, Not empty\" option is available for this filter", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
             this.ScenarioCleanup();
         }
         
@@ -698,8 +696,7 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_FiltersFeature
                         "Amber"});
             table11.AddRow(new string[] {
                         "Green"});
-            testRunner.When("User have created \"Does not equal\" filter with \"true\" column checkbox and followi" +
-                    "ng options:", ((string)(null)), table11, "When ");
+            testRunner.When("User have created \"Does not equal\" filter with column and following options:", ((string)(null)), table11, "When ");
             testRunner.Then("\"Compliance\" filter is added to the list", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
             TechTalk.SpecFlow.Table table12 = new TechTalk.SpecFlow.Table(new string[] {
                         "Values"});

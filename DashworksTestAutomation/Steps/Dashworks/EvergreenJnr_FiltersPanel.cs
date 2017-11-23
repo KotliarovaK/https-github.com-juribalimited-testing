@@ -47,8 +47,21 @@ namespace DashworksTestAutomation.Steps.Dashworks
                 $"{filterName} is available in the search");
         }
 
-        [When(@"User have created ""(.*)"" filter with ""(.*)"" column checkbox and following options:")]
-        public void WhenUserHaveCreatedFilterWithColumnCheckboxAndFollowingOptions(string filterType, bool columnOption,
+        [When(@"User have created ""(.*)"" filter without column and following options:")]
+        public void WhenUserHaveCreatedFilterWithoutColumnAndFollowingOptions(string filterType,
+            Table table)
+        {
+            CreateFilterWithCheckboxes(filterType, false, table);
+        }
+
+        [When(@"User have created ""(.*)"" filter with column and following options:")]
+        public void WhenUserHaveCreatedFilterWithColumnAndFollowingOptions(string filterType,
+            Table table)
+        {
+            CreateFilterWithCheckboxes(filterType, true, table);
+        }
+
+        private void CreateFilterWithCheckboxes(string filterType, bool columnOption,
             Table table)
         {
             var filterElement = _driver.NowAt<FiltersElement>();
@@ -72,6 +85,13 @@ namespace DashworksTestAutomation.Steps.Dashworks
             filter.Do();
         }
 
+        [When(@"User have created ""(.*)"" Lookup filter with column and ""(.*)"" option")]
+        public void WhenUserHaveCreatedLookupFilterWithColumnAndOption(string operatorValue, string filterValue)
+        {
+            var filterElement = _driver.NowAt<FiltersElement>();
+            var filter = new LookupFilter(_driver, operatorValue, true, filterValue);
+            filter.Do();
+        }
         [Then(@"""(.*)"" filter is added to the list")]
         public void ThenFilterIsAddedToTheList(string filterName)
         {
@@ -167,7 +187,7 @@ namespace DashworksTestAutomation.Steps.Dashworks
                 $"{filterName} tick box is not displayed");
             Logger.Write($"{filterName} tick box is displayed");
         }
-        
+
         [Then(@"""(.*)"" option is available at first place")]
         public void ThenOptionIsAvailableAtFirstPlace(string optionName)
         {
@@ -201,15 +221,21 @@ namespace DashworksTestAutomation.Steps.Dashworks
         public void ThenOptionIsAvailableForThisFilter(string optionName)
         {
             var filterElement = _driver.NowAt<FiltersElement>();
-            try
+            foreach (string option in optionName.Split(','))
             {
-                filterElement.OperatorDropdown.Click();
+                if (string.IsNullOrEmpty(option))
+                    continue;
+                try
+                {
+                    filterElement.OperatorDropdown.Click();
+                }
+                catch (Exception e)
+                {
+                }
+                var actualOptionsList = filterElement.OperatorOptions.Select(value => value.Text).ToList();
+                Assert.Contains(option.TrimStart(' ').TrimEnd(' '), actualOptionsList, $"{optionName} is not found in Filter Options");
+                filterElement.OperatorOptions.First().Click();
             }
-            catch (Exception e)
-            {
-            }
-            var actualOptionsList = filterElement.OperatorOptions.Select(value => value.Text).ToList();
-            Assert.Contains(optionName, actualOptionsList, $"{optionName} is not found in Filter Options");
         }
 
         [When(@"User is remove filter by URL")]
@@ -261,6 +287,13 @@ namespace DashworksTestAutomation.Steps.Dashworks
             {
                 filterElement.GetAssociationsList().Select(value => value.Text).ToList().Contains(row.Values.First());
             }
+        }
+
+        [Then(@"""(.*)"" is displayed in added filter info")]
+        public void ThenIsDisplayedInAddedFilterInfo(string text)
+        {
+            var filterElement = _driver.NowAt<FiltersElement>();
+           Assert.AreEqual(text, string.Concat(filterElement.GetFiltersNames().First()+' ', filterElement.FilterOptions.First().Text+' ', filterElement.FilterValues.First().Text), "Text is incorrect");
         }
     }
 }

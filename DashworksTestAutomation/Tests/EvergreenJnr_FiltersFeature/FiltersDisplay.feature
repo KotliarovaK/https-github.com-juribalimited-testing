@@ -32,7 +32,7 @@ Scenario: EvergreenJnr_ApplicationsList_Check true-false options and images in f
 	Then Filters panel is displayed to the user
 	When user select "Windows7Mi: Hide from End Users" filter
 	Then correct true and false options are displayed in filter settings
-	When User have created "Equals" filter with "false" column checkbox and following options:
+	When User have created "Equals" filter without column and following options:
 	| SelectedCheckboxes |
 	| TRUE               |
 	| FALSE              |
@@ -97,8 +97,7 @@ Scenario: EvergreenJnr_DevicesList_Check that "Empty" and "Not Empty" options is
 	When User clicks the Filters button
 	Then Filters panel is displayed to the user
 	When user select "AD Object Key" filter
-	Then "Empty" option is available for this filter
-	Then "Not empty" option is available for this filter
+	Then "Empty, Not empty" option is available for this filter
 
 @Evergreen @Devices @Evergreen_FiltersFeature @FiltersDisplay @DAS-10795
 Scenario: EvergreenJnr_DevicesList_Check that 'Add column' option as available for "Operating System" filter
@@ -257,7 +256,7 @@ Scenario: EvergreenJnr_UsersList_Check that filter data is displayed correctly w
 	When User clicks the Filters button
 	Then Filters panel is displayed to the user
 	When user select "Compliance" filter
-	When User have created "Does not equal" filter with "true" column checkbox and following options:
+	When User have created "Does not equal" filter with column and following options:
 	| SelectedCheckboxes |
 	| Red                |
 	| Amber              |
