@@ -97,15 +97,22 @@ namespace DashworksTestAutomation.Steps.Dashworks
         [AfterScenario("Delete_Newly_Created_List")]
         public void DeleteAllCustomListsAfterScenarioRun()
         {
-            var lefthendMenu = _driver.NowAt<LeftHandMenuElement>();
-            lefthendMenu.Devices.Click();
-            RemoveAllCustomLists();
-            lefthendMenu.Applications.Click();
-            RemoveAllCustomLists();
-            lefthendMenu.Mailboxes.Click();
-            RemoveAllCustomLists();
-            lefthendMenu.Users.Click();
-            RemoveAllCustomLists();
+            try
+            {
+                var lefthendMenu = _driver.NowAt<LeftHandMenuElement>();
+                lefthendMenu.Devices.Click();
+                RemoveAllCustomLists();
+                lefthendMenu.Applications.Click();
+                RemoveAllCustomLists();
+                lefthendMenu.Mailboxes.Click();
+                RemoveAllCustomLists();
+                lefthendMenu.Users.Click();
+                RemoveAllCustomLists();
+            }
+            catch (Exception e)
+            {
+                Logger.Write($"Some errors appears during List deleting: {e.Message}");
+            }
         }
 
         [When(@"User navigates to the ""(.*)"" list")]
