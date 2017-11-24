@@ -85,6 +85,15 @@ namespace DashworksTestAutomation.Steps.Dashworks
             filter.Do();
         }
 
+        [When(@"User have created ""(.*)"" Date filter with column and ""(.*)"" option")]
+        public void WhenUserHaveCreatedDateFilterWithColumnAndOption(string filterType, string filterValue)
+        {
+            var filterElement = _driver.NowAt<FiltersElement>();
+            var filter = new DateFilter(_driver, filterType, true, filterValue);
+            filter.Do();
+        }
+
+
         [When(@"User have created ""(.*)"" Lookup filter with column and ""(.*)"" option")]
         public void WhenUserHaveCreatedLookupFilterWithColumnAndOption(string operatorValue, string filterValue)
         {

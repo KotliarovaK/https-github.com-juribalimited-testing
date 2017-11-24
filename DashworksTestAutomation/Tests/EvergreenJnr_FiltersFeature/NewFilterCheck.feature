@@ -100,3 +100,79 @@ Examples:
 	| Havoc(BigD: Target App Readiness | Equals, Does not equal | None         | Havoc(BigD: Target App Readiness is None  | 1,067     |
 	| MigrationP: Target App Readiness | Equals, Does not equal | Blue         | MigrationP: Target App Readiness is Blue  | 189       |
 	| UserSchedu: Target App Readiness | Equals, Does not equal | Grey         | UserSchedu: Target App Readiness is Grey  | 981       |
+
+@Evergreen @Devices @Evergreen_FiltersFeature @NewFilterCheck @DAS-10578
+Scenario: EvergreenJnr_DevicesList_Check that Dashworks First Seen filter is added to the list
+	When User clicks "Devices" on the left-hand menu
+	Then "Devices" list should be displayed to the user
+	When User clicks the Columns button
+	Then Columns panel is displayed to the user
+	When ColumnName is entered into the search box and the selection is clicked
+	| ColumnName           |
+	| Dashworks First Seen |
+	When User clicks the Filters button
+	Then Filters panel is displayed to the user
+	When user select "Dashworks First Seen" filter
+	Then "Equals, Does not equal, Before, After, Empty, Not empty" option is available for this filter
+	When User have created "Empty" Date filter with column and "" option
+	Then "Dashworks First Seen is empty " is displayed in added filter info
+	Then "17,225" rows are displayed in the agGrid
+	When User click on 'Dashworks First Seen' column header
+	Then data in table is sorted by 'Dashworks First Seen' column in descending order 
+
+@Evergreen @Users @Evergreen_FiltersFeature @NewFilterCheck @DAS-10578
+Scenario: EvergreenJnr_UsersList_Check that Dashworks First Seen filter is added to the list
+	When User clicks "Users" on the left-hand menu
+	Then "Users" list should be displayed to the user
+	When User clicks the Columns button
+	Then Columns panel is displayed to the user
+	When ColumnName is entered into the search box and the selection is clicked
+	| ColumnName           |
+	| Dashworks First Seen |
+	When User clicks the Filters button
+	Then Filters panel is displayed to the user
+	When user select "Dashworks First Seen" filter
+	Then "Equals, Does not equal, Before, After, Empty, Not empty" option is available for this filter
+	When User have created "Empty" Date filter with column and "" option
+	Then "Dashworks First Seen is empty " is displayed in added filter info
+	Then "41,335" rows are displayed in the agGrid
+	When User click on 'Dashworks First Seen' column header
+	Then data in table is sorted by 'Dashworks First Seen' column in descending order 
+
+@Evergreen @Applications @Evergreen_FiltersFeature @NewFilterCheck @DAS-10578
+Scenario: EvergreenJnr_ApplicationsList_Check that Dashworks First Seen filter is added to the list
+	When User clicks "Applications" on the left-hand menu
+	Then "Applications" list should be displayed to the user
+	When User clicks the Columns button
+	Then Columns panel is displayed to the user
+	When ColumnName is entered into the search box and the selection is clicked
+	| ColumnName           |
+	| Dashworks First Seen |
+	When User clicks the Filters button
+	Then Filters panel is displayed to the user
+	When user select "Dashworks First Seen" filter
+	Then "Equals, Does not equal, Before, After, Empty, Not empty" option is available for this filter
+	When User have created "Empty" Date filter with column and "" option
+	Then "Dashworks First Seen is empty " is displayed in added filter info
+	Then "2,223" rows are displayed in the agGrid
+	When User click on 'Dashworks First Seen' column header
+	Then data in table is sorted by 'Dashworks First Seen' column in descending order 
+
+@Evergreen @Mailboxes @Evergreen_FiltersFeature @NewFilterCheck @DAS-10578
+Scenario: EvergreenJnr_MailboxesList_Check that Dashworks First Seen filter is added to the list
+	When User clicks "Mailboxes" on the left-hand menu
+	Then "Mailboxes" list should be displayed to the user
+	When User clicks the Columns button
+	Then Columns panel is displayed to the user
+	When ColumnName is entered into the search box and the selection is clicked
+	| ColumnName           |
+	| Dashworks First Seen |
+	When User clicks the Filters button
+	Then Filters panel is displayed to the user
+	When user select "Dashworks First Seen" filter
+	Then "Equals, Does not equal, Before, After, Empty, Not empty" option is available for this filter
+	When User have created "Empty" Date filter with column and "" option
+	Then "Dashworks First Seen is empty " is displayed in added filter info
+	Then "4,835" rows are displayed in the agGrid
+	When User click on 'Dashworks First Seen' column header
+	Then data in table is sorted by 'Dashworks First Seen' column in descending order 
