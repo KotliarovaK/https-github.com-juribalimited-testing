@@ -620,3 +620,35 @@ Scenario: EvergreenJnr_DevicesList_Check that 'Add column' option as available f
 	When User clicks the Logout button
 	Then Signed Out page is displayed to the user
 	And User is logged out
+
+@Evergreen @Devices @EvergreenJnr_FiltersFeature @FilterFunctionality @DAS-11087
+Scenario: EvergreenJnr_ApplicationsList_Check that Date and Time filters with "Equals" Values are working correctly
+	When User clicks "Devices" on the left-hand menu
+	Then "Devices" list should be displayed to the user
+	When User clicks the Filters button
+	Then Filters panel is displayed to the user
+	When user select "Windows7Mi: Date & Time Task" filter
+	And User have create "Equals" Values filter with column and following options:
+	| Values      |
+	| 22 Nov 2012 |
+	Then "Windows7Mi: Date & Time Task" filter is added to the list
+	Then "16" rows are displayed in the agGrid
+	When User clicks the Logout button
+	Then Signed Out page is displayed to the user
+	And User is logged out
+
+@Evergreen @Devices @EvergreenJnr_FiltersFeature @FilterFunctionality @DAS-11087
+Scenario: EvergreenJnr_ApplicationsList_Check that Date and Time filters with "Does not equal" Values are working correctly
+	When User clicks "Devices" on the left-hand menu
+	Then "Devices" list should be displayed to the user
+	When User clicks the Filters button
+	Then Filters panel is displayed to the user
+	When user select "Windows7Mi: Date & Time Task" filter
+	And User have create "Does not equal" Values filter with column and following options:
+	| Values      |
+	| 22 Nov 2012 |
+	Then "Windows7Mi: Date & Time Task" filter is added to the list
+	Then "17,209" rows are displayed in the agGrid
+	When User clicks the Logout button
+	Then Signed Out page is displayed to the user
+	And User is logged out
