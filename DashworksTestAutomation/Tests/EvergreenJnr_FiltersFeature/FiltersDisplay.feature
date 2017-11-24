@@ -613,8 +613,10 @@ Scenario: EvergreenJnr_DevicesList_Check that 'Add column' option as available f
 	When User clicks the Filters button
 	Then Filters panel is displayed to the user
 	When user select "Owner Department" filter
-	Then "Add Owner Department Name column" checkbox is displayed
-	And "Add Owner Department Full Path column" checkbox is displayed
+	Then checkboxes are displayed to the User:
+	| SelectedCheckboxes                    |
+	| Add Owner Department Name column      |
+	| Add Owner Department Full Path column |
 	When User clicks the Logout button
 	Then Signed Out page is displayed to the user
 	And User is logged out

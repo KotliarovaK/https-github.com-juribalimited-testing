@@ -45,6 +45,9 @@ namespace DashworksTestAutomation.Pages.Evergreen
         [FindsBy(How = How.XPath, Using = ".//div[@class='mat-checkbox-frame']")]
         public IWebElement AddCategoryColumnCheckbox { get; set; }
 
+        [FindsBy(How = How.XPath, Using = ".//span[@class='mat-checkbox-label']")]
+        public IList<IWebElement> AddCategoryColumnName { get; set; }
+
         [FindsBy(How = How.XPath, Using = ".//div[@class='filterAddPanel']//button[@title='Remove Filter']")]
         public IWebElement RemoveFilterButton { get; set; }
 
