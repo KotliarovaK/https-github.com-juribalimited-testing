@@ -839,7 +839,7 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_FiltersFeature
             table21.AddRow(new string[] {
                         "17 Nov 2017"});
             testRunner.Then("Values is displayed in added filter info", ((string)(null)), table21, "Then ");
-            testRunner.When("User navigates to the \"All mailboxes\" list", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+            testRunner.When("User navigates to the \"All Mailboxes\" list", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
             testRunner.When("User navigates to the \"TestList\" list", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
             testRunner.Then("\"TestList\" list is displayed to user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
             testRunner.When("User clicks the Filters button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
@@ -1850,9 +1850,6 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_FiltersFeature
             table44.AddRow(new string[] {
                         "Application begins with ((((test)))"});
             testRunner.Then("Values is displayed in added filter info", ((string)(null)), table44, "Then ");
-            testRunner.When("User clicks the Logout button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-            testRunner.Then("Signed Out page is displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-            testRunner.And("User is logged out", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
             this.ScenarioCleanup();
         }
     }

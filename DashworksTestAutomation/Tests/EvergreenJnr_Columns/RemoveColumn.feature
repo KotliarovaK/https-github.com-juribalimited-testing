@@ -199,7 +199,7 @@ Scenario: EvergreenJnr_DevicesList_Check that 500 error page is not displayed af
 	Then ColumnName is removed from the list
 	| ColumnName   |
 	| Boot Up Date |
-	Then data in table is sorted by 'Windows7Mi: Date & Time Task' column in descenting order
+	Then data in table is sorted by 'Windows7Mi: Date & Time Task' column in descending order
 	When User is removed column by URL
 	| ColumnName                   |
 	| Windows7Mi: Date & Time Task |
@@ -207,7 +207,7 @@ Scenario: EvergreenJnr_DevicesList_Check that 500 error page is not displayed af
 	Then ColumnName is removed from the list
 	| ColumnName                   |
 	| Windows7Mi: Date & Time Task |
-	Then data in table is sorted by 'Build Date' column in descenting order
+	Then data in table is sorted by 'Build Date' column in descending order
 	When User clicks the Logout button
 	Then Signed Out page is displayed to the user
 	And User is logged out

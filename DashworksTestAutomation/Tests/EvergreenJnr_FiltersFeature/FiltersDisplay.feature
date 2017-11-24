@@ -335,7 +335,7 @@ Scenario: EvergreenJnr_MailboxesList_Check that filter data is displayed correct
 	Then Values is displayed in added filter info
 	| Values      |
 	| 17 Nov 2017 |
-	When User navigates to the "All mailboxes" list
+	When User navigates to the "All Mailboxes" list
 	When User navigates to the "TestList" list
 	Then "TestList" list is displayed to user
 	When User clicks the Filters button
@@ -602,6 +602,3 @@ Scenario: EvergreenJnr_ApplicationsList_Check that brackets are displayed correc
 	| NI LabVIEW PID Control Toolset 6.0 (for LabVIEW 7.1)                                            |
 	| Application contains (Version 6.0) (3672.1)                                                     |
 	| Application begins with ((((test)))                                                             |
-	When User clicks the Logout button
-	Then Signed Out page is displayed to the user
-	And User is logged out

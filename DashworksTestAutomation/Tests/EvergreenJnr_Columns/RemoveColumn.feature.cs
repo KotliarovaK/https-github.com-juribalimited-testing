@@ -460,7 +460,7 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_Columns
             table29.AddRow(new string[] {
                         "Boot Up Date"});
             testRunner.Then("ColumnName is removed from the list", ((string)(null)), table29, "Then ");
-            testRunner.Then("data in table is sorted by \'Windows7Mi: Date & Time Task\' column in descenting or" +
+            testRunner.Then("data in table is sorted by \'Windows7Mi: Date & Time Task\' column in descending or" +
                     "der", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
             TechTalk.SpecFlow.Table table30 = new TechTalk.SpecFlow.Table(new string[] {
                         "ColumnName"});
@@ -473,7 +473,7 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_Columns
             table31.AddRow(new string[] {
                         "Windows7Mi: Date & Time Task"});
             testRunner.Then("ColumnName is removed from the list", ((string)(null)), table31, "Then ");
-            testRunner.Then("data in table is sorted by \'Build Date\' column in descenting order", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+            testRunner.Then("data in table is sorted by \'Build Date\' column in descending order", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
             testRunner.When("User clicks the Logout button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
             testRunner.Then("Signed Out page is displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
             testRunner.And("User is logged out", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
