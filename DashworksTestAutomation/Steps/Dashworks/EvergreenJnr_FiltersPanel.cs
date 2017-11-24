@@ -93,7 +93,6 @@ namespace DashworksTestAutomation.Steps.Dashworks
             filter.Do();
         }
 
-
         [When(@"User have created ""(.*)"" Lookup filter with column and ""(.*)"" option")]
         public void WhenUserHaveCreatedLookupFilterWithColumnAndOption(string operatorValue, string filterValue)
         {
