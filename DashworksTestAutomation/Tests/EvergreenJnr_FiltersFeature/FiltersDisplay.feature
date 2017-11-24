@@ -605,3 +605,18 @@ Scenario: EvergreenJnr_ApplicationsList_Check that brackets are displayed correc
 	| NI LabVIEW PID Control Toolset 6.0 (for LabVIEW 7.1)                                            |
 	| Application contains (Version 6.0) (3672.1)                                                     |
 	| Application begins with ((((test)))                                                             |
+
+@Evergreen @Mailboxes @Evergreen_FiltersFeature @FiltersDisplay @DAS-11351
+Scenario: EvergreenJnr_DevicesList_Check that 'Add column' option as available for "Owner Department" filter
+	When User clicks "Mailboxes" on the left-hand menu
+	Then "Mailboxes" list should be displayed to the user
+	When User clicks the Filters button
+	Then Filters panel is displayed to the user
+	When user select "Owner Department" filter
+	Then checkboxes are displayed to the User:
+	| SelectedCheckboxes                    |
+	| Add Owner Department Name column      |
+	| Add Owner Department Full Path column |
+	When User clicks the Logout button
+	Then Signed Out page is displayed to the user
+	And User is logged out

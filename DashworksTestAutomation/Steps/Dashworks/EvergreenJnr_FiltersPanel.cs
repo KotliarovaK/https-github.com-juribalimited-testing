@@ -9,6 +9,7 @@ using DashworksTestAutomation.Pages.Evergreen;
 using DashworksTestAutomation.Providers;
 using DashworksTestAutomation.Utils;
 using NUnit.Framework;
+using OpenQA.Selenium;
 using OpenQA.Selenium.Remote;
 using TechTalk.SpecFlow;
 
@@ -100,6 +101,7 @@ namespace DashworksTestAutomation.Steps.Dashworks
             var filter = new LookupFilter(_driver, operatorValue, true, filterValue);
             filter.Do();
         }
+
         [Then(@"""(.*)"" filter is added to the list")]
         public void ThenFilterIsAddedToTheList(string filterName)
         {
@@ -194,6 +196,15 @@ namespace DashworksTestAutomation.Steps.Dashworks
             Assert.IsTrue(filterElement.AddCategoryColumnCheckbox.Displayed(),
                 $"{filterName} tick box is not displayed");
             Logger.Write($"{filterName} tick box is displayed");
+        }
+
+        [Then(@"checkboxes are displayed to the User:")]
+        public void ThenCheckboxesAreDisplayedToTheUser(Table table)
+        {
+            var filterElement = _driver.NowAt<FiltersElement>();
+            var expectedList = table.Rows.SelectMany(row => row.Values);
+            var actualList = filterElement.AddCategoryColumnName.Select(value => value.Text);
+            Assert.AreEqual(expectedList, actualList, "Filter settings values are different");
         }
 
         [Then(@"""(.*)"" option is available at first place")]
