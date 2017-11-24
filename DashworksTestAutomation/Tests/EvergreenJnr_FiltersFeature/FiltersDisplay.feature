@@ -590,12 +590,15 @@ Scenario: EvergreenJnr_ApplicationsList_Check that brackets are displayed correc
 	Then "Application" filter is added to the list
 	When User create custom list with "TestList" name
 	Then "TestList" list is displayed to user
+	And "4" rows are displayed in the agGrid
 	When User navigates to the "All Applications" list
 	Then "Applications" list should be displayed to the user
 	When User navigates to the "TestList" list
+	And User clicks the Filters button
 	Then "TestList" list is displayed to user
-	When User clicks the Filters button
-	Then Values is displayed in added filter info
+	And "4" rows are displayed in the agGrid
+	And Edit List menu is not displayed
+	And Values is displayed in added filter info
 	| Values                                                                                          |
 	| wxPython 2.5.3.1 (unicode) for Python 2.3                                                       |
 	| Windows Installer SDK (Version 2.0) (3718.1), Janus Systems Controls for Microsoft .NET (TRIAL) |

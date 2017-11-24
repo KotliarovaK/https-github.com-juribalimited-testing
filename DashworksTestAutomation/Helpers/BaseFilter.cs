@@ -47,6 +47,7 @@ namespace DashworksTestAutomation.Helpers
                 _driver.FindElement(By.XPath(
                         ".//div[@class='filterAddPanel']//md-checkbox//div[@class='mat-checkbox-inner-container']"))
                     .Click();
+            _driver.MouseHover(By.XPath(".//button[@title='Update Filter Set']"));
             _driver.FindElement(By.XPath(".//button[@title='Update Filter Set']")).Click();
         }
     }

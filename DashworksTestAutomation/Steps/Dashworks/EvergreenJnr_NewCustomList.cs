@@ -82,6 +82,14 @@ namespace DashworksTestAutomation.Steps.Dashworks
             Assert.IsTrue(listElement.SaveAsDropdown.Displayed(), "Edit List menu is not displayed");
         }
 
+        [Then(@"Edit List menu is not displayed")]
+        public void ThenEditListMenuIsNotDisplayed()
+        {
+            var listElement = _driver.NowAt<CustomListElement>();
+
+            Assert.IsFalse(listElement.SaveAsDropdown.Displayed(), "Edit List menu is displayed");
+        }
+
         [When(@"User is removed custom list with ""(.*)"" name")]
         public void WhenUserIsRemovedCustomListWithName(string listName)
         {
