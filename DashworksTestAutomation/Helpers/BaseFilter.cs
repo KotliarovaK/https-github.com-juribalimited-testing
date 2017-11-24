@@ -65,7 +65,10 @@ namespace DashworksTestAutomation.Helpers
         public override void Do()
         {
             SelectOperator();
-            _driver.FindElement(By.XPath(".//input[@aria-label='Date']")).SendKeys(_dateValue);
+            if (_driver.IsElementDisplayed(By.XPath(".//input[@aria-label='Date']")))
+            {
+                _driver.FindElement(By.XPath(".//input[@aria-label='Date']")).SendKeys(_dateValue);
+            }
             SaveFilter();
         }
     }
