@@ -137,7 +137,6 @@ namespace DashworksTestAutomation.Helpers
                 
                 if (_driver.IsElementDisplayed(addButtonSelector))
                 {
-                    _driver.WaitWhileControlIsNotDisplayed(addButtonSelector);
                     _driver.FindElement(addButtonSelector).Click();
                 }
             }
