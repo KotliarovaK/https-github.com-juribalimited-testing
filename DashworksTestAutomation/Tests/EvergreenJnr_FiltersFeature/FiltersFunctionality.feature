@@ -97,6 +97,3 @@ Scenario: EvergreenJnr_ApplicationsList_Check that filter is restored after goin
 	Then "Applications" list should be displayed to the user
 	When User navigates to the "TestList" list
 	Then "9" rows are displayed in the agGrid
-	When User clicks the Logout button
-	Then Signed Out page is displayed to the user
-	And User is logged out
