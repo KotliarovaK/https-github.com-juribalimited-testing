@@ -176,3 +176,125 @@ Scenario: EvergreenJnr_MailboxesList_Check that Dashworks First Seen filter is a
 	Then "4,835" rows are displayed in the agGrid
 	When User click on 'Dashworks First Seen' column header
 	Then data in table is sorted by 'Dashworks First Seen' column in descending order 
+
+@Evergreen @Applications @Evergreen_FiltersFeature @NewFilterCheck @DAS-10512
+Scenario Outline: EvergreenJnr_ApplicationsList_Check that Application Readiness filter is added to the list
+	When User clicks "Applications" on the left-hand menu
+	Then "Applications" list should be displayed to the user
+	When User clicks the Columns button
+	Then Columns panel is displayed to the user
+	When ColumnName is entered into the search box and the selection is clicked
+	| ColumnName   |
+	| <ColumnName> |
+	When User clicks the Filters button
+	Then Filters panel is displayed to the user
+	When user select "<ColumnName>" filter
+	Then "<Operators>" option is available for this filter
+	When User have created "Equals" Lookup filter with column and "<FilterOption>" option
+	Then "<Text>" is displayed in added filter info
+	Then "<RowsCount>" rows are displayed in the agGrid
+	When User click on '<ColumnName>' column header
+	Then data in table is sorted by '<ColumnName>' column in descending order 
+
+Examples: 
+	| ColumnName                        | Operators              | FilterOption | Text                                       | RowsCount |
+	| Windows7Mi: Application Readiness | Equals, Does not equal | Red          | Windows7Mi: Application Readiness is Red   | 27        |
+	| Babel(Engl: Application Readiness | Equals, Does not equal | None         | Babel(Engl: Application Readiness is None  | 302       |
+	| Barry'sUse: Application Readiness | Equals, Does not equal | None         | Barry'sUse: Application Readiness is None  | 1,072     |
+	| ComputerSc: Application Readiness | Equals, Does not equal | Green        | ComputerSc: Application Readiness is Green | 913       |
+	| Havoc(BigD: Application Readiness | Equals, Does not equal | None         | Havoc(BigD: Application Readiness is None  | 1,067     |
+	| MigrationP: Application Readiness | Equals, Does not equal | Blue         | MigrationP: Application Readiness is Blue  | 189       |
+	| UserSchedu: Application Readiness | Equals, Does not equal | None         | UserSchedu: Application Readiness is None  | 981       |
+
+@Evergreen @Applications @Evergreen_FiltersFeature @NewFilterCheck @DAS-10512
+Scenario Outline: EvergreenJnr_ApplicationsList_Check that Application Rationalisation filter is added to the list
+	When User clicks "Applications" on the left-hand menu
+	Then "Applications" list should be displayed to the user
+	When User clicks the Columns button
+	Then Columns panel is displayed to the user
+	When ColumnName is entered into the search box and the selection is clicked
+	| ColumnName   |
+	| <ColumnName> |
+	When User clicks the Filters button
+	Then Filters panel is displayed to the user
+	When user select "<ColumnName>" filter
+	Then "<Operators>" option is available for this filter
+	When User have created "Equals" filter with column and following options:
+	| SelectedCheckboxes |
+	| <FilterOption>     |
+	Then "<Text>" is displayed in added filter info
+	Then "<RowsCount>" rows are displayed in the agGrid
+	When User click on '<ColumnName>' column header
+	Then data in table is sorted by '<ColumnName>' column in descending order 
+
+Examples: 
+	| ColumnName                              | Operators              | FilterOption  | Text                                                      | RowsCount |
+	| Windows7Mi: Application Rationalisation | Equals, Does not equal | RETIRE        | Windows7Mi: Application Rationalisation is Retire         | 85        |
+	| Babel(Engl: Application Rationalisation | Equals, Does not equal | UNCATEGORISED | Babel(Engl: Application Rationalisation is Uncategorised | 302       |
+	| Barry'sUse: Application Rationalisation | Equals, Does not equal | KEEP          | Barry'sUse: Application Rationalisation is Keep           | 2         |
+	| ComputerSc: Application Rationalisation | Equals, Does not equal | FORWARD PATH  | ComputerSc: Application Rationalisation is Forward Path   | 10        |
+	| Havoc(BigD: Application Rationalisation | Equals, Does not equal | UNCATEGORISED | Havoc(BigD: Application Rationalisation is Uncategorised  | 1,067     |
+	| MigrationP: Application Rationalisation | Equals, Does not equal | RETIRE        | MigrationP: Application Rationalisation is Retire         | 1         |
+	| UserSchedu: Application Rationalisation | Equals, Does not equal | UNCATEGORISED | UserSchedu: Application Rationalisation is Uncategorised  | 981       |
+
+@Evergreen @Applications @Evergreen_FiltersFeature @NewFilterCheck @DAS-10512
+Scenario Outline: EvergreenJnr_ApplicationsList_Check that Core Application filter is added to the list
+	When User clicks "Applications" on the left-hand menu
+	Then "Applications" list should be displayed to the user
+	When User clicks the Columns button
+	Then Columns panel is displayed to the user
+	When ColumnName is entered into the search box and the selection is clicked
+	| ColumnName   |
+	| <ColumnName> |
+	When User clicks the Filters button
+	Then Filters panel is displayed to the user
+	When user select "<ColumnName>" filter
+	Then "<Operators>" option is available for this filter
+	When User have created "Equals" filter with column and following options:
+	| SelectedCheckboxes |
+	| <FilterOption>     |
+	Then "<Text>" is displayed in added filter info
+	Then "<RowsCount>" rows are displayed in the agGrid
+	When User click on '<ColumnName>' column header
+	Then data in table is sorted by '<ColumnName>' column in descending order 
+
+Examples: 
+	| ColumnName                   | Operators              | FilterOption | Text                                    | RowsCount |
+	| Windows7Mi: Core Application | Equals, Does not equal | TRUE         | Windows7Mi: Core Application is true    | 11        |
+	| Babel(Engl: Core Application | Equals, Does not equal | FALSE        | Babel(Engl: Core Application is false   | 302       |
+	| Barry'sUse: Core Application | Equals, Does not equal | UNKNOWN      | Barry'sUse: Core Application is Unknown | 1,146     |
+	| ComputerSc: Core Application | Equals, Does not equal | FALSE        | ComputerSc: Core Application is false   | 1,033     |
+	| Havoc(BigD: Core Application | Equals, Does not equal | UNKNOWN      | Havoc(BigD: Core Application is Unknown | 1,156     |
+	| MigrationP: Core Application | Equals, Does not equal | FALSE        | MigrationP: Core Application is false   | 220       |
+	| UserSchedu: Core Application | Equals, Does not equal | UNKNOWN      | UserSchedu: Core Application is Unknown | 1,242     |
+
+@Evergreen @Applications @Evergreen_FiltersFeature @NewFilterCheck @DAS-10512
+Scenario Outline: EvergreenJnr_ApplicationsList_Check that Hide from End Users filter is added to the list
+	When User clicks "Applications" on the left-hand menu
+	Then "Applications" list should be displayed to the user
+	When User clicks the Columns button
+	Then Columns panel is displayed to the user
+	When ColumnName is entered into the search box and the selection is clicked
+	| ColumnName   |
+	| <ColumnName> |
+	When User clicks the Filters button
+	Then Filters panel is displayed to the user
+	When user select "<ColumnName>" filter
+	Then "<Operators>" option is available for this filter
+	When User have created "Equals" filter with column and following options:
+	| SelectedCheckboxes |
+	| <FilterOption>     |
+	Then "<Text>" is displayed in added filter info
+	Then "<RowsCount>" rows are displayed in the agGrid
+	When User click on '<ColumnName>' column header
+	Then data in table is sorted by '<ColumnName>' column in descending order 
+
+Examples: 
+	| ColumnName                   | Operators              | FilterOption | Text                                    | RowsCount |
+	| Windows7Mi: Hide from End Users | Equals, Does not equal | FALSE         | Windows7Mi: Hide from End Users is false    | 1,067        |
+	| Babel(Engl: Hide from End Users | Equals, Does not equal | UNKNOWN        | Babel(Engl: Hide from End Users is Unknown   | 1,921        |
+	| Barry'sUse: Hide from End Users | Equals, Does not equal | FALSE      | Barry'sUse: Hide from End Users is false | 1,077      |
+	| ComputerSc: Hide from End Users | Equals, Does not equal | FALSE        | ComputerSc: Hide from End Users is false   | 1,033     |
+	| Havoc(BigD: Hide from End Users | Equals, Does not equal | UNKNOWN      | Havoc(BigD: Hide from End Users is Unknown | 1,156     |
+	| MigrationP: Hide from End Users | Equals, Does not equal | FALSE        | MigrationP: Hide from End Users is false   | 220       |
+	| UserSchedu: Hide from End Users | Equals, Does not equal | UNKNOWN      | UserSchedu: Hide from End Users is Unknown | 1,242     |
