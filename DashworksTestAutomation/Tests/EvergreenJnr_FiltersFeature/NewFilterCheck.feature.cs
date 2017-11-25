@@ -806,6 +806,726 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_FiltersFeature
             testRunner.Then("data in table is sorted by \'Dashworks First Seen\' column in descending order", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
             this.ScenarioCleanup();
         }
+        
+        public virtual void EvergreenJnr_ApplicationsList_CheckThatApplicationReadinessFilterIsAddedToTheList(string columnName, string operators, string filterOption, string text, string rowsCount, string[] exampleTags)
+        {
+            string[] @__tags = new string[] {
+                    "Evergreen",
+                    "Applications",
+                    "Evergreen_FiltersFeature",
+                    "NewFilterCheck",
+                    "DAS-10512"};
+            if ((exampleTags != null))
+            {
+                @__tags = System.Linq.Enumerable.ToArray(System.Linq.Enumerable.Concat(@__tags, exampleTags));
+            }
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("EvergreenJnr_ApplicationsList_Check that Application Readiness filter is added to" +
+                    " the list", @__tags);
+            this.ScenarioSetup(scenarioInfo);
+            this.FeatureBackground();
+            testRunner.When("User clicks \"Applications\" on the left-hand menu", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+            testRunner.Then("\"Applications\" list should be displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+            testRunner.When("User clicks the Columns button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+            testRunner.Then("Columns panel is displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+            TechTalk.SpecFlow.Table table9 = new TechTalk.SpecFlow.Table(new string[] {
+                        "ColumnName"});
+            table9.AddRow(new string[] {
+                        string.Format("{0}", columnName)});
+            testRunner.When("ColumnName is entered into the search box and the selection is clicked", ((string)(null)), table9, "When ");
+            testRunner.When("User clicks the Filters button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+            testRunner.Then("Filters panel is displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+            testRunner.When(string.Format("user select \"{0}\" filter", columnName), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+            testRunner.Then(string.Format("\"{0}\" option is available for this filter", operators), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+            testRunner.When(string.Format("User have created \"Equals\" Lookup filter with column and \"{0}\" option", filterOption), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+            testRunner.Then(string.Format("\"{0}\" is displayed in added filter info", text), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+            testRunner.Then(string.Format("\"{0}\" rows are displayed in the agGrid", rowsCount), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+            testRunner.When(string.Format("User click on \'{0}\' column header", columnName), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+            testRunner.Then(string.Format("data in table is sorted by \'{0}\' column in descending order", columnName), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+            this.ScenarioCleanup();
+        }
+        
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestMethodAttribute()]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.DescriptionAttribute("EvergreenJnr_ApplicationsList_Check that Application Readiness filter is added to" +
+            " the list: Windows7Mi: Application Readiness")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("FeatureTitle", "NewFilterCheck")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("Evergreen")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("Applications")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("Evergreen_FiltersFeature")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("NewFilterCheck")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("DAS-10512")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("VariantName", "Windows7Mi: Application Readiness")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:ColumnName", "Windows7Mi: Application Readiness")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Operators", "Equals, Does not equal")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:FilterOption", "Red")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Text", "Windows7Mi: Application Readiness is Red")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:RowsCount", "27")]
+        public virtual void EvergreenJnr_ApplicationsList_CheckThatApplicationReadinessFilterIsAddedToTheList_Windows7MiApplicationReadiness()
+        {
+            this.EvergreenJnr_ApplicationsList_CheckThatApplicationReadinessFilterIsAddedToTheList("Windows7Mi: Application Readiness", "Equals, Does not equal", "Red", "Windows7Mi: Application Readiness is Red", "27", ((string[])(null)));
+        }
+        
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestMethodAttribute()]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.DescriptionAttribute("EvergreenJnr_ApplicationsList_Check that Application Readiness filter is added to" +
+            " the list: Babel(Engl: Application Readiness")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("FeatureTitle", "NewFilterCheck")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("Evergreen")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("Applications")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("Evergreen_FiltersFeature")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("NewFilterCheck")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("DAS-10512")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("VariantName", "Babel(Engl: Application Readiness")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:ColumnName", "Babel(Engl: Application Readiness")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Operators", "Equals, Does not equal")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:FilterOption", "None")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Text", "Babel(Engl: Application Readiness is None")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:RowsCount", "302")]
+        public virtual void EvergreenJnr_ApplicationsList_CheckThatApplicationReadinessFilterIsAddedToTheList_BabelEnglApplicationReadiness()
+        {
+            this.EvergreenJnr_ApplicationsList_CheckThatApplicationReadinessFilterIsAddedToTheList("Babel(Engl: Application Readiness", "Equals, Does not equal", "None", "Babel(Engl: Application Readiness is None", "302", ((string[])(null)));
+        }
+        
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestMethodAttribute()]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.DescriptionAttribute("EvergreenJnr_ApplicationsList_Check that Application Readiness filter is added to" +
+            " the list: Barry\'sUse: Application Readiness")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("FeatureTitle", "NewFilterCheck")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("Evergreen")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("Applications")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("Evergreen_FiltersFeature")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("NewFilterCheck")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("DAS-10512")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("VariantName", "Barry\'sUse: Application Readiness")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:ColumnName", "Barry\'sUse: Application Readiness")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Operators", "Equals, Does not equal")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:FilterOption", "None")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Text", "Barry\'sUse: Application Readiness is None")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:RowsCount", "1,072")]
+        public virtual void EvergreenJnr_ApplicationsList_CheckThatApplicationReadinessFilterIsAddedToTheList_BarrysUseApplicationReadiness()
+        {
+            this.EvergreenJnr_ApplicationsList_CheckThatApplicationReadinessFilterIsAddedToTheList("Barry\'sUse: Application Readiness", "Equals, Does not equal", "None", "Barry\'sUse: Application Readiness is None", "1,072", ((string[])(null)));
+        }
+        
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestMethodAttribute()]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.DescriptionAttribute("EvergreenJnr_ApplicationsList_Check that Application Readiness filter is added to" +
+            " the list: ComputerSc: Application Readiness")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("FeatureTitle", "NewFilterCheck")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("Evergreen")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("Applications")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("Evergreen_FiltersFeature")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("NewFilterCheck")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("DAS-10512")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("VariantName", "ComputerSc: Application Readiness")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:ColumnName", "ComputerSc: Application Readiness")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Operators", "Equals, Does not equal")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:FilterOption", "Green")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Text", "ComputerSc: Application Readiness is Green")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:RowsCount", "913")]
+        public virtual void EvergreenJnr_ApplicationsList_CheckThatApplicationReadinessFilterIsAddedToTheList_ComputerScApplicationReadiness()
+        {
+            this.EvergreenJnr_ApplicationsList_CheckThatApplicationReadinessFilterIsAddedToTheList("ComputerSc: Application Readiness", "Equals, Does not equal", "Green", "ComputerSc: Application Readiness is Green", "913", ((string[])(null)));
+        }
+        
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestMethodAttribute()]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.DescriptionAttribute("EvergreenJnr_ApplicationsList_Check that Application Readiness filter is added to" +
+            " the list: Havoc(BigD: Application Readiness")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("FeatureTitle", "NewFilterCheck")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("Evergreen")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("Applications")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("Evergreen_FiltersFeature")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("NewFilterCheck")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("DAS-10512")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("VariantName", "Havoc(BigD: Application Readiness")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:ColumnName", "Havoc(BigD: Application Readiness")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Operators", "Equals, Does not equal")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:FilterOption", "None")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Text", "Havoc(BigD: Application Readiness is None")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:RowsCount", "1,067")]
+        public virtual void EvergreenJnr_ApplicationsList_CheckThatApplicationReadinessFilterIsAddedToTheList_HavocBigDApplicationReadiness()
+        {
+            this.EvergreenJnr_ApplicationsList_CheckThatApplicationReadinessFilterIsAddedToTheList("Havoc(BigD: Application Readiness", "Equals, Does not equal", "None", "Havoc(BigD: Application Readiness is None", "1,067", ((string[])(null)));
+        }
+        
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestMethodAttribute()]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.DescriptionAttribute("EvergreenJnr_ApplicationsList_Check that Application Readiness filter is added to" +
+            " the list: MigrationP: Application Readiness")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("FeatureTitle", "NewFilterCheck")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("Evergreen")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("Applications")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("Evergreen_FiltersFeature")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("NewFilterCheck")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("DAS-10512")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("VariantName", "MigrationP: Application Readiness")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:ColumnName", "MigrationP: Application Readiness")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Operators", "Equals, Does not equal")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:FilterOption", "Blue")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Text", "MigrationP: Application Readiness is Blue")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:RowsCount", "189")]
+        public virtual void EvergreenJnr_ApplicationsList_CheckThatApplicationReadinessFilterIsAddedToTheList_MigrationPApplicationReadiness()
+        {
+            this.EvergreenJnr_ApplicationsList_CheckThatApplicationReadinessFilterIsAddedToTheList("MigrationP: Application Readiness", "Equals, Does not equal", "Blue", "MigrationP: Application Readiness is Blue", "189", ((string[])(null)));
+        }
+        
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestMethodAttribute()]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.DescriptionAttribute("EvergreenJnr_ApplicationsList_Check that Application Readiness filter is added to" +
+            " the list: UserSchedu: Application Readiness")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("FeatureTitle", "NewFilterCheck")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("Evergreen")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("Applications")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("Evergreen_FiltersFeature")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("NewFilterCheck")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("DAS-10512")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("VariantName", "UserSchedu: Application Readiness")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:ColumnName", "UserSchedu: Application Readiness")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Operators", "Equals, Does not equal")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:FilterOption", "None")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Text", "UserSchedu: Application Readiness is None")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:RowsCount", "981")]
+        public virtual void EvergreenJnr_ApplicationsList_CheckThatApplicationReadinessFilterIsAddedToTheList_UserScheduApplicationReadiness()
+        {
+            this.EvergreenJnr_ApplicationsList_CheckThatApplicationReadinessFilterIsAddedToTheList("UserSchedu: Application Readiness", "Equals, Does not equal", "None", "UserSchedu: Application Readiness is None", "981", ((string[])(null)));
+        }
+        
+        public virtual void EvergreenJnr_ApplicationsList_CheckThatApplicationRationalisationFilterIsAddedToTheList(string columnName, string operators, string filterOption, string text, string rowsCount, string[] exampleTags)
+        {
+            string[] @__tags = new string[] {
+                    "Evergreen",
+                    "Applications",
+                    "Evergreen_FiltersFeature",
+                    "NewFilterCheck",
+                    "DAS-10512"};
+            if ((exampleTags != null))
+            {
+                @__tags = System.Linq.Enumerable.ToArray(System.Linq.Enumerable.Concat(@__tags, exampleTags));
+            }
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("EvergreenJnr_ApplicationsList_Check that Application Rationalisation filter is ad" +
+                    "ded to the list", @__tags);
+            this.ScenarioSetup(scenarioInfo);
+            this.FeatureBackground();
+            testRunner.When("User clicks \"Applications\" on the left-hand menu", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+            testRunner.Then("\"Applications\" list should be displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+            testRunner.When("User clicks the Columns button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+            testRunner.Then("Columns panel is displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+            TechTalk.SpecFlow.Table table10 = new TechTalk.SpecFlow.Table(new string[] {
+                        "ColumnName"});
+            table10.AddRow(new string[] {
+                        string.Format("{0}", columnName)});
+            testRunner.When("ColumnName is entered into the search box and the selection is clicked", ((string)(null)), table10, "When ");
+            testRunner.When("User clicks the Filters button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+            testRunner.Then("Filters panel is displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+            testRunner.When(string.Format("user select \"{0}\" filter", columnName), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+            testRunner.Then(string.Format("\"{0}\" option is available for this filter", operators), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+            TechTalk.SpecFlow.Table table11 = new TechTalk.SpecFlow.Table(new string[] {
+                        "SelectedCheckboxes"});
+            table11.AddRow(new string[] {
+                        string.Format("{0}", filterOption)});
+            testRunner.When("User have created \"Equals\" filter with column and following options:", ((string)(null)), table11, "When ");
+            testRunner.Then(string.Format("\"{0}\" is displayed in added filter info", text), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+            testRunner.Then(string.Format("\"{0}\" rows are displayed in the agGrid", rowsCount), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+            testRunner.When(string.Format("User click on \'{0}\' column header", columnName), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+            testRunner.Then(string.Format("data in table is sorted by \'{0}\' column in descending order", columnName), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+            this.ScenarioCleanup();
+        }
+        
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestMethodAttribute()]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.DescriptionAttribute("EvergreenJnr_ApplicationsList_Check that Application Rationalisation filter is ad" +
+            "ded to the list: Windows7Mi: Application Rationalisation")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("FeatureTitle", "NewFilterCheck")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("Evergreen")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("Applications")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("Evergreen_FiltersFeature")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("NewFilterCheck")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("DAS-10512")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("VariantName", "Windows7Mi: Application Rationalisation")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:ColumnName", "Windows7Mi: Application Rationalisation")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Operators", "Equals, Does not equal")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:FilterOption", "RETIRE")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Text", "Windows7Mi: Application Rationalisation is Retire")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:RowsCount", "85")]
+        public virtual void EvergreenJnr_ApplicationsList_CheckThatApplicationRationalisationFilterIsAddedToTheList_Windows7MiApplicationRationalisation()
+        {
+            this.EvergreenJnr_ApplicationsList_CheckThatApplicationRationalisationFilterIsAddedToTheList("Windows7Mi: Application Rationalisation", "Equals, Does not equal", "RETIRE", "Windows7Mi: Application Rationalisation is Retire", "85", ((string[])(null)));
+        }
+        
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestMethodAttribute()]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.DescriptionAttribute("EvergreenJnr_ApplicationsList_Check that Application Rationalisation filter is ad" +
+            "ded to the list: Babel(Engl: Application Rationalisation")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("FeatureTitle", "NewFilterCheck")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("Evergreen")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("Applications")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("Evergreen_FiltersFeature")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("NewFilterCheck")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("DAS-10512")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("VariantName", "Babel(Engl: Application Rationalisation")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:ColumnName", "Babel(Engl: Application Rationalisation")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Operators", "Equals, Does not equal")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:FilterOption", "UNCATEGORISED")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Text", "Babel(Engl: Application Rationalisation is Uncategorised")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:RowsCount", "302")]
+        public virtual void EvergreenJnr_ApplicationsList_CheckThatApplicationRationalisationFilterIsAddedToTheList_BabelEnglApplicationRationalisation()
+        {
+            this.EvergreenJnr_ApplicationsList_CheckThatApplicationRationalisationFilterIsAddedToTheList("Babel(Engl: Application Rationalisation", "Equals, Does not equal", "UNCATEGORISED", "Babel(Engl: Application Rationalisation is Uncategorised", "302", ((string[])(null)));
+        }
+        
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestMethodAttribute()]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.DescriptionAttribute("EvergreenJnr_ApplicationsList_Check that Application Rationalisation filter is ad" +
+            "ded to the list: Barry\'sUse: Application Rationalisation")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("FeatureTitle", "NewFilterCheck")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("Evergreen")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("Applications")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("Evergreen_FiltersFeature")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("NewFilterCheck")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("DAS-10512")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("VariantName", "Barry\'sUse: Application Rationalisation")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:ColumnName", "Barry\'sUse: Application Rationalisation")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Operators", "Equals, Does not equal")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:FilterOption", "KEEP")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Text", "Barry\'sUse: Application Rationalisation is Keep")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:RowsCount", "2")]
+        public virtual void EvergreenJnr_ApplicationsList_CheckThatApplicationRationalisationFilterIsAddedToTheList_BarrysUseApplicationRationalisation()
+        {
+            this.EvergreenJnr_ApplicationsList_CheckThatApplicationRationalisationFilterIsAddedToTheList("Barry\'sUse: Application Rationalisation", "Equals, Does not equal", "KEEP", "Barry\'sUse: Application Rationalisation is Keep", "2", ((string[])(null)));
+        }
+        
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestMethodAttribute()]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.DescriptionAttribute("EvergreenJnr_ApplicationsList_Check that Application Rationalisation filter is ad" +
+            "ded to the list: ComputerSc: Application Rationalisation")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("FeatureTitle", "NewFilterCheck")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("Evergreen")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("Applications")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("Evergreen_FiltersFeature")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("NewFilterCheck")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("DAS-10512")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("VariantName", "ComputerSc: Application Rationalisation")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:ColumnName", "ComputerSc: Application Rationalisation")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Operators", "Equals, Does not equal")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:FilterOption", "FORWARD PATH")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Text", "ComputerSc: Application Rationalisation is Forward Path")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:RowsCount", "10")]
+        public virtual void EvergreenJnr_ApplicationsList_CheckThatApplicationRationalisationFilterIsAddedToTheList_ComputerScApplicationRationalisation()
+        {
+            this.EvergreenJnr_ApplicationsList_CheckThatApplicationRationalisationFilterIsAddedToTheList("ComputerSc: Application Rationalisation", "Equals, Does not equal", "FORWARD PATH", "ComputerSc: Application Rationalisation is Forward Path", "10", ((string[])(null)));
+        }
+        
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestMethodAttribute()]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.DescriptionAttribute("EvergreenJnr_ApplicationsList_Check that Application Rationalisation filter is ad" +
+            "ded to the list: Havoc(BigD: Application Rationalisation")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("FeatureTitle", "NewFilterCheck")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("Evergreen")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("Applications")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("Evergreen_FiltersFeature")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("NewFilterCheck")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("DAS-10512")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("VariantName", "Havoc(BigD: Application Rationalisation")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:ColumnName", "Havoc(BigD: Application Rationalisation")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Operators", "Equals, Does not equal")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:FilterOption", "UNCATEGORISED")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Text", "Havoc(BigD: Application Rationalisation is Uncategorised")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:RowsCount", "1,067")]
+        public virtual void EvergreenJnr_ApplicationsList_CheckThatApplicationRationalisationFilterIsAddedToTheList_HavocBigDApplicationRationalisation()
+        {
+            this.EvergreenJnr_ApplicationsList_CheckThatApplicationRationalisationFilterIsAddedToTheList("Havoc(BigD: Application Rationalisation", "Equals, Does not equal", "UNCATEGORISED", "Havoc(BigD: Application Rationalisation is Uncategorised", "1,067", ((string[])(null)));
+        }
+        
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestMethodAttribute()]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.DescriptionAttribute("EvergreenJnr_ApplicationsList_Check that Application Rationalisation filter is ad" +
+            "ded to the list: MigrationP: Application Rationalisation")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("FeatureTitle", "NewFilterCheck")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("Evergreen")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("Applications")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("Evergreen_FiltersFeature")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("NewFilterCheck")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("DAS-10512")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("VariantName", "MigrationP: Application Rationalisation")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:ColumnName", "MigrationP: Application Rationalisation")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Operators", "Equals, Does not equal")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:FilterOption", "RETIRE")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Text", "MigrationP: Application Rationalisation is Retire")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:RowsCount", "1")]
+        public virtual void EvergreenJnr_ApplicationsList_CheckThatApplicationRationalisationFilterIsAddedToTheList_MigrationPApplicationRationalisation()
+        {
+            this.EvergreenJnr_ApplicationsList_CheckThatApplicationRationalisationFilterIsAddedToTheList("MigrationP: Application Rationalisation", "Equals, Does not equal", "RETIRE", "MigrationP: Application Rationalisation is Retire", "1", ((string[])(null)));
+        }
+        
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestMethodAttribute()]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.DescriptionAttribute("EvergreenJnr_ApplicationsList_Check that Application Rationalisation filter is ad" +
+            "ded to the list: UserSchedu: Application Rationalisation")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("FeatureTitle", "NewFilterCheck")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("Evergreen")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("Applications")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("Evergreen_FiltersFeature")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("NewFilterCheck")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("DAS-10512")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("VariantName", "UserSchedu: Application Rationalisation")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:ColumnName", "UserSchedu: Application Rationalisation")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Operators", "Equals, Does not equal")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:FilterOption", "UNCATEGORISED")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Text", "UserSchedu: Application Rationalisation is Uncategorised")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:RowsCount", "981")]
+        public virtual void EvergreenJnr_ApplicationsList_CheckThatApplicationRationalisationFilterIsAddedToTheList_UserScheduApplicationRationalisation()
+        {
+            this.EvergreenJnr_ApplicationsList_CheckThatApplicationRationalisationFilterIsAddedToTheList("UserSchedu: Application Rationalisation", "Equals, Does not equal", "UNCATEGORISED", "UserSchedu: Application Rationalisation is Uncategorised", "981", ((string[])(null)));
+        }
+        
+        public virtual void EvergreenJnr_ApplicationsList_CheckThatCoreApplicationFilterIsAddedToTheList(string columnName, string operators, string filterOption, string text, string rowsCount, string[] exampleTags)
+        {
+            string[] @__tags = new string[] {
+                    "Evergreen",
+                    "Applications",
+                    "Evergreen_FiltersFeature",
+                    "NewFilterCheck",
+                    "DAS-10512"};
+            if ((exampleTags != null))
+            {
+                @__tags = System.Linq.Enumerable.ToArray(System.Linq.Enumerable.Concat(@__tags, exampleTags));
+            }
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("EvergreenJnr_ApplicationsList_Check that Core Application filter is added to the " +
+                    "list", @__tags);
+            this.ScenarioSetup(scenarioInfo);
+            this.FeatureBackground();
+            testRunner.When("User clicks \"Applications\" on the left-hand menu", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+            testRunner.Then("\"Applications\" list should be displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+            testRunner.When("User clicks the Columns button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+            testRunner.Then("Columns panel is displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+            TechTalk.SpecFlow.Table table12 = new TechTalk.SpecFlow.Table(new string[] {
+                        "ColumnName"});
+            table12.AddRow(new string[] {
+                        string.Format("{0}", columnName)});
+            testRunner.When("ColumnName is entered into the search box and the selection is clicked", ((string)(null)), table12, "When ");
+            testRunner.When("User clicks the Filters button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+            testRunner.Then("Filters panel is displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+            testRunner.When(string.Format("user select \"{0}\" filter", columnName), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+            testRunner.Then(string.Format("\"{0}\" option is available for this filter", operators), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+            TechTalk.SpecFlow.Table table13 = new TechTalk.SpecFlow.Table(new string[] {
+                        "SelectedCheckboxes"});
+            table13.AddRow(new string[] {
+                        string.Format("{0}", filterOption)});
+            testRunner.When("User have created \"Equals\" filter with column and following options:", ((string)(null)), table13, "When ");
+            testRunner.Then(string.Format("\"{0}\" is displayed in added filter info", text), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+            testRunner.Then(string.Format("\"{0}\" rows are displayed in the agGrid", rowsCount), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+            testRunner.When(string.Format("User click on \'{0}\' column header", columnName), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+            testRunner.Then(string.Format("data in table is sorted by \'{0}\' column in descending order", columnName), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+            this.ScenarioCleanup();
+        }
+        
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestMethodAttribute()]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.DescriptionAttribute("EvergreenJnr_ApplicationsList_Check that Core Application filter is added to the " +
+            "list: Windows7Mi: Core Application")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("FeatureTitle", "NewFilterCheck")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("Evergreen")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("Applications")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("Evergreen_FiltersFeature")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("NewFilterCheck")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("DAS-10512")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("VariantName", "Windows7Mi: Core Application")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:ColumnName", "Windows7Mi: Core Application")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Operators", "Equals, Does not equal")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:FilterOption", "TRUE")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Text", "Windows7Mi: Core Application is true")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:RowsCount", "11")]
+        public virtual void EvergreenJnr_ApplicationsList_CheckThatCoreApplicationFilterIsAddedToTheList_Windows7MiCoreApplication()
+        {
+            this.EvergreenJnr_ApplicationsList_CheckThatCoreApplicationFilterIsAddedToTheList("Windows7Mi: Core Application", "Equals, Does not equal", "TRUE", "Windows7Mi: Core Application is true", "11", ((string[])(null)));
+        }
+        
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestMethodAttribute()]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.DescriptionAttribute("EvergreenJnr_ApplicationsList_Check that Core Application filter is added to the " +
+            "list: Babel(Engl: Core Application")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("FeatureTitle", "NewFilterCheck")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("Evergreen")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("Applications")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("Evergreen_FiltersFeature")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("NewFilterCheck")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("DAS-10512")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("VariantName", "Babel(Engl: Core Application")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:ColumnName", "Babel(Engl: Core Application")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Operators", "Equals, Does not equal")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:FilterOption", "FALSE")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Text", "Babel(Engl: Core Application is false")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:RowsCount", "302")]
+        public virtual void EvergreenJnr_ApplicationsList_CheckThatCoreApplicationFilterIsAddedToTheList_BabelEnglCoreApplication()
+        {
+            this.EvergreenJnr_ApplicationsList_CheckThatCoreApplicationFilterIsAddedToTheList("Babel(Engl: Core Application", "Equals, Does not equal", "FALSE", "Babel(Engl: Core Application is false", "302", ((string[])(null)));
+        }
+        
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestMethodAttribute()]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.DescriptionAttribute("EvergreenJnr_ApplicationsList_Check that Core Application filter is added to the " +
+            "list: Barry\'sUse: Core Application")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("FeatureTitle", "NewFilterCheck")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("Evergreen")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("Applications")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("Evergreen_FiltersFeature")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("NewFilterCheck")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("DAS-10512")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("VariantName", "Barry\'sUse: Core Application")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:ColumnName", "Barry\'sUse: Core Application")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Operators", "Equals, Does not equal")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:FilterOption", "UNKNOWN")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Text", "Barry\'sUse: Core Application is Unknown")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:RowsCount", "1,146")]
+        public virtual void EvergreenJnr_ApplicationsList_CheckThatCoreApplicationFilterIsAddedToTheList_BarrysUseCoreApplication()
+        {
+            this.EvergreenJnr_ApplicationsList_CheckThatCoreApplicationFilterIsAddedToTheList("Barry\'sUse: Core Application", "Equals, Does not equal", "UNKNOWN", "Barry\'sUse: Core Application is Unknown", "1,146", ((string[])(null)));
+        }
+        
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestMethodAttribute()]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.DescriptionAttribute("EvergreenJnr_ApplicationsList_Check that Core Application filter is added to the " +
+            "list: ComputerSc: Core Application")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("FeatureTitle", "NewFilterCheck")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("Evergreen")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("Applications")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("Evergreen_FiltersFeature")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("NewFilterCheck")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("DAS-10512")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("VariantName", "ComputerSc: Core Application")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:ColumnName", "ComputerSc: Core Application")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Operators", "Equals, Does not equal")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:FilterOption", "FALSE")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Text", "ComputerSc: Core Application is false")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:RowsCount", "1,033")]
+        public virtual void EvergreenJnr_ApplicationsList_CheckThatCoreApplicationFilterIsAddedToTheList_ComputerScCoreApplication()
+        {
+            this.EvergreenJnr_ApplicationsList_CheckThatCoreApplicationFilterIsAddedToTheList("ComputerSc: Core Application", "Equals, Does not equal", "FALSE", "ComputerSc: Core Application is false", "1,033", ((string[])(null)));
+        }
+        
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestMethodAttribute()]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.DescriptionAttribute("EvergreenJnr_ApplicationsList_Check that Core Application filter is added to the " +
+            "list: Havoc(BigD: Core Application")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("FeatureTitle", "NewFilterCheck")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("Evergreen")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("Applications")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("Evergreen_FiltersFeature")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("NewFilterCheck")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("DAS-10512")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("VariantName", "Havoc(BigD: Core Application")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:ColumnName", "Havoc(BigD: Core Application")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Operators", "Equals, Does not equal")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:FilterOption", "UNKNOWN")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Text", "Havoc(BigD: Core Application is Unknown")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:RowsCount", "1,156")]
+        public virtual void EvergreenJnr_ApplicationsList_CheckThatCoreApplicationFilterIsAddedToTheList_HavocBigDCoreApplication()
+        {
+            this.EvergreenJnr_ApplicationsList_CheckThatCoreApplicationFilterIsAddedToTheList("Havoc(BigD: Core Application", "Equals, Does not equal", "UNKNOWN", "Havoc(BigD: Core Application is Unknown", "1,156", ((string[])(null)));
+        }
+        
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestMethodAttribute()]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.DescriptionAttribute("EvergreenJnr_ApplicationsList_Check that Core Application filter is added to the " +
+            "list: MigrationP: Core Application")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("FeatureTitle", "NewFilterCheck")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("Evergreen")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("Applications")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("Evergreen_FiltersFeature")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("NewFilterCheck")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("DAS-10512")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("VariantName", "MigrationP: Core Application")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:ColumnName", "MigrationP: Core Application")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Operators", "Equals, Does not equal")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:FilterOption", "FALSE")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Text", "MigrationP: Core Application is false")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:RowsCount", "220")]
+        public virtual void EvergreenJnr_ApplicationsList_CheckThatCoreApplicationFilterIsAddedToTheList_MigrationPCoreApplication()
+        {
+            this.EvergreenJnr_ApplicationsList_CheckThatCoreApplicationFilterIsAddedToTheList("MigrationP: Core Application", "Equals, Does not equal", "FALSE", "MigrationP: Core Application is false", "220", ((string[])(null)));
+        }
+        
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestMethodAttribute()]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.DescriptionAttribute("EvergreenJnr_ApplicationsList_Check that Core Application filter is added to the " +
+            "list: UserSchedu: Core Application")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("FeatureTitle", "NewFilterCheck")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("Evergreen")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("Applications")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("Evergreen_FiltersFeature")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("NewFilterCheck")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("DAS-10512")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("VariantName", "UserSchedu: Core Application")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:ColumnName", "UserSchedu: Core Application")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Operators", "Equals, Does not equal")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:FilterOption", "UNKNOWN")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Text", "UserSchedu: Core Application is Unknown")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:RowsCount", "1,242")]
+        public virtual void EvergreenJnr_ApplicationsList_CheckThatCoreApplicationFilterIsAddedToTheList_UserScheduCoreApplication()
+        {
+            this.EvergreenJnr_ApplicationsList_CheckThatCoreApplicationFilterIsAddedToTheList("UserSchedu: Core Application", "Equals, Does not equal", "UNKNOWN", "UserSchedu: Core Application is Unknown", "1,242", ((string[])(null)));
+        }
+        
+        public virtual void EvergreenJnr_ApplicationsList_CheckThatHideFromEndUsersFilterIsAddedToTheList(string columnName, string operators, string filterOption, string text, string rowsCount, string[] exampleTags)
+        {
+            string[] @__tags = new string[] {
+                    "Evergreen",
+                    "Applications",
+                    "Evergreen_FiltersFeature",
+                    "NewFilterCheck",
+                    "DAS-10512"};
+            if ((exampleTags != null))
+            {
+                @__tags = System.Linq.Enumerable.ToArray(System.Linq.Enumerable.Concat(@__tags, exampleTags));
+            }
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("EvergreenJnr_ApplicationsList_Check that Hide from End Users filter is added to t" +
+                    "he list", @__tags);
+            this.ScenarioSetup(scenarioInfo);
+            this.FeatureBackground();
+            testRunner.When("User clicks \"Applications\" on the left-hand menu", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+            testRunner.Then("\"Applications\" list should be displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+            testRunner.When("User clicks the Columns button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+            testRunner.Then("Columns panel is displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+            TechTalk.SpecFlow.Table table14 = new TechTalk.SpecFlow.Table(new string[] {
+                        "ColumnName"});
+            table14.AddRow(new string[] {
+                        string.Format("{0}", columnName)});
+            testRunner.When("ColumnName is entered into the search box and the selection is clicked", ((string)(null)), table14, "When ");
+            testRunner.When("User clicks the Filters button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+            testRunner.Then("Filters panel is displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+            testRunner.When(string.Format("user select \"{0}\" filter", columnName), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+            testRunner.Then(string.Format("\"{0}\" option is available for this filter", operators), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+            TechTalk.SpecFlow.Table table15 = new TechTalk.SpecFlow.Table(new string[] {
+                        "SelectedCheckboxes"});
+            table15.AddRow(new string[] {
+                        string.Format("{0}", filterOption)});
+            testRunner.When("User have created \"Equals\" filter with column and following options:", ((string)(null)), table15, "When ");
+            testRunner.Then(string.Format("\"{0}\" is displayed in added filter info", text), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+            testRunner.Then(string.Format("\"{0}\" rows are displayed in the agGrid", rowsCount), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+            testRunner.When(string.Format("User click on \'{0}\' column header", columnName), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+            testRunner.Then(string.Format("data in table is sorted by \'{0}\' column in descending order", columnName), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+            this.ScenarioCleanup();
+        }
+        
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestMethodAttribute()]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.DescriptionAttribute("EvergreenJnr_ApplicationsList_Check that Hide from End Users filter is added to t" +
+            "he list: Windows7Mi: Hide from End Users")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("FeatureTitle", "NewFilterCheck")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("Evergreen")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("Applications")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("Evergreen_FiltersFeature")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("NewFilterCheck")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("DAS-10512")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("VariantName", "Windows7Mi: Hide from End Users")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:ColumnName", "Windows7Mi: Hide from End Users")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Operators", "Equals, Does not equal")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:FilterOption", "FALSE")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Text", "Windows7Mi: Hide from End Users is false")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:RowsCount", "1,067")]
+        public virtual void EvergreenJnr_ApplicationsList_CheckThatHideFromEndUsersFilterIsAddedToTheList_Windows7MiHideFromEndUsers()
+        {
+            this.EvergreenJnr_ApplicationsList_CheckThatHideFromEndUsersFilterIsAddedToTheList("Windows7Mi: Hide from End Users", "Equals, Does not equal", "FALSE", "Windows7Mi: Hide from End Users is false", "1,067", ((string[])(null)));
+        }
+        
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestMethodAttribute()]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.DescriptionAttribute("EvergreenJnr_ApplicationsList_Check that Hide from End Users filter is added to t" +
+            "he list: Babel(Engl: Hide from End Users")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("FeatureTitle", "NewFilterCheck")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("Evergreen")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("Applications")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("Evergreen_FiltersFeature")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("NewFilterCheck")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("DAS-10512")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("VariantName", "Babel(Engl: Hide from End Users")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:ColumnName", "Babel(Engl: Hide from End Users")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Operators", "Equals, Does not equal")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:FilterOption", "UNKNOWN")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Text", "Babel(Engl: Hide from End Users is Unknown")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:RowsCount", "1,921")]
+        public virtual void EvergreenJnr_ApplicationsList_CheckThatHideFromEndUsersFilterIsAddedToTheList_BabelEnglHideFromEndUsers()
+        {
+            this.EvergreenJnr_ApplicationsList_CheckThatHideFromEndUsersFilterIsAddedToTheList("Babel(Engl: Hide from End Users", "Equals, Does not equal", "UNKNOWN", "Babel(Engl: Hide from End Users is Unknown", "1,921", ((string[])(null)));
+        }
+        
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestMethodAttribute()]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.DescriptionAttribute("EvergreenJnr_ApplicationsList_Check that Hide from End Users filter is added to t" +
+            "he list: Barry\'sUse: Hide from End Users")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("FeatureTitle", "NewFilterCheck")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("Evergreen")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("Applications")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("Evergreen_FiltersFeature")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("NewFilterCheck")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("DAS-10512")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("VariantName", "Barry\'sUse: Hide from End Users")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:ColumnName", "Barry\'sUse: Hide from End Users")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Operators", "Equals, Does not equal")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:FilterOption", "FALSE")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Text", "Barry\'sUse: Hide from End Users is false")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:RowsCount", "1,077")]
+        public virtual void EvergreenJnr_ApplicationsList_CheckThatHideFromEndUsersFilterIsAddedToTheList_BarrysUseHideFromEndUsers()
+        {
+            this.EvergreenJnr_ApplicationsList_CheckThatHideFromEndUsersFilterIsAddedToTheList("Barry\'sUse: Hide from End Users", "Equals, Does not equal", "FALSE", "Barry\'sUse: Hide from End Users is false", "1,077", ((string[])(null)));
+        }
+        
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestMethodAttribute()]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.DescriptionAttribute("EvergreenJnr_ApplicationsList_Check that Hide from End Users filter is added to t" +
+            "he list: ComputerSc: Hide from End Users")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("FeatureTitle", "NewFilterCheck")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("Evergreen")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("Applications")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("Evergreen_FiltersFeature")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("NewFilterCheck")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("DAS-10512")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("VariantName", "ComputerSc: Hide from End Users")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:ColumnName", "ComputerSc: Hide from End Users")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Operators", "Equals, Does not equal")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:FilterOption", "FALSE")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Text", "ComputerSc: Hide from End Users is false")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:RowsCount", "1,033")]
+        public virtual void EvergreenJnr_ApplicationsList_CheckThatHideFromEndUsersFilterIsAddedToTheList_ComputerScHideFromEndUsers()
+        {
+            this.EvergreenJnr_ApplicationsList_CheckThatHideFromEndUsersFilterIsAddedToTheList("ComputerSc: Hide from End Users", "Equals, Does not equal", "FALSE", "ComputerSc: Hide from End Users is false", "1,033", ((string[])(null)));
+        }
+        
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestMethodAttribute()]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.DescriptionAttribute("EvergreenJnr_ApplicationsList_Check that Hide from End Users filter is added to t" +
+            "he list: Havoc(BigD: Hide from End Users")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("FeatureTitle", "NewFilterCheck")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("Evergreen")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("Applications")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("Evergreen_FiltersFeature")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("NewFilterCheck")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("DAS-10512")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("VariantName", "Havoc(BigD: Hide from End Users")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:ColumnName", "Havoc(BigD: Hide from End Users")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Operators", "Equals, Does not equal")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:FilterOption", "UNKNOWN")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Text", "Havoc(BigD: Hide from End Users is Unknown")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:RowsCount", "1,156")]
+        public virtual void EvergreenJnr_ApplicationsList_CheckThatHideFromEndUsersFilterIsAddedToTheList_HavocBigDHideFromEndUsers()
+        {
+            this.EvergreenJnr_ApplicationsList_CheckThatHideFromEndUsersFilterIsAddedToTheList("Havoc(BigD: Hide from End Users", "Equals, Does not equal", "UNKNOWN", "Havoc(BigD: Hide from End Users is Unknown", "1,156", ((string[])(null)));
+        }
+        
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestMethodAttribute()]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.DescriptionAttribute("EvergreenJnr_ApplicationsList_Check that Hide from End Users filter is added to t" +
+            "he list: MigrationP: Hide from End Users")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("FeatureTitle", "NewFilterCheck")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("Evergreen")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("Applications")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("Evergreen_FiltersFeature")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("NewFilterCheck")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("DAS-10512")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("VariantName", "MigrationP: Hide from End Users")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:ColumnName", "MigrationP: Hide from End Users")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Operators", "Equals, Does not equal")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:FilterOption", "FALSE")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Text", "MigrationP: Hide from End Users is false")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:RowsCount", "220")]
+        public virtual void EvergreenJnr_ApplicationsList_CheckThatHideFromEndUsersFilterIsAddedToTheList_MigrationPHideFromEndUsers()
+        {
+            this.EvergreenJnr_ApplicationsList_CheckThatHideFromEndUsersFilterIsAddedToTheList("MigrationP: Hide from End Users", "Equals, Does not equal", "FALSE", "MigrationP: Hide from End Users is false", "220", ((string[])(null)));
+        }
+        
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestMethodAttribute()]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.DescriptionAttribute("EvergreenJnr_ApplicationsList_Check that Hide from End Users filter is added to t" +
+            "he list: UserSchedu: Hide from End Users")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("FeatureTitle", "NewFilterCheck")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("Evergreen")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("Applications")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("Evergreen_FiltersFeature")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("NewFilterCheck")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("DAS-10512")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("VariantName", "UserSchedu: Hide from End Users")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:ColumnName", "UserSchedu: Hide from End Users")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Operators", "Equals, Does not equal")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:FilterOption", "UNKNOWN")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Text", "UserSchedu: Hide from End Users is Unknown")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:RowsCount", "1,242")]
+        public virtual void EvergreenJnr_ApplicationsList_CheckThatHideFromEndUsersFilterIsAddedToTheList_UserScheduHideFromEndUsers()
+        {
+            this.EvergreenJnr_ApplicationsList_CheckThatHideFromEndUsersFilterIsAddedToTheList("UserSchedu: Hide from End Users", "Equals, Does not equal", "UNKNOWN", "UserSchedu: Hide from End Users is Unknown", "1,242", ((string[])(null)));
+        }
     }
 }
 #pragma warning restore
