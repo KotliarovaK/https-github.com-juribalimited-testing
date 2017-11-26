@@ -97,3 +97,25 @@ Scenario: EvergreenJnr_ApplicationsList_Check that filter is restored after goin
 	Then "Applications" list should be displayed to the user
 	When User navigates to the "TestList" list
 	Then "9" rows are displayed in the agGrid
+
+@Evergreen @AllLists @EvergreenJnr_FilterFeature @FilterFunctionality @DAS-11042
+Scenario Outline: EvergreenJnr_AllLists_Check that primary column is displayed after adding a filter with column column
+	When User clicks "<ListName>" on the left-hand menu
+	Then "<ListName>" list should be displayed to the user
+	When User clicks the Filters button
+	Then Filters panel is displayed to the user
+	When user select "<FilterName>" filter 
+	And User have create "Contains" Values filter with column and following options:
+	| Values       |
+	| <FilterValue> |
+	Then "<FilterName>" filter is added to the list
+	Then ColumnName is added to the list
+	| ColumnName   |
+	| <ColumnName> |
+
+Examples: 
+	| ListName     | FilterName              | FilterValue | ColumnName    |
+	| Devices      | Hostname                | 00          | Hostname      |
+	| Applications | Application             | adobe       | Application   |
+	| Users        | Username                | aa          | Username      |
+	| Mailboxes    | Email Address (Primary) | ale         | Email Address |
