@@ -60,8 +60,8 @@ namespace DashworksTestAutomation.Steps.Dashworks
             listElement.UpdateCurrentListButton.Click();
         }
 
-        [Then(@"User save change in list with ""(.*)"" name")]
-        public void ThenUserSaveChangeInListWithName(string listName)
+        [Then(@"User save changes in list with ""(.*)"" name")]
+        public void ThenUserSaveChangesInListWithName(string listName)
         {
             var listElement = _driver.NowAt<CustomListElement>();
             _driver.WaitWhileControlIsNotDisplayed<CustomListElement>(() => listElement.SaveAsDropdown);

@@ -100,7 +100,7 @@ Scenario: EvergreenJnr_DevicesList_Check that "Empty" and "Not Empty" options is
 	Then "Empty, Not empty" option is available for this filter
 
 @Evergreen @Devices @Evergreen_FiltersFeature @FiltersDisplay @DAS-10795
-Scenario: EvergreenJnr_DevicesList_Check that 'Add column' option as available for "Operating System" filter
+Scenario: EvergreenJnr_DevicesList_Check that 'Add column' option is available for "Operating System" filter
 	When User clicks "Devices" on the left-hand menu
 	Then "Devices" list should be displayed to the user
 	When User clicks the Filters button
@@ -112,7 +112,7 @@ Scenario: EvergreenJnr_DevicesList_Check that 'Add column' option as available f
 	And User is logged out
 
 @Evergreen @Devices @Evergreen_FiltersFeature @FiltersDisplay @DAS-10795
-Scenario: EvergreenJnr_DevicesList_Check that 'Add column' option as available for "City" filter
+Scenario: EvergreenJnr_DevicesList_Check that 'Add column' option is available for "City" filter
 	When User clicks "Devices" on the left-hand menu
 	Then "Devices" list should be displayed to the user
 	When User clicks the Filters button
@@ -123,20 +123,20 @@ Scenario: EvergreenJnr_DevicesList_Check that 'Add column' option as available f
 	Then Signed Out page is displayed to the user
 	And User is logged out
 
-@Evergreen @Devices @Evergreen_FiltersFeature @FiltersDisplay @DAS-10795
-Scenario: EvergreenJnr_DevicesList_Check that 'Add column' option as available for filter
+@Evergreen @Devices @Evergreen_FiltersFeature @FiltersDisplay @DAS-10795 @DAS-11187
+Scenario: EvergreenJnr_DevicesList_Check that 'Add column' option is not available for Application Custom Fields filters
 	When User clicks "Devices" on the left-hand menu
 	Then "Devices" list should be displayed to the user
 	When User clicks the Filters button
 	Then Filters panel is displayed to the user
 	When user select "Computer Warranty" filter
-	Then "Add column" checkbox is displayed
+	Then "Add column" checkbox is not displayed
 	When User clicks the Logout button
 	Then Signed Out page is displayed to the user
 	And User is logged out
 
 @Evergreen @Users @Evergreen_FiltersFeature @FiltersDisplay @DAS-10795
-Scenario: EvergreenJnr_UsersList_Check that 'Add column' option as available for filter
+Scenario: EvergreenJnr_UsersList_Check that 'Add column' option is available for filter
 	When User clicks "Users" on the left-hand menu
 	Then "Users" list should be displayed to the user
 	When User clicks the Filters button
@@ -148,7 +148,7 @@ Scenario: EvergreenJnr_UsersList_Check that 'Add column' option as available for
 	And User is logged out
 
 @Evergreen @Applications @Evergreen_FiltersFeature @FiltersDisplay @DAS-10795
-Scenario: EvergreenJnr_ApplicationsList_Check that 'Add column' option as available for filter
+Scenario: EvergreenJnr_ApplicationsList_Check that 'Add column' option is available for filter
 	When User clicks "Applications" on the left-hand menu
 	Then "Applications" list should be displayed to the user
 	When User clicks the Filters button
@@ -160,7 +160,7 @@ Scenario: EvergreenJnr_ApplicationsList_Check that 'Add column' option as availa
 	And User is logged out
 
 @Evergreen @Mailboxes @Evergreen_FiltersFeature @FiltersDisplay @DAS-10795
-Scenario: EvergreenJnr_MailboxesList_Check that 'Add column' option as available for filter
+Scenario: EvergreenJnr_MailboxesList_Check that 'Add column' option is available for filter
 	When User clicks "Mailboxes" on the left-hand menu
 	Then "Mailboxes" list should be displayed to the user
 	When User clicks the Filters button

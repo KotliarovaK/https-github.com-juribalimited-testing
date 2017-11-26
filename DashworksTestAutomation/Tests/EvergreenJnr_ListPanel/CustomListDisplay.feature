@@ -126,11 +126,10 @@ Scenario: EvergreenJnr_DevicesList_agGrid_Check that 'new list created' message 
 	When User clicks the Actions button
 	Then Actions panel is displayed to the user
 	When User select all rows
-	Then Actions panel is displayed to the user
 	And User create static list with "TestList" name
 	Then "TestList" list is displayed to user
 	When User click on 'Hostname' column header
 	Then data in table is sorted by 'Hostname' column in descending order
-	Then User save change in list with "UnbelievableTestList" name
+	Then User save changes in list with "UnbelievableTestList" name
 	Then "UnbelievableTestList" list is displayed to user
 	And "New list created" message is displayed

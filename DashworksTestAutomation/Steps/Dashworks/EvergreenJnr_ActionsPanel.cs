@@ -85,8 +85,8 @@ namespace DashworksTestAutomation.Steps.Dashworks
             Assert.IsFalse(dashboardPage.SelectAllCheckbox.Displayed(), "Select All checkbox is displayed");
         }
 
-        [Then(@"User create static list with ""(.*)"" name")]
-        public void ThenUserCreateStaticListWithName(string listName)
+        [When(@"User create static list with ""(.*)"" name")]
+        public void WhenUserCreateStaticListWithName(string listName)
         {
             var listElement = _driver.NowAt<ActionsElement>();
             _driver.WaitWhileControlIsNotDisplayed<ActionsElement>(() => listElement.CreateButton);

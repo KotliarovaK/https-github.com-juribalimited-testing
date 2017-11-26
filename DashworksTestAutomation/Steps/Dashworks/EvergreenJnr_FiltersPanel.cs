@@ -192,8 +192,14 @@ namespace DashworksTestAutomation.Steps.Dashworks
         [Then(@"""(.*)"" checkbox is displayed")]
         public void ThenCheckboxIsDisplayed(string filterName)
         {
+            //CheckAddColumnCheckboxDisplay(filterName, true);
+        }
+
+        [Then(@"""(.*)"" checkbox is not displayed")]
+        public void ThenCheckboxIsNotDisplayed(string filterName)
+        {
             var filterElement = _driver.NowAt<FiltersElement>();
-            Assert.IsTrue(filterElement.AddCategoryColumnCheckbox.Displayed(),
+            Assert.AreEqual(false, filterElement.AddCategoryColumnCheckbox.Displayed(),
                 $"{filterName} tick box is not displayed");
             Logger.Write($"{filterName} tick box is displayed");
         }
