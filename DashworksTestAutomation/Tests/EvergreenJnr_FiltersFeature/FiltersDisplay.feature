@@ -172,7 +172,7 @@ Scenario: EvergreenJnr_MailboxesList_Check that 'Add column' option as available
 	And User is logged out
 
 @Evergreen @Devices @Evergreen_FiltersFeature @FiltersDisplay @DAS-10771
-Scenario: EvergreenJnr_DevicesList_Check that 'None' option as available for filter
+Scenario: EvergreenJnr_DevicesList_Check that 'None' option is available for filter
 	When User clicks "Devices" on the left-hand menu
 	Then "Devices" list should be displayed to the user
 	When User clicks the Filters button
@@ -184,7 +184,7 @@ Scenario: EvergreenJnr_DevicesList_Check that 'None' option as available for fil
 	And User is logged out
 
 @Evergreen @Users @Evergreen_FiltersFeature @FiltersDisplay @DAS-10771
-Scenario: EvergreenJnr_UsersList_Check that 'None' option as available for filter
+Scenario: EvergreenJnr_UsersList_Check that 'None' option is available for filter
 	When User clicks "Users" on the left-hand menu
 	Then "Users" list should be displayed to the user
 	When User clicks the Filters button
@@ -196,7 +196,7 @@ Scenario: EvergreenJnr_UsersList_Check that 'None' option as available for filte
 	And User is logged out
 
 @Evergreen @Applications @Evergreen_FiltersFeature @FiltersDisplay @DAS-10771
-Scenario: EvergreenJnr_ApplicationsList_Check that 'None' option as available for filter
+Scenario: EvergreenJnr_ApplicationsList_Check that 'None' option is available for filter
 	When User clicks "Applications" on the left-hand menu
 	Then "Applications" list should be displayed to the user
 	When User clicks the Filters button
@@ -208,7 +208,7 @@ Scenario: EvergreenJnr_ApplicationsList_Check that 'None' option as available fo
 	And User is logged out
 
 @Evergreen @Mailboxes @Evergreen_FiltersFeature @FiltersDisplay @DAS-10771
-Scenario: EvergreenJnr_MailboxesList_Check that 'None' option as available for filter
+Scenario: EvergreenJnr_MailboxesList_Check that 'None' option is available for filter
 	When User clicks "Mailboxes" on the left-hand menu
 	Then "Mailboxes" list should be displayed to the user
 	When User clicks the Filters button
