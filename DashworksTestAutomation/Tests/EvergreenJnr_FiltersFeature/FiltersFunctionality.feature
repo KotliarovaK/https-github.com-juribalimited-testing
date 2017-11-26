@@ -99,7 +99,7 @@ Scenario: EvergreenJnr_ApplicationsList_Check that filter is restored after goin
 	Then "9" rows are displayed in the agGrid
 
 @Evergreen @AllLists @EvergreenJnr_FilterFeature @FilterFunctionality @DAS-11042
-Scenario Outline: EvergreenJnr_AllLists_Check that primary column is displayed after adding a filter with column column
+Scenario Outline: EvergreenJnr_AllLists_Check that primary column is displayed after adding a filter with column
 	When User clicks "<ListName>" on the left-hand menu
 	Then "<ListName>" list should be displayed to the user
 	When User clicks the Filters button
