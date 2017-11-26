@@ -246,21 +246,25 @@ namespace DashworksTestAutomation.Steps.Dashworks
         public void ThenOptionIsAvailableForThisFilter(string optionName)
         {
             var filterElement = _driver.NowAt<FiltersElement>();
-            foreach (string option in optionName.Split(','))
-            {
-                if (string.IsNullOrEmpty(option))
-                    continue;
-                try
-                {
-                    filterElement.OperatorDropdown.Click();
-                }
-                catch (Exception e)
-                {
-                }
-                var actualOptionsList = filterElement.OperatorOptions.Select(value => value.Text).ToList();
-                Assert.Contains(option.TrimStart(' ').TrimEnd(' '), actualOptionsList, $"{optionName} is not found in Filter Options");
-                filterElement.OperatorOptions.First().Click();
-            }
+            //foreach (string option in optionName.Split(','))
+            //{
+            //    if (string.IsNullOrEmpty(option))
+            //        continue;
+            //    try
+            //    {
+            //        filterElement.OperatorDropdown.Click();
+            //    }
+            //    catch (Exception e)
+            //    {
+            //    }
+            //    var actualOptionsList = filterElement.OperatorOptions.Select(value => value.Text).ToList();
+            //    Assert.Contains(option.TrimStart(' ').TrimEnd(' '), actualOptionsList, $"{optionName} is not found in Filter Options");
+            //    filterElement.OperatorOptions.First().Click();
+            //}
+            filterElement.OperatorDropdown.Click();
+            var availableOptions = filterElement.OperatorOptions.Select(value => value.Text).ToList();
+            Assert.AreEqual(optionName.Split(',').Select(x=>x.TrimStart(' ').TrimEnd(' ')).ToList(), availableOptions);
+            filterElement.OperatorOptions.First().SendKeys(OpenQA.Selenium.Keys.Escape);
         }
 
         [When(@"User is remove filter by URL")]

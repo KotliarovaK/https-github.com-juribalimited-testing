@@ -607,7 +607,7 @@ Scenario: EvergreenJnr_ApplicationsList_Check that brackets are displayed correc
 	| Application begins with ((((test)))                                                             |
 
 @Evergreen @Mailboxes @Evergreen_FiltersFeature @FiltersDisplay @DAS-11351
-Scenario: EvergreenJnr_DevicesList_Check that 'Add column' option as available for "Owner Department" filter
+Scenario: EvergreenJnr_MailboxesList_Check that 'Add column' option as available for "Owner Department" filter
 	When User clicks "Mailboxes" on the left-hand menu
 	Then "Mailboxes" list should be displayed to the user
 	When User clicks the Filters button
@@ -622,7 +622,7 @@ Scenario: EvergreenJnr_DevicesList_Check that 'Add column' option as available f
 	And User is logged out
 
 @Evergreen @Devices @EvergreenJnr_FiltersFeature @FilterFunctionality @DAS-11087
-Scenario: EvergreenJnr_ApplicationsList_Check that Date and Time filters with "Equals" Values are working correctly
+Scenario: EvergreenJnr_DevicesList_Check that Date and Time filters with "Equals" Values are working correctly
 	When User clicks "Devices" on the left-hand menu
 	Then "Devices" list should be displayed to the user
 	When User clicks the Filters button
@@ -638,7 +638,7 @@ Scenario: EvergreenJnr_ApplicationsList_Check that Date and Time filters with "E
 	And User is logged out
 
 @Evergreen @Devices @EvergreenJnr_FiltersFeature @FilterFunctionality @DAS-11087
-Scenario: EvergreenJnr_ApplicationsList_Check that Date and Time filters with "Does not equal" Values are working correctly
+Scenario: EvergreenJnr_DevicesList_Check that Date and Time filters with "Does not equal" Values are working correctly
 	When User clicks "Devices" on the left-hand menu
 	Then "Devices" list should be displayed to the user
 	When User clicks the Filters button
