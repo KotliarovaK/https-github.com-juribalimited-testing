@@ -5,6 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using DashworksTestAutomation.Extensions;
 using DashworksTestAutomation.Pages.Evergreen;
+using NUnit.Framework;
 using OpenQA.Selenium;
 using OpenQA.Selenium.Remote;
 using TechTalk.SpecFlow;
@@ -129,6 +130,7 @@ namespace DashworksTestAutomation.Helpers
 
         public override void Do()
         {
+            var addedOptionSelector = ".//div[@class='filterAddPanel']/div[@class='form-container']//div[@class='form-group']//li/span[contains(text(),'{0}')]";
             var filterValueSelector = By.XPath(
                 ".//div[@class='filterAddPanel']//div[@class='mat-input-infix mat-form-field-infix']//input");
             var addButtonSelector = By.XPath(".//div[@class='filterAddPanel']//button[@title='Add']");
@@ -138,10 +140,17 @@ namespace DashworksTestAutomation.Helpers
             {
                 if (!_driver.IsElementDisplayed(filterValueSelector)) continue;
                 _driver.FindElement(filterValueSelector).SendKeys(row["Values"]);
-                
+
                 if (_driver.IsElementDisplayed(addButtonSelector))
                 {
                     _driver.FindElement(addButtonSelector).Click();
+
+                    //Show all added values
+                    if (_driver.IsElementDisplayed(By.XPath(string.Format(addedOptionSelector, "more"))))
+                        _driver.FindElement(By.XPath(string.Format(addedOptionSelector, "more"))).Click();
+
+                    Assert.True(_driver.IsElementDisplayed(By.XPath(string.Format(addedOptionSelector, row["Values"]))),
+                        $"Option {row["Values"]} was not added");
                 }
             }
             SaveFilter();
