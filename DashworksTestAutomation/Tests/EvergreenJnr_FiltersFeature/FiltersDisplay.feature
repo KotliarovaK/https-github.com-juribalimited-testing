@@ -518,8 +518,8 @@ Examples:
 	| Equals         | TRUE         | 41,228    | is                  |
 	| Does not equal | TRUE         | 107       | is not              |
 
-@Evergreen @Devices @Evergreen_FiltersFeature @FiltersDisplay @DAS-10696 @Delete_Newly_Created_List
-Scenario: EvergreenJnr_DevicesList_Check that Applications filter is working correct
+@Evergreen @Applications @Evergreen_FiltersFeature @FiltersDisplay @DAS-10696 @Delete_Newly_Created_List
+Scenario: EvergreenJnr_ApplicationsList_Check that Applications filter is working correct
 	When User clicks "Applications" on the left-hand menu
 	Then "Applications" list should be displayed to the user
 	When User clicks the Columns button
@@ -543,8 +543,8 @@ Scenario: EvergreenJnr_DevicesList_Check that Applications filter is working cor
 	| Values  |
 	| in list |
 
-@Evergreen @Devices @Evergreen_FiltersFeature @FiltersDisplay @DAS-10696 @Delete_Newly_Created_List
-Scenario: EvergreenJnr_DevicesList_Check that Applications filter is contains all expected associations
+@Evergreen @Applications @Evergreen_FiltersFeature @FiltersDisplay @DAS-10696 @Delete_Newly_Created_List
+Scenario: EvergreenJnr_ApplicationsList_Check that Applications filter is contains all expected associations
 	When User clicks "Applications" on the left-hand menu
 	Then "Applications" list should be displayed to the user
 	When User clicks the Columns button
