@@ -135,5 +135,14 @@ namespace DashworksTestAutomation.Steps.Dashworks
             var columnElement = _driver.NowAt<ColumnsElement>();
             columnElement.ExpandColumnsSectionByName(categoryName);
         }
+
+        [Then(@"""(.*)"" column is added to URL")]
+        public void ThenColumnIsAddedToURL(string coolumnName)
+        {
+            var currentUrl = _driver.Url;
+            const string pattern = @"\$select=(.*)";
+            var urlPartToCheck = Regex.Match(currentUrl, pattern).Groups[1].Value;
+            StringAssert.Contains(_convertor.Convert(coolumnName).ToLower(), urlPartToCheck.ToLower());
+        }
     }
 }

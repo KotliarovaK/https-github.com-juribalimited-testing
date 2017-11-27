@@ -24,11 +24,14 @@ Scenario: EvergreenJnr_DevicesList_Check that reset is updating row count
 	Then "Compliance" filter is added to the list
 	And "75" rows are displayed in the agGrid
 	And table data is filtred correctly
+	And "Compliance" filter with "Unknown" values is added to URL
+	And "Compliance" column is added to URL
 	When User have reset all filters
 	Then ColumnName is added to the list
 	| ColumnName |
 	| Compliance |
 	And "17,225" rows are displayed in the agGrid
+	Then "Compliance" filter is removed from filters
 	When User clicks the Logout button
 	Then Signed Out page is displayed to the user
 	And User is logged out
@@ -46,6 +49,8 @@ Scenario: EvergreenJnr_DevicesList_Check that delete by url is updating row coun
 	Then "Compliance" filter is added to the list
 	And "75" rows are displayed in the agGrid
 	And table data is filtred correctly
+	And "Compliance" filter with "Unknown" values is added to URL
+	And "Compliance" column is added to URL
 	When User is remove filter by URL
 	Then ColumnName is added to the list
 	| ColumnName |
@@ -72,6 +77,8 @@ Scenario: EvergreenJnr_UsersList_Check that delete part of filter from url is up
 	Then "Compliance" filter is added to the list
 	And "41,161" rows are displayed in the agGrid
 	And table data is filtred correctly
+	And "Compliance" filter with "Red, Amber, Green" values is added to URL
+	And "Compliance" column is added to URL
 	When User is remove part of filter by URL
 	Then ColumnName is added to the list
 	| ColumnName |

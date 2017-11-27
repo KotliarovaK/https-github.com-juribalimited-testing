@@ -19,7 +19,9 @@ Scenario: EvergreenJnr_DevicesList_Check that 'Add column' option as available f
 	When User clicks the Filters button
 	Then Filters panel is displayed to the user
 	When user select "Compliance" filter
-	Then "Add Compliance column" checkbox is displayed
+	Then checkboxes are displayed to the User:
+	| SelectedCheckboxes    |
+	| Add Compliance column |   
 	When User clicks the Logout button
 	Then Signed Out page is displayed to the user
 	And User is logged out
@@ -106,7 +108,9 @@ Scenario: EvergreenJnr_DevicesList_Check that 'Add column' option is available f
 	When User clicks the Filters button
 	Then Filters panel is displayed to the user
 	When user select "Operating System" filter
-	Then "Add Operating System column" checkbox is displayed
+	Then checkboxes are displayed to the User:
+	| SelectedCheckboxes          |
+	| Add Operating System column |
 	When User clicks the Logout button
 	Then Signed Out page is displayed to the user
 	And User is logged out
@@ -118,7 +122,9 @@ Scenario: EvergreenJnr_DevicesList_Check that 'Add column' option is available f
 	When User clicks the Filters button
 	Then Filters panel is displayed to the user
 	When user select "City" filter
-	Then "Add City column" checkbox is displayed
+	Then checkboxes are displayed to the User:
+	| SelectedCheckboxes |
+	| Add City column    |
 	When User clicks the Logout button
 	Then Signed Out page is displayed to the user
 	And User is logged out
@@ -142,7 +148,9 @@ Scenario: EvergreenJnr_UsersList_Check that 'Add column' option is available for
 	When User clicks the Filters button
 	Then Filters panel is displayed to the user
 	When user select "Zip Code" filter
-	Then "Add column" checkbox is displayed
+	Then checkboxes are displayed to the User:
+	| SelectedCheckboxes  |
+	| Add Zip Code column |
 	When User clicks the Logout button
 	Then Signed Out page is displayed to the user
 	And User is logged out
@@ -154,7 +162,9 @@ Scenario: EvergreenJnr_ApplicationsList_Check that 'Add column' option is availa
 	When User clicks the Filters button
 	Then Filters panel is displayed to the user
 	When user select "Application Owner" filter
-	Then "Add column" checkbox is displayed
+	Then checkboxes are displayed to the User:
+	| SelectedCheckboxes  |
+	| Add Application Owner column |
 	When User clicks the Logout button
 	Then Signed Out page is displayed to the user
 	And User is logged out
@@ -166,7 +176,9 @@ Scenario: EvergreenJnr_MailboxesList_Check that 'Add column' option is available
 	When User clicks the Filters button
 	Then Filters panel is displayed to the user
 	When user select "Mailbox Filter 1" filter
-	Then "Add column" checkbox is displayed
+	Then checkboxes are displayed to the User:
+	| SelectedCheckboxes  |
+	| Add Mailbox Filter 2 column |
 	When User clicks the Logout button
 	Then Signed Out page is displayed to the user
 	And User is logged out

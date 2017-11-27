@@ -19,10 +19,12 @@ namespace DashworksTestAutomation.Steps.Dashworks
     class EvergreenJnr_FiltersPanel : SpecFlowContext
     {
         private readonly RemoteWebDriver _driver;
+        private readonly ColumnNameToUrlConvertor _convertor;
 
-        public EvergreenJnr_FiltersPanel(RemoteWebDriver driver)
+        public EvergreenJnr_FiltersPanel(RemoteWebDriver driver, ColumnNameToUrlConvertor convertor)
         {
             _driver = driver;
+            _convertor = convertor;
         }
 
         [Then(@"Filters panel is displayed to the user")]
@@ -189,12 +191,6 @@ namespace DashworksTestAutomation.Steps.Dashworks
             filterElement.ResetFiltersButton.Click();
         }
 
-        [Then(@"""(.*)"" checkbox is displayed")]
-        public void ThenCheckboxIsDisplayed(string filterName)
-        {
-            //CheckAddColumnCheckboxDisplay(filterName, true);
-        }
-
         [Then(@"""(.*)"" checkbox is not displayed")]
         public void ThenCheckboxIsNotDisplayed(string filterName)
         {
@@ -323,6 +319,20 @@ namespace DashworksTestAutomation.Steps.Dashworks
         {
             var filterElement = _driver.NowAt<FiltersElement>();
            Assert.AreEqual(text, string.Concat(filterElement.GetFiltersNames().First()+' ', filterElement.FilterOptions.First().Text+' ', filterElement.FilterValues.First().Text), "Text is incorrect");
+        }
+
+        [Then(@"""(.*)"" filter with ""(.*)"" values is added to URL")]
+        public void ThenFilterWithValuesIsAddedToURL(string filterName, string values)
+        {
+            var currentUrl = _driver.Url;
+            const string pattern = @"\$filter=(.*)\&";
+            var urlPartToCheck = Regex.Match(currentUrl, pattern).Groups[1].Value;
+            var valuesList = values.Split(',');
+            foreach (var value in valuesList)
+            {
+                StringAssert.Contains(value.TrimStart(' ').TrimEnd(' ').ToLower(), urlPartToCheck.ToLower());
+            }
+            StringAssert.Contains(_convertor.Convert(filterName).ToLower(), urlPartToCheck.ToLower());
         }
     }
 }

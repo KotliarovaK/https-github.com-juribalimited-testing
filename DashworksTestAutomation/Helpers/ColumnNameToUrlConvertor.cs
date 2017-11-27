@@ -18,6 +18,8 @@ namespace DashworksTestAutomation.Helpers
                     return "bootupDate";
                 case "Directory Type":
                     return "directoryType";
+                case "Compliance":
+                    return "migrationRAG";
                 default:
                     throw new Exception($"{columnName} column not found in convertor");
             }
