@@ -119,3 +119,31 @@ Examples:
 	| Applications | Application             | adobe       | Application   |
 	| Users        | Username                | aa          | Username      |
 	| Mailboxes    | Email Address (Primary) | ale         | Email Address |
+
+
+@Evergreen @Devices @EvergreenJnr_FilterFeature @FilterFunctionality @DAS-10977
+Scenario Outline: EvergreenJnr_DevicesList_Check that filter is restored correctly after leaving the page and going back via the browse "back" button
+	When User clicks "<ListName>" on the left-hand menu
+	Then "<ListName>" list should be displayed to the user
+	When User clicks the Filters button
+	Then Filters panel is displayed to the user
+	When user select "<FilterName>" filter 
+	And User have created "Equals" filter with column and following options:
+	| SelectedCheckboxes |
+	| <FilterValue>      |
+	Then "<FilterName>" filter is added to the list
+	Then "<RowsCount>" rows are displayed in the agGrid
+	When User perform search by "<ObjectName>"
+	And User click content from "<ColumnName>" column
+	Then User click back button in the browser
+	Then "<RowsCount>" rows are displayed in the agGrid
+	Then "<FilterName>" filter is added to the list
+
+Examples: 
+	| ListName     | FilterName                      | FilterValue    | RowsCount | ColumnName    | ObjectName                                |
+	| Devices      | Babel(Engl: Category            | None           | 62        | Hostname      | 01COJATLYVAR7A6                           |
+	| Devices      | Barry'sUse: In Scope            | FALSE          | 15,896    | Hostname      | 00BDM1JUR8IF419                           |
+	| Devices      | ComputerSc: Request Type        | Request Type A | 132       | Hostname      | 46DIQRWG3BM6K9Z                           |
+	| Applications | Havoc(BigD: Hide from End Users | UNKNOWN        | 1,156     | Application   | Microsoft Silverlight 2 SDK (2.0.31005.0) |
+	| Applications | MigrationP: Core Application    | FALSE          | 220       | Application   | Quartus II Programmer 4.0                 |
+	| Mailboxes    | EmailMigra: Device Type         | Not Identified | 80        | Email Address | alex.cristea@juriba.com                   |

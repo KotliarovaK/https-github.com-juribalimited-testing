@@ -244,7 +244,8 @@ namespace DashworksTestAutomation.Steps.Dashworks
             var filterElement = _driver.NowAt<FiltersElement>();
             filterElement.OperatorDropdown.Click();
             var availableOptions = filterElement.OperatorOptions.Select(value => value.Text).ToList();
-            Assert.AreEqual(optionName.Split(',').Select(x=>x.TrimStart(' ').TrimEnd(' ')).ToList(), availableOptions);
+            Assert.AreEqual(optionName.Split(',').Select(x => x.TrimStart(' ').TrimEnd(' ')).ToList(),
+                availableOptions);
             filterElement.OperatorOptions.First().SendKeys(OpenQA.Selenium.Keys.Escape);
         }
 
@@ -303,7 +304,8 @@ namespace DashworksTestAutomation.Steps.Dashworks
         public void ThenIsDisplayedInAddedFilterInfo(string text)
         {
             var filterElement = _driver.NowAt<FiltersElement>();
-           Assert.AreEqual(text, string.Concat(filterElement.GetFiltersNames().First()+' ', filterElement.FilterOptions.First().Text+' ', filterElement.FilterValues.First().Text), "Text is incorrect");
+            List<string> filterLabels = filterElement.AddedFilterLabels.Select(element => element.Text).ToList();
+            Assert.Contains(text, filterLabels, $"Filter with {text} not found in the list");
         }
 
         [Then(@"""(.*)"" filter with ""(.*)"" values is added to URL")]

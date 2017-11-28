@@ -66,6 +66,9 @@ namespace DashworksTestAutomation.Pages.Evergreen
         [FindsBy(How = How.XPath, Using = ".//div[contains(@class,'mat-select-content')]/md-option")]
         public IList<IWebElement> OperatorOptions { get; set; }
 
+        [FindsBy(How = How.XPath, Using = ".//div[@class='filter-label']")]
+        public IList<IWebElement> AddedFilterLabels { get; set; }
+
         public override List<By> GetPageIdentitySelectors()
         {
             Driver.WaitForDataLoading();
