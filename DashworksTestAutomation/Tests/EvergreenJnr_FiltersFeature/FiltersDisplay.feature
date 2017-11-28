@@ -543,17 +543,8 @@ Scenario: EvergreenJnr_ApplicationsList_Check that Applications filter is workin
 	| Values  |
 	| in list |
 
-@Evergreen @Applications @Evergreen_FiltersFeature @FiltersDisplay @DAS-10696 @Delete_Newly_Created_List
-Scenario: EvergreenJnr_ApplicationsList_Check that Applications filter is contains all expected associations
-	When User clicks "Applications" on the left-hand menu
-	Then "Applications" list should be displayed to the user
-	When User clicks the Columns button
-	Then Columns panel is displayed to the user
-	When ColumnName is entered into the search box and the selection is clicked
-	| ColumnName      |
-	| Application Key |
-	When User create custom list with "TestList" name
-	Then "TestList" list is displayed to user
+@Evergreen @Devices @Evergreen_FiltersFeature @FiltersDisplay @DAS-10696
+Scenario: EvergreenJnr_DevicesList_Check that Applications filter is contains all expected associations
 	When User clicks "Devices" on the left-hand menu
 	Then "Devices" list should be displayed to the user
 	When User clicks the Filters button
@@ -664,3 +655,47 @@ Scenario: EvergreenJnr_DevicesList_Check that Date and Time filters with "Does n
 	When User clicks the Logout button
 	Then Signed Out page is displayed to the user
 	And User is logged out
+
+@Evergreen @Devices @Evergreen_FiltersFeature @FiltersDisplay @DAS-11187
+Scenario Outline: EvergreenJnr_DevicesList_Check that Custom Filters are contains all expected associations
+	When User clicks "Devices" on the left-hand menu
+	Then "Devices" list should be displayed to the user
+	When User clicks the Filters button
+	Then Filters panel is displayed to the user
+	When user select "<FilterName>" filter
+	Then Associations is displayed in the filter
+	| Associations                   |
+	| Used on device                 |
+	| Entitled to device             |
+	| Installed on device            |
+	| Used by device's owner         |
+	| Entitled to device's owner     |
+	| Not used on device             |
+	| Not entitled to device         |
+	| Not installed on device        |
+	| Not used by device's owner     |
+	| Not entitled to device's owner |
+
+Examples: 
+	| FilterName                  |
+	| App field 1                 |
+	| App field 2                 |
+	| Application Owner           |
+	| Computer Field 1            |
+	| Computer Field 2            |
+	| Computer Warranty           |
+	| ComputerCustomField         |
+	| DAS-1814                    |
+	| End of Life Date            |
+	| Friendly Model Name         |
+	| General information field 1 |
+	| General information field 2 |
+	| General information field 3 |
+	| General information field 4 |
+	| General information field 5 |
+	| Mailbox Filter 1            |
+	| Mailbox Filter 2            |
+	| Telephone                   |
+	| User Field 1                |
+	| User Field 2                |
+	| Zip Code                    |
