@@ -1683,19 +1683,19 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_FiltersFeature
         }
         
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestMethodAttribute()]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.DescriptionAttribute("EvergreenJnr_DevicesList_Check that Applications filter is working correct")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.DescriptionAttribute("EvergreenJnr_ApplicationsList_Check that Applications filter is working correct")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("FeatureTitle", "FiltersDisplay")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("Evergreen")]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("Devices")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("Applications")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("Evergreen_FiltersFeature")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("FiltersDisplay")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("DAS-10696")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("Delete_Newly_Created_List")]
-        public virtual void EvergreenJnr_DevicesList_CheckThatApplicationsFilterIsWorkingCorrect()
+        public virtual void EvergreenJnr_ApplicationsList_CheckThatApplicationsFilterIsWorkingCorrect()
         {
-            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("EvergreenJnr_DevicesList_Check that Applications filter is working correct", new string[] {
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("EvergreenJnr_ApplicationsList_Check that Applications filter is working correct", new string[] {
                         "Evergreen",
-                        "Devices",
+                        "Applications",
                         "Evergreen_FiltersFeature",
                         "FiltersDisplay",
                         "DAS-10696",
@@ -1737,21 +1737,21 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_FiltersFeature
         }
         
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestMethodAttribute()]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.DescriptionAttribute("EvergreenJnr_DevicesList_Check that Applications filter is contains all expected " +
-            "associations")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.DescriptionAttribute("EvergreenJnr_ApplicationsList_Check that Applications filter is contains all expe" +
+            "cted associations")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("FeatureTitle", "FiltersDisplay")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("Evergreen")]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("Devices")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("Applications")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("Evergreen_FiltersFeature")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("FiltersDisplay")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("DAS-10696")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("Delete_Newly_Created_List")]
-        public virtual void EvergreenJnr_DevicesList_CheckThatApplicationsFilterIsContainsAllExpectedAssociations()
+        public virtual void EvergreenJnr_ApplicationsList_CheckThatApplicationsFilterIsContainsAllExpectedAssociations()
         {
-            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("EvergreenJnr_DevicesList_Check that Applications filter is contains all expected " +
-                    "associations", new string[] {
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("EvergreenJnr_ApplicationsList_Check that Applications filter is contains all expe" +
+                    "cted associations", new string[] {
                         "Evergreen",
-                        "Devices",
+                        "Applications",
                         "Evergreen_FiltersFeature",
                         "FiltersDisplay",
                         "DAS-10696",
