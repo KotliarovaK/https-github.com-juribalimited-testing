@@ -99,7 +99,7 @@ Scenario: EvergreenJnr_DevicesList_Check that "Empty" and "Not Empty" options is
 	When User clicks the Filters button
 	Then Filters panel is displayed to the user
 	When user select "AD Object Key" filter
-	Then "Empty, Not empty" option is available for this filter
+	Then "Equals, Does not equal, Greater than, Greater than or equal to, Less than, Less than or equal to, Empty, Not empty" option is available for this filter
 
 @Evergreen @Devices @Evergreen_FiltersFeature @FiltersDisplay @DAS-10795
 Scenario: EvergreenJnr_DevicesList_Check that 'Add column' option is available for "Operating System" filter
@@ -163,7 +163,7 @@ Scenario: EvergreenJnr_ApplicationsList_Check that 'Add column' option is availa
 	Then Filters panel is displayed to the user
 	When user select "Application Owner" filter
 	Then checkboxes are displayed to the User:
-	| SelectedCheckboxes  |
+	| SelectedCheckboxes           |
 	| Add Application Owner column |
 	When User clicks the Logout button
 	Then Signed Out page is displayed to the user
@@ -177,8 +177,8 @@ Scenario: EvergreenJnr_MailboxesList_Check that 'Add column' option is available
 	Then Filters panel is displayed to the user
 	When user select "Mailbox Filter 1" filter
 	Then checkboxes are displayed to the User:
-	| SelectedCheckboxes  |
-	| Add Mailbox Filter 2 column |
+	| SelectedCheckboxes          |
+	| Add Mailbox Filter 1 column |
 	When User clicks the Logout button
 	Then Signed Out page is displayed to the user
 	And User is logged out

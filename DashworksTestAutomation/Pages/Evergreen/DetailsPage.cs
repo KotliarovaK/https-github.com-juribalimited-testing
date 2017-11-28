@@ -41,8 +41,14 @@ namespace DashworksTestAutomation.Pages.Evergreen
 
         public List<KeyValuePair<string, string>> GetFieldsWithContent(string categoryName)
         {
-            List<string> allHeaders = Driver.FindElements(By.XPath($".//span[contains(@class,'filter-category-label')][text()='{categoryName}']/../..//tbody/tr/td[1]")).Select(x => x.Text).ToList();
-            List<string> allContent = Driver.FindElements(By.XPath($".//span[contains(@class,'filter-category-label')][text()='{categoryName}']/../..//tbody/tr/td[2]")).Select(x => x.Text).ToList();
+            List<string> allHeaders = Driver
+                .FindElements(By.XPath(
+                    $".//span[contains(@class,'filter-category-label')][text()='{categoryName}']/../..//tbody/tr/td[1]"))
+                .Select(x => x.Text).ToList();
+            List<string> allContent = Driver
+                .FindElements(By.XPath(
+                    $".//span[contains(@class,'filter-category-label')][text()='{categoryName}']/../..//tbody/tr/td[2]"))
+                .Select(x => x.Text).ToList();
 
             return allHeaders.Select((t, i) => new KeyValuePair<string, string>(t, allContent[i])).ToList();
         }

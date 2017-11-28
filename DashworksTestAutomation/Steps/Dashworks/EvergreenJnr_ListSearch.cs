@@ -81,12 +81,14 @@ namespace DashworksTestAutomation.Steps.Dashworks
                 _driver.WaitWhileControlIsNotDisplayed<BaseDashboardPage>(() => listPageElement.ResultsOnPageCount);
 
                 StringAssert.AreEqualIgnoringCase($"{numberOfRows} rows", listPageElement.ResultsOnPageCount.Text);
-                Logger.Write($"Evergreen agGrid Search returned the correct number of rows for: {numberOfRows}  search");
+                Logger.Write(
+                    $"Evergreen agGrid Search returned the correct number of rows for: {numberOfRows}  search");
             }
             else
             {
                 _driver.IsElementDisplayed(listPageElement.NoResultsFoundMessage);
-                Logger.Write($"Evergreen agGrid Search returned '{listPageElement.NoResultsFoundMessage.Text}' message");
+                Logger.Write(
+                    $"Evergreen agGrid Search returned '{listPageElement.NoResultsFoundMessage.Text}' message");
             }
         }
 
