@@ -92,11 +92,16 @@ Scenario: EvergreenJnr_ApplicationsList_Check that filter is restored after goin
 	Then "Application" filter is added to the list
 	When User create custom list with "TestList" name
 	Then "TestList" list is displayed to user
-	And "9" rows are displayed in the agGrid
+	Then "Microsoft Office 97, Professional Edition" is displayed in added filter info
+	And "Microsoft Office 97, Developer Edition Tools" is displayed in added filter info
+	And "Microsoft Office 97, Standard Edition" is displayed in added filter info
 	When User navigates to the "All Applications" list
 	Then "Applications" list should be displayed to the user
 	When User navigates to the "TestList" list
-	Then "9" rows are displayed in the agGrid
+	Then "TestList" list is displayed to user
+	And "Microsoft Office 97, Professional Edition" is displayed in added filter info
+	And "Microsoft Office 97, Developer Edition Tools" is displayed in added filter info
+	And "Microsoft Office 97, Standard Edition" is displayed in added filter info
 
 @Evergreen @AllLists @EvergreenJnr_FilterFeature @FilterFunctionality @DAS-11042
 Scenario Outline: EvergreenJnr_AllLists_Check that primary column is displayed after adding a filter with column

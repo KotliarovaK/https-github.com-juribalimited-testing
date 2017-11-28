@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.Linq;
 using DashworksTestAutomation.Extensions;
 using DashworksTestAutomation.Pages.Evergreen;
@@ -152,6 +153,15 @@ namespace DashworksTestAutomation.Steps.Dashworks
                 _driver.WaitWhileControlIsNotDisplayed<CustomListElement>(() => listElement.DeleteConfirmationMessage);
                 listElement.ConfirmDeleteButton.Click();
             }
+        }
+
+        [Then(@"lists are sorted in alphabetical order")]
+        public void ThenListsAreSortedInAlphabeticalOrder()
+        {
+            var listElement = _driver.NowAt<CustomListElement>();
+            List<string> list = listElement.ListsNames.Select(x => x.Text).ToList();
+            var t = listElement.ListsNames.OrderBy(element => element.Text);
+            Assert.AreEqual(listElement.ListsNames.OrderBy(element => element.Text), list);
         }
     }
 }
