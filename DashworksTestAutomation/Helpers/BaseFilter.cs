@@ -90,7 +90,8 @@ namespace DashworksTestAutomation.Helpers
             _driver.WaitForDataLoading();
             _driver.FindElement(By.XPath(".//div[@class='filterAddPanel']//input[@placeholder='Search']"))
                 .SendKeys(_value);
-            _driver.FindElement(By.XPath($".//div[@class='filterAddPanel']//span[contains(text(),'{_value}')]")).Click();
+            _driver.FindElement(By.XPath($".//div[@class='filterAddPanel']//span[contains(text(),'{_value}')]"))
+                .Click();
             SaveFilter();
         }
     }
@@ -130,7 +131,10 @@ namespace DashworksTestAutomation.Helpers
 
         public override void Do()
         {
-            var addedOptionSelector = ".//div[@class='filterAddPanel']/div[@class='form-container']//div[@class='form-group']//li/span[contains(text(),'{0}')]";
+            var addedOptionSelector =
+                ".//div[@class='filterAddPanel']/div[@class='form-container']//div[@class='form-group']//li/span[contains(text(),'{0}')]";
+            var allAddedOptionsSelector =
+                ".//div[@class='filterAddPanel']/div[@class='form-container']//div[@class='form-group']//li/span";
             var filterValueSelector = By.XPath(
                 ".//div[@class='filterAddPanel']//div[@class='mat-input-infix mat-form-field-infix']//input");
             var addButtonSelector = By.XPath(".//div[@class='filterAddPanel']//button[@title='Add']");
@@ -148,9 +152,9 @@ namespace DashworksTestAutomation.Helpers
                     //Show all added values
                     if (_driver.IsElementDisplayed(By.XPath(string.Format(addedOptionSelector, "more"))))
                         _driver.FindElement(By.XPath(string.Format(addedOptionSelector, "more"))).Click();
-
-                    Assert.True(_driver.IsElementDisplayed(By.XPath(string.Format(addedOptionSelector, row["Values"]))),
-                        $"Option {row["Values"]} was not added");
+                    var addedOptions = _driver.FindElements(By.XPath(allAddedOptionsSelector))
+                        .Select(value => value.Text).ToList();
+                    Assert.Contains(row["Values"], addedOptions);
                 }
             }
             SaveFilter();

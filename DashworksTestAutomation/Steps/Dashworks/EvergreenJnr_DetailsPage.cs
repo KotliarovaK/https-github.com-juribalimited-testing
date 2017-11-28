@@ -49,7 +49,8 @@ namespace DashworksTestAutomation.Steps.Dashworks
                 if (pair.Key.Equals("Address 2") || pair.Key.Equals("Address 3") || pair.Key.Equals("Address 4"))
                     continue;
 
-                Assert.IsTrue(!string.IsNullOrEmpty(pair.Value), $"'Unknown' text is not displayed for {pair.Key} field ");
+                Assert.IsTrue(!string.IsNullOrEmpty(pair.Value),
+                    $"'Unknown' text is not displayed for {pair.Key} field ");
             }
         }
     }
