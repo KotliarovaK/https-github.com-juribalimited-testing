@@ -38,6 +38,18 @@ namespace DashworksTestAutomation.Steps.Dashworks
             dashboardPage.SelectAllCheckbox.Click();
         }
 
+        [When(@"User select ""(.*)"" rows in the grid")]
+        public void WhenUserSelectRowsInTheGrid(string columnName, Table table)
+        {
+            var dashboardPage = _driver.NowAt<BaseDashboardPage>();
+            var columnContent = dashboardPage.GetColumnContent(columnName);
+            foreach (var row in table.Rows)
+            {
+                var rowIndex = columnContent.IndexOf(row["SelectedRowsName"]);
+                dashboardPage.SelectRowsCheckboxes[rowIndex + 1].Click();
+            }
+        }
+
         [Then(@"Select All selectbox is checked")]
         public void ThenSelectAllSelectboxIsChecked()
         {

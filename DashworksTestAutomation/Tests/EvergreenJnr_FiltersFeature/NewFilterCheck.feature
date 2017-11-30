@@ -290,10 +290,10 @@ Scenario Outline: EvergreenJnr_ApplicationsList_Check that Hide from End Users f
 	Then data in table is sorted by '<ColumnName>' column in descending order 
 
 Examples: 
-	| ColumnName                   | Operators              | FilterOption | Text                                    | RowsCount |
-	| Windows7Mi: Hide from End Users | Equals, Does not equal | FALSE         | Windows7Mi: Hide from End Users is false    | 1,067        |
-	| Babel(Engl: Hide from End Users | Equals, Does not equal | UNKNOWN        | Babel(Engl: Hide from End Users is Unknown   | 1,921        |
-	| Barry'sUse: Hide from End Users | Equals, Does not equal | FALSE      | Barry'sUse: Hide from End Users is false | 1,077      |
+	| ColumnName                      | Operators              | FilterOption | Text                                       | RowsCount |
+	| Windows7Mi: Hide from End Users | Equals, Does not equal | FALSE        | Windows7Mi: Hide from End Users is false   | 1,067     |
+	| Babel(Engl: Hide from End Users | Equals, Does not equal | UNKNOWN      | Babel(Engl: Hide from End Users is Unknown | 1,921     |
+	| Barry'sUse: Hide from End Users | Equals, Does not equal | FALSE        | Barry'sUse: Hide from End Users is false   | 1,077     |
 	| ComputerSc: Hide from End Users | Equals, Does not equal | FALSE        | ComputerSc: Hide from End Users is false   | 1,033     |
 	| Havoc(BigD: Hide from End Users | Equals, Does not equal | UNKNOWN      | Havoc(BigD: Hide from End Users is Unknown | 1,156     |
 	| MigrationP: Hide from End Users | Equals, Does not equal | FALSE        | MigrationP: Hide from End Users is false   | 220       |

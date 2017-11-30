@@ -92,11 +92,16 @@ Scenario: EvergreenJnr_ApplicationsList_Check that filter is restored after goin
 	Then "Application" filter is added to the list
 	When User create custom list with "TestList" name
 	Then "TestList" list is displayed to user
-	And "9" rows are displayed in the agGrid
+	When User clicks the Filters button
+	Then Filters panel is displayed to the user
+	Then "Application is Microsoft Office 97, Professional Edition, Microsoft Office 97, Developer Edition Tools or Microsoft Office 97, Standard Edition" is displayed in added filter info
 	When User navigates to the "All Applications" list
 	Then "Applications" list should be displayed to the user
 	When User navigates to the "TestList" list
-	Then "9" rows are displayed in the agGrid
+	Then "TestList" list is displayed to user
+	When User clicks the Filters button
+	Then Filters panel is displayed to the user
+	And "Application is Microsoft Office 97, Professional Edition, Microsoft Office 97, Developer Edition Tools or Microsoft Office 97, Standard Edition" is displayed in added filter info
 
 @Evergreen @AllLists @EvergreenJnr_FilterFeature @FilterFunctionality @DAS-11042
 Scenario Outline: EvergreenJnr_AllLists_Check that primary column is displayed after adding a filter with column
@@ -121,8 +126,8 @@ Examples:
 	| Mailboxes    | Email Address (Primary) | ale         | Email Address |
 
 
-@Evergreen @Devices @EvergreenJnr_FilterFeature @FilterFunctionality @DAS-10977
-Scenario Outline: EvergreenJnr_DevicesList_Check that filter is restored correctly after leaving the page and going back via the browse "back" button
+@Evergreen @AllLists @EvergreenJnr_FilterFeature @FilterFunctionality @DAS-10977
+Scenario Outline: EvergreenJnr_AllLists_Check that filter is restored correctly after leaving the page and going back via the browse "back" button
 	When User clicks "<ListName>" on the left-hand menu
 	Then "<ListName>" list should be displayed to the user
 	When User clicks the Filters button

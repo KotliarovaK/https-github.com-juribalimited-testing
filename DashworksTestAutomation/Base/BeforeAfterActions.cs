@@ -26,7 +26,7 @@ namespace DashworksTestAutomation.Base
         {
             var driverInstance = CreateBrowserDriver();
 
-            driverInstance.Manage().Window.Maximize();
+            //driverInstance.Manage().Window.Maximize();
 
             _objectContainer.RegisterInstanceAs<RemoteWebDriver>(driverInstance);
         }
