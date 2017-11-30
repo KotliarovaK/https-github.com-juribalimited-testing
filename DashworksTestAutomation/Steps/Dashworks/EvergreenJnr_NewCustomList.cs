@@ -160,8 +160,7 @@ namespace DashworksTestAutomation.Steps.Dashworks
         {
             var listElement = _driver.NowAt<CustomListElement>();
             List<string> list = listElement.ListsNames.Select(x => x.Text).ToList();
-            var t = listElement.ListsNames.OrderBy(element => element.Text);
-            Assert.AreEqual(listElement.ListsNames.OrderBy(element => element.Text), list);
+            Assert.AreEqual(listElement.ListsNames.Select(x => x.Text).OrderBy(s => s), list);
         }
     }
 }

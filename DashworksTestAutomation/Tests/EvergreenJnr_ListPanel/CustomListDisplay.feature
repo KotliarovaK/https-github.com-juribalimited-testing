@@ -145,8 +145,8 @@ Scenario: EvergreenJnr_UsersList_agGrid_Check that lists shown in alphabetical o
 	| SelectedCheckboxes |
 	| Red                |
 	Then "Compliance" filter is added to the list
-	When User create custom list with "L TestList" name
-	Then "L TestList" list is displayed to user
+	When User create custom list with "L TestList Custom Filter" name
+	Then "L TestList Custom Filter" list is displayed to user
 	When User navigates to the "All Users" list
 	Then "Users" list should be displayed to the user
 	When User clicks the Filters button
@@ -156,22 +156,27 @@ Scenario: EvergreenJnr_UsersList_agGrid_Check that lists shown in alphabetical o
 	| SelectedCheckboxes |
 	| Started            |
 	Then "Babel(Engl: Another task" filter is added to the list
-	When User create custom list with "A TestList" name
-	Then "A TestList" list is displayed to user
+	When User create custom list with "A TestList Custom Filter" name
+	Then "A TestList Custom Filter" list is displayed to user
 	When User navigates to the "All Users" list
 	Then "Users" list should be displayed to the user
 	When User clicks the Actions button
 	Then Actions panel is displayed to the user
-	When User select all rows
-	And User create static list with "KY TestList" name
-	Then "KY TestList" list is displayed to user
+	When User select "Username" rows in the grid
+	| SelectedRowsName |
+	| AAD1011948       |
+	| AAH0343264       |
+	And User create static list with "KY TestList Static List" name
+	Then "KY TestList Static List" list is displayed to user
 	When User navigates to the "All Users" list
 	Then "Users" list should be displayed to the user
 	When User clicks the Actions button
 	Then Actions panel is displayed to the user
-	When User select all rows
-	And User create static list with "QWER TestList" name
-	Then "QWER TestList" list is displayed to user
+	When User select "Username" rows in the grid
+	| SelectedRowsName |
+	| AAQ9911340       |
+	And User create static list with "QWER TestList Static List" name
+	Then "QWER TestList Static List" list is displayed to user
 	When User navigates to the "All Users" list
 	Then "Users" list should be displayed to the user
 	When User clicks the Filters button
@@ -181,8 +186,8 @@ Scenario: EvergreenJnr_UsersList_agGrid_Check that lists shown in alphabetical o
 	| SelectedCheckboxes |
 	| TRUE               |
 	Then "Enabled" filter is added to the list
-	When User create custom list with "X TestList" name
-	Then "X TestList" list is displayed to user
+	When User create custom list with "X TestList Custom List" name
+	Then "X TestList Custom List" list is displayed to user
 	When User navigates to the "All Users" list
 	Then "Users" list should be displayed to the user
 	Then lists are sorted in alphabetical order
