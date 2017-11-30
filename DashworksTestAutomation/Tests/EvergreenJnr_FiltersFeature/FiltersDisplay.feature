@@ -699,3 +699,33 @@ Examples:
 	| User Field 1                |
 	| User Field 2                |
 	| Zip Code                    |
+
+@Evergreen @Applications @EvergreenJnr_FiltersFeature @FilterFunctionality @DAS-11165
+Scenario: EvergreenJnr_ApplicationsList_Check that '500 error' is not displayed for "DirectX SDK (Version 8.1) (3663.0)" filter
+	When User clicks "Applications" on the left-hand menu
+	Then "Applications" list should be displayed to the user
+	When User clicks the Filters button
+	Then Filters panel is displayed to the user
+	When user select "Application" filter
+	And User have create "Equals" Values filter with column and following options:
+	| Values                             |
+	| DirectX SDK (Version 8.1) (3663.0) |
+	Then "Application" filter is added to the list
+	And Values is displayed in added filter info
+	| Values                             |
+	| DirectX SDK (Version 8.1) (3663.0) |
+
+@Evergreen @Applications @EvergreenJnr_FiltersFeature @FilterFunctionality @DAS-11165
+Scenario: EvergreenJnr_ApplicationsList_Check that '500 error' is not displayed for ""WPF/E" (codename) Community Technology Preview (Feb 2007)" filter
+	When User clicks "Applications" on the left-hand menu
+	Then "Applications" list should be displayed to the user
+	When User clicks the Filters button
+	Then Filters panel is displayed to the user
+	When user select "Application" filter
+	And User have create "Equals" Values filter with column and following options:
+	| Values                                                     |
+	| "WPF/E" (codename) Community Technology Preview (Feb 2007) |
+	Then "Application" filter is added to the list
+	And Values is displayed in added filter info
+	| Values                                                     |
+	| "WPF/E" (codename) Community Technology Preview (Feb 2007) |
