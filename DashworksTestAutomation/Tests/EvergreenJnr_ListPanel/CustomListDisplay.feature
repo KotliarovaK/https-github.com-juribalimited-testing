@@ -133,3 +133,61 @@ Scenario: EvergreenJnr_DevicesList_agGrid_Check that 'new list created' message 
 	Then User save changes in list with "UnbelievableTestList" name
 	Then "UnbelievableTestList" list is displayed to user
 	And "New list created" message is displayed
+
+@Evergreen @Users @EvergreenJnr_ListPanel @CustomListDisplay @DAS-11005 @Delete_Newly_Created_List
+Scenario: EvergreenJnr_UsersList_agGrid_Check that lists shown in alphabetical order
+	When User clicks "Users" on the left-hand menu
+	Then "Users" list should be displayed to the user
+	When User clicks the Filters button
+	Then Filters panel is displayed to the user
+	When user select "Compliance" filter
+	When User have created "Equals" filter without column and following options:
+	| SelectedCheckboxes |
+	| Red                |
+	Then "Compliance" filter is added to the list
+	When User create custom list with "L TestList Custom Filter" name
+	Then "L TestList Custom Filter" list is displayed to user
+	When User navigates to the "All Users" list
+	Then "Users" list should be displayed to the user
+	When User clicks the Filters button
+	Then Filters panel is displayed to the user
+	When user select "Babel(Engl: Another task" filter
+	When User have created "Equals" filter without column and following options:
+	| SelectedCheckboxes |
+	| Started            |
+	Then "Babel(Engl: Another task" filter is added to the list
+	When User create custom list with "A TestList Custom Filter" name
+	Then "A TestList Custom Filter" list is displayed to user
+	When User navigates to the "All Users" list
+	Then "Users" list should be displayed to the user
+	When User clicks the Actions button
+	Then Actions panel is displayed to the user
+	When User select "Username" rows in the grid
+	| SelectedRowsName |
+	| AAD1011948       |
+	| AAH0343264       |
+	And User create static list with "KY TestList Static List" name
+	Then "KY TestList Static List" list is displayed to user
+	When User navigates to the "All Users" list
+	Then "Users" list should be displayed to the user
+	When User clicks the Actions button
+	Then Actions panel is displayed to the user
+	When User select "Username" rows in the grid
+	| SelectedRowsName |
+	| AAQ9911340       |
+	And User create static list with "QWER TestList Static List" name
+	Then "QWER TestList Static List" list is displayed to user
+	When User navigates to the "All Users" list
+	Then "Users" list should be displayed to the user
+	When User clicks the Filters button
+	Then Filters panel is displayed to the user
+	When user select "Enabled" filter
+	When User have created "Equals" filter without column and following options:
+	| SelectedCheckboxes |
+	| TRUE               |
+	Then "Enabled" filter is added to the list
+	When User create custom list with "X TestList Custom List" name
+	Then "X TestList Custom List" list is displayed to user
+	When User navigates to the "All Users" list
+	Then "Users" list should be displayed to the user
+	Then lists are sorted in alphabetical order
