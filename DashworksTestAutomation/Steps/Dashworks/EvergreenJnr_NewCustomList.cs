@@ -1,10 +1,12 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Threading;
 using DashworksTestAutomation.Extensions;
 using DashworksTestAutomation.Pages.Evergreen;
 using DashworksTestAutomation.Utils;
 using NUnit.Framework;
+using OpenQA.Selenium;
 using OpenQA.Selenium.Remote;
 using TechTalk.SpecFlow;
 
@@ -30,6 +32,18 @@ namespace DashworksTestAutomation.Steps.Dashworks
 
             Logger.Write("The Save to Custom List Element was NOT displayed");
         }
+
+        [Then(@"Save to New Custom List element is displayed")]
+        public void ThenSaveToNewCustomListElementIsDisplayed()
+        {
+            var page = _driver.NowAt<BaseDashboardPage>();
+            _driver.WaitWhileControlIsNotDisplayed<BaseDashboardPage>(() => page.SaveCustomListButton);
+            Assert.IsTrue(page.SaveCustomListButton.Displayed(),
+                "Save Custom list is displayed");
+
+            Logger.Write("The Save to Custom List Element was NOT displayed");
+        }
+
 
         [When(@"User create custom list with ""(.*)"" name")]
         public void WhenUserCreateCustomListWithName(string listName)
@@ -143,15 +157,20 @@ namespace DashworksTestAutomation.Steps.Dashworks
         {
             var listElement = _driver.NowAt<CustomListElement>();
 
-            _driver.WaitWhileControlIsDisplayed<CustomListElement>(() => listElement.UpdateCurrentListButton);
-            foreach (var settingsButton in listElement.SettingsButtons)
+            foreach (var buttons in _driver.FindElements(By.XPath(listElement.SettingButtonSelector)))
             {
-                _driver.MouseHover(settingsButton);
-                settingsButton.Click();
-                _driver.WaitWhileControlIsNotDisplayed<CustomListElement>(() => listElement.DeleteButton);
-                listElement.DeleteButton.Click();
-                _driver.WaitWhileControlIsNotDisplayed<CustomListElement>(() => listElement.DeleteConfirmationMessage);
-                listElement.ConfirmDeleteButton.Click();
+                if (_driver.IsElementExists(By.XPath(listElement.SettingButtonSelector)))
+                {
+                    Thread.Sleep(500);
+                    var settingsButton = _driver.FindElement(By.XPath(listElement.SettingButtonSelector));
+                    _driver.MouseHover(settingsButton);
+                    settingsButton.Click();
+                    _driver.WaitWhileControlIsNotDisplayed<CustomListElement>(() => listElement.DeleteButton);
+                    listElement.DeleteButton.Click();
+                    _driver.WaitWhileControlIsNotDisplayed<CustomListElement>(() =>
+                        listElement.DeleteConfirmationMessage);
+                    listElement.ConfirmDeleteButton.Click();
+                }
             }
         }
 
