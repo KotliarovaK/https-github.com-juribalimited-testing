@@ -164,7 +164,9 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_FiltersFeature
             TechTalk.SpecFlow.Table table3 = new TechTalk.SpecFlow.Table(new string[] {
                         "Values"});
             table3.AddRow(new string[] {
-                        "true, false"});
+                        "true"});
+            table3.AddRow(new string[] {
+                        "false"});
             table3.AddRow(new string[] {
                         "Unknown"});
             testRunner.Then("Values is displayed in added filter info", ((string)(null)), table3, "Then ");
@@ -730,7 +732,9 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_FiltersFeature
             TechTalk.SpecFlow.Table table18 = new TechTalk.SpecFlow.Table(new string[] {
                         "Values"});
             table18.AddRow(new string[] {
-                        "Red, Amber"});
+                        "Red"});
+            table18.AddRow(new string[] {
+                        "Amber"});
             table18.AddRow(new string[] {
                         "Green"});
             testRunner.Then("Values is displayed in added filter info", ((string)(null)), table18, "Then ");
@@ -741,7 +745,9 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_FiltersFeature
             TechTalk.SpecFlow.Table table19 = new TechTalk.SpecFlow.Table(new string[] {
                         "Values"});
             table19.AddRow(new string[] {
-                        "Red, Amber"});
+                        "Red"});
+            table19.AddRow(new string[] {
+                        "Amber"});
             table19.AddRow(new string[] {
                         "Green"});
             testRunner.Then("Values is displayed in added filter info", ((string)(null)), table19, "Then ");
@@ -753,7 +759,9 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_FiltersFeature
             TechTalk.SpecFlow.Table table20 = new TechTalk.SpecFlow.Table(new string[] {
                         "Values"});
             table20.AddRow(new string[] {
-                        "Red, Amber"});
+                        "Red"});
+            table20.AddRow(new string[] {
+                        "Amber"});
             table20.AddRow(new string[] {
                         "Green"});
             testRunner.Then("Values is displayed in added filter info", ((string)(null)), table20, "Then ");
@@ -1860,8 +1868,9 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_FiltersFeature
             table49.AddRow(new string[] {
                         "wxPython 2.5.3.1 (unicode) for Python 2.3"});
             table49.AddRow(new string[] {
-                        "Windows Installer SDK (Version 2.0) (3718.1), Janus Systems Controls for Microsof" +
-                            "t .NET (TRIAL)"});
+                        "Windows Installer SDK (Version 2.0) (3718.1)"});
+            table49.AddRow(new string[] {
+                        "Janus Systems Controls for Microsoft .NET (TRIAL)"});
             table49.AddRow(new string[] {
                         "NI LabVIEW PID Control Toolset 6.0 (for LabVIEW 7.1)"});
             table49.AddRow(new string[] {

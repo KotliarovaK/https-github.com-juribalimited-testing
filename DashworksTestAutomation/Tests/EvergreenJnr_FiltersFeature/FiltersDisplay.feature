@@ -41,9 +41,10 @@ Scenario: EvergreenJnr_ApplicationsList_Check true-false options and images in f
 	| UNKNOWN            |
 	Then "Windows7Mi: Hide from End Users" filter is added to the list
 	Then Values is displayed in added filter info
-	| Values      |
-	| true, false |
-	| Unknown     |
+	| Values  |
+	| true    |
+	| false   |
+	| Unknown |
 	When User clicks the Logout button
 	Then Signed Out page is displayed to the user
 	And User is logged out
@@ -275,26 +276,29 @@ Scenario: EvergreenJnr_UsersList_Check that filter data is displayed correctly w
 	| Green              |
 	Then "Compliance" filter is added to the list
 	Then Values is displayed in added filter info
-	| Values     |
-	| Red, Amber |
-	| Green      |
+	| Values |
+	| Red    |
+	| Amber  |
+	| Green  |
 	When User create custom list with "TestList" name
 	Then "TestList" list is displayed to user
 	When User clicks the Filters button
 	Then Filters panel is displayed to the user
 	Then Values is displayed in added filter info
-	| Values     |
-	| Red, Amber |
-	| Green      |
+	| Values |
+	| Red    |
+	| Amber  |
+	| Green  |
 	When User navigates to the "All Users" list
 	When User navigates to the "TestList" list
 	Then "TestList" list is displayed to user
 	When User clicks the Filters button
 	Then Filters panel is displayed to the user
 	Then Values is displayed in added filter info
-	| Values     |
-	| Red, Amber |
-	| Green      |
+	| Values |
+	| Red    |
+	| Amber  |
+	| Green  |
 
 @Evergreen @Applications @Evergreen_FiltersFeature @FiltersDisplay @DAS-10696 @Delete_Newly_Created_List
 Scenario: EvergreenJnr_ApplicationsList_Check that filter data is displayed correctly when navigating between lists
@@ -602,12 +606,13 @@ Scenario: EvergreenJnr_ApplicationsList_Check that brackets are displayed correc
 	And "4" rows are displayed in the agGrid
 	And Edit List menu is not displayed
 	And Values is displayed in added filter info
-	| Values                                                                                          |
-	| wxPython 2.5.3.1 (unicode) for Python 2.3                                                       |
-	| Windows Installer SDK (Version 2.0) (3718.1), Janus Systems Controls for Microsoft .NET (TRIAL) |
-	| NI LabVIEW PID Control Toolset 6.0 (for LabVIEW 7.1)                                            |
-	| Application contains (Version 6.0) (3672.1)                                                     |
-	| Application begins with ((((test)))                                                             |
+	| Values                                               |
+	| wxPython 2.5.3.1 (unicode) for Python 2.3            |
+	| Windows Installer SDK (Version 2.0) (3718.1)         |
+	| Janus Systems Controls for Microsoft .NET (TRIAL)    |
+	| NI LabVIEW PID Control Toolset 6.0 (for LabVIEW 7.1) |
+	| Application contains (Version 6.0) (3672.1)          |
+	| Application begins with ((((test)))                  |
 
 @Evergreen @Mailboxes @Evergreen_FiltersFeature @FiltersDisplay @DAS-11351
 Scenario: EvergreenJnr_MailboxesList_Check that 'Add column' option as available for "Owner Department" filter
