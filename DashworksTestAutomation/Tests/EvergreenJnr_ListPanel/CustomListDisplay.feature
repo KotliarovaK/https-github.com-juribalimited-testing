@@ -135,7 +135,7 @@ Scenario: EvergreenJnr_DevicesList_agGrid_Check that 'new list created' message 
 	And "New list created" message is displayed
 
 @Evergreen @Users @EvergreenJnr_ListPanel @CustomListDisplay @DAS-11005 @Delete_Newly_Created_List
-Scenario: EvergreenJnr_UsersList_agGrid_Check that lists shown in alphabetical order
+Scenario: EvergreenJnr_UsersList_Check that lists is displayed in alphabetical order
 	When User clicks "Users" on the left-hand menu
 	Then "Users" list should be displayed to the user
 	When User clicks the Filters button
@@ -191,3 +191,21 @@ Scenario: EvergreenJnr_UsersList_agGrid_Check that lists shown in alphabetical o
 	When User navigates to the "All Users" list
 	Then "Users" list should be displayed to the user
 	Then lists are sorted in alphabetical order
+
+@Evergreen @Users @EvergreenJnr_ListPanel @CustomListDisplay @DAS-11018
+Scenario: EvergreenJnr_UsersList_Check that custom list creation block is not displayed when user opens actions panel
+	When User clicks "Users" on the left-hand menu
+	Then "Users" list should be displayed to the user
+	When User clicks the Filters button
+	Then Filters panel is displayed to the user
+	When user select "Compliance" filter
+	When User have created "Equals" filter without column and following options:
+	| SelectedCheckboxes |
+	| Red                |
+	Then "Compliance" filter is added to the list
+	Then Save to New Custom List element is displayed
+	When User clicks the Actions button
+	Then Actions panel is displayed to the user
+	Then Save to New Custom List element is NOT displayed
+	When User clicks the Actions button
+	Then Save to New Custom List element is displayed
