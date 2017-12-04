@@ -113,7 +113,7 @@ namespace DashworksTestAutomation.Helpers
             foreach (var row in _optionsTable.Rows)
             {
                 _driver.FindElement(
-                    By.XPath($".//div[@class='filterAddPanel']//span[text()='{row["SelectedCheckboxes"]}']")).Click();
+                    By.XPath($".//div[@class='filterAddPanel ng-star-inserted']//span[text()='{row["SelectedCheckboxes"]}']")).Click();
             }
             SaveFilter();
         }
