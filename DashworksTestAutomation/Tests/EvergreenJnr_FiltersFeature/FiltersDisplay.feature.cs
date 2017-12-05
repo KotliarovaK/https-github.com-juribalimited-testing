@@ -2380,18 +2380,18 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_FiltersFeature
         }
         
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestMethodAttribute()]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.DescriptionAttribute("EvergreenJnr_ApplicationsList_Check that \'500 error\' is not displayed for \"Direct" +
-            "X SDK (Version 8.1) (3663.0)\" filter")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.DescriptionAttribute("EvergreenJnr_ApplicationsList_Check that \'500 error\' is not displayed for filters" +
+            "")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("FeatureTitle", "FiltersDisplay")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("Evergreen")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("Applications")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("EvergreenJnr_FiltersFeature")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("FilterFunctionality")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("DAS-11165")]
-        public virtual void EvergreenJnr_ApplicationsList_CheckThat500ErrorIsNotDisplayedForDirectXSDKVersion8_13663_0Filter()
+        public virtual void EvergreenJnr_ApplicationsList_CheckThat500ErrorIsNotDisplayedForFilters()
         {
-            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("EvergreenJnr_ApplicationsList_Check that \'500 error\' is not displayed for \"Direct" +
-                    "X SDK (Version 8.1) (3663.0)\" filter", new string[] {
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("EvergreenJnr_ApplicationsList_Check that \'500 error\' is not displayed for filters" +
+                    "", new string[] {
                         "Evergreen",
                         "Applications",
                         "EvergreenJnr_FiltersFeature",
@@ -2413,47 +2413,53 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_FiltersFeature
             TechTalk.SpecFlow.Table table55 = new TechTalk.SpecFlow.Table(new string[] {
                         "Values"});
             table55.AddRow(new string[] {
-                        "DirectX SDK (Version 8.1) (3663.0)"});
-            testRunner.And("Values is displayed in added filter info", ((string)(null)), table55, "And ");
+                        "\"WPF/E\" (codename) Community Technology Preview (Feb 2007)"});
+            testRunner.When("User have create \"Equals\" Values filter with column and following options:", ((string)(null)), table55, "When ");
+            testRunner.Then("\"Application\" filter is added to the list", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+            testRunner.Then("\"(Application = DirectX SDK (Version 8.1) (3663.0)) OR (Application = \"WPF/E\" (co" +
+                    "dename) Community Technology Preview (Feb 2007))\" text is displayed in filter co" +
+                    "ntainer", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
             this.ScenarioCleanup();
         }
         
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestMethodAttribute()]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.DescriptionAttribute("EvergreenJnr_ApplicationsList_Check that \'500 error\' is not displayed for \"\"WPF/E" +
-            "\" (codename) Community Technology Preview (Feb 2007)\" filter")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.DescriptionAttribute("EvergreenJnr_DevicesList_Check that space after commas in the filters container i" +
+            "s displayed")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("FeatureTitle", "FiltersDisplay")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("Evergreen")]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("Applications")]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("EvergreenJnr_FiltersFeature")]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("FilterFunctionality")]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("DAS-11165")]
-        public virtual void EvergreenJnr_ApplicationsList_CheckThat500ErrorIsNotDisplayedForWPFECodenameCommunityTechnologyPreviewFeb2007Filter()
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("Devices")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("Evergreen_FiltersFeature")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("FiltersDisplay")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("DAS-11054")]
+        public virtual void EvergreenJnr_DevicesList_CheckThatSpaceAfterCommasInTheFiltersContainerIsDisplayed()
         {
-            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("EvergreenJnr_ApplicationsList_Check that \'500 error\' is not displayed for \"\"WPF/E" +
-                    "\" (codename) Community Technology Preview (Feb 2007)\" filter", new string[] {
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("EvergreenJnr_DevicesList_Check that space after commas in the filters container i" +
+                    "s displayed", new string[] {
                         "Evergreen",
-                        "Applications",
-                        "EvergreenJnr_FiltersFeature",
-                        "FilterFunctionality",
-                        "DAS-11165"});
+                        "Devices",
+                        "Evergreen_FiltersFeature",
+                        "FiltersDisplay",
+                        "DAS-11054"});
             this.ScenarioSetup(scenarioInfo);
             this.FeatureBackground();
-            testRunner.When("User clicks \"Applications\" on the left-hand menu", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-            testRunner.Then("\"Applications\" list should be displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+            testRunner.When("User clicks \"Devices\" on the left-hand menu", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+            testRunner.Then("\"Devices\" list should be displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
             testRunner.When("User clicks the Filters button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
             testRunner.Then("Filters panel is displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-            testRunner.When("user select \"Application\" filter", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+            testRunner.When("user select \"Compliance\" filter", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
             TechTalk.SpecFlow.Table table56 = new TechTalk.SpecFlow.Table(new string[] {
-                        "Values"});
+                        "SelectedCheckboxes"});
             table56.AddRow(new string[] {
-                        "\"WPF/E\" (codename) Community Technology Preview (Feb 2007)"});
-            testRunner.And("User have create \"Equals\" Values filter with column and following options:", ((string)(null)), table56, "And ");
-            testRunner.Then("\"Application\" filter is added to the list", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-            TechTalk.SpecFlow.Table table57 = new TechTalk.SpecFlow.Table(new string[] {
-                        "Values"});
-            table57.AddRow(new string[] {
-                        "\"WPF/E\" (codename) Community Technology Preview (Feb 2007)"});
-            testRunner.And("Values is displayed in added filter info", ((string)(null)), table57, "And ");
+                        "Unknown"});
+            table56.AddRow(new string[] {
+                        "Red"});
+            table56.AddRow(new string[] {
+                        "Amber"});
+            table56.AddRow(new string[] {
+                        "Green"});
+            testRunner.And("User have created \"Equals\" filter without column and following options:", ((string)(null)), table56, "And ");
+            testRunner.Then("\"(Compliance = Unknown, Red, Amber or Green)\" text is displayed in filter contain" +
+                    "er", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
             this.ScenarioCleanup();
         }
     }

@@ -50,6 +50,9 @@ namespace DashworksTestAutomation.Pages.Evergreen
         [FindsBy(How = How.XPath, Using = ".//div[@class='save-action-bar ng-star-inserted']//span[text()='Save']")]
         public IWebElement SaveCustomListButton { get; set; }
 
+        [FindsBy(How = How.XPath, Using = ".//span[@class='filter-content']")]
+        public IWebElement FilterContainer { get; set; }
+
         #region TableColumns
 
         [FindsBy(How = How.XPath, Using = ".//div[@colid='lastLogonDate'][@role='gridcell']")]

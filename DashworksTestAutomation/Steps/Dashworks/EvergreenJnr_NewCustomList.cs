@@ -179,7 +179,7 @@ namespace DashworksTestAutomation.Steps.Dashworks
         {
             var listElement = _driver.NowAt<CustomListElement>();
             List<string> list = listElement.ListsNames.Select(x => x.Text).ToList();
-            Assert.AreEqual(listElement.ListsNames.Select(x => x.Text).OrderBy(s => s), list);
+            Assert.AreEqual(list.OrderBy(s => s), list, "Lists names are not in alphabetical order");
         }
     }
 }

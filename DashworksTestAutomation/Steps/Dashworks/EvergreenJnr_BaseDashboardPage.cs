@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using DashworksTestAutomation.Extensions;
+using DashworksTestAutomation.Helpers;
 using DashworksTestAutomation.Pages.Evergreen;
 using NUnit.Framework;
 using OpenQA.Selenium;
@@ -156,6 +157,13 @@ namespace DashworksTestAutomation.Steps.Dashworks
         public void ThenURLIs(string url)
         {
             Assert.AreEqual(url, _driver.Url, "URL is changing whe user perform search");
+        }
+
+        [Then(@"""(.*)"" text is displayed in filter container")]
+        public void ThenTextIsDisplayedInFilterContainer(string text)
+        {
+            var page = _driver.NowAt<BaseDashboardPage>();
+            Assert.AreEqual(text, page.FilterContainer.Text.TrimStart(' ').TrimEnd(' '), $"{text} not equal");
         }
     }
 }
