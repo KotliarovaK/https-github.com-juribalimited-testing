@@ -1,5 +1,5 @@
-﻿Feature: DisplayCustomListCreation
-	Runs Deisplay Custom List Creation block related tests
+﻿Feature: CustomListDisplay
+	Runs Custom List Creation block related tests
 
 Background: Pre-Conditions
 	Given User is on Dashworks Homepage

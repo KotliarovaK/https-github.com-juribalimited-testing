@@ -157,7 +157,7 @@ namespace DashworksTestAutomation.Steps.Dashworks
         {
             var listElement = _driver.NowAt<CustomListElement>();
 
-            foreach (var buttons in _driver.FindElements(By.XPath(listElement.SettingButtonSelector)))
+            foreach (var button in _driver.FindElements(By.XPath(listElement.SettingButtonSelector)))
             {
                 if (_driver.IsElementExists(By.XPath(listElement.SettingButtonSelector)))
                 {
