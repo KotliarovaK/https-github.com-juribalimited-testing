@@ -87,7 +87,7 @@ Scenario: EvergreenJnr_MailboxesList_Select All Checkbox status after closing ac
 	Then Signed Out page is displayed to the user
 	And User is logged out
 
-@Evergreen @Devices @Evergreen_ActionsPanel @AllCheckbox  @DAS-10772
+@Evergreen @Devices @Evergreen_ActionsPanel @AllCheckbox @DAS-10772
 Scenario: EvergreenJnr_DevicesList_Search Within All Rows
 	When User clicks "Devices" on the left-hand menu
 	Then "Devices" list should be displayed to the user
@@ -101,6 +101,30 @@ Scenario: EvergreenJnr_DevicesList_Search Within All Rows
 	| Yolande Sylvain | 1            |
 	And Clearing the agGrid Search Box
 	Then "17,225" rows are displayed in the agGrid
+	When User clicks the Logout button
+	Then Signed Out page is displayed to the user
+	And User is logged out
+
+@Evergreen @Devices @Evergreen_ActionsPanel @AllCheckbox @DAS-10656
+Scenario: EvergreenJnr_DevicesList_Select All checbox main functionality test
+	When User clicks "Devices" on the left-hand menu
+	Then "Devices" list should be displayed to the user
+	When User clicks the Actions button
+	Then Actions panel is displayed to the user
+	When User select all rows
+	Then "17225" selected rows are displayed in the Actions panel
+	When User clicks the Actions button
+	Then Select all checkbox is not displayed
+	When User clicks the Actions button
+	When User select all rows
+	When User select "Hostname" rows in the grid
+	| SelectedRowsName |
+	| 02QS1WBYUHCAG8Z  |
+	| 01COJATLYVAR7A6  |
+	Then "17223" selected rows are displayed in the Actions panel
+	When User click on 'Hostname' column header
+	Then data in table is sorted by 'Hostname' column in descending order
+	Then "17223" selected rows are displayed in the Actions panel
 	When User clicks the Logout button
 	Then Signed Out page is displayed to the user
 	And User is logged out

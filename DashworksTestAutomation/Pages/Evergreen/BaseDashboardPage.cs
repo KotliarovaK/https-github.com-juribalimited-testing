@@ -35,7 +35,7 @@ namespace DashworksTestAutomation.Pages.Evergreen
         [FindsBy(How = How.XPath, Using = ".//div[contains(@class,'submenu-selected-list')]")]
         public IWebElement List { get; set; }
 
-        [FindsBy(How = How.XPath, Using = ".//span[@class='rowCount']")]
+        [FindsBy(How = How.XPath, Using = ".//span[@class='rowCount ng-star-inserted']")]
         public IWebElement ResultsOnPageCount { get; set; }
 
         [FindsBy(How = How.XPath, Using = ".//span[@class='checkbox-styled selectBox']/input")]
@@ -44,10 +44,10 @@ namespace DashworksTestAutomation.Pages.Evergreen
         [FindsBy(How = How.XPath, Using = ".//div[@class='ag-body-container']")]
         public IWebElement TableBody { get; set; }
 
-        [FindsBy(How = How.XPath, Using = ".//div[@class='empty-message']")]
+        [FindsBy(How = How.XPath, Using = ".//div[@class='empty-message ng-star-inserted']")]
         public IWebElement NoResultsFoundMessage { get; set; }
 
-        [FindsBy(How = How.XPath, Using = ".//div[@class='save-action-bar']//span[text()='Save']")]
+        [FindsBy(How = How.XPath, Using = ".//div[@class='save-action-bar ng-star-inserted']//span[text()='Save']")]
         public IWebElement SaveCustomListButton { get; set; }
 
         [FindsBy(How = How.XPath, Using = ".//span[@class='filter-content']")]
@@ -128,8 +128,8 @@ namespace DashworksTestAutomation.Pages.Evergreen
 
         public string ActiveCustomListName()
         {
-            Driver.WaitWhileControlIsNotDisplayed(By.XPath(".//div[@class='active-list-wrapper']//span"));
-            return Driver.FindElement(By.XPath(".//div[@class='active-list-wrapper']//span")).Text;
+            Driver.WaitWhileControlIsNotDisplayed(By.XPath(".//div[@class='active-list-wrapper ng-star-inserted']//span"));
+            return Driver.FindElement(By.XPath(".//div[@class='active-list-wrapper ng-star-inserted']//span")).Text;
         }
 
         public void ClickContentByColumnName(string columnName)

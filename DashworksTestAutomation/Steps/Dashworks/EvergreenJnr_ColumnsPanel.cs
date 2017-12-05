@@ -47,8 +47,8 @@ namespace DashworksTestAutomation.Steps.Dashworks
                 columnElement.SearchTextbox.Clear();
             }
             //Minimise the Selected Columns
-            columnElement.MinimizeGroupButton.Click();
-            _driver.WaitWhileControlIsDisplayed<ColumnsElement>(() => columnElement.MinimizeGroupButton);
+            //columnElement.MinimizeGroupButton.Click();
+            //_driver.WaitWhileControlIsDisplayed<ColumnsElement>(() => columnElement.MinimizeGroupButton);
             //Close the Columns Panel
             var listpageMenu = _driver.NowAt<BaseDashboardPage>();
             listpageMenu.ColumnButton.Click();

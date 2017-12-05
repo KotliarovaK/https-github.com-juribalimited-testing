@@ -55,7 +55,7 @@ namespace DashworksTestAutomation.Pages.Evergreen
         private IWebElement FilterCategory(string filterCategoryName)
         {
             return Driver.FindElement(By.XPath(
-                $".//div[contains(@class,'filter-category-label')][text()='{filterCategoryName}']/ancestor::div[@class='filter-category']"));
+                $".//div[contains(@class,'filter-category-label blue-color bold-text')][text()='{filterCategoryName}']/ancestor::div[@class='filter-category ng-star-inserted']"));
         }
 
         public void AddAllColumnsFromCategory(string categoryName)
@@ -64,12 +64,12 @@ namespace DashworksTestAutomation.Pages.Evergreen
             filterCategory.FindElement(By.XPath(".//div[contains(@class,'filter-category-title')]")).Click();
             //Small wait for subcategoris display
             Thread.Sleep(350);
-            var subCategories = filterCategory.FindElements(By.XPath(".//div[@class='sub-categories']/div"));
+            var subCategories = filterCategory.FindElements(By.XPath(".//div[@class='sub-categories ng-star-inserted']/div"));
             while (subCategories.Any())
             {
                 subCategories.First().Click();
                 Driver.WaitForDataLoading();
-                subCategories = filterCategory.FindElements(By.XPath(".//div[@class='sub-categories']/div"));
+                subCategories = filterCategory.FindElements(By.XPath(".//div[@class='sub-categories ng-star-inserted']/div"));
             }
         }
 
@@ -88,7 +88,7 @@ namespace DashworksTestAutomation.Pages.Evergreen
         public IWebElement GetDeleteColumnButton(string columnName)
         {
             return Driver.FindElement(By.XPath(
-                $".//div[@class='columns-panel']//span[text()='{columnName}']/ancestor::div[@class='sub-categories-item selected-column']//button"));
+                $".//div[@class='columns-panel']//span[text()='{columnName}']/ancestor::div[@class='sub-categories-item selected-column ng-star-inserted']//button"));
         }
 
         public void ExpandColumnsSectionByName(string sectionsName)
