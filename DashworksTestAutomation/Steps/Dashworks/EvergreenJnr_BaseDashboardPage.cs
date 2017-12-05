@@ -163,7 +163,7 @@ namespace DashworksTestAutomation.Steps.Dashworks
         public void ThenTextIsDisplayedInFilterContainer(string text)
         {
             var page = _driver.NowAt<BaseDashboardPage>();
-            Assert.AreEqual(text, page.FilterContainer.Text.TrimStart(' ').TrimEnd(' '), $"{text} not equal");
+            Assert.AreEqual(text, page.FilterContainer.Text.TrimStart(' ').TrimEnd(' '), $"Filter is created incorrectly");
         }
     }
 }
