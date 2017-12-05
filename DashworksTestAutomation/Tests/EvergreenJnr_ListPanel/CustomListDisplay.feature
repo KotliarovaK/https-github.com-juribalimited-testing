@@ -1,5 +1,5 @@
-﻿Feature: DisplayCustomListCreation
-	Runs Deisplay Custom List Creation block related tests
+﻿Feature: CustomListDisplay
+	Runs Custom List Creation block related tests
 
 Background: Pre-Conditions
 	Given User is on Dashworks Homepage
@@ -209,3 +209,46 @@ Scenario: EvergreenJnr_UsersList_Check that custom list creation block is not di
 	Then Save to New Custom List element is NOT displayed
 	When User clicks the Actions button
 	Then Save to New Custom List element is displayed
+
+@Evergreen @Devices @EvergreenJnr_ListPanel @CustomListDisplay @DAS-11394 @Delete_Newly_Created_List
+Scenario: EvergreenJnr_DevicesList_Check the sort order is saved for existing list and not deleted after clicking "Reset" button in "Columns" menu
+	When User clicks "Devices" on the left-hand menu
+	Then "Devices" list should be displayed to the user
+	When User clicks the Filters button
+	Then Filters panel is displayed to the user
+	When user select "City" filter
+	And User have create "Equals" Values filter with column and following options:
+	| Values |
+	| London |
+	Then "City" filter is added to the list
+	When User click on 'Owner Display Name' column header
+	Then data in table is sorted by 'Owner Display Name' column in ascending order
+	When User create custom list with "Custom List TestName" name
+	Then "Custom List TestName" list is displayed to user
+	When User navigates to the "All Devices" list
+	Then "All Devices" list should be displayed to the user
+	When User clicks the Actions button
+	Then Actions panel is displayed to the user
+	When User select "Username" rows in the grid
+	| SelectedRowsName |
+	| AAD1011948       |
+	| AAH0343264       |
+	And User create static list with "Static List TestName" name
+	Then "Static List TestName" list is displayed to user
+	When User click on 'Owner Display Name' column header
+	Then data in table is sorted by 'Owner Display Name' column in ascending order
+	And User save changes in list with "Static List TestName" name
+	When User navigates to the "All Devices" list
+	Then "All Devices" list should be displayed to the user
+	When User navigates to the "Custom List TestName" list
+	Then "Custom List TestName" list is displayed to user
+	When User clicks the Columns button
+	Then Columns panel is displayed to the user
+	When User have reset all filters
+	Then data in table is sorted by 'Owner Display Name' column in ascending order
+	When User navigates to the "Static List TestName" list
+	Then "Static List TestName" list is displayed to user
+	When User clicks the Columns button
+	Then Columns panel is displayed to the user
+	When User have reset all filters
+	Then data in table is sorted by 'Owner Display Name' column in ascending order

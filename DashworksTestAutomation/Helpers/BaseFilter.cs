@@ -46,7 +46,7 @@ namespace DashworksTestAutomation.Helpers
         {
             if (_acceptCheckbox)
                 _driver.FindElement(By.XPath(
-                        ".//div[@class='filterAddPanel']//md-checkbox//div[@class='mat-checkbox-inner-container']"))
+                        ".//div[@class='filterAddPanel ng-star-inserted']//md-checkbox//div[@class='mat-checkbox-inner-container']"))
                     .Click();
             _driver.MouseHover(By.XPath(".//button[@title='Update Filter Set']"));
             _driver.FindElement(By.XPath(".//button[@title='Update Filter Set']")).Click();
@@ -88,9 +88,9 @@ namespace DashworksTestAutomation.Helpers
         {
             SelectOperator();
             _driver.WaitForDataLoading();
-            _driver.FindElement(By.XPath(".//div[@class='filterAddPanel']//input[@placeholder='Search']"))
+            _driver.FindElement(By.XPath(".//div[@class='filterAddPanel ng-star-inserted']//input[@placeholder='Search']"))
                 .SendKeys(_value);
-            _driver.FindElement(By.XPath($".//div[@class='filterAddPanel']//span[contains(text(),'{_value}')]"))
+            _driver.FindElement(By.XPath($".//div[@class='filterAddPanel ng-star-inserted']//span[contains(text(),'{_value}')]"))
                 .Click();
             SaveFilter();
         }
@@ -132,12 +132,12 @@ namespace DashworksTestAutomation.Helpers
         public override void Do()
         {
             var addedOptionSelector =
-                ".//div[@class='filterAddPanel']/div[@class='form-container']//div[@class='form-group']//li/span[contains(text(),'{0}')]";
+                ".//div[@class='filterAddPanel ng-star-inserted']/div[@class='form-container']//div[@class='form-group ng-star-inserted']//li/span[contains(text(),'{0}')]";
             var allAddedOptionsSelector =
-                ".//div[@class='filterAddPanel']/div[@class='form-container']//div[@class='form-group']//li/span";
+                ".//div[@class='filterAddPanel ng-star-inserted']/div[@class='form-container']//div[@class='form-group ng-star-inserted']//li/span";
             var filterValueSelector = By.XPath(
-                ".//div[@class='filterAddPanel']//div[@class='mat-input-infix mat-form-field-infix']//input");
-            var addButtonSelector = By.XPath(".//div[@class='filterAddPanel']//button[@title='Add']");
+                ".//div[@class='filterAddPanel ng-star-inserted']//div[@class='mat-input-infix mat-form-field-infix']//input");
+            var addButtonSelector = By.XPath(".//div[@class='filterAddPanel ng-star-inserted']//button[@title='Add']");
             SelectOperator();
             _driver.WaitForDataLoading();
             foreach (var row in _optionsTable.Rows)
