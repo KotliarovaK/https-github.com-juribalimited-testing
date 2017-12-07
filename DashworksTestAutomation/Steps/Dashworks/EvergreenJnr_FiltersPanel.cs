@@ -50,6 +50,16 @@ namespace DashworksTestAutomation.Steps.Dashworks
                 $"{filterName} is available in the search");
         }
 
+        [When(@"User have create ""(.*)"" filter with ""(.*)"" options and following value:")]
+        public void WhenUserHaveCreateFilterWithOptionsAndFollowingValue(string filterName,
+            string filterType, Table table)
+        {
+            var filtersNames = _driver.NowAt<FiltersElement>();
+            filtersNames.AddFilter(filterName);
+            var type = new ValueFilter(_driver, filterType, false, table);
+            type.Do();
+        }
+
         [When(@"User have created ""(.*)"" filter without column and following options:")]
         public void WhenUserHaveCreatedFilterWithoutColumnAndFollowingOptions(string filterType,
             Table table)

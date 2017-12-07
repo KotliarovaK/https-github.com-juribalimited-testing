@@ -368,6 +368,12 @@ namespace DashworksTestAutomation.Extensions
             ex.ExecuteScript("arguments[0].click();", element);
         }
 
+        public static void MouseHoverByJavascript(this RemoteWebDriver driver, IWebElement element)
+        {
+            IJavaScriptExecutor ex = (IJavaScriptExecutor)driver;
+            ex.ExecuteScript("arguments[0].scrollIntoView(true);", element);
+        }
+
         #endregion
 
         #region Frames
@@ -452,13 +458,17 @@ namespace DashworksTestAutomation.Extensions
 
         #region Web element extensions
 
-        public static void SelectCustomSelectbox(this IWebDriver driver, IWebElement selectbox, string option)
+        public static void SelectCustomSelectbox(this RemoteWebDriver driver, IWebElement selectbox, string option)
         {
             selectbox.Click();
             //Small wait for dropdown display
-            Thread.Sleep(200);
-            var options = driver.FindElements(By.XPath(".//div[contains(@class,'mat-select-content')]/md-option"));
-            options.First(x => x.Text.Contains(option)).Click();
+            Thread.Sleep(300);
+            var options = driver.FindElements(By.XPath(".//div[contains(@class,'mat-select-content ng-trigger ng-trigger-fadeInContent')]/md-option"));
+            if (!options.Any())
+                throw new Exception($"Filter options were not loaded, unable to select '{option}'");
+            driver.MouseHover(options.Last());
+            options = driver.FindElements(By.XPath(".//div[contains(@class,'mat-select-content ng-trigger ng-trigger-fadeInContent')]/md-option"));
+            driver.ClickByJavascript(options.First(x => x.Text.Contains(option)));
         }
 
         #endregion
