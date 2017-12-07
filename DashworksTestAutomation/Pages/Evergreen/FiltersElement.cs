@@ -5,6 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using DashworksTestAutomation.Base;
 using DashworksTestAutomation.Extensions;
+using NUnit.Framework;
 using OpenQA.Selenium;
 using OpenQA.Selenium.Support.PageObjects;
 
@@ -20,6 +21,9 @@ namespace DashworksTestAutomation.Pages.Evergreen
 
         [FindsBy(How = How.XPath, Using = ".//input[@name='search']")]
         public IWebElement SearchTextbox { get; set; }
+
+        [FindsBy(How = How.XPath, Using = ".//div[contains(@class,'filter-category ng-star-inserted')]")]
+        public IList<IWebElement> FilterCategories { get; set; }
 
         [FindsBy(How = How.XPath, Using = ".//button[@title='Minimize Group']")]
         public IWebElement MinimizeGroupButton { get; set; }
@@ -48,13 +52,13 @@ namespace DashworksTestAutomation.Pages.Evergreen
         [FindsBy(How = How.XPath, Using = ".//span[@class='mat-checkbox-label']")]
         public IList<IWebElement> AddCategoryColumnName { get; set; }
 
-        [FindsBy(How = How.XPath, Using = ".//div[@class='filterAddPanel']//button[@title='Remove filter']")]
+        [FindsBy(How = How.XPath, Using = ".//div[@class='filterAddPanel ng-star-inserted']//button[@title='Remove filter']")]
         public IWebElement RemoveFilterButton { get; set; }
 
         [FindsBy(How = How.XPath, Using = ".//button[@title='Reset Filter']")]
         public IWebElement ResetFiltersButton { get; set; }
 
-        [FindsBy(How = How.XPath, Using = ".//span[@class='filter-label-value']")]
+        [FindsBy(How = How.XPath, Using = ".//span[contains(@class, 'filter-label-value')]")]
         public IList<IWebElement> FilterValues { get; set; }
 
         [FindsBy(How = How.XPath, Using = ".//span[@class='filter-label-op']")]
@@ -80,17 +84,23 @@ namespace DashworksTestAutomation.Pages.Evergreen
 
         public List<string> GetFilterValuesByFilterName(string filterName)
         {
-            return Driver.FindElements(By.XPath(
-                    $".//span[@class='filter-label-name'][text()='{filterName}']/ancestor::div[@class='filter-label']//span[@class='filter-label-value']"))
-                .Select(x => x.Text.TrimStart(' ').TrimEnd(' ')).ToList();
+            List<string> filterValues = new List<string>();
+            filterValues.AddRange(Driver.FindElements(By.XPath(
+                          $".//span[@class='filter-label-name'][text()='{filterName}']/ancestor::div[@class='filter-label']//span[contains(@class, 'filter-label-value')]"))
+                      .Select(x => x.Text.TrimStart(' ').TrimEnd(' ')).ToList());
+            return filterValues;
         }
 
         public void AddFilter(string filterName)
         {
-            if (AddNewFilterButton.Displayed())
+            if (Driver.IsElementExists(AddNewFilterButton))
             {
+                Driver.MouseHover(AddNewFilterButton);
                 AddNewFilterButton.Click();
             }
+            if (FilterCategories.Any())
+                Driver.MouseHover(FilterCategories.Last());
+            Driver.MouseHover(SearchTextbox);
             SearchTextbox.SendKeys(filterName);
             var selector = string.Empty;
             if (filterName.Contains("'"))
@@ -136,14 +146,14 @@ namespace DashworksTestAutomation.Pages.Evergreen
         public IWebElement GetEditFilterButton(string filterName)
         {
             var editFilterSelector =
-                $".//span[@class='filter-label-name'][text()='{filterName}']//ancestor::div[@class='filter-group no-border-bottom']//button";
+                $".//span[@class='filter-label-name'][text()='{filterName}']//ancestor::div[@class='filter-group no-border-bottom ng-star-inserted']//button";
             return Driver.FindElement(By.XPath(editFilterSelector));
         }
 
         public IWebElement GetBooleanCheckboxImg(string booleanValue)
         {
             var imgSelector =
-                $".//li//span[text()='{booleanValue}']/ancestor::span[@class='boolean-icon text-container']/img";
+                $".//li//span[text()='{booleanValue}']/ancestor::span[@class='boolean-icon text-container ng-star-inserted']/img";
             return Driver.FindElement(By.XPath(imgSelector));
         }
 
@@ -156,7 +166,7 @@ namespace DashworksTestAutomation.Pages.Evergreen
 
         public IList<IWebElement> GetSelectBoxes()
         {
-            return Driver.FindElements(By.XPath(".//span[@class='text-container']"));
+            return Driver.FindElements(By.XPath(".//span[@class='text-container ng-star-inserted']"));
         }
     }
 }
