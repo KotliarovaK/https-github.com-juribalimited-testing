@@ -22,6 +22,9 @@ namespace DashworksTestAutomation.Pages.Evergreen
         [FindsBy(How = How.XPath, Using = ".//input[@name='search']")]
         public IWebElement SearchTextbox { get; set; }
 
+        [FindsBy(How = How.XPath, Using = ".//div[contains(@class,'filter-category ng-star-inserted')]")]
+        public IList<IWebElement> FilterCategories { get; set; }
+
         [FindsBy(How = How.XPath, Using = ".//button[@title='Minimize Group']")]
         public IWebElement MinimizeGroupButton { get; set; }
 
@@ -82,18 +85,22 @@ namespace DashworksTestAutomation.Pages.Evergreen
         public List<string> GetFilterValuesByFilterName(string filterName)
         {
             List<string> filterValues = new List<string>();
-      filterValues.AddRange(Driver.FindElements(By.XPath(
-                    $".//span[@class='filter-label-name'][text()='{filterName}']/ancestor::div[@class='filter-label']//span[contains(@class, 'filter-label-value')]"))
-                .Select(x => x.Text.TrimStart(' ').TrimEnd(' ')).ToList());
+            filterValues.AddRange(Driver.FindElements(By.XPath(
+                          $".//span[@class='filter-label-name'][text()='{filterName}']/ancestor::div[@class='filter-label']//span[contains(@class, 'filter-label-value')]"))
+                      .Select(x => x.Text.TrimStart(' ').TrimEnd(' ')).ToList());
             return filterValues;
         }
 
         public void AddFilter(string filterName)
         {
-            if (AddNewFilterButton.Displayed())
+            if (Driver.IsElementExists(AddNewFilterButton))
             {
+                Driver.MouseHover(AddNewFilterButton);
                 AddNewFilterButton.Click();
             }
+            if (FilterCategories.Any())
+                Driver.MouseHover(FilterCategories.Last());
+            Driver.MouseHover(SearchTextbox);
             SearchTextbox.SendKeys(filterName);
             var selector = string.Empty;
             if (filterName.Contains("'"))
