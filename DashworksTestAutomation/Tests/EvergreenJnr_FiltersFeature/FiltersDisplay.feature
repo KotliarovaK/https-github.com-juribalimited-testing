@@ -716,6 +716,7 @@ Scenario: EvergreenJnr_ApplicationsList_Check that '500 error' is not displayed 
 	| Values                             |
 	| DirectX SDK (Version 8.1) (3663.0) |
 	Then "Application" filter is added to the list
+	When user select "Application" filter
 	When User have create "Equals" Values filter with column and following options:
 	| Values                                                     |
 	| "WPF/E" (codename) Community Technology Preview (Feb 2007) |

@@ -2410,6 +2410,7 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_FiltersFeature
                         "DirectX SDK (Version 8.1) (3663.0)"});
             testRunner.And("User have create \"Equals\" Values filter with column and following options:", ((string)(null)), table54, "And ");
             testRunner.Then("\"Application\" filter is added to the list", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+            testRunner.When("user select \"Application\" filter", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
             TechTalk.SpecFlow.Table table55 = new TechTalk.SpecFlow.Table(new string[] {
                         "Values"});
             table55.AddRow(new string[] {

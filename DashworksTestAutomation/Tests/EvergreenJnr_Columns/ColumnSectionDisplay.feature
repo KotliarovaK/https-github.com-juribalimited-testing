@@ -21,10 +21,7 @@ Scenario: EvergreenJnr_DevicesList_Check category heading when all columns from 
 	When User add all Columns from specific category
 	| CategoryName |
 	| Application  |
-	Then "0" subcategories is displayed for "Application" category
-	#Maximize/Minimize button is still displayed even category is empty. This is known issue
-	#Because of this below assertion is commented
-	#Then Maximize or Minimize button is not displayed for "Applications" category
+	Then "Applications" section is not displayed in the Columns panel
 	When User clicks the Logout button
 	Then Signed Out page is displayed to the user
 	And User is logged out

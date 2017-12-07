@@ -95,6 +95,15 @@ namespace DashworksTestAutomation.Steps.Dashworks
             columnElement.GetDeleteColumnButton(columnName).Click();
         }
 
+        [When(@"User have reset all columns")]
+        public void WhenUserHaveResetAllColumns()
+        {
+            var columnElement = _driver.NowAt<ColumnsElement>();
+            _driver.WaitWhileControlIsNotDisplayed<ColumnsElement>(() => columnElement.ResetColumnsButton);
+            _driver.MouseHover(columnElement.ResetColumnsButton);
+            columnElement.ResetColumnsButton.Click();
+        }
+
         [When(@"User is removed column by URL")]
         public void WhenUserIsRemovedColumnByURL(Table table)
         {
@@ -127,6 +136,13 @@ namespace DashworksTestAutomation.Steps.Dashworks
             var columnElement = _driver.NowAt<ColumnsElement>();
             Assert.IsFalse(columnElement.MaximizeOrMinimizeButtonByCategory(categoryName).Displayed(),
                 $"Maximize/Minimize button is displayed for empty {categoryName} category");
+        }
+
+        [Then(@"""(.*)"" section is not displayed in the Columns panel")]
+        public void ThenSectionIsNotDisplayedInTheColumnsPanel(string categoryName)
+        {
+            var columnElement = _driver.NowAt<ColumnsElement>();
+            Assert.IsFalse(columnElement.CategoryIsDisplayed(categoryName), $"{categoryName} category stil displayed in Column Panel");
         }
 
         [Then(@"User is expand ""(.*)"" columns category")]
