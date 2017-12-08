@@ -1,6 +1,6 @@
 ﻿#@retry:3
 Feature: ColumnSectionDisplay
-	Runs Add column related tests
+	Runs Column Panel related tests
 
 Background: Pre-Conditions
 	Given User is on Dashworks Homepage
