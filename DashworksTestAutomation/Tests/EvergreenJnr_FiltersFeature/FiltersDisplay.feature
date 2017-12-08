@@ -1,6 +1,6 @@
 ﻿#@retry:3
 Feature: FiltersDisplay
-	Runs Item Details Display related tests
+	Runs Dynamic Filters Display related tests
 
 Background: Pre-Conditions
 	Given User is on Dashworks Homepage
@@ -101,33 +101,27 @@ Scenario: EvergreenJnr_DevicesList_Check that "Empty" and "Not Empty" options is
 	When user select "AD Object Key" filter
 	Then "Equals, Does not equal, Greater than, Greater than or equal to, Less than, Less than or equal to, Empty, Not empty" option is available for this filter
 
-@Evergreen @Devices @Evergreen_FiltersFeature @FiltersDisplay @DAS-10795
-Scenario: EvergreenJnr_DevicesList_Check that 'Add column' option is available for "Operating System" filter
-	When User clicks "Devices" on the left-hand menu
-	Then "Devices" list should be displayed to the user
+@Evergreen @AllLisrs @Evergreen_FiltersFeature @FiltersDisplay @DAS-10795
+Scenario Outline: EvergreenJnr_AllLists_Check that 'Add column' option is available for filters
+	When User clicks "<PageName>" on the left-hand menu
+	Then "<PageName>" list should be displayed to the user
 	When User clicks the Filters button
 	Then Filters panel is displayed to the user
-	When user select "Operating System" filter
+	When user select "<FilterName>" filter
 	Then checkboxes are displayed to the User:
-	| SelectedCheckboxes          |
-	| Add Operating System column |
+	| SelectedCheckboxes   |
+	| <SelectedCheckboxes> |
 	When User clicks the Logout button
 	Then Signed Out page is displayed to the user
 	And User is logged out
 
-@Evergreen @Devices @Evergreen_FiltersFeature @FiltersDisplay @DAS-10795
-Scenario: EvergreenJnr_DevicesList_Check that 'Add column' option is available for "City" filter
-	When User clicks "Devices" on the left-hand menu
-	Then "Devices" list should be displayed to the user
-	When User clicks the Filters button
-	Then Filters panel is displayed to the user
-	When user select "City" filter
-	Then checkboxes are displayed to the User:
-	| SelectedCheckboxes |
-	| Add City column    |
-	When User clicks the Logout button
-	Then Signed Out page is displayed to the user
-	And User is logged out
+Examples: 
+	| PageName     | FilterName        | SelectedCheckboxes           |
+	| Devices      | Operating System  | Add Operating System column  |
+	| Devices      | City              | Add City column              |
+	| Users        | Zip Code          | Add Zip Code column          |
+	| Applications | Application Owner | Add Application Owner column |
+	| Mailboxes    | Mailbox Filter 1  | Add Mailbox Filter 1 column  |
 
 @Evergreen @Devices @Evergreen_FiltersFeature @FiltersDisplay @DAS-10795 @DAS-11187
 Scenario: EvergreenJnr_DevicesList_Check that 'Add column' option is not available for Application Custom Fields filters
@@ -141,95 +135,24 @@ Scenario: EvergreenJnr_DevicesList_Check that 'Add column' option is not availab
 	Then Signed Out page is displayed to the user
 	And User is logged out
 
-@Evergreen @Users @Evergreen_FiltersFeature @FiltersDisplay @DAS-10795
-Scenario: EvergreenJnr_UsersList_Check that 'Add column' option is available for filter
-	When User clicks "Users" on the left-hand menu
-	Then "Users" list should be displayed to the user
+@Evergreen @AllLisrs @Evergreen_FiltersFeature @FiltersDisplay @DAS-10771
+Scenario Outline: EvergreenJnr_AllLisrs_Check that 'None' option is available for filters
+	When User clicks "<PageName>" on the left-hand menu
+	Then "<PageName>" list should be displayed to the user
 	When User clicks the Filters button
 	Then Filters panel is displayed to the user
-	When user select "Zip Code" filter
-	Then checkboxes are displayed to the User:
-	| SelectedCheckboxes  |
-	| Add Zip Code column |
-	When User clicks the Logout button
-	Then Signed Out page is displayed to the user
-	And User is logged out
-
-@Evergreen @Applications @Evergreen_FiltersFeature @FiltersDisplay @DAS-10795
-Scenario: EvergreenJnr_ApplicationsList_Check that 'Add column' option is available for filter
-	When User clicks "Applications" on the left-hand menu
-	Then "Applications" list should be displayed to the user
-	When User clicks the Filters button
-	Then Filters panel is displayed to the user
-	When user select "Application Owner" filter
-	Then checkboxes are displayed to the User:
-	| SelectedCheckboxes           |
-	| Add Application Owner column |
-	When User clicks the Logout button
-	Then Signed Out page is displayed to the user
-	And User is logged out
-
-@Evergreen @Mailboxes @Evergreen_FiltersFeature @FiltersDisplay @DAS-10795
-Scenario: EvergreenJnr_MailboxesList_Check that 'Add column' option is available for filter
-	When User clicks "Mailboxes" on the left-hand menu
-	Then "Mailboxes" list should be displayed to the user
-	When User clicks the Filters button
-	Then Filters panel is displayed to the user
-	When user select "Mailbox Filter 1" filter
-	Then checkboxes are displayed to the User:
-	| SelectedCheckboxes          |
-	| Add Mailbox Filter 1 column |
-	When User clicks the Logout button
-	Then Signed Out page is displayed to the user
-	And User is logged out
-
-@Evergreen @Devices @Evergreen_FiltersFeature @FiltersDisplay @DAS-10771
-Scenario: EvergreenJnr_DevicesList_Check that 'None' option is available for filter
-	When User clicks "Devices" on the left-hand menu
-	Then "Devices" list should be displayed to the user
-	When User clicks the Filters button
-	Then Filters panel is displayed to the user
-	When user select "Windows7Mi: Category" filter
+	When user select "<FilterName>" filter
 	Then "None" option is available at first place
 	When User clicks the Logout button
 	Then Signed Out page is displayed to the user
 	And User is logged out
 
-@Evergreen @Users @Evergreen_FiltersFeature @FiltersDisplay @DAS-10771
-Scenario: EvergreenJnr_UsersList_Check that 'None' option is available for filter
-	When User clicks "Users" on the left-hand menu
-	Then "Users" list should be displayed to the user
-	When User clicks the Filters button
-	Then Filters panel is displayed to the user
-	When user select "UserSchedu: Category" filter
-	Then "None" option is available at first place
-	When User clicks the Logout button
-	Then Signed Out page is displayed to the user
-	And User is logged out
-
-@Evergreen @Applications @Evergreen_FiltersFeature @FiltersDisplay @DAS-10771
-Scenario: EvergreenJnr_ApplicationsList_Check that 'None' option is available for filter
-	When User clicks "Applications" on the left-hand menu
-	Then "Applications" list should be displayed to the user
-	When User clicks the Filters button
-	Then Filters panel is displayed to the user
-	When user select "Havoc(BigD: Category" filter
-	Then "None" option is available at first place
-	When User clicks the Logout button
-	Then Signed Out page is displayed to the user
-	And User is logged out
-
-@Evergreen @Mailboxes @Evergreen_FiltersFeature @FiltersDisplay @DAS-10771
-Scenario: EvergreenJnr_MailboxesList_Check that 'None' option is available for filter
-	When User clicks "Mailboxes" on the left-hand menu
-	Then "Mailboxes" list should be displayed to the user
-	When User clicks the Filters button
-	Then Filters panel is displayed to the user
-	When user select "EmailMigra: Category" filter
-	Then "None" option is available at first place
-	When User clicks the Logout button
-	Then Signed Out page is displayed to the user
-	And User is logged out
+Examples: 
+	| PageName     | FilterName           |
+	| Devices      | Windows7Mi: Category |
+	| Users        | UserSchedu: Category |
+	| Applications | Havoc(BigD: Category |
+	| Mailboxes    | EmailMigra: Category |
 
 @Evergreen @Devices @Evergreen_FiltersFeature @FiltersDisplay @DAS-10696 @Delete_Newly_Created_List
 Scenario: EvergreenJnr_DevicesList_Check that filter data is displayed correctly when navigating between lists
@@ -695,11 +618,11 @@ Scenario: EvergreenJnr_ApplicationsList_Check that '500 error' is not displayed 
 	When User clicks the Filters button
 	Then Filters panel is displayed to the user
 	When User add "Application" filter where type is "Equals" with added column and following value:
-	| Values |
+	| Values                             |
 	| DirectX SDK (Version 8.1) (3663.0) |
 	Then "Application" filter is added to the list
 	When User add "Application" filter where type is "Equals" with added column and following value:
-	| Values |
+	| Values                                                     |
 	| "WPF/E" (codename) Community Technology Preview (Feb 2007) |
 	Then "Application" filter is added to the list
 	Then "(Application = DirectX SDK (Version 8.1) (3663.0)) OR (Application = "WPF/E" (codename) Community Technology Preview (Feb 2007))" text is displayed in filter container

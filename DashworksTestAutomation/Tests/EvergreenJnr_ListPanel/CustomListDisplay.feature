@@ -215,31 +215,31 @@ Scenario: EvergreenJnr_DevicesList_Check the sort order is saved for existing li
 	When User create custom list with "Custom List TestName" name
 	Then "Custom List TestName" list is displayed to user
 	When User navigates to the "All Devices" list
-	Then "All Devices" list should be displayed to the user
+	Then "Devices" list should be displayed to the user
 	When User clicks the Actions button
 	Then Actions panel is displayed to the user
-	When User select "Username" rows in the grid
+	When User select "Hostname" rows in the grid
 	| SelectedRowsName |
-	| AAD1011948       |
-	| AAH0343264       |
+	| 01BQIYGGUW5PRP6  |
+	| 020JQ9RO0J4H07X  |
 	And User create static list with "Static List TestName" name
 	Then "Static List TestName" list is displayed to user
 	When User click on 'Owner Display Name' column header
 	Then data in table is sorted by 'Owner Display Name' column in ascending order
-	And User save changes in list with "Static List TestName" name
+	When User update current custom list
 	When User navigates to the "All Devices" list
-	Then "All Devices" list should be displayed to the user
+	Then "Devices" list should be displayed to the user
 	When User navigates to the "Custom List TestName" list
 	Then "Custom List TestName" list is displayed to user
 	When User clicks the Columns button
 	Then Columns panel is displayed to the user
-	When User have reset all filters
+	When User have reset all columns
 	Then data in table is sorted by 'Owner Display Name' column in ascending order
 	When User navigates to the "Static List TestName" list
 	Then "Static List TestName" list is displayed to user
 	When User clicks the Columns button
 	Then Columns panel is displayed to the user
-	When User have reset all filters
+	When User have reset all columns
 	Then data in table is sorted by 'Owner Display Name' column in ascending order
 
 @Evergreen @Devices @EvergreenJnr_ListPanel @CustomListDisplay @DAS-11011 @Delete_Newly_Created_List

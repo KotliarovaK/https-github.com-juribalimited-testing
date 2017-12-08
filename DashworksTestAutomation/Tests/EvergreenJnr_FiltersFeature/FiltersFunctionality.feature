@@ -118,7 +118,6 @@ Examples:
 	| Users        | Username                | aa          | Username      |
 	| Mailboxes    | Email Address (Primary) | ale         | Email Address |
 
-
 @Evergreen @AllLists @EvergreenJnr_FilterFeature @FilterFunctionality @DAS-10977
 Scenario Outline: EvergreenJnr_AllLists_Check that filter is restored correctly after leaving the page and going back via the browse "back" button
 	When User clicks "<ListName>" on the left-hand menu
