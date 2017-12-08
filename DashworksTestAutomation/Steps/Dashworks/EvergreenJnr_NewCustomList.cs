@@ -44,7 +44,6 @@ namespace DashworksTestAutomation.Steps.Dashworks
             Logger.Write("The Save to Custom List Element was NOT displayed");
         }
 
-
         [When(@"User create custom list with ""(.*)"" name")]
         public void WhenUserCreateCustomListWithName(string listName)
         {
@@ -117,6 +116,29 @@ namespace DashworksTestAutomation.Steps.Dashworks
             listElement.ConfirmDeleteButton.Click();
         }
 
+        [When(@"User navigates to the ""(.*)"" list")]
+        public void WhenUserNavigatesToTheList(string listName)
+        {
+            var page = _driver.NowAt<BaseDashboardPage>();
+            page.GetListElementByName(listName).Click();
+        }
+
+        [Then(@"""(.*)"" message is displayed")]
+        public void ThenMessageIsDisplayed(string message)
+        {
+            var listElement = _driver.NowAt<CustomListElement>();
+            _driver.WaitWhileControlIsNotDisplayed<CustomListElement>(() => listElement.SuccessCreateMessage);
+            Assert.AreEqual(message, listElement.SuccessCreateMessage.Text);
+        }
+
+        [Then(@"lists are sorted in alphabetical order")]
+        public void ThenListsAreSortedInAlphabeticalOrder()
+        {
+            var listElement = _driver.NowAt<CustomListElement>();
+            List<string> list = listElement.ListsNames.Select(x => x.Text).ToList();
+            Assert.AreEqual(list.OrderBy(s => s), list, "Lists names are not in alphabetical order");
+        }
+
         [AfterScenario("Delete_Newly_Created_List")]
         public void DeleteAllCustomListsAfterScenarioRun()
         {
@@ -138,21 +160,6 @@ namespace DashworksTestAutomation.Steps.Dashworks
             }
         }
 
-        [When(@"User navigates to the ""(.*)"" list")]
-        public void WhenUserNavigatesToTheList(string listName)
-        {
-            var page = _driver.NowAt<BaseDashboardPage>();
-            page.GetListElementByName(listName).Click();
-        }
-
-        [Then(@"""(.*)"" message is displayed")]
-        public void ThenMessageIsDisplayed(string message)
-        {
-            var listElement = _driver.NowAt<CustomListElement>();
-            _driver.WaitWhileControlIsNotDisplayed<CustomListElement>(() => listElement.SuccessCreateMessage);
-            Assert.AreEqual(message, listElement.SuccessCreateMessage.Text);
-        }
-
         public void RemoveAllCustomLists()
         {
             var listElement = _driver.NowAt<CustomListElement>();
@@ -172,14 +179,6 @@ namespace DashworksTestAutomation.Steps.Dashworks
                     listElement.ConfirmDeleteButton.Click();
                 }
             }
-        }
-
-        [Then(@"lists are sorted in alphabetical order")]
-        public void ThenListsAreSortedInAlphabeticalOrder()
-        {
-            var listElement = _driver.NowAt<CustomListElement>();
-            List<string> list = listElement.ListsNames.Select(x => x.Text).ToList();
-            Assert.AreEqual(list.OrderBy(s => s), list, "Lists names are not in alphabetical order");
         }
     }
 }

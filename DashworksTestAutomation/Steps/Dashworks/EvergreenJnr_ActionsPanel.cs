@@ -50,6 +50,14 @@ namespace DashworksTestAutomation.Steps.Dashworks
             }
         }
 
+        [Then(@"User is removed selected rows")]
+        public void WhenUserIsRemovedSelectedRows()
+        {
+            var actionsElement = _driver.NowAt<ActionsElement>();
+            _driver.SelectCustomSelectbox(actionsElement.DropdownBox, "Remove from static list");
+            actionsElement.RemoveButton.Click();
+        }
+
         [Then(@"Select All selectbox is checked")]
         public void ThenSelectAllSelectboxIsChecked()
         {

@@ -17,8 +17,7 @@ Scenario: EvergreenJnr_DevicesList_Check that reset is updating row count
 	Then "Devices" list should be displayed to the user
 	When User clicks the Filters button
 	Then Filters panel is displayed to the user
-	When user select "Compliance" filter
-	And User have created "Equals" filter with column and following options:
+	When User add "Compliance" filter where type is "Equals" with added column and following checkboxes:
 	| SelectedCheckboxes |
 	| Unknown            |
 	Then "Compliance" filter is added to the list
@@ -42,8 +41,7 @@ Scenario: EvergreenJnr_DevicesList_Check that delete by url is updating row coun
 	Then "Devices" list should be displayed to the user
 	When User clicks the Filters button
 	Then Filters panel is displayed to the user
-	When user select "Compliance" filter
-	And User have created "Equals" filter with column and following options:
+	When User add "Compliance" filter where type is "Equals" with added column and following checkboxes:
 	| SelectedCheckboxes |
 	| Unknown            |
 	Then "Compliance" filter is added to the list
@@ -68,8 +66,7 @@ Scenario: EvergreenJnr_UsersList_Check that delete part of filter from url is up
 	Then "Users" list should be displayed to the user
 	When User clicks the Filters button
 	Then Filters panel is displayed to the user
-	When user select "Compliance" filter
-	And User have created "Equals" filter with column and following options:
+	When User add "Compliance" filter where type is "Equals" with added column and following checkboxes:
 	| SelectedCheckboxes |
 	| Red                |
 	| Amber              |
@@ -95,8 +92,7 @@ Scenario: EvergreenJnr_MailboxesList_Check that filters is reset and data on the
 	Then "Mailboxes" list should be displayed to the user
 	When User clicks the Filters button
 	Then Filters panel is displayed to the user
-	When user select "City" filter
-	And User have created "Equals" filter with column and following options:
+	When User add "City" filter where type is "Equals" with added column and following checkboxes:
 	| SelectedCheckboxes |
 	| London             |
 	Then "City" filter is added to the list
