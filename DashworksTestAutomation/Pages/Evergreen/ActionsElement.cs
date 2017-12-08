@@ -24,6 +24,12 @@ namespace DashworksTestAutomation.Pages.Evergreen
         [FindsBy(How = How.XPath, Using = ".//button[@title='Cancel']")]
         public IWebElement CancelButton { get; set; }
 
+        [FindsBy(How = How.XPath, Using = ".//div[@class='styleSelectDropdown']")]
+        public IWebElement DropdownBox { get; set; }
+
+        [FindsBy(How = How.XPath, Using = ".//span[text()='REMOVE']//ancestor::button")]
+        public IWebElement RemoveButton { get; set; }
+
         public override List<By> GetPageIdentitySelectors()
         {
             Driver.WaitForDataLoading();

@@ -17,8 +17,7 @@ Scenario: EvergreenJnr_DevicesList_Check that custom list creation block is not 
 	Then "Devices" list should be displayed to the user
 	When User clicks the Filters button
 	Then Filters panel is displayed to the user
-	When user select "Windows7Mi: Category" filter
-	When User have created "Equals" filter without column and following options:
+	When User add "Windows7Mi: Category" filter where type is "Equals" without added column and following checkboxes:
 	| SelectedCheckboxes  |
 	| None                |
 	Then "Windows7Mi: Category" filter is added to the list
@@ -34,8 +33,7 @@ Scenario: EvergreenJnr_DevicesList_Check that custom list creation block is not 
 	Then "Devices" list should be displayed to the user
 	When User clicks the Filters button
 	Then Filters panel is displayed to the user
-	When user select "Windows7Mi: Category" filter
-	When User have created "Equals" filter without column and following options:
+	When User add "Windows7Mi: Category" filter where type is "Equals" without added column and following checkboxes:
 	| SelectedCheckboxes  |
 	| None                |
 	Then "Windows7Mi: Category" filter is added to the list
@@ -51,8 +49,7 @@ Scenario: EvergreenJnr_DevicesList_Check that custom list creation block is not 
 	Then "Devices" list should be displayed to the user
 	When User clicks the Filters button
 	Then Filters panel is displayed to the user
-	When user select "Windows7Mi: Category" filter
-	When User have created "Equals" filter with column and following options:
+	When User add "Windows7Mi: Category" filter where type is "Equals" without added column and following checkboxes:
 	| SelectedCheckboxes  |
 	| None                |
 	Then "Windows7Mi: Category" filter is added to the list
@@ -60,8 +57,7 @@ Scenario: EvergreenJnr_DevicesList_Check that custom list creation block is not 
 	Then "TestList" list is displayed to user
 	When User clicks the Filters button
 	Then Filters panel is displayed to the user
-	When user select "Directory Type" filter
-	When User have created "Equals" filter with column and following options:
+	When User add "Directory Type" filter where type is "Equals" without added column and following checkboxes:
 	| SelectedCheckboxes  |
 	| Generic             |
 	Then "Directory Type" filter is added to the list
@@ -77,8 +73,7 @@ Scenario: EvergreenJnr_DevicesList_Check that custom list creation block is not 
 	Then "Devices" list should be displayed to the user
 	When User clicks the Filters button
 	Then Filters panel is displayed to the user
-	When user select "Windows7Mi: Category" filter
-	When User have created "Equals" filter with column and following options:
+	When User add "Windows7Mi: Category" filter where type is "Equals" without added column and following checkboxes:
 	| SelectedCheckboxes  |
 	| None                |
 	Then "Windows7Mi: Category" filter is added to the list
@@ -86,8 +81,7 @@ Scenario: EvergreenJnr_DevicesList_Check that custom list creation block is not 
 	Then "TestList" list is displayed to user
 	When User clicks the Filters button
 	Then Filters panel is displayed to the user
-	When user select "Directory Type" filter
-	When User have created "Equals" filter with column and following options:
+	When User add "Directory Type" filter where type is "Equals" without added column and following checkboxes:
 	| SelectedCheckboxes  |
 	| Generic             |
 	Then "Directory Type" filter is added to the list
@@ -140,8 +134,7 @@ Scenario: EvergreenJnr_UsersList_Check that lists is displayed in alphabetical o
 	Then "Users" list should be displayed to the user
 	When User clicks the Filters button
 	Then Filters panel is displayed to the user
-	When user select "Compliance" filter
-	When User have created "Equals" filter without column and following options:
+	When User add "Compliance" filter where type is "Equals" without added column and following checkboxes:
 	| SelectedCheckboxes |
 	| Red                |
 	Then "Compliance" filter is added to the list
@@ -151,8 +144,7 @@ Scenario: EvergreenJnr_UsersList_Check that lists is displayed in alphabetical o
 	Then "Users" list should be displayed to the user
 	When User clicks the Filters button
 	Then Filters panel is displayed to the user
-	When user select "Babel(Engl: Another task" filter
-	When User have created "Equals" filter without column and following options:
+	When User add "Babel(Engl: Another task" filter where type is "Equals" without added column and following checkboxes:
 	| SelectedCheckboxes |
 	| Started            |
 	Then "Babel(Engl: Another task" filter is added to the list
@@ -181,8 +173,7 @@ Scenario: EvergreenJnr_UsersList_Check that lists is displayed in alphabetical o
 	Then "Users" list should be displayed to the user
 	When User clicks the Filters button
 	Then Filters panel is displayed to the user
-	When user select "Enabled" filter
-	When User have created "Equals" filter without column and following options:
+	When User add "Enabled" filter where type is "Equals" without added column and following checkboxes:
 	| SelectedCheckboxes |
 	| TRUE               |
 	Then "Enabled" filter is added to the list
@@ -198,8 +189,7 @@ Scenario: EvergreenJnr_UsersList_Check that custom list creation block is not di
 	Then "Users" list should be displayed to the user
 	When User clicks the Filters button
 	Then Filters panel is displayed to the user
-	When user select "Compliance" filter
-	When User have created "Equals" filter without column and following options:
+	When User add "Compliance" filter where type is "Equals" without added column and following checkboxes:
 	| SelectedCheckboxes |
 	| Red                |
 	Then "Compliance" filter is added to the list
@@ -216,8 +206,9 @@ Scenario: EvergreenJnr_DevicesList_Check the sort order is saved for existing li
 	Then "Devices" list should be displayed to the user
 	When User clicks the Filters button
 	Then Filters panel is displayed to the user
-	When user select "City" filter
-	And User have created "Equals" Lookup filter with column and "London" option
+	When User add "City" filter where type is "Equals" with added column and following value:
+	| Values |
+	| London |
 	Then "City" filter is added to the list
 	When User click on 'Owner Display Name' column header
 	Then data in table is sorted by 'Owner Display Name' column in ascending order
@@ -250,3 +241,44 @@ Scenario: EvergreenJnr_DevicesList_Check the sort order is saved for existing li
 	Then Columns panel is displayed to the user
 	When User have reset all columns
 	Then data in table is sorted by 'Owner Display Name' column in ascending order
+
+@Evergreen @Devices @EvergreenJnr_ListPanel @CustomListDisplay @DAS-11011 @Delete_Newly_Created_List
+Scenario: EvergreenJnr_DevicesList_Check that newly saved list is created with the correct columns and sorts and the same rows of data
+	When User clicks "Devices" on the left-hand menu
+	Then "Devices" list should be displayed to the user
+	When User clicks the Actions button
+	Then Actions panel is displayed to the user
+	When User select "Hostname" rows in the grid
+	| SelectedRowsName |
+	| 00BDM1JUR8IF419  |
+	| 011PLA470S0B9DJ  |
+	| 020JQ9RO0J4H07X  |
+	And User create static list with "Static List TestName" name
+	Then "Static List TestName" list is displayed to user
+	Then "3" rows are displayed in the agGrid
+	When User clicks the Columns button
+	Then Columns panel is displayed to the user
+	When ColumnName is entered into the search box and the selection is clicked
+	| ColumnName |
+	| Compliance |
+	Then ColumnName is added to the list
+	| ColumnName |
+	| Compliance |
+	When User click on 'Owner Display Name' column header
+	Then data in table is sorted by 'Owner Display Name' column in descending order
+	When User clicks the Actions button
+	Then Actions panel is displayed to the user
+	And Edit List menu is not displayed
+	When User select "Hostname" rows in the grid
+	| SelectedRowsName |
+	| 020JQ9RO0J4H07X  |
+	Then User is removed selected rows
+	When User navigates to the "All Devices" list
+	Then "Devices" list should be displayed to the user
+	When User navigates to the "Static List TestName" list
+	Then "Static List TestName" list is displayed to user
+	And "2" rows are displayed in the agGrid
+	And data in table is sorted by 'Owner Display Name' column in descending order
+	And ColumnName is added to the list
+	| ColumnName |
+	| Compliance |
