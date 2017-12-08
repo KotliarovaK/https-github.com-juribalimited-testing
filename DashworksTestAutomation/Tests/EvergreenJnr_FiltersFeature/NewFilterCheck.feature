@@ -1,6 +1,6 @@
 ﻿#@retry:3
 Feature: NewFilterCheck
-	Runs Item Details Display related tests
+	Runs New filters full check related tests
 
 Background: Pre-Conditions
 	Given User is on Dashworks Homepage

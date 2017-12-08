@@ -35,10 +35,10 @@ Scenario: EvergreenJnr_UsersList_Select All Checkbox Status Check After Search
 	Then Signed Out page is displayed to the user
 	And User is logged out
 
-@Evergreen @Devices @Evergreen_ActionsPanel @AllCheckbox @DAS-10775
-Scenario: EvergreenJnr_DevicesList_Select All Checkbox status after closing action panel
-	When User clicks "Devices" on the left-hand menu
-	Then "Devices" list should be displayed to the user
+@Evergreen @AllLists @Evergreen_ActionsPanel @AllCheckbox @DAS-10775
+Scenario Outline: EvergreenJnr_AllLists_Check that select All Checkbox status after closing action panel
+	When User clicks "<PageName>" on the left-hand menu
+	Then "<PageName>" list should be displayed to the user
 	When User clicks the Actions button
 	Then Actions panel is displayed to the user
 	When User select all rows
@@ -48,44 +48,12 @@ Scenario: EvergreenJnr_DevicesList_Select All Checkbox status after closing acti
 	Then Signed Out page is displayed to the user
 	And User is logged out
 
-@Evergreen @Users @Evergreen_ActionsPanel @AllCheckbox @DAS-10775
-Scenario: EvergreenJnr_UsersList_Select All Checkbox status after closing action panel
-	When User clicks "Users" on the left-hand menu
-	Then "Users" list should be displayed to the user
-	When User clicks the Actions button
-	Then Actions panel is displayed to the user
-	When User select all rows
-	When User clicks the Actions button
-	Then Select all checkbox is not displayed
-	When User clicks the Logout button
-	Then Signed Out page is displayed to the user
-	And User is logged out
-
-@Evergreen @Applications @Evergreen_ActionsPanel @AllCheckbox @DAS-10775
-Scenario: EvergreenJnr_ApplicationsList_Select All Checkbox status after closing action panel
-	When User clicks "Applications" on the left-hand menu
-	Then "Applications" list should be displayed to the user
-	When User clicks the Actions button
-	Then Actions panel is displayed to the user
-	When User select all rows
-	When User clicks the Actions button
-	Then Select all checkbox is not displayed
-	When User clicks the Logout button
-	Then Signed Out page is displayed to the user
-	And User is logged out
-
-@Evergreen @Mailboxes @Evergreen_ActionsPanel @AllCheckbox @DAS-10775
-Scenario: EvergreenJnr_MailboxesList_Select All Checkbox status after closing action panel
-	When User clicks "Mailboxes" on the left-hand menu
-	Then "Mailboxes" list should be displayed to the user
-	When User clicks the Actions button
-	Then Actions panel is displayed to the user
-	When User select all rows
-	When User clicks the Actions button
-	Then Select all checkbox is not displayed
-	When User clicks the Logout button
-	Then Signed Out page is displayed to the user
-	And User is logged out
+Examples: 
+	| PageName     |
+	| Devices      |
+	| Users        |
+	| Applications |
+	| Mailboxes    |
 
 @Evergreen @Devices @Evergreen_ActionsPanel @AllCheckbox @DAS-10772
 Scenario: EvergreenJnr_DevicesList_Search Within All Rows
