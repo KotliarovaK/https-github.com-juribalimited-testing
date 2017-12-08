@@ -17,12 +17,11 @@ Scenario: EvergreenJnr_UsersList_Check that 500 error is not returned for filter
 	Then "Users" list should be displayed to the user
 	When User clicks the Filters button
 	Then Filters panel is displayed to the user
-	When user select "Display Name" filter
-	And User have create "Equals" Values filter with column and following options:
+	When User have create "Display Name" filter with "Equals" options and following value:
 	| Values               |
 	| Jeremiah S. O'Connor |
 	Then "Display Name" filter is added to the list
-	Then "2" rows are displayed in the agGrid
+	And "2" rows are displayed in the agGrid
 	When User clicks the Logout button
 	Then Signed Out page is displayed to the user
 	And User is logged out
@@ -33,30 +32,27 @@ Scenario: EvergreenJnr_ApplicationsList_Check 500 error is not returned for bool
 	Then "Applications" list should be displayed to the user
 	When User clicks the Filters button
 	Then Filters panel is displayed to the user
-	When user select "Windows7Mi: Hide from End Users" filter
-	When User have created "Equals" filter without column and following options:
+	When User have create "Windows7Mi: Hide from End Users" filter with "Equals" options and following value:
 	| SelectedCheckboxes |
 	| TRUE               |
 	| FALSE              |
 	| UNKNOWN            |
 	Then "Windows7Mi: Hide from End Users" filter is added to the list
-	Then "2,223" rows are displayed in the agGrid
+	And "2,223" rows are displayed in the agGrid
 	When User have removed "Windows7Mi: Hide from End Users" filter
-	When user select "Windows7Mi: Hide from End Users" filter
-	When User have created "Equals" filter without column and following options:
+	When User have create "Windows7Mi: Hide from End Users" filter with "Equals" options and following value:
 	| SelectedCheckboxes |
 	| FALSE              |
 	| UNKNOWN            |
 	Then "Windows7Mi: Hide from End Users" filter is added to the list
-	Then "2,223" rows are displayed in the agGrid
+	And "2,223" rows are displayed in the agGrid
 	When User have removed "Windows7Mi: Hide from End Users" filter
-	When user select "Windows7Mi: Hide from End Users" filter
-	When User have created "Equals" filter without column and following options:
+	When User have create "Windows7Mi: Hide from End Users" filter with "Equals" options and following value:
 	| SelectedCheckboxes |
 	| TRUE               |
 	| UNKNOWN            |
 	Then "Windows7Mi: Hide from End Users" filter is added to the list
-	Then "1,156" rows are displayed in the agGrid
+	And "1,156" rows are displayed in the agGrid
 	When User clicks the Logout button
 	Then Signed Out page is displayed to the user
 	And User is logged out
@@ -83,8 +79,7 @@ Scenario: EvergreenJnr_ApplicationsList_Check that filter is restored after goin
 	Then "Applications" list should be displayed to the user
 	When User clicks the Filters button
 	Then Filters panel is displayed to the user
-	When user select "Application" filter
-	And User have create "Equals" Values filter with column and following options:
+	When User have create "Application" filter with "Equals" options and following value:
 	| Values                                       |
 	| Microsoft Office 97, Professional Edition    |
 	| Microsoft Office 97, Developer Edition Tools |
@@ -109,9 +104,8 @@ Scenario Outline: EvergreenJnr_AllLists_Check that primary column is displayed a
 	Then "<ListName>" list should be displayed to the user
 	When User clicks the Filters button
 	Then Filters panel is displayed to the user
-	When user select "<FilterName>" filter 
-	And User have create "Contains" Values filter with column and following options:
-	| Values       |
+	When User have create "<FilterName>" filter with "Contains" options and following value:
+	| Values        |
 	| <FilterValue> |
 	Then "<FilterName>" filter is added to the list
 	Then ColumnName is added to the list
