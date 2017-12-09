@@ -119,7 +119,7 @@ Examples:
 	| Mailboxes    | Email Address (Primary) | ale         | Email Address |
 
 @Evergreen @AllLists @EvergreenJnr_FilterFeature @FilterFunctionality @DAS-10977
-Scenario Outline: EvergreenJnr_AllLists_Check that filter is restored correctly after leaving the page and going back via the browse "back" button
+Scenario Outline: EvergreenJnr_AllLists_Check that filter is restored correctly after leaving the page and going back via the browse "back" button for checkboxes filters
 	When User clicks "<ListName>" on the left-hand menu
 	Then "<ListName>" list should be displayed to the user
 	When User clicks the Filters button
@@ -127,19 +127,83 @@ Scenario Outline: EvergreenJnr_AllLists_Check that filter is restored correctly 
 	When User add "<FilterName>" filter where type is "Equals" without added column and following checkboxes:
 	| SelectedCheckboxes |
 	| <FilterValue>      |
-	Then "<FilterName>" filter is added to the list
+	Then "<Text>" is displayed in added filter info
 	Then "<RowsCount>" rows are displayed in the agGrid
 	When User perform search by "<ObjectName>"
 	And User click content from "<ColumnName>" column
 	Then User click back button in the browser
 	Then "<RowsCount>" rows are displayed in the agGrid
-	Then "<FilterName>" filter is added to the list
+	Then "<Text>" is displayed in added filter info
 
 Examples: 
-	| ListName     | FilterName                      | FilterValue    | RowsCount | ColumnName    | ObjectName                                |
-	| Devices      | Babel(Engl: Category            | None           | 62        | Hostname      | 01COJATLYVAR7A6                           |
-	| Devices      | Barry'sUse: In Scope            | FALSE          | 15,896    | Hostname      | 00BDM1JUR8IF419                           |
-	| Devices      | ComputerSc: Request Type        | Request Type A | 132       | Hostname      | 46DIQRWG3BM6K9Z                           |
-	| Applications | Havoc(BigD: Hide from End Users | UNKNOWN        | 1,156     | Application   | Microsoft Silverlight 2 SDK (2.0.31005.0) |
-	| Applications | MigrationP: Core Application    | FALSE          | 220       | Application   | Quartus II Programmer 4.0                 |
-	| Mailboxes    | EmailMigra: Device Type         | Not Identified | 80        | Email Address | alex.cristea@juriba.com                   |
+	| ListName     | FilterName                      | FilterValue    | RowsCount | ColumnName    | ObjectName                                | Text                                       |
+	| Devices      | Babel(Engl: Category            | None           | 62        | Hostname      | 01COJATLYVAR7A6                           | Babel(Engl: Category is None               |
+	| Devices      | Barry'sUse: In Scope            | FALSE          | 15,896    | Hostname      | 00BDM1JUR8IF419                           | Barry'sUse: In Scope is false              |
+	| Devices      | ComputerSc: Request Type        | Request Type A | 132       | Hostname      | 46DIQRWG3BM6K9Z                           | ComputerSc: Request Type is Request Type A |
+	| Applications | Havoc(BigD: Hide from End Users | UNKNOWN        | 1,156     | Application   | Microsoft Silverlight 2 SDK (2.0.31005.0) | Havoc(BigD: Hide from End Users is Unknown |
+	| Applications | MigrationP: Core Application    | FALSE          | 220       | Application   | Quartus II Programmer 4.0                 | MigrationP: Core Application is false      |
+	| Mailboxes    | EmailMigra: Device Type         | Not Identified | 80        | Email Address | alex.cristea@juriba.com                   | EmailMigra: Device Type is Not Identified  |
+
+@Evergreen @AllLists @EvergreenJnr_FilterFeature @FilterFunctionality @DAS-10977
+Scenario Outline: EvergreenJnr_AllLists_Check that filter is restored correctly after leaving the page and going back via the browse "back" button for lookup filters
+	When User clicks "<ListName>" on the left-hand menu
+	Then "<ListName>" list should be displayed to the user
+	When User clicks the Filters button
+	Then Filters panel is displayed to the user
+	When user select "<FilterName>" filter
+	When User have created "Equals" Lookup filter with column and "<FilterValue>" option
+	Then "<Text>" is displayed in added filter info
+	Then "<RowsCount>" rows are displayed in the agGrid
+	When User perform search by "<ObjectName>"
+	And User click content from "<ColumnName>" column
+	Then User click back button in the browser
+	Then "<RowsCount>" rows are displayed in the agGrid
+	Then "<Text>" is displayed in added filter info
+
+Examples: 
+	| ListName     | FilterName                       | FilterValue      | RowsCount | ColumnName    | ObjectName              | Text                                            |
+	| Applications | Barry'sUse: Target App           | Python 2.2a4 (1) | 1         | Application   | Python 2.2a4            | Barry'sUse: Target App is Python 2.2a4 (1)      |
+	| Mailboxes    | EmailMigra: BT/QMM Switch Status | Not Started      | 80        | Email Address | alex.cristea@juriba.com | EmailMigra: BT/QMM Switch Status is Not Started |
+
+@Evergreen @AllLists @EvergreenJnr_FilterFeature @FilterFunctionality @DAS-10977
+Scenario: EvergreenJnr_AllLists_Check that filter is restored correctly after leaving the page and going back via the browse "back" button for values filters
+	When User clicks "Applications" on the left-hand menu
+	Then "Applications" list should be displayed to the user
+	When User clicks the Filters button
+	Then Filters panel is displayed to the user
+	When User add "Application" filter where type is "Equals" with added column and following value:
+	| Values                                    |
+	| Microsoft Office 97, Professional Edition |
+	Then "Application is Microsoft Office 97, Professional Edition" is displayed in added filter info
+	Then "5" rows are displayed in the agGrid
+	When User perform search by "Microsoft Office 97, Professional Edition"
+	And User click content from "Application" column
+	Then User click back button in the browser
+	Then "5" rows are displayed in the agGrid
+	Then "Application is Microsoft Office 97, Professional Edition" is displayed in added filter info
+
+@Evergreen @AllLists @EvergreenJnr_FilterFeature @FilterFunctionality @DAS-10977 @Delete_Newly_Created_List
+Scenario: EvergreenJnr_AllLists_Check that filter is restored correctly after leaving the page and going back via the browse "back" button for list filters
+	When User clicks "Applications" on the left-hand menu
+	Then "Applications" list should be displayed to the user
+	When User clicks the Columns button
+	Then Columns panel is displayed to the user
+	When ColumnName is entered into the search box and the selection is clicked
+	| ColumnName      |
+	| Application Key |
+	When User create custom list with "TestList" name
+	Then "TestList" list is displayed to user
+	When User clicks "Devices" on the left-hand menu
+	Then "Devices" list should be displayed to the user
+	When User clicks the Filters button
+	Then Filters panel is displayed to the user
+	When User add "Application (Saved List)" filter where type is "Equals" with SelectedList list and following Association:
+	| SelectedList | Association        |
+	| TestList     | Not used on device |
+	Then "Application in list TestList is not used on device" is displayed in added filter info
+	Then "17,095" rows are displayed in the agGrid
+	When User perform search by "00BDM1JUR8IF419"
+	And User click content from "Hostname" column
+	Then User click back button in the browser
+	Then "17,095" rows are displayed in the agGrid
+	Then "Application in list TestList is not used on device" is displayed in added filter info
