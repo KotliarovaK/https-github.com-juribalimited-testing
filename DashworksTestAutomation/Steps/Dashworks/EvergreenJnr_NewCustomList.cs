@@ -1,9 +1,12 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.Linq;
+using System.Threading;
 using DashworksTestAutomation.Extensions;
 using DashworksTestAutomation.Pages.Evergreen;
 using DashworksTestAutomation.Utils;
 using NUnit.Framework;
+using OpenQA.Selenium;
 using OpenQA.Selenium.Remote;
 using TechTalk.SpecFlow;
 
@@ -25,6 +28,17 @@ namespace DashworksTestAutomation.Steps.Dashworks
             var page = _driver.NowAt<BaseDashboardPage>();
             _driver.WaitWhileControlIsDisplayed<BaseDashboardPage>(() => page.SaveCustomListButton);
             Assert.IsFalse(page.SaveCustomListButton.Displayed(),
+                "Save Custom list is displayed");
+
+            Logger.Write("The Save to Custom List Element was NOT displayed");
+        }
+
+        [Then(@"Save to New Custom List element is displayed")]
+        public void ThenSaveToNewCustomListElementIsDisplayed()
+        {
+            var page = _driver.NowAt<BaseDashboardPage>();
+            _driver.WaitWhileControlIsNotDisplayed<BaseDashboardPage>(() => page.SaveCustomListButton);
+            Assert.IsTrue(page.SaveCustomListButton.Displayed(),
                 "Save Custom list is displayed");
 
             Logger.Write("The Save to Custom List Element was NOT displayed");
@@ -102,6 +116,29 @@ namespace DashworksTestAutomation.Steps.Dashworks
             listElement.ConfirmDeleteButton.Click();
         }
 
+        [When(@"User navigates to the ""(.*)"" list")]
+        public void WhenUserNavigatesToTheList(string listName)
+        {
+            var page = _driver.NowAt<BaseDashboardPage>();
+            page.GetListElementByName(listName).Click();
+        }
+
+        [Then(@"""(.*)"" message is displayed")]
+        public void ThenMessageIsDisplayed(string message)
+        {
+            var listElement = _driver.NowAt<CustomListElement>();
+            _driver.WaitWhileControlIsNotDisplayed<CustomListElement>(() => listElement.SuccessCreateMessage);
+            Assert.AreEqual(message, listElement.SuccessCreateMessage.Text);
+        }
+
+        [Then(@"lists are sorted in alphabetical order")]
+        public void ThenListsAreSortedInAlphabeticalOrder()
+        {
+            var listElement = _driver.NowAt<CustomListElement>();
+            List<string> list = listElement.ListsNames.Select(x => x.Text).ToList();
+            Assert.AreEqual(list.OrderBy(s => s), list, "Lists names are not in alphabetical order");
+        }
+
         [AfterScenario("Delete_Newly_Created_List")]
         public void DeleteAllCustomListsAfterScenarioRun()
         {
@@ -123,34 +160,24 @@ namespace DashworksTestAutomation.Steps.Dashworks
             }
         }
 
-        [When(@"User navigates to the ""(.*)"" list")]
-        public void WhenUserNavigatesToTheList(string listName)
-        {
-            var page = _driver.NowAt<BaseDashboardPage>();
-            page.GetListElementByName(listName).Click();
-        }
-
-        [Then(@"""(.*)"" message is displayed")]
-        public void ThenMessageIsDisplayed(string message)
-        {
-            var listElement = _driver.NowAt<CustomListElement>();
-            _driver.WaitWhileControlIsNotDisplayed<CustomListElement>(() => listElement.SuccessCreateMessage);
-            Assert.AreEqual(message, listElement.SuccessCreateMessage.Text);
-        }
-
         public void RemoveAllCustomLists()
         {
             var listElement = _driver.NowAt<CustomListElement>();
 
-            _driver.WaitWhileControlIsDisplayed<CustomListElement>(() => listElement.UpdateCurrentListButton);
-            foreach (var settingsButton in listElement.SettingsButtons)
+            foreach (var button in _driver.FindElements(By.XPath(listElement.SettingButtonSelector)))
             {
-                _driver.MouseHover(settingsButton);
-                settingsButton.Click();
-                _driver.WaitWhileControlIsNotDisplayed<CustomListElement>(() => listElement.DeleteButton);
-                listElement.DeleteButton.Click();
-                _driver.WaitWhileControlIsNotDisplayed<CustomListElement>(() => listElement.DeleteConfirmationMessage);
-                listElement.ConfirmDeleteButton.Click();
+                if (_driver.IsElementExists(By.XPath(listElement.SettingButtonSelector)))
+                {
+                    Thread.Sleep(500);
+                    var settingsButton = _driver.FindElement(By.XPath(listElement.SettingButtonSelector));
+                    _driver.MouseHover(settingsButton);
+                    settingsButton.Click();
+                    _driver.WaitWhileControlIsNotDisplayed<CustomListElement>(() => listElement.DeleteButton);
+                    listElement.DeleteButton.Click();
+                    _driver.WaitWhileControlIsNotDisplayed<CustomListElement>(() =>
+                        listElement.DeleteConfirmationMessage);
+                    listElement.ConfirmDeleteButton.Click();
+                }
             }
         }
     }

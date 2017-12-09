@@ -25,11 +25,13 @@ namespace DashworksTestAutomation.Pages.Evergreen
         [FindsBy(How = How.XPath, Using = ".//button[@title='Cancel']")]
         public IWebElement CancelButton { get; set; }
 
-        [FindsBy(How = How.XPath, Using = ".//li//i[@title='Settings']")]
-        public IList<IWebElement> SettingsButtons { get; set; }
+        public string SettingButtonSelector = ".//li//i[@title='Settings']";
 
-        [FindsBy(How = How.XPath, Using = ".//div[@class='inline-success']")]
+        [FindsBy(How = How.XPath, Using = ".//div[@class='inline-success ng-star-inserted']")]
         public IWebElement SuccessCreateMessage { get; set; }
+
+        [FindsBy(How = How.XPath, Using = ".//div[@id='submenuBlock']//ul//span[@class='submenu-actions-list-name']")]
+        public IList<IWebElement> ListsNames { get; set; }
 
         #region ListSettings
 
@@ -49,7 +51,7 @@ namespace DashworksTestAutomation.Pages.Evergreen
 
         #region DeleteListBlock
 
-        [FindsBy(How = How.XPath, Using = ".//div[@class='inline-error']")]
+        [FindsBy(How = How.XPath, Using = ".//div[@class='inline-error ng-star-inserted']")]
         public IWebElement DeleteConfirmationMessage { get; set; }
 
         [FindsBy(How = How.XPath, Using = ".//span[text()='DELETE']")]

@@ -38,6 +38,26 @@ namespace DashworksTestAutomation.Steps.Dashworks
             dashboardPage.SelectAllCheckbox.Click();
         }
 
+        [When(@"User select ""(.*)"" rows in the grid")]
+        public void WhenUserSelectRowsInTheGrid(string columnName, Table table)
+        {
+            var dashboardPage = _driver.NowAt<BaseDashboardPage>();
+            var columnContent = dashboardPage.GetColumnContent(columnName);
+            foreach (var row in table.Rows)
+            {
+                var rowIndex = columnContent.IndexOf(row["SelectedRowsName"]);
+                dashboardPage.SelectRowsCheckboxes[rowIndex + 1].Click();
+            }
+        }
+
+        [Then(@"User is removed selected rows")]
+        public void WhenUserIsRemovedSelectedRows()
+        {
+            var actionsElement = _driver.NowAt<ActionsElement>();
+            _driver.SelectCustomSelectbox(actionsElement.DropdownBox, "Remove from static list");
+            actionsElement.RemoveButton.Click();
+        }
+
         [Then(@"Select All selectbox is checked")]
         public void ThenSelectAllSelectboxIsChecked()
         {

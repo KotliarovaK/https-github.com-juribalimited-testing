@@ -1,6 +1,6 @@
 ﻿#@retry:3
 Feature: FiltersDisplay
-	Runs Item Details Display related tests
+	Runs Dynamic Filters Display related tests
 
 Background: Pre-Conditions
 	Given User is on Dashworks Homepage
@@ -41,9 +41,10 @@ Scenario: EvergreenJnr_ApplicationsList_Check true-false options and images in f
 	| UNKNOWN            |
 	Then "Windows7Mi: Hide from End Users" filter is added to the list
 	Then Values is displayed in added filter info
-	| Values      |
-	| true, false |
-	| Unknown     |
+	| Values  |
+	| true    |
+	| false   |
+	| Unknown |
 	When User clicks the Logout button
 	Then Signed Out page is displayed to the user
 	And User is logged out
@@ -54,19 +55,18 @@ Scenario: EvergreenJnr_UsersList_Check special characters display in filter info
 	Then "Users" list should be displayed to the user
 	When User clicks the Filters button
 	Then Filters panel is displayed to the user
-	When user select "Display Name" filter
-	When User have create "Equals" Values filter with column and following options:
+	When User add "Display Name" filter where type is "Equals" with added column and following value:
 	| Values           |
 	| O'Conn"/\or#@!() |
 	Then "Display Name" filter is added to the list
-	Then Values is displayed in added filter info
+	And Values is displayed in added filter info
 	| Values           |
 	| O'Conn"/\or#@!() |
 	When User create custom list with "TestList" name
 	Then "TestList" list is displayed to user
 	When User clicks the Filters button
 	Then Filters panel is displayed to the user
-	Then Values is displayed in added filter info
+	And Values is displayed in added filter info
 	| Values           |
 	| O'Conn"/\or#@!() |
 	When User navigates to the "All Users" list
@@ -74,7 +74,7 @@ Scenario: EvergreenJnr_UsersList_Check special characters display in filter info
 	Then "TestList" list is displayed to user
 	When User clicks the Filters button
 	Then Filters panel is displayed to the user
-	Then Values is displayed in added filter info
+	And Values is displayed in added filter info
 	| Values           |
 	| O'Conn"/\or#@!() |
 
@@ -101,33 +101,27 @@ Scenario: EvergreenJnr_DevicesList_Check that "Empty" and "Not Empty" options is
 	When user select "AD Object Key" filter
 	Then "Equals, Does not equal, Greater than, Greater than or equal to, Less than, Less than or equal to, Empty, Not empty" option is available for this filter
 
-@Evergreen @Devices @Evergreen_FiltersFeature @FiltersDisplay @DAS-10795
-Scenario: EvergreenJnr_DevicesList_Check that 'Add column' option is available for "Operating System" filter
-	When User clicks "Devices" on the left-hand menu
-	Then "Devices" list should be displayed to the user
+@Evergreen @AllLisrs @Evergreen_FiltersFeature @FiltersDisplay @DAS-10795
+Scenario Outline: EvergreenJnr_AllLists_Check that 'Add column' option is available for filters
+	When User clicks "<PageName>" on the left-hand menu
+	Then "<PageName>" list should be displayed to the user
 	When User clicks the Filters button
 	Then Filters panel is displayed to the user
-	When user select "Operating System" filter
+	When user select "<FilterName>" filter
 	Then checkboxes are displayed to the User:
-	| SelectedCheckboxes          |
-	| Add Operating System column |
+	| SelectedCheckboxes   |
+	| <SelectedCheckboxes> |
 	When User clicks the Logout button
 	Then Signed Out page is displayed to the user
 	And User is logged out
 
-@Evergreen @Devices @Evergreen_FiltersFeature @FiltersDisplay @DAS-10795
-Scenario: EvergreenJnr_DevicesList_Check that 'Add column' option is available for "City" filter
-	When User clicks "Devices" on the left-hand menu
-	Then "Devices" list should be displayed to the user
-	When User clicks the Filters button
-	Then Filters panel is displayed to the user
-	When user select "City" filter
-	Then checkboxes are displayed to the User:
-	| SelectedCheckboxes |
-	| Add City column    |
-	When User clicks the Logout button
-	Then Signed Out page is displayed to the user
-	And User is logged out
+Examples: 
+	| PageName     | FilterName        | SelectedCheckboxes           |
+	| Devices      | Operating System  | Add Operating System column  |
+	| Devices      | City              | Add City column              |
+	| Users        | Zip Code          | Add Zip Code column          |
+	| Applications | Application Owner | Add Application Owner column |
+	| Mailboxes    | Mailbox Filter 1  | Add Mailbox Filter 1 column  |
 
 @Evergreen @Devices @Evergreen_FiltersFeature @FiltersDisplay @DAS-10795 @DAS-11187
 Scenario: EvergreenJnr_DevicesList_Check that 'Add column' option is not available for Application Custom Fields filters
@@ -141,95 +135,24 @@ Scenario: EvergreenJnr_DevicesList_Check that 'Add column' option is not availab
 	Then Signed Out page is displayed to the user
 	And User is logged out
 
-@Evergreen @Users @Evergreen_FiltersFeature @FiltersDisplay @DAS-10795
-Scenario: EvergreenJnr_UsersList_Check that 'Add column' option is available for filter
-	When User clicks "Users" on the left-hand menu
-	Then "Users" list should be displayed to the user
+@Evergreen @AllLisrs @Evergreen_FiltersFeature @FiltersDisplay @DAS-10771
+Scenario Outline: EvergreenJnr_AllLisrs_Check that 'None' option is available for filters
+	When User clicks "<PageName>" on the left-hand menu
+	Then "<PageName>" list should be displayed to the user
 	When User clicks the Filters button
 	Then Filters panel is displayed to the user
-	When user select "Zip Code" filter
-	Then checkboxes are displayed to the User:
-	| SelectedCheckboxes  |
-	| Add Zip Code column |
-	When User clicks the Logout button
-	Then Signed Out page is displayed to the user
-	And User is logged out
-
-@Evergreen @Applications @Evergreen_FiltersFeature @FiltersDisplay @DAS-10795
-Scenario: EvergreenJnr_ApplicationsList_Check that 'Add column' option is available for filter
-	When User clicks "Applications" on the left-hand menu
-	Then "Applications" list should be displayed to the user
-	When User clicks the Filters button
-	Then Filters panel is displayed to the user
-	When user select "Application Owner" filter
-	Then checkboxes are displayed to the User:
-	| SelectedCheckboxes           |
-	| Add Application Owner column |
-	When User clicks the Logout button
-	Then Signed Out page is displayed to the user
-	And User is logged out
-
-@Evergreen @Mailboxes @Evergreen_FiltersFeature @FiltersDisplay @DAS-10795
-Scenario: EvergreenJnr_MailboxesList_Check that 'Add column' option is available for filter
-	When User clicks "Mailboxes" on the left-hand menu
-	Then "Mailboxes" list should be displayed to the user
-	When User clicks the Filters button
-	Then Filters panel is displayed to the user
-	When user select "Mailbox Filter 1" filter
-	Then checkboxes are displayed to the User:
-	| SelectedCheckboxes          |
-	| Add Mailbox Filter 1 column |
-	When User clicks the Logout button
-	Then Signed Out page is displayed to the user
-	And User is logged out
-
-@Evergreen @Devices @Evergreen_FiltersFeature @FiltersDisplay @DAS-10771
-Scenario: EvergreenJnr_DevicesList_Check that 'None' option is available for filter
-	When User clicks "Devices" on the left-hand menu
-	Then "Devices" list should be displayed to the user
-	When User clicks the Filters button
-	Then Filters panel is displayed to the user
-	When user select "Windows7Mi: Category" filter
+	When user select "<FilterName>" filter
 	Then "None" option is available at first place
 	When User clicks the Logout button
 	Then Signed Out page is displayed to the user
 	And User is logged out
 
-@Evergreen @Users @Evergreen_FiltersFeature @FiltersDisplay @DAS-10771
-Scenario: EvergreenJnr_UsersList_Check that 'None' option is available for filter
-	When User clicks "Users" on the left-hand menu
-	Then "Users" list should be displayed to the user
-	When User clicks the Filters button
-	Then Filters panel is displayed to the user
-	When user select "UserSchedu: Category" filter
-	Then "None" option is available at first place
-	When User clicks the Logout button
-	Then Signed Out page is displayed to the user
-	And User is logged out
-
-@Evergreen @Applications @Evergreen_FiltersFeature @FiltersDisplay @DAS-10771
-Scenario: EvergreenJnr_ApplicationsList_Check that 'None' option is available for filter
-	When User clicks "Applications" on the left-hand menu
-	Then "Applications" list should be displayed to the user
-	When User clicks the Filters button
-	Then Filters panel is displayed to the user
-	When user select "Havoc(BigD: Category" filter
-	Then "None" option is available at first place
-	When User clicks the Logout button
-	Then Signed Out page is displayed to the user
-	And User is logged out
-
-@Evergreen @Mailboxes @Evergreen_FiltersFeature @FiltersDisplay @DAS-10771
-Scenario: EvergreenJnr_MailboxesList_Check that 'None' option is available for filter
-	When User clicks "Mailboxes" on the left-hand menu
-	Then "Mailboxes" list should be displayed to the user
-	When User clicks the Filters button
-	Then Filters panel is displayed to the user
-	When user select "EmailMigra: Category" filter
-	Then "None" option is available at first place
-	When User clicks the Logout button
-	Then Signed Out page is displayed to the user
-	And User is logged out
+Examples: 
+	| PageName     | FilterName           |
+	| Devices      | Windows7Mi: Category |
+	| Users        | UserSchedu: Category |
+	| Applications | Havoc(BigD: Category |
+	| Mailboxes    | EmailMigra: Category |
 
 @Evergreen @Devices @Evergreen_FiltersFeature @FiltersDisplay @DAS-10696 @Delete_Newly_Created_List
 Scenario: EvergreenJnr_DevicesList_Check that filter data is displayed correctly when navigating between lists
@@ -267,34 +190,36 @@ Scenario: EvergreenJnr_UsersList_Check that filter data is displayed correctly w
 	Then "Users" list should be displayed to the user
 	When User clicks the Filters button
 	Then Filters panel is displayed to the user
-	When user select "Compliance" filter
-	When User have created "Does not equal" filter with column and following options:
+	When User add "Compliance" filter where type is "Does not equal" with added column and following checkboxes:
 	| SelectedCheckboxes |
 	| Red                |
 	| Amber              |
 	| Green              |
 	Then "Compliance" filter is added to the list
 	Then Values is displayed in added filter info
-	| Values     |
-	| Red, Amber |
-	| Green      |
+	| Values |
+	| Red    |
+	| Amber  |
+	| Green  |
 	When User create custom list with "TestList" name
 	Then "TestList" list is displayed to user
 	When User clicks the Filters button
 	Then Filters panel is displayed to the user
 	Then Values is displayed in added filter info
-	| Values     |
-	| Red, Amber |
-	| Green      |
+	| Values |
+	| Red    |
+	| Amber  |
+	| Green  |
 	When User navigates to the "All Users" list
 	When User navigates to the "TestList" list
 	Then "TestList" list is displayed to user
 	When User clicks the Filters button
 	Then Filters panel is displayed to the user
 	Then Values is displayed in added filter info
-	| Values     |
-	| Red, Amber |
-	| Green      |
+	| Values |
+	| Red    |
+	| Amber  |
+	| Green  |
 
 @Evergreen @Applications @Evergreen_FiltersFeature @FiltersDisplay @DAS-10696 @Delete_Newly_Created_List
 Scenario: EvergreenJnr_ApplicationsList_Check that filter data is displayed correctly when navigating between lists
@@ -302,19 +227,18 @@ Scenario: EvergreenJnr_ApplicationsList_Check that filter data is displayed corr
 	Then "Applications" list should be displayed to the user
 	When User clicks the Filters button
 	Then Filters panel is displayed to the user
-	When user select "Device Count (Entitled)" filter
-	When User have create "Greater than or equal to" Values filter with column and following options:
+	When User add "Device Count (Entitled)" filter where type is "Greater than or equal to" with added column and following value:
 	| Values |
 	| 1      |
 	Then "Device Count (Entitled)" filter is added to the list
-	Then Values is displayed in added filter info
+	And Values is displayed in added filter info
 	| Values |
 	| 1      |
 	When User create custom list with "TestList" name
 	Then "TestList" list is displayed to user
 	When User clicks the Filters button
 	Then Filters panel is displayed to the user
-	Then Values is displayed in added filter info
+	And Values is displayed in added filter info
 	| Values |
 	| 1      |
 	When User navigates to the "All Applications" list
@@ -322,7 +246,7 @@ Scenario: EvergreenJnr_ApplicationsList_Check that filter data is displayed corr
 	Then "TestList" list is displayed to user
 	When User clicks the Filters button
 	Then Filters panel is displayed to the user
-	Then Values is displayed in added filter info
+	And Values is displayed in added filter info
 	| Values |
 	| 1      |
 
@@ -332,19 +256,18 @@ Scenario: EvergreenJnr_MailboxesList_Check that filter data is displayed correct
 	Then "Mailboxes" list should be displayed to the user
 	When User clicks the Filters button
 	Then Filters panel is displayed to the user
-	When user select "Created Date" filter
-	And User have create "Before" Values filter with column and following options:
+	When User add "Created Date" filter where type is "Before" with added column and following value:
 	| Values          |
 	| Fri Nov 17 2017 |
 	Then "Created Date" filter is added to the list
-	Then Values is displayed in added filter info
+	And Values is displayed in added filter info
 	| Values      |
 	| 17 Nov 2017 |
 	When User create custom list with "TestList" name
 	Then "TestList" list is displayed to user
 	When User clicks the Filters button
 	Then Filters panel is displayed to the user
-	Then Values is displayed in added filter info
+	And Values is displayed in added filter info
 	| Values      |
 	| 17 Nov 2017 |
 	When User navigates to the "All Mailboxes" list
@@ -352,7 +275,7 @@ Scenario: EvergreenJnr_MailboxesList_Check that filter data is displayed correct
 	Then "TestList" list is displayed to user
 	When User clicks the Filters button
 	Then Filters panel is displayed to the user
-	Then Values is displayed in added filter info
+	And Values is displayed in added filter info
 	| Values      |
 	| 17 Nov 2017 |
 
@@ -362,13 +285,12 @@ Scenario Outline: EvergreenJnr_DevicesList_Check that filter Operators is correc
 	Then "Devices" list should be displayed to the user
 	When User clicks the Filters button
 	Then Filters panel is displayed to the user
-	When user select "Hostname" filter
-	And User have create "<operatorValue>" Values filter with column and following options:
+	When User add "Hostname" filter where type is "<operatorValue>" with added column and following value:
 	| Values         |
 	| <filterOption> |
 	Then "Hostname" filter is added to the list
-	Then "<rowsCount>" rows are displayed in the agGrid
-	Then Options is displayed in added filter info
+	And "<rowsCount>" rows are displayed in the agGrid
+	And Options is displayed in added filter info
 	| Values                |
 	| <operatorValueInInfo> |
 	When User clicks the Logout button
@@ -392,13 +314,12 @@ Scenario Outline: EvergreenJnr_UsersList_Check that filter Operators is correct 
 	Then "Users" list should be displayed to the user
 	When User clicks the Filters button
 	Then Filters panel is displayed to the user
-	When user select "Compliance" filter
-	When User have created "<operatorValue>" filter with column and following options:
+	When User add "Compliance" filter where type is "<operatorValue>" with added column and following checkboxes:
 	| SelectedCheckboxes |
 	| <filterOption>     |
 	Then "Compliance" filter is added to the list
-	Then "<rowsCount>" rows are displayed in the agGrid
-	Then Options is displayed in added filter info
+	And "<rowsCount>" rows are displayed in the agGrid
+	And Options is displayed in added filter info
 	| Values                |
 	| <operatorValueInInfo> |
 	When User clicks the Logout button
@@ -416,13 +337,12 @@ Scenario Outline: EvergreenJnr_ApplicationsList_Check that filter Operators is c
 	Then "Applications" list should be displayed to the user
 	When User clicks the Filters button
 	Then Filters panel is displayed to the user
-	When user select "Device Count (Entitled)" filter
-	And User have create "<operatorValue>" Values filter with column and following options:
+	When User add "Device Count (Entitled)" filter where type is "<operatorValue>" with added column and following value:
 	| Values         |
 	| <filterOption> |
 	Then "Device Count (Entitled)" filter is added to the list
-	Then "<rowsCount>" rows are displayed in the agGrid
-	Then Options is displayed in added filter info
+	And "<rowsCount>" rows are displayed in the agGrid
+	And Options is displayed in added filter info
 	| Values                |
 	| <operatorValueInInfo> |
 	When User clicks the Logout button
@@ -444,13 +364,12 @@ Scenario Outline: EvergreenJnr_MailboxesList_Check that filter Operators is corr
 	Then "Mailboxes" list should be displayed to the user
 	When User clicks the Filters button
 	Then Filters panel is displayed to the user
-	When user select "Created Date" filter
-	And User have create "<operatorValue>" Values filter with column and following options:
+	When User add "Created Date" filter where type is "<operatorValue>" with added column and following value:
 	| Values         |
 	| <filterOption> |
 	Then "Created Date" filter is added to the list
-	Then "<rowsCount>" rows are displayed in the agGrid
-	Then Options is displayed in added filter info
+	And "<rowsCount>" rows are displayed in the agGrid
+	And Options is displayed in added filter info
 	| Values                |
 	| <operatorValueInInfo> |
 	When User clicks the Logout button
@@ -472,13 +391,12 @@ Scenario Outline: EvergreenJnr_DevicesList_Check that filter Operators is correc
 	Then "Devices" list should be displayed to the user
 	When User clicks the Filters button
 	Then Filters panel is displayed to the user
-	When user select "Windows7Mi: Date & Time Task" filter
-	And User have create "<operatorValue>" Values filter with column and following options:
+	When User add "Windows7Mi: Date & Time Task" filter where type is "<operatorValue>" with added column and following value:
 	| Values         |
 	| <filterOption> |
 	Then "Windows7Mi: Date & Time Task" filter is added to the list
-	Then "<rowsCount>" rows are displayed in the agGrid
-	Then Options is displayed in added filter info
+	And "<rowsCount>" rows are displayed in the agGrid
+	And Options is displayed in added filter info
 	| Values                |
 	| <operatorValueInInfo> |
 	When User clicks the Logout button
@@ -500,13 +418,12 @@ Scenario Outline: EvergreenJnr_UsersList_Check that filter Operators is correct 
 	Then "Users" list should be displayed to the user
 	When User clicks the Filters button
 	Then Filters panel is displayed to the user
-	When user select "Enabled" filter
-	When User have created "<operatorValue>" filter with column and following options:
+	When User add "Enabled" filter where type is "<operatorValue>" with added column and following checkboxes:
 	| SelectedCheckboxes |
 	| <filterOption>     |
 	Then "Enabled" filter is added to the list
-	Then "<rowsCount>" rows are displayed in the agGrid
-	Then Options is displayed in added filter info
+	And "<rowsCount>" rows are displayed in the agGrid
+	And Options is displayed in added filter info
 	| Values                |
 	| <operatorValueInInfo> |
 	When User clicks the Logout button
@@ -533,8 +450,7 @@ Scenario: EvergreenJnr_ApplicationsList_Check that Applications filter is workin
 	Then "Devices" list should be displayed to the user
 	When User clicks the Filters button
 	Then Filters panel is displayed to the user
-	When user select "Application (Saved List)" filter
-	When User have created "Equals" filter with SelectedList list and following Association:
+	When User add "Application (Saved List)" filter where type is "Equals" with SelectedList list and following Association:
 	| SelectedList | Association        |
 	| TestList     | Not used on device |
 	Then "Application" filter is added to the list
@@ -543,17 +459,8 @@ Scenario: EvergreenJnr_ApplicationsList_Check that Applications filter is workin
 	| Values  |
 	| in list |
 
-@Evergreen @Applications @Evergreen_FiltersFeature @FiltersDisplay @DAS-10696 @Delete_Newly_Created_List
-Scenario: EvergreenJnr_ApplicationsList_Check that Applications filter is contains all expected associations
-	When User clicks "Applications" on the left-hand menu
-	Then "Applications" list should be displayed to the user
-	When User clicks the Columns button
-	Then Columns panel is displayed to the user
-	When ColumnName is entered into the search box and the selection is clicked
-	| ColumnName      |
-	| Application Key |
-	When User create custom list with "TestList" name
-	Then "TestList" list is displayed to user
+@Evergreen @Devices @Evergreen_FiltersFeature @FiltersDisplay @DAS-10696
+Scenario: EvergreenJnr_DevicesList_Check that Applications filter is contains all expected associations
 	When User clicks "Devices" on the left-hand menu
 	Then "Devices" list should be displayed to the user
 	When User clicks the Filters button
@@ -578,25 +485,21 @@ Scenario: EvergreenJnr_ApplicationsList_Check that brackets are displayed correc
 	Then "Applications" list should be displayed to the user
 	When User clicks the Filters button
 	Then Filters panel is displayed to the user
-	When user select "Application" filter
-	And User have create "Equals" Values filter with column and following options:
+	When User add "Application" filter where type is "Equals" with added column and following value:
 	| Values                                    |
 	| wxPython 2.5.3.1 (unicode) for Python 2.3 |
 	Then "Application" filter is added to the list
-	When user select "Application" filter
-	And User have create "Equals" Values filter with column and following options:
+	When User add "Application" filter where type is "Equals" with added column and following value:
 	| Values                                               |
 	| Windows Installer SDK (Version 2.0) (3718.1)         |
 	| Janus Systems Controls for Microsoft .NET (TRIAL)    |
 	| NI LabVIEW PID Control Toolset 6.0 (for LabVIEW 7.1) |
 	Then "Application" filter is added to the list
-	When user select "Application" filter
-	And User have create "Equals" Values filter with column and following options:
+	When User add "Application" filter where type is "Equals" with added column and following value:
 	| Values                                      |
 	| Application contains (Version 6.0) (3672.1) |
 	Then "Application" filter is added to the list
-	When user select "Application" filter
-	And User have create "Equals" Values filter with column and following options:
+	When User add "Application" filter where type is "Equals" with added column and following value:
 	| Values                              |
 	| Application begins with ((((test))) |
 	Then "Application" filter is added to the list
@@ -611,12 +514,13 @@ Scenario: EvergreenJnr_ApplicationsList_Check that brackets are displayed correc
 	And "4" rows are displayed in the agGrid
 	And Edit List menu is not displayed
 	And Values is displayed in added filter info
-	| Values                                                                                          |
-	| wxPython 2.5.3.1 (unicode) for Python 2.3                                                       |
-	| Windows Installer SDK (Version 2.0) (3718.1), Janus Systems Controls for Microsoft .NET (TRIAL) |
-	| NI LabVIEW PID Control Toolset 6.0 (for LabVIEW 7.1)                                            |
-	| Application contains (Version 6.0) (3672.1)                                                     |
-	| Application begins with ((((test)))                                                             |
+	| Values                                               |
+	| wxPython 2.5.3.1 (unicode) for Python 2.3            |
+	| Windows Installer SDK (Version 2.0) (3718.1)         |
+	| Janus Systems Controls for Microsoft .NET (TRIAL)    |
+	| NI LabVIEW PID Control Toolset 6.0 (for LabVIEW 7.1) |
+	| Application contains (Version 6.0) (3672.1)          |
+	| Application begins with ((((test)))                  |
 
 @Evergreen @Mailboxes @Evergreen_FiltersFeature @FiltersDisplay @DAS-11351
 Scenario: EvergreenJnr_MailboxesList_Check that 'Add column' option as available for "Owner Department" filter
@@ -639,8 +543,7 @@ Scenario: EvergreenJnr_DevicesList_Check that Date and Time filters with "Equals
 	Then "Devices" list should be displayed to the user
 	When User clicks the Filters button
 	Then Filters panel is displayed to the user
-	When user select "Windows7Mi: Date & Time Task" filter
-	And User have create "Equals" Values filter with column and following options:
+	When User add "Windows7Mi: Date & Time Task" filter where type is "Equals" with added column and following value:
 	| Values      |
 	| 22 Nov 2012 |
 	Then "Windows7Mi: Date & Time Task" filter is added to the list
@@ -655,12 +558,132 @@ Scenario: EvergreenJnr_DevicesList_Check that Date and Time filters with "Does n
 	Then "Devices" list should be displayed to the user
 	When User clicks the Filters button
 	Then Filters panel is displayed to the user
-	When user select "Windows7Mi: Date & Time Task" filter
-	And User have create "Does not equal" Values filter with column and following options:
+	When User add "Windows7Mi: Date & Time Task" filter where type is "Does not equal" with added column and following value:
 	| Values      |
 	| 22 Nov 2012 |
 	Then "Windows7Mi: Date & Time Task" filter is added to the list
-	Then "17,209" rows are displayed in the agGrid
+	And "17,209" rows are displayed in the agGrid
 	When User clicks the Logout button
 	Then Signed Out page is displayed to the user
 	And User is logged out
+
+@Evergreen @Devices @Evergreen_FiltersFeature @FiltersDisplay @DAS-11187
+Scenario Outline: EvergreenJnr_DevicesList_Check that Custom Filters are contains all expected associations
+	When User clicks "Devices" on the left-hand menu
+	Then "Devices" list should be displayed to the user
+	When User clicks the Filters button
+	Then Filters panel is displayed to the user
+	When user select "<FilterName>" filter
+	Then Associations is displayed in the filter
+	| Associations                   |
+	| Used on device                 |
+	| Entitled to device             |
+	| Installed on device            |
+	| Used by device's owner         |
+	| Entitled to device's owner     |
+	| Not used on device             |
+	| Not entitled to device         |
+	| Not installed on device        |
+	| Not used by device's owner     |
+	| Not entitled to device's owner |
+
+Examples: 
+	| FilterName                  |
+	| App field 1                 |
+	| App field 2                 |
+	| Application Owner           |
+	| Computer Field 1            |
+	| Computer Field 2            |
+	| Computer Warranty           |
+	| ComputerCustomField         |
+	| DAS-1814                    |
+	| End of Life Date            |
+	| Friendly Model Name         |
+	| General information field 1 |
+	| General information field 2 |
+	| General information field 3 |
+	| General information field 4 |
+	| General information field 5 |
+	| Mailbox Filter 1            |
+	| Mailbox Filter 2            |
+	| Telephone                   |
+	| User Field 1                |
+	| User Field 2                |
+	| Zip Code                    |
+
+@Evergreen @Applications @EvergreenJnr_FiltersFeature @FilterFunctionality @DAS-11165
+Scenario: EvergreenJnr_ApplicationsList_Check that '500 error' is not displayed for filters
+	When User clicks "Applications" on the left-hand menu
+	Then "Applications" list should be displayed to the user
+	When User clicks the Filters button
+	Then Filters panel is displayed to the user
+	When User add "Application" filter where type is "Equals" with added column and following value:
+	| Values                             |
+	| DirectX SDK (Version 8.1) (3663.0) |
+	Then "Application" filter is added to the list
+	When User add "Application" filter where type is "Equals" with added column and following value:
+	| Values                                                     |
+	| "WPF/E" (codename) Community Technology Preview (Feb 2007) |
+	Then "Application" filter is added to the list
+	Then "(Application = DirectX SDK (Version 8.1) (3663.0)) OR (Application = "WPF/E" (codename) Community Technology Preview (Feb 2007))" text is displayed in filter container
+
+@Evergreen @Devices @Evergreen_FiltersFeature @FiltersDisplay @DAS-11054
+Scenario: EvergreenJnr_DevicesList_Check that space after commas in the filters container is displayed
+	When User clicks "Devices" on the left-hand menu
+	Then "Devices" list should be displayed to the user
+	When User clicks the Filters button
+	Then Filters panel is displayed to the user
+	When User add "Compliance" filter where type is "Equals" without added column and following checkboxes:
+	| SelectedCheckboxes |
+	| Unknown            |
+	| Red                |
+	| Amber              |
+	| Green              |
+	Then "Compliance" filter is added to the list
+	When User add "Import" filter where type is "Does not equal" with added column and "A01 SMS (Spoof)" Lookup option
+	Then "Import" filter is added to the list
+	When User add "Department Code" filter where type is "Contains" with added column and following value:
+	| Values |
+	| ABC    |
+	Then "Department Code" filter is added to the list
+	When User add "Department Code" filter where type is "Does not contain" with added column and following value:
+	| Values |
+	| ACV    |
+	Then "Department Code" filter is added to the list
+	When User add "Department Code" filter where type is "Begins with" with added column and following value:
+	| Values |
+	| AXZ    |
+	Then "Department Code" filter is added to the list
+	When User add "Department Code" filter where type is "Ends with" with added column and following value:
+	| Values |
+	| YQA    |
+	Then "Department Code" filter is added to the list
+	When User add "Department Code" filter where type is "Empty" with added column and following value:
+	| Values |
+	|        |
+	Then "Department Code" filter is added to the list
+	When User add "Department Code" filter where type is "Not empty" with added column and following value:
+	| Values |
+	|        |
+	Then "Department Code" filter is added to the list
+	When User add "Boot Up Date" filter where type is "Before" with added column and "Thu Dec 14 2017" Date filter
+	Then "Boot Up Date" filter is added to the list
+	When User add "Boot Up Date" filter where type is "After" with added column and "Sun Dec 03 2017" Date filter
+	Then "Boot Up Date" filter is added to the list
+	When User add "CPU Count" filter where type is "Greater than" with added column and following value:
+	| Values |
+	| 66     |
+	Then "CPU Count" filter is added to the list
+	When User add "CPU Count" filter where type is "Greater than or equal to" with added column and following value:
+	| Values |
+	| 12     |
+	Then "CPU Count" filter is added to the list
+	When User add "CPU Count" filter where type is "Less than" with added column and following value:
+	| Values |
+	| 31     |
+	Then "CPU Count" filter is added to the list
+	When User add "CPU Count" filter where type is "Less than or equal to" with added column and following value:
+	| Values |
+	| 13     |
+	Then "CPU Count" filter is added to the list
+	Then "(Compliance = Unknown, Red, Amber or Green) OR (Import != A01 SMS (Spoof)) OR (Department Code ~ ABC) OR (Department Code !~ ACV) OR (Department Code BEGINS WITH AXZ) OR (Department Code ENDS WITH YQA) OR (Department Code = EMPTY) OR (Department Code != EMPTY) OR (Boot Up Date < 14 Dec 2017) OR (Boot Up Date > 03 Dec 2017) OR (CPU Count > 66) OR (CPU Count >= 12) OR (CPU Count < 31) OR (CPU Count <= 13)" text is displayed in filter container

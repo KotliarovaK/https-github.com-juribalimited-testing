@@ -13,7 +13,7 @@ namespace DashworksTestAutomation.Pages.Evergreen
 {
     class DetailsPage : SeleniumBasePage
     {
-        [FindsBy(How = How.XPath, Using = ".//div[@class='tabContainer']")]
+        [FindsBy(How = How.XPath, Using = ".//div[@class='tabContainer ng-star-inserted']")]
         public IWebElement TabContainer { get; set; }
 
         public override List<By> GetPageIdentitySelectors()
@@ -43,11 +43,11 @@ namespace DashworksTestAutomation.Pages.Evergreen
         {
             List<string> allHeaders = Driver
                 .FindElements(By.XPath(
-                    $".//span[contains(@class,'filter-category-label')][text()='{categoryName}']/../..//tbody/tr/td[1]"))
+                    $".//span[contains(@class,'filter-category-label blue-color bold-text')][text()='{categoryName}']/../..//tbody/tr/td[1]"))
                 .Select(x => x.Text).ToList();
             List<string> allContent = Driver
                 .FindElements(By.XPath(
-                    $".//span[contains(@class,'filter-category-label')][text()='{categoryName}']/../..//tbody/tr/td[2]"))
+                    $".//span[contains(@class,'filter-category-label blue-color bold-text')][text()='{categoryName}']/../..//tbody/tr/td[2]"))
                 .Select(x => x.Text).ToList();
 
             return allHeaders.Select((t, i) => new KeyValuePair<string, string>(t, allContent[i])).ToList();

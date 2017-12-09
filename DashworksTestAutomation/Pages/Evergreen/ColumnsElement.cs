@@ -22,6 +22,9 @@ namespace DashworksTestAutomation.Pages.Evergreen
         [FindsBy(How = How.XPath, Using = ".//button[@title='Minimize Group']")]
         public IWebElement MinimizeGroupButton { get; set; }
 
+        [FindsBy(How = How.XPath, Using = ".//button[@title='Reset Columns']")]
+        public IWebElement ResetColumnsButton { get; set; }
+
         public override List<By> GetPageIdentitySelectors()
         {
             Driver.WaitForDataLoading();
@@ -55,21 +58,35 @@ namespace DashworksTestAutomation.Pages.Evergreen
         private IWebElement FilterCategory(string filterCategoryName)
         {
             return Driver.FindElement(By.XPath(
-                $".//div[contains(@class,'filter-category-label')][text()='{filterCategoryName}']/ancestor::div[@class='filter-category']"));
+                $".//div[contains(@class,'filter-category-label blue-color bold-text')][text()='{filterCategoryName}']/ancestor::div[@class='filter-category ng-star-inserted']"));
         }
 
         public void AddAllColumnsFromCategory(string categoryName)
         {
             var filterCategory = FilterCategory(categoryName);
-            filterCategory.FindElement(By.XPath(".//div[contains(@class,'filter-category-title')]")).Click();
+            filterCategory
+                .FindElement(
+                    By.XPath(".//div[contains(@class,'filter-category-title filter-selection ng-star-inserted')]"))
+                .Click();
             //Small wait for subcategoris display
             Thread.Sleep(350);
-            var subCategories = filterCategory.FindElements(By.XPath(".//div[@class='sub-categories']/div"));
+            var subCategories =
+                filterCategory.FindElements(By.XPath(".//div[@class='sub-categories ng-star-inserted']/div"));
             while (subCategories.Any())
             {
                 subCategories.First().Click();
                 Driver.WaitForDataLoading();
-                subCategories = filterCategory.FindElements(By.XPath(".//div[@class='sub-categories']/div"));
+                if (Driver.IsElementExists(By.XPath(
+                    $".//div[contains(@class,'filter-category-label blue-color bold-text')][text()='{categoryName}']/ancestor::div[@class='filter-category ng-star-inserted']")
+                ))
+                {
+                    subCategories = FilterCategory(categoryName)
+                        .FindElements(By.XPath(".//div[@class='sub-categories ng-star-inserted']/div"));
+                }
+                else
+                {
+                    break;
+                }
             }
         }
 
@@ -88,7 +105,7 @@ namespace DashworksTestAutomation.Pages.Evergreen
         public IWebElement GetDeleteColumnButton(string columnName)
         {
             return Driver.FindElement(By.XPath(
-                $".//div[@class='columns-panel']//span[text()='{columnName}']/ancestor::div[@class='sub-categories-item selected-column']//button"));
+                $".//div[@class='columns-panel']//span[text()='{columnName}']/ancestor::div[@class='sub-categories-item selected-column ng-star-inserted']//button"));
         }
 
         public void ExpandColumnsSectionByName(string sectionsName)
@@ -102,6 +119,12 @@ namespace DashworksTestAutomation.Pages.Evergreen
             catch
             {
             }
+        }
+
+        public bool CategoryIsDisplayed(string sectionsName)
+        {
+            return Driver.IsElementDisplayed(
+                By.XPath($".//div[contains(@class, 'filter-category-label')][text()='{sectionsName}']"));
         }
     }
 }
