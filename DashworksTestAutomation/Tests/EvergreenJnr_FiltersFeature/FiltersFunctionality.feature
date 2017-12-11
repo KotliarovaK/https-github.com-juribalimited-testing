@@ -63,7 +63,7 @@ Scenario: EvergreenJnr_ApplicationsList_Check that add column checkbox works cur
 	Then "Applications" list should be displayed to the user
 	When User clicks the Filters button
 	Then Filters panel is displayed to the user
-	When User add ""Windows7Mi: Category" filter where type is "Equals" without added column and following checkboxes:
+	When User add "Windows7Mi: Category" filter where type is "Equals" with added column and following checkboxes:
 	| SelectedCheckboxes  |
 	| A Star Packages     |
 	Then "Windows7Mi: Category" filter is added to the list
@@ -117,6 +117,61 @@ Examples:
 	| Applications | Application             | adobe       | Application   |
 	| Users        | Username                | aa          | Username      |
 	| Mailboxes    | Email Address (Primary) | ale         | Email Address |
+
+@Evergreen @Devices @EvergreenJnr_FilterFeature @FilterFunctionality @DAS-11042
+Scenario: EvergreenJnr_Devices_Check that Add column checkbox is checked after saving filter in a new list
+	When User clicks "Devices" on the left-hand menu
+	Then "Devices" list should be displayed to the user
+	When User clicks the Filters button
+	Then Filters panel is displayed to the user
+	When User add "Compliance" filter where type is "Does not equal" with added column and following checkboxes:
+	| SelectedCheckboxes |
+	| Red                |
+	Then "Compliance" filter is added to the list
+	When User create custom list with "TestList" name
+	Then "TestList" list is displayed to user
+	When User navigates to the "All Devices" list
+	Then "Devices" list should be displayed to the user
+	When User navigates to the "TestList" list
+	Then "TestList" list is displayed to user
+	When User clicks the Filters button
+	Then Filters panel is displayed to the user
+	When User click Edit button for "Compliance" filter
+	Then "Add column" checkbox is checked
+	And "Add Column" checkbox is disabled
+
+@Evergreen @Devices @EvergreenJnr_FilterFeature @FilterFunctionality @DAS-11042
+Scenario: EvergreenJnr_Devices_Check that Add column checkbox is checked after saving a filter
+	When User clicks "Devices" on the left-hand menu
+	Then "Devices" list should be displayed to the user
+	When User clicks the Filters button
+	Then Filters panel is displayed to the user
+	When User add "Compliance" filter where type is "Does not equal" with added column and following checkboxes:
+	| SelectedCheckboxes |
+	| Red                |
+	Then "Compliance" filter is added to the list
+	When User click Edit button for "Compliance" filter
+	Then "Add column" checkbox is checked
+	And "Add Column" checkbox is disabled
+
+@Evergreen @Devices @EvergreenJnr_FilterFeature @FilterFunctionality @DAS-11042
+Scenario: EvergreenJnr_Devices_Check that Add column checkbox is unchecked after saving a filter and removing a column
+	When User clicks "Devices" on the left-hand menu
+	Then "Devices" list should be displayed to the user
+	When User clicks the Filters button
+	Then Filters panel is displayed to the user
+	When User add "Compliance" filter where type is "Does not equal" with added column and following checkboxes:
+	| SelectedCheckboxes |
+	| Red                |
+	Then "Compliance" filter is added to the list
+	When User click Edit button for "Compliance" filter
+	Then "Add column" checkbox is checked
+	When User clicks the Columns button
+	When User is removed "Compliance" column by Column panel
+	When User clicks the Filters button
+	When User click Edit button for "Compliance" filter
+	Then "Add column" checkbox is unchecked
+	And "Add Column" checkbox is disabled
 
 @Evergreen @AllLists @EvergreenJnr_FilterFeature @FilterFunctionality @DAS-10977
 Scenario Outline: EvergreenJnr_AllLists_Check that filter is restored correctly after leaving the page and going back via the browse "back" button for checkboxes filters

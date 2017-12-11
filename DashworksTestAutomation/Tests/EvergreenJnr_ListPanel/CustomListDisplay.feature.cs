@@ -537,12 +537,8 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_ListPanel
             testRunner.Then("\"Devices\" list should be displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
             testRunner.When("User clicks the Filters button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
             testRunner.Then("Filters panel is displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-            TechTalk.SpecFlow.Table table15 = new TechTalk.SpecFlow.Table(new string[] {
-                        "Values"});
-            table15.AddRow(new string[] {
-                        "London"});
-            testRunner.When("User add \"City\" filter where type is \"Equals\" with added column and following val" +
-                    "ue:", ((string)(null)), table15, "When ");
+            testRunner.When("User add \"City\" filter where type is \"Equals\" with added column and \"London\" Look" +
+                    "up option", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
             testRunner.Then("\"City\" filter is added to the list", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
             testRunner.When("User click on \'Owner Display Name\' column header", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
             testRunner.Then("data in table is sorted by \'Owner Display Name\' column in ascending order", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
@@ -552,13 +548,13 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_ListPanel
             testRunner.Then("\"Devices\" list should be displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
             testRunner.When("User clicks the Actions button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
             testRunner.Then("Actions panel is displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-            TechTalk.SpecFlow.Table table16 = new TechTalk.SpecFlow.Table(new string[] {
+            TechTalk.SpecFlow.Table table15 = new TechTalk.SpecFlow.Table(new string[] {
                         "SelectedRowsName"});
-            table16.AddRow(new string[] {
+            table15.AddRow(new string[] {
                         "01BQIYGGUW5PRP6"});
-            table16.AddRow(new string[] {
+            table15.AddRow(new string[] {
                         "020JQ9RO0J4H07X"});
-            testRunner.When("User select \"Hostname\" rows in the grid", ((string)(null)), table16, "When ");
+            testRunner.When("User select \"Hostname\" rows in the grid", ((string)(null)), table15, "When ");
             testRunner.And("User create static list with \"Static List TestName\" name", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
             testRunner.Then("\"Static List TestName\" list is displayed to user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
             testRunner.When("User click on \'Owner Display Name\' column header", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
@@ -607,40 +603,40 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_ListPanel
             testRunner.Then("\"Devices\" list should be displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
             testRunner.When("User clicks the Actions button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
             testRunner.Then("Actions panel is displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-            TechTalk.SpecFlow.Table table17 = new TechTalk.SpecFlow.Table(new string[] {
+            TechTalk.SpecFlow.Table table16 = new TechTalk.SpecFlow.Table(new string[] {
                         "SelectedRowsName"});
-            table17.AddRow(new string[] {
+            table16.AddRow(new string[] {
                         "00BDM1JUR8IF419"});
-            table17.AddRow(new string[] {
+            table16.AddRow(new string[] {
                         "011PLA470S0B9DJ"});
-            table17.AddRow(new string[] {
+            table16.AddRow(new string[] {
                         "020JQ9RO0J4H07X"});
-            testRunner.When("User select \"Hostname\" rows in the grid", ((string)(null)), table17, "When ");
+            testRunner.When("User select \"Hostname\" rows in the grid", ((string)(null)), table16, "When ");
             testRunner.And("User create static list with \"Static List TestName\" name", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
             testRunner.Then("\"Static List TestName\" list is displayed to user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
             testRunner.Then("\"3\" rows are displayed in the agGrid", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
             testRunner.When("User clicks the Columns button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
             testRunner.Then("Columns panel is displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+            TechTalk.SpecFlow.Table table17 = new TechTalk.SpecFlow.Table(new string[] {
+                        "ColumnName"});
+            table17.AddRow(new string[] {
+                        "Compliance"});
+            testRunner.When("ColumnName is entered into the search box and the selection is clicked", ((string)(null)), table17, "When ");
             TechTalk.SpecFlow.Table table18 = new TechTalk.SpecFlow.Table(new string[] {
                         "ColumnName"});
             table18.AddRow(new string[] {
                         "Compliance"});
-            testRunner.When("ColumnName is entered into the search box and the selection is clicked", ((string)(null)), table18, "When ");
-            TechTalk.SpecFlow.Table table19 = new TechTalk.SpecFlow.Table(new string[] {
-                        "ColumnName"});
-            table19.AddRow(new string[] {
-                        "Compliance"});
-            testRunner.Then("ColumnName is added to the list", ((string)(null)), table19, "Then ");
+            testRunner.Then("ColumnName is added to the list", ((string)(null)), table18, "Then ");
             testRunner.When("User click on \'Owner Display Name\' column header", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
             testRunner.Then("data in table is sorted by \'Owner Display Name\' column in descending order", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
             testRunner.When("User clicks the Actions button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
             testRunner.Then("Actions panel is displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
             testRunner.And("Edit List menu is not displayed", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-            TechTalk.SpecFlow.Table table20 = new TechTalk.SpecFlow.Table(new string[] {
+            TechTalk.SpecFlow.Table table19 = new TechTalk.SpecFlow.Table(new string[] {
                         "SelectedRowsName"});
-            table20.AddRow(new string[] {
+            table19.AddRow(new string[] {
                         "020JQ9RO0J4H07X"});
-            testRunner.When("User select \"Hostname\" rows in the grid", ((string)(null)), table20, "When ");
+            testRunner.When("User select \"Hostname\" rows in the grid", ((string)(null)), table19, "When ");
             testRunner.Then("User is removed selected rows", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
             testRunner.When("User navigates to the \"All Devices\" list", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
             testRunner.Then("\"Devices\" list should be displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
@@ -648,11 +644,11 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_ListPanel
             testRunner.Then("\"Static List TestName\" list is displayed to user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
             testRunner.And("\"2\" rows are displayed in the agGrid", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
             testRunner.And("data in table is sorted by \'Owner Display Name\' column in descending order", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-            TechTalk.SpecFlow.Table table21 = new TechTalk.SpecFlow.Table(new string[] {
+            TechTalk.SpecFlow.Table table20 = new TechTalk.SpecFlow.Table(new string[] {
                         "ColumnName"});
-            table21.AddRow(new string[] {
+            table20.AddRow(new string[] {
                         "Compliance"});
-            testRunner.And("ColumnName is added to the list", ((string)(null)), table21, "And ");
+            testRunner.And("ColumnName is added to the list", ((string)(null)), table20, "And ");
             this.ScenarioCleanup();
         }
     }
