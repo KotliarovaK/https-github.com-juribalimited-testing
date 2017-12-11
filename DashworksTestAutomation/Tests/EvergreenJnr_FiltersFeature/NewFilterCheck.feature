@@ -206,7 +206,7 @@ Examples:
 	| MigrationP: Application Readiness | Equals, Does not equal | Blue         | MigrationP: Application Readiness is Blue  | 189       |
 	| UserSchedu: Application Readiness | Equals, Does not equal | None         | UserSchedu: Application Readiness is None  | 981       |
 
-@Evergreen @Applications @Evergreen_FiltersFeature @NewFilterCheck @DAS-10512
+@Evergreen @Applications @Evergreen_FiltersFeature @NewFilterCheck @DAS-10512 @DAS-11509
 Scenario Outline: EvergreenJnr_ApplicationsList_Check that Application Rationalisation filter is added to the list
 	When User clicks "Applications" on the left-hand menu
 	Then "Applications" list should be displayed to the user
@@ -228,14 +228,14 @@ Scenario Outline: EvergreenJnr_ApplicationsList_Check that Application Rationali
 	Then data in table is sorted by '<ColumnName>' column in descending order 
 
 Examples: 
-	| ColumnName                              | Operators              | FilterOption  | Text                                                      | RowsCount |
-	| Windows7Mi: Application Rationalisation | Equals, Does not equal | RETIRE        | Windows7Mi: Application Rationalisation is Retire         | 85        |
-	| Babel(Engl: Application Rationalisation | Equals, Does not equal | UNCATEGORISED | Babel(Engl: Application Rationalisation is Uncategorised | 302       |
-	| Barry'sUse: Application Rationalisation | Equals, Does not equal | KEEP          | Barry'sUse: Application Rationalisation is Keep           | 2         |
-	| ComputerSc: Application Rationalisation | Equals, Does not equal | FORWARD PATH  | ComputerSc: Application Rationalisation is Forward Path   | 10        |
-	| Havoc(BigD: Application Rationalisation | Equals, Does not equal | UNCATEGORISED | Havoc(BigD: Application Rationalisation is Uncategorised  | 1,067     |
-	| MigrationP: Application Rationalisation | Equals, Does not equal | RETIRE        | MigrationP: Application Rationalisation is Retire         | 1         |
-	| UserSchedu: Application Rationalisation | Equals, Does not equal | UNCATEGORISED | UserSchedu: Application Rationalisation is Uncategorised  | 981       |
+	| ColumnName                              | Operators              | FilterOption  | Text                                                     | RowsCount |
+	| Windows7Mi: Application Rationalization | Equals, Does not equal | RETIRE        | Windows7Mi: Application Rationalization is Retire        | 85        |
+	| Babel(Engl: Application Rationalization | Equals, Does not equal | UNCATEGORISED | Babel(Engl: Application Rationalization is Uncategorised | 302       |
+	| Barry'sUse: Application Rationalization | Equals, Does not equal | KEEP          | Barry'sUse: Application Rationalization is Keep          | 2         |
+	| ComputerSc: Application Rationalization | Equals, Does not equal | FORWARD PATH  | ComputerSc: Application Rationalization is Forward Path  | 10        |
+	| Havoc(BigD: Application Rationalization | Equals, Does not equal | UNCATEGORISED | Havoc(BigD: Application Rationalization is Uncategorised | 1,067     |
+	| MigrationP: Application Rationalization | Equals, Does not equal | RETIRE        | MigrationP: Application Rationalization is Retire        | 1         |
+	| UserSchedu: Application Rationalization | Equals, Does not equal | UNCATEGORISED | UserSchedu: Application Rationalization is Uncategorised | 981       |
 
 @Evergreen @Applications @Evergreen_FiltersFeature @NewFilterCheck @DAS-10512
 Scenario Outline: EvergreenJnr_ApplicationsList_Check that Core Application filter is added to the list
@@ -268,7 +268,7 @@ Examples:
 	| MigrationP: Core Application | Equals, Does not equal | FALSE        | MigrationP: Core Application is false   | 220       |
 	| UserSchedu: Core Application | Equals, Does not equal | UNKNOWN      | UserSchedu: Core Application is Unknown | 1,242     |
 
-@Evergreen @Applications @Evergreen_FiltersFeature @NewFilterCheck @DAS-10512
+@Evergreen @Applications @Evergreen_FiltersFeature @NewFilterCheck @DAS-10512 @DAS-11509
 Scenario Outline: EvergreenJnr_ApplicationsList_Check that Hide from End Users filter is added to the list
 	When User clicks "Applications" on the left-hand menu
 	Then "Applications" list should be displayed to the user

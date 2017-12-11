@@ -238,6 +238,35 @@ namespace DashworksTestAutomation.Steps.Dashworks
             filterElement.RemoveFilterButton.Click();
         }
 
+        [When(@"User click Edit button for ""(.*)"" filter")]
+        public void WhenUserClickEditButtonForFilter(string filterName)
+        {
+            var filterElement = _driver.NowAt<FiltersElement>();
+
+            filterElement.GetEditFilterButton(filterName).Click();
+        }
+
+        [Then(@"""(.*)"" checkbox is checked")]
+        public void ThenCheckboxIsChecked(string addColumn)
+        {
+            var filterElement = _driver.NowAt<FiltersElement>();
+            Assert.IsTrue(filterElement.AddCategoryColumnCheckbox.Selected, $"{addColumn} Checkbox is not selected");
+        }
+
+        [Then(@"""(.*)"" checkbox is unchecked")]
+        public void ThenCheckboxIsUnchecked(string addColumn)
+        {
+            var filterElement = _driver.NowAt<FiltersElement>();
+            Assert.IsFalse(filterElement.AddCategoryColumnCheckbox.Selected, $"{addColumn} Checkbox is selected");
+        }
+
+        [Then(@"""(.*)"" checkbox is disabled")]
+        public void ThenCheckboxIsDisabled(string addColumn)
+        {
+            var filterElement = _driver.NowAt<FiltersElement>();
+            Assert.IsTrue(Convert.ToBoolean(filterElement.AddCategoryColumnCheckbox.GetAttribute("disabled")), $"{addColumn} Checkbox is selected");
+        }
+
         [Then(@"""(.*)"" filter is removed from filters")]
         public void ThenFilterIsRemovedFromFilters(string filterName)
         {
@@ -255,12 +284,12 @@ namespace DashworksTestAutomation.Steps.Dashworks
         }
 
         [Then(@"""(.*)"" checkbox is not displayed")]
-        public void ThenCheckboxIsNotDisplayed(string filterName)
+        public void ThenCheckboxIsNotDisplayed(string checkbox)
         {
             var filterElement = _driver.NowAt<FiltersElement>();
-            Assert.AreEqual(false, filterElement.AddCategoryColumnCheckbox.Displayed(),
-                $"{filterName} tick box is not displayed");
-            Logger.Write($"{filterName} tick box is displayed");
+            Assert.IsFalse(filterElement.AddCategoryColumnCheckbox.Displayed(),
+                $"{checkbox} checkbox is not displayed");
+            Logger.Write($"{checkbox} checkbox is displayed");
         }
 
         [Then(@"checkboxes are displayed to the User:")]

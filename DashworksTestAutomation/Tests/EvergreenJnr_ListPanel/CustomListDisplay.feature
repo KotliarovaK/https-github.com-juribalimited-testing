@@ -206,9 +206,7 @@ Scenario: EvergreenJnr_DevicesList_Check the sort order is saved for existing li
 	Then "Devices" list should be displayed to the user
 	When User clicks the Filters button
 	Then Filters panel is displayed to the user
-	When User add "City" filter where type is "Equals" with added column and following value:
-	| Values |
-	| London |
+	When User add "City" filter where type is "Equals" with added column and "London" Lookup option
 	Then "City" filter is added to the list
 	When User click on 'Owner Display Name' column header
 	Then data in table is sorted by 'Owner Display Name' column in ascending order

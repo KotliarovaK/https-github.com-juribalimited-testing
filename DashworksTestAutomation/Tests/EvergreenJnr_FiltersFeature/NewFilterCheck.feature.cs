@@ -991,7 +991,8 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_FiltersFeature
                     "Applications",
                     "Evergreen_FiltersFeature",
                     "NewFilterCheck",
-                    "DAS-10512"};
+                    "DAS-10512",
+                    "DAS-11509"};
             if ((exampleTags != null))
             {
                 @__tags = System.Linq.Enumerable.ToArray(System.Linq.Enumerable.Concat(@__tags, exampleTags));
@@ -1027,142 +1028,149 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_FiltersFeature
         
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestMethodAttribute()]
         [Microsoft.VisualStudio.TestTools.UnitTesting.DescriptionAttribute("EvergreenJnr_ApplicationsList_Check that Application Rationalisation filter is ad" +
-            "ded to the list: Windows7Mi: Application Rationalisation")]
+            "ded to the list: Windows7Mi: Application Rationalization")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("FeatureTitle", "NewFilterCheck")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("Evergreen")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("Applications")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("Evergreen_FiltersFeature")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("NewFilterCheck")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("DAS-10512")]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("VariantName", "Windows7Mi: Application Rationalisation")]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:ColumnName", "Windows7Mi: Application Rationalisation")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("DAS-11509")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("VariantName", "Windows7Mi: Application Rationalization")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:ColumnName", "Windows7Mi: Application Rationalization")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Operators", "Equals, Does not equal")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:FilterOption", "RETIRE")]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Text", "Windows7Mi: Application Rationalisation is Retire")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Text", "Windows7Mi: Application Rationalization is Retire")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:RowsCount", "85")]
-        public virtual void EvergreenJnr_ApplicationsList_CheckThatApplicationRationalisationFilterIsAddedToTheList_Windows7MiApplicationRationalisation()
+        public virtual void EvergreenJnr_ApplicationsList_CheckThatApplicationRationalisationFilterIsAddedToTheList_Windows7MiApplicationRationalization()
         {
-            this.EvergreenJnr_ApplicationsList_CheckThatApplicationRationalisationFilterIsAddedToTheList("Windows7Mi: Application Rationalisation", "Equals, Does not equal", "RETIRE", "Windows7Mi: Application Rationalisation is Retire", "85", ((string[])(null)));
+            this.EvergreenJnr_ApplicationsList_CheckThatApplicationRationalisationFilterIsAddedToTheList("Windows7Mi: Application Rationalization", "Equals, Does not equal", "RETIRE", "Windows7Mi: Application Rationalization is Retire", "85", ((string[])(null)));
         }
         
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestMethodAttribute()]
         [Microsoft.VisualStudio.TestTools.UnitTesting.DescriptionAttribute("EvergreenJnr_ApplicationsList_Check that Application Rationalisation filter is ad" +
-            "ded to the list: Babel(Engl: Application Rationalisation")]
+            "ded to the list: Babel(Engl: Application Rationalization")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("FeatureTitle", "NewFilterCheck")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("Evergreen")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("Applications")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("Evergreen_FiltersFeature")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("NewFilterCheck")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("DAS-10512")]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("VariantName", "Babel(Engl: Application Rationalisation")]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:ColumnName", "Babel(Engl: Application Rationalisation")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("DAS-11509")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("VariantName", "Babel(Engl: Application Rationalization")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:ColumnName", "Babel(Engl: Application Rationalization")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Operators", "Equals, Does not equal")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:FilterOption", "UNCATEGORISED")]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Text", "Babel(Engl: Application Rationalisation is Uncategorised")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Text", "Babel(Engl: Application Rationalization is Uncategorised")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:RowsCount", "302")]
-        public virtual void EvergreenJnr_ApplicationsList_CheckThatApplicationRationalisationFilterIsAddedToTheList_BabelEnglApplicationRationalisation()
+        public virtual void EvergreenJnr_ApplicationsList_CheckThatApplicationRationalisationFilterIsAddedToTheList_BabelEnglApplicationRationalization()
         {
-            this.EvergreenJnr_ApplicationsList_CheckThatApplicationRationalisationFilterIsAddedToTheList("Babel(Engl: Application Rationalisation", "Equals, Does not equal", "UNCATEGORISED", "Babel(Engl: Application Rationalisation is Uncategorised", "302", ((string[])(null)));
+            this.EvergreenJnr_ApplicationsList_CheckThatApplicationRationalisationFilterIsAddedToTheList("Babel(Engl: Application Rationalization", "Equals, Does not equal", "UNCATEGORISED", "Babel(Engl: Application Rationalization is Uncategorised", "302", ((string[])(null)));
         }
         
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestMethodAttribute()]
         [Microsoft.VisualStudio.TestTools.UnitTesting.DescriptionAttribute("EvergreenJnr_ApplicationsList_Check that Application Rationalisation filter is ad" +
-            "ded to the list: Barry\'sUse: Application Rationalisation")]
+            "ded to the list: Barry\'sUse: Application Rationalization")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("FeatureTitle", "NewFilterCheck")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("Evergreen")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("Applications")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("Evergreen_FiltersFeature")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("NewFilterCheck")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("DAS-10512")]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("VariantName", "Barry\'sUse: Application Rationalisation")]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:ColumnName", "Barry\'sUse: Application Rationalisation")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("DAS-11509")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("VariantName", "Barry\'sUse: Application Rationalization")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:ColumnName", "Barry\'sUse: Application Rationalization")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Operators", "Equals, Does not equal")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:FilterOption", "KEEP")]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Text", "Barry\'sUse: Application Rationalisation is Keep")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Text", "Barry\'sUse: Application Rationalization is Keep")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:RowsCount", "2")]
-        public virtual void EvergreenJnr_ApplicationsList_CheckThatApplicationRationalisationFilterIsAddedToTheList_BarrysUseApplicationRationalisation()
+        public virtual void EvergreenJnr_ApplicationsList_CheckThatApplicationRationalisationFilterIsAddedToTheList_BarrysUseApplicationRationalization()
         {
-            this.EvergreenJnr_ApplicationsList_CheckThatApplicationRationalisationFilterIsAddedToTheList("Barry\'sUse: Application Rationalisation", "Equals, Does not equal", "KEEP", "Barry\'sUse: Application Rationalisation is Keep", "2", ((string[])(null)));
+            this.EvergreenJnr_ApplicationsList_CheckThatApplicationRationalisationFilterIsAddedToTheList("Barry\'sUse: Application Rationalization", "Equals, Does not equal", "KEEP", "Barry\'sUse: Application Rationalization is Keep", "2", ((string[])(null)));
         }
         
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestMethodAttribute()]
         [Microsoft.VisualStudio.TestTools.UnitTesting.DescriptionAttribute("EvergreenJnr_ApplicationsList_Check that Application Rationalisation filter is ad" +
-            "ded to the list: ComputerSc: Application Rationalisation")]
+            "ded to the list: ComputerSc: Application Rationalization")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("FeatureTitle", "NewFilterCheck")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("Evergreen")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("Applications")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("Evergreen_FiltersFeature")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("NewFilterCheck")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("DAS-10512")]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("VariantName", "ComputerSc: Application Rationalisation")]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:ColumnName", "ComputerSc: Application Rationalisation")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("DAS-11509")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("VariantName", "ComputerSc: Application Rationalization")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:ColumnName", "ComputerSc: Application Rationalization")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Operators", "Equals, Does not equal")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:FilterOption", "FORWARD PATH")]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Text", "ComputerSc: Application Rationalisation is Forward Path")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Text", "ComputerSc: Application Rationalization is Forward Path")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:RowsCount", "10")]
-        public virtual void EvergreenJnr_ApplicationsList_CheckThatApplicationRationalisationFilterIsAddedToTheList_ComputerScApplicationRationalisation()
+        public virtual void EvergreenJnr_ApplicationsList_CheckThatApplicationRationalisationFilterIsAddedToTheList_ComputerScApplicationRationalization()
         {
-            this.EvergreenJnr_ApplicationsList_CheckThatApplicationRationalisationFilterIsAddedToTheList("ComputerSc: Application Rationalisation", "Equals, Does not equal", "FORWARD PATH", "ComputerSc: Application Rationalisation is Forward Path", "10", ((string[])(null)));
+            this.EvergreenJnr_ApplicationsList_CheckThatApplicationRationalisationFilterIsAddedToTheList("ComputerSc: Application Rationalization", "Equals, Does not equal", "FORWARD PATH", "ComputerSc: Application Rationalization is Forward Path", "10", ((string[])(null)));
         }
         
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestMethodAttribute()]
         [Microsoft.VisualStudio.TestTools.UnitTesting.DescriptionAttribute("EvergreenJnr_ApplicationsList_Check that Application Rationalisation filter is ad" +
-            "ded to the list: Havoc(BigD: Application Rationalisation")]
+            "ded to the list: Havoc(BigD: Application Rationalization")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("FeatureTitle", "NewFilterCheck")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("Evergreen")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("Applications")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("Evergreen_FiltersFeature")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("NewFilterCheck")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("DAS-10512")]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("VariantName", "Havoc(BigD: Application Rationalisation")]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:ColumnName", "Havoc(BigD: Application Rationalisation")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("DAS-11509")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("VariantName", "Havoc(BigD: Application Rationalization")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:ColumnName", "Havoc(BigD: Application Rationalization")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Operators", "Equals, Does not equal")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:FilterOption", "UNCATEGORISED")]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Text", "Havoc(BigD: Application Rationalisation is Uncategorised")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Text", "Havoc(BigD: Application Rationalization is Uncategorised")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:RowsCount", "1,067")]
-        public virtual void EvergreenJnr_ApplicationsList_CheckThatApplicationRationalisationFilterIsAddedToTheList_HavocBigDApplicationRationalisation()
+        public virtual void EvergreenJnr_ApplicationsList_CheckThatApplicationRationalisationFilterIsAddedToTheList_HavocBigDApplicationRationalization()
         {
-            this.EvergreenJnr_ApplicationsList_CheckThatApplicationRationalisationFilterIsAddedToTheList("Havoc(BigD: Application Rationalisation", "Equals, Does not equal", "UNCATEGORISED", "Havoc(BigD: Application Rationalisation is Uncategorised", "1,067", ((string[])(null)));
+            this.EvergreenJnr_ApplicationsList_CheckThatApplicationRationalisationFilterIsAddedToTheList("Havoc(BigD: Application Rationalization", "Equals, Does not equal", "UNCATEGORISED", "Havoc(BigD: Application Rationalization is Uncategorised", "1,067", ((string[])(null)));
         }
         
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestMethodAttribute()]
         [Microsoft.VisualStudio.TestTools.UnitTesting.DescriptionAttribute("EvergreenJnr_ApplicationsList_Check that Application Rationalisation filter is ad" +
-            "ded to the list: MigrationP: Application Rationalisation")]
+            "ded to the list: MigrationP: Application Rationalization")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("FeatureTitle", "NewFilterCheck")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("Evergreen")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("Applications")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("Evergreen_FiltersFeature")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("NewFilterCheck")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("DAS-10512")]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("VariantName", "MigrationP: Application Rationalisation")]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:ColumnName", "MigrationP: Application Rationalisation")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("DAS-11509")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("VariantName", "MigrationP: Application Rationalization")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:ColumnName", "MigrationP: Application Rationalization")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Operators", "Equals, Does not equal")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:FilterOption", "RETIRE")]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Text", "MigrationP: Application Rationalisation is Retire")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Text", "MigrationP: Application Rationalization is Retire")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:RowsCount", "1")]
-        public virtual void EvergreenJnr_ApplicationsList_CheckThatApplicationRationalisationFilterIsAddedToTheList_MigrationPApplicationRationalisation()
+        public virtual void EvergreenJnr_ApplicationsList_CheckThatApplicationRationalisationFilterIsAddedToTheList_MigrationPApplicationRationalization()
         {
-            this.EvergreenJnr_ApplicationsList_CheckThatApplicationRationalisationFilterIsAddedToTheList("MigrationP: Application Rationalisation", "Equals, Does not equal", "RETIRE", "MigrationP: Application Rationalisation is Retire", "1", ((string[])(null)));
+            this.EvergreenJnr_ApplicationsList_CheckThatApplicationRationalisationFilterIsAddedToTheList("MigrationP: Application Rationalization", "Equals, Does not equal", "RETIRE", "MigrationP: Application Rationalization is Retire", "1", ((string[])(null)));
         }
         
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestMethodAttribute()]
         [Microsoft.VisualStudio.TestTools.UnitTesting.DescriptionAttribute("EvergreenJnr_ApplicationsList_Check that Application Rationalisation filter is ad" +
-            "ded to the list: UserSchedu: Application Rationalisation")]
+            "ded to the list: UserSchedu: Application Rationalization")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("FeatureTitle", "NewFilterCheck")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("Evergreen")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("Applications")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("Evergreen_FiltersFeature")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("NewFilterCheck")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("DAS-10512")]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("VariantName", "UserSchedu: Application Rationalisation")]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:ColumnName", "UserSchedu: Application Rationalisation")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("DAS-11509")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("VariantName", "UserSchedu: Application Rationalization")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:ColumnName", "UserSchedu: Application Rationalization")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Operators", "Equals, Does not equal")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:FilterOption", "UNCATEGORISED")]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Text", "UserSchedu: Application Rationalisation is Uncategorised")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Text", "UserSchedu: Application Rationalization is Uncategorised")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:RowsCount", "981")]
-        public virtual void EvergreenJnr_ApplicationsList_CheckThatApplicationRationalisationFilterIsAddedToTheList_UserScheduApplicationRationalisation()
+        public virtual void EvergreenJnr_ApplicationsList_CheckThatApplicationRationalisationFilterIsAddedToTheList_UserScheduApplicationRationalization()
         {
-            this.EvergreenJnr_ApplicationsList_CheckThatApplicationRationalisationFilterIsAddedToTheList("UserSchedu: Application Rationalisation", "Equals, Does not equal", "UNCATEGORISED", "UserSchedu: Application Rationalisation is Uncategorised", "981", ((string[])(null)));
+            this.EvergreenJnr_ApplicationsList_CheckThatApplicationRationalisationFilterIsAddedToTheList("UserSchedu: Application Rationalization", "Equals, Does not equal", "UNCATEGORISED", "UserSchedu: Application Rationalization is Uncategorised", "981", ((string[])(null)));
         }
         
         public virtual void EvergreenJnr_ApplicationsList_CheckThatCoreApplicationFilterIsAddedToTheList(string columnName, string operators, string filterOption, string text, string rowsCount, string[] exampleTags)
@@ -1353,7 +1361,8 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_FiltersFeature
                     "Applications",
                     "Evergreen_FiltersFeature",
                     "NewFilterCheck",
-                    "DAS-10512"};
+                    "DAS-10512",
+                    "DAS-11509"};
             if ((exampleTags != null))
             {
                 @__tags = System.Linq.Enumerable.ToArray(System.Linq.Enumerable.Concat(@__tags, exampleTags));
@@ -1396,6 +1405,7 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_FiltersFeature
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("Evergreen_FiltersFeature")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("NewFilterCheck")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("DAS-10512")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("DAS-11509")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("VariantName", "Windows7Mi: Hide from End Users")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:ColumnName", "Windows7Mi: Hide from End Users")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Operators", "Equals, Does not equal")]
@@ -1416,6 +1426,7 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_FiltersFeature
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("Evergreen_FiltersFeature")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("NewFilterCheck")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("DAS-10512")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("DAS-11509")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("VariantName", "Babel(Engl: Hide from End Users")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:ColumnName", "Babel(Engl: Hide from End Users")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Operators", "Equals, Does not equal")]
@@ -1436,6 +1447,7 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_FiltersFeature
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("Evergreen_FiltersFeature")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("NewFilterCheck")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("DAS-10512")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("DAS-11509")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("VariantName", "Barry\'sUse: Hide from End Users")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:ColumnName", "Barry\'sUse: Hide from End Users")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Operators", "Equals, Does not equal")]
@@ -1456,6 +1468,7 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_FiltersFeature
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("Evergreen_FiltersFeature")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("NewFilterCheck")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("DAS-10512")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("DAS-11509")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("VariantName", "ComputerSc: Hide from End Users")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:ColumnName", "ComputerSc: Hide from End Users")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Operators", "Equals, Does not equal")]
@@ -1476,6 +1489,7 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_FiltersFeature
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("Evergreen_FiltersFeature")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("NewFilterCheck")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("DAS-10512")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("DAS-11509")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("VariantName", "Havoc(BigD: Hide from End Users")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:ColumnName", "Havoc(BigD: Hide from End Users")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Operators", "Equals, Does not equal")]
@@ -1496,6 +1510,7 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_FiltersFeature
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("Evergreen_FiltersFeature")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("NewFilterCheck")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("DAS-10512")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("DAS-11509")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("VariantName", "MigrationP: Hide from End Users")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:ColumnName", "MigrationP: Hide from End Users")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Operators", "Equals, Does not equal")]
@@ -1516,6 +1531,7 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_FiltersFeature
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("Evergreen_FiltersFeature")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("NewFilterCheck")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("DAS-10512")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("DAS-11509")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("VariantName", "UserSchedu: Hide from End Users")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:ColumnName", "UserSchedu: Hide from End Users")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Operators", "Equals, Does not equal")]
