@@ -764,7 +764,7 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_ListPanel
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("Devices")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("EvergreenJnr_ListPanel")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("CustomListDisplay")]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("DAS-10870")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("DAS-10914")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("Delete_Newly_Created_List")]
         public virtual void EvergreenJnr_DevicesList__CheckThatEditListMenuNotDisplayedForActiveList()
         {
@@ -774,7 +774,7 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_ListPanel
                         "Devices",
                         "EvergreenJnr_ListPanel",
                         "CustomListDisplay",
-                        "DAS-10870",
+                        "DAS-10914",
                         "Delete_Newly_Created_List"});
             this.ScenarioSetup(scenarioInfo);
             this.FeatureBackground();
