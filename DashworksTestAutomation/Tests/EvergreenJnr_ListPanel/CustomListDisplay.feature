@@ -326,6 +326,7 @@ Scenario: EvergreenJnr_DevicesList__Check that sorting will be work for existing
 	When User click on 'Compliance' column header
 	Then data in table is sorted by 'Compliance' column in descending order
 	And Edit List menu is displayed
+	And Edit List menu is displayed
 
 @Evergreen @Devices @EvergreenJnr_ListPanel @CustomListDisplay @DAS-10914 @Delete_Newly_Created_List
 Scenario: EvergreenJnr_DevicesList__Check that edit list menu not displayed for active list
