@@ -705,8 +705,7 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_ListPanel
             table23.AddRow(new string[] {
                         "Import"});
             testRunner.Then("ColumnName is added to the list", ((string)(null)), table23, "Then ");
-            testRunner.Then("User save changes in list with \"Static List TestName 1\" name", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-            testRunner.Then("\"Static List TestName 1\" list is displayed to user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+            testRunner.When("User update current custom list", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
             testRunner.When("User click on \'Owner Display Name\' column header", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
             testRunner.Then("data in table is sorted by \'Owner Display Name\' column in descending order", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
             testRunner.And("Edit List menu is displayed", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
