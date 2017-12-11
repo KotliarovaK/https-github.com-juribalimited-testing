@@ -1,20 +1,20 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Collections.ObjectModel;
-using System.Linq;
-using System.Linq.Expressions;
-using System.Threading;
-using DashworksTestAutomation.Base;
+﻿using DashworksTestAutomation.Base;
 using DashworksTestAutomation.Utils;
 using OpenQA.Selenium;
 using OpenQA.Selenium.Interactions;
 using OpenQA.Selenium.Remote;
 using OpenQA.Selenium.Support.PageObjects;
 using OpenQA.Selenium.Support.UI;
+using System;
+using System.Collections.Generic;
+using System.Collections.ObjectModel;
+using System.Linq;
+using System.Linq.Expressions;
+using System.Threading;
 
 namespace DashworksTestAutomation.Extensions
 {
-    static class WebDriverExtentions
+    internal static class WebDriverExtentions
     {
         private static readonly TimeSpan WaitTimeout = TimeSpan.FromSeconds(35);
         private static readonly TimeSpan PollingInterval = TimeSpan.FromSeconds(5);
@@ -110,12 +110,14 @@ namespace DashworksTestAutomation.Extensions
 
                     return;
                 }
+
                 // System.InvalidOperationException : Error determining if element is displayed (UnexpectedJavaScriptError)
                 catch (InvalidOperationException e)
                 {
                     Logger.Write("Following Exception is occured in the WaitForElement method: {0}", e.Message);
                     Thread.Sleep(200);
                 }
+
                 // System.InvalidOperationException :The xpath expression './/option[contains(text(),'xxx')]' cannot be evaluated or does notresult in a WebElement
                 catch (InvalidSelectorException e)
                 {
@@ -282,6 +284,7 @@ namespace DashworksTestAutomation.Extensions
             WebDriverWait wait = new WebDriverWait(driver, TimeSpan.FromSeconds(waitSec));
             wait.Until(ExpectedConditions.TextToBePresentInElementLocated(by, textToAppear));
         }
+
         public static void WaitToBeSelected(this RemoteWebDriver driver, IWebElement checkbox, bool selectorState, int waitSec = 35)
         {
             WebDriverWait wait = new WebDriverWait(driver, TimeSpan.FromSeconds(waitSec));
@@ -358,7 +361,7 @@ namespace DashworksTestAutomation.Extensions
             action.DragAndDrop(elementToBeMoved, moveToElement).Perform();
         }
 
-        #endregion
+        #endregion Actions
 
         #region Actions with Javascript
 
@@ -374,7 +377,7 @@ namespace DashworksTestAutomation.Extensions
             ex.ExecuteScript("arguments[0].scrollIntoView(true);", element);
         }
 
-        #endregion
+        #endregion Actions with Javascript
 
         #region Frames
 
@@ -395,7 +398,7 @@ namespace DashworksTestAutomation.Extensions
             driver.SwitchTo().Frame(frameIdName);
         }
 
-        #endregion
+        #endregion Frames
 
         #region Availability of element
 
@@ -454,13 +457,14 @@ namespace DashworksTestAutomation.Extensions
             return true;
         }
 
-        #endregion
+        #endregion Availability of element
 
         #region Web element extensions
 
         public static void SelectCustomSelectbox(this RemoteWebDriver driver, IWebElement selectbox, string option)
         {
             selectbox.Click();
+
             //Small wait for dropdown display
             Thread.Sleep(300);
             var options = driver.FindElements(By.XPath(".//div[contains(@class,'mat-select-content ng-trigger ng-trigger-fadeInContent')]/md-option"));
@@ -471,6 +475,6 @@ namespace DashworksTestAutomation.Extensions
             driver.ClickByJavascript(options.First(x => x.Text.Contains(option)));
         }
 
-        #endregion
+        #endregion Web element extensions
     }
 }
