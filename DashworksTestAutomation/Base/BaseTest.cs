@@ -5,8 +5,6 @@ using OpenQA.Selenium.Firefox;
 using OpenQA.Selenium.IE;
 using OpenQA.Selenium.Remote;
 using System;
-using System.Drawing;
-using System.Linq;
 
 namespace DashworksTestAutomation.Base
 {
@@ -20,27 +18,31 @@ namespace DashworksTestAutomation.Base
             //            return new ChromeDriver();
             //#else
             if (Boolean.Parse(Browser.UserRemoteDriver))
+            {
                 switch (Browser.Type)
                 {
                     case "Chrome":
-                        DesiredCapabilities chCap = DesiredCapabilities.Chrome();
-                        return new RemoteWebDriver(new Uri(Browser.HubUri), chCap);
+                        var chromeOptions = new ChromeOptions();
+                        return new RemoteWebDriver(new Uri(Browser.HubUri), chromeOptions);
+
                     case "Firefox":
-                        DesiredCapabilities ffCap = DesiredCapabilities.Firefox();
-                        return new RemoteWebDriver(new Uri(Browser.HubUri), ffCap);
+                        var firefoxOptions = new FirefoxOptions();
+                        return new RemoteWebDriver(new Uri(Browser.HubUri), firefoxOptions);
 
                     case "InternetExplorer":
-                        DesiredCapabilities ieCap = DesiredCapabilities.InternetExplorer();
-                        return new RemoteWebDriver(new Uri(Browser.HubUri), ieCap);
+                        var ieOptions = new InternetExplorerOptions();
+                        return new RemoteWebDriver(new Uri(Browser.HubUri), ieOptions);
 
                     case "Edge":
-                        DesiredCapabilities eCap = DesiredCapabilities.Edge();
-                        return new RemoteWebDriver(new Uri(Browser.HubUri), eCap);
+                        var edgeOptions = new EdgeOptions();
+                        return new RemoteWebDriver(new Uri(Browser.HubUri), edgeOptions);
 
                     default:
                         throw new Exception($"Browser type '{Browser.Type}' was not identified");
                 }
+            }
             else
+            {
                 switch (Browser.Type)
                 {
                     case "Chrome":
@@ -58,6 +60,8 @@ namespace DashworksTestAutomation.Base
                     default:
                         throw new Exception($"Browser type '{Browser.Type}' was not identified");
                 }
+            }
+
             //#endif
         }
     }
