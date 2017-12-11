@@ -46,7 +46,7 @@ namespace DashworksTestAutomation.Pages.Evergreen
         [FindsBy(How = How.XPath, Using = ".//button[@class='mat-raised-button']")]
         public IWebElement CancelButton { get; set; }
 
-        [FindsBy(How = How.XPath, Using = ".//div[@class='mat-checkbox-frame']")]
+        [FindsBy(How = How.XPath, Using = ".//div[@class='add-column-checkbox ng-star-inserted']//input")]
         public IWebElement AddCategoryColumnCheckbox { get; set; }
 
         [FindsBy(How = How.XPath, Using = ".//span[@class='mat-checkbox-label']")]
