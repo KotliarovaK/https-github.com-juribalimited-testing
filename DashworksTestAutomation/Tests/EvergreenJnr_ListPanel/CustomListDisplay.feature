@@ -326,3 +326,52 @@ Scenario: EvergreenJnr_DevicesList__Check that sorting will be work for existing
 	When User click on 'Compliance' column header
 	Then data in table is sorted by 'Compliance' column in descending order
 	And Edit List menu is displayed
+	And Edit List menu is displayed
+
+@Evergreen @Devices @EvergreenJnr_ListPanel @CustomListDisplay @DAS-10914 @Delete_Newly_Created_List
+Scenario: EvergreenJnr_DevicesList__Check that edit list menu not displayed for active list
+	When User clicks "Devices" on the left-hand menu
+	Then "Devices" list should be displayed to the user
+	When User clicks the Filters button
+	Then Filters panel is displayed to the user
+	When User add "Compliance" filter where type is "Equals" with added column and following checkboxes:
+	| SelectedCheckboxes |
+	| Green              |
+	| Amber              |
+	Then "Compliance" filter is added to the list
+	When User click on 'Compliance' column header
+	Then data in table is sorted by 'Compliance' column in descending order
+	When User create custom list with "Dynamic List TestName" name
+	Then "Dynamic List TestName" list is displayed to user
+	When User navigates to the "All Devices" list
+	Then "Devices" list should be displayed to the user
+	When User clicks the Actions button
+	Then Actions panel is displayed to the user
+	When User select "Hostname" rows in the grid
+	| SelectedRowsName |
+	| 00BDM1JUR8IF419  |
+	| 011PLA470S0B9DJ  |
+	| 020JQ9RO0J4H07X  |
+	| 03063X2ZUCDN0A1  |
+	And User create static list with "Static List TestName" name
+	Then "Static List TestName" list is displayed to user
+	When User clicks the Columns button
+	Then Columns panel is displayed to the user
+	When ColumnName is entered into the search box and the selection is clicked
+	| ColumnName      |
+	| Build Date      |
+	| First Seen Date |
+	Then ColumnName is added to the list
+	| ColumnName      |
+	| Build Date      |
+	| First Seen Date |
+	When User click on 'Owner Display Name' column header
+	Then data in table is sorted by 'Owner Display Name' column in descending order
+	When User update current custom list
+	Then "Static List TestName" list is displayed to user
+	When User navigates to the "Dynamic List TestName" list
+	Then "Dynamic List TestName" list is displayed to user
+	And Edit List menu is not displayed
+	When User navigates to the "Static List TestName" list
+	Then "Static List TestName" list is displayed to user
+	And Edit List menu is not displayed
