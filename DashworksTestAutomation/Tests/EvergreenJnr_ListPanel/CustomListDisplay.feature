@@ -304,8 +304,7 @@ Scenario: EvergreenJnr_DevicesList__Check that sorting will be work for existing
 	| ColumnName |
 	| Compliance |
 	| Import     |
-	Then User save changes in list with "Static List TestName 1" name
-	Then "Static List TestName 1" list is displayed to user
+	When User update current custom list
 	When User click on 'Owner Display Name' column header
 	Then data in table is sorted by 'Owner Display Name' column in descending order
 	And Edit List menu is displayed
