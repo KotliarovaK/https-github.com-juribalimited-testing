@@ -435,8 +435,8 @@ Examples:
 	| Equals         | TRUE         | 41,228    | is                  |
 	| Does not equal | TRUE         | 107       | is not              |
 
-@Evergreen @Applications @Evergreen_FiltersFeature @FiltersDisplay @DAS-10696 @Delete_Newly_Created_List
-Scenario: EvergreenJnr_ApplicationsList_Check that Applications filter is working correct
+@Evergreen @Applications @Evergreen_FiltersFeature @FiltersDisplay @DAS-10696 @DAS-11512 @Delete_Newly_Created_List
+Scenario: EvergreenJnr_ApplicationsList_Check that Application (Saved List) filter is working correct
 	When User clicks "Applications" on the left-hand menu
 	Then "Applications" list should be displayed to the user
 	When User clicks the Columns button
