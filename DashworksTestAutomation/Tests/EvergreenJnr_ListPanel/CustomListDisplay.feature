@@ -280,3 +280,50 @@ Scenario: EvergreenJnr_DevicesList_Check that newly saved list is created with t
 	And ColumnName is added to the list
 	| ColumnName |
 	| Compliance |
+
+@Evergreen @Devices @EvergreenJnr_ListPanel @CustomListDisplay @DAS-10870 @Delete_Newly_Created_List
+Scenario: EvergreenJnr_DevicesList__Check that sorting will be work for existing saved static lists 
+	When User clicks "Devices" on the left-hand menu
+	Then "Devices" list should be displayed to the user
+	When User clicks the Actions button
+	Then Actions panel is displayed to the user
+	When User select "Hostname" rows in the grid
+	| SelectedRowsName |
+	| 00BDM1JUR8IF419  |
+	| 011PLA470S0B9DJ  |
+	| 020JQ9RO0J4H07X  |
+	And User create static list with "Static List TestName" name
+	Then "Static List TestName" list is displayed to user
+	When User clicks the Columns button
+	Then Columns panel is displayed to the user
+	When ColumnName is entered into the search box and the selection is clicked
+	| ColumnName |
+	| Compliance |
+	| Import     |
+	Then ColumnName is added to the list
+	| ColumnName |
+	| Compliance |
+	| Import     |
+	Then User save changes in list with "Static List TestName 1" name
+	Then "Static List TestName 1" list is displayed to user
+	When User click on 'Owner Display Name' column header
+	Then data in table is sorted by 'Owner Display Name' column in descending order
+	And Edit List menu is displayed
+
+@Evergreen @Devices @EvergreenJnr_ListPanel @CustomListDisplay @DAS-10870 @Delete_Newly_Created_List
+Scenario: EvergreenJnr_DevicesList__Check that sorting will be work for existing saved dynamic lists
+	When User clicks "Devices" on the left-hand menu
+	Then "Devices" list should be displayed to the user
+	When User clicks the Filters button
+	Then Filters panel is displayed to the user
+	When User add "Compliance" filter where type is "Equals" with added column and following checkboxes:
+	| SelectedCheckboxes |
+	| Red                |
+	Then "Compliance" filter is added to the list
+	When User add "City" filter where type is "Equals" with added column and "Jersey City" Lookup option
+	Then "City" filter is added to the list
+	When User create custom list with "Dynamic List TestName" name
+	Then "Dynamic List TestName" list is displayed to user
+	When User click on 'Compliance' column header
+	Then data in table is sorted by 'Compliance' column in descending order
+	And Edit List menu is displayed
