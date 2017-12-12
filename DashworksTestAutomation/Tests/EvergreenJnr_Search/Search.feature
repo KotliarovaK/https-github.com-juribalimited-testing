@@ -98,7 +98,7 @@ Scenario: EvergreenJnr_DevicesList_Search Tests
 	Then Signed Out page is displayed to the user
 	And User is logged out
 
-@Evergreen @Devices @EvergreenJnr_Search @Search
+@Evergreen @Devices @EvergreenJnr_Search @Search @DAS-11012
 Scenario: EvergreenJnr_DevicesList_Clearing search returns the full data set
 	When User clicks "Devices" on the left-hand menu
 	Then "Devices" list should be displayed to the user

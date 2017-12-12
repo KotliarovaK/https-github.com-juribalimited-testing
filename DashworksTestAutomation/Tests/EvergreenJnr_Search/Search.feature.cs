@@ -308,13 +308,15 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_Search
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("Devices")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("EvergreenJnr_Search")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("Search")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("DAS-11012")]
         public virtual void EvergreenJnr_DevicesList_ClearingSearchReturnsTheFullDataSet()
         {
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("EvergreenJnr_DevicesList_Clearing search returns the full data set", new string[] {
                         "Evergreen",
                         "Devices",
                         "EvergreenJnr_Search",
-                        "Search"});
+                        "Search",
+                        "DAS-11012"});
             this.ScenarioSetup(scenarioInfo);
             this.FeatureBackground();
             testRunner.When("User clicks \"Devices\" on the left-hand menu", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
