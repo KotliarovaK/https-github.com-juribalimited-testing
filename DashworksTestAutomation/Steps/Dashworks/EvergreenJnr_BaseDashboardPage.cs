@@ -1,21 +1,17 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using DashworksTestAutomation.Extensions;
-using DashworksTestAutomation.Helpers;
+﻿using DashworksTestAutomation.Extensions;
 using DashworksTestAutomation.Pages.Evergreen;
 using NUnit.Framework;
-using OpenQA.Selenium;
 using OpenQA.Selenium.Interactions;
 using OpenQA.Selenium.Remote;
+using System;
+using System.Collections.Generic;
+using System.Linq;
 using TechTalk.SpecFlow;
 
 namespace DashworksTestAutomation.Steps.Dashworks
 {
     [Binding]
-    class EvergreenJnr_BaseDashboardPage : SpecFlowContext
+    internal class EvergreenJnr_BaseDashboardPage : SpecFlowContext
     {
         private readonly RemoteWebDriver _driver;
 
@@ -91,7 +87,7 @@ namespace DashworksTestAutomation.Steps.Dashworks
             {
                 Assert.AreEqual(unsortedList.OrderByDescending(x => x.Key).Select(x => x.Value), expectedList);
             }
-            catch (Exception e)
+            catch (Exception)
             {
                 for (int i = 0; i < expectedList.Count; i++)
                 {
@@ -120,7 +116,7 @@ namespace DashworksTestAutomation.Steps.Dashworks
             {
                 Assert.AreEqual(unsortedList.OrderBy(x => x.Key).Select(x => x.Value), expectedList);
             }
-            catch (Exception e)
+            catch (Exception)
             {
                 for (int i = 0; i < expectedList.Count; i++)
                 {
@@ -138,6 +134,7 @@ namespace DashworksTestAutomation.Steps.Dashworks
             foreach (var row in table.Rows)
             {
                 var content = page.GetColumnContent(row["ColumnName"]);
+
                 //Check that at least 10 cells has some content
                 Assert.IsTrue(content.Select(string.IsNullOrEmpty).Count() > 10);
             }

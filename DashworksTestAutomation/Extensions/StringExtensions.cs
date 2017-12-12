@@ -12,7 +12,7 @@ namespace DashworksTestAutomation.Extensions
             return culture.CompareInfo.IndexOf(fullText, term, CompareOptions.IgnoreCase) >= 0;
         }
 
-        static readonly Regex SpaceTrimmer = new Regex(@"\s\s+");
+        private static readonly Regex SpaceTrimmer = new Regex(@"\s\s+");
 
         public static string RemoveExtraSpaces(this string str)
         {
@@ -20,7 +20,7 @@ namespace DashworksTestAutomation.Extensions
             {
                 return SpaceTrimmer.Replace(str, " ");
             }
-            catch (Exception e)
+            catch (Exception)
             {
                 return null;
             }
