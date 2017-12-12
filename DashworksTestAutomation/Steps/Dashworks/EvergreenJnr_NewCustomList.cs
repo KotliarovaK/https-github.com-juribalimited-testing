@@ -56,6 +56,28 @@ namespace DashworksTestAutomation.Steps.Dashworks
             listElement.SaveButton.Click();
         }
 
+        [Then(@"User type ""(.*)"" into Custom list name field")]
+        public void ThenUserTypeIntoCustomListNameField(string listName)
+        {
+            var listElement = _driver.NowAt<CustomListElement>();
+
+            _driver.WaitWhileControlIsNotDisplayed<CustomListElement>(() => listElement.CreateNewListButton);
+            listElement.CreateNewListButton.Click();
+            _driver.WaitWhileControlIsNotDisplayed<CustomListElement>(() => listElement.SaveButton);
+            listElement.ListNameTextbox.SendKeys(listName);
+        }
+
+        [Then(@"Save button is inactive for Custom list")]
+        public void ThenSaveButtonIsInactiveForCustomList()
+        {
+            var listElement = _driver.NowAt<CustomListElement>();
+
+            _driver.WaitWhileControlIsNotDisplayed<CustomListElement>(() => listElement.CreateNewListButton);
+            listElement.CreateNewListButton.Click();
+            _driver.WaitWhileControlIsNotDisplayed<CustomListElement>(() => listElement.SaveButton);
+            Assert.IsTrue(Convert.ToBoolean(listElement.SaveButton.GetAttribute("disabled")), "Save button is active");
+        }
+
         [Then(@"""(.*)"" list is displayed to user")]
         public void ThenListIsDisplayedToUser(string listName)
         {
