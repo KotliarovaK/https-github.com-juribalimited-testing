@@ -55,7 +55,7 @@ Runs Evergreen URL query strings for the 4 default all lists.
 	And User is logged out
 
 @Evergreen @Applications @EvergreenJnr_QueryStrings @Query @DAS-11023
-Scenario: EvergreenJnr_QueryString_Applicaions
+Scenario: EvergreenJnr_QueryString_Applications
 Runs Evergreen URL query strings for the Applications List.
 	When Evergreen QueryStringURL is entered for Simple QueryType
 	| QueryType   | QueryStringURL                                                                                                                                                                                                                                                                                                                                                                                      |
