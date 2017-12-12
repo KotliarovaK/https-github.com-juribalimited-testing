@@ -12,14 +12,13 @@ Background: Pre-Conditions
 	When User clicks the Switch to Evergreen link
 	Then Evergreen Dashboards page should be displayed to the user
 
-@Evergreen @Applications @EvergreenJnr_StaticLists @FiltersDisplay @DAS-10993 @Delete_Newly_Created_List
-Scenario: EvergreenJnr_ApplicationsList_Check that dynamic filters are cleared for static lists when opened after dynamic lists
+@Evergreen @Devices @EvergreenJnr_StaticLists @FiltersDisplay @DAS-10993 @Delete_Newly_Created_List
+Scenario: EvergreenJnr_DevicesList_Check that dynamic filters are cleared for static lists when opened after dynamic lists
 	When User clicks "Devices" on the left-hand menu
 	Then "Devices" list should be displayed to the user
 	When User clicks the Filters button
 	Then Filters panel is displayed to the user
-	When user select "Windows7Mi: Category" filter
-	When User have created "Equals" filter with column and following options:
+	When User add "Windows7Mi: Category" filter where type is "Equals" with added column and following checkboxes:
 	| SelectedCheckboxes  |
 	| None                |
 	Then "Windows7Mi: Category" filter is added to the list
