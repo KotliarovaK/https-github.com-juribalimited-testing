@@ -34,6 +34,7 @@ namespace DashworksTestAutomation.Helpers
 
         public void SelectOperator()
         {
+            _driver.WaitWhileControlIsNotDisplayed(By.XPath(".//div[@class='filter-panel']//div[@class='mat-select-trigger']"));
             var selectbox = _driver.FindElement(By.XPath(".//div[@class='filter-panel']//div[@class='mat-select-trigger']"));
             _driver.SelectCustomSelectbox(selectbox, _operatorValue);
         }

@@ -67,6 +67,39 @@ Runs Evergreen URL query strings for the Applications List.
 	Then Signed Out page is displayed to the user
 	And User is logged out
 
+@Evergreen @Devices @EvergreenJnr_QueryStrings @Query @DAS-11023
+Scenario: EvergreenJnr_QueryString_Devices
+Runs Evergreen URL query strings for the Devices List.
+	When Evergreen QueryStringURL is entered for Simple QueryType
+	| QueryType | QueryStringURL                                                                                                                                                                                                                                                                        |
+	| Devices   | evergreen/#/devices?$select=hostname,chassisCategory,oSCategory,ownerDisplayName,bootupDate,biosVersion,oSArchitecture,ownerDomain,entitledApplications,costCentre,locationName,description,lDAP_41,customField_33,project_46_subCategory,project_46_ragStatus,project_46_requestType |
+	Then agGrid Main Object List is returned with data
+	When User clicks the Logout button
+	Then Signed Out page is displayed to the user
+	And User is logged out
+
+@Evergreen @Users @EvergreenJnr_QueryStrings @Query @DAS-11023
+Scenario: EvergreenJnr_QueryString_Users
+Runs Evergreen URL query strings for the Users List.
+	When Evergreen QueryStringURL is entered for Simple QueryType
+	| QueryType | QueryStringURL                                                                                                                                                                                                                              |
+	| Devices   | evergreen/#/users?$select=username,directoryName,displayName,fullyDistinguishedObjectName,description,usedApplications,departmentCode,buildingName,lDAP_46,customField_1,project_46_subCategory,project_46_ragStatus,project_46_requestType |
+	Then agGrid Main Object List is returned with data
+	When User clicks the Logout button
+	Then Signed Out page is displayed to the user
+	And User is logged out
+
+@Evergreen @Mailboxes @EvergreenJnr_QueryStrings @Query @DAS-11023
+Scenario: EvergreenJnr_QueryString_Mailboxes
+Runs Evergreen URL query strings for the Mailboxes List.
+	When Evergreen QueryStringURL is entered for Simple QueryType
+	| QueryType | QueryStringURL                                                                                                                                                                                                                                         |
+	| Devices   | evergreen/#/mailboxes?$select=principalEmailAddress,mailboxPlatform,serverName,mailboxType,ownerDisplayName,displayName,ownerEmailAddress,departmentCode,locationName,customField_81,project_48_subCategory,project_48_requestType,project_48_teamName |
+	Then agGrid Main Object List is returned with data
+	When User clicks the Logout button
+	Then Signed Out page is displayed to the user
+	And User is logged out
+
 @Evergreen @Devices @EvergreenJnr_QueryStrings @Query @DAS-10789
 Scenario: EvergreenJnr_QueryString_Applications On Devices List
 Runs Evergreen URL query strings for the Applications on Devices List.
