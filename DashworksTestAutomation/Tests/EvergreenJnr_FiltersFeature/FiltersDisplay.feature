@@ -687,3 +687,24 @@ Scenario: EvergreenJnr_DevicesList_Check that space after commas in the filters 
 	| 13     |
 	Then "CPU Count" filter is added to the list
 	Then "(Compliance = Unknown, Red, Amber or Green) OR (Import != A01 SMS (Spoof)) OR (Department Code ~ ABC) OR (Department Code !~ ACV) OR (Department Code BEGINS WITH AXZ) OR (Department Code ENDS WITH YQA) OR (Department Code = EMPTY) OR (Department Code != EMPTY) OR (Boot Up Date < 14 Dec 2017) OR (Boot Up Date > 03 Dec 2017) OR (CPU Count > 66) OR (CPU Count >= 12) OR (CPU Count < 31) OR (CPU Count <= 13)" text is displayed in filter container
+
+@Evergreen @Devices @Evergreen_FiltersFeature @FiltersDisplay @DAS-10790 @Delete_Newly_Created_List
+Scenario: EvergreenJnr_DevicesList_Check that application filters being applied against the devices list are restored correctly and are shown in the Filters panel
+	When User clicks "Devices" on the left-hand menu
+	Then "Devices" list should be displayed to the user
+	When User clicks the Filters button
+	Then Filters panel is displayed to the user
+	When User add "Application" filter where type is "Equals" with SelectedList list and following Association:
+	| Values                             | Association        |
+	| DirectX SDK (Version 8.1) (3663.0) | Not used on device |
+	Then "Application" filter is added to the list
+	When User create custom list with "TestList" name
+	Then "TestList" list is displayed to user
+	When User navigates to the "All Devices" list
+	Then "Devices" list should be displayed to the user
+	When User navigates to the "TestList" list
+	Then "TestList" list is displayed to user
+	Then "" text is displayed in filter container
+	When User clicks the Filters button
+	Then Filters panel is displayed to the user
+	And "" is displayed in added filter info

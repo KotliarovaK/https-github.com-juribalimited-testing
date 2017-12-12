@@ -755,7 +755,6 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_ListPanel
             testRunner.And("Edit List menu is displayed", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
             this.ScenarioCleanup();
         }
-        }
         
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestMethodAttribute()]
         [Microsoft.VisualStudio.TestTools.UnitTesting.DescriptionAttribute("EvergreenJnr_DevicesList__Check that edit list menu not displayed for active list" +
