@@ -156,7 +156,7 @@ Examples:
 	| MigrationP: Application Readiness | Equals, Does not equal | Blue         | MigrationP: Application Readiness is Blue  | 189       |
 	| UserSchedu: Application Readiness | Equals, Does not equal | None         | UserSchedu: Application Readiness is None  | 981       |
 
-@Evergreen @Applications @Evergreen_FiltersFeature @NewFilterCheck @DAS-10512 @DAS-11509 @DAS-11507
+@Evergreen @Applications @Evergreen_FiltersFeature @NewFilterCheck @DAS-10512 @DAS-11509 @DAS-11507 @DAS-11509
 Scenario Outline: EvergreenJnr_ApplicationsList_Check that Application Rationalisation filter is added to the list
 	When User clicks "Applications" on the left-hand menu
 	Then "Applications" list should be displayed to the user
@@ -218,7 +218,7 @@ Examples:
 	| MigrationP: Core Application | Equals, Does not equal | FALSE        | MigrationP: Core Application is false   | 220       |
 	| UserSchedu: Core Application | Equals, Does not equal | UNKNOWN      | UserSchedu: Core Application is Unknown | 1,242     |
 
-@Evergreen @Applications @Evergreen_FiltersFeature @NewFilterCheck @DAS-10512 @DAS-11509 @DAS-11507
+@Evergreen @Applications @Evergreen_FiltersFeature @NewFilterCheck @DAS-10512 @DAS-11509 @DAS-11507 @DAS-11509
 Scenario Outline: EvergreenJnr_ApplicationsList_Check that Hide from End Users filter is added to the list
 	When User clicks "Applications" on the left-hand menu
 	Then "Applications" list should be displayed to the user
