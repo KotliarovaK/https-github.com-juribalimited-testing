@@ -14,7 +14,7 @@ using System.Threading;
 
 namespace DashworksTestAutomation.Extensions
 {
-    internal static class WebDriverExtentions
+    internal static class WebDriverExtensions
     {
         private static readonly TimeSpan WaitTimeout = TimeSpan.FromSeconds(35);
         private static readonly TimeSpan PollingInterval = TimeSpan.FromSeconds(5);
@@ -472,7 +472,7 @@ namespace DashworksTestAutomation.Extensions
                 throw new Exception($"Filter options were not loaded, unable to select '{option}'");
             driver.MouseHover(options.Last());
             options = driver.FindElements(By.XPath(".//div[contains(@class,'mat-select-content ng-trigger ng-trigger-fadeInContent')]/md-option"));
-            driver.ClickByJavascript(options.First(x => x.Text.Contains(option)));
+            driver.ClickByJavascript(options.First(x => x.Text.ContainsText(option)));
         }
 
         #endregion Web element extensions

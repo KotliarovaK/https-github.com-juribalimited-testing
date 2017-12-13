@@ -128,7 +128,8 @@ namespace DashworksTestAutomation.Pages.Evergreen
 
         public string ActiveCustomListName()
         {
-            Driver.WaitWhileControlIsNotDisplayed(By.XPath(".//div[@class='active-list-wrapper ng-star-inserted']//span"));
+            Driver.WaitWhileControlIsNotDisplayed(
+                By.XPath(".//div[@class='active-list-wrapper ng-star-inserted']//span"));
             return Driver.FindElement(By.XPath(".//div[@class='active-list-wrapper ng-star-inserted']//span")).Text;
         }
 
