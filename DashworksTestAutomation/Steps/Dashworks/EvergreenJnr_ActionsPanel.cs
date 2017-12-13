@@ -113,5 +113,13 @@ namespace DashworksTestAutomation.Steps.Dashworks
             listElement.ListNameTextbox.SendKeys(listName);
             listElement.CreateButton.Click();
         }
+
+        [Then(@"User type ""(.*)"" into Static list name field")]
+        public void ThenUserTypeIntoStaticListNameField(string listName)
+        {
+            var listElement = _driver.NowAt<ActionsElement>();
+            _driver.WaitWhileControlIsNotDisplayed<ActionsElement>(() => listElement.CreateButton);
+            listElement.ListNameTextbox.SendKeys(listName);
+        }
     }
 }
