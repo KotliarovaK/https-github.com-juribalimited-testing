@@ -16,7 +16,7 @@ namespace DashworksTestAutomation.Extensions
 {
     internal static class WebDriverExtensions
     {
-        private static readonly TimeSpan WaitTimeout = TimeSpan.FromSeconds(35);
+        private static readonly TimeSpan WaitTimeout = TimeSpan.FromSeconds(45);
         private static readonly TimeSpan PollingInterval = TimeSpan.FromSeconds(5);
         private const int WaitTimes = 2;
 
@@ -273,19 +273,19 @@ namespace DashworksTestAutomation.Extensions
             };
         }
 
-        public static void WaitForTextToAppear(this RemoteWebDriver driver, IWebElement element, String textToAppear, int waitSec = 35)
+        public static void WaitForTextToAppear(this RemoteWebDriver driver, IWebElement element, String textToAppear, int waitSec = 45)
         {
             WebDriverWait wait = new WebDriverWait(driver, TimeSpan.FromSeconds(waitSec));
             wait.Until(ExpectedConditions.TextToBePresentInElement(element, textToAppear));
         }
 
-        public static void WaitForTextToAppear(this RemoteWebDriver driver, By by, String textToAppear, int waitSec = 35)
+        public static void WaitForTextToAppear(this RemoteWebDriver driver, By by, String textToAppear, int waitSec = 45)
         {
             WebDriverWait wait = new WebDriverWait(driver, TimeSpan.FromSeconds(waitSec));
             wait.Until(ExpectedConditions.TextToBePresentInElementLocated(by, textToAppear));
         }
 
-        public static void WaitToBeSelected(this RemoteWebDriver driver, IWebElement checkbox, bool selectorState, int waitSec = 35)
+        public static void WaitToBeSelected(this RemoteWebDriver driver, IWebElement checkbox, bool selectorState, int waitSec = 45)
         {
             WebDriverWait wait = new WebDriverWait(driver, TimeSpan.FromSeconds(waitSec));
             wait.Until(ExpectedConditions.ElementToBeSelected(checkbox, selectorState));
