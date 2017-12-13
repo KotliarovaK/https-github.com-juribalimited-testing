@@ -1,8 +1,5 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using DashworksTestAutomation.Extensions;
 using DashworksTestAutomation.Pages.Evergreen;
 using DashworksTestAutomation.Utils;
@@ -112,6 +109,14 @@ namespace DashworksTestAutomation.Steps.Dashworks
             _driver.WaitWhileControlIsNotDisplayed<ActionsElement>(() => listElement.CreateButton);
             listElement.ListNameTextbox.SendKeys(listName);
             listElement.CreateButton.Click();
+        }
+
+        [Then(@"User type ""(.*)"" into Static list name field")]
+        public void ThenUserTypeIntoStaticListNameField(string listName)
+        {
+            var listElement = _driver.NowAt<ActionsElement>();
+            _driver.WaitWhileControlIsNotDisplayed<ActionsElement>(() => listElement.CreateButton);
+            listElement.ListNameTextbox.SendKeys(listName);
         }
     }
 }

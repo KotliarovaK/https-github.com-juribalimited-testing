@@ -1,6 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
 using DashworksTestAutomation.Extensions;
 using DashworksTestAutomation.Pages;
 using DashworksTestAutomation.Pages.Evergreen;
@@ -10,8 +8,6 @@ using OpenQA.Selenium.Remote;
 using TechTalk.SpecFlow;
 using System.Text.RegularExpressions;
 using DashworksTestAutomation.Helpers;
-using DashworksTestAutomation.Providers;
-using OpenQA.Selenium.Interactions;
 
 namespace DashworksTestAutomation.Steps.Dashworks
 {
@@ -142,7 +138,8 @@ namespace DashworksTestAutomation.Steps.Dashworks
         public void ThenSectionIsNotDisplayedInTheColumnsPanel(string categoryName)
         {
             var columnElement = _driver.NowAt<ColumnsElement>();
-            Assert.IsFalse(columnElement.CategoryIsDisplayed(categoryName), $"{categoryName} category stil displayed in Column Panel");
+            Assert.IsFalse(columnElement.CategoryIsDisplayed(categoryName),
+                $"{categoryName} category stil displayed in Column Panel");
         }
 
         [Then(@"User is expand ""(.*)"" columns category")]

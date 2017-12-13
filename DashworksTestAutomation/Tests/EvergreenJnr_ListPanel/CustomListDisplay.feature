@@ -200,6 +200,48 @@ Scenario: EvergreenJnr_UsersList_Check that custom list creation block is not di
 	When User clicks the Actions button
 	Then Save to New Custom List element is displayed
 
+@Evergreen @Users @EvergreenJnr_ListPanel @CustomListDisplay @DAS-11018
+Scenario: EvergreenJnr_UsersList_Check that custom list creation block is not displayed after start typing a list name
+	When User clicks "Users" on the left-hand menu
+	Then "Users" list should be displayed to the user
+	When User clicks the Filters button
+	Then Filters panel is displayed to the user
+	When User add "Compliance" filter where type is "Equals" without added column and following checkboxes:
+	| SelectedCheckboxes |
+	| Red                |
+	Then "Compliance" filter is added to the list
+	Then Save to New Custom List element is displayed
+	Then User type "Test" into Custom list name field
+	When User clicks the Actions button
+	Then Actions panel is displayed to the user
+	Then Save to New Custom List element is NOT displayed
+	When User clicks the Actions button
+	Then Save to New Custom List element is displayed
+
+@Evergreen @Users @EvergreenJnr_ListPanel @CustomListDisplay @DAS-11018
+Scenario: EvergreenJnr_UsersList_Check that save button is inactive in Custom List creation block
+	When User clicks "Users" on the left-hand menu
+	Then "Users" list should be displayed to the user
+	When User clicks the Columns button
+	Then Columns panel is displayed to the user
+	When ColumnName is entered into the search box and the selection is clicked
+	| ColumnName          |
+	| Compliance          |
+	Then Save to New Custom List element is displayed
+	Then User type "Test" into Custom list name field
+	When User clicks the Actions button
+	Then Actions panel is displayed to the user
+	Then Save to New Custom List element is NOT displayed
+	When User select "Username" rows in the grid
+	| SelectedRowsName |
+	| AAD1011948       |
+	| AAH0343264       |
+	| AAO3000042       |
+	| AAQ9911340       |
+	Then User type "Test" into Static list name field
+	When User clicks the Actions button
+	Then Save button is inactive for Custom list
+
 @Evergreen @Devices @EvergreenJnr_ListPanel @CustomListDisplay @DAS-11394 @Delete_Newly_Created_List
 Scenario: EvergreenJnr_DevicesList_Check the sort order is saved for existing list and not deleted after clicking "Reset" button in "Columns" menu
 	When User clicks "Devices" on the left-hand menu

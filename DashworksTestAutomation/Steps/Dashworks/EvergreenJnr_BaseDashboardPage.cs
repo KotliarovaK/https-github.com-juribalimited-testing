@@ -161,7 +161,8 @@ namespace DashworksTestAutomation.Steps.Dashworks
         {
             var page = _driver.NowAt<BaseDashboardPage>();
             var t = page.FilterContainer.Text.TrimStart(' ').TrimEnd(' ');
-            Assert.AreEqual(text, page.FilterContainer.Text.TrimStart(' ').TrimEnd(' '), $"Filter is created incorrectly");
+            Assert.AreEqual(text, page.FilterContainer.Text.TrimStart(' ').TrimEnd(' '),
+                $"Filter is created incorrectly");
         }
     }
 }

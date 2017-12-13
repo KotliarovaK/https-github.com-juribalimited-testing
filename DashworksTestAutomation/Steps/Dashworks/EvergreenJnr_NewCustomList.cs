@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading;
 using DashworksTestAutomation.Extensions;
+using DashworksTestAutomation.Helpers;
 using DashworksTestAutomation.Pages.Evergreen;
 using DashworksTestAutomation.Utils;
 using NUnit.Framework;
@@ -54,6 +55,28 @@ namespace DashworksTestAutomation.Steps.Dashworks
             _driver.WaitWhileControlIsNotDisplayed<CustomListElement>(() => listElement.SaveButton);
             listElement.ListNameTextbox.SendKeys(listName);
             listElement.SaveButton.Click();
+        }
+
+        [Then(@"User type ""(.*)"" into Custom list name field")]
+        public void ThenUserTypeIntoCustomListNameField(string listName)
+        {
+            var listElement = _driver.NowAt<CustomListElement>();
+
+            _driver.WaitWhileControlIsNotDisplayed<CustomListElement>(() => listElement.CreateNewListButton);
+            listElement.CreateNewListButton.Click();
+            _driver.WaitWhileControlIsNotDisplayed<CustomListElement>(() => listElement.SaveButton);
+            listElement.ListNameTextbox.SendKeys(listName);
+        }
+
+        [Then(@"Save button is inactive for Custom list")]
+        public void ThenSaveButtonIsInactiveForCustomList()
+        {
+            var listElement = _driver.NowAt<CustomListElement>();
+
+            _driver.WaitWhileControlIsNotDisplayed<CustomListElement>(() => listElement.CreateNewListButton);
+            listElement.CreateNewListButton.Click();
+            _driver.WaitWhileControlIsNotDisplayed<CustomListElement>(() => listElement.SaveButton);
+            Assert.IsTrue(Convert.ToBoolean(listElement.SaveButton.GetAttribute("disabled")), "Save button is active");
         }
 
         [Then(@"""(.*)"" list is displayed to user")]
@@ -142,22 +165,26 @@ namespace DashworksTestAutomation.Steps.Dashworks
         [AfterScenario("Delete_Newly_Created_List")]
         public void DeleteAllCustomListsAfterScenarioRun()
         {
-            try
-            {
-                var lefthendMenu = _driver.NowAt<LeftHandMenuElement>();
-                lefthendMenu.Devices.Click();
-                RemoveAllCustomLists();
-                lefthendMenu.Applications.Click();
-                RemoveAllCustomLists();
-                lefthendMenu.Mailboxes.Click();
-                RemoveAllCustomLists();
-                lefthendMenu.Users.Click();
-                RemoveAllCustomLists();
-            }
-            catch (Exception e)
-            {
-                Logger.Write($"Some errors appears during List deleting: {e.Message}");
-            }
+            //New implementation
+            var listsIds = DatabaseHelper.ExecuteReader("SELECT [ListId] FROM[DesktopBI].[dbo].[EvergreenList]", 0);
+            DatabaseHelper.RemoveLists(listsIds);
+            //Old implementation
+            //try
+            //{
+            //    var lefthendMenu = _driver.NowAt<LeftHandMenuElement>();
+            //    lefthendMenu.Devices.Click();
+            //    RemoveAllCustomLists();
+            //    lefthendMenu.Applications.Click();
+            //    RemoveAllCustomLists();
+            //    lefthendMenu.Mailboxes.Click();
+            //    RemoveAllCustomLists();
+            //    lefthendMenu.Users.Click();
+            //    RemoveAllCustomLists();
+            //}
+            //catch (Exception e)
+            //{
+            //    Logger.Write($"Some errors appears during List deleting: {e.Message}");
+            //}
         }
 
         public void RemoveAllCustomLists()

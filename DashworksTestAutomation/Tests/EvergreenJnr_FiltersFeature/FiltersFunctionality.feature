@@ -57,8 +57,8 @@ Scenario: EvergreenJnr_ApplicationsList_Check 500 error is not returned for bool
 	Then Signed Out page is displayed to the user
 	And User is logged out
 
-@Evergreen @Applications @EvergreenJnr_FiltersFeature @FilterFunctionality @DAS-10734
-Scenario: EvergreenJnr_ApplicationsList_Check that add column checkbox works currectly
+@Evergreen @Applications @EvergreenJnr_FiltersFeature @FilterFunctionality @DAS-10734 @DAS-11507
+Scenario: EvergreenJnr_ApplicationsList_Check that add column checkbox works correctly
 	When User clicks "Applications" on the left-hand menu
 	Then "Applications" list should be displayed to the user
 	When User clicks the Filters button
@@ -173,7 +173,7 @@ Scenario: EvergreenJnr_Devices_Check that Add column checkbox is unchecked after
 	Then "Add column" checkbox is unchecked
 	And "Add Column" checkbox is disabled
 
-@Evergreen @AllLists @EvergreenJnr_FilterFeature @FilterFunctionality @DAS-10977
+@Evergreen @AllLists @EvergreenJnr_FilterFeature @FilterFunctionality @DAS-10977 @DAS-11507
 Scenario Outline: EvergreenJnr_AllLists_Check that filter is restored correctly after leaving the page and going back via the browse "back" button for checkboxes filters
 	When User clicks "<ListName>" on the left-hand menu
 	Then "<ListName>" list should be displayed to the user

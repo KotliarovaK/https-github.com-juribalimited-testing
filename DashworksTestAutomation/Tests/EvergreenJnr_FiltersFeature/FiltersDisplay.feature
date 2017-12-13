@@ -78,7 +78,7 @@ Scenario: EvergreenJnr_UsersList_Check special characters display in filter info
 	| Values           |
 	| O'Conn"/\or#@!() |
 
-@Evergreen @Applications @Evergreen_FiltersFeature @FiltersDisplay @DAS-10781
+@Evergreen @Applications @Evergreen_FiltersFeature @FiltersDisplay @DAS-10781 @DAS-11507
 Scenario: EvergreenJnr_ApplicationsList_Check that 'Group' and 'Team' related filters is not presented in the list
 	When User clicks "Applications" on the left-hand menu
 	Then "Applications" list should be displayed to the user
@@ -495,23 +495,23 @@ Scenario: EvergreenJnr_ApplicationsList_Check that brackets are displayed correc
 	| Janus Systems Controls for Microsoft .NET (TRIAL)    |
 	| NI LabVIEW PID Control Toolset 6.0 (for LabVIEW 7.1) |
 	Then "Application" filter is added to the list
-	When User add "Application" filter where type is "Equals" with added column and following value:
+	When User add "Application" filter where type is "Contains" with added column and following value:
 	| Values                                      |
-	| Application contains (Version 6.0) (3672.1) |
+	| (Version 6.0) (3672.1)                      |
 	Then "Application" filter is added to the list
-	When User add "Application" filter where type is "Equals" with added column and following value:
+	When User add "Application" filter where type is "Ends With" with added column and following value:
 	| Values                              |
-	| Application begins with ((((test))) |
+	| (self-installing)                   |
 	Then "Application" filter is added to the list
 	When User create custom list with "TestList" name
 	Then "TestList" list is displayed to user
-	And "4" rows are displayed in the agGrid
+	And "6" rows are displayed in the agGrid
 	When User navigates to the "All Applications" list
 	Then "Applications" list should be displayed to the user
 	When User navigates to the "TestList" list
 	And User clicks the Filters button
 	Then "TestList" list is displayed to user
-	And "4" rows are displayed in the agGrid
+	And "6" rows are displayed in the agGrid
 	And Edit List menu is not displayed
 	And Values is displayed in added filter info
 	| Values                                               |
@@ -519,13 +519,28 @@ Scenario: EvergreenJnr_ApplicationsList_Check that brackets are displayed correc
 	| Windows Installer SDK (Version 2.0) (3718.1)         |
 	| Janus Systems Controls for Microsoft .NET (TRIAL)    |
 	| NI LabVIEW PID Control Toolset 6.0 (for LabVIEW 7.1) |
-	| Application contains (Version 6.0) (3672.1)          |
-	| Application begins with ((((test)))                  |
+	| (Version 6.0) (3672.1)                               |
+	| (self-installing)                                    |
 
 @Evergreen @Mailboxes @Evergreen_FiltersFeature @FiltersDisplay @DAS-11351
 Scenario: EvergreenJnr_MailboxesList_Check that 'Add column' option as available for "Owner Department" filter
 	When User clicks "Mailboxes" on the left-hand menu
 	Then "Mailboxes" list should be displayed to the user
+	When User clicks the Filters button
+	Then Filters panel is displayed to the user
+	When user select "Owner Department" filter
+	Then checkboxes are displayed to the User:
+	| SelectedCheckboxes                    |
+	| Add Owner Department Name column      |
+	| Add Owner Department Full Path column |
+	When User clicks the Logout button
+	Then Signed Out page is displayed to the user
+	And User is logged out
+
+@Evergreen @Devices @Evergreen_FiltersFeature @FiltersDisplay @DAS-11351
+Scenario: EvergreenJnr_DevicesList_Check that 'Add column' option as available for "Owner Department" filter
+	When User clicks "Devices" on the left-hand menu
+	Then "Devices" list should be displayed to the user
 	When User clicks the Filters button
 	Then Filters panel is displayed to the user
 	When user select "Owner Department" filter

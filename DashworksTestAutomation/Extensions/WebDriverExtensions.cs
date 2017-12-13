@@ -14,9 +14,9 @@ using System.Threading;
 
 namespace DashworksTestAutomation.Extensions
 {
-    internal static class WebDriverExtentions
+    internal static class WebDriverExtensions
     {
-        private static readonly TimeSpan WaitTimeout = TimeSpan.FromSeconds(35);
+        private static readonly TimeSpan WaitTimeout = TimeSpan.FromSeconds(45);
         private static readonly TimeSpan PollingInterval = TimeSpan.FromSeconds(5);
         private const int WaitTimes = 2;
 
@@ -273,19 +273,19 @@ namespace DashworksTestAutomation.Extensions
             };
         }
 
-        public static void WaitForTextToAppear(this RemoteWebDriver driver, IWebElement element, String textToAppear, int waitSec = 35)
+        public static void WaitForTextToAppear(this RemoteWebDriver driver, IWebElement element, String textToAppear, int waitSec = 45)
         {
             WebDriverWait wait = new WebDriverWait(driver, TimeSpan.FromSeconds(waitSec));
             wait.Until(ExpectedConditions.TextToBePresentInElement(element, textToAppear));
         }
 
-        public static void WaitForTextToAppear(this RemoteWebDriver driver, By by, String textToAppear, int waitSec = 35)
+        public static void WaitForTextToAppear(this RemoteWebDriver driver, By by, String textToAppear, int waitSec = 45)
         {
             WebDriverWait wait = new WebDriverWait(driver, TimeSpan.FromSeconds(waitSec));
             wait.Until(ExpectedConditions.TextToBePresentInElementLocated(by, textToAppear));
         }
 
-        public static void WaitToBeSelected(this RemoteWebDriver driver, IWebElement checkbox, bool selectorState, int waitSec = 35)
+        public static void WaitToBeSelected(this RemoteWebDriver driver, IWebElement checkbox, bool selectorState, int waitSec = 45)
         {
             WebDriverWait wait = new WebDriverWait(driver, TimeSpan.FromSeconds(waitSec));
             wait.Until(ExpectedConditions.ElementToBeSelected(checkbox, selectorState));
@@ -472,7 +472,7 @@ namespace DashworksTestAutomation.Extensions
                 throw new Exception($"Filter options were not loaded, unable to select '{option}'");
             driver.MouseHover(options.Last());
             options = driver.FindElements(By.XPath(".//div[contains(@class,'mat-select-content ng-trigger ng-trigger-fadeInContent')]/md-option"));
-            driver.ClickByJavascript(options.First(x => x.Text.Contains(option)));
+            driver.ClickByJavascript(options.First(x => x.Text.ContainsText(option)));
         }
 
         #endregion Web element extensions
