@@ -187,4 +187,34 @@ namespace DashworksTestAutomation.Helpers
             SaveFilter();
         }
     }
+
+    //public class LookupCheckBoxesFilter : BaseFilter
+    //{
+    //    private string _value { get; set; }
+
+    //    public LookupCheckBoxesFilter(RemoteWebDriver driver, string operatorValue, bool acceptCheckbox, Table table) : base(
+    //        driver, operatorValue, acceptCheckbox)
+    //    {
+    //        _table = table;
+    //    }
+
+    //    public override void Do()
+    //    {
+    //        SelectOperator();
+    //        _driver.WaitForDataLoading();
+    //        foreach (var row in _table.Rows)
+    //        {
+    //            _driver.FindElement(By.XPath(".//div[@class='filterAddPanel ng-star-inserted']//input[@placeholder='Search']"))
+    //                .SendKeys(_value);
+    //            _driver.FindElement(By.XPath($".//div[@class='filterAddPanel ng-star-inserted']//span[contains(text(),'{_value}')]"))
+    //                .Click();
+    //        }
+    //        foreach (var row in _table.Rows)
+    //        {
+    //            _driver.FindElement(By.XPath(".//div[@id='context']//input[@placeholder='Search']")).Click();
+    //            _driver.FindElement(By.XPath($".//li//span[text()='{row["Association"]}']")).Click();
+    //        }
+    //        SaveFilter();
+    //    }
+    //}
 }

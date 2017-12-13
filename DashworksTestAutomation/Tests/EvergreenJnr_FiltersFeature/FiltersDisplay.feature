@@ -694,17 +694,20 @@ Scenario: EvergreenJnr_DevicesList_Check that application filters being applied 
 	Then "Devices" list should be displayed to the user
 	When User clicks the Filters button
 	Then Filters panel is displayed to the user
-	When User add "Application" filter where type is "Equals" with SelectedList list and following Association:
-	| Values                             | Association        |
-	| DirectX SDK (Version 8.1) (3663.0) | Not used on device |
+	When User add "Application" filter where type is "Equals" with following value and association:
+	| SelectedValues | Association        |
+	| 7zip (2015)    | Entitled to device |
 	Then "Application" filter is added to the list
+	Then "11" rows are displayed in the agGrid
+	Then "(Application = 7zip (2015) ASSOCIATION = ("entitled to device"))" text is displayed in filter container
+	Then "Application 7zip (2015) is entitled to device" is displayed in added filter info
 	When User create custom list with "TestList" name
 	Then "TestList" list is displayed to user
 	When User navigates to the "All Devices" list
-	Then "Devices" list should be displayed to the user
 	When User navigates to the "TestList" list
 	Then "TestList" list is displayed to user
-	Then "" text is displayed in filter container
+	Then "11" rows are displayed in the agGrid
+	Then "(Application = 7zip (2015) ASSOCIATION = ("entitled to device"))" text is displayed in filter container
 	When User clicks the Filters button
 	Then Filters panel is displayed to the user
-	And "" is displayed in added filter info
+	And "Application 7zip (2015) is entitled to device" is displayed in added filter info
