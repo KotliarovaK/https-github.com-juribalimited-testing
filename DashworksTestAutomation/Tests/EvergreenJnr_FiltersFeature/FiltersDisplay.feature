@@ -78,7 +78,7 @@ Scenario: EvergreenJnr_UsersList_Check special characters display in filter info
 	| Values           |
 	| O'Conn"/\or#@!() |
 
-@Evergreen @Applications @Evergreen_FiltersFeature @FiltersDisplay @DAS-10781
+@Evergreen @Applications @Evergreen_FiltersFeature @FiltersDisplay @DAS-10781 @DAS-11507
 Scenario: EvergreenJnr_ApplicationsList_Check that 'Group' and 'Team' related filters is not presented in the list
 	When User clicks "Applications" on the left-hand menu
 	Then "Applications" list should be displayed to the user
