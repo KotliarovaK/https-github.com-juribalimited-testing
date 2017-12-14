@@ -1,19 +1,16 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using DashworksTestAutomation.Extensions;
+﻿using DashworksTestAutomation.Extensions;
 using DashworksTestAutomation.Pages.Evergreen;
 using DashworksTestAutomation.Utils;
 using NUnit.Framework;
 using OpenQA.Selenium.Remote;
+using System;
+using System.Linq;
 using TechTalk.SpecFlow;
 
 namespace DashworksTestAutomation.Steps.Dashworks
 {
     [Binding]
-    class EvergreenJnr_ActionsPanel : SpecFlowContext
+    internal class EvergreenJnr_ActionsPanel : SpecFlowContext
     {
         private readonly RemoteWebDriver _driver;
 
@@ -48,6 +45,14 @@ namespace DashworksTestAutomation.Steps.Dashworks
                 var rowIndex = columnContent.IndexOf(row["SelectedRowsName"]);
                 dashboardPage.SelectRowsCheckboxes[rowIndex + 1].Click();
             }
+        }
+
+        [Then(@"User removes selected rows")]
+        public void WhenUserIsRemovedSelectedRows()
+        {
+            var actionsElement = _driver.NowAt<ActionsElement>();
+            _driver.SelectCustomSelectbox(actionsElement.DropdownBox, "Remove from static list");
+            actionsElement.RemoveButton.Click();
         }
 
         [Then(@"Select All selectbox is checked")]
@@ -104,6 +109,14 @@ namespace DashworksTestAutomation.Steps.Dashworks
             _driver.WaitWhileControlIsNotDisplayed<ActionsElement>(() => listElement.CreateButton);
             listElement.ListNameTextbox.SendKeys(listName);
             listElement.CreateButton.Click();
+        }
+
+        [Then(@"User type ""(.*)"" into Static list name field")]
+        public void ThenUserTypeIntoStaticListNameField(string listName)
+        {
+            var listElement = _driver.NowAt<ActionsElement>();
+            _driver.WaitWhileControlIsNotDisplayed<ActionsElement>(() => listElement.CreateButton);
+            listElement.ListNameTextbox.SendKeys(listName);
         }
     }
 }

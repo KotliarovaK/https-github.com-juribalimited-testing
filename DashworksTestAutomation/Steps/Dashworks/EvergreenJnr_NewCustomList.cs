@@ -1,19 +1,20 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading;
-using DashworksTestAutomation.Extensions;
+﻿using DashworksTestAutomation.Extensions;
+using DashworksTestAutomation.Helpers;
 using DashworksTestAutomation.Pages.Evergreen;
 using DashworksTestAutomation.Utils;
 using NUnit.Framework;
 using OpenQA.Selenium;
 using OpenQA.Selenium.Remote;
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Threading;
 using TechTalk.SpecFlow;
 
 namespace DashworksTestAutomation.Steps.Dashworks
 {
     [Binding]
-    class EvergreenJnr_NewCustomList : SpecFlowContext
+    internal class EvergreenJnr_NewCustomList : SpecFlowContext
     {
         private readonly RemoteWebDriver _driver;
 
@@ -44,7 +45,6 @@ namespace DashworksTestAutomation.Steps.Dashworks
             Logger.Write("The Save to Custom List Element was NOT displayed");
         }
 
-
         [When(@"User create custom list with ""(.*)"" name")]
         public void WhenUserCreateCustomListWithName(string listName)
         {
@@ -55,6 +55,28 @@ namespace DashworksTestAutomation.Steps.Dashworks
             _driver.WaitWhileControlIsNotDisplayed<CustomListElement>(() => listElement.SaveButton);
             listElement.ListNameTextbox.SendKeys(listName);
             listElement.SaveButton.Click();
+        }
+
+        [Then(@"User type ""(.*)"" into Custom list name field")]
+        public void ThenUserTypeIntoCustomListNameField(string listName)
+        {
+            var listElement = _driver.NowAt<CustomListElement>();
+
+            _driver.WaitWhileControlIsNotDisplayed<CustomListElement>(() => listElement.CreateNewListButton);
+            listElement.CreateNewListButton.Click();
+            _driver.WaitWhileControlIsNotDisplayed<CustomListElement>(() => listElement.SaveButton);
+            listElement.ListNameTextbox.SendKeys(listName);
+        }
+
+        [Then(@"Save button is inactive for Custom list")]
+        public void ThenSaveButtonIsInactiveForCustomList()
+        {
+            var listElement = _driver.NowAt<CustomListElement>();
+
+            _driver.WaitWhileControlIsNotDisplayed<CustomListElement>(() => listElement.CreateNewListButton);
+            listElement.CreateNewListButton.Click();
+            _driver.WaitWhileControlIsNotDisplayed<CustomListElement>(() => listElement.SaveButton);
+            Assert.IsTrue(Convert.ToBoolean(listElement.SaveButton.GetAttribute("disabled")), "Save button is active");
         }
 
         [Then(@"""(.*)"" list is displayed to user")]
@@ -105,8 +127,8 @@ namespace DashworksTestAutomation.Steps.Dashworks
             Assert.IsFalse(listElement.SaveAsDropdown.Displayed(), "Edit List menu is displayed");
         }
 
-        [When(@"User is removed custom list with ""(.*)"" name")]
-        public void WhenUserIsRemovedCustomListWithName(string listName)
+        [When(@"User removes custom list with ""(.*)"" name")]
+        public void WhenUserRemovesCustomListWithName(string listName)
         {
             var listElement = _driver.NowAt<CustomListElement>();
 
@@ -115,27 +137,6 @@ namespace DashworksTestAutomation.Steps.Dashworks
             listElement.DeleteButton.Click();
             _driver.WaitWhileControlIsNotDisplayed<CustomListElement>(() => listElement.DeleteConfirmationMessage);
             listElement.ConfirmDeleteButton.Click();
-        }
-
-        [AfterScenario("Delete_Newly_Created_List")]
-        public void DeleteAllCustomListsAfterScenarioRun()
-        {
-            try
-            {
-                var lefthendMenu = _driver.NowAt<LeftHandMenuElement>();
-                lefthendMenu.Devices.Click();
-                RemoveAllCustomLists();
-                lefthendMenu.Applications.Click();
-                RemoveAllCustomLists();
-                lefthendMenu.Mailboxes.Click();
-                RemoveAllCustomLists();
-                lefthendMenu.Users.Click();
-                RemoveAllCustomLists();
-            }
-            catch (Exception e)
-            {
-                Logger.Write($"Some errors appears during List deleting: {e.Message}");
-            }
         }
 
         [When(@"User navigates to the ""(.*)"" list")]
@@ -151,6 +152,41 @@ namespace DashworksTestAutomation.Steps.Dashworks
             var listElement = _driver.NowAt<CustomListElement>();
             _driver.WaitWhileControlIsNotDisplayed<CustomListElement>(() => listElement.SuccessCreateMessage);
             Assert.AreEqual(message, listElement.SuccessCreateMessage.Text);
+        }
+
+        [Then(@"lists are sorted in alphabetical order")]
+        public void ThenListsAreSortedInAlphabeticalOrder()
+        {
+            var listElement = _driver.NowAt<CustomListElement>();
+            List<string> list = listElement.ListsNames.Select(x => x.Text).ToList();
+            Assert.AreEqual(list.OrderBy(s => s), list, "Lists names are not in alphabetical order");
+        }
+
+        [AfterScenario("Delete_Newly_Created_List")]
+        public void DeleteAllCustomListsAfterScenarioRun()
+        {
+            //New implementation
+            var listsIds = DatabaseHelper.ExecuteReader("SELECT [ListId] FROM[DesktopBI].[dbo].[EvergreenList]", 0);
+
+            DatabaseHelper.RemoveLists(listsIds);
+
+            //Old implementation
+            //try
+            //{
+            //    var lefthendMenu = _driver.NowAt<LeftHandMenuElement>();
+            //    lefthendMenu.Devices.Click();
+            //    RemoveAllCustomLists();
+            //    lefthendMenu.Applications.Click();
+            //    RemoveAllCustomLists();
+            //    lefthendMenu.Mailboxes.Click();
+            //    RemoveAllCustomLists();
+            //    lefthendMenu.Users.Click();
+            //    RemoveAllCustomLists();
+            //}
+            //catch (Exception e)
+            //{
+            //    Logger.Write($"Some errors appears during List deleting: {e.Message}");
+            //}
         }
 
         public void RemoveAllCustomLists()
@@ -172,14 +208,6 @@ namespace DashworksTestAutomation.Steps.Dashworks
                     listElement.ConfirmDeleteButton.Click();
                 }
             }
-        }
-
-        [Then(@"lists are sorted in alphabetical order")]
-        public void ThenListsAreSortedInAlphabeticalOrder()
-        {
-            var listElement = _driver.NowAt<CustomListElement>();
-            List<string> list = listElement.ListsNames.Select(x => x.Text).ToList();
-            Assert.AreEqual(list.OrderBy(s => s), list, "Lists names are not in alphabetical order");
         }
     }
 }

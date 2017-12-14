@@ -1,5 +1,5 @@
 ﻿Feature: TableSorting
-	Runs Evergreen Table actions related tests
+	Runs Table Sorting related tests
 
 Background: Pre-Conditions
 	Given User is on Dashworks Homepage

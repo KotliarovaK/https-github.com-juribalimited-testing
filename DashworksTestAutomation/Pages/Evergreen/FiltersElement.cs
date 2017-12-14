@@ -1,11 +1,7 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using DashworksTestAutomation.Base;
 using DashworksTestAutomation.Extensions;
-using NUnit.Framework;
 using OpenQA.Selenium;
 using OpenQA.Selenium.Support.PageObjects;
 
@@ -46,13 +42,14 @@ namespace DashworksTestAutomation.Pages.Evergreen
         [FindsBy(How = How.XPath, Using = ".//button[@class='mat-raised-button']")]
         public IWebElement CancelButton { get; set; }
 
-        [FindsBy(How = How.XPath, Using = ".//div[@class='mat-checkbox-frame']")]
+        [FindsBy(How = How.XPath, Using = ".//div[@class='add-column-checkbox ng-star-inserted']//input")]
         public IWebElement AddCategoryColumnCheckbox { get; set; }
 
         [FindsBy(How = How.XPath, Using = ".//span[@class='mat-checkbox-label']")]
         public IList<IWebElement> AddCategoryColumnName { get; set; }
 
-        [FindsBy(How = How.XPath, Using = ".//div[@class='filterAddPanel ng-star-inserted']//button[@title='Remove filter']")]
+        [FindsBy(How = How.XPath,
+            Using = ".//div[@class='filterAddPanel ng-star-inserted']//button[@title='Remove filter']")]
         public IWebElement RemoveFilterButton { get; set; }
 
         [FindsBy(How = How.XPath, Using = ".//button[@title='Reset Filter']")]
@@ -86,8 +83,8 @@ namespace DashworksTestAutomation.Pages.Evergreen
         {
             List<string> filterValues = new List<string>();
             filterValues.AddRange(Driver.FindElements(By.XPath(
-                          $".//span[@class='filter-label-name'][text()='{filterName}']/ancestor::div[@class='filter-label']//span[contains(@class, 'filter-label-value')]"))
-                      .Select(x => x.Text.TrimStart(' ').TrimEnd(' ')).ToList());
+                    $".//span[@class='filter-label-name'][text()='{filterName}']/ancestor::div[@class='filter-label']//span[contains(@class, 'filter-label-value')]"))
+                .Select(x => x.Text.TrimStart(' ').TrimEnd(' ')).ToList());
             return filterValues;
         }
 

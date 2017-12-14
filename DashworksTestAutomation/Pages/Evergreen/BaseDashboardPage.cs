@@ -1,14 +1,14 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using DashworksTestAutomation.Base;
+﻿using DashworksTestAutomation.Base;
 using DashworksTestAutomation.Extensions;
 using OpenQA.Selenium;
 using OpenQA.Selenium.Support.PageObjects;
+using System;
+using System.Collections.Generic;
+using System.Linq;
 
 namespace DashworksTestAutomation.Pages.Evergreen
 {
-    class BaseDashboardPage : SeleniumBasePage
+    internal class BaseDashboardPage : SeleniumBasePage
     {
         [FindsBy(How = How.XPath, Using = ".//div[@id='pagetitle-text']/descendant::h1")]
         public IWebElement Heading { get; set; }
@@ -58,7 +58,7 @@ namespace DashworksTestAutomation.Pages.Evergreen
         [FindsBy(How = How.XPath, Using = ".//div[@colid='lastLogonDate'][@role='gridcell']")]
         public IList<IWebElement> LastLogonColumnData { get; set; }
 
-        #endregion
+        #endregion TableColumns
 
         public bool SelectAllCheckboxState => SelectAllCheckbox.Selected;
 
@@ -128,7 +128,8 @@ namespace DashworksTestAutomation.Pages.Evergreen
 
         public string ActiveCustomListName()
         {
-            Driver.WaitWhileControlIsNotDisplayed(By.XPath(".//div[@class='active-list-wrapper ng-star-inserted']//span"));
+            Driver.WaitWhileControlIsNotDisplayed(
+                By.XPath(".//div[@class='active-list-wrapper ng-star-inserted']//span"));
             return Driver.FindElement(By.XPath(".//div[@class='active-list-wrapper ng-star-inserted']//span")).Text;
         }
 
@@ -145,7 +146,7 @@ namespace DashworksTestAutomation.Pages.Evergreen
             {
                 return Driver.FindElement(By.XPath($".//div[@id='submenuBlock']//div[text()='{listName}']"));
             }
-            catch (Exception e)
+            catch (Exception)
             {
                 return Driver.FindElement(By.XPath($".//div[@id='submenuBlock']//span[text()='{listName}']"));
             }
@@ -173,9 +174,11 @@ namespace DashworksTestAutomation.Pages.Evergreen
                 case "Left":
                     return Driver.FindElement(By.XPath(".//div[@class='ag-pinned-left-header']//span[@ref='eText']"))
                         .Text;
+
                 case "Right":
                     return Driver.FindElement(By.XPath(".//div[@class='ag-pinned-right-header']//span[@ref='eText']"))
                         .Text;
+
                 default: throw new Exception($"{pinStatus} is not valid Pin Value");
             }
         }

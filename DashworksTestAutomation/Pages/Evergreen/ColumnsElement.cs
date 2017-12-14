@@ -6,8 +6,6 @@ using DashworksTestAutomation.Base;
 using DashworksTestAutomation.Extensions;
 using OpenQA.Selenium;
 using OpenQA.Selenium.Support.PageObjects;
-using TechTalk.SpecFlow;
-using TechTalk.SpecFlow.Plugins;
 
 namespace DashworksTestAutomation.Pages.Evergreen
 {
