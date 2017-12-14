@@ -1,16 +1,16 @@
-﻿using System;
-using System.Linq;
-using DashworksTestAutomation.Extensions;
+﻿using DashworksTestAutomation.Extensions;
 using DashworksTestAutomation.Pages.Evergreen;
 using DashworksTestAutomation.Utils;
 using NUnit.Framework;
 using OpenQA.Selenium.Remote;
+using System;
+using System.Linq;
 using TechTalk.SpecFlow;
 
 namespace DashworksTestAutomation.Steps.Dashworks
 {
     [Binding]
-    class EvergreenJnr_ActionsPanel : SpecFlowContext
+    internal class EvergreenJnr_ActionsPanel : SpecFlowContext
     {
         private readonly RemoteWebDriver _driver;
 
@@ -47,7 +47,7 @@ namespace DashworksTestAutomation.Steps.Dashworks
             }
         }
 
-        [Then(@"User is removed selected rows")]
+        [Then(@"User removes selected rows")]
         public void WhenUserIsRemovedSelectedRows()
         {
             var actionsElement = _driver.NowAt<ActionsElement>();

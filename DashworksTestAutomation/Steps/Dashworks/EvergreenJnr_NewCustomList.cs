@@ -1,20 +1,20 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading;
-using DashworksTestAutomation.Extensions;
+﻿using DashworksTestAutomation.Extensions;
 using DashworksTestAutomation.Helpers;
 using DashworksTestAutomation.Pages.Evergreen;
 using DashworksTestAutomation.Utils;
 using NUnit.Framework;
 using OpenQA.Selenium;
 using OpenQA.Selenium.Remote;
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Threading;
 using TechTalk.SpecFlow;
 
 namespace DashworksTestAutomation.Steps.Dashworks
 {
     [Binding]
-    class EvergreenJnr_NewCustomList : SpecFlowContext
+    internal class EvergreenJnr_NewCustomList : SpecFlowContext
     {
         private readonly RemoteWebDriver _driver;
 
@@ -127,8 +127,8 @@ namespace DashworksTestAutomation.Steps.Dashworks
             Assert.IsFalse(listElement.SaveAsDropdown.Displayed(), "Edit List menu is displayed");
         }
 
-        [When(@"User is removed custom list with ""(.*)"" name")]
-        public void WhenUserIsRemovedCustomListWithName(string listName)
+        [When(@"User removes custom list with ""(.*)"" name")]
+        public void WhenUserRemovesCustomListWithName(string listName)
         {
             var listElement = _driver.NowAt<CustomListElement>();
 
@@ -167,7 +167,9 @@ namespace DashworksTestAutomation.Steps.Dashworks
         {
             //New implementation
             var listsIds = DatabaseHelper.ExecuteReader("SELECT [ListId] FROM[DesktopBI].[dbo].[EvergreenList]", 0);
+
             DatabaseHelper.RemoveLists(listsIds);
+
             //Old implementation
             //try
             //{

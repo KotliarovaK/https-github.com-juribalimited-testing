@@ -16,7 +16,7 @@ namespace DashworksTestAutomation.Extensions
 {
     internal static class WebDriverExtensions
     {
-        private static readonly TimeSpan WaitTimeout = TimeSpan.FromSeconds(35);
+        private static readonly TimeSpan WaitTimeout = TimeSpan.FromSeconds(45);
         private static readonly TimeSpan PollingInterval = TimeSpan.FromSeconds(5);
         private const int WaitTimes = 2;
 

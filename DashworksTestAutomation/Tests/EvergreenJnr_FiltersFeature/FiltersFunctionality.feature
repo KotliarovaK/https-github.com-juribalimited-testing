@@ -167,7 +167,7 @@ Scenario: EvergreenJnr_Devices_Check that Add column checkbox is unchecked after
 	When User click Edit button for "Compliance" filter
 	Then "Add column" checkbox is checked
 	When User clicks the Columns button
-	When User is removed "Compliance" column by Column panel
+	When User removes "Compliance" column by Column panel
 	When User clicks the Filters button
 	When User click Edit button for "Compliance" filter
 	Then "Add column" checkbox is unchecked
