@@ -12,35 +12,35 @@ Background: Pre-Conditions
 	Then Evergreen Dashboards page should be displayed to the user
 
 @Evergreen @Devices @EvergreenJnr_Columns @RemoveColumn @DAS-10966 @DAS-10973 @Delete_Newly_Created_List
-Scenario: EvergreenJnr_DevicesList_Check that 500 error page is not displayed after removing sorted column in custom list
+Scenario: Evergreen DevicesList Check that 500 error page is not displayed after removing sorted column in custom list
 	When User clicks "Devices" on the left-hand menu
 	Then "Devices" list should be displayed to the user
 	When User clicks the Columns button
 	Then Columns panel is displayed to the user
 	When ColumnName is entered into the search box and the selection is clicked
 	| ColumnName |
-	| Build Date |
+	| Device Key |
 	Then ColumnName is added to the list
 	| ColumnName |
-	| Build Date |
+	| Device Key |
 	When User create custom list with "TestList" name
 	Then "TestList" list is displayed to user
 	When User clicks the Columns button
 	Then Columns panel is displayed to the user
 	When ColumnName is entered into the search box and the selection is clicked
 	| ColumnName    |
-	| Boot Up Date |
+	| Boot Up Date  |
 	Then ColumnName is added to the list
 	| ColumnName   |
 	| Boot Up Date |
-	When User click on 'Build Date' column header
+	When User click on 'Device Key' column header
 	When User clicks the Columns button
 	Then Columns panel is displayed to the user
-	When User removes "Build Date" column by Column panel
+	When User removes "Device Key" column by Column panel
 	Then "Devices" list should be displayed to the user
 	Then ColumnName is removed from the list
 	| ColumnName |
-	| Build Date |
+	| Device Key |
 	When User click on 'Boot Up Date' column header
 	When User removes column by URL
 	| ColumnName   |
@@ -53,7 +53,7 @@ Scenario: EvergreenJnr_DevicesList_Check that 500 error page is not displayed af
 	And User is logged out
 
 @Evergreen @Devices @EvergreenJnr_Columns @RemoveColumn @DAS-10966 @DAS-10973 @Delete_Newly_Created_List
-Scenario: EvergreenJnr_DevicesList_Check that 500 error page is not displayed after removing multiple sorted column in custom list
+Scenario: Evergreen DevicesList Check that 500 error page is not displayed after removing multiple sorted column in custom list
 	When User clicks "Devices" on the left-hand menu
 	Then "Devices" list should be displayed to the user
 	When User clicks the Columns button

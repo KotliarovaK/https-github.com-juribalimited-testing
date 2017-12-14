@@ -161,7 +161,7 @@ namespace DashworksTestAutomation.Extensions
         //	Driver.WaitWhileControlIsNotDisplayed<ClaimListPage>(() => claimListPage.CreateClaimButton);
         //	OR JUST
         //	Driver.WaitWhileControlIsNotDisplayed<ClaimListPage>(() => NowHere<ClaimListPage>().CreateClaimButton);
-        public static void WaitWhileControlIsNotClicable<T>(this RemoteWebDriver driver, Expression<Func<IWebElement>> elementGetter)
+        public static void WaitWhileControlIsNotClickable<T>(this RemoteWebDriver driver, Expression<Func<IWebElement>> elementGetter)
         {
             var propertyName = ((MemberExpression)elementGetter.Body).Member.Name;
             var by = GetByFor<T>(propertyName);
