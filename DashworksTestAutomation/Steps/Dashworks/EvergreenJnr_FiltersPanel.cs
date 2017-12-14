@@ -137,14 +137,15 @@ namespace DashworksTestAutomation.Steps.Dashworks
             filter.Do();
         }
 
-        //[When(@"User add ""(.*)"" filter where type is ""(.*)"" with following value and association:")]
-        //public void WhenUserAddFilterWhereTypeIsWithFollowingValueAndAssociation(string filterName, string filterType, bool acceptCheckbox, Table table)
-        //{
-        //    var filtersNames = _driver.NowAt<FiltersElement>();
-        //    filtersNames.AddFilter(filterName);
-        //    var filter = new LookupCheckBoxesFilter(_driver,filterType, acceptCheckbox, table);
-        //    filter.Do();
-        //}
+        [When(@"User add ""(.*)"" filter where type is ""(.*)"" with following value and association:")]
+        public void WhenUserAddFilterWhereTypeIsWithFollowingValueAndAssociation(string filterName,
+            string filterType, bool acceptCheckbox, Table table)
+        {
+            var filtersNames = _driver.NowAt<FiltersElement>();
+            filtersNames.AddFilter(filterName);
+            var filter = new ValueCheckboxFilter(_driver, filterType, acceptCheckbox, table);
+            filter.Do();
+        }
 
         [When(@"User add ""(.*)"" filter where type is ""(.*)"" with added column and ""(.*)"" Date filter")]
         public void WhenUserAddFilterWhereTypeIsWithAddedColumnAndDateFilter(string filterName, string filterType,

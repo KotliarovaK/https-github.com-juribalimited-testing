@@ -128,7 +128,7 @@ Scenario: EvergreenJnr_DevicesList_agGrid_Check that 'new list created' message 
 	Then "UnbelievableTestList" list is displayed to user
 	And "New list created" message is displayed
 
-@Evergreen @Users @EvergreenJnr_ListPanel @CustomListDisplay @DAS-11005 @Delete_Newly_Created_List
+@Evergreen @Users @EvergreenJnr_ListPanel @CustomListDisplay @DAS-11005 @DAS-11489 @Delete_Newly_Created_List
 Scenario: EvergreenJnr_UsersList_Check that lists is displayed in alphabetical order
 	When User clicks "Users" on the left-hand menu
 	Then "Users" list should be displayed to the user
@@ -160,6 +160,13 @@ Scenario: EvergreenJnr_UsersList_Check that lists is displayed in alphabetical o
 	| AAH0343264       |
 	And User create static list with "KY TestList Static List" name
 	Then "KY TestList Static List" list is displayed to user
+	When User navigates to the "All Users" list
+	Then "Users" list should be displayed to the user
+	When User clicks the Actions button
+	Then Actions panel is displayed to the user
+	When User select all rows
+	And User create static list with "NINJA TestList Static List" name
+	Then "NINJA TestList Static List" list is displayed to user
 	When User navigates to the "All Users" list
 	Then "Users" list should be displayed to the user
 	When User clicks the Actions button
