@@ -171,7 +171,7 @@ Scenario: EvergreenJnr_Devices_Check that Add column checkbox is unchecked after
 	When User clicks the Filters button
 	When User click Edit button for "Compliance" filter
 	Then "Add column" checkbox is unchecked
-	And "Add Column" checkbox is disabled
+	And "Add column" checkbox is not disabled
 
 @Evergreen @AllLists @EvergreenJnr_FilterFeature @FilterFunctionality @DAS-10977 @DAS-11507
 Scenario Outline: EvergreenJnr_AllLists_Check that filter is restored correctly after leaving the page and going back via the browse "back" button for checkboxes filters

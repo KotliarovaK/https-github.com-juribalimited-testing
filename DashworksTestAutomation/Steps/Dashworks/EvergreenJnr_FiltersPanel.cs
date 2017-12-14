@@ -269,8 +269,19 @@ namespace DashworksTestAutomation.Steps.Dashworks
         [Then(@"""(.*)"" checkbox is disabled")]
         public void ThenCheckboxIsDisabled(string addColumn)
         {
+            AssertAddColumnCheckboxEnabledState(true, addColumn);
+        }
+
+        [Then(@"""(.*)"" checkbox is not disabled")]
+        public void ThenCheckboxIsNotDisabled(string addColumn)
+        {
+            AssertAddColumnCheckboxEnabledState(false, addColumn);
+        }
+
+        private void AssertAddColumnCheckboxEnabledState(bool expectedCondition, string addColumn)
+        {
             var filterElement = _driver.NowAt<FiltersElement>();
-            Assert.IsTrue(Convert.ToBoolean(filterElement.AddCategoryColumnCheckbox.GetAttribute("disabled")),
+            Assert.AreEqual(expectedCondition, Convert.ToBoolean(filterElement.AddCategoryColumnCheckbox.GetAttribute("disabled")),
                 $"{addColumn} Checkbox is selected");
         }
 
