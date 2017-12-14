@@ -319,7 +319,7 @@ Scenario: EvergreenJnr_DevicesList_Check that newly saved list is created with t
 	When User select "Hostname" rows in the grid
 	| SelectedRowsName |
 	| 020JQ9RO0J4H07X  |
-	Then User is removed selected rows
+	Then User removes selected rows
 	When User navigates to the "All Devices" list
 	Then "Devices" list should be displayed to the user
 	When User navigates to the "Static List TestName" list

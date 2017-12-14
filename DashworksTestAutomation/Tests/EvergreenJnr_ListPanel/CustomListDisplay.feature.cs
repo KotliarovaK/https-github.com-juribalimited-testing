@@ -738,7 +738,7 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_ListPanel
             table22.AddRow(new string[] {
                         "020JQ9RO0J4H07X"});
             testRunner.When("User select \"Hostname\" rows in the grid", ((string)(null)), table22, "When ");
-            testRunner.Then("User is removed selected rows", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+            testRunner.Then("User removes selected rows", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
             testRunner.When("User navigates to the \"All Devices\" list", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
             testRunner.Then("\"Devices\" list should be displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
             testRunner.When("User navigates to the \"Static List TestName\" list", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
