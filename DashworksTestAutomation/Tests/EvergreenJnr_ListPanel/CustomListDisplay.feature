@@ -101,18 +101,6 @@ Scenario: EvergreenJnr_DevicesList_agGrid_Check that Search does not trigger new
 	Then Signed Out page is displayed to the user
 	And User is logged out
 
-@Evergreen @Devices @EvergreenJnr_ListPanel @CustomListDisplay @DAS-10704
-Scenario: EvergreenJnr_DevicesList_agGrid_Check that quick search doesn't triggers new list menu
-	When User clicks "Devices" on the left-hand menu
-	Then "Devices" list should be displayed to the user
-	Then User enters SearchCriteria into the agGrid Search Box and the correct NumberOfRows are returned
-	| SearchCriteria | NumberOfRows |
-	| Smith          | 11           |
-	Then Save to New Custom List element is NOT displayed
-	When User clicks the Logout button
-	Then Signed Out page is displayed to the user
-	And User is logged out
-
 @Evergreen @Devices @EvergreenJnr_ListPanel @CustomListDisplay @DAS-11081 @Delete_Newly_Created_List
 Scenario: EvergreenJnr_DevicesList_agGrid_Check that 'new list created' message for static list is displayed
 	When User clicks "Devices" on the left-hand menu
