@@ -142,7 +142,7 @@ namespace DashworksTestAutomation.Steps.Dashworks
         {
             var filtersNames = _driver.NowAt<FiltersElement>();
             filtersNames.AddFilter(filterName);
-            var filter = new LookupValueFilter(_driver, operatorValue, true, table);
+            var filter = new LookupValueFilter(_driver, operatorValue, table);
             filter.Do();
         }
 
