@@ -215,10 +215,14 @@ namespace DashworksTestAutomation.Steps.Dashworks
         [AfterScenario("Delete_Newly_Created_List")]
         public void DeleteAllCustomListsAfterScenarioRun()
         {
-            //New implementation
-            var listsIds = DatabaseHelper.ExecuteReader("SELECT [ListId] FROM[DesktopBI].[dbo].[EvergreenList]", 0);
+            try
+            {
+                //New implementation
+                var listsIds = DatabaseHelper.ExecuteReader("SELECT [ListId] FROM[DesktopBI].[dbo].[EvergreenList]", 0);
 
-            DatabaseHelper.RemoveLists(listsIds);
+                DatabaseHelper.RemoveLists(listsIds);
+            }
+            catch { }
 
             //Old implementation
             //try
