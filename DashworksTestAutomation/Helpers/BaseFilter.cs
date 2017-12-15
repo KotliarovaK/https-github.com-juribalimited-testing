@@ -184,30 +184,30 @@ namespace DashworksTestAutomation.Helpers
         }
     }
 
-    public class ValueCheckboxFilter : BaseFilter
+    public class LookupValueFilter : BaseFilter
     {
-        private string _value { get; set; }
+        private Table Table { get; set; }
 
-        public ValueCheckboxFilter(RemoteWebDriver driver, string operatorValue, bool acceptCheckbox, Table table) :
-            base( driver, operatorValue, acceptCheckbox)
+        public LookupValueFilter(RemoteWebDriver driver, string operatorValue, bool acceptCheckbox, Table table) : base(
+            driver, operatorValue, acceptCheckbox)
         {
-            _table = table;
+            Table = table;
         }
 
         public override void Do()
         {
             SelectOperator();
             _driver.WaitForDataLoading();
-            foreach (var row in _table.Rows)
+            foreach (var row in Table.Rows)
             {
-                _driver.FindElement(By.XPath(".//div[@class='filterAddPanel ng-star-inserted']//input[@placeholder='Search']"))
-                    .Click();
+                _driver.FindElement(By.XPath(".//div[@id='context']//input[@id='md-input-13']"))
+                    .SendKeys(row["SelectedValues"]);
                 _driver.FindElement(By.XPath($".//div[@class='filterAddPanel ng-star-inserted']//span[contains(text(),'{row["SelectedValues"]}')]"))
                     .Click();
             }
-            foreach (var row in _table.Rows)
+            foreach (var row in Table.Rows)
             {
-                _driver.FindElement(By.XPath(".//div[@id='context']//input[@placeholder='Search']")).Click();
+                _driver.FindElement(By.XPath(".//div[@id='context']//input[@id='md-input-12']")).Click();
                 _driver.FindElement(By.XPath($".//li//span[text()='{row["Association"]}']")).Click();
             }
             SaveFilter();
