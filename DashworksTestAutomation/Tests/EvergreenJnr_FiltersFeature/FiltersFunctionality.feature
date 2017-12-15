@@ -67,7 +67,7 @@ Scenario: EvergreenJnr_ApplicationsList_Check that add column checkbox works cor
 	| SelectedCheckboxes  |
 	| A Star Packages     |
 	Then "Windows7Mi: Category" filter is added to the list
-	Then table data is filtred correctly
+	Then table data is filtered correctly
 	When User clicks the Logout button
 	Then Signed Out page is displayed to the user
 	And User is logged out
