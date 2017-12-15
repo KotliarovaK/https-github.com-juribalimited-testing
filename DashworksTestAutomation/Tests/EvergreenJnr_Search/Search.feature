@@ -11,8 +11,8 @@ Background: Pre-Conditions
 	When User clicks the Switch to Evergreen link
 	Then Evergreen Dashboards page should be displayed to the user
 
-@Evergreen @Devices @EvergreenJnr_Search @Search @DAS-10704 @Delete_Newly_Created_List
-Scenario: EvergreenJnr_DevicesList_agGrid_Check that quick search reset when moving between lists
+@Evergreen @Devices @EvergreenJnr_Search @Search @DAS-10704
+Scenario: EvergreenDevicesListCheckThatQuickSearchResetWhenMovingBetweenLists
 	When User clicks "Devices" on the left-hand menu
 	Then "Devices" list should be displayed to the user
 	When User clicks the Columns button
@@ -30,6 +30,15 @@ Scenario: EvergreenJnr_DevicesList_agGrid_Check that quick search reset when mov
 	| Smith          | 11           |
 	When User navigates to the "All Devices" list
 	Then Search field is empty
+
+@Evergreen @Devices @EvergreenJnr_Search @Search @DAS-10704
+Scenario: EvergreenDevicesListCheckThatQuickSearchDoesntTriggersNewListMenu
+	When User clicks "Devices" on the left-hand menu
+	Then "Devices" list should be displayed to the user
+	Then User enters SearchCriteria into the agGrid Search Box and the correct NumberOfRows are returned
+	| SearchCriteria | NumberOfRows |
+	| Smith          | 11           |
+	Then Save to New Custom List element is NOT displayed
 
 @Evergreen @Devices @Applications @Users @Mailboxes @EvergreenJnr_Search @Search @DAS-10580 @DAS-10667 @DAS-10624
 Scenario: EvergreenJnr_AllLists_Check search filter and table content during navigation between pages

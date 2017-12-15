@@ -1,8 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text.RegularExpressions;
-using DashworksTestAutomation.Extensions;
+﻿using DashworksTestAutomation.Extensions;
 using DashworksTestAutomation.Helpers;
 using DashworksTestAutomation.Pages;
 using DashworksTestAutomation.Pages.Evergreen;
@@ -10,12 +6,16 @@ using DashworksTestAutomation.Providers;
 using DashworksTestAutomation.Utils;
 using NUnit.Framework;
 using OpenQA.Selenium.Remote;
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text.RegularExpressions;
 using TechTalk.SpecFlow;
 
 namespace DashworksTestAutomation.Steps.Dashworks
 {
     [Binding]
-    class EvergreenJnr_FiltersPanel : SpecFlowContext
+    internal class EvergreenJnr_FiltersPanel : SpecFlowContext
     {
         private readonly RemoteWebDriver _driver;
         private readonly ColumnNameToUrlConvertor _convertor;
@@ -200,8 +200,8 @@ namespace DashworksTestAutomation.Steps.Dashworks
             }
         }
 
-        [Then(@"table data is filtred correctly")]
-        public void ThenTableDataIsFiltredCorrectly()
+        [Then(@"table data is filtered correctly")]
+        public void ThenTableDataIsFilteredCorrectly()
         {
             var filterElement = _driver.NowAt<FiltersElement>();
             var basePage = _driver.NowAt<BaseDashboardPage>();
@@ -211,6 +211,7 @@ namespace DashworksTestAutomation.Steps.Dashworks
             for (int i = 0; i < allColumns.First().Value.Count; i++)
             {
                 bool result = false;
+
                 //Check that all values in the row are empty
                 //This happens after 22 row when data is not loading
                 var allValuesAreEmpty = allColumns.Select(column => column.Value[i])

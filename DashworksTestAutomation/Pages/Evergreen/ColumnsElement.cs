@@ -1,15 +1,15 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading;
-using DashworksTestAutomation.Base;
+﻿using DashworksTestAutomation.Base;
 using DashworksTestAutomation.Extensions;
 using OpenQA.Selenium;
 using OpenQA.Selenium.Support.PageObjects;
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Threading;
 
 namespace DashworksTestAutomation.Pages.Evergreen
 {
-    class ColumnsElement : SeleniumBasePage
+    internal class ColumnsElement : SeleniumBasePage
     {
         [FindsBy(How = How.XPath, Using = ".//div[@class='columns-panel']")]
         public IWebElement ColumnsPanel { get; set; }
@@ -66,6 +66,7 @@ namespace DashworksTestAutomation.Pages.Evergreen
                 .FindElement(
                     By.XPath(".//div[contains(@class,'filter-category-title filter-selection ng-star-inserted')]"))
                 .Click();
+
             //Small wait for subcategoris display
             Thread.Sleep(350);
             var subCategories =
@@ -121,8 +122,7 @@ namespace DashworksTestAutomation.Pages.Evergreen
 
         public bool CategoryIsDisplayed(string sectionsName)
         {
-            return Driver.IsElementDisplayed(
-                By.XPath($".//div[contains(@class, 'filter-category-label')][text()='{sectionsName}']"));
+            return Driver.IsElementDisplayed(By.XPath($".//div[contains(@class, 'filter-category-label')][text()='{sectionsName}']"));
         }
     }
 }

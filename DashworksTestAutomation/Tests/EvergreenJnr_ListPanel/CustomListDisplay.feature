@@ -12,7 +12,7 @@ Background: Pre-Conditions
 	Then Evergreen Dashboards page should be displayed to the user
 
 @Evergreen @Devices @EvergreenJnr_ListPanel @CustomListDisplay @DAS-11003
-Scenario: EvergreenJnr_DevicesList_Check that custom list creation block is not displayed when deleting a filter in default list
+Scenario: EvergreenJnr_DevicesList_CheckThatCustomListCreationBlockIsNotDisplayedWhenDeletingAFilterInDefaultList
 	When User clicks "Devices" on the left-hand menu
 	Then "Devices" list should be displayed to the user
 	When User clicks the Filters button
@@ -23,12 +23,9 @@ Scenario: EvergreenJnr_DevicesList_Check that custom list creation block is not 
 	Then "Windows7Mi: Category" filter is added to the list
 	When User have removed "Windows7Mi: Category" filter
 	Then Save to New Custom List element is NOT displayed
-	When User clicks the Logout button
-	Then Signed Out page is displayed to the user
-	And User is logged out
 
 @Evergreen @Devices @EvergreenJnr_ListPanel @CustomListDisplay @DAS-11003
-Scenario: EvergreenJnr_DevicesList_Check that custom list creation block is not displayed when reseting a filter in default list
+Scenario: EvergreenJnr_DevicesList_CheckThatCustomListCreationBlockIsNotDisplayedWhenResetingAFilterInDefaultList
 	When User clicks "Devices" on the left-hand menu
 	Then "Devices" list should be displayed to the user
 	When User clicks the Filters button
@@ -39,12 +36,9 @@ Scenario: EvergreenJnr_DevicesList_Check that custom list creation block is not 
 	Then "Windows7Mi: Category" filter is added to the list
 	When User have reset all filters
 	Then Save to New Custom List element is NOT displayed
-	When User clicks the Logout button
-	Then Signed Out page is displayed to the user
-	And User is logged out
 
 @Evergreen @Devices @EvergreenJnr_ListPanel @CustomListDisplay @DAS-11017 @Delete_Newly_Created_List
-Scenario: EvergreenJnr_DevicesList_Check that custom list creation block is not displayed when deleting a filter in custom list
+Scenario: EvergreenDevicesListCheckThatCustomListCreationBlockIsNotDisplayedWhenDeletingAFilterInCustomList
 	When User clicks "Devices" on the left-hand menu
 	Then "Devices" list should be displayed to the user
 	When User clicks the Filters button
@@ -65,10 +59,9 @@ Scenario: EvergreenJnr_DevicesList_Check that custom list creation block is not 
 	Then Edit List menu is displayed
 	When User have removed "Directory Type" filter
 	Then Edit List menu is displayed
-	When User update current custom list
 
 @Evergreen @Devices @EvergreenJnr_ListPanel @CustomListDisplay @DAS-11017 @Delete_Newly_Created_List
-Scenario: EvergreenJnr_DevicesList_Check that custom list creation block is not displayed when reseting a filter in custom list
+Scenario: EvergreenDevicesListCheckThatCustomListCreationBlockIsNotDisplayedWhenResetingAFilterInCustomList
 	When User clicks "Devices" on the left-hand menu
 	Then "Devices" list should be displayed to the user
 	When User clicks the Filters button
@@ -87,7 +80,6 @@ Scenario: EvergreenJnr_DevicesList_Check that custom list creation block is not 
 	Then "Directory Type" filter is added to the list
 	When User have reset all filters
 	Then Edit List menu is displayed
-	When User update current custom list
 
 @Evergreen @Devices @EvergreenJnr_ListPanel @CustomListDisplay @DAS-10998
 Scenario: EvergreenJnr_DevicesList_agGrid_Check that Search does not trigger new Custom List
@@ -97,21 +89,6 @@ Scenario: EvergreenJnr_DevicesList_agGrid_Check that Search does not trigger new
 	| SearchCriteria | NumberOfRows |
 	| Henry          | 34           |
 	Then Save to New Custom List element is NOT displayed
-	When User clicks the Logout button
-	Then Signed Out page is displayed to the user
-	And User is logged out
-
-@Evergreen @Devices @EvergreenJnr_ListPanel @CustomListDisplay @DAS-10704
-Scenario: EvergreenJnr_DevicesList_agGrid_Check that quick search doesn't triggers new list menu
-	When User clicks "Devices" on the left-hand menu
-	Then "Devices" list should be displayed to the user
-	Then User enters SearchCriteria into the agGrid Search Box and the correct NumberOfRows are returned
-	| SearchCriteria | NumberOfRows |
-	| Smith          | 11           |
-	Then Save to New Custom List element is NOT displayed
-	When User clicks the Logout button
-	Then Signed Out page is displayed to the user
-	And User is logged out
 
 @Evergreen @Devices @EvergreenJnr_ListPanel @CustomListDisplay @DAS-11081 @Delete_Newly_Created_List
 Scenario: EvergreenJnr_DevicesList_agGrid_Check that 'new list created' message for static list is displayed
