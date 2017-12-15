@@ -27,6 +27,3 @@ Scenario: EvergreenJnr_DevicesList_Add the Device key column to the devices list
 	And Content is present in the newly added column
 	| ColumnName          |
 	| Device Key          |
-	When User clicks the Logout button
-	Then Signed Out page is displayed to the user
-	And User is logged out

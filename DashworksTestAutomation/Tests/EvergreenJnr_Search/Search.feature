@@ -63,10 +63,6 @@ Scenario: EvergreenJnr_AllLists_Check search filter and table content during nav
 	Then "Devices" list should be displayed to the user
 	Then "17,225" rows are displayed in the agGrid
 	Then Search field is empty
-	When User clicks the Logout button
-	Then Signed Out page is displayed to the user
-	And User is logged out
-
 
 @Evergreen @Devices @EvergreenJnr_Search @Search
 Scenario: EvergreenJnr_DevicesList_Search Tests
@@ -94,9 +90,6 @@ Scenario: EvergreenJnr_DevicesList_Search Tests
 	| 192.168.6           | 5,100        |
 	| RED                 | 9,238        |
 	| 0JIE                | 1            |
-	When User clicks the Logout button
-	Then Signed Out page is displayed to the user
-	And User is logged out
 
 @Evergreen @Devices @EvergreenJnr_Search @Search @DAS-11012
 Scenario: EvergreenJnr_DevicesList_Clearing search returns the full data set
@@ -109,9 +102,6 @@ Scenario: EvergreenJnr_DevicesList_Clearing search returns the full data set
 	And Clearing the agGrid Search Box
 	Then "17,225" rows are displayed in the agGrid
 	Then URL is "http://automation.corp.juriba.com/evergreen/#/devices"
-	When User clicks the Logout button
-	Then Signed Out page is displayed to the user
-	And User is logged out
 
 @Evergreen @Devices @EvergreenJnr_Search @Search
 Scenario: EvergreenJnr_DevicesList_Search_No Devices Found
@@ -140,6 +130,3 @@ Scenario: EvergreenJnr_DevicesList_Search_No Devices Found
 	| demo.juriba.co.uk |
 	| 67#               |
 	| #12               |
-	When User clicks the Logout button
-	Then Signed Out page is displayed to the user
-	And User is logged out

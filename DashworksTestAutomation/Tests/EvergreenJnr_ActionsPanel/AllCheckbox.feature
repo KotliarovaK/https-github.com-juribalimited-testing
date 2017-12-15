@@ -31,9 +31,6 @@ Scenario: EvergreenJnr_UsersList_Select All Checkbox Status Check After Search
 	And Clearing the agGrid Search Box
 	Then Select All selectbox is checked
 	Then "42" selected rows are displayed in the Actions panel
-	When User clicks the Logout button
-	Then Signed Out page is displayed to the user
-	And User is logged out
 
 @Evergreen @AllLists @Evergreen_ActionsPanel @AllCheckbox @DAS-10775
 Scenario Outline: EvergreenJnr_AllLists_Check that select All Checkbox status after closing action panel
@@ -44,9 +41,6 @@ Scenario Outline: EvergreenJnr_AllLists_Check that select All Checkbox status af
 	When User select all rows
 	When User clicks the Actions button
 	Then Select all checkbox is not displayed
-	When User clicks the Logout button
-	Then Signed Out page is displayed to the user
-	And User is logged out
 
 Examples: 
 	| PageName     |
@@ -69,9 +63,6 @@ Scenario: EvergreenJnr_DevicesList_Search Within All Rows
 	| Yolande Sylvain | 1            |
 	And Clearing the agGrid Search Box
 	Then "17,225" rows are displayed in the agGrid
-	When User clicks the Logout button
-	Then Signed Out page is displayed to the user
-	And User is logged out
 
 @Evergreen @Devices @Evergreen_ActionsPanel @AllCheckbox @DAS-10656
 Scenario: EvergreenJnr_DevicesList_Select All checbox main functionality test
@@ -93,6 +84,3 @@ Scenario: EvergreenJnr_DevicesList_Select All checbox main functionality test
 	When User click on 'Hostname' column header
 	Then data in table is sorted by 'Hostname' column in descending order
 	Then "17223" selected rows are displayed in the Actions panel
-	When User clicks the Logout button
-	Then Signed Out page is displayed to the user
-	And User is logged out

@@ -22,9 +22,6 @@ Scenario: EvergreenJnr_DevicesList_Check that 'Add column' option as available f
 	Then checkboxes are displayed to the User:
 	| SelectedCheckboxes    |
 	| Add Compliance column |   
-	When User clicks the Logout button
-	Then Signed Out page is displayed to the user
-	And User is logged out
 
 @Evergreen @Applications @Evergreen_FiltersFeature @FiltersDisplay @DAS-10651
 Scenario: EvergreenJnr_ApplicationsList_Check true-false options and images in filter info
@@ -45,9 +42,6 @@ Scenario: EvergreenJnr_ApplicationsList_Check true-false options and images in f
 	| true    |
 	| false   |
 	| Unknown |
-	When User clicks the Logout button
-	Then Signed Out page is displayed to the user
-	And User is logged out
 
 @Evergreen @Users @Evergreen_FiltersFeature @FiltersDisplay @DAS-10754 @DAS-11142 @Delete_Newly_Created_List
 Scenario: EvergreenJnr_UsersList_Check special characters display in filter info
@@ -88,9 +82,6 @@ Scenario: EvergreenJnr_ApplicationsList_Check that 'Group' and 'Team' related fi
 	Then "Windows7Mi: Group Key" filter is not presented in the filters list
 	Then "Windows7Mi: Team" filter is not presented in the filters list
 	Then "Windows7Mi: Team Key" filter is not presented in the filters list
-	When User clicks the Logout button
-	Then Signed Out page is displayed to the user
-	And User is logged out
 
 @Evergreen @Devices @Evergreen_FiltersFeature @FiltersDisplay @DAS-10776
 Scenario: EvergreenJnr_DevicesList_Check that "Empty" and "Not Empty" options is availdable for ObjectKey filter
@@ -111,9 +102,6 @@ Scenario Outline: EvergreenJnr_AllLists_Check that 'Add column' option is availa
 	Then checkboxes are displayed to the User:
 	| SelectedCheckboxes   |
 	| <SelectedCheckboxes> |
-	When User clicks the Logout button
-	Then Signed Out page is displayed to the user
-	And User is logged out
 
 Examples: 
 	| PageName     | FilterName        | SelectedCheckboxes           |
@@ -131,9 +119,6 @@ Scenario: EvergreenJnr_DevicesList_Check that 'Add column' option is not availab
 	Then Filters panel is displayed to the user
 	When user select "Computer Warranty" filter
 	Then "Add column" checkbox is not displayed
-	When User clicks the Logout button
-	Then Signed Out page is displayed to the user
-	And User is logged out
 
 @Evergreen @AllLisrs @Evergreen_FiltersFeature @FiltersDisplay @DAS-10771
 Scenario Outline: EvergreenJnr_AllLisrs_Check that 'None' option is available for filters
@@ -143,9 +128,6 @@ Scenario Outline: EvergreenJnr_AllLisrs_Check that 'None' option is available fo
 	Then Filters panel is displayed to the user
 	When user select "<FilterName>" filter
 	Then "None" option is available at first place
-	When User clicks the Logout button
-	Then Signed Out page is displayed to the user
-	And User is logged out
 
 Examples: 
 	| PageName     | FilterName           |
@@ -293,9 +275,6 @@ Scenario Outline: EvergreenJnr_DevicesList_Check that filter Operators is correc
 	And Options is displayed in added filter info
 	| Values                |
 	| <operatorValueInInfo> |
-	When User clicks the Logout button
-	Then Signed Out page is displayed to the user
-	And User is logged out
 
 Examples: 
 	| operatorValue    | filterOption    | rowsCount | operatorValueInInfo |
@@ -322,9 +301,6 @@ Scenario Outline: EvergreenJnr_UsersList_Check that filter Operators is correct 
 	And Options is displayed in added filter info
 	| Values                |
 	| <operatorValueInInfo> |
-	When User clicks the Logout button
-	Then Signed Out page is displayed to the user
-	And User is logged out
 
 Examples: 
 	| operatorValue  | filterOption | rowsCount | operatorValueInInfo |
@@ -345,9 +321,6 @@ Scenario Outline: EvergreenJnr_ApplicationsList_Check that filter Operators is c
 	And Options is displayed in added filter info
 	| Values                |
 	| <operatorValueInInfo> |
-	When User clicks the Logout button
-	Then Signed Out page is displayed to the user
-	And User is logged out
 
 Examples: 
 	| operatorValue            | filterOption | rowsCount | operatorValueInInfo         |
@@ -372,9 +345,6 @@ Scenario Outline: EvergreenJnr_MailboxesList_Check that filter Operators is corr
 	And Options is displayed in added filter info
 	| Values                |
 	| <operatorValueInInfo> |
-	When User clicks the Logout button
-	Then Signed Out page is displayed to the user
-	And User is logged out
 
 Examples: 
 	| operatorValue  | filterOption | rowsCount | operatorValueInInfo |
@@ -399,9 +369,6 @@ Scenario Outline: EvergreenJnr_DevicesList_Check that filter Operators is correc
 	And Options is displayed in added filter info
 	| Values                |
 	| <operatorValueInInfo> |
-	When User clicks the Logout button
-	Then Signed Out page is displayed to the user
-	And User is logged out
 
 Examples: 
 	| operatorValue  | filterOption | rowsCount | operatorValueInInfo |
@@ -426,9 +393,6 @@ Scenario Outline: EvergreenJnr_UsersList_Check that filter Operators is correct 
 	And Options is displayed in added filter info
 	| Values                |
 	| <operatorValueInInfo> |
-	When User clicks the Logout button
-	Then Signed Out page is displayed to the user
-	And User is logged out
 
 Examples: 
 	| operatorValue  | filterOption | rowsCount | operatorValueInInfo |
@@ -533,9 +497,6 @@ Scenario: EvergreenJnr_MailboxesList_Check that 'Add column' option as available
 	| SelectedCheckboxes                    |
 	| Add Owner Department Name column      |
 	| Add Owner Department Full Path column |
-	When User clicks the Logout button
-	Then Signed Out page is displayed to the user
-	And User is logged out
 
 @Evergreen @Devices @Evergreen_FiltersFeature @FiltersDisplay @DAS-11351
 Scenario: EvergreenJnr_DevicesList_Check that 'Add column' option as available for "Owner Department" filter
@@ -548,9 +509,6 @@ Scenario: EvergreenJnr_DevicesList_Check that 'Add column' option as available f
 	| SelectedCheckboxes                    |
 	| Add Owner Department Name column      |
 	| Add Owner Department Full Path column |
-	When User clicks the Logout button
-	Then Signed Out page is displayed to the user
-	And User is logged out
 
 @Evergreen @Devices @EvergreenJnr_FiltersFeature @FilterFunctionality @DAS-11087
 Scenario: EvergreenJnr_DevicesList_Check that Date and Time filters with "Equals" Values are working correctly
@@ -563,9 +521,6 @@ Scenario: EvergreenJnr_DevicesList_Check that Date and Time filters with "Equals
 	| 22 Nov 2012 |
 	Then "Windows7Mi: Date & Time Task" filter is added to the list
 	Then "16" rows are displayed in the agGrid
-	When User clicks the Logout button
-	Then Signed Out page is displayed to the user
-	And User is logged out
 
 @Evergreen @Devices @EvergreenJnr_FiltersFeature @FilterFunctionality @DAS-11087
 Scenario: EvergreenJnr_DevicesList_Check that Date and Time filters with "Does not equal" Values are working correctly
@@ -578,9 +533,6 @@ Scenario: EvergreenJnr_DevicesList_Check that Date and Time filters with "Does n
 	| 22 Nov 2012 |
 	Then "Windows7Mi: Date & Time Task" filter is added to the list
 	And "17,209" rows are displayed in the agGrid
-	When User clicks the Logout button
-	Then Signed Out page is displayed to the user
-	And User is logged out
 
 @Evergreen @Devices @Evergreen_FiltersFeature @FiltersDisplay @DAS-11187
 Scenario Outline: EvergreenJnr_DevicesList_Check that Custom Filters are contains all expected associations

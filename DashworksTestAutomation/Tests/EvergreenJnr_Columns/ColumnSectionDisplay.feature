@@ -22,6 +22,3 @@ Scenario: EvergreenJnr_DevicesList_Check category heading when all columns from 
 	| CategoryName |
 	| Application  |
 	Then "Applications" section is not displayed in the Columns panel
-	When User clicks the Logout button
-	Then Signed Out page is displayed to the user
-	And User is logged out

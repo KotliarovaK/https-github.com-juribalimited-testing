@@ -22,9 +22,6 @@ Scenario: EvergreenJnr_UsersList_Check that 500 error is not returned for filter
 	| Jeremiah S. O'Connor |
 	Then "Display Name" filter is added to the list
 	And "2" rows are displayed in the agGrid
-	When User clicks the Logout button
-	Then Signed Out page is displayed to the user
-	And User is logged out
 
 @Evergreen @Applications @Evergreen_FiltersFeature @FiltersFunctionality @DAS-10639
 Scenario: EvergreenJnr_ApplicationsList_Check 500 error is not returned for boolean filter with Unknown option
@@ -53,9 +50,6 @@ Scenario: EvergreenJnr_ApplicationsList_Check 500 error is not returned for bool
 	| UNKNOWN            |
 	Then "Windows7Mi: Hide from End Users" filter is added to the list
 	And "1,156" rows are displayed in the agGrid
-	When User clicks the Logout button
-	Then Signed Out page is displayed to the user
-	And User is logged out
 
 @Evergreen @Applications @EvergreenJnr_FiltersFeature @FilterFunctionality @DAS-10734 @DAS-11507
 Scenario: EvergreenJnr_ApplicationsList_Check that add column checkbox works correctly
@@ -68,9 +62,6 @@ Scenario: EvergreenJnr_ApplicationsList_Check that add column checkbox works cor
 	| A Star Packages     |
 	Then "Windows7Mi: Category" filter is added to the list
 	Then table data is filtred correctly
-	When User clicks the Logout button
-	Then Signed Out page is displayed to the user
-	And User is logged out
 
 @Evergreen @Applications @EvergreenJnr_FiltersFeature @FilterFunctionality @DAS-11166 @Delete_Newly_Created_List
 Scenario: EvergreenJnr_ApplicationsList_Check that filter is restored after going back to the list again

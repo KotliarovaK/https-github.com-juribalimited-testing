@@ -48,9 +48,6 @@ Scenario: EvergreenJnr_DevicesList_Check that 500 error page is not displayed af
 	Then ColumnName is removed from the list
 	| ColumnName   |
 	| Boot Up Date |
-	When User clicks the Logout button
-	Then Signed Out page is displayed to the user
-	And User is logged out
 
 @Evergreen @Devices @EvergreenJnr_Columns @RemoveColumn @DAS-10966 @DAS-10973 @Delete_Newly_Created_List
 Scenario: EvergreenJnr_DevicesList_Check that 500 error page is not displayed after removing multiple sorted column in custom list
@@ -93,9 +90,6 @@ Scenario: EvergreenJnr_DevicesList_Check that 500 error page is not displayed af
 	Then ColumnName is removed from the list
 	| ColumnName   |
 	| Boot Up Date |
-	When User clicks the Logout button
-	Then Signed Out page is displayed to the user
-	And User is logged out
 
 @Evergreen @Devices @EvergreenJnr_Columns @RemoveColumn @DAS-10966 @DAS-10973 @Delete_Newly_Created_List
 Scenario: EvergreenJnr_DevicesList_Check that 500 error page is not displayed after removing sorted column in custom list throw filters
@@ -139,9 +133,6 @@ Scenario: EvergreenJnr_DevicesList_Check that 500 error page is not displayed af
 	When User clicks the Filters button
 	Then Filters panel is displayed to the user
 	Then "Directory Type" filter is added to the list
-	When User clicks the Logout button
-	Then Signed Out page is displayed to the user
-	And User is logged out
 
 @Evergreen @Devices @EvergreenJnr_Columns @RemoveColumn @DAS-10966 @DAS-10973
 Scenario: EvergreenJnr_DevicesList_Check that 500 error page is not displayed after removing sorted column in default list
@@ -172,9 +163,6 @@ Scenario: EvergreenJnr_DevicesList_Check that 500 error page is not displayed af
 	Then ColumnName is removed from the list
 	| ColumnName                   |
 	| Windows7Mi: Date & Time Task |
-	When User clicks the Logout button
-	Then Signed Out page is displayed to the user
-	And User is logged out
 
 @Evergreen @Devices @EvergreenJnr_Columns @RemoveColumn @DAS-10966 @DAS-10973
 Scenario: EvergreenJnr_DevicesList_Check that 500 error page is not displayed after removing multiple sorted column in default list
@@ -213,9 +201,6 @@ Scenario: EvergreenJnr_DevicesList_Check that 500 error page is not displayed af
 	| ColumnName                   |
 	| Windows7Mi: Date & Time Task |
 	Then data in table is sorted by 'Build Date' column in descending order
-	When User clicks the Logout button
-	Then Signed Out page is displayed to the user
-	And User is logged out
 
 @Evergreen @Devices @EvergreenJnr_Columns @RemoveColumn @DAS-10966 @DAS-10973
 Scenario: EvergreenJnr_DevicesList_Check that 500 error page is not displayed after removing sorted column in default list throw filters
@@ -256,9 +241,6 @@ Scenario: EvergreenJnr_DevicesList_Check that 500 error page is not displayed af
 	When User clicks the Filters button
 	Then Filters panel is displayed to the user
 	Then "Directory Type" filter is added to the list
-	When User clicks the Logout button
-	Then Signed Out page is displayed to the user
-	And User is logged out
 
 @Evergreen @Users @EvergreenJnr_Columns @RemoveColumn @DAS-10973
 Scenario: Evergreen Users List Check that 500 error page is not displayed after removing sorted column
@@ -284,6 +266,3 @@ Scenario: Evergreen Users List Check that 500 error page is not displayed after 
 	| ColumnName      |
 	| Last Logon Date |
 	| Home Drive      |
-	When User clicks the Logout button
-	Then Signed Out page is displayed to the user
-	And User is logged out

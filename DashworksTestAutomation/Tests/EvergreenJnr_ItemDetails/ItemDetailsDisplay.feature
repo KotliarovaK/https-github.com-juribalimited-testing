@@ -12,50 +12,18 @@ Background: Pre-Conditions
 	When User clicks the Switch to Evergreen link
 	Then Evergreen Dashboards page should be displayed to the user
 
-@Evergreen @Devices @EvergreenJnr_ItemDetails @ItemDetailsDisplay @DAS-10438
-Scenario: EvergreenJnr_DevicesList_All empty fields in item details are displayed as Unknown
-	When User clicks "Devices" on the left-hand menu
-	Then "Devices" list should be displayed to the user
-	When User perform search by "01BQIYGGUW5PRP6"
-	And User click content from "Hostname" column
+@Evergreen @AllLists @EvergreenJnr_ItemDetails @ItemDetailsDisplay @DAS-10438
+Scenario Outline: EvergreenJnr_AllLists_All empty fields in item details are displayed as Unknown
+	When User clicks "<PageName>" on the left-hand menu
+	Then "<PageName>" list should be displayed to the user
+	When User perform search by "<SearchCriteria>"
+	And User click content from "<ColumnName>" column
 	When User navigates to the "Details" tab
 	Then Unknown text is displayed for empty fields for "Department and Location" section
-	When User clicks the Logout button
-	Then Signed Out page is displayed to the user
-	And User is logged out
 
-@Evergreen @Users @EvergreenJnr_ItemDetails @ItemDetailsDisplay @DAS-10438
-Scenario: EvergreenJnr_UsersList_All empty fields in item details are displayed as Unknown
-	When User clicks "Users" on the left-hand menu
-	Then "Users" list should be displayed to the user
-	When User perform search by "ABW1509426"
-	And User click content from "Username" column
-	When User navigates to the "Details" tab
-	Then Unknown text is displayed for empty fields for "Department and Location" section
-	When User clicks the Logout button
-	Then Signed Out page is displayed to the user
-	And User is logged out
-
-@Evergreen @Applications @EvergreenJnr_ItemDetails @ItemDetailsDisplay @DAS-10438
-Scenario: EvergreenJnr_ApplicationsList_All empty fields in item details are displayed as Unknown
-	When User clicks "Applications" on the left-hand menu
-	Then "Applications" list should be displayed to the user
-	When User perform search by "Python 2.2a4"
-	And User click content from "Application" column
-	When User navigates to the "Details" tab
-	Then Unknown text is displayed for empty fields for "Department and Location" section
-	When User clicks the Logout button
-	Then Signed Out page is displayed to the user
-	And User is logged out
-
-@Evergreen @Mailboxes @EvergreenJnr_ItemDetails @ItemDetailsDisplay @DAS-10438
-Scenario: EvergreenJnr_MailboxesList_All empty fields in item details are displayed as Unknown
-	When User clicks "Mailboxes" on the left-hand menu
-	Then "Mailboxes" list should be displayed to the user
-	When User perform search by "azuresync3@juriba1.onmicrosoft.com"
-	And User click content from "Email Address" column
-	When User navigates to the "Details" tab
-	Then Unknown text is displayed for empty fields for "Department and Location" section
-	When User clicks the Logout button
-	Then Signed Out page is displayed to the user
-	And User is logged out
+Examples: 
+	| PageName     | SearchCriteria                     | ColumnName    |
+	| Mailboxes    | azuresync3@juriba1.onmicrosoft.com | Email Address |
+	| Applications | Python 2.2a4                       | Application   |
+	| Users        | ABW1509426                         | Username      |
+	| Devices      | 01BQIYGGUW5PRP6                    | Hostname      |

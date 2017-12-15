@@ -36,6 +36,3 @@ Scenario: EvergreenJnr_UsersList_Check that not owner users don't have permissio
 	| Last Logon Date |
 	Then Update list option is NOT available
 	And Save as a new list option is available
-	When User clicks the Logout button
-	Then Signed Out page is displayed to the user
-	And User is logged out
