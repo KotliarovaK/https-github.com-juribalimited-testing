@@ -702,3 +702,27 @@ Scenario: EvergreenJnr_DevicesList_Check that space after commas in the filters 
 	| 13     |
 	Then "CPU Count" filter is added to the list
 	Then "(Compliance = Unknown, Red, Amber or Green) OR (Import != A01 SMS (Spoof)) OR (Department Code ~ ABC) OR (Department Code !~ ACV) OR (Department Code BEGINS WITH AXZ) OR (Department Code ENDS WITH YQA) OR (Department Code = EMPTY) OR (Department Code != EMPTY) OR (Boot Up Date < 14 Dec 2017) OR (Boot Up Date > 03 Dec 2017) OR (CPU Count > 66) OR (CPU Count >= 12) OR (CPU Count < 31) OR (CPU Count <= 13)" text is displayed in filter container
+
+@Evergreen @Devices @Evergreen_FiltersFeature @FiltersDisplay @DAS-10790 @Delete_Newly_Created_List
+Scenario: EvergreenJnr_DevicesList_Check that application filters being applied against the devices list are restored correctly and are shown in the Filters panel
+	When User clicks "Devices" on the left-hand menu
+	Then "Devices" list should be displayed to the user
+	When User clicks the Filters button
+	Then Filters panel is displayed to the user
+	When User add "Application" filter where type is "Equals" with following value and association:
+	| SelectedValues | Association        |
+	| 7zip (2015)    | Entitled to device |
+	Then "Application" filter is added to the list
+	Then "11" rows are displayed in the agGrid
+	Then "(Application = 7zip (2015) ASSOCIATION = ("entitled to device"))" text is displayed in filter container
+	Then "Application 7zip (2015) is entitled to device" is displayed in added filter info
+	When User create custom list with "TestList" name
+	Then "TestList" list is displayed to user
+	When User navigates to the "All Devices" list
+	When User navigates to the "TestList" list
+	Then "TestList" list is displayed to user
+	Then "11" rows are displayed in the agGrid
+	Then "(Application = 7zip (2015) ASSOCIATION = ("entitled to device"))" text is displayed in filter container
+	When User clicks the Filters button
+	Then Filters panel is displayed to the user
+	And "Application 7zip (2015) is entitled to device" is displayed in added filter info
