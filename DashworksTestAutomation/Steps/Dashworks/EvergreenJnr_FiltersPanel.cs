@@ -50,78 +50,78 @@ namespace DashworksTestAutomation.Steps.Dashworks
         }
 
         [When(@"User have create ""(.*)"" Values filter with column and following options:")]
-        public void WhenUserHaveCreateValuesFilterWithColumnAndFollowingOptions(string filterType, Table table)
+        public void WhenUserHaveCreateValuesFilterWithColumnAndFollowingOptions(string operatorValue, Table table)
         {
             var filterElement = _driver.NowAt<FiltersElement>();
-            var filter = new ValueFilter(_driver, filterType, true, table);
+            var filter = new ValueFilter(_driver, operatorValue, true, table);
             filter.Do();
         }
 
         [When(@"User add ""(.*)"" filter where type is ""(.*)"" with added column and following value:")]
-        public void WhenUserAddFilterWhereTypeIsWithAddedColumnAndFollowingValue(string filterName, string filterType,
+        public void WhenUserAddFilterWhereTypeIsWithAddedColumnAndFollowingValue(string filterName, string operatorValue,
             Table table)
         {
             var filtersNames = _driver.NowAt<FiltersElement>();
             filtersNames.AddFilter(filterName);
-            var type = new ValueFilter(_driver, filterType, true, table);
+            var type = new ValueFilter(_driver, operatorValue, true, table);
             type.Do();
         }
 
         [When(@"User add ""(.*)"" filter where type is ""(.*)"" without added column and following value:")]
         public void WhenUserAddFilterWhereTypeIsWithoutAddedColumnAndFollowingValue(string filterName,
-            string filterType, Table table)
+            string operatorValue, Table table)
         {
             var filtersNames = _driver.NowAt<FiltersElement>();
             filtersNames.AddFilter(filterName);
-            var type = new ValueFilter(_driver, filterType, false, table);
+            var type = new ValueFilter(_driver, operatorValue, false, table);
             type.Do();
         }
 
         [When(@"User have created ""(.*)"" filter with column and following options:")]
-        public void WhenUserHaveCreatedFilterWithColumnAndFollowingOptions(string filterType,
+        public void WhenUserHaveCreatedFilterWithColumnAndFollowingOptions(string operatorValue,
             Table table)
         {
-            CreateFilterWithCheckboxes(filterType, true, table);
+            CreateFilterWithCheckboxes(operatorValue, true, table);
         }
 
         [When(@"User have created ""(.*)"" filter without column and following options:")]
-        public void WhenUserHaveCreatedFilterWithoutColumnAndFollowingOptions(string filterType,
+        public void WhenUserHaveCreatedFilterWithoutColumnAndFollowingOptions(string operatorValue,
             Table table)
         {
-            CreateFilterWithCheckboxes(filterType, false, table);
+            CreateFilterWithCheckboxes(operatorValue, false, table);
         }
 
-        private void CreateFilterWithCheckboxes(string filterType, bool columnOption,
+        private void CreateFilterWithCheckboxes(string operatorValue, bool columnOption,
             Table table)
         {
             var filterElement = _driver.NowAt<FiltersElement>();
-            var filter = new CheckBoxesFilter(_driver, filterType, columnOption, table);
+            var filter = new CheckBoxesFilter(_driver, operatorValue, columnOption, table);
             filter.Do();
         }
 
         [When(@"User add ""(.*)"" filter where type is ""(.*)"" with added column and following checkboxes:")]
         public void WhenUserAddFilterWhereTypeIsWithAddedColumnAndFollowingCheckboxes(string filterName,
-            string filterType, Table table)
+            string operatorValue, Table table)
         {
             var filtersNames = _driver.NowAt<FiltersElement>();
             filtersNames.AddFilter(filterName);
-            var filter = new CheckBoxesFilter(_driver, filterType, true, table);
+            var filter = new CheckBoxesFilter(_driver, operatorValue, true, table);
             filter.Do();
         }
 
         [When(@"User add ""(.*)"" filter where type is ""(.*)"" without added column and following checkboxes:")]
         public void WhenUserAddFilterWhereTypeIsWithoutAddedColumnAndFollowingCheckboxes(string filterName,
-            string filterType, Table table)
+            string operatorValue, Table table)
         {
             var filtersNames = _driver.NowAt<FiltersElement>();
             filtersNames.AddFilter(filterName);
-            var filter = new CheckBoxesFilter(_driver, filterType, false, table);
+            var filter = new CheckBoxesFilter(_driver, operatorValue, false, table);
             filter.Do();
         }
 
         [When(@"User add ""(.*)"" filter where type is ""(.*)"" with SelectedList list and following Association:")]
         public void WhenUserAddFilterWhereTypeIsWithSelectedListListAndFollowingAssociation(string filterName,
-            string filterType, Table table)
+            string operatorValue, Table table)
         {
             var filtersNames = _driver.NowAt<FiltersElement>();
             filtersNames.AddFilter(filterName);
@@ -130,28 +130,37 @@ namespace DashworksTestAutomation.Steps.Dashworks
         }
 
         [When(@"User have created ""(.*)"" filter with SelectedList list and following Association:")]
-        public void WhenUserHaveCreatedFilterWithSelectedListListAndFollowingAssociation(string filterType, Table table)
+        public void WhenUserHaveCreatedFilterWithSelectedListListAndFollowingAssociation(string operatorValue, Table table)
         {
             var filterElement = _driver.NowAt<FiltersElement>();
             var filter = new ListFilter(_driver, table);
             filter.Do();
         }
 
+        [When(@"User add ""(.*)"" filter where type is ""(.*)"" with following value and association:")]
+        public void WhenUserAddFilterWhereTypeIsWithFollowingValueAndAssociation(string filterName, string operatorValue, Table table)
+        {
+            var filtersNames = _driver.NowAt<FiltersElement>();
+            filtersNames.AddFilter(filterName);
+            var filter = new LookupValueFilter(_driver, operatorValue, true, table);
+            filter.Do();
+        }
+
         [When(@"User add ""(.*)"" filter where type is ""(.*)"" with added column and ""(.*)"" Date filter")]
-        public void WhenUserAddFilterWhereTypeIsWithAddedColumnAndDateFilter(string filterName, string filterType,
+        public void WhenUserAddFilterWhereTypeIsWithAddedColumnAndDateFilter(string filterName, string operatorValue,
             string filterValue)
         {
             var filtersNames = _driver.NowAt<FiltersElement>();
             filtersNames.AddFilter(filterName);
-            var filter = new DateFilter(_driver, filterType, true, filterValue);
+            var filter = new DateFilter(_driver, operatorValue, true, filterValue);
             filter.Do();
         }
 
         [When(@"User have created ""(.*)"" Date filter with column and ""(.*)"" option")]
-        public void WhenUserHaveCreatedDateFilterWithColumnAndOption(string filterType, string filterValue)
+        public void WhenUserHaveCreatedDateFilterWithColumnAndOption(string operatorValue, string filterValue)
         {
             var filterElement = _driver.NowAt<FiltersElement>();
-            var filter = new DateFilter(_driver, filterType, true, filterValue);
+            var filter = new DateFilter(_driver, operatorValue, true, filterValue);
             filter.Do();
         }
 
@@ -269,8 +278,19 @@ namespace DashworksTestAutomation.Steps.Dashworks
         [Then(@"""(.*)"" checkbox is disabled")]
         public void ThenCheckboxIsDisabled(string addColumn)
         {
+            AssertAddColumnCheckboxEnabledState(true, addColumn);
+        }
+
+        [Then(@"""(.*)"" checkbox is not disabled")]
+        public void ThenCheckboxIsNotDisabled(string addColumn)
+        {
+            AssertAddColumnCheckboxEnabledState(false, addColumn);
+        }
+
+        private void AssertAddColumnCheckboxEnabledState(bool expectedCondition, string addColumn)
+        {
             var filterElement = _driver.NowAt<FiltersElement>();
-            Assert.IsTrue(Convert.ToBoolean(filterElement.AddCategoryColumnCheckbox.GetAttribute("disabled")),
+            Assert.AreEqual(expectedCondition, Convert.ToBoolean(filterElement.AddCategoryColumnCheckbox.GetAttribute("disabled")),
                 $"{addColumn} Checkbox is selected");
         }
 
