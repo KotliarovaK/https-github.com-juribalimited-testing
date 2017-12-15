@@ -267,11 +267,11 @@ Scenario: Evergreen Users List Check that 500 error page is not displayed after 
 	When User clicks the Columns button
 	Then Columns panel is displayed to the user
 	When ColumnName is entered into the search box and the selection is clicked
-	| ColumnName |
+	| ColumnName      |
 	| Last Logon Date |
 	| Home Drive      |
 	Then ColumnName is added to the list
-	| ColumnName |
+	| ColumnName      |
 	| Last Logon Date |
 	| Home Drive      |
 	When User click on 'Last Logon Date' column header
@@ -281,7 +281,7 @@ Scenario: Evergreen Users List Check that 500 error page is not displayed after 
 	When User removes "Home Drive" column by Column panel
 	Then "Users" list should be displayed to the user
 	Then ColumnName is removed from the list
-	| ColumnName |
+	| ColumnName      |
 	| Last Logon Date |
 	| Home Drive      |
 	When User clicks the Logout button

@@ -27,6 +27,15 @@ namespace DashworksTestAutomation.Steps.Dashworks
             Logger.Write("Actions button was clicked");
         }
 
+        [When(@"User clicks the List Details button")]
+        public void WhenUserClicksTheListDetailsButton()
+        {
+            var menu = _driver.NowAt<BaseDashboardPage>();
+            _driver.WaitWhileControlIsNotDisplayed<BaseDashboardPage>(() => menu.ListDetailsButton);
+            menu.ListDetailsButton.Click();
+            Logger.Write("List Details button was clicked");
+        }
+
         [When(@"User clicks the Columns button")]
         public void WhenUserClicksTheColumnsButton()
         {
@@ -45,8 +54,8 @@ namespace DashworksTestAutomation.Steps.Dashworks
             Logger.Write("Filters button was clicked");
         }
 
-        [Then(@"Filters Button is dsabled")]
-        public void ThenFiltersButtonIsDsabled()
+        [Then(@"Filters Button is disabled")]
+        public void ThenFiltersButtonIsDisabled()
         {
             var menu = _driver.NowAt<BaseDashboardPage>();
             _driver.WaitWhileControlIsNotDisplayed<BaseDashboardPage>(() => menu.FilterButton);

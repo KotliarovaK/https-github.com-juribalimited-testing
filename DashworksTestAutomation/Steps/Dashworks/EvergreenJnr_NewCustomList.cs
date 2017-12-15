@@ -162,6 +162,56 @@ namespace DashworksTestAutomation.Steps.Dashworks
             Assert.AreEqual(list.OrderBy(s => s), list, "Lists names are not in alphabetical order");
         }
 
+        [Then(@"Update list option is NOT available")]
+        public void ThenUpdateListOptionIsNotAvailable()
+        {
+            var listElement = _driver.NowAt<CustomListElement>();
+            _driver.WaitWhileControlIsNotDisplayed<CustomListElement>(() => listElement.SaveAsDropdown);
+
+            if (!listElement.UpdateCurrentListButton.Displayed())
+            {
+                listElement.SaveAsDropdown.Click();
+            }
+            Assert.IsFalse(listElement.UpdateCurrentListButton.Displayed(), "Update Current List button is displayed");
+        }
+
+        [Then(@"Update list option is available")]
+        public void ThenUpdateListOptionIsAvailable()
+        {
+            var listElement = _driver.NowAt<CustomListElement>();
+            _driver.WaitWhileControlIsNotDisplayed<CustomListElement>(() => listElement.SaveAsDropdown);
+            if (!listElement.UpdateCurrentListButton.Displayed())
+            {
+                listElement.SaveAsDropdown.Click();
+            }
+            Assert.IsTrue(listElement.UpdateCurrentListButton.Displayed(),
+                "Update Current List button is NOT displayed");
+        }
+
+        [Then(@"Save as a new list option is NOT available")]
+        public void ThenSaveAsANewListOptionIsNotAvailable()
+        {
+            var listElement = _driver.NowAt<CustomListElement>();
+            _driver.WaitWhileControlIsNotDisplayed<CustomListElement>(() => listElement.SaveAsDropdown);
+            if (!listElement.SaveAsNewListButton.Displayed())
+            {
+                listElement.SaveAsDropdown.Click();
+            }
+            Assert.IsFalse(listElement.SaveAsNewListButton.Displayed(), "Save As New List button is displayed");
+        }
+
+        [Then(@"Save as a new list option is available")]
+        public void ThenSaveAsANewListOptionIsAvailable()
+        {
+            var listElement = _driver.NowAt<CustomListElement>();
+            _driver.WaitWhileControlIsNotDisplayed<CustomListElement>(() => listElement.SaveAsDropdown);
+            if (!listElement.SaveAsNewListButton.Displayed())
+            {
+                listElement.SaveAsDropdown.Click();
+            }
+            Assert.IsTrue(listElement.SaveAsNewListButton.Displayed(), "Save As New List button is NOT displayed");
+        }
+
         [AfterScenario("Delete_Newly_Created_List")]
         public void DeleteAllCustomListsAfterScenarioRun()
         {
