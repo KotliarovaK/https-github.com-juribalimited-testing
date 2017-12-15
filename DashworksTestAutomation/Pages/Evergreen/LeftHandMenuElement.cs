@@ -1,23 +1,23 @@
-﻿using System.Collections.Generic;
-using DashworksTestAutomation.Base;
+﻿using DashworksTestAutomation.Base;
 using DashworksTestAutomation.Extensions;
 using OpenQA.Selenium;
 using OpenQA.Selenium.Support.PageObjects;
+using System.Collections.Generic;
 
 namespace DashworksTestAutomation.Pages.Evergreen
 {
-    class LeftHandMenuElement : SeleniumBasePage
+    internal class LeftHandMenuElement : SeleniumBasePage
     {
-        [FindsBy(How = How.XPath, Using = ".//a[@title='Devices']")]
+        [FindsBy(How = How.XPath, Using = ".//p[@title='Devices']")]
         public IWebElement Devices { get; set; }
 
-        [FindsBy(How = How.XPath, Using = ".//a[@title='Users']")]
+        [FindsBy(How = How.XPath, Using = ".//p[@title='Users']")]
         public IWebElement Users { get; set; }
 
-        [FindsBy(How = How.XPath, Using = ".//a[@title='Applications']")]
+        [FindsBy(How = How.XPath, Using = ".//p[@title='Applications']")]
         public IWebElement Applications { get; set; }
 
-        [FindsBy(How = How.XPath, Using = ".//a[@title='Mailboxes']")]
+        [FindsBy(How = How.XPath, Using = ".//p[@title='Mailboxes']")]
         public IWebElement Mailboxes { get; set; }
 
         public override List<By> GetPageIdentitySelectors()
