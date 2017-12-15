@@ -411,13 +411,7 @@ namespace DashworksTestAutomation.Extensions
 
         #region Availability of element
 
-        public static bool IsElementDisplayed(this IWebDriver driver, By by)
-        {
-            var element = driver.FindElement(by);
-            return driver.IsElementDisplayed(element);
-        }
-
-        public static bool IsElementDisplayed(this IWebDriver driver, IWebElement element)
+        public static bool IsElementDisplayed(this RemoteWebDriver driver, IWebElement element)
         {
             try
             {
@@ -429,10 +423,16 @@ namespace DashworksTestAutomation.Extensions
             }
         }
 
-        public static bool IsElementExists(this IWebDriver driver, By by)
+        public static bool IsElementDisplayed(this RemoteWebDriver driver, By selector)
         {
-            var element = driver.FindElement(by);
-            return driver.IsElementExists(element);
+            try
+            {
+                return driver.FindElement(selector).Displayed;
+            }
+            catch (Exception)
+            {
+                return false;
+            }
         }
 
         public static bool IsElementExists(this IWebDriver driver, IWebElement element)
@@ -451,6 +451,19 @@ namespace DashworksTestAutomation.Extensions
             }
 
             return true;
+        }
+
+        public static bool IsElementExists(this IWebDriver driver, By by)
+        {
+            try
+            {
+                driver.FindElement(by);
+                return true;
+            }
+            catch (NoSuchElementException)
+            {
+                return false;
+            }
         }
 
         #endregion Availability of element
