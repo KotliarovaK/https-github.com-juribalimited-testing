@@ -12,7 +12,7 @@ Background: Pre-Conditions
 	Then Evergreen Dashboards page should be displayed to the user
 
 @Evergreen @Devices @EvergreenJnr_Columns @RemoveColumn @DAS-10966 @DAS-10973 @Delete_Newly_Created_List
-Scenario: Evergreen DevicesList Check that 500 error page is not displayed after removing sorted column in custom list
+Scenario: EvergreenDevicesListCheckThat500ErrorPageIsNotDisplayedAfterRemovingSortedColumnInCustomList
 	When User clicks "Devices" on the left-hand menu
 	Then "Devices" list should be displayed to the user
 	When User clicks the Columns button
@@ -23,8 +23,8 @@ Scenario: Evergreen DevicesList Check that 500 error page is not displayed after
 	Then ColumnName is added to the list
 	| ColumnName |
 	| Device Key |
-	When User create custom list with "TestList" name
-	Then "TestList" list is displayed to user
+	When User create custom list with "RemovingSortedColumnInCustomList" name
+	Then "RemovingSortedColumnInCustomList" list is displayed to user
 	When User clicks the Columns button
 	Then Columns panel is displayed to the user
 	When ColumnName is entered into the search box and the selection is clicked
@@ -53,7 +53,7 @@ Scenario: Evergreen DevicesList Check that 500 error page is not displayed after
 	And User is logged out
 
 @Evergreen @Devices @EvergreenJnr_Columns @RemoveColumn @DAS-10966 @DAS-10973 @Delete_Newly_Created_List
-Scenario: Evergreen DevicesList Check that 500 error page is not displayed after removing multiple sorted column in custom list
+Scenario: EvergreenDevicesListCheckThat500ErrorPageIsNotDisplayedAfterRemovingMultipleSortedColumnInCustomList
 	When User clicks "Devices" on the left-hand menu
 	Then "Devices" list should be displayed to the user
 	When User clicks the Columns button
@@ -98,7 +98,7 @@ Scenario: Evergreen DevicesList Check that 500 error page is not displayed after
 	And User is logged out
 
 @Evergreen @Devices @EvergreenJnr_Columns @RemoveColumn @DAS-10966 @DAS-10973 @Delete_Newly_Created_List
-Scenario: EvergreenJnr_DevicesList_Check that 500 error page is not displayed after removing sorted column in custom list throw filters
+Scenario: EvergreenDevicesListCheckThat500ErrorPageIsNotDisplayedAfterRemovingSortedColumnInCustomListThrowFilters
 	When User clicks "Devices" on the left-hand menu
 	Then "Devices" list should be displayed to the user
 	When User clicks the Filters button
@@ -144,7 +144,7 @@ Scenario: EvergreenJnr_DevicesList_Check that 500 error page is not displayed af
 	And User is logged out
 
 @Evergreen @Devices @EvergreenJnr_Columns @RemoveColumn @DAS-10966 @DAS-10973
-Scenario: EvergreenJnr_DevicesList_Check that 500 error page is not displayed after removing sorted column in default list
+Scenario: EvergreenDevicesListCheckThat500ErrorPageIsNotDisplayedAfterRemovingSortedColumnInDefaultList
 	When User clicks "Devices" on the left-hand menu
 	Then "Devices" list should be displayed to the user
 	When User clicks the Columns button
@@ -177,7 +177,7 @@ Scenario: EvergreenJnr_DevicesList_Check that 500 error page is not displayed af
 	And User is logged out
 
 @Evergreen @Devices @EvergreenJnr_Columns @RemoveColumn @DAS-10966 @DAS-10973
-Scenario: EvergreenJnr_DevicesList_Check that 500 error page is not displayed after removing multiple sorted column in default list
+Scenario: EvergreenDevicesListCheckThat500ErrorPageIsNotDisplayedAfterRemovingMultipleSortedColumnInDefaultList
 	When User clicks "Devices" on the left-hand menu
 	Then "Devices" list should be displayed to the user
 	When User clicks the Columns button
@@ -218,7 +218,7 @@ Scenario: EvergreenJnr_DevicesList_Check that 500 error page is not displayed af
 	And User is logged out
 
 @Evergreen @Devices @EvergreenJnr_Columns @RemoveColumn @DAS-10966 @DAS-10973
-Scenario: EvergreenJnr_DevicesList_Check that 500 error page is not displayed after removing sorted column in default list throw filters
+Scenario: EvergreenDevicesListCheckThat500ErrorPageIsNotDisplayedAfterRemovingSortedColumnInDefaultListThrowFilters
 	When User clicks "Devices" on the left-hand menu
 	Then "Devices" list should be displayed to the user
 	When User clicks the Filters button
@@ -261,7 +261,7 @@ Scenario: EvergreenJnr_DevicesList_Check that 500 error page is not displayed af
 	And User is logged out
 
 @Evergreen @Users @EvergreenJnr_Columns @RemoveColumn @DAS-10973
-Scenario: Evergreen Users List Check that 500 error page is not displayed after removing sorted column
+Scenario: EvergreenUsersListCheckThat500ErrorPageIsNotDisplayedAfterRemovingSortedColumn
 	When User clicks "Users" on the left-hand menu
 	Then "Users" list should be displayed to the user
 	When User clicks the Columns button
