@@ -61,7 +61,7 @@ Scenario: EvergreenJnr_ApplicationsList_Check that add column checkbox works cor
 	| SelectedCheckboxes  |
 	| A Star Packages     |
 	Then "Windows7Mi: Category" filter is added to the list
-	Then table data is filtred correctly
+	Then table data is filtered correctly
 
 @Evergreen @Applications @EvergreenJnr_FiltersFeature @FilterFunctionality @DAS-11166 @Delete_Newly_Created_List
 Scenario: EvergreenJnr_ApplicationsList_Check that filter is restored after going back to the list again

@@ -78,12 +78,11 @@ namespace DashworksTestAutomation.Pages.Evergreen
 
         public bool IsColumnPresent(string columnName)
         {
-            var selector = String.Empty;
+            var selector = string.Empty;
             if (columnName.Contains("'"))
             {
                 var strings = columnName.Split('\'');
-                selector =
-                    $".//div[@role='presentation']/span[contains(text(),'{strings[0]}')][contains(text(), '{strings[1]}')]";
+                selector = $".//div[@role='presentation']/span[contains(text(),'{strings[0]}')][contains(text(), '{strings[1]}')]";
             }
             else
             {
@@ -109,7 +108,7 @@ namespace DashworksTestAutomation.Pages.Evergreen
             return Driver.FindElement(By.XPath(selector));
         }
 
-        public int GetColumNumberByName(string columnName)
+        public int GetColumnNumberByName(string columnName)
         {
             var allHeaders = Driver.FindElements(By.XPath(".//div[@class='ag-header-container']/div/div"));
             if (!allHeaders.Any())
@@ -123,24 +122,24 @@ namespace DashworksTestAutomation.Pages.Evergreen
 
         public List<string> GetColumnContent(string columnName)
         {
-            return Driver.FindElements(
-                    By.XPath(
-                        $".//div[@class='ag-body']//div[@class='ag-body-container']/div/div[{GetColumNumberByName(columnName)}]"))
-                .Select(x => x.Text).ToList();
+            By by = By.XPath($".//div[@class='ag-body']//div[@class='ag-body-container']/div/div[{GetColumnNumberByName(columnName)}]");
+            return Driver.FindElements(by).Select(x => x.Text).ToList();
         }
 
         public string ActiveCustomListName()
         {
-            Driver.WaitWhileControlIsNotDisplayed(
-                By.XPath(".//div[@class='active-list-wrapper ng-star-inserted']//span"));
-            return Driver.FindElement(By.XPath(".//div[@class='active-list-wrapper ng-star-inserted']//span")).Text;
+            By by = By.XPath(".//ul[contains(@class, 'submenu-actions-list')]//span");
+            Driver.WaitWhileControlContainingTextIsNotDisplayed(by);
+            return Driver.FindElement(by).Text;
         }
 
         public void ClickContentByColumnName(string columnName)
         {
-            Driver.WaitWhileControlIsNotDisplayed(
-                By.XPath($".//div[@class='ag-body-container']/div[1]/div[{GetColumNumberByName(columnName)}]//a"));
-            TableBody.FindElement(By.XPath($"./div[1]/div[{GetColumNumberByName(columnName)}]//a")).Click();
+            By byControl = By.XPath($".//div[@class='ag-body-container']/div[1]/div[{GetColumnNumberByName(columnName)}]//a");
+            By byTable = By.XPath($"./div[1]/div[{GetColumnNumberByName(columnName)}]//a");
+
+            Driver.WaitWhileControlIsNotDisplayed(byControl);
+            TableBody.FindElement(byTable).Click();
         }
 
         public IWebElement GetListElementByName(string listName)

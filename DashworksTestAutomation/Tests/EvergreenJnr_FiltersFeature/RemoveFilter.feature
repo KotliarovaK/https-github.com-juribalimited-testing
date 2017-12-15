@@ -22,7 +22,7 @@ Scenario: EvergreenJnr_DevicesList_Check that reset is updating row count
 	| Unknown            |
 	Then "Compliance" filter is added to the list
 	And "75" rows are displayed in the agGrid
-	And table data is filtred correctly
+	And table data is filtered correctly
 	And "Compliance" filter with "Unknown" values is added to URL
 	And "Compliance" column is added to URL
 	When User have reset all filters
@@ -33,7 +33,7 @@ Scenario: EvergreenJnr_DevicesList_Check that reset is updating row count
 	Then "Compliance" filter is removed from filters
 
 @Evergreen @Devices @Evergreen_FiltersFeature @RemoveFilter @DAS-11044
-Scenario: EvergreenJnr_DevicesList_Check that delete by url is updating row count
+Scenario: EvergreenDevicesListCheckThatDeleteByUrlIsUpdatingRowCount
 	When User clicks "Devices" on the left-hand menu
 	Then "Devices" list should be displayed to the user
 	When User clicks the Filters button
@@ -43,7 +43,7 @@ Scenario: EvergreenJnr_DevicesList_Check that delete by url is updating row coun
 	| Unknown            |
 	Then "Compliance" filter is added to the list
 	And "75" rows are displayed in the agGrid
-	And table data is filtred correctly
+	And table data is filtered correctly
 	And "Compliance" filter with "Unknown" values is added to URL
 	And "Compliance" column is added to URL
 	When User is remove filter by URL
@@ -67,7 +67,7 @@ Scenario: EvergreenJnr_UsersList_Check that delete part of filter from url is up
 	| Green              |
 	Then "Compliance" filter is added to the list
 	And "41,161" rows are displayed in the agGrid
-	And table data is filtred correctly
+	And table data is filtered correctly
 	And "Compliance" filter with "Red, Amber, Green" values is added to URL
 	And "Compliance" column is added to URL
 	When User is remove part of filter by URL
@@ -77,8 +77,8 @@ Scenario: EvergreenJnr_UsersList_Check that delete part of filter from url is up
 	And "41,335" rows are displayed in the agGrid
 	Then "Compliance" filter is removed from filters
 
-@Evergreen @Mailboxes @Evergreen_FilterFeature @RemoveFilter @DAS-10996
-Scenario: EvergreenJnr_MailboxesList_Check that filters is reset and data on the grid updated back to the full data set
+@Evergreen @Mailboxes @Evergreen_FiltersFeature @RemoveFilter @DAS-10996
+Scenario: EvergreenMailboxesListCheckThatFiltersIsResetAndDataOnTheGridUpdatedBackToTheFullDataSet
 	When User clicks "Mailboxes" on the left-hand menu
 	Then "Mailboxes" list should be displayed to the user
 	When User clicks the Filters button
@@ -88,9 +88,9 @@ Scenario: EvergreenJnr_MailboxesList_Check that filters is reset and data on the
 	| London             |
 	Then "City" filter is added to the list
 	And "1,000" rows are displayed in the agGrid
-	And table data is filtred correctly
+	And table data is filtered correctly
 	When User have reset all filters
-	Then ColumnName is added to the list
+	Then ColumnName is removed from the list
 	| ColumnName |
 	| City       |
 	And "4,835" rows are displayed in the agGrid

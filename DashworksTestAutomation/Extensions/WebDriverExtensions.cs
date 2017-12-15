@@ -16,9 +16,9 @@ namespace DashworksTestAutomation.Extensions
 {
     internal static class WebDriverExtensions
     {
-        private static readonly TimeSpan WaitTimeout = TimeSpan.FromSeconds(25);
-        private static readonly TimeSpan PollingInterval = TimeSpan.FromSeconds(5);
-        private const int WaitTimes = 2;
+        private const int NumberOfTimesToWait = 2;
+        private static readonly TimeSpan waitTimeout = TimeSpan.FromSeconds(30);
+        private static readonly TimeSpan pollingInterval = TimeSpan.FromSeconds(5);
 
         public static void NagigateToURL(this RemoteWebDriver driver, string url)
         {
@@ -97,15 +97,15 @@ namespace DashworksTestAutomation.Extensions
 
         public static void WaitForElement(this RemoteWebDriver driver, By by)
         {
-            var attempts = WaitTimes;
+            var attempts = NumberOfTimesToWait;
             while (attempts > 0)
             {
                 try
                 {
                     attempts--;
                     ExecuteWithLogging(() => FluentWait.Create(driver)
-                        .WithTimeout(WaitTimeout)
-                        .WithPollingInterval(PollingInterval)
+                        .WithTimeout(waitTimeout)
+                        .WithPollingInterval(pollingInterval)
                         .Until(ExpectedConditions.ElementIsVisible(by)), by);
 
                     return;
@@ -133,13 +133,13 @@ namespace DashworksTestAutomation.Extensions
 
         public static void WaitForElements(this RemoteWebDriver driver, ReadOnlyCollection<IWebElement> elements)
         {
-            WebDriverWait wait = new WebDriverWait(driver, WaitTimeout);
+            WebDriverWait wait = new WebDriverWait(driver, waitTimeout);
             wait.Until(ExpectedConditions.VisibilityOfAllElementsLocatedBy(elements));
         }
 
         public static void WaitForElements(this RemoteWebDriver driver, By bys)
         {
-            WebDriverWait wait = new WebDriverWait(driver, WaitTimeout);
+            WebDriverWait wait = new WebDriverWait(driver, waitTimeout);
             wait.Until(ExpectedConditions.VisibilityOfAllElementsLocatedBy(bys));
         }
 
@@ -157,22 +157,26 @@ namespace DashworksTestAutomation.Extensions
             }
         }
 
-        // Sample usage
-        //	Driver.WaitWhileControlIsNotDisplayed<ClaimListPage>(() => claimListPage.CreateClaimButton);
-        //	OR JUST
-        //	Driver.WaitWhileControlIsNotDisplayed<ClaimListPage>(() => NowHere<ClaimListPage>().CreateClaimButton);
-        public static void WaitWhileControlIsNotClicable<T>(this RemoteWebDriver driver, Expression<Func<IWebElement>> elementGetter)
+        public static void WaitWhileControlIsNotClickable<T>(this RemoteWebDriver driver, Expression<Func<IWebElement>> elementGetter)
         {
             var propertyName = ((MemberExpression)elementGetter.Body).Member.Name;
             var by = GetByFor<T>(propertyName);
-            WebDriverWait wait = new WebDriverWait(driver, WaitTimeout);
-            wait.Until(ExpectedConditions.ElementToBeClickable(by));
+            driver.WaitWhileControlIsNotClickable(by);
         }
 
-        // Sample usage
-        //	Driver.WaitWhileControlIsNotDisplayed<ClaimListPage>(() => claimListPage.CreateClaimButton);
-        //	OR JUST
-        //	Driver.WaitWhileControlIsNotDisplayed<ClaimListPage>(() => NowHere<ClaimListPage>().CreateClaimButton);
+        public static void WaitWhileControlIsNotClickable(this RemoteWebDriver driver, By by)
+        {
+            try
+            {
+                WebDriverWait wait = new WebDriverWait(driver, waitTimeout);
+                wait.Until(ExpectedConditions.ElementToBeClickable(by));
+            }
+            catch (WebDriverTimeoutException e)
+            {
+                throw new Exception($"Element with '{by}' selector is NOT clickable in {waitTimeout.TotalSeconds} seconds", e);
+            }
+        }
+
         public static void WaitWhileControlIsNotDisplayed<T>(this RemoteWebDriver driver, Expression<Func<IWebElement>> elementGetter)
         {
             var propertyName = ((MemberExpression)elementGetter.Body).Member.Name;
@@ -180,66 +184,120 @@ namespace DashworksTestAutomation.Extensions
             driver.WaitWhileControlIsNotDisplayed(by);
         }
 
-        public static void WaitWhileControlIsNotDisplayedSafety<T>(this RemoteWebDriver driver, Expression<Func<IWebElement>> elementGetter)
-        {
-            try
-            {
-                var propertyName = ((MemberExpression)elementGetter.Body).Member.Name;
-                var by = GetByFor<T>(propertyName);
-                driver.WaitWhileControlIsNotDisplayed(by);
-            }
-            catch { }
-        }
-
         public static void WaitWhileControlIsNotDisplayed(this RemoteWebDriver driver, By by)
         {
             try
             {
-                WebDriverWait wait = new WebDriverWait(driver, WaitTimeout);
+                WebDriverWait wait = new WebDriverWait(driver, waitTimeout);
                 wait.Until(ExpectedConditions.ElementIsVisible(by));
             }
             catch (WebDriverTimeoutException e)
             {
-                throw new Exception($"Element with '{by}' selector is NOT displayed in {WaitTimeout.TotalSeconds} seconds", e);
+                throw new Exception($"Element with '{by}' selector is NOT displayed in {waitTimeout.TotalSeconds} seconds", e);
             }
+        }
+
+        public static void WaitWhileControlContainingTextIsNotDisplayed(this RemoteWebDriver driver, By by)
+        {
+            try
+            {
+                WebDriverWait wait = new WebDriverWait(driver, waitTimeout);
+                wait.Until(d => d.FindElement(by).Text.Length > 0);
+            }
+            catch (WebDriverTimeoutException e)
+            {
+                throw new Exception($"Element with '{by}' selector is NOT displayed AND populated with text in {waitTimeout.TotalSeconds} seconds", e);
+            }
+        }
+
+        public static void WaitWhileControlIsDisplayed<T>(this RemoteWebDriver driver, Expression<Func<IWebElement>> elementGetter)
+        {
+            var propertyName = ((MemberExpression)elementGetter.Body).Member.Name;
+            var by = GetByFor<T>(propertyName);
+            driver.WaitWhileControlIsDisplayed(by);
         }
 
         public static void WaitWhileControlIsDisplayed(this RemoteWebDriver driver, By by)
         {
             try
             {
-                WebDriverWait wait = new WebDriverWait(driver, WaitTimeout);
+                WebDriverWait wait = new WebDriverWait(driver, waitTimeout);
                 wait.Until(ExpectedConditions.InvisibilityOfElementLocated(by));
             }
             catch (WebDriverTimeoutException e)
             {
-                throw new Exception($"Element with '{by}' selector still displayed after {WaitTimeout.TotalSeconds} seconds", e);
+                throw new Exception($"Element with '{by}' selector still displayed after {waitTimeout.TotalSeconds} seconds", e);
             }
         }
 
-        public static void WaitWhileControlIsDisplayed(this RemoteWebDriver driver, By by, TimeSpan waitSeconds)
+        public static void WaitForTextToAppear(this RemoteWebDriver driver, IWebElement element, String textToAppear)
         {
             try
             {
-                WebDriverWait wait = new WebDriverWait(driver, waitSeconds);
-                wait.Until(ExpectedConditions.InvisibilityOfElementLocated(by));
+                WebDriverWait wait = new WebDriverWait(driver, waitTimeout);
+                wait.Until(ExpectedConditions.TextToBePresentInElement(element, textToAppear));
             }
             catch (WebDriverTimeoutException e)
             {
-                throw new Exception($"Element with '{by}' selector still displayed after {waitSeconds.TotalSeconds} seconds", e);
+                throw new Exception($"Element '{element}' and text '{textToAppear}' NOT displayed after {waitTimeout.TotalSeconds} seconds", e);
             }
         }
 
-        // Sample usage
-        //	Driver.WaitWhileControlIsNotDisplayed<ClaimListPage>(() => claimListPage.CreateClaimButton);
-        //	OR JUST
-        //	Driver.WaitWhileControlIsNotDisplayed<ClaimListPage>(() => NowHere<ClaimListPage>().CreateClaimButton);
-        public static void WaitWhileControlIsDisplayed<T>(this RemoteWebDriver driver, Expression<Func<IWebElement>> elementGetter)
+        public static void WaitForTextToAppear(this RemoteWebDriver driver, By by, String textToAppear)
         {
-            var propertyName = ((MemberExpression)elementGetter.Body).Member.Name;
-            var by = GetByFor<T>(propertyName);
-            WebDriverWait wait = new WebDriverWait(driver, WaitTimeout);
-            wait.Until(ExpectedConditions.InvisibilityOfElementLocated(by));
+            try
+            {
+                WebDriverWait wait = new WebDriverWait(driver, waitTimeout);
+                wait.Until(ExpectedConditions.TextToBePresentInElementLocated(by, textToAppear));
+            }
+            catch (WebDriverTimeoutException e)
+            {
+                throw new Exception($"Element with '{by}' selector and text '{textToAppear}' NOT displayed after {waitTimeout.TotalSeconds} seconds", e);
+            }
+        }
+
+        public static void WaitToBeSelected(this RemoteWebDriver driver, IWebElement element, bool selectorState)
+        {
+            try
+            {
+                WebDriverWait wait = new WebDriverWait(driver, waitTimeout);
+                wait.Until(ExpectedConditions.ElementToBeSelected(element, selectorState));
+            }
+            catch (WebDriverTimeoutException e)
+            {
+                throw new Exception($"Element '{element}' in selected state '{selectorState}' NOT displayed after {waitTimeout.TotalSeconds} seconds", e);
+            }
+        }
+
+        public static void WaitForDataLoading(this RemoteWebDriver driver)
+        {
+            int attempts = 0;
+            bool wasLoadingSpinnerDisplayed = false;
+
+            //Small sleep for Spinner waiting
+            Thread.Sleep(400);
+            var by = By.XPath(".//div[contains(@class,'spinner')]");
+
+            do
+            {
+                attempts++;
+                wasLoadingSpinnerDisplayed = driver.IsElementDisplayed(by);
+                if (wasLoadingSpinnerDisplayed)
+                {
+                    try
+                    {
+                        WebDriverWait wait = new WebDriverWait(driver, waitTimeout);
+                        wait.Until(InvisibilityOfAllElementsLocatedBy(by));
+                    }
+                    catch (Exception e)
+                    {
+                        Logger.Write($"WARNING: Loading spinner is displayed longer that {waitTimeout.Seconds * attempts} seconds: {driver.Url}");
+                        throw e;
+                    }
+                }
+                else
+                    break;
+            } while (wasLoadingSpinnerDisplayed && attempts < 3);
         }
 
         /// <summary>
@@ -271,55 +329,6 @@ namespace DashworksTestAutomation.Extensions
                     return true;
                 }
             };
-        }
-
-        public static void WaitForTextToAppear(this RemoteWebDriver driver, IWebElement element, String textToAppear, int waitSec = 45)
-        {
-            WebDriverWait wait = new WebDriverWait(driver, TimeSpan.FromSeconds(waitSec));
-            wait.Until(ExpectedConditions.TextToBePresentInElement(element, textToAppear));
-        }
-
-        public static void WaitForTextToAppear(this RemoteWebDriver driver, By by, String textToAppear, int waitSec = 45)
-        {
-            WebDriverWait wait = new WebDriverWait(driver, TimeSpan.FromSeconds(waitSec));
-            wait.Until(ExpectedConditions.TextToBePresentInElementLocated(by, textToAppear));
-        }
-
-        public static void WaitToBeSelected(this RemoteWebDriver driver, IWebElement checkbox, bool selectorState, int waitSec = 45)
-        {
-            WebDriverWait wait = new WebDriverWait(driver, TimeSpan.FromSeconds(waitSec));
-            wait.Until(ExpectedConditions.ElementToBeSelected(checkbox, selectorState));
-        }
-
-        public static void WaitForDataLoading(this RemoteWebDriver driver)
-        {
-            int attempts = 0;
-            bool wasLoadingSpinnerDisplayed = false;
-
-            //Small sleep for Spinner waiting
-            Thread.Sleep(400);
-            var by = By.XPath(".//div[contains(@class,'spinner')]");
-
-            do
-            {
-                attempts++;
-                wasLoadingSpinnerDisplayed = driver.IsElementDisplayed(by);
-                if (wasLoadingSpinnerDisplayed)
-                {
-                    try
-                    {
-                        WebDriverWait wait = new WebDriverWait(driver, WaitTimeout);
-                        wait.Until(InvisibilityOfAllElementsLocatedBy(by));
-                    }
-                    catch (Exception e)
-                    {
-                        Logger.Write($"WARNING: Loading spinner is displayed longer that {WaitTimeout.Seconds * attempts} seconds: {driver.Url}");
-                        throw e;
-                    }
-                }
-                else
-                    break;
-            } while (wasLoadingSpinnerDisplayed && attempts < 3);
         }
 
         #region Actions
@@ -367,13 +376,13 @@ namespace DashworksTestAutomation.Extensions
 
         public static void ClickByJavascript(this RemoteWebDriver driver, IWebElement element)
         {
-            IJavaScriptExecutor ex = (IJavaScriptExecutor)driver;
+            IJavaScriptExecutor ex = driver;
             ex.ExecuteScript("arguments[0].click();", element);
         }
 
         public static void MouseHoverByJavascript(this RemoteWebDriver driver, IWebElement element)
         {
-            IJavaScriptExecutor ex = (IJavaScriptExecutor)driver;
+            IJavaScriptExecutor ex = driver;
             ex.ExecuteScript("arguments[0].scrollIntoView(true);", element);
         }
 
@@ -383,7 +392,7 @@ namespace DashworksTestAutomation.Extensions
 
         public static void SwitchToFrame(this RemoteWebDriver driver, int frameNumber)
         {
-            WebDriverWait wait = new WebDriverWait(driver, WaitTimeout);
+            WebDriverWait wait = new WebDriverWait(driver, waitTimeout);
             driver.SwitchTo().DefaultContent();
             wait.Until(x => x.FindElements(By.TagName("iframe")).Count > frameNumber);
             var frames = driver.FindElements(By.TagName("iframe"));
@@ -392,7 +401,7 @@ namespace DashworksTestAutomation.Extensions
 
         public static void SwitchToFrame(this RemoteWebDriver driver, string frameIdName)
         {
-            WebDriverWait wait = new WebDriverWait(driver, WaitTimeout);
+            WebDriverWait wait = new WebDriverWait(driver, waitTimeout);
             driver.SwitchTo().DefaultContent();
             wait.Until(x => x.FindElements(By.Id(frameIdName)));
             driver.SwitchTo().Frame(frameIdName);
@@ -426,19 +435,6 @@ namespace DashworksTestAutomation.Extensions
             }
         }
 
-        public static bool IsElementExists(this IWebDriver driver, By @by)
-        {
-            try
-            {
-                driver.FindElement(@by);
-                return true;
-            }
-            catch (NoSuchElementException)
-            {
-                return false;
-            }
-        }
-
         public static bool IsElementExists(this IWebDriver driver, IWebElement element)
         {
             try
@@ -455,6 +451,19 @@ namespace DashworksTestAutomation.Extensions
             }
 
             return true;
+        }
+
+        public static bool IsElementExists(this IWebDriver driver, By by)
+        {
+            try
+            {
+                driver.FindElement(by);
+                return true;
+            }
+            catch (NoSuchElementException)
+            {
+                return false;
+            }
         }
 
         #endregion Availability of element
