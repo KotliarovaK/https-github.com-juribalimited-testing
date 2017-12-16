@@ -18,11 +18,17 @@ namespace DashworksTestAutomation.Pages.Evergreen
         [FindsBy(How = How.XPath, Using = ".//input[@name='search']")]
         public IWebElement SearchTextbox { get; set; }
 
+        [FindsBy(How = How.XPath, Using = ".//button[@class='btn btn-default input-toggle mat-icon-button ng-star-inserted']")]
+        public IWebElement SearchTextboxResetButton { get; set; }
+
         [FindsBy(How = How.XPath, Using = ".//div[contains(@class,'filter-category ng-star-inserted')]")]
         public IList<IWebElement> FilterCategories { get; set; }
 
         [FindsBy(How = How.XPath, Using = ".//button[@title='Minimize Group']")]
-        public IWebElement MinimizeGroupButton { get; set; }
+        public IList<IWebElement> MinimizeGroupButton { get; set; }
+
+        [FindsBy(How = How.XPath, Using = ".//button[@title='Maximize Group']")]
+        public IList<IWebElement> MaximizeGroupButton { get; set; }
 
         [FindsBy(How = How.XPath, Using = ".//div[@class='styleSelectDropdown']")]
         public IWebElement FilterTypeDropdown { get; set; }
@@ -69,6 +75,10 @@ namespace DashworksTestAutomation.Pages.Evergreen
 
         [FindsBy(How = How.XPath, Using = ".//div[@class='filter-label']")]
         public IList<IWebElement> AddedFilterLabels { get; set; }
+
+        private const string GroupTitleSelector = ".//div[contains(@class,'filter-category-title ng-star-inserted')]";
+        [FindsBy(How = How.XPath, Using = GroupTitleSelector)]
+        public IList<IWebElement> GroupTitle { get; set; }
 
         public override List<By> GetPageIdentitySelectors()
         {
@@ -164,6 +174,12 @@ namespace DashworksTestAutomation.Pages.Evergreen
         public IList<IWebElement> GetSelectBoxes()
         {
             return Driver.FindElements(By.XPath(".//span[@class='text-container ng-star-inserted']"));
+        }
+
+        public void EnteredIntoSearchBox(string searchedText)
+        {
+            Driver.FindElement(By.XPath(".//input[@name='search']")).Click();
+            Driver.FindElement(By.XPath(".//input[@name='search']")).SendKeys(searchedText);
         }
     }
 }

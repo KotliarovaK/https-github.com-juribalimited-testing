@@ -25,3 +25,14 @@ Scenario: EvergreenJnr_DevicesList_Check category heading when all columns from 
 	When User clicks the Logout button
 	Then Signed Out page is displayed to the user
 	And User is logged out
+
+@Evergreen @Devices @EvergreenJnr_Columns @ColumnSectionDisplay @DAS-11539
+Scenario: EvergreenJnr_DevicesList_CheckThatColumnCategoriesAreClosedAfterClearingAColumnSearchValue
+	When User clicks "Devices" on the left-hand menu
+	Then "Devices" list should be displayed to the user
+	When User clicks the Columns button
+	Then Columns panel is displayed to the user
+	When User is searching in columns with "date" text in Columns panel
+	Then Minimize buttons are displayed for all category in Columns panel
+	When User clears search textbox in Columns panel
+	Then Maximize buttons are displayed for all category in Columns panel

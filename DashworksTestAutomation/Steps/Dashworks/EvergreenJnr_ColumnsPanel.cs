@@ -6,6 +6,7 @@ using DashworksTestAutomation.Utils;
 using NUnit.Framework;
 using OpenQA.Selenium.Remote;
 using System;
+using System.Linq;
 using System.Text.RegularExpressions;
 using TechTalk.SpecFlow;
 
@@ -29,6 +30,21 @@ namespace DashworksTestAutomation.Steps.Dashworks
             var columnElement = _driver.NowAt<ColumnsElement>();
             Assert.IsTrue(columnElement.ColumnsPanel.Displayed(), "Columns panel is not displayed");
             Logger.Write("Columns panel is visible");
+        }
+
+        [When(@"User is searching in columns with ""(.*)"" text in Columns panel")]
+        public void WhenUserIsSearchingInColumnsWithTextInColumnsPanel(string searchedText)
+        {
+            var columnElement = _driver.NowAt<ColumnsElement>();
+            columnElement.SearchTextbox.Clear();
+            columnElement.EnteredIntoSearchBox(searchedText);
+        }
+
+        [When(@"User clears search textbox in Columns panel")]
+        public void WhenUserClearsSearchTextboxInColumnsPanel()
+        {
+            var columnElement = _driver.NowAt<ColumnsElement>();
+            columnElement.SearchTextboxResetButton.Click();
         }
 
         [When(@"ColumnName is entered into the search box and the selection is clicked")]
@@ -126,6 +142,22 @@ namespace DashworksTestAutomation.Steps.Dashworks
         {
             var columnElement = _driver.NowAt<ColumnsElement>();
             Assert.AreEqual(subCategoriesCount, columnElement.GetSubcategoriesCountByCategoryName(categoryName));
+        }
+
+        [Then(@"Minimize buttons are displayed for all category in Columns panel")]
+        public void ThenMinimizeButtonsAreDisplayedForAllCategoryInColumnsPanel()
+        {
+            var columnElement = _driver.NowAt<ColumnsElement>();
+            var groupCount = columnElement.GroupTitle.Count;
+            Assert.AreEqual(groupCount, columnElement.MinimizeGroupButton.Count, "Minimize buttons are not displayed");
+        }
+
+        [Then(@"Maximize buttons are displayed for all category in Columns panel")]
+        public void ThenMaximizeButtonsAreDisplayedForAllCategoryInColumnsPanel()
+        {
+            var columnElement = _driver.NowAt<ColumnsElement>();
+            var groupCount = columnElement.GroupTitle.Count - 1;
+            Assert.AreEqual(groupCount, columnElement.MaximizeGroupButton.Count, "Maximize buttons are not displayed");
         }
 
         [Then(@"Maximize or Minimize button is not displayed for ""(.*)"" category")]
