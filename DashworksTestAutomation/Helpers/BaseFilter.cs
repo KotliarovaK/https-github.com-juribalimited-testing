@@ -188,8 +188,8 @@ namespace DashworksTestAutomation.Helpers
     {
         private Table Table { get; set; }
 
-        public LookupValueFilter(RemoteWebDriver driver, string operatorValue, bool acceptCheckbox, Table table) : base(
-            driver, operatorValue, acceptCheckbox)
+        public LookupValueFilter(RemoteWebDriver driver, string operatorValue, Table table) : base(
+            driver, operatorValue, false)
         {
             Table = table;
         }
@@ -200,14 +200,15 @@ namespace DashworksTestAutomation.Helpers
             _driver.WaitForDataLoading();
             foreach (var row in Table.Rows)
             {
-                _driver.FindElement(By.XPath(".//div[@id='context']//input[@id='md-input-13']"))
+                _driver.FindElement(By.XPath(".//div[@id='context']//input[@id='md-input-3']")).Click();
+                _driver.FindElement(By.XPath(".//div[@id='context']//input[@id='md-input-3']"))
                     .SendKeys(row["SelectedValues"]);
                 _driver.FindElement(By.XPath($".//div[@class='filterAddPanel ng-star-inserted']//span[contains(text(),'{row["SelectedValues"]}')]"))
                     .Click();
             }
             foreach (var row in Table.Rows)
             {
-                _driver.FindElement(By.XPath(".//div[@id='context']//input[@id='md-input-12']")).Click();
+                _driver.FindElement(By.XPath(".//div[@id='context']//input[@id='md-input-2']")).Click();
                 _driver.FindElement(By.XPath($".//li//span[text()='{row["Association"]}']")).Click();
             }
             SaveFilter();

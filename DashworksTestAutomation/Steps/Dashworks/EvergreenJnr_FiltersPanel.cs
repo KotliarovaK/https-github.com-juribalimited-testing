@@ -41,6 +41,22 @@ namespace DashworksTestAutomation.Steps.Dashworks
             filterElement.AddFilter(filterName);
         }
 
+        [When(@"User is searching in filters with ""(.*)"" text in Filters panel")]
+        public void WhenUserIsSearchingInFiltersWithTextInFiltersPanel(string searchedText)
+        {
+            var filterElement = _driver.NowAt<FiltersElement>();
+            filterElement.AddNewFilterButton.Click();
+            filterElement.SearchTextbox.Clear();
+            filterElement.EnteredIntoSearchBox(searchedText);
+        }
+
+        [When(@"User clears search textbox in Filters panel")]
+        public void WhenUserClearsSearchTextboxInFiltersPanel()
+        {
+            var filterElement = _driver.NowAt<FiltersElement>();
+            filterElement.SearchTextboxResetButton.Click();
+        }
+
         [Then(@"""(.*)"" filter is not presented in the filters list")]
         public void ThenFilterIsNotPresentedInTheFiltersList(string filterName)
         {
@@ -142,7 +158,7 @@ namespace DashworksTestAutomation.Steps.Dashworks
         {
             var filtersNames = _driver.NowAt<FiltersElement>();
             filtersNames.AddFilter(filterName);
-            var filter = new LookupValueFilter(_driver, operatorValue, true, table);
+            var filter = new LookupValueFilter(_driver, operatorValue, table);
             filter.Do();
         }
 
@@ -440,6 +456,22 @@ namespace DashworksTestAutomation.Steps.Dashworks
                 StringAssert.Contains(value.TrimStart(' ').TrimEnd(' ').ToLower(), urlPartToCheck.ToLower());
             }
             StringAssert.Contains(_convertor.Convert(filterName).ToLower(), urlPartToCheck.ToLower());
+        }
+
+        [Then(@"Minimize buttons are displayed for all category in Filters panel")]
+        public void ThenMinimizeButtonsAreDisplayedForAllCategoryInFiltersPanel()
+        {
+            var filterElement = _driver.NowAt<FiltersElement>();
+            var groupCount = filterElement.GroupTitle.Count;
+            Assert.AreEqual(groupCount, filterElement.MinimizeGroupButton.Count, "Minimize buttons are not displayed");
+        }
+
+        [Then(@"Maximize buttons are displayed for all category in Filters panel")]
+        public void ThenMaximizeButtonsAreDisplayedForAllCategoryInFiltersPanel()
+        {
+            var filterElement = _driver.NowAt<FiltersElement>();
+            var groupCount = filterElement.GroupTitle.Count;
+            Assert.AreEqual(groupCount, filterElement.MaximizeGroupButton.Count, "Maximize buttons are not displayed");
         }
     }
 }

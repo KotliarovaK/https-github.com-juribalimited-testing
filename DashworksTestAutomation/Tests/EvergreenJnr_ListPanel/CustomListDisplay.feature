@@ -59,7 +59,6 @@ Scenario: EvergreenJnr_DevicesList_CheckThatCustomListCreationBlockIsNotDisplaye
 	Then Edit List menu is displayed
 	When User have removed "Directory Type" filter
 	Then Edit List menu is displayed
-	When User update current custom list
 
 @Evergreen @Devices @EvergreenJnr_ListPanel @CustomListDisplay @DAS-11017 @Delete_Newly_Created_List
 Scenario: EvergreenJnr_DevicesList_CheckThatCustomListCreationBlockIsNotDisplayedWhenResetingAFilterInCustomList
@@ -81,7 +80,6 @@ Scenario: EvergreenJnr_DevicesList_CheckThatCustomListCreationBlockIsNotDisplaye
 	Then "Directory Type" filter is added to the list
 	When User have reset all filters
 	Then Edit List menu is displayed
-	When User update current custom list
 
 @Evergreen @Devices @EvergreenJnr_ListPanel @CustomListDisplay @DAS-10998
 Scenario: EvergreenJnr_DevicesList_agGrid_CheckThatSearchDoesNotTriggerNewCustomList
