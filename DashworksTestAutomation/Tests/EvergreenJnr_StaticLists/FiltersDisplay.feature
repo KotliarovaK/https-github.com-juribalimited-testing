@@ -13,7 +13,7 @@ Background: Pre-Conditions
 	Then Evergreen Dashboards page should be displayed to the user
 
 @Evergreen @Devices @EvergreenJnr_StaticLists @FiltersDisplay @DAS-10993 @Delete_Newly_Created_List
-Scenario: EvergreenJnr_DevicesList_Check that dynamic filters are cleared for static lists when opened after dynamic lists
+Scenario: EvergreenJnr_DevicesList_CheckThatDynamicFiltersAreClearedForStaticListsWhenOpenedAfterDynamicLists
 	When User clicks "Devices" on the left-hand menu
 	Then "Devices" list should be displayed to the user
 	When User clicks the Filters button
@@ -40,10 +40,10 @@ Scenario: EvergreenJnr_DevicesList_Check that dynamic filters are cleared for st
 	Then "5,130" rows are displayed in the agGrid
 	When User navigates to the "Static List TestName" list
 	Then "2" rows are displayed in the agGrid
-	Then Filters Button is dsabled
+	Then Filters Button is disabled
 
 @Evergreen @Devices @EvergreenJnr_ListPanel @CustomListDisplay @DAS-10978 @Delete_Newly_Created_List
-Scenario: EvergreenJnr_DevicesList__Check that filters and columns are restored for saved list
+Scenario: EvergreenJnr_DevicesList__CheckThatFiltersAndColumnsAreRestoredForSavedList
 	When User clicks "Devices" on the left-hand menu
 	Then "Devices" list should be displayed to the user
 	When User clicks the Filters button

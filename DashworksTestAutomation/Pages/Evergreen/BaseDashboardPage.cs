@@ -16,6 +16,9 @@ namespace DashworksTestAutomation.Pages.Evergreen
         [FindsBy(How = How.XPath, Using = ".//button[@id='_staticListModeBtn']")]
         public IWebElement ActionsButton { get; set; }
 
+        [FindsBy(How = How.XPath, Using = ".//button[@id='_listDtlBtn']")]
+        public IWebElement ListDetailsButton { get; set; }
+
         [FindsBy(How = How.XPath, Using = ".//button[@id='_clmnBtn']")]
         public IWebElement ColumnButton { get; set; }
 

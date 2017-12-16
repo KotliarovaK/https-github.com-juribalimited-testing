@@ -13,7 +13,7 @@ Background: Pre-Conditions
 	Then Evergreen Dashboards page should be displayed to the user
 
 @Evergreen @Devices @EvergreenJnr_GridActions @ColumnOrder @DAS-10836
-Scenario: EvergreenJnr_DevicesList_Check that columns order saved after search
+Scenario: EvergreenJnr_DevicesList_CheckThatColumnsOrderSavedAfterSearch
 	When User clicks "Devices" on the left-hand menu
 	Then "Devices" list should be displayed to the user
 	When User have opened column settings for "Owner Display Name" column
@@ -23,12 +23,9 @@ Scenario: EvergreenJnr_DevicesList_Check that columns order saved after search
 	| SearchCriteria | NumberOfRows |
 	| Smith          | 11           |
 	Then "Owner Display Name" column is "Left" Pinned
-	When User clicks the Logout button
-	Then Signed Out page is displayed to the user
-	And User is logged out
 
 @Evergreen @Users @EvergreenJnr_GridActions @ColumnOrder @DAS-10836
-Scenario: EvergreenJnr_UsersList_Check that columns order saved after search
+Scenario: EvergreenJnr_UsersList_CheckThatColumnsOrderSavedAfterSearch
 	When User clicks "Users" on the left-hand menu
 	Then "Users" list should be displayed to the user
 	When User clicks the Columns button
@@ -43,12 +40,9 @@ Scenario: EvergreenJnr_UsersList_Check that columns order saved after search
 	| SearchCriteria | NumberOfRows |
 	| Smith          | 59           |
 	Then "Compliance" column is "Right" Pinned
-	When User clicks the Logout button
-	Then Signed Out page is displayed to the user
-	And User is logged out
 
 @Evergreen @Devices @EvergreenJnr_GridActions @ColumnOrder @DAS-10621
-Scenario: EvergreenJnr_DevicesList_Check that columns order saved after adding a filter
+Scenario: EvergreenJnr_DevicesList_CheckThatColumnsOrderSavedAfterAddingAFilter
 	When User clicks "Devices" on the left-hand menu
 	Then "Devices" list should be displayed to the user
 	When User clicks the Columns button
@@ -80,6 +74,3 @@ Scenario: EvergreenJnr_DevicesList_Check that columns order saved after adding a
 	| Owner Display Name   |
 	| Compliance           |
 	| Windows7Mi: Category |
-	When User clicks the Logout button
-	Then Signed Out page is displayed to the user
-	And User is logged out
