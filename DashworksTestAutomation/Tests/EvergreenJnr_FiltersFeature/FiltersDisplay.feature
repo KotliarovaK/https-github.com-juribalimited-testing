@@ -726,3 +726,14 @@ Scenario: EvergreenJnr_DevicesList_CheckThatApplicationFiltersBeingAppliedAgains
 	When User clicks the Filters button
 	Then Filters panel is displayed to the user
 	And "Application 7zip (2015) is entitled to device" is displayed in added filter info
+
+@Evergreen @Devices @Evergreen_FiltersFeature @FiltersDisplay @DAS-11539
+Scenario: EvergreenJnr_DevicesList_CheckThatFilterCategoriesAreClosedAfterClearingAFilterSearchValue
+	When User clicks "Devices" on the left-hand menu
+	Then "Devices" list should be displayed to the user
+	When User clicks the Filters button
+	Then Filters panel is displayed to the user
+	When User is searching in filters with "date" text in Filters panel
+	Then Minimize buttons are displayed for all category in Filters panel
+	When User clears search textbox in Filters panel
+	Then Maximize buttons are displayed for all category in Filters panel
