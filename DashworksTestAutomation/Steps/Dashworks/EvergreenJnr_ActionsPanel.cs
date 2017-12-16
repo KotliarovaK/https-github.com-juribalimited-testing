@@ -43,7 +43,7 @@ namespace DashworksTestAutomation.Steps.Dashworks
             foreach (var row in table.Rows)
             {
                 var rowIndex = columnContent.IndexOf(row["SelectedRowsName"]);
-                dashboardPage.SelectRowsCheckboxes[rowIndex + 1].Click();
+                dashboardPage.SelectRowsCheckboxes[rowIndex].Click();
             }
         }
 
@@ -53,6 +53,15 @@ namespace DashworksTestAutomation.Steps.Dashworks
             var actionsElement = _driver.NowAt<ActionsElement>();
             _driver.SelectCustomSelectbox(actionsElement.DropdownBox, "Remove from static list");
             actionsElement.RemoveButton.Click();
+        }
+
+        [Then(@"User add selected rows in ""(.*)"" list")]
+        public void ThenUserAddSelectedRowsInList(string listName)
+        {
+            var actionsElement = _driver.NowAt<ActionsElement>();
+            _driver.SelectCustomSelectbox(actionsElement.DropdownBox, "Add to static list");
+            actionsElement.SelectList(listName);
+            actionsElement.AddButton.Click();
         }
 
         [Then(@"Select All selectbox is checked")]

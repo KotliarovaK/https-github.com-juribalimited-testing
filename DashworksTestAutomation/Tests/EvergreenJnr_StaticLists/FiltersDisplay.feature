@@ -64,3 +64,38 @@ Scenario: EvergreenJnr_DevicesList__CheckThatFiltersAndColumnsAreRestoredForSave
 	When User clicks the Filters button
 	Then Filters panel is displayed to the user
 	And "Windows7Mi: SS Application List Completed is Not Applicable or No" is displayed in added filter info
+
+@Evergreen @Devices @EvergreenJnr_StaticLists @FiltersDisplay @DAS-10695 @Delete_Newly_Created_List
+Scenario: EvergreenJnr_DevicesList_
+	When User clicks "Devices" on the left-hand menu
+	Then "Devices" list should be displayed to the user
+	When User clicks the Actions button
+	Then Actions panel is displayed to the user
+	When User select "Hostname" rows in the grid
+	| SelectedRowsName |
+	| 00BDM1JUR8IF419  |
+	| 00K4CEEQ737BA4L  |
+	| 011PLA470S0B9DJ  |
+	| 019BFPQGKK5QT8N  |
+	And User create static list with "TopFour TestName" name
+	Then "TopFour TestName" list is displayed to user
+	When User navigates to the "All Devices" list
+	When User clicks the Actions button
+	Then Actions panel is displayed to the user
+	Then "Devices" list should be displayed to the user
+	When User select "Hostname" rows in the grid
+	| SelectedRowsName |
+	| 00BDM1JUR8IF419  |
+	| 00K4CEEQ737BA4L  |
+	And User create static list with "TopTwo TestName" name
+	Then "TopTwo TestName" list is displayed to user
+	When User clicks the Actions button
+	Then Actions panel is displayed to the user
+	Then "Devices" list should be displayed to the user
+	When User select "Hostname" rows in the grid
+	| SelectedRowsName |
+	| 00BDM1JUR8IF419  |
+	| 00K4CEEQ737BA4L  |
+	Then User add selected rows in "TopFour TestName" list
+	Then "TopFour TestName" list is displayed to user
+	And "4" rows are displayed in the agGrid
