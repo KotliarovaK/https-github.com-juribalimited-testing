@@ -12,7 +12,7 @@ Background: Pre-Conditions
 	Then Evergreen Dashboards page should be displayed to the user
 
 @Evergreen @Devices @EvergreenJnr_Columns @RemoveColumn @DAS-10966 @DAS-10973 @Delete_Newly_Created_List
-Scenario: EvergreenDevicesListCheckThat500ErrorPageIsNotDisplayedAfterRemovingSortedColumnInCustomList
+Scenario: EvergreenJnr_DevicesList_CheckThat500ErrorPageIsNotDisplayedAfterRemovingSortedColumnInCustomList
 	When User clicks "Devices" on the left-hand menu
 	Then "Devices" list should be displayed to the user
 	When User clicks the Columns button
@@ -50,7 +50,7 @@ Scenario: EvergreenDevicesListCheckThat500ErrorPageIsNotDisplayedAfterRemovingSo
 	| Boot Up Date |
 
 @Evergreen @Devices @EvergreenJnr_Columns @RemoveColumn @DAS-10966 @DAS-10973 @Delete_Newly_Created_List
-Scenario: EvergreenDevicesListCheckThat500ErrorPageIsNotDisplayedAfterRemovingMultipleSortedColumnInCustomList
+Scenario: EvergreenJnr_DevicesList_CheckThat500ErrorPageIsNotDisplayedAfterRemovingMultipleSortedColumnInCustomList
 	When User clicks "Devices" on the left-hand menu
 	Then "Devices" list should be displayed to the user
 	When User clicks the Columns button
@@ -92,7 +92,7 @@ Scenario: EvergreenDevicesListCheckThat500ErrorPageIsNotDisplayedAfterRemovingMu
 	| Boot Up Date |
 
 @Evergreen @Devices @EvergreenJnr_Columns @RemoveColumn @DAS-10966 @DAS-10973 @Delete_Newly_Created_List
-Scenario: EvergreenDevicesListCheckThat500ErrorPageIsNotDisplayedAfterRemovingSortedColumnInCustomListThrowFilters
+Scenario: EvergreenJnr_DevicesList_CheckThat500ErrorPageIsNotDisplayedAfterRemovingSortedColumnInCustomListThrowFilters
 	When User clicks "Devices" on the left-hand menu
 	Then "Devices" list should be displayed to the user
 	When User clicks the Filters button
@@ -135,7 +135,7 @@ Scenario: EvergreenDevicesListCheckThat500ErrorPageIsNotDisplayedAfterRemovingSo
 	Then "Directory Type" filter is added to the list
 
 @Evergreen @Devices @EvergreenJnr_Columns @RemoveColumn @DAS-10966 @DAS-10973
-Scenario: EvergreenDevicesListCheckThat500ErrorPageIsNotDisplayedAfterRemovingSortedColumnInDefaultList
+Scenario: EvergreenJnr_DevicesList_CheckThat500ErrorPageIsNotDisplayedAfterRemovingSortedColumnInDefaultList
 	When User clicks "Devices" on the left-hand menu
 	Then "Devices" list should be displayed to the user
 	When User clicks the Columns button
@@ -165,7 +165,7 @@ Scenario: EvergreenDevicesListCheckThat500ErrorPageIsNotDisplayedAfterRemovingSo
 	| Windows7Mi: Date & Time Task |
 
 @Evergreen @Devices @EvergreenJnr_Columns @RemoveColumn @DAS-10966 @DAS-10973
-Scenario: EvergreenDevicesListCheckThat500ErrorPageIsNotDisplayedAfterRemovingMultipleSortedColumnInDefaultList
+Scenario: EvergreenJnr_DevicesList_CheckThat500ErrorPageIsNotDisplayedAfterRemovingMultipleSortedColumnInDefaultList
 	When User clicks "Devices" on the left-hand menu
 	Then "Devices" list should be displayed to the user
 	When User clicks the Columns button
@@ -203,7 +203,7 @@ Scenario: EvergreenDevicesListCheckThat500ErrorPageIsNotDisplayedAfterRemovingMu
 	Then data in table is sorted by 'Build Date' column in descending order
 
 @Evergreen @Devices @EvergreenJnr_Columns @RemoveColumn @DAS-10966 @DAS-10973
-Scenario: EvergreenDevicesListCheckThat500ErrorPageIsNotDisplayedAfterRemovingSortedColumnInDefaultListThrowFilters
+Scenario: EvergreenJnr_DevicesList_CheckThat500ErrorPageIsNotDisplayedAfterRemovingSortedColumnInDefaultListThrowFilters
 	When User clicks "Devices" on the left-hand menu
 	Then "Devices" list should be displayed to the user
 	When User clicks the Filters button
@@ -243,7 +243,7 @@ Scenario: EvergreenDevicesListCheckThat500ErrorPageIsNotDisplayedAfterRemovingSo
 	Then "Directory Type" filter is added to the list
 
 @Evergreen @Users @EvergreenJnr_Columns @RemoveColumn @DAS-10973
-Scenario: EvergreenUsersListCheckThat500ErrorPageIsNotDisplayedAfterRemovingSortedColumn
+Scenario: EvergreenJnr_UsersList_CheckThat500ErrorPageIsNotDisplayedAfterRemovingSortedColumn
 	When User clicks "Users" on the left-hand menu
 	Then "Users" list should be displayed to the user
 	When User clicks the Columns button

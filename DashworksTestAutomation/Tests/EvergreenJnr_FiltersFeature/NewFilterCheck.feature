@@ -13,7 +13,7 @@ Background: Pre-Conditions
 	Then Evergreen Dashboards page should be displayed to the user
 
 @Evergreen @Applications @Evergreen_FiltersFeature @NewFilterCheck @DAS-10828
-Scenario Outline: EvergreenJnr_ApplicationsList_Check that Target App filter is added to the list
+Scenario Outline: EvergreenJnr_ApplicationsList_CheckThatTargetAppFilterIsAddedToTheList
 	When User clicks "Applications" on the left-hand menu
 	Then "Applications" list should be displayed to the user
 	When User clicks the Columns button
@@ -42,7 +42,7 @@ Examples:
 	| UserSchedu: Target App | Equals, Does not equal | Zune         | UserSchedu: Target App is Zune (316)        | 1         |
 
 @Evergreen @Applications @Evergreen_FiltersFeature @NewFilterCheck @DAS-10828
-Scenario Outline: EvergreenJnr_ApplicationsList_Check that Target App Key filter is added to the list
+Scenario Outline: EvergreenJnr_ApplicationsList_CheckThatTargetAppKeyFilterIsAddedToTheList
 	When User clicks "Applications" on the left-hand menu
 	Then "Applications" list should be displayed to the user
 	When User clicks the Columns button
@@ -73,7 +73,7 @@ Examples:
 	| UserSchedu: Target App Key | Equals, Does not equal, Greater than, Greater than or equal to, Less than, Less than or equal to | 1            | UserSchedu: Target App Key is 1    | 1         |
 
 @Evergreen @Applications @Evergreen_FiltersFeature @NewFilterCheck @DAS-10828
-Scenario Outline: EvergreenJnr_ApplicationsList_Check that Target App Readiness filter is added to the list
+Scenario Outline: EvergreenJnr_ApplicationsList_CheckThatTargetAppReadinessFilterIsAddedToTheList
 	When User clicks "Applications" on the left-hand menu
 	Then "Applications" list should be displayed to the user
 	When User clicks the Columns button
@@ -102,7 +102,7 @@ Examples:
 	| UserSchedu: Target App Readiness | Equals, Does not equal | Grey         | UserSchedu: Target App Readiness is Grey  | 981       |
 
 @Evergreen @AllLists @Evergreen_FiltersFeature @NewFilterCheck @DAS-10578
-Scenario Outline: EvergreenJnr_AllLists_Check that Dashworks First Seen filter is added to the filter list
+Scenario Outline: EvergreenJnr_AllLists_CheckThatDashworksFirstSeenFilterIsAddedToTheFilterList
 	When User clicks "<ListName>" on the left-hand menu
 	Then "<ListName>" list should be displayed to the user
 	When User clicks the Columns button
@@ -128,7 +128,7 @@ Examples:
 	| Mailboxes    | 4,835     |
 
 @Evergreen @Applications @Evergreen_FiltersFeature @NewFilterCheck @DAS-10512
-Scenario Outline: EvergreenJnr_ApplicationsList_Check that Application Readiness filter is added to the list
+Scenario Outline: EvergreenJnr_ApplicationsList_CheckThatApplicationReadinessFilterIsAddedToTheList
 	When User clicks "Applications" on the left-hand menu
 	Then "Applications" list should be displayed to the user
 	When User clicks the Columns button
@@ -157,7 +157,7 @@ Examples:
 	| UserSchedu: Application Readiness | Equals, Does not equal | None         | UserSchedu: Application Readiness is None  | 981       |
 
 @Evergreen @Applications @Evergreen_FiltersFeature @NewFilterCheck @DAS-10512 @DAS-11509 @DAS-11507 @DAS-11509
-Scenario Outline: EvergreenJnr_ApplicationsList_Check that Application Rationalisation filter is added to the list
+Scenario Outline: EvergreenJnr_ApplicationsList_CheckThatApplicationRationalisationFilterIsAddedToTheList
 	When User clicks "Applications" on the left-hand menu
 	Then "Applications" list should be displayed to the user
 	When User clicks the Columns button
@@ -188,7 +188,7 @@ Examples:
 	| UserSchedu: Application Rationalization | Equals, Does not equal | UNCATEGORISED | UserSchedu: Application Rationalization is Uncategorised | 981       |
 
 @Evergreen @Applications @Evergreen_FiltersFeature @NewFilterCheck @DAS-10512 @DAS-11507
-Scenario Outline: EvergreenJnr_ApplicationsList_Check that Core Application filter is added to the list
+Scenario Outline: EvergreenJnr_ApplicationsList_CheckThatCoreApplicationFilterIsAddedToTheList
 	When User clicks "Applications" on the left-hand menu
 	Then "Applications" list should be displayed to the user
 	When User clicks the Columns button
@@ -219,7 +219,7 @@ Examples:
 	| UserSchedu: Core Application | Equals, Does not equal | UNKNOWN      | UserSchedu: Core Application is Unknown | 1,242     |
 
 @Evergreen @Applications @Evergreen_FiltersFeature @NewFilterCheck @DAS-10512 @DAS-11509 @DAS-11507 @DAS-11509
-Scenario Outline: EvergreenJnr_ApplicationsList_Check that Hide from End Users filter is added to the list
+Scenario Outline: EvergreenJnr_ApplicationsList_CheckThatHideFromEndUsersFilterIsAddedToTheList
 	When User clicks "Applications" on the left-hand menu
 	Then "Applications" list should be displayed to the user
 	When User clicks the Columns button

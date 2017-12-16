@@ -14,7 +14,7 @@ Background: Pre-Conditions
 
 
 @Evergreen @Users @EvergreenJnr_StaticLists @PermissionsSettings @DAS-10945 @DAS-11553 @Delete_Newly_Created_List
-Scenario: EvergreenJnr_UsersList_Check that not owner users don't have permissions to update static list
+Scenario: EvergreenJnr_UsersList_CheckThatNotOwnerUsersDontHavePermissionsToUpdateStaticList
 	When User clicks "Users" on the left-hand menu
 	Then "Users" list should be displayed to the user
 	When User clicks the Actions button

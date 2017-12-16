@@ -92,7 +92,7 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_GridActions
         }
         
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestMethodAttribute()]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.DescriptionAttribute("EvergreenJnr_DevicesList_Check that columns order saved after search")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.DescriptionAttribute("EvergreenJnr_DevicesList_CheckThatColumnsOrderSavedAfterSearch")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("FeatureTitle", "ColumnOrder")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("Evergreen")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("Devices")]
@@ -101,7 +101,7 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_GridActions
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("DAS-10836")]
         public virtual void EvergreenJnr_DevicesList_CheckThatColumnsOrderSavedAfterSearch()
         {
-            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("EvergreenJnr_DevicesList_Check that columns order saved after search", new string[] {
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("EvergreenJnr_DevicesList_CheckThatColumnsOrderSavedAfterSearch", new string[] {
                         "Evergreen",
                         "Devices",
                         "EvergreenJnr_GridActions",
@@ -127,7 +127,7 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_GridActions
         }
         
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestMethodAttribute()]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.DescriptionAttribute("EvergreenJnr_UsersList_Check that columns order saved after search")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.DescriptionAttribute("EvergreenJnr_UsersList_CheckThatColumnsOrderSavedAfterSearch")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("FeatureTitle", "ColumnOrder")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("Evergreen")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("Users")]
@@ -136,7 +136,7 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_GridActions
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("DAS-10836")]
         public virtual void EvergreenJnr_UsersList_CheckThatColumnsOrderSavedAfterSearch()
         {
-            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("EvergreenJnr_UsersList_Check that columns order saved after search", new string[] {
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("EvergreenJnr_UsersList_CheckThatColumnsOrderSavedAfterSearch", new string[] {
                         "Evergreen",
                         "Users",
                         "EvergreenJnr_GridActions",
@@ -169,7 +169,7 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_GridActions
         }
         
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestMethodAttribute()]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.DescriptionAttribute("EvergreenJnr_DevicesList_Check that columns order saved after adding a filter")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.DescriptionAttribute("EvergreenJnr_DevicesList_CheckThatColumnsOrderSavedAfterAddingAFilter")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("FeatureTitle", "ColumnOrder")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("Evergreen")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("Devices")]
@@ -178,7 +178,7 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_GridActions
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("DAS-10621")]
         public virtual void EvergreenJnr_DevicesList_CheckThatColumnsOrderSavedAfterAddingAFilter()
         {
-            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("EvergreenJnr_DevicesList_Check that columns order saved after adding a filter", new string[] {
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("EvergreenJnr_DevicesList_CheckThatColumnsOrderSavedAfterAddingAFilter", new string[] {
                         "Evergreen",
                         "Devices",
                         "EvergreenJnr_GridActions",

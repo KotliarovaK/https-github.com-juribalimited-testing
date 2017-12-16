@@ -12,7 +12,7 @@ Background: Pre-Conditions
 	Then Evergreen Dashboards page should be displayed to the user
 
 @Evergreen @Devices @Evergreen_FiltersFeature @RemoveFilter @DAS-11009
-Scenario: EvergreenJnr_DevicesList_Check that reset is updating row count
+Scenario: EvergreenJnr_DevicesList_CheckThatResetIsUpdatingRowCount
 	When User clicks "Devices" on the left-hand menu
 	Then "Devices" list should be displayed to the user
 	When User clicks the Filters button
@@ -33,7 +33,7 @@ Scenario: EvergreenJnr_DevicesList_Check that reset is updating row count
 	Then "Compliance" filter is removed from filters
 
 @Evergreen @Devices @Evergreen_FiltersFeature @RemoveFilter @DAS-11044
-Scenario: EvergreenDevicesListCheckThatDeleteByUrlIsUpdatingRowCount
+Scenario: EvergreenJnr_DevicesList_CheckThatDeleteByUrlIsUpdatingRowCount
 	When User clicks "Devices" on the left-hand menu
 	Then "Devices" list should be displayed to the user
 	When User clicks the Filters button
@@ -55,7 +55,7 @@ Scenario: EvergreenDevicesListCheckThatDeleteByUrlIsUpdatingRowCount
 	Then "Compliance" filter is removed from filters
 
 @Evergreen @Users @Evergreen_FiltersFeature @RemoveFilter @DAS-11009
-Scenario: EvergreenJnr_UsersList_Check that delete part of filter from url is updating row count
+Scenario: EvergreenJnr_UsersList_CheckThatDeletePartOfFilterFromUrlIsUpdatingRowСount
 	When User clicks "Users" on the left-hand menu
 	Then "Users" list should be displayed to the user
 	When User clicks the Filters button
@@ -78,7 +78,7 @@ Scenario: EvergreenJnr_UsersList_Check that delete part of filter from url is up
 	Then "Compliance" filter is removed from filters
 
 @Evergreen @Mailboxes @Evergreen_FiltersFeature @RemoveFilter @DAS-10996
-Scenario: EvergreenMailboxesListCheckThatFiltersIsResetAndDataOnTheGridUpdatedBackToTheFullDataSet
+Scenario: EvergreenОтк_MailboxesList_CheckThatFiltersIsResetAndDataOnTheGridUpdatedBackToTheFullDataSet
 	When User clicks "Mailboxes" on the left-hand menu
 	Then "Mailboxes" list should be displayed to the user
 	When User clicks the Filters button

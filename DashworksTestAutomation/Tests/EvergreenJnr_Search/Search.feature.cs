@@ -92,16 +92,16 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_Search
         }
         
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestMethodAttribute()]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.DescriptionAttribute("EvergreenDevicesListCheckThatQuickSearchResetWhenMovingBetweenLists")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.DescriptionAttribute("EvergreenJnr_DevicesList_CheckThatQuickSearchResetWhenMovingBetweenLists")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("FeatureTitle", "Search")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("Evergreen")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("Devices")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("EvergreenJnr_Search")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("Search")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("DAS-10704")]
-        public virtual void EvergreenDevicesListCheckThatQuickSearchResetWhenMovingBetweenLists()
+        public virtual void EvergreenJnr_DevicesList_CheckThatQuickSearchResetWhenMovingBetweenLists()
         {
-            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("EvergreenDevicesListCheckThatQuickSearchResetWhenMovingBetweenLists", new string[] {
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("EvergreenJnr_DevicesList_CheckThatQuickSearchResetWhenMovingBetweenLists", new string[] {
                         "Evergreen",
                         "Devices",
                         "EvergreenJnr_Search",
@@ -139,16 +139,16 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_Search
         }
         
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestMethodAttribute()]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.DescriptionAttribute("EvergreenDevicesListCheckThatQuickSearchDoesntTriggersNewListMenu")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.DescriptionAttribute("EvergreenJnr_DevicesList_CheckThatQuickSearchDoesntTriggersNewListMenu")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("FeatureTitle", "Search")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("Evergreen")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("Devices")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("EvergreenJnr_Search")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("Search")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("DAS-10704")]
-        public virtual void EvergreenDevicesListCheckThatQuickSearchDoesntTriggersNewListMenu()
+        public virtual void EvergreenJnr_DevicesList_CheckThatQuickSearchDoesntTriggersNewListMenu()
         {
-            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("EvergreenDevicesListCheckThatQuickSearchDoesntTriggersNewListMenu", new string[] {
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("EvergreenJnr_DevicesList_CheckThatQuickSearchDoesntTriggersNewListMenu", new string[] {
                         "Evergreen",
                         "Devices",
                         "EvergreenJnr_Search",
@@ -171,8 +171,8 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_Search
         }
         
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestMethodAttribute()]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.DescriptionAttribute("EvergreenJnr_AllLists_Check search filter and table content during navigation bet" +
-            "ween pages")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.DescriptionAttribute("EvergreenJnr_AllLists_CheckSearchFilterAndTableContentDuringNavigationBetweenPage" +
+            "s")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("FeatureTitle", "Search")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("Evergreen")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("Devices")]
@@ -186,8 +186,8 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_Search
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("DAS-10624")]
         public virtual void EvergreenJnr_AllLists_CheckSearchFilterAndTableContentDuringNavigationBetweenPages()
         {
-            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("EvergreenJnr_AllLists_Check search filter and table content during navigation bet" +
-                    "ween pages", new string[] {
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("EvergreenJnr_AllLists_CheckSearchFilterAndTableContentDuringNavigationBetweenPage" +
+                    "s", new string[] {
                         "Evergreen",
                         "Devices",
                         "Applications",
@@ -254,7 +254,7 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_Search
         }
         
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestMethodAttribute()]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.DescriptionAttribute("EvergreenJnr_DevicesList_Search Tests")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.DescriptionAttribute("EvergreenJnr_DevicesList_SearchTests")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("FeatureTitle", "Search")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("Evergreen")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("Devices")]
@@ -262,7 +262,7 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_Search
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("Search")]
         public virtual void EvergreenJnr_DevicesList_SearchTests()
         {
-            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("EvergreenJnr_DevicesList_Search Tests", new string[] {
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("EvergreenJnr_DevicesList_SearchTests", new string[] {
                         "Evergreen",
                         "Devices",
                         "EvergreenJnr_Search",
@@ -324,7 +324,7 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_Search
         }
         
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestMethodAttribute()]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.DescriptionAttribute("EvergreenJnr_DevicesList_Clearing search returns the full data set")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.DescriptionAttribute("EvergreenJnr_DevicesList_ClearingSearchReturnsTheFullDataSet")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("FeatureTitle", "Search")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("Evergreen")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("Devices")]
@@ -333,7 +333,7 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_Search
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("DAS-11012")]
         public virtual void EvergreenJnr_DevicesList_ClearingSearchReturnsTheFullDataSet()
         {
-            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("EvergreenJnr_DevicesList_Clearing search returns the full data set", new string[] {
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("EvergreenJnr_DevicesList_ClearingSearchReturnsTheFullDataSet", new string[] {
                         "Evergreen",
                         "Devices",
                         "EvergreenJnr_Search",
@@ -359,7 +359,7 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_Search
         }
         
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestMethodAttribute()]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.DescriptionAttribute("EvergreenJnr_DevicesList_Search_No Devices Found")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.DescriptionAttribute("EvergreenJnr_DevicesList_Search_NoDevicesFound")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("FeatureTitle", "Search")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("Evergreen")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("Devices")]
@@ -367,7 +367,7 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_Search
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("Search")]
         public virtual void EvergreenJnr_DevicesList_Search_NoDevicesFound()
         {
-            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("EvergreenJnr_DevicesList_Search_No Devices Found", new string[] {
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("EvergreenJnr_DevicesList_Search_NoDevicesFound", new string[] {
                         "Evergreen",
                         "Devices",
                         "EvergreenJnr_Search",

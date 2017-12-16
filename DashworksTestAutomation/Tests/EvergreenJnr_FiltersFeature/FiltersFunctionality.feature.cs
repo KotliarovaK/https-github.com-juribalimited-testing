@@ -92,8 +92,8 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_FiltersFeature
         }
         
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestMethodAttribute()]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.DescriptionAttribute("EvergreenJnr_UsersList_Check that 500 error is not returned for filter with speci" +
-            "al charecter")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.DescriptionAttribute("EvergreenJnr_UsersList_CheckThat500ErrorIsNotReturnedForFilterWithSpecialCharecte" +
+            "r")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("FeatureTitle", "Functionality")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("Evergreen")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("Users")]
@@ -102,8 +102,8 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_FiltersFeature
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("DAS-10612")]
         public virtual void EvergreenJnr_UsersList_CheckThat500ErrorIsNotReturnedForFilterWithSpecialCharecter()
         {
-            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("EvergreenJnr_UsersList_Check that 500 error is not returned for filter with speci" +
-                    "al charecter", new string[] {
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("EvergreenJnr_UsersList_CheckThat500ErrorIsNotReturnedForFilterWithSpecialCharecte" +
+                    "r", new string[] {
                         "Evergreen",
                         "Users",
                         "Evergreen_FiltersFeature",
@@ -127,8 +127,8 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_FiltersFeature
         }
         
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestMethodAttribute()]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.DescriptionAttribute("EvergreenJnr_ApplicationsList_Check 500 error is not returned for boolean filter " +
-            "with Unknown option")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.DescriptionAttribute("EvergreenJnr_ApplicationsList_Check500ErrorIsNotReturnedForBooleanFilterWithUnkno" +
+            "wnOption")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("FeatureTitle", "Functionality")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("Evergreen")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("Applications")]
@@ -137,8 +137,8 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_FiltersFeature
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("DAS-10639")]
         public virtual void EvergreenJnr_ApplicationsList_Check500ErrorIsNotReturnedForBooleanFilterWithUnknownOption()
         {
-            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("EvergreenJnr_ApplicationsList_Check 500 error is not returned for boolean filter " +
-                    "with Unknown option", new string[] {
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("EvergreenJnr_ApplicationsList_Check500ErrorIsNotReturnedForBooleanFilterWithUnkno" +
+                    "wnOption", new string[] {
                         "Evergreen",
                         "Applications",
                         "Evergreen_FiltersFeature",
@@ -188,7 +188,7 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_FiltersFeature
         }
         
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestMethodAttribute()]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.DescriptionAttribute("EvergreenJnr_ApplicationsList_Check that add column checkbox works correctly")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.DescriptionAttribute("EvergreenJnr_ApplicationsList_CheckThatAddColumnCheckboxWorksCorrectly")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("FeatureTitle", "Functionality")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("Evergreen")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("Applications")]
@@ -198,7 +198,7 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_FiltersFeature
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("DAS-11507")]
         public virtual void EvergreenJnr_ApplicationsList_CheckThatAddColumnCheckboxWorksCorrectly()
         {
-            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("EvergreenJnr_ApplicationsList_Check that add column checkbox works correctly", new string[] {
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("EvergreenJnr_ApplicationsList_CheckThatAddColumnCheckboxWorksCorrectly", new string[] {
                         "Evergreen",
                         "Applications",
                         "EvergreenJnr_FiltersFeature",
@@ -223,8 +223,8 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_FiltersFeature
         }
         
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestMethodAttribute()]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.DescriptionAttribute("EvergreenJnr_ApplicationsList_Check that filter is restored after going back to t" +
-            "he list again")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.DescriptionAttribute("EvergreenJnr_ApplicationsList_CheckThatFilterIsRestoredAfterGoingBackToTheListAga" +
+            "in")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("FeatureTitle", "Functionality")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("Evergreen")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("Applications")]
@@ -234,8 +234,8 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_FiltersFeature
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("Delete_Newly_Created_List")]
         public virtual void EvergreenJnr_ApplicationsList_CheckThatFilterIsRestoredAfterGoingBackToTheListAgain()
         {
-            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("EvergreenJnr_ApplicationsList_Check that filter is restored after going back to t" +
-                    "he list again", new string[] {
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("EvergreenJnr_ApplicationsList_CheckThatFilterIsRestoredAfterGoingBackToTheListAga" +
+                    "in", new string[] {
                         "Evergreen",
                         "Applications",
                         "EvergreenJnr_FiltersFeature",
@@ -290,8 +290,8 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_FiltersFeature
             {
                 @__tags = System.Linq.Enumerable.ToArray(System.Linq.Enumerable.Concat(@__tags, exampleTags));
             }
-            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("EvergreenJnr_AllLists_Check that primary column is displayed after adding a filte" +
-                    "r with column", @__tags);
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("EvergreenJnr_AllLists_CheckThatPrimaryColumnIsDisplayedAfterAddingAFilterWithColu" +
+                    "mn", @__tags);
             this.ScenarioSetup(scenarioInfo);
             this.FeatureBackground();
             testRunner.When(string.Format("User clicks \"{0}\" on the left-hand menu", listName), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
@@ -314,8 +314,8 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_FiltersFeature
         }
         
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestMethodAttribute()]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.DescriptionAttribute("EvergreenJnr_AllLists_Check that primary column is displayed after adding a filte" +
-            "r with column: Devices")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.DescriptionAttribute("EvergreenJnr_AllLists_CheckThatPrimaryColumnIsDisplayedAfterAddingAFilterWithColu" +
+            "mn: Devices")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("FeatureTitle", "Functionality")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("Evergreen")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("AllLists")]
@@ -333,8 +333,8 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_FiltersFeature
         }
         
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestMethodAttribute()]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.DescriptionAttribute("EvergreenJnr_AllLists_Check that primary column is displayed after adding a filte" +
-            "r with column: Applications")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.DescriptionAttribute("EvergreenJnr_AllLists_CheckThatPrimaryColumnIsDisplayedAfterAddingAFilterWithColu" +
+            "mn: Applications")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("FeatureTitle", "Functionality")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("Evergreen")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("AllLists")]
@@ -352,8 +352,8 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_FiltersFeature
         }
         
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestMethodAttribute()]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.DescriptionAttribute("EvergreenJnr_AllLists_Check that primary column is displayed after adding a filte" +
-            "r with column: Users")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.DescriptionAttribute("EvergreenJnr_AllLists_CheckThatPrimaryColumnIsDisplayedAfterAddingAFilterWithColu" +
+            "mn: Users")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("FeatureTitle", "Functionality")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("Evergreen")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("AllLists")]
@@ -371,8 +371,8 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_FiltersFeature
         }
         
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestMethodAttribute()]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.DescriptionAttribute("EvergreenJnr_AllLists_Check that primary column is displayed after adding a filte" +
-            "r with column: Mailboxes")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.DescriptionAttribute("EvergreenJnr_AllLists_CheckThatPrimaryColumnIsDisplayedAfterAddingAFilterWithColu" +
+            "mn: Mailboxes")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("FeatureTitle", "Functionality")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("Evergreen")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("AllLists")]
@@ -390,8 +390,8 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_FiltersFeature
         }
         
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestMethodAttribute()]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.DescriptionAttribute("EvergreenJnr_Devices_Check that Add column checkbox is checked after saving filte" +
-            "r in a new list")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.DescriptionAttribute("EvergreenJnr_Devices_CheckThatAddColumnCheckboxIsCheckedAfterSavingFilterInANewLi" +
+            "st")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("FeatureTitle", "Functionality")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("Evergreen")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("Devices")]
@@ -400,8 +400,8 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_FiltersFeature
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("DAS-11042")]
         public virtual void EvergreenJnr_Devices_CheckThatAddColumnCheckboxIsCheckedAfterSavingFilterInANewList()
         {
-            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("EvergreenJnr_Devices_Check that Add column checkbox is checked after saving filte" +
-                    "r in a new list", new string[] {
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("EvergreenJnr_Devices_CheckThatAddColumnCheckboxIsCheckedAfterSavingFilterInANewLi" +
+                    "st", new string[] {
                         "Evergreen",
                         "Devices",
                         "EvergreenJnr_FilterFeature",
@@ -435,8 +435,7 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_FiltersFeature
         }
         
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestMethodAttribute()]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.DescriptionAttribute("EvergreenJnr_Devices_Check that Add column checkbox is checked after saving a fil" +
-            "ter")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.DescriptionAttribute("EvergreenJnr_Devices_CheckThatAddColumnCheckboxIsCheckedAfterSavingAFilter")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("FeatureTitle", "Functionality")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("Evergreen")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("Devices")]
@@ -445,8 +444,7 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_FiltersFeature
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("DAS-11042")]
         public virtual void EvergreenJnr_Devices_CheckThatAddColumnCheckboxIsCheckedAfterSavingAFilter()
         {
-            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("EvergreenJnr_Devices_Check that Add column checkbox is checked after saving a fil" +
-                    "ter", new string[] {
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("EvergreenJnr_Devices_CheckThatAddColumnCheckboxIsCheckedAfterSavingAFilter", new string[] {
                         "Evergreen",
                         "Devices",
                         "EvergreenJnr_FilterFeature",
@@ -472,8 +470,8 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_FiltersFeature
         }
         
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestMethodAttribute()]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.DescriptionAttribute("EvergreenJnr_Devices_Check that Add column checkbox is unchecked after saving a f" +
-            "ilter and removing a column")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.DescriptionAttribute("EvergreenJnr_Devices_CheckThatAddColumnCheckboxIsUncheckedAfterSavingAFilterAndRe" +
+            "movingAColumn")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("FeatureTitle", "Functionality")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("Evergreen")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("Devices")]
@@ -482,8 +480,8 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_FiltersFeature
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("DAS-11042")]
         public virtual void EvergreenJnr_Devices_CheckThatAddColumnCheckboxIsUncheckedAfterSavingAFilterAndRemovingAColumn()
         {
-            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("EvergreenJnr_Devices_Check that Add column checkbox is unchecked after saving a f" +
-                    "ilter and removing a column", new string[] {
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("EvergreenJnr_Devices_CheckThatAddColumnCheckboxIsUncheckedAfterSavingAFilterAndRe" +
+                    "movingAColumn", new string[] {
                         "Evergreen",
                         "Devices",
                         "EvergreenJnr_FilterFeature",
@@ -513,7 +511,7 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_FiltersFeature
             this.ScenarioCleanup();
         }
         
-        public virtual void EvergreenJnr_AllLists_CheckThatFilterIsRestoredCorrectlyAfterLeavingThePageAndGoingBackViaTheBrowseBackButtonForCheckboxesFilters(string listName, string filterName, string filterValue, string rowsCount, string columnName, string objectName, string text, string[] exampleTags)
+        public virtual void EvergreenJnr_AllLists_CheckThatFilterIsRestoredCorrectlyAfterLeavingThePageAndGoingBackViaTheBrowserBackButtonForCheckboxesFilters(string listName, string filterName, string filterValue, string rowsCount, string columnName, string objectName, string text, string[] exampleTags)
         {
             string[] @__tags = new string[] {
                     "Evergreen",
@@ -526,8 +524,8 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_FiltersFeature
             {
                 @__tags = System.Linq.Enumerable.ToArray(System.Linq.Enumerable.Concat(@__tags, exampleTags));
             }
-            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("EvergreenJnr_AllLists_Check that filter is restored correctly after leaving the p" +
-                    "age and going back via the browse \"back\" button for checkboxes filters", @__tags);
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("EvergreenJnr_AllLists_CheckThatFilterIsRestoredCorrectlyAfterLeavingThePageAndGoi" +
+                    "ngBackViaTheBrowserBackButtonForCheckboxesFilters", @__tags);
             this.ScenarioSetup(scenarioInfo);
             this.FeatureBackground();
             testRunner.When(string.Format("User clicks \"{0}\" on the left-hand menu", listName), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
@@ -551,9 +549,8 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_FiltersFeature
         }
         
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestMethodAttribute()]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.DescriptionAttribute("EvergreenJnr_AllLists_Check that filter is restored correctly after leaving the p" +
-            "age and going back via the browse \"back\" button for checkboxes filters: Variant " +
-            "0")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.DescriptionAttribute("EvergreenJnr_AllLists_CheckThatFilterIsRestoredCorrectlyAfterLeavingThePageAndGoi" +
+            "ngBackViaTheBrowserBackButtonForCheckboxesFilters: Variant 0")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("FeatureTitle", "Functionality")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("Evergreen")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("AllLists")]
@@ -569,15 +566,14 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_FiltersFeature
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:ColumnName", "Hostname")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:ObjectName", "01COJATLYVAR7A6")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Text", "Babel(Engl: Category is None")]
-        public virtual void EvergreenJnr_AllLists_CheckThatFilterIsRestoredCorrectlyAfterLeavingThePageAndGoingBackViaTheBrowseBackButtonForCheckboxesFilters_Variant0()
+        public virtual void EvergreenJnr_AllLists_CheckThatFilterIsRestoredCorrectlyAfterLeavingThePageAndGoingBackViaTheBrowserBackButtonForCheckboxesFilters_Variant0()
         {
-            this.EvergreenJnr_AllLists_CheckThatFilterIsRestoredCorrectlyAfterLeavingThePageAndGoingBackViaTheBrowseBackButtonForCheckboxesFilters("Devices", "Babel(Engl: Category", "None", "62", "Hostname", "01COJATLYVAR7A6", "Babel(Engl: Category is None", ((string[])(null)));
+            this.EvergreenJnr_AllLists_CheckThatFilterIsRestoredCorrectlyAfterLeavingThePageAndGoingBackViaTheBrowserBackButtonForCheckboxesFilters("Devices", "Babel(Engl: Category", "None", "62", "Hostname", "01COJATLYVAR7A6", "Babel(Engl: Category is None", ((string[])(null)));
         }
         
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestMethodAttribute()]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.DescriptionAttribute("EvergreenJnr_AllLists_Check that filter is restored correctly after leaving the p" +
-            "age and going back via the browse \"back\" button for checkboxes filters: Variant " +
-            "1")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.DescriptionAttribute("EvergreenJnr_AllLists_CheckThatFilterIsRestoredCorrectlyAfterLeavingThePageAndGoi" +
+            "ngBackViaTheBrowserBackButtonForCheckboxesFilters: Variant 1")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("FeatureTitle", "Functionality")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("Evergreen")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("AllLists")]
@@ -593,15 +589,14 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_FiltersFeature
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:ColumnName", "Hostname")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:ObjectName", "00BDM1JUR8IF419")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Text", "Barry\'sUse: In Scope is false")]
-        public virtual void EvergreenJnr_AllLists_CheckThatFilterIsRestoredCorrectlyAfterLeavingThePageAndGoingBackViaTheBrowseBackButtonForCheckboxesFilters_Variant1()
+        public virtual void EvergreenJnr_AllLists_CheckThatFilterIsRestoredCorrectlyAfterLeavingThePageAndGoingBackViaTheBrowserBackButtonForCheckboxesFilters_Variant1()
         {
-            this.EvergreenJnr_AllLists_CheckThatFilterIsRestoredCorrectlyAfterLeavingThePageAndGoingBackViaTheBrowseBackButtonForCheckboxesFilters("Devices", "Barry\'sUse: In Scope", "FALSE", "15,896", "Hostname", "00BDM1JUR8IF419", "Barry\'sUse: In Scope is false", ((string[])(null)));
+            this.EvergreenJnr_AllLists_CheckThatFilterIsRestoredCorrectlyAfterLeavingThePageAndGoingBackViaTheBrowserBackButtonForCheckboxesFilters("Devices", "Barry\'sUse: In Scope", "FALSE", "15,896", "Hostname", "00BDM1JUR8IF419", "Barry\'sUse: In Scope is false", ((string[])(null)));
         }
         
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestMethodAttribute()]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.DescriptionAttribute("EvergreenJnr_AllLists_Check that filter is restored correctly after leaving the p" +
-            "age and going back via the browse \"back\" button for checkboxes filters: Variant " +
-            "2")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.DescriptionAttribute("EvergreenJnr_AllLists_CheckThatFilterIsRestoredCorrectlyAfterLeavingThePageAndGoi" +
+            "ngBackViaTheBrowserBackButtonForCheckboxesFilters: Variant 2")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("FeatureTitle", "Functionality")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("Evergreen")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("AllLists")]
@@ -617,15 +612,14 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_FiltersFeature
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:ColumnName", "Hostname")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:ObjectName", "46DIQRWG3BM6K9Z")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Text", "ComputerSc: Request Type is Request Type A")]
-        public virtual void EvergreenJnr_AllLists_CheckThatFilterIsRestoredCorrectlyAfterLeavingThePageAndGoingBackViaTheBrowseBackButtonForCheckboxesFilters_Variant2()
+        public virtual void EvergreenJnr_AllLists_CheckThatFilterIsRestoredCorrectlyAfterLeavingThePageAndGoingBackViaTheBrowserBackButtonForCheckboxesFilters_Variant2()
         {
-            this.EvergreenJnr_AllLists_CheckThatFilterIsRestoredCorrectlyAfterLeavingThePageAndGoingBackViaTheBrowseBackButtonForCheckboxesFilters("Devices", "ComputerSc: Request Type", "Request Type A", "132", "Hostname", "46DIQRWG3BM6K9Z", "ComputerSc: Request Type is Request Type A", ((string[])(null)));
+            this.EvergreenJnr_AllLists_CheckThatFilterIsRestoredCorrectlyAfterLeavingThePageAndGoingBackViaTheBrowserBackButtonForCheckboxesFilters("Devices", "ComputerSc: Request Type", "Request Type A", "132", "Hostname", "46DIQRWG3BM6K9Z", "ComputerSc: Request Type is Request Type A", ((string[])(null)));
         }
         
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestMethodAttribute()]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.DescriptionAttribute("EvergreenJnr_AllLists_Check that filter is restored correctly after leaving the p" +
-            "age and going back via the browse \"back\" button for checkboxes filters: Variant " +
-            "3")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.DescriptionAttribute("EvergreenJnr_AllLists_CheckThatFilterIsRestoredCorrectlyAfterLeavingThePageAndGoi" +
+            "ngBackViaTheBrowserBackButtonForCheckboxesFilters: Variant 3")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("FeatureTitle", "Functionality")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("Evergreen")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("AllLists")]
@@ -641,15 +635,14 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_FiltersFeature
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:ColumnName", "Application")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:ObjectName", "Microsoft Silverlight 2 SDK (2.0.31005.0)")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Text", "Havoc(BigD: Hide from End Users is Unknown")]
-        public virtual void EvergreenJnr_AllLists_CheckThatFilterIsRestoredCorrectlyAfterLeavingThePageAndGoingBackViaTheBrowseBackButtonForCheckboxesFilters_Variant3()
+        public virtual void EvergreenJnr_AllLists_CheckThatFilterIsRestoredCorrectlyAfterLeavingThePageAndGoingBackViaTheBrowserBackButtonForCheckboxesFilters_Variant3()
         {
-            this.EvergreenJnr_AllLists_CheckThatFilterIsRestoredCorrectlyAfterLeavingThePageAndGoingBackViaTheBrowseBackButtonForCheckboxesFilters("Applications", "Havoc(BigD: Hide from End Users", "UNKNOWN", "1,156", "Application", "Microsoft Silverlight 2 SDK (2.0.31005.0)", "Havoc(BigD: Hide from End Users is Unknown", ((string[])(null)));
+            this.EvergreenJnr_AllLists_CheckThatFilterIsRestoredCorrectlyAfterLeavingThePageAndGoingBackViaTheBrowserBackButtonForCheckboxesFilters("Applications", "Havoc(BigD: Hide from End Users", "UNKNOWN", "1,156", "Application", "Microsoft Silverlight 2 SDK (2.0.31005.0)", "Havoc(BigD: Hide from End Users is Unknown", ((string[])(null)));
         }
         
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestMethodAttribute()]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.DescriptionAttribute("EvergreenJnr_AllLists_Check that filter is restored correctly after leaving the p" +
-            "age and going back via the browse \"back\" button for checkboxes filters: Variant " +
-            "4")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.DescriptionAttribute("EvergreenJnr_AllLists_CheckThatFilterIsRestoredCorrectlyAfterLeavingThePageAndGoi" +
+            "ngBackViaTheBrowserBackButtonForCheckboxesFilters: Variant 4")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("FeatureTitle", "Functionality")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("Evergreen")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("AllLists")]
@@ -665,15 +658,14 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_FiltersFeature
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:ColumnName", "Application")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:ObjectName", "Quartus II Programmer 4.0")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Text", "MigrationP: Core Application is false")]
-        public virtual void EvergreenJnr_AllLists_CheckThatFilterIsRestoredCorrectlyAfterLeavingThePageAndGoingBackViaTheBrowseBackButtonForCheckboxesFilters_Variant4()
+        public virtual void EvergreenJnr_AllLists_CheckThatFilterIsRestoredCorrectlyAfterLeavingThePageAndGoingBackViaTheBrowserBackButtonForCheckboxesFilters_Variant4()
         {
-            this.EvergreenJnr_AllLists_CheckThatFilterIsRestoredCorrectlyAfterLeavingThePageAndGoingBackViaTheBrowseBackButtonForCheckboxesFilters("Applications", "MigrationP: Core Application", "FALSE", "220", "Application", "Quartus II Programmer 4.0", "MigrationP: Core Application is false", ((string[])(null)));
+            this.EvergreenJnr_AllLists_CheckThatFilterIsRestoredCorrectlyAfterLeavingThePageAndGoingBackViaTheBrowserBackButtonForCheckboxesFilters("Applications", "MigrationP: Core Application", "FALSE", "220", "Application", "Quartus II Programmer 4.0", "MigrationP: Core Application is false", ((string[])(null)));
         }
         
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestMethodAttribute()]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.DescriptionAttribute("EvergreenJnr_AllLists_Check that filter is restored correctly after leaving the p" +
-            "age and going back via the browse \"back\" button for checkboxes filters: Variant " +
-            "5")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.DescriptionAttribute("EvergreenJnr_AllLists_CheckThatFilterIsRestoredCorrectlyAfterLeavingThePageAndGoi" +
+            "ngBackViaTheBrowserBackButtonForCheckboxesFilters: Variant 5")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("FeatureTitle", "Functionality")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("Evergreen")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("AllLists")]
@@ -689,12 +681,12 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_FiltersFeature
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:ColumnName", "Email Address")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:ObjectName", "alex.cristea@juriba.com")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Text", "EmailMigra: Device Type is Not Identified")]
-        public virtual void EvergreenJnr_AllLists_CheckThatFilterIsRestoredCorrectlyAfterLeavingThePageAndGoingBackViaTheBrowseBackButtonForCheckboxesFilters_Variant5()
+        public virtual void EvergreenJnr_AllLists_CheckThatFilterIsRestoredCorrectlyAfterLeavingThePageAndGoingBackViaTheBrowserBackButtonForCheckboxesFilters_Variant5()
         {
-            this.EvergreenJnr_AllLists_CheckThatFilterIsRestoredCorrectlyAfterLeavingThePageAndGoingBackViaTheBrowseBackButtonForCheckboxesFilters("Mailboxes", "EmailMigra: Device Type", "Not Identified", "80", "Email Address", "alex.cristea@juriba.com", "EmailMigra: Device Type is Not Identified", ((string[])(null)));
+            this.EvergreenJnr_AllLists_CheckThatFilterIsRestoredCorrectlyAfterLeavingThePageAndGoingBackViaTheBrowserBackButtonForCheckboxesFilters("Mailboxes", "EmailMigra: Device Type", "Not Identified", "80", "Email Address", "alex.cristea@juriba.com", "EmailMigra: Device Type is Not Identified", ((string[])(null)));
         }
         
-        public virtual void EvergreenJnr_AllLists_CheckThatFilterIsRestoredCorrectlyAfterLeavingThePageAndGoingBackViaTheBrowseBackButtonForLookupFilters(string listName, string filterName, string filterValue, string rowsCount, string columnName, string objectName, string text, string[] exampleTags)
+        public virtual void EvergreenJnr_AllLists_CheckThatFilterIsRestoredCorrectlyAfterLeavingThePageAndGoingBackViaTheBrowserBackButtonForLookupFilters(string listName, string filterName, string filterValue, string rowsCount, string columnName, string objectName, string text, string[] exampleTags)
         {
             string[] @__tags = new string[] {
                     "Evergreen",
@@ -706,8 +698,8 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_FiltersFeature
             {
                 @__tags = System.Linq.Enumerable.ToArray(System.Linq.Enumerable.Concat(@__tags, exampleTags));
             }
-            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("EvergreenJnr_AllLists_Check that filter is restored correctly after leaving the p" +
-                    "age and going back via the browse \"back\" button for lookup filters", @__tags);
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("EvergreenJnr_AllLists_CheckThatFilterIsRestoredCorrectlyAfterLeavingThePageAndGoi" +
+                    "ngBackViaTheBrowserBackButtonForLookupFilters", @__tags);
             this.ScenarioSetup(scenarioInfo);
             this.FeatureBackground();
             testRunner.When(string.Format("User clicks \"{0}\" on the left-hand menu", listName), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
@@ -727,9 +719,8 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_FiltersFeature
         }
         
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestMethodAttribute()]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.DescriptionAttribute("EvergreenJnr_AllLists_Check that filter is restored correctly after leaving the p" +
-            "age and going back via the browse \"back\" button for lookup filters: Applications" +
-            "")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.DescriptionAttribute("EvergreenJnr_AllLists_CheckThatFilterIsRestoredCorrectlyAfterLeavingThePageAndGoi" +
+            "ngBackViaTheBrowserBackButtonForLookupFilters: Applications")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("FeatureTitle", "Functionality")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("Evergreen")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("AllLists")]
@@ -744,14 +735,14 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_FiltersFeature
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:ColumnName", "Application")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:ObjectName", "Python 2.2a4")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Text", "Barry\'sUse: Target App is Python 2.2a4 (1)")]
-        public virtual void EvergreenJnr_AllLists_CheckThatFilterIsRestoredCorrectlyAfterLeavingThePageAndGoingBackViaTheBrowseBackButtonForLookupFilters_Applications()
+        public virtual void EvergreenJnr_AllLists_CheckThatFilterIsRestoredCorrectlyAfterLeavingThePageAndGoingBackViaTheBrowserBackButtonForLookupFilters_Applications()
         {
-            this.EvergreenJnr_AllLists_CheckThatFilterIsRestoredCorrectlyAfterLeavingThePageAndGoingBackViaTheBrowseBackButtonForLookupFilters("Applications", "Barry\'sUse: Target App", "Python 2.2a4 (1)", "1", "Application", "Python 2.2a4", "Barry\'sUse: Target App is Python 2.2a4 (1)", ((string[])(null)));
+            this.EvergreenJnr_AllLists_CheckThatFilterIsRestoredCorrectlyAfterLeavingThePageAndGoingBackViaTheBrowserBackButtonForLookupFilters("Applications", "Barry\'sUse: Target App", "Python 2.2a4 (1)", "1", "Application", "Python 2.2a4", "Barry\'sUse: Target App is Python 2.2a4 (1)", ((string[])(null)));
         }
         
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestMethodAttribute()]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.DescriptionAttribute("EvergreenJnr_AllLists_Check that filter is restored correctly after leaving the p" +
-            "age and going back via the browse \"back\" button for lookup filters: Mailboxes")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.DescriptionAttribute("EvergreenJnr_AllLists_CheckThatFilterIsRestoredCorrectlyAfterLeavingThePageAndGoi" +
+            "ngBackViaTheBrowserBackButtonForLookupFilters: Mailboxes")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("FeatureTitle", "Functionality")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("Evergreen")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("AllLists")]
@@ -766,24 +757,24 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_FiltersFeature
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:ColumnName", "Email Address")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:ObjectName", "alex.cristea@juriba.com")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Text", "EmailMigra: BT/QMM Switch Status is Not Started")]
-        public virtual void EvergreenJnr_AllLists_CheckThatFilterIsRestoredCorrectlyAfterLeavingThePageAndGoingBackViaTheBrowseBackButtonForLookupFilters_Mailboxes()
+        public virtual void EvergreenJnr_AllLists_CheckThatFilterIsRestoredCorrectlyAfterLeavingThePageAndGoingBackViaTheBrowserBackButtonForLookupFilters_Mailboxes()
         {
-            this.EvergreenJnr_AllLists_CheckThatFilterIsRestoredCorrectlyAfterLeavingThePageAndGoingBackViaTheBrowseBackButtonForLookupFilters("Mailboxes", "EmailMigra: BT/QMM Switch Status", "Not Started", "80", "Email Address", "alex.cristea@juriba.com", "EmailMigra: BT/QMM Switch Status is Not Started", ((string[])(null)));
+            this.EvergreenJnr_AllLists_CheckThatFilterIsRestoredCorrectlyAfterLeavingThePageAndGoingBackViaTheBrowserBackButtonForLookupFilters("Mailboxes", "EmailMigra: BT/QMM Switch Status", "Not Started", "80", "Email Address", "alex.cristea@juriba.com", "EmailMigra: BT/QMM Switch Status is Not Started", ((string[])(null)));
         }
         
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestMethodAttribute()]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.DescriptionAttribute("EvergreenJnr_AllLists_Check that filter is restored correctly after leaving the p" +
-            "age and going back via the browse \"back\" button for values filters")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.DescriptionAttribute("EvergreenJnr_AllLists_CheckThatFilterIsRestoredCorrectlyAfterLeavingThePageAndGoi" +
+            "ngBackViaTheBrowserbackButtonForValuesFilters")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("FeatureTitle", "Functionality")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("Evergreen")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("AllLists")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("EvergreenJnr_FilterFeature")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("FilterFunctionality")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("DAS-10977")]
-        public virtual void EvergreenJnr_AllLists_CheckThatFilterIsRestoredCorrectlyAfterLeavingThePageAndGoingBackViaTheBrowseBackButtonForValuesFilters()
+        public virtual void EvergreenJnr_AllLists_CheckThatFilterIsRestoredCorrectlyAfterLeavingThePageAndGoingBackViaTheBrowserbackButtonForValuesFilters()
         {
-            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("EvergreenJnr_AllLists_Check that filter is restored correctly after leaving the p" +
-                    "age and going back via the browse \"back\" button for values filters", new string[] {
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("EvergreenJnr_AllLists_CheckThatFilterIsRestoredCorrectlyAfterLeavingThePageAndGoi" +
+                    "ngBackViaTheBrowserbackButtonForValuesFilters", new string[] {
                         "Evergreen",
                         "AllLists",
                         "EvergreenJnr_FilterFeature",
@@ -814,8 +805,8 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_FiltersFeature
         }
         
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestMethodAttribute()]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.DescriptionAttribute("EvergreenJnr_AllLists_Check that filter is restored correctly after leaving the p" +
-            "age and going back via the browse \"back\" button for list filters")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.DescriptionAttribute("EvergreenJnr_AllLists_CheckThatFilterIsRestoredCorrectlyAfterLeavingThePageAndGoi" +
+            "ngBackViaTheBrowseBackButtonForListFilters")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("FeatureTitle", "Functionality")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("Evergreen")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("AllLists")]
@@ -825,8 +816,8 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_FiltersFeature
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("Delete_Newly_Created_List")]
         public virtual void EvergreenJnr_AllLists_CheckThatFilterIsRestoredCorrectlyAfterLeavingThePageAndGoingBackViaTheBrowseBackButtonForListFilters()
         {
-            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("EvergreenJnr_AllLists_Check that filter is restored correctly after leaving the p" +
-                    "age and going back via the browse \"back\" button for list filters", new string[] {
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("EvergreenJnr_AllLists_CheckThatFilterIsRestoredCorrectlyAfterLeavingThePageAndGoi" +
+                    "ngBackViaTheBrowseBackButtonForListFilters", new string[] {
                         "Evergreen",
                         "AllLists",
                         "EvergreenJnr_FilterFeature",

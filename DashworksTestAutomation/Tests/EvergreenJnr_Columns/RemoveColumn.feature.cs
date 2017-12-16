@@ -92,8 +92,8 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_Columns
         }
         
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestMethodAttribute()]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.DescriptionAttribute("EvergreenDevicesListCheckThat500ErrorPageIsNotDisplayedAfterRemovingSortedColumnI" +
-            "nCustomList")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.DescriptionAttribute("EvergreenJnr_DevicesList_CheckThat500ErrorPageIsNotDisplayedAfterRemovingSortedCo" +
+            "lumnInCustomList")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("FeatureTitle", "RemoveColumn")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("Evergreen")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("Devices")]
@@ -102,10 +102,10 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_Columns
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("DAS-10966")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("DAS-10973")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("Delete_Newly_Created_List")]
-        public virtual void EvergreenDevicesListCheckThat500ErrorPageIsNotDisplayedAfterRemovingSortedColumnInCustomList()
+        public virtual void EvergreenJnr_DevicesList_CheckThat500ErrorPageIsNotDisplayedAfterRemovingSortedColumnInCustomList()
         {
-            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("EvergreenDevicesListCheckThat500ErrorPageIsNotDisplayedAfterRemovingSortedColumnI" +
-                    "nCustomList", new string[] {
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("EvergreenJnr_DevicesList_CheckThat500ErrorPageIsNotDisplayedAfterRemovingSortedCo" +
+                    "lumnInCustomList", new string[] {
                         "Evergreen",
                         "Devices",
                         "EvergreenJnr_Columns",
@@ -168,8 +168,8 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_Columns
         }
         
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestMethodAttribute()]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.DescriptionAttribute("EvergreenDevicesListCheckThat500ErrorPageIsNotDisplayedAfterRemovingMultipleSorte" +
-            "dColumnInCustomList")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.DescriptionAttribute("EvergreenJnr_DevicesList_CheckThat500ErrorPageIsNotDisplayedAfterRemovingMultiple" +
+            "SortedColumnInCustomList")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("FeatureTitle", "RemoveColumn")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("Evergreen")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("Devices")]
@@ -178,10 +178,10 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_Columns
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("DAS-10966")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("DAS-10973")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("Delete_Newly_Created_List")]
-        public virtual void EvergreenDevicesListCheckThat500ErrorPageIsNotDisplayedAfterRemovingMultipleSortedColumnInCustomList()
+        public virtual void EvergreenJnr_DevicesList_CheckThat500ErrorPageIsNotDisplayedAfterRemovingMultipleSortedColumnInCustomList()
         {
-            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("EvergreenDevicesListCheckThat500ErrorPageIsNotDisplayedAfterRemovingMultipleSorte" +
-                    "dColumnInCustomList", new string[] {
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("EvergreenJnr_DevicesList_CheckThat500ErrorPageIsNotDisplayedAfterRemovingMultiple" +
+                    "SortedColumnInCustomList", new string[] {
                         "Evergreen",
                         "Devices",
                         "EvergreenJnr_Columns",
@@ -251,8 +251,8 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_Columns
         }
         
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestMethodAttribute()]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.DescriptionAttribute("EvergreenDevicesListCheckThat500ErrorPageIsNotDisplayedAfterRemovingSortedColumnI" +
-            "nCustomListThrowFilters")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.DescriptionAttribute("EvergreenJnr_DevicesList_CheckThat500ErrorPageIsNotDisplayedAfterRemovingSortedCo" +
+            "lumnInCustomListThrowFilters")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("FeatureTitle", "RemoveColumn")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("Evergreen")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("Devices")]
@@ -261,10 +261,10 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_Columns
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("DAS-10966")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("DAS-10973")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("Delete_Newly_Created_List")]
-        public virtual void EvergreenDevicesListCheckThat500ErrorPageIsNotDisplayedAfterRemovingSortedColumnInCustomListThrowFilters()
+        public virtual void EvergreenJnr_DevicesList_CheckThat500ErrorPageIsNotDisplayedAfterRemovingSortedColumnInCustomListThrowFilters()
         {
-            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("EvergreenDevicesListCheckThat500ErrorPageIsNotDisplayedAfterRemovingSortedColumnI" +
-                    "nCustomListThrowFilters", new string[] {
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("EvergreenJnr_DevicesList_CheckThat500ErrorPageIsNotDisplayedAfterRemovingSortedCo" +
+                    "lumnInCustomListThrowFilters", new string[] {
                         "Evergreen",
                         "Devices",
                         "EvergreenJnr_Columns",
@@ -330,8 +330,8 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_Columns
         }
         
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestMethodAttribute()]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.DescriptionAttribute("EvergreenDevicesListCheckThat500ErrorPageIsNotDisplayedAfterRemovingSortedColumnI" +
-            "nDefaultList")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.DescriptionAttribute("EvergreenJnr_DevicesList_CheckThat500ErrorPageIsNotDisplayedAfterRemovingSortedCo" +
+            "lumnInDefaultList")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("FeatureTitle", "RemoveColumn")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("Evergreen")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("Devices")]
@@ -339,10 +339,10 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_Columns
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("RemoveColumn")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("DAS-10966")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("DAS-10973")]
-        public virtual void EvergreenDevicesListCheckThat500ErrorPageIsNotDisplayedAfterRemovingSortedColumnInDefaultList()
+        public virtual void EvergreenJnr_DevicesList_CheckThat500ErrorPageIsNotDisplayedAfterRemovingSortedColumnInDefaultList()
         {
-            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("EvergreenDevicesListCheckThat500ErrorPageIsNotDisplayedAfterRemovingSortedColumnI" +
-                    "nDefaultList", new string[] {
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("EvergreenJnr_DevicesList_CheckThat500ErrorPageIsNotDisplayedAfterRemovingSortedCo" +
+                    "lumnInDefaultList", new string[] {
                         "Evergreen",
                         "Devices",
                         "EvergreenJnr_Columns",
@@ -394,8 +394,8 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_Columns
         }
         
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestMethodAttribute()]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.DescriptionAttribute("EvergreenDevicesListCheckThat500ErrorPageIsNotDisplayedAfterRemovingMultipleSorte" +
-            "dColumnInDefaultList")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.DescriptionAttribute("EvergreenJnr_DevicesList_CheckThat500ErrorPageIsNotDisplayedAfterRemovingMultiple" +
+            "SortedColumnInDefaultList")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("FeatureTitle", "RemoveColumn")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("Evergreen")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("Devices")]
@@ -403,10 +403,10 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_Columns
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("RemoveColumn")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("DAS-10966")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("DAS-10973")]
-        public virtual void EvergreenDevicesListCheckThat500ErrorPageIsNotDisplayedAfterRemovingMultipleSortedColumnInDefaultList()
+        public virtual void EvergreenJnr_DevicesList_CheckThat500ErrorPageIsNotDisplayedAfterRemovingMultipleSortedColumnInDefaultList()
         {
-            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("EvergreenDevicesListCheckThat500ErrorPageIsNotDisplayedAfterRemovingMultipleSorte" +
-                    "dColumnInDefaultList", new string[] {
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("EvergreenJnr_DevicesList_CheckThat500ErrorPageIsNotDisplayedAfterRemovingMultiple" +
+                    "SortedColumnInDefaultList", new string[] {
                         "Evergreen",
                         "Devices",
                         "EvergreenJnr_Columns",
@@ -473,8 +473,8 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_Columns
         }
         
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestMethodAttribute()]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.DescriptionAttribute("EvergreenDevicesListCheckThat500ErrorPageIsNotDisplayedAfterRemovingSortedColumnI" +
-            "nDefaultListThrowFilters")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.DescriptionAttribute("EvergreenJnr_DevicesList_CheckThat500ErrorPageIsNotDisplayedAfterRemovingSortedCo" +
+            "lumnInDefaultListThrowFilters")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("FeatureTitle", "RemoveColumn")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("Evergreen")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("Devices")]
@@ -482,10 +482,10 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_Columns
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("RemoveColumn")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("DAS-10966")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("DAS-10973")]
-        public virtual void EvergreenDevicesListCheckThat500ErrorPageIsNotDisplayedAfterRemovingSortedColumnInDefaultListThrowFilters()
+        public virtual void EvergreenJnr_DevicesList_CheckThat500ErrorPageIsNotDisplayedAfterRemovingSortedColumnInDefaultListThrowFilters()
         {
-            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("EvergreenDevicesListCheckThat500ErrorPageIsNotDisplayedAfterRemovingSortedColumnI" +
-                    "nDefaultListThrowFilters", new string[] {
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("EvergreenJnr_DevicesList_CheckThat500ErrorPageIsNotDisplayedAfterRemovingSortedCo" +
+                    "lumnInDefaultListThrowFilters", new string[] {
                         "Evergreen",
                         "Devices",
                         "EvergreenJnr_Columns",
@@ -547,16 +547,18 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_Columns
         }
         
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestMethodAttribute()]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.DescriptionAttribute("EvergreenUsersListCheckThat500ErrorPageIsNotDisplayedAfterRemovingSortedColumn")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.DescriptionAttribute("EvergreenJnr_UsersList_CheckThat500ErrorPageIsNotDisplayedAfterRemovingSortedColu" +
+            "mn")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("FeatureTitle", "RemoveColumn")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("Evergreen")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("Users")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("EvergreenJnr_Columns")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("RemoveColumn")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("DAS-10973")]
-        public virtual void EvergreenUsersListCheckThat500ErrorPageIsNotDisplayedAfterRemovingSortedColumn()
+        public virtual void EvergreenJnr_UsersList_CheckThat500ErrorPageIsNotDisplayedAfterRemovingSortedColumn()
         {
-            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("EvergreenUsersListCheckThat500ErrorPageIsNotDisplayedAfterRemovingSortedColumn", new string[] {
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("EvergreenJnr_UsersList_CheckThat500ErrorPageIsNotDisplayedAfterRemovingSortedColu" +
+                    "mn", new string[] {
                         "Evergreen",
                         "Users",
                         "EvergreenJnr_Columns",

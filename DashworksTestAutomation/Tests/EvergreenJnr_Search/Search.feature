@@ -12,7 +12,7 @@ Background: Pre-Conditions
 	Then Evergreen Dashboards page should be displayed to the user
 
 @Evergreen @Devices @EvergreenJnr_Search @Search @DAS-10704
-Scenario: EvergreenDevicesListCheckThatQuickSearchResetWhenMovingBetweenLists
+Scenario: EvergreenJnr_DevicesList_CheckThatQuickSearchResetWhenMovingBetweenLists
 	When User clicks "Devices" on the left-hand menu
 	Then "Devices" list should be displayed to the user
 	When User clicks the Columns button
@@ -32,7 +32,7 @@ Scenario: EvergreenDevicesListCheckThatQuickSearchResetWhenMovingBetweenLists
 	Then Search field is empty
 
 @Evergreen @Devices @EvergreenJnr_Search @Search @DAS-10704
-Scenario: EvergreenDevicesListCheckThatQuickSearchDoesntTriggersNewListMenu
+Scenario: EvergreenJnr_DevicesList_CheckThatQuickSearchDoesntTriggersNewListMenu
 	When User clicks "Devices" on the left-hand menu
 	Then "Devices" list should be displayed to the user
 	Then User enters SearchCriteria into the agGrid Search Box and the correct NumberOfRows are returned
@@ -41,7 +41,7 @@ Scenario: EvergreenDevicesListCheckThatQuickSearchDoesntTriggersNewListMenu
 	Then Save to New Custom List element is NOT displayed
 
 @Evergreen @Devices @Applications @Users @Mailboxes @EvergreenJnr_Search @Search @DAS-10580 @DAS-10667 @DAS-10624
-Scenario: EvergreenJnr_AllLists_Check search filter and table content during navigation between pages
+Scenario: EvergreenJnr_AllLists_CheckSearchFilterAndTableContentDuringNavigationBetweenPages
 	When User clicks "Devices" on the left-hand menu
 	Then "Devices" list should be displayed to the user
 	Then User enters SearchCriteria into the agGrid Search Box and the correct NumberOfRows are returned
@@ -74,7 +74,7 @@ Scenario: EvergreenJnr_AllLists_Check search filter and table content during nav
 	Then Search field is empty
 
 @Evergreen @Devices @EvergreenJnr_Search @Search
-Scenario: EvergreenJnr_DevicesList_Search Tests
+Scenario: EvergreenJnr_DevicesList_SearchTests
 	When User clicks "Devices" on the left-hand menu
 	Then "Devices" list should be displayed to the user
 	When User clicks the Columns button
@@ -101,7 +101,7 @@ Scenario: EvergreenJnr_DevicesList_Search Tests
 	| 0JIE                | 1            |
 
 @Evergreen @Devices @EvergreenJnr_Search @Search @DAS-11012
-Scenario: EvergreenJnr_DevicesList_Clearing search returns the full data set
+Scenario: EvergreenJnr_DevicesList_ClearingSearchReturnsTheFullDataSet
 	When User clicks "Devices" on the left-hand menu
 	Then "Devices" list should be displayed to the user
 	And User enters SearchCriteria into the agGrid Search Box and the correct NumberOfRows are returned
@@ -113,7 +113,7 @@ Scenario: EvergreenJnr_DevicesList_Clearing search returns the full data set
 	Then URL is "http://automation.corp.juriba.com/evergreen/#/devices"
 
 @Evergreen @Devices @EvergreenJnr_Search @Search
-Scenario: EvergreenJnr_DevicesList_Search_No Devices Found
+Scenario: EvergreenJnr_DevicesList_Search_NoDevicesFound
 	When User clicks "Devices" on the left-hand menu
 	Then "Devices" list should be displayed to the user
 	When User clicks the Columns button

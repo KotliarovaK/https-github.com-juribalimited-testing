@@ -13,7 +13,7 @@ Background: Pre-Conditions
 	Then Evergreen Dashboards page should be displayed to the user
 
 @Evergreen @Devices @Evergreen_FiltersFeature @FiltersDisplay @DAS-10781
-Scenario: EvergreenJnr_DevicesList_Check that 'Add column' option as available for "Compliance" filter
+Scenario: EvergreenJnr_DevicesList_CheckThatAddColumnOptionIsAvailableForComplianceFilter
 	When User clicks "Devices" on the left-hand menu
 	Then "Devices" list should be displayed to the user
 	When User clicks the Filters button
@@ -24,7 +24,7 @@ Scenario: EvergreenJnr_DevicesList_Check that 'Add column' option as available f
 	| Add Compliance column |   
 
 @Evergreen @Applications @Evergreen_FiltersFeature @FiltersDisplay @DAS-10651
-Scenario: EvergreenJnr_ApplicationsList_Check true-false options and images in filter info
+Scenario: EvergreenJnr_ApplicationsList_CheckTrue-FalseOptionsAndImagesInFilterInfo
 	When User clicks "Applications" on the left-hand menu
 	Then "Applications" list should be displayed to the user
 	When User clicks the Filters button
@@ -44,7 +44,7 @@ Scenario: EvergreenJnr_ApplicationsList_Check true-false options and images in f
 	| Unknown |
 
 @Evergreen @Users @Evergreen_FiltersFeature @FiltersDisplay @DAS-10754 @DAS-11142 @Delete_Newly_Created_List
-Scenario: EvergreenJnr_UsersList_Check special characters display in filter info
+Scenario: EvergreenJnr_UsersList_CheckSpecialCharactersDisplayInFilterInfo
 	When User clicks "Users" on the left-hand menu
 	Then "Users" list should be displayed to the user
 	When User clicks the Filters button
@@ -73,7 +73,7 @@ Scenario: EvergreenJnr_UsersList_Check special characters display in filter info
 	| O'Conn"/\or#@!() |
 
 @Evergreen @Applications @Evergreen_FiltersFeature @FiltersDisplay @DAS-10781 @DAS-11507
-Scenario: EvergreenJnr_ApplicationsList_Check that 'Group' and 'Team' related filters is not presented in the list
+Scenario: EvergreenJnr_ApplicationsList_CheckThatGroupAndTeamRelatedFiltersIsNotPresentedInTheList
 	When User clicks "Applications" on the left-hand menu
 	Then "Applications" list should be displayed to the user
 	When User clicks the Filters button
@@ -84,7 +84,7 @@ Scenario: EvergreenJnr_ApplicationsList_Check that 'Group' and 'Team' related fi
 	Then "Windows7Mi: Team Key" filter is not presented in the filters list
 
 @Evergreen @Devices @Evergreen_FiltersFeature @FiltersDisplay @DAS-10776
-Scenario: EvergreenJnr_DevicesList_Check that "Empty" and "Not Empty" options is availdable for ObjectKey filter
+Scenario: EvergreenJnr_DevicesList_CheckThatEmptyAndNotEmptyOptionsIsAvaildableForObjectKeyFilter
 	When User clicks "Devices" on the left-hand menu
 	Then "Devices" list should be displayed to the user
 	When User clicks the Filters button
@@ -93,7 +93,7 @@ Scenario: EvergreenJnr_DevicesList_Check that "Empty" and "Not Empty" options is
 	Then "Equals, Does not equal, Greater than, Greater than or equal to, Less than, Less than or equal to, Empty, Not empty" option is available for this filter
 
 @Evergreen @AllLisrs @Evergreen_FiltersFeature @FiltersDisplay @DAS-10795
-Scenario Outline: EvergreenJnr_AllLists_Check that 'Add column' option is available for filters
+Scenario Outline: EvergreenJnr_AllLists_CheckThatAddColumnOptionIsAvailableForFilters
 	When User clicks "<PageName>" on the left-hand menu
 	Then "<PageName>" list should be displayed to the user
 	When User clicks the Filters button
@@ -112,7 +112,7 @@ Examples:
 	| Mailboxes    | Mailbox Filter 1  | Add Mailbox Filter 1 column  |
 
 @Evergreen @Devices @Evergreen_FiltersFeature @FiltersDisplay @DAS-10795 @DAS-11187
-Scenario: EvergreenJnr_DevicesList_Check that 'Add column' option is not available for Application Custom Fields filters
+Scenario: EvergreenJnr_DevicesList_CheckThatAddColumnOptionIsNotAvailableForApplicationCustomFieldsFilters
 	When User clicks "Devices" on the left-hand menu
 	Then "Devices" list should be displayed to the user
 	When User clicks the Filters button
@@ -121,7 +121,7 @@ Scenario: EvergreenJnr_DevicesList_Check that 'Add column' option is not availab
 	Then "Add column" checkbox is not displayed
 
 @Evergreen @AllLisrs @Evergreen_FiltersFeature @FiltersDisplay @DAS-10771
-Scenario Outline: EvergreenJnr_AllLisrs_Check that 'None' option is available for filters
+Scenario Outline: EvergreenJnr_AllLisrs_CheckThatNoneOptionIsAvailableForFilters
 	When User clicks "<PageName>" on the left-hand menu
 	Then "<PageName>" list should be displayed to the user
 	When User clicks the Filters button
@@ -137,7 +137,7 @@ Examples:
 	| Mailboxes    | EmailMigra: Category |
 
 @Evergreen @Devices @Evergreen_FiltersFeature @FiltersDisplay @DAS-10696 @Delete_Newly_Created_List
-Scenario: EvergreenJnr_DevicesList_Check that filter data is displayed correctly when navigating between lists
+Scenario: EvergreenJnr_DevicesList_CheckThatFilterDataIsDisplayedCorrectlyWhenNavigatingBetweenLists
 	When User clicks "Devices" on the left-hand menu
 	Then "Devices" list should be displayed to the user
 	When User clicks the Filters button
@@ -167,7 +167,7 @@ Scenario: EvergreenJnr_DevicesList_Check that filter data is displayed correctly
 	| 00BDM1JUR8IF419 |
 
 @Evergreen @Users @Evergreen_FiltersFeature @FiltersDisplay @DAS-10696 @Delete_Newly_Created_List
-Scenario: EvergreenJnr_UsersList_Check that filter data is displayed correctly when navigating between lists
+Scenario: EvergreenJnr_UsersList_CheckThatFilterDataIsDisplayedCorrectlyWhenNavigatingBetweenLists
 	When User clicks "Users" on the left-hand menu
 	Then "Users" list should be displayed to the user
 	When User clicks the Filters button
@@ -204,7 +204,7 @@ Scenario: EvergreenJnr_UsersList_Check that filter data is displayed correctly w
 	| Green  |
 
 @Evergreen @Applications @Evergreen_FiltersFeature @FiltersDisplay @DAS-10696 @Delete_Newly_Created_List
-Scenario: EvergreenJnr_ApplicationsList_Check that filter data is displayed correctly when navigating between lists
+Scenario: EvergreenJnr_ApplicationsList_CheckThatFilterDataOsDisplayedCorrectlyWhenNavigatingBetweenLists
 	When User clicks "Applications" on the left-hand menu
 	Then "Applications" list should be displayed to the user
 	When User clicks the Filters button
@@ -233,7 +233,7 @@ Scenario: EvergreenJnr_ApplicationsList_Check that filter data is displayed corr
 	| 1      |
 
 @Evergreen @Mailboxes @Evergreen_FiltersFeature @FiltersDisplay @DAS-10696 @Delete_Newly_Created_List
-Scenario: EvergreenJnr_MailboxesList_Check that filter data is displayed correctly when navigating between lists
+Scenario: EvergreenJnr_MailboxesList_CheckThatFilterDataIsDisplayedCorrectlyWhenNavigatingBetweenLists
 	When User clicks "Mailboxes" on the left-hand menu
 	Then "Mailboxes" list should be displayed to the user
 	When User clicks the Filters button
@@ -262,7 +262,7 @@ Scenario: EvergreenJnr_MailboxesList_Check that filter data is displayed correct
 	| 17 Nov 2017 |
 
 @Evergreen @Devices @Evergreen_FiltersFeature @FiltersDisplay @DAS-10696
-Scenario Outline: EvergreenJnr_DevicesList_Check that filter Operators is correct in filter info
+Scenario Outline: EvergreenJnr_DevicesList_CheckThatFilterOperatorsIsCorrectInFilterInfo
 	When User clicks "Devices" on the left-hand menu
 	Then "Devices" list should be displayed to the user
 	When User clicks the Filters button
@@ -288,7 +288,7 @@ Examples:
 	| Not empty        |                 | 17,225    | is not empty        |
 
 @Evergreen @Users @Evergreen_FiltersFeature @FiltersDisplay @DAS-10696
-Scenario Outline: EvergreenJnr_UsersList_Check that filter Operators is correct in filter info
+Scenario Outline: EvergreenJnr_UsersList_CheckThatFilterOperatorsIsCorrectInFilterInfo
 	When User clicks "Users" on the left-hand menu
 	Then "Users" list should be displayed to the user
 	When User clicks the Filters button
@@ -308,7 +308,7 @@ Examples:
 	| Does not equal | Red          | 31,897    | is not              |
 
 @Evergreen @Applications @Evergreen_FiltersFeature @FiltersDisplay @DAS-10696
-Scenario Outline: EvergreenJnr_ApplicationsList_Check that filter Operators is correct in filter info
+Scenario Outline: EvergreenJnr_ApplicationsList_CheckThatFilterOperatorsIsCorrectInFilterInfo
 	When User clicks "Applications" on the left-hand menu
 	Then "Applications" list should be displayed to the user
 	When User clicks the Filters button
@@ -332,7 +332,7 @@ Examples:
 	| Less than or equal to    | 1            | 1,166     | is less than or equal to    |
 
  @Evergreen @Mailboxes @Evergreen_FiltersFeature @FiltersDisplay @DAS-10696
-Scenario Outline: EvergreenJnr_MailboxesList_Check that filter Operators is correct in filter info
+Scenario Outline: EvergreenJnr_MailboxesList_CheckThatFilterOperatorsIsCorrectInFilterInfo
 	When User clicks "Mailboxes" on the left-hand menu
 	Then "Mailboxes" list should be displayed to the user
 	When User clicks the Filters button
@@ -356,7 +356,7 @@ Examples:
 	| Not empty      |              | 4,835     | is not empty        |
 
  @Evergreen @Devices @Evergreen_FiltersFeature @FiltersDisplay @DAS-10696
-Scenario Outline: EvergreenJnr_DevicesList_Check that filter Operators is correct in filter info (datetime)
+Scenario Outline: EvergreenJnr_DevicesList_CheckThatFilterOperatorsIsCorrectInFilterInfoDatetime
 	When User clicks "Devices" on the left-hand menu
 	Then "Devices" list should be displayed to the user
 	When User clicks the Filters button
@@ -380,7 +380,7 @@ Examples:
 	| Not empty      |              | 17        | is not empty        |
 
 @Evergreen @Users @Evergreen_FiltersFeature @FiltersDisplay @DAS-10696
-Scenario Outline: EvergreenJnr_UsersList_Check that filter Operators is correct in filter info (Enabled)
+Scenario Outline: EvergreenJnr_UsersList_CheckThatFilterOperatorsIsCorrectInFilterInfoEnabled
 	When User clicks "Users" on the left-hand menu
 	Then "Users" list should be displayed to the user
 	When User clicks the Filters button
@@ -400,7 +400,7 @@ Examples:
 	| Does not equal | TRUE         | 107       | is not              |
 
 @Evergreen @Applications @Evergreen_FiltersFeature @FiltersDisplay @DAS-10696 @DAS-11512 @Delete_Newly_Created_List
-Scenario: EvergreenJnr_ApplicationsList_Check that Application (Saved List) filter is working correct
+Scenario: EvergreenJnr_ApplicationsList_CheckThatApplicationSavedListFilterIsWorkingCorrect
 	When User clicks "Applications" on the left-hand menu
 	Then "Applications" list should be displayed to the user
 	When User clicks the Columns button
@@ -424,7 +424,7 @@ Scenario: EvergreenJnr_ApplicationsList_Check that Application (Saved List) filt
 	| in list |
 
 @Evergreen @Devices @Evergreen_FiltersFeature @FiltersDisplay @DAS-10696
-Scenario: EvergreenJnr_DevicesList_Check that Applications filter is contains all expected associations
+Scenario: EvergreenJnr_DevicesList_CheckThatApplicationsFilterIsContainsAllExpectedAssociations
 	When User clicks "Devices" on the left-hand menu
 	Then "Devices" list should be displayed to the user
 	When User clicks the Filters button
@@ -444,7 +444,7 @@ Scenario: EvergreenJnr_DevicesList_Check that Applications filter is contains al
 	| Not entitled to device's owner |
 
 @Evergreen @Applications @EvergreenJnr_FiltersFeature @FilterFunctionality @DAS-11142 @Delete_Newly_Created_List
-Scenario: EvergreenJnr_ApplicationsList_Check that brackets are displayed correctly in filter info
+Scenario: EvergreenJnr_ApplicationsList_CheckThatBracketsAreDisplayedCorrectlyInFilterInfo
 	When User clicks "Applications" on the left-hand menu
 	Then "Applications" list should be displayed to the user
 	When User clicks the Filters button
@@ -487,7 +487,7 @@ Scenario: EvergreenJnr_ApplicationsList_Check that brackets are displayed correc
 	| (self-installing)                                    |
 
 @Evergreen @Mailboxes @Evergreen_FiltersFeature @FiltersDisplay @DAS-11351
-Scenario: EvergreenJnr_MailboxesList_Check that 'Add column' option as available for "Owner Department" filter
+Scenario: EvergreenJnr_MailboxesList_CheckThatAddColumnOptionIsAvailableForOwnerDepartmentFilter
 	When User clicks "Mailboxes" on the left-hand menu
 	Then "Mailboxes" list should be displayed to the user
 	When User clicks the Filters button
@@ -499,7 +499,7 @@ Scenario: EvergreenJnr_MailboxesList_Check that 'Add column' option as available
 	| Add Owner Department Full Path column |
 
 @Evergreen @Devices @Evergreen_FiltersFeature @FiltersDisplay @DAS-11351
-Scenario: EvergreenJnr_DevicesList_Check that 'Add column' option as available for "Owner Department" filter
+Scenario: EvergreenJnr_DevicesList_CheckThatAddColumnOptionIsAvailableForOwnerDepartmentFilter
 	When User clicks "Devices" on the left-hand menu
 	Then "Devices" list should be displayed to the user
 	When User clicks the Filters button
@@ -511,7 +511,7 @@ Scenario: EvergreenJnr_DevicesList_Check that 'Add column' option as available f
 	| Add Owner Department Full Path column |
 
 @Evergreen @Devices @EvergreenJnr_FiltersFeature @FilterFunctionality @DAS-11087
-Scenario: EvergreenJnr_DevicesList_Check that Date and Time filters with "Equals" Values are working correctly
+Scenario: EvergreenJnr_DevicesList_CheckThatDateAndTimeFiltersWithEqualsValuesAreWorkingCorrectly
 	When User clicks "Devices" on the left-hand menu
 	Then "Devices" list should be displayed to the user
 	When User clicks the Filters button
@@ -523,7 +523,7 @@ Scenario: EvergreenJnr_DevicesList_Check that Date and Time filters with "Equals
 	Then "16" rows are displayed in the agGrid
 
 @Evergreen @Devices @EvergreenJnr_FiltersFeature @FilterFunctionality @DAS-11087
-Scenario: EvergreenJnr_DevicesList_Check that Date and Time filters with "Does not equal" Values are working correctly
+Scenario: EvergreenJnr_DevicesList_CheckThatDateAndTimeFiltersWithDoesNotEqualValuesAreWorkingCorrectly
 	When User clicks "Devices" on the left-hand menu
 	Then "Devices" list should be displayed to the user
 	When User clicks the Filters button
@@ -535,7 +535,7 @@ Scenario: EvergreenJnr_DevicesList_Check that Date and Time filters with "Does n
 	And "17,209" rows are displayed in the agGrid
 
 @Evergreen @Devices @Evergreen_FiltersFeature @FiltersDisplay @DAS-11187
-Scenario Outline: EvergreenJnr_DevicesList_Check that Custom Filters are contains all expected associations
+Scenario Outline: EvergreenJnr_DevicesList_CheckThatCustomFiltersAreContainsAllExpectedAssociations
 	When User clicks "Devices" on the left-hand menu
 	Then "Devices" list should be displayed to the user
 	When User clicks the Filters button
@@ -579,7 +579,7 @@ Examples:
 	| Zip Code                    |
 
 @Evergreen @Applications @EvergreenJnr_FiltersFeature @FilterFunctionality @DAS-11165
-Scenario: EvergreenJnr_ApplicationsList_Check that '500 error' is not displayed for filters
+Scenario: EvergreenJnr_ApplicationsList_CheckThat500ErrorIsNotDisplayedForFilters
 	When User clicks "Applications" on the left-hand menu
 	Then "Applications" list should be displayed to the user
 	When User clicks the Filters button
@@ -595,7 +595,7 @@ Scenario: EvergreenJnr_ApplicationsList_Check that '500 error' is not displayed 
 	Then "(Application = DirectX SDK (Version 8.1) (3663.0)) OR (Application = "WPF/E" (codename) Community Technology Preview (Feb 2007))" text is displayed in filter container
 
 @Evergreen @Devices @Evergreen_FiltersFeature @FiltersDisplay @DAS-11054
-Scenario: EvergreenJnr_DevicesList_Check that space after commas in the filters container is displayed
+Scenario: EvergreenJnr_DevicesList_CheckThatSpaceAfterCommasInTheFiltersContainerIsDisplayed
 	When User clicks "Devices" on the left-hand menu
 	Then "Devices" list should be displayed to the user
 	When User clicks the Filters button
@@ -656,7 +656,7 @@ Scenario: EvergreenJnr_DevicesList_Check that space after commas in the filters 
 	Then "(Compliance = Unknown, Red, Amber or Green) OR (Import != A01 SMS (Spoof)) OR (Department Code ~ ABC) OR (Department Code !~ ACV) OR (Department Code BEGINS WITH AXZ) OR (Department Code ENDS WITH YQA) OR (Department Code = EMPTY) OR (Department Code != EMPTY) OR (Boot Up Date < 14 Dec 2017) OR (Boot Up Date > 03 Dec 2017) OR (CPU Count > 66) OR (CPU Count >= 12) OR (CPU Count < 31) OR (CPU Count <= 13)" text is displayed in filter container
 
 @Evergreen @Devices @Evergreen_FiltersFeature @FiltersDisplay @DAS-10790 @Delete_Newly_Created_List
-Scenario: EvergreenJnr_DevicesList_Check that application filters being applied against the devices list are restored correctly and are shown in the Filters panel
+Scenario: EvergreenJnr_DevicesList_CheckThatApplicationFiltersBeingAppliedAgainstTheDevicesListAreRestoredCorrectlyAndAreShownInTheFiltersPanel
 	When User clicks "Devices" on the left-hand menu
 	Then "Devices" list should be displayed to the user
 	When User clicks the Filters button

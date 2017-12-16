@@ -92,7 +92,7 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_Columns
         }
         
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestMethodAttribute()]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.DescriptionAttribute("EvergreenJnr_DevicesList_Add the Device key column to the devices list")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.DescriptionAttribute("EvergreenJnr_DevicesList_AddTheDeviceKeyColumnToTheDevicesList")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("FeatureTitle", "AddColumnAction")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("Evergreen")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("Devices")]
@@ -101,7 +101,7 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_Columns
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("DAS-10665")]
         public virtual void EvergreenJnr_DevicesList_AddTheDeviceKeyColumnToTheDevicesList()
         {
-            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("EvergreenJnr_DevicesList_Add the Device key column to the devices list", new string[] {
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("EvergreenJnr_DevicesList_AddTheDeviceKeyColumnToTheDevicesList", new string[] {
                         "Evergreen",
                         "Devices",
                         "EvergreenJnr_Columns",

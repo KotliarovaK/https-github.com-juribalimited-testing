@@ -13,7 +13,7 @@ Background: Pre-Conditions
 	Then Evergreen Dashboards page should be displayed to the user
 
 @Evergreen @Users @EvergreenJnr_DynamicLists @PermissionsSettings @DAS-10945 @DAS-11553 @Delete_Newly_Created_List
-Scenario: EvergreenJnr_UsersList_Check that not owner users don't have permissions to update dynamic list
+Scenario: EvergreenJnr_UsersList_CheckThatNotOwnerUsersDontHavePermissionsToUpdateDynamicList
 	When User clicks "Users" on the left-hand menu
 	Then "Users" list should be displayed to the user
 	When User click on 'Username' column header

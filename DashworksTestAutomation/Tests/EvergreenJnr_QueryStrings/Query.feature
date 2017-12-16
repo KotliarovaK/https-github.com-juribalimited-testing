@@ -13,7 +13,7 @@ Background: Pre-Conditions
 	Then Evergreen Dashboards page should be displayed to the user
 	
 @Evergreen @Users @Mailboxes @Devices @Applications @EvergreenJnr_QueryStrings @Query @DAS-10753 @DAS-10615 @DAS-10475
-Scenario: EvergreenJnr_QueryString_DateCombo_And_Apostrophe
+Scenario: EvergreenJnr_QueryString_DateComboAndApostrophe
 Runs Evergreen URL query strings which include a date field combos query and filters using apostrophes.
 	When Evergreen QueryStringURL is entered for Simple QueryType
 	| QueryType                       | QueryStringURL                                                                                                                                                                                                                                                                                                                                                                                                   |
@@ -80,7 +80,7 @@ Runs Evergreen URL query strings for the Mailboxes List.
 	Then agGrid Main Object List is returned with data
 
 @Evergreen @Devices @EvergreenJnr_QueryStrings @Query @DAS-10789
-Scenario: EvergreenJnr_QueryString_Applications On Devices List
+Scenario: EvergreenJnr_QueryString_ApplicationsOnDevicesList
 Runs Evergreen URL query strings for the Applications on Devices List.
 	When Evergreen QueryStringURL is entered for Simple QueryType
 	| QueryType       | QueryStringURL                                                                                                                                                                                                                                                        |
@@ -88,7 +88,7 @@ Runs Evergreen URL query strings for the Applications on Devices List.
 	Then agGrid Main Object List is returned with data
 
 @Evergreen @Users @Mailboxes @Devices @Applications @EvergreenJnr_QueryStrings @TableSorting @DAS-10598
-Scenario: EvergreenJnr_QueryString_AllLists Sort By Keys
+Scenario: EvergreenJnr_QueryString_AllListsSortByKeys
 Runs Evergreen URL query strings which include being sorted by object key columns.
 	When Evergreen QueryStringURL is entered for Simple QueryType
 	| QueryType                       | QueryStringURL                                                                                                                                                                                                                                                                                                                                                                                                                                                       |

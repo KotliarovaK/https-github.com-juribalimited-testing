@@ -12,7 +12,7 @@ Background: Pre-Conditions
 	Then Evergreen Dashboards page should be displayed to the user
 
 @Evergreen @Users @Evergreen_FiltersFeature @FiltersFunctionality @DAS-10612
-Scenario: EvergreenJnr_UsersList_Check that 500 error is not returned for filter with special charecter
+Scenario: EvergreenJnr_UsersList_CheckThat500ErrorIsNotReturnedForFilterWithSpecialCharecter
 	When User clicks "Users" on the left-hand menu
 	Then "Users" list should be displayed to the user
 	When User clicks the Filters button
@@ -24,7 +24,7 @@ Scenario: EvergreenJnr_UsersList_Check that 500 error is not returned for filter
 	And "2" rows are displayed in the agGrid
 
 @Evergreen @Applications @Evergreen_FiltersFeature @FiltersFunctionality @DAS-10639
-Scenario: EvergreenJnr_ApplicationsList_Check 500 error is not returned for boolean filter with Unknown option
+Scenario: EvergreenJnr_ApplicationsList_Check500ErrorIsNotReturnedForBooleanFilterWithUnknownOption
 	When User clicks "Applications" on the left-hand menu
 	Then "Applications" list should be displayed to the user
 	When User clicks the Filters button
@@ -52,7 +52,7 @@ Scenario: EvergreenJnr_ApplicationsList_Check 500 error is not returned for bool
 	And "1,156" rows are displayed in the agGrid
 
 @Evergreen @Applications @EvergreenJnr_FiltersFeature @FilterFunctionality @DAS-10734 @DAS-11507
-Scenario: EvergreenJnr_ApplicationsList_Check that add column checkbox works correctly
+Scenario: EvergreenJnr_ApplicationsList_CheckThatAddColumnCheckboxWorksCorrectly
 	When User clicks "Applications" on the left-hand menu
 	Then "Applications" list should be displayed to the user
 	When User clicks the Filters button
@@ -64,7 +64,7 @@ Scenario: EvergreenJnr_ApplicationsList_Check that add column checkbox works cor
 	Then table data is filtered correctly
 
 @Evergreen @Applications @EvergreenJnr_FiltersFeature @FilterFunctionality @DAS-11166 @Delete_Newly_Created_List
-Scenario: EvergreenJnr_ApplicationsList_Check that filter is restored after going back to the list again
+Scenario: EvergreenJnr_ApplicationsList_CheckThatFilterIsRestoredAfterGoingBackToTheListAgain
 	When User clicks "Applications" on the left-hand menu
 	Then "Applications" list should be displayed to the user
 	When User clicks the Filters button
@@ -89,7 +89,7 @@ Scenario: EvergreenJnr_ApplicationsList_Check that filter is restored after goin
 	And "Application is Microsoft Office 97, Professional Edition, Microsoft Office 97, Developer Edition Tools or Microsoft Office 97, Standard Edition" is displayed in added filter info
 
 @Evergreen @AllLists @EvergreenJnr_FilterFeature @FilterFunctionality @DAS-11042
-Scenario Outline: EvergreenJnr_AllLists_Check that primary column is displayed after adding a filter with column
+Scenario Outline: EvergreenJnr_AllLists_CheckThatPrimaryColumnIsDisplayedAfterAddingAFilterWithColumn
 	When User clicks "<ListName>" on the left-hand menu
 	Then "<ListName>" list should be displayed to the user
 	When User clicks the Filters button
@@ -110,7 +110,7 @@ Examples:
 	| Mailboxes    | Email Address (Primary) | ale         | Email Address |
 
 @Evergreen @Devices @EvergreenJnr_FilterFeature @FilterFunctionality @DAS-11042
-Scenario: EvergreenJnr_Devices_Check that Add column checkbox is checked after saving filter in a new list
+Scenario: EvergreenJnr_Devices_CheckThatAddColumnCheckboxIsCheckedAfterSavingFilterInANewList
 	When User clicks "Devices" on the left-hand menu
 	Then "Devices" list should be displayed to the user
 	When User clicks the Filters button
@@ -132,7 +132,7 @@ Scenario: EvergreenJnr_Devices_Check that Add column checkbox is checked after s
 	And "Add Column" checkbox is disabled
 
 @Evergreen @Devices @EvergreenJnr_FilterFeature @FilterFunctionality @DAS-11042
-Scenario: EvergreenJnr_Devices_Check that Add column checkbox is checked after saving a filter
+Scenario: EvergreenJnr_Devices_CheckThatAddColumnCheckboxIsCheckedAfterSavingAFilter
 	When User clicks "Devices" on the left-hand menu
 	Then "Devices" list should be displayed to the user
 	When User clicks the Filters button
@@ -146,7 +146,7 @@ Scenario: EvergreenJnr_Devices_Check that Add column checkbox is checked after s
 	And "Add Column" checkbox is disabled
 
 @Evergreen @Devices @EvergreenJnr_FilterFeature @FilterFunctionality @DAS-11042
-Scenario: EvergreenJnr_Devices_Check that Add column checkbox is unchecked after saving a filter and removing a column
+Scenario: EvergreenJnr_Devices_CheckThatAddColumnCheckboxIsUncheckedAfterSavingAFilterAndRemovingAColumn
 	When User clicks "Devices" on the left-hand menu
 	Then "Devices" list should be displayed to the user
 	When User clicks the Filters button
@@ -165,7 +165,7 @@ Scenario: EvergreenJnr_Devices_Check that Add column checkbox is unchecked after
 	And "Add column" checkbox is not disabled
 
 @Evergreen @AllLists @EvergreenJnr_FilterFeature @FilterFunctionality @DAS-10977 @DAS-11507
-Scenario Outline: EvergreenJnr_AllLists_Check that filter is restored correctly after leaving the page and going back via the browse "back" button for checkboxes filters
+Scenario Outline: EvergreenJnr_AllLists_CheckThatFilterIsRestoredCorrectlyAfterLeavingThePageAndGoingBackViaTheBrowserBackButtonForCheckboxesFilters
 	When User clicks "<ListName>" on the left-hand menu
 	Then "<ListName>" list should be displayed to the user
 	When User clicks the Filters button
@@ -191,7 +191,7 @@ Examples:
 	| Mailboxes    | EmailMigra: Device Type         | Not Identified | 80        | Email Address | alex.cristea@juriba.com                   | EmailMigra: Device Type is Not Identified  |
 
 @Evergreen @AllLists @EvergreenJnr_FilterFeature @FilterFunctionality @DAS-10977
-Scenario Outline: EvergreenJnr_AllLists_Check that filter is restored correctly after leaving the page and going back via the browse "back" button for lookup filters
+Scenario Outline: EvergreenJnr_AllLists_CheckThatFilterIsRestoredCorrectlyAfterLeavingThePageAndGoingBackViaTheBrowserBackButtonForLookupFilters
 	When User clicks "<ListName>" on the left-hand menu
 	Then "<ListName>" list should be displayed to the user
 	When User clicks the Filters button
@@ -212,7 +212,7 @@ Examples:
 	| Mailboxes    | EmailMigra: BT/QMM Switch Status | Not Started      | 80        | Email Address | alex.cristea@juriba.com | EmailMigra: BT/QMM Switch Status is Not Started |
 
 @Evergreen @AllLists @EvergreenJnr_FilterFeature @FilterFunctionality @DAS-10977
-Scenario: EvergreenJnr_AllLists_Check that filter is restored correctly after leaving the page and going back via the browse "back" button for values filters
+Scenario: EvergreenJnr_AllLists_CheckThatFilterIsRestoredCorrectlyAfterLeavingThePageAndGoingBackViaTheBrowserbackButtonForValuesFilters
 	When User clicks "Applications" on the left-hand menu
 	Then "Applications" list should be displayed to the user
 	When User clicks the Filters button
@@ -229,7 +229,7 @@ Scenario: EvergreenJnr_AllLists_Check that filter is restored correctly after le
 	Then "Application is Microsoft Office 97, Professional Edition" is displayed in added filter info
 
 @Evergreen @AllLists @EvergreenJnr_FilterFeature @FilterFunctionality @DAS-10977 @Delete_Newly_Created_List
-Scenario: EvergreenJnr_AllLists_Check that filter is restored correctly after leaving the page and going back via the browse "back" button for list filters
+Scenario: EvergreenJnr_AllLists_CheckThatFilterIsRestoredCorrectlyAfterLeavingThePageAndGoingBackViaTheBrowseBackButtonForListFilters
 	When User clicks "Applications" on the left-hand menu
 	Then "Applications" list should be displayed to the user
 	When User clicks the Columns button

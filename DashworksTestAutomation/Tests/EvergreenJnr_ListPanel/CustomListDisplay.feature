@@ -12,7 +12,7 @@ Background: Pre-Conditions
 	Then Evergreen Dashboards page should be displayed to the user
 
 @Evergreen @Devices @EvergreenJnr_ListPanel @CustomListDisplay @DAS-11003
-Scenario: EvergreenJnr_DevicesList_Check that custom list creation block is not displayed when deleting a filter in default list
+Scenario: EvergreenJnr_DevicesList_CheckThatCustomListCreationBlockIsNotDisplayedWhenDeletingAFilterInDefaultList
 	When User clicks "Devices" on the left-hand menu
 	Then "Devices" list should be displayed to the user
 	When User clicks the Filters button
@@ -25,7 +25,7 @@ Scenario: EvergreenJnr_DevicesList_Check that custom list creation block is not 
 	Then Save to New Custom List element is NOT displayed
 
 @Evergreen @Devices @EvergreenJnr_ListPanel @CustomListDisplay @DAS-11003
-Scenario: EvergreenJnr_DevicesList_Check that custom list creation block is not displayed when reseting a filter in default list
+Scenario: EvergreenJnr_DevicesList_CheckThatCustomListCreationBlockIsNotDisplayedWhenResetingAFilterInDefaultList
 	When User clicks "Devices" on the left-hand menu
 	Then "Devices" list should be displayed to the user
 	When User clicks the Filters button
@@ -38,7 +38,7 @@ Scenario: EvergreenJnr_DevicesList_Check that custom list creation block is not 
 	Then Save to New Custom List element is NOT displayed
 
 @Evergreen @Devices @EvergreenJnr_ListPanel @CustomListDisplay @DAS-11017 @Delete_Newly_Created_List
-Scenario: EvergreenJnr_DevicesList_Check that custom list creation block is not displayed when deleting a filter in custom list
+Scenario: EvergreenJnr_DevicesList_CheckThatCustomListCreationBlockIsNotDisplayedWhenDeletingAFilterInCustomList
 	When User clicks "Devices" on the left-hand menu
 	Then "Devices" list should be displayed to the user
 	When User clicks the Filters button
@@ -62,7 +62,7 @@ Scenario: EvergreenJnr_DevicesList_Check that custom list creation block is not 
 	When User update current custom list
 
 @Evergreen @Devices @EvergreenJnr_ListPanel @CustomListDisplay @DAS-11017 @Delete_Newly_Created_List
-Scenario: EvergreenJnr_DevicesList_Check that custom list creation block is not displayed when reseting a filter in custom list
+Scenario: EvergreenJnr_DevicesList_CheckThatCustomListCreationBlockIsNotDisplayedWhenResetingAFilterInCustomList
 	When User clicks "Devices" on the left-hand menu
 	Then "Devices" list should be displayed to the user
 	When User clicks the Filters button
@@ -84,7 +84,7 @@ Scenario: EvergreenJnr_DevicesList_Check that custom list creation block is not 
 	When User update current custom list
 
 @Evergreen @Devices @EvergreenJnr_ListPanel @CustomListDisplay @DAS-10998
-Scenario: EvergreenJnr_DevicesList_agGrid_Check that Search does not trigger new Custom List
+Scenario: EvergreenJnr_DevicesList_agGrid_CheckThatSearchDoesNotTriggerNewCustomList
 	When User clicks "Devices" on the left-hand menu
 	Then "Devices" list should be displayed to the user
 	And User enters SearchCriteria into the agGrid Search Box and the correct NumberOfRows are returned
@@ -93,7 +93,7 @@ Scenario: EvergreenJnr_DevicesList_agGrid_Check that Search does not trigger new
 	Then Save to New Custom List element is NOT displayed
 
 @Evergreen @Devices @EvergreenJnr_ListPanel @CustomListDisplay @DAS-11081 @Delete_Newly_Created_List
-Scenario: EvergreenJnr_DevicesList_agGrid_Check that 'new list created' message for static list is displayed
+Scenario: EvergreenJnr_DevicesList_agGrid_CheckThatNewListCreatedMessageForStaticListIsDisplayed
 	When User clicks "Devices" on the left-hand menu
 	Then "Devices" list should be displayed to the user
 	When User clicks the Actions button
@@ -108,7 +108,7 @@ Scenario: EvergreenJnr_DevicesList_agGrid_Check that 'new list created' message 
 	And "New list created" message is displayed
 
 @Evergreen @Users @EvergreenJnr_ListPanel @CustomListDisplay @DAS-11005 @DAS-11489 @Delete_Newly_Created_List
-Scenario: EvergreenJnr_UsersList_Check that lists is displayed in alphabetical order
+Scenario: EvergreenJnr_UsersList_CheckThatListsIsDisplayedInAlphabeticalOrder
 	When User clicks "Users" on the left-hand menu
 	Then "Users" list should be displayed to the user
 	When User clicks the Filters button
@@ -170,7 +170,7 @@ Scenario: EvergreenJnr_UsersList_Check that lists is displayed in alphabetical o
 	Then lists are sorted in alphabetical order
 
 @Evergreen @Users @EvergreenJnr_ListPanel @CustomListDisplay @DAS-11018
-Scenario: EvergreenJnr_UsersList_Check that custom list creation block is not displayed when user opens actions panel
+Scenario: EvergreenJnr_UsersList_CheckThatCustomListCreationBlockIsNotDisplayedWhenUserOpensActionsPanel
 	When User clicks "Users" on the left-hand menu
 	Then "Users" list should be displayed to the user
 	When User clicks the Filters button
@@ -187,7 +187,7 @@ Scenario: EvergreenJnr_UsersList_Check that custom list creation block is not di
 	Then Save to New Custom List element is displayed
 
 @Evergreen @Users @EvergreenJnr_ListPanel @CustomListDisplay @DAS-11018
-Scenario: EvergreenJnr_UsersList_Check that custom list creation block is not displayed after start typing a list name
+Scenario: EvergreenJnr_UsersList_CheckThatCustomListCreationBlockIsNotDisplayedAfterStartTypingAListName
 	When User clicks "Users" on the left-hand menu
 	Then "Users" list should be displayed to the user
 	When User clicks the Filters button
@@ -205,7 +205,7 @@ Scenario: EvergreenJnr_UsersList_Check that custom list creation block is not di
 	Then Save to New Custom List element is displayed
 
 @Evergreen @Users @EvergreenJnr_ListPanel @CustomListDisplay @DAS-11018
-Scenario: EvergreenJnr_UsersList_Check that save button is inactive in Custom List creation block
+Scenario: EvergreenJnr_UsersList_CheckThatSaveButtonIsInactiveInCustomListCreationBlock
 	When User clicks "Users" on the left-hand menu
 	Then "Users" list should be displayed to the user
 	When User clicks the Columns button
@@ -229,7 +229,7 @@ Scenario: EvergreenJnr_UsersList_Check that save button is inactive in Custom Li
 	Then Save button is inactive for Custom list
 
 @Evergreen @Devices @EvergreenJnr_ListPanel @CustomListDisplay @DAS-11394 @Delete_Newly_Created_List
-Scenario: EvergreenJnr_DevicesList_Check the sort order is saved for existing list and not deleted after clicking "Reset" button in "Columns" menu
+Scenario: EvergreenJnr_DevicesList_CheckTheSortOrderIsSavedForExistingListAndNotDeletedAfterClickingResetButtonInColumnsMenu
 	When User clicks "Devices" on the left-hand menu
 	Then "Devices" list should be displayed to the user
 	When User clicks the Filters button
@@ -269,7 +269,7 @@ Scenario: EvergreenJnr_DevicesList_Check the sort order is saved for existing li
 	Then data in table is sorted by 'Owner Display Name' column in ascending order
 
 @Evergreen @Devices @EvergreenJnr_ListPanel @CustomListDisplay @DAS-11011 @Delete_Newly_Created_List
-Scenario: EvergreenJnr_DevicesList_Check that newly saved list is created with the correct columns and sorts and the same rows of data
+Scenario: EvergreenJnr_DevicesList_CheckThatNewlySavedListIsCreatedWithTheCorrectColumnsAndSortsAndTheSameRowsOfData
 	When User clicks "Devices" on the left-hand menu
 	Then "Devices" list should be displayed to the user
 	When User clicks the Actions button
@@ -310,7 +310,7 @@ Scenario: EvergreenJnr_DevicesList_Check that newly saved list is created with t
 	| Compliance |
 
 @Evergreen @Devices @EvergreenJnr_ListPanel @CustomListDisplay @DAS-10870 @Delete_Newly_Created_List
-Scenario: EvergreenJnr_DevicesList__Check that sorting will be work for existing saved static lists 
+Scenario: EvergreenJnr_DevicesList_CheckThatSortingWillBeWorkForExistingSavedStaticLists 
 	When User clicks "Devices" on the left-hand menu
 	Then "Devices" list should be displayed to the user
 	When User clicks the Actions button
@@ -338,7 +338,7 @@ Scenario: EvergreenJnr_DevicesList__Check that sorting will be work for existing
 	And Edit List menu is displayed
 
 @Evergreen @Devices @EvergreenJnr_ListPanel @CustomListDisplay @DAS-10870 @Delete_Newly_Created_List
-Scenario: EvergreenJnr_DevicesList__Check that sorting will be work for existing saved dynamic lists
+Scenario: EvergreenJnr_DevicesList_CheckThatSortingWillBeWorkForExistingSavedDynamicLists
 	When User clicks "Devices" on the left-hand menu
 	Then "Devices" list should be displayed to the user
 	When User clicks the Filters button
@@ -356,7 +356,7 @@ Scenario: EvergreenJnr_DevicesList__Check that sorting will be work for existing
 	And Edit List menu is displayed
 
 @Evergreen @Devices @EvergreenJnr_ListPanel @CustomListDisplay @DAS-10914 @Delete_Newly_Created_List
-Scenario: EvergreenJnr_DevicesList__Check that edit list menu not displayed for active list
+Scenario: EvergreenJnr_DevicesList_CheckThatEditListMenuNotDisplayedForActiveList
 	When User clicks "Devices" on the left-hand menu
 	Then "Devices" list should be displayed to the user
 	When User clicks the Filters button

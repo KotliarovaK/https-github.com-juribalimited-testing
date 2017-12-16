@@ -92,7 +92,7 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_QueryStrings
         }
         
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestMethodAttribute()]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.DescriptionAttribute("EvergreenJnr_QueryString_DateCombo_And_Apostrophe")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.DescriptionAttribute("EvergreenJnr_QueryString_DateComboAndApostrophe")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("FeatureTitle", "Query")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("Evergreen")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("Users")]
@@ -104,9 +104,9 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_QueryStrings
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("DAS-10753")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("DAS-10615")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("DAS-10475")]
-        public virtual void EvergreenJnr_QueryString_DateCombo_And_Apostrophe()
+        public virtual void EvergreenJnr_QueryString_DateComboAndApostrophe()
         {
-            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("EvergreenJnr_QueryString_DateCombo_And_Apostrophe", new string[] {
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("EvergreenJnr_QueryString_DateComboAndApostrophe", new string[] {
                         "Evergreen",
                         "Users",
                         "Mailboxes",
@@ -359,7 +359,7 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_QueryStrings
         }
         
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestMethodAttribute()]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.DescriptionAttribute("EvergreenJnr_QueryString_Applications On Devices List")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.DescriptionAttribute("EvergreenJnr_QueryString_ApplicationsOnDevicesList")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("FeatureTitle", "Query")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("Evergreen")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("Devices")]
@@ -368,7 +368,7 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_QueryStrings
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("DAS-10789")]
         public virtual void EvergreenJnr_QueryString_ApplicationsOnDevicesList()
         {
-            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("EvergreenJnr_QueryString_Applications On Devices List", new string[] {
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("EvergreenJnr_QueryString_ApplicationsOnDevicesList", new string[] {
                         "Evergreen",
                         "Devices",
                         "EvergreenJnr_QueryStrings",
@@ -388,7 +388,7 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_QueryStrings
         }
         
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestMethodAttribute()]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.DescriptionAttribute("EvergreenJnr_QueryString_AllLists Sort By Keys")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.DescriptionAttribute("EvergreenJnr_QueryString_AllListsSortByKeys")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("FeatureTitle", "Query")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("Evergreen")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("Users")]
@@ -400,7 +400,7 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_QueryStrings
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("DAS-10598")]
         public virtual void EvergreenJnr_QueryString_AllListsSortByKeys()
         {
-            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("EvergreenJnr_QueryString_AllLists Sort By Keys", new string[] {
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("EvergreenJnr_QueryString_AllListsSortByKeys", new string[] {
                         "Evergreen",
                         "Users",
                         "Mailboxes",
