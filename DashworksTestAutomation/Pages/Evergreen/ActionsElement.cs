@@ -29,6 +29,18 @@ namespace DashworksTestAutomation.Pages.Evergreen
         [FindsBy(How = How.XPath, Using = ".//span[text()='REMOVE']//ancestor::button")]
         public IWebElement RemoveButton { get; set; }
 
+        [FindsBy(How = How.XPath, Using = ".//span[text()='ADD']//ancestor::button")]
+        public IWebElement AddButton { get; set; }
+
+        public void SelectList(string listName)
+        {
+            string listNameSelector = $".//div[@class='mat-select-content ng-trigger ng-trigger-fadeInContent']//md-option[text()='{listName}']";
+            string dropdownBoxList = ".//div[@class='form-group form-group-fix-select ng-star-inserted']";
+            Driver.FindElement(By.XPath(dropdownBoxList)).Click();
+            Driver.WaitWhileControlIsNotDisplayed(By.XPath(listNameSelector));
+            Driver.FindElement(By.XPath(listNameSelector)).Click();
+        }
+
         public override List<By> GetPageIdentitySelectors()
         {
             Driver.WaitForDataLoading();
