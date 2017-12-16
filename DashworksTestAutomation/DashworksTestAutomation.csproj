@@ -89,6 +89,7 @@
     <Compile Include="Pages\Evergreen\FiltersElement.cs" />
     <Compile Include="Pages\Evergreen\HeaderElement.cs" />
     <Compile Include="Pages\Evergreen\LeftHandMenuElement.cs" />
+    <Compile Include="Pages\Evergreen\ListDetailsElement.cs" />
     <Compile Include="Pages\Evergreen\MailboxesPage.cs" />
     <Compile Include="Pages\Evergreen\UsersPage.cs" />
     <Compile Include="Pages\DashworksHeaderMenuElement.cs" />
@@ -107,6 +108,7 @@
     <Compile Include="Steps\Dashworks\EvergreenJnr_ColumnsPanel.cs" />
     <Compile Include="Steps\Dashworks\EvergreenJnr_DetailsPage.cs" />
     <Compile Include="Steps\Dashworks\EvergreenJnr_FiltersPanel.cs" />
+    <Compile Include="Steps\Dashworks\EvergreenJnr_ListDetailsPanel.cs" />
     <Compile Include="Steps\Dashworks\EvergreenJnr_ListSearch.cs" />
     <Compile Include="Steps\Dashworks\EvergreenJnr_Login.cs" />
     <Compile Include="Steps\Dashworks\EvergreenJnr_Logout.cs" />
@@ -123,6 +125,11 @@
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>ColumnSectionDisplay.feature</DependentUpon>
+    </Compile>
+    <Compile Include="Tests\EvergreenJnr_DynamicLists\PermissionsSettings.feature.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>PermissionsSettings.feature</DependentUpon>
     </Compile>
     <Compile Include="Tests\EvergreenJnr_FiltersFeature\FiltersFunctionality.feature.cs">
       <AutoGen>True</AutoGen>
@@ -189,6 +196,11 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>FiltersDisplay.feature</DependentUpon>
     </Compile>
+    <Compile Include="Tests\EvergreenJnr_StaticLists\PermissionsSettings.feature.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>PermissionsSettings.feature</DependentUpon>
+    </Compile>
     <Compile Include="Utils\ByFactory.cs" />
     <Compile Include="Utils\FileSystemHelper.cs" />
     <Compile Include="Utils\FluentWait.cs" />
@@ -209,6 +221,10 @@
     <None Include="Tests\EvergreenJnr_Columns\ColumnSectionDisplay.feature">
       <Generator>SpecFlowSingleFileGenerator</Generator>
       <LastGenOutput>ColumnSectionDisplay.feature.cs</LastGenOutput>
+    </None>
+    <None Include="Tests\EvergreenJnr_DynamicLists\PermissionsSettings.feature">
+      <Generator>SpecFlowSingleFileGenerator</Generator>
+      <LastGenOutput>PermissionsSettings.feature.cs</LastGenOutput>
     </None>
     <None Include="Tests\EvergreenJnr_FiltersFeature\FiltersFunctionality.feature">
       <Generator>SpecFlowSingleFileGenerator</Generator>
@@ -262,12 +278,15 @@
       <Generator>SpecFlowSingleFileGenerator</Generator>
       <LastGenOutput>FiltersDisplay.feature.cs</LastGenOutput>
     </None>
+    <None Include="Tests\EvergreenJnr_StaticLists\PermissionsSettings.feature">
+      <Generator>SpecFlowSingleFileGenerator</Generator>
+      <LastGenOutput>PermissionsSettings.feature.cs</LastGenOutput>
+    </None>
   </ItemGroup>
   <ItemGroup>
     <Service Include="{82A7F48D-3B50-4B1E-B82E-3ADA8210C358}" />
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="Tests\EvergreenJnr_DynamicLists\" />
     <Folder Include="Tests\EvergreenJnr_GlobalSearch\" />
     <Folder Include="Tests\EvergreenJnr_ListDetails\" />
   </ItemGroup>

@@ -13,7 +13,7 @@ Background: Pre-Conditions
 	Then Evergreen Dashboards page should be displayed to the user
 
 @Evergreen @Devices @EvergreenJnr_Columns @ColumnSectionDisplay @DAS-10584
-Scenario: EvergreenJnr_DevicesList_Check category heading when all columns from category are added
+Scenario: EvergreenJnr_DevicesList_CheckCategoryHeadingWhenAllColumnsFromCategoryAreAdded
 	When User clicks "Devices" on the left-hand menu
 	Then "Devices" list should be displayed to the user
 	When User clicks the Columns button
@@ -22,9 +22,6 @@ Scenario: EvergreenJnr_DevicesList_Check category heading when all columns from 
 	| CategoryName |
 	| Application  |
 	Then "Applications" section is not displayed in the Columns panel
-	When User clicks the Logout button
-	Then Signed Out page is displayed to the user
-	And User is logged out
 
 @Evergreen @Devices @EvergreenJnr_Columns @ColumnSectionDisplay @DAS-11539
 Scenario: EvergreenJnr_DevicesList_CheckThatColumnCategoriesAreClosedAfterClearingAColumnSearchValue

@@ -24,7 +24,7 @@ namespace DashworksTestAutomation.Steps.Dashworks
         {
             var columnElement = _driver.NowAt<ActionsElement>();
             Assert.IsTrue(columnElement.ActionsPanel.Displayed(), "Actions panel was not displayed");
-            Logger.Write("Actions Panel panel is visible");
+            Logger.Write("Actions panel is visible");
         }
 
         [When(@"User is deselect all rows")]
