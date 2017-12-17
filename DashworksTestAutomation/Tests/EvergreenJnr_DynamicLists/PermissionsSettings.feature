@@ -30,3 +30,21 @@ Scenario: EvergreenJnr_UsersList_CheckThatNotOwnerUsersDontHavePermissionsToUpda
 	| Jeremiah S. O'Connor |
 	Then Update list option is NOT available
 	And Save as a new list option is available
+
+@Evergreen @Users @EvergreenJnr_DynamicLists @PermissionsSettings @DAS-10945 @DAS-11553 @Delete_Newly_Created_List
+Scenario: EvergreenJnr_UsersList_CheckThatAdminUserButNotOwnerIsNotAbleToDeleteList
+	When User clicks "Users" on the left-hand menu
+	Then "Users" list should be displayed to the user
+	When User click on 'Username' column header
+	Then data in table is sorted by 'Username' column in descending order
+	When User create custom list with "TestList" name
+	Then List details panel is displayed to the user
+	When User select "Specific users" sharing option
+	When User click Add User button
+	When User select 'Administrator' in Select User dropdown
+	When User select "Admin" in Select Access dropdown
+	When User click Add User button
+	And User select "Automation Admin 1" as a Owner of a list
+	And User click Accept button in List Details panel
+	Then Delete list button is disabled in List Details panel
+	Then Delete List option is NOT available

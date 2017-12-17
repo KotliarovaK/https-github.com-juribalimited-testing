@@ -38,6 +38,15 @@ namespace DashworksTestAutomation.Pages.Evergreen
         [FindsBy(How = How.XPath, Using = ".//span[text()='CANCEL']/ancestor::button")]
         public IWebElement CancelButton { get; set; }
 
+        [FindsBy(How = How.XPath, Using = ".//span[text()='Select user ']/ancestor::div[@class='mat-select-trigger']")]
+        public IWebElement SelectUserDropdown { get; set; }
+
+        [FindsBy(How = How.XPath, Using = ".//span[text()='Select access ']/ancestor::div[@class='mat-select-trigger']")]
+        public IWebElement SelectAccessDropdown { get; set; }
+
+        [FindsBy(How = How.XPath, Using = ".//span[text()='ADD USER']/ancestor::button")]
+        public IWebElement AddUserButton { get; set; }
+
         public override List<By> GetPageIdentitySelectors()
         {
             Driver.WaitForDataLoading();

@@ -174,6 +174,26 @@ namespace DashworksTestAutomation.Steps.Dashworks
             Assert.IsFalse(listElement.UpdateCurrentListButton.Displayed(), "Update Current List button is displayed");
         }
 
+        [Then(@"Delete List option is NOT available")]
+        public void ThenDeleteListOptionIsNOTAvailable()
+        {
+            var listElement = _driver.NowAt<CustomListElement>();
+            _driver.MouseHover(By.XPath(listElement.SettingButtonSelector));
+            _driver.WaitWhileControlIsNotDisplayed(By.XPath(listElement.SettingButtonSelector));
+            _driver.FindElement(By.XPath(listElement.SettingButtonSelector)).Click();
+            Assert.IsFalse(listElement.DeleteButton.Displayed(), "Delete Current List button is displayed");
+        }
+
+        [Then(@"Delete List option is available")]
+        public void ThenDeleteListOptionIsAvailable()
+        {
+            var listElement = _driver.NowAt<CustomListElement>();
+            _driver.MouseHover(By.XPath(listElement.SettingButtonSelector));
+            _driver.WaitWhileControlIsNotDisplayed(By.XPath(listElement.SettingButtonSelector));
+            _driver.FindElement(By.XPath(listElement.SettingButtonSelector)).Click();
+            Assert.IsTrue(listElement.DeleteButton.Displayed(), "Delete Current List button is NOT displayed");
+        }
+
         [Then(@"Update list option is available")]
         public void ThenUpdateListOptionIsAvailable()
         {
