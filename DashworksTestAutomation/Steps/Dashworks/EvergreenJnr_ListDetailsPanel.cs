@@ -1,4 +1,5 @@
-﻿using DashworksTestAutomation.Extensions;
+﻿using System;
+using DashworksTestAutomation.Extensions;
 using DashworksTestAutomation.Pages.Evergreen;
 using DashworksTestAutomation.Utils;
 using NUnit.Framework;
@@ -45,5 +46,35 @@ namespace DashworksTestAutomation.Steps.Dashworks
             var listDetailsElement = _driver.NowAt<ListDetailsElement>();
             listDetailsElement.AcceptButton.Click();
         }
+
+        [When(@"User click Add User button")]
+        public void WhenUserClickAddUserButton()
+        {
+            var listDetailsElement = _driver.NowAt<ListDetailsElement>();
+            listDetailsElement.AddUserButton.Click();
+        }
+
+        [When(@"User select '(.*)' in Select User dropdown")]
+        public void WhenUserSelectInSelectUserDropdown(string userOption)
+        {
+            var listDetailsElement = _driver.NowAt<ListDetailsElement>();
+            _driver.SelectCustomSelectbox(listDetailsElement.SelectUserDropdown, userOption);
+        }
+
+        [When(@"User select ""(.*)"" in Select Access dropdown")]
+        public void WhenUserSelectInSelectAccessDropdown(string accessOption)
+        {
+            var listDetailsElement = _driver.NowAt<ListDetailsElement>();
+            _driver.SelectCustomSelectbox(listDetailsElement.SelectAccessDropdown, accessOption);
+
+        }
+
+        [Then(@"Delete list button is disabled in List Details panel")]
+        public void ThenDeleteListButtonIsDisabledInListDetailsPanel()
+        {
+            var listDetailsElement = _driver.NowAt<ListDetailsElement>();
+            Assert.IsTrue(Convert.ToBoolean(listDetailsElement.RemoveListButton.GetAttribute("disabled")), "Delete List button is enabled");
+        }
+
     }
 }

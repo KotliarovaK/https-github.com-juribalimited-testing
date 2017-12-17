@@ -78,7 +78,7 @@ Scenario: EvergreenJnr_UsersList_CheckThatDeletePartOfFilterFromUrlIsUpdatingRow
 	Then "Compliance" filter is removed from filters
 
 @Evergreen @Mailboxes @Evergreen_FiltersFeature @RemoveFilter @DAS-10996
-Scenario: EvergreenОтк_MailboxesList_CheckThatFiltersIsResetAndDataOnTheGridUpdatedBackToTheFullDataSet
+Scenario: EvergreenJnr_MailboxesList_CheckThatFiltersIsResetAndDataOnTheGridUpdatedBackToTheFullDataSet
 	When User clicks "Mailboxes" on the left-hand menu
 	Then "Mailboxes" list should be displayed to the user
 	When User clicks the Filters button
@@ -90,8 +90,8 @@ Scenario: EvergreenОтк_MailboxesList_CheckThatFiltersIsResetAndDataOnTheGridU
 	And "1,000" rows are displayed in the agGrid
 	And table data is filtered correctly
 	When User have reset all filters
-	Then ColumnName is removed from the list
-	| ColumnName |
-	| City       |
-	And "4,835" rows are displayed in the agGrid
+	#Then ColumnName is removed from the list
+	#| ColumnName |
+	#| City       |
+	Then "4,835" rows are displayed in the agGrid
 	And "City" filter is removed from filters
