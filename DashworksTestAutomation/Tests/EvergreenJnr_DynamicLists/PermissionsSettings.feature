@@ -19,6 +19,7 @@ Scenario: EvergreenJnr_UsersList_CheckThatNotOwnerUsersDontHavePermissionsToUpda
 	When User click on 'Username' column header
 	Then data in table is sorted by 'Username' column in descending order
 	When User create custom list with "TestList" name
+	When User clicks the List Details button
 	Then List details panel is displayed to the user
 	When User select "Everyone can see" sharing option
 	And User select "Automation Admin 1" as a Owner of a list
@@ -38,6 +39,7 @@ Scenario: EvergreenJnr_UsersList_CheckThatAdminUserButNotOwnerIsNotAbleToDeleteL
 	When User click on 'Username' column header
 	Then data in table is sorted by 'Username' column in descending order
 	When User create custom list with "TestList" name
+	When User clicks the List Details button
 	Then List details panel is displayed to the user
 	When User select "Specific users" sharing option
 	When User click Add User button

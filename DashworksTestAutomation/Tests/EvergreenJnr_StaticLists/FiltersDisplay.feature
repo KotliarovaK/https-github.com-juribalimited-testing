@@ -37,7 +37,7 @@ Scenario: EvergreenJnr_DevicesList_CheckThatDynamicFiltersAreClearedForStaticLis
 	Then "Static List TestName" list is displayed to user
 	And "2" rows are displayed in the agGrid
 	When User navigates to the "TestList" list
-	Then "5,130" rows are displayed in the agGrid
+	Then "5,129" rows are displayed in the agGrid
 	When User navigates to the "Static List TestName" list
 	Then "2" rows are displayed in the agGrid
 	Then Filters Button is disabled
@@ -60,7 +60,7 @@ Scenario: EvergreenJnr_DevicesList__CheckThatFiltersAndColumnsAreRestoredForSave
 	Then "Devices" list should be displayed to the user
 	When User navigates to the "TestList" list
 	Then "TestList" list is displayed to user
-	And "5,160" rows are displayed in the agGrid
+	And "5,159" rows are displayed in the agGrid
 	When User clicks the Filters button
 	Then Filters panel is displayed to the user
 	And "Windows7Mi: SS Application List Completed is Not Applicable or No" is displayed in added filter info

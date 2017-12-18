@@ -5,6 +5,7 @@ using NUnit.Framework;
 using OpenQA.Selenium.Remote;
 using System;
 using System.Linq;
+using OpenQA.Selenium;
 using TechTalk.SpecFlow;
 
 namespace DashworksTestAutomation.Steps.Dashworks
@@ -126,6 +127,21 @@ namespace DashworksTestAutomation.Steps.Dashworks
             var listElement = _driver.NowAt<ActionsElement>();
             _driver.WaitWhileControlIsNotDisplayed<ActionsElement>(() => listElement.CreateButton);
             listElement.ListNameTextbox.SendKeys(listName);
+        }
+
+        [When(@"User select ""(.*)"" option in Actions panel")]
+        public void WhenUserSelectOptionInActionsPanel(string p0)
+        {
+            var actionsElement = _driver.NowAt<ActionsElement>();
+            _driver.SelectCustomSelectbox(actionsElement.DropdownBox, "Add to static list");
+        }
+
+        [Then(@"Following options are available in lists dorpdown:")]
+        public void ThenFollowingOptionsAreAvailableInListsDorpdown(Table table)
+        {
+            var actionsElement = _driver.NowAt<ActionsElement>();
+            _driver.FindElement(By.XPath(actionsElement.listsDropdown)).Click();
+            Assert.AreEqual(table.Rows.SelectMany(row => row.Values).ToList(), actionsElement.GetDropdownOptions().Select(p => p.Text));
         }
     }
 }
