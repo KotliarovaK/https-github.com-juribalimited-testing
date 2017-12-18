@@ -109,7 +109,7 @@ Examples:
 	| Users        | Username                | aa          | Username      |
 	| Mailboxes    | Email Address (Primary) | ale         | Email Address |
 
-@Evergreen @Devices @EvergreenJnr_FilterFeature @FilterFunctionality @DAS-11042
+@Evergreen @Devices @EvergreenJnr_FilterFeature @FilterFunctionality @DAS-11042 @Delete_Newly_Created_List
 Scenario: EvergreenJnr_Devices_CheckThatAddColumnCheckboxIsCheckedAfterSavingFilterInANewList
 	When User clicks "Devices" on the left-hand menu
 	Then "Devices" list should be displayed to the user
@@ -253,3 +253,15 @@ Scenario: EvergreenJnr_AllLists_CheckThatFilterIsRestoredCorrectlyAfterLeavingTh
 	Then User click back button in the browser
 	Then "17,095" rows are displayed in the agGrid
 	Then "Application in list TestList is not used on device" is displayed in added filter info
+
+@Evergreen @AllLists @EvergreenJnr_FilterFeature @FilterFunctionality @DAS-11560
+Scenario: EvergreenJnr_AllLists_CheckNumericFilter
+	When User clicks "Devices" on the left-hand menu
+	Then "Devices" list should be displayed to the user
+	When User clicks the Filters button
+	Then Filters panel is displayed to the user
+	When User add "App Count (Installed)" filter where type is "Less than" without added column and following value:
+	| Values |
+	| 1      |
+	Then "App Count (Installed) is less than 1" is displayed in added filter info
+	Then "5,141" rows are displayed in the agGrid
