@@ -689,3 +689,22 @@ Scenario: EvergreenJnr_DevicesList_CheckThatFilterCategoriesAreClosedAfterCleari
 	Then Minimize buttons are displayed for all category in Filters panel
 	When User clears search textbox in Filters panel
 	Then Maximize buttons are displayed for all category in Filters panel
+
+@Evergreen @Devices @Evergreen_FiltersFeature @FiltersDisplay @DAS-11552
+Scenario: EvergreenJnr_DevicesList_CheckThatRelevantDataSetBeDisplayedAfterApplyingTheNewFilter
+	When User clicks "Devices" on the left-hand menu
+	Then "Devices" list should be displayed to the user
+	When User clicks the Filters button
+	Then Filters panel is displayed to the user
+	When User add "Compliance" filter where type is "Equals" with added column and following checkboxes:
+	| SelectedCheckboxes |
+	| Not Applicable     |
+	Then "Compliance" filter is added to the list
+	Then message 'No devices found' is displayed to the user
+	When User click Edit button for "Compliance" filter
+	When User change selected checkboxes:
+	| Option         | State |
+	| Not Applicable | true  |
+	| Green          | false |
+	Then "Compliance" filter is added to the list
+	Then "71" rows are displayed in the agGrid

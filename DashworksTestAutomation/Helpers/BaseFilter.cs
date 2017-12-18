@@ -94,7 +94,10 @@ namespace DashworksTestAutomation.Helpers
 
     public class CheckBoxesFilter : BaseFilter
     {
-        private Table _optionsTable { get; set; }
+        protected Table _optionsTable { get; set; }
+
+        protected string CheckboxSelector =
+            ".//div[@class='filterAddPanel ng-star-inserted']//span[text()='{0}']/../preceding-sibling::i";
 
         public CheckBoxesFilter(RemoteWebDriver driver, string operatorValue, bool acceptCheckbox, Table optionsTable) :
             base(driver, operatorValue, acceptCheckbox)
@@ -109,7 +112,28 @@ namespace DashworksTestAutomation.Helpers
             foreach (var row in _optionsTable.Rows)
             {
                 _driver.FindElement(
-                    By.XPath($".//div[@class='filterAddPanel ng-star-inserted']//span[text()='{row["SelectedCheckboxes"]}']")).Click();
+                    By.XPath(string.Format(CheckboxSelector, row["SelectedCheckboxes"]))).Click();
+            }
+            SaveFilter();
+        }
+    }
+
+    public class ChangeCheckboxesFilter : CheckBoxesFilter
+    {
+        private Table Table { get; set; }
+
+        public ChangeCheckboxesFilter(RemoteWebDriver driver, Table table) :
+            base(driver, "", false, table)
+        {
+            Table = table;
+        }
+
+        public override void Do()
+        {
+            foreach (var row in _optionsTable.Rows)
+            {
+                var checkbox = _driver.FindElement(By.XPath(string.Format(CheckboxSelector, row["Option"])));
+                Assert.AreEqual(bool.Parse(row["State"]), checkbox.GetFilterCheckboxSelectedState());
             }
             SaveFilter();
         }
