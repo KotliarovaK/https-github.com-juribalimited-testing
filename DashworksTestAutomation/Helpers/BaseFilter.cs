@@ -96,9 +96,9 @@ namespace DashworksTestAutomation.Helpers
     {
         protected Table _optionsTable { get; set; }
 
-        protected string CheckboxSelector =
-            ".//div[@class='filterAddPanel ng-star-inserted']//span[text()='{0}']";
         protected string CheckboxSelectorName =
+            ".//div[@class='filterAddPanel ng-star-inserted']//span[text()='{0}']";
+        protected string CheckboxSelector =
             ".//div[@class='filterAddPanel ng-star-inserted']//span[text()='{0}']/../preceding-sibling::i";
 
         public CheckBoxesFilter(RemoteWebDriver driver, string operatorValue, bool acceptCheckbox, Table optionsTable) :
@@ -114,7 +114,7 @@ namespace DashworksTestAutomation.Helpers
             foreach (var row in _optionsTable.Rows)
             {
                 _driver.FindElement(
-                    By.XPath(string.Format(CheckboxSelector, row["SelectedCheckboxes"]))).Click();
+                    By.XPath(string.Format(CheckboxSelectorName, row["SelectedCheckboxes"]))).Click();
             }
             SaveFilter();
         }
@@ -132,10 +132,16 @@ namespace DashworksTestAutomation.Helpers
 
         public override void Do()
         {
-            foreach (var row in _optionsTable.Rows)
+            foreach (var row in Table.Rows)
             {
-                var checkbox = _driver.FindElement(By.XPath(string.Format(CheckboxSelectorName, row["Option"])));
-                Assert.AreEqual(bool.Parse(row["State"]), checkbox.GetFilterCheckboxSelectedState());
+                var selector = string.Format(CheckboxSelector, row["Option"]);
+                _driver.WaitWhileControlIsNotDisplayed(By.XPath(selector));
+                var checkbox = _driver.FindElement(By.XPath(selector));
+                //Assert.AreEqual(bool.Parse(row["State"]), checkbox.GetFilterCheckboxSelectedState());
+                if (bool.Parse(row["State"]) != checkbox.GetFilterCheckboxSelectedState())
+                {
+                    checkbox.Click();
+                }
             }
             SaveFilter();
         }
