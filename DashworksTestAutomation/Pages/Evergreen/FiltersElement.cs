@@ -1,11 +1,7 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using DashworksTestAutomation.Base;
 using DashworksTestAutomation.Extensions;
-using NUnit.Framework;
 using OpenQA.Selenium;
 using OpenQA.Selenium.Support.PageObjects;
 
@@ -22,11 +18,17 @@ namespace DashworksTestAutomation.Pages.Evergreen
         [FindsBy(How = How.XPath, Using = ".//input[@name='search']")]
         public IWebElement SearchTextbox { get; set; }
 
+        [FindsBy(How = How.XPath, Using = ".//button[@class='btn btn-default input-toggle mat-icon-button ng-star-inserted']")]
+        public IWebElement SearchTextboxResetButton { get; set; }
+
         [FindsBy(How = How.XPath, Using = ".//div[contains(@class,'filter-category ng-star-inserted')]")]
         public IList<IWebElement> FilterCategories { get; set; }
 
         [FindsBy(How = How.XPath, Using = ".//button[@title='Minimize Group']")]
-        public IWebElement MinimizeGroupButton { get; set; }
+        public IList<IWebElement> MinimizeGroupButton { get; set; }
+
+        [FindsBy(How = How.XPath, Using = ".//button[@title='Maximize Group']")]
+        public IList<IWebElement> MaximizeGroupButton { get; set; }
 
         [FindsBy(How = How.XPath, Using = ".//div[@class='styleSelectDropdown']")]
         public IWebElement FilterTypeDropdown { get; set; }
@@ -46,13 +48,14 @@ namespace DashworksTestAutomation.Pages.Evergreen
         [FindsBy(How = How.XPath, Using = ".//button[@class='mat-raised-button']")]
         public IWebElement CancelButton { get; set; }
 
-        [FindsBy(How = How.XPath, Using = ".//div[@class='mat-checkbox-frame']")]
+        [FindsBy(How = How.XPath, Using = ".//div[@class='add-column-checkbox ng-star-inserted']//input")]
         public IWebElement AddCategoryColumnCheckbox { get; set; }
 
         [FindsBy(How = How.XPath, Using = ".//span[@class='mat-checkbox-label']")]
         public IList<IWebElement> AddCategoryColumnName { get; set; }
 
-        [FindsBy(How = How.XPath, Using = ".//div[@class='filterAddPanel ng-star-inserted']//button[@title='Remove filter']")]
+        [FindsBy(How = How.XPath,
+            Using = ".//div[@class='filterAddPanel ng-star-inserted']//button[@title='Remove filter']")]
         public IWebElement RemoveFilterButton { get; set; }
 
         [FindsBy(How = How.XPath, Using = ".//button[@title='Reset Filter']")]
@@ -73,6 +76,10 @@ namespace DashworksTestAutomation.Pages.Evergreen
         [FindsBy(How = How.XPath, Using = ".//div[@class='filter-label']")]
         public IList<IWebElement> AddedFilterLabels { get; set; }
 
+        private const string GroupTitleSelector = ".//div[contains(@class,'filter-category-title ng-star-inserted')]";
+        [FindsBy(How = How.XPath, Using = GroupTitleSelector)]
+        public IList<IWebElement> GroupTitle { get; set; }
+
         public override List<By> GetPageIdentitySelectors()
         {
             Driver.WaitForDataLoading();
@@ -86,8 +93,8 @@ namespace DashworksTestAutomation.Pages.Evergreen
         {
             List<string> filterValues = new List<string>();
             filterValues.AddRange(Driver.FindElements(By.XPath(
-                          $".//span[@class='filter-label-name'][text()='{filterName}']/ancestor::div[@class='filter-label']//span[contains(@class, 'filter-label-value')]"))
-                      .Select(x => x.Text.TrimStart(' ').TrimEnd(' ')).ToList());
+                    $".//span[@class='filter-label-name'][text()='{filterName}']/ancestor::div[@class='filter-label']//span[contains(@class, 'filter-label-value')]"))
+                .Select(x => x.Text.TrimStart(' ').TrimEnd(' ')).ToList());
             return filterValues;
         }
 
@@ -167,6 +174,12 @@ namespace DashworksTestAutomation.Pages.Evergreen
         public IList<IWebElement> GetSelectBoxes()
         {
             return Driver.FindElements(By.XPath(".//span[@class='text-container ng-star-inserted']"));
+        }
+
+        public void EnteredIntoSearchBox(string searchedText)
+        {
+            Driver.FindElement(By.XPath(".//input[@name='search']")).Click();
+            Driver.FindElement(By.XPath(".//input[@name='search']")).SendKeys(searchedText);
         }
     }
 }

@@ -92,8 +92,7 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_Search
         }
         
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestMethodAttribute()]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.DescriptionAttribute("EvergreenJnr_DevicesList_agGrid_Check that quick search reset when moving between" +
-            " lists")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.DescriptionAttribute("EvergreenJnr_DevicesList_CheckThatQuickSearchResetWhenMovingBetweenLists")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("FeatureTitle", "Search")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("Evergreen")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("Devices")]
@@ -101,10 +100,9 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_Search
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("Search")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("DAS-10704")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("Delete_Newly_Created_List")]
-        public virtual void EvergreenJnr_DevicesList_AgGrid_CheckThatQuickSearchResetWhenMovingBetweenLists()
+        public virtual void EvergreenJnr_DevicesList_CheckThatQuickSearchResetWhenMovingBetweenLists()
         {
-            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("EvergreenJnr_DevicesList_agGrid_Check that quick search reset when moving between" +
-                    " lists", new string[] {
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("EvergreenJnr_DevicesList_CheckThatQuickSearchResetWhenMovingBetweenLists", new string[] {
                         "Evergreen",
                         "Devices",
                         "EvergreenJnr_Search",
@@ -143,8 +141,40 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_Search
         }
         
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestMethodAttribute()]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.DescriptionAttribute("EvergreenJnr_AllLists_Check search filter and table content during navigation bet" +
-            "ween pages")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.DescriptionAttribute("EvergreenJnr_DevicesList_CheckThatQuickSearchDoesntTriggersNewListMenu")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("FeatureTitle", "Search")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("Evergreen")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("Devices")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("EvergreenJnr_Search")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("Search")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("DAS-10704")]
+        public virtual void EvergreenJnr_DevicesList_CheckThatQuickSearchDoesntTriggersNewListMenu()
+        {
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("EvergreenJnr_DevicesList_CheckThatQuickSearchDoesntTriggersNewListMenu", new string[] {
+                        "Evergreen",
+                        "Devices",
+                        "EvergreenJnr_Search",
+                        "Search",
+                        "DAS-10704"});
+            this.ScenarioSetup(scenarioInfo);
+            this.FeatureBackground();
+            testRunner.When("User clicks \"Devices\" on the left-hand menu", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+            testRunner.Then("\"Devices\" list should be displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+            TechTalk.SpecFlow.Table table4 = new TechTalk.SpecFlow.Table(new string[] {
+                        "SearchCriteria",
+                        "NumberOfRows"});
+            table4.AddRow(new string[] {
+                        "Smith",
+                        "11"});
+            testRunner.Then("User enters SearchCriteria into the agGrid Search Box and the correct NumberOfRow" +
+                    "s are returned", ((string)(null)), table4, "Then ");
+            testRunner.Then("Save to New Custom List element is NOT displayed", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+            this.ScenarioCleanup();
+        }
+        
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestMethodAttribute()]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.DescriptionAttribute("EvergreenJnr_AllLists_CheckSearchFilterAndTableContentDuringNavigationBetweenPage" +
+            "s")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("FeatureTitle", "Search")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("Evergreen")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("Devices")]
@@ -158,8 +188,8 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_Search
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("DAS-10624")]
         public virtual void EvergreenJnr_AllLists_CheckSearchFilterAndTableContentDuringNavigationBetweenPages()
         {
-            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("EvergreenJnr_AllLists_Check search filter and table content during navigation bet" +
-                    "ween pages", new string[] {
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("EvergreenJnr_AllLists_CheckSearchFilterAndTableContentDuringNavigationBetweenPage" +
+                    "s", new string[] {
                         "Evergreen",
                         "Devices",
                         "Applications",
@@ -174,62 +204,59 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_Search
             this.FeatureBackground();
             testRunner.When("User clicks \"Devices\" on the left-hand menu", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
             testRunner.Then("\"Devices\" list should be displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-            TechTalk.SpecFlow.Table table4 = new TechTalk.SpecFlow.Table(new string[] {
-                        "SearchCriteria",
-                        "NumberOfRows"});
-            table4.AddRow(new string[] {
-                        "Smith",
-                        "11"});
-            testRunner.Then("User enters SearchCriteria into the agGrid Search Box and the correct NumberOfRow" +
-                    "s are returned", ((string)(null)), table4, "Then ");
-            testRunner.When("User clicks \"Users\" on the left-hand menu", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-            testRunner.Then("\"Users\" list should be displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-            testRunner.Then("\"41,335\" rows are displayed in the agGrid", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-            testRunner.Then("Search field is empty", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
             TechTalk.SpecFlow.Table table5 = new TechTalk.SpecFlow.Table(new string[] {
                         "SearchCriteria",
                         "NumberOfRows"});
             table5.AddRow(new string[] {
                         "Smith",
-                        "59"});
+                        "11"});
             testRunner.Then("User enters SearchCriteria into the agGrid Search Box and the correct NumberOfRow" +
                     "s are returned", ((string)(null)), table5, "Then ");
-            testRunner.When("User clicks \"Applications\" on the left-hand menu", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-            testRunner.Then("\"Applications\" list should be displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-            testRunner.Then("\"2,223\" rows are displayed in the agGrid", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+            testRunner.When("User clicks \"Users\" on the left-hand menu", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+            testRunner.Then("\"Users\" list should be displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+            testRunner.Then("\"41,335\" rows are displayed in the agGrid", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
             testRunner.Then("Search field is empty", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
             TechTalk.SpecFlow.Table table6 = new TechTalk.SpecFlow.Table(new string[] {
                         "SearchCriteria",
                         "NumberOfRows"});
             table6.AddRow(new string[] {
-                        "Python",
-                        "7"});
+                        "Smith",
+                        "59"});
             testRunner.Then("User enters SearchCriteria into the agGrid Search Box and the correct NumberOfRow" +
                     "s are returned", ((string)(null)), table6, "Then ");
-            testRunner.When("User clicks \"Mailboxes\" on the left-hand menu", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-            testRunner.Then("\"Mailboxes\" list should be displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-            testRunner.Then("\"4,835\" rows are displayed in the agGrid", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+            testRunner.When("User clicks \"Applications\" on the left-hand menu", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+            testRunner.Then("\"Applications\" list should be displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+            testRunner.Then("\"2,223\" rows are displayed in the agGrid", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
             testRunner.Then("Search field is empty", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
             TechTalk.SpecFlow.Table table7 = new TechTalk.SpecFlow.Table(new string[] {
                         "SearchCriteria",
                         "NumberOfRows"});
             table7.AddRow(new string[] {
+                        "Python",
+                        "7"});
+            testRunner.Then("User enters SearchCriteria into the agGrid Search Box and the correct NumberOfRow" +
+                    "s are returned", ((string)(null)), table7, "Then ");
+            testRunner.When("User clicks \"Mailboxes\" on the left-hand menu", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+            testRunner.Then("\"Mailboxes\" list should be displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+            testRunner.Then("\"4,835\" rows are displayed in the agGrid", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+            testRunner.Then("Search field is empty", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+            TechTalk.SpecFlow.Table table8 = new TechTalk.SpecFlow.Table(new string[] {
+                        "SearchCriteria",
+                        "NumberOfRows"});
+            table8.AddRow(new string[] {
                         "Smith",
                         "39"});
             testRunner.Then("User enters SearchCriteria into the agGrid Search Box and the correct NumberOfRow" +
-                    "s are returned", ((string)(null)), table7, "Then ");
+                    "s are returned", ((string)(null)), table8, "Then ");
             testRunner.When("User clicks \"Devices\" on the left-hand menu", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
             testRunner.Then("\"Devices\" list should be displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
             testRunner.Then("\"17,225\" rows are displayed in the agGrid", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
             testRunner.Then("Search field is empty", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-            testRunner.When("User clicks the Logout button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-            testRunner.Then("Signed Out page is displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-            testRunner.And("User is logged out", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
             this.ScenarioCleanup();
         }
         
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestMethodAttribute()]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.DescriptionAttribute("EvergreenJnr_DevicesList_Search Tests")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.DescriptionAttribute("EvergreenJnr_DevicesList_SearchTests")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("FeatureTitle", "Search")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("Evergreen")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("Devices")]
@@ -237,7 +264,7 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_Search
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("Search")]
         public virtual void EvergreenJnr_DevicesList_SearchTests()
         {
-            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("EvergreenJnr_DevicesList_Search Tests", new string[] {
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("EvergreenJnr_DevicesList_SearchTests", new string[] {
                         "Evergreen",
                         "Devices",
                         "EvergreenJnr_Search",
@@ -248,15 +275,6 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_Search
             testRunner.Then("\"Devices\" list should be displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
             testRunner.When("User clicks the Columns button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
             testRunner.Then("Columns panel is displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-            TechTalk.SpecFlow.Table table8 = new TechTalk.SpecFlow.Table(new string[] {
-                        "ColumnName"});
-            table8.AddRow(new string[] {
-                        "Compliance"});
-            table8.AddRow(new string[] {
-                        "Owner Email Address"});
-            table8.AddRow(new string[] {
-                        "IP Address"});
-            testRunner.When("ColumnName is entered into the search box and the selection is clicked", ((string)(null)), table8, "When ");
             TechTalk.SpecFlow.Table table9 = new TechTalk.SpecFlow.Table(new string[] {
                         "ColumnName"});
             table9.AddRow(new string[] {
@@ -265,80 +283,85 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_Search
                         "Owner Email Address"});
             table9.AddRow(new string[] {
                         "IP Address"});
-            testRunner.Then("ColumnName is added to the list", ((string)(null)), table9, "Then ");
+            testRunner.When("ColumnName is entered into the search box and the selection is clicked", ((string)(null)), table9, "When ");
             TechTalk.SpecFlow.Table table10 = new TechTalk.SpecFlow.Table(new string[] {
+                        "ColumnName"});
+            table10.AddRow(new string[] {
+                        "Compliance"});
+            table10.AddRow(new string[] {
+                        "Owner Email Address"});
+            table10.AddRow(new string[] {
+                        "IP Address"});
+            testRunner.Then("ColumnName is added to the list", ((string)(null)), table10, "Then ");
+            TechTalk.SpecFlow.Table table11 = new TechTalk.SpecFlow.Table(new string[] {
                         "SearchCriteria",
                         "NumberOfRows"});
-            table10.AddRow(new string[] {
+            table11.AddRow(new string[] {
                         "Véronique Duplessis",
                         "1"});
-            table10.AddRow(new string[] {
+            table11.AddRow(new string[] {
                         "Virtual",
                         "1,996"});
-            table10.AddRow(new string[] {
+            table11.AddRow(new string[] {
                         "Windows Vista",
                         "475"});
-            table10.AddRow(new string[] {
+            table11.AddRow(new string[] {
                         "O\'Connor",
                         "13"});
-            table10.AddRow(new string[] {
+            table11.AddRow(new string[] {
                         "@demo.juriba.com",
                         "16,717"});
-            table10.AddRow(new string[] {
+            table11.AddRow(new string[] {
                         "192.168.6",
                         "5,100"});
-            table10.AddRow(new string[] {
+            table11.AddRow(new string[] {
                         "RED",
                         "9,238"});
-            table10.AddRow(new string[] {
+            table11.AddRow(new string[] {
                         "0JIE",
                         "1"});
             testRunner.And("User enters SearchCriteria into the agGrid Search Box and the correct NumberOfRow" +
-                    "s are returned", ((string)(null)), table10, "And ");
-            testRunner.When("User clicks the Logout button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-            testRunner.Then("Signed Out page is displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-            testRunner.And("User is logged out", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+                    "s are returned", ((string)(null)), table11, "And ");
             this.ScenarioCleanup();
         }
         
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestMethodAttribute()]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.DescriptionAttribute("EvergreenJnr_DevicesList_Clearing search returns the full data set")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.DescriptionAttribute("EvergreenJnr_DevicesList_ClearingSearchReturnsTheFullDataSet")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("FeatureTitle", "Search")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("Evergreen")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("Devices")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("EvergreenJnr_Search")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("Search")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("DAS-11012")]
         public virtual void EvergreenJnr_DevicesList_ClearingSearchReturnsTheFullDataSet()
         {
-            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("EvergreenJnr_DevicesList_Clearing search returns the full data set", new string[] {
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("EvergreenJnr_DevicesList_ClearingSearchReturnsTheFullDataSet", new string[] {
                         "Evergreen",
                         "Devices",
                         "EvergreenJnr_Search",
-                        "Search"});
+                        "Search",
+                        "DAS-11012"});
             this.ScenarioSetup(scenarioInfo);
             this.FeatureBackground();
             testRunner.When("User clicks \"Devices\" on the left-hand menu", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
             testRunner.Then("\"Devices\" list should be displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-            TechTalk.SpecFlow.Table table11 = new TechTalk.SpecFlow.Table(new string[] {
+            TechTalk.SpecFlow.Table table12 = new TechTalk.SpecFlow.Table(new string[] {
                         "SearchCriteria",
                         "NumberOfRows"});
-            table11.AddRow(new string[] {
+            table12.AddRow(new string[] {
                         "Mary",
                         "17"});
             testRunner.And("User enters SearchCriteria into the agGrid Search Box and the correct NumberOfRow" +
-                    "s are returned", ((string)(null)), table11, "And ");
+                    "s are returned", ((string)(null)), table12, "And ");
             testRunner.Then("URL is \"http://automation.corp.juriba.com/evergreen/#/devices\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
             testRunner.And("Clearing the agGrid Search Box", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
             testRunner.Then("\"17,225\" rows are displayed in the agGrid", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
             testRunner.Then("URL is \"http://automation.corp.juriba.com/evergreen/#/devices\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-            testRunner.When("User clicks the Logout button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-            testRunner.Then("Signed Out page is displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-            testRunner.And("User is logged out", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
             this.ScenarioCleanup();
         }
         
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestMethodAttribute()]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.DescriptionAttribute("EvergreenJnr_DevicesList_Search_No Devices Found")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.DescriptionAttribute("EvergreenJnr_DevicesList_Search_NoDevicesFound")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("FeatureTitle", "Search")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("Evergreen")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("Devices")]
@@ -346,7 +369,7 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_Search
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("Search")]
         public virtual void EvergreenJnr_DevicesList_Search_NoDevicesFound()
         {
-            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("EvergreenJnr_DevicesList_Search_No Devices Found", new string[] {
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("EvergreenJnr_DevicesList_Search_NoDevicesFound", new string[] {
                         "Evergreen",
                         "Devices",
                         "EvergreenJnr_Search",
@@ -357,15 +380,6 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_Search
             testRunner.Then("\"Devices\" list should be displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
             testRunner.When("User clicks the Columns button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
             testRunner.Then("Columns panel is displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-            TechTalk.SpecFlow.Table table12 = new TechTalk.SpecFlow.Table(new string[] {
-                        "ColumnName"});
-            table12.AddRow(new string[] {
-                        "Compliance"});
-            table12.AddRow(new string[] {
-                        "Owner Email Address"});
-            table12.AddRow(new string[] {
-                        "IP Address"});
-            testRunner.When("ColumnName is entered into the search box and the selection is clicked", ((string)(null)), table12, "When ");
             TechTalk.SpecFlow.Table table13 = new TechTalk.SpecFlow.Table(new string[] {
                         "ColumnName"});
             table13.AddRow(new string[] {
@@ -374,32 +388,38 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_Search
                         "Owner Email Address"});
             table13.AddRow(new string[] {
                         "IP Address"});
-            testRunner.Then("ColumnName is added to the list", ((string)(null)), table13, "Then ");
+            testRunner.When("ColumnName is entered into the search box and the selection is clicked", ((string)(null)), table13, "When ");
             TechTalk.SpecFlow.Table table14 = new TechTalk.SpecFlow.Table(new string[] {
+                        "ColumnName"});
+            table14.AddRow(new string[] {
+                        "Compliance"});
+            table14.AddRow(new string[] {
+                        "Owner Email Address"});
+            table14.AddRow(new string[] {
+                        "IP Address"});
+            testRunner.Then("ColumnName is added to the list", ((string)(null)), table14, "Then ");
+            TechTalk.SpecFlow.Table table15 = new TechTalk.SpecFlow.Table(new string[] {
                         "SearchCriteria"});
-            table14.AddRow(new string[] {
+            table15.AddRow(new string[] {
                         "0281Z793OLLLDU66"});
-            table14.AddRow(new string[] {
+            table15.AddRow(new string[] {
                         "Xavier Beaule"});
-            table14.AddRow(new string[] {
+            table15.AddRow(new string[] {
                         "BLUE"});
-            table14.AddRow(new string[] {
+            table15.AddRow(new string[] {
                         "Virtuals"});
-            table14.AddRow(new string[] {
+            table15.AddRow(new string[] {
                         "Windows 2001"});
-            table14.AddRow(new string[] {
+            table15.AddRow(new string[] {
                         "192.168.7"});
-            table14.AddRow(new string[] {
+            table15.AddRow(new string[] {
                         "demo.juriba.co.uk"});
-            table14.AddRow(new string[] {
+            table15.AddRow(new string[] {
                         "67#"});
-            table14.AddRow(new string[] {
+            table15.AddRow(new string[] {
                         "#12"});
             testRunner.And("User enters invalid SearchCriteria into the agGrid Search Box and \"No devices fou" +
-                    "nd\" message is displayed", ((string)(null)), table14, "And ");
-            testRunner.When("User clicks the Logout button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-            testRunner.Then("Signed Out page is displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-            testRunner.And("User is logged out", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+                    "nd\" message is displayed", ((string)(null)), table15, "And ");
             this.ScenarioCleanup();
         }
     }

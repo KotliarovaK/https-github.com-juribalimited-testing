@@ -1,22 +1,19 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using DashworksTestAutomation.Extensions;
+﻿using DashworksTestAutomation.Extensions;
+using DashworksTestAutomation.Helpers;
 using DashworksTestAutomation.Pages;
 using DashworksTestAutomation.Pages.Evergreen;
 using DashworksTestAutomation.Utils;
 using NUnit.Framework;
 using OpenQA.Selenium.Remote;
-using TechTalk.SpecFlow;
+using System;
+using System.Linq;
 using System.Text.RegularExpressions;
-using DashworksTestAutomation.Helpers;
-using DashworksTestAutomation.Providers;
-using OpenQA.Selenium.Interactions;
+using TechTalk.SpecFlow;
 
 namespace DashworksTestAutomation.Steps.Dashworks
 {
     [Binding]
-    class EvergreenJnr_ColumnsPanel : SpecFlowContext
+    internal class EvergreenJnr_ColumnsPanel : SpecFlowContext
     {
         private readonly RemoteWebDriver _driver;
         private readonly ColumnNameToUrlConvertor _convertor;
@@ -35,6 +32,21 @@ namespace DashworksTestAutomation.Steps.Dashworks
             Logger.Write("Columns panel is visible");
         }
 
+        [When(@"User is searching in columns with ""(.*)"" text in Columns panel")]
+        public void WhenUserIsSearchingInColumnsWithTextInColumnsPanel(string searchedText)
+        {
+            var columnElement = _driver.NowAt<ColumnsElement>();
+            columnElement.SearchTextbox.Clear();
+            columnElement.EnteredIntoSearchBox(searchedText);
+        }
+
+        [When(@"User clears search textbox in Columns panel")]
+        public void WhenUserClearsSearchTextboxInColumnsPanel()
+        {
+            var columnElement = _driver.NowAt<ColumnsElement>();
+            columnElement.SearchTextboxResetButton.Click();
+        }
+
         [When(@"ColumnName is entered into the search box and the selection is clicked")]
         public void WhenColumnNameIsEnteredIntoTheSearchBoxAndTheSelectionIsClicked(Table table)
         {
@@ -43,9 +55,11 @@ namespace DashworksTestAutomation.Steps.Dashworks
             foreach (var row in table.Rows)
             {
                 columnElement.AddColumn(row["ColumnName"]);
+
                 //Clear the textbox after adding a column, so it is reset for the next loop
                 columnElement.SearchTextbox.Clear();
             }
+
             //Minimise the Selected Columns
             //columnElement.MinimizeGroupButton.Click();
             //_driver.WaitWhileControlIsDisplayed<ColumnsElement>(() => columnElement.MinimizeGroupButton);
@@ -87,8 +101,8 @@ namespace DashworksTestAutomation.Steps.Dashworks
             }
         }
 
-        [When(@"User is removed ""(.*)"" column by Column panel")]
-        public void WhenUserIsRemovedColumnByColumnPanel(string columnName)
+        [When(@"User removes ""(.*)"" column by Column panel")]
+        public void WhenUserRemovesColumnByColumnPanel(string columnName)
         {
             var columnElement = _driver.NowAt<ColumnsElement>();
             columnElement.ExpandColumnsSectionByName("Selected Columns");
@@ -104,8 +118,8 @@ namespace DashworksTestAutomation.Steps.Dashworks
             columnElement.ResetColumnsButton.Click();
         }
 
-        [When(@"User is removed column by URL")]
-        public void WhenUserIsRemovedColumnByURL(Table table)
+        [When(@"User removes column by URL")]
+        public void WhenUserRemovesColumnByURL(Table table)
         {
             var currentUrl = _driver.Url;
             const string pattern = @"select=(.*)\&\$orderby";
@@ -130,6 +144,22 @@ namespace DashworksTestAutomation.Steps.Dashworks
             Assert.AreEqual(subCategoriesCount, columnElement.GetSubcategoriesCountByCategoryName(categoryName));
         }
 
+        [Then(@"Minimize buttons are displayed for all category in Columns panel")]
+        public void ThenMinimizeButtonsAreDisplayedForAllCategoryInColumnsPanel()
+        {
+            var columnElement = _driver.NowAt<ColumnsElement>();
+            var groupCount = columnElement.GroupTitle.Count;
+            Assert.AreEqual(groupCount, columnElement.MinimizeGroupButton.Count, "Minimize buttons are not displayed");
+        }
+
+        [Then(@"Maximize buttons are displayed for all category in Columns panel")]
+        public void ThenMaximizeButtonsAreDisplayedForAllCategoryInColumnsPanel()
+        {
+            var columnElement = _driver.NowAt<ColumnsElement>();
+            var groupCount = columnElement.GroupTitle.Count - 1;
+            Assert.AreEqual(groupCount, columnElement.MaximizeGroupButton.Count, "Maximize buttons are not displayed");
+        }
+
         [Then(@"Maximize or Minimize button is not displayed for ""(.*)"" category")]
         public void ThenMaximizeOrMinimizeButtonIsNotDisplayedForCategory(string categoryName)
         {
@@ -142,7 +172,8 @@ namespace DashworksTestAutomation.Steps.Dashworks
         public void ThenSectionIsNotDisplayedInTheColumnsPanel(string categoryName)
         {
             var columnElement = _driver.NowAt<ColumnsElement>();
-            Assert.IsFalse(columnElement.CategoryIsDisplayed(categoryName), $"{categoryName} category stil displayed in Column Panel");
+            Assert.IsFalse(columnElement.CategoryIsDisplayed(categoryName),
+                $"{categoryName} category stil displayed in Column Panel");
         }
 
         [Then(@"User is expand ""(.*)"" columns category")]

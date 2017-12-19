@@ -1,6 +1,6 @@
 ﻿#@retry:3
 Feature: NewFilterCheck
-	Runs Item Details Display related tests
+	Runs New filters full check related tests
 
 Background: Pre-Conditions
 	Given User is on Dashworks Homepage
@@ -13,7 +13,7 @@ Background: Pre-Conditions
 	Then Evergreen Dashboards page should be displayed to the user
 
 @Evergreen @Applications @Evergreen_FiltersFeature @NewFilterCheck @DAS-10828
-Scenario Outline: EvergreenJnr_ApplicationsList_Check that Target App filter is added to the list
+Scenario Outline: EvergreenJnr_ApplicationsList_CheckThatTargetAppFilterIsAddedToTheList
 	When User clicks "Applications" on the left-hand menu
 	Then "Applications" list should be displayed to the user
 	When User clicks the Columns button
@@ -42,7 +42,7 @@ Examples:
 	| UserSchedu: Target App | Equals, Does not equal | Zune         | UserSchedu: Target App is Zune (316)        | 1         |
 
 @Evergreen @Applications @Evergreen_FiltersFeature @NewFilterCheck @DAS-10828
-Scenario Outline: EvergreenJnr_ApplicationsList_Check that Target App Key filter is added to the list
+Scenario Outline: EvergreenJnr_ApplicationsList_CheckThatTargetAppKeyFilterIsAddedToTheList
 	When User clicks "Applications" on the left-hand menu
 	Then "Applications" list should be displayed to the user
 	When User clicks the Columns button
@@ -73,7 +73,7 @@ Examples:
 	| UserSchedu: Target App Key | Equals, Does not equal, Greater than, Greater than or equal to, Less than, Less than or equal to | 1            | UserSchedu: Target App Key is 1    | 1         |
 
 @Evergreen @Applications @Evergreen_FiltersFeature @NewFilterCheck @DAS-10828
-Scenario Outline: EvergreenJnr_ApplicationsList_Check that Target App Readiness filter is added to the list
+Scenario Outline: EvergreenJnr_ApplicationsList_CheckThatTargetAppReadinessFilterIsAddedToTheList
 	When User clicks "Applications" on the left-hand menu
 	Then "Applications" list should be displayed to the user
 	When User clicks the Columns button
@@ -101,10 +101,10 @@ Examples:
 	| MigrationP: Target App Readiness | Equals, Does not equal | Blue         | MigrationP: Target App Readiness is Blue  | 189       |
 	| UserSchedu: Target App Readiness | Equals, Does not equal | Grey         | UserSchedu: Target App Readiness is Grey  | 981       |
 
-@Evergreen @Devices @Evergreen_FiltersFeature @NewFilterCheck @DAS-10578
-Scenario: EvergreenJnr_DevicesList_Check that Dashworks First Seen filter is added to the list
-	When User clicks "Devices" on the left-hand menu
-	Then "Devices" list should be displayed to the user
+@Evergreen @AllLists @Evergreen_FiltersFeature @NewFilterCheck @DAS-10578
+Scenario Outline: EvergreenJnr_AllLists_CheckThatDashworksFirstSeenFilterIsAddedToTheFilterList
+	When User clicks "<ListName>" on the left-hand menu
+	Then "<ListName>" list should be displayed to the user
 	When User clicks the Columns button
 	Then Columns panel is displayed to the user
 	When ColumnName is entered into the search box and the selection is clicked
@@ -116,69 +116,19 @@ Scenario: EvergreenJnr_DevicesList_Check that Dashworks First Seen filter is add
 	Then "Equals, Does not equal, Before, After, Empty, Not empty" option is available for this filter
 	When User have created "Empty" Date filter with column and "" option
 	Then "Dashworks First Seen is empty" is displayed in added filter info
-	Then "17,225" rows are displayed in the agGrid
+	Then "<RowsCount>" rows are displayed in the agGrid
 	When User click on 'Dashworks First Seen' column header
 	Then data in table is sorted by 'Dashworks First Seen' column in descending order 
 
-@Evergreen @Users @Evergreen_FiltersFeature @NewFilterCheck @DAS-10578
-Scenario: EvergreenJnr_UsersList_Check that Dashworks First Seen filter is added to the list
-	When User clicks "Users" on the left-hand menu
-	Then "Users" list should be displayed to the user
-	When User clicks the Columns button
-	Then Columns panel is displayed to the user
-	When ColumnName is entered into the search box and the selection is clicked
-	| ColumnName           |
-	| Dashworks First Seen |
-	When User clicks the Filters button
-	Then Filters panel is displayed to the user
-	When user select "Dashworks First Seen" filter
-	Then "Equals, Does not equal, Before, After, Empty, Not empty" option is available for this filter
-	When User have created "Empty" Date filter with column and "" option
-	Then "Dashworks First Seen is empty" is displayed in added filter info
-	Then "41,335" rows are displayed in the agGrid
-	When User click on 'Dashworks First Seen' column header
-	Then data in table is sorted by 'Dashworks First Seen' column in descending order 
-
-@Evergreen @Applications @Evergreen_FiltersFeature @NewFilterCheck @DAS-10578
-Scenario: EvergreenJnr_ApplicationsList_Check that Dashworks First Seen filter is added to the list
-	When User clicks "Applications" on the left-hand menu
-	Then "Applications" list should be displayed to the user
-	When User clicks the Columns button
-	Then Columns panel is displayed to the user
-	When ColumnName is entered into the search box and the selection is clicked
-	| ColumnName           |
-	| Dashworks First Seen |
-	When User clicks the Filters button
-	Then Filters panel is displayed to the user
-	When user select "Dashworks First Seen" filter
-	Then "Equals, Does not equal, Before, After, Empty, Not empty" option is available for this filter
-	When User have created "Empty" Date filter with column and "" option
-	Then "Dashworks First Seen is empty" is displayed in added filter info
-	Then "2,223" rows are displayed in the agGrid
-	When User click on 'Dashworks First Seen' column header
-	Then data in table is sorted by 'Dashworks First Seen' column in descending order 
-
-@Evergreen @Mailboxes @Evergreen_FiltersFeature @NewFilterCheck @DAS-10578
-Scenario: EvergreenJnr_MailboxesList_Check that Dashworks First Seen filter is added to the list
-	When User clicks "Mailboxes" on the left-hand menu
-	Then "Mailboxes" list should be displayed to the user
-	When User clicks the Columns button
-	Then Columns panel is displayed to the user
-	When ColumnName is entered into the search box and the selection is clicked
-	| ColumnName           |
-	| Dashworks First Seen |
-	When User clicks the Filters button
-	Then Filters panel is displayed to the user
-	When user select "Dashworks First Seen" filter
-	Then "Equals, Does not equal, Before, After, Empty, Not empty" option is available for this filter
-	When User have created "Empty" Date filter with column and "" option
-	Then "Dashworks First Seen is empty" is displayed in added filter info
-	Then "4,835" rows are displayed in the agGrid
-	When User click on 'Dashworks First Seen' column header
-	Then data in table is sorted by 'Dashworks First Seen' column in descending order 
+Examples: 
+	| ListName     | RowsCount |
+	| Devices      | 17,225    |
+	| Users        | 41,335    |
+	| Applications | 2,223     |
+	| Mailboxes    | 4,835     |
 
 @Evergreen @Applications @Evergreen_FiltersFeature @NewFilterCheck @DAS-10512
-Scenario Outline: EvergreenJnr_ApplicationsList_Check that Application Readiness filter is added to the list
+Scenario Outline: EvergreenJnr_ApplicationsList_CheckThatApplicationReadinessFilterIsAddedToTheList
 	When User clicks "Applications" on the left-hand menu
 	Then "Applications" list should be displayed to the user
 	When User clicks the Columns button
@@ -206,8 +156,8 @@ Examples:
 	| MigrationP: Application Readiness | Equals, Does not equal | Blue         | MigrationP: Application Readiness is Blue  | 189       |
 	| UserSchedu: Application Readiness | Equals, Does not equal | None         | UserSchedu: Application Readiness is None  | 981       |
 
-@Evergreen @Applications @Evergreen_FiltersFeature @NewFilterCheck @DAS-10512
-Scenario Outline: EvergreenJnr_ApplicationsList_Check that Application Rationalisation filter is added to the list
+@Evergreen @Applications @Evergreen_FiltersFeature @NewFilterCheck @DAS-10512 @DAS-11509 @DAS-11507 @DAS-11509
+Scenario Outline: EvergreenJnr_ApplicationsList_CheckThatApplicationRationalisationFilterIsAddedToTheList
 	When User clicks "Applications" on the left-hand menu
 	Then "Applications" list should be displayed to the user
 	When User clicks the Columns button
@@ -228,17 +178,17 @@ Scenario Outline: EvergreenJnr_ApplicationsList_Check that Application Rationali
 	Then data in table is sorted by '<ColumnName>' column in descending order 
 
 Examples: 
-	| ColumnName                              | Operators              | FilterOption  | Text                                                      | RowsCount |
-	| Windows7Mi: Application Rationalisation | Equals, Does not equal | RETIRE        | Windows7Mi: Application Rationalisation is Retire         | 85        |
-	| Babel(Engl: Application Rationalisation | Equals, Does not equal | UNCATEGORISED | Babel(Engl: Application Rationalisation is Uncategorised | 302       |
-	| Barry'sUse: Application Rationalisation | Equals, Does not equal | KEEP          | Barry'sUse: Application Rationalisation is Keep           | 2         |
-	| ComputerSc: Application Rationalisation | Equals, Does not equal | FORWARD PATH  | ComputerSc: Application Rationalisation is Forward Path   | 10        |
-	| Havoc(BigD: Application Rationalisation | Equals, Does not equal | UNCATEGORISED | Havoc(BigD: Application Rationalisation is Uncategorised  | 1,067     |
-	| MigrationP: Application Rationalisation | Equals, Does not equal | RETIRE        | MigrationP: Application Rationalisation is Retire         | 1         |
-	| UserSchedu: Application Rationalisation | Equals, Does not equal | UNCATEGORISED | UserSchedu: Application Rationalisation is Uncategorised  | 981       |
+	| ColumnName                              | Operators              | FilterOption  | Text                                                     | RowsCount |
+	| Windows7Mi: Application Rationalization | Equals, Does not equal | RETIRE        | Windows7Mi: Application Rationalization is Retire        | 85        |
+	| Babel(Engl: Application Rationalization | Equals, Does not equal | UNCATEGORISED | Babel(Engl: Application Rationalization is Uncategorised | 302       |
+	| Barry'sUse: Application Rationalization | Equals, Does not equal | KEEP          | Barry'sUse: Application Rationalization is Keep          | 2         |
+	| ComputerSc: Application Rationalization | Equals, Does not equal | FORWARD PATH  | ComputerSc: Application Rationalization is Forward Path  | 10        |
+	| Havoc(BigD: Application Rationalization | Equals, Does not equal | UNCATEGORISED | Havoc(BigD: Application Rationalization is Uncategorised | 1,067     |
+	| MigrationP: Application Rationalization | Equals, Does not equal | RETIRE        | MigrationP: Application Rationalization is Retire        | 1         |
+	| UserSchedu: Application Rationalization | Equals, Does not equal | UNCATEGORISED | UserSchedu: Application Rationalization is Uncategorised | 981       |
 
-@Evergreen @Applications @Evergreen_FiltersFeature @NewFilterCheck @DAS-10512
-Scenario Outline: EvergreenJnr_ApplicationsList_Check that Core Application filter is added to the list
+@Evergreen @Applications @Evergreen_FiltersFeature @NewFilterCheck @DAS-10512 @DAS-11507
+Scenario Outline: EvergreenJnr_ApplicationsList_CheckThatCoreApplicationFilterIsAddedToTheList
 	When User clicks "Applications" on the left-hand menu
 	Then "Applications" list should be displayed to the user
 	When User clicks the Columns button
@@ -268,8 +218,8 @@ Examples:
 	| MigrationP: Core Application | Equals, Does not equal | FALSE        | MigrationP: Core Application is false   | 220       |
 	| UserSchedu: Core Application | Equals, Does not equal | UNKNOWN      | UserSchedu: Core Application is Unknown | 1,242     |
 
-@Evergreen @Applications @Evergreen_FiltersFeature @NewFilterCheck @DAS-10512
-Scenario Outline: EvergreenJnr_ApplicationsList_Check that Hide from End Users filter is added to the list
+@Evergreen @Applications @Evergreen_FiltersFeature @NewFilterCheck @DAS-10512 @DAS-11509 @DAS-11507 @DAS-11509
+Scenario Outline: EvergreenJnr_ApplicationsList_CheckThatHideFromEndUsersFilterIsAddedToTheList
 	When User clicks "Applications" on the left-hand menu
 	Then "Applications" list should be displayed to the user
 	When User clicks the Columns button

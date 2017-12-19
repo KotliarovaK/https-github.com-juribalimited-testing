@@ -1,19 +1,17 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using DashworksTestAutomation.Extensions;
+﻿using DashworksTestAutomation.Extensions;
 using DashworksTestAutomation.Pages.Evergreen;
 using DashworksTestAutomation.Utils;
 using NUnit.Framework;
 using OpenQA.Selenium.Remote;
+using System;
+using System.Linq;
+using OpenQA.Selenium;
 using TechTalk.SpecFlow;
 
 namespace DashworksTestAutomation.Steps.Dashworks
 {
     [Binding]
-    class EvergreenJnr_ActionsPanel : SpecFlowContext
+    internal class EvergreenJnr_ActionsPanel : SpecFlowContext
     {
         private readonly RemoteWebDriver _driver;
 
@@ -27,7 +25,7 @@ namespace DashworksTestAutomation.Steps.Dashworks
         {
             var columnElement = _driver.NowAt<ActionsElement>();
             Assert.IsTrue(columnElement.ActionsPanel.Displayed(), "Actions panel was not displayed");
-            Logger.Write("Actions Panel panel is visible");
+            Logger.Write("Actions panel is visible");
         }
 
         [When(@"User is deselect all rows")]
@@ -46,8 +44,25 @@ namespace DashworksTestAutomation.Steps.Dashworks
             foreach (var row in table.Rows)
             {
                 var rowIndex = columnContent.IndexOf(row["SelectedRowsName"]);
-                dashboardPage.SelectRowsCheckboxes[rowIndex + 1].Click();
+                dashboardPage.SelectRowsCheckboxes[rowIndex].Click();
             }
+        }
+
+        [Then(@"User removes selected rows")]
+        public void WhenUserIsRemovedSelectedRows()
+        {
+            var actionsElement = _driver.NowAt<ActionsElement>();
+            _driver.SelectCustomSelectbox(actionsElement.DropdownBox, "Remove from static list");
+            actionsElement.RemoveButton.Click();
+        }
+
+        [Then(@"User add selected rows in ""(.*)"" list")]
+        public void ThenUserAddSelectedRowsInList(string listName)
+        {
+            var actionsElement = _driver.NowAt<ActionsElement>();
+            _driver.SelectCustomSelectbox(actionsElement.DropdownBox, "Add to static list");
+            actionsElement.SelectList(listName);
+            actionsElement.AddButton.Click();
         }
 
         [Then(@"Select All selectbox is checked")]
@@ -104,6 +119,29 @@ namespace DashworksTestAutomation.Steps.Dashworks
             _driver.WaitWhileControlIsNotDisplayed<ActionsElement>(() => listElement.CreateButton);
             listElement.ListNameTextbox.SendKeys(listName);
             listElement.CreateButton.Click();
+        }
+
+        [Then(@"User type ""(.*)"" into Static list name field")]
+        public void ThenUserTypeIntoStaticListNameField(string listName)
+        {
+            var listElement = _driver.NowAt<ActionsElement>();
+            _driver.WaitWhileControlIsNotDisplayed<ActionsElement>(() => listElement.CreateButton);
+            listElement.ListNameTextbox.SendKeys(listName);
+        }
+
+        [When(@"User select ""(.*)"" option in Actions panel")]
+        public void WhenUserSelectOptionInActionsPanel(string p0)
+        {
+            var actionsElement = _driver.NowAt<ActionsElement>();
+            _driver.SelectCustomSelectbox(actionsElement.DropdownBox, "Add to static list");
+        }
+
+        [Then(@"Following options are available in lists dorpdown:")]
+        public void ThenFollowingOptionsAreAvailableInListsDorpdown(Table table)
+        {
+            var actionsElement = _driver.NowAt<ActionsElement>();
+            _driver.FindElement(By.XPath(actionsElement.listsDropdown)).Click();
+            Assert.AreEqual(table.Rows.SelectMany(row => row.Values).ToList(), actionsElement.GetDropdownOptions().Select(p => p.Text));
         }
     }
 }

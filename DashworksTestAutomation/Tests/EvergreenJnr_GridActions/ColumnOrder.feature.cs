@@ -92,7 +92,7 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_GridActions
         }
         
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestMethodAttribute()]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.DescriptionAttribute("EvergreenJnr_DevicesList_Check that columns order saved after search")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.DescriptionAttribute("EvergreenJnr_DevicesList_CheckThatColumnsOrderSavedAfterSearch")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("FeatureTitle", "ColumnOrder")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("Evergreen")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("Devices")]
@@ -101,7 +101,7 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_GridActions
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("DAS-10836")]
         public virtual void EvergreenJnr_DevicesList_CheckThatColumnsOrderSavedAfterSearch()
         {
-            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("EvergreenJnr_DevicesList_Check that columns order saved after search", new string[] {
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("EvergreenJnr_DevicesList_CheckThatColumnsOrderSavedAfterSearch", new string[] {
                         "Evergreen",
                         "Devices",
                         "EvergreenJnr_GridActions",
@@ -123,14 +123,11 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_GridActions
             testRunner.Then("User enters SearchCriteria into the agGrid Search Box and the correct NumberOfRow" +
                     "s are returned", ((string)(null)), table1, "Then ");
             testRunner.Then("\"Owner Display Name\" column is \"Left\" Pinned", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-            testRunner.When("User clicks the Logout button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-            testRunner.Then("Signed Out page is displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-            testRunner.And("User is logged out", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
             this.ScenarioCleanup();
         }
         
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestMethodAttribute()]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.DescriptionAttribute("EvergreenJnr_UsersList_Check that columns order saved after search")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.DescriptionAttribute("EvergreenJnr_UsersList_CheckThatColumnsOrderSavedAfterSearch")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("FeatureTitle", "ColumnOrder")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("Evergreen")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("Users")]
@@ -139,7 +136,7 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_GridActions
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("DAS-10836")]
         public virtual void EvergreenJnr_UsersList_CheckThatColumnsOrderSavedAfterSearch()
         {
-            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("EvergreenJnr_UsersList_Check that columns order saved after search", new string[] {
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("EvergreenJnr_UsersList_CheckThatColumnsOrderSavedAfterSearch", new string[] {
                         "Evergreen",
                         "Users",
                         "EvergreenJnr_GridActions",
@@ -168,14 +165,11 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_GridActions
             testRunner.Then("User enters SearchCriteria into the agGrid Search Box and the correct NumberOfRow" +
                     "s are returned", ((string)(null)), table3, "Then ");
             testRunner.Then("\"Compliance\" column is \"Right\" Pinned", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-            testRunner.When("User clicks the Logout button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-            testRunner.Then("Signed Out page is displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-            testRunner.And("User is logged out", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
             this.ScenarioCleanup();
         }
         
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestMethodAttribute()]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.DescriptionAttribute("EvergreenJnr_DevicesList_Check that columns order saved after adding a filter")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.DescriptionAttribute("EvergreenJnr_DevicesList_CheckThatColumnsOrderSavedAfterAddingAFilter")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("FeatureTitle", "ColumnOrder")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("Evergreen")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("Devices")]
@@ -184,7 +178,7 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_GridActions
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("DAS-10621")]
         public virtual void EvergreenJnr_DevicesList_CheckThatColumnsOrderSavedAfterAddingAFilter()
         {
-            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("EvergreenJnr_DevicesList_Check that columns order saved after adding a filter", new string[] {
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("EvergreenJnr_DevicesList_CheckThatColumnsOrderSavedAfterAddingAFilter", new string[] {
                         "Evergreen",
                         "Devices",
                         "EvergreenJnr_GridActions",
@@ -221,12 +215,12 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_GridActions
             testRunner.Then("Column is displayed in following order:", ((string)(null)), table5, "Then ");
             testRunner.When("User clicks the Filters button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
             testRunner.Then("Filters panel is displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-            testRunner.When("user select \"Windows7Mi: Category\" filter", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
             TechTalk.SpecFlow.Table table6 = new TechTalk.SpecFlow.Table(new string[] {
                         "SelectedCheckboxes"});
             table6.AddRow(new string[] {
                         "None"});
-            testRunner.When("User have created \"Equals\" filter with column and following options:", ((string)(null)), table6, "When ");
+            testRunner.When("User add \"Windows7Mi: Category\" filter where type is \"Equals\" with added column a" +
+                    "nd following checkboxes:", ((string)(null)), table6, "When ");
             TechTalk.SpecFlow.Table table7 = new TechTalk.SpecFlow.Table(new string[] {
                         "ColumnName"});
             table7.AddRow(new string[] {
@@ -244,9 +238,6 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_GridActions
             table7.AddRow(new string[] {
                         "Windows7Mi: Category"});
             testRunner.Then("Column is displayed in following order:", ((string)(null)), table7, "Then ");
-            testRunner.When("User clicks the Logout button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-            testRunner.Then("Signed Out page is displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-            testRunner.And("User is logged out", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
             this.ScenarioCleanup();
         }
     }

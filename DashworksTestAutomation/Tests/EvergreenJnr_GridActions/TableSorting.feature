@@ -1,5 +1,5 @@
 ﻿Feature: TableSorting
-	Runs Evergreen Table actions related tests
+	Runs Table Sorting related tests
 
 Background: Pre-Conditions
 	Given User is on Dashworks Homepage
@@ -12,7 +12,7 @@ Background: Pre-Conditions
 	Then Evergreen Dashboards page should be displayed to the user
 
 @Evergreen @Devices @EvergreenJnr_GridActions @TableSorting @DAS-10612
-Scenario: EvergreenJnr_DevicesList_Check Sort By Date Functionality
+Scenario: EvergreenJnr_DevicesList_CheckSortByDateFunctionality
 	When User clicks "Devices" on the left-hand menu
 	Then "Devices" list should be displayed to the user
 	When User clicks the Columns button
@@ -36,12 +36,9 @@ Scenario: EvergreenJnr_DevicesList_Check Sort By Date Functionality
 	Then data in table is sorted by 'Windows7Mi: Date & Time Task' column in descending order
 	When User click on 'Windows7Mi: Date & Time Task' column header
 	Then data in table is sorted by 'Windows7Mi: Date & Time Task' column in ascending order
-	When User clicks the Logout button
-	Then Signed Out page is displayed to the user
-	And User is logged out
 
 @Evergreen @Applications @EvergreenJnr_GridActions @TableSorting @DAS-10612
-Scenario: EvergreenJnr_ApplicationsList_Check Sort By Date Functionality
+Scenario: EvergreenJnr_ApplicationsList_CheckSortByDateFunctionality
 	When User clicks "Applications" on the left-hand menu
 	Then "Applications" list should be displayed to the user
 	When User clicks the Columns button
@@ -59,12 +56,9 @@ Scenario: EvergreenJnr_ApplicationsList_Check Sort By Date Functionality
 	Then data in table is sorted by 'Barry'sUse: Package Delivery Date' column in descending order
 	When User click on 'Barry'sUse: Package Delivery Date' column header
 	Then data in table is sorted by 'Barry'sUse: Package Delivery Date' column in ascending order
-	When User clicks the Logout button
-	Then Signed Out page is displayed to the user
-	And User is logged out
 	
 @Evergreen @Mailboxes @EvergreenJnr_GridActions @TableSorting @DAS-10612
-Scenario: EvergreenJnr_MailboxesList_Check Sort By Date Functionality
+Scenario: EvergreenJnr_MailboxesList_CheckSortByDateFunctionality
 	When User clicks "Mailboxes" on the left-hand menu
 	Then "Mailboxes" list should be displayed to the user
 	When User clicks the Columns button
@@ -88,12 +82,9 @@ Scenario: EvergreenJnr_MailboxesList_Check Sort By Date Functionality
 	Then data in table is sorted by 'EmailMigra: Scheduled date' column in descending order
 	When User click on 'EmailMigra: Scheduled date' column header
 	Then data in table is sorted by 'EmailMigra: Scheduled date' column in ascending order
-	When User clicks the Logout button
-	Then Signed Out page is displayed to the user
-	And User is logged out
 
 @Evergreen @Users @EvergreenJnr_GridActions @TableSorting @DAS-10612
-Scenario: EvergreenJnr_UsersList_Check Sort By Date Functionality
+Scenario: EvergreenJnr_UsersList_CheckSortByDateFunctionality
 	When User clicks "Users" on the left-hand menu
 	Then "Users" list should be displayed to the user
 	When User clicks the Columns button
@@ -117,6 +108,3 @@ Scenario: EvergreenJnr_UsersList_Check Sort By Date Functionality
 	Then data in table is sorted by 'MigrationP: Migrated Date' column in descending order
 	When User click on 'MigrationP: Migrated Date' column header
 	Then data in table is sorted by 'MigrationP: Migrated Date' column in ascending order
-	When User clicks the Logout button
-	Then Signed Out page is displayed to the user
-	And User is logged out

@@ -61,7 +61,7 @@ namespace DashworksTestAutomation.Steps.Dashworks
 
             _driver.MouseHover(headerMenu.AnalysisLink);
 
-            _driver.WaitWhileControlIsNotClicable<DashworksHeaderMenuElement>(() => headerMenu.EvergreenLink);
+            _driver.WaitWhileControlIsNotClickable<DashworksHeaderMenuElement>(() => headerMenu.EvergreenLink);
             headerMenu.EvergreenLink.Click();
         }
 

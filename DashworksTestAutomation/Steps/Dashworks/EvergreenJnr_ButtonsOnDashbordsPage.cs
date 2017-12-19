@@ -1,6 +1,8 @@
-﻿using DashworksTestAutomation.Extensions;
+﻿using System;
+using DashworksTestAutomation.Extensions;
 using DashworksTestAutomation.Pages.Evergreen;
 using DashworksTestAutomation.Utils;
+using NUnit.Framework;
 using OpenQA.Selenium.Remote;
 using TechTalk.SpecFlow;
 
@@ -25,6 +27,15 @@ namespace DashworksTestAutomation.Steps.Dashworks
             Logger.Write("Actions button was clicked");
         }
 
+        [When(@"User clicks the List Details button")]
+        public void WhenUserClicksTheListDetailsButton()
+        {
+            var menu = _driver.NowAt<BaseDashboardPage>();
+            _driver.WaitWhileControlIsNotDisplayed<BaseDashboardPage>(() => menu.ListDetailsButton);
+            menu.ListDetailsButton.Click();
+            Logger.Write("List Details button was clicked");
+        }
+
         [When(@"User clicks the Columns button")]
         public void WhenUserClicksTheColumnsButton()
         {
@@ -41,6 +52,14 @@ namespace DashworksTestAutomation.Steps.Dashworks
             _driver.WaitWhileControlIsNotDisplayed<BaseDashboardPage>(() => menu.FilterButton);
             menu.FilterButton.Click();
             Logger.Write("Filters button was clicked");
+        }
+
+        [Then(@"Filters Button is disabled")]
+        public void ThenFiltersButtonIsDisabled()
+        {
+            var menu = _driver.NowAt<BaseDashboardPage>();
+            _driver.WaitWhileControlIsNotDisplayed<BaseDashboardPage>(() => menu.FilterButton);
+            Assert.IsTrue(Convert.ToBoolean(menu.FilterButton.GetAttribute("disabled")), "Filter Button is active");
         }
     }
 }

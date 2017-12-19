@@ -92,8 +92,8 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_Columns
         }
         
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestMethodAttribute()]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.DescriptionAttribute("EvergreenJnr_DevicesList_Check that 500 error page is not displayed after removin" +
-            "g sorted column in custom list")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.DescriptionAttribute("EvergreenJnr_DevicesList_CheckThat500ErrorPageIsNotDisplayedAfterRemovingSortedCo" +
+            "lumnInCustomList")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("FeatureTitle", "RemoveColumn")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("Evergreen")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("Devices")]
@@ -104,8 +104,8 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_Columns
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("Delete_Newly_Created_List")]
         public virtual void EvergreenJnr_DevicesList_CheckThat500ErrorPageIsNotDisplayedAfterRemovingSortedColumnInCustomList()
         {
-            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("EvergreenJnr_DevicesList_Check that 500 error page is not displayed after removin" +
-                    "g sorted column in custom list", new string[] {
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("EvergreenJnr_DevicesList_CheckThat500ErrorPageIsNotDisplayedAfterRemovingSortedCo" +
+                    "lumnInCustomList", new string[] {
                         "Evergreen",
                         "Devices",
                         "EvergreenJnr_Columns",
@@ -122,15 +122,15 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_Columns
             TechTalk.SpecFlow.Table table1 = new TechTalk.SpecFlow.Table(new string[] {
                         "ColumnName"});
             table1.AddRow(new string[] {
-                        "Build Date"});
+                        "Device Key"});
             testRunner.When("ColumnName is entered into the search box and the selection is clicked", ((string)(null)), table1, "When ");
             TechTalk.SpecFlow.Table table2 = new TechTalk.SpecFlow.Table(new string[] {
                         "ColumnName"});
             table2.AddRow(new string[] {
-                        "Build Date"});
+                        "Device Key"});
             testRunner.Then("ColumnName is added to the list", ((string)(null)), table2, "Then ");
-            testRunner.When("User create custom list with \"TestList\" name", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-            testRunner.Then("\"TestList\" list is displayed to user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+            testRunner.When("User create custom list with \"RemovingSortedColumnInCustomList\" name", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+            testRunner.Then("\"RemovingSortedColumnInCustomList\" list is displayed to user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
             testRunner.When("User clicks the Columns button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
             testRunner.Then("Columns panel is displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
             TechTalk.SpecFlow.Table table3 = new TechTalk.SpecFlow.Table(new string[] {
@@ -143,34 +143,33 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_Columns
             table4.AddRow(new string[] {
                         "Boot Up Date"});
             testRunner.Then("ColumnName is added to the list", ((string)(null)), table4, "Then ");
-            testRunner.When("User click on \'Build Date\' column header", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+            testRunner.When("User click on \'Device Key\' column header", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
             testRunner.When("User clicks the Columns button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
             testRunner.Then("Columns panel is displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-            testRunner.When("User is removed \"Build Date\" column by Column panel", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+            testRunner.When("User removes \"Device Key\" column by Column panel", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
             testRunner.Then("\"Devices\" list should be displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
             TechTalk.SpecFlow.Table table5 = new TechTalk.SpecFlow.Table(new string[] {
                         "ColumnName"});
             table5.AddRow(new string[] {
-                        "Build Date"});
+                        "Device Key"});
             testRunner.Then("ColumnName is removed from the list", ((string)(null)), table5, "Then ");
             testRunner.When("User click on \'Boot Up Date\' column header", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
             TechTalk.SpecFlow.Table table6 = new TechTalk.SpecFlow.Table(new string[] {
                         "ColumnName"});
             table6.AddRow(new string[] {
                         "Boot Up Date"});
-            testRunner.When("User is removed column by URL", ((string)(null)), table6, "When ");
+            testRunner.When("User removes column by URL", ((string)(null)), table6, "When ");
             TechTalk.SpecFlow.Table table7 = new TechTalk.SpecFlow.Table(new string[] {
                         "ColumnName"});
             table7.AddRow(new string[] {
                         "Boot Up Date"});
             testRunner.Then("ColumnName is removed from the list", ((string)(null)), table7, "Then ");
-            testRunner.When("User update current custom list", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
             this.ScenarioCleanup();
         }
         
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestMethodAttribute()]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.DescriptionAttribute("EvergreenJnr_DevicesList_Check that 500 error page is not displayed after removin" +
-            "g multiple sorted column in custom list")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.DescriptionAttribute("EvergreenJnr_DevicesList_CheckThat500ErrorPageIsNotDisplayedAfterRemovingMultiple" +
+            "SortedColumnInCustomList")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("FeatureTitle", "RemoveColumn")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("Evergreen")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("Devices")]
@@ -181,8 +180,8 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_Columns
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("Delete_Newly_Created_List")]
         public virtual void EvergreenJnr_DevicesList_CheckThat500ErrorPageIsNotDisplayedAfterRemovingMultipleSortedColumnInCustomList()
         {
-            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("EvergreenJnr_DevicesList_Check that 500 error page is not displayed after removin" +
-                    "g multiple sorted column in custom list", new string[] {
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("EvergreenJnr_DevicesList_CheckThat500ErrorPageIsNotDisplayedAfterRemovingMultiple" +
+                    "SortedColumnInCustomList", new string[] {
                         "Evergreen",
                         "Devices",
                         "EvergreenJnr_Columns",
@@ -229,7 +228,7 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_Columns
             testRunner.When("User sort table by multiple columns", ((string)(null)), table12, "When ");
             testRunner.When("User clicks the Columns button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
             testRunner.Then("Columns panel is displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-            testRunner.When("User is removed \"Build Date\" column by Column panel", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+            testRunner.When("User removes \"Build Date\" column by Column panel", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
             testRunner.Then("\"Devices\" list should be displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
             TechTalk.SpecFlow.Table table13 = new TechTalk.SpecFlow.Table(new string[] {
                         "ColumnName"});
@@ -241,7 +240,7 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_Columns
                         "ColumnName"});
             table14.AddRow(new string[] {
                         "Boot Up Date"});
-            testRunner.When("User is removed column by URL", ((string)(null)), table14, "When ");
+            testRunner.When("User removes column by URL", ((string)(null)), table14, "When ");
             testRunner.When("User update current custom list", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
             TechTalk.SpecFlow.Table table15 = new TechTalk.SpecFlow.Table(new string[] {
                         "ColumnName"});
@@ -252,8 +251,8 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_Columns
         }
         
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestMethodAttribute()]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.DescriptionAttribute("EvergreenJnr_DevicesList_Check that 500 error page is not displayed after removin" +
-            "g sorted column in custom list throw filters")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.DescriptionAttribute("EvergreenJnr_DevicesList_CheckThat500ErrorPageIsNotDisplayedAfterRemovingSortedCo" +
+            "lumnInCustomListThrowFilters")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("FeatureTitle", "RemoveColumn")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("Evergreen")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("Devices")]
@@ -264,8 +263,8 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_Columns
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("Delete_Newly_Created_List")]
         public virtual void EvergreenJnr_DevicesList_CheckThat500ErrorPageIsNotDisplayedAfterRemovingSortedColumnInCustomListThrowFilters()
         {
-            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("EvergreenJnr_DevicesList_Check that 500 error page is not displayed after removin" +
-                    "g sorted column in custom list throw filters", new string[] {
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("EvergreenJnr_DevicesList_CheckThat500ErrorPageIsNotDisplayedAfterRemovingSortedCo" +
+                    "lumnInCustomListThrowFilters", new string[] {
                         "Evergreen",
                         "Devices",
                         "EvergreenJnr_Columns",
@@ -279,29 +278,29 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_Columns
             testRunner.Then("\"Devices\" list should be displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
             testRunner.When("User clicks the Filters button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
             testRunner.Then("Filters panel is displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-            testRunner.When("user select \"Windows7Mi: Category\" filter", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
             TechTalk.SpecFlow.Table table16 = new TechTalk.SpecFlow.Table(new string[] {
                         "SelectedCheckboxes"});
             table16.AddRow(new string[] {
                         "None"});
-            testRunner.When("User have created \"Equals\" filter with column and following options:", ((string)(null)), table16, "When ");
+            testRunner.When("User add \"Windows7Mi: Category\" filter where type is \"Equals\" with added column a" +
+                    "nd following checkboxes:", ((string)(null)), table16, "When ");
             testRunner.Then("\"Windows7Mi: Category\" filter is added to the list", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
             testRunner.When("User create custom list with \"TestList\" name", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
             testRunner.Then("\"TestList\" list is displayed to user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
             testRunner.When("User clicks the Filters button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
             testRunner.Then("Filters panel is displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-            testRunner.When("user select \"Directory Type\" filter", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
             TechTalk.SpecFlow.Table table17 = new TechTalk.SpecFlow.Table(new string[] {
                         "SelectedCheckboxes"});
             table17.AddRow(new string[] {
                         "Generic"});
-            testRunner.When("User have created \"Equals\" filter with column and following options:", ((string)(null)), table17, "When ");
+            testRunner.When("User add \"Directory Type\" filter where type is \"Equals\" with added column and fol" +
+                    "lowing checkboxes:", ((string)(null)), table17, "When ");
             testRunner.Then("\"Directory Type\" filter is added to the list", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
             testRunner.When("User click on \'Windows7Mi: Category\' column header", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
             testRunner.When("User clicks the Columns button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
             testRunner.Then("Columns panel is displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
             testRunner.Then("User is expand \"Selected Columns\" columns category", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-            testRunner.When("User is removed \"Windows7Mi: Category\" column by Column panel", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+            testRunner.When("User removes \"Windows7Mi: Category\" column by Column panel", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
             testRunner.Then("\"Devices\" list should be displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
             TechTalk.SpecFlow.Table table18 = new TechTalk.SpecFlow.Table(new string[] {
                         "ColumnName"});
@@ -316,7 +315,7 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_Columns
                         "ColumnName"});
             table19.AddRow(new string[] {
                         "Directory Type"});
-            testRunner.When("User is removed column by URL", ((string)(null)), table19, "When ");
+            testRunner.When("User removes column by URL", ((string)(null)), table19, "When ");
             testRunner.When("User clicks the Columns button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
             testRunner.Then("Columns panel is displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
             TechTalk.SpecFlow.Table table20 = new TechTalk.SpecFlow.Table(new string[] {
@@ -327,13 +326,12 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_Columns
             testRunner.When("User clicks the Filters button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
             testRunner.Then("Filters panel is displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
             testRunner.Then("\"Directory Type\" filter is added to the list", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-            testRunner.When("User update current custom list", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
             this.ScenarioCleanup();
         }
         
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestMethodAttribute()]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.DescriptionAttribute("EvergreenJnr_DevicesList_Check that 500 error page is not displayed after removin" +
-            "g sorted column in default list")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.DescriptionAttribute("EvergreenJnr_DevicesList_CheckThat500ErrorPageIsNotDisplayedAfterRemovingSortedCo" +
+            "lumnInDefaultList")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("FeatureTitle", "RemoveColumn")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("Evergreen")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("Devices")]
@@ -343,8 +341,8 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_Columns
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("DAS-10973")]
         public virtual void EvergreenJnr_DevicesList_CheckThat500ErrorPageIsNotDisplayedAfterRemovingSortedColumnInDefaultList()
         {
-            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("EvergreenJnr_DevicesList_Check that 500 error page is not displayed after removin" +
-                    "g sorted column in default list", new string[] {
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("EvergreenJnr_DevicesList_CheckThat500ErrorPageIsNotDisplayedAfterRemovingSortedCo" +
+                    "lumnInDefaultList", new string[] {
                         "Evergreen",
                         "Devices",
                         "EvergreenJnr_Columns",
@@ -374,7 +372,7 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_Columns
             testRunner.When("User clicks the Columns button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
             testRunner.Then("Columns panel is displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
             testRunner.When("User click on \'Boot Up Date\' column header", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-            testRunner.When("User is removed \"Boot Up Date\" column by Column panel", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+            testRunner.When("User removes \"Boot Up Date\" column by Column panel", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
             TechTalk.SpecFlow.Table table23 = new TechTalk.SpecFlow.Table(new string[] {
                         "ColumnName"});
             table23.AddRow(new string[] {
@@ -385,22 +383,19 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_Columns
                         "ColumnName"});
             table24.AddRow(new string[] {
                         "Windows7Mi: Date & Time Task"});
-            testRunner.When("User is removed column by URL", ((string)(null)), table24, "When ");
+            testRunner.When("User removes column by URL", ((string)(null)), table24, "When ");
             testRunner.Then("\"Devices\" list should be displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
             TechTalk.SpecFlow.Table table25 = new TechTalk.SpecFlow.Table(new string[] {
                         "ColumnName"});
             table25.AddRow(new string[] {
                         "Windows7Mi: Date & Time Task"});
             testRunner.Then("ColumnName is removed from the list", ((string)(null)), table25, "Then ");
-            testRunner.When("User clicks the Logout button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-            testRunner.Then("Signed Out page is displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-            testRunner.And("User is logged out", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
             this.ScenarioCleanup();
         }
         
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestMethodAttribute()]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.DescriptionAttribute("EvergreenJnr_DevicesList_Check that 500 error page is not displayed after removin" +
-            "g multiple sorted column in default list")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.DescriptionAttribute("EvergreenJnr_DevicesList_CheckThat500ErrorPageIsNotDisplayedAfterRemovingMultiple" +
+            "SortedColumnInDefaultList")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("FeatureTitle", "RemoveColumn")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("Evergreen")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("Devices")]
@@ -410,8 +405,8 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_Columns
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("DAS-10973")]
         public virtual void EvergreenJnr_DevicesList_CheckThat500ErrorPageIsNotDisplayedAfterRemovingMultipleSortedColumnInDefaultList()
         {
-            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("EvergreenJnr_DevicesList_Check that 500 error page is not displayed after removin" +
-                    "g multiple sorted column in default list", new string[] {
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("EvergreenJnr_DevicesList_CheckThat500ErrorPageIsNotDisplayedAfterRemovingMultiple" +
+                    "SortedColumnInDefaultList", new string[] {
                         "Evergreen",
                         "Devices",
                         "EvergreenJnr_Columns",
@@ -453,7 +448,7 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_Columns
             table28.AddRow(new string[] {
                         "Build Date"});
             testRunner.When("User sort table by multiple columns", ((string)(null)), table28, "When ");
-            testRunner.When("User is removed \"Boot Up Date\" column by Column panel", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+            testRunner.When("User removes \"Boot Up Date\" column by Column panel", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
             testRunner.Then("\"Devices\" list should be displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
             TechTalk.SpecFlow.Table table29 = new TechTalk.SpecFlow.Table(new string[] {
                         "ColumnName"});
@@ -466,7 +461,7 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_Columns
                         "ColumnName"});
             table30.AddRow(new string[] {
                         "Windows7Mi: Date & Time Task"});
-            testRunner.When("User is removed column by URL", ((string)(null)), table30, "When ");
+            testRunner.When("User removes column by URL", ((string)(null)), table30, "When ");
             testRunner.Then("\"Devices\" list should be displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
             TechTalk.SpecFlow.Table table31 = new TechTalk.SpecFlow.Table(new string[] {
                         "ColumnName"});
@@ -474,15 +469,12 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_Columns
                         "Windows7Mi: Date & Time Task"});
             testRunner.Then("ColumnName is removed from the list", ((string)(null)), table31, "Then ");
             testRunner.Then("data in table is sorted by \'Build Date\' column in descending order", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-            testRunner.When("User clicks the Logout button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-            testRunner.Then("Signed Out page is displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-            testRunner.And("User is logged out", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
             this.ScenarioCleanup();
         }
         
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestMethodAttribute()]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.DescriptionAttribute("EvergreenJnr_DevicesList_Check that 500 error page is not displayed after removin" +
-            "g sorted column in default list throw filters")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.DescriptionAttribute("EvergreenJnr_DevicesList_CheckThat500ErrorPageIsNotDisplayedAfterRemovingSortedCo" +
+            "lumnInDefaultListThrowFilters")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("FeatureTitle", "RemoveColumn")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("Evergreen")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("Devices")]
@@ -492,8 +484,8 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_Columns
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("DAS-10973")]
         public virtual void EvergreenJnr_DevicesList_CheckThat500ErrorPageIsNotDisplayedAfterRemovingSortedColumnInDefaultListThrowFilters()
         {
-            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("EvergreenJnr_DevicesList_Check that 500 error page is not displayed after removin" +
-                    "g sorted column in default list throw filters", new string[] {
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("EvergreenJnr_DevicesList_CheckThat500ErrorPageIsNotDisplayedAfterRemovingSortedCo" +
+                    "lumnInDefaultListThrowFilters", new string[] {
                         "Evergreen",
                         "Devices",
                         "EvergreenJnr_Columns",
@@ -506,25 +498,25 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_Columns
             testRunner.Then("\"Devices\" list should be displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
             testRunner.When("User clicks the Filters button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
             testRunner.Then("Filters panel is displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-            testRunner.When("user select \"Windows7Mi: Category\" filter", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
             TechTalk.SpecFlow.Table table32 = new TechTalk.SpecFlow.Table(new string[] {
                         "SelectedCheckboxes"});
             table32.AddRow(new string[] {
                         "None"});
-            testRunner.When("User have created \"Equals\" filter with column and following options:", ((string)(null)), table32, "When ");
+            testRunner.When("User add \"Windows7Mi: Category\" filter where type is \"Equals\" with added column a" +
+                    "nd following checkboxes:", ((string)(null)), table32, "When ");
             testRunner.Then("\"Windows7Mi: Category\" filter is added to the list", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-            testRunner.When("user select \"Directory Type\" filter", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
             TechTalk.SpecFlow.Table table33 = new TechTalk.SpecFlow.Table(new string[] {
                         "SelectedCheckboxes"});
             table33.AddRow(new string[] {
                         "Generic"});
-            testRunner.When("User have created \"Equals\" filter with column and following options:", ((string)(null)), table33, "When ");
+            testRunner.When("User add \"Directory Type\" filter where type is \"Equals\" with added column and fol" +
+                    "lowing checkboxes:", ((string)(null)), table33, "When ");
             testRunner.Then("\"Directory Type\" filter is added to the list", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
             testRunner.When("User click on \'Windows7Mi: Category\' column header", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
             testRunner.When("User clicks the Columns button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
             testRunner.Then("Columns panel is displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
             testRunner.Then("User is expand \"Selected Columns\" columns category", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-            testRunner.When("User is removed \"Windows7Mi: Category\" column by Column panel", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+            testRunner.When("User removes \"Windows7Mi: Category\" column by Column panel", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
             testRunner.Then("\"Devices\" list should be displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
             TechTalk.SpecFlow.Table table34 = new TechTalk.SpecFlow.Table(new string[] {
                         "ColumnName"});
@@ -539,7 +531,7 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_Columns
                         "ColumnName"});
             table35.AddRow(new string[] {
                         "Directory Type"});
-            testRunner.When("User is removed column by URL", ((string)(null)), table35, "When ");
+            testRunner.When("User removes column by URL", ((string)(null)), table35, "When ");
             testRunner.Then("\"Devices\" list should be displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
             testRunner.When("User clicks the Columns button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
             testRunner.Then("Columns panel is displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
@@ -551,9 +543,60 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_Columns
             testRunner.When("User clicks the Filters button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
             testRunner.Then("Filters panel is displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
             testRunner.Then("\"Directory Type\" filter is added to the list", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-            testRunner.When("User clicks the Logout button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-            testRunner.Then("Signed Out page is displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-            testRunner.And("User is logged out", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+            this.ScenarioCleanup();
+        }
+        
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestMethodAttribute()]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.DescriptionAttribute("EvergreenJnr_UsersList_CheckThat500ErrorPageIsNotDisplayedAfterRemovingSortedColu" +
+            "mn")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("FeatureTitle", "RemoveColumn")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("Evergreen")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("Users")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("EvergreenJnr_Columns")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("RemoveColumn")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("DAS-10973")]
+        public virtual void EvergreenJnr_UsersList_CheckThat500ErrorPageIsNotDisplayedAfterRemovingSortedColumn()
+        {
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("EvergreenJnr_UsersList_CheckThat500ErrorPageIsNotDisplayedAfterRemovingSortedColu" +
+                    "mn", new string[] {
+                        "Evergreen",
+                        "Users",
+                        "EvergreenJnr_Columns",
+                        "RemoveColumn",
+                        "DAS-10973"});
+            this.ScenarioSetup(scenarioInfo);
+            this.FeatureBackground();
+            testRunner.When("User clicks \"Users\" on the left-hand menu", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+            testRunner.Then("\"Users\" list should be displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+            testRunner.When("User clicks the Columns button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+            testRunner.Then("Columns panel is displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+            TechTalk.SpecFlow.Table table37 = new TechTalk.SpecFlow.Table(new string[] {
+                        "ColumnName"});
+            table37.AddRow(new string[] {
+                        "Last Logon Date"});
+            table37.AddRow(new string[] {
+                        "Home Drive"});
+            testRunner.When("ColumnName is entered into the search box and the selection is clicked", ((string)(null)), table37, "When ");
+            TechTalk.SpecFlow.Table table38 = new TechTalk.SpecFlow.Table(new string[] {
+                        "ColumnName"});
+            table38.AddRow(new string[] {
+                        "Last Logon Date"});
+            table38.AddRow(new string[] {
+                        "Home Drive"});
+            testRunner.Then("ColumnName is added to the list", ((string)(null)), table38, "Then ");
+            testRunner.When("User click on \'Last Logon Date\' column header", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+            testRunner.When("User clicks the Columns button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+            testRunner.Then("Columns panel is displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+            testRunner.When("User removes \"Last Logon Date\" column by Column panel", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+            testRunner.When("User removes \"Home Drive\" column by Column panel", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+            testRunner.Then("\"Users\" list should be displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+            TechTalk.SpecFlow.Table table39 = new TechTalk.SpecFlow.Table(new string[] {
+                        "ColumnName"});
+            table39.AddRow(new string[] {
+                        "Last Logon Date"});
+            table39.AddRow(new string[] {
+                        "Home Drive"});
+            testRunner.Then("ColumnName is removed from the list", ((string)(null)), table39, "Then ");
             this.ScenarioCleanup();
         }
     }

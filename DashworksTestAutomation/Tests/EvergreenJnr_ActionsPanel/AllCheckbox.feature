@@ -12,7 +12,7 @@ Background: Pre-Conditions
 	Then Evergreen Dashboards page should be displayed to the user
 
 @Evergreen @Users @Evergreen_ActionsPanel @AllCheckbox @DAS-10769
-Scenario: EvergreenJnr_UsersList_Select All Checkbox Status Check After Search
+Scenario: EvergreenJnr_UsersList_SelectAllCheckboxStatusCheckAfterSearch
 	When User clicks "Users" on the left-hand menu
 	Then "Users" list should be displayed to the user
 	When User clicks the Actions button
@@ -31,64 +31,26 @@ Scenario: EvergreenJnr_UsersList_Select All Checkbox Status Check After Search
 	And Clearing the agGrid Search Box
 	Then Select All selectbox is checked
 	Then "42" selected rows are displayed in the Actions panel
-	When User clicks the Logout button
-	Then Signed Out page is displayed to the user
-	And User is logged out
 
-@Evergreen @Devices @Evergreen_ActionsPanel @AllCheckbox @DAS-10775
-Scenario: EvergreenJnr_DevicesList_Select All Checkbox status after closing action panel
-	When User clicks "Devices" on the left-hand menu
-	Then "Devices" list should be displayed to the user
+@Evergreen @AllLists @Evergreen_ActionsPanel @AllCheckbox @DAS-10775
+Scenario Outline: EvergreenJnr_AllLists_CheckThatSelectAllCheckboxStatusAfterClosingActionPanel
+	When User clicks "<PageName>" on the left-hand menu
+	Then "<PageName>" list should be displayed to the user
 	When User clicks the Actions button
 	Then Actions panel is displayed to the user
 	When User select all rows
 	When User clicks the Actions button
 	Then Select all checkbox is not displayed
-	When User clicks the Logout button
-	Then Signed Out page is displayed to the user
-	And User is logged out
 
-@Evergreen @Users @Evergreen_ActionsPanel @AllCheckbox @DAS-10775
-Scenario: EvergreenJnr_UsersList_Select All Checkbox status after closing action panel
-	When User clicks "Users" on the left-hand menu
-	Then "Users" list should be displayed to the user
-	When User clicks the Actions button
-	Then Actions panel is displayed to the user
-	When User select all rows
-	When User clicks the Actions button
-	Then Select all checkbox is not displayed
-	When User clicks the Logout button
-	Then Signed Out page is displayed to the user
-	And User is logged out
-
-@Evergreen @Applications @Evergreen_ActionsPanel @AllCheckbox @DAS-10775
-Scenario: EvergreenJnr_ApplicationsList_Select All Checkbox status after closing action panel
-	When User clicks "Applications" on the left-hand menu
-	Then "Applications" list should be displayed to the user
-	When User clicks the Actions button
-	Then Actions panel is displayed to the user
-	When User select all rows
-	When User clicks the Actions button
-	Then Select all checkbox is not displayed
-	When User clicks the Logout button
-	Then Signed Out page is displayed to the user
-	And User is logged out
-
-@Evergreen @Mailboxes @Evergreen_ActionsPanel @AllCheckbox @DAS-10775
-Scenario: EvergreenJnr_MailboxesList_Select All Checkbox status after closing action panel
-	When User clicks "Mailboxes" on the left-hand menu
-	Then "Mailboxes" list should be displayed to the user
-	When User clicks the Actions button
-	Then Actions panel is displayed to the user
-	When User select all rows
-	When User clicks the Actions button
-	Then Select all checkbox is not displayed
-	When User clicks the Logout button
-	Then Signed Out page is displayed to the user
-	And User is logged out
+Examples: 
+	| PageName     |
+	| Devices      |
+	| Users        |
+	| Applications |
+	| Mailboxes    |
 
 @Evergreen @Devices @Evergreen_ActionsPanel @AllCheckbox @DAS-10772
-Scenario: EvergreenJnr_DevicesList_Search Within All Rows
+Scenario: EvergreenJnr_DevicesList_SearchWithinAllRows
 	When User clicks "Devices" on the left-hand menu
 	Then "Devices" list should be displayed to the user
 	When User clicks the Actions button
@@ -101,12 +63,9 @@ Scenario: EvergreenJnr_DevicesList_Search Within All Rows
 	| Yolande Sylvain | 1            |
 	And Clearing the agGrid Search Box
 	Then "17,225" rows are displayed in the agGrid
-	When User clicks the Logout button
-	Then Signed Out page is displayed to the user
-	And User is logged out
 
 @Evergreen @Devices @Evergreen_ActionsPanel @AllCheckbox @DAS-10656
-Scenario: EvergreenJnr_DevicesList_Select All checbox main functionality test
+Scenario: EvergreenJnr_DevicesList_SelectAllChecboxMainFunctionalityTest
 	When User clicks "Devices" on the left-hand menu
 	Then "Devices" list should be displayed to the user
 	When User clicks the Actions button
@@ -125,6 +84,3 @@ Scenario: EvergreenJnr_DevicesList_Select All checbox main functionality test
 	When User click on 'Hostname' column header
 	Then data in table is sorted by 'Hostname' column in descending order
 	Then "17223" selected rows are displayed in the Actions panel
-	When User clicks the Logout button
-	Then Signed Out page is displayed to the user
-	And User is logged out

@@ -1,5 +1,4 @@
-﻿using System;
-using DashworksTestAutomation.Extensions;
+﻿using DashworksTestAutomation.Extensions;
 using DashworksTestAutomation.Pages;
 using DashworksTestAutomation.Utils;
 using NUnit.Framework;

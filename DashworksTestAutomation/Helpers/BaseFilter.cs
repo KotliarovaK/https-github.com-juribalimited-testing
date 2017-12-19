@@ -1,10 +1,5 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using System.Linq;
 using DashworksTestAutomation.Extensions;
-using DashworksTestAutomation.Pages.Evergreen;
 using NUnit.Framework;
 using OpenQA.Selenium;
 using OpenQA.Selenium.Remote;
@@ -34,6 +29,7 @@ namespace DashworksTestAutomation.Helpers
 
         public void SelectOperator()
         {
+            _driver.WaitWhileControlIsNotDisplayed(By.XPath(".//div[@class='filter-panel']//div[@class='mat-select-trigger']"));
             var selectbox = _driver.FindElement(By.XPath(".//div[@class='filter-panel']//div[@class='mat-select-trigger']"));
             _driver.SelectCustomSelectbox(selectbox, _operatorValue);
         }
@@ -182,6 +178,37 @@ namespace DashworksTestAutomation.Helpers
             foreach (var row in _table.Rows)
             {
                 _driver.FindElement(By.XPath(".//div[@id='context']//input[@placeholder='Search']")).Click();
+                _driver.FindElement(By.XPath($".//li//span[text()='{row["Association"]}']")).Click();
+            }
+            SaveFilter();
+        }
+    }
+
+    public class LookupValueFilter : BaseFilter
+    {
+        private Table Table { get; set; }
+
+        public LookupValueFilter(RemoteWebDriver driver, string operatorValue, Table table) : base(
+            driver, operatorValue, false)
+        {
+            Table = table;
+        }
+
+        public override void Do()
+        {
+            SelectOperator();
+            _driver.WaitForDataLoading();
+            foreach (var row in Table.Rows)
+            {
+                _driver.FindElement(By.XPath(".//div[@id='context']//input[@id='md-input-3']")).Click();
+                _driver.FindElement(By.XPath(".//div[@id='context']//input[@id='md-input-3']"))
+                    .SendKeys(row["SelectedValues"]);
+                _driver.FindElement(By.XPath($".//div[@class='filterAddPanel ng-star-inserted']//span[contains(text(),'{row["SelectedValues"]}')]"))
+                    .Click();
+            }
+            foreach (var row in Table.Rows)
+            {
+                _driver.FindElement(By.XPath(".//div[@id='context']//input[@id='md-input-2']")).Click();
                 _driver.FindElement(By.XPath($".//li//span[text()='{row["Association"]}']")).Click();
             }
             SaveFilter();

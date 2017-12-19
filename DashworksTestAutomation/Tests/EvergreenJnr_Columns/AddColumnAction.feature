@@ -13,7 +13,7 @@ Background: Pre-Conditions
 	Then Evergreen Dashboards page should be displayed to the user
 
 @Evergreen @Devices @EvergreenJnr_Columns @AddColumnAction @DAS-10665
-Scenario: EvergreenJnr_DevicesList_Add the Device key column to the devices list
+Scenario: EvergreenJnr_DevicesList_AddTheDeviceKeyColumnToTheDevicesList
 	When User clicks "Devices" on the left-hand menu
 	Then "Devices" list should be displayed to the user
 	When User clicks the Columns button
@@ -27,6 +27,3 @@ Scenario: EvergreenJnr_DevicesList_Add the Device key column to the devices list
 	And Content is present in the newly added column
 	| ColumnName          |
 	| Device Key          |
-	When User clicks the Logout button
-	Then Signed Out page is displayed to the user
-	And User is logged out
