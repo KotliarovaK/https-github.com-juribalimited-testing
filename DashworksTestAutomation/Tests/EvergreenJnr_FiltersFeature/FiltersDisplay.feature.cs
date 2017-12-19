@@ -1888,7 +1888,7 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_FiltersFeature
             testRunner.When("User add \"Windows7Mi: Date & Time Task\" filter where type is \"Does not equal\" wit" +
                     "h added column and following value:", ((string)(null)), table49, "When ");
             testRunner.Then("\"Windows7Mi: Date & Time Task\" filter is added to the list", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-            testRunner.And("\"17,209\" rows are displayed in the agGrid", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+            testRunner.And("\"17,225\" rows are displayed in the agGrid", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
             this.ScenarioCleanup();
         }
         

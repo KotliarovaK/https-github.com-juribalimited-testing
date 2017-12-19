@@ -532,7 +532,7 @@ Scenario: EvergreenJnr_DevicesList_CheckThatDateAndTimeFiltersWithDoesNotEqualVa
 	| Values      |
 	| 22 Nov 2012 |
 	Then "Windows7Mi: Date & Time Task" filter is added to the list
-	And "17,209" rows are displayed in the agGrid
+	And "17,225" rows are displayed in the agGrid
 
 @Evergreen @Devices @Evergreen_FiltersFeature @FiltersDisplay @DAS-11187
 Scenario Outline: EvergreenJnr_DevicesList_CheckThatCustomFiltersAreContainsAllExpectedAssociations
