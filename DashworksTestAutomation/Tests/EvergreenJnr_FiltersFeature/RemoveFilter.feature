@@ -11,7 +11,7 @@ Background: Pre-Conditions
 	When User clicks the Switch to Evergreen link
 	Then Evergreen Dashboards page should be displayed to the user
 
-@Evergreen @Devices @Evergreen_FiltersFeature @RemoveFilter @DAS-11009
+@Evergreen @Devices @Evergreen_FiltersFeature @RemoveFilter @DAS-11009 @Not_Run
 Scenario: EvergreenJnr_DevicesList_CheckThatResetIsUpdatingRowCount
 	When User clicks "Devices" on the left-hand menu
 	Then "Devices" list should be displayed to the user
@@ -32,7 +32,7 @@ Scenario: EvergreenJnr_DevicesList_CheckThatResetIsUpdatingRowCount
 	And "17,225" rows are displayed in the agGrid
 	Then "Compliance" filter is removed from filters
 
-@Evergreen @Devices @Evergreen_FiltersFeature @RemoveFilter @DAS-11044
+@Evergreen @Devices @Evergreen_FiltersFeature @RemoveFilter @DAS-11044 @DAS-11506
 Scenario: EvergreenJnr_DevicesList_CheckThatDeleteByUrlIsUpdatingRowCount
 	When User clicks "Devices" on the left-hand menu
 	Then "Devices" list should be displayed to the user
@@ -90,8 +90,5 @@ Scenario: EvergreenJnr_MailboxesList_CheckThatFiltersIsResetAndDataOnTheGridUpda
 	And "1,000" rows are displayed in the agGrid
 	And table data is filtered correctly
 	When User have reset all filters
-	#Then ColumnName is removed from the list
-	#| ColumnName |
-	#| City       |
 	Then "4,835" rows are displayed in the agGrid
 	And "City" filter is removed from filters

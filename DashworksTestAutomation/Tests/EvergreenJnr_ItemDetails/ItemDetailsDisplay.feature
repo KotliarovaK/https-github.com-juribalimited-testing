@@ -24,6 +24,5 @@ Scenario Outline: EvergreenJnr_AllLists_AllEmptyFieldsInItemDetailsAreDisplayedA
 Examples: 
 	| PageName     | SearchCriteria                     | ColumnName    |
 	| Mailboxes    | azuresync3@juriba1.onmicrosoft.com | Email Address |
-	| Applications | Python 2.2a4                       | Application   |
 	| Users        | ABW1509426                         | Username      |
 	| Devices      | 01BQIYGGUW5PRP6                    | Hostname      |

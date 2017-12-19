@@ -22,6 +22,7 @@ Scenario: EvergreenJnr_UsersList_CheckThatNotOwnerUsersDontHavePermissionsToUpda
 	When User select all rows
 	And User create static list with "Static List TestName" name
 	Then "Static List TestName" list is displayed to user
+	When User clicks the List Details button
 	Then List details panel is displayed to the user
 	When User select "Everyone can see" sharing option
 	And User select "Automation Admin 1" as a Owner of a list
@@ -36,3 +37,91 @@ Scenario: EvergreenJnr_UsersList_CheckThatNotOwnerUsersDontHavePermissionsToUpda
 	| Last Logon Date |
 	Then Update list option is NOT available
 	And Save as a new list option is available
+
+@Evergreen @Devices @EvergreenJnr_StaticLists @PermissionsSettings @DAS-11022 @DAS-11553 @Delete_Newly_Created_List
+Scenario: EvergreenJnr_DevicesList_CheckThatAddRowsOptionsIsAvailableForSpecifiedPermissionLevel
+	When User clicks "Devices" on the left-hand menu
+	Then "Devices" list should be displayed to the user
+	When User clicks the Actions button
+	Then Actions panel is displayed to the user
+	When User select all rows
+	And User create static list with "OwnerPrivate" name
+	When User navigates to the "All Devices" list
+	Then "Devices" list should be displayed to the user
+	When User clicks the Actions button
+	Then Actions panel is displayed to the user
+	When User select all rows
+	And User create static list with "NotOwnerSpecifiedAdmin" name
+	When User clicks the List Details button
+	Then List details panel is displayed to the user
+	When User select "Specific users" sharing option
+	When User click Add User button
+	When User select 'Administrator' in Select User dropdown
+	When User select "Admin" in Select Access dropdown
+	When User click Add User button
+	And User select "Automation Admin 1" as a Owner of a list
+	And User click Accept button in List Details panel
+	When User navigates to the "All Devices" list
+	Then "Devices" list should be displayed to the user
+	When User clicks the Actions button
+	Then Actions panel is displayed to the user
+	When User select all rows
+	And User create static list with "NotOwnerSpecifiedEdit" name
+	When User clicks the List Details button
+	Then List details panel is displayed to the user
+	When User select "Specific users" sharing option
+	When User click Add User button
+	When User select 'Administrator' in Select User dropdown
+	When User select "Edit" in Select Access dropdown
+	When User click Add User button
+	And User select "Automation Admin 1" as a Owner of a list
+	And User click Accept button in List Details panel
+	When User navigates to the "All Devices" list
+	Then "Devices" list should be displayed to the user
+	When User clicks the Actions button
+	Then Actions panel is displayed to the user
+	When User select all rows
+	And User create static list with "NotOwnerSpecifiedRead" name
+	When User clicks the List Details button
+	Then List details panel is displayed to the user
+	When User select "Specific users" sharing option
+	When User click Add User button
+	When User select 'Administrator' in Select User dropdown
+	When User select "Read" in Select Access dropdown
+	When User click Add User button
+	And User select "Automation Admin 1" as a Owner of a list
+	And User click Accept button in List Details panel
+	When User navigates to the "All Devices" list
+	Then "Devices" list should be displayed to the user
+	When User clicks the Actions button
+	Then Actions panel is displayed to the user
+	When User select all rows
+	And User create static list with "NotOwnerEveryoneCanEdit" name
+	When User clicks the List Details button
+	Then List details panel is displayed to the user
+	When User select "Everyone can edit" sharing option
+	And User select "Automation Admin 1" as a Owner of a list
+	And User click Accept button in List Details panel
+	When User navigates to the "All Devices" list
+	Then "Devices" list should be displayed to the user
+	When User clicks the Actions button
+	Then Actions panel is displayed to the user
+	When User select all rows
+	And User create static list with "NotOwnerEveryoneCanSee" name
+	When User clicks the List Details button
+	Then List details panel is displayed to the user
+	When User select "Everyone can see" sharing option
+	And User select "Automation Admin 1" as a Owner of a list
+	And User click Accept button in List Details panel
+	When User navigates to the "All Devices" list
+	Then "Devices" list should be displayed to the user
+	When User clicks the Actions button
+	Then Actions panel is displayed to the user
+	When User select all rows
+	When User select "Add to static list" option in Actions panel
+	Then Following options are available in lists dorpdown:
+	| Listnames               |
+	| OwnerPrivate            |
+	| NotOwnerSpecifiedAdmin  |
+	| NotOwnerSpecifiedEdit   |
+	| NotOwnerEveryoneCanEdit |
