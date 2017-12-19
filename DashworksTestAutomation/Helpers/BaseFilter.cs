@@ -97,6 +97,8 @@ namespace DashworksTestAutomation.Helpers
         protected Table _optionsTable { get; set; }
 
         protected string CheckboxSelector =
+            ".//div[@class='filterAddPanel ng-star-inserted']//span[text()='{0}']";
+        protected string CheckboxSelectorName =
             ".//div[@class='filterAddPanel ng-star-inserted']//span[text()='{0}']/../preceding-sibling::i";
 
         public CheckBoxesFilter(RemoteWebDriver driver, string operatorValue, bool acceptCheckbox, Table optionsTable) :
@@ -132,7 +134,7 @@ namespace DashworksTestAutomation.Helpers
         {
             foreach (var row in _optionsTable.Rows)
             {
-                var checkbox = _driver.FindElement(By.XPath(string.Format(CheckboxSelector, row["Option"])));
+                var checkbox = _driver.FindElement(By.XPath(string.Format(CheckboxSelectorName, row["Option"])));
                 Assert.AreEqual(bool.Parse(row["State"]), checkbox.GetFilterCheckboxSelectedState());
             }
             SaveFilter();
