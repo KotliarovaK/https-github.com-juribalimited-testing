@@ -183,8 +183,8 @@ Scenario: EvergreenJnr_UsersList_CheckThatFilterDataIsDisplayedCorrectlyWhenNavi
 	| Red    |
 	| Amber  |
 	| Green  |
-	When User create custom list with "TestList" name
-	Then "TestList" list is displayed to user
+	When User create custom list with "Users - Nav between lists" name
+	Then "Users - Nav between lists" list is displayed to user
 	When User clicks the Filters button
 	Then Filters panel is displayed to the user
 	Then Values is displayed in added filter info
@@ -193,8 +193,8 @@ Scenario: EvergreenJnr_UsersList_CheckThatFilterDataIsDisplayedCorrectlyWhenNavi
 	| Amber  |
 	| Green  |
 	When User navigates to the "All Users" list
-	When User navigates to the "TestList" list
-	Then "TestList" list is displayed to user
+	When User navigates to the "Users - Nav between lists" list
+	Then "Users - Nav between lists" list is displayed to user
 	When User clicks the Filters button
 	Then Filters panel is displayed to the user
 	Then Values is displayed in added filter info
@@ -204,7 +204,7 @@ Scenario: EvergreenJnr_UsersList_CheckThatFilterDataIsDisplayedCorrectlyWhenNavi
 	| Green  |
 
 @Evergreen @Applications @Evergreen_FiltersFeature @FiltersDisplay @DAS-10696 @Delete_Newly_Created_List
-Scenario: EvergreenJnr_ApplicationsList_CheckThatFilterDataOsDisplayedCorrectlyWhenNavigatingBetweenLists
+Scenario: EvergreenJnr_ApplicationsList_CheckThatFilterDataIsDisplayedCorrectlyWhenNavigatingBetweenLists
 	When User clicks "Applications" on the left-hand menu
 	Then "Applications" list should be displayed to the user
 	When User clicks the Filters button
@@ -216,16 +216,16 @@ Scenario: EvergreenJnr_ApplicationsList_CheckThatFilterDataOsDisplayedCorrectlyW
 	And Values is displayed in added filter info
 	| Values |
 	| 1      |
-	When User create custom list with "TestList" name
-	Then "TestList" list is displayed to user
+	When User create custom list with "Apps - Nav between lists" name
+	Then "Apps - Nav between lists" list is displayed to user
 	When User clicks the Filters button
 	Then Filters panel is displayed to the user
 	And Values is displayed in added filter info
 	| Values |
 	| 1      |
 	When User navigates to the "All Applications" list
-	When User navigates to the "TestList" list
-	Then "TestList" list is displayed to user
+	When User navigates to the "Apps - Nav between lists" list
+	Then "Apps - Nav between lists" list is displayed to user
 	When User clicks the Filters button
 	Then Filters panel is displayed to the user
 	And Values is displayed in added filter info
@@ -245,16 +245,16 @@ Scenario: EvergreenJnr_MailboxesList_CheckThatFilterDataIsDisplayedCorrectlyWhen
 	And Values is displayed in added filter info
 	| Values      |
 	| 17 Nov 2017 |
-	When User create custom list with "TestList" name
-	Then "TestList" list is displayed to user
+	When User create custom list with "Mailboxes - Nav between lists" name
+	Then "Mailboxes - Nav between lists" list is displayed to user
 	When User clicks the Filters button
 	Then Filters panel is displayed to the user
 	And Values is displayed in added filter info
 	| Values      |
 	| 17 Nov 2017 |
 	When User navigates to the "All Mailboxes" list
-	When User navigates to the "TestList" list
-	Then "TestList" list is displayed to user
+	When User navigates to the "Mailboxes - Nav between lists" list
+	Then "Mailboxes - Nav between lists" list is displayed to user
 	When User clicks the Filters button
 	Then Filters panel is displayed to the user
 	And Values is displayed in added filter info
@@ -485,6 +485,18 @@ Scenario: EvergreenJnr_ApplicationsList_CheckThatBracketsAreDisplayedCorrectlyIn
 	| NI LabVIEW PID Control Toolset 6.0 (for LabVIEW 7.1) |
 	| (Version 6.0) (3672.1)                               |
 	| (self-installing)                                    |
+
+@Evergreen @Devices @EvergreenJnr_FiltersFeature @FilterFunctionality @DAS-11142 @Delete_Newly_Created_List
+Scenario: EvergreenJnr_DevicesList_CheckThatApostrophesAreDisplayedCorrectlyInFilterInfo
+	When User clicks "Devices" on the left-hand menu
+	Then "Devices" list should be displayed to the user
+	When User clicks the Filters button
+	Then Filters panel is displayed to the user
+	When User add "Owner Display Name" filter where type is "Contains" with added column and following value:
+	| Values                                    |
+	| ' |
+	Then "Owner Display Name" filter is added to the list
+	And "127" rows are displayed in the agGrid
 
 @Evergreen @Mailboxes @Evergreen_FiltersFeature @FiltersDisplay @DAS-11351
 Scenario: EvergreenJnr_MailboxesList_CheckThatAddColumnOptionIsAvailableForOwnerDepartmentFilter

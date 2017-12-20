@@ -82,7 +82,7 @@ Scenario: EvergreenJnr_DevicesList_CheckThatCustomListCreationBlockIsNotDisplaye
 	Then Edit List menu is displayed
 
 @Evergreen @Devices @EvergreenJnr_ListPanel @CustomListDisplay @DAS-10998
-Scenario: EvergreenJnr_DevicesList_agGrid_CheckThatSearchDoesNotTriggerNewCustomList
+Scenario: EvergreenJnr_DevicesList_CheckThatSearchDoesNotTriggerNewCustomList
 	When User clicks "Devices" on the left-hand menu
 	Then "Devices" list should be displayed to the user
 	And User enters SearchCriteria into the agGrid Search Box and the correct NumberOfRows are returned
@@ -91,7 +91,7 @@ Scenario: EvergreenJnr_DevicesList_agGrid_CheckThatSearchDoesNotTriggerNewCustom
 	Then Save to New Custom List element is NOT displayed
 
 @Evergreen @Devices @EvergreenJnr_ListPanel @CustomListDisplay @DAS-11081 @Delete_Newly_Created_List
-Scenario: EvergreenJnr_DevicesList_agGrid_CheckThatNewListCreatedMessageForStaticListIsDisplayed
+Scenario: EvergreenJnr_DevicesList_CheckThatNewListCreatedMessageForStaticListIsDisplayed
 	When User clicks "Devices" on the left-hand menu
 	Then "Devices" list should be displayed to the user
 	When User clicks the Actions button
