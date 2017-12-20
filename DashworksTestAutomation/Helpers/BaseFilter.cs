@@ -137,7 +137,6 @@ namespace DashworksTestAutomation.Helpers
                 var selector = string.Format(CheckboxSelector, row["Option"]);
                 _driver.WaitWhileControlIsNotDisplayed(By.XPath(selector));
                 var checkbox = _driver.FindElement(By.XPath(selector));
-                //Assert.AreEqual(bool.Parse(row["State"]), checkbox.GetFilterCheckboxSelectedState());
                 if (bool.Parse(row["State"]) != checkbox.GetFilterCheckboxSelectedState())
                 {
                     checkbox.Click();
