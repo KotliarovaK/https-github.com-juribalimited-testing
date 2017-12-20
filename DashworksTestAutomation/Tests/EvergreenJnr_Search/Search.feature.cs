@@ -361,6 +361,41 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_Search
         }
         
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestMethodAttribute()]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.DescriptionAttribute("EvergreenJnr_UsersList_ClearingSearchReturnsTheFullDataSet")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("FeatureTitle", "Search")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("Evergreen")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("Users")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("EvergreenJnr_Search")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("Search")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("DAS-11012")]
+        public virtual void EvergreenJnr_UsersList_ClearingSearchReturnsTheFullDataSet()
+        {
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("EvergreenJnr_UsersList_ClearingSearchReturnsTheFullDataSet", new string[] {
+                        "Evergreen",
+                        "Users",
+                        "EvergreenJnr_Search",
+                        "Search",
+                        "DAS-11012"});
+            this.ScenarioSetup(scenarioInfo);
+            this.FeatureBackground();
+            testRunner.When("User clicks \"Users\" on the left-hand menu", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+            testRunner.Then("\"Users\" list should be displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+            TechTalk.SpecFlow.Table table13 = new TechTalk.SpecFlow.Table(new string[] {
+                        "SearchCriteria",
+                        "NumberOfRows"});
+            table13.AddRow(new string[] {
+                        "Luc",
+                        "138"});
+            testRunner.And("User enters SearchCriteria into the agGrid Search Box and the correct NumberOfRow" +
+                    "s are returned", ((string)(null)), table13, "And ");
+            testRunner.Then("URL is \"http://automation.corp.juriba.com/evergreen/#/users\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+            testRunner.And("Clearing the agGrid Search Box", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+            testRunner.Then("\"41,335\" rows are displayed in the agGrid", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+            testRunner.Then("URL is \"http://automation.corp.juriba.com/evergreen/#/users\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+            this.ScenarioCleanup();
+        }
+        
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestMethodAttribute()]
         [Microsoft.VisualStudio.TestTools.UnitTesting.DescriptionAttribute("EvergreenJnr_DevicesList_Search_NoDevicesFound")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("FeatureTitle", "Search")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("Evergreen")]
@@ -380,15 +415,6 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_Search
             testRunner.Then("\"Devices\" list should be displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
             testRunner.When("User clicks the Columns button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
             testRunner.Then("Columns panel is displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-            TechTalk.SpecFlow.Table table13 = new TechTalk.SpecFlow.Table(new string[] {
-                        "ColumnName"});
-            table13.AddRow(new string[] {
-                        "Compliance"});
-            table13.AddRow(new string[] {
-                        "Owner Email Address"});
-            table13.AddRow(new string[] {
-                        "IP Address"});
-            testRunner.When("ColumnName is entered into the search box and the selection is clicked", ((string)(null)), table13, "When ");
             TechTalk.SpecFlow.Table table14 = new TechTalk.SpecFlow.Table(new string[] {
                         "ColumnName"});
             table14.AddRow(new string[] {
@@ -397,29 +423,38 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_Search
                         "Owner Email Address"});
             table14.AddRow(new string[] {
                         "IP Address"});
-            testRunner.Then("ColumnName is added to the list", ((string)(null)), table14, "Then ");
+            testRunner.When("ColumnName is entered into the search box and the selection is clicked", ((string)(null)), table14, "When ");
             TechTalk.SpecFlow.Table table15 = new TechTalk.SpecFlow.Table(new string[] {
+                        "ColumnName"});
+            table15.AddRow(new string[] {
+                        "Compliance"});
+            table15.AddRow(new string[] {
+                        "Owner Email Address"});
+            table15.AddRow(new string[] {
+                        "IP Address"});
+            testRunner.Then("ColumnName is added to the list", ((string)(null)), table15, "Then ");
+            TechTalk.SpecFlow.Table table16 = new TechTalk.SpecFlow.Table(new string[] {
                         "SearchCriteria"});
-            table15.AddRow(new string[] {
+            table16.AddRow(new string[] {
                         "0281Z793OLLLDU66"});
-            table15.AddRow(new string[] {
+            table16.AddRow(new string[] {
                         "Xavier Beaule"});
-            table15.AddRow(new string[] {
+            table16.AddRow(new string[] {
                         "BLUE"});
-            table15.AddRow(new string[] {
+            table16.AddRow(new string[] {
                         "Virtuals"});
-            table15.AddRow(new string[] {
+            table16.AddRow(new string[] {
                         "Windows 2001"});
-            table15.AddRow(new string[] {
+            table16.AddRow(new string[] {
                         "192.168.7"});
-            table15.AddRow(new string[] {
+            table16.AddRow(new string[] {
                         "demo.juriba.co.uk"});
-            table15.AddRow(new string[] {
+            table16.AddRow(new string[] {
                         "67#"});
-            table15.AddRow(new string[] {
+            table16.AddRow(new string[] {
                         "#12"});
             testRunner.And("User enters invalid SearchCriteria into the agGrid Search Box and \"No devices fou" +
-                    "nd\" message is displayed", ((string)(null)), table15, "And ");
+                    "nd\" message is displayed", ((string)(null)), table16, "And ");
             this.ScenarioCleanup();
         }
     }

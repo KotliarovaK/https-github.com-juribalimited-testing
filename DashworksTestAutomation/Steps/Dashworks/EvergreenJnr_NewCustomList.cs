@@ -51,10 +51,16 @@ namespace DashworksTestAutomation.Steps.Dashworks
             var listElement = _driver.NowAt<CustomListElement>();
 
             _driver.WaitWhileControlIsNotDisplayed<CustomListElement>(() => listElement.CreateNewListButton);
+            Assert.IsTrue(listElement.CreateNewListButton.Displayed(), "CreateNewListButton is displayed");
             listElement.CreateNewListButton.Click();
+
             _driver.WaitWhileControlIsNotDisplayed<CustomListElement>(() => listElement.SaveButton);
+            Assert.IsTrue(listElement.SaveButton.Displayed(), "SaveButton is displayed");
             listElement.ListNameTextbox.SendKeys(listName);
             listElement.SaveButton.Click();
+            //Small wait for message display
+            Thread.Sleep(300);
+            _driver.WaitWhileControlIsDisplayed<CustomListElement>(() => listElement.MessageAboutCreatedList);
         }
 
         [Then(@"User type ""(.*)"" into Custom list name field")]

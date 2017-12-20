@@ -23,6 +23,9 @@ namespace DashworksTestAutomation.Pages.Evergreen
         [FindsBy(How = How.XPath, Using = ".//button[@title='Cancel']")]
         public IWebElement CancelButton { get; set; }
 
+        [FindsBy(How = How.XPath, Using = ".//div[contains(@class,'inline-success')][text()='New list created']")]
+        public IWebElement MessageAboutCreatedList { get; set; }
+
         public string SettingButtonSelector = ".//li//i[@title='Settings']";
 
         [FindsBy(How = How.XPath, Using = ".//div[@class='inline-success ng-star-inserted']")]
