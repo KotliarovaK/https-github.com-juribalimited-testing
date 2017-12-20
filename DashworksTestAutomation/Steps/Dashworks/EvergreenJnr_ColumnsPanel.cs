@@ -85,6 +85,7 @@ namespace DashworksTestAutomation.Steps.Dashworks
             var listpageMenu = _driver.NowAt<BaseDashboardPage>();
             foreach (var row in table.Rows)
             {
+                _driver.WaitForDataLoading();
                 Assert.AreEqual(displayedState, listpageMenu.IsColumnPresent(row["ColumnName"]),
                     $"Column '{row["ColumnName"]}' displayed state should be {displayedState}");
             }
