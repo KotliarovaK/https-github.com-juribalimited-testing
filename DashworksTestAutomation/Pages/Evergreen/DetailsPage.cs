@@ -30,6 +30,7 @@ namespace DashworksTestAutomation.Pages.Evergreen
             {
                 foreach (IWebElement button in expandButtons)
                 {
+                    Driver.MouseHover(button);
                     button.Click();
                     Driver.WaitForDataLoading();
                 }
@@ -38,7 +39,10 @@ namespace DashworksTestAutomation.Pages.Evergreen
 
         public List<KeyValuePair<string, string>> GetFieldsWithContent(string categoryName)
         {
-            List<string> allHeaders = Driver
+            //Hover on header to be able to see all table with all values
+            //In other case elements outside the bounds of the screen will have empty text
+            Driver.MouseHover(By.XPath($".//span[contains(@class,'filter-category-label blue-color bold-text')][text()='{categoryName}']"));
+            List <string> allHeaders = Driver
                 .FindElements(By.XPath(
                     $".//span[contains(@class,'filter-category-label blue-color bold-text')][text()='{categoryName}']/../..//tbody/tr/td[1]"))
                 .Select(x => x.Text).ToList();
