@@ -750,7 +750,7 @@ Scenario: EvergreenJnr_ApplicationsList_CheckThatRelevantDataSetBeDisplayedAfter
 	Then "2,223" rows are displayed in the agGrid
 
 @Evergreen @Mailboxes @Evergreen_FiltersFeature @FiltersDisplay @DAS-11552
-Scenario: EvergreenJnr_MailboxesList_CheckThatRelevantDataSetBeDisplayedAfterRemovingFilter
+Scenario: EvergreenJnr_MailboxesList_CheckThatRelevantDataSetBeDisplayedAfterNavigatingToANewList
 	When User clicks "Mailboxes" on the left-hand menu
 	Then "Mailboxes" list should be displayed to the user
 	When User clicks the Filters button
