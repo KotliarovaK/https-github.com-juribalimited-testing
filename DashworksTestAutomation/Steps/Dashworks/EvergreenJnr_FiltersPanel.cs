@@ -473,5 +473,19 @@ namespace DashworksTestAutomation.Steps.Dashworks
             var groupCount = filterElement.GroupTitle.Count;
             Assert.AreEqual(groupCount, filterElement.MaximizeGroupButton.Count, "Maximize buttons are not displayed");
         }
+
+        [Then(@"message '(.*)' is displayed to the user")]
+        public void ThenMessageIsDisplayedToTheUser(string message)
+        {
+            var page = _driver.NowAt<FiltersElement>();
+            Assert.AreEqual(message, page.NoResultsFoundMessage.Text);
+        }
+
+        [When(@"User change selected checkboxes:")]
+        public void WhenUserChangeSelectedCheckboxes(Table table)
+        {
+            var filter = new ChangeCheckboxesFilter(_driver, table);
+            filter.Do();
+        }
     }
 }

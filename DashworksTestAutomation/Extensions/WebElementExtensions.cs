@@ -94,6 +94,16 @@ namespace DashworksTestAutomation.Extensions
             }
         }
 
+        /// <summary>
+        /// This method is used for checkboxes in Filters panel
+        /// </summary>
+        /// <param name="checkbox"></param>
+        /// <returns></returns>
+        public static bool GetFilterCheckboxSelectedState(this IWebElement checkbox)
+        {
+            return !checkbox.GetAttribute("class").Contains("hideElementIcon");
+        }
+
         #endregion
     }
 }

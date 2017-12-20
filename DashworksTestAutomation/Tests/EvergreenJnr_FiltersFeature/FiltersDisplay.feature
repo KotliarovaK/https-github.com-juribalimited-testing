@@ -701,3 +701,65 @@ Scenario: EvergreenJnr_DevicesList_CheckThatFilterCategoriesAreClosedAfterCleari
 	Then Minimize buttons are displayed for all category in Filters panel
 	When User clears search textbox in Filters panel
 	Then Maximize buttons are displayed for all category in Filters panel
+
+@Evergreen @Devices @Evergreen_FiltersFeature @FiltersDisplay @DAS-11552
+Scenario: EvergreenJnr_DevicesList_CheckThatRelevantDataSetBeDisplayedAfterEditingFilter
+	When User clicks "Devices" on the left-hand menu
+	Then "Devices" list should be displayed to the user
+	When User clicks the Filters button
+	Then Filters panel is displayed to the user
+	When User add "Compliance" filter where type is "Equals" with added column and following checkboxes:
+	| SelectedCheckboxes |
+	| Not Applicable     |
+	Then message 'No devices found' is displayed to the user
+	When User click Edit button for "Compliance" filter
+	When User change selected checkboxes:
+	| Option         | State |
+	| Not Applicable | false |
+	| Green          | true  |
+	Then "71" rows are displayed in the agGrid
+
+@Evergreen @Users @Evergreen_FiltersFeature @FiltersDisplay @DAS-11552
+Scenario: EvergreenJnr_UsersList_CheckThatRelevantDataSetBeDisplayedAfterResettingFilter
+	When User clicks "Users" on the left-hand menu
+	Then "Users" list should be displayed to the user
+	When User clicks the Filters button
+	Then Filters panel is displayed to the user
+	When User add "Enabled" filter where type is "Equals" with added column and following checkboxes:
+	| SelectedCheckboxes |
+	| UNKNOWN            |
+	Then "Enabled" filter is added to the list
+	Then message 'No users found' is displayed to the user
+	When User have reset all filters
+	Then "Users" list should be displayed to the user
+	Then "41,335" rows are displayed in the agGrid
+
+@Evergreen @Applications @Evergreen_FiltersFeature @FiltersDisplay @DAS-11552
+Scenario: EvergreenJnr_ApplicationsList_CheckThatRelevantDataSetBeDisplayedAfterRemovingFilter
+	When User clicks "Applications" on the left-hand menu
+	Then "Applications" list should be displayed to the user
+	When User clicks the Filters button
+	Then Filters panel is displayed to the user
+	When User add "Import Type" filter where type is "Equals" with added column and following checkboxes:
+	| SelectedCheckboxes |
+	| App-V              |
+	Then "Import Type" filter is added to the list
+	Then message 'No applications found' is displayed to the user
+	When User have removed "Import Type" filter
+	Then "Applications" list should be displayed to the user
+	Then "2,223" rows are displayed in the agGrid
+
+@Evergreen @Mailboxes @Evergreen_FiltersFeature @FiltersDisplay @DAS-11552
+Scenario: EvergreenJnr_MailboxesList_CheckThatRelevantDataSetBeDisplayedAfterRemovingFilter
+	When User clicks "Mailboxes" on the left-hand menu
+	Then "Mailboxes" list should be displayed to the user
+	When User clicks the Filters button
+	Then Filters panel is displayed to the user
+	When User add "Mailbox Platform" filter where type is "Equals" with added column and following checkboxes:
+	| SelectedCheckboxes |
+	| Exchange 2003      |
+	Then "Mailbox Platform" filter is added to the list
+	Then message 'No mailboxes found' is displayed to the user
+	When User navigates to the "All Mailboxes" list
+	Then "Mailboxes" list should be displayed to the user
+	Then "4,835" rows are displayed in the agGrid
