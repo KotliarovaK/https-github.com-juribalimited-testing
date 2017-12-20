@@ -1,4 +1,4 @@
-﻿#@retry:3
+﻿@retry:1
 Feature: FiltersDisplay
 	Runs Static Filters Display related tests
 

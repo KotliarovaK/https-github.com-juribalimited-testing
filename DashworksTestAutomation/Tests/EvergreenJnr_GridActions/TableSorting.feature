@@ -1,4 +1,5 @@
-﻿Feature: TableSorting
+﻿@retry:1
+Feature: TableSorting
 	Runs Table Sorting related tests
 
 Background: Pre-Conditions

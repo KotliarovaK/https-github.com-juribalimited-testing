@@ -1,4 +1,5 @@
-﻿Feature: RemoveFilter
+﻿@retry:1
+Feature: RemoveFilter
 	Runs Remove Filter related test
 
 Background: Pre-Conditions
