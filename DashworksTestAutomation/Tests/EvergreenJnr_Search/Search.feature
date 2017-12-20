@@ -1,4 +1,5 @@
-﻿Feature: Search
+﻿@retry:1
+Feature: Search
 	Runs Search related tests
 
 Background: Pre-Conditions

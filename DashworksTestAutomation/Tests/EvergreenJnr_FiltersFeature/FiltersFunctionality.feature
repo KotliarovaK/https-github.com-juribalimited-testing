@@ -1,4 +1,5 @@
-﻿Feature: Functionality
+﻿@retry:1
+Feature: Functionality
 	Runs Filters Functionality related tests
 
 Background: Pre-Conditions

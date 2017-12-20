@@ -1,4 +1,4 @@
-﻿#@retry:3
+﻿@retry:1
 Feature: ItemDetailsDisplay
 	Runs Item Details Display related tests
 

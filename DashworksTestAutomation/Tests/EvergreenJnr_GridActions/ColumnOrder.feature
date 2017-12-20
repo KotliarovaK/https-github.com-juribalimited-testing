@@ -1,4 +1,4 @@
-﻿#@retry:3
+﻿@retry:1
 Feature: ColumnOrder
 	Runs Column Order related tests
 
