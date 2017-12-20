@@ -486,6 +486,18 @@ Scenario: EvergreenJnr_ApplicationsList_CheckThatBracketsAreDisplayedCorrectlyIn
 	| (Version 6.0) (3672.1)                               |
 	| (self-installing)                                    |
 
+@Evergreen @Devices @EvergreenJnr_FiltersFeature @FilterFunctionality @DAS-11142 @Delete_Newly_Created_List
+Scenario: EvergreenJnr_DevicesList_CheckThatApostrophesAreDisplayedCorrectlyInFilterInfo
+	When User clicks "Devices" on the left-hand menu
+	Then "Devices" list should be displayed to the user
+	When User clicks the Filters button
+	Then Filters panel is displayed to the user
+	When User add "Owner Display Name" filter where type is "Contains" with added column and following value:
+	| Values                                    |
+	| ' |
+	Then "Owner Display Name" filter is added to the list
+	And "127" rows are displayed in the agGrid
+
 @Evergreen @Mailboxes @Evergreen_FiltersFeature @FiltersDisplay @DAS-11351
 Scenario: EvergreenJnr_MailboxesList_CheckThatAddColumnOptionIsAvailableForOwnerDepartmentFilter
 	When User clicks "Mailboxes" on the left-hand menu
