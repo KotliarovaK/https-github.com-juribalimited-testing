@@ -49,5 +49,14 @@ namespace DashworksTestAutomation.Steps.Dashworks
                     $"'Unknown' text is not displayed for {pair.Key} field ");
             }
         }
+
+        [Then(@"""(.*)"" text is displayed for ""(.*)"" section")]
+        public void ThenTextIsDisplayedForSection(string sectionName, string textMessage)
+        {
+            var detailsPage = _driver.NowAt<DetailsPage>();
+            detailsPage.GetFieldsWithContent(sectionName);
+            detailsPage.MaximizeOrMinimizeSectionButton(sectionName).Click();
+            Assert.AreEqual(textMessage, detailsPage.NoMailboxOwnerFoundMessage.Text);
+        }
     }
 }

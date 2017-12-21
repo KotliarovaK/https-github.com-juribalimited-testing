@@ -13,6 +13,17 @@ namespace DashworksTestAutomation.Pages.Evergreen
         [FindsBy(How = How.XPath, Using = ".//div[@class='tabContainer ng-star-inserted']")]
         public IWebElement TabContainer { get; set; }
 
+        [FindsBy(How = How.XPath, Using = ".//div[@class='empty-message ng-star-inserted']")]
+        public IWebElement NoMailboxOwnerFoundMessage { get; set; }
+
+        [FindsBy(How = How.XPath, Using = ".//button[@title='Maximize Group']")]
+        public IWebElement MaximizeGroupButton { get; set; }
+
+        private IWebElement FilterCategory(string filterSectionName)
+        {
+            return Driver.FindElement(By.XPath($".//span[@class='filter-category-label blue-color bold-text'][text()='{filterSectionName}']"));
+        }
+
         public override List<By> GetPageIdentitySelectors()
         {
             Driver.WaitForDataLoading();
@@ -20,6 +31,12 @@ namespace DashworksTestAutomation.Pages.Evergreen
             {
                 SelectorFor(this, p => p.TabContainer)
             };
+        }
+
+        public IWebElement MaximizeOrMinimizeSectionButton(string sectionName)
+        {
+            var expandButtons = FilterCategory(sectionName);
+            return expandButtons.FindElement(By.XPath(".//button"));
         }
 
         public void ExpandAllSections()
