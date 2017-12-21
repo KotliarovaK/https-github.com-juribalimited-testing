@@ -448,7 +448,7 @@ namespace DashworksTestAutomation.Steps.Dashworks
         public void ThenFilterWithValuesIsAddedToURL(string filterName, string values)
         {
             var currentUrl = _driver.Url;
-            const string pattern = @"\$filter=(.*)\&";
+            const string pattern = @"filter=(.*)";
             var urlPartToCheck = Regex.Match(currentUrl, pattern).Groups[1].Value;
             var valuesList = values.Split(',');
             foreach (var value in valuesList)

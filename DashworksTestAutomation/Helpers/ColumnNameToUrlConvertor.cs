@@ -16,6 +16,8 @@ namespace DashworksTestAutomation.Helpers
                     return "directoryType";
                 case "Compliance":
                     return "migrationRAG";
+                case "Device Key":
+                    return "computerKey";
                 default:
                     throw new Exception($"{columnName} column not found in convertor");
             }
