@@ -772,7 +772,7 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_Columns
         }
         
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestMethodAttribute()]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.DescriptionAttribute("EvergreenJnr_DevicesList_CheckTahtRemovingColumnsFromUrlIsWorksCorrectly")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.DescriptionAttribute("EvergreenJnr_DevicesList_CheckThatRemovingColumnsFromUrlIsWorksCorrectly")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("FeatureTitle", "RemoveColumn")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("Evergreen")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("Devices")]
@@ -780,14 +780,14 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_Columns
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("RemoveColumn")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("DAS-11044")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("Delete_Newly_Created_List")]
-        public virtual void EvergreenJnr_DevicesList_CheckTahtRemovingColumnsFromUrlIsWorksCorrectly()
+        public virtual void EvergreenJnr_DevicesList_CheckThatRemovingColumnsFromUrlIsWorksCorrectly()
         {
             System.Exception lastException = null;
             for (int i = 0; (i <= 1); i = (i + 1))
             {
                 try
                 {
-                    this.EvergreenJnr_DevicesList_CheckTahtRemovingColumnsFromUrlIsWorksCorrectlyInternal();
+                    this.EvergreenJnr_DevicesList_CheckThatRemovingColumnsFromUrlIsWorksCorrectlyInternal();
                     return;
                 }
                 catch (System.Exception exc)
@@ -806,9 +806,9 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_Columns
             }
         }
         
-        private void EvergreenJnr_DevicesList_CheckTahtRemovingColumnsFromUrlIsWorksCorrectlyInternal()
+        private void EvergreenJnr_DevicesList_CheckThatRemovingColumnsFromUrlIsWorksCorrectlyInternal()
         {
-            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("EvergreenJnr_DevicesList_CheckTahtRemovingColumnsFromUrlIsWorksCorrectly", new string[] {
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("EvergreenJnr_DevicesList_CheckThatRemovingColumnsFromUrlIsWorksCorrectly", new string[] {
                         "Evergreen",
                         "Devices",
                         "EvergreenJnr_Columns",
@@ -853,7 +853,7 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_Columns
         }
         
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestMethodAttribute()]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.DescriptionAttribute("EvergreenJnr_DevicesList_CheckTahtRemovingColumnAndFilterFromUrlWorksCorrectly")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.DescriptionAttribute("EvergreenJnr_DevicesList_CheckThatRemovingColumnAndFilterFromUrlWorksCorrectly")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("FeatureTitle", "RemoveColumn")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("Evergreen")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("Devices")]
@@ -861,14 +861,14 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_Columns
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("RemoveColumn")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("DAS-11044")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("Delete_Newly_Created_List")]
-        public virtual void EvergreenJnr_DevicesList_CheckTahtRemovingColumnAndFilterFromUrlWorksCorrectly()
+        public virtual void EvergreenJnr_DevicesList_CheckThatRemovingColumnAndFilterFromUrlWorksCorrectly()
         {
             System.Exception lastException = null;
             for (int i = 0; (i <= 1); i = (i + 1))
             {
                 try
                 {
-                    this.EvergreenJnr_DevicesList_CheckTahtRemovingColumnAndFilterFromUrlWorksCorrectlyInternal();
+                    this.EvergreenJnr_DevicesList_CheckThatRemovingColumnAndFilterFromUrlWorksCorrectlyInternal();
                     return;
                 }
                 catch (System.Exception exc)
@@ -887,9 +887,9 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_Columns
             }
         }
         
-        private void EvergreenJnr_DevicesList_CheckTahtRemovingColumnAndFilterFromUrlWorksCorrectlyInternal()
+        private void EvergreenJnr_DevicesList_CheckThatRemovingColumnAndFilterFromUrlWorksCorrectlyInternal()
         {
-            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("EvergreenJnr_DevicesList_CheckTahtRemovingColumnAndFilterFromUrlWorksCorrectly", new string[] {
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("EvergreenJnr_DevicesList_CheckThatRemovingColumnAndFilterFromUrlWorksCorrectly", new string[] {
                         "Evergreen",
                         "Devices",
                         "EvergreenJnr_Columns",
@@ -946,7 +946,7 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_Columns
         }
         
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestMethodAttribute()]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.DescriptionAttribute("EvergreenJnr_DevicesList_CheckTahtRemovingColumnAndFilterAndCustomListFromUrlWork" +
+        [Microsoft.VisualStudio.TestTools.UnitTesting.DescriptionAttribute("EvergreenJnr_DevicesList_CheckThatRemovingColumnAndFilterAndCustomListFromUrlWork" +
             "sCorrectly")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("FeatureTitle", "RemoveColumn")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("Evergreen")]
@@ -957,14 +957,14 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_Columns
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("DAS-11506")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("Delete_Newly_Created_List")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("Not_Run")]
-        public virtual void EvergreenJnr_DevicesList_CheckTahtRemovingColumnAndFilterAndCustomListFromUrlWorksCorrectly()
+        public virtual void EvergreenJnr_DevicesList_CheckThatRemovingColumnAndFilterAndCustomListFromUrlWorksCorrectly()
         {
             System.Exception lastException = null;
             for (int i = 0; (i <= 1); i = (i + 1))
             {
                 try
                 {
-                    this.EvergreenJnr_DevicesList_CheckTahtRemovingColumnAndFilterAndCustomListFromUrlWorksCorrectlyInternal();
+                    this.EvergreenJnr_DevicesList_CheckThatRemovingColumnAndFilterAndCustomListFromUrlWorksCorrectlyInternal();
                     return;
                 }
                 catch (System.Exception exc)
@@ -983,9 +983,9 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_Columns
             }
         }
         
-        private void EvergreenJnr_DevicesList_CheckTahtRemovingColumnAndFilterAndCustomListFromUrlWorksCorrectlyInternal()
+        private void EvergreenJnr_DevicesList_CheckThatRemovingColumnAndFilterAndCustomListFromUrlWorksCorrectlyInternal()
         {
-            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("EvergreenJnr_DevicesList_CheckTahtRemovingColumnAndFilterAndCustomListFromUrlWork" +
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("EvergreenJnr_DevicesList_CheckThatRemovingColumnAndFilterAndCustomListFromUrlWork" +
                     "sCorrectly", new string[] {
                         "Evergreen",
                         "Devices",

@@ -272,7 +272,7 @@ Scenario: EvergreenJnr_UsersList_CheckThat500ErrorPageIsNotDisplayedAfterRemovin
 	| Home Drive      |
 
 @Evergreen @Devices @EvergreenJnr_Columns @RemoveColumn @DAS-11044 @Delete_Newly_Created_List
-Scenario: EvergreenJnr_DevicesList_CheckTahtRemovingColumnsFromUrlIsWorksCorrectly
+Scenario: EvergreenJnr_DevicesList_CheckThatRemovingColumnsFromUrlIsWorksCorrectly
 	When User clicks "Devices" on the left-hand menu
 	Then "Devices" list should be displayed to the user
 	When User click on 'Hostname' column header
@@ -299,7 +299,7 @@ Scenario: EvergreenJnr_DevicesList_CheckTahtRemovingColumnsFromUrlIsWorksCorrect
 	| Device Key |
 
 @Evergreen @Devices @EvergreenJnr_Columns @RemoveColumn @DAS-11044 @Delete_Newly_Created_List
-Scenario: EvergreenJnr_DevicesList_CheckTahtRemovingColumnAndFilterFromUrlWorksCorrectly
+Scenario: EvergreenJnr_DevicesList_CheckThatRemovingColumnAndFilterFromUrlWorksCorrectly
 	When User clicks "Devices" on the left-hand menu
 	Then "Devices" list should be displayed to the user
 	When User click on 'Hostname' column header
@@ -335,7 +335,7 @@ Scenario: EvergreenJnr_DevicesList_CheckTahtRemovingColumnAndFilterFromUrlWorksC
 	| Device Key |
 
 @Evergreen @Devices @EvergreenJnr_Columns @RemoveColumn @DAS-1044 @DAS-11506 @Delete_Newly_Created_List @Not_Run
-Scenario: EvergreenJnr_DevicesList_CheckTahtRemovingColumnAndFilterAndCustomListFromUrlWorksCorrectly
+Scenario: EvergreenJnr_DevicesList_CheckThatRemovingColumnAndFilterAndCustomListFromUrlWorksCorrectly
 	When User clicks "Devices" on the left-hand menu
 	Then "Devices" list should be displayed to the user
 	When User click on 'Hostname' column header
