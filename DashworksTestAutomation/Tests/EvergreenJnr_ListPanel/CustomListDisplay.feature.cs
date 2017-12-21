@@ -466,9 +466,9 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_ListPanel
             testRunner.Then("\"TestList\" list is displayed to user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
             testRunner.When("User click on \'Hostname\' column header", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
             testRunner.Then("data in table is sorted by \'Hostname\' column in descending order", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-            testRunner.Then("User save changes in list with \"UnbelievableTestList\" name", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-            testRunner.Then("\"UnbelievableTestList\" list is displayed to user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+            testRunner.And("User save changes in list with \"UnbelievableTestList\" name", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
             testRunner.And("\"New list created\" message is displayed", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+            testRunner.And("\"UnbelievableTestList\" list is displayed to user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
             this.ScenarioCleanup();
         }
         

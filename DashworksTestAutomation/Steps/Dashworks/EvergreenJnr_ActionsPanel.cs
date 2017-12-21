@@ -5,6 +5,7 @@ using NUnit.Framework;
 using OpenQA.Selenium.Remote;
 using System;
 using System.Linq;
+using System.Threading;
 using OpenQA.Selenium;
 using TechTalk.SpecFlow;
 
@@ -119,6 +120,11 @@ namespace DashworksTestAutomation.Steps.Dashworks
             _driver.WaitWhileControlIsNotDisplayed<ActionsElement>(() => listElement.CreateButton);
             listElement.ListNameTextbox.SendKeys(listName);
             listElement.CreateButton.Click();
+
+            //Small wait for message display
+            var customListElement = _driver.NowAt<CustomListElement>();
+            Thread.Sleep(300);
+            _driver.WaitWhileControlIsDisplayed<CustomListElement>(() => customListElement.SuccessCreateMessage);
         }
 
         [Then(@"User type ""(.*)"" into Static list name field")]
