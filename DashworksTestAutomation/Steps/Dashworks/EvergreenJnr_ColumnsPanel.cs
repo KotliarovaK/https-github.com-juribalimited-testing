@@ -138,6 +138,54 @@ namespace DashworksTestAutomation.Steps.Dashworks
             }
         }
 
+        [When(@"User removes all columns by URL")]
+        public void WhenUserRemovesAllColumnsByURL()
+        {
+            var currentUrl = _driver.Url;
+            const string pattern = @"select=(.*)";
+
+            var originalPart = Regex.Match(currentUrl, pattern).Groups[1].Value;
+            _driver.NagigateToURL(currentUrl.Replace(originalPart, String.Empty));
+
+            var page = _driver.NowAt<EvergreenDashboardsPage>();
+            if (page.StatusCodeLabel.Displayed())
+            {
+                throw new Exception($"500 error was returned after removing all columns from URL");
+            }
+        }
+
+        [When(@"User removes all filters and columns by url")]
+        public void WhenUserRemovesAllFiltersAndColumnsByUrl()
+        {
+            var currentUrl = _driver.Url;
+            const string pattern = @"\&(.*)";
+
+            var originalPart = Regex.Match(currentUrl, pattern).Value;
+            _driver.NagigateToURL(currentUrl.Replace(originalPart, String.Empty));
+
+            var page = _driver.NowAt<EvergreenDashboardsPage>();
+            if (page.StatusCodeLabel.Displayed())
+            {
+                throw new Exception($"500 error was returned after removing all columns from URL");
+            }
+        }
+
+        [When(@"User removes all filters and columns and custom list by url")]
+        public void WhenUserRemovesAllFiltersAndColumnsAndCustomListByUrl()
+        {
+            var currentUrl = _driver.Url;
+            const string pattern = @"\?(.*)";
+
+            var originalPart = Regex.Match(currentUrl, pattern).Value;
+            _driver.NagigateToURL(currentUrl.Replace(originalPart, String.Empty));
+
+            var page = _driver.NowAt<EvergreenDashboardsPage>();
+            if (page.StatusCodeLabel.Displayed())
+            {
+                throw new Exception($"500 error was returned after removing all columns from URL");
+            }        }
+
+
         [Then(@"""(.*)"" subcategories is displayed for ""(.*)"" category")]
         public void ThenSubcategoriesIsDisplayedForCategory(int subCategoriesCount, string categoryName)
         {
