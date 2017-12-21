@@ -1,4 +1,5 @@
-﻿Feature: RemoveFilter
+﻿@retry:1
+Feature: RemoveFilter
 	Runs Remove Filter related test
 
 Background: Pre-Conditions
@@ -11,7 +12,7 @@ Background: Pre-Conditions
 	When User clicks the Switch to Evergreen link
 	Then Evergreen Dashboards page should be displayed to the user
 
-@Evergreen @Devices @Evergreen_FiltersFeature @RemoveFilter @DAS-11009 @Not_Run
+@Evergreen @Devices @Evergreen_FiltersFeature @RemoveFilter @DAS-11009
 Scenario: EvergreenJnr_DevicesList_CheckThatResetIsUpdatingRowCount
 	When User clicks "Devices" on the left-hand menu
 	Then "Devices" list should be displayed to the user
@@ -32,7 +33,7 @@ Scenario: EvergreenJnr_DevicesList_CheckThatResetIsUpdatingRowCount
 	And "17,225" rows are displayed in the agGrid
 	Then "Compliance" filter is removed from filters
 
-@Evergreen @Devices @Evergreen_FiltersFeature @RemoveFilter @DAS-11044 @DAS-11506
+@Evergreen @Devices @Evergreen_FiltersFeature @RemoveFilter @DAS-11044 @DAS-11506 @Not_Run
 Scenario: EvergreenJnr_DevicesList_CheckThatDeleteByUrlIsUpdatingRowCount
 	When User clicks "Devices" on the left-hand menu
 	Then "Devices" list should be displayed to the user

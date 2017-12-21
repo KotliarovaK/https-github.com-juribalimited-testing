@@ -1,4 +1,4 @@
-﻿#@retry:3
+﻿@retry:1
 Feature: PermissionsSettings
 	Runs Dynamic List permissions setting related tests
 
@@ -19,6 +19,8 @@ Scenario: EvergreenJnr_UsersList_CheckThatNotOwnerUsersDontHavePermissionsToUpda
 	When User click on 'Username' column header
 	Then data in table is sorted by 'Username' column in descending order
 	When User create custom list with "TestList" name
+	#Workaround for DAS-11570. Remove after fix
+	And User navigates to the "TestList" list
 	When User clicks the List Details button
 	Then List details panel is displayed to the user
 	When User select "Everyone can see" sharing option

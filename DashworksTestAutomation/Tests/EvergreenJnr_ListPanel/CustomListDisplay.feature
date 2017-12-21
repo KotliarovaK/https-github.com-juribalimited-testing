@@ -1,4 +1,5 @@
-﻿Feature: CustomListDisplay
+﻿@retry:1
+Feature: CustomListDisplay
 	Runs Custom List Creation block related tests
 
 Background: Pre-Conditions
@@ -101,9 +102,9 @@ Scenario: EvergreenJnr_DevicesList_CheckThatNewListCreatedMessageForStaticListIs
 	Then "TestList" list is displayed to user
 	When User click on 'Hostname' column header
 	Then data in table is sorted by 'Hostname' column in descending order
-	Then User save changes in list with "UnbelievableTestList" name
-	Then "UnbelievableTestList" list is displayed to user
+	And User save changes in list with "UnbelievableTestList" name
 	And "New list created" message is displayed
+	And "UnbelievableTestList" list is displayed to user
 
 @Evergreen @Users @EvergreenJnr_ListPanel @CustomListDisplay @DAS-11005 @DAS-11489 @Delete_Newly_Created_List
 Scenario: EvergreenJnr_UsersList_CheckThatListsIsDisplayedInAlphabeticalOrder

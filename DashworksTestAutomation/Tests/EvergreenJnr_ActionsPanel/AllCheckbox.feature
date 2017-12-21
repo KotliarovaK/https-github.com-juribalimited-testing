@@ -1,4 +1,5 @@
-﻿Feature: AllCheckbox
+﻿@retry:1
+Feature: AllCheckbox
 	Runs All Checkbox related tests
 
 Background: Pre-Conditions
