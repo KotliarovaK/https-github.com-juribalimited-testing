@@ -1,4 +1,4 @@
-﻿#@retry:3
+﻿@retry:1
 Feature: PermissionsSettings
 	Runs Static List permissions setting related tests
 

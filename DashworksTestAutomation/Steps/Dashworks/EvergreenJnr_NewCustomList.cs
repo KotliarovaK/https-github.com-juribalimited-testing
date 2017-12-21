@@ -58,6 +58,7 @@ namespace DashworksTestAutomation.Steps.Dashworks
             Assert.IsTrue(listElement.SaveButton.Displayed(), "SaveButton is displayed");
             listElement.ListNameTextbox.SendKeys(listName);
             listElement.SaveButton.Click();
+
             //Small wait for message display
             Thread.Sleep(300);
             _driver.WaitWhileControlIsDisplayed<CustomListElement>(() => listElement.MessageAboutCreatedList);

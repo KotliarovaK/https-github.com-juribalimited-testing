@@ -1,4 +1,4 @@
-﻿#@retry:3
+﻿@retry:1
 Feature: ColumnSectionDisplay
 	Runs Column Panel related tests
 
