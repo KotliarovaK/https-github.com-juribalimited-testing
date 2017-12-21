@@ -401,8 +401,8 @@ namespace DashworksTestAutomation.Steps.Dashworks
             }
         }
 
-        [When(@"User is remove part of filter by URL")]
-        public void WhenUserIsRemovePartOfFilterByURL()
+        [When(@"User is remove part of filter URL")]
+        public void WhenUserIsRemovePartOfFilterURL()
         {
             var currentUrl = _driver.Url;
             const string pattern = @"\$filter=(.*)\&";

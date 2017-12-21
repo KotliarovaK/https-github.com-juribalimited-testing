@@ -33,7 +33,7 @@ Scenario: EvergreenJnr_DevicesList_CheckThatResetIsUpdatingRowCount
 	And "17,225" rows are displayed in the agGrid
 	Then "Compliance" filter is removed from filters
 
-@Evergreen @Devices @Evergreen_FiltersFeature @RemoveFilter @DAS-11044 @DAS-11506 @Not_Run
+@Evergreen @Devices @Evergreen_FiltersFeature @RemoveFilter @DAS-11506 @Not_Run
 Scenario: EvergreenJnr_DevicesList_CheckThatDeleteByUrlIsUpdatingRowCount
 	When User clicks "Devices" on the left-hand menu
 	Then "Devices" list should be displayed to the user
@@ -56,7 +56,7 @@ Scenario: EvergreenJnr_DevicesList_CheckThatDeleteByUrlIsUpdatingRowCount
 	Then "Compliance" filter is removed from filters
 
 @Evergreen @Users @Evergreen_FiltersFeature @RemoveFilter @DAS-11009 @DAS-11044
-Scenario: EvergreenJnr_UsersList_CheckThatDeletePartOfFilterFromUrlIsUpdatingRowСount
+Scenario: EvergreenJnr_UsersList_CheckThatDeletePartOfFilterFromUrlIsUpdatingRowCount
 	When User clicks "Users" on the left-hand menu
 	Then "Users" list should be displayed to the user
 	When User clicks the Columns button
@@ -77,7 +77,7 @@ Scenario: EvergreenJnr_UsersList_CheckThatDeletePartOfFilterFromUrlIsUpdatingRow
 	And table data is filtered correctly
 	And "Compliance" filter with "Red, Amber, Green" values is added to URL
 	And "Compliance" column is added to URL
-	When User is remove part of filter by URL
+	When User is remove part of filter URL
 	Then ColumnName is added to the list
 	| ColumnName |
 	| Compliance |
