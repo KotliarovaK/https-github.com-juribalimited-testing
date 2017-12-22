@@ -16,14 +16,6 @@ namespace DashworksTestAutomation.Pages.Evergreen
         [FindsBy(How = How.XPath, Using = ".//div[@class='empty-message ng-star-inserted']")]
         public IWebElement NoMailboxOwnerFoundMessage { get; set; }
 
-        [FindsBy(How = How.XPath, Using = ".//button[@title='Maximize Group']")]
-        public IWebElement MaximizeGroupButton { get; set; }
-
-        private IWebElement FilterCategory(string filterSectionName)
-        {
-            return Driver.FindElement(By.XPath($".//span[@class='filter-category-label blue-color bold-text'][text()='{filterSectionName}']"));
-        }
-
         public override List<By> GetPageIdentitySelectors()
         {
             Driver.WaitForDataLoading();
@@ -33,10 +25,11 @@ namespace DashworksTestAutomation.Pages.Evergreen
             };
         }
 
-        public IWebElement MaximizeOrMinimizeSectionButton(string sectionName)
+        public void NavigateToSectionByName(string sectionName)
         {
-            var expandButtons = FilterCategory(sectionName);
-            return expandButtons.FindElement(By.XPath(".//button"));
+            var section = Driver.FindElement(
+                By.XPath($".//button[@class='btn btn-default blue-color mat-icon-button ng-star-inserted'][@aria-label='{sectionName}']"));
+            section.Click();
         }
 
         public void ExpandAllSections()
@@ -46,6 +39,21 @@ namespace DashworksTestAutomation.Pages.Evergreen
             if (expandButtons.Any())
             {
                 foreach (IWebElement button in expandButtons)
+                {
+                    Driver.MouseHover(button);
+                    button.Click();
+                    Driver.WaitForDataLoading();
+                }
+            }
+        }
+
+        public void CloseAllSections()
+        {
+            var closeButtons = Driver.FindElements(By.XPath(".//button[@title='Minimize Group']"));
+
+            if (closeButtons.Any())
+            {
+                foreach (IWebElement button in closeButtons)
                 {
                     Driver.MouseHover(button);
                     button.Click();

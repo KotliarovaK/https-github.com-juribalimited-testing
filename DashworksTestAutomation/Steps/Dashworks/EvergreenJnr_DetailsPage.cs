@@ -51,11 +51,12 @@ namespace DashworksTestAutomation.Steps.Dashworks
         }
 
         [Then(@"""(.*)"" text is displayed for ""(.*)"" section")]
-        public void ThenTextIsDisplayedForSection(string sectionName, string textMessage)
+        public void ThenTextIsDisplayedForSection(string textMessage, string sectionName)
         {
             var detailsPage = _driver.NowAt<DetailsPage>();
-            detailsPage.GetFieldsWithContent(sectionName);
-            detailsPage.MaximizeOrMinimizeSectionButton(sectionName).Click();
+            detailsPage.CloseAllSections();
+            detailsPage.NavigateToSectionByName(sectionName);
+            _driver.WaitWhileControlIsNotDisplayed<DetailsPage>(() => detailsPage.NoMailboxOwnerFoundMessage);
             Assert.AreEqual(textMessage, detailsPage.NoMailboxOwnerFoundMessage.Text);
         }
     }

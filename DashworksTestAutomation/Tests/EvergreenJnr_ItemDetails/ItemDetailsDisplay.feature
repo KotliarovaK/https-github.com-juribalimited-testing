@@ -27,10 +27,10 @@ Examples:
 	| Users        | ABW1509426                         | Username      |
 	| Devices      | 01BQIYGGUW5PRP6                    | Hostname      |
 
-#@Evergreen @Mailboxes @EvergreenJnr_ItemDetails @ItemDetailsDisplay @DAS-10438
-#Scenario: EvergreenJnr_MailboxesLists_CheckThat404ErrorIsNotDisplayedOccurringWhenViewingMailboxDetailsWhereThereIsNoMailboxOwner
-#	When User clicks "Mailboxes" on the left-hand menu
-#	Then "Mailboxes" list should be displayed to the user
-#	When User perform search by "alex.cristea@juriba.com"
-#	When User click content from "Email Address" column
-#	Then "No mailbox owner found for this mailbox" text is displayed for "Mailbox Owner" section
+@Evergreen @Mailboxes @EvergreenJnr_ItemDetails @ItemDetailsDisplay @DAS-11531
+Scenario: EvergreenJnr_MailboxesLists_CheckThat404ErrorIsNotDisplayedOccurringWhenViewingMailboxDetailsWhereThereIsNoMailboxOwner
+	When User clicks "Mailboxes" on the left-hand menu
+	Then "Mailboxes" list should be displayed to the user
+	When User perform search by "alex.cristea@juriba.com"
+	When User click content from "Email Address" column
+	Then "No mailbox owner found for this mailbox" text is displayed for "Mailbox Owner" section
