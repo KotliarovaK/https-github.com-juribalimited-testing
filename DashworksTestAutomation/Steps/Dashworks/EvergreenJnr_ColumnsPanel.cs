@@ -120,7 +120,26 @@ namespace DashworksTestAutomation.Steps.Dashworks
         }
 
         [When(@"User removes column by URL")]
-        public void WhenUserRemovesColumnByURL(Table table)
+        public void WhenUserRemovesColumnByUrl(Table table)
+        {
+            var currentUrl = _driver.Url;
+            const string pattern = @"select=(.*)";
+            foreach (var row in table.Rows)
+            {
+                var originalPart = Regex.Match(currentUrl, pattern).Groups[1].Value;
+                var changedPart = originalPart.Replace($",{_convertor.Convert(row["ColumnName"])}", string.Empty);
+                _driver.NagigateToURL(currentUrl.Replace(originalPart, changedPart));
+
+                var page = _driver.NowAt<EvergreenDashboardsPage>();
+                if (page.StatusCodeLabel.Displayed())
+                {
+                    throw new Exception($"500 error was returned for: {row["ColumnName"]} column");
+                }
+            }
+        }
+
+        [When(@"User removes sorted column by URL")]
+        public void WhenUserRemovesSortedColumnByUrl(Table table)
         {
             var currentUrl = _driver.Url;
             const string pattern = @"select=(.*)\&\$orderby";
@@ -190,6 +209,7 @@ namespace DashworksTestAutomation.Steps.Dashworks
         public void ThenSubcategoriesIsDisplayedForCategory(int subCategoriesCount, string categoryName)
         {
             var columnElement = _driver.NowAt<ColumnsElement>();
+            columnElement.SearchTextboxResetButton.Click();
             Assert.AreEqual(subCategoriesCount, columnElement.GetSubcategoriesCountByCategoryName(categoryName));
         }
 
