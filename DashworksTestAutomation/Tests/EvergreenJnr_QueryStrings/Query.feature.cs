@@ -574,6 +574,11 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_QueryStrings
                         "QueryType",
                         "QueryStringURL"});
             table8.AddRow(new string[] {
+                        "Application (Saved List)",
+                        "evergreen/#/devices?$select=hostname,chassisCategory,oSCategory,ownerDisplayName&" +
+                            "$filter=(applicationSavedListId%20EQUALS%20(\'4\')%20WHERE%20(Used%20on%20device,U" +
+                            "sed%20by%20device\'s%20owner))"});
+            table8.AddRow(new string[] {
                         "Apps On Devices",
                         @"evergreen/#/devices?$select=hostname,chassisCategory,oSCategory,ownerDisplayName&$filter=(application%20EQUALS%20('451')%20WHERE%20(Used%20on%20device,Entitled%20to%20device,Installed%20on%20device,Used%20by%20device's%20owner,Entitled%20to%20device's%20owner))"});
             testRunner.When("Evergreen QueryStringURL is entered for Simple QueryType", ((string)(null)), table8, "When ");
