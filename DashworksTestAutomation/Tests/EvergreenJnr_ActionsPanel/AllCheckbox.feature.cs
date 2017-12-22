@@ -85,6 +85,7 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_ActionsPanel
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("Evergreen_ActionsPanel")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("AllCheckbox")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("DAS-10769")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("DAS-10656")]
         public virtual void EvergreenJnr_UsersList_SelectAllCheckboxStatusCheckAfterSearch()
         {
             System.Exception lastException = null;
@@ -118,7 +119,8 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_ActionsPanel
                         "Users",
                         "Evergreen_ActionsPanel",
                         "AllCheckbox",
-                        "DAS-10769"});
+                        "DAS-10769",
+                        "DAS-10656"});
             this.ScenarioSetup(scenarioInfo);
             this.FeatureBackground();
             testRunner.When("User clicks \"Users\" on the left-hand menu", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
@@ -182,6 +184,7 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_ActionsPanel
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("Evergreen_ActionsPanel")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("AllCheckbox")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("DAS-10775")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("DAS-10656")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("VariantName", "Devices")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:PageName", "Devices")]
         public virtual void EvergreenJnr_AllLists_CheckThatSelectAllCheckboxStatusAfterClosingActionPanel_Devices()
@@ -198,6 +201,7 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_ActionsPanel
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("Evergreen_ActionsPanel")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("AllCheckbox")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("DAS-10775")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("DAS-10656")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("VariantName", "Users")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:PageName", "Users")]
         public virtual void EvergreenJnr_AllLists_CheckThatSelectAllCheckboxStatusAfterClosingActionPanel_Users()
@@ -214,6 +218,7 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_ActionsPanel
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("Evergreen_ActionsPanel")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("AllCheckbox")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("DAS-10775")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("DAS-10656")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("VariantName", "Applications")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:PageName", "Applications")]
         public virtual void EvergreenJnr_AllLists_CheckThatSelectAllCheckboxStatusAfterClosingActionPanel_Applications()
@@ -230,6 +235,7 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_ActionsPanel
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("Evergreen_ActionsPanel")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("AllCheckbox")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("DAS-10775")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("DAS-10656")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("VariantName", "Mailboxes")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:PageName", "Mailboxes")]
         public virtual void EvergreenJnr_AllLists_CheckThatSelectAllCheckboxStatusAfterClosingActionPanel_Mailboxes()
@@ -244,7 +250,8 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_ActionsPanel
                     "AllLists",
                     "Evergreen_ActionsPanel",
                     "AllCheckbox",
-                    "DAS-10775"};
+                    "DAS-10775",
+                    "DAS-10656"};
             if ((exampleTags != null))
             {
                 @__tags = System.Linq.Enumerable.ToArray(System.Linq.Enumerable.Concat(@__tags, exampleTags));
@@ -270,6 +277,7 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_ActionsPanel
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("Evergreen_ActionsPanel")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("AllCheckbox")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("DAS-10772")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("DAS-10656")]
         public virtual void EvergreenJnr_DevicesList_SearchWithinAllRows()
         {
             System.Exception lastException = null;
@@ -303,7 +311,8 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_ActionsPanel
                         "Devices",
                         "Evergreen_ActionsPanel",
                         "AllCheckbox",
-                        "DAS-10772"});
+                        "DAS-10772",
+                        "DAS-10656"});
             this.ScenarioSetup(scenarioInfo);
             this.FeatureBackground();
             testRunner.When("User clicks \"Devices\" on the left-hand menu", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
@@ -330,22 +339,14 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_ActionsPanel
             this.ScenarioCleanup();
         }
         
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestMethodAttribute()]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.DescriptionAttribute("EvergreenJnr_DevicesList_SelectAllChecboxMainFunctionalityTest")]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("FeatureTitle", "AllCheckbox")]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("Evergreen")]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("Devices")]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("Evergreen_ActionsPanel")]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("AllCheckbox")]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("DAS-10656")]
-        public virtual void EvergreenJnr_DevicesList_SelectAllChecboxMainFunctionalityTest()
+        public virtual void EvergreenJnr_AllLists_SelectAllChecboxMainFunctionalityTest(string pageName, string selectedRowsCount, string columnname, string selectedRowName, string selectedRowsCountAfterDiselect, string[] exampleTags)
         {
             System.Exception lastException = null;
             for (int i = 0; (i <= 1); i = (i + 1))
             {
                 try
                 {
-                    this.EvergreenJnr_DevicesList_SelectAllChecboxMainFunctionalityTestInternal();
+                    this.EvergreenJnr_AllLists_SelectAllChecboxMainFunctionalityTestInternal(pageName, selectedRowsCount, columnname, selectedRowName, selectedRowsCountAfterDiselect, exampleTags);
                     return;
                 }
                 catch (System.Exception exc)
@@ -364,22 +365,103 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_ActionsPanel
             }
         }
         
-        private void EvergreenJnr_DevicesList_SelectAllChecboxMainFunctionalityTestInternal()
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestMethodAttribute()]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.DescriptionAttribute("EvergreenJnr_AllLists_SelectAllChecboxMainFunctionalityTest: Devices")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("FeatureTitle", "AllCheckbox")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("Evergreen")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("AllLists")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("Evergreen_ActionsPanel")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("AllCheckbox")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("DAS-10656")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("VariantName", "Devices")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:PageName", "Devices")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:SelectedRowsCount", "17225")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Columnname", "Hostname")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:SelectedRowName", "02QS1WBYUHCAG8Z")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:SelectedRowsCountAfterDiselect", "17224")]
+        public virtual void EvergreenJnr_AllLists_SelectAllChecboxMainFunctionalityTest_Devices()
         {
-            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("EvergreenJnr_DevicesList_SelectAllChecboxMainFunctionalityTest", new string[] {
-                        "Evergreen",
-                        "Devices",
-                        "Evergreen_ActionsPanel",
-                        "AllCheckbox",
-                        "DAS-10656"});
+            this.EvergreenJnr_AllLists_SelectAllChecboxMainFunctionalityTest("Devices", "17225", "Hostname", "02QS1WBYUHCAG8Z", "17224", ((string[])(null)));
+        }
+        
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestMethodAttribute()]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.DescriptionAttribute("EvergreenJnr_AllLists_SelectAllChecboxMainFunctionalityTest: Users")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("FeatureTitle", "AllCheckbox")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("Evergreen")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("AllLists")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("Evergreen_ActionsPanel")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("AllCheckbox")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("DAS-10656")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("VariantName", "Users")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:PageName", "Users")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:SelectedRowsCount", "41335")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Columnname", "Username")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:SelectedRowName", "AAV4528222")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:SelectedRowsCountAfterDiselect", "41334")]
+        public virtual void EvergreenJnr_AllLists_SelectAllChecboxMainFunctionalityTest_Users()
+        {
+            this.EvergreenJnr_AllLists_SelectAllChecboxMainFunctionalityTest("Users", "41335", "Username", "AAV4528222", "41334", ((string[])(null)));
+        }
+        
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestMethodAttribute()]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.DescriptionAttribute("EvergreenJnr_AllLists_SelectAllChecboxMainFunctionalityTest: Applications")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("FeatureTitle", "AllCheckbox")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("Evergreen")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("AllLists")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("Evergreen_ActionsPanel")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("AllCheckbox")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("DAS-10656")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("VariantName", "Applications")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:PageName", "Applications")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:SelectedRowsCount", "2223")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Columnname", "Application")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:SelectedRowName", "MKS Source Integrity")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:SelectedRowsCountAfterDiselect", "2222")]
+        public virtual void EvergreenJnr_AllLists_SelectAllChecboxMainFunctionalityTest_Applications()
+        {
+            this.EvergreenJnr_AllLists_SelectAllChecboxMainFunctionalityTest("Applications", "2223", "Application", "MKS Source Integrity", "2222", ((string[])(null)));
+        }
+        
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestMethodAttribute()]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.DescriptionAttribute("EvergreenJnr_AllLists_SelectAllChecboxMainFunctionalityTest: Mailboxes")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("FeatureTitle", "AllCheckbox")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("Evergreen")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("AllLists")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("Evergreen_ActionsPanel")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("AllCheckbox")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("DAS-10656")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("VariantName", "Mailboxes")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:PageName", "Mailboxes")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:SelectedRowsCount", "4835")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Columnname", "Email Address")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:SelectedRowName", "blogs@juriba.com")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:SelectedRowsCountAfterDiselect", "4834")]
+        public virtual void EvergreenJnr_AllLists_SelectAllChecboxMainFunctionalityTest_Mailboxes()
+        {
+            this.EvergreenJnr_AllLists_SelectAllChecboxMainFunctionalityTest("Mailboxes", "4835", "Email Address", "blogs@juriba.com", "4834", ((string[])(null)));
+        }
+        
+        private void EvergreenJnr_AllLists_SelectAllChecboxMainFunctionalityTestInternal(string pageName, string selectedRowsCount, string columnname, string selectedRowName, string selectedRowsCountAfterDiselect, string[] exampleTags)
+        {
+            string[] @__tags = new string[] {
+                    "Evergreen",
+                    "AllLists",
+                    "Evergreen_ActionsPanel",
+                    "AllCheckbox",
+                    "DAS-10656"};
+            if ((exampleTags != null))
+            {
+                @__tags = System.Linq.Enumerable.ToArray(System.Linq.Enumerable.Concat(@__tags, exampleTags));
+            }
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("EvergreenJnr_AllLists_SelectAllChecboxMainFunctionalityTest", @__tags);
             this.ScenarioSetup(scenarioInfo);
             this.FeatureBackground();
-            testRunner.When("User clicks \"Devices\" on the left-hand menu", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-            testRunner.Then("\"Devices\" list should be displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+            testRunner.When(string.Format("User clicks \"{0}\" on the left-hand menu", pageName), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+            testRunner.Then(string.Format("\"{0}\" list should be displayed to the user", pageName), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
             testRunner.When("User clicks the Actions button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
             testRunner.Then("Actions panel is displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
             testRunner.When("User select all rows", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-            testRunner.Then("\"17225\" selected rows are displayed in the Actions panel", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+            testRunner.Then(string.Format("\"{0}\" selected rows are displayed in the Actions panel", selectedRowsCount), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
             testRunner.When("User clicks the Actions button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
             testRunner.Then("Select all checkbox is not displayed", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
             testRunner.When("User clicks the Actions button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
@@ -387,14 +469,91 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_ActionsPanel
             TechTalk.SpecFlow.Table table3 = new TechTalk.SpecFlow.Table(new string[] {
                         "SelectedRowsName"});
             table3.AddRow(new string[] {
-                        "02QS1WBYUHCAG8Z"});
-            table3.AddRow(new string[] {
-                        "01COJATLYVAR7A6"});
-            testRunner.When("User select \"Hostname\" rows in the grid", ((string)(null)), table3, "When ");
-            testRunner.Then("\"17223\" selected rows are displayed in the Actions panel", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-            testRunner.When("User click on \'Hostname\' column header", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-            testRunner.Then("data in table is sorted by \'Hostname\' column in descending order", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-            testRunner.Then("\"17223\" selected rows are displayed in the Actions panel", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+                        string.Format("{0}", selectedRowName)});
+            testRunner.When(string.Format("User select \"{0}\" rows in the grid", columnname), ((string)(null)), table3, "When ");
+            testRunner.Then(string.Format("\"{0}\" selected rows are displayed in the Actions panel", selectedRowsCountAfterDiselect), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+            testRunner.When(string.Format("User click on \'{0}\' column header", columnname), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+            testRunner.Then(string.Format("data in table is sorted by \'{0}\' column in descending order", columnname), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+            testRunner.Then(string.Format("\"{0}\" selected rows are displayed in the Actions panel", selectedRowsCountAfterDiselect), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+            this.ScenarioCleanup();
+        }
+        
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestMethodAttribute()]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.DescriptionAttribute("EvergreenJnr_UsersList_CheckThatSelectAllWorksCorrectlyForFilteredListsWithAdditi" +
+            "onalColumn")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("FeatureTitle", "AllCheckbox")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("Evergreen")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("AllLists")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("Evergreen_ActionsPanel")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("AllCheckbox")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("DAS-10656")]
+        public virtual void EvergreenJnr_UsersList_CheckThatSelectAllWorksCorrectlyForFilteredListsWithAdditionalColumn()
+        {
+            System.Exception lastException = null;
+            for (int i = 0; (i <= 1); i = (i + 1))
+            {
+                try
+                {
+                    this.EvergreenJnr_UsersList_CheckThatSelectAllWorksCorrectlyForFilteredListsWithAdditionalColumnInternal();
+                    return;
+                }
+                catch (System.Exception exc)
+                {
+                    lastException = exc;
+                }
+                if (((i + 1) 
+                            <= 1))
+                {
+                    testRunner.OnScenarioEnd();
+                }
+            }
+            if ((lastException != null))
+            {
+                throw lastException;
+            }
+        }
+        
+        private void EvergreenJnr_UsersList_CheckThatSelectAllWorksCorrectlyForFilteredListsWithAdditionalColumnInternal()
+        {
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("EvergreenJnr_UsersList_CheckThatSelectAllWorksCorrectlyForFilteredListsWithAdditi" +
+                    "onalColumn", new string[] {
+                        "Evergreen",
+                        "AllLists",
+                        "Evergreen_ActionsPanel",
+                        "AllCheckbox",
+                        "DAS-10656"});
+            this.ScenarioSetup(scenarioInfo);
+            this.FeatureBackground();
+            testRunner.When("User clicks \"Users\" on the left-hand menu", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+            testRunner.Then("\"Users\" list should be displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+            testRunner.When("User clicks the Columns button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+            testRunner.Then("Columns panel is displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+            TechTalk.SpecFlow.Table table4 = new TechTalk.SpecFlow.Table(new string[] {
+                        "ColumnName"});
+            table4.AddRow(new string[] {
+                        "Compliance"});
+            table4.AddRow(new string[] {
+                        "Username"});
+            testRunner.When("ColumnName is entered into the search box and the selection is clicked", ((string)(null)), table4, "When ");
+            testRunner.When("User clicks the Filters button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+            testRunner.Then("Filters panel is displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+            TechTalk.SpecFlow.Table table5 = new TechTalk.SpecFlow.Table(new string[] {
+                        "SelectedCheckboxes"});
+            table5.AddRow(new string[] {
+                        "Red"});
+            table5.AddRow(new string[] {
+                        "Amber"});
+            table5.AddRow(new string[] {
+                        "Green"});
+            testRunner.When("User add \"Compliance\" filter where type is \"Equals\" with added column and followi" +
+                    "ng checkboxes:", ((string)(null)), table5, "When ");
+            testRunner.Then("\"Compliance\" filter is added to the list", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+            testRunner.And("\"41,161\" rows are displayed in the agGrid", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+            testRunner.And("table data is filtered correctly", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+            testRunner.When("User clicks the Actions button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+            testRunner.Then("Actions panel is displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+            testRunner.When("User select all rows", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+            testRunner.Then("\"41161\" selected rows are displayed in the Actions panel", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
             this.ScenarioCleanup();
         }
     }
