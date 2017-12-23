@@ -141,6 +141,11 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>ColumnSectionDisplay.feature</DependentUpon>
     </Compile>
+    <Compile Include="Tests\EvergreenJnr_DynamicLists\MainFunctionality.feature.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>MainFunctionality.feature</DependentUpon>
+    </Compile>
     <Compile Include="Tests\EvergreenJnr_DynamicLists\PermissionsSettings.feature.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -236,6 +241,10 @@
     <None Include="Tests\EvergreenJnr_Columns\ColumnSectionDisplay.feature">
       <Generator>SpecFlowSingleFileGenerator</Generator>
       <LastGenOutput>ColumnSectionDisplay.feature.cs</LastGenOutput>
+    </None>
+    <None Include="Tests\EvergreenJnr_DynamicLists\MainFunctionality.feature">
+      <Generator>SpecFlowSingleFileGenerator</Generator>
+      <LastGenOutput>MainFunctionality.feature.cs</LastGenOutput>
     </None>
     <None Include="Tests\EvergreenJnr_DynamicLists\PermissionsSettings.feature">
       <Generator>SpecFlowSingleFileGenerator</Generator>
