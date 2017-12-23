@@ -397,7 +397,7 @@ Scenario: EvergreenJnr_DevicesList_CheckThatColumnIsDisplayedInColumnsPanelAfter
 	| Owner Common Name |
 	Then "25" subcategories is displayed for "Device Owner" category
 
-@Evergreen @Users @EvergreenJnr_Columns @RemoveColumn @DAS-11515 @Not_Run
+@Evergreen @Users @EvergreenJnr_Columns @RemoveColumn @DAS-11515 @DAS-11506 @Not_Run
 Scenario: EvergreenJnr_UsersList_CheckThatColumnIsDisplayedInColumnsPanelAfterRemovingAllColumnsFromTheURL
 	When User clicks "Users" on the left-hand menu
 	Then "Users" list should be displayed to the user
