@@ -18,6 +18,18 @@ namespace DashworksTestAutomation.Helpers
                     return "migrationRAG";
                 case "Device Key":
                     return "computerKey";
+                case "Last Logon Date":
+                    return "lastLogonDate";
+                case "Home Drive":
+                    return "homeDrive";
+                case "Owner Common Name":
+                    return "ownerCommonName";
+                case "Windows7Mi: SS Project Date Enabled":
+                    return "project_task_1_13063_4_Task";
+                case "Enabled":
+                    return "enabled";
+                case "Windows7Mi: Read Only on Project Object Page":
+                    return "project_task_1_13090_1_Task";
                 default:
                     throw new Exception($"{columnName} column not found in convertor");
             }

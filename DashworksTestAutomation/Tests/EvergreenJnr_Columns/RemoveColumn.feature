@@ -43,7 +43,7 @@ Scenario: EvergreenJnr_DevicesList_CheckThat500ErrorPageIsNotDisplayedAfterRemov
 	| ColumnName |
 	| Device Key |
 	When User click on 'Boot Up Date' column header
-	When User removes column by URL
+	When User removes sorted column by URL
 	| ColumnName   |
 	| Boot Up Date |
 	Then ColumnName is removed from the list
@@ -84,7 +84,7 @@ Scenario: EvergreenJnr_DevicesList_CheckThat500ErrorPageIsNotDisplayedAfterRemov
 	| ColumnName |
 	| Build Date |
 	Then data in table is sorted by 'Boot Up Date' column in ascending order
-	When User removes column by URL
+	When User removes sorted column by URL
 	| ColumnName   |
 	| Boot Up Date |
 	When User update current custom list
@@ -123,7 +123,7 @@ Scenario: EvergreenJnr_DevicesList_CheckThat500ErrorPageIsNotDisplayedAfterRemov
 	Then Filters panel is displayed to the user
 	Then "Windows7Mi: Category" filter is added to the list
 	When User click on 'Directory Type' column header
-	When User removes column by URL
+	When User removes sorted column by URL
 	| ColumnName     |
 	| Directory Type |
 	When User clicks the Columns button
@@ -157,7 +157,7 @@ Scenario: EvergreenJnr_DevicesList_CheckThat500ErrorPageIsNotDisplayedAfterRemov
 	| ColumnName   |
 	| Boot Up Date |
 	When User click on 'Windows7Mi: Date & Time Task' column header
-	When User removes column by URL
+	When User removes sorted column by URL
 	| ColumnName                   |
 	| Windows7Mi: Date & Time Task |
 	Then "Devices" list should be displayed to the user
@@ -194,7 +194,7 @@ Scenario: EvergreenJnr_DevicesList_CheckThat500ErrorPageIsNotDisplayedAfterRemov
 	| ColumnName   |
 	| Boot Up Date |
 	Then data in table is sorted by 'Windows7Mi: Date & Time Task' column in descending order
-	When User removes column by URL
+	When User removes sorted column by URL
 	| ColumnName                   |
 	| Windows7Mi: Date & Time Task |
 	Then "Devices" list should be displayed to the user
@@ -230,7 +230,7 @@ Scenario: EvergreenJnr_DevicesList_CheckThat500ErrorPageIsNotDisplayedAfterRemov
 	Then Filters panel is displayed to the user
 	Then "Windows7Mi: Category" filter is added to the list
 	When User click on 'Directory Type' column header
-	When User removes column by URL
+	When User removes sorted column by URL
 	| ColumnName     |
 	| Directory Type |
 	Then "Devices" list should be displayed to the user
@@ -369,3 +369,60 @@ Scenario: EvergreenJnr_DevicesList_CheckThatRemovingColumnAndFilterAndCustomList
 	| ColumnName |
 	| Compliance |
 	| Device Key |
+
+@Evergreen @Devices @EvergreenJnr_Columns @RemoveColumn @DAS-11515
+Scenario: EvergreenJnr_DevicesList_CheckThatColumnIsDisplayedInColumnsPanelAfterRemovingOneColumnFromTheURL
+	When User clicks "Devices" on the left-hand menu
+	Then "Devices" list should be displayed to the user
+	When User clicks the Columns button
+	Then Columns panel is displayed to the user
+	When ColumnName is entered into the search box and the selection is clicked
+	| ColumnName                          |
+	| Windows7Mi: SS Project Date Enabled |
+	| Owner Common Name                   |
+	Then ColumnName is added to the list
+	| ColumnName                          |
+	| Windows7Mi: SS Project Date Enabled |
+	| Owner Common Name                   |
+	And "Windows7Mi: SS Project Date Enabled" column is added to URL
+	And "Owner Common Name" column is added to URL
+	When User removes column by URL
+	| ColumnName        |
+	| Owner Common Name |
+	Then "Devices" list should be displayed to the user
+	When User clicks the Columns button
+	Then Columns panel is displayed to the user
+	Then ColumnName is removed from the list
+	| ColumnName        |
+	| Owner Common Name |
+	Then "25" subcategories is displayed for "Device Owner" category
+
+@Evergreen @Users @EvergreenJnr_Columns @RemoveColumn @DAS-11515 @DAS-11506 @Not_Run
+Scenario: EvergreenJnr_UsersList_CheckThatColumnIsDisplayedInColumnsPanelAfterRemovingAllColumnsFromTheURL
+	When User clicks "Users" on the left-hand menu
+	Then "Users" list should be displayed to the user
+	When User clicks the Columns button
+	Then Columns panel is displayed to the user
+	When ColumnName is entered into the search box and the selection is clicked
+	| ColumnName                                   |
+	| Last Logon Date                              |
+	| Enabled                                      |
+	| Windows7Mi: Read Only on Project Object Page |
+	Then ColumnName is added to the list
+	| ColumnName                                   |
+	| Last Logon Date                              |
+	| Enabled                                      |
+	| Windows7Mi: Read Only on Project Object Page |
+	And "Last Logon Date" column is added to URL
+	And "Enabled" column is added to URL
+	And "Windows7Mi: Read Only on Project Object Page" column is added to URL
+	When User removes all columns by URL
+	And User clicks the Columns button
+	Then Columns panel is displayed to the user
+	And ColumnName is removed from the list
+	| ColumnName                                   |
+	| Last Logon Date                              |
+	| Enabled                                      |
+	| Windows7Mi: Read Only on Project Object Page |
+	And "18" subcategories is displayed for "User" category
+	And "42" subcategories is displayed for "Project Tasks: Windows7Mi" category
