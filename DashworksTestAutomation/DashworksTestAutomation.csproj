@@ -141,11 +141,6 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>ColumnSectionDisplay.feature</DependentUpon>
     </Compile>
-    <Compile Include="Tests\EvergreenJnr_DynamicLists\MainFunctionality.feature.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>MainFunctionality.feature</DependentUpon>
-    </Compile>
     <Compile Include="Tests\EvergreenJnr_DynamicLists\PermissionsSettings.feature.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -165,6 +160,11 @@
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>RemoveFilter.feature</DependentUpon>
+    </Compile>
+    <Compile Include="Tests\EvergreenJnr_ListDetails\ListDetailsFunctionality.feature.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ListDetailsFunctionality.feature</DependentUpon>
     </Compile>
     <Compile Include="Tests\EvergreenJnr_ListPanel\CustomListDisplay.feature.cs">
       <AutoGen>True</AutoGen>
@@ -242,10 +242,6 @@
       <Generator>SpecFlowSingleFileGenerator</Generator>
       <LastGenOutput>ColumnSectionDisplay.feature.cs</LastGenOutput>
     </None>
-    <None Include="Tests\EvergreenJnr_DynamicLists\MainFunctionality.feature">
-      <Generator>SpecFlowSingleFileGenerator</Generator>
-      <LastGenOutput>MainFunctionality.feature.cs</LastGenOutput>
-    </None>
     <None Include="Tests\EvergreenJnr_DynamicLists\PermissionsSettings.feature">
       <Generator>SpecFlowSingleFileGenerator</Generator>
       <LastGenOutput>PermissionsSettings.feature.cs</LastGenOutput>
@@ -261,6 +257,10 @@
     <None Include="Tests\EvergreenJnr_FiltersFeature\RemoveFilter.feature">
       <Generator>SpecFlowSingleFileGenerator</Generator>
       <LastGenOutput>RemoveFilter.feature.cs</LastGenOutput>
+    </None>
+    <None Include="Tests\EvergreenJnr_ListDetails\ListDetailsFunctionality.feature">
+      <Generator>SpecFlowSingleFileGenerator</Generator>
+      <LastGenOutput>ListDetailsFunctionality.feature.cs</LastGenOutput>
     </None>
     <None Include="Tests\EvergreenJnr_ListPanel\CustomListDisplay.feature">
       <Generator>SpecFlowSingleFileGenerator</Generator>
@@ -312,7 +312,6 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Tests\EvergreenJnr_GlobalSearch\" />
-    <Folder Include="Tests\EvergreenJnr_ListDetails\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">

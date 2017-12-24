@@ -18,6 +18,21 @@ namespace DashworksTestAutomation.Steps.Dashworks
             _driver = driver;
         }
 
+        [When(@"User changes list name to ""(.*)""")]
+        public void WhenUserChangesListNameTo(string listName)
+        {
+            var listDetailsElement = _driver.NowAt<ListDetailsElement>();
+            listDetailsElement.ListNameField.Clear();
+            listDetailsElement.ListNameField.SendKeys(listName);
+        }
+        
+        [Then(@"""(.*)"" name is displayed in list details panel")]
+        public void ThenNameIsDisplayedInListDetailsPanel(string listName)
+        {
+            var listDetailsElement = _driver.NowAt<ListDetailsElement>();
+            Assert.AreEqual(listName, listDetailsElement.ListNameField.Text);
+        }
+
         [Then(@"List details panel is displayed to the user")]
         public void ThenListDetailsPanelIsDisplayedToTheUser()
         {
