@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Threading;
 using DashworksTestAutomation.Extensions;
 using DashworksTestAutomation.Pages.Evergreen;
 using DashworksTestAutomation.Utils;
@@ -22,8 +23,8 @@ namespace DashworksTestAutomation.Steps.Dashworks
         public void WhenUserChangesListNameTo(string listName)
         {
             var listDetailsElement = _driver.NowAt<ListDetailsElement>();
-            listDetailsElement.ListNameField.Clear();
-            listDetailsElement.ListNameField.SendKeys(listName);
+            listDetailsElement.ListNameField.ClearWithBackspaces();
+            listDetailsElement.ListNameField.SendkeysWithDelay(listName);
         }
 
         [When(@"User is closed List Details panel")]

@@ -9,6 +9,22 @@ namespace DashworksTestAutomation.Extensions
 {
     public static class WebElementExtensions
     {
+        public static void ClearWithBackspaces(this IWebElement textbox, int charectersCount=21)
+        {
+            for (int i = 0; i < charectersCount; i++)
+            {
+                textbox.SendKeys(Keys.Backspace);
+            }
+        }
+
+        public static void SendkeysWithDelay(this IWebElement textbox, string input)
+        {
+            foreach (char letter in input)
+            {
+                textbox.SendKeys(letter.ToString());
+            }
+        }
+
         //This is specific method for 'ng-table-select-count' elements
         public static void SelectboxSelect(this IWebElement selectbox, string option, bool ignoreCase = false)
         {

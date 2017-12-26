@@ -19,6 +19,8 @@ Scenario Outline: EvergreenJnr_AllLists_CheckThatRenamingAListWorkingCorrectlyFo
 	When User click on '<Columnname>' column header
 	Then data in table is sorted by '<Columnname>' column in descending order
 	When User create custom list with "TestList" name
+	#Workaround for DAS-11570. Remove after fix
+	And User navigates to the "TestList" list
 	When User clicks the List Details button
 	Then List details panel is displayed to the user
 	When User changes list name to "RenamedList"
