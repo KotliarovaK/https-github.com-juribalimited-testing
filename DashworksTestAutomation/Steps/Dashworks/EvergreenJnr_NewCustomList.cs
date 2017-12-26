@@ -240,6 +240,20 @@ namespace DashworksTestAutomation.Steps.Dashworks
             Assert.IsTrue(listElement.SaveAsNewListButton.Displayed(), "Save As New List button is NOT displayed");
         }
 
+        [Then(@"Star icon is displayed for ""(.*)"" list")]
+        public void ThenStarIconIsDisplayedForList(string listnName)
+        {
+            var listElement = _driver.NowAt<CustomListElement>();
+            Assert.IsTrue(listElement.GetFavoriteStatus(listnName));
+        }
+        
+        [Then(@"Star icon is not displayed for ""(.*)"" list")]
+        public void ThenStarIconIsNotDisplayedForList(string listnName)
+        {
+            var listElement = _driver.NowAt<CustomListElement>();
+            Assert.IsFalse(listElement.GetFavoriteStatus(listnName));
+        }
+
         [AfterScenario("Delete_Newly_Created_List")]
         public void DeleteAllCustomListsAfterScenarioRun()
         {
