@@ -41,6 +41,8 @@ Scenario Outline: EvergreenJnr_AllLists_CheckThatRenamingAListWorkingCorrectlyFo
 	Then Actions panel is displayed to the user
 	When User select all rows
 	And User create static list with "Static List TestName" name
+	#Workaround for DAS-11570. Remove after fix
+	And User navigates to the "Static List TestName" list
 	When User clicks the List Details button
 	Then List details panel is displayed to the user
 	When User changes list name to "RenamedList"
@@ -160,6 +162,8 @@ Scenario Outline: EvergreenJnr_AllLists_CheckDefaultOptionsInListDetailsForStati
 	Then Actions panel is displayed to the user
 	When User select all rows
 	And User create static list with "Static List TestName" name
+	#Workaround for DAS-11570. Remove after fix
+	And User navigates to the "Static List TestName" list
 	When User clicks the List Details button
 	Then List details panel is displayed to the user
 	Then "Static List TestName" name is displayed in list details panel
