@@ -161,6 +161,11 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>RemoveFilter.feature</DependentUpon>
     </Compile>
+    <Compile Include="Tests\EvergreenJnr_ListDetails\ListDetailsFunctionality.feature.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ListDetailsFunctionality.feature</DependentUpon>
+    </Compile>
     <Compile Include="Tests\EvergreenJnr_ListPanel\CustomListDisplay.feature.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -253,6 +258,10 @@
       <Generator>SpecFlowSingleFileGenerator</Generator>
       <LastGenOutput>RemoveFilter.feature.cs</LastGenOutput>
     </None>
+    <None Include="Tests\EvergreenJnr_ListDetails\ListDetailsFunctionality.feature">
+      <Generator>SpecFlowSingleFileGenerator</Generator>
+      <LastGenOutput>ListDetailsFunctionality.feature.cs</LastGenOutput>
+    </None>
     <None Include="Tests\EvergreenJnr_ListPanel\CustomListDisplay.feature">
       <Generator>SpecFlowSingleFileGenerator</Generator>
       <LastGenOutput>CustomListDisplay.feature.cs</LastGenOutput>
@@ -303,7 +312,6 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Tests\EvergreenJnr_GlobalSearch\" />
-    <Folder Include="Tests\EvergreenJnr_ListDetails\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">

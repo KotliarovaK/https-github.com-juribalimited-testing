@@ -14,8 +14,14 @@ namespace DashworksTestAutomation.Pages.Evergreen
         [FindsBy(How = How.XPath, Using = ".//input[@placeholder='List Name']")]
         public IWebElement ListNameField { get; set; }
 
-        [FindsBy(How = How.XPath, Using = ".//i[contains(text(),'star')]")]
+        [FindsBy(How = How.XPath, Using = ".//div[@class='device-context-panel']//button")]
+        public IWebElement CloseListDetailsPanelButton { get; set; }
+
+        [FindsBy(How = How.XPath, Using = ".//i[contains(@class,'material-icons pull-left list-star-icon')]")]
         public IWebElement FavoriteButton { get; set; }
+
+        [FindsBy(How = How.XPath, Using = ".//i[contains(@class,'material-icons pull-left list-star-icon star-filled')]")]
+        public IWebElement UnfavoriteButton { get; set; }
 
         [FindsBy(How = How.XPath, Using = ".//button[@title='Remove']")]
         public IWebElement RemoveListButton { get; set; }
@@ -54,6 +60,11 @@ namespace DashworksTestAutomation.Pages.Evergreen
             {
                 SelectorFor(this, p => p.ListDetailsPanel),
             };
+        }
+
+        public string GetSelectedValue(IWebElement dropdown)
+        {
+            return dropdown.FindElement(By.XPath(".//span[contains(@class, 'ng-star-inserted')]")).Text;
         }
     }
 }

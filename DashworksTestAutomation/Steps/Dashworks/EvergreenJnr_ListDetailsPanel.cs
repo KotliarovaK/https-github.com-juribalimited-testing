@@ -18,6 +18,73 @@ namespace DashworksTestAutomation.Steps.Dashworks
             _driver = driver;
         }
 
+        [When(@"User changes list name to ""(.*)""")]
+        public void WhenUserChangesListNameTo(string listName)
+        {
+            var listDetailsElement = _driver.NowAt<ListDetailsElement>();
+            listDetailsElement.ListNameField.Clear();
+            listDetailsElement.ListNameField.SendKeys(listName);
+        }
+
+        [When(@"User is closed List Details panel")]
+        public void WhenUserIsClosedListDetailsPanel()
+        {
+            var listDetailsElement = _driver.NowAt<ListDetailsElement>();
+            listDetailsElement.CloseListDetailsPanelButton.Click();
+            _driver.WaitWhileControlIsDisplayed<ListDetailsElement>(() => listDetailsElement.ListDetailsPanel);
+        }
+
+        [When(@"User mark list as favorite")]
+        public void WhenUserMarkListAsFavorite()
+        {
+            var listDetailsElement = _driver.NowAt<ListDetailsElement>();
+            listDetailsElement.FavoriteButton.Click();
+        }
+
+        [Then(@"List is NOT marked as favorite")]
+        public void ThenListIsNOTMarkedAsFavorite()
+        {
+            var listDetailsElement = _driver.NowAt<ListDetailsElement>();
+            Assert.IsTrue(listDetailsElement.FavoriteButton.Displayed(), "List is marked as favorite");
+        }
+
+        [Then(@"current user is selected as a owner of a list")]
+        public void ThenCurrentUserIsSelectedAsAOwnerOfAList()
+        {
+            var listDetailsElement = _driver.NowAt<ListDetailsElement>();
+            var header = _driver.NowAt<HeaderElement>();
+            Assert.AreEqual(header.UserNameDropdown.Text, listDetailsElement.GetSelectedValue(listDetailsElement.OwnerDropdown),
+                "Another User is selected as a owner");
+        }
+
+        [Then(@"""(.*)"" sharing option is selected")]
+        public void ThenSharingOptionIsSelected(string sharingOption)
+        {
+            var listDetailsElement = _driver.NowAt<ListDetailsElement>();
+            Assert.AreEqual(sharingOption, listDetailsElement.GetSelectedValue(listDetailsElement.SharingDropdown), $"Selected option is not {sharingOption}");
+        }
+
+        [When(@"User mark list as unfavorite")]
+        public void WhenUserMarkListAUnfavorite()
+        {
+            var listDetailsElement = _driver.NowAt<ListDetailsElement>();
+            listDetailsElement.UnfavoriteButton.Click();
+        }
+
+        [Then(@"List is marked as favorite")]
+        public void ThenListIsMarkedAsFavorite()
+        {
+            var listDetailsElement = _driver.NowAt<ListDetailsElement>();
+            Assert.IsTrue(listDetailsElement.UnfavoriteButton.Displayed(), "List is marked as unfavorite");
+        }
+
+        [Then(@"""(.*)"" name is displayed in list details panel")]
+        public void ThenNameIsDisplayedInListDetailsPanel(string listName)
+        {
+            var listDetailsElement = _driver.NowAt<ListDetailsElement>();
+            Assert.AreEqual(listName, listDetailsElement.ListNameField.GetAttribute("value"));
+        }
+
         [Then(@"List details panel is displayed to the user")]
         public void ThenListDetailsPanelIsDisplayedToTheUser()
         {
@@ -66,15 +133,14 @@ namespace DashworksTestAutomation.Steps.Dashworks
         {
             var listDetailsElement = _driver.NowAt<ListDetailsElement>();
             _driver.SelectCustomSelectbox(listDetailsElement.SelectAccessDropdown, accessOption);
-
         }
 
         [Then(@"Delete list button is disabled in List Details panel")]
         public void ThenDeleteListButtonIsDisabledInListDetailsPanel()
         {
             var listDetailsElement = _driver.NowAt<ListDetailsElement>();
-            Assert.IsTrue(Convert.ToBoolean(listDetailsElement.RemoveListButton.GetAttribute("disabled")), "Delete List button is enabled");
+            Assert.IsTrue(Convert.ToBoolean(listDetailsElement.RemoveListButton.GetAttribute("disabled")),
+                "Delete List button is enabled");
         }
-
     }
 }
