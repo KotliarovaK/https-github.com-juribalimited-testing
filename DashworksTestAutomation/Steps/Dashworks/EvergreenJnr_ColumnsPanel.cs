@@ -205,12 +205,15 @@ namespace DashworksTestAutomation.Steps.Dashworks
             }
         }
 
-
         [Then(@"""(.*)"" subcategories is displayed for ""(.*)"" category")]
         public void ThenSubcategoriesIsDisplayedForCategory(int subCategoriesCount, string categoryName)
         {
             var columnElement = _driver.NowAt<ColumnsElement>();
-            columnElement.SearchTextboxResetButton.Click();
+            var resetButton = columnElement.SearchTextboxResetButton;
+            if (resetButton.Displayed())
+            {
+                resetButton.Click();
+            }
             Assert.AreEqual(subCategoriesCount, columnElement.GetSubcategoriesCountByCategoryName(categoryName));
         }
 
