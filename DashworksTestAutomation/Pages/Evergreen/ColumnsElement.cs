@@ -101,6 +101,7 @@ namespace DashworksTestAutomation.Pages.Evergreen
         public int GetSubcategoriesCountByCategoryName(string categoryName)
         {
             var filterCategory = FilterCategory(categoryName);
+            Driver.MouseHover(filterCategory);
             return Convert.ToInt32(filterCategory.FindElement(By.XPath(".//strong")).Text);
         }
 
