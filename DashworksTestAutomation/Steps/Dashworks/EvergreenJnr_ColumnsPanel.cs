@@ -202,7 +202,8 @@ namespace DashworksTestAutomation.Steps.Dashworks
             if (page.StatusCodeLabel.Displayed())
             {
                 throw new Exception($"500 error was returned after removing all columns from URL");
-            }        }
+            }
+        }
 
 
         [Then(@"""(.*)"" subcategories is displayed for ""(.*)"" category")]
