@@ -426,3 +426,43 @@ Scenario: EvergreenJnr_UsersList_CheckThatColumnIsDisplayedInColumnsPanelAfterRe
 	| Windows7Mi: Read Only on Project Object Page |
 	And "18" subcategories is displayed for "User" category
 	And "42" subcategories is displayed for "Project Tasks: Windows7Mi" category
+
+@Evergreen @Applications @EvergreenJnr_Columns @RemoveColumn @DAS-11515
+Scenario: EvergreenJnr_ApplicationsList_CheckThatColumnIsDisplayedInColumnsPanelAfterRemovingAColumnWhichAlsoExistsAsAFilter
+	When User clicks "Applications" on the left-hand menu
+	Then "Applications" list should be displayed to the user
+	When User clicks the Columns button
+	Then Columns panel is displayed to the user
+	When ColumnName is entered into the search box and the selection is clicked
+	| ColumnName                 |
+	| Application Key            |
+	| Windows7Mi: Technical Test |
+	| DAS-1814                   |
+	Then ColumnName is added to the list
+	| ColumnName                 |
+	| Application Key            |
+	| Windows7Mi: Technical Test |
+	| DAS-1814                   |
+	And "Applications" list should be displayed to the user
+	And "Application Key" column is added to URL
+	And "Windows7Mi: Technical Test" column is added to URL
+	And "DAS-1814" column is added to URL
+	When User clicks the Filters button
+	Then Filters panel is displayed to the user
+	When User add "Windows7Mi: Technical Test" filter where type is "Equals" with added column and following checkboxes:
+	| SelectedCheckboxes |
+	| Not Started        |
+	| Started            |
+	Then "Windows7Mi: Technical Test" filter is added to the list
+	And "8" rows are displayed in the agGrid
+	When User removes column by URL
+	| ColumnName                 |
+	| Windows7Mi: Technical Test |
+	Then "8" rows are displayed in the agGrid
+	And "Applications" list should be displayed to the user
+	When User clicks the Columns button
+	Then Columns panel is displayed to the user
+	And ColumnName is removed from the list
+	| ColumnName                 |
+	| Windows7Mi: Technical Test |
+	And "8" subcategories is displayed for "Project Tasks: Windows7Mi" category
