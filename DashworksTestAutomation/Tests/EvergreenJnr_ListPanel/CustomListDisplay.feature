@@ -401,3 +401,70 @@ Scenario: EvergreenJnr_DevicesList_CheckThatEditListMenuNotDisplayedForActiveLis
 	When User navigates to the "Static List TestName" list
 	Then "Static List TestName" list is displayed to user
 	And Edit List menu is not displayed
+
+@Evergreen @Devices @EvergreenJnr_ListPanel @CustomListDisplay @DAS-11026 @Delete_Newly_Created_List
+Scenario: EvergreenJnr_DevicesList_CheckThatEditListMenuNotDisplayedForDifferentFilterTypes
+	When User clicks "Devices" on the left-hand menu
+	Then "Devices" list should be displayed to the user
+	When User clicks the Filters button
+	Then Filters panel is displayed to the user
+	When User add "Babel(Engl: Readiness" filter where type is "Equals" with added column and "None" Lookup option
+	Then "Babel(Engl: Readiness" filter is added to the list
+	When User create custom list with "Readiness List TestName" name
+	Then "Readiness List TestName" list is displayed to user
+	When User navigates to the "All Devices" list
+	Then "Devices" list should be displayed to the user
+	When User clicks the Filters button
+	Then Filters panel is displayed to the user
+	When User add "Import Type" filter where type is "Equals" with added column and following checkboxes:
+	| SelectedCheckboxes |
+	| Generic            |
+	Then "Import Type" filter is added to the list
+	When User create custom list with "MultiSelect List TestName" name
+	Then "MultiSelect List TestName" list is displayed to user
+	When User navigates to the "All Devices" list
+	Then "Devices" list should be displayed to the user
+	When User clicks the Filters button
+	Then Filters panel is displayed to the user
+	When User add "Compliance" filter where type is "Equals" with added column and following checkboxes:
+	| SelectedCheckboxes |
+	| Green              |
+	| Amber              |
+	Then "Compliance" filter is added to the list
+	When User create custom list with "Compliance List TestName" name
+	Then "Compliance List TestName" list is displayed to user
+	When User navigates to the "All Devices" list
+	Then "Devices" list should be displayed to the user
+	When User clicks the Filters button
+	Then Filters panel is displayed to the user
+	When User add "Secure Boot Enabled" filter where type is "Equals" with added column and following checkboxes:
+	| SelectedCheckboxes |
+	| FALSE              |
+	Then "Secure Boot Enabled" filter is added to the list
+	When User create custom list with "Secure Boot List TestName" name
+	Then "Secure Boot List TestName" list is displayed to user
+	When User clicks "Applications" on the left-hand menu
+	Then "Applications" list should be displayed to the user
+	When User click on 'Application' column header
+	Then data in table is sorted by 'Application' column in descending order
+	When User create custom list with "TestList" name
+	When User clicks "Devices" on the left-hand menu
+	Then "Devices" list should be displayed to the user
+	When User clicks the Filters button
+	Then Filters panel is displayed to the user
+	When User add "Application (Saved List)" filter where type is "Equals" with SelectedList list and following Association:
+	| SelectedList | Association        |
+	| TestList     | Not used on device |
+	Then "Application" filter is added to the list
+	When User create custom list with "Applications List TestName" name
+	Then "Applications List TestName" list is displayed to user
+	When User navigates to the "All Devices" list
+	Then "Devices" list should be displayed to the user
+	When User navigates to the "MultiSelect List TestName" list
+	Then Edit List menu is not displayed
+	When User navigates to the "Compliance List TestName" list
+	Then Edit List menu is not displayed
+	When User navigates to the "Secure Boot List TestName" list
+	Then Edit List menu is not displayed
+	When User navigates to the "Applications List TestName" list
+	Then Edit List menu is not displayed
