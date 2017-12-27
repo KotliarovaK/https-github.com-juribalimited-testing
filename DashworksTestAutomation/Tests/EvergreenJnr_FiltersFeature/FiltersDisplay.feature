@@ -764,7 +764,7 @@ Scenario: EvergreenJnr_MailboxesList_CheckThatRelevantDataSetBeDisplayedAfterNav
 	Then "Mailboxes" list should be displayed to the user
 	And "4,835" rows are displayed in the agGrid
 
-@Evergreen @Devices @Evergreen_FiltersFeature @FiltersDisplay @DAS-11467
+@Evergreen @Devices @Evergreen_FiltersFeature @FiltersDisplay @DAS-11467 @Delete_Newly_Created_List
 Scenario: EvergreenJnr_DevicesList_CheckThatMultipleFilterCriteriaToApplicationNameDisplayedCorrectlyWhenUsingTheContainsOperator
 	When User clicks "Devices" on the left-hand menu
 	Then "Devices" list should be displayed to the user
