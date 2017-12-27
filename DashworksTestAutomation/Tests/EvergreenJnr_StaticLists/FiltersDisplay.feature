@@ -43,7 +43,7 @@ Scenario: EvergreenJnr_DevicesList_CheckThatDynamicFiltersAreClearedForStaticLis
 	Then Filters Button is disabled
 
 @Evergreen @Devices @EvergreenJnr_ListPanel @CustomListDisplay @DAS-10978 @Delete_Newly_Created_List
-Scenario: EvergreenJnr_DevicesList__CheckThatFiltersAndColumnsAreRestoredForSavedList
+Scenario: EvergreenJnr_DevicesList_CheckThatFiltersAndColumnsAreRestoredForSavedList
 	When User clicks "Devices" on the left-hand menu
 	Then "Devices" list should be displayed to the user
 	When User clicks the Filters button
@@ -60,7 +60,7 @@ Scenario: EvergreenJnr_DevicesList__CheckThatFiltersAndColumnsAreRestoredForSave
 	Then "Devices" list should be displayed to the user
 	When User navigates to the "TestList" list
 	Then "TestList" list is displayed to user
-	And "5,161" rows are displayed in the agGrid
+	And "5,160" rows are displayed in the agGrid
 	When User clicks the Filters button
 	Then Filters panel is displayed to the user
 	And "Windows7Mi: SS Application List Completed is Not Applicable or No" is displayed in added filter info
