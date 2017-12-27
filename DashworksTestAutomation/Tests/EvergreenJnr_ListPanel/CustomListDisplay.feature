@@ -468,3 +468,17 @@ Scenario: EvergreenJnr_DevicesList_CheckThatEditListMenuNotDisplayedForDifferent
 	Then Edit List menu is not displayed
 	When User navigates to the "Applications List TestName" list
 	Then Edit List menu is not displayed
+
+@Evergreen @Devices @EvergreenJnr_ListPanel @CustomListDisplay @DAS-10647 @Delete_Newly_Created_List
+Scenario: EvergreenJnr_DevicesList_CheckThatDatabaseErrorOccurringOccurringWhenAttemptingToSaveListsInEvergreenAreNotDisplayed 
+	When User clicks "Devices" on the left-hand menu
+	Then "Devices" list should be displayed to the user
+	When User clicks the Filters button
+	Then Filters panel is displayed to the user
+	When User add "Babel(Engl: Readiness" filter where type is "Equals" with added column and "Amber" Lookup option
+	Then "Babel(Engl: Readiness" filter is added to the list
+	When User click on 'Hostname' column header
+	Then data in table is sorted by 'Hostname' column in ascending order
+	When User create custom list with "TestName" name
+	Then "TestName" list is displayed to user
+	And "2" rows are displayed in the agGrid
