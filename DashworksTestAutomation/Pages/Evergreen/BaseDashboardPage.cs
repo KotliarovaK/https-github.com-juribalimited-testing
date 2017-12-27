@@ -29,8 +29,14 @@ namespace DashworksTestAutomation.Pages.Evergreen
             Using = ".//div[@role='presentation']//div[@class='ag-header-cell']//header-cell//input")]
         public IWebElement SelectAllRowsAction { get; set; }
 
+        [FindsBy(How = How.XPath, Using = ".//button[@class='btn input-toggle mat-icon-button ng-star-inserted']")]
+        public IWebElement GlobalCrossIcon { get; set; }
+
         [FindsBy(How = How.XPath, Using = ".//span[@class='ag-selection-checkbox']")]
         public IList<IWebElement> SelectRowsCheckboxes { get; set; }
+
+        [FindsBy(How = How.XPath, Using = ".//input[@aria-label='Search everything']")]
+        public IWebElement GlobalSearchTextbox { get; set; }
 
         [FindsBy(How = How.XPath, Using = ".//input[contains(@class,'test-dg-vsbl')]")]
         public IWebElement SearchTextbox { get; set; }
@@ -189,6 +195,20 @@ namespace DashworksTestAutomation.Pages.Evergreen
         {
             return Driver.FindElements(
                 By.XPath(".//div[@class='ag-header-cell ag-header-cell-sortable']//span[@ref='eText']"));
+        }
+
+        public void EnteredIntoGlobalSearchBox(string searchedText)
+        {
+            GlobalSearchTextbox.Clear();
+            GlobalSearchTextbox.Click();
+            GlobalSearchTextbox.SendKeys(searchedText);
+        }
+
+        public void EnteredIntoagGridSearchBox(string searchedText)
+        {
+            SearchTextbox.Clear();
+            SearchTextbox.Click();
+            SearchTextbox.SendKeys(searchedText);
         }
     }
 }

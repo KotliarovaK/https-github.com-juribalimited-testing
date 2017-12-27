@@ -108,5 +108,27 @@ namespace DashworksTestAutomation.Steps.Dashworks
 
             tableElement.ClickContentByColumnName(columnName);
         }
+
+        [When(@"User entered ""(.*)"" text in Global Search field")]
+        public void WhenUserEnteredTextInGlobalSearchField(string searchedText)
+        {
+            var columnElement = _driver.NowAt<BaseDashboardPage>();
+            columnElement.EnteredIntoGlobalSearchBox(searchedText);
+        }
+
+        [When(@"User entered ""(.*)"" text in agGrid Search field")]
+        public void WhenUserEnteredTextInAgGridSearchField(string searchedText)
+        {
+            var columnElement = _driver.NowAt<BaseDashboardPage>();
+            columnElement.EnteredIntoagGridSearchBox(searchedText);
+        }
+
+        [Then(@"cross icon is displayed")]
+        public void ThenCrossIconIsDisplayed()
+        {
+            var crossIcon = _driver.NowAt<BaseDashboardPage>();
+            Assert.IsTrue(crossIcon.GlobalCrossIcon.Displayed(), "Cross icon is displayed");
+            Logger.Write("Cross icon is not displayed");
+        }
     }
 }

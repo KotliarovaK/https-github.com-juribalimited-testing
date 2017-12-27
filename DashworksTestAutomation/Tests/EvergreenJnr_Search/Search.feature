@@ -152,3 +152,17 @@ Scenario: EvergreenJnr_DevicesList_Search_NoDevicesFound
 	| demo.juriba.co.uk |
 	| 67#               |
 	| #12               |
+
+@Evergreen @Devices @EvergreenJnr_Search @Search
+Scenario: EvergreenJnr_DevicesList_Search_CheckThatGlobalSearchHaveACrossIcon
+	When User clicks "Devices" on the left-hand menu
+	Then "Devices" list should be displayed to the user
+	When User entered "CheckTheCrossIcon" text in Global Search field
+	Then cross icon is displayed
+
+@Evergreen @Devices @EvergreenJnr_Search @Search
+Scenario: EvergreenJnr_DevicesList_Search_CheckThatAGGridSearchHaveACrossIcon
+	When User clicks "Devices" on the left-hand menu
+	Then "Devices" list should be displayed to the user
+	When User entered "CheckTheCrossIcon" text in agGrid Search field
+	Then cross icon is displayed
