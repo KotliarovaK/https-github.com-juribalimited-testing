@@ -106,6 +106,11 @@
     <Compile Include="Pages\Evergreen\LeftHandMenuElement.cs" />
     <Compile Include="Pages\Evergreen\ListDetailsElement.cs" />
     <Compile Include="Pages\Evergreen\MailboxesPage.cs" />
+    <Compile Include="Pages\Evergreen\ProfileDetailsPages\AccountDetailsPage.cs" />
+    <Compile Include="Pages\Evergreen\ProfileDetailsPages\AdvancedPage.cs" />
+    <Compile Include="Pages\Evergreen\ProfileDetailsPages\ChangePasswordPage.cs" />
+    <Compile Include="Pages\Evergreen\ProfileDetailsPages\PreferencesPage.cs" />
+    <Compile Include="Pages\Evergreen\ProfileDetailsPages\ProfileNavigationMenu.cs" />
     <Compile Include="Pages\Evergreen\UsersPage.cs" />
     <Compile Include="Pages\DashworksHeaderMenuElement.cs" />
     <Compile Include="Pages\LoginPage.cs" />
@@ -117,6 +122,7 @@
     <Compile Include="Steps\Base\BaseActions.cs" />
     <Compile Include="Steps\Base\OpenWebsite.cs" />
     <Compile Include="Providers\UrlProvider.cs" />
+    <Compile Include="Steps\Dashworks\EvergreenJnr_AccountDetailsPage.cs" />
     <Compile Include="Steps\Dashworks\EvergreenJnr_ActionsPanel.cs" />
     <Compile Include="Steps\Dashworks\EvergreenJnr_BaseDashboardPage.cs" />
     <Compile Include="Steps\Dashworks\EvergreenJnr_ButtonsOnDashbordsPage.cs" />
@@ -175,6 +181,11 @@
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>RemoveColumn.feature</DependentUpon>
+    </Compile>
+    <Compile Include="Tests\EvergreenJnr_ProfileDetails\BaseFunctionality.feature.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>BaseFunctionality.feature</DependentUpon>
     </Compile>
     <Compile Include="Tests\EvergreenJnr_Search\Search.feature.cs">
       <AutoGen>True</AutoGen>
@@ -269,6 +280,10 @@
     <None Include="Tests\EvergreenJnr_Columns\RemoveColumn.feature">
       <Generator>SpecFlowSingleFileGenerator</Generator>
       <LastGenOutput>RemoveColumn.feature.cs</LastGenOutput>
+    </None>
+    <None Include="Tests\EvergreenJnr_ProfileDetails\BaseFunctionality.feature">
+      <Generator>SpecFlowSingleFileGenerator</Generator>
+      <LastGenOutput>BaseFunctionality.feature.cs</LastGenOutput>
     </None>
     <None Include="Tests\EvergreenJnr_Search\Search.feature">
       <Generator>SpecFlowSingleFileGenerator</Generator>
