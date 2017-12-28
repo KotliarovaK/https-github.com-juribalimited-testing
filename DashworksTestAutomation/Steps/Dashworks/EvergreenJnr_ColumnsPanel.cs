@@ -6,7 +6,6 @@ using DashworksTestAutomation.Utils;
 using NUnit.Framework;
 using OpenQA.Selenium.Remote;
 using System;
-using System.Linq;
 using System.Text.RegularExpressions;
 using TechTalk.SpecFlow;
 

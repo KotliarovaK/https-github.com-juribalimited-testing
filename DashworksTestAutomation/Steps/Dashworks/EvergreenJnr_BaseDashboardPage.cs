@@ -161,7 +161,6 @@ namespace DashworksTestAutomation.Steps.Dashworks
         public void ThenTextIsDisplayedInFilterContainer(string text)
         {
             var page = _driver.NowAt<BaseDashboardPage>();
-            var t = page.FilterContainer.Text.TrimStart(' ').TrimEnd(' ');
             Assert.AreEqual(text, page.FilterContainer.Text.TrimStart(' ').TrimEnd(' '),
                 $"Filter is created incorrectly");
         }

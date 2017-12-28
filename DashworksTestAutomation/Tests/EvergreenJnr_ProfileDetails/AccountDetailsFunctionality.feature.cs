@@ -18,7 +18,7 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_ProfileDetails
     [System.CodeDom.Compiler.GeneratedCodeAttribute("TechTalk.SpecFlow", "2.1.0.0")]
     [System.Runtime.CompilerServices.CompilerGeneratedAttribute()]
     [Microsoft.VisualStudio.TestTools.UnitTesting.TestClassAttribute()]
-    public partial class BaseFunctionalityFeature
+    public partial class AccountDetailsFunctionalityFeature
     {
         
         private static TechTalk.SpecFlow.ITestRunner testRunner;
@@ -27,7 +27,7 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_ProfileDetails
         public static void FeatureSetup(Microsoft.VisualStudio.TestTools.UnitTesting.TestContext testContext)
         {
             testRunner = TechTalk.SpecFlow.TestRunnerManager.GetTestRunner(null, 0);
-            TechTalk.SpecFlow.FeatureInfo featureInfo = new TechTalk.SpecFlow.FeatureInfo(new System.Globalization.CultureInfo("en-US"), "BaseFunctionality", "\tRuns Profile Details related tests", ProgrammingLanguage.CSharp, new string[] {
+            TechTalk.SpecFlow.FeatureInfo featureInfo = new TechTalk.SpecFlow.FeatureInfo(new System.Globalization.CultureInfo("en-US"), "AccountDetailsFunctionality", "\tRuns Profile Details related tests", ProgrammingLanguage.CSharp, new string[] {
                         "retry:1"});
             testRunner.OnFeatureStart(featureInfo);
         }
@@ -43,9 +43,9 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_ProfileDetails
         public virtual void TestInitialize()
         {
             if (((testRunner.FeatureContext != null) 
-                        && (testRunner.FeatureContext.FeatureInfo.Title != "BaseFunctionality")))
+                        && (testRunner.FeatureContext.FeatureInfo.Title != "AccountDetailsFunctionality")))
             {
-                DashworksTestAutomation.Tests.EvergreenJnr_ProfileDetails.BaseFunctionalityFeature.FeatureSetup(null);
+                DashworksTestAutomation.Tests.EvergreenJnr_ProfileDetails.AccountDetailsFunctionalityFeature.FeatureSetup(null);
             }
         }
         
@@ -78,23 +78,23 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_ProfileDetails
         }
         
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestMethodAttribute()]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.DescriptionAttribute("EvergreenJnr_DevicesList_CheckThatUpdateErrorIsNotDisplayedAfterChangingAProfileD" +
-            "ata")]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("FeatureTitle", "BaseFunctionality")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.DescriptionAttribute("EvergreenJnr_AccountDetails_CheckThatUpdateErrorIsNotDisplayedAfterChangingAProfi" +
+            "leData")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("FeatureTitle", "AccountDetailsFunctionality")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("Evergreen")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("ProfileDetails")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("EvergreenJnr_ProfileDetails")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("BaseFunctionality")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("DAS-10756")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("Remove_Profile_Changes")]
-        public virtual void EvergreenJnr_DevicesList_CheckThatUpdateErrorIsNotDisplayedAfterChangingAProfileData()
+        public virtual void EvergreenJnr_AccountDetails_CheckThatUpdateErrorIsNotDisplayedAfterChangingAProfileData()
         {
             System.Exception lastException = null;
             for (int i = 0; (i <= 1); i = (i + 1))
             {
                 try
                 {
-                    this.EvergreenJnr_DevicesList_CheckThatUpdateErrorIsNotDisplayedAfterChangingAProfileDataInternal();
+                    this.EvergreenJnr_AccountDetails_CheckThatUpdateErrorIsNotDisplayedAfterChangingAProfileDataInternal();
                     return;
                 }
                 catch (System.Exception exc)
@@ -113,10 +113,10 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_ProfileDetails
             }
         }
         
-        private void EvergreenJnr_DevicesList_CheckThatUpdateErrorIsNotDisplayedAfterChangingAProfileDataInternal()
+        private void EvergreenJnr_AccountDetails_CheckThatUpdateErrorIsNotDisplayedAfterChangingAProfileDataInternal()
         {
-            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("EvergreenJnr_DevicesList_CheckThatUpdateErrorIsNotDisplayedAfterChangingAProfileD" +
-                    "ata", new string[] {
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("EvergreenJnr_AccountDetails_CheckThatUpdateErrorIsNotDisplayedAfterChangingAProfi" +
+                    "leData", new string[] {
                         "Evergreen",
                         "ProfileDetails",
                         "EvergreenJnr_ProfileDetails",
@@ -128,11 +128,72 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_ProfileDetails
             testRunner.When("User clicks Profile in Account Dropdown", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
             testRunner.Then("Profile page is displayed to user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
             testRunner.When("User changes Full Name to \"TestAdmin\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-            testRunner.When("User changes Email to \"testEmail@test.com\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+            testRunner.When("User changes Email to \"TestEmail@test.com\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
             testRunner.And("User clicks Update button on Profile page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
             testRunner.Then("Error message is not displayed on Profile page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
             testRunner.And("\"TestAdmin\" is displayed in Full Name field", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-            testRunner.And("\"testEmail@test.com\" is displayed in Email field", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+            testRunner.And("\"TestEmail@test.com\" is displayed in Email field", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+            this.ScenarioCleanup();
+        }
+        
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestMethodAttribute()]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.DescriptionAttribute("EvergreenJnr_AccountDetails_CheckThatCorrectErrorMessagesIsDisplayed")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("FeatureTitle", "AccountDetailsFunctionality")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("Evergreen")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("ProfileDetails")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("EvergreenJnr_ProfileDetails")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("BaseFunctionality")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("DAS-10756")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("Remove_Profile_Changes")]
+        public virtual void EvergreenJnr_AccountDetails_CheckThatCorrectErrorMessagesIsDisplayed()
+        {
+            System.Exception lastException = null;
+            for (int i = 0; (i <= 1); i = (i + 1))
+            {
+                try
+                {
+                    this.EvergreenJnr_AccountDetails_CheckThatCorrectErrorMessagesIsDisplayedInternal();
+                    return;
+                }
+                catch (System.Exception exc)
+                {
+                    lastException = exc;
+                }
+                if (((i + 1) 
+                            <= 1))
+                {
+                    testRunner.OnScenarioEnd();
+                }
+            }
+            if ((lastException != null))
+            {
+                throw lastException;
+            }
+        }
+        
+        private void EvergreenJnr_AccountDetails_CheckThatCorrectErrorMessagesIsDisplayedInternal()
+        {
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("EvergreenJnr_AccountDetails_CheckThatCorrectErrorMessagesIsDisplayed", new string[] {
+                        "Evergreen",
+                        "ProfileDetails",
+                        "EvergreenJnr_ProfileDetails",
+                        "BaseFunctionality",
+                        "DAS-10756",
+                        "Remove_Profile_Changes"});
+            this.ScenarioSetup(scenarioInfo);
+            this.FeatureBackground();
+            testRunner.When("User clicks Profile in Account Dropdown", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+            testRunner.Then("Profile page is displayed to user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+            testRunner.When("User clears Full name field", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+            testRunner.And("User clicks Update button on Profile page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+            testRunner.Then("\"Enter your full name\" error message is displayed", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+            testRunner.When("User changes Full Name to \"Administrator\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+            testRunner.When("User clears Email field", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+            testRunner.And("User clicks Update button on Profile page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+            testRunner.Then("\"Enter your email address\" error message is displayed", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+            testRunner.When("User changes Email to \"testEmail\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+            testRunner.And("User clicks Update button on Profile page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+            testRunner.Then("\"Enter a valid email address\" error message is displayed", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
             this.ScenarioCleanup();
         }
     }

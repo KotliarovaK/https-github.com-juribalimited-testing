@@ -1,9 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using DashworksTestAutomation.Extensions;
+﻿using DashworksTestAutomation.Extensions;
 using DashworksTestAutomation.Pages.Evergreen;
 using DashworksTestAutomation.Pages.Evergreen.ProfileDetailsPages;
 using NUnit.Framework;
@@ -41,7 +36,6 @@ namespace DashworksTestAutomation.Steps.Dashworks
         public void WhenUserChangesFullNameTo(string fullName)
         {
             var page = _driver.NowAt<AccountDetailsPage>();
-            page.FullNameField.Click();
             page.FullNameField.Clear();
             page.FullNameField.SendKeys(fullName);
         }
@@ -71,7 +65,6 @@ namespace DashworksTestAutomation.Steps.Dashworks
         public void WhenUserChangesEmailTo(string email)
         {
             var page = _driver.NowAt<AccountDetailsPage>();
-            page.EmailField.Click();
             page.EmailField.Clear();
             page.EmailField.SendKeys(email);
         }
@@ -81,6 +74,27 @@ namespace DashworksTestAutomation.Steps.Dashworks
         {
             var page = _driver.NowAt<AccountDetailsPage>();
             Assert.AreEqual(email, page.EmailField.GetAttribute("value"));
+        }
+
+        [When(@"User clears Full name field")]
+        public void WhenUserClearsFullNameField()
+        {
+            var page = _driver.NowAt<AccountDetailsPage>();
+            page.FullNameField.ClearWithBackspaces();
+        }
+        
+        [Then(@"""(.*)"" error message is displayed")]
+        public void ThenErrorMessageIsDisplayed(string errorMessage)
+        {
+            var page = _driver.NowAt<AccountDetailsPage>();
+            Assert.AreEqual(errorMessage, page.ErrorMessage.Text);
+        }
+        
+        [When(@"User clears Email field")]
+        public void WhenUserClearsEmailField()
+        {
+            var page = _driver.NowAt<AccountDetailsPage>();
+            page.EmailField.ClearWithBackspaces();
         }
 
         [AfterScenario("Delete_Newly_Created_List")]
