@@ -68,6 +68,7 @@ namespace DashworksTestAutomation.Helpers
             {
                 _driver.FindElement(By.XPath(".//input[@aria-label='Date']")).SendKeys(_dateValue);
             }
+
             SaveFilter();
         }
     }
@@ -121,6 +122,7 @@ namespace DashworksTestAutomation.Helpers
                 _driver.FindElement(
                     By.XPath(string.Format(CheckboxSelectorName, row["SelectedCheckboxes"]))).Click();
             }
+
             SaveFilter();
         }
     }
@@ -147,6 +149,7 @@ namespace DashworksTestAutomation.Helpers
                     checkbox.Click();
                 }
             }
+
             SaveFilter();
         }
     }
@@ -189,6 +192,7 @@ namespace DashworksTestAutomation.Helpers
                     Assert.Contains(row["Values"], addedOptions);
                 }
             }
+
             SaveFilter();
         }
     }
@@ -211,11 +215,13 @@ namespace DashworksTestAutomation.Helpers
                 _driver.FindElement(By.XPath(
                     $".//div[@id='perfectScrolBar']//span[text()='{row["SelectedList"]}']")).Click();
             }
+
             foreach (var row in _table.Rows)
             {
                 _driver.FindElement(By.XPath(".//div[@id='context']//input[@placeholder='Search']")).Click();
                 _driver.FindElement(By.XPath($".//li//span[text()='{row["Association"]}']")).Click();
             }
+
             SaveFilter();
         }
     }
@@ -243,11 +249,13 @@ namespace DashworksTestAutomation.Helpers
                         $".//div[@class='filterAddPanel ng-star-inserted']//span[contains(text(),'{row["SelectedValues"]}')]"))
                     .Click();
             }
+
             foreach (var row in Table.Rows)
             {
                 _driver.FindElement(By.XPath(".//div[@id='context']//input[@id='md-input-2']")).Click();
                 _driver.FindElement(By.XPath($".//li//span[text()='{row["Association"]}']")).Click();
             }
+
             SaveFilter();
         }
     }
@@ -268,18 +276,24 @@ namespace DashworksTestAutomation.Helpers
             _driver.WaitForDataLoading();
             foreach (var row in Table.Rows)
             {
-                _driver.FindElement(By.XPath(".//div[@class='filterAddPanel ng-star-inserted']//div[@class='mat-input-infix mat-form-field-infix']//input")).Click();
+                _driver.FindElement(By.XPath(
+                        ".//div[@class='filterAddPanel ng-star-inserted']//div[@class='mat-input-infix mat-form-field-infix']//input"))
+                    .Click();
                 _driver.FindElement(By.XPath(
                         ".//div[@class='filterAddPanel ng-star-inserted']//div[@class='mat-input-infix mat-form-field-infix']//input"))
                     .SendKeys(row["Values"]);
-                _driver.FindElement(By.XPath(".//button[@class='button-small mat-primary mat-raised-button ng-star-inserted']")).Click();
+                _driver.FindElement(
+                        By.XPath(".//button[@class='button-small mat-primary mat-raised-button ng-star-inserted']"))
+                    .Click();
             }
+
             foreach (var row in Table.Rows)
             {
                 _driver.FindElement(By.XPath(".//div[@id='context']//input[@id='md-input-2']")).Click();
-                 if (!_driver.IsElementDisplayed(By.XPath($".//li//span[text()='{row["Association"]}']"))) continue;
+                if (!_driver.IsElementDisplayed(By.XPath($".//li//span[text()='{row["Association"]}']"))) continue;
                 _driver.FindElement(By.XPath($".//li//span[text()='{row["Association"]}']")).Click();
             }
+
             SaveFilter();
         }
     }
