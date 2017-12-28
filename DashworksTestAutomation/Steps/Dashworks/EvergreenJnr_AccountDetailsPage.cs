@@ -106,6 +106,7 @@ namespace DashworksTestAutomation.Steps.Dashworks
                 page.FullNameField.Clear();
                 page.FullNameField.SendKeys("Administrator");
                 page.EmailField.Clear();
+                page.EmailField.SendKeys("TestMail@test.com");
                 page.UpdateButton.Click();
             }
             catch
