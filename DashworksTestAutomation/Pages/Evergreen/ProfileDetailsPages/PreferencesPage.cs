@@ -1,8 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using System.Collections.Generic;
 using DashworksTestAutomation.Base;
 using DashworksTestAutomation.Extensions;
 using OpenQA.Selenium;
@@ -22,6 +18,9 @@ namespace DashworksTestAutomation.Pages.Evergreen.ProfileDetailsPages
 
         [FindsBy(How = How.XPath, Using = ".//button[@title='UPDATE']")]
         public IWebElement UpdateButton { get; set; }
+
+        [FindsBy(How = How.XPath, Using = ".//div[@class='inline-success']")]
+        public IWebElement SuccessMessage { get; set; }
 
         public override List<By> GetPageIdentitySelectors()
         {

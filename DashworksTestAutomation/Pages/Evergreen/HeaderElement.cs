@@ -19,7 +19,7 @@ namespace DashworksTestAutomation.Pages.Evergreen
         [FindsBy(How = How.XPath, Using = ".//i[@class='material-icons md-logout']")]
         public IWebElement LogOutButton { get; set; }
 
-        [FindsBy(How = How.XPath, Using = ".//div[@class='user-profile ng-star-inserted']/ul/li")]
+        [FindsBy(How = How.XPath, Using = ".//div[@class='user-profile']/ul/li")]
         public IList<IWebElement> MenuItems { get; set; }
 
         public override List<By> GetPageIdentitySelectors()

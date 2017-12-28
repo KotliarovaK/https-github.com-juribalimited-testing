@@ -75,7 +75,8 @@ namespace DashworksTestAutomation.Base
 
         private string GetTestStatus()
         {
-            PropertyInfo pInfo = typeof(ScenarioContext).GetProperty("TestStatus", BindingFlags.Instance | BindingFlags.NonPublic);
+            PropertyInfo pInfo =
+                typeof(ScenarioContext).GetProperty("TestStatus", BindingFlags.Instance | BindingFlags.NonPublic);
             MethodInfo getter = pInfo.GetGetMethod(nonPublic: true);
             object testResult = getter.Invoke(_scenarioContext, null);
             var testResults = testResult.ToString();

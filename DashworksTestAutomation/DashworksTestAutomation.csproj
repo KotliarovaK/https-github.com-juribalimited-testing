@@ -182,10 +182,10 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>RemoveColumn.feature</DependentUpon>
     </Compile>
-    <Compile Include="Tests\EvergreenJnr_ProfileDetails\BaseFunctionality.feature.cs">
+    <Compile Include="Tests\EvergreenJnr_ProfileDetails\AccountDetailsFunctionality.feature.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>BaseFunctionality.feature</DependentUpon>
+      <DependentUpon>AccountDetailsFunctionality.feature</DependentUpon>
     </Compile>
     <Compile Include="Tests\EvergreenJnr_Search\Search.feature.cs">
       <AutoGen>True</AutoGen>
@@ -231,6 +231,11 @@
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>PermissionsSettings.feature</DependentUpon>
+    </Compile>
+    <Compile Include="Tests\Login_Logout.feature.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Login_Logout.feature</DependentUpon>
     </Compile>
     <Compile Include="Utils\ByFactory.cs" />
     <Compile Include="Utils\FileSystemHelper.cs" />
@@ -281,9 +286,9 @@
       <Generator>SpecFlowSingleFileGenerator</Generator>
       <LastGenOutput>RemoveColumn.feature.cs</LastGenOutput>
     </None>
-    <None Include="Tests\EvergreenJnr_ProfileDetails\BaseFunctionality.feature">
+    <None Include="Tests\EvergreenJnr_ProfileDetails\AccountDetailsFunctionality.feature">
       <Generator>SpecFlowSingleFileGenerator</Generator>
-      <LastGenOutput>BaseFunctionality.feature.cs</LastGenOutput>
+      <LastGenOutput>AccountDetailsFunctionality.feature.cs</LastGenOutput>
     </None>
     <None Include="Tests\EvergreenJnr_Search\Search.feature">
       <Generator>SpecFlowSingleFileGenerator</Generator>
@@ -320,6 +325,10 @@
     <None Include="Tests\EvergreenJnr_StaticLists\PermissionsSettings.feature">
       <Generator>SpecFlowSingleFileGenerator</Generator>
       <LastGenOutput>PermissionsSettings.feature.cs</LastGenOutput>
+    </None>
+    <None Include="Tests\Login_Logout.feature">
+      <Generator>SpecFlowSingleFileGenerator</Generator>
+      <LastGenOutput>Login_Logout.feature.cs</LastGenOutput>
     </None>
   </ItemGroup>
   <ItemGroup>

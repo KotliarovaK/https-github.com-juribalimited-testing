@@ -1,5 +1,4 @@
 ﻿using System.Collections.Generic;
-using System.Linq;
 using DashworksTestAutomation.Base;
 using DashworksTestAutomation.Extensions;
 using OpenQA.Selenium;
@@ -29,6 +28,9 @@ namespace DashworksTestAutomation.Pages.Evergreen.ProfileDetailsPages
 
         [FindsBy(How = How.XPath, Using = ".//div[@class='inline-error']")]
         public IWebElement ErrorMessage { get; set; }
+
+        [FindsBy(How = How.XPath, Using = ".//div[@class='inline-success']")]
+        public IWebElement SuccessMessage { get; set; }
 
         public override List<By> GetPageIdentitySelectors()
         {
