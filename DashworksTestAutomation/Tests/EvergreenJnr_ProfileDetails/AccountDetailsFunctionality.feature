@@ -23,7 +23,7 @@ Scenario: EvergreenJnr_AccountDetails_CheckThatUpdateErrorIsNotDisplayedAfterCha
 	And "TestAdmin" is displayed in Full Name field
 	And "TestEmail@test.com" is displayed in Email field
 
-@Evergreen @ProfileDetails @EvergreenJnr_ProfileDetails @BaseFunctionality @DAS-10756 @Remove_Profile_Changes @Not_Run
+@Evergreen @ProfileDetails @EvergreenJnr_ProfileDetails @BaseFunctionality @DAS-10756 @Remove_Profile_Changes
 Scenario: EvergreenJnr_AccountDetails_CheckThatCorrectErrorMessagesIsDisplayed
 	When User clicks Profile in Account Dropdown
 	Then Profile page is displayed to user
