@@ -145,6 +145,7 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_ProfileDetails
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("BaseFunctionality")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("DAS-10756")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("Remove_Profile_Changes")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("Not_Run")]
         public virtual void EvergreenJnr_AccountDetails_CheckThatCorrectErrorMessagesIsDisplayed()
         {
             System.Exception lastException = null;
@@ -179,7 +180,8 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_ProfileDetails
                         "EvergreenJnr_ProfileDetails",
                         "BaseFunctionality",
                         "DAS-10756",
-                        "Remove_Profile_Changes"});
+                        "Remove_Profile_Changes",
+                        "Not_Run"});
             this.ScenarioSetup(scenarioInfo);
             this.FeatureBackground();
             testRunner.When("User clicks Profile in Account Dropdown", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");

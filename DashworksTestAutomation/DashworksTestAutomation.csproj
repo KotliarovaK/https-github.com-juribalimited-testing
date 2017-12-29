@@ -250,6 +250,12 @@
     <None Include="packages.config">
       <SubType>Designer</SubType>
     </None>
+    <None Include="Resources\CorrectFile.zip">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Resources\IncorrectFile.zip">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
     <None Include="Tests\EvergreenJnr_Columns\AddColumnAction.feature">
       <Generator>SpecFlowSingleFileGenerator</Generator>
       <LastGenOutput>AddColumnAction.feature.cs</LastGenOutput>
@@ -336,10 +342,6 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Tests\EvergreenJnr_GlobalSearch\" />
-  </ItemGroup>
-  <ItemGroup>
-    <Content Include="Resources\CorrectFile.png" />
-    <Content Include="Resources\IncorrectFile.txt" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
