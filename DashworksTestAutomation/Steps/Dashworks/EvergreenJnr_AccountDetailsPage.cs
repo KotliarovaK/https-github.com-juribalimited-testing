@@ -149,7 +149,7 @@ namespace DashworksTestAutomation.Steps.Dashworks
             StringAssert.Contains("img/UnknownUser.jpg", page.UserPicture.GetAttribute("style"));
         }
 
-        [AfterScenario("Delete_Newly_Created_List")]
+        [AfterScenario("Remove_Profile_Changes")]
         public void RemoveProfileChangesAfterscenario()
         {
             try
