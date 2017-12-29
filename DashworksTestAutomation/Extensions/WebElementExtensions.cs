@@ -9,7 +9,7 @@ namespace DashworksTestAutomation.Extensions
 {
     public static class WebElementExtensions
     {
-        public static void ClearWithBackspaces(this IWebElement textbox, int charectersCount=21)
+        public static void ClearWithBackspaces(this IWebElement textbox, int charectersCount = 21)
         {
             for (int i = 0; i < charectersCount; i++)
             {

@@ -55,7 +55,7 @@ Scenario: EvergreenJnr_DevicesList_CheckThatFiltersAndColumnsAreRestoredForSaved
 	Then "Windows7Mi: SS Application List Completed" filter is added to the list
 	When User create custom list with "TestList" name
 	Then "TestList" list is displayed to user
-	And "5,161" rows are displayed in the agGrid
+	And "5,160" rows are displayed in the agGrid
 	When User navigates to the "All Devices" list
 	Then "Devices" list should be displayed to the user
 	When User navigates to the "TestList" list
