@@ -8,7 +8,7 @@ namespace DashworksTestAutomation.Pages.Evergreen.ProfileDetailsPages
 {
     class AccountDetailsPage : SeleniumBasePage
     {
-        [FindsBy(How = How.XPath, Using = ".//button[@title='Upload']")]
+        [FindsBy(How = How.XPath, Using = ".//input[@id='fileUploader']")]
         public IWebElement UploadButton { get; set; }
 
         [FindsBy(How = How.XPath, Using = ".//button[@title='Remove']")]
@@ -32,12 +32,14 @@ namespace DashworksTestAutomation.Pages.Evergreen.ProfileDetailsPages
         [FindsBy(How = How.XPath, Using = ".//div[@class='inline-success']")]
         public IWebElement SuccessMessage { get; set; }
 
+        [FindsBy(How = How.XPath, Using = ".//div[@class='user-profile']//div[@class='img-bg']")]
+        public IWebElement UserPicture { get; set; }
+
         public override List<By> GetPageIdentitySelectors()
         {
             Driver.WaitForDataLoading();
             return new List<By>
             {
-                SelectorFor(this, p => p.UploadButton),
                 SelectorFor(this, p => p.RemoveButton),
                 SelectorFor(this, p => p.UpdateButton),
                 SelectorFor(this, p => p.FullNameField),
