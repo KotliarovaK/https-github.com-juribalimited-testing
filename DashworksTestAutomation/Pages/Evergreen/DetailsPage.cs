@@ -28,8 +28,15 @@ namespace DashworksTestAutomation.Pages.Evergreen
         public void NavigateToSectionByName(string sectionName)
         {
             var section = Driver.FindElement(
-                By.XPath($".//button[@class='btn btn-default blue-color mat-icon-button ng-star-inserted'][@aria-label='{sectionName}']"));
+                By.XPath(
+                    $".//button[@class='btn btn-default blue-color mat-icon-button ng-star-inserted'][@aria-label='{sectionName}']"));
             section.Click();
+        }
+
+        public IWebElement NavigateToFieldByName(string fieldName)
+        {
+            return Driver.FindElement(
+                By.XPath($".//div[@class='ng-star-inserted']//td[@class='fld-label']//span[text()='{fieldName}']"));
         }
 
         public void ExpandAllSections()
@@ -66,8 +73,9 @@ namespace DashworksTestAutomation.Pages.Evergreen
         {
             //Hover on header to be able to see all table with all values
             //In other case elements outside the bounds of the screen will have empty text
-            Driver.MouseHover(By.XPath($".//span[contains(@class,'filter-category-label blue-color bold-text')][text()='{categoryName}']"));
-            List <string> allHeaders = Driver
+            Driver.MouseHover(By.XPath(
+                $".//span[contains(@class,'filter-category-label blue-color bold-text')][text()='{categoryName}']"));
+            List<string> allHeaders = Driver
                 .FindElements(By.XPath(
                     $".//span[contains(@class,'filter-category-label blue-color bold-text')][text()='{categoryName}']/../..//tbody/tr/td[1]"))
                 .Select(x => x.Text).ToList();
