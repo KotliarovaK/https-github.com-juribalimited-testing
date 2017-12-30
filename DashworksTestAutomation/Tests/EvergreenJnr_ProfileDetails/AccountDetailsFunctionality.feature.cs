@@ -28,7 +28,7 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_ProfileDetails
         {
             testRunner = TechTalk.SpecFlow.TestRunnerManager.GetTestRunner(null, 0);
             TechTalk.SpecFlow.FeatureInfo featureInfo = new TechTalk.SpecFlow.FeatureInfo(new System.Globalization.CultureInfo("en-US"), "AccountDetailsFunctionality", "\tRuns Profile Details related tests", ProgrammingLanguage.CSharp, new string[] {
-                        "retry:0"});
+                        "retry:1"});
             testRunner.OnFeatureStart(featureInfo);
         }
         
@@ -90,7 +90,7 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_ProfileDetails
         public virtual void EvergreenJnr_AccountDetails_CheckThatUpdateErrorIsNotDisplayedAfterChangingAProfileData()
         {
             System.Exception lastException = null;
-            for (int i = 0; (i <= 0); i = (i + 1))
+            for (int i = 0; (i <= 1); i = (i + 1))
             {
                 try
                 {
@@ -102,7 +102,7 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_ProfileDetails
                     lastException = exc;
                 }
                 if (((i + 1) 
-                            <= 0))
+                            <= 1))
                 {
                     testRunner.OnScenarioEnd();
                 }
@@ -148,7 +148,7 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_ProfileDetails
         public virtual void EvergreenJnr_AccountDetails_CheckThatCorrectErrorMessagesIsDisplayed()
         {
             System.Exception lastException = null;
-            for (int i = 0; (i <= 0); i = (i + 1))
+            for (int i = 0; (i <= 1); i = (i + 1))
             {
                 try
                 {
@@ -160,7 +160,7 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_ProfileDetails
                     lastException = exc;
                 }
                 if (((i + 1) 
-                            <= 0))
+                            <= 1))
                 {
                     testRunner.OnScenarioEnd();
                 }
