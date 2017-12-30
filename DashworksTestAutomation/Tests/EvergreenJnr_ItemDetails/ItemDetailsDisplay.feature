@@ -35,10 +35,16 @@ Scenario: EvergreenJnr_MailboxesList_CheckThat404ErrorIsNotDisplayedOccurringWhe
 	When User click content from "Email Address" column
 	Then "No mailbox owner found for this mailbox" text is displayed for "Mailbox Owner" section
 
-@Evergreen @Mailboxes @EvergreenJnr_ItemDetails @ItemDetailsDisplay @DAS-11478
-Scenario: EvergreenJnr_MailboxesList_CheckThatMailboxesWithSelectedPlatformToHaveTheMailboxDatabaseFieldOnDetailsPage
+@Evergreen @Mailboxes @EvergreenJnr_ItemDetails @ItemDetailsDisplay @DAS-11478 @DAS-11477 @DAS-11476
+Scenario Outline: EvergreenJnr_MailboxesList_ThatCheckSelectedFieldStateOnDetailsTab
 	When User clicks "Mailboxes" on the left-hand menu
 	Then "Mailboxes" list should be displayed to the user
-	When User perform search by "alfredo.m.daniel@dwlabs.local"
+	When User perform search by "<EmailAddress>"
 	And User click content from "Email Address" column
-	Then "Mailbox Database" field is displayed on Details tab
+	Then "<FieldName>" field display state is "<DisplayState>" on Details tab
+
+Examples:
+	| EmailAddress                  | FieldName         | DisplayState |
+	| alfredo.m.daniel@dwlabs.local | Mailbox Database  | true         |
+	| alfredo.m.daniel@dwlabs.local | Cloud Mail Server | false        |
+	| alex.cristea@juriba.com       | Mail Server       | false        |

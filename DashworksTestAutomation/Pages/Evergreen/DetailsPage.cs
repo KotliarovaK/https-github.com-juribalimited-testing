@@ -96,5 +96,11 @@ namespace DashworksTestAutomation.Pages.Evergreen
                 Assert.IsFalse(string.IsNullOrEmpty(element.Text));
             }
         }
+
+        public bool IsFieldPresent(string fieldName)
+        {
+            return Driver.IsElementDisplayed(
+                By.XPath($".//div[@class='ng-star-inserted']//td[@class='fld-label']//span[text()='{fieldName}']"));
+        }
     }
 }

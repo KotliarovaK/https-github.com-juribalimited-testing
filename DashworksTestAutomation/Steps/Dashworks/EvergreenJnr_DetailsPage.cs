@@ -64,8 +64,21 @@ namespace DashworksTestAutomation.Steps.Dashworks
         public void ThenFieldIsDisplayedOnDetailsTab(string fieldName)
         {
             var detailsPage = _driver.NowAt<DetailsPage>();
-            var field = detailsPage.NavigateToFieldByName(fieldName);
-            Assert.IsTrue(field.Displayed(), $"{fieldName} is not displayed");
+            Assert.IsTrue(detailsPage.IsFieldPresent(fieldName), $"{fieldName} is not displayed");
+        }
+
+        [Then(@"""(.*)"" field is not displayed on Details tab")]
+        public void ThenFieldIsNotDisplayedOnDetailsTab(string fieldName)
+        {
+            var detailsPage = _driver.NowAt<DetailsPage>();
+            Assert.IsFalse(detailsPage.IsFieldPresent(fieldName), $"{fieldName} is displayed");
+        }
+
+        [Then(@"""(.*)"" field display state is ""(.*)"" on Details tab")]
+        public void ThenFieldDisplayStateIsOnDetailsTab(string fieldName, bool state)
+        {
+            var detailsPage = _driver.NowAt<DetailsPage>();
+            Assert.AreEqual(state, detailsPage.IsFieldPresent(fieldName), $"Incorrect display state for {fieldName}");
         }
     }
 }

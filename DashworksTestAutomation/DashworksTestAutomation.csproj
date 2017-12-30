@@ -137,6 +137,11 @@
     <Compile Include="Steps\Dashworks\EvergreenJnr_NewCustomList.cs" />
     <Compile Include="Steps\Dashworks\EvergreenJnr_QueryStrings.cs" />
     <Compile Include="Steps\Logout.cs" />
+    <Compile Include="Tests\EvergreenJnr_ActionsPanel\ActionsPanel.feature.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ActionsPanel.feature</DependentUpon>
+    </Compile>
     <Compile Include="Tests\EvergreenJnr_Columns\AddColumnAction.feature.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -255,6 +260,10 @@
     </None>
     <None Include="Resources\IncorrectFile.zip">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Tests\EvergreenJnr_ActionsPanel\ActionsPanel.feature">
+      <Generator>SpecFlowSingleFileGenerator</Generator>
+      <LastGenOutput>ActionsPanel.feature.cs</LastGenOutput>
     </None>
     <None Include="Tests\EvergreenJnr_Columns\AddColumnAction.feature">
       <Generator>SpecFlowSingleFileGenerator</Generator>
