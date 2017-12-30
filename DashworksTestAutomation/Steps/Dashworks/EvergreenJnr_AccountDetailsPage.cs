@@ -1,4 +1,5 @@
-﻿using System.IO;
+﻿using System.CodeDom.Compiler;
+using System.IO;
 using DashworksTestAutomation.Extensions;
 using DashworksTestAutomation.Pages.Evergreen;
 using DashworksTestAutomation.Pages.Evergreen.ProfileDetailsPages;
@@ -103,10 +104,10 @@ namespace DashworksTestAutomation.Steps.Dashworks
         public void WhenUserUploadIncorrectAvatarToAccountDetails()
         {
             var page = _driver.NowAt<AccountDetailsPage>();
-            IAllowsFileDetection allowsDetection = (IAllowsFileDetection) _driver;
+            IAllowsFileDetection allowsDetection = (IAllowsFileDetection)_driver;
             allowsDetection.FileDetector = new LocalFileDetector();
             string path = Path.GetDirectoryName(Path.GetDirectoryName(System.IO.Directory.GetCurrentDirectory())) +
-                          "\\Resources\\IncorrectFile.txt";
+                          "\\Resources\\IncorrectFile.zip";
             page.UploadButton.SendKeys(path);
         }
 
@@ -117,7 +118,7 @@ namespace DashworksTestAutomation.Steps.Dashworks
             IAllowsFileDetection allowsDetection = (IAllowsFileDetection) _driver;
             allowsDetection.FileDetector = new LocalFileDetector();
             string path = Path.GetDirectoryName(Path.GetDirectoryName(System.IO.Directory.GetCurrentDirectory())) +
-                          "\\Resources\\CorrectFile.png";
+                          "\\Resources\\CorrectFile.zip";
             page.UploadButton.SendKeys(path);
         }
 
@@ -149,7 +150,7 @@ namespace DashworksTestAutomation.Steps.Dashworks
             StringAssert.Contains("img/UnknownUser.jpg", page.UserPicture.GetAttribute("style"));
         }
 
-        [AfterScenario("Delete_Newly_Created_List")]
+        [AfterScenario("Remove_Profile_Changes")]
         public void RemoveProfileChangesAfterscenario()
         {
             try
