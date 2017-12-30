@@ -1,5 +1,4 @@
-﻿using System.CodeDom.Compiler;
-using System.IO;
+﻿using System.IO;
 using DashworksTestAutomation.Extensions;
 using DashworksTestAutomation.Pages.Evergreen;
 using DashworksTestAutomation.Pages.Evergreen.ProfileDetailsPages;
@@ -104,11 +103,11 @@ namespace DashworksTestAutomation.Steps.Dashworks
         public void WhenUserUploadIncorrectAvatarToAccountDetails()
         {
             var page = _driver.NowAt<AccountDetailsPage>();
-            IAllowsFileDetection allowsDetection = (IAllowsFileDetection)_driver;
+            IAllowsFileDetection allowsDetection = (IAllowsFileDetection) _driver;
             allowsDetection.FileDetector = new LocalFileDetector();
-            string path = Path.GetDirectoryName(Path.GetDirectoryName(System.IO.Directory.GetCurrentDirectory())) +
-                          "\\Resources\\IncorrectFile.zip";
-            page.UploadButton.SendKeys(path);
+            string file = Path.GetDirectoryName(Path.GetDirectoryName(System.IO.Directory.GetCurrentDirectory())) +
+                          @"\Resources\IncorrectFile.zip";
+            page.UploadButton.SendKeys(file);
         }
 
         [When(@"User Upload correct avatar to Account Details")]
@@ -117,9 +116,9 @@ namespace DashworksTestAutomation.Steps.Dashworks
             var page = _driver.NowAt<AccountDetailsPage>();
             IAllowsFileDetection allowsDetection = (IAllowsFileDetection) _driver;
             allowsDetection.FileDetector = new LocalFileDetector();
-            string path = Path.GetDirectoryName(Path.GetDirectoryName(System.IO.Directory.GetCurrentDirectory())) +
-                          "\\Resources\\CorrectFile.zip";
-            page.UploadButton.SendKeys(path);
+            string file = Path.GetDirectoryName(Path.GetDirectoryName(System.IO.Directory.GetCurrentDirectory())) +
+                          @"\Resources\CorrectFile.png";
+            page.UploadButton.SendKeys(file);
         }
 
         [Then(@"Success message with ""(.*)"" text is displayed on Account Detauils page")]
