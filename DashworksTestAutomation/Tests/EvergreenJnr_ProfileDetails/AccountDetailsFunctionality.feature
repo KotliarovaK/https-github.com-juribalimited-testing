@@ -20,6 +20,7 @@ Scenario: EvergreenJnr_AccountDetails_CheckThatErrorIsNotDisplayedAfterChangingP
 	When User changes Email to "TestEmail@test.com"
 	And User clicks Update button on Profile page
 	Then Error message is not displayed on Profile page
+	Then Success message with "Account details have been changed" text is displayed on Account Detauils page
 	And "TestAdmin" is displayed in Full Name field
 	And "TestEmail@test.com" is displayed in Email field
 
@@ -52,3 +53,18 @@ Scenario: EvergreenJnr_AccountDetails_CheckThatCorrectErrorMessagesAreDisplayed
 	When User clicks Remove on Account details page
 	Then Success message with "Image removed" text is displayed on Account Detauils page
 	Then User picture changed to default
+
+@Evergreen @ProfileDetails @EvergreenJnr_ProfileDetails @AccountDetailsFunctionality @DAS-11524 @Remove_Profile_Changes
+Scenario: EvergreenJnr_AccountDetails_CheckThatErrorIsNotDisplayedAfterChangingProfileDataTwice
+	When User clicks Profile in Account Dropdown
+	Then Profile page is displayed to user
+	When User changes Full Name to "TestAdmin"
+	When User changes Email to "TestEmail@test.com"
+	And User clicks Update button on Profile page
+	Then Error message is not displayed on Profile page
+	Then Success message with "Account details have been changed" text is displayed on Account Detauils page
+	And "TestAdmin" is displayed in Full Name field
+	And "TestEmail@test.com" is displayed in Email field
+	When User changes Full Name to "TestAdm"
+	Then Error message is not displayed on Profile page
+	Then Success message with "Account details have been changed" text is displayed on Account Detauils page

@@ -1,5 +1,6 @@
 ﻿using System.Collections.Generic;
 using DashworksTestAutomation.Base;
+using DashworksTestAutomation.Extensions;
 using OpenQA.Selenium;
 using OpenQA.Selenium.Support.PageObjects;
 
@@ -21,22 +22,24 @@ namespace DashworksTestAutomation.Pages
 
         #region Login Splash page
 
-        [FindsBy(How = How.Id, Using = "loginsplash-panel")]
+        [FindsBy(How = How.XPath, Using = ".//div[@class='loginsplash-panel']")]
         public IWebElement SplasLoginGroupbox { get; set; }
 
-        [FindsBy(How = How.Id, Using = "ctl00_MainContent_TB_UserName")]
+        [FindsBy(How = How.Id, Using = "TB_UserName")]
         public IWebElement SplashUserNameTextbox { get; set; }
 
-        [FindsBy(How = How.Id, Using = "ctl00_MainContent_TB_Password")]
+        [FindsBy(How = How.Id, Using = "TB_Password")]
         public IWebElement SplashPasswordTextbox { get; set; }
 
-        [FindsBy(How = How.Id, Using = "ctl00_MainContent_Btn_Login")]
+        [FindsBy(How = How.Id, Using = "Btn_Login")]
         public IWebElement SplashLoginButton { get; set; }
 
         #endregion
 
         public override List<By> GetPageIdentitySelectors()
         {
+            Driver.WaitForDataLoading();
+
             return new List<By> { };
         }
     }
