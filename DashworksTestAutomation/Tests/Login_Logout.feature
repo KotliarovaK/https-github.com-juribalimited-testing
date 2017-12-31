@@ -16,3 +16,10 @@ Scenario: EvergreenJnr_Login_Logout_CheckThatLoginAndLogOutWorksCorrectly
 	When User clicks the Logout button
 	Then Signed Out page is displayed to the user
 	Then User is logged out
+	When User clicks the Switch to Evergreen link
+	Then Login Page is displayed to the user
+	When User provides the Login and Password and clicks on the login button
+	Then Evergreen Dashboards page should be displayed to the user
+	When User clicks the Logout button
+	Then Signed Out page is displayed to the user
+	Then User is logged out
