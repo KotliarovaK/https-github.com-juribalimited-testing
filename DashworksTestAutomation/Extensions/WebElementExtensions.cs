@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using DashworksTestAutomation.Utils;
 using OpenQA.Selenium;
+using OpenQA.Selenium.Interactions;
 using OpenQA.Selenium.Remote;
 using OpenQA.Selenium.Support.UI;
 
@@ -15,6 +16,12 @@ namespace DashworksTestAutomation.Extensions
             {
                 textbox.SendKeys(Keys.Backspace);
             }
+        }
+
+        public static void ClearWithHomeButton(this IWebElement textbox, RemoteWebDriver driver)
+        {
+            Actions action = new Actions(driver);
+            action.Click(textbox).SendKeys(Keys.End).KeyDown(Keys.Shift).SendKeys(Keys.Home).KeyUp(Keys.Shift).SendKeys(Keys.Backspace).Perform();
         }
 
         public static void SendkeysWithDelay(this IWebElement textbox, string input)

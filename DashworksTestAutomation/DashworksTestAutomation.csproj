@@ -255,9 +255,6 @@
     <None Include="packages.config">
       <SubType>Designer</SubType>
     </None>
-    <None Include="Resources\CorrectFile.zip">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </None>
     <None Include="Resources\IncorrectFile.zip">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
@@ -351,6 +348,9 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Tests\EvergreenJnr_GlobalSearch\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Resources\CorrectFile.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
