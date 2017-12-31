@@ -102,6 +102,7 @@
     <Compile Include="Pages\Evergreen\DetailsTabsMenu\DevicesDetailsTabsMenu.cs" />
     <Compile Include="Pages\Evergreen\DevicesPage.cs" />
     <Compile Include="Pages\Evergreen\FiltersElement.cs" />
+    <Compile Include="Pages\Evergreen\GlobalSearchElement.cs" />
     <Compile Include="Pages\Evergreen\HeaderElement.cs" />
     <Compile Include="Pages\Evergreen\LeftHandMenuElement.cs" />
     <Compile Include="Pages\Evergreen\ListDetailsElement.cs" />
@@ -129,6 +130,7 @@
     <Compile Include="Steps\Dashworks\EvergreenJnr_ColumnsPanel.cs" />
     <Compile Include="Steps\Dashworks\EvergreenJnr_DetailsPage.cs" />
     <Compile Include="Steps\Dashworks\EvergreenJnr_FiltersPanel.cs" />
+    <Compile Include="Steps\Dashworks\EvergreenJnr_GlobalSearch.cs" />
     <Compile Include="Steps\Dashworks\EvergreenJnr_ListDetailsPanel.cs" />
     <Compile Include="Steps\Dashworks\EvergreenJnr_ListSearch.cs" />
     <Compile Include="Steps\Dashworks\EvergreenJnr_Login.cs" />
@@ -171,6 +173,11 @@
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>RemoveFilter.feature</DependentUpon>
+    </Compile>
+    <Compile Include="Tests\EvergreenJnr_GlobalSearch\MainFunctionality.feature.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>MainFunctionality.feature</DependentUpon>
     </Compile>
     <Compile Include="Tests\EvergreenJnr_ListDetails\ListDetailsFunctionality.feature.cs">
       <AutoGen>True</AutoGen>
@@ -286,6 +293,10 @@
       <Generator>SpecFlowSingleFileGenerator</Generator>
       <LastGenOutput>RemoveFilter.feature.cs</LastGenOutput>
     </None>
+    <None Include="Tests\EvergreenJnr_GlobalSearch\MainFunctionality.feature">
+      <Generator>SpecFlowSingleFileGenerator</Generator>
+      <LastGenOutput>MainFunctionality.feature.cs</LastGenOutput>
+    </None>
     <None Include="Tests\EvergreenJnr_ListDetails\ListDetailsFunctionality.feature">
       <Generator>SpecFlowSingleFileGenerator</Generator>
       <LastGenOutput>ListDetailsFunctionality.feature.cs</LastGenOutput>
@@ -346,9 +357,7 @@
   <ItemGroup>
     <Service Include="{82A7F48D-3B50-4B1E-B82E-3ADA8210C358}" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Tests\EvergreenJnr_GlobalSearch\" />
-  </ItemGroup>
+  <ItemGroup />
   <ItemGroup>
     <Content Include="Resources\CorrectFile.png" />
   </ItemGroup>
