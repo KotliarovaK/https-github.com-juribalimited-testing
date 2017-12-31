@@ -21,7 +21,7 @@ namespace DashworksTestAutomation.Extensions
         public static void ClearWithHomeButton(this IWebElement textbox, RemoteWebDriver driver)
         {
             Actions action = new Actions(driver);
-            action.SendKeys(Keys.End).KeyDown(Keys.Shift).SendKeys(Keys.Home).KeyUp(Keys.Shift).SendKeys(Keys.Backspace).Perform();
+            action.Click(textbox).SendKeys(Keys.End).KeyDown(Keys.Shift).SendKeys(Keys.Home).KeyUp(Keys.Shift).SendKeys(Keys.Backspace).Perform();
         }
 
         public static void SendkeysWithDelay(this IWebElement textbox, string input)

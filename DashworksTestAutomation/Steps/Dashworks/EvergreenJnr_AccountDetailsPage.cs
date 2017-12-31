@@ -53,7 +53,6 @@ namespace DashworksTestAutomation.Steps.Dashworks
         public void ThenErrorMessageIsNotDisplayedOnProfilePage()
         {
             var page = _driver.NowAt<AccountDetailsPage>();
-            _driver.WaitWhileControlIsNotDisplayed<AccountDetailsPage>(() => page.ErrorMessage);
             Assert.IsFalse(page.ErrorMessage.Displayed());
         }
 
