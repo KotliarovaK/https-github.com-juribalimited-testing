@@ -24,7 +24,6 @@ namespace DashworksTestAutomation.Base
                     case "Chrome":
                         var chromeOptions = new ChromeOptions();
                         return new RemoteWebDriver(new Uri(Browser.HubUri), chromeOptions);
-                        ;
 
                     case "Firefox":
                         var firefoxOptions = new FirefoxOptions();

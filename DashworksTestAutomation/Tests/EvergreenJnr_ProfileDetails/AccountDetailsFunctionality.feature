@@ -12,8 +12,8 @@ Background: Pre-Conditions
 	When User clicks the Switch to Evergreen link
 	Then Evergreen Dashboards page should be displayed to the user
 
-@Evergreen @ProfileDetails @EvergreenJnr_ProfileDetails @BaseFunctionality @DAS-10756 @Remove_Profile_Changes
-Scenario: EvergreenJnr_AccountDetails_CheckThatUpdateErrorIsNotDisplayedAfterChangingAProfileData
+@Evergreen @ProfileDetails @EvergreenJnr_ProfileDetails @AccountDetailsFunctionality @DAS-10756 @Remove_Profile_Changes
+Scenario: EvergreenJnr_AccountDetails_CheckThatErrorIsNotDisplayedAfterChangingProfileData
 	When User clicks Profile in Account Dropdown
 	Then Profile page is displayed to user
 	When User changes Full Name to "TestAdmin"
@@ -23,8 +23,8 @@ Scenario: EvergreenJnr_AccountDetails_CheckThatUpdateErrorIsNotDisplayedAfterCha
 	And "TestAdmin" is displayed in Full Name field
 	And "TestEmail@test.com" is displayed in Email field
 
-@Evergreen @ProfileDetails @EvergreenJnr_ProfileDetails @BaseFunctionality @DAS-10756 @Remove_Profile_Changes
-Scenario: EvergreenJnr_AccountDetails_CheckThatCorrectErrorMessagesIsDisplayed
+@Evergreen @ProfileDetails @EvergreenJnr_ProfileDetails @AccountDetailsFunctionality @DAS-10756 @Remove_Profile_Changes
+Scenario: EvergreenJnr_AccountDetails_CheckThatCorrectErrorMessagesAreDisplayed
 	When User clicks Profile in Account Dropdown
 	Then Profile page is displayed to user
 	When User clears Full name field
@@ -37,12 +37,18 @@ Scenario: EvergreenJnr_AccountDetails_CheckThatCorrectErrorMessagesIsDisplayed
 	When User changes Email to "testEmail"
 	And User clicks Update button on Profile page
 	Then "Enter a valid email address" error message is displayed
+	When User changes Email to "@test.com"
+	And User clicks Update button on Profile page
+	Then "Enter a valid email address" error message is displayed
+	When User changes Email to "TestEmail@test"
+	And User clicks Update button on Profile page
+	Then "Enter a valid email address" error message is displayed
 	When User changes Email to "TestEmail@test.com"
 	When User Upload incorrect avatar to Account Details
 	Then "File uploaded not recognised as an image" error message is displayed
 	When User Upload correct avatar to Account Details
 	Then Success message with "Image uploaded" text is displayed on Account Detauils page
 	Then User picture is changed to uploaded photo
-	When User click Remove on Account details page
+	When User clicks Remove on Account details page
 	Then Success message with "Image removed" text is displayed on Account Detauils page
 	Then User picture changed to default

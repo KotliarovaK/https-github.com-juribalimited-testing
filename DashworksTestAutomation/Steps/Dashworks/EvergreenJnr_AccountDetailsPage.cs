@@ -53,6 +53,7 @@ namespace DashworksTestAutomation.Steps.Dashworks
         public void ThenErrorMessageIsNotDisplayedOnProfilePage()
         {
             var page = _driver.NowAt<AccountDetailsPage>();
+            _driver.WaitWhileControlIsNotDisplayed<AccountDetailsPage>(() => page.ErrorMessage);
             Assert.IsFalse(page.ErrorMessage.Displayed());
         }
 
@@ -82,13 +83,14 @@ namespace DashworksTestAutomation.Steps.Dashworks
         public void WhenUserClearsFullNameField()
         {
             var page = _driver.NowAt<AccountDetailsPage>();
-            page.FullNameField.ClearWithBackspaces();
+            page.FullNameField.ClearWithHomeButton(_driver);
         }
 
         [Then(@"""(.*)"" error message is displayed")]
         public void ThenErrorMessageIsDisplayed(string errorMessage)
         {
             var page = _driver.NowAt<AccountDetailsPage>();
+            _driver.WaitWhileControlIsNotDisplayed<AccountDetailsPage>(() => page.ErrorMessage);
             Assert.AreEqual(errorMessage, page.ErrorMessage.Text);
         }
 
@@ -96,7 +98,7 @@ namespace DashworksTestAutomation.Steps.Dashworks
         public void WhenUserClearsEmailField()
         {
             var page = _driver.NowAt<AccountDetailsPage>();
-            page.EmailField.ClearWithBackspaces();
+            page.EmailField.ClearWithHomeButton(_driver);
         }
 
         [When(@"User Upload incorrect avatar to Account Details")]
@@ -125,6 +127,7 @@ namespace DashworksTestAutomation.Steps.Dashworks
         public void ThenSuccessMessageWithTextIsDisplayedOnAccountDetauilsPage(string text)
         {
             var page = _driver.NowAt<AccountDetailsPage>();
+            _driver.WaitWhileControlIsNotDisplayed<AccountDetailsPage>(() => page.SuccessMessage);
             Assert.AreEqual(text, page.SuccessMessage.Text, "Success Message is not displayed");
         }
 
@@ -135,8 +138,8 @@ namespace DashworksTestAutomation.Steps.Dashworks
             StringAssert.DoesNotContain("img/UnknownUser.jpg", page.UserPicture.GetAttribute("style"));
         }
 
-        [When(@"User click Remove on Account details page")]
-        public void WhenUserClickRemoveOnAccountDetailsPage()
+        [When(@"User clicks Remove on Account details page")]
+        public void WhenUserClicksRemoveOnAccountDetailsPage()
         {
             var page = _driver.NowAt<AccountDetailsPage>();
             page.RemoveButton.Click();
@@ -162,9 +165,7 @@ namespace DashworksTestAutomation.Steps.Dashworks
                 page.RemoveButton.Click();
                 page.UpdateButton.Click();
             }
-            catch
-            {
-            }
+            catch {}
         }
     }
 }
