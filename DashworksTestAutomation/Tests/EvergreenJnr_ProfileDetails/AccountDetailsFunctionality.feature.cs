@@ -130,7 +130,7 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_ProfileDetails
             testRunner.And("User clicks Update button on Profile page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
             testRunner.Then("Error message is not displayed on Profile page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
             testRunner.Then("Success message with \"Account details have been changed\" text is displayed on Acc" +
-                    "ount Detauils page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+                    "ount Details page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
             testRunner.And("\"TestAdmin\" is displayed in Full Name field", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
             testRunner.And("\"TestEmail@test.com\" is displayed in Email field", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
             this.ScenarioCleanup();
@@ -204,10 +204,10 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_ProfileDetails
             testRunner.When("User Upload incorrect avatar to Account Details", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
             testRunner.Then("\"File uploaded not recognised as an image\" error message is displayed", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
             testRunner.When("User Upload correct avatar to Account Details", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-            testRunner.Then("Success message with \"Image uploaded\" text is displayed on Account Detauils page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+            testRunner.Then("Success message with \"Image uploaded\" text is displayed on Account Details page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
             testRunner.Then("User picture is changed to uploaded photo", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
             testRunner.When("User clicks Remove on Account details page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-            testRunner.Then("Success message with \"Image removed\" text is displayed on Account Detauils page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+            testRunner.Then("Success message with \"Image removed\" text is displayed on Account Details page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
             testRunner.Then("User picture changed to default", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
             this.ScenarioCleanup();
         }
@@ -267,13 +267,13 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_ProfileDetails
             testRunner.And("User clicks Update button on Profile page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
             testRunner.Then("Error message is not displayed on Profile page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
             testRunner.Then("Success message with \"Account details have been changed\" text is displayed on Acc" +
-                    "ount Detauils page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+                    "ount Details page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
             testRunner.And("\"TestAdmin\" is displayed in Full Name field", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
             testRunner.And("\"TestEmail@test.com\" is displayed in Email field", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
             testRunner.When("User changes Full Name to \"TestAdm\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
             testRunner.Then("Error message is not displayed on Profile page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
             testRunner.Then("Success message with \"Account details have been changed\" text is displayed on Acc" +
-                    "ount Detauils page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+                    "ount Details page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
             this.ScenarioCleanup();
         }
     }

@@ -122,8 +122,8 @@ namespace DashworksTestAutomation.Steps.Dashworks
             page.UploadButton.SendKeys(file);
         }
 
-        [Then(@"Success message with ""(.*)"" text is displayed on Account Detauils page")]
-        public void ThenSuccessMessageWithTextIsDisplayedOnAccountDetauilsPage(string text)
+        [Then(@"Success message with ""(.*)"" text is displayed on Account Details page")]
+        public void ThenSuccessMessageWithTextIsDisplayedOnAccountDetailsPage(string text)
         {
             var page = _driver.NowAt<AccountDetailsPage>();
             _driver.WaitWhileControlIsNotDisplayed<AccountDetailsPage>(() => page.SuccessMessage);
