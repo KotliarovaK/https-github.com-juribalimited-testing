@@ -535,16 +535,21 @@ Scenario: EvergreenJnr_DevicesList_CheckThatDateAndTimeFiltersWithEqualsValuesAr
 	Then "16" rows are displayed in the agGrid
 
 @Evergreen @Devices @EvergreenJnr_FiltersFeature @FilterFunctionality @DAS-11087 @DAS-11090
-Scenario: EvergreenJnr_DevicesList_CheckThatDateAndTimeFiltersWithDoesNotEqualValuesAreWorkingCorrectly
+Scenario Outline: EvergreenJnr_DevicesList_CheckThatDateAndTimeFiltersWithDoesNotEqualValuesAreWorkingCorrectly
 	When User clicks "Devices" on the left-hand menu
 	Then "Devices" list should be displayed to the user
 	When User clicks the Filters button
 	Then Filters panel is displayed to the user
-	When User add "Windows7Mi: Date & Time Task" filter where type is "Does not equal" with added column and following value:
-	| Values      |
-	| 22 Nov 2012 |
-	Then "Windows7Mi: Date & Time Task" filter is added to the list
-	And "17,209" rows are displayed in the agGrid
+	When User add "<FilterName>" filter where type is "Does not equal" with added column and following value:
+	| Values  |
+	| <Value> |
+	Then "<FilterName>" filter is added to the list
+	And "<RowCount>" rows are displayed in the agGrid
+
+Examples: 
+	| FilterName                   | Value       | RowCount |
+	| Windows7Mi: Date & Time Task | 22 Nov 2012 | 17,209   |
+	| Build Date                   | 06 Nov 2004 | 17,224   |
 
 @Evergreen @Devices @Evergreen_FiltersFeature @FiltersDisplay @DAS-11187
 Scenario Outline: EvergreenJnr_DevicesList_CheckThatCustomFiltersAreContainsAllExpectedAssociations
