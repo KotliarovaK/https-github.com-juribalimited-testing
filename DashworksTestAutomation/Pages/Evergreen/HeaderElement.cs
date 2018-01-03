@@ -13,10 +13,10 @@ namespace DashworksTestAutomation.Pages.Evergreen
         [FindsBy(How = How.XPath, Using = ".//span[@class='col-ds-visible user-area user-name-words']")]
         public IWebElement UserNameDropdown { get; set; }
 
-        [FindsBy(How = How.XPath, Using = ".//i[@class='material-icons md-profile']")]
+        [FindsBy(How = How.XPath, Using = ".//i[@class='material-icons mat-profile']")]
         public IWebElement ProfileButton { get; set; }
 
-        [FindsBy(How = How.XPath, Using = ".//i[@class='material-icons md-logout']")]
+        [FindsBy(How = How.XPath, Using = ".//i[@class='material-icons mat-logout']")]
         public IWebElement LogOutButton { get; set; }
 
         [FindsBy(How = How.XPath, Using = ".//div[@class='user-profile']/ul/li")]
