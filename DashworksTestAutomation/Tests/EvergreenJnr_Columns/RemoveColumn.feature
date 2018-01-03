@@ -1,11 +1,9 @@
-﻿@retry:1
+﻿@retry:0
 Feature: RemoveColumn
 	Runs Remove column related tests
 
 Background: Pre-Conditions
 	Given User is on Dashworks Homepage
-	And Login link is visible
-	When User clicks on the Login link
 	Then Login Page is displayed to the user
 	When User provides the Login and Password and clicks on the login button
 	Then Dashworks homepage is displayed to the user in a logged in state
@@ -466,3 +464,15 @@ Scenario: EvergreenJnr_ApplicationsList_CheckThatColumnIsDisplayedInColumnsPanel
 	| ColumnName                 |
 	| Windows7Mi: Technical Test |
 	And "8" subcategories is displayed for "Project Tasks: Windows7Mi" category
+
+@Evergreen @Devices @EvergreenJnr_Columns @RemoveColumn @DAS-11037
+Scenario: EvergreenJnr_DevicesList_CheckThat500ErrorNotDisplayedAfterRemovingUsernameOrHostnameColumn 
+	When User clicks "Devices" on the left-hand menu
+	Then "Devices" list should be displayed to the user
+	When User clicks the Columns button
+	Then Columns panel is displayed to the user
+	When User removes "Hostname" column by Column panel
+	Then "Devices" list should be displayed to the user
+	And ColumnName is removed from the list
+	| ColumnName |
+	| Hostname   |
