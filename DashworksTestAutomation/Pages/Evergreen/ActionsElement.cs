@@ -34,9 +34,18 @@ namespace DashworksTestAutomation.Pages.Evergreen
 
         public string listsDropdown = ".//div[@class='form-group form-group-fix-select ng-star-inserted']";
 
+        public override List<By> GetPageIdentitySelectors()
+        {
+            Driver.WaitForDataLoading();
+            return new List<By>
+            {
+                SelectorFor(this, p => p.ActionsPanel),
+            };
+        }
+
         public void SelectList(string listName)
         {
-            string listNameSelector = $".//div[@class='mat-select-content ng-trigger ng-trigger-fadeInContent']//md-option[text()='{listName}']";
+            string listNameSelector = $".//div[@class='mat-select-content ng-trigger ng-trigger-fadeInContent']//mat-option[text()='{listName}']";
             string dropdownBoxList = listsDropdown;
             Driver.FindElement(By.XPath(dropdownBoxList)).Click();
             Driver.WaitWhileControlIsNotDisplayed(By.XPath(listNameSelector));
@@ -45,16 +54,7 @@ namespace DashworksTestAutomation.Pages.Evergreen
 
         public IList<IWebElement> GetDropdownOptions()
         {
-            return Driver.FindElements(By.XPath(".//md-option"));
-        }
-
-        public override List<By> GetPageIdentitySelectors()
-        {
-            Driver.WaitForDataLoading();
-            return new List<By>
-            {
-                SelectorFor(this, p => p.ActionsPanel),
-            };
+            return Driver.FindElements(By.XPath(".//mat-option"));
         }
 
         public string GetSelectedRowsCount()
