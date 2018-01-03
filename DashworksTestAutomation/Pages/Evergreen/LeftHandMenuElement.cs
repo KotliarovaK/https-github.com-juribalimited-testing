@@ -8,16 +8,16 @@ namespace DashworksTestAutomation.Pages.Evergreen
 {
     internal class LeftHandMenuElement : SeleniumBasePage
     {
-        [FindsBy(How = How.XPath, Using = ".//p[@title='Devices']")]
+        [FindsBy(How = How.XPath, Using = ".//span[text()='Devices']")]
         public IWebElement Devices { get; set; }
 
-        [FindsBy(How = How.XPath, Using = ".//p[@title='Users']")]
+        [FindsBy(How = How.XPath, Using = ".//span[text()='Users']")]
         public IWebElement Users { get; set; }
 
-        [FindsBy(How = How.XPath, Using = ".//p[@title='Applications']")]
+        [FindsBy(How = How.XPath, Using = ".//span[text()='Applications']")]
         public IWebElement Applications { get; set; }
 
-        [FindsBy(How = How.XPath, Using = ".//p[@title='Mailboxes']")]
+        [FindsBy(How = How.XPath, Using = ".//span[text()='Mailboxes']")]
         public IWebElement Mailboxes { get; set; }
 
         public override List<By> GetPageIdentitySelectors()
