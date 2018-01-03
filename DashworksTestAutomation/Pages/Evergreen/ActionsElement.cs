@@ -12,6 +12,9 @@ namespace DashworksTestAutomation.Pages.Evergreen
         [FindsBy(How = How.XPath, Using = ".//div[@class='actions-container']")]
         public IWebElement ActionsPanel { get; set; }
 
+        [FindsBy(How = How.XPath, Using = ".//div[text()='Select at least one row']")]
+        public IWebElement ActionsContainerMessage { get; set; }
+
         private const string RowsSelectedCountSelctor = ".//div[@class='actions-container-row-select']";
 
         [FindsBy(How = How.XPath, Using = ".//input[@placeholder='List name']")]

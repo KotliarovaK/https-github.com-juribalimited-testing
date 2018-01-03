@@ -29,6 +29,14 @@ namespace DashworksTestAutomation.Steps.Dashworks
             Logger.Write("Actions panel is visible");
         }
 
+        [Then(@"Actions message container is displayed to the user")]
+        public void ThenActionsMessageContainerIsDisplayedToTheUser()
+        {
+            var columnElement = _driver.NowAt<ActionsElement>();
+            Assert.IsTrue(columnElement.ActionsContainerMessage.Displayed(), "Actions message container was not displayed");
+            Logger.Write("Actions message container is visible");
+        }
+
         [When(@"User is deselect all rows")]
         [When(@"User select all rows")]
         public void WhenUserSelectAllRows()
