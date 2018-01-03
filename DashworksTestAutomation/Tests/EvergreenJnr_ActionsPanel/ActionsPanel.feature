@@ -12,7 +12,7 @@ Background: Pre-Conditions
 	When User clicks the Switch to Evergreen link
 	Then Evergreen Dashboards page should be displayed to the user
 
-@Evergreen @Users @EvergreenJnr_ActionsPanel @DAS-10859
+@Evergreen @Users @EvergreenJnr_ActionsPanel @DAS10859
 Scenario: EvergreenJnr_UsersList_CheckThatAfterInterruptingProcessSelectingAllRowsAtActionsPanelProgressIndicatorIsNotContinuesToRunning
 	When User clicks "Users" on the left-hand menu
 	Then "Users" list should be displayed to the user
