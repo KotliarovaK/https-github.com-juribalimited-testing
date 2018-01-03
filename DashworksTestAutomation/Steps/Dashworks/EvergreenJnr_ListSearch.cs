@@ -104,9 +104,10 @@ namespace DashworksTestAutomation.Steps.Dashworks
         [When(@"User click content from ""(.*)"" column")]
         public void WhenUserClickContentFromColumn(string columnName)
         {
-            var tableElement = _driver.NowAt<BaseDashboardPage>();
+            var tableElement = _driver.NowAtWithoutWait<BaseDashboardPage>();
 
             tableElement.ClickContentByColumnName(columnName);
+            _driver.WaitForDataLoading();
         }
 
         #region Search field
