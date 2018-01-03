@@ -11,10 +11,10 @@ namespace DashworksTestAutomation.Pages.Evergreen.ProfileDetailsPages
         [FindsBy(How = How.XPath, Using = ".//input[@id='fileUploader']")]
         public IWebElement UploadButton { get; set; }
 
-        [FindsBy(How = How.XPath, Using = ".//button[@title='Remove']")]
+        [FindsBy(How = How.XPath, Using = ".//button[@aria-describedby='cdk-describedby-message-13']")]
         public IWebElement RemoveButton { get; set; }
 
-        [FindsBy(How = How.XPath, Using = ".//button[@title='UPDATE']")]
+        [FindsBy(How = How.XPath, Using = ".//button[@aria-describedby='cdk-describedby-message-15']")]
         public IWebElement UpdateButton { get; set; }
 
         [FindsBy(How = How.XPath, Using = ".//span[text()='Full Name']/ancestor::div[@class='form-item']//input")]
@@ -26,10 +26,10 @@ namespace DashworksTestAutomation.Pages.Evergreen.ProfileDetailsPages
         [FindsBy(How = How.XPath, Using = ".//ul[@class='roles']/li")]
         public IList<IWebElement> RolesList { get; set; }
 
-        [FindsBy(How = How.XPath, Using = ".//div[@class='inline-error']")]
+        [FindsBy(How = How.XPath, Using = ".//div[@class='inline-error ng-star-inserted']")]
         public IWebElement ErrorMessage { get; set; }
 
-        [FindsBy(How = How.XPath, Using = ".//div[@class='inline-success']")]
+        [FindsBy(How = How.XPath, Using = ".//div[@class='inline-success ng-star-inserted']")]
         public IWebElement SuccessMessage { get; set; }
 
         [FindsBy(How = How.XPath, Using = ".//div[@class='user-profile']//div[@class='img-bg']")]
