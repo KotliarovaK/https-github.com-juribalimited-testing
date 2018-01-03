@@ -17,13 +17,13 @@ namespace DashworksTestAutomation.Pages.Evergreen
         [FindsBy(How = How.XPath, Using = ".//input[@name='search']")]
         public IWebElement SearchTextbox { get; set; }
 
-        [FindsBy(How = How.XPath, Using = ".//div[@class='searchPanel input-wrapper']//button[@title='Close']")]
+        [FindsBy(How = How.XPath, Using = ".//div[@class='searchPanel input-wrapper']//button[@aria-describedby='cdk-describedby-message-12']")]
         public IWebElement SearchTextboxResetButton { get; set; }
 
-        [FindsBy(How = How.XPath, Using = ".//button[@title='Minimize Group']")]
+        [FindsBy(How = How.XPath, Using = ".//button[@aria-describedby='cdk-describedby-message-23']")]
         public IList<IWebElement> MinimizeGroupButton { get; set; }
 
-        [FindsBy(How = How.XPath, Using = ".//button[@title='Maximize Group']")]
+        [FindsBy(How = How.XPath, Using = ".//button[@aria-describedby='cdk-describedby-message-307']")]
         public IList<IWebElement> MaximizeGroupButton { get; set; }
 
         private const string GroupTitleSelector =
