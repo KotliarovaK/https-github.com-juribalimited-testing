@@ -34,12 +34,18 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="Gherkin, Version=1.0.0.0, Culture=neutral, PublicKeyToken=86496cfa5b4a5851, processorArchitecture=MSIL">
+      <HintPath>..\packages\SpecFlow.CustomPlugin.2.1.0\lib\net45\Gherkin.dll</HintPath>
+    </Reference>
     <Reference Include="Microsoft.VisualStudio.QualityTools.UnitTestFramework, Version=10.1.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL" />
     <Reference Include="Newtonsoft.Json, Version=10.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
       <HintPath>..\packages\Newtonsoft.Json.10.0.3\lib\net45\Newtonsoft.Json.dll</HintPath>
     </Reference>
     <Reference Include="nunit.framework, Version=3.9.0.0, Culture=neutral, PublicKeyToken=2638cd05610744eb, processorArchitecture=MSIL">
       <HintPath>..\packages\NUnit.3.9.0\lib\net45\nunit.framework.dll</HintPath>
+    </Reference>
+    <Reference Include="SpecFlow.Retry.Generator.SpecFlowPlugin, Version=0.1.2.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\SpecFlow.Retry.2.2.0.1\lib\net45\SpecFlow.Retry.Generator.SpecFlowPlugin.dll</HintPath>
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.configuration" />
@@ -49,8 +55,17 @@
     <Reference Include="System.Data" />
     <Reference Include="System.Web.Extensions" />
     <Reference Include="System.Xml" />
-    <Reference Include="TechTalk.SpecFlow, Version=2.2.0.0, Culture=neutral, PublicKeyToken=0778194805d6db41, processorArchitecture=MSIL">
-      <HintPath>..\packages\SpecFlow.2.2.1\lib\net45\TechTalk.SpecFlow.dll</HintPath>
+    <Reference Include="TechTalk.SpecFlow, Version=2.1.0.0, Culture=neutral, PublicKeyToken=0778194805d6db41, processorArchitecture=MSIL">
+      <HintPath>..\packages\SpecFlow.2.1.0\lib\net45\TechTalk.SpecFlow.dll</HintPath>
+    </Reference>
+    <Reference Include="TechTalk.SpecFlow.Generator, Version=2.1.0.0, Culture=neutral, PublicKeyToken=0778194805d6db41, processorArchitecture=MSIL">
+      <HintPath>..\packages\SpecFlow.CustomPlugin.2.1.0\lib\net45\TechTalk.SpecFlow.Generator.dll</HintPath>
+    </Reference>
+    <Reference Include="TechTalk.SpecFlow.Parser, Version=2.1.0.0, Culture=neutral, PublicKeyToken=0778194805d6db41, processorArchitecture=MSIL">
+      <HintPath>..\packages\SpecFlow.CustomPlugin.2.1.0\lib\net45\TechTalk.SpecFlow.Parser.dll</HintPath>
+    </Reference>
+    <Reference Include="TechTalk.SpecFlow.Utils, Version=2.1.0.0, Culture=neutral, PublicKeyToken=0778194805d6db41, processorArchitecture=MSIL">
+      <HintPath>..\packages\SpecFlow.CustomPlugin.2.1.0\lib\net45\TechTalk.SpecFlow.Utils.dll</HintPath>
     </Reference>
     <Reference Include="WebDriver, Version=3.8.0.0, Culture=neutral, processorArchitecture=MSIL">
       <HintPath>..\packages\Selenium.WebDriver.3.8.0\lib\net45\WebDriver.dll</HintPath>
@@ -87,10 +102,16 @@
     <Compile Include="Pages\Evergreen\DetailsTabsMenu\DevicesDetailsTabsMenu.cs" />
     <Compile Include="Pages\Evergreen\DevicesPage.cs" />
     <Compile Include="Pages\Evergreen\FiltersElement.cs" />
+    <Compile Include="Pages\Evergreen\GlobalSearchElement.cs" />
     <Compile Include="Pages\Evergreen\HeaderElement.cs" />
     <Compile Include="Pages\Evergreen\LeftHandMenuElement.cs" />
     <Compile Include="Pages\Evergreen\ListDetailsElement.cs" />
     <Compile Include="Pages\Evergreen\MailboxesPage.cs" />
+    <Compile Include="Pages\Evergreen\ProfileDetailsPages\AccountDetailsPage.cs" />
+    <Compile Include="Pages\Evergreen\ProfileDetailsPages\AdvancedPage.cs" />
+    <Compile Include="Pages\Evergreen\ProfileDetailsPages\ChangePasswordPage.cs" />
+    <Compile Include="Pages\Evergreen\ProfileDetailsPages\PreferencesPage.cs" />
+    <Compile Include="Pages\Evergreen\ProfileDetailsPages\ProfileNavigationMenu.cs" />
     <Compile Include="Pages\Evergreen\UsersPage.cs" />
     <Compile Include="Pages\DashworksHeaderMenuElement.cs" />
     <Compile Include="Pages\LoginPage.cs" />
@@ -102,12 +123,14 @@
     <Compile Include="Steps\Base\BaseActions.cs" />
     <Compile Include="Steps\Base\OpenWebsite.cs" />
     <Compile Include="Providers\UrlProvider.cs" />
+    <Compile Include="Steps\Dashworks\EvergreenJnr_AccountDetailsPage.cs" />
     <Compile Include="Steps\Dashworks\EvergreenJnr_ActionsPanel.cs" />
     <Compile Include="Steps\Dashworks\EvergreenJnr_BaseDashboardPage.cs" />
     <Compile Include="Steps\Dashworks\EvergreenJnr_ButtonsOnDashbordsPage.cs" />
     <Compile Include="Steps\Dashworks\EvergreenJnr_ColumnsPanel.cs" />
     <Compile Include="Steps\Dashworks\EvergreenJnr_DetailsPage.cs" />
     <Compile Include="Steps\Dashworks\EvergreenJnr_FiltersPanel.cs" />
+    <Compile Include="Steps\Dashworks\EvergreenJnr_GlobalSearch.cs" />
     <Compile Include="Steps\Dashworks\EvergreenJnr_ListDetailsPanel.cs" />
     <Compile Include="Steps\Dashworks\EvergreenJnr_ListSearch.cs" />
     <Compile Include="Steps\Dashworks\EvergreenJnr_Login.cs" />
@@ -116,6 +139,11 @@
     <Compile Include="Steps\Dashworks\EvergreenJnr_NewCustomList.cs" />
     <Compile Include="Steps\Dashworks\EvergreenJnr_QueryStrings.cs" />
     <Compile Include="Steps\Logout.cs" />
+    <Compile Include="Tests\EvergreenJnr_ActionsPanel\ActionsPanel.feature.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ActionsPanel.feature</DependentUpon>
+    </Compile>
     <Compile Include="Tests\EvergreenJnr_Columns\AddColumnAction.feature.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -146,6 +174,16 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>RemoveFilter.feature</DependentUpon>
     </Compile>
+    <Compile Include="Tests\EvergreenJnr_GlobalSearch\MainFunctionality.feature.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>MainFunctionality.feature</DependentUpon>
+    </Compile>
+    <Compile Include="Tests\EvergreenJnr_ListDetails\ListDetailsFunctionality.feature.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ListDetailsFunctionality.feature</DependentUpon>
+    </Compile>
     <Compile Include="Tests\EvergreenJnr_ListPanel\CustomListDisplay.feature.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -155,6 +193,11 @@
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>RemoveColumn.feature</DependentUpon>
+    </Compile>
+    <Compile Include="Tests\EvergreenJnr_ProfileDetails\AccountDetailsFunctionality.feature.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>AccountDetailsFunctionality.feature</DependentUpon>
     </Compile>
     <Compile Include="Tests\EvergreenJnr_Search\Search.feature.cs">
       <AutoGen>True</AutoGen>
@@ -201,6 +244,11 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>PermissionsSettings.feature</DependentUpon>
     </Compile>
+    <Compile Include="Tests\Login_Logout.feature.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Login_Logout.feature</DependentUpon>
+    </Compile>
     <Compile Include="Utils\ByFactory.cs" />
     <Compile Include="Utils\FileSystemHelper.cs" />
     <Compile Include="Utils\FluentWait.cs" />
@@ -213,6 +261,13 @@
     </None>
     <None Include="packages.config">
       <SubType>Designer</SubType>
+    </None>
+    <None Include="Resources\IncorrectFile.zip">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Tests\EvergreenJnr_ActionsPanel\ActionsPanel.feature">
+      <Generator>SpecFlowSingleFileGenerator</Generator>
+      <LastGenOutput>ActionsPanel.feature.cs</LastGenOutput>
     </None>
     <None Include="Tests\EvergreenJnr_Columns\AddColumnAction.feature">
       <Generator>SpecFlowSingleFileGenerator</Generator>
@@ -238,6 +293,14 @@
       <Generator>SpecFlowSingleFileGenerator</Generator>
       <LastGenOutput>RemoveFilter.feature.cs</LastGenOutput>
     </None>
+    <None Include="Tests\EvergreenJnr_GlobalSearch\MainFunctionality.feature">
+      <Generator>SpecFlowSingleFileGenerator</Generator>
+      <LastGenOutput>MainFunctionality.feature.cs</LastGenOutput>
+    </None>
+    <None Include="Tests\EvergreenJnr_ListDetails\ListDetailsFunctionality.feature">
+      <Generator>SpecFlowSingleFileGenerator</Generator>
+      <LastGenOutput>ListDetailsFunctionality.feature.cs</LastGenOutput>
+    </None>
     <None Include="Tests\EvergreenJnr_ListPanel\CustomListDisplay.feature">
       <Generator>SpecFlowSingleFileGenerator</Generator>
       <LastGenOutput>CustomListDisplay.feature.cs</LastGenOutput>
@@ -245,6 +308,10 @@
     <None Include="Tests\EvergreenJnr_Columns\RemoveColumn.feature">
       <Generator>SpecFlowSingleFileGenerator</Generator>
       <LastGenOutput>RemoveColumn.feature.cs</LastGenOutput>
+    </None>
+    <None Include="Tests\EvergreenJnr_ProfileDetails\AccountDetailsFunctionality.feature">
+      <Generator>SpecFlowSingleFileGenerator</Generator>
+      <LastGenOutput>AccountDetailsFunctionality.feature.cs</LastGenOutput>
     </None>
     <None Include="Tests\EvergreenJnr_Search\Search.feature">
       <Generator>SpecFlowSingleFileGenerator</Generator>
@@ -282,13 +349,17 @@
       <Generator>SpecFlowSingleFileGenerator</Generator>
       <LastGenOutput>PermissionsSettings.feature.cs</LastGenOutput>
     </None>
+    <None Include="Tests\Login_Logout.feature">
+      <Generator>SpecFlowSingleFileGenerator</Generator>
+      <LastGenOutput>Login_Logout.feature.cs</LastGenOutput>
+    </None>
   </ItemGroup>
   <ItemGroup>
     <Service Include="{82A7F48D-3B50-4B1E-B82E-3ADA8210C358}" />
   </ItemGroup>
+  <ItemGroup />
   <ItemGroup>
-    <Folder Include="Tests\EvergreenJnr_GlobalSearch\" />
-    <Folder Include="Tests\EvergreenJnr_ListDetails\" />
+    <Content Include="Resources\CorrectFile.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">

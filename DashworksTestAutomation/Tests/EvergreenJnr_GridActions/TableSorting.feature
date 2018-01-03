@@ -1,10 +1,11 @@
-﻿Feature: TableSorting
+﻿@retry:1
+Feature: TableSorting
 	Runs Table Sorting related tests
 
 Background: Pre-Conditions
 	Given User is on Dashworks Homepage
-	And Login link is visible
-	When User clicks on the Login link
+	#And Login link is visible
+	#When User clicks on the Login link
 	Then Login Page is displayed to the user
 	When User provides the Login and Password and clicks on the login button
 	Then Dashworks homepage is displayed to the user in a logged in state
@@ -108,3 +109,20 @@ Scenario: EvergreenJnr_UsersList_CheckSortByDateFunctionality
 	Then data in table is sorted by 'MigrationP: Migrated Date' column in descending order
 	When User click on 'MigrationP: Migrated Date' column header
 	Then data in table is sorted by 'MigrationP: Migrated Date' column in ascending order
+
+@Evergreen @Devices @EvergreenJnr_GridActions @TableSorting @DAS-11568
+Scenario: EvergreenJnr_DevicesList_CheckThat500ErrorIsNotDisplayedWhenSortingOwnerComplianceColumnOnDevicesList
+	When User clicks "Devices" on the left-hand menu
+	Then "Devices" list should be displayed to the user
+	When User clicks the Columns button
+	Then Columns panel is displayed to the user
+	When ColumnName is entered into the search box and the selection is clicked
+	| ColumnName       |
+	| Owner Compliance |
+	Then ColumnName is added to the list
+	| ColumnName       |
+	| Owner Compliance |
+	Then "17,225" rows are displayed in the agGrid
+	When User click on 'Owner Compliance' column header
+	Then data in table is sorted by 'Owner Compliance' column in descending order
+	Then "17,225" rows are displayed in the agGrid

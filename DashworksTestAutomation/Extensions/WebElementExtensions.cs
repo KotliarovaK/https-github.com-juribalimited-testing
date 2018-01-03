@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using DashworksTestAutomation.Utils;
 using OpenQA.Selenium;
+using OpenQA.Selenium.Interactions;
 using OpenQA.Selenium.Remote;
 using OpenQA.Selenium.Support.UI;
 
@@ -9,6 +10,28 @@ namespace DashworksTestAutomation.Extensions
 {
     public static class WebElementExtensions
     {
+        public static void ClearWithBackspaces(this IWebElement textbox, int charectersCount = 21)
+        {
+            for (int i = 0; i < charectersCount; i++)
+            {
+                textbox.SendKeys(Keys.Backspace);
+            }
+        }
+
+        public static void ClearWithHomeButton(this IWebElement textbox, RemoteWebDriver driver)
+        {
+            Actions action = new Actions(driver);
+            action.Click(textbox).SendKeys(Keys.End).KeyDown(Keys.Shift).SendKeys(Keys.Home).KeyUp(Keys.Shift).SendKeys(Keys.Backspace).Perform();
+        }
+
+        public static void SendkeysWithDelay(this IWebElement textbox, string input)
+        {
+            foreach (char letter in input)
+            {
+                textbox.SendKeys(letter.ToString());
+            }
+        }
+
         //This is specific method for 'ng-table-select-count' elements
         public static void SelectboxSelect(this IWebElement selectbox, string option, bool ignoreCase = false)
         {
@@ -92,6 +115,16 @@ namespace DashworksTestAutomation.Extensions
                 if (checkbox.Selected)
                     checkbox.Click();
             }
+        }
+
+        /// <summary>
+        /// This method is used for checkboxes in Filters panel
+        /// </summary>
+        /// <param name="checkbox"></param>
+        /// <returns></returns>
+        public static bool GetFilterCheckboxSelectedState(this IWebElement checkbox)
+        {
+            return !checkbox.GetAttribute("class").Contains("hideElementIcon");
         }
 
         #endregion

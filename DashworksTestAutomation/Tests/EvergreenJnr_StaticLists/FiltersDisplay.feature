@@ -1,11 +1,11 @@
-﻿#@retry:3
+﻿@retry:1
 Feature: FiltersDisplay
 	Runs Static Filters Display related tests
 
 Background: Pre-Conditions
 	Given User is on Dashworks Homepage
-	And Login link is visible
-	When User clicks on the Login link
+	#And Login link is visible
+	#When User clicks on the Login link
 	Then Login Page is displayed to the user
 	When User provides the Login and Password and clicks on the login button
 	Then Dashworks homepage is displayed to the user in a logged in state
@@ -24,7 +24,7 @@ Scenario: EvergreenJnr_DevicesList_CheckThatDynamicFiltersAreClearedForStaticLis
 	Then "Windows7Mi: Category" filter is added to the list
 	When User create custom list with "TestList" name
 	Then "TestList" list is displayed to user
-	And "5,130" rows are displayed in the agGrid
+	And "5,129" rows are displayed in the agGrid
 	When User navigates to the "All Devices" list
 	Then "Devices" list should be displayed to the user
 	When User clicks the Actions button
@@ -37,13 +37,13 @@ Scenario: EvergreenJnr_DevicesList_CheckThatDynamicFiltersAreClearedForStaticLis
 	Then "Static List TestName" list is displayed to user
 	And "2" rows are displayed in the agGrid
 	When User navigates to the "TestList" list
-	Then "5,130" rows are displayed in the agGrid
+	Then "5,129" rows are displayed in the agGrid
 	When User navigates to the "Static List TestName" list
 	Then "2" rows are displayed in the agGrid
 	Then Filters Button is disabled
 
 @Evergreen @Devices @EvergreenJnr_ListPanel @CustomListDisplay @DAS-10978 @Delete_Newly_Created_List
-Scenario: EvergreenJnr_DevicesList__CheckThatFiltersAndColumnsAreRestoredForSavedList
+Scenario: EvergreenJnr_DevicesList_CheckThatFiltersAndColumnsAreRestoredForSavedList
 	When User clicks "Devices" on the left-hand menu
 	Then "Devices" list should be displayed to the user
 	When User clicks the Filters button

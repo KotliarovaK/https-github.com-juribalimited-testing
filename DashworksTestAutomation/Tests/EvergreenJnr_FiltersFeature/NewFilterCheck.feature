@@ -1,11 +1,11 @@
-﻿#@retry:3
+﻿@retry:1
 Feature: NewFilterCheck
 	Runs New filters full check related tests
 
 Background: Pre-Conditions
 	Given User is on Dashworks Homepage
-	And Login link is visible
-	When User clicks on the Login link
+	#And Login link is visible
+	#When User clicks on the Login link
 	Then Login Page is displayed to the user
 	When User provides the Login and Password and clicks on the login button
 	Then Dashworks homepage is displayed to the user in a logged in state

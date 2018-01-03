@@ -1,11 +1,11 @@
-﻿#@retry:3
+﻿@retry:1
 Feature: ItemDetailsDisplay
 	Runs Item Details Display related tests
 
 Background: Pre-Conditions
 	Given User is on Dashworks Homepage
-	And Login link is visible
-	When User clicks on the Login link
+	#And Login link is visible
+	#When User clicks on the Login link
 	Then Login Page is displayed to the user
 	When User provides the Login and Password and clicks on the login button
 	Then Dashworks homepage is displayed to the user in a logged in state
@@ -24,6 +24,27 @@ Scenario Outline: EvergreenJnr_AllLists_AllEmptyFieldsInItemDetailsAreDisplayedA
 Examples: 
 	| PageName     | SearchCriteria                     | ColumnName    |
 	| Mailboxes    | azuresync3@juriba1.onmicrosoft.com | Email Address |
-	| Applications | Python 2.2a4                       | Application   |
 	| Users        | ABW1509426                         | Username      |
 	| Devices      | 01BQIYGGUW5PRP6                    | Hostname      |
+
+@Evergreen @Mailboxes @EvergreenJnr_ItemDetails @ItemDetailsDisplay @DAS-11531
+Scenario: EvergreenJnr_MailboxesList_CheckThat404ErrorIsNotDisplayedOccurringWhenViewingMailboxDetailsWhereThereIsNoMailboxOwner
+	When User clicks "Mailboxes" on the left-hand menu
+	Then "Mailboxes" list should be displayed to the user
+	When User perform search by "alex.cristea@juriba.com"
+	When User click content from "Email Address" column
+	Then "No mailbox owner found for this mailbox" text is displayed for "Mailbox Owner" section
+
+@Evergreen @Mailboxes @EvergreenJnr_ItemDetails @ItemDetailsDisplay @DAS-11478 @DAS-11477 @DAS-11476
+Scenario Outline: EvergreenJnr_MailboxesList_ThatCheckSelectedFieldStateOnDetailsTab
+	When User clicks "Mailboxes" on the left-hand menu
+	Then "Mailboxes" list should be displayed to the user
+	When User perform search by "<EmailAddress>"
+	And User click content from "Email Address" column
+	Then "<FieldName>" field display state is "<DisplayState>" on Details tab
+
+Examples:
+	| EmailAddress                  | FieldName         | DisplayState |
+	| alfredo.m.daniel@dwlabs.local | Mailbox Database  | true         |
+	| alfredo.m.daniel@dwlabs.local | Cloud Mail Server | false        |
+	| alex.cristea@juriba.com       | Mail Server       | false        |

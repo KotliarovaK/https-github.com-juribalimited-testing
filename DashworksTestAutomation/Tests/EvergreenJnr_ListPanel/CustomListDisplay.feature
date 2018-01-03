@@ -1,10 +1,11 @@
-﻿Feature: CustomListDisplay
+﻿@retry:1
+Feature: CustomListDisplay
 	Runs Custom List Creation block related tests
 
 Background: Pre-Conditions
 	Given User is on Dashworks Homepage
-	And Login link is visible
-	When User clicks on the Login link
+	#And Login link is visible
+	#When User clicks on the Login link
 	Then Login Page is displayed to the user
 	When User provides the Login and Password and clicks on the login button
 	Then Dashworks homepage is displayed to the user in a logged in state
@@ -82,7 +83,7 @@ Scenario: EvergreenJnr_DevicesList_CheckThatCustomListCreationBlockIsNotDisplaye
 	Then Edit List menu is displayed
 
 @Evergreen @Devices @EvergreenJnr_ListPanel @CustomListDisplay @DAS-10998
-Scenario: EvergreenJnr_DevicesList_agGrid_CheckThatSearchDoesNotTriggerNewCustomList
+Scenario: EvergreenJnr_DevicesList_CheckThatSearchDoesNotTriggerNewCustomList
 	When User clicks "Devices" on the left-hand menu
 	Then "Devices" list should be displayed to the user
 	And User enters SearchCriteria into the agGrid Search Box and the correct NumberOfRows are returned
@@ -91,7 +92,7 @@ Scenario: EvergreenJnr_DevicesList_agGrid_CheckThatSearchDoesNotTriggerNewCustom
 	Then Save to New Custom List element is NOT displayed
 
 @Evergreen @Devices @EvergreenJnr_ListPanel @CustomListDisplay @DAS-11081 @Delete_Newly_Created_List
-Scenario: EvergreenJnr_DevicesList_agGrid_CheckThatNewListCreatedMessageForStaticListIsDisplayed
+Scenario: EvergreenJnr_DevicesList_CheckThatNewListCreatedMessageForStaticListIsDisplayed
 	When User clicks "Devices" on the left-hand menu
 	Then "Devices" list should be displayed to the user
 	When User clicks the Actions button
@@ -101,9 +102,9 @@ Scenario: EvergreenJnr_DevicesList_agGrid_CheckThatNewListCreatedMessageForStati
 	Then "TestList" list is displayed to user
 	When User click on 'Hostname' column header
 	Then data in table is sorted by 'Hostname' column in descending order
-	Then User save changes in list with "UnbelievableTestList" name
-	Then "UnbelievableTestList" list is displayed to user
+	And User save changes in list with "UnbelievableTestList" name
 	And "New list created" message is displayed
+	And "UnbelievableTestList" list is displayed to user
 
 @Evergreen @Users @EvergreenJnr_ListPanel @CustomListDisplay @DAS-11005 @DAS-11489 @Delete_Newly_Created_List
 Scenario: EvergreenJnr_UsersList_CheckThatListsIsDisplayedInAlphabeticalOrder
@@ -400,3 +401,84 @@ Scenario: EvergreenJnr_DevicesList_CheckThatEditListMenuNotDisplayedForActiveLis
 	When User navigates to the "Static List TestName" list
 	Then "Static List TestName" list is displayed to user
 	And Edit List menu is not displayed
+
+@Evergreen @Devices @EvergreenJnr_ListPanel @CustomListDisplay @DAS-11026 @Delete_Newly_Created_List
+Scenario: EvergreenJnr_DevicesList_CheckThatEditListMenuNotDisplayedForDifferentFilterTypes
+	When User clicks "Devices" on the left-hand menu
+	Then "Devices" list should be displayed to the user
+	When User clicks the Filters button
+	Then Filters panel is displayed to the user
+	When User add "Babel(Engl: Readiness" filter where type is "Equals" with added column and "None" Lookup option
+	Then "Babel(Engl: Readiness" filter is added to the list
+	When User create custom list with "Readiness List TestName" name
+	Then "Readiness List TestName" list is displayed to user
+	When User navigates to the "All Devices" list
+	Then "Devices" list should be displayed to the user
+	When User clicks the Filters button
+	Then Filters panel is displayed to the user
+	When User add "Import Type" filter where type is "Equals" with added column and following checkboxes:
+	| SelectedCheckboxes |
+	| Generic            |
+	Then "Import Type" filter is added to the list
+	When User create custom list with "MultiSelect List TestName" name
+	Then "MultiSelect List TestName" list is displayed to user
+	When User navigates to the "All Devices" list
+	Then "Devices" list should be displayed to the user
+	When User clicks the Filters button
+	Then Filters panel is displayed to the user
+	When User add "Compliance" filter where type is "Equals" with added column and following checkboxes:
+	| SelectedCheckboxes |
+	| Green              |
+	| Amber              |
+	Then "Compliance" filter is added to the list
+	When User create custom list with "Compliance List TestName" name
+	Then "Compliance List TestName" list is displayed to user
+	When User navigates to the "All Devices" list
+	Then "Devices" list should be displayed to the user
+	When User clicks the Filters button
+	Then Filters panel is displayed to the user
+	When User add "Secure Boot Enabled" filter where type is "Equals" with added column and following checkboxes:
+	| SelectedCheckboxes |
+	| FALSE              |
+	Then "Secure Boot Enabled" filter is added to the list
+	When User create custom list with "Secure Boot List TestName" name
+	Then "Secure Boot List TestName" list is displayed to user
+	When User clicks "Applications" on the left-hand menu
+	Then "Applications" list should be displayed to the user
+	When User click on 'Application' column header
+	Then data in table is sorted by 'Application' column in descending order
+	When User create custom list with "TestList" name
+	When User clicks "Devices" on the left-hand menu
+	Then "Devices" list should be displayed to the user
+	When User clicks the Filters button
+	Then Filters panel is displayed to the user
+	When User add "Application (Saved List)" filter where type is "Equals" with SelectedList list and following Association:
+	| SelectedList | Association        |
+	| TestList     | Not used on device |
+	Then "Application" filter is added to the list
+	When User create custom list with "Applications List TestName" name
+	Then "Applications List TestName" list is displayed to user
+	When User navigates to the "All Devices" list
+	Then "Devices" list should be displayed to the user
+	When User navigates to the "MultiSelect List TestName" list
+	Then Edit List menu is not displayed
+	When User navigates to the "Compliance List TestName" list
+	Then Edit List menu is not displayed
+	When User navigates to the "Secure Boot List TestName" list
+	Then Edit List menu is not displayed
+	When User navigates to the "Applications List TestName" list
+	Then Edit List menu is not displayed
+
+@Evergreen @Devices @EvergreenJnr_ListPanel @CustomListDisplay @DAS-10647 @Delete_Newly_Created_List
+Scenario: EvergreenJnr_DevicesList_CheckThatDatabaseErrorOccurringOccurringWhenAttemptingToSaveListsInEvergreenAreNotDisplayed 
+	When User clicks "Devices" on the left-hand menu
+	Then "Devices" list should be displayed to the user
+	When User clicks the Filters button
+	Then Filters panel is displayed to the user
+	When User add "Babel(Engl: Readiness" filter where type is "Equals" with added column and "Amber" Lookup option
+	Then "Babel(Engl: Readiness" filter is added to the list
+	When User click on 'Hostname' column header
+	Then data in table is sorted by 'Hostname' column in ascending order
+	When User create custom list with "TestName" name
+	Then "TestName" list is displayed to user
+	And "2" rows are displayed in the agGrid

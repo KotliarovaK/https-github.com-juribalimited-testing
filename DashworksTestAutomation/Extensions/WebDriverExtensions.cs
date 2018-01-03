@@ -38,7 +38,7 @@ namespace DashworksTestAutomation.Extensions
 
         public static T NowAt<T>(this RemoteWebDriver driver) where T : SeleniumBasePage, new()
         {
-            var page = new T { Driver = driver, Actions = new Actions(driver) };
+            var page = new T {Driver = driver, Actions = new Actions(driver)};
             driver.WaitForLoadingElements(page, null);
             page.InitElements();
             return page;
@@ -49,9 +49,10 @@ namespace DashworksTestAutomation.Extensions
             try
             {
                 FileSystemHelper.EnsureScreensotsFolderExists();
-                var formatedFileName = fileName.Replace("\\", string.Empty).Replace("/", string.Empty).Replace("\"", "'");
+                var formatedFileName =
+                    fileName.Replace("\\", string.Empty).Replace("/", string.Empty).Replace("\"", "'");
                 var filePath = FileSystemHelper.GetPathForScreenshot(formatedFileName);
-                var screenshot = ((ITakesScreenshot)driver).GetScreenshot();
+                var screenshot = ((ITakesScreenshot) driver).GetScreenshot();
 
                 screenshot.SaveAsFile(filePath, ScreenshotImageFormat.Png);
                 Logger.Write($"Check screenshot by folklowing path: {filePath}");
@@ -83,7 +84,7 @@ namespace DashworksTestAutomation.Extensions
 
         public static void WaitForLoadingElements(this RemoteWebDriver driver, SeleniumBasePage page, By bySelector)
         {
-            var bys = bySelector != null ? new List<By> { bySelector } : page.GetPageIdentitySelectors();
+            var bys = bySelector != null ? new List<By> {bySelector} : page.GetPageIdentitySelectors();
 
             foreach (var by in bys)
             {
@@ -92,6 +93,7 @@ namespace DashworksTestAutomation.Extensions
 
                 driver.WaitForElement(by);
             }
+
             page.InitElements();
         }
 
@@ -157,9 +159,10 @@ namespace DashworksTestAutomation.Extensions
             }
         }
 
-        public static void WaitWhileControlIsNotClickable<T>(this RemoteWebDriver driver, Expression<Func<IWebElement>> elementGetter)
+        public static void WaitWhileControlIsNotClickable<T>(this RemoteWebDriver driver,
+            Expression<Func<IWebElement>> elementGetter)
         {
-            var propertyName = ((MemberExpression)elementGetter.Body).Member.Name;
+            var propertyName = ((MemberExpression) elementGetter.Body).Member.Name;
             var by = GetByFor<T>(propertyName);
             driver.WaitWhileControlIsNotClickable(by);
         }
@@ -173,13 +176,15 @@ namespace DashworksTestAutomation.Extensions
             }
             catch (WebDriverTimeoutException e)
             {
-                throw new Exception($"Element with '{by}' selector is NOT clickable in {waitTimeout.TotalSeconds} seconds", e);
+                throw new Exception(
+                    $"Element with '{by}' selector is NOT clickable in {waitTimeout.TotalSeconds} seconds", e);
             }
         }
 
-        public static void WaitWhileControlIsNotDisplayed<T>(this RemoteWebDriver driver, Expression<Func<IWebElement>> elementGetter)
+        public static void WaitWhileControlIsNotDisplayed<T>(this RemoteWebDriver driver,
+            Expression<Func<IWebElement>> elementGetter)
         {
-            var propertyName = ((MemberExpression)elementGetter.Body).Member.Name;
+            var propertyName = ((MemberExpression) elementGetter.Body).Member.Name;
             var by = GetByFor<T>(propertyName);
             driver.WaitWhileControlIsNotDisplayed(by);
         }
@@ -193,7 +198,8 @@ namespace DashworksTestAutomation.Extensions
             }
             catch (WebDriverTimeoutException e)
             {
-                throw new Exception($"Element with '{by}' selector is NOT displayed in {waitTimeout.TotalSeconds} seconds", e);
+                throw new Exception(
+                    $"Element with '{by}' selector is NOT displayed in {waitTimeout.TotalSeconds} seconds", e);
             }
         }
 
@@ -206,13 +212,16 @@ namespace DashworksTestAutomation.Extensions
             }
             catch (WebDriverTimeoutException e)
             {
-                throw new Exception($"Element with '{by}' selector is NOT displayed AND populated with text in {waitTimeout.TotalSeconds} seconds", e);
+                throw new Exception(
+                    $"Element with '{by}' selector is NOT displayed AND populated with text in {waitTimeout.TotalSeconds} seconds",
+                    e);
             }
         }
 
-        public static void WaitWhileControlIsDisplayed<T>(this RemoteWebDriver driver, Expression<Func<IWebElement>> elementGetter)
+        public static void WaitWhileControlIsDisplayed<T>(this RemoteWebDriver driver,
+            Expression<Func<IWebElement>> elementGetter)
         {
-            var propertyName = ((MemberExpression)elementGetter.Body).Member.Name;
+            var propertyName = ((MemberExpression) elementGetter.Body).Member.Name;
             var by = GetByFor<T>(propertyName);
             driver.WaitWhileControlIsDisplayed(by);
         }
@@ -226,7 +235,8 @@ namespace DashworksTestAutomation.Extensions
             }
             catch (WebDriverTimeoutException e)
             {
-                throw new Exception($"Element with '{by}' selector still displayed after {waitTimeout.TotalSeconds} seconds", e);
+                throw new Exception(
+                    $"Element with '{by}' selector still displayed after {waitTimeout.TotalSeconds} seconds", e);
             }
         }
 
@@ -239,7 +249,9 @@ namespace DashworksTestAutomation.Extensions
             }
             catch (WebDriverTimeoutException e)
             {
-                throw new Exception($"Element '{element}' and text '{textToAppear}' NOT displayed after {waitTimeout.TotalSeconds} seconds", e);
+                throw new Exception(
+                    $"Element '{element}' and text '{textToAppear}' NOT displayed after {waitTimeout.TotalSeconds} seconds",
+                    e);
             }
         }
 
@@ -252,7 +264,9 @@ namespace DashworksTestAutomation.Extensions
             }
             catch (WebDriverTimeoutException e)
             {
-                throw new Exception($"Element with '{by}' selector and text '{textToAppear}' NOT displayed after {waitTimeout.TotalSeconds} seconds", e);
+                throw new Exception(
+                    $"Element with '{by}' selector and text '{textToAppear}' NOT displayed after {waitTimeout.TotalSeconds} seconds",
+                    e);
             }
         }
 
@@ -265,7 +279,9 @@ namespace DashworksTestAutomation.Extensions
             }
             catch (WebDriverTimeoutException e)
             {
-                throw new Exception($"Element '{element}' in selected state '{selectorState}' NOT displayed after {waitTimeout.TotalSeconds} seconds", e);
+                throw new Exception(
+                    $"Element '{element}' in selected state '{selectorState}' NOT displayed after {waitTimeout.TotalSeconds} seconds",
+                    e);
             }
         }
 
@@ -291,7 +307,8 @@ namespace DashworksTestAutomation.Extensions
                     }
                     catch (Exception e)
                     {
-                        Logger.Write($"WARNING: Loading spinner is displayed longer that {waitTimeout.Seconds * attempts} seconds: {driver.Url}");
+                        Logger.Write(
+                            $"WARNING: Loading spinner is displayed longer that {waitTimeout.Seconds * attempts} seconds: {driver.Url}");
                         throw e;
                     }
                 }
@@ -364,7 +381,8 @@ namespace DashworksTestAutomation.Extensions
             action.MoveToElement(element).Perform();
         }
 
-        public static void DragAndDrop(this RemoteWebDriver driver, IWebElement elementToBeMoved, IWebElement moveToElement)
+        public static void DragAndDrop(this RemoteWebDriver driver, IWebElement elementToBeMoved,
+            IWebElement moveToElement)
         {
             Actions action = new Actions(driver);
             action.DragAndDrop(elementToBeMoved, moveToElement).Perform();
@@ -476,11 +494,13 @@ namespace DashworksTestAutomation.Extensions
 
             //Small wait for dropdown display
             Thread.Sleep(300);
-            var options = driver.FindElements(By.XPath(".//div[contains(@class,'mat-select-content ng-trigger ng-trigger-fadeInContent')]/md-option"));
+            var options = driver.FindElements(By.XPath(
+                ".//div[contains(@class,'mat-select-content ng-trigger ng-trigger-fadeInContent')]/mat-option"));
             if (!options.Any())
                 throw new Exception($"Filter options were not loaded, unable to select '{option}'");
             driver.MouseHover(options.Last());
-            options = driver.FindElements(By.XPath(".//div[contains(@class,'mat-select-content ng-trigger ng-trigger-fadeInContent')]/md-option"));
+            options = driver.FindElements(By.XPath(
+                ".//div[contains(@class,'mat-select-content ng-trigger ng-trigger-fadeInContent')]/mat-option"));
             driver.ClickByJavascript(options.First(x => x.Text.ContainsText(option)));
         }
 

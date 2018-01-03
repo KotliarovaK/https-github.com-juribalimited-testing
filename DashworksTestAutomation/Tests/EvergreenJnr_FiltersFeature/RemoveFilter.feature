@@ -1,10 +1,11 @@
-﻿Feature: RemoveFilter
+﻿@retry:1
+Feature: RemoveFilter
 	Runs Remove Filter related test
 
 Background: Pre-Conditions
 	Given User is on Dashworks Homepage
-	And Login link is visible
-	When User clicks on the Login link
+	#And Login link is visible
+	#When User clicks on the Login link
 	Then Login Page is displayed to the user
 	When User provides the Login and Password and clicks on the login button
 	Then Dashworks homepage is displayed to the user in a logged in state
@@ -32,7 +33,7 @@ Scenario: EvergreenJnr_DevicesList_CheckThatResetIsUpdatingRowCount
 	And "17,225" rows are displayed in the agGrid
 	Then "Compliance" filter is removed from filters
 
-@Evergreen @Devices @Evergreen_FiltersFeature @RemoveFilter @DAS-11044
+@Evergreen @Devices @Evergreen_FiltersFeature @RemoveFilter @DAS-11506 @Not_Run
 Scenario: EvergreenJnr_DevicesList_CheckThatDeleteByUrlIsUpdatingRowCount
 	When User clicks "Devices" on the left-hand menu
 	Then "Devices" list should be displayed to the user
@@ -54,10 +55,16 @@ Scenario: EvergreenJnr_DevicesList_CheckThatDeleteByUrlIsUpdatingRowCount
 	When User clicks the Filters button
 	Then "Compliance" filter is removed from filters
 
-@Evergreen @Users @Evergreen_FiltersFeature @RemoveFilter @DAS-11009
-Scenario: EvergreenJnr_UsersList_CheckThatDeletePartOfFilterFromUrlIsUpdatingRowСount
+@Evergreen @Users @Evergreen_FiltersFeature @RemoveFilter @DAS-11009 @DAS-11044
+Scenario: EvergreenJnr_UsersList_CheckThatDeletePartOfFilterFromUrlIsUpdatingRowCount
 	When User clicks "Users" on the left-hand menu
 	Then "Users" list should be displayed to the user
+	When User clicks the Columns button
+	Then Columns panel is displayed to the user
+	When ColumnName is entered into the search box and the selection is clicked
+	| ColumnName |
+	| Compliance |
+	| Username   |
 	When User clicks the Filters button
 	Then Filters panel is displayed to the user
 	When User add "Compliance" filter where type is "Equals" with added column and following checkboxes:
@@ -70,7 +77,7 @@ Scenario: EvergreenJnr_UsersList_CheckThatDeletePartOfFilterFromUrlIsUpdatingRow
 	And table data is filtered correctly
 	And "Compliance" filter with "Red, Amber, Green" values is added to URL
 	And "Compliance" column is added to URL
-	When User is remove part of filter by URL
+	When User is remove part of filter URL
 	Then ColumnName is added to the list
 	| ColumnName |
 	| Compliance |
@@ -90,8 +97,5 @@ Scenario: EvergreenJnr_MailboxesList_CheckThatFiltersIsResetAndDataOnTheGridUpda
 	And "1,000" rows are displayed in the agGrid
 	And table data is filtered correctly
 	When User have reset all filters
-	#Then ColumnName is removed from the list
-	#| ColumnName |
-	#| City       |
 	Then "4,835" rows are displayed in the agGrid
 	And "City" filter is removed from filters

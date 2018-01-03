@@ -51,10 +51,17 @@ namespace DashworksTestAutomation.Steps.Dashworks
             var listElement = _driver.NowAt<CustomListElement>();
 
             _driver.WaitWhileControlIsNotDisplayed<CustomListElement>(() => listElement.CreateNewListButton);
+            Assert.IsTrue(listElement.CreateNewListButton.Displayed(), "CreateNewListButton is displayed");
             listElement.CreateNewListButton.Click();
+
             _driver.WaitWhileControlIsNotDisplayed<CustomListElement>(() => listElement.SaveButton);
+            Assert.IsTrue(listElement.SaveButton.Displayed(), "SaveButton is displayed");
             listElement.ListNameTextbox.SendKeys(listName);
             listElement.SaveButton.Click();
+
+            //Small wait for message display
+            Thread.Sleep(300);
+            _driver.WaitWhileControlIsDisplayed<CustomListElement>(() => listElement.SuccessCreateMessage);
         }
 
         [Then(@"User type ""(.*)"" into Custom list name field")]
@@ -82,6 +89,8 @@ namespace DashworksTestAutomation.Steps.Dashworks
         [Then(@"""(.*)"" list is displayed to user")]
         public void ThenListIsDisplayedToUser(string listName)
         {
+            //Workaround for DAS-11570. Remove after fix
+            WhenUserNavigatesToTheList(listName);
             var page = _driver.NowAt<BaseDashboardPage>();
             Assert.AreEqual(listName, page.ActiveCustomListName());
         }
@@ -171,6 +180,7 @@ namespace DashworksTestAutomation.Steps.Dashworks
             {
                 listElement.SaveAsDropdown.Click();
             }
+
             Assert.IsFalse(listElement.UpdateCurrentListButton.Displayed(), "Update Current List button is displayed");
         }
 
@@ -203,6 +213,7 @@ namespace DashworksTestAutomation.Steps.Dashworks
             {
                 listElement.SaveAsDropdown.Click();
             }
+
             Assert.IsTrue(listElement.UpdateCurrentListButton.Displayed(),
                 "Update Current List button is NOT displayed");
         }
@@ -216,6 +227,7 @@ namespace DashworksTestAutomation.Steps.Dashworks
             {
                 listElement.SaveAsDropdown.Click();
             }
+
             Assert.IsFalse(listElement.SaveAsNewListButton.Displayed(), "Save As New List button is displayed");
         }
 
@@ -228,7 +240,22 @@ namespace DashworksTestAutomation.Steps.Dashworks
             {
                 listElement.SaveAsDropdown.Click();
             }
+
             Assert.IsTrue(listElement.SaveAsNewListButton.Displayed(), "Save As New List button is NOT displayed");
+        }
+
+        [Then(@"Star icon is displayed for ""(.*)"" list")]
+        public void ThenStarIconIsDisplayedForList(string listnName)
+        {
+            var listElement = _driver.NowAt<CustomListElement>();
+            Assert.IsTrue(listElement.GetFavoriteStatus(listnName));
+        }
+
+        [Then(@"Star icon is not displayed for ""(.*)"" list")]
+        public void ThenStarIconIsNotDisplayedForList(string listnName)
+        {
+            var listElement = _driver.NowAt<CustomListElement>();
+            Assert.IsFalse(listElement.GetFavoriteStatus(listnName));
         }
 
         [AfterScenario("Delete_Newly_Created_List")]
@@ -241,7 +268,9 @@ namespace DashworksTestAutomation.Steps.Dashworks
 
                 DatabaseHelper.RemoveLists(listsIds);
             }
-            catch { }
+            catch
+            {
+            }
 
             //Old implementation
             //try

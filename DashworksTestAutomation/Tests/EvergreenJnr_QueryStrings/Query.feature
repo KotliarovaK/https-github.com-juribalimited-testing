@@ -1,11 +1,11 @@
-﻿#@retry:3
+﻿@retry:1
 Feature: Query
 	Runs Query tests.
 
 Background: Pre-Conditions
 	Given User is on Dashworks Homepage
-	And Login link is visible
-	When User clicks on the Login link
+	#And Login link is visible
+	#When User clicks on the Login link
 	Then Login Page is displayed to the user
 	When User provides the Login and Password and clicks on the login button
 	Then Dashworks homepage is displayed to the user in a logged in state
@@ -83,8 +83,9 @@ Runs Evergreen URL query strings for the Mailboxes List.
 Scenario: EvergreenJnr_QueryString_ApplicationsOnDevicesList
 Runs Evergreen URL query strings for the Applications on Devices List.
 	When Evergreen QueryStringURL is entered for Simple QueryType
-	| QueryType       | QueryStringURL                                                                                                                                                                                                                                                        |
-	| Apps On Devices | evergreen/#/devices?$select=hostname,chassisCategory,oSCategory,ownerDisplayName&$filter=(application%20EQUALS%20('451')%20WHERE%20(Used%20on%20device,Entitled%20to%20device,Installed%20on%20device,Used%20by%20device's%20owner,Entitled%20to%20device's%20owner)) |
+	| QueryType                | QueryStringURL                                                                                                                                                                                                                                                        |
+	| Application (Saved List) | evergreen/#/devices?$select=hostname,chassisCategory,oSCategory,ownerDisplayName&$filter=(applicationSavedListId%20EQUALS%20('4')%20WHERE%20(Used%20on%20device,Used%20by%20device's%20owner))                                                                        |
+	| Apps On Devices          | evergreen/#/devices?$select=hostname,chassisCategory,oSCategory,ownerDisplayName&$filter=(application%20EQUALS%20('451')%20WHERE%20(Used%20on%20device,Entitled%20to%20device,Installed%20on%20device,Used%20by%20device's%20owner,Entitled%20to%20device's%20owner)) |
 	Then agGrid Main Object List is returned with data
 
 @Evergreen @Users @Mailboxes @Devices @Applications @EvergreenJnr_QueryStrings @TableSorting @DAS-10598
