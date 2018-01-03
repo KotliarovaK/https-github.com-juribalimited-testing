@@ -495,12 +495,12 @@ namespace DashworksTestAutomation.Extensions
             //Small wait for dropdown display
             Thread.Sleep(300);
             var options = driver.FindElements(By.XPath(
-                ".//div[contains(@class,'mat-select-content ng-trigger ng-trigger-fadeInContent')]/md-option"));
+                ".//div[contains(@class,'mat-select-content ng-trigger ng-trigger-fadeInContent')]/mat-option"));
             if (!options.Any())
                 throw new Exception($"Filter options were not loaded, unable to select '{option}'");
             driver.MouseHover(options.Last());
             options = driver.FindElements(By.XPath(
-                ".//div[contains(@class,'mat-select-content ng-trigger ng-trigger-fadeInContent')]/md-option"));
+                ".//div[contains(@class,'mat-select-content ng-trigger ng-trigger-fadeInContent')]/mat-option"));
             driver.ClickByJavascript(options.First(x => x.Text.ContainsText(option)));
         }
 
