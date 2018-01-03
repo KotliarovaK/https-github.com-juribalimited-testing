@@ -17,13 +17,13 @@ namespace DashworksTestAutomation.Pages.Evergreen
         [FindsBy(How = How.XPath, Using = ".//input[@aria-label='List Name']")]
         public IWebElement ListNameTextbox { get; set; }
 
-        [FindsBy(How = How.XPath, Using = ".//div[contains(@class, 'save-actions')]/button[1]")]
+        [FindsBy(How = How.XPath, Using = ".//button[@mattooltip='Save List']")]
         public IWebElement SaveButton { get; set; }
 
-        [FindsBy(How = How.XPath, Using = ".//button[@title='Cancel']")]
+        [FindsBy(How = How.XPath, Using = ".//button[@mattooltip='Cancel']")]
         public IWebElement CancelButton { get; set; }
 
-        public string SettingButtonSelector = ".//li//i[@title='Settings']";
+        public string SettingButtonSelector = ".//li//i[@class='menu-trigger material-icons mat-settings mat-18 pull-right settings-icon settings-area']";
 
         [FindsBy(How = How.XPath, Using = ".//div[@class='inline-success ng-star-inserted']")]
         public IWebElement SuccessCreateMessage { get; set; }

@@ -44,10 +44,10 @@ namespace DashworksTestAutomation.Helpers
         {
             if (_acceptCheckbox)
                 _driver.FindElement(By.XPath(
-                        ".//div[@class='filterAddPanel ng-star-inserted']//button[contains(@class, 'mat-primary')]"))
+                        ".//div[@class='filterAddPanel ng-star-inserted']//mat-checkbox//div[@class='mat-checkbox-inner-container']"))
                     .Click();
-            //_driver.MouseHover(By.XPath(".//button[@title='Update Filter Set']"));
-            //_driver.FindElement(By.XPath(".//button[@title='Update Filter Set']")).Click();
+            _driver.MouseHover(By.XPath(".//button[@class='mat-primary mat-raised-button']"));
+            _driver.FindElement(By.XPath(".//button[@class='mat-primary mat-raised-button']")).Click();
         }
     }
 
