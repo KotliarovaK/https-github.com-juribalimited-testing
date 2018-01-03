@@ -17,7 +17,7 @@ namespace DashworksTestAutomation.Pages.Evergreen
         [FindsBy(How = How.XPath, Using = ".//input[@aria-label='List Name']")]
         public IWebElement ListNameTextbox { get; set; }
 
-        [FindsBy(How = How.XPath, Using = ".//button[@title='Save List']")]
+        [FindsBy(How = How.XPath, Using = ".//div[contains(@class, 'save-actions')]/button[1]")]
         public IWebElement SaveButton { get; set; }
 
         [FindsBy(How = How.XPath, Using = ".//button[@title='Cancel']")]
