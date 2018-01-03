@@ -24,7 +24,7 @@ Scenario: EvergreenJnr_DevicesList_CheckThatDynamicFiltersAreClearedForStaticLis
 	Then "Windows7Mi: Category" filter is added to the list
 	When User create custom list with "TestList" name
 	Then "TestList" list is displayed to user
-	And "5,130" rows are displayed in the agGrid
+	And "5,129" rows are displayed in the agGrid
 	When User navigates to the "All Devices" list
 	Then "Devices" list should be displayed to the user
 	When User clicks the Actions button
@@ -37,7 +37,7 @@ Scenario: EvergreenJnr_DevicesList_CheckThatDynamicFiltersAreClearedForStaticLis
 	Then "Static List TestName" list is displayed to user
 	And "2" rows are displayed in the agGrid
 	When User navigates to the "TestList" list
-	Then "5,130" rows are displayed in the agGrid
+	Then "5,129" rows are displayed in the agGrid
 	When User navigates to the "Static List TestName" list
 	Then "2" rows are displayed in the agGrid
 	Then Filters Button is disabled
