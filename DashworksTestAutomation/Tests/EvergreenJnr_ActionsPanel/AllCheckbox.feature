@@ -12,7 +12,7 @@ Background: Pre-Conditions
 	When User clicks the Switch to Evergreen link
 	Then Evergreen Dashboards page should be displayed to the user
 
-@Evergreen @Users @Evergreen_ActionsPanel @AllCheckbox @DAS-10769
+@Evergreen @Users @Evergreen_ActionsPanel @AllCheckbox @DAS-10769 @DAS-10656
 Scenario: EvergreenJnr_UsersList_SelectAllCheckboxStatusCheckAfterSearch
 	When User clicks "Users" on the left-hand menu
 	Then "Users" list should be displayed to the user
@@ -33,7 +33,7 @@ Scenario: EvergreenJnr_UsersList_SelectAllCheckboxStatusCheckAfterSearch
 	Then Select All selectbox is checked
 	Then "42" selected rows are displayed in the Actions panel
 
-@Evergreen @AllLists @Evergreen_ActionsPanel @AllCheckbox @DAS-10775
+@Evergreen @AllLists @Evergreen_ActionsPanel @AllCheckbox @DAS-10775 @DAS-10656
 Scenario Outline: EvergreenJnr_AllLists_CheckThatSelectAllCheckboxStatusAfterClosingActionPanel
 	When User clicks "<PageName>" on the left-hand menu
 	Then "<PageName>" list should be displayed to the user
@@ -50,7 +50,7 @@ Examples:
 	| Applications |
 	| Mailboxes    |
 
-@Evergreen @Devices @Evergreen_ActionsPanel @AllCheckbox @DAS-10772
+@Evergreen @Devices @Evergreen_ActionsPanel @AllCheckbox @DAS-10772 @DAS-10656
 Scenario: EvergreenJnr_DevicesList_SearchWithinAllRows
 	When User clicks "Devices" on the left-hand menu
 	Then "Devices" list should be displayed to the user
@@ -65,23 +65,54 @@ Scenario: EvergreenJnr_DevicesList_SearchWithinAllRows
 	And Clearing the agGrid Search Box
 	Then "17,225" rows are displayed in the agGrid
 
-@Evergreen @Devices @Evergreen_ActionsPanel @AllCheckbox @DAS-10656
-Scenario: EvergreenJnr_DevicesList_SelectAllChecboxMainFunctionalityTest
-	When User clicks "Devices" on the left-hand menu
-	Then "Devices" list should be displayed to the user
+@Evergreen @AllLists @Evergreen_ActionsPanel @AllCheckbox @DAS-10656
+Scenario Outline: EvergreenJnr_AllLists_SelectAllChecboxMainFunctionalityTest
+	When User clicks "<PageName>" on the left-hand menu
+	Then "<PageName>" list should be displayed to the user
 	When User clicks the Actions button
 	Then Actions panel is displayed to the user
 	When User select all rows
-	Then "17225" selected rows are displayed in the Actions panel
+	Then "<SelectedRowsCount>" selected rows are displayed in the Actions panel
 	When User clicks the Actions button
 	Then Select all checkbox is not displayed
 	When User clicks the Actions button
 	When User select all rows
-	When User select "Hostname" rows in the grid
-	| SelectedRowsName |
-	| 02QS1WBYUHCAG8Z  |
-	| 01COJATLYVAR7A6  |
-	Then "17223" selected rows are displayed in the Actions panel
-	When User click on 'Hostname' column header
-	Then data in table is sorted by 'Hostname' column in descending order
-	Then "17223" selected rows are displayed in the Actions panel
+	When User select "<Columnname>" rows in the grid
+	| SelectedRowsName  |
+	| <SelectedRowName> |
+	Then "<SelectedRowsCountAfterDiselect>" selected rows are displayed in the Actions panel
+	When User click on '<Columnname>' column header
+	Then data in table is sorted by '<Columnname>' column in descending order
+	Then "<SelectedRowsCountAfterDiselect>" selected rows are displayed in the Actions panel
+
+Examples: 
+	| PageName     | SelectedRowsCount | Columnname    | SelectedRowName      | SelectedRowsCountAfterDiselect |
+	| Devices      | 17225             | Hostname      | 02QS1WBYUHCAG8Z      | 17224                          |
+	| Users        | 41335             | Username      | AAV4528222           | 41334                          |
+	| Applications | 2223              | Application   | MKS Source Integrity | 2222                           |
+	| Mailboxes    | 4835              | Email Address | blogs@juriba.com     | 4834                           |
+
+@Evergreen @AllLists @Evergreen_ActionsPanel @AllCheckbox @DAS-10656
+Scenario: EvergreenJnr_UsersList_CheckThatSelectAllWorksCorrectlyForFilteredListsWithAdditionalColumn
+	When User clicks "Users" on the left-hand menu
+	Then "Users" list should be displayed to the user
+	When User clicks the Columns button
+	Then Columns panel is displayed to the user
+	When ColumnName is entered into the search box and the selection is clicked
+	| ColumnName |
+	| Compliance |
+	| Username   |
+	When User clicks the Filters button
+	Then Filters panel is displayed to the user
+	When User add "Compliance" filter where type is "Equals" with added column and following checkboxes:
+	| SelectedCheckboxes |
+	| Red                |
+	| Amber              |
+	| Green              |
+	Then "Compliance" filter is added to the list
+	And "41,161" rows are displayed in the agGrid
+	And table data is filtered correctly
+	When User clicks the Actions button
+	Then Actions panel is displayed to the user
+	When User select all rows
+	Then "41161" selected rows are displayed in the Actions panel

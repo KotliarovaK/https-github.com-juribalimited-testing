@@ -32,8 +32,40 @@ namespace DashworksTestAutomation.Pages.Evergreen
         [FindsBy(How = How.XPath, Using = ".//span[@class='ag-selection-checkbox']")]
         public IList<IWebElement> SelectRowsCheckboxes { get; set; }
 
-        [FindsBy(How = How.XPath, Using = ".//input[contains(@class,'test-dg-vsbl')]")]
-        public IWebElement SearchTextbox { get; set; }
+        #region ResetButton
+
+        [FindsBy(How = How.XPath, Using = ".//button[@class='btn input-toggle mat-icon-button ng-star-inserted']")]
+        public IWebElement SearchTextboxResetButton { get; set; }
+
+        [FindsBy(How = How.XPath, Using = ".//button[@class='btn btn-default input-toggle mat-icon-button ng-star-inserted']")]
+        public IWebElement SearchTextboxResetButtonInPanel { get; set; }
+
+        [FindsBy(How = How.XPath, Using = ".//div[@class='clearButton ng-star-inserted']")]
+        public IWebElement SearchTextboxResetButtonInListPanel { get; set; }
+
+        #endregion ResetButton
+
+        #region SearchTextbox
+
+        [FindsBy(How = How.XPath, Using = ".//input[@aria-label='Search everything']")]
+        public IWebElement GlobalSearchTextbox { get; set; }
+
+        [FindsBy(How = How.XPath, Using = ".//input[@class='search-input mat-input-element ng-untouched ng-pristine ng-valid']")]
+        public IWebElement FilterPanelSearchTextbox { get; set; }
+
+        [FindsBy(How = How.XPath, Using = ".//input[@aria-label='search column']")]
+        public IWebElement ColumnPanelSearchTextbox { get; set; }
+
+        [FindsBy(How = How.XPath, Using = ".//div[@class='filterAddPanel ng-star-inserted']//input[@placeholder='Search']")]
+        public IWebElement LookupFilterSearchTextbox { get; set; }
+
+        [FindsBy(How = How.XPath, Using = ".//input[@aria-label='search']")]
+        public IWebElement ListPanelSearchTextbox { get; set; }
+
+        [FindsBy(How = How.XPath, Using = ".//input[@aria-label='Search table']")]
+        public IWebElement TableSearchTextbox { get; set; }
+
+        #endregion SearchTextbox
 
         [FindsBy(How = How.XPath, Using = ".//div[contains(@class,'submenu-selected-list')]")]
         public IWebElement List { get; set; }
@@ -128,7 +160,7 @@ namespace DashworksTestAutomation.Pages.Evergreen
 
         public string ActiveCustomListName()
         {
-            By by = By.XPath($".//*[@id='submenuBlock']/div[contains(@class, 'active-list-wrapper')]/ul/li/span[@class='submenu-actions-list-name']");
+            By by = By.XPath(".//*[@id='submenuBlock']/div[contains(@class, 'active-list-wrapper')]/ul/li/span[@class='submenu-actions-list-name']");
             Driver.WaitWhileControlContainingTextIsNotDisplayed(by);
             return Driver.FindElement(by).Text;
         }
@@ -190,5 +222,51 @@ namespace DashworksTestAutomation.Pages.Evergreen
             return Driver.FindElements(
                 By.XPath(".//div[@class='ag-header-cell ag-header-cell-sortable']//span[@ref='eText']"));
         }
+
+        #region EnteringIntoSearchBox
+
+        public void EnteredIntoGlobalSearchbox(string searchedText)
+        {
+            GlobalSearchTextbox.Clear();
+            GlobalSearchTextbox.Click();
+            GlobalSearchTextbox.SendKeys(searchedText);
+        }
+
+        public void EnteredIntoTableSearchbox(string searchedText)
+        {
+            TableSearchTextbox.Clear();
+            TableSearchTextbox.Click();
+            TableSearchTextbox.SendKeys(searchedText);
+        }
+
+        public void EnteredIntoFilterPanelSearchbox(string searchedText)
+        {
+            FilterPanelSearchTextbox.Clear();
+            FilterPanelSearchTextbox.Click();
+            FilterPanelSearchTextbox.SendKeys(searchedText);
+        }
+
+        public void EnteredIntoColumnPanelSearchbox(string searchedText)
+        {
+            ColumnPanelSearchTextbox.Clear();
+            ColumnPanelSearchTextbox.Click();
+            ColumnPanelSearchTextbox.SendKeys(searchedText);
+        }
+
+        public void EnteredIntoFilterSearchbox(string searchedText)
+        {
+            LookupFilterSearchTextbox.Clear();
+            LookupFilterSearchTextbox.Click();
+            LookupFilterSearchTextbox.SendKeys(searchedText);
+        }
+
+        public void EnteredIntoListSearchbox(string searchedText)
+        {
+            ListPanelSearchTextbox.Clear();
+            ListPanelSearchTextbox.Click();
+            ListPanelSearchTextbox.SendKeys(searchedText);
+        }
+
+        #endregion EnteringIntoSearchBox
     }
 }

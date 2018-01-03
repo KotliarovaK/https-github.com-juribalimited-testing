@@ -16,14 +16,6 @@ namespace DashworksTestAutomation.Pages.Evergreen
         [FindsBy(How = How.XPath, Using = ".//div[@class='empty-message ng-star-inserted']")]
         public IWebElement NoMailboxOwnerFoundMessage { get; set; }
 
-        [FindsBy(How = How.XPath, Using = ".//button[@title='Maximize Group']")]
-        public IWebElement MaximizeGroupButton { get; set; }
-
-        private IWebElement FilterCategory(string filterSectionName)
-        {
-            return Driver.FindElement(By.XPath($".//span[@class='filter-category-label blue-color bold-text'][text()='{filterSectionName}']"));
-        }
-
         public override List<By> GetPageIdentitySelectors()
         {
             Driver.WaitForDataLoading();
@@ -33,10 +25,18 @@ namespace DashworksTestAutomation.Pages.Evergreen
             };
         }
 
-        public IWebElement MaximizeOrMinimizeSectionButton(string sectionName)
+        public void NavigateToSectionByName(string sectionName)
         {
-            var expandButtons = FilterCategory(sectionName);
-            return expandButtons.FindElement(By.XPath(".//button"));
+            var section = Driver.FindElement(
+                By.XPath(
+                    $".//button[@class='btn btn-default blue-color mat-icon-button ng-star-inserted'][@aria-label='{sectionName}']"));
+            section.Click();
+        }
+
+        public IWebElement NavigateToFieldByName(string fieldName)
+        {
+            return Driver.FindElement(
+                By.XPath($".//div[@class='ng-star-inserted']//td[@class='fld-label']//span[text()='{fieldName}']"));
         }
 
         public void ExpandAllSections()
@@ -54,12 +54,28 @@ namespace DashworksTestAutomation.Pages.Evergreen
             }
         }
 
+        public void CloseAllSections()
+        {
+            var closeButtons = Driver.FindElements(By.XPath(".//button[@title='Minimize Group']"));
+
+            if (closeButtons.Any())
+            {
+                foreach (IWebElement button in closeButtons)
+                {
+                    Driver.MouseHover(button);
+                    button.Click();
+                    Driver.WaitForDataLoading();
+                }
+            }
+        }
+
         public List<KeyValuePair<string, string>> GetFieldsWithContent(string categoryName)
         {
             //Hover on header to be able to see all table with all values
             //In other case elements outside the bounds of the screen will have empty text
-            Driver.MouseHover(By.XPath($".//span[contains(@class,'filter-category-label blue-color bold-text')][text()='{categoryName}']"));
-            List <string> allHeaders = Driver
+            Driver.MouseHover(By.XPath(
+                $".//span[contains(@class,'filter-category-label blue-color bold-text')][text()='{categoryName}']"));
+            List<string> allHeaders = Driver
                 .FindElements(By.XPath(
                     $".//span[contains(@class,'filter-category-label blue-color bold-text')][text()='{categoryName}']/../..//tbody/tr/td[1]"))
                 .Select(x => x.Text).ToList();
@@ -79,6 +95,12 @@ namespace DashworksTestAutomation.Pages.Evergreen
             {
                 Assert.IsFalse(string.IsNullOrEmpty(element.Text));
             }
+        }
+
+        public bool IsFieldPresent(string fieldName)
+        {
+            return Driver.IsElementDisplayed(
+                By.XPath($".//div[@class='ng-star-inserted']//td[@class='fld-label']//span[text()='{fieldName}']"));
         }
     }
 }

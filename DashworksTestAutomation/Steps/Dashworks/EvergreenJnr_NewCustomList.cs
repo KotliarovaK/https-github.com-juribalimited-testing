@@ -180,6 +180,7 @@ namespace DashworksTestAutomation.Steps.Dashworks
             {
                 listElement.SaveAsDropdown.Click();
             }
+
             Assert.IsFalse(listElement.UpdateCurrentListButton.Displayed(), "Update Current List button is displayed");
         }
 
@@ -212,6 +213,7 @@ namespace DashworksTestAutomation.Steps.Dashworks
             {
                 listElement.SaveAsDropdown.Click();
             }
+
             Assert.IsTrue(listElement.UpdateCurrentListButton.Displayed(),
                 "Update Current List button is NOT displayed");
         }
@@ -225,6 +227,7 @@ namespace DashworksTestAutomation.Steps.Dashworks
             {
                 listElement.SaveAsDropdown.Click();
             }
+
             Assert.IsFalse(listElement.SaveAsNewListButton.Displayed(), "Save As New List button is displayed");
         }
 
@@ -237,7 +240,22 @@ namespace DashworksTestAutomation.Steps.Dashworks
             {
                 listElement.SaveAsDropdown.Click();
             }
+
             Assert.IsTrue(listElement.SaveAsNewListButton.Displayed(), "Save As New List button is NOT displayed");
+        }
+
+        [Then(@"Star icon is displayed for ""(.*)"" list")]
+        public void ThenStarIconIsDisplayedForList(string listnName)
+        {
+            var listElement = _driver.NowAt<CustomListElement>();
+            Assert.IsTrue(listElement.GetFavoriteStatus(listnName));
+        }
+
+        [Then(@"Star icon is not displayed for ""(.*)"" list")]
+        public void ThenStarIconIsNotDisplayedForList(string listnName)
+        {
+            var listElement = _driver.NowAt<CustomListElement>();
+            Assert.IsFalse(listElement.GetFavoriteStatus(listnName));
         }
 
         [AfterScenario("Delete_Newly_Created_List")]
@@ -250,7 +268,9 @@ namespace DashworksTestAutomation.Steps.Dashworks
 
                 DatabaseHelper.RemoveLists(listsIds);
             }
-            catch { }
+            catch
+            {
+            }
 
             //Old implementation
             //try

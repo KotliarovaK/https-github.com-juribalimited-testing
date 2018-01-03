@@ -79,6 +79,12 @@ namespace DashworksTestAutomation.Pages.Evergreen
             return new List<By> { };
         }
 
+        public bool GetFavoriteStatus(string listName)
+        {
+            return Driver.IsElementDisplayed(By.XPath(
+                $".//span[@class='submenu-actions-list-name'][text()='{listName}']//ancestor::li//i[@class='material-icons md-star']"));
+        }
+
         public void ClickSettingsButtonByListName(string listName)
         {
             var settingsButton =

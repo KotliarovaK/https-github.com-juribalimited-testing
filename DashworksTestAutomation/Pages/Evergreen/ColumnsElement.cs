@@ -4,7 +4,6 @@ using OpenQA.Selenium;
 using OpenQA.Selenium.Support.PageObjects;
 using System;
 using System.Collections.Generic;
-using System.Drawing.Text;
 using System.Linq;
 using System.Threading;
 
@@ -101,6 +100,7 @@ namespace DashworksTestAutomation.Pages.Evergreen
         public int GetSubcategoriesCountByCategoryName(string categoryName)
         {
             var filterCategory = FilterCategory(categoryName);
+            Driver.MouseHover(filterCategory);
             return Convert.ToInt32(filterCategory.FindElement(By.XPath(".//strong")).Text);
         }
 

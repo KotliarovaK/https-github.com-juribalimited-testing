@@ -111,7 +111,7 @@ Examples:
 	| Mailboxes    | Email Address (Primary) | ale         | Email Address |
 
 @Evergreen @Devices @EvergreenJnr_FilterFeature @FilterFunctionality @DAS-11042 @Delete_Newly_Created_List
-Scenario: EvergreenJnr_Devices_CheckThatAddColumnCheckboxIsCheckedAfterSavingFilterInANewList
+Scenario: EvergreenJnr_DevicesList_CheckThatAddColumnCheckboxIsCheckedAfterSavingFilterInANewList
 	When User clicks "Devices" on the left-hand menu
 	Then "Devices" list should be displayed to the user
 	When User clicks the Filters button
@@ -133,7 +133,7 @@ Scenario: EvergreenJnr_Devices_CheckThatAddColumnCheckboxIsCheckedAfterSavingFil
 	And "Add Column" checkbox is disabled
 
 @Evergreen @Devices @EvergreenJnr_FilterFeature @FilterFunctionality @DAS-11042
-Scenario: EvergreenJnr_Devices_CheckThatAddColumnCheckboxIsCheckedAfterSavingAFilter
+Scenario: EvergreenJnr_DevicesList_CheckThatAddColumnCheckboxIsCheckedAfterSavingAFilter
 	When User clicks "Devices" on the left-hand menu
 	Then "Devices" list should be displayed to the user
 	When User clicks the Filters button
@@ -147,7 +147,7 @@ Scenario: EvergreenJnr_Devices_CheckThatAddColumnCheckboxIsCheckedAfterSavingAFi
 	And "Add Column" checkbox is disabled
 
 @Evergreen @Devices @EvergreenJnr_FilterFeature @FilterFunctionality @DAS-11042
-Scenario: EvergreenJnr_Devices_CheckThatAddColumnCheckboxIsUncheckedAfterSavingAFilterAndRemovingAColumn
+Scenario: EvergreenJnr_DevicesList_CheckThatAddColumnCheckboxIsUncheckedAfterSavingAFilterAndRemovingAColumn
 	When User clicks "Devices" on the left-hand menu
 	Then "Devices" list should be displayed to the user
 	When User clicks the Filters button
@@ -212,8 +212,8 @@ Examples:
 	| Applications | Barry'sUse: Target App           | Python 2.2a4 (1) | 1         | Application   | Python 2.2a4            | Barry'sUse: Target App is Python 2.2a4 (1)      |
 	| Mailboxes    | EmailMigra: BT/QMM Switch Status | Not Started      | 80        | Email Address | alex.cristea@juriba.com | EmailMigra: BT/QMM Switch Status is Not Started |
 
-@Evergreen @AllLists @EvergreenJnr_FilterFeature @FilterFunctionality @DAS-10977
-Scenario: EvergreenJnr_AllLists_CheckThatFilterIsRestoredCorrectlyAfterLeavingThePageAndGoingBackViaTheBrowserbackButtonForValuesFilters
+@Evergreen @Applications @EvergreenJnr_FilterFeature @FilterFunctionality @DAS-10977
+Scenario: EvergreenJnr_ApplicationsList_CheckThatFilterIsRestoredCorrectlyAfterLeavingThePageAndGoingBackViaTheBrowserbackButtonForValuesFilters
 	When User clicks "Applications" on the left-hand menu
 	Then "Applications" list should be displayed to the user
 	When User clicks the Filters button
@@ -229,8 +229,8 @@ Scenario: EvergreenJnr_AllLists_CheckThatFilterIsRestoredCorrectlyAfterLeavingTh
 	Then "5" rows are displayed in the agGrid
 	Then "Application is Microsoft Office 97, Professional Edition" is displayed in added filter info
 
-@Evergreen @AllLists @EvergreenJnr_FilterFeature @FilterFunctionality @DAS-10977 @Delete_Newly_Created_List
-Scenario: EvergreenJnr_AllLists_CheckThatFilterIsRestoredCorrectlyAfterLeavingThePageAndGoingBackViaTheBrowseBackButtonForListFilters
+@Evergreen @Applications @EvergreenJnr_FilterFeature @FilterFunctionality @DAS-10977 @Delete_Newly_Created_List
+Scenario: EvergreenJnr_ApplicationsList_CheckThatFilterIsRestoredCorrectlyAfterLeavingThePageAndGoingBackViaTheBrowseBackButtonForListFilters
 	When User clicks "Applications" on the left-hand menu
 	Then "Applications" list should be displayed to the user
 	When User clicks the Columns button
@@ -255,8 +255,8 @@ Scenario: EvergreenJnr_AllLists_CheckThatFilterIsRestoredCorrectlyAfterLeavingTh
 	Then "17,095" rows are displayed in the agGrid
 	Then "Application in list TestList is not used on device" is displayed in added filter info
 
-@Evergreen @AllLists @EvergreenJnr_FilterFeature @FilterFunctionality @DAS-11560
-Scenario: EvergreenJnr_AllLists_CheckNumericFilter
+@Evergreen @Devices @EvergreenJnr_FilterFeature @FilterFunctionality @DAS-11560
+Scenario: EvergreenJnr_DevicesList_CheckNumericFilter
 	When User clicks "Devices" on the left-hand menu
 	Then "Devices" list should be displayed to the user
 	When User clicks the Filters button

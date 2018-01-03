@@ -22,9 +22,9 @@ namespace DashworksTestAutomation.Steps.Dashworks
         {
             var listPageElement = _driver.NowAt<BaseDashboardPage>();
 
-            listPageElement.SearchTextbox.Clear();
+            listPageElement.TableSearchTextbox.Clear();
             _driver.WaitForDataLoading();
-            listPageElement.SearchTextbox.SendKeys(searchTerm);
+            listPageElement.TableSearchTextbox.SendKeys(searchTerm);
             _driver.WaitForDataLoading();
         }
 
@@ -64,10 +64,10 @@ namespace DashworksTestAutomation.Steps.Dashworks
         {
             var listPageElement = _driver.NowAt<BaseDashboardPage>();
 
-            var inputLength = listPageElement.SearchTextbox.GetAttribute("value").Length;
+            var inputLength = listPageElement.TableSearchTextbox.GetAttribute("value").Length;
             for (int i = 0; i < inputLength; i++)
             {
-                listPageElement.SearchTextbox.SendKeys(OpenQA.Selenium.Keys.Backspace);
+                listPageElement.TableSearchTextbox.SendKeys(OpenQA.Selenium.Keys.Backspace);
             }
             _driver.WaitForDataLoading();
         }
@@ -98,7 +98,7 @@ namespace DashworksTestAutomation.Steps.Dashworks
             var listPageElement = _driver.NowAt<BaseDashboardPage>();
 
             _driver.WaitWhileControlIsNotDisplayed<BaseDashboardPage>(() => listPageElement.ResultsOnPageCount);
-            Assert.IsEmpty(listPageElement.SearchTextbox.GetAttribute("value"), "Search textbox is not empty");
+            Assert.IsEmpty(listPageElement.TableSearchTextbox.GetAttribute("value"), "Search textbox is not empty");
         }
 
         [When(@"User click content from ""(.*)"" column")]
@@ -108,5 +108,97 @@ namespace DashworksTestAutomation.Steps.Dashworks
 
             tableElement.ClickContentByColumnName(columnName);
         }
+
+        #region Search field
+
+        [When(@"User enters ""(.*)"" text in Global Search field")]
+        public void WhenUserEntersTextInGlobalSearchField(string searchedText)
+        {
+            var columnElement = _driver.NowAt<BaseDashboardPage>();
+            columnElement.EnteredIntoGlobalSearchbox(searchedText);
+        }
+
+        [When(@"User enters ""(.*)"" text in Table Search field")]
+        public void WhenUserEntersTextInTableSearchField(string searchedText)
+        {
+            var columnElement = _driver.NowAt<BaseDashboardPage>();
+            columnElement.EnteredIntoTableSearchbox(searchedText);
+        }
+
+        [When(@"User enters ""(.*)"" text in Search field at Filters Panel")]
+        public void WhenUserEntersTextInSearchFieldAtFiltersPanel(string searchedText)
+        {
+            var columnElement = _driver.NowAt<BaseDashboardPage>();
+            var filterElement = _driver.NowAt<FiltersElement>();
+            filterElement.AddNewFilterButton.Click();
+            columnElement.EnteredIntoFilterPanelSearchbox(searchedText);
+        }
+
+        [When(@"User enters ""(.*)"" text in Search field at Columns Panel")]
+        public void WhenUserEntersTextInSearchFieldAtColumnsPanel(string searchedText)
+        {
+            var columnElement = _driver.NowAt<BaseDashboardPage>();
+            columnElement.EnteredIntoColumnPanelSearchbox(searchedText);
+        }
+
+        [When(@"User enters ""(.*)"" text in Search field at selected Filter")]
+        public void WhenUserEntersTextInSearchFieldAtSelectedFilter(string searchedText)
+        {
+            var columnElement = _driver.NowAt<BaseDashboardPage>();
+            columnElement.EnteredIntoFilterSearchbox(searchedText);
+        }
+
+        [When(@"User enters ""(.*)"" text in Search field at List Panel")]
+        public void WhenUserEntersTextInSearchFieldAtListPanel(string searchedText)
+        {
+            var columnElement = _driver.NowAt<BaseDashboardPage>();
+            columnElement.EnteredIntoListSearchbox(searchedText);
+        }
+
+        #endregion Search fields
+
+        #region Reset button in Search field
+
+        [Then(@"reset button in Global Search field is displayed")]
+        public void ThenResetButtonInGlobalSearchFieldIsDisplayed()
+        {
+            var resetbutton = _driver.NowAt<BaseDashboardPage>();
+            Assert.IsTrue(resetbutton.SearchTextboxResetButton.Displayed(), "Reset button is not displayed");
+            Logger.Write("Reset button is displayed");
+        }
+
+        [Then(@"reset button in Table Search field is displayed")]
+        public void ThenResetButtonInTableSearchFieldIsDisplayed()
+        {
+            var resetbutton = _driver.NowAt<BaseDashboardPage>();
+            Assert.IsTrue(resetbutton.SearchTextboxResetButton.Displayed(), "Reset button is not displayed");
+            Logger.Write("Reset button is displayed");
+        }
+
+        [Then(@"reset button in Search field at selected Panel is displayed")]
+        public void ThenResetButtonInSearchFieldOnSelectedPanelIsDisplayed()
+        {
+            var resetbutton = _driver.NowAt<BaseDashboardPage>();
+            Assert.IsTrue(resetbutton.SearchTextboxResetButtonInPanel.Displayed(), "Reset button is not displayed");
+            Logger.Write("Reset button is displayed");
+        }
+
+        [Then(@"reset button in Search field at selected Filter is displayed")]
+        public void ThenResetButtonInSearchFieldAtSelectedFilterIsDisplayed()
+        {
+            var resetbutton = _driver.NowAt<BaseDashboardPage>();
+            Assert.IsTrue(resetbutton.SearchTextboxResetButtonInPanel.Displayed(), "Reset button is not displayed");
+            Logger.Write("Reset button is displayed");
+        }
+
+        [Then(@"reset button in Search field at List Panel is displayed")]
+        public void ThenResetButtonInSearchFieldAtListPanelIsDisplayed()
+        {
+            var resetbutton = _driver.NowAt<BaseDashboardPage>();
+            Assert.IsTrue(resetbutton.SearchTextboxResetButtonInListPanel.Displayed(), "Reset button is not displayed");
+            Logger.Write("Reset button is displayed");
+        }
+
+        #endregion Reset button in Search field
     }
 }

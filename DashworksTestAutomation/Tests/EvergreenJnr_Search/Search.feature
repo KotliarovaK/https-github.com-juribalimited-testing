@@ -152,3 +152,52 @@ Scenario: EvergreenJnr_DevicesList_Search_NoDevicesFound
 	| demo.juriba.co.uk |
 	| 67#               |
 	| #12               |
+
+@Evergreen @Devices @EvergreenJnr_Search @Search @DAS-11350
+Scenario: EvergreenJnr_DevicesList_Search_CheckThatGlobalSearchFieldHaveAResetButton
+	When User clicks "Devices" on the left-hand menu
+	Then "Devices" list should be displayed to the user
+	When User enters "CheckTheResetButton" text in Global Search field
+	Then reset button in Global Search field is displayed
+
+@Evergreen @Devices @EvergreenJnr_Search @Search @DAS-11350
+Scenario: EvergreenJnr_DevicesList_Search_CheckThatTableSearchFieldHaveAResetButton
+	When User clicks "Devices" on the left-hand menu
+	Then "Devices" list should be displayed to the user
+	When User enters "CheckTheResetButton" text in Table Search field
+	Then reset button in Table Search field is displayed
+
+@Evergreen @Devices @EvergreenJnr_Search @Search @DAS-11350
+Scenario: EvergreenJnr_DevicesList_Search_CheckThatSearchFieldHaveResetButtonAtFilterPanel
+	When User clicks "Devices" on the left-hand menu
+	Then "Devices" list should be displayed to the user
+	When User clicks the Filters button
+	Then Filters panel is displayed to the user
+	When User enters "CheckTheResetButton" text in Search field at Filters Panel
+	Then reset button in Search field at selected Panel is displayed
+
+@Evergreen @Devices @EvergreenJnr_Search @Search @DAS-11350
+Scenario: EvergreenJnr_DevicesList_Search_CheckThatSearchFieldHaveResetButtonAtColumnPanel
+	When User clicks "Devices" on the left-hand menu
+	Then "Devices" list should be displayed to the user
+	When User clicks the Columns button
+	Then Columns panel is displayed to the user
+	When User enters "CheckTheResetButton" text in Search field at Columns Panel
+	Then reset button in Search field at selected Panel is displayed
+	 
+@Evergreen @Devices @EvergreenJnr_Search @Search @DAS-11350
+Scenario: EvergreenJnr_DevicesList_Search_CheckThatMultiSelectFilterSearchFieldHaveResetButton 
+	When User clicks "Devices" on the left-hand menu
+	Then "Devices" list should be displayed to the user
+	When User clicks the Filters button
+	Then Filters panel is displayed to the user
+	When user select "Import" filter
+	And User enters "CheckTheResetButton" text in Search field at selected Filter
+	Then reset button in Search field at selected Filter is displayed
+
+@Evergreen @Devices @EvergreenJnr_Search @Search @DAS-11350
+Scenario: EvergreenJnr_DevicesList_Search_CheckThatSearchFieldHaveResetButtonAtListPanel 
+	When User clicks "Devices" on the left-hand menu
+	Then "Devices" list should be displayed to the user
+	When User enters "CheckTheResetButton" text in Search field at List Panel
+	Then reset button in Search field at List Panel is displayed

@@ -153,12 +153,21 @@ namespace DashworksTestAutomation.Steps.Dashworks
             filter.Do();
         }
 
-        [When(@"User add ""(.*)"" filter where type is ""(.*)"" with following value and association:")]
+        [When(@"User add ""(.*)"" filter where type is ""(.*)"" with following Lookup Value and Association:")]
+        public void WhenUserAddFilterWhereTypeIsWithFollowingLookupValueAndAssociation(string filterName, string operatorValue, Table table)
+        {
+            var filtersNames = _driver.NowAt<FiltersElement>();
+            filtersNames.AddFilter(filterName);
+            var filter = new LookupValueAssociationFilter(_driver, operatorValue, table);
+            filter.Do();
+        }
+
+        [When(@"User add ""(.*)"" filter where type is ""(.*)"" with following Value and Association:")]
         public void WhenUserAddFilterWhereTypeIsWithFollowingValueAndAssociation(string filterName, string operatorValue, Table table)
         {
             var filtersNames = _driver.NowAt<FiltersElement>();
             filtersNames.AddFilter(filterName);
-            var filter = new LookupValueFilter(_driver, operatorValue, table);
+            var filter = new ValueAssociationFilter(_driver, operatorValue, table);
             filter.Do();
         }
 
@@ -401,8 +410,8 @@ namespace DashworksTestAutomation.Steps.Dashworks
             }
         }
 
-        [When(@"User is remove part of filter by URL")]
-        public void WhenUserIsRemovePartOfFilterByURL()
+        [When(@"User is remove part of filter URL")]
+        public void WhenUserIsRemovePartOfFilterURL()
         {
             var currentUrl = _driver.Url;
             const string pattern = @"\$filter=(.*)\&";
@@ -448,7 +457,7 @@ namespace DashworksTestAutomation.Steps.Dashworks
         public void ThenFilterWithValuesIsAddedToURL(string filterName, string values)
         {
             var currentUrl = _driver.Url;
-            const string pattern = @"\$filter=(.*)\&";
+            const string pattern = @"filter=(.*)";
             var urlPartToCheck = Regex.Match(currentUrl, pattern).Groups[1].Value;
             var valuesList = values.Split(',');
             foreach (var value in valuesList)

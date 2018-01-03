@@ -43,7 +43,7 @@ Scenario: EvergreenJnr_DevicesList_CheckThatDynamicFiltersAreClearedForStaticLis
 	Then Filters Button is disabled
 
 @Evergreen @Devices @EvergreenJnr_ListPanel @CustomListDisplay @DAS-10978 @Delete_Newly_Created_List
-Scenario: EvergreenJnr_DevicesList__CheckThatFiltersAndColumnsAreRestoredForSavedList
+Scenario: EvergreenJnr_DevicesList_CheckThatFiltersAndColumnsAreRestoredForSavedList
 	When User clicks "Devices" on the left-hand menu
 	Then "Devices" list should be displayed to the user
 	When User clicks the Filters button

@@ -6,7 +6,6 @@ using DashworksTestAutomation.Utils;
 using NUnit.Framework;
 using OpenQA.Selenium.Remote;
 using System;
-using System.Linq;
 using System.Text.RegularExpressions;
 using TechTalk.SpecFlow;
 
@@ -120,7 +119,26 @@ namespace DashworksTestAutomation.Steps.Dashworks
         }
 
         [When(@"User removes column by URL")]
-        public void WhenUserRemovesColumnByURL(Table table)
+        public void WhenUserRemovesColumnByUrl(Table table)
+        {
+            var currentUrl = _driver.Url;
+            const string pattern = @"select=(.*)";
+            foreach (var row in table.Rows)
+            {
+                var originalPart = Regex.Match(currentUrl, pattern).Groups[1].Value;
+                var changedPart = originalPart.Replace($",{_convertor.Convert(row["ColumnName"])}", string.Empty);
+                _driver.NagigateToURL(currentUrl.Replace(originalPart, changedPart));
+
+                var page = _driver.NowAt<EvergreenDashboardsPage>();
+                if (page.StatusCodeLabel.Displayed())
+                {
+                    throw new Exception($"500 error was returned for: {row["ColumnName"]} column");
+                }
+            }
+        }
+
+        [When(@"User removes sorted column by URL")]
+        public void WhenUserRemovesSortedColumnByUrl(Table table)
         {
             var currentUrl = _driver.Url;
             const string pattern = @"select=(.*)\&\$orderby";
@@ -138,10 +156,63 @@ namespace DashworksTestAutomation.Steps.Dashworks
             }
         }
 
+        [When(@"User removes all columns by URL")]
+        public void WhenUserRemovesAllColumnsByURL()
+        {
+            var currentUrl = _driver.Url;
+            const string pattern = @"select=(.*)";
+
+            var originalPart = Regex.Match(currentUrl, pattern).Groups[1].Value;
+            _driver.NagigateToURL(currentUrl.Replace(originalPart, String.Empty));
+
+            var page = _driver.NowAt<EvergreenDashboardsPage>();
+            if (page.StatusCodeLabel.Displayed())
+            {
+                throw new Exception($"500 error was returned after removing all columns from URL");
+            }
+        }
+
+        [When(@"User removes all filters and columns by url")]
+        public void WhenUserRemovesAllFiltersAndColumnsByUrl()
+        {
+            var currentUrl = _driver.Url;
+            const string pattern = @"\&(.*)";
+
+            var originalPart = Regex.Match(currentUrl, pattern).Value;
+            _driver.NagigateToURL(currentUrl.Replace(originalPart, String.Empty));
+
+            var page = _driver.NowAt<EvergreenDashboardsPage>();
+            if (page.StatusCodeLabel.Displayed())
+            {
+                throw new Exception($"500 error was returned after removing all columns from URL");
+            }
+        }
+
+        [When(@"User removes all filters and columns and custom list by url")]
+        public void WhenUserRemovesAllFiltersAndColumnsAndCustomListByUrl()
+        {
+            var currentUrl = _driver.Url;
+            const string pattern = @"\?(.*)";
+
+            var originalPart = Regex.Match(currentUrl, pattern).Value;
+            _driver.NagigateToURL(currentUrl.Replace(originalPart, String.Empty));
+
+            var page = _driver.NowAt<EvergreenDashboardsPage>();
+            if (page.StatusCodeLabel.Displayed())
+            {
+                throw new Exception($"500 error was returned after removing all columns from URL");
+            }
+        }
+
         [Then(@"""(.*)"" subcategories is displayed for ""(.*)"" category")]
         public void ThenSubcategoriesIsDisplayedForCategory(int subCategoriesCount, string categoryName)
         {
             var columnElement = _driver.NowAt<ColumnsElement>();
+            var resetButton = columnElement.SearchTextboxResetButton;
+            if (resetButton.Displayed())
+            {
+                resetButton.Click();
+            }
             Assert.AreEqual(subCategoriesCount, columnElement.GetSubcategoriesCountByCategoryName(categoryName));
         }
 
