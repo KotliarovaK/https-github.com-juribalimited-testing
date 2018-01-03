@@ -12,7 +12,7 @@ Background: Pre-Conditions
 	When User clicks the Switch to Evergreen link
 	Then Evergreen Dashboards page should be displayed to the user
 
-@Evergreen @Devices @EvergreenJnr_Columns @ColumnSectionDisplay @DAS-10584
+@Evergreen @Devices @EvergreenJnr_Columns @ColumnSectionDisplay @DAS10584
 Scenario: EvergreenJnr_DevicesList_CheckCategoryHeadingWhenAllColumnsFromCategoryAreAdded
 	When User clicks "Devices" on the left-hand menu
 	Then "Devices" list should be displayed to the user
@@ -23,7 +23,7 @@ Scenario: EvergreenJnr_DevicesList_CheckCategoryHeadingWhenAllColumnsFromCategor
 	| Application  |
 	Then "Applications" section is not displayed in the Columns panel
 
-@Evergreen @Devices @EvergreenJnr_Columns @ColumnSectionDisplay @DAS-11539
+@Evergreen @Devices @EvergreenJnr_Columns @ColumnSectionDisplay @DAS11539
 Scenario: EvergreenJnr_DevicesList_CheckThatColumnCategoriesAreClosedAfterClearingAColumnSearchValue
 	When User clicks "Devices" on the left-hand menu
 	Then "Devices" list should be displayed to the user

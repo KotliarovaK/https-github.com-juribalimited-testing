@@ -12,7 +12,7 @@ Background: Pre-Conditions
 	When User clicks the Switch to Evergreen link
 	Then Evergreen Dashboards page should be displayed to the user
 
-@Evergreen @ProfileDetails @EvergreenJnr_ProfileDetails @AccountDetailsFunctionality @DAS-10756 @Remove_Profile_Changes
+@Evergreen @ProfileDetails @EvergreenJnr_ProfileDetails @AccountDetailsFunctionality @DAS10756 @Remove_Profile_Changes
 Scenario: EvergreenJnr_AccountDetails_CheckThatErrorIsNotDisplayedAfterChangingProfileData
 	When User clicks Profile in Account Dropdown
 	Then Profile page is displayed to user
@@ -24,7 +24,7 @@ Scenario: EvergreenJnr_AccountDetails_CheckThatErrorIsNotDisplayedAfterChangingP
 	And "TestAdmin" is displayed in Full Name field
 	And "TestEmail@test.com" is displayed in Email field
 
-@Evergreen @ProfileDetails @EvergreenJnr_ProfileDetails @AccountDetailsFunctionality @DAS-10756 @Remove_Profile_Changes
+@Evergreen @ProfileDetails @EvergreenJnr_ProfileDetails @AccountDetailsFunctionality @DAS10756 @Remove_Profile_Changes
 Scenario: EvergreenJnr_AccountDetails_CheckThatCorrectErrorMessagesAreDisplayed
 	When User clicks Profile in Account Dropdown
 	Then Profile page is displayed to user
@@ -54,7 +54,7 @@ Scenario: EvergreenJnr_AccountDetails_CheckThatCorrectErrorMessagesAreDisplayed
 	Then Success message with "Image removed" text is displayed on Account Details page
 	Then User picture changed to default
 
-@Evergreen @ProfileDetails @EvergreenJnr_ProfileDetails @AccountDetailsFunctionality @DAS-11524 @Remove_Profile_Changes
+@Evergreen @ProfileDetails @EvergreenJnr_ProfileDetails @AccountDetailsFunctionality @DAS11524 @Remove_Profile_Changes
 Scenario: EvergreenJnr_AccountDetails_CheckThatErrorIsNotDisplayedAfterChangingProfileDataTwice
 	When User clicks Profile in Account Dropdown
 	Then Profile page is displayed to user
