@@ -26,6 +26,13 @@ namespace DashworksTestAutomation.Steps.Dashworks
             tabs.NavigateToTabByName(tabName);
         }
 
+        [When(@"User navigates to the ""(.*)"" section")]
+        public void WhenUserNavigatesToTheSection(string sectionName)
+        {
+            var detailsPage = _driver.NowAt<DetailsPage>();
+            detailsPage.NavigateToSectionByName(sectionName);
+        }
+
         [Then(@"Fields with empty information are displayed")]
         public void ThenFieldsWithEmptyInformationAreDisplayed()
         {

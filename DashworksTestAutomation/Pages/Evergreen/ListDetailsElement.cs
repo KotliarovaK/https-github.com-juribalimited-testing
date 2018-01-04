@@ -23,7 +23,7 @@ namespace DashworksTestAutomation.Pages.Evergreen
         [FindsBy(How = How.XPath, Using = ".//i[contains(@class,'material-icons pull-left list-star-icon star-filled')]")]
         public IWebElement UnfavoriteButton { get; set; }
 
-        [FindsBy(How = How.XPath, Using = ".//button[@title='Remove']")]
+        [FindsBy(How = How.XPath, Using = ".//button[@mattooltip='Remove']")]
         public IWebElement RemoveListButton { get; set; }
 
         [FindsBy(How = How.XPath, Using = ".//div[@class='permissions action-panel-ddl']")]
@@ -32,10 +32,10 @@ namespace DashworksTestAutomation.Pages.Evergreen
         [FindsBy(How = How.XPath, Using = ".//div[@class='permissions action-panel-ddl']//button[@title='Close']")]
         public IWebElement ClosePermissionBlockButton { get; set; }
 
-        [FindsBy(How = How.XPath, Using = ".//span[text()='Owner ']/ancestor::div[@class='mat-select-trigger']")]
+        [FindsBy(How = How.XPath, Using = ".//mat-select[@aria-labelledby='owner-label']")]
         public IWebElement OwnerDropdown { get; set; }
 
-        [FindsBy(How = How.XPath, Using = ".//span[text()='Sharing ']/ancestor::div[@class='mat-select-trigger']")]
+        [FindsBy(How = How.XPath, Using = ".//mat-select[@aria-labelledby='sharing-label']")]
         public IWebElement SharingDropdown { get; set; }
 
         [FindsBy(How = How.XPath, Using = ".//span[text()='ACCEPT']/ancestor::button")]
@@ -44,10 +44,10 @@ namespace DashworksTestAutomation.Pages.Evergreen
         [FindsBy(How = How.XPath, Using = ".//span[text()='CANCEL']/ancestor::button")]
         public IWebElement CancelButton { get; set; }
 
-        [FindsBy(How = How.XPath, Using = ".//span[text()='Select user ']/ancestor::div[@class='mat-select-trigger']")]
+        [FindsBy(How = How.XPath, Using = ".//span[text()='Select user']/ancestor::div[@class='mat-select-trigger']")]
         public IWebElement SelectUserDropdown { get; set; }
 
-        [FindsBy(How = How.XPath, Using = ".//span[text()='Select access ']/ancestor::div[@class='mat-select-trigger']")]
+        [FindsBy(How = How.XPath, Using = ".//span[text()='Select access']/ancestor::div[@class='mat-select-trigger']")]
         public IWebElement SelectAccessDropdown { get; set; }
 
         [FindsBy(How = How.XPath, Using = ".//span[text()='ADD USER']/ancestor::button")]
