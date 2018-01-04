@@ -12,7 +12,7 @@ Background: Pre-Conditions
 	When User clicks the Switch to Evergreen link
 	Then Evergreen Dashboards page should be displayed to the user
 
-@Evergreen @Devices @EvergreenJnr_Search @Search @DAS-10704 @Delete_Newly_Created_List
+@Evergreen @Devices @EvergreenJnr_Search @Search @DAS10704 @Delete_Newly_Created_List
 Scenario: EvergreenJnr_DevicesList_CheckThatQuickSearchResetWhenMovingBetweenLists
 	When User clicks "Devices" on the left-hand menu
 	Then "Devices" list should be displayed to the user
@@ -32,7 +32,7 @@ Scenario: EvergreenJnr_DevicesList_CheckThatQuickSearchResetWhenMovingBetweenLis
 	When User navigates to the "All Devices" list
 	Then Search field is empty
 
-@Evergreen @Devices @EvergreenJnr_Search @Search @DAS-10704
+@Evergreen @Devices @EvergreenJnr_Search @Search @DAS10704
 Scenario: EvergreenJnr_DevicesList_CheckThatQuickSearchDoesntTriggersNewListMenu
 	When User clicks "Devices" on the left-hand menu
 	Then "Devices" list should be displayed to the user
@@ -41,7 +41,7 @@ Scenario: EvergreenJnr_DevicesList_CheckThatQuickSearchDoesntTriggersNewListMenu
 	| Smith          | 11           |
 	Then Save to New Custom List element is NOT displayed
 
-@Evergreen @Devices @Applications @Users @Mailboxes @EvergreenJnr_Search @Search @DAS-10580 @DAS-10667 @DAS-10624
+@Evergreen @Devices @Applications @Users @Mailboxes @EvergreenJnr_Search @Search @DAS10580 @DAS10667 @DAS10624
 Scenario: EvergreenJnr_AllLists_CheckSearchFilterAndTableContentDuringNavigationBetweenPages
 	When User clicks "Devices" on the left-hand menu
 	Then "Devices" list should be displayed to the user
@@ -101,7 +101,7 @@ Scenario: EvergreenJnr_DevicesList_SearchTests
 	| RED                 | 9,238        |
 	| 0JIE                | 1            |
 
-@Evergreen @Devices @EvergreenJnr_Search @Search @DAS-11012
+@Evergreen @Devices @EvergreenJnr_Search @Search @DAS11012
 Scenario: EvergreenJnr_DevicesList_ClearingSearchReturnsTheFullDataSet
 	When User clicks "Devices" on the left-hand menu
 	Then "Devices" list should be displayed to the user
@@ -113,7 +113,7 @@ Scenario: EvergreenJnr_DevicesList_ClearingSearchReturnsTheFullDataSet
 	Then "17,225" rows are displayed in the agGrid
 	Then URL is "http://automation.corp.juriba.com/evergreen/#/devices"
 
-@Evergreen @Users @EvergreenJnr_Search @Search @DAS-11012
+@Evergreen @Users @EvergreenJnr_Search @Search @DAS11012
 Scenario: EvergreenJnr_UsersList_ClearingSearchReturnsTheFullDataSet
 	When User clicks "Users" on the left-hand menu
 	Then "Users" list should be displayed to the user
@@ -153,21 +153,21 @@ Scenario: EvergreenJnr_DevicesList_Search_NoDevicesFound
 	| 67#               |
 	| #12               |
 
-@Evergreen @Devices @EvergreenJnr_Search @Search @DAS-11350
+@Evergreen @Devices @EvergreenJnr_Search @Search @DAS11350
 Scenario: EvergreenJnr_DevicesList_Search_CheckThatGlobalSearchFieldHaveAResetButton
 	When User clicks "Devices" on the left-hand menu
 	Then "Devices" list should be displayed to the user
 	When User type "CheckTheResetButton" in Global Search Field
 	Then reset button in Global Search field is displayed
 
-@Evergreen @Devices @EvergreenJnr_Search @Search @DAS-11350
+@Evergreen @Devices @EvergreenJnr_Search @Search @DAS11350
 Scenario: EvergreenJnr_DevicesList_Search_CheckThatTableSearchFieldHaveAResetButton
 	When User clicks "Devices" on the left-hand menu
 	Then "Devices" list should be displayed to the user
 	When User perform search by "CheckTheResetButton"
 	Then reset button in Table Search field is displayed
 
-@Evergreen @Devices @EvergreenJnr_Search @Search @DAS-11350
+@Evergreen @Devices @EvergreenJnr_Search @Search @DAS11350
 Scenario: EvergreenJnr_DevicesList_Search_CheckThatSearchFieldHaveResetButtonAtFilterPanel
 	When User clicks "Devices" on the left-hand menu
 	Then "Devices" list should be displayed to the user
@@ -176,7 +176,7 @@ Scenario: EvergreenJnr_DevicesList_Search_CheckThatSearchFieldHaveResetButtonAtF
 	When User enters "CheckTheResetButton" text in Search field at Filters Panel
 	Then reset button in Search field at selected Panel is displayed
 
-@Evergreen @Devices @EvergreenJnr_Search @Search @DAS-11350
+@Evergreen @Devices @EvergreenJnr_Search @Search @DAS11350
 Scenario: EvergreenJnr_DevicesList_Search_CheckThatSearchFieldHaveResetButtonAtColumnPanel
 	When User clicks "Devices" on the left-hand menu
 	Then "Devices" list should be displayed to the user
@@ -185,7 +185,7 @@ Scenario: EvergreenJnr_DevicesList_Search_CheckThatSearchFieldHaveResetButtonAtC
 	When User enters "CheckTheResetButton" text in Search field at Columns Panel
 	Then reset button in Search field at selected Panel is displayed
 	 
-@Evergreen @Devices @EvergreenJnr_Search @Search @DAS-11350
+@Evergreen @Devices @EvergreenJnr_Search @Search @DAS11350
 Scenario: EvergreenJnr_DevicesList_Search_CheckThatMultiSelectFilterSearchFieldHaveResetButton 
 	When User clicks "Devices" on the left-hand menu
 	Then "Devices" list should be displayed to the user
@@ -195,7 +195,7 @@ Scenario: EvergreenJnr_DevicesList_Search_CheckThatMultiSelectFilterSearchFieldH
 	And User enters "CheckTheResetButton" text in Search field at selected Filter
 	Then reset button in Search field at selected Filter is displayed
 
-@Evergreen @Devices @EvergreenJnr_Search @Search @DAS-11350 @Delete_Newly_Created_List
+@Evergreen @Devices @EvergreenJnr_Search @Search @DAS11350 @Delete_Newly_Created_List
 Scenario: EvergreenJnr_DevicesList_Search_CheckThatSearchFieldHaveResetButtonAtListPanel 
 	When User clicks "Devices" on the left-hand menu
 	Then "Devices" list should be displayed to the user
