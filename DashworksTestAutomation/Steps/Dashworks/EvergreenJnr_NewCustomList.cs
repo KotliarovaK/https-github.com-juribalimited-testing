@@ -9,6 +9,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading;
+using DashworksTestAutomation.DTO;
 using TechTalk.SpecFlow;
 
 namespace DashworksTestAutomation.Steps.Dashworks
@@ -17,10 +18,12 @@ namespace DashworksTestAutomation.Steps.Dashworks
     internal class EvergreenJnr_NewCustomList : SpecFlowContext
     {
         private readonly RemoteWebDriver _driver;
+        private readonly UserDto _user;
 
-        public EvergreenJnr_NewCustomList(RemoteWebDriver driver)
+        public EvergreenJnr_NewCustomList(RemoteWebDriver driver, UserDto user)
         {
             _driver = driver;
+            _user = user;
         }
 
         [Then(@"Save to New Custom List element is NOT displayed")]
@@ -263,32 +266,13 @@ namespace DashworksTestAutomation.Steps.Dashworks
         {
             try
             {
-                //New implementation
-                var listsIds = DatabaseHelper.ExecuteReader("SELECT [ListId] FROM[DesktopBI].[dbo].[EvergreenList]", 0);
-
+                //All lists for all users
+                //var listsIds = DatabaseHelper.ExecuteReader("SELECT [ListId] FROM[DesktopBI].[dbo].[EvergreenList]", 0);
+                //All lists for specific user
+                var listsIds = DatabaseHelper.ExecuteReader($"select l.ListId from[aspnetdb].[dbo].[aspnet_Users] u join[DesktopBI].[dbo].[EvergreenList] l on u.UserId = l.UserId where u.LoweredUserName = '{_user.UserName}'", 0);
                 DatabaseHelper.RemoveLists(listsIds);
             }
-            catch
-            {
-            }
-
-            //Old implementation
-            //try
-            //{
-            //    var lefthendMenu = _driver.NowAt<LeftHandMenuElement>();
-            //    lefthendMenu.Devices.Click();
-            //    RemoveAllCustomLists();
-            //    lefthendMenu.Applications.Click();
-            //    RemoveAllCustomLists();
-            //    lefthendMenu.Mailboxes.Click();
-            //    RemoveAllCustomLists();
-            //    lefthendMenu.Users.Click();
-            //    RemoveAllCustomLists();
-            //}
-            //catch (Exception e)
-            //{
-            //    Logger.Write($"Some errors appears during List deleting: {e.Message}");
-            //}
+            catch { }
         }
 
         public void RemoveAllCustomLists()
