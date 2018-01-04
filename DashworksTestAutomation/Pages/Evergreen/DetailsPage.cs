@@ -41,7 +41,7 @@ namespace DashworksTestAutomation.Pages.Evergreen
 
         public void ExpandAllSections()
         {
-            var expandButtons = Driver.FindElements(By.XPath(".//button[@title='Maximize Group']"));
+            var expandButtons = Driver.FindElements(By.XPath(".//button[@aria-describedby='cdk-describedby-message-26']"));
 
             if (expandButtons.Any())
             {
@@ -56,7 +56,7 @@ namespace DashworksTestAutomation.Pages.Evergreen
 
         public void CloseAllSections()
         {
-            var closeButtons = Driver.FindElements(By.XPath(".//button[@title='Minimize Group']"));
+            var closeButtons = Driver.FindElements(By.XPath(".//button[@aria-describedby='cdk-describedby-message-25']"));
 
             if (closeButtons.Any())
             {
