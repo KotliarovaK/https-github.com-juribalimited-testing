@@ -20,12 +20,6 @@ namespace DashworksTestAutomation.Providers
             }
         };
 
-        //public static UserDto User = new UserDto()
-        //{
-        //    UserName = ConfigurationManager.AppSettings["user.login"],
-        //    Password = ConfigurationManager.AppSettings["user.password"]
-        //};
-
         static UserProvider()
         {
             for (int i = 2; i < int.Parse(ConfigurationManager.AppSettings["availableUsersRange"]); i++)
