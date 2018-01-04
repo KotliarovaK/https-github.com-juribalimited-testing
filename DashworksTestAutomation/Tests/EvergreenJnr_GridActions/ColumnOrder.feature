@@ -12,7 +12,7 @@ Background: Pre-Conditions
 	When User clicks the Switch to Evergreen link
 	Then Evergreen Dashboards page should be displayed to the user
 
-@Evergreen @Devices @EvergreenJnr_GridActions @ColumnOrder @DAS-10836
+@Evergreen @Devices @EvergreenJnr_GridActions @ColumnOrder @DAS10836
 Scenario: EvergreenJnr_DevicesList_CheckThatColumnsOrderSavedAfterSearch
 	When User clicks "Devices" on the left-hand menu
 	Then "Devices" list should be displayed to the user
@@ -24,7 +24,7 @@ Scenario: EvergreenJnr_DevicesList_CheckThatColumnsOrderSavedAfterSearch
 	| Smith          | 11           |
 	Then "Owner Display Name" column is "Left" Pinned
 
-@Evergreen @Users @EvergreenJnr_GridActions @ColumnOrder @DAS-10836
+@Evergreen @Users @EvergreenJnr_GridActions @ColumnOrder @DAS10836
 Scenario: EvergreenJnr_UsersList_CheckThatColumnsOrderSavedAfterSearch
 	When User clicks "Users" on the left-hand menu
 	Then "Users" list should be displayed to the user
@@ -41,7 +41,7 @@ Scenario: EvergreenJnr_UsersList_CheckThatColumnsOrderSavedAfterSearch
 	| Smith          | 59           |
 	Then "Compliance" column is "Right" Pinned
 
-@Evergreen @Devices @EvergreenJnr_GridActions @ColumnOrder @DAS-10621
+@Evergreen @Devices @EvergreenJnr_GridActions @ColumnOrder @DAS10621
 Scenario: EvergreenJnr_DevicesList_CheckThatColumnsOrderSavedAfterAddingAFilter
 	When User clicks "Devices" on the left-hand menu
 	Then "Devices" list should be displayed to the user
