@@ -205,7 +205,7 @@ Scenario: EvergreenJnr_DevicesList_Search_CheckThatSearchFieldHaveResetButtonAtL
 	When User enters "CheckTheResetButton" text in Search field at List Panel
 	Then reset button in Search field at List Panel is displayed
 
-@Evergreen @Devices @EvergreenJnr_Search @Search @DAS-11495
+@Evergreen @Devices @EvergreenJnr_Search @Search @DAS11495
 Scenario: EvergreenJnr_DevicesList_Search_CheckThat500ErrorMessageIsNotDisplayedAfterEnteringTheSpecificCharacters
 	When User clicks "Devices" on the left-hand menu
 	Then "Devices" list should be displayed to the user

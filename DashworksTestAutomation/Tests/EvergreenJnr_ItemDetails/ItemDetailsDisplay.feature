@@ -49,7 +49,7 @@ Examples:
 	| alfredo.m.daniel@dwlabs.local | Cloud Mail Server | false        |
 	| alex.cristea@juriba.com       | Mail Server       | false        |
 
-@Evergreen @Devices @EvergreenJnr_ItemDetails @ItemDetailsDisplay @DAS-11510
+@Evergreen @Devices @EvergreenJnr_ItemDetails @ItemDetailsDisplay @DAS11510
 Scenario: EvergreenJnr_DevicesList_CheckThatLastLogoffDateFieldIsNotDisplayedAtTheDeviceOwnerBlockOfDeviceDetails
 	When User clicks "Devices" on the left-hand menu
 	Then "Devices" list should be displayed to the user
