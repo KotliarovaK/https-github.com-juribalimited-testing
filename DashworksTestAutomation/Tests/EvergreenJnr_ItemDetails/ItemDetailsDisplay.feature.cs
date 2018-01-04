@@ -232,14 +232,14 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_ItemDetails
             this.ScenarioCleanup();
         }
         
-        public virtual void EvergreenJnr_MailboxesList_ThatCheckSelectedFieldStateOnDetailsTab(string emailAddress, string fieldName, string displayState, string[] exampleTags)
+        public virtual void EvergreenJnr_MailboxesList_CheckThatSelectedFieldStateOnDetailsTab(string emailAddress, string fieldName, string displayState, string[] exampleTags)
         {
             System.Exception lastException = null;
             for (int i = 0; (i <= 1); i = (i + 1))
             {
                 try
                 {
-                    this.EvergreenJnr_MailboxesList_ThatCheckSelectedFieldStateOnDetailsTabInternal(emailAddress, fieldName, displayState, exampleTags);
+                    this.EvergreenJnr_MailboxesList_CheckThatSelectedFieldStateOnDetailsTabInternal(emailAddress, fieldName, displayState, exampleTags);
                     return;
                 }
                 catch (System.Exception exc)
@@ -259,7 +259,7 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_ItemDetails
         }
         
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestMethodAttribute()]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.DescriptionAttribute("EvergreenJnr_MailboxesList_ThatCheckSelectedFieldStateOnDetailsTab: Variant 0")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.DescriptionAttribute("EvergreenJnr_MailboxesList_CheckThatSelectedFieldStateOnDetailsTab: Variant 0")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("FeatureTitle", "ItemDetailsDisplay")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("Evergreen")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("Mailboxes")]
@@ -272,13 +272,13 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_ItemDetails
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:EmailAddress", "alfredo.m.daniel@dwlabs.local")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:FieldName", "Mailbox Database")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:DisplayState", "true")]
-        public virtual void EvergreenJnr_MailboxesList_ThatCheckSelectedFieldStateOnDetailsTab_Variant0()
+        public virtual void EvergreenJnr_MailboxesList_CheckThatSelectedFieldStateOnDetailsTab_Variant0()
         {
-            this.EvergreenJnr_MailboxesList_ThatCheckSelectedFieldStateOnDetailsTab("alfredo.m.daniel@dwlabs.local", "Mailbox Database", "true", ((string[])(null)));
+            this.EvergreenJnr_MailboxesList_CheckThatSelectedFieldStateOnDetailsTab("alfredo.m.daniel@dwlabs.local", "Mailbox Database", "true", ((string[])(null)));
         }
         
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestMethodAttribute()]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.DescriptionAttribute("EvergreenJnr_MailboxesList_ThatCheckSelectedFieldStateOnDetailsTab: Variant 1")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.DescriptionAttribute("EvergreenJnr_MailboxesList_CheckThatSelectedFieldStateOnDetailsTab: Variant 1")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("FeatureTitle", "ItemDetailsDisplay")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("Evergreen")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("Mailboxes")]
@@ -291,13 +291,13 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_ItemDetails
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:EmailAddress", "alfredo.m.daniel@dwlabs.local")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:FieldName", "Cloud Mail Server")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:DisplayState", "false")]
-        public virtual void EvergreenJnr_MailboxesList_ThatCheckSelectedFieldStateOnDetailsTab_Variant1()
+        public virtual void EvergreenJnr_MailboxesList_CheckThatSelectedFieldStateOnDetailsTab_Variant1()
         {
-            this.EvergreenJnr_MailboxesList_ThatCheckSelectedFieldStateOnDetailsTab("alfredo.m.daniel@dwlabs.local", "Cloud Mail Server", "false", ((string[])(null)));
+            this.EvergreenJnr_MailboxesList_CheckThatSelectedFieldStateOnDetailsTab("alfredo.m.daniel@dwlabs.local", "Cloud Mail Server", "false", ((string[])(null)));
         }
         
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestMethodAttribute()]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.DescriptionAttribute("EvergreenJnr_MailboxesList_ThatCheckSelectedFieldStateOnDetailsTab: Variant 2")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.DescriptionAttribute("EvergreenJnr_MailboxesList_CheckThatSelectedFieldStateOnDetailsTab: Variant 2")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("FeatureTitle", "ItemDetailsDisplay")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("Evergreen")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("Mailboxes")]
@@ -310,12 +310,12 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_ItemDetails
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:EmailAddress", "alex.cristea@juriba.com")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:FieldName", "Mail Server")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:DisplayState", "false")]
-        public virtual void EvergreenJnr_MailboxesList_ThatCheckSelectedFieldStateOnDetailsTab_Variant2()
+        public virtual void EvergreenJnr_MailboxesList_CheckThatSelectedFieldStateOnDetailsTab_Variant2()
         {
-            this.EvergreenJnr_MailboxesList_ThatCheckSelectedFieldStateOnDetailsTab("alex.cristea@juriba.com", "Mail Server", "false", ((string[])(null)));
+            this.EvergreenJnr_MailboxesList_CheckThatSelectedFieldStateOnDetailsTab("alex.cristea@juriba.com", "Mail Server", "false", ((string[])(null)));
         }
         
-        private void EvergreenJnr_MailboxesList_ThatCheckSelectedFieldStateOnDetailsTabInternal(string emailAddress, string fieldName, string displayState, string[] exampleTags)
+        private void EvergreenJnr_MailboxesList_CheckThatSelectedFieldStateOnDetailsTabInternal(string emailAddress, string fieldName, string displayState, string[] exampleTags)
         {
             string[] @__tags = new string[] {
                     "Evergreen",
@@ -329,7 +329,7 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_ItemDetails
             {
                 @__tags = System.Linq.Enumerable.ToArray(System.Linq.Enumerable.Concat(@__tags, exampleTags));
             }
-            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("EvergreenJnr_MailboxesList_ThatCheckSelectedFieldStateOnDetailsTab", @__tags);
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("EvergreenJnr_MailboxesList_CheckThatSelectedFieldStateOnDetailsTab", @__tags);
             this.ScenarioSetup(scenarioInfo);
             this.FeatureBackground();
             testRunner.When("User clicks \"Mailboxes\" on the left-hand menu", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");

@@ -36,7 +36,7 @@ Scenario: EvergreenJnr_MailboxesList_CheckThat404ErrorIsNotDisplayedOccurringWhe
 	Then "No mailbox owner found for this mailbox" text is displayed for "Mailbox Owner" section
 
 @Evergreen @Mailboxes @EvergreenJnr_ItemDetails @ItemDetailsDisplay @DAS-11478 @DAS-11477 @DAS-11476
-Scenario Outline: EvergreenJnr_MailboxesList_ThatCheckSelectedFieldStateOnDetailsTab
+Scenario Outline: EvergreenJnr_MailboxesList_CheckThatSelectedFieldStateOnDetailsTab
 	When User clicks "Mailboxes" on the left-hand menu
 	Then "Mailboxes" list should be displayed to the user
 	When User perform search by "<EmailAddress>"

@@ -375,11 +375,11 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_ActionsPanel
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:PageName", "Devices")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:SelectedRowsCount", "17225")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Columnname", "Hostname")]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:SelectedRowName", "02QS1WBYUHCAG8Z")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:SelectedRowName", "001BAQXT6JWFPI")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:SelectedRowsCountAfterDiselect", "17224")]
         public virtual void EvergreenJnr_AllLists_SelectAllChecboxMainFunctionalityTest_Devices()
         {
-            this.EvergreenJnr_AllLists_SelectAllChecboxMainFunctionalityTest("Devices", "17225", "Hostname", "02QS1WBYUHCAG8Z", "17224", ((string[])(null)));
+            this.EvergreenJnr_AllLists_SelectAllChecboxMainFunctionalityTest("Devices", "17225", "Hostname", "001BAQXT6JWFPI", "17224", ((string[])(null)));
         }
         
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestMethodAttribute()]
@@ -394,11 +394,11 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_ActionsPanel
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:PageName", "Users")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:SelectedRowsCount", "41335")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Columnname", "Username")]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:SelectedRowName", "AAV4528222")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:SelectedRowName", "002B5DC7D4D34D5C895")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:SelectedRowsCountAfterDiselect", "41334")]
         public virtual void EvergreenJnr_AllLists_SelectAllChecboxMainFunctionalityTest_Users()
         {
-            this.EvergreenJnr_AllLists_SelectAllChecboxMainFunctionalityTest("Users", "41335", "Username", "AAV4528222", "41334", ((string[])(null)));
+            this.EvergreenJnr_AllLists_SelectAllChecboxMainFunctionalityTest("Users", "41335", "Username", "002B5DC7D4D34D5C895", "41334", ((string[])(null)));
         }
         
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestMethodAttribute()]
@@ -413,11 +413,11 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_ActionsPanel
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:PageName", "Applications")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:SelectedRowsCount", "2223")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Columnname", "Application")]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:SelectedRowName", "MKS Source Integrity")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:SelectedRowName", "7zip")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:SelectedRowsCountAfterDiselect", "2222")]
         public virtual void EvergreenJnr_AllLists_SelectAllChecboxMainFunctionalityTest_Applications()
         {
-            this.EvergreenJnr_AllLists_SelectAllChecboxMainFunctionalityTest("Applications", "2223", "Application", "MKS Source Integrity", "2222", ((string[])(null)));
+            this.EvergreenJnr_AllLists_SelectAllChecboxMainFunctionalityTest("Applications", "2223", "Application", "7zip", "2222", ((string[])(null)));
         }
         
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestMethodAttribute()]
@@ -432,11 +432,11 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_ActionsPanel
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:PageName", "Mailboxes")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:SelectedRowsCount", "4835")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Columnname", "Email Address")]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:SelectedRowName", "blogs@juriba.com")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:SelectedRowName", "00B5CCB89AD0404B965@bclabs.local")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:SelectedRowsCountAfterDiselect", "4834")]
         public virtual void EvergreenJnr_AllLists_SelectAllChecboxMainFunctionalityTest_Mailboxes()
         {
-            this.EvergreenJnr_AllLists_SelectAllChecboxMainFunctionalityTest("Mailboxes", "4835", "Email Address", "blogs@juriba.com", "4834", ((string[])(null)));
+            this.EvergreenJnr_AllLists_SelectAllChecboxMainFunctionalityTest("Mailboxes", "4835", "Email Address", "00B5CCB89AD0404B965@bclabs.local", "4834", ((string[])(null)));
         }
         
         private void EvergreenJnr_AllLists_SelectAllChecboxMainFunctionalityTestInternal(string pageName, string selectedRowsCount, string columnname, string selectedRowName, string selectedRowsCountAfterDiselect, string[] exampleTags)
