@@ -180,9 +180,18 @@ Examples:
 	| Applications |
 	| Mailboxes    |
 
-@Evergreen @Devices @EvergreenJnr_ListDetails @ListDetailsFunctionality @DAS-10880 @Delete_Newly_Created_List
-Scenario Outline: EvergreenJnr_DevicesLists_CheckDefaultOptionsInListDetailsForStaticLists
+@Evergreen @Devices @EvergreenJnr_ListDetails @ListDetailsFunctionality @DAS11465 @Delete_Newly_Created_List
+Scenario: EvergreenJnr_DevicesLists_CheckThatAnotherUserCanEditsAndSavesASharedListWithoutErrors
 	When User clicks "Devices" on the left-hand menu
 	Then "Devices" list should be displayed to the user
-	When User clicks the Actions button
-	Then Actions panel is displayed to the user
+	When User clicks the Columns button
+	Then Columns panel is displayed to the user
+	When ColumnName is entered into the search box and the selection is clicked
+	| Hostname |
+	| Compliance |
+	| Device Key |
+	Then ColumnName is added to the list
+	| Hostname   |
+	| Compliance |
+	| Device Key |
+	When User create custom list with "{listName}" name
