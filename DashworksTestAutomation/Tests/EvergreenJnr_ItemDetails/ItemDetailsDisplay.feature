@@ -49,11 +49,11 @@ Examples:
 	| alfredo.m.daniel@dwlabs.local | Cloud Mail Server | false        |
 	| alex.cristea@juriba.com       | Mail Server       | false        |
 
-@Evergreen @Devices @EvergreenJnr_ItemDetails @ItemDetailsDisplay @DAS-11478 @DAS-11477 @DAS-11476
+@Evergreen @Devices @EvergreenJnr_ItemDetails @ItemDetailsDisplay @DAS-11510
 Scenario: EvergreenJnr_DevicesList_CheckThatLastLogoffDateFieldIsNotDisplayedAtTheDeviceOwnerBlockOfDeviceDetails
 	When User clicks "Devices" on the left-hand menu
 	Then "Devices" list should be displayed to the user
 	When User click content from "Hostname" column
-	When User navigates to the "Details" tab
-	When User navigates to the "Device Owner" section
+	And User navigates to the "Details" tab
+	And User navigates to the "Device Owner" section
 	Then "Last Logoff Date" field display state is "false" on Details tab
