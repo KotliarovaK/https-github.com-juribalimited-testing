@@ -195,10 +195,13 @@ Scenario: EvergreenJnr_DevicesList_Search_CheckThatMultiSelectFilterSearchFieldH
 	And User enters "CheckTheResetButton" text in Search field at selected Filter
 	Then reset button in Search field at selected Filter is displayed
 
-@Evergreen @Devices @EvergreenJnr_Search @Search @DAS-11350
+@Evergreen @Devices @EvergreenJnr_Search @Search @DAS-11350 @Delete_Newly_Created_List
 Scenario: EvergreenJnr_DevicesList_Search_CheckThatSearchFieldHaveResetButtonAtListPanel 
 	When User clicks "Devices" on the left-hand menu
 	Then "Devices" list should be displayed to the user
+	When User click on 'Hostname' column header
+	Then data in table is sorted by 'Hostname' column in descending order
+	When User create custom list with "TestList" name
 	When User enters "CheckTheResetButton" text in Search field at List Panel
 	Then reset button in Search field at List Panel is displayed
 
