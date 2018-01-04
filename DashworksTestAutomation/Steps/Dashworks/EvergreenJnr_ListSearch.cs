@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Threading;
 using DashworksTestAutomation.Extensions;
 using DashworksTestAutomation.Pages.Evergreen;
 using DashworksTestAutomation.Utils;
@@ -54,7 +55,7 @@ namespace DashworksTestAutomation.Steps.Dashworks
                 PerformSearch(row["SearchCriteria"]);
 
                 var page = _driver.NowAt<BaseDashboardPage>();
-
+                _driver.WaitWhileControlIsNotDisplayed<BaseDashboardPage>(() => page.NoResultsFoundMessage);
                 Assert.AreEqual(message, page.NoResultsFoundMessage.Text);
             }
         }
@@ -78,6 +79,8 @@ namespace DashworksTestAutomation.Steps.Dashworks
             var listPageElement = _driver.NowAt<BaseDashboardPage>();
             if (!String.IsNullOrWhiteSpace(numberOfRows))
             {
+                Thread.Sleep(1000);
+
                 _driver.WaitWhileControlIsNotDisplayed<BaseDashboardPage>(() => listPageElement.ResultsOnPageCount);
 
                 StringAssert.AreEqualIgnoringCase($"{numberOfRows} rows", listPageElement.ResultsOnPageCount.Text);
@@ -163,6 +166,7 @@ namespace DashworksTestAutomation.Steps.Dashworks
         public void ThenResetButtonInGlobalSearchFieldIsDisplayed()
         {
             var resetbutton = _driver.NowAt<BaseDashboardPage>();
+            _driver.WaitWhileControlIsNotDisplayed<BaseDashboardPage>(() => resetbutton.SearchTextboxResetButton);
             Assert.IsTrue(resetbutton.SearchTextboxResetButton.Displayed(), "Reset button is not displayed");
             Logger.Write("Reset button is displayed");
         }
@@ -171,6 +175,7 @@ namespace DashworksTestAutomation.Steps.Dashworks
         public void ThenResetButtonInTableSearchFieldIsDisplayed()
         {
             var resetbutton = _driver.NowAt<BaseDashboardPage>();
+            _driver.WaitWhileControlIsNotDisplayed<BaseDashboardPage>(() => resetbutton.SearchTextboxResetButton);
             Assert.IsTrue(resetbutton.SearchTextboxResetButton.Displayed(), "Reset button is not displayed");
             Logger.Write("Reset button is displayed");
         }
@@ -179,6 +184,7 @@ namespace DashworksTestAutomation.Steps.Dashworks
         public void ThenResetButtonInSearchFieldOnSelectedPanelIsDisplayed()
         {
             var resetbutton = _driver.NowAt<BaseDashboardPage>();
+            _driver.WaitWhileControlIsNotDisplayed<BaseDashboardPage>(() => resetbutton.SearchTextboxResetButtonInPanel);
             Assert.IsTrue(resetbutton.SearchTextboxResetButtonInPanel.Displayed(), "Reset button is not displayed");
             Logger.Write("Reset button is displayed");
         }
@@ -187,6 +193,7 @@ namespace DashworksTestAutomation.Steps.Dashworks
         public void ThenResetButtonInSearchFieldAtSelectedFilterIsDisplayed()
         {
             var resetbutton = _driver.NowAt<BaseDashboardPage>();
+            _driver.WaitWhileControlIsNotDisplayed<BaseDashboardPage>(() => resetbutton.SearchTextboxResetButtonInPanel);
             Assert.IsTrue(resetbutton.SearchTextboxResetButtonInPanel.Displayed(), "Reset button is not displayed");
             Logger.Write("Reset button is displayed");
         }
@@ -195,6 +202,7 @@ namespace DashworksTestAutomation.Steps.Dashworks
         public void ThenResetButtonInSearchFieldAtListPanelIsDisplayed()
         {
             var resetbutton = _driver.NowAt<BaseDashboardPage>();
+            _driver.WaitWhileControlIsNotDisplayed<BaseDashboardPage>(() => resetbutton.SearchTextboxResetButtonInListPanel);
             Assert.IsTrue(resetbutton.SearchTextboxResetButtonInListPanel.Displayed(), "Reset button is not displayed");
             Logger.Write("Reset button is displayed");
         }
