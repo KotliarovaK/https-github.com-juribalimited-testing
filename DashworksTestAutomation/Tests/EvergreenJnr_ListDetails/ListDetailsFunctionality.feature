@@ -187,11 +187,43 @@ Scenario: EvergreenJnr_DevicesLists_CheckThatAnotherUserCanEditsAndSavesASharedL
 	When User clicks the Columns button
 	Then Columns panel is displayed to the user
 	When ColumnName is entered into the search box and the selection is clicked
-	| Hostname |
+	| Hostname   |
 	| Compliance |
 	| Device Key |
 	Then ColumnName is added to the list
 	| Hostname   |
 	| Compliance |
 	| Device Key |
-	When User create custom list with "{listName}" name
+	When User create custom list with "TestList" name
+	Then "TestList" list is displayed to user
+	When User clicks the List Details button
+	Then List details panel is displayed to the user
+	And "Everyone can edit" sharing option is selected
+	When User clicks the Logout button
+	Then User is logged out
+	When User clicks on the Login link
+	Then Login Page is displayed to the user
+	When User input "automation_admin8" Login and "m!gration" Password and clicks on the login button
+	Then Dashworks homepage is displayed to the user in a logged in state
+	When User clicks the Switch to Evergreen link
+	Then Evergreen Dashboards page should be displayed to the user
+	When User clicks "Devices" on the left-hand menu
+	Then "Devices" list should be displayed to the user
+	When User navigates to the "TestList" list
+	Then "TestList" list is displayed to user
+	When User clicks the Columns button
+	Then Columns panel is displayed to the user
+	When ColumnName is entered into the search box and the selection is clicked
+	| Hostname |
+	| Import   |
+	Then ColumnName is added to the list
+	| Hostname |
+	| Import   |
+	When User update current custom list
+	When User clicks the Refresh button
+	Then "TestList" list is displayed to user
+	#Ask about added columns
+	When User navigates to the "All Devices" list
+	Then "TestList" list is displayed to user
+	When User navigates to the "TestList" list
+	Then Edit List menu is not displayed
