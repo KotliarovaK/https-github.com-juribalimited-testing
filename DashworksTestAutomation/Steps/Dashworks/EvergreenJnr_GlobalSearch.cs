@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 using DashworksTestAutomation.Extensions;
 using DashworksTestAutomation.Helpers;
 using DashworksTestAutomation.Pages.Evergreen;
+using DashworksTestAutomation.Utils;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using OpenQA.Selenium;
 using OpenQA.Selenium.Remote;
@@ -44,6 +45,15 @@ namespace DashworksTestAutomation.Steps.Dashworks
         {
             var searchElement = _driver.NowAt<GlobalSearchElement>();
             Assert.IsTrue(searchElement.SearchResults.Displayed(), "Search Result are not displayed");
+        }
+
+        [Then(@"reset button in Global Search field is displayed")]
+        public void ThenResetButtonInGlobalSearchFieldIsDisplayed()
+        {
+            var searchElement = _driver.NowAt<BaseDashboardPage>();
+            _driver.WaitWhileControlIsNotDisplayed<BaseDashboardPage>(() => searchElement.SearchTextboxResetButton);
+            Assert.IsTrue(searchElement.SearchTextboxResetButton.Displayed(), "Reset button is not displayed");
+            Logger.Write("Reset button is displayed");
         }
     }
 }

@@ -21,6 +21,9 @@ namespace DashworksTestAutomation.Pages.Evergreen
         [FindsBy(How = How.XPath, Using = ".//button[@class='btn btn-default input-toggle mat-icon-button ng-star-inserted']")]
         public IWebElement SearchTextboxResetButton { get; set; }
 
+        [FindsBy(How = How.XPath, Using = ".//div[@class='filterAddPanel ng-star-inserted']//input[@placeholder='Search']")]
+        public IWebElement LookupFilterSearchTextbox { get; set; }
+
         [FindsBy(How = How.XPath, Using = ".//div[contains(@class,'filter-category ng-star-inserted')]")]
         public IList<IWebElement> FilterCategories { get; set; }
 
@@ -177,12 +180,6 @@ namespace DashworksTestAutomation.Pages.Evergreen
         public IList<IWebElement> GetSelectBoxes()
         {
             return Driver.FindElements(By.XPath(".//span[@class='text-container ng-star-inserted']"));
-        }
-
-        public void EnteredIntoSearchBox(string searchedText)
-        {
-            Driver.FindElement(By.XPath(".//input[@name='search']")).Click();
-            Driver.FindElement(By.XPath(".//input[@name='search']")).SendKeys(searchedText);
         }
     }
 }

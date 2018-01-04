@@ -107,68 +107,10 @@ namespace DashworksTestAutomation.Steps.Dashworks
         [When(@"User click content from ""(.*)"" column")]
         public void WhenUserClickContentFromColumn(string columnName)
         {
-            var tableElement = _driver.NowAt<BaseDashboardPage>();
+            var tableElement = _driver.NowAtWithoutWait<BaseDashboardPage>();
 
             tableElement.ClickContentByColumnName(columnName);
-        }
-
-        #region Search field
-
-        [When(@"User enters ""(.*)"" text in Global Search field")]
-        public void WhenUserEntersTextInGlobalSearchField(string searchedText)
-        {
-            var columnElement = _driver.NowAt<BaseDashboardPage>();
-            columnElement.EnteredIntoGlobalSearchbox(searchedText);
-        }
-
-        [When(@"User enters ""(.*)"" text in Table Search field")]
-        public void WhenUserEntersTextInTableSearchField(string searchedText)
-        {
-            var columnElement = _driver.NowAt<BaseDashboardPage>();
-            columnElement.EnteredIntoTableSearchbox(searchedText);
-        }
-
-        [When(@"User enters ""(.*)"" text in Search field at Filters Panel")]
-        public void WhenUserEntersTextInSearchFieldAtFiltersPanel(string searchedText)
-        {
-            var columnElement = _driver.NowAt<BaseDashboardPage>();
-            var filterElement = _driver.NowAt<FiltersElement>();
-            filterElement.AddNewFilterButton.Click();
-            columnElement.EnteredIntoFilterPanelSearchbox(searchedText);
-        }
-
-        [When(@"User enters ""(.*)"" text in Search field at Columns Panel")]
-        public void WhenUserEntersTextInSearchFieldAtColumnsPanel(string searchedText)
-        {
-            var columnElement = _driver.NowAt<BaseDashboardPage>();
-            columnElement.EnteredIntoColumnPanelSearchbox(searchedText);
-        }
-
-        [When(@"User enters ""(.*)"" text in Search field at selected Filter")]
-        public void WhenUserEntersTextInSearchFieldAtSelectedFilter(string searchedText)
-        {
-            var columnElement = _driver.NowAt<BaseDashboardPage>();
-            columnElement.EnteredIntoFilterSearchbox(searchedText);
-        }
-
-        [When(@"User enters ""(.*)"" text in Search field at List Panel")]
-        public void WhenUserEntersTextInSearchFieldAtListPanel(string searchedText)
-        {
-            var columnElement = _driver.NowAt<BaseDashboardPage>();
-            columnElement.EnteredIntoListSearchbox(searchedText);
-        }
-
-        #endregion Search fields
-
-        #region Reset button in Search field
-
-        [Then(@"reset button in Global Search field is displayed")]
-        public void ThenResetButtonInGlobalSearchFieldIsDisplayed()
-        {
-            var resetbutton = _driver.NowAt<BaseDashboardPage>();
-            _driver.WaitWhileControlIsNotDisplayed<BaseDashboardPage>(() => resetbutton.SearchTextboxResetButton);
-            Assert.IsTrue(resetbutton.SearchTextboxResetButton.Displayed(), "Reset button is not displayed");
-            Logger.Write("Reset button is displayed");
+            _driver.WaitForDataLoading();
         }
 
         [Then(@"reset button in Table Search field is displayed")]
@@ -184,29 +126,10 @@ namespace DashworksTestAutomation.Steps.Dashworks
         public void ThenResetButtonInSearchFieldOnSelectedPanelIsDisplayed()
         {
             var resetbutton = _driver.NowAt<BaseDashboardPage>();
+
             _driver.WaitWhileControlIsNotDisplayed<BaseDashboardPage>(() => resetbutton.SearchTextboxResetButtonInPanel);
             Assert.IsTrue(resetbutton.SearchTextboxResetButtonInPanel.Displayed(), "Reset button is not displayed");
             Logger.Write("Reset button is displayed");
         }
-
-        [Then(@"reset button in Search field at selected Filter is displayed")]
-        public void ThenResetButtonInSearchFieldAtSelectedFilterIsDisplayed()
-        {
-            var resetbutton = _driver.NowAt<BaseDashboardPage>();
-            _driver.WaitWhileControlIsNotDisplayed<BaseDashboardPage>(() => resetbutton.SearchTextboxResetButtonInPanel);
-            Assert.IsTrue(resetbutton.SearchTextboxResetButtonInPanel.Displayed(), "Reset button is not displayed");
-            Logger.Write("Reset button is displayed");
-        }
-
-        [Then(@"reset button in Search field at List Panel is displayed")]
-        public void ThenResetButtonInSearchFieldAtListPanelIsDisplayed()
-        {
-            var resetbutton = _driver.NowAt<BaseDashboardPage>();
-            _driver.WaitWhileControlIsNotDisplayed<BaseDashboardPage>(() => resetbutton.SearchTextboxResetButtonInListPanel);
-            Assert.IsTrue(resetbutton.SearchTextboxResetButtonInListPanel.Displayed(), "Reset button is not displayed");
-            Logger.Write("Reset button is displayed");
-        }
-
-        #endregion Reset button in Search field
     }
 }

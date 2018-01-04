@@ -44,6 +44,13 @@ namespace DashworksTestAutomation.Extensions
             return page;
         }
 
+        public static T NowAtWithoutWait<T>(this RemoteWebDriver driver) where T : SeleniumBasePage, new()
+        {
+            var page = new T { Driver = driver, Actions = new Actions(driver) };
+            page.InitElements();
+            return page;
+        }
+
         public static string CreateScreenshot(this RemoteWebDriver driver, string fileName)
         {
             try
