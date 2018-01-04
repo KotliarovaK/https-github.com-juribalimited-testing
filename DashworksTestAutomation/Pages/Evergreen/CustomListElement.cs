@@ -14,6 +14,12 @@ namespace DashworksTestAutomation.Pages.Evergreen
         [FindsBy(How = How.XPath, Using = ".//span[@class='action-item']")]
         public IWebElement CreateNewListButton { get; set; }
 
+        [FindsBy(How = How.XPath, Using = ".//input[@aria-label='search']")]
+        public IWebElement ListPanelSearchTextbox { get; set; }
+
+        [FindsBy(How = How.XPath, Using = ".//div[@class='clearButton ng-star-inserted']")]
+        public IWebElement SearchTextboxResetButtonInListPanel { get; set; }
+
         [FindsBy(How = How.XPath, Using = ".//input[@aria-label='List Name']")]
         public IWebElement ListNameTextbox { get; set; }
 

@@ -133,11 +133,5 @@ namespace DashworksTestAutomation.Pages.Evergreen
         {
             return Driver.IsElementDisplayed(By.XPath($".//div[contains(@class, 'filter-category-label')][text()='{sectionsName}']"));
         }
-
-        public void EnteredIntoSearchBox(string searchedText)
-        {
-            Driver.FindElement(By.XPath(".//input[@name='search']")).Click();
-            Driver.FindElement(By.XPath(".//input[@name='search']")).SendKeys(searchedText);
-        }
     }
 }

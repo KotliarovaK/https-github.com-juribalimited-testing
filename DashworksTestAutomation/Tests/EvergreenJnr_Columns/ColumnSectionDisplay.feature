@@ -29,7 +29,7 @@ Scenario: EvergreenJnr_DevicesList_CheckThatColumnCategoriesAreClosedAfterCleari
 	Then "Devices" list should be displayed to the user
 	When User clicks the Columns button
 	Then Columns panel is displayed to the user
-	When User is searching in columns with "date" text in Columns panel
+	When User enters "date" text in Search field at Columns Panel
 	Then Minimize buttons are displayed for all category in Columns panel
 	When User clears search textbox in Columns panel
 	Then Maximize buttons are displayed for all category in Columns panel
