@@ -282,10 +282,10 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_ActionsPanel
         [NUnit.Framework.CategoryAttribute("Evergreen_ActionsPanel")]
         [NUnit.Framework.CategoryAttribute("AllCheckbox")]
         [NUnit.Framework.CategoryAttribute("DAS10656")]
-        [NUnit.Framework.TestCaseAttribute("Devices", "17225", "Hostname", "02QS1WBYUHCAG8Z", "17224", new string[0])]
-        [NUnit.Framework.TestCaseAttribute("Users", "41335", "Username", "AAV4528222", "41334", new string[0])]
-        [NUnit.Framework.TestCaseAttribute("Applications", "2223", "Application", "MKS Source Integrity", "2222", new string[0])]
-        [NUnit.Framework.TestCaseAttribute("Mailboxes", "4835", "Email Address", "blogs@juriba.com", "4834", new string[0])]
+        [NUnit.Framework.TestCaseAttribute("Devices", "17225", "Hostname", "001BAQXT6JWFPI", "17224", new string[0])]
+        [NUnit.Framework.TestCaseAttribute("Users", "41335", "Username", "002B5DC7D4D34D5C895", "41334", new string[0])]
+        [NUnit.Framework.TestCaseAttribute("Applications", "2223", "Application", "7zip", "2222", new string[0])]
+        [NUnit.Framework.TestCaseAttribute("Mailboxes", "4835", "Email Address", "00B5CCB89AD0404B965@bclabs.local", "4834", new string[0])]
         public virtual void EvergreenJnr_AllLists_SelectAllChecboxMainFunctionalityTest(string pageName, string selectedRowsCount, string columnname, string selectedRowName, string selectedRowsCountAfterDiselect, string[] exampleTags)
         {
             System.Exception lastException = null;

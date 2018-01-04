@@ -53,6 +53,8 @@ namespace DashworksTestAutomation.Steps.Dashworks
             foreach (var row in table.Rows)
             {
                 var rowIndex = columnContent.IndexOf(row["SelectedRowsName"]);
+                if(rowIndex<0)
+                    throw new Exception($"'{row["SelectedRowsName"]}' is not found in the '{columnName}' column");
                 dashboardPage.SelectRowsCheckboxes[rowIndex].Click();
             }
         }

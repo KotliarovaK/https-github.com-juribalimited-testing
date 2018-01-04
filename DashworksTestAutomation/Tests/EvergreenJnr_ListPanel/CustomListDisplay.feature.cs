@@ -855,7 +855,7 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_ListPanel
             table17.AddRow(new string[] {
                         "01BQIYGGUW5PRP6"});
             table17.AddRow(new string[] {
-                        "020JQ9RO0J4H07X"});
+                        "00OMQQXWA1DRI6"});
             testRunner.When("User select \"Hostname\" rows in the grid", ((string)(null)), table17, "When ");
             testRunner.And("User create static list with \"Static List TestName\" name", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
             testRunner.Then("\"Static List TestName\" list is displayed to user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
@@ -937,7 +937,7 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_ListPanel
             table18.AddRow(new string[] {
                         "011PLA470S0B9DJ"});
             table18.AddRow(new string[] {
-                        "020JQ9RO0J4H07X"});
+                        "00OMQQXWA1DRI6"});
             testRunner.When("User select \"Hostname\" rows in the grid", ((string)(null)), table18, "When ");
             testRunner.And("User create static list with \"Static List TestName\" name", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
             testRunner.Then("\"Static List TestName\" list is displayed to user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
@@ -962,7 +962,7 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_ListPanel
             TechTalk.SpecFlow.Table table21 = new TechTalk.SpecFlow.Table(new string[] {
                         "SelectedRowsName"});
             table21.AddRow(new string[] {
-                        "020JQ9RO0J4H07X"});
+                        "00OMQQXWA1DRI6"});
             testRunner.When("User select \"Hostname\" rows in the grid", ((string)(null)), table21, "When ");
             testRunner.Then("User removes selected rows", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
             testRunner.When("User navigates to the \"All Devices\" list", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
@@ -1035,7 +1035,7 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_ListPanel
             table23.AddRow(new string[] {
                         "011PLA470S0B9DJ"});
             table23.AddRow(new string[] {
-                        "020JQ9RO0J4H07X"});
+                        "00OMQQXWA1DRI6"});
             testRunner.When("User select \"Hostname\" rows in the grid", ((string)(null)), table23, "When ");
             testRunner.And("User create static list with \"Static List TestName\" name", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
             testRunner.Then("\"Static List TestName\" list is displayed to user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
@@ -1202,9 +1202,9 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_ListPanel
             table28.AddRow(new string[] {
                         "011PLA470S0B9DJ"});
             table28.AddRow(new string[] {
-                        "020JQ9RO0J4H07X"});
+                        "00OMQQXWA1DRI6"});
             table28.AddRow(new string[] {
-                        "03063X2ZUCDN0A1"});
+                        "00SH8162NAS524"});
             testRunner.When("User select \"Hostname\" rows in the grid", ((string)(null)), table28, "When ");
             testRunner.And("User create static list with \"Static List TestName\" name", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
             testRunner.Then("\"Static List TestName\" list is displayed to user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
