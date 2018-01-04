@@ -26,7 +26,7 @@ namespace DashworksTestAutomation.Steps.Dashworks
         public void WhenUserProvidesTheLoginAndPasswordAndClicksOnTheLoginButton()
         {
             //Add user credentials to context
-            UserProvider.User.CopyPropertiesTo(_user);
+            UserProvider.GetFreeUserAccount().CopyPropertiesTo(_user);
 
             var loginPage = _driver.NowAt<LoginPage>();
 
