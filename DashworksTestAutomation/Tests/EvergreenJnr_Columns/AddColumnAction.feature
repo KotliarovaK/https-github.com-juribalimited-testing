@@ -12,7 +12,7 @@ Background: Pre-Conditions
 	When User clicks the Switch to Evergreen link
 	Then Evergreen Dashboards page should be displayed to the user
 
-@Evergreen @Devices @EvergreenJnr_Columns @AddColumnAction @DAS-10665
+@Evergreen @Devices @EvergreenJnr_Columns @AddColumnAction @DAS10665
 Scenario: EvergreenJnr_DevicesList_AddTheDeviceKeyColumnToTheDevicesList
 	When User clicks "Devices" on the left-hand menu
 	Then "Devices" list should be displayed to the user
@@ -28,7 +28,7 @@ Scenario: EvergreenJnr_DevicesList_AddTheDeviceKeyColumnToTheDevicesList
 	| ColumnName          |
 	| Device Key          |
 
-@Evergreen @Mailboxes @EvergreenJnr_Columns @AddColumnAction @DAS-10665
+@Evergreen @Mailboxes @EvergreenJnr_Columns @AddColumnAction @DAS10665
 Scenario: EvergreenJnr_MailboxesList_CheckThat500ErrorIsNotDisplayedAfterSortingForSelectedColumn
 	When User clicks "Mailboxes" on the left-hand menu
 	Then "Mailboxes" list should be displayed to the user

@@ -11,7 +11,7 @@ Background: Pre-Conditions
 	When User clicks the Switch to Evergreen link
 	Then Evergreen Dashboards page should be displayed to the user
 
-@Evergreen @GlobalSearch @EvergreenJnr_GlobalSearch @MainFunctionality @DAS-11490
+@Evergreen @GlobalSearch @EvergreenJnr_GlobalSearch @MainFunctionality @DAS11490
 Scenario: EvergreenJnr_GlobalSearch_CheckThatErrorMessageIsNotDisplayedAfterTypingThreeSpaces
 	When User type "   " in Global Search Field
 	Then "Enter at least 3 characters" message is displayed below Global Search field

@@ -12,7 +12,7 @@ Background: Pre-Conditions
 	When User clicks the Switch to Evergreen link
 	Then Evergreen Dashboards page should be displayed to the user
 
-@Evergreen @Users @EvergreenJnr_ActionsPanel @DAS-10859
+@Evergreen @Users @EvergreenJnr_ActionsPanel @DAS10859
 Scenario: EvergreenJnr_UsersList_CheckThatAfterInterruptingProcessSelectingAllRowsAtActionsPanelProgressIndicatorIsNotContinuesToRunning
 	When User clicks "Users" on the left-hand menu
 	Then "Users" list should be displayed to the user
@@ -25,7 +25,7 @@ Scenario: EvergreenJnr_UsersList_CheckThatAfterInterruptingProcessSelectingAllRo
 	Then Actions panel is displayed to the user
 	Then Actions message container is displayed to the user
 
-@Evergreen @Users @EvergreenJnr_ActionsPanel @DAS-10860
+@Evergreen @Users @EvergreenJnr_ActionsPanel @DAS10860
 Scenario: EvergreenJnr_UsersList_CheckThatAfterClosingActionsPanelTheActionsButtonNoRemainsBeShownInRed
 	When User clicks "Users" on the left-hand menu
 	Then "Users" list should be displayed to the user

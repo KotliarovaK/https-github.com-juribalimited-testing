@@ -12,7 +12,7 @@ Background: Pre-Conditions
 	When User clicks the Switch to Evergreen link
 	Then Evergreen Dashboards page should be displayed to the user
 
-@Evergreen @Devices @EvergreenJnr_StaticLists @FiltersDisplay @DAS-10993 @Delete_Newly_Created_List
+@Evergreen @Devices @EvergreenJnr_StaticLists @FiltersDisplay @DAS10993 @Delete_Newly_Created_List
 Scenario: EvergreenJnr_DevicesList_CheckThatDynamicFiltersAreClearedForStaticListsWhenOpenedAfterDynamicLists
 	When User clicks "Devices" on the left-hand menu
 	Then "Devices" list should be displayed to the user
@@ -42,7 +42,7 @@ Scenario: EvergreenJnr_DevicesList_CheckThatDynamicFiltersAreClearedForStaticLis
 	Then "2" rows are displayed in the agGrid
 	Then Filters Button is disabled
 
-@Evergreen @Devices @EvergreenJnr_ListPanel @CustomListDisplay @DAS-10978 @Delete_Newly_Created_List
+@Evergreen @Devices @EvergreenJnr_ListPanel @CustomListDisplay @DAS10978 @Delete_Newly_Created_List
 Scenario: EvergreenJnr_DevicesList_CheckThatFiltersAndColumnsAreRestoredForSavedList
 	When User clicks "Devices" on the left-hand menu
 	Then "Devices" list should be displayed to the user
@@ -65,7 +65,7 @@ Scenario: EvergreenJnr_DevicesList_CheckThatFiltersAndColumnsAreRestoredForSaved
 	Then Filters panel is displayed to the user
 	And "Windows7Mi: SS Application List Completed is Not Applicable or No" is displayed in added filter info
 
-@Evergreen @Devices @EvergreenJnr_StaticLists @FiltersDisplay @DAS-10695 @Delete_Newly_Created_List
+@Evergreen @Devices @EvergreenJnr_StaticLists @FiltersDisplay @DAS10695 @Delete_Newly_Created_List
 Scenario: EvergreenJnr_DevicesList_CheckThat500ErrorIsNotDisplayedWhenAddingNewObjectToStaticList
 	When User clicks "Devices" on the left-hand menu
 	Then "Devices" list should be displayed to the user
