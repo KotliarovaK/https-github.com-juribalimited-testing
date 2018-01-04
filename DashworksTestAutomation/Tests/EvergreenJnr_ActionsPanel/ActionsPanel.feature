@@ -24,3 +24,12 @@ Scenario: EvergreenJnr_UsersList_CheckThatAfterInterruptingProcessSelectingAllRo
 	And "Users" list should be displayed to the user
 	Then Actions panel is displayed to the user
 	Then Actions message container is displayed to the user
+
+@Evergreen @Users @EvergreenJnr_ActionsPanel @DAS-10860
+Scenario: EvergreenJnr_UsersList_CheckThatAfterClosingActionsPanelTheActionsButtonNoRemainsBeShownInRed
+	When User clicks "Users" on the left-hand menu
+	Then "Users" list should be displayed to the user
+	When User clicks the Actions button
+	Then Actions button is active
+	When User clicks the Actions button
+	Then Actions button is not active
