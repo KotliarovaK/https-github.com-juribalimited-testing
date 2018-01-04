@@ -82,7 +82,7 @@ namespace DashworksTestAutomation.Pages.Evergreen
         public bool GetFavoriteStatus(string listName)
         {
             return Driver.IsElementDisplayed(By.XPath(
-                $".//span[@class='submenu-actions-list-name'][text()='{listName}']//ancestor::li//i[@class='material-icons md-star']"));
+                $".//span[@class='submenu-actions-list-name'][text()='{listName}']//ancestor::li//i[@class='material-icons mat-star']"));
         }
 
         public void ClickSettingsButtonByListName(string listName)
