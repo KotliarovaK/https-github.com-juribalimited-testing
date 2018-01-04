@@ -50,7 +50,7 @@ namespace DashworksTestAutomation.Pages.Evergreen
         [FindsBy(How = How.XPath, Using = ".//input[@aria-label='Search everything']")]
         public IWebElement GlobalSearchTextbox { get; set; }
 
-        [FindsBy(How = How.XPath, Using = ".//input[@class='search-input mat-input-element ng-untouched ng-pristine ng-valid']")]
+        [FindsBy(How = How.XPath, Using = ".//div[@class='filter-panel']//input[@aria-label='search']")]
         public IWebElement FilterPanelSearchTextbox { get; set; }
 
         [FindsBy(How = How.XPath, Using = ".//input[@aria-label='search column']")]
@@ -227,6 +227,7 @@ namespace DashworksTestAutomation.Pages.Evergreen
 
         public void EnteredIntoGlobalSearchbox(string searchedText)
         {
+            Driver.WaitWhileControlIsNotDisplayed<BaseDashboardPage>(() => GlobalSearchTextbox);
             GlobalSearchTextbox.Clear();
             GlobalSearchTextbox.Click();
             GlobalSearchTextbox.SendKeys(searchedText);
@@ -234,6 +235,7 @@ namespace DashworksTestAutomation.Pages.Evergreen
 
         public void EnteredIntoTableSearchbox(string searchedText)
         {
+            Driver.WaitWhileControlIsNotDisplayed<BaseDashboardPage>(() => TableSearchTextbox);
             TableSearchTextbox.Clear();
             TableSearchTextbox.Click();
             TableSearchTextbox.SendKeys(searchedText);
@@ -241,6 +243,7 @@ namespace DashworksTestAutomation.Pages.Evergreen
 
         public void EnteredIntoFilterPanelSearchbox(string searchedText)
         {
+            Driver.WaitWhileControlIsNotDisplayed<BaseDashboardPage>(() => FilterPanelSearchTextbox);
             FilterPanelSearchTextbox.Clear();
             FilterPanelSearchTextbox.Click();
             FilterPanelSearchTextbox.SendKeys(searchedText);
@@ -248,6 +251,7 @@ namespace DashworksTestAutomation.Pages.Evergreen
 
         public void EnteredIntoColumnPanelSearchbox(string searchedText)
         {
+            Driver.WaitWhileControlIsNotDisplayed<BaseDashboardPage>(() => ColumnPanelSearchTextbox);
             ColumnPanelSearchTextbox.Clear();
             ColumnPanelSearchTextbox.Click();
             ColumnPanelSearchTextbox.SendKeys(searchedText);
@@ -255,6 +259,7 @@ namespace DashworksTestAutomation.Pages.Evergreen
 
         public void EnteredIntoFilterSearchbox(string searchedText)
         {
+            Driver.WaitWhileControlIsNotDisplayed<BaseDashboardPage>(() => LookupFilterSearchTextbox);
             LookupFilterSearchTextbox.Clear();
             LookupFilterSearchTextbox.Click();
             LookupFilterSearchTextbox.SendKeys(searchedText);
@@ -262,6 +267,7 @@ namespace DashworksTestAutomation.Pages.Evergreen
 
         public void EnteredIntoListSearchbox(string searchedText)
         {
+            Driver.WaitWhileControlIsNotDisplayed<BaseDashboardPage>(() => ListPanelSearchTextbox);
             ListPanelSearchTextbox.Clear();
             ListPanelSearchTextbox.Click();
             ListPanelSearchTextbox.SendKeys(searchedText);

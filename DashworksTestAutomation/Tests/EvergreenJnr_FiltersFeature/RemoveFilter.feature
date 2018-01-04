@@ -12,7 +12,7 @@ Background: Pre-Conditions
 	When User clicks the Switch to Evergreen link
 	Then Evergreen Dashboards page should be displayed to the user
 
-@Evergreen @Devices @Evergreen_FiltersFeature @RemoveFilter @DAS-11009
+@Evergreen @Devices @Evergreen_FiltersFeature @RemoveFilter @DAS11009
 Scenario: EvergreenJnr_DevicesList_CheckThatResetIsUpdatingRowCount
 	When User clicks "Devices" on the left-hand menu
 	Then "Devices" list should be displayed to the user
@@ -33,7 +33,7 @@ Scenario: EvergreenJnr_DevicesList_CheckThatResetIsUpdatingRowCount
 	And "17,225" rows are displayed in the agGrid
 	Then "Compliance" filter is removed from filters
 
-@Evergreen @Devices @Evergreen_FiltersFeature @RemoveFilter @DAS-11506 @Not_Run
+@Evergreen @Devices @Evergreen_FiltersFeature @RemoveFilter @DAS11506 @Not_Run
 Scenario: EvergreenJnr_DevicesList_CheckThatDeleteByUrlIsUpdatingRowCount
 	When User clicks "Devices" on the left-hand menu
 	Then "Devices" list should be displayed to the user
@@ -55,7 +55,7 @@ Scenario: EvergreenJnr_DevicesList_CheckThatDeleteByUrlIsUpdatingRowCount
 	When User clicks the Filters button
 	Then "Compliance" filter is removed from filters
 
-@Evergreen @Users @Evergreen_FiltersFeature @RemoveFilter @DAS-11009 @DAS-11044
+@Evergreen @Users @Evergreen_FiltersFeature @RemoveFilter @DAS11009 @DAS11044
 Scenario: EvergreenJnr_UsersList_CheckThatDeletePartOfFilterFromUrlIsUpdatingRowCount
 	When User clicks "Users" on the left-hand menu
 	Then "Users" list should be displayed to the user
@@ -84,7 +84,7 @@ Scenario: EvergreenJnr_UsersList_CheckThatDeletePartOfFilterFromUrlIsUpdatingRow
 	And "41,335" rows are displayed in the agGrid
 	Then "Compliance" filter is removed from filters
 
-@Evergreen @Mailboxes @Evergreen_FiltersFeature @RemoveFilter @DAS-10996
+@Evergreen @Mailboxes @Evergreen_FiltersFeature @RemoveFilter @DAS10996
 Scenario: EvergreenJnr_MailboxesList_CheckThatFiltersIsResetAndDataOnTheGridUpdatedBackToTheFullDataSet
 	When User clicks "Mailboxes" on the left-hand menu
 	Then "Mailboxes" list should be displayed to the user

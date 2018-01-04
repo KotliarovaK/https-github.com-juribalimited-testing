@@ -17,39 +17,35 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_ProfileDetails
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("TechTalk.SpecFlow", "2.1.0.0")]
     [System.Runtime.CompilerServices.CompilerGeneratedAttribute()]
-    [Microsoft.VisualStudio.TestTools.UnitTesting.TestClassAttribute()]
+    [NUnit.Framework.TestFixtureAttribute()]
+    [NUnit.Framework.DescriptionAttribute("AccountDetailsFunctionality")]
     public partial class AccountDetailsFunctionalityFeature
     {
         
-        private static TechTalk.SpecFlow.ITestRunner testRunner;
+        private TechTalk.SpecFlow.ITestRunner testRunner;
         
-        [Microsoft.VisualStudio.TestTools.UnitTesting.ClassInitializeAttribute()]
-        public static void FeatureSetup(Microsoft.VisualStudio.TestTools.UnitTesting.TestContext testContext)
+        [NUnit.Framework.TestFixtureSetUpAttribute()]
+        public virtual void FeatureSetup()
         {
-            testRunner = TechTalk.SpecFlow.TestRunnerManager.GetTestRunner(null, 0);
+            testRunner = TechTalk.SpecFlow.TestRunnerManager.GetTestRunner();
             TechTalk.SpecFlow.FeatureInfo featureInfo = new TechTalk.SpecFlow.FeatureInfo(new System.Globalization.CultureInfo("en-US"), "AccountDetailsFunctionality", "\tRuns Profile Details related tests", ProgrammingLanguage.CSharp, new string[] {
                         "retry:1"});
             testRunner.OnFeatureStart(featureInfo);
         }
         
-        [Microsoft.VisualStudio.TestTools.UnitTesting.ClassCleanupAttribute()]
-        public static void FeatureTearDown()
+        [NUnit.Framework.TestFixtureTearDownAttribute()]
+        public virtual void FeatureTearDown()
         {
             testRunner.OnFeatureEnd();
             testRunner = null;
         }
         
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestInitializeAttribute()]
+        [NUnit.Framework.SetUpAttribute()]
         public virtual void TestInitialize()
         {
-            if (((testRunner.FeatureContext != null) 
-                        && (testRunner.FeatureContext.FeatureInfo.Title != "AccountDetailsFunctionality")))
-            {
-                DashworksTestAutomation.Tests.EvergreenJnr_ProfileDetails.AccountDetailsFunctionalityFeature.FeatureSetup(null);
-            }
         }
         
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCleanupAttribute()]
+        [NUnit.Framework.TearDownAttribute()]
         public virtual void ScenarioTearDown()
         {
             testRunner.OnScenarioEnd();
@@ -75,15 +71,14 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_ProfileDetails
             testRunner.Then("Evergreen Dashboards page should be displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
         }
         
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestMethodAttribute()]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.DescriptionAttribute("EvergreenJnr_AccountDetails_CheckThatErrorIsNotDisplayedAfterChangingProfileData")]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("FeatureTitle", "AccountDetailsFunctionality")]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("Evergreen")]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("ProfileDetails")]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("EvergreenJnr_ProfileDetails")]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("AccountDetailsFunctionality")]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("DAS-10756")]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("Remove_Profile_Changes")]
+        [NUnit.Framework.TestAttribute()]
+        [NUnit.Framework.DescriptionAttribute("EvergreenJnr_AccountDetails_CheckThatErrorIsNotDisplayedAfterChangingProfileData")]
+        [NUnit.Framework.CategoryAttribute("Evergreen")]
+        [NUnit.Framework.CategoryAttribute("ProfileDetails")]
+        [NUnit.Framework.CategoryAttribute("EvergreenJnr_ProfileDetails")]
+        [NUnit.Framework.CategoryAttribute("AccountDetailsFunctionality")]
+        [NUnit.Framework.CategoryAttribute("DAS10756")]
+        [NUnit.Framework.CategoryAttribute("Remove_Profile_Changes")]
         public virtual void EvergreenJnr_AccountDetails_CheckThatErrorIsNotDisplayedAfterChangingProfileData()
         {
             System.Exception lastException = null;
@@ -117,7 +112,7 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_ProfileDetails
                         "ProfileDetails",
                         "EvergreenJnr_ProfileDetails",
                         "AccountDetailsFunctionality",
-                        "DAS-10756",
+                        "DAS10756",
                         "Remove_Profile_Changes"});
             this.ScenarioSetup(scenarioInfo);
             this.FeatureBackground();
@@ -134,15 +129,14 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_ProfileDetails
             this.ScenarioCleanup();
         }
         
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestMethodAttribute()]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.DescriptionAttribute("EvergreenJnr_AccountDetails_CheckThatCorrectErrorMessagesAreDisplayed")]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("FeatureTitle", "AccountDetailsFunctionality")]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("Evergreen")]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("ProfileDetails")]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("EvergreenJnr_ProfileDetails")]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("AccountDetailsFunctionality")]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("DAS-10756")]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("Remove_Profile_Changes")]
+        [NUnit.Framework.TestAttribute()]
+        [NUnit.Framework.DescriptionAttribute("EvergreenJnr_AccountDetails_CheckThatCorrectErrorMessagesAreDisplayed")]
+        [NUnit.Framework.CategoryAttribute("Evergreen")]
+        [NUnit.Framework.CategoryAttribute("ProfileDetails")]
+        [NUnit.Framework.CategoryAttribute("EvergreenJnr_ProfileDetails")]
+        [NUnit.Framework.CategoryAttribute("AccountDetailsFunctionality")]
+        [NUnit.Framework.CategoryAttribute("DAS10756")]
+        [NUnit.Framework.CategoryAttribute("Remove_Profile_Changes")]
         public virtual void EvergreenJnr_AccountDetails_CheckThatCorrectErrorMessagesAreDisplayed()
         {
             System.Exception lastException = null;
@@ -176,7 +170,7 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_ProfileDetails
                         "ProfileDetails",
                         "EvergreenJnr_ProfileDetails",
                         "AccountDetailsFunctionality",
-                        "DAS-10756",
+                        "DAS10756",
                         "Remove_Profile_Changes"});
             this.ScenarioSetup(scenarioInfo);
             this.FeatureBackground();
@@ -210,16 +204,15 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_ProfileDetails
             this.ScenarioCleanup();
         }
         
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestMethodAttribute()]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.DescriptionAttribute("EvergreenJnr_AccountDetails_CheckThatErrorIsNotDisplayedAfterChangingProfileDataT" +
+        [NUnit.Framework.TestAttribute()]
+        [NUnit.Framework.DescriptionAttribute("EvergreenJnr_AccountDetails_CheckThatErrorIsNotDisplayedAfterChangingProfileDataT" +
             "wice")]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("FeatureTitle", "AccountDetailsFunctionality")]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("Evergreen")]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("ProfileDetails")]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("EvergreenJnr_ProfileDetails")]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("AccountDetailsFunctionality")]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("DAS-11524")]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("Remove_Profile_Changes")]
+        [NUnit.Framework.CategoryAttribute("Evergreen")]
+        [NUnit.Framework.CategoryAttribute("ProfileDetails")]
+        [NUnit.Framework.CategoryAttribute("EvergreenJnr_ProfileDetails")]
+        [NUnit.Framework.CategoryAttribute("AccountDetailsFunctionality")]
+        [NUnit.Framework.CategoryAttribute("DAS11524")]
+        [NUnit.Framework.CategoryAttribute("Remove_Profile_Changes")]
         public virtual void EvergreenJnr_AccountDetails_CheckThatErrorIsNotDisplayedAfterChangingProfileDataTwice()
         {
             System.Exception lastException = null;
@@ -254,7 +247,7 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_ProfileDetails
                         "ProfileDetails",
                         "EvergreenJnr_ProfileDetails",
                         "AccountDetailsFunctionality",
-                        "DAS-11524",
+                        "DAS11524",
                         "Remove_Profile_Changes"});
             this.ScenarioSetup(scenarioInfo);
             this.FeatureBackground();
