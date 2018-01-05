@@ -482,3 +482,76 @@ Scenario: EvergreenJnr_DevicesList_CheckThatDatabaseErrorOccurringOccurringWhenA
 	When User create custom list with "TestName" name
 	Then "TestName" list is displayed to user
 	And "2" rows are displayed in the agGrid
+
+@Evergreen @Devices @EvergreenJnr_ListPanel @CustomListDisplay @DAS11465 @Delete_Newly_Created_List
+Scenario: EvergreenJnr_DevicesLists_CheckThatAnotherUserCanEditsAndSavesASharedListWithoutErrors
+	When User clicks "Devices" on the left-hand menu
+	Then "Devices" list should be displayed to the user
+	When User clicks the Columns button
+	Then Columns panel is displayed to the user
+	When ColumnName is entered into the search box and the selection is clicked
+	| ColumnName |
+	| Compliance |
+	| Device Key |
+	Then ColumnName is added to the list
+	| ColumnName |
+	| Compliance |
+	| Device Key |
+	When User create custom list with "TestList" name
+	Then "TestList" list is displayed to user
+	When User clicks the List Details button
+	Then List details panel is displayed to the user
+	When User select "Everyone can edit" sharing option
+	Then "Everyone can edit" sharing option is selected
+	#Login under the second user 
+	When User clicks the List Details button
+	When User clicks the Logout button
+	Then User is logged out
+	When User clicks on the Login link
+	Then Login Page is displayed to the user
+	When User provides the Login and Password and clicks on the login button
+	Then Dashworks homepage is displayed to the user in a logged in state
+	When User clicks the Switch to Evergreen link
+	Then Evergreen Dashboards page should be displayed to the user
+	When User clicks "Devices" on the left-hand menu
+	Then "Devices" list should be displayed to the user
+	When User navigates to the "TestList" list
+	Then "TestList" list is displayed to user
+	When User clicks the Columns button
+	Then Columns panel is displayed to the user
+	When ColumnName is entered into the search box and the selection is clicked
+	| ColumnName |
+	| Import     |
+	Then ColumnName is added to the list
+	| ColumnName |
+	| Import     |
+	When User clicks the Columns button
+	Then Columns panel is displayed to the user
+	Then "Import" subcategory is selected in Column panel
+	When User update current custom list
+	When User clicks the Columns button
+	#Login under the first user 
+	When User clicks the Logout button
+	Then User is logged out
+	When User clicks on the Login link
+	Then Login Page is displayed to the user
+	When User login with "1" account
+	Then Dashworks homepage is displayed to the user in a logged in state
+	When User clicks the Switch to Evergreen link
+	Then Evergreen Dashboards page should be displayed to the user
+	When User clicks "Devices" on the left-hand menu
+	Then "Devices" list should be displayed to the user
+	When User navigates to the "TestList" list
+	Then "TestList" list is displayed to user
+	Then ColumnName is added to the list
+	| ColumnName |
+	| Compliance |
+	| Device Key |
+	| Import     |
+	When User clicks the Columns button
+	Then Columns panel is displayed to the user
+	Then "Import" subcategory is selected in Column panel
+	When User navigates to the "All Devices" list
+	Then "Devices" list should be displayed to the user
+	When User navigates to the "TestList" list
+	Then Edit List menu is not displayed

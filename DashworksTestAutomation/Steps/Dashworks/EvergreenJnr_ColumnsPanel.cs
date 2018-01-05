@@ -216,6 +216,13 @@ namespace DashworksTestAutomation.Steps.Dashworks
             Assert.AreEqual(subCategoriesCount, columnElement.GetSubcategoriesCountByCategoryName(categoryName));
         }
 
+        [Then(@"""(.*)"" subcategory is selected in Column panel")]
+        public void ThenSubcategoryIsSelectedInColumnPanel(string subCategoriesName)
+        {
+            var columnElement = _driver.NowAt<ColumnsElement>();
+            Assert.IsTrue(columnElement.SubcategoryIsSelected(subCategoriesName));
+        }
+
         [Then(@"Minimize buttons are displayed for all category in Columns panel")]
         public void ThenMinimizeButtonsAreDisplayedForAllCategoryInColumnsPanel()
         {
