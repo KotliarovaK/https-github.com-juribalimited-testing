@@ -35,7 +35,7 @@ namespace DashworksTestAutomation.Pages.Evergreen
         [FindsBy(How = How.XPath, Using = ".//span[text()='ADD']//ancestor::button")]
         public IWebElement AddButton { get; set; }
 
-        public string listsDropdown = ".//div[@class='form-group form-group-fix-select ng-star-inserted']";
+        public string listsDropdown = ".//mat-select[@aria-label='Static Lists']";
 
         public override List<By> GetPageIdentitySelectors()
         {
@@ -48,7 +48,7 @@ namespace DashworksTestAutomation.Pages.Evergreen
 
         public void SelectList(string listName)
         {
-            string listNameSelector = $".//div[@class='mat-select-content ng-trigger ng-trigger-fadeInContent']//mat-option[text()='{listName}']";
+            string listNameSelector = $".//div[@class='mat-select-content ng-trigger ng-trigger-fadeInContent']//mat-option//span[text()='{listName}']";
             string dropdownBoxList = listsDropdown;
             Driver.FindElement(By.XPath(dropdownBoxList)).Click();
             Driver.WaitWhileControlIsNotDisplayed(By.XPath(listNameSelector));

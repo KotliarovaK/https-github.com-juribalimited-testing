@@ -1,4 +1,4 @@
-﻿@retry:0
+﻿@retry:1
 Feature: ActionsPanel
 	Runs Actions Panel related tests
 

@@ -27,10 +27,10 @@ namespace DashworksTestAutomation.Pages.Evergreen
         [FindsBy(How = How.XPath, Using = ".//div[contains(@class,'filter-category ng-star-inserted')]")]
         public IList<IWebElement> FilterCategories { get; set; }
 
-        [FindsBy(How = How.XPath, Using = ".//button[@title='Minimize Group']")]
+        [FindsBy(How = How.XPath, Using = ".//div[@class='filter-category-title ng-star-inserted']//button[@aria-describedby='cdk-describedby-message-276']")]
         public IList<IWebElement> MinimizeGroupButton { get; set; }
 
-        [FindsBy(How = How.XPath, Using = ".//button[@title='Maximize Group']")]
+        [FindsBy(How = How.XPath, Using = ".//div[@class='filter-category-title ng-star-inserted']//button[@aria-describedby='cdk-describedby-message-335']")]
         public IList<IWebElement> MaximizeGroupButton { get; set; }
 
         [FindsBy(How = How.XPath, Using = ".//div[@class='styleSelectDropdown']")]

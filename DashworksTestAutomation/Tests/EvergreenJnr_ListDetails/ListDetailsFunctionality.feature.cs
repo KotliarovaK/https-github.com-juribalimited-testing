@@ -566,7 +566,7 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_ListDetails
         [NUnit.Framework.CategoryAttribute("Devices")]
         [NUnit.Framework.CategoryAttribute("EvergreenJnr_ListDetails")]
         [NUnit.Framework.CategoryAttribute("ListDetailsFunctionality")]
-        [NUnit.Framework.CategoryAttribute("DAS-10880")]
+        [NUnit.Framework.CategoryAttribute("DAS10880")]
         [NUnit.Framework.CategoryAttribute("Delete_Newly_Created_List")]
         public virtual void EvergreenJnr_DevicesLists_CheckDefaultOptionsInListDetailsForStaticLists()
         {
@@ -601,7 +601,7 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_ListDetails
                         "Devices",
                         "EvergreenJnr_ListDetails",
                         "ListDetailsFunctionality",
-                        "DAS-10880",
+                        "DAS10880",
                         "Delete_Newly_Created_List"});
             this.ScenarioSetup(scenarioInfo);
             this.FeatureBackground();

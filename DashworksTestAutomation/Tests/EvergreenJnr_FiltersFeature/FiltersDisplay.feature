@@ -240,7 +240,7 @@ Scenario: EvergreenJnr_MailboxesList_CheckThatFilterDataIsDisplayedCorrectlyWhen
 	Then Filters panel is displayed to the user
 	When User add "Created Date" filter where type is "Before" with added column and following value:
 	| Values          |
-	| Fri Nov 17 2017 |
+	|   17 Nov 2017 |
 	Then "Created Date" filter is added to the list
 	And Values is displayed in added filter info
 	| Values      |
@@ -475,7 +475,7 @@ Scenario: EvergreenJnr_ApplicationsList_CheckThatBracketsAreDisplayedCorrectlyIn
 	When User navigates to the "TestList" list
 	And User clicks the Filters button
 	Then "TestList" list is displayed to user
-	And "3 EvergreenJnr_MailboxesList_CheckThatFilterOperatorsIsCorrectInFilterInfo" rows are displayed in the agGrid
+	And "3" rows are displayed in the agGrid
 	And Edit List menu is not displayed
 	And Values is displayed in added filter info
 	| Values                                               |
@@ -548,7 +548,7 @@ Scenario Outline: EvergreenJnr_DevicesList_CheckThatDateAndTimeFiltersWithDoesNo
 
 Examples: 
 	| FilterName                   | Value       | RowCount |
-	| Windows7Mi: Date & Time Task | 22 Nov 2012 | 17,225   |
+	| Windows7Mi: Date & Time Task | 22 Nov 2012 | 17,209   |
 	| Build Date                   | 06 Nov 2004 | 17,225   |
 
 @Evergreen @Devices @Evergreen_FiltersFeature @FiltersDisplay @DAS11187

@@ -1,4 +1,4 @@
-﻿@retry:0
+﻿@retry:1
 Feature: RemoveColumn
 	Runs Remove column related tests
 
@@ -468,13 +468,18 @@ Scenario: EvergreenJnr_ApplicationsList_CheckThatColumnIsDisplayedInColumnsPanel
 	And "8" subcategories is displayed for "Project Tasks: Windows7Mi" category
 
 @Evergreen @Devices @EvergreenJnr_Columns @RemoveColumn @DAS11037
-Scenario: EvergreenJnr_DevicesList_CheckThat500ErrorNotDisplayedAfterRemovingUsernameOrHostnameColumn 
-	When User clicks "Devices" on the left-hand menu
-	Then "Devices" list should be displayed to the user
+Scenario Outline: EvergreenJnr_DevicesList_CheckThat500ErrorNotDisplayedAfterRemovingUsernameOrHostnameColumn 
+	When User clicks "<PageName>" on the left-hand menu
+	Then "<PageName>" list should be displayed to the user
 	When User clicks the Columns button
 	Then Columns panel is displayed to the user
-	When User removes "Hostname" column by Column panel
-	Then "Devices" list should be displayed to the user
+	When User removes "<ColumnName>" column by Column panel
+	Then "<PageName>" list should be displayed to the user
 	And ColumnName is removed from the list
-	| ColumnName |
-	| Hostname   |
+	| ColumnName   |
+	| <ColumnName> |
+
+Examples: 
+	| PageName | ColumnName |
+	| Devices  | Hostname   |
+	| Users    | username   |

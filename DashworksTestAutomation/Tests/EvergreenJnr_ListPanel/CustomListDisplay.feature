@@ -133,9 +133,9 @@ Scenario: EvergreenJnr_UsersList_CheckThatListsIsDisplayedInAlphabeticalOrder
 	When User clicks the Actions button
 	Then Actions panel is displayed to the user
 	When User select "Username" rows in the grid
-	| SelectedRowsName |
-	| AAD1011948       |
-	| AAH0343264       |
+	| SelectedRowsName    |
+	| 003F5D8E1A844B1FAA5 |
+	| 000F977AC8824FE39B8 |
 	And User create static list with "KY TestList Static List" name
 	Then "KY TestList Static List" list is displayed to user
 	When User navigates to the "All Users" list
@@ -150,8 +150,8 @@ Scenario: EvergreenJnr_UsersList_CheckThatListsIsDisplayedInAlphabeticalOrder
 	When User clicks the Actions button
 	Then Actions panel is displayed to the user
 	When User select "Username" rows in the grid
-	| SelectedRowsName |
-	| AAQ9911340       |
+	| SelectedRowsName    |
+	| 002B5DC7D4D34D5C895 |
 	And User create static list with "QWER TestList Static List" name
 	Then "QWER TestList Static List" list is displayed to user
 	When User navigates to the "All Users" list
@@ -218,11 +218,11 @@ Scenario: EvergreenJnr_UsersList_CheckThatSaveButtonIsInactiveInCustomListCreati
 	Then Actions panel is displayed to the user
 	Then Save to New Custom List element is NOT displayed
 	When User select "Username" rows in the grid
-	| SelectedRowsName |
-	| AAD1011948       |
-	| AAH0343264       |
-	| AAO3000042       |
-	| AAQ9911340       |
+	| SelectedRowsName    |
+	| 003F5D8E1A844B1FAA5 |
+	| 000F977AC8824FE39B8 |
+	| 002B5DC7D4D34D5C895 |
+	| 002B5DC7D4D34D5C895 |
 	Then User type "Test" into Static list name field
 	When User clicks the Actions button
 	Then Save button is inactive for Custom list

@@ -29,7 +29,7 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_ActionsPanel
         {
             testRunner = TechTalk.SpecFlow.TestRunnerManager.GetTestRunner();
             TechTalk.SpecFlow.FeatureInfo featureInfo = new TechTalk.SpecFlow.FeatureInfo(new System.Globalization.CultureInfo("en-US"), "ActionsPanel", "\tRuns Actions Panel related tests", ProgrammingLanguage.CSharp, new string[] {
-                        "retry:0"});
+                        "retry:1"});
             testRunner.OnFeatureStart(featureInfo);
         }
         
@@ -81,7 +81,7 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_ActionsPanel
         public virtual void EvergreenJnr_UsersList_CheckThatAfterInterruptingProcessSelectingAllRowsAtActionsPanelProgressIndicatorIsNotContinuesToRunning()
         {
             System.Exception lastException = null;
-            for (int i = 0; (i <= 0); i = (i + 1))
+            for (int i = 0; (i <= 1); i = (i + 1))
             {
                 try
                 {
@@ -93,7 +93,7 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_ActionsPanel
                     lastException = exc;
                 }
                 if (((i + 1) 
-                            <= 0))
+                            <= 1))
                 {
                     testRunner.OnScenarioEnd();
                 }
@@ -137,7 +137,7 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_ActionsPanel
         public virtual void EvergreenJnr_UsersList_CheckThatAfterClosingActionsPanelTheActionsButtonNoRemainsBeShownInRed()
         {
             System.Exception lastException = null;
-            for (int i = 0; (i <= 0); i = (i + 1))
+            for (int i = 0; (i <= 1); i = (i + 1))
             {
                 try
                 {
@@ -149,7 +149,7 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_ActionsPanel
                     lastException = exc;
                 }
                 if (((i + 1) 
-                            <= 0))
+                            <= 1))
                 {
                     testRunner.OnScenarioEnd();
                 }

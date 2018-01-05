@@ -540,9 +540,9 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_ListPanel
             TechTalk.SpecFlow.Table table10 = new TechTalk.SpecFlow.Table(new string[] {
                         "SelectedRowsName"});
             table10.AddRow(new string[] {
-                        "AAD1011948"});
+                        "003F5D8E1A844B1FAA5"});
             table10.AddRow(new string[] {
-                        "AAH0343264"});
+                        "000F977AC8824FE39B8"});
             testRunner.When("User select \"Username\" rows in the grid", ((string)(null)), table10, "When ");
             testRunner.And("User create static list with \"KY TestList Static List\" name", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
             testRunner.Then("\"KY TestList Static List\" list is displayed to user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
@@ -560,7 +560,7 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_ListPanel
             TechTalk.SpecFlow.Table table11 = new TechTalk.SpecFlow.Table(new string[] {
                         "SelectedRowsName"});
             table11.AddRow(new string[] {
-                        "AAQ9911340"});
+                        "002B5DC7D4D34D5C895"});
             testRunner.When("User select \"Username\" rows in the grid", ((string)(null)), table11, "When ");
             testRunner.And("User create static list with \"QWER TestList Static List\" name", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
             testRunner.Then("\"QWER TestList Static List\" list is displayed to user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
@@ -774,13 +774,13 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_ListPanel
             TechTalk.SpecFlow.Table table16 = new TechTalk.SpecFlow.Table(new string[] {
                         "SelectedRowsName"});
             table16.AddRow(new string[] {
-                        "AAD1011948"});
+                        "003F5D8E1A844B1FAA5"});
             table16.AddRow(new string[] {
-                        "AAH0343264"});
+                        "000F977AC8824FE39B8"});
             table16.AddRow(new string[] {
-                        "AAO3000042"});
+                        "002B5DC7D4D34D5C895"});
             table16.AddRow(new string[] {
-                        "AAQ9911340"});
+                        "002B5DC7D4D34D5C895"});
             testRunner.When("User select \"Username\" rows in the grid", ((string)(null)), table16, "When ");
             testRunner.Then("User type \"Test\" into Static list name field", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
             testRunner.When("User clicks the Actions button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
