@@ -173,4 +173,3 @@ Examples:
 	| Users        |
 	| Applications |
 	| Mailboxes    |
-@Evergreen @Devices @EvergreenJnr_ListDetails @ListDetailsFunctionality @DAS10880 @Delete_Newly_Created_List

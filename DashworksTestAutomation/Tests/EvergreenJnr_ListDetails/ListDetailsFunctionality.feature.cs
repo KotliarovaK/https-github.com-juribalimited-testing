@@ -555,8 +555,6 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_ListDetails
             testRunner.Then("\"Private\" sharing option is selected", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
             this.ScenarioCleanup();
         }
-        [NUnit.Framework.CategoryAttribute("DAS10880")]
-                        "DAS10880",
     }
 }
 #pragma warning restore
