@@ -1,12 +1,15 @@
 ﻿using System;
 using DashworksTestAutomation.DTO.RuntimeVariables;
 using DashworksTestAutomation.Extensions;
+using DashworksTestAutomation.Helpers;
 using DashworksTestAutomation.Pages;
 using DashworksTestAutomation.Pages.Evergreen;
 using DashworksTestAutomation.Providers;
 using DashworksTestAutomation.Utils;
 using NUnit.Framework;
+using OpenQA.Selenium;
 using OpenQA.Selenium.Remote;
+using RestSharp;
 using TechTalk.SpecFlow;
 
 namespace DashworksTestAutomation.Steps.Dashworks
@@ -21,6 +24,26 @@ namespace DashworksTestAutomation.Steps.Dashworks
         {
             _driver = driver;
             _url = url;
+        }
+
+        [Given(@"User is logged in to the Evergreen")]
+        public void GivenUserIsLoggedInToTheEvergreen()
+        {
+            var restClient = new RestClient(UrlProvider.Url);
+            //Get cookies
+            HttpClientHelper client = new HttpClientHelper(UserProvider.GetFreeUserAccount(), restClient);
+
+            //Init session
+            _driver.NagigateToURL(UrlProvider.Url);
+
+            //Set cookies to browser
+            foreach (Cookie cookie in client._cookiesJar)
+            {
+                _driver.Manage().Cookies.AddCookie(cookie);
+            }
+
+            //Open website
+            _driver.NagigateToURL(UrlProvider.EvergreenUrl);
         }
 
         [Given(@"User is on Dashworks Homepage")]
