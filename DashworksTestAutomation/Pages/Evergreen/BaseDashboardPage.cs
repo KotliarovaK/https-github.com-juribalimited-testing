@@ -147,6 +147,7 @@ namespace DashworksTestAutomation.Pages.Evergreen
             By byTable = By.XPath($"./div[1]/div[{GetColumnNumberByName(columnName)}]//a");
 
             Driver.WaitWhileControlIsNotDisplayed(byControl);
+            Driver.WaitForDataLoading();
             TableBody.FindElement(byTable).Click();
         }
 

@@ -29,7 +29,7 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_ActionsPanel
         {
             testRunner = TechTalk.SpecFlow.TestRunnerManager.GetTestRunner();
             TechTalk.SpecFlow.FeatureInfo featureInfo = new TechTalk.SpecFlow.FeatureInfo(new System.Globalization.CultureInfo("en-US"), "ActionsPanel", "\tRuns Actions Panel related tests", ProgrammingLanguage.CSharp, new string[] {
-                        "retry:0"});
+                        "retry:1"});
             testRunner.OnFeatureStart(featureInfo);
         }
         
@@ -63,11 +63,7 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_ActionsPanel
         
         public virtual void FeatureBackground()
         {
-            testRunner.Given("User is on Dashworks Homepage", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
-            testRunner.Then("Login Page is displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-            testRunner.When("User provides the Login and Password and clicks on the login button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-            testRunner.Then("Dashworks homepage is displayed to the user in a logged in state", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-            testRunner.When("User clicks the Switch to Evergreen link", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+            testRunner.Given("User is logged in to the Evergreen", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
             testRunner.Then("Evergreen Dashboards page should be displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
         }
         
@@ -81,7 +77,7 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_ActionsPanel
         public virtual void EvergreenJnr_UsersList_CheckThatAfterInterruptingProcessSelectingAllRowsAtActionsPanelProgressIndicatorIsNotContinuesToRunning()
         {
             System.Exception lastException = null;
-            for (int i = 0; (i <= 0); i = (i + 1))
+            for (int i = 0; (i <= 1); i = (i + 1))
             {
                 try
                 {
@@ -93,7 +89,7 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_ActionsPanel
                     lastException = exc;
                 }
                 if (((i + 1) 
-                            <= 0))
+                            <= 1))
                 {
                     testRunner.OnScenarioEnd();
                 }
@@ -137,7 +133,7 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_ActionsPanel
         public virtual void EvergreenJnr_UsersList_CheckThatAfterClosingActionsPanelTheActionsButtonNoRemainsBeShownInRed()
         {
             System.Exception lastException = null;
-            for (int i = 0; (i <= 0); i = (i + 1))
+            for (int i = 0; (i <= 1); i = (i + 1))
             {
                 try
                 {
@@ -149,7 +145,7 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_ActionsPanel
                     lastException = exc;
                 }
                 if (((i + 1) 
-                            <= 0))
+                            <= 1))
                 {
                     testRunner.OnScenarioEnd();
                 }

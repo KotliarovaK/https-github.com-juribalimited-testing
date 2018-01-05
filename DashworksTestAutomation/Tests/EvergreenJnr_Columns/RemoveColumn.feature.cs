@@ -29,7 +29,7 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_Columns
         {
             testRunner = TechTalk.SpecFlow.TestRunnerManager.GetTestRunner();
             TechTalk.SpecFlow.FeatureInfo featureInfo = new TechTalk.SpecFlow.FeatureInfo(new System.Globalization.CultureInfo("en-US"), "RemoveColumn", "\tRuns Remove column related tests", ProgrammingLanguage.CSharp, new string[] {
-                        "retry:0"});
+                        "retry:1"});
             testRunner.OnFeatureStart(featureInfo);
         }
         
@@ -63,11 +63,7 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_Columns
         
         public virtual void FeatureBackground()
         {
-            testRunner.Given("User is on Dashworks Homepage", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
-            testRunner.Then("Login Page is displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-            testRunner.When("User provides the Login and Password and clicks on the login button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-            testRunner.Then("Dashworks homepage is displayed to the user in a logged in state", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-            testRunner.When("User clicks the Switch to Evergreen link", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+            testRunner.Given("User is logged in to the Evergreen", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
             testRunner.Then("Evergreen Dashboards page should be displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
         }
         
@@ -84,7 +80,7 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_Columns
         public virtual void EvergreenJnr_DevicesList_CheckThat500ErrorPageIsNotDisplayedAfterRemovingSortedColumnInCustomList()
         {
             System.Exception lastException = null;
-            for (int i = 0; (i <= 0); i = (i + 1))
+            for (int i = 0; (i <= 1); i = (i + 1))
             {
                 try
                 {
@@ -96,7 +92,7 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_Columns
                     lastException = exc;
                 }
                 if (((i + 1) 
-                            <= 0))
+                            <= 1))
                 {
                     testRunner.OnScenarioEnd();
                 }
@@ -185,7 +181,7 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_Columns
         public virtual void EvergreenJnr_DevicesList_CheckThat500ErrorPageIsNotDisplayedAfterRemovingMultipleSortedColumnInCustomList()
         {
             System.Exception lastException = null;
-            for (int i = 0; (i <= 0); i = (i + 1))
+            for (int i = 0; (i <= 1); i = (i + 1))
             {
                 try
                 {
@@ -197,7 +193,7 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_Columns
                     lastException = exc;
                 }
                 if (((i + 1) 
-                            <= 0))
+                            <= 1))
                 {
                     testRunner.OnScenarioEnd();
                 }
@@ -293,7 +289,7 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_Columns
         public virtual void EvergreenJnr_DevicesList_CheckThat500ErrorPageIsNotDisplayedAfterRemovingSortedColumnInCustomListThrowFilters()
         {
             System.Exception lastException = null;
-            for (int i = 0; (i <= 0); i = (i + 1))
+            for (int i = 0; (i <= 1); i = (i + 1))
             {
                 try
                 {
@@ -305,7 +301,7 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_Columns
                     lastException = exc;
                 }
                 if (((i + 1) 
-                            <= 0))
+                            <= 1))
                 {
                     testRunner.OnScenarioEnd();
                 }
@@ -396,7 +392,7 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_Columns
         public virtual void EvergreenJnr_DevicesList_CheckThat500ErrorPageIsNotDisplayedAfterRemovingSortedColumnInDefaultList()
         {
             System.Exception lastException = null;
-            for (int i = 0; (i <= 0); i = (i + 1))
+            for (int i = 0; (i <= 1); i = (i + 1))
             {
                 try
                 {
@@ -408,7 +404,7 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_Columns
                     lastException = exc;
                 }
                 if (((i + 1) 
-                            <= 0))
+                            <= 1))
                 {
                     testRunner.OnScenarioEnd();
                 }
@@ -485,7 +481,7 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_Columns
         public virtual void EvergreenJnr_DevicesList_CheckThat500ErrorPageIsNotDisplayedAfterRemovingMultipleSortedColumnInDefaultList()
         {
             System.Exception lastException = null;
-            for (int i = 0; (i <= 0); i = (i + 1))
+            for (int i = 0; (i <= 1); i = (i + 1))
             {
                 try
                 {
@@ -497,7 +493,7 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_Columns
                     lastException = exc;
                 }
                 if (((i + 1) 
-                            <= 0))
+                            <= 1))
                 {
                     testRunner.OnScenarioEnd();
                 }
@@ -589,7 +585,7 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_Columns
         public virtual void EvergreenJnr_DevicesList_CheckThat500ErrorPageIsNotDisplayedAfterRemovingSortedColumnInDefaultListThrowFilters()
         {
             System.Exception lastException = null;
-            for (int i = 0; (i <= 0); i = (i + 1))
+            for (int i = 0; (i <= 1); i = (i + 1))
             {
                 try
                 {
@@ -601,7 +597,7 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_Columns
                     lastException = exc;
                 }
                 if (((i + 1) 
-                            <= 0))
+                            <= 1))
                 {
                     testRunner.OnScenarioEnd();
                 }
@@ -687,7 +683,7 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_Columns
         public virtual void EvergreenJnr_UsersList_CheckThat500ErrorPageIsNotDisplayedAfterRemovingSortedColumn()
         {
             System.Exception lastException = null;
-            for (int i = 0; (i <= 0); i = (i + 1))
+            for (int i = 0; (i <= 1); i = (i + 1))
             {
                 try
                 {
@@ -699,7 +695,7 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_Columns
                     lastException = exc;
                 }
                 if (((i + 1) 
-                            <= 0))
+                            <= 1))
                 {
                     testRunner.OnScenarioEnd();
                 }
@@ -769,7 +765,7 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_Columns
         public virtual void EvergreenJnr_DevicesList_CheckThatRemovingColumnsFromUrlIsWorksCorrectly()
         {
             System.Exception lastException = null;
-            for (int i = 0; (i <= 0); i = (i + 1))
+            for (int i = 0; (i <= 1); i = (i + 1))
             {
                 try
                 {
@@ -781,7 +777,7 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_Columns
                     lastException = exc;
                 }
                 if (((i + 1) 
-                            <= 0))
+                            <= 1))
                 {
                     testRunner.OnScenarioEnd();
                 }
@@ -849,7 +845,7 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_Columns
         public virtual void EvergreenJnr_DevicesList_CheckThatRemovingColumnAndFilterFromUrlWorksCorrectly()
         {
             System.Exception lastException = null;
-            for (int i = 0; (i <= 0); i = (i + 1))
+            for (int i = 0; (i <= 1); i = (i + 1))
             {
                 try
                 {
@@ -861,7 +857,7 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_Columns
                     lastException = exc;
                 }
                 if (((i + 1) 
-                            <= 0))
+                            <= 1))
                 {
                     testRunner.OnScenarioEnd();
                 }
@@ -944,7 +940,7 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_Columns
         public virtual void EvergreenJnr_DevicesList_CheckThatRemovingColumnAndFilterAndCustomListFromUrlWorksCorrectly()
         {
             System.Exception lastException = null;
-            for (int i = 0; (i <= 0); i = (i + 1))
+            for (int i = 0; (i <= 1); i = (i + 1))
             {
                 try
                 {
@@ -956,7 +952,7 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_Columns
                     lastException = exc;
                 }
                 if (((i + 1) 
-                            <= 0))
+                            <= 1))
                 {
                     testRunner.OnScenarioEnd();
                 }
@@ -1039,7 +1035,7 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_Columns
         public virtual void EvergreenJnr_DevicesList_CheckThatColumnIsDisplayedInColumnsPanelAfterRemovingOneColumnFromTheURL()
         {
             System.Exception lastException = null;
-            for (int i = 0; (i <= 0); i = (i + 1))
+            for (int i = 0; (i <= 1); i = (i + 1))
             {
                 try
                 {
@@ -1051,7 +1047,7 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_Columns
                     lastException = exc;
                 }
                 if (((i + 1) 
-                            <= 0))
+                            <= 1))
                 {
                     testRunner.OnScenarioEnd();
                 }
@@ -1123,7 +1119,7 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_Columns
         public virtual void EvergreenJnr_UsersList_CheckThatColumnIsDisplayedInColumnsPanelAfterRemovingAllColumnsFromTheURL()
         {
             System.Exception lastException = null;
-            for (int i = 0; (i <= 0); i = (i + 1))
+            for (int i = 0; (i <= 1); i = (i + 1))
             {
                 try
                 {
@@ -1135,7 +1131,7 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_Columns
                     lastException = exc;
                 }
                 if (((i + 1) 
-                            <= 0))
+                            <= 1))
                 {
                     testRunner.OnScenarioEnd();
                 }
@@ -1212,7 +1208,7 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_Columns
         public virtual void EvergreenJnr_ApplicationsList_CheckThatColumnIsDisplayedInColumnsPanelAfterRemovingAColumnWhichAlsoExistsAsAFilter()
         {
             System.Exception lastException = null;
-            for (int i = 0; (i <= 0); i = (i + 1))
+            for (int i = 0; (i <= 1); i = (i + 1))
             {
                 try
                 {
@@ -1224,7 +1220,7 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_Columns
                     lastException = exc;
                 }
                 if (((i + 1) 
-                            <= 0))
+                            <= 1))
                 {
                     testRunner.OnScenarioEnd();
                 }
@@ -1310,14 +1306,16 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_Columns
         [NUnit.Framework.CategoryAttribute("EvergreenJnr_Columns")]
         [NUnit.Framework.CategoryAttribute("RemoveColumn")]
         [NUnit.Framework.CategoryAttribute("DAS11037")]
-        public virtual void EvergreenJnr_DevicesList_CheckThat500ErrorNotDisplayedAfterRemovingUsernameOrHostnameColumn()
+        [NUnit.Framework.TestCaseAttribute("Devices", "Hostname", new string[0])]
+        [NUnit.Framework.TestCaseAttribute("Users", "username", new string[0])]
+        public virtual void EvergreenJnr_DevicesList_CheckThat500ErrorNotDisplayedAfterRemovingUsernameOrHostnameColumn(string pageName, string columnName, string[] exampleTags)
         {
             System.Exception lastException = null;
-            for (int i = 0; (i <= 0); i = (i + 1))
+            for (int i = 0; (i <= 1); i = (i + 1))
             {
                 try
                 {
-                    this.EvergreenJnr_DevicesList_CheckThat500ErrorNotDisplayedAfterRemovingUsernameOrHostnameColumnInternal();
+                    this.EvergreenJnr_DevicesList_CheckThat500ErrorNotDisplayedAfterRemovingUsernameOrHostnameColumnInternal(pageName, columnName, exampleTags);
                     return;
                 }
                 catch (System.Exception exc)
@@ -1325,7 +1323,7 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_Columns
                     lastException = exc;
                 }
                 if (((i + 1) 
-                            <= 0))
+                            <= 1))
                 {
                     testRunner.OnScenarioEnd();
                 }
@@ -1336,27 +1334,32 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_Columns
             }
         }
         
-        private void EvergreenJnr_DevicesList_CheckThat500ErrorNotDisplayedAfterRemovingUsernameOrHostnameColumnInternal()
+        private void EvergreenJnr_DevicesList_CheckThat500ErrorNotDisplayedAfterRemovingUsernameOrHostnameColumnInternal(string pageName, string columnName, string[] exampleTags)
         {
+            string[] @__tags = new string[] {
+                    "Evergreen",
+                    "Devices",
+                    "EvergreenJnr_Columns",
+                    "RemoveColumn",
+                    "DAS11037"};
+            if ((exampleTags != null))
+            {
+                @__tags = System.Linq.Enumerable.ToArray(System.Linq.Enumerable.Concat(@__tags, exampleTags));
+            }
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("EvergreenJnr_DevicesList_CheckThat500ErrorNotDisplayedAfterRemovingUsernameOrHost" +
-                    "nameColumn", new string[] {
-                        "Evergreen",
-                        "Devices",
-                        "EvergreenJnr_Columns",
-                        "RemoveColumn",
-                        "DAS11037"});
+                    "nameColumn", @__tags);
             this.ScenarioSetup(scenarioInfo);
             this.FeatureBackground();
-            testRunner.When("User clicks \"Devices\" on the left-hand menu", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-            testRunner.Then("\"Devices\" list should be displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+            testRunner.When(string.Format("User clicks \"{0}\" on the left-hand menu", pageName), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+            testRunner.Then(string.Format("\"{0}\" list should be displayed to the user", pageName), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
             testRunner.When("User clicks the Columns button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
             testRunner.Then("Columns panel is displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-            testRunner.When("User removes \"Hostname\" column by Column panel", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-            testRunner.Then("\"Devices\" list should be displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+            testRunner.When(string.Format("User removes \"{0}\" column by Column panel", columnName), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+            testRunner.Then(string.Format("\"{0}\" list should be displayed to the user", pageName), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
             TechTalk.SpecFlow.Table table63 = new TechTalk.SpecFlow.Table(new string[] {
                         "ColumnName"});
             table63.AddRow(new string[] {
-                        "Hostname"});
+                        string.Format("{0}", columnName)});
             testRunner.And("ColumnName is removed from the list", ((string)(null)), table63, "And ");
             this.ScenarioCleanup();
         }

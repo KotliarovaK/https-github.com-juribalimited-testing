@@ -234,7 +234,7 @@ Scenario: EvergreenJnr_MailboxesList_CheckThatFilterDataIsDisplayedCorrectlyWhen
 	Then Filters panel is displayed to the user
 	When User add "Created Date" filter where type is "Before" with added column and following value:
 	| Values          |
-	| Fri Nov 17 2017 |
+	|   17 Nov 2017 |
 	Then "Created Date" filter is added to the list
 	And Values is displayed in added filter info
 	| Values      |
@@ -343,9 +343,9 @@ Scenario Outline: EvergreenJnr_MailboxesList_CheckThatFilterOperatorsIsCorrectIn
 Examples: 
 	| operatorValue  | filterOption | rowsCount | operatorValueInInfo |
 	| Equals         | 08 Mar 2016  | 3         | is                  |
-	| Does not equal | 08 Mar 2016  | 4,832     | is not              |
-	| Before         | 08 Mar 2016  | 33        | is before           |
-	| After          | 08 Mar 2016  | 4,799     | is after            |
+	| Does not equal | 08 Mar 2016  | 4,835     | is not              |
+	| Before         | 08 Mar 2016  | 39        | is before           |
+	| After          | 08 Mar 2016  | 4,796     | is after            |
 	| Empty          |              |           | is empty            |
 	| Not empty      |              | 4,835     | is not empty        |
 
@@ -367,7 +367,7 @@ Scenario Outline: EvergreenJnr_DevicesList_CheckThatFilterOperatorsIsCorrectInFi
 Examples: 
 	| operatorValue  | filterOption | rowsCount | operatorValueInInfo |
 	| Equals         | 22 Nov 2012  | 16        | is                  |
-	| Does not equal | 22 Nov 2012  | 17,209    | is not              |
+	| Does not equal | 22 Nov 2012  | 17,225    | is not              |
 	| Before         | 22 Nov 2012  | 1         | is before           |
 	| After          | 14 May 2012  | 16        | is after            |
 	| Empty          |              | 17,208    | is empty            |
@@ -463,13 +463,13 @@ Scenario: EvergreenJnr_ApplicationsList_CheckThatBracketsAreDisplayedCorrectlyIn
 	Then "Application" filter is added to the list
 	When User create custom list with "TestList" name
 	Then "TestList" list is displayed to user
-	And "6" rows are displayed in the agGrid
+	And "3" rows are displayed in the agGrid
 	When User navigates to the "All Applications" list
 	Then "Applications" list should be displayed to the user
 	When User navigates to the "TestList" list
 	And User clicks the Filters button
 	Then "TestList" list is displayed to user
-	And "6" rows are displayed in the agGrid
+	And "3" rows are displayed in the agGrid
 	And Edit List menu is not displayed
 	And Values is displayed in added filter info
 	| Values                                               |
@@ -543,7 +543,7 @@ Scenario Outline: EvergreenJnr_DevicesList_CheckThatDateAndTimeFiltersWithDoesNo
 Examples: 
 	| FilterName                   | Value       | RowCount |
 	| Windows7Mi: Date & Time Task | 22 Nov 2012 | 17,209   |
-	| Build Date                   | 06 Nov 2004 | 17,224   |
+	| Build Date                   | 06 Nov 2004 | 17,225   |
 
 @Evergreen @Devices @Evergreen_FiltersFeature @FiltersDisplay @DAS11187
 Scenario Outline: EvergreenJnr_DevicesList_CheckThatCustomFiltersAreContainsAllExpectedAssociations

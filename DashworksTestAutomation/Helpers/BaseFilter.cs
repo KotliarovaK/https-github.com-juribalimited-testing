@@ -242,8 +242,8 @@ namespace DashworksTestAutomation.Helpers
             _driver.WaitForDataLoading();
             foreach (var row in Table.Rows)
             {
-                _driver.FindElement(By.XPath(".//div[@id='context']//input[@id='md-input-3']")).Click();
-                _driver.FindElement(By.XPath(".//div[@id='context']//input[@id='md-input-3']"))
+                _driver.FindElement(By.XPath(".//div[@id='context']//input[@placeholder='Search']")).Click();
+                _driver.FindElement(By.XPath(".//div[@id='context']//input[@placeholder='Search']"))
                     .SendKeys(row["SelectedValues"]);
                 _driver.FindElement(By.XPath(
                         $".//div[@class='filterAddPanel ng-star-inserted']//span[contains(text(),'{row["SelectedValues"]}')]"))
@@ -252,7 +252,7 @@ namespace DashworksTestAutomation.Helpers
 
             foreach (var row in Table.Rows)
             {
-                _driver.FindElement(By.XPath(".//div[@id='context']//input[@id='md-input-2']")).Click();
+                _driver.FindElement(By.XPath(".//div[@class='associationmultiselect-parent btn-group dropdown-associationmultiselect']//input[@placeholder='Search']")).Click();
                 _driver.FindElement(By.XPath($".//li//span[text()='{row["Association"]}']")).Click();
             }
 
@@ -289,7 +289,7 @@ namespace DashworksTestAutomation.Helpers
 
             foreach (var row in Table.Rows)
             {
-                _driver.FindElement(By.XPath(".//div[@id='context']//input[@id='md-input-2']")).Click();
+                _driver.FindElement(By.XPath(".//div[@id='context']//input[@placeholder='Search']")).Click();
                 if (!_driver.IsElementDisplayed(By.XPath($".//li//span[text()='{row["Association"]}']"))) continue;
                 _driver.FindElement(By.XPath($".//li//span[text()='{row["Association"]}']")).Click();
             }
