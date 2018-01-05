@@ -58,10 +58,10 @@ namespace DashworksTestAutomation.Pages.Evergreen
         public IList<IWebElement> AddCategoryColumnName { get; set; }
 
         [FindsBy(How = How.XPath,
-            Using = ".//div[@class='filterAddPanel ng-star-inserted']//button[@title='Remove filter']")]
+            Using = ".//div[@class='filterAddPanel ng-star-inserted']//i[@class='material-icons mat-item_delete']/ancestor::button")]
         public IWebElement RemoveFilterButton { get; set; }
 
-        [FindsBy(How = How.XPath, Using = ".//button[@title='Reset Filter']")]
+        [FindsBy(How = How.XPath, Using = ".//span[text()='RESET']/ancestor::button")]
         public IWebElement ResetFiltersButton { get; set; }
 
         [FindsBy(How = How.XPath, Using = ".//span[contains(@class, 'filter-label-value')]")]

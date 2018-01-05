@@ -108,7 +108,6 @@ namespace DashworksTestAutomation.Steps.Dashworks
         public void WhenUserClickContentFromColumn(string columnName)
         {
             var tableElement = _driver.NowAtWithoutWait<BaseDashboardPage>();
-
             tableElement.ClickContentByColumnName(columnName);
             _driver.WaitForDataLoading();
         }
@@ -127,6 +126,7 @@ namespace DashworksTestAutomation.Steps.Dashworks
         {
             var resetbutton = _driver.NowAt<BaseDashboardPage>();
             _driver.WaitWhileControlIsNotDisplayed<BaseDashboardPage>(() => resetbutton.SearchTextboxResetButtonInPanel);
+
             Assert.IsTrue(resetbutton.SearchTextboxResetButtonInPanel.Displayed(), "Reset button is not displayed");
             Logger.Write("Reset button is displayed");
         }
