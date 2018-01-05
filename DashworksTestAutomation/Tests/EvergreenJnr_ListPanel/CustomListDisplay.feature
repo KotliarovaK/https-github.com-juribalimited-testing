@@ -483,7 +483,7 @@ Scenario: EvergreenJnr_DevicesList_CheckThatDatabaseErrorOccurringOccurringWhenA
 	Then "TestName" list is displayed to user
 	And "2" rows are displayed in the agGrid
 
-@Evergreen @Devices @EvergreenJnr_ListPanel @CustomListDisplay @DAS11465 @Delete_Newly_Created_List
+@Evergreen @Devices @EvergreenJnr_ListPanel @CustomListDisplay @DAS11465 @Delete_Newly_Created_List @Not_Run
 Scenario: EvergreenJnr_DevicesLists_CheckThatAnotherUserCanEditsAndSavesASharedListWithoutErrors
 	When User clicks "Devices" on the left-hand menu
 	Then "Devices" list should be displayed to the user
