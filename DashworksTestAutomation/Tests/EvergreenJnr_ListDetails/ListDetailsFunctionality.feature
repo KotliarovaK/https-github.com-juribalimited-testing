@@ -173,10 +173,4 @@ Examples:
 	| Users        |
 	| Applications |
 	| Mailboxes    |
-
 @Evergreen @Devices @EvergreenJnr_ListDetails @ListDetailsFunctionality @DAS10880 @Delete_Newly_Created_List
-Scenario: EvergreenJnr_DevicesLists_CheckDefaultOptionsInListDetailsForStaticLists
-	When User clicks "Devices" on the left-hand menu
-	Then "Devices" list should be displayed to the user
-	When User clicks the Actions button
-	Then Actions panel is displayed to the user

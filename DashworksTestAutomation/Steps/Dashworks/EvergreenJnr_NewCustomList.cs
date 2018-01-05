@@ -10,6 +10,8 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading;
 using DashworksTestAutomation.DTO;
+using DashworksTestAutomation.DTO.RuntimeVariables;
+using DashworksTestAutomation.Providers;
 using TechTalk.SpecFlow;
 
 namespace DashworksTestAutomation.Steps.Dashworks
@@ -19,11 +21,13 @@ namespace DashworksTestAutomation.Steps.Dashworks
     {
         private readonly RemoteWebDriver _driver;
         private readonly UserDto _user;
+        private readonly UsedUsers _usedUsers;
 
-        public EvergreenJnr_NewCustomList(RemoteWebDriver driver, UserDto user)
+        public EvergreenJnr_NewCustomList(RemoteWebDriver driver, UserDto user, UsedUsers usedUsers)
         {
             _driver = driver;
             _user = user;
+            _usedUsers = usedUsers;
         }
 
         [Then(@"Save to New Custom List element is NOT displayed")]
@@ -284,11 +288,18 @@ namespace DashworksTestAutomation.Steps.Dashworks
         {
             try
             {
-                //All lists for all users
-                //var listsIds = DatabaseHelper.ExecuteReader("SELECT [ListId] FROM[DesktopBI].[dbo].[EvergreenList]", 0);
-                //All lists for specific user
-                var listsIds = DatabaseHelper.ExecuteReader($"select l.ListId from[aspnetdb].[dbo].[aspnet_Users] u join[DesktopBI].[dbo].[EvergreenList] l on u.UserId = l.UserId where u.LoweredUserName = '{_user.UserName}'", 0);
-                DatabaseHelper.RemoveLists(listsIds);
+                //If non users were logged in then just return. None lists were created
+                if (_usedUsers.Value == null)
+                    return;
+
+                foreach (UserDto userDto in _usedUsers.Value)
+                {
+                    //All lists for all users
+                    //var listsIds = DatabaseHelper.ExecuteReader("SELECT [ListId] FROM[DesktopBI].[dbo].[EvergreenList]", 0);
+                    //All lists for specific user
+                    var listsIds = DatabaseHelper.ExecuteReader($"select l.ListId from[aspnetdb].[dbo].[aspnet_Users] u join[DesktopBI].[dbo].[EvergreenList] l on u.UserId = l.UserId where u.LoweredUserName = '{userDto.UserName}'", 0);
+                    DatabaseHelper.RemoveLists(listsIds);
+                }
             }
             catch { }
         }

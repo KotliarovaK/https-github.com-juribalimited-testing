@@ -17,7 +17,9 @@ namespace DashworksTestAutomation.Pages.Evergreen
         [FindsBy(How = How.XPath, Using = ".//input[@name='search']")]
         public IWebElement SearchTextbox { get; set; }
 
-        [FindsBy(How = How.XPath, Using = ".//div[@class='searchPanel input-wrapper']//button[@aria-describedby='cdk-describedby-message-12']")]
+        [FindsBy(How = How.XPath,
+            Using =
+                ".//div[@class='searchPanel input-wrapper']//button[@aria-describedby='cdk-describedby-message-12']")]
         public IWebElement SearchTextboxResetButton { get; set; }
 
         [FindsBy(How = How.XPath, Using = ".//button[@aria-describedby='cdk-describedby-message-23']")]
@@ -28,6 +30,7 @@ namespace DashworksTestAutomation.Pages.Evergreen
 
         private const string GroupTitleSelector =
             ".//div[contains(@class,'filter-category-title filter-selection')]";
+
         [FindsBy(How = How.XPath, Using = GroupTitleSelector)]
         public IList<IWebElement> GroupTitle { get; set; }
 
@@ -131,7 +134,14 @@ namespace DashworksTestAutomation.Pages.Evergreen
 
         public bool CategoryIsDisplayed(string sectionsName)
         {
-            return Driver.IsElementDisplayed(By.XPath($".//div[contains(@class, 'filter-category-label')][text()='{sectionsName}']"));
+            return Driver.IsElementDisplayed(
+                By.XPath($".//div[contains(@class, 'filter-category-label')][text()='{sectionsName}']"));
+        }
+
+        public bool SubcategoryIsSelected(string subCategoryName)
+        {
+            return Driver.IsElementDisplayed(By.XPath(
+                $".//div[@class='sub-categories ng-star-inserted']/div/div//span[text()='{subCategoryName}']"));
         }
     }
 }

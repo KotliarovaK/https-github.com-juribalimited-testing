@@ -199,9 +199,16 @@ Scenario: EvergreenJnr_DevicesList_Search_CheckThatSearchFieldHaveResetButtonAtL
 	When User enters "CheckTheResetButton" text in Search field at List Panel
 	Then reset button in Search field at List Panel is displayed
 
-@Evergreen @Devices @EvergreenJnr_Search @Search @DAS11495
-Scenario: EvergreenJnr_DevicesList_Search_CheckThat500ErrorMessageIsNotDisplayedAfterEnteringTheSpecificCharacters
-	When User clicks "Devices" on the left-hand menu
-	Then "Devices" list should be displayed to the user
+@Evergreen @AllLists @EvergreenJnr_Search @Search @DAS-11495
+Scenario Outline: EvergreenJnr_AllLists_Search_CheckThat500ErrorMessageIsNotDisplayedAfterEnteringTheSpecificCharacters
+	When User clicks "<PageName>" on the left-hand menu
+	Then "<PageName>" list should be displayed to the user
 	When User type "[^abc]" in Global Search Field
-	Then "Devices" list should be displayed to the user
+	Then "<PageName>" list should be displayed to the user
+
+Examples: 
+	| PageName     |
+	| Devices      |
+	| Users        |
+	| Applications |
+	| Mailboxes    |
