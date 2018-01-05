@@ -26,26 +26,6 @@ namespace DashworksTestAutomation.Steps.Dashworks
             _url = url;
         }
 
-        [Given(@"User is logged in to the Evergreen")]
-        public void GivenUserIsLoggedInToTheEvergreen()
-        {
-            var restClient = new RestClient(UrlProvider.Url);
-            //Get cookies
-            HttpClientHelper client = new HttpClientHelper(UserProvider.GetFreeUserAccount(), restClient);
-
-            //Init session
-            _driver.NagigateToURL(UrlProvider.Url);
-
-            //Set cookies to browser
-            foreach (Cookie cookie in client._cookiesJar)
-            {
-                _driver.Manage().Cookies.AddCookie(cookie);
-            }
-
-            //Open website
-            _driver.NagigateToURL(UrlProvider.EvergreenUrl);
-        }
-
         [Given(@"User is on Dashworks Homepage")]
         public void GivenUserIsOnDashworksHomepage()
         {

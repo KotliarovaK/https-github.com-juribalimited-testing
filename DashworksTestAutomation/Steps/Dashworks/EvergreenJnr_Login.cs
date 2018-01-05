@@ -1,13 +1,17 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Web.Management;
 using DashworksTestAutomation.DTO;
 using DashworksTestAutomation.DTO.RuntimeVariables;
 using DashworksTestAutomation.Extensions;
+using DashworksTestAutomation.Helpers;
 using DashworksTestAutomation.Pages;
 using DashworksTestAutomation.Providers;
 using NUnit.Framework;
+using OpenQA.Selenium;
 using OpenQA.Selenium.Remote;
+using RestSharp;
 using TechTalk.SpecFlow;
 using Logger = DashworksTestAutomation.Utils.Logger;
 
@@ -27,8 +31,7 @@ namespace DashworksTestAutomation.Steps.Dashworks
             _usedUsers = usedUsers;
         }
 
-        [When(@"User provides the Login and Password and clicks on the login button")]
-        public void WhenUserProvidesTheLoginAndPasswordAndClicksOnTheLoginButton()
+        private UserDto GetFreeUserAndAddToUsedUsersList()
         {
             var user = UserProvider.GetFreeUserAccount();
             if (_usedUsers.Value == null)
@@ -40,18 +43,48 @@ namespace DashworksTestAutomation.Steps.Dashworks
             //Add user credentials to context
             user.CopyPropertiesTo(_user);
 
+            return user;
+        }
+
+        [Given(@"User is logged in to the Evergreen")]
+        public void GivenUserIsLoggedInToTheEvergreen()
+        {
+            var user = GetFreeUserAndAddToUsedUsersList();
+
+            var restClient = new RestClient(UrlProvider.Url);
+            //Get cookies
+            HttpClientHelper client = new HttpClientHelper(user, restClient);
+
+            //Init session
+            _driver.NagigateToURL(UrlProvider.Url);
+
+            //Set cookies to browser
+            foreach (Cookie cookie in client._cookiesJar)
+            {
+                _driver.Manage().Cookies.AddCookie(cookie);
+            }
+
+            //Open website
+            _driver.NagigateToURL(UrlProvider.EvergreenUrl);
+        }
+
+        [When(@"User provides the Login and Password and clicks on the login button")]
+        public void WhenUserProvidesTheLoginAndPasswordAndClicksOnTheLoginButton()
+        {
+            var user = GetFreeUserAndAddToUsedUsersList();
+
             var loginPage = _driver.NowAt<LoginPage>();
 
             if (loginPage.LoginGroupbox.Displayed())
             {
-                loginPage.UserNameTextbox.SendKeys(_user.UserName);
-                loginPage.PasswordTextbox.SendKeys(_user.Password);
+                loginPage.UserNameTextbox.SendKeys(user.UserName);
+                loginPage.PasswordTextbox.SendKeys(user.Password);
                 loginPage.LoginButton.Click();
             }
             else
             {
-                loginPage.SplashUserNameTextbox.SendKeys(_user.UserName);
-                loginPage.SplashPasswordTextbox.SendKeys(_user.Password);
+                loginPage.SplashUserNameTextbox.SendKeys(user.UserName);
+                loginPage.SplashPasswordTextbox.SendKeys(user.Password);
                 loginPage.SplashLoginButton.Click();
             }
         }

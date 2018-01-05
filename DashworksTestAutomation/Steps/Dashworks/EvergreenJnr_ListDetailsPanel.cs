@@ -1,5 +1,8 @@
 ﻿using System;
+using System.Collections.Generic;
+using DashworksTestAutomation.DTO.RuntimeVariables;
 using DashworksTestAutomation.Extensions;
+using DashworksTestAutomation.Helpers;
 using DashworksTestAutomation.Pages.Evergreen;
 using DashworksTestAutomation.Utils;
 using NUnit.Framework;
@@ -12,10 +15,12 @@ namespace DashworksTestAutomation.Steps.Dashworks
     internal class EvergreenJnr_ListDetailsPanel : SpecFlowContext
     {
         private readonly RemoteWebDriver _driver;
+        private readonly UsersWithSharedLists _usersWithSharedLists;
 
-        public EvergreenJnr_ListDetailsPanel(RemoteWebDriver driver)
+        public EvergreenJnr_ListDetailsPanel(RemoteWebDriver driver, UsersWithSharedLists usersWithSharedLists)
         {
             _driver = driver;
+            _usersWithSharedLists = usersWithSharedLists;
         }
 
         [When(@"User changes list name to ""(.*)""")]
@@ -105,6 +110,20 @@ namespace DashworksTestAutomation.Steps.Dashworks
         {
             var listDetailsElement = _driver.NowAt<ListDetailsElement>();
             _driver.SelectCustomSelectbox(listDetailsElement.OwnerDropdown, ownerOption);
+
+            //Save user to remove its lists after test execution
+            _usersWithSharedLists.Value.Add(GetUserNameByFullName(ownerOption));
+
+            if (_usersWithSharedLists.Value == null)
+                _usersWithSharedLists.Value = new List<string>();
+        }
+
+        private string GetUserNameByFullName(string fullName)
+        {
+            var userName = DatabaseHelper.ExecuteReader(
+                $"select u.LoweredUserName from[aspnetdb].[dbo].[aspnet_Users] u join[DesktopBI].[dbo].[UserProfiles] up on up.UserId = u.UserId where up.FullName = '{fullName}'",
+                0)[0];
+            return userName;
         }
 
         [When(@"User click Accept button in List Details panel")]

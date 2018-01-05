@@ -22,12 +22,14 @@ namespace DashworksTestAutomation.Steps.Dashworks
         private readonly RemoteWebDriver _driver;
         private readonly UserDto _user;
         private readonly UsedUsers _usedUsers;
+        private readonly UsersWithSharedLists _usersWithSharedLists;
 
-        public EvergreenJnr_NewCustomList(RemoteWebDriver driver, UserDto user, UsedUsers usedUsers)
+        public EvergreenJnr_NewCustomList(RemoteWebDriver driver, UserDto user, UsedUsers usedUsers, UsersWithSharedLists usersWithSharedLists)
         {
             _driver = driver;
             _user = user;
             _usedUsers = usedUsers;
+            _usersWithSharedLists = usersWithSharedLists;
         }
 
         [Then(@"Save to New Custom List element is NOT displayed")]
@@ -286,6 +288,12 @@ namespace DashworksTestAutomation.Steps.Dashworks
         [AfterScenario("Delete_Newly_Created_List")]
         public void DeleteAllCustomListsAfterScenarioRun()
         {
+            RemoveUserLists();
+            RemoveSharedLists();
+        }
+
+        private void RemoveUserLists()
+        {
             try
             {
                 //If non users were logged in then just return. None lists were created
@@ -294,11 +302,43 @@ namespace DashworksTestAutomation.Steps.Dashworks
 
                 foreach (UserDto userDto in _usedUsers.Value)
                 {
-                    //All lists for all users
-                    //var listsIds = DatabaseHelper.ExecuteReader("SELECT [ListId] FROM[DesktopBI].[dbo].[EvergreenList]", 0);
-                    //All lists for specific user
-                    var listsIds = DatabaseHelper.ExecuteReader($"select l.ListId from[aspnetdb].[dbo].[aspnet_Users] u join[DesktopBI].[dbo].[EvergreenList] l on u.UserId = l.UserId where u.LoweredUserName = '{userDto.UserName}'", 0);
-                    DatabaseHelper.RemoveLists(listsIds);
+                    try
+                    {
+                        //All lists for all users
+                        //var listsIds = DatabaseHelper.ExecuteReader("SELECT [ListId] FROM[DesktopBI].[dbo].[EvergreenList]", 0);
+                        //All lists for specific user
+                        var listsIds = DatabaseHelper.ExecuteReader(
+                            $"select l.ListId from[aspnetdb].[dbo].[aspnet_Users] u join[DesktopBI].[dbo].[EvergreenList] l on u.UserId = l.UserId where u.LoweredUserName = '{userDto.UserName}'",
+                            0);
+                        DatabaseHelper.RemoveLists(listsIds);
+                    }
+                    catch { }
+                }
+            }
+            catch { }
+        }
+
+        private void RemoveSharedLists()
+        {
+            try
+            {
+                //If none lists were shared
+                if (_usersWithSharedLists.Value == null)
+                    return;
+
+                foreach (string user in _usersWithSharedLists.Value)
+                {
+                    try
+                    {
+                        //All lists for all users
+                        //var listsIds = DatabaseHelper.ExecuteReader("SELECT [ListId] FROM[DesktopBI].[dbo].[EvergreenList]", 0);
+                        //All lists for specific user
+                        var listsIds = DatabaseHelper.ExecuteReader(
+                            $"select l.ListId from[aspnetdb].[dbo].[aspnet_Users] u join[DesktopBI].[dbo].[EvergreenList] l on u.UserId = l.UserId where u.LoweredUserName = '{user}'",
+                            0);
+                        DatabaseHelper.RemoveLists(listsIds);
+                    }
+                    catch { }
                 }
             }
             catch { }
