@@ -86,11 +86,11 @@ Scenario Outline: EvergreenJnr_AllLists_SelectAllChecboxMainFunctionalityTest
 	Then "<SelectedRowsCountAfterDiselect>" selected rows are displayed in the Actions panel
 
 Examples: 
-	| PageName     | SelectedRowsCount | Columnname    | SelectedRowName      | SelectedRowsCountAfterDiselect |
-	| Devices      | 17225             | Hostname      | 02QS1WBYUHCAG8Z      | 17224                          |
-	| Users        | 41335             | Username      | AAV4528222           | 41334                          |
-	| Applications | 2223              | Application   | MKS Source Integrity | 2222                           |
-	| Mailboxes    | 4835              | Email Address | blogs@juriba.com     | 4834                           |
+	| PageName     | SelectedRowsCount | Columnname    | SelectedRowName                  | SelectedRowsCountAfterDiselect |
+	| Devices      | 17225             | Hostname      | 001BAQXT6JWFPI                   | 17224                          |
+	| Users        | 41335             | Username      | 002B5DC7D4D34D5C895              | 41334                          |
+	| Applications | 2223              | Application   | 7zip                             | 2222                           |
+	| Mailboxes    | 4835              | Email Address | 00B5CCB89AD0404B965@bclabs.local | 4834                           |
 
 @Evergreen @AllLists @Evergreen_ActionsPanel @AllCheckbox @DAS10656
 Scenario: EvergreenJnr_UsersList_CheckThatSelectAllWorksCorrectlyForFilteredListsWithAdditionalColumn

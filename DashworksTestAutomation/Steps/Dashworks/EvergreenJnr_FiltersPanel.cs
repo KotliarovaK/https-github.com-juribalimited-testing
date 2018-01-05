@@ -41,13 +41,22 @@ namespace DashworksTestAutomation.Steps.Dashworks
             filterElement.AddFilter(filterName);
         }
 
-        [When(@"User is searching in filters with ""(.*)"" text in Filters panel")]
-        public void WhenUserIsSearchingInFiltersWithTextInFiltersPanel(string searchedText)
+        [When(@"User enters ""(.*)"" text in Search field at Filters Panel")]
+        public void WhenUserEntersTextInSearchFieldAtFiltersPanel(string searchedText)
         {
             var filterElement = _driver.NowAt<FiltersElement>();
             filterElement.AddNewFilterButton.Click();
             filterElement.SearchTextbox.Clear();
-            filterElement.EnteredIntoSearchBox(searchedText);
+            filterElement.SearchTextbox.SendKeys(searchedText);
+        }
+
+        [When(@"User enters ""(.*)"" text in Search field at selected Filter")]
+        public void WhenUserEntersTextInSearchFieldAtSelectedFilter(string searchedText)
+        {
+            var filterElement = _driver.NowAt<FiltersElement>();
+            _driver.WaitWhileControlIsNotDisplayed<FiltersElement>(() => filterElement.LookupFilterSearchTextbox);
+            filterElement.LookupFilterSearchTextbox.Clear();
+            filterElement.LookupFilterSearchTextbox.SendKeys(searchedText);
         }
 
         [When(@"User clears search textbox in Filters panel")]
@@ -495,6 +504,15 @@ namespace DashworksTestAutomation.Steps.Dashworks
         {
             var filter = new ChangeCheckboxesFilter(_driver, table);
             filter.Do();
+        }
+
+        [Then(@"reset button in Search field at selected Filter is displayed")]
+        public void ThenResetButtonInSearchFieldAtSelectedFilterIsDisplayed()
+        {
+            var page = _driver.NowAt<FiltersElement>();
+            _driver.WaitWhileControlIsNotDisplayed<FiltersElement>(() => page.SearchTextboxResetButton);
+            Assert.IsTrue(page.SearchTextboxResetButton.Displayed(), "Reset button is not displayed");
+            Logger.Write("Reset button is displayed");
         }
     }
 }

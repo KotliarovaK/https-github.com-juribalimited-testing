@@ -31,12 +31,12 @@ namespace DashworksTestAutomation.Steps.Dashworks
             Logger.Write("Columns panel is visible");
         }
 
-        [When(@"User is searching in columns with ""(.*)"" text in Columns panel")]
-        public void WhenUserIsSearchingInColumnsWithTextInColumnsPanel(string searchedText)
+        [When(@"User enters ""(.*)"" text in Search field at Columns Panel")]
+        public void WhenUserEntersTextInSearchFieldAtColumnsPanel(string searchedText)
         {
             var columnElement = _driver.NowAt<ColumnsElement>();
             columnElement.SearchTextbox.Clear();
-            columnElement.EnteredIntoSearchBox(searchedText);
+            columnElement.SearchTextbox.SendKeys(searchedText);
         }
 
         [When(@"User clears search textbox in Columns panel")]

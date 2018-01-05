@@ -92,7 +92,7 @@ namespace DashworksTestAutomation.Steps.Dashworks
         [Then(@"""(.*)"" list is displayed to user")]
         public void ThenListIsDisplayedToUser(string listName)
         {
-            //Workaround for DAS-11570. Remove after fix
+            //Workaround for 11570. Remove after fix
             WhenUserNavigatesToTheList(listName);
             var page = _driver.NowAt<BaseDashboardPage>();
             Assert.AreEqual(listName, page.ActiveCustomListName());
@@ -259,6 +259,24 @@ namespace DashworksTestAutomation.Steps.Dashworks
         {
             var listElement = _driver.NowAt<CustomListElement>();
             Assert.IsFalse(listElement.GetFavoriteStatus(listnName));
+        }
+
+        [When(@"User enters ""(.*)"" text in Search field at List Panel")]
+        public void WhenUserEntersTextInSearchFieldAtListPanel(string searchedText)
+        {
+            var listElement = _driver.NowAt<CustomListElement>();
+            _driver.WaitWhileControlIsNotDisplayed<CustomListElement>(() => listElement.ListPanelSearchTextbox);
+            listElement.ListPanelSearchTextbox.Clear();
+            listElement.ListPanelSearchTextbox.SendKeys(searchedText);
+        }
+
+        [Then(@"reset button in Search field at List Panel is displayed")]
+        public void ThenResetButtonInSearchFieldAtListPanelIsDisplayed()
+        {
+            var listElement = _driver.NowAt<CustomListElement>();
+            _driver.WaitWhileControlIsNotDisplayed<CustomListElement>(() => listElement.SearchTextboxResetButtonInListPanel);
+            Assert.IsTrue(listElement.SearchTextboxResetButtonInListPanel.Displayed(), "Reset button is not displayed");
+            Logger.Write("Reset button is displayed");
         }
 
         [AfterScenario("Delete_Newly_Created_List")]

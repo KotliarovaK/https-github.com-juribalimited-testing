@@ -246,7 +246,7 @@ Scenario: EvergreenJnr_DevicesList_CheckTheSortOrderIsSavedForExistingListAndNot
 	When User select "Hostname" rows in the grid
 	| SelectedRowsName |
 	| 01BQIYGGUW5PRP6  |
-	| 020JQ9RO0J4H07X  |
+	| 00OMQQXWA1DRI6   |
 	And User create static list with "Static List TestName" name
 	Then "Static List TestName" list is displayed to user
 	When User click on 'Owner Display Name' column header
@@ -277,7 +277,7 @@ Scenario: EvergreenJnr_DevicesList_CheckThatNewlySavedListIsCreatedWithTheCorrec
 	| SelectedRowsName |
 	| 00BDM1JUR8IF419  |
 	| 011PLA470S0B9DJ  |
-	| 020JQ9RO0J4H07X  |
+	| 00OMQQXWA1DRI6   |
 	And User create static list with "Static List TestName" name
 	Then "Static List TestName" list is displayed to user
 	Then "3" rows are displayed in the agGrid
@@ -296,7 +296,7 @@ Scenario: EvergreenJnr_DevicesList_CheckThatNewlySavedListIsCreatedWithTheCorrec
 	And Edit List menu is not displayed
 	When User select "Hostname" rows in the grid
 	| SelectedRowsName |
-	| 020JQ9RO0J4H07X  |
+	| 00OMQQXWA1DRI6   |
 	Then User removes selected rows
 	When User navigates to the "All Devices" list
 	Then "Devices" list should be displayed to the user
@@ -318,7 +318,7 @@ Scenario: EvergreenJnr_DevicesList_CheckThatSortingWillBeWorkForExistingSavedSta
 	| SelectedRowsName |
 	| 00BDM1JUR8IF419  |
 	| 011PLA470S0B9DJ  |
-	| 020JQ9RO0J4H07X  |
+	| 00OMQQXWA1DRI6   |
 	And User create static list with "Static List TestName" name
 	Then "Static List TestName" list is displayed to user
 	When User clicks the Columns button
@@ -377,8 +377,8 @@ Scenario: EvergreenJnr_DevicesList_CheckThatEditListMenuNotDisplayedForActiveLis
 	| SelectedRowsName |
 	| 00BDM1JUR8IF419  |
 	| 011PLA470S0B9DJ  |
-	| 020JQ9RO0J4H07X  |
-	| 03063X2ZUCDN0A1  |
+	| 00OMQQXWA1DRI6   |
+	| 00SH8162NAS524   |
 	And User create static list with "Static List TestName" name
 	Then "Static List TestName" list is displayed to user
 	When User clicks the Columns button

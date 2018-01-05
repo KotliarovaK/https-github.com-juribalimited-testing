@@ -157,14 +157,14 @@ Scenario: EvergreenJnr_DevicesList_Search_NoDevicesFound
 Scenario: EvergreenJnr_DevicesList_Search_CheckThatGlobalSearchFieldHaveAResetButton
 	When User clicks "Devices" on the left-hand menu
 	Then "Devices" list should be displayed to the user
-	When User enters "CheckTheResetButton" text in Global Search field
+	When User type "CheckTheResetButton" in Global Search Field
 	Then reset button in Global Search field is displayed
 
 @Evergreen @Devices @EvergreenJnr_Search @Search @DAS11350
 Scenario: EvergreenJnr_DevicesList_Search_CheckThatTableSearchFieldHaveAResetButton
 	When User clicks "Devices" on the left-hand menu
 	Then "Devices" list should be displayed to the user
-	When User enters "CheckTheResetButton" text in Table Search field
+	When User perform search by "CheckTheResetButton"
 	Then reset button in Table Search field is displayed
 
 @Evergreen @Devices @EvergreenJnr_Search @Search @DAS11350
@@ -209,5 +209,5 @@ Scenario: EvergreenJnr_DevicesList_Search_CheckThatSearchFieldHaveResetButtonAtL
 Scenario: EvergreenJnr_DevicesList_Search_CheckThat500ErrorMessageIsNotDisplayedAfterEnteringTheSpecificCharacters
 	When User clicks "Devices" on the left-hand menu
 	Then "Devices" list should be displayed to the user
-	When User enters "[^abc]" text in Global Search field
+	When User type "[^abc]" in Global Search Field
 	Then "Devices" list should be displayed to the user
