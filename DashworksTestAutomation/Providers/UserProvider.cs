@@ -36,7 +36,7 @@ namespace DashworksTestAutomation.Providers
 
         public static UserDto GetFreeUserAccount()
         {
-            //_mut.WaitOne(3000);
+            _mut.WaitOne(1000);
             try
             {
                 var account = _accounts[_iter];
@@ -50,7 +50,7 @@ namespace DashworksTestAutomation.Providers
             }
             finally
             {
-                //_mut.ReleaseMutex();
+                _mut.ReleaseMutex();
             }
         }
     }

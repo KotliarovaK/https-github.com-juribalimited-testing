@@ -3,13 +3,7 @@ Feature: AllCheckbox
 	Runs All Checkbox related tests
 
 Background: Pre-Conditions
-	Given User is on Dashworks Homepage
-	#And Login link is visible
-	#When User clicks on the Login link
-	Then Login Page is displayed to the user
-	When User provides the Login and Password and clicks on the login button
-	Then Dashworks homepage is displayed to the user in a logged in state
-	When User clicks the Switch to Evergreen link
+	Given User is logged in to the Evergreen
 	Then Evergreen Dashboards page should be displayed to the user
 
 @Evergreen @Users @Evergreen_ActionsPanel @AllCheckbox @DAS10769 @DAS10656
@@ -22,16 +16,16 @@ Scenario: EvergreenJnr_UsersList_SelectAllCheckboxStatusCheckAfterSearch
 	Then The number of rows selected matches the number of rows of the main object list
 	Then User enters SearchCriteria into the agGrid Search Box and the correct NumberOfRows are returned
 	| SearchCriteria | NumberOfRows |
-	| alain          | 42           |
+	| alain          | 24           |
 	Then Select All selectbox is checked
-	Then "42" rows are displayed in the agGrid
+	Then "24" rows are displayed in the agGrid
 	Then "41335" selected rows are displayed in the Actions panel
 	When User is deselect all rows
 	And User select all rows
 	Then The number of rows selected matches the number of rows of the main object list
 	And Clearing the agGrid Search Box
 	Then Select All selectbox is checked
-	Then "42" selected rows are displayed in the Actions panel
+	Then "24" selected rows are displayed in the Actions panel
 
 @Evergreen @AllLists @Evergreen_ActionsPanel @AllCheckbox @DAS10775 @DAS10656
 Scenario Outline: EvergreenJnr_AllLists_CheckThatSelectAllCheckboxStatusAfterClosingActionPanel
