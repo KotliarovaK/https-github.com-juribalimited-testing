@@ -7,7 +7,7 @@ namespace DashworksTestAutomation.Utils
     {
         public static void Write(string text)
         {
-            //TestContext.WriteLine(text);
+            TestContext.WriteLine(text);
         }
 
         public static void Write(Exception exception)
@@ -17,7 +17,7 @@ namespace DashworksTestAutomation.Utils
 
         public static void Write(string format, params object[] arg)
         {
-            //TestContext.WriteLine(format, arg);
+            TestContext.WriteLine(format, arg);
         }
     }
 }
