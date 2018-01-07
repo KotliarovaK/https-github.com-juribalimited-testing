@@ -18,19 +18,25 @@ namespace DashworksTestAutomation.Pages.Evergreen
         [FindsBy(How = How.XPath, Using = ".//input[@name='search']")]
         public IWebElement SearchTextbox { get; set; }
 
-        [FindsBy(How = How.XPath, Using = ".//button[@class='btn btn-default input-toggle mat-icon-button ng-star-inserted']")]
+        [FindsBy(How = How.XPath,
+            Using = ".//button[@class='btn btn-default input-toggle mat-icon-button ng-star-inserted']")]
         public IWebElement SearchTextboxResetButton { get; set; }
 
-        [FindsBy(How = How.XPath, Using = ".//div[@class='filterAddPanel ng-star-inserted']//input[@placeholder='Search']")]
+        [FindsBy(How = How.XPath,
+            Using = ".//div[@class='filterAddPanel ng-star-inserted']//input[@placeholder='Search']")]
         public IWebElement LookupFilterSearchTextbox { get; set; }
 
         [FindsBy(How = How.XPath, Using = ".//div[contains(@class,'filter-category ng-star-inserted')]")]
         public IList<IWebElement> FilterCategories { get; set; }
 
-        [FindsBy(How = How.XPath, Using = ".//div[@class='filter-category-title ng-star-inserted']//button[@aria-describedby='cdk-describedby-message-276']")]
+        [FindsBy(How = How.XPath,
+            Using =
+                ".//div[@class='filter-category-title ng-star-inserted']//button[@aria-describedby='cdk-describedby-message-274']")]
         public IList<IWebElement> MinimizeGroupButton { get; set; }
 
-        [FindsBy(How = How.XPath, Using = ".//div[@class='filter-category-title ng-star-inserted']//button[@aria-describedby='cdk-describedby-message-335']")]
+        [FindsBy(How = How.XPath,
+            Using =
+                ".//div[@class='filter-category-title ng-star-inserted']//button[@aria-describedby='cdk-describedby-message-333']")]
         public IList<IWebElement> MaximizeGroupButton { get; set; }
 
         [FindsBy(How = How.XPath, Using = ".//div[@class='styleSelectDropdown']")]
@@ -58,7 +64,8 @@ namespace DashworksTestAutomation.Pages.Evergreen
         public IList<IWebElement> AddCategoryColumnName { get; set; }
 
         [FindsBy(How = How.XPath,
-            Using = ".//div[@class='filterAddPanel ng-star-inserted']//i[@class='material-icons mat-item_delete']/ancestor::button")]
+            Using =
+                ".//div[@class='filterAddPanel ng-star-inserted']//i[@class='material-icons mat-item_delete']/ancestor::button")]
         public IWebElement RemoveFilterButton { get; set; }
 
         [FindsBy(How = How.XPath, Using = ".//span[text()='RESET']/ancestor::button")]
@@ -80,6 +87,7 @@ namespace DashworksTestAutomation.Pages.Evergreen
         public IList<IWebElement> AddedFilterLabels { get; set; }
 
         private const string GroupTitleSelector = ".//div[contains(@class,'filter-category-title ng-star-inserted')]";
+
         [FindsBy(How = How.XPath, Using = GroupTitleSelector)]
         public IList<IWebElement> GroupTitle { get; set; }
 
@@ -111,6 +119,7 @@ namespace DashworksTestAutomation.Pages.Evergreen
                 Driver.MouseHover(AddNewFilterButton);
                 AddNewFilterButton.Click();
             }
+
             if (FilterCategories.Any())
                 Driver.MouseHover(FilterCategories.Last());
             Driver.MouseHover(SearchTextbox);
@@ -126,6 +135,7 @@ namespace DashworksTestAutomation.Pages.Evergreen
             {
                 selector = $".//div[contains(@class, 'filter-add')][text()='{filterName}']";
             }
+
             Driver.WaitWhileControlIsNotDisplayed(By.XPath(selector));
             Driver.FindElement(By.XPath(selector)).Click();
 
@@ -139,6 +149,7 @@ namespace DashworksTestAutomation.Pages.Evergreen
             {
                 AddNewFilterButton.Click();
             }
+
             SearchTextbox.Clear();
             SearchTextbox.SendKeys(filterName);
             var selector = By.XPath($".//div[contains(@class, 'filter-add')][text()='{filterName}']");
