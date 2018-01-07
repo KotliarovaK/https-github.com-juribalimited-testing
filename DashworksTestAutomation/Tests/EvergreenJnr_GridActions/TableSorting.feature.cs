@@ -371,7 +371,7 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_GridActions
                         "NumberOfRows"});
             table12.AddRow(new string[] {
                         "Tim",
-                        "147"});
+                        "94"});
             testRunner.Then("User enters SearchCriteria into the agGrid Search Box and the correct NumberOfRow" +
                     "s are returned", ((string)(null)), table12, "Then ");
             testRunner.When("User click on \'Last Logon Date\' column header", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");

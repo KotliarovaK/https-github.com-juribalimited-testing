@@ -144,11 +144,10 @@ namespace DashworksTestAutomation.Pages.Evergreen
         public void ClickContentByColumnName(string columnName)
         {
             By byControl = By.XPath($".//div[@class='ag-body-container']/div[1]/div[{GetColumnNumberByName(columnName)}]//a");
-            By byTable = By.XPath($"./div[1]/div[{GetColumnNumberByName(columnName)}]//a");
 
-            Driver.WaitWhileControlIsNotDisplayed(byControl);
             Driver.WaitForDataLoading();
-            TableBody.FindElement(byTable).Click();
+            Driver.WaitWhileControlIsNotDisplayed(byControl);
+            Driver.FindElement(byControl).Click();
         }
 
         public IWebElement GetListElementByName(string listName)

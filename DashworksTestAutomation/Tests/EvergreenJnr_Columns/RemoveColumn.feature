@@ -476,4 +476,4 @@ Scenario Outline: EvergreenJnr_DevicesList_CheckThat500ErrorNotDisplayedAfterRem
 Examples: 
 	| PageName | ColumnName |
 	| Devices  | Hostname   |
-	| Users    | username   |
+	| Users    | Username   |

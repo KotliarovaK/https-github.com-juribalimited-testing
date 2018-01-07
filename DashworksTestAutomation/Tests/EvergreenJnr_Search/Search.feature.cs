@@ -511,7 +511,7 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_Search
                         "NumberOfRows"});
             table13.AddRow(new string[] {
                         "Luc",
-                        "138"});
+                        "85"});
             testRunner.And("User enters SearchCriteria into the agGrid Search Box and the correct NumberOfRow" +
                     "s are returned", ((string)(null)), table13, "And ");
             testRunner.Then("URL is \"http://automation.corp.juriba.com/evergreen/#/users\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");

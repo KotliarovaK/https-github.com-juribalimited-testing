@@ -94,7 +94,7 @@ Scenario: EvergreenJnr_UsersList_CheckSortByDateFunctionality
 	| MigrationP: Migrated Date |
 	Then User enters SearchCriteria into the agGrid Search Box and the correct NumberOfRows are returned
 	| SearchCriteria | NumberOfRows |
-	| Tim            | 147          |
+	| Tim            | 94           |
 	When User click on 'Last Logon Date' column header
 	Then data in table is sorted by 'Last Logon Date' column in descending order
 	When User click on 'Last Logon Date' column header

@@ -113,7 +113,7 @@ Scenario: EvergreenJnr_UsersList_ClearingSearchReturnsTheFullDataSet
 	Then "Users" list should be displayed to the user
 	And User enters SearchCriteria into the agGrid Search Box and the correct NumberOfRows are returned
 	| SearchCriteria | NumberOfRows |
-	| Luc            | 138          |
+	| Luc            | 85           |
 	Then URL is "http://automation.corp.juriba.com/evergreen/#/users"
 	And Clearing the agGrid Search Box
 	Then "41,335" rows are displayed in the agGrid

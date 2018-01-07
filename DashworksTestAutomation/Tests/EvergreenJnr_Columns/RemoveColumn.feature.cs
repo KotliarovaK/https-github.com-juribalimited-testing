@@ -1307,7 +1307,7 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_Columns
         [NUnit.Framework.CategoryAttribute("RemoveColumn")]
         [NUnit.Framework.CategoryAttribute("DAS11037")]
         [NUnit.Framework.TestCaseAttribute("Devices", "Hostname", new string[0])]
-        [NUnit.Framework.TestCaseAttribute("Users", "username", new string[0])]
+        [NUnit.Framework.TestCaseAttribute("Users", "Username", new string[0])]
         public virtual void EvergreenJnr_DevicesList_CheckThat500ErrorNotDisplayedAfterRemovingUsernameOrHostnameColumn(string pageName, string columnName, string[] exampleTags)
         {
             System.Exception lastException = null;
