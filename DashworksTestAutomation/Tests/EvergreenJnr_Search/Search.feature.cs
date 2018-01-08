@@ -511,7 +511,7 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_Search
                         "NumberOfRows"});
             table13.AddRow(new string[] {
                         "Luc",
-                        "138"});
+                        "85"});
             testRunner.And("User enters SearchCriteria into the agGrid Search Box and the correct NumberOfRow" +
                     "s are returned", ((string)(null)), table13, "And ");
             testRunner.Then("URL is \"http://automation.corp.juriba.com/evergreen/#/users\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
@@ -930,7 +930,7 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_Search
         [NUnit.Framework.CategoryAttribute("AllLists")]
         [NUnit.Framework.CategoryAttribute("EvergreenJnr_Search")]
         [NUnit.Framework.CategoryAttribute("Search")]
-        [NUnit.Framework.CategoryAttribute("DAS-11495")]
+        [NUnit.Framework.CategoryAttribute("DAS11495")]
         [NUnit.Framework.TestCaseAttribute("Devices", new string[0])]
         [NUnit.Framework.TestCaseAttribute("Users", new string[0])]
         [NUnit.Framework.TestCaseAttribute("Applications", new string[0])]
@@ -968,7 +968,7 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_Search
                     "AllLists",
                     "EvergreenJnr_Search",
                     "Search",
-                    "DAS-11495"};
+                    "DAS11495"};
             if ((exampleTags != null))
             {
                 @__tags = System.Linq.Enumerable.ToArray(System.Linq.Enumerable.Concat(@__tags, exampleTags));

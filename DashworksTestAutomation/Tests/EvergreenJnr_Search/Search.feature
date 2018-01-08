@@ -113,7 +113,7 @@ Scenario: EvergreenJnr_UsersList_ClearingSearchReturnsTheFullDataSet
 	Then "Users" list should be displayed to the user
 	And User enters SearchCriteria into the agGrid Search Box and the correct NumberOfRows are returned
 	| SearchCriteria | NumberOfRows |
-	| Luc            | 138          |
+	| Luc            | 85           |
 	Then URL is "http://automation.corp.juriba.com/evergreen/#/users"
 	And Clearing the agGrid Search Box
 	Then "41,335" rows are displayed in the agGrid
@@ -199,7 +199,7 @@ Scenario: EvergreenJnr_DevicesList_Search_CheckThatSearchFieldHaveResetButtonAtL
 	When User enters "CheckTheResetButton" text in Search field at List Panel
 	Then reset button in Search field at List Panel is displayed
 
-@Evergreen @AllLists @EvergreenJnr_Search @Search @DAS-11495
+@Evergreen @AllLists @EvergreenJnr_Search @Search @DAS11495
 Scenario Outline: EvergreenJnr_AllLists_Search_CheckThat500ErrorMessageIsNotDisplayedAfterEnteringTheSpecificCharacters
 	When User clicks "<PageName>" on the left-hand menu
 	Then "<PageName>" list should be displayed to the user

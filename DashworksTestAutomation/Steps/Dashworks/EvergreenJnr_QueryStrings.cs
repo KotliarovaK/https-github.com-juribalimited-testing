@@ -96,6 +96,7 @@ namespace DashworksTestAutomation.Steps.Dashworks
         {
             foreach (var row in table.Rows)
             {
+                _url.Value = UrlProvider.Url;
                 var combinedURL = _url.Value + row["QueryStringURL"];
                 _driver.NagigateToURL(combinedURL);
 

@@ -32,7 +32,7 @@ Scenario: EvergreenJnr_UsersList_CheckThatColumnsOrderSavedAfterSearch
 	Then "Compliance" column is "Right" Pinned
 	Then User enters SearchCriteria into the agGrid Search Box and the correct NumberOfRows are returned
 	| SearchCriteria | NumberOfRows |
-	| Smith          | 59           |
+	| Smith          | 51           |
 	Then "Compliance" column is "Right" Pinned
 
 @Evergreen @Devices @EvergreenJnr_GridActions @ColumnOrder @DAS10621
