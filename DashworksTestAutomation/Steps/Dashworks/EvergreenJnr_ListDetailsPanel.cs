@@ -130,6 +130,7 @@ namespace DashworksTestAutomation.Steps.Dashworks
         public void WhenUserClickAcceptButtonInListDetailsPanel()
         {
             var listDetailsElement = _driver.NowAt<ListDetailsElement>();
+            _driver.WaitWhileControlIsNotDisplayed<ListDetailsElement>(() => listDetailsElement.AcceptButton);
             listDetailsElement.AcceptButton.Click();
         }
 
@@ -137,6 +138,7 @@ namespace DashworksTestAutomation.Steps.Dashworks
         public void WhenUserClickAddUserButton()
         {
             var listDetailsElement = _driver.NowAt<ListDetailsElement>();
+            _driver.WaitWhileControlIsNotDisplayed<ListDetailsElement>(() => listDetailsElement.AddUserButton);
             listDetailsElement.AddUserButton.Click();
         }
 
@@ -144,6 +146,7 @@ namespace DashworksTestAutomation.Steps.Dashworks
         public void WhenUserSelectInSelectUserDropdown(string userOption)
         {
             var listDetailsElement = _driver.NowAt<ListDetailsElement>();
+            _driver.WaitWhileControlIsNotDisplayed<ListDetailsElement>(() => listDetailsElement.SelectUserDropdown);
             _driver.SelectCustomSelectbox(listDetailsElement.SelectUserDropdown, userOption);
         }
 
@@ -151,6 +154,7 @@ namespace DashworksTestAutomation.Steps.Dashworks
         public void WhenUserSelectInSelectAccessDropdown(string accessOption)
         {
             var listDetailsElement = _driver.NowAt<ListDetailsElement>();
+            _driver.WaitWhileControlIsNotDisplayed<ListDetailsElement>(() => listDetailsElement.SelectAccessDropdown);
             _driver.SelectCustomSelectbox(listDetailsElement.SelectAccessDropdown, accessOption);
         }
 
