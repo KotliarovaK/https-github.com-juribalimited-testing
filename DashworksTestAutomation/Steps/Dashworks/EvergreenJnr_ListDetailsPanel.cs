@@ -108,14 +108,14 @@ namespace DashworksTestAutomation.Steps.Dashworks
         [When(@"User select ""(.*)"" as a Owner of a list")]
         public void WhenUserSelectAsAOwnerOfAList(string ownerOption)
         {
-            var listDetailsElement = _driver.NowAt<ListDetailsElement>();
-            _driver.SelectCustomSelectbox(listDetailsElement.OwnerDropdown, ownerOption);
+            if (_usersWithSharedLists.Value == null)
+                _usersWithSharedLists.Value = new List<string>();
 
             //Save user to remove its lists after test execution
             _usersWithSharedLists.Value.Add(GetUserNameByFullName(ownerOption));
 
-            if (_usersWithSharedLists.Value == null)
-                _usersWithSharedLists.Value = new List<string>();
+            var listDetailsElement = _driver.NowAt<ListDetailsElement>();
+            _driver.SelectCustomSelectbox(listDetailsElement.OwnerDropdown, ownerOption);
         }
 
         private string GetUserNameByFullName(string fullName)
