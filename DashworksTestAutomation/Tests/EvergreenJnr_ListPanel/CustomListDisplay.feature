@@ -477,8 +477,8 @@ Scenario: EvergreenJnr_DevicesList_CheckThatDatabaseErrorOccurringOccurringWhenA
 	Then "TestName" list is displayed to user
 	And "2" rows are displayed in the agGrid
 
-@Evergreen @Devices @EvergreenJnr_ListPanel @CustomListDisplay @DAS11465 @Delete_Newly_Created_List @Not_Run
-Scenario: EvergreenJnr_DevicesLists_CheckThatAnotherUserCanEditsAndSavesASharedListWithoutErrors
+@Evergreen @Devices @EvergreenJnr_ListPanel @CustomListDisplay @DAS11465 @Delete_Newly_Created_List
+Scenario: EvergreenJnr_DevicesLists_CheckThatAnotherUserCanEditsAndSavesASharedListWithSelectedColumnsWithoutErrors
 	When User clicks "Devices" on the left-hand menu
 	Then "Devices" list should be displayed to the user
 	When User clicks the Columns button
@@ -499,7 +499,7 @@ Scenario: EvergreenJnr_DevicesLists_CheckThatAnotherUserCanEditsAndSavesASharedL
 	Then "Everyone can edit" sharing option is selected
 	#Login under the second user 
 	When User clicks the List Details button
-	When User clicks the Logout button
+	And User clicks the Logout button
 	Then User is logged out
 	When User clicks on the Login link
 	Then Login Page is displayed to the user
@@ -521,11 +521,11 @@ Scenario: EvergreenJnr_DevicesLists_CheckThatAnotherUserCanEditsAndSavesASharedL
 	| Import     |
 	When User clicks the Columns button
 	Then Columns panel is displayed to the user
-	Then "Import" subcategory is selected in Column panel
+	And "Import" subcategory is selected in Column panel
 	When User update current custom list
-	When User clicks the Columns button
+	And User clicks the Columns button
 	#Login under the first user 
-	When User clicks the Logout button
+	And User clicks the Logout button
 	Then User is logged out
 	When User clicks on the Login link
 	Then Login Page is displayed to the user
@@ -537,15 +537,139 @@ Scenario: EvergreenJnr_DevicesLists_CheckThatAnotherUserCanEditsAndSavesASharedL
 	Then "Devices" list should be displayed to the user
 	When User navigates to the "TestList" list
 	Then "TestList" list is displayed to user
-	Then ColumnName is added to the list
+	And ColumnName is added to the list
 	| ColumnName |
 	| Compliance |
 	| Device Key |
 	| Import     |
 	When User clicks the Columns button
 	Then Columns panel is displayed to the user
-	Then "Import" subcategory is selected in Column panel
+	And "Import" subcategory is selected in Column panel
 	When User navigates to the "All Devices" list
 	Then "Devices" list should be displayed to the user
 	When User navigates to the "TestList" list
 	Then Edit List menu is not displayed
+
+@Evergreen @Devices @EvergreenJnr_ListPanel @CustomListDisplay @DAS11465 @Delete_Newly_Created_List
+Scenario: EvergreenJnr_DevicesLists_CheckThatAnotherUserCanEditsAndSavesASharedListWithSelectedFiltersWithoutErrors
+	When User clicks "Devices" on the left-hand menu
+	Then "Devices" list should be displayed to the user
+	When User clicks the Filters button
+	Then Filters panel is displayed to the user
+	When User add "Compliance" filter where type is "Equals" with added column and following checkboxes:
+	| SelectedCheckboxes |
+	| Red                |
+	| Amber              |
+	Then "Compliance" filter is added to the list
+	When User create custom list with "TestList" name
+	Then "TestList" list is displayed to user
+	When User clicks the List Details button
+	Then List details panel is displayed to the user
+	When User select "Everyone can edit" sharing option
+	Then "Everyone can edit" sharing option is selected
+	When User clicks the List Details button
+	#Login under the second user
+	When User clicks the Logout button
+	Then User is logged out
+	When User clicks on the Login link
+	Then Login Page is displayed to the user
+	When User provides the Login and Password and clicks on the login button
+	Then Dashworks homepage is displayed to the user in a logged in state
+	When User clicks the Switch to Evergreen link
+	Then Evergreen Dashboards page should be displayed to the user
+	When User clicks "Devices" on the left-hand menu
+	Then "Devices" list should be displayed to the user
+	When User navigates to the "TestList" list
+	Then "TestList" list is displayed to user
+	When User clicks the Filters button
+	Then Filters panel is displayed to the user
+	When User add "City" filter where type is "Equals" with added column and "London" Lookup option
+	Then "City" filter is added to the list
+	When User update current custom list
+	And User clicks the Filters button
+	#Login under the first user 
+	And User clicks the Logout button
+	Then User is logged out
+	When User clicks on the Login link
+	Then Login Page is displayed to the user
+	When User login with "1" account
+	Then Dashworks homepage is displayed to the user in a logged in state
+	When User clicks the Switch to Evergreen link
+	Then Evergreen Dashboards page should be displayed to the user
+	When User clicks "Devices" on the left-hand menu
+	Then "Devices" list should be displayed to the user
+	When User navigates to the "TestList" list
+	Then "TestList" list is displayed to user
+	And "(Compliance = Red or Amber) OR (City = London)" text is displayed in filter container
+	When User clicks the Filters button
+	Then Filters panel is displayed to the user
+	And "Compliance is Red or Amber" is displayed in added filter info
+	And "City is London" is displayed in added filter info
+	When User navigates to the "All Devices" list
+	Then "Devices" list should be displayed to the user
+	When User navigates to the "TestList" list
+	Then Edit List menu is not displayed
+
+@Evergreen @Devices @EvergreenJnr_ListPanel @CustomListDisplay @DAS11465 @Delete_Newly_Created_List
+Scenario: EvergreenJnr_DevicesLists_CheckThatAnotherUserCanEditsAndSavesASharedListWithSortingWithoutErrors
+	When User clicks "Devices" on the left-hand menu
+	Then "Devices" list should be displayed to the user
+	When User click on 'Hostname' column header
+	Then data in table is sorted by 'Hostname' column in ascending order
+	When User create custom list with "TestList" name
+	Then "TestList" list is displayed to user
+	When User clicks the List Details button
+	Then List details panel is displayed to the user
+	When User select "Everyone can edit" sharing option
+	Then "Everyone can edit" sharing option is selected
+	When User clicks the List Details button
+	#Login under the second user
+	And User clicks the Logout button
+	Then User is logged out
+	When User clicks on the Login link
+	Then Login Page is displayed to the user
+	When User provides the Login and Password and clicks on the login button
+	Then Dashworks homepage is displayed to the user in a logged in state
+	When User clicks the Switch to Evergreen link
+	Then Evergreen Dashboards page should be displayed to the user
+	When User clicks "Devices" on the left-hand menu
+	Then "Devices" list should be displayed to the user
+	When User navigates to the "TestList" list
+	Then "TestList" list is displayed to user
+	When User click on 'Owner Display Name' column header
+	Then data in table is sorted by 'Owner Display Name' column in ascending order
+	When User update current custom list
+	#Login under the first user 
+	And User clicks the Logout button
+	Then User is logged out
+	When User clicks on the Login link
+	Then Login Page is displayed to the user
+	When User login with "1" account
+	Then Dashworks homepage is displayed to the user in a logged in state
+	When User clicks the Switch to Evergreen link
+	Then Evergreen Dashboards page should be displayed to the user
+	When User clicks "Devices" on the left-hand menu
+	Then "Devices" list should be displayed to the user
+	When User navigates to the "TestList" list
+	Then "TestList" list is displayed to user
+	And data in table is sorted by 'Owner Display Name' column in ascending order
+	When User navigates to the "All Devices" list
+	Then "Devices" list should be displayed to the user
+	When User navigates to the "TestList" list
+	Then Edit List menu is not displayed
+
+@Evergreen @Devices @EvergreenJnr_ListPanel @CustomListDisplay @DAS10988 @Delete_Newly_Created_List
+Scenario: EvergreenJnr_DevicesLists_CheckThatUserIsNotAbleToCreateListsWithSameName
+	When User clicks "Devices" on the left-hand menu
+	Then "Devices" list should be displayed to the user
+	When User click on 'Hostname' column header
+	Then data in table is sorted by 'Hostname' column in ascending order
+	When User create custom list with "TestList" name
+	Then "TestList" list is displayed to user
+	When User navigates to the "All Devices" list
+	When User clicks the Filters button
+	Then Filters panel is displayed to the user
+	When User add "City" filter where type is "Equals" with added column and "London" Lookup option
+	Then "City" filter is added to the list
+	Then User type "TestList" into Custom list name field
+	Then Save button is inactive for Custom list

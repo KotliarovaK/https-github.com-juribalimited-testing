@@ -99,5 +99,10 @@ namespace DashworksTestAutomation.Pages.Evergreen
             Driver.MouseHover(By.XPath(settingsButton));
             Driver.FindElement(By.XPath(settingsButton)).Click();
         }
+
+        public bool CheckThatListIsRemoved(string listName)
+        {
+            return Driver.IsElementDisplayed(By.XPath($".//span[@class='submenu-actions-list-name'][text()='{listName}']"));
+        }
     }
 }
