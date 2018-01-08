@@ -93,3 +93,28 @@ Scenario: EvergreenJnr_DevicesList_CheckThat500ErrorIsNotDisplayedWhenAddingNewO
 	Then User add selected rows in "TopFour TestName" list
 	Then "TopFour TestName" list is displayed to user
 	And "4" rows are displayed in the agGrid
+
+@Evergreen @Devices @EvergreenJnr_StaticLists @FiltersDisplay @DAS11468 @Delete_Newly_Created_List
+Scenario: EvergreenJnr_DevicesList_CheckThat500ErrorIsNotDisplayedAfterRemovingAssociationsList
+	When User clicks "Applications" on the left-hand menu
+	Then "Applications" list should be displayed to the user
+	When User clicks the Actions button
+	Then Actions panel is displayed to the user
+	When User select all rows
+	And User create static list with "StaticListTestName" name
+	When User clicks "Devices" on the left-hand menu
+	Then "Devices" list should be displayed to the user
+	When User clicks the Filters button
+	Then Filters panel is displayed to the user
+	When User add "Application (Saved List)" filter where type is "Equals" with SelectedList list and following Association:
+	| SelectedList       | Association        |
+	| StaticListTestName | Not used on device |
+	Then "Application in list StaticListTestName is not used on device" is displayed in added filter info
+	When User create custom list with "TestList" name
+	When User clicks "Applications" on the left-hand menu
+	Then "Applications" list should be displayed to the user
+	When User removes custom list with "StaticListTestName" name
+	When User clicks "Devices" on the left-hand menu
+	Then "Devices" list should be displayed to the user
+	When User navigates to the "TestList" list
+	Then "TestList" list is displayed to user
