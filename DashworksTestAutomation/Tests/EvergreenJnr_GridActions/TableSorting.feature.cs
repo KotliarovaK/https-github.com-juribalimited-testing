@@ -230,6 +230,8 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_GridActions
         [NUnit.Framework.CategoryAttribute("EvergreenJnr_GridActions")]
         [NUnit.Framework.CategoryAttribute("TableSorting")]
         [NUnit.Framework.CategoryAttribute("DAS10612")]
+        [NUnit.Framework.CategoryAttribute("Question_to_Lisa")]
+        [NUnit.Framework.CategoryAttribute("Not_Run")]
         public virtual void EvergreenJnr_MailboxesList_CheckSortByDateFunctionality()
         {
             System.Exception lastException = null;
@@ -263,7 +265,9 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_GridActions
                         "Mailboxes",
                         "EvergreenJnr_GridActions",
                         "TableSorting",
-                        "DAS10612"});
+                        "DAS10612",
+                        "Question_to_Lisa",
+                        "Not_Run"});
             this.ScenarioSetup(scenarioInfo);
             this.FeatureBackground();
             testRunner.When("User clicks \"Mailboxes\" on the left-hand menu", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");

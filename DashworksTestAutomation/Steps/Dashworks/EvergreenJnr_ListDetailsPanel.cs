@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using DashworksTestAutomation.DTO;
 using DashworksTestAutomation.DTO.RuntimeVariables;
 using DashworksTestAutomation.Extensions;
 using DashworksTestAutomation.Helpers;
@@ -16,11 +17,13 @@ namespace DashworksTestAutomation.Steps.Dashworks
     {
         private readonly RemoteWebDriver _driver;
         private readonly UsersWithSharedLists _usersWithSharedLists;
+        private readonly UserDto _userDto;
 
-        public EvergreenJnr_ListDetailsPanel(RemoteWebDriver driver, UsersWithSharedLists usersWithSharedLists)
+        public EvergreenJnr_ListDetailsPanel(RemoteWebDriver driver, UsersWithSharedLists usersWithSharedLists, UserDto userDto)
         {
             _driver = driver;
             _usersWithSharedLists = usersWithSharedLists;
+            _userDto = userDto;
         }
 
         [When(@"User changes list name to ""(.*)""")]
@@ -126,6 +129,14 @@ namespace DashworksTestAutomation.Steps.Dashworks
             return userName;
         }
 
+        private string GetFullNameByUserName(string userName)
+        {
+            var fullName = DatabaseHelper.ExecuteReader(
+                $" select up.FullName from [DesktopBI].[dbo].[UserProfiles] up join [aspnetdb].[dbo].[aspnet_Users] u on up.UserId = u.UserId where u.LoweredUserName = '{userName}'",
+                0)[0];
+            return fullName;
+        }
+
         [When(@"User click Accept button in List Details panel")]
         public void WhenUserClickAcceptButtonInListDetailsPanel()
         {
@@ -148,6 +159,14 @@ namespace DashworksTestAutomation.Steps.Dashworks
             var listDetailsElement = _driver.NowAt<ListDetailsElement>();
             _driver.WaitWhileControlIsNotDisplayed<ListDetailsElement>(() => listDetailsElement.SelectUserDropdown);
             _driver.SelectCustomSelectbox(listDetailsElement.SelectUserDropdown, userOption);
+        }
+
+        [When(@"User select current user in Select User dropdown")]
+        public void WhenUserSelectCurrentUserInSelectUserDropdown()
+        {
+            var listDetailsElement = _driver.NowAt<ListDetailsElement>();
+            _driver.WaitWhileControlIsNotDisplayed<ListDetailsElement>(() => listDetailsElement.SelectUserDropdown);
+            _driver.SelectCustomSelectbox(listDetailsElement.SelectUserDropdown, GetFullNameByUserName(_userDto.UserName));
         }
 
         [When(@"User select ""(.*)"" in Select Access dropdown")]

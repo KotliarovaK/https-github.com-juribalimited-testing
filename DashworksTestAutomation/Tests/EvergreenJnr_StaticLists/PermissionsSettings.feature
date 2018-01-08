@@ -54,7 +54,7 @@ Scenario: EvergreenJnr_DevicesList_CheckThatAddRowsOptionsIsAvailableForSpecifie
 	Then List details panel is displayed to the user
 	When User select "Specific users" sharing option
 	When User click Add User button
-	When User select 'Administrator' in Select User dropdown
+	When User select current user in Select User dropdown
 	When User select "Admin" in Select Access dropdown
 	When User click Add User button
 	And User select "Automation Admin 1" as a Owner of a list
@@ -71,7 +71,7 @@ Scenario: EvergreenJnr_DevicesList_CheckThatAddRowsOptionsIsAvailableForSpecifie
 	Then List details panel is displayed to the user
 	When User select "Specific users" sharing option
 	When User click Add User button
-	When User select 'Administrator' in Select User dropdown
+	When User select current user in Select User dropdown
 	When User select "Edit" in Select Access dropdown
 	When User click Add User button
 	And User select "Automation Admin 1" as a Owner of a list
@@ -88,7 +88,7 @@ Scenario: EvergreenJnr_DevicesList_CheckThatAddRowsOptionsIsAvailableForSpecifie
 	Then List details panel is displayed to the user
 	When User select "Specific users" sharing option
 	When User click Add User button
-	When User select 'Administrator' in Select User dropdown
+	When User select current user in Select User dropdown
 	When User select "Read" in Select Access dropdown
 	When User click Add User button
 	And User select "Automation Admin 1" as a Owner of a list
