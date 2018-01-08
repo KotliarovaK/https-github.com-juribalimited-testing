@@ -77,6 +77,7 @@ namespace DashworksTestAutomation.Steps.Dashworks
             List<string> expectedList = listpageMenu.GetColumnContent(columnName).Where(x => !x.Equals("")).ToList();
             List<KeyValuePair<DateTime, string>> unsortedList = new List<KeyValuePair<DateTime, string>>();
             DateTime datevalue;
+            Assert.IsTrue(listpageMenu.DescendingSortingIcon.Displayed());
             foreach (var date in expectedList)
             {
                 var unconvertedDate = DateTime.TryParse(date, out datevalue);
@@ -106,6 +107,7 @@ namespace DashworksTestAutomation.Steps.Dashworks
             List<string> expectedList = listpageMenu.GetColumnContent(columnName).Where(x => !x.Equals("")).ToList();
             List<KeyValuePair<DateTime, string>> unsortedList = new List<KeyValuePair<DateTime, string>>();
             DateTime datevalue;
+            Assert.IsTrue(listpageMenu.AscendingSortingIcon.Displayed());
             foreach (var date in expectedList)
             {
                 var unconvertedDate = DateTime.TryParse(date, out datevalue);
