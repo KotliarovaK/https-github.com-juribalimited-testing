@@ -24,7 +24,8 @@ namespace DashworksTestAutomation.Steps.Dashworks
         private readonly UsedUsers _usedUsers;
         private readonly UsersWithSharedLists _usersWithSharedLists;
 
-        public EvergreenJnr_NewCustomList(RemoteWebDriver driver, UserDto user, UsedUsers usedUsers, UsersWithSharedLists usersWithSharedLists)
+        public EvergreenJnr_NewCustomList(RemoteWebDriver driver, UserDto user, UsedUsers usedUsers,
+            UsersWithSharedLists usersWithSharedLists)
         {
             _driver = driver;
             _user = user;
@@ -90,7 +91,8 @@ namespace DashworksTestAutomation.Steps.Dashworks
             var listElement = _driver.NowAt<CustomListElement>();
 
             _driver.WaitWhileControlIsNotDisplayed<CustomListElement>(() => listElement.CreateNewListButton);
-            listElement.CreateNewListButton.Click();
+            if (!listElement.ListNameTextbox.Displayed())
+                listElement.CreateNewListButton.Click();
             _driver.WaitWhileControlIsNotDisplayed<CustomListElement>(() => listElement.SaveButton);
             Assert.IsTrue(Convert.ToBoolean(listElement.SaveButton.GetAttribute("disabled")), "Save button is active");
         }
@@ -287,7 +289,8 @@ namespace DashworksTestAutomation.Steps.Dashworks
         public void ThenResetButtonInSearchFieldAtListPanelIsDisplayed()
         {
             var listElement = _driver.NowAt<CustomListElement>();
-            _driver.WaitWhileControlIsNotDisplayed<CustomListElement>(() => listElement.SearchTextboxResetButtonInListPanel);
+            _driver.WaitWhileControlIsNotDisplayed<CustomListElement>(() =>
+                listElement.SearchTextboxResetButtonInListPanel);
             Assert.IsTrue(listElement.SearchTextboxResetButtonInListPanel.Displayed(), "Reset button is not displayed");
             Logger.Write("Reset button is displayed");
         }
@@ -319,10 +322,14 @@ namespace DashworksTestAutomation.Steps.Dashworks
                             0);
                         DatabaseHelper.RemoveLists(listsIds);
                     }
-                    catch { }
+                    catch
+                    {
+                    }
                 }
             }
-            catch { }
+            catch
+            {
+            }
         }
 
         private void RemoveSharedLists()
@@ -345,10 +352,14 @@ namespace DashworksTestAutomation.Steps.Dashworks
                             0);
                         DatabaseHelper.RemoveLists(listsIds);
                     }
-                    catch { }
+                    catch
+                    {
+                    }
                 }
             }
-            catch { }
+            catch
+            {
+            }
         }
 
         public void RemoveAllCustomLists()

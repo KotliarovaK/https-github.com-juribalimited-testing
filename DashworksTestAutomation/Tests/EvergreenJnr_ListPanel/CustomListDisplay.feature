@@ -657,3 +657,19 @@ Scenario: EvergreenJnr_DevicesLists_CheckThatAnotherUserCanEditsAndSavesASharedL
 	Then "Devices" list should be displayed to the user
 	When User navigates to the "TestList" list
 	Then Edit List menu is not displayed
+
+@Evergreen @Devices @EvergreenJnr_ListPanel @CustomListDisplay @DAS10988 @Delete_Newly_Created_List
+Scenario: EvergreenJnr_DevicesLists_CheckThatUserIsNotAbleToCreateListsWithSameName
+	When User clicks "Devices" on the left-hand menu
+	Then "Devices" list should be displayed to the user
+	When User click on 'Hostname' column header
+	Then data in table is sorted by 'Hostname' column in ascending order
+	When User create custom list with "TestList" name
+	Then "TestList" list is displayed to user
+	When User navigates to the "All Devices" list
+	When User clicks the Filters button
+	Then Filters panel is displayed to the user
+	When User add "City" filter where type is "Equals" with added column and "London" Lookup option
+	Then "City" filter is added to the list
+	Then User type "TestList" into Custom list name field
+	Then Save button is inactive for Custom list
