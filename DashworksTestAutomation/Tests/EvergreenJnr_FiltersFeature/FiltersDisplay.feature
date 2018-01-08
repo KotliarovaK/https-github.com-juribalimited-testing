@@ -233,8 +233,8 @@ Scenario: EvergreenJnr_MailboxesList_CheckThatFilterDataIsDisplayedCorrectlyWhen
 	When User clicks the Filters button
 	Then Filters panel is displayed to the user
 	When User add "Created Date" filter where type is "Before" with added column and following value:
-	| Values          |
-	|   17 Nov 2017 |
+	| Values      |
+	| 17 Nov 2017 |
 	Then "Created Date" filter is added to the list
 	And Values is displayed in added filter info
 	| Values      |
