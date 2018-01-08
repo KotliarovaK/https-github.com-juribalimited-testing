@@ -262,4 +262,14 @@ Scenario: EvergreenJnr_DevicesList_CheckNumericFilter
 	Then "5,141" rows are displayed in the agGrid
 
 @Evergreen @Devices @EvergreenJnr_FilterFeature @FilterFunctionality @DAS11469
-Scenario: EvergreenJnr_DevicesList_Check that association search in filters panel is working correctly
+Scenario Outline: EvergreenJnr_DevicesList_CheckThatAssociationSearchInFiltersPanelIsWorkingCorrectly
+	When User clicks "Devices" on the left-hand menu
+	Then "Devices" list should be displayed to the user
+	When User clicks the Filters button
+	Then Filters panel is displayed to the user
+	When user select "<FilterName>" filter
+
+Examples:
+	| FilterName             |
+	| Application Compliance |
+	| Application Name       |
