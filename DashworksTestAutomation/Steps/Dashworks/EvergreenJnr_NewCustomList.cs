@@ -156,6 +156,13 @@ namespace DashworksTestAutomation.Steps.Dashworks
             listElement.ConfirmDeleteButton.Click();
         }
 
+        [Then(@"list with ""(.*)"" name is removed")]
+        public void ThenListWithNameIsRemoved(string listName)
+        {
+            var listElement = _driver.NowAt<CustomListElement>();
+            Assert.IsFalse(listElement.CheckThatListIsRemoved(listName));
+        }
+
         [When(@"User navigates to the ""(.*)"" list")]
         public void WhenUserNavigatesToTheList(string listName)
         {

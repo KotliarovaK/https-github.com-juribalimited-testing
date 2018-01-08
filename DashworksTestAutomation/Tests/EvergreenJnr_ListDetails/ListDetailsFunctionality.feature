@@ -173,3 +173,26 @@ Examples:
 	| Users        |
 	| Applications |
 	| Mailboxes    |
+
+@Evergreen @AllLists @EvergreenJnr_ListDetails @ListDetailsFunctionality @DAS11493 @Delete_Newly_Created_List
+Scenario Outline: EvergreenJnr_AllLists_CheckThatActiveListIsRefreshedOnListDetailsPanel
+	When User clicks "<PageName>" on the left-hand menu
+	Then "<PageName>" list should be displayed to the user
+	When User click on '<Columnname>' column header
+	Then data in table is sorted by '<Columnname>' column in descending order
+	When User create custom list with "TestList" name
+	Then "TestList" list is displayed to user
+	When User clicks the List Details button
+	Then List details panel is displayed to the user
+	When User select "Automation Admin 1" as a Owner of a list
+	And User click Accept button in List Details panel
+	Then List details button is disabled
+	And list with "TestList" name is removed
+	And "<PageName>" list should be displayed to the user
+
+Examples: 
+	| PageName     | Columnname    |
+	| Devices      | Hostname      |
+	| Users        | Username      |
+	| Applications | Application   |
+	| Mailboxes    | Email Address |
