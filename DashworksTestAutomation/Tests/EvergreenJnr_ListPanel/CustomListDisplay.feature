@@ -76,7 +76,7 @@ Scenario: EvergreenJnr_DevicesList_CheckThatCustomListCreationBlockIsNotDisplaye
 	When User have reset all filters
 	Then Edit List menu is displayed
 
-@Evergreen @Devices @EvergreenJnr_ListPanel @CustomListDisplay @DAS10998
+@Evergreen @Devices @EvergreenJnr_ListPanel @CustomListDisplay @DAS10998 @Question_to_Lisa @Not_Run
 Scenario: EvergreenJnr_DevicesList_CheckThatSearchDoesNotTriggerNewCustomList
 	When User clicks "Devices" on the left-hand menu
 	Then "Devices" list should be displayed to the user
