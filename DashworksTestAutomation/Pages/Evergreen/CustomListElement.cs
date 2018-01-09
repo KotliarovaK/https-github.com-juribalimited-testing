@@ -94,7 +94,7 @@ namespace DashworksTestAutomation.Pages.Evergreen
         public void ClickSettingsButtonByListName(string listName)
         {
             var settingsButton =
-                $".//span[@class='submenu-actions-list-name'][text()='{listName}']//ancestor::li//i[@title='Settings']";
+                $".//span[@class='submenu-actions-list-name'][text()='{listName}']//ancestor::li//i[@class='menu-trigger material-icons mat-settings mat-18 pull-right settings-icon settings-area']";
             Driver.WaitWhileControlIsDisplayed<CustomListElement>(() => UpdateCurrentListButton);
             Driver.MouseHover(By.XPath(settingsButton));
             Driver.FindElement(By.XPath(settingsButton)).Click();
