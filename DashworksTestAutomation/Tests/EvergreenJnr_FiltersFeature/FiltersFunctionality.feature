@@ -268,8 +268,17 @@ Scenario Outline: EvergreenJnr_DevicesList_CheckThatAssociationSearchInFiltersPa
 	When User clicks the Filters button
 	Then Filters panel is displayed to the user
 	When user select "<FilterName>" filter
+	When  User enters "used" in Association search field 
+	Then search values in Association section working by specific search criteria
 
 Examples:
-	| FilterName             |
-	| Application Compliance |
-	| Application Name       |
+	| FilterName                 |
+	| Application                |
+	| Application Compliance     |
+	| Application (Saved List)   |
+	| Application Import         |
+	| Application Import Type    |
+	| Application Inventory Site |
+	| Application Name           |
+	| Application Vendor         |
+	| Application Version        |

@@ -991,8 +991,15 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_FiltersFeature
         [NUnit.Framework.CategoryAttribute("EvergreenJnr_FilterFeature")]
         [NUnit.Framework.CategoryAttribute("FilterFunctionality")]
         [NUnit.Framework.CategoryAttribute("DAS11469")]
+        [NUnit.Framework.TestCaseAttribute("Application", new string[0])]
         [NUnit.Framework.TestCaseAttribute("Application Compliance", new string[0])]
+        [NUnit.Framework.TestCaseAttribute("Application (Saved List)", new string[0])]
+        [NUnit.Framework.TestCaseAttribute("Application Import", new string[0])]
+        [NUnit.Framework.TestCaseAttribute("Application Import Type", new string[0])]
+        [NUnit.Framework.TestCaseAttribute("Application Inventory Site", new string[0])]
         [NUnit.Framework.TestCaseAttribute("Application Name", new string[0])]
+        [NUnit.Framework.TestCaseAttribute("Application Vendor", new string[0])]
+        [NUnit.Framework.TestCaseAttribute("Application Version", new string[0])]
         public virtual void EvergreenJnr_DevicesList_CheckThatAssociationSearchInFiltersPanelIsWorkingCorrectly(string filterName, string[] exampleTags)
         {
             System.Exception lastException = null;
@@ -1040,6 +1047,8 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_FiltersFeature
             testRunner.When("User clicks the Filters button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
             testRunner.Then("Filters panel is displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
             testRunner.When(string.Format("user select \"{0}\" filter", filterName), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+            testRunner.When("User enters \"used\" in Association search field", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+            testRunner.Then("search values in Association section working by specific search criteria", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
             this.ScenarioCleanup();
         }
     }

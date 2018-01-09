@@ -26,6 +26,11 @@ namespace DashworksTestAutomation.Pages.Evergreen
             Using = ".//div[@class='filterAddPanel ng-star-inserted']//input[@placeholder='Search']")]
         public IWebElement LookupFilterSearchTextbox { get; set; }
 
+        [FindsBy(How = How.XPath,
+            Using =
+                ".//div[@class='associationmultiselect-parent btn-group dropdown-associationmultiselect']//input[@placeholder='Search']")]
+        public IWebElement AssociationSearchTextbox { get; set; }
+
         [FindsBy(How = How.XPath, Using = ".//div[contains(@class,'filter-category ng-star-inserted')]")]
         public IList<IWebElement> FilterCategories { get; set; }
 
@@ -183,7 +188,7 @@ namespace DashworksTestAutomation.Pages.Evergreen
 
         public IList<IWebElement> GetAssociationsList()
         {
-            Driver.FindElement(By.XPath(".//div[@id='context']//input[@placeholder='Search']")).Click();
+            AssociationSearchTextbox.Click();
             return Driver.FindElements(By.XPath(
                 ".//div[@id='context']//input[@placeholder='Search']//ancestor::div[@class='associationmultiselect-parent btn-group dropdown-associationmultiselect']//li//span"));
         }
