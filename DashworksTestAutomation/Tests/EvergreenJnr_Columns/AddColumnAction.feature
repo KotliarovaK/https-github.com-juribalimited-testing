@@ -37,3 +37,17 @@ Scenario: EvergreenJnr_MailboxesList_CheckThat500ErrorIsNotDisplayedAfterSorting
 	When User click on 'Owner Department Full Path' column header
 	Then data in table is sorted by 'Owner Department Full Path' column in ascending order
 	And "Mailboxes" list should be displayed to the user
+
+@Evergreen @Mailboxes @EvergreenJnr_Columns @AddColumnAction @DAS11576
+Scenario: EvergreenJnr_MailboxesList_CheckThatMaxReceiveSizeAndMaxSendSizeColumnIsDisplayedAfterSelectingOnFilterPanel 
+	When User clicks "Mailboxes" on the left-hand menu
+	Then "Mailboxes" list should be displayed to the user
+	When User clicks the Filters button
+	Then Filters panel is displayed to the user
+	When User add "Max Receive Size (MB)" filter where type is "Not empty" with added column and following value:
+	| Values |
+	|        |
+	Then "Max Receive Size (MB)" filter is added to the list
+	Then ColumnName is added to the list
+	| ColumnName            |
+	| Max Receive Size (MB) |
