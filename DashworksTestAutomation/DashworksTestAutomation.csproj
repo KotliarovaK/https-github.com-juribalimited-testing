@@ -271,6 +271,7 @@
     <Compile Include="Utils\FluentWait.cs" />
     <Compile Include="Utils\KillDriverProcesses.cs" />
     <Compile Include="Utils\Logger.cs" />
+    <Compile Include="Utils\TestDataGenerator.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config">
