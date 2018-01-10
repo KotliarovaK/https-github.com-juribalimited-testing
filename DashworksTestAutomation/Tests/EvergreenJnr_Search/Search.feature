@@ -113,7 +113,7 @@ Scenario: EvergreenJnr_UsersList_ClearingSearchReturnsTheFullDataSet
 	Then "Users" list should be displayed to the user
 	And User enters SearchCriteria into the agGrid Search Box and the correct NumberOfRows are returned
 	| SearchCriteria | NumberOfRows |
-	| Luc            | 85           |
+	| Luc            | 138          |
 	Then URL is "http://automation.corp.juriba.com/evergreen/#/users"
 	And Clearing the agGrid Search Box
 	Then "41,335" rows are displayed in the agGrid
@@ -194,7 +194,7 @@ Scenario: EvergreenJnr_DevicesList_Search_CheckThatSearchFieldHaveResetButtonAtL
 	When User clicks "Devices" on the left-hand menu
 	Then "Devices" list should be displayed to the user
 	When User click on 'Hostname' column header
-	Then data in table is sorted by 'Hostname' column in descending order
+	Then data in table is sorted by 'Hostname' column in ascending order
 	When User create custom list with "TestList" name
 	When User enters "CheckTheResetButton" text in Search field at List Panel
 	Then reset button in Search field at List Panel is displayed

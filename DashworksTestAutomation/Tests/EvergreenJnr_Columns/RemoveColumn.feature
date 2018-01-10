@@ -333,7 +333,7 @@ Scenario: EvergreenJnr_DevicesList_CheckThatRemovingColumnAndFilterAndCustomList
 	When User clicks "Devices" on the left-hand menu
 	Then "Devices" list should be displayed to the user
 	When User click on 'Hostname' column header
-	Then data in table is sorted by 'Hostname' column in descending order
+	Then data in table is sorted by 'Hostname' column in ascending order
 	When User create custom list with "TestList" name
 	#Workaround for DAS-11570. Remove after fix
 	And User navigates to the "TestList" list

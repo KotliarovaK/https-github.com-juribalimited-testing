@@ -1162,10 +1162,8 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_FiltersFeature
         [NUnit.Framework.CategoryAttribute("Evergreen_FiltersFeature")]
         [NUnit.Framework.CategoryAttribute("FiltersDisplay")]
         [NUnit.Framework.CategoryAttribute("DAS10696")]
-        [NUnit.Framework.CategoryAttribute("Question_to_Lisa")]
-        [NUnit.Framework.CategoryAttribute("Not_Run")]
         [NUnit.Framework.TestCaseAttribute("Equals", "08 Mar 2016", "3", "is", new string[0])]
-        [NUnit.Framework.TestCaseAttribute("Does not equal", "08 Mar 2016", "4,835", "is not", new string[0])]
+        [NUnit.Framework.TestCaseAttribute("Does not equal", "08 Mar 2016", "4,832", "is not", new string[0])]
         [NUnit.Framework.TestCaseAttribute("Before", "08 Mar 2016", "39", "is before", new string[0])]
         [NUnit.Framework.TestCaseAttribute("After", "08 Mar 2016", "4,796", "is after", new string[0])]
         [NUnit.Framework.TestCaseAttribute("Empty", "", "", "is empty", new string[0])]
@@ -1203,9 +1201,7 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_FiltersFeature
                     "Mailboxes",
                     "Evergreen_FiltersFeature",
                     "FiltersDisplay",
-                    "DAS10696",
-                    "Question_to_Lisa",
-                    "Not_Run"};
+                    "DAS10696"};
             if ((exampleTags != null))
             {
                 @__tags = System.Linq.Enumerable.ToArray(System.Linq.Enumerable.Concat(@__tags, exampleTags));

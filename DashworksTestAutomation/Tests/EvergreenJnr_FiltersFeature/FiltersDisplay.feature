@@ -325,7 +325,7 @@ Examples:
 	| Less than                | 1            | 1,164     | is less than                |
 	| Less than or equal to    | 1            | 1,166     | is less than or equal to    |
 
- @Evergreen @Mailboxes @Evergreen_FiltersFeature @FiltersDisplay @DAS10696 @Question_to_Lisa @Not_Run
+ @Evergreen @Mailboxes @Evergreen_FiltersFeature @FiltersDisplay @DAS10696
 Scenario Outline: EvergreenJnr_MailboxesList_CheckThatFilterOperatorsIsCorrectInFilterInfo
 	When User clicks "Mailboxes" on the left-hand menu
 	Then "Mailboxes" list should be displayed to the user
@@ -343,7 +343,7 @@ Scenario Outline: EvergreenJnr_MailboxesList_CheckThatFilterOperatorsIsCorrectIn
 Examples: 
 	| operatorValue  | filterOption | rowsCount | operatorValueInInfo |
 	| Equals         | 08 Mar 2016  | 3         | is                  |
-	| Does not equal | 08 Mar 2016  | 4,835     | is not              |
+	| Does not equal | 08 Mar 2016  | 4,832     | is not              |
 	| Before         | 08 Mar 2016  | 39        | is before           |
 	| After          | 08 Mar 2016  | 4,796     | is after            |
 	| Empty          |              |           | is empty            |
