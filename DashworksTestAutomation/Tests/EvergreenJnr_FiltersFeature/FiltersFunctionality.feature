@@ -260,3 +260,25 @@ Scenario: EvergreenJnr_DevicesList_CheckNumericFilter
 	| 1      |
 	Then "App Count (Installed) is less than 1" is displayed in added filter info
 	Then "5,141" rows are displayed in the agGrid
+
+@Evergreen @Devices @EvergreenJnr_FilterFeature @FilterFunctionality @DAS11469
+Scenario Outline: EvergreenJnr_DevicesList_CheckThatAssociationSearchInFiltersPanelIsWorkingCorrectly
+	When User clicks "Devices" on the left-hand menu
+	Then "Devices" list should be displayed to the user
+	When User clicks the Filters button
+	Then Filters panel is displayed to the user
+	When user select "<FilterName>" filter
+	When  User enters "used" in Association search field 
+	Then search values in Association section working by specific search criteria
+
+Examples:
+	| FilterName                 |
+	| Application                |
+	| Application Compliance     |
+	| Application (Saved List)   |
+	| Application Import         |
+	| Application Import Type    |
+	| Application Inventory Site |
+	| Application Name           |
+	| Application Vendor         |
+	| Application Version        |

@@ -87,7 +87,7 @@ namespace DashworksTestAutomation.Steps.Dashworks
             }
             try
             {
-                Assert.AreEqual(unsortedList.OrderByDescending(x => x.Key).Select(x => x.Value), expectedList);
+                Assert.AreEqual(expectedList.OrderByDescending(s => s).ToList(), expectedList);
             }
             catch (Exception)
             {
@@ -117,13 +117,13 @@ namespace DashworksTestAutomation.Steps.Dashworks
             }
             try
             {
-                Assert.AreEqual(unsortedList.OrderBy(x => x.Key).Select(x => x.Value), expectedList);
+                Assert.AreEqual(expectedList.OrderBy(s => s).ToList(), expectedList);
             }
             catch (Exception)
             {
                 for (int i = 0; i < expectedList.Count; i++)
                 {
-                    Assert.AreEqual(unsortedList.OrderByDescending(x => x.Key).Select(x => x.Value).ToArray()[i],
+                    Assert.AreEqual(unsortedList.OrderBy(x => x.Key).Select(x => x.Value).ToArray()[i],
                         expectedList[i]);
                 }
             }
