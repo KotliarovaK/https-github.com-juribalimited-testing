@@ -11,7 +11,7 @@ Scenario Outline: EvergreenJnr_AllLists_CheckThatRenamingAListWorkingCorrectlyFo
 	When User clicks "<PageName>" on the left-hand menu
 	Then "<PageName>" list should be displayed to the user
 	When User click on '<Columnname>' column header
-	Then data in table is sorted by '<Columnname>' column in descending order
+	Then data in table is sorted by '<Columnname>' column in ascending order
 	When User create custom list with "TestList" name
 	#Workaround for DAS-11570. Remove after fix
 	And User navigates to the "TestList" list
@@ -58,7 +58,7 @@ Scenario Outline: EvergreenJnr_AllLists_CheckThatFavoriteAListWorkingCorrectlyFo
 	When User clicks "<PageName>" on the left-hand menu
 	Then "<PageName>" list should be displayed to the user
 	When User click on '<Columnname>' column header
-	Then data in table is sorted by '<Columnname>' column in descending order
+	Then data in table is sorted by '<Columnname>' column in ascending order
 	When User create custom list with "TestList" name
 	#Workaround for DAS-11570. Remove after fix
 	And User navigates to the "TestList" list
@@ -132,7 +132,7 @@ Scenario Outline: EvergreenJnr_AllLists_CheckDefaultOptionsInListDetailsForDynam
 	When User clicks "<PageName>" on the left-hand menu
 	Then "<PageName>" list should be displayed to the user
 	When User click on '<Columnname>' column header
-	Then data in table is sorted by '<Columnname>' column in descending order
+	Then data in table is sorted by '<Columnname>' column in ascending order
 	When User create custom list with "TestList" name
 	#Workaround for DAS-11570. Remove after fix
 	And User navigates to the "TestList" list
@@ -179,7 +179,7 @@ Scenario Outline: EvergreenJnr_AllLists_CheckThatActiveListIsRefreshedOnListDeta
 	When User clicks "<PageName>" on the left-hand menu
 	Then "<PageName>" list should be displayed to the user
 	When User click on '<Columnname>' column header
-	Then data in table is sorted by '<Columnname>' column in descending order
+	Then data in table is sorted by '<Columnname>' column in ascending order
 	When User create custom list with "TestList" name
 	Then "TestList" list is displayed to user
 	When User clicks the List Details button
