@@ -282,3 +282,16 @@ Examples:
 	| Application Name           |
 	| Application Vendor         |
 	| Application Version        |
+
+@Evergreen @Applications @EvergreenJnr_FilterFeature @FilterFunctionality @DAS11560
+Scenario: EvergreenJnr_ApplicationsList_CheckThat500ErrorInNotDisplayedWhenUserApplyASelectedNumericFilter 
+	When User clicks "Applications" on the left-hand menu
+	Then "Applications" list should be displayed to the user
+	When User clicks the Filters button
+	Then Filters panel is displayed to the user
+	When User add "Device Count (Installed)" filter where type is "Less than" with added column and following value:
+	| Values |
+	| 10     |
+	Then "Device Count (Installed)" filter is added to the list
+	Then "1,269" rows are displayed in the agGrid
+	Then "(Device Count (Installed) < 10)" text is displayed in filter container
