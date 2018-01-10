@@ -212,3 +212,35 @@ Examples:
 	| Users        |
 	| Applications |
 	| Mailboxes    |
+
+@Evergreen @AllLists @EvergreenJnr_Search @Search @DAS11511
+Scenario Outline: EvergreenJnr_AllLists_Search_CheckThatTableSearchIsWorkingCorrectly
+	When User clicks "<PageName>" on the left-hand menu
+	Then "<PageName>" list should be displayed to the user
+	When User clicks the Columns button
+	Then Columns panel is displayed to the user
+	When ColumnName is entered into the search box and the selection is clicked
+	| ColumnName   |
+	| <ColumnName> |
+	Then ColumnName is added to the list
+	| ColumnName   |
+	| <ColumnName> |
+	And User enters SearchCriteria into the agGrid Search Box and the correct NumberOfRows are returned
+	| SearchCriteria   | NumberOfRows   |
+	| <SearchCriteria> | <NumberOfRows> |
+
+Examples: 
+	| PageName     | ColumnName                                      | SearchCriteria                              | NumberOfRows |
+	| Devices      | Compliance                                      | GREEN                                       | 100          |
+	| Devices      | Windows7Mi: Readiness                           | OUT OF SCOPE                                | 5,118        |
+	| Devices      | Windows7Mi: Group Computer Rag Radio Date Owner | Not Applicable                              | 5,160        |
+	| Applications | Import Type                                     | Altiris 6                                   | 31           |
+	| Users        | Department                                      | The Last Department With A Really Lond Name | 10           |
+
+@Evergreen @Applications @EvergreenJnr_Search @Search @DAS11511
+Scenario: EvergreenJnr_ApplicationsLists_Search_CheckThatTableSearchIsWorkingCorrectlyForApplicationColumn
+	When User clicks "Applications" on the left-hand menu
+	Then "Applications" list should be displayed to the user
+	And User enters SearchCriteria into the agGrid Search Box and the correct NumberOfRows are returned
+	| SearchCriteria | NumberOfRows |
+	| Zune           | 3            |
