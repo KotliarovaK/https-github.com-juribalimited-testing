@@ -76,7 +76,7 @@ Scenario: EvergreenJnr_DevicesList_CheckThatCustomListCreationBlockIsNotDisplaye
 	When User have reset all filters
 	Then Edit List menu is displayed
 
-@Evergreen @Devices @EvergreenJnr_ListPanel @CustomListDisplay @DAS10998 @Question_to_Lisa @Not_Run
+@Evergreen @Devices @EvergreenJnr_ListPanel @CustomListDisplay @DAS10998
 Scenario: EvergreenJnr_DevicesList_CheckThatSearchDoesNotTriggerNewCustomList
 	When User clicks "Devices" on the left-hand menu
 	Then "Devices" list should be displayed to the user
@@ -95,7 +95,7 @@ Scenario: EvergreenJnr_DevicesList_CheckThatNewListCreatedMessageForStaticListIs
 	And User create static list with "TestList" name
 	Then "TestList" list is displayed to user
 	When User click on 'Hostname' column header
-	Then data in table is sorted by 'Hostname' column in descending order
+	Then data in table is sorted by 'Hostname' column in ascending order
 	And User save changes in list with "UnbelievableTestList" name
 	And "New list created" message is displayed
 	And "UnbelievableTestList" list is displayed to user
@@ -284,7 +284,7 @@ Scenario: EvergreenJnr_DevicesList_CheckThatNewlySavedListIsCreatedWithTheCorrec
 	| ColumnName |
 	| Compliance |
 	When User click on 'Owner Display Name' column header
-	Then data in table is sorted by 'Owner Display Name' column in descending order
+	Then data in table is sorted by 'Owner Display Name' column in ascending order
 	When User clicks the Actions button
 	Then Actions panel is displayed to the user
 	And Edit List menu is not displayed
@@ -297,7 +297,7 @@ Scenario: EvergreenJnr_DevicesList_CheckThatNewlySavedListIsCreatedWithTheCorrec
 	When User navigates to the "Static List TestName" list
 	Then "Static List TestName" list is displayed to user
 	And "2" rows are displayed in the agGrid
-	And data in table is sorted by 'Owner Display Name' column in descending order
+	And data in table is sorted by 'Owner Display Name' column in ascending order
 	And ColumnName is added to the list
 	| ColumnName |
 	| Compliance |
@@ -327,7 +327,7 @@ Scenario: EvergreenJnr_DevicesList_CheckThatSortingWillBeWorkForExistingSavedSta
 	| Import     |
 	When User update current custom list
 	When User click on 'Owner Display Name' column header
-	Then data in table is sorted by 'Owner Display Name' column in descending order
+	Then data in table is sorted by 'Owner Display Name' column in ascending order
 	And Edit List menu is displayed
 
 @Evergreen @Devices @EvergreenJnr_ListPanel @CustomListDisplay @DAS10870 @Delete_Newly_Created_List
@@ -345,7 +345,7 @@ Scenario: EvergreenJnr_DevicesList_CheckThatSortingWillBeWorkForExistingSavedDyn
 	When User create custom list with "Dynamic List TestName" name
 	Then "Dynamic List TestName" list is displayed to user
 	When User click on 'Compliance' column header
-	Then data in table is sorted by 'Compliance' column in descending order
+	Then data in table is sorted by 'Compliance' column in ascending order
 	And Edit List menu is displayed
 
 @Evergreen @Devices @EvergreenJnr_ListPanel @CustomListDisplay @DAS10914 @Delete_Newly_Created_List
@@ -360,7 +360,7 @@ Scenario: EvergreenJnr_DevicesList_CheckThatEditListMenuNotDisplayedForActiveLis
 	| Amber              |
 	Then "Compliance" filter is added to the list
 	When User click on 'Compliance' column header
-	Then data in table is sorted by 'Compliance' column in descending order
+	Then data in table is sorted by 'Compliance' column in ascending order
 	When User create custom list with "Dynamic List TestName" name
 	Then "Dynamic List TestName" list is displayed to user
 	When User navigates to the "All Devices" list
@@ -386,7 +386,7 @@ Scenario: EvergreenJnr_DevicesList_CheckThatEditListMenuNotDisplayedForActiveLis
 	| Build Date      |
 	| First Seen Date |
 	When User click on 'Owner Display Name' column header
-	Then data in table is sorted by 'Owner Display Name' column in descending order
+	Then data in table is sorted by 'Owner Display Name' column in ascending order
 	When User update current custom list
 	Then "Static List TestName" list is displayed to user
 	When User navigates to the "Dynamic List TestName" list
@@ -440,7 +440,7 @@ Scenario: EvergreenJnr_DevicesList_CheckThatEditListMenuNotDisplayedForDifferent
 	When User clicks "Applications" on the left-hand menu
 	Then "Applications" list should be displayed to the user
 	When User click on 'Application' column header
-	Then data in table is sorted by 'Application' column in descending order
+	Then data in table is sorted by 'Application' column in ascending order
 	When User create custom list with "TestList" name
 	When User clicks "Devices" on the left-hand menu
 	Then "Devices" list should be displayed to the user

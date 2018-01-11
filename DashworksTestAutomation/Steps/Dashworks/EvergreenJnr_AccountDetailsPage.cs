@@ -2,6 +2,7 @@
 using DashworksTestAutomation.Extensions;
 using DashworksTestAutomation.Pages.Evergreen;
 using DashworksTestAutomation.Pages.Evergreen.ProfileDetailsPages;
+using DashworksTestAutomation.Utils;
 using NUnit.Framework;
 using OpenQA.Selenium;
 using OpenQA.Selenium.Remote;
@@ -160,7 +161,7 @@ namespace DashworksTestAutomation.Steps.Dashworks
                 page.FullNameField.Clear();
                 page.FullNameField.SendKeys("Administrator");
                 page.EmailField.Clear();
-                page.EmailField.SendKeys("TestMail@test.com");
+                page.EmailField.SendKeys(TestDataGenerator.RandomEmail());
                 page.RemoveButton.Click();
                 page.UpdateButton.Click();
             }

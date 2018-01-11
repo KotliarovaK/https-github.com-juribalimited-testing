@@ -6,7 +6,7 @@ Background: Pre-Conditions
 	Given User is logged in to the Evergreen
 	Then Evergreen Dashboards page should be displayed to the user
 
-@Evergreen @Devices @EvergreenJnr_Search @Search @DAS10704 @Delete_Newly_Created_List @Question_to_Lisa @Not_Run
+@Evergreen @Devices @EvergreenJnr_Search @Search @DAS10704 @Delete_Newly_Created_List
 Scenario: EvergreenJnr_DevicesList_CheckThatQuickSearchResetWhenMovingBetweenLists
 	When User clicks "Devices" on the left-hand menu
 	Then "Devices" list should be displayed to the user
@@ -26,7 +26,7 @@ Scenario: EvergreenJnr_DevicesList_CheckThatQuickSearchResetWhenMovingBetweenLis
 	When User navigates to the "All Devices" list
 	Then Search field is empty
 
-@Evergreen @Devices @EvergreenJnr_Search @Search @DAS10704 @Question_to_Lisa @Not_Run
+@Evergreen @Devices @EvergreenJnr_Search @Search @DAS10704
 Scenario: EvergreenJnr_DevicesList_CheckThatQuickSearchDoesntTriggersNewListMenu
 	When User clicks "Devices" on the left-hand menu
 	Then "Devices" list should be displayed to the user
@@ -35,7 +35,7 @@ Scenario: EvergreenJnr_DevicesList_CheckThatQuickSearchDoesntTriggersNewListMenu
 	| Smith          | 11           |
 	Then Save to New Custom List element is NOT displayed
 
-@Evergreen @Devices @Applications @Users @Mailboxes @EvergreenJnr_Search @Search @DAS10580 @DAS10667 @DAS10624 @Question_to_Lisa @Not_Run
+@Evergreen @Devices @Applications @Users @Mailboxes @EvergreenJnr_Search @Search @DAS10580 @DAS10667 @DAS10624
 Scenario: EvergreenJnr_AllLists_CheckSearchFilterAndTableContentDuringNavigationBetweenPages
 	When User clicks "Devices" on the left-hand menu
 	Then "Devices" list should be displayed to the user
@@ -68,7 +68,7 @@ Scenario: EvergreenJnr_AllLists_CheckSearchFilterAndTableContentDuringNavigation
 	Then "17,225" rows are displayed in the agGrid
 	Then Search field is empty
 
-@Evergreen @Devices @EvergreenJnr_Search @Search @Question_to_Lisa @Not_Run
+@Evergreen @Devices @EvergreenJnr_Search @Search
 Scenario: EvergreenJnr_DevicesList_SearchTests
 	When User clicks "Devices" on the left-hand menu
 	Then "Devices" list should be displayed to the user
@@ -95,7 +95,7 @@ Scenario: EvergreenJnr_DevicesList_SearchTests
 	| RED                 | 9,238        |
 	| 0JIE                | 1            |
 
-@Evergreen @Devices @EvergreenJnr_Search @Search @DAS11012 @Question_to_Lisa @Not_Run
+@Evergreen @Devices @EvergreenJnr_Search @Search @DAS11012
 Scenario: EvergreenJnr_DevicesList_ClearingSearchReturnsTheFullDataSet
 	When User clicks "Devices" on the left-hand menu
 	Then "Devices" list should be displayed to the user
@@ -113,7 +113,7 @@ Scenario: EvergreenJnr_UsersList_ClearingSearchReturnsTheFullDataSet
 	Then "Users" list should be displayed to the user
 	And User enters SearchCriteria into the agGrid Search Box and the correct NumberOfRows are returned
 	| SearchCriteria | NumberOfRows |
-	| Luc            | 85           |
+	| Luc            | 138          |
 	Then URL is "http://automation.corp.juriba.com/evergreen/#/users"
 	And Clearing the agGrid Search Box
 	Then "41,335" rows are displayed in the agGrid
@@ -194,7 +194,7 @@ Scenario: EvergreenJnr_DevicesList_Search_CheckThatSearchFieldHaveResetButtonAtL
 	When User clicks "Devices" on the left-hand menu
 	Then "Devices" list should be displayed to the user
 	When User click on 'Hostname' column header
-	Then data in table is sorted by 'Hostname' column in descending order
+	Then data in table is sorted by 'Hostname' column in ascending order
 	When User create custom list with "TestList" name
 	When User enters "CheckTheResetButton" text in Search field at List Panel
 	Then reset button in Search field at List Panel is displayed
@@ -212,3 +212,35 @@ Examples:
 	| Users        |
 	| Applications |
 	| Mailboxes    |
+
+@Evergreen @AllLists @EvergreenJnr_Search @Search @DAS11511
+Scenario Outline: EvergreenJnr_AllLists_Search_CheckThatTableSearchIsWorkingCorrectly
+	When User clicks "<PageName>" on the left-hand menu
+	Then "<PageName>" list should be displayed to the user
+	When User clicks the Columns button
+	Then Columns panel is displayed to the user
+	When ColumnName is entered into the search box and the selection is clicked
+	| ColumnName   |
+	| <ColumnName> |
+	Then ColumnName is added to the list
+	| ColumnName   |
+	| <ColumnName> |
+	And User enters SearchCriteria into the agGrid Search Box and the correct NumberOfRows are returned
+	| SearchCriteria   | NumberOfRows   |
+	| <SearchCriteria> | <NumberOfRows> |
+
+Examples: 
+	| PageName     | ColumnName                                      | SearchCriteria                              | NumberOfRows |
+	| Devices      | Compliance                                      | GREEN                                       | 100          |
+	| Devices      | Windows7Mi: Readiness                           | OUT OF SCOPE                                | 5,118        |
+	| Devices      | Windows7Mi: Group Computer Rag Radio Date Owner | Not Applicable                              | 5,160        |
+	| Applications | Import Type                                     | Altiris 6                                   | 31           |
+	| Users        | Department                                      | The Last Department With A Really Lond Name | 10           |
+
+@Evergreen @Applications @EvergreenJnr_Search @Search @DAS11511
+Scenario: EvergreenJnr_ApplicationsLists_Search_CheckThatTableSearchIsWorkingCorrectlyForApplicationColumn
+	When User clicks "Applications" on the left-hand menu
+	Then "Applications" list should be displayed to the user
+	And User enters SearchCriteria into the agGrid Search Box and the correct NumberOfRows are returned
+	| SearchCriteria | NumberOfRows |
+	| Zune           | 3            |

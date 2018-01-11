@@ -58,7 +58,7 @@ Scenario: EvergreenJnr_ApplicationsList_CheckThatAddColumnCheckboxWorksCorrectly
 	Then "Windows7Mi: Category" filter is added to the list
 	Then table data is filtered correctly
 
-@Evergreen @Applications @EvergreenJnr_FiltersFeature @FilterFunctionality @DAS11166 @Delete_Newly_Created_List @Question_to_Lisa @Not_Run
+@Evergreen @Applications @EvergreenJnr_FiltersFeature @FilterFunctionality @DAS11166 @DAS11665 @Delete_Newly_Created_List @Not_Run
 Scenario: EvergreenJnr_ApplicationsList_CheckThatFilterIsRestoredAfterGoingBackToTheListAgain
 	When User clicks "Applications" on the left-hand menu
 	Then "Applications" list should be displayed to the user
@@ -260,3 +260,49 @@ Scenario: EvergreenJnr_DevicesList_CheckNumericFilter
 	| 1      |
 	Then "App Count (Installed) is less than 1" is displayed in added filter info
 	Then "5,141" rows are displayed in the agGrid
+
+@Evergreen @Devices @EvergreenJnr_FilterFeature @FilterFunctionality @DAS11469
+Scenario Outline: EvergreenJnr_DevicesList_CheckThatAssociationSearchInFiltersPanelIsWorkingCorrectly
+	When User clicks "Devices" on the left-hand menu
+	Then "Devices" list should be displayed to the user
+	When User clicks the Filters button
+	Then Filters panel is displayed to the user
+	When user select "<FilterName>" filter
+	When  User enters "used" in Association search field 
+	Then search values in Association section working by specific search criteria
+
+Examples:
+	| FilterName                 |
+	| Application                |
+	| Application Compliance     |
+	| Application (Saved List)   |
+	| Application Import         |
+	| Application Import Type    |
+	| Application Inventory Site |
+	| Application Name           |
+	| Application Vendor         |
+	| Application Version        |
+
+@Evergreen @Applications @EvergreenJnr_FilterFeature @FilterFunctionality @DAS11560
+Scenario: EvergreenJnr_ApplicationsList_CheckThat500ErrorInNotDisplayedWhenUserApplyASelectedNumericFilter 
+	When User clicks "Applications" on the left-hand menu
+	Then "Applications" list should be displayed to the user
+	When User clicks the Filters button
+	Then Filters panel is displayed to the user
+	When User add "Device Count (Installed)" filter where type is "Less than" with added column and following value:
+	| Values |
+	| 10     |
+	Then "Device Count (Installed)" filter is added to the list
+	Then "1,269" rows are displayed in the agGrid
+	Then "(Device Count (Installed) < 10)" text is displayed in filter container
+
+@Evergreen @Mailboxes @EvergreenJnr_FilterFeature @FilterFunctionality @DAS11573
+Scenario: EvergreenJnr_MailboxesList_CheckThatAddOwnerDepartmentCodeColumnCheckboxIsDisplayedCorrectly
+	When User clicks "Mailboxes" on the left-hand menu
+	Then "Mailboxes" list should be displayed to the user
+	When User clicks the Filters button
+	Then Filters panel is displayed to the user
+	When user select "Owner Department Code" filter
+	Then checkboxes are displayed to the User:
+	| SelectedCheckboxes               |
+	| Add Owner Department Code column |
