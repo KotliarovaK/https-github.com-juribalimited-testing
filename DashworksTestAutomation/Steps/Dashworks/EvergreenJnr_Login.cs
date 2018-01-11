@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Web.Management;
 using DashworksTestAutomation.DTO;
@@ -49,23 +50,28 @@ namespace DashworksTestAutomation.Steps.Dashworks
         [Given(@"User is logged in to the Evergreen")]
         public void GivenUserIsLoggedInToTheEvergreen()
         {
-            var user = GetFreeUserAndAddToUsedUsersList();
+            string file = Path.GetDirectoryName(Path.GetDirectoryName(System.IO.Directory.GetCurrentDirectory())) +
+                          @"\Resources\CorrectFile.png";
 
-            var restClient = new RestClient(UrlProvider.Url);
-            //Get cookies
-            HttpClientHelper client = new HttpClientHelper(user, restClient);
+            throw new Exception(file);
 
-            //Init session
-            _driver.NagigateToURL(UrlProvider.Url);
+            //var user = GetFreeUserAndAddToUsedUsersList();
 
-            //Set cookies to browser
-            foreach (Cookie cookie in client._cookiesJar)
-            {
-                _driver.Manage().Cookies.AddCookie(cookie);
-            }
+            //var restClient = new RestClient(UrlProvider.Url);
+            ////Get cookies
+            //HttpClientHelper client = new HttpClientHelper(user, restClient);
 
-            //Open website
-            _driver.NagigateToURL(UrlProvider.EvergreenUrl);
+            ////Init session
+            //_driver.NagigateToURL(UrlProvider.Url);
+
+            ////Set cookies to browser
+            //foreach (Cookie cookie in client._cookiesJar)
+            //{
+            //    _driver.Manage().Cookies.AddCookie(cookie);
+            //}
+
+            ////Open website
+            //_driver.NagigateToURL(UrlProvider.EvergreenUrl);
         }
 
         [When(@"User provides the Login and Password and clicks on the login button")]
