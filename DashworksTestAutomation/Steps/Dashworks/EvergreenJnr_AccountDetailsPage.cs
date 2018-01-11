@@ -2,6 +2,7 @@
 using DashworksTestAutomation.Extensions;
 using DashworksTestAutomation.Pages.Evergreen;
 using DashworksTestAutomation.Pages.Evergreen.ProfileDetailsPages;
+using DashworksTestAutomation.Providers;
 using DashworksTestAutomation.Utils;
 using NUnit.Framework;
 using OpenQA.Selenium;
@@ -105,10 +106,10 @@ namespace DashworksTestAutomation.Steps.Dashworks
         public void WhenUserUploadIncorrectAvatarToAccountDetails()
         {
             var page = _driver.NowAt<AccountDetailsPage>();
-            IAllowsFileDetection allowsDetection = (IAllowsFileDetection) _driver;
+            IAllowsFileDetection allowsDetection = (IAllowsFileDetection)_driver;
             allowsDetection.FileDetector = new LocalFileDetector();
-            string file = Path.GetDirectoryName(Path.GetDirectoryName(System.IO.Directory.GetCurrentDirectory())) +
-                          @"\Resources\IncorrectFile.zip";
+            string file = Path.GetDirectoryName(Path.GetDirectoryName(TestContext.CurrentContext.TestDirectory)) +
+                          ResourceFilesNamesProvider.IncorrectFile;
             page.UploadButton.SendKeys(file);
         }
 
@@ -116,10 +117,10 @@ namespace DashworksTestAutomation.Steps.Dashworks
         public void WhenUserUploadIncorrectAvatarToProfileDetails()
         {
             var page = _driver.NowAt<AccountDetailsPage>();
-            IAllowsFileDetection allowsDetection = (IAllowsFileDetection) _driver;
+            IAllowsFileDetection allowsDetection = (IAllowsFileDetection)_driver;
             allowsDetection.FileDetector = new LocalFileDetector();
-            string file = Path.GetDirectoryName(Path.GetDirectoryName(System.IO.Directory.GetCurrentDirectory())) +
-                          @"\Resources\CorrectFile.png";
+            string file = Path.GetDirectoryName(Path.GetDirectoryName(TestContext.CurrentContext.TestDirectory)) +
+                          ResourceFilesNamesProvider.CorrectFile;
             page.UploadButton.SendKeys(file);
         }
 
@@ -165,7 +166,7 @@ namespace DashworksTestAutomation.Steps.Dashworks
                 page.RemoveButton.Click();
                 page.UpdateButton.Click();
             }
-            catch {}
+            catch { }
         }
     }
 }
