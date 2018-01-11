@@ -186,7 +186,7 @@ Scenario: EvergreenJnr_DevicesList_Search_CheckThatMultiSelectFilterSearchFieldH
 	When User clicks the Filters button
 	Then Filters panel is displayed to the user
 	When user select "Import" filter
-	And User enters "CheckTheResetButton" text in Search field at selected Filter
+	And User enters "CheckTheResetButton" text in Search field at selected Lookup Filter
 	Then reset button in Search field at selected Filter is displayed
 
 @Evergreen @Devices @EvergreenJnr_Search @Search @DAS11350 @Delete_Newly_Created_List

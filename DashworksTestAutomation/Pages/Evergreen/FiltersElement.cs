@@ -27,6 +27,10 @@ namespace DashworksTestAutomation.Pages.Evergreen
         public IWebElement LookupFilterSearchTextbox { get; set; }
 
         [FindsBy(How = How.XPath,
+            Using = ".//div[@id='context']//div[@class='mat-input-flex mat-form-field-flex']//input")]
+        public IWebElement FilterSearchTextbox { get; set; }
+
+        [FindsBy(How = How.XPath,
             Using =
                 ".//div[@class='associationmultiselect-parent btn-group dropdown-associationmultiselect']//input[@placeholder='Search']")]
         public IWebElement AssociationSearchTextbox { get; set; }

@@ -50,13 +50,25 @@ namespace DashworksTestAutomation.Steps.Dashworks
             filterElement.SearchTextbox.SendKeys(searchedText);
         }
 
-        [When(@"User enters ""(.*)"" text in Search field at selected Filter")]
-        public void WhenUserEntersTextInSearchFieldAtSelectedFilter(string searchedText)
+        [When(@"User enters ""(.*)"" text in Search field at selected Lookup Filter")]
+        public void WhenUserEntersTextInSearchFieldAtSelectedLookupFilter(string searchedText)
         {
             var filterElement = _driver.NowAt<FiltersElement>();
             _driver.WaitWhileControlIsNotDisplayed<FiltersElement>(() => filterElement.LookupFilterSearchTextbox);
             filterElement.LookupFilterSearchTextbox.Clear();
             filterElement.LookupFilterSearchTextbox.SendKeys(searchedText);
+        }
+
+        [When(@"User enters ""(.*)"" text in Search field at selected Filter")]
+        public void WhenUserEntersTextInSearchFieldAtSelectedFilter(string searchedText)
+        {
+            var filterElement = _driver.NowAt<FiltersElement>();
+            if (!String.IsNullOrWhiteSpace(searchedText))
+            {
+                _driver.WaitWhileControlIsNotDisplayed<FiltersElement>(() => filterElement.FilterSearchTextbox);
+                filterElement.FilterSearchTextbox.Clear();
+                filterElement.FilterSearchTextbox.SendKeys(searchedText);
+            }
         }
 
         [When(@"User enters ""(.*)"" in Association search field")]
