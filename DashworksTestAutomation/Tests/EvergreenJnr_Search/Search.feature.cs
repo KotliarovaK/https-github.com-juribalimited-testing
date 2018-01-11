@@ -17,39 +17,35 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_Search
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("TechTalk.SpecFlow", "2.1.0.0")]
     [System.Runtime.CompilerServices.CompilerGeneratedAttribute()]
-    [Microsoft.VisualStudio.TestTools.UnitTesting.TestClassAttribute()]
+    [NUnit.Framework.TestFixtureAttribute()]
+    [NUnit.Framework.DescriptionAttribute("Search")]
     public partial class SearchFeature
     {
         
-        private static TechTalk.SpecFlow.ITestRunner testRunner;
+        private TechTalk.SpecFlow.ITestRunner testRunner;
         
-        [Microsoft.VisualStudio.TestTools.UnitTesting.ClassInitializeAttribute()]
-        public static void FeatureSetup(Microsoft.VisualStudio.TestTools.UnitTesting.TestContext testContext)
+        [NUnit.Framework.TestFixtureSetUpAttribute()]
+        public virtual void FeatureSetup()
         {
-            testRunner = TechTalk.SpecFlow.TestRunnerManager.GetTestRunner(null, 0);
+            testRunner = TechTalk.SpecFlow.TestRunnerManager.GetTestRunner();
             TechTalk.SpecFlow.FeatureInfo featureInfo = new TechTalk.SpecFlow.FeatureInfo(new System.Globalization.CultureInfo("en-US"), "Search", "\tRuns Search related tests", ProgrammingLanguage.CSharp, new string[] {
                         "retry:1"});
             testRunner.OnFeatureStart(featureInfo);
         }
         
-        [Microsoft.VisualStudio.TestTools.UnitTesting.ClassCleanupAttribute()]
-        public static void FeatureTearDown()
+        [NUnit.Framework.TestFixtureTearDownAttribute()]
+        public virtual void FeatureTearDown()
         {
             testRunner.OnFeatureEnd();
             testRunner = null;
         }
         
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestInitializeAttribute()]
+        [NUnit.Framework.SetUpAttribute()]
         public virtual void TestInitialize()
         {
-            if (((testRunner.FeatureContext != null) 
-                        && (testRunner.FeatureContext.FeatureInfo.Title != "Search")))
-            {
-                DashworksTestAutomation.Tests.EvergreenJnr_Search.SearchFeature.FeatureSetup(null);
-            }
         }
         
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCleanupAttribute()]
+        [NUnit.Framework.TearDownAttribute()]
         public virtual void ScenarioTearDown()
         {
             testRunner.OnScenarioEnd();
@@ -71,15 +67,14 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_Search
             testRunner.Then("Evergreen Dashboards page should be displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
         }
         
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestMethodAttribute()]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.DescriptionAttribute("EvergreenJnr_DevicesList_CheckThatQuickSearchResetWhenMovingBetweenLists")]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("FeatureTitle", "Search")]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("Evergreen")]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("Devices")]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("EvergreenJnr_Search")]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("Search")]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("DAS10704")]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("Delete_Newly_Created_List")]
+        [NUnit.Framework.TestAttribute()]
+        [NUnit.Framework.DescriptionAttribute("EvergreenJnr_DevicesList_CheckThatQuickSearchResetWhenMovingBetweenLists")]
+        [NUnit.Framework.CategoryAttribute("Evergreen")]
+        [NUnit.Framework.CategoryAttribute("Devices")]
+        [NUnit.Framework.CategoryAttribute("EvergreenJnr_Search")]
+        [NUnit.Framework.CategoryAttribute("Search")]
+        [NUnit.Framework.CategoryAttribute("DAS10704")]
+        [NUnit.Framework.CategoryAttribute("Delete_Newly_Created_List")]
         public virtual void EvergreenJnr_DevicesList_CheckThatQuickSearchResetWhenMovingBetweenLists()
         {
             System.Exception lastException = null;
@@ -146,14 +141,13 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_Search
             this.ScenarioCleanup();
         }
         
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestMethodAttribute()]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.DescriptionAttribute("EvergreenJnr_DevicesList_CheckThatQuickSearchDoesntTriggersNewListMenu")]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("FeatureTitle", "Search")]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("Evergreen")]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("Devices")]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("EvergreenJnr_Search")]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("Search")]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("DAS10704")]
+        [NUnit.Framework.TestAttribute()]
+        [NUnit.Framework.DescriptionAttribute("EvergreenJnr_DevicesList_CheckThatQuickSearchDoesntTriggersNewListMenu")]
+        [NUnit.Framework.CategoryAttribute("Evergreen")]
+        [NUnit.Framework.CategoryAttribute("Devices")]
+        [NUnit.Framework.CategoryAttribute("EvergreenJnr_Search")]
+        [NUnit.Framework.CategoryAttribute("Search")]
+        [NUnit.Framework.CategoryAttribute("DAS10704")]
         public virtual void EvergreenJnr_DevicesList_CheckThatQuickSearchDoesntTriggersNewListMenu()
         {
             System.Exception lastException = null;
@@ -204,20 +198,19 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_Search
             this.ScenarioCleanup();
         }
         
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestMethodAttribute()]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.DescriptionAttribute("EvergreenJnr_AllLists_CheckSearchFilterAndTableContentDuringNavigationBetweenPage" +
+        [NUnit.Framework.TestAttribute()]
+        [NUnit.Framework.DescriptionAttribute("EvergreenJnr_AllLists_CheckSearchFilterAndTableContentDuringNavigationBetweenPage" +
             "s")]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("FeatureTitle", "Search")]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("Evergreen")]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("Devices")]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("Applications")]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("Users")]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("Mailboxes")]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("EvergreenJnr_Search")]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("Search")]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("DAS10580")]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("DAS10667")]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("DAS10624")]
+        [NUnit.Framework.CategoryAttribute("Evergreen")]
+        [NUnit.Framework.CategoryAttribute("Devices")]
+        [NUnit.Framework.CategoryAttribute("Applications")]
+        [NUnit.Framework.CategoryAttribute("Users")]
+        [NUnit.Framework.CategoryAttribute("Mailboxes")]
+        [NUnit.Framework.CategoryAttribute("EvergreenJnr_Search")]
+        [NUnit.Framework.CategoryAttribute("Search")]
+        [NUnit.Framework.CategoryAttribute("DAS10580")]
+        [NUnit.Framework.CategoryAttribute("DAS10667")]
+        [NUnit.Framework.CategoryAttribute("DAS10624")]
         public virtual void EvergreenJnr_AllLists_CheckSearchFilterAndTableContentDuringNavigationBetweenPages()
         {
             System.Exception lastException = null;
@@ -313,13 +306,12 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_Search
             this.ScenarioCleanup();
         }
         
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestMethodAttribute()]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.DescriptionAttribute("EvergreenJnr_DevicesList_SearchTests")]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("FeatureTitle", "Search")]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("Evergreen")]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("Devices")]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("EvergreenJnr_Search")]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("Search")]
+        [NUnit.Framework.TestAttribute()]
+        [NUnit.Framework.DescriptionAttribute("EvergreenJnr_DevicesList_SearchTests")]
+        [NUnit.Framework.CategoryAttribute("Evergreen")]
+        [NUnit.Framework.CategoryAttribute("Devices")]
+        [NUnit.Framework.CategoryAttribute("EvergreenJnr_Search")]
+        [NUnit.Framework.CategoryAttribute("Search")]
         public virtual void EvergreenJnr_DevicesList_SearchTests()
         {
             System.Exception lastException = null;
@@ -409,14 +401,13 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_Search
             this.ScenarioCleanup();
         }
         
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestMethodAttribute()]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.DescriptionAttribute("EvergreenJnr_DevicesList_ClearingSearchReturnsTheFullDataSet")]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("FeatureTitle", "Search")]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("Evergreen")]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("Devices")]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("EvergreenJnr_Search")]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("Search")]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("DAS11012")]
+        [NUnit.Framework.TestAttribute()]
+        [NUnit.Framework.DescriptionAttribute("EvergreenJnr_DevicesList_ClearingSearchReturnsTheFullDataSet")]
+        [NUnit.Framework.CategoryAttribute("Evergreen")]
+        [NUnit.Framework.CategoryAttribute("Devices")]
+        [NUnit.Framework.CategoryAttribute("EvergreenJnr_Search")]
+        [NUnit.Framework.CategoryAttribute("Search")]
+        [NUnit.Framework.CategoryAttribute("DAS11012")]
         public virtual void EvergreenJnr_DevicesList_ClearingSearchReturnsTheFullDataSet()
         {
             System.Exception lastException = null;
@@ -470,14 +461,13 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_Search
             this.ScenarioCleanup();
         }
         
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestMethodAttribute()]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.DescriptionAttribute("EvergreenJnr_UsersList_ClearingSearchReturnsTheFullDataSet")]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("FeatureTitle", "Search")]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("Evergreen")]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("Users")]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("EvergreenJnr_Search")]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("Search")]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("DAS11012")]
+        [NUnit.Framework.TestAttribute()]
+        [NUnit.Framework.DescriptionAttribute("EvergreenJnr_UsersList_ClearingSearchReturnsTheFullDataSet")]
+        [NUnit.Framework.CategoryAttribute("Evergreen")]
+        [NUnit.Framework.CategoryAttribute("Users")]
+        [NUnit.Framework.CategoryAttribute("EvergreenJnr_Search")]
+        [NUnit.Framework.CategoryAttribute("Search")]
+        [NUnit.Framework.CategoryAttribute("DAS11012")]
         public virtual void EvergreenJnr_UsersList_ClearingSearchReturnsTheFullDataSet()
         {
             System.Exception lastException = null;
@@ -531,13 +521,12 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_Search
             this.ScenarioCleanup();
         }
         
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestMethodAttribute()]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.DescriptionAttribute("EvergreenJnr_DevicesList_Search_NoDevicesFound")]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("FeatureTitle", "Search")]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("Evergreen")]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("Devices")]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("EvergreenJnr_Search")]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("Search")]
+        [NUnit.Framework.TestAttribute()]
+        [NUnit.Framework.DescriptionAttribute("EvergreenJnr_DevicesList_Search_NoDevicesFound")]
+        [NUnit.Framework.CategoryAttribute("Evergreen")]
+        [NUnit.Framework.CategoryAttribute("Devices")]
+        [NUnit.Framework.CategoryAttribute("EvergreenJnr_Search")]
+        [NUnit.Framework.CategoryAttribute("Search")]
         public virtual void EvergreenJnr_DevicesList_Search_NoDevicesFound()
         {
             System.Exception lastException = null;
@@ -620,14 +609,13 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_Search
             this.ScenarioCleanup();
         }
         
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestMethodAttribute()]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.DescriptionAttribute("EvergreenJnr_DevicesList_Search_CheckThatGlobalSearchFieldHaveAResetButton")]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("FeatureTitle", "Search")]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("Evergreen")]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("Devices")]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("EvergreenJnr_Search")]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("Search")]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("DAS11350")]
+        [NUnit.Framework.TestAttribute()]
+        [NUnit.Framework.DescriptionAttribute("EvergreenJnr_DevicesList_Search_CheckThatGlobalSearchFieldHaveAResetButton")]
+        [NUnit.Framework.CategoryAttribute("Evergreen")]
+        [NUnit.Framework.CategoryAttribute("Devices")]
+        [NUnit.Framework.CategoryAttribute("EvergreenJnr_Search")]
+        [NUnit.Framework.CategoryAttribute("Search")]
+        [NUnit.Framework.CategoryAttribute("DAS11350")]
         public virtual void EvergreenJnr_DevicesList_Search_CheckThatGlobalSearchFieldHaveAResetButton()
         {
             System.Exception lastException = null;
@@ -671,14 +659,13 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_Search
             this.ScenarioCleanup();
         }
         
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestMethodAttribute()]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.DescriptionAttribute("EvergreenJnr_DevicesList_Search_CheckThatTableSearchFieldHaveAResetButton")]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("FeatureTitle", "Search")]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("Evergreen")]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("Devices")]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("EvergreenJnr_Search")]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("Search")]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("DAS11350")]
+        [NUnit.Framework.TestAttribute()]
+        [NUnit.Framework.DescriptionAttribute("EvergreenJnr_DevicesList_Search_CheckThatTableSearchFieldHaveAResetButton")]
+        [NUnit.Framework.CategoryAttribute("Evergreen")]
+        [NUnit.Framework.CategoryAttribute("Devices")]
+        [NUnit.Framework.CategoryAttribute("EvergreenJnr_Search")]
+        [NUnit.Framework.CategoryAttribute("Search")]
+        [NUnit.Framework.CategoryAttribute("DAS11350")]
         public virtual void EvergreenJnr_DevicesList_Search_CheckThatTableSearchFieldHaveAResetButton()
         {
             System.Exception lastException = null;
@@ -722,14 +709,13 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_Search
             this.ScenarioCleanup();
         }
         
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestMethodAttribute()]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.DescriptionAttribute("EvergreenJnr_DevicesList_Search_CheckThatSearchFieldHaveResetButtonAtFilterPanel")]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("FeatureTitle", "Search")]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("Evergreen")]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("Devices")]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("EvergreenJnr_Search")]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("Search")]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("DAS11350")]
+        [NUnit.Framework.TestAttribute()]
+        [NUnit.Framework.DescriptionAttribute("EvergreenJnr_DevicesList_Search_CheckThatSearchFieldHaveResetButtonAtFilterPanel")]
+        [NUnit.Framework.CategoryAttribute("Evergreen")]
+        [NUnit.Framework.CategoryAttribute("Devices")]
+        [NUnit.Framework.CategoryAttribute("EvergreenJnr_Search")]
+        [NUnit.Framework.CategoryAttribute("Search")]
+        [NUnit.Framework.CategoryAttribute("DAS11350")]
         public virtual void EvergreenJnr_DevicesList_Search_CheckThatSearchFieldHaveResetButtonAtFilterPanel()
         {
             System.Exception lastException = null;
@@ -775,14 +761,13 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_Search
             this.ScenarioCleanup();
         }
         
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestMethodAttribute()]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.DescriptionAttribute("EvergreenJnr_DevicesList_Search_CheckThatSearchFieldHaveResetButtonAtColumnPanel")]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("FeatureTitle", "Search")]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("Evergreen")]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("Devices")]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("EvergreenJnr_Search")]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("Search")]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("DAS11350")]
+        [NUnit.Framework.TestAttribute()]
+        [NUnit.Framework.DescriptionAttribute("EvergreenJnr_DevicesList_Search_CheckThatSearchFieldHaveResetButtonAtColumnPanel")]
+        [NUnit.Framework.CategoryAttribute("Evergreen")]
+        [NUnit.Framework.CategoryAttribute("Devices")]
+        [NUnit.Framework.CategoryAttribute("EvergreenJnr_Search")]
+        [NUnit.Framework.CategoryAttribute("Search")]
+        [NUnit.Framework.CategoryAttribute("DAS11350")]
         public virtual void EvergreenJnr_DevicesList_Search_CheckThatSearchFieldHaveResetButtonAtColumnPanel()
         {
             System.Exception lastException = null;
@@ -828,15 +813,14 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_Search
             this.ScenarioCleanup();
         }
         
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestMethodAttribute()]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.DescriptionAttribute("EvergreenJnr_DevicesList_Search_CheckThatMultiSelectFilterSearchFieldHaveResetBut" +
+        [NUnit.Framework.TestAttribute()]
+        [NUnit.Framework.DescriptionAttribute("EvergreenJnr_DevicesList_Search_CheckThatMultiSelectFilterSearchFieldHaveResetBut" +
             "ton")]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("FeatureTitle", "Search")]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("Evergreen")]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("Devices")]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("EvergreenJnr_Search")]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("Search")]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("DAS11350")]
+        [NUnit.Framework.CategoryAttribute("Evergreen")]
+        [NUnit.Framework.CategoryAttribute("Devices")]
+        [NUnit.Framework.CategoryAttribute("EvergreenJnr_Search")]
+        [NUnit.Framework.CategoryAttribute("Search")]
+        [NUnit.Framework.CategoryAttribute("DAS11350")]
         public virtual void EvergreenJnr_DevicesList_Search_CheckThatMultiSelectFilterSearchFieldHaveResetButton()
         {
             System.Exception lastException = null;
@@ -884,15 +868,14 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_Search
             this.ScenarioCleanup();
         }
         
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestMethodAttribute()]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.DescriptionAttribute("EvergreenJnr_DevicesList_Search_CheckThatSearchFieldHaveResetButtonAtListPanel")]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("FeatureTitle", "Search")]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("Evergreen")]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("Devices")]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("EvergreenJnr_Search")]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("Search")]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("DAS11350")]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("Delete_Newly_Created_List")]
+        [NUnit.Framework.TestAttribute()]
+        [NUnit.Framework.DescriptionAttribute("EvergreenJnr_DevicesList_Search_CheckThatSearchFieldHaveResetButtonAtListPanel")]
+        [NUnit.Framework.CategoryAttribute("Evergreen")]
+        [NUnit.Framework.CategoryAttribute("Devices")]
+        [NUnit.Framework.CategoryAttribute("EvergreenJnr_Search")]
+        [NUnit.Framework.CategoryAttribute("Search")]
+        [NUnit.Framework.CategoryAttribute("DAS11350")]
+        [NUnit.Framework.CategoryAttribute("Delete_Newly_Created_List")]
         public virtual void EvergreenJnr_DevicesList_Search_CheckThatSearchFieldHaveResetButtonAtListPanel()
         {
             System.Exception lastException = null;
@@ -940,6 +923,18 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_Search
             this.ScenarioCleanup();
         }
         
+        [NUnit.Framework.TestAttribute()]
+        [NUnit.Framework.DescriptionAttribute("EvergreenJnr_AllLists_Search_CheckThat500ErrorMessageIsNotDisplayedAfterEnteringT" +
+            "heSpecificCharacters")]
+        [NUnit.Framework.CategoryAttribute("Evergreen")]
+        [NUnit.Framework.CategoryAttribute("AllLists")]
+        [NUnit.Framework.CategoryAttribute("EvergreenJnr_Search")]
+        [NUnit.Framework.CategoryAttribute("Search")]
+        [NUnit.Framework.CategoryAttribute("DAS11495")]
+        [NUnit.Framework.TestCaseAttribute("Devices", new string[0])]
+        [NUnit.Framework.TestCaseAttribute("Users", new string[0])]
+        [NUnit.Framework.TestCaseAttribute("Applications", new string[0])]
+        [NUnit.Framework.TestCaseAttribute("Mailboxes", new string[0])]
         public virtual void EvergreenJnr_AllLists_Search_CheckThat500ErrorMessageIsNotDisplayedAfterEnteringTheSpecificCharacters(string pageName, string[] exampleTags)
         {
             System.Exception lastException = null;
@@ -966,70 +961,6 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_Search
             }
         }
         
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestMethodAttribute()]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.DescriptionAttribute("EvergreenJnr_AllLists_Search_CheckThat500ErrorMessageIsNotDisplayedAfterEnteringT" +
-            "heSpecificCharacters: Devices")]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("FeatureTitle", "Search")]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("Evergreen")]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("AllLists")]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("EvergreenJnr_Search")]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("Search")]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("DAS11495")]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("VariantName", "Devices")]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:PageName", "Devices")]
-        public virtual void EvergreenJnr_AllLists_Search_CheckThat500ErrorMessageIsNotDisplayedAfterEnteringTheSpecificCharacters_Devices()
-        {
-            this.EvergreenJnr_AllLists_Search_CheckThat500ErrorMessageIsNotDisplayedAfterEnteringTheSpecificCharacters("Devices", ((string[])(null)));
-        }
-        
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestMethodAttribute()]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.DescriptionAttribute("EvergreenJnr_AllLists_Search_CheckThat500ErrorMessageIsNotDisplayedAfterEnteringT" +
-            "heSpecificCharacters: Users")]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("FeatureTitle", "Search")]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("Evergreen")]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("AllLists")]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("EvergreenJnr_Search")]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("Search")]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("DAS11495")]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("VariantName", "Users")]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:PageName", "Users")]
-        public virtual void EvergreenJnr_AllLists_Search_CheckThat500ErrorMessageIsNotDisplayedAfterEnteringTheSpecificCharacters_Users()
-        {
-            this.EvergreenJnr_AllLists_Search_CheckThat500ErrorMessageIsNotDisplayedAfterEnteringTheSpecificCharacters("Users", ((string[])(null)));
-        }
-        
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestMethodAttribute()]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.DescriptionAttribute("EvergreenJnr_AllLists_Search_CheckThat500ErrorMessageIsNotDisplayedAfterEnteringT" +
-            "heSpecificCharacters: Applications")]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("FeatureTitle", "Search")]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("Evergreen")]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("AllLists")]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("EvergreenJnr_Search")]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("Search")]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("DAS11495")]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("VariantName", "Applications")]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:PageName", "Applications")]
-        public virtual void EvergreenJnr_AllLists_Search_CheckThat500ErrorMessageIsNotDisplayedAfterEnteringTheSpecificCharacters_Applications()
-        {
-            this.EvergreenJnr_AllLists_Search_CheckThat500ErrorMessageIsNotDisplayedAfterEnteringTheSpecificCharacters("Applications", ((string[])(null)));
-        }
-        
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestMethodAttribute()]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.DescriptionAttribute("EvergreenJnr_AllLists_Search_CheckThat500ErrorMessageIsNotDisplayedAfterEnteringT" +
-            "heSpecificCharacters: Mailboxes")]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("FeatureTitle", "Search")]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("Evergreen")]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("AllLists")]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("EvergreenJnr_Search")]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("Search")]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("DAS11495")]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("VariantName", "Mailboxes")]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:PageName", "Mailboxes")]
-        public virtual void EvergreenJnr_AllLists_Search_CheckThat500ErrorMessageIsNotDisplayedAfterEnteringTheSpecificCharacters_Mailboxes()
-        {
-            this.EvergreenJnr_AllLists_Search_CheckThat500ErrorMessageIsNotDisplayedAfterEnteringTheSpecificCharacters("Mailboxes", ((string[])(null)));
-        }
-        
         private void EvergreenJnr_AllLists_Search_CheckThat500ErrorMessageIsNotDisplayedAfterEnteringTheSpecificCharactersInternal(string pageName, string[] exampleTags)
         {
             string[] @__tags = new string[] {
@@ -1053,6 +984,18 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_Search
             this.ScenarioCleanup();
         }
         
+        [NUnit.Framework.TestAttribute()]
+        [NUnit.Framework.DescriptionAttribute("EvergreenJnr_AllLists_Search_CheckThatTableSearchIsWorkingCorrectly")]
+        [NUnit.Framework.CategoryAttribute("Evergreen")]
+        [NUnit.Framework.CategoryAttribute("AllLists")]
+        [NUnit.Framework.CategoryAttribute("EvergreenJnr_Search")]
+        [NUnit.Framework.CategoryAttribute("Search")]
+        [NUnit.Framework.CategoryAttribute("DAS11511")]
+        [NUnit.Framework.TestCaseAttribute("Devices", "Compliance", "GREEN", "100", new string[0])]
+        [NUnit.Framework.TestCaseAttribute("Devices", "Windows7Mi: Readiness", "OUT OF SCOPE", "5,118", new string[0])]
+        [NUnit.Framework.TestCaseAttribute("Devices", "Windows7Mi: Group Computer Rag Radio Date Owner", "Not Applicable", "5,160", new string[0])]
+        [NUnit.Framework.TestCaseAttribute("Applications", "Import Type", "Altiris 6", "31", new string[0])]
+        [NUnit.Framework.TestCaseAttribute("Users", "Department", "The Last Department With A Really Lond Name", "10", new string[0])]
         public virtual void EvergreenJnr_AllLists_Search_CheckThatTableSearchIsWorkingCorrectly(string pageName, string columnName, string searchCriteria, string numberOfRows, string[] exampleTags)
         {
             System.Exception lastException = null;
@@ -1077,96 +1020,6 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_Search
             {
                 throw lastException;
             }
-        }
-        
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestMethodAttribute()]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.DescriptionAttribute("EvergreenJnr_AllLists_Search_CheckThatTableSearchIsWorkingCorrectly: Variant 0")]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("FeatureTitle", "Search")]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("Evergreen")]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("AllLists")]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("EvergreenJnr_Search")]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("Search")]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("DAS11511")]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("VariantName", "Variant 0")]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:PageName", "Devices")]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:ColumnName", "Compliance")]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:SearchCriteria", "GREEN")]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:NumberOfRows", "100")]
-        public virtual void EvergreenJnr_AllLists_Search_CheckThatTableSearchIsWorkingCorrectly_Variant0()
-        {
-            this.EvergreenJnr_AllLists_Search_CheckThatTableSearchIsWorkingCorrectly("Devices", "Compliance", "GREEN", "100", ((string[])(null)));
-        }
-        
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestMethodAttribute()]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.DescriptionAttribute("EvergreenJnr_AllLists_Search_CheckThatTableSearchIsWorkingCorrectly: Variant 1")]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("FeatureTitle", "Search")]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("Evergreen")]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("AllLists")]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("EvergreenJnr_Search")]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("Search")]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("DAS11511")]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("VariantName", "Variant 1")]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:PageName", "Devices")]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:ColumnName", "Windows7Mi: Readiness")]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:SearchCriteria", "OUT OF SCOPE")]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:NumberOfRows", "5,118")]
-        public virtual void EvergreenJnr_AllLists_Search_CheckThatTableSearchIsWorkingCorrectly_Variant1()
-        {
-            this.EvergreenJnr_AllLists_Search_CheckThatTableSearchIsWorkingCorrectly("Devices", "Windows7Mi: Readiness", "OUT OF SCOPE", "5,118", ((string[])(null)));
-        }
-        
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestMethodAttribute()]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.DescriptionAttribute("EvergreenJnr_AllLists_Search_CheckThatTableSearchIsWorkingCorrectly: Variant 2")]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("FeatureTitle", "Search")]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("Evergreen")]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("AllLists")]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("EvergreenJnr_Search")]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("Search")]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("DAS11511")]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("VariantName", "Variant 2")]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:PageName", "Devices")]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:ColumnName", "Windows7Mi: Group Computer Rag Radio Date Owner")]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:SearchCriteria", "Not Applicable")]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:NumberOfRows", "5,160")]
-        public virtual void EvergreenJnr_AllLists_Search_CheckThatTableSearchIsWorkingCorrectly_Variant2()
-        {
-            this.EvergreenJnr_AllLists_Search_CheckThatTableSearchIsWorkingCorrectly("Devices", "Windows7Mi: Group Computer Rag Radio Date Owner", "Not Applicable", "5,160", ((string[])(null)));
-        }
-        
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestMethodAttribute()]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.DescriptionAttribute("EvergreenJnr_AllLists_Search_CheckThatTableSearchIsWorkingCorrectly: Variant 3")]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("FeatureTitle", "Search")]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("Evergreen")]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("AllLists")]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("EvergreenJnr_Search")]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("Search")]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("DAS11511")]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("VariantName", "Variant 3")]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:PageName", "Applications")]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:ColumnName", "Import Type")]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:SearchCriteria", "Altiris 6")]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:NumberOfRows", "31")]
-        public virtual void EvergreenJnr_AllLists_Search_CheckThatTableSearchIsWorkingCorrectly_Variant3()
-        {
-            this.EvergreenJnr_AllLists_Search_CheckThatTableSearchIsWorkingCorrectly("Applications", "Import Type", "Altiris 6", "31", ((string[])(null)));
-        }
-        
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestMethodAttribute()]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.DescriptionAttribute("EvergreenJnr_AllLists_Search_CheckThatTableSearchIsWorkingCorrectly: Variant 4")]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("FeatureTitle", "Search")]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("Evergreen")]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("AllLists")]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("EvergreenJnr_Search")]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("Search")]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("DAS11511")]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("VariantName", "Variant 4")]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:PageName", "Users")]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:ColumnName", "Department")]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:SearchCriteria", "The Last Department With A Really Lond Name")]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:NumberOfRows", "10")]
-        public virtual void EvergreenJnr_AllLists_Search_CheckThatTableSearchIsWorkingCorrectly_Variant4()
-        {
-            this.EvergreenJnr_AllLists_Search_CheckThatTableSearchIsWorkingCorrectly("Users", "Department", "The Last Department With A Really Lond Name", "10", ((string[])(null)));
         }
         
         private void EvergreenJnr_AllLists_Search_CheckThatTableSearchIsWorkingCorrectlyInternal(string pageName, string columnName, string searchCriteria, string numberOfRows, string[] exampleTags)
@@ -1209,15 +1062,14 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_Search
             this.ScenarioCleanup();
         }
         
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestMethodAttribute()]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.DescriptionAttribute("EvergreenJnr_ApplicationsLists_Search_CheckThatTableSearchIsWorkingCorrectlyForAp" +
+        [NUnit.Framework.TestAttribute()]
+        [NUnit.Framework.DescriptionAttribute("EvergreenJnr_ApplicationsLists_Search_CheckThatTableSearchIsWorkingCorrectlyForAp" +
             "plicationColumn")]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("FeatureTitle", "Search")]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("Evergreen")]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("Applications")]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("EvergreenJnr_Search")]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("Search")]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("DAS11511")]
+        [NUnit.Framework.CategoryAttribute("Evergreen")]
+        [NUnit.Framework.CategoryAttribute("Applications")]
+        [NUnit.Framework.CategoryAttribute("EvergreenJnr_Search")]
+        [NUnit.Framework.CategoryAttribute("Search")]
+        [NUnit.Framework.CategoryAttribute("DAS11511")]
         public virtual void EvergreenJnr_ApplicationsLists_Search_CheckThatTableSearchIsWorkingCorrectlyForApplicationColumn()
         {
             System.Exception lastException = null;

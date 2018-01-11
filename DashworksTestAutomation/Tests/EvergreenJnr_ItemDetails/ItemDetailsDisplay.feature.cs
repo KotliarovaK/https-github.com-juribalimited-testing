@@ -17,39 +17,35 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_ItemDetails
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("TechTalk.SpecFlow", "2.1.0.0")]
     [System.Runtime.CompilerServices.CompilerGeneratedAttribute()]
-    [Microsoft.VisualStudio.TestTools.UnitTesting.TestClassAttribute()]
+    [NUnit.Framework.TestFixtureAttribute()]
+    [NUnit.Framework.DescriptionAttribute("ItemDetailsDisplay")]
     public partial class ItemDetailsDisplayFeature
     {
         
-        private static TechTalk.SpecFlow.ITestRunner testRunner;
+        private TechTalk.SpecFlow.ITestRunner testRunner;
         
-        [Microsoft.VisualStudio.TestTools.UnitTesting.ClassInitializeAttribute()]
-        public static void FeatureSetup(Microsoft.VisualStudio.TestTools.UnitTesting.TestContext testContext)
+        [NUnit.Framework.TestFixtureSetUpAttribute()]
+        public virtual void FeatureSetup()
         {
-            testRunner = TechTalk.SpecFlow.TestRunnerManager.GetTestRunner(null, 0);
+            testRunner = TechTalk.SpecFlow.TestRunnerManager.GetTestRunner();
             TechTalk.SpecFlow.FeatureInfo featureInfo = new TechTalk.SpecFlow.FeatureInfo(new System.Globalization.CultureInfo("en-US"), "ItemDetailsDisplay", "\tRuns Item Details Display related tests", ProgrammingLanguage.CSharp, new string[] {
                         "retry:1"});
             testRunner.OnFeatureStart(featureInfo);
         }
         
-        [Microsoft.VisualStudio.TestTools.UnitTesting.ClassCleanupAttribute()]
-        public static void FeatureTearDown()
+        [NUnit.Framework.TestFixtureTearDownAttribute()]
+        public virtual void FeatureTearDown()
         {
             testRunner.OnFeatureEnd();
             testRunner = null;
         }
         
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestInitializeAttribute()]
+        [NUnit.Framework.SetUpAttribute()]
         public virtual void TestInitialize()
         {
-            if (((testRunner.FeatureContext != null) 
-                        && (testRunner.FeatureContext.FeatureInfo.Title != "ItemDetailsDisplay")))
-            {
-                DashworksTestAutomation.Tests.EvergreenJnr_ItemDetails.ItemDetailsDisplayFeature.FeatureSetup(null);
-            }
         }
         
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCleanupAttribute()]
+        [NUnit.Framework.TearDownAttribute()]
         public virtual void ScenarioTearDown()
         {
             testRunner.OnScenarioEnd();
@@ -71,6 +67,16 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_ItemDetails
             testRunner.Then("Evergreen Dashboards page should be displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
         }
         
+        [NUnit.Framework.TestAttribute()]
+        [NUnit.Framework.DescriptionAttribute("EvergreenJnr_AllLists_AllEmptyFieldsInItemDetailsAreDisplayedAsUnknown")]
+        [NUnit.Framework.CategoryAttribute("Evergreen")]
+        [NUnit.Framework.CategoryAttribute("AllLists")]
+        [NUnit.Framework.CategoryAttribute("EvergreenJnr_ItemDetails")]
+        [NUnit.Framework.CategoryAttribute("ItemDetailsDisplay")]
+        [NUnit.Framework.CategoryAttribute("DAS10438")]
+        [NUnit.Framework.TestCaseAttribute("Mailboxes", "azuresync3@juriba1.onmicrosoft.com", "Email Address", new string[0])]
+        [NUnit.Framework.TestCaseAttribute("Users", "ABW1509426", "Username", new string[0])]
+        [NUnit.Framework.TestCaseAttribute("Devices", "01BQIYGGUW5PRP6", "Hostname", new string[0])]
         public virtual void EvergreenJnr_AllLists_AllEmptyFieldsInItemDetailsAreDisplayedAsUnknown(string pageName, string searchCriteria, string columnName, string[] exampleTags)
         {
             System.Exception lastException = null;
@@ -97,58 +103,6 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_ItemDetails
             }
         }
         
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestMethodAttribute()]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.DescriptionAttribute("EvergreenJnr_AllLists_AllEmptyFieldsInItemDetailsAreDisplayedAsUnknown: Mailboxes" +
-            "")]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("FeatureTitle", "ItemDetailsDisplay")]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("Evergreen")]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("AllLists")]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("EvergreenJnr_ItemDetails")]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("ItemDetailsDisplay")]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("DAS10438")]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("VariantName", "Mailboxes")]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:PageName", "Mailboxes")]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:SearchCriteria", "azuresync3@juriba1.onmicrosoft.com")]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:ColumnName", "Email Address")]
-        public virtual void EvergreenJnr_AllLists_AllEmptyFieldsInItemDetailsAreDisplayedAsUnknown_Mailboxes()
-        {
-            this.EvergreenJnr_AllLists_AllEmptyFieldsInItemDetailsAreDisplayedAsUnknown("Mailboxes", "azuresync3@juriba1.onmicrosoft.com", "Email Address", ((string[])(null)));
-        }
-        
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestMethodAttribute()]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.DescriptionAttribute("EvergreenJnr_AllLists_AllEmptyFieldsInItemDetailsAreDisplayedAsUnknown: Users")]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("FeatureTitle", "ItemDetailsDisplay")]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("Evergreen")]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("AllLists")]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("EvergreenJnr_ItemDetails")]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("ItemDetailsDisplay")]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("DAS10438")]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("VariantName", "Users")]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:PageName", "Users")]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:SearchCriteria", "ABW1509426")]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:ColumnName", "Username")]
-        public virtual void EvergreenJnr_AllLists_AllEmptyFieldsInItemDetailsAreDisplayedAsUnknown_Users()
-        {
-            this.EvergreenJnr_AllLists_AllEmptyFieldsInItemDetailsAreDisplayedAsUnknown("Users", "ABW1509426", "Username", ((string[])(null)));
-        }
-        
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestMethodAttribute()]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.DescriptionAttribute("EvergreenJnr_AllLists_AllEmptyFieldsInItemDetailsAreDisplayedAsUnknown: Devices")]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("FeatureTitle", "ItemDetailsDisplay")]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("Evergreen")]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("AllLists")]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("EvergreenJnr_ItemDetails")]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("ItemDetailsDisplay")]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("DAS10438")]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("VariantName", "Devices")]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:PageName", "Devices")]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:SearchCriteria", "01BQIYGGUW5PRP6")]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:ColumnName", "Hostname")]
-        public virtual void EvergreenJnr_AllLists_AllEmptyFieldsInItemDetailsAreDisplayedAsUnknown_Devices()
-        {
-            this.EvergreenJnr_AllLists_AllEmptyFieldsInItemDetailsAreDisplayedAsUnknown("Devices", "01BQIYGGUW5PRP6", "Hostname", ((string[])(null)));
-        }
-        
         private void EvergreenJnr_AllLists_AllEmptyFieldsInItemDetailsAreDisplayedAsUnknownInternal(string pageName, string searchCriteria, string columnName, string[] exampleTags)
         {
             string[] @__tags = new string[] {
@@ -173,15 +127,14 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_ItemDetails
             this.ScenarioCleanup();
         }
         
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestMethodAttribute()]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.DescriptionAttribute("EvergreenJnr_MailboxesList_CheckThat404ErrorIsNotDisplayedOccurringWhenViewingMai" +
+        [NUnit.Framework.TestAttribute()]
+        [NUnit.Framework.DescriptionAttribute("EvergreenJnr_MailboxesList_CheckThat404ErrorIsNotDisplayedOccurringWhenViewingMai" +
             "lboxDetailsWhereThereIsNoMailboxOwner")]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("FeatureTitle", "ItemDetailsDisplay")]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("Evergreen")]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("Mailboxes")]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("EvergreenJnr_ItemDetails")]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("ItemDetailsDisplay")]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("DAS11531")]
+        [NUnit.Framework.CategoryAttribute("Evergreen")]
+        [NUnit.Framework.CategoryAttribute("Mailboxes")]
+        [NUnit.Framework.CategoryAttribute("EvergreenJnr_ItemDetails")]
+        [NUnit.Framework.CategoryAttribute("ItemDetailsDisplay")]
+        [NUnit.Framework.CategoryAttribute("DAS11531")]
         public virtual void EvergreenJnr_MailboxesList_CheckThat404ErrorIsNotDisplayedOccurringWhenViewingMailboxDetailsWhereThereIsNoMailboxOwner()
         {
             System.Exception lastException = null;
@@ -228,6 +181,18 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_ItemDetails
             this.ScenarioCleanup();
         }
         
+        [NUnit.Framework.TestAttribute()]
+        [NUnit.Framework.DescriptionAttribute("EvergreenJnr_MailboxesList_CheckThatSelectedFieldStateOnDetailsTab")]
+        [NUnit.Framework.CategoryAttribute("Evergreen")]
+        [NUnit.Framework.CategoryAttribute("Mailboxes")]
+        [NUnit.Framework.CategoryAttribute("EvergreenJnr_ItemDetails")]
+        [NUnit.Framework.CategoryAttribute("ItemDetailsDisplay")]
+        [NUnit.Framework.CategoryAttribute("DAS11478")]
+        [NUnit.Framework.CategoryAttribute("DAS11477")]
+        [NUnit.Framework.CategoryAttribute("DAS11476")]
+        [NUnit.Framework.TestCaseAttribute("alfredo.m.daniel@dwlabs.local", "Mailbox Database", "true", new string[0])]
+        [NUnit.Framework.TestCaseAttribute("alfredo.m.daniel@dwlabs.local", "Cloud Mail Server", "false", new string[0])]
+        [NUnit.Framework.TestCaseAttribute("alex.cristea@juriba.com", "Mail Server", "false", new string[0])]
         public virtual void EvergreenJnr_MailboxesList_CheckThatSelectedFieldStateOnDetailsTab(string emailAddress, string fieldName, string displayState, string[] exampleTags)
         {
             System.Exception lastException = null;
@@ -252,63 +217,6 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_ItemDetails
             {
                 throw lastException;
             }
-        }
-        
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestMethodAttribute()]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.DescriptionAttribute("EvergreenJnr_MailboxesList_CheckThatSelectedFieldStateOnDetailsTab: Variant 0")]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("FeatureTitle", "ItemDetailsDisplay")]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("Evergreen")]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("Mailboxes")]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("EvergreenJnr_ItemDetails")]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("ItemDetailsDisplay")]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("DAS11478")]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("DAS11477")]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("DAS11476")]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("VariantName", "Variant 0")]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:EmailAddress", "alfredo.m.daniel@dwlabs.local")]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:FieldName", "Mailbox Database")]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:DisplayState", "true")]
-        public virtual void EvergreenJnr_MailboxesList_CheckThatSelectedFieldStateOnDetailsTab_Variant0()
-        {
-            this.EvergreenJnr_MailboxesList_CheckThatSelectedFieldStateOnDetailsTab("alfredo.m.daniel@dwlabs.local", "Mailbox Database", "true", ((string[])(null)));
-        }
-        
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestMethodAttribute()]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.DescriptionAttribute("EvergreenJnr_MailboxesList_CheckThatSelectedFieldStateOnDetailsTab: Variant 1")]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("FeatureTitle", "ItemDetailsDisplay")]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("Evergreen")]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("Mailboxes")]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("EvergreenJnr_ItemDetails")]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("ItemDetailsDisplay")]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("DAS11478")]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("DAS11477")]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("DAS11476")]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("VariantName", "Variant 1")]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:EmailAddress", "alfredo.m.daniel@dwlabs.local")]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:FieldName", "Cloud Mail Server")]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:DisplayState", "false")]
-        public virtual void EvergreenJnr_MailboxesList_CheckThatSelectedFieldStateOnDetailsTab_Variant1()
-        {
-            this.EvergreenJnr_MailboxesList_CheckThatSelectedFieldStateOnDetailsTab("alfredo.m.daniel@dwlabs.local", "Cloud Mail Server", "false", ((string[])(null)));
-        }
-        
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestMethodAttribute()]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.DescriptionAttribute("EvergreenJnr_MailboxesList_CheckThatSelectedFieldStateOnDetailsTab: Variant 2")]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("FeatureTitle", "ItemDetailsDisplay")]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("Evergreen")]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("Mailboxes")]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("EvergreenJnr_ItemDetails")]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("ItemDetailsDisplay")]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("DAS11478")]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("DAS11477")]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("DAS11476")]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("VariantName", "Variant 2")]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:EmailAddress", "alex.cristea@juriba.com")]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:FieldName", "Mail Server")]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:DisplayState", "false")]
-        public virtual void EvergreenJnr_MailboxesList_CheckThatSelectedFieldStateOnDetailsTab_Variant2()
-        {
-            this.EvergreenJnr_MailboxesList_CheckThatSelectedFieldStateOnDetailsTab("alex.cristea@juriba.com", "Mail Server", "false", ((string[])(null)));
         }
         
         private void EvergreenJnr_MailboxesList_CheckThatSelectedFieldStateOnDetailsTabInternal(string emailAddress, string fieldName, string displayState, string[] exampleTags)
@@ -336,15 +244,14 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_ItemDetails
             this.ScenarioCleanup();
         }
         
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestMethodAttribute()]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.DescriptionAttribute("EvergreenJnr_DevicesList_CheckThatLastLogoffDateFieldIsNotDisplayedAtTheDeviceOwn" +
+        [NUnit.Framework.TestAttribute()]
+        [NUnit.Framework.DescriptionAttribute("EvergreenJnr_DevicesList_CheckThatLastLogoffDateFieldIsNotDisplayedAtTheDeviceOwn" +
             "erBlockOfDeviceDetails")]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("FeatureTitle", "ItemDetailsDisplay")]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("Evergreen")]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("Devices")]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("EvergreenJnr_ItemDetails")]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("ItemDetailsDisplay")]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("DAS11510")]
+        [NUnit.Framework.CategoryAttribute("Evergreen")]
+        [NUnit.Framework.CategoryAttribute("Devices")]
+        [NUnit.Framework.CategoryAttribute("EvergreenJnr_ItemDetails")]
+        [NUnit.Framework.CategoryAttribute("ItemDetailsDisplay")]
+        [NUnit.Framework.CategoryAttribute("DAS11510")]
         public virtual void EvergreenJnr_DevicesList_CheckThatLastLogoffDateFieldIsNotDisplayedAtTheDeviceOwnerBlockOfDeviceDetails()
         {
             System.Exception lastException = null;

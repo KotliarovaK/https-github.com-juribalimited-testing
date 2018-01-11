@@ -17,39 +17,35 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_ListPanel
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("TechTalk.SpecFlow", "2.1.0.0")]
     [System.Runtime.CompilerServices.CompilerGeneratedAttribute()]
-    [Microsoft.VisualStudio.TestTools.UnitTesting.TestClassAttribute()]
+    [NUnit.Framework.TestFixtureAttribute()]
+    [NUnit.Framework.DescriptionAttribute("CustomListDisplay")]
     public partial class CustomListDisplayFeature
     {
         
-        private static TechTalk.SpecFlow.ITestRunner testRunner;
+        private TechTalk.SpecFlow.ITestRunner testRunner;
         
-        [Microsoft.VisualStudio.TestTools.UnitTesting.ClassInitializeAttribute()]
-        public static void FeatureSetup(Microsoft.VisualStudio.TestTools.UnitTesting.TestContext testContext)
+        [NUnit.Framework.TestFixtureSetUpAttribute()]
+        public virtual void FeatureSetup()
         {
-            testRunner = TechTalk.SpecFlow.TestRunnerManager.GetTestRunner(null, 0);
+            testRunner = TechTalk.SpecFlow.TestRunnerManager.GetTestRunner();
             TechTalk.SpecFlow.FeatureInfo featureInfo = new TechTalk.SpecFlow.FeatureInfo(new System.Globalization.CultureInfo("en-US"), "CustomListDisplay", "\tRuns Custom List Creation block related tests", ProgrammingLanguage.CSharp, new string[] {
                         "retry:1"});
             testRunner.OnFeatureStart(featureInfo);
         }
         
-        [Microsoft.VisualStudio.TestTools.UnitTesting.ClassCleanupAttribute()]
-        public static void FeatureTearDown()
+        [NUnit.Framework.TestFixtureTearDownAttribute()]
+        public virtual void FeatureTearDown()
         {
             testRunner.OnFeatureEnd();
             testRunner = null;
         }
         
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestInitializeAttribute()]
+        [NUnit.Framework.SetUpAttribute()]
         public virtual void TestInitialize()
         {
-            if (((testRunner.FeatureContext != null) 
-                        && (testRunner.FeatureContext.FeatureInfo.Title != "CustomListDisplay")))
-            {
-                DashworksTestAutomation.Tests.EvergreenJnr_ListPanel.CustomListDisplayFeature.FeatureSetup(null);
-            }
         }
         
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCleanupAttribute()]
+        [NUnit.Framework.TearDownAttribute()]
         public virtual void ScenarioTearDown()
         {
             testRunner.OnScenarioEnd();
@@ -71,15 +67,14 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_ListPanel
             testRunner.Then("Evergreen Dashboards page should be displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
         }
         
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestMethodAttribute()]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.DescriptionAttribute("EvergreenJnr_DevicesList_CheckThatCustomListCreationBlockIsNotDisplayedWhenDeleti" +
+        [NUnit.Framework.TestAttribute()]
+        [NUnit.Framework.DescriptionAttribute("EvergreenJnr_DevicesList_CheckThatCustomListCreationBlockIsNotDisplayedWhenDeleti" +
             "ngAFilterInDefaultList")]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("FeatureTitle", "CustomListDisplay")]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("Evergreen")]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("Devices")]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("EvergreenJnr_ListPanel")]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("CustomListDisplay")]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("DAS11003")]
+        [NUnit.Framework.CategoryAttribute("Evergreen")]
+        [NUnit.Framework.CategoryAttribute("Devices")]
+        [NUnit.Framework.CategoryAttribute("EvergreenJnr_ListPanel")]
+        [NUnit.Framework.CategoryAttribute("CustomListDisplay")]
+        [NUnit.Framework.CategoryAttribute("DAS11003")]
         public virtual void EvergreenJnr_DevicesList_CheckThatCustomListCreationBlockIsNotDisplayedWhenDeletingAFilterInDefaultList()
         {
             System.Exception lastException = null;
@@ -133,15 +128,14 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_ListPanel
             this.ScenarioCleanup();
         }
         
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestMethodAttribute()]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.DescriptionAttribute("EvergreenJnr_DevicesList_CheckThatCustomListCreationBlockIsNotDisplayedWhenReseti" +
+        [NUnit.Framework.TestAttribute()]
+        [NUnit.Framework.DescriptionAttribute("EvergreenJnr_DevicesList_CheckThatCustomListCreationBlockIsNotDisplayedWhenReseti" +
             "ngAFilterInDefaultList")]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("FeatureTitle", "CustomListDisplay")]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("Evergreen")]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("Devices")]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("EvergreenJnr_ListPanel")]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("CustomListDisplay")]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("DAS11003")]
+        [NUnit.Framework.CategoryAttribute("Evergreen")]
+        [NUnit.Framework.CategoryAttribute("Devices")]
+        [NUnit.Framework.CategoryAttribute("EvergreenJnr_ListPanel")]
+        [NUnit.Framework.CategoryAttribute("CustomListDisplay")]
+        [NUnit.Framework.CategoryAttribute("DAS11003")]
         public virtual void EvergreenJnr_DevicesList_CheckThatCustomListCreationBlockIsNotDisplayedWhenResetingAFilterInDefaultList()
         {
             System.Exception lastException = null;
@@ -195,16 +189,15 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_ListPanel
             this.ScenarioCleanup();
         }
         
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestMethodAttribute()]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.DescriptionAttribute("EvergreenJnr_DevicesList_CheckThatCustomListCreationBlockIsNotDisplayedWhenDeleti" +
+        [NUnit.Framework.TestAttribute()]
+        [NUnit.Framework.DescriptionAttribute("EvergreenJnr_DevicesList_CheckThatCustomListCreationBlockIsNotDisplayedWhenDeleti" +
             "ngAFilterInCustomList")]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("FeatureTitle", "CustomListDisplay")]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("Evergreen")]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("Devices")]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("EvergreenJnr_ListPanel")]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("CustomListDisplay")]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("DAS11017")]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("Delete_Newly_Created_List")]
+        [NUnit.Framework.CategoryAttribute("Evergreen")]
+        [NUnit.Framework.CategoryAttribute("Devices")]
+        [NUnit.Framework.CategoryAttribute("EvergreenJnr_ListPanel")]
+        [NUnit.Framework.CategoryAttribute("CustomListDisplay")]
+        [NUnit.Framework.CategoryAttribute("DAS11017")]
+        [NUnit.Framework.CategoryAttribute("Delete_Newly_Created_List")]
         public virtual void EvergreenJnr_DevicesList_CheckThatCustomListCreationBlockIsNotDisplayedWhenDeletingAFilterInCustomList()
         {
             System.Exception lastException = null;
@@ -272,16 +265,15 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_ListPanel
             this.ScenarioCleanup();
         }
         
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestMethodAttribute()]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.DescriptionAttribute("EvergreenJnr_DevicesList_CheckThatCustomListCreationBlockIsNotDisplayedWhenReseti" +
+        [NUnit.Framework.TestAttribute()]
+        [NUnit.Framework.DescriptionAttribute("EvergreenJnr_DevicesList_CheckThatCustomListCreationBlockIsNotDisplayedWhenReseti" +
             "ngAFilterInCustomList")]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("FeatureTitle", "CustomListDisplay")]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("Evergreen")]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("Devices")]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("EvergreenJnr_ListPanel")]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("CustomListDisplay")]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("DAS11017")]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("Delete_Newly_Created_List")]
+        [NUnit.Framework.CategoryAttribute("Evergreen")]
+        [NUnit.Framework.CategoryAttribute("Devices")]
+        [NUnit.Framework.CategoryAttribute("EvergreenJnr_ListPanel")]
+        [NUnit.Framework.CategoryAttribute("CustomListDisplay")]
+        [NUnit.Framework.CategoryAttribute("DAS11017")]
+        [NUnit.Framework.CategoryAttribute("Delete_Newly_Created_List")]
         public virtual void EvergreenJnr_DevicesList_CheckThatCustomListCreationBlockIsNotDisplayedWhenResetingAFilterInCustomList()
         {
             System.Exception lastException = null;
@@ -347,14 +339,13 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_ListPanel
             this.ScenarioCleanup();
         }
         
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestMethodAttribute()]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.DescriptionAttribute("EvergreenJnr_DevicesList_CheckThatSearchDoesNotTriggerNewCustomList")]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("FeatureTitle", "CustomListDisplay")]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("Evergreen")]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("Devices")]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("EvergreenJnr_ListPanel")]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("CustomListDisplay")]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("DAS10998")]
+        [NUnit.Framework.TestAttribute()]
+        [NUnit.Framework.DescriptionAttribute("EvergreenJnr_DevicesList_CheckThatSearchDoesNotTriggerNewCustomList")]
+        [NUnit.Framework.CategoryAttribute("Evergreen")]
+        [NUnit.Framework.CategoryAttribute("Devices")]
+        [NUnit.Framework.CategoryAttribute("EvergreenJnr_ListPanel")]
+        [NUnit.Framework.CategoryAttribute("CustomListDisplay")]
+        [NUnit.Framework.CategoryAttribute("DAS10998")]
         public virtual void EvergreenJnr_DevicesList_CheckThatSearchDoesNotTriggerNewCustomList()
         {
             System.Exception lastException = null;
@@ -405,15 +396,14 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_ListPanel
             this.ScenarioCleanup();
         }
         
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestMethodAttribute()]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.DescriptionAttribute("EvergreenJnr_DevicesList_CheckThatNewListCreatedMessageForStaticListIsDisplayed")]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("FeatureTitle", "CustomListDisplay")]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("Evergreen")]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("Devices")]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("EvergreenJnr_ListPanel")]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("CustomListDisplay")]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("DAS11081")]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("Delete_Newly_Created_List")]
+        [NUnit.Framework.TestAttribute()]
+        [NUnit.Framework.DescriptionAttribute("EvergreenJnr_DevicesList_CheckThatNewListCreatedMessageForStaticListIsDisplayed")]
+        [NUnit.Framework.CategoryAttribute("Evergreen")]
+        [NUnit.Framework.CategoryAttribute("Devices")]
+        [NUnit.Framework.CategoryAttribute("EvergreenJnr_ListPanel")]
+        [NUnit.Framework.CategoryAttribute("CustomListDisplay")]
+        [NUnit.Framework.CategoryAttribute("DAS11081")]
+        [NUnit.Framework.CategoryAttribute("Delete_Newly_Created_List")]
         public virtual void EvergreenJnr_DevicesList_CheckThatNewListCreatedMessageForStaticListIsDisplayed()
         {
             System.Exception lastException = null;
@@ -466,16 +456,15 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_ListPanel
             this.ScenarioCleanup();
         }
         
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestMethodAttribute()]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.DescriptionAttribute("EvergreenJnr_UsersList_CheckThatListsIsDisplayedInAlphabeticalOrder")]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("FeatureTitle", "CustomListDisplay")]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("Evergreen")]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("Users")]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("EvergreenJnr_ListPanel")]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("CustomListDisplay")]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("DAS11005")]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("DAS11489")]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("Delete_Newly_Created_List")]
+        [NUnit.Framework.TestAttribute()]
+        [NUnit.Framework.DescriptionAttribute("EvergreenJnr_UsersList_CheckThatListsIsDisplayedInAlphabeticalOrder")]
+        [NUnit.Framework.CategoryAttribute("Evergreen")]
+        [NUnit.Framework.CategoryAttribute("Users")]
+        [NUnit.Framework.CategoryAttribute("EvergreenJnr_ListPanel")]
+        [NUnit.Framework.CategoryAttribute("CustomListDisplay")]
+        [NUnit.Framework.CategoryAttribute("DAS11005")]
+        [NUnit.Framework.CategoryAttribute("DAS11489")]
+        [NUnit.Framework.CategoryAttribute("Delete_Newly_Created_List")]
         public virtual void EvergreenJnr_UsersList_CheckThatListsIsDisplayedInAlphabeticalOrder()
         {
             System.Exception lastException = null;
@@ -590,15 +579,14 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_ListPanel
             this.ScenarioCleanup();
         }
         
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestMethodAttribute()]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.DescriptionAttribute("EvergreenJnr_UsersList_CheckThatCustomListCreationBlockIsNotDisplayedWhenUserOpen" +
+        [NUnit.Framework.TestAttribute()]
+        [NUnit.Framework.DescriptionAttribute("EvergreenJnr_UsersList_CheckThatCustomListCreationBlockIsNotDisplayedWhenUserOpen" +
             "sActionsPanel")]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("FeatureTitle", "CustomListDisplay")]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("Evergreen")]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("Users")]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("EvergreenJnr_ListPanel")]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("CustomListDisplay")]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("DAS11018")]
+        [NUnit.Framework.CategoryAttribute("Evergreen")]
+        [NUnit.Framework.CategoryAttribute("Users")]
+        [NUnit.Framework.CategoryAttribute("EvergreenJnr_ListPanel")]
+        [NUnit.Framework.CategoryAttribute("CustomListDisplay")]
+        [NUnit.Framework.CategoryAttribute("DAS11018")]
         public virtual void EvergreenJnr_UsersList_CheckThatCustomListCreationBlockIsNotDisplayedWhenUserOpensActionsPanel()
         {
             System.Exception lastException = null;
@@ -656,15 +644,14 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_ListPanel
             this.ScenarioCleanup();
         }
         
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestMethodAttribute()]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.DescriptionAttribute("EvergreenJnr_UsersList_CheckThatCustomListCreationBlockIsNotDisplayedAfterStartTy" +
+        [NUnit.Framework.TestAttribute()]
+        [NUnit.Framework.DescriptionAttribute("EvergreenJnr_UsersList_CheckThatCustomListCreationBlockIsNotDisplayedAfterStartTy" +
             "pingAListName")]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("FeatureTitle", "CustomListDisplay")]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("Evergreen")]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("Users")]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("EvergreenJnr_ListPanel")]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("CustomListDisplay")]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("DAS11018")]
+        [NUnit.Framework.CategoryAttribute("Evergreen")]
+        [NUnit.Framework.CategoryAttribute("Users")]
+        [NUnit.Framework.CategoryAttribute("EvergreenJnr_ListPanel")]
+        [NUnit.Framework.CategoryAttribute("CustomListDisplay")]
+        [NUnit.Framework.CategoryAttribute("DAS11018")]
         public virtual void EvergreenJnr_UsersList_CheckThatCustomListCreationBlockIsNotDisplayedAfterStartTypingAListName()
         {
             System.Exception lastException = null;
@@ -723,14 +710,13 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_ListPanel
             this.ScenarioCleanup();
         }
         
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestMethodAttribute()]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.DescriptionAttribute("EvergreenJnr_UsersList_CheckThatSaveButtonIsInactiveInCustomListCreationBlock")]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("FeatureTitle", "CustomListDisplay")]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("Evergreen")]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("Users")]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("EvergreenJnr_ListPanel")]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("CustomListDisplay")]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("DAS11018")]
+        [NUnit.Framework.TestAttribute()]
+        [NUnit.Framework.DescriptionAttribute("EvergreenJnr_UsersList_CheckThatSaveButtonIsInactiveInCustomListCreationBlock")]
+        [NUnit.Framework.CategoryAttribute("Evergreen")]
+        [NUnit.Framework.CategoryAttribute("Users")]
+        [NUnit.Framework.CategoryAttribute("EvergreenJnr_ListPanel")]
+        [NUnit.Framework.CategoryAttribute("CustomListDisplay")]
+        [NUnit.Framework.CategoryAttribute("DAS11018")]
         public virtual void EvergreenJnr_UsersList_CheckThatSaveButtonIsInactiveInCustomListCreationBlock()
         {
             System.Exception lastException = null;
@@ -798,16 +784,15 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_ListPanel
             this.ScenarioCleanup();
         }
         
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestMethodAttribute()]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.DescriptionAttribute("EvergreenJnr_DevicesList_CheckTheSortOrderIsSavedForExistingListAndNotDeletedAfte" +
+        [NUnit.Framework.TestAttribute()]
+        [NUnit.Framework.DescriptionAttribute("EvergreenJnr_DevicesList_CheckTheSortOrderIsSavedForExistingListAndNotDeletedAfte" +
             "rClickingResetButtonInColumnsMenu")]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("FeatureTitle", "CustomListDisplay")]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("Evergreen")]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("Devices")]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("EvergreenJnr_ListPanel")]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("CustomListDisplay")]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("DAS11394")]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("Delete_Newly_Created_List")]
+        [NUnit.Framework.CategoryAttribute("Evergreen")]
+        [NUnit.Framework.CategoryAttribute("Devices")]
+        [NUnit.Framework.CategoryAttribute("EvergreenJnr_ListPanel")]
+        [NUnit.Framework.CategoryAttribute("CustomListDisplay")]
+        [NUnit.Framework.CategoryAttribute("DAS11394")]
+        [NUnit.Framework.CategoryAttribute("Delete_Newly_Created_List")]
         public virtual void EvergreenJnr_DevicesList_CheckTheSortOrderIsSavedForExistingListAndNotDeletedAfterClickingResetButtonInColumnsMenu()
         {
             System.Exception lastException = null;
@@ -890,16 +875,15 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_ListPanel
             this.ScenarioCleanup();
         }
         
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestMethodAttribute()]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.DescriptionAttribute("EvergreenJnr_DevicesList_CheckThatNewlySavedListIsCreatedWithTheCorrectColumnsAnd" +
+        [NUnit.Framework.TestAttribute()]
+        [NUnit.Framework.DescriptionAttribute("EvergreenJnr_DevicesList_CheckThatNewlySavedListIsCreatedWithTheCorrectColumnsAnd" +
             "SortsAndTheSameRowsOfData")]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("FeatureTitle", "CustomListDisplay")]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("Evergreen")]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("Devices")]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("EvergreenJnr_ListPanel")]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("CustomListDisplay")]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("DAS11011")]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("Delete_Newly_Created_List")]
+        [NUnit.Framework.CategoryAttribute("Evergreen")]
+        [NUnit.Framework.CategoryAttribute("Devices")]
+        [NUnit.Framework.CategoryAttribute("EvergreenJnr_ListPanel")]
+        [NUnit.Framework.CategoryAttribute("CustomListDisplay")]
+        [NUnit.Framework.CategoryAttribute("DAS11011")]
+        [NUnit.Framework.CategoryAttribute("Delete_Newly_Created_List")]
         public virtual void EvergreenJnr_DevicesList_CheckThatNewlySavedListIsCreatedWithTheCorrectColumnsAndSortsAndTheSameRowsOfData()
         {
             System.Exception lastException = null;
@@ -991,15 +975,14 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_ListPanel
             this.ScenarioCleanup();
         }
         
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestMethodAttribute()]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.DescriptionAttribute("EvergreenJnr_DevicesList_CheckThatSortingWillBeWorkForExistingSavedStaticLists")]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("FeatureTitle", "CustomListDisplay")]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("Evergreen")]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("Devices")]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("EvergreenJnr_ListPanel")]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("CustomListDisplay")]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("DAS10870")]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("Delete_Newly_Created_List")]
+        [NUnit.Framework.TestAttribute()]
+        [NUnit.Framework.DescriptionAttribute("EvergreenJnr_DevicesList_CheckThatSortingWillBeWorkForExistingSavedStaticLists")]
+        [NUnit.Framework.CategoryAttribute("Evergreen")]
+        [NUnit.Framework.CategoryAttribute("Devices")]
+        [NUnit.Framework.CategoryAttribute("EvergreenJnr_ListPanel")]
+        [NUnit.Framework.CategoryAttribute("CustomListDisplay")]
+        [NUnit.Framework.CategoryAttribute("DAS10870")]
+        [NUnit.Framework.CategoryAttribute("Delete_Newly_Created_List")]
         public virtual void EvergreenJnr_DevicesList_CheckThatSortingWillBeWorkForExistingSavedStaticLists()
         {
             System.Exception lastException = null;
@@ -1075,15 +1058,14 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_ListPanel
             this.ScenarioCleanup();
         }
         
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestMethodAttribute()]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.DescriptionAttribute("EvergreenJnr_DevicesList_CheckThatSortingWillBeWorkForExistingSavedDynamicLists")]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("FeatureTitle", "CustomListDisplay")]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("Evergreen")]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("Devices")]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("EvergreenJnr_ListPanel")]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("CustomListDisplay")]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("DAS10870")]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("Delete_Newly_Created_List")]
+        [NUnit.Framework.TestAttribute()]
+        [NUnit.Framework.DescriptionAttribute("EvergreenJnr_DevicesList_CheckThatSortingWillBeWorkForExistingSavedDynamicLists")]
+        [NUnit.Framework.CategoryAttribute("Evergreen")]
+        [NUnit.Framework.CategoryAttribute("Devices")]
+        [NUnit.Framework.CategoryAttribute("EvergreenJnr_ListPanel")]
+        [NUnit.Framework.CategoryAttribute("CustomListDisplay")]
+        [NUnit.Framework.CategoryAttribute("DAS10870")]
+        [NUnit.Framework.CategoryAttribute("Delete_Newly_Created_List")]
         public virtual void EvergreenJnr_DevicesList_CheckThatSortingWillBeWorkForExistingSavedDynamicLists()
         {
             System.Exception lastException = null;
@@ -1143,15 +1125,14 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_ListPanel
             this.ScenarioCleanup();
         }
         
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestMethodAttribute()]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.DescriptionAttribute("EvergreenJnr_DevicesList_CheckThatEditListMenuNotDisplayedForActiveList")]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("FeatureTitle", "CustomListDisplay")]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("Evergreen")]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("Devices")]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("EvergreenJnr_ListPanel")]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("CustomListDisplay")]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("DAS10914")]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("Delete_Newly_Created_List")]
+        [NUnit.Framework.TestAttribute()]
+        [NUnit.Framework.DescriptionAttribute("EvergreenJnr_DevicesList_CheckThatEditListMenuNotDisplayedForActiveList")]
+        [NUnit.Framework.CategoryAttribute("Evergreen")]
+        [NUnit.Framework.CategoryAttribute("Devices")]
+        [NUnit.Framework.CategoryAttribute("EvergreenJnr_ListPanel")]
+        [NUnit.Framework.CategoryAttribute("CustomListDisplay")]
+        [NUnit.Framework.CategoryAttribute("DAS10914")]
+        [NUnit.Framework.CategoryAttribute("Delete_Newly_Created_List")]
         public virtual void EvergreenJnr_DevicesList_CheckThatEditListMenuNotDisplayedForActiveList()
         {
             System.Exception lastException = null;
@@ -1252,16 +1233,15 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_ListPanel
             this.ScenarioCleanup();
         }
         
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestMethodAttribute()]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.DescriptionAttribute("EvergreenJnr_DevicesList_CheckThatEditListMenuNotDisplayedForDifferentFilterTypes" +
+        [NUnit.Framework.TestAttribute()]
+        [NUnit.Framework.DescriptionAttribute("EvergreenJnr_DevicesList_CheckThatEditListMenuNotDisplayedForDifferentFilterTypes" +
             "")]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("FeatureTitle", "CustomListDisplay")]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("Evergreen")]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("Devices")]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("EvergreenJnr_ListPanel")]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("CustomListDisplay")]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("DAS11026")]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("Delete_Newly_Created_List")]
+        [NUnit.Framework.CategoryAttribute("Evergreen")]
+        [NUnit.Framework.CategoryAttribute("Devices")]
+        [NUnit.Framework.CategoryAttribute("EvergreenJnr_ListPanel")]
+        [NUnit.Framework.CategoryAttribute("CustomListDisplay")]
+        [NUnit.Framework.CategoryAttribute("DAS11026")]
+        [NUnit.Framework.CategoryAttribute("Delete_Newly_Created_List")]
         public virtual void EvergreenJnr_DevicesList_CheckThatEditListMenuNotDisplayedForDifferentFilterTypes()
         {
             System.Exception lastException = null;
@@ -1383,16 +1363,15 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_ListPanel
             this.ScenarioCleanup();
         }
         
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestMethodAttribute()]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.DescriptionAttribute("EvergreenJnr_DevicesList_CheckThatDatabaseErrorOccurringOccurringWhenAttemptingTo" +
+        [NUnit.Framework.TestAttribute()]
+        [NUnit.Framework.DescriptionAttribute("EvergreenJnr_DevicesList_CheckThatDatabaseErrorOccurringOccurringWhenAttemptingTo" +
             "SaveListsInEvergreenAreNotDisplayed")]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("FeatureTitle", "CustomListDisplay")]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("Evergreen")]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("Devices")]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("EvergreenJnr_ListPanel")]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("CustomListDisplay")]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("DAS10647")]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("Delete_Newly_Created_List")]
+        [NUnit.Framework.CategoryAttribute("Evergreen")]
+        [NUnit.Framework.CategoryAttribute("Devices")]
+        [NUnit.Framework.CategoryAttribute("EvergreenJnr_ListPanel")]
+        [NUnit.Framework.CategoryAttribute("CustomListDisplay")]
+        [NUnit.Framework.CategoryAttribute("DAS10647")]
+        [NUnit.Framework.CategoryAttribute("Delete_Newly_Created_List")]
         public virtual void EvergreenJnr_DevicesList_CheckThatDatabaseErrorOccurringOccurringWhenAttemptingToSaveListsInEvergreenAreNotDisplayed()
         {
             System.Exception lastException = null;
@@ -1446,16 +1425,15 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_ListPanel
             this.ScenarioCleanup();
         }
         
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestMethodAttribute()]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.DescriptionAttribute("EvergreenJnr_DevicesLists_CheckThatAnotherUserCanEditsAndSavesASharedListWithSele" +
+        [NUnit.Framework.TestAttribute()]
+        [NUnit.Framework.DescriptionAttribute("EvergreenJnr_DevicesLists_CheckThatAnotherUserCanEditsAndSavesASharedListWithSele" +
             "ctedColumnsWithoutErrors")]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("FeatureTitle", "CustomListDisplay")]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("Evergreen")]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("Devices")]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("EvergreenJnr_ListPanel")]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("CustomListDisplay")]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("DAS11465")]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("Delete_Newly_Created_List")]
+        [NUnit.Framework.CategoryAttribute("Evergreen")]
+        [NUnit.Framework.CategoryAttribute("Devices")]
+        [NUnit.Framework.CategoryAttribute("EvergreenJnr_ListPanel")]
+        [NUnit.Framework.CategoryAttribute("CustomListDisplay")]
+        [NUnit.Framework.CategoryAttribute("DAS11465")]
+        [NUnit.Framework.CategoryAttribute("Delete_Newly_Created_List")]
         public virtual void EvergreenJnr_DevicesLists_CheckThatAnotherUserCanEditsAndSavesASharedListWithSelectedColumnsWithoutErrors()
         {
             System.Exception lastException = null;
@@ -1579,16 +1557,15 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_ListPanel
             this.ScenarioCleanup();
         }
         
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestMethodAttribute()]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.DescriptionAttribute("EvergreenJnr_DevicesLists_CheckThatAnotherUserCanEditsAndSavesASharedListWithSele" +
+        [NUnit.Framework.TestAttribute()]
+        [NUnit.Framework.DescriptionAttribute("EvergreenJnr_DevicesLists_CheckThatAnotherUserCanEditsAndSavesASharedListWithSele" +
             "ctedFiltersWithoutErrors")]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("FeatureTitle", "CustomListDisplay")]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("Evergreen")]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("Devices")]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("EvergreenJnr_ListPanel")]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("CustomListDisplay")]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("DAS11465")]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("Delete_Newly_Created_List")]
+        [NUnit.Framework.CategoryAttribute("Evergreen")]
+        [NUnit.Framework.CategoryAttribute("Devices")]
+        [NUnit.Framework.CategoryAttribute("EvergreenJnr_ListPanel")]
+        [NUnit.Framework.CategoryAttribute("CustomListDisplay")]
+        [NUnit.Framework.CategoryAttribute("DAS11465")]
+        [NUnit.Framework.CategoryAttribute("Delete_Newly_Created_List")]
         public virtual void EvergreenJnr_DevicesLists_CheckThatAnotherUserCanEditsAndSavesASharedListWithSelectedFiltersWithoutErrors()
         {
             System.Exception lastException = null;
@@ -1691,16 +1668,15 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_ListPanel
             this.ScenarioCleanup();
         }
         
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestMethodAttribute()]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.DescriptionAttribute("EvergreenJnr_DevicesLists_CheckThatAnotherUserCanEditsAndSavesASharedListWithSort" +
+        [NUnit.Framework.TestAttribute()]
+        [NUnit.Framework.DescriptionAttribute("EvergreenJnr_DevicesLists_CheckThatAnotherUserCanEditsAndSavesASharedListWithSort" +
             "ingWithoutErrors")]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("FeatureTitle", "CustomListDisplay")]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("Evergreen")]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("Devices")]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("EvergreenJnr_ListPanel")]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("CustomListDisplay")]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("DAS11465")]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("Delete_Newly_Created_List")]
+        [NUnit.Framework.CategoryAttribute("Evergreen")]
+        [NUnit.Framework.CategoryAttribute("Devices")]
+        [NUnit.Framework.CategoryAttribute("EvergreenJnr_ListPanel")]
+        [NUnit.Framework.CategoryAttribute("CustomListDisplay")]
+        [NUnit.Framework.CategoryAttribute("DAS11465")]
+        [NUnit.Framework.CategoryAttribute("Delete_Newly_Created_List")]
         public virtual void EvergreenJnr_DevicesLists_CheckThatAnotherUserCanEditsAndSavesASharedListWithSortingWithoutErrors()
         {
             System.Exception lastException = null;
@@ -1785,15 +1761,14 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_ListPanel
             this.ScenarioCleanup();
         }
         
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestMethodAttribute()]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.DescriptionAttribute("EvergreenJnr_DevicesLists_CheckThatUserIsNotAbleToCreateListsWithSameName")]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("FeatureTitle", "CustomListDisplay")]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("Evergreen")]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("Devices")]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("EvergreenJnr_ListPanel")]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("CustomListDisplay")]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("DAS10988")]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("Delete_Newly_Created_List")]
+        [NUnit.Framework.TestAttribute()]
+        [NUnit.Framework.DescriptionAttribute("EvergreenJnr_DevicesLists_CheckThatUserIsNotAbleToCreateListsWithSameName")]
+        [NUnit.Framework.CategoryAttribute("Evergreen")]
+        [NUnit.Framework.CategoryAttribute("Devices")]
+        [NUnit.Framework.CategoryAttribute("EvergreenJnr_ListPanel")]
+        [NUnit.Framework.CategoryAttribute("CustomListDisplay")]
+        [NUnit.Framework.CategoryAttribute("DAS10988")]
+        [NUnit.Framework.CategoryAttribute("Delete_Newly_Created_List")]
         public virtual void EvergreenJnr_DevicesLists_CheckThatUserIsNotAbleToCreateListsWithSameName()
         {
             System.Exception lastException = null;

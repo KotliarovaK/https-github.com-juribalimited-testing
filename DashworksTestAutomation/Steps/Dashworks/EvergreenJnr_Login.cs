@@ -50,28 +50,23 @@ namespace DashworksTestAutomation.Steps.Dashworks
         [Given(@"User is logged in to the Evergreen")]
         public void GivenUserIsLoggedInToTheEvergreen()
         {
-            string file = Path.GetDirectoryName(Path.GetDirectoryName(System.IO.Directory.GetCurrentDirectory())) +
-                          @"\Resources\CorrectFile.png";
+            var user = GetFreeUserAndAddToUsedUsersList();
 
-            throw new Exception(file);
+            var restClient = new RestClient(UrlProvider.Url);
+            //Get cookies
+            HttpClientHelper client = new HttpClientHelper(user, restClient);
 
-            //var user = GetFreeUserAndAddToUsedUsersList();
+            //Init session
+            _driver.NagigateToURL(UrlProvider.Url);
 
-            //var restClient = new RestClient(UrlProvider.Url);
-            ////Get cookies
-            //HttpClientHelper client = new HttpClientHelper(user, restClient);
+            //Set cookies to browser
+            foreach (Cookie cookie in client._cookiesJar)
+            {
+                _driver.Manage().Cookies.AddCookie(cookie);
+            }
 
-            ////Init session
-            //_driver.NagigateToURL(UrlProvider.Url);
-
-            ////Set cookies to browser
-            //foreach (Cookie cookie in client._cookiesJar)
-            //{
-            //    _driver.Manage().Cookies.AddCookie(cookie);
-            //}
-
-            ////Open website
-            //_driver.NagigateToURL(UrlProvider.EvergreenUrl);
+            //Open website
+            _driver.NagigateToURL(UrlProvider.EvergreenUrl);
         }
 
         [When(@"User provides the Login and Password and clicks on the login button")]
