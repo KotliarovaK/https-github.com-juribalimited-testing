@@ -197,5 +197,14 @@ namespace DashworksTestAutomation.Pages.Evergreen
         {
             return Driver.FindElements(By.XPath(".//span[@class='text-container ng-star-inserted']"));
         }
+
+        public void SelectOperator(string operatorValue)
+        {
+            Driver.WaitWhileControlIsNotDisplayed(
+                By.XPath(".//div[@class='filter-panel']//div[@class='mat-select-trigger']"));
+            var selectbox =
+                Driver.FindElement(By.XPath(".//div[@class='filter-panel']//div[@class='mat-select-trigger']"));
+            Driver.SelectCustomSelectbox(selectbox, operatorValue);
+        }
     }
 }

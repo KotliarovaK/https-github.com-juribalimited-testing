@@ -295,3 +295,18 @@ Scenario: EvergreenJnr_ApplicationsList_CheckThat500ErrorInNotDisplayedWhenUserA
 	Then "Device Count (Installed)" filter is added to the list
 	Then "1,269" rows are displayed in the agGrid
 	Then "(Device Count (Installed) < 10)" text is displayed in filter container
+
+@Evergreen @Devices @EvergreenJnr_FilterFeature @FilterFunctionality @DAS11551
+Scenario Outline: EvergreenJnr_DevicesList_CheckThatEmptyNotEmptyOperatorsIsWorkedCorrectly
+	When User clicks "Devices" on the left-hand menu
+	Then "Devices" list should be displayed to the user
+	When User clicks the Filters button
+	Then Filters panel is displayed to the user
+	When user select "Application Name" filter
+	When User select "<OperatorValues>" Operator value
+	Then Associations panel is displayed in the filter
+
+Examples:
+	| OperatorValues |
+	| Empty          |
+	| Not Empty      |
