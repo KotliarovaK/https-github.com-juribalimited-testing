@@ -319,5 +319,11 @@ Scenario: EvergreenJnr_UsersList_CheckThatLDAPFilterCategoryHaveAddColumnCheckbo
 	| <SelectedCheckboxes> |
 
 Examples:
-	| FilterName     | SelectedCheckboxes |
-	| accountexpires |                    |
+	| FilterName             | SelectedValue    | EnteredText         | SelectedCheckboxes                |
+	| accountexpires         | Eqels            | 9223372036854775807 | Add accountexpires column         |
+	| badpasswordtime        | Contains         | 13146               | Add badpasswordtime column        |
+	| admincount             | Empty            |                     | Add admincount column             |
+	| employeeid             | Begins with      | ZY or ZX            | Add employeeid column             |
+	| whencreated            | Does not contain | 2017                | Add whencreated column            |
+	| department             | Ends with        | A Really Long Name  | Add Department column             |
+	| iscriticalsystemobject | Not empty        |                     | Add iscriticalsystemobject column |
