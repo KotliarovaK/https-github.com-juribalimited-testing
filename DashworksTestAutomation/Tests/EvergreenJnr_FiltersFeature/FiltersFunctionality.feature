@@ -306,3 +306,18 @@ Scenario: EvergreenJnr_MailboxesList_CheckThatAddOwnerDepartmentCodeColumnCheckb
 	Then checkboxes are displayed to the User:
 	| SelectedCheckboxes               |
 	| Add Owner Department Code column |
+
+@Evergreen @Users @EvergreenJnr_FilterFeature @FilterFunctionality @DAS11577
+Scenario: EvergreenJnr_UsersList_CheckThatLDAPFilterCategoryHaveAddColumnCheckboxes
+	When User clicks "Users" on the left-hand menu
+	Then "Users" list should be displayed to the user
+	When User clicks the Filters button
+	Then Filters panel is displayed to the user
+	When user select "<FilterName>" filter
+	Then checkboxes are displayed to the User:
+	| SelectedCheckboxes   |
+	| <SelectedCheckboxes> |
+
+Examples:
+	| FilterName     | SelectedCheckboxes |
+	| accountexpires |                    |
