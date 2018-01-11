@@ -50,13 +50,25 @@ namespace DashworksTestAutomation.Steps.Dashworks
             filterElement.SearchTextbox.SendKeys(searchedText);
         }
 
-        [When(@"User enters ""(.*)"" text in Search field at selected Filter")]
-        public void WhenUserEntersTextInSearchFieldAtSelectedFilter(string searchedText)
+        [When(@"User enters ""(.*)"" text in Search field at selected Lookup Filter")]
+        public void WhenUserEntersTextInSearchFieldAtSelectedLookupFilter(string searchedText)
         {
             var filterElement = _driver.NowAt<FiltersElement>();
             _driver.WaitWhileControlIsNotDisplayed<FiltersElement>(() => filterElement.LookupFilterSearchTextbox);
             filterElement.LookupFilterSearchTextbox.Clear();
             filterElement.LookupFilterSearchTextbox.SendKeys(searchedText);
+        }
+
+        [When(@"User enters ""(.*)"" text in Search field at selected Filter")]
+        public void WhenUserEntersTextInSearchFieldAtSelectedFilter(string searchedText)
+        {
+            var filterElement = _driver.NowAt<FiltersElement>();
+            if (!String.IsNullOrWhiteSpace(searchedText))
+            {
+                _driver.WaitWhileControlIsNotDisplayed<FiltersElement>(() => filterElement.FilterSearchTextbox);
+                filterElement.FilterSearchTextbox.Clear();
+                filterElement.FilterSearchTextbox.SendKeys(searchedText);
+            }
         }
 
         [When(@"User enters ""(.*)"" in Association search field")]
@@ -93,6 +105,13 @@ namespace DashworksTestAutomation.Steps.Dashworks
             var filterElement = _driver.NowAt<FiltersElement>();
             Assert.IsFalse(filterElement.CheckFilterAvailability(filterName),
                 $"{filterName} is available in the search");
+        }
+
+        [When(@"User select ""(.*)"" Operator value")]
+        public void WhenUserSelectOperatorValue(string operatorValue)
+        {
+            var filterElement = _driver.NowAt<FiltersElement>();
+            filterElement.SelectOperator(operatorValue);
         }
 
         [When(@"User have create ""(.*)"" Values filter with column and following options:")]
@@ -473,6 +492,13 @@ namespace DashworksTestAutomation.Steps.Dashworks
             {
                 filterElement.GetAssociationsList().Select(value => value.Text).ToList().Contains(row.Values.First());
             }
+        }
+
+        [Then(@"Associations panel is displayed in the filter")]
+        public void ThenAssociationsPanelIsDisplayedInTheFilter()
+        {
+            var filterElement = _driver.NowAt<FiltersElement>();
+            Assert.IsTrue(filterElement.AssociationSearchTextbox.Displayed(), "Associations panel is not displayed");
         }
 
         [Then(@"""(.*)"" is displayed in added filter info")]
