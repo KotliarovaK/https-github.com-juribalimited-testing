@@ -5,6 +5,7 @@ using OpenQA.Selenium.Firefox;
 using OpenQA.Selenium.IE;
 using OpenQA.Selenium.Remote;
 using System;
+using DashworksTestAutomation.Utils;
 
 namespace DashworksTestAutomation.Base
 {
@@ -14,55 +15,79 @@ namespace DashworksTestAutomation.Base
 
         public RemoteWebDriver CreateBrowserDriver()
         {
-            //#if DEBUG
-            //            return new ChromeDriver();
-            //#else
-            if (Boolean.Parse(Browser.UserRemoteDriver))
+            switch (Browser.RemoteDriver)
             {
-                switch (Browser.Type)
-                {
-                    case "Chrome":
-                        var chromeOptions = new ChromeOptions();
-                        return new RemoteWebDriver(new Uri(Browser.HubUri), chromeOptions);
+                case "local":
+                    return CreateLocalDriver();
+                case "remote":
+                    return CreateRemoteDriver();
+                case "sauceLabs":
+                    return CreateSauceLabsDriver();
 
-                    case "Firefox":
-                        var firefoxOptions = new FirefoxOptions();
-                        return new RemoteWebDriver(new Uri(Browser.HubUri), firefoxOptions);
-
-                    case "InternetExplorer":
-                        var ieOptions = new InternetExplorerOptions();
-                        return new RemoteWebDriver(new Uri(Browser.HubUri), ieOptions);
-
-                    case "Edge":
-                        var edgeOptions = new EdgeOptions();
-                        return new RemoteWebDriver(new Uri(Browser.HubUri), edgeOptions);
-
-                    default:
-                        throw new Exception($"Browser type '{Browser.Type}' was not identified");
-                }
+                default:
+                    throw new Exception($"Browser type '{Browser.Type}' was not identified");
             }
-            else
+        }
+
+        private RemoteWebDriver CreateLocalDriver()
+        {
+            switch (Browser.Type)
             {
-                switch (Browser.Type)
-                {
-                    case "Chrome":
-                        return new ChromeDriver();
+                case "chrome":
+                    return new ChromeDriver();
 
-                    case "Firefox":
-                        return new FirefoxDriver();
+                case "firefox":
+                    return new FirefoxDriver();
 
-                    case "InternetExplorer":
-                        return new InternetExplorerDriver();
+                case "internet explorer":
+                    return new InternetExplorerDriver();
 
-                    case "Edge":
-                        return new EdgeDriver();
+                case "edge":
+                    return new EdgeDriver();
 
-                    default:
-                        throw new Exception($"Browser type '{Browser.Type}' was not identified");
-                }
+                default:
+                    throw new Exception($"Browser type '{Browser.Type}' was not identified");
             }
+        }
 
-            //#endif
+        private RemoteWebDriver CreateRemoteDriver()
+        {
+            switch (Browser.Type)
+            {
+                case "chrome":
+                    var chromeOptions = new ChromeOptions();
+                    return new RemoteWebDriver(new Uri(Browser.HubUri), chromeOptions);
+
+                case "firefox":
+                    var firefoxOptions = new FirefoxOptions();
+                    return new RemoteWebDriver(new Uri(Browser.HubUri), firefoxOptions);
+
+                case "internet explorer":
+                    var ieOptions = new InternetExplorerOptions();
+                    return new RemoteWebDriver(new Uri(Browser.HubUri), ieOptions);
+
+                case "edge":
+                    var edgeOptions = new EdgeOptions();
+                    return new RemoteWebDriver(new Uri(Browser.HubUri), edgeOptions);
+
+                default:
+                    throw new Exception($"Browser type '{Browser.Type}' was not identified");
+            }
+        }
+
+        private RemoteWebDriver CreateSauceLabsDriver()
+        {
+            DesiredCapabilities capabilities = new DesiredCapabilities();
+            capabilities.SetCapability(CapabilityType.BrowserName, Browser.Type);
+            capabilities.SetCapability(CapabilityType.Version, Browser.Version);
+            capabilities.SetCapability(CapabilityType.Platform, Browser.Platform);
+            capabilities.SetCapability("screenResolution", Browser.Resolution);
+
+            capabilities.SetCapability("username",SauceLabsCredentialsProvider.Username);
+            capabilities.SetCapability("accessKey", SauceLabsCredentialsProvider.AccessKey);
+
+            var driver = new CustomRemoteWebDriver(new Uri(Browser.HubUri), capabilities, TimeSpan.FromSeconds(60));
+            return driver;
         }
     }
 }
