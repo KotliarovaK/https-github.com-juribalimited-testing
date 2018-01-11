@@ -77,7 +77,7 @@ Scenario: EvergreenJnr_DevicesList_CheckThat500ErrorPageIsNotDisplayedAfterRemov
 	Then ColumnName is removed from the list
 	| ColumnName |
 	| Build Date |
-	Then data in table is sorted by 'Boot Up Date' column in ascending order
+	Then data in table is sorted by 'Boot Up Date' column in descending order
 	When User removes sorted column by URL
 	| ColumnName   |
 	| Boot Up Date |
@@ -270,7 +270,7 @@ Scenario: EvergreenJnr_DevicesList_CheckThatRemovingColumnsFromUrlIsWorksCorrect
 	When User clicks "Devices" on the left-hand menu
 	Then "Devices" list should be displayed to the user
 	When User click on 'Hostname' column header
-	Then data in table is sorted by 'Hostname' column in descending order
+	Then data in table is sorted by 'Hostname' column in ascending order
 	When User create custom list with "TestList" name
 	#Workaround for DAS-11570. Remove after fix
 	And User navigates to the "TestList" list
@@ -297,7 +297,7 @@ Scenario: EvergreenJnr_DevicesList_CheckThatRemovingColumnAndFilterFromUrlWorksC
 	When User clicks "Devices" on the left-hand menu
 	Then "Devices" list should be displayed to the user
 	When User click on 'Hostname' column header
-	Then data in table is sorted by 'Hostname' column in descending order
+	Then data in table is sorted by 'Hostname' column in ascending order
 	When User create custom list with "TestList" name
 	#Workaround for DAS-11570. Remove after fix
 	And User navigates to the "TestList" list
@@ -333,7 +333,7 @@ Scenario: EvergreenJnr_DevicesList_CheckThatRemovingColumnAndFilterAndCustomList
 	When User clicks "Devices" on the left-hand menu
 	Then "Devices" list should be displayed to the user
 	When User click on 'Hostname' column header
-	Then data in table is sorted by 'Hostname' column in descending order
+	Then data in table is sorted by 'Hostname' column in ascending order
 	When User create custom list with "TestList" name
 	#Workaround for DAS-11570. Remove after fix
 	And User navigates to the "TestList" list

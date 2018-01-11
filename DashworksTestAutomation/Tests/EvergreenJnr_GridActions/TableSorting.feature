@@ -94,7 +94,7 @@ Scenario: EvergreenJnr_UsersList_CheckSortByDateFunctionality
 	| MigrationP: Migrated Date |
 	Then User enters SearchCriteria into the agGrid Search Box and the correct NumberOfRows are returned
 	| SearchCriteria | NumberOfRows |
-	| Tim            | 94           |
+	| Tim            | 148          |
 	When User click on 'Last Logon Date' column header
 	Then data in table is sorted by 'Last Logon Date' column in descending order
 	When User click on 'Last Logon Date' column header
@@ -118,5 +118,5 @@ Scenario: EvergreenJnr_DevicesList_CheckThat500ErrorIsNotDisplayedWhenSortingOwn
 	| Owner Compliance |
 	Then "17,225" rows are displayed in the agGrid
 	When User click on 'Owner Compliance' column header
-	Then data in table is sorted by 'Owner Compliance' column in descending order
+	Then data in table is sorted by 'Owner Compliance' column in ascending order
 	Then "17,225" rows are displayed in the agGrid

@@ -16,16 +16,16 @@ Scenario: EvergreenJnr_UsersList_SelectAllCheckboxStatusCheckAfterSearch
 	Then The number of rows selected matches the number of rows of the main object list
 	Then User enters SearchCriteria into the agGrid Search Box and the correct NumberOfRows are returned
 	| SearchCriteria | NumberOfRows |
-	| alain          | 24           |
+	| alain          | 42           |
 	Then Select All selectbox is checked
-	Then "24" rows are displayed in the agGrid
+	Then "42" rows are displayed in the agGrid
 	Then "41335" selected rows are displayed in the Actions panel
 	When User is deselect all rows
 	And User select all rows
 	Then The number of rows selected matches the number of rows of the main object list
 	And Clearing the agGrid Search Box
 	Then Select All selectbox is checked
-	Then "24" selected rows are displayed in the Actions panel
+	Then "42" selected rows are displayed in the Actions panel
 
 @Evergreen @AllLists @Evergreen_ActionsPanel @AllCheckbox @DAS10775 @DAS10656
 Scenario Outline: EvergreenJnr_AllLists_CheckThatSelectAllCheckboxStatusAfterClosingActionPanel
@@ -44,7 +44,7 @@ Examples:
 	| Applications |
 	| Mailboxes    |
 
-@Evergreen @Devices @Evergreen_ActionsPanel @AllCheckbox @DAS10772 @DAS10656
+@Evergreen @Devices @Evergreen_ActionsPanel @AllCheckbox @DAS10772 @DAS10656 @DAS11664
 Scenario: EvergreenJnr_DevicesList_SearchWithinAllRows
 	When User clicks "Devices" on the left-hand menu
 	Then "Devices" list should be displayed to the user
@@ -76,7 +76,7 @@ Scenario Outline: EvergreenJnr_AllLists_SelectAllChecboxMainFunctionalityTest
 	| <SelectedRowName> |
 	Then "<SelectedRowsCountAfterDiselect>" selected rows are displayed in the Actions panel
 	When User click on '<Columnname>' column header
-	Then data in table is sorted by '<Columnname>' column in descending order
+	Then data in table is sorted by '<Columnname>' column in ascending order
 	Then "<SelectedRowsCountAfterDiselect>" selected rows are displayed in the Actions panel
 
 Examples: 

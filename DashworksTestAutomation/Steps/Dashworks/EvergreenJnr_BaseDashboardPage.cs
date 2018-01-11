@@ -77,6 +77,7 @@ namespace DashworksTestAutomation.Steps.Dashworks
             List<string> expectedList = listpageMenu.GetColumnContent(columnName).Where(x => !x.Equals("")).ToList();
             List<KeyValuePair<DateTime, string>> unsortedList = new List<KeyValuePair<DateTime, string>>();
             DateTime datevalue;
+            Assert.IsTrue(listpageMenu.DescendingSortingIcon.Displayed());
             foreach (var date in expectedList)
             {
                 var unconvertedDate = DateTime.TryParse(date, out datevalue);
@@ -86,7 +87,7 @@ namespace DashworksTestAutomation.Steps.Dashworks
             }
             try
             {
-                Assert.AreEqual(unsortedList.OrderByDescending(x => x.Key).Select(x => x.Value), expectedList);
+                Assert.AreEqual(expectedList.OrderByDescending(s => s).ToList(), expectedList);
             }
             catch (Exception)
             {
@@ -106,6 +107,7 @@ namespace DashworksTestAutomation.Steps.Dashworks
             List<string> expectedList = listpageMenu.GetColumnContent(columnName).Where(x => !x.Equals("")).ToList();
             List<KeyValuePair<DateTime, string>> unsortedList = new List<KeyValuePair<DateTime, string>>();
             DateTime datevalue;
+            Assert.IsTrue(listpageMenu.AscendingSortingIcon.Displayed());
             foreach (var date in expectedList)
             {
                 var unconvertedDate = DateTime.TryParse(date, out datevalue);
@@ -115,13 +117,13 @@ namespace DashworksTestAutomation.Steps.Dashworks
             }
             try
             {
-                Assert.AreEqual(unsortedList.OrderBy(x => x.Key).Select(x => x.Value), expectedList);
+                Assert.AreEqual(expectedList.OrderBy(s => s).ToList(), expectedList);
             }
             catch (Exception)
             {
                 for (int i = 0; i < expectedList.Count; i++)
                 {
-                    Assert.AreEqual(unsortedList.OrderByDescending(x => x.Key).Select(x => x.Value).ToArray()[i],
+                    Assert.AreEqual(unsortedList.OrderBy(x => x.Key).Select(x => x.Value).ToArray()[i],
                         expectedList[i]);
                 }
             }

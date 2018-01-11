@@ -11,7 +11,7 @@ Scenario: EvergreenJnr_UsersList_CheckThatNotOwnerUsersDontHavePermissionsToUpda
 	When User clicks "Users" on the left-hand menu
 	Then "Users" list should be displayed to the user
 	When User click on 'Username' column header
-	Then data in table is sorted by 'Username' column in descending order
+	Then data in table is sorted by 'Username' column in ascending order
 	When User create custom list with "TestList" name
 	#Workaround for DAS-11570. Remove after fix
 	And User navigates to the "TestList" list
@@ -28,18 +28,18 @@ Scenario: EvergreenJnr_UsersList_CheckThatNotOwnerUsersDontHavePermissionsToUpda
 	Then Update list option is NOT available
 	And Save as a new list option is available
 
-@Evergreen @Users @EvergreenJnr_DynamicLists @PermissionsSettings @DAS10945 @DAS11553 @DAS10880 @Delete_Newly_Created_List
+@Evergreen @Users @EvergreenJnr_DynamicLists @PermissionsSettings @DAS10945 @DAS11553 @DAS10880 @Delete_Newly_Created_List 
 Scenario: EvergreenJnr_UsersList_CheckThatAdminUserButNotOwnerIsNotAbleToDeleteList
 	When User clicks "Users" on the left-hand menu
 	Then "Users" list should be displayed to the user
 	When User click on 'Username' column header
-	Then data in table is sorted by 'Username' column in descending order
+	Then data in table is sorted by 'Username' column in ascending order
 	When User create custom list with "TestList" name
 	When User clicks the List Details button
 	Then List details panel is displayed to the user
 	When User select "Specific users" sharing option
 	When User click Add User button
-	When User select 'Administrator' in Select User dropdown
+	When User select current user in Select User dropdown
 	When User select "Admin" in Select Access dropdown
 	When User click Add User button
 	And User select "Automation Admin 1" as a Owner of a list

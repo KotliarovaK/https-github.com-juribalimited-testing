@@ -59,6 +59,27 @@ namespace DashworksTestAutomation.Steps.Dashworks
             filterElement.LookupFilterSearchTextbox.SendKeys(searchedText);
         }
 
+        [When(@"User enters ""(.*)"" in Association search field")]
+        public void WhenUserEntersInAssociationSearchField(string searchedText)
+        {
+            var filterElement = _driver.NowAt<FiltersElement>();
+            _driver.WaitWhileControlIsNotDisplayed<FiltersElement>(() => filterElement.LookupFilterSearchTextbox);
+            filterElement.AssociationSearchTextbox.Clear();
+            filterElement.AssociationSearchTextbox.SendKeys(searchedText);
+        }
+
+        [Then(@"search values in Association section working by specific search criteria")]
+        public void ThenSearchValuesInAssociationSectionWorkingBySpecificSearchCriteria()
+        {
+            var filterElement = _driver.NowAt<FiltersElement>();
+            var searchCriteria = filterElement.LookupFilterSearchTextbox.GetAttribute("value");
+            List<string> associationList = filterElement.GetAssociationsList().Select(element => element.Text).ToList();
+            foreach (var association in associationList)
+            {
+                StringAssert.Contains(searchCriteria.ToLower(), association.ToLower());
+            }
+        }
+
         [When(@"User clears search textbox in Filters panel")]
         public void WhenUserClearsSearchTextboxInFiltersPanel()
         {

@@ -137,7 +137,7 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_StaticLists
             table2.AddRow(new string[] {
                         "01BQIYGGUW5PRP6"});
             table2.AddRow(new string[] {
-                        "020JQ9RO0J4H07X"});
+                        "00HA7MKAVVFDAV"});
             testRunner.When("User select \"Hostname\" rows in the grid", ((string)(null)), table2, "When ");
             testRunner.And("User create static list with \"Static List TestName\" name", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
             testRunner.Then("\"Static List TestName\" list is displayed to user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
