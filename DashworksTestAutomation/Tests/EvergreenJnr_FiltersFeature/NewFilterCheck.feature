@@ -54,10 +54,10 @@ Scenario Outline: EvergreenJnr_ApplicationsList_CheckThatTargetAppKeyFilterIsAdd
 	Then "<Text>" is displayed in added filter info
 	Then "<RowsCount>" rows are displayed in the agGrid
 	When User click on '<ColumnName>' column header
-	Then data in table is sorted by '<ColumnName>' column in ascending order 
+	Then data in table is sorted by '<ColumnName>' column in descending order 
 
 Examples: 
-	| ColumnName                 | Operators                                                                                         | FilterOption | Text                               | RowsCount |
+	| ColumnName                 | Operators                                                                                        | FilterOption | Text                               | RowsCount |
 	| Windows7Mi: Target App Key | Equals, Does not equal, Greater than, Greater than or equal to, Less than, Less than or equal to | 1051         | Windows7Mi: Target App Key is 1051 | 4         |
 	| Babel(Engl: Target App Key | Equals, Does not equal, Greater than, Greater than or equal to, Less than, Less than or equal to | 15           | Babel(Engl: Target App Key is 15   | 1         |
 	| Barry'sUse: Target App Key | Equals, Does not equal, Greater than, Greater than or equal to, Less than, Less than or equal to | 115          | Barry'sUse: Target App Key is 115  | 1         |
@@ -83,7 +83,7 @@ Scenario Outline: EvergreenJnr_ApplicationsList_CheckThatTargetAppReadinessFilte
 	Then "<Text>" is displayed in added filter info
 	Then "<RowsCount>" rows are displayed in the agGrid
 	When User click on '<ColumnName>' column header
-	Then data in table is sorted by '<ColumnName>' column in ascending order 
+	Then data in table is sorted by '<ColumnName>' column in descending order 
 
 Examples: 
 	| ColumnName                       | Operators              | FilterOption | Text                                      | RowsCount |
@@ -200,7 +200,7 @@ Scenario Outline: EvergreenJnr_ApplicationsList_CheckThatCoreApplicationFilterIs
 	Then "<Text>" is displayed in added filter info
 	Then "<RowsCount>" rows are displayed in the agGrid
 	When User click on '<ColumnName>' column header
-	Then data in table is sorted by '<ColumnName>' column in ascending order 
+	Then data in table is sorted by '<ColumnName>' column in descending order 
 
 Examples: 
 	| ColumnName                   | Operators              | FilterOption | Text                                    | RowsCount |

@@ -58,7 +58,7 @@ Scenario: EvergreenJnr_ApplicationsList_CheckThatAddColumnCheckboxWorksCorrectly
 	Then "Windows7Mi: Category" filter is added to the list
 	Then table data is filtered correctly
 
-@Evergreen @Applications @EvergreenJnr_FiltersFeature @FilterFunctionality @DAS11166 @Delete_Newly_Created_List @Question_to_Lisa @Not_Run
+@Evergreen @Applications @EvergreenJnr_FiltersFeature @FilterFunctionality @DAS11166 @DAS11665 @Delete_Newly_Created_List @Not_Run
 Scenario: EvergreenJnr_ApplicationsList_CheckThatFilterIsRestoredAfterGoingBackToTheListAgain
 	When User clicks "Applications" on the left-hand menu
 	Then "Applications" list should be displayed to the user
@@ -295,3 +295,14 @@ Scenario: EvergreenJnr_ApplicationsList_CheckThat500ErrorInNotDisplayedWhenUserA
 	Then "Device Count (Installed)" filter is added to the list
 	Then "1,269" rows are displayed in the agGrid
 	Then "(Device Count (Installed) < 10)" text is displayed in filter container
+
+@Evergreen @Mailboxes @EvergreenJnr_FilterFeature @FilterFunctionality @DAS11573
+Scenario: EvergreenJnr_MailboxesList_CheckThatAddOwnerDepartmentCodeColumnCheckboxIsDisplayedCorrectly
+	When User clicks "Mailboxes" on the left-hand menu
+	Then "Mailboxes" list should be displayed to the user
+	When User clicks the Filters button
+	Then Filters panel is displayed to the user
+	When user select "Owner Department Code" filter
+	Then checkboxes are displayed to the User:
+	| SelectedCheckboxes               |
+	| Add Owner Department Code column |

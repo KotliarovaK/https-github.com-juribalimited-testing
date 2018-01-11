@@ -11,7 +11,7 @@ Scenario: EvergreenJnr_UsersList_CheckThatNotOwnerUsersDontHavePermissionsToUpda
 	When User clicks "Users" on the left-hand menu
 	Then "Users" list should be displayed to the user
 	When User click on 'Username' column header
-	Then data in table is sorted by 'Username' column in descending order
+	Then data in table is sorted by 'Username' column in ascending order
 	When User create custom list with "TestList" name
 	#Workaround for DAS-11570. Remove after fix
 	And User navigates to the "TestList" list
@@ -33,7 +33,7 @@ Scenario: EvergreenJnr_UsersList_CheckThatAdminUserButNotOwnerIsNotAbleToDeleteL
 	When User clicks "Users" on the left-hand menu
 	Then "Users" list should be displayed to the user
 	When User click on 'Username' column header
-	Then data in table is sorted by 'Username' column in descending order
+	Then data in table is sorted by 'Username' column in ascending order
 	When User create custom list with "TestList" name
 	When User clicks the List Details button
 	Then List details panel is displayed to the user

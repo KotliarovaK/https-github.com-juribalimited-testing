@@ -18,7 +18,7 @@ namespace DashworksTestAutomation.Utils
 
         public static string RandomEmail()
         {
-            return $"At_{RandomString()}@gmail.com";
+            return $"At_{RandomString()}@attest.com";
         }
     }
 }
