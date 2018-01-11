@@ -477,3 +477,15 @@ Examples:
 	| PageName | ColumnName |
 	| Devices  | Hostname   |
 	| Users    | Username   |
+
+@Evergreen @Applications @EvergreenJnr_Columns @RemoveColumn @DAS11625
+Scenario: EvergreenJnr_ApplicationsList_CheckThatAfterDeletingFirstColumnTheColumnsOrderIsDisplayedCorrectly 
+	When User clicks "Applications" on the left-hand menu
+	Then "Applications" list should be displayed to the user
+	When User clicks the Columns button
+	Then Columns panel is displayed to the user
+	When User removes "Application" column by Column panel
+	Then "Applications" list should be displayed to the user
+	And ColumnName is removed from the list
+	| ColumnName  |
+	| Application |
