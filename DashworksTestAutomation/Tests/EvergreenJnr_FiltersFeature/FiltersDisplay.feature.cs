@@ -855,8 +855,6 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_FiltersFeature
         [NUnit.Framework.CategoryAttribute("FiltersDisplay")]
         [NUnit.Framework.CategoryAttribute("DAS10696")]
         [NUnit.Framework.CategoryAttribute("Delete_Newly_Created_List")]
-        [NUnit.Framework.CategoryAttribute("Question_to_Lisa")]
-        [NUnit.Framework.CategoryAttribute("Not_Run")]
         public virtual void EvergreenJnr_MailboxesList_CheckThatFilterDataIsDisplayedCorrectlyWhenNavigatingBetweenLists()
         {
             System.Exception lastException = null;
@@ -892,9 +890,7 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_FiltersFeature
                         "Evergreen_FiltersFeature",
                         "FiltersDisplay",
                         "DAS10696",
-                        "Delete_Newly_Created_List",
-                        "Question_to_Lisa",
-                        "Not_Run"});
+                        "Delete_Newly_Created_List"});
             this.ScenarioSetup(scenarioInfo);
             this.FeatureBackground();
             testRunner.When("User clicks \"Mailboxes\" on the left-hand menu", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
@@ -1237,8 +1233,6 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_FiltersFeature
         [NUnit.Framework.CategoryAttribute("FiltersDisplay")]
         [NUnit.Framework.CategoryAttribute("DAS10696")]
         [NUnit.Framework.CategoryAttribute("DAS11090")]
-        [NUnit.Framework.CategoryAttribute("Question_to_Lisa")]
-        [NUnit.Framework.CategoryAttribute("Not_Run")]
         [NUnit.Framework.TestCaseAttribute("Equals", "22 Nov 2012", "16", "is", new string[0])]
         [NUnit.Framework.TestCaseAttribute("Does not equal", "22 Nov 2012", "17,225", "is not", new string[0])]
         [NUnit.Framework.TestCaseAttribute("Before", "22 Nov 2012", "1", "is before", new string[0])]
@@ -1279,9 +1273,7 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_FiltersFeature
                     "Evergreen_FiltersFeature",
                     "FiltersDisplay",
                     "DAS10696",
-                    "DAS11090",
-                    "Question_to_Lisa",
-                    "Not_Run"};
+                    "DAS11090"};
             if ((exampleTags != null))
             {
                 @__tags = System.Linq.Enumerable.ToArray(System.Linq.Enumerable.Concat(@__tags, exampleTags));
@@ -1544,8 +1536,8 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_FiltersFeature
         [NUnit.Framework.CategoryAttribute("EvergreenJnr_FiltersFeature")]
         [NUnit.Framework.CategoryAttribute("FilterFunctionality")]
         [NUnit.Framework.CategoryAttribute("DAS11142")]
+        [NUnit.Framework.CategoryAttribute("DAS11665")]
         [NUnit.Framework.CategoryAttribute("Delete_Newly_Created_List")]
-        [NUnit.Framework.CategoryAttribute("Question_to_Lisa")]
         [NUnit.Framework.CategoryAttribute("Not_Run")]
         public virtual void EvergreenJnr_ApplicationsList_CheckThatBracketsAreDisplayedCorrectlyInFilterInfo()
         {
@@ -1581,8 +1573,8 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_FiltersFeature
                         "EvergreenJnr_FiltersFeature",
                         "FilterFunctionality",
                         "DAS11142",
+                        "DAS11665",
                         "Delete_Newly_Created_List",
-                        "Question_to_Lisa",
                         "Not_Run"});
             this.ScenarioSetup(scenarioInfo);
             this.FeatureBackground();
@@ -1838,8 +1830,6 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_FiltersFeature
         [NUnit.Framework.CategoryAttribute("EvergreenJnr_FiltersFeature")]
         [NUnit.Framework.CategoryAttribute("FilterFunctionality")]
         [NUnit.Framework.CategoryAttribute("DAS11087")]
-        [NUnit.Framework.CategoryAttribute("Question_to_Lisa")]
-        [NUnit.Framework.CategoryAttribute("Not_Run")]
         public virtual void EvergreenJnr_DevicesList_CheckThatDateAndTimeFiltersWithEqualsValuesAreWorkingCorrectly()
         {
             System.Exception lastException = null;
@@ -1874,9 +1864,7 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_FiltersFeature
                         "Devices",
                         "EvergreenJnr_FiltersFeature",
                         "FilterFunctionality",
-                        "DAS11087",
-                        "Question_to_Lisa",
-                        "Not_Run"});
+                        "DAS11087"});
             this.ScenarioSetup(scenarioInfo);
             this.FeatureBackground();
             testRunner.When("User clicks \"Devices\" on the left-hand menu", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
@@ -1903,8 +1891,6 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_FiltersFeature
         [NUnit.Framework.CategoryAttribute("FilterFunctionality")]
         [NUnit.Framework.CategoryAttribute("DAS11087")]
         [NUnit.Framework.CategoryAttribute("DAS11090")]
-        [NUnit.Framework.CategoryAttribute("Question_to_Lisa")]
-        [NUnit.Framework.CategoryAttribute("Not_Run")]
         [NUnit.Framework.TestCaseAttribute("Windows7Mi: Date & Time Task", "22 Nov 2012", "17,209", new string[0])]
         [NUnit.Framework.TestCaseAttribute("Build Date", "06 Nov 2004", "17,225", new string[0])]
         public virtual void EvergreenJnr_DevicesList_CheckThatDateAndTimeFiltersWithDoesNotEqualValuesAreWorkingCorrectly(string filterName, string value, string rowCount, string[] exampleTags)
@@ -1941,9 +1927,7 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_FiltersFeature
                     "EvergreenJnr_FiltersFeature",
                     "FilterFunctionality",
                     "DAS11087",
-                    "DAS11090",
-                    "Question_to_Lisa",
-                    "Not_Run"};
+                    "DAS11090"};
             if ((exampleTags != null))
             {
                 @__tags = System.Linq.Enumerable.ToArray(System.Linq.Enumerable.Concat(@__tags, exampleTags));

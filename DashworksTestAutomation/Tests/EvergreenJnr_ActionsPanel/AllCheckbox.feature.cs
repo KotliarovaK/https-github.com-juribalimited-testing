@@ -210,8 +210,7 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_ActionsPanel
         [NUnit.Framework.CategoryAttribute("AllCheckbox")]
         [NUnit.Framework.CategoryAttribute("DAS10772")]
         [NUnit.Framework.CategoryAttribute("DAS10656")]
-        [NUnit.Framework.CategoryAttribute("Question_to_Lisa")]
-        [NUnit.Framework.CategoryAttribute("Not_Run")]
+        [NUnit.Framework.CategoryAttribute("DAS11664")]
         public virtual void EvergreenJnr_DevicesList_SearchWithinAllRows()
         {
             System.Exception lastException = null;
@@ -247,8 +246,7 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_ActionsPanel
                         "AllCheckbox",
                         "DAS10772",
                         "DAS10656",
-                        "Question_to_Lisa",
-                        "Not_Run"});
+                        "DAS11664"});
             this.ScenarioSetup(scenarioInfo);
             this.FeatureBackground();
             testRunner.When("User clicks \"Devices\" on the left-hand menu", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
