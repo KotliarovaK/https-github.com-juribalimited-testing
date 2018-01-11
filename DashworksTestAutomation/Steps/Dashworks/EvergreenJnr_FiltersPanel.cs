@@ -95,6 +95,13 @@ namespace DashworksTestAutomation.Steps.Dashworks
                 $"{filterName} is available in the search");
         }
 
+        [When(@"User select ""(.*)"" Operator value")]
+        public void WhenUserSelectOperatorValue(string operatorValue)
+        {
+            var filterElement = _driver.NowAt<FiltersElement>();
+            filterElement.SelectOperator(operatorValue);
+        }
+
         [When(@"User have create ""(.*)"" Values filter with column and following options:")]
         public void WhenUserHaveCreateValuesFilterWithColumnAndFollowingOptions(string operatorValue, Table table)
         {
@@ -473,6 +480,13 @@ namespace DashworksTestAutomation.Steps.Dashworks
             {
                 filterElement.GetAssociationsList().Select(value => value.Text).ToList().Contains(row.Values.First());
             }
+        }
+
+        [Then(@"Associations panel is displayed in the filter")]
+        public void ThenAssociationsPanelIsDisplayedInTheFilter()
+        {
+            var filterElement = _driver.NowAt<FiltersElement>();
+            Assert.IsTrue(filterElement.AssociationSearchTextbox.Displayed(), "Associations panel is not displayed");
         }
 
         [Then(@"""(.*)"" is displayed in added filter info")]

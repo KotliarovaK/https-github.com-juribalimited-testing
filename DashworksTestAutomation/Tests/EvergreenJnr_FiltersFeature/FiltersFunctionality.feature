@@ -296,20 +296,20 @@ Scenario: EvergreenJnr_ApplicationsList_CheckThat500ErrorInNotDisplayedWhenUserA
 	Then "1,269" rows are displayed in the agGrid
 	Then "(Device Count (Installed) < 10)" text is displayed in filter container
 
-@Evergreen @Mailboxes @EvergreenJnr_FilterFeature @FilterFunctionality @DAS11573
-Scenario: EvergreenJnr_MailboxesList_CheckThatAddOwnerDepartmentCodeColumnCheckboxIsDisplayedCorrectly
-	When User clicks "Mailboxes" on the left-hand menu
-	Then "Mailboxes" list should be displayed to the user
+@Evergreen @Devices @EvergreenJnr_FilterFeature @FilterFunctionality @DAS11551
+Scenario Outline: EvergreenJnr_DevicesList_CheckThatEmptyNotEmptyOperatorsIsWorkedCorrectly
+	When User clicks "Devices" on the left-hand menu
+	Then "Devices" list should be displayed to the user
 	When User clicks the Filters button
 	Then Filters panel is displayed to the user
-	When user select "Owner Department Code" filter
-	Then checkboxes are displayed to the User:
-	| SelectedCheckboxes               |
-	| Add Owner Department Code column |
+	When user select "Application Name" filter
+	When User select "<OperatorValues>" Operator value
+	Then Associations panel is displayed in the filter
 
-@Evergreen @Users @EvergreenJnr_FilterFeature @FilterFunctionality @DAS11577
-Scenario: EvergreenJnr_UsersList_CheckThatLDAPFilterCategoryHaveAddColumnCheckboxes
-	When User clicks "Users" on the left-hand menu
+Examples:
+	| OperatorValues |
+	| Empty          |
+	| Not Empty      |
 	Then "Users" list should be displayed to the user
 	When User clicks the Filters button
 	Then Filters panel is displayed to the user
