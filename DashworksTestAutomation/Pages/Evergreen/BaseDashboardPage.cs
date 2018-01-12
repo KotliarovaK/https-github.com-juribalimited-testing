@@ -164,6 +164,7 @@ namespace DashworksTestAutomation.Pages.Evergreen
             }
             catch (Exception)
             {
+                Driver.WaitWhileControlIsNotDisplayed(By.XPath($".//div[@id='submenuBlock']//span[text()='{listName}']"));
                 return Driver.FindElement(By.XPath($".//div[@id='submenuBlock']//span[text()='{listName}']"));
             }
         }

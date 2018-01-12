@@ -30,7 +30,7 @@ namespace DashworksTestAutomation.Steps.Dashworks
         public void WhenUserChangesListNameTo(string listName)
         {
             var listDetailsElement = _driver.NowAt<ListDetailsElement>();
-            listDetailsElement.ListNameField.ClearWithBackspaces();
+            listDetailsElement.ListNameField.Clear();
             listDetailsElement.ListNameField.SendkeysWithDelay(listName);
         }
 

@@ -158,6 +158,16 @@ namespace DashworksTestAutomation.Steps.Dashworks
             listElement.ConfirmDeleteButton.Click();
         }
 
+        [When(@"User duplicates list with ""(.*)"" name")]
+        public void WhenUserDuplicatesListWithName(string listName)
+        {
+            var listElement = _driver.NowAt<CustomListElement>();
+
+            listElement.ClickSettingsButtonByListName(listName);
+            _driver.WaitWhileControlIsNotDisplayed<CustomListElement>(() => listElement.DuplicateButton);
+            listElement.DuplicateButton.Click();
+        }
+
         [Then(@"list with ""(.*)"" name is removed")]
         public void ThenListWithNameIsRemoved(string listName)
         {
