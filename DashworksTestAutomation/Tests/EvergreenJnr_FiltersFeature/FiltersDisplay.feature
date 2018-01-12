@@ -4,18 +4,7 @@ Feature: FiltersDisplay
 
 Background: Pre-Conditions
 	Given User is logged in to the Evergreen
-	Then Evergreen Dashboards page should be displayed to the user
-
-@Evergreen @Devices @Evergreen_FiltersFeature @FiltersDisplay @DAS10781
-Scenario: EvergreenJnr_DevicesList_CheckThatAddColumnOptionIsAvailableForComplianceFilter
-	When User clicks "Devices" on the left-hand menu
-	Then "Devices" list should be displayed to the user
-	When User clicks the Filters button
-	Then Filters panel is displayed to the user
-	When user select "Compliance" filter
-	Then checkboxes are displayed to the User:
-	| SelectedCheckboxes    |
-	| Add Compliance column |   
+	Then Evergreen Dashboards page should be displayed to the user   
 
 @Evergreen @Applications @Evergreen_FiltersFeature @FiltersDisplay @DAS10651
 Scenario: EvergreenJnr_ApplicationsList_CheckTrue-FalseOptionsAndImagesInFilterInfo
@@ -86,7 +75,7 @@ Scenario: EvergreenJnr_DevicesList_CheckThatEmptyAndNotEmptyOptionsIsAvaildableF
 	When user select "AD Object Key" filter
 	Then "Equals, Does not equal, Greater than, Greater than or equal to, Less than, Less than or equal to, Empty, Not empty" option is available for this filter
 
-@Evergreen @AllLisrs @Evergreen_FiltersFeature @FiltersDisplay @DAS10795
+@Evergreen @AllLisrs @Evergreen_FiltersFeature @FiltersDisplay @DAS10795 @DAS10781 @DAS11573 
 Scenario Outline: EvergreenJnr_AllLists_CheckThatAddColumnOptionIsAvailableForFilters
 	When User clicks "<PageName>" on the left-hand menu
 	Then "<PageName>" list should be displayed to the user
@@ -98,12 +87,14 @@ Scenario Outline: EvergreenJnr_AllLists_CheckThatAddColumnOptionIsAvailableForFi
 	| <SelectedCheckboxes> |
 
 Examples: 
-	| PageName     | FilterName        | SelectedCheckboxes           |
-	| Devices      | Operating System  | Add Operating System column  |
-	| Devices      | City              | Add City column              |
-	| Users        | Zip Code          | Add Zip Code column          |
-	| Applications | Application Owner | Add Application Owner column |
-	| Mailboxes    | Mailbox Filter 1  | Add Mailbox Filter 1 column  |
+	| PageName     | FilterName            | SelectedCheckboxes               |
+	| Devices      | Operating System      | Add Operating System column      |
+	| Devices      | City                  | Add City column                  |
+	| Users        | Zip Code              | Add Zip Code column              |
+	| Applications | Application Owner     | Add Application Owner column     |
+	| Mailboxes    | Mailbox Filter 1      | Add Mailbox Filter 1 column      |
+	| Devices      | Compliance            | Add Compliance column            |
+	| Mailboxes    | Owner Department Code | Add Owner Department Code column |
 
 @Evergreen @Devices @Evergreen_FiltersFeature @FiltersDisplay @DAS10795 @DAS11187
 Scenario: EvergreenJnr_DevicesList_CheckThatAddColumnOptionIsNotAvailableForApplicationCustomFieldsFilters
@@ -487,15 +478,15 @@ Scenario: EvergreenJnr_DevicesList_CheckThatApostrophesAreDisplayedCorrectlyInFi
 	When User clicks the Filters button
 	Then Filters panel is displayed to the user
 	When User add "Owner Display Name" filter where type is "Contains" with added column and following value:
-	| Values                                    |
-	| ' |
+	| Values |
+	| '      |
 	Then "Owner Display Name" filter is added to the list
 	And "127" rows are displayed in the agGrid
 
-@Evergreen @Mailboxes @Evergreen_FiltersFeature @FiltersDisplay @DAS11351
-Scenario: EvergreenJnr_MailboxesList_CheckThatAddColumnOptionIsAvailableForOwnerDepartmentFilter
-	When User clicks "Mailboxes" on the left-hand menu
-	Then "Mailboxes" list should be displayed to the user
+@Evergreen @Mailboxes @Devices @Evergreen_FiltersFeature @FiltersDisplay @DAS11351
+Scenario Outline: EvergreenJnr_MailboxesList_DevicesList_CheckThatAddColumnOptionIsAvailableForOwnerDepartmentFilter
+	When User clicks "<PageName>" on the left-hand menu
+	Then "<PageName>" list should be displayed to the user
 	When User clicks the Filters button
 	Then Filters panel is displayed to the user
 	When user select "Owner Department" filter
@@ -504,17 +495,10 @@ Scenario: EvergreenJnr_MailboxesList_CheckThatAddColumnOptionIsAvailableForOwner
 	| Add Owner Department Name column      |
 	| Add Owner Department Full Path column |
 
-@Evergreen @Devices @Evergreen_FiltersFeature @FiltersDisplay @DAS11351
-Scenario: EvergreenJnr_DevicesList_CheckThatAddColumnOptionIsAvailableForOwnerDepartmentFilter
-	When User clicks "Devices" on the left-hand menu
-	Then "Devices" list should be displayed to the user
-	When User clicks the Filters button
-	Then Filters panel is displayed to the user
-	When user select "Owner Department" filter
-	Then checkboxes are displayed to the User:
-	| SelectedCheckboxes                    |
-	| Add Owner Department Name column      |
-	| Add Owner Department Full Path column |
+Examples: 
+	| PageName  |
+	| Mailboxes |
+	| Devices   |
 
 @Evergreen @Devices @EvergreenJnr_FiltersFeature @FilterFunctionality @DAS11087 @Question_to_Lisa @Not_Run
 Scenario: EvergreenJnr_DevicesList_CheckThatDateAndTimeFiltersWithEqualsValuesAreWorkingCorrectly
