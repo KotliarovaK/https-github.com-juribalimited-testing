@@ -116,18 +116,10 @@ namespace DashworksTestAutomation.Steps.Dashworks
                 _usersWithSharedLists.Value = new List<string>();
 
             //Save user to remove its lists after test execution
-            _usersWithSharedLists.Value.Add(GetUserNameByFullName(ownerOption));
+            _usersWithSharedLists.Value.Add(DatabaseWorker.GetUserNameByFullName(ownerOption));
 
             var listDetailsElement = _driver.NowAt<ListDetailsElement>();
             _driver.SelectCustomSelectbox(listDetailsElement.OwnerDropdown, ownerOption);
-        }
-
-        private string GetUserNameByFullName(string fullName)
-        {
-            var userName = DatabaseHelper.ExecuteReader(
-                $"select u.LoweredUserName from[aspnetdb].[dbo].[aspnet_Users] u join[DesktopBI].[dbo].[UserProfiles] up on up.UserId = u.UserId where up.FullName = '{fullName}'",
-                0)[0];
-            return userName;
         }
 
         private string GetFullNameByUserName(string userName)
