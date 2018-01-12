@@ -296,13 +296,40 @@ Scenario: EvergreenJnr_ApplicationsList_CheckThat500ErrorInNotDisplayedWhenUserA
 	Then "1,269" rows are displayed in the agGrid
 	Then "(Device Count (Installed) < 10)" text is displayed in filter container
 
-@Evergreen @Mailboxes @EvergreenJnr_FilterFeature @FilterFunctionality @DAS11573
-Scenario: EvergreenJnr_MailboxesList_CheckThatAddOwnerDepartmentCodeColumnCheckboxIsDisplayedCorrectly
-	When User clicks "Mailboxes" on the left-hand menu
-	Then "Mailboxes" list should be displayed to the user
+@Evergreen @Devices @EvergreenJnr_FilterFeature @FilterFunctionality @DAS11551
+Scenario Outline: EvergreenJnr_DevicesList_CheckThatEmptyNotEmptyOperatorsIsWorkedCorrectly
+	When User clicks "Devices" on the left-hand menu
+	Then "Devices" list should be displayed to the user
 	When User clicks the Filters button
 	Then Filters panel is displayed to the user
-	When user select "Owner Department Code" filter
+	When user select "Application Name" filter
+	When User select "<OperatorValues>" Operator value
+	Then Associations panel is displayed in the filter
+
+Examples:
+	| OperatorValues |
+	| Empty          |
+	| Not Empty      |
+
+@Evergreen @Users @EvergreenJnr_FilterFeature @FilterFunctionality @DAS11577
+Scenario Outline: EvergreenJnr_UsersList_CheckThatLDAPFilterCategoryHaveAddColumnCheckboxes
+	When User clicks "Users" on the left-hand menu
+	Then "Users" list should be displayed to the user
+	When User clicks the Filters button
+	Then Filters panel is displayed to the user
+	When user select "<FilterName>" filter
+	When User select "<OperatorValues>" Operator value
+	And User enters "<EnteredText>" text in Search field at selected Filter
 	Then checkboxes are displayed to the User:
-	| SelectedCheckboxes               |
-	| Add Owner Department Code column |
+	| SelectedCheckboxes   |
+	| <SelectedCheckboxes> |
+
+Examples:
+	| FilterName             | OperatorValues   | EnteredText                                                | SelectedCheckboxes                |
+	| accountexpires         | Equals           | 9223372036854775807                                        | Add accountexpires column         |
+	| badpasswordtime        | Contains         | 13146                                                      | Add badpasswordtime column        |
+	| admincount             | Empty            |                                                            | Add admincount column             |
+	| employeeid             | Begins with      | ZY or ZX                                                   | Add employeeid column             |
+	| whencreated            | Does not contain | 2017                                                       | Add whencreated column            |
+	| department             | Ends with        | LongName01234567890123456789012345678901234567890123456789 | Add Department column             |
+	| iscriticalsystemobject | Not empty        |                                                            | Add iscriticalsystemobject column |

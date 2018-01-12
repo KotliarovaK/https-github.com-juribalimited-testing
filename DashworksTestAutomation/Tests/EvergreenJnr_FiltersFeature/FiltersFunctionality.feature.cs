@@ -1114,21 +1114,22 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_FiltersFeature
         }
         
         [NUnit.Framework.TestAttribute()]
-        [NUnit.Framework.DescriptionAttribute("EvergreenJnr_MailboxesList_CheckThatAddOwnerDepartmentCodeColumnCheckboxIsDisplay" +
-            "edCorrectly")]
+        [NUnit.Framework.DescriptionAttribute("EvergreenJnr_DevicesList_CheckThatEmptyNotEmptyOperatorsIsWorkedCorrectly")]
         [NUnit.Framework.CategoryAttribute("Evergreen")]
-        [NUnit.Framework.CategoryAttribute("Mailboxes")]
+        [NUnit.Framework.CategoryAttribute("Devices")]
         [NUnit.Framework.CategoryAttribute("EvergreenJnr_FilterFeature")]
         [NUnit.Framework.CategoryAttribute("FilterFunctionality")]
-        [NUnit.Framework.CategoryAttribute("DAS11573")]
-        public virtual void EvergreenJnr_MailboxesList_CheckThatAddOwnerDepartmentCodeColumnCheckboxIsDisplayedCorrectly()
+        [NUnit.Framework.CategoryAttribute("DAS11551")]
+        [NUnit.Framework.TestCaseAttribute("Empty", new string[0])]
+        [NUnit.Framework.TestCaseAttribute("Not Empty", new string[0])]
+        public virtual void EvergreenJnr_DevicesList_CheckThatEmptyNotEmptyOperatorsIsWorkedCorrectly(string operatorValues, string[] exampleTags)
         {
             System.Exception lastException = null;
             for (int i = 0; (i <= 1); i = (i + 1))
             {
                 try
                 {
-                    this.EvergreenJnr_MailboxesList_CheckThatAddOwnerDepartmentCodeColumnCheckboxIsDisplayedCorrectlyInternal();
+                    this.EvergreenJnr_DevicesList_CheckThatEmptyNotEmptyOperatorsIsWorkedCorrectlyInternal(operatorValues, exampleTags);
                     return;
                 }
                 catch (System.Exception exc)
@@ -1147,26 +1148,97 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_FiltersFeature
             }
         }
         
-        private void EvergreenJnr_MailboxesList_CheckThatAddOwnerDepartmentCodeColumnCheckboxIsDisplayedCorrectlyInternal()
+        private void EvergreenJnr_DevicesList_CheckThatEmptyNotEmptyOperatorsIsWorkedCorrectlyInternal(string operatorValues, string[] exampleTags)
         {
-            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("EvergreenJnr_MailboxesList_CheckThatAddOwnerDepartmentCodeColumnCheckboxIsDisplay" +
-                    "edCorrectly", new string[] {
-                        "Evergreen",
-                        "Mailboxes",
-                        "EvergreenJnr_FilterFeature",
-                        "FilterFunctionality",
-                        "DAS11573"});
+            string[] @__tags = new string[] {
+                    "Evergreen",
+                    "Devices",
+                    "EvergreenJnr_FilterFeature",
+                    "FilterFunctionality",
+                    "DAS11551"};
+            if ((exampleTags != null))
+            {
+                @__tags = System.Linq.Enumerable.ToArray(System.Linq.Enumerable.Concat(@__tags, exampleTags));
+            }
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("EvergreenJnr_DevicesList_CheckThatEmptyNotEmptyOperatorsIsWorkedCorrectly", @__tags);
             this.ScenarioSetup(scenarioInfo);
             this.FeatureBackground();
-            testRunner.When("User clicks \"Mailboxes\" on the left-hand menu", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-            testRunner.Then("\"Mailboxes\" list should be displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+            testRunner.When("User clicks \"Devices\" on the left-hand menu", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+            testRunner.Then("\"Devices\" list should be displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
             testRunner.When("User clicks the Filters button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
             testRunner.Then("Filters panel is displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-            testRunner.When("user select \"Owner Department Code\" filter", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+            testRunner.When("user select \"Application Name\" filter", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+            testRunner.When(string.Format("User select \"{0}\" Operator value", operatorValues), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+            testRunner.Then("Associations panel is displayed in the filter", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+            this.ScenarioCleanup();
+        }
+        
+        [NUnit.Framework.TestAttribute()]
+        [NUnit.Framework.DescriptionAttribute("EvergreenJnr_UsersList_CheckThatLDAPFilterCategoryHaveAddColumnCheckboxes")]
+        [NUnit.Framework.CategoryAttribute("Evergreen")]
+        [NUnit.Framework.CategoryAttribute("Users")]
+        [NUnit.Framework.CategoryAttribute("EvergreenJnr_FilterFeature")]
+        [NUnit.Framework.CategoryAttribute("FilterFunctionality")]
+        [NUnit.Framework.CategoryAttribute("DAS11577")]
+        [NUnit.Framework.TestCaseAttribute("accountexpires", "Equals", "9223372036854775807", "Add accountexpires column", new string[0])]
+        [NUnit.Framework.TestCaseAttribute("badpasswordtime", "Contains", "13146", "Add badpasswordtime column", new string[0])]
+        [NUnit.Framework.TestCaseAttribute("admincount", "Empty", "", "Add admincount column", new string[0])]
+        [NUnit.Framework.TestCaseAttribute("employeeid", "Begins with", "ZY or ZX", "Add employeeid column", new string[0])]
+        [NUnit.Framework.TestCaseAttribute("whencreated", "Does not contain", "2017", "Add whencreated column", new string[0])]
+        [NUnit.Framework.TestCaseAttribute("department", "Ends with", "LongName01234567890123456789012345678901234567890123456789", "Add Department column", new string[0])]
+        [NUnit.Framework.TestCaseAttribute("iscriticalsystemobject", "Not empty", "", "Add iscriticalsystemobject column", new string[0])]
+        public virtual void EvergreenJnr_UsersList_CheckThatLDAPFilterCategoryHaveAddColumnCheckboxes(string filterName, string operatorValues, string enteredText, string selectedCheckboxes, string[] exampleTags)
+        {
+            System.Exception lastException = null;
+            for (int i = 0; (i <= 1); i = (i + 1))
+            {
+                try
+                {
+                    this.EvergreenJnr_UsersList_CheckThatLDAPFilterCategoryHaveAddColumnCheckboxesInternal(filterName, operatorValues, enteredText, selectedCheckboxes, exampleTags);
+                    return;
+                }
+                catch (System.Exception exc)
+                {
+                    lastException = exc;
+                }
+                if (((i + 1) 
+                            <= 1))
+                {
+                    testRunner.OnScenarioEnd();
+                }
+            }
+            if ((lastException != null))
+            {
+                throw lastException;
+            }
+        }
+        
+        private void EvergreenJnr_UsersList_CheckThatLDAPFilterCategoryHaveAddColumnCheckboxesInternal(string filterName, string operatorValues, string enteredText, string selectedCheckboxes, string[] exampleTags)
+        {
+            string[] @__tags = new string[] {
+                    "Evergreen",
+                    "Users",
+                    "EvergreenJnr_FilterFeature",
+                    "FilterFunctionality",
+                    "DAS11577"};
+            if ((exampleTags != null))
+            {
+                @__tags = System.Linq.Enumerable.ToArray(System.Linq.Enumerable.Concat(@__tags, exampleTags));
+            }
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("EvergreenJnr_UsersList_CheckThatLDAPFilterCategoryHaveAddColumnCheckboxes", @__tags);
+            this.ScenarioSetup(scenarioInfo);
+            this.FeatureBackground();
+            testRunner.When("User clicks \"Users\" on the left-hand menu", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+            testRunner.Then("\"Users\" list should be displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+            testRunner.When("User clicks the Filters button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+            testRunner.Then("Filters panel is displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+            testRunner.When(string.Format("user select \"{0}\" filter", filterName), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+            testRunner.When(string.Format("User select \"{0}\" Operator value", operatorValues), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+            testRunner.And(string.Format("User enters \"{0}\" text in Search field at selected Filter", enteredText), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
             TechTalk.SpecFlow.Table table18 = new TechTalk.SpecFlow.Table(new string[] {
                         "SelectedCheckboxes"});
             table18.AddRow(new string[] {
-                        "Add Owner Department Code column"});
+                        string.Format("{0}", selectedCheckboxes)});
             testRunner.Then("checkboxes are displayed to the User:", ((string)(null)), table18, "Then ");
             this.ScenarioCleanup();
         }
