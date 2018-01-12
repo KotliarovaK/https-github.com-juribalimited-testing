@@ -14,7 +14,7 @@ Scenario Outline: EvergreenJnr_AllLists_CheckThatRenamingAListWorkingCorrectlyFo
 	Then data in table is sorted by '<Columnname>' column in ascending order
 	When User create custom list with "TestList" name
 	#Workaround for DAS-11570. Remove after fix
-	And User navigates to the "TestList" list
+	#And User navigates to the "TestList" list
 	When User clicks the List Details button
 	Then List details panel is displayed to the user
 	When User changes list name to "RenamedList"
@@ -38,7 +38,7 @@ Scenario Outline: EvergreenJnr_AllLists_CheckThatRenamingAListWorkingCorrectlyFo
 	When User select all rows
 	And User create static list with "Static List TestName" name
 	#Workaround for DAS-11570. Remove after fix
-	And User navigates to the "Static List TestName" list
+	#And User navigates to the "Static List TestName" list
 	When User clicks the List Details button
 	Then List details panel is displayed to the user
 	When User changes list name to "RenamedList"
@@ -61,7 +61,7 @@ Scenario Outline: EvergreenJnr_AllLists_CheckThatFavoriteAListWorkingCorrectlyFo
 	Then data in table is sorted by '<Columnname>' column in ascending order
 	When User create custom list with "TestList" name
 	#Workaround for DAS-11570. Remove after fix
-	And User navigates to the "TestList" list
+	#And User navigates to the "TestList" list
 	When User clicks the List Details button
 	Then List details panel is displayed to the user
 	When User mark list as favorite
@@ -92,7 +92,7 @@ Scenario Outline: EvergreenJnr_AllLists_CheckThatFavoriteAListWorkingCorrectlyFo
 	When User select all rows
 	And User create static list with "Static List TestName" name
 	#Workaround for DAS-11570. Remove after fix
-	And User navigates to the "Static List TestName" list
+	#And User navigates to the "Static List TestName" list
 	When User clicks the List Details button
 	Then List details panel is displayed to the user
 	When User mark list as favorite
@@ -135,7 +135,7 @@ Scenario Outline: EvergreenJnr_AllLists_CheckDefaultOptionsInListDetailsForDynam
 	Then data in table is sorted by '<Columnname>' column in ascending order
 	When User create custom list with "TestList" name
 	#Workaround for DAS-11570. Remove after fix
-	And User navigates to the "TestList" list
+	#And User navigates to the "TestList" list
 	When User clicks the List Details button
 	Then List details panel is displayed to the user
 	Then "TestList" name is displayed in list details panel
@@ -159,7 +159,7 @@ Scenario Outline: EvergreenJnr_AllLists_CheckDefaultOptionsInListDetailsForStati
 	When User select all rows
 	And User create static list with "Static List TestName" name
 	#Workaround for DAS-11570. Remove after fix
-	And User navigates to the "Static List TestName" list
+	#And User navigates to the "Static List TestName" list
 	When User clicks the List Details button
 	Then List details panel is displayed to the user
 	Then "Static List TestName" name is displayed in list details panel

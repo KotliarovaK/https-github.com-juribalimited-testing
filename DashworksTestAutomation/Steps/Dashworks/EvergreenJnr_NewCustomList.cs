@@ -101,7 +101,7 @@ namespace DashworksTestAutomation.Steps.Dashworks
         public void ThenListIsDisplayedToUser(string listName)
         {
             //Workaround for 11570. Remove after fix
-            WhenUserNavigatesToTheList(listName);
+            //WhenUserNavigatesToTheList(listName);
             var page = _driver.NowAt<BaseDashboardPage>();
             Assert.AreEqual(listName, page.ActiveCustomListName());
         }
