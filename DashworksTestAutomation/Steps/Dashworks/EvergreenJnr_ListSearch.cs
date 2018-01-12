@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Threading;
 using DashworksTestAutomation.Extensions;
 using DashworksTestAutomation.Pages.Evergreen;
 using DashworksTestAutomation.Utils;
@@ -22,9 +23,9 @@ namespace DashworksTestAutomation.Steps.Dashworks
         {
             var listPageElement = _driver.NowAt<BaseDashboardPage>();
 
-            listPageElement.SearchTextbox.Clear();
+            listPageElement.TableSearchTextbox.Clear();
             _driver.WaitForDataLoading();
-            listPageElement.SearchTextbox.SendKeys(searchTerm);
+            listPageElement.TableSearchTextbox.SendKeys(searchTerm);
             _driver.WaitForDataLoading();
         }
 
@@ -54,7 +55,7 @@ namespace DashworksTestAutomation.Steps.Dashworks
                 PerformSearch(row["SearchCriteria"]);
 
                 var page = _driver.NowAt<BaseDashboardPage>();
-
+                _driver.WaitWhileControlIsNotDisplayed<BaseDashboardPage>(() => page.NoResultsFoundMessage);
                 Assert.AreEqual(message, page.NoResultsFoundMessage.Text);
             }
         }
@@ -64,10 +65,10 @@ namespace DashworksTestAutomation.Steps.Dashworks
         {
             var listPageElement = _driver.NowAt<BaseDashboardPage>();
 
-            var inputLength = listPageElement.SearchTextbox.GetAttribute("value").Length;
+            var inputLength = listPageElement.TableSearchTextbox.GetAttribute("value").Length;
             for (int i = 0; i < inputLength; i++)
             {
-                listPageElement.SearchTextbox.SendKeys(OpenQA.Selenium.Keys.Backspace);
+                listPageElement.TableSearchTextbox.SendKeys(OpenQA.Selenium.Keys.Backspace);
             }
             _driver.WaitForDataLoading();
         }
@@ -78,6 +79,8 @@ namespace DashworksTestAutomation.Steps.Dashworks
             var listPageElement = _driver.NowAt<BaseDashboardPage>();
             if (!String.IsNullOrWhiteSpace(numberOfRows))
             {
+                Thread.Sleep(1000);
+
                 _driver.WaitWhileControlIsNotDisplayed<BaseDashboardPage>(() => listPageElement.ResultsOnPageCount);
 
                 StringAssert.AreEqualIgnoringCase($"{numberOfRows} rows", listPageElement.ResultsOnPageCount.Text);
@@ -98,15 +101,34 @@ namespace DashworksTestAutomation.Steps.Dashworks
             var listPageElement = _driver.NowAt<BaseDashboardPage>();
 
             _driver.WaitWhileControlIsNotDisplayed<BaseDashboardPage>(() => listPageElement.ResultsOnPageCount);
-            Assert.IsEmpty(listPageElement.SearchTextbox.GetAttribute("value"), "Search textbox is not empty");
+            Assert.IsEmpty(listPageElement.TableSearchTextbox.GetAttribute("value"), "Search textbox is not empty");
         }
 
         [When(@"User click content from ""(.*)"" column")]
         public void WhenUserClickContentFromColumn(string columnName)
         {
-            var tableElement = _driver.NowAt<BaseDashboardPage>();
-
+            var tableElement = _driver.NowAtWithoutWait<BaseDashboardPage>();
             tableElement.ClickContentByColumnName(columnName);
+            _driver.WaitForDataLoading();
+        }
+
+        [Then(@"reset button in Table Search field is displayed")]
+        public void ThenResetButtonInTableSearchFieldIsDisplayed()
+        {
+            var resetbutton = _driver.NowAt<BaseDashboardPage>();
+            _driver.WaitWhileControlIsNotDisplayed<BaseDashboardPage>(() => resetbutton.SearchTextboxResetButton);
+            Assert.IsTrue(resetbutton.SearchTextboxResetButton.Displayed(), "Reset button is not displayed");
+            Logger.Write("Reset button is displayed");
+        }
+
+        [Then(@"reset button in Search field at selected Panel is displayed")]
+        public void ThenResetButtonInSearchFieldOnSelectedPanelIsDisplayed()
+        {
+            var resetbutton = _driver.NowAt<BaseDashboardPage>();
+            _driver.WaitWhileControlIsNotDisplayed<BaseDashboardPage>(() => resetbutton.SearchTextboxResetButtonInPanel);
+
+            Assert.IsTrue(resetbutton.SearchTextboxResetButtonInPanel.Displayed(), "Reset button is not displayed");
+            Logger.Write("Reset button is displayed");
         }
     }
 }

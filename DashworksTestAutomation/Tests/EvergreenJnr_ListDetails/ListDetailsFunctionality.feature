@@ -3,22 +3,18 @@ Feature: ListDetailsFunctionality
 	Runs List Details Panel related tests
 
 Background: Pre-Conditions
-	Given User is on Dashworks Homepage
-	And Login link is visible
-	When User clicks on the Login link
-	Then Login Page is displayed to the user
-	When User provides the Login and Password and clicks on the login button
-	Then Dashworks homepage is displayed to the user in a logged in state
-	When User clicks the Switch to Evergreen link
+	Given User is logged in to the Evergreen
 	Then Evergreen Dashboards page should be displayed to the user
 
-@Evergreen @AllLists @EvergreenJnr_ListDetails @ListDetailsFunctionality @DAS-10880 @Delete_Newly_Created_List
+@Evergreen @AllLists @EvergreenJnr_ListDetails @ListDetailsFunctionality @DAS10880 @Delete_Newly_Created_List
 Scenario Outline: EvergreenJnr_AllLists_CheckThatRenamingAListWorkingCorrectlyForDynamicLists
 	When User clicks "<PageName>" on the left-hand menu
 	Then "<PageName>" list should be displayed to the user
 	When User click on '<Columnname>' column header
-	Then data in table is sorted by '<Columnname>' column in descending order
+	Then data in table is sorted by '<Columnname>' column in ascending order
 	When User create custom list with "TestList" name
+	#Workaround for DAS-11570. Remove after fix
+	#And User navigates to the "TestList" list
 	When User clicks the List Details button
 	Then List details panel is displayed to the user
 	When User changes list name to "RenamedList"
@@ -33,7 +29,7 @@ Examples:
 	| Applications | Application   |
 	| Mailboxes    | Email Address |
 
-@Evergreen @AllLists @EvergreenJnr_ListDetails @ListDetailsFunctionality @DAS-10880 @Delete_Newly_Created_List
+@Evergreen @AllLists @EvergreenJnr_ListDetails @ListDetailsFunctionality @DAS10880 @Delete_Newly_Created_List
 Scenario Outline: EvergreenJnr_AllLists_CheckThatRenamingAListWorkingCorrectlyForStaticLists
 	When User clicks "<PageName>" on the left-hand menu
 	Then "<PageName>" list should be displayed to the user
@@ -42,7 +38,7 @@ Scenario Outline: EvergreenJnr_AllLists_CheckThatRenamingAListWorkingCorrectlyFo
 	When User select all rows
 	And User create static list with "Static List TestName" name
 	#Workaround for DAS-11570. Remove after fix
-	And User navigates to the "Static List TestName" list
+	#And User navigates to the "Static List TestName" list
 	When User clicks the List Details button
 	Then List details panel is displayed to the user
 	When User changes list name to "RenamedList"
@@ -57,15 +53,15 @@ Examples:
 	| Applications | Application   |
 	| Mailboxes    | Email Address |
 
-@Evergreen @AllLists @EvergreenJnr_ListDetails @ListDetailsFunctionality @DAS-10880 @Delete_Newly_Created_List
+@Evergreen @AllLists @EvergreenJnr_ListDetails @ListDetailsFunctionality @DAS10880 @Delete_Newly_Created_List
 Scenario Outline: EvergreenJnr_AllLists_CheckThatFavoriteAListWorkingCorrectlyForDynamicLists
 	When User clicks "<PageName>" on the left-hand menu
 	Then "<PageName>" list should be displayed to the user
 	When User click on '<Columnname>' column header
-	Then data in table is sorted by '<Columnname>' column in descending order
+	Then data in table is sorted by '<Columnname>' column in ascending order
 	When User create custom list with "TestList" name
 	#Workaround for DAS-11570. Remove after fix
-	And User navigates to the "TestList" list
+	#And User navigates to the "TestList" list
 	When User clicks the List Details button
 	Then List details panel is displayed to the user
 	When User mark list as favorite
@@ -87,7 +83,7 @@ Examples:
 	| Applications | Application   | All Applications |
 	| Mailboxes    | Email Address | All Mailboxes    |
 
-@Evergreen @AllLists @EvergreenJnr_ListDetails @ListDetailsFunctionality @DAS-10880 @Delete_Newly_Created_List
+@Evergreen @AllLists @EvergreenJnr_ListDetails @ListDetailsFunctionality @DAS10880 @Delete_Newly_Created_List
 Scenario Outline: EvergreenJnr_AllLists_CheckThatFavoriteAListWorkingCorrectlyForStaticLists
 	When User clicks "<PageName>" on the left-hand menu
 	Then "<PageName>" list should be displayed to the user
@@ -96,7 +92,7 @@ Scenario Outline: EvergreenJnr_AllLists_CheckThatFavoriteAListWorkingCorrectlyFo
 	When User select all rows
 	And User create static list with "Static List TestName" name
 	#Workaround for DAS-11570. Remove after fix
-	And User navigates to the "Static List TestName" list
+	#And User navigates to the "Static List TestName" list
 	When User clicks the List Details button
 	Then List details panel is displayed to the user
 	When User mark list as favorite
@@ -118,7 +114,7 @@ Examples:
 	| Applications | All Applications |
 	| Mailboxes    | All Mailboxes    |
 
-@Evergreen @AllLists @EvergreenJnr_ListDetails @ListDetailsFunctionality @DAS-10880
+@Evergreen @AllLists @EvergreenJnr_ListDetails @ListDetailsFunctionality @DAS10880
 Scenario Outline: EvergreenJnr_AllLists_CheckThatListDetailsButtonIsDisabledForDefaultLists
 	When User clicks "<PageName>" on the left-hand menu
 	Then "<PageName>" list should be displayed to the user
@@ -131,15 +127,15 @@ Examples:
 	| Applications |
 	| Mailboxes    |
 
-@Evergreen @AllLists @EvergreenJnr_ListDetails @ListDetailsFunctionality @DAS-10880 @Delete_Newly_Created_List
+@Evergreen @AllLists @EvergreenJnr_ListDetails @ListDetailsFunctionality @DAS10880 @Delete_Newly_Created_List
 Scenario Outline: EvergreenJnr_AllLists_CheckDefaultOptionsInListDetailsForDynamicLists
 	When User clicks "<PageName>" on the left-hand menu
 	Then "<PageName>" list should be displayed to the user
 	When User click on '<Columnname>' column header
-	Then data in table is sorted by '<Columnname>' column in descending order
+	Then data in table is sorted by '<Columnname>' column in ascending order
 	When User create custom list with "TestList" name
 	#Workaround for DAS-11570. Remove after fix
-	And User navigates to the "TestList" list
+	#And User navigates to the "TestList" list
 	When User clicks the List Details button
 	Then List details panel is displayed to the user
 	Then "TestList" name is displayed in list details panel
@@ -154,7 +150,7 @@ Examples:
 	| Applications | Application   |
 	| Mailboxes    | Email Address |
 
-@Evergreen @AllLists @EvergreenJnr_ListDetails @ListDetailsFunctionality @DAS-10880 @Delete_Newly_Created_List
+@Evergreen @AllLists @EvergreenJnr_ListDetails @ListDetailsFunctionality @DAS10880 @Delete_Newly_Created_List
 Scenario Outline: EvergreenJnr_AllLists_CheckDefaultOptionsInListDetailsForStaticLists
 	When User clicks "<PageName>" on the left-hand menu
 	Then "<PageName>" list should be displayed to the user
@@ -163,7 +159,7 @@ Scenario Outline: EvergreenJnr_AllLists_CheckDefaultOptionsInListDetailsForStati
 	When User select all rows
 	And User create static list with "Static List TestName" name
 	#Workaround for DAS-11570. Remove after fix
-	And User navigates to the "Static List TestName" list
+	#And User navigates to the "Static List TestName" list
 	When User clicks the List Details button
 	Then List details panel is displayed to the user
 	Then "Static List TestName" name is displayed in list details panel
@@ -177,3 +173,26 @@ Examples:
 	| Users        |
 	| Applications |
 	| Mailboxes    |
+
+@Evergreen @AllLists @EvergreenJnr_ListDetails @ListDetailsFunctionality @DAS11493 @Delete_Newly_Created_List
+Scenario Outline: EvergreenJnr_AllLists_CheckThatActiveListIsRefreshedOnListDetailsPanel
+	When User clicks "<PageName>" on the left-hand menu
+	Then "<PageName>" list should be displayed to the user
+	When User click on '<Columnname>' column header
+	Then data in table is sorted by '<Columnname>' column in ascending order
+	When User create custom list with "TestList" name
+	Then "TestList" list is displayed to user
+	When User clicks the List Details button
+	Then List details panel is displayed to the user
+	When User select "Automation Admin 1" as a Owner of a list
+	And User click Accept button in List Details panel
+	Then List details button is disabled
+	And list with "TestList" name is removed
+	And "<PageName>" list should be displayed to the user
+
+Examples: 
+	| PageName     | Columnname    |
+	| Devices      | Hostname      |
+	| Users        | Username      |
+	| Applications | Application   |
+	| Mailboxes    | Email Address |

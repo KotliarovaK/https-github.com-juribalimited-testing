@@ -3,16 +3,10 @@ Feature: RemoveColumn
 	Runs Remove column related tests
 
 Background: Pre-Conditions
-	Given User is on Dashworks Homepage
-	And Login link is visible
-	When User clicks on the Login link
-	Then Login Page is displayed to the user
-	When User provides the Login and Password and clicks on the login button
-	Then Dashworks homepage is displayed to the user in a logged in state
-	When User clicks the Switch to Evergreen link
+	Given User is logged in to the Evergreen
 	Then Evergreen Dashboards page should be displayed to the user
 
-@Evergreen @Devices @EvergreenJnr_Columns @RemoveColumn @DAS-10966 @DAS-10973 @Delete_Newly_Created_List
+@Evergreen @Devices @EvergreenJnr_Columns @RemoveColumn @DAS10966 @DAS10973 @Delete_Newly_Created_List
 Scenario: EvergreenJnr_DevicesList_CheckThat500ErrorPageIsNotDisplayedAfterRemovingSortedColumnInCustomList
 	When User clicks "Devices" on the left-hand menu
 	Then "Devices" list should be displayed to the user
@@ -50,7 +44,7 @@ Scenario: EvergreenJnr_DevicesList_CheckThat500ErrorPageIsNotDisplayedAfterRemov
 	| ColumnName   |
 	| Boot Up Date |
 
-@Evergreen @Devices @EvergreenJnr_Columns @RemoveColumn @DAS-10966 @DAS-10973 @Delete_Newly_Created_List
+@Evergreen @Devices @EvergreenJnr_Columns @RemoveColumn @DAS10966 @DAS10973 @Delete_Newly_Created_List
 Scenario: EvergreenJnr_DevicesList_CheckThat500ErrorPageIsNotDisplayedAfterRemovingMultipleSortedColumnInCustomList
 	When User clicks "Devices" on the left-hand menu
 	Then "Devices" list should be displayed to the user
@@ -83,7 +77,7 @@ Scenario: EvergreenJnr_DevicesList_CheckThat500ErrorPageIsNotDisplayedAfterRemov
 	Then ColumnName is removed from the list
 	| ColumnName |
 	| Build Date |
-	Then data in table is sorted by 'Boot Up Date' column in ascending order
+	Then data in table is sorted by 'Boot Up Date' column in descending order
 	When User removes sorted column by URL
 	| ColumnName   |
 	| Boot Up Date |
@@ -92,7 +86,7 @@ Scenario: EvergreenJnr_DevicesList_CheckThat500ErrorPageIsNotDisplayedAfterRemov
 	| ColumnName   |
 	| Boot Up Date |
 
-@Evergreen @Devices @EvergreenJnr_Columns @RemoveColumn @DAS-10966 @DAS-10973 @Delete_Newly_Created_List
+@Evergreen @Devices @EvergreenJnr_Columns @RemoveColumn @DAS10966 @DAS10973 @Delete_Newly_Created_List
 Scenario: EvergreenJnr_DevicesList_CheckThat500ErrorPageIsNotDisplayedAfterRemovingSortedColumnInCustomListThrowFilters
 	When User clicks "Devices" on the left-hand menu
 	Then "Devices" list should be displayed to the user
@@ -135,7 +129,7 @@ Scenario: EvergreenJnr_DevicesList_CheckThat500ErrorPageIsNotDisplayedAfterRemov
 	Then Filters panel is displayed to the user
 	Then "Directory Type" filter is added to the list
 
-@Evergreen @Devices @EvergreenJnr_Columns @RemoveColumn @DAS-10966 @DAS-10973
+@Evergreen @Devices @EvergreenJnr_Columns @RemoveColumn @DAS10966 @DAS10973
 Scenario: EvergreenJnr_DevicesList_CheckThat500ErrorPageIsNotDisplayedAfterRemovingSortedColumnInDefaultList
 	When User clicks "Devices" on the left-hand menu
 	Then "Devices" list should be displayed to the user
@@ -165,7 +159,7 @@ Scenario: EvergreenJnr_DevicesList_CheckThat500ErrorPageIsNotDisplayedAfterRemov
 	| ColumnName                   |
 	| Windows7Mi: Date & Time Task |
 
-@Evergreen @Devices @EvergreenJnr_Columns @RemoveColumn @DAS-10966 @DAS-10973
+@Evergreen @Devices @EvergreenJnr_Columns @RemoveColumn @DAS10966 @DAS10973
 Scenario: EvergreenJnr_DevicesList_CheckThat500ErrorPageIsNotDisplayedAfterRemovingMultipleSortedColumnInDefaultList
 	When User clicks "Devices" on the left-hand menu
 	Then "Devices" list should be displayed to the user
@@ -203,7 +197,7 @@ Scenario: EvergreenJnr_DevicesList_CheckThat500ErrorPageIsNotDisplayedAfterRemov
 	| Windows7Mi: Date & Time Task |
 	Then data in table is sorted by 'Build Date' column in descending order
 
-@Evergreen @Devices @EvergreenJnr_Columns @RemoveColumn @DAS-10966 @DAS-10973
+@Evergreen @Devices @EvergreenJnr_Columns @RemoveColumn @DAS10966 @DAS10973
 Scenario: EvergreenJnr_DevicesList_CheckThat500ErrorPageIsNotDisplayedAfterRemovingSortedColumnInDefaultListThrowFilters
 	When User clicks "Devices" on the left-hand menu
 	Then "Devices" list should be displayed to the user
@@ -243,7 +237,7 @@ Scenario: EvergreenJnr_DevicesList_CheckThat500ErrorPageIsNotDisplayedAfterRemov
 	Then Filters panel is displayed to the user
 	Then "Directory Type" filter is added to the list
 
-@Evergreen @Users @EvergreenJnr_Columns @RemoveColumn @DAS-10973
+@Evergreen @Users @EvergreenJnr_Columns @RemoveColumn @DAS10973
 Scenario: EvergreenJnr_UsersList_CheckThat500ErrorPageIsNotDisplayedAfterRemovingSortedColumn
 	When User clicks "Users" on the left-hand menu
 	Then "Users" list should be displayed to the user
@@ -271,15 +265,15 @@ Scenario: EvergreenJnr_UsersList_CheckThat500ErrorPageIsNotDisplayedAfterRemovin
 	| Last Logon Date |
 	| Home Drive      |
 
-@Evergreen @Devices @EvergreenJnr_Columns @RemoveColumn @DAS-11044 @Delete_Newly_Created_List
+@Evergreen @Devices @EvergreenJnr_Columns @RemoveColumn @DAS11044 @Delete_Newly_Created_List
 Scenario: EvergreenJnr_DevicesList_CheckThatRemovingColumnsFromUrlIsWorksCorrectly
 	When User clicks "Devices" on the left-hand menu
 	Then "Devices" list should be displayed to the user
 	When User click on 'Hostname' column header
-	Then data in table is sorted by 'Hostname' column in descending order
+	Then data in table is sorted by 'Hostname' column in ascending order
 	When User create custom list with "TestList" name
 	#Workaround for DAS-11570. Remove after fix
-	And User navigates to the "TestList" list
+	#And User navigates to the "TestList" list
 	When User clicks the Columns button
 	Then Columns panel is displayed to the user
 	When ColumnName is entered into the search box and the selection is clicked
@@ -298,15 +292,15 @@ Scenario: EvergreenJnr_DevicesList_CheckThatRemovingColumnsFromUrlIsWorksCorrect
 	| Compliance |
 	| Device Key |
 
-@Evergreen @Devices @EvergreenJnr_Columns @RemoveColumn @DAS-11044 @Delete_Newly_Created_List
+@Evergreen @Devices @EvergreenJnr_Columns @RemoveColumn @DAS11044 @Delete_Newly_Created_List
 Scenario: EvergreenJnr_DevicesList_CheckThatRemovingColumnAndFilterFromUrlWorksCorrectly
 	When User clicks "Devices" on the left-hand menu
 	Then "Devices" list should be displayed to the user
 	When User click on 'Hostname' column header
-	Then data in table is sorted by 'Hostname' column in descending order
+	Then data in table is sorted by 'Hostname' column in ascending order
 	When User create custom list with "TestList" name
 	#Workaround for DAS-11570. Remove after fix
-	And User navigates to the "TestList" list
+	#And User navigates to the "TestList" list
 	When User clicks the Columns button
 	Then Columns panel is displayed to the user
 	When ColumnName is entered into the search box and the selection is clicked
@@ -334,15 +328,15 @@ Scenario: EvergreenJnr_DevicesList_CheckThatRemovingColumnAndFilterFromUrlWorksC
 	| Compliance |
 	| Device Key |
 
-@Evergreen @Devices @EvergreenJnr_Columns @RemoveColumn @DAS-1044 @DAS-11506 @Delete_Newly_Created_List @Not_Run
+@Evergreen @Devices @EvergreenJnr_Columns @RemoveColumn @DAS1044 @DAS11506 @Delete_Newly_Created_List @Not_Run
 Scenario: EvergreenJnr_DevicesList_CheckThatRemovingColumnAndFilterAndCustomListFromUrlWorksCorrectly
 	When User clicks "Devices" on the left-hand menu
 	Then "Devices" list should be displayed to the user
 	When User click on 'Hostname' column header
-	Then data in table is sorted by 'Hostname' column in descending order
+	Then data in table is sorted by 'Hostname' column in ascending order
 	When User create custom list with "TestList" name
 	#Workaround for DAS-11570. Remove after fix
-	And User navigates to the "TestList" list
+	#And User navigates to the "TestList" list
 	When User clicks the Columns button
 	Then Columns panel is displayed to the user
 	When ColumnName is entered into the search box and the selection is clicked
@@ -370,7 +364,7 @@ Scenario: EvergreenJnr_DevicesList_CheckThatRemovingColumnAndFilterAndCustomList
 	| Compliance |
 	| Device Key |
 
-@Evergreen @Devices @EvergreenJnr_Columns @RemoveColumn @DAS-11515
+@Evergreen @Devices @EvergreenJnr_Columns @RemoveColumn @DAS11515
 Scenario: EvergreenJnr_DevicesList_CheckThatColumnIsDisplayedInColumnsPanelAfterRemovingOneColumnFromTheURL
 	When User clicks "Devices" on the left-hand menu
 	Then "Devices" list should be displayed to the user
@@ -397,7 +391,7 @@ Scenario: EvergreenJnr_DevicesList_CheckThatColumnIsDisplayedInColumnsPanelAfter
 	| Owner Common Name |
 	Then "25" subcategories is displayed for "Device Owner" category
 
-@Evergreen @Users @EvergreenJnr_Columns @RemoveColumn @DAS-11515 @DAS-11506 @Not_Run
+@Evergreen @Users @EvergreenJnr_Columns @RemoveColumn @DAS11515 @DAS11506 @Not_Run
 Scenario: EvergreenJnr_UsersList_CheckThatColumnIsDisplayedInColumnsPanelAfterRemovingAllColumnsFromTheURL
 	When User clicks "Users" on the left-hand menu
 	Then "Users" list should be displayed to the user
@@ -427,7 +421,7 @@ Scenario: EvergreenJnr_UsersList_CheckThatColumnIsDisplayedInColumnsPanelAfterRe
 	And "18" subcategories is displayed for "User" category
 	And "42" subcategories is displayed for "Project Tasks: Windows7Mi" category
 
-@Evergreen @Applications @EvergreenJnr_Columns @RemoveColumn @DAS-11515
+@Evergreen @Applications @EvergreenJnr_Columns @RemoveColumn @DAS11515
 Scenario: EvergreenJnr_ApplicationsList_CheckThatColumnIsDisplayedInColumnsPanelAfterRemovingAColumnWhichAlsoExistsAsAFilter
 	When User clicks "Applications" on the left-hand menu
 	Then "Applications" list should be displayed to the user
@@ -466,3 +460,20 @@ Scenario: EvergreenJnr_ApplicationsList_CheckThatColumnIsDisplayedInColumnsPanel
 	| ColumnName                 |
 	| Windows7Mi: Technical Test |
 	And "8" subcategories is displayed for "Project Tasks: Windows7Mi" category
+
+@Evergreen @Devices @EvergreenJnr_Columns @RemoveColumn @DAS11037
+Scenario Outline: EvergreenJnr_DevicesList_CheckThat500ErrorNotDisplayedAfterRemovingUsernameOrHostnameColumn 
+	When User clicks "<PageName>" on the left-hand menu
+	Then "<PageName>" list should be displayed to the user
+	When User clicks the Columns button
+	Then Columns panel is displayed to the user
+	When User removes "<ColumnName>" column by Column panel
+	Then "<PageName>" list should be displayed to the user
+	And ColumnName is removed from the list
+	| ColumnName   |
+	| <ColumnName> |
+
+Examples: 
+	| PageName | ColumnName |
+	| Devices  | Hostname   |
+	| Users    | Username   |

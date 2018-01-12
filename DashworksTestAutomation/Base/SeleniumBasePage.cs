@@ -27,7 +27,7 @@ namespace DashworksTestAutomation.Base
                 .GetProperties()
                 .Select(p => p.GetFirstDecoration<FindsByAttribute>())
                 .Where(a =>
-                    ((object)a) != null
+                    ((object) a) != null
                     && a != null)
                 .Select(Utils.ByFactory.From)
                 .ToList();
@@ -35,7 +35,8 @@ namespace DashworksTestAutomation.Base
 
         public By SelectorFor<TPage, TProperty>(TPage page, Expression<Func<TPage, TProperty>> expression)
         {
-            var attribute = Extensions.ReflectionExtensions.ResolveMember(page, expression).GetFirstDecoration<FindsByAttribute>();
+            var attribute = Extensions.ReflectionExtensions.ResolveMember(page, expression)
+                .GetFirstDecoration<FindsByAttribute>();
             return Utils.ByFactory.From(attribute);
         }
     }

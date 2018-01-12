@@ -3,14 +3,13 @@ using System.Collections.Generic;
 using System.Data;
 using System.Data.SqlClient;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace DashworksTestAutomation.Helpers
 {
     class DatabaseHelper
     {
-        private static string _connectionString = "Server=172.30.3.140;Database=DesktopBI;User ID=sa;Password=DataWarehouse04;Encrypt=True;TrustServerCertificate=True;Connection Timeout=60;ConnectRetryCount=3";
+        private static string _connectionString =
+            "Server=172.30.3.140;Database=DesktopBI;User ID=sa;Password=DataWarehouse04;Encrypt=True;TrustServerCertificate=True;Connection Timeout=60;ConnectRetryCount=3";
 
         public static void ExecuteQuery(string query)
         {

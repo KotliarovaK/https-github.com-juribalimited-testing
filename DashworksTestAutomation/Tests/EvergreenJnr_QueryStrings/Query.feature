@@ -3,16 +3,10 @@ Feature: Query
 	Runs Query tests.
 
 Background: Pre-Conditions
-	Given User is on Dashworks Homepage
-	And Login link is visible
-	When User clicks on the Login link
-	Then Login Page is displayed to the user
-	When User provides the Login and Password and clicks on the login button
-	Then Dashworks homepage is displayed to the user in a logged in state
-	When User clicks the Switch to Evergreen link
+	Given User is logged in to the Evergreen
 	Then Evergreen Dashboards page should be displayed to the user
 	
-@Evergreen @Users @Mailboxes @Devices @Applications @EvergreenJnr_QueryStrings @Query @DAS-10753 @DAS-10615 @DAS-10475
+@Evergreen @Users @Mailboxes @Devices @Applications @EvergreenJnr_QueryStrings @Query @DAS10753 @DAS10615 @DAS10475
 Scenario: EvergreenJnr_QueryString_DateComboAndApostrophe
 Runs Evergreen URL query strings which include a date field combos query and filters using apostrophes.
 	When Evergreen QueryStringURL is entered for Simple QueryType
@@ -23,7 +17,7 @@ Runs Evergreen URL query strings which include a date field combos query and fil
 	| Mailboxes with apostrophes      | evergreen/#/mailboxes?$filter=(displayName%20CONTAINS%20('o''donnell'%2C'o''brien'%2C'o''neil')%20)&$select=principalEmailAddress,mailboxPlatform,serverName,mailboxType,ownerDisplayName,displayName                                                                                                                                                                                                            |
 	Then agGrid Main Object List is returned with data
 
-@Evergreen @Users @Mailboxes @Devices @Applications @EvergreenJnr_QueryStrings @Query @DAS-10782
+@Evergreen @Users @Mailboxes @Devices @Applications @EvergreenJnr_QueryStrings @Query @DAS10782
 Scenario: EvergreenJnr_QueryString_Complex
 Runs Evergreen URL query strings that are complex, with lots of columns and advanced filters applied
 	When Evergreen QueryStringURL is entered for Complex QueryType
@@ -45,7 +39,7 @@ Runs Evergreen URL query strings for the 4 default all lists.
 	| All Mailboxes    | evergreen/#/mailboxes?$select=principalEmailAddress,mailboxPlatform,serverName,mailboxType,ownerDisplayName |
 	Then agGrid Main Object List is returned with data
 
-@Evergreen @Applications @EvergreenJnr_QueryStrings @Query @DAS-11023
+@Evergreen @Applications @EvergreenJnr_QueryStrings @Query @DAS11023 @Not_Run
 Scenario: EvergreenJnr_QueryString_Applications
 Runs Evergreen URL query strings for the Applications List.
 	When Evergreen QueryStringURL is entered for Simple QueryType
@@ -55,7 +49,7 @@ Runs Evergreen URL query strings for the Applications List.
 	| Category    | evergreen/#/applications?$select=packageName,packageManufacturer,packageVersion,project_1_subCategoryId                                                                                                                                                                                                                                                                                             |
 	Then agGrid Main Object List is returned with data
 
-@Evergreen @Devices @EvergreenJnr_QueryStrings @Query @DAS-11023
+@Evergreen @Devices @EvergreenJnr_QueryStrings @Query @DAS11023
 Scenario: EvergreenJnr_QueryString_Devices
 Runs Evergreen URL query strings for the Devices List.
 	When Evergreen QueryStringURL is entered for Simple QueryType
@@ -63,7 +57,7 @@ Runs Evergreen URL query strings for the Devices List.
 	| Devices   | evergreen/#/devices?$select=hostname,chassisCategory,oSCategory,ownerDisplayName,bootupDate,biosVersion,oSArchitecture,ownerDomain,entitledApplications,costCentre,locationName,description,lDAP_41,customField_33,project_46_subCategory,project_46_ragStatus,project_46_requestType |
 	Then agGrid Main Object List is returned with data
 
-@Evergreen @Users @EvergreenJnr_QueryStrings @Query @DAS-11023
+@Evergreen @Users @EvergreenJnr_QueryStrings @Query @DAS11023
 Scenario: EvergreenJnr_QueryString_Users
 Runs Evergreen URL query strings for the Users List.
 	When Evergreen QueryStringURL is entered for Simple QueryType
@@ -71,7 +65,7 @@ Runs Evergreen URL query strings for the Users List.
 	| Devices   | evergreen/#/users?$select=username,directoryName,displayName,fullyDistinguishedObjectName,description,usedApplications,departmentCode,buildingName,lDAP_46,customField_1,project_46_subCategory,project_46_ragStatus,project_46_requestType |
 	Then agGrid Main Object List is returned with data
 
-@Evergreen @Mailboxes @EvergreenJnr_QueryStrings @Query @DAS-11023
+@Evergreen @Mailboxes @EvergreenJnr_QueryStrings @Query @DAS11023
 Scenario: EvergreenJnr_QueryString_Mailboxes
 Runs Evergreen URL query strings for the Mailboxes List.
 	When Evergreen QueryStringURL is entered for Simple QueryType
@@ -79,7 +73,7 @@ Runs Evergreen URL query strings for the Mailboxes List.
 	| Devices   | evergreen/#/mailboxes?$select=principalEmailAddress,mailboxPlatform,serverName,mailboxType,ownerDisplayName,displayName,ownerEmailAddress,departmentCode,locationName,customField_81,project_48_subCategory,project_48_requestType,project_48_teamName |
 	Then agGrid Main Object List is returned with data
 
-@Evergreen @Devices @EvergreenJnr_QueryStrings @Query @DAS-10789
+@Evergreen @Devices @EvergreenJnr_QueryStrings @Query @DAS10789
 Scenario: EvergreenJnr_QueryString_ApplicationsOnDevicesList
 Runs Evergreen URL query strings for the Applications on Devices List.
 	When Evergreen QueryStringURL is entered for Simple QueryType
@@ -88,7 +82,7 @@ Runs Evergreen URL query strings for the Applications on Devices List.
 	| Apps On Devices          | evergreen/#/devices?$select=hostname,chassisCategory,oSCategory,ownerDisplayName&$filter=(application%20EQUALS%20('451')%20WHERE%20(Used%20on%20device,Entitled%20to%20device,Installed%20on%20device,Used%20by%20device's%20owner,Entitled%20to%20device's%20owner)) |
 	Then agGrid Main Object List is returned with data
 
-@Evergreen @Users @Mailboxes @Devices @Applications @EvergreenJnr_QueryStrings @TableSorting @DAS-10598
+@Evergreen @Users @Mailboxes @Devices @Applications @EvergreenJnr_QueryStrings @TableSorting @DAS10598
 Scenario: EvergreenJnr_QueryString_AllListsSortByKeys
 Runs Evergreen URL query strings which include being sorted by object key columns.
 	When Evergreen QueryStringURL is entered for Simple QueryType

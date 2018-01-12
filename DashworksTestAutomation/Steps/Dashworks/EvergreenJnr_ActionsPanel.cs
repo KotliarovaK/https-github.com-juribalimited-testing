@@ -29,6 +29,14 @@ namespace DashworksTestAutomation.Steps.Dashworks
             Logger.Write("Actions panel is visible");
         }
 
+        [Then(@"Actions message container is displayed to the user")]
+        public void ThenActionsMessageContainerIsDisplayedToTheUser()
+        {
+            var columnElement = _driver.NowAt<ActionsElement>();
+            Assert.IsTrue(columnElement.ActionsContainerMessage.Displayed(), "Actions message container was not displayed");
+            Logger.Write("Actions message container is visible");
+        }
+
         [When(@"User is deselect all rows")]
         [When(@"User select all rows")]
         public void WhenUserSelectAllRows()
@@ -45,6 +53,8 @@ namespace DashworksTestAutomation.Steps.Dashworks
             foreach (var row in table.Rows)
             {
                 var rowIndex = columnContent.IndexOf(row["SelectedRowsName"]);
+                if(rowIndex<0)
+                    throw new Exception($"'{row["SelectedRowsName"]}' is not found in the '{columnName}' column");
                 dashboardPage.SelectRowsCheckboxes[rowIndex].Click();
             }
         }

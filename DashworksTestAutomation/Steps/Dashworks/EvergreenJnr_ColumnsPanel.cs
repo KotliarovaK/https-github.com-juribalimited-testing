@@ -6,7 +6,6 @@ using DashworksTestAutomation.Utils;
 using NUnit.Framework;
 using OpenQA.Selenium.Remote;
 using System;
-using System.Linq;
 using System.Text.RegularExpressions;
 using TechTalk.SpecFlow;
 
@@ -32,12 +31,12 @@ namespace DashworksTestAutomation.Steps.Dashworks
             Logger.Write("Columns panel is visible");
         }
 
-        [When(@"User is searching in columns with ""(.*)"" text in Columns panel")]
-        public void WhenUserIsSearchingInColumnsWithTextInColumnsPanel(string searchedText)
+        [When(@"User enters ""(.*)"" text in Search field at Columns Panel")]
+        public void WhenUserEntersTextInSearchFieldAtColumnsPanel(string searchedText)
         {
             var columnElement = _driver.NowAt<ColumnsElement>();
             columnElement.SearchTextbox.Clear();
-            columnElement.EnteredIntoSearchBox(searchedText);
+            columnElement.SearchTextbox.SendKeys(searchedText);
         }
 
         [When(@"User clears search textbox in Columns panel")]
@@ -215,6 +214,13 @@ namespace DashworksTestAutomation.Steps.Dashworks
                 resetButton.Click();
             }
             Assert.AreEqual(subCategoriesCount, columnElement.GetSubcategoriesCountByCategoryName(categoryName));
+        }
+
+        [Then(@"""(.*)"" subcategory is selected in Column panel")]
+        public void ThenSubcategoryIsSelectedInColumnPanel(string subCategoriesName)
+        {
+            var columnElement = _driver.NowAt<ColumnsElement>();
+            Assert.IsTrue(columnElement.SubcategoryIsSelected(subCategoriesName));
         }
 
         [Then(@"Minimize buttons are displayed for all category in Columns panel")]

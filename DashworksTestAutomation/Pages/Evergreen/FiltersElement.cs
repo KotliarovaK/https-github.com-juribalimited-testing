@@ -18,16 +18,34 @@ namespace DashworksTestAutomation.Pages.Evergreen
         [FindsBy(How = How.XPath, Using = ".//input[@name='search']")]
         public IWebElement SearchTextbox { get; set; }
 
-        [FindsBy(How = How.XPath, Using = ".//button[@class='btn btn-default input-toggle mat-icon-button ng-star-inserted']")]
+        [FindsBy(How = How.XPath,
+            Using = ".//button[@class='btn btn-default input-toggle mat-icon-button ng-star-inserted']")]
         public IWebElement SearchTextboxResetButton { get; set; }
+
+        [FindsBy(How = How.XPath,
+            Using = ".//div[@class='filterAddPanel ng-star-inserted']//input[@placeholder='Search']")]
+        public IWebElement LookupFilterSearchTextbox { get; set; }
+
+        [FindsBy(How = How.XPath,
+            Using = ".//div[@id='context']//div[@class='mat-input-flex mat-form-field-flex']//input")]
+        public IWebElement FilterSearchTextbox { get; set; }
+
+        [FindsBy(How = How.XPath,
+            Using =
+                ".//div[@class='associationmultiselect-parent btn-group dropdown-associationmultiselect']//input[@placeholder='Search']")]
+        public IWebElement AssociationSearchTextbox { get; set; }
 
         [FindsBy(How = How.XPath, Using = ".//div[contains(@class,'filter-category ng-star-inserted')]")]
         public IList<IWebElement> FilterCategories { get; set; }
 
-        [FindsBy(How = How.XPath, Using = ".//button[@title='Minimize Group']")]
+        [FindsBy(How = How.XPath,
+            Using =
+                ".//div[@class='filter-category-title ng-star-inserted']//button[@aria-describedby='cdk-describedby-message-274']")]
         public IList<IWebElement> MinimizeGroupButton { get; set; }
 
-        [FindsBy(How = How.XPath, Using = ".//button[@title='Maximize Group']")]
+        [FindsBy(How = How.XPath,
+            Using =
+                ".//div[@class='filter-category-title ng-star-inserted']//button[@aria-describedby='cdk-describedby-message-333']")]
         public IList<IWebElement> MaximizeGroupButton { get; set; }
 
         [FindsBy(How = How.XPath, Using = ".//div[@class='styleSelectDropdown']")]
@@ -55,10 +73,11 @@ namespace DashworksTestAutomation.Pages.Evergreen
         public IList<IWebElement> AddCategoryColumnName { get; set; }
 
         [FindsBy(How = How.XPath,
-            Using = ".//div[@class='filterAddPanel ng-star-inserted']//button[@title='Remove filter']")]
+            Using =
+                ".//div[@class='filterAddPanel ng-star-inserted']//i[@class='material-icons mat-item_delete']/ancestor::button")]
         public IWebElement RemoveFilterButton { get; set; }
 
-        [FindsBy(How = How.XPath, Using = ".//button[@title='Reset Filter']")]
+        [FindsBy(How = How.XPath, Using = ".//span[text()='RESET']/ancestor::button")]
         public IWebElement ResetFiltersButton { get; set; }
 
         [FindsBy(How = How.XPath, Using = ".//span[contains(@class, 'filter-label-value')]")]
@@ -67,16 +86,17 @@ namespace DashworksTestAutomation.Pages.Evergreen
         [FindsBy(How = How.XPath, Using = ".//span[@class='filter-label-op']")]
         public IList<IWebElement> FilterOptions { get; set; }
 
-        [FindsBy(How = How.XPath, Using = ".//span[@class='mat-select-value-text']")]
+        [FindsBy(How = How.XPath, Using = ".//span[contains(@class,'mat-select-value-text')]")]
         public IWebElement OperatorDropdown { get; set; }
 
-        [FindsBy(How = How.XPath, Using = ".//div[contains(@class,'mat-select-content')]/md-option")]
+        [FindsBy(How = How.XPath, Using = ".//div[contains(@class,'mat-select-content')]/mat-option")]
         public IList<IWebElement> OperatorOptions { get; set; }
 
         [FindsBy(How = How.XPath, Using = ".//div[@class='filter-label']")]
         public IList<IWebElement> AddedFilterLabels { get; set; }
 
         private const string GroupTitleSelector = ".//div[contains(@class,'filter-category-title ng-star-inserted')]";
+
         [FindsBy(How = How.XPath, Using = GroupTitleSelector)]
         public IList<IWebElement> GroupTitle { get; set; }
 
@@ -108,6 +128,7 @@ namespace DashworksTestAutomation.Pages.Evergreen
                 Driver.MouseHover(AddNewFilterButton);
                 AddNewFilterButton.Click();
             }
+
             if (FilterCategories.Any())
                 Driver.MouseHover(FilterCategories.Last());
             Driver.MouseHover(SearchTextbox);
@@ -123,6 +144,7 @@ namespace DashworksTestAutomation.Pages.Evergreen
             {
                 selector = $".//div[contains(@class, 'filter-add')][text()='{filterName}']";
             }
+
             Driver.WaitWhileControlIsNotDisplayed(By.XPath(selector));
             Driver.FindElement(By.XPath(selector)).Click();
 
@@ -136,6 +158,7 @@ namespace DashworksTestAutomation.Pages.Evergreen
             {
                 AddNewFilterButton.Click();
             }
+
             SearchTextbox.Clear();
             SearchTextbox.SendKeys(filterName);
             var selector = By.XPath($".//div[contains(@class, 'filter-add')][text()='{filterName}']");
@@ -169,7 +192,7 @@ namespace DashworksTestAutomation.Pages.Evergreen
 
         public IList<IWebElement> GetAssociationsList()
         {
-            Driver.FindElement(By.XPath(".//div[@id='context']//input[@placeholder='Search']")).Click();
+            AssociationSearchTextbox.Click();
             return Driver.FindElements(By.XPath(
                 ".//div[@id='context']//input[@placeholder='Search']//ancestor::div[@class='associationmultiselect-parent btn-group dropdown-associationmultiselect']//li//span"));
         }
@@ -179,10 +202,13 @@ namespace DashworksTestAutomation.Pages.Evergreen
             return Driver.FindElements(By.XPath(".//span[@class='text-container ng-star-inserted']"));
         }
 
-        public void EnteredIntoSearchBox(string searchedText)
+        public void SelectOperator(string operatorValue)
         {
-            Driver.FindElement(By.XPath(".//input[@name='search']")).Click();
-            Driver.FindElement(By.XPath(".//input[@name='search']")).SendKeys(searchedText);
+            Driver.WaitWhileControlIsNotDisplayed(
+                By.XPath(".//div[@class='filter-panel']//div[@class='mat-select-trigger']"));
+            var selectbox =
+                Driver.FindElement(By.XPath(".//div[@class='filter-panel']//div[@class='mat-select-trigger']"));
+            Driver.SelectCustomSelectbox(selectbox, operatorValue);
         }
     }
 }

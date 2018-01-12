@@ -3,16 +3,10 @@ Feature: TableSorting
 	Runs Table Sorting related tests
 
 Background: Pre-Conditions
-	Given User is on Dashworks Homepage
-	And Login link is visible
-	When User clicks on the Login link
-	Then Login Page is displayed to the user
-	When User provides the Login and Password and clicks on the login button
-	Then Dashworks homepage is displayed to the user in a logged in state
-	When User clicks the Switch to Evergreen link
+	Given User is logged in to the Evergreen
 	Then Evergreen Dashboards page should be displayed to the user
 
-@Evergreen @Devices @EvergreenJnr_GridActions @TableSorting @DAS-10612
+@Evergreen @Devices @EvergreenJnr_GridActions @TableSorting @DAS10612
 Scenario: EvergreenJnr_DevicesList_CheckSortByDateFunctionality
 	When User clicks "Devices" on the left-hand menu
 	Then "Devices" list should be displayed to the user
@@ -38,7 +32,7 @@ Scenario: EvergreenJnr_DevicesList_CheckSortByDateFunctionality
 	When User click on 'Windows7Mi: Date & Time Task' column header
 	Then data in table is sorted by 'Windows7Mi: Date & Time Task' column in ascending order
 
-@Evergreen @Applications @EvergreenJnr_GridActions @TableSorting @DAS-10612
+@Evergreen @Applications @EvergreenJnr_GridActions @TableSorting @DAS10612
 Scenario: EvergreenJnr_ApplicationsList_CheckSortByDateFunctionality
 	When User clicks "Applications" on the left-hand menu
 	Then "Applications" list should be displayed to the user
@@ -58,7 +52,7 @@ Scenario: EvergreenJnr_ApplicationsList_CheckSortByDateFunctionality
 	When User click on 'Barry'sUse: Package Delivery Date' column header
 	Then data in table is sorted by 'Barry'sUse: Package Delivery Date' column in ascending order
 	
-@Evergreen @Mailboxes @EvergreenJnr_GridActions @TableSorting @DAS-10612
+@Evergreen @Mailboxes @EvergreenJnr_GridActions @TableSorting @DAS10612
 Scenario: EvergreenJnr_MailboxesList_CheckSortByDateFunctionality
 	When User clicks "Mailboxes" on the left-hand menu
 	Then "Mailboxes" list should be displayed to the user
@@ -84,7 +78,7 @@ Scenario: EvergreenJnr_MailboxesList_CheckSortByDateFunctionality
 	When User click on 'EmailMigra: Scheduled date' column header
 	Then data in table is sorted by 'EmailMigra: Scheduled date' column in ascending order
 
-@Evergreen @Users @EvergreenJnr_GridActions @TableSorting @DAS-10612
+@Evergreen @Users @EvergreenJnr_GridActions @TableSorting @DAS10612
 Scenario: EvergreenJnr_UsersList_CheckSortByDateFunctionality
 	When User clicks "Users" on the left-hand menu
 	Then "Users" list should be displayed to the user
@@ -100,7 +94,7 @@ Scenario: EvergreenJnr_UsersList_CheckSortByDateFunctionality
 	| MigrationP: Migrated Date |
 	Then User enters SearchCriteria into the agGrid Search Box and the correct NumberOfRows are returned
 	| SearchCriteria | NumberOfRows |
-	| Tim            | 147          |
+	| Tim            | 148          |
 	When User click on 'Last Logon Date' column header
 	Then data in table is sorted by 'Last Logon Date' column in descending order
 	When User click on 'Last Logon Date' column header
@@ -110,7 +104,7 @@ Scenario: EvergreenJnr_UsersList_CheckSortByDateFunctionality
 	When User click on 'MigrationP: Migrated Date' column header
 	Then data in table is sorted by 'MigrationP: Migrated Date' column in ascending order
 
-@Evergreen @Devices @EvergreenJnr_GridActions @TableSorting @DAS-11568
+@Evergreen @Devices @EvergreenJnr_GridActions @TableSorting @DAS11568
 Scenario: EvergreenJnr_DevicesList_CheckThat500ErrorIsNotDisplayedWhenSortingOwnerComplianceColumnOnDevicesList
 	When User clicks "Devices" on the left-hand menu
 	Then "Devices" list should be displayed to the user
@@ -124,5 +118,5 @@ Scenario: EvergreenJnr_DevicesList_CheckThat500ErrorIsNotDisplayedWhenSortingOwn
 	| Owner Compliance |
 	Then "17,225" rows are displayed in the agGrid
 	When User click on 'Owner Compliance' column header
-	Then data in table is sorted by 'Owner Compliance' column in descending order
+	Then data in table is sorted by 'Owner Compliance' column in ascending order
 	Then "17,225" rows are displayed in the agGrid

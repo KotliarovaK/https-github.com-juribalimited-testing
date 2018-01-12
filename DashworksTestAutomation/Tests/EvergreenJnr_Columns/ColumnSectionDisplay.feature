@@ -3,16 +3,10 @@ Feature: ColumnSectionDisplay
 	Runs Column Panel related tests
 
 Background: Pre-Conditions
-	Given User is on Dashworks Homepage
-	And Login link is visible
-	When User clicks on the Login link
-	Then Login Page is displayed to the user
-	When User provides the Login and Password and clicks on the login button
-	Then Dashworks homepage is displayed to the user in a logged in state
-	When User clicks the Switch to Evergreen link
+	Given User is logged in to the Evergreen
 	Then Evergreen Dashboards page should be displayed to the user
 
-@Evergreen @Devices @EvergreenJnr_Columns @ColumnSectionDisplay @DAS-10584
+@Evergreen @Devices @EvergreenJnr_Columns @ColumnSectionDisplay @DAS10584
 Scenario: EvergreenJnr_DevicesList_CheckCategoryHeadingWhenAllColumnsFromCategoryAreAdded
 	When User clicks "Devices" on the left-hand menu
 	Then "Devices" list should be displayed to the user
@@ -23,13 +17,35 @@ Scenario: EvergreenJnr_DevicesList_CheckCategoryHeadingWhenAllColumnsFromCategor
 	| Application  |
 	Then "Applications" section is not displayed in the Columns panel
 
-@Evergreen @Devices @EvergreenJnr_Columns @ColumnSectionDisplay @DAS-11539
+@Evergreen @Devices @EvergreenJnr_Columns @ColumnSectionDisplay @DAS11539
 Scenario: EvergreenJnr_DevicesList_CheckThatColumnCategoriesAreClosedAfterClearingAColumnSearchValue
 	When User clicks "Devices" on the left-hand menu
 	Then "Devices" list should be displayed to the user
 	When User clicks the Columns button
 	Then Columns panel is displayed to the user
-	When User is searching in columns with "date" text in Columns panel
+	When User enters "date" text in Search field at Columns Panel
 	Then Minimize buttons are displayed for all category in Columns panel
 	When User clears search textbox in Columns panel
 	Then Maximize buttons are displayed for all category in Columns panel
+
+@Evergreen @Devices @EvergreenJnr_Columns @ColumnSectionDisplay @DAS10583
+Scenario: EvergreenJnr_DevicesList_CheckThatColumnIsNotRemovedAfterApplyFilterForTheSameColumnName
+	When User clicks "Devices" on the left-hand menu
+	Then "Devices" list should be displayed to the user
+	When User clicks the Columns button
+	Then Columns panel is displayed to the user
+	When ColumnName is entered into the search box and the selection is clicked
+	| ColumnName   |
+	| Manufacturer |
+	Then ColumnName is added to the list
+	| ColumnName   |
+	| Manufacturer |
+	When User clicks the Filters button
+	Then Filters panel is displayed to the user
+	When user select "Manufacturer" filter
+	Then "Add Manufacturer column" checkbox is checked
+	When User have created "Equals" Lookup filter with column and "Acer" option
+	Then "Manufacturer" filter is added to the list
+	Then ColumnName is added to the list
+	| ColumnName   |
+	| Manufacturer |

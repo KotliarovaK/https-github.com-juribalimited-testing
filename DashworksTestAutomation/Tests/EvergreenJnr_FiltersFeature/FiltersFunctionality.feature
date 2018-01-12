@@ -3,16 +3,10 @@ Feature: Functionality
 	Runs Filters Functionality related tests
 
 Background: Pre-Conditions
-	Given User is on Dashworks Homepage
-	And Login link is visible
-	When User clicks on the Login link
-	Then Login Page is displayed to the user
-	When User provides the Login and Password and clicks on the login button
-	Then Dashworks homepage is displayed to the user in a logged in state
-	When User clicks the Switch to Evergreen link
+	Given User is logged in to the Evergreen
 	Then Evergreen Dashboards page should be displayed to the user
 
-@Evergreen @Users @Evergreen_FiltersFeature @FiltersFunctionality @DAS-10612
+@Evergreen @Users @Evergreen_FiltersFeature @FiltersFunctionality @DAS10612
 Scenario: EvergreenJnr_UsersList_CheckThat500ErrorIsNotReturnedForFilterWithSpecialCharecter
 	When User clicks "Users" on the left-hand menu
 	Then "Users" list should be displayed to the user
@@ -24,7 +18,7 @@ Scenario: EvergreenJnr_UsersList_CheckThat500ErrorIsNotReturnedForFilterWithSpec
 	Then "Display Name" filter is added to the list
 	And "2" rows are displayed in the agGrid
 
-@Evergreen @Applications @Evergreen_FiltersFeature @FiltersFunctionality @DAS-10639
+@Evergreen @Applications @Evergreen_FiltersFeature @FiltersFunctionality @DAS10639
 Scenario: EvergreenJnr_ApplicationsList_Check500ErrorIsNotReturnedForBooleanFilterWithUnknownOption
 	When User clicks "Applications" on the left-hand menu
 	Then "Applications" list should be displayed to the user
@@ -52,7 +46,7 @@ Scenario: EvergreenJnr_ApplicationsList_Check500ErrorIsNotReturnedForBooleanFilt
 	Then "Windows7Mi: Hide from End Users" filter is added to the list
 	And "1,156" rows are displayed in the agGrid
 
-@Evergreen @Applications @EvergreenJnr_FiltersFeature @FilterFunctionality @DAS-10734 @DAS-11507
+@Evergreen @Applications @EvergreenJnr_FiltersFeature @FilterFunctionality @DAS10734 @DAS11507
 Scenario: EvergreenJnr_ApplicationsList_CheckThatAddColumnCheckboxWorksCorrectly
 	When User clicks "Applications" on the left-hand menu
 	Then "Applications" list should be displayed to the user
@@ -64,7 +58,7 @@ Scenario: EvergreenJnr_ApplicationsList_CheckThatAddColumnCheckboxWorksCorrectly
 	Then "Windows7Mi: Category" filter is added to the list
 	Then table data is filtered correctly
 
-@Evergreen @Applications @EvergreenJnr_FiltersFeature @FilterFunctionality @DAS-11166 @Delete_Newly_Created_List
+@Evergreen @Applications @EvergreenJnr_FiltersFeature @FilterFunctionality @DAS11166 @DAS11665 @Delete_Newly_Created_List @Not_Run
 Scenario: EvergreenJnr_ApplicationsList_CheckThatFilterIsRestoredAfterGoingBackToTheListAgain
 	When User clicks "Applications" on the left-hand menu
 	Then "Applications" list should be displayed to the user
@@ -89,7 +83,7 @@ Scenario: EvergreenJnr_ApplicationsList_CheckThatFilterIsRestoredAfterGoingBackT
 	Then Filters panel is displayed to the user
 	And "Application is Microsoft Office 97, Professional Edition, Microsoft Office 97, Developer Edition Tools or Microsoft Office 97, Standard Edition" is displayed in added filter info
 
-@Evergreen @AllLists @EvergreenJnr_FilterFeature @FilterFunctionality @DAS-11042
+@Evergreen @AllLists @EvergreenJnr_FilterFeature @FilterFunctionality @DAS11042
 Scenario Outline: EvergreenJnr_AllLists_CheckThatPrimaryColumnIsDisplayedAfterAddingAFilterWithColumn
 	When User clicks "<ListName>" on the left-hand menu
 	Then "<ListName>" list should be displayed to the user
@@ -110,7 +104,7 @@ Examples:
 	| Users        | Username                | aa          | Username      |
 	| Mailboxes    | Email Address (Primary) | ale         | Email Address |
 
-@Evergreen @Devices @EvergreenJnr_FilterFeature @FilterFunctionality @DAS-11042 @Delete_Newly_Created_List
+@Evergreen @Devices @EvergreenJnr_FilterFeature @FilterFunctionality @DAS11042 @Delete_Newly_Created_List
 Scenario: EvergreenJnr_DevicesList_CheckThatAddColumnCheckboxIsCheckedAfterSavingFilterInANewList
 	When User clicks "Devices" on the left-hand menu
 	Then "Devices" list should be displayed to the user
@@ -132,7 +126,7 @@ Scenario: EvergreenJnr_DevicesList_CheckThatAddColumnCheckboxIsCheckedAfterSavin
 	Then "Add column" checkbox is checked
 	And "Add Column" checkbox is disabled
 
-@Evergreen @Devices @EvergreenJnr_FilterFeature @FilterFunctionality @DAS-11042
+@Evergreen @Devices @EvergreenJnr_FilterFeature @FilterFunctionality @DAS11042
 Scenario: EvergreenJnr_DevicesList_CheckThatAddColumnCheckboxIsCheckedAfterSavingAFilter
 	When User clicks "Devices" on the left-hand menu
 	Then "Devices" list should be displayed to the user
@@ -146,7 +140,7 @@ Scenario: EvergreenJnr_DevicesList_CheckThatAddColumnCheckboxIsCheckedAfterSavin
 	Then "Add column" checkbox is checked
 	And "Add Column" checkbox is disabled
 
-@Evergreen @Devices @EvergreenJnr_FilterFeature @FilterFunctionality @DAS-11042
+@Evergreen @Devices @EvergreenJnr_FilterFeature @FilterFunctionality @DAS11042
 Scenario: EvergreenJnr_DevicesList_CheckThatAddColumnCheckboxIsUncheckedAfterSavingAFilterAndRemovingAColumn
 	When User clicks "Devices" on the left-hand menu
 	Then "Devices" list should be displayed to the user
@@ -165,7 +159,7 @@ Scenario: EvergreenJnr_DevicesList_CheckThatAddColumnCheckboxIsUncheckedAfterSav
 	Then "Add column" checkbox is unchecked
 	And "Add column" checkbox is not disabled
 
-@Evergreen @AllLists @EvergreenJnr_FilterFeature @FilterFunctionality @DAS-10977 @DAS-11507
+@Evergreen @AllLists @EvergreenJnr_FilterFeature @FilterFunctionality @DAS10977 @DAS11507
 Scenario Outline: EvergreenJnr_AllLists_CheckThatFilterIsRestoredCorrectlyAfterLeavingThePageAndGoingBackViaTheBrowserBackButtonForCheckboxesFilters
 	When User clicks "<ListName>" on the left-hand menu
 	Then "<ListName>" list should be displayed to the user
@@ -191,7 +185,7 @@ Examples:
 	| Applications | MigrationP: Core Application    | FALSE          | 220       | Application   | Quartus II Programmer 4.0                 | MigrationP: Core Application is false      |
 	| Mailboxes    | EmailMigra: Device Type         | Not Identified | 80        | Email Address | alex.cristea@juriba.com                   | EmailMigra: Device Type is Not Identified  |
 
-@Evergreen @AllLists @EvergreenJnr_FilterFeature @FilterFunctionality @DAS-10977
+@Evergreen @AllLists @EvergreenJnr_FilterFeature @FilterFunctionality @DAS10977
 Scenario Outline: EvergreenJnr_AllLists_CheckThatFilterIsRestoredCorrectlyAfterLeavingThePageAndGoingBackViaTheBrowserBackButtonForLookupFilters
 	When User clicks "<ListName>" on the left-hand menu
 	Then "<ListName>" list should be displayed to the user
@@ -212,7 +206,7 @@ Examples:
 	| Applications | Barry'sUse: Target App           | Python 2.2a4 (1) | 1         | Application   | Python 2.2a4            | Barry'sUse: Target App is Python 2.2a4 (1)      |
 	| Mailboxes    | EmailMigra: BT/QMM Switch Status | Not Started      | 80        | Email Address | alex.cristea@juriba.com | EmailMigra: BT/QMM Switch Status is Not Started |
 
-@Evergreen @Applications @EvergreenJnr_FilterFeature @FilterFunctionality @DAS-10977
+@Evergreen @Applications @EvergreenJnr_FilterFeature @FilterFunctionality @DAS10977
 Scenario: EvergreenJnr_ApplicationsList_CheckThatFilterIsRestoredCorrectlyAfterLeavingThePageAndGoingBackViaTheBrowserbackButtonForValuesFilters
 	When User clicks "Applications" on the left-hand menu
 	Then "Applications" list should be displayed to the user
@@ -229,7 +223,7 @@ Scenario: EvergreenJnr_ApplicationsList_CheckThatFilterIsRestoredCorrectlyAfterL
 	Then "5" rows are displayed in the agGrid
 	Then "Application is Microsoft Office 97, Professional Edition" is displayed in added filter info
 
-@Evergreen @Applications @EvergreenJnr_FilterFeature @FilterFunctionality @DAS-10977 @Delete_Newly_Created_List
+@Evergreen @Applications @EvergreenJnr_FilterFeature @FilterFunctionality @DAS10977 @Delete_Newly_Created_List
 Scenario: EvergreenJnr_ApplicationsList_CheckThatFilterIsRestoredCorrectlyAfterLeavingThePageAndGoingBackViaTheBrowseBackButtonForListFilters
 	When User clicks "Applications" on the left-hand menu
 	Then "Applications" list should be displayed to the user
@@ -255,7 +249,7 @@ Scenario: EvergreenJnr_ApplicationsList_CheckThatFilterIsRestoredCorrectlyAfterL
 	Then "17,095" rows are displayed in the agGrid
 	Then "Application in list TestList is not used on device" is displayed in added filter info
 
-@Evergreen @Devices @EvergreenJnr_FilterFeature @FilterFunctionality @DAS-11560
+@Evergreen @Devices @EvergreenJnr_FilterFeature @FilterFunctionality @DAS11560
 Scenario: EvergreenJnr_DevicesList_CheckNumericFilter
 	When User clicks "Devices" on the left-hand menu
 	Then "Devices" list should be displayed to the user
@@ -266,3 +260,76 @@ Scenario: EvergreenJnr_DevicesList_CheckNumericFilter
 	| 1      |
 	Then "App Count (Installed) is less than 1" is displayed in added filter info
 	Then "5,141" rows are displayed in the agGrid
+
+@Evergreen @Devices @EvergreenJnr_FilterFeature @FilterFunctionality @DAS11469
+Scenario Outline: EvergreenJnr_DevicesList_CheckThatAssociationSearchInFiltersPanelIsWorkingCorrectly
+	When User clicks "Devices" on the left-hand menu
+	Then "Devices" list should be displayed to the user
+	When User clicks the Filters button
+	Then Filters panel is displayed to the user
+	When user select "<FilterName>" filter
+	When  User enters "used" in Association search field 
+	Then search values in Association section working by specific search criteria
+
+Examples:
+	| FilterName                 |
+	| Application                |
+	| Application Compliance     |
+	| Application (Saved List)   |
+	| Application Import         |
+	| Application Import Type    |
+	| Application Inventory Site |
+	| Application Name           |
+	| Application Vendor         |
+	| Application Version        |
+
+@Evergreen @Applications @EvergreenJnr_FilterFeature @FilterFunctionality @DAS11560
+Scenario: EvergreenJnr_ApplicationsList_CheckThat500ErrorInNotDisplayedWhenUserApplyASelectedNumericFilter 
+	When User clicks "Applications" on the left-hand menu
+	Then "Applications" list should be displayed to the user
+	When User clicks the Filters button
+	Then Filters panel is displayed to the user
+	When User add "Device Count (Installed)" filter where type is "Less than" with added column and following value:
+	| Values |
+	| 10     |
+	Then "Device Count (Installed)" filter is added to the list
+	Then "1,269" rows are displayed in the agGrid
+	Then "(Device Count (Installed) < 10)" text is displayed in filter container
+
+@Evergreen @Devices @EvergreenJnr_FilterFeature @FilterFunctionality @DAS11551
+Scenario Outline: EvergreenJnr_DevicesList_CheckThatEmptyNotEmptyOperatorsIsWorkedCorrectly
+	When User clicks "Devices" on the left-hand menu
+	Then "Devices" list should be displayed to the user
+	When User clicks the Filters button
+	Then Filters panel is displayed to the user
+	When user select "Application Name" filter
+	When User select "<OperatorValues>" Operator value
+	Then Associations panel is displayed in the filter
+
+Examples:
+	| OperatorValues |
+	| Empty          |
+	| Not Empty      |
+
+@Evergreen @Users @EvergreenJnr_FilterFeature @FilterFunctionality @DAS11577
+Scenario Outline: EvergreenJnr_UsersList_CheckThatLDAPFilterCategoryHaveAddColumnCheckboxes
+	When User clicks "Users" on the left-hand menu
+	Then "Users" list should be displayed to the user
+	When User clicks the Filters button
+	Then Filters panel is displayed to the user
+	When user select "<FilterName>" filter
+	When User select "<OperatorValues>" Operator value
+	And User enters "<EnteredText>" text in Search field at selected Filter
+	Then checkboxes are displayed to the User:
+	| SelectedCheckboxes   |
+	| <SelectedCheckboxes> |
+
+Examples:
+	| FilterName             | OperatorValues   | EnteredText                                                | SelectedCheckboxes                |
+	| accountexpires         | Equals           | 9223372036854775807                                        | Add accountexpires column         |
+	| badpasswordtime        | Contains         | 13146                                                      | Add badpasswordtime column        |
+	| admincount             | Empty            |                                                            | Add admincount column             |
+	| employeeid             | Begins with      | ZY or ZX                                                   | Add employeeid column             |
+	| whencreated            | Does not contain | 2017                                                       | Add whencreated column            |
+	| department             | Ends with        | LongName01234567890123456789012345678901234567890123456789 | Add Department column             |
+	| iscriticalsystemobject | Not empty        |                                                            | Add iscriticalsystemobject column |

@@ -69,5 +69,21 @@ namespace DashworksTestAutomation.Steps.Dashworks
             _driver.WaitWhileControlIsNotDisplayed<BaseDashboardPage>(() => menu.ListDetailsButton);
             Assert.IsTrue(Convert.ToBoolean(menu.ListDetailsButton.GetAttribute("disabled")), "List Details Button is active");
         }
+
+        [Then(@"Actions button is active")]
+        public void ThenActionsButtonIsActive()
+        {
+            var menu = _driver.NowAt<BaseDashboardPage>();
+            _driver.WaitWhileControlIsNotDisplayed<BaseDashboardPage>(() => menu.ListDetailsButton);
+            StringAssert.Contains("active", menu.ActionsButton.GetAttribute("class"));
+        }
+
+        [Then(@"Actions button is not active")]
+        public void ThenActionsButtonIsNotActive()
+        {
+            var menu = _driver.NowAt<BaseDashboardPage>();
+            _driver.WaitWhileControlIsNotDisplayed<BaseDashboardPage>(() => menu.ListDetailsButton);
+            StringAssert.DoesNotContain("active", menu.ActionsButton.GetAttribute("class"));
+        }
     }
 }

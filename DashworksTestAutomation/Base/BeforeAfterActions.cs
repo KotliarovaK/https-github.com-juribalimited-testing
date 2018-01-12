@@ -5,6 +5,9 @@ using OpenQA.Selenium.Remote;
 using System;
 using System.Configuration;
 using System.Reflection;
+using DashworksTestAutomation.Providers;
+using NUnit.Framework;
+using OpenQA.Selenium;
 using TechTalk.SpecFlow;
 
 namespace DashworksTestAutomation.Base
@@ -37,21 +40,48 @@ namespace DashworksTestAutomation.Base
             try
             {
                 var driver = _objectContainer.Resolve<RemoteWebDriver>();
-                var testStatus = GetTestStatus();
-                if (!string.IsNullOrEmpty(testStatus) && testStatus.Equals("TestError"))
-                {
-                    var testName = GetTestName();
-                    if (!string.IsNullOrEmpty(testName))
-                        driver.CreateScreenshot(testName);
-                }
 
-                Logger.Write($"Closing window at: {driver.Url}");
+                try
+                {
+                    if (Browser.RemoteDriver.Equals("sauceLabs"))
+                    {
+                        bool passed = TestContext.CurrentContext.Result.Outcome.Status ==
+                                      NUnit.Framework.Interfaces.TestStatus.Passed;
+
+                        try
+                        {
+                            // Logs the result to Sauce Labs
+                            ((IJavaScriptExecutor)driver).ExecuteScript(
+                                "sauce:job-result=" + (passed ? "passed" : "failed"));
+                        }
+                        finally
+                        {
+                            Console.WriteLine(
+                                $"SauceOnDemandSessionID={((CustomRemoteWebDriver)driver).getSessionId()} job-name={TestContext.CurrentContext.Test.MethodName}");
+                        }
+                    }
+
+                    var testStatus = GetTestStatus();
+                    if (!string.IsNullOrEmpty(testStatus) && testStatus.Equals("TestError"))
+                    {
+                        var testName = GetTestName();
+                        if (!string.IsNullOrEmpty(testName))
+                            driver.CreateScreenshot(testName);
+                    }
+
+                    Logger.Write($"Closing window at: {driver.Url}");
+                }
+                catch (Exception e)
+                {
+                    Logger.Write(e);
+                }
 
                 driver.QuitDriver();
             }
-            catch (ObjectContainerException)
+            catch (ObjectContainerException e)
             {
                 //There are no driver in the context
+                Logger.Write(e + "There are no driver in the context");
             }
             catch (Exception e)
             {
@@ -75,7 +105,8 @@ namespace DashworksTestAutomation.Base
 
         private string GetTestStatus()
         {
-            PropertyInfo pInfo = typeof(ScenarioContext).GetProperty("TestStatus", BindingFlags.Instance | BindingFlags.NonPublic);
+            PropertyInfo pInfo =
+                typeof(ScenarioContext).GetProperty("TestStatus", BindingFlags.Instance | BindingFlags.NonPublic);
             MethodInfo getter = pInfo.GetGetMethod(nonPublic: true);
             object testResult = getter.Invoke(_scenarioContext, null);
             var testResults = testResult.ToString();

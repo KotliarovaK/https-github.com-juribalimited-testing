@@ -1,10 +1,18 @@
 ﻿using System;
+using System.Collections.Generic;
+using System.IO;
+using System.Linq;
+using System.Web.Management;
 using DashworksTestAutomation.DTO;
+using DashworksTestAutomation.DTO.RuntimeVariables;
 using DashworksTestAutomation.Extensions;
+using DashworksTestAutomation.Helpers;
 using DashworksTestAutomation.Pages;
 using DashworksTestAutomation.Providers;
 using NUnit.Framework;
+using OpenQA.Selenium;
 using OpenQA.Selenium.Remote;
+using RestSharp;
 using TechTalk.SpecFlow;
 using Logger = DashworksTestAutomation.Utils.Logger;
 
@@ -15,18 +23,78 @@ namespace DashworksTestAutomation.Steps.Dashworks
     {
         private readonly RemoteWebDriver _driver;
         private readonly UserDto _user;
+        private readonly UsedUsers _usedUsers;
 
-        public EvergreenJnr_Login(RemoteWebDriver driver, UserDto user)
+        public EvergreenJnr_Login(RemoteWebDriver driver, UserDto user, UsedUsers usedUsers)
         {
             _driver = driver;
             _user = user;
+            _usedUsers = usedUsers;
+        }
+
+        private UserDto GetFreeUserAndAddToUsedUsersList()
+        {
+            var user = UserProvider.GetFreeUserAccount();
+            if (_usedUsers.Value == null)
+            {
+                _usedUsers.Value = new List<UserDto>();
+            }
+            _usedUsers.Value.Add(user);
+
+            //Add user credentials to context
+            user.CopyPropertiesTo(_user);
+
+            return user;
+        }
+
+        [Given(@"User is logged in to the Evergreen")]
+        public void GivenUserIsLoggedInToTheEvergreen()
+        {
+            var user = GetFreeUserAndAddToUsedUsersList();
+
+            var restClient = new RestClient(UrlProvider.Url);
+            //Get cookies
+            HttpClientHelper client = new HttpClientHelper(user, restClient);
+
+            //Init session
+            _driver.NagigateToURL(UrlProvider.Url);
+
+            //Set cookies to browser
+            foreach (Cookie cookie in client._cookiesJar)
+            {
+                _driver.Manage().Cookies.AddCookie(cookie);
+            }
+
+            //Open website
+            _driver.NagigateToURL(UrlProvider.EvergreenUrl);
         }
 
         [When(@"User provides the Login and Password and clicks on the login button")]
         public void WhenUserProvidesTheLoginAndPasswordAndClicksOnTheLoginButton()
         {
-            //Add user credentials to context
-            UserProvider.User.CopyPropertiesTo(_user);
+            var user = GetFreeUserAndAddToUsedUsersList();
+
+            var loginPage = _driver.NowAt<LoginPage>();
+
+            if (loginPage.LoginGroupbox.Displayed())
+            {
+                loginPage.UserNameTextbox.SendKeys(user.UserName);
+                loginPage.PasswordTextbox.SendKeys(user.Password);
+                loginPage.LoginButton.Click();
+            }
+            else
+            {
+                loginPage.SplashUserNameTextbox.SendKeys(user.UserName);
+                loginPage.SplashPasswordTextbox.SendKeys(user.Password);
+                loginPage.SplashLoginButton.Click();
+            }
+        }
+
+        [When(@"User login with ""(.*)"" account")]
+        public void WhenUserLoginWithAccount(int userIterator)
+        {
+            var user = _usedUsers.Value[userIterator - 1];
+            user.CopyPropertiesTo(_user);
 
             var loginPage = _driver.NowAt<LoginPage>();
 

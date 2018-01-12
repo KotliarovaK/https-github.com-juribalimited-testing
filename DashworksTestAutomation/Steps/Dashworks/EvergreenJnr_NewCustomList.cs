@@ -9,6 +9,9 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading;
+using DashworksTestAutomation.DTO;
+using DashworksTestAutomation.DTO.RuntimeVariables;
+using DashworksTestAutomation.Providers;
 using TechTalk.SpecFlow;
 
 namespace DashworksTestAutomation.Steps.Dashworks
@@ -17,10 +20,17 @@ namespace DashworksTestAutomation.Steps.Dashworks
     internal class EvergreenJnr_NewCustomList : SpecFlowContext
     {
         private readonly RemoteWebDriver _driver;
+        private readonly UserDto _user;
+        private readonly UsedUsers _usedUsers;
+        private readonly UsersWithSharedLists _usersWithSharedLists;
 
-        public EvergreenJnr_NewCustomList(RemoteWebDriver driver)
+        public EvergreenJnr_NewCustomList(RemoteWebDriver driver, UserDto user, UsedUsers usedUsers,
+            UsersWithSharedLists usersWithSharedLists)
         {
             _driver = driver;
+            _user = user;
+            _usedUsers = usedUsers;
+            _usersWithSharedLists = usersWithSharedLists;
         }
 
         [Then(@"Save to New Custom List element is NOT displayed")]
@@ -81,7 +91,8 @@ namespace DashworksTestAutomation.Steps.Dashworks
             var listElement = _driver.NowAt<CustomListElement>();
 
             _driver.WaitWhileControlIsNotDisplayed<CustomListElement>(() => listElement.CreateNewListButton);
-            listElement.CreateNewListButton.Click();
+            if (!listElement.ListNameTextbox.Displayed())
+                listElement.CreateNewListButton.Click();
             _driver.WaitWhileControlIsNotDisplayed<CustomListElement>(() => listElement.SaveButton);
             Assert.IsTrue(Convert.ToBoolean(listElement.SaveButton.GetAttribute("disabled")), "Save button is active");
         }
@@ -89,8 +100,8 @@ namespace DashworksTestAutomation.Steps.Dashworks
         [Then(@"""(.*)"" list is displayed to user")]
         public void ThenListIsDisplayedToUser(string listName)
         {
-            //Workaround for DAS-11570. Remove after fix
-            WhenUserNavigatesToTheList(listName);
+            //Workaround for 11570. Remove after fix
+            //WhenUserNavigatesToTheList(listName);
             var page = _driver.NowAt<BaseDashboardPage>();
             Assert.AreEqual(listName, page.ActiveCustomListName());
         }
@@ -147,6 +158,13 @@ namespace DashworksTestAutomation.Steps.Dashworks
             listElement.ConfirmDeleteButton.Click();
         }
 
+        [Then(@"list with ""(.*)"" name is removed")]
+        public void ThenListWithNameIsRemoved(string listName)
+        {
+            var listElement = _driver.NowAt<CustomListElement>();
+            Assert.IsFalse(listElement.CheckThatListIsRemoved(listName));
+        }
+
         [When(@"User navigates to the ""(.*)"" list")]
         public void WhenUserNavigatesToTheList(string listName)
         {
@@ -180,6 +198,7 @@ namespace DashworksTestAutomation.Steps.Dashworks
             {
                 listElement.SaveAsDropdown.Click();
             }
+
             Assert.IsFalse(listElement.UpdateCurrentListButton.Displayed(), "Update Current List button is displayed");
         }
 
@@ -212,6 +231,7 @@ namespace DashworksTestAutomation.Steps.Dashworks
             {
                 listElement.SaveAsDropdown.Click();
             }
+
             Assert.IsTrue(listElement.UpdateCurrentListButton.Displayed(),
                 "Update Current List button is NOT displayed");
         }
@@ -225,6 +245,7 @@ namespace DashworksTestAutomation.Steps.Dashworks
             {
                 listElement.SaveAsDropdown.Click();
             }
+
             Assert.IsFalse(listElement.SaveAsNewListButton.Displayed(), "Save As New List button is displayed");
         }
 
@@ -237,6 +258,7 @@ namespace DashworksTestAutomation.Steps.Dashworks
             {
                 listElement.SaveAsDropdown.Click();
             }
+
             Assert.IsTrue(listElement.SaveAsNewListButton.Displayed(), "Save As New List button is NOT displayed");
         }
 
@@ -246,7 +268,7 @@ namespace DashworksTestAutomation.Steps.Dashworks
             var listElement = _driver.NowAt<CustomListElement>();
             Assert.IsTrue(listElement.GetFavoriteStatus(listnName));
         }
-        
+
         [Then(@"Star icon is not displayed for ""(.*)"" list")]
         public void ThenStarIconIsNotDisplayedForList(string listnName)
         {
@@ -254,35 +276,90 @@ namespace DashworksTestAutomation.Steps.Dashworks
             Assert.IsFalse(listElement.GetFavoriteStatus(listnName));
         }
 
+        [When(@"User enters ""(.*)"" text in Search field at List Panel")]
+        public void WhenUserEntersTextInSearchFieldAtListPanel(string searchedText)
+        {
+            var listElement = _driver.NowAt<CustomListElement>();
+            _driver.WaitWhileControlIsNotDisplayed<CustomListElement>(() => listElement.ListPanelSearchTextbox);
+            listElement.ListPanelSearchTextbox.Clear();
+            listElement.ListPanelSearchTextbox.SendKeys(searchedText);
+        }
+
+        [Then(@"reset button in Search field at List Panel is displayed")]
+        public void ThenResetButtonInSearchFieldAtListPanelIsDisplayed()
+        {
+            var listElement = _driver.NowAt<CustomListElement>();
+            _driver.WaitWhileControlIsNotDisplayed<CustomListElement>(() =>
+                listElement.SearchTextboxResetButtonInListPanel);
+            Assert.IsTrue(listElement.SearchTextboxResetButtonInListPanel.Displayed(), "Reset button is not displayed");
+            Logger.Write("Reset button is displayed");
+        }
+
         [AfterScenario("Delete_Newly_Created_List")]
         public void DeleteAllCustomListsAfterScenarioRun()
         {
+            RemoveUserLists();
+            RemoveSharedLists();
+        }
+
+        private void RemoveUserLists()
+        {
             try
             {
-                //New implementation
-                var listsIds = DatabaseHelper.ExecuteReader("SELECT [ListId] FROM[DesktopBI].[dbo].[EvergreenList]", 0);
+                //If non users were logged in then just return. None lists were created
+                if (_usedUsers.Value == null)
+                    return;
 
-                DatabaseHelper.RemoveLists(listsIds);
+                foreach (UserDto userDto in _usedUsers.Value)
+                {
+                    try
+                    {
+                        //All lists for all users
+                        //var listsIds = DatabaseHelper.ExecuteReader("SELECT [ListId] FROM[DesktopBI].[dbo].[EvergreenList]", 0);
+                        //All lists for specific user
+                        var listsIds = DatabaseHelper.ExecuteReader(
+                            $"select l.ListId from[aspnetdb].[dbo].[aspnet_Users] u join[DesktopBI].[dbo].[EvergreenList] l on u.UserId = l.UserId where u.LoweredUserName = '{userDto.UserName}'",
+                            0);
+                        DatabaseHelper.RemoveLists(listsIds);
+                    }
+                    catch
+                    {
+                    }
+                }
             }
-            catch { }
+            catch
+            {
+            }
+        }
 
-            //Old implementation
-            //try
-            //{
-            //    var lefthendMenu = _driver.NowAt<LeftHandMenuElement>();
-            //    lefthendMenu.Devices.Click();
-            //    RemoveAllCustomLists();
-            //    lefthendMenu.Applications.Click();
-            //    RemoveAllCustomLists();
-            //    lefthendMenu.Mailboxes.Click();
-            //    RemoveAllCustomLists();
-            //    lefthendMenu.Users.Click();
-            //    RemoveAllCustomLists();
-            //}
-            //catch (Exception e)
-            //{
-            //    Logger.Write($"Some errors appears during List deleting: {e.Message}");
-            //}
+        private void RemoveSharedLists()
+        {
+            try
+            {
+                //If none lists were shared
+                if (_usersWithSharedLists.Value == null)
+                    return;
+
+                foreach (string user in _usersWithSharedLists.Value)
+                {
+                    try
+                    {
+                        //All lists for all users
+                        //var listsIds = DatabaseHelper.ExecuteReader("SELECT [ListId] FROM[DesktopBI].[dbo].[EvergreenList]", 0);
+                        //All lists for specific user
+                        var listsIds = DatabaseHelper.ExecuteReader(
+                            $"select l.ListId from[aspnetdb].[dbo].[aspnet_Users] u join[DesktopBI].[dbo].[EvergreenList] l on u.UserId = l.UserId where u.LoweredUserName = '{user}'",
+                            0);
+                        DatabaseHelper.RemoveLists(listsIds);
+                    }
+                    catch
+                    {
+                    }
+                }
+            }
+            catch
+            {
+            }
         }
 
         public void RemoveAllCustomLists()

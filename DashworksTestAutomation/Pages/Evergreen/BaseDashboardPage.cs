@@ -32,8 +32,20 @@ namespace DashworksTestAutomation.Pages.Evergreen
         [FindsBy(How = How.XPath, Using = ".//span[@class='ag-selection-checkbox']")]
         public IList<IWebElement> SelectRowsCheckboxes { get; set; }
 
-        [FindsBy(How = How.XPath, Using = ".//input[contains(@class,'test-dg-vsbl')]")]
-        public IWebElement SearchTextbox { get; set; }
+        [FindsBy(How = How.XPath, Using = ".//button[@class='btn input-toggle mat-icon-button ng-star-inserted']")]
+        public IWebElement SearchTextboxResetButton { get; set; }
+
+        [FindsBy(How = How.XPath, Using = ".//button[@class='btn btn-default input-toggle mat-icon-button ng-star-inserted']")]
+        public IWebElement SearchTextboxResetButtonInPanel { get; set; }
+
+        [FindsBy(How = How.XPath, Using = ".//input[@aria-label='Search table']")]
+        public IWebElement TableSearchTextbox { get; set; }
+
+        [FindsBy(How = How.XPath, Using = ".//span[@class='ag-header-icon ag-sort-descending-icon']")]
+        public IWebElement DescendingSortingIcon { get; set; }
+
+        [FindsBy(How = How.XPath, Using = ".//span[@class='ag-header-icon ag-sort-ascending-icon']")]
+        public IWebElement AscendingSortingIcon { get; set; }
 
         [FindsBy(How = How.XPath, Using = ".//div[contains(@class,'submenu-selected-list')]")]
         public IWebElement List { get; set; }
@@ -110,7 +122,9 @@ namespace DashworksTestAutomation.Pages.Evergreen
 
         public int GetColumnNumberByName(string columnName)
         {
-            var allHeaders = Driver.FindElements(By.XPath(".//div[@class='ag-header-container']/div/div"));
+            var allHeadersSelector = By.XPath(".//div[@class='ag-header-container']/div/div");
+            Driver.WaitWhileControlIsNotDisplayed(allHeadersSelector);
+            var allHeaders = Driver.FindElements(allHeadersSelector);
             if (!allHeaders.Any())
                 throw new Exception("Table does not contains any columns");
             var columnNumber =
@@ -136,10 +150,10 @@ namespace DashworksTestAutomation.Pages.Evergreen
         public void ClickContentByColumnName(string columnName)
         {
             By byControl = By.XPath($".//div[@class='ag-body-container']/div[1]/div[{GetColumnNumberByName(columnName)}]//a");
-            By byTable = By.XPath($"./div[1]/div[{GetColumnNumberByName(columnName)}]//a");
 
+            Driver.WaitForDataLoading();
             Driver.WaitWhileControlIsNotDisplayed(byControl);
-            TableBody.FindElement(byTable).Click();
+            Driver.FindElement(byControl).Click();
         }
 
         public IWebElement GetListElementByName(string listName)

@@ -3,16 +3,10 @@ Feature: AllCheckbox
 	Runs All Checkbox related tests
 
 Background: Pre-Conditions
-	Given User is on Dashworks Homepage
-	And Login link is visible
-	When User clicks on the Login link
-	Then Login Page is displayed to the user
-	When User provides the Login and Password and clicks on the login button
-	Then Dashworks homepage is displayed to the user in a logged in state
-	When User clicks the Switch to Evergreen link
+	Given User is logged in to the Evergreen
 	Then Evergreen Dashboards page should be displayed to the user
 
-@Evergreen @Users @Evergreen_ActionsPanel @AllCheckbox @DAS-10769 @DAS-10656
+@Evergreen @Users @Evergreen_ActionsPanel @AllCheckbox @DAS10769 @DAS10656
 Scenario: EvergreenJnr_UsersList_SelectAllCheckboxStatusCheckAfterSearch
 	When User clicks "Users" on the left-hand menu
 	Then "Users" list should be displayed to the user
@@ -33,7 +27,7 @@ Scenario: EvergreenJnr_UsersList_SelectAllCheckboxStatusCheckAfterSearch
 	Then Select All selectbox is checked
 	Then "42" selected rows are displayed in the Actions panel
 
-@Evergreen @AllLists @Evergreen_ActionsPanel @AllCheckbox @DAS-10775 @DAS-10656
+@Evergreen @AllLists @Evergreen_ActionsPanel @AllCheckbox @DAS10775 @DAS10656
 Scenario Outline: EvergreenJnr_AllLists_CheckThatSelectAllCheckboxStatusAfterClosingActionPanel
 	When User clicks "<PageName>" on the left-hand menu
 	Then "<PageName>" list should be displayed to the user
@@ -50,7 +44,7 @@ Examples:
 	| Applications |
 	| Mailboxes    |
 
-@Evergreen @Devices @Evergreen_ActionsPanel @AllCheckbox @DAS-10772 @DAS-10656
+@Evergreen @Devices @Evergreen_ActionsPanel @AllCheckbox @DAS10772 @DAS10656 @DAS11664
 Scenario: EvergreenJnr_DevicesList_SearchWithinAllRows
 	When User clicks "Devices" on the left-hand menu
 	Then "Devices" list should be displayed to the user
@@ -65,7 +59,7 @@ Scenario: EvergreenJnr_DevicesList_SearchWithinAllRows
 	And Clearing the agGrid Search Box
 	Then "17,225" rows are displayed in the agGrid
 
-@Evergreen @AllLists @Evergreen_ActionsPanel @AllCheckbox @DAS-10656
+@Evergreen @AllLists @Evergreen_ActionsPanel @AllCheckbox @DAS10656
 Scenario Outline: EvergreenJnr_AllLists_SelectAllChecboxMainFunctionalityTest
 	When User clicks "<PageName>" on the left-hand menu
 	Then "<PageName>" list should be displayed to the user
@@ -82,17 +76,17 @@ Scenario Outline: EvergreenJnr_AllLists_SelectAllChecboxMainFunctionalityTest
 	| <SelectedRowName> |
 	Then "<SelectedRowsCountAfterDiselect>" selected rows are displayed in the Actions panel
 	When User click on '<Columnname>' column header
-	Then data in table is sorted by '<Columnname>' column in descending order
+	Then data in table is sorted by '<Columnname>' column in ascending order
 	Then "<SelectedRowsCountAfterDiselect>" selected rows are displayed in the Actions panel
 
 Examples: 
-	| PageName     | SelectedRowsCount | Columnname    | SelectedRowName      | SelectedRowsCountAfterDiselect |
-	| Devices      | 17225             | Hostname      | 02QS1WBYUHCAG8Z      | 17224                          |
-	| Users        | 41335             | Username      | AAV4528222           | 41334                          |
-	| Applications | 2223              | Application   | MKS Source Integrity | 2222                           |
-	| Mailboxes    | 4835              | Email Address | blogs@juriba.com     | 4834                           |
+	| PageName     | SelectedRowsCount | Columnname    | SelectedRowName                  | SelectedRowsCountAfterDiselect |
+	| Devices      | 17225             | Hostname      | 001BAQXT6JWFPI                   | 17224                          |
+	| Users        | 41335             | Username      | 002B5DC7D4D34D5C895              | 41334                          |
+	| Applications | 2223              | Application   | 7zip                             | 2222                           |
+	| Mailboxes    | 4835              | Email Address | 00B5CCB89AD0404B965@bclabs.local | 4834                           |
 
-@Evergreen @AllLists @Evergreen_ActionsPanel @AllCheckbox @DAS-10656
+@Evergreen @AllLists @Evergreen_ActionsPanel @AllCheckbox @DAS10656
 Scenario: EvergreenJnr_UsersList_CheckThatSelectAllWorksCorrectlyForFilteredListsWithAdditionalColumn
 	When User clicks "Users" on the left-hand menu
 	Then "Users" list should be displayed to the user

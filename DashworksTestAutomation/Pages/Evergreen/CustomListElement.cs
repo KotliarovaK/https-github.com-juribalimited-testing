@@ -14,16 +14,22 @@ namespace DashworksTestAutomation.Pages.Evergreen
         [FindsBy(How = How.XPath, Using = ".//span[@class='action-item']")]
         public IWebElement CreateNewListButton { get; set; }
 
+        [FindsBy(How = How.XPath, Using = ".//input[@aria-label='search']")]
+        public IWebElement ListPanelSearchTextbox { get; set; }
+
+        [FindsBy(How = How.XPath, Using = ".//div[@class='clearButton ng-star-inserted']")]
+        public IWebElement SearchTextboxResetButtonInListPanel { get; set; }
+
         [FindsBy(How = How.XPath, Using = ".//input[@aria-label='List Name']")]
         public IWebElement ListNameTextbox { get; set; }
 
-        [FindsBy(How = How.XPath, Using = ".//button[@title='Save List']")]
+        [FindsBy(How = How.XPath, Using = ".//button[@mattooltip='Save List']")]
         public IWebElement SaveButton { get; set; }
 
-        [FindsBy(How = How.XPath, Using = ".//button[@title='Cancel']")]
+        [FindsBy(How = How.XPath, Using = ".//button[@mattooltip='Cancel']")]
         public IWebElement CancelButton { get; set; }
 
-        public string SettingButtonSelector = ".//li//i[@title='Settings']";
+        public string SettingButtonSelector = ".//li//i[@class='menu-trigger material-icons mat-settings mat-18 pull-right settings-icon settings-area']";
 
         [FindsBy(How = How.XPath, Using = ".//div[@class='inline-success ng-star-inserted']")]
         public IWebElement SuccessCreateMessage { get; set; }
@@ -81,19 +87,22 @@ namespace DashworksTestAutomation.Pages.Evergreen
 
         public bool GetFavoriteStatus(string listName)
         {
-            var t = Driver.IsElementDisplayed(By.XPath(
-                $".//span[@class='submenu-actions-list-name'][text()='{listName}']//ancestor::li//i[@class='material-icons md-star']"));
             return Driver.IsElementDisplayed(By.XPath(
-                $".//span[@class='submenu-actions-list-name'][text()='{listName}']//ancestor::li//i[@class='material-icons md-star']"));
+                $".//span[@class='submenu-actions-list-name'][text()='{listName}']//ancestor::li//i[@class='material-icons mat-star']"));
         }
 
         public void ClickSettingsButtonByListName(string listName)
         {
             var settingsButton =
-                $".//span[@class='submenu-actions-list-name'][text()='{listName}']//ancestor::li//i[@title='Settings']";
+                $".//span[@class='submenu-actions-list-name'][text()='{listName}']//ancestor::li//i[@class='menu-trigger material-icons mat-settings mat-18 pull-right settings-icon settings-area']";
             Driver.WaitWhileControlIsDisplayed<CustomListElement>(() => UpdateCurrentListButton);
             Driver.MouseHover(By.XPath(settingsButton));
             Driver.FindElement(By.XPath(settingsButton)).Click();
+        }
+
+        public bool CheckThatListIsRemoved(string listName)
+        {
+            return Driver.IsElementDisplayed(By.XPath($".//span[@class='submenu-actions-list-name'][text()='{listName}']"));
         }
     }
 }

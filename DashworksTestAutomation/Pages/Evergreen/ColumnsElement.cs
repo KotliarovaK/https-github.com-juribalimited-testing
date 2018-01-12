@@ -4,7 +4,6 @@ using OpenQA.Selenium;
 using OpenQA.Selenium.Support.PageObjects;
 using System;
 using System.Collections.Generic;
-using System.Drawing.Text;
 using System.Linq;
 using System.Threading;
 
@@ -18,21 +17,24 @@ namespace DashworksTestAutomation.Pages.Evergreen
         [FindsBy(How = How.XPath, Using = ".//input[@name='search']")]
         public IWebElement SearchTextbox { get; set; }
 
-        [FindsBy(How = How.XPath, Using = ".//div[@class='searchPanel input-wrapper']//button[@title='Close']")]
+        [FindsBy(How = How.XPath,
+            Using =
+                ".//div[@class='searchPanel input-wrapper']//button[@aria-describedby='cdk-describedby-message-12']")]
         public IWebElement SearchTextboxResetButton { get; set; }
 
-        [FindsBy(How = How.XPath, Using = ".//button[@title='Minimize Group']")]
+        [FindsBy(How = How.XPath, Using = ".//button[@aria-describedby='cdk-describedby-message-23']")]
         public IList<IWebElement> MinimizeGroupButton { get; set; }
 
-        [FindsBy(How = How.XPath, Using = ".//button[@title='Maximize Group']")]
+        [FindsBy(How = How.XPath, Using = ".//button[@aria-describedby='cdk-describedby-message-331']")]
         public IList<IWebElement> MaximizeGroupButton { get; set; }
 
         private const string GroupTitleSelector =
             ".//div[contains(@class,'filter-category-title filter-selection')]";
+
         [FindsBy(How = How.XPath, Using = GroupTitleSelector)]
         public IList<IWebElement> GroupTitle { get; set; }
 
-        [FindsBy(How = How.XPath, Using = ".//button[@title='Reset Columns']")]
+        [FindsBy(How = How.XPath, Using = ".//span[text()='RESET']")]
         public IWebElement ResetColumnsButton { get; set; }
 
         public override List<By> GetPageIdentitySelectors()
@@ -132,13 +134,14 @@ namespace DashworksTestAutomation.Pages.Evergreen
 
         public bool CategoryIsDisplayed(string sectionsName)
         {
-            return Driver.IsElementDisplayed(By.XPath($".//div[contains(@class, 'filter-category-label')][text()='{sectionsName}']"));
+            return Driver.IsElementDisplayed(
+                By.XPath($".//div[contains(@class, 'filter-category-label')][text()='{sectionsName}']"));
         }
 
-        public void EnteredIntoSearchBox(string searchedText)
+        public bool SubcategoryIsSelected(string subCategoryName)
         {
-            Driver.FindElement(By.XPath(".//input[@name='search']")).Click();
-            Driver.FindElement(By.XPath(".//input[@name='search']")).SendKeys(searchedText);
+            return Driver.IsElementDisplayed(By.XPath(
+                $".//div[@class='sub-categories ng-star-inserted']/div/div//span[text()='{subCategoryName}']"));
         }
     }
 }

@@ -3,16 +3,10 @@ Feature: NewFilterCheck
 	Runs New filters full check related tests
 
 Background: Pre-Conditions
-	Given User is on Dashworks Homepage
-	And Login link is visible
-	When User clicks on the Login link
-	Then Login Page is displayed to the user
-	When User provides the Login and Password and clicks on the login button
-	Then Dashworks homepage is displayed to the user in a logged in state
-	When User clicks the Switch to Evergreen link
+	Given User is logged in to the Evergreen
 	Then Evergreen Dashboards page should be displayed to the user
 
-@Evergreen @Applications @Evergreen_FiltersFeature @NewFilterCheck @DAS-10828
+@Evergreen @Applications @Evergreen_FiltersFeature @NewFilterCheck @DAS10828
 Scenario Outline: EvergreenJnr_ApplicationsList_CheckThatTargetAppFilterIsAddedToTheList
 	When User clicks "Applications" on the left-hand menu
 	Then "Applications" list should be displayed to the user
@@ -29,7 +23,7 @@ Scenario Outline: EvergreenJnr_ApplicationsList_CheckThatTargetAppFilterIsAddedT
 	Then "<Text>" is displayed in added filter info
 	Then "<RowsCount>" rows are displayed in the agGrid
 	When User click on '<ColumnName>' column header
-	Then data in table is sorted by '<ColumnName>' column in descending order 
+	Then data in table is sorted by '<ColumnName>' column in ascending order 
 
 Examples: 
 	| ColumnName             | Operators              | FilterOption | Text                                        | RowsCount |
@@ -41,7 +35,7 @@ Examples:
 	| MigrationP: Target App | Equals, Does not equal | Zune         | MigrationP: Target App is Zune (316)        | 1         |
 	| UserSchedu: Target App | Equals, Does not equal | Zune         | UserSchedu: Target App is Zune (316)        | 1         |
 
-@Evergreen @Applications @Evergreen_FiltersFeature @NewFilterCheck @DAS-10828
+@Evergreen @Applications @Evergreen_FiltersFeature @NewFilterCheck @DAS10828
 Scenario Outline: EvergreenJnr_ApplicationsList_CheckThatTargetAppKeyFilterIsAddedToTheList
 	When User clicks "Applications" on the left-hand menu
 	Then "Applications" list should be displayed to the user
@@ -63,7 +57,7 @@ Scenario Outline: EvergreenJnr_ApplicationsList_CheckThatTargetAppKeyFilterIsAdd
 	Then data in table is sorted by '<ColumnName>' column in descending order 
 
 Examples: 
-	| ColumnName                 | Operators                                                                                         | FilterOption | Text                               | RowsCount |
+	| ColumnName                 | Operators                                                                                        | FilterOption | Text                               | RowsCount |
 	| Windows7Mi: Target App Key | Equals, Does not equal, Greater than, Greater than or equal to, Less than, Less than or equal to | 1051         | Windows7Mi: Target App Key is 1051 | 4         |
 	| Babel(Engl: Target App Key | Equals, Does not equal, Greater than, Greater than or equal to, Less than, Less than or equal to | 15           | Babel(Engl: Target App Key is 15   | 1         |
 	| Barry'sUse: Target App Key | Equals, Does not equal, Greater than, Greater than or equal to, Less than, Less than or equal to | 115          | Barry'sUse: Target App Key is 115  | 1         |
@@ -72,7 +66,7 @@ Examples:
 	| MigrationP: Target App Key | Equals, Does not equal, Greater than, Greater than or equal to, Less than, Less than or equal to | 960          | MigrationP: Target App Key is 960  | 1         |
 	| UserSchedu: Target App Key | Equals, Does not equal, Greater than, Greater than or equal to, Less than, Less than or equal to | 1            | UserSchedu: Target App Key is 1    | 1         |
 
-@Evergreen @Applications @Evergreen_FiltersFeature @NewFilterCheck @DAS-10828
+@Evergreen @Applications @Evergreen_FiltersFeature @NewFilterCheck @DAS10828
 Scenario Outline: EvergreenJnr_ApplicationsList_CheckThatTargetAppReadinessFilterIsAddedToTheList
 	When User clicks "Applications" on the left-hand menu
 	Then "Applications" list should be displayed to the user
@@ -101,7 +95,7 @@ Examples:
 	| MigrationP: Target App Readiness | Equals, Does not equal | Blue         | MigrationP: Target App Readiness is Blue  | 189       |
 	| UserSchedu: Target App Readiness | Equals, Does not equal | Grey         | UserSchedu: Target App Readiness is Grey  | 981       |
 
-@Evergreen @AllLists @Evergreen_FiltersFeature @NewFilterCheck @DAS-10578
+@Evergreen @AllLists @Evergreen_FiltersFeature @NewFilterCheck @DAS10578
 Scenario Outline: EvergreenJnr_AllLists_CheckThatDashworksFirstSeenFilterIsAddedToTheFilterList
 	When User clicks "<ListName>" on the left-hand menu
 	Then "<ListName>" list should be displayed to the user
@@ -127,7 +121,7 @@ Examples:
 	| Applications | 2,223     |
 	| Mailboxes    | 4,835     |
 
-@Evergreen @Applications @Evergreen_FiltersFeature @NewFilterCheck @DAS-10512
+@Evergreen @Applications @Evergreen_FiltersFeature @NewFilterCheck @DAS10512 @Not_Run
 Scenario Outline: EvergreenJnr_ApplicationsList_CheckThatApplicationReadinessFilterIsAddedToTheList
 	When User clicks "Applications" on the left-hand menu
 	Then "Applications" list should be displayed to the user
@@ -144,7 +138,7 @@ Scenario Outline: EvergreenJnr_ApplicationsList_CheckThatApplicationReadinessFil
 	Then "<Text>" is displayed in added filter info
 	Then "<RowsCount>" rows are displayed in the agGrid
 	When User click on '<ColumnName>' column header
-	Then data in table is sorted by '<ColumnName>' column in descending order 
+	Then data in table is sorted by '<ColumnName>' column in ascending order 
 
 Examples: 
 	| ColumnName                        | Operators              | FilterOption | Text                                       | RowsCount |
@@ -156,7 +150,7 @@ Examples:
 	| MigrationP: Application Readiness | Equals, Does not equal | Blue         | MigrationP: Application Readiness is Blue  | 189       |
 	| UserSchedu: Application Readiness | Equals, Does not equal | None         | UserSchedu: Application Readiness is None  | 981       |
 
-@Evergreen @Applications @Evergreen_FiltersFeature @NewFilterCheck @DAS-10512 @DAS-11509 @DAS-11507 @DAS-11509
+@Evergreen @Applications @Evergreen_FiltersFeature @NewFilterCheck @DAS10512 @DAS11509 @DAS11507 @DAS11509
 Scenario Outline: EvergreenJnr_ApplicationsList_CheckThatApplicationRationalisationFilterIsAddedToTheList
 	When User clicks "Applications" on the left-hand menu
 	Then "Applications" list should be displayed to the user
@@ -175,19 +169,19 @@ Scenario Outline: EvergreenJnr_ApplicationsList_CheckThatApplicationRationalisat
 	Then "<Text>" is displayed in added filter info
 	Then "<RowsCount>" rows are displayed in the agGrid
 	When User click on '<ColumnName>' column header
-	Then data in table is sorted by '<ColumnName>' column in descending order 
+	Then data in table is sorted by '<ColumnName>' column in ascending order 
 
 Examples: 
 	| ColumnName                              | Operators              | FilterOption  | Text                                                     | RowsCount |
-	| Windows7Mi: Application Rationalization | Equals, Does not equal | RETIRE        | Windows7Mi: Application Rationalization is Retire        | 85        |
-	| Babel(Engl: Application Rationalization | Equals, Does not equal | UNCATEGORISED | Babel(Engl: Application Rationalization is Uncategorised | 302       |
-	| Barry'sUse: Application Rationalization | Equals, Does not equal | KEEP          | Barry'sUse: Application Rationalization is Keep          | 2         |
-	| ComputerSc: Application Rationalization | Equals, Does not equal | FORWARD PATH  | ComputerSc: Application Rationalization is Forward Path  | 10        |
-	| Havoc(BigD: Application Rationalization | Equals, Does not equal | UNCATEGORISED | Havoc(BigD: Application Rationalization is Uncategorised | 1,067     |
-	| MigrationP: Application Rationalization | Equals, Does not equal | RETIRE        | MigrationP: Application Rationalization is Retire        | 1         |
-	| UserSchedu: Application Rationalization | Equals, Does not equal | UNCATEGORISED | UserSchedu: Application Rationalization is Uncategorised | 981       |
+	| Windows7Mi: Application Rationalisation | Equals, Does not equal | RETIRE        | Windows7Mi: Application Rationalisation is Retire        | 85        |
+	| Babel(Engl: Application Rationalisation | Equals, Does not equal | UNCATEGORISED | Babel(Engl: Application Rationalisation is Uncategorised | 302       |
+	| Barry'sUse: Application Rationalisation | Equals, Does not equal | KEEP          | Barry'sUse: Application Rationalisation is Keep          | 2         |
+	| ComputerSc: Application Rationalisation | Equals, Does not equal | FORWARD PATH  | ComputerSc: Application Rationalisation is Forward Path  | 10        |
+	| Havoc(BigD: Application Rationalisation | Equals, Does not equal | UNCATEGORISED | Havoc(BigD: Application Rationalisation is Uncategorised | 1,067     |
+	| MigrationP: Application Rationalisation | Equals, Does not equal | RETIRE        | MigrationP: Application Rationalisation is Retire        | 1         |
+	| UserSchedu: Application Rationalisation | Equals, Does not equal | UNCATEGORISED | UserSchedu: Application Rationalisation is Uncategorised | 981       |
 
-@Evergreen @Applications @Evergreen_FiltersFeature @NewFilterCheck @DAS-10512 @DAS-11507
+@Evergreen @Applications @Evergreen_FiltersFeature @NewFilterCheck @DAS10512 @DAS11507
 Scenario Outline: EvergreenJnr_ApplicationsList_CheckThatCoreApplicationFilterIsAddedToTheList
 	When User clicks "Applications" on the left-hand menu
 	Then "Applications" list should be displayed to the user
@@ -218,7 +212,7 @@ Examples:
 	| MigrationP: Core Application | Equals, Does not equal | FALSE        | MigrationP: Core Application is false   | 220       |
 	| UserSchedu: Core Application | Equals, Does not equal | UNKNOWN      | UserSchedu: Core Application is Unknown | 1,242     |
 
-@Evergreen @Applications @Evergreen_FiltersFeature @NewFilterCheck @DAS-10512 @DAS-11509 @DAS-11507 @DAS-11509
+@Evergreen @Applications @Evergreen_FiltersFeature @NewFilterCheck @DAS10512 @DAS11509 @DAS11507 @DAS11509
 Scenario Outline: EvergreenJnr_ApplicationsList_CheckThatHideFromEndUsersFilterIsAddedToTheList
 	When User clicks "Applications" on the left-hand menu
 	Then "Applications" list should be displayed to the user

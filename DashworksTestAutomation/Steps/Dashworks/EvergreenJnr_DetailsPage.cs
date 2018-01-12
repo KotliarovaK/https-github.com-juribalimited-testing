@@ -26,6 +26,13 @@ namespace DashworksTestAutomation.Steps.Dashworks
             tabs.NavigateToTabByName(tabName);
         }
 
+        [When(@"User navigates to the ""(.*)"" section")]
+        public void WhenUserNavigatesToTheSection(string sectionName)
+        {
+            var detailsPage = _driver.NowAt<DetailsPage>();
+            detailsPage.NavigateToSectionByName(sectionName);
+        }
+
         [Then(@"Fields with empty information are displayed")]
         public void ThenFieldsWithEmptyInformationAreDisplayed()
         {
@@ -58,6 +65,27 @@ namespace DashworksTestAutomation.Steps.Dashworks
             detailsPage.NavigateToSectionByName(sectionName);
             _driver.WaitWhileControlIsNotDisplayed<DetailsPage>(() => detailsPage.NoMailboxOwnerFoundMessage);
             Assert.AreEqual(textMessage, detailsPage.NoMailboxOwnerFoundMessage.Text);
+        }
+
+        [Then(@"""(.*)"" field is displayed on Details tab")]
+        public void ThenFieldIsDisplayedOnDetailsTab(string fieldName)
+        {
+            var detailsPage = _driver.NowAt<DetailsPage>();
+            Assert.IsTrue(detailsPage.IsFieldPresent(fieldName), $"{fieldName} is not displayed");
+        }
+
+        [Then(@"""(.*)"" field is not displayed on Details tab")]
+        public void ThenFieldIsNotDisplayedOnDetailsTab(string fieldName)
+        {
+            var detailsPage = _driver.NowAt<DetailsPage>();
+            Assert.IsFalse(detailsPage.IsFieldPresent(fieldName), $"{fieldName} is displayed");
+        }
+
+        [Then(@"""(.*)"" field display state is ""(.*)"" on Details tab")]
+        public void ThenFieldDisplayStateIsOnDetailsTab(string fieldName, bool state)
+        {
+            var detailsPage = _driver.NowAt<DetailsPage>();
+            Assert.AreEqual(state, detailsPage.IsFieldPresent(fieldName), $"Incorrect display state for {fieldName}");
         }
     }
 }

@@ -1,13 +1,15 @@
 ﻿using System;
-using System.Diagnostics;
 using DashworksTestAutomation.DTO.RuntimeVariables;
 using DashworksTestAutomation.Extensions;
+using DashworksTestAutomation.Helpers;
 using DashworksTestAutomation.Pages;
 using DashworksTestAutomation.Pages.Evergreen;
 using DashworksTestAutomation.Providers;
 using DashworksTestAutomation.Utils;
 using NUnit.Framework;
+using OpenQA.Selenium;
 using OpenQA.Selenium.Remote;
+using RestSharp;
 using TechTalk.SpecFlow;
 
 namespace DashworksTestAutomation.Steps.Dashworks
@@ -94,6 +96,7 @@ namespace DashworksTestAutomation.Steps.Dashworks
         {
             foreach (var row in table.Rows)
             {
+                _url.Value = UrlProvider.Url;
                 var combinedURL = _url.Value + row["QueryStringURL"];
                 _driver.NagigateToURL(combinedURL);
 
