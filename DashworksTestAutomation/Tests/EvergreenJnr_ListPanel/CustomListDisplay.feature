@@ -673,3 +673,32 @@ Scenario: EvergreenJnr_DevicesLists_CheckThatUserIsNotAbleToCreateListsWithSameN
 	Then "City" filter is added to the list
 	Then User type "TestList" into Custom list name field
 	Then Save button is inactive for Custom list
+
+@Evergreen @Devices @EvergreenJnr_ListPanel @CustomListDisplay @DAS11655 @Delete_Newly_Created_List
+Scenario Outline: EvergreenJnr_DevicesLists_CheckThatTheSavedListWithOwnerDisplayNameFilterIsDisplayed
+	When User clicks "Devices" on the left-hand menu
+	Then "Devices" list should be displayed to the user
+	When User clicks the Filters button
+	Then Filters panel is displayed to the user
+	When User add "Owner Display Name" filter where type is "<OperatorValues>" with added column and following value:
+	| Values |
+	|        |
+	Then "Owner Display Name" filter is added to the list
+	When User create custom list with "TestList" name
+	Then "TestList" list is displayed to user
+	When User navigates to the "All Devices" list
+	Then "Devices" list should be displayed to the user
+	When User navigates to the "TestList" list
+	Then "TestList" list is displayed to user 
+	And Column is displayed in following order:
+	| ColumnName         |
+	| Hostname           |
+	| Device Type        |
+	| Operating System   |
+	| Owner Display Name |
+	And URL is "<URL>"
+
+Examples:
+	| OperatorValues | URL |
+	| Empty          |     |
+	| Not empty      |     |
