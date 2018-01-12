@@ -273,7 +273,7 @@ Scenario: EvergreenJnr_DevicesList_CheckThatRemovingColumnsFromUrlIsWorksCorrect
 	Then data in table is sorted by 'Hostname' column in ascending order
 	When User create custom list with "TestList" name
 	#Workaround for DAS-11570. Remove after fix
-	And User navigates to the "TestList" list
+	#And User navigates to the "TestList" list
 	When User clicks the Columns button
 	Then Columns panel is displayed to the user
 	When ColumnName is entered into the search box and the selection is clicked
@@ -300,7 +300,7 @@ Scenario: EvergreenJnr_DevicesList_CheckThatRemovingColumnAndFilterFromUrlWorksC
 	Then data in table is sorted by 'Hostname' column in ascending order
 	When User create custom list with "TestList" name
 	#Workaround for DAS-11570. Remove after fix
-	And User navigates to the "TestList" list
+	#And User navigates to the "TestList" list
 	When User clicks the Columns button
 	Then Columns panel is displayed to the user
 	When ColumnName is entered into the search box and the selection is clicked
@@ -336,7 +336,7 @@ Scenario: EvergreenJnr_DevicesList_CheckThatRemovingColumnAndFilterAndCustomList
 	Then data in table is sorted by 'Hostname' column in ascending order
 	When User create custom list with "TestList" name
 	#Workaround for DAS-11570. Remove after fix
-	And User navigates to the "TestList" list
+	#And User navigates to the "TestList" list
 	When User clicks the Columns button
 	Then Columns panel is displayed to the user
 	When ColumnName is entered into the search box and the selection is clicked
