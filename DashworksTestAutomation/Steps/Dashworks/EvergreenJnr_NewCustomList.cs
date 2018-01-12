@@ -101,7 +101,7 @@ namespace DashworksTestAutomation.Steps.Dashworks
         public void ThenListIsDisplayedToUser(string listName)
         {
             //Workaround for 11570. Remove after fix
-            WhenUserNavigatesToTheList(listName);
+            //WhenUserNavigatesToTheList(listName);
             var page = _driver.NowAt<BaseDashboardPage>();
             Assert.AreEqual(listName, page.ActiveCustomListName());
         }
@@ -156,6 +156,16 @@ namespace DashworksTestAutomation.Steps.Dashworks
             listElement.DeleteButton.Click();
             _driver.WaitWhileControlIsNotDisplayed<CustomListElement>(() => listElement.DeleteConfirmationMessage);
             listElement.ConfirmDeleteButton.Click();
+        }
+
+        [When(@"User duplicates list with ""(.*)"" name")]
+        public void WhenUserDuplicatesListWithName(string listName)
+        {
+            var listElement = _driver.NowAt<CustomListElement>();
+
+            listElement.ClickSettingsButtonByListName(listName);
+            _driver.WaitWhileControlIsNotDisplayed<CustomListElement>(() => listElement.DuplicateButton);
+            listElement.DuplicateButton.Click();
         }
 
         [Then(@"list with ""(.*)"" name is removed")]

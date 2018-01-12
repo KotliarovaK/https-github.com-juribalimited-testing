@@ -27,6 +27,10 @@ namespace DashworksTestAutomation.Pages.Evergreen
         public IWebElement LookupFilterSearchTextbox { get; set; }
 
         [FindsBy(How = How.XPath,
+            Using = ".//div[@id='context']//div[@class='mat-input-flex mat-form-field-flex']//input")]
+        public IWebElement FilterSearchTextbox { get; set; }
+
+        [FindsBy(How = How.XPath,
             Using =
                 ".//div[@class='associationmultiselect-parent btn-group dropdown-associationmultiselect']//input[@placeholder='Search']")]
         public IWebElement AssociationSearchTextbox { get; set; }
@@ -196,6 +200,15 @@ namespace DashworksTestAutomation.Pages.Evergreen
         public IList<IWebElement> GetSelectBoxes()
         {
             return Driver.FindElements(By.XPath(".//span[@class='text-container ng-star-inserted']"));
+        }
+
+        public void SelectOperator(string operatorValue)
+        {
+            Driver.WaitWhileControlIsNotDisplayed(
+                By.XPath(".//div[@class='filter-panel']//div[@class='mat-select-trigger']"));
+            var selectbox =
+                Driver.FindElement(By.XPath(".//div[@class='filter-panel']//div[@class='mat-select-trigger']"));
+            Driver.SelectCustomSelectbox(selectbox, operatorValue);
         }
     }
 }
