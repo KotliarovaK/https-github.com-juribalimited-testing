@@ -74,17 +74,47 @@ namespace DashworksTestAutomation.Extensions
 
         public static void QuitDriver(this RemoteWebDriver driver)
         {
+            //Suggested workaround to solve issue with not closed browsers after tests
+            //TODO Try to remove and test without it
+            Thread.Sleep(3000);
+
             try
             {
-                Logger.Write("Trying to quit Browser...");
+                Logger.Write("Trying to delete cookie");
                 driver.Manage().Cookies.DeleteAllCookies();
-                driver.Close();
-                driver.Quit();
-                Logger.Write("Browser closed successfully.");
             }
             catch (Exception e)
             {
-                Logger.Write("Browser was not closed successfully:");
+                Logger.Write(e);
+            }
+
+            try
+            {
+                Logger.Write("Trying to close browser");
+                driver.Close(); 
+            }
+            catch (Exception e)
+            {
+                Logger.Write(e);
+            }
+
+            try
+            {
+                Logger.Write("Trying to quite chromedriver");
+                driver.Quit();
+            }
+            catch (Exception e)
+            {
+                Logger.Write(e);
+            }
+
+            try
+            {
+                Logger.Write("Trying to Dispose webdriver");
+                driver.Dispose();
+            }
+            catch (Exception e)
+            {
                 Logger.Write(e);
             }
         }
