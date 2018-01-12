@@ -6,7 +6,7 @@ Background: Pre-Conditions
 	Given User is logged in to the Evergreen
 	Then Evergreen Dashboards page should be displayed to the user
 
-@Evergreen @Devices @EvergreenJnr_Search @Search @DAS10704 @Delete_Newly_Created_List @Question_to_Lisa @Not_Run
+@Evergreen @Devices @EvergreenJnr_Search @Search @DAS10704 @Delete_Newly_Created_List
 Scenario: EvergreenJnr_DevicesList_CheckThatQuickSearchResetWhenMovingBetweenLists
 	When User clicks "Devices" on the left-hand menu
 	Then "Devices" list should be displayed to the user
@@ -26,7 +26,7 @@ Scenario: EvergreenJnr_DevicesList_CheckThatQuickSearchResetWhenMovingBetweenLis
 	When User navigates to the "All Devices" list
 	Then Search field is empty
 
-@Evergreen @Devices @EvergreenJnr_Search @Search @DAS10704 @Question_to_Lisa @Not_Run
+@Evergreen @Devices @EvergreenJnr_Search @Search @DAS10704
 Scenario: EvergreenJnr_DevicesList_CheckThatQuickSearchDoesntTriggersNewListMenu
 	When User clicks "Devices" on the left-hand menu
 	Then "Devices" list should be displayed to the user
@@ -35,7 +35,7 @@ Scenario: EvergreenJnr_DevicesList_CheckThatQuickSearchDoesntTriggersNewListMenu
 	| Smith          | 11           |
 	Then Save to New Custom List element is NOT displayed
 
-@Evergreen @Devices @Applications @Users @Mailboxes @EvergreenJnr_Search @Search @DAS10580 @DAS10667 @DAS10624 @Question_to_Lisa @Not_Run
+@Evergreen @Devices @Applications @Users @Mailboxes @EvergreenJnr_Search @Search @DAS10580 @DAS10667 @DAS10624
 Scenario: EvergreenJnr_AllLists_CheckSearchFilterAndTableContentDuringNavigationBetweenPages
 	When User clicks "Devices" on the left-hand menu
 	Then "Devices" list should be displayed to the user
@@ -68,7 +68,7 @@ Scenario: EvergreenJnr_AllLists_CheckSearchFilterAndTableContentDuringNavigation
 	Then "17,225" rows are displayed in the agGrid
 	Then Search field is empty
 
-@Evergreen @Devices @EvergreenJnr_Search @Search @Question_to_Lisa @Not_Run
+@Evergreen @Devices @EvergreenJnr_Search @Search
 Scenario: EvergreenJnr_DevicesList_SearchTests
 	When User clicks "Devices" on the left-hand menu
 	Then "Devices" list should be displayed to the user
@@ -95,7 +95,7 @@ Scenario: EvergreenJnr_DevicesList_SearchTests
 	| RED                 | 9,238        |
 	| 0JIE                | 1            |
 
-@Evergreen @Devices @EvergreenJnr_Search @Search @DAS11012 @Question_to_Lisa @Not_Run
+@Evergreen @Devices @EvergreenJnr_Search @Search @DAS11012
 Scenario: EvergreenJnr_DevicesList_ClearingSearchReturnsTheFullDataSet
 	When User clicks "Devices" on the left-hand menu
 	Then "Devices" list should be displayed to the user

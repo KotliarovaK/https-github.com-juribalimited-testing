@@ -52,7 +52,7 @@ Scenario: EvergreenJnr_ApplicationsList_CheckSortByDateFunctionality
 	When User click on 'Barry'sUse: Package Delivery Date' column header
 	Then data in table is sorted by 'Barry'sUse: Package Delivery Date' column in ascending order
 	
-@Evergreen @Mailboxes @EvergreenJnr_GridActions @TableSorting @DAS10612 @Question_to_Lisa @Not_Run
+@Evergreen @Mailboxes @EvergreenJnr_GridActions @TableSorting @DAS10612
 Scenario: EvergreenJnr_MailboxesList_CheckSortByDateFunctionality
 	When User clicks "Mailboxes" on the left-hand menu
 	Then "Mailboxes" list should be displayed to the user

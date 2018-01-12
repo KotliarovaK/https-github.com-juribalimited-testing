@@ -217,7 +217,7 @@ Scenario: EvergreenJnr_ApplicationsList_CheckThatFilterDataIsDisplayedCorrectlyW
 	| Values |
 	| 1      |
 
-@Evergreen @Mailboxes @Evergreen_FiltersFeature @FiltersDisplay @DAS10696 @Delete_Newly_Created_List @Question_to_Lisa @Not_Run
+@Evergreen @Mailboxes @Evergreen_FiltersFeature @FiltersDisplay @DAS10696 @Delete_Newly_Created_List
 Scenario: EvergreenJnr_MailboxesList_CheckThatFilterDataIsDisplayedCorrectlyWhenNavigatingBetweenLists
 	When User clicks "Mailboxes" on the left-hand menu
 	Then "Mailboxes" list should be displayed to the user
@@ -340,7 +340,7 @@ Examples:
 	| Empty          |              |           | is empty            |
 	| Not empty      |              | 4,835     | is not empty        |
 
- @Evergreen @Devices @Evergreen_FiltersFeature @FiltersDisplay @DAS10696 @DAS11090 @Question_to_Lisa @Not_Run
+ @Evergreen @Devices @Evergreen_FiltersFeature @FiltersDisplay @DAS10696 @DAS11090
 Scenario Outline: EvergreenJnr_DevicesList_CheckThatFilterOperatorsIsCorrectInFilterInfoDatetime
 	When User clicks "Devices" on the left-hand menu
 	Then "Devices" list should be displayed to the user
@@ -428,7 +428,7 @@ Scenario: EvergreenJnr_DevicesList_CheckThatApplicationsFilterIsContainsAllExpec
 	| Not used by device's owner     |
 	| Not entitled to device's owner |
 
-@Evergreen @Applications @EvergreenJnr_FiltersFeature @FilterFunctionality @DAS11142 @Delete_Newly_Created_List @Question_to_Lisa @Not_Run
+@Evergreen @Applications @EvergreenJnr_FiltersFeature @FilterFunctionality @DAS11142 @DAS11665 @Delete_Newly_Created_List @Not_Run
 Scenario: EvergreenJnr_ApplicationsList_CheckThatBracketsAreDisplayedCorrectlyInFilterInfo
 	When User clicks "Applications" on the left-hand menu
 	Then "Applications" list should be displayed to the user
@@ -500,7 +500,7 @@ Examples:
 	| Mailboxes |
 	| Devices   |
 
-@Evergreen @Devices @EvergreenJnr_FiltersFeature @FilterFunctionality @DAS11087 @Question_to_Lisa @Not_Run
+@Evergreen @Devices @EvergreenJnr_FiltersFeature @FilterFunctionality @DAS11087
 Scenario: EvergreenJnr_DevicesList_CheckThatDateAndTimeFiltersWithEqualsValuesAreWorkingCorrectly
 	When User clicks "Devices" on the left-hand menu
 	Then "Devices" list should be displayed to the user
@@ -512,7 +512,7 @@ Scenario: EvergreenJnr_DevicesList_CheckThatDateAndTimeFiltersWithEqualsValuesAr
 	Then "Windows7Mi: Date & Time Task" filter is added to the list
 	Then "16" rows are displayed in the agGrid
 
-@Evergreen @Devices @EvergreenJnr_FiltersFeature @FilterFunctionality @DAS11087 @DAS11090 @Question_to_Lisa @Not_Run
+@Evergreen @Devices @EvergreenJnr_FiltersFeature @FilterFunctionality @DAS11087 @DAS11090
 Scenario Outline: EvergreenJnr_DevicesList_CheckThatDateAndTimeFiltersWithDoesNotEqualValuesAreWorkingCorrectly
 	When User clicks "Devices" on the left-hand menu
 	Then "Devices" list should be displayed to the user
@@ -764,3 +764,57 @@ Scenario: EvergreenJnr_DevicesList_CheckThatMultipleFilterCriteriaToApplicationN
 	And "10,258" rows are displayed in the agGrid
 	And Edit List menu is not displayed
 	And "(Application Name ~ (adobe, microsoft) ASSOCIATION = (installed on device))" text is displayed in filter container
+
+
+@Evergreen @Devices @Evergreen_FiltersFeature @FiltersDisplay @DAS11468 @Delete_Newly_Created_List
+Scenario: EvergreenJnr_DevicesList_CheckThat500ErrorIsNotDisplayedForStaticListAfterRemovingAssociationsList
+	When User clicks "Applications" on the left-hand menu
+	Then "Applications" list should be displayed to the user
+	When User clicks the Actions button
+	Then Actions panel is displayed to the user
+	When User select all rows
+	And User create static list with "StaticListTestName" name
+	When User clicks "Devices" on the left-hand menu
+	Then "Devices" list should be displayed to the user
+	When User clicks the Filters button
+	Then Filters panel is displayed to the user
+	When User add "Application (Saved List)" filter where type is "Equals" with SelectedList list and following Association:
+	| SelectedList       | Association        |
+	| StaticListTestName | Not used on device |
+	Then "Application in list StaticListTestName is not used on device" is displayed in added filter info
+	When User create custom list with "TestList" name
+	When User clicks "Applications" on the left-hand menu
+	Then "Applications" list should be displayed to the user
+	When User removes custom list with "StaticListTestName" name
+	When User clicks "Devices" on the left-hand menu
+	Then "Devices" list should be displayed to the user
+	When User navigates to the "TestList" list
+	Then "TestList" list is displayed to user
+
+@Evergreen @Devices @Evergreen_FiltersFeature @FiltersDisplay @DAS11468 @Delete_Newly_Created_List
+Scenario: EvergreenJnr_DevicesList_CheckThat500ErrorIsNotDisplayedForDynamicListAfterRemovingAssociationsList
+	When User clicks "Applications" on the left-hand menu
+	Then "Applications" list should be displayed to the user
+	When User clicks the Columns button
+	Then Columns panel is displayed to the user
+	When ColumnName is entered into the search box and the selection is clicked
+	| ColumnName      |
+	| Application Key |
+	When User create custom list with "TestList" name
+	Then "TestList" list is displayed to user
+	When User clicks "Devices" on the left-hand menu
+	Then "Devices" list should be displayed to the user
+	When User clicks the Filters button
+	Then Filters panel is displayed to the user
+	When User add "Application (Saved List)" filter where type is "Equals" with SelectedList list and following Association:
+	| SelectedList       | Association        |
+	| TestList | Not used on device |
+	Then "Application in list TestList is not used on device" is displayed in added filter info
+	When User create custom list with "TestList" name
+	When User clicks "Applications" on the left-hand menu
+	Then "Applications" list should be displayed to the user
+	When User removes custom list with "TestList" name
+	When User clicks "Devices" on the left-hand menu
+	Then "Devices" list should be displayed to the user
+	When User navigates to the "TestList" list
+	Then "TestList" list is displayed to user

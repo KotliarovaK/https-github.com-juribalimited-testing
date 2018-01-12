@@ -75,8 +75,6 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_Search
         [NUnit.Framework.CategoryAttribute("Search")]
         [NUnit.Framework.CategoryAttribute("DAS10704")]
         [NUnit.Framework.CategoryAttribute("Delete_Newly_Created_List")]
-        [NUnit.Framework.CategoryAttribute("Question_to_Lisa")]
-        [NUnit.Framework.CategoryAttribute("Not_Run")]
         public virtual void EvergreenJnr_DevicesList_CheckThatQuickSearchResetWhenMovingBetweenLists()
         {
             System.Exception lastException = null;
@@ -111,9 +109,7 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_Search
                         "EvergreenJnr_Search",
                         "Search",
                         "DAS10704",
-                        "Delete_Newly_Created_List",
-                        "Question_to_Lisa",
-                        "Not_Run"});
+                        "Delete_Newly_Created_List"});
             this.ScenarioSetup(scenarioInfo);
             this.FeatureBackground();
             testRunner.When("User clicks \"Devices\" on the left-hand menu", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
@@ -152,8 +148,6 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_Search
         [NUnit.Framework.CategoryAttribute("EvergreenJnr_Search")]
         [NUnit.Framework.CategoryAttribute("Search")]
         [NUnit.Framework.CategoryAttribute("DAS10704")]
-        [NUnit.Framework.CategoryAttribute("Question_to_Lisa")]
-        [NUnit.Framework.CategoryAttribute("Not_Run")]
         public virtual void EvergreenJnr_DevicesList_CheckThatQuickSearchDoesntTriggersNewListMenu()
         {
             System.Exception lastException = null;
@@ -187,9 +181,7 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_Search
                         "Devices",
                         "EvergreenJnr_Search",
                         "Search",
-                        "DAS10704",
-                        "Question_to_Lisa",
-                        "Not_Run"});
+                        "DAS10704"});
             this.ScenarioSetup(scenarioInfo);
             this.FeatureBackground();
             testRunner.When("User clicks \"Devices\" on the left-hand menu", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
@@ -219,8 +211,6 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_Search
         [NUnit.Framework.CategoryAttribute("DAS10580")]
         [NUnit.Framework.CategoryAttribute("DAS10667")]
         [NUnit.Framework.CategoryAttribute("DAS10624")]
-        [NUnit.Framework.CategoryAttribute("Question_to_Lisa")]
-        [NUnit.Framework.CategoryAttribute("Not_Run")]
         public virtual void EvergreenJnr_AllLists_CheckSearchFilterAndTableContentDuringNavigationBetweenPages()
         {
             System.Exception lastException = null;
@@ -260,9 +250,7 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_Search
                         "Search",
                         "DAS10580",
                         "DAS10667",
-                        "DAS10624",
-                        "Question_to_Lisa",
-                        "Not_Run"});
+                        "DAS10624"});
             this.ScenarioSetup(scenarioInfo);
             this.FeatureBackground();
             testRunner.When("User clicks \"Devices\" on the left-hand menu", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
@@ -324,8 +312,6 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_Search
         [NUnit.Framework.CategoryAttribute("Devices")]
         [NUnit.Framework.CategoryAttribute("EvergreenJnr_Search")]
         [NUnit.Framework.CategoryAttribute("Search")]
-        [NUnit.Framework.CategoryAttribute("Question_to_Lisa")]
-        [NUnit.Framework.CategoryAttribute("Not_Run")]
         public virtual void EvergreenJnr_DevicesList_SearchTests()
         {
             System.Exception lastException = null;
@@ -358,9 +344,7 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_Search
                         "Evergreen",
                         "Devices",
                         "EvergreenJnr_Search",
-                        "Search",
-                        "Question_to_Lisa",
-                        "Not_Run"});
+                        "Search"});
             this.ScenarioSetup(scenarioInfo);
             this.FeatureBackground();
             testRunner.When("User clicks \"Devices\" on the left-hand menu", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
@@ -424,8 +408,6 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_Search
         [NUnit.Framework.CategoryAttribute("EvergreenJnr_Search")]
         [NUnit.Framework.CategoryAttribute("Search")]
         [NUnit.Framework.CategoryAttribute("DAS11012")]
-        [NUnit.Framework.CategoryAttribute("Question_to_Lisa")]
-        [NUnit.Framework.CategoryAttribute("Not_Run")]
         public virtual void EvergreenJnr_DevicesList_ClearingSearchReturnsTheFullDataSet()
         {
             System.Exception lastException = null;
@@ -459,9 +441,7 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_Search
                         "Devices",
                         "EvergreenJnr_Search",
                         "Search",
-                        "DAS11012",
-                        "Question_to_Lisa",
-                        "Not_Run"});
+                        "DAS11012"});
             this.ScenarioSetup(scenarioInfo);
             this.FeatureBackground();
             testRunner.When("User clicks \"Devices\" on the left-hand menu", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");

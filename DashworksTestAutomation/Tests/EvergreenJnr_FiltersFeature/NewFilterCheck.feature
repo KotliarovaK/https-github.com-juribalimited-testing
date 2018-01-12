@@ -121,7 +121,7 @@ Examples:
 	| Applications | 2,223     |
 	| Mailboxes    | 4,835     |
 
-@Evergreen @Applications @Evergreen_FiltersFeature @NewFilterCheck @DAS10512
+@Evergreen @Applications @Evergreen_FiltersFeature @NewFilterCheck @DAS10512 @Not_Run
 Scenario Outline: EvergreenJnr_ApplicationsList_CheckThatApplicationReadinessFilterIsAddedToTheList
 	When User clicks "Applications" on the left-hand menu
 	Then "Applications" list should be displayed to the user
@@ -138,7 +138,7 @@ Scenario Outline: EvergreenJnr_ApplicationsList_CheckThatApplicationReadinessFil
 	Then "<Text>" is displayed in added filter info
 	Then "<RowsCount>" rows are displayed in the agGrid
 	When User click on '<ColumnName>' column header
-	Then data in table is sorted by '<ColumnName>' column in descending order 
+	Then data in table is sorted by '<ColumnName>' column in ascending order 
 
 Examples: 
 	| ColumnName                        | Operators              | FilterOption | Text                                       | RowsCount |
@@ -169,7 +169,7 @@ Scenario Outline: EvergreenJnr_ApplicationsList_CheckThatApplicationRationalisat
 	Then "<Text>" is displayed in added filter info
 	Then "<RowsCount>" rows are displayed in the agGrid
 	When User click on '<ColumnName>' column header
-	Then data in table is sorted by '<ColumnName>' column in descending order 
+	Then data in table is sorted by '<ColumnName>' column in ascending order 
 
 Examples: 
 	| ColumnName                              | Operators              | FilterOption  | Text                                                     | RowsCount |
