@@ -3,7 +3,7 @@ using System.Threading;
 using DashworksTestAutomation.Extensions;
 using DashworksTestAutomation.Pages.Evergreen;
 using DashworksTestAutomation.Utils;
-using NUnit.Framework;
+using Microsoft.VisualStudio.TestTools.UnitTesting;
 using OpenQA.Selenium.Remote;
 using TechTalk.SpecFlow;
 
@@ -83,7 +83,7 @@ namespace DashworksTestAutomation.Steps.Dashworks
 
                 _driver.WaitWhileControlIsNotDisplayed<BaseDashboardPage>(() => listPageElement.ResultsOnPageCount);
 
-                StringAssert.AreEqualIgnoringCase($"{numberOfRows} rows", listPageElement.ResultsOnPageCount.Text);
+                Assert.AreEqual($"{numberOfRows} rows".ToLower(), listPageElement.ResultsOnPageCount.Text.ToLower());
                 Logger.Write(
                     $"Evergreen agGrid Search returned the correct number of rows for: {numberOfRows}  search");
             }
@@ -101,7 +101,7 @@ namespace DashworksTestAutomation.Steps.Dashworks
             var listPageElement = _driver.NowAt<BaseDashboardPage>();
 
             _driver.WaitWhileControlIsNotDisplayed<BaseDashboardPage>(() => listPageElement.ResultsOnPageCount);
-            Assert.IsEmpty(listPageElement.TableSearchTextbox.GetAttribute("value"), "Search textbox is not empty");
+            Assert.IsTrue(string.IsNullOrEmpty(listPageElement.TableSearchTextbox.GetAttribute("value")), "Search textbox is not empty");
         }
 
         [When(@"User click content from ""(.*)"" column")]

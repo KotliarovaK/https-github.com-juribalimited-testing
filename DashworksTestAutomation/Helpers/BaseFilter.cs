@@ -1,6 +1,6 @@
 ﻿using System.Linq;
 using DashworksTestAutomation.Extensions;
-using NUnit.Framework;
+using Microsoft.VisualStudio.TestTools.UnitTesting;
 using OpenQA.Selenium;
 using OpenQA.Selenium.Remote;
 using TechTalk.SpecFlow;
@@ -189,7 +189,7 @@ namespace DashworksTestAutomation.Helpers
                         _driver.FindElement(By.XPath(string.Format(addedOptionSelector, "more"))).Click();
                     var addedOptions = _driver.FindElements(By.XPath(allAddedOptionsSelector))
                         .Select(value => value.Text).ToList();
-                    Assert.Contains(row["Values"], addedOptions);
+                    Assert.IsTrue(addedOptions.Contains(row["Values"]));
                 }
             }
 

@@ -4,12 +4,12 @@ using DashworksTestAutomation.Pages;
 using DashworksTestAutomation.Pages.Evergreen;
 using DashworksTestAutomation.Providers;
 using DashworksTestAutomation.Utils;
-using NUnit.Framework;
 using OpenQA.Selenium.Remote;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text.RegularExpressions;
+using Microsoft.VisualStudio.TestTools.UnitTesting;
 using TechTalk.SpecFlow;
 
 namespace DashworksTestAutomation.Steps.Dashworks
@@ -260,7 +260,7 @@ namespace DashworksTestAutomation.Steps.Dashworks
         public void ThenFilterIsAddedToTheList(string filterName)
         {
             var filterElement = _driver.NowAt<FiltersElement>();
-            Assert.Contains(filterName, filterElement.GetFiltersNames());
+            Assert.IsTrue(filterElement.GetFiltersNames().Contains(filterName));
         }
 
         [Then(@"FilterData is displayed for FilterName column")]
@@ -506,7 +506,7 @@ namespace DashworksTestAutomation.Steps.Dashworks
         {
             var filterElement = _driver.NowAt<FiltersElement>();
             List<string> filterLabels = filterElement.AddedFilterLabels.Select(element => element.Text).ToList();
-            Assert.Contains(text, filterLabels, $"Filter with {text} not found in the list");
+            Assert.IsTrue(filterLabels.Contains(text), $"Filter with {text} not found in the list");
         }
 
         [Then(@"""(.*)"" filter with ""(.*)"" values is added to URL")]

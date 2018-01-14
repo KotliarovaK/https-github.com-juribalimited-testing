@@ -1,10 +1,11 @@
 ﻿using System.IO;
+using System.Reflection;
 using DashworksTestAutomation.Extensions;
 using DashworksTestAutomation.Pages.Evergreen;
 using DashworksTestAutomation.Pages.Evergreen.ProfileDetailsPages;
 using DashworksTestAutomation.Providers;
 using DashworksTestAutomation.Utils;
-using NUnit.Framework;
+using Microsoft.VisualStudio.TestTools.UnitTesting;
 using OpenQA.Selenium;
 using OpenQA.Selenium.Remote;
 using TechTalk.SpecFlow;
@@ -108,7 +109,9 @@ namespace DashworksTestAutomation.Steps.Dashworks
             var page = _driver.NowAt<AccountDetailsPage>();
             IAllowsFileDetection allowsDetection = (IAllowsFileDetection)_driver;
             allowsDetection.FileDetector = new LocalFileDetector();
-            string file = Path.GetDirectoryName(Path.GetDirectoryName(TestContext.CurrentContext.TestDirectory)) +
+            //string file = Path.GetDirectoryName(Path.GetDirectoryName(TestContext.CurrentContext.TestDirectory)) +
+            //              ResourceFilesNamesProvider.IncorrectFile;
+            string file = Path.GetDirectoryName(Path.GetDirectoryName(System.IO.Directory.GetCurrentDirectory())) +
                           ResourceFilesNamesProvider.IncorrectFile;
             page.UploadButton.SendKeys(file);
         }
@@ -119,7 +122,9 @@ namespace DashworksTestAutomation.Steps.Dashworks
             var page = _driver.NowAt<AccountDetailsPage>();
             IAllowsFileDetection allowsDetection = (IAllowsFileDetection)_driver;
             allowsDetection.FileDetector = new LocalFileDetector();
-            string file = Path.GetDirectoryName(Path.GetDirectoryName(TestContext.CurrentContext.TestDirectory)) +
+            //string file = Path.GetDirectoryName(Path.GetDirectoryName(TestContext.CurrentContext.TestDirectory)) +
+            //              ResourceFilesNamesProvider.CorrectFile;
+            string file = Path.GetDirectoryName(Path.GetDirectoryName(System.IO.Directory.GetCurrentDirectory())) +
                           ResourceFilesNamesProvider.CorrectFile;
             page.UploadButton.SendKeys(file);
         }
@@ -136,7 +141,7 @@ namespace DashworksTestAutomation.Steps.Dashworks
         public void ThenUserPictureIsChangedToUploadedPhoto()
         {
             var page = _driver.NowAt<AccountDetailsPage>();
-            StringAssert.DoesNotContain("img/UnknownUser.jpg", page.UserPicture.GetAttribute("style"));
+            Assert.IsFalse(page.UserPicture.GetAttribute("style").Contains("img/UnknownUser.jpg"));
         }
 
         [When(@"User clicks Remove on Account details page")]
