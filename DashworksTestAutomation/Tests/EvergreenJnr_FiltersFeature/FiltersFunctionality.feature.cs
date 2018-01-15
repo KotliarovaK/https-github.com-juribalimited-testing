@@ -716,6 +716,7 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_FiltersFeature
         [NUnit.Framework.CategoryAttribute("EvergreenJnr_FilterFeature")]
         [NUnit.Framework.CategoryAttribute("FilterFunctionality")]
         [NUnit.Framework.CategoryAttribute("DAS10977")]
+        [NUnit.Framework.CategoryAttribute("Not_Run")]
         [NUnit.Framework.TestCaseAttribute("Applications", "Barry\'sUse: Target App", "Python 2.2a4 (1)", "1", "Application", "Python 2.2a4", "Barry\'sUse: Target App is Python 2.2a4 (1)", new string[0])]
         [NUnit.Framework.TestCaseAttribute("Mailboxes", "EmailMigra: BT/QMM Switch Status", "Not Started", "80", "Email Address", "alex.cristea@juriba.com", "EmailMigra: BT/QMM Switch Status is Not Started", new string[0])]
         public virtual void EvergreenJnr_AllLists_CheckThatFilterIsRestoredCorrectlyAfterLeavingThePageAndGoingBackViaTheBrowserBackButtonForLookupFilters(string listName, string filterName, string filterValue, string rowsCount, string columnName, string objectName, string text, string[] exampleTags)
@@ -751,7 +752,8 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_FiltersFeature
                     "AllLists",
                     "EvergreenJnr_FilterFeature",
                     "FilterFunctionality",
-                    "DAS10977"};
+                    "DAS10977",
+                    "Not_Run"};
             if ((exampleTags != null))
             {
                 @__tags = System.Linq.Enumerable.ToArray(System.Linq.Enumerable.Concat(@__tags, exampleTags));
