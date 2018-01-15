@@ -18,7 +18,8 @@ namespace DashworksTestAutomation.Providers
         private static List<UserDto> _accounts = new List<UserDto>(){ new UserDto()
             {
                 UserName = ConfigurationManager.AppSettings["user.login"],
-                Password = Password
+                Password = Password,
+                Language = ConfigurationManager.AppSettings["user.language"]
             }
         };
 
@@ -29,7 +30,8 @@ namespace DashworksTestAutomation.Providers
                 _accounts.Add(new UserDto()
                 {
                     UserName = $"automation_admin{i}",
-                    Password = Password
+                    Password = Password,
+                    Language = ConfigurationManager.AppSettings["user.language"]
                 });
             }
         }

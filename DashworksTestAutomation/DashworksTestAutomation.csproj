@@ -92,6 +92,7 @@
     <Compile Include="Base\SeleniumBasePage.cs" />
     <Compile Include="DTO\RuntimeVariables\UsedUsers.cs" />
     <Compile Include="DTO\AuthObject.cs" />
+    <Compile Include="DTO\RuntimeVariables\UserProfileData.cs" />
     <Compile Include="DTO\RuntimeVariables\UsersWithSharedLists.cs" />
     <Compile Include="DTO\RuntimeVariables\WebsiteUrl.cs" />
     <Compile Include="DTO\UserDto.cs" />
@@ -270,6 +271,7 @@
     </Compile>
     <Compile Include="Utils\ByFactory.cs" />
     <Compile Include="Utils\CustomRemoteWebDriver.cs" />
+    <Compile Include="Utils\DatabaseWorker.cs" />
     <Compile Include="Utils\FileSystemHelper.cs" />
     <Compile Include="Utils\FluentWait.cs" />
     <Compile Include="Utils\KillDriverProcesses.cs" />

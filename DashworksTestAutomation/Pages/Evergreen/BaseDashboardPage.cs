@@ -164,6 +164,7 @@ namespace DashworksTestAutomation.Pages.Evergreen
             }
             catch (Exception)
             {
+                Driver.WaitWhileControlIsNotDisplayed(By.XPath($".//div[@id='submenuBlock']//span[text()='{listName}']"));
                 return Driver.FindElement(By.XPath($".//div[@id='submenuBlock']//span[text()='{listName}']"));
             }
         }
@@ -201,8 +202,9 @@ namespace DashworksTestAutomation.Pages.Evergreen
 
         public IList<IWebElement> GetAllColumnHeaders()
         {
-            return Driver.FindElements(
-                By.XPath(".//div[@class='ag-header-cell ag-header-cell-sortable']//span[@ref='eText']"));
+            var selector = By.XPath(".//span[@role='columnheader']");
+            Driver.WaitForDataLoading();
+            return Driver.FindElements(selector);
         }
     }
 }
