@@ -271,6 +271,7 @@
     </Compile>
     <Compile Include="Utils\ByFactory.cs" />
     <Compile Include="Utils\CustomRemoteWebDriver.cs" />
+    <Compile Include="Utils\DatabaseWorker.cs" />
     <Compile Include="Utils\FileSystemHelper.cs" />
     <Compile Include="Utils\FluentWait.cs" />
     <Compile Include="Utils\KillDriverProcesses.cs" />
