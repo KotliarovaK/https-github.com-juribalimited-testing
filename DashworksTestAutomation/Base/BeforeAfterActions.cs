@@ -41,37 +41,47 @@ namespace DashworksTestAutomation.Base
             {
                 var driver = _objectContainer.Resolve<RemoteWebDriver>();
 
-                if (Browser.RemoteDriver.Equals("sauceLabs"))
+                try
                 {
-                    bool passed = TestContext.CurrentContext.Result.Outcome.Status == NUnit.Framework.Interfaces.TestStatus.Passed;
+                    if (Browser.RemoteDriver.Equals("sauceLabs"))
+                    {
+                        bool passed = TestContext.CurrentContext.Result.Outcome.Status ==
+                                      NUnit.Framework.Interfaces.TestStatus.Passed;
 
-                    try
-                    {
-                        // Logs the result to Sauce Labs
-                        ((IJavaScriptExecutor)driver).ExecuteScript("sauce:job-result=" + (passed ? "passed" : "failed"));
+                        try
+                        {
+                            // Logs the result to Sauce Labs
+                            ((IJavaScriptExecutor)driver).ExecuteScript(
+                                "sauce:job-result=" + (passed ? "passed" : "failed"));
+                        }
+                        finally
+                        {
+                            Console.WriteLine(
+                                $"SauceOnDemandSessionID={((CustomRemoteWebDriver)driver).getSessionId()} job-name={TestContext.CurrentContext.Test.MethodName}");
+                        }
                     }
-                    finally
+
+                    var testStatus = GetTestStatus();
+                    if (!string.IsNullOrEmpty(testStatus) && testStatus.Equals("TestError"))
                     {
-                        Console.WriteLine(
-                            $"SauceOnDemandSessionID={((CustomRemoteWebDriver) driver).getSessionId()} job-name={TestContext.CurrentContext.Test.MethodName}");
+                        var testName = GetTestName();
+                        if (!string.IsNullOrEmpty(testName))
+                            driver.CreateScreenshot(testName);
                     }
+
+                    Logger.Write($"Closing window at: {driver.Url}");
                 }
-
-                var testStatus = GetTestStatus();
-                if (!string.IsNullOrEmpty(testStatus) && testStatus.Equals("TestError"))
+                catch (Exception e)
                 {
-                    var testName = GetTestName();
-                    if (!string.IsNullOrEmpty(testName))
-                        driver.CreateScreenshot(testName);
+                    Logger.Write(e);
                 }
-
-                Logger.Write($"Closing window at: {driver.Url}");
 
                 driver.QuitDriver();
             }
-            catch (ObjectContainerException)
+            catch (ObjectContainerException e)
             {
                 //There are no driver in the context
+                Logger.Write(e + "There are no driver in the context");
             }
             catch (Exception e)
             {
