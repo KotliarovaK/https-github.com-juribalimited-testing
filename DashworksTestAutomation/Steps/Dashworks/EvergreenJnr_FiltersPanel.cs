@@ -263,17 +263,6 @@ namespace DashworksTestAutomation.Steps.Dashworks
             Assert.Contains(filterName, filterElement.GetFiltersNames());
         }
 
-        [Then(@"FilterData is displayed for FilterName column")]
-        public void ThenFilterDataIsDisplayedForFilterNameColumn(Table table)
-        {
-            var listpageMenu = _driver.NowAt<BaseDashboardPage>();
-            foreach (var row in table.Rows)
-            {
-                Assert.IsTrue(listpageMenu.IsColumnPresent(row["FilterName"]),
-                    $"Column '{row["FilterName"]}' is not exists in the table");
-            }
-        }
-
         [Then(@"table data is filtered correctly")]
         public void ThenTableDataIsFilteredCorrectly()
         {

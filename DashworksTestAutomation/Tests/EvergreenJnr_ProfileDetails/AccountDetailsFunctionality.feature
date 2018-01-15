@@ -11,12 +11,12 @@ Scenario: EvergreenJnr_AccountDetails_CheckThatErrorIsNotDisplayedAfterChangingP
 	When User clicks Profile in Account Dropdown
 	Then Profile page is displayed to user
 	When User changes Full Name to "TestAdmin"
-	When User changes Email to "TestEmailAuto@test.com"
+	When User changes Email to "automation@juriba.com"
 	And User clicks Update button on Profile page
 	Then Error message is not displayed on Profile page
 	Then Success message with "Account details have been changed" text is displayed on Account Details page
 	And "TestAdmin" is displayed in Full Name field
-	And "TestEmailAuto@test.com" is displayed in Email field
+	And "automation@juriba.com" is displayed in Email field
 
 @Evergreen @ProfileDetails @EvergreenJnr_ProfileDetails @AccountDetailsFunctionality @DAS10756 @Remove_Profile_Changes
 Scenario: EvergreenJnr_AccountDetails_CheckThatCorrectErrorMessagesAreDisplayed
@@ -38,7 +38,7 @@ Scenario: EvergreenJnr_AccountDetails_CheckThatCorrectErrorMessagesAreDisplayed
 	When User changes Email to "TestEmail@test"
 	And User clicks Update button on Profile page
 	Then "Enter a valid email address" error message is displayed
-	When User changes Email to "TestEmailAuto@test.com"
+	When User changes Email to "automation@juriba.com"
 	When User Upload incorrect avatar to Account Details
 	Then "File uploaded not recognised as an image" error message is displayed
 	When User Upload correct avatar to Account Details
@@ -53,12 +53,12 @@ Scenario: EvergreenJnr_AccountDetails_CheckThatErrorIsNotDisplayedAfterChangingP
 	When User clicks Profile in Account Dropdown
 	Then Profile page is displayed to user
 	When User changes Full Name to "TestAdmin"
-	When User changes Email to "TestEmailAuto@test.com"
+	When User changes Email to "automation@juriba.com"
 	And User clicks Update button on Profile page
 	Then Error message is not displayed on Profile page
 	Then Success message with "Account details have been changed" text is displayed on Account Details page
 	And "TestAdmin" is displayed in Full Name field
-	And "TestEmailAuto@test.com" is displayed in Email field
+	And "automation@juriba.com" is displayed in Email field
 	When User changes Full Name to "TestAdm"
 	Then Error message is not displayed on Profile page
 	Then Success message with "Account details have been changed" text is displayed on Account Details page

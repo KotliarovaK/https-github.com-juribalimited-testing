@@ -6,7 +6,7 @@ Background: Pre-Conditions
 	Given User is logged in to the Evergreen
 	Then Evergreen Dashboards page should be displayed to the user
 
-@Evergreen @Applications @Evergreen_FiltersFeature @NewFilterCheck @DAS10828
+@Evergreen @Applications @Evergreen_FiltersFeature @NewFilterCheck @DAS10828 @Not_Run
 Scenario Outline: EvergreenJnr_ApplicationsList_CheckThatTargetAppFilterIsAddedToTheList
 	When User clicks "Applications" on the left-hand menu
 	Then "Applications" list should be displayed to the user

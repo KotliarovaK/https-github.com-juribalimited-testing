@@ -160,9 +160,10 @@ namespace DashworksTestAutomation.Steps.Dashworks
             {
                 var page = _driver.NowAt<AccountDetailsPage>();
                 page.FullNameField.Clear();
-                page.FullNameField.SendKeys("Administrator");
+                page.FullNameField.SendKeys(_userProfileData.FullName);
                 page.EmailField.Clear();
-                page.EmailField.SendKeys(TestDataGenerator.RandomEmail());
+                page.EmailField.SendKeys(String.IsNullOrEmpty(_userProfileData.Email)
+                    ? "automation@juriba.com" : _userProfileData.Email);
                 page.RemoveButton.Click();
                 page.UpdateButton.Click();
             }
