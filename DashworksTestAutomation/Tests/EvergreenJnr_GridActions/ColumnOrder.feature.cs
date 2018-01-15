@@ -311,6 +311,7 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_GridActions
         [NUnit.Framework.CategoryAttribute("EvergreenJnr_GridActions")]
         [NUnit.Framework.CategoryAttribute("ColumnOrder")]
         [NUnit.Framework.CategoryAttribute("DAS11666")]
+        [NUnit.Framework.CategoryAttribute("Not_Run")]
         public virtual void EvergreenJnr_UsersList_CheckThatColumnsOrderSavedAfterAddingAnotherColumn()
         {
             System.Exception lastException = null;
@@ -344,7 +345,8 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_GridActions
                         "Users",
                         "EvergreenJnr_GridActions",
                         "ColumnOrder",
-                        "DAS11666"});
+                        "DAS11666",
+                        "Not_Run"});
             this.ScenarioSetup(scenarioInfo);
             this.FeatureBackground();
             testRunner.When("User clicks \"Users\" on the left-hand menu", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");

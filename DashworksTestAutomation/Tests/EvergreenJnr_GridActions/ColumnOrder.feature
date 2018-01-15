@@ -69,7 +69,7 @@ Scenario: EvergreenJnr_DevicesList_CheckThatColumnsOrderSavedAfterAddingAFilter
 	| Compliance           |
 	| Windows7Mi: Category |
 
-@Evergreen @Users @EvergreenJnr_GridActions @ColumnOrder @DAS11666
+@Evergreen @Users @EvergreenJnr_GridActions @ColumnOrder @DAS11666 @Not_Run
 Scenario: EvergreenJnr_UsersList_CheckThatColumnsOrderSavedAfterAddingAnotherColumn
 	When User clicks "Users" on the left-hand menu
 	Then "Users" list should be displayed to the user
