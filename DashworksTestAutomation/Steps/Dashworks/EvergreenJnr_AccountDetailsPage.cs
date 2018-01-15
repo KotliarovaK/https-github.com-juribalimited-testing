@@ -169,7 +169,7 @@ namespace DashworksTestAutomation.Steps.Dashworks
                 page.FullNameField.SendKeys(_userProfileData.FullName);
                 page.EmailField.Clear();
                 page.EmailField.SendKeys(String.IsNullOrEmpty(_userProfileData.Email)
-                    ? TestDataGenerator.RandomEmail()
+                    ? "automation@juriba.com"
                     : _userProfileData.Email);
                 page.RemoveButton.Click();
                 page.UpdateButton.Click();

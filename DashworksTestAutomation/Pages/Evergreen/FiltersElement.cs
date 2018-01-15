@@ -100,7 +100,7 @@ namespace DashworksTestAutomation.Pages.Evergreen
         [FindsBy(How = How.XPath, Using = GroupTitleSelector)]
         public IList<IWebElement> GroupTitle { get; set; }
 
-        [FindsBy(How = How.XPath, Using = ".//div[@class='empty-message ng-star-inserted']")]
+        [FindsBy(How = How.XPath, Using = ".//div[@id='content']//div[@class='empty-message ng-star-inserted']")]
         public IWebElement NoResultsFoundMessage { get; set; }
 
         public override List<By> GetPageIdentitySelectors()

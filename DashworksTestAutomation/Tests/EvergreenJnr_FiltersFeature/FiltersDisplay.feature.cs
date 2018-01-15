@@ -1110,8 +1110,8 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_FiltersFeature
         [NUnit.Framework.CategoryAttribute("DAS10696")]
         [NUnit.Framework.TestCaseAttribute("Equals", "08 Mar 2016", "3", "is", new string[0])]
         [NUnit.Framework.TestCaseAttribute("Does not equal", "08 Mar 2016", "4,832", "is not", new string[0])]
-        [NUnit.Framework.TestCaseAttribute("Before", "08 Mar 2016", "39", "is before", new string[0])]
-        [NUnit.Framework.TestCaseAttribute("After", "08 Mar 2016", "4,796", "is after", new string[0])]
+        [NUnit.Framework.TestCaseAttribute("Before", "08 Mar 2016", "33", "is before", new string[0])]
+        [NUnit.Framework.TestCaseAttribute("After", "08 Mar 2016", "4,799", "is after", new string[0])]
         [NUnit.Framework.TestCaseAttribute("Empty", "", "", "is empty", new string[0])]
         [NUnit.Framework.TestCaseAttribute("Not empty", "", "4,835", "is not empty", new string[0])]
         public virtual void EvergreenJnr_MailboxesList_CheckThatFilterOperatorsIsCorrectInFilterInfo(string operatorValue, string filterOption, string rowsCount, string operatorValueInInfo, string[] exampleTags)
@@ -1791,7 +1791,7 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_FiltersFeature
         [NUnit.Framework.CategoryAttribute("DAS11087")]
         [NUnit.Framework.CategoryAttribute("DAS11090")]
         [NUnit.Framework.TestCaseAttribute("Windows7Mi: Date & Time Task", "22 Nov 2012", "17,209", new string[0])]
-        [NUnit.Framework.TestCaseAttribute("Build Date", "06 Nov 2004", "17,225", new string[0])]
+        [NUnit.Framework.TestCaseAttribute("Build Date", "06 Nov 2004", "17,224", new string[0])]
         public virtual void EvergreenJnr_DevicesList_CheckThatDateAndTimeFiltersWithDoesNotEqualValuesAreWorkingCorrectly(string filterName, string value, string rowCount, string[] exampleTags)
         {
             System.Exception lastException = null;
@@ -2691,14 +2691,14 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_FiltersFeature
             testRunner.Then("\"Devices\" list should be displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
             testRunner.When("User clicks the Filters button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
             testRunner.Then("Filters panel is displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-            TechTalk.SpecFlow.Table table72 = new TechTalk.SpecFlow.Table(new string[] {
+            TechTalk.SpecFlow.Table table70 = new TechTalk.SpecFlow.Table(new string[] {
                         "SelectedList",
                         "Association"});
-            table72.AddRow(new string[] {
+            table70.AddRow(new string[] {
                         "StaticListTestName",
                         "Not used on device"});
             testRunner.When("User add \"Application (Saved List)\" filter where type is \"Equals\" with SelectedLi" +
-                    "st list and following Association:", ((string)(null)), table72, "When ");
+                    "st list and following Association:", ((string)(null)), table70, "When ");
             testRunner.Then("\"Application in list StaticListTestName is not used on device\" is displayed in ad" +
                     "ded filter info", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
             testRunner.When("User create custom list with \"TestList\" name", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
@@ -2763,25 +2763,25 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_FiltersFeature
             testRunner.Then("\"Applications\" list should be displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
             testRunner.When("User clicks the Columns button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
             testRunner.Then("Columns panel is displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-            TechTalk.SpecFlow.Table table73 = new TechTalk.SpecFlow.Table(new string[] {
+            TechTalk.SpecFlow.Table table71 = new TechTalk.SpecFlow.Table(new string[] {
                         "ColumnName"});
-            table73.AddRow(new string[] {
+            table71.AddRow(new string[] {
                         "Application Key"});
-            testRunner.When("ColumnName is entered into the search box and the selection is clicked", ((string)(null)), table73, "When ");
+            testRunner.When("ColumnName is entered into the search box and the selection is clicked", ((string)(null)), table71, "When ");
             testRunner.When("User create custom list with \"TestList\" name", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
             testRunner.Then("\"TestList\" list is displayed to user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
             testRunner.When("User clicks \"Devices\" on the left-hand menu", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
             testRunner.Then("\"Devices\" list should be displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
             testRunner.When("User clicks the Filters button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
             testRunner.Then("Filters panel is displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-            TechTalk.SpecFlow.Table table74 = new TechTalk.SpecFlow.Table(new string[] {
+            TechTalk.SpecFlow.Table table72 = new TechTalk.SpecFlow.Table(new string[] {
                         "SelectedList",
                         "Association"});
-            table74.AddRow(new string[] {
+            table72.AddRow(new string[] {
                         "TestList",
                         "Not used on device"});
             testRunner.When("User add \"Application (Saved List)\" filter where type is \"Equals\" with SelectedLi" +
-                    "st list and following Association:", ((string)(null)), table74, "When ");
+                    "st list and following Association:", ((string)(null)), table72, "When ");
             testRunner.Then("\"Application in list TestList is not used on device\" is displayed in added filter" +
                     " info", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
             testRunner.When("User create custom list with \"TestList\" name", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
