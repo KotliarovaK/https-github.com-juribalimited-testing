@@ -33,6 +33,7 @@ namespace DashworksTestAutomation.Steps.Dashworks
         public void WhenUserPerformSearchBy(string searchTerm)
         {
             PerformSearch(searchTerm);
+            _driver.WaitForDataLoading();
         }
 
         [Then(@"User enters SearchCriteria into the agGrid Search Box and the correct NumberOfRows are returned")]

@@ -399,7 +399,7 @@ Scenario: EvergreenJnr_ApplicationsList_CheckThatApplicationSavedListFilterIsWor
 	Then "Devices" list should be displayed to the user
 	When User clicks the Filters button
 	Then Filters panel is displayed to the user
-	When User add "Application (Saved List)" filter where type is "Equals" with SelectedList list and following Association:
+	When User add "Application (Saved List)" filter where type is "In list" with SelectedList list and following Association:
 	| SelectedList | Association        |
 	| TestList     | Not used on device |
 	Then "Application" filter is added to the list
@@ -778,7 +778,7 @@ Scenario: EvergreenJnr_DevicesList_CheckThat500ErrorIsNotDisplayedForStaticListA
 	Then "Devices" list should be displayed to the user
 	When User clicks the Filters button
 	Then Filters panel is displayed to the user
-	When User add "Application (Saved List)" filter where type is "Equals" with SelectedList list and following Association:
+	When User add "Application (Saved List)" filter where type is "In list" with SelectedList list and following Association:
 	| SelectedList       | Association        |
 	| StaticListTestName | Not used on device |
 	Then "Application in list StaticListTestName is not used on device" is displayed in added filter info
@@ -806,9 +806,9 @@ Scenario: EvergreenJnr_DevicesList_CheckThat500ErrorIsNotDisplayedForDynamicList
 	Then "Devices" list should be displayed to the user
 	When User clicks the Filters button
 	Then Filters panel is displayed to the user
-	When User add "Application (Saved List)" filter where type is "Equals" with SelectedList list and following Association:
-	| SelectedList       | Association        |
-	| TestList | Not used on device |
+	When User add "Application (Saved List)" filter where type is "In list" with SelectedList list and following Association:
+	| SelectedList | Association        |
+	| TestList     | Not used on device |
 	Then "Application in list TestList is not used on device" is displayed in added filter info
 	When User create custom list with "TestList" name
 	When User clicks "Applications" on the left-hand menu
@@ -830,3 +830,16 @@ Scenario: EvergreenJnr_DevicesLists_CheckThatRowCountIsNotDisplayedWhenNoObjects
 	| Example |
 	Then "Hostname" filter is added to the list
 	And "" rows are displayed in the agGrid
+
+@Evergreen @Devices @Evergreen_FiltersFeature @FiltersDisplay @DAS11575
+Scenario: EvergreenJnr_DevicesLists_CheckThatFilterLogicForBooleanFieldsIsWorkedCorrectly
+	When User clicks "Devices" on the left-hand menu
+	Then "Devices" list should be displayed to the user
+	When User clicks the Filters button
+	Then Filters panel is displayed to the user
+	When User add "Secure Boot Enabled" filter where type is "Does not equal" with added column and following checkboxes:
+	| SelectedCheckboxes |
+	| FALSE              |
+	| UNKNOWN            |
+	Then "Secure Boot Enabled" filter is added to the list
+	Then table data is filtered correctly
