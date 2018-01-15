@@ -1,4 +1,5 @@
-﻿using System.IO;
+﻿using System;
+using System.IO;
 using DashworksTestAutomation.Extensions;
 using DashworksTestAutomation.Pages.Evergreen;
 using DashworksTestAutomation.Pages.Evergreen.ProfileDetailsPages;
@@ -15,10 +16,12 @@ namespace DashworksTestAutomation.Steps.Dashworks
     class EvergreenJnr_AccountDetailsPage : SpecFlowContext
     {
         private readonly RemoteWebDriver _driver;
+        private readonly UserProfileData _userProfileData;
 
-        public EvergreenJnr_AccountDetailsPage(RemoteWebDriver driver)
+        public EvergreenJnr_AccountDetailsPage(RemoteWebDriver driver, UserProfileData userProfileData)
         {
             _driver = driver;
+            _userProfileData = userProfileData;
         }
 
         [When(@"User clicks Profile in Account Dropdown")]
@@ -163,7 +166,8 @@ namespace DashworksTestAutomation.Steps.Dashworks
                 page.FullNameField.SendKeys(_userProfileData.FullName);
                 page.EmailField.Clear();
                 page.EmailField.SendKeys(String.IsNullOrEmpty(_userProfileData.Email)
-                    ? "automation@juriba.com" : _userProfileData.Email);
+                    ? "automation@juriba.com"
+                    : _userProfileData.Email);
                 page.RemoveButton.Click();
                 page.UpdateButton.Click();
             }
