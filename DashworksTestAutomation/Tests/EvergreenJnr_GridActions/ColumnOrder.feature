@@ -69,6 +69,69 @@ Scenario: EvergreenJnr_DevicesList_CheckThatColumnsOrderSavedAfterAddingAFilter
 	| Compliance           |
 	| Windows7Mi: Category |
 
+@Evergreen @Users @EvergreenJnr_GridActions @ColumnOrder @DAS11666 @Not_Run
+Scenario: EvergreenJnr_UsersList_CheckThatColumnsOrderSavedAfterAddingAnotherColumn
+	When User clicks "Users" on the left-hand menu
+	Then "Users" list should be displayed to the user
+	When User clicks the Columns button
+	Then Columns panel is displayed to the user
+	When ColumnName is entered into the search box and the selection is clicked
+	| ColumnName    |
+	| Compliance    |
+	| Email Address |
+	When User move 'Email Address' column to 'Username' column
+	Then Column is displayed in following order:
+	| ColumnName         |
+	| Username           |
+	| Email Address      |
+	| Domain             |
+	| Display Name       |
+	| Distinguished Name |
+	| Compliance         |
+	When ColumnName is entered into the search box and the selection is clicked
+	| ColumnName |
+	| User Key   |
+	Then Column is displayed in following order:
+	| ColumnName         |
+	| Username           |
+	| Email Address      |
+	| Domain             |
+	| Display Name       |
+	| Distinguished Name |
+	| Compliance         |
+	| User Key           |
+
+@Evergreen @Mailboxes @EvergreenJnr_GridActions @ColumnOrder @DAS11666
+Scenario: EvergreenJnr_MailboxesList_CheckThatColumnsOrderSavedAfterUsingTheAgGridSearch
+	When User clicks "Mailboxes" on the left-hand menu
+	Then "Mailboxes" list should be displayed to the user
+	When User clicks the Columns button
+	Then Columns panel is displayed to the user
+	When ColumnName is entered into the search box and the selection is clicked
+	| ColumnName  |
+	| Email Count |
+	| Import Type |
+	When User move 'Email Count' column to 'Email Address' column
+	Then Column is displayed in following order:
+	| ColumnName         |
+	| Email Address      |
+	| Email Count        |
+	| Mailbox Platform   |
+	| Mail Server        |
+	| Mailbox Type       |
+	| Owner Display Name |
+	| Import Type        |
+	When User perform search by "Smith"
+	Then Column is displayed in following order:
+	| ColumnName         |
+	| Email Address      |
+	| Email Count        |
+	| Mailbox Platform   |
+	| Mail Server        |
+	| Mailbox Type       |
+	| Owner Display Name |
+	| Import Type        |
+
 @Evergreen @Applications @EvergreenJnr_Columns @RemoveColumn @DAS11625
 Scenario: EvergreenJnr_ApplicationsList_CheckThatAfterDeletingFirstColumnTheColumnsOrderIsDisplayedCorrectly 
 	When User clicks "Applications" on the left-hand menu

@@ -22,10 +22,10 @@ namespace DashworksTestAutomation.Pages.Evergreen
                 ".//div[@class='searchPanel input-wrapper']//button[@aria-describedby='cdk-describedby-message-12']")]
         public IWebElement SearchTextboxResetButton { get; set; }
 
-        [FindsBy(How = How.XPath, Using = ".//button[@aria-describedby='cdk-describedby-message-23']")]
+        [FindsBy(How = How.XPath, Using = ".//div[@class='columns-panel']//i[@class='material-icons mat-clear mat-18']")]
         public IList<IWebElement> MinimizeGroupButton { get; set; }
 
-        [FindsBy(How = How.XPath, Using = ".//button[@aria-describedby='cdk-describedby-message-331']")]
+        [FindsBy(How = How.XPath, Using = ".//div[@class='columns-panel']//i[@class='material-icons mat-item_add mat-18']")]
         public IList<IWebElement> MaximizeGroupButton { get; set; }
 
         private const string GroupTitleSelector =
