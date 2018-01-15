@@ -1,13 +1,10 @@
-﻿using System;
-using System.IO;
-using DashworksTestAutomation.DTO.RuntimeVariables;
-using System.Reflection;
+﻿using System.IO;
 using DashworksTestAutomation.Extensions;
 using DashworksTestAutomation.Pages.Evergreen;
 using DashworksTestAutomation.Pages.Evergreen.ProfileDetailsPages;
 using DashworksTestAutomation.Providers;
 using DashworksTestAutomation.Utils;
-using Microsoft.VisualStudio.TestTools.UnitTesting;
+using NUnit.Framework;
 using OpenQA.Selenium;
 using OpenQA.Selenium.Remote;
 using TechTalk.SpecFlow;
@@ -18,12 +15,10 @@ namespace DashworksTestAutomation.Steps.Dashworks
     class EvergreenJnr_AccountDetailsPage : SpecFlowContext
     {
         private readonly RemoteWebDriver _driver;
-        private readonly UserProfileData _userProfileData;
 
-        public EvergreenJnr_AccountDetailsPage(RemoteWebDriver driver, UserProfileData userProfileData)
+        public EvergreenJnr_AccountDetailsPage(RemoteWebDriver driver)
         {
             _driver = driver;
-            _userProfileData = userProfileData;
         }
 
         [When(@"User clicks Profile in Account Dropdown")]
@@ -39,8 +34,6 @@ namespace DashworksTestAutomation.Steps.Dashworks
         public void ThenProfilePageIsDisplayedToUser()
         {
             var page = _driver.NowAt<AccountDetailsPage>();
-            _userProfileData.FullName = page.FullNameField.GetAttribute("value");
-            _userProfileData.Email = page.EmailField.GetAttribute("value");
         }
 
         [When(@"User changes Full Name to ""(.*)""")]
@@ -115,9 +108,7 @@ namespace DashworksTestAutomation.Steps.Dashworks
             var page = _driver.NowAt<AccountDetailsPage>();
             IAllowsFileDetection allowsDetection = (IAllowsFileDetection)_driver;
             allowsDetection.FileDetector = new LocalFileDetector();
-            //string file = Path.GetDirectoryName(Path.GetDirectoryName(TestContext.CurrentContext.TestDirectory)) +
-            //              ResourceFilesNamesProvider.IncorrectFile;
-            string file = Path.GetDirectoryName(Path.GetDirectoryName(System.IO.Directory.GetCurrentDirectory())) +
+            string file = Path.GetDirectoryName(Path.GetDirectoryName(TestContext.CurrentContext.TestDirectory)) +
                           ResourceFilesNamesProvider.IncorrectFile;
             page.UploadButton.SendKeys(file);
         }
@@ -128,9 +119,7 @@ namespace DashworksTestAutomation.Steps.Dashworks
             var page = _driver.NowAt<AccountDetailsPage>();
             IAllowsFileDetection allowsDetection = (IAllowsFileDetection)_driver;
             allowsDetection.FileDetector = new LocalFileDetector();
-            //string file = Path.GetDirectoryName(Path.GetDirectoryName(TestContext.CurrentContext.TestDirectory)) +
-            //              ResourceFilesNamesProvider.CorrectFile;
-            string file = Path.GetDirectoryName(Path.GetDirectoryName(System.IO.Directory.GetCurrentDirectory())) +
+            string file = Path.GetDirectoryName(Path.GetDirectoryName(TestContext.CurrentContext.TestDirectory)) +
                           ResourceFilesNamesProvider.CorrectFile;
             page.UploadButton.SendKeys(file);
         }
@@ -147,7 +136,7 @@ namespace DashworksTestAutomation.Steps.Dashworks
         public void ThenUserPictureIsChangedToUploadedPhoto()
         {
             var page = _driver.NowAt<AccountDetailsPage>();
-            Assert.IsFalse(page.UserPicture.GetAttribute("style").Contains("img/UnknownUser.jpg"));
+            StringAssert.DoesNotContain("img/UnknownUser.jpg", page.UserPicture.GetAttribute("style"));
         }
 
         [When(@"User clicks Remove on Account details page")]
@@ -171,11 +160,9 @@ namespace DashworksTestAutomation.Steps.Dashworks
             {
                 var page = _driver.NowAt<AccountDetailsPage>();
                 page.FullNameField.Clear();
-                page.FullNameField.SendKeys(_userProfileData.FullName);
+                page.FullNameField.SendKeys("Administrator");
                 page.EmailField.Clear();
-                page.EmailField.SendKeys(String.IsNullOrEmpty(_userProfileData.Email)
-                    ? TestDataGenerator.RandomEmail()
-                    : _userProfileData.Email);
+                page.EmailField.SendKeys(TestDataGenerator.RandomEmail());
                 page.RemoveButton.Click();
                 page.UpdateButton.Click();
             }

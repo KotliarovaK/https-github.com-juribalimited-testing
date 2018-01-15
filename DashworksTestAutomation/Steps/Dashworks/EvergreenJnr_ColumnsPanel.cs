@@ -3,10 +3,10 @@ using DashworksTestAutomation.Helpers;
 using DashworksTestAutomation.Pages;
 using DashworksTestAutomation.Pages.Evergreen;
 using DashworksTestAutomation.Utils;
+using NUnit.Framework;
 using OpenQA.Selenium.Remote;
 using System;
 using System.Text.RegularExpressions;
-using Microsoft.VisualStudio.TestTools.UnitTesting;
 using TechTalk.SpecFlow;
 
 namespace DashworksTestAutomation.Steps.Dashworks
@@ -107,17 +107,6 @@ namespace DashworksTestAutomation.Steps.Dashworks
             var columnElement = _driver.NowAt<ColumnsElement>();
             columnElement.ExpandColumnsSectionByName("Selected Columns");
             columnElement.GetDeleteColumnButton(columnName).Click();
-        }
-
-        [When(@"User removes ColumnName column by Column panel")]
-        public void WhenUserRemovesColumnNameColumnByColumnPanel(Table table)
-        {
-            var columnElement = _driver.NowAt<ColumnsElement>();
-            columnElement.ExpandColumnsSectionByName("Selected Columns");
-            foreach (var row in table.Rows)
-            {
-                columnElement.GetDeleteColumnButton(row["ColumnName"]).Click();
-            }
         }
 
         [When(@"User have reset all columns")]

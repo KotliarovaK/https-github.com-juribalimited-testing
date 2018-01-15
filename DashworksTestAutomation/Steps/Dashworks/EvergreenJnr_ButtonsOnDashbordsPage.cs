@@ -2,7 +2,7 @@
 using DashworksTestAutomation.Extensions;
 using DashworksTestAutomation.Pages.Evergreen;
 using DashworksTestAutomation.Utils;
-using Microsoft.VisualStudio.TestTools.UnitTesting;
+using NUnit.Framework;
 using OpenQA.Selenium.Remote;
 using TechTalk.SpecFlow;
 
@@ -83,7 +83,7 @@ namespace DashworksTestAutomation.Steps.Dashworks
         {
             var menu = _driver.NowAt<BaseDashboardPage>();
             _driver.WaitWhileControlIsNotDisplayed<BaseDashboardPage>(() => menu.ListDetailsButton);
-            Assert.IsFalse(menu.ActionsButton.GetAttribute("class").Contains("active"));
+            StringAssert.DoesNotContain("active", menu.ActionsButton.GetAttribute("class"));
         }
     }
 }

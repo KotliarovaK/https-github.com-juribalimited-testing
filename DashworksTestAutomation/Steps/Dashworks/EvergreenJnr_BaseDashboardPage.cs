@@ -1,11 +1,11 @@
 ﻿using DashworksTestAutomation.Extensions;
 using DashworksTestAutomation.Pages.Evergreen;
+using NUnit.Framework;
 using OpenQA.Selenium.Interactions;
 using OpenQA.Selenium.Remote;
 using System;
 using System.Collections.Generic;
 using System.Linq;
-using Microsoft.VisualStudio.TestTools.UnitTesting;
 using TechTalk.SpecFlow;
 
 namespace DashworksTestAutomation.Steps.Dashworks
@@ -156,13 +156,7 @@ namespace DashworksTestAutomation.Steps.Dashworks
         [Then(@"URL is ""(.*)""")]
         public void ThenURLIs(string url)
         {
-            Assert.AreEqual(url, _driver.Url, $"URL is not {url}");
-        }
-
-        [Then(@"URL contains ""(.*)""")]
-        public void ThenURLContains(string url)
-        {
-            StringAssert.Contains(url, _driver.Url, $"URL is not contains {url}");
+            Assert.AreEqual(url, _driver.Url, "URL is changing whe user perform search");
         }
 
         [Then(@"""(.*)"" text is displayed in filter container")]

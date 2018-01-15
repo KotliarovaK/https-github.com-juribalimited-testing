@@ -3,7 +3,7 @@ using System.Threading;
 using DashworksTestAutomation.Extensions;
 using DashworksTestAutomation.Pages.Evergreen;
 using DashworksTestAutomation.Utils;
-using Microsoft.VisualStudio.TestTools.UnitTesting;
+using NUnit.Framework;
 using OpenQA.Selenium.Remote;
 using TechTalk.SpecFlow;
 
@@ -83,16 +83,13 @@ namespace DashworksTestAutomation.Steps.Dashworks
 
                 _driver.WaitWhileControlIsNotDisplayed<BaseDashboardPage>(() => listPageElement.ResultsOnPageCount);
 
-                Assert.AreEqual($"{numberOfRows} rows".ToLower(), listPageElement.ResultsOnPageCount.Text.ToLower());
+                StringAssert.AreEqualIgnoringCase($"{numberOfRows} rows", listPageElement.ResultsOnPageCount.Text);
                 Logger.Write(
                     $"Evergreen agGrid Search returned the correct number of rows for: {numberOfRows}  search");
             }
             else
             {
                 _driver.IsElementDisplayed(listPageElement.NoResultsFoundMessage);
-                _driver.WaitWhileControlIsDisplayed<BaseDashboardPage>(() => listPageElement.ResultsOnPageCount);
-                Assert.IsFalse(listPageElement.ResultsOnPageCount.Displayed(), "Rows count is displayed");
-                Assert.IsTrue(listPageElement.NoResultsFoundMessage.Displayed(), "'No Results Found' message not displayed");
                 Logger.Write(
                     $"Evergreen agGrid Search returned '{listPageElement.NoResultsFoundMessage.Text}' message");
             }
@@ -104,7 +101,7 @@ namespace DashworksTestAutomation.Steps.Dashworks
             var listPageElement = _driver.NowAt<BaseDashboardPage>();
 
             _driver.WaitWhileControlIsNotDisplayed<BaseDashboardPage>(() => listPageElement.ResultsOnPageCount);
-            Assert.IsTrue(string.IsNullOrEmpty(listPageElement.TableSearchTextbox.GetAttribute("value")), "Search textbox is not empty");
+            Assert.IsEmpty(listPageElement.TableSearchTextbox.GetAttribute("value"), "Search textbox is not empty");
         }
 
         [When(@"User click content from ""(.*)"" column")]

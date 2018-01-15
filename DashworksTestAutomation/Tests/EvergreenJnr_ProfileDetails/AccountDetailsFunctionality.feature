@@ -40,7 +40,7 @@ Scenario: EvergreenJnr_AccountDetails_CheckThatCorrectErrorMessagesAreDisplayed
 	Then "Enter a valid email address" error message is displayed
 	When User changes Email to "TestEmailAuto@test.com"
 	When User Upload incorrect avatar to Account Details
-	Then "The file uploaded not recognised as an image" error message is displayed
+	Then "File uploaded not recognised as an image" error message is displayed
 	When User Upload correct avatar to Account Details
 	Then Success message with "Image uploaded" text is displayed on Account Details page
 	Then User picture is changed to uploaded photo

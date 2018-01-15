@@ -6,6 +6,7 @@ using System;
 using System.Configuration;
 using System.Reflection;
 using DashworksTestAutomation.Providers;
+using NUnit.Framework;
 using OpenQA.Selenium;
 using TechTalk.SpecFlow;
 
@@ -44,21 +45,20 @@ namespace DashworksTestAutomation.Base
                 {
                     if (Browser.RemoteDriver.Equals("sauceLabs"))
                     {
-                        //Awailable only with NUnit
-                        //bool passed = TestContext.CurrentContext.Result.Outcome.Status ==
-                        //              NUnit.Framework.Interfaces.TestStatus.Passed;
+                        bool passed = TestContext.CurrentContext.Result.Outcome.Status ==
+                                      NUnit.Framework.Interfaces.TestStatus.Passed;
 
-                        //try
-                        //{
-                        //    // Logs the result to Sauce Labs
-                        //    ((IJavaScriptExecutor)driver).ExecuteScript(
-                        //        "sauce:job-result=" + (passed ? "passed" : "failed"));
-                        //}
-                        //finally
-                        //{
-                        //    Console.WriteLine(
-                        //        $"SauceOnDemandSessionID={((CustomRemoteWebDriver)driver).getSessionId()} job-name={TestContext.CurrentContext.Test.MethodName}");
-                        //}
+                        try
+                        {
+                            // Logs the result to Sauce Labs
+                            ((IJavaScriptExecutor)driver).ExecuteScript(
+                                "sauce:job-result=" + (passed ? "passed" : "failed"));
+                        }
+                        finally
+                        {
+                            Console.WriteLine(
+                                $"SauceOnDemandSessionID={((CustomRemoteWebDriver)driver).getSessionId()} job-name={TestContext.CurrentContext.Test.MethodName}");
+                        }
                     }
 
                     var testStatus = GetTestStatus();
