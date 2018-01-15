@@ -156,7 +156,13 @@ namespace DashworksTestAutomation.Steps.Dashworks
         [Then(@"URL is ""(.*)""")]
         public void ThenURLIs(string url)
         {
-            Assert.AreEqual(url, _driver.Url, "URL is changing whe user perform search");
+            Assert.AreEqual(url, _driver.Url, $"URL is not {url}");
+        }
+
+        [Then(@"URL contains ""(.*)""")]
+        public void ThenURLContains(string url)
+        {
+            StringAssert.Contains(url, _driver.Url, $"URL is not contains {url}");
         }
 
         [Then(@"""(.*)"" text is displayed in filter container")]
