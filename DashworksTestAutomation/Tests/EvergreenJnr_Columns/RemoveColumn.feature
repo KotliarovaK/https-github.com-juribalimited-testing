@@ -448,11 +448,11 @@ Scenario: EvergreenJnr_ApplicationsList_CheckThatColumnIsDisplayedInColumnsPanel
 	| Not Started        |
 	| Started            |
 	Then "Windows7Mi: Technical Test" filter is added to the list
-	And "7" rows are displayed in the agGrid
+	And "8" rows are displayed in the agGrid
 	When User removes column by URL
 	| ColumnName                 |
 	| Windows7Mi: Technical Test |
-	Then "7" rows are displayed in the agGrid
+	Then "8" rows are displayed in the agGrid
 	And "Applications" list should be displayed to the user
 	When User clicks the Columns button
 	Then Columns panel is displayed to the user

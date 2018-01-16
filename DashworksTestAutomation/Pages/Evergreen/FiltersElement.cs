@@ -40,12 +40,12 @@ namespace DashworksTestAutomation.Pages.Evergreen
 
         [FindsBy(How = How.XPath,
             Using =
-                ".//div[@class='filter-category-title ng-star-inserted']//button[@aria-describedby='cdk-describedby-message-274']")]
+                ".//div[@class='filter-category-title ng-star-inserted']//i[@class='material-icons mat-clear mat-18']")]
         public IList<IWebElement> MinimizeGroupButton { get; set; }
 
         [FindsBy(How = How.XPath,
             Using =
-                ".//div[@class='filter-category-title ng-star-inserted']//button[@aria-describedby='cdk-describedby-message-333']")]
+                ".//div[@class='filter-category-title ng-star-inserted']//i[@class='material-icons mat-item_add mat-18']")]
         public IList<IWebElement> MaximizeGroupButton { get; set; }
 
         [FindsBy(How = How.XPath, Using = ".//div[@class='styleSelectDropdown']")]
