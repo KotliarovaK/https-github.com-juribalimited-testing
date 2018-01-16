@@ -244,3 +244,135 @@ Scenario: EvergreenJnr_ApplicationsLists_Search_CheckThatTableSearchIsWorkingCor
 	And User enters SearchCriteria into the agGrid Search Box and the correct NumberOfRows are returned
 	| SearchCriteria | NumberOfRows |
 	| Zune           | 3            |
+
+@Evergreen @Devices @EvergreenJnr_Search @Search @DAS11664
+Scenario: EvergreenJnr_DevicesLists_Search_CheckThatTableSearchWorksCorrectlyForOwnerDisplayNameColumn
+	When User clicks "Devices" on the left-hand menu
+	Then "Devices" list should be displayed to the user
+	When User clicks the Columns button
+	Then Columns panel is displayed to the user
+	When User removes ColumnName column by Column panel
+	| ColumnName       |
+	| Hostname         |
+	| Device Type      |
+	| Operating System |
+	Then ColumnName is removed from the list
+	| ColumnName       |
+	| Hostname         |
+	| Device Type      |
+	| Operating System |
+	And User enters SearchCriteria into the agGrid Search Box and the correct NumberOfRows are returned
+	| SearchCriteria | NumberOfRows |
+	| Anna           | 119          |
+
+@Evergreen @Devices @EvergreenJnr_Search @Search @DAS11664
+Scenario: EvergreenJnr_DevicesLists_Search_CheckThatTableSearchWorksCorrectlyForOwnerUsernameColumn
+	When User clicks "Devices" on the left-hand menu
+	Then "Devices" list should be displayed to the user
+	When User clicks the Columns button
+	Then Columns panel is displayed to the user
+	When ColumnName is entered into the search box and the selection is clicked
+	| ColumnName     |
+	| Owner Username |
+	Then ColumnName is added to the list
+	| ColumnName     |
+	| Owner Username |
+	When User clicks the Columns button
+	Then Columns panel is displayed to the user
+	When User removes ColumnName column by Column panel
+	| ColumnName       |
+	| Hostname         |
+	| Device Type      |
+	| Operating System |
+	|Owner Display Name|
+	Then ColumnName is removed from the list
+	| ColumnName       |
+	| Hostname         |
+	| Device Type      |
+	| Operating System |
+	|Owner Display Name|
+	And User enters SearchCriteria into the agGrid Search Box and the correct NumberOfRows are returned
+	| SearchCriteria | NumberOfRows |
+	| TON249         | 1            |
+
+@Evergreen @Users @EvergreenJnr_Search @Search @DAS11664
+Scenario: EvergreenJnr_UsersLists_Search_CheckThatTableSearchWorksCorrectlyForDisplayNameColumn
+	When User clicks "Users" on the left-hand menu
+	Then "Users" list should be displayed to the user
+	When User clicks the Columns button
+	Then Columns panel is displayed to the user
+	When User removes ColumnName column by Column panel
+	| ColumnName         |
+	| Username           |
+	| Domain             |
+	| Distinguished Name |
+	Then ColumnName is removed from the list
+	| ColumnName         |
+	| Username           |
+	| Domain             |
+	| Distinguished Name |
+	And User enters SearchCriteria into the agGrid Search Box and the correct NumberOfRows are returned
+	| SearchCriteria | NumberOfRows |
+	| Hunter         | 26           |
+
+@Evergreen @Mailboxes @EvergreenJnr_Search @Search @DAS11664
+Scenario: EvergreenJnr_MailboxesLists_Search_CheckThatTableSearchWorksCorrectlyForOwnerDisplayNameColumn
+	When User clicks "Mailboxes" on the left-hand menu
+	Then "Mailboxes" list should be displayed to the user
+	When User clicks the Columns button
+	Then Columns panel is displayed to the user
+	When User removes ColumnName column by Column panel
+	| ColumnName       |
+	| Email Address    |
+	| Mailbox Platform |
+	| Mail Server      |
+	| Mailbox Type     |
+	Then ColumnName is removed from the list
+	| ColumnName       |
+	| Email Address    |
+	| Mailbox Platform |
+	| Mail Server      |
+	| Mailbox Type     |
+	And User enters SearchCriteria into the agGrid Search Box and the correct NumberOfRows are returned
+	| SearchCriteria | NumberOfRows |
+	| Smith          | 38           |
+
+@Evergreen @Mailboxes @EvergreenJnr_Search @Search @DAS11664
+Scenario: EvergreenJnr_MailboxesLists_Search_CheckThatTableSearchWorksCorrectlyForOwnerUsernameColumn
+	When User clicks "Mailboxes" on the left-hand menu
+	Then "Mailboxes" list should be displayed to the user
+	When User clicks the Columns button
+	Then Columns panel is displayed to the user
+	When ColumnName is entered into the search box and the selection is clicked
+	| ColumnName     |
+	| Owner Username |
+	Then ColumnName is added to the list
+	| ColumnName     |
+	| Owner Username |
+	When User clicks the Columns button
+	Then Columns panel is displayed to the user
+	When User removes ColumnName column by Column panel
+	| ColumnName         |
+	| Email Address      |
+	| Mailbox Platform   |
+	| Mail Server        |
+	| Mailbox Type       |
+	| Owner Display Name |
+	Then ColumnName is removed from the list
+	| ColumnName         |
+	| Email Address      |
+	| Mailbox Platform   |
+	| Mail Server        |
+	| Mailbox Type       |
+	| Owner Display Name |
+	And User enters SearchCriteria into the agGrid Search Box and the correct NumberOfRows are returned
+	| SearchCriteria | NumberOfRows |
+	| 00B            | 9            |
+
+@Evergreen @Devices @EvergreenJnr_Search @Search @DAS11663
+Scenario: EvergreenJnr_DevicesLists_Search_CheckThatRowCountIsNotDisplayedWhenNoObjectsAreFoundAfterUsingAgGrid
+	When User clicks "Devices" on the left-hand menu
+	Then "Devices" list should be displayed to the user
+	And User enters SearchCriteria into the agGrid Search Box and the correct NumberOfRows are returned
+	| SearchCriteria | NumberOfRows |
+	| Example        |              |
