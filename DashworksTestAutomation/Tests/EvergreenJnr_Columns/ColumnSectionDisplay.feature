@@ -49,3 +49,32 @@ Scenario: EvergreenJnr_DevicesList_CheckThatColumnIsNotRemovedAfterApplyFilterFo
 	Then ColumnName is added to the list
 	| ColumnName   |
 	| Manufacturer |
+
+@Evergreen @Devices @EvergreenJnr_Columns @ColumnSectionDisplay @DAS11480
+Scenario: EvergreenJnr_DevicesList_CheckThatAppropriateIconsAreDisplayedForMaximizedAndMinimizeGroups
+	When User clicks "Devices" on the left-hand menu
+	Then "Devices" list should be displayed to the user
+	When User clicks the Columns button
+	Then Columns panel is displayed to the user
+	When User enters "group" text in Search field at Columns Panel
+	Then Minimize buttons are displayed for all category in Columns panel
+	When User collapses all columns categories
+	Then Maximize buttons are displayed for all category in Columns panel
+
+@Evergreen @Devices @EvergreenJnr_Columns @ColumnSectionDisplay @DAS11668
+Scenario: EvergreenJnr_DevicesList_CheckThatAllColumnsAreVisibleInTheirRelevantCategoryAfterResetting
+	When User clicks "Devices" on the left-hand menu
+	Then "Devices" list should be displayed to the user
+	When User clicks the Columns button
+	Then Columns panel is displayed to the user
+	When ColumnName is entered into the search box and the selection is clicked
+	| ColumnName |
+	| Import     |
+	Then ColumnName is added to the list
+	| ColumnName |
+	| Import     |
+	When User clicks the Columns button
+	Then Columns panel is displayed to the user
+	Then "Import" subcategories is not displayed for "Device" category
+	When User have reset all columns
+	Then "11" subcategories is displayed for "Device" category
