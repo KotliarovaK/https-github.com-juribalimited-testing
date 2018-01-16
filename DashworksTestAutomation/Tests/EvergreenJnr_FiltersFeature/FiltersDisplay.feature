@@ -358,7 +358,7 @@ Scenario Outline: EvergreenJnr_DevicesList_CheckThatFilterOperatorsIsCorrectInFi
 Examples: 
 	| operatorValue  | filterOption | rowsCount | operatorValueInInfo |
 	| Equals         | 22 Nov 2012  | 16        | is                  |
-	| Does not equal | 22 Nov 2012  | 17,225    | is not              |
+	| Does not equal | 22 Nov 2012  | 17,209    | is not              |
 	| Before         | 22 Nov 2012  | 1         | is before           |
 	| After          | 14 May 2012  | 16        | is after            |
 	| Empty          |              | 17,208    | is empty            |

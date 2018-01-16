@@ -1184,7 +1184,7 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_FiltersFeature
         [NUnit.Framework.CategoryAttribute("DAS10696")]
         [NUnit.Framework.CategoryAttribute("DAS11090")]
         [NUnit.Framework.TestCaseAttribute("Equals", "22 Nov 2012", "16", "is", new string[0])]
-        [NUnit.Framework.TestCaseAttribute("Does not equal", "22 Nov 2012", "17,225", "is not", new string[0])]
+        [NUnit.Framework.TestCaseAttribute("Does not equal", "22 Nov 2012", "17,209", "is not", new string[0])]
         [NUnit.Framework.TestCaseAttribute("Before", "22 Nov 2012", "1", "is before", new string[0])]
         [NUnit.Framework.TestCaseAttribute("After", "14 May 2012", "16", "is after", new string[0])]
         [NUnit.Framework.TestCaseAttribute("Empty", "", "17,208", "is empty", new string[0])]
