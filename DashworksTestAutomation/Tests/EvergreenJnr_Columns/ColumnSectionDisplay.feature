@@ -70,11 +70,13 @@ Scenario: EvergreenJnr_DevicesList_CheckThatAllColumnsAreVisibleInTheirRelevantC
 	When ColumnName is entered into the search box and the selection is clicked
 	| ColumnName |
 	| Import     |
+	| Compliance |
 	Then ColumnName is added to the list
 	| ColumnName |
 	| Import     |
+	| Compliance |
 	When User clicks the Columns button
 	Then Columns panel is displayed to the user
-	Then "Import" subcategories is not displayed for "Device" category
+	Then "9" subcategories is displayed for "Device" category
 	When User have reset all columns
 	Then "11" subcategories is displayed for "Device" category
