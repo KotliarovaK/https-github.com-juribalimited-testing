@@ -69,7 +69,7 @@ Scenario: EvergreenJnr_DevicesList_CheckThatColumnsOrderSavedAfterAddingAFilter
 	| Compliance           |
 	| Windows7Mi: Category |
 
-@Evergreen @Users @EvergreenJnr_GridActions @ColumnOrder @DAS11666 @Not_Run
+@Evergreen @Users @EvergreenJnr_GridActions @ColumnOrder @DAS11666
 Scenario: EvergreenJnr_UsersList_CheckThatColumnsOrderSavedAfterAddingAnotherColumn
 	When User clicks "Users" on the left-hand menu
 	Then "Users" list should be displayed to the user
@@ -79,14 +79,16 @@ Scenario: EvergreenJnr_UsersList_CheckThatColumnsOrderSavedAfterAddingAnotherCol
 	| ColumnName    |
 	| Compliance    |
 	| Email Address |
-	When User move 'Email Address' column to 'Username' column
+	And User move 'Email Address' column to 'Username' column
+	And User clicks the Columns button
+	Then Columns panel is displayed to the user
+	When User removes "Distinguished Name" column by Column panel
 	Then Column is displayed in following order:
 	| ColumnName         |
 	| Username           |
 	| Email Address      |
 	| Domain             |
 	| Display Name       |
-	| Distinguished Name |
 	| Compliance         |
 	When ColumnName is entered into the search box and the selection is clicked
 	| ColumnName |
@@ -97,7 +99,6 @@ Scenario: EvergreenJnr_UsersList_CheckThatColumnsOrderSavedAfterAddingAnotherCol
 	| Email Address      |
 	| Domain             |
 	| Display Name       |
-	| Distinguished Name |
 	| Compliance         |
 	| User Key           |
 

@@ -913,8 +913,8 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_FiltersFeature
             table15.AddRow(new string[] {
                         "TestList",
                         "Not used on device"});
-            testRunner.When("User add \"Application (Saved List)\" filter where type is \"Equals\" with SelectedLi" +
-                    "st list and following Association:", ((string)(null)), table15, "When ");
+            testRunner.When("User add \"Application (Saved List)\" filter where type is \"In list\" with SelectedL" +
+                    "ist list and following Association:", ((string)(null)), table15, "When ");
             testRunner.Then("\"Application in list TestList is not used on device\" is displayed in added filter" +
                     " info", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
             testRunner.Then("\"17,095\" rows are displayed in the agGrid", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");

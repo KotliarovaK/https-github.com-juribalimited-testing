@@ -311,7 +311,6 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_GridActions
         [NUnit.Framework.CategoryAttribute("EvergreenJnr_GridActions")]
         [NUnit.Framework.CategoryAttribute("ColumnOrder")]
         [NUnit.Framework.CategoryAttribute("DAS11666")]
-        [NUnit.Framework.CategoryAttribute("Not_Run")]
         public virtual void EvergreenJnr_UsersList_CheckThatColumnsOrderSavedAfterAddingAnotherColumn()
         {
             System.Exception lastException = null;
@@ -345,8 +344,7 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_GridActions
                         "Users",
                         "EvergreenJnr_GridActions",
                         "ColumnOrder",
-                        "DAS11666",
-                        "Not_Run"});
+                        "DAS11666"});
             this.ScenarioSetup(scenarioInfo);
             this.FeatureBackground();
             testRunner.When("User clicks \"Users\" on the left-hand menu", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
@@ -360,7 +358,10 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_GridActions
             table8.AddRow(new string[] {
                         "Email Address"});
             testRunner.When("ColumnName is entered into the search box and the selection is clicked", ((string)(null)), table8, "When ");
-            testRunner.When("User move \'Email Address\' column to \'Username\' column", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+            testRunner.And("User move \'Email Address\' column to \'Username\' column", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+            testRunner.And("User clicks the Columns button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+            testRunner.Then("Columns panel is displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+            testRunner.When("User removes \"Distinguished Name\" column by Column panel", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
             TechTalk.SpecFlow.Table table9 = new TechTalk.SpecFlow.Table(new string[] {
                         "ColumnName"});
             table9.AddRow(new string[] {
@@ -371,8 +372,6 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_GridActions
                         "Domain"});
             table9.AddRow(new string[] {
                         "Display Name"});
-            table9.AddRow(new string[] {
-                        "Distinguished Name"});
             table9.AddRow(new string[] {
                         "Compliance"});
             testRunner.Then("Column is displayed in following order:", ((string)(null)), table9, "Then ");
@@ -391,8 +390,6 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_GridActions
                         "Domain"});
             table11.AddRow(new string[] {
                         "Display Name"});
-            table11.AddRow(new string[] {
-                        "Distinguished Name"});
             table11.AddRow(new string[] {
                         "Compliance"});
             table11.AddRow(new string[] {
