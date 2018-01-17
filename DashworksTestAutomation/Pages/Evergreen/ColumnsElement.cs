@@ -67,6 +67,25 @@ namespace DashworksTestAutomation.Pages.Evergreen
             Driver.WaitForDataLoading();
         }
 
+        public void AddColumnFromExpandedSection(string columnName)
+        {
+            var selector = String.Empty;
+            if (columnName.Contains("'"))
+            {
+                var strings = columnName.Split('\'');
+                selector =
+                    $".//div[@class='columns-panel']//span[contains(text(),'{strings[0]}')][contains(text(), '{strings[1]}')]";
+            }
+            else
+            {
+                selector = $".//div[@class='columns-panel']//span[text()='{columnName}']";
+            }
+            Driver.WaitWhileControlIsNotDisplayed(By.XPath(selector));
+            Driver.FindElement(By.XPath(selector)).Click();
+
+            Driver.WaitForDataLoading();
+        }
+
         private IWebElement FilterCategory(string filterCategoryName)
         {
             return Driver.FindElement(By.XPath(
@@ -113,6 +132,18 @@ namespace DashworksTestAutomation.Pages.Evergreen
             return filterCategory.FindElement(By.XPath(".//button"));
         }
 
+        public IWebElement MinimizeButtonByCategory(string categoryName)
+        {
+            var filterCategory = FilterCategory(categoryName);
+            return filterCategory.FindElement(By.XPath(".//i[@class='material-icons mat-clear mat-18']"));
+        }
+
+        public IWebElement MaximizeButtonByCategory(string categoryName)
+        {
+            var filterCategory = FilterCategory(categoryName);
+            return filterCategory.FindElement(By.XPath(".//i[@class='material-icons mat-item_add mat-18']"));
+        }
+
         public IWebElement GetDeleteColumnButton(string columnName)
         {
             return Driver.FindElement(By.XPath(
@@ -124,7 +155,7 @@ namespace DashworksTestAutomation.Pages.Evergreen
             try
             {
                 Driver.FindElement(By.XPath(
-                        $".//div[contains(@class, 'filter-category-label')][text()='{sectionsName}']//ancestor::div[contains(@class, 'filter-category-title')]//button[@title='Maximize Group']"))
+                        $".//div[contains(@class, 'filter-category-label')][text()='{sectionsName}']//ancestor::div[contains(@class, 'filter-category-title')]//button"))
                     .Click();
             }
             catch
