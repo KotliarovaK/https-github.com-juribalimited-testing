@@ -90,6 +90,7 @@
     <Compile Include="Base\BeforeAfterActions.cs" />
     <Compile Include="Base\IBaseTest.cs" />
     <Compile Include="Base\SeleniumBasePage.cs" />
+    <Compile Include="DTO\RuntimeVariables\Filter.cs" />
     <Compile Include="DTO\RuntimeVariables\UsedUsers.cs" />
     <Compile Include="DTO\AuthObject.cs" />
     <Compile Include="DTO\RuntimeVariables\UserProfileData.cs" />

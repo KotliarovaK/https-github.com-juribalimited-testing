@@ -842,4 +842,4 @@ Scenario: EvergreenJnr_DevicesLists_CheckThatFilterLogicForBooleanFieldsIsWorked
 	| FALSE              |
 	| UNKNOWN            |
 	Then "Secure Boot Enabled" filter is added to the list
-	Then table data is filtered correctly
+	Then table data in column is filtered correctly

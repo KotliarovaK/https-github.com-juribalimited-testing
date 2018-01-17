@@ -10,6 +10,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text.RegularExpressions;
+using DashworksTestAutomation.DTO.RuntimeVariables;
 using TechTalk.SpecFlow;
 
 namespace DashworksTestAutomation.Steps.Dashworks
@@ -19,11 +20,13 @@ namespace DashworksTestAutomation.Steps.Dashworks
     {
         private readonly RemoteWebDriver _driver;
         private readonly ColumnNameToUrlConvertor _convertor;
+        private readonly Filter _filter;
 
-        public EvergreenJnr_FiltersPanel(RemoteWebDriver driver, ColumnNameToUrlConvertor convertor)
+        public EvergreenJnr_FiltersPanel(RemoteWebDriver driver, ColumnNameToUrlConvertor convertor, Filter filter)
         {
             _driver = driver;
             _convertor = convertor;
+            _filter = filter;
         }
 
         [Then(@"Filters panel is displayed to the user")]
@@ -171,6 +174,9 @@ namespace DashworksTestAutomation.Steps.Dashworks
             var filtersNames = _driver.NowAt<FiltersElement>();
             filtersNames.AddFilter(filterName);
             var filter = new CheckBoxesFilter(_driver, operatorValue, true, table);
+            //Save filter in context
+            _filter.FilterSettings = filter;
+            _filter.FilterName = filterName;
             filter.Do();
         }
 
@@ -316,6 +322,12 @@ namespace DashworksTestAutomation.Steps.Dashworks
                 }
                 Assert.IsTrue(result, "Table data is filtered incorrectly");
             }
+        }
+
+        [Then(@"table data in column is filtered correctly")]
+        public void ThenTableDataInColumnIsFilteredCorrectly()
+        {
+            _filter.CheckFilterDate();
         }
 
         [When(@"User have removed ""(.*)"" filter")]
