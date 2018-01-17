@@ -703,20 +703,20 @@ Examples:
 	| Empty          | evergreen/#/devices?$listid= |
 	| Not empty      | evergreen/#/devices?$listid= |
 
-	@Evergreen @Devices @EvergreenJnr_ListPanel @CustomListDisplay @DAS11015 @Delete_Newly_Created_List		
-Scenario: EvergreenJnr_DevicesLists_CheckThatUserIsNotAbleToCreateListsWithLongNames		
-	When User clicks "Devices" on the left-hand menu	
-	Then "Devices" list should be displayed to the user	
-	When User click on 'Hostname' column header	
-	Then data in table is sorted by 'Hostname' column in ascending order	
-	When User create custom list with "12345678901234567890123456789012345678901" name	
-	Then "1234567890123456789012345678901234567890" list is displayed to user	
-	When User duplicates list with "1234567890123456789012345678901234567890" name	
-	Then "12345678901234567890123456789012345678901" list is displayed to user	
-	When User removes custom list with "12345678901234567890123456789012345678901" name	
-	Then list with "12345678901234567890123456789012345678901" name is removed	
-	When User removes custom list with "1234567890123456789012345678901234567890" name	
-	Then list with "1234567890123456789012345678901234567890" name is removed	
-	When User clicks the Actions button	
-	And User select all rows	
-	When User create static list with "1234567890123456789012345678901234567890111" name	
+@Evergreen @Devices @EvergreenJnr_ListPanel @CustomListDisplay @DAS11015 @Delete_Newly_Created_List
+Scenario: EvergreenJnr_DevicesLists_CheckThatUserIsNotAbleToCreateListsWithLongNames
+	When User clicks "Devices" on the left-hand menu
+	Then "Devices" list should be displayed to the user
+	When User click on 'Hostname' column header
+	Then data in table is sorted by 'Hostname' column in ascending order
+	When User create custom list with "12345678901234567890123456789012345678901" name
+	Then "1234567890123456789012345678901234567890" list is displayed to user
+	When User duplicates list with "1234567890123456789012345678901234567890" name
+	Then "12345678901234567890123456789012345678901" list is displayed to user
+	When User removes custom list with "12345678901234567890123456789012345678901" name
+	Then list with "12345678901234567890123456789012345678901" name is removed
+	When User removes custom list with "1234567890123456789012345678901234567890" name
+	Then list with "1234567890123456789012345678901234567890" name is removed
+	When User clicks the Actions button
+	And User select all rows
+	When User create static list with "1234567890123456789012345678901234567890111" name

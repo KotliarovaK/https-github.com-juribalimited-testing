@@ -1276,13 +1276,13 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_Columns
             testRunner.When("User add \"Windows7Mi: Technical Test\" filter where type is \"Equals\" with added co" +
                     "lumn and following checkboxes:", ((string)(null)), table60, "When ");
             testRunner.Then("\"Windows7Mi: Technical Test\" filter is added to the list", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-            testRunner.And("\"7\" rows are displayed in the agGrid", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+            testRunner.And("\"8\" rows are displayed in the agGrid", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
             TechTalk.SpecFlow.Table table61 = new TechTalk.SpecFlow.Table(new string[] {
                         "ColumnName"});
             table61.AddRow(new string[] {
                         "Windows7Mi: Technical Test"});
             testRunner.When("User removes column by URL", ((string)(null)), table61, "When ");
-            testRunner.Then("\"7\" rows are displayed in the agGrid", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+            testRunner.Then("\"8\" rows are displayed in the agGrid", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
             testRunner.And("\"Applications\" list should be displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
             testRunner.When("User clicks the Columns button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
             testRunner.Then("Columns panel is displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
