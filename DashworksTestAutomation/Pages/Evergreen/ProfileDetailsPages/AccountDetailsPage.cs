@@ -26,10 +26,10 @@ namespace DashworksTestAutomation.Pages.Evergreen.ProfileDetailsPages
         [FindsBy(How = How.XPath, Using = ".//ul[@class='roles']/li")]
         public IList<IWebElement> RolesList { get; set; }
 
-        [FindsBy(How = How.XPath, Using = ".//div[@role='inline-error ng-star-inserted']")]
+        [FindsBy(How = How.XPath, Using = ".//div[contains(@class, 'inline-error')]")]
         public IWebElement ErrorMessage { get; set; }
 
-        [FindsBy(How = How.XPath, Using = ".//div[@attr.aria-live='assertive']")]
+        [FindsBy(How = How.XPath, Using = ".//div[contains(@class, 'inline-success')]")]
         public IWebElement SuccessMessage { get; set; }
 
         [FindsBy(How = How.XPath, Using = ".//div[@class='user-profile']//div[@class='img-bg']")]
