@@ -10,5 +10,10 @@ namespace DashworksTestAutomation.DTO.RuntimeVariables
     class UsedUsers
     {
         public List<UserDto> Value { get; set; }
+
+        public UsedUsers()
+        {
+            Value = new List<UserDto>();
+        }
     }
 }
