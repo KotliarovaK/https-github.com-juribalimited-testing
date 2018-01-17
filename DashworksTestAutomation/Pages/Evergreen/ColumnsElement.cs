@@ -19,7 +19,7 @@ namespace DashworksTestAutomation.Pages.Evergreen
 
         [FindsBy(How = How.XPath,
             Using =
-                ".//div[@class='searchPanel input-wrapper']//button[@aria-describedby='cdk-describedby-message-12']")]
+                ".//div[@class='searchPanel input-wrapper']//button[@class='btn btn-default input-toggle mat-icon-button ng-star-inserted']")]
         public IWebElement SearchTextboxResetButton { get; set; }
 
         [FindsBy(How = How.XPath, Using = ".//div[@class='columns-panel']//i[@class='material-icons mat-clear mat-18']")]

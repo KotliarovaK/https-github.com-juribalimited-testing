@@ -9,6 +9,7 @@ using DashworksTestAutomation.Extensions;
 using DashworksTestAutomation.Helpers;
 using DashworksTestAutomation.Pages;
 using DashworksTestAutomation.Providers;
+using DashworksTestAutomation.Utils;
 using NUnit.Framework;
 using OpenQA.Selenium;
 using OpenQA.Selenium.Remote;
@@ -43,6 +44,9 @@ namespace DashworksTestAutomation.Steps.Dashworks
 
             //Add user credentials to context
             user.CopyPropertiesTo(_user);
+
+            //Change User Language to avoid spelling issues
+            DatabaseWorker.ChangeUserProfileLanguage(_user.UserName, _user.Language);
 
             return user;
         }

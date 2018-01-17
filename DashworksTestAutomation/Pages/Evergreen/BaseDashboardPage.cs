@@ -59,7 +59,7 @@ namespace DashworksTestAutomation.Pages.Evergreen
         [FindsBy(How = How.XPath, Using = ".//div[@class='ag-body-container']")]
         public IWebElement TableBody { get; set; }
 
-        [FindsBy(How = How.XPath, Using = ".//div[@class='empty-message ng-star-inserted']")]
+        [FindsBy(How = How.XPath, Using = ".//div[@id='content']//div[@class='empty-message ng-star-inserted']")]
         public IWebElement NoResultsFoundMessage { get; set; }
 
         [FindsBy(How = How.XPath, Using = ".//div[@class='save-action-bar ng-star-inserted']//span[text()='Save']")]
@@ -164,6 +164,7 @@ namespace DashworksTestAutomation.Pages.Evergreen
             }
             catch (Exception)
             {
+                Driver.WaitWhileControlIsNotDisplayed(By.XPath($".//div[@id='submenuBlock']//span[text()='{listName}']"));
                 return Driver.FindElement(By.XPath($".//div[@id='submenuBlock']//span[text()='{listName}']"));
             }
         }

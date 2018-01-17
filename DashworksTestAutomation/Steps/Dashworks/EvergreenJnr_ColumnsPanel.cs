@@ -6,6 +6,7 @@ using DashworksTestAutomation.Utils;
 using NUnit.Framework;
 using OpenQA.Selenium.Remote;
 using System;
+using System.Linq;
 using System.Text.RegularExpressions;
 using TechTalk.SpecFlow;
 
@@ -107,6 +108,17 @@ namespace DashworksTestAutomation.Steps.Dashworks
             var columnElement = _driver.NowAt<ColumnsElement>();
             columnElement.ExpandColumnsSectionByName("Selected Columns");
             columnElement.GetDeleteColumnButton(columnName).Click();
+        }
+
+        [When(@"User removes ColumnName column by Column panel")]
+        public void WhenUserRemovesColumnNameColumnByColumnPanel(Table table)
+        {
+            var columnElement = _driver.NowAt<ColumnsElement>();
+            columnElement.ExpandColumnsSectionByName("Selected Columns");
+            foreach (var row in table.Rows)
+            {
+                columnElement.GetDeleteColumnButton(row["ColumnName"]).Click();
+            }
         }
 
         [When(@"User have reset all columns")]
@@ -229,6 +241,18 @@ namespace DashworksTestAutomation.Steps.Dashworks
             var columnElement = _driver.NowAt<ColumnsElement>();
             var groupCount = columnElement.GroupTitle.Count;
             Assert.AreEqual(groupCount, columnElement.MinimizeGroupButton.Count, "Minimize buttons are not displayed");
+        }
+
+        [When(@"User collapses all columns categories")]
+        public void WhenUserCollapsesAllColumnsCategories()
+        {
+            var columnElement = _driver.NowAt<ColumnsElement>();
+            foreach (var group in columnElement.GroupTitle)
+            {
+                if (group.Text.Contains("Selected Columns"))
+                    continue;
+                group.Click();
+            }
         }
 
         [Then(@"Maximize buttons are displayed for all category in Columns panel")]

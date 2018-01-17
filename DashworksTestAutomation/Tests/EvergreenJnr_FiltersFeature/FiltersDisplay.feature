@@ -335,8 +335,8 @@ Examples:
 	| operatorValue  | filterOption | rowsCount | operatorValueInInfo |
 	| Equals         | 08 Mar 2016  | 3         | is                  |
 	| Does not equal | 08 Mar 2016  | 4,832     | is not              |
-	| Before         | 08 Mar 2016  | 39        | is before           |
-	| After          | 08 Mar 2016  | 4,796     | is after            |
+	| Before         | 08 Mar 2016  | 33        | is before           |
+	| After          | 08 Mar 2016  | 4,799     | is after            |
 	| Empty          |              |           | is empty            |
 	| Not empty      |              | 4,835     | is not empty        |
 
@@ -358,7 +358,7 @@ Scenario Outline: EvergreenJnr_DevicesList_CheckThatFilterOperatorsIsCorrectInFi
 Examples: 
 	| operatorValue  | filterOption | rowsCount | operatorValueInInfo |
 	| Equals         | 22 Nov 2012  | 16        | is                  |
-	| Does not equal | 22 Nov 2012  | 17,225    | is not              |
+	| Does not equal | 22 Nov 2012  | 17,209    | is not              |
 	| Before         | 22 Nov 2012  | 1         | is before           |
 	| After          | 14 May 2012  | 16        | is after            |
 	| Empty          |              | 17,208    | is empty            |
@@ -527,7 +527,7 @@ Scenario Outline: EvergreenJnr_DevicesList_CheckThatDateAndTimeFiltersWithDoesNo
 Examples: 
 	| FilterName                   | Value       | RowCount |
 	| Windows7Mi: Date & Time Task | 22 Nov 2012 | 17,209   |
-	| Build Date                   | 06 Nov 2004 | 17,225   |
+	| Build Date                   | 06 Nov 2004 | 17,224   |
 
 @Evergreen @Devices @Evergreen_FiltersFeature @FiltersDisplay @DAS11187
 Scenario Outline: EvergreenJnr_DevicesList_CheckThatCustomFiltersAreContainsAllExpectedAssociations
@@ -818,3 +818,15 @@ Scenario: EvergreenJnr_DevicesList_CheckThat500ErrorIsNotDisplayedForDynamicList
 	Then "Devices" list should be displayed to the user
 	When User navigates to the "TestList" list
 	Then "TestList" list is displayed to user
+
+@Evergreen @Devices @Evergreen_FiltersFeature @FiltersDisplay @DAS11663
+Scenario: EvergreenJnr_DevicesLists_CheckThatRowCountIsNotDisplayedWhenNoObjectsAreFoundAfterApplyingAFilter
+	When User clicks "Devices" on the left-hand menu
+	Then "Devices" list should be displayed to the user
+	When User clicks the Filters button
+	Then Filters panel is displayed to the user
+	When User add "Hostname" filter where type is "Equals" with added column and following value:
+	| Values  |
+	| Example |
+	Then "Hostname" filter is added to the list
+	And "" rows are displayed in the agGrid
