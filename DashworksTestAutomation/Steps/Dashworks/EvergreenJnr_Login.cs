@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data;
 using System.IO;
 using System.Linq;
 using System.Net;
@@ -11,9 +12,12 @@ using DashworksTestAutomation.Helpers;
 using DashworksTestAutomation.Pages;
 using DashworksTestAutomation.Providers;
 using DashworksTestAutomation.Utils;
+using Newtonsoft.Json;
+using Newtonsoft.Json.Linq;
 using NUnit.Framework;
 using OpenQA.Selenium.Remote;
 using RestSharp;
+using RestSharp.Deserializers;
 using TechTalk.SpecFlow;
 using Cookie = OpenQA.Selenium.Cookie;
 using Logger = DashworksTestAutomation.Utils.Logger;
@@ -74,17 +78,6 @@ namespace DashworksTestAutomation.Steps.Dashworks
 
             //Open website
             _driver.NagigateToURL(UrlProvider.EvergreenUrl);
-
-            var request = new RestRequest($"{UrlProvider.RestClientBaseUrl}users/filters?$lang=en-GB");
-
-            request.AddParameter("Host", UrlProvider.RestClientBaseUrl);
-            request.AddParameter("Origin", UrlProvider.Url.TrimEnd('/'));
-            request.AddParameter("Referer", UrlProvider.EvergreenUrl);
-
-            var response = _client.Value.Get(request);
-
-            if (response.StatusCode != HttpStatusCode.OK)
-                throw new Exception("d");
         }
 
         [When(@"User provides the Login and Password and clicks on the login button")]
