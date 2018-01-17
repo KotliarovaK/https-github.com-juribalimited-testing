@@ -199,24 +199,25 @@ namespace DashworksTestAutomation.Helpers
 
     public class ListFilter : BaseFilter
     {
-        private string _value { get; set; }
+        private Table Table { get; set; }
 
-        public ListFilter(RemoteWebDriver driver, Table table) :
-            base(driver, table)
+        public ListFilter(RemoteWebDriver driver, string operatorValue, Table table) :
+            base(driver, operatorValue, false)
         {
-            _table = table;
+            Table = table;
         }
 
         public override void Do()
         {
+            SelectOperator();
             _driver.WaitForDataLoading();
-            foreach (var row in _table.Rows)
+            foreach (var row in Table.Rows)
             {
                 _driver.FindElement(By.XPath(
                     $".//div[@id='perfectScrolBar']//span[text()='{row["SelectedList"]}']")).Click();
             }
 
-            foreach (var row in _table.Rows)
+            foreach (var row in Table.Rows)
             {
                 _driver.FindElement(By.XPath(".//div[@id='context']//input[@placeholder='Search']")).Click();
                 _driver.FindElement(By.XPath($".//li//span[text()='{row["Association"]}']")).Click();

@@ -190,7 +190,7 @@ namespace DashworksTestAutomation.Steps.Dashworks
         {
             var filtersNames = _driver.NowAt<FiltersElement>();
             filtersNames.AddFilter(filterName);
-            var filter = new ListFilter(_driver, table);
+            var filter = new ListFilter(_driver, operatorValue, table);
             filter.Do();
         }
 
@@ -198,7 +198,7 @@ namespace DashworksTestAutomation.Steps.Dashworks
         public void WhenUserHaveCreatedFilterWithSelectedListListAndFollowingAssociation(string operatorValue, Table table)
         {
             var filterElement = _driver.NowAt<FiltersElement>();
-            var filter = new ListFilter(_driver, table);
+            var filter = new ListFilter(_driver, operatorValue, table);
             filter.Do();
         }
 
