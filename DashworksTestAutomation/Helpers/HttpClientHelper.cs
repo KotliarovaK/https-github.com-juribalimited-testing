@@ -14,19 +14,20 @@ namespace DashworksTestAutomation.Helpers
 {
     public class HttpClientHelper
     {
-        private CookieContainer cookies = new CookieContainer();
-        private HttpClientHandler handler = new HttpClientHandler();
+        private CookieContainer _cookies = new CookieContainer();
+        private HttpClientHandler _handler = new HttpClientHandler();
 
-        public IEnumerable<OpenQA.Selenium.Cookie> _cookiesJar = null;
+        public IEnumerable<System.Net.Cookie> CookiesJar = null;
+        public IEnumerable<OpenQA.Selenium.Cookie> SeleniumCookiesJar => CookiesJar.Select(x => x.ToSeleniumCookies());
 
         public HttpClientHelper()
         {
-            handler.CookieContainer = cookies;
+            _handler.CookieContainer = _cookies;
         }
 
         public HttpClientHelper(UserDto credentials, RestClient client)
         {
-            handler.CookieContainer = cookies;
+            _handler.CookieContainer = _cookies;
             var auth = client.GetAuthenticationDetails(UrlProvider.Url);
             InitCookies(credentials, auth);
         }
@@ -35,9 +36,9 @@ namespace DashworksTestAutomation.Helpers
         {
             var loginUrl = $"{UrlProvider.Url}LoginSplash.aspx?ReturnUrl=/";
 
-            if (_cookiesJar == null)
+            if (CookiesJar == null)
             {
-                using (var httpClient = new HttpClient(handler))
+                using (var httpClient = new HttpClient(_handler))
                 {
                     var uri = new Uri(loginUrl);
 
@@ -55,7 +56,7 @@ namespace DashworksTestAutomation.Helpers
                     var results = httpClient.PostAsync(loginUrl, content).Result;
 
                     // Get all cookies
-                    _cookiesJar = cookies.GetCookies(uri).Cast<Cookie>().Select(x=>x.ToSeleniumCookies());
+                    CookiesJar = _cookies.GetCookies(uri).Cast<Cookie>();
                 }
             }
         }
