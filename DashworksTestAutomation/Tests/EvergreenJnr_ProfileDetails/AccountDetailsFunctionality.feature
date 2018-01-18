@@ -62,3 +62,11 @@ Scenario: EvergreenJnr_AccountDetails_CheckThatErrorIsNotDisplayedAfterChangingP
 	When User changes Full Name to "TestAdm"
 	Then Error message is not displayed on Profile page
 	Then Success message with "Account details have been changed" text is displayed on Account Details page
+
+	@Evergreen @ProfileDetails @EvergreenJnr_ProfileDetails @AccountDetailsFunctionality @DAS11641
+Scenario: EvergreenJnr_AccountDetails_CheckThatNotificationsAndUserProfilesIconsAreDisplayedCorrectly
+	When User clicks "Devices" on the left-hand menu
+	Then "Devices" list should be displayed to the user
+	When User clicks Account Profile dropdown
+	Then Account Profile dropdown is displayed to user
+	Then 
