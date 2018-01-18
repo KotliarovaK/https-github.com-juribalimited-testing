@@ -1,23 +1,13 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Data;
-using System.IO;
-using System.Linq;
-using System.Net;
-using System.Web.Management;
 using DashworksTestAutomation.DTO;
 using DashworksTestAutomation.DTO.RuntimeVariables;
 using DashworksTestAutomation.Extensions;
 using DashworksTestAutomation.Helpers;
 using DashworksTestAutomation.Pages;
 using DashworksTestAutomation.Providers;
-using DashworksTestAutomation.Utils;
-using Newtonsoft.Json;
-using Newtonsoft.Json.Linq;
 using NUnit.Framework;
 using OpenQA.Selenium.Remote;
 using RestSharp;
-using RestSharp.Deserializers;
 using TechTalk.SpecFlow;
 using Cookie = OpenQA.Selenium.Cookie;
 using Logger = DashworksTestAutomation.Utils.Logger;
@@ -43,15 +33,10 @@ namespace DashworksTestAutomation.Steps.Dashworks
         private UserDto GetFreeUserAndAddToUsedUsersList()
         {
             var user = UserProvider.GetFreeUserAccount();
-
             _usedUsers.Value.Add(user);
 
             //Add user credentials to context
             user.CopyPropertiesTo(_user);
-
-            //Change User Language to avoid spelling issues
-            DatabaseWorker.ChangeUserProfileLanguage(_user.UserName, _user.Language);
-
             return user;
         }
 
@@ -75,7 +60,8 @@ namespace DashworksTestAutomation.Steps.Dashworks
 
             // Add cookies to the RestClient to authorize it
             _client.Value.AddCookies(client.CookiesJar);
-
+            //Change profile language
+            _client.ChangeUserProfileLanguage(_user.UserName, _user.Language);
             //Open website
             _driver.NagigateToURL(UrlProvider.EvergreenUrl);
         }
