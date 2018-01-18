@@ -6,7 +6,7 @@ using TechTalk.SpecFlow;
 namespace DashworksTestAutomation.Steps.Dashworks
 {
     [Binding]
-    class EvergreenJnr_Logout : SpecFlowContext
+    internal class EvergreenJnr_Logout : SpecFlowContext
     {
         private readonly RemoteWebDriver _driver;
 

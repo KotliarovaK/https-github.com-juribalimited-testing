@@ -1,4 +1,6 @@
-﻿using DashworksTestAutomation.Extensions;
+﻿using DashworksTestAutomation.DTO;
+using DashworksTestAutomation.DTO.RuntimeVariables;
+using DashworksTestAutomation.Extensions;
 using DashworksTestAutomation.Helpers;
 using DashworksTestAutomation.Pages.Evergreen;
 using DashworksTestAutomation.Utils;
@@ -9,9 +11,6 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading;
-using DashworksTestAutomation.DTO;
-using DashworksTestAutomation.DTO.RuntimeVariables;
-using DashworksTestAutomation.Providers;
 using TechTalk.SpecFlow;
 
 namespace DashworksTestAutomation.Steps.Dashworks
@@ -104,6 +103,13 @@ namespace DashworksTestAutomation.Steps.Dashworks
             //WhenUserNavigatesToTheList(listName);
             var page = _driver.NowAt<BaseDashboardPage>();
             Assert.AreEqual(listName, page.ActiveCustomListName());
+        }
+
+        [Then(@"""(.*)"" list name is displayed correctly")]
+        public void ThenListNameIsDisplayedCorrectly(string listName)
+        {
+            var listElement = _driver.NowAt<CustomListElement>();
+            Assert.AreEqual(listName, listElement.CheckAllListName(listName).Text);
         }
 
         [When(@"User update current custom list")]

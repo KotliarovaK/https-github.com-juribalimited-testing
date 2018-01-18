@@ -1,25 +1,18 @@
-﻿using System;
+﻿using DashworksTestAutomation.DTO.RuntimeVariables;
+using DashworksTestAutomation.Providers;
+using Newtonsoft.Json;
+using Newtonsoft.Json.Linq;
+using RestSharp;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Net;
-using System.Text;
-using System.Threading.Tasks;
-using DashworksTestAutomation.DTO.RuntimeVariables;
-using DashworksTestAutomation.Extensions;
-using DashworksTestAutomation.Pages;
-using DashworksTestAutomation.Providers;
-using DashworksTestAutomation.Utils;
-using Newtonsoft.Json;
-using Newtonsoft.Json.Linq;
-using NUnit.Framework;
-using OpenQA.Selenium.Remote;
-using RestSharp;
 using TechTalk.SpecFlow;
 
 namespace DashworksTestAutomation.Steps
 {
     [Binding]
-    class TestApiStep : SpecFlowContext
+    internal class TestApiStep : SpecFlowContext
     {
         private readonly RestWebClient _client;
 

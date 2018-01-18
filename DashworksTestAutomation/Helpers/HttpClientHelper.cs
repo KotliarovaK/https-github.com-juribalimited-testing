@@ -1,14 +1,12 @@
-﻿using System;
+﻿using DashworksTestAutomation.DTO;
+using DashworksTestAutomation.Extensions;
+using DashworksTestAutomation.Providers;
+using RestSharp;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Net;
 using System.Net.Http;
-using System.Text;
-using System.Threading.Tasks;
-using DashworksTestAutomation.DTO;
-using DashworksTestAutomation.Extensions;
-using DashworksTestAutomation.Providers;
-using RestSharp;
 
 namespace DashworksTestAutomation.Helpers
 {

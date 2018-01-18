@@ -1,14 +1,14 @@
-﻿using System.Collections.Generic;
-using DashworksTestAutomation.Base;
+﻿using DashworksTestAutomation.Base;
 using DashworksTestAutomation.Extensions;
 using DashworksTestAutomation.Utils;
 using NUnit.Framework;
 using OpenQA.Selenium;
 using OpenQA.Selenium.Support.PageObjects;
+using System.Collections.Generic;
 
 namespace DashworksTestAutomation.Pages.Evergreen
 {
-    class HeaderElement : SeleniumBasePage
+    internal class HeaderElement : SeleniumBasePage
     {
         [FindsBy(How = How.XPath, Using = ".//span[@class='col-ds-visible user-area user-name-words']")]
         public IWebElement UserNameDropdown { get; set; }
@@ -44,7 +44,7 @@ namespace DashworksTestAutomation.Pages.Evergreen
             Assert.AreEqual(2, MenuItems.Count);
             Assert.IsTrue(ProfileButton.Displayed(), "My Profile menu item is not displayed");
 
-            #endregion
+            #endregion Check menu Items
 
             LogOutButton.Click();
         }

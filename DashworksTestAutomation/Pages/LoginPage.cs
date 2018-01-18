@@ -1,12 +1,12 @@
-﻿using System.Collections.Generic;
-using DashworksTestAutomation.Base;
+﻿using DashworksTestAutomation.Base;
 using DashworksTestAutomation.Extensions;
 using OpenQA.Selenium;
 using OpenQA.Selenium.Support.PageObjects;
+using System.Collections.Generic;
 
 namespace DashworksTestAutomation.Pages
 {
-    class LoginPage : SeleniumBasePage
+    internal class LoginPage : SeleniumBasePage
     {
         [FindsBy(How = How.Id, Using = "ctl00_MainContent_P_Login")]
         public IWebElement LoginGroupbox { get; set; }
@@ -34,7 +34,7 @@ namespace DashworksTestAutomation.Pages
         [FindsBy(How = How.Id, Using = "Btn_Login")]
         public IWebElement SplashLoginButton { get; set; }
 
-        #endregion
+        #endregion Login Splash page
 
         public override List<By> GetPageIdentitySelectors()
         {

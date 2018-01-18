@@ -2,7 +2,7 @@
 
 namespace DashworksTestAutomation.Providers
 {
-    class UrlProvider
+    internal class UrlProvider
     {
         public static string Url => ConfigurationManager.AppSettings["appURL"];
         public static string BackupUrl => ConfigurationManager.AppSettings["backupAppURL"];

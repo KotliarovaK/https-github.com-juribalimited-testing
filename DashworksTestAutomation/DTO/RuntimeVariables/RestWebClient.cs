@@ -1,12 +1,12 @@
-﻿using System;
-using System.Net;
-using DashworksTestAutomation.Providers;
+﻿using DashworksTestAutomation.Providers;
 using DashworksTestAutomation.Utils;
 using RestSharp;
+using System;
+using System.Net;
 
 namespace DashworksTestAutomation.DTO.RuntimeVariables
 {
-    class RestWebClient
+    internal class RestWebClient
     {
         public RestClient Value { get; set; }
 

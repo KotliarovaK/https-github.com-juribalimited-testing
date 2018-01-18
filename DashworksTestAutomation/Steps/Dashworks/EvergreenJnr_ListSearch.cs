@@ -1,16 +1,16 @@
-﻿using System;
-using System.Threading;
-using DashworksTestAutomation.Extensions;
+﻿using DashworksTestAutomation.Extensions;
 using DashworksTestAutomation.Pages.Evergreen;
 using DashworksTestAutomation.Utils;
 using NUnit.Framework;
 using OpenQA.Selenium.Remote;
+using System;
+using System.Threading;
 using TechTalk.SpecFlow;
 
 namespace DashworksTestAutomation.Steps.Dashworks
 {
     [Binding]
-    class EvergreenJnr_ListSearch : SpecFlowContext
+    internal class EvergreenJnr_ListSearch : SpecFlowContext
     {
         private readonly RemoteWebDriver _driver;
 
