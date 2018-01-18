@@ -6,7 +6,7 @@ using System.Linq;
 
 namespace DashworksTestAutomation.Helpers
 {
-    class DatabaseHelper
+    internal class DatabaseHelper
     {
         private static string _connectionString =
             "Server=172.30.3.140;Database=DesktopBI;User ID=sa;Password=DataWarehouse04;Encrypt=True;TrustServerCertificate=True;Connection Timeout=60;ConnectRetryCount=3";
