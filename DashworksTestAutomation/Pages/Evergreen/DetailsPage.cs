@@ -1,14 +1,14 @@
-﻿using System.Collections.Generic;
-using System.Linq;
-using DashworksTestAutomation.Base;
+﻿using DashworksTestAutomation.Base;
 using DashworksTestAutomation.Extensions;
 using NUnit.Framework;
 using OpenQA.Selenium;
 using OpenQA.Selenium.Support.PageObjects;
+using System.Collections.Generic;
+using System.Linq;
 
 namespace DashworksTestAutomation.Pages.Evergreen
 {
-    class DetailsPage : SeleniumBasePage
+    internal class DetailsPage : SeleniumBasePage
     {
         [FindsBy(How = How.XPath, Using = ".//div[@class='tabContainer ng-star-inserted']")]
         public IWebElement TabContainer { get; set; }

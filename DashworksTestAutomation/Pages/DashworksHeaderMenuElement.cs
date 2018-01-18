@@ -1,11 +1,11 @@
-﻿using System.Collections.Generic;
-using DashworksTestAutomation.Base;
+﻿using DashworksTestAutomation.Base;
 using OpenQA.Selenium;
 using OpenQA.Selenium.Support.PageObjects;
+using System.Collections.Generic;
 
 namespace DashworksTestAutomation.Pages
 {
-    class DashworksHeaderMenuElement : SeleniumBasePage
+    internal class DashworksHeaderMenuElement : SeleniumBasePage
     {
         [FindsBy(How = How.XPath, Using = ".//div[@id='maincontent']/descendant::h1[position()=1]")]
         public IWebElement PageHeader { get; set; }

@@ -31,6 +31,7 @@ namespace DashworksTestAutomation.Steps.Dashworks
         {
             var searchElement = _driver.NowAt<GlobalSearchElement>();
             _driver.WaitWhileControlIsNotDisplayed<GlobalSearchElement>(() => searchElement.NoResultFound);
+            var t = searchElement.NoResultFound.Text;
             Assert.AreEqual(text, searchElement.NoResultFound.Text);
         }
 

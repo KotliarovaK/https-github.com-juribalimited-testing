@@ -1,13 +1,13 @@
-﻿using System.Collections.Generic;
-using System.Linq;
-using DashworksTestAutomation.Base;
+﻿using DashworksTestAutomation.Base;
 using DashworksTestAutomation.Extensions;
 using OpenQA.Selenium;
 using OpenQA.Selenium.Support.PageObjects;
+using System.Collections.Generic;
+using System.Linq;
 
 namespace DashworksTestAutomation.Pages.Evergreen
 {
-    class FiltersElement : SeleniumBasePage
+    internal class FiltersElement : SeleniumBasePage
     {
         [FindsBy(How = How.XPath, Using = ".//div[@class='filter-panel']")]
         public IWebElement FiltersPanel { get; set; }

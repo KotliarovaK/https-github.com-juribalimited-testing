@@ -1,12 +1,12 @@
-﻿using System.Collections.Generic;
-using DashworksTestAutomation.Base;
+﻿using DashworksTestAutomation.Base;
 using DashworksTestAutomation.Extensions;
 using OpenQA.Selenium;
 using OpenQA.Selenium.Support.PageObjects;
+using System.Collections.Generic;
 
 namespace DashworksTestAutomation.Pages.Evergreen
 {
-    class CustomListElement : SeleniumBasePage
+    internal class CustomListElement : SeleniumBasePage
     {
         [FindsBy(How = How.XPath, Using = ".//div[@class='listEdit list-edit-wrapper']")]
         public IWebElement CreateCustomListElement { get; set; }
@@ -51,7 +51,7 @@ namespace DashworksTestAutomation.Pages.Evergreen
         [FindsBy(How = How.XPath, Using = ".//li[text()='Delete']")]
         public IWebElement DeleteButton { get; set; }
 
-        #endregion
+        #endregion ListSettings
 
         #region DeleteListBlock
 
@@ -64,7 +64,7 @@ namespace DashworksTestAutomation.Pages.Evergreen
         [FindsBy(How = How.XPath, Using = ".//span[text()='CANCEL']")]
         public IWebElement CancelDeletingButton { get; set; }
 
-        #endregion
+        #endregion DeleteListBlock
 
         #region UpdateList
 
@@ -77,7 +77,7 @@ namespace DashworksTestAutomation.Pages.Evergreen
         [FindsBy(How = How.XPath, Using = ".//span[text()='Save as new list']")]
         public IWebElement SaveAsNewListButton { get; set; }
 
-        #endregion
+        #endregion UpdateList
 
         public override List<By> GetPageIdentitySelectors()
         {
