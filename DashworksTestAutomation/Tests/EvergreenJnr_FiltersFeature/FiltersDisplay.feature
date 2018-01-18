@@ -842,4 +842,22 @@ Scenario: EvergreenJnr_DevicesLists_CheckThatFilterLogicForBooleanFieldsIsWorked
 	| FALSE              |
 	| UNKNOWN            |
 	Then "Secure Boot Enabled" filter is added to the list
-	Then table data is filtered correctly
+	Then table data in column is filtered correctly
+
+@Evergreen @Devices @Evergreen_FiltersFeature @FiltersDisplay @DAS11660 @Delete_Newly_Created_List
+Scenario: EvergreenJnr_DevicesLists_CheckThatOperatorsForApplicationSavedListFilterIsDisplayedCorrectly
+	When User clicks "Applications" on the left-hand menu
+	Then "Applications" list should be displayed to the user
+	When User clicks the Columns button
+	Then Columns panel is displayed to the user
+	When ColumnName is entered into the search box and the selection is clicked
+	| ColumnName |
+	| Compliance |
+	When User create custom list with "TestSavedList" name
+	Then "TestSavedList" list is displayed to user
+	When User clicks "Devices" on the left-hand menu
+	Then "Devices" list should be displayed to the user
+	When User clicks the Filters button
+	Then Filters panel is displayed to the user
+	When user select "Application (Saved List)" filter
+	Then "In list" option is available for this filter
