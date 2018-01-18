@@ -102,6 +102,13 @@ namespace DashworksTestAutomation.Steps.Dashworks
             }
         }
 
+        [When(@"User add ""(.*)"" Column from expanded category")]
+        public void WhenUserAddColumnFromExpandedCategory(string columnName)
+        {
+            var columnElement = _driver.NowAt<ColumnsElement>();
+            columnElement.AddColumnFromExpandedSection(columnName);
+        }
+
         [When(@"User removes ""(.*)"" column by Column panel")]
         public void WhenUserRemovesColumnByColumnPanel(string columnName)
         {
@@ -269,6 +276,22 @@ namespace DashworksTestAutomation.Steps.Dashworks
             var columnElement = _driver.NowAt<ColumnsElement>();
             Assert.IsFalse(columnElement.MaximizeOrMinimizeButtonByCategory(categoryName).Displayed(),
                 $"Maximize/Minimize button is displayed for empty {categoryName} category");
+        }
+
+        [Then(@"Minimize button is displayed for ""(.*)"" category")]
+        public void ThenMinimizeButtonIsDisplayedForCategory(string categoryName)
+        {
+            var columnElement = _driver.NowAt<ColumnsElement>();
+            Assert.IsTrue(columnElement.MinimizeButtonByCategory(categoryName).Displayed(),
+                $"Minimize button is not displayed for {categoryName} category");
+        }
+
+        [Then(@"Maximize button is displayed for ""(.*)"" category")]
+        public void ThenMaximizeButtonIsDisplayedForCategory(string categoryName)
+        {
+            var columnElement = _driver.NowAt<ColumnsElement>();
+            Assert.IsTrue(columnElement.MaximizeButtonByCategory(categoryName).Displayed(),
+                $"Maximize button is not displayed for {categoryName} category");
         }
 
         [Then(@"""(.*)"" section is not displayed in the Columns panel")]
