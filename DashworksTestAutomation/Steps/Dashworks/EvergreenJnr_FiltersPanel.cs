@@ -10,6 +10,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text.RegularExpressions;
+using DashworksTestAutomation.DTO.RuntimeVariables;
 using TechTalk.SpecFlow;
 
 namespace DashworksTestAutomation.Steps.Dashworks
@@ -19,11 +20,13 @@ namespace DashworksTestAutomation.Steps.Dashworks
     {
         private readonly RemoteWebDriver _driver;
         private readonly ColumnNameToUrlConvertor _convertor;
+        private readonly Filter _filter;
 
-        public EvergreenJnr_FiltersPanel(RemoteWebDriver driver, ColumnNameToUrlConvertor convertor)
+        public EvergreenJnr_FiltersPanel(RemoteWebDriver driver, ColumnNameToUrlConvertor convertor, Filter filter)
         {
             _driver = driver;
             _convertor = convertor;
+            _filter = filter;
         }
 
         [Then(@"Filters panel is displayed to the user")]
@@ -171,6 +174,9 @@ namespace DashworksTestAutomation.Steps.Dashworks
             var filtersNames = _driver.NowAt<FiltersElement>();
             filtersNames.AddFilter(filterName);
             var filter = new CheckBoxesFilter(_driver, operatorValue, true, table);
+            //Save filter in context
+            _filter.FilterSettings = filter;
+            _filter.FilterName = filterName;
             filter.Do();
         }
 
@@ -190,7 +196,7 @@ namespace DashworksTestAutomation.Steps.Dashworks
         {
             var filtersNames = _driver.NowAt<FiltersElement>();
             filtersNames.AddFilter(filterName);
-            var filter = new ListFilter(_driver, table);
+            var filter = new ListFilter(_driver, operatorValue, table);
             filter.Do();
         }
 
@@ -198,7 +204,7 @@ namespace DashworksTestAutomation.Steps.Dashworks
         public void WhenUserHaveCreatedFilterWithSelectedListListAndFollowingAssociation(string operatorValue, Table table)
         {
             var filterElement = _driver.NowAt<FiltersElement>();
-            var filter = new ListFilter(_driver, table);
+            var filter = new ListFilter(_driver, operatorValue, table);
             filter.Do();
         }
 
@@ -263,17 +269,6 @@ namespace DashworksTestAutomation.Steps.Dashworks
             Assert.Contains(filterName, filterElement.GetFiltersNames());
         }
 
-        [Then(@"FilterData is displayed for FilterName column")]
-        public void ThenFilterDataIsDisplayedForFilterNameColumn(Table table)
-        {
-            var listpageMenu = _driver.NowAt<BaseDashboardPage>();
-            foreach (var row in table.Rows)
-            {
-                Assert.IsTrue(listpageMenu.IsColumnPresent(row["FilterName"]),
-                    $"Column '{row["FilterName"]}' is not exists in the table");
-            }
-        }
-
         [Then(@"table data is filtered correctly")]
         public void ThenTableDataIsFilteredCorrectly()
         {
@@ -316,6 +311,12 @@ namespace DashworksTestAutomation.Steps.Dashworks
                 }
                 Assert.IsTrue(result, "Table data is filtered incorrectly");
             }
+        }
+
+        [Then(@"table data in column is filtered correctly")]
+        public void ThenTableDataInColumnIsFilteredCorrectly()
+        {
+            _filter.CheckFilterDate();
         }
 
         [When(@"User have removed ""(.*)"" filter")]

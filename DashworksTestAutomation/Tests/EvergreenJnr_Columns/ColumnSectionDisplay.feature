@@ -49,3 +49,49 @@ Scenario: EvergreenJnr_DevicesList_CheckThatColumnIsNotRemovedAfterApplyFilterFo
 	Then ColumnName is added to the list
 	| ColumnName   |
 	| Manufacturer |
+
+@Evergreen @Devices @EvergreenJnr_Columns @ColumnSectionDisplay @DAS11480
+Scenario: EvergreenJnr_DevicesList_CheckThatAppropriateIconsAreDisplayedForMaximizedAndMinimizeGroups
+	When User clicks "Devices" on the left-hand menu
+	Then "Devices" list should be displayed to the user
+	When User clicks the Columns button
+	Then Columns panel is displayed to the user
+	When User enters "group" text in Search field at Columns Panel
+	Then Minimize buttons are displayed for all category in Columns panel
+	When User collapses all columns categories
+	Then Maximize buttons are displayed for all category in Columns panel
+
+@Evergreen @Devices @EvergreenJnr_Columns @ColumnSectionDisplay @DAS11668
+Scenario: EvergreenJnr_DevicesList_CheckThatAllColumnsAreVisibleInTheirRelevantCategoryAfterResetting
+	When User clicks "Devices" on the left-hand menu
+	Then "Devices" list should be displayed to the user
+	When User clicks the Columns button
+	Then Columns panel is displayed to the user
+	When ColumnName is entered into the search box and the selection is clicked
+	| ColumnName |
+	| Import     |
+	| Compliance |
+	Then ColumnName is added to the list
+	| ColumnName |
+	| Import     |
+	| Compliance |
+	When User clicks the Columns button
+	Then Columns panel is displayed to the user
+	Then "9" subcategories is displayed for "Device" category
+	When User have reset all columns
+	Then "11" subcategories is displayed for "Device" category
+
+@Evergreen @Mailboxes @EvergreenJnr_Columns @ColumnSectionDisplay @DAS11548
+Scenario: EvergreenJnr_MailboxesList_CheckThatCategoryRemainsOpenAfterAddingColumns
+	When User clicks "Mailboxes" on the left-hand menu
+	Then "Mailboxes" list should be displayed to the user
+	When User clicks the Columns button
+	Then Columns panel is displayed to the user
+	Then User is expand "Mailbox" columns category
+	When User add "Import" Column from expanded category
+	Then Minimize button is displayed for "Mailbox" category
+	When User add "Enabled" Column from expanded category
+	Then ColumnName is added to the list
+	| ColumnName |
+	| Import     |
+	| Enabled    |

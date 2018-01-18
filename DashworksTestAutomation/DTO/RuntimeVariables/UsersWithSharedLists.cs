@@ -11,5 +11,10 @@ namespace DashworksTestAutomation.DTO.RuntimeVariables
     class UsersWithSharedLists
     {
         public List<string> Value { get; set; }
+
+        public UsersWithSharedLists()
+        {
+            Value = new List<string>();
+        }
     }
 }

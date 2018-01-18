@@ -19,13 +19,13 @@ namespace DashworksTestAutomation.Pages.Evergreen
 
         [FindsBy(How = How.XPath,
             Using =
-                ".//div[@class='searchPanel input-wrapper']//button[@aria-describedby='cdk-describedby-message-12']")]
+                ".//div[@class='searchPanel input-wrapper']//button[@class='btn btn-default input-toggle mat-icon-button ng-star-inserted']")]
         public IWebElement SearchTextboxResetButton { get; set; }
 
-        [FindsBy(How = How.XPath, Using = ".//button[@aria-describedby='cdk-describedby-message-23']")]
+        [FindsBy(How = How.XPath, Using = ".//div[@class='columns-panel']//i[@class='material-icons mat-clear mat-18']")]
         public IList<IWebElement> MinimizeGroupButton { get; set; }
 
-        [FindsBy(How = How.XPath, Using = ".//button[@aria-describedby='cdk-describedby-message-331']")]
+        [FindsBy(How = How.XPath, Using = ".//div[@class='columns-panel']//i[@class='material-icons mat-item_add mat-18']")]
         public IList<IWebElement> MaximizeGroupButton { get; set; }
 
         private const string GroupTitleSelector =
@@ -50,6 +50,25 @@ namespace DashworksTestAutomation.Pages.Evergreen
         public void AddColumn(string columnName)
         {
             SearchTextbox.SendKeys(columnName);
+            var selector = String.Empty;
+            if (columnName.Contains("'"))
+            {
+                var strings = columnName.Split('\'');
+                selector =
+                    $".//div[@class='columns-panel']//span[contains(text(),'{strings[0]}')][contains(text(), '{strings[1]}')]";
+            }
+            else
+            {
+                selector = $".//div[@class='columns-panel']//span[text()='{columnName}']";
+            }
+            Driver.WaitWhileControlIsNotDisplayed(By.XPath(selector));
+            Driver.FindElement(By.XPath(selector)).Click();
+
+            Driver.WaitForDataLoading();
+        }
+
+        public void AddColumnFromExpandedSection(string columnName)
+        {
             var selector = String.Empty;
             if (columnName.Contains("'"))
             {
@@ -113,6 +132,18 @@ namespace DashworksTestAutomation.Pages.Evergreen
             return filterCategory.FindElement(By.XPath(".//button"));
         }
 
+        public IWebElement MinimizeButtonByCategory(string categoryName)
+        {
+            var filterCategory = FilterCategory(categoryName);
+            return filterCategory.FindElement(By.XPath(".//i[@class='material-icons mat-clear mat-18']"));
+        }
+
+        public IWebElement MaximizeButtonByCategory(string categoryName)
+        {
+            var filterCategory = FilterCategory(categoryName);
+            return filterCategory.FindElement(By.XPath(".//i[@class='material-icons mat-item_add mat-18']"));
+        }
+
         public IWebElement GetDeleteColumnButton(string columnName)
         {
             return Driver.FindElement(By.XPath(
@@ -124,7 +155,7 @@ namespace DashworksTestAutomation.Pages.Evergreen
             try
             {
                 Driver.FindElement(By.XPath(
-                        $".//div[contains(@class, 'filter-category-label')][text()='{sectionsName}']//ancestor::div[contains(@class, 'filter-category-title')]//button[@title='Maximize Group']"))
+                        $".//div[contains(@class, 'filter-category-label')][text()='{sectionsName}']//ancestor::div[contains(@class, 'filter-category-title')]//button"))
                     .Click();
             }
             catch

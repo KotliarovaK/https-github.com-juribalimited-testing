@@ -1,5 +1,7 @@
-﻿using System.Linq;
+﻿using System;
+using System.Linq;
 using DashworksTestAutomation.Extensions;
+using DashworksTestAutomation.Pages.Evergreen;
 using NUnit.Framework;
 using OpenQA.Selenium;
 using OpenQA.Selenium.Remote;
@@ -37,6 +39,10 @@ namespace DashworksTestAutomation.Helpers
         }
 
         public virtual void Do()
+        {
+        }
+
+        public virtual void CheckFilterDate(string filtersName)
         {
         }
 
@@ -125,6 +131,34 @@ namespace DashworksTestAutomation.Helpers
 
             SaveFilter();
         }
+
+        public override void CheckFilterDate(string filtersName)
+        {
+            var basePage = _driver.NowAt<BaseDashboardPage>();
+            var columnContent = basePage.GetColumnContent(filtersName);
+            var allValuesAreEmpty = columnContent.All(string.IsNullOrEmpty);
+            if (allValuesAreEmpty)
+                throw new Exception($"Column '{filtersName}' does not contain any date.");
+
+            foreach (string value in columnContent)
+            {
+                if (string.IsNullOrEmpty(value))
+                    continue;
+
+                switch (_operatorValue)
+                {
+                    case "Does not equal":
+                        Assert.True(_optionsTable.Rows.Select(x => x["SelectedCheckboxes"]).All(x => !value.Equals(x)));
+                        break;
+                    case "Equals":
+                        Assert.True(_optionsTable.Rows.Select(x => x["SelectedCheckboxes"]).All(x => value.Equals(x)));
+                        break;
+
+                    default:
+                        throw new Exception($"Unknown '{_operatorValue}' operator");
+                }
+            }
+        }
     }
 
     public class ChangeCheckboxesFilter : CheckBoxesFilter
@@ -199,24 +233,25 @@ namespace DashworksTestAutomation.Helpers
 
     public class ListFilter : BaseFilter
     {
-        private string _value { get; set; }
+        private Table Table { get; set; }
 
-        public ListFilter(RemoteWebDriver driver, Table table) :
-            base(driver, table)
+        public ListFilter(RemoteWebDriver driver, string operatorValue, Table table) :
+            base(driver, operatorValue, false)
         {
-            _table = table;
+            Table = table;
         }
 
         public override void Do()
         {
+            SelectOperator();
             _driver.WaitForDataLoading();
-            foreach (var row in _table.Rows)
+            foreach (var row in Table.Rows)
             {
                 _driver.FindElement(By.XPath(
                     $".//div[@id='perfectScrolBar']//span[text()='{row["SelectedList"]}']")).Click();
             }
 
-            foreach (var row in _table.Rows)
+            foreach (var row in Table.Rows)
             {
                 _driver.FindElement(By.XPath(".//div[@id='context']//input[@placeholder='Search']")).Click();
                 _driver.FindElement(By.XPath($".//li//span[text()='{row["Association"]}']")).Click();

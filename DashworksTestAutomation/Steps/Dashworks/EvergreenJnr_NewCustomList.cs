@@ -158,6 +158,16 @@ namespace DashworksTestAutomation.Steps.Dashworks
             listElement.ConfirmDeleteButton.Click();
         }
 
+        [When(@"User duplicates list with ""(.*)"" name")]
+        public void WhenUserDuplicatesListWithName(string listName)
+        {
+            var listElement = _driver.NowAt<CustomListElement>();
+
+            listElement.ClickSettingsButtonByListName(listName);
+            _driver.WaitWhileControlIsNotDisplayed<CustomListElement>(() => listElement.DuplicateButton);
+            listElement.DuplicateButton.Click();
+        }
+
         [Then(@"list with ""(.*)"" name is removed")]
         public void ThenListWithNameIsRemoved(string listName)
         {
@@ -307,7 +317,7 @@ namespace DashworksTestAutomation.Steps.Dashworks
             try
             {
                 //If non users were logged in then just return. None lists were created
-                if (_usedUsers.Value == null)
+                if (_usedUsers.Value == null || !_usedUsers.Value.Any())
                     return;
 
                 foreach (UserDto userDto in _usedUsers.Value)
@@ -337,7 +347,7 @@ namespace DashworksTestAutomation.Steps.Dashworks
             try
             {
                 //If none lists were shared
-                if (_usersWithSharedLists.Value == null)
+                if (_usersWithSharedLists.Value == null || !_usersWithSharedLists.Value.Any())
                     return;
 
                 foreach (string user in _usersWithSharedLists.Value)

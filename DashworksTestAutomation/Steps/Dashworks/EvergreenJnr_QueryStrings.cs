@@ -1,4 +1,5 @@
 ﻿using System;
+using DashworksTestAutomation.DTO;
 using DashworksTestAutomation.DTO.RuntimeVariables;
 using DashworksTestAutomation.Extensions;
 using DashworksTestAutomation.Helpers;
@@ -19,11 +20,13 @@ namespace DashworksTestAutomation.Steps.Dashworks
     {
         private readonly RemoteWebDriver _driver;
         private readonly WebsiteUrl _url;
+        private readonly RestWebClient _client;
 
-        public EvergreenJnr_QueryStrings(RemoteWebDriver driver, WebsiteUrl url)
+        public EvergreenJnr_QueryStrings(RemoteWebDriver driver, WebsiteUrl url, RestWebClient client)
         {
             _driver = driver;
             _url = url;
+            _client = client;
         }
 
         [Given(@"User is on Dashworks Homepage")]

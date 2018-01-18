@@ -30,7 +30,7 @@ namespace DashworksTestAutomation.Steps.Dashworks
         public void WhenUserChangesListNameTo(string listName)
         {
             var listDetailsElement = _driver.NowAt<ListDetailsElement>();
-            listDetailsElement.ListNameField.ClearWithBackspaces();
+            listDetailsElement.ListNameField.Clear();
             listDetailsElement.ListNameField.SendkeysWithDelay(listName);
         }
 
@@ -112,22 +112,11 @@ namespace DashworksTestAutomation.Steps.Dashworks
         [When(@"User select ""(.*)"" as a Owner of a list")]
         public void WhenUserSelectAsAOwnerOfAList(string ownerOption)
         {
-            if (_usersWithSharedLists.Value == null)
-                _usersWithSharedLists.Value = new List<string>();
-
             //Save user to remove its lists after test execution
-            _usersWithSharedLists.Value.Add(GetUserNameByFullName(ownerOption));
+            _usersWithSharedLists.Value.Add(DatabaseWorker.GetUserNameByFullName(ownerOption));
 
             var listDetailsElement = _driver.NowAt<ListDetailsElement>();
             _driver.SelectCustomSelectbox(listDetailsElement.OwnerDropdown, ownerOption);
-        }
-
-        private string GetUserNameByFullName(string fullName)
-        {
-            var userName = DatabaseHelper.ExecuteReader(
-                $"select u.LoweredUserName from[aspnetdb].[dbo].[aspnet_Users] u join[DesktopBI].[dbo].[UserProfiles] up on up.UserId = u.UserId where up.FullName = '{fullName}'",
-                0)[0];
-            return userName;
         }
 
         private string GetFullNameByUserName(string userName)

@@ -33,6 +33,7 @@ namespace DashworksTestAutomation.Steps.Dashworks
         public void WhenUserPerformSearchBy(string searchTerm)
         {
             PerformSearch(searchTerm);
+            _driver.WaitForDataLoading();
         }
 
         [Then(@"User enters SearchCriteria into the agGrid Search Box and the correct NumberOfRows are returned")]
@@ -90,6 +91,9 @@ namespace DashworksTestAutomation.Steps.Dashworks
             else
             {
                 _driver.IsElementDisplayed(listPageElement.NoResultsFoundMessage);
+                _driver.WaitWhileControlIsDisplayed<BaseDashboardPage>(() => listPageElement.ResultsOnPageCount);
+                Assert.IsFalse(listPageElement.ResultsOnPageCount.Displayed(), "Rows count is displayed");
+                Assert.IsTrue(listPageElement.NoResultsFoundMessage.Displayed(), "'No Results Found' message not displayed");
                 Logger.Write(
                     $"Evergreen agGrid Search returned '{listPageElement.NoResultsFoundMessage.Text}' message");
             }
