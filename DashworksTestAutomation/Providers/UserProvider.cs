@@ -1,13 +1,13 @@
-﻿using System;
+﻿using DashworksTestAutomation.DTO;
+using System;
 using System.Collections.Generic;
 using System.Configuration;
 using System.Linq;
 using System.Threading;
-using DashworksTestAutomation.DTO;
 
 namespace DashworksTestAutomation.Providers
 {
-    class UserProvider
+    internal class UserProvider
     {
         private static Mutex _mut = new Mutex();
 

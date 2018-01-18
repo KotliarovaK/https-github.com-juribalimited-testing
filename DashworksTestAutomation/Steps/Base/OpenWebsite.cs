@@ -5,7 +5,7 @@ using TechTalk.SpecFlow;
 namespace DashworksTestAutomation.Steps.Base
 {
     [Binding]
-    class OpenWebsite : SpecFlowContext
+    internal class OpenWebsite : SpecFlowContext
     {
         private readonly RemoteWebDriver _driver;
 

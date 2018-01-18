@@ -1,10 +1,10 @@
-﻿using System;
-using System.Collections.Generic;
-using DashworksTestAutomation.Utils;
+﻿using DashworksTestAutomation.Utils;
 using OpenQA.Selenium;
 using OpenQA.Selenium.Interactions;
 using OpenQA.Selenium.Remote;
 using OpenQA.Selenium.Support.UI;
+using System;
+using System.Collections.Generic;
 
 namespace DashworksTestAutomation.Extensions
 {
@@ -127,6 +127,6 @@ namespace DashworksTestAutomation.Extensions
             return !checkbox.GetAttribute("class").Contains("hideElementIcon");
         }
 
-        #endregion
+        #endregion Checkboxes
     }
 }

@@ -6,7 +6,7 @@ using System.Collections.Generic;
 
 namespace DashworksTestAutomation.Pages.Evergreen
 {
-    class ListDetailsElement: SeleniumBasePage
+    internal class ListDetailsElement : SeleniumBasePage
     {
         [FindsBy(How = How.XPath, Using = ".//div[@class='listPanel ng-star-inserted']")]
         public IWebElement ListDetailsPanel { get; set; }

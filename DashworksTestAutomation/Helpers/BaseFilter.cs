@@ -1,10 +1,10 @@
-﻿using System;
-using System.Linq;
-using DashworksTestAutomation.Extensions;
+﻿using DashworksTestAutomation.Extensions;
 using DashworksTestAutomation.Pages.Evergreen;
 using NUnit.Framework;
 using OpenQA.Selenium;
 using OpenQA.Selenium.Remote;
+using System;
+using System.Linq;
 using TechTalk.SpecFlow;
 
 namespace DashworksTestAutomation.Helpers
@@ -150,6 +150,7 @@ namespace DashworksTestAutomation.Helpers
                     case "Does not equal":
                         Assert.True(_optionsTable.Rows.Select(x => x["SelectedCheckboxes"]).All(x => !value.Equals(x)));
                         break;
+
                     case "Equals":
                         Assert.True(_optionsTable.Rows.Select(x => x["SelectedCheckboxes"]).All(x => value.Equals(x)));
                         break;

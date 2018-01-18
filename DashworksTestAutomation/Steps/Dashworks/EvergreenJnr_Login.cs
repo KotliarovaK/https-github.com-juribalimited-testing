@@ -1,5 +1,4 @@
-﻿using System;
-using DashworksTestAutomation.DTO;
+﻿using DashworksTestAutomation.DTO;
 using DashworksTestAutomation.DTO.RuntimeVariables;
 using DashworksTestAutomation.Extensions;
 using DashworksTestAutomation.Helpers;
@@ -8,6 +7,7 @@ using DashworksTestAutomation.Providers;
 using NUnit.Framework;
 using OpenQA.Selenium.Remote;
 using RestSharp;
+using System;
 using TechTalk.SpecFlow;
 using Cookie = OpenQA.Selenium.Cookie;
 using Logger = DashworksTestAutomation.Utils.Logger;
@@ -15,7 +15,7 @@ using Logger = DashworksTestAutomation.Utils.Logger;
 namespace DashworksTestAutomation.Steps.Dashworks
 {
     [Binding]
-    class EvergreenJnr_Login : SpecFlowContext
+    internal class EvergreenJnr_Login : SpecFlowContext
     {
         private readonly RemoteWebDriver _driver;
         private readonly UserDto _user;
