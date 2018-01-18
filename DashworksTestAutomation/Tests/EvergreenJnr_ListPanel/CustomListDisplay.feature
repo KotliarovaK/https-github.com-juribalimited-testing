@@ -720,3 +720,16 @@ Scenario: EvergreenJnr_DevicesLists_CheckThatUserIsNotAbleToCreateListsWithLongN
 	When User clicks the Actions button
 	And User select all rows
 	When User create static list with "1234567890123456789012345678901234567890111" name
+
+@Evergreen @AllLists @EvergreenJnr_ListPanel @CustomListDisplay @DAS11342
+Scenario Outline: EvergreenJnr_AllListsLists_CheckThatAllListsNamesAreDisplayedCorrectly
+	When User clicks "<ListName>" on the left-hand menu
+	Then "<ListName>" list should be displayed to the user
+	Then "<AllListName>" list name is displayed correctly
+
+Examples:
+	| ListName     | AllListName      |
+	| Devices      | All Devices      |
+	| Applications | All Applications |
+	| Users        | All Users        |
+	| Mailboxes    | All Mailboxes    |
