@@ -116,6 +116,17 @@ namespace DashworksTestAutomation.Steps.Dashworks
             columnElement.GetDeleteColumnButton(columnName).Click();
         }
 
+        [When(@"User removes ColumnName column by Column panel")]
+        public void WhenUserRemovesColumnNameColumnByColumnPanel(Table table)
+        {
+            var columnElement = _driver.NowAt<ColumnsElement>();
+            columnElement.ExpandColumnsSectionByName("Selected Columns");
+            foreach (var row in table.Rows)
+            {
+                columnElement.GetDeleteColumnButton(row["ColumnName"]).Click();
+            }
+        }
+
         [When(@"User have reset all columns")]
         public void WhenUserHaveResetAllColumns()
         {

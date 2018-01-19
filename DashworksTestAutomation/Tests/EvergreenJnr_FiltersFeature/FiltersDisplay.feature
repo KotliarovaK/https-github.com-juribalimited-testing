@@ -819,6 +819,18 @@ Scenario: EvergreenJnr_DevicesList_CheckThat500ErrorIsNotDisplayedForDynamicList
 	When User navigates to the "TestList" list
 	Then "TestList" list is displayed to user
 
+@Evergreen @Devices @Evergreen_FiltersFeature @FiltersDisplay @DAS11663
+Scenario: EvergreenJnr_DevicesLists_CheckThatRowCountIsNotDisplayedWhenNoObjectsAreFoundAfterApplyingAFilter
+	When User clicks "Devices" on the left-hand menu
+	Then "Devices" list should be displayed to the user
+	When User clicks the Filters button
+	Then Filters panel is displayed to the user
+	When User add "Hostname" filter where type is "Equals" with added column and following value:
+	| Values  |
+	| Example |
+	Then "Hostname" filter is added to the list
+	And "" rows are displayed in the agGrid
+
 @Evergreen @Devices @Evergreen_FiltersFeature @FiltersDisplay @DAS11575
 Scenario: EvergreenJnr_DevicesLists_CheckThatFilterLogicForBooleanFieldsIsWorkedCorrectly
 	When User clicks "Devices" on the left-hand menu
