@@ -1,12 +1,12 @@
-﻿using System.Collections.Generic;
-using DashworksTestAutomation.Base;
+﻿using DashworksTestAutomation.Base;
 using DashworksTestAutomation.Extensions;
 using OpenQA.Selenium;
 using OpenQA.Selenium.Support.PageObjects;
+using System.Collections.Generic;
 
 namespace DashworksTestAutomation.Pages
 {
-    class LogoutPage : SeleniumBasePage
+    internal class LogoutPage : SeleniumBasePage
     {
         [FindsBy(How = How.XPath, Using = ".//h1[text()='Signed Out']")]
         public IWebElement SignedOutLabel { get; set; }

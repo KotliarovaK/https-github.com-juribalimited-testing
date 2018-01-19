@@ -90,6 +90,8 @@
     <Compile Include="Base\BeforeAfterActions.cs" />
     <Compile Include="Base\IBaseTest.cs" />
     <Compile Include="Base\SeleniumBasePage.cs" />
+    <Compile Include="DTO\RuntimeVariables\Filter.cs" />
+    <Compile Include="DTO\RuntimeVariables\RestWebClient.cs" />
     <Compile Include="DTO\RuntimeVariables\UsedUsers.cs" />
     <Compile Include="DTO\AuthObject.cs" />
     <Compile Include="DTO\RuntimeVariables\UsersWithSharedLists.cs" />
@@ -158,6 +160,7 @@
     <Compile Include="Steps\Dashworks\EvergreenJnr_NewCustomList.cs" />
     <Compile Include="Steps\Dashworks\EvergreenJnr_QueryStrings.cs" />
     <Compile Include="Steps\Logout.cs" />
+    <Compile Include="Steps\TestApiStep.cs" />
     <Compile Include="Tests\EvergreenJnr_ActionsPanel\ActionsPanel.feature.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>

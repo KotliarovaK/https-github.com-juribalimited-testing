@@ -1,4 +1,6 @@
-﻿using DashworksTestAutomation.Extensions;
+﻿using DashworksTestAutomation.DTO;
+using DashworksTestAutomation.DTO.RuntimeVariables;
+using DashworksTestAutomation.Extensions;
 using DashworksTestAutomation.Helpers;
 using DashworksTestAutomation.Pages.Evergreen;
 using DashworksTestAutomation.Utils;
@@ -9,9 +11,6 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading;
-using DashworksTestAutomation.DTO;
-using DashworksTestAutomation.DTO.RuntimeVariables;
-using DashworksTestAutomation.Providers;
 using TechTalk.SpecFlow;
 
 namespace DashworksTestAutomation.Steps.Dashworks
@@ -104,6 +103,13 @@ namespace DashworksTestAutomation.Steps.Dashworks
             //WhenUserNavigatesToTheList(listName);
             var page = _driver.NowAt<BaseDashboardPage>();
             Assert.AreEqual(listName, page.ActiveCustomListName());
+        }
+
+        [Then(@"""(.*)"" list name is displayed correctly")]
+        public void ThenListNameIsDisplayedCorrectly(string listName)
+        {
+            var listElement = _driver.NowAt<CustomListElement>();
+            Assert.AreEqual(listName, listElement.CheckAllListName(listName).Text);
         }
 
         [When(@"User update current custom list")]
@@ -317,7 +323,7 @@ namespace DashworksTestAutomation.Steps.Dashworks
             try
             {
                 //If non users were logged in then just return. None lists were created
-                if (_usedUsers.Value == null)
+                if (_usedUsers.Value == null || !_usedUsers.Value.Any())
                     return;
 
                 foreach (UserDto userDto in _usedUsers.Value)
@@ -347,7 +353,7 @@ namespace DashworksTestAutomation.Steps.Dashworks
             try
             {
                 //If none lists were shared
-                if (_usersWithSharedLists.Value == null)
+                if (_usersWithSharedLists.Value == null || !_usersWithSharedLists.Value.Any())
                     return;
 
                 foreach (string user in _usersWithSharedLists.Value)

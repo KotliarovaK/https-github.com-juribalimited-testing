@@ -1,12 +1,12 @@
-﻿using System.Collections.Generic;
-using DashworksTestAutomation.Base;
+﻿using DashworksTestAutomation.Base;
 using DashworksTestAutomation.Extensions;
 using OpenQA.Selenium;
 using OpenQA.Selenium.Support.PageObjects;
+using System.Collections.Generic;
 
 namespace DashworksTestAutomation.Pages.Evergreen.DetailsTabsMenu
 {
-    class BaseDetailsTabsMenu : SeleniumBasePage
+    internal class BaseDetailsTabsMenu : SeleniumBasePage
     {
         [FindsBy(How = How.XPath, Using = ".//div[@class='mat-tab-labels']/div[contains(text(),'Details')]")]
         public IWebElement DevicesTab { get; set; }

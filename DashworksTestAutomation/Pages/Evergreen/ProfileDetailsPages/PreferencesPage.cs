@@ -1,12 +1,12 @@
-﻿using System.Collections.Generic;
-using DashworksTestAutomation.Base;
+﻿using DashworksTestAutomation.Base;
 using DashworksTestAutomation.Extensions;
 using OpenQA.Selenium;
 using OpenQA.Selenium.Support.PageObjects;
+using System.Collections.Generic;
 
 namespace DashworksTestAutomation.Pages.Evergreen.ProfileDetailsPages
 {
-    class PreferencesPage : SeleniumBasePage
+    internal class PreferencesPage : SeleniumBasePage
     {
         [FindsBy(How = How.XPath,
             Using = ".//span[text()='Language']/ancestor::div[@class='form-item']//div[@class='dropdown-wrapper']")]

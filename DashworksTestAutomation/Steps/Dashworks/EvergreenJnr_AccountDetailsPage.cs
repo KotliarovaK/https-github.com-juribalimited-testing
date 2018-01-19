@@ -1,27 +1,27 @@
-﻿using System;
-using System.IO;
+﻿using DashworksTestAutomation.DTO;
 using DashworksTestAutomation.Extensions;
 using DashworksTestAutomation.Pages.Evergreen;
 using DashworksTestAutomation.Pages.Evergreen.ProfileDetailsPages;
 using DashworksTestAutomation.Providers;
-using DashworksTestAutomation.Utils;
 using NUnit.Framework;
 using OpenQA.Selenium;
 using OpenQA.Selenium.Remote;
+using System;
+using System.IO;
 using TechTalk.SpecFlow;
 
 namespace DashworksTestAutomation.Steps.Dashworks
 {
     [Binding]
-    class EvergreenJnr_AccountDetailsPage : SpecFlowContext
+    internal class EvergreenJnr_AccountDetailsPage : SpecFlowContext
     {
         private readonly RemoteWebDriver _driver;
-        private readonly UserProfileData _userProfileData;
+        private readonly UserDto _userDto;
 
-        public EvergreenJnr_AccountDetailsPage(RemoteWebDriver driver, UserProfileData userProfileData)
+        public EvergreenJnr_AccountDetailsPage(RemoteWebDriver driver, UserDto userDto)
         {
             _driver = driver;
-            _userProfileData = userProfileData;
+            _userDto = userDto;
         }
 
         [When(@"User clicks Profile in Account Dropdown")]
@@ -37,6 +37,8 @@ namespace DashworksTestAutomation.Steps.Dashworks
         public void ThenProfilePageIsDisplayedToUser()
         {
             var page = _driver.NowAt<AccountDetailsPage>();
+            _userDto.FullName = page.FullNameField.GetAttribute("value");
+            _userDto.Email = page.EmailField.GetAttribute("value");
         }
 
         [When(@"User changes Full Name to ""(.*)""")]
@@ -163,11 +165,11 @@ namespace DashworksTestAutomation.Steps.Dashworks
             {
                 var page = _driver.NowAt<AccountDetailsPage>();
                 page.FullNameField.Clear();
-                page.FullNameField.SendKeys(_userProfileData.FullName);
+                page.FullNameField.SendKeys(_userDto.FullName);
                 page.EmailField.Clear();
-                page.EmailField.SendKeys(String.IsNullOrEmpty(_userProfileData.Email)
+                page.EmailField.SendKeys(String.IsNullOrEmpty(_userDto.Email)
                     ? "automation@juriba.com"
-                    : _userProfileData.Email);
+                    : _userDto.Email);
                 page.RemoveButton.Click();
                 page.UpdateButton.Click();
             }

@@ -1184,7 +1184,7 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_FiltersFeature
         [NUnit.Framework.CategoryAttribute("DAS10696")]
         [NUnit.Framework.CategoryAttribute("DAS11090")]
         [NUnit.Framework.TestCaseAttribute("Equals", "22 Nov 2012", "16", "is", new string[0])]
-        [NUnit.Framework.TestCaseAttribute("Does not equal", "22 Nov 2012", "17,225", "is not", new string[0])]
+        [NUnit.Framework.TestCaseAttribute("Does not equal", "22 Nov 2012", "17,209", "is not", new string[0])]
         [NUnit.Framework.TestCaseAttribute("Before", "22 Nov 2012", "1", "is before", new string[0])]
         [NUnit.Framework.TestCaseAttribute("After", "14 May 2012", "16", "is after", new string[0])]
         [NUnit.Framework.TestCaseAttribute("Empty", "", "17,208", "is empty", new string[0])]
@@ -1391,8 +1391,8 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_FiltersFeature
             table37.AddRow(new string[] {
                         "TestList",
                         "Not used on device"});
-            testRunner.When("User add \"Application (Saved List)\" filter where type is \"Equals\" with SelectedLi" +
-                    "st list and following Association:", ((string)(null)), table37, "When ");
+            testRunner.When("User add \"Application (Saved List)\" filter where type is \"In list\" with SelectedL" +
+                    "ist list and following Association:", ((string)(null)), table37, "When ");
             testRunner.Then("\"Application\" filter is added to the list", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
             testRunner.Then("\"17,095\" rows are displayed in the agGrid", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
             TechTalk.SpecFlow.Table table38 = new TechTalk.SpecFlow.Table(new string[] {
@@ -2697,8 +2697,8 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_FiltersFeature
             table72.AddRow(new string[] {
                         "StaticListTestName",
                         "Not used on device"});
-            testRunner.When("User add \"Application (Saved List)\" filter where type is \"Equals\" with SelectedLi" +
-                    "st list and following Association:", ((string)(null)), table72, "When ");
+            testRunner.When("User add \"Application (Saved List)\" filter where type is \"In list\" with SelectedL" +
+                    "ist list and following Association:", ((string)(null)), table70, "When ");
             testRunner.Then("\"Application in list StaticListTestName is not used on device\" is displayed in ad" +
                     "ded filter info", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
             testRunner.When("User create custom list with \"TestList\" name", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
@@ -2780,8 +2780,8 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_FiltersFeature
             table74.AddRow(new string[] {
                         "TestList",
                         "Not used on device"});
-            testRunner.When("User add \"Application (Saved List)\" filter where type is \"Equals\" with SelectedLi" +
-                    "st list and following Association:", ((string)(null)), table74, "When ");
+            testRunner.When("User add \"Application (Saved List)\" filter where type is \"In list\" with SelectedL" +
+                    "ist list and following Association:", ((string)(null)), table72, "When ");
             testRunner.Then("\"Application in list TestList is not used on device\" is displayed in added filter" +
                     " info", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
             testRunner.When("User create custom list with \"TestList\" name", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
@@ -2794,6 +2794,133 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_FiltersFeature
             testRunner.Then("\"TestList\" list is displayed to user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
             this.ScenarioCleanup();
         }
+            this.ScenarioCleanup();
+        }
+        
+        [NUnit.Framework.TestAttribute()]
+        [NUnit.Framework.DescriptionAttribute("EvergreenJnr_DevicesLists_CheckThatFilterLogicForBooleanFieldsIsWorkedCorrectly")]
+        [NUnit.Framework.CategoryAttribute("Evergreen")]
+        [NUnit.Framework.CategoryAttribute("Devices")]
+        [NUnit.Framework.CategoryAttribute("Evergreen_FiltersFeature")]
+        [NUnit.Framework.CategoryAttribute("FiltersDisplay")]
+        [NUnit.Framework.CategoryAttribute("DAS11575")]
+        public virtual void EvergreenJnr_DevicesLists_CheckThatFilterLogicForBooleanFieldsIsWorkedCorrectly()
+        {
+            System.Exception lastException = null;
+            for (int i = 0; (i <= 1); i = (i + 1))
+            {
+                try
+                {
+                    this.EvergreenJnr_DevicesLists_CheckThatFilterLogicForBooleanFieldsIsWorkedCorrectlyInternal();
+                    return;
+                }
+                catch (System.Exception exc)
+                {
+                    lastException = exc;
+                }
+                if (((i + 1) 
+                            <= 1))
+                {
+                    testRunner.OnScenarioEnd();
+                }
+            }
+            if ((lastException != null))
+            {
+                throw lastException;
+            }
+        }
+        
+        private void EvergreenJnr_DevicesLists_CheckThatFilterLogicForBooleanFieldsIsWorkedCorrectlyInternal()
+        {
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("EvergreenJnr_DevicesLists_CheckThatFilterLogicForBooleanFieldsIsWorkedCorrectly", new string[] {
+                        "Evergreen",
+                        "Devices",
+                        "Evergreen_FiltersFeature",
+                        "FiltersDisplay",
+                        "DAS11575"});
+            this.ScenarioSetup(scenarioInfo);
+            this.FeatureBackground();
+            testRunner.When("User clicks \"Devices\" on the left-hand menu", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+            testRunner.Then("\"Devices\" list should be displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+            testRunner.When("User clicks the Filters button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+            testRunner.Then("Filters panel is displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+            TechTalk.SpecFlow.Table table74 = new TechTalk.SpecFlow.Table(new string[] {
+                        "SelectedCheckboxes"});
+            table74.AddRow(new string[] {
+                        "FALSE"});
+            table74.AddRow(new string[] {
+                        "UNKNOWN"});
+            testRunner.When("User add \"Secure Boot Enabled\" filter where type is \"Does not equal\" with added c" +
+                    "olumn and following checkboxes:", ((string)(null)), table74, "When ");
+            testRunner.Then("\"Secure Boot Enabled\" filter is added to the list", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+            testRunner.Then("table data in column is filtered correctly", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+            this.ScenarioCleanup();
+        }
+        
+        [NUnit.Framework.TestAttribute()]
+        [NUnit.Framework.DescriptionAttribute("EvergreenJnr_DevicesLists_CheckThatOperatorsForApplicationSavedListFilterIsDispla" +
+            "yedCorrectly")]
+        [NUnit.Framework.CategoryAttribute("Evergreen")]
+        [NUnit.Framework.CategoryAttribute("Devices")]
+        [NUnit.Framework.CategoryAttribute("Evergreen_FiltersFeature")]
+        [NUnit.Framework.CategoryAttribute("FiltersDisplay")]
+        [NUnit.Framework.CategoryAttribute("DAS11660")]
+        [NUnit.Framework.CategoryAttribute("Delete_Newly_Created_List")]
+        public virtual void EvergreenJnr_DevicesLists_CheckThatOperatorsForApplicationSavedListFilterIsDisplayedCorrectly()
+        {
+            System.Exception lastException = null;
+            for (int i = 0; (i <= 1); i = (i + 1))
+            {
+                try
+                {
+                    this.EvergreenJnr_DevicesLists_CheckThatOperatorsForApplicationSavedListFilterIsDisplayedCorrectlyInternal();
+                    return;
+                }
+                catch (System.Exception exc)
+                {
+                    lastException = exc;
+                }
+                if (((i + 1) 
+                            <= 1))
+                {
+                    testRunner.OnScenarioEnd();
+                }
+            }
+            if ((lastException != null))
+            {
+                throw lastException;
+            }
+        }
+        
+        private void EvergreenJnr_DevicesLists_CheckThatOperatorsForApplicationSavedListFilterIsDisplayedCorrectlyInternal()
+        {
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("EvergreenJnr_DevicesLists_CheckThatOperatorsForApplicationSavedListFilterIsDispla" +
+                    "yedCorrectly", new string[] {
+                        "Evergreen",
+                        "Devices",
+                        "Evergreen_FiltersFeature",
+                        "FiltersDisplay",
+                        "DAS11660",
+                        "Delete_Newly_Created_List"});
+            this.ScenarioSetup(scenarioInfo);
+            this.FeatureBackground();
+            testRunner.When("User clicks \"Applications\" on the left-hand menu", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+            testRunner.Then("\"Applications\" list should be displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+            testRunner.When("User clicks the Columns button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+            testRunner.Then("Columns panel is displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+            TechTalk.SpecFlow.Table table75 = new TechTalk.SpecFlow.Table(new string[] {
+                        "ColumnName"});
+            table75.AddRow(new string[] {
+                        "Compliance"});
+            testRunner.When("ColumnName is entered into the search box and the selection is clicked", ((string)(null)), table75, "When ");
+            testRunner.When("User create custom list with \"TestSavedList\" name", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+            testRunner.Then("\"TestSavedList\" list is displayed to user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+            testRunner.When("User clicks \"Devices\" on the left-hand menu", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+            testRunner.Then("\"Devices\" list should be displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+            testRunner.When("User clicks the Filters button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+            testRunner.Then("Filters panel is displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+            testRunner.When("user select \"Application (Saved List)\" filter", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+            testRunner.Then("\"In list\" option is available for this filter", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
     }
 }
 #pragma warning restore

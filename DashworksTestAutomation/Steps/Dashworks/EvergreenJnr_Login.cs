@@ -1,53 +1,42 @@
-﻿using System;
-using System.Collections.Generic;
-using System.IO;
-using System.Linq;
-using System.Web.Management;
-using DashworksTestAutomation.DTO;
+﻿using DashworksTestAutomation.DTO;
 using DashworksTestAutomation.DTO.RuntimeVariables;
 using DashworksTestAutomation.Extensions;
 using DashworksTestAutomation.Helpers;
 using DashworksTestAutomation.Pages;
 using DashworksTestAutomation.Providers;
-using DashworksTestAutomation.Utils;
 using NUnit.Framework;
-using OpenQA.Selenium;
 using OpenQA.Selenium.Remote;
 using RestSharp;
+using System;
 using TechTalk.SpecFlow;
+using Cookie = OpenQA.Selenium.Cookie;
 using Logger = DashworksTestAutomation.Utils.Logger;
 
 namespace DashworksTestAutomation.Steps.Dashworks
 {
     [Binding]
-    class EvergreenJnr_Login : SpecFlowContext
+    internal class EvergreenJnr_Login : SpecFlowContext
     {
         private readonly RemoteWebDriver _driver;
         private readonly UserDto _user;
         private readonly UsedUsers _usedUsers;
+        private readonly RestWebClient _client;
 
-        public EvergreenJnr_Login(RemoteWebDriver driver, UserDto user, UsedUsers usedUsers)
+        public EvergreenJnr_Login(RemoteWebDriver driver, UserDto user, UsedUsers usedUsers, RestWebClient client)
         {
             _driver = driver;
             _user = user;
             _usedUsers = usedUsers;
+            _client = client;
         }
 
         private UserDto GetFreeUserAndAddToUsedUsersList()
         {
             var user = UserProvider.GetFreeUserAccount();
-            if (_usedUsers.Value == null)
-            {
-                _usedUsers.Value = new List<UserDto>();
-            }
             _usedUsers.Value.Add(user);
 
             //Add user credentials to context
             user.CopyPropertiesTo(_user);
-
-            //Change User Language to avoid spelling issues
-            DatabaseWorker.ChangeUserProfileLanguage(_user.UserName, _user.Language);
-
             return user;
         }
 
@@ -64,11 +53,15 @@ namespace DashworksTestAutomation.Steps.Dashworks
             _driver.NagigateToURL(UrlProvider.Url);
 
             //Set cookies to browser
-            foreach (Cookie cookie in client._cookiesJar)
+            foreach (Cookie cookie in client.SeleniumCookiesJar)
             {
                 _driver.Manage().Cookies.AddCookie(cookie);
             }
 
+            // Add cookies to the RestClient to authorize it
+            _client.Value.AddCookies(client.CookiesJar);
+            //Change profile language
+            _client.ChangeUserProfileLanguage(_user.UserName, _user.Language);
             //Open website
             _driver.NagigateToURL(UrlProvider.EvergreenUrl);
         }

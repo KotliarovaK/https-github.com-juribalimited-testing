@@ -12,7 +12,7 @@ namespace DashworksTestAutomation.Extensions
         {
             FieldInfo fi = value.GetType().GetField(value.ToString());
 
-            var attributes = (DescriptionAttribute[]) fi.GetCustomAttributes(
+            var attributes = (DescriptionAttribute[])fi.GetCustomAttributes(
                 typeof(DescriptionAttribute),
                 false);
 

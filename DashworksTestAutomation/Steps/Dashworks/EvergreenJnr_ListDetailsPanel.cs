@@ -1,6 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using DashworksTestAutomation.DTO;
+﻿using DashworksTestAutomation.DTO;
 using DashworksTestAutomation.DTO.RuntimeVariables;
 using DashworksTestAutomation.Extensions;
 using DashworksTestAutomation.Helpers;
@@ -8,6 +6,7 @@ using DashworksTestAutomation.Pages.Evergreen;
 using DashworksTestAutomation.Utils;
 using NUnit.Framework;
 using OpenQA.Selenium.Remote;
+using System;
 using TechTalk.SpecFlow;
 
 namespace DashworksTestAutomation.Steps.Dashworks
@@ -112,9 +111,6 @@ namespace DashworksTestAutomation.Steps.Dashworks
         [When(@"User select ""(.*)"" as a Owner of a list")]
         public void WhenUserSelectAsAOwnerOfAList(string ownerOption)
         {
-            if (_usersWithSharedLists.Value == null)
-                _usersWithSharedLists.Value = new List<string>();
-
             //Save user to remove its lists after test execution
             _usersWithSharedLists.Value.Add(DatabaseWorker.GetUserNameByFullName(ownerOption));
 

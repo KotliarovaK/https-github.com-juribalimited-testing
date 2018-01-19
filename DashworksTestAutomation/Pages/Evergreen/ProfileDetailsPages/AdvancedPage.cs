@@ -1,12 +1,12 @@
-﻿using System.Collections.Generic;
-using DashworksTestAutomation.Base;
+﻿using DashworksTestAutomation.Base;
 using DashworksTestAutomation.Extensions;
 using OpenQA.Selenium;
 using OpenQA.Selenium.Support.PageObjects;
+using System.Collections.Generic;
 
 namespace DashworksTestAutomation.Pages.Evergreen.ProfileDetailsPages
 {
-    class AdvancedPage : SeleniumBasePage
+    internal class AdvancedPage : SeleniumBasePage
     {
         [FindsBy(How = How.XPath, Using = ".//label[text()='List Page Size']/ancestor::div[@class='form-item']//input")]
         public IWebElement ListPageSizeField { get; set; }

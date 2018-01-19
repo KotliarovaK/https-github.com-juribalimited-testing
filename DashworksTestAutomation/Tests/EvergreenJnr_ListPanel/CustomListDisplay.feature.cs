@@ -1345,8 +1345,8 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_ListPanel
             table34.AddRow(new string[] {
                         "TestList",
                         "Not used on device"});
-            testRunner.When("User add \"Application (Saved List)\" filter where type is \"Equals\" with SelectedLi" +
-                    "st list and following Association:", ((string)(null)), table34, "When ");
+            testRunner.When("User add \"Application (Saved List)\" filter where type is \"In list\" with SelectedL" +
+                    "ist list and following Association:", ((string)(null)), table34, "When ");
             testRunner.Then("\"Application\" filter is added to the list", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
             testRunner.When("User create custom list with \"Applications List TestName\" name", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
             testRunner.Then("\"Applications List TestName\" list is displayed to user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
@@ -1892,6 +1892,64 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_ListPanel
             testRunner.Then("\"RenamedLongName6789012345678901234567890\" list is displayed to user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
             testRunner.When("User duplicates list with \"RenamedLongName6789012345678901234567890\" name", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
             testRunner.Then("\"RenamedLongName67890123456789012345678901\" list is displayed to user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+            this.ScenarioCleanup();
+        }
+        
+        [NUnit.Framework.TestAttribute()]
+        [NUnit.Framework.DescriptionAttribute("EvergreenJnr_AllListsLists_CheckThatAllListsNamesAreDisplayedCorrectly")]
+        [NUnit.Framework.CategoryAttribute("Evergreen")]
+        [NUnit.Framework.CategoryAttribute("AllLists")]
+        [NUnit.Framework.CategoryAttribute("EvergreenJnr_ListPanel")]
+        [NUnit.Framework.CategoryAttribute("CustomListDisplay")]
+        [NUnit.Framework.CategoryAttribute("DAS11342")]
+        [NUnit.Framework.TestCaseAttribute("Devices", "All Devices", new string[0])]
+        [NUnit.Framework.TestCaseAttribute("Applications", "All Applications", new string[0])]
+        [NUnit.Framework.TestCaseAttribute("Users", "All Users", new string[0])]
+        [NUnit.Framework.TestCaseAttribute("Mailboxes", "All Mailboxes", new string[0])]
+        public virtual void EvergreenJnr_AllListsLists_CheckThatAllListsNamesAreDisplayedCorrectly(string listName, string allListName, string[] exampleTags)
+        {
+            System.Exception lastException = null;
+            for (int i = 0; (i <= 1); i = (i + 1))
+            {
+                try
+                {
+                    this.EvergreenJnr_AllListsLists_CheckThatAllListsNamesAreDisplayedCorrectlyInternal(listName, allListName, exampleTags);
+                    return;
+                }
+                catch (System.Exception exc)
+                {
+                    lastException = exc;
+                }
+                if (((i + 1) 
+                            <= 1))
+                {
+                    testRunner.OnScenarioEnd();
+                }
+            }
+            if ((lastException != null))
+            {
+                throw lastException;
+            }
+        }
+        
+        private void EvergreenJnr_AllListsLists_CheckThatAllListsNamesAreDisplayedCorrectlyInternal(string listName, string allListName, string[] exampleTags)
+        {
+            string[] @__tags = new string[] {
+                    "Evergreen",
+                    "AllLists",
+                    "EvergreenJnr_ListPanel",
+                    "CustomListDisplay",
+                    "DAS11342"};
+            if ((exampleTags != null))
+            {
+                @__tags = System.Linq.Enumerable.ToArray(System.Linq.Enumerable.Concat(@__tags, exampleTags));
+            }
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("EvergreenJnr_AllListsLists_CheckThatAllListsNamesAreDisplayedCorrectly", @__tags);
+            this.ScenarioSetup(scenarioInfo);
+            this.FeatureBackground();
+            testRunner.When(string.Format("User clicks \"{0}\" on the left-hand menu", listName), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+            testRunner.Then(string.Format("\"{0}\" list should be displayed to the user", listName), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+            testRunner.Then(string.Format("\"{0}\" list name is displayed correctly", allListName), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
             this.ScenarioCleanup();
         }
     }

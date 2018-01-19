@@ -303,6 +303,52 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_GridActions
             testRunner.Then("Column is displayed in following order:", ((string)(null)), table7, "Then ");
             this.ScenarioCleanup();
         }
+        
+        [NUnit.Framework.TestAttribute()]
+        [NUnit.Framework.DescriptionAttribute("EvergreenJnr_UsersList_CheckThatColumnsOrderSavedAfterAddingAnotherColumn")]
+        [NUnit.Framework.CategoryAttribute("Evergreen")]
+        [NUnit.Framework.CategoryAttribute("Users")]
+        [NUnit.Framework.CategoryAttribute("EvergreenJnr_GridActions")]
+        [NUnit.Framework.CategoryAttribute("ColumnOrder")]
+        [NUnit.Framework.CategoryAttribute("DAS11666")]
+        public virtual void EvergreenJnr_UsersList_CheckThatColumnsOrderSavedAfterAddingAnotherColumn()
+        {
+            System.Exception lastException = null;
+            for (int i = 0; (i <= 1); i = (i + 1))
+            {
+                try
+                {
+                    this.EvergreenJnr_UsersList_CheckThatColumnsOrderSavedAfterAddingAnotherColumnInternal();
+                    return;
+                }
+                catch (System.Exception exc)
+                {
+                    lastException = exc;
+                }
+                if (((i + 1) 
+                            <= 1))
+                {
+                    testRunner.OnScenarioEnd();
+                }
+            }
+            if ((lastException != null))
+            {
+                throw lastException;
+            }
+        }
+        
+        private void EvergreenJnr_UsersList_CheckThatColumnsOrderSavedAfterAddingAnotherColumnInternal()
+        {
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("EvergreenJnr_UsersList_CheckThatColumnsOrderSavedAfterAddingAnotherColumn", new string[] {
+                        "Evergreen",
+                        "Users",
+                        "EvergreenJnr_GridActions",
+                        "ColumnOrder",
+                        "DAS11666"});
+            testRunner.And("User move \'Email Address\' column to \'Username\' column", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+            testRunner.And("User clicks the Columns button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+            testRunner.Then("Columns panel is displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+            testRunner.When("User removes \"Distinguished Name\" column by Column panel", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
     }
 }
 #pragma warning restore

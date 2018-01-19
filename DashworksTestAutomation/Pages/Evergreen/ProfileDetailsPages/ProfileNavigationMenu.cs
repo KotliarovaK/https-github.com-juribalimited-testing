@@ -1,12 +1,12 @@
-﻿using System.Collections.Generic;
-using DashworksTestAutomation.Base;
+﻿using DashworksTestAutomation.Base;
 using DashworksTestAutomation.Extensions;
 using OpenQA.Selenium;
 using OpenQA.Selenium.Support.PageObjects;
+using System.Collections.Generic;
 
 namespace DashworksTestAutomation.Pages.Evergreen.ProfileDetailsPages
 {
-    class ProfileNavigationMenu : SeleniumBasePage
+    internal class ProfileNavigationMenu : SeleniumBasePage
     {
         [FindsBy(How = How.XPath, Using = ".//span[@title='Account Details']")]
         public IWebElement AccountDetails { get; set; }
@@ -31,6 +31,5 @@ namespace DashworksTestAutomation.Pages.Evergreen.ProfileDetailsPages
                 SelectorFor(this, p => p.Advanced)
             };
         }
-
     }
 }

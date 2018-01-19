@@ -38,7 +38,7 @@ namespace DashworksTestAutomation.Extensions
 
         public static T NowAt<T>(this RemoteWebDriver driver) where T : SeleniumBasePage, new()
         {
-            var page = new T {Driver = driver, Actions = new Actions(driver)};
+            var page = new T { Driver = driver, Actions = new Actions(driver) };
             driver.WaitForLoadingElements(page, null);
             page.InitElements();
             return page;
@@ -59,7 +59,7 @@ namespace DashworksTestAutomation.Extensions
                 var formatedFileName =
                     fileName.Replace("\\", string.Empty).Replace("/", string.Empty).Replace("\"", "'");
                 var filePath = FileSystemHelper.GetPathForScreenshot(formatedFileName);
-                var screenshot = ((ITakesScreenshot) driver).GetScreenshot();
+                var screenshot = ((ITakesScreenshot)driver).GetScreenshot();
 
                 screenshot.SaveAsFile(filePath, ScreenshotImageFormat.Png);
                 Logger.Write($"Check screenshot by folklowing path: {filePath}");
@@ -91,7 +91,7 @@ namespace DashworksTestAutomation.Extensions
             try
             {
                 Logger.Write("Trying to close browser");
-                driver.Close(); 
+                driver.Close();
             }
             catch (Exception e)
             {
@@ -121,7 +121,7 @@ namespace DashworksTestAutomation.Extensions
 
         public static void WaitForLoadingElements(this RemoteWebDriver driver, SeleniumBasePage page, By bySelector)
         {
-            var bys = bySelector != null ? new List<By> {bySelector} : page.GetPageIdentitySelectors();
+            var bys = bySelector != null ? new List<By> { bySelector } : page.GetPageIdentitySelectors();
 
             foreach (var by in bys)
             {
@@ -199,7 +199,7 @@ namespace DashworksTestAutomation.Extensions
         public static void WaitWhileControlIsNotClickable<T>(this RemoteWebDriver driver,
             Expression<Func<IWebElement>> elementGetter)
         {
-            var propertyName = ((MemberExpression) elementGetter.Body).Member.Name;
+            var propertyName = ((MemberExpression)elementGetter.Body).Member.Name;
             var by = GetByFor<T>(propertyName);
             driver.WaitWhileControlIsNotClickable(by);
         }
@@ -221,7 +221,7 @@ namespace DashworksTestAutomation.Extensions
         public static void WaitWhileControlIsNotDisplayed<T>(this RemoteWebDriver driver,
             Expression<Func<IWebElement>> elementGetter)
         {
-            var propertyName = ((MemberExpression) elementGetter.Body).Member.Name;
+            var propertyName = ((MemberExpression)elementGetter.Body).Member.Name;
             var by = GetByFor<T>(propertyName);
             driver.WaitWhileControlIsNotDisplayed(by);
         }
@@ -258,7 +258,7 @@ namespace DashworksTestAutomation.Extensions
         public static void WaitWhileControlIsDisplayed<T>(this RemoteWebDriver driver,
             Expression<Func<IWebElement>> elementGetter)
         {
-            var propertyName = ((MemberExpression) elementGetter.Body).Member.Name;
+            var propertyName = ((MemberExpression)elementGetter.Body).Member.Name;
             var by = GetByFor<T>(propertyName);
             driver.WaitWhileControlIsDisplayed(by);
         }

@@ -238,7 +238,7 @@ Scenario: EvergreenJnr_ApplicationsList_CheckThatFilterIsRestoredCorrectlyAfterL
 	Then "Devices" list should be displayed to the user
 	When User clicks the Filters button
 	Then Filters panel is displayed to the user
-	When User add "Application (Saved List)" filter where type is "Equals" with SelectedList list and following Association:
+	When User add "Application (Saved List)" filter where type is "In list" with SelectedList list and following Association:
 	| SelectedList | Association        |
 	| TestList     | Not used on device |
 	Then "Application in list TestList is not used on device" is displayed in added filter info
@@ -333,3 +333,22 @@ Examples:
 	| whencreated            | Does not contain | 2017                                                       | Add whencreated column            |
 	| department             | Ends with        | LongName01234567890123456789012345678901234567890123456789 | Add Department column             |
 	| iscriticalsystemobject | Not empty        |                                                            | Add iscriticalsystemobject column |
+
+@Evergreen @Devices @EvergreenJnr_FilterFeature @FilterFunctionality @DAS11550 @DAS11749 @Not_Run
+Scenario Outline: EvergreenJnr_DevicesList_CheckThatOperatorInSelectedFilterIsDisplayedCorrectlyAPI
+	Then following operators are displayed for "<FilterName>" filter on "Devices" page:
+	| OperatorValues   |
+	| Equals           |
+	| Does not equal   |
+	| Contains         |
+	| Does not contain |
+	| Begins with      |
+	| Ends with        |
+
+Examples:
+	| FilterName                  |
+	| Application Name            |
+	| App Field 1                 |
+	| Computer Warranty           |
+	| General Information field 1 |
+	| User Field 2                |

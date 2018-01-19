@@ -358,7 +358,7 @@ Scenario Outline: EvergreenJnr_DevicesList_CheckThatFilterOperatorsIsCorrectInFi
 Examples: 
 	| operatorValue  | filterOption | rowsCount | operatorValueInInfo |
 	| Equals         | 22 Nov 2012  | 16        | is                  |
-	| Does not equal | 22 Nov 2012  | 17,225    | is not              |
+	| Does not equal | 22 Nov 2012  | 17,209    | is not              |
 	| Before         | 22 Nov 2012  | 1         | is before           |
 	| After          | 14 May 2012  | 16        | is after            |
 	| Empty          |              | 17,208    | is empty            |
@@ -399,7 +399,7 @@ Scenario: EvergreenJnr_ApplicationsList_CheckThatApplicationSavedListFilterIsWor
 	Then "Devices" list should be displayed to the user
 	When User clicks the Filters button
 	Then Filters panel is displayed to the user
-	When User add "Application (Saved List)" filter where type is "Equals" with SelectedList list and following Association:
+	When User add "Application (Saved List)" filter where type is "In list" with SelectedList list and following Association:
 	| SelectedList | Association        |
 	| TestList     | Not used on device |
 	Then "Application" filter is added to the list
@@ -778,7 +778,7 @@ Scenario: EvergreenJnr_DevicesList_CheckThat500ErrorIsNotDisplayedForStaticListA
 	Then "Devices" list should be displayed to the user
 	When User clicks the Filters button
 	Then Filters panel is displayed to the user
-	When User add "Application (Saved List)" filter where type is "Equals" with SelectedList list and following Association:
+	When User add "Application (Saved List)" filter where type is "In list" with SelectedList list and following Association:
 	| SelectedList       | Association        |
 	| StaticListTestName | Not used on device |
 	Then "Application in list StaticListTestName is not used on device" is displayed in added filter info
@@ -806,9 +806,9 @@ Scenario: EvergreenJnr_DevicesList_CheckThat500ErrorIsNotDisplayedForDynamicList
 	Then "Devices" list should be displayed to the user
 	When User clicks the Filters button
 	Then Filters panel is displayed to the user
-	When User add "Application (Saved List)" filter where type is "Equals" with SelectedList list and following Association:
-	| SelectedList       | Association        |
-	| TestList | Not used on device |
+	When User add "Application (Saved List)" filter where type is "In list" with SelectedList list and following Association:
+	| SelectedList | Association        |
+	| TestList     | Not used on device |
 	Then "Application in list TestList is not used on device" is displayed in added filter info
 	When User create custom list with "TestList" name
 	When User clicks "Applications" on the left-hand menu
@@ -818,3 +818,34 @@ Scenario: EvergreenJnr_DevicesList_CheckThat500ErrorIsNotDisplayedForDynamicList
 	Then "Devices" list should be displayed to the user
 	When User navigates to the "TestList" list
 	Then "TestList" list is displayed to user
+
+@Evergreen @Devices @Evergreen_FiltersFeature @FiltersDisplay @DAS11575
+Scenario: EvergreenJnr_DevicesLists_CheckThatFilterLogicForBooleanFieldsIsWorkedCorrectly
+	When User clicks "Devices" on the left-hand menu
+	Then "Devices" list should be displayed to the user
+	When User clicks the Filters button
+	Then Filters panel is displayed to the user
+	When User add "Secure Boot Enabled" filter where type is "Does not equal" with added column and following checkboxes:
+	| SelectedCheckboxes |
+	| FALSE              |
+	| UNKNOWN            |
+	Then "Secure Boot Enabled" filter is added to the list
+	Then table data in column is filtered correctly
+
+@Evergreen @Devices @Evergreen_FiltersFeature @FiltersDisplay @DAS11660 @Delete_Newly_Created_List
+Scenario: EvergreenJnr_DevicesLists_CheckThatOperatorsForApplicationSavedListFilterIsDisplayedCorrectly
+	When User clicks "Applications" on the left-hand menu
+	Then "Applications" list should be displayed to the user
+	When User clicks the Columns button
+	Then Columns panel is displayed to the user
+	When ColumnName is entered into the search box and the selection is clicked
+	| ColumnName |
+	| Compliance |
+	When User create custom list with "TestSavedList" name
+	Then "TestSavedList" list is displayed to user
+	When User clicks "Devices" on the left-hand menu
+	Then "Devices" list should be displayed to the user
+	When User clicks the Filters button
+	Then Filters panel is displayed to the user
+	When user select "Application (Saved List)" filter
+	Then "In list" option is available for this filter
