@@ -333,3 +333,22 @@ Examples:
 	| whencreated            | Does not contain | 2017                                                       | Add whencreated column            |
 	| department             | Ends with        | LongName01234567890123456789012345678901234567890123456789 | Add Department column             |
 	| iscriticalsystemobject | Not empty        |                                                            | Add iscriticalsystemobject column |
+
+@Evergreen @Devices @EvergreenJnr_FilterFeature @FilterFunctionality @DAS11550 @DAS11749 @Not_Run
+Scenario Outline: EvergreenJnr_DevicesList_CheckThatOperatorInSelectedFilterIsDisplayedCorrectlyAPI
+	Then following operators are displayed for "<FilterName>" filter on "Devices" page:
+	| OperatorValues   |
+	| Equals           |
+	| Does not equal   |
+	| Contains         |
+	| Does not contain |
+	| Begins with      |
+	| Ends with        |
+
+Examples:
+	| FilterName                  |
+	| Application Name            |
+	| App Field 1                 |
+	| Computer Warranty           |
+	| General Information field 1 |
+	| User Field 2                |

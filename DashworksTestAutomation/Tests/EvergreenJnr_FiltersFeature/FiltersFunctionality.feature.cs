@@ -1244,6 +1244,83 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_FiltersFeature
             testRunner.Then("checkboxes are displayed to the User:", ((string)(null)), table18, "Then ");
             this.ScenarioCleanup();
         }
+        
+        [NUnit.Framework.TestAttribute()]
+        [NUnit.Framework.DescriptionAttribute("EvergreenJnr_DevicesList_CheckThatOperatorInSelectedFilterIsDisplayedCorrectlyAPI" +
+            "")]
+        [NUnit.Framework.CategoryAttribute("Evergreen")]
+        [NUnit.Framework.CategoryAttribute("Devices")]
+        [NUnit.Framework.CategoryAttribute("EvergreenJnr_FilterFeature")]
+        [NUnit.Framework.CategoryAttribute("FilterFunctionality")]
+        [NUnit.Framework.CategoryAttribute("DAS11550")]
+        [NUnit.Framework.CategoryAttribute("DAS11749")]
+        [NUnit.Framework.CategoryAttribute("Not_Run")]
+        [NUnit.Framework.TestCaseAttribute("Application Name", new string[0])]
+        [NUnit.Framework.TestCaseAttribute("App Field 1", new string[0])]
+        [NUnit.Framework.TestCaseAttribute("Computer Warranty", new string[0])]
+        [NUnit.Framework.TestCaseAttribute("General Information field 1", new string[0])]
+        [NUnit.Framework.TestCaseAttribute("User Field 2", new string[0])]
+        public virtual void EvergreenJnr_DevicesList_CheckThatOperatorInSelectedFilterIsDisplayedCorrectlyAPI(string filterName, string[] exampleTags)
+        {
+            System.Exception lastException = null;
+            for (int i = 0; (i <= 1); i = (i + 1))
+            {
+                try
+                {
+                    this.EvergreenJnr_DevicesList_CheckThatOperatorInSelectedFilterIsDisplayedCorrectlyAPIInternal(filterName, exampleTags);
+                    return;
+                }
+                catch (System.Exception exc)
+                {
+                    lastException = exc;
+                }
+                if (((i + 1) 
+                            <= 1))
+                {
+                    testRunner.OnScenarioEnd();
+                }
+            }
+            if ((lastException != null))
+            {
+                throw lastException;
+            }
+        }
+        
+        private void EvergreenJnr_DevicesList_CheckThatOperatorInSelectedFilterIsDisplayedCorrectlyAPIInternal(string filterName, string[] exampleTags)
+        {
+            string[] @__tags = new string[] {
+                    "Evergreen",
+                    "Devices",
+                    "EvergreenJnr_FilterFeature",
+                    "FilterFunctionality",
+                    "DAS11550",
+                    "DAS11749",
+                    "Not_Run"};
+            if ((exampleTags != null))
+            {
+                @__tags = System.Linq.Enumerable.ToArray(System.Linq.Enumerable.Concat(@__tags, exampleTags));
+            }
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("EvergreenJnr_DevicesList_CheckThatOperatorInSelectedFilterIsDisplayedCorrectlyAPI" +
+                    "", @__tags);
+            this.ScenarioSetup(scenarioInfo);
+            this.FeatureBackground();
+            TechTalk.SpecFlow.Table table19 = new TechTalk.SpecFlow.Table(new string[] {
+                        "OperatorValues"});
+            table19.AddRow(new string[] {
+                        "Equals"});
+            table19.AddRow(new string[] {
+                        "Does not equal"});
+            table19.AddRow(new string[] {
+                        "Contains"});
+            table19.AddRow(new string[] {
+                        "Does not contain"});
+            table19.AddRow(new string[] {
+                        "Begins with"});
+            table19.AddRow(new string[] {
+                        "Ends with"});
+            testRunner.Then(string.Format("following operators are displayed for \"{0}\" filter on \"Devices\" page:", filterName), ((string)(null)), table19, "Then ");
+            this.ScenarioCleanup();
+        }
     }
 }
 #pragma warning restore
