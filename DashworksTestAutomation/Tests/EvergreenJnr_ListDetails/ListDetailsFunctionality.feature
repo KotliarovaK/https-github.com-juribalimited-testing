@@ -196,3 +196,19 @@ Examples:
 	| Users        | Username      |
 	| Applications | Application   |
 	| Mailboxes    | Email Address |
+
+	
+@Evergreen @AllLists @EvergreenJnr_ListDetails @ListDetailsFunctionality @DAS11721
+Scenario Outline: EvergreenJnr_AllLists_CheckThatGroupIconsAreDisplayedForAllPages
+	When User clicks "<PageName>" on the left-hand menu
+	Then "<PageName>" list should be displayed to the user
+	When User perform search by "<ObjectName>"
+	When User click content from "<ColumnName>" column
+	Then Group Icon for "" page is displayed 
+	
+	Examples: 
+	| PageName     | ObjectName                                                 | Columnname    |
+	| Devices      | 001BAQXT6JWFPI                                             | Hostname      |
+	| Users        | $231000-3AC04R8AR431 (Exchange Online-ApplicationAccount)  | Username      |
+	| Applications | "WPF/E" (codename) Community Technology Preview (Feb 2007) | Application   |
+	| Mailboxes    | 000F977AC8824FE39B8@bclabs.local                           | Email Address |
