@@ -123,6 +123,7 @@ namespace DashworksTestAutomation.Pages.Evergreen
         public int GetColumnNumberByName(string columnName)
         {
             var allHeadersSelector = By.XPath(".//div[@class='ag-header-container']/div/div");
+            Driver.WaitForDataLoading();
             Driver.WaitWhileControlIsNotDisplayed(allHeadersSelector);
             var allHeaders = Driver.FindElements(allHeadersSelector);
             if (!allHeaders.Any())
@@ -130,7 +131,6 @@ namespace DashworksTestAutomation.Pages.Evergreen
             var columnNumber =
                 allHeaders.IndexOf(allHeaders.First(x =>
                     x.FindElement(By.XPath(".//span[@class='ag-header-cell-text']")).Text.Equals(columnName))) + 1;
-
             return columnNumber;
         }
 
