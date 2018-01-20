@@ -53,7 +53,7 @@ namespace DashworksTestAutomation.Extensions
 
             try
             {
-                var viewstate = doc.DocumentNode.SelectSingleNode(".//input[@id='__VIEWSTATEa']")
+                var viewstate = doc.DocumentNode.SelectSingleNode(".//input[@id='__VIEWSTATE']")
                     .GetAttributeValue("value", "Failed to get VIEWSTATE");
 
                 var eventvalidation = doc.DocumentNode.SelectSingleNode(".//input[@id='__EVENTVALIDATION']")
