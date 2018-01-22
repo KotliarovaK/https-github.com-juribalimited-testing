@@ -57,6 +57,7 @@ namespace DashworksTestAutomation.Steps.Dashworks
 
                 var page = _driver.NowAt<BaseDashboardPage>();
                 _driver.WaitWhileControlIsNotDisplayed<BaseDashboardPage>(() => page.NoResultsFoundMessage);
+                _driver.WaitForDataLoading();
                 Assert.AreEqual(message, page.NoResultsFoundMessage.Text);
             }
         }
