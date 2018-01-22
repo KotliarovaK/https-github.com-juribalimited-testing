@@ -7,8 +7,11 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Net;
+using DashworksTestAutomation.Utils;
+using Microsoft.VisualStudio.TestTools.UnitTesting;
 using NUnit.Framework;
 using TechTalk.SpecFlow;
+using Assert = NUnit.Framework.Assert;
 
 namespace DashworksTestAutomation.Steps
 {
@@ -68,5 +71,30 @@ namespace DashworksTestAutomation.Steps
             var operatorsValues = allOperators.Select(x => x["key"].ToString()).ToList();
             Assert.AreEqual(table.Rows.SelectMany(row => row.Values).ToList(), operatorsValues);
         }
+
+        //[Then(@"default list page size is ""(.*)"" on ""(.*)"" page")]
+        //public void ThenDefaultListPageSizeIsOnPage(int pageSize, string pageName, string userName)
+        //{
+        //    var userId = DatabaseWorker.GetUserIdByLogin(userName);
+        //    var requestUri = $"{UrlProvider.RestClientBaseUrl}/userProfile/updateAdvanced";
+        //    var request = new RestRequest(requestUri);
+
+        //    request.AddParameter("Host", UrlProvider.RestClientBaseUrl);
+        //    request.AddParameter("Origin", UrlProvider.Url.TrimEnd('/'));
+        //    request.AddParameter("Referer", UrlProvider.EvergreenUrl);
+        //    request.AddParameter("userId", userId);
+        //    request.AddParameter("gridPageSize", null);
+        //    request.AddParameter("displayMode", 0);
+
+        //    var response = _client.Value.Get(request);
+
+        //    if (response.StatusCode != HttpStatusCode.OK)
+        //        throw new Exception($"Unable to execute request. URI: {requestUri}");
+
+        //    var content = response.Content;
+
+        //    var listPageSize = gridPageSize:["operators"];
+        //    Assert.AreEqual(table.Rows.SelectMany(row => row.Values).ToList(), operatorsValues);
+        //}
     }
 }
