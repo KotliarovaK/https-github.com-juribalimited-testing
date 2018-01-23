@@ -51,3 +51,18 @@ Scenario: EvergreenJnr_DevicesList_CheckThatLastLogoffDateFieldIsNotDisplayedAtT
 	And User navigates to the "Details" tab
 	And User navigates to the "Device Owner" section
 	Then "Last Logoff Date" field display state is "false" on Details tab
+	
+@Evergreen @AllLists @EvergreenJnr_ListDetails @ListDetailsFunctionality @DAS11721
+Scenario Outline: EvergreenJnr_AllLists_CheckThatGroupIconsAreDisplayedForAllPages
+	When User clicks "<PageName>" on the left-hand menu
+	Then "<PageName>" list should be displayed to the user
+	When User perform search by "<ObjectName>"
+	When User click content from "<ColumnName>" column
+	Then Group Icon for "<PageName>" page is displayed 
+	
+Examples: 
+	| PageName     | ObjectName                       | ColumnName    |
+	| Devices      | 001BAQXT6JWFPI                   | Hostname      |
+	| Users        | 002B5DC7D4D34D5C895              | Username      |
+	| Applications | Acrobat Reader 4                 | Application   |
+	| Mailboxes    | 00BDBAEA57334C7C8F4@bclabs.local | Email Address |
