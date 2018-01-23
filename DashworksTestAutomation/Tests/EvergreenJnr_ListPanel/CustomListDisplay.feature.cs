@@ -849,7 +849,7 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_ListPanel
             TechTalk.SpecFlow.Table table17 = new TechTalk.SpecFlow.Table(new string[] {
                         "SelectedRowsName"});
             table17.AddRow(new string[] {
-                        "01BQIYGGUW5PRP6"});
+                        "001BAQXT6JWFPI"});
             table17.AddRow(new string[] {
                         "00OMQQXWA1DRI6"});
             testRunner.When("User select \"Hostname\" rows in the grid", ((string)(null)), table17, "When ");
