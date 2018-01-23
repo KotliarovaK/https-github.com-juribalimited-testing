@@ -25,6 +25,9 @@ namespace DashworksTestAutomation.Pages.Evergreen
             };
         }
 
+        [FindsBy(How = How.XPath, Using = ".//div[@class='object-icon']//i")]
+        public IWebElement GroupIcon { get; set; }
+
         public void NavigateToSectionByName(string sectionName)
         {
             var section = Driver.FindElement(
