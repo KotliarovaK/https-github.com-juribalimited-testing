@@ -861,3 +861,31 @@ Scenario: EvergreenJnr_DevicesLists_CheckThatOperatorsForApplicationSavedListFil
 	Then Filters panel is displayed to the user
 	When user select "Application (Saved List)" filter
 	Then "In list" option is available for this filter
+
+	@Evergreen @Users @EvergreenJnr_FilterFeature @FilterFunctionality @DAS11619
+Scenario Outline: EvergreenJnr_UsersList_CheckThatAddColumnCheckboxIsDisabledForAlreadySelectedColumn
+	When User clicks "<ListName>" on the left-hand menu
+	Then "<ListName>" list should be displayed to the user
+	When User clicks the Filters button
+	Then Filters panel is displayed to the user
+	When user select "<FilterName>" filter
+	Then "Add column"checkbox is checked and cannot be unchecked
+
+Examples: 
+	| ListName     | FilterName              |
+	| Devices      | Hostname                |
+	| Devices      | Device Type             |
+	| Devices      | Operating System        |
+	| Devices      | Owner Display Name      |
+	| Users        | Username                |
+	| Users        | Domain                  |
+	| Users        | Display Name            |
+	| Users        | Distinguished Name      |
+	| Applications | Application             |
+	| Applications | Vendor                  |
+	| Applications | Version                 |
+	| Mailboxes    | Email Address (Primary) |
+	| Mailboxes    | Mailbox Platform        |
+	| Mailboxes    | Mail Server             |
+	| Mailboxes    | Mailbox Type            |
+	| Mailboxes    | Owner Display Name      |
