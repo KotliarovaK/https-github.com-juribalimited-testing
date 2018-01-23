@@ -352,30 +352,3 @@ Examples:
 	| Computer Warranty           |
 	| General Information field 1 |
 	| User Field 2                |
-
-@Evergreen @Users @EvergreenJnr_FilterFeature @FilterFunctionality @DAS11619
-Scenario Outline: EvergreenJnr_UsersList_CheckThatAddColumnCheckboxIsDisabledForAlreaySelectedColumn
-	When User clicks "<ListName>" on the left-hand menu
-	Then "<ListName>" list should be displayed to the user
-	When User clicks the Filters button
-	Then Filters panel is displayed to the user
-	When User add "<FilterName>" filter where type is "Equals" without added column and following checkboxes:
-
-Examples: 
-	| ListName     | FilterName         |
-	| Devices      | Hostname           |
-	| Devices      | Device Type        |
-	| Devices      | Operating System   |
-	| Devices      | Owner Display Name |
-	| Users        | Username           |
-	| Users        | Domain             |
-	| Users        | Display Name       |
-	| Users        | Distinguished Name |
-	| Applications | Application        |
-	| Applications | Vendor             |
-	| Applications | Version            |
-	| Mailboxes    | Email Address      |
-	| Mailboxes    | Mailbox Platform   |
-	| Mailboxes    | Mail Server        |
-	| Mailboxes    | Mailbox Type       |
-	| Mailboxes    | Owner Display Name |
