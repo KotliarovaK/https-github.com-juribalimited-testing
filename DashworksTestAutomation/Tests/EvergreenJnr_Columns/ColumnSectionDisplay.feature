@@ -95,3 +95,43 @@ Scenario: EvergreenJnr_MailboxesList_CheckThatCategoryRemainsOpenAfterAddingColu
 	| ColumnName |
 	| Import     |
 	| Enabled    |
+
+@Evergreen @Devices @EvergreenJnr_Columns @ColumnSectionDisplay @DAS11768
+Scenario: EvergreenJnr_Devices_CheckTheColumnCategoriesUpdateAfterAddingColumn
+	When User clicks "Devices" on the left-hand menu
+	Then "Devices" list should be displayed to the user
+	When User clicks the Columns button
+	Then Columns panel is displayed to the user
+	When ColumnName is entered into the search box and the selection is clicked
+	| ColumnName |
+	| Build Date |
+	Then ColumnName is added to the list
+	| ColumnName |
+	| Build Date |
+	When User clicks "Devices" on the left-hand menu
+	Then "Devices" list should be displayed to the user
+	When User clicks the Columns button
+	Then Columns panel is displayed to the user
+	When ColumnName is entered into the search box and the selection is clicked
+	| ColumnName |
+	| Build Date |
+
+@Evergreen @Users @EvergreenJnr_Columns @ColumnSectionDisplay @DAS11768
+Scenario: EvergreenJnr_Users_CheckTheColumnCategoriesUpdateAfterAddingColumn
+	When User clicks "Users" on the left-hand menu
+	Then "Users" list should be displayed to the user
+	When User clicks the Columns button
+	Then Columns panel is displayed to the user
+	When ColumnName is entered into the search box and the selection is clicked
+	| ColumnName |
+	| Zip Code   |
+	Then ColumnName is added to the list
+	| ColumnName |
+	| Zip Code   |
+	When User clicks "Devices" on the left-hand menu
+	Then "Devices" list should be displayed to the user
+	When User clicks the Columns button
+	Then Columns panel is displayed to the user
+	When ColumnName is entered into the search box and the selection is clicked
+	| ColumnName |
+	| Zip Code   |
