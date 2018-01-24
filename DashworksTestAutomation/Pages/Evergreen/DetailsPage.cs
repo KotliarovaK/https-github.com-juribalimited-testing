@@ -44,14 +44,14 @@ namespace DashworksTestAutomation.Pages.Evergreen
 
         public void ExpandAllSections()
         {
-            Driver.WaitWhileControlIsNotDisplayed(By.XPath(".//button[@aria-describedby='cdk-describedby-message-30']"));
-            var expandButtons = Driver.FindElements(By.XPath(".//button[@aria-describedby='cdk-describedby-message-30']"));
+            Driver.WaitWhileControlIsNotDisplayed(By.XPath(".//i[@class='material-icons mat-item_add mat-18']/ancestor::button"));
+            var expandButtons = Driver.FindElements(By.XPath(".//i[@class='material-icons mat-item_add mat-18']/ancestor::button"));
 
             if (expandButtons.Any())
             {
                 foreach (IWebElement button in expandButtons)
                 {
-                    Driver.WaitWhileControlIsNotDisplayed<DetailsPage>(() => button);
+                    //Driver.WaitWhileControlIsNotDisplayed<DetailsPage>(() => button);
                     Driver.MouseHover(button);
                     button.Click();
                     Driver.WaitForDataLoading();

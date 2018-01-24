@@ -382,9 +382,6 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_Search
                         "Windows Vista",
                         "475"});
             table11.AddRow(new string[] {
-                        "O\'Connor",
-                        "13"});
-            table11.AddRow(new string[] {
                         "@demo.juriba.com",
                         "16,717"});
             table11.AddRow(new string[] {
