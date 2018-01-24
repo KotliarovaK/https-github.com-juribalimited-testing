@@ -296,7 +296,7 @@ Scenario: EvergreenJnr_ApplicationsList_CheckThat500ErrorInNotDisplayedWhenUserA
 	Then "1,269" rows are displayed in the agGrid
 	Then "(Device Count (Installed) < 10)" text is displayed in filter container
 
-@Evergreen @Devices @EvergreenJnr_FilterFeature @FilterFunctionality @DAS11551
+@Evergreen @Devices @EvergreenJnr_FilterFeature @FilterFunctionality @DAS11551 @Not_Run
 Scenario Outline: EvergreenJnr_DevicesList_CheckThatEmptyNotEmptyOperatorsIsWorkedCorrectly
 	When User clicks "Devices" on the left-hand menu
 	Then "Devices" list should be displayed to the user
@@ -333,3 +333,49 @@ Examples:
 	| whencreated            | Does not contain | 2017                                                       | Add whencreated column            |
 	| department             | Ends with        | LongName01234567890123456789012345678901234567890123456789 | Add Department column             |
 	| iscriticalsystemobject | Not empty        |                                                            | Add iscriticalsystemobject column |
+
+@Evergreen @Devices @EvergreenJnr_FilterFeature @FilterFunctionality @DAS11550 @DAS11749 @Not_Run
+Scenario Outline: EvergreenJnr_DevicesList_CheckThatOperatorInSelectedFilterIsDisplayedCorrectlyAPI
+	Then following operators are displayed for "<FilterName>" filter on "Devices" page:
+	| OperatorValues   |
+	| Equals           |
+	| Does not equal   |
+	| Contains         |
+	| Does not contain |
+	| Begins with      |
+	| Ends with        |
+
+Examples:
+	| FilterName                  |
+	| Application Name            |
+	| App Field 1                 |
+	| Computer Warranty           |
+	| General Information field 1 |
+	| User Field 2                |
+
+@Evergreen @Users @EvergreenJnr_FilterFeature @FilterFunctionality @DAS11619
+Scenario Outline: EvergreenJnr_UsersList_CheckThatAddColumnCheckboxIsDisabledForAlreaySelectedColumn
+	When User clicks "<ListName>" on the left-hand menu
+	Then "<ListName>" list should be displayed to the user
+	When User clicks the Filters button
+	Then Filters panel is displayed to the user
+	When User add "<FilterName>" filter where type is "Equals" without added column and following checkboxes:
+
+Examples: 
+	| ListName     | FilterName         |
+	| Devices      | Hostname           |
+	| Devices      | Device Type        |
+	| Devices      | Operating System   |
+	| Devices      | Owner Display Name |
+	| Users        | Username           |
+	| Users        | Domain             |
+	| Users        | Display Name       |
+	| Users        | Distinguished Name |
+	| Applications | Application        |
+	| Applications | Vendor             |
+	| Applications | Version            |
+	| Mailboxes    | Email Address      |
+	| Mailboxes    | Mailbox Platform   |
+	| Mailboxes    | Mail Server        |
+	| Mailboxes    | Mailbox Type       |
+	| Mailboxes    | Owner Display Name |

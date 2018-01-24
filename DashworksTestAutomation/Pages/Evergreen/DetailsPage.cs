@@ -25,6 +25,9 @@ namespace DashworksTestAutomation.Pages.Evergreen
             };
         }
 
+        [FindsBy(How = How.XPath, Using = ".//div[@class='object-icon']//i")]
+        public IWebElement GroupIcon { get; set; }
+
         public void NavigateToSectionByName(string sectionName)
         {
             var section = Driver.FindElement(
@@ -41,6 +44,7 @@ namespace DashworksTestAutomation.Pages.Evergreen
 
         public void ExpandAllSections()
         {
+            Driver.WaitWhileControlIsNotDisplayed(By.XPath(".//button[@aria-describedby='cdk-describedby-message-30']"));
             var expandButtons = Driver.FindElements(By.XPath(".//button[@aria-describedby='cdk-describedby-message-30']"));
 
             if (expandButtons.Any())

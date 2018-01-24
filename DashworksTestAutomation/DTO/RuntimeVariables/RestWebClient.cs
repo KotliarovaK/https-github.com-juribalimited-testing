@@ -24,9 +24,9 @@ namespace DashworksTestAutomation.DTO.RuntimeVariables
             request.AddParameter("Host", UrlProvider.RestClientBaseUrl);
             request.AddParameter("Origin", UrlProvider.Url.TrimEnd('/'));
             request.AddParameter("Referer", UrlProvider.EvergreenUrl);
-            request.AddParameter("userId", userId);
-            request.AddParameter("languageName", language);
             request.AddParameter("displayMode", 0);
+            request.AddParameter("languageName", language);
+            request.AddParameter("userId", userId);
 
             var response = Value.Put(request);
 

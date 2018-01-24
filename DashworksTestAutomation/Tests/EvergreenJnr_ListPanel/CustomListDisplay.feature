@@ -239,7 +239,7 @@ Scenario: EvergreenJnr_DevicesList_CheckTheSortOrderIsSavedForExistingListAndNot
 	Then Actions panel is displayed to the user
 	When User select "Hostname" rows in the grid
 	| SelectedRowsName |
-	| 01BQIYGGUW5PRP6  |
+	| 001BAQXT6JWFPI   |
 	| 00OMQQXWA1DRI6   |
 	And User create static list with "Static List TestName" name
 	Then "Static List TestName" list is displayed to user
@@ -720,3 +720,16 @@ Scenario: EvergreenJnr_DevicesLists_CheckThatUserIsNotAbleToCreateListsWithLongN
 	When User clicks the Actions button
 	And User select all rows
 	When User create static list with "1234567890123456789012345678901234567890111" name
+
+@Evergreen @AllLists @EvergreenJnr_ListPanel @CustomListDisplay @DAS11342
+Scenario Outline: EvergreenJnr_AllListsLists_CheckThatAllListsNamesAreDisplayedCorrectly
+	When User clicks "<ListName>" on the left-hand menu
+	Then "<ListName>" list should be displayed to the user
+	Then "<AllListName>" list name is displayed correctly
+
+Examples:
+	| ListName     | AllListName      |
+	| Devices      | All Devices      |
+	| Applications | All Applications |
+	| Users        | All Users        |
+	| Mailboxes    | All Mailboxes    |

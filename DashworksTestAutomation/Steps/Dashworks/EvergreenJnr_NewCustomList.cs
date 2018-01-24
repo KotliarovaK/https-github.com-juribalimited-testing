@@ -105,6 +105,13 @@ namespace DashworksTestAutomation.Steps.Dashworks
             Assert.AreEqual(listName, page.ActiveCustomListName());
         }
 
+        [Then(@"""(.*)"" list name is displayed correctly")]
+        public void ThenListNameIsDisplayedCorrectly(string listName)
+        {
+            var listElement = _driver.NowAt<CustomListElement>();
+            Assert.AreEqual(listName, listElement.CheckAllListName(listName).Text);
+        }
+
         [When(@"User update current custom list")]
         public void WhenUserUpdateCurrentCustomList()
         {
