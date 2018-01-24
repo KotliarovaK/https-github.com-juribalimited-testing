@@ -69,8 +69,11 @@ Runs Evergreen URL query strings for the Users List.
 Scenario: EvergreenJnr_QueryString_Mailboxes
 Runs Evergreen URL query strings for the Mailboxes List.
 	When Evergreen QueryStringURL is entered for Simple QueryType
-	| QueryType | QueryStringURL                                                                                                                                                                                                                                         |
-	| Devices   | evergreen/#/mailboxes?$select=principalEmailAddress,mailboxPlatform,serverName,mailboxType,ownerDisplayName,displayName,ownerEmailAddress,departmentCode,locationName,customField_81,project_48_subCategory,project_48_requestType,project_48_teamName |
+	| QueryType          | QueryStringURL                                                                                                                                                                                                                                                                                                     |
+	| Devices            | evergreen/#/mailboxes?$select=principalEmailAddress,mailboxPlatform,serverName,mailboxType,ownerDisplayName,displayName,ownerEmailAddress,departmentCode,locationName,customField_81,project_48_subCategory,project_48_requestType,project_48_teamName                                                             |
+	| EmailMigra filters | evergreen/#/mailboxes?$filter=(project_48_inScope%20EQUALS%20('1')%20AND%20project_48_objectStatus%20EQUALS%20('Onboarded'%2C'Forecast'%2C'Targeted'%2C'Scheduled'%2C'Migrated'))&$select=principalEmailAddress,mailboxPlatform,serverName,mailboxType,ownerDisplayName,project_48_inScope,project_48_objectStatus |
+	| EmailMigra filters | evergreen/#/mailboxes?$filter=(project_48_inScope%20EQUALS%20('1')%20AND%20project_48_objectStatus%20EQUALS%20('Scheduled'))&$select=principalEmailAddress,mailboxPlatform,serverName,mailboxType,ownerDisplayName,project_48_inScope,project_48_objectStatus                                                      |
+	| EmailMigra filters | evergreen/#/mailboxes?$filter=(project_48_inScope%20EQUALS%20('1')%20AND%20project_48_objectStatus%20EQUALS%20('Onboarded'))&$select=principalEmailAddress,mailboxPlatform,serverName,mailboxType,ownerDisplayName,project_48_inScope,project_48_objectStatus                                                      |
 	Then agGrid Main Object List is returned with data
 
 @Evergreen @Devices @EvergreenJnr_QueryStrings @Query @DAS10789
