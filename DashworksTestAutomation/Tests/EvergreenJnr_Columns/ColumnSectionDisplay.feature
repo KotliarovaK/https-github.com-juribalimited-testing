@@ -97,7 +97,7 @@ Scenario: EvergreenJnr_MailboxesList_CheckThatCategoryRemainsOpenAfterAddingColu
 	| Enabled    |
 
 @Evergreen @Devices @EvergreenJnr_Columns @ColumnSectionDisplay @DAS11768
-Scenario: EvergreenJnr_Devices_CheckTheColumnCategoriesUpdateAfterAddingColumn
+Scenario: EvergreenJnr_Devices_CheckTheColumnCategoriesUpdatesAfterAddingColumn
 	When User clicks "Devices" on the left-hand menu
 	Then "Devices" list should be displayed to the user
 	When User clicks the Columns button
@@ -108,17 +108,34 @@ Scenario: EvergreenJnr_Devices_CheckTheColumnCategoriesUpdateAfterAddingColumn
 	Then ColumnName is added to the list
 	| ColumnName |
 	| Build Date |
-	When User clicks "Devices" on the left-hand menu
+	When User navigates to the "All Devices" list
 	Then "Devices" list should be displayed to the user
 	When User clicks the Columns button
 	Then Columns panel is displayed to the user
 	When ColumnName is entered into the search box and the selection is clicked
 	| ColumnName |
 	| Build Date |
+	Then ColumnName is added to the list
+	| ColumnName |
+	| Build Date |
 
-@Evergreen @Users @EvergreenJnr_Columns @ColumnSectionDisplay @DAS11768
-Scenario: EvergreenJnr_Users_CheckTheColumnCategoriesUpdateAfterAddingColumn
+@Evergreen @Users @EvergreenJnr_Columns @ColumnSectionDisplay @DAS11768 @Delete_Newly_Created_List
+Scenario: EvergreenJnr_Users_CheckTheColumnCategoriesUpdatesAfterAddingColumnForDynamicLists
 	When User clicks "Users" on the left-hand menu
+	Then "Users" list should be displayed to the user
+	When User click on 'Domain' column header
+	Then data in table is sorted by 'Domain' column in ascending order
+	When User create custom list with "DynamicList" name
+	Then "DynamicList" list is displayed to user
+	When User clicks the Columns button
+	Then Columns panel is displayed to the user
+	When ColumnName is entered into the search box and the selection is clicked
+	| ColumnName |
+	| Zip Code   |
+	Then ColumnName is added to the list
+	| ColumnName |
+	| Zip Code   |
+	When User navigates to the "All Users" list
 	Then "Users" list should be displayed to the user
 	When User clicks the Columns button
 	Then Columns panel is displayed to the user
@@ -128,10 +145,58 @@ Scenario: EvergreenJnr_Users_CheckTheColumnCategoriesUpdateAfterAddingColumn
 	Then ColumnName is added to the list
 	| ColumnName |
 	| Zip Code   |
-	When User clicks "Devices" on the left-hand menu
-	Then "Devices" list should be displayed to the user
+
+@Evergreen @Applications @EvergreenJnr_Columns @ColumnSectionDisplay @DAS11768 @Delete_Newly_Created_List
+Scenario: EvergreenJnr_Applications_CheckTheColumnCategoriesUpdatesAfterAddingColumnForStaticLists
+	When User clicks "Applications" on the left-hand menu
+	Then "Applications" list should be displayed to the user
+	When User clicks the Actions button
+	Then Actions panel is displayed to the user
+	When User select all rows
+	And User create static list with "StaticList" name
+	Then "StaticList" list is displayed to user
 	When User clicks the Columns button
 	Then Columns panel is displayed to the user
 	When ColumnName is entered into the search box and the selection is clicked
-	| ColumnName |
-	| Zip Code   |
+	| ColumnName           |
+	| Windows7Mi: In Scope |
+	Then ColumnName is added to the list
+	| ColumnName           |
+	| Windows7Mi: In Scope |
+	When User navigates to the "All Applications" list
+	Then "Applications" list should be displayed to the user
+	When User clicks the Columns button
+	Then Columns panel is displayed to the user
+	When ColumnName is entered into the search box and the selection is clicked
+	| ColumnName           |
+	| Windows7Mi: In Scope |
+	Then ColumnName is added to the list
+	| ColumnName           |
+	| Windows7Mi: In Scope |
+
+@Evergreen @Mailboxes @EvergreenJnr_Columns @ColumnSectionDisplay @DAS11768 @Delete_Newly_Created_List
+Scenario: EvergreenJnr_Mailboxes_CheckTheColumnCategoriesUpdatesAfterAddingColumnForDynamicLists
+	When User clicks "Mailboxes" on the left-hand menu
+	Then "Mailboxes" list should be displayed to the user
+	When User click on 'Email Address' column header
+	Then data in table is sorted by 'Email Address' column in ascending order
+	When User create custom list with "DynamicList" name
+	Then "DynamicList" list is displayed to user
+	When User clicks the Columns button
+	Then Columns panel is displayed to the user
+	When ColumnName is entered into the search box and the selection is clicked
+	| ColumnName                 |
+	| EmailMigra: Scheduled date |
+	Then ColumnName is added to the list
+	| ColumnName                 |
+	| EmailMigra: Scheduled date |
+	When User navigates to the "All Mailboxes" list
+	Then "Mailboxes" list should be displayed to the user
+	When User clicks the Columns button
+	Then Columns panel is displayed to the user
+	When ColumnName is entered into the search box and the selection is clicked
+	| ColumnName                 |
+	| EmailMigra: Scheduled date |
+	Then ColumnName is added to the list
+	| ColumnName                 |
+	| EmailMigra: Scheduled date |
