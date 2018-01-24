@@ -344,6 +344,14 @@ namespace DashworksTestAutomation.Steps.Dashworks
             Assert.IsTrue(filterElement.AddCategoryColumnCheckbox.Selected, $"{addColumn} Checkbox is not selected");
         }
 
+        [Then(@"""(.*)""checkbox is checked and cannot be unchecked")]
+        public void ThenCheckboxIsCheckedAndCannotBeUnchecked(string addColumn)
+        {
+            var filterElement = _driver.NowAt<FiltersElement>();
+            Assert.IsTrue(Convert.ToBoolean(filterElement.AddCategoryColumnCheckbox.GetAttribute("disabled")), $"{addColumn} Checkbox is not selected");
+            Assert.IsTrue(filterElement.AddCategoryColumnCheckbox.Selected, $"{addColumn} Checkbox is not selected");
+        }
+
         [Then(@"""(.*)"" checkbox is unchecked")]
         public void ThenCheckboxIsUnchecked(string addColumn)
         {
