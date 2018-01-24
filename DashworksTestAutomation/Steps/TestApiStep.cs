@@ -72,29 +72,28 @@ namespace DashworksTestAutomation.Steps
             Assert.AreEqual(table.Rows.SelectMany(row => row.Values).ToList(), operatorsValues);
         }
 
-        //[Then(@"default list page size is ""(.*)"" on ""(.*)"" page")]
-        //public void ThenDefaultListPageSizeIsOnPage(int pageSize, string pageName, string userName)
-        //{
-        //    var userId = DatabaseWorker.GetUserIdByLogin(userName);
-        //    var requestUri = $"{UrlProvider.RestClientBaseUrl}/userProfile/updateAdvanced";
-        //    var request = new RestRequest(requestUri);
+        [Then(@"default list page Size is ""(.*)"" and Cache ""(.*)"" on ""(.*)"" page")]
+        public void ThenDefaultListPageSizeIsAndCacheOnPage(int pageSize, int pageCache, string pageName)
+        {
+            var requestUri = $"{UrlProvider.RestClientBaseUrl}security/userprofile";
+            var request = new RestRequest(requestUri);
 
-        //    request.AddParameter("Host", UrlProvider.RestClientBaseUrl);
-        //    request.AddParameter("Origin", UrlProvider.Url.TrimEnd('/'));
-        //    request.AddParameter("Referer", UrlProvider.EvergreenUrl);
-        //    request.AddParameter("userId", userId);
-        //    request.AddParameter("gridPageSize", null);
-        //    request.AddParameter("displayMode", 0);
+            request.AddParameter("Host", UrlProvider.RestClientBaseUrl);
+            request.AddParameter("Origin", UrlProvider.Url.TrimEnd('/'));
+            request.AddParameter("Referer", UrlProvider.EvergreenUrl);
 
-        //    var response = _client.Value.Get(request);
+            var response = _client.Value.Get(request);
 
-        //    if (response.StatusCode != HttpStatusCode.OK)
-        //        throw new Exception($"Unable to execute request. URI: {requestUri}");
+            if (response.StatusCode != HttpStatusCode.OK)
+                throw new Exception($"Unable to execute request. URI: {requestUri}");
 
-        //    var content = response.Content;
+            var content = response.Content;
 
-        //    var listPageSize = gridPageSize:["operators"];
-        //    Assert.AreEqual(table.Rows.SelectMany(row => row.Values).ToList(), operatorsValues);
-        //}
+            var pageOptions = JsonConvert.DeserializeObject<JObject>(content);
+            var listPageSize = Convert.ToInt32(pageOptions["gridPageSize"]);
+            var listPageToCache = Convert.ToInt32(pageOptions["gridPageCache"]);
+            Assert.AreEqual(pageSize, listPageSize);
+            Assert.AreEqual(pageCache, listPageToCache);
+        }
     }
 }
