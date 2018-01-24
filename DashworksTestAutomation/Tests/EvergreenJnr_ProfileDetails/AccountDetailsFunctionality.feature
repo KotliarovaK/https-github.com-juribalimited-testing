@@ -65,7 +65,7 @@ Scenario: EvergreenJnr_AccountDetails_CheckThatErrorIsNotDisplayedAfterChangingP
 
 @Evergreen @Devices @EvergreenJnr_FilterFeature @FilterFunctionality @DAS11723
 Scenario Outline: EvergreenJnr_AccountDetails_CheckThatDefaultListPageSizeIs1000API
-	Then default list page size is "1000" on "<ListName>" page
+	Then default list page Size is "1000" and Cache "10" on "<ListName>" page
 
 Examples:
 	| ListName     |
