@@ -862,8 +862,8 @@ Scenario: EvergreenJnr_DevicesLists_CheckThatOperatorsForApplicationSavedListFil
 	When user select "Application (Saved List)" filter
 	Then "In list" option is available for this filter
 
-	@Evergreen @Users @EvergreenJnr_FilterFeature @FilterFunctionality @DAS11619
-Scenario Outline: EvergreenJnr_UsersList_CheckThatAddColumnCheckboxIsDisabledForAlreadySelectedColumn
+@Evergreen @AllLisrs @Evergreen_FiltersFeature @FiltersDisplay @DAS11619
+Scenario Outline: EvergreenJnr_AllLists_CheckThatAddColumnCheckboxIsDisabledForAlreadySelectedColumn
 	When User clicks "<ListName>" on the left-hand menu
 	Then "<ListName>" list should be displayed to the user
 	When User clicks the Filters button
