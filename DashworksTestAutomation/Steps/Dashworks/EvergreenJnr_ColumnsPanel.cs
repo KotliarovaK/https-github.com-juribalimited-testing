@@ -56,7 +56,7 @@ namespace DashworksTestAutomation.Steps.Dashworks
                 columnElement.AddColumn(row["ColumnName"]);
 
                 //Clear the textbox after adding a column, so it is reset for the next loop
-                columnElement.SearchTextbox.Clear();
+                columnElement.SearchTextbox.ClearWithHomeButton(_driver);
             }
 
             //Minimise the Selected Columns

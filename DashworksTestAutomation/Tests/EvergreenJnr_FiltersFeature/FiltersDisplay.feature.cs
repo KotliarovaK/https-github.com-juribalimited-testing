@@ -339,7 +339,7 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_FiltersFeature
         [NUnit.Framework.TestAttribute()]
         [NUnit.Framework.DescriptionAttribute("EvergreenJnr_AllLists_CheckThatAddColumnOptionIsAvailableForFilters")]
         [NUnit.Framework.CategoryAttribute("Evergreen")]
-        [NUnit.Framework.CategoryAttribute("AllLisrs")]
+        [NUnit.Framework.CategoryAttribute("AllLists")]
         [NUnit.Framework.CategoryAttribute("Evergreen_FiltersFeature")]
         [NUnit.Framework.CategoryAttribute("FiltersDisplay")]
         [NUnit.Framework.CategoryAttribute("DAS10795")]
@@ -382,7 +382,7 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_FiltersFeature
         {
             string[] @__tags = new string[] {
                     "Evergreen",
-                    "AllLisrs",
+                    "AllLists",
                     "Evergreen_FiltersFeature",
                     "FiltersDisplay",
                     "DAS10795",
@@ -2986,7 +2986,7 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_FiltersFeature
         [NUnit.Framework.DescriptionAttribute("EvergreenJnr_AllLists_CheckThatAddColumnCheckboxIsDisabledForAlreadySelectedColum" +
             "n")]
         [NUnit.Framework.CategoryAttribute("Evergreen")]
-        [NUnit.Framework.CategoryAttribute("AllLisrs")]
+        [NUnit.Framework.CategoryAttribute("AllLists")]
         [NUnit.Framework.CategoryAttribute("Evergreen_FiltersFeature")]
         [NUnit.Framework.CategoryAttribute("FiltersDisplay")]
         [NUnit.Framework.CategoryAttribute("DAS11619")]
@@ -3036,7 +3036,7 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_FiltersFeature
         {
             string[] @__tags = new string[] {
                     "Evergreen",
-                    "AllLisrs",
+                    "AllLists",
                     "Evergreen_FiltersFeature",
                     "FiltersDisplay",
                     "DAS11619"};
