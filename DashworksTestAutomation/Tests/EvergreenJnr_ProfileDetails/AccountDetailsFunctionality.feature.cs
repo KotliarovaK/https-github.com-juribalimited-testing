@@ -271,17 +271,15 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_ProfileDetails
         [NUnit.Framework.CategoryAttribute("EvergreenJnr_FilterFeature")]
         [NUnit.Framework.CategoryAttribute("FilterFunctionality")]
         [NUnit.Framework.CategoryAttribute("DAS11723")]
-        [NUnit.Framework.TestCaseAttribute("Applications", new string[0])]
-        [NUnit.Framework.TestCaseAttribute("Mailboxes", new string[0])]
-        [NUnit.Framework.TestCaseAttribute("Users", new string[0])]
-        public virtual void EvergreenJnr_AccountDetails_CheckThatDefaultListPageSizeIs1000API(string listName, string[] exampleTags)
+        [NUnit.Framework.CategoryAttribute("Not_Run")]
+        public virtual void EvergreenJnr_AccountDetails_CheckThatDefaultListPageSizeIs1000API()
         {
             System.Exception lastException = null;
             for (int i = 0; (i <= 1); i = (i + 1))
             {
                 try
                 {
-                    this.EvergreenJnr_AccountDetails_CheckThatDefaultListPageSizeIs1000APIInternal(listName, exampleTags);
+                    this.EvergreenJnr_AccountDetails_CheckThatDefaultListPageSizeIs1000APIInternal();
                     return;
                 }
                 catch (System.Exception exc)
@@ -300,22 +298,18 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_ProfileDetails
             }
         }
         
-        private void EvergreenJnr_AccountDetails_CheckThatDefaultListPageSizeIs1000APIInternal(string listName, string[] exampleTags)
+        private void EvergreenJnr_AccountDetails_CheckThatDefaultListPageSizeIs1000APIInternal()
         {
-            string[] @__tags = new string[] {
-                    "Evergreen",
-                    "Devices",
-                    "EvergreenJnr_FilterFeature",
-                    "FilterFunctionality",
-                    "DAS11723"};
-            if ((exampleTags != null))
-            {
-                @__tags = System.Linq.Enumerable.ToArray(System.Linq.Enumerable.Concat(@__tags, exampleTags));
-            }
-            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("EvergreenJnr_AccountDetails_CheckThatDefaultListPageSizeIs1000API", @__tags);
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("EvergreenJnr_AccountDetails_CheckThatDefaultListPageSizeIs1000API", new string[] {
+                        "Evergreen",
+                        "Devices",
+                        "EvergreenJnr_FilterFeature",
+                        "FilterFunctionality",
+                        "DAS11723",
+                        "Not_Run"});
             this.ScenarioSetup(scenarioInfo);
             this.FeatureBackground();
-            testRunner.Then(string.Format("default list page Size is \"1000\" and Cache \"10\" on \"{0}\" page", listName), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+            testRunner.Then("default list page Size is \"1000\" and Cache \"10\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
             this.ScenarioCleanup();
         }
     }

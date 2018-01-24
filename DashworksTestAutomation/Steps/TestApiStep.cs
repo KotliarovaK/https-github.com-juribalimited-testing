@@ -72,8 +72,8 @@ namespace DashworksTestAutomation.Steps
             Assert.AreEqual(table.Rows.SelectMany(row => row.Values).ToList(), operatorsValues);
         }
 
-        [Then(@"default list page Size is ""(.*)"" and Cache ""(.*)"" on ""(.*)"" page")]
-        public void ThenDefaultListPageSizeIsAndCacheOnPage(int pageSize, int pageCache, string pageName)
+        [Then(@"default list page Size is ""(.*)"" and Cache ""(.*)""")]
+        public void ThenDefaultListPageSizeIsAndCache(int pageSize, int pageCache)
         {
             var requestUri = $"{UrlProvider.RestClientBaseUrl}security/userprofile";
             var request = new RestRequest(requestUri);
