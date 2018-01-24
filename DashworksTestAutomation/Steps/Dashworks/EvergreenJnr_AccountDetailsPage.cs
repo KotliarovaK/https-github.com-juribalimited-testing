@@ -60,7 +60,7 @@ namespace DashworksTestAutomation.Steps.Dashworks
         public void ThenErrorMessageIsNotDisplayedOnProfilePage()
         {
             var page = _driver.NowAt<AccountDetailsPage>();
-            Assert.IsFalse(page.ErrorMessage.Displayed());
+            Assert.IsFalse(page.ErrorMessage.Displayed(), "Error message is displayed on Account Page");
         }
 
         [Then(@"""(.*)"" is displayed in Full Name field")]
