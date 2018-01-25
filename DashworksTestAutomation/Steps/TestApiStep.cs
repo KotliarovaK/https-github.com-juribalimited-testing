@@ -7,8 +7,11 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Net;
+using DashworksTestAutomation.Utils;
+using Microsoft.VisualStudio.TestTools.UnitTesting;
 using NUnit.Framework;
 using TechTalk.SpecFlow;
+using Assert = NUnit.Framework.Assert;
 
 namespace DashworksTestAutomation.Steps
 {
@@ -67,6 +70,30 @@ namespace DashworksTestAutomation.Steps
             var allOperators = filter["operators"];
             var operatorsValues = allOperators.Select(x => x["key"].ToString()).ToList();
             Assert.AreEqual(table.Rows.SelectMany(row => row.Values).ToList(), operatorsValues);
+        }
+
+        [Then(@"default list page Size is ""(.*)"" and Cache ""(.*)""")]
+        public void ThenDefaultListPageSizeIsAndCache(int pageSize, int pageCache)
+        {
+            var requestUri = $"{UrlProvider.RestClientBaseUrl}security/userprofile";
+            var request = new RestRequest(requestUri);
+
+            request.AddParameter("Host", UrlProvider.RestClientBaseUrl);
+            request.AddParameter("Origin", UrlProvider.Url.TrimEnd('/'));
+            request.AddParameter("Referer", UrlProvider.EvergreenUrl);
+
+            var response = _client.Value.Get(request);
+
+            if (response.StatusCode != HttpStatusCode.OK)
+                throw new Exception($"Unable to execute request. URI: {requestUri}");
+
+            var content = response.Content;
+
+            var pageOptions = JsonConvert.DeserializeObject<JObject>(content);
+            var listPageSize = Convert.ToInt32(pageOptions["gridPageSize"]);
+            var listPageToCache = Convert.ToInt32(pageOptions["gridPageCache"]);
+            Assert.AreEqual(pageSize, listPageSize);
+            Assert.AreEqual(pageCache, listPageToCache);
         }
     }
 }
