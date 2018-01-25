@@ -81,10 +81,11 @@ namespace DashworksTestAutomation.Steps.Dashworks
 
         private void CheckColumnDisplayedState(Table table, bool displayedState)
         {
+            _driver.WaitForDataLoading();
+
             var listpageMenu = _driver.NowAt<BaseDashboardPage>();
             foreach (var row in table.Rows)
             {
-                _driver.WaitForDataLoading();
                 Assert.AreEqual(displayedState, listpageMenu.IsColumnPresent(row["ColumnName"]),
                     $"Column '{row["ColumnName"]}' displayed state should be {displayedState}");
             }
@@ -231,6 +232,7 @@ namespace DashworksTestAutomation.Steps.Dashworks
             {
                 resetButton.Click();
             }
+
             Assert.AreEqual(subCategoriesCount, columnElement.GetSubcategoriesCountByCategoryName(categoryName));
         }
 
