@@ -13,7 +13,8 @@ namespace DashworksTestAutomation.Pages.Evergreen.ProfileDetailsPages
         public IWebElement LanguageDropdown { get; set; }
 
         [FindsBy(How = How.XPath,
-            Using = ".//label[text()='Display Mode']/ancestor::div[@class='form-item']//div[@class='styleSelectDropdown']")]
+            Using =
+                ".//label[text()='Display Mode']/ancestor::div[@class='form-item']//div[@class='styleSelectDropdown']")]
         public IWebElement DisplayModeDropdown { get; set; }
 
         [FindsBy(How = How.XPath, Using = ".//span[text()='UPDATE']/ancestor::button")]
@@ -27,6 +28,8 @@ namespace DashworksTestAutomation.Pages.Evergreen.ProfileDetailsPages
             Driver.WaitForDataLoading();
             return new List<By>
             {
+                SelectorFor(this, p => p.LanguageDropdown),
+                SelectorFor(this, p => p.DisplayModeDropdown),
                 SelectorFor(this, p => p.UpdateButton)
             };
         }
