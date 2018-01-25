@@ -66,3 +66,14 @@ Examples:
 	| Users        | 002B5DC7D4D34D5C895              | Username      |
 	| Applications | Acrobat Reader 4                 | Application   |
 	| Mailboxes    | 00BDBAEA57334C7C8F4@bclabs.local | Email Address |
+
+@Evergreen @Devices @EvergreenJnr_ItemDetails @ItemDetailsDisplay @DAS11732
+Scenario: EvergreenJnr_DevicesList_CheckThatDataIsDisplayedAfterAddingColumns
+	When User clicks "Devices" on the left-hand menu
+	Then "Devices" list should be displayed to the user
+	When User click content from "Hostname" column
+	And User navigates to the "Applications" tab
+	When User have opened column settings for "Application" column
+	When User have opened column settings for "Compliance" column
+	#When User click Options button in "" column header
+	
