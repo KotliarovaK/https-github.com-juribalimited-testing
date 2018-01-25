@@ -1,4 +1,5 @@
-﻿using OpenQA.Selenium.Remote;
+﻿using DashworksTestAutomation.DTO.RuntimeVariables;
+using OpenQA.Selenium.Remote;
 using TechTalk.SpecFlow;
 
 namespace DashworksTestAutomation.Steps.Base

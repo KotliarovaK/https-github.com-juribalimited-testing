@@ -9,14 +9,14 @@ namespace DashworksTestAutomation.Pages.Evergreen.ProfileDetailsPages
     internal class PreferencesPage : SeleniumBasePage
     {
         [FindsBy(How = How.XPath,
-            Using = ".//span[text()='Language']/ancestor::div[@class='form-item']//div[@class='dropdown-wrapper']")]
+            Using = ".//label[text()='Language']/ancestor::div[@class='form-item']//div[@class='styleSelectDropdown']")]
         public IWebElement LanguageDropdown { get; set; }
 
         [FindsBy(How = How.XPath,
-            Using = ".//span[text()='Display Mode']/ancestor::div[@class='form-item']//div[@class='dropdown-wrapper']")]
+            Using = ".//label[text()='Display Mode']/ancestor::div[@class='form-item']//div[@class='styleSelectDropdown']")]
         public IWebElement DisplayModeDropdown { get; set; }
 
-        [FindsBy(How = How.XPath, Using = ".//button[@title='UPDATE']")]
+        [FindsBy(How = How.XPath, Using = ".//span[text()='UPDATE']/ancestor::button")]
         public IWebElement UpdateButton { get; set; }
 
         [FindsBy(How = How.XPath, Using = ".//div[@class='inline-success']")]
@@ -27,8 +27,6 @@ namespace DashworksTestAutomation.Pages.Evergreen.ProfileDetailsPages
             Driver.WaitForDataLoading();
             return new List<By>
             {
-                SelectorFor(this, p => p.LanguageDropdown),
-                SelectorFor(this, p => p.DisplayModeDropdown),
                 SelectorFor(this, p => p.UpdateButton)
             };
         }
