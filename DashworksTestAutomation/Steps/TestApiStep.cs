@@ -19,14 +19,16 @@ namespace DashworksTestAutomation.Steps
     internal class TestApiStep : SpecFlowContext
     {
         private readonly RestWebClient _client;
+        private readonly ResponceDetails _responce;
 
-        public TestApiStep(RestWebClient client)
+        public TestApiStep(RestWebClient client, ResponceDetails responce)
         {
             _client = client;
+            _responce = responce;
         }
 
         [When(@"I perform test request to the Users API and get operators by ""(.*)"" filter")]
-        public void WhenIPerformTestRequestToTheUsersAPIAndGetOperatorsByFilter(string filterName)
+        public void WhenIPerformTestRequestToTheUsersApiAndGetOperatorsByFilter(string filterName)
         {
             var requestUri = $"{UrlProvider.RestClientBaseUrl}users/filters?$lang=en-GB";
             var request = new RestRequest(requestUri);
@@ -48,8 +50,8 @@ namespace DashworksTestAutomation.Steps
             var operatorsValues = allOperators.Select(x => x["key"].ToString()).ToList();
         }
 
-        [Then(@"following operators are displayed for ""(.*)"" filter on ""(.*)"" page:")]
-        public void ThenFollowingOperatorsAreDisplayedForFilterOnPage(string filterName, string pageName, Table table)
+        [Then(@"following operators are displayed in ""(.*)"" category for ""(.*)"" filter on ""(.*)"" page:")]
+        public void ThenFollowingOperatorsAreDisplayedInCategoryForFilterOnPage(string categoryName, string filterName, string pageName, Table table)
         {
             var requestUri = $"{UrlProvider.RestClientBaseUrl}{pageName.ToLower()}/filters?$lang=en-GB";
             var request = new RestRequest(requestUri);
@@ -66,7 +68,7 @@ namespace DashworksTestAutomation.Steps
             var content = response.Content;
 
             var allFilters = JsonConvert.DeserializeObject<List<JObject>>(content);
-            var filter = allFilters.First(x => x["label"].ToString().Equals(filterName));
+            var filter = allFilters.First(x => x["translatedCategory"].ToString().Equals(categoryName) && x["label"].ToString().Equals(filterName));
             var allOperators = filter["operators"];
             var operatorsValues = allOperators.Select(x => x["key"].ToString()).ToList();
             Assert.AreEqual(table.Rows.SelectMany(row => row.Values).ToList(), operatorsValues);
@@ -94,6 +96,30 @@ namespace DashworksTestAutomation.Steps
             var listPageToCache = Convert.ToInt32(pageOptions["gridPageCache"]);
             Assert.AreEqual(pageSize, listPageSize);
             Assert.AreEqual(pageCache, listPageToCache);
+        }
+
+        [When(@"I perform test request to the ""(.*)"" API and get ""(.*)"" item")]
+        public void WhenIPerformTestRequestToTheApiAndGetItem(string pageName, string itemName)
+        {
+            var requestUri = $"{UrlProvider.RestClientBaseUrl}{pageName.ToLower()}/9141/compatibilitySummary?$lang=en-GB";
+            var request = new RestRequest(requestUri);
+
+            request.AddParameter("Host", UrlProvider.RestClientBaseUrl);
+            request.AddParameter("Origin", UrlProvider.Url.TrimEnd('/'));
+            request.AddParameter("Referer", UrlProvider.EvergreenUrl);
+
+            _responce.Value = _client.Value.Get(request);
+
+            if (_responce.Value.StatusCode != HttpStatusCode.OK)
+                throw new Exception($"Unable to execute request. URI: {requestUri}");
+        }
+
+        [Then(@"""(.*)"" field display state is ""(.*)"" on Details tab")]
+        public void ThenFieldIsDisplayedOnDetailsTab(string fieldName, bool state)
+        {
+            var content = _responce.Value;
+            var field = content["friendlyName"];
+            Assert.AreEqual(state, field.IsFieldPresent(fieldName), $"Incorrect display state for {fieldName}");
         }
     }
 }

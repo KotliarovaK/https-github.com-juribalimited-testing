@@ -334,9 +334,9 @@ Examples:
 	| department             | Ends with        | LongName01234567890123456789012345678901234567890123456789 | Add Department column             |
 	| iscriticalsystemobject | Not empty        |                                                            | Add iscriticalsystemobject column |
 
-@Evergreen @Devices @EvergreenJnr_FilterFeature @FilterFunctionality @DAS11550 @DAS11749 @Not_Run
+@Evergreen @Devices @EvergreenJnr_FilterFeature @FilterFunctionality @DAS11550 @DAS11749
 Scenario Outline: EvergreenJnr_DevicesList_CheckThatOperatorInSelectedFilterIsDisplayedCorrectlyAPI
-	Then following operators are displayed for "<FilterName>" filter on "Devices" page:
+	Then following operators are displayed in "<CategoryName>" category for "<FilterName>" filter on "Devices" page:
 	| OperatorValues   |
 	| Equals           |
 	| Does not equal   |
@@ -346,9 +346,9 @@ Scenario Outline: EvergreenJnr_DevicesList_CheckThatOperatorInSelectedFilterIsDi
 	| Ends with        |
 
 Examples:
-	| FilterName                  |
-	| Application Name            |
-	| App Field 1                 |
-	| Computer Warranty           |
-	| General Information field 1 |
-	| User Field 2                |
+	| CategoryName              | FilterName                  |
+	| Application               | Application Name            |
+	| Application Custom Fields | App field 1                 |
+	| Application Custom Fields | Computer Warranty           |
+	| Application Custom Fields | General information field 1 |
+	| Application Custom Fields | User Field 2                |
