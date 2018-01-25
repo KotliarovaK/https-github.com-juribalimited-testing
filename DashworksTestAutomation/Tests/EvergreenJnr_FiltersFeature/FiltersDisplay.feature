@@ -75,7 +75,7 @@ Scenario: EvergreenJnr_DevicesList_CheckThatEmptyAndNotEmptyOptionsIsAvaildableF
 	When user select "AD Object Key" filter
 	Then "Equals, Does not equal, Greater than, Greater than or equal to, Less than, Less than or equal to, Empty, Not empty" option is available for this filter
 
-@Evergreen @AllLisrs @Evergreen_FiltersFeature @FiltersDisplay @DAS10795 @DAS10781 @DAS11573 
+@Evergreen @AllLists @Evergreen_FiltersFeature @FiltersDisplay @DAS10795 @DAS10781 @DAS11573 
 Scenario Outline: EvergreenJnr_AllLists_CheckThatAddColumnOptionIsAvailableForFilters
 	When User clicks "<PageName>" on the left-hand menu
 	Then "<PageName>" list should be displayed to the user
@@ -862,8 +862,8 @@ Scenario: EvergreenJnr_DevicesLists_CheckThatOperatorsForApplicationSavedListFil
 	When user select "Application (Saved List)" filter
 	Then "In list" option is available for this filter
 
-	@Evergreen @Users @EvergreenJnr_FilterFeature @FilterFunctionality @DAS11619
-Scenario Outline: EvergreenJnr_UsersList_CheckThatAddColumnCheckboxIsDisabledForAlreadySelectedColumn
+@Evergreen @AllLists @EvergreenJnr_FilterFeature @FiltersDisplay @DAS11619
+Scenario Outline: EvergreenJnr_AllLists_CheckThatAddColumnCheckboxIsDisabledForAlreadySelectedColumn
 	When User clicks "<ListName>" on the left-hand menu
 	Then "<ListName>" list should be displayed to the user
 	When User clicks the Filters button
