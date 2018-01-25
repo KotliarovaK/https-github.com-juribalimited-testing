@@ -41,6 +41,27 @@ namespace DashworksTestAutomation.Steps.Dashworks
             _userDto.Email = page.EmailField.GetAttribute("value");
         }
 
+        [When(@"User navigates to the ""(.*)"" page on Account details")]
+        public void WhenUserNavigatesToThePageOnAccountDetails(string poageToNavigate)
+        {
+            var page = _driver.NowAt<AccountDetailsPage>();
+            page.NavigateToPage(poageToNavigate);
+        }
+        
+        [When(@"User changes language to ""(.*)""")]
+        public void WhenUserChangesLanguageTo(string language)
+        {
+            var page = _driver.NowAt<PreferencesPage>();
+            _driver.SelectCustomSelectbox(page.LanguageDropdown, language);
+        }
+        
+        [When(@"User clicks Update button on Preferences page")]
+        public void WhenUserClicksUpdateButtonOnPreferencesPage()
+        {
+            var page = _driver.NowAt<PreferencesPage>();
+            page.UpdateButton.Click();
+        }
+
         [When(@"User changes Full Name to ""(.*)""")]
         public void WhenUserChangesFullNameTo(string fullName)
         {
