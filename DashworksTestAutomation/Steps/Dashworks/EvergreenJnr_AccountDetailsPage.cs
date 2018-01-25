@@ -60,7 +60,8 @@ namespace DashworksTestAutomation.Steps.Dashworks
         public void ThenErrorMessageIsNotDisplayedOnProfilePage()
         {
             var page = _driver.NowAt<AccountDetailsPage>();
-            Assert.IsFalse(page.ErrorMessage.Displayed());
+            Assert.IsFalse(page.ErrorMessage.Displayed(),
+                $"Error message is displayed on Account Page");
         }
 
         [Then(@"""(.*)"" is displayed in Full Name field")]
@@ -111,7 +112,7 @@ namespace DashworksTestAutomation.Steps.Dashworks
         public void WhenUserUploadIncorrectAvatarToAccountDetails()
         {
             var page = _driver.NowAt<AccountDetailsPage>();
-            IAllowsFileDetection allowsDetection = (IAllowsFileDetection)_driver;
+            IAllowsFileDetection allowsDetection = (IAllowsFileDetection) _driver;
             allowsDetection.FileDetector = new LocalFileDetector();
             string file = Path.GetDirectoryName(Path.GetDirectoryName(TestContext.CurrentContext.TestDirectory)) +
                           ResourceFilesNamesProvider.IncorrectFile;
@@ -122,7 +123,7 @@ namespace DashworksTestAutomation.Steps.Dashworks
         public void WhenUserUploadIncorrectAvatarToProfileDetails()
         {
             var page = _driver.NowAt<AccountDetailsPage>();
-            IAllowsFileDetection allowsDetection = (IAllowsFileDetection)_driver;
+            IAllowsFileDetection allowsDetection = (IAllowsFileDetection) _driver;
             allowsDetection.FileDetector = new LocalFileDetector();
             string file = Path.GetDirectoryName(Path.GetDirectoryName(TestContext.CurrentContext.TestDirectory)) +
                           ResourceFilesNamesProvider.CorrectFile;
@@ -173,7 +174,9 @@ namespace DashworksTestAutomation.Steps.Dashworks
                 page.RemoveButton.Click();
                 page.UpdateButton.Click();
             }
-            catch { }
+            catch
+            {
+            }
         }
     }
 }

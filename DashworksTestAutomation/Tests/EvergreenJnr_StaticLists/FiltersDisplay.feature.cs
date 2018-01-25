@@ -135,7 +135,7 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_StaticLists
             TechTalk.SpecFlow.Table table2 = new TechTalk.SpecFlow.Table(new string[] {
                         "SelectedRowsName"});
             table2.AddRow(new string[] {
-                        "01BQIYGGUW5PRP6"});
+                        "001BAQXT6JWFPI"});
             table2.AddRow(new string[] {
                         "00HA7MKAVVFDAV"});
             testRunner.When("User select \"Hostname\" rows in the grid", ((string)(null)), table2, "When ");

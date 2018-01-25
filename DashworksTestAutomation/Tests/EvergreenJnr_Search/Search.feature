@@ -89,7 +89,7 @@ Scenario: EvergreenJnr_DevicesList_SearchTests
 	| Véronique Duplessis | 1            |
 	| Virtual             | 1,996        |
 	| Windows Vista       | 475          |
-	| O'Connor            | 13           |
+	#| O'Connor            | 13           |
 	| @demo.juriba.com    | 16,717       |
 	| 192.168.6           | 5,100        |
 	| RED                 | 9,238        |

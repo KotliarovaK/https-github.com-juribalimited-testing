@@ -25,7 +25,7 @@ Scenario: EvergreenJnr_DevicesList_CheckThatDynamicFiltersAreClearedForStaticLis
 	Then Actions panel is displayed to the user
 	When User select "Hostname" rows in the grid
 	| SelectedRowsName |
-	| 01BQIYGGUW5PRP6  |
+	| 001BAQXT6JWFPI   |
 	| 00HA7MKAVVFDAV   |
 	And User create static list with "Static List TestName" name
 	Then "Static List TestName" list is displayed to user
