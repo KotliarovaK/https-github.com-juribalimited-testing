@@ -287,7 +287,6 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_QueryStrings
         [NUnit.Framework.CategoryAttribute("EvergreenJnr_QueryStrings")]
         [NUnit.Framework.CategoryAttribute("Query")]
         [NUnit.Framework.CategoryAttribute("DAS11023")]
-        [NUnit.Framework.CategoryAttribute("Not_Run")]
         public virtual void EvergreenJnr_QueryString_Applications()
         {
             System.Exception lastException = null;
@@ -321,8 +320,7 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_QueryStrings
                         "Applications",
                         "EvergreenJnr_QueryStrings",
                         "Query",
-                        "DAS11023",
-                        "Not_Run"});
+                        "DAS11023"});
             this.ScenarioSetup(scenarioInfo);
             this.FeatureBackground();
             TechTalk.SpecFlow.Table table4 = new TechTalk.SpecFlow.Table(new string[] {

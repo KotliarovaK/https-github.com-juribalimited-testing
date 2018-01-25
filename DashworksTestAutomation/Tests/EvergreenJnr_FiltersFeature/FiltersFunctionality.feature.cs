@@ -1122,6 +1122,8 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_FiltersFeature
         [NUnit.Framework.CategoryAttribute("EvergreenJnr_FilterFeature")]
         [NUnit.Framework.CategoryAttribute("FilterFunctionality")]
         [NUnit.Framework.CategoryAttribute("DAS11551")]
+        [NUnit.Framework.CategoryAttribute("DAS11550")]
+        [NUnit.Framework.CategoryAttribute("DAS11749")]
         [NUnit.Framework.CategoryAttribute("Not_Run")]
         [NUnit.Framework.TestCaseAttribute("Empty", new string[0])]
         [NUnit.Framework.TestCaseAttribute("Not Empty", new string[0])]
@@ -1159,6 +1161,8 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_FiltersFeature
                     "EvergreenJnr_FilterFeature",
                     "FilterFunctionality",
                     "DAS11551",
+                    "DAS11550",
+                    "DAS11749",
                     "Not_Run"};
             if ((exampleTags != null))
             {
