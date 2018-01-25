@@ -196,3 +196,21 @@ Examples:
 	| Users        | Username      |
 	| Applications | Application   |
 	| Mailboxes    | Email Address |
+
+@Evergreen @AllLists @EvergreenJnr_ListDetails @ListDetailsFunctionality @DAS11648
+Scenario Outline: EvergreenJnr_AllLists_CheckThatListDetailsButtonIsDisabledForDefaultListsAfterChangingALanguage
+	When User clicks Profile in Account Dropdown
+	Then Profile page is displayed to user
+	When User navigates to the "Preferences" page on Account details
+	And User changes language to "English US"
+	And User clicks Update button on Preferences page
+	And User clicks "<PageName>" on the left-hand menu
+	Then "<PageName>" list should be displayed to the user
+	And List details button is disabled
+
+Examples: 
+	| PageName     |
+	| Devices      |
+	| Users        |
+	| Applications |
+	| Mailboxes    |

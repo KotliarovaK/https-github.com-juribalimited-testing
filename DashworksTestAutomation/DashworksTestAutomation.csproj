@@ -188,7 +188,6 @@
     <Compile Include="Pages\Evergreen\ProfileDetailsPages\AdvancedPage.cs" />
     <Compile Include="Pages\Evergreen\ProfileDetailsPages\ChangePasswordPage.cs" />
     <Compile Include="Pages\Evergreen\ProfileDetailsPages\PreferencesPage.cs" />
-    <Compile Include="Pages\Evergreen\ProfileDetailsPages\ProfileNavigationMenu.cs" />
     <Compile Include="Pages\Evergreen\UsersPage.cs" />
     <Compile Include="Pages\DashworksHeaderMenuElement.cs" />
     <Compile Include="Pages\LoginPage.cs" />
