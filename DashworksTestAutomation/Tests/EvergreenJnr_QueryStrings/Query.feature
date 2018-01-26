@@ -39,7 +39,7 @@ Runs Evergreen URL query strings for the 4 default all lists.
 	| All Mailboxes    | evergreen/#/mailboxes?$select=principalEmailAddress,mailboxPlatform,serverName,mailboxType,ownerDisplayName |
 	Then agGrid Main Object List is returned with data
 
-@Evergreen @Applications @EvergreenJnr_QueryStrings @Query @DAS11023 @Not_Run
+@Evergreen @Applications @EvergreenJnr_QueryStrings @Query @DAS11023
 Scenario: EvergreenJnr_QueryString_Applications
 Runs Evergreen URL query strings for the Applications List.
 	When Evergreen QueryStringURL is entered for Simple QueryType

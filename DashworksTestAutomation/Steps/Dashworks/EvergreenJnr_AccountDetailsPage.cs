@@ -41,6 +41,27 @@ namespace DashworksTestAutomation.Steps.Dashworks
             _userDto.Email = page.EmailField.GetAttribute("value");
         }
 
+        [When(@"User navigates to the ""(.*)"" page on Account details")]
+        public void WhenUserNavigatesToThePageOnAccountDetails(string poageToNavigate)
+        {
+            var page = _driver.NowAt<AccountDetailsPage>();
+            page.NavigateToPage(poageToNavigate);
+        }
+        
+        [When(@"User changes language to ""(.*)""")]
+        public void WhenUserChangesLanguageTo(string language)
+        {
+            var page = _driver.NowAt<PreferencesPage>();
+            _driver.SelectCustomSelectbox(page.LanguageDropdown, language);
+        }
+        
+        [When(@"User clicks Update button on Preferences page")]
+        public void WhenUserClicksUpdateButtonOnPreferencesPage()
+        {
+            var page = _driver.NowAt<PreferencesPage>();
+            page.UpdateButton.Click();
+        }
+
         [When(@"User changes Full Name to ""(.*)""")]
         public void WhenUserChangesFullNameTo(string fullName)
         {
@@ -60,7 +81,8 @@ namespace DashworksTestAutomation.Steps.Dashworks
         public void ThenErrorMessageIsNotDisplayedOnProfilePage()
         {
             var page = _driver.NowAt<AccountDetailsPage>();
-            Assert.IsFalse(page.ErrorMessage.Displayed(), "Error message is displayed on Account Page");
+            Assert.IsFalse(page.ErrorMessage.Displayed(),
+                $"Error message is displayed on Account Page");
         }
 
         [Then(@"""(.*)"" is displayed in Full Name field")]
@@ -111,7 +133,7 @@ namespace DashworksTestAutomation.Steps.Dashworks
         public void WhenUserUploadIncorrectAvatarToAccountDetails()
         {
             var page = _driver.NowAt<AccountDetailsPage>();
-            IAllowsFileDetection allowsDetection = (IAllowsFileDetection)_driver;
+            IAllowsFileDetection allowsDetection = (IAllowsFileDetection) _driver;
             allowsDetection.FileDetector = new LocalFileDetector();
             string file = Path.GetDirectoryName(Path.GetDirectoryName(TestContext.CurrentContext.TestDirectory)) +
                           ResourceFilesNamesProvider.IncorrectFile;
@@ -122,7 +144,7 @@ namespace DashworksTestAutomation.Steps.Dashworks
         public void WhenUserUploadIncorrectAvatarToProfileDetails()
         {
             var page = _driver.NowAt<AccountDetailsPage>();
-            IAllowsFileDetection allowsDetection = (IAllowsFileDetection)_driver;
+            IAllowsFileDetection allowsDetection = (IAllowsFileDetection) _driver;
             allowsDetection.FileDetector = new LocalFileDetector();
             string file = Path.GetDirectoryName(Path.GetDirectoryName(TestContext.CurrentContext.TestDirectory)) +
                           ResourceFilesNamesProvider.CorrectFile;
@@ -173,7 +195,9 @@ namespace DashworksTestAutomation.Steps.Dashworks
                 page.RemoveButton.Click();
                 page.UpdateButton.Click();
             }
-            catch { }
+            catch
+            {
+            }
         }
     }
 }
