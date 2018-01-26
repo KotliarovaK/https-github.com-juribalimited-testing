@@ -1,44 +1,26 @@
-﻿using DashworksTestAutomation.Providers;
-using DashworksTestAutomation.Utils;
-using RestSharp;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Net;
+using System.Text;
+using System.Threading.Tasks;
+using DashworksTestAutomation.Providers;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Linq;
+using RestSharp;
 
 namespace DashworksTestAutomation.DTO.RuntimeVariables
 {
-    internal class RestWebClient
+    class ItemDetailsSectionConvertor
     {
         public RestClient Value { get; set; }
 
-        public RestWebClient()
+        public ItemDetailsSectionConvertor()
         {
             Value = new RestClient(UrlProvider.RestClientBaseUrl);
         }
 
-        public void ChangeUserProfileLanguage(string userName, string language)
-        {
-            var userId = DatabaseWorker.GetUserIdByLogin(userName);
-            var requestUri = $"{UrlProvider.RestClientBaseUrl}userProfile/updatePreferences";
-            var request = new RestRequest(requestUri);
-
-            request.AddParameter("Host", UrlProvider.RestClientBaseUrl);
-            request.AddParameter("Origin", UrlProvider.Url.TrimEnd('/'));
-            request.AddParameter("Referer", UrlProvider.EvergreenUrl);
-            request.AddParameter("displayMode", 0);
-            request.AddParameter("languageName", language);
-            request.AddParameter("userId", userId);
-
-            var response = Value.Put(request);
-
-            if (response.StatusCode != HttpStatusCode.OK)
-                throw new Exception($"Unable to execute request. URI: {requestUri}");
-        }
-
-        public string GetDeviceIdByName(string itemName, string pageName)
+        public string GetColumnNameByPageName(string pageName, string tabName)
         {
             var column = "";
             var returnValue = "";
@@ -46,19 +28,19 @@ namespace DashworksTestAutomation.DTO.RuntimeVariables
             {
                 case "Devices":
                     column = "hostname";
-                    returnValue = "computerKey";
+                    returnValue = "deviceDetails";
                     break;
                 case "Users":
                     column = "username";
-                    returnValue = "objectKey";
+                    returnValue = "userDetails";
                     break;
                 case "Applications":
                     column = "packageName";
-                    returnValue = "packageKey";
+                    returnValue = "applicationDetails";
                     break;
                 case "Mailboxes":
                     column = "principalEmailAddress";
-                    returnValue = "mailboxKey";
+                    returnValue = "mailboxDetails";
                     break;
                 default:
                     throw new Exception($"{pageName} not found");
@@ -77,7 +59,7 @@ namespace DashworksTestAutomation.DTO.RuntimeVariables
             var content = response.Content;
 
             var allItems = JsonConvert.DeserializeObject<JObject>(content)["results"];
-            var item = allItems.First(x => x[column].ToString().Equals(itemName));
+            var item = allItems.First(x => x[column].ToString().Equals(tabName));
             return item[returnValue].ToString();
         }
     }

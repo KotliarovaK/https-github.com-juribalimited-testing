@@ -102,14 +102,15 @@ namespace DashworksTestAutomation.Steps
         public void WhenIPerformTestRequestToTheApiAndGetItemSummary(string pageName, string itemName)
         {
             var itemId = _client.GetDeviceIdByName(itemName, pageName);
+            var tabs = _client.GetColumnNameByPageName(pageName, tabName);
             var requestUri = "";
-            if (pageName == "Mailboxes")
+            if (pageName == "columnName")
             {
-                requestUri = $"{UrlProvider.RestClientBaseUrl}{pageName.ToLower().TrimEnd('s').TrimEnd('e')}/{itemId}/mailboxDetails?$lang=en-GB";
+                requestUri = $"{UrlProvider.RestClientBaseUrl}{pageName.ToLower().TrimEnd('s').TrimEnd('e')}/{itemId}/{tabs}?$lang=en-GB";
             }
             else
             {
-                requestUri = $"{UrlProvider.RestClientBaseUrl}{pageName.ToLower().TrimEnd('s')}/{itemId}/mailboxDetails?$lang=en-GB";
+                requestUri = $"{UrlProvider.RestClientBaseUrl}{pageName.ToLower().TrimEnd('s')}/{itemId}/{tabs}?$lang=en-GB";
 
             }
             var request = new RestRequest(requestUri);

@@ -149,6 +149,7 @@
     <Compile Include="Base\IBaseTest.cs" />
     <Compile Include="Base\SeleniumBasePage.cs" />
     <Compile Include="DTO\RuntimeVariables\Filter.cs" />
+    <Compile Include="DTO\RuntimeVariables\ItemDetailsSectionConvertor.cs" />
     <Compile Include="DTO\RuntimeVariables\ResponceDetails.cs" />
     <Compile Include="DTO\RuntimeVariables\RestWebClient.cs" />
     <Compile Include="DTO\RuntimeVariables\UsedUsers.cs" />
