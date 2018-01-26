@@ -43,6 +43,17 @@ Examples:
 	| alfredo.m.daniel@dwlabs.local | Cloud Mail Server | false        |
 	| alex.cristea@juriba.com       | Mail Server       | false        |
 
+@Evergreen @Mailboxes @EvergreenJnr_ItemDetails @ItemDetailsDisplay @DAS11478 @DAS11477 @DAS11476
+Scenario Outline: EvergreenJnr_MailboxesList_CheckStateOfSelectedFieldOnDetailsTab
+	When I perform test request to the "<PageName>" API and get "<ColumnName>" item summary
+	Then "<FieldName>" field display state is "<DisplayState>" on Details tab API
+
+Examples:
+	| PageName  | ColumnName                    | FieldName         | DisplayState |
+	| Mailboxes | alfredo.m.daniel@dwlabs.local | Mailbox Database  | True         |
+	| Mailboxes | alfredo.m.daniel@dwlabs.local | Cloud Mail Server | False        |
+	| Mailboxes | alex.cristea@juriba.com       | Mail Server       | False        |
+
 @Evergreen @Devices @EvergreenJnr_ItemDetails @ItemDetailsDisplay @DAS11510
 Scenario: EvergreenJnr_DevicesList_CheckThatLastLogoffDateFieldIsNotDisplayedAtTheDeviceOwnerBlockOfDeviceDetails
 	When User clicks "Devices" on the left-hand menu
