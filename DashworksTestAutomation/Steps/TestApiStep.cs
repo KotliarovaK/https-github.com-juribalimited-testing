@@ -98,10 +98,20 @@ namespace DashworksTestAutomation.Steps
             Assert.AreEqual(pageCache, listPageToCache);
         }
 
-        [When(@"I perform test request to the ""(.*)"" API and get ""(.*)"" item")]
-        public void WhenIPerformTestRequestToTheApiAndGetItem(string pageName, string itemName)
+        [When(@"I perform test request to the ""(.*)"" API and get ""(.*)"" item summary")]
+        public void WhenIPerformTestRequestToTheApiAndGetItemSummary(string pageName, string itemName)
         {
-            var requestUri = $"{UrlProvider.RestClientBaseUrl}{pageName.ToLower()}/9141/compatibilitySummary?$lang=en-GB";
+            var itemId = _client.GetDeviceIdByName(itemName, pageName);
+            var requestUri = "";
+            if (pageName == "Mailboxes")
+            {
+                requestUri = $"{UrlProvider.RestClientBaseUrl}{pageName.ToLower().TrimEnd('s').TrimEnd('e')}/{itemId}/mailboxDetails?$lang=en-GB";
+            }
+            else
+            {
+                requestUri = $"{UrlProvider.RestClientBaseUrl}{pageName.ToLower().TrimEnd('s')}/{itemId}/mailboxDetails?$lang=en-GB";
+
+            }
             var request = new RestRequest(requestUri);
 
             request.AddParameter("Host", UrlProvider.RestClientBaseUrl);
@@ -114,12 +124,13 @@ namespace DashworksTestAutomation.Steps
                 throw new Exception($"Unable to execute request. URI: {requestUri}");
         }
 
-        [Then(@"""(.*)"" field display state is ""(.*)"" on Details tab")]
-        public void ThenFieldIsDisplayedOnDetailsTab(string fieldName, bool state)
+        [Then(@"""(.*)"" field display state is ""(.*)"" on Details tab API")]
+        public void ThenFieldIsDisplayedOnDetailsTab(string fieldName, string state)
         {
-            var content = _responce.Value;
-            var field = content["friendlyName"];
-            Assert.AreEqual(state, field.IsFieldPresent(fieldName), $"Incorrect display state for {fieldName}");
+            var content = _responce.Value.Content;
+            var allItems = JsonConvert.DeserializeObject<JObject>(content)["metadata"];
+            var item = allItems.First(x => x["friendlyName"].ToString().Equals(fieldName));
+            Assert.AreEqual(state, item["visible"].ToString(), $"Incorrect display state for {fieldName}");
         }
     }
 }
