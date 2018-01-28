@@ -85,16 +85,18 @@ namespace DashworksTestAutomation.Steps.Dashworks
                     ? new KeyValuePair<DateTime, string>(datevalue, date)
                     : new KeyValuePair<DateTime, string>(DateTime.MinValue, date));
             }
+
             try
             {
-                Assert.AreEqual(expectedList.OrderByDescending(s => s).ToList(), expectedList);
+                Assert.AreEqual(expectedList.OrderByDescending(s => s).ToList(), expectedList,
+                    "Incorrect sorting order");
             }
             catch (Exception)
             {
                 for (int i = 0; i < expectedList.Count; i++)
                 {
                     Assert.AreEqual(unsortedList.OrderByDescending(x => x.Key).Select(x => x.Value).ToArray()[i],
-                        expectedList[i]);
+                        expectedList[i], "Incorrect sorting order");
                 }
             }
         }
@@ -115,16 +117,17 @@ namespace DashworksTestAutomation.Steps.Dashworks
                     ? new KeyValuePair<DateTime, string>(datevalue, date)
                     : new KeyValuePair<DateTime, string>(DateTime.MinValue, date));
             }
+
             try
             {
-                Assert.AreEqual(expectedList.OrderBy(s => s).ToList(), expectedList);
+                Assert.AreEqual(expectedList.OrderBy(s => s).ToList(), expectedList, "Incorrect sorting order");
             }
             catch (Exception)
             {
                 for (int i = 0; i < expectedList.Count; i++)
                 {
                     Assert.AreEqual(unsortedList.OrderBy(x => x.Key).Select(x => x.Value).ToArray()[i],
-                        expectedList[i]);
+                        expectedList[i], "Incorrect sorting order");
                 }
             }
         }
@@ -147,7 +150,7 @@ namespace DashworksTestAutomation.Steps.Dashworks
                 var content = page.GetColumnContent(row["ColumnName"]);
 
                 //Check that at least 10 cells has some content
-                Assert.IsTrue(content.Select(string.IsNullOrEmpty).Count() > 10);
+                Assert.IsTrue(content.Select(string.IsNullOrEmpty).Count() > 10, "Newly added column is empty");
             }
         }
 

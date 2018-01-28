@@ -149,6 +149,7 @@
     <Compile Include="Base\IBaseTest.cs" />
     <Compile Include="Base\SeleniumBasePage.cs" />
     <Compile Include="DTO\RuntimeVariables\Filter.cs" />
+    <Compile Include="DTO\RuntimeVariables\ResponceDetails.cs" />
     <Compile Include="DTO\RuntimeVariables\RestWebClient.cs" />
     <Compile Include="DTO\RuntimeVariables\UsedUsers.cs" />
     <Compile Include="DTO\AuthObject.cs" />
@@ -188,7 +189,6 @@
     <Compile Include="Pages\Evergreen\ProfileDetailsPages\AdvancedPage.cs" />
     <Compile Include="Pages\Evergreen\ProfileDetailsPages\ChangePasswordPage.cs" />
     <Compile Include="Pages\Evergreen\ProfileDetailsPages\PreferencesPage.cs" />
-    <Compile Include="Pages\Evergreen\ProfileDetailsPages\ProfileNavigationMenu.cs" />
     <Compile Include="Pages\Evergreen\UsersPage.cs" />
     <Compile Include="Pages\DashworksHeaderMenuElement.cs" />
     <Compile Include="Pages\LoginPage.cs" />

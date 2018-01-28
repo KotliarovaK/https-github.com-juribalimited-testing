@@ -2,7 +2,11 @@
 using DashworksTestAutomation.Utils;
 using RestSharp;
 using System;
+using System.Collections.Generic;
+using System.Linq;
 using System.Net;
+using Newtonsoft.Json;
+using Newtonsoft.Json.Linq;
 
 namespace DashworksTestAutomation.DTO.RuntimeVariables
 {
@@ -32,6 +36,49 @@ namespace DashworksTestAutomation.DTO.RuntimeVariables
 
             if (response.StatusCode != HttpStatusCode.OK)
                 throw new Exception($"Unable to execute request. URI: {requestUri}");
+        }
+
+        public string GetDeviceIdByName(string deviceName, string pageName)
+        {
+            var column = "";
+            var returnValue = "";
+            switch (pageName)
+            {
+                case "Devices":
+                    column = "hostname";
+                    returnValue = "computerKey";
+                    break;
+                case "Users":
+                    column = "username";
+                    returnValue = "objectKey";
+                    break;
+                case "Applications":
+                    column = "packageName";
+                    returnValue = "packageKey";
+                    break;
+                case "Mailboxes":
+                    column = "principalEmailAddress";
+                    returnValue = "mailboxKey";
+                    break;
+                default:
+                    throw new Exception($"{pageName} not found");
+            }
+            var requestUri = $"{UrlProvider.RestClientBaseUrl}{pageName.ToLower()}";
+            var request = new RestRequest(requestUri);
+
+            request.AddParameter("Host", UrlProvider.RestClientBaseUrl);
+            request.AddParameter("Origin", UrlProvider.Url.TrimEnd('/'));
+            request.AddParameter("Referer", UrlProvider.EvergreenUrl);
+
+            var response = Value.Get(request);
+
+            if (response.StatusCode != HttpStatusCode.OK)
+                throw new Exception($"Unable to execute request. URI: {requestUri}");
+            var content = response.Content;
+
+            var allItems = JsonConvert.DeserializeObject<JObject>(content)["results"];
+            var item = allItems.First(x => x[column].ToString().Equals(deviceName));
+            return item[returnValue].ToString();
         }
     }
 }

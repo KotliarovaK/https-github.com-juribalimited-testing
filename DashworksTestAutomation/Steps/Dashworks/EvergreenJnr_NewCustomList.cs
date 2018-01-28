@@ -109,7 +109,7 @@ namespace DashworksTestAutomation.Steps.Dashworks
         public void ThenListNameIsDisplayedCorrectly(string listName)
         {
             var listElement = _driver.NowAt<CustomListElement>();
-            Assert.AreEqual(listName, listElement.CheckAllListName(listName).Text);
+            Assert.AreEqual(listName, listElement.CheckAllListName(listName).Text, "Incorrect list name is displayed");
         }
 
         [When(@"User update current custom list")]
@@ -178,7 +178,7 @@ namespace DashworksTestAutomation.Steps.Dashworks
         public void ThenListWithNameIsRemoved(string listName)
         {
             var listElement = _driver.NowAt<CustomListElement>();
-            Assert.IsFalse(listElement.CheckThatListIsRemoved(listName));
+            Assert.IsFalse(listElement.CheckThatListIsRemoved(listName), $"List with {listName} is not removed");
         }
 
         [When(@"User navigates to the ""(.*)"" list")]
@@ -193,7 +193,7 @@ namespace DashworksTestAutomation.Steps.Dashworks
         {
             var listElement = _driver.NowAt<CustomListElement>();
             _driver.WaitWhileControlIsNotDisplayed<CustomListElement>(() => listElement.SuccessCreateMessage);
-            Assert.AreEqual(message, listElement.SuccessCreateMessage.Text);
+            Assert.AreEqual(message, listElement.SuccessCreateMessage.Text, $"{message} is not displayed");
         }
 
         [Then(@"lists are sorted in alphabetical order")]

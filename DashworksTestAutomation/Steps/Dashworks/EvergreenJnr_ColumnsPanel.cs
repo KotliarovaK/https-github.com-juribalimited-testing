@@ -81,10 +81,11 @@ namespace DashworksTestAutomation.Steps.Dashworks
 
         private void CheckColumnDisplayedState(Table table, bool displayedState)
         {
+            _driver.WaitForDataLoading();
+
             var listpageMenu = _driver.NowAt<BaseDashboardPage>();
             foreach (var row in table.Rows)
             {
-                _driver.WaitForDataLoading();
                 Assert.AreEqual(displayedState, listpageMenu.IsColumnPresent(row["ColumnName"]),
                     $"Column '{row["ColumnName"]}' displayed state should be {displayedState}");
             }
@@ -231,14 +232,17 @@ namespace DashworksTestAutomation.Steps.Dashworks
             {
                 resetButton.Click();
             }
-            Assert.AreEqual(subCategoriesCount, columnElement.GetSubcategoriesCountByCategoryName(categoryName));
+
+            Assert.AreEqual(subCategoriesCount, columnElement.GetSubcategoriesCountByCategoryName(categoryName),
+                $"Incorrect subcategories count for {categoryName} category");
         }
 
         [Then(@"""(.*)"" subcategory is selected in Column panel")]
         public void ThenSubcategoryIsSelectedInColumnPanel(string subCategoriesName)
         {
             var columnElement = _driver.NowAt<ColumnsElement>();
-            Assert.IsTrue(columnElement.SubcategoryIsSelected(subCategoriesName));
+            Assert.IsTrue(columnElement.SubcategoryIsSelected(subCategoriesName),
+                $"{subCategoriesName} is not selected");
         }
 
         [Then(@"Minimize buttons are displayed for all category in Columns panel")]
@@ -314,7 +318,8 @@ namespace DashworksTestAutomation.Steps.Dashworks
             var currentUrl = _driver.Url;
             const string pattern = @"\$select=(.*)";
             var urlPartToCheck = Regex.Match(currentUrl, pattern).Groups[1].Value;
-            StringAssert.Contains(_convertor.Convert(coolumnName).ToLower(), urlPartToCheck.ToLower());
+            StringAssert.Contains(_convertor.Convert(coolumnName).ToLower(), urlPartToCheck.ToLower(),
+                $"{coolumnName} is not added to URL");
         }
     }
 }

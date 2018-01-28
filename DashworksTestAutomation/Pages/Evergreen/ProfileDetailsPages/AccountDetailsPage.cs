@@ -47,5 +47,10 @@ namespace DashworksTestAutomation.Pages.Evergreen.ProfileDetailsPages
                 SelectorFor(this, p => p.RolesList),
             };
         }
+
+        public void NavigateToPage(string pageName)
+        {
+            Driver.FindElement(By.XPath($".//span[text()='{pageName}']")).Click();
+        }
     }
 }
