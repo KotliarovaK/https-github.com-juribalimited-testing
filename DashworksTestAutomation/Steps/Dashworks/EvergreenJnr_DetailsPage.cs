@@ -71,7 +71,8 @@ namespace DashworksTestAutomation.Steps.Dashworks
             detailsPage.CloseAllSections();
             detailsPage.NavigateToSectionByName(sectionName);
             _driver.WaitWhileControlIsNotDisplayed<DetailsPage>(() => detailsPage.NoMailboxOwnerFoundMessage);
-            Assert.AreEqual(textMessage, detailsPage.NoMailboxOwnerFoundMessage.Text);
+            Assert.AreEqual(textMessage, detailsPage.NoMailboxOwnerFoundMessage.Text,
+                $"{textMessage} is not displayed");
         }
 
         [Then(@"""(.*)"" field display state is ""(.*)"" on Details tab")]

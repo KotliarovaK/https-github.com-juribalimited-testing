@@ -47,14 +47,14 @@ namespace DashworksTestAutomation.Steps.Dashworks
             var page = _driver.NowAt<AccountDetailsPage>();
             page.NavigateToPage(poageToNavigate);
         }
-        
+
         [When(@"User changes language to ""(.*)""")]
         public void WhenUserChangesLanguageTo(string language)
         {
             var page = _driver.NowAt<PreferencesPage>();
             _driver.SelectCustomSelectbox(page.LanguageDropdown, language);
         }
-        
+
         [When(@"User clicks Update button on Preferences page")]
         public void WhenUserClicksUpdateButtonOnPreferencesPage()
         {
@@ -89,7 +89,8 @@ namespace DashworksTestAutomation.Steps.Dashworks
         public void ThenIsDisplayedInFullNameField(string fullName)
         {
             var page = _driver.NowAt<AccountDetailsPage>();
-            Assert.AreEqual(fullName, page.FullNameField.GetAttribute("value"));
+            Assert.AreEqual(fullName, page.FullNameField.GetAttribute("value"),
+                $"{fullName} is not displayed in Full Name field");
         }
 
         [When(@"User changes Email to ""(.*)""")]
@@ -104,7 +105,7 @@ namespace DashworksTestAutomation.Steps.Dashworks
         public void ThenIsDisplayedInEmailField(string email)
         {
             var page = _driver.NowAt<AccountDetailsPage>();
-            Assert.AreEqual(email, page.EmailField.GetAttribute("value"));
+            Assert.AreEqual(email, page.EmailField.GetAttribute("value"), $"{email} is not displayed in Email field");
         }
 
         [When(@"User clears Full name field")]
@@ -119,7 +120,7 @@ namespace DashworksTestAutomation.Steps.Dashworks
         {
             var page = _driver.NowAt<AccountDetailsPage>();
             _driver.WaitWhileControlIsNotDisplayed<AccountDetailsPage>(() => page.ErrorMessage);
-            Assert.AreEqual(errorMessage, page.ErrorMessage.Text);
+            Assert.AreEqual(errorMessage, page.ErrorMessage.Text, "Incorrect Error message text");
         }
 
         [When(@"User clears Email field")]
@@ -163,7 +164,8 @@ namespace DashworksTestAutomation.Steps.Dashworks
         public void ThenUserPictureIsChangedToUploadedPhoto()
         {
             var page = _driver.NowAt<AccountDetailsPage>();
-            StringAssert.DoesNotContain("img/UnknownUser.jpg", page.UserPicture.GetAttribute("style"));
+            StringAssert.DoesNotContain("img/UnknownUser.jpg", page.UserPicture.GetAttribute("style"),
+                "Picture is not changed");
         }
 
         [When(@"User clicks Remove on Account details page")]
@@ -177,7 +179,8 @@ namespace DashworksTestAutomation.Steps.Dashworks
         public void ThenUserPictureChangedToDefault()
         {
             var page = _driver.NowAt<AccountDetailsPage>();
-            StringAssert.Contains("img/UnknownUser.jpg", page.UserPicture.GetAttribute("style"));
+            StringAssert.Contains("img/UnknownUser.jpg", page.UserPicture.GetAttribute("style"),
+                "Picture is not default");
         }
 
         [AfterScenario("Remove_Profile_Changes")]

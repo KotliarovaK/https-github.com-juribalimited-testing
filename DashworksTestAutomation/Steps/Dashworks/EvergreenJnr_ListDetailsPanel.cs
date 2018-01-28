@@ -18,7 +18,8 @@ namespace DashworksTestAutomation.Steps.Dashworks
         private readonly UsersWithSharedLists _usersWithSharedLists;
         private readonly UserDto _userDto;
 
-        public EvergreenJnr_ListDetailsPanel(RemoteWebDriver driver, UsersWithSharedLists usersWithSharedLists, UserDto userDto)
+        public EvergreenJnr_ListDetailsPanel(RemoteWebDriver driver, UsersWithSharedLists usersWithSharedLists,
+            UserDto userDto)
         {
             _driver = driver;
             _usersWithSharedLists = usersWithSharedLists;
@@ -60,7 +61,8 @@ namespace DashworksTestAutomation.Steps.Dashworks
         {
             var listDetailsElement = _driver.NowAt<ListDetailsElement>();
             var header = _driver.NowAt<HeaderElement>();
-            Assert.AreEqual(header.UserNameDropdown.Text, listDetailsElement.GetSelectedValue(listDetailsElement.OwnerDropdown),
+            Assert.AreEqual(header.UserNameDropdown.Text,
+                listDetailsElement.GetSelectedValue(listDetailsElement.OwnerDropdown),
                 "Another User is selected as a owner");
         }
 
@@ -68,7 +70,8 @@ namespace DashworksTestAutomation.Steps.Dashworks
         public void ThenSharingOptionIsSelected(string sharingOption)
         {
             var listDetailsElement = _driver.NowAt<ListDetailsElement>();
-            Assert.AreEqual(sharingOption, listDetailsElement.GetSelectedValue(listDetailsElement.SharingDropdown), $"Selected option is not {sharingOption}");
+            Assert.AreEqual(sharingOption, listDetailsElement.GetSelectedValue(listDetailsElement.SharingDropdown),
+                $"Selected option is not {sharingOption}");
         }
 
         [When(@"User mark list as unfavorite")]
@@ -89,7 +92,8 @@ namespace DashworksTestAutomation.Steps.Dashworks
         public void ThenNameIsDisplayedInListDetailsPanel(string listName)
         {
             var listDetailsElement = _driver.NowAt<ListDetailsElement>();
-            Assert.AreEqual(listName, listDetailsElement.ListNameField.GetAttribute("value"));
+            Assert.AreEqual(listName, listDetailsElement.ListNameField.GetAttribute("value"),
+                $"{listName} is not displayed in Name Field");
         }
 
         [Then(@"List details panel is displayed to the user")]
@@ -155,7 +159,8 @@ namespace DashworksTestAutomation.Steps.Dashworks
         {
             var listDetailsElement = _driver.NowAt<ListDetailsElement>();
             _driver.WaitWhileControlIsNotDisplayed<ListDetailsElement>(() => listDetailsElement.SelectUserDropdown);
-            _driver.SelectCustomSelectbox(listDetailsElement.SelectUserDropdown, GetFullNameByUserName(_userDto.UserName));
+            _driver.SelectCustomSelectbox(listDetailsElement.SelectUserDropdown,
+                GetFullNameByUserName(_userDto.UserName));
         }
 
         [When(@"User select ""(.*)"" in Select Access dropdown")]
