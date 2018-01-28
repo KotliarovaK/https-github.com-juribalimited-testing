@@ -73,6 +73,7 @@ Scenario Outline: EvergreenJnr_AllLists_CheckThatTableIsFullyLoadedAfterAddingTh
 	| ColumnName                        |
 	| Windows7Mi: Application Readiness |
 	Then full list content is displayed to the user
+	Then There are no errors in the browser console
 
 Examples: 
 	| ListName     |
