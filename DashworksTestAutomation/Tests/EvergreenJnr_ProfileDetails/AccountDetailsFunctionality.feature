@@ -14,7 +14,6 @@ Scenario: EvergreenJnr_AccountDetails_CheckThatErrorIsNotDisplayedAfterChangingP
 	When User changes Email to "automation2@juriba.com"
 	And User clicks Update button on Profile page
 	Then Error message is not displayed on Profile page
-	Then Success message with "Account details have been changed" text is displayed on Account Details page
 	And "TestAdmin" is displayed in Full Name field
 	And "automation2@juriba.com" is displayed in Email field
 

@@ -125,7 +125,7 @@ Scenario: EvergreenJnr_DevicesList_CheckThatAddRowsOptionsIsAvailableForSpecifie
 	Then Actions panel is displayed to the user
 	When User select all rows
 	When User select "Add to static list" option in Actions panel
-	Then Following options are available in lists dorpdown:
+	Then Following options are available in lists dropdown:
 	| Listnames               |
 	| OwnerPrivate            |
 	| NotOwnerSpecifiedAdmin  |

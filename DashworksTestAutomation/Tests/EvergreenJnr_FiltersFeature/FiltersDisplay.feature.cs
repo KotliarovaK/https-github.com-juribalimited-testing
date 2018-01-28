@@ -2987,7 +2987,7 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_FiltersFeature
             "n")]
         [NUnit.Framework.CategoryAttribute("Evergreen")]
         [NUnit.Framework.CategoryAttribute("AllLists")]
-        [NUnit.Framework.CategoryAttribute("Evergreen_FiltersFeature")]
+        [NUnit.Framework.CategoryAttribute("EvergreenJnr_FilterFeature")]
         [NUnit.Framework.CategoryAttribute("FiltersDisplay")]
         [NUnit.Framework.CategoryAttribute("DAS11619")]
         [NUnit.Framework.TestCaseAttribute("Devices", "Hostname", new string[0])]
@@ -3037,7 +3037,7 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_FiltersFeature
             string[] @__tags = new string[] {
                     "Evergreen",
                     "AllLists",
-                    "Evergreen_FiltersFeature",
+                    "EvergreenJnr_FilterFeature",
                     "FiltersDisplay",
                     "DAS11619"};
             if ((exampleTags != null))
