@@ -79,3 +79,24 @@ Examples:
 	| ListName     |
 	| Devices      |
 	| Applications |
+
+@Evergreen @Applications @EvergreenJnr_Columns @AddColumnAction @DAS10997
+Scenario Outline: EvergreenJnr_Applications_CheckThatConsoleErrorsAreNotDisplayedForImages
+	When User clicks "Applications" on the left-hand menu
+	Then "Applications" list should be displayed to the user
+	When User clicks the Columns button
+	Then Columns panel is displayed to the user
+	When ColumnName is entered into the search box and the selection is clicked
+	| ColumnName   |
+	| <ColumnName> |
+	Then ColumnName is added to the list
+	| ColumnName   |
+	| <ColumnName> |
+	Then There are no errors in the browser console
+
+Examples: 
+	| ColumnName                              |
+	| Windows7Mi: Application Rationalisation |
+	| Windows7Mi: Application Readiness       |
+	| Windows7Mi: Core Application            |
+	| Windows7Mi: Hide from End Users         |
