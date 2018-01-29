@@ -182,7 +182,7 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_ItemDetails
         }
         
         [NUnit.Framework.TestAttribute()]
-        [NUnit.Framework.DescriptionAttribute("EvergreenJnr_MailboxesList_CheckThatSelectedFieldStateOnDetailsTab")]
+        [NUnit.Framework.DescriptionAttribute("EvergreenJnr_MailboxesList_CheckStateOfSelectedFieldOnDetailsTabOnAPI")]
         [NUnit.Framework.CategoryAttribute("Evergreen")]
         [NUnit.Framework.CategoryAttribute("Mailboxes")]
         [NUnit.Framework.CategoryAttribute("EvergreenJnr_ItemDetails")]
@@ -190,136 +190,19 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_ItemDetails
         [NUnit.Framework.CategoryAttribute("DAS11478")]
         [NUnit.Framework.CategoryAttribute("DAS11477")]
         [NUnit.Framework.CategoryAttribute("DAS11476")]
-        [NUnit.Framework.TestCaseAttribute("alfredo.m.daniel@dwlabs.local", "Mailbox Database", "true", new string[0])]
-        [NUnit.Framework.TestCaseAttribute("alfredo.m.daniel@dwlabs.local", "Cloud Mail Server", "false", new string[0])]
-        [NUnit.Framework.TestCaseAttribute("alex.cristea@juriba.com", "Mail Server", "false", new string[0])]
-        public virtual void EvergreenJnr_MailboxesList_CheckThatSelectedFieldStateOnDetailsTab(string emailAddress, string fieldName, string displayState, string[] exampleTags)
-        {
-            System.Exception lastException = null;
-            for (int i = 0; (i <= 1); i = (i + 1))
-            {
-                try
-                {
-                    this.EvergreenJnr_MailboxesList_CheckThatSelectedFieldStateOnDetailsTabInternal(emailAddress, fieldName, displayState, exampleTags);
-                    return;
-                }
-                catch (System.Exception exc)
-                {
-                    lastException = exc;
-                }
-                if (((i + 1) 
-                            <= 1))
-                {
-                    testRunner.OnScenarioEnd();
-                }
-            }
-            if ((lastException != null))
-            {
-                throw lastException;
-            }
-        }
-        
-        private void EvergreenJnr_MailboxesList_CheckThatSelectedFieldStateOnDetailsTabInternal(string emailAddress, string fieldName, string displayState, string[] exampleTags)
-        {
-            string[] @__tags = new string[] {
-                    "Evergreen",
-                    "Mailboxes",
-                    "EvergreenJnr_ItemDetails",
-                    "ItemDetailsDisplay",
-                    "DAS11478",
-                    "DAS11477",
-                    "DAS11476"};
-            if ((exampleTags != null))
-            {
-                @__tags = System.Linq.Enumerable.ToArray(System.Linq.Enumerable.Concat(@__tags, exampleTags));
-            }
-            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("EvergreenJnr_MailboxesList_CheckThatSelectedFieldStateOnDetailsTab", @__tags);
-            this.ScenarioSetup(scenarioInfo);
-            this.FeatureBackground();
-            testRunner.When("User clicks \"Mailboxes\" on the left-hand menu", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-            testRunner.Then("\"Mailboxes\" list should be displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-            testRunner.When(string.Format("User perform search by \"{0}\"", emailAddress), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-            testRunner.And("User click content from \"Email Address\" column", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-            testRunner.Then(string.Format("\"{0}\" field display state is \"{1}\" on Details tab", fieldName, displayState), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-            this.ScenarioCleanup();
-        }
-        
-        [NUnit.Framework.TestAttribute()]
-        [NUnit.Framework.DescriptionAttribute("EvergreenJnr_MailboxesList_CheckStateOfSelectedFieldOnDetailsTab")]
-        [NUnit.Framework.CategoryAttribute("Evergreen")]
-        [NUnit.Framework.CategoryAttribute("Mailboxes")]
-        [NUnit.Framework.CategoryAttribute("EvergreenJnr_ItemDetails")]
-        [NUnit.Framework.CategoryAttribute("ItemDetailsDisplay")]
-        [NUnit.Framework.CategoryAttribute("DAS11478")]
-        [NUnit.Framework.CategoryAttribute("DAS11477")]
-        [NUnit.Framework.CategoryAttribute("DAS11476")]
-        [NUnit.Framework.TestCaseAttribute("Mailboxes", "alfredo.m.daniel@dwlabs.local", "Mailbox Database", "True", new string[0])]
-        [NUnit.Framework.TestCaseAttribute("Mailboxes", "alfredo.m.daniel@dwlabs.local", "Cloud Mail Server", "False", new string[0])]
-        [NUnit.Framework.TestCaseAttribute("Mailboxes", "alex.cristea@juriba.com", "Mail Server", "False", new string[0])]
-        public virtual void EvergreenJnr_MailboxesList_CheckStateOfSelectedFieldOnDetailsTab(string pageName, string columnName, string fieldName, string displayState, string[] exampleTags)
-        {
-            System.Exception lastException = null;
-            for (int i = 0; (i <= 1); i = (i + 1))
-            {
-                try
-                {
-                    this.EvergreenJnr_MailboxesList_CheckStateOfSelectedFieldOnDetailsTabInternal(pageName, columnName, fieldName, displayState, exampleTags);
-                    return;
-                }
-                catch (System.Exception exc)
-                {
-                    lastException = exc;
-                }
-                if (((i + 1) 
-                            <= 1))
-                {
-                    testRunner.OnScenarioEnd();
-                }
-            }
-            if ((lastException != null))
-            {
-                throw lastException;
-            }
-        }
-        
-        private void EvergreenJnr_MailboxesList_CheckStateOfSelectedFieldOnDetailsTabInternal(string pageName, string columnName, string fieldName, string displayState, string[] exampleTags)
-        {
-            string[] @__tags = new string[] {
-                    "Evergreen",
-                    "Mailboxes",
-                    "EvergreenJnr_ItemDetails",
-                    "ItemDetailsDisplay",
-                    "DAS11478",
-                    "DAS11477",
-                    "DAS11476"};
-            if ((exampleTags != null))
-            {
-                @__tags = System.Linq.Enumerable.ToArray(System.Linq.Enumerable.Concat(@__tags, exampleTags));
-            }
-            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("EvergreenJnr_MailboxesList_CheckStateOfSelectedFieldOnDetailsTab", @__tags);
-            this.ScenarioSetup(scenarioInfo);
-            this.FeatureBackground();
-            testRunner.When(string.Format("I perform test request to the \"{0}\" API and get \"{1}\" item summary", pageName, columnName), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-            testRunner.Then(string.Format("\"{0}\" field display state is \"{1}\" on Details tab API", fieldName, displayState), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-            this.ScenarioCleanup();
-        }
-        
-        [NUnit.Framework.TestAttribute()]
-        [NUnit.Framework.DescriptionAttribute("EvergreenJnr_DevicesList_CheckThatLastLogoffDateFieldIsNotDisplayedAtTheDeviceOwn" +
-            "erBlockOfDeviceDetails")]
-        [NUnit.Framework.CategoryAttribute("Evergreen")]
-        [NUnit.Framework.CategoryAttribute("Devices")]
-        [NUnit.Framework.CategoryAttribute("EvergreenJnr_ItemDetails")]
-        [NUnit.Framework.CategoryAttribute("ItemDetailsDisplay")]
         [NUnit.Framework.CategoryAttribute("DAS11510")]
-        public virtual void EvergreenJnr_DevicesList_CheckThatLastLogoffDateFieldIsNotDisplayedAtTheDeviceOwnerBlockOfDeviceDetails()
+        [NUnit.Framework.TestCaseAttribute("Mailboxes", "alfredo.m.daniel@dwlabs.local", "Mailbox", "Mailbox Database", "True", new string[0])]
+        [NUnit.Framework.TestCaseAttribute("Mailboxes", "alfredo.m.daniel@dwlabs.local", "Mailbox", "Cloud Mail Server", "False", new string[0])]
+        [NUnit.Framework.TestCaseAttribute("Mailboxes", "alex.cristea@juriba.com", "Mailbox", "Mail Server", "False", new string[0])]
+        [NUnit.Framework.TestCaseAttribute("Devices", "001BAQXT6JWFPI", "Device Owner", "Last Logoff Date", "False", new string[0])]
+        public virtual void EvergreenJnr_MailboxesList_CheckStateOfSelectedFieldOnDetailsTabOnAPI(string pageName, string itemName, string sectionName, string fieldName, string displayState, string[] exampleTags)
         {
             System.Exception lastException = null;
             for (int i = 0; (i <= 1); i = (i + 1))
             {
                 try
                 {
-                    this.EvergreenJnr_DevicesList_CheckThatLastLogoffDateFieldIsNotDisplayedAtTheDeviceOwnerBlockOfDeviceDetailsInternal();
+                    this.EvergreenJnr_MailboxesList_CheckStateOfSelectedFieldOnDetailsTabOnAPIInternal(pageName, itemName, sectionName, fieldName, displayState, exampleTags);
                     return;
                 }
                 catch (System.Exception exc)
@@ -338,23 +221,27 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_ItemDetails
             }
         }
         
-        private void EvergreenJnr_DevicesList_CheckThatLastLogoffDateFieldIsNotDisplayedAtTheDeviceOwnerBlockOfDeviceDetailsInternal()
+        private void EvergreenJnr_MailboxesList_CheckStateOfSelectedFieldOnDetailsTabOnAPIInternal(string pageName, string itemName, string sectionName, string fieldName, string displayState, string[] exampleTags)
         {
-            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("EvergreenJnr_DevicesList_CheckThatLastLogoffDateFieldIsNotDisplayedAtTheDeviceOwn" +
-                    "erBlockOfDeviceDetails", new string[] {
-                        "Evergreen",
-                        "Devices",
-                        "EvergreenJnr_ItemDetails",
-                        "ItemDetailsDisplay",
-                        "DAS11510"});
+            string[] @__tags = new string[] {
+                    "Evergreen",
+                    "Mailboxes",
+                    "EvergreenJnr_ItemDetails",
+                    "ItemDetailsDisplay",
+                    "DAS11478",
+                    "DAS11477",
+                    "DAS11476",
+                    "DAS11510"};
+            if ((exampleTags != null))
+            {
+                @__tags = System.Linq.Enumerable.ToArray(System.Linq.Enumerable.Concat(@__tags, exampleTags));
+            }
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("EvergreenJnr_MailboxesList_CheckStateOfSelectedFieldOnDetailsTabOnAPI", @__tags);
             this.ScenarioSetup(scenarioInfo);
             this.FeatureBackground();
-            testRunner.When("User clicks \"Devices\" on the left-hand menu", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-            testRunner.Then("\"Devices\" list should be displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-            testRunner.When("User click content from \"Hostname\" column", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-            testRunner.And("User navigates to the \"Details\" tab", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-            testRunner.And("User navigates to the \"Device Owner\" section", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-            testRunner.Then("\"Last Logoff Date\" field display state is \"false\" on Details tab", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+            testRunner.When(string.Format("I perform test request to the \"{0}\" API and get \"{1}\" item summary for \"{2}\" sect" +
+                        "ion", pageName, itemName, sectionName), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+            testRunner.Then(string.Format("\"{0}\" field display state is \"{1}\" on Details tab API", fieldName, displayState), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
             this.ScenarioCleanup();
         }
         

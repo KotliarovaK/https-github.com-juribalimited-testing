@@ -168,6 +168,7 @@
     <Compile Include="Helpers\BaseFilter.cs" />
     <Compile Include="Helpers\ColumnNameToUrlConvertor.cs" />
     <Compile Include="Helpers\DatabaseHelper.cs" />
+    <Compile Include="Helpers\DetailsSectionToUrlConvertor.cs" />
     <Compile Include="Helpers\HttpClientHelper.cs" />
     <Compile Include="Pages\EvergreenDashboardsPage.cs" />
     <Compile Include="Pages\Evergreen\ActionsElement.cs" />
