@@ -33,6 +33,46 @@ namespace DashworksTestAutomation.Steps.Dashworks
             detailsPage.NavigateToSectionByName(sectionName);
         }
 
+        [When(@"User have opened Column Settings for ""(.*)"" column in the Details Page table")]
+        public void WhenUserHaveOpenedColumnSettingsForColumnInTheDetailsPageTable(string columnName)
+        {
+            var page = _driver.NowAt<ApplicationsDetailsTabsMenu>();
+            page.OpenColumnSettingsByName(columnName);
+        }
+
+        [When(@"User click Column button on the Column Settings panel")]
+        public void WhenUserClickColumnButtonOnTheColumnSettingsPanel()
+        {
+            var menu = _driver.NowAt<ApplicationsDetailsTabsMenu>();
+            _driver.WaitWhileControlIsNotDisplayed<ApplicationsDetailsTabsMenu>((System.Linq.Expressions.Expression<System.Func<OpenQA.Selenium.IWebElement>>)(() => menu.ColumnButton));
+            menu.ColumnButton.Click();
+        }
+
+        [When(@"User select ""(.*)"" checkbox on the Column Settings panel")]
+        public void WhenUserSelectCheckboxOnTheColumnSettingsPanel(string checkboxName)
+        { 
+            var page = _driver.NowAt<ApplicationsDetailsTabsMenu>();
+            page.OpenColumnSettingsByName("Application");
+            page.GetCheckboxByName(checkboxName);
+        }
+
+        [Then(@"""(.*)"" column is added to the list in the Details Page table")]
+        public void ThenColumnIsAddedToTheListInTheDetailsPageTable(Table table)
+        {
+            CheckColumnDisplayedState(table, true);
+        }
+
+        private void CheckColumnDisplayedState(Table table, bool displayedState)
+        {
+            var listpageMenu = _driver.NowAt<ApplicationsDetailsTabsMenu>();
+            foreach (var row in table.Rows)
+            {
+                _driver.WaitForDataLoading();
+                Assert.AreEqual(displayedState, listpageMenu.IsColumnPresent(row["ColumnName"]),
+                    $"Column '{row["ColumnName"]}' displayed state should be {displayedState}");
+            }
+        }
+
         [Then(@"Fields with empty information are displayed")]
         public void ThenFieldsWithEmptyInformationAreDisplayed()
         {

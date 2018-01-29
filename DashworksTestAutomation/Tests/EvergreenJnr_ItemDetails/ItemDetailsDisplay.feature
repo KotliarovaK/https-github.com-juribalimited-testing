@@ -73,7 +73,9 @@ Scenario: EvergreenJnr_DevicesList_CheckThatDataIsDisplayedAfterAddingColumns
 	Then "Devices" list should be displayed to the user
 	When User click content from "Hostname" column
 	And User navigates to the "Applications" tab
-	When User have opened column settings for "Application" column
+	When User have opened Column Settings for "Application" column in the Details Page table
+	When User click Column button on the Column Settings panel
+	When User select "Key" checkbox on the Column Settings panel
+	Then "" column is added to the list in the Details Page table
 	When User have opened column settings for "Compliance" column
-	#When User click Options button in "" column header
 	
