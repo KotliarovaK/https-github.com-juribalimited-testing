@@ -7,6 +7,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Net;
+using DashworksTestAutomation.Helpers;
 using DashworksTestAutomation.Utils;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using NUnit.Framework;
@@ -20,11 +21,13 @@ namespace DashworksTestAutomation.Steps
     {
         private readonly RestWebClient _client;
         private readonly ResponceDetails _responce;
+        private readonly DetailsSectionToUrlConvertor _convertor;
 
-        public TestApiStep(RestWebClient client, ResponceDetails responce)
+        public TestApiStep(RestWebClient client, ResponceDetails responce, DetailsSectionToUrlConvertor convertor)
         {
             _client = client;
             _responce = responce;
+            _convertor = convertor;
         }
 
         [When(@"I perform test request to the Users API and get operators by ""(.*)"" filter")]
@@ -98,19 +101,19 @@ namespace DashworksTestAutomation.Steps
             Assert.AreEqual(pageCache, listPageToCache);
         }
 
-        [When(@"I perform test request to the ""(.*)"" API and get ""(.*)"" item summary")]
-        public void WhenIPerformTestRequestToTheApiAndGetItemSummary(string pageName, string itemName)
+        [When(@"I perform test request to the ""(.*)"" API and get ""(.*)"" item summary for ""(.*)"" section")]
+        public void WhenIPerformTestRequestToTheApiAndGetItemSummaryForSection(string pageName, string itemName, string sectionName)
         {
             var itemId = _client.GetDeviceIdByName(itemName, pageName);
-            var tabs = _client.GetColumnNameByPageName(pageName, tabName);
+            var section = _convertor.Convert(sectionName);
             var requestUri = "";
-            if (pageName == "columnName")
+            if (pageName == "Mailboxes")
             {
-                requestUri = $"{UrlProvider.RestClientBaseUrl}{pageName.ToLower().TrimEnd('s').TrimEnd('e')}/{itemId}/{tabs}?$lang=en-GB";
+                requestUri = $"{UrlProvider.RestClientBaseUrl}{pageName.ToLower().TrimEnd('s').TrimEnd('e')}/{itemId}/{section}?$lang=en-GB";
             }
             else
             {
-                requestUri = $"{UrlProvider.RestClientBaseUrl}{pageName.ToLower().TrimEnd('s')}/{itemId}/{tabs}?$lang=en-GB";
+                requestUri = $"{UrlProvider.RestClientBaseUrl}{pageName.ToLower().TrimEnd('s')}/{itemId}/{section}?$lang=en-GB";
 
             }
             var request = new RestRequest(requestUri);
@@ -130,8 +133,15 @@ namespace DashworksTestAutomation.Steps
         {
             var content = _responce.Value.Content;
             var allItems = JsonConvert.DeserializeObject<JObject>(content)["metadata"];
-            var item = allItems.First(x => x["friendlyName"].ToString().Equals(fieldName));
-            Assert.AreEqual(state, item["visible"].ToString(), $"Incorrect display state for {fieldName}");
+            try
+            {
+                var item = allItems.First(x => x["friendlyName"].ToString().Equals(fieldName));
+                Assert.AreEqual(state, item["visible"].ToString(), $"Incorrect display state for {fieldName}");
+            }
+            catch
+            {
+                Assert.AreEqual(state, "False", $"Incorrect display state for {fieldName}");
+            }
         }
     }
 }
