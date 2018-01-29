@@ -191,6 +191,7 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_ItemDetails
         [NUnit.Framework.CategoryAttribute("DAS11477")]
         [NUnit.Framework.CategoryAttribute("DAS11476")]
         [NUnit.Framework.CategoryAttribute("DAS11510")]
+        [NUnit.Framework.CategoryAttribute("DAS-11791")]
         [NUnit.Framework.TestCaseAttribute("Mailboxes", "alfredo.m.daniel@dwlabs.local", "Mailbox", "Mailbox Database", "True", new string[0])]
         [NUnit.Framework.TestCaseAttribute("Mailboxes", "alfredo.m.daniel@dwlabs.local", "Mailbox", "Cloud Mail Server", "False", new string[0])]
         [NUnit.Framework.TestCaseAttribute("Mailboxes", "alex.cristea@juriba.com", "Mailbox", "Mail Server", "False", new string[0])]
@@ -231,7 +232,8 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_ItemDetails
                     "DAS11478",
                     "DAS11477",
                     "DAS11476",
-                    "DAS11510"};
+                    "DAS11510",
+                    "DAS-11791"};
             if ((exampleTags != null))
             {
                 @__tags = System.Linq.Enumerable.ToArray(System.Linq.Enumerable.Concat(@__tags, exampleTags));
