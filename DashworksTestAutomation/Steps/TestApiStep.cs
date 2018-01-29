@@ -113,12 +113,10 @@ namespace DashworksTestAutomation.Steps
             if (pageName == "Mailboxes")
             {
                 requestUri = $"{UrlProvider.RestClientBaseUrl}{pageName.ToLower().TrimEnd('s').TrimEnd('e')}/{itemId}/{section}?$lang=en-GB";
-                    $"{UrlProvider.RestClientBaseUrl}{pageName.ToLower().TrimEnd('s').TrimEnd('e')}/{itemId}/mailboxDetails?$lang=en-GB";
             }
             else
             {
                 requestUri = $"{UrlProvider.RestClientBaseUrl}{pageName.ToLower().TrimEnd('s')}/{itemId}/{section}?$lang=en-GB";
-                    $"{UrlProvider.RestClientBaseUrl}{pageName.ToLower().TrimEnd('s')}/{itemId}/mailboxDetails?$lang=en-GB";
             }
 
             var request = new RestRequest(requestUri);
