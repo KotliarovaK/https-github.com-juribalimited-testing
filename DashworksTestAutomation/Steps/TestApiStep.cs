@@ -54,7 +54,8 @@ namespace DashworksTestAutomation.Steps
         }
 
         [Then(@"following operators are displayed in ""(.*)"" category for ""(.*)"" filter on ""(.*)"" page:")]
-        public void ThenFollowingOperatorsAreDisplayedInCategoryForFilterOnPage(string categoryName, string filterName, string pageName, Table table)
+        public void ThenFollowingOperatorsAreDisplayedInCategoryForFilterOnPage(string categoryName, string filterName,
+            string pageName, Table table)
         {
             var requestUri = $"{UrlProvider.RestClientBaseUrl}{pageName.ToLower()}/filters?$lang=en-GB";
             var request = new RestRequest(requestUri);
@@ -71,10 +72,12 @@ namespace DashworksTestAutomation.Steps
             var content = response.Content;
 
             var allFilters = JsonConvert.DeserializeObject<List<JObject>>(content);
-            var filter = allFilters.First(x => x["translatedCategory"].ToString().Equals(categoryName) && x["label"].ToString().Equals(filterName));
+            var filter = allFilters.First(x =>
+                x["translatedCategory"].ToString().Equals(categoryName) && x["label"].ToString().Equals(filterName));
             var allOperators = filter["operators"];
             var operatorsValues = allOperators.Select(x => x["key"].ToString()).ToList();
-            Assert.AreEqual(table.Rows.SelectMany(row => row.Values).ToList(), operatorsValues);
+            Assert.AreEqual(table.Rows.SelectMany(row => row.Values).ToList(), operatorsValues,
+                $"Incorrect operators are displayed for {filterName} filter");
         }
 
         [Then(@"default list page Size is ""(.*)"" and Cache ""(.*)""")]
@@ -97,8 +100,8 @@ namespace DashworksTestAutomation.Steps
             var pageOptions = JsonConvert.DeserializeObject<JObject>(content);
             var listPageSize = Convert.ToInt32(pageOptions["gridPageSize"]);
             var listPageToCache = Convert.ToInt32(pageOptions["gridPageCache"]);
-            Assert.AreEqual(pageSize, listPageSize);
-            Assert.AreEqual(pageCache, listPageToCache);
+            Assert.AreEqual(pageSize, listPageSize, "Incorrect Page Size on Account page");
+            Assert.AreEqual(pageCache, listPageToCache, "Incorrect Cache Size on Account page");
         }
 
         [When(@"I perform test request to the ""(.*)"" API and get ""(.*)"" item summary for ""(.*)"" section")]
@@ -110,12 +113,14 @@ namespace DashworksTestAutomation.Steps
             if (pageName == "Mailboxes")
             {
                 requestUri = $"{UrlProvider.RestClientBaseUrl}{pageName.ToLower().TrimEnd('s').TrimEnd('e')}/{itemId}/{section}?$lang=en-GB";
+                    $"{UrlProvider.RestClientBaseUrl}{pageName.ToLower().TrimEnd('s').TrimEnd('e')}/{itemId}/mailboxDetails?$lang=en-GB";
             }
             else
             {
                 requestUri = $"{UrlProvider.RestClientBaseUrl}{pageName.ToLower().TrimEnd('s')}/{itemId}/{section}?$lang=en-GB";
-
+                    $"{UrlProvider.RestClientBaseUrl}{pageName.ToLower().TrimEnd('s')}/{itemId}/mailboxDetails?$lang=en-GB";
             }
+
             var request = new RestRequest(requestUri);
 
             request.AddParameter("Host", UrlProvider.RestClientBaseUrl);

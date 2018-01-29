@@ -117,8 +117,8 @@ namespace DashworksTestAutomation.Steps.Dashworks
 
             _driver.WaitWhileControlIsNotDisplayed<BaseDashboardPage>(() => dashboardPage.ResultsOnPageCount);
 
-            Assert.IsTrue(dashboardPage.ResultsOnPageCount.Displayed());
-            Assert.IsTrue(dashboardPage.TableBody.Displayed());
+            Assert.IsTrue(dashboardPage.ResultsOnPageCount.Displayed(), "Results count is not displayed");
+            Assert.IsTrue(dashboardPage.TableBody.Displayed(), "Table is not displayed");
 
             Logger.Write("Main agGrid dataset is displayed");
         }
