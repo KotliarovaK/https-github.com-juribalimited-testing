@@ -149,6 +149,7 @@
     <Compile Include="Base\IBaseTest.cs" />
     <Compile Include="Base\SeleniumBasePage.cs" />
     <Compile Include="DTO\RuntimeVariables\Filter.cs" />
+    <Compile Include="DTO\RuntimeVariables\ResponceDetails.cs" />
     <Compile Include="DTO\RuntimeVariables\RestWebClient.cs" />
     <Compile Include="DTO\RuntimeVariables\UsedUsers.cs" />
     <Compile Include="DTO\AuthObject.cs" />
@@ -167,6 +168,7 @@
     <Compile Include="Helpers\BaseFilter.cs" />
     <Compile Include="Helpers\ColumnNameToUrlConvertor.cs" />
     <Compile Include="Helpers\DatabaseHelper.cs" />
+    <Compile Include="Helpers\DetailsSectionToUrlConvertor.cs" />
     <Compile Include="Helpers\HttpClientHelper.cs" />
     <Compile Include="Pages\EvergreenDashboardsPage.cs" />
     <Compile Include="Pages\Evergreen\ActionsElement.cs" />

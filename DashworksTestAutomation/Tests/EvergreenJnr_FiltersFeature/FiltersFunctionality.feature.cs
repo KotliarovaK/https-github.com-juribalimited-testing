@@ -1260,20 +1260,19 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_FiltersFeature
         [NUnit.Framework.CategoryAttribute("FilterFunctionality")]
         [NUnit.Framework.CategoryAttribute("DAS11550")]
         [NUnit.Framework.CategoryAttribute("DAS11749")]
-        [NUnit.Framework.CategoryAttribute("Not_Run")]
-        [NUnit.Framework.TestCaseAttribute("Application Name", new string[0])]
-        [NUnit.Framework.TestCaseAttribute("App Field 1", new string[0])]
-        [NUnit.Framework.TestCaseAttribute("Computer Warranty", new string[0])]
-        [NUnit.Framework.TestCaseAttribute("General Information field 1", new string[0])]
-        [NUnit.Framework.TestCaseAttribute("User Field 2", new string[0])]
-        public virtual void EvergreenJnr_DevicesList_CheckThatOperatorInSelectedFilterIsDisplayedCorrectlyAPI(string filterName, string[] exampleTags)
+        [NUnit.Framework.TestCaseAttribute("Application", "Application Name", new string[0])]
+        [NUnit.Framework.TestCaseAttribute("Application Custom Fields", "App field 1", new string[0])]
+        [NUnit.Framework.TestCaseAttribute("Application Custom Fields", "Computer Warranty", new string[0])]
+        [NUnit.Framework.TestCaseAttribute("Application Custom Fields", "General information field 1", new string[0])]
+        [NUnit.Framework.TestCaseAttribute("Application Custom Fields", "User Field 2", new string[0])]
+        public virtual void EvergreenJnr_DevicesList_CheckThatOperatorInSelectedFilterIsDisplayedCorrectlyAPI(string categoryName, string filterName, string[] exampleTags)
         {
             System.Exception lastException = null;
             for (int i = 0; (i <= 1); i = (i + 1))
             {
                 try
                 {
-                    this.EvergreenJnr_DevicesList_CheckThatOperatorInSelectedFilterIsDisplayedCorrectlyAPIInternal(filterName, exampleTags);
+                    this.EvergreenJnr_DevicesList_CheckThatOperatorInSelectedFilterIsDisplayedCorrectlyAPIInternal(categoryName, filterName, exampleTags);
                     return;
                 }
                 catch (System.Exception exc)
@@ -1292,7 +1291,7 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_FiltersFeature
             }
         }
         
-        private void EvergreenJnr_DevicesList_CheckThatOperatorInSelectedFilterIsDisplayedCorrectlyAPIInternal(string filterName, string[] exampleTags)
+        private void EvergreenJnr_DevicesList_CheckThatOperatorInSelectedFilterIsDisplayedCorrectlyAPIInternal(string categoryName, string filterName, string[] exampleTags)
         {
             string[] @__tags = new string[] {
                     "Evergreen",
@@ -1300,8 +1299,7 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_FiltersFeature
                     "EvergreenJnr_FilterFeature",
                     "FilterFunctionality",
                     "DAS11550",
-                    "DAS11749",
-                    "Not_Run"};
+                    "DAS11749"};
             if ((exampleTags != null))
             {
                 @__tags = System.Linq.Enumerable.ToArray(System.Linq.Enumerable.Concat(@__tags, exampleTags));
@@ -1324,7 +1322,8 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_FiltersFeature
                         "Begins with"});
             table19.AddRow(new string[] {
                         "Ends with"});
-            testRunner.Then(string.Format("following operators are displayed for \"{0}\" filter on \"Devices\" page:", filterName), ((string)(null)), table19, "Then ");
+            testRunner.Then(string.Format("following operators are displayed in \"{0}\" category for \"{1}\" filter on \"Devices\"" +
+                        " page:", categoryName, filterName), ((string)(null)), table19, "Then ");
             this.ScenarioCleanup();
         }
     }
