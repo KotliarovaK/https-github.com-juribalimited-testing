@@ -27,8 +27,18 @@ namespace DashworksTestAutomation.Pages.Evergreen.DetailsTabsMenu
         [FindsBy(How = How.XPath, Using = ".//span[@class='ag-icon ag-icon-columns']")]
         public IWebElement ColumnButton { get; set; }
 
-        [FindsBy(How = How.XPath, Using = ".//div[@class='ag-column-select-column ag-toolpanel-indent-0']//span[contains(text(),'')]")]
-        public IWebElement Checkbox { get; set; }
+        public override List<By> GetPageIdentitySelectors()
+        {
+            Driver.WaitForDataLoading();
+
+            return new List<By>
+            {
+                //SelectorFor(this, p => p.ApplicationSummarySection),
+                //SelectorFor(this, p => p.ApplicationDetailSection),
+                //SelectorFor(this, p => p.AdvertisementsSection),
+                //SelectorFor(this, p => p.CollectionsSection),
+            };
+        }
 
         public void OpenColumnSettingsByName(string columnName)
         {
@@ -54,12 +64,34 @@ namespace DashworksTestAutomation.Pages.Evergreen.DetailsTabsMenu
             return Driver.IsElementDisplayed(By.XPath(selector));
         }
 
-        public void GetCheckboxByName(string columnName)
+        public List<string> GetColumnContent(string columnName)
         {
-            string columnSettingsSelector = $".//div[@class='ag-column-select-panel']//span[text()='Key']";
-            Driver.MouseHover(By.XPath(columnSettingsSelector));
-            Driver.WaitWhileControlIsNotDisplayed(By.XPath(columnSettingsSelector));
-            Driver.FindElement(By.XPath(columnSettingsSelector)).Click();
+            By by = By.XPath(
+                $".//div[@class='ag-body']//div[@class='ag-body-container']/div/div[{GetColumnNumberByName(columnName)}]");
+            return Driver.FindElements(by).Select(x => x.Text).ToList();
+        }
+
+        public int GetColumnNumberByName(string columnName)
+        {
+            var allHeadersSelector = By.XPath(".//div[@class='ag-header-container']/div/div");
+            Driver.WaitForDataLoading();
+            Driver.WaitWhileControlIsNotDisplayed(allHeadersSelector);
+            var allHeaders = Driver.FindElements(allHeadersSelector);
+            if (!allHeaders.Any())
+                throw new Exception("Table does not contains any columns");
+            var columnNumber =
+                allHeaders.IndexOf(allHeaders.First(x =>
+                    x.FindElement(By.XPath(".//span[@class='ag-header-cell-text']")).Text.Equals(columnName))) + 1;
+
+            return columnNumber;
+        }
+
+        public void GetCheckboxByName(string checkboxName)
+        {
+            string checkboxSettingsSelector = $".//div[@class='ag-column-select-panel']//span[text()='{checkboxName}']";
+            Driver.MouseHover(By.XPath(checkboxSettingsSelector));
+            Driver.WaitWhileControlIsNotDisplayed(By.XPath(checkboxSettingsSelector));
+            Driver.FindElement(By.XPath(checkboxSettingsSelector)).Click();
         }
 
     }

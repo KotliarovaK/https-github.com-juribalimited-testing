@@ -78,15 +78,28 @@ Examples:
 	| Applications | Acrobat Reader 4                 | Application   |
 	| Mailboxes    | 00BDBAEA57334C7C8F4@bclabs.local | Email Address |
 
-@Evergreen @Devices @EvergreenJnr_ItemDetails @ItemDetailsDisplay @DAS11732
-Scenario: EvergreenJnr_DevicesList_CheckThatDataIsDisplayedAfterAddingColumns
-	When User clicks "Devices" on the left-hand menu
-	Then "Devices" list should be displayed to the user
-	When User click content from "Hostname" column
-	And User navigates to the "Applications" tab
-	When User have opened Column Settings for "Application" column in the Details Page table
+@Evergreen @AllLists @EvergreenJnr_ItemDetails @ItemDetailsDisplay @DAS11732
+Scenario Outline: EvergreenJnr_AllLists_CheckThatDataIsDisplayedAfterAddingColumns
+	When User clicks "<PageName>" on the left-hand menu
+	Then "<PageName>" list should be displayed to the user
+	When User click content from "<ItemName>" column
+	And User navigates to the "<TabName>" tab
+	When User have opened Column Settings for "<ColumnName>" column in the Details Page table
 	When User click Column button on the Column Settings panel
-	When User select "Key" checkbox on the Column Settings panel
-	Then "" column is added to the list in the Details Page table
-	When User have opened column settings for "Compliance" column
-	
+	When User select "<CheckboxName>" checkbox on the Column Settings panel
+	When User click Column button on the Column Settings panel
+	Then ColumnName is added to the list in the Details Page table
+	| ColumnName      |
+	| <NewColumnName> |
+	And Content is present in the newly added column in the Details Page table
+	| ColumnName      |
+	| <NewColumnName> |
+
+Examples: 
+	| PageName     | ItemName      | TabName      | ColumnName  | CheckboxName      | NewColumnName     |
+	| Devices      | Hostname      | Applications | Application | Key               | Key               |
+	| Users        | Username      | Groups       | Group       | Key               | Key               |
+	| Applications | Application   | Projects     | Project     | Object ID         | Object ID         |
+	| Applications | Application   | Projects     | Project     | Object Key        | Object Key        |
+	| Mailboxes    | Email Address | Users        | Domain      | Key               | Key               |
+	| Mailboxes    | Email Address | Users        | Domain      | EvergreenObjectId | EvergreenObjectId |
