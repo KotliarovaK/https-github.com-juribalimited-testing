@@ -233,7 +233,7 @@ Examples:
 	| PageName     | ColumnName                                      | SearchCriteria                              | NumberOfRows |
 	| Devices      | Compliance                                      | GREEN                                       | 100          |
 	| Devices      | Windows7Mi: Readiness                           | OUT OF SCOPE                                | 5,118        |
-	| Devices      | Windows7Mi: Group Computer Rag Radio Date Owner | Not Applicable                              | 5,160        |
+	| Devices      | Windows7Mi: Group Computer Rag Radio Date Owner | Not Applicable                              | 5,161        |
 	| Applications | Import Type                                     | Altiris 6                                   | 31           |
 	| Users        | Department                                      | The Last Department With A Really Lond Name | 10           |
 

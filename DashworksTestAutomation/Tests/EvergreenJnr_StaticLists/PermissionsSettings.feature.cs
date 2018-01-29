@@ -287,7 +287,7 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_StaticLists
                         "NotOwnerSpecifiedEdit"});
             table3.AddRow(new string[] {
                         "NotOwnerEveryoneCanEdit"});
-            testRunner.Then("Following options are available in lists dorpdown:", ((string)(null)), table3, "Then ");
+            testRunner.Then("Following options are available in lists dropdown:", ((string)(null)), table3, "Then ");
             this.ScenarioCleanup();
         }
     }
