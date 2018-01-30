@@ -150,8 +150,11 @@ namespace DashworksTestAutomation.Pages.Evergreen
 
         public IWebElement GetDeleteColumnButton(string columnName)
         {
-            return Driver.FindElement(By.XPath(
-                $".//div[@class='columns-panel']//span[text()='{columnName}']/ancestor::div[@class='sub-categories-item selected-column ng-star-inserted']//button"));
+            //Workaround to avoid appearing 'Remove' tooltip
+            Driver.MouseHover(By.TagName("body"));
+            var selector =
+                $".//div[@class='columns-panel']//span[text()='{columnName}']/ancestor::div[@class='sub-categories-item selected-column ng-star-inserted']//button";
+            return Driver.FindElement(By.XPath(selector));
         }
 
         public void ExpandColumnsSectionByName(string sectionsName)
