@@ -105,18 +105,21 @@ namespace DashworksTestAutomation.Steps
         }
 
         [When(@"I perform test request to the ""(.*)"" API and get ""(.*)"" item summary for ""(.*)"" section")]
-        public void WhenIPerformTestRequestToTheApiAndGetItemSummaryForSection(string pageName, string itemName, string sectionName)
+        public void WhenIPerformTestRequestToTheApiAndGetItemSummaryForSection(string pageName, string itemName,
+            string sectionName)
         {
             var itemId = _client.GetDeviceIdByName(itemName, pageName);
             var section = _convertor.Convert(sectionName);
             var requestUri = "";
             if (pageName == "Mailboxes")
             {
-                requestUri = $"{UrlProvider.RestClientBaseUrl}{pageName.ToLower().TrimEnd('s').TrimEnd('e')}/{itemId}/{section}?$lang=en-GB";
+                requestUri =
+                    $"{UrlProvider.RestClientBaseUrl}{pageName.ToLower().TrimEnd('s').TrimEnd('e')}/{itemId}/{section}?$lang=en-GB";
             }
             else
             {
-                requestUri = $"{UrlProvider.RestClientBaseUrl}{pageName.ToLower().TrimEnd('s')}/{itemId}/{section}?$lang=en-GB";
+                requestUri =
+                    $"{UrlProvider.RestClientBaseUrl}{pageName.ToLower().TrimEnd('s')}/{itemId}/{section}?$lang=en-GB";
             }
 
             var request = new RestRequest(requestUri);
@@ -154,11 +157,13 @@ namespace DashworksTestAutomation.Steps
             var allFields = JsonConvert.DeserializeObject<JObject>(content)["results"];
             foreach (var pair in allFields)
             {
-                var t = pair.First;
-                //if (pair.Value<string>("address2").Equals(String.Empty) || pair.Value<string>("address3").Equals(String.Empty) || pair.Value<string>("address4").Equals(String.Empty))
-                //    continue;
-                //Assert.IsTrue(!string.IsNullOrEmpty(),
-                //    $"'Unknown' text is not displayed for {pair.Key} field ");
+                if (pair.ToString().Contains("address2") || pair.ToString().Contains("address3") ||
+                    pair.ToString().Contains("address4") ||
+                    pair.ToString().Contains("pendingStickyDepartmentMessage") ||
+                    pair.ToString().Contains("pendingStickyLocationMessage"))
+                    continue;
+                Assert.IsTrue(!string.IsNullOrEmpty(pair.Last.ToString()),
+                    "'Unknown' text is not displayed for field ");
             }
         }
     }
