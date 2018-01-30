@@ -3064,18 +3064,20 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_FiltersFeature
         [NUnit.Framework.CategoryAttribute("Evergreen_FiltersFeature")]
         [NUnit.Framework.CategoryAttribute("FiltersDisplay")]
         [NUnit.Framework.CategoryAttribute("DAS11088")]
-        [NUnit.Framework.TestCaseAttribute("Boot Up Date", new string[0])]
-        [NUnit.Framework.TestCaseAttribute("Build Date", new string[0])]
-        [NUnit.Framework.TestCaseAttribute("First Seen Date", new string[0])]
-        [NUnit.Framework.TestCaseAttribute("Last Seen Date", new string[0])]
-        public virtual void EvergreenJnr_DevicesList_CheckThatConsoleErrorsAreNotDisplayedForDateFilters(string filterName, string[] exampleTags)
+        [NUnit.Framework.TestCaseAttribute("Devices", "Build Date", new string[0])]
+        [NUnit.Framework.TestCaseAttribute("Devices", "Owner Last Logon Date", new string[0])]
+        [NUnit.Framework.TestCaseAttribute("Devices", "Windows7Mi: Date & Time Task", new string[0])]
+        [NUnit.Framework.TestCaseAttribute("Users", "Barry\'sUse: Scheduled Date", new string[0])]
+        [NUnit.Framework.TestCaseAttribute("Applications", "UserSchedu: Date App Req A", new string[0])]
+        [NUnit.Framework.TestCaseAttribute("Mailboxes", "Created Date", new string[0])]
+        public virtual void EvergreenJnr_DevicesList_CheckThatConsoleErrorsAreNotDisplayedForDateFilters(string listName, string filterName, string[] exampleTags)
         {
             System.Exception lastException = null;
             for (int i = 0; (i <= 1); i = (i + 1))
             {
                 try
                 {
-                    this.EvergreenJnr_DevicesList_CheckThatConsoleErrorsAreNotDisplayedForDateFiltersInternal(filterName, exampleTags);
+                    this.EvergreenJnr_DevicesList_CheckThatConsoleErrorsAreNotDisplayedForDateFiltersInternal(listName, filterName, exampleTags);
                     return;
                 }
                 catch (System.Exception exc)
@@ -3094,7 +3096,7 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_FiltersFeature
             }
         }
         
-        private void EvergreenJnr_DevicesList_CheckThatConsoleErrorsAreNotDisplayedForDateFiltersInternal(string filterName, string[] exampleTags)
+        private void EvergreenJnr_DevicesList_CheckThatConsoleErrorsAreNotDisplayedForDateFiltersInternal(string listName, string filterName, string[] exampleTags)
         {
             string[] @__tags = new string[] {
                     "Evergreen",
@@ -3109,8 +3111,8 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_FiltersFeature
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("EvergreenJnr_DevicesList_CheckThatConsoleErrorsAreNotDisplayedForDateFilters", @__tags);
             this.ScenarioSetup(scenarioInfo);
             this.FeatureBackground();
-            testRunner.When("User clicks \"Devices\" on the left-hand menu", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-            testRunner.Then("\"Devices\" list should be displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+            testRunner.When(string.Format("User clicks \"{0}\" on the left-hand menu", listName), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+            testRunner.Then(string.Format("\"{0}\" list should be displayed to the user", listName), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
             testRunner.When("User clicks the Filters button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
             testRunner.Then("Filters panel is displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
             testRunner.When(string.Format("user select \"{0}\" filter", filterName), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
