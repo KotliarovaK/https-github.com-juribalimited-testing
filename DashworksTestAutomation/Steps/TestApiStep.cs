@@ -146,5 +146,20 @@ namespace DashworksTestAutomation.Steps
                 Assert.AreEqual(state, "False", $"Incorrect display state for {fieldName}");
             }
         }
+
+        [Then(@"""(.*)"" text displayed for ""(.*)"" empty fields")]
+        public void ThenTextDisplayedForEmptyFields(string text, string sectionName)
+        {
+            var content = _responce.Value.Content;
+            var allFields = JsonConvert.DeserializeObject<JObject>(content)["results"];
+            foreach (var pair in allFields)
+            {
+                var t = pair.First;
+                //if (pair.Value<string>("address2").Equals(String.Empty) || pair.Value<string>("address3").Equals(String.Empty) || pair.Value<string>("address4").Equals(String.Empty))
+                //    continue;
+                //Assert.IsTrue(!string.IsNullOrEmpty(),
+                //    $"'Unknown' text is not displayed for {pair.Key} field ");
+            }
+        }
     }
 }

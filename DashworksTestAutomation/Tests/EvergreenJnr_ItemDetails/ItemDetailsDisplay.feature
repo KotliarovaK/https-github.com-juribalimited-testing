@@ -29,7 +29,18 @@ Scenario: EvergreenJnr_MailboxesList_CheckThat404ErrorIsNotDisplayedOccurringWhe
 	When User click content from "Email Address" column
 	Then "No mailbox owner found for this mailbox" text is displayed for "Mailbox Owner" section
 
-@Evergreen @AllLists @EvergreenJnr_ItemDetails @ItemDetailsDisplay @DAS11478 @DAS11477 @DAS11476 @DAS11510 @DAS-11791
+@Evergreen @AllLists @EvergreenJnr_ItemDetails @ItemDetailsDisplay @DAS10438 @Not_Run
+Scenario Outline: EvergreenJnr_AllLists_AllEmptyFieldsInItemDetailsAreDisplayedAsUnknownOnAPI
+	When I perform test request to the "<PageName>" API and get "<ItemName>" item summary for "<SectionName>" section
+	Then "Unknown" text displayed for "<SectionName>" empty fields
+
+Examples: 
+	| PageName  | ItemName                           | SectionName             |
+	| Mailboxes | azuresync3@juriba1.onmicrosoft.com | Department and Location |
+	| Users     | ABW1509426                         | Department and Location |
+	| Devices   | 01BQIYGGUW5PRP6                    | Department and Location |
+
+@Evergreen @AllLists @EvergreenJnr_ItemDetails @ItemDetailsDisplay @DAS11478 @DAS11477 @DAS11476 @DAS11510
 Scenario Outline: EvergreenJnr_AllLists_CheckStateOfSelectedFieldOnDetailsTabOnAPI
 	When I perform test request to the "<PageName>" API and get "<ItemName>" item summary for "<SectionName>" section
 	Then "<FieldName>" field display state is "<DisplayState>" on Details tab API
