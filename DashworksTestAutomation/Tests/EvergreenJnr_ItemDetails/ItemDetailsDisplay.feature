@@ -29,8 +29,8 @@ Scenario: EvergreenJnr_MailboxesList_CheckThat404ErrorIsNotDisplayedOccurringWhe
 	When User click content from "Email Address" column
 	Then "No mailbox owner found for this mailbox" text is displayed for "Mailbox Owner" section
 
-@Evergreen @Mailboxes @EvergreenJnr_ItemDetails @ItemDetailsDisplay @DAS11478 @DAS11477 @DAS11476 @DAS11510
-Scenario Outline: EvergreenJnr_MailboxesList_CheckStateOfSelectedFieldOnDetailsTabOnAPI
+@Evergreen @AllLists @EvergreenJnr_ItemDetails @ItemDetailsDisplay @DAS11478 @DAS11477 @DAS11476 @DAS11510 @DAS-11791
+Scenario Outline: EvergreenJnr_AllLists_CheckStateOfSelectedFieldOnDetailsTabOnAPI
 	When I perform test request to the "<PageName>" API and get "<ItemName>" item summary for "<SectionName>" section
 	Then "<FieldName>" field display state is "<DisplayState>" on Details tab API
 
