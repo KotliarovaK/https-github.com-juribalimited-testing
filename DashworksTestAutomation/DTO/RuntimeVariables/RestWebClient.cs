@@ -38,7 +38,7 @@ namespace DashworksTestAutomation.DTO.RuntimeVariables
                 throw new Exception($"Unable to execute request. URI: {requestUri}");
         }
 
-        public string GetDeviceIdByName(string deviceName, string pageName)
+        public string GetDeviceIdByName(string itemName, string pageName)
         {
             var column = "";
             var returnValue = "";
@@ -77,7 +77,7 @@ namespace DashworksTestAutomation.DTO.RuntimeVariables
             var content = response.Content;
 
             var allItems = JsonConvert.DeserializeObject<JObject>(content)["results"];
-            var item = allItems.First(x => x[column].ToString().Equals(deviceName));
+            var item = allItems.First(x => x[column].ToString().Equals(itemName));
             return item[returnValue].ToString();
         }
     }
