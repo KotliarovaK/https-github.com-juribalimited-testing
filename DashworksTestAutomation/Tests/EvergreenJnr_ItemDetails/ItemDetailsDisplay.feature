@@ -18,8 +18,8 @@ Scenario Outline: EvergreenJnr_AllLists_AllEmptyFieldsInItemDetailsAreDisplayedA
 Examples: 
 	| PageName     | SearchCriteria                     | ColumnName    |
 	| Mailboxes    | azuresync3@juriba1.onmicrosoft.com | Email Address |
-	| Users        | ABW1509426                         | Username      |
-	| Devices      | 01BQIYGGUW5PRP6                    | Hostname      |
+	#| Users        | ABW1509426                         | Username      |
+	#| Devices      | 01BQIYGGUW5PRP6                    | Hostname      |
 
 @Evergreen @Mailboxes @EvergreenJnr_ItemDetails @ItemDetailsDisplay @DAS11531
 Scenario: EvergreenJnr_MailboxesList_CheckThat404ErrorIsNotDisplayedOccurringWhenViewingMailboxDetailsWhereThereIsNoMailboxOwner
@@ -29,7 +29,18 @@ Scenario: EvergreenJnr_MailboxesList_CheckThat404ErrorIsNotDisplayedOccurringWhe
 	When User click content from "Email Address" column
 	Then "No mailbox owner found for this mailbox" text is displayed for "Mailbox Owner" section
 
-@Evergreen @AllLists @EvergreenJnr_ItemDetails @ItemDetailsDisplay @DAS11478 @DAS11477 @DAS11476 @DAS11510 @DAS-11791
+@Evergreen @AllLists @EvergreenJnr_ItemDetails @ItemDetailsDisplay @DAS10438 @Not_Run @API
+Scenario Outline: EvergreenJnr_AllLists_AllEmptyFieldsInItemDetailsAreDisplayedAsUnknownOnAPI
+	When I perform test request to the "<PageName>" API and get "<ItemName>" item summary for "<SectionName>" section
+	Then "Unknown" text displayed for "<SectionName>" empty fields
+
+Examples: 
+	| PageName  | ItemName                           | SectionName             |
+	| Mailboxes | azuresync3@juriba1.onmicrosoft.com | Department and Location |
+	| Users     | ABW1509426                         | Department and Location |
+	| Devices   | 01BQIYGGUW5PRP6                    | Department and Location |
+
+@Evergreen @AllLists @EvergreenJnr_ItemDetails @ItemDetailsDisplay @DAS11478 @DAS11477 @DAS11476 @DAS11510 @API
 Scenario Outline: EvergreenJnr_AllLists_CheckStateOfSelectedFieldOnDetailsTabOnAPI
 	When I perform test request to the "<PageName>" API and get "<ItemName>" item summary for "<SectionName>" section
 	Then "<FieldName>" field display state is "<DisplayState>" on Details tab API
@@ -40,7 +51,7 @@ Examples:
 	| Mailboxes | alfredo.m.daniel@dwlabs.local | Mailbox      | Cloud Mail Server | False        |
 	| Mailboxes | alex.cristea@juriba.com       | Mailbox      | Mail Server       | False        |
 	| Devices   | 001BAQXT6JWFPI                | Device Owner | Last Logoff Date  | False        |
-	
+
 @Evergreen @AllLists @EvergreenJnr_ListDetails @ListDetailsFunctionality @DAS11721
 Scenario Outline: EvergreenJnr_AllLists_CheckThatGroupIconsAreDisplayedForAllPages
 	When User clicks "<PageName>" on the left-hand menu
