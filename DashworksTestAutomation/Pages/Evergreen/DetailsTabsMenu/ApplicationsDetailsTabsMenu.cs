@@ -86,6 +86,14 @@ namespace DashworksTestAutomation.Pages.Evergreen.DetailsTabsMenu
             return columnNumber;
         }
 
+        public void ClosesSectionByName(string sectionName)
+        {
+            var section = Driver.FindElement(
+                By.XPath(
+                    $".//button[@class='btn btn-default blue-color mat-icon-button ng-star-inserted'][@aria-label='{sectionName}']"));
+            section.Click();
+        }
+
         public void GetCheckboxByName(string checkboxName)
         {
             string checkboxSettingsSelector = $".//div[@class='ag-column-select-panel']//span[text()='{checkboxName}']";

@@ -32,7 +32,7 @@ namespace DashworksTestAutomation.Pages.Evergreen
         {
             var section = Driver.FindElement(
                 By.XPath(
-                    $".//button[@class='btn btn-default blue-color mat-icon-button ng-star-inserted'][@aria-label='{sectionName}']"));
+                    $".//div[@class='ng-star-inserted']//span[@class='filter-category-label blue-color bold-text'][text()='{sectionName}']"));
             section.Click();
         }
 

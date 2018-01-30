@@ -27,8 +27,15 @@ namespace DashworksTestAutomation.Steps.Dashworks
             tabs.NavigateToTabByName(tabName);
         }
 
-        [When(@"User navigates to the ""(.*)"" section")]
-        public void WhenUserNavigatesToTheSection(string sectionName)
+        [Then(@"User closes ""(.*)"" section on the Details Page")]
+        public void ThenUserClosesSectionOnTheDetailsPage(string sectionName)
+        {
+            var detailsPage = _driver.NowAt<DetailsPage>();
+            detailsPage.NavigateToSectionByName(sectionName);
+        }
+
+        [When(@"User open ""(.*)"" section")]
+        public void WhenUserOpenSection(string sectionName)
         {
             var detailsPage = _driver.NowAt<DetailsPage>();
             detailsPage.NavigateToSectionByName(sectionName);
@@ -83,8 +90,8 @@ namespace DashworksTestAutomation.Steps.Dashworks
             {
                 var content = page.GetColumnContent(row["ColumnName"]);
 
-                //Check that at least 4 cells has some content
-                Assert.IsTrue(content.Select(string.IsNullOrEmpty).Count() > 4, "Newly added column is empty");
+                //Check that at least 1 cells has some content
+                Assert.IsTrue(content.Select(string.IsNullOrEmpty).Count() > 0, "Newly added column is empty");
             }
         }
 
