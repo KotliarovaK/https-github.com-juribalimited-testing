@@ -889,3 +889,20 @@ Examples:
 	| Mailboxes    | Mail Server             |
 	| Mailboxes    | Mailbox Type            |
 	| Mailboxes    | Owner Display Name      |
+
+@Evergreen @Devices @Evergreen_FiltersFeature @FiltersDisplay @DAS11088
+Scenario Outline: EvergreenJnr_DevicesList_CheckThatConsoleErrorsAreNotDisplayedForDateFilters
+	When User clicks "Devices" on the left-hand menu
+	Then "Devices" list should be displayed to the user
+	When User clicks the Filters button
+	Then Filters panel is displayed to the user
+	When user select "<FilterName>" filter
+	Then There are no errors in the browser console
+
+Examples: 
+	| FilterName                                            |
+	| Boot Up Date                                          |
+	| Build Date                                            |
+	| First Seen Date                                       |
+	| Last Seen Date                                        |
+	#Add More Filters Based on comment In DAS11088
