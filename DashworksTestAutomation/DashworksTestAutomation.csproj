@@ -178,6 +178,7 @@
     <Compile Include="Pages\Evergreen\CustomListElement.cs" />
     <Compile Include="Pages\Evergreen\DetailsPage.cs" />
     <Compile Include="Pages\Evergreen\DetailsTabsMenu\BaseDetailsTabsMenu.cs" />
+    <Compile Include="Pages\Evergreen\DetailsTabsMenu\ApplicationsDetailsTabsMenu.cs" />
     <Compile Include="Pages\Evergreen\DetailsTabsMenu\DevicesDetailsTabsMenu.cs" />
     <Compile Include="Pages\Evergreen\DevicesPage.cs" />
     <Compile Include="Pages\Evergreen\FiltersElement.cs" />

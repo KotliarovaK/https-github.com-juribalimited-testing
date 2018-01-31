@@ -66,3 +66,110 @@ Examples:
 	| Users        | 002B5DC7D4D34D5C895              | Username      |
 	| Applications | Acrobat Reader 4                 | Application   |
 	| Mailboxes    | 00BDBAEA57334C7C8F4@bclabs.local | Email Address |
+
+@Evergreen @AllLists @EvergreenJnr_ItemDetails @ItemDetailsDisplay @DAS11732
+Scenario Outline: EvergreenJnr_AllLists_CheckThatDataIsDisplayedAfterAddingColumnsForExpandedSections
+	When User clicks "<PageName>" on the left-hand menu
+	Then "<PageName>" list should be displayed to the user
+	When User click content from "<ItemName>" column
+	And User navigates to the "<TabName>" tab
+	When User have opened Column Settings for "<ColumnName>" column in the Details Page table
+	When User click Column button on the Column Settings panel
+	When User select "<CheckboxName>" checkbox on the Column Settings panel
+	When User click Column button on the Column Settings panel
+	Then ColumnName is added to the list in the Details Page table
+	| ColumnName      |
+	| <NewColumnName> |
+	And Content is present in the newly added column in the Details Page table
+	| ColumnName      |
+	| <NewColumnName> |
+	Then There are no errors in the browser console
+
+Examples: 
+	| PageName     | ItemName      | TabName      | ColumnName  | CheckboxName      | NewColumnName     |
+	| Devices      | Hostname      | Applications | Application | Key               | Key               |
+	| Users        | Username      | Groups       | Group       | Key               | Key               |
+	| Applications | Application   | Projects     | Project     | Object ID         | Object ID         |
+	| Applications | Application   | Projects     | Project     | Object Key        | Object Key        |
+	| Mailboxes    | Email Address | Users        | Domain      | Key               | Key               |
+	| Mailboxes    | Email Address | Users        | Domain      | EvergreenObjectId | EvergreenObjectId |
+
+@Evergreen @AllLists @EvergreenJnr_ItemDetails @ItemDetailsDisplay @DAS11732
+Scenario Outline: EvergreenJnr_AllLists_CtheckThatDataIsDisplayedAfterAddingColumns
+	When User clicks "<PageName>" on the left-hand menu
+	Then "<PageName>" list should be displayed to the user
+	When User click content from "<ItemName>" column
+	And User navigates to the "<TabName>" tab
+	Then User closes "<ExpandedSectionName>" section on the Details Page
+	When User open "<SectionName>" section
+	When User have opened Column Settings for "<ColumnName>" column in the Details Page table
+	When User click Column button on the Column Settings panel
+	When User select "<CheckboxName>" checkbox on the Column Settings panel
+	When User click Column button on the Column Settings panel
+	Then ColumnName is added to the list in the Details Page table
+	| ColumnName      |
+	| <NewColumnName> |
+	And Content is present in the newly added column in the Details Page table
+	| ColumnName      |
+	| <NewColumnName> |
+	Then There are no errors in the browser console
+
+Examples: 
+	| PageName     | ItemName      | TabName      | ExpandedSectionName | SectionName         | ColumnName    | CheckboxName      | NewColumnName     |
+	#| Devices      | Hostname      | Applications | Application Summary | Application Detail  | Application   | Application Key   | Application Key   |
+	#| Devices      | Hostname      | Applications | Application Summary | Application Detail  | Application   | Advertisement Key | Advertisement Key |
+	#| Devices      | Hostname      | Applications | Application Summary | Application Detail  | Application   | Group Key         | Group Key         |
+	#| Devices      | Hostname      | Applications | Application Summary | Application Detail  | Application   | Collection Key    | Collection Key    |
+	#| Devices      | Hostname      | Applications | Application Summary | Application Detail  | Application   | User Key          | User Key          |
+	| Devices      | Hostname      | Applications | Application Summary | Advertisements      | Application   | Key               | Key               |
+	| Devices      | Hostname      | Applications | Application Summary | Advertisements      | Application   | Application Key   | Application Key   |
+	| Devices      | Hostname      | Applications | Application Summary | Advertisements      | Application   | SiteKey           | SiteKey           |
+	| Devices      | Hostname      | Applications | Application Summary | Advertisements      | Application   | Collection Key    | Collection Key    |
+	| Devices      | Hostname      | Applications | Application Summary | Advertisements      | Application   | Program Key       | Program Key       |
+	| Devices      | Hostname      | Applications | Application Summary | Collections         | Collection    | Key               | Key               |
+	| Devices      | Hostname      | Applications | Application Summary | Collections         | Collection    | SiteKey           | SiteKey           |
+	| Applications | Application   | Details      | Application         | Advertisements      | Advertisement | Advertisement Key | Advertisement Key |
+	| Applications | Application   | Details      | Application         | Advertisements      | Advertisement | Collection Key    | Collection Key    |
+	| Applications | Application   | Details      | Application         | Programs            | Program       | Program Key       | Program Key       |
+	| Applications | Application   | Distribution | Users               | Devices             | Device        | Computer Key      | Computer Key      |
+	| Applications | Application   | Distribution | Users               | Devices             | Device        | Owner Object Key  | Owner Object Key  |
+	| Applications | Application   | Distribution | Users               | Devices             | Device        | User Key          | User Key          |
+	| Applications | Application   | Distribution | Users               | Devices             | Device        | Advertisement Key | Advertisement Key |
+	| Applications | Application   | Distribution | Users               | Devices             | Device        | Collection Key    | Collection Key    |
+	| Applications | Application   | Distribution | Users               | Devices             | Device        | Program Key       | Program Key       |
+	| Mailboxes    | Email Address | Users        | Users               | Groups              | Domain        | Key               | Key               |
+	| Mailboxes    | Email Address | Users        | Users               | Mailbox Permissions | Domain        | Key               | Key               |
+	| Mailboxes    | Email Address | Users        | Users               | Mailbox Permissions | Domain        | ViaGroupObjectKey | ViaGroupObjectKey |
+	| Mailboxes    | Email Address | Users        | Users               | Mailbox Permissions | Domain        | AccessCategoryKey | AccessCategoryKey |
+
+@Evergreen @AllLists @EvergreenJnr_ItemDetails @ItemDetailsDisplay @DAS11732
+Scenario Outline: EvergreenJnr_AllLists_CtheckThatDataIsDisplayedAfterAddingColumnsForClosedSections
+	When User clicks "<PageName>" on the left-hand menu
+	Then "<PageName>" list should be displayed to the user
+	When User click content from "<ItemName>" column
+	And User navigates to the "<TabName>" tab
+	When User open "<SectionName>" section
+	When User have opened Column Settings for "<ColumnName>" column in the Details Page table
+	When User click Column button on the Column Settings panel
+	When User select "<CheckboxName>" checkbox on the Column Settings panel
+	When User click Column button on the Column Settings panel
+	Then ColumnName is added to the list in the Details Page table
+	| ColumnName      |
+	| <NewColumnName> |
+	And Content is present in the newly added column in the Details Page table
+	| ColumnName      |
+	| <NewColumnName> |
+	Then There are no errors in the browser console
+
+Examples: 
+	| PageName | ItemName | TabName    | SectionName                | ColumnName  | CheckboxName     | NewColumnName    |
+	| Devices  | Hostname | Compliance | Software Compliance Issues | Application | PackageKey       | PackageKey       |
+	| Devices  | Hostname | Projects   | Device Projects            | Project     | Object ID        | Object ID        |
+	| Devices  | Hostname | Projects   | Device Projects            | Project     | Key              | Key              |
+	| Devices  | Hostname | Projects   | Device Owner Projects      | Username    | ObjecyKey        | ObjecyKey        |
+	| Devices  | Hostname | Projects   | Device Owner Projects      | Username    | Object ID        | Object ID        |
+	| Devices  | Hostname | Projects   | Device Owner Projects      | Username    | Key              | Key              |
+	| Devices  | Hostname | Projects   | Device Owner Projects      | Username    | Request Type Key | Request Type Key |
+	| Devices  | Hostname | Projects   | Device Owner Projects      | Username    | Category Key     | Category Key     |
+	| Devices  | Hostname | Projects   | Device Owner Projects      | Username    | Status Key       | Status Key       |
+	| Users  | Username   | Projects   | Device Owner Projects      | Username    | Status Key       | Status Key       |

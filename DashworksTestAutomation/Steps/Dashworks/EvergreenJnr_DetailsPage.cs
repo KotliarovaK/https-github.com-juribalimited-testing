@@ -4,6 +4,7 @@ using DashworksTestAutomation.Pages.Evergreen.DetailsTabsMenu;
 using NUnit.Framework;
 using OpenQA.Selenium.Remote;
 using System.Collections.Generic;
+using System.Linq;
 using TechTalk.SpecFlow;
 
 namespace DashworksTestAutomation.Steps.Dashworks
@@ -26,11 +27,73 @@ namespace DashworksTestAutomation.Steps.Dashworks
             tabs.NavigateToTabByName(tabName);
         }
 
-        [When(@"User navigates to the ""(.*)"" section")]
-        public void WhenUserNavigatesToTheSection(string sectionName)
+        [Then(@"User closes ""(.*)"" section on the Details Page")]
+        public void ThenUserClosesSectionOnTheDetailsPage(string sectionName)
         {
             var detailsPage = _driver.NowAt<DetailsPage>();
             detailsPage.NavigateToSectionByName(sectionName);
+        }
+
+        [When(@"User open ""(.*)"" section")]
+        public void WhenUserOpenSection(string sectionName)
+        {
+            var detailsPage = _driver.NowAt<DetailsPage>();
+            detailsPage.NavigateToSectionByName(sectionName);
+        }
+
+        [When(@"User have opened Column Settings for ""(.*)"" column in the Details Page table")]
+        public void WhenUserHaveOpenedColumnSettingsForColumnInTheDetailsPageTable(string columnName)
+        {
+            var page = _driver.NowAt<ApplicationsDetailsTabsMenu>();
+            page.OpenColumnSettingsByName(columnName);
+        }
+
+        [When(@"User click Column button on the Column Settings panel")]
+        public void WhenUserClickColumnButtonOnTheColumnSettingsPanel()
+        {
+            var menu = _driver.NowAt<ApplicationsDetailsTabsMenu>();
+            _driver.WaitWhileControlIsNotDisplayed<ApplicationsDetailsTabsMenu>(() => menu.ColumnButton);
+            menu.ColumnButton.Click();
+        }
+
+        [When(@"User select ""(.*)"" checkbox on the Column Settings panel")]
+        public void WhenUserSelectCheckboxOnTheColumnSettingsPanel(string checkboxName)
+        {
+            var page = _driver.NowAt<ApplicationsDetailsTabsMenu>();
+            page.GetCheckboxByName(checkboxName);
+        }
+
+        [Then(@"ColumnName is added to the list in the Details Page table")]
+        public void ThenColumnNameIsAddedToTheListInTheDetailsPageTable(Table table)
+
+        {
+            CheckColumnDisplayedState(table, true);
+        }
+
+        private void CheckColumnDisplayedState(Table table, bool displayedState)
+        {
+            var listpageMenu = _driver.NowAt<ApplicationsDetailsTabsMenu>();
+            foreach (var row in table.Rows)
+            {
+                _driver.WaitForDataLoading();
+                Assert.AreEqual(displayedState, listpageMenu.IsColumnPresent(row["ColumnName"]),
+                    $"Column '{row["ColumnName"]}' displayed state should be {displayedState}");
+            }
+        }
+
+        [Then(@"Content is present in the newly added column in the Details Page table")]
+        public void ThenContentIsPresentInTheNewlyAddedColumnInTheDetailsPageTable(Table table)
+        {
+            var page = _driver.NowAt<ApplicationsDetailsTabsMenu>();
+
+            foreach (var row in table.Rows)
+            {
+                var content = page.GetColumnContent(row["ColumnName"]);
+
+
+                //Check that at least 1 cells has some content
+                Assert.IsTrue(content.Select(string.IsNullOrEmpty).Count() > 0, "Newly added column is empty");
+            }
         }
 
         [Then(@"Fields with empty information are displayed")]
