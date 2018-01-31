@@ -354,7 +354,7 @@ Examples:
 	| Application Custom Fields | User Field 2                |
 
 @Evergreen @Users @EvergreenJnr_FilterFeature @FilterFunctionality @DAS11577
-Scenario Outline: EvergreenJnr_UsersList_
+Scenario: EvergreenJnr_UsersList_
 	When User clicks "Users" on the left-hand menu
 	Then "Users" list should be displayed to the user
 	When User clicks the Filters button
@@ -364,4 +364,3 @@ Scenario Outline: EvergreenJnr_UsersList_
 	| RED                |
 	Then "Compliance" filter is added to the list
 	When User navigate to Edit button for "Compliance" filter
-	Then 
