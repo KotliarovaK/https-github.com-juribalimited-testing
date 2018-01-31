@@ -18,8 +18,8 @@ Scenario Outline: EvergreenJnr_AllLists_AllEmptyFieldsInItemDetailsAreDisplayedA
 Examples: 
 	| PageName     | SearchCriteria                     | ColumnName    |
 	| Mailboxes    | azuresync3@juriba1.onmicrosoft.com | Email Address |
-	| Users        | ABW1509426                         | Username      |
-	| Devices      | 01BQIYGGUW5PRP6                    | Hostname      |
+	#| Users        | ABW1509426                         | Username      |
+	#| Devices      | 01BQIYGGUW5PRP6                    | Hostname      |
 
 @Evergreen @Mailboxes @EvergreenJnr_ItemDetails @ItemDetailsDisplay @DAS11531
 Scenario: EvergreenJnr_MailboxesList_CheckThat404ErrorIsNotDisplayedOccurringWhenViewingMailboxDetailsWhereThereIsNoMailboxOwner
@@ -29,40 +29,29 @@ Scenario: EvergreenJnr_MailboxesList_CheckThat404ErrorIsNotDisplayedOccurringWhe
 	When User click content from "Email Address" column
 	Then "No mailbox owner found for this mailbox" text is displayed for "Mailbox Owner" section
 
-@Evergreen @Mailboxes @EvergreenJnr_ItemDetails @ItemDetailsDisplay @DAS11478 @DAS11477 @DAS11476
-Scenario Outline: EvergreenJnr_MailboxesList_CheckThatSelectedFieldStateOnDetailsTab
-	When User clicks "Mailboxes" on the left-hand menu
-	Then "Mailboxes" list should be displayed to the user
-	When User perform search by "<EmailAddress>"
-	And User click content from "Email Address" column
-	Then "<FieldName>" field display state is "<DisplayState>" on Details tab
+@Evergreen @AllLists @EvergreenJnr_ItemDetails @ItemDetailsDisplay @DAS10438 @Not_Run @API
+Scenario Outline: EvergreenJnr_AllLists_AllEmptyFieldsInItemDetailsAreDisplayedAsUnknownOnAPI
+	When I perform test request to the "<PageName>" API and get "<ItemName>" item summary for "<SectionName>" section
+	Then "Unknown" text displayed for "<SectionName>" empty fields
 
-Examples:
-	| EmailAddress                  | FieldName         | DisplayState |
-	| alfredo.m.daniel@dwlabs.local | Mailbox Database  | true         |
-	| alfredo.m.daniel@dwlabs.local | Cloud Mail Server | false        |
-	| alex.cristea@juriba.com       | Mail Server       | false        |
+Examples: 
+	| PageName  | ItemName                           | SectionName             |
+	| Mailboxes | azuresync3@juriba1.onmicrosoft.com | Department and Location |
+	| Users     | ABW1509426                         | Department and Location |
+	| Devices   | 01BQIYGGUW5PRP6                    | Department and Location |
 
-@Evergreen @Mailboxes @EvergreenJnr_ItemDetails @ItemDetailsDisplay @DAS11478 @DAS11477 @DAS11476
-Scenario Outline: EvergreenJnr_MailboxesList_CheckStateOfSelectedFieldOnDetailsTab
-	When I perform test request to the "<PageName>" API and get "<ColumnName>" item summary
+@Evergreen @AllLists @EvergreenJnr_ItemDetails @ItemDetailsDisplay @DAS11478 @DAS11477 @DAS11476 @DAS11510 @API
+Scenario Outline: EvergreenJnr_AllLists_CheckStateOfSelectedFieldOnDetailsTabOnAPI
+	When I perform test request to the "<PageName>" API and get "<ItemName>" item summary for "<SectionName>" section
 	Then "<FieldName>" field display state is "<DisplayState>" on Details tab API
 
 Examples:
-	| PageName  | ColumnName                    | FieldName         | DisplayState |
-	| Mailboxes | alfredo.m.daniel@dwlabs.local | Mailbox Database  | True         |
-	| Mailboxes | alfredo.m.daniel@dwlabs.local | Cloud Mail Server | False        |
-	| Mailboxes | alex.cristea@juriba.com       | Mail Server       | False        |
+	| PageName  | ItemName                      | SectionName  | FieldName         | DisplayState |
+	| Mailboxes | alfredo.m.daniel@dwlabs.local | Mailbox      | Mailbox Database  | True         |
+	| Mailboxes | alfredo.m.daniel@dwlabs.local | Mailbox      | Cloud Mail Server | False        |
+	| Mailboxes | alex.cristea@juriba.com       | Mailbox      | Mail Server       | False        |
+	| Devices   | 001BAQXT6JWFPI                | Device Owner | Last Logoff Date  | False        |
 
-@Evergreen @Devices @EvergreenJnr_ItemDetails @ItemDetailsDisplay @DAS11510
-Scenario: EvergreenJnr_DevicesList_CheckThatLastLogoffDateFieldIsNotDisplayedAtTheDeviceOwnerBlockOfDeviceDetails
-	When User clicks "Devices" on the left-hand menu
-	Then "Devices" list should be displayed to the user
-	When User click content from "Hostname" column
-	And User navigates to the "Details" tab
-	And User open "Device Owner" section
-	Then "Last Logoff Date" field display state is "false" on Details tab
-	
 @Evergreen @AllLists @EvergreenJnr_ListDetails @ListDetailsFunctionality @DAS11721
 Scenario Outline: EvergreenJnr_AllLists_CheckThatGroupIconsAreDisplayedForAllPages
 	When User clicks "<PageName>" on the left-hand menu
