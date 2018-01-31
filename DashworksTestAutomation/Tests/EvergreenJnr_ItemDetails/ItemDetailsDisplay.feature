@@ -143,7 +143,7 @@ Examples:
 	| Mailboxes    | Email Address | Users        | Users               | Mailbox Permissions | Domain        | AccessCategoryKey | AccessCategoryKey |
 
 @Evergreen @AllLists @EvergreenJnr_ItemDetails @ItemDetailsDisplay @DAS11732
-Scenario Outline: EvergreenJnr_AllLists_CtheckThatDataIsDisplayedAfterAddingColumnsForClosedSections
+Scenario Outline: EvergreenJnr_AllLists_CheckThatDataIsDisplayedAfterAddingColumnsForClosedSections
 	When User clicks "<PageName>" on the left-hand menu
 	Then "<PageName>" list should be displayed to the user
 	When User click content from "<ItemName>" column
@@ -172,4 +172,3 @@ Examples:
 	| Devices  | Hostname | Projects   | Device Owner Projects      | Username    | Request Type Key | Request Type Key |
 	| Devices  | Hostname | Projects   | Device Owner Projects      | Username    | Category Key     | Category Key     |
 	| Devices  | Hostname | Projects   | Device Owner Projects      | Username    | Status Key       | Status Key       |
-	| Users  | Username   | Projects   | Device Owner Projects      | Username    | Status Key       | Status Key       |
