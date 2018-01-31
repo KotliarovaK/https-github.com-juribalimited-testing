@@ -29,7 +29,7 @@ Scenario: EvergreenJnr_MailboxesList_CheckThat404ErrorIsNotDisplayedOccurringWhe
 	When User click content from "Email Address" column
 	Then "No mailbox owner found for this mailbox" text is displayed for "Mailbox Owner" section
 
-@Evergreen @AllLists @EvergreenJnr_ItemDetails @ItemDetailsDisplay @DAS10438 @Not_Run @API
+@Evergreen @AllLists @EvergreenJnr_ItemDetails @ItemDetailsDisplay @DAS10438 @API
 Scenario Outline: EvergreenJnr_AllLists_AllEmptyFieldsInItemDetailsAreDisplayedAsUnknownOnAPI
 	When I perform test request to the "<PageName>" API and get "<ItemName>" item summary for "<SectionName>" section
 	Then "Unknown" text displayed for "<SectionName>" empty fields
@@ -172,4 +172,3 @@ Examples:
 	| Devices  | Hostname | Projects   | Device Owner Projects      | Username    | Request Type Key | Request Type Key |
 	| Devices  | Hostname | Projects   | Device Owner Projects      | Username    | Category Key     | Category Key     |
 	| Devices  | Hostname | Projects   | Device Owner Projects      | Username    | Status Key       | Status Key       |
-	| Users  | Username   | Projects   | Device Owner Projects      | Username    | Status Key       | Status Key       |
