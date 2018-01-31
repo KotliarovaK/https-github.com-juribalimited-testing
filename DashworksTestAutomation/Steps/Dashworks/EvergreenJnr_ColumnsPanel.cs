@@ -71,6 +71,7 @@ namespace DashworksTestAutomation.Steps.Dashworks
         [Then(@"ColumnName is added to the list")]
         public void ThenColumnNameIsAddedToTheList(Table table)
         {
+            _driver.WaitForDataLoading();
             CheckColumnDisplayedState(table, true);
         }
 
@@ -83,9 +84,10 @@ namespace DashworksTestAutomation.Steps.Dashworks
 
         private void CheckColumnDisplayedState(Table table, bool displayedState)
         {
+            var listpageMenu = _driver.NowAt<BaseDashboardPage>();
+            listpageMenu.RefreshTableButton.Click();
             _driver.WaitForDataLoading();
             Thread.Sleep(1000);
-            var listpageMenu = _driver.NowAt<BaseDashboardPage>();
             foreach (var row in table.Rows)
             {
                 Assert.AreEqual(displayedState, listpageMenu.IsColumnPresent(row["ColumnName"]),

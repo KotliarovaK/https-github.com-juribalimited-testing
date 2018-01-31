@@ -42,6 +42,9 @@ namespace DashworksTestAutomation.Pages.Evergreen
         [FindsBy(How = How.XPath, Using = ".//input[@aria-label='Search table']")]
         public IWebElement TableSearchTextbox { get; set; }
 
+        [FindsBy(How = How.XPath, Using = ".//button[@aria-label='reload']")]
+        public IWebElement RefreshTableButton { get; set; }
+
         [FindsBy(How = How.XPath, Using = ".//span[@class='ag-header-icon ag-sort-descending-icon']")]
         public IWebElement DescendingSortingIcon { get; set; }
 

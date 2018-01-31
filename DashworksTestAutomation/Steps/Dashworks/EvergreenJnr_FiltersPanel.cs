@@ -346,6 +346,13 @@ namespace DashworksTestAutomation.Steps.Dashworks
             filterElement.GetEditFilterButton(filterName).Click();
         }
 
+        [When(@"User navigate to Edit button for ""(.*)"" filter")]
+        public void WhenUserNavigateToEditButtonForFilter(string filterName)
+        {
+            var filterElement = _driver.NowAt<FiltersElement>();
+            _driver.MouseHover(filterElement.GetEditFilterButton(filterName));
+        }
+
         [Then(@"""(.*)"" checkbox is checked")]
         public void ThenCheckboxIsChecked(string addColumn)
         {
