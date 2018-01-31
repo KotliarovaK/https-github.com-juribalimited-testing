@@ -116,11 +116,11 @@ Scenario Outline: EvergreenJnr_AllLists_CtheckThatDataIsDisplayedAfterAddingColu
 
 Examples: 
 	| PageName     | ItemName      | TabName      | ExpandedSectionName | SectionName         | ColumnName    | CheckboxName      | NewColumnName     |
-	#| Devices      | Hostname      | Applications | Application Summary | Application Detail  | Application   | Application Key   | Application Key   |
-	#| Devices      | Hostname      | Applications | Application Summary | Application Detail  | Application   | Advertisement Key | Advertisement Key |
-	#| Devices      | Hostname      | Applications | Application Summary | Application Detail  | Application   | Group Key         | Group Key         |
-	#| Devices      | Hostname      | Applications | Application Summary | Application Detail  | Application   | Collection Key    | Collection Key    |
-	#| Devices      | Hostname      | Applications | Application Summary | Application Detail  | Application   | User Key          | User Key          |
+	| Devices      | Hostname      | Applications | Application Summary | Application Detail  | Application   | Application Key   | Application Key   |
+	| Devices      | Hostname      | Applications | Application Summary | Application Detail  | Application   | Advertisement Key | Advertisement Key |
+	| Devices      | Hostname      | Applications | Application Summary | Application Detail  | Application   | Group Key         | Group Key         |
+	| Devices      | Hostname      | Applications | Application Summary | Application Detail  | Application   | Collection Key    | Collection Key    |
+	| Devices      | Hostname      | Applications | Application Summary | Application Detail  | Application   | User Key          | User Key          |
 	| Devices      | Hostname      | Applications | Application Summary | Advertisements      | Application   | Key               | Key               |
 	| Devices      | Hostname      | Applications | Application Summary | Advertisements      | Application   | Application Key   | Application Key   |
 	| Devices      | Hostname      | Applications | Application Summary | Advertisements      | Application   | SiteKey           | SiteKey           |
