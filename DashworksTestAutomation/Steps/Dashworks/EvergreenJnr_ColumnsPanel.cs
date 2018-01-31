@@ -7,6 +7,7 @@ using NUnit.Framework;
 using OpenQA.Selenium.Remote;
 using System;
 using System.Text.RegularExpressions;
+using System.Threading;
 using TechTalk.SpecFlow;
 
 namespace DashworksTestAutomation.Steps.Dashworks
@@ -76,13 +77,14 @@ namespace DashworksTestAutomation.Steps.Dashworks
         [Then(@"ColumnName is removed from the list")]
         public void ThenColumnNameIsRemovedFromTheList(Table table)
         {
+            _driver.WaitForDataLoading();
             CheckColumnDisplayedState(table, false);
         }
 
         private void CheckColumnDisplayedState(Table table, bool displayedState)
         {
             _driver.WaitForDataLoading();
-
+            Thread.Sleep(1000);
             var listpageMenu = _driver.NowAt<BaseDashboardPage>();
             foreach (var row in table.Rows)
             {
