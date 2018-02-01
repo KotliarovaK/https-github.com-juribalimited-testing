@@ -70,6 +70,18 @@ namespace DashworksTestAutomation.Steps.Dashworks
             CheckColumnDisplayedState(table, true);
         }
 
+        [Then(@"ColumnName is displayed in following order on the Details page:")]
+        public void ThenColumnNameIsDisplayedInFollowingOrderOnTheDetailsPage(Table table)
+        {
+            {
+                var page = _driver.NowAt<ApplicationsDetailsTabsMenu>();
+
+                List<string> columnNames = page.GetAllColumnHeadersOnTheDetailsPage().Select(column => column.Text).ToList();
+                var expectedList = table.Rows.SelectMany(row => row.Values).ToList();
+                Assert.AreEqual(expectedList, columnNames, "Columns order is incorrect");
+            }
+        }
+
         private void CheckColumnDisplayedState(Table table, bool displayedState)
         {
             var listpageMenu = _driver.NowAt<ApplicationsDetailsTabsMenu>();

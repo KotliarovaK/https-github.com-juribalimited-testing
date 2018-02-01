@@ -102,5 +102,12 @@ namespace DashworksTestAutomation.Pages.Evergreen.DetailsTabsMenu
             Driver.FindElement(By.XPath(checkboxSettingsSelector)).Click();
         }
 
+        public IList<IWebElement> GetAllColumnHeadersOnTheDetailsPage()
+        {
+            var selector = By.XPath(".//span[@role='columnheader']");
+            Driver.WaitForDataLoading();
+            return Driver.FindElements(selector);
+        }
+
     }
 }
