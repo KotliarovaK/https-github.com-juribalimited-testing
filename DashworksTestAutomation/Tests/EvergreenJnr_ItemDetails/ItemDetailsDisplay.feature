@@ -95,7 +95,7 @@ Examples:
 	| Mailboxes    | Email Address | Users        | Domain      | EvergreenObjectId | EvergreenObjectId |
 
 @Evergreen @AllLists @EvergreenJnr_ItemDetails @ItemDetailsDisplay @DAS11732
-Scenario Outline: EvergreenJnr_AllLists_CtheckThatDataIsDisplayedAfterAddingColumns
+Scenario Outline: EvergreenJnr_AllLists_CheckThatDataIsDisplayedAfterAddingColumns
 	When User clicks "<PageName>" on the left-hand menu
 	Then "<PageName>" list should be displayed to the user
 	When User click content from "<ItemName>" column
@@ -143,7 +143,7 @@ Examples:
 	| Mailboxes    | Email Address | Users        | Users               | Mailbox Permissions | Domain        | AccessCategoryKey | AccessCategoryKey |
 
 @Evergreen @AllLists @EvergreenJnr_ItemDetails @ItemDetailsDisplay @DAS11732
-Scenario Outline: EvergreenJnr_AllLists_CtheckThatDataIsDisplayedAfterAddingColumnsForClosedSections
+Scenario Outline: EvergreenJnr_AllLists_CheckThatDataIsDisplayedAfterAddingColumnsForClosedSections
 	When User clicks "<PageName>" on the left-hand menu
 	Then "<PageName>" list should be displayed to the user
 	When User click content from "<ItemName>" column
@@ -172,3 +172,21 @@ Examples:
 	| Devices  | Hostname | Projects   | Device Owner Projects      | Username    | Request Type Key | Request Type Key |
 	| Devices  | Hostname | Projects   | Device Owner Projects      | Username    | Category Key     | Category Key     |
 	| Devices  | Hostname | Projects   | Device Owner Projects      | Username    | Status Key       | Status Key       |
+
+@Evergreen @Users @EvergreenJnr_ItemDetails @ItemDetailsDisplay @DAS11053
+Scenario: EvergreenJnr_UsersLists_CheckThatTheTableColumnsAreNotDuplicatedOnTheDetailsPage
+	When User clicks "Users" on the left-hand menu
+	Then "Users" list should be displayed to the user
+	When User perform search by "Administrator.Users.dwlabs.local"
+	When User click content from "Username" column
+	And User navigates to the "Devices" tab
+	Then ColumnName is displayed in following order on the Details page:
+	| ColumnName     |
+	| Hostname       |
+	| OS Full Name   |
+	| Type           |
+	| Source Type    |
+	| Source         |
+	| Inventory Site |
+	| IP Address     |
+	| Compliance     |
