@@ -353,7 +353,7 @@ Examples:
 	| Application Custom Fields | General information field 1 |
 	| Application Custom Fields | User Field 2                |
 
-@Evergreen @Users @EvergreenJnr_FilterFeature @FilterFunctionality @DAS11738 @Not_Run
+@Evergreen @Users @EvergreenJnr_FilterFeature @FilterFunctionality @DAS11738
 Scenario: EvergreenJnr_UsersList_CheckThatToolTipShownWithEditFilterTextWhenEditingAFilterDisplayed 
 	When User clicks "Users" on the left-hand menu
 	Then "Users" list should be displayed to the user
@@ -361,7 +361,7 @@ Scenario: EvergreenJnr_UsersList_CheckThatToolTipShownWithEditFilterTextWhenEdit
 	Then Filters panel is displayed to the user
 	When User add "Compliance" filter where type is "Equals" without added column and following checkboxes:
 	| SelectedCheckboxes |
-	| RED                |
+	| Red                |
 	Then "Compliance" filter is added to the list
 	When User navigate to Edit button for "Compliance" filter
-	Then 
+	Then tooltip is displayed with "Edit Filter" text for edit filter button
