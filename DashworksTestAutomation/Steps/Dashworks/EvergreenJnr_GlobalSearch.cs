@@ -26,6 +26,14 @@ namespace DashworksTestAutomation.Steps.Dashworks
             _driver.WaitForDataLoading();
         }
 
+        [Then(@"User clicks on the search result")]
+        public void ThenUserClicksOnTheSearchResult()
+        {
+            var menu = _driver.NowAt<GlobalSearchElement>();
+            menu.SearchResult.Click();
+            Logger.Write("Search Result was clicked");
+        }
+
         [Then(@"""(.*)"" message is displayed below Global Search field")]
         public void ThenMessageIsDisplayedBelowGlobalSearchField(string text)
         {

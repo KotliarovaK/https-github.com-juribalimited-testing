@@ -132,8 +132,8 @@ namespace DashworksTestAutomation.Steps.Dashworks
             }
         }
 
-        [Then(@"Group Icon for ""(.*)"" page is displayed")]
-        public void ThenGroupIconForPageIsDisplayed(string pageName)
+        [Then(@"Group Icon for Group Details page is displayed")]
+        public void ThenGroupIconForPageIsDisplayed()
         {
             var detailsPage = _driver.NowAt<DetailsPage>();
             Assert.IsTrue(detailsPage.GroupIcon.Displayed());

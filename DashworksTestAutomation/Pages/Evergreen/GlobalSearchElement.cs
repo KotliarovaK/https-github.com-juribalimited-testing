@@ -20,6 +20,9 @@ namespace DashworksTestAutomation.Pages.Evergreen
         [FindsBy(How = How.XPath, Using = ".//button[@class='btn input-toggle mat-icon-button ng-star-inserted']")]
         public IWebElement SearchTextboxResetButton { get; set; }
 
+        [FindsBy(How = How.XPath, Using = ".//tr[@class='fld-property ng-star-inserted']//a")]
+        public IWebElement SearchResult { get; set; }
+
         public override List<By> GetPageIdentitySelectors()
         {
             Driver.WaitForDataLoading();
