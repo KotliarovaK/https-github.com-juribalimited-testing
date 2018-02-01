@@ -27,6 +27,12 @@ namespace DashworksTestAutomation.Pages.Evergreen.DetailsTabsMenu
         [FindsBy(How = How.XPath, Using = ".//span[@class='ag-icon ag-icon-columns']")]
         public IWebElement ColumnButton { get; set; }
 
+        [FindsBy(How = How.XPath, Using = ".//span[@class='ag-column-select-label']")]
+        public IList<IWebElement> ColumnCheckboxName { get; set; }
+
+        [FindsBy(How = How.XPath, Using = ".//span[@class='ag-column-select-checkbox']")]
+        public IWebElement ColumnCheckbox { get; set; }
+
         public override List<By> GetPageIdentitySelectors()
         {
             Driver.WaitForDataLoading();

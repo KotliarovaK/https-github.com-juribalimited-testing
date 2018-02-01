@@ -190,3 +190,29 @@ Scenario: EvergreenJnr_UsersLists_CheckThatTheTableColumnsAreNotDuplicatedOnTheD
 	| Inventory Site |
 	| IP Address     |
 	| Compliance     |
+
+@Evergreen @Devices @EvergreenJnr_ItemDetails @ItemDetailsDisplay @DAS11393
+Scenario: EvergreenJnr_DevicesLists_CheckThatSelectedCheckboxesMatchTheColumnsInTheTableOnTheDetailsPage
+	When User clicks "Devices" on the left-hand menu
+	Then "Devices" list should be displayed to the user
+	When User click content from "Hostname" column
+	And User navigates to the "Projects" tab
+	When User open "Device Projects" section
+	When User have opened Column Settings for "Project" column in the Details Page table
+	When User click Column button on the Column Settings panel
+	When User select "Key" checkbox on the Column Settings panel
+	When User click Column button on the Column Settings panel
+	Then ColumnName is added to the list in the Details Page table
+	| ColumnName |
+	| Key        |
+	Then Checkboxes are checked on the Column Settings panel:
+	| Checkbox   |
+	| Key          |
+	| Project      |
+	| Project Type |
+	| Request Type |
+	| Workflow     |
+	| Category     |
+	| Status       |
+	| Date         |
+	| Readiness    |
