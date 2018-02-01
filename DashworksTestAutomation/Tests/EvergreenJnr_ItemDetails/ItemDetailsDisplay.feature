@@ -205,8 +205,8 @@ Scenario: EvergreenJnr_DevicesLists_CheckThatSelectedCheckboxesMatchTheColumnsIn
 	Then ColumnName is added to the list in the Details Page table
 	| ColumnName |
 	| Key        |
-	Then Checkboxes are checked on the Column Settings panel:
-	| Checkbox   |
+	Then Checkboxes are checked on the Column Settings panel for "Key" Column Settings panel:
+	| Checkbox     |
 	| Key          |
 	| Project      |
 	| Project Type |

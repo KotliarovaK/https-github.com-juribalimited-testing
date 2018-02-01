@@ -770,7 +770,8 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_ItemDetails
                         "Date"});
             table9.AddRow(new string[] {
                         "Readiness"});
-            testRunner.Then("Checkboxes are checked on the Column Settings panel:", ((string)(null)), table9, "Then ");
+            testRunner.Then("Checkboxes are checked on the Column Settings panel for \"Key\" Column Settings pan" +
+                    "el:", ((string)(null)), table9, "Then ");
             this.ScenarioCleanup();
         }
     }

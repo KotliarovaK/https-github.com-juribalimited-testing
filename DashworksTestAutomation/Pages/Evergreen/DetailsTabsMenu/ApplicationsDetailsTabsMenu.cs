@@ -30,9 +30,6 @@ namespace DashworksTestAutomation.Pages.Evergreen.DetailsTabsMenu
         [FindsBy(How = How.XPath, Using = ".//span[@class='ag-column-select-label']")]
         public IList<IWebElement> ColumnCheckboxName { get; set; }
 
-        [FindsBy(How = How.XPath, Using = ".//span[@class='ag-column-select-checkbox']")]
-        public IWebElement ColumnCheckbox { get; set; }
-
         public override List<By> GetPageIdentitySelectors()
         {
             Driver.WaitForDataLoading();
@@ -90,6 +87,14 @@ namespace DashworksTestAutomation.Pages.Evergreen.DetailsTabsMenu
                     x.FindElement(By.XPath(".//span[@class='ag-header-cell-text']")).Text.Equals(columnName))) + 1;
 
             return columnNumber;
+        }
+
+        public List<string> GetCheckedElementsText()
+        {
+            By by = By.XPath(
+                $".//span[@class='ag-checkbox-checked']/parent::*/parent::*");
+
+            return Driver.FindElements(by).Select(x => x.Text).ToList();
         }
 
         public void ClosesSectionByName(string sectionName)
