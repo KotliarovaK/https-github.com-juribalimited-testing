@@ -18,8 +18,8 @@ Scenario: EvergreenJnr_DevicesList_CheckThatQuickSearchResetWhenMovingBetweenLis
 	Then ColumnName is added to the list
 	| ColumnName |
 	| Build Date |
-	When User create custom list with "TestList" name
-	Then "TestList" list is displayed to user
+	When User create custom list with "TestList7BA11B" name
+	Then "TestList7BA11B" list is displayed to user
 	Then User enters SearchCriteria into the agGrid Search Box and the correct NumberOfRows are returned
 	| SearchCriteria | NumberOfRows |
 	| Smith          | 11           |
@@ -195,7 +195,7 @@ Scenario: EvergreenJnr_DevicesList_Search_CheckThatSearchFieldHaveResetButtonAtL
 	Then "Devices" list should be displayed to the user
 	When User click on 'Hostname' column header
 	Then data in table is sorted by 'Hostname' column in ascending order
-	When User create custom list with "TestList" name
+	When User create custom list with "TestListDED759" name
 	When User enters "CheckTheResetButton" text in Search field at List Panel
 	Then reset button in Search field at List Panel is displayed
 

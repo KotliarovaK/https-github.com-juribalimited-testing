@@ -56,8 +56,8 @@ Scenario: EvergreenJnr_DevicesList_CheckThat500ErrorPageIsNotDisplayedAfterRemov
 	Then ColumnName is added to the list
 	| ColumnName |
 	| Build Date |
-	When User create custom list with "TestList" name
-	Then "TestList" list is displayed to user
+	When User create custom list with "TestList474460" name
+	Then "TestList474460" list is displayed to user
 	When User clicks the Columns button
 	Then Columns panel is displayed to the user
 	When ColumnName is entered into the search box and the selection is clicked
@@ -96,8 +96,8 @@ Scenario: EvergreenJnr_DevicesList_CheckThat500ErrorPageIsNotDisplayedAfterRemov
 	| SelectedCheckboxes  |
 	| None                |
 	Then "Windows7Mi: Category" filter is added to the list
-	When User create custom list with "TestList" name
-	Then "TestList" list is displayed to user
+	When User create custom list with "TestList32EDC3" name
+	Then "TestList32EDC3" list is displayed to user
 	When User clicks the Filters button
 	Then Filters panel is displayed to the user
 	When User add "Directory Type" filter where type is "Equals" with added column and following checkboxes:
@@ -271,9 +271,9 @@ Scenario: EvergreenJnr_DevicesList_CheckThatRemovingColumnsFromUrlIsWorksCorrect
 	Then "Devices" list should be displayed to the user
 	When User click on 'Hostname' column header
 	Then data in table is sorted by 'Hostname' column in ascending order
-	When User create custom list with "TestList" name
+	When User create custom list with "TestListC6636D" name
 	#Workaround for DAS-11570. Remove after fix
-	#And User navigates to the "TestList" list
+	#And User navigates to the "TestListC6636D" list
 	When User clicks the Columns button
 	Then Columns panel is displayed to the user
 	When ColumnName is entered into the search box and the selection is clicked
@@ -298,9 +298,9 @@ Scenario: EvergreenJnr_DevicesList_CheckThatRemovingColumnAndFilterFromUrlWorksC
 	Then "Devices" list should be displayed to the user
 	When User click on 'Hostname' column header
 	Then data in table is sorted by 'Hostname' column in ascending order
-	When User create custom list with "TestList" name
+	When User create custom list with "TestList0E8A84" name
 	#Workaround for DAS-11570. Remove after fix
-	#And User navigates to the "TestList" list
+	#And User navigates to the "TestList0E8A84" list
 	When User clicks the Columns button
 	Then Columns panel is displayed to the user
 	When ColumnName is entered into the search box and the selection is clicked
@@ -334,9 +334,9 @@ Scenario: EvergreenJnr_DevicesList_CheckThatRemovingColumnAndFilterAndCustomList
 	Then "Devices" list should be displayed to the user
 	When User click on 'Hostname' column header
 	Then data in table is sorted by 'Hostname' column in ascending order
-	When User create custom list with "TestList" name
+	When User create custom list with "TestList3C5E3C" name
 	#Workaround for DAS-11570. Remove after fix
-	#And User navigates to the "TestList" list
+	#And User navigates to the "TestList3C5E3C" list
 	When User clicks the Columns button
 	Then Columns panel is displayed to the user
 	When ColumnName is entered into the search box and the selection is clicked
