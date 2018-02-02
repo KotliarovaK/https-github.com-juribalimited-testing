@@ -143,9 +143,9 @@ Scenario: EvergreenJnr_DevicesList_CheckThat500ErrorPageIsNotDisplayedAfterRemov
 	| ColumnName                   |
 	| Boot Up Date                 |
 	| Windows7Mi: Date & Time Task |
+	When User click on 'Boot Up Date' column header
 	When User clicks the Columns button
 	Then Columns panel is displayed to the user
-	When User click on 'Boot Up Date' column header
 	When User removes "Boot Up Date" column by Column panel
 	Then ColumnName is removed from the list
 	| ColumnName   |

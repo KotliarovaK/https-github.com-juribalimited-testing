@@ -334,7 +334,7 @@ Examples:
 	| department             | Ends with        | LongName01234567890123456789012345678901234567890123456789 | Add Department column             |
 	| iscriticalsystemobject | Not empty        |                                                            | Add iscriticalsystemobject column |
 
-@Evergreen @Devices @EvergreenJnr_FilterFeature @FilterFunctionality @DAS11550 @DAS11749
+@Evergreen @Devices @EvergreenJnr_FilterFeature @FilterFunctionality @DAS11550 @DAS11749 @API
 Scenario Outline: EvergreenJnr_DevicesList_CheckThatOperatorInSelectedFilterIsDisplayedCorrectlyAPI
 	Then following operators are displayed in "<CategoryName>" category for "<FilterName>" filter on "Devices" page:
 	| OperatorValues   |
@@ -352,3 +352,16 @@ Examples:
 	| Application Custom Fields | Computer Warranty           |
 	| Application Custom Fields | General information field 1 |
 	| Application Custom Fields | User Field 2                |
+
+@Evergreen @Users @EvergreenJnr_FilterFeature @FilterFunctionality @DAS11738
+Scenario: EvergreenJnr_UsersList_CheckThatToolTipShownWithEditFilterTextWhenEditingAFilterDisplayed 
+	When User clicks "Users" on the left-hand menu
+	Then "Users" list should be displayed to the user
+	When User clicks the Filters button
+	Then Filters panel is displayed to the user
+	When User add "Compliance" filter where type is "Equals" without added column and following checkboxes:
+	| SelectedCheckboxes |
+	| Red                |
+	Then "Compliance" filter is added to the list
+	When User navigate to Edit button for "Compliance" filter
+	Then tooltip is displayed with "Edit Filter" text for edit filter button

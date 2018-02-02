@@ -13,6 +13,9 @@ namespace DashworksTestAutomation.Pages.Evergreen
         [FindsBy(How = How.XPath, Using = ".//div[@class='tabContainer ng-star-inserted']")]
         public IWebElement TabContainer { get; set; }
 
+        [FindsBy(How = How.XPath, Using = ".//div[@class='object-icon']//i")]
+        public IWebElement GroupIcon { get; set; }
+
         [FindsBy(How = How.XPath, Using = ".//div[@class='empty-message ng-star-inserted']")]
         public IWebElement NoMailboxOwnerFoundMessage { get; set; }
 
@@ -25,14 +28,11 @@ namespace DashworksTestAutomation.Pages.Evergreen
             };
         }
 
-        [FindsBy(How = How.XPath, Using = ".//div[@class='object-icon']//i")]
-        public IWebElement GroupIcon { get; set; }
-
         public void NavigateToSectionByName(string sectionName)
         {
             var section = Driver.FindElement(
                 By.XPath(
-                    $".//button[@class='btn btn-default blue-color mat-icon-button ng-star-inserted'][@aria-label='{sectionName}']"));
+                    $".//div[@class='ng-star-inserted']//span[@class='filter-category-label blue-color bold-text'][text()='{sectionName}']"));
             section.Click();
         }
 

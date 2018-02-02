@@ -346,6 +346,20 @@ namespace DashworksTestAutomation.Steps.Dashworks
             filterElement.GetEditFilterButton(filterName).Click();
         }
 
+        [When(@"User navigate to Edit button for ""(.*)"" filter")]
+        public void WhenUserNavigateToEditButtonForFilter(string filterName)
+        {
+            var filterElement = _driver.NowAt<FiltersElement>();
+            _driver.MouseHover(filterElement.GetEditFilterButton(filterName));
+        }
+
+        [Then(@"tooltip is displayed with ""(.*)"" text for edit filter button")]
+        public void ThenTooltipIsDisplayedWithTextForEditFilterButton(string tooltipText)
+        {
+            var filterElement = _driver.NowAt<FiltersElement>();
+            filterElement.EditFilterButton(tooltipText);
+        }
+
         [Then(@"""(.*)"" checkbox is checked")]
         public void ThenCheckboxIsChecked(string addColumn)
         {
@@ -356,17 +370,14 @@ namespace DashworksTestAutomation.Steps.Dashworks
         [Then(@"""(.*)""checkbox is checked and cannot be unchecked")]
         public void ThenCheckboxIsCheckedAndCannotBeUnchecked(string addColumn)
         {
-            var filterElement = _driver.NowAt<FiltersElement>();
-            Assert.IsTrue(Convert.ToBoolean(filterElement.AddCategoryColumnCheckbox.GetAttribute("disabled")),
-                $"{addColumn} Checkbox is not selected");
-            Assert.IsTrue(filterElement.AddCategoryColumnCheckbox.Selected, $"{addColumn} Checkbox is not selected");
+            AssertAddColumnCheckboxEnabledState(true, addColumn);
+            AssertAddColumnCheckboxChekedState(true, addColumn);
         }
 
         [Then(@"""(.*)"" checkbox is unchecked")]
         public void ThenCheckboxIsUnchecked(string addColumn)
         {
-            var filterElement = _driver.NowAt<FiltersElement>();
-            Assert.IsFalse(filterElement.AddCategoryColumnCheckbox.Selected, $"{addColumn} Checkbox is selected");
+            AssertAddColumnCheckboxChekedState(false, addColumn);
         }
 
         [Then(@"""(.*)"" checkbox is disabled")]
@@ -379,6 +390,13 @@ namespace DashworksTestAutomation.Steps.Dashworks
         public void ThenCheckboxIsNotDisabled(string addColumn)
         {
             AssertAddColumnCheckboxEnabledState(false, addColumn);
+        }
+
+        private void AssertAddColumnCheckboxChekedState(bool expectedCondition, string addColumn)
+        {
+            var filterElement = _driver.NowAt<FiltersElement>();
+            Assert.AreEqual(expectedCondition, filterElement.AddCategoryColumnCheckbox.Selected,
+                $"{addColumn} Cheked state is incorrect");
         }
 
         private void AssertAddColumnCheckboxEnabledState(bool expectedCondition, string addColumn)
