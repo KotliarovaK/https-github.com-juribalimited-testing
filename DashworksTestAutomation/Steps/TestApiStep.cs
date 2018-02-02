@@ -30,6 +30,29 @@ namespace DashworksTestAutomation.Steps
             _convertor = convertor;
         }
 
+        [When(@"I perform test request to the APi and get "" page and selected columns:")]
+        public void WhenIPerformTestRequestToApiAndGetPage(string pageName, Table table)
+        {
+            var requestUri = $"{UrlProvider.RestClientBaseUrl}{pageName.ToLower()}/columns?$lang=en-GB";
+            var request = new RestRequest(requestUri);
+
+            request.AddParameter("Host", UrlProvider.RestClientBaseUrl);
+            request.AddParameter("Origin", UrlProvider.Url.TrimEnd('/'));
+            request.AddParameter("Referer", UrlProvider.EvergreenUrl);
+
+            var response = _client.Value.Get(request);
+
+            if (response.StatusCode != HttpStatusCode.OK)
+                throw new Exception($"Unable to execute request. URI: {requestUri}");
+
+            var content = response.Content;
+
+            var allColumns = JsonConvert.DeserializeObject<List<JObject>>(content);
+            foreach (var row in table.Rows)
+            {
+            }
+        }
+
         [When(@"I perform test request to the Users API and get operators by ""(.*)"" filter")]
         public void WhenIPerformTestRequestToTheUsersApiAndGetOperatorsByFilter(string filterName)
         {
@@ -165,6 +188,12 @@ namespace DashworksTestAutomation.Steps
                 Assert.IsTrue(!string.IsNullOrEmpty(pair.Last.ToString()),
                     "'Unknown' text is not displayed for field ");
             }
+        }
+
+        [When(@"When User added selected columns:")]
+        public void WhenUserAddedSelectedColumns(Table table)
+        {
+            var content = _responce.Value.Content;
         }
     }
 }
