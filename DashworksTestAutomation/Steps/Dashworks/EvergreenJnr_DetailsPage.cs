@@ -63,6 +63,25 @@ namespace DashworksTestAutomation.Steps.Dashworks
             page.GetCheckboxByName(checkboxName);
         }
 
+        [Then(@"Checkboxes are checked on the Column Settings panel for ""(.*)"" Column Settings panel:")]
+        public void ThenCheckboxesAreCheckedOnTheColumnSettingsPanelForColumnSettingsPanel(string columnName, Table table)
+        {
+            var page = _driver.NowAt<ApplicationsDetailsTabsMenu>();
+            var expectedList = table.Rows.SelectMany(row => row.Values).ToList();
+            page.OpenColumnSettingsByName(columnName);
+            Assert.AreEqual(expectedList, page.GetCheckedElementsText(), "Checkbox is not selected");
+        }
+
+        [Then(@"Checkboxes are checked on the Column Settings panel :")]
+        public void ThenCheckboxesAreCheckedOnTheColumnSettingsPanel(Table table)
+        {
+            var page = _driver.NowAt<ApplicationsDetailsTabsMenu>();
+            var expectedList = table.Rows.SelectMany(row => row.Values).ToList();
+            //var actualList = page.ColumnCheckboxName.Select(value => value.Text);
+            //Assert.AreEqual(expectedList, actualList, "Selected Checkbox are different");
+            Assert.AreEqual(expectedList, page.GetCheckedElementsText(), "Checkbox is not selected");
+        }
+
         [Then(@"ColumnName is added to the list in the Details Page table")]
         public void ThenColumnNameIsAddedToTheListInTheDetailsPageTable(Table table)
 
