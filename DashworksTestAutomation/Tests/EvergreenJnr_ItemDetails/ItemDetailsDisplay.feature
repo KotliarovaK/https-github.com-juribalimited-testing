@@ -55,7 +55,7 @@ Examples:
 @Evergreen @AllLists @EvergreenJnr_ListDetails @ListDetailsFunctionality @DAS11721
 Scenario: EvergreenJnr_AllLists_CheckThatGroupIconsAreDisplayedForGroupDetailsPage
 	When User type "NL00G001" in Global Search Field
-	Then User clicks on the search result
+	Then User clicks on "NL00G001" search result
 	Then Group Icon for Group Details page is displayed
 
 @Evergreen @AllLists @EvergreenJnr_ItemDetails @ItemDetailsDisplay @DAS11732
