@@ -47,8 +47,8 @@ Scenario: EvergreenJnr_UsersList_CheckSpecialCharactersDisplayInFilterInfo
 	| Values           |
 	| O'Conn"/\or#@!() |
 	When User navigates to the "All Users" list
-	When User navigates to the "TestList13E532" list
-	Then "TestList13E532" list is displayed to user
+	When User navigates to the "TestList66E313" list
+	Then "TestList66E313" list is displayed to user
 	When User clicks the Filters button
 	Then Filters panel is displayed to the user
 	And Values is displayed in added filter info
@@ -143,8 +143,8 @@ Scenario: EvergreenJnr_DevicesList_CheckThatFilterDataIsDisplayedCorrectlyWhenNa
 	| Values          |
 	| 00BDM1JUR8IF419 |
 	When User navigates to the "All Devices" list
-	When User navigates to the "TestList407964" list
-	Then "TestList407964" list is displayed to user
+	When User navigates to the "TestList5256A5" list
+	Then "TestList5256A5" list is displayed to user
 	When User clicks the Filters button
 	Then Filters panel is displayed to the user
 	Then Values is displayed in added filter info
