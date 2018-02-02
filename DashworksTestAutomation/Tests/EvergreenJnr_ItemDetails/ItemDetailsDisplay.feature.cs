@@ -751,9 +751,7 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_ItemDetails
                         "Key"});
             testRunner.Then("ColumnName is added to the list in the Details Page table", ((string)(null)), table8, "Then ");
             TechTalk.SpecFlow.Table table9 = new TechTalk.SpecFlow.Table(new string[] {
-                        "Checkbox"});
-            table9.AddRow(new string[] {
-                        "Key"});
+                        "ColumnName"});
             table9.AddRow(new string[] {
                         "Project"});
             table9.AddRow(new string[] {
@@ -770,8 +768,31 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_ItemDetails
                         "Date"});
             table9.AddRow(new string[] {
                         "Readiness"});
+            table9.AddRow(new string[] {
+                        "Key"});
+            testRunner.Then("ColumnName is displayed in following order on the Details page:", ((string)(null)), table9, "Then ");
+            TechTalk.SpecFlow.Table table10 = new TechTalk.SpecFlow.Table(new string[] {
+                        "Checkbox"});
+            table10.AddRow(new string[] {
+                        "Key"});
+            table10.AddRow(new string[] {
+                        "Project"});
+            table10.AddRow(new string[] {
+                        "Project Type"});
+            table10.AddRow(new string[] {
+                        "Request Type"});
+            table10.AddRow(new string[] {
+                        "Workflow"});
+            table10.AddRow(new string[] {
+                        "Category"});
+            table10.AddRow(new string[] {
+                        "Status"});
+            table10.AddRow(new string[] {
+                        "Date"});
+            table10.AddRow(new string[] {
+                        "Readiness"});
             testRunner.Then("Checkboxes are checked on the Column Settings panel for \"Key\" Column Settings pan" +
-                    "el:", ((string)(null)), table9, "Then ");
+                    "el:", ((string)(null)), table10, "Then ");
             this.ScenarioCleanup();
         }
     }

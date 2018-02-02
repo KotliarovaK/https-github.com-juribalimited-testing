@@ -92,7 +92,7 @@ namespace DashworksTestAutomation.Pages.Evergreen.DetailsTabsMenu
         public List<string> GetCheckedElementsText()
         {
             By by = By.XPath(
-                $".//span[@class='ag-checkbox-checked']/parent::*/parent::*");
+                ".//span[@class='ag-checkbox-checked']/parent::*/parent::*");
 
             return Driver.FindElements(by).Select(x => x.Text).ToList();
         }

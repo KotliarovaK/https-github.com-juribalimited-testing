@@ -205,6 +205,17 @@ Scenario: EvergreenJnr_DevicesLists_CheckThatSelectedCheckboxesMatchTheColumnsIn
 	Then ColumnName is added to the list in the Details Page table
 	| ColumnName |
 	| Key        |
+	Then ColumnName is displayed in following order on the Details page:
+	| ColumnName   |
+	| Project      |
+	| Project Type |
+	| Request Type |
+	| Workflow     |
+	| Category     |
+	| Status       |
+	| Date         |
+	| Readiness    |
+	| Key          |
 	Then Checkboxes are checked on the Column Settings panel for "Key" Column Settings panel:
 	| Checkbox     |
 	| Key          |
