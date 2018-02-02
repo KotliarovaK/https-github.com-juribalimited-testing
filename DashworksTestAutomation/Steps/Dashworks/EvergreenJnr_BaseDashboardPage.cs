@@ -132,6 +132,14 @@ namespace DashworksTestAutomation.Steps.Dashworks
             }
         }
 
+        [Then(@"full list content is displayed to the user")]
+        public void ThenFullListContentIsDisplayedToTheUser()
+        {
+            var page = _driver.NowAt<BaseDashboardPage>();
+            _driver.WaitWhileControlIsNotDisplayed<BaseDashboardPage>(() => page.TableContent);
+            Assert.IsTrue(page.TableContent.Displayed());
+        }
+
         [Then(@"Content is present in the newly added column")]
         public void ThenContentIsPresentInTheNewlyAddedColumn(Table table)
         {

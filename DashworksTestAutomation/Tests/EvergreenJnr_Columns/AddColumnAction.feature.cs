@@ -268,6 +268,150 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_Columns
             testRunner.Then("ColumnName is added to the list", ((string)(null)), table7, "Then ");
             this.ScenarioCleanup();
         }
+        
+        [NUnit.Framework.TestAttribute()]
+        [NUnit.Framework.DescriptionAttribute("EvergreenJnr_AllLists_CheckThatTableIsFullyLoadedAfterAddingTheColumns")]
+        [NUnit.Framework.CategoryAttribute("Evergreen")]
+        [NUnit.Framework.CategoryAttribute("AllLists")]
+        [NUnit.Framework.CategoryAttribute("EvergreenJnr_Columns")]
+        [NUnit.Framework.CategoryAttribute("AddColumnAction")]
+        [NUnit.Framework.CategoryAttribute("DAS11689")]
+        [NUnit.Framework.TestCaseAttribute("Devices", new string[0])]
+        [NUnit.Framework.TestCaseAttribute("Applications", new string[0])]
+        public virtual void EvergreenJnr_AllLists_CheckThatTableIsFullyLoadedAfterAddingTheColumns(string listName, string[] exampleTags)
+        {
+            System.Exception lastException = null;
+            for (int i = 0; (i <= 1); i = (i + 1))
+            {
+                try
+                {
+                    this.EvergreenJnr_AllLists_CheckThatTableIsFullyLoadedAfterAddingTheColumnsInternal(listName, exampleTags);
+                    return;
+                }
+                catch (System.Exception exc)
+                {
+                    lastException = exc;
+                }
+                if (((i + 1) 
+                            <= 1))
+                {
+                    testRunner.OnScenarioEnd();
+                }
+            }
+            if ((lastException != null))
+            {
+                throw lastException;
+            }
+        }
+        
+        private void EvergreenJnr_AllLists_CheckThatTableIsFullyLoadedAfterAddingTheColumnsInternal(string listName, string[] exampleTags)
+        {
+            string[] @__tags = new string[] {
+                    "Evergreen",
+                    "AllLists",
+                    "EvergreenJnr_Columns",
+                    "AddColumnAction",
+                    "DAS11689"};
+            if ((exampleTags != null))
+            {
+                @__tags = System.Linq.Enumerable.ToArray(System.Linq.Enumerable.Concat(@__tags, exampleTags));
+            }
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("EvergreenJnr_AllLists_CheckThatTableIsFullyLoadedAfterAddingTheColumns", @__tags);
+            this.ScenarioSetup(scenarioInfo);
+            this.FeatureBackground();
+            testRunner.When(string.Format("User clicks \"{0}\" on the left-hand menu", listName), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+            testRunner.Then(string.Format("\"{0}\" list should be displayed to the user", listName), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+            testRunner.When("User clicks the Columns button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+            testRunner.Then("Columns panel is displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+            TechTalk.SpecFlow.Table table8 = new TechTalk.SpecFlow.Table(new string[] {
+                        "ColumnName"});
+            table8.AddRow(new string[] {
+                        "Windows7Mi: Application Readiness"});
+            testRunner.When("ColumnName is entered into the search box and the selection is clicked", ((string)(null)), table8, "When ");
+            TechTalk.SpecFlow.Table table9 = new TechTalk.SpecFlow.Table(new string[] {
+                        "ColumnName"});
+            table9.AddRow(new string[] {
+                        "Windows7Mi: Application Readiness"});
+            testRunner.Then("ColumnName is added to the list", ((string)(null)), table9, "Then ");
+            TechTalk.SpecFlow.Table table10 = new TechTalk.SpecFlow.Table(new string[] {
+                        "ColumnName"});
+            table10.AddRow(new string[] {
+                        "Windows7Mi: Application Readiness"});
+            testRunner.And("Content is present in the newly added column", ((string)(null)), table10, "And ");
+            testRunner.Then("full list content is displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+            testRunner.Then("There are no errors in the browser console", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+            this.ScenarioCleanup();
+        }
+        
+        [NUnit.Framework.TestAttribute()]
+        [NUnit.Framework.DescriptionAttribute("EvergreenJnr_Applications_CheckThatConsoleErrorsAreNotDisplayedForImages")]
+        [NUnit.Framework.CategoryAttribute("Evergreen")]
+        [NUnit.Framework.CategoryAttribute("Applications")]
+        [NUnit.Framework.CategoryAttribute("EvergreenJnr_Columns")]
+        [NUnit.Framework.CategoryAttribute("AddColumnAction")]
+        [NUnit.Framework.CategoryAttribute("DAS10997")]
+        [NUnit.Framework.TestCaseAttribute("Windows7Mi: Application Rationalisation", new string[0])]
+        [NUnit.Framework.TestCaseAttribute("Windows7Mi: Application Readiness", new string[0])]
+        [NUnit.Framework.TestCaseAttribute("Windows7Mi: Core Application", new string[0])]
+        [NUnit.Framework.TestCaseAttribute("Windows7Mi: Hide from End Users", new string[0])]
+        public virtual void EvergreenJnr_Applications_CheckThatConsoleErrorsAreNotDisplayedForImages(string columnName, string[] exampleTags)
+        {
+            System.Exception lastException = null;
+            for (int i = 0; (i <= 1); i = (i + 1))
+            {
+                try
+                {
+                    this.EvergreenJnr_Applications_CheckThatConsoleErrorsAreNotDisplayedForImagesInternal(columnName, exampleTags);
+                    return;
+                }
+                catch (System.Exception exc)
+                {
+                    lastException = exc;
+                }
+                if (((i + 1) 
+                            <= 1))
+                {
+                    testRunner.OnScenarioEnd();
+                }
+            }
+            if ((lastException != null))
+            {
+                throw lastException;
+            }
+        }
+        
+        private void EvergreenJnr_Applications_CheckThatConsoleErrorsAreNotDisplayedForImagesInternal(string columnName, string[] exampleTags)
+        {
+            string[] @__tags = new string[] {
+                    "Evergreen",
+                    "Applications",
+                    "EvergreenJnr_Columns",
+                    "AddColumnAction",
+                    "DAS10997"};
+            if ((exampleTags != null))
+            {
+                @__tags = System.Linq.Enumerable.ToArray(System.Linq.Enumerable.Concat(@__tags, exampleTags));
+            }
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("EvergreenJnr_Applications_CheckThatConsoleErrorsAreNotDisplayedForImages", @__tags);
+            this.ScenarioSetup(scenarioInfo);
+            this.FeatureBackground();
+            testRunner.When("User clicks \"Applications\" on the left-hand menu", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+            testRunner.Then("\"Applications\" list should be displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+            testRunner.When("User clicks the Columns button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+            testRunner.Then("Columns panel is displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+            TechTalk.SpecFlow.Table table11 = new TechTalk.SpecFlow.Table(new string[] {
+                        "ColumnName"});
+            table11.AddRow(new string[] {
+                        string.Format("{0}", columnName)});
+            testRunner.When("ColumnName is entered into the search box and the selection is clicked", ((string)(null)), table11, "When ");
+            TechTalk.SpecFlow.Table table12 = new TechTalk.SpecFlow.Table(new string[] {
+                        "ColumnName"});
+            table12.AddRow(new string[] {
+                        string.Format("{0}", columnName)});
+            testRunner.Then("ColumnName is added to the list", ((string)(null)), table12, "Then ");
+            testRunner.Then("There are no errors in the browser console", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+            this.ScenarioCleanup();
+        }
     }
 }
 #pragma warning restore

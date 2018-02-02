@@ -42,6 +42,9 @@ namespace DashworksTestAutomation.Pages.Evergreen
         [FindsBy(How = How.XPath, Using = ".//input[@aria-label='Search table']")]
         public IWebElement TableSearchTextbox { get; set; }
 
+        [FindsBy(How = How.XPath, Using = ".//button[@aria-label='reload']")]
+        public IWebElement RefreshTableButton { get; set; }
+
         [FindsBy(How = How.XPath, Using = ".//span[@class='ag-header-icon ag-sort-descending-icon']")]
         public IWebElement DescendingSortingIcon { get; set; }
 
@@ -59,6 +62,9 @@ namespace DashworksTestAutomation.Pages.Evergreen
 
         [FindsBy(How = How.XPath, Using = ".//div[@class='ag-body-container']")]
         public IWebElement TableBody { get; set; }
+
+        [FindsBy(How = How.XPath, Using = ".//div[@class='ag-body']")]
+        public IWebElement TableContent { get; set; }
 
         [FindsBy(How = How.XPath, Using = ".//div[@id='content']//div[@class='empty-message ng-star-inserted']")]
         public IWebElement NoResultsFoundMessage { get; set; }
