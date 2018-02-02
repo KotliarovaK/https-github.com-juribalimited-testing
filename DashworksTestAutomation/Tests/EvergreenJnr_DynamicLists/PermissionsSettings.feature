@@ -12,9 +12,9 @@ Scenario: EvergreenJnr_UsersList_CheckThatNotOwnerUsersDontHavePermissionsToUpda
 	Then "Users" list should be displayed to the user
 	When User click on 'Username' column header
 	Then data in table is sorted by 'Username' column in ascending order
-	When User create custom list with "TestList" name
+	When User create custom list with "TestList83C1C0" name
 	#Workaround for DAS-11570. Remove after fix
-	#And User navigates to the "TestList" list
+	#And User navigates to the "TestList83C1C0" list
 	When User clicks the List Details button
 	Then List details panel is displayed to the user
 	When User select "Everyone can see" sharing option
@@ -34,7 +34,7 @@ Scenario: EvergreenJnr_UsersList_CheckThatAdminUserButNotOwnerIsNotAbleToDeleteL
 	Then "Users" list should be displayed to the user
 	When User click on 'Username' column header
 	Then data in table is sorted by 'Username' column in ascending order
-	When User create custom list with "TestList" name
+	When User create custom list with "TestList9507DA" name
 	When User clicks the List Details button
 	Then List details panel is displayed to the user
 	When User select "Specific users" sharing option

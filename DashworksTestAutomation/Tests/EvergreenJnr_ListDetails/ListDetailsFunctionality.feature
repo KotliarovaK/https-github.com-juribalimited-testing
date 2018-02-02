@@ -12,9 +12,9 @@ Scenario Outline: EvergreenJnr_AllLists_CheckThatRenamingAListWorkingCorrectlyFo
 	Then "<PageName>" list should be displayed to the user
 	When User click on '<Columnname>' column header
 	Then data in table is sorted by '<Columnname>' column in ascending order
-	When User create custom list with "TestList" name
+	When User create custom list with "TestList12CA0D" name
 	#Workaround for DAS-11570. Remove after fix
-	#And User navigates to the "TestList" list
+	#And User navigates to the "TestList12CA0D" list
 	When User clicks the List Details button
 	Then List details panel is displayed to the user
 	When User changes list name to "RenamedList"
@@ -59,22 +59,22 @@ Scenario Outline: EvergreenJnr_AllLists_CheckThatFavoriteAListWorkingCorrectlyFo
 	Then "<PageName>" list should be displayed to the user
 	When User click on '<Columnname>' column header
 	Then data in table is sorted by '<Columnname>' column in ascending order
-	When User create custom list with "TestList" name
+	When User create custom list with "TestList80EA23" name
 	#Workaround for DAS-11570. Remove after fix
-	#And User navigates to the "TestList" list
+	#And User navigates to the "TestList80EA23" list
 	When User clicks the List Details button
 	Then List details panel is displayed to the user
 	When User mark list as favorite
 	When User navigates to the "<ListToNavigate>" list
-	Then Star icon is displayed for "TestList" list
-	When User navigates to the "TestList" list
-	Then Star icon is not displayed for "TestList" list
+	Then Star icon is displayed for "TestList80EA23" list
+	When User navigates to the "TestList80EA23" list
+	Then Star icon is not displayed for "TestList80EA23" list
 	When User clicks the List Details button
 	Then List details panel is displayed to the user
 	When User mark list as unfavorite
-	Then Star icon is not displayed for "TestList" list
+	Then Star icon is not displayed for "TestList80EA23" list
 	When User navigates to the "<ListToNavigate>" list
-	Then Star icon is not displayed for "TestList" list
+	Then Star icon is not displayed for "TestList80EA23" list
 
 Examples: 
 	| PageName     | Columnname    | ListToNavigate   |
@@ -133,12 +133,12 @@ Scenario Outline: EvergreenJnr_AllLists_CheckDefaultOptionsInListDetailsForDynam
 	Then "<PageName>" list should be displayed to the user
 	When User click on '<Columnname>' column header
 	Then data in table is sorted by '<Columnname>' column in ascending order
-	When User create custom list with "TestList" name
+	When User create custom list with "TestListCED2D6" name
 	#Workaround for DAS-11570. Remove after fix
-	#And User navigates to the "TestList" list
+	#And User navigates to the "TestListCED2D6" list
 	When User clicks the List Details button
 	Then List details panel is displayed to the user
-	Then "TestList" name is displayed in list details panel
+	Then "TestListCED2D6" name is displayed in list details panel
 	Then List is NOT marked as favorite
 	Then current user is selected as a owner of a list
 	Then "Private" sharing option is selected
@@ -180,14 +180,14 @@ Scenario Outline: EvergreenJnr_AllLists_CheckThatActiveListIsRefreshedOnListDeta
 	Then "<PageName>" list should be displayed to the user
 	When User click on '<Columnname>' column header
 	Then data in table is sorted by '<Columnname>' column in ascending order
-	When User create custom list with "TestList" name
-	Then "TestList" list is displayed to user
+	When User create custom list with "TestListE3A207" name
+	Then "TestListE3A207" list is displayed to user
 	When User clicks the List Details button
 	Then List details panel is displayed to the user
 	When User select "Automation Admin 1" as a Owner of a list
 	And User click Accept button in List Details panel
 	Then List details button is disabled
-	And list with "TestList" name is removed
+	And list with "TestListE3A207" name is removed
 	And "<PageName>" list should be displayed to the user
 
 Examples: 
