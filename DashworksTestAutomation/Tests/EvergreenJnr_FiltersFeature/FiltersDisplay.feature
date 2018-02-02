@@ -39,16 +39,16 @@ Scenario: EvergreenJnr_UsersList_CheckSpecialCharactersDisplayInFilterInfo
 	And Values is displayed in added filter info
 	| Values           |
 	| O'Conn"/\or#@!() |
-	When User create custom list with "TestList" name
-	Then "TestList" list is displayed to user
+	When User create custom list with "TestList66E313" name
+	Then "TestList66E313" list is displayed to user
 	When User clicks the Filters button
 	Then Filters panel is displayed to the user
 	And Values is displayed in added filter info
 	| Values           |
 	| O'Conn"/\or#@!() |
 	When User navigates to the "All Users" list
-	When User navigates to the "TestList" list
-	Then "TestList" list is displayed to user
+	When User navigates to the "TestList13E532" list
+	Then "TestList13E532" list is displayed to user
 	When User clicks the Filters button
 	Then Filters panel is displayed to the user
 	And Values is displayed in added filter info
@@ -135,16 +135,16 @@ Scenario: EvergreenJnr_DevicesList_CheckThatFilterDataIsDisplayedCorrectlyWhenNa
 	Then Values is displayed in added filter info
 	| Values          |
 	| 00BDM1JUR8IF419 |
-	When User create custom list with "TestList" name
-	Then "TestList" list is displayed to user
+	When User create custom list with "TestList5256A5" name
+	Then "TestList5256A5" list is displayed to user
 	When User clicks the Filters button
 	Then Filters panel is displayed to the user
 	Then Values is displayed in added filter info
 	| Values          |
 	| 00BDM1JUR8IF419 |
 	When User navigates to the "All Devices" list
-	When User navigates to the "TestList" list
-	Then "TestList" list is displayed to user
+	When User navigates to the "TestList407964" list
+	Then "TestList407964" list is displayed to user
 	When User clicks the Filters button
 	Then Filters panel is displayed to the user
 	Then Values is displayed in added filter info
@@ -393,15 +393,15 @@ Scenario: EvergreenJnr_ApplicationsList_CheckThatApplicationSavedListFilterIsWor
 	When ColumnName is entered into the search box and the selection is clicked
 	| ColumnName      |
 	| Application Key |
-	When User create custom list with "TestList" name
-	Then "TestList" list is displayed to user
+	When User create custom list with "TestList2854B3" name
+	Then "TestList2854B3" list is displayed to user
 	When User clicks "Devices" on the left-hand menu
 	Then "Devices" list should be displayed to the user
 	When User clicks the Filters button
 	Then Filters panel is displayed to the user
 	When User add "Application (Saved List)" filter where type is "In list" with SelectedList list and following Association:
-	| SelectedList | Association        |
-	| TestList     | Not used on device |
+	| SelectedList   | Association        |
+	| TestList2854B3 | Not used on device |
 	Then "Application" filter is added to the list
 	Then "17,095" rows are displayed in the agGrid
 	Then Options is displayed in added filter info
@@ -452,14 +452,14 @@ Scenario: EvergreenJnr_ApplicationsList_CheckThatBracketsAreDisplayedCorrectlyIn
 	| Values                              |
 	| (self-installing)                   |
 	Then "Application" filter is added to the list
-	When User create custom list with "TestList" name
-	Then "TestList" list is displayed to user
+	When User create custom list with "TestList3065CC" name
+	Then "TestList3065CC" list is displayed to user
 	And "3" rows are displayed in the agGrid
 	When User navigates to the "All Applications" list
 	Then "Applications" list should be displayed to the user
-	When User navigates to the "TestList" list
+	When User navigates to the "TestList3065CC" list
 	And User clicks the Filters button
-	Then "TestList" list is displayed to user
+	Then "TestList3065CC" list is displayed to user
 	And "3" rows are displayed in the agGrid
 	And Edit List menu is not displayed
 	And Values is displayed in added filter info
@@ -663,11 +663,11 @@ Scenario: EvergreenJnr_DevicesList_CheckThatApplicationFiltersBeingAppliedAgains
 	Then "11" rows are displayed in the agGrid
 	Then "(Application = 7zip (2015) ASSOCIATION = ("entitled to device"))" text is displayed in filter container
 	Then "Application 7zip (2015) is entitled to device" is displayed in added filter info
-	When User create custom list with "TestList" name
-	Then "TestList" list is displayed to user
+	When User create custom list with "TestList44C8B6" name
+	Then "TestList44C8B6" list is displayed to user
 	When User navigates to the "All Devices" list
-	When User navigates to the "TestList" list
-	Then "TestList" list is displayed to user
+	When User navigates to the "TestList44C8B6" list
+	Then "TestList44C8B6" list is displayed to user
 	Then "11" rows are displayed in the agGrid
 	And "(Application = 7zip (2015) ASSOCIATION = ("entitled to device"))" text is displayed in filter container
 	When User clicks the Filters button
@@ -759,8 +759,8 @@ Scenario: EvergreenJnr_DevicesList_CheckThatMultipleFilterCriteriaToApplicationN
 	| microsoft |                     |
 	Then "Application whose Name" filter is added to the list
 	And "Application whose Name contains adobe or microsoft is installed on device" is displayed in added filter info
-	When User create custom list with "TestList" name
-	Then "TestList" list is displayed to user
+	When User create custom list with "TestListF9A187" name
+	Then "TestListF9A187" list is displayed to user
 	And "10,258" rows are displayed in the agGrid
 	And Edit List menu is not displayed
 	And "(Application Name ~ (adobe, microsoft) ASSOCIATION = (installed on device))" text is displayed in filter container
@@ -782,14 +782,14 @@ Scenario: EvergreenJnr_DevicesList_CheckThat500ErrorIsNotDisplayedForStaticListA
 	| SelectedList       | Association        |
 	| StaticListTestName | Not used on device |
 	Then "Application in list StaticListTestName is not used on device" is displayed in added filter info
-	When User create custom list with "TestList" name
+	When User create custom list with "TestList8D5C03" name
 	When User clicks "Applications" on the left-hand menu
 	Then "Applications" list should be displayed to the user
 	When User removes custom list with "StaticListTestName" name
 	When User clicks "Devices" on the left-hand menu
 	Then "Devices" list should be displayed to the user
-	When User navigates to the "TestList" list
-	Then "TestList" list is displayed to user
+	When User navigates to the "TestList8D5C03" list
+	Then "TestList8D5C03" list is displayed to user
 
 @Evergreen @Devices @Evergreen_FiltersFeature @FiltersDisplay @DAS11468 @Delete_Newly_Created_List
 Scenario: EvergreenJnr_DevicesList_CheckThat500ErrorIsNotDisplayedForDynamicListAfterRemovingAssociationsList
@@ -800,24 +800,24 @@ Scenario: EvergreenJnr_DevicesList_CheckThat500ErrorIsNotDisplayedForDynamicList
 	When ColumnName is entered into the search box and the selection is clicked
 	| ColumnName      |
 	| Application Key |
-	When User create custom list with "TestList" name
-	Then "TestList" list is displayed to user
+	When User create custom list with "TestList5E021D" name
+	Then "TestList5E021D" list is displayed to user
 	When User clicks "Devices" on the left-hand menu
 	Then "Devices" list should be displayed to the user
 	When User clicks the Filters button
 	Then Filters panel is displayed to the user
 	When User add "Application (Saved List)" filter where type is "In list" with SelectedList list and following Association:
-	| SelectedList | Association        |
-	| TestList     | Not used on device |
-	Then "Application in list TestList is not used on device" is displayed in added filter info
-	When User create custom list with "TestList" name
+	| SelectedList   | Association        |
+	| TestList5E021D | Not used on device |
+	Then "Application in list TestList5E021D is not used on device" is displayed in added filter info
+	When User create custom list with "TestList5E021D" name
 	When User clicks "Applications" on the left-hand menu
 	Then "Applications" list should be displayed to the user
-	When User removes custom list with "TestList" name
+	When User removes custom list with "TestList5E021D" name
 	When User clicks "Devices" on the left-hand menu
 	Then "Devices" list should be displayed to the user
-	When User navigates to the "TestList" list
-	Then "TestList" list is displayed to user
+	When User navigates to the "TestList5E021D" list
+	Then "TestList5E021D" list is displayed to user
 
 @Evergreen @Devices @Evergreen_FiltersFeature @FiltersDisplay @DAS11663
 Scenario: EvergreenJnr_DevicesLists_CheckThatRowCountIsNotDisplayedWhenNoObjectsAreFoundAfterApplyingAFilter

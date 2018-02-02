@@ -16,8 +16,8 @@ Scenario: EvergreenJnr_DevicesList_CheckThatDynamicFiltersAreClearedForStaticLis
 	| SelectedCheckboxes  |
 	| None                |
 	Then "Windows7Mi: Category" filter is added to the list
-	When User create custom list with "TestList" name
-	Then "TestList" list is displayed to user
+	When User create custom list with "TestListE5FC4A" name
+	Then "TestListE5FC4A" list is displayed to user
 	And "5,130" rows are displayed in the agGrid
 	When User navigates to the "All Devices" list
 	Then "Devices" list should be displayed to the user
@@ -30,7 +30,7 @@ Scenario: EvergreenJnr_DevicesList_CheckThatDynamicFiltersAreClearedForStaticLis
 	And User create static list with "Static List TestName" name
 	Then "Static List TestName" list is displayed to user
 	And "2" rows are displayed in the agGrid
-	When User navigates to the "TestList" list
+	When User navigates to the "TestListE5FC4A" list
 	Then "5,130" rows are displayed in the agGrid
 	When User navigates to the "Static List TestName" list
 	Then "2" rows are displayed in the agGrid
@@ -47,13 +47,13 @@ Scenario: EvergreenJnr_DevicesList_CheckThatFiltersAndColumnsAreRestoredForSaved
 	| Not Applicable     |
 	| No                 |
 	Then "Windows7Mi: SS Application List Completed" filter is added to the list
-	When User create custom list with "TestList" name
-	Then "TestList" list is displayed to user
+	When User create custom list with "TestList886350" name
+	Then "TestList886350" list is displayed to user
 	And "5,161" rows are displayed in the agGrid
 	When User navigates to the "All Devices" list
 	Then "Devices" list should be displayed to the user
-	When User navigates to the "TestList" list
-	Then "TestList" list is displayed to user
+	When User navigates to the "TestList886350" list
+	Then "TestList886350" list is displayed to user
 	And "5,161" rows are displayed in the agGrid
 	When User clicks the Filters button
 	Then Filters panel is displayed to the user

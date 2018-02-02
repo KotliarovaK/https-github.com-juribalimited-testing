@@ -679,6 +679,111 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_ItemDetails
             testRunner.Then("ColumnName is displayed in following order on the Details page:", ((string)(null)), table7, "Then ");
             this.ScenarioCleanup();
         }
+        
+        [NUnit.Framework.TestAttribute()]
+        [NUnit.Framework.DescriptionAttribute("EvergreenJnr_DevicesLists_CheckThatSelectedCheckboxesMatchTheColumnsInTheTableOnT" +
+            "heDetailsPage")]
+        [NUnit.Framework.CategoryAttribute("Evergreen")]
+        [NUnit.Framework.CategoryAttribute("Devices")]
+        [NUnit.Framework.CategoryAttribute("EvergreenJnr_ItemDetails")]
+        [NUnit.Framework.CategoryAttribute("ItemDetailsDisplay")]
+        [NUnit.Framework.CategoryAttribute("DAS11393")]
+        public virtual void EvergreenJnr_DevicesLists_CheckThatSelectedCheckboxesMatchTheColumnsInTheTableOnTheDetailsPage()
+        {
+            System.Exception lastException = null;
+            for (int i = 0; (i <= 1); i = (i + 1))
+            {
+                try
+                {
+                    this.EvergreenJnr_DevicesLists_CheckThatSelectedCheckboxesMatchTheColumnsInTheTableOnTheDetailsPageInternal();
+                    return;
+                }
+                catch (System.Exception exc)
+                {
+                    lastException = exc;
+                }
+                if (((i + 1) 
+                            <= 1))
+                {
+                    testRunner.OnScenarioEnd();
+                }
+            }
+            if ((lastException != null))
+            {
+                throw lastException;
+            }
+        }
+        
+        private void EvergreenJnr_DevicesLists_CheckThatSelectedCheckboxesMatchTheColumnsInTheTableOnTheDetailsPageInternal()
+        {
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("EvergreenJnr_DevicesLists_CheckThatSelectedCheckboxesMatchTheColumnsInTheTableOnT" +
+                    "heDetailsPage", new string[] {
+                        "Evergreen",
+                        "Devices",
+                        "EvergreenJnr_ItemDetails",
+                        "ItemDetailsDisplay",
+                        "DAS11393"});
+            this.ScenarioSetup(scenarioInfo);
+            this.FeatureBackground();
+            testRunner.When("User clicks \"Devices\" on the left-hand menu", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+            testRunner.Then("\"Devices\" list should be displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+            testRunner.When("User click content from \"Hostname\" column", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+            testRunner.And("User navigates to the \"Projects\" tab", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+            testRunner.When("User open \"Device Projects\" section", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+            testRunner.When("User have opened Column Settings for \"Project\" column in the Details Page table", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+            testRunner.When("User click Column button on the Column Settings panel", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+            testRunner.When("User select \"Key\" checkbox on the Column Settings panel", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+            testRunner.When("User click Column button on the Column Settings panel", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+            TechTalk.SpecFlow.Table table8 = new TechTalk.SpecFlow.Table(new string[] {
+                        "ColumnName"});
+            table8.AddRow(new string[] {
+                        "Key"});
+            testRunner.Then("ColumnName is added to the list in the Details Page table", ((string)(null)), table8, "Then ");
+            TechTalk.SpecFlow.Table table9 = new TechTalk.SpecFlow.Table(new string[] {
+                        "ColumnName"});
+            table9.AddRow(new string[] {
+                        "Project"});
+            table9.AddRow(new string[] {
+                        "Project Type"});
+            table9.AddRow(new string[] {
+                        "Request Type"});
+            table9.AddRow(new string[] {
+                        "Workflow"});
+            table9.AddRow(new string[] {
+                        "Category"});
+            table9.AddRow(new string[] {
+                        "Status"});
+            table9.AddRow(new string[] {
+                        "Date"});
+            table9.AddRow(new string[] {
+                        "Readiness"});
+            table9.AddRow(new string[] {
+                        "Key"});
+            testRunner.Then("ColumnName is displayed in following order on the Details page:", ((string)(null)), table9, "Then ");
+            TechTalk.SpecFlow.Table table10 = new TechTalk.SpecFlow.Table(new string[] {
+                        "Checkbox"});
+            table10.AddRow(new string[] {
+                        "Key"});
+            table10.AddRow(new string[] {
+                        "Project"});
+            table10.AddRow(new string[] {
+                        "Project Type"});
+            table10.AddRow(new string[] {
+                        "Request Type"});
+            table10.AddRow(new string[] {
+                        "Workflow"});
+            table10.AddRow(new string[] {
+                        "Category"});
+            table10.AddRow(new string[] {
+                        "Status"});
+            table10.AddRow(new string[] {
+                        "Date"});
+            table10.AddRow(new string[] {
+                        "Readiness"});
+            testRunner.Then("Checkboxes are checked on the Column Settings panel for \"Key\" Column Settings pan" +
+                    "el:", ((string)(null)), table10, "Then ");
+            this.ScenarioCleanup();
+        }
     }
 }
 #pragma warning restore
