@@ -31,7 +31,7 @@ namespace DashworksTestAutomation.Steps.Dashworks
         {
             var searchElement = _driver.NowAt<GlobalSearchElement>();
             _driver.WaitWhileControlIsNotDisplayed<GlobalSearchElement>(() => searchElement.NoResultFound);
-            Assert.AreEqual(text, searchElement.NoResultFound.Text);
+            Assert.AreEqual(text, searchElement.NoResultFound.Text, $"{text} is not displayed");
         }
 
         [Then(@"Search results are displayed below Global Search field")]

@@ -89,7 +89,7 @@ Scenario: EvergreenJnr_DevicesList_SearchTests
 	| Véronique Duplessis | 1            |
 	| Virtual             | 1,996        |
 	| Windows Vista       | 475          |
-	| O'Connor            | 13           |
+	#| O'Connor            | 13           |
 	| @demo.juriba.com    | 16,717       |
 	| 192.168.6           | 5,100        |
 	| RED                 | 9,238        |
@@ -233,7 +233,7 @@ Examples:
 	| PageName     | ColumnName                                      | SearchCriteria                              | NumberOfRows |
 	| Devices      | Compliance                                      | GREEN                                       | 100          |
 	| Devices      | Windows7Mi: Readiness                           | OUT OF SCOPE                                | 5,118        |
-	| Devices      | Windows7Mi: Group Computer Rag Radio Date Owner | Not Applicable                              | 5,160        |
+	| Devices      | Windows7Mi: Group Computer Rag Radio Date Owner | Not Applicable                              | 5,161        |
 	| Applications | Import Type                                     | Altiris 6                                   | 31           |
 	| Users        | Department                                      | The Last Department With A Really Lond Name | 10           |
 

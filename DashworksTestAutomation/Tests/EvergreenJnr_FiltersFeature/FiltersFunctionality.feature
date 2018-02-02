@@ -296,7 +296,7 @@ Scenario: EvergreenJnr_ApplicationsList_CheckThat500ErrorInNotDisplayedWhenUserA
 	Then "1,269" rows are displayed in the agGrid
 	Then "(Device Count (Installed) < 10)" text is displayed in filter container
 
-@Evergreen @Devices @EvergreenJnr_FilterFeature @FilterFunctionality @DAS11551 @Not_Run
+@Evergreen @Devices @EvergreenJnr_FilterFeature @FilterFunctionality @DAS11551 @DAS11550 @DAS11749 @Not_Run
 Scenario Outline: EvergreenJnr_DevicesList_CheckThatEmptyNotEmptyOperatorsIsWorkedCorrectly
 	When User clicks "Devices" on the left-hand menu
 	Then "Devices" list should be displayed to the user
@@ -334,9 +334,9 @@ Examples:
 	| department             | Ends with        | LongName01234567890123456789012345678901234567890123456789 | Add Department column             |
 	| iscriticalsystemobject | Not empty        |                                                            | Add iscriticalsystemobject column |
 
-@Evergreen @Devices @EvergreenJnr_FilterFeature @FilterFunctionality @DAS11550 @DAS11749 @Not_Run
+@Evergreen @Devices @EvergreenJnr_FilterFeature @FilterFunctionality @DAS11550 @DAS11749 @API
 Scenario Outline: EvergreenJnr_DevicesList_CheckThatOperatorInSelectedFilterIsDisplayedCorrectlyAPI
-	Then following operators are displayed for "<FilterName>" filter on "Devices" page:
+	Then following operators are displayed in "<CategoryName>" category for "<FilterName>" filter on "Devices" page:
 	| OperatorValues   |
 	| Equals           |
 	| Does not equal   |
@@ -346,9 +346,22 @@ Scenario Outline: EvergreenJnr_DevicesList_CheckThatOperatorInSelectedFilterIsDi
 	| Ends with        |
 
 Examples:
-	| FilterName                  |
-	| Application Name            |
-	| App Field 1                 |
-	| Computer Warranty           |
-	| General Information field 1 |
-	| User Field 2                |
+	| CategoryName              | FilterName                  |
+	| Application               | Application Name            |
+	| Application Custom Fields | App field 1                 |
+	| Application Custom Fields | Computer Warranty           |
+	| Application Custom Fields | General information field 1 |
+	| Application Custom Fields | User Field 2                |
+
+@Evergreen @Users @EvergreenJnr_FilterFeature @FilterFunctionality @DAS11738
+Scenario: EvergreenJnr_UsersList_CheckThatToolTipShownWithEditFilterTextWhenEditingAFilterDisplayed 
+	When User clicks "Users" on the left-hand menu
+	Then "Users" list should be displayed to the user
+	When User clicks the Filters button
+	Then Filters panel is displayed to the user
+	When User add "Compliance" filter where type is "Equals" without added column and following checkboxes:
+	| SelectedCheckboxes |
+	| Red                |
+	Then "Compliance" filter is added to the list
+	When User navigate to Edit button for "Compliance" filter
+	Then tooltip is displayed with "Edit Filter" text for edit filter button

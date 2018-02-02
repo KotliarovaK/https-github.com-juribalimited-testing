@@ -7,6 +7,7 @@ using NUnit.Framework;
 using OpenQA.Selenium.Remote;
 using System;
 using System.Text.RegularExpressions;
+using System.Threading;
 using TechTalk.SpecFlow;
 
 namespace DashworksTestAutomation.Steps.Dashworks
@@ -56,7 +57,7 @@ namespace DashworksTestAutomation.Steps.Dashworks
                 columnElement.AddColumn(row["ColumnName"]);
 
                 //Clear the textbox after adding a column, so it is reset for the next loop
-                columnElement.SearchTextbox.Clear();
+                columnElement.SearchTextbox.ClearWithHomeButton(_driver);
             }
 
             //Minimise the Selected Columns
@@ -70,21 +71,25 @@ namespace DashworksTestAutomation.Steps.Dashworks
         [Then(@"ColumnName is added to the list")]
         public void ThenColumnNameIsAddedToTheList(Table table)
         {
+            _driver.WaitForDataLoading();
             CheckColumnDisplayedState(table, true);
         }
 
         [Then(@"ColumnName is removed from the list")]
         public void ThenColumnNameIsRemovedFromTheList(Table table)
         {
+            _driver.WaitForDataLoading();
             CheckColumnDisplayedState(table, false);
         }
 
         private void CheckColumnDisplayedState(Table table, bool displayedState)
         {
             var listpageMenu = _driver.NowAt<BaseDashboardPage>();
+            listpageMenu.RefreshTableButton.Click();
+            _driver.WaitForDataLoading();
+            Thread.Sleep(1000);
             foreach (var row in table.Rows)
             {
-                _driver.WaitForDataLoading();
                 Assert.AreEqual(displayedState, listpageMenu.IsColumnPresent(row["ColumnName"]),
                     $"Column '{row["ColumnName"]}' displayed state should be {displayedState}");
             }
@@ -231,14 +236,17 @@ namespace DashworksTestAutomation.Steps.Dashworks
             {
                 resetButton.Click();
             }
-            Assert.AreEqual(subCategoriesCount, columnElement.GetSubcategoriesCountByCategoryName(categoryName));
+
+            Assert.AreEqual(subCategoriesCount, columnElement.GetSubcategoriesCountByCategoryName(categoryName),
+                $"Incorrect subcategories count for {categoryName} category");
         }
 
         [Then(@"""(.*)"" subcategory is selected in Column panel")]
         public void ThenSubcategoryIsSelectedInColumnPanel(string subCategoriesName)
         {
             var columnElement = _driver.NowAt<ColumnsElement>();
-            Assert.IsTrue(columnElement.SubcategoryIsSelected(subCategoriesName));
+            Assert.IsTrue(columnElement.SubcategoryIsSelected(subCategoriesName),
+                $"{subCategoriesName} is not selected");
         }
 
         [Then(@"Minimize buttons are displayed for all category in Columns panel")]
@@ -314,7 +322,8 @@ namespace DashworksTestAutomation.Steps.Dashworks
             var currentUrl = _driver.Url;
             const string pattern = @"\$select=(.*)";
             var urlPartToCheck = Regex.Match(currentUrl, pattern).Groups[1].Value;
-            StringAssert.Contains(_convertor.Convert(coolumnName).ToLower(), urlPartToCheck.ToLower());
+            StringAssert.Contains(_convertor.Convert(coolumnName).ToLower(), urlPartToCheck.ToLower(),
+                $"{coolumnName} is not added to URL");
         }
     }
 }

@@ -33,7 +33,8 @@ namespace DashworksTestAutomation.Steps.Dashworks
         public void ThenActionsMessageContainerIsDisplayedToTheUser()
         {
             var columnElement = _driver.NowAt<ActionsElement>();
-            Assert.IsTrue(columnElement.ActionsContainerMessage.Displayed(), "Actions message container was not displayed");
+            Assert.IsTrue(columnElement.ActionsContainerMessage.Displayed(),
+                "Actions message container was not displayed");
             Logger.Write("Actions message container is visible");
         }
 
@@ -152,12 +153,13 @@ namespace DashworksTestAutomation.Steps.Dashworks
             _driver.SelectCustomSelectbox(actionsElement.DropdownBox, "Add to static list");
         }
 
-        [Then(@"Following options are available in lists dorpdown:")]
-        public void ThenFollowingOptionsAreAvailableInListsDorpdown(Table table)
+        [Then(@"Following options are available in lists dropdown:")]
+        public void ThenFollowingOptionsAreAvailableInListsDropdown(Table table)
         {
             var actionsElement = _driver.NowAt<ActionsElement>();
             _driver.FindElement(By.XPath(actionsElement.listsDropdown)).Click();
-            Assert.AreEqual(table.Rows.SelectMany(row => row.Values).ToList(), actionsElement.GetDropdownOptions().Select(p => p.Text));
+            Assert.AreEqual(table.Rows.SelectMany(row => row.Values).ToList(),
+                actionsElement.GetDropdownOptions().Select(p => p.Text), "Incorrect options in lists dropdown");
         }
     }
 }

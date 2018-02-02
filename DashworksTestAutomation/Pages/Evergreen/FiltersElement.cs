@@ -4,6 +4,7 @@ using OpenQA.Selenium;
 using OpenQA.Selenium.Support.PageObjects;
 using System.Collections.Generic;
 using System.Linq;
+using NUnit.Framework;
 
 namespace DashworksTestAutomation.Pages.Evergreen
 {
@@ -167,6 +168,7 @@ namespace DashworksTestAutomation.Pages.Evergreen
 
         public List<string> GetFiltersNames()
         {
+            Driver.WaitWhileControlIsNotDisplayed(By.XPath(".//span[@class='filter-label-name']"));
             var namesListElements = Driver.FindElements(By.XPath(".//span[@class='filter-label-name']"));
             return namesListElements.Select(name => name.Text).ToList();
         }
@@ -209,6 +211,18 @@ namespace DashworksTestAutomation.Pages.Evergreen
             var selectbox =
                 Driver.FindElement(By.XPath(".//div[@class='filter-panel']//div[@class='mat-select-trigger']"));
             Driver.SelectCustomSelectbox(selectbox, operatorValue);
+        }
+
+        public void EditFilterButton(string tooltipText)
+        {
+            var editFilterButton = Driver.FindElement(By.XPath(
+                ".//div[@class='btn-group-sm pull-right ng-star-inserted']//i[@class='material-icons mat-filter-edit mat-18']/ancestor::button")).GetAttribute("aria-describedby");
+            var pageSource = Driver.PageSource;
+            var doc = new HtmlAgilityPack.HtmlDocument();
+            doc.LoadHtml(pageSource);
+            var node = doc.DocumentNode.SelectNodes($".//div[@id='{editFilterButton}']")[0];
+            var editFilterButtonTooltip = node.InnerHtml;
+            Assert.AreEqual(tooltipText, editFilterButtonTooltip, "Tooltip is incorrect for button");
         }
     }
 }

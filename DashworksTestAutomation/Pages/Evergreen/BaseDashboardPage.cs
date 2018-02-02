@@ -35,11 +35,15 @@ namespace DashworksTestAutomation.Pages.Evergreen
         [FindsBy(How = How.XPath, Using = ".//button[@class='btn input-toggle mat-icon-button ng-star-inserted']")]
         public IWebElement SearchTextboxResetButton { get; set; }
 
-        [FindsBy(How = How.XPath, Using = ".//button[@class='btn btn-default input-toggle mat-icon-button ng-star-inserted']")]
+        [FindsBy(How = How.XPath,
+            Using = ".//button[@class='btn btn-default input-toggle mat-icon-button ng-star-inserted']")]
         public IWebElement SearchTextboxResetButtonInPanel { get; set; }
 
         [FindsBy(How = How.XPath, Using = ".//input[@aria-label='Search table']")]
         public IWebElement TableSearchTextbox { get; set; }
+
+        [FindsBy(How = How.XPath, Using = ".//button[@aria-label='reload']")]
+        public IWebElement RefreshTableButton { get; set; }
 
         [FindsBy(How = How.XPath, Using = ".//span[@class='ag-header-icon ag-sort-descending-icon']")]
         public IWebElement DescendingSortingIcon { get; set; }
@@ -58,6 +62,9 @@ namespace DashworksTestAutomation.Pages.Evergreen
 
         [FindsBy(How = How.XPath, Using = ".//div[@class='ag-body-container']")]
         public IWebElement TableBody { get; set; }
+
+        [FindsBy(How = How.XPath, Using = ".//div[@class='ag-body']")]
+        public IWebElement TableContent { get; set; }
 
         [FindsBy(How = How.XPath, Using = ".//div[@id='content']//div[@class='empty-message ng-star-inserted']")]
         public IWebElement NoResultsFoundMessage { get; set; }
@@ -90,16 +97,20 @@ namespace DashworksTestAutomation.Pages.Evergreen
 
         public bool IsColumnPresent(string columnName)
         {
+            Driver.WaitForDataLoading();
+
             var selector = string.Empty;
             if (columnName.Contains("'"))
             {
                 var strings = columnName.Split('\'');
-                selector = $".//div[@role='presentation']/span[contains(text(),'{strings[0]}')][contains(text(), '{strings[1]}')]";
+                selector =
+                    $".//div[@role='presentation']/span[contains(text(),'{strings[0]}')][contains(text(), '{strings[1]}')]";
             }
             else
             {
                 selector = $".//div[@role='presentation']/span[text()='{columnName}']";
             }
+
             return Driver.IsElementDisplayed(By.XPath(selector));
         }
 
@@ -116,6 +127,7 @@ namespace DashworksTestAutomation.Pages.Evergreen
             {
                 selector = $".//div[@role='presentation']/span[text()='{columnName}']/..";
             }
+
             Driver.WaitWhileControlIsNotDisplayed(By.XPath(selector));
             return Driver.FindElement(By.XPath(selector));
         }
@@ -137,20 +149,23 @@ namespace DashworksTestAutomation.Pages.Evergreen
 
         public List<string> GetColumnContent(string columnName)
         {
-            By by = By.XPath($".//div[@class='ag-body']//div[@class='ag-body-container']/div/div[{GetColumnNumberByName(columnName)}]");
+            By by = By.XPath(
+                $".//div[@class='ag-body']//div[@class='ag-body-container']/div/div[{GetColumnNumberByName(columnName)}]");
             return Driver.FindElements(by).Select(x => x.Text).ToList();
         }
 
         public string ActiveCustomListName()
         {
-            By by = By.XPath(".//*[@id='submenuBlock']/div[contains(@class, 'active-list-wrapper')]/ul/li/span[@class='submenu-actions-list-name']");
+            By by = By.XPath(
+                ".//*[@id='submenuBlock']/div[contains(@class, 'active-list-wrapper')]/ul/li/span[@class='submenu-actions-list-name']");
             Driver.WaitWhileControlContainingTextIsNotDisplayed(by);
             return Driver.FindElement(by).Text;
         }
 
         public void ClickContentByColumnName(string columnName)
         {
-            By byControl = By.XPath($".//div[@class='ag-body-container']/div[1]/div[{GetColumnNumberByName(columnName)}]//a");
+            By byControl =
+                By.XPath($".//div[@class='ag-body-container']/div[1]/div[{GetColumnNumberByName(columnName)}]//a");
 
             Driver.WaitForDataLoading();
             Driver.WaitWhileControlIsNotDisplayed(byControl);
@@ -165,7 +180,8 @@ namespace DashworksTestAutomation.Pages.Evergreen
             }
             catch (Exception)
             {
-                Driver.WaitWhileControlIsNotDisplayed(By.XPath($".//div[@id='submenuBlock']//span[text()='{listName}']"));
+                Driver.WaitWhileControlIsNotDisplayed(
+                    By.XPath($".//div[@id='submenuBlock']//span[text()='{listName}']"));
                 return Driver.FindElement(By.XPath($".//div[@id='submenuBlock']//span[text()='{listName}']"));
             }
         }

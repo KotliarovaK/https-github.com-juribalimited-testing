@@ -382,9 +382,6 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_Search
                         "Windows Vista",
                         "475"});
             table11.AddRow(new string[] {
-                        "O\'Connor",
-                        "13"});
-            table11.AddRow(new string[] {
                         "@demo.juriba.com",
                         "16,717"});
             table11.AddRow(new string[] {
@@ -993,7 +990,7 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_Search
         [NUnit.Framework.CategoryAttribute("DAS11511")]
         [NUnit.Framework.TestCaseAttribute("Devices", "Compliance", "GREEN", "100", new string[0])]
         [NUnit.Framework.TestCaseAttribute("Devices", "Windows7Mi: Readiness", "OUT OF SCOPE", "5,118", new string[0])]
-        [NUnit.Framework.TestCaseAttribute("Devices", "Windows7Mi: Group Computer Rag Radio Date Owner", "Not Applicable", "5,160", new string[0])]
+        [NUnit.Framework.TestCaseAttribute("Devices", "Windows7Mi: Group Computer Rag Radio Date Owner", "Not Applicable", "5,161", new string[0])]
         [NUnit.Framework.TestCaseAttribute("Applications", "Import Type", "Altiris 6", "31", new string[0])]
         [NUnit.Framework.TestCaseAttribute("Users", "Department", "The Last Department With A Really Lond Name", "10", new string[0])]
         public virtual void EvergreenJnr_AllLists_Search_CheckThatTableSearchIsWorkingCorrectly(string pageName, string columnName, string searchCriteria, string numberOfRows, string[] exampleTags)

@@ -143,9 +143,9 @@ Scenario: EvergreenJnr_DevicesList_CheckThat500ErrorPageIsNotDisplayedAfterRemov
 	| ColumnName                   |
 	| Boot Up Date                 |
 	| Windows7Mi: Date & Time Task |
+	When User click on 'Boot Up Date' column header
 	When User clicks the Columns button
 	Then Columns panel is displayed to the user
-	When User click on 'Boot Up Date' column header
 	When User removes "Boot Up Date" column by Column panel
 	Then ColumnName is removed from the list
 	| ColumnName   |
@@ -448,11 +448,11 @@ Scenario: EvergreenJnr_ApplicationsList_CheckThatColumnIsDisplayedInColumnsPanel
 	| Not Started        |
 	| Started            |
 	Then "Windows7Mi: Technical Test" filter is added to the list
-	And "8" rows are displayed in the agGrid
+	And "7" rows are displayed in the agGrid
 	When User removes column by URL
 	| ColumnName                 |
 	| Windows7Mi: Technical Test |
-	Then "8" rows are displayed in the agGrid
+	Then "7" rows are displayed in the agGrid
 	And "Applications" list should be displayed to the user
 	When User clicks the Columns button
 	Then Columns panel is displayed to the user

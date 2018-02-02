@@ -13,6 +13,9 @@ namespace DashworksTestAutomation.Pages.Evergreen
         [FindsBy(How = How.XPath, Using = ".//div[@class='tabContainer ng-star-inserted']")]
         public IWebElement TabContainer { get; set; }
 
+        [FindsBy(How = How.XPath, Using = ".//div[@class='object-icon']//i")]
+        public IWebElement GroupIcon { get; set; }
+
         [FindsBy(How = How.XPath, Using = ".//div[@class='empty-message ng-star-inserted']")]
         public IWebElement NoMailboxOwnerFoundMessage { get; set; }
 
@@ -25,14 +28,11 @@ namespace DashworksTestAutomation.Pages.Evergreen
             };
         }
 
-        [FindsBy(How = How.XPath, Using = ".//div[@class='object-icon']//i")]
-        public IWebElement GroupIcon { get; set; }
-
         public void NavigateToSectionByName(string sectionName)
         {
             var section = Driver.FindElement(
                 By.XPath(
-                    $".//button[@class='btn btn-default blue-color mat-icon-button ng-star-inserted'][@aria-label='{sectionName}']"));
+                    $".//div[@class='ng-star-inserted']//span[@class='filter-category-label blue-color bold-text'][text()='{sectionName}']"));
             section.Click();
         }
 
@@ -44,14 +44,14 @@ namespace DashworksTestAutomation.Pages.Evergreen
 
         public void ExpandAllSections()
         {
-            Driver.WaitWhileControlIsNotDisplayed(By.XPath(".//button[@aria-describedby='cdk-describedby-message-30']"));
-            var expandButtons = Driver.FindElements(By.XPath(".//button[@aria-describedby='cdk-describedby-message-30']"));
+            Driver.WaitWhileControlIsNotDisplayed(By.XPath(".//i[@class='material-icons mat-item_add mat-18']/ancestor::button"));
+            var expandButtons = Driver.FindElements(By.XPath(".//i[@class='material-icons mat-item_add mat-18']/ancestor::button"));
 
             if (expandButtons.Any())
             {
                 foreach (IWebElement button in expandButtons)
                 {
-                    Driver.WaitWhileControlIsNotDisplayed<DetailsPage>(() => button);
+                    //Driver.WaitWhileControlIsNotDisplayed<DetailsPage>(() => button);
                     Driver.MouseHover(button);
                     button.Click();
                     Driver.WaitForDataLoading();
