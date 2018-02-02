@@ -70,15 +70,15 @@ Scenario: EvergreenJnr_ApplicationsList_CheckThatFilterIsRestoredAfterGoingBackT
 	| Microsoft Office 97, Developer Edition Tools |
 	| Microsoft Office 97, Standard Edition        |
 	Then "Application" filter is added to the list
-	When User create custom list with "TestList" name
-	Then "TestList" list is displayed to user
+	When User create custom list with "TestList5D30CF" name
+	Then "TestList5D30CF" list is displayed to user
 	When User clicks the Filters button
 	Then Filters panel is displayed to the user
 	Then "Application is Microsoft Office 97, Professional Edition, Microsoft Office 97, Developer Edition Tools or Microsoft Office 97, Standard Edition" is displayed in added filter info
 	When User navigates to the "All Applications" list
 	Then "Applications" list should be displayed to the user
-	When User navigates to the "TestList" list
-	Then "TestList" list is displayed to user
+	When User navigates to the "TestList5D30CF" list
+	Then "TestList5D30CF" list is displayed to user
 	When User clicks the Filters button
 	Then Filters panel is displayed to the user
 	And "Application is Microsoft Office 97, Professional Edition, Microsoft Office 97, Developer Edition Tools or Microsoft Office 97, Standard Edition" is displayed in added filter info
@@ -114,12 +114,12 @@ Scenario: EvergreenJnr_DevicesList_CheckThatAddColumnCheckboxIsCheckedAfterSavin
 	| SelectedCheckboxes |
 	| Red                |
 	Then "Compliance" filter is added to the list
-	When User create custom list with "TestList" name
-	Then "TestList" list is displayed to user
+	When User create custom list with "TestList4A5CD6" name
+	Then "TestList4A5CD6" list is displayed to user
 	When User navigates to the "All Devices" list
 	Then "Devices" list should be displayed to the user
-	When User navigates to the "TestList" list
-	Then "TestList" list is displayed to user
+	When User navigates to the "TestList4A5CD6" list
+	Then "TestList4A5CD6" list is displayed to user
 	When User clicks the Filters button
 	Then Filters panel is displayed to the user
 	When User click Edit button for "Compliance" filter
@@ -232,22 +232,22 @@ Scenario: EvergreenJnr_ApplicationsList_CheckThatFilterIsRestoredCorrectlyAfterL
 	When ColumnName is entered into the search box and the selection is clicked
 	| ColumnName      |
 	| Application Key |
-	When User create custom list with "TestList" name
-	Then "TestList" list is displayed to user
+	When User create custom list with "TestListD75CD3" name
+	Then "TestListD75CD3" list is displayed to user
 	When User clicks "Devices" on the left-hand menu
 	Then "Devices" list should be displayed to the user
 	When User clicks the Filters button
 	Then Filters panel is displayed to the user
 	When User add "Application (Saved List)" filter where type is "In list" with SelectedList list and following Association:
 	| SelectedList | Association        |
-	| TestList     | Not used on device |
-	Then "Application in list TestList is not used on device" is displayed in added filter info
+	| TestListD75CD3     | Not used on device |
+	Then "Application in list TestListD75CD3 is not used on device" is displayed in added filter info
 	Then "17,095" rows are displayed in the agGrid
 	When User perform search by "00BDM1JUR8IF419"
 	And User click content from "Hostname" column
 	Then User click back button in the browser
 	Then "17,095" rows are displayed in the agGrid
-	Then "Application in list TestList is not used on device" is displayed in added filter info
+	Then "Application in list TestListD75CD3 is not used on device" is displayed in added filter info
 
 @Evergreen @Devices @EvergreenJnr_FilterFeature @FilterFunctionality @DAS11560
 Scenario: EvergreenJnr_DevicesList_CheckNumericFilter
