@@ -100,3 +100,9 @@ Examples:
 	| Windows7Mi: Application Readiness       |
 	| Windows7Mi: Core Application            |
 	| Windows7Mi: Hide from End Users         |
+
+@Evergreen @Mailboxes @EvergreenJnr_Columns @AddColumnAction @DAS10665 @API @Not_Run
+Scenario: EvergreenJnr_MailboxesList_CheckThat500ErrorIsNotDisplayedAfterSortingForSelectedColumnAPI
+	When I perform test request to the APi and get "Mailboxes" page and selected columns:
+	| ColumnName                 |
+	| Owner Department Full Path |

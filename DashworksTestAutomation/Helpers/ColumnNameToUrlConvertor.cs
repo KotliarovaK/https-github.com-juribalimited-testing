@@ -47,6 +47,9 @@ namespace DashworksTestAutomation.Helpers
                 case "Windows7Mi: Technical Test":
                     return "project_task_1_480_1_Task";
 
+                case "Owner Department Full Path":
+                    return "ownerFullDepartmentPath";
+
                 case "" +
                      "DAS-" +
                      "" +

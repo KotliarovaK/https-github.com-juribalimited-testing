@@ -7,10 +7,14 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Net;
+using System.Text.RegularExpressions;
+using DashworksTestAutomation.Extensions;
 using DashworksTestAutomation.Helpers;
+using DashworksTestAutomation.Pages;
 using DashworksTestAutomation.Utils;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using NUnit.Framework;
+using OpenQA.Selenium.Remote;
 using TechTalk.SpecFlow;
 using Assert = NUnit.Framework.Assert;
 
@@ -21,36 +25,18 @@ namespace DashworksTestAutomation.Steps
     {
         private readonly RestWebClient _client;
         private readonly ResponceDetails _responce;
-        private readonly DetailsSectionToUrlConvertor _convertor;
+        private readonly DetailsSectionToUrlConvertor _sectionConvertor;
+        private readonly RemoteWebDriver _driver;
+        private readonly ColumnNameToUrlConvertor _convertor;
 
-        public TestApiStep(RestWebClient client, ResponceDetails responce, DetailsSectionToUrlConvertor convertor)
+        public TestApiStep(RestWebClient client, ResponceDetails responce,
+            DetailsSectionToUrlConvertor sectionConvertor, RemoteWebDriver driver, ColumnNameToUrlConvertor convertor)
         {
             _client = client;
             _responce = responce;
+            _sectionConvertor = sectionConvertor;
+            _driver = driver;
             _convertor = convertor;
-        }
-
-        [When(@"I perform test request to the APi and get "" page and selected columns:")]
-        public void WhenIPerformTestRequestToApiAndGetPage(string pageName, Table table)
-        {
-            var requestUri = $"{UrlProvider.RestClientBaseUrl}{pageName.ToLower()}/columns?$lang=en-GB";
-            var request = new RestRequest(requestUri);
-
-            request.AddParameter("Host", UrlProvider.RestClientBaseUrl);
-            request.AddParameter("Origin", UrlProvider.Url.TrimEnd('/'));
-            request.AddParameter("Referer", UrlProvider.EvergreenUrl);
-
-            var response = _client.Value.Get(request);
-
-            if (response.StatusCode != HttpStatusCode.OK)
-                throw new Exception($"Unable to execute request. URI: {requestUri}");
-
-            var content = response.Content;
-
-            var allColumns = JsonConvert.DeserializeObject<List<JObject>>(content);
-            foreach (var row in table.Rows)
-            {
-            }
         }
 
         [When(@"I perform test request to the Users API and get operators by ""(.*)"" filter")]
@@ -132,7 +118,7 @@ namespace DashworksTestAutomation.Steps
             string sectionName)
         {
             var itemId = _client.GetDeviceIdByName(itemName, pageName);
-            var section = _convertor.Convert(sectionName);
+            var section = _sectionConvertor.SectionConvertor(sectionName);
             var requestUri = "";
             if (pageName == "Mailboxes")
             {
@@ -190,10 +176,28 @@ namespace DashworksTestAutomation.Steps
             }
         }
 
-        [When(@"When User added selected columns:")]
-        public void WhenUserAddedSelectedColumns(Table table)
+        [When(@"I perform test request to the APi and get ""(.*)"" page and selected columns:")]
+        public void WhenIPerformTestRequestToApiAndGetPage(string pageName, Table table)
         {
-            var content = _responce.Value.Content;
+            var requestUri = $"{UrlProvider.RestClientBaseUrl}{pageName.ToLower()}";
+            var request = new RestRequest(requestUri);
+
+            request.AddParameter("Host", UrlProvider.RestClientBaseUrl);
+            request.AddParameter("Origin", UrlProvider.Url.TrimEnd('/'));
+            request.AddParameter("Referer", UrlProvider.EvergreenUrl);
+
+            var response = _client.Value.Get(request);
+
+            if (response.StatusCode != HttpStatusCode.OK)
+                throw new Exception($"Unable to execute request. URI: {requestUri}");
+
+            var content = response.ResponseUri.ToString();
+
+            foreach (var row in table.Rows)
+            {
+                content += $",{_convertor.Convert(row["ColumnName"])}";
+            }
+            _driver.NavigateToUrl(content.Replace(":81", String.Empty));
         }
     }
 }

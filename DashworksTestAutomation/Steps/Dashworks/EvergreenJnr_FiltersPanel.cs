@@ -490,7 +490,7 @@ namespace DashworksTestAutomation.Steps.Dashworks
             const string pattern = @"\$filter=(.*)\&";
             var originalPart = Regex.Match(currentUrl, pattern).Value;
             var urlToNavigate = currentUrl.Replace(originalPart, string.Empty);
-            _driver.NagigateToURL(urlToNavigate);
+            _driver.NavigateToUrl(urlToNavigate);
 
             var page = _driver.NowAt<EvergreenDashboardsPage>();
             if (page.StatusCodeLabel.Displayed())
@@ -506,7 +506,7 @@ namespace DashworksTestAutomation.Steps.Dashworks
             const string pattern = @"\$filter=(.*)\&";
             var originalPart = Regex.Match(currentUrl, pattern).Groups[1].Value;
             var urlToNavigate = currentUrl.Replace(originalPart, string.Empty);
-            _driver.NagigateToURL(urlToNavigate);
+            _driver.NavigateToUrl(urlToNavigate);
 
             var page = _driver.NowAt<EvergreenDashboardsPage>();
             if (page.StatusCodeLabel.Displayed())

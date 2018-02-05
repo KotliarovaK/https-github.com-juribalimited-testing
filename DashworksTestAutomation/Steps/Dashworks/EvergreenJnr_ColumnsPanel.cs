@@ -150,7 +150,7 @@ namespace DashworksTestAutomation.Steps.Dashworks
             {
                 var originalPart = Regex.Match(currentUrl, pattern).Groups[1].Value;
                 var changedPart = originalPart.Replace($",{_convertor.Convert(row["ColumnName"])}", string.Empty);
-                _driver.NagigateToURL(currentUrl.Replace(originalPart, changedPart));
+                _driver.NavigateToUrl(currentUrl.Replace(originalPart, changedPart));
 
                 var page = _driver.NowAt<EvergreenDashboardsPage>();
                 if (page.StatusCodeLabel.Displayed())
@@ -169,7 +169,7 @@ namespace DashworksTestAutomation.Steps.Dashworks
             {
                 var originalPart = Regex.Match(currentUrl, pattern).Groups[1].Value;
                 var changedPart = originalPart.Replace($",{_convertor.Convert(row["ColumnName"])}", string.Empty);
-                _driver.NagigateToURL(currentUrl.Replace(originalPart, changedPart));
+                _driver.NavigateToUrl(currentUrl.Replace(originalPart, changedPart));
 
                 var page = _driver.NowAt<EvergreenDashboardsPage>();
                 if (page.StatusCodeLabel.Displayed())
@@ -186,12 +186,12 @@ namespace DashworksTestAutomation.Steps.Dashworks
             const string pattern = @"select=(.*)";
 
             var originalPart = Regex.Match(currentUrl, pattern).Groups[1].Value;
-            _driver.NagigateToURL(currentUrl.Replace(originalPart, String.Empty));
+            _driver.NavigateToUrl(currentUrl.Replace(originalPart, String.Empty));
 
             var page = _driver.NowAt<EvergreenDashboardsPage>();
             if (page.StatusCodeLabel.Displayed())
             {
-                throw new Exception($"500 error was returned after removing all columns from URL");
+                throw new Exception("500 error was returned after removing all columns from URL");
             }
         }
 
@@ -202,12 +202,12 @@ namespace DashworksTestAutomation.Steps.Dashworks
             const string pattern = @"\&(.*)";
 
             var originalPart = Regex.Match(currentUrl, pattern).Value;
-            _driver.NagigateToURL(currentUrl.Replace(originalPart, String.Empty));
+            _driver.NavigateToUrl(currentUrl.Replace(originalPart, String.Empty));
 
             var page = _driver.NowAt<EvergreenDashboardsPage>();
             if (page.StatusCodeLabel.Displayed())
             {
-                throw new Exception($"500 error was returned after removing all columns from URL");
+                throw new Exception("500 error was returned after removing all columns from URL");
             }
         }
 
@@ -218,12 +218,12 @@ namespace DashworksTestAutomation.Steps.Dashworks
             const string pattern = @"\?(.*)";
 
             var originalPart = Regex.Match(currentUrl, pattern).Value;
-            _driver.NagigateToURL(currentUrl.Replace(originalPart, String.Empty));
+            _driver.NavigateToUrl(currentUrl.Replace(originalPart, String.Empty));
 
             var page = _driver.NowAt<EvergreenDashboardsPage>();
             if (page.StatusCodeLabel.Displayed())
             {
-                throw new Exception($"500 error was returned after removing all columns from URL");
+                throw new Exception("500 error was returned after removing all columns from URL");
             }
         }
 
