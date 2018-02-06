@@ -53,19 +53,10 @@ Examples:
 	| Devices   | 001BAQXT6JWFPI                | Device Owner | Last Logoff Date  | False        |
 
 @Evergreen @AllLists @EvergreenJnr_ListDetails @ListDetailsFunctionality @DAS11721
-Scenario Outline: EvergreenJnr_AllLists_CheckThatGroupIconsAreDisplayedForAllPages
-	When User clicks "<PageName>" on the left-hand menu
-	Then "<PageName>" list should be displayed to the user
-	When User perform search by "<ObjectName>"
-	When User click content from "<ColumnName>" column
-	Then Group Icon for "<PageName>" page is displayed 
-	
-Examples: 
-	| PageName     | ObjectName                       | ColumnName    |
-	| Devices      | 001BAQXT6JWFPI                   | Hostname      |
-	| Users        | 002B5DC7D4D34D5C895              | Username      |
-	| Applications | Acrobat Reader 4                 | Application   |
-	| Mailboxes    | 00BDBAEA57334C7C8F4@bclabs.local | Email Address |
+Scenario: EvergreenJnr_AllLists_CheckThatGroupIconsAreDisplayedForGroupDetailsPage
+	When User type "NL00G001" in Global Search Field
+	Then User clicks on "NL00G001" search result
+	Then Group Icon for Group Details page is displayed
 
 @Evergreen @AllLists @EvergreenJnr_ItemDetails @ItemDetailsDisplay @DAS11732
 Scenario Outline: EvergreenJnr_AllLists_CheckThatDataIsDisplayedAfterAddingColumnsForExpandedSections

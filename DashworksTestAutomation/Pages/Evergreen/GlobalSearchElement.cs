@@ -28,5 +28,10 @@ namespace DashworksTestAutomation.Pages.Evergreen
                 SelectorFor(this, p => p.SearchEverythingField),
             };
         }
+        public IWebElement SearchResult(string searchText)
+        {
+            return Driver.FindElement(
+                By.XPath($".//div[contains(@class, 'result-table')]//a[text()='{searchText}']"));
+        }
     }
 }
