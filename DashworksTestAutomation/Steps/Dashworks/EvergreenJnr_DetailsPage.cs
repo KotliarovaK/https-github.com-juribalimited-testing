@@ -1,4 +1,5 @@
-﻿using DashworksTestAutomation.Extensions;
+﻿using System;
+using DashworksTestAutomation.Extensions;
 using DashworksTestAutomation.Pages.Evergreen;
 using DashworksTestAutomation.Pages.Evergreen.DetailsTabsMenu;
 using NUnit.Framework;
@@ -177,19 +178,19 @@ namespace DashworksTestAutomation.Steps.Dashworks
                 $"{textMessage} is not displayed");
         }
 
+        [Then(@"string filter is displayed for ""(.*)"" column on the Details Page")]
+        public void ThenStringFilterIsDisplayedForColumnOnTheDetailsPage(string columnName)
+        {
+            var detailsPage = _driver.NowAt<ApplicationsDetailsTabsMenu>();
+            var t = Convert.ToBoolean(detailsPage.GetFilterByColumnName(columnName).GetAttribute("readonly"));
+            Assert.IsFalse(Convert.ToBoolean(detailsPage.GetFilterByColumnName(columnName).GetAttribute("readonly")));
+        }
+
         [Then(@"""(.*)"" field display state is ""(.*)"" on Details tab")]
         public void ThenFieldDisplayStateIsOnDetailsTab(string fieldName, bool state)
         {
             var detailsPage = _driver.NowAt<DetailsPage>();
             Assert.AreEqual(state, detailsPage.IsFieldPresent(fieldName), $"Incorrect display state for {fieldName}");
         }
-
-        [Then(@"string filter is displayed for ""(.*)"" column on the Details Page")]
-        public void ThenStringFilterIsDisplayedForColumnOnTheDetailsPage(string columnName)
-        {
-            var detailsPage = _driver.NowAt<ApplicationsDetailsTabsMenu>();
-            Assert.IsFalse(detailsPage.GetFilterByColumnName(columnName).GetAttribute("readonly"));
-        }
-
     }
 }

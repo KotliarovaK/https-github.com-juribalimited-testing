@@ -36,7 +36,7 @@ namespace DashworksTestAutomation.Pages.Evergreen.DetailsTabsMenu
 
             return new List<By>
             {
-                SelectorFor(this, p => p.ApplicationSummarySection),
+                //SelectorFor(this, p => p.ApplicationSummarySection),
                 //SelectorFor(this, p => p.ApplicationDetailSection),
                 //SelectorFor(this, p => p.AdvertisementsSection),
                 //SelectorFor(this, p => p.CollectionsSection),
@@ -87,6 +87,13 @@ namespace DashworksTestAutomation.Pages.Evergreen.DetailsTabsMenu
                     x.FindElement(By.XPath(".//span[@class='ag-header-cell-text']")).Text.Equals(columnName))) + 1;
 
             return columnNumber;
+        }
+
+        public IWebElement GetFilterByColumnName(string columnName)
+        {
+            var allFilters =
+                Driver.FindElements(By.XPath(".//div[@class='ag-header-row']//input[@ref='eColumnFloatingFilter']"));
+            return allFilters[GetColumnNumberByName(columnName) - 1];
         }
 
         public List<string> GetCheckedElementsText()

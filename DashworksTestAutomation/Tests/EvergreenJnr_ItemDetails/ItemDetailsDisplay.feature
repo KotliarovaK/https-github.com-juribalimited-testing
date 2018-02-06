@@ -220,7 +220,7 @@ Scenario: EvergreenJnr_DevicesLists_CheckThatSelectedCheckboxesMatchTheColumnsIn
 	| Readiness    |
 
 @Evergreen @AllLists @EvergreenJnr_ItemDetails @ItemDetailsDisplay @DAS11091
-Scenario Outline: EvergreenJnr_AllLists_CheckThatRenamedColumnsAreDisplayedForApplicationSummarySectionOnTheDetailsPage
+Scenario Outline: EvergreenJnr_AllLists_CheckRenamedColumnForApplicationSummarySectionOnTheDetailsPage
 	When User clicks "<PageName>" on the left-hand menu
 	Then "<PageName>" list should be displayed to the user
 	When User perform search by "<SelectedName>"
@@ -231,13 +231,13 @@ Scenario Outline: EvergreenJnr_AllLists_CheckThatRenamedColumnsAreDisplayedForAp
 	| ColumnName |
 	| Vendor     |
 
-	Examples:
+Examples:
 	| PageName | SelectedName   | ColumnName |
 	| Devices  | 001BAQXT6JWFPI | Hostname   |
 	| Users    | ZZZ588323      | Username   |
 
 @Evergreen @AllLists @EvergreenJnr_ItemDetails @ItemDetailsDisplay @DAS11091
-Scenario Outline: EvergreenJnr_AllLists_CheckThatRenamedColumnsAreDisplayedForApplicationDetailSectionOnTheDetailsPage
+Scenario Outline: EvergreenJnr_AllLists_CheckRenamedColumnForApplicationDetailSectionOnTheDetailsPage
 	When User clicks "<PageName>" on the left-hand menu
 	Then "<PageName>" list should be displayed to the user
 	When User perform search by "<SelectedName>"
@@ -250,13 +250,13 @@ Scenario Outline: EvergreenJnr_AllLists_CheckThatRenamedColumnsAreDisplayedForAp
 	| ColumnName |
 	| Vendor     |
 
-	Examples:
+Examples:
 	| PageName | SelectedName   | ColumnName |
 	| Devices  | 001BAQXT6JWFPI | Hostname   |
 	| Users    | ZZZ588323      | Username   |
 
 @Evergreen @AllLists @EvergreenJnr_ItemDetails @ItemDetailsDisplay @DAS11091
-Scenario Outline: EvergreenJnr_AllLists_CheckThatRenamedColumnsAreDisplayedForSoftwareComplianceIssuesSectionOnTheDetailsPage
+Scenario Outline: EvergreenJnr_AllLists_CheckRenamedColumnAndStringFilterForSoftwareComplianceIssuesSectionOnTheDetailsPage
 	When User clicks "<PageName>" on the left-hand menu
 	Then "<PageName>" list should be displayed to the user
 	When User perform search by "<SelectedName>"
@@ -267,8 +267,9 @@ Scenario Outline: EvergreenJnr_AllLists_CheckThatRenamedColumnsAreDisplayedForSo
 	And ColumnName is added to the list in the Details Page table
 	| ColumnName |
 	| Vendor     |
+	Then string filter is displayed for "Vendor" column on the Details Page
 
-	Examples:
+Examples:
 	| PageName | SelectedName   | ColumnName |
 	| Devices  | 001BAQXT6JWFPI | Hostname   |
 	| Users    | ZZZ588323      | Username   |
