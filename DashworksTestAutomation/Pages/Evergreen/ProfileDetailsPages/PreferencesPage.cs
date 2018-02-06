@@ -20,7 +20,7 @@ namespace DashworksTestAutomation.Pages.Evergreen.ProfileDetailsPages
         [FindsBy(How = How.XPath, Using = ".//span[text()='UPDATE']/ancestor::button")]
         public IWebElement UpdateButton { get; set; }
 
-        [FindsBy(How = How.XPath, Using = ".//div[@class='inline-success']")]
+        [FindsBy(How = How.XPath, Using = ".//div[@class='inline-success ng-star-inserted']")]
         public IWebElement SuccessMessage { get; set; }
 
         public override List<By> GetPageIdentitySelectors()
