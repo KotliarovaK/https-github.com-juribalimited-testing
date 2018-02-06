@@ -261,7 +261,7 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_ProfileDetails
         [NUnit.Framework.TestAttribute()]
         [NUnit.Framework.DescriptionAttribute("EvergreenJnr_AccountDetails_CheckThatDefaultListPageSizeIs1000API")]
         [NUnit.Framework.CategoryAttribute("Evergreen")]
-        [NUnit.Framework.CategoryAttribute("Devices")]
+        [NUnit.Framework.CategoryAttribute("ProfileDetails")]
         [NUnit.Framework.CategoryAttribute("EvergreenJnr_FilterFeature")]
         [NUnit.Framework.CategoryAttribute("FilterFunctionality")]
         [NUnit.Framework.CategoryAttribute("DAS11723")]
@@ -296,7 +296,7 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_ProfileDetails
         {
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("EvergreenJnr_AccountDetails_CheckThatDefaultListPageSizeIs1000API", new string[] {
                         "Evergreen",
-                        "Devices",
+                        "ProfileDetails",
                         "EvergreenJnr_FilterFeature",
                         "FilterFunctionality",
                         "DAS11723",
