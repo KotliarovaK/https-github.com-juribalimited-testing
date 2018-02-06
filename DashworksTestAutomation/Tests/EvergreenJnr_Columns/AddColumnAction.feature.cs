@@ -327,16 +327,22 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_Columns
                         "ColumnName"});
             table8.AddRow(new string[] {
                         "Windows7Mi: Application Readiness"});
+            table8.AddRow(new string[] {
+                        "UserSchedu: Readiness"});
             testRunner.When("ColumnName is entered into the search box and the selection is clicked", ((string)(null)), table8, "When ");
             TechTalk.SpecFlow.Table table9 = new TechTalk.SpecFlow.Table(new string[] {
                         "ColumnName"});
             table9.AddRow(new string[] {
                         "Windows7Mi: Application Readiness"});
+            table9.AddRow(new string[] {
+                        "UserSchedu: Readiness"});
             testRunner.Then("ColumnName is added to the list", ((string)(null)), table9, "Then ");
             TechTalk.SpecFlow.Table table10 = new TechTalk.SpecFlow.Table(new string[] {
                         "ColumnName"});
             table10.AddRow(new string[] {
                         "Windows7Mi: Application Readiness"});
+            table10.AddRow(new string[] {
+                        "UserSchedu: Readiness"});
             testRunner.And("Content is present in the newly added column", ((string)(null)), table10, "And ");
             testRunner.Then("full list content is displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
             testRunner.Then("There are no errors in the browser console", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");

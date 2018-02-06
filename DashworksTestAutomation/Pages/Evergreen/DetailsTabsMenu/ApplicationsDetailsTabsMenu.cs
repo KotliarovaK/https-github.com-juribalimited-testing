@@ -89,6 +89,13 @@ namespace DashworksTestAutomation.Pages.Evergreen.DetailsTabsMenu
             return columnNumber;
         }
 
+        public IWebElement GetFilterByColumnName(string columnName)
+        {
+            var allFilters =
+                Driver.FindElements(By.XPath(".//div[@class='ag-header-row']//input[@ref='eColumnFloatingFilter']"));
+            return allFilters[GetColumnNumberByName(columnName) - 1];
+        }
+
         public List<string> GetCheckedElementsText()
         {
             By by = By.XPath(
@@ -118,6 +125,12 @@ namespace DashworksTestAutomation.Pages.Evergreen.DetailsTabsMenu
             var selector = By.XPath(".//span[@role='columnheader']");
             Driver.WaitForDataLoading();
             return Driver.FindElements(selector);
+        }
+
+        public bool ColumnIsDisplayed(string columnName)
+        {
+            return Driver.IsElementDisplayed(
+                By.XPath($".//div[@class='ag-header-cell-label']/span[text()='{columnName}']"));
         }
 
     }
