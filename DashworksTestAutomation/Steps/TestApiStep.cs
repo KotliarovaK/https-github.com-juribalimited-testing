@@ -179,7 +179,12 @@ namespace DashworksTestAutomation.Steps
         [When(@"I perform test request to the APi and get ""(.*)"" page and selected columns:")]
         public void WhenIPerformTestRequestToApiAndGetPage(string pageName, Table table)
         {
-            var requestUri = $"{UrlProvider.RestClientBaseUrl}{pageName.ToLower()}";
+            var requestUri =
+                $"{UrlProvider.RestClientBaseUrl}{pageName.ToLower()}?$top=1000&$skip=0&{_client.GetDefaultColumnsUrlByPageName(pageName)}";
+            foreach (var row in table.Rows)
+            {
+                requestUri += $",{_convertor.Convert(row["ColumnName"])}";
+            }
             var request = new RestRequest(requestUri);
 
             request.AddParameter("Host", UrlProvider.RestClientBaseUrl);
@@ -192,12 +197,6 @@ namespace DashworksTestAutomation.Steps
                 throw new Exception($"Unable to execute request. URI: {requestUri}");
 
             var content = response.ResponseUri.ToString();
-
-            foreach (var row in table.Rows)
-            {
-                content += $",{_convertor.Convert(row["ColumnName"])}";
-            }
-            _driver.NavigateToUrl(content.Replace(":81", String.Empty));
         }
     }
 }

@@ -8,6 +8,8 @@ using OpenQA.Selenium.Remote;
 using System;
 using System.Text.RegularExpressions;
 using System.Threading;
+using DashworksTestAutomation.DTO.RuntimeVariables;
+using DashworksTestAutomation.Providers;
 using TechTalk.SpecFlow;
 
 namespace DashworksTestAutomation.Steps.Dashworks
@@ -17,11 +19,13 @@ namespace DashworksTestAutomation.Steps.Dashworks
     {
         private readonly RemoteWebDriver _driver;
         private readonly ColumnNameToUrlConvertor _convertor;
+        private readonly RestWebClient _client;
 
-        public EvergreenJnr_ColumnsPanel(RemoteWebDriver driver, ColumnNameToUrlConvertor convertor)
+        public EvergreenJnr_ColumnsPanel(RemoteWebDriver driver, ColumnNameToUrlConvertor convertor, RestWebClient client)
         {
             _driver = driver;
             _convertor = convertor;
+            _client = client;
         }
 
         [Then(@"Columns panel is displayed to the user")]
@@ -71,6 +75,19 @@ namespace DashworksTestAutomation.Steps.Dashworks
         [Then(@"ColumnName is added to the list")]
         public void ThenColumnNameIsAddedToTheList(Table table)
         {
+            _driver.WaitForDataLoading();
+            CheckColumnDisplayedState(table, true);
+        }
+
+        [When(@"User navigate to the URL and get ""(.*)"" page and selected columns:")]
+        public void WhenUserNavigateToTheUrlAndGetPageandSelectedColumns(string pageName, Table table)
+        {
+            var requestUri = $"{UrlProvider.EvergreenUrl}#/{pageName.ToLower()}";
+            foreach (var row in table.Rows)
+            {
+                requestUri += $"?{_client.GetDefaultColumnsUrlByPageName(pageName)}" + $",{_convertor.Convert(row["ColumnName"])}";
+            }
+            _driver.NavigateToUrl(requestUri);
             _driver.WaitForDataLoading();
             CheckColumnDisplayedState(table, true);
         }

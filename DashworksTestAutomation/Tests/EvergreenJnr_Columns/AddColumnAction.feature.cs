@@ -466,7 +466,7 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_Columns
                         "ColumnName"});
             table13.AddRow(new string[] {
                         "Owner Department Full Path"});
-            testRunner.When("I perform test request to the APi and get \"Mailboxes\" page and selected columns:", ((string)(null)), table13, "When ");
+            testRunner.When("User navigate to the URL and get \"Mailboxes\" page and selected columns:", ((string)(null)), table13, "When ");
             this.ScenarioCleanup();
         }
     }

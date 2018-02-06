@@ -103,6 +103,7 @@ Examples:
 
 @Evergreen @Mailboxes @EvergreenJnr_Columns @AddColumnAction @DAS10665 @API @Not_Run
 Scenario: EvergreenJnr_MailboxesList_CheckThat500ErrorIsNotDisplayedAfterSortingForSelectedColumnAPI
-	When I perform test request to the APi and get "Mailboxes" page and selected columns:
+	#When I perform test request to the APi and get "Mailboxes" page and selected columns:
+	When User navigate to the URL and get "Mailboxes" page and selected columns:
 	| ColumnName                 |
 	| Owner Department Full Path |
