@@ -41,6 +41,14 @@ namespace DashworksTestAutomation.Steps.Dashworks
             detailsPage.NavigateToSectionByName(sectionName);
         }
 
+        [Then(@"""(.*)"" column is not displayed to the user")]
+        public void ThenColumnIsNotDisplayedToTheUser(string columnName)
+        {
+            var columnHeader = _driver.NowAt<ApplicationsDetailsTabsMenu>();
+            Assert.IsFalse(columnHeader.ColumnIsDisplayed(columnName),
+                   $"{columnName} category stil displayed in Column Panel");
+        }
+
         [When(@"User have opened Column Settings for ""(.*)"" column in the Details Page table")]
         public void WhenUserHaveOpenedColumnSettingsForColumnInTheDetailsPageTable(string columnName)
         {
@@ -175,5 +183,13 @@ namespace DashworksTestAutomation.Steps.Dashworks
             var detailsPage = _driver.NowAt<DetailsPage>();
             Assert.AreEqual(state, detailsPage.IsFieldPresent(fieldName), $"Incorrect display state for {fieldName}");
         }
+
+        [Then(@"string filter is displayed for ""(.*)"" column on the Details Page")]
+        public void ThenStringFilterIsDisplayedForColumnOnTheDetailsPage(string columnName)
+        {
+            var detailsPage = _driver.NowAt<ApplicationsDetailsTabsMenu>();
+            Assert.IsFalse(detailsPage.GetFilterByColumnName(columnName).GetAttribute("readonly"));
+        }
+
     }
 }

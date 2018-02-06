@@ -218,3 +218,57 @@ Scenario: EvergreenJnr_DevicesLists_CheckThatSelectedCheckboxesMatchTheColumnsIn
 	| Status       |
 	| Date         |
 	| Readiness    |
+
+@Evergreen @AllLists @EvergreenJnr_ItemDetails @ItemDetailsDisplay @DAS11091
+Scenario Outline: EvergreenJnr_AllLists_CheckThatRenamedColumnsAreDisplayedForApplicationSummarySectionOnTheDetailsPage
+	When User clicks "<PageName>" on the left-hand menu
+	Then "<PageName>" list should be displayed to the user
+	When User perform search by "<SelectedName>"
+	And User click content from "<ColumnName>" column
+	And User navigates to the "Applications" tab
+	Then "Manufacturer" column is not displayed to the user
+	Then ColumnName is added to the list in the Details Page table
+	| ColumnName |
+	| Vendor     |
+
+	Examples:
+	| PageName | SelectedName   | ColumnName |
+	| Devices  | 001BAQXT6JWFPI | Hostname   |
+	| Users    | ZZZ588323      | Username   |
+
+@Evergreen @AllLists @EvergreenJnr_ItemDetails @ItemDetailsDisplay @DAS11091
+Scenario Outline: EvergreenJnr_AllLists_CheckThatRenamedColumnsAreDisplayedForApplicationDetailSectionOnTheDetailsPage
+	When User clicks "<PageName>" on the left-hand menu
+	Then "<PageName>" list should be displayed to the user
+	When User perform search by "<SelectedName>"
+	And User click content from "<ColumnName>" column
+	And User navigates to the "Applications" tab
+	Then User closes "Application Summary" section on the Details Page
+	When User open "Application Detail" section
+	Then "Manufacturer" column is not displayed to the user
+	And ColumnName is added to the list in the Details Page table
+	| ColumnName |
+	| Vendor     |
+
+	Examples:
+	| PageName | SelectedName   | ColumnName |
+	| Devices  | 001BAQXT6JWFPI | Hostname   |
+	| Users    | ZZZ588323      | Username   |
+
+@Evergreen @AllLists @EvergreenJnr_ItemDetails @ItemDetailsDisplay @DAS11091
+Scenario Outline: EvergreenJnr_AllLists_CheckThatRenamedColumnsAreDisplayedForSoftwareComplianceIssuesSectionOnTheDetailsPage
+	When User clicks "<PageName>" on the left-hand menu
+	Then "<PageName>" list should be displayed to the user
+	When User perform search by "<SelectedName>"
+	And User click content from "<ColumnName>" column
+	And User navigates to the "Compliance" tab
+	When User open "Software Compliance Issues" section
+	Then "Manufacturer" column is not displayed to the user
+	And ColumnName is added to the list in the Details Page table
+	| ColumnName |
+	| Vendor     |
+
+	Examples:
+	| PageName | SelectedName   | ColumnName |
+	| Devices  | 001BAQXT6JWFPI | Hostname   |
+	| Users    | ZZZ588323      | Username   |

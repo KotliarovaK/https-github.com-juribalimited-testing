@@ -36,7 +36,7 @@ namespace DashworksTestAutomation.Pages.Evergreen.DetailsTabsMenu
 
             return new List<By>
             {
-                //SelectorFor(this, p => p.ApplicationSummarySection),
+                SelectorFor(this, p => p.ApplicationSummarySection),
                 //SelectorFor(this, p => p.ApplicationDetailSection),
                 //SelectorFor(this, p => p.AdvertisementsSection),
                 //SelectorFor(this, p => p.CollectionsSection),
@@ -118,6 +118,12 @@ namespace DashworksTestAutomation.Pages.Evergreen.DetailsTabsMenu
             var selector = By.XPath(".//span[@role='columnheader']");
             Driver.WaitForDataLoading();
             return Driver.FindElements(selector);
+        }
+
+        public bool ColumnIsDisplayed(string columnName)
+        {
+            return Driver.IsElementDisplayed(
+                By.XPath($".//div[@class='ag-header-cell-label']/span[text()='{columnName}']"));
         }
 
     }
