@@ -19,6 +19,12 @@ namespace DashworksTestAutomation.Pages.Evergreen
         [FindsBy(How = How.XPath, Using = ".//div[@class='empty-message ng-star-inserted']")]
         public IWebElement NoMailboxOwnerFoundMessage { get; set; }
 
+        [FindsBy(How = How.XPath, Using = ".//div[@class='mat-tab-body-content ng-trigger ng-trigger-translateTab']")]
+        public IWebElement ItemDetailsContainer { get; set; }
+
+        [FindsBy(How = How.XPath, Using = ".//div[@class='category-content ng-star-inserted']")]
+        public IWebElement SectionContainer { get; set; }
+
         public override List<By> GetPageIdentitySelectors()
         {
             Driver.WaitForDataLoading();
