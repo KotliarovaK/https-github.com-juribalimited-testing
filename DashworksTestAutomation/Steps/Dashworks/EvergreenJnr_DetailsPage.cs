@@ -42,6 +42,20 @@ namespace DashworksTestAutomation.Steps.Dashworks
             detailsPage.NavigateToSectionByName(sectionName);
         }
 
+        [Then(@"Item content is displayed to the User")]
+        public void ThenItemContentIsDisplayedToTheUser()
+        {
+            var detailsPage = _driver.NowAt<DetailsPage>();
+            Assert.IsTrue(detailsPage.ItemDetailsContainer.Displayed(), "Item content is not displayed");
+        }
+
+        [Then(@"expanded section is displayed to the User")]
+        public void ThenExpandedSectionIsDisplayedToTheUser()
+        {
+            var detailsPage = _driver.NowAt<DetailsPage>();
+            Assert.IsTrue(detailsPage.SectionContainer.Displayed(), "Section is not displayed");
+        }
+
         [Then(@"""(.*)"" column is not displayed to the user")]
         public void ThenColumnIsNotDisplayedToTheUser(string columnName)
         {
