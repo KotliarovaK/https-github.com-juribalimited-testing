@@ -8,14 +8,7 @@ Background: Pre-Conditions
 
 @Evergreen @Devices @EvergreenJnr_Columns @RemoveColumn @DAS10966 @DAS10973 @Delete_Newly_Created_List
 Scenario: EvergreenJnr_DevicesList_CheckThat500ErrorPageIsNotDisplayedAfterRemovingSortedColumnInCustomList
-	When User clicks "Devices" on the left-hand menu
-	Then "Devices" list should be displayed to the user
-	When User clicks the Columns button
-	Then Columns panel is displayed to the user
-	When ColumnName is entered into the search box and the selection is clicked
-	| ColumnName |
-	| Device Key |
-	Then ColumnName is added to the list
+	When User navigate to the URL and get "Devices" page and selected columns:
 	| ColumnName |
 	| Device Key |
 	When User create custom list with "RemovingSortedColumnInCustomList" name
@@ -46,14 +39,7 @@ Scenario: EvergreenJnr_DevicesList_CheckThat500ErrorPageIsNotDisplayedAfterRemov
 
 @Evergreen @Devices @EvergreenJnr_Columns @RemoveColumn @DAS10966 @DAS10973 @Delete_Newly_Created_List
 Scenario: EvergreenJnr_DevicesList_CheckThat500ErrorPageIsNotDisplayedAfterRemovingMultipleSortedColumnInCustomList
-	When User clicks "Devices" on the left-hand menu
-	Then "Devices" list should be displayed to the user
-	When User clicks the Columns button
-	Then Columns panel is displayed to the user
-	When ColumnName is entered into the search box and the selection is clicked
-	| ColumnName |
-	| Build Date |
-	Then ColumnName is added to the list
+	When User navigate to the URL and get "Devices" page and selected columns:
 	| ColumnName |
 	| Build Date |
 	When User create custom list with "TestList474460" name

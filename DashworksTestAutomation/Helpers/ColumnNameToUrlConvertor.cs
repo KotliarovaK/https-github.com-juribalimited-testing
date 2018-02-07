@@ -50,6 +50,54 @@ namespace DashworksTestAutomation.Helpers
                 case "Owner Department Full Path":
                     return "ownerFullDepartmentPath";
 
+                case "Username":
+                    return "username";
+
+                case "Windows7Mi: Application Readiness":
+                    return "project_1_applicationReadiness";
+
+                case "UserSchedu: Readiness":
+                    return "project_41_ragStatus";
+
+                case "Windows7Mi: Application Rationalisation":
+                    return "project_1_applicationRationalisation";
+
+                case "Windows7Mi: Core Application":
+                    return "project_1_coreApplication";
+
+                case "Windows7Mi: Hide from End Users":
+                    return "project_1_hideFromEndUsers";
+
+                case "Manufacturer":
+                    return "manufacturer";
+
+                case "Import":
+                    return "distributionHierarchy";
+
+                case "Build Date":
+                    return "buildDate";
+
+                case "Windows7Mi: Target App":
+                    return "project_1_targetApplication";
+
+                case "Babel(Engl: Target App":
+                    return "project_46_targetApplication";
+
+                case "Barry'sUse: Target App":
+                    return "project_38_targetApplication";
+
+                case "ComputerSc: Target App":
+                    return "project_40_targetApplication";
+
+                case "Havoc(BigD: Target App":
+                    return "project_43_targetApplication";
+
+                case "MigrationP: Target App":
+                    return "project_34_targetApplication";
+
+                case "UserSchedu: Target App":
+                    return "project_41_targetApplication";
+
                 case "" +
                      "DAS-" +
                      "" +
