@@ -596,6 +596,14 @@ namespace DashworksTestAutomation.Steps.Dashworks
             filter.Do();
         }
 
+        [Then(@"Save button is not available on the Filter panel")]
+        public void ThenSaveButtonIsNotAvailableOnTheFilterPanel()
+        {
+            var filterPanel = _driver.NowAt<FiltersElement>();
+            _driver.WaitWhileControlIsNotDisplayed<FiltersElement>(() => filterPanel.SaveButton);
+            Assert.IsTrue(Convert.ToBoolean(filterPanel.SaveButton.GetAttribute("disabled")), "Save Button is active");
+        }
+
         [Then(@"reset button in Search field at selected Filter is displayed")]
         public void ThenResetButtonInSearchFieldAtSelectedFilterIsDisplayed()
         {
