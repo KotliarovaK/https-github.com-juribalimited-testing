@@ -403,7 +403,7 @@ Scenario: EvergreenJnr_ApplicationsList_CheckThatApplicationSavedListFilterIsWor
 	| SelectedList   | Association        |
 	| TestList2854B3 | Not used on device |
 	Then "Application" filter is added to the list
-	Then "17,095" rows are displayed in the agGrid
+	Then "16,565" rows are displayed in the agGrid
 	Then Options is displayed in added filter info
 	| Values  |
 	| in list |

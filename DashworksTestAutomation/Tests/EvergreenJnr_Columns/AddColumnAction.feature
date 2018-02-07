@@ -66,12 +66,15 @@ Scenario Outline: EvergreenJnr_AllLists_CheckThatTableIsFullyLoadedAfterAddingTh
 	When ColumnName is entered into the search box and the selection is clicked
 	| ColumnName                        |
 	| Windows7Mi: Application Readiness |
+	| UserSchedu: Readiness             |
 	Then ColumnName is added to the list
 	| ColumnName                        |
 	| Windows7Mi: Application Readiness |
+	| UserSchedu: Readiness             |
 	And Content is present in the newly added column
 	| ColumnName                        |
 	| Windows7Mi: Application Readiness |
+	| UserSchedu: Readiness             |
 	Then full list content is displayed to the user
 	Then There are no errors in the browser console
 

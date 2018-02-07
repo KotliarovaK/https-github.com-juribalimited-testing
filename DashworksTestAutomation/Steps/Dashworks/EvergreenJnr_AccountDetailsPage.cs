@@ -8,6 +8,7 @@ using OpenQA.Selenium;
 using OpenQA.Selenium.Remote;
 using System;
 using System.IO;
+using System.Threading;
 using TechTalk.SpecFlow;
 
 namespace DashworksTestAutomation.Steps.Dashworks
@@ -42,10 +43,10 @@ namespace DashworksTestAutomation.Steps.Dashworks
         }
 
         [When(@"User navigates to the ""(.*)"" page on Account details")]
-        public void WhenUserNavigatesToThePageOnAccountDetails(string poageToNavigate)
+        public void WhenUserNavigatesToThePageOnAccountDetails(string pageToNavigate)
         {
             var page = _driver.NowAt<AccountDetailsPage>();
-            page.NavigateToPage(poageToNavigate);
+            page.NavigateToPage(pageToNavigate);
         }
 
         [When(@"User changes language to ""(.*)""")]
@@ -181,6 +182,15 @@ namespace DashworksTestAutomation.Steps.Dashworks
             var page = _driver.NowAt<AccountDetailsPage>();
             StringAssert.Contains("img/UnknownUser.jpg", page.UserPicture.GetAttribute("style"),
                 "Picture is not default");
+        }
+
+        [Then(@"Notification message is displayed for a few seconds on Preferences page")]
+        public void ThenNotificationMessageIsDisplayedForAFewSecondsOnPreferencesPage()
+        {
+            var page = _driver.NowAt<PreferencesPage>();
+            Assert.IsTrue(page.SuccessMessage.Displayed(), "Success message is not displayed");
+            Thread.Sleep(5000);
+            Assert.IsFalse(page.SuccessMessage.Displayed(), "Success message is displayed for more than 5 seconds");
         }
 
         [AfterScenario("Remove_Profile_Changes")]

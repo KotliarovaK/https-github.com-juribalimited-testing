@@ -1,4 +1,5 @@
-﻿using DashworksTestAutomation.Extensions;
+﻿using System;
+using DashworksTestAutomation.Extensions;
 using DashworksTestAutomation.Pages.Evergreen;
 using DashworksTestAutomation.Pages.Evergreen.DetailsTabsMenu;
 using NUnit.Framework;
@@ -39,6 +40,14 @@ namespace DashworksTestAutomation.Steps.Dashworks
         {
             var detailsPage = _driver.NowAt<DetailsPage>();
             detailsPage.NavigateToSectionByName(sectionName);
+        }
+
+        [Then(@"""(.*)"" column is not displayed to the user")]
+        public void ThenColumnIsNotDisplayedToTheUser(string columnName)
+        {
+            var columnHeader = _driver.NowAt<ApplicationsDetailsTabsMenu>();
+            Assert.IsFalse(columnHeader.ColumnIsDisplayed(columnName),
+                   $"{columnName} category stil displayed in Column Panel");
         }
 
         [When(@"User have opened Column Settings for ""(.*)"" column in the Details Page table")]
@@ -167,6 +176,14 @@ namespace DashworksTestAutomation.Steps.Dashworks
             _driver.WaitWhileControlIsNotDisplayed<DetailsPage>(() => detailsPage.NoMailboxOwnerFoundMessage);
             Assert.AreEqual(textMessage, detailsPage.NoMailboxOwnerFoundMessage.Text,
                 $"{textMessage} is not displayed");
+        }
+
+        [Then(@"string filter is displayed for ""(.*)"" column on the Details Page")]
+        public void ThenStringFilterIsDisplayedForColumnOnTheDetailsPage(string columnName)
+        {
+            var detailsPage = _driver.NowAt<ApplicationsDetailsTabsMenu>();
+            var t = Convert.ToBoolean(detailsPage.GetFilterByColumnName(columnName).GetAttribute("readonly"));
+            Assert.IsFalse(Convert.ToBoolean(detailsPage.GetFilterByColumnName(columnName).GetAttribute("readonly")));
         }
 
         [Then(@"""(.*)"" field display state is ""(.*)"" on Details tab")]
