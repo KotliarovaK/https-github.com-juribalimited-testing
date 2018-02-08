@@ -21,7 +21,8 @@ namespace DashworksTestAutomation.Steps.Dashworks
         private readonly ColumnNameToUrlConvertor _convertor;
         private readonly RestWebClient _client;
 
-        public EvergreenJnr_ColumnsPanel(RemoteWebDriver driver, ColumnNameToUrlConvertor convertor, RestWebClient client)
+        public EvergreenJnr_ColumnsPanel(RemoteWebDriver driver, ColumnNameToUrlConvertor convertor,
+            RestWebClient client)
         {
             _driver = driver;
             _convertor = convertor;
@@ -79,15 +80,34 @@ namespace DashworksTestAutomation.Steps.Dashworks
             CheckColumnDisplayedState(table, true);
         }
 
-        [When(@"User navigate to the URL and get ""(.*)"" page and selected columns:")]
-        public void WhenUserNavigateToTheUrlAndGetPageandSelectedColumns(string pageName, Table table)
+        [When(@"User navigate to the URL and get ""(.*)"" page and adds follows columns:")]
+        public void WhenUserNavigateToTheUrlAndGetPageAndAddsFollowsColumns(string pageName, Table table)
         {
-            var requestUri = $"{UrlProvider.EvergreenUrl}#/{pageName.ToLower()}";
+            var requestUri = $"{UrlProvider.EvergreenUrl}#/{pageName.ToLower()}?{_client.GetDefaultColumnsUrlByPageName(pageName)}";
             foreach (var row in table.Rows)
             {
-                requestUri += $"?{_client.GetDefaultColumnsUrlByPageName(pageName)}" + $",{_convertor.Convert(row["ColumnName"])}";
+                requestUri += $",{_convertor.Convert(row["ColumnName"])}";
             }
             _driver.NavigateToUrl(requestUri);
+            _driver.WaitForDataLoading();
+            CheckColumnDisplayedState(table, true);
+        }
+
+        [When(@"User get the current URL and adds follows columns:")]
+        public void WhenUserGetTheCurrentURLAndAddsFollowsColumns(Table table)
+        {
+            var currentUrl = _driver.Url;
+            var pattern = "";
+            pattern = currentUrl.Contains("&$orderby=") ? @"select=(.*)&" : @"select=(.*)";
+
+            var originalPart = "";
+            var changedPart = "";
+            foreach (var row in table.Rows)
+            {
+                originalPart = Regex.Match(currentUrl, pattern).Groups[1].Value;
+                changedPart = originalPart + $",{_convertor.Convert(row["ColumnName"])}";
+            }
+            _driver.NavigateToUrl(currentUrl.Replace(originalPart, changedPart));
             _driver.WaitForDataLoading();
             CheckColumnDisplayedState(table, true);
         }

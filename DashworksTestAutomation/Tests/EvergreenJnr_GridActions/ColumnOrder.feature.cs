@@ -373,7 +373,7 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_GridActions
                         "ColumnName"});
             table10.AddRow(new string[] {
                         "User Key"});
-            testRunner.When("ColumnName is entered into the search box and the selection is clicked", ((string)(null)), table10, "When ");
+            testRunner.When("User get the current URL and adds follows columns:", ((string)(null)), table10, "When ");
             TechTalk.SpecFlow.Table table11 = new TechTalk.SpecFlow.Table(new string[] {
                         "ColumnName"});
             table11.AddRow(new string[] {

@@ -90,7 +90,7 @@ Scenario: EvergreenJnr_UsersList_CheckThatColumnsOrderSavedAfterAddingAnotherCol
 	| Domain             |
 	| Display Name       |
 	| Compliance         |
-	When ColumnName is entered into the search box and the selection is clicked
+	When User get the current URL and adds follows columns:
 	| ColumnName |
 	| User Key   |
 	Then Column is displayed in following order:
