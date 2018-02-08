@@ -95,6 +95,11 @@ namespace DashworksTestAutomation.Pages.Evergreen
             };
         }
 
+        public string GetHeaderFontWeight()
+        {
+            return Driver.FindElement(By.XPath(".//span[@class='ag-header-cell-text']")).GetCssValue("font-weight");
+        }
+
         public bool IsColumnPresent(string columnName)
         {
             Driver.WaitForDataLoading();
