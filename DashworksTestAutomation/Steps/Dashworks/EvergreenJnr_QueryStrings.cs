@@ -28,7 +28,7 @@ namespace DashworksTestAutomation.Steps.Dashworks
         [Given(@"User is on Dashworks Homepage")]
         public void GivenUserIsOnDashworksHomepage()
         {
-            _driver.NagigateToURL(UrlProvider.Url);
+            _driver.NavigateToUrl(UrlProvider.Url);
             _url.Value = UrlProvider.Url;
 
             var loginPage = _driver.NowAt<LoginPanelPage>();
@@ -36,7 +36,7 @@ namespace DashworksTestAutomation.Steps.Dashworks
             //If automation.corp.juriba.com is not available, try automation2.corp.juriba.com instead
             if (loginPage.WebsiteIsNotAvailable.Displayed())
             {
-                _driver.NagigateToURL(UrlProvider.BackupUrl);
+                _driver.NavigateToUrl(UrlProvider.BackupUrl);
                 _url.Value = UrlProvider.BackupUrl;
                 Logger.Write("Using automation2.corp.juriba.com instead");
             }
@@ -97,7 +97,7 @@ namespace DashworksTestAutomation.Steps.Dashworks
             {
                 _url.Value = UrlProvider.Url;
                 var combinedURL = _url.Value + row["QueryStringURL"];
-                _driver.NagigateToURL(combinedURL);
+                _driver.NavigateToUrl(combinedURL);
 
                 var page = _driver.NowAt<EvergreenDashboardsPage>();
 

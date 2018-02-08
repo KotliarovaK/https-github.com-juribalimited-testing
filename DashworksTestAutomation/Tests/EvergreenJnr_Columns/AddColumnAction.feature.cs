@@ -110,25 +110,16 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_Columns
                         "DAS10665"});
             this.ScenarioSetup(scenarioInfo);
             this.FeatureBackground();
-            testRunner.When("User clicks \"Devices\" on the left-hand menu", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-            testRunner.Then("\"Devices\" list should be displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-            testRunner.When("User clicks the Columns button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-            testRunner.Then("Columns panel is displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
             TechTalk.SpecFlow.Table table1 = new TechTalk.SpecFlow.Table(new string[] {
                         "ColumnName"});
             table1.AddRow(new string[] {
                         "Device Key"});
-            testRunner.When("ColumnName is entered into the search box and the selection is clicked", ((string)(null)), table1, "When ");
+            testRunner.When("User navigate to the URL and get \"Devices\" page and selected columns:", ((string)(null)), table1, "When ");
             TechTalk.SpecFlow.Table table2 = new TechTalk.SpecFlow.Table(new string[] {
                         "ColumnName"});
             table2.AddRow(new string[] {
                         "Device Key"});
-            testRunner.Then("ColumnName is added to the list", ((string)(null)), table2, "Then ");
-            TechTalk.SpecFlow.Table table3 = new TechTalk.SpecFlow.Table(new string[] {
-                        "ColumnName"});
-            table3.AddRow(new string[] {
-                        "Device Key"});
-            testRunner.And("Content is present in the newly added column", ((string)(null)), table3, "And ");
+            testRunner.Then("Content is present in the newly added column", ((string)(null)), table2, "Then ");
             this.ScenarioCleanup();
         }
         
@@ -177,20 +168,11 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_Columns
                         "DAS10665"});
             this.ScenarioSetup(scenarioInfo);
             this.FeatureBackground();
-            testRunner.When("User clicks \"Mailboxes\" on the left-hand menu", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-            testRunner.Then("\"Mailboxes\" list should be displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-            testRunner.When("User clicks the Columns button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-            testRunner.Then("Columns panel is displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-            TechTalk.SpecFlow.Table table4 = new TechTalk.SpecFlow.Table(new string[] {
+            TechTalk.SpecFlow.Table table3 = new TechTalk.SpecFlow.Table(new string[] {
                         "ColumnName"});
-            table4.AddRow(new string[] {
+            table3.AddRow(new string[] {
                         "Owner Department Full Path"});
-            testRunner.When("ColumnName is entered into the search box and the selection is clicked", ((string)(null)), table4, "When ");
-            TechTalk.SpecFlow.Table table5 = new TechTalk.SpecFlow.Table(new string[] {
-                        "ColumnName"});
-            table5.AddRow(new string[] {
-                        "Owner Department Full Path"});
-            testRunner.Then("ColumnName is added to the list", ((string)(null)), table5, "Then ");
+            testRunner.When("User navigate to the URL and get \"Mailboxes\" page and selected columns:", ((string)(null)), table3, "When ");
             testRunner.When("User click on \'Owner Department Full Path\' column header", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
             testRunner.Then("data in table is sorted by \'Owner Department Full Path\' column in ascending order" +
                     "", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
@@ -254,18 +236,18 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_Columns
             testRunner.Then("\"Mailboxes\" list should be displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
             testRunner.When("User clicks the Filters button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
             testRunner.Then("Filters panel is displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-            TechTalk.SpecFlow.Table table6 = new TechTalk.SpecFlow.Table(new string[] {
+            TechTalk.SpecFlow.Table table4 = new TechTalk.SpecFlow.Table(new string[] {
                         "Values"});
-            table6.AddRow(new string[] {
+            table4.AddRow(new string[] {
                         ""});
             testRunner.When(string.Format("User add \"{0}\" filter where type is \"Not empty\" with added column and following v" +
-                        "alue:", filterName), ((string)(null)), table6, "When ");
+                        "alue:", filterName), ((string)(null)), table4, "When ");
             testRunner.Then(string.Format("\"{0}\" filter is added to the list", filterName), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-            TechTalk.SpecFlow.Table table7 = new TechTalk.SpecFlow.Table(new string[] {
+            TechTalk.SpecFlow.Table table5 = new TechTalk.SpecFlow.Table(new string[] {
                         "ColumnName"});
-            table7.AddRow(new string[] {
+            table5.AddRow(new string[] {
                         string.Format("{0}", filterName)});
-            testRunner.Then("ColumnName is added to the list", ((string)(null)), table7, "Then ");
+            testRunner.Then("ColumnName is added to the list", ((string)(null)), table5, "Then ");
             this.ScenarioCleanup();
         }
         
@@ -323,21 +305,27 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_Columns
             testRunner.Then(string.Format("\"{0}\" list should be displayed to the user", listName), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
             testRunner.When("User clicks the Columns button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
             testRunner.Then("Columns panel is displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+            TechTalk.SpecFlow.Table table6 = new TechTalk.SpecFlow.Table(new string[] {
+                        "ColumnName"});
+            table6.AddRow(new string[] {
+                        "Windows7Mi: Application Readiness"});
+            table6.AddRow(new string[] {
+                        "UserSchedu: Readiness"});
+            testRunner.When("ColumnName is entered into the search box and the selection is clicked", ((string)(null)), table6, "When ");
+            TechTalk.SpecFlow.Table table7 = new TechTalk.SpecFlow.Table(new string[] {
+                        "ColumnName"});
+            table7.AddRow(new string[] {
+                        "Windows7Mi: Application Readiness"});
+            table7.AddRow(new string[] {
+                        "UserSchedu: Readiness"});
+            testRunner.Then("ColumnName is added to the list", ((string)(null)), table7, "Then ");
             TechTalk.SpecFlow.Table table8 = new TechTalk.SpecFlow.Table(new string[] {
                         "ColumnName"});
             table8.AddRow(new string[] {
                         "Windows7Mi: Application Readiness"});
-            testRunner.When("ColumnName is entered into the search box and the selection is clicked", ((string)(null)), table8, "When ");
-            TechTalk.SpecFlow.Table table9 = new TechTalk.SpecFlow.Table(new string[] {
-                        "ColumnName"});
-            table9.AddRow(new string[] {
-                        "Windows7Mi: Application Readiness"});
-            testRunner.Then("ColumnName is added to the list", ((string)(null)), table9, "Then ");
-            TechTalk.SpecFlow.Table table10 = new TechTalk.SpecFlow.Table(new string[] {
-                        "ColumnName"});
-            table10.AddRow(new string[] {
-                        "Windows7Mi: Application Readiness"});
-            testRunner.And("Content is present in the newly added column", ((string)(null)), table10, "And ");
+            table8.AddRow(new string[] {
+                        "UserSchedu: Readiness"});
+            testRunner.And("Content is present in the newly added column", ((string)(null)), table8, "And ");
             testRunner.Then("full list content is displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
             testRunner.Then("There are no errors in the browser console", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
             this.ScenarioCleanup();
@@ -395,20 +383,11 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_Columns
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("EvergreenJnr_Applications_CheckThatConsoleErrorsAreNotDisplayedForImages", @__tags);
             this.ScenarioSetup(scenarioInfo);
             this.FeatureBackground();
-            testRunner.When("User clicks \"Applications\" on the left-hand menu", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-            testRunner.Then("\"Applications\" list should be displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-            testRunner.When("User clicks the Columns button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-            testRunner.Then("Columns panel is displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-            TechTalk.SpecFlow.Table table11 = new TechTalk.SpecFlow.Table(new string[] {
+            TechTalk.SpecFlow.Table table9 = new TechTalk.SpecFlow.Table(new string[] {
                         "ColumnName"});
-            table11.AddRow(new string[] {
+            table9.AddRow(new string[] {
                         string.Format("{0}", columnName)});
-            testRunner.When("ColumnName is entered into the search box and the selection is clicked", ((string)(null)), table11, "When ");
-            TechTalk.SpecFlow.Table table12 = new TechTalk.SpecFlow.Table(new string[] {
-                        "ColumnName"});
-            table12.AddRow(new string[] {
-                        string.Format("{0}", columnName)});
-            testRunner.Then("ColumnName is added to the list", ((string)(null)), table12, "Then ");
+            testRunner.When("User navigate to the URL and get \"Applications\" page and selected columns:", ((string)(null)), table9, "When ");
             testRunner.Then("There are no errors in the browser console", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
             this.ScenarioCleanup();
         }

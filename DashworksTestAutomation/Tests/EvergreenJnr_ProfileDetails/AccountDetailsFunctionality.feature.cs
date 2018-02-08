@@ -261,10 +261,11 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_ProfileDetails
         [NUnit.Framework.TestAttribute()]
         [NUnit.Framework.DescriptionAttribute("EvergreenJnr_AccountDetails_CheckThatDefaultListPageSizeIs1000API")]
         [NUnit.Framework.CategoryAttribute("Evergreen")]
-        [NUnit.Framework.CategoryAttribute("Devices")]
+        [NUnit.Framework.CategoryAttribute("ProfileDetails")]
         [NUnit.Framework.CategoryAttribute("EvergreenJnr_FilterFeature")]
         [NUnit.Framework.CategoryAttribute("FilterFunctionality")]
         [NUnit.Framework.CategoryAttribute("DAS11723")]
+        [NUnit.Framework.CategoryAttribute("API")]
         [NUnit.Framework.CategoryAttribute("Not_Run")]
         public virtual void EvergreenJnr_AccountDetails_CheckThatDefaultListPageSizeIs1000API()
         {
@@ -296,14 +297,69 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_ProfileDetails
         {
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("EvergreenJnr_AccountDetails_CheckThatDefaultListPageSizeIs1000API", new string[] {
                         "Evergreen",
-                        "Devices",
+                        "ProfileDetails",
                         "EvergreenJnr_FilterFeature",
                         "FilterFunctionality",
                         "DAS11723",
+                        "API",
                         "Not_Run"});
             this.ScenarioSetup(scenarioInfo);
             this.FeatureBackground();
             testRunner.Then("default list page Size is \"1000\" and Cache \"10\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+            this.ScenarioCleanup();
+        }
+        
+        [NUnit.Framework.TestAttribute()]
+        [NUnit.Framework.DescriptionAttribute("EvergreenJnr_AccountDetails_CheckThatNotificationMessageDisappearsAfter5Seconds")]
+        [NUnit.Framework.CategoryAttribute("Evergreen")]
+        [NUnit.Framework.CategoryAttribute("ProfileDetails")]
+        [NUnit.Framework.CategoryAttribute("EvergreenJnr_ProfileDetails")]
+        [NUnit.Framework.CategoryAttribute("AccountDetailsFunctionality")]
+        [NUnit.Framework.CategoryAttribute("DAS11646")]
+        [NUnit.Framework.CategoryAttribute("Remove_Profile_Changes")]
+        public virtual void EvergreenJnr_AccountDetails_CheckThatNotificationMessageDisappearsAfter5Seconds()
+        {
+            System.Exception lastException = null;
+            for (int i = 0; (i <= 1); i = (i + 1))
+            {
+                try
+                {
+                    this.EvergreenJnr_AccountDetails_CheckThatNotificationMessageDisappearsAfter5SecondsInternal();
+                    return;
+                }
+                catch (System.Exception exc)
+                {
+                    lastException = exc;
+                }
+                if (((i + 1) 
+                            <= 1))
+                {
+                    testRunner.OnScenarioEnd();
+                }
+            }
+            if ((lastException != null))
+            {
+                throw lastException;
+            }
+        }
+        
+        private void EvergreenJnr_AccountDetails_CheckThatNotificationMessageDisappearsAfter5SecondsInternal()
+        {
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("EvergreenJnr_AccountDetails_CheckThatNotificationMessageDisappearsAfter5Seconds", new string[] {
+                        "Evergreen",
+                        "ProfileDetails",
+                        "EvergreenJnr_ProfileDetails",
+                        "AccountDetailsFunctionality",
+                        "DAS11646",
+                        "Remove_Profile_Changes"});
+            this.ScenarioSetup(scenarioInfo);
+            this.FeatureBackground();
+            testRunner.When("User clicks Profile in Account Dropdown", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+            testRunner.Then("Profile page is displayed to user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+            testRunner.When("User navigates to the \"Preferences\" page on Account details", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+            testRunner.And("User changes language to \"English US\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+            testRunner.And("User clicks Update button on Preferences page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+            testRunner.Then("Notification message is displayed for a few seconds on Preferences page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
             this.ScenarioCleanup();
         }
     }

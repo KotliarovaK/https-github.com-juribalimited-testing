@@ -365,3 +365,14 @@ Scenario: EvergreenJnr_UsersList_CheckThatToolTipShownWithEditFilterTextWhenEdit
 	Then "Compliance" filter is added to the list
 	When User navigate to Edit button for "Compliance" filter
 	Then tooltip is displayed with "Edit Filter" text for edit filter button
+
+@Evergreen @Devices @EvergreenJnr_FilterFeature @FilterFunctionality @DAS11678
+Scenario: EvergreenJnr_DevicesList_CheckThatTheSaveButtonIsNotAvailableWhenEnteringInvalidData
+	When User clicks "Devices" on the left-hand menu
+	Then "Devices" list should be displayed to the user
+	When User clicks the Filters button
+	Then Filters panel is displayed to the user
+	When User add "Build Date" filter where type is "Equals" with added column and following value:
+	| Values |
+	| 1      |
+	Then Save button is not available on the Filter panel

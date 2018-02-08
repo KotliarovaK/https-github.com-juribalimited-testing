@@ -50,7 +50,7 @@ namespace DashworksTestAutomation.Steps.Dashworks
             HttpClientHelper client = new HttpClientHelper(user, restClient);
 
             //Init session
-            _driver.NagigateToURL(UrlProvider.Url);
+            _driver.NavigateToUrl(UrlProvider.Url);
 
             //Set cookies to browser
             foreach (Cookie cookie in client.SeleniumCookiesJar)
@@ -63,7 +63,7 @@ namespace DashworksTestAutomation.Steps.Dashworks
             //Change profile language
             _client.ChangeUserProfileLanguage(_user.UserName, _user.Language);
             //Open website
-            _driver.NagigateToURL(UrlProvider.EvergreenUrl);
+            _driver.NavigateToUrl(UrlProvider.EvergreenUrl);
         }
 
         [When(@"User provides the Login and Password and clicks on the login button")]
