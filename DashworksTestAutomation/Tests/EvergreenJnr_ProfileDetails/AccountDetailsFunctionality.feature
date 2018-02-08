@@ -60,7 +60,7 @@ Scenario: EvergreenJnr_AccountDetails_CheckThatErrorIsNotDisplayedAfterChangingP
 	When User changes Full Name to "TestAdm"
 	Then Error message is not displayed on Profile page
 
-@Evergreen @ProfileDetails @EvergreenJnr_FilterFeature @FilterFunctionality @DAS11723 @Not_Run
+@Evergreen @ProfileDetails @EvergreenJnr_FilterFeature @FilterFunctionality @DAS11723 @API @Not_Run
 Scenario: EvergreenJnr_AccountDetails_CheckThatDefaultListPageSizeIs1000API
 	Then default list page Size is "1000" and Cache "10"
 
