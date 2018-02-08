@@ -74,7 +74,6 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_FiltersFeature
         [NUnit.Framework.CategoryAttribute("Evergreen_FiltersFeature")]
         [NUnit.Framework.CategoryAttribute("NewFilterCheck")]
         [NUnit.Framework.CategoryAttribute("DAS10828")]
-        [NUnit.Framework.CategoryAttribute("Not_Run")]
         [NUnit.Framework.TestCaseAttribute("Windows7Mi: Target App", "Equals, Does not equal", "WebZIP (A01)", "Windows7Mi: Target App is WebZIP (A01)", "3", new string[0])]
         [NUnit.Framework.TestCaseAttribute("Babel(Engl: Target App", "Equals, Does not equal", "sndconfig", "Babel(Engl: Target App is sndconfig", "1", new string[0])]
         [NUnit.Framework.TestCaseAttribute("Barry\'sUse: Target App", "Equals, Does not equal", "World Watch (A01)", "Barry\'sUse: Target App is World Watch (A01)", "1", new string[0])]
@@ -115,8 +114,7 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_FiltersFeature
                     "Applications",
                     "Evergreen_FiltersFeature",
                     "NewFilterCheck",
-                    "DAS10828",
-                    "Not_Run"};
+                    "DAS10828"};
             if ((exampleTags != null))
             {
                 @__tags = System.Linq.Enumerable.ToArray(System.Linq.Enumerable.Concat(@__tags, exampleTags));
@@ -128,7 +126,7 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_FiltersFeature
                         "ColumnName"});
             table1.AddRow(new string[] {
                         string.Format("{0}", columnName)});
-            testRunner.When("User navigate to the URL and get \"Applications\" page and selected columns:", ((string)(null)), table1, "When ");
+            testRunner.When("User navigate to the URL and get \"Applications\" page and adds follows columns:", ((string)(null)), table1, "When ");
             testRunner.When("User clicks the Filters button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
             testRunner.Then("Filters panel is displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
             testRunner.When(string.Format("user select \"{0}\" filter", columnName), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");

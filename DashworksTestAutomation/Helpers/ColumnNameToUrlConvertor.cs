@@ -98,6 +98,12 @@ namespace DashworksTestAutomation.Helpers
                 case "UserSchedu: Target App":
                     return "project_41_targetApplication";
 
+                case "User Key":
+                    return "objectKey";
+
+                case "Zip Code":
+                    return "customField_34";
+
                 case "" +
                      "DAS-" +
                      "" +

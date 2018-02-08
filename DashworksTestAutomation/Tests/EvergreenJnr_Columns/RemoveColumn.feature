@@ -8,7 +8,7 @@ Background: Pre-Conditions
 
 @Evergreen @Devices @EvergreenJnr_Columns @RemoveColumn @DAS10966 @DAS10973 @Delete_Newly_Created_List
 Scenario: EvergreenJnr_DevicesList_CheckThat500ErrorPageIsNotDisplayedAfterRemovingSortedColumnInCustomList
-	When User navigate to the URL and get "Devices" page and selected columns:
+	When User navigate to the URL and get "Devices" page and adds follows columns:
 	| ColumnName |
 	| Device Key |
 	When User create custom list with "RemovingSortedColumnInCustomList" name
@@ -39,7 +39,7 @@ Scenario: EvergreenJnr_DevicesList_CheckThat500ErrorPageIsNotDisplayedAfterRemov
 
 @Evergreen @Devices @EvergreenJnr_Columns @RemoveColumn @DAS10966 @DAS10973 @Delete_Newly_Created_List
 Scenario: EvergreenJnr_DevicesList_CheckThat500ErrorPageIsNotDisplayedAfterRemovingMultipleSortedColumnInCustomList
-	When User navigate to the URL and get "Devices" page and selected columns:
+	When User navigate to the URL and get "Devices" page and adds follows columns:
 	| ColumnName |
 	| Build Date |
 	When User create custom list with "TestList474460" name
@@ -117,15 +117,7 @@ Scenario: EvergreenJnr_DevicesList_CheckThat500ErrorPageIsNotDisplayedAfterRemov
 
 @Evergreen @Devices @EvergreenJnr_Columns @RemoveColumn @DAS10966 @DAS10973
 Scenario: EvergreenJnr_DevicesList_CheckThat500ErrorPageIsNotDisplayedAfterRemovingSortedColumnInDefaultList
-	When User clicks "Devices" on the left-hand menu
-	Then "Devices" list should be displayed to the user
-	When User clicks the Columns button
-	Then Columns panel is displayed to the user
-	When ColumnName is entered into the search box and the selection is clicked
-	| ColumnName                   |
-	| Boot Up Date                 |
-	| Windows7Mi: Date & Time Task |
-	Then ColumnName is added to the list
+	When User navigate to the URL and get "Devices" page and adds follows columns:
 	| ColumnName                   |
 	| Boot Up Date                 |
 	| Windows7Mi: Date & Time Task |
@@ -147,16 +139,7 @@ Scenario: EvergreenJnr_DevicesList_CheckThat500ErrorPageIsNotDisplayedAfterRemov
 
 @Evergreen @Devices @EvergreenJnr_Columns @RemoveColumn @DAS10966 @DAS10973
 Scenario: EvergreenJnr_DevicesList_CheckThat500ErrorPageIsNotDisplayedAfterRemovingMultipleSortedColumnInDefaultList
-	When User clicks "Devices" on the left-hand menu
-	Then "Devices" list should be displayed to the user
-	When User clicks the Columns button
-	Then Columns panel is displayed to the user
-	When ColumnName is entered into the search box and the selection is clicked
-	| ColumnName                   |
-	| Boot Up Date                 |
-	| Windows7Mi: Date & Time Task |
-	| Build Date                   |
-	Then ColumnName is added to the list
+	When User navigate to the URL and get "Devices" page and adds follows columns:
 	| ColumnName                   |
 	| Boot Up Date                 |
 	| Windows7Mi: Date & Time Task |
