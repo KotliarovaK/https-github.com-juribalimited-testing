@@ -265,6 +265,7 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_ProfileDetails
         [NUnit.Framework.CategoryAttribute("EvergreenJnr_FilterFeature")]
         [NUnit.Framework.CategoryAttribute("FilterFunctionality")]
         [NUnit.Framework.CategoryAttribute("DAS11723")]
+        [NUnit.Framework.CategoryAttribute("API")]
         [NUnit.Framework.CategoryAttribute("Not_Run")]
         public virtual void EvergreenJnr_AccountDetails_CheckThatDefaultListPageSizeIs1000API()
         {
@@ -300,6 +301,7 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_ProfileDetails
                         "EvergreenJnr_FilterFeature",
                         "FilterFunctionality",
                         "DAS11723",
+                        "API",
                         "Not_Run"});
             this.ScenarioSetup(scenarioInfo);
             this.FeatureBackground();

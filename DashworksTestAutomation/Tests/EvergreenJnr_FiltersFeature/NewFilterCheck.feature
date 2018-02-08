@@ -8,11 +8,7 @@ Background: Pre-Conditions
 
 @Evergreen @Applications @Evergreen_FiltersFeature @NewFilterCheck @DAS10828 @Not_Run
 Scenario Outline: EvergreenJnr_ApplicationsList_CheckThatTargetAppFilterIsAddedToTheList
-	When User clicks "Applications" on the left-hand menu
-	Then "Applications" list should be displayed to the user
-	When User clicks the Columns button
-	Then Columns panel is displayed to the user
-	When ColumnName is entered into the search box and the selection is clicked
+	When User navigate to the URL and get "Applications" page and selected columns:
 	| ColumnName   |
 	| <ColumnName> |
 	When User clicks the Filters button
@@ -26,14 +22,14 @@ Scenario Outline: EvergreenJnr_ApplicationsList_CheckThatTargetAppFilterIsAddedT
 	Then data in table is sorted by '<ColumnName>' column in ascending order 
 
 Examples: 
-	| ColumnName             | Operators              | FilterOption | Text                                        | RowsCount |
-	| Windows7Mi: Target App | Equals, Does not equal | WebZIP       | Windows7Mi: Target App is WebZIP (985)      | 3         |
-	| Babel(Engl: Target App | Equals, Does not equal | sndconfig    | Babel(Engl: Target App is sndconfig (499)   | 1         |
-	| Barry'sUse: Target App | Equals, Does not equal | World Watch  | Barry'sUse: Target App is World Watch (303) | 1         |
-	| ComputerSc: Target App | Equals, Does not equal | World Watch  | ComputerSc: Target App is World Watch (303) | 1         |
-	| Havoc(BigD: Target App | Equals, Does not equal | WebZIP       | Havoc(BigD: Target App is WebZIP (985)      | 1         |
-	| MigrationP: Target App | Equals, Does not equal | Zune         | MigrationP: Target App is Zune (316)        | 1         |
-	| UserSchedu: Target App | Equals, Does not equal | Zune         | UserSchedu: Target App is Zune (316)        | 1         |
+	| ColumnName             | Operators              | FilterOption      | Text                                        | RowsCount |
+	| Windows7Mi: Target App | Equals, Does not equal | WebZIP (A01)      | Windows7Mi: Target App is WebZIP (A01)      | 3         |
+	| Babel(Engl: Target App | Equals, Does not equal | sndconfig         | Babel(Engl: Target App is sndconfig         | 1         |
+	| Barry'sUse: Target App | Equals, Does not equal | World Watch (A01) | Barry'sUse: Target App is World Watch (A01) | 1         |
+	| ComputerSc: Target App | Equals, Does not equal | World Watch (A01) | ComputerSc: Target App is World Watch (A01) | 1         |
+	| Havoc(BigD: Target App | Equals, Does not equal | WebZIP (A01)      | Havoc(BigD: Target App is WebZIP (A01)      | 1         |
+	| MigrationP: Target App | Equals, Does not equal | Zune (A01)        | MigrationP: Target App is Zune (A01)        | 1         |
+	| UserSchedu: Target App | Equals, Does not equal | Zune (A01)        | UserSchedu: Target App is Zune (A01)        | 1         |
 
 @Evergreen @Applications @Evergreen_FiltersFeature @NewFilterCheck @DAS10828
 Scenario Outline: EvergreenJnr_ApplicationsList_CheckThatTargetAppKeyFilterIsAddedToTheList

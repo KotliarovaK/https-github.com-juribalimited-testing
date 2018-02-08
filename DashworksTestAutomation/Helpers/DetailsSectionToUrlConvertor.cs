@@ -8,7 +8,7 @@ namespace DashworksTestAutomation.Helpers
 {
     internal class DetailsSectionToUrlConvertor
     {
-        public string Convert(string sectionName)
+        public string SectionConvertor(string sectionName)
         {
             switch (sectionName)
             {
@@ -19,7 +19,7 @@ namespace DashworksTestAutomation.Helpers
                 case "Department and Location":
                     return "departmentLocation";
                 default:
-                    throw new Exception($"{sectionName} not found convertor");
+                    throw new Exception($"'{sectionName}' not found convertor");
             }
         }
     }

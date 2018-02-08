@@ -88,25 +88,20 @@ Examples:
 
 @Evergreen @AllLists @Evergreen_ActionsPanel @AllCheckbox @DAS10656
 Scenario: EvergreenJnr_UsersList_CheckThatSelectAllWorksCorrectlyForFilteredListsWithAdditionalColumn
-	When User clicks "Users" on the left-hand menu
-	Then "Users" list should be displayed to the user
-	When User clicks the Columns button
-	Then Columns panel is displayed to the user
-	When ColumnName is entered into the search box and the selection is clicked
+	When User navigate to the URL and get "Users" page and selected columns:
 	| ColumnName |
-	| Compliance |
+	| Enabled    |
 	| Username   |
 	When User clicks the Filters button
 	Then Filters panel is displayed to the user
-	When User add "Compliance" filter where type is "Equals" with added column and following checkboxes:
+	When User add "Enabled" filter where type is "Equals" with added column and following checkboxes:
 	| SelectedCheckboxes |
-	| Red                |
-	| Amber              |
-	| Green              |
-	Then "Compliance" filter is added to the list
-	And "41,161" rows are displayed in the agGrid
+	| FALSE              |
+	| TRUE               |
+	Then "Enabled" filter is added to the list
+	Then "41,335" rows are displayed in the agGrid
 	And table data is filtered correctly
 	When User clicks the Actions button
 	Then Actions panel is displayed to the user
 	When User select all rows
-	Then "41161" selected rows are displayed in the Actions panel
+	Then "41335" selected rows are displayed in the Actions panel

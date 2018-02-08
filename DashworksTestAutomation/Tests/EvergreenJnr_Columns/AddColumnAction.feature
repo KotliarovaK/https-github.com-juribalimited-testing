@@ -8,30 +8,16 @@ Background: Pre-Conditions
 
 @Evergreen @Devices @EvergreenJnr_Columns @AddColumnAction @DAS10665
 Scenario: EvergreenJnr_DevicesList_AddTheDeviceKeyColumnToTheDevicesList
-	When User clicks "Devices" on the left-hand menu
-	Then "Devices" list should be displayed to the user
-	When User clicks the Columns button
-	Then Columns panel is displayed to the user
-	When ColumnName is entered into the search box and the selection is clicked
+	When User navigate to the URL and get "Devices" page and selected columns:
 	| ColumnName          |
 	| Device Key          |
-	Then ColumnName is added to the list
-	| ColumnName          |
-	| Device Key          |
-	And Content is present in the newly added column
+	Then Content is present in the newly added column
 	| ColumnName          |
 	| Device Key          |
 
 @Evergreen @Mailboxes @EvergreenJnr_Columns @AddColumnAction @DAS10665
 Scenario: EvergreenJnr_MailboxesList_CheckThat500ErrorIsNotDisplayedAfterSortingForSelectedColumn
-	When User clicks "Mailboxes" on the left-hand menu
-	Then "Mailboxes" list should be displayed to the user
-	When User clicks the Columns button
-	Then Columns panel is displayed to the user
-	When ColumnName is entered into the search box and the selection is clicked
-	| ColumnName                 |
-	| Owner Department Full Path |
-	Then ColumnName is added to the list
+	When User navigate to the URL and get "Mailboxes" page and selected columns:
 	| ColumnName                 |
 	| Owner Department Full Path |
 	When User click on 'Owner Department Full Path' column header
@@ -85,14 +71,7 @@ Examples:
 
 @Evergreen @Applications @EvergreenJnr_Columns @AddColumnAction @DAS10997
 Scenario Outline: EvergreenJnr_Applications_CheckThatConsoleErrorsAreNotDisplayedForImages
-	When User clicks "Applications" on the left-hand menu
-	Then "Applications" list should be displayed to the user
-	When User clicks the Columns button
-	Then Columns panel is displayed to the user
-	When ColumnName is entered into the search box and the selection is clicked
-	| ColumnName   |
-	| <ColumnName> |
-	Then ColumnName is added to the list
+	When User navigate to the URL and get "Applications" page and selected columns:
 	| ColumnName   |
 	| <ColumnName> |
 	Then There are no errors in the browser console

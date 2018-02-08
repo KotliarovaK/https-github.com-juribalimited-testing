@@ -80,5 +80,22 @@ namespace DashworksTestAutomation.DTO.RuntimeVariables
             var item = allItems.First(x => x[column].ToString().Equals(itemName));
             return item[returnValue].ToString();
         }
+
+        public string GetDefaultColumnsUrlByPageName(string pageName)
+        {
+            switch (pageName)
+            {
+                case "Devices":
+                    return "$select=hostname,chassisCategory,oSCategory,ownerDisplayName";
+                case "Users":
+                    return "$select=username,directoryName,displayName,fullyDistinguishedObjectName";
+                case "Applications":
+                    return "$select=packageName,packageManufacturer,packageVersion";
+                case "Mailboxes":
+                    return "$select=principalEmailAddress,mailboxPlatform,serverName,mailboxType,ownerDisplayName";
+                default:
+                    throw new Exception($"{pageName} not found");
+            }
+        }
     }
 }

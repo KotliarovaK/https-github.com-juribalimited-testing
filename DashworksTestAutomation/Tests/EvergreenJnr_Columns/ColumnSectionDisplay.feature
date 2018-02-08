@@ -30,14 +30,7 @@ Scenario: EvergreenJnr_DevicesList_CheckThatColumnCategoriesAreClosedAfterCleari
 
 @Evergreen @Devices @EvergreenJnr_Columns @ColumnSectionDisplay @DAS10583
 Scenario: EvergreenJnr_DevicesList_CheckThatColumnIsNotRemovedAfterApplyFilterForTheSameColumnName
-	When User clicks "Devices" on the left-hand menu
-	Then "Devices" list should be displayed to the user
-	When User clicks the Columns button
-	Then Columns panel is displayed to the user
-	When ColumnName is entered into the search box and the selection is clicked
-	| ColumnName   |
-	| Manufacturer |
-	Then ColumnName is added to the list
+	When User navigate to the URL and get "Devices" page and selected columns:
 	| ColumnName   |
 	| Manufacturer |
 	When User clicks the Filters button
@@ -97,15 +90,8 @@ Scenario: EvergreenJnr_MailboxesList_CheckThatCategoryRemainsOpenAfterAddingColu
 	| Enabled    |
 
 @Evergreen @Devices @EvergreenJnr_Columns @ColumnSectionDisplay @DAS11768
-Scenario: EvergreenJnr_Devices_CheckTheColumnCategoriesUpdatesAfterAddingColumn
-	When User clicks "Devices" on the left-hand menu
-	Then "Devices" list should be displayed to the user
-	When User clicks the Columns button
-	Then Columns panel is displayed to the user
-	When ColumnName is entered into the search box and the selection is clicked
-	| ColumnName |
-	| Build Date |
-	Then ColumnName is added to the list
+Scenario: EvergreenJnr_DevicesList_CheckTheColumnCategoriesUpdatesAfterAddingColumn
+	When User navigate to the URL and get "Devices" page and selected columns:
 	| ColumnName |
 	| Build Date |
 	When User navigates to the "All Devices" list
@@ -120,7 +106,7 @@ Scenario: EvergreenJnr_Devices_CheckTheColumnCategoriesUpdatesAfterAddingColumn
 	| Build Date |
 
 @Evergreen @Users @EvergreenJnr_Columns @ColumnSectionDisplay @DAS11768 @Delete_Newly_Created_List
-Scenario: EvergreenJnr_Users_CheckTheColumnCategoriesUpdatesAfterAddingColumnForDynamicLists
+Scenario: EvergreenJnr_UsersList_CheckTheColumnCategoriesUpdatesAfterAddingColumnForDynamicLists
 	When User clicks "Users" on the left-hand menu
 	Then "Users" list should be displayed to the user
 	When User click on 'Domain' column header
@@ -147,7 +133,7 @@ Scenario: EvergreenJnr_Users_CheckTheColumnCategoriesUpdatesAfterAddingColumnFor
 	| Zip Code   |
 
 @Evergreen @Applications @EvergreenJnr_Columns @ColumnSectionDisplay @DAS11768 @Delete_Newly_Created_List
-Scenario: EvergreenJnr_Applications_CheckTheColumnCategoriesUpdatesAfterAddingColumnForStaticLists
+Scenario: EvergreenJnr_ApplicationsList_CheckTheColumnCategoriesUpdatesAfterAddingColumnForStaticLists
 	When User clicks "Applications" on the left-hand menu
 	Then "Applications" list should be displayed to the user
 	When User clicks the Actions button
@@ -175,7 +161,7 @@ Scenario: EvergreenJnr_Applications_CheckTheColumnCategoriesUpdatesAfterAddingCo
 	| Windows7Mi: In Scope |
 
 @Evergreen @Mailboxes @EvergreenJnr_Columns @ColumnSectionDisplay @DAS11768 @Delete_Newly_Created_List
-Scenario: EvergreenJnr_Mailboxes_CheckTheColumnCategoriesUpdatesAfterAddingColumnForDynamicLists
+Scenario: EvergreenJnr_MailboxesList_CheckTheColumnCategoriesUpdatesAfterAddingColumnForDynamicLists
 	When User clicks "Mailboxes" on the left-hand menu
 	Then "Mailboxes" list should be displayed to the user
 	When User click on 'Email Address' column header
