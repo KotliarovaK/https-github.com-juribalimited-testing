@@ -154,6 +154,13 @@ namespace DashworksTestAutomation.Steps.Dashworks
             }
         }
 
+        [Then(@"Appropriate header font weight is displayed")]
+        public void ThenAppropriateHeaderFontWeightIsDisplayed()
+        {
+            var dashboardPage = _driver.NowAt<BaseDashboardPage>();
+            Assert.AreEqual("400", dashboardPage.GetHeaderFontWeight());
+        }
+
         [Then(@"Column is displayed in following order:")]
         public void ThenColumnIsDisplayedInFollowingOrder(Table table)
         {
