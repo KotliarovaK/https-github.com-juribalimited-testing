@@ -8,7 +8,7 @@ Background: Pre-Conditions
 
 @Evergreen @Applications @Evergreen_FiltersFeature @NewFilterCheck @DAS10828
 Scenario Outline: EvergreenJnr_ApplicationsList_CheckThatTargetAppFilterIsAddedToTheList
-	When User navigate to the URL and get "Applications" page and adds follows columns:
+	When User add following columns using URL to the "Applications" page:
 	| ColumnName   |
 	| <ColumnName> |
 	When User clicks the Filters button
