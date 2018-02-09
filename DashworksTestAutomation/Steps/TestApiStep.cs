@@ -183,7 +183,7 @@ namespace DashworksTestAutomation.Steps
                 $"{UrlProvider.RestClientBaseUrl}{pageName.ToLower()}?$top=1000&$skip=0&{_client.GetDefaultColumnsUrlByPageName(pageName)}";
             foreach (var row in table.Rows)
             {
-                requestUri += $",{_convertor.Convert(row["ColumnName"])}";
+                requestUri += $",{ColumnNameToUrlConvertor.Convert(pageName, row["ColumnName"])}";
             }
             var request = new RestRequest(requestUri);
 
