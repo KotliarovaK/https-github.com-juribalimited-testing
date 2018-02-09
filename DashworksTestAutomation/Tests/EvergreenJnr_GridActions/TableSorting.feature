@@ -106,14 +106,7 @@ Scenario: EvergreenJnr_UsersList_CheckSortByDateFunctionality
 
 @Evergreen @Devices @EvergreenJnr_GridActions @TableSorting @DAS11568
 Scenario: EvergreenJnr_DevicesList_CheckThat500ErrorIsNotDisplayedWhenSortingOwnerComplianceColumnOnDevicesList
-	When User clicks "Devices" on the left-hand menu
-	Then "Devices" list should be displayed to the user
-	When User clicks the Columns button
-	Then Columns panel is displayed to the user
-	When ColumnName is entered into the search box and the selection is clicked
-	| ColumnName       |
-	| Owner Compliance |
-	Then ColumnName is added to the list
+	When User navigate to the URL and get "Devices" page and adds follows columns:
 	| ColumnName       |
 	| Owner Compliance |
 	Then "17,225" rows are displayed in the agGrid

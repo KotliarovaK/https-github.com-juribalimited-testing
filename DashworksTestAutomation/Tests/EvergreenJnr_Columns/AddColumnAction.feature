@@ -45,7 +45,15 @@ Examples:
 
 @Evergreen @AllLists @EvergreenJnr_Columns @AddColumnAction @DAS11689
 Scenario Outline: EvergreenJnr_AllLists_CheckThatTableIsFullyLoadedAfterAddingTheColumns
-	When User navigate to the URL and get "<ListName>" page and adds follows columns:
+	When User clicks "<ListName>" on the left-hand menu
+	Then "<ListName>" list should be displayed to the user
+	When User clicks the Columns button
+	Then Columns panel is displayed to the user
+	When ColumnName is entered into the search box and the selection is clicked
+	| ColumnName                        |
+	| Windows7Mi: Application Readiness |
+	| UserSchedu: Readiness             |
+	Then ColumnName is added to the list
 	| ColumnName                        |
 	| Windows7Mi: Application Readiness |
 	| UserSchedu: Readiness             |

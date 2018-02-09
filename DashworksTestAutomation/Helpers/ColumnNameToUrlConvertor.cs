@@ -104,6 +104,9 @@ namespace DashworksTestAutomation.Helpers
                 case "Zip Code":
                     return "customField_34";
 
+                case "Owner Compliance":
+                    return "ownerMigrationRAG";
+
                 case "" +
                      "DAS-" +
                      "" +
