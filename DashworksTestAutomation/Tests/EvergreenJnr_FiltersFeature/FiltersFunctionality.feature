@@ -391,7 +391,7 @@ Scenario: EvergreenJnr_DevicesList_CheckThatErrorsDoNotAppearWhenAddingAdvancedA
 	| 07 Dec 2017 |
 	Then There are no errors in the browser console
 
-@Evergreen @Devices @EvergreenJnr_FilterFeature @FilterFunctionality @DAS11741
+@Evergreen @Devices @EvergreenJnr_FilterFeature @FilterFunctionality @DAS11741 @Not_Run
 Scenario: EvergreenJnr_DevicesList_CheckThatErrorsDoNotAppearAndFullDataIsDisplayedWhenAddingDifferentFilters
 	When User clicks "Devices" on the left-hand menu
 	Then "Devices" list should be displayed to the user
