@@ -126,7 +126,7 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_FiltersFeature
                         "ColumnName"});
             table1.AddRow(new string[] {
                         string.Format("{0}", columnName)});
-            testRunner.When("User navigate to the URL and get \"Applications\" page and adds follows columns:", ((string)(null)), table1, "When ");
+            testRunner.When("User add following columns using URL to the \"Applications\" page:", ((string)(null)), table1, "When ");
             testRunner.When("User clicks the Filters button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
             testRunner.Then("Filters panel is displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
             testRunner.When(string.Format("user select \"{0}\" filter", columnName), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");

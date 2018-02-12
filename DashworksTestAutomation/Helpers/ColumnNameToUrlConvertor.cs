@@ -1,10 +1,11 @@
 ﻿using System;
+using DashworksTestAutomation.Utils;
 
 namespace DashworksTestAutomation.Helpers
 {
     internal class ColumnNameToUrlConvertor
     {
-        public string Convert(string columnName)
+        public static string Convert(string pageName, string columnName)
         {
             switch (columnName)
             {
@@ -18,7 +19,23 @@ namespace DashworksTestAutomation.Helpers
                     return "directoryType";
 
                 case "Compliance":
-                    return "migrationRAG";
+                    switch (pageName)
+                    {
+                        case "Devices":
+                            return "migrationRAG";
+                        case "Applications":
+                            return "migrationRAG";
+                        case "Users":
+                            return "userMigrationRAG";
+                        default:
+                            throw new Exception($"'{pageName}' page not found in convertor");
+                    }
+
+                case "Created Date":
+                    return "createdDate";
+
+                case "EmailMigra: Scheduled date":
+                    return "project_task_48_13127_2_Task";
 
                 case "Device Key":
                     return "computerKey";
@@ -54,7 +71,15 @@ namespace DashworksTestAutomation.Helpers
                     return "username";
 
                 case "Windows7Mi: Application Readiness":
-                    return "project_1_applicationReadiness";
+                    switch (pageName)
+                    {
+                        case "Devices":
+                            return "project_1_applicationColorStatus";
+                        case "Applications":
+                            return "project_1_applicationReadiness";
+                        default:
+                            throw new Exception($"'{pageName}' page not found in convertor");
+                    }
 
                 case "UserSchedu: Readiness":
                     return "project_41_ragStatus";
@@ -106,6 +131,21 @@ namespace DashworksTestAutomation.Helpers
 
                 case "Owner Compliance":
                     return "ownerMigrationRAG";
+
+                case "MigrationP: Migrated Date":
+                    return "project_task_34_10290_2_Task";
+
+                case "Barry'sUse: Package Delivery Date":
+                    return "project_task_38_10484_2_Task";
+
+                case "Email Count":
+                    return "emailCount";
+
+                case "Import Type":
+                    return "importType";
+
+                case "Email Address":
+                    return "eMailAddress";
 
                 case "" +
                      "DAS-" +

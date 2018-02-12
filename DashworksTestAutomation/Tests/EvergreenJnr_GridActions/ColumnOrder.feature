@@ -71,11 +71,7 @@ Scenario: EvergreenJnr_DevicesList_CheckThatColumnsOrderSavedAfterAddingAFilter
 
 @Evergreen @Users @EvergreenJnr_GridActions @ColumnOrder @DAS11666
 Scenario: EvergreenJnr_UsersList_CheckThatColumnsOrderSavedAfterAddingAnotherColumn
-	When User clicks "Users" on the left-hand menu
-	Then "Users" list should be displayed to the user
-	When User clicks the Columns button
-	Then Columns panel is displayed to the user
-	When ColumnName is entered into the search box and the selection is clicked
+	When User add following columns using URL to the "Users" page:
 	| ColumnName    |
 	| Compliance    |
 	| Email Address |
@@ -90,7 +86,7 @@ Scenario: EvergreenJnr_UsersList_CheckThatColumnsOrderSavedAfterAddingAnotherCol
 	| Domain             |
 	| Display Name       |
 	| Compliance         |
-	When User get the current URL and adds follows columns:
+	When User add following columns using current URL on "Users" page:
 	| ColumnName |
 	| User Key   |
 	Then Column is displayed in following order:
@@ -104,11 +100,7 @@ Scenario: EvergreenJnr_UsersList_CheckThatColumnsOrderSavedAfterAddingAnotherCol
 
 @Evergreen @Mailboxes @EvergreenJnr_GridActions @ColumnOrder @DAS11666
 Scenario: EvergreenJnr_MailboxesList_CheckThatColumnsOrderSavedAfterUsingTheAgGridSearch
-	When User clicks "Mailboxes" on the left-hand menu
-	Then "Mailboxes" list should be displayed to the user
-	When User clicks the Columns button
-	Then Columns panel is displayed to the user
-	When ColumnName is entered into the search box and the selection is clicked
+	When User add following columns using URL to the "Mailboxes" page:
 	| ColumnName  |
 	| Email Count |
 	| Import Type |

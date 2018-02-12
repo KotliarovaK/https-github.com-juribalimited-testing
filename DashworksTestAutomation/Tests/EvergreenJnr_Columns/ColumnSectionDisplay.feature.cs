@@ -228,7 +228,7 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_Columns
                         "ColumnName"});
             table2.AddRow(new string[] {
                         "Manufacturer"});
-            testRunner.When("User navigate to the URL and get \"Devices\" page and adds follows columns:", ((string)(null)), table2, "When ");
+            testRunner.When("User add following columns using URL to the \"Devices\" page:", ((string)(null)), table2, "When ");
             testRunner.When("User clicks the Filters button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
             testRunner.Then("Filters panel is displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
             testRunner.When("user select \"Manufacturer\" filter", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
@@ -350,7 +350,7 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_Columns
                         "Import"});
             table4.AddRow(new string[] {
                         "Compliance"});
-            testRunner.When("User navigate to the URL and get \"Devices\" page and adds follows columns:", ((string)(null)), table4, "When ");
+            testRunner.When("User add following columns using URL to the \"Devices\" page:", ((string)(null)), table4, "When ");
             testRunner.When("User clicks the Columns button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
             testRunner.Then("Columns panel is displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
             testRunner.Then("\"9\" subcategories is displayed for \"Device\" category", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
@@ -467,7 +467,7 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_Columns
                         "ColumnName"});
             table6.AddRow(new string[] {
                         "Build Date"});
-            testRunner.When("User navigate to the URL and get \"Devices\" page and adds follows columns:", ((string)(null)), table6, "When ");
+            testRunner.When("User add following columns using URL to the \"Devices\" page:", ((string)(null)), table6, "When ");
             testRunner.When("User navigates to the \"All Devices\" list", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
             testRunner.Then("\"Devices\" list should be displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
             testRunner.When("User clicks the Columns button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
