@@ -173,5 +173,27 @@ namespace DashworksTestAutomation.Steps
                     "'Unknown' text is not displayed for field ");
             }
         }
+
+        [When(@"I perform test request to the API for ""(.*)"" pages and create list with ""(.*)"" name")]
+        public void WhenIPerformTestRequestToTheApiForPagesAndCreateListWithName(string pageName, string listName)
+        {
+            var listId = ;
+            var requestUri = $"{UrlProvider.RestClientBaseUrl}/lists/{pageName.ToLower()}{listId}";
+            var request = new RestRequest(requestUri);
+
+            request.AddParameter("Host", UrlProvider.RestClientBaseUrl);
+            request.AddParameter("Origin", UrlProvider.Url.TrimEnd('/'));
+            request.AddParameter("Referer", UrlProvider.EvergreenUrl);
+
+            var response = _client.Value.Get(request);
+
+            if (response.StatusCode != HttpStatusCode.OK)
+                throw new Exception($"Unable to execute request. URI: {requestUri}");
+
+            var content = response.Content;
+
+            var allFilters = JsonConvert.DeserializeObject<List<JObject>>(content);
+            var filter = allFilters.First(x => x["listName"].ToString().Equals(listName));
+        }
     }
 }
