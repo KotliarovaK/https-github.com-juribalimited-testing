@@ -393,7 +393,7 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_GridActions
                         "ColumnName"});
             table9.AddRow(new string[] {
                         "Owner Compliance"});
-            testRunner.When("User add following columns using URL to the \"\"Devices\" page:", ((string)(null)), table9, "When ");
+            testRunner.When("User add following columns using URL to the \"Devices\" page:", ((string)(null)), table9, "When ");
             testRunner.Then("\"17,225\" rows are displayed in the agGrid", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
             testRunner.When("User click on \'Owner Compliance\' column header", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
             testRunner.Then("data in table is sorted by \'Owner Compliance\' column in ascending order", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");

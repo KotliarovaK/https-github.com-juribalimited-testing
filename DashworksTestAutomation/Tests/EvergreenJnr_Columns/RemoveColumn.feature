@@ -208,28 +208,20 @@ Scenario: EvergreenJnr_DevicesList_CheckThat500ErrorPageIsNotDisplayedAfterRemov
 
 @Evergreen @Users @EvergreenJnr_Columns @RemoveColumn @DAS10973
 Scenario: EvergreenJnr_UsersList_CheckThat500ErrorPageIsNotDisplayedAfterRemovingSortedColumn
-	When User clicks "Users" on the left-hand menu
-	Then "Users" list should be displayed to the user
-	When User clicks the Columns button
-	Then Columns panel is displayed to the user
-	When ColumnName is entered into the search box and the selection is clicked
+	When User add following columns using URL to the "Users" page:
 	| ColumnName      |
 	| Last Logon Date |
 	| Home Drive      |
-	Then ColumnName is added to the list
-	| ColumnName      |
-	| Last Logon Date |
-	| Home Drive      |
-	And "Last Logon Date" column is added to URL on "Users" page
+	Then "Last Logon Date" column is added to URL on "Users" page
 	And "Home Drive" column is added to URL on "Users" page
 	When User click on 'Last Logon Date' column header
-	When User clicks the Columns button
+	And User clicks the Columns button
 	Then Columns panel is displayed to the user
 	When User removes "Last Logon Date" column by Column panel
 	Then "Home Drive" column is added to URL on "Users" page
 	When User removes "Home Drive" column by Column panel
 	Then "Users" list should be displayed to the user
-	Then ColumnName is removed from the list
+	And ColumnName is removed from the list
 	| ColumnName      |
 	| Last Logon Date |
 	| Home Drive      |
@@ -392,21 +384,12 @@ Scenario: EvergreenJnr_UsersList_CheckThatColumnIsDisplayedInColumnsPanelAfterRe
 
 @Evergreen @Applications @EvergreenJnr_Columns @RemoveColumn @DAS11515
 Scenario: EvergreenJnr_ApplicationsList_CheckThatColumnIsDisplayedInColumnsPanelAfterRemovingAColumnWhichAlsoExistsAsAFilter
-	When User clicks "Applications" on the left-hand menu
+	When User add following columns using URL to the "Applications" page:
+	| ColumnName                 |
+	| Application Key            |
+	| Windows7Mi: Technical Test |
+	| DAS-1814                   |
 	Then "Applications" list should be displayed to the user
-	When User clicks the Columns button
-	Then Columns panel is displayed to the user
-	When ColumnName is entered into the search box and the selection is clicked
-	| ColumnName                 |
-	| Application Key            |
-	| Windows7Mi: Technical Test |
-	| DAS-1814                   |
-	Then ColumnName is added to the list
-	| ColumnName                 |
-	| Application Key            |
-	| Windows7Mi: Technical Test |
-	| DAS-1814                   |
-	And "Applications" list should be displayed to the user
 	And "Application Key" column is added to URL on "Applications" page
 	And "Windows7Mi: Technical Test" column is added to URL on "Applications" page
 	And "DAS-1814" column is added to URL on "Applications" page
