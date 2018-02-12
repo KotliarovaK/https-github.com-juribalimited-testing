@@ -71,11 +71,7 @@ Scenario: EvergreenJnr_DevicesList_CheckThatColumnsOrderSavedAfterAddingAFilter
 
 @Evergreen @Users @EvergreenJnr_GridActions @ColumnOrder @DAS11666
 Scenario: EvergreenJnr_UsersList_CheckThatColumnsOrderSavedAfterAddingAnotherColumn
-	When User clicks "Users" on the left-hand menu
-	Then "Users" list should be displayed to the user
-	When User clicks the Columns button
-	Then Columns panel is displayed to the user
-	When ColumnName is entered into the search box and the selection is clicked
+	When User add following columns using URL to the "Users" page:
 	| ColumnName    |
 	| Compliance    |
 	| Email Address |

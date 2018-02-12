@@ -550,7 +550,7 @@ namespace DashworksTestAutomation.Steps.Dashworks
         }
 
         [Then(@"""(.*)"" filter with ""(.*)"" values is added to URL on ""(.*)"" page")]
-        public void ThenFilterWithValuesIsAddedToUrlOnPage(string pageName, string filterName, string values)
+        public void ThenFilterWithValuesIsAddedToUrlOnPage(string filterName, string values, string pageName)
         {
             var currentUrl = _driver.Url;
             const string pattern = @"filter=(.*)";

@@ -144,6 +144,9 @@ namespace DashworksTestAutomation.Helpers
                 case "Import Type":
                     return "importType";
 
+                case "Email Address":
+                    return "eMailAddress";
+
                 case "" +
                      "DAS-" +
                      "" +
