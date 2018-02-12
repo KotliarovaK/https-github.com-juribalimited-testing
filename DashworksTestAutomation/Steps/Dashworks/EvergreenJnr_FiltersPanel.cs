@@ -192,6 +192,19 @@ namespace DashworksTestAutomation.Steps.Dashworks
             filter.Do();
         }
 
+        [When(@"User Add And ""(.*)"" filter where type is ""(.*)"" with added column and following checkboxes:")]
+        public void WhenUserAddAndFilterWhereTypeIsWithAddedColumnAndFollowingCheckboxes(string filterName,
+            string operatorValue, Table table)
+        {
+            var filtersNames = _driver.NowAt<FiltersElement>();
+            filtersNames.AddAndFilter(filterName);
+            var filter = new CheckBoxesFilter(_driver, operatorValue, true, table);
+            //Save filter in context
+            _filter.FilterSettings = filter;
+            _filter.FilterName = filterName;
+            filter.Do();
+        }
+
         [When(@"User add ""(.*)"" filter where type is ""(.*)"" with SelectedList list and following Association:")]
         public void WhenUserAddFilterWhereTypeIsWithSelectedListListAndFollowingAssociation(string filterName,
             string operatorValue, Table table)
@@ -256,6 +269,15 @@ namespace DashworksTestAutomation.Steps.Dashworks
             var filtersNames = _driver.NowAt<FiltersElement>();
             filtersNames.AddFilter(filterName);
             var filter = new LookupFilter(_driver, operatorValue, true, filterValue);
+            filter.Do();
+        }
+
+        [When(@"User add ""(.*)"" filter where type is ""(.*)"" with added column and Lookup option")]
+        public void WhenUserAddFilterWhereTypeIsWithAddedColumnAndLookupOption(string filterName, string operatorValue, Table table)
+        {
+            var filtersNames = _driver.NowAt<FiltersElement>();
+            filtersNames.AddFilter(filterName);
+            var filter = new LookupFilterTable(_driver, operatorValue, true, table);
             filter.Do();
         }
 

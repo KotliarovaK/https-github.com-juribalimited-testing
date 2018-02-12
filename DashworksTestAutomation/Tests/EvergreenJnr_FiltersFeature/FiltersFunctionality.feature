@@ -239,8 +239,8 @@ Scenario: EvergreenJnr_ApplicationsList_CheckThatFilterIsRestoredCorrectlyAfterL
 	When User clicks the Filters button
 	Then Filters panel is displayed to the user
 	When User add "Application (Saved List)" filter where type is "In list" with SelectedList list and following Association:
-	| SelectedList | Association        |
-	| TestListD75CD3     | Not used on device |
+	| SelectedList   | Association        |
+	| TestListD75CD3 | Not used on device |
 	Then "Application in list TestListD75CD3 is not used on device" is displayed in added filter info
 	Then "16,565" rows are displayed in the agGrid
 	When User perform search by "00BDM1JUR8IF419"
@@ -389,4 +389,29 @@ Scenario: EvergreenJnr_DevicesList_CheckThatErrorsDoNotAppearWhenAddingAdvancedA
 	And User add "Boot Up Date" filter where type is "Equals" with added column and following value:
 	| Values      |
 	| 07 Dec 2017 |
+	Then There are no errors in the browser console
+
+@Evergreen @Devices @EvergreenJnr_FilterFeature @FilterFunctionality @DAS11741
+Scenario: EvergreenJnr_DevicesList_CheckThatErrorsDoNotAppearAndFullDataIsDisplayedWhenAddingDifferentFilters
+	When User clicks "Devices" on the left-hand menu
+	Then "Devices" list should be displayed to the user
+	When User clicks the Filters button
+	Then Filters panel is displayed to the user
+	When User add "Windows7Mi: Application Readiness" filter where type is "Equals" with added column and Lookup option
+	| SelectedValues          |
+	| Red                     |
+	| Blue                    |
+	| Out Of Scope            |
+	| Light Blue              |
+	| Brown                   |
+	| Amber                   |
+	| Really Extremely Orange |
+	| Purple                  |
+	| Green                   |
+	| Grey                    |
+	| None                    |
+	When User Add And "Windows7Mi: In Scope" filter where type is "Equals" with added column and following checkboxes:
+	| SelectedCheckboxes |
+	| TRUE               |
+	Then full list content is displayed to the user
 	Then There are no errors in the browser console
