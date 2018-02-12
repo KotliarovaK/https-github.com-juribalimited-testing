@@ -350,7 +350,7 @@ namespace DashworksTestAutomation.Steps.Dashworks
         }
 
         [Then(@"""(.*)"" column is added to URL on ""(.*)"" page")]
-        public void ThenColumnIsAddedToURLOnPage(string pageName, string coolumnName)
+        public void ThenColumnIsAddedToURLOnPage(string coolumnName, string pageName)
         {
             var currentUrl = _driver.Url;
             const string pattern = @"\$select=(.*)";
