@@ -27,16 +27,14 @@ namespace DashworksTestAutomation.Steps
         private readonly ResponceDetails _responce;
         private readonly DetailsSectionToUrlConvertor _sectionConvertor;
         private readonly RemoteWebDriver _driver;
-        private readonly ColumnNameToUrlConvertor _convertor;
 
         public TestApiStep(RestWebClient client, ResponceDetails responce,
-            DetailsSectionToUrlConvertor sectionConvertor, RemoteWebDriver driver, ColumnNameToUrlConvertor convertor)
+            DetailsSectionToUrlConvertor sectionConvertor, RemoteWebDriver driver)
         {
             _client = client;
             _responce = responce;
             _sectionConvertor = sectionConvertor;
             _driver = driver;
-            _convertor = convertor;
         }
 
         [When(@"I perform test request to the Users API and get operators by ""(.*)"" filter")]
@@ -174,29 +172,6 @@ namespace DashworksTestAutomation.Steps
                 Assert.IsTrue(!string.IsNullOrEmpty(pair.Last.ToString()),
                     "'Unknown' text is not displayed for field ");
             }
-        }
-
-        [When(@"I perform test request to the APi and get ""(.*)"" page and selected columns:")]
-        public void WhenIPerformTestRequestToApiAndGetPage(string pageName, Table table)
-        {
-            var requestUri =
-                $"{UrlProvider.RestClientBaseUrl}{pageName.ToLower()}?$top=1000&$skip=0&{_client.GetDefaultColumnsUrlByPageName(pageName)}";
-            foreach (var row in table.Rows)
-            {
-                requestUri += $",{ColumnNameToUrlConvertor.Convert(pageName, row["ColumnName"])}";
-            }
-            var request = new RestRequest(requestUri);
-
-            request.AddParameter("Host", UrlProvider.RestClientBaseUrl);
-            request.AddParameter("Origin", UrlProvider.Url.TrimEnd('/'));
-            request.AddParameter("Referer", UrlProvider.EvergreenUrl);
-
-            var response = _client.Value.Get(request);
-
-            if (response.StatusCode != HttpStatusCode.OK)
-                throw new Exception($"Unable to execute request. URI: {requestUri}");
-
-            var content = response.ResponseUri.ToString();
         }
     }
 }

@@ -194,7 +194,7 @@ namespace DashworksTestAutomation.Steps.Dashworks
         }
 
         [When(@"User remove sorted column on ""(.*)"" page by URL")]
-        public void WhenUserRemoveSortedColumnOnPageByURL(string pageName, Table table)
+        public void WhenUserRemoveSortedColumnOnPageByUrl(string pageName, Table table)
         {
             var currentUrl = _driver.Url;
             const string pattern = @"select=(.*)\&\$orderby";
@@ -213,7 +213,7 @@ namespace DashworksTestAutomation.Steps.Dashworks
         }
 
         [When(@"User removes all columns by URL")]
-        public void WhenUserRemovesAllColumnsByURL()
+        public void WhenUserRemovesAllColumnsByUrl()
         {
             var currentUrl = _driver.Url;
             const string pattern = @"select=(.*)";
