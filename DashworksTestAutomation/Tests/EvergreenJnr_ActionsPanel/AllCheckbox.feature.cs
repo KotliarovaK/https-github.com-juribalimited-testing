@@ -398,7 +398,7 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_ActionsPanel
                         "Enabled"});
             table4.AddRow(new string[] {
                         "Username"});
-            testRunner.When("User navigate to the URL and get \"Users\" page and selected columns:", ((string)(null)), table4, "When ");
+            testRunner.When("User add following columns using URL to the \"Users\" page:", ((string)(null)), table4, "When ");
             testRunner.When("User clicks the Filters button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
             testRunner.Then("Filters panel is displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
             TechTalk.SpecFlow.Table table5 = new TechTalk.SpecFlow.Table(new string[] {

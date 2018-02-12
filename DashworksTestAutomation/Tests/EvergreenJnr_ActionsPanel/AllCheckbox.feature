@@ -88,7 +88,7 @@ Examples:
 
 @Evergreen @AllLists @Evergreen_ActionsPanel @AllCheckbox @DAS10656
 Scenario: EvergreenJnr_UsersList_CheckThatSelectAllWorksCorrectlyForFilteredListsWithAdditionalColumn
-	When User navigate to the URL and get "Users" page and selected columns:
+	When User add following columns using URL to the "Users" page:
 	| ColumnName |
 	| Enabled    |
 	| Username   |

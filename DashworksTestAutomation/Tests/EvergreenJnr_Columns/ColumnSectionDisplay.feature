@@ -30,7 +30,7 @@ Scenario: EvergreenJnr_DevicesList_CheckThatColumnCategoriesAreClosedAfterCleari
 
 @Evergreen @Devices @EvergreenJnr_Columns @ColumnSectionDisplay @DAS10583
 Scenario: EvergreenJnr_DevicesList_CheckThatColumnIsNotRemovedAfterApplyFilterForTheSameColumnName
-	When User navigate to the URL and get "Devices" page and selected columns:
+	When User add following columns using URL to the "Devices" page:
 	| ColumnName   |
 	| Manufacturer |
 	When User clicks the Filters button
@@ -56,15 +56,7 @@ Scenario: EvergreenJnr_DevicesList_CheckThatAppropriateIconsAreDisplayedForMaxim
 
 @Evergreen @Devices @EvergreenJnr_Columns @ColumnSectionDisplay @DAS11668
 Scenario: EvergreenJnr_DevicesList_CheckThatAllColumnsAreVisibleInTheirRelevantCategoryAfterResetting
-	When User clicks "Devices" on the left-hand menu
-	Then "Devices" list should be displayed to the user
-	When User clicks the Columns button
-	Then Columns panel is displayed to the user
-	When ColumnName is entered into the search box and the selection is clicked
-	| ColumnName |
-	| Import     |
-	| Compliance |
-	Then ColumnName is added to the list
+	When User add following columns using URL to the "Devices" page:
 	| ColumnName |
 	| Import     |
 	| Compliance |
@@ -91,7 +83,7 @@ Scenario: EvergreenJnr_MailboxesList_CheckThatCategoryRemainsOpenAfterAddingColu
 
 @Evergreen @Devices @EvergreenJnr_Columns @ColumnSectionDisplay @DAS11768
 Scenario: EvergreenJnr_DevicesList_CheckTheColumnCategoriesUpdatesAfterAddingColumn
-	When User navigate to the URL and get "Devices" page and selected columns:
+	When User add following columns using URL to the "Devices" page:
 	| ColumnName |
 	| Build Date |
 	When User navigates to the "All Devices" list

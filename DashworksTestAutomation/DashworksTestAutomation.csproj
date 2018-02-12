@@ -226,6 +226,11 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>ActionsPanel.feature</DependentUpon>
     </Compile>
+    <Compile Include="Tests\EvergreenJnr_BaseDashboardPage\BaseDashboardPage.feature.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>BaseDashboardPage.feature</DependentUpon>
+    </Compile>
     <Compile Include="Tests\EvergreenJnr_Columns\AddColumnAction.feature.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -353,6 +358,10 @@
     <None Include="Tests\EvergreenJnr_ActionsPanel\ActionsPanel.feature">
       <Generator>SpecFlowSingleFileGenerator</Generator>
       <LastGenOutput>ActionsPanel.feature.cs</LastGenOutput>
+    </None>
+    <None Include="Tests\EvergreenJnr_BaseDashboardPage\BaseDashboardPage.feature">
+      <Generator>SpecFlowSingleFileGenerator</Generator>
+      <LastGenOutput>BaseDashboardPage.feature.cs</LastGenOutput>
     </None>
     <None Include="Tests\EvergreenJnr_Columns\AddColumnAction.feature">
       <Generator>SpecFlowSingleFileGenerator</Generator>

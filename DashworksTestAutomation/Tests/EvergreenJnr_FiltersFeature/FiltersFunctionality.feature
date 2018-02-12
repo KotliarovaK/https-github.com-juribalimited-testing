@@ -376,3 +376,17 @@ Scenario: EvergreenJnr_DevicesList_CheckThatTheSaveButtonIsNotAvailableWhenEnter
 	| Values |
 	| 1      |
 	Then Save button is not available on the Filter panel
+
+@Evergreen @Devices @EvergreenJnr_FilterFeature @FilterFunctionality @DAS11559
+Scenario: EvergreenJnr_DevicesList_CheckThatErrorsDoNotAppearWhenAddingAdvancedAndStandardFilters
+	When User clicks "Devices" on the left-hand menu
+	Then "Devices" list should be displayed to the user
+	When User clicks the Filters button
+	Then Filters panel is displayed to the user
+	When User add "Application Import" filter where type is "Equals" with following Lookup Value and Association:
+	| SelectedValues | Association    |
+	| Altiris        | Used on device |
+	And User add "Boot Up Date" filter where type is "Equals" with added column and following value:
+	| Values      |
+	| 07 Dec 2017 |
+	Then There are no errors in the browser console

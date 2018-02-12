@@ -549,8 +549,8 @@ namespace DashworksTestAutomation.Steps.Dashworks
             Assert.Contains(text, filterLabels, $"Filter with {text} not found in the list");
         }
 
-        [Then(@"""(.*)"" filter with ""(.*)"" values is added to URL")]
-        public void ThenFilterWithValuesIsAddedToURL(string filterName, string values)
+        [Then(@"""(.*)"" filter with ""(.*)"" values is added to URL on ""(.*)"" page")]
+        public void ThenFilterWithValuesIsAddedToUrlOnPage(string pageName, string filterName, string values)
         {
             var currentUrl = _driver.Url;
             const string pattern = @"filter=(.*)";
@@ -562,7 +562,7 @@ namespace DashworksTestAutomation.Steps.Dashworks
                     $"{value} is not added to URL for {filterName} filter");
             }
 
-            StringAssert.Contains(_convertor.Convert(filterName).ToLower(), urlPartToCheck.ToLower(),
+            StringAssert.Contains(ColumnNameToUrlConvertor.Convert(pageName, filterName).ToLower(), urlPartToCheck.ToLower(),
                 $"{filterName} is not added to URL");
         }
 

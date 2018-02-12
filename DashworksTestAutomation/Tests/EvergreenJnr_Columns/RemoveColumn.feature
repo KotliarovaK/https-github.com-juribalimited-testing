@@ -8,7 +8,7 @@ Background: Pre-Conditions
 
 @Evergreen @Devices @EvergreenJnr_Columns @RemoveColumn @DAS10966 @DAS10973 @Delete_Newly_Created_List
 Scenario: EvergreenJnr_DevicesList_CheckThat500ErrorPageIsNotDisplayedAfterRemovingSortedColumnInCustomList
-	When User navigate to the URL and get "Devices" page and selected columns:
+	When User add following columns using URL to the "Devices" page:
 	| ColumnName |
 	| Device Key |
 	When User create custom list with "RemovingSortedColumnInCustomList" name
@@ -30,7 +30,7 @@ Scenario: EvergreenJnr_DevicesList_CheckThat500ErrorPageIsNotDisplayedAfterRemov
 	| ColumnName |
 	| Device Key |
 	When User click on 'Boot Up Date' column header
-	When User removes sorted column by URL
+	When User remove sorted column on "Devices" page by URL
 	| ColumnName   |
 	| Boot Up Date |
 	Then ColumnName is removed from the list
@@ -39,7 +39,7 @@ Scenario: EvergreenJnr_DevicesList_CheckThat500ErrorPageIsNotDisplayedAfterRemov
 
 @Evergreen @Devices @EvergreenJnr_Columns @RemoveColumn @DAS10966 @DAS10973 @Delete_Newly_Created_List
 Scenario: EvergreenJnr_DevicesList_CheckThat500ErrorPageIsNotDisplayedAfterRemovingMultipleSortedColumnInCustomList
-	When User navigate to the URL and get "Devices" page and selected columns:
+	When User add following columns using URL to the "Devices" page:
 	| ColumnName |
 	| Build Date |
 	When User create custom list with "TestList474460" name
@@ -64,7 +64,7 @@ Scenario: EvergreenJnr_DevicesList_CheckThat500ErrorPageIsNotDisplayedAfterRemov
 	| ColumnName |
 	| Build Date |
 	Then data in table is sorted by 'Boot Up Date' column in descending order
-	When User removes sorted column by URL
+	When User remove sorted column on "Devices" page by URL
 	| ColumnName   |
 	| Boot Up Date |
 	When User update current custom list
@@ -103,7 +103,7 @@ Scenario: EvergreenJnr_DevicesList_CheckThat500ErrorPageIsNotDisplayedAfterRemov
 	Then Filters panel is displayed to the user
 	Then "Windows7Mi: Category" filter is added to the list
 	When User click on 'Directory Type' column header
-	When User removes sorted column by URL
+	When User remove sorted column on "Devices" page by URL
 	| ColumnName     |
 	| Directory Type |
 	When User clicks the Columns button
@@ -117,15 +117,7 @@ Scenario: EvergreenJnr_DevicesList_CheckThat500ErrorPageIsNotDisplayedAfterRemov
 
 @Evergreen @Devices @EvergreenJnr_Columns @RemoveColumn @DAS10966 @DAS10973
 Scenario: EvergreenJnr_DevicesList_CheckThat500ErrorPageIsNotDisplayedAfterRemovingSortedColumnInDefaultList
-	When User clicks "Devices" on the left-hand menu
-	Then "Devices" list should be displayed to the user
-	When User clicks the Columns button
-	Then Columns panel is displayed to the user
-	When ColumnName is entered into the search box and the selection is clicked
-	| ColumnName                   |
-	| Boot Up Date                 |
-	| Windows7Mi: Date & Time Task |
-	Then ColumnName is added to the list
+	When User add following columns using URL to the "Devices" page:
 	| ColumnName                   |
 	| Boot Up Date                 |
 	| Windows7Mi: Date & Time Task |
@@ -137,7 +129,7 @@ Scenario: EvergreenJnr_DevicesList_CheckThat500ErrorPageIsNotDisplayedAfterRemov
 	| ColumnName   |
 	| Boot Up Date |
 	When User click on 'Windows7Mi: Date & Time Task' column header
-	When User removes sorted column by URL
+	When User remove sorted column on "Devices" page by URL
 	| ColumnName                   |
 	| Windows7Mi: Date & Time Task |
 	Then "Devices" list should be displayed to the user
@@ -147,16 +139,7 @@ Scenario: EvergreenJnr_DevicesList_CheckThat500ErrorPageIsNotDisplayedAfterRemov
 
 @Evergreen @Devices @EvergreenJnr_Columns @RemoveColumn @DAS10966 @DAS10973
 Scenario: EvergreenJnr_DevicesList_CheckThat500ErrorPageIsNotDisplayedAfterRemovingMultipleSortedColumnInDefaultList
-	When User clicks "Devices" on the left-hand menu
-	Then "Devices" list should be displayed to the user
-	When User clicks the Columns button
-	Then Columns panel is displayed to the user
-	When ColumnName is entered into the search box and the selection is clicked
-	| ColumnName                   |
-	| Boot Up Date                 |
-	| Windows7Mi: Date & Time Task |
-	| Build Date                   |
-	Then ColumnName is added to the list
+	When User add following columns using URL to the "Devices" page:
 	| ColumnName                   |
 	| Boot Up Date                 |
 	| Windows7Mi: Date & Time Task |
@@ -174,7 +157,7 @@ Scenario: EvergreenJnr_DevicesList_CheckThat500ErrorPageIsNotDisplayedAfterRemov
 	| ColumnName   |
 	| Boot Up Date |
 	Then data in table is sorted by 'Windows7Mi: Date & Time Task' column in descending order
-	When User removes sorted column by URL
+	When User remove sorted column on "Devices" page by URL
 	| ColumnName                   |
 	| Windows7Mi: Date & Time Task |
 	Then "Devices" list should be displayed to the user
@@ -210,7 +193,7 @@ Scenario: EvergreenJnr_DevicesList_CheckThat500ErrorPageIsNotDisplayedAfterRemov
 	Then Filters panel is displayed to the user
 	Then "Windows7Mi: Category" filter is added to the list
 	When User click on 'Directory Type' column header
-	When User removes sorted column by URL
+	When User remove sorted column on "Devices" page by URL
 	| ColumnName     |
 	| Directory Type |
 	Then "Devices" list should be displayed to the user
@@ -237,13 +220,13 @@ Scenario: EvergreenJnr_UsersList_CheckThat500ErrorPageIsNotDisplayedAfterRemovin
 	| ColumnName      |
 	| Last Logon Date |
 	| Home Drive      |
-	And "Last Logon Date" column is added to URL
-	And "Home Drive" column is added to URL
+	And "Last Logon Date" column is added to URL on "Users" page
+	And "Home Drive" column is added to URL on "Users" page
 	When User click on 'Last Logon Date' column header
 	When User clicks the Columns button
 	Then Columns panel is displayed to the user
 	When User removes "Last Logon Date" column by Column panel
-	Then "Home Drive" column is added to URL
+	Then "Home Drive" column is added to URL on "Users" page
 	When User removes "Home Drive" column by Column panel
 	Then "Users" list should be displayed to the user
 	Then ColumnName is removed from the list
@@ -270,8 +253,8 @@ Scenario: EvergreenJnr_DevicesList_CheckThatRemovingColumnsFromUrlIsWorksCorrect
 	| ColumnName |
 	| Compliance |
 	| Device Key |
-	And "Compliance" column is added to URL
-	And "Device Key" column is added to URL
+	And "Compliance" column is added to URL on "Devices" page
+	And "Device Key" column is added to URL on "Devices" page
 	When User removes all columns by URL
 	Then ColumnName is removed from the list
 	| ColumnName |
@@ -305,9 +288,9 @@ Scenario: EvergreenJnr_DevicesList_CheckThatRemovingColumnAndFilterFromUrlWorksC
 	Then "Compliance" filter is added to the list
 	And "9,174" rows are displayed in the agGrid
 	And table data is filtered correctly
-	And "Compliance" filter with "Red" values is added to URL
-	And "Compliance" column is added to URL
-	And "Device Key" column is added to URL
+	And "Compliance" filter with "Red" values is added to URL on "Devices" page
+	And "Compliance" column is added to URL on "Devices" page
+	And "Device Key" column is added to URL on "Devices" page
 	When User removes all filters and columns by url
 	Then ColumnName is removed from the list
 	| ColumnName |
@@ -341,9 +324,9 @@ Scenario: EvergreenJnr_DevicesList_CheckThatRemovingColumnAndFilterAndCustomList
 	Then "Compliance" filter is added to the list
 	And "9,174" rows are displayed in the agGrid
 	And table data is filtered correctly
-	And "Compliance" filter with "Red" values is added to URL
-	And "Compliance" column is added to URL
-	And "Device Key" column is added to URL
+	And "Compliance" filter with "Red" values is added to URL on "Devices" page
+	And "Compliance" column is added to URL on "Devices" page
+	And "Device Key" column is added to URL on "Devices" page
 	When User removes all filters and columns and custom list by url
 	Then ColumnName is removed from the list
 	| ColumnName |
@@ -364,9 +347,9 @@ Scenario: EvergreenJnr_DevicesList_CheckThatColumnIsDisplayedInColumnsPanelAfter
 	| ColumnName                          |
 	| Windows7Mi: SS Project Date Enabled |
 	| Owner Common Name                   |
-	And "Windows7Mi: SS Project Date Enabled" column is added to URL
-	And "Owner Common Name" column is added to URL
-	When User removes column by URL
+	And "Windows7Mi: SS Project Date Enabled" column is added to URL on "Devices" page
+	And "Owner Common Name" column is added to URL on "Devices" page
+	When User remove column on "Devices" page by URL 
 	| ColumnName        |
 	| Owner Common Name |
 	Then "Devices" list should be displayed to the user
@@ -393,9 +376,9 @@ Scenario: EvergreenJnr_UsersList_CheckThatColumnIsDisplayedInColumnsPanelAfterRe
 	| Last Logon Date                              |
 	| Enabled                                      |
 	| Windows7Mi: Read Only on Project Object Page |
-	And "Last Logon Date" column is added to URL
-	And "Enabled" column is added to URL
-	And "Windows7Mi: Read Only on Project Object Page" column is added to URL
+	And "Last Logon Date" column is added to URL on "Users" page
+	And "Enabled" column is added to URL on "Users" page
+	And "Windows7Mi: Read Only on Project Object Page" column is added to URL on "Users" page
 	When User removes all columns by URL
 	And User clicks the Columns button
 	Then Columns panel is displayed to the user
@@ -424,9 +407,9 @@ Scenario: EvergreenJnr_ApplicationsList_CheckThatColumnIsDisplayedInColumnsPanel
 	| Windows7Mi: Technical Test |
 	| DAS-1814                   |
 	And "Applications" list should be displayed to the user
-	And "Application Key" column is added to URL
-	And "Windows7Mi: Technical Test" column is added to URL
-	And "DAS-1814" column is added to URL
+	And "Application Key" column is added to URL on "Applications" page
+	And "Windows7Mi: Technical Test" column is added to URL on "Applications" page
+	And "DAS-1814" column is added to URL on "Applications" page
 	When User clicks the Filters button
 	Then Filters panel is displayed to the user
 	When User add "Windows7Mi: Technical Test" filter where type is "Equals" with added column and following checkboxes:
@@ -435,7 +418,7 @@ Scenario: EvergreenJnr_ApplicationsList_CheckThatColumnIsDisplayedInColumnsPanel
 	| Started            |
 	Then "Windows7Mi: Technical Test" filter is added to the list
 	And "7" rows are displayed in the agGrid
-	When User removes column by URL
+	When User remove column on "Applications" page by URL 
 	| ColumnName                 |
 	| Windows7Mi: Technical Test |
 	Then "7" rows are displayed in the agGrid
