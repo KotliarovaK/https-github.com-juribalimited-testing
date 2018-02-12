@@ -34,6 +34,12 @@ namespace DashworksTestAutomation.Helpers
                 case "Created Date":
                     return "createdDate";
 
+                case "Owner Email Address":
+                    return "ownerEMailAddress";
+
+                case "IP Address":
+                    return "networkCardIPAddress";
+
                 case "EmailMigra: Scheduled date":
                     return "project_task_48_13127_2_Task";
 

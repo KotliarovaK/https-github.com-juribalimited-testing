@@ -8,14 +8,7 @@ Background: Pre-Conditions
 
 @Evergreen @Devices @EvergreenJnr_Search @Search @DAS10704 @Delete_Newly_Created_List
 Scenario: EvergreenJnr_DevicesList_CheckThatQuickSearchResetWhenMovingBetweenLists
-	When User clicks "Devices" on the left-hand menu
-	Then "Devices" list should be displayed to the user
-	When User clicks the Columns button
-	Then Columns panel is displayed to the user
-	When ColumnName is entered into the search box and the selection is clicked
-	| ColumnName |
-	| Build Date |
-	Then ColumnName is added to the list
+	When User add following columns using URL to the "Devices" page:
 	| ColumnName |
 	| Build Date |
 	When User create custom list with "TestList7BA11B" name
