@@ -8,6 +8,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Net;
 using System.Text.RegularExpressions;
+using DashworksTestAutomation.DTO;
 using DashworksTestAutomation.Extensions;
 using DashworksTestAutomation.Helpers;
 using DashworksTestAutomation.Pages;
@@ -26,14 +27,16 @@ namespace DashworksTestAutomation.Steps
         private readonly RestWebClient _client;
         private readonly ResponceDetails _responce;
         private readonly DetailsSectionToUrlConvertor _sectionConvertor;
+        private readonly UserDto _user;
         private readonly RemoteWebDriver _driver;
 
         public TestApiStep(RestWebClient client, ResponceDetails responce,
-            DetailsSectionToUrlConvertor sectionConvertor, RemoteWebDriver driver)
+            DetailsSectionToUrlConvertor sectionConvertor, UserDto user, RemoteWebDriver driver)
         {
             _client = client;
             _responce = responce;
             _sectionConvertor = sectionConvertor;
+            _user = user;
             _driver = driver;
         }
 
@@ -174,26 +177,46 @@ namespace DashworksTestAutomation.Steps
             }
         }
 
-        [When(@"I perform test request to the API for ""(.*)"" pages and create list with ""(.*)"" name")]
-        public void WhenIPerformTestRequestToTheApiForPagesAndCreateListWithName(string pageName, string listName)
+        [When(@"User create ""(.*)"" list with ""(.*)"" name on ""(.*)"" page")]
+        public void WhenUserCreateListWithNameOnPage(string listType, string listName, string pageName)
         {
-            var listId = ;
-            var requestUri = $"{UrlProvider.RestClientBaseUrl}/lists/{pageName.ToLower()}{listId}";
+            var queryString = GetQueryStringFromUrl(_driver.Url, pageName);
+            var requestUri = $"{UrlProvider.RestClientBaseUrl}lists/{pageName.ToLower()}";
             var request = new RestRequest(requestUri);
 
             request.AddParameter("Host", UrlProvider.RestClientBaseUrl);
             request.AddParameter("Origin", UrlProvider.Url.TrimEnd('/'));
             request.AddParameter("Referer", UrlProvider.EvergreenUrl);
+            request.AddParameter("listName", listName);
+            request.AddParameter("listType", listType);
+            request.AddParameter("queryString", queryString);
+            request.AddParameter("sharedAccessType", "Private");
+            request.AddParameter("userId", DatabaseWorker.GetUserIdByLogin(_user.UserName));
 
-            var response = _client.Value.Get(request);
+            var response = _client.Value.Post(request);
 
             if (response.StatusCode != HttpStatusCode.OK)
                 throw new Exception($"Unable to execute request. URI: {requestUri}");
+        }
 
-            var content = response.Content;
-
-            var allFilters = JsonConvert.DeserializeObject<List<JObject>>(content);
-            var filter = allFilters.First(x => x["listName"].ToString().Equals(listName));
+        private string GetQueryStringFromUrl(string url, string pageName)
+        {
+            var queryString = string.Empty;
+            var pattern = @"\?\$(.*)";
+            string originalPart = Regex.Match(url, pattern).Groups[1].Value;
+            if (originalPart.Contains("select="))
+            {
+                queryString = "$" + originalPart;
+            }
+            else
+            {
+                queryString = RestWebClient.GetDefaultColumnsUrlByPageName(pageName) + "&$" + originalPart;
+            }
+            if (!originalPart.Contains("filter="))
+            {
+                queryString += "&$filter=";
+            }
+            return queryString;
         }
     }
 }

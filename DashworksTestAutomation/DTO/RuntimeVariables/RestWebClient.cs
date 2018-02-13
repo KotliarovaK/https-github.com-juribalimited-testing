@@ -81,7 +81,7 @@ namespace DashworksTestAutomation.DTO.RuntimeVariables
             return item[returnValue].ToString();
         }
 
-        public string GetDefaultColumnsUrlByPageName(string pageName)
+        public static string GetDefaultColumnsUrlByPageName(string pageName)
         {
             switch (pageName)
             {

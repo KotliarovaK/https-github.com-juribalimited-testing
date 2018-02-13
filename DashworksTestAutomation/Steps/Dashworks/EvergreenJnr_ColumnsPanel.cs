@@ -73,7 +73,7 @@ namespace DashworksTestAutomation.Steps.Dashworks
         [When(@"User add following columns using URL to the ""(.*)"" page:")]
         public void WhenUserAddFollowingColumnsUsingUrlToThePage(string pageName, Table table)
         {
-            var requestUri = $"{UrlProvider.EvergreenUrl}#/{pageName.ToLower()}?{_client.GetDefaultColumnsUrlByPageName(pageName)}";
+            var requestUri = $"{UrlProvider.EvergreenUrl}#/{pageName.ToLower()}?{RestWebClient.GetDefaultColumnsUrlByPageName(pageName)}";
             foreach (var row in table.Rows)
             {
                 requestUri += $",{ColumnNameToUrlConvertor.Convert(pageName, row["ColumnName"])}";
