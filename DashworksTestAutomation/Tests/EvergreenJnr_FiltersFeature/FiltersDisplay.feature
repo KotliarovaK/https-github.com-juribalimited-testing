@@ -907,3 +907,25 @@ Examples:
 	| Users        | Barry'sUse: Scheduled Date   |
 	| Applications | UserSchedu: Date App Req A   |
 	| Mailboxes    | Created Date                 |
+
+	@Evergreen @AllLists @EvergreenJnr_FilterFeature @FiltersDisplay @DAS11829 @Not_Run
+Scenario Outline: EvergreenJnr_AllLists_CheckThatAddColumnCheckboxIsDisplayedForOrganisationCategoryFilters
+	When User clicks "<ListName>" on the left-hand menu
+	Then "<ListName>" list should be displayed to the user
+	When User clicks the Filters button
+	Then Filters panel is displayed to the user
+	When user select "<FilterName>" filter
+	Then checkboxes are displayed to the User:
+	| SelectedCheckboxes   |
+	| <SelectedCheckboxes> |
+
+Examples: 
+	| ListName  | FilterName              | SelectedCheckboxes                 |
+	| Devices   | Department Name         | Add Department Name column         |
+	| Devices   | Full Department Path    | Add Full Department Path column    |
+	| Devices   | Owner Department Name   | Add Owner Department Name column   |
+	| Devices   | OwnerFullDepartmentPath | Add OwnerFullDepartmentPath column |
+	| Mailboxes | Department Name         | Add Department Name column         |
+	| Mailboxes | Full Department Path    | Add Full Department Path column    |
+	| Mailboxes | Owner Department Name   | Add Owner Department Name column   |
+	| Mailboxes | OwnerFullDepartmentPath | Add OwnerFullDepartmentPath column |

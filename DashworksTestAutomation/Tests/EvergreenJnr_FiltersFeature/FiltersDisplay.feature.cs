@@ -3119,6 +3119,79 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_FiltersFeature
             testRunner.Then("There are no errors in the browser console", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
             this.ScenarioCleanup();
         }
+        
+        [NUnit.Framework.TestAttribute()]
+        [NUnit.Framework.DescriptionAttribute("EvergreenJnr_AllLists_CheckThatAddColumnCheckboxIsDisplayedForOrganisationCategor" +
+            "yFilters")]
+        [NUnit.Framework.CategoryAttribute("Evergreen")]
+        [NUnit.Framework.CategoryAttribute("AllLists")]
+        [NUnit.Framework.CategoryAttribute("EvergreenJnr_FilterFeature")]
+        [NUnit.Framework.CategoryAttribute("FiltersDisplay")]
+        [NUnit.Framework.CategoryAttribute("DAS11829")]
+        [NUnit.Framework.CategoryAttribute("Not_Run")]
+        [NUnit.Framework.TestCaseAttribute("Devices", "Department Name", "Add Department Name column", new string[0])]
+        [NUnit.Framework.TestCaseAttribute("Devices", "Full Department Path", "Add Full Department Path column", new string[0])]
+        [NUnit.Framework.TestCaseAttribute("Devices", "Owner Department Name", "Add Owner Department Name column", new string[0])]
+        [NUnit.Framework.TestCaseAttribute("Devices", "OwnerFullDepartmentPath", "Add OwnerFullDepartmentPath column", new string[0])]
+        [NUnit.Framework.TestCaseAttribute("Mailboxes", "Department Name", "Add Department Name column", new string[0])]
+        [NUnit.Framework.TestCaseAttribute("Mailboxes", "Full Department Path", "Add Full Department Path column", new string[0])]
+        [NUnit.Framework.TestCaseAttribute("Mailboxes", "Owner Department Name", "Add Owner Department Name column", new string[0])]
+        [NUnit.Framework.TestCaseAttribute("Mailboxes", "OwnerFullDepartmentPath", "Add OwnerFullDepartmentPath column", new string[0])]
+        public virtual void EvergreenJnr_AllLists_CheckThatAddColumnCheckboxIsDisplayedForOrganisationCategoryFilters(string listName, string filterName, string selectedCheckboxes, string[] exampleTags)
+        {
+            System.Exception lastException = null;
+            for (int i = 0; (i <= 1); i = (i + 1))
+            {
+                try
+                {
+                    this.EvergreenJnr_AllLists_CheckThatAddColumnCheckboxIsDisplayedForOrganisationCategoryFiltersInternal(listName, filterName, selectedCheckboxes, exampleTags);
+                    return;
+                }
+                catch (System.Exception exc)
+                {
+                    lastException = exc;
+                }
+                if (((i + 1) 
+                            <= 1))
+                {
+                    testRunner.OnScenarioEnd();
+                }
+            }
+            if ((lastException != null))
+            {
+                throw lastException;
+            }
+        }
+        
+        private void EvergreenJnr_AllLists_CheckThatAddColumnCheckboxIsDisplayedForOrganisationCategoryFiltersInternal(string listName, string filterName, string selectedCheckboxes, string[] exampleTags)
+        {
+            string[] @__tags = new string[] {
+                    "Evergreen",
+                    "AllLists",
+                    "EvergreenJnr_FilterFeature",
+                    "FiltersDisplay",
+                    "DAS11829",
+                    "Not_Run"};
+            if ((exampleTags != null))
+            {
+                @__tags = System.Linq.Enumerable.ToArray(System.Linq.Enumerable.Concat(@__tags, exampleTags));
+            }
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("EvergreenJnr_AllLists_CheckThatAddColumnCheckboxIsDisplayedForOrganisationCategor" +
+                    "yFilters", @__tags);
+            this.ScenarioSetup(scenarioInfo);
+            this.FeatureBackground();
+            testRunner.When(string.Format("User clicks \"{0}\" on the left-hand menu", listName), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+            testRunner.Then(string.Format("\"{0}\" list should be displayed to the user", listName), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+            testRunner.When("User clicks the Filters button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+            testRunner.Then("Filters panel is displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+            testRunner.When(string.Format("user select \"{0}\" filter", filterName), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+            TechTalk.SpecFlow.Table table76 = new TechTalk.SpecFlow.Table(new string[] {
+                        "SelectedCheckboxes"});
+            table76.AddRow(new string[] {
+                        string.Format("{0}", selectedCheckboxes)});
+            testRunner.Then("checkboxes are displayed to the User:", ((string)(null)), table76, "Then ");
+            this.ScenarioCleanup();
+        }
     }
 }
 #pragma warning restore
