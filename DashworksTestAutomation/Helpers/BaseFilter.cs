@@ -103,6 +103,39 @@ namespace DashworksTestAutomation.Helpers
         }
     }
 
+    public class LookupFilterTable : BaseFilter
+    {
+        protected Table Table { get; set; }
+
+        public LookupFilterTable(RemoteWebDriver driver, string operatorValue, bool acceptCheckbox, Table table) : base(
+            driver, operatorValue, acceptCheckbox)
+        {
+            Table = table;
+        }
+
+        public override void Do()
+        {
+            SelectOperator();
+            _driver.WaitForDataLoading();
+            foreach (var row in Table.Rows)
+            {
+                _driver.FindElement(
+                        By.XPath(".//div[@class='filterAddPanel ng-star-inserted']//input[@placeholder='Search']"))
+                    .Click();
+                _driver.FindElement(
+                        By.XPath(".//div[@class='filterAddPanel ng-star-inserted']//input[@placeholder='Search']"))
+                    .SendKeys(row["SelectedValues"]);
+                _driver.FindElement(By.XPath(
+                        $".//div[@class='filterAddPanel ng-star-inserted']//input[@placeholder='Search']"))
+                    .Clear();
+                _driver.FindElement(By.XPath(
+                        $".//div[@class='filterAddPanel ng-star-inserted']//span[contains(text(),'{row["SelectedValues"]}')]"))
+                    .Click();
+            }
+         SaveFilter();
+        }
+    }
+
     public class CheckBoxesFilter : BaseFilter
     {
         protected Table _optionsTable { get; set; }

@@ -281,3 +281,17 @@ Scenario: EvergreenJnr_MailboxesLists_CheckThatNoConsoleErrorsWhenViewingMailbox
 	When User click content from "Email Address" column
 	Then Item content is displayed to the User
 	Then There are no errors in the browser console
+
+@Evergreen @Devices @EvergreenJnr_ItemDetails @ItemDetailsDisplay @DAS11483
+Scenario: EvergreenJnr_DevicesLists_CheckThatDataOfColumnsIsDisplayedInTheCustomFieldSection
+	When User clicks "Devices" on the left-hand menu
+	Then "Devices" list should be displayed to the user
+	When User perform search by "54S1MGR8DYMYKH"
+	And User click content from "Hostname" column
+	And User navigates to the "Details" tab
+	Then User closes "Device" section on the Details Page
+	When User open "Custom Fields" section
+	Then Content is present in the column of the Details Page table
+	| ColumnName |
+	| Label      |
+	| Value      |
