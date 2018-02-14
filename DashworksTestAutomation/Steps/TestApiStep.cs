@@ -197,6 +197,8 @@ namespace DashworksTestAutomation.Steps
 
             if (response.StatusCode != HttpStatusCode.OK)
                 throw new Exception($"Unable to execute request. URI: {requestUri}");
+
+            _driver.Navigate().Refresh();
         }
 
         private string GetQueryStringFromUrl(string url, string pageName)
