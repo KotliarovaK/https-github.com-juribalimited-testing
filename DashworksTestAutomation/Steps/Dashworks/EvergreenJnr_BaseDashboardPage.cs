@@ -137,7 +137,7 @@ namespace DashworksTestAutomation.Steps.Dashworks
         {
             var page = _driver.NowAt<BaseDashboardPage>();
             _driver.WaitWhileControlIsNotDisplayed<BaseDashboardPage>(() => page.TableContent);
-            Assert.IsTrue(page.TableContent.Displayed());
+            Assert.IsTrue(page.TableRows.Count > 5, "Table is empty");
         }
 
         [Then(@"Content is present in the newly added column")]

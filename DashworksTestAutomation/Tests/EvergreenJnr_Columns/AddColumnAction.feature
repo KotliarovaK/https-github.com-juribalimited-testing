@@ -74,3 +74,22 @@ Examples:
 	| Windows7Mi: Application Readiness       |
 	| Windows7Mi: Core Application            |
 	| Windows7Mi: Hide from End Users         |
+
+	@Evergreen @AllLists @EvergreenJnr_Columns @AddColumnAction @DAS11871 @Not_Run
+Scenario Outline: EvergreenJnr_AllLists_CheckThatConsoleErrorsAreNotDisplayedAfterSortingUserScheduReadinessIDColumn
+	When User add following columns using URL to the "<ListName>" page:
+	| ColumnName               |
+	| UserSchedu: Readiness ID |
+	Then Content is present in the newly added column
+	| ColumnName               |
+	| UserSchedu: Readiness ID |
+	Then full list content is displayed to the user
+	When User click on 'UserSchedu: Readiness ID' column header
+	Then data in table is sorted by 'UserSchedu: Readiness ID' column in descending order
+	Then There are no errors in the browser console
+
+Examples: 
+	| ListName     |
+	| Devices      |
+	| Users        |
+	| Applications |
