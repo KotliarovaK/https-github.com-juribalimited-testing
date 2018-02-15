@@ -908,7 +908,7 @@ Examples:
 	| Applications | UserSchedu: Date App Req A   |
 	| Mailboxes    | Created Date                 |
 
-	@Evergreen @AllLists @EvergreenJnr_FilterFeature @FiltersDisplay @DAS11829 @Not_Run
+@Evergreen @AllLists @EvergreenJnr_FilterFeature @FiltersDisplay @DAS11829
 Scenario Outline: EvergreenJnr_AllLists_CheckThatAddColumnCheckboxIsDisplayedForOrganisationCategoryFilters
 	When User clicks "<ListName>" on the left-hand menu
 	Then "<ListName>" list should be displayed to the user
@@ -920,12 +920,12 @@ Scenario Outline: EvergreenJnr_AllLists_CheckThatAddColumnCheckboxIsDisplayedFor
 	| <SelectedCheckboxes> |
 
 Examples: 
-	| ListName  | FilterName              | SelectedCheckboxes                 |
-	| Devices   | Department Name         | Add Department Name column         |
-	| Devices   | Full Department Path    | Add Full Department Path column    |
-	| Devices   | Owner Department Name   | Add Owner Department Name column   |
-	| Devices   | OwnerFullDepartmentPath | Add OwnerFullDepartmentPath column |
-	| Mailboxes | Department Name         | Add Department Name column         |
-	| Mailboxes | Full Department Path    | Add Full Department Path column    |
-	| Mailboxes | Owner Department Name   | Add Owner Department Name column   |
-	| Mailboxes | OwnerFullDepartmentPath | Add OwnerFullDepartmentPath column |
+	| ListName  | FilterName                 | SelectedCheckboxes                    |
+	| Devices   | Department Name            | Add Department Name column            |
+	| Devices   | Department Full Path       | Add Department Full Path column       |
+	| Devices   | Owner Department Name      | Add Owner Department Name column      |
+	| Devices   | Owner Department Full Path | Add Owner Department Full Path column |
+	| Mailboxes | Department Name            | Add Department Name column            |
+	| Mailboxes | Department Full Path       | Add Department Full Path column       |
+	| Mailboxes | Owner Department Name      | Add Owner Department Name column      |
+	| Mailboxes | Owner Department Full Path | Add Owner Department Full Path column |
