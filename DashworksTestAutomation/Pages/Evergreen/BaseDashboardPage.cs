@@ -78,6 +78,9 @@ namespace DashworksTestAutomation.Pages.Evergreen
         [FindsBy(How = How.XPath, Using = ".//span[@class='filter-content']")]
         public IWebElement FilterContainer { get; set; }
 
+        [FindsBy(How = How.XPath, Using = ".//i")]
+        public IWebElement ItemImage { get; set; }
+
         #region TableColumns
 
         [FindsBy(How = How.XPath, Using = ".//div[@colid='lastLogonDate'][@role='gridcell']")]
@@ -178,6 +181,16 @@ namespace DashworksTestAutomation.Pages.Evergreen
             Driver.WaitForDataLoading();
             Driver.WaitWhileControlIsNotDisplayed(byControl);
             Driver.FindElement(byControl).Click();
+        }
+
+        public IWebElement GetContentByColumnName(string columnName)
+        {
+            By byControl =
+                By.XPath($".//div[@class='ag-body-container']/div[1]/div[{GetColumnNumberByName(columnName)}]");
+             
+            Driver.WaitForDataLoading();
+            Driver.WaitWhileControlIsNotDisplayed(byControl);
+            return Driver.FindElement(byControl);
         }
 
         public IWebElement GetListElementByName(string listName)

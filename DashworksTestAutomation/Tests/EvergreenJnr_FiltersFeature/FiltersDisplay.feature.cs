@@ -3130,15 +3130,14 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_FiltersFeature
         [NUnit.Framework.CategoryAttribute("EvergreenJnr_FilterFeature")]
         [NUnit.Framework.CategoryAttribute("FiltersDisplay")]
         [NUnit.Framework.CategoryAttribute("DAS11829")]
-        [NUnit.Framework.CategoryAttribute("Not_Run")]
         [NUnit.Framework.TestCaseAttribute("Devices", "Department Name", "Add Department Name column", new string[0])]
-        [NUnit.Framework.TestCaseAttribute("Devices", "Full Department Path", "Add Full Department Path column", new string[0])]
+        [NUnit.Framework.TestCaseAttribute("Devices", "Department Full Path", "Add Department Full Path column", new string[0])]
         [NUnit.Framework.TestCaseAttribute("Devices", "Owner Department Name", "Add Owner Department Name column", new string[0])]
-        [NUnit.Framework.TestCaseAttribute("Devices", "OwnerFullDepartmentPath", "Add OwnerFullDepartmentPath column", new string[0])]
+        [NUnit.Framework.TestCaseAttribute("Devices", "Owner Department Full Path", "Add Owner Department Full Path column", new string[0])]
         [NUnit.Framework.TestCaseAttribute("Mailboxes", "Department Name", "Add Department Name column", new string[0])]
-        [NUnit.Framework.TestCaseAttribute("Mailboxes", "Full Department Path", "Add Full Department Path column", new string[0])]
+        [NUnit.Framework.TestCaseAttribute("Mailboxes", "Department Full Path", "Add Department Full Path column", new string[0])]
         [NUnit.Framework.TestCaseAttribute("Mailboxes", "Owner Department Name", "Add Owner Department Name column", new string[0])]
-        [NUnit.Framework.TestCaseAttribute("Mailboxes", "OwnerFullDepartmentPath", "Add OwnerFullDepartmentPath column", new string[0])]
+        [NUnit.Framework.TestCaseAttribute("Mailboxes", "Owner Department Full Path", "Add Owner Department Full Path column", new string[0])]
         public virtual void EvergreenJnr_AllLists_CheckThatAddColumnCheckboxIsDisplayedForOrganisationCategoryFilters(string listName, string filterName, string selectedCheckboxes, string[] exampleTags)
         {
             System.Exception lastException = null;
@@ -3172,8 +3171,7 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_FiltersFeature
                     "AllLists",
                     "EvergreenJnr_FilterFeature",
                     "FiltersDisplay",
-                    "DAS11829",
-                    "Not_Run"};
+                    "DAS11829"};
             if ((exampleTags != null))
             {
                 @__tags = System.Linq.Enumerable.ToArray(System.Linq.Enumerable.Concat(@__tags, exampleTags));
