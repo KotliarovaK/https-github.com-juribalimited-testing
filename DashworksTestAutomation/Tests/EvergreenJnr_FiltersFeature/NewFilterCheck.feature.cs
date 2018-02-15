@@ -312,7 +312,7 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_FiltersFeature
         [NUnit.Framework.TestCaseAttribute("Devices", "17,225", new string[0])]
         [NUnit.Framework.TestCaseAttribute("Users", "41,335", new string[0])]
         [NUnit.Framework.TestCaseAttribute("Applications", "2,223", new string[0])]
-        [NUnit.Framework.TestCaseAttribute("Mailboxes", "4,835", new string[0])]
+        [NUnit.Framework.TestCaseAttribute("Mailboxes", "14,784", new string[0])]
         public virtual void EvergreenJnr_AllLists_CheckThatDashworksFirstSeenFilterIsAddedToTheFilterList(string listName, string rowsCount, string[] exampleTags)
         {
             System.Exception lastException = null;

@@ -321,7 +321,7 @@ namespace DashworksTestAutomation.Helpers
 
             foreach (var row in Table.Rows)
             {
-                _driver.FindElement(By.XPath(".//div[@class='associationmultiselect-parent btn-group dropdown-associationmultiselect']//input[@placeholder='Search']")).Click();
+                _driver.FindElement(By.XPath(".//div[@class='dropdown-select input-wrapper']//input[@id='mat-input-1']")).Click();
                 _driver.FindElement(By.XPath($".//li//span[text()='{row["Association"]}']")).Click();
             }
 
