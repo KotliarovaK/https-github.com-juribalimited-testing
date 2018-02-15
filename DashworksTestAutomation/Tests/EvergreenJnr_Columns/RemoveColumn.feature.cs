@@ -1046,7 +1046,7 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_Columns
             table49.AddRow(new string[] {
                         "Owner Common Name"});
             testRunner.Then("ColumnName is removed from the list", ((string)(null)), table49, "Then ");
-            testRunner.Then("\"25\" subcategories is displayed for \"Device Owner\" category", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+            testRunner.Then("\"26\" subcategories is displayed for \"Device Owner\" category", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
             this.ScenarioCleanup();
         }
         
