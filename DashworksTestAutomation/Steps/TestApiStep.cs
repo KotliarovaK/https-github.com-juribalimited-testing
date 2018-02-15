@@ -12,6 +12,7 @@ using DashworksTestAutomation.DTO;
 using DashworksTestAutomation.Extensions;
 using DashworksTestAutomation.Helpers;
 using DashworksTestAutomation.Pages;
+using DashworksTestAutomation.Pages.Evergreen;
 using DashworksTestAutomation.Utils;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using NUnit.Framework;
@@ -197,6 +198,11 @@ namespace DashworksTestAutomation.Steps
 
             if (response.StatusCode != HttpStatusCode.OK)
                 throw new Exception($"Unable to execute request. URI: {requestUri}");
+
+            _driver.Navigate().Refresh();
+
+            var selectList = _driver.NowAt<BaseDashboardPage>();
+            selectList.GetListElementByName(listName).Click();
         }
 
         private string GetQueryStringFromUrl(string url, string pageName)
