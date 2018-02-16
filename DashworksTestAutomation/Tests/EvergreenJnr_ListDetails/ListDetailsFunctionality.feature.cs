@@ -74,7 +74,9 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_ListDetails
         [NUnit.Framework.CategoryAttribute("EvergreenJnr_ListDetails")]
         [NUnit.Framework.CategoryAttribute("ListDetailsFunctionality")]
         [NUnit.Framework.CategoryAttribute("DAS10880")]
+        [NUnit.Framework.CategoryAttribute("DAS11951")]
         [NUnit.Framework.CategoryAttribute("Delete_Newly_Created_List")]
+        [NUnit.Framework.CategoryAttribute("Not_Run")]
         [NUnit.Framework.TestCaseAttribute("Devices", "Hostname", new string[0])]
         [NUnit.Framework.TestCaseAttribute("Users", "Username", new string[0])]
         [NUnit.Framework.TestCaseAttribute("Applications", "Application", new string[0])]
@@ -113,7 +115,9 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_ListDetails
                     "EvergreenJnr_ListDetails",
                     "ListDetailsFunctionality",
                     "DAS10880",
-                    "Delete_Newly_Created_List"};
+                    "DAS11951",
+                    "Delete_Newly_Created_List",
+                    "Not_Run"};
             if ((exampleTags != null))
             {
                 @__tags = System.Linq.Enumerable.ToArray(System.Linq.Enumerable.Concat(@__tags, exampleTags));
@@ -211,7 +215,9 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_ListDetails
         [NUnit.Framework.CategoryAttribute("EvergreenJnr_ListDetails")]
         [NUnit.Framework.CategoryAttribute("ListDetailsFunctionality")]
         [NUnit.Framework.CategoryAttribute("DAS10880")]
+        [NUnit.Framework.CategoryAttribute("DAS11951")]
         [NUnit.Framework.CategoryAttribute("Delete_Newly_Created_List")]
+        [NUnit.Framework.CategoryAttribute("Not_Run")]
         [NUnit.Framework.TestCaseAttribute("Devices", "Hostname", "All Devices", new string[0])]
         [NUnit.Framework.TestCaseAttribute("Users", "Username", "All Users", new string[0])]
         [NUnit.Framework.TestCaseAttribute("Applications", "Application", "All Applications", new string[0])]
@@ -250,7 +256,9 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_ListDetails
                     "EvergreenJnr_ListDetails",
                     "ListDetailsFunctionality",
                     "DAS10880",
-                    "Delete_Newly_Created_List"};
+                    "DAS11951",
+                    "Delete_Newly_Created_List",
+                    "Not_Run"};
             if ((exampleTags != null))
             {
                 @__tags = System.Linq.Enumerable.ToArray(System.Linq.Enumerable.Concat(@__tags, exampleTags));
@@ -420,7 +428,9 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_ListDetails
         [NUnit.Framework.CategoryAttribute("EvergreenJnr_ListDetails")]
         [NUnit.Framework.CategoryAttribute("ListDetailsFunctionality")]
         [NUnit.Framework.CategoryAttribute("DAS10880")]
+        [NUnit.Framework.CategoryAttribute("DAS11951")]
         [NUnit.Framework.CategoryAttribute("Delete_Newly_Created_List")]
+        [NUnit.Framework.CategoryAttribute("Not_Run")]
         [NUnit.Framework.TestCaseAttribute("Devices", "Hostname", new string[0])]
         [NUnit.Framework.TestCaseAttribute("Users", "Username", new string[0])]
         [NUnit.Framework.TestCaseAttribute("Applications", "Application", new string[0])]
@@ -459,7 +469,9 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_ListDetails
                     "EvergreenJnr_ListDetails",
                     "ListDetailsFunctionality",
                     "DAS10880",
-                    "Delete_Newly_Created_List"};
+                    "DAS11951",
+                    "Delete_Newly_Created_List",
+                    "Not_Run"};
             if ((exampleTags != null))
             {
                 @__tags = System.Linq.Enumerable.ToArray(System.Linq.Enumerable.Concat(@__tags, exampleTags));
@@ -557,7 +569,9 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_ListDetails
         [NUnit.Framework.CategoryAttribute("EvergreenJnr_ListDetails")]
         [NUnit.Framework.CategoryAttribute("ListDetailsFunctionality")]
         [NUnit.Framework.CategoryAttribute("DAS11493")]
+        [NUnit.Framework.CategoryAttribute("DAS11951")]
         [NUnit.Framework.CategoryAttribute("Delete_Newly_Created_List")]
+        [NUnit.Framework.CategoryAttribute("Not_Run")]
         [NUnit.Framework.TestCaseAttribute("Devices", "Hostname", new string[0])]
         [NUnit.Framework.TestCaseAttribute("Users", "Username", new string[0])]
         [NUnit.Framework.TestCaseAttribute("Applications", "Application", new string[0])]
@@ -596,7 +610,9 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_ListDetails
                     "EvergreenJnr_ListDetails",
                     "ListDetailsFunctionality",
                     "DAS11493",
-                    "Delete_Newly_Created_List"};
+                    "DAS11951",
+                    "Delete_Newly_Created_List",
+                    "Not_Run"};
             if ((exampleTags != null))
             {
                 @__tags = System.Linq.Enumerable.ToArray(System.Linq.Enumerable.Concat(@__tags, exampleTags));
