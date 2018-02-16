@@ -6,7 +6,8 @@ using OpenQA.Selenium.Remote;
 using System;
 using System.Collections.Generic;
 using System.Linq;
-using DashworksTestAutomation.Pages.Evergreen.AdminPages;
+using DashworksTestAutomation.Helpers;
+using DashworksTestAutomation.Pages.Evergreen.AdminDetailsPages;
 using DashworksTestAutomation.Utils;
 using TechTalk.SpecFlow;
 
@@ -25,7 +26,7 @@ namespace DashworksTestAutomation.Steps.Dashworks
         [When(@"User click ""(.*)"" link on the Admin page")]
         public void WhenUserClickLinkOnTheAdminPage(string adminLinks)
         {
-            var menu = _driver.NowAt<AdminPage>();
+            var menu = _driver.NowAt<AdminLeftHandMenu>();
 
             switch (adminLinks)
             {
@@ -53,19 +54,19 @@ namespace DashworksTestAutomation.Steps.Dashworks
             switch (adminLinks)
             {
                 case "Projects":
-                    var projectsPage = _driver.NowAt<AdminPage>();
+                    var projectsPage = _driver.NowAt<AdminLeftHandMenu>();
                     StringAssert.Contains(projectsPage.ProjectsPage.Text.ToLower(), adminLinks.ToLower(),
                         "Incorrect page is displayed to user");
                     break;
 
                 case "Teams":
-                    var teamsPage = _driver.NowAt<AdminPage>();
+                    var teamsPage = _driver.NowAt<AdminLeftHandMenu>();
                     StringAssert.Contains(teamsPage.TeamsPage.Text.ToLower(), adminLinks.ToLower(),
                         "Incorrect page is displayed to user");
                     break;
 
                 case "Buckets":
-                    var bucketsPage = _driver.NowAt<AdminPage>();
+                    var bucketsPage = _driver.NowAt<AdminLeftHandMenu>();
                     StringAssert.Contains(bucketsPage.BucketsPage.Text.ToLower(), adminLinks.ToLower(),
                         "Incorrect page is displayed to user");
                     break;
@@ -79,21 +80,94 @@ namespace DashworksTestAutomation.Steps.Dashworks
         [When(@"User clicks Create Team button")]
         public void WhenUserClicksCreateTeamButton()
         {
-            var page = _driver.NowAt<AdminPage>();
-            _driver.WaitWhileControlIsNotDisplayed<AdminPage>(() => page.CreateTeamButton);
+            var page = _driver.NowAt<TeamsPage>();
+            _driver.WaitWhileControlIsNotDisplayed<TeamsPage>(() => page.CreateTeamButton);
             page.CreateTeamButton.Click();
             Logger.Write("Create Team button was clicked");
+        }
+
+        [Then(@"Delete ""(.*)"" Team in the Administration")]
+        public void ThenDeleteTeamInTheAdministration(string teamName)
+        {
+            DatabaseHelper.ExecuteQuery($"delete from[PM].[dbo].[Teams] where[TeamName] = '{teamName}'");
         }
 
         [Then(@"Create Team page should be displayed to the user")]
         public void ThenCreateTeamPageShouldBeDisplayedToTheUser()
         {
-            var page = _driver.NowAt<AdminPage>();
-            Assert.IsTrue(filterElement.FiltersPanel.Displayed(), "Actions panel was not displayed");
-            Logger.Write("Actions Panel panel is visible");
+            var page = _driver.NowAt<TeamsPage>();
+            Assert.IsTrue(page.TeamNameField.Displayed(), "Create Team page was not displayed");
+            Logger.Write("Create Team page is visible");
         }
 
+        [Then(@"User enters ""(.*)"" in the Team Name field")]
+        public void ThenUserEntersInTheTeamNameField(string teamText)
+        {
+            var teamName = _driver.NowAt<TeamsPage>();
+            teamName.TeamNameField.SendKeys(teamText);
+        }
 
+        [Then(@"User enters ""(.*)"" in the Team Description field")]
+        public void ThenUserEntersInTheTeamDescriptionField(string descriptionText)
+        {
+            var teamName = _driver.NowAt<TeamsPage>();
+            teamName.TeamDescriptionField.SendKeys(descriptionText);
+        }
+
+        [When(@"User clicks Create Team button on the Create Team page")]
+        public void ThenUserClicksCreateTeamButtonOnTheCreateTeamPage()
+        {
+            var page = _driver.NowAt<TeamsPage>();
+            _driver.WaitWhileControlIsNotDisplayed<TeamsPage>(() => page.CreateTeamButton);
+            page.CreateTeamButton.Click();
+            Logger.Write("Create Team button was clicked");
+        }
+        
+        [Then(@"Success message is displayed and contains ""(.*)"" text on the Admin page")]
+        public void ThenSuccessMessageIsDisplayedAndContainsTextOnTheAdminPage(string text)
+        {
+            var page = _driver.NowAt<TeamsPage>();
+            _driver.WaitWhileControlIsNotDisplayed<TeamsPage>(() => page.SuccessMessageTeamPage);
+            StringAssert.Contains(text, page.SuccessMessageTeamPage.Text, "Success Message is not displayed");
+        }
+
+        [Then(@"Error message with ""(.*)"" text is displayed on the Admin page")]
+        public void ThenErrorMessageWithTextIsDisplayedOnTheAdminPage(string text)
+        {
+            var page = _driver.NowAt<TeamsPage>();
+            _driver.WaitWhileControlIsNotDisplayed<TeamsPage>(() => page.ErrorMessageTeamPage);
+            Assert.AreEqual(text, page.ErrorMessageTeamPage.Text, "Error Message is not displayed");
+        }
+
+        [When(@"User clicks Create Bucket button")]
+        public void WhenUserClicksCreateBucketButton()
+        {
+            var page = _driver.NowAt<BucketsPage>();
+            _driver.WaitWhileControlIsNotDisplayed<BucketsPage>(() => page.CreateBucketButton);
+            page.CreateBucketButton.Click();
+            Logger.Write("Create Bucket button was clicked");
+        }
+
+        [Then(@"Create Bucket page should be displayed to the user")]
+        public void ThenCreateBucketPageShouldBeDisplayedToTheUser()
+        {
+            var page = _driver.NowAt<BucketsPage>();
+            Assert.IsTrue(page.BucketNameField.Displayed(), "Create Bucket page was not displayed");
+            Logger.Write("Create Bucket page is visible");
+        }
+
+        [Then(@"Delete ""(.*)"" Project in the Administration")]
+        public void ThenDeleteProjectInTheAdministration(string p0)
+        {
+            ScenarioContext.Current.Pending();
+        }
+
+        [Then(@"Delete ""(.*)"" Bucket in the Administration")]
+        public void ThenDeleteBucketInTheAdministration(string p0)
+        {
+            ScenarioContext.Current.Pending();
+        }
     }
+
 
 }

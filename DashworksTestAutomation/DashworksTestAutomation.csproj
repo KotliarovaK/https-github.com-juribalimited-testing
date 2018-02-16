@@ -172,7 +172,10 @@
     <Compile Include="Helpers\HttpClientHelper.cs" />
     <Compile Include="Pages\EvergreenDashboardsPage.cs" />
     <Compile Include="Pages\Evergreen\ActionsElement.cs" />
-    <Compile Include="Pages\Evergreen\AdminDetailsPages\AdminPage.cs" />
+    <Compile Include="Pages\Evergreen\AdminDetailsPages\AdminLeftHandMenu.cs" />
+    <Compile Include="Pages\Evergreen\AdminDetailsPages\BucketsPage.cs" />
+    <Compile Include="Pages\Evergreen\AdminDetailsPages\TeamsPage.cs" />
+    <Compile Include="Pages\Evergreen\AdminDetailsPages\ProjectsPage.cs" />
     <Compile Include="Pages\Evergreen\ApplicationsPage.cs" />
     <Compile Include="Pages\Evergreen\BaseDashboardPage.cs" />
     <Compile Include="Pages\Evergreen\ColumnsElement.cs" />
