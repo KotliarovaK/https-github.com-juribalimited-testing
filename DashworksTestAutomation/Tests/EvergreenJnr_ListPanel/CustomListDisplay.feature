@@ -42,7 +42,7 @@ Scenario: EvergreenJnr_DevicesList_CheckThatCustomListCreationBlockIsNotDisplaye
 	| SelectedCheckboxes  |
 	| None                |
 	Then "Windows7Mi: Category" filter is added to the list
-	When User create custom list with "TestListF20A85" name
+	When User create dynamic list with "TestListF20A85" name on "Devices" page
 	Then "TestListF20A85" list is displayed to user
 	When User clicks the Filters button
 	Then Filters panel is displayed to the user
@@ -65,7 +65,7 @@ Scenario: EvergreenJnr_DevicesList_CheckThatCustomListCreationBlockIsNotDisplaye
 	| SelectedCheckboxes  |
 	| None                |
 	Then "Windows7Mi: Category" filter is added to the list
-	When User create "dynamic" list with "TestListE63B7D" name on "Devices" page
+	When User create dynamic list with "TestListE63B7D" name on "Devices" page
 	Then "TestListE63B7D" list is displayed to user
 	When User clicks the Filters button
 	Then Filters panel is displayed to the user
