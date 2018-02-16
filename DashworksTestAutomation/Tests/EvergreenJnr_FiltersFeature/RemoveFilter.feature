@@ -88,8 +88,8 @@ Scenario: EvergreenJnr_MailboxesList_CheckThatFiltersIsResetAndDataOnTheGridUpda
 	| SelectedCheckboxes |
 	| London             |
 	Then "City" filter is added to the list
-	And "1,000" rows are displayed in the agGrid
+	And "3,294" rows are displayed in the agGrid
 	And table data is filtered correctly
 	When User have reset all filters
-	Then "4,835" rows are displayed in the agGrid
+	Then "14,784" rows are displayed in the agGrid
 	And "City" filter is removed from filters

@@ -45,7 +45,7 @@ Scenario: EvergreenJnr_MailboxesList_CheckSortByDateFunctionality
 	| EmailMigra: Scheduled date |
 	Then User enters SearchCriteria into the agGrid Search Box and the correct NumberOfRows are returned
 	| SearchCriteria | NumberOfRows |
-	| Sonja          | 1            |
+	| Sonja          | 4            |
 	When User click on 'Created Date' column header
 	Then data in table is sorted by 'Created Date' column in descending order
 	When User click on 'Created Date' column header

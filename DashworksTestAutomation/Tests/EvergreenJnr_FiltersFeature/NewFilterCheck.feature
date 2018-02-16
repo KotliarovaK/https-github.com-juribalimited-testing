@@ -115,7 +115,7 @@ Examples:
 	| Devices      | 17,225    |
 	| Users        | 41,335    |
 	| Applications | 2,223     |
-	| Mailboxes    | 4,835     |
+	| Mailboxes    | 14,784    |
 
 @Evergreen @Applications @Evergreen_FiltersFeature @NewFilterCheck @DAS10512 @Not_Run
 Scenario Outline: EvergreenJnr_ApplicationsList_CheckThatApplicationReadinessFilterIsAddedToTheList

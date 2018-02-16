@@ -644,7 +644,7 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_FiltersFeature
         [NUnit.Framework.TestCaseAttribute("Devices", "ComputerSc: Request Type", "Request Type A", "132", "Hostname", "46DIQRWG3BM6K9Z", "ComputerSc: Request Type is Request Type A", new string[0])]
         [NUnit.Framework.TestCaseAttribute("Applications", "Havoc(BigD: Hide from End Users", "UNKNOWN", "1,156", "Application", "Microsoft Silverlight 2 SDK (2.0.31005.0)", "Havoc(BigD: Hide from End Users is Unknown", new string[0])]
         [NUnit.Framework.TestCaseAttribute("Applications", "MigrationP: Core Application", "FALSE", "220", "Application", "Quartus II Programmer 4.0", "MigrationP: Core Application is false", new string[0])]
-        [NUnit.Framework.TestCaseAttribute("Mailboxes", "EmailMigra: Device Type", "Not Identified", "80", "Email Address", "alex.cristea@juriba.com", "EmailMigra: Device Type is Not Identified", new string[0])]
+        [NUnit.Framework.TestCaseAttribute("Mailboxes", "EmailMigra: Device Type", "Not Identified", "729", "Email Address", "alex.cristea@juriba.com", "EmailMigra: Device Type is Not Identified", new string[0])]
         public virtual void EvergreenJnr_AllLists_CheckThatFilterIsRestoredCorrectlyAfterLeavingThePageAndGoingBackViaTheBrowserBackButtonForCheckboxesFilters(string listName, string filterName, string filterValue, string rowsCount, string columnName, string objectName, string text, string[] exampleTags)
         {
             System.Exception lastException = null;
@@ -1524,7 +1524,6 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_FiltersFeature
         [NUnit.Framework.CategoryAttribute("EvergreenJnr_FilterFeature")]
         [NUnit.Framework.CategoryAttribute("FilterFunctionality")]
         [NUnit.Framework.CategoryAttribute("DAS11741")]
-        [NUnit.Framework.CategoryAttribute("Not_Run")]
         public virtual void EvergreenJnr_DevicesList_CheckThatErrorsDoNotAppearAndFullDataIsDisplayedWhenAddingDifferentFilters()
         {
             System.Exception lastException = null;
@@ -1559,8 +1558,7 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_FiltersFeature
                         "Devices",
                         "EvergreenJnr_FilterFeature",
                         "FilterFunctionality",
-                        "DAS11741",
-                        "Not_Run"});
+                        "DAS11741"});
             this.ScenarioSetup(scenarioInfo);
             this.FeatureBackground();
             testRunner.When("User clicks \"Devices\" on the left-hand menu", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");

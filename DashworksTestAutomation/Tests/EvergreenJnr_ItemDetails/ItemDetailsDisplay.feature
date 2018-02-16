@@ -6,7 +6,7 @@ Background: Pre-Conditions
 	Given User is logged in to the Evergreen
 	Then Evergreen Dashboards page should be displayed to the user
 
-@Evergreen @AllLists @EvergreenJnr_ItemDetails @ItemDetailsDisplay @DAS10438
+@Evergreen @AllLists @EvergreenJnr_ItemDetails @ItemDetailsDisplay @DAS10438 @DAS11983 @Not_Run
 Scenario Outline: EvergreenJnr_AllLists_AllEmptyFieldsInItemDetailsAreDisplayedAsUnknown
 	When User clicks "<PageName>" on the left-hand menu
 	Then "<PageName>" list should be displayed to the user
@@ -29,7 +29,7 @@ Scenario: EvergreenJnr_MailboxesList_CheckThat404ErrorIsNotDisplayedOccurringWhe
 	When User click content from "Email Address" column
 	Then "No mailbox owner found for this mailbox" text is displayed for "Mailbox Owner" section
 
-@Evergreen @AllLists @EvergreenJnr_ItemDetails @ItemDetailsDisplay @DAS10438 @API
+@Evergreen @AllLists @EvergreenJnr_ItemDetails @ItemDetailsDisplay @DAS10438 @DAS11983 @API @Not_Run
 Scenario Outline: EvergreenJnr_AllLists_AllEmptyFieldsInItemDetailsAreDisplayedAsUnknownOnAPI
 	When I perform test request to the "<PageName>" API and get "<ItemName>" item summary for "<SectionName>" section
 	Then "Unknown" text displayed for "<SectionName>" empty fields
@@ -295,3 +295,14 @@ Scenario: EvergreenJnr_DevicesLists_CheckThatDataOfColumnsIsDisplayedInTheCustom
 	| ColumnName |
 	| Label      |
 	| Value      |
+
+@Evergreen @Mailboxes @EvergreenJnr_ItemDetails @ItemDetailsDisplay @DAS11479 @Not_Run
+Scenario: EvergreenJnr_MailboxesLists_CheckThatLinksAndImageItemAreDisplayedInTheNameAndDisplayNameColumns
+	When User clicks "Mailboxes" on the left-hand menu
+	Then "Mailboxes" list should be displayed to the user
+	When User click content from "Email Address" column
+	And User navigates to the "Users" tab
+	Then User closes "Users" section on the Details Page
+	When User open "Mailbox Permissions" section
+	Then Image item from "Name" column is displayed to the user
+	Then Links from "Name" column is displayed to the user

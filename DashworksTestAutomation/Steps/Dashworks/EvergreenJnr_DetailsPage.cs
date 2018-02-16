@@ -6,6 +6,7 @@ using NUnit.Framework;
 using OpenQA.Selenium.Remote;
 using System.Collections.Generic;
 using System.Linq;
+using OpenQA.Selenium;
 using TechTalk.SpecFlow;
 
 namespace DashworksTestAutomation.Steps.Dashworks
@@ -47,6 +48,30 @@ namespace DashworksTestAutomation.Steps.Dashworks
         {
             var detailsPage = _driver.NowAt<DetailsPage>();
             Assert.IsTrue(detailsPage.ItemDetailsContainer.Displayed(), "Item content is not displayed");
+        }
+
+        [Then(@"Image item from ""(.*)"" column is displayed to the user")]
+        public void ThenImageItemFromColumnIsDisplayedToTheUser(string columnName)
+        {
+            var tableElement = _driver.NowAtWithoutWait<BaseDashboardPage>();
+            var content = _driver.FindElements(By.XPath(".//div[@col-id='userName'][@role='gridcell']"));
+            foreach (var element in content)
+            {
+                var image = element.FindElement(By.XPath(".//i"));
+                Assert.IsTrue(image.Displayed(), "Image item is not found");
+            }
+        }
+
+        [Then(@"Links from ""(.*)"" column is displayed to the user")]
+        public void ThenLinksFromColumnIsDisplayedToTheUser(string columnName)
+        {
+            var tableElement = _driver.NowAtWithoutWait<BaseDashboardPage>();
+            var content = _driver.FindElements(By.XPath(".//div[@col-id='userName'][@role='gridcell']"));
+            foreach (var element in content)
+            {
+                var text = element.FindElement(By.XPath(".//a"));
+                Assert.IsTrue(text.GetAttribute("href") != String.Empty);
+            }
         }
 
         [Then(@"expanded section is displayed to the User")]
@@ -211,7 +236,6 @@ namespace DashworksTestAutomation.Steps.Dashworks
         public void ThenStringFilterIsDisplayedForColumnOnTheDetailsPage(string columnName)
         {
             var detailsPage = _driver.NowAt<ApplicationsDetailsTabsMenu>();
-            var t = Convert.ToBoolean(detailsPage.GetFilterByColumnName(columnName).GetAttribute("readonly"));
             Assert.IsFalse(Convert.ToBoolean(detailsPage.GetFilterByColumnName(columnName).GetAttribute("readonly")));
         }
 

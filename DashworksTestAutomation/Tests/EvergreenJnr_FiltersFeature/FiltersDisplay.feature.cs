@@ -1109,11 +1109,11 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_FiltersFeature
         [NUnit.Framework.CategoryAttribute("FiltersDisplay")]
         [NUnit.Framework.CategoryAttribute("DAS10696")]
         [NUnit.Framework.TestCaseAttribute("Equals", "08 Mar 2016", "3", "is", new string[0])]
-        [NUnit.Framework.TestCaseAttribute("Does not equal", "08 Mar 2016", "4,832", "is not", new string[0])]
-        [NUnit.Framework.TestCaseAttribute("Before", "08 Mar 2016", "33", "is before", new string[0])]
-        [NUnit.Framework.TestCaseAttribute("After", "08 Mar 2016", "4,799", "is after", new string[0])]
-        [NUnit.Framework.TestCaseAttribute("Empty", "", "", "is empty", new string[0])]
-        [NUnit.Framework.TestCaseAttribute("Not empty", "", "4,835", "is not empty", new string[0])]
+        [NUnit.Framework.TestCaseAttribute("Does not equal", "08 Mar 2016", "14,781", "is not", new string[0])]
+        [NUnit.Framework.TestCaseAttribute("Before", "08 Mar 2016", "4,699", "is before", new string[0])]
+        [NUnit.Framework.TestCaseAttribute("After", "08 Mar 2016", "10,076", "is after", new string[0])]
+        [NUnit.Framework.TestCaseAttribute("Empty", "", "6", "is empty", new string[0])]
+        [NUnit.Framework.TestCaseAttribute("Not empty", "", "14,778", "is not empty", new string[0])]
         public virtual void EvergreenJnr_MailboxesList_CheckThatFilterOperatorsIsCorrectInFilterInfo(string operatorValue, string filterOption, string rowsCount, string operatorValueInInfo, string[] exampleTags)
         {
             System.Exception lastException = null;
@@ -2549,14 +2549,16 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_FiltersFeature
             TechTalk.SpecFlow.Table table68 = new TechTalk.SpecFlow.Table(new string[] {
                         "SelectedCheckboxes"});
             table68.AddRow(new string[] {
-                        "Exchange 2003"});
-            testRunner.When("User add \"Mailbox Platform\" filter where type is \"Equals\" with added column and f" +
-                    "ollowing checkboxes:", ((string)(null)), table68, "When ");
-            testRunner.Then("\"Mailbox Platform\" filter is added to the list", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+                        "FALSE"});
+            table68.AddRow(new string[] {
+                        "TRUE"});
+            testRunner.When("User add \"Enabled\" filter where type is \"Does not equal\" with added column and fo" +
+                    "llowing checkboxes:", ((string)(null)), table68, "When ");
+            testRunner.Then("\"Enabled\" filter is added to the list", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
             testRunner.And("message \'No mailboxes found\' is displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
             testRunner.When("User navigates to the \"All Mailboxes\" list", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
             testRunner.Then("\"Mailboxes\" list should be displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-            testRunner.And("\"4,835\" rows are displayed in the agGrid", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+            testRunner.And("\"14,784\" rows are displayed in the agGrid", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
             this.ScenarioCleanup();
         }
         
@@ -3128,15 +3130,14 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_FiltersFeature
         [NUnit.Framework.CategoryAttribute("EvergreenJnr_FilterFeature")]
         [NUnit.Framework.CategoryAttribute("FiltersDisplay")]
         [NUnit.Framework.CategoryAttribute("DAS11829")]
-        [NUnit.Framework.CategoryAttribute("Not_Run")]
         [NUnit.Framework.TestCaseAttribute("Devices", "Department Name", "Add Department Name column", new string[0])]
-        [NUnit.Framework.TestCaseAttribute("Devices", "Full Department Path", "Add Full Department Path column", new string[0])]
+        [NUnit.Framework.TestCaseAttribute("Devices", "Department Full Path", "Add Department Full Path column", new string[0])]
         [NUnit.Framework.TestCaseAttribute("Devices", "Owner Department Name", "Add Owner Department Name column", new string[0])]
-        [NUnit.Framework.TestCaseAttribute("Devices", "OwnerFullDepartmentPath", "Add OwnerFullDepartmentPath column", new string[0])]
+        [NUnit.Framework.TestCaseAttribute("Devices", "Owner Department Full Path", "Add Owner Department Full Path column", new string[0])]
         [NUnit.Framework.TestCaseAttribute("Mailboxes", "Department Name", "Add Department Name column", new string[0])]
-        [NUnit.Framework.TestCaseAttribute("Mailboxes", "Full Department Path", "Add Full Department Path column", new string[0])]
+        [NUnit.Framework.TestCaseAttribute("Mailboxes", "Department Full Path", "Add Department Full Path column", new string[0])]
         [NUnit.Framework.TestCaseAttribute("Mailboxes", "Owner Department Name", "Add Owner Department Name column", new string[0])]
-        [NUnit.Framework.TestCaseAttribute("Mailboxes", "OwnerFullDepartmentPath", "Add OwnerFullDepartmentPath column", new string[0])]
+        [NUnit.Framework.TestCaseAttribute("Mailboxes", "Owner Department Full Path", "Add Owner Department Full Path column", new string[0])]
         public virtual void EvergreenJnr_AllLists_CheckThatAddColumnCheckboxIsDisplayedForOrganisationCategoryFilters(string listName, string filterName, string selectedCheckboxes, string[] exampleTags)
         {
             System.Exception lastException = null;
@@ -3170,8 +3171,7 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_FiltersFeature
                     "AllLists",
                     "EvergreenJnr_FilterFeature",
                     "FiltersDisplay",
-                    "DAS11829",
-                    "Not_Run"};
+                    "DAS11829"};
             if ((exampleTags != null))
             {
                 @__tags = System.Linq.Enumerable.ToArray(System.Linq.Enumerable.Concat(@__tags, exampleTags));
