@@ -183,7 +183,7 @@ Scenario: EvergreenJnr_DevicesList_Search_CheckThatMultiSelectFilterSearchFieldH
 	And User enters "CheckTheResetButton" text in Search field at selected Lookup Filter
 	Then reset button in Search field at selected Filter is displayed
 
-@Evergreen @Devices @EvergreenJnr_Search @Search @DAS11350 @DAS11951 @Delete_Newly_Created_List @Not_Run
+@Evergreen @Devices @EvergreenJnr_Search @Search @DAS11350 @DAS11951 @Delete_Newly_Created_List
 Scenario: EvergreenJnr_DevicesList_Search_CheckThatSearchFieldHaveResetButtonAtListPanel 
 	When User clicks "Devices" on the left-hand menu
 	Then "Devices" list should be displayed to the user
