@@ -405,8 +405,8 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_GridActions
         [NUnit.Framework.DescriptionAttribute("EvergreenJnr_AllList_CheckThatTheDataInTheTablesAreSortedAppropriate")]
         [NUnit.Framework.CategoryAttribute("Evergreen")]
         [NUnit.Framework.CategoryAttribute("AllLists")]
-        [NUnit.Framework.CategoryAttribute("EvergreenJnr_BaseDashboardPage")]
-        [NUnit.Framework.CategoryAttribute("BaseDashboardPage")]
+        [NUnit.Framework.CategoryAttribute("EvergreenJnr_GridActions")]
+        [NUnit.Framework.CategoryAttribute("TableSorting")]
         [NUnit.Framework.CategoryAttribute("DAS11951")]
         [NUnit.Framework.TestCaseAttribute("Devices", "Hostname", new string[0])]
         [NUnit.Framework.TestCaseAttribute("Users", "Domain", new string[0])]
@@ -443,8 +443,8 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_GridActions
             string[] @__tags = new string[] {
                     "Evergreen",
                     "AllLists",
-                    "EvergreenJnr_BaseDashboardPage",
-                    "BaseDashboardPage",
+                    "EvergreenJnr_GridActions",
+                    "TableSorting",
                     "DAS11951"};
             if ((exampleTags != null))
             {
