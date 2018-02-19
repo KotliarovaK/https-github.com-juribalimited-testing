@@ -76,7 +76,6 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_ListDetails
         [NUnit.Framework.CategoryAttribute("DAS10880")]
         [NUnit.Framework.CategoryAttribute("DAS11951")]
         [NUnit.Framework.CategoryAttribute("Delete_Newly_Created_List")]
-        [NUnit.Framework.CategoryAttribute("Not_Run")]
         [NUnit.Framework.TestCaseAttribute("Devices", "Hostname", new string[0])]
         [NUnit.Framework.TestCaseAttribute("Users", "Username", new string[0])]
         [NUnit.Framework.TestCaseAttribute("Applications", "Application", new string[0])]
@@ -116,8 +115,7 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_ListDetails
                     "ListDetailsFunctionality",
                     "DAS10880",
                     "DAS11951",
-                    "Delete_Newly_Created_List",
-                    "Not_Run"};
+                    "Delete_Newly_Created_List"};
             if ((exampleTags != null))
             {
                 @__tags = System.Linq.Enumerable.ToArray(System.Linq.Enumerable.Concat(@__tags, exampleTags));
@@ -217,7 +215,6 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_ListDetails
         [NUnit.Framework.CategoryAttribute("DAS10880")]
         [NUnit.Framework.CategoryAttribute("DAS11951")]
         [NUnit.Framework.CategoryAttribute("Delete_Newly_Created_List")]
-        [NUnit.Framework.CategoryAttribute("Not_Run")]
         [NUnit.Framework.TestCaseAttribute("Devices", "Hostname", "All Devices", new string[0])]
         [NUnit.Framework.TestCaseAttribute("Users", "Username", "All Users", new string[0])]
         [NUnit.Framework.TestCaseAttribute("Applications", "Application", "All Applications", new string[0])]
@@ -257,8 +254,7 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_ListDetails
                     "ListDetailsFunctionality",
                     "DAS10880",
                     "DAS11951",
-                    "Delete_Newly_Created_List",
-                    "Not_Run"};
+                    "Delete_Newly_Created_List"};
             if ((exampleTags != null))
             {
                 @__tags = System.Linq.Enumerable.ToArray(System.Linq.Enumerable.Concat(@__tags, exampleTags));
@@ -430,7 +426,6 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_ListDetails
         [NUnit.Framework.CategoryAttribute("DAS10880")]
         [NUnit.Framework.CategoryAttribute("DAS11951")]
         [NUnit.Framework.CategoryAttribute("Delete_Newly_Created_List")]
-        [NUnit.Framework.CategoryAttribute("Not_Run")]
         [NUnit.Framework.TestCaseAttribute("Devices", "Hostname", new string[0])]
         [NUnit.Framework.TestCaseAttribute("Users", "Username", new string[0])]
         [NUnit.Framework.TestCaseAttribute("Applications", "Application", new string[0])]
@@ -470,8 +465,7 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_ListDetails
                     "ListDetailsFunctionality",
                     "DAS10880",
                     "DAS11951",
-                    "Delete_Newly_Created_List",
-                    "Not_Run"};
+                    "Delete_Newly_Created_List"};
             if ((exampleTags != null))
             {
                 @__tags = System.Linq.Enumerable.ToArray(System.Linq.Enumerable.Concat(@__tags, exampleTags));
@@ -571,7 +565,6 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_ListDetails
         [NUnit.Framework.CategoryAttribute("DAS11493")]
         [NUnit.Framework.CategoryAttribute("DAS11951")]
         [NUnit.Framework.CategoryAttribute("Delete_Newly_Created_List")]
-        [NUnit.Framework.CategoryAttribute("Not_Run")]
         [NUnit.Framework.TestCaseAttribute("Devices", "Hostname", new string[0])]
         [NUnit.Framework.TestCaseAttribute("Users", "Username", new string[0])]
         [NUnit.Framework.TestCaseAttribute("Applications", "Application", new string[0])]
@@ -611,8 +604,7 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_ListDetails
                     "ListDetailsFunctionality",
                     "DAS11493",
                     "DAS11951",
-                    "Delete_Newly_Created_List",
-                    "Not_Run"};
+                    "Delete_Newly_Created_List"};
             if ((exampleTags != null))
             {
                 @__tags = System.Linq.Enumerable.ToArray(System.Linq.Enumerable.Concat(@__tags, exampleTags));
