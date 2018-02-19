@@ -123,15 +123,15 @@ namespace DashworksTestAutomation.Steps.Dashworks
             Logger.Write("Create Team button was clicked");
         }
         
-        [Then(@"Success message is displayed and contains ""(.*)"" text on the Admin page")]
-        public void ThenSuccessMessageIsDisplayedAndContainsTextOnTheAdminPage(string text)
+        [Then(@"Success message is displayed and contains ""(.*)"" text on the Teams page")]
+        public void ThenSuccessMessageIsDisplayedAndContainsTextOnTheTeamsPage(string text)
         {
             var page = _driver.NowAt<TeamsPage>();
             _driver.WaitWhileControlIsNotDisplayed<TeamsPage>(() => page.SuccessMessageTeamPage);
             StringAssert.Contains(text, page.SuccessMessageTeamPage.Text, "Success Message is not displayed");
         }
 
-        [Then(@"Error message with ""(.*)"" text is displayed on the Admin page")]
+        [Then(@"Error message with ""(.*)"" text is displayed on the Teams page")]
         public void ThenErrorMessageWithTextIsDisplayedOnTheAdminPage(string text)
         {
             var page = _driver.NowAt<TeamsPage>();
@@ -156,18 +156,69 @@ namespace DashworksTestAutomation.Steps.Dashworks
             Logger.Write("Create Bucket page is visible");
         }
 
+        [Then(@"User enters ""(.*)"" in the Bucket Name field")]
+        public void ThenUserEntersInTheBucketNameField(string bucketText)
+        {
+            var bucketName = _driver.NowAt<BucketsPage>();
+            bucketName.BucketNameField.SendKeys(bucketText);
+        }
+
+        [Then(@"User select ""(.*)"" team in Select a team dropdown")]
+        public void ThenUserSelectTeamInSelectATeamDropdown(string userOption)
+        {
+            var createBucketElement = _driver.NowAt<BucketsPage>();
+            _driver.WaitWhileControlIsNotDisplayed<BucketsPage>(() => createBucketElement.SelectTeamDropdown);
+            _driver.SelectCustomSelectbox(createBucketElement.SelectTeamDropdown, userOption);
+        }
+
+        [When(@"User clicks Create button on the Create Bucket page")]
+        public void WhenUserClicksCreateButtonOnTheCreateBucketPage()
+        {
+            var page = _driver.NowAt<BucketsPage>();
+            _driver.WaitWhileControlIsNotDisplayed<BucketsPage>(() => page.CreateButton);
+            page.CreateButton.Click();
+            Logger.Write("Create Team button was clicked");
+        }
+
+        [Then(@"Success message is displayed and contains ""(.*)"" text on the Buckets page")]
+        public void ThenSuccessMessageIsDisplayedAndContainsTextOnTheBucketsPage(string text)
+        {
+            var page = _driver.NowAt<BucketsPage>();
+            _driver.WaitWhileControlIsNotDisplayed<BucketsPage>(() => page.SuccessMessageBucketsPage);
+            StringAssert.Contains(text, page.SuccessMessageBucketsPage.Text, "Success Message is not displayed");
+        }
+
+        [Then(@"Error message with ""(.*)"" text is displayed on the Buckets page")]
+        public void ThenErrorMessageWithTextIsDisplayedOnTheBucketsPage(string text)
+        {
+            var page = _driver.NowAt<BucketsPage>();
+            _driver.WaitWhileControlIsNotDisplayed<BucketsPage>(() => page.ErrorMessageBucketsPage);
+            Assert.AreEqual(text, page.ErrorMessageBucketsPage.Text, "Error Message is not displayed");
+        }
+
         [Then(@"Delete ""(.*)"" Project in the Administration")]
-        public void ThenDeleteProjectInTheAdministration(string p0)
+        public void ThenDeleteProjectInTheAdministration(string projectName)
         {
-            ScenarioContext.Current.Pending();
+            var projectId = DatabaseHelper.ExecuteReader($"SELECT [ProjectID] FROM[PM].[dbo].[Projects] where[ProjectName] = '{projectName}'", 0)[0];
+            DatabaseHelper.ExecuteQuery($"delete from[PM].[dbo].[EvergreenProjects] where[ProjectId] = '{projectId}'");
+            DatabaseHelper.ExecuteQuery($"delete from[PM].[dbo].[ProjectGroups] where[ProjectID] = '{projectId}'");
+            DatabaseHelper.ExecuteQuery($"delete from[PM].[dbo].[SelfServiceScreenValueLanguage] where[ProjectId] = '{projectId}'");
+            DatabaseHelper.ExecuteQuery($"delete from[PM].[dbo].[SelfService] where[ProjectID] = '{projectId}'");
+            DatabaseHelper.ExecuteQuery($"delete from[PM].[dbo].[SelfServiceScreenValues] where[ProjectID] = '{projectId}'");
+            DatabaseHelper.ExecuteQuery($"delete from[PM].[dbo].[Projects] where[ProjectID] = '{projectId}'");
+            DatabaseHelper.ExecuteQuery($"delete from[PM].[dbo].[Projects] where[ProjectID] = '{projectId}'");
         }
 
-        [Then(@"Delete ""(.*)"" Bucket in the Administration")]
-        public void ThenDeleteBucketInTheAdministration(string p0)
-        {
-            ScenarioContext.Current.Pending();
-        }
+        //[Then(@"Delete ""(.*)"" Bucket in the Administration")]
+        //public void ThenDeleteBucketInTheAdministration(string p0)
+        //{
+        //    //delete from[PM].[dbo].[EvergreenProjects] where[ProjectId] = '54'
+        //    //delete from[PM].[dbo].[ProjectGroups] where[ProjectID] = '54'
+        //    //delete from[PM].[dbo].[SelfServiceScreenValueLanguage] where[ProjectId] = '54'
+        //    //delete from[PM].[dbo].[SelfService] where[ProjectID] = '54'
+        //    //delete from[PM].[dbo].[SelfServiceScreenValues] where[ProjectID] = '54'
+        //    //delete from[PM].[dbo].[Projects] where[ProjectID] = '54'
+        //    //delete from[PM].[dbo].[Projects] where[ProjectID] = '54'
+        //}
     }
-
-
 }
