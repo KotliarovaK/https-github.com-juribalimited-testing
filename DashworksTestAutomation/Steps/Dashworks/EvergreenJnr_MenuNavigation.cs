@@ -4,6 +4,7 @@ using DashworksTestAutomation.Utils;
 using NUnit.Framework;
 using OpenQA.Selenium.Remote;
 using System;
+using DashworksTestAutomation.Pages.Evergreen.AdminDetailsPages;
 using TechTalk.SpecFlow;
 
 namespace DashworksTestAutomation.Steps.Dashworks
@@ -87,5 +88,23 @@ namespace DashworksTestAutomation.Steps.Dashworks
 
             Logger.Write($"'{listPage}' list is visible");
         }
+
+
+        [When(@"User clicks Admin on the left-hand menu")]
+        public void WhenUserClicksAdminOnTheLeft_HandMenu()
+        {
+            var menu = _driver.NowAt<LeftHandMenuElement>();
+            menu.Admin.Click();
+            Logger.Write("Admin page was clicked");
+        }
+
+        [Then(@"Admin page should be displayed to the user")]
+        public void ThenAdminPageShouldBeDisplayedToTheUser()
+        {
+            var page = _driver.NowAt<AdminLeftHandMenu>();
+            Assert.IsTrue(page.AdminSubMenu.Displayed(), "Admin page was not displayed");
+            Logger.Write("Admin page is visible");
+        }
+
     }
 }
