@@ -78,6 +78,7 @@ namespace DashworksTestAutomation.Steps.Dashworks
         public void WhenUserEntersInAssociationSearchField(string searchedText)
         {
             var filterElement = _driver.NowAt<FiltersElement>();
+            filterElement.AssociationSearchTextbox.Click();
             _driver.WaitWhileControlIsNotDisplayed<FiltersElement>(() => filterElement.LookupFilterSearchTextbox);
             filterElement.AssociationSearchTextbox.Clear();
             filterElement.AssociationSearchTextbox.SendKeys(searchedText);

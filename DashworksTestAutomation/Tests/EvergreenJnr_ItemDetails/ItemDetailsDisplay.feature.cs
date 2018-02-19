@@ -75,6 +75,7 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_ItemDetails
         [NUnit.Framework.CategoryAttribute("ItemDetailsDisplay")]
         [NUnit.Framework.CategoryAttribute("DAS10438")]
         [NUnit.Framework.CategoryAttribute("DAS11983")]
+        [NUnit.Framework.CategoryAttribute("Not_Run")]
         [NUnit.Framework.TestCaseAttribute("Mailboxes", "azuresync3@juriba1.onmicrosoft.com", "Email Address", new string[0])]
         public virtual void EvergreenJnr_AllLists_AllEmptyFieldsInItemDetailsAreDisplayedAsUnknown(string pageName, string searchCriteria, string columnName, string[] exampleTags)
         {
@@ -110,7 +111,8 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_ItemDetails
                     "EvergreenJnr_ItemDetails",
                     "ItemDetailsDisplay",
                     "DAS10438",
-                    "DAS11983"};
+                    "DAS11983",
+                    "Not_Run"};
             if ((exampleTags != null))
             {
                 @__tags = System.Linq.Enumerable.ToArray(System.Linq.Enumerable.Concat(@__tags, exampleTags));
@@ -190,6 +192,7 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_ItemDetails
         [NUnit.Framework.CategoryAttribute("DAS10438")]
         [NUnit.Framework.CategoryAttribute("DAS11983")]
         [NUnit.Framework.CategoryAttribute("API")]
+        [NUnit.Framework.CategoryAttribute("Not_Run")]
         [NUnit.Framework.TestCaseAttribute("Mailboxes", "azuresync3@juriba1.onmicrosoft.com", "Department and Location", new string[0])]
         [NUnit.Framework.TestCaseAttribute("Users", "ABW1509426", "Department and Location", new string[0])]
         [NUnit.Framework.TestCaseAttribute("Devices", "01BQIYGGUW5PRP6", "Department and Location", new string[0])]
@@ -228,7 +231,8 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_ItemDetails
                     "ItemDetailsDisplay",
                     "DAS10438",
                     "DAS11983",
-                    "API"};
+                    "API",
+                    "Not_Run"};
             if ((exampleTags != null))
             {
                 @__tags = System.Linq.Enumerable.ToArray(System.Linq.Enumerable.Concat(@__tags, exampleTags));

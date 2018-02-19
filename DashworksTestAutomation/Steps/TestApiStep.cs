@@ -8,6 +8,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Net;
 using System.Text.RegularExpressions;
+using System.Threading;
 using DashworksTestAutomation.DTO;
 using DashworksTestAutomation.Extensions;
 using DashworksTestAutomation.Helpers;
@@ -201,8 +202,14 @@ namespace DashworksTestAutomation.Steps
 
             _driver.Navigate().Refresh();
 
-            var selectList = _driver.NowAt<BaseDashboardPage>();
-            selectList.GetListElementByName(listName).Click();
+            var content = response.Content;
+
+            var responseContent = JsonConvert.DeserializeObject<JObject>(content);
+            var listId = responseContent["listId"].ToString();
+            var url = $"{UrlProvider.EvergreenUrl}#/{pageName.ToLower()}?$listid={listId}";
+            
+            _driver.Navigate().GoToUrl(url);
+            _driver.WaitForDataLoading();
         }
 
         private string GetQueryStringFromUrl(string url, string pageName)
