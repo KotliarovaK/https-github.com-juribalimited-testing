@@ -334,11 +334,11 @@ Scenario Outline: EvergreenJnr_MailboxesList_CheckThatFilterOperatorsIsCorrectIn
 Examples: 
 	| operatorValue  | filterOption | rowsCount | operatorValueInInfo |
 	| Equals         | 08 Mar 2016  | 3         | is                  |
-	| Does not equal | 08 Mar 2016  | 4,832     | is not              |
-	| Before         | 08 Mar 2016  | 33        | is before           |
-	| After          | 08 Mar 2016  | 4,799     | is after            |
-	| Empty          |              |           | is empty            |
-	| Not empty      |              | 4,835     | is not empty        |
+	| Does not equal | 08 Mar 2016  | 14,781    | is not              |
+	| Before         | 08 Mar 2016  | 4,699     | is before           |
+	| After          | 08 Mar 2016  | 10,076    | is after            |
+	| Empty          |              | 6         | is empty            |
+	| Not empty      |              | 14,778    | is not empty        |
 
  @Evergreen @Devices @Evergreen_FiltersFeature @FiltersDisplay @DAS10696 @DAS11090
 Scenario Outline: EvergreenJnr_DevicesList_CheckThatFilterOperatorsIsCorrectInFilterInfoDatetime
@@ -650,7 +650,7 @@ Scenario: EvergreenJnr_DevicesList_CheckThatSpaceAfterCommasInTheFiltersContaine
 	Then "CPU Count" filter is added to the list
 	And "(Compliance = Unknown, Red, Amber or Green) OR (Import != A01 SMS (Spoof)) OR (Department Code ~ ABC) OR (Department Code !~ ACV) OR (Department Code BEGINS WITH AXZ) OR (Department Code ENDS WITH YQA) OR (Department Code = EMPTY) OR (Department Code != EMPTY) OR (Boot Up Date < 14 Dec 2017) OR (Boot Up Date > 03 Dec 2017) OR (CPU Count > 66) OR (CPU Count >= 12) OR (CPU Count < 31) OR (CPU Count <= 13)" text is displayed in filter container
 
-@Evergreen @Devices @Evergreen_FiltersFeature @FiltersDisplay @DAS10790 @Delete_Newly_Created_List
+@Evergreen @Devices @Evergreen_FiltersFeature @FiltersDisplay @DAS10790 @Delete_Newly_Created_List @Not_Run
 Scenario: EvergreenJnr_DevicesList_CheckThatApplicationFiltersBeingAppliedAgainstTheDevicesListAreRestoredCorrectlyAndAreShownInTheFiltersPanel
 	When User clicks "Devices" on the left-hand menu
 	Then "Devices" list should be displayed to the user
@@ -738,14 +738,15 @@ Scenario: EvergreenJnr_MailboxesList_CheckThatRelevantDataSetBeDisplayedAfterNav
 	Then "Mailboxes" list should be displayed to the user
 	When User clicks the Filters button
 	Then Filters panel is displayed to the user
-	When User add "Mailbox Platform" filter where type is "Equals" with added column and following checkboxes:
+	When User add "Enabled" filter where type is "Does not equal" with added column and following checkboxes:
 	| SelectedCheckboxes |
-	| Exchange 2003      |
-	Then "Mailbox Platform" filter is added to the list
+	| FALSE              |
+	| TRUE               |
+	Then "Enabled" filter is added to the list
 	And message 'No mailboxes found' is displayed to the user
 	When User navigates to the "All Mailboxes" list
 	Then "Mailboxes" list should be displayed to the user
-	And "4,835" rows are displayed in the agGrid
+	And "14,784" rows are displayed in the agGrid
 
 @Evergreen @Devices @Evergreen_FiltersFeature @FiltersDisplay @DAS11467 @Delete_Newly_Created_List
 Scenario: EvergreenJnr_DevicesList_CheckThatMultipleFilterCriteriaToApplicationNameDisplayedCorrectlyWhenUsingTheContainsOperator

@@ -92,7 +92,7 @@ namespace DashworksTestAutomation.Pages.Evergreen.DetailsTabsMenu
         public IWebElement GetFilterByColumnName(string columnName)
         {
             var allFilters =
-                Driver.FindElements(By.XPath(".//div[@class='ag-header-row']//input[@ref='eColumnFloatingFilter']"));
+                Driver.FindElements(By.XPath(".//div[@class='aggrid-input-styled']"));
             return allFilters[GetColumnNumberByName(columnName) - 1];
         }
 

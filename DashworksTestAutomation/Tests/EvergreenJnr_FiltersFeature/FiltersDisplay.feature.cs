@@ -1109,11 +1109,11 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_FiltersFeature
         [NUnit.Framework.CategoryAttribute("FiltersDisplay")]
         [NUnit.Framework.CategoryAttribute("DAS10696")]
         [NUnit.Framework.TestCaseAttribute("Equals", "08 Mar 2016", "3", "is", new string[0])]
-        [NUnit.Framework.TestCaseAttribute("Does not equal", "08 Mar 2016", "4,832", "is not", new string[0])]
-        [NUnit.Framework.TestCaseAttribute("Before", "08 Mar 2016", "33", "is before", new string[0])]
-        [NUnit.Framework.TestCaseAttribute("After", "08 Mar 2016", "4,799", "is after", new string[0])]
-        [NUnit.Framework.TestCaseAttribute("Empty", "", "", "is empty", new string[0])]
-        [NUnit.Framework.TestCaseAttribute("Not empty", "", "4,835", "is not empty", new string[0])]
+        [NUnit.Framework.TestCaseAttribute("Does not equal", "08 Mar 2016", "14,781", "is not", new string[0])]
+        [NUnit.Framework.TestCaseAttribute("Before", "08 Mar 2016", "4,699", "is before", new string[0])]
+        [NUnit.Framework.TestCaseAttribute("After", "08 Mar 2016", "10,076", "is after", new string[0])]
+        [NUnit.Framework.TestCaseAttribute("Empty", "", "6", "is empty", new string[0])]
+        [NUnit.Framework.TestCaseAttribute("Not empty", "", "14,778", "is not empty", new string[0])]
         public virtual void EvergreenJnr_MailboxesList_CheckThatFilterOperatorsIsCorrectInFilterInfo(string operatorValue, string filterOption, string rowsCount, string operatorValueInInfo, string[] exampleTags)
         {
             System.Exception lastException = null;
@@ -2177,6 +2177,7 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_FiltersFeature
         [NUnit.Framework.CategoryAttribute("FiltersDisplay")]
         [NUnit.Framework.CategoryAttribute("DAS10790")]
         [NUnit.Framework.CategoryAttribute("Delete_Newly_Created_List")]
+        [NUnit.Framework.CategoryAttribute("Not_Run")]
         public virtual void EvergreenJnr_DevicesList_CheckThatApplicationFiltersBeingAppliedAgainstTheDevicesListAreRestoredCorrectlyAndAreShownInTheFiltersPanel()
         {
             System.Exception lastException = null;
@@ -2212,7 +2213,8 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_FiltersFeature
                         "Evergreen_FiltersFeature",
                         "FiltersDisplay",
                         "DAS10790",
-                        "Delete_Newly_Created_List"});
+                        "Delete_Newly_Created_List",
+                        "Not_Run"});
             this.ScenarioSetup(scenarioInfo);
             this.FeatureBackground();
             testRunner.When("User clicks \"Devices\" on the left-hand menu", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
@@ -2549,14 +2551,16 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_FiltersFeature
             TechTalk.SpecFlow.Table table68 = new TechTalk.SpecFlow.Table(new string[] {
                         "SelectedCheckboxes"});
             table68.AddRow(new string[] {
-                        "Exchange 2003"});
-            testRunner.When("User add \"Mailbox Platform\" filter where type is \"Equals\" with added column and f" +
-                    "ollowing checkboxes:", ((string)(null)), table68, "When ");
-            testRunner.Then("\"Mailbox Platform\" filter is added to the list", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+                        "FALSE"});
+            table68.AddRow(new string[] {
+                        "TRUE"});
+            testRunner.When("User add \"Enabled\" filter where type is \"Does not equal\" with added column and fo" +
+                    "llowing checkboxes:", ((string)(null)), table68, "When ");
+            testRunner.Then("\"Enabled\" filter is added to the list", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
             testRunner.And("message \'No mailboxes found\' is displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
             testRunner.When("User navigates to the \"All Mailboxes\" list", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
             testRunner.Then("\"Mailboxes\" list should be displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-            testRunner.And("\"4,835\" rows are displayed in the agGrid", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+            testRunner.And("\"14,784\" rows are displayed in the agGrid", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
             this.ScenarioCleanup();
         }
         

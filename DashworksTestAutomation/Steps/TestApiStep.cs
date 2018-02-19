@@ -178,8 +178,8 @@ namespace DashworksTestAutomation.Steps
             }
         }
 
-        [When(@"User create ""(.*)"" list with ""(.*)"" name on ""(.*)"" page")]
-        public void WhenUserCreateListWithNameOnPage(string listType, string listName, string pageName)
+        [When(@"User create dynamic list with ""(.*)"" name on ""(.*)"" page")]
+        public void WhenUserCreateDynamicListWithNameOnPage(string listName, string pageName)
         {
             var queryString = GetQueryStringFromUrl(_driver.Url, pageName);
             var requestUri = $"{UrlProvider.RestClientBaseUrl}lists/{pageName.ToLower()}";
@@ -189,7 +189,7 @@ namespace DashworksTestAutomation.Steps
             request.AddParameter("Origin", UrlProvider.Url.TrimEnd('/'));
             request.AddParameter("Referer", UrlProvider.EvergreenUrl);
             request.AddParameter("listName", listName);
-            request.AddParameter("listType", listType);
+            request.AddParameter("listType", "dynamic");
             request.AddParameter("queryString", queryString);
             request.AddParameter("sharedAccessType", "Private");
             request.AddParameter("userId", DatabaseWorker.GetUserIdByLogin(_user.UserName));

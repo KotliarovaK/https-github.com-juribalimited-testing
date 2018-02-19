@@ -236,7 +236,6 @@ namespace DashworksTestAutomation.Steps.Dashworks
         public void ThenStringFilterIsDisplayedForColumnOnTheDetailsPage(string columnName)
         {
             var detailsPage = _driver.NowAt<ApplicationsDetailsTabsMenu>();
-            var t = Convert.ToBoolean(detailsPage.GetFilterByColumnName(columnName).GetAttribute("readonly"));
             Assert.IsFalse(Convert.ToBoolean(detailsPage.GetFilterByColumnName(columnName).GetAttribute("readonly")));
         }
 

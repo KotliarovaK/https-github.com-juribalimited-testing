@@ -258,7 +258,7 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_GridActions
                         "NumberOfRows"});
             table6.AddRow(new string[] {
                         "Sonja",
-                        "1"});
+                        "4"});
             testRunner.Then("User enters SearchCriteria into the agGrid Search Box and the correct NumberOfRow" +
                     "s are returned", ((string)(null)), table6, "Then ");
             testRunner.When("User click on \'Created Date\' column header", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
