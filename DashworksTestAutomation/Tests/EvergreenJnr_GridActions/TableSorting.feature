@@ -82,3 +82,19 @@ Scenario: EvergreenJnr_DevicesList_CheckThat500ErrorIsNotDisplayedWhenSortingOwn
 	When User click on 'Owner Compliance' column header
 	Then data in table is sorted by 'Owner Compliance' column in ascending order
 	Then "17,225" rows are displayed in the agGrid
+	
+@Evergreen @AllLists @EvergreenJnr_GridActions @TableSorting @DAS11951
+Scenario Outline: EvergreenJnr_AllList_CheckThatTheDataInTheTablesAreSortedAppropriate
+	When User clicks "<ListName>" on the left-hand menu
+	Then "<ListName>" list should be displayed to the user
+	When User click on '<ColumnName>' column header
+	Then data in table is sorted by '<ColumnName>' column in ascending order
+	When User click on '<ColumnName>' column header
+	Then data in table is sorted by '<ColumnName>' column in descending order
+
+	Examples: 
+	| ListName     | ColumnName         |
+	| Devices      | Hostname           |
+	| Users        | Domain             |
+	| Applications | Version            |
+	| Mailboxes    | Owner Display Name |
