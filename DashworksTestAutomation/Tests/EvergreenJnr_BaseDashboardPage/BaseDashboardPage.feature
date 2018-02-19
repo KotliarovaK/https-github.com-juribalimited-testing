@@ -18,19 +18,3 @@ Examples:
 	| Users        |
 	| Applications |
 	| Mailboxes    |
-
-@Evergreen @AllLists @EvergreenJnr_BaseDashboardPage @BaseDashboardPage @DAS11951
-Scenario Outline: EvergreenJnr_AllList_CheckThatTheDataInTheTablesAreSortedAppropriate
-	When User clicks "<ListName>" on the left-hand menu
-	Then "<ListName>" list should be displayed to the user
-	When User click on '<ColumnName>' column header
-	Then data in table is sorted by '<ColumnName>' column in ascending order
-	When User click on '<ColumnName>' column header
-	Then data in table is sorted by '<ColumnName>' column in descending order
-
-	Examples: 
-	| ListName     | ColumnName         |
-	| Devices      | Hostname           |
-	| Users        | Domain             |
-	| Applications | Version            |
-	| Mailboxes    | Owner Display Name |
