@@ -35,7 +35,7 @@ namespace DashworksTestAutomation.Pages.Evergreen
         public IWebElement FilterSearchTextbox { get; set; }
 
         [FindsBy(How = How.XPath,
-            Using = ".//input[@class='mat-input-element mat-form-field-autofill-control ng-untouched ng-pristine ng-valid']")]
+            Using = ".//div[contains(text(),'ASSOCIATION')]/../following-sibling::div//input")]
         public IWebElement AssociationSearchTextbox { get; set; }
 
         [FindsBy(How = How.XPath, Using = ".//div[contains(@class,'filter-category ng-star-inserted')]")]
