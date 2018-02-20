@@ -103,7 +103,7 @@ Scenario: EvergreenJnr_UsersList_CheckTheColumnCategoriesUpdatesAfterAddingColum
 	Then "Users" list should be displayed to the user
 	When User click on 'Domain' column header
 	Then data in table is sorted by 'Domain' column in ascending order
-	When User create custom list with "DynamicList" name
+	When User create dynamic list with "DynamicList" name on "Users" page
 	Then "DynamicList" list is displayed to user
 	When User clicks the Columns button
 	Then Columns panel is displayed to the user
@@ -158,7 +158,7 @@ Scenario: EvergreenJnr_MailboxesList_CheckTheColumnCategoriesUpdatesAfterAddingC
 	Then "Mailboxes" list should be displayed to the user
 	When User click on 'Email Address' column header
 	Then data in table is sorted by 'Email Address' column in ascending order
-	When User create custom list with "DynamicList" name
+	When User create dynamic list with "DynamicList" name on "Mailboxes" page
 	Then "DynamicList" list is displayed to user
 	When User clicks the Columns button
 	Then Columns panel is displayed to the user
