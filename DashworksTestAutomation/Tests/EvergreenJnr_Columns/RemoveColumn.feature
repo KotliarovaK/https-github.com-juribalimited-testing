@@ -11,7 +11,7 @@ Scenario: EvergreenJnr_DevicesList_CheckThat500ErrorPageIsNotDisplayedAfterRemov
 	When User add following columns using URL to the "Devices" page:
 	| ColumnName |
 	| Device Key |
-	When User create custom list with "RemovingSortedColumnInCustomList" name
+	When User create dynamic list with "RemovingSortedColumnInCustomList" name on "Devices" page
 	Then "RemovingSortedColumnInCustomList" list is displayed to user
 	When User clicks the Columns button
 	Then Columns panel is displayed to the user
@@ -42,7 +42,7 @@ Scenario: EvergreenJnr_DevicesList_CheckThat500ErrorPageIsNotDisplayedAfterRemov
 	When User add following columns using URL to the "Devices" page:
 	| ColumnName |
 	| Build Date |
-	When User create custom list with "TestList474460" name
+	When User create dynamic list with "TestList474460" name on "Devices" page
 	Then "TestList474460" list is displayed to user
 	When User clicks the Columns button
 	Then Columns panel is displayed to the user
