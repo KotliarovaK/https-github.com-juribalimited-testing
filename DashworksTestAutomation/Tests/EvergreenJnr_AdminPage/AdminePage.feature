@@ -59,3 +59,27 @@ Scenario: EvergreenJnr_AdminPage_CheckThatCreateButtonIsDisabledForEmptyProjectN
 	And User enters " " in the Project Name field
 	#And User select "All Devices" in the Scope Project dropdown
 	And Create Project button is disabled
+
+@Evergreen @Admin @EvergreenJnr_AdminPage @AdminPage @DAS11726
+Scenario: EvergreenJnr_AdminPage_CheckThatCreateButtonIsDisabledForEmptyBucketName
+	When User clicks Admin on the left-hand menu
+	Then Admin page should be displayed to the user
+	When User click "Buckets" link on the Admin page
+	Then "Buckets" page should be displayed to the user
+	When User clicks Create Bucket button
+	Then Create Bucket page should be displayed to the user
+	And User enters " " in the Bucket Name field
+	And User select "Admin IT" team in the Select a team dropdown
+	Then Create Bucket button is disabled
+
+@Evergreen @Admin @EvergreenJnr_AdminPage @AdminPage @DAS11726
+Scenario: EvergreenJnr_AdminPage_CheckThatCreateButtonIsDisabledForEmptyTeamName
+	When User clicks Admin on the left-hand menu
+	Then Admin page should be displayed to the user
+	When User click "Teams" link on the Admin page
+	Then "Teams" page should be displayed to the user
+	When User clicks Create Team button
+	Then Create Team page should be displayed to the user
+	And User enters " " in the Team Name field
+	And User enters "test" in the Team Description field
+	Then Create Team button is disabled
