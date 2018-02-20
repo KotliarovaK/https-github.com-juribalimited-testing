@@ -1,4 +1,4 @@
-﻿@retry:1
+﻿@retry:0
 Feature: CustomListDisplay
 	Runs Custom List Creation block related tests
 
@@ -65,7 +65,8 @@ Scenario: EvergreenJnr_DevicesList_CheckThatCustomListCreationBlockIsNotDisplaye
 	| SelectedCheckboxes  |
 	| None                |
 	Then "Windows7Mi: Category" filter is added to the list
-	When User create dynamic list with "TestListE63B7D" name on "Devices" page
+	#When User create dynamic list with "TestListE63B7D" name on "Devices" page
+	When User create custom list with "TestListE63B7D" name
 	Then "TestListE63B7D" list is displayed to user
 	When User clicks the Filters button
 	Then Filters panel is displayed to the user
