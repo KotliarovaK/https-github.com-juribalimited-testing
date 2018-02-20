@@ -245,5 +245,13 @@ namespace DashworksTestAutomation.Steps.Dashworks
             var detailsPage = _driver.NowAt<DetailsPage>();
             Assert.AreEqual(state, detailsPage.IsFieldPresent(fieldName), $"Incorrect display state for {fieldName}");
         }
+
+        [Then(@"Empty rows are displayed for the expanded section")]
+        public void ThenEmptyRowsAreDisplayedForTheExpandedSection()
+        {
+            var detailsPage = _driver.NowAt<DetailsPage>();
+            Assert.IsTrue(String.IsNullOrEmpty(detailsPage.TableRowDetails.Text), "Rows are not empty");
+        }
+
     }
 }

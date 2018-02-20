@@ -306,3 +306,13 @@ Scenario: EvergreenJnr_MailboxesLists_CheckThatLinksAndImageItemAreDisplayedInTh
 	When User open "Mailbox Permissions" section
 	Then Image item from "Name" column is displayed to the user
 	Then Links from "Name" column is displayed to the user
+
+@Evergreen @Mailboxes @EvergreenJnr_ItemDetails @ItemDetailsDisplay @DAS11983
+Scenario: EvergreenJnr_MailboxesLists_CheckThatRowsInTheTableAreEmptyIfTheDataIsUnknown
+	When User clicks "Users" on the left-hand menu
+	Then "Users" list should be displayed to the user
+	When User perform search by "$231000-3AC04R8AR431"
+	And User click content from "Username" column
+	Then User closes "AD Object" section on the Details Page
+	When User open "Department and Location" section
+	Then Empty rows are displayed for the expanded section
