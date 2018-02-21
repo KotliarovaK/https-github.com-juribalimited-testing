@@ -245,5 +245,14 @@ namespace DashworksTestAutomation.Steps.Dashworks
             var detailsPage = _driver.NowAt<DetailsPage>();
             Assert.AreEqual(state, detailsPage.IsFieldPresent(fieldName), $"Incorrect display state for {fieldName}");
         }
+
+        [Then(@"Empty rows are displayed if the data is unknown")]
+        public void ThenEmptyRowsAreDisplayedIfTheDataIsUnknown()
+
+        {
+            var detailsPage = _driver.NowAt<DetailsPage>();
+            StringAssert.DoesNotContain("Unknown", detailsPage.TableRowDetails.Text, "Success Message is not displayed");
+        }
+
     }
 }
