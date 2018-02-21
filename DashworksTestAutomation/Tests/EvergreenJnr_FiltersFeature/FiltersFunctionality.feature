@@ -185,7 +185,7 @@ Examples:
 	| Applications | MigrationP: Core Application    | FALSE          | 220       | Application   | Quartus II Programmer 4.0                 | MigrationP: Core Application is false      |
 	| Mailboxes    | EmailMigra: Device Type         | Not Identified | 729       | Email Address | alex.cristea@juriba.com                   | EmailMigra: Device Type is Not Identified  |
 
-@Evergreen @AllLists @EvergreenJnr_FilterFeature @FilterFunctionality @DAS10977 @Not_Run
+@Evergreen @AllLists @EvergreenJnr_FilterFeature @FilterFunctionality @DAS10977
 Scenario Outline: EvergreenJnr_AllLists_CheckThatFilterIsRestoredCorrectlyAfterLeavingThePageAndGoingBackViaTheBrowserBackButtonForLookupFilters
 	When User clicks "<ListName>" on the left-hand menu
 	Then "<ListName>" list should be displayed to the user
@@ -202,9 +202,9 @@ Scenario Outline: EvergreenJnr_AllLists_CheckThatFilterIsRestoredCorrectlyAfterL
 	Then "<Text>" is displayed in added filter info
 
 Examples: 
-	| ListName     | FilterName                       | FilterValue      | RowsCount | ColumnName    | ObjectName              | Text                                            |
-	| Applications | Barry'sUse: Target App           | Python 2.2a4 (1) | 1         | Application   | Python 2.2a4            | Barry'sUse: Target App is Python 2.2a4 (1)      |
-	| Mailboxes    | EmailMigra: BT/QMM Switch Status | Not Started      | 80        | Email Address | alex.cristea@juriba.com | EmailMigra: BT/QMM Switch Status is Not Started |
+	| ListName     | FilterName                       | FilterValue            | RowsCount | ColumnName    | ObjectName              | Text                                             |
+	| Applications | Barry'sUse: Target App           | Python 2.2a4 (SMS_GEN) | 1         | Application   | Python 2.2a4            | Barry'sUse: Target App is Python 2.2a4 (SMS_GEN) |
+	| Mailboxes    | EmailMigra: BT/QMM Switch Status | Not Started            | 729       | Email Address | alex.cristea@juriba.com | EmailMigra: BT/QMM Switch Status is Not Started  |
 
 @Evergreen @Applications @EvergreenJnr_FilterFeature @FilterFunctionality @DAS10977
 Scenario: EvergreenJnr_ApplicationsList_CheckThatFilterIsRestoredCorrectlyAfterLeavingThePageAndGoingBackViaTheBrowserbackButtonForValuesFilters
