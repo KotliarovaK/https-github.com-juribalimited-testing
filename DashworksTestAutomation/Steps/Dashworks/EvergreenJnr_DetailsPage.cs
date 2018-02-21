@@ -168,8 +168,6 @@ namespace DashworksTestAutomation.Steps.Dashworks
             foreach (var row in table.Rows)
             {
                 var content = page.GetColumnContent(row["ColumnName"]);
-
-
                 //Check that at least 1 cells has some content
                 Assert.IsTrue(content.Select(string.IsNullOrEmpty).Count() > 0, "Newly added column is empty");
             }
@@ -245,5 +243,14 @@ namespace DashworksTestAutomation.Steps.Dashworks
             var detailsPage = _driver.NowAt<DetailsPage>();
             Assert.AreEqual(state, detailsPage.IsFieldPresent(fieldName), $"Incorrect display state for {fieldName}");
         }
+
+        [Then(@"Empty rows are displayed if the data is unknown")]
+        public void ThenEmptyRowsAreDisplayedIfTheDataIsUnknown()
+
+        {
+            var detailsPage = _driver.NowAt<DetailsPage>();
+            StringAssert.DoesNotContain("Unknown", detailsPage.TableRowDetails.Text, "Success Message is not displayed");
+        }
+
     }
 }

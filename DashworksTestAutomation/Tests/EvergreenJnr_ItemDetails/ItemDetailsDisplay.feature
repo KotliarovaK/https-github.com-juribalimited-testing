@@ -6,7 +6,7 @@ Background: Pre-Conditions
 	Given User is logged in to the Evergreen
 	Then Evergreen Dashboards page should be displayed to the user
 
-@Evergreen @AllLists @EvergreenJnr_ItemDetails @ItemDetailsDisplay @DAS10438 @DAS11983 @Not_Run
+@Evergreen @AllLists @EvergreenJnr_ItemDetails @ItemDetailsDisplay @DAS10438 @DAS11983
 Scenario Outline: EvergreenJnr_AllLists_AllEmptyFieldsInItemDetailsAreDisplayedAsUnknown
 	When User clicks "<PageName>" on the left-hand menu
 	Then "<PageName>" list should be displayed to the user
@@ -85,7 +85,7 @@ Examples:
 	| Mailboxes    | Email Address | Users        | Domain      | Key               | Key               |
 	| Mailboxes    | Email Address | Users        | Domain      | EvergreenObjectId | EvergreenObjectId |
 
-@Evergreen @AllLists @EvergreenJnr_ItemDetails @ItemDetailsDisplay @DAS11732 @Not_Run
+@Evergreen @AllLists @EvergreenJnr_ItemDetails @ItemDetailsDisplay @DAS11732
 Scenario Outline: EvergreenJnr_AllLists_CheckThatDataIsDisplayedAfterAddingColumns
 	When User clicks "<PageName>" on the left-hand menu
 	Then "<PageName>" list should be displayed to the user
@@ -108,7 +108,7 @@ Scenario Outline: EvergreenJnr_AllLists_CheckThatDataIsDisplayedAfterAddingColum
 Examples: 
 	| PageName     | ItemName      | TabName      | ExpandedSectionName | SectionName         | ColumnName    | CheckboxName      | NewColumnName     |
 	| Devices      | Hostname      | Applications | Application Summary | Application Detail  | Application   | Application Key   | Application Key   |
-	| Devices      | Hostname      | Applications | Application Summary | Application Detail  | Application   | Advertisement     | Advertisement     |
+	| Devices      | Hostname      | Applications | Application Summary | Application Detail  | Application   | Advertisement Key | Advertisement Key |
 	| Devices      | Hostname      | Applications | Application Summary | Application Detail  | Application   | Group Key         | Group Key         |
 	| Devices      | Hostname      | Applications | Application Summary | Application Detail  | Application   | Collection Key    | Collection Key    |
 	| Devices      | Hostname      | Applications | Application Summary | Application Detail  | Application   | User Key          | User Key          |
@@ -306,3 +306,20 @@ Scenario: EvergreenJnr_MailboxesLists_CheckThatLinksAndImageItemAreDisplayedInTh
 	When User open "Mailbox Permissions" section
 	Then Image item from "Name" column is displayed to the user
 	Then Links from "Name" column is displayed to the user
+
+@Evergreen @AllLists @EvergreenJnr_ItemDetails @ItemDetailsDisplay @DAS11983
+Scenario Outline: EvergreenJnr_AllLists_CheckThatRowsInTheTableAreEmptyIfTheDataIsUnknown
+	When User clicks "<PageName>" on the left-hand menu
+	Then "<PageName>" list should be displayed to the user
+	When User perform search by "<SelectedName>"
+	And User click content from "<ColumnName>" column
+	And User navigates to the "Details" tab
+	Then User closes "<SectionName>" section on the Details Page
+	When User open "Department and Location" section
+	Then Empty rows are displayed if the data is unknown
+
+Examples:
+	| PageName  | SelectedName                     | ColumnName    | SectionName |
+	| Devices   | 001BAQXT6JWFPI                   | Hostname      | Device      |
+	| Users     | $231000-3AC04R8AR431             | Username      | AD Object   |
+	| Mailboxes | 000F977AC8824FE39B8@bclabs.local | Email Address | Mailbox     |
