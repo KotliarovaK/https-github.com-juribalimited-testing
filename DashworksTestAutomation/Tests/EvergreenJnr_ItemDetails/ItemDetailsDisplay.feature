@@ -37,7 +37,7 @@ Scenario Outline: EvergreenJnr_AllLists_AllEmptyFieldsInItemDetailsAreDisplayedA
 Examples: 
 	| PageName  | ItemName                           | SectionName             |
 	| Mailboxes | azuresync3@juriba1.onmicrosoft.com | Department and Location |
-	| Users     | ABW1509426                         | Department and Location |
+	| Users     | 00B5CCB89AD0404B965                | Department and Location |
 	| Devices   | 01BQIYGGUW5PRP6                    | Department and Location |
 
 @Evergreen @AllLists @EvergreenJnr_ItemDetails @ItemDetailsDisplay @DAS11478 @DAS11477 @DAS11476 @DAS11510 @API
