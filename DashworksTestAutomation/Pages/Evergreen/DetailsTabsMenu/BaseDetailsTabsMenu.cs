@@ -8,7 +8,7 @@ namespace DashworksTestAutomation.Pages.Evergreen.DetailsTabsMenu
 {
     internal class BaseDetailsTabsMenu : SeleniumBasePage
     {
-        [FindsBy(How = How.XPath, Using = ".//div[@class='mat-tab-labels']/div[contains(text(),'Details')]")]
+        [FindsBy(How = How.XPath, Using = ".//div[@class='mat-tab-label-content'][text()='Details']")]
         public IWebElement DevicesTab { get; set; }
 
         public override List<By> GetPageIdentitySelectors()
@@ -24,7 +24,7 @@ namespace DashworksTestAutomation.Pages.Evergreen.DetailsTabsMenu
         public void NavigateToTabByName(string tabName)
         {
             var tab = Driver.FindElement(
-                By.XPath($".//div[@class='mat-tab-labels']/div[contains(text(),'{tabName}')]"));
+                By.XPath($".//div[@class='mat-tab-label-content'][text()='{tabName}']"));
             tab.Click();
         }
     }
