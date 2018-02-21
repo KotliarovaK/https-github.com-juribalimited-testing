@@ -29,7 +29,7 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_ListPanel
         {
             testRunner = TechTalk.SpecFlow.TestRunnerManager.GetTestRunner();
             TechTalk.SpecFlow.FeatureInfo featureInfo = new TechTalk.SpecFlow.FeatureInfo(new System.Globalization.CultureInfo("en-US"), "CustomListDisplay", "\tRuns Custom List Creation block related tests", ProgrammingLanguage.CSharp, new string[] {
-                        "retry:1"});
+                        "retry:0"});
             testRunner.OnFeatureStart(featureInfo);
         }
         
@@ -78,7 +78,7 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_ListPanel
         public virtual void EvergreenJnr_DevicesList_CheckThatCustomListCreationBlockIsNotDisplayedWhenDeletingAFilterInDefaultList()
         {
             System.Exception lastException = null;
-            for (int i = 0; (i <= 1); i = (i + 1))
+            for (int i = 0; (i <= 0); i = (i + 1))
             {
                 try
                 {
@@ -90,7 +90,7 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_ListPanel
                     lastException = exc;
                 }
                 if (((i + 1) 
-                            <= 1))
+                            <= 0))
                 {
                     testRunner.OnScenarioEnd();
                 }
@@ -139,7 +139,7 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_ListPanel
         public virtual void EvergreenJnr_DevicesList_CheckThatCustomListCreationBlockIsNotDisplayedWhenResetingAFilterInDefaultList()
         {
             System.Exception lastException = null;
-            for (int i = 0; (i <= 1); i = (i + 1))
+            for (int i = 0; (i <= 0); i = (i + 1))
             {
                 try
                 {
@@ -151,7 +151,7 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_ListPanel
                     lastException = exc;
                 }
                 if (((i + 1) 
-                            <= 1))
+                            <= 0))
                 {
                     testRunner.OnScenarioEnd();
                 }
@@ -201,7 +201,7 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_ListPanel
         public virtual void EvergreenJnr_DevicesList_CheckThatCustomListCreationBlockIsNotDisplayedWhenDeletingAFilterInCustomList()
         {
             System.Exception lastException = null;
-            for (int i = 0; (i <= 1); i = (i + 1))
+            for (int i = 0; (i <= 0); i = (i + 1))
             {
                 try
                 {
@@ -213,7 +213,7 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_ListPanel
                     lastException = exc;
                 }
                 if (((i + 1) 
-                            <= 1))
+                            <= 0))
                 {
                     testRunner.OnScenarioEnd();
                 }
@@ -277,7 +277,7 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_ListPanel
         public virtual void EvergreenJnr_DevicesList_CheckThatCustomListCreationBlockIsNotDisplayedWhenResetingAFilterInCustomList()
         {
             System.Exception lastException = null;
-            for (int i = 0; (i <= 1); i = (i + 1))
+            for (int i = 0; (i <= 0); i = (i + 1))
             {
                 try
                 {
@@ -289,7 +289,7 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_ListPanel
                     lastException = exc;
                 }
                 if (((i + 1) 
-                            <= 1))
+                            <= 0))
                 {
                     testRunner.OnScenarioEnd();
                 }
@@ -323,7 +323,7 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_ListPanel
             testRunner.When("User add \"Windows7Mi: Category\" filter where type is \"Equals\" without added colum" +
                     "n and following checkboxes:", ((string)(null)), table5, "When ");
             testRunner.Then("\"Windows7Mi: Category\" filter is added to the list", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-            testRunner.When("User create dynamic list with \"TestListE63B7D\" name on \"Devices\" page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+            testRunner.When("User create custom list with \"TestListE63B7D\" name", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
             testRunner.Then("\"TestListE63B7D\" list is displayed to user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
             testRunner.When("User clicks the Filters button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
             testRunner.Then("Filters panel is displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
@@ -349,7 +349,7 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_ListPanel
         public virtual void EvergreenJnr_DevicesList_CheckThatSearchDoesNotTriggerNewCustomList()
         {
             System.Exception lastException = null;
-            for (int i = 0; (i <= 1); i = (i + 1))
+            for (int i = 0; (i <= 0); i = (i + 1))
             {
                 try
                 {
@@ -361,7 +361,7 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_ListPanel
                     lastException = exc;
                 }
                 if (((i + 1) 
-                            <= 1))
+                            <= 0))
                 {
                     testRunner.OnScenarioEnd();
                 }
@@ -408,7 +408,7 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_ListPanel
         public virtual void EvergreenJnr_DevicesList_CheckThatNewListCreatedMessageForStaticListIsDisplayed()
         {
             System.Exception lastException = null;
-            for (int i = 0; (i <= 1); i = (i + 1))
+            for (int i = 0; (i <= 0); i = (i + 1))
             {
                 try
                 {
@@ -420,7 +420,7 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_ListPanel
                     lastException = exc;
                 }
                 if (((i + 1) 
-                            <= 1))
+                            <= 0))
                 {
                     testRunner.OnScenarioEnd();
                 }
@@ -470,7 +470,7 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_ListPanel
         public virtual void EvergreenJnr_UsersList_CheckThatListsIsDisplayedInAlphabeticalOrder()
         {
             System.Exception lastException = null;
-            for (int i = 0; (i <= 1); i = (i + 1))
+            for (int i = 0; (i <= 0); i = (i + 1))
             {
                 try
                 {
@@ -482,7 +482,7 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_ListPanel
                     lastException = exc;
                 }
                 if (((i + 1) 
-                            <= 1))
+                            <= 0))
                 {
                     testRunner.OnScenarioEnd();
                 }
@@ -592,7 +592,7 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_ListPanel
         public virtual void EvergreenJnr_UsersList_CheckThatCustomListCreationBlockIsNotDisplayedWhenUserOpensActionsPanel()
         {
             System.Exception lastException = null;
-            for (int i = 0; (i <= 1); i = (i + 1))
+            for (int i = 0; (i <= 0); i = (i + 1))
             {
                 try
                 {
@@ -604,7 +604,7 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_ListPanel
                     lastException = exc;
                 }
                 if (((i + 1) 
-                            <= 1))
+                            <= 0))
                 {
                     testRunner.OnScenarioEnd();
                 }
@@ -657,7 +657,7 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_ListPanel
         public virtual void EvergreenJnr_UsersList_CheckThatCustomListCreationBlockIsNotDisplayedAfterStartTypingAListName()
         {
             System.Exception lastException = null;
-            for (int i = 0; (i <= 1); i = (i + 1))
+            for (int i = 0; (i <= 0); i = (i + 1))
             {
                 try
                 {
@@ -669,7 +669,7 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_ListPanel
                     lastException = exc;
                 }
                 if (((i + 1) 
-                            <= 1))
+                            <= 0))
                 {
                     testRunner.OnScenarioEnd();
                 }
@@ -722,7 +722,7 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_ListPanel
         public virtual void EvergreenJnr_UsersList_CheckThatSaveButtonIsInactiveInCustomListCreationBlock()
         {
             System.Exception lastException = null;
-            for (int i = 0; (i <= 1); i = (i + 1))
+            for (int i = 0; (i <= 0); i = (i + 1))
             {
                 try
                 {
@@ -734,7 +734,7 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_ListPanel
                     lastException = exc;
                 }
                 if (((i + 1) 
-                            <= 1))
+                            <= 0))
                 {
                     testRunner.OnScenarioEnd();
                 }
@@ -795,7 +795,7 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_ListPanel
         public virtual void EvergreenJnr_DevicesList_CheckTheSortOrderIsSavedForExistingListAndNotDeletedAfterClickingResetButtonInColumnsMenu()
         {
             System.Exception lastException = null;
-            for (int i = 0; (i <= 1); i = (i + 1))
+            for (int i = 0; (i <= 0); i = (i + 1))
             {
                 try
                 {
@@ -807,7 +807,7 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_ListPanel
                     lastException = exc;
                 }
                 if (((i + 1) 
-                            <= 1))
+                            <= 0))
                 {
                     testRunner.OnScenarioEnd();
                 }
@@ -888,7 +888,7 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_ListPanel
         public virtual void EvergreenJnr_DevicesList_CheckThatNewlySavedListIsCreatedWithTheCorrectColumnsAndSortsAndTheSameRowsOfData()
         {
             System.Exception lastException = null;
-            for (int i = 0; (i <= 1); i = (i + 1))
+            for (int i = 0; (i <= 0); i = (i + 1))
             {
                 try
                 {
@@ -900,7 +900,7 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_ListPanel
                     lastException = exc;
                 }
                 if (((i + 1) 
-                            <= 1))
+                            <= 0))
                 {
                     testRunner.OnScenarioEnd();
                 }
@@ -989,7 +989,7 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_ListPanel
         public virtual void EvergreenJnr_DevicesList_CheckThatSortingWillBeWorkForExistingSavedStaticLists()
         {
             System.Exception lastException = null;
-            for (int i = 0; (i <= 1); i = (i + 1))
+            for (int i = 0; (i <= 0); i = (i + 1))
             {
                 try
                 {
@@ -1001,7 +1001,7 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_ListPanel
                     lastException = exc;
                 }
                 if (((i + 1) 
-                            <= 1))
+                            <= 0))
                 {
                     testRunner.OnScenarioEnd();
                 }
@@ -1074,7 +1074,7 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_ListPanel
         public virtual void EvergreenJnr_DevicesList_CheckThatSortingWillBeWorkForExistingSavedDynamicLists()
         {
             System.Exception lastException = null;
-            for (int i = 0; (i <= 1); i = (i + 1))
+            for (int i = 0; (i <= 0); i = (i + 1))
             {
                 try
                 {
@@ -1086,7 +1086,7 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_ListPanel
                     lastException = exc;
                 }
                 if (((i + 1) 
-                            <= 1))
+                            <= 0))
                 {
                     testRunner.OnScenarioEnd();
                 }
@@ -1142,7 +1142,7 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_ListPanel
         public virtual void EvergreenJnr_DevicesList_CheckThatEditListMenuNotDisplayedForActiveList()
         {
             System.Exception lastException = null;
-            for (int i = 0; (i <= 1); i = (i + 1))
+            for (int i = 0; (i <= 0); i = (i + 1))
             {
                 try
                 {
@@ -1154,7 +1154,7 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_ListPanel
                     lastException = exc;
                 }
                 if (((i + 1) 
-                            <= 1))
+                            <= 0))
                 {
                     testRunner.OnScenarioEnd();
                 }
@@ -1252,7 +1252,7 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_ListPanel
         public virtual void EvergreenJnr_DevicesList_CheckThatEditListMenuNotDisplayedForDifferentFilterTypes()
         {
             System.Exception lastException = null;
-            for (int i = 0; (i <= 1); i = (i + 1))
+            for (int i = 0; (i <= 0); i = (i + 1))
             {
                 try
                 {
@@ -1264,7 +1264,7 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_ListPanel
                     lastException = exc;
                 }
                 if (((i + 1) 
-                            <= 1))
+                            <= 0))
                 {
                     testRunner.OnScenarioEnd();
                 }
@@ -1383,7 +1383,7 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_ListPanel
         public virtual void EvergreenJnr_DevicesList_CheckThatDatabaseErrorOccurringOccurringWhenAttemptingToSaveListsInEvergreenAreNotDisplayed()
         {
             System.Exception lastException = null;
-            for (int i = 0; (i <= 1); i = (i + 1))
+            for (int i = 0; (i <= 0); i = (i + 1))
             {
                 try
                 {
@@ -1395,7 +1395,7 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_ListPanel
                     lastException = exc;
                 }
                 if (((i + 1) 
-                            <= 1))
+                            <= 0))
                 {
                     testRunner.OnScenarioEnd();
                 }
@@ -1445,7 +1445,7 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_ListPanel
         public virtual void EvergreenJnr_DevicesLists_CheckThatAnotherUserCanEditsAndSavesASharedListWithSelectedColumnsWithoutErrors()
         {
             System.Exception lastException = null;
-            for (int i = 0; (i <= 1); i = (i + 1))
+            for (int i = 0; (i <= 0); i = (i + 1))
             {
                 try
                 {
@@ -1457,7 +1457,7 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_ListPanel
                     lastException = exc;
                 }
                 if (((i + 1) 
-                            <= 1))
+                            <= 0))
                 {
                     testRunner.OnScenarioEnd();
                 }
@@ -1577,7 +1577,7 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_ListPanel
         public virtual void EvergreenJnr_DevicesLists_CheckThatAnotherUserCanEditsAndSavesASharedListWithSelectedFiltersWithoutErrors()
         {
             System.Exception lastException = null;
-            for (int i = 0; (i <= 1); i = (i + 1))
+            for (int i = 0; (i <= 0); i = (i + 1))
             {
                 try
                 {
@@ -1589,7 +1589,7 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_ListPanel
                     lastException = exc;
                 }
                 if (((i + 1) 
-                            <= 1))
+                            <= 0))
                 {
                     testRunner.OnScenarioEnd();
                 }
@@ -1689,7 +1689,7 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_ListPanel
         public virtual void EvergreenJnr_DevicesLists_CheckThatAnotherUserCanEditsAndSavesASharedListWithSortingWithoutErrors()
         {
             System.Exception lastException = null;
-            for (int i = 0; (i <= 1); i = (i + 1))
+            for (int i = 0; (i <= 0); i = (i + 1))
             {
                 try
                 {
@@ -1701,7 +1701,7 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_ListPanel
                     lastException = exc;
                 }
                 if (((i + 1) 
-                            <= 1))
+                            <= 0))
                 {
                     testRunner.OnScenarioEnd();
                 }
@@ -1783,7 +1783,7 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_ListPanel
         public virtual void EvergreenJnr_DevicesLists_CheckThatUserIsNotAbleToCreateListsWithSameName()
         {
             System.Exception lastException = null;
-            for (int i = 0; (i <= 1); i = (i + 1))
+            for (int i = 0; (i <= 0); i = (i + 1))
             {
                 try
                 {
@@ -1795,7 +1795,7 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_ListPanel
                     lastException = exc;
                 }
                 if (((i + 1) 
-                            <= 1))
+                            <= 0))
                 {
                     testRunner.OnScenarioEnd();
                 }
@@ -1849,7 +1849,7 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_ListPanel
         public virtual void EvergreenJnr_DevicesLists_CheckThatTheSavedListWithOwnerDisplayNameFilterIsDisplayed(string operatorValues, string uRL, string[] exampleTags)
         {
             System.Exception lastException = null;
-            for (int i = 0; (i <= 1); i = (i + 1))
+            for (int i = 0; (i <= 0); i = (i + 1))
             {
                 try
                 {
@@ -1861,7 +1861,7 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_ListPanel
                     lastException = exc;
                 }
                 if (((i + 1) 
-                            <= 1))
+                            <= 0))
                 {
                     testRunner.OnScenarioEnd();
                 }
@@ -1933,7 +1933,7 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_ListPanel
         public virtual void EvergreenJnr_DevicesLists_CheckThatUserIsNotAbleToCreateListsWithLongNames()
         {
             System.Exception lastException = null;
-            for (int i = 0; (i <= 1); i = (i + 1))
+            for (int i = 0; (i <= 0); i = (i + 1))
             {
                 try
                 {
@@ -1945,7 +1945,7 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_ListPanel
                     lastException = exc;
                 }
                 if (((i + 1) 
-                            <= 1))
+                            <= 0))
                 {
                     testRunner.OnScenarioEnd();
                 }
@@ -2000,7 +2000,7 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_ListPanel
         public virtual void EvergreenJnr_AllListsLists_CheckThatAllListsNamesAreDisplayedCorrectly(string listName, string allListName, string[] exampleTags)
         {
             System.Exception lastException = null;
-            for (int i = 0; (i <= 1); i = (i + 1))
+            for (int i = 0; (i <= 0); i = (i + 1))
             {
                 try
                 {
@@ -2012,7 +2012,7 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_ListPanel
                     lastException = exc;
                 }
                 if (((i + 1) 
-                            <= 1))
+                            <= 0))
                 {
                     testRunner.OnScenarioEnd();
                 }

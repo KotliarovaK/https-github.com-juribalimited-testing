@@ -1,4 +1,4 @@
-﻿@retry:1
+﻿@retry:0
 Feature: FiltersDisplay
 	Runs Static Filters Display related tests
 
@@ -36,7 +36,7 @@ Scenario: EvergreenJnr_DevicesList_CheckThatDynamicFiltersAreClearedForStaticLis
 	Then "2" rows are displayed in the agGrid
 	Then Filters Button is disabled
 
-@Evergreen @Devices @EvergreenJnr_ListPanel @CustomListDisplay @DAS10978 @Delete_Newly_Created_List
+@Evergreen @Devices @EvergreenJnr_ListPanel @CustomListDisplay @DAS10978 @DAS12034 @Delete_Newly_Created_List @Not_Run
 Scenario: EvergreenJnr_DevicesList_CheckThatFiltersAndColumnsAreRestoredForSavedList
 	When User clicks "Devices" on the left-hand menu
 	Then "Devices" list should be displayed to the user
