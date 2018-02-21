@@ -8,15 +8,7 @@ Background: Pre-Conditions
 
 @Evergreen @Devices @EvergreenJnr_GridActions @TableSorting @DAS10612
 Scenario: EvergreenJnr_DevicesList_CheckSortByDateFunctionality
-	When User clicks "Devices" on the left-hand menu
-	Then "Devices" list should be displayed to the user
-	When User clicks the Columns button
-	Then Columns panel is displayed to the user
-	When ColumnName is entered into the search box and the selection is clicked
-	| ColumnName                   |
-	| Boot Up Date                 |
-	| Windows7Mi: Date & Time Task |
-	Then ColumnName is added to the list
+	When User add following columns using URL to the "Devices" page:
 	| ColumnName                   |
 	| Boot Up Date                 |
 	| Windows7Mi: Date & Time Task |
@@ -34,14 +26,7 @@ Scenario: EvergreenJnr_DevicesList_CheckSortByDateFunctionality
 
 @Evergreen @Applications @EvergreenJnr_GridActions @TableSorting @DAS10612
 Scenario: EvergreenJnr_ApplicationsList_CheckSortByDateFunctionality
-	When User clicks "Applications" on the left-hand menu
-	Then "Applications" list should be displayed to the user
-	When User clicks the Columns button
-	Then Columns panel is displayed to the user
-	When ColumnName is entered into the search box and the selection is clicked
-	| ColumnName                        |
-	| Barry'sUse: Package Delivery Date |
-	Then ColumnName is added to the list
+	When User add following columns using URL to the "Applications" page:
 	| ColumnName                        |
 	| Barry'sUse: Package Delivery Date |
 	Then User enters SearchCriteria into the agGrid Search Box and the correct NumberOfRows are returned
@@ -54,21 +39,13 @@ Scenario: EvergreenJnr_ApplicationsList_CheckSortByDateFunctionality
 	
 @Evergreen @Mailboxes @EvergreenJnr_GridActions @TableSorting @DAS10612
 Scenario: EvergreenJnr_MailboxesList_CheckSortByDateFunctionality
-	When User clicks "Mailboxes" on the left-hand menu
-	Then "Mailboxes" list should be displayed to the user
-	When User clicks the Columns button
-	Then Columns panel is displayed to the user
-	When ColumnName is entered into the search box and the selection is clicked
-	| ColumnName                 |
-	| Created Date               |
-	| EmailMigra: Scheduled date |
-	Then ColumnName is added to the list
+	When User add following columns using URL to the "Mailboxes" page:
 	| ColumnName                 |
 	| Created Date               |
 	| EmailMigra: Scheduled date |
 	Then User enters SearchCriteria into the agGrid Search Box and the correct NumberOfRows are returned
 	| SearchCriteria | NumberOfRows |
-	| Sonja            | 1          |
+	| Sonja          | 4            |
 	When User click on 'Created Date' column header
 	Then data in table is sorted by 'Created Date' column in descending order
 	When User click on 'Created Date' column header
@@ -80,15 +57,7 @@ Scenario: EvergreenJnr_MailboxesList_CheckSortByDateFunctionality
 
 @Evergreen @Users @EvergreenJnr_GridActions @TableSorting @DAS10612
 Scenario: EvergreenJnr_UsersList_CheckSortByDateFunctionality
-	When User clicks "Users" on the left-hand menu
-	Then "Users" list should be displayed to the user
-	When User clicks the Columns button
-	Then Columns panel is displayed to the user
-	When ColumnName is entered into the search box and the selection is clicked
-	| ColumnName                |
-	| Last Logon Date           |
-	| MigrationP: Migrated Date |
-	Then ColumnName is added to the list
+	When User add following columns using URL to the "Users" page:
 	| ColumnName                |
 	| Last Logon Date           |
 	| MigrationP: Migrated Date |
@@ -106,17 +75,26 @@ Scenario: EvergreenJnr_UsersList_CheckSortByDateFunctionality
 
 @Evergreen @Devices @EvergreenJnr_GridActions @TableSorting @DAS11568
 Scenario: EvergreenJnr_DevicesList_CheckThat500ErrorIsNotDisplayedWhenSortingOwnerComplianceColumnOnDevicesList
-	When User clicks "Devices" on the left-hand menu
-	Then "Devices" list should be displayed to the user
-	When User clicks the Columns button
-	Then Columns panel is displayed to the user
-	When ColumnName is entered into the search box and the selection is clicked
-	| ColumnName       |
-	| Owner Compliance |
-	Then ColumnName is added to the list
+	When User add following columns using URL to the "Devices" page:
 	| ColumnName       |
 	| Owner Compliance |
 	Then "17,225" rows are displayed in the agGrid
 	When User click on 'Owner Compliance' column header
 	Then data in table is sorted by 'Owner Compliance' column in ascending order
 	Then "17,225" rows are displayed in the agGrid
+	
+@Evergreen @AllLists @EvergreenJnr_GridActions @TableSorting @DAS11951
+Scenario Outline: EvergreenJnr_AllList_CheckThatTheDataInTheTablesAreSortedAppropriate
+	When User clicks "<ListName>" on the left-hand menu
+	Then "<ListName>" list should be displayed to the user
+	When User click on '<ColumnName>' column header
+	Then data in table is sorted by '<ColumnName>' column in ascending order
+	When User click on '<ColumnName>' column header
+	Then data in table is sorted by '<ColumnName>' column in descending order
+
+	Examples: 
+	| ListName     | ColumnName         |
+	| Devices      | Hostname           |
+	| Users        | Domain             |
+	| Applications | Version            |
+	| Mailboxes    | Owner Display Name |

@@ -1,10 +1,11 @@
 ﻿using System;
+using DashworksTestAutomation.Utils;
 
 namespace DashworksTestAutomation.Helpers
 {
     internal class ColumnNameToUrlConvertor
     {
-        public string Convert(string columnName)
+        public static string Convert(string pageName, string columnName)
         {
             switch (columnName)
             {
@@ -18,7 +19,29 @@ namespace DashworksTestAutomation.Helpers
                     return "directoryType";
 
                 case "Compliance":
-                    return "migrationRAG";
+                    switch (pageName)
+                    {
+                        case "Devices":
+                            return "migrationRAG";
+                        case "Applications":
+                            return "migrationRAG";
+                        case "Users":
+                            return "userMigrationRAG";
+                        default:
+                            throw new Exception($"'{pageName}' page not found in convertor");
+                    }
+
+                case "Created Date":
+                    return "createdDate";
+
+                case "Owner Email Address":
+                    return "ownerEMailAddress";
+
+                case "IP Address":
+                    return "networkCardIPAddress";
+
+                case "EmailMigra: Scheduled date":
+                    return "project_task_48_13127_2_Task";
 
                 case "Device Key":
                     return "computerKey";
@@ -46,6 +69,89 @@ namespace DashworksTestAutomation.Helpers
 
                 case "Windows7Mi: Technical Test":
                     return "project_task_1_480_1_Task";
+
+                case "Owner Department Full Path":
+                    return "ownerFullDepartmentPath";
+
+                case "Username":
+                    return "username";
+
+                case "Windows7Mi: Application Readiness":
+                    switch (pageName)
+                    {
+                        case "Devices":
+                            return "project_1_applicationColorStatus";
+                        case "Applications":
+                            return "project_1_applicationReadiness";
+                        default:
+                            throw new Exception($"'{pageName}' page not found in convertor");
+                    }
+
+                case "UserSchedu: Readiness":
+                    return "project_41_ragStatus";
+
+                case "Windows7Mi: Application Rationalisation":
+                    return "project_1_applicationRationalisation";
+
+                case "Windows7Mi: Core Application":
+                    return "project_1_coreApplication";
+
+                case "Windows7Mi: Hide from End Users":
+                    return "project_1_hideFromEndUsers";
+
+                case "Manufacturer":
+                    return "manufacturer";
+
+                case "Import":
+                    return "distributionHierarchy";
+
+                case "Build Date":
+                    return "buildDate";
+
+                case "Windows7Mi: Target App":
+                    return "project_1_targetApplication";
+
+                case "Babel(Engl: Target App":
+                    return "project_46_targetApplication";
+
+                case "Barry'sUse: Target App":
+                    return "project_38_targetApplication";
+
+                case "ComputerSc: Target App":
+                    return "project_40_targetApplication";
+
+                case "Havoc(BigD: Target App":
+                    return "project_43_targetApplication";
+
+                case "MigrationP: Target App":
+                    return "project_34_targetApplication";
+
+                case "UserSchedu: Target App":
+                    return "project_41_targetApplication";
+
+                case "User Key":
+                    return "objectKey";
+
+                case "Zip Code":
+                    return "customField_34";
+
+                case "Owner Compliance":
+                    return "ownerMigrationRAG";
+
+                case "MigrationP: Migrated Date":
+                    return "project_task_34_10290_2_Task";
+
+                case "Barry'sUse: Package Delivery Date":
+                    return "project_task_38_10484_2_Task";
+
+                case "Email Count":
+                    return "emailCount";
+
+                case "Import Type":
+                    return "importType";
+
+                case "Email Address":
+                    return "eMailAddress";
 
                 case "" +
                      "DAS-" +

@@ -6,7 +6,7 @@ Background: Pre-Conditions
 	Given User is logged in to the Evergreen
 	Then Evergreen Dashboards page should be displayed to the user
 
-@Evergreen @AllLists @EvergreenJnr_ItemDetails @ItemDetailsDisplay @DAS10438
+@Evergreen @AllLists @EvergreenJnr_ItemDetails @ItemDetailsDisplay @DAS10438 @DAS11983 @Not_Run
 Scenario Outline: EvergreenJnr_AllLists_AllEmptyFieldsInItemDetailsAreDisplayedAsUnknown
 	When User clicks "<PageName>" on the left-hand menu
 	Then "<PageName>" list should be displayed to the user
@@ -29,7 +29,7 @@ Scenario: EvergreenJnr_MailboxesList_CheckThat404ErrorIsNotDisplayedOccurringWhe
 	When User click content from "Email Address" column
 	Then "No mailbox owner found for this mailbox" text is displayed for "Mailbox Owner" section
 
-@Evergreen @AllLists @EvergreenJnr_ItemDetails @ItemDetailsDisplay @DAS10438 @API
+@Evergreen @AllLists @EvergreenJnr_ItemDetails @ItemDetailsDisplay @DAS10438 @DAS11983 @API @Not_Run
 Scenario Outline: EvergreenJnr_AllLists_AllEmptyFieldsInItemDetailsAreDisplayedAsUnknownOnAPI
 	When I perform test request to the "<PageName>" API and get "<ItemName>" item summary for "<SectionName>" section
 	Then "Unknown" text displayed for "<SectionName>" empty fields
@@ -53,19 +53,10 @@ Examples:
 	| Devices   | 001BAQXT6JWFPI                | Device Owner | Last Logoff Date  | False        |
 
 @Evergreen @AllLists @EvergreenJnr_ListDetails @ListDetailsFunctionality @DAS11721
-Scenario Outline: EvergreenJnr_AllLists_CheckThatGroupIconsAreDisplayedForAllPages
-	When User clicks "<PageName>" on the left-hand menu
-	Then "<PageName>" list should be displayed to the user
-	When User perform search by "<ObjectName>"
-	When User click content from "<ColumnName>" column
-	Then Group Icon for "<PageName>" page is displayed 
-	
-Examples: 
-	| PageName     | ObjectName                       | ColumnName    |
-	| Devices      | 001BAQXT6JWFPI                   | Hostname      |
-	| Users        | 002B5DC7D4D34D5C895              | Username      |
-	| Applications | Acrobat Reader 4                 | Application   |
-	| Mailboxes    | 00BDBAEA57334C7C8F4@bclabs.local | Email Address |
+Scenario: EvergreenJnr_AllLists_CheckThatGroupIconsAreDisplayedForGroupDetailsPage
+	When User type "NL00G001" in Global Search Field
+	Then User clicks on "NL00G001" search result
+	Then Group Icon for Group Details page is displayed
 
 @Evergreen @AllLists @EvergreenJnr_ItemDetails @ItemDetailsDisplay @DAS11732
 Scenario Outline: EvergreenJnr_AllLists_CheckThatDataIsDisplayedAfterAddingColumnsForExpandedSections
@@ -94,7 +85,7 @@ Examples:
 	| Mailboxes    | Email Address | Users        | Domain      | Key               | Key               |
 	| Mailboxes    | Email Address | Users        | Domain      | EvergreenObjectId | EvergreenObjectId |
 
-@Evergreen @AllLists @EvergreenJnr_ItemDetails @ItemDetailsDisplay @DAS11732
+@Evergreen @AllLists @EvergreenJnr_ItemDetails @ItemDetailsDisplay @DAS11732 @Not_Run
 Scenario Outline: EvergreenJnr_AllLists_CheckThatDataIsDisplayedAfterAddingColumns
 	When User clicks "<PageName>" on the left-hand menu
 	Then "<PageName>" list should be displayed to the user
@@ -117,7 +108,7 @@ Scenario Outline: EvergreenJnr_AllLists_CheckThatDataIsDisplayedAfterAddingColum
 Examples: 
 	| PageName     | ItemName      | TabName      | ExpandedSectionName | SectionName         | ColumnName    | CheckboxName      | NewColumnName     |
 	| Devices      | Hostname      | Applications | Application Summary | Application Detail  | Application   | Application Key   | Application Key   |
-	| Devices      | Hostname      | Applications | Application Summary | Application Detail  | Application   | Advertisement Key | Advertisement Key |
+	| Devices      | Hostname      | Applications | Application Summary | Application Detail  | Application   | Advertisement     | Advertisement     |
 	| Devices      | Hostname      | Applications | Application Summary | Application Detail  | Application   | Group Key         | Group Key         |
 	| Devices      | Hostname      | Applications | Application Summary | Application Detail  | Application   | Collection Key    | Collection Key    |
 	| Devices      | Hostname      | Applications | Application Summary | Application Detail  | Application   | User Key          | User Key          |
@@ -227,3 +218,91 @@ Scenario: EvergreenJnr_DevicesLists_CheckThatSelectedCheckboxesMatchTheColumnsIn
 	| Status       |
 	| Date         |
 	| Readiness    |
+
+@Evergreen @AllLists @EvergreenJnr_ItemDetails @ItemDetailsDisplay @DAS11091
+Scenario Outline: EvergreenJnr_AllLists_CheckRenamedColumnForApplicationSummarySectionOnTheDetailsPage
+	When User clicks "<PageName>" on the left-hand menu
+	Then "<PageName>" list should be displayed to the user
+	When User perform search by "<SelectedName>"
+	And User click content from "<ColumnName>" column
+	And User navigates to the "Applications" tab
+	Then "Manufacturer" column is not displayed to the user
+	Then ColumnName is added to the list in the Details Page table
+	| ColumnName |
+	| Vendor     |
+
+Examples:
+	| PageName | SelectedName   | ColumnName |
+	| Devices  | 001BAQXT6JWFPI | Hostname   |
+	| Users    | ZZZ588323      | Username   |
+
+@Evergreen @AllLists @EvergreenJnr_ItemDetails @ItemDetailsDisplay @DAS11091
+Scenario Outline: EvergreenJnr_AllLists_CheckRenamedColumnForApplicationDetailSectionOnTheDetailsPage
+	When User clicks "<PageName>" on the left-hand menu
+	Then "<PageName>" list should be displayed to the user
+	When User perform search by "<SelectedName>"
+	And User click content from "<ColumnName>" column
+	And User navigates to the "Applications" tab
+	Then User closes "Application Summary" section on the Details Page
+	When User open "Application Detail" section
+	Then "Manufacturer" column is not displayed to the user
+	And ColumnName is added to the list in the Details Page table
+	| ColumnName |
+	| Vendor     |
+
+Examples:
+	| PageName | SelectedName   | ColumnName |
+	| Devices  | 001BAQXT6JWFPI | Hostname   |
+	| Users    | ZZZ588323      | Username   |
+
+@Evergreen @AllLists @EvergreenJnr_ItemDetails @ItemDetailsDisplay @DAS11091
+Scenario Outline: EvergreenJnr_AllLists_CheckRenamedColumnAndStringFilterForSoftwareComplianceIssuesSectionOnTheDetailsPage
+	When User clicks "<PageName>" on the left-hand menu
+	Then "<PageName>" list should be displayed to the user
+	When User perform search by "<SelectedName>"
+	And User click content from "<ColumnName>" column
+	And User navigates to the "Compliance" tab
+	When User open "Software Compliance Issues" section
+	Then "Manufacturer" column is not displayed to the user
+	And ColumnName is added to the list in the Details Page table
+	| ColumnName |
+	| Vendor     |
+	Then string filter is displayed for "Vendor" column on the Details Page
+
+Examples:
+	| PageName | SelectedName   | ColumnName |
+	| Devices  | 001BAQXT6JWFPI | Hostname   |
+	| Users    | ZZZ588323      | Username   |
+
+@Evergreen @Mailboxes @EvergreenJnr_ItemDetails @ItemDetailsDisplay @DAS11667
+Scenario: EvergreenJnr_MailboxesLists_CheckThatNoConsoleErrorsWhenViewingMailboxDetails
+	When User clicks "Mailboxes" on the left-hand menu
+	Then "Mailboxes" list should be displayed to the user
+	When User click content from "Email Address" column
+	Then Item content is displayed to the User
+	Then There are no errors in the browser console
+
+@Evergreen @Devices @EvergreenJnr_ItemDetails @ItemDetailsDisplay @DAS11483
+Scenario: EvergreenJnr_DevicesLists_CheckThatDataOfColumnsIsDisplayedInTheCustomFieldSection
+	When User clicks "Devices" on the left-hand menu
+	Then "Devices" list should be displayed to the user
+	When User perform search by "54S1MGR8DYMYKH"
+	And User click content from "Hostname" column
+	And User navigates to the "Details" tab
+	Then User closes "Device" section on the Details Page
+	When User open "Custom Fields" section
+	Then Content is present in the column of the Details Page table
+	| ColumnName |
+	| Label      |
+	| Value      |
+
+@Evergreen @Mailboxes @EvergreenJnr_ItemDetails @ItemDetailsDisplay @DAS11479 @Not_Run
+Scenario: EvergreenJnr_MailboxesLists_CheckThatLinksAndImageItemAreDisplayedInTheNameAndDisplayNameColumns
+	When User clicks "Mailboxes" on the left-hand menu
+	Then "Mailboxes" list should be displayed to the user
+	When User click content from "Email Address" column
+	And User navigates to the "Users" tab
+	Then User closes "Users" section on the Details Page
+	When User open "Mailbox Permissions" section
+	Then Image item from "Name" column is displayed to the user
+	Then Links from "Name" column is displayed to the user

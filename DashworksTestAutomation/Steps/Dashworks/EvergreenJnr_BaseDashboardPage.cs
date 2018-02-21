@@ -137,7 +137,7 @@ namespace DashworksTestAutomation.Steps.Dashworks
         {
             var page = _driver.NowAt<BaseDashboardPage>();
             _driver.WaitWhileControlIsNotDisplayed<BaseDashboardPage>(() => page.TableContent);
-            Assert.IsTrue(page.TableContent.Displayed());
+            Assert.IsTrue(page.TableRows.Count > 5, "Table is empty");
         }
 
         [Then(@"Content is present in the newly added column")]
@@ -152,6 +152,13 @@ namespace DashworksTestAutomation.Steps.Dashworks
                 //Check that at least 10 cells has some content
                 Assert.IsTrue(content.Select(string.IsNullOrEmpty).Count() > 10, "Newly added column is empty");
             }
+        }
+
+        [Then(@"Appropriate header font weight is displayed")]
+        public void ThenAppropriateHeaderFontWeightIsDisplayed()
+        {
+            var dashboardPage = _driver.NowAt<BaseDashboardPage>();
+            Assert.AreEqual("400", dashboardPage.GetHeaderFontWeight());
         }
 
         [Then(@"Column is displayed in following order:")]

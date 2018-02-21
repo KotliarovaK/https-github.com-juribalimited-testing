@@ -77,6 +77,7 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_DynamicLists
         [NUnit.Framework.CategoryAttribute("DAS10945")]
         [NUnit.Framework.CategoryAttribute("DAS11553")]
         [NUnit.Framework.CategoryAttribute("DAS10880")]
+        [NUnit.Framework.CategoryAttribute("DAS11951")]
         [NUnit.Framework.CategoryAttribute("Delete_Newly_Created_List")]
         public virtual void EvergreenJnr_UsersList_CheckThatNotOwnerUsersDontHavePermissionsToUpdateDynamicList()
         {
@@ -115,6 +116,7 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_DynamicLists
                         "DAS10945",
                         "DAS11553",
                         "DAS10880",
+                        "DAS11951",
                         "Delete_Newly_Created_List"});
             this.ScenarioSetup(scenarioInfo);
             this.FeatureBackground();
@@ -150,6 +152,7 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_DynamicLists
         [NUnit.Framework.CategoryAttribute("DAS10945")]
         [NUnit.Framework.CategoryAttribute("DAS11553")]
         [NUnit.Framework.CategoryAttribute("DAS10880")]
+        [NUnit.Framework.CategoryAttribute("DAS11951")]
         [NUnit.Framework.CategoryAttribute("Delete_Newly_Created_List")]
         public virtual void EvergreenJnr_UsersList_CheckThatAdminUserButNotOwnerIsNotAbleToDeleteList()
         {
@@ -187,6 +190,7 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_DynamicLists
                         "DAS10945",
                         "DAS11553",
                         "DAS10880",
+                        "DAS11951",
                         "Delete_Newly_Created_List"});
             this.ScenarioSetup(scenarioInfo);
             this.FeatureBackground();

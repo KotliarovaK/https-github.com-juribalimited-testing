@@ -66,6 +66,9 @@ namespace DashworksTestAutomation.Pages.Evergreen
         [FindsBy(How = How.XPath, Using = ".//div[@class='ag-body']")]
         public IWebElement TableContent { get; set; }
 
+        [FindsBy(How = How.XPath, Using = ".//div[@role='row']")]
+        public IList<IWebElement> TableRows { get; set; }
+
         [FindsBy(How = How.XPath, Using = ".//div[@id='content']//div[@class='empty-message ng-star-inserted']")]
         public IWebElement NoResultsFoundMessage { get; set; }
 
@@ -74,6 +77,9 @@ namespace DashworksTestAutomation.Pages.Evergreen
 
         [FindsBy(How = How.XPath, Using = ".//span[@class='filter-content']")]
         public IWebElement FilterContainer { get; set; }
+
+        [FindsBy(How = How.XPath, Using = ".//i")]
+        public IWebElement ItemImage { get; set; }
 
         #region TableColumns
 
@@ -93,6 +99,11 @@ namespace DashworksTestAutomation.Pages.Evergreen
                 SelectorFor(this, p => p.Heading),
                 SelectorFor(this, p => p.List)
             };
+        }
+
+        public string GetHeaderFontWeight()
+        {
+            return Driver.FindElement(By.XPath(".//span[@class='ag-header-cell-text']")).GetCssValue("font-weight");
         }
 
         public bool IsColumnPresent(string columnName)
@@ -172,18 +183,21 @@ namespace DashworksTestAutomation.Pages.Evergreen
             Driver.FindElement(byControl).Click();
         }
 
+        public IWebElement GetContentByColumnName(string columnName)
+        {
+            By byControl =
+                By.XPath($".//div[@class='ag-body-container']/div[1]/div[{GetColumnNumberByName(columnName)}]");
+             
+            Driver.WaitForDataLoading();
+            Driver.WaitWhileControlIsNotDisplayed(byControl);
+            return Driver.FindElement(byControl);
+        }
+
         public IWebElement GetListElementByName(string listName)
         {
-            try
-            {
-                return Driver.FindElement(By.XPath($".//div[@id='submenuBlock']//div[text()='{listName}']"));
-            }
-            catch (Exception)
-            {
-                Driver.WaitWhileControlIsNotDisplayed(
-                    By.XPath($".//div[@id='submenuBlock']//span[text()='{listName}']"));
-                return Driver.FindElement(By.XPath($".//div[@id='submenuBlock']//span[text()='{listName}']"));
-            }
+            var selector = By.XPath($".//div[@id='submenuBlock']//*[text()='{listName}']");
+            Driver.WaitWhileControlIsNotDisplayed(selector);
+            return Driver.FindElement(selector);
         }
 
         public void OpenColumnSettingsByName(string columnName)

@@ -8,30 +8,16 @@ Background: Pre-Conditions
 
 @Evergreen @Devices @EvergreenJnr_Columns @AddColumnAction @DAS10665
 Scenario: EvergreenJnr_DevicesList_AddTheDeviceKeyColumnToTheDevicesList
-	When User clicks "Devices" on the left-hand menu
-	Then "Devices" list should be displayed to the user
-	When User clicks the Columns button
-	Then Columns panel is displayed to the user
-	When ColumnName is entered into the search box and the selection is clicked
+	When User add following columns using URL to the "Devices" page:
 	| ColumnName          |
 	| Device Key          |
-	Then ColumnName is added to the list
-	| ColumnName          |
-	| Device Key          |
-	And Content is present in the newly added column
+	Then Content is present in the newly added column
 	| ColumnName          |
 	| Device Key          |
 
 @Evergreen @Mailboxes @EvergreenJnr_Columns @AddColumnAction @DAS10665
 Scenario: EvergreenJnr_MailboxesList_CheckThat500ErrorIsNotDisplayedAfterSortingForSelectedColumn
-	When User clicks "Mailboxes" on the left-hand menu
-	Then "Mailboxes" list should be displayed to the user
-	When User clicks the Columns button
-	Then Columns panel is displayed to the user
-	When ColumnName is entered into the search box and the selection is clicked
-	| ColumnName                 |
-	| Owner Department Full Path |
-	Then ColumnName is added to the list
+	When User add following columns using URL to the "Mailboxes" page:
 	| ColumnName                 |
 	| Owner Department Full Path |
 	When User click on 'Owner Department Full Path' column header
@@ -59,19 +45,14 @@ Examples:
 
 @Evergreen @AllLists @EvergreenJnr_Columns @AddColumnAction @DAS11689
 Scenario Outline: EvergreenJnr_AllLists_CheckThatTableIsFullyLoadedAfterAddingTheColumns
-	When User clicks "<ListName>" on the left-hand menu
-	Then "<ListName>" list should be displayed to the user
-	When User clicks the Columns button
-	Then Columns panel is displayed to the user
-	When ColumnName is entered into the search box and the selection is clicked
+	When User add following columns using URL to the "<ListName>" page:
 	| ColumnName                        |
 	| Windows7Mi: Application Readiness |
-	Then ColumnName is added to the list
+	| UserSchedu: Readiness             |
+	Then Content is present in the newly added column
 	| ColumnName                        |
 	| Windows7Mi: Application Readiness |
-	And Content is present in the newly added column
-	| ColumnName                        |
-	| Windows7Mi: Application Readiness |
+	| UserSchedu: Readiness             |
 	Then full list content is displayed to the user
 	Then There are no errors in the browser console
 
@@ -80,16 +61,9 @@ Examples:
 	| Devices      |
 	| Applications |
 
-@Evergreen @Applications @EvergreenJnr_Columns @AddColumnAction @DAS10997
+@Evergreen @Applications @EvergreenJnr_Columns @AddColumnAction @DAS10997 @DAS12026 @Not_Run
 Scenario Outline: EvergreenJnr_Applications_CheckThatConsoleErrorsAreNotDisplayedForImages
-	When User clicks "Applications" on the left-hand menu
-	Then "Applications" list should be displayed to the user
-	When User clicks the Columns button
-	Then Columns panel is displayed to the user
-	When ColumnName is entered into the search box and the selection is clicked
-	| ColumnName   |
-	| <ColumnName> |
-	Then ColumnName is added to the list
+	When User add following columns using URL to the "Applications" page:
 	| ColumnName   |
 	| <ColumnName> |
 	Then There are no errors in the browser console
@@ -100,3 +74,22 @@ Examples:
 	| Windows7Mi: Application Readiness       |
 	| Windows7Mi: Core Application            |
 	| Windows7Mi: Hide from End Users         |
+
+@Evergreen @AllLists @EvergreenJnr_Columns @AddColumnAction @DAS11871 @Not_Run
+Scenario Outline: EvergreenJnr_AllLists_CheckThatConsoleErrorsAreNotDisplayedAfterSortingUserScheduReadinessIDColumn
+	When User add following columns using URL to the "<ListName>" page:
+	| ColumnName               |
+	| UserSchedu: Readiness ID |
+	Then Content is present in the newly added column
+	| ColumnName               |
+	| UserSchedu: Readiness ID |
+	Then full list content is displayed to the user
+	When User click on 'UserSchedu: Readiness ID' column header
+	Then data in table is sorted by 'UserSchedu: Readiness ID' column in descending order
+	Then There are no errors in the browser console
+
+Examples: 
+	| ListName     |
+	| Devices      |
+	| Users        |
+	| Applications |

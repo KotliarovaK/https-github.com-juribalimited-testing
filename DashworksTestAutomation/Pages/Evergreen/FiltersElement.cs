@@ -16,6 +16,9 @@ namespace DashworksTestAutomation.Pages.Evergreen
         [FindsBy(How = How.XPath, Using = ".//button[contains(@class, 'filter-add-group')]")]
         public IWebElement AddNewFilterButton { get; set; }
 
+        [FindsBy(How = How.XPath, Using = ".//button[contains(@class, 'filter-select addNewContainer ng-star-inserted')]")]
+        public IWebElement AddAndFilterButton { get; set; }
+
         [FindsBy(How = How.XPath, Using = ".//input[@name='search']")]
         public IWebElement SearchTextbox { get; set; }
 
@@ -32,8 +35,7 @@ namespace DashworksTestAutomation.Pages.Evergreen
         public IWebElement FilterSearchTextbox { get; set; }
 
         [FindsBy(How = How.XPath,
-            Using =
-                ".//div[@class='associationmultiselect-parent btn-group dropdown-associationmultiselect']//input[@placeholder='Search']")]
+            Using = ".//div[contains(text(),'ASSOCIATION')]/../following-sibling::div//input")]
         public IWebElement AssociationSearchTextbox { get; set; }
 
         [FindsBy(How = How.XPath, Using = ".//div[contains(@class,'filter-category ng-star-inserted')]")]
@@ -151,6 +153,37 @@ namespace DashworksTestAutomation.Pages.Evergreen
 
             Driver.WaitForDataLoading();
             Driver.WaitWhileControlIsDisplayed<FiltersElement>(() => AddNewFilterButton);
+        }
+
+        public void AddAndFilter(string filterName)
+        {
+            if (Driver.IsElementExists(AddAndFilterButton))
+            {
+                Driver.MouseHover(AddAndFilterButton);
+                AddAndFilterButton.Click();
+            }
+
+            if (FilterCategories.Any())
+                Driver.MouseHover(FilterCategories.Last());
+            Driver.MouseHover(SearchTextbox);
+            SearchTextbox.SendKeys(filterName);
+            var selector = string.Empty;
+            if (filterName.Contains("'"))
+            {
+                var strings = filterName.Split('\'');
+                selector =
+                    $".//div[contains(@class, 'filter-add')][contains(text(),'{strings[0]}')][contains(text(), '{strings[1]}')]";
+            }
+            else
+            {
+                selector = $".//div[contains(@class, 'filter-add')][text()='{filterName}']";
+            }
+
+            Driver.WaitWhileControlIsNotDisplayed(By.XPath(selector));
+            Driver.FindElement(By.XPath(selector)).Click();
+
+            Driver.WaitForDataLoading();
+            Driver.WaitWhileControlIsDisplayed<FiltersElement>(() => AddAndFilterButton);
         }
 
         public bool CheckFilterAvailability(string filterName)

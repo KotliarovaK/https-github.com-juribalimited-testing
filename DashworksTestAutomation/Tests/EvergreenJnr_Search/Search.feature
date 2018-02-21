@@ -8,14 +8,7 @@ Background: Pre-Conditions
 
 @Evergreen @Devices @EvergreenJnr_Search @Search @DAS10704 @Delete_Newly_Created_List
 Scenario: EvergreenJnr_DevicesList_CheckThatQuickSearchResetWhenMovingBetweenLists
-	When User clicks "Devices" on the left-hand menu
-	Then "Devices" list should be displayed to the user
-	When User clicks the Columns button
-	Then Columns panel is displayed to the user
-	When ColumnName is entered into the search box and the selection is clicked
-	| ColumnName |
-	| Build Date |
-	Then ColumnName is added to the list
+	When User add following columns using URL to the "Devices" page:
 	| ColumnName |
 	| Build Date |
 	When User create custom list with "TestList7BA11B" name
@@ -39,34 +32,35 @@ Scenario: EvergreenJnr_DevicesList_CheckThatQuickSearchDoesntTriggersNewListMenu
 Scenario: EvergreenJnr_AllLists_CheckSearchFilterAndTableContentDuringNavigationBetweenPages
 	When User clicks "Devices" on the left-hand menu
 	Then "Devices" list should be displayed to the user
-	Then User enters SearchCriteria into the agGrid Search Box and the correct NumberOfRows are returned
+	And "17,225" rows are displayed in the agGrid
+	And User enters SearchCriteria into the agGrid Search Box and the correct NumberOfRows are returned
 	| SearchCriteria | NumberOfRows |
 	| Smith          | 11           |
 	When User clicks "Users" on the left-hand menu
 	Then "Users" list should be displayed to the user
-	Then "41,335" rows are displayed in the agGrid
-	Then Search field is empty
-	Then User enters SearchCriteria into the agGrid Search Box and the correct NumberOfRows are returned
+	And "41,335" rows are displayed in the agGrid
+	And Search field is empty
+	And User enters SearchCriteria into the agGrid Search Box and the correct NumberOfRows are returned
 	| SearchCriteria | NumberOfRows |
 	| Smith          | 59           |
 	When User clicks "Applications" on the left-hand menu
 	Then "Applications" list should be displayed to the user
-	Then "2,223" rows are displayed in the agGrid
-	Then Search field is empty
-	Then User enters SearchCriteria into the agGrid Search Box and the correct NumberOfRows are returned
+	And "2,223" rows are displayed in the agGrid
+	And Search field is empty
+	And User enters SearchCriteria into the agGrid Search Box and the correct NumberOfRows are returned
 	| SearchCriteria | NumberOfRows |
 	| Python          | 7           |
 	When User clicks "Mailboxes" on the left-hand menu
 	Then "Mailboxes" list should be displayed to the user
-	Then "4,835" rows are displayed in the agGrid
-	Then Search field is empty
-	Then User enters SearchCriteria into the agGrid Search Box and the correct NumberOfRows are returned
+	And "14,784" rows are displayed in the agGrid
+	And Search field is empty
+	And User enters SearchCriteria into the agGrid Search Box and the correct NumberOfRows are returned
 	| SearchCriteria | NumberOfRows |
-	| Smith          | 39           |
+	| Smith          | 44           |
 	When User clicks "Devices" on the left-hand menu
 	Then "Devices" list should be displayed to the user
-	Then "17,225" rows are displayed in the agGrid
-	Then Search field is empty
+	And "17,225" rows are displayed in the agGrid
+	And Search field is empty
 
 @Evergreen @Devices @EvergreenJnr_Search @Search
 Scenario: EvergreenJnr_DevicesList_SearchTests
@@ -189,7 +183,7 @@ Scenario: EvergreenJnr_DevicesList_Search_CheckThatMultiSelectFilterSearchFieldH
 	And User enters "CheckTheResetButton" text in Search field at selected Lookup Filter
 	Then reset button in Search field at selected Filter is displayed
 
-@Evergreen @Devices @EvergreenJnr_Search @Search @DAS11350 @Delete_Newly_Created_List
+@Evergreen @Devices @EvergreenJnr_Search @Search @DAS11350 @DAS11951 @Delete_Newly_Created_List
 Scenario: EvergreenJnr_DevicesList_Search_CheckThatSearchFieldHaveResetButtonAtListPanel 
 	When User clicks "Devices" on the left-hand menu
 	Then "Devices" list should be displayed to the user
@@ -335,7 +329,7 @@ Scenario: EvergreenJnr_MailboxesLists_Search_CheckThatTableSearchWorksCorrectlyF
 	| Mailbox Type     |
 	And User enters SearchCriteria into the agGrid Search Box and the correct NumberOfRows are returned
 	| SearchCriteria | NumberOfRows |
-	| Smith          | 38           |
+	| Smith          | 43           |
 
 @Evergreen @Mailboxes @EvergreenJnr_Search @Search @DAS11664
 Scenario: EvergreenJnr_MailboxesLists_Search_CheckThatTableSearchWorksCorrectlyForOwnerUsernameColumn
@@ -367,7 +361,7 @@ Scenario: EvergreenJnr_MailboxesLists_Search_CheckThatTableSearchWorksCorrectlyF
 	| Owner Display Name |
 	And User enters SearchCriteria into the agGrid Search Box and the correct NumberOfRows are returned
 	| SearchCriteria | NumberOfRows |
-	| 00B            | 9            |
+	| 00B            | 16           |
 
 @Evergreen @Devices @EvergreenJnr_Search @Search @DAS11663
 Scenario: EvergreenJnr_DevicesLists_Search_CheckThatRowCountIsNotDisplayedWhenNoObjectsAreFoundAfterUsingAgGrid

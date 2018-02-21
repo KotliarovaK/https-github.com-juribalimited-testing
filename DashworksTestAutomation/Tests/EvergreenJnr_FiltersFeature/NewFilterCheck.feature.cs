@@ -74,14 +74,13 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_FiltersFeature
         [NUnit.Framework.CategoryAttribute("Evergreen_FiltersFeature")]
         [NUnit.Framework.CategoryAttribute("NewFilterCheck")]
         [NUnit.Framework.CategoryAttribute("DAS10828")]
-        [NUnit.Framework.CategoryAttribute("Not_Run")]
-        [NUnit.Framework.TestCaseAttribute("Windows7Mi: Target App", "Equals, Does not equal", "WebZIP", "Windows7Mi: Target App is WebZIP (985)", "3", new string[0])]
-        [NUnit.Framework.TestCaseAttribute("Babel(Engl: Target App", "Equals, Does not equal", "sndconfig", "Babel(Engl: Target App is sndconfig (499)", "1", new string[0])]
-        [NUnit.Framework.TestCaseAttribute("Barry\'sUse: Target App", "Equals, Does not equal", "World Watch", "Barry\'sUse: Target App is World Watch (303)", "1", new string[0])]
-        [NUnit.Framework.TestCaseAttribute("ComputerSc: Target App", "Equals, Does not equal", "World Watch", "ComputerSc: Target App is World Watch (303)", "1", new string[0])]
-        [NUnit.Framework.TestCaseAttribute("Havoc(BigD: Target App", "Equals, Does not equal", "WebZIP", "Havoc(BigD: Target App is WebZIP (985)", "1", new string[0])]
-        [NUnit.Framework.TestCaseAttribute("MigrationP: Target App", "Equals, Does not equal", "Zune", "MigrationP: Target App is Zune (316)", "1", new string[0])]
-        [NUnit.Framework.TestCaseAttribute("UserSchedu: Target App", "Equals, Does not equal", "Zune", "UserSchedu: Target App is Zune (316)", "1", new string[0])]
+        [NUnit.Framework.TestCaseAttribute("Windows7Mi: Target App", "Equals, Does not equal", "WebZIP (A01)", "Windows7Mi: Target App is WebZIP (A01)", "3", new string[0])]
+        [NUnit.Framework.TestCaseAttribute("Babel(Engl: Target App", "Equals, Does not equal", "sndconfig", "Babel(Engl: Target App is sndconfig", "1", new string[0])]
+        [NUnit.Framework.TestCaseAttribute("Barry\'sUse: Target App", "Equals, Does not equal", "World Watch (A01)", "Barry\'sUse: Target App is World Watch (A01)", "1", new string[0])]
+        [NUnit.Framework.TestCaseAttribute("ComputerSc: Target App", "Equals, Does not equal", "World Watch (A01)", "ComputerSc: Target App is World Watch (A01)", "1", new string[0])]
+        [NUnit.Framework.TestCaseAttribute("Havoc(BigD: Target App", "Equals, Does not equal", "WebZIP (A01)", "Havoc(BigD: Target App is WebZIP (A01)", "1", new string[0])]
+        [NUnit.Framework.TestCaseAttribute("MigrationP: Target App", "Equals, Does not equal", "Zune (A01)", "MigrationP: Target App is Zune (A01)", "1", new string[0])]
+        [NUnit.Framework.TestCaseAttribute("UserSchedu: Target App", "Equals, Does not equal", "Zune (A01)", "UserSchedu: Target App is Zune (A01)", "1", new string[0])]
         public virtual void EvergreenJnr_ApplicationsList_CheckThatTargetAppFilterIsAddedToTheList(string columnName, string operators, string filterOption, string text, string rowsCount, string[] exampleTags)
         {
             System.Exception lastException = null;
@@ -115,8 +114,7 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_FiltersFeature
                     "Applications",
                     "Evergreen_FiltersFeature",
                     "NewFilterCheck",
-                    "DAS10828",
-                    "Not_Run"};
+                    "DAS10828"};
             if ((exampleTags != null))
             {
                 @__tags = System.Linq.Enumerable.ToArray(System.Linq.Enumerable.Concat(@__tags, exampleTags));
@@ -124,15 +122,11 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_FiltersFeature
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("EvergreenJnr_ApplicationsList_CheckThatTargetAppFilterIsAddedToTheList", @__tags);
             this.ScenarioSetup(scenarioInfo);
             this.FeatureBackground();
-            testRunner.When("User clicks \"Applications\" on the left-hand menu", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-            testRunner.Then("\"Applications\" list should be displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-            testRunner.When("User clicks the Columns button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-            testRunner.Then("Columns panel is displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
             TechTalk.SpecFlow.Table table1 = new TechTalk.SpecFlow.Table(new string[] {
                         "ColumnName"});
             table1.AddRow(new string[] {
                         string.Format("{0}", columnName)});
-            testRunner.When("ColumnName is entered into the search box and the selection is clicked", ((string)(null)), table1, "When ");
+            testRunner.When("User add following columns using URL to the \"Applications\" page:", ((string)(null)), table1, "When ");
             testRunner.When("User clicks the Filters button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
             testRunner.Then("Filters panel is displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
             testRunner.When(string.Format("user select \"{0}\" filter", columnName), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
@@ -318,7 +312,7 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_FiltersFeature
         [NUnit.Framework.TestCaseAttribute("Devices", "17,225", new string[0])]
         [NUnit.Framework.TestCaseAttribute("Users", "41,335", new string[0])]
         [NUnit.Framework.TestCaseAttribute("Applications", "2,223", new string[0])]
-        [NUnit.Framework.TestCaseAttribute("Mailboxes", "4,835", new string[0])]
+        [NUnit.Framework.TestCaseAttribute("Mailboxes", "14,784", new string[0])]
         public virtual void EvergreenJnr_AllLists_CheckThatDashworksFirstSeenFilterIsAddedToTheFilterList(string listName, string rowsCount, string[] exampleTags)
         {
             System.Exception lastException = null;

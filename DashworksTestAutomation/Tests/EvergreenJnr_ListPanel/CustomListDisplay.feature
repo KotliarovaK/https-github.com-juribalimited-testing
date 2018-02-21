@@ -1,4 +1,4 @@
-﻿@retry:1
+﻿@retry:0
 Feature: CustomListDisplay
 	Runs Custom List Creation block related tests
 
@@ -42,7 +42,7 @@ Scenario: EvergreenJnr_DevicesList_CheckThatCustomListCreationBlockIsNotDisplaye
 	| SelectedCheckboxes  |
 	| None                |
 	Then "Windows7Mi: Category" filter is added to the list
-	When User create custom list with "TestListF20A85" name
+	When User create dynamic list with "TestListF20A85" name on "Devices" page
 	Then "TestListF20A85" list is displayed to user
 	When User clicks the Filters button
 	Then Filters panel is displayed to the user
@@ -65,6 +65,7 @@ Scenario: EvergreenJnr_DevicesList_CheckThatCustomListCreationBlockIsNotDisplaye
 	| SelectedCheckboxes  |
 	| None                |
 	Then "Windows7Mi: Category" filter is added to the list
+	#When User create dynamic list with "TestListE63B7D" name on "Devices" page
 	When User create custom list with "TestListE63B7D" name
 	Then "TestListE63B7D" list is displayed to user
 	When User clicks the Filters button
@@ -85,7 +86,7 @@ Scenario: EvergreenJnr_DevicesList_CheckThatSearchDoesNotTriggerNewCustomList
 	| Henry          | 34           |
 	Then Save to New Custom List element is NOT displayed
 
-@Evergreen @Devices @EvergreenJnr_ListPanel @CustomListDisplay @DAS11081 @Delete_Newly_Created_List
+@Evergreen @Devices @EvergreenJnr_ListPanel @CustomListDisplay @DAS11081 @DAS11951 @Delete_Newly_Created_List
 Scenario: EvergreenJnr_DevicesList_CheckThatNewListCreatedMessageForStaticListIsDisplayed
 	When User clicks "Devices" on the left-hand menu
 	Then "Devices" list should be displayed to the user
@@ -199,11 +200,7 @@ Scenario: EvergreenJnr_UsersList_CheckThatCustomListCreationBlockIsNotDisplayedA
 
 @Evergreen @Users @EvergreenJnr_ListPanel @CustomListDisplay @DAS11018
 Scenario: EvergreenJnr_UsersList_CheckThatSaveButtonIsInactiveInCustomListCreationBlock
-	When User clicks "Users" on the left-hand menu
-	Then "Users" list should be displayed to the user
-	When User clicks the Columns button
-	Then Columns panel is displayed to the user
-	When ColumnName is entered into the search box and the selection is clicked
+	When User add following columns using URL to the "Users" page:
 	| ColumnName          |
 	| Compliance          |
 	Then Save to New Custom List element is displayed
@@ -221,7 +218,7 @@ Scenario: EvergreenJnr_UsersList_CheckThatSaveButtonIsInactiveInCustomListCreati
 	When User clicks the Actions button
 	Then Save button is inactive for Custom list
 
-@Evergreen @Devices @EvergreenJnr_ListPanel @CustomListDisplay @DAS11394 @Delete_Newly_Created_List
+@Evergreen @Devices @EvergreenJnr_ListPanel @CustomListDisplay @DAS11394 @DAS11951 @Delete_Newly_Created_List
 Scenario: EvergreenJnr_DevicesList_CheckTheSortOrderIsSavedForExistingListAndNotDeletedAfterClickingResetButtonInColumnsMenu
 	When User clicks "Devices" on the left-hand menu
 	Then "Devices" list should be displayed to the user
@@ -261,7 +258,7 @@ Scenario: EvergreenJnr_DevicesList_CheckTheSortOrderIsSavedForExistingListAndNot
 	When User have reset all columns
 	Then data in table is sorted by 'Owner Display Name' column in ascending order
 
-@Evergreen @Devices @EvergreenJnr_ListPanel @CustomListDisplay @DAS11011 @Delete_Newly_Created_List
+@Evergreen @Devices @EvergreenJnr_ListPanel @CustomListDisplay @DAS11011 @Delete_Newly_Created_List @Not_Run
 Scenario: EvergreenJnr_DevicesList_CheckThatNewlySavedListIsCreatedWithTheCorrectColumnsAndSortsAndTheSameRowsOfData
 	When User clicks "Devices" on the left-hand menu
 	Then "Devices" list should be displayed to the user
@@ -302,7 +299,7 @@ Scenario: EvergreenJnr_DevicesList_CheckThatNewlySavedListIsCreatedWithTheCorrec
 	| ColumnName |
 	| Compliance |
 
-@Evergreen @Devices @EvergreenJnr_ListPanel @CustomListDisplay @DAS10870 @Delete_Newly_Created_List
+@Evergreen @Devices @EvergreenJnr_ListPanel @CustomListDisplay @DAS10870 @DAS11951 @Delete_Newly_Created_List
 Scenario: EvergreenJnr_DevicesList_CheckThatSortingWillBeWorkForExistingSavedStaticLists 
 	When User clicks "Devices" on the left-hand menu
 	Then "Devices" list should be displayed to the user
@@ -330,7 +327,7 @@ Scenario: EvergreenJnr_DevicesList_CheckThatSortingWillBeWorkForExistingSavedSta
 	Then data in table is sorted by 'Owner Display Name' column in ascending order
 	And Edit List menu is displayed
 
-@Evergreen @Devices @EvergreenJnr_ListPanel @CustomListDisplay @DAS10870 @Delete_Newly_Created_List
+@Evergreen @Devices @EvergreenJnr_ListPanel @CustomListDisplay @DAS10870 @DAS11951 @Delete_Newly_Created_List
 Scenario: EvergreenJnr_DevicesList_CheckThatSortingWillBeWorkForExistingSavedDynamicLists
 	When User clicks "Devices" on the left-hand menu
 	Then "Devices" list should be displayed to the user
@@ -396,7 +393,7 @@ Scenario: EvergreenJnr_DevicesList_CheckThatEditListMenuNotDisplayedForActiveLis
 	Then "Static List TestName" list is displayed to user
 	And Edit List menu is not displayed
 
-@Evergreen @Devices @EvergreenJnr_ListPanel @CustomListDisplay @DAS11026 @Delete_Newly_Created_List
+@Evergreen @Devices @EvergreenJnr_ListPanel @CustomListDisplay @DAS11026 @DAS11951 @Delete_Newly_Created_List
 Scenario: EvergreenJnr_DevicesList_CheckThatEditListMenuNotDisplayedForDifferentFilterTypes
 	When User clicks "Devices" on the left-hand menu
 	Then "Devices" list should be displayed to the user
@@ -610,7 +607,7 @@ Scenario: EvergreenJnr_DevicesLists_CheckThatAnotherUserCanEditsAndSavesASharedL
 	When User navigates to the "TestList0A788F" list
 	Then Edit List menu is not displayed
 
-@Evergreen @Devices @EvergreenJnr_ListPanel @CustomListDisplay @DAS11465 @Delete_Newly_Created_List
+@Evergreen @Devices @EvergreenJnr_ListPanel @CustomListDisplay @DAS11465 @DAS11951 @Delete_Newly_Created_List
 Scenario: EvergreenJnr_DevicesLists_CheckThatAnotherUserCanEditsAndSavesASharedListWithSortingWithoutErrors
 	When User clicks "Devices" on the left-hand menu
 	Then "Devices" list should be displayed to the user
@@ -658,7 +655,7 @@ Scenario: EvergreenJnr_DevicesLists_CheckThatAnotherUserCanEditsAndSavesASharedL
 	When User navigates to the "TestList9A0AE8" list
 	Then Edit List menu is not displayed
 
-@Evergreen @Devices @EvergreenJnr_ListPanel @CustomListDisplay @DAS10988 @Delete_Newly_Created_List
+@Evergreen @Devices @EvergreenJnr_ListPanel @CustomListDisplay @DAS10988 @DAS11951 @Delete_Newly_Created_List
 Scenario: EvergreenJnr_DevicesLists_CheckThatUserIsNotAbleToCreateListsWithSameName
 	When User clicks "Devices" on the left-hand menu
 	Then "Devices" list should be displayed to the user
@@ -703,7 +700,7 @@ Examples:
 	| Empty          | evergreen/#/devices?$listid= |
 	| Not empty      | evergreen/#/devices?$listid= |
 
-@Evergreen @Devices @EvergreenJnr_ListPanel @CustomListDisplay @DAS11015 @Delete_Newly_Created_List
+@Evergreen @Devices @EvergreenJnr_ListPanel @CustomListDisplay @DAS11015 @DAS11951 @Delete_Newly_Created_List
 Scenario: EvergreenJnr_DevicesLists_CheckThatUserIsNotAbleToCreateListsWithLongNames
 	When User clicks "Devices" on the left-hand menu
 	Then "Devices" list should be displayed to the user

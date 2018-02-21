@@ -1,4 +1,4 @@
-﻿@retry:1
+﻿@retry:0
 Feature: FiltersDisplay
 	Runs Static Filters Display related tests
 
@@ -6,7 +6,7 @@ Background: Pre-Conditions
 	Given User is logged in to the Evergreen
 	Then Evergreen Dashboards page should be displayed to the user
 
-@Evergreen @Devices @EvergreenJnr_StaticLists @FiltersDisplay @DAS10993 @Delete_Newly_Created_List
+@Evergreen @Devices @EvergreenJnr_StaticLists @FiltersDisplay @DAS10993 @Delete_Newly_Created_List @Not_Run
 Scenario: EvergreenJnr_DevicesList_CheckThatDynamicFiltersAreClearedForStaticListsWhenOpenedAfterDynamicLists
 	When User clicks "Devices" on the left-hand menu
 	Then "Devices" list should be displayed to the user
@@ -36,7 +36,7 @@ Scenario: EvergreenJnr_DevicesList_CheckThatDynamicFiltersAreClearedForStaticLis
 	Then "2" rows are displayed in the agGrid
 	Then Filters Button is disabled
 
-@Evergreen @Devices @EvergreenJnr_ListPanel @CustomListDisplay @DAS10978 @Delete_Newly_Created_List
+@Evergreen @Devices @EvergreenJnr_ListPanel @CustomListDisplay @DAS10978 @DAS12034 @Delete_Newly_Created_List @Not_Run
 Scenario: EvergreenJnr_DevicesList_CheckThatFiltersAndColumnsAreRestoredForSavedList
 	When User clicks "Devices" on the left-hand menu
 	Then "Devices" list should be displayed to the user
@@ -59,7 +59,7 @@ Scenario: EvergreenJnr_DevicesList_CheckThatFiltersAndColumnsAreRestoredForSaved
 	Then Filters panel is displayed to the user
 	And "Windows7Mi: SS Application List Completed is Not Applicable or No" is displayed in added filter info
 
-@Evergreen @Devices @EvergreenJnr_StaticLists @FiltersDisplay @DAS10695 @Delete_Newly_Created_List
+@Evergreen @Devices @EvergreenJnr_StaticLists @FiltersDisplay @DAS10695 @Delete_Newly_Created_List @Not_Run
 Scenario: EvergreenJnr_DevicesList_CheckThat500ErrorIsNotDisplayedWhenAddingNewObjectToStaticList
 	When User clicks "Devices" on the left-hand menu
 	Then "Devices" list should be displayed to the user
@@ -68,9 +68,9 @@ Scenario: EvergreenJnr_DevicesList_CheckThat500ErrorIsNotDisplayedWhenAddingNewO
 	When User select "Hostname" rows in the grid
 	| SelectedRowsName |
 	| 00BDM1JUR8IF419  |
-	| 00K4CEEQ737BA4L  |
-	| 011PLA470S0B9DJ  |
-	| 019BFPQGKK5QT8N  |
+	| 00CWZRC4UK6W20   |
+	| 00HA7MKAVVFDAV   |
+	| 00I0COBFWHOF27   |
 	And User create static list with "TopFour TestName" name
 	Then "TopFour TestName" list is displayed to user
 	When User navigates to the "All Devices" list
@@ -80,7 +80,7 @@ Scenario: EvergreenJnr_DevicesList_CheckThat500ErrorIsNotDisplayedWhenAddingNewO
 	When User select "Hostname" rows in the grid
 	| SelectedRowsName |
 	| 00BDM1JUR8IF419  |
-	| 00K4CEEQ737BA4L  |
+	| 00CWZRC4UK6W20   |
 	And User create static list with "TopTwo TestName" name
 	Then "TopTwo TestName" list is displayed to user
 	When User clicks the Actions button
@@ -89,7 +89,7 @@ Scenario: EvergreenJnr_DevicesList_CheckThat500ErrorIsNotDisplayedWhenAddingNewO
 	When User select "Hostname" rows in the grid
 	| SelectedRowsName |
 	| 00BDM1JUR8IF419  |
-	| 00K4CEEQ737BA4L  |
+	| 00CWZRC4UK6W20   |
 	Then User add selected rows in "TopFour TestName" list
 	Then "TopFour TestName" list is displayed to user
 	And "4" rows are displayed in the agGrid

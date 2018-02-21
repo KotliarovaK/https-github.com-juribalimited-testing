@@ -78,6 +78,7 @@ namespace DashworksTestAutomation.Steps.Dashworks
         public void WhenUserEntersInAssociationSearchField(string searchedText)
         {
             var filterElement = _driver.NowAt<FiltersElement>();
+            filterElement.AssociationSearchTextbox.Click();
             _driver.WaitWhileControlIsNotDisplayed<FiltersElement>(() => filterElement.LookupFilterSearchTextbox);
             filterElement.AssociationSearchTextbox.Clear();
             filterElement.AssociationSearchTextbox.SendKeys(searchedText);
@@ -192,6 +193,19 @@ namespace DashworksTestAutomation.Steps.Dashworks
             filter.Do();
         }
 
+        [When(@"User Add And ""(.*)"" filter where type is ""(.*)"" with added column and following checkboxes:")]
+        public void WhenUserAddAndFilterWhereTypeIsWithAddedColumnAndFollowingCheckboxes(string filterName,
+            string operatorValue, Table table)
+        {
+            var filtersNames = _driver.NowAt<FiltersElement>();
+            filtersNames.AddAndFilter(filterName);
+            var filter = new CheckBoxesFilter(_driver, operatorValue, true, table);
+            //Save filter in context
+            _filter.FilterSettings = filter;
+            _filter.FilterName = filterName;
+            filter.Do();
+        }
+
         [When(@"User add ""(.*)"" filter where type is ""(.*)"" with SelectedList list and following Association:")]
         public void WhenUserAddFilterWhereTypeIsWithSelectedListListAndFollowingAssociation(string filterName,
             string operatorValue, Table table)
@@ -256,6 +270,15 @@ namespace DashworksTestAutomation.Steps.Dashworks
             var filtersNames = _driver.NowAt<FiltersElement>();
             filtersNames.AddFilter(filterName);
             var filter = new LookupFilter(_driver, operatorValue, true, filterValue);
+            filter.Do();
+        }
+
+        [When(@"User add ""(.*)"" filter where type is ""(.*)"" with added column and Lookup option")]
+        public void WhenUserAddFilterWhereTypeIsWithAddedColumnAndLookupOption(string filterName, string operatorValue, Table table)
+        {
+            var filtersNames = _driver.NowAt<FiltersElement>();
+            filtersNames.AddFilter(filterName);
+            var filter = new LookupFilterTable(_driver, operatorValue, true, table);
             filter.Do();
         }
 
@@ -490,7 +513,7 @@ namespace DashworksTestAutomation.Steps.Dashworks
             const string pattern = @"\$filter=(.*)\&";
             var originalPart = Regex.Match(currentUrl, pattern).Value;
             var urlToNavigate = currentUrl.Replace(originalPart, string.Empty);
-            _driver.NagigateToURL(urlToNavigate);
+            _driver.NavigateToUrl(urlToNavigate);
 
             var page = _driver.NowAt<EvergreenDashboardsPage>();
             if (page.StatusCodeLabel.Displayed())
@@ -506,7 +529,7 @@ namespace DashworksTestAutomation.Steps.Dashworks
             const string pattern = @"\$filter=(.*)\&";
             var originalPart = Regex.Match(currentUrl, pattern).Groups[1].Value;
             var urlToNavigate = currentUrl.Replace(originalPart, string.Empty);
-            _driver.NagigateToURL(urlToNavigate);
+            _driver.NavigateToUrl(urlToNavigate);
 
             var page = _driver.NowAt<EvergreenDashboardsPage>();
             if (page.StatusCodeLabel.Displayed())
@@ -549,8 +572,8 @@ namespace DashworksTestAutomation.Steps.Dashworks
             Assert.Contains(text, filterLabels, $"Filter with {text} not found in the list");
         }
 
-        [Then(@"""(.*)"" filter with ""(.*)"" values is added to URL")]
-        public void ThenFilterWithValuesIsAddedToURL(string filterName, string values)
+        [Then(@"""(.*)"" filter with ""(.*)"" values is added to URL on ""(.*)"" page")]
+        public void ThenFilterWithValuesIsAddedToUrlOnPage(string filterName, string values, string pageName)
         {
             var currentUrl = _driver.Url;
             const string pattern = @"filter=(.*)";
@@ -562,7 +585,7 @@ namespace DashworksTestAutomation.Steps.Dashworks
                     $"{value} is not added to URL for {filterName} filter");
             }
 
-            StringAssert.Contains(_convertor.Convert(filterName).ToLower(), urlPartToCheck.ToLower(),
+            StringAssert.Contains(ColumnNameToUrlConvertor.Convert(pageName, filterName).ToLower(), urlPartToCheck.ToLower(),
                 $"{filterName} is not added to URL");
         }
 
@@ -594,6 +617,14 @@ namespace DashworksTestAutomation.Steps.Dashworks
         {
             var filter = new ChangeCheckboxesFilter(_driver, table);
             filter.Do();
+        }
+
+        [Then(@"Save button is not available on the Filter panel")]
+        public void ThenSaveButtonIsNotAvailableOnTheFilterPanel()
+        {
+            var filterPanel = _driver.NowAt<FiltersElement>();
+            _driver.WaitWhileControlIsNotDisplayed<FiltersElement>(() => filterPanel.SaveButton);
+            Assert.IsTrue(Convert.ToBoolean(filterPanel.SaveButton.GetAttribute("disabled")), "Save Button is active");
         }
 
         [Then(@"reset button in Search field at selected Filter is displayed")]

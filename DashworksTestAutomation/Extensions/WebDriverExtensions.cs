@@ -20,7 +20,7 @@ namespace DashworksTestAutomation.Extensions
         private static readonly TimeSpan waitTimeout = TimeSpan.FromSeconds(30);
         private static readonly TimeSpan pollingInterval = TimeSpan.FromSeconds(5);
 
-        public static void NagigateToURL(this RemoteWebDriver driver, string url)
+        public static void NavigateToUrl(this RemoteWebDriver driver, string url)
         {
             Logger.Write($"Navigating to the {url}");
             driver.Navigate().GoToUrl(url);

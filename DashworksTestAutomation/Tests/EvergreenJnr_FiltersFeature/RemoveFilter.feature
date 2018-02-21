@@ -18,8 +18,8 @@ Scenario: EvergreenJnr_DevicesList_CheckThatResetIsUpdatingRowCount
 	Then "Compliance" filter is added to the list
 	And "75" rows are displayed in the agGrid
 	And table data is filtered correctly
-	And "Compliance" filter with "Unknown" values is added to URL
-	And "Compliance" column is added to URL
+	And "Compliance" filter with "Unknown" values is added to URL on "Devices" page
+	And "Compliance" column is added to URL on "Devices" page
 	When User have reset all filters
 	Then ColumnName is added to the list
 	| ColumnName |
@@ -39,8 +39,8 @@ Scenario: EvergreenJnr_DevicesList_CheckThatDeleteByUrlIsUpdatingRowCount
 	Then "Compliance" filter is added to the list
 	And "75" rows are displayed in the agGrid
 	And table data is filtered correctly
-	And "Compliance" filter with "Unknown" values is added to URL
-	And "Compliance" column is added to URL
+	And "Compliance" filter with "Unknown" values is added to URL on "Devices" page
+	And "Compliance" column is added to URL on "Devices" page
 	When User is remove filter by URL
 	Then ColumnName is added to the list
 	| ColumnName |
@@ -69,8 +69,8 @@ Scenario: EvergreenJnr_UsersList_CheckThatDeletePartOfFilterFromUrlIsUpdatingRow
 	Then "Compliance" filter is added to the list
 	And "41,161" rows are displayed in the agGrid
 	And table data is filtered correctly
-	And "Compliance" filter with "Red, Amber, Green" values is added to URL
-	And "Compliance" column is added to URL
+	And "Compliance" filter with "Red, Amber, Green" values is added to URL on "Users" page
+	And "Compliance" column is added to URL on "Users" page
 	When User is remove part of filter URL
 	Then ColumnName is added to the list
 	| ColumnName |
@@ -88,8 +88,8 @@ Scenario: EvergreenJnr_MailboxesList_CheckThatFiltersIsResetAndDataOnTheGridUpda
 	| SelectedCheckboxes |
 	| London             |
 	Then "City" filter is added to the list
-	And "1,000" rows are displayed in the agGrid
+	And "3,294" rows are displayed in the agGrid
 	And table data is filtered correctly
 	When User have reset all filters
-	Then "4,835" rows are displayed in the agGrid
+	Then "14,784" rows are displayed in the agGrid
 	And "City" filter is removed from filters

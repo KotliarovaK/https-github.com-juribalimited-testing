@@ -1,10 +1,12 @@
-﻿using DashworksTestAutomation.Extensions;
+﻿using System;
+using DashworksTestAutomation.Extensions;
 using DashworksTestAutomation.Pages.Evergreen;
 using DashworksTestAutomation.Pages.Evergreen.DetailsTabsMenu;
 using NUnit.Framework;
 using OpenQA.Selenium.Remote;
 using System.Collections.Generic;
 using System.Linq;
+using OpenQA.Selenium;
 using TechTalk.SpecFlow;
 
 namespace DashworksTestAutomation.Steps.Dashworks
@@ -39,6 +41,52 @@ namespace DashworksTestAutomation.Steps.Dashworks
         {
             var detailsPage = _driver.NowAt<DetailsPage>();
             detailsPage.NavigateToSectionByName(sectionName);
+        }
+
+        [Then(@"Item content is displayed to the User")]
+        public void ThenItemContentIsDisplayedToTheUser()
+        {
+            var detailsPage = _driver.NowAt<DetailsPage>();
+            Assert.IsTrue(detailsPage.ItemDetailsContainer.Displayed(), "Item content is not displayed");
+        }
+
+        [Then(@"Image item from ""(.*)"" column is displayed to the user")]
+        public void ThenImageItemFromColumnIsDisplayedToTheUser(string columnName)
+        {
+            var tableElement = _driver.NowAtWithoutWait<BaseDashboardPage>();
+            var content = _driver.FindElements(By.XPath(".//div[@col-id='userName'][@role='gridcell']"));
+            foreach (var element in content)
+            {
+                var image = element.FindElement(By.XPath(".//i"));
+                Assert.IsTrue(image.Displayed(), "Image item is not found");
+            }
+        }
+
+        [Then(@"Links from ""(.*)"" column is displayed to the user")]
+        public void ThenLinksFromColumnIsDisplayedToTheUser(string columnName)
+        {
+            var tableElement = _driver.NowAtWithoutWait<BaseDashboardPage>();
+            var content = _driver.FindElements(By.XPath(".//div[@col-id='userName'][@role='gridcell']"));
+            foreach (var element in content)
+            {
+                var text = element.FindElement(By.XPath(".//a"));
+                Assert.IsTrue(text.GetAttribute("href") != String.Empty);
+            }
+        }
+
+        [Then(@"expanded section is displayed to the User")]
+        public void ThenExpandedSectionIsDisplayedToTheUser()
+        {
+            var detailsPage = _driver.NowAt<DetailsPage>();
+            Assert.IsTrue(detailsPage.SectionContainer.Displayed(), "Section is not displayed");
+        }
+
+        [Then(@"""(.*)"" column is not displayed to the user")]
+        public void ThenColumnIsNotDisplayedToTheUser(string columnName)
+        {
+            var columnHeader = _driver.NowAt<ApplicationsDetailsTabsMenu>();
+            Assert.IsFalse(columnHeader.ColumnIsDisplayed(columnName),
+                   $"{columnName} category stil displayed in Column Panel");
         }
 
         [When(@"User have opened Column Settings for ""(.*)"" column in the Details Page table")]
@@ -127,6 +175,21 @@ namespace DashworksTestAutomation.Steps.Dashworks
             }
         }
 
+        [Then(@"Content is present in the column of the Details Page table")]
+        public void ThenContentIsPresentInTheColumnOfTheDetailsPageTable(Table table)
+        {
+            var page = _driver.NowAt<ApplicationsDetailsTabsMenu>();
+
+            foreach (var row in table.Rows)
+            {
+                var content = page.GetColumnContent(row["ColumnName"]);
+
+
+                //Check that at least 1 cell has some content
+                Assert.IsTrue(content.Select(string.IsNullOrEmpty).Count() > 0, "Column is empty");
+            }
+        }
+
         [Then(@"Fields with empty information are displayed")]
         public void ThenFieldsWithEmptyInformationAreDisplayed()
         {
@@ -151,8 +214,8 @@ namespace DashworksTestAutomation.Steps.Dashworks
             }
         }
 
-        [Then(@"Group Icon for ""(.*)"" page is displayed")]
-        public void ThenGroupIconForPageIsDisplayed(string pageName)
+        [Then(@"Group Icon for Group Details page is displayed")]
+        public void ThenGroupIconForPageIsDisplayed()
         {
             var detailsPage = _driver.NowAt<DetailsPage>();
             Assert.IsTrue(detailsPage.GroupIcon.Displayed());
@@ -167,6 +230,13 @@ namespace DashworksTestAutomation.Steps.Dashworks
             _driver.WaitWhileControlIsNotDisplayed<DetailsPage>(() => detailsPage.NoMailboxOwnerFoundMessage);
             Assert.AreEqual(textMessage, detailsPage.NoMailboxOwnerFoundMessage.Text,
                 $"{textMessage} is not displayed");
+        }
+
+        [Then(@"string filter is displayed for ""(.*)"" column on the Details Page")]
+        public void ThenStringFilterIsDisplayedForColumnOnTheDetailsPage(string columnName)
+        {
+            var detailsPage = _driver.NowAt<ApplicationsDetailsTabsMenu>();
+            Assert.IsFalse(Convert.ToBoolean(detailsPage.GetFilterByColumnName(columnName).GetAttribute("readonly")));
         }
 
         [Then(@"""(.*)"" field display state is ""(.*)"" on Details tab")]

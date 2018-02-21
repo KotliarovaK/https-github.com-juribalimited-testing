@@ -28,7 +28,7 @@ namespace DashworksTestAutomation.Steps.Dashworks
         [Given(@"User is on Dashworks Homepage")]
         public void GivenUserIsOnDashworksHomepage()
         {
-            _driver.NagigateToURL(UrlProvider.Url);
+            _driver.NavigateToUrl(UrlProvider.Url);
             _url.Value = UrlProvider.Url;
 
             var loginPage = _driver.NowAt<LoginPanelPage>();
@@ -36,7 +36,7 @@ namespace DashworksTestAutomation.Steps.Dashworks
             //If automation.corp.juriba.com is not available, try automation2.corp.juriba.com instead
             if (loginPage.WebsiteIsNotAvailable.Displayed())
             {
-                _driver.NagigateToURL(UrlProvider.BackupUrl);
+                _driver.NavigateToUrl(UrlProvider.BackupUrl);
                 _url.Value = UrlProvider.BackupUrl;
                 Logger.Write("Using automation2.corp.juriba.com instead");
             }
@@ -97,7 +97,7 @@ namespace DashworksTestAutomation.Steps.Dashworks
             {
                 _url.Value = UrlProvider.Url;
                 var combinedURL = _url.Value + row["QueryStringURL"];
-                _driver.NagigateToURL(combinedURL);
+                _driver.NavigateToUrl(combinedURL);
 
                 var page = _driver.NowAt<EvergreenDashboardsPage>();
 
@@ -114,13 +114,24 @@ namespace DashworksTestAutomation.Steps.Dashworks
         public void ThenAgGridMainObjectListIsReturnedWithData()
         {
             var dashboardPage = _driver.NowAt<BaseDashboardPage>();
-
-            _driver.WaitWhileControlIsNotDisplayed<BaseDashboardPage>(() => dashboardPage.ResultsOnPageCount);
-
-            Assert.IsTrue(dashboardPage.ResultsOnPageCount.Displayed(), "Results count is not displayed");
-            Assert.IsTrue(dashboardPage.TableBody.Displayed(), "Table is not displayed");
-
-            Logger.Write("Main agGrid dataset is displayed");
+            if (dashboardPage.ResultsOnPageCount.Displayed())
+            {
+                _driver.WaitWhileControlIsNotDisplayed<BaseDashboardPage>(() => dashboardPage.ResultsOnPageCount);
+                Assert.IsTrue(dashboardPage.ResultsOnPageCount.Displayed(), "Results count is not displayed");
+                Assert.IsTrue(dashboardPage.TableBody.Displayed(), "Table is not displayed");
+                Logger.Write("Main agGrid dataset is displayed");
+            }
+            else
+            {
+                _driver.IsElementDisplayed(dashboardPage.NoResultsFoundMessage);
+                _driver.WaitWhileControlIsDisplayed<BaseDashboardPage>(() => dashboardPage.ResultsOnPageCount);
+                Assert.IsFalse(dashboardPage.ResultsOnPageCount.Displayed(), "Rows count is displayed");
+                _driver.WaitWhileControlIsNotDisplayed<BaseDashboardPage>(() => dashboardPage.NoResultsFoundMessage);
+                Assert.IsTrue(dashboardPage.NoResultsFoundMessage.Displayed(),
+                    "'No Results Found' message not displayed");
+                Logger.Write(
+                    $"Evergreen agGrid Search returned '{dashboardPage.NoResultsFoundMessage.Text}' message");
+            }
         }
     }
 }
