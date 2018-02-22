@@ -174,8 +174,8 @@ namespace DashworksTestAutomation.Steps
                     pair.ToString().Contains("pendingStickyDepartmentMessage") ||
                     pair.ToString().Contains("pendingStickyLocationMessage"))
                     continue;
-                Assert.IsTrue(!string.IsNullOrEmpty(pair.Last.ToString()),
-                    "'Unknown' text is not displayed for field ");
+                Assert.IsFalse(!string.IsNullOrEmpty(pair.Last.ToString()),
+                    "'Unknown' text is displayed for field ");
             }
         }
 
