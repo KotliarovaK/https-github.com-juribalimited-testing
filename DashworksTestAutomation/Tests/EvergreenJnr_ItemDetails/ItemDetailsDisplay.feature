@@ -133,7 +133,7 @@ Examples:
 	| Mailboxes    | Email Address | Users        | Users               | Mailbox Permissions | Domain        | ViaGroupObjectKey | ViaGroupObjectKey |
 	| Mailboxes    | Email Address | Users        | Users               | Mailbox Permissions | Domain        | AccessCategoryKey | AccessCategoryKey |
 
-@Evergreen @AllLists @EvergreenJnr_ItemDetails @ItemDetailsDisplay @DAS11732
+@Evergreen @AllLists @EvergreenJnr_ItemDetails @ItemDetailsDisplay @DAS11732 @DAS12053 @Not_Run
 Scenario Outline: EvergreenJnr_AllLists_CheckThatDataIsDisplayedAfterAddingColumnsForClosedSections
 	When User clicks "<PageName>" on the left-hand menu
 	Then "<PageName>" list should be displayed to the user
@@ -158,11 +158,11 @@ Examples:
 	| Devices  | Hostname | Projects   | Device Projects            | Project     | Object ID        | Object ID        |
 	| Devices  | Hostname | Projects   | Device Projects            | Project     | Key              | Key              |
 	| Devices  | Hostname | Projects   | Device Owner Projects      | Username    | ObjecyKey        | ObjecyKey        |
-	| Devices  | Hostname | Projects   | Device Owner Projects      | Username    | Object ID        | Object ID        |
-	| Devices  | Hostname | Projects   | Device Owner Projects      | Username    | Key              | Key              |
-	| Devices  | Hostname | Projects   | Device Owner Projects      | Username    | Request Type Key | Request Type Key |
-	| Devices  | Hostname | Projects   | Device Owner Projects      | Username    | Category Key     | Category Key     |
-	| Devices  | Hostname | Projects   | Device Owner Projects      | Username    | Status Key       | Status Key       |
+	#| Devices  | Hostname | Projects   | Device Owner Projects      | Username    | Object ID        | Object ID        |
+	#| Devices  | Hostname | Projects   | Device Owner Projects      | Username    | Key              | Key              |
+	#| Devices  | Hostname | Projects   | Device Owner Projects      | Username    | Request Type Key | Request Type Key |
+	#| Devices  | Hostname | Projects   | Device Owner Projects      | Username    | Category Key     | Category Key     |
+	#| Devices  | Hostname | Projects   | Device Owner Projects      | Username    | Status Key       | Status Key       |
 
 @Evergreen @Users @EvergreenJnr_ItemDetails @ItemDetailsDisplay @DAS11053
 Scenario: EvergreenJnr_UsersLists_CheckThatTheTableColumnsAreNotDuplicatedOnTheDetailsPage
