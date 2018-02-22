@@ -114,23 +114,19 @@ namespace DashworksTestAutomation.Steps.Dashworks
         public void ThenAgGridMainObjectListIsReturnedWithData()
         {
             var dashboardPage = _driver.NowAt<BaseDashboardPage>();
-            if (dashboardPage.ResultsOnPageCount.Displayed())
+            if (dashboardPage.NoResultsFoundMessage.Displayed())
             {
-                _driver.WaitWhileControlIsNotDisplayed<BaseDashboardPage>(() => dashboardPage.ResultsOnPageCount);
-                Assert.IsTrue(dashboardPage.ResultsOnPageCount.Displayed(), "Results count is not displayed");
-                Assert.IsTrue(dashboardPage.TableBody.Displayed(), "Table is not displayed");
-                Logger.Write("Main agGrid dataset is displayed");
+                Assert.IsTrue(dashboardPage.NoResultsFoundMessage.Displayed(),
+                    "'No Results Found' message is not displayed");
+                Logger.Write(
+                    $"Evergreen agGrid Search returned '{dashboardPage.NoResultsFoundMessage.Text}' message");
             }
             else
             {
-                _driver.IsElementDisplayed(dashboardPage.NoResultsFoundMessage);
-                _driver.WaitWhileControlIsDisplayed<BaseDashboardPage>(() => dashboardPage.ResultsOnPageCount);
-                Assert.IsFalse(dashboardPage.ResultsOnPageCount.Displayed(), "Rows count is displayed");
-                _driver.WaitWhileControlIsNotDisplayed<BaseDashboardPage>(() => dashboardPage.NoResultsFoundMessage);
-                Assert.IsTrue(dashboardPage.NoResultsFoundMessage.Displayed(),
-                    "'No Results Found' message not displayed");
-                Logger.Write(
-                    $"Evergreen agGrid Search returned '{dashboardPage.NoResultsFoundMessage.Text}' message");
+                _driver.WaitForDataLoading();
+                Assert.IsTrue(dashboardPage.ResultsOnPageCount.Displayed(), "Results count is not displayed");
+                Assert.IsTrue(dashboardPage.TableBody.Displayed(), "Table is not displayed");
+                Logger.Write("Main agGrid dataset is displayed");
             }
         }
     }
