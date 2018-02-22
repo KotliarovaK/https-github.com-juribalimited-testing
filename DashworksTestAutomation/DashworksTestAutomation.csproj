@@ -149,6 +149,7 @@
     <Compile Include="Base\IBaseTest.cs" />
     <Compile Include="Base\SeleniumBasePage.cs" />
     <Compile Include="DTO\RuntimeVariables\Filter.cs" />
+    <Compile Include="DTO\RuntimeVariables\ListsDetails.cs" />
     <Compile Include="DTO\RuntimeVariables\ResponceDetails.cs" />
     <Compile Include="DTO\RuntimeVariables\RestWebClient.cs" />
     <Compile Include="DTO\RuntimeVariables\UsedUsers.cs" />
@@ -205,6 +206,7 @@
     <Compile Include="Providers\ResourceFilesNamesProvider.cs" />
     <Compile Include="Providers\SauceLabsCredentialsProvider.cs" />
     <Compile Include="Providers\UserProvider.cs" />
+    <Compile Include="Steps\API\EvergreenJnr_Lists.cs" />
     <Compile Include="Steps\Base\BaseActions.cs" />
     <Compile Include="Steps\Base\OpenWebsite.cs" />
     <Compile Include="Providers\UrlProvider.cs" />
