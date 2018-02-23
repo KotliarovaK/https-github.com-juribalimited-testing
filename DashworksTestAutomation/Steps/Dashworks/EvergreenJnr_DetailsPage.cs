@@ -169,11 +169,12 @@ namespace DashworksTestAutomation.Steps.Dashworks
 
             foreach (var row in table.Rows)
             {
-                var content = page.GetColumnIdContent(row["ColumnName"]);
-                var t = content.Select(x => string.IsNullOrEmpty(x)).Count() > 1;
-                var p = string.IsNullOrEmpty(content.First());
-                var r = content.First().TrimStart('\"');
-                Assert.IsTrue(content.Count(x => !string.IsNullOrEmpty(x)) > 1, "Newly added column is empty");
+                if ((row["ColumnName"] != "Group Key" && row["ColumnName"] != "Category Key"))
+                {
+                    var content = page.GetColumnIdContent(row["ColumnName"]);
+
+                    Assert.IsTrue(content.Count(x => !string.IsNullOrEmpty(x)) > 1, "Newly added column is empty");
+                }
             }
         }
 
