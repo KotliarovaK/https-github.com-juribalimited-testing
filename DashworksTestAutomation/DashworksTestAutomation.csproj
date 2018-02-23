@@ -206,7 +206,10 @@
     <Compile Include="Providers\ResourceFilesNamesProvider.cs" />
     <Compile Include="Providers\SauceLabsCredentialsProvider.cs" />
     <Compile Include="Providers\UserProvider.cs" />
+    <Compile Include="Steps\API\EvergreenJnr_FiltersFunctionality.cs" />
+    <Compile Include="Steps\API\EvergreenJnr_ListDetailsPage.cs" />
     <Compile Include="Steps\API\EvergreenJnr_Lists.cs" />
+    <Compile Include="Steps\API\EvergreenJnr_ProfilePage.cs" />
     <Compile Include="Steps\Base\BaseActions.cs" />
     <Compile Include="Steps\Base\OpenWebsite.cs" />
     <Compile Include="Providers\UrlProvider.cs" />
