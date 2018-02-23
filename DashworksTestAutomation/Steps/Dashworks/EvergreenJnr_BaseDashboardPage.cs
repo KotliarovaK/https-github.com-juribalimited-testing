@@ -190,5 +190,21 @@ namespace DashworksTestAutomation.Steps.Dashworks
             Assert.AreEqual(text, page.FilterContainer.Text.TrimStart(' ').TrimEnd(' '),
                 $"Filter is created incorrectly");
         }
+
+        [Then(@"Content is empty in the column")]
+        public void ThenContentIsEmptyInTheColumn(Table table)
+        {
+            var page = _driver.NowAt<BaseDashboardPage>();
+
+            foreach (var row in table.Rows)
+            {
+                var content = page.GetColumnContent(row["ColumnName"]);
+
+
+                //Check that at least 1 cell has some content
+                Assert.IsFalse(content.Count(x => !string.IsNullOrEmpty(x)) > 10, "Column is empty");
+            }
+        }
+
     }
 }
