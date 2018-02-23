@@ -86,7 +86,7 @@ namespace DashworksTestAutomation.Steps.Dashworks
         {
             var columnHeader = _driver.NowAt<ApplicationsDetailsTabsMenu>();
             Assert.IsFalse(columnHeader.ColumnIsDisplayed(columnName),
-                   $"{columnName} category stil displayed in Column Panel");
+                $"{columnName} category stil displayed in Column Panel");
         }
 
         [When(@"User have opened Column Settings for ""(.*)"" column in the Details Page table")]
@@ -112,7 +112,8 @@ namespace DashworksTestAutomation.Steps.Dashworks
         }
 
         [Then(@"Checkboxes are checked on the Column Settings panel for ""(.*)"" Column Settings panel:")]
-        public void ThenCheckboxesAreCheckedOnTheColumnSettingsPanelForColumnSettingsPanel(string columnName, Table table)
+        public void ThenCheckboxesAreCheckedOnTheColumnSettingsPanelForColumnSettingsPanel(string columnName,
+            Table table)
         {
             var page = _driver.NowAt<ApplicationsDetailsTabsMenu>();
             var expectedList = table.Rows.SelectMany(row => row.Values).ToList();
@@ -143,7 +144,8 @@ namespace DashworksTestAutomation.Steps.Dashworks
             {
                 var page = _driver.NowAt<ApplicationsDetailsTabsMenu>();
 
-                List<string> columnNames = page.GetAllColumnHeadersOnTheDetailsPage().Select(column => column.Text).ToList();
+                List<string> columnNames = page.GetAllColumnHeadersOnTheDetailsPage().Select(column => column.Text)
+                    .ToList();
                 var expectedList = table.Rows.SelectMany(row => row.Values).ToList();
                 Assert.AreEqual(expectedList, columnNames, "Columns order is incorrect");
             }
@@ -167,9 +169,12 @@ namespace DashworksTestAutomation.Steps.Dashworks
 
             foreach (var row in table.Rows)
             {
-                var content = page.GetColumnContent(row["ColumnName"]);
-                //Check that at least 1 cells has some content
-                Assert.IsTrue(content.Select(string.IsNullOrEmpty).Count() > 0, "Newly added column is empty");
+                if ((row["ColumnName"] != "Group Key" && row["ColumnName"] != "Category Key"))
+                {
+                    var content = page.GetColumnIdContent(row["ColumnName"]);
+
+                    Assert.IsTrue(content.Count(x => !string.IsNullOrEmpty(x)) > 1, "Newly added column is empty");
+                }
             }
         }
 
@@ -249,8 +254,8 @@ namespace DashworksTestAutomation.Steps.Dashworks
 
         {
             var detailsPage = _driver.NowAt<DetailsPage>();
-            StringAssert.DoesNotContain("Unknown", detailsPage.TableRowDetails.Text, "Success Message is not displayed");
+            StringAssert.DoesNotContain("Unknown", detailsPage.TableRowDetails.Text,
+                "Success Message is not displayed");
         }
-
     }
 }
