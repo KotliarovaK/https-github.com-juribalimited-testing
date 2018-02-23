@@ -29,91 +29,13 @@ namespace DashworksTestAutomation.Steps
         private readonly RestWebClient _client;
         private readonly ResponceDetails _responce;
         private readonly DetailsSectionToUrlConvertor _sectionConvertor;
-        private readonly UserDto _user;
-        private readonly RemoteWebDriver _driver;
 
         public TestApiStep(RestWebClient client, ResponceDetails responce,
-            DetailsSectionToUrlConvertor sectionConvertor, UserDto user, RemoteWebDriver driver)
+            DetailsSectionToUrlConvertor sectionConvertor)
         {
             _client = client;
             _responce = responce;
             _sectionConvertor = sectionConvertor;
-            _user = user;
-            _driver = driver;
-        }
-
-        [When(@"I perform test request to the Users API and get operators by ""(.*)"" filter")]
-        public void WhenIPerformTestRequestToTheUsersApiAndGetOperatorsByFilter(string filterName)
-        {
-            var requestUri = $"{UrlProvider.RestClientBaseUrl}users/filters?$lang=en-GB";
-            var request = new RestRequest(requestUri);
-
-            request.AddParameter("Host", UrlProvider.RestClientBaseUrl);
-            request.AddParameter("Origin", UrlProvider.Url.TrimEnd('/'));
-            request.AddParameter("Referer", UrlProvider.EvergreenUrl);
-
-            var response = _client.Value.Get(request);
-
-            if (response.StatusCode != HttpStatusCode.OK)
-                throw new Exception($"Unable to execute request. URI: {requestUri}");
-
-            var content = response.Content;
-
-            var allFilters = JsonConvert.DeserializeObject<List<JObject>>(content);
-            var filter = allFilters.First(x => x["label"].ToString().Equals(filterName));
-            var allOperators = filter["operators"];
-            var operatorsValues = allOperators.Select(x => x["key"].ToString()).ToList();
-        }
-
-        [Then(@"following operators are displayed in ""(.*)"" category for ""(.*)"" filter on ""(.*)"" page:")]
-        public void ThenFollowingOperatorsAreDisplayedInCategoryForFilterOnPage(string categoryName, string filterName,
-            string pageName, Table table)
-        {
-            var requestUri = $"{UrlProvider.RestClientBaseUrl}{pageName.ToLower()}/filters?$lang=en-GB";
-            var request = new RestRequest(requestUri);
-
-            request.AddParameter("Host", UrlProvider.RestClientBaseUrl);
-            request.AddParameter("Origin", UrlProvider.Url.TrimEnd('/'));
-            request.AddParameter("Referer", UrlProvider.EvergreenUrl);
-
-            var response = _client.Value.Get(request);
-
-            if (response.StatusCode != HttpStatusCode.OK)
-                throw new Exception($"Unable to execute request. URI: {requestUri}");
-
-            var content = response.Content;
-
-            var allFilters = JsonConvert.DeserializeObject<List<JObject>>(content);
-            var filter = allFilters.First(x =>
-                x["translatedCategory"].ToString().Equals(categoryName) && x["label"].ToString().Equals(filterName));
-            var allOperators = filter["operators"];
-            var operatorsValues = allOperators.Select(x => x["key"].ToString()).ToList();
-            Assert.AreEqual(table.Rows.SelectMany(row => row.Values).ToList(), operatorsValues,
-                $"Incorrect operators are displayed for {filterName} filter");
-        }
-
-        [Then(@"default list page Size is ""(.*)"" and Cache ""(.*)""")]
-        public void ThenDefaultListPageSizeIsAndCache(int pageSize, int pageCache)
-        {
-            var requestUri = $"{UrlProvider.RestClientBaseUrl}security/userprofile";
-            var request = new RestRequest(requestUri);
-
-            request.AddParameter("Host", UrlProvider.RestClientBaseUrl);
-            request.AddParameter("Origin", UrlProvider.Url.TrimEnd('/'));
-            request.AddParameter("Referer", UrlProvider.EvergreenUrl);
-
-            var response = _client.Value.Get(request);
-
-            if (response.StatusCode != HttpStatusCode.OK)
-                throw new Exception($"Unable to execute request. URI: {requestUri}");
-
-            var content = response.Content;
-
-            var pageOptions = JsonConvert.DeserializeObject<JObject>(content);
-            var listPageSize = Convert.ToInt32(pageOptions["gridPageSize"]);
-            var listPageToCache = Convert.ToInt32(pageOptions["gridPageCache"]);
-            Assert.AreEqual(pageSize, listPageSize, "Incorrect Page Size on Account page");
-            Assert.AreEqual(pageCache, listPageToCache, "Incorrect Cache Size on Account page");
         }
 
         [When(@"I perform test request to the ""(.*)"" API and get ""(.*)"" item summary for ""(.*)"" section")]
@@ -144,92 +66,6 @@ namespace DashworksTestAutomation.Steps
 
             if (_responce.Value.StatusCode != HttpStatusCode.OK)
                 throw new Exception($"Unable to execute request. URI: {requestUri}");
-        }
-
-        [Then(@"""(.*)"" field display state is ""(.*)"" on Details tab API")]
-        public void ThenFieldIsDisplayedOnDetailsTab(string fieldName, string state)
-        {
-            var content = _responce.Value.Content;
-            var allItems = JsonConvert.DeserializeObject<JObject>(content)["metadata"];
-            try
-            {
-                var item = allItems.First(x => x["friendlyName"].ToString().Equals(fieldName));
-                Assert.AreEqual(state, item["visible"].ToString(), $"Incorrect display state for {fieldName}");
-            }
-            catch
-            {
-                Assert.AreEqual(state, "False", $"Incorrect display state for {fieldName}");
-            }
-        }
-
-        [Then(@"""(.*)"" text displayed for ""(.*)"" empty fields")]
-        public void ThenTextDisplayedForEmptyFields(string text, string sectionName)
-        {
-            var content = _responce.Value.Content;
-            var allFields = JsonConvert.DeserializeObject<JObject>(content)["results"];
-            foreach (var pair in allFields)
-            {
-                if (pair.ToString().Contains("address2") || pair.ToString().Contains("address3") ||
-                    pair.ToString().Contains("address4") ||
-                    pair.ToString().Contains("pendingStickyDepartmentMessage") ||
-                    pair.ToString().Contains("pendingStickyLocationMessage"))
-                    continue;
-                Assert.IsTrue(!string.IsNullOrEmpty(pair.Last.ToString()),
-                    "'Unknown' text is not displayed for field ");
-            }
-        }
-
-        [When(@"User create dynamic list with ""(.*)"" name on ""(.*)"" page")]
-        public void WhenUserCreateDynamicListWithNameOnPage(string listName, string pageName)
-        {
-            var queryString = GetQueryStringFromUrl(_driver.Url, pageName);
-            var requestUri = $"{UrlProvider.RestClientBaseUrl}lists/{pageName.ToLower()}";
-            var request = new RestRequest(requestUri);
-
-            request.AddParameter("Host", UrlProvider.RestClientBaseUrl);
-            request.AddParameter("Origin", UrlProvider.Url.TrimEnd('/'));
-            request.AddParameter("Referer", UrlProvider.EvergreenUrl);
-            request.AddParameter("listName", listName);
-            request.AddParameter("listType", "dynamic");
-            request.AddParameter("queryString", queryString);
-            request.AddParameter("sharedAccessType", "Private");
-            request.AddParameter("userId", DatabaseWorker.GetUserIdByLogin(_user.UserName));
-
-            var response = _client.Value.Post(request);
-
-            if (response.StatusCode != HttpStatusCode.OK)
-                throw new Exception($"Unable to execute request. URI: {requestUri}");
-
-            _driver.Navigate().Refresh();
-
-            var content = response.Content;
-
-            var responseContent = JsonConvert.DeserializeObject<JObject>(content);
-            var listId = responseContent["listId"].ToString();
-            var url = $"{UrlProvider.EvergreenUrl}#/{pageName.ToLower()}?$listid={listId}";
-            
-            _driver.Navigate().GoToUrl(url);
-            _driver.WaitForDataLoading();
-        }
-
-        private string GetQueryStringFromUrl(string url, string pageName)
-        {
-            var queryString = string.Empty;
-            var pattern = @"\?\$(.*)";
-            string originalPart = Regex.Match(url, pattern).Groups[1].Value;
-            if (originalPart.Contains("select="))
-            {
-                queryString = "$" + originalPart;
-            }
-            else
-            {
-                queryString = RestWebClient.GetDefaultColumnsUrlByPageName(pageName) + "&$" + originalPart;
-            }
-            if (!originalPart.Contains("filter="))
-            {
-                queryString += "&$filter=";
-            }
-            return queryString;
         }
     }
 }
