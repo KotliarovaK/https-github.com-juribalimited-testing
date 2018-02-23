@@ -786,7 +786,7 @@ Scenario: EvergreenJnr_DevicesList_CheckThat500ErrorIsNotDisplayedForStaticListA
 	When User create custom list with "TestList8D5C03" name
 	When User clicks "Applications" on the left-hand menu
 	Then "Applications" list should be displayed to the user
-	When User removes custom list with "StaticListTestName" name
+	Then User remove list with "StaticListTestName" name on "Applications" page
 	When User clicks "Devices" on the left-hand menu
 	Then "Devices" list should be displayed to the user
 	When User navigates to the "TestList8D5C03" list
@@ -814,7 +814,7 @@ Scenario: EvergreenJnr_DevicesList_CheckThat500ErrorIsNotDisplayedForDynamicList
 	When User create custom list with "TestList5E021D" name
 	When User clicks "Applications" on the left-hand menu
 	Then "Applications" list should be displayed to the user
-	When User removes custom list with "TestList5E021D" name
+	Then User remove list with "TestList5E021D" name on "Applications" page
 	When User clicks "Devices" on the left-hand menu
 	Then "Devices" list should be displayed to the user
 	When User navigates to the "TestList5E021D" list
