@@ -163,8 +163,8 @@ namespace DashworksTestAutomation.Steps.Dashworks
             bucketName.BucketNameField.SendKeys(bucketText);
         }
 
-        [Then(@"User select ""(.*)"" team in Select a team dropdown")]
-        public void ThenUserSelectTeamInSelectATeamDropdown(string userOption)
+        [Then(@"User select ""(.*)"" team in the Select a team dropdown")]
+        public void ThenUserSelectTeamInTheSelectATeamDropdown(string userOption)
         {
             var createBucketElement = _driver.NowAt<BucketsPage>();
             _driver.WaitWhileControlIsNotDisplayed<BucketsPage>(() => createBucketElement.SelectTeamDropdown);
@@ -194,6 +194,46 @@ namespace DashworksTestAutomation.Steps.Dashworks
             var page = _driver.NowAt<BucketsPage>();
             _driver.WaitWhileControlIsNotDisplayed<BucketsPage>(() => page.ErrorMessageBucketsPage);
             Assert.AreEqual(text, page.ErrorMessageBucketsPage.Text, "Error Message is not displayed");
+        }
+
+        [When(@"User clicks Create Project button")]
+        public void WhenUserClicksCreateProjectButton()
+        {
+            var page = _driver.NowAt<ProjectsPage>();
+            _driver.WaitWhileControlIsNotDisplayed<ProjectsPage>(() => page.CreateProjectButton);
+            page.CreateProjectButton.Click();
+            Logger.Write("Create Project button was clicked");
+        }
+
+        [Then(@"Create Project page should be displayed to the user")]
+        public void ThenCreateProjectPageShouldBeDisplayedToTheUser()
+        {
+            var page = _driver.NowAt<ProjectsPage>();
+            Assert.IsTrue(page.ProjectNameField.Displayed(), "Create Project page was not displayed");
+            Logger.Write("Create Project page is visible");
+        }
+
+        [Then(@"User enters ""(.*)"" in the Project Name field")]
+        public void ThenUserEntersInTheProjectNameField(string projectText)
+        {
+            var bucketName = _driver.NowAt<ProjectsPage>();
+            bucketName.ProjectNameField.SendKeys(projectText);
+        }
+
+        [Then(@"User select ""(.*)"" in the Scope Project dropdown")]
+        public void ThenUserSelectInTheScopeProjectDropdown(string userOption)
+        {
+            var createBucketElement = _driver.NowAt<ProjectsPage>();
+            _driver.WaitWhileControlIsNotDisplayed<ProjectsPage>(() => createBucketElement.SelectScopeProject);
+            _driver.SelectCustomSelectbox(createBucketElement.SelectScopeProject, userOption);
+        }
+
+        [Then(@"Create Project button is disabled")]
+        public void ThenCreateProjectButtonIsDisabled()
+        {
+            var button = _driver.NowAt<ProjectsPage>();
+            _driver.WaitWhileControlIsNotDisplayed<ProjectsPage>(() => button.CreateProjectButton);
+            Assert.IsTrue(Convert.ToBoolean(button.CreateProjectButton.GetAttribute("disabled")), "Create Project button is active");
         }
 
         [Then(@"Delete ""(.*)"" Project in the Administration")]
