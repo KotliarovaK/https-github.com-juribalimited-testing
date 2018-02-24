@@ -85,7 +85,7 @@ Examples:
 	| Devices      | Hostname      | Applications | Application Summary | Application Detail  | Application   | Advertisement Key | Advertisement Key |
 	| Devices      | Hostname      | Applications | Application Summary | Application Detail  | Application   | Group Key         | Group Key         |
 	| Devices      | Hostname      | Applications | Application Summary | Application Detail  | Application   | Collection Key    | Collection Key    |
-	| Devices      | Hostname      | Applications | Application Summary | Application Detail  | Application   | User Key          | User Key          |
+	#| Devices      | Hostname      | Applications | Application Summary | Application Detail  | Application   | User Key          | User Key          |
 	| Devices      | Hostname      | Applications | Application Summary | Advertisements      | Application   | Key               | Key               |
 	| Devices      | Hostname      | Applications | Application Summary | Advertisements      | Application   | Application Key   | Application Key   |
 	| Devices      | Hostname      | Applications | Application Summary | Advertisements      | Application   | SiteKey           | SiteKey           |
@@ -107,7 +107,7 @@ Examples:
 	| Mailboxes    | Email Address | Users        | Users               | Mailbox Permissions | Domain        | ViaGroupObjectKey | ViaGroupObjectKey |
 	| Mailboxes    | Email Address | Users        | Users               | Mailbox Permissions | Domain        | AccessCategoryKey | AccessCategoryKey |
 
-@Evergreen @AllLists @EvergreenJnr_ItemDetails @ItemDetailsDisplay @DAS11732
+@Evergreen @AllLists @EvergreenJnr_ItemDetails @ItemDetailsDisplay @DAS11732 @DAS12053 
 Scenario Outline: EvergreenJnr_AllLists_CheckThatDataIsDisplayedAfterAddingColumnsForClosedSections
 	When User clicks "<PageName>" on the left-hand menu
 	Then "<PageName>" list should be displayed to the user
@@ -131,7 +131,7 @@ Examples:
 	| Devices  | Hostname | Compliance | Software Compliance Issues | Application | PackageKey       | PackageKey       |
 	| Devices  | Hostname | Projects   | Device Projects            | Project     | Object ID        | Object ID        |
 	| Devices  | Hostname | Projects   | Device Projects            | Project     | Key              | Key              |
-	| Devices  | Hostname | Projects   | Device Owner Projects      | Username    | ObjecyKey        | ObjecyKey        |
+	#| Devices  | Hostname | Projects   | Device Owner Projects      | Username    | ObjecyKey        | ObjecyKey        |
 	| Devices  | Hostname | Projects   | Device Owner Projects      | Username    | Object ID        | Object ID        |
 	| Devices  | Hostname | Projects   | Device Owner Projects      | Username    | Key              | Key              |
 	| Devices  | Hostname | Projects   | Device Owner Projects      | Username    | Request Type Key | Request Type Key |
@@ -293,7 +293,7 @@ Scenario Outline: EvergreenJnr_AllLists_CheckThatRowsInTheTableAreEmptyIfTheData
 	Then Empty rows are displayed if the data is unknown
 
 Examples:
-	| PageName  | SelectedName                     | ColumnName    | SectionName |
-	| Devices   | 001BAQXT6JWFPI                   | Hostname      | Device      |
-	| Users     | $231000-3AC04R8AR431             | Username      | AD Object   |
-	| Mailboxes | 000F977AC8824FE39B8@bclabs.local | Email Address | Mailbox     |
+	| PageName  | SelectedName                | ColumnName    | SectionName |
+	| Devices   | 00K4CEEQ737BA4L             | Hostname      | Device      |
+	| Users     | $231000-3AC04R8AR431        | Username      | AD Object   |
+	| Mailboxes | aaron.u.flores@dwlabs.local | Email Address | Mailbox     |

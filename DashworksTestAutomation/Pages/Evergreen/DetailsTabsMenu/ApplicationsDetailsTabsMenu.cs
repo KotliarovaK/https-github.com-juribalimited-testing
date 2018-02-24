@@ -89,6 +89,21 @@ namespace DashworksTestAutomation.Pages.Evergreen.DetailsTabsMenu
             return columnNumber;
         }
 
+        public List<string> GetColumnIdContent(string columnName)
+        {
+            By by = By.XPath(
+                $".//div[@class='ag-body']//div[@class='ag-body-container']/div/div[@col-id='{GetColumnIdByColumnName(columnName)}']");
+            var t = Driver.FindElements(by).Select(x => x.Text).ToList();
+            return Driver.FindElements(by).Select(x => x.Text).ToList();
+        }
+
+        public string GetColumnIdByColumnName(string columnName)
+        {
+            var headerSelector = By.XPath($".//div[@class='ag-header-container']//span[text()='{columnName}']//ancestor::div[@col-id]");
+            Driver.WaitForDataLoading();
+            return Driver.FindElement(headerSelector).GetAttribute("col-id");
+        }
+
         public IWebElement GetFilterByColumnName(string columnName)
         {
             var allFilters =
