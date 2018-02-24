@@ -6,21 +6,6 @@ Background: Pre-Conditions
 	Given User is logged in to the Evergreen
 	Then Evergreen Dashboards page should be displayed to the user
 
-@Evergreen @AllLists @EvergreenJnr_ItemDetails @ItemDetailsDisplay @DAS10438 @DAS11983 @Not_Run
-Scenario Outline: EvergreenJnr_AllLists_AllEmptyFieldsInItemDetailsAreDisplayedAsUnknown
-	When User clicks "<PageName>" on the left-hand menu
-	Then "<PageName>" list should be displayed to the user
-	When User perform search by "<SearchCriteria>"
-	And User click content from "<ColumnName>" column
-	When User navigates to the "Details" tab
-	Then Unknown text is displayed for empty fields for "Department and Location" section
-
-Examples: 
-	| PageName     | SearchCriteria                     | ColumnName    |
-	| Mailboxes    | azuresync3@juriba1.onmicrosoft.com | Email Address |
-	#| Users        | ABW1509426                         | Username      |
-	#| Devices      | 01BQIYGGUW5PRP6                    | Hostname      |
-
 @Evergreen @Mailboxes @EvergreenJnr_ItemDetails @ItemDetailsDisplay @DAS11531
 Scenario: EvergreenJnr_MailboxesList_CheckThat404ErrorIsNotDisplayedOccurringWhenViewingMailboxDetailsWhereThereIsNoMailboxOwner
 	When User clicks "Mailboxes" on the left-hand menu
@@ -28,17 +13,6 @@ Scenario: EvergreenJnr_MailboxesList_CheckThat404ErrorIsNotDisplayedOccurringWhe
 	When User perform search by "alex.cristea@juriba.com"
 	When User click content from "Email Address" column
 	Then "No mailbox owner found for this mailbox" text is displayed for "Mailbox Owner" section
-
-@Evergreen @AllLists @EvergreenJnr_ItemDetails @ItemDetailsDisplay @DAS10438 @DAS11983 @API @Not_Run
-Scenario Outline: EvergreenJnr_AllLists_AllEmptyFieldsInItemDetailsAreDisplayedAsUnknownOnAPI
-	When I perform test request to the "<PageName>" API and get "<ItemName>" item summary for "<SectionName>" section
-	Then "Unknown" text displayed for "<SectionName>" empty fields
-
-Examples: 
-	| PageName  | ItemName                           | SectionName             |
-	| Mailboxes | azuresync3@juriba1.onmicrosoft.com | Department and Location |
-	| Users     | ABW1509426                         | Department and Location |
-	| Devices   | 01BQIYGGUW5PRP6                    | Department and Location |
 
 @Evergreen @AllLists @EvergreenJnr_ItemDetails @ItemDetailsDisplay @DAS11478 @DAS11477 @DAS11476 @DAS11510 @API
 Scenario Outline: EvergreenJnr_AllLists_CheckStateOfSelectedFieldOnDetailsTabOnAPI
@@ -111,7 +85,7 @@ Examples:
 	| Devices      | Hostname      | Applications | Application Summary | Application Detail  | Application   | Advertisement Key | Advertisement Key |
 	| Devices      | Hostname      | Applications | Application Summary | Application Detail  | Application   | Group Key         | Group Key         |
 	| Devices      | Hostname      | Applications | Application Summary | Application Detail  | Application   | Collection Key    | Collection Key    |
-	| Devices      | Hostname      | Applications | Application Summary | Application Detail  | Application   | User Key          | User Key          |
+	#| Devices      | Hostname      | Applications | Application Summary | Application Detail  | Application   | User Key          | User Key          |
 	| Devices      | Hostname      | Applications | Application Summary | Advertisements      | Application   | Key               | Key               |
 	| Devices      | Hostname      | Applications | Application Summary | Advertisements      | Application   | Application Key   | Application Key   |
 	| Devices      | Hostname      | Applications | Application Summary | Advertisements      | Application   | SiteKey           | SiteKey           |
@@ -133,7 +107,7 @@ Examples:
 	| Mailboxes    | Email Address | Users        | Users               | Mailbox Permissions | Domain        | ViaGroupObjectKey | ViaGroupObjectKey |
 	| Mailboxes    | Email Address | Users        | Users               | Mailbox Permissions | Domain        | AccessCategoryKey | AccessCategoryKey |
 
-@Evergreen @AllLists @EvergreenJnr_ItemDetails @ItemDetailsDisplay @DAS11732
+@Evergreen @AllLists @EvergreenJnr_ItemDetails @ItemDetailsDisplay @DAS11732 @DAS12053 
 Scenario Outline: EvergreenJnr_AllLists_CheckThatDataIsDisplayedAfterAddingColumnsForClosedSections
 	When User clicks "<PageName>" on the left-hand menu
 	Then "<PageName>" list should be displayed to the user
@@ -157,7 +131,7 @@ Examples:
 	| Devices  | Hostname | Compliance | Software Compliance Issues | Application | PackageKey       | PackageKey       |
 	| Devices  | Hostname | Projects   | Device Projects            | Project     | Object ID        | Object ID        |
 	| Devices  | Hostname | Projects   | Device Projects            | Project     | Key              | Key              |
-	| Devices  | Hostname | Projects   | Device Owner Projects      | Username    | ObjecyKey        | ObjecyKey        |
+	#| Devices  | Hostname | Projects   | Device Owner Projects      | Username    | ObjecyKey        | ObjecyKey        |
 	| Devices  | Hostname | Projects   | Device Owner Projects      | Username    | Object ID        | Object ID        |
 	| Devices  | Hostname | Projects   | Device Owner Projects      | Username    | Key              | Key              |
 	| Devices  | Hostname | Projects   | Device Owner Projects      | Username    | Request Type Key | Request Type Key |
@@ -306,3 +280,20 @@ Scenario: EvergreenJnr_MailboxesLists_CheckThatLinksAndImageItemAreDisplayedInTh
 	When User open "Mailbox Permissions" section
 	Then Image item from "Name" column is displayed to the user
 	Then Links from "Name" column is displayed to the user
+
+@Evergreen @AllLists @EvergreenJnr_ItemDetails @ItemDetailsDisplay @DAS11983
+Scenario Outline: EvergreenJnr_AllLists_CheckThatRowsInTheTableAreEmptyIfTheDataIsUnknown
+	When User clicks "<PageName>" on the left-hand menu
+	Then "<PageName>" list should be displayed to the user
+	When User perform search by "<SelectedName>"
+	And User click content from "<ColumnName>" column
+	And User navigates to the "Details" tab
+	Then User closes "<SectionName>" section on the Details Page
+	When User open "Department and Location" section
+	Then Empty rows are displayed if the data is unknown
+
+Examples:
+	| PageName  | SelectedName                | ColumnName    | SectionName |
+	| Devices   | 00K4CEEQ737BA4L             | Hostname      | Device      |
+	| Users     | $231000-3AC04R8AR431        | Username      | AD Object   |
+	| Mailboxes | aaron.u.flores@dwlabs.local | Email Address | Mailbox     |

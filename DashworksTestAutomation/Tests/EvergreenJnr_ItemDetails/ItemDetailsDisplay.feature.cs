@@ -68,68 +68,6 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_ItemDetails
         }
         
         [NUnit.Framework.TestAttribute()]
-        [NUnit.Framework.DescriptionAttribute("EvergreenJnr_AllLists_AllEmptyFieldsInItemDetailsAreDisplayedAsUnknown")]
-        [NUnit.Framework.CategoryAttribute("Evergreen")]
-        [NUnit.Framework.CategoryAttribute("AllLists")]
-        [NUnit.Framework.CategoryAttribute("EvergreenJnr_ItemDetails")]
-        [NUnit.Framework.CategoryAttribute("ItemDetailsDisplay")]
-        [NUnit.Framework.CategoryAttribute("DAS10438")]
-        [NUnit.Framework.CategoryAttribute("DAS11983")]
-        [NUnit.Framework.CategoryAttribute("Not_Run")]
-        [NUnit.Framework.TestCaseAttribute("Mailboxes", "azuresync3@juriba1.onmicrosoft.com", "Email Address", new string[0])]
-        public virtual void EvergreenJnr_AllLists_AllEmptyFieldsInItemDetailsAreDisplayedAsUnknown(string pageName, string searchCriteria, string columnName, string[] exampleTags)
-        {
-            System.Exception lastException = null;
-            for (int i = 0; (i <= 1); i = (i + 1))
-            {
-                try
-                {
-                    this.EvergreenJnr_AllLists_AllEmptyFieldsInItemDetailsAreDisplayedAsUnknownInternal(pageName, searchCriteria, columnName, exampleTags);
-                    return;
-                }
-                catch (System.Exception exc)
-                {
-                    lastException = exc;
-                }
-                if (((i + 1) 
-                            <= 1))
-                {
-                    testRunner.OnScenarioEnd();
-                }
-            }
-            if ((lastException != null))
-            {
-                throw lastException;
-            }
-        }
-        
-        private void EvergreenJnr_AllLists_AllEmptyFieldsInItemDetailsAreDisplayedAsUnknownInternal(string pageName, string searchCriteria, string columnName, string[] exampleTags)
-        {
-            string[] @__tags = new string[] {
-                    "Evergreen",
-                    "AllLists",
-                    "EvergreenJnr_ItemDetails",
-                    "ItemDetailsDisplay",
-                    "DAS10438",
-                    "DAS11983",
-                    "Not_Run"};
-            if ((exampleTags != null))
-            {
-                @__tags = System.Linq.Enumerable.ToArray(System.Linq.Enumerable.Concat(@__tags, exampleTags));
-            }
-            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("EvergreenJnr_AllLists_AllEmptyFieldsInItemDetailsAreDisplayedAsUnknown", @__tags);
-            this.ScenarioSetup(scenarioInfo);
-            this.FeatureBackground();
-            testRunner.When(string.Format("User clicks \"{0}\" on the left-hand menu", pageName), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-            testRunner.Then(string.Format("\"{0}\" list should be displayed to the user", pageName), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-            testRunner.When(string.Format("User perform search by \"{0}\"", searchCriteria), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-            testRunner.And(string.Format("User click content from \"{0}\" column", columnName), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-            testRunner.When("User navigates to the \"Details\" tab", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-            testRunner.Then("Unknown text is displayed for empty fields for \"Department and Location\" section", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-            this.ScenarioCleanup();
-        }
-        
-        [NUnit.Framework.TestAttribute()]
         [NUnit.Framework.DescriptionAttribute("EvergreenJnr_MailboxesList_CheckThat404ErrorIsNotDisplayedOccurringWhenViewingMai" +
             "lboxDetailsWhereThereIsNoMailboxOwner")]
         [NUnit.Framework.CategoryAttribute("Evergreen")]
@@ -180,69 +118,6 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_ItemDetails
             testRunner.When("User click content from \"Email Address\" column", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
             testRunner.Then("\"No mailbox owner found for this mailbox\" text is displayed for \"Mailbox Owner\" s" +
                     "ection", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-            this.ScenarioCleanup();
-        }
-        
-        [NUnit.Framework.TestAttribute()]
-        [NUnit.Framework.DescriptionAttribute("EvergreenJnr_AllLists_AllEmptyFieldsInItemDetailsAreDisplayedAsUnknownOnAPI")]
-        [NUnit.Framework.CategoryAttribute("Evergreen")]
-        [NUnit.Framework.CategoryAttribute("AllLists")]
-        [NUnit.Framework.CategoryAttribute("EvergreenJnr_ItemDetails")]
-        [NUnit.Framework.CategoryAttribute("ItemDetailsDisplay")]
-        [NUnit.Framework.CategoryAttribute("DAS10438")]
-        [NUnit.Framework.CategoryAttribute("DAS11983")]
-        [NUnit.Framework.CategoryAttribute("API")]
-        [NUnit.Framework.CategoryAttribute("Not_Run")]
-        [NUnit.Framework.TestCaseAttribute("Mailboxes", "azuresync3@juriba1.onmicrosoft.com", "Department and Location", new string[0])]
-        [NUnit.Framework.TestCaseAttribute("Users", "ABW1509426", "Department and Location", new string[0])]
-        [NUnit.Framework.TestCaseAttribute("Devices", "01BQIYGGUW5PRP6", "Department and Location", new string[0])]
-        public virtual void EvergreenJnr_AllLists_AllEmptyFieldsInItemDetailsAreDisplayedAsUnknownOnAPI(string pageName, string itemName, string sectionName, string[] exampleTags)
-        {
-            System.Exception lastException = null;
-            for (int i = 0; (i <= 1); i = (i + 1))
-            {
-                try
-                {
-                    this.EvergreenJnr_AllLists_AllEmptyFieldsInItemDetailsAreDisplayedAsUnknownOnAPIInternal(pageName, itemName, sectionName, exampleTags);
-                    return;
-                }
-                catch (System.Exception exc)
-                {
-                    lastException = exc;
-                }
-                if (((i + 1) 
-                            <= 1))
-                {
-                    testRunner.OnScenarioEnd();
-                }
-            }
-            if ((lastException != null))
-            {
-                throw lastException;
-            }
-        }
-        
-        private void EvergreenJnr_AllLists_AllEmptyFieldsInItemDetailsAreDisplayedAsUnknownOnAPIInternal(string pageName, string itemName, string sectionName, string[] exampleTags)
-        {
-            string[] @__tags = new string[] {
-                    "Evergreen",
-                    "AllLists",
-                    "EvergreenJnr_ItemDetails",
-                    "ItemDetailsDisplay",
-                    "DAS10438",
-                    "DAS11983",
-                    "API",
-                    "Not_Run"};
-            if ((exampleTags != null))
-            {
-                @__tags = System.Linq.Enumerable.ToArray(System.Linq.Enumerable.Concat(@__tags, exampleTags));
-            }
-            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("EvergreenJnr_AllLists_AllEmptyFieldsInItemDetailsAreDisplayedAsUnknownOnAPI", @__tags);
-            this.ScenarioSetup(scenarioInfo);
-            this.FeatureBackground();
-            testRunner.When(string.Format("I perform test request to the \"{0}\" API and get \"{1}\" item summary for \"{2}\" sect" +
-                        "ion", pageName, itemName, sectionName), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-            testRunner.Then(string.Format("\"Unknown\" text displayed for \"{0}\" empty fields", sectionName), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
             this.ScenarioCleanup();
         }
         
@@ -450,7 +325,6 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_ItemDetails
         [NUnit.Framework.TestCaseAttribute("Devices", "Hostname", "Applications", "Application Summary", "Application Detail", "Application", "Advertisement Key", "Advertisement Key", new string[0])]
         [NUnit.Framework.TestCaseAttribute("Devices", "Hostname", "Applications", "Application Summary", "Application Detail", "Application", "Group Key", "Group Key", new string[0])]
         [NUnit.Framework.TestCaseAttribute("Devices", "Hostname", "Applications", "Application Summary", "Application Detail", "Application", "Collection Key", "Collection Key", new string[0])]
-        [NUnit.Framework.TestCaseAttribute("Devices", "Hostname", "Applications", "Application Summary", "Application Detail", "Application", "User Key", "User Key", new string[0])]
         [NUnit.Framework.TestCaseAttribute("Devices", "Hostname", "Applications", "Application Summary", "Advertisements", "Application", "Key", "Key", new string[0])]
         [NUnit.Framework.TestCaseAttribute("Devices", "Hostname", "Applications", "Application Summary", "Advertisements", "Application", "Application Key", "Application Key", new string[0])]
         [NUnit.Framework.TestCaseAttribute("Devices", "Hostname", "Applications", "Application Summary", "Advertisements", "Application", "SiteKey", "SiteKey", new string[0])]
@@ -544,10 +418,10 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_ItemDetails
         [NUnit.Framework.CategoryAttribute("EvergreenJnr_ItemDetails")]
         [NUnit.Framework.CategoryAttribute("ItemDetailsDisplay")]
         [NUnit.Framework.CategoryAttribute("DAS11732")]
+        [NUnit.Framework.CategoryAttribute("DAS12053")]
         [NUnit.Framework.TestCaseAttribute("Devices", "Hostname", "Compliance", "Software Compliance Issues", "Application", "PackageKey", "PackageKey", new string[0])]
         [NUnit.Framework.TestCaseAttribute("Devices", "Hostname", "Projects", "Device Projects", "Project", "Object ID", "Object ID", new string[0])]
         [NUnit.Framework.TestCaseAttribute("Devices", "Hostname", "Projects", "Device Projects", "Project", "Key", "Key", new string[0])]
-        [NUnit.Framework.TestCaseAttribute("Devices", "Hostname", "Projects", "Device Owner Projects", "Username", "ObjecyKey", "ObjecyKey", new string[0])]
         [NUnit.Framework.TestCaseAttribute("Devices", "Hostname", "Projects", "Device Owner Projects", "Username", "Object ID", "Object ID", new string[0])]
         [NUnit.Framework.TestCaseAttribute("Devices", "Hostname", "Projects", "Device Owner Projects", "Username", "Key", "Key", new string[0])]
         [NUnit.Framework.TestCaseAttribute("Devices", "Hostname", "Projects", "Device Owner Projects", "Username", "Request Type Key", "Request Type Key", new string[0])]
@@ -586,7 +460,8 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_ItemDetails
                     "AllLists",
                     "EvergreenJnr_ItemDetails",
                     "ItemDetailsDisplay",
-                    "DAS11732"};
+                    "DAS11732",
+                    "DAS12053"};
             if ((exampleTags != null))
             {
                 @__tags = System.Linq.Enumerable.ToArray(System.Linq.Enumerable.Concat(@__tags, exampleTags));
@@ -1163,6 +1038,68 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_ItemDetails
             testRunner.When("User open \"Mailbox Permissions\" section", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
             testRunner.Then("Image item from \"Name\" column is displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
             testRunner.Then("Links from \"Name\" column is displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+            this.ScenarioCleanup();
+        }
+        
+        [NUnit.Framework.TestAttribute()]
+        [NUnit.Framework.DescriptionAttribute("EvergreenJnr_AllLists_CheckThatRowsInTheTableAreEmptyIfTheDataIsUnknown")]
+        [NUnit.Framework.CategoryAttribute("Evergreen")]
+        [NUnit.Framework.CategoryAttribute("AllLists")]
+        [NUnit.Framework.CategoryAttribute("EvergreenJnr_ItemDetails")]
+        [NUnit.Framework.CategoryAttribute("ItemDetailsDisplay")]
+        [NUnit.Framework.CategoryAttribute("DAS11983")]
+        [NUnit.Framework.TestCaseAttribute("Devices", "00K4CEEQ737BA4L", "Hostname", "Device", new string[0])]
+        [NUnit.Framework.TestCaseAttribute("Users", "$231000-3AC04R8AR431", "Username", "AD Object", new string[0])]
+        [NUnit.Framework.TestCaseAttribute("Mailboxes", "aaron.u.flores@dwlabs.local", "Email Address", "Mailbox", new string[0])]
+        public virtual void EvergreenJnr_AllLists_CheckThatRowsInTheTableAreEmptyIfTheDataIsUnknown(string pageName, string selectedName, string columnName, string sectionName, string[] exampleTags)
+        {
+            System.Exception lastException = null;
+            for (int i = 0; (i <= 1); i = (i + 1))
+            {
+                try
+                {
+                    this.EvergreenJnr_AllLists_CheckThatRowsInTheTableAreEmptyIfTheDataIsUnknownInternal(pageName, selectedName, columnName, sectionName, exampleTags);
+                    return;
+                }
+                catch (System.Exception exc)
+                {
+                    lastException = exc;
+                }
+                if (((i + 1) 
+                            <= 1))
+                {
+                    testRunner.OnScenarioEnd();
+                }
+            }
+            if ((lastException != null))
+            {
+                throw lastException;
+            }
+        }
+        
+        private void EvergreenJnr_AllLists_CheckThatRowsInTheTableAreEmptyIfTheDataIsUnknownInternal(string pageName, string selectedName, string columnName, string sectionName, string[] exampleTags)
+        {
+            string[] @__tags = new string[] {
+                    "Evergreen",
+                    "AllLists",
+                    "EvergreenJnr_ItemDetails",
+                    "ItemDetailsDisplay",
+                    "DAS11983"};
+            if ((exampleTags != null))
+            {
+                @__tags = System.Linq.Enumerable.ToArray(System.Linq.Enumerable.Concat(@__tags, exampleTags));
+            }
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("EvergreenJnr_AllLists_CheckThatRowsInTheTableAreEmptyIfTheDataIsUnknown", @__tags);
+            this.ScenarioSetup(scenarioInfo);
+            this.FeatureBackground();
+            testRunner.When(string.Format("User clicks \"{0}\" on the left-hand menu", pageName), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+            testRunner.Then(string.Format("\"{0}\" list should be displayed to the user", pageName), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+            testRunner.When(string.Format("User perform search by \"{0}\"", selectedName), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+            testRunner.And(string.Format("User click content from \"{0}\" column", columnName), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+            testRunner.And("User navigates to the \"Details\" tab", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+            testRunner.Then(string.Format("User closes \"{0}\" section on the Details Page", sectionName), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+            testRunner.When("User open \"Department and Location\" section", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+            testRunner.Then("Empty rows are displayed if the data is unknown", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
             this.ScenarioCleanup();
         }
     }

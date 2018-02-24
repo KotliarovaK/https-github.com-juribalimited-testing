@@ -123,7 +123,8 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_Columns
             table1.AddRow(new string[] {
                         "Device Key"});
             testRunner.When("User add following columns using URL to the \"Devices\" page:", ((string)(null)), table1, "When ");
-            testRunner.When("User create custom list with \"RemovingSortedColumnInCustomList\" name", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+            testRunner.When("User create dynamic list with \"RemovingSortedColumnInCustomList\" name on \"Devices" +
+                    "\" page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
             testRunner.Then("\"RemovingSortedColumnInCustomList\" list is displayed to user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
             testRunner.When("User clicks the Columns button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
             testRunner.Then("Columns panel is displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
@@ -215,7 +216,7 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_Columns
             table7.AddRow(new string[] {
                         "Build Date"});
             testRunner.When("User add following columns using URL to the \"Devices\" page:", ((string)(null)), table7, "When ");
-            testRunner.When("User create custom list with \"TestList474460\" name", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+            testRunner.When("User create dynamic list with \"TestList474460\" name on \"Devices\" page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
             testRunner.Then("\"TestList474460\" list is displayed to user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
             testRunner.When("User clicks the Columns button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
             testRunner.Then("Columns panel is displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");

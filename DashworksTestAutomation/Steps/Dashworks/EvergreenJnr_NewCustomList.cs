@@ -22,14 +22,16 @@ namespace DashworksTestAutomation.Steps.Dashworks
         private readonly UserDto _user;
         private readonly UsedUsers _usedUsers;
         private readonly UsersWithSharedLists _usersWithSharedLists;
+        private readonly ListsDetails _listsDetails;
 
         public EvergreenJnr_NewCustomList(RemoteWebDriver driver, UserDto user, UsedUsers usedUsers,
-            UsersWithSharedLists usersWithSharedLists)
+            UsersWithSharedLists usersWithSharedLists, ListsDetails listsDetails)
         {
             _driver = driver;
             _user = user;
             _usedUsers = usedUsers;
             _usersWithSharedLists = usersWithSharedLists;
+            _listsDetails = listsDetails;
         }
 
         [Then(@"Save to New Custom List element is NOT displayed")]
@@ -71,6 +73,7 @@ namespace DashworksTestAutomation.Steps.Dashworks
             //Small wait for message display
             Thread.Sleep(300);
             _driver.WaitWhileControlIsDisplayed<CustomListElement>(() => listElement.SuccessCreateMessage);
+            _listsDetails.AddList($"{listName}");
         }
 
         [Then(@"User type ""(.*)"" into Custom list name field")]
@@ -334,7 +337,7 @@ namespace DashworksTestAutomation.Steps.Dashworks
                         //var listsIds = DatabaseHelper.ExecuteReader("SELECT [ListId] FROM[DesktopBI].[dbo].[EvergreenList]", 0);
                         //All lists for specific user
                         var listsIds = DatabaseHelper.ExecuteReader(
-                            $"select l.ListId from[aspnetdb].[dbo].[aspnet_Users] u join[DesktopBI].[dbo].[EvergreenList] l on u.UserId = l.UserId where u.LoweredUserName = '{userDto.UserName}'",
+                            $"select l.ListId from [aspnetdb].[dbo].[aspnet_Users] u join [DesktopBI].[dbo].[EvergreenList] l on u.UserId = l.UserId where u.LoweredUserName = '{userDto.UserName}'",
                             0);
                         DatabaseHelper.RemoveLists(listsIds);
                     }
