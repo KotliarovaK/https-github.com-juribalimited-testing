@@ -3249,8 +3249,6 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_FiltersFeature
             testRunner.When("User add \"Windows7Mi: Application Rationalisation\" filter where type is \"Equal\" w" +
                     "ith added column and following checkboxes:", ((string)(null)), table77, "When ");
             testRunner.Then("\"Windows7Mi: Application Rationalisation\" filter is added to the list", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-            testRunner.When("User clicks the Filters button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-            testRunner.Then("Filters panel is displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
             TechTalk.SpecFlow.Table table78 = new TechTalk.SpecFlow.Table(new string[] {
                         "SelectedCheckboxes"});
             table78.AddRow(new string[] {
@@ -3259,15 +3257,13 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_FiltersFeature
                     "d following checkboxes:", ((string)(null)), table78, "When ");
             testRunner.Then("\"Windows7Mi: In Scope\" filter is added to the list", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
             testRunner.When("User click on \'Windows7Mi: In Scope\' column header", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+            testRunner.And("User click on \'Windows7Mi: In Scope\' column header", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
             testRunner.Then("data in table is sorted by \'Windows7Mi: In Scope\' column in ascending order", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-            testRunner.When("User click on \'Windows7Mi: In Scope\' column header", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-            testRunner.Then("data in table is sorted by \'Windows7Mi: In Scope\' column in descending order", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-            testRunner.Then("Empty rows are displayed if the data is unknown", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
             TechTalk.SpecFlow.Table table79 = new TechTalk.SpecFlow.Table(new string[] {
                         "ColumnName"});
             table79.AddRow(new string[] {
                         "Windows7Mi: Application Rationalisation"});
-            testRunner.Then("Content is empty in the column", ((string)(null)), table79, "Then ");
+            testRunner.And("Content is empty in the column", ((string)(null)), table79, "And ");
             this.ScenarioCleanup();
         }
     }

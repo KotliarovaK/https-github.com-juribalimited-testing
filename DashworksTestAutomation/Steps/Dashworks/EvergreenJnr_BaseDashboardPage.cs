@@ -200,8 +200,6 @@ namespace DashworksTestAutomation.Steps.Dashworks
             {
                 var content = page.GetColumnContent(row["ColumnName"]);
 
-
-                //Check that at least 1 cell has some content
                 Assert.IsFalse(content.Count(x => !string.IsNullOrEmpty(x)) > 10, "Column is empty");
             }
         }

@@ -941,17 +941,13 @@ Scenario: EvergreenJnr_ApplicationsLists_CheckThatNoDataIsDisplayedInTheApplicat
 	| SelectedCheckboxes |
 	| KEEP               |
 	Then "Windows7Mi: Application Rationalisation" filter is added to the list
-	When User clicks the Filters button
-	Then Filters panel is displayed to the user
 	When User add "Windows7Mi: In Scope" filter where type is "Equal" with added column and following checkboxes:
 	| SelectedCheckboxes |
 	| FALSE              |
 	Then "Windows7Mi: In Scope" filter is added to the list
 	When User click on 'Windows7Mi: In Scope' column header
+	And User click on 'Windows7Mi: In Scope' column header
 	Then data in table is sorted by 'Windows7Mi: In Scope' column in ascending order
-	When User click on 'Windows7Mi: In Scope' column header
-	Then data in table is sorted by 'Windows7Mi: In Scope' column in descending order
-	Then Empty rows are displayed if the data is unknown
-	Then Content is empty in the column
+	And Content is empty in the column
 	| ColumnName                              |
 	| Windows7Mi: Application Rationalisation |
