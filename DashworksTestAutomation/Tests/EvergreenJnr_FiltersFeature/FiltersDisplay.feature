@@ -786,7 +786,7 @@ Scenario: EvergreenJnr_DevicesList_CheckThat500ErrorIsNotDisplayedForStaticListA
 	When User create custom list with "TestList8D5C03" name
 	When User clicks "Applications" on the left-hand menu
 	Then "Applications" list should be displayed to the user
-	When User removes custom list with "StaticListTestName" name
+	Then User remove list with "StaticListTestName" name on "Applications" page
 	When User clicks "Devices" on the left-hand menu
 	Then "Devices" list should be displayed to the user
 	When User navigates to the "TestList8D5C03" list
@@ -814,7 +814,7 @@ Scenario: EvergreenJnr_DevicesList_CheckThat500ErrorIsNotDisplayedForDynamicList
 	When User create custom list with "TestList5E021D" name
 	When User clicks "Applications" on the left-hand menu
 	Then "Applications" list should be displayed to the user
-	When User removes custom list with "TestList5E021D" name
+	Then User remove list with "TestList5E021D" name on "Applications" page
 	When User clicks "Devices" on the left-hand menu
 	Then "Devices" list should be displayed to the user
 	When User navigates to the "TestList5E021D" list
@@ -930,3 +930,24 @@ Examples:
 	| Mailboxes | Department Full Path       | Add Department Full Path column       |
 	| Mailboxes | Owner Department Name      | Add Owner Department Name column      |
 	| Mailboxes | Owner Department Full Path | Add Owner Department Full Path column |
+
+@Evergreen @Applications @Evergreen_FiltersFeature @FiltersDisplay @DAS11649
+Scenario: EvergreenJnr_ApplicationsLists_CheckThatNoDataIsDisplayedInTheApplicationRationalisationColumn
+	When User clicks "Applications" on the left-hand menu
+	Then "Applications" list should be displayed to the user
+	When User clicks the Filters button
+	Then Filters panel is displayed to the user
+	When User add "Windows7Mi: Application Rationalisation" filter where type is "Equal" with added column and following checkboxes:
+	| SelectedCheckboxes |
+	| KEEP               |
+	Then "Windows7Mi: Application Rationalisation" filter is added to the list
+	When User add "Windows7Mi: In Scope" filter where type is "Equal" with added column and following checkboxes:
+	| SelectedCheckboxes |
+	| FALSE              |
+	Then "Windows7Mi: In Scope" filter is added to the list
+	When User click on 'Windows7Mi: In Scope' column header
+	And User click on 'Windows7Mi: In Scope' column header
+	Then data in table is sorted by 'Windows7Mi: In Scope' column in ascending order
+	And Content is empty in the column
+	| ColumnName                              |
+	| Windows7Mi: Application Rationalisation |

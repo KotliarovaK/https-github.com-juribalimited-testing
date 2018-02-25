@@ -49,6 +49,9 @@ namespace DashworksTestAutomation.Helpers
                 case "Last Logon Date":
                     return "lastLogonDate";
 
+                case "UserSchedu: Readiness ID":
+                    return "project_41_ragStatusId";
+
                 case "Home Drive":
                     return "homeDrive";
 
