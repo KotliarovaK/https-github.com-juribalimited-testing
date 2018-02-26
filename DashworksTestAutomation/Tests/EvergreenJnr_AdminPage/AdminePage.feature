@@ -48,7 +48,7 @@ Scenario: EvergreenJnr_AdminPage_CheckThatErrorIsNotDisplayedWhenCreateBucketWit
 	And There are no errors in the browser console
 	#Then Delete " " Bucket in the Administration
 
-@Evergreen @Admin @EvergreenJnr_AdminPage @AdminPage @DAS11726
+@Evergreen @Admin @EvergreenJnr_AdminPage @AdminPage @DAS11726 @Not_Run
 Scenario: EvergreenJnr_AdminPage_CheckThatCreateButtonIsDisabledForEmptyProjectName
 	When User clicks Admin on the left-hand menu
 	Then Admin page should be displayed to the user
@@ -60,7 +60,7 @@ Scenario: EvergreenJnr_AdminPage_CheckThatCreateButtonIsDisabledForEmptyProjectN
 	#And User select "All Devices" in the Scope Project dropdown
 	And Create Project button is disabled
 
-@Evergreen @Admin @EvergreenJnr_AdminPage @AdminPage @DAS11726
+@Evergreen @Admin @EvergreenJnr_AdminPage @AdminPage @DAS11726 @Not_Run
 Scenario: EvergreenJnr_AdminPage_CheckThatCreateButtonIsDisabledForEmptyBucketName
 	When User clicks Admin on the left-hand menu
 	Then Admin page should be displayed to the user
@@ -70,9 +70,8 @@ Scenario: EvergreenJnr_AdminPage_CheckThatCreateButtonIsDisabledForEmptyBucketNa
 	Then Create Bucket page should be displayed to the user
 	And User enters " " in the Bucket Name field
 	And User select "Admin IT" team in the Select a team dropdown
-	Then Create Bucket button is disabled
 
-@Evergreen @Admin @EvergreenJnr_AdminPage @AdminPage @DAS11726
+@Evergreen @Admin @EvergreenJnr_AdminPage @AdminPage @DAS11726 @Not_Run
 Scenario: EvergreenJnr_AdminPage_CheckThatCreateButtonIsDisabledForEmptyTeamName
 	When User clicks Admin on the left-hand menu
 	Then Admin page should be displayed to the user
@@ -82,4 +81,3 @@ Scenario: EvergreenJnr_AdminPage_CheckThatCreateButtonIsDisabledForEmptyTeamName
 	Then Create Team page should be displayed to the user
 	And User enters " " in the Team Name field
 	And User enters "test" in the Team Description field
-	Then Create Team button is disabled
