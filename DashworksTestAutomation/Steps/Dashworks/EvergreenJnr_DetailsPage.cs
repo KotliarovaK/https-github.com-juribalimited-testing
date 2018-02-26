@@ -198,7 +198,7 @@ namespace DashworksTestAutomation.Steps.Dashworks
                 {
                     var content = page.GetColumnIdContent(row["ColumnName"]);
 
-                    Assert.IsTrue(content.Count(x => !string.IsNullOrEmpty(x)) > 1, "Newly added column is empty");
+                    Assert.IsTrue(content.Count(x => !string.IsNullOrEmpty(x)) > 0, "Newly added column is empty");
                 }
             }
         }
@@ -214,7 +214,7 @@ namespace DashworksTestAutomation.Steps.Dashworks
 
 
                 //Check that at least 1 cell has some content
-                Assert.IsTrue(content.Select(string.IsNullOrEmpty).Count() > 0, "Column is empty");
+                Assert.IsTrue(content.Count(x => !string.IsNullOrEmpty(x)) > 0, "Column is empty");
             }
         }
 
