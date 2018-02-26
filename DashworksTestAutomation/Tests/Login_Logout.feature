@@ -2,7 +2,6 @@
 Feature: Login_Logout
 	Runs Profile Details related tests
 
-
 @Evergreen @Login_Logout
 Scenario: EvergreenJnr_Login_Logout_CheckThatLoginAndLogOutWorksCorrectly
 	Given User is on Dashworks Homepage

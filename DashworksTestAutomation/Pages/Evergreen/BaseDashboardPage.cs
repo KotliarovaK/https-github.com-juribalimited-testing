@@ -78,6 +78,9 @@ namespace DashworksTestAutomation.Pages.Evergreen
         [FindsBy(How = How.XPath, Using = ".//span[@class='filter-content']")]
         public IWebElement FilterContainer { get; set; }
 
+        [FindsBy(How = How.XPath, Using = ".//span[@class='ag-selection-checkbox']//span[@class='checkbox-unchecked']")]
+        public IWebElement UncheckedCheckbox { get; set; }
+
         [FindsBy(How = How.XPath, Using = ".//i")]
         public IWebElement ItemImage { get; set; }
 

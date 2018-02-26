@@ -6,6 +6,7 @@ using OpenQA.Selenium.Remote;
 using OpenQA.Selenium.Support.PageObjects;
 using OpenQA.Selenium.Support.UI;
 using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.Linq;
@@ -542,5 +543,29 @@ namespace DashworksTestAutomation.Extensions
         }
 
         #endregion Web element extensions
+
+        /// <summary>
+        /// Execute this method after some actions on page to get sent requests
+        /// </summary>
+        /// <param name="driver"></param>
+        /// <returns></returns>
+        public static List<string> GetAllRequests(this RemoteWebDriver driver)
+        {
+            var allRequests = new List<string>();
+            var scriptToExecute = "var performance = window.performance || window.mozPerformance || window.msPerformance || window.webkitPerformance || {}; var network = performance.getEntries() || {}; return network;";
+            var netData = driver.ExecuteScript(scriptToExecute);
+            var collection = (IList)netData;
+            foreach (object o in collection)
+            {
+                var innerCollection = (Dictionary<string, object>)o;
+                foreach (KeyValuePair<string, object> keyValuePair in innerCollection)
+                {
+                    if (keyValuePair.Key.Equals("name") && !string.IsNullOrEmpty(keyValuePair.Value.ToString()) && keyValuePair.Value.ToString().Contains("http"))
+                        allRequests.Add(keyValuePair.Value.ToString());
+                }
+            }
+
+            return allRequests;
+        }
     }
 }
