@@ -114,4 +114,4 @@ Scenario: EvergreenJnr_MailboxesList_CheckThatAllCheckboxesAreCheckedAfterAFirst
 	Then Actions panel is displayed to the user
 	When User select all rows
 	Then All checkboxes are checked in the table
-	#Then The number of rows selected matches the number of rows of the main object list
+	And The number of rows selected matches the number of rows of the main object list
