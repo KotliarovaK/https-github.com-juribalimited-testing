@@ -6,7 +6,7 @@ Background: Pre-Conditions
 	Given User is logged in to the Evergreen
 	Then Evergreen Dashboards page should be displayed to the user
 
-@Evergreen @Users @Evergreen_ActionsPanel @AllCheckbox @DAS10769 @DAS10656
+@Evergreen @Users @Evergreen_ActionsPanel @AllCheckbox @DAS10769 @DAS10656 @Not_Run
 Scenario: EvergreenJnr_UsersList_SelectAllCheckboxStatusCheckAfterSearch
 	When User clicks "Users" on the left-hand menu
 	Then "Users" list should be displayed to the user
@@ -105,3 +105,13 @@ Scenario: EvergreenJnr_UsersList_CheckThatSelectAllWorksCorrectlyForFilteredList
 	Then Actions panel is displayed to the user
 	When User select all rows
 	Then "41335" selected rows are displayed in the Actions panel
+
+@Evergreen @Mailboxes @Evergreen_ActionsPanel @AllCheckbox @DAS11894
+Scenario: EvergreenJnr_MailboxesList_CheckThatAllCheckboxesAreCheckedAfterAFirstClick
+	When User clicks "Mailboxes" on the left-hand menu
+	Then "Mailboxes" list should be displayed to the user
+	When User clicks the Actions button
+	Then Actions panel is displayed to the user
+	When User select all rows
+	Then All checkboxes are checked in the table
+	And The number of rows selected matches the number of rows of the main object list
