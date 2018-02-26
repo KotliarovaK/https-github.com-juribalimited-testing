@@ -1,22 +1,18 @@
-﻿using System;
-using DashworksTestAutomation.DTO;
-using DashworksTestAutomation.DTO.RuntimeVariables;
+﻿using DashworksTestAutomation.DTO.RuntimeVariables;
 using DashworksTestAutomation.Extensions;
-using DashworksTestAutomation.Helpers;
 using DashworksTestAutomation.Pages;
 using DashworksTestAutomation.Pages.Evergreen;
 using DashworksTestAutomation.Providers;
 using DashworksTestAutomation.Utils;
 using NUnit.Framework;
-using OpenQA.Selenium;
 using OpenQA.Selenium.Remote;
-using RestSharp;
+using System;
 using TechTalk.SpecFlow;
 
 namespace DashworksTestAutomation.Steps.Dashworks
 {
     [Binding]
-    class EvergreenJnr_QueryStrings : SpecFlowContext
+    internal class EvergreenJnr_QueryStrings : SpecFlowContext
     {
         private readonly RemoteWebDriver _driver;
         private readonly WebsiteUrl _url;
@@ -32,7 +28,7 @@ namespace DashworksTestAutomation.Steps.Dashworks
         [Given(@"User is on Dashworks Homepage")]
         public void GivenUserIsOnDashworksHomepage()
         {
-            _driver.NagigateToURL(UrlProvider.Url);
+            _driver.NavigateToUrl(UrlProvider.Url);
             _url.Value = UrlProvider.Url;
 
             var loginPage = _driver.NowAt<LoginPanelPage>();
@@ -40,7 +36,7 @@ namespace DashworksTestAutomation.Steps.Dashworks
             //If automation.corp.juriba.com is not available, try automation2.corp.juriba.com instead
             if (loginPage.WebsiteIsNotAvailable.Displayed())
             {
-                _driver.NagigateToURL(UrlProvider.BackupUrl);
+                _driver.NavigateToUrl(UrlProvider.BackupUrl);
                 _url.Value = UrlProvider.BackupUrl;
                 Logger.Write("Using automation2.corp.juriba.com instead");
             }
@@ -101,7 +97,7 @@ namespace DashworksTestAutomation.Steps.Dashworks
             {
                 _url.Value = UrlProvider.Url;
                 var combinedURL = _url.Value + row["QueryStringURL"];
-                _driver.NagigateToURL(combinedURL);
+                _driver.NavigateToUrl(combinedURL);
 
                 var page = _driver.NowAt<EvergreenDashboardsPage>();
 
@@ -118,13 +114,20 @@ namespace DashworksTestAutomation.Steps.Dashworks
         public void ThenAgGridMainObjectListIsReturnedWithData()
         {
             var dashboardPage = _driver.NowAt<BaseDashboardPage>();
-
-            _driver.WaitWhileControlIsNotDisplayed<BaseDashboardPage>(() => dashboardPage.ResultsOnPageCount);
-
-            Assert.IsTrue(dashboardPage.ResultsOnPageCount.Displayed());
-            Assert.IsTrue(dashboardPage.TableBody.Displayed());
-
-            Logger.Write("Main agGrid dataset is displayed");
+            if (dashboardPage.NoResultsFoundMessage.Displayed())
+            {
+                Assert.IsTrue(dashboardPage.NoResultsFoundMessage.Displayed(),
+                    "'No Results Found' message is not displayed");
+                Logger.Write(
+                    $"Evergreen agGrid Search returned '{dashboardPage.NoResultsFoundMessage.Text}' message");
+            }
+            else
+            {
+                _driver.WaitForDataLoading();
+                Assert.IsTrue(dashboardPage.ResultsOnPageCount.Displayed(), "Results count is not displayed");
+                Assert.IsTrue(dashboardPage.TableBody.Displayed(), "Table is not displayed");
+                Logger.Write("Main agGrid dataset is displayed");
+            }
         }
     }
 }

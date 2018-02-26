@@ -1,15 +1,18 @@
-﻿using System.Collections.Generic;
+﻿using System;
 using DashworksTestAutomation.Extensions;
 using DashworksTestAutomation.Pages.Evergreen;
 using DashworksTestAutomation.Pages.Evergreen.DetailsTabsMenu;
 using NUnit.Framework;
 using OpenQA.Selenium.Remote;
+using System.Collections.Generic;
+using System.Linq;
+using OpenQA.Selenium;
 using TechTalk.SpecFlow;
 
 namespace DashworksTestAutomation.Steps.Dashworks
 {
     [Binding]
-    class EvergreenJnr_DetailsPage : SpecFlowContext
+    internal class EvergreenJnr_DetailsPage : SpecFlowContext
     {
         private readonly RemoteWebDriver _driver;
 
@@ -26,11 +29,168 @@ namespace DashworksTestAutomation.Steps.Dashworks
             tabs.NavigateToTabByName(tabName);
         }
 
-        [When(@"User navigates to the ""(.*)"" section")]
-        public void WhenUserNavigatesToTheSection(string sectionName)
+        [Then(@"User closes ""(.*)"" section on the Details Page")]
+        public void ThenUserClosesSectionOnTheDetailsPage(string sectionName)
         {
             var detailsPage = _driver.NowAt<DetailsPage>();
             detailsPage.NavigateToSectionByName(sectionName);
+        }
+
+        [When(@"User open ""(.*)"" section")]
+        public void WhenUserOpenSection(string sectionName)
+        {
+            var detailsPage = _driver.NowAt<DetailsPage>();
+            detailsPage.NavigateToSectionByName(sectionName);
+        }
+
+        [Then(@"Item content is displayed to the User")]
+        public void ThenItemContentIsDisplayedToTheUser()
+        {
+            var detailsPage = _driver.NowAt<DetailsPage>();
+            Assert.IsTrue(detailsPage.ItemDetailsContainer.Displayed(), "Item content is not displayed");
+        }
+
+        [Then(@"Image item from ""(.*)"" column is displayed to the user")]
+        public void ThenImageItemFromColumnIsDisplayedToTheUser(string columnName)
+        {
+            var tableElement = _driver.NowAtWithoutWait<BaseDashboardPage>();
+            var content = _driver.FindElements(By.XPath(".//div[@col-id='userName'][@role='gridcell']"));
+            foreach (var element in content)
+            {
+                var image = element.FindElement(By.XPath(".//i"));
+                Assert.IsTrue(image.Displayed(), "Image item is not found");
+            }
+        }
+
+        [Then(@"Links from ""(.*)"" column is displayed to the user")]
+        public void ThenLinksFromColumnIsDisplayedToTheUser(string columnName)
+        {
+            var tableElement = _driver.NowAtWithoutWait<BaseDashboardPage>();
+            var content = _driver.FindElements(By.XPath(".//div[@col-id='userName'][@role='gridcell']"));
+            foreach (var element in content)
+            {
+                var text = element.FindElement(By.XPath(".//a"));
+                Assert.IsTrue(text.GetAttribute("href") != String.Empty);
+            }
+        }
+
+        [Then(@"expanded section is displayed to the User")]
+        public void ThenExpandedSectionIsDisplayedToTheUser()
+        {
+            var detailsPage = _driver.NowAt<DetailsPage>();
+            Assert.IsTrue(detailsPage.SectionContainer.Displayed(), "Section is not displayed");
+        }
+
+        [Then(@"""(.*)"" column is not displayed to the user")]
+        public void ThenColumnIsNotDisplayedToTheUser(string columnName)
+        {
+            var columnHeader = _driver.NowAt<ApplicationsDetailsTabsMenu>();
+            Assert.IsFalse(columnHeader.ColumnIsDisplayed(columnName),
+                $"{columnName} category stil displayed in Column Panel");
+        }
+
+        [When(@"User have opened Column Settings for ""(.*)"" column in the Details Page table")]
+        public void WhenUserHaveOpenedColumnSettingsForColumnInTheDetailsPageTable(string columnName)
+        {
+            var page = _driver.NowAt<ApplicationsDetailsTabsMenu>();
+            page.OpenColumnSettingsByName(columnName);
+        }
+
+        [When(@"User click Column button on the Column Settings panel")]
+        public void WhenUserClickColumnButtonOnTheColumnSettingsPanel()
+        {
+            var menu = _driver.NowAt<ApplicationsDetailsTabsMenu>();
+            _driver.WaitWhileControlIsNotDisplayed<ApplicationsDetailsTabsMenu>(() => menu.ColumnButton);
+            menu.ColumnButton.Click();
+        }
+
+        [When(@"User select ""(.*)"" checkbox on the Column Settings panel")]
+        public void WhenUserSelectCheckboxOnTheColumnSettingsPanel(string checkboxName)
+        {
+            var page = _driver.NowAt<ApplicationsDetailsTabsMenu>();
+            page.GetCheckboxByName(checkboxName);
+        }
+
+        [Then(@"Checkboxes are checked on the Column Settings panel for ""(.*)"" Column Settings panel:")]
+        public void ThenCheckboxesAreCheckedOnTheColumnSettingsPanelForColumnSettingsPanel(string columnName,
+            Table table)
+        {
+            var page = _driver.NowAt<ApplicationsDetailsTabsMenu>();
+            var expectedList = table.Rows.SelectMany(row => row.Values).ToList();
+            page.OpenColumnSettingsByName(columnName);
+            Assert.AreEqual(expectedList, page.GetCheckedElementsText(), "Checkbox is not selected");
+        }
+
+        [Then(@"Checkboxes are checked on the Column Settings panel :")]
+        public void ThenCheckboxesAreCheckedOnTheColumnSettingsPanel(Table table)
+        {
+            var page = _driver.NowAt<ApplicationsDetailsTabsMenu>();
+            var expectedList = table.Rows.SelectMany(row => row.Values).ToList();
+            //var actualList = page.ColumnCheckboxName.Select(value => value.Text);
+            //Assert.AreEqual(expectedList, actualList, "Selected Checkbox are different");
+            Assert.AreEqual(expectedList, page.GetCheckedElementsText(), "Checkbox is not selected");
+        }
+
+        [Then(@"ColumnName is added to the list in the Details Page table")]
+        public void ThenColumnNameIsAddedToTheListInTheDetailsPageTable(Table table)
+
+        {
+            CheckColumnDisplayedState(table, true);
+        }
+
+        [Then(@"ColumnName is displayed in following order on the Details page:")]
+        public void ThenColumnNameIsDisplayedInFollowingOrderOnTheDetailsPage(Table table)
+        {
+            {
+                var page = _driver.NowAt<ApplicationsDetailsTabsMenu>();
+
+                List<string> columnNames = page.GetAllColumnHeadersOnTheDetailsPage().Select(column => column.Text)
+                    .ToList();
+                var expectedList = table.Rows.SelectMany(row => row.Values).ToList();
+                Assert.AreEqual(expectedList, columnNames, "Columns order is incorrect");
+            }
+        }
+
+        private void CheckColumnDisplayedState(Table table, bool displayedState)
+        {
+            var listpageMenu = _driver.NowAt<ApplicationsDetailsTabsMenu>();
+            foreach (var row in table.Rows)
+            {
+                _driver.WaitForDataLoading();
+                Assert.AreEqual(displayedState, listpageMenu.IsColumnPresent(row["ColumnName"]),
+                    $"Column '{row["ColumnName"]}' displayed state should be {displayedState}");
+            }
+        }
+
+        [Then(@"Content is present in the newly added column in the Details Page table")]
+        public void ThenContentIsPresentInTheNewlyAddedColumnInTheDetailsPageTable(Table table)
+        {
+            var page = _driver.NowAt<ApplicationsDetailsTabsMenu>();
+
+            foreach (var row in table.Rows)
+            {
+                if ((row["ColumnName"] != "Group Key" && row["ColumnName"] != "Category Key"))
+                {
+                    var content = page.GetColumnIdContent(row["ColumnName"]);
+
+                    Assert.IsTrue(content.Count(x => !string.IsNullOrEmpty(x)) > 1, "Newly added column is empty");
+                }
+            }
+        }
+
+        [Then(@"Content is present in the column of the Details Page table")]
+        public void ThenContentIsPresentInTheColumnOfTheDetailsPageTable(Table table)
+        {
+            var page = _driver.NowAt<ApplicationsDetailsTabsMenu>();
+
+            foreach (var row in table.Rows)
+            {
+                var content = page.GetColumnContent(row["ColumnName"]);
+
+
+                //Check that at least 1 cell has some content
+                Assert.IsTrue(content.Select(string.IsNullOrEmpty).Count() > 0, "Column is empty");
+            }
         }
 
         [Then(@"Fields with empty information are displayed")]
@@ -57,6 +217,13 @@ namespace DashworksTestAutomation.Steps.Dashworks
             }
         }
 
+        [Then(@"Group Icon for Group Details page is displayed")]
+        public void ThenGroupIconForPageIsDisplayed()
+        {
+            var detailsPage = _driver.NowAt<DetailsPage>();
+            Assert.IsTrue(detailsPage.GroupIcon.Displayed());
+        }
+
         [Then(@"""(.*)"" text is displayed for ""(.*)"" section")]
         public void ThenTextIsDisplayedForSection(string textMessage, string sectionName)
         {
@@ -64,21 +231,15 @@ namespace DashworksTestAutomation.Steps.Dashworks
             detailsPage.CloseAllSections();
             detailsPage.NavigateToSectionByName(sectionName);
             _driver.WaitWhileControlIsNotDisplayed<DetailsPage>(() => detailsPage.NoMailboxOwnerFoundMessage);
-            Assert.AreEqual(textMessage, detailsPage.NoMailboxOwnerFoundMessage.Text);
+            Assert.AreEqual(textMessage, detailsPage.NoMailboxOwnerFoundMessage.Text,
+                $"{textMessage} is not displayed");
         }
 
-        [Then(@"""(.*)"" field is displayed on Details tab")]
-        public void ThenFieldIsDisplayedOnDetailsTab(string fieldName)
+        [Then(@"string filter is displayed for ""(.*)"" column on the Details Page")]
+        public void ThenStringFilterIsDisplayedForColumnOnTheDetailsPage(string columnName)
         {
-            var detailsPage = _driver.NowAt<DetailsPage>();
-            Assert.IsTrue(detailsPage.IsFieldPresent(fieldName), $"{fieldName} is not displayed");
-        }
-
-        [Then(@"""(.*)"" field is not displayed on Details tab")]
-        public void ThenFieldIsNotDisplayedOnDetailsTab(string fieldName)
-        {
-            var detailsPage = _driver.NowAt<DetailsPage>();
-            Assert.IsFalse(detailsPage.IsFieldPresent(fieldName), $"{fieldName} is displayed");
+            var detailsPage = _driver.NowAt<ApplicationsDetailsTabsMenu>();
+            Assert.IsFalse(Convert.ToBoolean(detailsPage.GetFilterByColumnName(columnName).GetAttribute("readonly")));
         }
 
         [Then(@"""(.*)"" field display state is ""(.*)"" on Details tab")]
@@ -86,6 +247,15 @@ namespace DashworksTestAutomation.Steps.Dashworks
         {
             var detailsPage = _driver.NowAt<DetailsPage>();
             Assert.AreEqual(state, detailsPage.IsFieldPresent(fieldName), $"Incorrect display state for {fieldName}");
+        }
+
+        [Then(@"Empty rows are displayed if the data is unknown")]
+        public void ThenEmptyRowsAreDisplayedIfTheDataIsUnknown()
+
+        {
+            var detailsPage = _driver.NowAt<DetailsPage>();
+            StringAssert.DoesNotContain("Unknown", detailsPage.TableRowDetails.Text,
+                "Success Message is not displayed");
         }
     }
 }

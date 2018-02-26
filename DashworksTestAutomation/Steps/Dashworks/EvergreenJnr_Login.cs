@@ -1,23 +1,13 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Data;
-using System.IO;
-using System.Linq;
-using System.Net;
-using System.Web.Management;
-using DashworksTestAutomation.DTO;
+﻿using DashworksTestAutomation.DTO;
 using DashworksTestAutomation.DTO.RuntimeVariables;
 using DashworksTestAutomation.Extensions;
 using DashworksTestAutomation.Helpers;
 using DashworksTestAutomation.Pages;
 using DashworksTestAutomation.Providers;
-using DashworksTestAutomation.Utils;
-using Newtonsoft.Json;
-using Newtonsoft.Json.Linq;
 using NUnit.Framework;
 using OpenQA.Selenium.Remote;
 using RestSharp;
-using RestSharp.Deserializers;
+using System;
 using TechTalk.SpecFlow;
 using Cookie = OpenQA.Selenium.Cookie;
 using Logger = DashworksTestAutomation.Utils.Logger;
@@ -25,7 +15,7 @@ using Logger = DashworksTestAutomation.Utils.Logger;
 namespace DashworksTestAutomation.Steps.Dashworks
 {
     [Binding]
-    class EvergreenJnr_Login : SpecFlowContext
+    internal class EvergreenJnr_Login : SpecFlowContext
     {
         private readonly RemoteWebDriver _driver;
         private readonly UserDto _user;
@@ -43,15 +33,10 @@ namespace DashworksTestAutomation.Steps.Dashworks
         private UserDto GetFreeUserAndAddToUsedUsersList()
         {
             var user = UserProvider.GetFreeUserAccount();
-
             _usedUsers.Value.Add(user);
 
             //Add user credentials to context
             user.CopyPropertiesTo(_user);
-
-            //Change User Language to avoid spelling issues
-            DatabaseWorker.ChangeUserProfileLanguage(_user.UserName, _user.Language);
-
             return user;
         }
 
@@ -65,7 +50,7 @@ namespace DashworksTestAutomation.Steps.Dashworks
             HttpClientHelper client = new HttpClientHelper(user, restClient);
 
             //Init session
-            _driver.NagigateToURL(UrlProvider.Url);
+            _driver.NavigateToUrl(UrlProvider.Url);
 
             //Set cookies to browser
             foreach (Cookie cookie in client.SeleniumCookiesJar)
@@ -75,9 +60,10 @@ namespace DashworksTestAutomation.Steps.Dashworks
 
             // Add cookies to the RestClient to authorize it
             _client.Value.AddCookies(client.CookiesJar);
-
+            //Change profile language
+            _client.ChangeUserProfileLanguage(_user.UserName, _user.Language);
             //Open website
-            _driver.NagigateToURL(UrlProvider.EvergreenUrl);
+            _driver.NavigateToUrl(UrlProvider.EvergreenUrl);
         }
 
         [When(@"User provides the Login and Password and clicks on the login button")]
@@ -128,8 +114,8 @@ namespace DashworksTestAutomation.Steps.Dashworks
         {
             var headerMenu = _driver.NowAt<DashworksHeaderMenuElement>();
 
-            Assert.AreEqual("Home - Dashworks", _driver.Title);
-            Assert.AreEqual("Home", headerMenu.PageHeader.Text);
+            Assert.AreEqual("Home - Dashworks", _driver.Title, "Incorrect page is displayed");
+            Assert.AreEqual("Home", headerMenu.PageHeader.Text, "Incorrect page is displayed");
             Logger.Write("Dashworks homepage is displayed and is in a logged in state");
         }
 

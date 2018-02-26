@@ -1,15 +1,15 @@
-﻿using System;
-using DashworksTestAutomation.Extensions;
+﻿using DashworksTestAutomation.Extensions;
 using DashworksTestAutomation.Pages.Evergreen;
 using DashworksTestAutomation.Utils;
 using NUnit.Framework;
 using OpenQA.Selenium.Remote;
+using System;
 using TechTalk.SpecFlow;
 
 namespace DashworksTestAutomation.Steps.Dashworks
 {
     [Binding]
-    class EvergreenJnr_ButtonsOnDashbordsPage : SpecFlowContext
+    internal class EvergreenJnr_ButtonsOnDashbordsPage : SpecFlowContext
     {
         private readonly RemoteWebDriver _driver;
 
@@ -67,7 +67,8 @@ namespace DashworksTestAutomation.Steps.Dashworks
         {
             var menu = _driver.NowAt<BaseDashboardPage>();
             _driver.WaitWhileControlIsNotDisplayed<BaseDashboardPage>(() => menu.ListDetailsButton);
-            Assert.IsTrue(Convert.ToBoolean(menu.ListDetailsButton.GetAttribute("disabled")), "List Details Button is active");
+            Assert.IsTrue(Convert.ToBoolean(menu.ListDetailsButton.GetAttribute("disabled")),
+                "List Details Button is active");
         }
 
         [Then(@"Actions button is active")]
@@ -75,7 +76,7 @@ namespace DashworksTestAutomation.Steps.Dashworks
         {
             var menu = _driver.NowAt<BaseDashboardPage>();
             _driver.WaitWhileControlIsNotDisplayed<BaseDashboardPage>(() => menu.ListDetailsButton);
-            StringAssert.Contains("active", menu.ActionsButton.GetAttribute("class"));
+            StringAssert.Contains("active", menu.ActionsButton.GetAttribute("class"), "Actions button is inactive");
         }
 
         [Then(@"Actions button is not active")]
@@ -83,7 +84,7 @@ namespace DashworksTestAutomation.Steps.Dashworks
         {
             var menu = _driver.NowAt<BaseDashboardPage>();
             _driver.WaitWhileControlIsNotDisplayed<BaseDashboardPage>(() => menu.ListDetailsButton);
-            StringAssert.DoesNotContain("active", menu.ActionsButton.GetAttribute("class"));
+            StringAssert.DoesNotContain("active", menu.ActionsButton.GetAttribute("class"), "Actions button is active");
         }
     }
 }

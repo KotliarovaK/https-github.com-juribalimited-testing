@@ -1,20 +1,38 @@
-﻿using System.Collections.Generic;
-using System.Linq;
-using DashworksTestAutomation.Base;
+﻿using DashworksTestAutomation.Base;
 using DashworksTestAutomation.Extensions;
 using NUnit.Framework;
 using OpenQA.Selenium;
 using OpenQA.Selenium.Support.PageObjects;
+using System.Collections.Generic;
+using System.Linq;
 
 namespace DashworksTestAutomation.Pages.Evergreen
 {
-    class DetailsPage : SeleniumBasePage
+    internal class DetailsPage : SeleniumBasePage
     {
         [FindsBy(How = How.XPath, Using = ".//div[@class='tabContainer ng-star-inserted']")]
         public IWebElement TabContainer { get; set; }
 
+        [FindsBy(How = How.XPath, Using = ".//div[@class='object-icon']//i")]
+        public IWebElement GroupIcon { get; set; }
+
         [FindsBy(How = How.XPath, Using = ".//div[@class='empty-message ng-star-inserted']")]
         public IWebElement NoMailboxOwnerFoundMessage { get; set; }
+
+        [FindsBy(How = How.XPath, Using = ".//div[@class='mat-tab-body-content ng-trigger ng-trigger-translateTab']")]
+        public IWebElement ItemDetailsContainer { get; set; }
+
+        [FindsBy(How = How.XPath, Using = ".//div[@class='category-content ng-star-inserted']")]
+        public IWebElement SectionContainer { get; set; }
+
+        [FindsBy(How = How.XPath, Using = ".//i[@class='material-icons mat-person']")]
+        public IWebElement ColumnItemImage { get; set; }
+
+        [FindsBy(How = How.XPath, Using = ".//div[@class='category-content ng-star-inserted']")]
+        public IWebElement TableContentDetails { get; set; }
+
+        [FindsBy(How = How.XPath, Using = ".//td[@class='fld-value']")]
+        public IWebElement TableRowDetails { get; set; }
 
         public override List<By> GetPageIdentitySelectors()
         {
@@ -29,7 +47,7 @@ namespace DashworksTestAutomation.Pages.Evergreen
         {
             var section = Driver.FindElement(
                 By.XPath(
-                    $".//button[@class='btn btn-default blue-color mat-icon-button ng-star-inserted'][@aria-label='{sectionName}']"));
+                    $".//div[@class='ng-star-inserted']//span[@class='filter-category-label blue-color bold-text'][text()='{sectionName}']"));
             section.Click();
         }
 
@@ -41,13 +59,14 @@ namespace DashworksTestAutomation.Pages.Evergreen
 
         public void ExpandAllSections()
         {
-            var expandButtons = Driver.FindElements(By.XPath(".//button[@aria-describedby='cdk-describedby-message-30']"));
+            Driver.WaitWhileControlIsNotDisplayed(By.XPath(".//i[@class='material-icons mat-item_add mat-18']/ancestor::button"));
+            var expandButtons = Driver.FindElements(By.XPath(".//i[@class='material-icons mat-item_add mat-18']/ancestor::button"));
 
             if (expandButtons.Any())
             {
                 foreach (IWebElement button in expandButtons)
                 {
-                    Driver.WaitWhileControlIsNotDisplayed<DetailsPage>(() => button);
+                    //Driver.WaitWhileControlIsNotDisplayed<DetailsPage>(() => button);
                     Driver.MouseHover(button);
                     button.Click();
                     Driver.WaitForDataLoading();

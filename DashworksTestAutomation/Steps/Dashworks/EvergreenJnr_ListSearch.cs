@@ -1,16 +1,16 @@
-﻿using System;
-using System.Threading;
-using DashworksTestAutomation.Extensions;
+﻿using DashworksTestAutomation.Extensions;
 using DashworksTestAutomation.Pages.Evergreen;
 using DashworksTestAutomation.Utils;
 using NUnit.Framework;
 using OpenQA.Selenium.Remote;
+using System;
+using System.Threading;
 using TechTalk.SpecFlow;
 
 namespace DashworksTestAutomation.Steps.Dashworks
 {
     [Binding]
-    class EvergreenJnr_ListSearch : SpecFlowContext
+    internal class EvergreenJnr_ListSearch : SpecFlowContext
     {
         private readonly RemoteWebDriver _driver;
 
@@ -57,7 +57,8 @@ namespace DashworksTestAutomation.Steps.Dashworks
 
                 var page = _driver.NowAt<BaseDashboardPage>();
                 _driver.WaitWhileControlIsNotDisplayed<BaseDashboardPage>(() => page.NoResultsFoundMessage);
-                Assert.AreEqual(message, page.NoResultsFoundMessage.Text);
+                _driver.WaitForDataLoading();
+                Assert.AreEqual(message, page.NoResultsFoundMessage.Text, $"{message} is not displayed");
             }
         }
 
@@ -71,6 +72,7 @@ namespace DashworksTestAutomation.Steps.Dashworks
             {
                 listPageElement.TableSearchTextbox.SendKeys(OpenQA.Selenium.Keys.Backspace);
             }
+
             _driver.WaitForDataLoading();
         }
 
@@ -84,7 +86,8 @@ namespace DashworksTestAutomation.Steps.Dashworks
 
                 _driver.WaitWhileControlIsNotDisplayed<BaseDashboardPage>(() => listPageElement.ResultsOnPageCount);
 
-                StringAssert.AreEqualIgnoringCase($"{numberOfRows} rows", listPageElement.ResultsOnPageCount.Text);
+                StringAssert.AreEqualIgnoringCase($"{numberOfRows} rows", listPageElement.ResultsOnPageCount.Text,
+                    "Incorrect rows count");
                 Logger.Write(
                     $"Evergreen agGrid Search returned the correct number of rows for: {numberOfRows}  search");
             }
@@ -93,7 +96,9 @@ namespace DashworksTestAutomation.Steps.Dashworks
                 _driver.IsElementDisplayed(listPageElement.NoResultsFoundMessage);
                 _driver.WaitWhileControlIsDisplayed<BaseDashboardPage>(() => listPageElement.ResultsOnPageCount);
                 Assert.IsFalse(listPageElement.ResultsOnPageCount.Displayed(), "Rows count is displayed");
-                Assert.IsTrue(listPageElement.NoResultsFoundMessage.Displayed(), "'No Results Found' message not displayed");
+                _driver.WaitWhileControlIsNotDisplayed<BaseDashboardPage>(() => listPageElement.NoResultsFoundMessage);
+                Assert.IsTrue(listPageElement.NoResultsFoundMessage.Displayed(),
+                    "'No Results Found' message not displayed");
                 Logger.Write(
                     $"Evergreen agGrid Search returned '{listPageElement.NoResultsFoundMessage.Text}' message");
             }
@@ -129,7 +134,8 @@ namespace DashworksTestAutomation.Steps.Dashworks
         public void ThenResetButtonInSearchFieldOnSelectedPanelIsDisplayed()
         {
             var resetbutton = _driver.NowAt<BaseDashboardPage>();
-            _driver.WaitWhileControlIsNotDisplayed<BaseDashboardPage>(() => resetbutton.SearchTextboxResetButtonInPanel);
+            _driver.WaitWhileControlIsNotDisplayed<BaseDashboardPage>(() =>
+                resetbutton.SearchTextboxResetButtonInPanel);
 
             Assert.IsTrue(resetbutton.SearchTextboxResetButtonInPanel.Displayed(), "Reset button is not displayed");
             Logger.Write("Reset button is displayed");

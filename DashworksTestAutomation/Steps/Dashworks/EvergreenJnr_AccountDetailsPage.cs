@@ -1,28 +1,28 @@
-﻿using System;
-using System.IO;
-using DashworksTestAutomation.DTO.RuntimeVariables;
+﻿using DashworksTestAutomation.DTO;
 using DashworksTestAutomation.Extensions;
 using DashworksTestAutomation.Pages.Evergreen;
 using DashworksTestAutomation.Pages.Evergreen.ProfileDetailsPages;
 using DashworksTestAutomation.Providers;
-using DashworksTestAutomation.Utils;
 using NUnit.Framework;
 using OpenQA.Selenium;
 using OpenQA.Selenium.Remote;
+using System;
+using System.IO;
+using System.Threading;
 using TechTalk.SpecFlow;
 
 namespace DashworksTestAutomation.Steps.Dashworks
 {
     [Binding]
-    class EvergreenJnr_AccountDetailsPage : SpecFlowContext
+    internal class EvergreenJnr_AccountDetailsPage : SpecFlowContext
     {
         private readonly RemoteWebDriver _driver;
-        private readonly UserProfileData _userProfileData;
+        private readonly UserDto _userDto;
 
-        public EvergreenJnr_AccountDetailsPage(RemoteWebDriver driver, UserProfileData userProfileData)
+        public EvergreenJnr_AccountDetailsPage(RemoteWebDriver driver, UserDto userDto)
         {
             _driver = driver;
-            _userProfileData = userProfileData;
+            _userDto = userDto;
         }
 
         [When(@"User clicks Account Profile dropdown")]
@@ -52,8 +52,29 @@ namespace DashworksTestAutomation.Steps.Dashworks
         public void ThenProfilePageIsDisplayedToUser()
         {
             var page = _driver.NowAt<AccountDetailsPage>();
-            _userProfileData.FullName = page.FullNameField.GetAttribute("value");
-            _userProfileData.Email = page.EmailField.GetAttribute("value");
+            _userDto.FullName = page.FullNameField.GetAttribute("value");
+            _userDto.Email = page.EmailField.GetAttribute("value");
+        }
+
+        [When(@"User navigates to the ""(.*)"" page on Account details")]
+        public void WhenUserNavigatesToThePageOnAccountDetails(string pageToNavigate)
+        {
+            var page = _driver.NowAt<AccountDetailsPage>();
+            page.NavigateToPage(pageToNavigate);
+        }
+
+        [When(@"User changes language to ""(.*)""")]
+        public void WhenUserChangesLanguageTo(string language)
+        {
+            var page = _driver.NowAt<PreferencesPage>();
+            _driver.SelectCustomSelectbox(page.LanguageDropdown, language);
+        }
+
+        [When(@"User clicks Update button on Preferences page")]
+        public void WhenUserClicksUpdateButtonOnPreferencesPage()
+        {
+            var page = _driver.NowAt<PreferencesPage>();
+            page.UpdateButton.Click();
         }
 
         [When(@"User changes Full Name to ""(.*)""")]
@@ -75,14 +96,16 @@ namespace DashworksTestAutomation.Steps.Dashworks
         public void ThenErrorMessageIsNotDisplayedOnProfilePage()
         {
             var page = _driver.NowAt<AccountDetailsPage>();
-            Assert.IsFalse(page.ErrorMessage.Displayed());
+            Assert.IsFalse(page.ErrorMessage.Displayed(),
+                $"Error message is displayed on Account Page");
         }
 
         [Then(@"""(.*)"" is displayed in Full Name field")]
         public void ThenIsDisplayedInFullNameField(string fullName)
         {
             var page = _driver.NowAt<AccountDetailsPage>();
-            Assert.AreEqual(fullName, page.FullNameField.GetAttribute("value"));
+            Assert.AreEqual(fullName, page.FullNameField.GetAttribute("value"),
+                $"{fullName} is not displayed in Full Name field");
         }
 
         [When(@"User changes Email to ""(.*)""")]
@@ -97,7 +120,7 @@ namespace DashworksTestAutomation.Steps.Dashworks
         public void ThenIsDisplayedInEmailField(string email)
         {
             var page = _driver.NowAt<AccountDetailsPage>();
-            Assert.AreEqual(email, page.EmailField.GetAttribute("value"));
+            Assert.AreEqual(email, page.EmailField.GetAttribute("value"), $"{email} is not displayed in Email field");
         }
 
         [When(@"User clears Full name field")]
@@ -112,7 +135,7 @@ namespace DashworksTestAutomation.Steps.Dashworks
         {
             var page = _driver.NowAt<AccountDetailsPage>();
             _driver.WaitWhileControlIsNotDisplayed<AccountDetailsPage>(() => page.ErrorMessage);
-            Assert.AreEqual(errorMessage, page.ErrorMessage.Text);
+            Assert.AreEqual(errorMessage, page.ErrorMessage.Text, "Incorrect Error message text");
         }
 
         [When(@"User clears Email field")]
@@ -126,7 +149,7 @@ namespace DashworksTestAutomation.Steps.Dashworks
         public void WhenUserUploadIncorrectAvatarToAccountDetails()
         {
             var page = _driver.NowAt<AccountDetailsPage>();
-            IAllowsFileDetection allowsDetection = (IAllowsFileDetection)_driver;
+            IAllowsFileDetection allowsDetection = (IAllowsFileDetection) _driver;
             allowsDetection.FileDetector = new LocalFileDetector();
             string file = Path.GetDirectoryName(Path.GetDirectoryName(TestContext.CurrentContext.TestDirectory)) +
                           ResourceFilesNamesProvider.IncorrectFile;
@@ -137,7 +160,7 @@ namespace DashworksTestAutomation.Steps.Dashworks
         public void WhenUserUploadIncorrectAvatarToProfileDetails()
         {
             var page = _driver.NowAt<AccountDetailsPage>();
-            IAllowsFileDetection allowsDetection = (IAllowsFileDetection)_driver;
+            IAllowsFileDetection allowsDetection = (IAllowsFileDetection) _driver;
             allowsDetection.FileDetector = new LocalFileDetector();
             string file = Path.GetDirectoryName(Path.GetDirectoryName(TestContext.CurrentContext.TestDirectory)) +
                           ResourceFilesNamesProvider.CorrectFile;
@@ -156,7 +179,8 @@ namespace DashworksTestAutomation.Steps.Dashworks
         public void ThenUserPictureIsChangedToUploadedPhoto()
         {
             var page = _driver.NowAt<AccountDetailsPage>();
-            StringAssert.DoesNotContain("img/UnknownUser.jpg", page.UserPicture.GetAttribute("style"));
+            StringAssert.DoesNotContain("img/UnknownUser.jpg", page.UserPicture.GetAttribute("style"),
+                "Picture is not changed");
         }
 
         [When(@"User clicks Remove on Account details page")]
@@ -170,7 +194,17 @@ namespace DashworksTestAutomation.Steps.Dashworks
         public void ThenUserPictureChangedToDefault()
         {
             var page = _driver.NowAt<AccountDetailsPage>();
-            StringAssert.Contains("img/UnknownUser.jpg", page.UserPicture.GetAttribute("style"));
+            StringAssert.Contains("img/UnknownUser.jpg", page.UserPicture.GetAttribute("style"),
+                "Picture is not default");
+        }
+
+        [Then(@"Notification message is displayed for a few seconds on Preferences page")]
+        public void ThenNotificationMessageIsDisplayedForAFewSecondsOnPreferencesPage()
+        {
+            var page = _driver.NowAt<PreferencesPage>();
+            Assert.IsTrue(page.SuccessMessage.Displayed(), "Success message is not displayed");
+            Thread.Sleep(5000);
+            Assert.IsFalse(page.SuccessMessage.Displayed(), "Success message is displayed for more than 5 seconds");
         }
 
         [AfterScenario("Remove_Profile_Changes")]
@@ -180,15 +214,17 @@ namespace DashworksTestAutomation.Steps.Dashworks
             {
                 var page = _driver.NowAt<AccountDetailsPage>();
                 page.FullNameField.Clear();
-                page.FullNameField.SendKeys(_userProfileData.FullName);
+                page.FullNameField.SendKeys(_userDto.FullName);
                 page.EmailField.Clear();
-                page.EmailField.SendKeys(String.IsNullOrEmpty(_userProfileData.Email)
+                page.EmailField.SendKeys(String.IsNullOrEmpty(_userDto.Email)
                     ? "automation@juriba.com"
-                    : _userProfileData.Email);
+                    : _userDto.Email);
                 page.RemoveButton.Click();
                 page.UpdateButton.Click();
             }
-            catch { }
+            catch
+            {
+            }
         }
     }
 }

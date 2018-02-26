@@ -6,15 +6,15 @@ Background: Pre-Conditions
 	Given User is logged in to the Evergreen
 	Then Evergreen Dashboards page should be displayed to the user
 
-@Evergreen @AllLists @EvergreenJnr_ListDetails @ListDetailsFunctionality @DAS10880 @Delete_Newly_Created_List
+@Evergreen @AllLists @EvergreenJnr_ListDetails @ListDetailsFunctionality @DAS10880 @DAS11951 @Delete_Newly_Created_List
 Scenario Outline: EvergreenJnr_AllLists_CheckThatRenamingAListWorkingCorrectlyForDynamicLists
 	When User clicks "<PageName>" on the left-hand menu
 	Then "<PageName>" list should be displayed to the user
 	When User click on '<Columnname>' column header
 	Then data in table is sorted by '<Columnname>' column in ascending order
-	When User create custom list with "TestList" name
+	When User create custom list with "TestList12CA0D" name
 	#Workaround for DAS-11570. Remove after fix
-	#And User navigates to the "TestList" list
+	#And User navigates to the "TestList12CA0D" list
 	When User clicks the List Details button
 	Then List details panel is displayed to the user
 	When User changes list name to "RenamedList"
@@ -53,28 +53,28 @@ Examples:
 	| Applications | Application   |
 	| Mailboxes    | Email Address |
 
-@Evergreen @AllLists @EvergreenJnr_ListDetails @ListDetailsFunctionality @DAS10880 @Delete_Newly_Created_List
+@Evergreen @AllLists @EvergreenJnr_ListDetails @ListDetailsFunctionality @DAS10880 @DAS11951 @Delete_Newly_Created_List
 Scenario Outline: EvergreenJnr_AllLists_CheckThatFavoriteAListWorkingCorrectlyForDynamicLists
 	When User clicks "<PageName>" on the left-hand menu
 	Then "<PageName>" list should be displayed to the user
 	When User click on '<Columnname>' column header
 	Then data in table is sorted by '<Columnname>' column in ascending order
-	When User create custom list with "TestList" name
+	When User create custom list with "TestList80EA23" name
 	#Workaround for DAS-11570. Remove after fix
-	#And User navigates to the "TestList" list
+	#And User navigates to the "TestList80EA23" list
 	When User clicks the List Details button
 	Then List details panel is displayed to the user
 	When User mark list as favorite
 	When User navigates to the "<ListToNavigate>" list
-	Then Star icon is displayed for "TestList" list
-	When User navigates to the "TestList" list
-	Then Star icon is not displayed for "TestList" list
+	Then Star icon is displayed for "TestList80EA23" list
+	When User navigates to the "TestList80EA23" list
+	Then Star icon is not displayed for "TestList80EA23" list
 	When User clicks the List Details button
 	Then List details panel is displayed to the user
 	When User mark list as unfavorite
-	Then Star icon is not displayed for "TestList" list
+	Then Star icon is not displayed for "TestList80EA23" list
 	When User navigates to the "<ListToNavigate>" list
-	Then Star icon is not displayed for "TestList" list
+	Then Star icon is not displayed for "TestList80EA23" list
 
 Examples: 
 	| PageName     | Columnname    | ListToNavigate   |
@@ -127,18 +127,18 @@ Examples:
 	| Applications |
 	| Mailboxes    |
 
-@Evergreen @AllLists @EvergreenJnr_ListDetails @ListDetailsFunctionality @DAS10880 @Delete_Newly_Created_List
+@Evergreen @AllLists @EvergreenJnr_ListDetails @ListDetailsFunctionality @DAS10880 @DAS11951 @Delete_Newly_Created_List
 Scenario Outline: EvergreenJnr_AllLists_CheckDefaultOptionsInListDetailsForDynamicLists
 	When User clicks "<PageName>" on the left-hand menu
 	Then "<PageName>" list should be displayed to the user
 	When User click on '<Columnname>' column header
 	Then data in table is sorted by '<Columnname>' column in ascending order
-	When User create custom list with "TestList" name
+	When User create custom list with "TestListCED2D6" name
 	#Workaround for DAS-11570. Remove after fix
-	#And User navigates to the "TestList" list
+	#And User navigates to the "TestListCED2D6" list
 	When User clicks the List Details button
 	Then List details panel is displayed to the user
-	Then "TestList" name is displayed in list details panel
+	Then "TestListCED2D6" name is displayed in list details panel
 	Then List is NOT marked as favorite
 	Then current user is selected as a owner of a list
 	Then "Private" sharing option is selected
@@ -174,20 +174,20 @@ Examples:
 	| Applications |
 	| Mailboxes    |
 
-@Evergreen @AllLists @EvergreenJnr_ListDetails @ListDetailsFunctionality @DAS11493 @Delete_Newly_Created_List
+@Evergreen @AllLists @EvergreenJnr_ListDetails @ListDetailsFunctionality @DAS11493 @DAS11951 @Delete_Newly_Created_List
 Scenario Outline: EvergreenJnr_AllLists_CheckThatActiveListIsRefreshedOnListDetailsPanel
 	When User clicks "<PageName>" on the left-hand menu
 	Then "<PageName>" list should be displayed to the user
 	When User click on '<Columnname>' column header
 	Then data in table is sorted by '<Columnname>' column in ascending order
-	When User create custom list with "TestList" name
-	Then "TestList" list is displayed to user
+	When User create custom list with "TestListE3A207" name
+	Then "TestListE3A207" list is displayed to user
 	When User clicks the List Details button
 	Then List details panel is displayed to the user
 	When User select "Automation Admin 1" as a Owner of a list
 	And User click Accept button in List Details panel
 	Then List details button is disabled
-	And list with "TestList" name is removed
+	And list with "TestListE3A207" name is removed
 	And "<PageName>" list should be displayed to the user
 
 Examples: 
@@ -196,3 +196,21 @@ Examples:
 	| Users        | Username      |
 	| Applications | Application   |
 	| Mailboxes    | Email Address |
+
+@Evergreen @AllLists @EvergreenJnr_ListDetails @ListDetailsFunctionality @DAS11648
+Scenario Outline: EvergreenJnr_AllLists_CheckThatListDetailsButtonIsDisabledForDefaultListsAfterChangingALanguage
+	When User clicks Profile in Account Dropdown
+	Then Profile page is displayed to user
+	When User navigates to the "Preferences" page on Account details
+	And User changes language to "English US"
+	And User clicks Update button on Preferences page
+	And User clicks "<PageName>" on the left-hand menu
+	Then "<PageName>" list should be displayed to the user
+	And List details button is disabled
+
+Examples: 
+	| PageName     |
+	| Devices      |
+	| Users        |
+	| Applications |
+	| Mailboxes    |

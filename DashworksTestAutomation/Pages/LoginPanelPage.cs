@@ -1,11 +1,11 @@
-﻿using System.Collections.Generic;
-using DashworksTestAutomation.Base;
+﻿using DashworksTestAutomation.Base;
 using OpenQA.Selenium;
 using OpenQA.Selenium.Support.PageObjects;
+using System.Collections.Generic;
 
 namespace DashworksTestAutomation.Pages
 {
-    class LoginPanelPage : SeleniumBasePage
+    internal class LoginPanelPage : SeleniumBasePage
     {
         #region Forced login splash page
 
@@ -15,7 +15,7 @@ namespace DashworksTestAutomation.Pages
         [FindsBy(How = How.Id, Using = "ctl00_DwTopBar1_DwLogin1_UserLink")]
         public IWebElement LoginLink { get; set; }
 
-        #endregion
+        #endregion Forced login splash page
 
         [FindsBy(How = How.XPath, Using = ".//img[@src='iisstart.png']")]
         public IWebElement WebsiteIsNotAvailable { get; set; }

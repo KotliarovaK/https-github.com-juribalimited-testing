@@ -2,11 +2,11 @@
 using DashworksTestAutomation.Pages.Evergreen;
 using DashworksTestAutomation.Utils;
 using NUnit.Framework;
+using OpenQA.Selenium;
 using OpenQA.Selenium.Remote;
 using System;
 using System.Linq;
 using System.Threading;
-using OpenQA.Selenium;
 using TechTalk.SpecFlow;
 
 namespace DashworksTestAutomation.Steps.Dashworks
@@ -33,7 +33,8 @@ namespace DashworksTestAutomation.Steps.Dashworks
         public void ThenActionsMessageContainerIsDisplayedToTheUser()
         {
             var columnElement = _driver.NowAt<ActionsElement>();
-            Assert.IsTrue(columnElement.ActionsContainerMessage.Displayed(), "Actions message container was not displayed");
+            Assert.IsTrue(columnElement.ActionsContainerMessage.Displayed(),
+                "Actions message container was not displayed");
             Logger.Write("Actions message container is visible");
         }
 
@@ -53,7 +54,7 @@ namespace DashworksTestAutomation.Steps.Dashworks
             foreach (var row in table.Rows)
             {
                 var rowIndex = columnContent.IndexOf(row["SelectedRowsName"]);
-                if(rowIndex<0)
+                if (rowIndex < 0)
                     throw new Exception($"'{row["SelectedRowsName"]}' is not found in the '{columnName}' column");
                 dashboardPage.SelectRowsCheckboxes[rowIndex].Click();
             }
@@ -152,12 +153,20 @@ namespace DashworksTestAutomation.Steps.Dashworks
             _driver.SelectCustomSelectbox(actionsElement.DropdownBox, "Add to static list");
         }
 
-        [Then(@"Following options are available in lists dorpdown:")]
-        public void ThenFollowingOptionsAreAvailableInListsDorpdown(Table table)
+        [Then(@"All checkboxes are checked in the table")]
+        public void ThenAllCheckboxesAreCheckedInTheTable()
+        {
+            var dashboardPage = _driver.NowAt<BaseDashboardPage>();
+            Assert.IsFalse(dashboardPage.UncheckedCheckbox.Displayed(), "Not all checkboxes are checked in the table");
+        }
+
+        [Then(@"Following options are available in lists dropdown:")]
+        public void ThenFollowingOptionsAreAvailableInListsDropdown(Table table)
         {
             var actionsElement = _driver.NowAt<ActionsElement>();
             _driver.FindElement(By.XPath(actionsElement.listsDropdown)).Click();
-            Assert.AreEqual(table.Rows.SelectMany(row => row.Values).ToList(), actionsElement.GetDropdownOptions().Select(p => p.Text));
+            Assert.AreEqual(table.Rows.SelectMany(row => row.Values).ToList(),
+                actionsElement.GetDropdownOptions().Select(p => p.Text), "Incorrect options in lists dropdown");
         }
     }
 }

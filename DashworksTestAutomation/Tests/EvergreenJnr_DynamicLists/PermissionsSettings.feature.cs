@@ -77,6 +77,7 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_DynamicLists
         [NUnit.Framework.CategoryAttribute("DAS10945")]
         [NUnit.Framework.CategoryAttribute("DAS11553")]
         [NUnit.Framework.CategoryAttribute("DAS10880")]
+        [NUnit.Framework.CategoryAttribute("DAS11951")]
         [NUnit.Framework.CategoryAttribute("Delete_Newly_Created_List")]
         public virtual void EvergreenJnr_UsersList_CheckThatNotOwnerUsersDontHavePermissionsToUpdateDynamicList()
         {
@@ -115,6 +116,7 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_DynamicLists
                         "DAS10945",
                         "DAS11553",
                         "DAS10880",
+                        "DAS11951",
                         "Delete_Newly_Created_List"});
             this.ScenarioSetup(scenarioInfo);
             this.FeatureBackground();
@@ -122,7 +124,7 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_DynamicLists
             testRunner.Then("\"Users\" list should be displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
             testRunner.When("User click on \'Username\' column header", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
             testRunner.Then("data in table is sorted by \'Username\' column in ascending order", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-            testRunner.When("User create custom list with \"TestList\" name", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+            testRunner.When("User create custom list with \"TestList83C1C0\" name", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
             testRunner.When("User clicks the List Details button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
             testRunner.Then("List details panel is displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
             testRunner.When("User select \"Everyone can see\" sharing option", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
@@ -150,6 +152,7 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_DynamicLists
         [NUnit.Framework.CategoryAttribute("DAS10945")]
         [NUnit.Framework.CategoryAttribute("DAS11553")]
         [NUnit.Framework.CategoryAttribute("DAS10880")]
+        [NUnit.Framework.CategoryAttribute("DAS11951")]
         [NUnit.Framework.CategoryAttribute("Delete_Newly_Created_List")]
         public virtual void EvergreenJnr_UsersList_CheckThatAdminUserButNotOwnerIsNotAbleToDeleteList()
         {
@@ -187,6 +190,7 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_DynamicLists
                         "DAS10945",
                         "DAS11553",
                         "DAS10880",
+                        "DAS11951",
                         "Delete_Newly_Created_List"});
             this.ScenarioSetup(scenarioInfo);
             this.FeatureBackground();
@@ -194,7 +198,7 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_DynamicLists
             testRunner.Then("\"Users\" list should be displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
             testRunner.When("User click on \'Username\' column header", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
             testRunner.Then("data in table is sorted by \'Username\' column in ascending order", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-            testRunner.When("User create custom list with \"TestList\" name", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+            testRunner.When("User create custom list with \"TestList9507DA\" name", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
             testRunner.When("User clicks the List Details button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
             testRunner.Then("List details panel is displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
             testRunner.When("User select \"Specific users\" sharing option", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");

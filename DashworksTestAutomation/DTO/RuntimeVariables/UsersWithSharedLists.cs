@@ -1,14 +1,10 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using System.Collections.Generic;
 
 namespace DashworksTestAutomation.DTO.RuntimeVariables
 {
     //If we assigne list to any user we nned to add it to this list
     //to be able to remove list after test execution
-    class UsersWithSharedLists
+    internal class UsersWithSharedLists
     {
         public List<string> Value { get; set; }
 

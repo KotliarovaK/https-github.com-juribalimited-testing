@@ -1,12 +1,12 @@
-﻿using System.Collections.Generic;
-using DashworksTestAutomation.Base;
+﻿using DashworksTestAutomation.Base;
 using DashworksTestAutomation.Extensions;
 using OpenQA.Selenium;
 using OpenQA.Selenium.Support.PageObjects;
+using System.Collections.Generic;
 
 namespace DashworksTestAutomation.Pages.Evergreen.ProfileDetailsPages
 {
-    class AccountDetailsPage : SeleniumBasePage
+    internal class AccountDetailsPage : SeleniumBasePage
     {
         [FindsBy(How = How.XPath, Using = ".//input[@id='fileUploader']")]
         public IWebElement UploadButton { get; set; }
@@ -17,10 +17,10 @@ namespace DashworksTestAutomation.Pages.Evergreen.ProfileDetailsPages
         [FindsBy(How = How.XPath, Using = ".//span[text()='UPDATE']/ancestor::button")]
         public IWebElement UpdateButton { get; set; }
 
-        [FindsBy(How = How.XPath, Using = ".//span[text()='Full Name']/ancestor::div[@class='form-item']//input")]
+        [FindsBy(How = How.XPath, Using = ".//label[text()='Full Name']/ancestor::div[@class='form-item']//input")]
         public IWebElement FullNameField { get; set; }
 
-        [FindsBy(How = How.XPath, Using = ".//span[text()='Email']/ancestor::div[@class='form-item']//input")]
+        [FindsBy(How = How.XPath, Using = ".//label[text()='Email']/ancestor::div[@class='form-item']//input")]
         public IWebElement EmailField { get; set; }
 
         [FindsBy(How = How.XPath, Using = ".//ul[@class='roles']/li")]
@@ -46,6 +46,11 @@ namespace DashworksTestAutomation.Pages.Evergreen.ProfileDetailsPages
                 SelectorFor(this, p => p.EmailField),
                 SelectorFor(this, p => p.RolesList),
             };
+        }
+
+        public void NavigateToPage(string pageName)
+        {
+            Driver.FindElement(By.XPath($".//span[text()='{pageName}']")).Click();
         }
     }
 }

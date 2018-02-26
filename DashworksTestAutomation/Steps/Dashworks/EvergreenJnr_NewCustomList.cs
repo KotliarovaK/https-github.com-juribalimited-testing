@@ -1,4 +1,6 @@
-﻿using DashworksTestAutomation.Extensions;
+﻿using DashworksTestAutomation.DTO;
+using DashworksTestAutomation.DTO.RuntimeVariables;
+using DashworksTestAutomation.Extensions;
 using DashworksTestAutomation.Helpers;
 using DashworksTestAutomation.Pages.Evergreen;
 using DashworksTestAutomation.Utils;
@@ -9,9 +11,6 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading;
-using DashworksTestAutomation.DTO;
-using DashworksTestAutomation.DTO.RuntimeVariables;
-using DashworksTestAutomation.Providers;
 using TechTalk.SpecFlow;
 
 namespace DashworksTestAutomation.Steps.Dashworks
@@ -23,14 +22,16 @@ namespace DashworksTestAutomation.Steps.Dashworks
         private readonly UserDto _user;
         private readonly UsedUsers _usedUsers;
         private readonly UsersWithSharedLists _usersWithSharedLists;
+        private readonly ListsDetails _listsDetails;
 
         public EvergreenJnr_NewCustomList(RemoteWebDriver driver, UserDto user, UsedUsers usedUsers,
-            UsersWithSharedLists usersWithSharedLists)
+            UsersWithSharedLists usersWithSharedLists, ListsDetails listsDetails)
         {
             _driver = driver;
             _user = user;
             _usedUsers = usedUsers;
             _usersWithSharedLists = usersWithSharedLists;
+            _listsDetails = listsDetails;
         }
 
         [Then(@"Save to New Custom List element is NOT displayed")]
@@ -72,6 +73,7 @@ namespace DashworksTestAutomation.Steps.Dashworks
             //Small wait for message display
             Thread.Sleep(300);
             _driver.WaitWhileControlIsDisplayed<CustomListElement>(() => listElement.SuccessCreateMessage);
+            _listsDetails.AddList($"{listName}");
         }
 
         [Then(@"User type ""(.*)"" into Custom list name field")]
@@ -104,6 +106,13 @@ namespace DashworksTestAutomation.Steps.Dashworks
             //WhenUserNavigatesToTheList(listName);
             var page = _driver.NowAt<BaseDashboardPage>();
             Assert.AreEqual(listName, page.ActiveCustomListName());
+        }
+
+        [Then(@"""(.*)"" list name is displayed correctly")]
+        public void ThenListNameIsDisplayedCorrectly(string listName)
+        {
+            var listElement = _driver.NowAt<CustomListElement>();
+            Assert.AreEqual(listName, listElement.CheckAllListName(listName).Text, "Incorrect list name is displayed");
         }
 
         [When(@"User update current custom list")]
@@ -172,7 +181,7 @@ namespace DashworksTestAutomation.Steps.Dashworks
         public void ThenListWithNameIsRemoved(string listName)
         {
             var listElement = _driver.NowAt<CustomListElement>();
-            Assert.IsFalse(listElement.CheckThatListIsRemoved(listName));
+            Assert.IsFalse(listElement.CheckThatListIsRemoved(listName), $"List with {listName} is not removed");
         }
 
         [When(@"User navigates to the ""(.*)"" list")]
@@ -187,7 +196,7 @@ namespace DashworksTestAutomation.Steps.Dashworks
         {
             var listElement = _driver.NowAt<CustomListElement>();
             _driver.WaitWhileControlIsNotDisplayed<CustomListElement>(() => listElement.SuccessCreateMessage);
-            Assert.AreEqual(message, listElement.SuccessCreateMessage.Text);
+            Assert.AreEqual(message, listElement.SuccessCreateMessage.Text, $"{message} is not displayed");
         }
 
         [Then(@"lists are sorted in alphabetical order")]
@@ -328,7 +337,7 @@ namespace DashworksTestAutomation.Steps.Dashworks
                         //var listsIds = DatabaseHelper.ExecuteReader("SELECT [ListId] FROM[DesktopBI].[dbo].[EvergreenList]", 0);
                         //All lists for specific user
                         var listsIds = DatabaseHelper.ExecuteReader(
-                            $"select l.ListId from[aspnetdb].[dbo].[aspnet_Users] u join[DesktopBI].[dbo].[EvergreenList] l on u.UserId = l.UserId where u.LoweredUserName = '{userDto.UserName}'",
+                            $"select l.ListId from [aspnetdb].[dbo].[aspnet_Users] u join [DesktopBI].[dbo].[EvergreenList] l on u.UserId = l.UserId where u.LoweredUserName = '{userDto.UserName}'",
                             0);
                         DatabaseHelper.RemoveLists(listsIds);
                     }

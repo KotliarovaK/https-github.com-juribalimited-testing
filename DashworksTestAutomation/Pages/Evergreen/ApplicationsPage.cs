@@ -1,10 +1,10 @@
-﻿using System.Collections.Generic;
-using DashworksTestAutomation.Extensions;
+﻿using DashworksTestAutomation.Extensions;
 using OpenQA.Selenium;
+using System.Collections.Generic;
 
 namespace DashworksTestAutomation.Pages.Evergreen
 {
-    class ApplicationsPage : BaseDashboardPage
+    internal class ApplicationsPage : BaseDashboardPage
     {
         public override List<By> GetPageIdentitySelectors()
         {

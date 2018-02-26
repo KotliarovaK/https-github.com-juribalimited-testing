@@ -1,25 +1,26 @@
-﻿using System.Collections.Generic;
-using DashworksTestAutomation.Base;
+﻿using DashworksTestAutomation.Base;
 using DashworksTestAutomation.Extensions;
 using OpenQA.Selenium;
 using OpenQA.Selenium.Support.PageObjects;
+using System.Collections.Generic;
 
 namespace DashworksTestAutomation.Pages.Evergreen.ProfileDetailsPages
 {
-    class PreferencesPage : SeleniumBasePage
+    internal class PreferencesPage : SeleniumBasePage
     {
         [FindsBy(How = How.XPath,
-            Using = ".//span[text()='Language']/ancestor::div[@class='form-item']//div[@class='dropdown-wrapper']")]
+            Using = ".//label[text()='Language']/ancestor::div[@class='form-item']//div[@class='styleSelectDropdown']")]
         public IWebElement LanguageDropdown { get; set; }
 
         [FindsBy(How = How.XPath,
-            Using = ".//span[text()='Display Mode']/ancestor::div[@class='form-item']//div[@class='dropdown-wrapper']")]
+            Using =
+                ".//label[text()='Display Mode']/ancestor::div[@class='form-item']//div[@class='styleSelectDropdown']")]
         public IWebElement DisplayModeDropdown { get; set; }
 
-        [FindsBy(How = How.XPath, Using = ".//button[@title='UPDATE']")]
+        [FindsBy(How = How.XPath, Using = ".//span[text()='UPDATE']/ancestor::button")]
         public IWebElement UpdateButton { get; set; }
 
-        [FindsBy(How = How.XPath, Using = ".//div[@class='inline-success']")]
+        [FindsBy(How = How.XPath, Using = ".//div[@class='inline-success ng-star-inserted']")]
         public IWebElement SuccessMessage { get; set; }
 
         public override List<By> GetPageIdentitySelectors()

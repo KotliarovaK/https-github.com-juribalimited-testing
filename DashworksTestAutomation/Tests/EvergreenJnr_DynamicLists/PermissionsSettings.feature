@@ -6,15 +6,15 @@ Background: Pre-Conditions
 	Given User is logged in to the Evergreen
 	Then Evergreen Dashboards page should be displayed to the user
 
-@Evergreen @Users @EvergreenJnr_DynamicLists @PermissionsSettings @DAS10945 @DAS11553 @DAS10880 @Delete_Newly_Created_List
+@Evergreen @Users @EvergreenJnr_DynamicLists @PermissionsSettings @DAS10945 @DAS11553 @DAS10880 @DAS11951 @Delete_Newly_Created_List
 Scenario: EvergreenJnr_UsersList_CheckThatNotOwnerUsersDontHavePermissionsToUpdateDynamicList
 	When User clicks "Users" on the left-hand menu
 	Then "Users" list should be displayed to the user
 	When User click on 'Username' column header
 	Then data in table is sorted by 'Username' column in ascending order
-	When User create custom list with "TestList" name
+	When User create custom list with "TestList83C1C0" name
 	#Workaround for DAS-11570. Remove after fix
-	#And User navigates to the "TestList" list
+	#And User navigates to the "TestList83C1C0" list
 	When User clicks the List Details button
 	Then List details panel is displayed to the user
 	When User select "Everyone can see" sharing option
@@ -28,13 +28,13 @@ Scenario: EvergreenJnr_UsersList_CheckThatNotOwnerUsersDontHavePermissionsToUpda
 	Then Update list option is NOT available
 	And Save as a new list option is available
 
-@Evergreen @Users @EvergreenJnr_DynamicLists @PermissionsSettings @DAS10945 @DAS11553 @DAS10880 @Delete_Newly_Created_List 
+@Evergreen @Users @EvergreenJnr_DynamicLists @PermissionsSettings @DAS10945 @DAS11553 @DAS10880 @DAS11951 @Delete_Newly_Created_List
 Scenario: EvergreenJnr_UsersList_CheckThatAdminUserButNotOwnerIsNotAbleToDeleteList
 	When User clicks "Users" on the left-hand menu
 	Then "Users" list should be displayed to the user
 	When User click on 'Username' column header
 	Then data in table is sorted by 'Username' column in ascending order
-	When User create custom list with "TestList" name
+	When User create custom list with "TestList9507DA" name
 	When User clicks the List Details button
 	Then List details panel is displayed to the user
 	When User select "Specific users" sharing option

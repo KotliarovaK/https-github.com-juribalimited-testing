@@ -14,7 +14,6 @@ Scenario: EvergreenJnr_AccountDetails_CheckThatErrorIsNotDisplayedAfterChangingP
 	When User changes Email to "automation2@juriba.com"
 	And User clicks Update button on Profile page
 	Then Error message is not displayed on Profile page
-	Then Success message with "Account details have been changed" text is displayed on Account Details page
 	And "TestAdmin" is displayed in Full Name field
 	And "automation2@juriba.com" is displayed in Email field
 
@@ -56,17 +55,20 @@ Scenario: EvergreenJnr_AccountDetails_CheckThatErrorIsNotDisplayedAfterChangingP
 	When User changes Email to "automation2@juriba.com"
 	And User clicks Update button on Profile page
 	Then Error message is not displayed on Profile page
-	Then Success message with "Account details have been changed" text is displayed on Account Details page
 	And "TestAdmin" is displayed in Full Name field
 	And "automation2@juriba.com" is displayed in Email field
 	When User changes Full Name to "TestAdm"
 	Then Error message is not displayed on Profile page
-	Then Success message with "Account details have been changed" text is displayed on Account Details page
 
-	@Evergreen @ProfileDetails @EvergreenJnr_ProfileDetails @AccountDetailsFunctionality @DAS11641
-Scenario: EvergreenJnr_AccountDetails_CheckThatNotificationsAndUserProfilesIconsAreDisplayedCorrectly
-	When User clicks "Devices" on the left-hand menu
-	Then "Devices" list should be displayed to the user
-	When User clicks Account Profile dropdown
-	Then Account Profile dropdown is displayed to user
-	Then 
+@Evergreen @ProfileDetails @EvergreenJnr_FilterFeature @FilterFunctionality @DAS11723 @API @Not_Run
+Scenario: EvergreenJnr_AccountDetails_CheckThatDefaultListPageSizeIs1000API
+	Then default list page Size is "1000" and Cache "10"
+
+@Evergreen @ProfileDetails @EvergreenJnr_ProfileDetails @AccountDetailsFunctionality @DAS11646 @Remove_Profile_Changes
+Scenario: EvergreenJnr_AccountDetails_CheckThatNotificationMessageDisappearsAfter5Seconds
+	When User clicks Profile in Account Dropdown
+	Then Profile page is displayed to user
+	When User navigates to the "Preferences" page on Account details
+	And User changes language to "English US"
+	And User clicks Update button on Preferences page
+	Then Notification message is displayed for a few seconds on Preferences page

@@ -70,15 +70,15 @@ Scenario: EvergreenJnr_ApplicationsList_CheckThatFilterIsRestoredAfterGoingBackT
 	| Microsoft Office 97, Developer Edition Tools |
 	| Microsoft Office 97, Standard Edition        |
 	Then "Application" filter is added to the list
-	When User create custom list with "TestList" name
-	Then "TestList" list is displayed to user
+	When User create custom list with "TestList5D30CF" name
+	Then "TestList5D30CF" list is displayed to user
 	When User clicks the Filters button
 	Then Filters panel is displayed to the user
 	Then "Application is Microsoft Office 97, Professional Edition, Microsoft Office 97, Developer Edition Tools or Microsoft Office 97, Standard Edition" is displayed in added filter info
 	When User navigates to the "All Applications" list
 	Then "Applications" list should be displayed to the user
-	When User navigates to the "TestList" list
-	Then "TestList" list is displayed to user
+	When User navigates to the "TestList5D30CF" list
+	Then "TestList5D30CF" list is displayed to user
 	When User clicks the Filters button
 	Then Filters panel is displayed to the user
 	And "Application is Microsoft Office 97, Professional Edition, Microsoft Office 97, Developer Edition Tools or Microsoft Office 97, Standard Edition" is displayed in added filter info
@@ -114,12 +114,12 @@ Scenario: EvergreenJnr_DevicesList_CheckThatAddColumnCheckboxIsCheckedAfterSavin
 	| SelectedCheckboxes |
 	| Red                |
 	Then "Compliance" filter is added to the list
-	When User create custom list with "TestList" name
-	Then "TestList" list is displayed to user
+	When User create custom list with "TestList4A5CD6" name
+	Then "TestList4A5CD6" list is displayed to user
 	When User navigates to the "All Devices" list
 	Then "Devices" list should be displayed to the user
-	When User navigates to the "TestList" list
-	Then "TestList" list is displayed to user
+	When User navigates to the "TestList4A5CD6" list
+	Then "TestList4A5CD6" list is displayed to user
 	When User clicks the Filters button
 	Then Filters panel is displayed to the user
 	When User click Edit button for "Compliance" filter
@@ -183,9 +183,9 @@ Examples:
 	| Devices      | ComputerSc: Request Type        | Request Type A | 132       | Hostname      | 46DIQRWG3BM6K9Z                           | ComputerSc: Request Type is Request Type A |
 	| Applications | Havoc(BigD: Hide from End Users | UNKNOWN        | 1,156     | Application   | Microsoft Silverlight 2 SDK (2.0.31005.0) | Havoc(BigD: Hide from End Users is Unknown |
 	| Applications | MigrationP: Core Application    | FALSE          | 220       | Application   | Quartus II Programmer 4.0                 | MigrationP: Core Application is false      |
-	| Mailboxes    | EmailMigra: Device Type         | Not Identified | 80        | Email Address | alex.cristea@juriba.com                   | EmailMigra: Device Type is Not Identified  |
+	| Mailboxes    | EmailMigra: Device Type         | Not Identified | 729       | Email Address | alex.cristea@juriba.com                   | EmailMigra: Device Type is Not Identified  |
 
-@Evergreen @AllLists @EvergreenJnr_FilterFeature @FilterFunctionality @DAS10977 @Not_Run
+@Evergreen @AllLists @EvergreenJnr_FilterFeature @FilterFunctionality @DAS10977
 Scenario Outline: EvergreenJnr_AllLists_CheckThatFilterIsRestoredCorrectlyAfterLeavingThePageAndGoingBackViaTheBrowserBackButtonForLookupFilters
 	When User clicks "<ListName>" on the left-hand menu
 	Then "<ListName>" list should be displayed to the user
@@ -202,9 +202,9 @@ Scenario Outline: EvergreenJnr_AllLists_CheckThatFilterIsRestoredCorrectlyAfterL
 	Then "<Text>" is displayed in added filter info
 
 Examples: 
-	| ListName     | FilterName                       | FilterValue      | RowsCount | ColumnName    | ObjectName              | Text                                            |
-	| Applications | Barry'sUse: Target App           | Python 2.2a4 (1) | 1         | Application   | Python 2.2a4            | Barry'sUse: Target App is Python 2.2a4 (1)      |
-	| Mailboxes    | EmailMigra: BT/QMM Switch Status | Not Started      | 80        | Email Address | alex.cristea@juriba.com | EmailMigra: BT/QMM Switch Status is Not Started |
+	| ListName     | FilterName                       | FilterValue            | RowsCount | ColumnName    | ObjectName              | Text                                             |
+	| Applications | Barry'sUse: Target App           | Python 2.2a4 (SMS_GEN) | 1         | Application   | Python 2.2a4            | Barry'sUse: Target App is Python 2.2a4 (SMS_GEN) |
+	| Mailboxes    | EmailMigra: BT/QMM Switch Status | Not Started            | 729       | Email Address | alex.cristea@juriba.com | EmailMigra: BT/QMM Switch Status is Not Started  |
 
 @Evergreen @Applications @EvergreenJnr_FilterFeature @FilterFunctionality @DAS10977
 Scenario: EvergreenJnr_ApplicationsList_CheckThatFilterIsRestoredCorrectlyAfterLeavingThePageAndGoingBackViaTheBrowserbackButtonForValuesFilters
@@ -232,22 +232,22 @@ Scenario: EvergreenJnr_ApplicationsList_CheckThatFilterIsRestoredCorrectlyAfterL
 	When ColumnName is entered into the search box and the selection is clicked
 	| ColumnName      |
 	| Application Key |
-	When User create custom list with "TestList" name
-	Then "TestList" list is displayed to user
+	When User create custom list with "TestListD75CD3" name
+	Then "TestListD75CD3" list is displayed to user
 	When User clicks "Devices" on the left-hand menu
 	Then "Devices" list should be displayed to the user
 	When User clicks the Filters button
 	Then Filters panel is displayed to the user
 	When User add "Application (Saved List)" filter where type is "In list" with SelectedList list and following Association:
-	| SelectedList | Association        |
-	| TestList     | Not used on device |
-	Then "Application in list TestList is not used on device" is displayed in added filter info
-	Then "17,095" rows are displayed in the agGrid
+	| SelectedList   | Association        |
+	| TestListD75CD3 | Not used on device |
+	Then "Application in list TestListD75CD3 is not used on device" is displayed in added filter info
+	Then "16,565" rows are displayed in the agGrid
 	When User perform search by "00BDM1JUR8IF419"
 	And User click content from "Hostname" column
 	Then User click back button in the browser
-	Then "17,095" rows are displayed in the agGrid
-	Then "Application in list TestList is not used on device" is displayed in added filter info
+	Then "16,565" rows are displayed in the agGrid
+	Then "Application in list TestListD75CD3 is not used on device" is displayed in added filter info
 
 @Evergreen @Devices @EvergreenJnr_FilterFeature @FilterFunctionality @DAS11560
 Scenario: EvergreenJnr_DevicesList_CheckNumericFilter
@@ -268,7 +268,7 @@ Scenario Outline: EvergreenJnr_DevicesList_CheckThatAssociationSearchInFiltersPa
 	When User clicks the Filters button
 	Then Filters panel is displayed to the user
 	When user select "<FilterName>" filter
-	When  User enters "used" in Association search field 
+	When User enters "used" in Association search field 
 	Then search values in Association section working by specific search criteria
 
 Examples:
@@ -296,7 +296,7 @@ Scenario: EvergreenJnr_ApplicationsList_CheckThat500ErrorInNotDisplayedWhenUserA
 	Then "1,269" rows are displayed in the agGrid
 	Then "(Device Count (Installed) < 10)" text is displayed in filter container
 
-@Evergreen @Devices @EvergreenJnr_FilterFeature @FilterFunctionality @DAS11551
+@Evergreen @Devices @EvergreenJnr_FilterFeature @FilterFunctionality @DAS11551 @DAS11550 @DAS11749 @Not_Run
 Scenario Outline: EvergreenJnr_DevicesList_CheckThatEmptyNotEmptyOperatorsIsWorkedCorrectly
 	When User clicks "Devices" on the left-hand menu
 	Then "Devices" list should be displayed to the user
@@ -333,3 +333,85 @@ Examples:
 	| whencreated            | Does not contain | 2017                                                       | Add whencreated column            |
 	| department             | Ends with        | LongName01234567890123456789012345678901234567890123456789 | Add Department column             |
 	| iscriticalsystemobject | Not empty        |                                                            | Add iscriticalsystemobject column |
+
+@Evergreen @Devices @EvergreenJnr_FilterFeature @FilterFunctionality @DAS11550 @DAS11749 @API
+Scenario Outline: EvergreenJnr_DevicesList_CheckThatOperatorInSelectedFilterIsDisplayedCorrectlyAPI
+	Then following operators are displayed in "<CategoryName>" category for "<FilterName>" filter on "Devices" page:
+	| OperatorValues   |
+	| Equals           |
+	| Does not equal   |
+	| Contains         |
+	| Does not contain |
+	| Begins with      |
+	| Ends with        |
+
+Examples:
+	| CategoryName              | FilterName                  |
+	| Application               | Application Name            |
+	| Application Custom Fields | App field 1                 |
+	| Application Custom Fields | Computer Warranty           |
+	| Application Custom Fields | General information field 1 |
+	| Application Custom Fields | User Field 2                |
+
+@Evergreen @Users @EvergreenJnr_FilterFeature @FilterFunctionality @DAS11738
+Scenario: EvergreenJnr_UsersList_CheckThatToolTipShownWithEditFilterTextWhenEditingAFilterDisplayed 
+	When User clicks "Users" on the left-hand menu
+	Then "Users" list should be displayed to the user
+	When User clicks the Filters button
+	Then Filters panel is displayed to the user
+	When User add "Compliance" filter where type is "Equals" without added column and following checkboxes:
+	| SelectedCheckboxes |
+	| Red                |
+	Then "Compliance" filter is added to the list
+	When User navigate to Edit button for "Compliance" filter
+	Then tooltip is displayed with "Edit Filter" text for edit filter button
+
+@Evergreen @Devices @EvergreenJnr_FilterFeature @FilterFunctionality @DAS11678
+Scenario: EvergreenJnr_DevicesList_CheckThatTheSaveButtonIsNotAvailableWhenEnteringInvalidData
+	When User clicks "Devices" on the left-hand menu
+	Then "Devices" list should be displayed to the user
+	When User clicks the Filters button
+	Then Filters panel is displayed to the user
+	When User add "Build Date" filter where type is "Equals" with added column and following value:
+	| Values |
+	| 1      |
+	Then Save button is not available on the Filter panel
+
+@Evergreen @Devices @EvergreenJnr_FilterFeature @FilterFunctionality @DAS11559
+Scenario: EvergreenJnr_DevicesList_CheckThatErrorsDoNotAppearWhenAddingAdvancedAndStandardFilters
+	When User clicks "Devices" on the left-hand menu
+	Then "Devices" list should be displayed to the user
+	When User clicks the Filters button
+	Then Filters panel is displayed to the user
+	When User add "Application Import" filter where type is "Equals" with following Lookup Value and Association:
+	| SelectedValues | Association    |
+	| Altiris        | Used on device |
+	And User add "Boot Up Date" filter where type is "Equals" with added column and following value:
+	| Values      |
+	| 07 Dec 2017 |
+	Then There are no errors in the browser console
+
+@Evergreen @Devices @EvergreenJnr_FilterFeature @FilterFunctionality @DAS11741
+Scenario: EvergreenJnr_DevicesList_CheckThatErrorsDoNotAppearAndFullDataIsDisplayedWhenAddingDifferentFilters
+	When User clicks "Devices" on the left-hand menu
+	Then "Devices" list should be displayed to the user
+	When User clicks the Filters button
+	Then Filters panel is displayed to the user
+	When User add "Windows7Mi: Application Readiness" filter where type is "Equals" with added column and Lookup option
+	| SelectedValues          |
+	| Red                     |
+	| Blue                    |
+	| Out Of Scope            |
+	| Light Blue              |
+	| Brown                   |
+	| Amber                   |
+	| Really Extremely Orange |
+	| Purple                  |
+	| Green                   |
+	| Grey                    |
+	| None                    |
+	When User Add And "Windows7Mi: In Scope" filter where type is "Equals" with added column and following checkboxes:
+	| SelectedCheckboxes |
+	| TRUE               |
+	Then full list content is displayed to the user
+	Then There are no errors in the browser console

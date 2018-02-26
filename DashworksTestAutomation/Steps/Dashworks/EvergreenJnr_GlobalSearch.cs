@@ -1,21 +1,14 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using DashworksTestAutomation.Extensions;
-using DashworksTestAutomation.Helpers;
+﻿using DashworksTestAutomation.Extensions;
 using DashworksTestAutomation.Pages.Evergreen;
 using DashworksTestAutomation.Utils;
-using Microsoft.VisualStudio.TestTools.UnitTesting;
-using OpenQA.Selenium;
+using NUnit.Framework;
 using OpenQA.Selenium.Remote;
 using TechTalk.SpecFlow;
 
 namespace DashworksTestAutomation.Steps.Dashworks
 {
     [Binding]
-    class EvergreenJnr_GlobalSearch
+    internal class EvergreenJnr_GlobalSearch
     {
         private readonly RemoteWebDriver _driver;
 
@@ -32,15 +25,24 @@ namespace DashworksTestAutomation.Steps.Dashworks
             searchElement.SearchEverythingField.SendKeys(searchText);
             _driver.WaitForDataLoading();
         }
-        
+
+        [Then(@"User clicks on ""(.*)"" search result")]
+        public void ThenUserClicksOnSearchResult(string searchText)
+        {
+            var menu = _driver.NowAt<GlobalSearchElement>();
+            _driver.WaitForDataLoading();
+            menu.SearchResult(searchText).Click();
+            Logger.Write("Search Result was clicked");
+        }
+
         [Then(@"""(.*)"" message is displayed below Global Search field")]
         public void ThenMessageIsDisplayedBelowGlobalSearchField(string text)
         {
             var searchElement = _driver.NowAt<GlobalSearchElement>();
             _driver.WaitWhileControlIsNotDisplayed<GlobalSearchElement>(() => searchElement.NoResultFound);
-            Assert.AreEqual(text, searchElement.NoResultFound.Text);
+            Assert.AreEqual(text, searchElement.NoResultFound.Text, $"{text} is not displayed");
         }
-        
+
         [Then(@"Search results are displayed below Global Search field")]
         public void ThenSearchResultsAreDisplayedBelowGlobalSearchField()
         {

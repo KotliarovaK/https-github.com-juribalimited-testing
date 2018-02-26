@@ -29,7 +29,7 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_ListPanel
         {
             testRunner = TechTalk.SpecFlow.TestRunnerManager.GetTestRunner();
             TechTalk.SpecFlow.FeatureInfo featureInfo = new TechTalk.SpecFlow.FeatureInfo(new System.Globalization.CultureInfo("en-US"), "CustomListDisplay", "\tRuns Custom List Creation block related tests", ProgrammingLanguage.CSharp, new string[] {
-                        "retry:1"});
+                        "retry:0"});
             testRunner.OnFeatureStart(featureInfo);
         }
         
@@ -78,7 +78,7 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_ListPanel
         public virtual void EvergreenJnr_DevicesList_CheckThatCustomListCreationBlockIsNotDisplayedWhenDeletingAFilterInDefaultList()
         {
             System.Exception lastException = null;
-            for (int i = 0; (i <= 1); i = (i + 1))
+            for (int i = 0; (i <= 0); i = (i + 1))
             {
                 try
                 {
@@ -90,7 +90,7 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_ListPanel
                     lastException = exc;
                 }
                 if (((i + 1) 
-                            <= 1))
+                            <= 0))
                 {
                     testRunner.OnScenarioEnd();
                 }
@@ -139,7 +139,7 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_ListPanel
         public virtual void EvergreenJnr_DevicesList_CheckThatCustomListCreationBlockIsNotDisplayedWhenResetingAFilterInDefaultList()
         {
             System.Exception lastException = null;
-            for (int i = 0; (i <= 1); i = (i + 1))
+            for (int i = 0; (i <= 0); i = (i + 1))
             {
                 try
                 {
@@ -151,7 +151,7 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_ListPanel
                     lastException = exc;
                 }
                 if (((i + 1) 
-                            <= 1))
+                            <= 0))
                 {
                     testRunner.OnScenarioEnd();
                 }
@@ -201,7 +201,7 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_ListPanel
         public virtual void EvergreenJnr_DevicesList_CheckThatCustomListCreationBlockIsNotDisplayedWhenDeletingAFilterInCustomList()
         {
             System.Exception lastException = null;
-            for (int i = 0; (i <= 1); i = (i + 1))
+            for (int i = 0; (i <= 0); i = (i + 1))
             {
                 try
                 {
@@ -213,7 +213,7 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_ListPanel
                     lastException = exc;
                 }
                 if (((i + 1) 
-                            <= 1))
+                            <= 0))
                 {
                     testRunner.OnScenarioEnd();
                 }
@@ -247,8 +247,8 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_ListPanel
             testRunner.When("User add \"Windows7Mi: Category\" filter where type is \"Equals\" without added colum" +
                     "n and following checkboxes:", ((string)(null)), table3, "When ");
             testRunner.Then("\"Windows7Mi: Category\" filter is added to the list", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-            testRunner.When("User create custom list with \"TestList\" name", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-            testRunner.Then("\"TestList\" list is displayed to user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+            testRunner.When("User create dynamic list with \"TestListF20A85\" name on \"Devices\" page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+            testRunner.Then("\"TestListF20A85\" list is displayed to user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
             testRunner.When("User clicks the Filters button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
             testRunner.Then("Filters panel is displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
             TechTalk.SpecFlow.Table table4 = new TechTalk.SpecFlow.Table(new string[] {
@@ -277,7 +277,7 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_ListPanel
         public virtual void EvergreenJnr_DevicesList_CheckThatCustomListCreationBlockIsNotDisplayedWhenResetingAFilterInCustomList()
         {
             System.Exception lastException = null;
-            for (int i = 0; (i <= 1); i = (i + 1))
+            for (int i = 0; (i <= 0); i = (i + 1))
             {
                 try
                 {
@@ -289,7 +289,7 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_ListPanel
                     lastException = exc;
                 }
                 if (((i + 1) 
-                            <= 1))
+                            <= 0))
                 {
                     testRunner.OnScenarioEnd();
                 }
@@ -323,8 +323,8 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_ListPanel
             testRunner.When("User add \"Windows7Mi: Category\" filter where type is \"Equals\" without added colum" +
                     "n and following checkboxes:", ((string)(null)), table5, "When ");
             testRunner.Then("\"Windows7Mi: Category\" filter is added to the list", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-            testRunner.When("User create custom list with \"TestList\" name", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-            testRunner.Then("\"TestList\" list is displayed to user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+            testRunner.When("User create custom list with \"TestListE63B7D\" name", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+            testRunner.Then("\"TestListE63B7D\" list is displayed to user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
             testRunner.When("User clicks the Filters button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
             testRunner.Then("Filters panel is displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
             TechTalk.SpecFlow.Table table6 = new TechTalk.SpecFlow.Table(new string[] {
@@ -349,7 +349,7 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_ListPanel
         public virtual void EvergreenJnr_DevicesList_CheckThatSearchDoesNotTriggerNewCustomList()
         {
             System.Exception lastException = null;
-            for (int i = 0; (i <= 1); i = (i + 1))
+            for (int i = 0; (i <= 0); i = (i + 1))
             {
                 try
                 {
@@ -361,7 +361,7 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_ListPanel
                     lastException = exc;
                 }
                 if (((i + 1) 
-                            <= 1))
+                            <= 0))
                 {
                     testRunner.OnScenarioEnd();
                 }
@@ -403,11 +403,12 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_ListPanel
         [NUnit.Framework.CategoryAttribute("EvergreenJnr_ListPanel")]
         [NUnit.Framework.CategoryAttribute("CustomListDisplay")]
         [NUnit.Framework.CategoryAttribute("DAS11081")]
+        [NUnit.Framework.CategoryAttribute("DAS11951")]
         [NUnit.Framework.CategoryAttribute("Delete_Newly_Created_List")]
         public virtual void EvergreenJnr_DevicesList_CheckThatNewListCreatedMessageForStaticListIsDisplayed()
         {
             System.Exception lastException = null;
-            for (int i = 0; (i <= 1); i = (i + 1))
+            for (int i = 0; (i <= 0); i = (i + 1))
             {
                 try
                 {
@@ -419,7 +420,7 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_ListPanel
                     lastException = exc;
                 }
                 if (((i + 1) 
-                            <= 1))
+                            <= 0))
                 {
                     testRunner.OnScenarioEnd();
                 }
@@ -438,6 +439,7 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_ListPanel
                         "EvergreenJnr_ListPanel",
                         "CustomListDisplay",
                         "DAS11081",
+                        "DAS11951",
                         "Delete_Newly_Created_List"});
             this.ScenarioSetup(scenarioInfo);
             this.FeatureBackground();
@@ -446,8 +448,8 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_ListPanel
             testRunner.When("User clicks the Actions button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
             testRunner.Then("Actions panel is displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
             testRunner.When("User select all rows", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-            testRunner.And("User create static list with \"TestList\" name", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-            testRunner.Then("\"TestList\" list is displayed to user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+            testRunner.And("User create static list with \"TestList4A22A5\" name", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+            testRunner.Then("\"TestList4A22A5\" list is displayed to user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
             testRunner.When("User click on \'Hostname\' column header", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
             testRunner.Then("data in table is sorted by \'Hostname\' column in ascending order", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
             testRunner.And("User save changes in list with \"UnbelievableTestList\" name", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
@@ -468,7 +470,7 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_ListPanel
         public virtual void EvergreenJnr_UsersList_CheckThatListsIsDisplayedInAlphabeticalOrder()
         {
             System.Exception lastException = null;
-            for (int i = 0; (i <= 1); i = (i + 1))
+            for (int i = 0; (i <= 0); i = (i + 1))
             {
                 try
                 {
@@ -480,7 +482,7 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_ListPanel
                     lastException = exc;
                 }
                 if (((i + 1) 
-                            <= 1))
+                            <= 0))
                 {
                     testRunner.OnScenarioEnd();
                 }
@@ -590,7 +592,7 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_ListPanel
         public virtual void EvergreenJnr_UsersList_CheckThatCustomListCreationBlockIsNotDisplayedWhenUserOpensActionsPanel()
         {
             System.Exception lastException = null;
-            for (int i = 0; (i <= 1); i = (i + 1))
+            for (int i = 0; (i <= 0); i = (i + 1))
             {
                 try
                 {
@@ -602,7 +604,7 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_ListPanel
                     lastException = exc;
                 }
                 if (((i + 1) 
-                            <= 1))
+                            <= 0))
                 {
                     testRunner.OnScenarioEnd();
                 }
@@ -655,7 +657,7 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_ListPanel
         public virtual void EvergreenJnr_UsersList_CheckThatCustomListCreationBlockIsNotDisplayedAfterStartTypingAListName()
         {
             System.Exception lastException = null;
-            for (int i = 0; (i <= 1); i = (i + 1))
+            for (int i = 0; (i <= 0); i = (i + 1))
             {
                 try
                 {
@@ -667,7 +669,7 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_ListPanel
                     lastException = exc;
                 }
                 if (((i + 1) 
-                            <= 1))
+                            <= 0))
                 {
                     testRunner.OnScenarioEnd();
                 }
@@ -720,7 +722,7 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_ListPanel
         public virtual void EvergreenJnr_UsersList_CheckThatSaveButtonIsInactiveInCustomListCreationBlock()
         {
             System.Exception lastException = null;
-            for (int i = 0; (i <= 1); i = (i + 1))
+            for (int i = 0; (i <= 0); i = (i + 1))
             {
                 try
                 {
@@ -732,7 +734,7 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_ListPanel
                     lastException = exc;
                 }
                 if (((i + 1) 
-                            <= 1))
+                            <= 0))
                 {
                     testRunner.OnScenarioEnd();
                 }
@@ -753,15 +755,11 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_ListPanel
                         "DAS11018"});
             this.ScenarioSetup(scenarioInfo);
             this.FeatureBackground();
-            testRunner.When("User clicks \"Users\" on the left-hand menu", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-            testRunner.Then("\"Users\" list should be displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-            testRunner.When("User clicks the Columns button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-            testRunner.Then("Columns panel is displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
             TechTalk.SpecFlow.Table table15 = new TechTalk.SpecFlow.Table(new string[] {
                         "ColumnName"});
             table15.AddRow(new string[] {
                         "Compliance"});
-            testRunner.When("ColumnName is entered into the search box and the selection is clicked", ((string)(null)), table15, "When ");
+            testRunner.When("User add following columns using URL to the \"Users\" page:", ((string)(null)), table15, "When ");
             testRunner.Then("Save to New Custom List element is displayed", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
             testRunner.Then("User type \"Test\" into Custom list name field", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
             testRunner.When("User clicks the Actions button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
@@ -792,11 +790,12 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_ListPanel
         [NUnit.Framework.CategoryAttribute("EvergreenJnr_ListPanel")]
         [NUnit.Framework.CategoryAttribute("CustomListDisplay")]
         [NUnit.Framework.CategoryAttribute("DAS11394")]
+        [NUnit.Framework.CategoryAttribute("DAS11951")]
         [NUnit.Framework.CategoryAttribute("Delete_Newly_Created_List")]
         public virtual void EvergreenJnr_DevicesList_CheckTheSortOrderIsSavedForExistingListAndNotDeletedAfterClickingResetButtonInColumnsMenu()
         {
             System.Exception lastException = null;
-            for (int i = 0; (i <= 1); i = (i + 1))
+            for (int i = 0; (i <= 0); i = (i + 1))
             {
                 try
                 {
@@ -808,7 +807,7 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_ListPanel
                     lastException = exc;
                 }
                 if (((i + 1) 
-                            <= 1))
+                            <= 0))
                 {
                     testRunner.OnScenarioEnd();
                 }
@@ -828,6 +827,7 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_ListPanel
                         "EvergreenJnr_ListPanel",
                         "CustomListDisplay",
                         "DAS11394",
+                        "DAS11951",
                         "Delete_Newly_Created_List"});
             this.ScenarioSetup(scenarioInfo);
             this.FeatureBackground();
@@ -849,7 +849,7 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_ListPanel
             TechTalk.SpecFlow.Table table17 = new TechTalk.SpecFlow.Table(new string[] {
                         "SelectedRowsName"});
             table17.AddRow(new string[] {
-                        "01BQIYGGUW5PRP6"});
+                        "001BAQXT6JWFPI"});
             table17.AddRow(new string[] {
                         "00OMQQXWA1DRI6"});
             testRunner.When("User select \"Hostname\" rows in the grid", ((string)(null)), table17, "When ");
@@ -887,7 +887,7 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_ListPanel
         public virtual void EvergreenJnr_DevicesList_CheckThatNewlySavedListIsCreatedWithTheCorrectColumnsAndSortsAndTheSameRowsOfData()
         {
             System.Exception lastException = null;
-            for (int i = 0; (i <= 1); i = (i + 1))
+            for (int i = 0; (i <= 0); i = (i + 1))
             {
                 try
                 {
@@ -899,7 +899,7 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_ListPanel
                     lastException = exc;
                 }
                 if (((i + 1) 
-                            <= 1))
+                            <= 0))
                 {
                     testRunner.OnScenarioEnd();
                 }
@@ -982,11 +982,12 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_ListPanel
         [NUnit.Framework.CategoryAttribute("EvergreenJnr_ListPanel")]
         [NUnit.Framework.CategoryAttribute("CustomListDisplay")]
         [NUnit.Framework.CategoryAttribute("DAS10870")]
+        [NUnit.Framework.CategoryAttribute("DAS11951")]
         [NUnit.Framework.CategoryAttribute("Delete_Newly_Created_List")]
         public virtual void EvergreenJnr_DevicesList_CheckThatSortingWillBeWorkForExistingSavedStaticLists()
         {
             System.Exception lastException = null;
-            for (int i = 0; (i <= 1); i = (i + 1))
+            for (int i = 0; (i <= 0); i = (i + 1))
             {
                 try
                 {
@@ -998,7 +999,7 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_ListPanel
                     lastException = exc;
                 }
                 if (((i + 1) 
-                            <= 1))
+                            <= 0))
                 {
                     testRunner.OnScenarioEnd();
                 }
@@ -1017,6 +1018,7 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_ListPanel
                         "EvergreenJnr_ListPanel",
                         "CustomListDisplay",
                         "DAS10870",
+                        "DAS11951",
                         "Delete_Newly_Created_List"});
             this.ScenarioSetup(scenarioInfo);
             this.FeatureBackground();
@@ -1065,11 +1067,12 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_ListPanel
         [NUnit.Framework.CategoryAttribute("EvergreenJnr_ListPanel")]
         [NUnit.Framework.CategoryAttribute("CustomListDisplay")]
         [NUnit.Framework.CategoryAttribute("DAS10870")]
+        [NUnit.Framework.CategoryAttribute("DAS11951")]
         [NUnit.Framework.CategoryAttribute("Delete_Newly_Created_List")]
         public virtual void EvergreenJnr_DevicesList_CheckThatSortingWillBeWorkForExistingSavedDynamicLists()
         {
             System.Exception lastException = null;
-            for (int i = 0; (i <= 1); i = (i + 1))
+            for (int i = 0; (i <= 0); i = (i + 1))
             {
                 try
                 {
@@ -1081,7 +1084,7 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_ListPanel
                     lastException = exc;
                 }
                 if (((i + 1) 
-                            <= 1))
+                            <= 0))
                 {
                     testRunner.OnScenarioEnd();
                 }
@@ -1100,6 +1103,7 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_ListPanel
                         "EvergreenJnr_ListPanel",
                         "CustomListDisplay",
                         "DAS10870",
+                        "DAS11951",
                         "Delete_Newly_Created_List"});
             this.ScenarioSetup(scenarioInfo);
             this.FeatureBackground();
@@ -1136,7 +1140,7 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_ListPanel
         public virtual void EvergreenJnr_DevicesList_CheckThatEditListMenuNotDisplayedForActiveList()
         {
             System.Exception lastException = null;
-            for (int i = 0; (i <= 1); i = (i + 1))
+            for (int i = 0; (i <= 0); i = (i + 1))
             {
                 try
                 {
@@ -1148,7 +1152,7 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_ListPanel
                     lastException = exc;
                 }
                 if (((i + 1) 
-                            <= 1))
+                            <= 0))
                 {
                     testRunner.OnScenarioEnd();
                 }
@@ -1241,11 +1245,12 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_ListPanel
         [NUnit.Framework.CategoryAttribute("EvergreenJnr_ListPanel")]
         [NUnit.Framework.CategoryAttribute("CustomListDisplay")]
         [NUnit.Framework.CategoryAttribute("DAS11026")]
+        [NUnit.Framework.CategoryAttribute("DAS11951")]
         [NUnit.Framework.CategoryAttribute("Delete_Newly_Created_List")]
         public virtual void EvergreenJnr_DevicesList_CheckThatEditListMenuNotDisplayedForDifferentFilterTypes()
         {
             System.Exception lastException = null;
-            for (int i = 0; (i <= 1); i = (i + 1))
+            for (int i = 0; (i <= 0); i = (i + 1))
             {
                 try
                 {
@@ -1257,7 +1262,7 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_ListPanel
                     lastException = exc;
                 }
                 if (((i + 1) 
-                            <= 1))
+                            <= 0))
                 {
                     testRunner.OnScenarioEnd();
                 }
@@ -1277,6 +1282,7 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_ListPanel
                         "EvergreenJnr_ListPanel",
                         "CustomListDisplay",
                         "DAS11026",
+                        "DAS11951",
                         "Delete_Newly_Created_List"});
             this.ScenarioSetup(scenarioInfo);
             this.FeatureBackground();
@@ -1334,7 +1340,7 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_ListPanel
             testRunner.Then("\"Applications\" list should be displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
             testRunner.When("User click on \'Application\' column header", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
             testRunner.Then("data in table is sorted by \'Application\' column in ascending order", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-            testRunner.When("User create custom list with \"TestList\" name", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+            testRunner.When("User create custom list with \"TestList569889\" name", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
             testRunner.When("User clicks \"Devices\" on the left-hand menu", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
             testRunner.Then("\"Devices\" list should be displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
             testRunner.When("User clicks the Filters button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
@@ -1343,7 +1349,7 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_ListPanel
                         "SelectedList",
                         "Association"});
             table34.AddRow(new string[] {
-                        "TestList",
+                        "TestList569889",
                         "Not used on device"});
             testRunner.When("User add \"Application (Saved List)\" filter where type is \"In list\" with SelectedL" +
                     "ist list and following Association:", ((string)(null)), table34, "When ");
@@ -1375,7 +1381,7 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_ListPanel
         public virtual void EvergreenJnr_DevicesList_CheckThatDatabaseErrorOccurringOccurringWhenAttemptingToSaveListsInEvergreenAreNotDisplayed()
         {
             System.Exception lastException = null;
-            for (int i = 0; (i <= 1); i = (i + 1))
+            for (int i = 0; (i <= 0); i = (i + 1))
             {
                 try
                 {
@@ -1387,7 +1393,7 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_ListPanel
                     lastException = exc;
                 }
                 if (((i + 1) 
-                            <= 1))
+                            <= 0))
                 {
                     testRunner.OnScenarioEnd();
                 }
@@ -1437,7 +1443,7 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_ListPanel
         public virtual void EvergreenJnr_DevicesLists_CheckThatAnotherUserCanEditsAndSavesASharedListWithSelectedColumnsWithoutErrors()
         {
             System.Exception lastException = null;
-            for (int i = 0; (i <= 1); i = (i + 1))
+            for (int i = 0; (i <= 0); i = (i + 1))
             {
                 try
                 {
@@ -1449,7 +1455,7 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_ListPanel
                     lastException = exc;
                 }
                 if (((i + 1) 
-                            <= 1))
+                            <= 0))
                 {
                     testRunner.OnScenarioEnd();
                 }
@@ -1490,8 +1496,8 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_ListPanel
             table36.AddRow(new string[] {
                         "Device Key"});
             testRunner.Then("ColumnName is added to the list", ((string)(null)), table36, "Then ");
-            testRunner.When("User create custom list with \"TestList\" name", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-            testRunner.Then("\"TestList\" list is displayed to user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+            testRunner.When("User create custom list with \"TestListAA0888\" name", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+            testRunner.Then("\"TestListAA0888\" list is displayed to user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
             testRunner.When("User clicks the List Details button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
             testRunner.Then("List details panel is displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
             testRunner.When("User select \"Everyone can edit\" sharing option", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
@@ -1507,8 +1513,8 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_ListPanel
             testRunner.Then("Evergreen Dashboards page should be displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
             testRunner.When("User clicks \"Devices\" on the left-hand menu", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
             testRunner.Then("\"Devices\" list should be displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-            testRunner.When("User navigates to the \"TestList\" list", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-            testRunner.Then("\"TestList\" list is displayed to user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+            testRunner.When("User navigates to the \"TestListAA0888\" list", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+            testRunner.Then("\"TestListAA0888\" list is displayed to user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
             testRunner.When("User clicks the Columns button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
             testRunner.Then("Columns panel is displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
             TechTalk.SpecFlow.Table table37 = new TechTalk.SpecFlow.Table(new string[] {
@@ -1536,8 +1542,8 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_ListPanel
             testRunner.Then("Evergreen Dashboards page should be displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
             testRunner.When("User clicks \"Devices\" on the left-hand menu", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
             testRunner.Then("\"Devices\" list should be displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-            testRunner.When("User navigates to the \"TestList\" list", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-            testRunner.Then("\"TestList\" list is displayed to user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+            testRunner.When("User navigates to the \"TestListAA0888\" list", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+            testRunner.Then("\"TestListAA0888\" list is displayed to user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
             TechTalk.SpecFlow.Table table39 = new TechTalk.SpecFlow.Table(new string[] {
                         "ColumnName"});
             table39.AddRow(new string[] {
@@ -1552,7 +1558,7 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_ListPanel
             testRunner.And("\"Import\" subcategory is selected in Column panel", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
             testRunner.When("User navigates to the \"All Devices\" list", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
             testRunner.Then("\"Devices\" list should be displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-            testRunner.When("User navigates to the \"TestList\" list", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+            testRunner.When("User navigates to the \"TestListAA0888\" list", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
             testRunner.Then("Edit List menu is not displayed", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
             this.ScenarioCleanup();
         }
@@ -1569,7 +1575,7 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_ListPanel
         public virtual void EvergreenJnr_DevicesLists_CheckThatAnotherUserCanEditsAndSavesASharedListWithSelectedFiltersWithoutErrors()
         {
             System.Exception lastException = null;
-            for (int i = 0; (i <= 1); i = (i + 1))
+            for (int i = 0; (i <= 0); i = (i + 1))
             {
                 try
                 {
@@ -1581,7 +1587,7 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_ListPanel
                     lastException = exc;
                 }
                 if (((i + 1) 
-                            <= 1))
+                            <= 0))
                 {
                     testRunner.OnScenarioEnd();
                 }
@@ -1617,8 +1623,8 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_ListPanel
             testRunner.When("User add \"Compliance\" filter where type is \"Equals\" with added column and followi" +
                     "ng checkboxes:", ((string)(null)), table40, "When ");
             testRunner.Then("\"Compliance\" filter is added to the list", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-            testRunner.When("User create custom list with \"TestList\" name", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-            testRunner.Then("\"TestList\" list is displayed to user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+            testRunner.When("User create custom list with \"TestList0A788F\" name", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+            testRunner.Then("\"TestList0A788F\" list is displayed to user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
             testRunner.When("User clicks the List Details button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
             testRunner.Then("List details panel is displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
             testRunner.When("User select \"Everyone can edit\" sharing option", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
@@ -1634,8 +1640,8 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_ListPanel
             testRunner.Then("Evergreen Dashboards page should be displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
             testRunner.When("User clicks \"Devices\" on the left-hand menu", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
             testRunner.Then("\"Devices\" list should be displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-            testRunner.When("User navigates to the \"TestList\" list", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-            testRunner.Then("\"TestList\" list is displayed to user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+            testRunner.When("User navigates to the \"TestList0A788F\" list", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+            testRunner.Then("\"TestList0A788F\" list is displayed to user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
             testRunner.When("User clicks the Filters button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
             testRunner.Then("Filters panel is displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
             testRunner.When("User add \"City\" filter where type is \"Equals\" with added column and \"London\" Look" +
@@ -1653,8 +1659,8 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_ListPanel
             testRunner.Then("Evergreen Dashboards page should be displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
             testRunner.When("User clicks \"Devices\" on the left-hand menu", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
             testRunner.Then("\"Devices\" list should be displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-            testRunner.When("User navigates to the \"TestList\" list", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-            testRunner.Then("\"TestList\" list is displayed to user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+            testRunner.When("User navigates to the \"TestList0A788F\" list", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+            testRunner.Then("\"TestList0A788F\" list is displayed to user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
             testRunner.And("\"(Compliance = Red or Amber) OR (City = London)\" text is displayed in filter cont" +
                     "ainer", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
             testRunner.When("User clicks the Filters button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
@@ -1663,7 +1669,7 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_ListPanel
             testRunner.And("\"City is London\" is displayed in added filter info", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
             testRunner.When("User navigates to the \"All Devices\" list", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
             testRunner.Then("\"Devices\" list should be displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-            testRunner.When("User navigates to the \"TestList\" list", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+            testRunner.When("User navigates to the \"TestList0A788F\" list", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
             testRunner.Then("Edit List menu is not displayed", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
             this.ScenarioCleanup();
         }
@@ -1676,11 +1682,12 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_ListPanel
         [NUnit.Framework.CategoryAttribute("EvergreenJnr_ListPanel")]
         [NUnit.Framework.CategoryAttribute("CustomListDisplay")]
         [NUnit.Framework.CategoryAttribute("DAS11465")]
+        [NUnit.Framework.CategoryAttribute("DAS11951")]
         [NUnit.Framework.CategoryAttribute("Delete_Newly_Created_List")]
         public virtual void EvergreenJnr_DevicesLists_CheckThatAnotherUserCanEditsAndSavesASharedListWithSortingWithoutErrors()
         {
             System.Exception lastException = null;
-            for (int i = 0; (i <= 1); i = (i + 1))
+            for (int i = 0; (i <= 0); i = (i + 1))
             {
                 try
                 {
@@ -1692,7 +1699,7 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_ListPanel
                     lastException = exc;
                 }
                 if (((i + 1) 
-                            <= 1))
+                            <= 0))
                 {
                     testRunner.OnScenarioEnd();
                 }
@@ -1712,6 +1719,7 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_ListPanel
                         "EvergreenJnr_ListPanel",
                         "CustomListDisplay",
                         "DAS11465",
+                        "DAS11951",
                         "Delete_Newly_Created_List"});
             this.ScenarioSetup(scenarioInfo);
             this.FeatureBackground();
@@ -1719,8 +1727,8 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_ListPanel
             testRunner.Then("\"Devices\" list should be displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
             testRunner.When("User click on \'Hostname\' column header", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
             testRunner.Then("data in table is sorted by \'Hostname\' column in ascending order", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-            testRunner.When("User create custom list with \"TestList\" name", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-            testRunner.Then("\"TestList\" list is displayed to user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+            testRunner.When("User create custom list with \"TestList9A0AE8\" name", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+            testRunner.Then("\"TestList9A0AE8\" list is displayed to user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
             testRunner.When("User clicks the List Details button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
             testRunner.Then("List details panel is displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
             testRunner.When("User select \"Everyone can edit\" sharing option", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
@@ -1736,8 +1744,8 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_ListPanel
             testRunner.Then("Evergreen Dashboards page should be displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
             testRunner.When("User clicks \"Devices\" on the left-hand menu", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
             testRunner.Then("\"Devices\" list should be displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-            testRunner.When("User navigates to the \"TestList\" list", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-            testRunner.Then("\"TestList\" list is displayed to user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+            testRunner.When("User navigates to the \"TestList9A0AE8\" list", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+            testRunner.Then("\"TestList9A0AE8\" list is displayed to user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
             testRunner.When("User click on \'Owner Display Name\' column header", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
             testRunner.Then("data in table is sorted by \'Owner Display Name\' column in ascending order", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
             testRunner.When("User update current custom list", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
@@ -1751,12 +1759,12 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_ListPanel
             testRunner.Then("Evergreen Dashboards page should be displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
             testRunner.When("User clicks \"Devices\" on the left-hand menu", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
             testRunner.Then("\"Devices\" list should be displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-            testRunner.When("User navigates to the \"TestList\" list", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-            testRunner.Then("\"TestList\" list is displayed to user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+            testRunner.When("User navigates to the \"TestList9A0AE8\" list", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+            testRunner.Then("\"TestList9A0AE8\" list is displayed to user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
             testRunner.And("data in table is sorted by \'Owner Display Name\' column in ascending order", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
             testRunner.When("User navigates to the \"All Devices\" list", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
             testRunner.Then("\"Devices\" list should be displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-            testRunner.When("User navigates to the \"TestList\" list", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+            testRunner.When("User navigates to the \"TestList9A0AE8\" list", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
             testRunner.Then("Edit List menu is not displayed", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
             this.ScenarioCleanup();
         }
@@ -1768,11 +1776,12 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_ListPanel
         [NUnit.Framework.CategoryAttribute("EvergreenJnr_ListPanel")]
         [NUnit.Framework.CategoryAttribute("CustomListDisplay")]
         [NUnit.Framework.CategoryAttribute("DAS10988")]
+        [NUnit.Framework.CategoryAttribute("DAS11951")]
         [NUnit.Framework.CategoryAttribute("Delete_Newly_Created_List")]
         public virtual void EvergreenJnr_DevicesLists_CheckThatUserIsNotAbleToCreateListsWithSameName()
         {
             System.Exception lastException = null;
-            for (int i = 0; (i <= 1); i = (i + 1))
+            for (int i = 0; (i <= 0); i = (i + 1))
             {
                 try
                 {
@@ -1784,7 +1793,7 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_ListPanel
                     lastException = exc;
                 }
                 if (((i + 1) 
-                            <= 1))
+                            <= 0))
                 {
                     testRunner.OnScenarioEnd();
                 }
@@ -1803,6 +1812,7 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_ListPanel
                         "EvergreenJnr_ListPanel",
                         "CustomListDisplay",
                         "DAS10988",
+                        "DAS11951",
                         "Delete_Newly_Created_List"});
             this.ScenarioSetup(scenarioInfo);
             this.FeatureBackground();
@@ -1810,15 +1820,15 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_ListPanel
             testRunner.Then("\"Devices\" list should be displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
             testRunner.When("User click on \'Hostname\' column header", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
             testRunner.Then("data in table is sorted by \'Hostname\' column in ascending order", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-            testRunner.When("User create custom list with \"TestList\" name", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-            testRunner.Then("\"TestList\" list is displayed to user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+            testRunner.When("User create custom list with \"TestList993785\" name", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+            testRunner.Then("\"TestList993785\" list is displayed to user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
             testRunner.When("User navigates to the \"All Devices\" list", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
             testRunner.When("User clicks the Filters button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
             testRunner.Then("Filters panel is displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
             testRunner.When("User add \"City\" filter where type is \"Equals\" with added column and \"London\" Look" +
                     "up option", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
             testRunner.Then("\"City\" filter is added to the list", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-            testRunner.Then("User type \"TestList\" into Custom list name field", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+            testRunner.Then("User type \"TestList993785\" into Custom list name field", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
             testRunner.Then("Save button is inactive for Custom list", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
             this.ScenarioCleanup();
         }
@@ -1837,7 +1847,7 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_ListPanel
         public virtual void EvergreenJnr_DevicesLists_CheckThatTheSavedListWithOwnerDisplayNameFilterIsDisplayed(string operatorValues, string uRL, string[] exampleTags)
         {
             System.Exception lastException = null;
-            for (int i = 0; (i <= 1); i = (i + 1))
+            for (int i = 0; (i <= 0); i = (i + 1))
             {
                 try
                 {
@@ -1849,7 +1859,7 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_ListPanel
                     lastException = exc;
                 }
                 if (((i + 1) 
-                            <= 1))
+                            <= 0))
                 {
                     testRunner.OnScenarioEnd();
                 }
@@ -1888,12 +1898,12 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_ListPanel
             testRunner.When(string.Format("User add \"Owner Display Name\" filter where type is \"{0}\" with added column and fo" +
                         "llowing value:", operatorValues), ((string)(null)), table41, "When ");
             testRunner.Then("\"Owner Display Name\" filter is added to the list", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-            testRunner.When("User create custom list with \"TestList\" name", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-            testRunner.Then("\"TestList\" list is displayed to user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+            testRunner.When("User create custom list with \"TestList274E0A\" name", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+            testRunner.Then("\"TestList274E0A\" list is displayed to user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
             testRunner.When("User navigates to the \"All Devices\" list", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
             testRunner.Then("\"Devices\" list should be displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-            testRunner.When("User navigates to the \"TestList\" list", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-            testRunner.Then("\"TestList\" list is displayed to user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+            testRunner.When("User navigates to the \"TestList274E0A\" list", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+            testRunner.Then("\"TestList274E0A\" list is displayed to user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
             TechTalk.SpecFlow.Table table42 = new TechTalk.SpecFlow.Table(new string[] {
                         "ColumnName"});
             table42.AddRow(new string[] {
@@ -1916,11 +1926,12 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_ListPanel
         [NUnit.Framework.CategoryAttribute("EvergreenJnr_ListPanel")]
         [NUnit.Framework.CategoryAttribute("CustomListDisplay")]
         [NUnit.Framework.CategoryAttribute("DAS11015")]
+        [NUnit.Framework.CategoryAttribute("DAS11951")]
         [NUnit.Framework.CategoryAttribute("Delete_Newly_Created_List")]
         public virtual void EvergreenJnr_DevicesLists_CheckThatUserIsNotAbleToCreateListsWithLongNames()
         {
             System.Exception lastException = null;
-            for (int i = 0; (i <= 1); i = (i + 1))
+            for (int i = 0; (i <= 0); i = (i + 1))
             {
                 try
                 {
@@ -1932,7 +1943,7 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_ListPanel
                     lastException = exc;
                 }
                 if (((i + 1) 
-                            <= 1))
+                            <= 0))
                 {
                     testRunner.OnScenarioEnd();
                 }
@@ -1951,6 +1962,7 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_ListPanel
                         "EvergreenJnr_ListPanel",
                         "CustomListDisplay",
                         "DAS11015",
+                        "DAS11951",
                         "Delete_Newly_Created_List"});
             this.ScenarioSetup(scenarioInfo);
             this.FeatureBackground();
@@ -1969,6 +1981,64 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_ListPanel
             testRunner.When("User clicks the Actions button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
             testRunner.And("User select all rows", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
             testRunner.When("User create static list with \"1234567890123456789012345678901234567890111\" name", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+            this.ScenarioCleanup();
+        }
+        
+        [NUnit.Framework.TestAttribute()]
+        [NUnit.Framework.DescriptionAttribute("EvergreenJnr_AllListsLists_CheckThatAllListsNamesAreDisplayedCorrectly")]
+        [NUnit.Framework.CategoryAttribute("Evergreen")]
+        [NUnit.Framework.CategoryAttribute("AllLists")]
+        [NUnit.Framework.CategoryAttribute("EvergreenJnr_ListPanel")]
+        [NUnit.Framework.CategoryAttribute("CustomListDisplay")]
+        [NUnit.Framework.CategoryAttribute("DAS11342")]
+        [NUnit.Framework.TestCaseAttribute("Devices", "All Devices", new string[0])]
+        [NUnit.Framework.TestCaseAttribute("Applications", "All Applications", new string[0])]
+        [NUnit.Framework.TestCaseAttribute("Users", "All Users", new string[0])]
+        [NUnit.Framework.TestCaseAttribute("Mailboxes", "All Mailboxes", new string[0])]
+        public virtual void EvergreenJnr_AllListsLists_CheckThatAllListsNamesAreDisplayedCorrectly(string listName, string allListName, string[] exampleTags)
+        {
+            System.Exception lastException = null;
+            for (int i = 0; (i <= 0); i = (i + 1))
+            {
+                try
+                {
+                    this.EvergreenJnr_AllListsLists_CheckThatAllListsNamesAreDisplayedCorrectlyInternal(listName, allListName, exampleTags);
+                    return;
+                }
+                catch (System.Exception exc)
+                {
+                    lastException = exc;
+                }
+                if (((i + 1) 
+                            <= 0))
+                {
+                    testRunner.OnScenarioEnd();
+                }
+            }
+            if ((lastException != null))
+            {
+                throw lastException;
+            }
+        }
+        
+        private void EvergreenJnr_AllListsLists_CheckThatAllListsNamesAreDisplayedCorrectlyInternal(string listName, string allListName, string[] exampleTags)
+        {
+            string[] @__tags = new string[] {
+                    "Evergreen",
+                    "AllLists",
+                    "EvergreenJnr_ListPanel",
+                    "CustomListDisplay",
+                    "DAS11342"};
+            if ((exampleTags != null))
+            {
+                @__tags = System.Linq.Enumerable.ToArray(System.Linq.Enumerable.Concat(@__tags, exampleTags));
+            }
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("EvergreenJnr_AllListsLists_CheckThatAllListsNamesAreDisplayedCorrectly", @__tags);
+            this.ScenarioSetup(scenarioInfo);
+            this.FeatureBackground();
+            testRunner.When(string.Format("User clicks \"{0}\" on the left-hand menu", listName), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+            testRunner.Then(string.Format("\"{0}\" list should be displayed to the user", listName), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+            testRunner.Then(string.Format("\"{0}\" list name is displayed correctly", allListName), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
             this.ScenarioCleanup();
         }
     }

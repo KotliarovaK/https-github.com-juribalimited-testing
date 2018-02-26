@@ -8,7 +8,7 @@ using TechTalk.SpecFlow;
 namespace DashworksTestAutomation.Steps
 {
     [Binding]
-    class Logout : SpecFlowContext
+    internal class Logout : SpecFlowContext
     {
         private readonly RemoteWebDriver _driver;
 

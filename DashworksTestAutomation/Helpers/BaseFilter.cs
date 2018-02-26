@@ -1,8 +1,10 @@
-﻿using System.Linq;
-using DashworksTestAutomation.Extensions;
+﻿using DashworksTestAutomation.Extensions;
+using DashworksTestAutomation.Pages.Evergreen;
 using NUnit.Framework;
 using OpenQA.Selenium;
 using OpenQA.Selenium.Remote;
+using System;
+using System.Linq;
 using TechTalk.SpecFlow;
 
 namespace DashworksTestAutomation.Helpers
@@ -37,6 +39,10 @@ namespace DashworksTestAutomation.Helpers
         }
 
         public virtual void Do()
+        {
+        }
+
+        public virtual void CheckFilterDate(string filtersName)
         {
         }
 
@@ -97,6 +103,39 @@ namespace DashworksTestAutomation.Helpers
         }
     }
 
+    public class LookupFilterTable : BaseFilter
+    {
+        protected Table Table { get; set; }
+
+        public LookupFilterTable(RemoteWebDriver driver, string operatorValue, bool acceptCheckbox, Table table) : base(
+            driver, operatorValue, acceptCheckbox)
+        {
+            Table = table;
+        }
+
+        public override void Do()
+        {
+            SelectOperator();
+            _driver.WaitForDataLoading();
+            foreach (var row in Table.Rows)
+            {
+                _driver.FindElement(
+                        By.XPath(".//div[@class='filterAddPanel ng-star-inserted']//input[@placeholder='Search']"))
+                    .Click();
+                _driver.FindElement(
+                        By.XPath(".//div[@class='filterAddPanel ng-star-inserted']//input[@placeholder='Search']"))
+                    .SendKeys(row["SelectedValues"]);
+                _driver.FindElement(By.XPath(
+                        $".//div[@class='filterAddPanel ng-star-inserted']//input[@placeholder='Search']"))
+                    .Clear();
+                _driver.FindElement(By.XPath(
+                        $".//div[@class='filterAddPanel ng-star-inserted']//span[contains(text(),'{row["SelectedValues"]}')]"))
+                    .Click();
+            }
+         SaveFilter();
+        }
+    }
+
     public class CheckBoxesFilter : BaseFilter
     {
         protected Table _optionsTable { get; set; }
@@ -124,6 +163,35 @@ namespace DashworksTestAutomation.Helpers
             }
 
             SaveFilter();
+        }
+
+        public override void CheckFilterDate(string filtersName)
+        {
+            var basePage = _driver.NowAt<BaseDashboardPage>();
+            var columnContent = basePage.GetColumnContent(filtersName);
+            var allValuesAreEmpty = columnContent.All(string.IsNullOrEmpty);
+            if (allValuesAreEmpty)
+                throw new Exception($"Column '{filtersName}' does not contain any date.");
+
+            foreach (string value in columnContent)
+            {
+                if (string.IsNullOrEmpty(value))
+                    continue;
+
+                switch (_operatorValue)
+                {
+                    case "Does not equal":
+                        Assert.True(_optionsTable.Rows.Select(x => x["SelectedCheckboxes"]).All(x => !value.Equals(x)));
+                        break;
+
+                    case "Equals":
+                        Assert.True(_optionsTable.Rows.Select(x => x["SelectedCheckboxes"]).All(x => value.Equals(x)));
+                        break;
+
+                    default:
+                        throw new Exception($"Unknown '{_operatorValue}' operator");
+                }
+            }
         }
     }
 
@@ -253,7 +321,7 @@ namespace DashworksTestAutomation.Helpers
 
             foreach (var row in Table.Rows)
             {
-                _driver.FindElement(By.XPath(".//div[@class='associationmultiselect-parent btn-group dropdown-associationmultiselect']//input[@placeholder='Search']")).Click();
+                _driver.FindElement(By.XPath(".//div[@class='dropdown-select input-wrapper']//input[@id='mat-input-1']")).Click();
                 _driver.FindElement(By.XPath($".//li//span[text()='{row["Association"]}']")).Click();
             }
 

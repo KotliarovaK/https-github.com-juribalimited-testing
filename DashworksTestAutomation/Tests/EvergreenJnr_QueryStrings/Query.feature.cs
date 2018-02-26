@@ -287,7 +287,6 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_QueryStrings
         [NUnit.Framework.CategoryAttribute("EvergreenJnr_QueryStrings")]
         [NUnit.Framework.CategoryAttribute("Query")]
         [NUnit.Framework.CategoryAttribute("DAS11023")]
-        [NUnit.Framework.CategoryAttribute("Not_Run")]
         public virtual void EvergreenJnr_QueryString_Applications()
         {
             System.Exception lastException = null;
@@ -321,8 +320,7 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_QueryStrings
                         "Applications",
                         "EvergreenJnr_QueryStrings",
                         "Query",
-                        "DAS11023",
-                        "Not_Run"});
+                        "DAS11023"});
             this.ScenarioSetup(scenarioInfo);
             this.FeatureBackground();
             TechTalk.SpecFlow.Table table4 = new TechTalk.SpecFlow.Table(new string[] {
@@ -506,6 +504,21 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_QueryStrings
                             "ilboxType,ownerDisplayName,displayName,ownerEmailAddress,departmentCode,location" +
                             "Name,customField_81,project_48_subCategory,project_48_requestType,project_48_tea" +
                             "mName"});
+            table7.AddRow(new string[] {
+                        "EmailMigra filters",
+                        @"evergreen/#/mailboxes?$filter=(project_48_inScope%20EQUALS%20('1')%20AND%20project_48_objectStatus%20EQUALS%20('Onboarded'%2C'Forecast'%2C'Targeted'%2C'Scheduled'%2C'Migrated'))&$select=principalEmailAddress,mailboxPlatform,serverName,mailboxType,ownerDisplayName,project_48_inScope,project_48_objectStatus"});
+            table7.AddRow(new string[] {
+                        "EmailMigra filters",
+                        "evergreen/#/mailboxes?$filter=(project_48_inScope%20EQUALS%20(\'1\')%20AND%20projec" +
+                            "t_48_objectStatus%20EQUALS%20(\'Scheduled\'))&$select=principalEmailAddress,mailbo" +
+                            "xPlatform,serverName,mailboxType,ownerDisplayName,project_48_inScope,project_48_" +
+                            "objectStatus"});
+            table7.AddRow(new string[] {
+                        "EmailMigra filters",
+                        "evergreen/#/mailboxes?$filter=(project_48_inScope%20EQUALS%20(\'1\')%20AND%20projec" +
+                            "t_48_objectStatus%20EQUALS%20(\'Onboarded\'))&$select=principalEmailAddress,mailbo" +
+                            "xPlatform,serverName,mailboxType,ownerDisplayName,project_48_inScope,project_48_" +
+                            "objectStatus"});
             testRunner.When("Evergreen QueryStringURL is entered for Simple QueryType", ((string)(null)), table7, "When ");
             testRunner.Then("agGrid Main Object List is returned with data", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
             this.ScenarioCleanup();

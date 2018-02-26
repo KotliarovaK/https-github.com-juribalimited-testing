@@ -41,11 +41,14 @@
       <HintPath>..\packages\HtmlAgilityPack.1.6.11\lib\Net45\HtmlAgilityPack.dll</HintPath>
     </Reference>
     <Reference Include="Microsoft.VisualStudio.QualityTools.UnitTestFramework, Version=10.1.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL" />
+    <Reference Include="Microsoft.Win32.Primitives, Version=4.0.1.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Win32.Primitives.4.0.1\lib\net46\Microsoft.Win32.Primitives.dll</HintPath>
+    </Reference>
     <Reference Include="Newtonsoft.Json, Version=10.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
       <HintPath>..\packages\Newtonsoft.Json.10.0.3\lib\net45\Newtonsoft.Json.dll</HintPath>
     </Reference>
-    <Reference Include="nunit.framework, Version=3.7.0.0, Culture=neutral, PublicKeyToken=2638cd05610744eb, processorArchitecture=MSIL">
-      <HintPath>..\packages\NUnit.3.7.0\lib\net45\nunit.framework.dll</HintPath>
+    <Reference Include="nunit.framework, Version=3.6.1.0, Culture=neutral, PublicKeyToken=2638cd05610744eb, processorArchitecture=MSIL">
+      <HintPath>..\packages\NUnit.3.6.1\lib\net45\nunit.framework.dll</HintPath>
     </Reference>
     <Reference Include="RestSharp, Version=106.2.0.0, Culture=neutral, PublicKeyToken=598062e77f915f75, processorArchitecture=MSIL">
       <HintPath>..\packages\RestSharp.106.2.0\lib\net452\RestSharp.dll</HintPath>
@@ -54,18 +57,73 @@
       <HintPath>..\packages\SpecFlow.Retry.2.2.0.1\lib\net45\SpecFlow.Retry.Generator.SpecFlowPlugin.dll</HintPath>
     </Reference>
     <Reference Include="System" />
+    <Reference Include="System.AppContext, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.AppContext.4.1.0\lib\net46\System.AppContext.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.ComponentModel.Composition" />
     <Reference Include="System.configuration" />
+    <Reference Include="System.Console, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Console.4.0.0\lib\net46\System.Console.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Diagnostics.DiagnosticSource, Version=4.0.0.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Diagnostics.DiagnosticSource.4.0.0\lib\net46\System.Diagnostics.DiagnosticSource.dll</HintPath>
+    </Reference>
     <Reference Include="System.Drawing" />
-    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Globalization.Calendars, Version=4.0.1.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Globalization.Calendars.4.0.1\lib\net46\System.Globalization.Calendars.dll</HintPath>
+    </Reference>
+    <Reference Include="System.IO.Compression, Version=4.1.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.IO.Compression.4.1.0\lib\net46\System.IO.Compression.dll</HintPath>
+    </Reference>
+    <Reference Include="System.IO.Compression.FileSystem" />
+    <Reference Include="System.IO.Compression.ZipFile, Version=4.0.1.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.IO.Compression.ZipFile.4.0.1\lib\net46\System.IO.Compression.ZipFile.dll</HintPath>
+    </Reference>
+    <Reference Include="System.IO.FileSystem, Version=4.0.1.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.IO.FileSystem.4.0.1\lib\net46\System.IO.FileSystem.dll</HintPath>
+    </Reference>
+    <Reference Include="System.IO.FileSystem.Primitives, Version=4.0.1.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.IO.FileSystem.Primitives.4.0.1\lib\net46\System.IO.FileSystem.Primitives.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Net.Http, Version=4.1.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Net.Http.4.1.0\lib\net46\System.Net.Http.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Net.Sockets, Version=4.1.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Net.Sockets.4.1.0\lib\net46\System.Net.Sockets.dll</HintPath>
+    </Reference>
     <Reference Include="System.Numerics" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="System.Data" />
+    <Reference Include="System.Runtime.InteropServices.RuntimeInformation, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Runtime.InteropServices.RuntimeInformation.4.0.0\lib\net45\System.Runtime.InteropServices.RuntimeInformation.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Runtime.Loader, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Runtime.Loader.4.0.0\lib\netstandard1.5\System.Runtime.Loader.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Security.Cryptography.Algorithms, Version=4.1.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Security.Cryptography.Algorithms.4.2.0\lib\net461\System.Security.Cryptography.Algorithms.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Security.Cryptography.Encoding, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Security.Cryptography.Encoding.4.0.0\lib\net46\System.Security.Cryptography.Encoding.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Security.Cryptography.Primitives, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Security.Cryptography.Primitives.4.0.0\lib\net46\System.Security.Cryptography.Primitives.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Security.Cryptography.X509Certificates, Version=4.1.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Security.Cryptography.X509Certificates.4.1.0\lib\net461\System.Security.Cryptography.X509Certificates.dll</HintPath>
+    </Reference>
     <Reference Include="System.ValueTuple, Version=4.0.2.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
       <HintPath>..\packages\System.ValueTuple.4.4.0\lib\net461\System.ValueTuple.dll</HintPath>
     </Reference>
     <Reference Include="System.Web" />
     <Reference Include="System.Web.Extensions" />
     <Reference Include="System.Xml" />
+    <Reference Include="System.Xml.Linq" />
     <Reference Include="TechTalk.SpecFlow, Version=2.1.0.0, Culture=neutral, PublicKeyToken=0778194805d6db41, processorArchitecture=MSIL">
       <HintPath>..\packages\SpecFlow.2.1.0\lib\net45\TechTalk.SpecFlow.dll</HintPath>
     </Reference>
@@ -90,10 +148,12 @@
     <Compile Include="Base\BeforeAfterActions.cs" />
     <Compile Include="Base\IBaseTest.cs" />
     <Compile Include="Base\SeleniumBasePage.cs" />
+    <Compile Include="DTO\RuntimeVariables\Filter.cs" />
+    <Compile Include="DTO\RuntimeVariables\ListsDetails.cs" />
+    <Compile Include="DTO\RuntimeVariables\ResponceDetails.cs" />
     <Compile Include="DTO\RuntimeVariables\RestWebClient.cs" />
     <Compile Include="DTO\RuntimeVariables\UsedUsers.cs" />
     <Compile Include="DTO\AuthObject.cs" />
-    <Compile Include="DTO\RuntimeVariables\UserProfileData.cs" />
     <Compile Include="DTO\RuntimeVariables\UsersWithSharedLists.cs" />
     <Compile Include="DTO\RuntimeVariables\WebsiteUrl.cs" />
     <Compile Include="DTO\UserDto.cs" />
@@ -109,15 +169,21 @@
     <Compile Include="Helpers\BaseFilter.cs" />
     <Compile Include="Helpers\ColumnNameToUrlConvertor.cs" />
     <Compile Include="Helpers\DatabaseHelper.cs" />
+    <Compile Include="Helpers\DetailsSectionToUrlConvertor.cs" />
     <Compile Include="Helpers\HttpClientHelper.cs" />
     <Compile Include="Pages\EvergreenDashboardsPage.cs" />
     <Compile Include="Pages\Evergreen\ActionsElement.cs" />
+    <Compile Include="Pages\Evergreen\AdminDetailsPages\AdminLeftHandMenu.cs" />
+    <Compile Include="Pages\Evergreen\AdminDetailsPages\BucketsPage.cs" />
+    <Compile Include="Pages\Evergreen\AdminDetailsPages\TeamsPage.cs" />
+    <Compile Include="Pages\Evergreen\AdminDetailsPages\ProjectsPage.cs" />
     <Compile Include="Pages\Evergreen\ApplicationsPage.cs" />
     <Compile Include="Pages\Evergreen\BaseDashboardPage.cs" />
     <Compile Include="Pages\Evergreen\ColumnsElement.cs" />
     <Compile Include="Pages\Evergreen\CustomListElement.cs" />
     <Compile Include="Pages\Evergreen\DetailsPage.cs" />
     <Compile Include="Pages\Evergreen\DetailsTabsMenu\BaseDetailsTabsMenu.cs" />
+    <Compile Include="Pages\Evergreen\DetailsTabsMenu\ApplicationsDetailsTabsMenu.cs" />
     <Compile Include="Pages\Evergreen\DetailsTabsMenu\DevicesDetailsTabsMenu.cs" />
     <Compile Include="Pages\Evergreen\DevicesPage.cs" />
     <Compile Include="Pages\Evergreen\FiltersElement.cs" />
@@ -130,7 +196,6 @@
     <Compile Include="Pages\Evergreen\ProfileDetailsPages\AdvancedPage.cs" />
     <Compile Include="Pages\Evergreen\ProfileDetailsPages\ChangePasswordPage.cs" />
     <Compile Include="Pages\Evergreen\ProfileDetailsPages\PreferencesPage.cs" />
-    <Compile Include="Pages\Evergreen\ProfileDetailsPages\ProfileNavigationMenu.cs" />
     <Compile Include="Pages\Evergreen\UsersPage.cs" />
     <Compile Include="Pages\DashworksHeaderMenuElement.cs" />
     <Compile Include="Pages\LoginPage.cs" />
@@ -141,9 +206,14 @@
     <Compile Include="Providers\ResourceFilesNamesProvider.cs" />
     <Compile Include="Providers\SauceLabsCredentialsProvider.cs" />
     <Compile Include="Providers\UserProvider.cs" />
+    <Compile Include="Steps\API\EvergreenJnr_FiltersFunctionality.cs" />
+    <Compile Include="Steps\API\EvergreenJnr_ListDetailsPage.cs" />
+    <Compile Include="Steps\API\EvergreenJnr_Lists.cs" />
+    <Compile Include="Steps\API\EvergreenJnr_ProfilePage.cs" />
     <Compile Include="Steps\Base\BaseActions.cs" />
     <Compile Include="Steps\Base\OpenWebsite.cs" />
     <Compile Include="Providers\UrlProvider.cs" />
+    <Compile Include="Steps\Dashworks\EvergreenJnr_AdminPage.cs" />
     <Compile Include="Steps\Dashworks\EvergreenJnr_AccountDetailsPage.cs" />
     <Compile Include="Steps\Dashworks\EvergreenJnr_ActionsPanel.cs" />
     <Compile Include="Steps\Dashworks\EvergreenJnr_BaseDashboardPage.cs" />
@@ -160,11 +230,20 @@
     <Compile Include="Steps\Dashworks\EvergreenJnr_NewCustomList.cs" />
     <Compile Include="Steps\Dashworks\EvergreenJnr_QueryStrings.cs" />
     <Compile Include="Steps\Logout.cs" />
-    <Compile Include="Steps\TestApiStep.cs" />
     <Compile Include="Tests\EvergreenJnr_ActionsPanel\ActionsPanel.feature.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>ActionsPanel.feature</DependentUpon>
+    </Compile>
+    <Compile Include="Tests\EvergreenJnr_AdminPage\AdminePage.feature.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>AdminePage.feature</DependentUpon>
+    </Compile>
+    <Compile Include="Tests\EvergreenJnr_BaseDashboardPage\BaseDashboardPage.feature.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>BaseDashboardPage.feature</DependentUpon>
     </Compile>
     <Compile Include="Tests\EvergreenJnr_Columns\AddColumnAction.feature.cs">
       <AutoGen>True</AutoGen>
@@ -294,6 +373,14 @@
       <Generator>SpecFlowSingleFileGenerator</Generator>
       <LastGenOutput>ActionsPanel.feature.cs</LastGenOutput>
     </None>
+    <None Include="Tests\EvergreenJnr_AdminPage\AdminePage.feature">
+      <Generator>SpecFlowSingleFileGenerator</Generator>
+      <LastGenOutput>AdminePage.feature.cs</LastGenOutput>
+    </None>
+    <None Include="Tests\EvergreenJnr_BaseDashboardPage\BaseDashboardPage.feature">
+      <Generator>SpecFlowSingleFileGenerator</Generator>
+      <LastGenOutput>BaseDashboardPage.feature.cs</LastGenOutput>
+    </None>
     <None Include="Tests\EvergreenJnr_Columns\AddColumnAction.feature">
       <Generator>SpecFlowSingleFileGenerator</Generator>
       <LastGenOutput>AddColumnAction.feature.cs</LastGenOutput>
@@ -394,6 +481,8 @@
       <ErrorText>This project references NuGet package(s) that are missing on this computer. Use NuGet Package Restore to download them.  For more information, see http://go.microsoft.com/fwlink/?LinkID=322105. The missing file is {0}.</ErrorText>
     </PropertyGroup>
     <Error Condition="!Exists('..\packages\Selenium.Chrome.WebDriver.2.33\build\Selenium.Chrome.WebDriver.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Selenium.Chrome.WebDriver.2.33\build\Selenium.Chrome.WebDriver.targets'))" />
+    <Error Condition="!Exists('..\packages\NETStandard.Library.2.0.1\build\netstandard2.0\NETStandard.Library.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\NETStandard.Library.2.0.1\build\netstandard2.0\NETStandard.Library.targets'))" />
   </Target>
   <Import Project="..\packages\Selenium.Chrome.WebDriver.2.33\build\Selenium.Chrome.WebDriver.targets" Condition="Exists('..\packages\Selenium.Chrome.WebDriver.2.33\build\Selenium.Chrome.WebDriver.targets')" />
+  <Import Project="..\packages\NETStandard.Library.2.0.1\build\netstandard2.0\NETStandard.Library.targets" Condition="Exists('..\packages\NETStandard.Library.2.0.1\build\netstandard2.0\NETStandard.Library.targets')" />
 </Project>

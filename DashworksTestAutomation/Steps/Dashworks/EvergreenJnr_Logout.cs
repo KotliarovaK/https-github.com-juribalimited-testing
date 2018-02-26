@@ -1,4 +1,6 @@
-﻿using DashworksTestAutomation.Extensions;
+﻿using System.Collections;
+using System.Collections.Generic;
+using DashworksTestAutomation.Extensions;
 using DashworksTestAutomation.Pages.Evergreen;
 using OpenQA.Selenium.Remote;
 using TechTalk.SpecFlow;
@@ -6,7 +8,7 @@ using TechTalk.SpecFlow;
 namespace DashworksTestAutomation.Steps.Dashworks
 {
     [Binding]
-    class EvergreenJnr_Logout : SpecFlowContext
+    internal class EvergreenJnr_Logout : SpecFlowContext
     {
         private readonly RemoteWebDriver _driver;
 

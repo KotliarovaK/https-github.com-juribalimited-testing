@@ -6,7 +6,7 @@ using System.Collections.Generic;
 
 namespace DashworksTestAutomation.Pages.Evergreen
 {
-    class ListDetailsElement: SeleniumBasePage
+    internal class ListDetailsElement : SeleniumBasePage
     {
         [FindsBy(How = How.XPath, Using = ".//div[@class='listPanel ng-star-inserted']")]
         public IWebElement ListDetailsPanel { get; set; }
@@ -23,7 +23,7 @@ namespace DashworksTestAutomation.Pages.Evergreen
         [FindsBy(How = How.XPath, Using = ".//i[contains(@class,'material-icons pull-left list-star-icon star-filled')]")]
         public IWebElement UnfavoriteButton { get; set; }
 
-        [FindsBy(How = How.XPath, Using = ".//button[@mattooltip='Remove']")]
+        [FindsBy(How = How.XPath, Using = ".//button[@class='btn btn-default btn-remove mat-icon-button']")]
         public IWebElement RemoveListButton { get; set; }
 
         [FindsBy(How = How.XPath, Using = ".//div[@class='permissions action-panel-ddl']")]

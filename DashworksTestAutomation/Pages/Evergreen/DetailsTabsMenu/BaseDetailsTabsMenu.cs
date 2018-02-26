@@ -1,14 +1,14 @@
-﻿using System.Collections.Generic;
-using DashworksTestAutomation.Base;
+﻿using DashworksTestAutomation.Base;
 using DashworksTestAutomation.Extensions;
 using OpenQA.Selenium;
 using OpenQA.Selenium.Support.PageObjects;
+using System.Collections.Generic;
 
 namespace DashworksTestAutomation.Pages.Evergreen.DetailsTabsMenu
 {
-    class BaseDetailsTabsMenu : SeleniumBasePage
+    internal class BaseDetailsTabsMenu : SeleniumBasePage
     {
-        [FindsBy(How = How.XPath, Using = ".//div[@class='mat-tab-labels']/div[contains(text(),'Details')]")]
+        [FindsBy(How = How.XPath, Using = ".//div[@class='mat-tab-label-content'][text()='Details']")]
         public IWebElement DevicesTab { get; set; }
 
         public override List<By> GetPageIdentitySelectors()
@@ -23,8 +23,7 @@ namespace DashworksTestAutomation.Pages.Evergreen.DetailsTabsMenu
 
         public void NavigateToTabByName(string tabName)
         {
-            var tab = Driver.FindElement(
-                By.XPath($".//div[@class='mat-tab-labels']/div[contains(text(),'{tabName}')]"));
+            var tab = Driver.FindElement(By.XPath($".//div[@class='mat-tab-label-content'][text()='{tabName}']"));
             tab.Click();
         }
     }
