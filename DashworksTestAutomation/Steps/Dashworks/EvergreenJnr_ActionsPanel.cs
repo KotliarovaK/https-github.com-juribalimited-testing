@@ -153,6 +153,13 @@ namespace DashworksTestAutomation.Steps.Dashworks
             _driver.SelectCustomSelectbox(actionsElement.DropdownBox, "Add to static list");
         }
 
+        [Then(@"All checkboxes are checked in the table")]
+        public void ThenAllCheckboxesAreCheckedInTheTable()
+        {
+            var dashboardPage = _driver.NowAt<BaseDashboardPage>();
+            Assert.IsFalse(dashboardPage.UncheckedCheckbox.Displayed(), "Not all checkboxes are checked in the table");
+        }
+
         [Then(@"Following options are available in lists dropdown:")]
         public void ThenFollowingOptionsAreAvailableInListsDropdown(Table table)
         {

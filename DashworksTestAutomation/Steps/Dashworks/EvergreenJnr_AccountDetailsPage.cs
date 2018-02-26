@@ -25,6 +25,20 @@ namespace DashworksTestAutomation.Steps.Dashworks
             _userDto = userDto;
         }
 
+        [When(@"User clicks Account Profile dropdown")]
+        public void WhenUserClicksAccountProfileDropdown()
+        {
+            var header = _driver.NowAt<HeaderElement>();
+            header.UserNameDropdown.Click();
+        }
+
+        [Then(@"Account Profile dropdown is displayed to user")]
+        public void ThenAccountProfileDropdownIsDisplayedToUser()
+        {
+            var header = _driver.NowAt<HeaderElement>();
+            Assert.AreEqual(2, header.MenuItems.Count, "Account Profile dropdown is not displayed");
+        }
+
         [When(@"User clicks Profile in Account Dropdown")]
         public void WhenUserClicksProfileInAccountDropdown()
         {
