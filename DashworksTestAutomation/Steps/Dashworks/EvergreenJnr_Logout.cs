@@ -1,4 +1,6 @@
-﻿using DashworksTestAutomation.Extensions;
+﻿using System.Collections;
+using System.Collections.Generic;
+using DashworksTestAutomation.Extensions;
 using DashworksTestAutomation.Pages.Evergreen;
 using OpenQA.Selenium.Remote;
 using TechTalk.SpecFlow;
