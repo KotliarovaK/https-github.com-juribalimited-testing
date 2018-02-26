@@ -6,6 +6,7 @@ using NUnit.Framework;
 using OpenQA.Selenium.Remote;
 using System.Collections.Generic;
 using System.Linq;
+using System.Threading;
 using OpenQA.Selenium;
 using TechTalk.SpecFlow;
 
@@ -96,12 +97,36 @@ namespace DashworksTestAutomation.Steps.Dashworks
             page.OpenColumnSettingsByName(columnName);
         }
 
-        [When(@"User click Column button on the Column Settings panel")]
-        public void WhenUserClickColumnButtonOnTheColumnSettingsPanel()
+        [When(@"User clicks Column button on the Column Settings panel")]
+        public void WhenUserClicksColumnButtonOnTheColumnSettingsPanel()
         {
             var menu = _driver.NowAt<ApplicationsDetailsTabsMenu>();
             _driver.WaitWhileControlIsNotDisplayed<ApplicationsDetailsTabsMenu>(() => menu.ColumnButton);
             menu.ColumnButton.Click();
+        }
+
+        [When(@"User clicks Filter button on the Column Settings panel")]
+        public void WhenUserClicksFilterButtonOnTheColumnSettingsPanel()
+        {
+            var menu = _driver.NowAt<ApplicationsDetailsTabsMenu>();
+            _driver.WaitWhileControlIsNotDisplayed<ApplicationsDetailsTabsMenu>(() => menu.FilterButton);
+            menu.FilterButton.Click();
+        }
+
+        [Then(@"User enters ""(.*)"" text in the Filter field")]
+        public void ThenUserEntersTextInTheFilterField(string searchedText)
+        {
+            var filterElement = _driver.NowAt<ApplicationsDetailsTabsMenu>();
+            _driver.WaitWhileControlIsNotDisplayed<ApplicationsDetailsTabsMenu>(() => filterElement.FilterSearchTextbox);
+            filterElement.FilterSearchTextbox.SendKeys(searchedText);
+        }
+
+        [When(@"User clears Filter field")]
+        public void WhenUserClearsFilterField()
+        {
+            var page = _driver.NowAt<ApplicationsDetailsTabsMenu>();
+            Thread.Sleep(500);
+            page.FilterSearchTextbox.ClearWithHomeButton(_driver);
         }
 
         [When(@"User select ""(.*)"" checkbox on the Column Settings panel")]
