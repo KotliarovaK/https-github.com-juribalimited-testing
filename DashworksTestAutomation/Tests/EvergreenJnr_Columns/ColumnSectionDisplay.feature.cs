@@ -407,15 +407,15 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_Columns
             testRunner.When("User clicks the Columns button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
             testRunner.Then("Columns panel is displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
             testRunner.Then("User is expand \"Mailbox\" columns category", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-            testRunner.When("User add \"Import\" Column from expanded category", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+            testRunner.When("User add \"Alias\" Column from expanded category", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
             testRunner.Then("Minimize button is displayed for \"Mailbox\" category", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-            testRunner.When("User add \"Enabled\" Column from expanded category", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+            testRunner.When("User add \"Created Date\" Column from expanded category", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
             TechTalk.SpecFlow.Table table5 = new TechTalk.SpecFlow.Table(new string[] {
                         "ColumnName"});
             table5.AddRow(new string[] {
-                        "Import"});
+                        "Alias"});
             table5.AddRow(new string[] {
-                        "Enabled"});
+                        "Created Date"});
             testRunner.Then("ColumnName is added to the list", ((string)(null)), table5, "Then ");
             this.ScenarioCleanup();
         }
