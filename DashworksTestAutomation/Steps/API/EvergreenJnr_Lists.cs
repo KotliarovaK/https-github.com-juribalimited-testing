@@ -89,8 +89,6 @@ namespace DashworksTestAutomation.Steps.API
             if (response.StatusCode != HttpStatusCode.OK)
                 throw new Exception($"Unable to execute request. URI: {requestUri}");
 
-            _driver.Navigate().Refresh();
-
             var content = response.Content;
 
             var responseContent = JsonConvert.DeserializeObject<JObject>(content);
