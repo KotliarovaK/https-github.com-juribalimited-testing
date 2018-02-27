@@ -75,7 +75,6 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_GlobalSearch
         [NUnit.Framework.CategoryAttribute("MainFunctionality")]
         [NUnit.Framework.CategoryAttribute("DAS11490")]
         [NUnit.Framework.CategoryAttribute("DAS11745")]
-        [NUnit.Framework.CategoryAttribute("Not_Run")]
         public virtual void EvergreenJnr_GlobalSearch_CheckThatErrorMessageIsNotDisplayedAfterTypingThreeSpaces()
         {
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("EvergreenJnr_GlobalSearch_CheckThatErrorMessageIsNotDisplayedAfterTypingThreeSpac" +
@@ -85,8 +84,7 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_GlobalSearch
                         "EvergreenJnr_GlobalSearch",
                         "MainFunctionality",
                         "DAS11490",
-                        "DAS11745",
-                        "Not_Run"});
+                        "DAS11745"});
             this.ScenarioSetup(scenarioInfo);
             this.FeatureBackground();
             testRunner.When("User type \"   \" in Global Search Field", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
