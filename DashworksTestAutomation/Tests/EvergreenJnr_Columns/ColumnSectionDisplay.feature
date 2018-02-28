@@ -49,10 +49,9 @@ Scenario: EvergreenJnr_DevicesList_CheckThatAppropriateIconsAreDisplayedForMaxim
 	Then "Devices" list should be displayed to the user
 	When User clicks the Columns button
 	Then Columns panel is displayed to the user
+	Then Maximize buttons are displayed for all category in Columns panel
 	When User enters "group" text in Search field at Columns Panel
 	Then Minimize buttons are displayed for all category in Columns panel
-	When User collapses all columns categories
-	Then Maximize buttons are displayed for all category in Columns panel
 
 @Evergreen @Devices @EvergreenJnr_Columns @ColumnSectionDisplay @DAS11668
 Scenario: EvergreenJnr_DevicesList_CheckThatAllColumnsAreVisibleInTheirRelevantCategoryAfterResetting
@@ -73,13 +72,13 @@ Scenario: EvergreenJnr_MailboxesList_CheckThatCategoryRemainsOpenAfterAddingColu
 	When User clicks the Columns button
 	Then Columns panel is displayed to the user
 	Then User is expand "Mailbox" columns category
-	When User add "Import" Column from expanded category
+	When User add "Alias" Column from expanded category
 	Then Minimize button is displayed for "Mailbox" category
-	When User add "Enabled" Column from expanded category
+	When User add "Created Date" Column from expanded category
 	Then ColumnName is added to the list
-	| ColumnName |
-	| Import     |
-	| Enabled    |
+	| ColumnName   |
+	| Alias        |
+	| Created Date |
 
 @Evergreen @Devices @EvergreenJnr_Columns @ColumnSectionDisplay @DAS11768
 Scenario: EvergreenJnr_DevicesList_CheckTheColumnCategoriesUpdatesAfterAddingColumn

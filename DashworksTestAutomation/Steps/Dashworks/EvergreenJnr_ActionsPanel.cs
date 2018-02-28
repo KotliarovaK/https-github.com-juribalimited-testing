@@ -160,7 +160,6 @@ namespace DashworksTestAutomation.Steps.Dashworks
             Assert.IsFalse(dashboardPage.UncheckedCheckbox.Displayed(), "Not all checkboxes are checked in the table");
         }
 
-
         [Then(@"Following options are available in lists dropdown:")]
         public void ThenFollowingOptionsAreAvailableInListsDropdown(Table table)
         {

@@ -39,9 +39,9 @@ Scenario Outline: EvergreenJnr_AllLists_CheckThatDataIsDisplayedAfterAddingColum
 	When User click content from "<ItemName>" column
 	And User navigates to the "<TabName>" tab
 	When User have opened Column Settings for "<ColumnName>" column in the Details Page table
-	When User click Column button on the Column Settings panel
+	When User clicks Column button on the Column Settings panel
 	When User select "<CheckboxName>" checkbox on the Column Settings panel
-	When User click Column button on the Column Settings panel
+	When User clicks Column button on the Column Settings panel
 	Then ColumnName is added to the list in the Details Page table
 	| ColumnName      |
 	| <NewColumnName> |
@@ -68,9 +68,9 @@ Scenario Outline: EvergreenJnr_AllLists_CheckThatDataIsDisplayedAfterAddingColum
 	Then User closes "<ExpandedSectionName>" section on the Details Page
 	When User open "<SectionName>" section
 	When User have opened Column Settings for "<ColumnName>" column in the Details Page table
-	When User click Column button on the Column Settings panel
+	When User clicks Column button on the Column Settings panel
 	When User select "<CheckboxName>" checkbox on the Column Settings panel
-	When User click Column button on the Column Settings panel
+	When User clicks Column button on the Column Settings panel
 	Then ColumnName is added to the list in the Details Page table
 	| ColumnName      |
 	| <NewColumnName> |
@@ -107,7 +107,7 @@ Examples:
 	| Mailboxes    | Email Address | Users        | Users               | Mailbox Permissions | Domain        | ViaGroupObjectKey | ViaGroupObjectKey |
 	| Mailboxes    | Email Address | Users        | Users               | Mailbox Permissions | Domain        | AccessCategoryKey | AccessCategoryKey |
 
-@Evergreen @AllLists @EvergreenJnr_ItemDetails @ItemDetailsDisplay @DAS11732 @DAS12053 
+@Evergreen @AllLists @EvergreenJnr_ItemDetails @ItemDetailsDisplay @DAS11732 @DAS12053
 Scenario Outline: EvergreenJnr_AllLists_CheckThatDataIsDisplayedAfterAddingColumnsForClosedSections
 	When User clicks "<PageName>" on the left-hand menu
 	Then "<PageName>" list should be displayed to the user
@@ -115,9 +115,9 @@ Scenario Outline: EvergreenJnr_AllLists_CheckThatDataIsDisplayedAfterAddingColum
 	And User navigates to the "<TabName>" tab
 	When User open "<SectionName>" section
 	When User have opened Column Settings for "<ColumnName>" column in the Details Page table
-	When User click Column button on the Column Settings panel
+	When User clicks Column button on the Column Settings panel
 	When User select "<CheckboxName>" checkbox on the Column Settings panel
-	When User click Column button on the Column Settings panel
+	When User clicks Column button on the Column Settings panel
 	Then ColumnName is added to the list in the Details Page table
 	| ColumnName      |
 	| <NewColumnName> |
@@ -164,9 +164,9 @@ Scenario: EvergreenJnr_DevicesLists_CheckThatSelectedCheckboxesMatchTheColumnsIn
 	And User navigates to the "Projects" tab
 	When User open "Device Projects" section
 	When User have opened Column Settings for "Project" column in the Details Page table
-	When User click Column button on the Column Settings panel
+	When User clicks Column button on the Column Settings panel
 	When User select "Key" checkbox on the Column Settings panel
-	When User click Column button on the Column Settings panel
+	When User clicks Column button on the Column Settings panel
 	Then ColumnName is added to the list in the Details Page table
 	| ColumnName |
 	| Key        |
@@ -297,3 +297,22 @@ Examples:
 	| Devices   | 00K4CEEQ737BA4L             | Hostname      | Device      |
 	| Users     | $231000-3AC04R8AR431        | Username      | AD Object   |
 	| Mailboxes | aaron.u.flores@dwlabs.local | Email Address | Mailbox     |
+
+@Evergreen @AllLists @EvergreenJnr_ItemDetails @ItemDetailsDisplay @DAS11762
+Scenario Outline: EvergreenJnr_AllLists_CheckThatNoConsoleErrorsAreDisplayedWhenDeleteDataFromFilterTextField
+	When User clicks "<PageName>" on the left-hand menu
+	Then "<PageName>" list should be displayed to the user
+	When User click content from "<ColumnName>" column
+	And User navigates to the "<TabName>" tab
+	And User have opened Column Settings for "<SelectedColumn>" column in the Details Page table
+	And User clicks Filter button on the Column Settings panel
+	Then User enters "12345" text in the Filter field
+	When User clears Filter field
+	Then There are no errors in the browser console
+
+Examples:
+	| PageName     | ColumnName    | TabName      | SelectedColumn |
+	| Devices      | Hostname      | Applications | Application    |
+	| Users        | Username      | Groups       | Group          |
+	| Applications | Application   | MSI          | File Name      |
+	| Mailboxes    | Email Address | Users        | Username       |
