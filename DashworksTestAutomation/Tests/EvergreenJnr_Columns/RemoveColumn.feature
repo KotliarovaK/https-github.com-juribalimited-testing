@@ -82,7 +82,7 @@ Scenario: EvergreenJnr_DevicesList_CheckThat500ErrorPageIsNotDisplayedAfterRemov
 	| SelectedCheckboxes  |
 	| None                |
 	Then "Windows7Mi: Category" filter is added to the list
-	When User create custom list with "TestList32EDC3" name
+	When User create dynamic list with "TestList32EDC3" name on "Devices" page
 	Then "TestList32EDC3" list is displayed to user
 	When User clicks the Filters button
 	Then Filters panel is displayed to the user
@@ -232,7 +232,8 @@ Scenario: EvergreenJnr_DevicesList_CheckThatRemovingColumnsFromUrlIsWorksCorrect
 	Then "Devices" list should be displayed to the user
 	When User click on 'Hostname' column header
 	Then data in table is sorted by 'Hostname' column in ascending order
-	When User create custom list with "TestListC6636D" name
+	When User create dynamic list with "TestListC6636D" name on "Devices" page
+	Then "TestListC6636D" list is displayed to user
 	#Workaround for DAS-11570. Remove after fix
 	#And User navigates to the "TestListC6636D" list
 	When User clicks the Columns button
@@ -295,7 +296,8 @@ Scenario: EvergreenJnr_DevicesList_CheckThatRemovingColumnAndFilterAndCustomList
 	Then "Devices" list should be displayed to the user
 	When User click on 'Hostname' column header
 	Then data in table is sorted by 'Hostname' column in ascending order
-	When User create custom list with "TestList3C5E3C" name
+	When User create dynamic list with "TestList3C5E3C" name on "Devices" page
+	Then "TestList3C5E3C" list is displayed to user
 	#Workaround for DAS-11570. Remove after fix
 	#And User navigates to the "TestList3C5E3C" list
 	When User clicks the Columns button
@@ -347,10 +349,10 @@ Scenario: EvergreenJnr_DevicesList_CheckThatColumnIsDisplayedInColumnsPanelAfter
 	Then "Devices" list should be displayed to the user
 	When User clicks the Columns button
 	Then Columns panel is displayed to the user
-	Then ColumnName is removed from the list
+	And ColumnName is removed from the list
 	| ColumnName        |
 	| Owner Common Name |
-	Then "26" subcategories is displayed for "Device Owner" category
+	And "26" subcategories is displayed for "Device Owner" category
 
 @Evergreen @Users @EvergreenJnr_Columns @RemoveColumn @DAS11515 @DAS11506 @Not_Run
 Scenario: EvergreenJnr_UsersList_CheckThatColumnIsDisplayedInColumnsPanelAfterRemovingAllColumnsFromTheURL
