@@ -49,10 +49,9 @@ Scenario: EvergreenJnr_DevicesList_CheckThatAppropriateIconsAreDisplayedForMaxim
 	Then "Devices" list should be displayed to the user
 	When User clicks the Columns button
 	Then Columns panel is displayed to the user
+	Then Maximize buttons are displayed for all category in Columns panel
 	When User enters "group" text in Search field at Columns Panel
 	Then Minimize buttons are displayed for all category in Columns panel
-	When User collapses all columns categories
-	Then Maximize buttons are displayed for all category in Columns panel
 
 @Evergreen @Devices @EvergreenJnr_Columns @ColumnSectionDisplay @DAS11668
 Scenario: EvergreenJnr_DevicesList_CheckThatAllColumnsAreVisibleInTheirRelevantCategoryAfterResetting

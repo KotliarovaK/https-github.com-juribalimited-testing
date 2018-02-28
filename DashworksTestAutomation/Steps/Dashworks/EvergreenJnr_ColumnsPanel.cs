@@ -290,8 +290,8 @@ namespace DashworksTestAutomation.Steps.Dashworks
             Assert.AreEqual(groupCount, columnElement.MinimizeGroupButton.Count, "Minimize buttons are not displayed");
         }
 
-        [When(@"User collapses all columns categories")]
-        public void WhenUserCollapsesAllColumnsCategories()
+        [When(@"User close all columns categories")]
+        public void WhenUserCloseAllColumnsCategories()
         {
             var columnElement = _driver.NowAt<ColumnsElement>();
             foreach (var group in columnElement.GroupTitle)
