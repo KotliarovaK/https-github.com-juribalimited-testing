@@ -401,7 +401,7 @@ Scenario: EvergreenJnr_DevicesList_CheckThatEditListMenuNotDisplayedForDifferent
 	Then Filters panel is displayed to the user
 	When User add "Babel(Engl: Readiness" filter where type is "Equals" with added column and "None" Lookup option
 	Then "Babel(Engl: Readiness" filter is added to the list
-	When User create custom list with "Readiness List TestName" name
+	When User create dynamic list with "Readiness List TestName" name on "Devices" page
 	Then "Readiness List TestName" list is displayed to user
 	When User navigates to the "All Devices" list
 	Then "Devices" list should be displayed to the user
@@ -411,7 +411,7 @@ Scenario: EvergreenJnr_DevicesList_CheckThatEditListMenuNotDisplayedForDifferent
 	| SelectedCheckboxes |
 	| Generic            |
 	Then "Import Type" filter is added to the list
-	When User create custom list with "MultiSelect List TestName" name
+	When User create dynamic list with "MultiSelect List TestName" name on "Devices" page
 	Then "MultiSelect List TestName" list is displayed to user
 	When User navigates to the "All Devices" list
 	Then "Devices" list should be displayed to the user
@@ -422,7 +422,7 @@ Scenario: EvergreenJnr_DevicesList_CheckThatEditListMenuNotDisplayedForDifferent
 	| Green              |
 	| Amber              |
 	Then "Compliance" filter is added to the list
-	When User create custom list with "Compliance List TestName" name
+	When User create dynamic list with "Compliance List TestName" name on "Devices" page
 	Then "Compliance List TestName" list is displayed to user
 	When User navigates to the "All Devices" list
 	Then "Devices" list should be displayed to the user
@@ -432,13 +432,13 @@ Scenario: EvergreenJnr_DevicesList_CheckThatEditListMenuNotDisplayedForDifferent
 	| SelectedCheckboxes |
 	| FALSE              |
 	Then "Secure Boot Enabled" filter is added to the list
-	When User create custom list with "Secure Boot List TestName" name
+	When User create dynamic list with "Secure Boot List TestName" name on "Devices" page
 	Then "Secure Boot List TestName" list is displayed to user
 	When User clicks "Applications" on the left-hand menu
 	Then "Applications" list should be displayed to the user
 	When User click on 'Application' column header
 	Then data in table is sorted by 'Application' column in ascending order
-	When User create custom list with "TestList569889" name
+	When User create dynamic list with "TestList569889" name on "Applications" page
 	When User clicks "Devices" on the left-hand menu
 	Then "Devices" list should be displayed to the user
 	When User clicks the Filters button
@@ -447,7 +447,7 @@ Scenario: EvergreenJnr_DevicesList_CheckThatEditListMenuNotDisplayedForDifferent
 	| SelectedList   | Association        |
 	| TestList569889 | Not used on device |
 	Then "Application" filter is added to the list
-	When User create custom list with "Applications List TestName" name
+	When User create dynamic list with "Applications List TestName" name on "Devices" page
 	Then "Applications List TestName" list is displayed to user
 	When User navigates to the "All Devices" list
 	Then "Devices" list should be displayed to the user
@@ -476,19 +476,11 @@ Scenario: EvergreenJnr_DevicesList_CheckThatDatabaseErrorOccurringOccurringWhenA
 
 @Evergreen @Devices @EvergreenJnr_ListPanel @CustomListDisplay @DAS11465 @Delete_Newly_Created_List
 Scenario: EvergreenJnr_DevicesLists_CheckThatAnotherUserCanEditsAndSavesASharedListWithSelectedColumnsWithoutErrors
-	When User clicks "Devices" on the left-hand menu
-	Then "Devices" list should be displayed to the user
-	When User clicks the Columns button
-	Then Columns panel is displayed to the user
-	When ColumnName is entered into the search box and the selection is clicked
+	When User add following columns using URL to the "Devices" page:
 	| ColumnName |
 	| Compliance |
 	| Device Key |
-	Then ColumnName is added to the list
-	| ColumnName |
-	| Compliance |
-	| Device Key |
-	When User create custom list with "TestListAA0888" name
+	When User create dynamic list with "TestListAA0888" name on "Devices" page
 	Then "TestListAA0888" list is displayed to user
 	When User clicks the List Details button
 	Then List details panel is displayed to the user
@@ -558,7 +550,7 @@ Scenario: EvergreenJnr_DevicesLists_CheckThatAnotherUserCanEditsAndSavesASharedL
 	| Red                |
 	| Amber              |
 	Then "Compliance" filter is added to the list
-	When User create custom list with "TestList0A788F" name
+	When User create dynamic list with "TestList0A788F" name on "Devices" page
 	Then "TestList0A788F" list is displayed to user
 	When User clicks the List Details button
 	Then List details panel is displayed to the user
@@ -613,7 +605,7 @@ Scenario: EvergreenJnr_DevicesLists_CheckThatAnotherUserCanEditsAndSavesASharedL
 	Then "Devices" list should be displayed to the user
 	When User click on 'Hostname' column header
 	Then data in table is sorted by 'Hostname' column in ascending order
-	When User create custom list with "TestList9A0AE8" name
+	When User create dynamic list with "TestList9A0AE8" name on "Devices" page
 	Then "TestList9A0AE8" list is displayed to user
 	When User clicks the List Details button
 	Then List details panel is displayed to the user
@@ -661,7 +653,7 @@ Scenario: EvergreenJnr_DevicesLists_CheckThatUserIsNotAbleToCreateListsWithSameN
 	Then "Devices" list should be displayed to the user
 	When User click on 'Hostname' column header
 	Then data in table is sorted by 'Hostname' column in ascending order
-	When User create custom list with "TestList993785" name
+	When User create dynamic list with "TestList993785" name on "Devices" page
 	Then "TestList993785" list is displayed to user
 	When User navigates to the "All Devices" list
 	When User clicks the Filters button
@@ -681,7 +673,7 @@ Scenario Outline: EvergreenJnr_DevicesLists_CheckThatTheSavedListWithOwnerDispla
 	| Values |
 	|        |
 	Then "Owner Display Name" filter is added to the list
-	When User create custom list with "TestList274E0A" name
+	When User create dynamic list with "TestList274E0A" name on "Devices" page
 	Then "TestList274E0A" list is displayed to user
 	When User navigates to the "All Devices" list
 	Then "Devices" list should be displayed to the user

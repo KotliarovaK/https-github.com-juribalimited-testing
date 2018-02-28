@@ -39,7 +39,7 @@ Scenario: EvergreenJnr_UsersList_CheckSpecialCharactersDisplayInFilterInfo
 	And Values is displayed in added filter info
 	| Values           |
 	| O'Conn"/\or#@!() |
-	When User create custom list with "TestList66E313" name
+	When User create dynamic list with "TestList66E313" name on "Users" page
 	Then "TestList66E313" list is displayed to user
 	When User clicks the Filters button
 	Then Filters panel is displayed to the user
@@ -135,7 +135,7 @@ Scenario: EvergreenJnr_DevicesList_CheckThatFilterDataIsDisplayedCorrectlyWhenNa
 	Then Values is displayed in added filter info
 	| Values          |
 	| 00BDM1JUR8IF419 |
-	When User create custom list with "TestList5256A5" name
+	When User create dynamic list with "TestList5256A5" name on "Devices" page
 	Then "TestList5256A5" list is displayed to user
 	When User clicks the Filters button
 	Then Filters panel is displayed to the user
@@ -168,7 +168,7 @@ Scenario: EvergreenJnr_UsersList_CheckThatFilterDataIsDisplayedCorrectlyWhenNavi
 	| Red    |
 	| Amber  |
 	| Green  |
-	When User create custom list with "Users - Nav between lists" name
+	When User create dynamic list with "Users - Nav between lists" name on "Users" page
 	Then "Users - Nav between lists" list is displayed to user
 	When User clicks the Filters button
 	Then Filters panel is displayed to the user
@@ -201,7 +201,7 @@ Scenario: EvergreenJnr_ApplicationsList_CheckThatFilterDataIsDisplayedCorrectlyW
 	And Values is displayed in added filter info
 	| Values |
 	| 1      |
-	When User create custom list with "Apps - Nav between lists" name
+	When User create dynamic list with "Apps - Nav between lists" name on "Applications" page
 	Then "Apps - Nav between lists" list is displayed to user
 	When User clicks the Filters button
 	Then Filters panel is displayed to the user
@@ -230,7 +230,7 @@ Scenario: EvergreenJnr_MailboxesList_CheckThatFilterDataIsDisplayedCorrectlyWhen
 	And Values is displayed in added filter info
 	| Values      |
 	| 17 Nov 2017 |
-	When User create custom list with "Mailboxes - Nav between lists" name
+	When User create dynamic list with "Mailboxes - Nav between lists" name on "Mailboxes" page
 	Then "Mailboxes - Nav between lists" list is displayed to user
 	When User clicks the Filters button
 	Then Filters panel is displayed to the user
@@ -386,14 +386,10 @@ Examples:
 
 @Evergreen @Applications @Evergreen_FiltersFeature @FiltersDisplay @DAS10696 @DAS11512 @Delete_Newly_Created_List
 Scenario: EvergreenJnr_ApplicationsList_CheckThatApplicationSavedListFilterIsWorkingCorrect
-	When User clicks "Applications" on the left-hand menu
-	Then "Applications" list should be displayed to the user
-	When User clicks the Columns button
-	Then Columns panel is displayed to the user
-	When ColumnName is entered into the search box and the selection is clicked
+	When User add following columns using URL to the "Applications" page:
 	| ColumnName      |
 	| Application Key |
-	When User create custom list with "TestList2854B3" name
+	When User create dynamic list with "TestList2854B3" name on "Applications" page
 	Then "TestList2854B3" list is displayed to user
 	When User clicks "Devices" on the left-hand menu
 	Then "Devices" list should be displayed to the user
@@ -663,7 +659,7 @@ Scenario: EvergreenJnr_DevicesList_CheckThatApplicationFiltersBeingAppliedAgains
 	Then "11" rows are displayed in the agGrid
 	Then "(Application = 7zip (2015) ASSOCIATION = ("entitled to device"))" text is displayed in filter container
 	Then "Application 7zip (2015) is entitled to device" is displayed in added filter info
-	When User create custom list with "TestList44C8B6" name
+	When User create dynamic list with "TestList44C8B6" name on "Devices" page
 	Then "TestList44C8B6" list is displayed to user
 	When User navigates to the "All Devices" list
 	When User navigates to the "TestList44C8B6" list
@@ -760,7 +756,7 @@ Scenario: EvergreenJnr_DevicesList_CheckThatMultipleFilterCriteriaToApplicationN
 	| microsoft |                     |
 	Then "Application whose Name" filter is added to the list
 	And "Application whose Name contains adobe or microsoft is installed on device" is displayed in added filter info
-	When User create custom list with "TestListF9A187" name
+	When User create dynamic list with "TestListF9A187" name on "Devices" page
 	Then "TestListF9A187" list is displayed to user
 	And "10,258" rows are displayed in the agGrid
 	And Edit List menu is not displayed
@@ -794,14 +790,10 @@ Scenario: EvergreenJnr_DevicesList_CheckThat500ErrorIsNotDisplayedForStaticListA
 
 @Evergreen @Devices @Evergreen_FiltersFeature @FiltersDisplay @DAS11468 @Delete_Newly_Created_List
 Scenario: EvergreenJnr_DevicesList_CheckThat500ErrorIsNotDisplayedForDynamicListAfterRemovingAssociationsList
-	When User clicks "Applications" on the left-hand menu
-	Then "Applications" list should be displayed to the user
-	When User clicks the Columns button
-	Then Columns panel is displayed to the user
-	When ColumnName is entered into the search box and the selection is clicked
+	When User add following columns using URL to the "Applications" page:
 	| ColumnName      |
 	| Application Key |
-	When User create custom list with "TestList5E021D" name
+	When User create dynamic list with "TestList5E021D" name on "Applications" page
 	Then "TestList5E021D" list is displayed to user
 	When User clicks "Devices" on the left-hand menu
 	Then "Devices" list should be displayed to the user
@@ -811,7 +803,8 @@ Scenario: EvergreenJnr_DevicesList_CheckThat500ErrorIsNotDisplayedForDynamicList
 	| SelectedList   | Association        |
 	| TestList5E021D | Not used on device |
 	Then "Application in list TestList5E021D is not used on device" is displayed in added filter info
-	When User create custom list with "TestList5E021D" name
+	When User create dynamic list with "TestList5E021D" name on "Devices" page
+	Then "TestList5E021D" list is displayed to user
 	When User clicks "Applications" on the left-hand menu
 	Then "Applications" list should be displayed to the user
 	Then User remove list with "TestList5E021D" name on "Applications" page
@@ -847,15 +840,11 @@ Scenario: EvergreenJnr_DevicesLists_CheckThatFilterLogicForBooleanFieldsIsWorked
 
 @Evergreen @Devices @Evergreen_FiltersFeature @FiltersDisplay @DAS11660 @Delete_Newly_Created_List
 Scenario: EvergreenJnr_DevicesLists_CheckThatOperatorsForApplicationSavedListFilterIsDisplayedCorrectly
-	When User clicks "Applications" on the left-hand menu
-	Then "Applications" list should be displayed to the user
-	When User clicks the Columns button
-	Then Columns panel is displayed to the user
-	When ColumnName is entered into the search box and the selection is clicked
+	When User add following columns using URL to the "Applications" page:
 	| ColumnName |
 	| Compliance |
-	When User create custom list with "TestSavedList" name
-	Then "TestSavedList" list is displayed to user
+	When User create dynamic list with "TestSavedList009" name on "Applications" page
+	Then "TestSavedList009" list is displayed to user
 	When User clicks "Devices" on the left-hand menu
 	Then "Devices" list should be displayed to the user
 	When User clicks the Filters button

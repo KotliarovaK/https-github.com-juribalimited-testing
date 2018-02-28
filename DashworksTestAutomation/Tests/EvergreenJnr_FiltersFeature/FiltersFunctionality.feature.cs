@@ -890,16 +890,12 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_FiltersFeature
                         "Delete_Newly_Created_List"});
             this.ScenarioSetup(scenarioInfo);
             this.FeatureBackground();
-            testRunner.When("User clicks \"Applications\" on the left-hand menu", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-            testRunner.Then("\"Applications\" list should be displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-            testRunner.When("User clicks the Columns button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-            testRunner.Then("Columns panel is displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
             TechTalk.SpecFlow.Table table14 = new TechTalk.SpecFlow.Table(new string[] {
                         "ColumnName"});
             table14.AddRow(new string[] {
                         "Application Key"});
-            testRunner.When("ColumnName is entered into the search box and the selection is clicked", ((string)(null)), table14, "When ");
-            testRunner.When("User create custom list with \"TestListD75CD3\" name", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+            testRunner.When("User add following columns using URL to the \"Applications\" page:", ((string)(null)), table14, "When ");
+            testRunner.When("User create dynamic list with \"TestListD75CD3\" name on \"Applications\" page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
             testRunner.Then("\"TestListD75CD3\" list is displayed to user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
             testRunner.When("User clicks \"Devices\" on the left-hand menu", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
             testRunner.Then("\"Devices\" list should be displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");

@@ -201,7 +201,7 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_FiltersFeature
             table4.AddRow(new string[] {
                         "O\'Conn\"/\\or#@!()"});
             testRunner.And("Values is displayed in added filter info", ((string)(null)), table4, "And ");
-            testRunner.When("User create custom list with \"TestList66E313\" name", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+            testRunner.When("User create dynamic list with \"TestList66E313\" name on \"Users\" page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
             testRunner.Then("\"TestList66E313\" list is displayed to user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
             testRunner.When("User clicks the Filters button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
             testRunner.Then("Filters panel is displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
@@ -588,7 +588,7 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_FiltersFeature
             table9.AddRow(new string[] {
                         "00BDM1JUR8IF419"});
             testRunner.Then("Values is displayed in added filter info", ((string)(null)), table9, "Then ");
-            testRunner.When("User create custom list with \"TestList5256A5\" name", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+            testRunner.When("User create dynamic list with \"TestList5256A5\" name on \"Devices\" page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
             testRunner.Then("\"TestList5256A5\" list is displayed to user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
             testRunner.When("User clicks the Filters button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
             testRunner.Then("Filters panel is displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
@@ -681,7 +681,7 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_FiltersFeature
             table13.AddRow(new string[] {
                         "Green"});
             testRunner.Then("Values is displayed in added filter info", ((string)(null)), table13, "Then ");
-            testRunner.When("User create custom list with \"Users - Nav between lists\" name", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+            testRunner.When("User create dynamic list with \"Users - Nav between lists\" name on \"Users\" page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
             testRunner.Then("\"Users - Nav between lists\" list is displayed to user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
             testRunner.When("User clicks the Filters button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
             testRunner.Then("Filters panel is displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
@@ -774,7 +774,8 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_FiltersFeature
             table17.AddRow(new string[] {
                         "1"});
             testRunner.And("Values is displayed in added filter info", ((string)(null)), table17, "And ");
-            testRunner.When("User create custom list with \"Apps - Nav between lists\" name", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+            testRunner.When("User create dynamic list with \"Apps - Nav between lists\" name on \"Applications\" p" +
+                    "age", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
             testRunner.Then("\"Apps - Nav between lists\" list is displayed to user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
             testRunner.When("User clicks the Filters button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
             testRunner.Then("Filters panel is displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
@@ -859,7 +860,8 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_FiltersFeature
             table21.AddRow(new string[] {
                         "17 Nov 2017"});
             testRunner.And("Values is displayed in added filter info", ((string)(null)), table21, "And ");
-            testRunner.When("User create custom list with \"Mailboxes - Nav between lists\" name", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+            testRunner.When("User create dynamic list with \"Mailboxes - Nav between lists\" name on \"Mailboxes\"" +
+                    " page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
             testRunner.Then("\"Mailboxes - Nav between lists\" list is displayed to user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
             testRunner.When("User clicks the Filters button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
             testRunner.Then("Filters panel is displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
@@ -1370,16 +1372,12 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_FiltersFeature
                         "Delete_Newly_Created_List"});
             this.ScenarioSetup(scenarioInfo);
             this.FeatureBackground();
-            testRunner.When("User clicks \"Applications\" on the left-hand menu", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-            testRunner.Then("\"Applications\" list should be displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-            testRunner.When("User clicks the Columns button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-            testRunner.Then("Columns panel is displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
             TechTalk.SpecFlow.Table table36 = new TechTalk.SpecFlow.Table(new string[] {
                         "ColumnName"});
             table36.AddRow(new string[] {
                         "Application Key"});
-            testRunner.When("ColumnName is entered into the search box and the selection is clicked", ((string)(null)), table36, "When ");
-            testRunner.When("User create custom list with \"TestList2854B3\" name", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+            testRunner.When("User add following columns using URL to the \"Applications\" page:", ((string)(null)), table36, "When ");
+            testRunner.When("User create dynamic list with \"TestList2854B3\" name on \"Applications\" page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
             testRunner.Then("\"TestList2854B3\" list is displayed to user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
             testRunner.When("User clicks \"Devices\" on the left-hand menu", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
             testRunner.Then("\"Devices\" list should be displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
@@ -2233,7 +2231,7 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_FiltersFeature
                     "yed in filter container", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
             testRunner.Then("\"Application 7zip (2015) is entitled to device\" is displayed in added filter info" +
                     "", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-            testRunner.When("User create custom list with \"TestList44C8B6\" name", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+            testRunner.When("User create dynamic list with \"TestList44C8B6\" name on \"Devices\" page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
             testRunner.Then("\"TestList44C8B6\" list is displayed to user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
             testRunner.When("User navigates to the \"All Devices\" list", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
             testRunner.When("User navigates to the \"TestList44C8B6\" list", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
@@ -2627,7 +2625,7 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_FiltersFeature
             testRunner.Then("\"Application whose Name\" filter is added to the list", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
             testRunner.And("\"Application whose Name contains adobe or microsoft is installed on device\" is di" +
                     "splayed in added filter info", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-            testRunner.When("User create custom list with \"TestListF9A187\" name", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+            testRunner.When("User create dynamic list with \"TestListF9A187\" name on \"Devices\" page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
             testRunner.Then("\"TestListF9A187\" list is displayed to user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
             testRunner.And("\"10,258\" rows are displayed in the agGrid", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
             testRunner.And("Edit List menu is not displayed", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
@@ -2761,16 +2759,12 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_FiltersFeature
                         "Delete_Newly_Created_List"});
             this.ScenarioSetup(scenarioInfo);
             this.FeatureBackground();
-            testRunner.When("User clicks \"Applications\" on the left-hand menu", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-            testRunner.Then("\"Applications\" list should be displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-            testRunner.When("User clicks the Columns button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-            testRunner.Then("Columns panel is displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
             TechTalk.SpecFlow.Table table71 = new TechTalk.SpecFlow.Table(new string[] {
                         "ColumnName"});
             table71.AddRow(new string[] {
                         "Application Key"});
-            testRunner.When("ColumnName is entered into the search box and the selection is clicked", ((string)(null)), table71, "When ");
-            testRunner.When("User create custom list with \"TestList5E021D\" name", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+            testRunner.When("User add following columns using URL to the \"Applications\" page:", ((string)(null)), table71, "When ");
+            testRunner.When("User create dynamic list with \"TestList5E021D\" name on \"Applications\" page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
             testRunner.Then("\"TestList5E021D\" list is displayed to user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
             testRunner.When("User clicks \"Devices\" on the left-hand menu", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
             testRunner.Then("\"Devices\" list should be displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
@@ -2786,7 +2780,8 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_FiltersFeature
                     "ist list and following Association:", ((string)(null)), table72, "When ");
             testRunner.Then("\"Application in list TestList5E021D is not used on device\" is displayed in added " +
                     "filter info", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-            testRunner.When("User create custom list with \"TestList5E021D\" name", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+            testRunner.When("User create dynamic list with \"TestList5E021D\" name on \"Devices\" page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+            testRunner.Then("\"TestList5E021D\" list is displayed to user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
             testRunner.When("User clicks \"Applications\" on the left-hand menu", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
             testRunner.Then("\"Applications\" list should be displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
             testRunner.Then("User remove list with \"TestList5E021D\" name on \"Applications\" page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
@@ -2964,17 +2959,13 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_FiltersFeature
                         "Delete_Newly_Created_List"});
             this.ScenarioSetup(scenarioInfo);
             this.FeatureBackground();
-            testRunner.When("User clicks \"Applications\" on the left-hand menu", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-            testRunner.Then("\"Applications\" list should be displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-            testRunner.When("User clicks the Columns button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-            testRunner.Then("Columns panel is displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
             TechTalk.SpecFlow.Table table75 = new TechTalk.SpecFlow.Table(new string[] {
                         "ColumnName"});
             table75.AddRow(new string[] {
                         "Compliance"});
-            testRunner.When("ColumnName is entered into the search box and the selection is clicked", ((string)(null)), table75, "When ");
-            testRunner.When("User create custom list with \"TestSavedList\" name", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-            testRunner.Then("\"TestSavedList\" list is displayed to user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+            testRunner.When("User add following columns using URL to the \"Applications\" page:", ((string)(null)), table75, "When ");
+            testRunner.When("User create dynamic list with \"TestSavedList009\" name on \"Applications\" page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+            testRunner.Then("\"TestSavedList009\" list is displayed to user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
             testRunner.When("User clicks \"Devices\" on the left-hand menu", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
             testRunner.Then("\"Devices\" list should be displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
             testRunner.When("User clicks the Filters button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");

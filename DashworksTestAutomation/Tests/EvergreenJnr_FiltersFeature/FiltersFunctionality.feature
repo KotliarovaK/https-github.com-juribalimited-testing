@@ -225,14 +225,10 @@ Scenario: EvergreenJnr_ApplicationsList_CheckThatFilterIsRestoredCorrectlyAfterL
 
 @Evergreen @Applications @EvergreenJnr_FilterFeature @FilterFunctionality @DAS10977 @Delete_Newly_Created_List
 Scenario: EvergreenJnr_ApplicationsList_CheckThatFilterIsRestoredCorrectlyAfterLeavingThePageAndGoingBackViaTheBrowseBackButtonForListFilters
-	When User clicks "Applications" on the left-hand menu
-	Then "Applications" list should be displayed to the user
-	When User clicks the Columns button
-	Then Columns panel is displayed to the user
-	When ColumnName is entered into the search box and the selection is clicked
+	When User add following columns using URL to the "Applications" page:
 	| ColumnName      |
 	| Application Key |
-	When User create custom list with "TestListD75CD3" name
+	When User create dynamic list with "TestListD75CD3" name on "Applications" page
 	Then "TestListD75CD3" list is displayed to user
 	When User clicks "Devices" on the left-hand menu
 	Then "Devices" list should be displayed to the user
