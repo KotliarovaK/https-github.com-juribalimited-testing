@@ -333,10 +333,10 @@ Scenario Outline: EvergreenJnr_MailboxesList_CheckThatFilterOperatorsIsCorrectIn
 
 Examples: 
 	| operatorValue  | filterOption | rowsCount | operatorValueInInfo |
-	| Equals         | 08 Mar 2016  | 3         | is                  |
-	| Does not equal | 08 Mar 2016  | 14,781    | is not              |
-	| Before         | 08 Mar 2016  | 4,699     | is before           |
-	| After          | 08 Mar 2016  | 10,076    | is after            |
+	| Equals         | 8 Mar 2016   | 3         | is                  |
+	| Does not equal | 8 Mar 2016   | 14,781    | is not              |
+	| Before         | 8 Mar 2016   | 4,699     | is before           |
+	| After          | 8 Mar 2016   | 10,076    | is after            |
 	| Empty          |              | 6         | is empty            |
 	| Not empty      |              | 14,778    | is not empty        |
 
@@ -523,7 +523,7 @@ Scenario Outline: EvergreenJnr_DevicesList_CheckThatDateAndTimeFiltersWithDoesNo
 Examples: 
 	| FilterName                   | Value       | RowCount |
 	| Windows7Mi: Date & Time Task | 22 Nov 2012 | 17,209   |
-	| Build Date                   | 06 Nov 2004 | 17,224   |
+	| Build Date                   | 6 Nov 2004  | 17,224   |
 
 @Evergreen @Devices @Evergreen_FiltersFeature @FiltersDisplay @DAS11187
 Scenario Outline: EvergreenJnr_DevicesList_CheckThatCustomFiltersAreContainsAllExpectedAssociations
