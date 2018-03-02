@@ -65,8 +65,7 @@ Scenario: EvergreenJnr_DevicesList_CheckThatCustomListCreationBlockIsNotDisplaye
 	| SelectedCheckboxes  |
 	| None                |
 	Then "Windows7Mi: Category" filter is added to the list
-	#When User create dynamic list with "TestListE63B7D" name on "Devices" page
-	When User create custom list with "TestListE63B7D" name
+	When User create dynamic list with "TestListE63B7D" name on "Devices" page
 	Then "TestListE63B7D" list is displayed to user
 	When User clicks the Filters button
 	Then Filters panel is displayed to the user
@@ -111,8 +110,8 @@ Scenario: EvergreenJnr_UsersList_CheckThatListsIsDisplayedInAlphabeticalOrder
 	| SelectedCheckboxes |
 	| Red                |
 	Then "Compliance" filter is added to the list
-	When User create custom list with "L TestList Custom Filter" name
-	Then "L TestList Custom Filter" list is displayed to user
+	When User create dynamic list with "L TestList Custom List" name on "Users" page
+	Then "L TestList Custom List" list is displayed to user
 	When User navigates to the "All Users" list
 	Then "Users" list should be displayed to the user
 	When User clicks the Filters button
@@ -121,8 +120,8 @@ Scenario: EvergreenJnr_UsersList_CheckThatListsIsDisplayedInAlphabeticalOrder
 	| SelectedCheckboxes |
 	| Started            |
 	Then "Babel(Engl: Another task" filter is added to the list
-	When User create custom list with "A TestList Custom Filter" name
-	Then "A TestList Custom Filter" list is displayed to user
+	When User create dynamic list with "A TestList Custom List" name on "Users" page
+	Then "A TestList Custom List" list is displayed to user
 	When User navigates to the "All Users" list
 	Then "Users" list should be displayed to the user
 	When User clicks the Actions button
@@ -157,7 +156,7 @@ Scenario: EvergreenJnr_UsersList_CheckThatListsIsDisplayedInAlphabeticalOrder
 	| SelectedCheckboxes |
 	| TRUE               |
 	Then "Enabled" filter is added to the list
-	When User create custom list with "X TestList Custom List" name
+	When User create dynamic list with "X TestList Custom List" name on "Users" page
 	Then "X TestList Custom List" list is displayed to user
 	When User navigates to the "All Users" list
 	Then "Users" list should be displayed to the user
@@ -228,7 +227,7 @@ Scenario: EvergreenJnr_DevicesList_CheckTheSortOrderIsSavedForExistingListAndNot
 	Then "City" filter is added to the list
 	When User click on 'Owner Display Name' column header
 	Then data in table is sorted by 'Owner Display Name' column in ascending order
-	When User create custom list with "Custom List TestName" name
+	When User create dynamic list with "Custom List TestName" name on "Devices" page
 	Then "Custom List TestName" list is displayed to user
 	When User navigates to the "All Devices" list
 	Then "Devices" list should be displayed to the user
@@ -339,8 +338,8 @@ Scenario: EvergreenJnr_DevicesList_CheckThatSortingWillBeWorkForExistingSavedDyn
 	Then "Compliance" filter is added to the list
 	When User add "City" filter where type is "Equals" with added column and "Jersey City" Lookup option
 	Then "City" filter is added to the list
-	When User create custom list with "Dynamic List TestName" name
-	Then "Dynamic List TestName" list is displayed to user
+	When User create dynamic list with "Dynamic List TestName qq2r" name on "Devices" page
+	Then "Dynamic List TestName qq2r" list is displayed to user
 	When User click on 'Compliance' column header
 	Then data in table is sorted by 'Compliance' column in ascending order
 	And Edit List menu is displayed
@@ -358,7 +357,7 @@ Scenario: EvergreenJnr_DevicesList_CheckThatEditListMenuNotDisplayedForActiveLis
 	Then "Compliance" filter is added to the list
 	When User click on 'Compliance' column header
 	Then data in table is sorted by 'Compliance' column in ascending order
-	When User create custom list with "Dynamic List TestName" name
+	When User create dynamic list with "Dynamic List TestName" name on "Devices" page
 	Then "Dynamic List TestName" list is displayed to user
 	When User navigates to the "All Devices" list
 	Then "Devices" list should be displayed to the user
@@ -470,8 +469,8 @@ Scenario: EvergreenJnr_DevicesList_CheckThatDatabaseErrorOccurringOccurringWhenA
 	Then "Babel(Engl: Readiness" filter is added to the list
 	When User click on 'Hostname' column header
 	Then data in table is sorted by 'Hostname' column in ascending order
-	When User create custom list with "TestName" name
-	Then "TestName" list is displayed to user
+	When User create dynamic list with "TestName QQRT" name on "Devices" page
+	Then "TestName QQRT" list is displayed to user
 	And "2" rows are displayed in the agGrid
 
 @Evergreen @Devices @EvergreenJnr_ListPanel @CustomListDisplay @DAS11465 @Delete_Newly_Created_List

@@ -180,7 +180,7 @@ Scenario Outline: EvergreenJnr_AllLists_CheckThatActiveListIsRefreshedOnListDeta
 	Then "<PageName>" list should be displayed to the user
 	When User click on '<Columnname>' column header
 	Then data in table is sorted by '<Columnname>' column in ascending order
-	When User create custom list with "TestListE3A207" name
+	When User create dynamic list with "TestListE3A207" name on "<PageName>" page
 	Then "TestListE3A207" list is displayed to user
 	When User clicks the List Details button
 	Then List details panel is displayed to the user
