@@ -73,6 +73,10 @@ namespace DashworksTestAutomation.Steps.API
         [When(@"User create static list with ""(.*)"" name on ""(.*)"" page")]
         public void WhenUserCreateStaticListWithNameOnPage(string listName, string pageName)
         {
+            //TODO path Items via step parameters
+            string items = "67941,90234";
+
+            #region Create list
             var requestUri = $"{UrlProvider.RestClientBaseUrl}lists/{pageName.ToLower()}";
             var request = new RestRequest(requestUri);
 
@@ -90,10 +94,65 @@ namespace DashworksTestAutomation.Steps.API
                 throw new Exception($"Unable to execute request. URI: {requestUri}");
 
             var content = response.Content;
-
             var responseContent = JsonConvert.DeserializeObject<JObject>(content);
             var listId = responseContent["listId"].ToString();
-            var url = $"{UrlProvider.EvergreenUrl}/lists/{pageName.ToLower()}/{listId}/items";
+
+            #endregion
+
+            #region Send Options to allow Put requests
+
+            requestUri = $"{UrlProvider.RestClientBaseUrl}lists/{pageName.ToLower()}/{listId}";
+
+            request = new RestRequest(requestUri);
+
+            request.AddParameter("Accept", "*/*");
+            request.AddParameter("Accept-Encoding", "gzip, deflate");
+            request.AddParameter("Accept-Language", "en-US,en;q=0.9");
+            request.AddParameter("Access-Control-Request-Headers", "content-type");
+            request.AddParameter("Access-Control-Request-Method", "PUT");
+            request.AddParameter("Connection", "keep-alive");
+            request.AddParameter("Host", UrlProvider.RestClientBaseUrl.TrimEnd('/'));
+            request.AddParameter("Origin", UrlProvider.Url.TrimEnd('/'));
+
+            response = _client.Value.Options(request);
+
+            #endregion
+
+            #region Add query to list
+
+            request = new RestRequest(requestUri);
+
+            request.AddParameter("Accept", "application/json");
+            request.AddParameter("Accept-Encoding", "gzip, deflate");
+            request.AddParameter("Accept-Language", "en-US,en;q=0.9");
+            request.AddParameter("Connection", "keep-alive");
+            request.AddParameter("Content-Type", "application/json");
+            request.AddParameter("Host", UrlProvider.RestClientBaseUrl.TrimEnd('/'));
+            request.AddParameter("Origin", UrlProvider.Url.TrimEnd('/'));
+            request.AddParameter("Referer", UrlProvider.EvergreenUrl);
+            request.AddParameter("listId", listId);
+            request.AddParameter("listName", listName);
+            request.AddParameter("listType", "Static");
+            //TODO path correct query string
+            request.AddParameter("queryString", $"$select=username,directoryName,displayName,fullyDistinguishedObjectName&$listid={listId}");
+            request.AddParameter("sharedAccessType", "Private");
+            request.AddParameter("userId", DatabaseWorker.GetUserIdByLogin(_user.UserName));
+
+            response = _client.Value.Put(request);
+
+            #endregion
+
+            requestUri = $"{UrlProvider.RestClientBaseUrl}lists/{pageName.ToLower()}/{listId}/items";
+            request = new RestRequest(requestUri);
+
+            request.AddParameter("Host", UrlProvider.RestClientBaseUrl);
+            request.AddParameter("Origin", UrlProvider.Url.TrimEnd('/'));
+            request.AddParameter("Referer", UrlProvider.EvergreenUrl);
+            request.AddParameter("items", items);
+
+            response = _client.Value.Post(request);
+
+            var url = $"{UrlProvider.EvergreenUrl}#/{pageName.ToLower()}?$listid={listId}";
 
             _driver.Navigate().GoToUrl(url);
             _driver.WaitForDataLoading();
