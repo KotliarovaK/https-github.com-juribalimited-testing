@@ -151,10 +151,32 @@ namespace DashworksTestAutomation.Helpers
                     return "emailCount";
 
                 case "Import Type":
-                    return "importType";
+                    switch (pageName)
+                    {
+                        case "Mailboxes":
+                            return "importType";
+                        case "Applications":
+                            return "distributionType";
+                        case "Devices":
+                            return "distributionType";
+                        default:
+                            throw new Exception($"'{pageName}' page not found in convertor");
+                    }
 
                 case "Email Address":
                     return "eMailAddress";
+
+                case "Windows7Mi: Readiness":
+                    return "project_1_ragStatus";
+
+                case "Windows7Mi: Group Computer Rag Radio Date Owner":
+                    return "project_task_1_12865_1_Task";
+
+                case "Department":
+                    return "lDAP_231";
+
+                case "Owner Username":
+                    return "ownerUsername";
 
                 case "" +
                      "DAS-" +

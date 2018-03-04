@@ -16,7 +16,7 @@ Scenario: EvergreenJnr_DevicesList_CheckThatDynamicFiltersAreClearedForStaticLis
 	| SelectedCheckboxes  |
 	| None                |
 	Then "Windows7Mi: Category" filter is added to the list
-	When User create custom list with "TestListE5FC4A" name
+	When User create dynamic list with "TestListE5FC4A" name on "Devices" page
 	Then "TestListE5FC4A" list is displayed to user
 	And "5,130" rows are displayed in the agGrid
 	When User navigates to the "All Devices" list
@@ -47,7 +47,7 @@ Scenario: EvergreenJnr_DevicesList_CheckThatFiltersAndColumnsAreRestoredForSaved
 	| Not Applicable     |
 	| No                 |
 	Then "Windows7Mi: SS Application List Completed" filter is added to the list
-	When User create custom list with "TestList886350" name
+	When User create dynamic list with "TestList886350" name on "Devices" page
 	Then "TestList886350" list is displayed to user
 	And "5,161" rows are displayed in the agGrid
 	When User navigates to the "All Devices" list
