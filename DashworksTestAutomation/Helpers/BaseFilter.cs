@@ -240,7 +240,8 @@ namespace DashworksTestAutomation.Helpers
                 ".//div[@class='filterAddPanel ng-star-inserted']/div[@class='form-container']//div[@class='form-group ng-star-inserted']//li/span";
             var filterValueSelector = By.XPath(
                 ".//div[@class='filterAddPanel ng-star-inserted']//div[@class='mat-input-infix mat-form-field-infix']//input");
-            var addButtonSelector = By.XPath(".//div[@class='filterAddPanel ng-star-inserted']//button[@title='Add']");
+            var addButtonSelector = By.XPath(".//div[@class='filterAddPanel ng-star-inserted']//button[@class='button-small mat-primary mat-raised-button ng-star-inserted']");
+
             SelectOperator();
             _driver.WaitForDataLoading();
             foreach (var row in _optionsTable.Rows)
@@ -248,17 +249,22 @@ namespace DashworksTestAutomation.Helpers
                 if (!_driver.IsElementDisplayed(filterValueSelector)) continue;
                 _driver.FindElement(filterValueSelector).SendKeys(row["Values"]);
 
-                if (_driver.IsElementDisplayed(addButtonSelector))
+                if (_optionsTable.RowCount > 1)
                 {
-                    _driver.FindElement(addButtonSelector).Click();
+                    if (_driver.IsElementDisplayed(addButtonSelector))
+                    {
+                        _driver.FindElement(addButtonSelector).Click();
 
-                    //Show all added values
-                    if (_driver.IsElementDisplayed(By.XPath(string.Format(addedOptionSelector, "more"))))
-                        _driver.FindElement(By.XPath(string.Format(addedOptionSelector, "more"))).Click();
-                    var addedOptions = _driver.FindElements(By.XPath(allAddedOptionsSelector))
-                        .Select(value => value.Text).ToList();
-                    Assert.Contains(row["Values"], addedOptions);
+                        //Show all added values
+                        if (_driver.IsElementDisplayed(By.XPath(string.Format(addedOptionSelector, "more"))))
+                            _driver.FindElement(By.XPath(string.Format(addedOptionSelector, "more"))).Click();
+                        var addedOptions = _driver.FindElements(By.XPath(allAddedOptionsSelector))
+                            .Select(value => value.Text).ToList();
+                        Assert.Contains(row["Values"], addedOptions);
+                    }
+                    else throw new Exception("Add more values button is not displayed");
                 }
+                
             }
 
             SaveFilter();
