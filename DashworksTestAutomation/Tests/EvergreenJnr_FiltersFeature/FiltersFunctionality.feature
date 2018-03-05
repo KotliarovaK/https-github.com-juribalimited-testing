@@ -411,3 +411,19 @@ Scenario: EvergreenJnr_DevicesList_CheckThatErrorsDoNotAppearAndFullDataIsDispla
 	| TRUE               |
 	Then full list content is displayed to the user
 	Then There are no errors in the browser console
+
+@Evergreen @Devices @EvergreenJnr_FilterFeature @FilterFunctionality @DAS11760
+Scenario: EvergreenJnr_DevicesList_CheckThatTheSaveButtonIsNotAvailableWithoutTheFilterValue
+	When User clicks "Devices" on the left-hand menu
+	Then "Devices" list should be displayed to the user
+	When User clicks the Filters button
+	Then Filters panel is displayed to the user
+	When user select "Application Name" filter
+	#When User enters "Not entitled to device's owner" in Association search field
+	When User select "Not entitled to device's owner" in Association 
+	When User add "Application Name" filter where type is "Equals" with following Value and Association:
+	| Values | Association    |
+	|        | Used on device |
+	
+	
+	
