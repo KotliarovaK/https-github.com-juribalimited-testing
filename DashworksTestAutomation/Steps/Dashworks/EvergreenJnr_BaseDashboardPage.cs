@@ -190,6 +190,14 @@ namespace DashworksTestAutomation.Steps.Dashworks
             Assert.AreEqual(text, page.FilterContainer.Text.TrimStart(' ').TrimEnd(' '),
                 $"Filter is created incorrectly");
         }
+
+        [Then(@"""(.*)"" Application version is displayed")]
+        public void ThenApplicationVersionIsDisplayed(string versionNumber)
+        {
+            var page = _driver.NowAt<BaseDashboardPage>();
+            page.GetCorrectApplicationVersion(versionNumber);
+        }
+
         [Then(@"Content is empty in the column")]
         public void ThenContentIsEmptyInTheColumn(Table table)
         {
