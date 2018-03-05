@@ -146,6 +146,14 @@ namespace DashworksTestAutomation.Pages.Evergreen
             return Driver.FindElement(By.XPath(selector));
         }
 
+        public IWebElement GetCorrectApplicationVersion(string versionNumber)
+        {
+            var selector = By.XPath(
+                $".//div[@class='topnav-footer']//span[contains(text(),'{versionNumber}')]");
+            Driver.WaitWhileControlIsNotDisplayed(selector);
+            return Driver.FindElement(selector);
+        }
+
         public int GetColumnNumberByName(string columnName)
         {
             var allHeadersSelector = By.XPath(".//div[@class='ag-header-container']/div/div");
