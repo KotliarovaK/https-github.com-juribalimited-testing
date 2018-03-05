@@ -424,7 +424,7 @@ Scenario: EvergreenJnr_DevicesList_CheckThatApplicationsFilterIsContainsAllExpec
 	| Not used by device's owner     |
 	| Not entitled to device's owner |
 
-@Evergreen @Applications @EvergreenJnr_FiltersFeature @FilterFunctionality @DAS11142 @DAS11665 @Delete_Newly_Created_List @Not_Run
+@Evergreen @Applications @EvergreenJnr_FiltersFeature @FilterFunctionality @DAS11142 @DAS11665 @Delete_Newly_Created_List
 Scenario: EvergreenJnr_ApplicationsList_CheckThatBracketsAreDisplayedCorrectlyInFilterInfo
 	When User clicks "Applications" on the left-hand menu
 	Then "Applications" list should be displayed to the user
@@ -448,15 +448,15 @@ Scenario: EvergreenJnr_ApplicationsList_CheckThatBracketsAreDisplayedCorrectlyIn
 	| Values                              |
 	| (self-installing)                   |
 	Then "Application" filter is added to the list
-	When User create custom list with "TestList3065CC" name
+	When User create dynamic list with "TestList3065CC" name on "Applications" page
 	Then "TestList3065CC" list is displayed to user
-	And "3" rows are displayed in the agGrid
+	And "6" rows are displayed in the agGrid
 	When User navigates to the "All Applications" list
 	Then "Applications" list should be displayed to the user
 	When User navigates to the "TestList3065CC" list
 	And User clicks the Filters button
 	Then "TestList3065CC" list is displayed to user
-	And "3" rows are displayed in the agGrid
+	And "6" rows are displayed in the agGrid
 	And Edit List menu is not displayed
 	And Values is displayed in added filter info
 	| Values                                               |
@@ -779,7 +779,7 @@ Scenario: EvergreenJnr_DevicesList_CheckThat500ErrorIsNotDisplayedForStaticListA
 	| SelectedList       | Association        |
 	| StaticListTestName | Not used on device |
 	Then "Application in list StaticListTestName is not used on device" is displayed in added filter info
-	When User create custom list with "TestList8D5C03" name
+	When User create dynamic list with "TestList8D5C03" name on "Devices" page
 	When User clicks "Applications" on the left-hand menu
 	Then "Applications" list should be displayed to the user
 	Then User remove list with "StaticListTestName" name on "Applications" page
