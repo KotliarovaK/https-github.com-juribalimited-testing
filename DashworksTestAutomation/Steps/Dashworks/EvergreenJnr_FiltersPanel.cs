@@ -84,6 +84,17 @@ namespace DashworksTestAutomation.Steps.Dashworks
             filterElement.AssociationSearchTextbox.SendKeys(searchedText);
         }
 
+        [When(@"User select ""(.*)"" in Association")]
+        public void WhenUserSelectInAssociation(string checkboxName)
+        {
+            var filterElement = _driver.NowAt<FiltersElement>();
+            filterElement.AssociationSearchTextbox.Click();
+            _driver.WaitWhileControlIsNotDisplayed<FiltersElement>(() => filterElement.LookupFilterSearchTextbox);
+            filterElement.AssociationSearchTextbox.Clear();
+            filterElement.AssociationSearchTextbox.SendKeys(checkboxName);
+            filterElement.GetAssociationCheckbox(checkboxName);
+        }
+
         [Then(@"search values in Association section working by specific search criteria")]
         public void ThenSearchValuesInAssociationSectionWorkingBySpecificSearchCriteria()
         {
