@@ -124,6 +124,13 @@ namespace DashworksTestAutomation.Pages.Evergreen
             return filterValues;
         }
 
+        public void GetAssociationCheckbox(string checkboxName)
+        {
+            string checkboxSettingsSelector = $".//li[@class='ng-star-inserted']//span[text()='{checkboxName}']";
+            Driver.WaitWhileControlIsNotDisplayed(By.XPath(checkboxSettingsSelector));
+            Driver.FindElement(By.XPath(checkboxSettingsSelector)).Click();
+        }
+
         public void AddFilter(string filterName)
         {
             if (Driver.IsElementExists(AddNewFilterButton))
