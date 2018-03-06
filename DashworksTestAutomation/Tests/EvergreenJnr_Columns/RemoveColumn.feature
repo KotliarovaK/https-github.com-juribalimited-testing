@@ -290,7 +290,7 @@ Scenario: EvergreenJnr_DevicesList_CheckThatRemovingColumnAndFilterFromUrlWorksC
 	| Compliance |
 	| Device Key |
 
-@Evergreen @Devices @EvergreenJnr_Columns @RemoveColumn @DAS1044 @DAS11506 @Delete_Newly_Created_List @Not_Run
+@Evergreen @Devices @EvergreenJnr_Columns @RemoveColumn @DAS1044 @DAS11506 @Delete_Newly_Created_List
 Scenario: EvergreenJnr_DevicesList_CheckThatRemovingColumnAndFilterAndCustomListFromUrlWorksCorrectly
 	When User clicks "Devices" on the left-hand menu
 	Then "Devices" list should be displayed to the user
@@ -354,23 +354,14 @@ Scenario: EvergreenJnr_DevicesList_CheckThatColumnIsDisplayedInColumnsPanelAfter
 	| Owner Common Name |
 	And "26" subcategories is displayed for "Device Owner" category
 
-@Evergreen @Users @EvergreenJnr_Columns @RemoveColumn @DAS11515 @DAS11506 @Not_Run
+@Evergreen @Users @EvergreenJnr_Columns @RemoveColumn @DAS11515 @DAS11506
 Scenario: EvergreenJnr_UsersList_CheckThatColumnIsDisplayedInColumnsPanelAfterRemovingAllColumnsFromTheURL
-	When User clicks "Users" on the left-hand menu
-	Then "Users" list should be displayed to the user
-	When User clicks the Columns button
-	Then Columns panel is displayed to the user
-	When ColumnName is entered into the search box and the selection is clicked
+	When User add following columns using URL to the "Users" page:
 	| ColumnName                                   |
 	| Last Logon Date                              |
 	| Enabled                                      |
 	| Windows7Mi: Read Only on Project Object Page |
-	Then ColumnName is added to the list
-	| ColumnName                                   |
-	| Last Logon Date                              |
-	| Enabled                                      |
-	| Windows7Mi: Read Only on Project Object Page |
-	And "Last Logon Date" column is added to URL on "Users" page
+	Then "Last Logon Date" column is added to URL on "Users" page
 	And "Enabled" column is added to URL on "Users" page
 	And "Windows7Mi: Read Only on Project Object Page" column is added to URL on "Users" page
 	When User removes all columns by URL
@@ -382,7 +373,7 @@ Scenario: EvergreenJnr_UsersList_CheckThatColumnIsDisplayedInColumnsPanelAfterRe
 	| Enabled                                      |
 	| Windows7Mi: Read Only on Project Object Page |
 	And "18" subcategories is displayed for "User" category
-	And "42" subcategories is displayed for "Project Tasks: Windows7Mi" category
+	And "47" subcategories is displayed for "Project Tasks: Windows7Mi" category
 
 @Evergreen @Applications @EvergreenJnr_Columns @RemoveColumn @DAS11515
 Scenario: EvergreenJnr_ApplicationsList_CheckThatColumnIsDisplayedInColumnsPanelAfterRemovingAColumnWhichAlsoExistsAsAFilter

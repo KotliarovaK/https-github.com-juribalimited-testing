@@ -58,7 +58,7 @@ Scenario: EvergreenJnr_ApplicationsList_CheckThatAddColumnCheckboxWorksCorrectly
 	Then "Windows7Mi: Category" filter is added to the list
 	Then table data is filtered correctly
 
-@Evergreen @Applications @EvergreenJnr_FiltersFeature @FilterFunctionality @DAS11166 @DAS11665 @Delete_Newly_Created_List @Not_Run
+@Evergreen @Applications @EvergreenJnr_FiltersFeature @FilterFunctionality @DAS11166 @DAS11665 @Delete_Newly_Created_List
 Scenario: EvergreenJnr_ApplicationsList_CheckThatFilterIsRestoredAfterGoingBackToTheListAgain
 	When User clicks "Applications" on the left-hand menu
 	Then "Applications" list should be displayed to the user
@@ -70,7 +70,7 @@ Scenario: EvergreenJnr_ApplicationsList_CheckThatFilterIsRestoredAfterGoingBackT
 	| Microsoft Office 97, Developer Edition Tools |
 	| Microsoft Office 97, Standard Edition        |
 	Then "Application" filter is added to the list
-	When User create custom list with "TestList5D30CF" name
+	When User create dynamic list with "TestList5D30CF" name on "Applications" page
 	Then "TestList5D30CF" list is displayed to user
 	When User clicks the Filters button
 	Then Filters panel is displayed to the user
@@ -114,7 +114,7 @@ Scenario: EvergreenJnr_DevicesList_CheckThatAddColumnCheckboxIsCheckedAfterSavin
 	| SelectedCheckboxes |
 	| Red                |
 	Then "Compliance" filter is added to the list
-	When User create custom list with "TestList4A5CD6" name
+	When User create dynamic list with "TestList4A5CD6" name on "Devices" page
 	Then "TestList4A5CD6" list is displayed to user
 	When User navigates to the "All Devices" list
 	Then "Devices" list should be displayed to the user
