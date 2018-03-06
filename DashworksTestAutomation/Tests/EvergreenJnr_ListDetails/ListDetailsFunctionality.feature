@@ -12,7 +12,7 @@ Scenario Outline: EvergreenJnr_AllLists_CheckThatRenamingAListWorkingCorrectlyFo
 	Then "<PageName>" list should be displayed to the user
 	When User click on '<Columnname>' column header
 	Then data in table is sorted by '<Columnname>' column in ascending order
-	When User create custom list with "TestList12CA0D" name
+	When User create dynamic list with "TestList12CA0D" name on "<PageName>" page
 	#Workaround for DAS-11570. Remove after fix
 	#And User navigates to the "TestList12CA0D" list
 	When User clicks the List Details button
@@ -59,7 +59,7 @@ Scenario Outline: EvergreenJnr_AllLists_CheckThatFavoriteAListWorkingCorrectlyFo
 	Then "<PageName>" list should be displayed to the user
 	When User click on '<Columnname>' column header
 	Then data in table is sorted by '<Columnname>' column in ascending order
-	When User create custom list with "TestList80EA23" name
+	When User create dynamic list with "TestList80EA23" name on "<PageName>" page
 	#Workaround for DAS-11570. Remove after fix
 	#And User navigates to the "TestList80EA23" list
 	When User clicks the List Details button
@@ -133,7 +133,7 @@ Scenario Outline: EvergreenJnr_AllLists_CheckDefaultOptionsInListDetailsForDynam
 	Then "<PageName>" list should be displayed to the user
 	When User click on '<Columnname>' column header
 	Then data in table is sorted by '<Columnname>' column in ascending order
-	When User create custom list with "TestListCED2D6" name
+	When User create dynamic list with "TestListCED2D6" name on "<PageName>" page
 	#Workaround for DAS-11570. Remove after fix
 	#And User navigates to the "TestListCED2D6" list
 	When User clicks the List Details button
