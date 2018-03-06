@@ -126,7 +126,7 @@ namespace DashworksTestAutomation.Pages.Evergreen
 
         public void GetAssociationCheckbox(string checkboxName)
         {
-            string checkboxSettingsSelector = $".//div[@class='list-container ng-star-inserted']//span[text()='{checkboxName}']";
+            string checkboxSettingsSelector = $".//li[@class='ng-star-inserted']//span[text()='{checkboxName}']";
             Driver.WaitWhileControlIsNotDisplayed(By.XPath(checkboxSettingsSelector));
             Driver.FindElement(By.XPath(checkboxSettingsSelector)).Click();
         }
