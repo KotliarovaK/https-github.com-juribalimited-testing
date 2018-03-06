@@ -425,5 +425,5 @@ Scenario: EvergreenJnr_DevicesList_CheckThatTheSaveButtonIsNotAvailableWithoutTh
 	When User add "Application Name" filter where type is "Equals" with following Value and Association:
 	| Values | Association    |
 	| adobe  | Used on device |
-	When User create dynamic list with "TestListF67LD3" name on "Devices" page
+	When User create dynamic list with "TestListF58LY5" name on "Devices" page
 	Then Edit List menu is not displayed

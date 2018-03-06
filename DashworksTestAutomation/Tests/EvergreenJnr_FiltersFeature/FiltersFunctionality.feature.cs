@@ -1657,7 +1657,7 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_FiltersFeature
                         "Used on device"});
             testRunner.When("User add \"Application Name\" filter where type is \"Equals\" with following Value an" +
                     "d Association:", ((string)(null)), table26, "When ");
-            testRunner.When("User create dynamic list with \"TestListF67LD3\" name on \"Devices\" page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+            testRunner.When("User create dynamic list with \"TestListF58LY5\" name on \"Devices\" page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
             testRunner.Then("Edit List menu is not displayed", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
             this.ScenarioCleanup();
         }
