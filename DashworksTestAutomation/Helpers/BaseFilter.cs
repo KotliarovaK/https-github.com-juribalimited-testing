@@ -251,20 +251,15 @@ namespace DashworksTestAutomation.Helpers
 
                 if (_optionsTable.RowCount > 1)
                 {
-                    if (_driver.IsElementDisplayed(addButtonSelector))
-                    {
-                        _driver.FindElement(addButtonSelector).Click();
+                    _driver.FindElement(addButtonSelector).Click();
 
-                        //Show all added values
-                        if (_driver.IsElementDisplayed(By.XPath(string.Format(addedOptionSelector, "more"))))
-                            _driver.FindElement(By.XPath(string.Format(addedOptionSelector, "more"))).Click();
-                        var addedOptions = _driver.FindElements(By.XPath(allAddedOptionsSelector))
-                            .Select(value => value.Text).ToList();
-                        Assert.Contains(row["Values"], addedOptions);
-                    }
-                    else throw new Exception("Add more values button is not displayed");
+                    //Show all added values
+                    if (_driver.IsElementDisplayed(By.XPath(string.Format(addedOptionSelector, "more"))))
+                        _driver.FindElement(By.XPath(string.Format(addedOptionSelector, "more"))).Click();
+                    var addedOptions = _driver.FindElements(By.XPath(allAddedOptionsSelector))
+                        .Select(value => value.Text).ToList();
+                    Assert.Contains(row["Values"], addedOptions);
                 }
-                
             }
 
             SaveFilter();

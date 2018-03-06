@@ -35,7 +35,7 @@ Scenario: EvergreenJnr_UsersList_CheckThatColumnsOrderSavedAfterSearch
 	| Smith          | 59           |
 	Then "Compliance" column is "Right" Pinned
 
-@Evergreen @Devices @EvergreenJnr_GridActions @ColumnOrder @DAS10621 @DAS11666
+@Evergreen @Devices @EvergreenJnr_GridActions @ColumnOrder @DAS10621 @DAS11666 @Not_Run
 Scenario: EvergreenJnr_DevicesList_CheckThatColumnsOrderSavedAfterAddingAFilter
 	When User clicks "Devices" on the left-hand menu
 	Then "Devices" list should be displayed to the user
@@ -69,7 +69,7 @@ Scenario: EvergreenJnr_DevicesList_CheckThatColumnsOrderSavedAfterAddingAFilter
 	| Compliance           |
 	| Windows7Mi: Category |
 
-@Evergreen @Users @EvergreenJnr_GridActions @ColumnOrder @DAS11666
+@Evergreen @Users @EvergreenJnr_GridActions @ColumnOrder @DAS11666 @Not_Run
 Scenario: EvergreenJnr_UsersList_CheckThatColumnsOrderSavedAfterAddingAnotherColumn
 	When User add following columns using URL to the "Users" page:
 	| ColumnName    |
@@ -98,7 +98,7 @@ Scenario: EvergreenJnr_UsersList_CheckThatColumnsOrderSavedAfterAddingAnotherCol
 	| Compliance         |
 	| User Key           |
 
-@Evergreen @Mailboxes @EvergreenJnr_GridActions @ColumnOrder @DAS11666
+@Evergreen @Mailboxes @EvergreenJnr_GridActions @ColumnOrder @DAS11666 @Not_Run
 Scenario: EvergreenJnr_MailboxesList_CheckThatColumnsOrderSavedAfterUsingTheAgGridSearch
 	When User add following columns using URL to the "Mailboxes" page:
 	| ColumnName  |
