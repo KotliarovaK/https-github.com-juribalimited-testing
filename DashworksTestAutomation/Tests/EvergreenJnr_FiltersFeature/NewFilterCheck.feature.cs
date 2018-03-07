@@ -467,6 +467,8 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_FiltersFeature
         [NUnit.Framework.CategoryAttribute("DAS11509")]
         [NUnit.Framework.CategoryAttribute("DAS11507")]
         [NUnit.Framework.CategoryAttribute("DAS11509")]
+        [NUnit.Framework.CategoryAttribute("DAS12026")]
+        [NUnit.Framework.CategoryAttribute("Not_Run")]
         [NUnit.Framework.TestCaseAttribute("Windows7Mi: Application Rationalisation", "Equals, Does not equal", "RETIRE", "Windows7Mi: Application Rationalisation is Retire", "85", new string[0])]
         [NUnit.Framework.TestCaseAttribute("Babel(Engl: Application Rationalisation", "Equals, Does not equal", "UNCATEGORISED", "Babel(Engl: Application Rationalisation is Uncategorised", "302", new string[0])]
         [NUnit.Framework.TestCaseAttribute("Barry\'sUse: Application Rationalisation", "Equals, Does not equal", "KEEP", "Barry\'sUse: Application Rationalisation is Keep", "2", new string[0])]
@@ -510,7 +512,9 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_FiltersFeature
                     "DAS10512",
                     "DAS11509",
                     "DAS11507",
-                    "DAS11509"};
+                    "DAS11509",
+                    "DAS12026",
+                    "Not_Run"};
             if ((exampleTags != null))
             {
                 @__tags = System.Linq.Enumerable.ToArray(System.Linq.Enumerable.Concat(@__tags, exampleTags));

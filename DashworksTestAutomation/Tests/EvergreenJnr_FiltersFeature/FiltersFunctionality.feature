@@ -223,7 +223,7 @@ Scenario: EvergreenJnr_ApplicationsList_CheckThatFilterIsRestoredCorrectlyAfterL
 	Then "5" rows are displayed in the agGrid
 	Then "Application is Microsoft Office 97, Professional Edition" is displayed in added filter info
 
-@Evergreen @Applications @EvergreenJnr_FilterFeature @FilterFunctionality @DAS10977 @Delete_Newly_Created_List
+@Evergreen @Applications @EvergreenJnr_FilterFeature @FilterFunctionality @DAS10977 @Delete_Newly_Created_List @Not_Run
 Scenario: EvergreenJnr_ApplicationsList_CheckThatFilterIsRestoredCorrectlyAfterLeavingThePageAndGoingBackViaTheBrowseBackButtonForListFilters
 	When User add following columns using URL to the "Applications" page:
 	| ColumnName      |
@@ -411,3 +411,19 @@ Scenario: EvergreenJnr_DevicesList_CheckThatErrorsDoNotAppearAndFullDataIsDispla
 	| TRUE               |
 	Then full list content is displayed to the user
 	Then There are no errors in the browser console
+
+@Evergreen @Devices @EvergreenJnr_FilterFeature @FilterFunctionality @DAS11760 @Delete_Newly_Created_List
+Scenario: EvergreenJnr_DevicesList_CheckThatTheSaveButtonIsNotAvailableWithoutTheFilterValue
+	When User clicks "Devices" on the left-hand menu
+	Then "Devices" list should be displayed to the user
+	When User clicks the Filters button
+	Then Filters panel is displayed to the user
+	When user select "Application Name" filter
+	When User select "Not entitled to device" in Association 
+	Then Save button is not available on the Filter panel
+	When User have reset all filters
+	When User add "Application Name" filter where type is "Equals" with following Value and Association:
+	| Values | Association    |
+	| adobe  | Used on device |
+	When User create dynamic list with "TestListF58LY5" name on "Devices" page
+	Then Edit List menu is not displayed

@@ -19,3 +19,16 @@ Examples:
 	| Users        |
 	| Applications |
 	| Mailboxes    |
+
+@Evergreen @AllLists @EvergreenJnr_BaseDashboardPage @BaseDashboardPage @DAS11618
+Scenario Outline: EvergreenJnr_AllList_CheckDefaultSortOrderOnTheLists
+	When User clicks "<ListName>" on the left-hand menu
+	Then "<ListName>" list should be displayed to the user
+	Then data in the table is sorted by "<ColumnName>" column in ascending order by default
+
+	Examples: 
+	| ListName     | ColumnName    |
+	| Devices      | Hostname      |
+	| Users        | Username      |
+	| Applications | Application   |
+	| Mailboxes    | Email Address |
