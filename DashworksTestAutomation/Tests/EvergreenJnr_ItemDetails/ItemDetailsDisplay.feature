@@ -325,3 +325,6 @@ Scenario: EvergreenJnr_DevicesLists_CheckThatTheFilterDropddownIsDisplayedFullyW
 	And User navigates to the "Applications" tab
 	And User have opened Column Settings for "Installed" column in the Details Page table
 	And User clicks Filter button on the Column Settings panel
+	Then Filter panel has standard size
+	Then User select "FALSE" checkbox from filter on the Details Page
+	Then Filter panel has standard size
