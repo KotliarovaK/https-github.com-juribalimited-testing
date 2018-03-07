@@ -15,11 +15,11 @@ using TechTalk.SpecFlow;
 namespace DashworksTestAutomation.Steps.API
 {
     [Binding]
-    internal class EvergreenJnr_FiltersFunctionality
+    internal class EvergreenJnr_API_FiltersFunctionality
     {
         private readonly RestWebClient _client;
 
-        public EvergreenJnr_FiltersFunctionality(RestWebClient client)
+        public EvergreenJnr_API_FiltersFunctionality(RestWebClient client)
         {
             _client = client;
         }
