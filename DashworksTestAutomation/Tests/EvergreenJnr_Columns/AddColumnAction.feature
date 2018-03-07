@@ -61,7 +61,7 @@ Examples:
 	| Devices      |
 	| Applications |
 
-@Evergreen @Applications @EvergreenJnr_Columns @AddColumnAction @DAS10997 @DAS12026
+@Evergreen @Applications @EvergreenJnr_Columns @AddColumnAction @DAS10997 @DAS12026 @DAS12156 @Not_Run
 Scenario Outline: EvergreenJnr_Applications_CheckThatConsoleErrorsAreNotDisplayedForImages
 	When User add following columns using URL to the "Applications" page:
 	| ColumnName   |
