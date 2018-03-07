@@ -113,6 +113,21 @@ namespace DashworksTestAutomation.Steps.Dashworks
             menu.FilterButton.Click();
         }
 
+        [Then(@"User select ""(.*)"" checkbox from filter on the Details Page")]
+        public void ThenUserSelectCheckboxFromFilterOnTheDetailsPage(string filterName)
+        {
+            var page = _driver.NowAt<ApplicationsDetailsTabsMenu>();
+            page.GetFilterByName(filterName).Click();
+        }
+
+        [Then(@"Filter panel has standard size")]
+        public void ThenFilterPanelHasStandardSize()
+        {
+            var filterPanel = _driver.NowAt<ApplicationsDetailsTabsMenu>();
+            Assert.AreEqual("118px", filterPanel.GetInstalledFilterPanelHeight());
+            Assert.AreEqual("152px", filterPanel.GetInstalledFilterPanelWidth());
+        }
+
         [Then(@"User enters ""(.*)"" text in the Filter field")]
         public void ThenUserEntersTextInTheFilterField(string searchedText)
         {

@@ -95,6 +95,22 @@ namespace DashworksTestAutomation.Pages.Evergreen.DetailsTabsMenu
             return columnNumber;
         }
 
+        public IWebElement GetFilterByName(string filterName)
+        {
+            Driver.WaitWhileControlIsNotDisplayed(By.XPath($".//div[@class='ag-filter']//span[text()='{filterName}']"));
+            return Driver.FindElement(By.XPath($".//div[@class='ag-filter']//span[text()='{filterName}']"));
+        }
+
+        public string GetInstalledFilterPanelHeight()
+        {
+            return Driver.FindElement(By.XPath(".//div[@class='ag-menu']")).GetCssValue("height");
+        }
+
+        public string GetInstalledFilterPanelWidth()
+        {
+            return Driver.FindElement(By.XPath(".//div[@class='ag-menu']")).GetCssValue("width");
+        }
+
         public List<string> GetColumnIdContent(string columnName)
         {
             By by = By.XPath(
