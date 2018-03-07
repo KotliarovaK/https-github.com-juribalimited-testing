@@ -16,13 +16,13 @@ using TechTalk.SpecFlow;
 namespace DashworksTestAutomation.Steps.API
 {
     [Binding]
-    internal class EvergreenJnr_ListDetailsPage
+    internal class EvergreenJnr_API_DetailsPage
     {
         private readonly RestWebClient _client;
         private readonly ResponceDetails _responce;
         private readonly DetailsSectionToUrlConvertor _sectionConvertor;
 
-        public EvergreenJnr_ListDetailsPage(RestWebClient client, ResponceDetails responce,
+        public EvergreenJnr_API_DetailsPage(RestWebClient client, ResponceDetails responce,
             DetailsSectionToUrlConvertor sectionConvertor)
         {
             _client = client;
