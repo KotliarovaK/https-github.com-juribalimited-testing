@@ -1857,6 +1857,7 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_ListPanel
         [NUnit.Framework.CategoryAttribute("CustomListDisplay")]
         [NUnit.Framework.CategoryAttribute("DAS11655")]
         [NUnit.Framework.CategoryAttribute("DAS11666")]
+        [NUnit.Framework.CategoryAttribute("DAS12156")]
         [NUnit.Framework.CategoryAttribute("Delete_Newly_Created_List")]
         [NUnit.Framework.CategoryAttribute("Not_Run")]
         [NUnit.Framework.TestCaseAttribute("Empty", "evergreen/#/devices?$listid=", new string[0])]
@@ -1896,6 +1897,7 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_ListPanel
                     "CustomListDisplay",
                     "DAS11655",
                     "DAS11666",
+                    "DAS12156",
                     "Delete_Newly_Created_List",
                     "Not_Run"};
             if ((exampleTags != null))

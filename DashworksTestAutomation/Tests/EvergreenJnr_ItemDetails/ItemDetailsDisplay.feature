@@ -316,3 +316,12 @@ Examples:
 	| Users        | Username      | Groups       | Group          |
 	| Applications | Application   | MSI          | File Name      |
 	| Mailboxes    | Email Address | Users        | Username       |
+
+@Evergreen @Devices @EvergreenJnr_ItemDetails @ItemDetailsDisplay @DAS11628
+Scenario: EvergreenJnr_DevicesLists_CheckThatTheFilterDropddownIsDisplayedFullyWhenTheFilterResultNotContainsValues
+	When User clicks "Devices" on the left-hand menu
+	Then "Devices" list should be displayed to the user
+	When User click content from "Hostname" column
+	And User navigates to the "Applications" tab
+	And User have opened Column Settings for "Installed" column in the Details Page table
+	And User clicks Filter button on the Column Settings panel

@@ -206,6 +206,7 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_GridActions
         [NUnit.Framework.CategoryAttribute("ColumnOrder")]
         [NUnit.Framework.CategoryAttribute("DAS10621")]
         [NUnit.Framework.CategoryAttribute("DAS11666")]
+        [NUnit.Framework.CategoryAttribute("DAS12156")]
         [NUnit.Framework.CategoryAttribute("Not_Run")]
         public virtual void EvergreenJnr_DevicesList_CheckThatColumnsOrderSavedAfterAddingAFilter()
         {
@@ -242,6 +243,7 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_GridActions
                         "ColumnOrder",
                         "DAS10621",
                         "DAS11666",
+                        "DAS12156",
                         "Not_Run"});
             this.ScenarioSetup(scenarioInfo);
             this.FeatureBackground();
@@ -307,6 +309,7 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_GridActions
         [NUnit.Framework.CategoryAttribute("EvergreenJnr_GridActions")]
         [NUnit.Framework.CategoryAttribute("ColumnOrder")]
         [NUnit.Framework.CategoryAttribute("DAS11666")]
+        [NUnit.Framework.CategoryAttribute("DAS12156")]
         [NUnit.Framework.CategoryAttribute("Not_Run")]
         public virtual void EvergreenJnr_UsersList_CheckThatColumnsOrderSavedAfterAddingAnotherColumn()
         {
@@ -342,6 +345,7 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_GridActions
                         "EvergreenJnr_GridActions",
                         "ColumnOrder",
                         "DAS11666",
+                        "DAS12156",
                         "Not_Run"});
             this.ScenarioSetup(scenarioInfo);
             this.FeatureBackground();
@@ -399,6 +403,7 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_GridActions
         [NUnit.Framework.CategoryAttribute("EvergreenJnr_GridActions")]
         [NUnit.Framework.CategoryAttribute("ColumnOrder")]
         [NUnit.Framework.CategoryAttribute("DAS11666")]
+        [NUnit.Framework.CategoryAttribute("DAS12156")]
         [NUnit.Framework.CategoryAttribute("Not_Run")]
         public virtual void EvergreenJnr_MailboxesList_CheckThatColumnsOrderSavedAfterUsingTheAgGridSearch()
         {
@@ -434,6 +439,7 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_GridActions
                         "EvergreenJnr_GridActions",
                         "ColumnOrder",
                         "DAS11666",
+                        "DAS12156",
                         "Not_Run"});
             this.ScenarioSetup(scenarioInfo);
             this.FeatureBackground();
