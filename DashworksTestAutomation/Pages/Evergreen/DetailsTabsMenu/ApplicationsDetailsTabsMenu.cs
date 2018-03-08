@@ -111,6 +111,11 @@ namespace DashworksTestAutomation.Pages.Evergreen.DetailsTabsMenu
             return Driver.FindElement(By.XPath(".//div[@class='ag-menu']")).GetCssValue("width");
         }
 
+        public string GetSiteColumnWidth()
+        {
+            return Driver.FindElement(By.XPath(".//div[@col-id='packageSite']")).GetCssValue("width");
+        }
+
         public List<string> GetColumnIdContent(string columnName)
         {
             By by = By.XPath(
@@ -124,6 +129,12 @@ namespace DashworksTestAutomation.Pages.Evergreen.DetailsTabsMenu
             var headerSelector = By.XPath($".//div[@class='ag-header-container']//span[text()='{columnName}']//ancestor::div[@col-id]");
             Driver.WaitForDataLoading();
             return Driver.FindElement(headerSelector).GetAttribute("col-id");
+        }
+
+        public IWebElement GetSettingByNameDetailsPage(string settingName)
+        {
+            Driver.WaitWhileControlIsNotDisplayed(By.XPath($".//span[@class='ag-menu-option-text'][text()='{settingName}']"));
+            return Driver.FindElement(By.XPath($".//span[@id='eName'][text()='{settingName}']"));
         }
 
         public IWebElement GetFilterByColumnName(string columnName)
