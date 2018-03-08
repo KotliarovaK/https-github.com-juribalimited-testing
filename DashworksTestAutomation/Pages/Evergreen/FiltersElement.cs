@@ -4,6 +4,7 @@ using OpenQA.Selenium;
 using OpenQA.Selenium.Support.PageObjects;
 using System.Collections.Generic;
 using System.Linq;
+using System.Threading;
 using NUnit.Framework;
 
 namespace DashworksTestAutomation.Pages.Evergreen
@@ -19,7 +20,9 @@ namespace DashworksTestAutomation.Pages.Evergreen
         [FindsBy(How = How.XPath, Using = ".//button[contains(@class, 'filter-select addNewContainer ng-star-inserted')]")]
         public IWebElement AddAndFilterButton { get; set; }
 
-        [FindsBy(How = How.XPath, Using = ".//input[@name='search']")]
+        private const string SearchTextboxSelector = ".//input[@name='search']";
+
+        [FindsBy(How = How.XPath, Using = SearchTextboxSelector)]
         public IWebElement SearchTextbox { get; set; }
 
         [FindsBy(How = How.XPath,
@@ -141,8 +144,10 @@ namespace DashworksTestAutomation.Pages.Evergreen
 
             if (FilterCategories.Any())
                 Driver.MouseHover(FilterCategories.Last());
-            Driver.MouseHover(SearchTextbox);
-            SearchTextbox.SendKeys(filterName);
+            Driver.MouseHover(By.XPath(SearchTextboxSelector));
+            Driver.WaitWhileControlIsNotClickable(By.XPath(SearchTextboxSelector));
+            Driver.FindElement(By.XPath(SearchTextboxSelector)).Click();
+            Driver.FindElement(By.XPath(SearchTextboxSelector)).SendKeys(filterName);
             var selector = string.Empty;
             if (filterName.Contains("'"))
             {
