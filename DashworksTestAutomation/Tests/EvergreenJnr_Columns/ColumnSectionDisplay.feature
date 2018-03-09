@@ -123,7 +123,7 @@ Scenario: EvergreenJnr_UsersList_CheckTheColumnCategoriesUpdatesAfterAddingColum
 	| ColumnName |
 	| Zip Code   |
 
-@Evergreen @Applications @EvergreenJnr_Columns @ColumnSectionDisplay @DAS11768 @DAS12152 @Delete_Newly_Created_List @Not_Run
+@Evergreen @Applications @EvergreenJnr_Columns @ColumnSectionDisplay @DAS11768 @DAS12152 @Delete_Newly_Created_List
 Scenario: EvergreenJnr_ApplicationsList_CheckTheColumnCategoriesUpdatesAfterAddingColumnForStaticLists
 	When User clicks "Applications" on the left-hand menu
 	Then "Applications" list should be displayed to the user
