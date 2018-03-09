@@ -330,13 +330,18 @@ Scenario: EvergreenJnr_DevicesLists_CheckThatTheFilterDropddownIsDisplayedFullyW
 	Then Filter panel has standard size
 
 @Evergreen @Devices @EvergreenJnr_ItemDetails @ItemDetailsDisplay @DAS11647
-Scenario: EvergreenJnr_DevicesLists_CheckThatAutosizeOptionWorksCorrectlyForSiteColumn
+Scenario Outline: EvergreenJnr_DevicesLists_CheckThatAutosizeOptionWorksCorrectlyForSiteColumn
 	When User clicks "Devices" on the left-hand menu
 	Then "Devices" list should be displayed to the user
 	When User click content from "Hostname" column
 	And User navigates to the "Applications" tab
 	Then User closes "Application Summary" section on the Details Page
-	When User opens "Advertisements" section on the Details Page
+	When User opens "<SectionName>" section on the Details Page
 	And User have opened Column Settings for "Site" column in the Details Page table
 	And User have select "Autosize This column" option from column settings on the Details Page
 	Then Site column has standard size
+
+	Examples:
+	| SectionName    |
+	| Advertisements |
+	| Collections    |

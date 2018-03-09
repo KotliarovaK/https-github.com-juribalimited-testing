@@ -139,7 +139,14 @@ namespace DashworksTestAutomation.Steps.Dashworks
         public void ThenSiteColumnHasStandardSize()
         {
             var filterPanel = _driver.NowAt<ApplicationsDetailsTabsMenu>();
-            Assert.AreEqual("81px", filterPanel.GetSiteColumnWidth());
+            if (!_driver.IsElementDisplayed(By.XPath(".//div[@col-id='packageSite']")))
+            {
+                Assert.AreEqual("81px", filterPanel.CollectionSiteColumnWidt());
+            }
+            else 
+            {
+                Assert.AreEqual("81px", filterPanel.PackageSiteColumnWidt());             
+            }
         }
 
         [Then(@"User enters ""(.*)"" text in the Filter field")]
