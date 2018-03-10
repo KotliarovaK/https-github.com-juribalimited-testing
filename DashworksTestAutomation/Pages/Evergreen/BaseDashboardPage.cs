@@ -81,6 +81,9 @@ namespace DashworksTestAutomation.Pages.Evergreen
         [FindsBy(How = How.XPath, Using = ".//span[@class='ag-selection-checkbox']//span[@class='checkbox-unchecked']")]
         public IWebElement UncheckedCheckbox { get; set; }
 
+        [FindsBy(How = How.XPath, Using = ".//div[@class='inline-error ng-star-inserted']")]
+        public IWebElement WarningCreateMessage { get; set; }
+
         [FindsBy(How = How.XPath, Using = ".//i")]
         public IWebElement ItemImage { get; set; }
 
