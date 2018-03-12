@@ -1331,6 +1331,8 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_FiltersFeature
         [NUnit.Framework.CategoryAttribute("EvergreenJnr_FilterFeature")]
         [NUnit.Framework.CategoryAttribute("FilterFunctionality")]
         [NUnit.Framework.CategoryAttribute("DAS11738")]
+        [NUnit.Framework.CategoryAttribute("DAS12199")]
+        [NUnit.Framework.CategoryAttribute("Not_Run")]
         public virtual void EvergreenJnr_UsersList_CheckThatToolTipShownWithEditFilterTextWhenEditingAFilterDisplayed()
         {
             System.Exception lastException = null;
@@ -1365,7 +1367,9 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_FiltersFeature
                         "Users",
                         "EvergreenJnr_FilterFeature",
                         "FilterFunctionality",
-                        "DAS11738"});
+                        "DAS11738",
+                        "DAS12199",
+                        "Not_Run"});
             this.ScenarioSetup(scenarioInfo);
             this.FeatureBackground();
             testRunner.When("User clicks \"Users\" on the left-hand menu", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");

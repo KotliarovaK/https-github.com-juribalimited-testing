@@ -317,7 +317,7 @@ Examples:
 	| Applications | Application   | MSI          | File Name      |
 	| Mailboxes    | Email Address | Users        | Username       |
 
-@Evergreen @Devices @EvergreenJnr_ItemDetails @ItemDetailsDisplay @DAS11628
+@Evergreen @Devices @EvergreenJnr_ItemDetails @ItemDetailsDisplay @DAS11628 @Not_Run
 Scenario: EvergreenJnr_DevicesLists_CheckThatTheFilterDropddownIsDisplayedFullyWhenTheFilterResultNotContainsValues
 	When User clicks "Devices" on the left-hand menu
 	Then "Devices" list should be displayed to the user

@@ -465,6 +465,8 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_Columns
         [NUnit.Framework.CategoryAttribute("EvergreenJnr_Columns")]
         [NUnit.Framework.CategoryAttribute("AddColumnAction")]
         [NUnit.Framework.CategoryAttribute("DAS11649")]
+        [NUnit.Framework.CategoryAttribute("DAS12199")]
+        [NUnit.Framework.CategoryAttribute("Not_Run")]
         public virtual void EvergreenJnr_ApplicationsLists_CheckThatNoDataIsDisplayedInTheApplicationRationalisationColumn()
         {
             System.Exception lastException = null;
@@ -499,7 +501,9 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_Columns
                         "Applications",
                         "EvergreenJnr_Columns",
                         "AddColumnAction",
-                        "DAS11649"});
+                        "DAS11649",
+                        "DAS12199",
+                        "Not_Run"});
             this.ScenarioSetup(scenarioInfo);
             this.FeatureBackground();
             testRunner.When("User clicks \"Applications\" on the left-hand menu", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");

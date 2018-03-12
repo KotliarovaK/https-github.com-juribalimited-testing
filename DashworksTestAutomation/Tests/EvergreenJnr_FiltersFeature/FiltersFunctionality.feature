@@ -349,7 +349,7 @@ Examples:
 	| Application Custom Fields | General information field 1 |
 	| Application Custom Fields | User Field 2                |
 
-@Evergreen @Users @EvergreenJnr_FilterFeature @FilterFunctionality @DAS11738
+@Evergreen @Users @EvergreenJnr_FilterFeature @FilterFunctionality @DAS11738 @DAS12199 @Not_Run
 Scenario: EvergreenJnr_UsersList_CheckThatToolTipShownWithEditFilterTextWhenEditingAFilterDisplayed 
 	When User clicks "Users" on the left-hand menu
 	Then "Users" list should be displayed to the user
