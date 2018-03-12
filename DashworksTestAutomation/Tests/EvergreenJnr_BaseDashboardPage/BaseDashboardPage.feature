@@ -47,3 +47,12 @@ Examples:
 	| Users        | Username      |
 	| Applications | Application   |
 	| Mailboxes    | Email Address |
+
+@Evergreen @AllLists @EvergreenJnr_BaseDashboardPage @BaseDashboardPage @DAS11895
+Scenario: EvergreenJnr_AllList_CheckThatNoConsoleErrorsAreDisplayedAfterQuicklyNavigateBetweenMainTabs
+	When User quickly navigate to "Devices" on the left-hand menu
+	And User quickly navigate to "Users" on the left-hand menu
+	And User quickly navigate to "Applications" on the left-hand menu
+	And User quickly navigate to "Mailboxes" on the left-hand menu
+	Then "Mailboxes" list should be displayed to the user
+	And There are no errors in the browser console
