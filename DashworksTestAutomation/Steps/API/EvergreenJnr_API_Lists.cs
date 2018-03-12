@@ -37,7 +37,7 @@ namespace DashworksTestAutomation.Steps.API
         [When(@"User create dynamic list with ""(.*)"" name on ""(.*)"" page")]
         public void WhenUserCreateDynamicListWithNameOnPage(string listName, string pageName)
         {
-            var queryString = GetQueryStringFromUrl(_driver.Url, pageName);
+            var queryString = GetDynamicQueryStringFromUrl(_driver.Url, pageName);
             var requestUri = $"{UrlProvider.RestClientBaseUrl}lists/{pageName.ToLower()}";
             var request = new RestRequest(requestUri);
 
@@ -120,6 +120,7 @@ namespace DashworksTestAutomation.Steps.API
 
             #region Add query to list
 
+            var queryString = GetStaticQueryStringFromUrl(pageName, listId);
             request = new RestRequest(requestUri);
 
             request.AddParameter("Accept", "application/json");
@@ -134,7 +135,7 @@ namespace DashworksTestAutomation.Steps.API
             request.AddParameter("listName", listName);
             request.AddParameter("listType", "Static");
             //TODO path correct query string
-            request.AddParameter("queryString", $"$select=username,directoryName,displayName,fullyDistinguishedObjectName&$listid={listId}");
+            request.AddParameter("queryString", queryString);
             request.AddParameter("sharedAccessType", "Private");
             request.AddParameter("userId", DatabaseWorker.GetUserIdByLogin(_user.UserName));
 
@@ -177,7 +178,7 @@ namespace DashworksTestAutomation.Steps.API
                 throw new Exception($"Unable to execute request. URI: {requestUri}");
         }
 
-        private string GetQueryStringFromUrl(string url, string pageName)
+        private string GetDynamicQueryStringFromUrl(string url, string pageName)
         {
             var queryString = string.Empty;
             var pattern = @"\?\$(.*)";
@@ -194,6 +195,13 @@ namespace DashworksTestAutomation.Steps.API
             {
                 queryString += "&$filter=";
             }
+            return queryString;
+        }
+
+        private string GetStaticQueryStringFromUrl(string pageName, string listId)
+        {
+            var queryString = string.Empty;
+            queryString = RestWebClient.GetDefaultColumnsUrlByPageName(pageName) + "&$listid=" + $"{listId}";
             return queryString;
         }
     }
