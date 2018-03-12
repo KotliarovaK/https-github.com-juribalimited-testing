@@ -49,7 +49,7 @@ Scenario: EvergreenJnr_DevicesList_CheckThatDeleteByUrlIsUpdatingRowCount
 	When User clicks the Filters button
 	Then "Compliance" filter is removed from filters
 
-@Evergreen @Users @Evergreen_FiltersFeature @RemoveFilter @DAS11009 @DAS11044
+@Evergreen @Users @Evergreen_FiltersFeature @RemoveFilter @DAS11009 @DAS11044 @DAS12199 @Not_Run
 Scenario: EvergreenJnr_UsersList_CheckThatDeletePartOfFilterFromUrlIsUpdatingRowCount
 	When User clicks "Users" on the left-hand menu
 	Then "Users" list should be displayed to the user

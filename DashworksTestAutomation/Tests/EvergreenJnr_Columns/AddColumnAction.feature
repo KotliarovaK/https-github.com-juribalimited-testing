@@ -94,7 +94,7 @@ Examples:
 	| Users        |
 	| Applications |
 
-@Evergreen @Applications @EvergreenJnr_Columns @AddColumnAction @DAS11649
+@Evergreen @Applications @EvergreenJnr_Columns @AddColumnAction @DAS11649 @DAS12199 @Not_Run
 Scenario: EvergreenJnr_ApplicationsLists_CheckThatNoDataIsDisplayedInTheApplicationRationalisationColumn
 	When User clicks "Applications" on the left-hand menu
 	Then "Applications" list should be displayed to the user

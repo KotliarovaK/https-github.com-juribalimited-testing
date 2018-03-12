@@ -216,6 +216,8 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_FiltersFeature
         [NUnit.Framework.CategoryAttribute("RemoveFilter")]
         [NUnit.Framework.CategoryAttribute("DAS11009")]
         [NUnit.Framework.CategoryAttribute("DAS11044")]
+        [NUnit.Framework.CategoryAttribute("DAS12199")]
+        [NUnit.Framework.CategoryAttribute("Not_Run")]
         public virtual void EvergreenJnr_UsersList_CheckThatDeletePartOfFilterFromUrlIsUpdatingRowCount()
         {
             System.Exception lastException = null;
@@ -250,7 +252,9 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_FiltersFeature
                         "Evergreen_FiltersFeature",
                         "RemoveFilter",
                         "DAS11009",
-                        "DAS11044"});
+                        "DAS11044",
+                        "DAS12199",
+                        "Not_Run"});
             this.ScenarioSetup(scenarioInfo);
             this.FeatureBackground();
             testRunner.When("User clicks \"Users\" on the left-hand menu", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
