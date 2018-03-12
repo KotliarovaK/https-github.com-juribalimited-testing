@@ -44,6 +44,14 @@ namespace DashworksTestAutomation.Steps.Dashworks
             detailsPage.NavigateToSectionByName(sectionName);
         }
 
+        [Then(@"""(.*)"" message is displayed on the Details Page")]
+        public void ThenMessageIsDisplayedOnTheDetailsPage(string message)
+        {
+            var listElement = _driver.NowAt<DetailsPage>();
+            _driver.WaitWhileControlIsNotDisplayed<DetailsPage>(() => listElement.NoFoundMessage);
+            Assert.AreEqual(message, listElement.NoFoundMessage.Text, $"{message} is not displayed");
+        }
+
         [Then(@"Item content is displayed to the User")]
         public void ThenItemContentIsDisplayedToTheUser()
         {
@@ -139,7 +147,14 @@ namespace DashworksTestAutomation.Steps.Dashworks
         public void ThenSiteColumnHasStandardSize()
         {
             var filterPanel = _driver.NowAt<ApplicationsDetailsTabsMenu>();
-            Assert.AreEqual("81px", filterPanel.GetSiteColumnWidth());
+            if (!_driver.IsElementDisplayed(By.XPath(".//div[@col-id='packageSite']")))
+            {
+                Assert.AreEqual("81px", filterPanel.CollectionSiteColumnWidt());
+            }
+            else 
+            {
+                Assert.AreEqual("81px", filterPanel.PackageSiteColumnWidt());             
+            }
         }
 
         [Then(@"User enters ""(.*)"" text in the Filter field")]

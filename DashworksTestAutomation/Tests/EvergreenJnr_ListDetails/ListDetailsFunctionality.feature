@@ -214,3 +214,47 @@ Examples:
 	| Users        |
 	| Applications |
 	| Mailboxes    |
+
+@Evergreen @AllLists @EvergreenJnr_ListDetails @ListDetailsFunctionality @DAS12029 @Delete_Newly_Created_List
+Scenario Outline: EvergreenJnr_AllLists_CheckThatNoAbilityToCreateTheSameNamedListsUsingTheSpaceCharacterForDynamicList
+	When User clicks "<PageName>" on the left-hand menu
+	Then "<PageName>" list should be displayed to the user
+	When User click on '<Columnname>' column header
+	Then data in table is sorted by '<Columnname>' column in ascending order
+	When User create custom list with "2" name
+	Then "2" list is displayed to user
+	When User navigates to the "<ListToNavigate>" list
+	When User click on '<Columnname>' column header
+	Then data in table is sorted by '<Columnname>' column in ascending order
+	When User create custom list with " 2" name
+	Then Warning message with "List Name should be unique" is displayed
+
+	Examples: 
+	| PageName     | Columnname    | ListToNavigate   |
+	| Devices      | Hostname      | All Devices      |
+	| Users        | Username      | All Users        |
+	| Applications | Application   | All Applications |
+	| Mailboxes    | Email Address | All Mailboxes    |
+
+@Evergreen @AllLists @EvergreenJnr_ListDetails @ListDetailsFunctionality @DAS12029 @Delete_Newly_Created_List
+Scenario Outline: EvergreenJnr_AllLists_CheckThatNoAbilityToCreateTheSameNamedListsUsingTheSpaceCharacterForStaticLists
+	When User clicks "<PageName>" on the left-hand menu
+	Then "<PageName>" list should be displayed to the user
+	When User clicks the Actions button
+	Then Actions panel is displayed to the user
+	When User select all rows
+	And User create static list with "2" name
+	Then "2" list is displayed to user
+	When User navigates to the "<ListToNavigate>" list
+	When User clicks the Actions button
+	Then Actions panel is displayed to the user
+	When User select all rows
+	And User create static list with " 2" name
+	Then Warning message with "List Name should be unique" is displayed
+
+	Examples: 
+	| PageName     | ListToNavigate   |
+	| Devices      | All Devices      |
+	| Users        | All Users        |
+	| Applications | All Applications |
+	| Mailboxes    | All Mailboxes    |

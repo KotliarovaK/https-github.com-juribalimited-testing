@@ -171,6 +171,14 @@ namespace DashworksTestAutomation.Steps.Dashworks
             _driver.SelectCustomSelectbox(listDetailsElement.SelectAccessDropdown, accessOption);
         }
 
+        [Then(@"Warning message with ""(.*)"" is displayed")]
+        public void ThenWarningMessageWithIsDisplayed(string message)
+        {
+            var listElement = _driver.NowAt<BaseDashboardPage>();
+            _driver.WaitWhileControlIsNotDisplayed<BaseDashboardPage>(() => listElement.WarningCreateMessage);
+            Assert.AreEqual(message, listElement.WarningCreateMessage.Text, $"{message} is not displayed");
+        }
+
         [Then(@"Delete list button is disabled in List Details panel")]
         public void ThenDeleteListButtonIsDisabledInListDetailsPanel()
         {

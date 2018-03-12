@@ -5,6 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using DashworksTestAutomation.Base;
 using DashworksTestAutomation.Extensions;
+using Microsoft.VisualStudio.TestTools.UnitTesting;
 using OpenQA.Selenium;
 using OpenQA.Selenium.Support.PageObjects;
 
@@ -29,7 +30,7 @@ namespace DashworksTestAutomation.Pages.Evergreen.DetailsTabsMenu
 
         [FindsBy(How = How.XPath, Using = ".//span[@class='ag-tab']//span[@class='ag-icon ag-icon-filter']")]
         public IWebElement FilterButton { get; set; }
-
+        
         [FindsBy(How = How.XPath, Using = ".//span[@class='ag-column-select-label']")]
         public IWebElement ColumnCheckboxName { get; set; }
 
@@ -106,21 +107,25 @@ namespace DashworksTestAutomation.Pages.Evergreen.DetailsTabsMenu
             return Driver.FindElement(By.XPath(".//div[@class='ag-menu']")).GetCssValue("height");
         }
 
+        public string CollectionSiteColumnWidt()
+        {
+            return Driver.FindElement(By.XPath(".//div[@col-id='collectionSite']")).GetCssValue("width");
+        }
+
+        public string PackageSiteColumnWidt()
+        {
+            return Driver.FindElement(By.XPath(".//div[@col-id='packageSite']")).GetCssValue("width");
+        }
+
         public string GetInstalledFilterPanelWidth()
         {
             return Driver.FindElement(By.XPath(".//div[@class='ag-menu']")).GetCssValue("width");
-        }
-
-        public string GetSiteColumnWidth()
-        {
-            return Driver.FindElement(By.XPath(".//div[@col-id='packageSite']")).GetCssValue("width");
         }
 
         public List<string> GetColumnIdContent(string columnName)
         {
             By by = By.XPath(
                 $".//div[@class='ag-body']//div[@class='ag-body-container']/div/div[@col-id='{GetColumnIdByColumnName(columnName)}']");
-            var t = Driver.FindElements(by).Select(x => x.Text).ToList();
             return Driver.FindElements(by).Select(x => x.Text).ToList();
         }
 
