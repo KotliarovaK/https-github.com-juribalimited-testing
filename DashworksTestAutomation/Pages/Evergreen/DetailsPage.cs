@@ -31,6 +31,9 @@ namespace DashworksTestAutomation.Pages.Evergreen
         [FindsBy(How = How.XPath, Using = ".//div[@class='category-content ng-star-inserted']")]
         public IWebElement TableContentDetails { get; set; }
 
+        [FindsBy(How = How.XPath, Using = ".//div[@class='empty-message ng-star-inserted']")]
+        public IWebElement NoFoundMessage { get; set; }
+
         [FindsBy(How = How.XPath, Using = ".//td[@class='fld-value']")]
         public IWebElement TableRowDetails { get; set; }
 
