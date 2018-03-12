@@ -517,6 +517,23 @@ namespace DashworksTestAutomation.Steps.Dashworks
             filterElement.OperatorOptions.First().SendKeys(OpenQA.Selenium.Keys.Escape);
         }
 
+        [When(@"User deletes one character from the Search field")]
+        public void WhenUserDeletesOneCharacterFromTheSearchField()
+        {
+            var filterElement = _driver.NowAt<FiltersElement>();
+            filterElement.LookupFilterSearchTextbox.SendKeys(OpenQA.Selenium.Keys.Backspace);
+            _driver.WaitForDataLoading();
+        }
+
+        [Then(@"""(.*)"" results are displayed in the Filter panel")]
+        public void ThenResultsAreDisplayedInTheFilterPanel(string showedResultsCount)
+        {
+            var filtersPanel = _driver.NowAt<FiltersElement>();
+            _driver.WaitForDataLoading();
+            Assert.AreEqual(showedResultsCount, filtersPanel.GetShowedResultsCount(),
+                $"Number of rows is not {showedResultsCount}");
+        }
+
         [When(@"User is remove filter by URL")]
         public void WhenUserIsRemoveFilterByURL()
         {

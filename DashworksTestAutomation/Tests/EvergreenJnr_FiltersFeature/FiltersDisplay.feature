@@ -919,3 +919,20 @@ Examples:
 	| Mailboxes | Department Full Path       | Add Department Full Path column       |
 	| Mailboxes | Owner Department Name      | Add Owner Department Name column      |
 	| Mailboxes | Owner Department Full Path | Add Owner Department Full Path column |
+
+@Evergreen @Mailboxes @Evergreen_FiltersFeature @FiltersDisplay @DAS11831
+Scenario: EvergreenJnr_DevicesLists_CheckThatResultCounterDoesNotDisappearAfterDeletingTheCharactersInEmailMigraTeamFilter
+	When User clicks "Mailboxes" on the left-hand menu
+	Then "Mailboxes" list should be displayed to the user
+	When User clicks the Filters button
+	Then Filters panel is displayed to the user
+	When User add "EmailMigra: Team" filter where type is "Equals" without added column and following value:
+	| Values |
+	| 1234   |
+	Then "1 shown" results are displayed in the Filter panel
+	When User deletes one character from the Search field
+	Then "13 shown" results are displayed in the Filter panel
+	When User deletes one character from the Search field
+	Then "50 of 157 shown" results are displayed in the Filter panel
+	When User deletes one character from the Search field
+	Then "50 of 1502 shown" results are displayed in the Filter panel
