@@ -215,18 +215,18 @@ Examples:
 	| Applications |
 	| Mailboxes    |
 
-@Evergreen @AllLists @EvergreenJnr_ListDetails @ListDetailsFunctionality @DAS12029 @Delete_Newly_Created_List @Not_Run
+@Evergreen @AllLists @EvergreenJnr_ListDetails @ListDetailsFunctionality @DAS12029 @Delete_Newly_Created_List
 Scenario Outline: EvergreenJnr_AllLists_CheckThatNoAbilityToCreateTheSameNamedListsUsingTheSpaceCharacterForDynamicList
 	When User clicks "<PageName>" on the left-hand menu
 	Then "<PageName>" list should be displayed to the user
 	When User click on '<Columnname>' column header
 	Then data in table is sorted by '<Columnname>' column in ascending order
-	When User create dynamic list with "2" name on "<PageName>" page
+	When User create custom list with "2" name
 	Then "2" list is displayed to user
 	When User navigates to the "<ListToNavigate>" list
 	When User click on '<Columnname>' column header
 	Then data in table is sorted by '<Columnname>' column in ascending order
-	When User create dynamic list with " 2" name on "<PageName>" page
+	When User create custom list with " 2" name
 	Then Warning message with "List Name should be unique" is displayed
 
 	Examples: 
@@ -244,6 +244,7 @@ Scenario Outline: EvergreenJnr_AllLists_CheckThatNoAbilityToCreateTheSameNamedLi
 	Then Actions panel is displayed to the user
 	When User select all rows
 	And User create static list with "2" name
+	Then "2" list is displayed to user
 	When User navigates to the "<ListToNavigate>" list
 	When User clicks the Actions button
 	Then Actions panel is displayed to the user

@@ -49,6 +49,36 @@ namespace DashworksTestAutomation.Steps.Dashworks
             Logger.Write($"{listPage} left-hand menu was clicked");
         }
 
+        [When(@"User quickly navigate to ""(.*)"" on the left-hand menu")]
+        public void WhenUserQuicklyNavigateToOnTheLeft_HandMenu(string listPage)
+        {
+            var menu = _driver.NowAtWithoutWait<LeftHandMenuElement>();
+
+            switch (listPage)
+            {
+                case "Devices":
+                    menu.Devices.Click();
+                    break;
+
+                case "Users":
+                    menu.Users.Click();
+                    break;
+
+                case "Applications":
+                    menu.Applications.Click();
+                    break;
+
+                case "Mailboxes":
+                    menu.Mailboxes.Click();
+                    break;
+
+                default:
+                    throw new Exception($"'{listPage}' menu name is not valid menu item and can not be opened");
+            }
+
+            Logger.Write($"{listPage} left-hand menu was clicked");
+        }
+
         [Then(@"""(.*)"" list should be displayed to the user")]
         public void ThenListShouldBeDisplayedToTheUser(string listPage)
         {

@@ -345,3 +345,14 @@ Scenario Outline: EvergreenJnr_DevicesLists_CheckThatAutosizeOptionWorksCorrectl
 	| SectionName    |
 	| Advertisements |
 	| Collections    |
+
+@Evergreen @Devices @EvergreenJnr_ItemDetails @ItemDetailsDisplay @DAS12043
+Scenario: EvergreenJnr_DevicesLists_CheckThatNoErrorsAreDisplayedWhenOpenedDeviceDetailsThatDoesNotContainOwnerInformation
+	When User clicks "Devices" on the left-hand menu
+	Then "Devices" list should be displayed to the user
+	When User perform search by "06Y8HSNCPVHENV"
+	And User click content from "Hostname" column
+	And User navigates to the "Details" tab
+	And User opens "Device Owner" section on the Details Page
+	Then "No device owner information found for this device" message is displayed on the Details Page
+	And There are no errors in the browser console
