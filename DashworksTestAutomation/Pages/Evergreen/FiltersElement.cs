@@ -57,6 +57,8 @@ namespace DashworksTestAutomation.Pages.Evergreen
         [FindsBy(How = How.XPath, Using = ".//div[@class='styleSelectDropdown']")]
         public IWebElement FilterTypeDropdown { get; set; }
 
+        private const string ShowedResultsCount = ".//div[@class='pagination-info ng-star-inserted']";
+
         [FindsBy(How = How.XPath, Using = ".//span[text()='None']")]
         public IWebElement NoneCheckbox { get; set; }
 
@@ -165,6 +167,12 @@ namespace DashworksTestAutomation.Pages.Evergreen
 
             Driver.WaitForDataLoading();
             Driver.WaitWhileControlIsDisplayed<FiltersElement>(() => AddNewFilterButton);
+        }
+
+        public string GetShowedResultsCount()
+        {
+            LookupFilterSearchTextbox.Click();
+            return Driver.FindElement(By.XPath(ShowedResultsCount)).Text;
         }
 
         public void AddAndFilter(string filterName)
