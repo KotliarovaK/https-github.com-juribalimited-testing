@@ -33,7 +33,7 @@ namespace DashworksTestAutomation.Pages.Evergreen
 
         [FindsBy(How = How.XPath, Using = ".//div[@class='inline-success ng-star-inserted']")]
         public IWebElement SuccessCreateMessage { get; set; }
-
+      
         [FindsBy(How = How.XPath, Using = ".//div[@id='submenuBlock']//ul//span[@class='submenu-actions-list-name']")]
         public IList<IWebElement> ListsNames { get; set; }
 

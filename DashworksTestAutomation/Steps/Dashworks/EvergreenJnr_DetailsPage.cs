@@ -37,8 +37,8 @@ namespace DashworksTestAutomation.Steps.Dashworks
             detailsPage.NavigateToSectionByName(sectionName);
         }
 
-        [When(@"User open ""(.*)"" section")]
-        public void WhenUserOpenSection(string sectionName)
+        [When(@"User opens ""(.*)"" section on the Details Page")]
+        public void WhenUserOpensSectionOnTheDetailsPage(string sectionName)
         {
             var detailsPage = _driver.NowAt<DetailsPage>();
             detailsPage.NavigateToSectionByName(sectionName);
@@ -97,6 +97,13 @@ namespace DashworksTestAutomation.Steps.Dashworks
             page.OpenColumnSettingsByName(columnName);
         }
 
+        [When(@"User have select ""(.*)"" option from column settings on the Details Page")]
+        public void WhenUserHaveSelectOptionFromColumnSettingsOnTheDetailsPage(string settingName)
+        {
+            var page = _driver.NowAt<ApplicationsDetailsTabsMenu>();
+            page.GetSettingByNameDetailsPage(settingName).Click();
+        }
+
         [When(@"User clicks Column button on the Column Settings panel")]
         public void WhenUserClicksColumnButtonOnTheColumnSettingsPanel()
         {
@@ -111,6 +118,35 @@ namespace DashworksTestAutomation.Steps.Dashworks
             var menu = _driver.NowAt<ApplicationsDetailsTabsMenu>();
             _driver.WaitWhileControlIsNotDisplayed<ApplicationsDetailsTabsMenu>(() => menu.FilterButton);
             menu.FilterButton.Click();
+        }
+
+        [Then(@"User select ""(.*)"" checkbox from filter on the Details Page")]
+        public void ThenUserSelectCheckboxFromFilterOnTheDetailsPage(string filterName)
+        {
+            var page = _driver.NowAt<ApplicationsDetailsTabsMenu>();
+            page.GetFilterByName(filterName).Click();
+        }
+
+        [Then(@"Filter panel has standard size")]
+        public void ThenFilterPanelHasStandardSize()
+        {
+            var filterPanel = _driver.NowAt<ApplicationsDetailsTabsMenu>();
+            Assert.AreEqual("118px", filterPanel.GetInstalledFilterPanelHeight());
+            Assert.AreEqual("152px", filterPanel.GetInstalledFilterPanelWidth());
+        }
+
+        [Then(@"Site column has standard size")]
+        public void ThenSiteColumnHasStandardSize()
+        {
+            var filterPanel = _driver.NowAt<ApplicationsDetailsTabsMenu>();
+            if (!_driver.IsElementDisplayed(By.XPath(".//div[@col-id='packageSite']")))
+            {
+                Assert.AreEqual("81px", filterPanel.CollectionSiteColumnWidt());
+            }
+            else 
+            {
+                Assert.AreEqual("81px", filterPanel.PackageSiteColumnWidt());             
+            }
         }
 
         [Then(@"User enters ""(.*)"" text in the Filter field")]

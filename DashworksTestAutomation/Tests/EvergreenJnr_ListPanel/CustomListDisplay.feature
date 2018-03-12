@@ -85,7 +85,7 @@ Scenario: EvergreenJnr_DevicesList_CheckThatSearchDoesNotTriggerNewCustomList
 	| Henry          | 34           |
 	Then Save to New Custom List element is NOT displayed
 
-@Evergreen @Devices @EvergreenJnr_ListPanel @CustomListDisplay @DAS11081 @DAS11951 @DAS12152 @Delete_Newly_Created_List @Not_Run
+@Evergreen @Devices @EvergreenJnr_ListPanel @CustomListDisplay @DAS11081 @DAS11951 @DAS12152 @Delete_Newly_Created_List
 Scenario: EvergreenJnr_DevicesList_CheckThatNewListCreatedMessageForStaticListIsDisplayed
 	When User clicks "Devices" on the left-hand menu
 	Then "Devices" list should be displayed to the user
@@ -100,7 +100,7 @@ Scenario: EvergreenJnr_DevicesList_CheckThatNewListCreatedMessageForStaticListIs
 	And "New list created" message is displayed
 	And "UnbelievableTestList" list is displayed to user
 
-@Evergreen @Users @EvergreenJnr_ListPanel @CustomListDisplay @DAS11005 @DAS11489 @DAS12152 @Delete_Newly_Created_List @Not_Run
+@Evergreen @Users @EvergreenJnr_ListPanel @CustomListDisplay @DAS11005 @DAS11489 @DAS12152 @Delete_Newly_Created_List
 Scenario: EvergreenJnr_UsersList_CheckThatListsIsDisplayedInAlphabeticalOrder
 	When User clicks "Users" on the left-hand menu
 	Then "Users" list should be displayed to the user
@@ -217,7 +217,7 @@ Scenario: EvergreenJnr_UsersList_CheckThatSaveButtonIsInactiveInCustomListCreati
 	When User clicks the Actions button
 	Then Save button is inactive for Custom list
 
-@Evergreen @Devices @EvergreenJnr_ListPanel @CustomListDisplay @DAS11394 @DAS11951 @DAS12152 @Delete_Newly_Created_List @Not_Run
+@Evergreen @Devices @EvergreenJnr_ListPanel @CustomListDisplay @DAS11394 @DAS11951 @DAS12152 @Delete_Newly_Created_List
 Scenario: EvergreenJnr_DevicesList_CheckTheSortOrderIsSavedForExistingListAndNotDeletedAfterClickingResetButtonInColumnsMenu
 	When User clicks "Devices" on the left-hand menu
 	Then "Devices" list should be displayed to the user
@@ -257,7 +257,7 @@ Scenario: EvergreenJnr_DevicesList_CheckTheSortOrderIsSavedForExistingListAndNot
 	When User have reset all columns
 	Then data in table is sorted by 'Owner Display Name' column in ascending order
 
-@Evergreen @Devices @EvergreenJnr_ListPanel @CustomListDisplay @DAS11011 @DAS12152 @Delete_Newly_Created_List @Not_Run
+@Evergreen @Devices @EvergreenJnr_ListPanel @CustomListDisplay @DAS11011 @DAS12152 @Delete_Newly_Created_List
 Scenario: EvergreenJnr_DevicesList_CheckThatNewlySavedListIsCreatedWithTheCorrectColumnsAndSortsAndTheSameRowsOfData
 	When User clicks "Devices" on the left-hand menu
 	Then "Devices" list should be displayed to the user
@@ -298,7 +298,7 @@ Scenario: EvergreenJnr_DevicesList_CheckThatNewlySavedListIsCreatedWithTheCorrec
 	| ColumnName |
 	| Compliance |
 
-@Evergreen @Devices @EvergreenJnr_ListPanel @CustomListDisplay @DAS10870 @DAS11951 @DAS12152 @Delete_Newly_Created_List @Not_Run
+@Evergreen @Devices @EvergreenJnr_ListPanel @CustomListDisplay @DAS10870 @DAS11951 @DAS12152 @Delete_Newly_Created_List
 Scenario: EvergreenJnr_DevicesList_CheckThatSortingWillBeWorkForExistingSavedStaticLists 
 	When User clicks "Devices" on the left-hand menu
 	Then "Devices" list should be displayed to the user
@@ -344,7 +344,7 @@ Scenario: EvergreenJnr_DevicesList_CheckThatSortingWillBeWorkForExistingSavedDyn
 	Then data in table is sorted by 'Compliance' column in ascending order
 	And Edit List menu is displayed
 
-@Evergreen @Devices @EvergreenJnr_ListPanel @CustomListDisplay @DAS10914 @DAS12152 @Delete_Newly_Created_List @Not_Run
+@Evergreen @Devices @EvergreenJnr_ListPanel @CustomListDisplay @DAS10914 @DAS12152 @Delete_Newly_Created_List
 Scenario: EvergreenJnr_DevicesList_CheckThatEditListMenuNotDisplayedForActiveList
 	When User clicks "Devices" on the left-hand menu
 	Then "Devices" list should be displayed to the user

@@ -66,7 +66,7 @@ Scenario Outline: EvergreenJnr_AllLists_CheckThatDataIsDisplayedAfterAddingColum
 	When User click content from "<ItemName>" column
 	And User navigates to the "<TabName>" tab
 	Then User closes "<ExpandedSectionName>" section on the Details Page
-	When User open "<SectionName>" section
+	When User opens "<SectionName>" section on the Details Page
 	When User have opened Column Settings for "<ColumnName>" column in the Details Page table
 	When User clicks Column button on the Column Settings panel
 	When User select "<CheckboxName>" checkbox on the Column Settings panel
@@ -113,7 +113,7 @@ Scenario Outline: EvergreenJnr_AllLists_CheckThatDataIsDisplayedAfterAddingColum
 	Then "<PageName>" list should be displayed to the user
 	When User click content from "<ItemName>" column
 	And User navigates to the "<TabName>" tab
-	When User open "<SectionName>" section
+	When User opens "<SectionName>" section on the Details Page
 	When User have opened Column Settings for "<ColumnName>" column in the Details Page table
 	When User clicks Column button on the Column Settings panel
 	When User select "<CheckboxName>" checkbox on the Column Settings panel
@@ -162,7 +162,7 @@ Scenario: EvergreenJnr_DevicesLists_CheckThatSelectedCheckboxesMatchTheColumnsIn
 	Then "Devices" list should be displayed to the user
 	When User click content from "Hostname" column
 	And User navigates to the "Projects" tab
-	When User open "Device Projects" section
+	When User opens "Device Projects" section on the Details Page
 	When User have opened Column Settings for "Project" column in the Details Page table
 	When User clicks Column button on the Column Settings panel
 	When User select "Key" checkbox on the Column Settings panel
@@ -218,7 +218,7 @@ Scenario Outline: EvergreenJnr_AllLists_CheckRenamedColumnForApplicationDetailSe
 	And User click content from "<ColumnName>" column
 	And User navigates to the "Applications" tab
 	Then User closes "Application Summary" section on the Details Page
-	When User open "Application Detail" section
+	When User opens "Application Detail" section on the Details Page
 	Then "Manufacturer" column is not displayed to the user
 	And ColumnName is added to the list in the Details Page table
 	| ColumnName |
@@ -236,7 +236,7 @@ Scenario Outline: EvergreenJnr_AllLists_CheckRenamedColumnAndStringFilterForSoft
 	When User perform search by "<SelectedName>"
 	And User click content from "<ColumnName>" column
 	And User navigates to the "Compliance" tab
-	When User open "Software Compliance Issues" section
+	When User opens "Software Compliance Issues" section on the Details Page
 	Then "Manufacturer" column is not displayed to the user
 	And ColumnName is added to the list in the Details Page table
 	| ColumnName |
@@ -264,7 +264,7 @@ Scenario: EvergreenJnr_DevicesLists_CheckThatDataOfColumnsIsDisplayedInTheCustom
 	And User click content from "Hostname" column
 	And User navigates to the "Details" tab
 	Then User closes "Device" section on the Details Page
-	When User open "Custom Fields" section
+	When User opens "Custom Fields" section on the Details Page
 	Then Content is present in the column of the Details Page table
 	| ColumnName |
 	| Label      |
@@ -277,7 +277,7 @@ Scenario: EvergreenJnr_MailboxesLists_CheckThatLinksAndImageItemAreDisplayedInTh
 	When User click content from "Email Address" column
 	And User navigates to the "Users" tab
 	Then User closes "Users" section on the Details Page
-	When User open "Mailbox Permissions" section
+	When User opens "Mailbox Permissions" section on the Details Page
 	Then Image item from "Name" column is displayed to the user
 	Then Links from "Name" column is displayed to the user
 
@@ -289,7 +289,7 @@ Scenario Outline: EvergreenJnr_AllLists_CheckThatRowsInTheTableAreEmptyIfTheData
 	And User click content from "<ColumnName>" column
 	And User navigates to the "Details" tab
 	Then User closes "<SectionName>" section on the Details Page
-	When User open "Department and Location" section
+	When User opens "Department and Location" section on the Details Page
 	Then Empty rows are displayed if the data is unknown
 
 Examples:
@@ -325,3 +325,23 @@ Scenario: EvergreenJnr_DevicesLists_CheckThatTheFilterDropddownIsDisplayedFullyW
 	And User navigates to the "Applications" tab
 	And User have opened Column Settings for "Installed" column in the Details Page table
 	And User clicks Filter button on the Column Settings panel
+	Then Filter panel has standard size
+	Then User select "FALSE" checkbox from filter on the Details Page
+	Then Filter panel has standard size
+
+@Evergreen @Devices @EvergreenJnr_ItemDetails @ItemDetailsDisplay @DAS11647
+Scenario Outline: EvergreenJnr_DevicesLists_CheckThatAutosizeOptionWorksCorrectlyForSiteColumn
+	When User clicks "Devices" on the left-hand menu
+	Then "Devices" list should be displayed to the user
+	When User click content from "Hostname" column
+	And User navigates to the "Applications" tab
+	Then User closes "Application Summary" section on the Details Page
+	When User opens "<SectionName>" section on the Details Page
+	And User have opened Column Settings for "Site" column in the Details Page table
+	And User have select "Autosize This column" option from column settings on the Details Page
+	Then Site column has standard size
+
+	Examples:
+	| SectionName    |
+	| Advertisements |
+	| Collections    |
