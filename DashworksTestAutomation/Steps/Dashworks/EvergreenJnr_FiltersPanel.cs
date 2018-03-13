@@ -647,6 +647,14 @@ namespace DashworksTestAutomation.Steps.Dashworks
             filter.Do();
         }
 
+        [Then(@"""(.*)"" filter is added to URL on ""(.*)"" page")]
+        public void ThenFilterIsAddedToURLOnPage(string filterName, string pageName)
+        {
+            var currentUrl = _driver.Url;
+            StringAssert.Contains("?$filter=(userMigrationRAG%20EQUALS%20('Red'))", currentUrl, pageName, 
+                $"{filterName} is not added to URL");
+        }
+
         [Then(@"Save button is not available on the Filter panel")]
         public void ThenSaveButtonIsNotAvailableOnTheFilterPanel()
         {
