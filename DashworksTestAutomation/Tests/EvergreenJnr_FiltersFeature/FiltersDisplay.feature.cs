@@ -618,9 +618,8 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_FiltersFeature
         [NUnit.Framework.CategoryAttribute("Evergreen_FiltersFeature")]
         [NUnit.Framework.CategoryAttribute("FiltersDisplay")]
         [NUnit.Framework.CategoryAttribute("DAS10696")]
-        [NUnit.Framework.CategoryAttribute("Delete_Newly_Created_List")]
         [NUnit.Framework.CategoryAttribute("DAS12199")]
-        [NUnit.Framework.CategoryAttribute("Not_Run")]
+        [NUnit.Framework.CategoryAttribute("Delete_Newly_Created_List")]
         public virtual void EvergreenJnr_UsersList_CheckThatFilterDataIsDisplayedCorrectlyWhenNavigatingBetweenLists()
         {
             System.Exception lastException = null;
@@ -656,9 +655,8 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_FiltersFeature
                         "Evergreen_FiltersFeature",
                         "FiltersDisplay",
                         "DAS10696",
-                        "Delete_Newly_Created_List",
                         "DAS12199",
-                        "Not_Run"});
+                        "Delete_Newly_Created_List"});
             this.ScenarioSetup(scenarioInfo);
             this.FeatureBackground();
             testRunner.When("User clicks \"Users\" on the left-hand menu", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
@@ -975,7 +973,6 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_FiltersFeature
         [NUnit.Framework.CategoryAttribute("FiltersDisplay")]
         [NUnit.Framework.CategoryAttribute("DAS10696")]
         [NUnit.Framework.CategoryAttribute("DAS12199")]
-        [NUnit.Framework.CategoryAttribute("Not_Run")]
         [NUnit.Framework.TestCaseAttribute("Equals", "Red", "9,438", "is", new string[0])]
         [NUnit.Framework.TestCaseAttribute("Does not equal", "Red", "31,897", "is not", new string[0])]
         public virtual void EvergreenJnr_UsersList_CheckThatFilterOperatorsIsCorrectInFilterInfo(string operatorValue, string filterOption, string rowsCount, string operatorValueInInfo, string[] exampleTags)
@@ -1012,8 +1009,7 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_FiltersFeature
                     "Evergreen_FiltersFeature",
                     "FiltersDisplay",
                     "DAS10696",
-                    "DAS12199",
-                    "Not_Run"};
+                    "DAS12199"};
             if ((exampleTags != null))
             {
                 @__tags = System.Linq.Enumerable.ToArray(System.Linq.Enumerable.Concat(@__tags, exampleTags));
@@ -1123,7 +1119,6 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_FiltersFeature
         [NUnit.Framework.CategoryAttribute("FiltersDisplay")]
         [NUnit.Framework.CategoryAttribute("DAS10696")]
         [NUnit.Framework.CategoryAttribute("DAS12114")]
-        [NUnit.Framework.CategoryAttribute("Not_Run")]
         [NUnit.Framework.TestCaseAttribute("Equals", "8 Mar 2016", "3", "is", new string[0])]
         [NUnit.Framework.TestCaseAttribute("Does not equal", "8 Mar 2016", "14,781", "is not", new string[0])]
         [NUnit.Framework.TestCaseAttribute("Before", "8 Mar 2016", "4,699", "is before", new string[0])]
@@ -1164,8 +1159,7 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_FiltersFeature
                     "Evergreen_FiltersFeature",
                     "FiltersDisplay",
                     "DAS10696",
-                    "DAS12114",
-                    "Not_Run"};
+                    "DAS12114"};
             if ((exampleTags != null))
             {
                 @__tags = System.Linq.Enumerable.ToArray(System.Linq.Enumerable.Concat(@__tags, exampleTags));
@@ -1201,8 +1195,7 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_FiltersFeature
         [NUnit.Framework.CategoryAttribute("FiltersDisplay")]
         [NUnit.Framework.CategoryAttribute("DAS10696")]
         [NUnit.Framework.CategoryAttribute("DAS11090")]
-        [NUnit.Framework.CategoryAttribute("DAS12114")]
-        [NUnit.Framework.CategoryAttribute("Not_Run")]
+        [NUnit.Framework.CategoryAttribute("DAS1211")]
         [NUnit.Framework.TestCaseAttribute("Equals", "22 Nov 2012", "16", "is", new string[0])]
         [NUnit.Framework.TestCaseAttribute("Does not equal", "22 Nov 2012", "17,209", "is not", new string[0])]
         [NUnit.Framework.TestCaseAttribute("Before", "22 Nov 2012", "1", "is before", new string[0])]
@@ -1244,8 +1237,7 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_FiltersFeature
                     "FiltersDisplay",
                     "DAS10696",
                     "DAS11090",
-                    "DAS12114",
-                    "Not_Run"};
+                    "DAS1211"};
             if ((exampleTags != null))
             {
                 @__tags = System.Linq.Enumerable.ToArray(System.Linq.Enumerable.Concat(@__tags, exampleTags));
@@ -1746,7 +1738,6 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_FiltersFeature
         [NUnit.Framework.CategoryAttribute("FilterFunctionality")]
         [NUnit.Framework.CategoryAttribute("DAS11087")]
         [NUnit.Framework.CategoryAttribute("DAS12114")]
-        [NUnit.Framework.CategoryAttribute("Not_Run")]
         public virtual void EvergreenJnr_DevicesList_CheckThatDateAndTimeFiltersWithEqualsValuesAreWorkingCorrectly()
         {
             System.Exception lastException = null;
@@ -1782,8 +1773,7 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_FiltersFeature
                         "EvergreenJnr_FiltersFeature",
                         "FilterFunctionality",
                         "DAS11087",
-                        "DAS12114",
-                        "Not_Run"});
+                        "DAS12114"});
             this.ScenarioSetup(scenarioInfo);
             this.FeatureBackground();
             testRunner.When("User clicks \"Devices\" on the left-hand menu", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
@@ -1811,7 +1801,6 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_FiltersFeature
         [NUnit.Framework.CategoryAttribute("DAS11087")]
         [NUnit.Framework.CategoryAttribute("DAS11090")]
         [NUnit.Framework.CategoryAttribute("DAS12114")]
-        [NUnit.Framework.CategoryAttribute("Not_Run")]
         [NUnit.Framework.TestCaseAttribute("Windows7Mi: Date & Time Task", "22 Nov 2012", "17,209", new string[0])]
         [NUnit.Framework.TestCaseAttribute("Build Date", "6 Nov 2004", "17,224", new string[0])]
         public virtual void EvergreenJnr_DevicesList_CheckThatDateAndTimeFiltersWithDoesNotEqualValuesAreWorkingCorrectly(string filterName, string value, string rowCount, string[] exampleTags)
@@ -1849,8 +1838,7 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_FiltersFeature
                     "FilterFunctionality",
                     "DAS11087",
                     "DAS11090",
-                    "DAS12114",
-                    "Not_Run"};
+                    "DAS12114"};
             if ((exampleTags != null))
             {
                 @__tags = System.Linq.Enumerable.ToArray(System.Linq.Enumerable.Concat(@__tags, exampleTags));
@@ -2337,6 +2325,8 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_FiltersFeature
         [NUnit.Framework.CategoryAttribute("Evergreen_FiltersFeature")]
         [NUnit.Framework.CategoryAttribute("FiltersDisplay")]
         [NUnit.Framework.CategoryAttribute("DAS11552")]
+        [NUnit.Framework.CategoryAttribute("DAS12207")]
+        [NUnit.Framework.CategoryAttribute("Not_Run")]
         public virtual void EvergreenJnr_DevicesList_CheckThatRelevantDataSetBeDisplayedAfterEditingFilter()
         {
             System.Exception lastException = null;
@@ -2370,7 +2360,9 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_FiltersFeature
                         "Devices",
                         "Evergreen_FiltersFeature",
                         "FiltersDisplay",
-                        "DAS11552"});
+                        "DAS11552",
+                        "DAS12207",
+                        "Not_Run"});
             this.ScenarioSetup(scenarioInfo);
             this.FeatureBackground();
             testRunner.When("User clicks \"Devices\" on the left-hand menu", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
@@ -2406,6 +2398,8 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_FiltersFeature
         [NUnit.Framework.CategoryAttribute("Evergreen_FiltersFeature")]
         [NUnit.Framework.CategoryAttribute("FiltersDisplay")]
         [NUnit.Framework.CategoryAttribute("DAS11552")]
+        [NUnit.Framework.CategoryAttribute("DAS12207")]
+        [NUnit.Framework.CategoryAttribute("Not_Run")]
         public virtual void EvergreenJnr_UsersList_CheckThatRelevantDataSetBeDisplayedAfterResettingFilter()
         {
             System.Exception lastException = null;
@@ -2439,7 +2433,9 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_FiltersFeature
                         "Users",
                         "Evergreen_FiltersFeature",
                         "FiltersDisplay",
-                        "DAS11552"});
+                        "DAS11552",
+                        "DAS12207",
+                        "Not_Run"});
             this.ScenarioSetup(scenarioInfo);
             this.FeatureBackground();
             testRunner.When("User clicks \"Users\" on the left-hand menu", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
@@ -2674,6 +2670,7 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_FiltersFeature
         [NUnit.Framework.CategoryAttribute("DAS11468")]
         [NUnit.Framework.CategoryAttribute("DAS12152")]
         [NUnit.Framework.CategoryAttribute("Delete_Newly_Created_List")]
+        [NUnit.Framework.CategoryAttribute("Not_Run")]
         public virtual void EvergreenJnr_DevicesList_CheckThat500ErrorIsNotDisplayedForStaticListAfterRemovingAssociationsList()
         {
             System.Exception lastException = null;
@@ -2710,7 +2707,8 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_FiltersFeature
                         "FiltersDisplay",
                         "DAS11468",
                         "DAS12152",
-                        "Delete_Newly_Created_List"});
+                        "Delete_Newly_Created_List",
+                        "Not_Run"});
             this.ScenarioSetup(scenarioInfo);
             this.FeatureBackground();
             testRunner.When("User clicks \"Applications\" on the left-hand menu", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");

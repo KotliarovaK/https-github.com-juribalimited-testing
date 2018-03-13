@@ -62,7 +62,7 @@ Scenario: EvergreenJnr_AllLists_CheckSearchFilterAndTableContentDuringNavigation
 	And "17,225" rows are displayed in the agGrid
 	And Search field is empty
 
-@Evergreen @Devices @EvergreenJnr_Search @Search
+@Evergreen @Devices @EvergreenJnr_Search @Search @DAS12206 @Not_Run
 Scenario: EvergreenJnr_DevicesList_SearchTests
 	When User add following columns using URL to the "Devices" page:
 	| ColumnName          |
@@ -80,7 +80,7 @@ Scenario: EvergreenJnr_DevicesList_SearchTests
 	| RED                 | 9,238        |
 	| 0JIE                | 1            |
 
-@Evergreen @Devices @EvergreenJnr_Search @Search @DAS11012
+@Evergreen @Devices @EvergreenJnr_Search @Search @DAS11012 @DAS12206 @Not_Run
 Scenario: EvergreenJnr_DevicesList_ClearingSearchReturnsTheFullDataSet
 	When User clicks "Devices" on the left-hand menu
 	Then "Devices" list should be displayed to the user
@@ -93,7 +93,7 @@ Scenario: EvergreenJnr_DevicesList_ClearingSearchReturnsTheFullDataSet
 	Then URL is "http://automation.corp.juriba.com/evergreen/#/devices"
 
 @Evergreen @Users @EvergreenJnr_Search @Search @DAS11012
-Scenario: EvergreenJnr_UsersList_ClearingSearchReturnsTheFullDataSet
+Scenario: EvergreenJnr_UsersList_ClearingSearchReturnsTheFullDataSet @DAS12206 @Not_Run
 	When User clicks "Users" on the left-hand menu
 	Then "Users" list should be displayed to the user
 	And User enters SearchCriteria into the agGrid Search Box and the correct NumberOfRows are returned
