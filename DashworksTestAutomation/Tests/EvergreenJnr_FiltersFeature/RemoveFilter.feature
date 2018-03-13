@@ -49,7 +49,7 @@ Scenario: EvergreenJnr_DevicesList_CheckThatDeleteByUrlIsUpdatingRowCount
 	When User clicks the Filters button
 	Then "Compliance" filter is removed from filters
 
-@Evergreen @Users @Evergreen_FiltersFeature @RemoveFilter @DAS11009 @DAS11044 @DAS12199 @Not_Run
+@Evergreen @Users @Evergreen_FiltersFeature @RemoveFilter @DAS11009 @DAS11044 @DAS12199
 Scenario: EvergreenJnr_UsersList_CheckThatDeletePartOfFilterFromUrlIsUpdatingRowCount
 	When User clicks "Users" on the left-hand menu
 	Then "Users" list should be displayed to the user
@@ -78,7 +78,7 @@ Scenario: EvergreenJnr_UsersList_CheckThatDeletePartOfFilterFromUrlIsUpdatingRow
 	And "41,335" rows are displayed in the agGrid
 	Then "Compliance" filter is removed from filters
 
-@Evergreen @Mailboxes @Evergreen_FiltersFeature @RemoveFilter @DAS10996
+@Evergreen @Mailboxes @Evergreen_FiltersFeature @RemoveFilter @DAS10996 @DAS12207 @Not_Run
 Scenario: EvergreenJnr_MailboxesList_CheckThatFiltersIsResetAndDataOnTheGridUpdatedBackToTheFullDataSet
 	When User clicks "Mailboxes" on the left-hand menu
 	Then "Mailboxes" list should be displayed to the user
