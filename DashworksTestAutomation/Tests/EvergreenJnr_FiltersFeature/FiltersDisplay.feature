@@ -151,7 +151,7 @@ Scenario: EvergreenJnr_DevicesList_CheckThatFilterDataIsDisplayedCorrectlyWhenNa
 	| Values          |
 	| 00BDM1JUR8IF419 |
 
-@Evergreen @Users @Evergreen_FiltersFeature @FiltersDisplay @DAS10696 @Delete_Newly_Created_List @DAS12199 @Not_Run
+@Evergreen @Users @Evergreen_FiltersFeature @FiltersDisplay @DAS10696 @DAS12199 @Delete_Newly_Created_List @Not_Run
 Scenario: EvergreenJnr_UsersList_CheckThatFilterDataIsDisplayedCorrectlyWhenNavigatingBetweenLists
 	When User clicks "Users" on the left-hand menu
 	Then "Users" list should be displayed to the user
@@ -316,7 +316,7 @@ Examples:
 	| Less than                | 1            | 1,164     | is less than                |
 	| Less than or equal to    | 1            | 1,166     | is less than or equal to    |
 
- @Evergreen @Mailboxes @Evergreen_FiltersFeature @FiltersDisplay @DAS10696 @DAS12114 @Not_Run
+ @Evergreen @Mailboxes @Evergreen_FiltersFeature @FiltersDisplay @DAS10696 @DAS12114
 Scenario Outline: EvergreenJnr_MailboxesList_CheckThatFilterOperatorsIsCorrectInFilterInfo
 	When User clicks "Mailboxes" on the left-hand menu
 	Then "Mailboxes" list should be displayed to the user
@@ -340,7 +340,7 @@ Examples:
 	| Empty          |              | 6         | is empty            |
 	| Not empty      |              | 14,778    | is not empty        |
 
- @Evergreen @Devices @Evergreen_FiltersFeature @FiltersDisplay @DAS10696 @DAS11090 @DAS12114 @Not_Run
+ @Evergreen @Devices @Evergreen_FiltersFeature @FiltersDisplay @DAS10696 @DAS11090 @DAS1211
 Scenario Outline: EvergreenJnr_DevicesList_CheckThatFilterOperatorsIsCorrectInFilterInfoDatetime
 	When User clicks "Devices" on the left-hand menu
 	Then "Devices" list should be displayed to the user
@@ -496,7 +496,7 @@ Examples:
 	| Mailboxes |
 	| Devices   |
 
-@Evergreen @Devices @EvergreenJnr_FiltersFeature @FilterFunctionality @DAS11087 @DAS12114 @Not_Run
+@Evergreen @Devices @EvergreenJnr_FiltersFeature @FilterFunctionality @DAS11087 @DAS12114
 Scenario: EvergreenJnr_DevicesList_CheckThatDateAndTimeFiltersWithEqualsValuesAreWorkingCorrectly
 	When User clicks "Devices" on the left-hand menu
 	Then "Devices" list should be displayed to the user
@@ -508,7 +508,7 @@ Scenario: EvergreenJnr_DevicesList_CheckThatDateAndTimeFiltersWithEqualsValuesAr
 	Then "Windows7Mi: Date & Time Task" filter is added to the list
 	Then "16" rows are displayed in the agGrid
 
-@Evergreen @Devices @EvergreenJnr_FiltersFeature @FilterFunctionality @DAS11087 @DAS11090 @DAS12114 @Not_Run
+@Evergreen @Devices @EvergreenJnr_FiltersFeature @FilterFunctionality @DAS11087 @DAS11090 @DAS12114
 Scenario Outline: EvergreenJnr_DevicesList_CheckThatDateAndTimeFiltersWithDoesNotEqualValuesAreWorkingCorrectly
 	When User clicks "Devices" on the left-hand menu
 	Then "Devices" list should be displayed to the user
@@ -763,7 +763,7 @@ Scenario: EvergreenJnr_DevicesList_CheckThatMultipleFilterCriteriaToApplicationN
 	And "(Application Name ~ (adobe, microsoft) ASSOCIATION = (installed on device))" text is displayed in filter container
 
 
-@Evergreen @Devices @Evergreen_FiltersFeature @FiltersDisplay @DAS11468 @DAS12152 @Delete_Newly_Created_List
+@Evergreen @Devices @Evergreen_FiltersFeature @FiltersDisplay @DAS11468 @DAS12152 @Delete_Newly_Created_List @Not_Run
 Scenario: EvergreenJnr_DevicesList_CheckThat500ErrorIsNotDisplayedForStaticListAfterRemovingAssociationsList
 	When User clicks "Applications" on the left-hand menu
 	Then "Applications" list should be displayed to the user
