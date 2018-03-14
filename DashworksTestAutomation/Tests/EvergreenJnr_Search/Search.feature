@@ -92,8 +92,8 @@ Scenario: EvergreenJnr_DevicesList_ClearingSearchReturnsTheFullDataSet
 	Then "17,225" rows are displayed in the agGrid
 	Then URL is "http://automation.corp.juriba.com/evergreen/#/devices"
 
-@Evergreen @Users @EvergreenJnr_Search @Search @DAS11012
-Scenario: EvergreenJnr_UsersList_ClearingSearchReturnsTheFullDataSet @DAS12206 @Not_Run
+@Evergreen @Users @EvergreenJnr_Search @Search @DAS11012 @DAS12206 @Not_Run
+Scenario: EvergreenJnr_UsersList_ClearingSearchReturnsTheFullDataSet
 	When User clicks "Users" on the left-hand menu
 	Then "Users" list should be displayed to the user
 	And User enters SearchCriteria into the agGrid Search Box and the correct NumberOfRows are returned
