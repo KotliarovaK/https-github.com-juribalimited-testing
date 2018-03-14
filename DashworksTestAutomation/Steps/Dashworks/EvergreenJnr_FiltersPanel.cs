@@ -660,6 +660,10 @@ namespace DashworksTestAutomation.Steps.Dashworks
         public void ThenFilterIsAddedToURLOnPage(string filterName, string pageName)
         {
             var currentUrl = _driver.Url;
+            const string pattern = @"\$select=(.*)";
+            var urlPartToCheck = Regex.Match(currentUrl, pattern).Groups[1].Value;
+            StringAssert.Contains(ColumnNameToUrlConvertor.Convert(pageName, filterName).ToLower(), urlPartToCheck.ToLower(),
+                $"{filterName} is not added to URL");
             StringAssert.Contains("?$filter=(userMigrationRAG%20EQUALS%20('Red'))", currentUrl, pageName, 
                 $"{filterName} is not added to URL");
         }

@@ -77,7 +77,7 @@ Scenario: EvergreenJnr_DevicesList_CheckThatURLsAreUpdatedAfterAddingSortingAndC
 	When User navigates to the "All Devices" list
 	Then default URL is displayed on "Devices" page
 
-@Evergreen @Users @EvergreenJnr_BaseDashboardPage @BaseDashboardPage @DAS12174@Not_Run
+@Evergreen @Users @EvergreenJnr_BaseDashboardPage @BaseDashboardPage @DAS12174 @Not_Run
 Scenario: EvergreenJnr_UsersList_CheckThatURLsAreUpdatedAfterAddingSortingAndFilters
 	When User clicks "Users" on the left-hand menu
 	Then "Users" list should be displayed to the user
@@ -90,9 +90,9 @@ Scenario: EvergreenJnr_UsersList_CheckThatURLsAreUpdatedAfterAddingSortingAndFil
 	Then "Compliance" filter is added to URL on "Users" page 
 	When User navigates to the "All Users" list
 	Then default URL is displayed on "Users" page
-	When User clicks the Filters button
-	Then Filters panel is displayed to the user
-	When User add "Windows7Mi: Category" filter where type is "Equals" with added column and following checkboxes:
-	| SelectedCheckboxes |
-	| None               |
-	| Terminated         |
+	#When User clicks the Filters button
+	#Then Filters panel is displayed to the user
+	#When User add "Windows7Mi: Category" filter where type is "Equals" with added column and following checkboxes:
+	#| SelectedCheckboxes |
+	#| None               |
+	#| Terminated         |
