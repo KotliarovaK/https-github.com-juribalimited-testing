@@ -58,6 +58,15 @@ namespace DashworksTestAutomation.Helpers
                 case "Owner Common Name":
                     return "ownerCommonName";
 
+                case "ComputerSc: In Scope":
+                    return "project_40_inScope";
+
+                case "Cost Centre":
+                    return "costCentre";
+
+                case "Windows7Mi: Object ID":
+                    return "project_1_objectID";
+
                 case "Windows7Mi: SS Project Date Enabled":
                     return "project_task_1_13063_4_Task";
 

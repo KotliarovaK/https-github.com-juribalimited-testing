@@ -56,3 +56,43 @@ Scenario: EvergreenJnr_AllList_CheckThatNoConsoleErrorsAreDisplayedAfterQuicklyN
 	And User quickly navigate to "Mailboxes" on the left-hand menu
 	Then "Mailboxes" list should be displayed to the user
 	And There are no errors in the browser console
+
+@Evergreen @Devices @EvergreenJnr_BaseDashboardPage @BaseDashboardPage @DAS12174
+Scenario: EvergreenJnr_DevicesList_CheckThatURLsAreUpdatedAfterAddingSortingAndColumns
+	When User clicks "Devices" on the left-hand menu
+	Then "Devices" list should be displayed to the user
+	When User click on 'Hostname' column header
+	Then data in table is sorted by 'Hostname' column in ascending order
+	Then Ascending order sorted on "Hostname" column is displayed in URL
+	When User clicks the Columns button
+	Then Columns panel is displayed to the user
+	When ColumnName is entered into the search box and the selection is clicked
+	| ColumnName            |
+	| Cost Centre           |
+	| ComputerSc: In Scope  |
+	| Windows7Mi: Object ID |
+	Then "Cost Centre" column is added to URL on "Devices" page
+	And "ComputerSc: In Scope" column is added to URL on "Devices" page
+	And "Windows7Mi: Object ID" column is added to URL on "Devices" page
+	When User navigates to the "All Devices" list
+	Then default URL is displayed on "Devices" page
+
+@Evergreen @Users @EvergreenJnr_BaseDashboardPage @BaseDashboardPage @DAS12174@Not_Run
+Scenario: EvergreenJnr_UsersList_CheckThatURLsAreUpdatedAfterAddingSortingAndFilters
+	When User clicks "Users" on the left-hand menu
+	Then "Users" list should be displayed to the user
+	When User clicks the Filters button
+	Then Filters panel is displayed to the user
+	When User add "Compliance" filter where type is "Equals" with added column and following checkboxes:
+	| SelectedCheckboxes |
+	| Red                |
+	Then "Compliance" column is added to URL on "Users" page
+	Then "Compliance" filter is added to URL on "Users" page 
+	When User navigates to the "All Users" list
+	Then default URL is displayed on "Users" page
+	When User clicks the Filters button
+	Then Filters panel is displayed to the user
+	When User add "Windows7Mi: Category" filter where type is "Equals" with added column and following checkboxes:
+	| SelectedCheckboxes |
+	| None               |
+	| Terminated         |
