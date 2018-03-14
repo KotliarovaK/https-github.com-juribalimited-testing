@@ -61,6 +61,9 @@ namespace DashworksTestAutomation.Helpers
                 case "ComputerSc: In Scope":
                     return "project_40_inScope";
 
+                case "Floor":
+                    return "floor";
+
                 case "Cost Centre":
                     return "costCentre";
 
@@ -186,6 +189,9 @@ namespace DashworksTestAutomation.Helpers
 
                 case "Owner Username":
                     return "ownerUsername";
+
+                case "ComplianceF": //
+                    return "username,directoryname,displayname,fullydistinguishedobjectname,usermigrationrag";
 
                 case "" +
                      "DAS-" +

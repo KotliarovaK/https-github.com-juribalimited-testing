@@ -921,7 +921,7 @@ Examples:
 	| Mailboxes | Owner Department Full Path | Add Owner Department Full Path column |
 
 @Evergreen @Mailboxes @Evergreen_FiltersFeature @FiltersDisplay @DAS11831
-Scenario: EvergreenJnr_DevicesLists_CheckThatResultCounterDoesNotDisappearAfterDeletingTheCharactersInEmailMigraTeamFilter
+Scenario: EvergreenJnr_MailboxesLists_CheckThatResultCounterDoesNotDisappearAfterDeletingTheCharactersInEmailMigraTeamFilter
 	When User clicks "Mailboxes" on the left-hand menu
 	Then "Mailboxes" list should be displayed to the user
 	When User clicks the Filters button
@@ -936,3 +936,12 @@ Scenario: EvergreenJnr_DevicesLists_CheckThatResultCounterDoesNotDisappearAfterD
 	Then "50 of 157 shown" results are displayed in the Filter panel
 	When User deletes one character from the Search field
 	Then "50 of 1502 shown" results are displayed in the Filter panel
+
+@Evergreen @Devices @Evergreen_FiltersFeature @FiltersDisplay @DAS12100
+Scenario: EvergreenJnr_DevicesLists_CheckThatMailboxOwnerFilterCategoryIsNotDisplayedOnDeviceList
+	When User clicks "Devices" on the left-hand menu
+	Then "Devices" list should be displayed to the user
+	When User clicks the Filters button
+	Then Filters panel is displayed to the user
+	When User clicks Add New button on the Filter panel
+	Then "Mailbox Owner" section is not displayed in the Filter panel

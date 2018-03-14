@@ -37,6 +37,15 @@ namespace DashworksTestAutomation.Steps.Dashworks
             Logger.Write("Actions Panel panel is visible");
         }
 
+        [When(@"User clicks Add New button on the Filter panel")]
+        public void WhenUserClicksAddNewButtonOnTheFilterPanel()
+        {
+            var menu = _driver.NowAt<FiltersElement>();
+            _driver.WaitWhileControlIsNotDisplayed<FiltersElement>(() => menu.AddNewFilterButton);
+            menu.AddNewFilterButton.Click();
+            Logger.Write("Add New button was clicked");
+        }
+
         [When(@"user select ""(.*)"" filter")]
         public void WhenUserSelectFilter(string filterName)
         {
@@ -651,6 +660,10 @@ namespace DashworksTestAutomation.Steps.Dashworks
         public void ThenFilterIsAddedToURLOnPage(string filterName, string pageName)
         {
             var currentUrl = _driver.Url;
+            const string pattern = @"\$select=(.*)";
+            var urlPartToCheck = Regex.Match(currentUrl, pattern).Groups[1].Value;
+            StringAssert.Contains(ColumnNameToUrlConvertor.Convert(pageName, filterName).ToLower(), urlPartToCheck.ToLower(),
+                $"{filterName} is not added to URL");
             StringAssert.Contains("?$filter=(userMigrationRAG%20EQUALS%20('Red'))", currentUrl, pageName, 
                 $"{filterName} is not added to URL");
         }
@@ -661,6 +674,14 @@ namespace DashworksTestAutomation.Steps.Dashworks
             var filterPanel = _driver.NowAt<FiltersElement>();
             _driver.WaitWhileControlIsNotDisplayed<FiltersElement>(() => filterPanel.SaveButton);
             Assert.IsTrue(Convert.ToBoolean(filterPanel.SaveButton.GetAttribute("disabled")), "Save Button is active");
+        }
+
+        [Then(@"""(.*)"" section is not displayed in the Filter panel")]
+        public void ThenSectionIsNotDisplayedInTheFilterPanel(string categoryName)
+        {
+            var filterElement = _driver.NowAt<FiltersElement>();
+            Assert.IsFalse(filterElement.CategoryIsDisplayed(categoryName),
+                $"{categoryName} category stil displayed in Filter Panel");
         }
 
         [Then(@"reset button in Search field at selected Filter is displayed")]
