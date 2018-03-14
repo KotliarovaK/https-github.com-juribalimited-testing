@@ -219,6 +219,12 @@ namespace DashworksTestAutomation.Pages.Evergreen
             return Driver.IsElementDisplayed(selector);
         }
 
+        public bool CategoryIsDisplayed(string sectionsName)
+        {
+            return Driver.IsElementDisplayed(
+                By.XPath($".//div[@class='filter-category-label blue-color bold-text'][contains(text(),'{sectionsName}"));
+        }
+
         public List<string> GetFiltersNames()
         {
             Driver.WaitWhileControlIsNotDisplayed(By.XPath(".//span[@class='filter-label-name']"));
