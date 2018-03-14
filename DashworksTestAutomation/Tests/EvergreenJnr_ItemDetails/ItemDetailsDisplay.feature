@@ -131,7 +131,7 @@ Examples:
 	| Devices  | Hostname | Compliance | Software Compliance Issues | Application | PackageKey       | PackageKey       |
 	| Devices  | Hostname | Projects   | Device Projects            | Project     | Object ID        | Object ID        |
 	| Devices  | Hostname | Projects   | Device Projects            | Project     | Key              | Key              |
-	#| Devices  | Hostname | Projects   | Device Owner Projects      | Username    | ObjecyKey        | ObjecyKey        |
+	| Devices  | Hostname | Projects   | Device Owner Projects      | Username    | Object Key       | Object Key       |
 	| Devices  | Hostname | Projects   | Device Owner Projects      | Username    | Object ID        | Object ID        |
 	| Devices  | Hostname | Projects   | Device Owner Projects      | Username    | Key              | Key              |
 	| Devices  | Hostname | Projects   | Device Owner Projects      | Username    | Request Type Key | Request Type Key |
