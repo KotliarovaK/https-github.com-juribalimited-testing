@@ -114,3 +114,35 @@ Scenario: EvergreenJnr_ApplicationsLists_CheckThatNoDataIsDisplayedInTheApplicat
 	And Content is empty in the column
 	| ColumnName                              |
 	| Windows7Mi: Application Rationalisation |
+
+@Evergreen @Mailboxes @EvergreenJnr_Columns @AddColumnAction @DAS11839
+Scenario: EvergreenJnr_MailboxesLists_CheckThatTheLowestValueOfUserCountColumnIsNull
+	When User clicks "Mailboxes" on the left-hand menu
+	Then "Mailboxes" list should be displayed to the user
+	When User clicks the Columns button
+	Then Columns panel is displayed to the user
+	When ColumnName is entered into the search box and the selection is clicked
+	| ColumnName |
+	| User Count |
+	Then ColumnName is added to the list
+	| ColumnName |
+	| User Count |
+	When User click on 'User Count' column header
+	When User click on 'User Count' column header
+	Then data in table is sorted by 'User Count' column in ascending order
+	Then Lowest value of "User Count" column is null
+	
+@Evergreen @AllLists @EvergreenJnr_Columns @AddColumnAction @DAS12149 @Not_Run
+Scenario Outline: EvergreenJnr_AllLists_CheckThat500ErrorIsNotDisplayedAfterAddingComplianceDataToLists
+When User add following columns using URL to the "<ListName>" page:
+	| ColumnName               |
+	| <ColumnName> |
+	Then Content is present in the newly added column
+	| ColumnName   |
+	| <ColumnName> |
+	
+Examples:
+	| ListName     |ColumnName|
+	| Devices      |
+	| Users        |
+	| Applications |

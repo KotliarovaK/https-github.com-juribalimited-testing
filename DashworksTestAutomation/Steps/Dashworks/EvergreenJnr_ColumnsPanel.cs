@@ -369,6 +369,14 @@ namespace DashworksTestAutomation.Steps.Dashworks
             columnElement.ExpandColumnsSectionByName(categoryName);
         }
 
+        [Then(@"Lowest value of ""(.*)"" column is null")]
+        public void ThenLowestValueOfColumnIsNull(string columnName)
+        {
+            var page = _driver.NowAt<BaseDashboardPage>();
+            var content = page.GetColumnContent(columnName);
+            Assert.IsFalse(content.Contains("-1"), "The Lowest value is not null");
+        }
+
         [Then(@"""(.*)"" column is added to URL on ""(.*)"" page")]
         public void ThenColumnIsAddedToURLOnPage(string coolumnName, string pageName)
         {
