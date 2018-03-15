@@ -697,7 +697,7 @@ Scenario: EvergreenJnr_DevicesLists_CheckThatUserIsNotAbleToCreateListsWithLongN
 	Then "Devices" list should be displayed to the user
 	When User click on 'Hostname' column header
 	Then data in table is sorted by 'Hostname' column in ascending order
-	When User create custom list with "12345678901234567890123456789012345678901" name
+	When User create custom list with "1234567890123456789012345678901234567890" name
 	Then "1234567890123456789012345678901234567890" list is displayed to user
 	When User duplicates list with "1234567890123456789012345678901234567890" name
 	Then "12345678901234567890123456789012345678901" list is displayed to user

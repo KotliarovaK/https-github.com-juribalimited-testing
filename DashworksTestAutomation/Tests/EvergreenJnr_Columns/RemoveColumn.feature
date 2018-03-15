@@ -279,7 +279,7 @@ Scenario: EvergreenJnr_DevicesList_CheckThatRemovingColumnAndFilterFromUrlWorksC
 	| SelectedCheckboxes |
 	| Red                |
 	Then "Compliance" filter is added to the list
-	And "9,174" rows are displayed in the agGrid
+	And "9,205" rows are displayed in the agGrid
 	And table data is filtered correctly
 	And "Compliance" filter with "Red" values is added to URL on "Devices" page
 	And "Compliance" column is added to URL on "Devices" page
@@ -316,7 +316,7 @@ Scenario: EvergreenJnr_DevicesList_CheckThatRemovingColumnAndFilterAndCustomList
 	| SelectedCheckboxes |
 	| Red                |
 	Then "Compliance" filter is added to the list
-	And "9,174" rows are displayed in the agGrid
+	And "9,205" rows are displayed in the agGrid
 	And table data is filtered correctly
 	And "Compliance" filter with "Red" values is added to URL on "Devices" page
 	And "Compliance" column is added to URL on "Devices" page
@@ -375,7 +375,7 @@ Scenario: EvergreenJnr_UsersList_CheckThatColumnIsDisplayedInColumnsPanelAfterRe
 	And "18" subcategories is displayed for "User" category
 	And "47" subcategories is displayed for "Project Tasks: Windows7Mi" category
 
-@Evergreen @Applications @EvergreenJnr_Columns @RemoveColumn @DAS11515
+@Evergreen @Applications @EvergreenJnr_Columns @RemoveColumn @DAS11515 @DAS12221 @Not_Run
 Scenario: EvergreenJnr_ApplicationsList_CheckThatColumnIsDisplayedInColumnsPanelAfterRemovingAColumnWhichAlsoExistsAsAFilter
 	When User add following columns using URL to the "Applications" page:
 	| ColumnName                 |
