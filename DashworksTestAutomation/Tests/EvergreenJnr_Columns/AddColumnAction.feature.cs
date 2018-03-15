@@ -329,6 +329,7 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_Columns
         [NUnit.Framework.CategoryAttribute("DAS10997")]
         [NUnit.Framework.CategoryAttribute("DAS12026")]
         [NUnit.Framework.CategoryAttribute("DAS12156")]
+        [NUnit.Framework.CategoryAttribute("Not_Run")]
         [NUnit.Framework.TestCaseAttribute("Windows7Mi: Application Rationalisation", new string[0])]
         [NUnit.Framework.TestCaseAttribute("Windows7Mi: Application Readiness", new string[0])]
         [NUnit.Framework.TestCaseAttribute("Windows7Mi: Core Application", new string[0])]
@@ -368,7 +369,8 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_Columns
                     "AddColumnAction",
                     "DAS10997",
                     "DAS12026",
-                    "DAS12156"};
+                    "DAS12156",
+                    "Not_Run"};
             if ((exampleTags != null))
             {
                 @__tags = System.Linq.Enumerable.ToArray(System.Linq.Enumerable.Concat(@__tags, exampleTags));
@@ -464,6 +466,7 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_Columns
         [NUnit.Framework.CategoryAttribute("AddColumnAction")]
         [NUnit.Framework.CategoryAttribute("DAS11649")]
         [NUnit.Framework.CategoryAttribute("DAS12199")]
+        [NUnit.Framework.CategoryAttribute("Not_Run")]
         public virtual void EvergreenJnr_ApplicationsLists_CheckThatNoDataIsDisplayedInTheApplicationRationalisationColumn()
         {
             System.Exception lastException = null;
@@ -499,7 +502,8 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_Columns
                         "EvergreenJnr_Columns",
                         "AddColumnAction",
                         "DAS11649",
-                        "DAS12199"});
+                        "DAS12199",
+                        "Not_Run"});
             this.ScenarioSetup(scenarioInfo);
             this.FeatureBackground();
             testRunner.When("User clicks \"Applications\" on the left-hand menu", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");

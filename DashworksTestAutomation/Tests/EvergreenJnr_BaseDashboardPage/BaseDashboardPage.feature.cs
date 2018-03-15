@@ -351,7 +351,7 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_BaseDashboardPage
             TechTalk.SpecFlow.Table table1 = new TechTalk.SpecFlow.Table(new string[] {
                         "ColumnName"});
             table1.AddRow(new string[] {
-                        "Cost Centre"});
+                        "Owner Cost Centre"});
             table1.AddRow(new string[] {
                         "ComputerSc: In Scope"});
             table1.AddRow(new string[] {
