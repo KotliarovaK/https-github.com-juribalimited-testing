@@ -132,17 +132,29 @@ Scenario: EvergreenJnr_MailboxesLists_CheckThatTheLowestValueOfUserCountColumnIs
 	Then data in table is sorted by 'User Count' column in ascending order
 	Then Lowest value of "User Count" column is null
 	
-#@Evergreen @AllLists @EvergreenJnr_Columns @AddColumnAction @DAS12149 @Not_Run
-#Scenario Outline: EvergreenJnr_AllLists_CheckThat500ErrorIsNotDisplayedAfterAddingComplianceDataToLists
-#When User add following columns using URL to the "<ListName>" page:
-#	| ColumnName   |
-#	| <ColumnName> |
-#	Then Content is present in the newly added column
-#	| ColumnName   |
-#	| <ColumnName> |
-#	
-#Examples: 
-#	| ListName     |ColumnName|
-#	| Devices      |
-#	| Users        |
-#	| Applications |
+@Evergreen @AllLists @EvergreenJnr_Columns @AddColumnAction @DAS12149 
+Scenario Outline: EvergreenJnr_AllLists_CheckThat500ErrorIsNotDisplayedAfterAddingComplianceDataToLists
+	When User clicks "<ListName>" on the left-hand menu
+	Then "<ListName>" list should be displayed to the user
+	When User clicks the Filters button
+	Then Filters panel is displayed to the user
+	When User add "<FilterName>" filter where type is "Equals" with added column and following checkboxes:
+	| SelectedCheckboxes |
+	| Unknown            |
+	| Red                |
+	| Amber              |
+	| Green              |
+	| Not Applicable     |
+	Then "<FilterName>" filter is added to the list
+	When User click on '<ColumnHeader>' column header
+	Then data in table is sorted by '<ColumnHeader>' column in ascending order
+	When User click on '<ColumnHeader>' column header
+	Then data in table is sorted by '<ColumnHeader>' column in descending order
+	
+Examples:
+	| ListName     | FilterName       | ColumnHeader     |
+	| Devices      | Compliance       | Compliance       |
+	| Devices      | Owner Compliance | Owner Compliance |
+	| Users        | Compliance       | Compliance       |
+	| Applications | Compliance       | Compliance       |
+	| Mailboxes    | Owner Compliance | Owner Compliance |
