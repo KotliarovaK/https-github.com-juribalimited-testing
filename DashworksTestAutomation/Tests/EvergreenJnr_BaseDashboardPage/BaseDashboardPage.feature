@@ -68,7 +68,7 @@ Scenario: EvergreenJnr_DevicesList_CheckThatURLsAreUpdatedAfterAddingSortingAndC
 	Then Columns panel is displayed to the user
 	When ColumnName is entered into the search box and the selection is clicked
 	| ColumnName            |
-	| Cost Centre           |
+	| Owner Cost Centre     |
 	| ComputerSc: In Scope  |
 	| Windows7Mi: Object ID |
 	Then "Cost Centre" column is added to URL on "Devices" page
