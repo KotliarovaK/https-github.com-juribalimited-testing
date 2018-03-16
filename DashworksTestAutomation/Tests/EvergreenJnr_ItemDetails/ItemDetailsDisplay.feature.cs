@@ -249,7 +249,7 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_ItemDetails
         [NUnit.Framework.TestCaseAttribute("Applications", "Application", "Projects", "Project", "Object ID", "Object ID", new string[0])]
         [NUnit.Framework.TestCaseAttribute("Applications", "Application", "Projects", "Project", "Object Key", "Object Key", new string[0])]
         [NUnit.Framework.TestCaseAttribute("Mailboxes", "Email Address", "Users", "Domain", "Key", "Key", new string[0])]
-        [NUnit.Framework.TestCaseAttribute("Mailboxes", "Email Address", "Users", "Domain", "EvergreenObjectId", "EvergreenObjectId", new string[0])]
+        [NUnit.Framework.TestCaseAttribute("Mailboxes", "Email Address", "Users", "Domain", "Evergreen Object Id", "Evergreen Object Id", new string[0])]
         public virtual void EvergreenJnr_AllLists_CheckThatDataIsDisplayedAfterAddingColumnsForExpandedSections(string pageName, string itemName, string tabName, string columnName, string checkboxName, string newColumnName, string[] exampleTags)
         {
             System.Exception lastException = null;
@@ -331,7 +331,7 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_ItemDetails
         [NUnit.Framework.TestCaseAttribute("Devices", "Hostname", "Applications", "Application Summary", "Advertisements", "Application", "Collection Key", "Collection Key", new string[0])]
         [NUnit.Framework.TestCaseAttribute("Devices", "Hostname", "Applications", "Application Summary", "Advertisements", "Application", "Program Key", "Program Key", new string[0])]
         [NUnit.Framework.TestCaseAttribute("Devices", "Hostname", "Applications", "Application Summary", "Collections", "Collection", "Key", "Key", new string[0])]
-        [NUnit.Framework.TestCaseAttribute("Devices", "Hostname", "Applications", "Application Summary", "Collections", "Collection", "SiteKey", "SiteKey", new string[0])]
+        [NUnit.Framework.TestCaseAttribute("Devices", "Hostname", "Applications", "Application Summary", "Collections", "Collection", "Site Key", "Site Key", new string[0])]
         [NUnit.Framework.TestCaseAttribute("Applications", "Application", "Details", "Application", "Advertisements", "Advertisement", "Advertisement Key", "Advertisement Key", new string[0])]
         [NUnit.Framework.TestCaseAttribute("Applications", "Application", "Details", "Application", "Advertisements", "Advertisement", "Collection Key", "Collection Key", new string[0])]
         [NUnit.Framework.TestCaseAttribute("Applications", "Application", "Details", "Application", "Programs", "Program", "Program Key", "Program Key", new string[0])]
@@ -343,8 +343,8 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_ItemDetails
         [NUnit.Framework.TestCaseAttribute("Applications", "Application", "Distribution", "Users", "Devices", "Device", "Program Key", "Program Key", new string[0])]
         [NUnit.Framework.TestCaseAttribute("Mailboxes", "Email Address", "Users", "Users", "Groups", "Domain", "Key", "Key", new string[0])]
         [NUnit.Framework.TestCaseAttribute("Mailboxes", "Email Address", "Users", "Users", "Mailbox Permissions", "Domain", "Key", "Key", new string[0])]
-        [NUnit.Framework.TestCaseAttribute("Mailboxes", "Email Address", "Users", "Users", "Mailbox Permissions", "Domain", "ViaGroupObjectKey", "ViaGroupObjectKey", new string[0])]
-        [NUnit.Framework.TestCaseAttribute("Mailboxes", "Email Address", "Users", "Users", "Mailbox Permissions", "Domain", "AccessCategoryKey", "AccessCategoryKey", new string[0])]
+        [NUnit.Framework.TestCaseAttribute("Mailboxes", "Email Address", "Users", "Users", "Mailbox Permissions", "Domain", "Via Group Object Key", "Via Group Object Key", new string[0])]
+        [NUnit.Framework.TestCaseAttribute("Mailboxes", "Email Address", "Users", "Users", "Mailbox Permissions", "Domain", "Access Category Key", "Access Category Key", new string[0])]
         public virtual void EvergreenJnr_AllLists_CheckThatDataIsDisplayedAfterAddingColumns(string pageName, string itemName, string tabName, string expandedSectionName, string sectionName, string columnName, string checkboxName, string newColumnName, string[] exampleTags)
         {
             System.Exception lastException = null;

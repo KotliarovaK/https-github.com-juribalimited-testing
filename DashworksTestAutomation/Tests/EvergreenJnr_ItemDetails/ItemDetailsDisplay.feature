@@ -51,13 +51,13 @@ Scenario Outline: EvergreenJnr_AllLists_CheckThatDataIsDisplayedAfterAddingColum
 	Then There are no errors in the browser console
 
 Examples: 
-	| PageName     | ItemName      | TabName      | ColumnName  | CheckboxName      | NewColumnName     |
-	| Devices      | Hostname      | Applications | Application | Key               | Key               |
-	| Users        | Username      | Groups       | Group       | Key               | Key               |
-	| Applications | Application   | Projects     | Project     | Object ID         | Object ID         |
-	| Applications | Application   | Projects     | Project     | Object Key        | Object Key        |
-	| Mailboxes    | Email Address | Users        | Domain      | Key               | Key               |
-	| Mailboxes    | Email Address | Users        | Domain      | EvergreenObjectId | EvergreenObjectId |
+	| PageName     | ItemName      | TabName      | ColumnName  | CheckboxName        | NewColumnName       |
+	| Devices      | Hostname      | Applications | Application | Key                 | Key                 |
+	| Users        | Username      | Groups       | Group       | Key                 | Key                 |
+	| Applications | Application   | Projects     | Project     | Object ID           | Object ID           |
+	| Applications | Application   | Projects     | Project     | Object Key          | Object Key          |
+	| Mailboxes    | Email Address | Users        | Domain      | Key                 | Key                 |
+	| Mailboxes    | Email Address | Users        | Domain      | Evergreen Object Id | Evergreen Object Id |
 
 @Evergreen @AllLists @EvergreenJnr_ItemDetails @ItemDetailsDisplay @DAS11732
 Scenario Outline: EvergreenJnr_AllLists_CheckThatDataIsDisplayedAfterAddingColumns
@@ -80,32 +80,32 @@ Scenario Outline: EvergreenJnr_AllLists_CheckThatDataIsDisplayedAfterAddingColum
 	Then There are no errors in the browser console
 
 Examples: 
-	| PageName     | ItemName      | TabName      | ExpandedSectionName | SectionName         | ColumnName    | CheckboxName      | NewColumnName     |
-	| Devices      | Hostname      | Applications | Application Summary | Application Detail  | Application   | Application Key   | Application Key   |
-	| Devices      | Hostname      | Applications | Application Summary | Application Detail  | Application   | Advertisement Key | Advertisement Key |
-	| Devices      | Hostname      | Applications | Application Summary | Application Detail  | Application   | Group Key         | Group Key         |
-	| Devices      | Hostname      | Applications | Application Summary | Application Detail  | Application   | Collection Key    | Collection Key    |
-	#| Devices      | Hostname      | Applications | Application Summary | Application Detail  | Application   | User Key          | User Key          |
-	| Devices      | Hostname      | Applications | Application Summary | Advertisements      | Application   | Key               | Key               |
-	| Devices      | Hostname      | Applications | Application Summary | Advertisements      | Application   | Application Key   | Application Key   |
-	| Devices      | Hostname      | Applications | Application Summary | Advertisements      | Application   | SiteKey           | SiteKey           |
-	| Devices      | Hostname      | Applications | Application Summary | Advertisements      | Application   | Collection Key    | Collection Key    |
-	| Devices      | Hostname      | Applications | Application Summary | Advertisements      | Application   | Program Key       | Program Key       |
-	| Devices      | Hostname      | Applications | Application Summary | Collections         | Collection    | Key               | Key               |
-	| Devices      | Hostname      | Applications | Application Summary | Collections         | Collection    | SiteKey           | SiteKey           |
-	| Applications | Application   | Details      | Application         | Advertisements      | Advertisement | Advertisement Key | Advertisement Key |
-	| Applications | Application   | Details      | Application         | Advertisements      | Advertisement | Collection Key    | Collection Key    |
-	| Applications | Application   | Details      | Application         | Programs            | Program       | Program Key       | Program Key       |
-	| Applications | Application   | Distribution | Users               | Devices             | Device        | Computer Key      | Computer Key      |
-	| Applications | Application   | Distribution | Users               | Devices             | Device        | Owner Object Key  | Owner Object Key  |
-	| Applications | Application   | Distribution | Users               | Devices             | Device        | User Key          | User Key          |
-	| Applications | Application   | Distribution | Users               | Devices             | Device        | Advertisement Key | Advertisement Key |
-	| Applications | Application   | Distribution | Users               | Devices             | Device        | Collection Key    | Collection Key    |
-	| Applications | Application   | Distribution | Users               | Devices             | Device        | Program Key       | Program Key       |
-	| Mailboxes    | Email Address | Users        | Users               | Groups              | Domain        | Key               | Key               |
-	| Mailboxes    | Email Address | Users        | Users               | Mailbox Permissions | Domain        | Key               | Key               |
-	| Mailboxes    | Email Address | Users        | Users               | Mailbox Permissions | Domain        | ViaGroupObjectKey | ViaGroupObjectKey |
-	| Mailboxes    | Email Address | Users        | Users               | Mailbox Permissions | Domain        | AccessCategoryKey | AccessCategoryKey |
+	| PageName     | ItemName      | TabName      | ExpandedSectionName | SectionName         | ColumnName    | CheckboxName         | NewColumnName        |
+	| Devices      | Hostname      | Applications | Application Summary | Application Detail  | Application   | Application Key      | Application Key      |
+	| Devices      | Hostname      | Applications | Application Summary | Application Detail  | Application   | Advertisement Key    | Advertisement Key    |
+	| Devices      | Hostname      | Applications | Application Summary | Application Detail  | Application   | Group Key            | Group Key            |
+	| Devices      | Hostname      | Applications | Application Summary | Application Detail  | Application   | Collection Key       | Collection Key       |
+	#| Devices      | Hostname      | Applications | Application Summary | Application Detail  | Application   | User Key             | User Key             |
+	| Devices      | Hostname      | Applications | Application Summary | Advertisements      | Application   | Key                  | Key                  |
+	| Devices      | Hostname      | Applications | Application Summary | Advertisements      | Application   | Application Key      | Application Key      |
+	| Devices      | Hostname      | Applications | Application Summary | Advertisements      | Application   | SiteKey              | SiteKey              |
+	| Devices      | Hostname      | Applications | Application Summary | Advertisements      | Application   | Collection Key       | Collection Key       |
+	| Devices      | Hostname      | Applications | Application Summary | Advertisements      | Application   | Program Key          | Program Key          |
+	| Devices      | Hostname      | Applications | Application Summary | Collections         | Collection    | Key                  | Key                  |
+	| Devices      | Hostname      | Applications | Application Summary | Collections         | Collection    | Site Key             | Site Key             |
+	| Applications | Application   | Details      | Application         | Advertisements      | Advertisement | Advertisement Key    | Advertisement Key    |
+	| Applications | Application   | Details      | Application         | Advertisements      | Advertisement | Collection Key       | Collection Key       |
+	| Applications | Application   | Details      | Application         | Programs            | Program       | Program Key          | Program Key          |
+	| Applications | Application   | Distribution | Users               | Devices             | Device        | Computer Key         | Computer Key         |
+	| Applications | Application   | Distribution | Users               | Devices             | Device        | Owner Object Key     | Owner Object Key     |
+	| Applications | Application   | Distribution | Users               | Devices             | Device        | User Key             | User Key             |
+	| Applications | Application   | Distribution | Users               | Devices             | Device        | Advertisement Key    | Advertisement Key    |
+	| Applications | Application   | Distribution | Users               | Devices             | Device        | Collection Key       | Collection Key       |
+	| Applications | Application   | Distribution | Users               | Devices             | Device        | Program Key          | Program Key          |
+	| Mailboxes    | Email Address | Users        | Users               | Groups              | Domain        | Key                  | Key                  |
+	| Mailboxes    | Email Address | Users        | Users               | Mailbox Permissions | Domain        | Key                  | Key                  |
+	| Mailboxes    | Email Address | Users        | Users               | Mailbox Permissions | Domain        | Via Group Object Key | Via Group Object Key |
+	| Mailboxes    | Email Address | Users        | Users               | Mailbox Permissions | Domain        | Access Category Key  | Access Category Key  |
 
 @Evergreen @AllLists @EvergreenJnr_ItemDetails @ItemDetailsDisplay @DAS11732 @DAS12053
 Scenario Outline: EvergreenJnr_AllLists_CheckThatDataIsDisplayedAfterAddingColumnsForClosedSections
