@@ -421,7 +421,6 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_BaseDashboardPage
             testRunner.When("User add \"Compliance\" filter where type is \"Equals\" with added column and followi" +
                     "ng checkboxes:", ((string)(null)), table2, "When ");
             testRunner.Then("\"Compliance\" column is added to URL on \"Users\" page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-            testRunner.Then("\"Compliance\" filter is added to URL on \"Users\" page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
             TechTalk.SpecFlow.Table table3 = new TechTalk.SpecFlow.Table(new string[] {
                         "SelectedCheckboxes"});
             table3.AddRow(new string[] {

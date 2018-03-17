@@ -87,7 +87,6 @@ Scenario: EvergreenJnr_UsersList_CheckThatURLsAreUpdatedAfterAddingSortingAndFil
 	| SelectedCheckboxes |
 	| Red                |
 	Then "Compliance" column is added to URL on "Users" page
-	Then "Compliance" filter is added to URL on "Users" page 
 	When User add "Compliance" filter where type is "Equals" with added column and following checkboxes:
 	| SelectedCheckboxes |
 	| Green              |
