@@ -11,6 +11,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text.RegularExpressions;
+using OpenQA.Selenium;
 using TechTalk.SpecFlow;
 
 namespace DashworksTestAutomation.Steps.Dashworks
@@ -294,7 +295,8 @@ namespace DashworksTestAutomation.Steps.Dashworks
         }
 
         [When(@"User add ""(.*)"" filter where type is ""(.*)"" with added column and Lookup option")]
-        public void WhenUserAddFilterWhereTypeIsWithAddedColumnAndLookupOption(string filterName, string operatorValue, Table table)
+        public void WhenUserAddFilterWhereTypeIsWithAddedColumnAndLookupOption(string filterName, string operatorValue,
+            Table table)
         {
             var filtersNames = _driver.NowAt<FiltersElement>();
             filtersNames.AddFilter(filterName);
@@ -622,7 +624,8 @@ namespace DashworksTestAutomation.Steps.Dashworks
                     $"{value} is not added to URL for {filterName} filter");
             }
 
-            StringAssert.Contains(ColumnNameToUrlConvertor.Convert(pageName, filterName).ToLower(), urlPartToCheck.ToLower(),
+            StringAssert.Contains(ColumnNameToUrlConvertor.Convert(pageName, filterName).ToLower(),
+                urlPartToCheck.ToLower(),
                 $"{filterName} is not added to URL");
         }
 
@@ -662,10 +665,50 @@ namespace DashworksTestAutomation.Steps.Dashworks
             var currentUrl = _driver.Url;
             const string pattern = @"\$select=(.*)";
             var urlPartToCheck = Regex.Match(currentUrl, pattern).Groups[1].Value;
-            StringAssert.Contains(ColumnNameToUrlConvertor.Convert(pageName, filterName).ToLower(), urlPartToCheck.ToLower(),
+            StringAssert.Contains(ColumnNameToUrlConvertor.Convert(pageName, filterName).ToLower(),
+                urlPartToCheck.ToLower(),
                 $"{filterName} is not added to URL");
-            StringAssert.Contains("?$filter=(userMigrationRAG%20EQUALS%20('Red'))", currentUrl, pageName, 
+            StringAssert.Contains("?$filter=(userMigrationRAG%20EQUALS%20('Red'))", currentUrl, pageName,
                 $"{filterName} is not added to URL");
+        }
+
+        [Then(@"Appropriate filter is added to URL")]
+        public void ThenAppropriateFilterIsAddedToURL()
+        {
+            var filterPanel = _driver.NowAt<FiltersElement>();
+            var basePage = _driver.NowAt<BaseDashboardPage>();
+            var currentUrl = _driver.Url;
+            var pattern = @"\$filter=(.*)&\$";
+            if (filterPanel.GetFiltersNames().Count > 1)
+            {
+                pattern = @"\$filter=(.*)";
+                for (var i = 0; i < filterPanel.GetFiltersNames().Count - 1; i++)
+                {
+                    pattern = pattern + @"%20OR%20(.*)";
+                }
+
+                pattern = pattern + @"&\$";
+            }
+
+            var filtersInUrl = Regex.Match(currentUrl, pattern).Groups;
+            IList<string> filtersValuesInUrl = new List<string>();
+            for (var i = 1; i < Regex.Match(currentUrl, pattern).Groups.Count; i++)
+            {
+                filtersValuesInUrl.Add(filtersInUrl[i].Value);
+            }
+
+            for (var i = 0; i < filterPanel.GetAddedFilters().Count; i++)
+            {
+                var filter = filterPanel.GetAddedFilters()[i];
+                var filterName = filter.FindElement(By.XPath(FiltersElement.FilterNameSelector)).Text;
+                var filterValue = filter.FindElement(By.XPath(FiltersElement.FilterValuesSelector)).Text;
+                var filterOption = filter.FindElement(By.XPath(FiltersElement.FilterOptionsSelector)).Text;
+                var urlPartToCheck = filtersValuesInUrl[i];
+                StringAssert.Contains(ColumnNameToUrlConvertor.Convert(basePage.Heading.Text, filterName),
+                    urlPartToCheck);
+                StringAssert.Contains(FilterOperatorsConvertor.Convert(filterOption), urlPartToCheck);
+                StringAssert.Contains(filterValue, urlPartToCheck);
+            }
         }
 
         [Then(@"Save button is not available on the Filter panel")]
