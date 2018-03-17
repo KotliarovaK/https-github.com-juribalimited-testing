@@ -102,6 +102,9 @@ namespace DashworksTestAutomation.Helpers
                             throw new Exception($"'{pageName}' page not found in convertor");
                     }
 
+                case "Babel(Engl: Readiness":
+                    return "project_46_ragStatus";
+
                 case "UserSchedu: Readiness":
                     return "project_41_ragStatus";
 
