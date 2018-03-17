@@ -372,7 +372,6 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_BaseDashboardPage
         [NUnit.Framework.CategoryAttribute("EvergreenJnr_BaseDashboardPage")]
         [NUnit.Framework.CategoryAttribute("BaseDashboardPage")]
         [NUnit.Framework.CategoryAttribute("DAS12174")]
-        [NUnit.Framework.CategoryAttribute("Not_Run")]
         public virtual void EvergreenJnr_UsersList_CheckThatURLsAreUpdatedAfterAddingSortingAndFilters()
         {
             System.Exception lastException = null;
@@ -406,8 +405,7 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_BaseDashboardPage
                         "Users",
                         "EvergreenJnr_BaseDashboardPage",
                         "BaseDashboardPage",
-                        "DAS12174",
-                        "Not_Run"});
+                        "DAS12174"});
             this.ScenarioSetup(scenarioInfo);
             this.FeatureBackground();
             testRunner.When("User clicks \"Users\" on the left-hand menu", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
