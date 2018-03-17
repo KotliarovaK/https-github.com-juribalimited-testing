@@ -92,8 +92,8 @@ Scenario: EvergreenJnr_DevicesList_ClearingSearchReturnsTheFullDataSet
 	Then "17,225" rows are displayed in the agGrid
 	Then URL is "http://automation.corp.juriba.com/evergreen/#/devices"
 
-@Evergreen @Users @EvergreenJnr_Search @Search @DAS11012
-Scenario: EvergreenJnr_UsersList_ClearingSearchReturnsTheFullDataSet @DAS12206 @Not_Run
+@Evergreen @Users @EvergreenJnr_Search @Search @DAS11012 @DAS12206 @Not_Run
+Scenario: EvergreenJnr_UsersList_ClearingSearchReturnsTheFullDataSet
 	When User clicks "Users" on the left-hand menu
 	Then "Users" list should be displayed to the user
 	And User enters SearchCriteria into the agGrid Search Box and the correct NumberOfRows are returned
@@ -200,7 +200,7 @@ Scenario Outline: EvergreenJnr_AllLists_Search_CheckThatTableSearchIsWorkingCorr
 
 Examples: 
 	| PageName     | ColumnName                                      | SearchCriteria                              | NumberOfRows |
-	| Devices      | Compliance                                      | GREEN                                       | 100          |
+	| Devices      | Compliance                                      | GREEN                                       | 99           |
 	| Devices      | Windows7Mi: Readiness                           | OUT OF SCOPE                                | 5,118        |
 	| Devices      | Windows7Mi: Group Computer Rag Radio Date Owner | Not Applicable                              | 5,161        |
 	| Applications | Import Type                                     | Altiris 6                                   | 31           |

@@ -446,20 +446,22 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_Search
         }
         
         [NUnit.Framework.TestAttribute()]
-        [NUnit.Framework.DescriptionAttribute("EvergreenJnr_UsersList_ClearingSearchReturnsTheFullDataSet @DAS12206 @Not_Run")]
+        [NUnit.Framework.DescriptionAttribute("EvergreenJnr_UsersList_ClearingSearchReturnsTheFullDataSet")]
         [NUnit.Framework.CategoryAttribute("Evergreen")]
         [NUnit.Framework.CategoryAttribute("Users")]
         [NUnit.Framework.CategoryAttribute("EvergreenJnr_Search")]
         [NUnit.Framework.CategoryAttribute("Search")]
         [NUnit.Framework.CategoryAttribute("DAS11012")]
-        public virtual void EvergreenJnr_UsersList_ClearingSearchReturnsTheFullDataSetDAS12206Not_Run()
+        [NUnit.Framework.CategoryAttribute("DAS12206")]
+        [NUnit.Framework.CategoryAttribute("Not_Run")]
+        public virtual void EvergreenJnr_UsersList_ClearingSearchReturnsTheFullDataSet()
         {
             System.Exception lastException = null;
             for (int i = 0; (i <= 1); i = (i + 1))
             {
                 try
                 {
-                    this.EvergreenJnr_UsersList_ClearingSearchReturnsTheFullDataSetDAS12206Not_RunInternal();
+                    this.EvergreenJnr_UsersList_ClearingSearchReturnsTheFullDataSetInternal();
                     return;
                 }
                 catch (System.Exception exc)
@@ -478,14 +480,16 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_Search
             }
         }
         
-        private void EvergreenJnr_UsersList_ClearingSearchReturnsTheFullDataSetDAS12206Not_RunInternal()
+        private void EvergreenJnr_UsersList_ClearingSearchReturnsTheFullDataSetInternal()
         {
-            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("EvergreenJnr_UsersList_ClearingSearchReturnsTheFullDataSet @DAS12206 @Not_Run", new string[] {
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("EvergreenJnr_UsersList_ClearingSearchReturnsTheFullDataSet", new string[] {
                         "Evergreen",
                         "Users",
                         "EvergreenJnr_Search",
                         "Search",
-                        "DAS11012"});
+                        "DAS11012",
+                        "DAS12206",
+                        "Not_Run"});
             this.ScenarioSetup(scenarioInfo);
             this.FeatureBackground();
             testRunner.When("User clicks \"Users\" on the left-hand menu", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
@@ -964,7 +968,7 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_Search
         [NUnit.Framework.CategoryAttribute("EvergreenJnr_Search")]
         [NUnit.Framework.CategoryAttribute("Search")]
         [NUnit.Framework.CategoryAttribute("DAS11511")]
-        [NUnit.Framework.TestCaseAttribute("Devices", "Compliance", "GREEN", "100", new string[0])]
+        [NUnit.Framework.TestCaseAttribute("Devices", "Compliance", "GREEN", "99", new string[0])]
         [NUnit.Framework.TestCaseAttribute("Devices", "Windows7Mi: Readiness", "OUT OF SCOPE", "5,118", new string[0])]
         [NUnit.Framework.TestCaseAttribute("Devices", "Windows7Mi: Group Computer Rag Radio Date Owner", "Not Applicable", "5,161", new string[0])]
         [NUnit.Framework.TestCaseAttribute("Applications", "Import Type", "Altiris 6", "31", new string[0])]

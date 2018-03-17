@@ -136,7 +136,6 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_FiltersFeature
         [NUnit.Framework.CategoryAttribute("FiltersFunctionality")]
         [NUnit.Framework.CategoryAttribute("DAS10639")]
         [NUnit.Framework.CategoryAttribute("DAS12207")]
-        [NUnit.Framework.CategoryAttribute("Not_Run")]
         public virtual void EvergreenJnr_ApplicationsList_Check500ErrorIsNotReturnedForBooleanFilterWithUnknownOption()
         {
             System.Exception lastException = null;
@@ -172,8 +171,7 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_FiltersFeature
                         "Evergreen_FiltersFeature",
                         "FiltersFunctionality",
                         "DAS10639",
-                        "DAS12207",
-                        "Not_Run"});
+                        "DAS12207"});
             this.ScenarioSetup(scenarioInfo);
             this.FeatureBackground();
             testRunner.When("User clicks \"Applications\" on the left-hand menu", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
@@ -641,6 +639,7 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_FiltersFeature
         [NUnit.Framework.CategoryAttribute("FilterFunctionality")]
         [NUnit.Framework.CategoryAttribute("DAS10977")]
         [NUnit.Framework.CategoryAttribute("DAS11507")]
+        [NUnit.Framework.CategoryAttribute("DAS12221")]
         [NUnit.Framework.TestCaseAttribute("Devices", "Babel(Engl: Category", "None", "62", "Hostname", "01COJATLYVAR7A6", "Babel(Engl: Category is None", new string[0])]
         [NUnit.Framework.TestCaseAttribute("Devices", "Barry\'sUse: In Scope", "FALSE", "15,896", "Hostname", "00BDM1JUR8IF419", "Barry\'sUse: In Scope is false", new string[0])]
         [NUnit.Framework.TestCaseAttribute("Devices", "ComputerSc: Request Type", "Request Type A", "132", "Hostname", "46DIQRWG3BM6K9Z", "ComputerSc: Request Type is Request Type A", new string[0])]
@@ -681,7 +680,8 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_FiltersFeature
                     "EvergreenJnr_FilterFeature",
                     "FilterFunctionality",
                     "DAS10977",
-                    "DAS11507"};
+                    "DAS11507",
+                    "DAS12221"};
             if ((exampleTags != null))
             {
                 @__tags = System.Linq.Enumerable.ToArray(System.Linq.Enumerable.Concat(@__tags, exampleTags));
@@ -1335,7 +1335,9 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_FiltersFeature
         [NUnit.Framework.CategoryAttribute("EvergreenJnr_FilterFeature")]
         [NUnit.Framework.CategoryAttribute("FilterFunctionality")]
         [NUnit.Framework.CategoryAttribute("DAS11738")]
+        [NUnit.Framework.CategoryAttribute("DAS12194")]
         [NUnit.Framework.CategoryAttribute("DAS12199")]
+        [NUnit.Framework.CategoryAttribute("DAS12220")]
         public virtual void EvergreenJnr_UsersList_CheckThatToolTipShownWithEditFilterTextWhenEditingAFilterDisplayed()
         {
             System.Exception lastException = null;
@@ -1371,7 +1373,9 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_FiltersFeature
                         "EvergreenJnr_FilterFeature",
                         "FilterFunctionality",
                         "DAS11738",
-                        "DAS12199"});
+                        "DAS12194",
+                        "DAS12199",
+                        "DAS12220"});
             this.ScenarioSetup(scenarioInfo);
             this.FeatureBackground();
             testRunner.When("User clicks \"Users\" on the left-hand menu", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");

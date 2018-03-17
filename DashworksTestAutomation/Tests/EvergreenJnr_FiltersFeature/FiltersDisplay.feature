@@ -151,7 +151,7 @@ Scenario: EvergreenJnr_DevicesList_CheckThatFilterDataIsDisplayedCorrectlyWhenNa
 	| Values          |
 	| 00BDM1JUR8IF419 |
 
-@Evergreen @Users @Evergreen_FiltersFeature @FiltersDisplay @DAS10696 @DAS12199 @Delete_Newly_Created_List
+@Evergreen @Users @Evergreen_FiltersFeature @FiltersDisplay @DAS10696 @DAS12199 @DAS12220 @Delete_Newly_Created_List
 Scenario: EvergreenJnr_UsersList_CheckThatFilterDataIsDisplayedCorrectlyWhenNavigatingBetweenLists
 	When User clicks "Users" on the left-hand menu
 	Then "Users" list should be displayed to the user
@@ -217,7 +217,7 @@ Scenario: EvergreenJnr_ApplicationsList_CheckThatFilterDataIsDisplayedCorrectlyW
 	| Values |
 	| 1      |
 
-@Evergreen @Mailboxes @Evergreen_FiltersFeature @FiltersDisplay @DAS10696 @DAS12114 @Delete_Newly_Created_List @Not_Run
+@Evergreen @Mailboxes @Evergreen_FiltersFeature @FiltersDisplay @DAS10696 @DAS12114 @Delete_Newly_Created_List
 Scenario: EvergreenJnr_MailboxesList_CheckThatFilterDataIsDisplayedCorrectlyWhenNavigatingBetweenLists
 	When User clicks "Mailboxes" on the left-hand menu
 	Then "Mailboxes" list should be displayed to the user
@@ -272,7 +272,7 @@ Examples:
 	| Empty            |                 |           | is empty            |
 	| Not empty        |                 | 17,225    | is not empty        |
 
-@Evergreen @Users @Evergreen_FiltersFeature @FiltersDisplay @DAS10696 @DAS12199
+@Evergreen @Users @Evergreen_FiltersFeature @FiltersDisplay @DAS10696 @DAS12199 @DAS12220
 Scenario Outline: EvergreenJnr_UsersList_CheckThatFilterOperatorsIsCorrectInFilterInfo
 	When User clicks "Users" on the left-hand menu
 	Then "Users" list should be displayed to the user
@@ -289,8 +289,8 @@ Scenario Outline: EvergreenJnr_UsersList_CheckThatFilterOperatorsIsCorrectInFilt
 
 Examples: 
 	| operatorValue  | filterOption | rowsCount | operatorValueInInfo |
-	| Equals         | Red          | 9,438     | is                  |
-	| Does not equal | Red          | 31,897    | is not              |
+	| Equals         | Red          | 9,452     | is                  |
+	| Does not equal | Red          | 31,883    | is not              |
 
 @Evergreen @Applications @Evergreen_FiltersFeature @FiltersDisplay @DAS10696
 Scenario Outline: EvergreenJnr_ApplicationsList_CheckThatFilterOperatorsIsCorrectInFilterInfo
@@ -340,7 +340,7 @@ Examples:
 	| Empty          |              | 6         | is empty            |
 	| Not empty      |              | 14,778    | is not empty        |
 
- @Evergreen @Devices @Evergreen_FiltersFeature @FiltersDisplay @DAS10696 @DAS11090 @DAS1211
+ @Evergreen @Devices @Evergreen_FiltersFeature @FiltersDisplay @DAS10696 @DAS11090 @DAS12114
 Scenario Outline: EvergreenJnr_DevicesList_CheckThatFilterOperatorsIsCorrectInFilterInfoDatetime
 	When User clicks "Devices" on the left-hand menu
 	Then "Devices" list should be displayed to the user
@@ -681,7 +681,7 @@ Scenario: EvergreenJnr_DevicesList_CheckThatFilterCategoriesAreClosedAfterCleari
 	When User clears search textbox in Filters panel
 	Then Maximize buttons are displayed for all category in Filters panel
 
-@Evergreen @Devices @Evergreen_FiltersFeature @FiltersDisplay @DAS11552 @DAS12207 @Not_Run
+@Evergreen @Devices @Evergreen_FiltersFeature @FiltersDisplay @DAS11552 @DAS12207
 Scenario: EvergreenJnr_DevicesList_CheckThatRelevantDataSetBeDisplayedAfterEditingFilter
 	When User clicks "Devices" on the left-hand menu
 	Then "Devices" list should be displayed to the user
@@ -696,9 +696,9 @@ Scenario: EvergreenJnr_DevicesList_CheckThatRelevantDataSetBeDisplayedAfterEditi
 	| Option         | State |
 	| Not Applicable | false |
 	| Green          | true  |
-	Then "71" rows are displayed in the agGrid
+	Then "70" rows are displayed in the agGrid
 
-@Evergreen @Users @Evergreen_FiltersFeature @FiltersDisplay @DAS11552 @DAS12207 @Not_Run
+@Evergreen @Users @Evergreen_FiltersFeature @FiltersDisplay @DAS11552 @DAS12207
 Scenario: EvergreenJnr_UsersList_CheckThatRelevantDataSetBeDisplayedAfterResettingFilter
 	When User clicks "Users" on the left-hand menu
 	Then "Users" list should be displayed to the user
