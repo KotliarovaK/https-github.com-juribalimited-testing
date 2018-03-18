@@ -427,3 +427,27 @@ Scenario: EvergreenJnr_DevicesList_CheckThatTheSaveButtonIsNotAvailableWithoutTh
 	| adobe  | Used on device |
 	When User create dynamic list with "TestListF58LY5" name on "Devices" page
 	Then Edit List menu is not displayed
+
+@Evergreen @Applications @EvergreenJnr_FilterFeature @FilterFunctionality @DAS11838
+Scenario Outline: EvergreenJnr_ApplicationsList_CheckThatTheColourOfTheTargetAppReadinessItemIsMatchingTheCaption
+	When User clicks "Applications" on the left-hand menu
+	Then "Applications" list should be displayed to the user
+	When User clicks the Filters button
+	Then Filters panel is displayed to the user
+	When User add "Windows7Mi: Target App Readiness" filter where type is "Equals" with added column and Lookup option
+	| SelectedValues     |
+	| <SelectedCheckbox> |
+
+Examples:
+	| SelectedCheckbox        |
+	| Red                     |
+	| Blue                    |
+	| Out Of Scope            |
+	| Light Blue              |
+	| Brown                   |
+	| Amber                   |
+	| Really Extremely Orange |
+	| Purple                  |
+	| Green                   |
+	| Grey                    |
+	| None                    |
