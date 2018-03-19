@@ -240,7 +240,8 @@ namespace DashworksTestAutomation.Helpers
                 ".//div[@class='filterAddPanel ng-star-inserted']/div[@class='form-container']//div[@class='form-group ng-star-inserted']//li/span";
             var filterValueSelector = By.XPath(
                 ".//div[@class='filterAddPanel ng-star-inserted']//div[@class='mat-input-infix mat-form-field-infix']//input");
-            var addButtonSelector = By.XPath(".//div[@class='filterAddPanel ng-star-inserted']//button[@title='Add']");
+            var addButtonSelector = By.XPath(".//div[@class='filterAddPanel ng-star-inserted']//button[@class='button-small mat-primary mat-raised-button ng-star-inserted']");
+
             SelectOperator();
             _driver.WaitForDataLoading();
             foreach (var row in _optionsTable.Rows)
@@ -248,7 +249,7 @@ namespace DashworksTestAutomation.Helpers
                 if (!_driver.IsElementDisplayed(filterValueSelector)) continue;
                 _driver.FindElement(filterValueSelector).SendKeys(row["Values"]);
 
-                if (_driver.IsElementDisplayed(addButtonSelector))
+                if (_optionsTable.RowCount > 1)
                 {
                     _driver.FindElement(addButtonSelector).Click();
 

@@ -69,6 +69,9 @@ namespace DashworksTestAutomation.Pages.Evergreen
         [FindsBy(How = How.XPath, Using = ".//div[@role='row']")]
         public IList<IWebElement> TableRows { get; set; }
 
+        [FindsBy(How = How.XPath, Using = ".//span[@class='status-text'][text()='RED']")]
+        public IList<IWebElement> ContentColor { get; set; }
+
         [FindsBy(How = How.XPath, Using = ".//div[@id='content']//div[@class='empty-message ng-star-inserted']")]
         public IWebElement NoResultsFoundMessage { get; set; }
 
@@ -80,6 +83,9 @@ namespace DashworksTestAutomation.Pages.Evergreen
 
         [FindsBy(How = How.XPath, Using = ".//span[@class='ag-selection-checkbox']//span[@class='checkbox-unchecked']")]
         public IWebElement UncheckedCheckbox { get; set; }
+
+        [FindsBy(How = How.XPath, Using = ".//div[@class='inline-error ng-star-inserted']")]
+        public IWebElement WarningCreateMessage { get; set; }
 
         [FindsBy(How = How.XPath, Using = ".//i")]
         public IWebElement ItemImage { get; set; }
@@ -144,6 +150,22 @@ namespace DashworksTestAutomation.Pages.Evergreen
 
             Driver.WaitWhileControlIsNotDisplayed(By.XPath(selector));
             return Driver.FindElement(By.XPath(selector));
+        }
+
+        public IWebElement GetCorrectApplicationVersion(string versionNumber)
+        {
+            var selector = By.XPath(
+                $".//div[@class='topnav-footer']//span[contains(text(),'{versionNumber}')]");
+            Driver.WaitWhileControlIsNotDisplayed(selector);
+            return Driver.FindElement(selector);
+        }
+
+        public IWebElement GetColorByName(string colorName)
+        {
+            var selector = By.XPath(
+                $".//span[@class='status-text'][text()='{colorName}']");
+            Driver.WaitWhileControlIsNotDisplayed(selector);
+            return Driver.FindElement(selector);
         }
 
         public int GetColumnNumberByName(string columnName)
@@ -231,6 +253,34 @@ namespace DashworksTestAutomation.Pages.Evergreen
                         .Text;
 
                 default: throw new Exception($"{pinStatus} is not valid Pin Value");
+            }
+        }
+
+        public string GetColorContainer(string styleColorItem)
+        {
+            switch (styleColorItem)
+            {
+                case "background-color: rgba(245, 96, 86, 0.5); border: 2px solid rgb(245, 96, 86);":
+                    return "RED";
+                case "background-color: rgba(47, 133, 184, 0.5); border: 2px solid rgb(47, 133, 184);":
+                    return "BLUE";
+                case "background-color: rgba(55, 61, 69, 0.5); border: 2px solid rgb(55, 61, 69);":
+                    return "OUT OF SCOPE"; 
+                case "background-color: rgba(71, 209, 209, 0.5); border: 2px solid rgb(71, 209, 209);":
+                    return "LIGHT BLUE"; 
+                case "background-color: rgba(153, 118, 84, 0.5); border: 2px solid rgb(153, 118, 84);":
+                    return "BROWN";
+                case "background-color: rgba(235, 175, 37, 0.5); border: 2px solid rgb(235, 175, 37);":
+                    return "AMBER";
+                case "background-color: rgba(226, 123, 54, 0.5); border: 2px solid rgb(226, 123, 54);":
+                    return "REALLY EXTREMELY ORANGE";
+                case "background-color: rgba(186, 94, 186, 0.5); border: 2px solid rgb(186, 94, 186);":
+                    return "PURPLE";
+                case "background-color: rgba(126, 189, 56, 0.5); border: 2px solid rgb(126, 189, 56);":
+                    return "GREEN";
+                case "background-color: rgba(128, 139, 153, 0.5); border: 2px solid rgb(128, 139, 153);":
+                    return "GREY";
+                default: throw new Exception($"{styleColorItem} is not valid Pin Value");
             }
         }
 

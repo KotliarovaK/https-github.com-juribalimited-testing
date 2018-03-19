@@ -6,7 +6,7 @@ Background: Pre-Conditions
 	Given User is logged in to the Evergreen
 	Then Evergreen Dashboards page should be displayed to the user
 
-@Evergreen @Devices @EvergreenJnr_StaticLists @FiltersDisplay @DAS10993 @Delete_Newly_Created_List
+@Evergreen @Devices @EvergreenJnr_StaticLists @FiltersDisplay @DAS10993 @DAS12152 @Delete_Newly_Created_List @Not_Run
 Scenario: EvergreenJnr_DevicesList_CheckThatDynamicFiltersAreClearedForStaticListsWhenOpenedAfterDynamicLists
 	When User clicks "Devices" on the left-hand menu
 	Then "Devices" list should be displayed to the user
@@ -16,7 +16,7 @@ Scenario: EvergreenJnr_DevicesList_CheckThatDynamicFiltersAreClearedForStaticLis
 	| SelectedCheckboxes  |
 	| None                |
 	Then "Windows7Mi: Category" filter is added to the list
-	When User create custom list with "TestListE5FC4A" name
+	When User create dynamic list with "TestListE5FC4A" name on "Devices" page
 	Then "TestListE5FC4A" list is displayed to user
 	And "5,130" rows are displayed in the agGrid
 	When User navigates to the "All Devices" list
@@ -36,7 +36,7 @@ Scenario: EvergreenJnr_DevicesList_CheckThatDynamicFiltersAreClearedForStaticLis
 	Then "2" rows are displayed in the agGrid
 	Then Filters Button is disabled
 
-@Evergreen @Devices @EvergreenJnr_ListPanel @CustomListDisplay @DAS10978 @DAS12034 @Delete_Newly_Created_List
+@Evergreen @Devices @EvergreenJnr_ListPanel @CustomListDisplay @DAS10978 @DAS12034 @DAS12221 @Delete_Newly_Created_List @Not_Run
 Scenario: EvergreenJnr_DevicesList_CheckThatFiltersAndColumnsAreRestoredForSavedList
 	When User clicks "Devices" on the left-hand menu
 	Then "Devices" list should be displayed to the user
@@ -47,7 +47,7 @@ Scenario: EvergreenJnr_DevicesList_CheckThatFiltersAndColumnsAreRestoredForSaved
 	| Not Applicable     |
 	| No                 |
 	Then "Windows7Mi: SS Application List Completed" filter is added to the list
-	When User create custom list with "TestList886350" name
+	When User create dynamic list with "TestList886350" name on "Devices" page
 	Then "TestList886350" list is displayed to user
 	And "5,161" rows are displayed in the agGrid
 	When User navigates to the "All Devices" list
@@ -59,7 +59,7 @@ Scenario: EvergreenJnr_DevicesList_CheckThatFiltersAndColumnsAreRestoredForSaved
 	Then Filters panel is displayed to the user
 	And "Windows7Mi: SS Application List Completed is Not Applicable or No" is displayed in added filter info
 
-@Evergreen @Devices @EvergreenJnr_StaticLists @FiltersDisplay @DAS10695 @Delete_Newly_Created_List
+@Evergreen @Devices @EvergreenJnr_StaticLists @FiltersDisplay @DAS10695 @DAS12152 @Delete_Newly_Created_List @Not_Run
 Scenario: EvergreenJnr_DevicesList_CheckThat500ErrorIsNotDisplayedWhenAddingNewObjectToStaticList
 	When User clicks "Devices" on the left-hand menu
 	Then "Devices" list should be displayed to the user

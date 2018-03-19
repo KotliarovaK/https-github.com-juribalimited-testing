@@ -77,6 +77,7 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_StaticLists
         [NUnit.Framework.CategoryAttribute("DAS10945")]
         [NUnit.Framework.CategoryAttribute("DAS11553")]
         [NUnit.Framework.CategoryAttribute("DAS10880")]
+        [NUnit.Framework.CategoryAttribute("DAS12152")]
         [NUnit.Framework.CategoryAttribute("Delete_Newly_Created_List")]
         public virtual void EvergreenJnr_UsersList_CheckThatNotOwnerUsersDontHavePermissionsToUpdateStaticList()
         {
@@ -115,6 +116,7 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_StaticLists
                         "DAS10945",
                         "DAS11553",
                         "DAS10880",
+                        "DAS12152",
                         "Delete_Newly_Created_List"});
             this.ScenarioSetup(scenarioInfo);
             this.FeatureBackground();
@@ -157,6 +159,7 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_StaticLists
         [NUnit.Framework.CategoryAttribute("DAS11022")]
         [NUnit.Framework.CategoryAttribute("DAS11553")]
         [NUnit.Framework.CategoryAttribute("DAS10880")]
+        [NUnit.Framework.CategoryAttribute("DAS12152")]
         [NUnit.Framework.CategoryAttribute("Delete_Newly_Created_List")]
         public virtual void EvergreenJnr_DevicesList_CheckThatAddRowsOptionsIsAvailableForSpecifiedPermissionLevel()
         {
@@ -195,6 +198,7 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_StaticLists
                         "DAS11022",
                         "DAS11553",
                         "DAS10880",
+                        "DAS12152",
                         "Delete_Newly_Created_List"});
             this.ScenarioSetup(scenarioInfo);
             this.FeatureBackground();

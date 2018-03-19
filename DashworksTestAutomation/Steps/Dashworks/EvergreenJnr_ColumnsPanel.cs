@@ -19,11 +19,13 @@ namespace DashworksTestAutomation.Steps.Dashworks
     {
         private readonly RemoteWebDriver _driver;
         private readonly RestWebClient _client;
+        private readonly PageToUrlConvertor _page;
 
-        public EvergreenJnr_ColumnsPanel(RemoteWebDriver driver, RestWebClient client)
+        public EvergreenJnr_ColumnsPanel(RemoteWebDriver driver, RestWebClient client, PageToUrlConvertor page)
         {
             _driver = driver;
             _client = client;
+            _page = page;
         }
 
         [Then(@"Columns panel is displayed to the user")]
@@ -193,6 +195,24 @@ namespace DashworksTestAutomation.Steps.Dashworks
             }
         }
 
+        [Then(@"Ascending order sorted on ""(.*)"" column is displayed in URL")]
+        public void ThenAscendingOrderSortedOnColumnIsDisplayedInURL(string columnName)
+        {
+            var currentUrl = _driver.Url;
+            var sorting = _driver.NowAt<BaseDashboardPage>();
+            Assert.IsTrue(sorting.AscendingSortingIcon.Displayed(), "Ascending icon is not displayed");
+            StringAssert.Contains("?$orderby=hostname%20asc", currentUrl, columnName);
+        }
+
+        [Then(@"default URL is displayed on ""(.*)"" page")]
+        public void ThenDefaultURLIsDisplayedOnPage(string pageName)
+        {
+            var currentUrl = _driver.Url;
+            const string pattern = @"evergreen\/#\/(.*)";
+            var currentPageName = Regex.Match(currentUrl, pattern).Groups[1].Value;
+            Assert.AreEqual(currentPageName, pageName.ToLower(), "Incorrect Page Name in URL");
+        }
+
         [When(@"User remove sorted column on ""(.*)"" page by URL")]
         public void WhenUserRemoveSortedColumnOnPageByUrl(string pageName, Table table)
         {
@@ -290,8 +310,8 @@ namespace DashworksTestAutomation.Steps.Dashworks
             Assert.AreEqual(groupCount, columnElement.MinimizeGroupButton.Count, "Minimize buttons are not displayed");
         }
 
-        [When(@"User collapses all columns categories")]
-        public void WhenUserCollapsesAllColumnsCategories()
+        [When(@"User close all columns categories")]
+        public void WhenUserCloseAllColumnsCategories()
         {
             var columnElement = _driver.NowAt<ColumnsElement>();
             foreach (var group in columnElement.GroupTitle)
@@ -347,6 +367,14 @@ namespace DashworksTestAutomation.Steps.Dashworks
         {
             var columnElement = _driver.NowAt<ColumnsElement>();
             columnElement.ExpandColumnsSectionByName(categoryName);
+        }
+
+        [Then(@"Lowest value of ""(.*)"" column is null")]
+        public void ThenLowestValueOfColumnIsNull(string columnName)
+        {
+            var page = _driver.NowAt<BaseDashboardPage>();
+            var content = page.GetColumnContent(columnName);
+            Assert.IsFalse(content.Contains("-1"), "The Lowest value is not null");
         }
 
         [Then(@"""(.*)"" column is added to URL on ""(.*)"" page")]

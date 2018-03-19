@@ -75,7 +75,9 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_StaticLists
         [NUnit.Framework.CategoryAttribute("EvergreenJnr_StaticLists")]
         [NUnit.Framework.CategoryAttribute("FiltersDisplay")]
         [NUnit.Framework.CategoryAttribute("DAS10993")]
+        [NUnit.Framework.CategoryAttribute("DAS12152")]
         [NUnit.Framework.CategoryAttribute("Delete_Newly_Created_List")]
+        [NUnit.Framework.CategoryAttribute("Not_Run")]
         public virtual void EvergreenJnr_DevicesList_CheckThatDynamicFiltersAreClearedForStaticListsWhenOpenedAfterDynamicLists()
         {
             System.Exception lastException = null;
@@ -111,7 +113,9 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_StaticLists
                         "EvergreenJnr_StaticLists",
                         "FiltersDisplay",
                         "DAS10993",
-                        "Delete_Newly_Created_List"});
+                        "DAS12152",
+                        "Delete_Newly_Created_List",
+                        "Not_Run"});
             this.ScenarioSetup(scenarioInfo);
             this.FeatureBackground();
             testRunner.When("User clicks \"Devices\" on the left-hand menu", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
@@ -125,7 +129,7 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_StaticLists
             testRunner.When("User add \"Windows7Mi: Category\" filter where type is \"Equals\" with added column a" +
                     "nd following checkboxes:", ((string)(null)), table1, "When ");
             testRunner.Then("\"Windows7Mi: Category\" filter is added to the list", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-            testRunner.When("User create custom list with \"TestListE5FC4A\" name", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+            testRunner.When("User create dynamic list with \"TestListE5FC4A\" name on \"Devices\" page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
             testRunner.Then("\"TestListE5FC4A\" list is displayed to user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
             testRunner.And("\"5,130\" rows are displayed in the agGrid", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
             testRunner.When("User navigates to the \"All Devices\" list", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
@@ -158,7 +162,9 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_StaticLists
         [NUnit.Framework.CategoryAttribute("CustomListDisplay")]
         [NUnit.Framework.CategoryAttribute("DAS10978")]
         [NUnit.Framework.CategoryAttribute("DAS12034")]
+        [NUnit.Framework.CategoryAttribute("DAS12221")]
         [NUnit.Framework.CategoryAttribute("Delete_Newly_Created_List")]
+        [NUnit.Framework.CategoryAttribute("Not_Run")]
         public virtual void EvergreenJnr_DevicesList_CheckThatFiltersAndColumnsAreRestoredForSavedList()
         {
             System.Exception lastException = null;
@@ -194,7 +200,9 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_StaticLists
                         "CustomListDisplay",
                         "DAS10978",
                         "DAS12034",
-                        "Delete_Newly_Created_List"});
+                        "DAS12221",
+                        "Delete_Newly_Created_List",
+                        "Not_Run"});
             this.ScenarioSetup(scenarioInfo);
             this.FeatureBackground();
             testRunner.When("User clicks \"Devices\" on the left-hand menu", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
@@ -210,7 +218,7 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_StaticLists
             testRunner.When("User add \"Windows7Mi: SS Application List Completed\" filter where type is \"Equals" +
                     "\" with added column and following checkboxes:", ((string)(null)), table3, "When ");
             testRunner.Then("\"Windows7Mi: SS Application List Completed\" filter is added to the list", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-            testRunner.When("User create custom list with \"TestList886350\" name", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+            testRunner.When("User create dynamic list with \"TestList886350\" name on \"Devices\" page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
             testRunner.Then("\"TestList886350\" list is displayed to user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
             testRunner.And("\"5,161\" rows are displayed in the agGrid", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
             testRunner.When("User navigates to the \"All Devices\" list", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
@@ -233,7 +241,9 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_StaticLists
         [NUnit.Framework.CategoryAttribute("EvergreenJnr_StaticLists")]
         [NUnit.Framework.CategoryAttribute("FiltersDisplay")]
         [NUnit.Framework.CategoryAttribute("DAS10695")]
+        [NUnit.Framework.CategoryAttribute("DAS12152")]
         [NUnit.Framework.CategoryAttribute("Delete_Newly_Created_List")]
+        [NUnit.Framework.CategoryAttribute("Not_Run")]
         public virtual void EvergreenJnr_DevicesList_CheckThat500ErrorIsNotDisplayedWhenAddingNewObjectToStaticList()
         {
             System.Exception lastException = null;
@@ -269,7 +279,9 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_StaticLists
                         "EvergreenJnr_StaticLists",
                         "FiltersDisplay",
                         "DAS10695",
-                        "Delete_Newly_Created_List"});
+                        "DAS12152",
+                        "Delete_Newly_Created_List",
+                        "Not_Run"});
             this.ScenarioSetup(scenarioInfo);
             this.FeatureBackground();
             testRunner.When("User clicks \"Devices\" on the left-hand menu", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");

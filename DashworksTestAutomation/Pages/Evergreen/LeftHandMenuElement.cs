@@ -32,7 +32,7 @@ namespace DashworksTestAutomation.Pages.Evergreen
                 SelectorFor(this, p => p.Users),
                 SelectorFor(this, p => p.Applications),
                 SelectorFor(this, p => p.Mailboxes),
-                SelectorFor(this, p => p.Admin)
+                //SelectorFor(this, p => p.Admin)
             };
         }
     }
