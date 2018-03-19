@@ -61,9 +61,6 @@ Scenario: EvergreenJnr_AllList_CheckThatNoConsoleErrorsAreDisplayedAfterQuicklyN
 Scenario: EvergreenJnr_DevicesList_CheckThatURLsAreUpdatedAfterAddingSortingAndColumns
 	When User clicks "Devices" on the left-hand menu
 	Then "Devices" list should be displayed to the user
-	When User click on 'Hostname' column header
-	Then data in table is sorted by 'Hostname' column in ascending order
-	Then Ascending order sorted on "Hostname" column is displayed in URL
 	When User clicks the Columns button
 	Then Columns panel is displayed to the user
 	When ColumnName is entered into the search box and the selection is clicked
@@ -74,6 +71,9 @@ Scenario: EvergreenJnr_DevicesList_CheckThatURLsAreUpdatedAfterAddingSortingAndC
 	Then "Cost Centre" column is added to URL on "Devices" page
 	And "ComputerSc: In Scope" column is added to URL on "Devices" page
 	And "Windows7Mi: Object ID" column is added to URL on "Devices" page
+	When User click on 'Owner Cost Centre' column header
+	Then data in table is sorted by 'Owner Cost Centre' column in ascending order
+	And Ascending order sorted on "Owner Cost Centre" column is displayed in URL
 	When User navigates to the "All Devices" list
 	Then default URL is displayed on "Devices" page
 
