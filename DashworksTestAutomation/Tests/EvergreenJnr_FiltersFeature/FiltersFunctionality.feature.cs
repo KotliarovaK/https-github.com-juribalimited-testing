@@ -1673,6 +1673,80 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_FiltersFeature
             testRunner.Then("Edit List menu is not displayed", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
             this.ScenarioCleanup();
         }
+        
+        [NUnit.Framework.TestAttribute()]
+        [NUnit.Framework.DescriptionAttribute("EvergreenJnr_ApplicationsList_CheckThatTheColourOfTheTargetAppReadinessItemIsMatc" +
+            "hingTheCaption")]
+        [NUnit.Framework.CategoryAttribute("Evergreen")]
+        [NUnit.Framework.CategoryAttribute("Applications")]
+        [NUnit.Framework.CategoryAttribute("EvergreenJnr_FilterFeature")]
+        [NUnit.Framework.CategoryAttribute("FilterFunctionality")]
+        [NUnit.Framework.CategoryAttribute("DAS11838")]
+        [NUnit.Framework.TestCaseAttribute("Red", "RED", new string[0])]
+        [NUnit.Framework.TestCaseAttribute("Blue", "BLUE", new string[0])]
+        [NUnit.Framework.TestCaseAttribute("Out Of Scope", "OUT OF SCOPE", new string[0])]
+        [NUnit.Framework.TestCaseAttribute("Light Blue", "LIGHT BLUE", new string[0])]
+        [NUnit.Framework.TestCaseAttribute("Brown", "BROWN", new string[0])]
+        [NUnit.Framework.TestCaseAttribute("Amber", "AMBER", new string[0])]
+        [NUnit.Framework.TestCaseAttribute("Really Extremely Orange", "REALLY EXTREMELY ORANGE", new string[0])]
+        [NUnit.Framework.TestCaseAttribute("Purple", "PURPLE", new string[0])]
+        [NUnit.Framework.TestCaseAttribute("Green", "GREEN", new string[0])]
+        [NUnit.Framework.TestCaseAttribute("Grey", "GREY", new string[0])]
+        public virtual void EvergreenJnr_ApplicationsList_CheckThatTheColourOfTheTargetAppReadinessItemIsMatchingTheCaption(string selectedCheckbox, string colorName, string[] exampleTags)
+        {
+            System.Exception lastException = null;
+            for (int i = 0; (i <= 1); i = (i + 1))
+            {
+                try
+                {
+                    this.EvergreenJnr_ApplicationsList_CheckThatTheColourOfTheTargetAppReadinessItemIsMatchingTheCaptionInternal(selectedCheckbox, colorName, exampleTags);
+                    return;
+                }
+                catch (System.Exception exc)
+                {
+                    lastException = exc;
+                }
+                if (((i + 1) 
+                            <= 1))
+                {
+                    testRunner.OnScenarioEnd();
+                }
+            }
+            if ((lastException != null))
+            {
+                throw lastException;
+            }
+        }
+        
+        private void EvergreenJnr_ApplicationsList_CheckThatTheColourOfTheTargetAppReadinessItemIsMatchingTheCaptionInternal(string selectedCheckbox, string colorName, string[] exampleTags)
+        {
+            string[] @__tags = new string[] {
+                    "Evergreen",
+                    "Applications",
+                    "EvergreenJnr_FilterFeature",
+                    "FilterFunctionality",
+                    "DAS11838"};
+            if ((exampleTags != null))
+            {
+                @__tags = System.Linq.Enumerable.ToArray(System.Linq.Enumerable.Concat(@__tags, exampleTags));
+            }
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("EvergreenJnr_ApplicationsList_CheckThatTheColourOfTheTargetAppReadinessItemIsMatc" +
+                    "hingTheCaption", @__tags);
+            this.ScenarioSetup(scenarioInfo);
+            this.FeatureBackground();
+            testRunner.When("User clicks \"Applications\" on the left-hand menu", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+            testRunner.Then("\"Applications\" list should be displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+            testRunner.When("User clicks the Filters button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+            testRunner.Then("Filters panel is displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+            TechTalk.SpecFlow.Table table27 = new TechTalk.SpecFlow.Table(new string[] {
+                        "SelectedValues"});
+            table27.AddRow(new string[] {
+                        string.Format("{0}", selectedCheckbox)});
+            testRunner.When("User add \"Windows7Mi: Target App Readiness\" filter where type is \"Equals\" with ad" +
+                    "ded column and Lookup option", ((string)(null)), table27, "When ");
+            testRunner.Then(string.Format("\"{0}\" color is matching the caption", colorName), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+            this.ScenarioCleanup();
+        }
     }
 }
 #pragma warning restore

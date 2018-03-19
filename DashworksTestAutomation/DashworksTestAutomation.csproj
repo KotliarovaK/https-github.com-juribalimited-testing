@@ -162,6 +162,7 @@
     <Compile Include="Extensions\WebDriverExtensions.cs" />
     <Compile Include="Extensions\WebElementExtensions.cs" />
     <Compile Include="Helpers\BaseFilter.cs" />
+    <Compile Include="Helpers\ColorContainerConvertor.cs" />
     <Compile Include="Helpers\ColumnNameToUrlConvertor.cs" />
     <Compile Include="Helpers\DatabaseHelper.cs" />
     <Compile Include="Helpers\DetailsSectionToUrlConvertor.cs" />
