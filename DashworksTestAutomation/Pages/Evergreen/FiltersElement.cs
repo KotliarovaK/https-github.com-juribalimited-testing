@@ -88,11 +88,17 @@ namespace DashworksTestAutomation.Pages.Evergreen
         [FindsBy(How = How.XPath, Using = ".//span[text()='RESET']/ancestor::button")]
         public IWebElement ResetFiltersButton { get; set; }
 
-        [FindsBy(How = How.XPath, Using = ".//span[contains(@class, 'filter-label-value')]")]
+        public const string FilterValuesSelector = ".//span[contains(@class, 'filter-label-value')]";
+
+        [FindsBy(How = How.XPath, Using = FilterValuesSelector)]
         public IList<IWebElement> FilterValues { get; set; }
 
-        [FindsBy(How = How.XPath, Using = ".//span[@class='filter-label-op']")]
+        public const string FilterOptionsSelector = ".//span[@class='filter-label-op']";
+
+        [FindsBy(How = How.XPath, Using = FilterOptionsSelector)]
         public IList<IWebElement> FilterOptions { get; set; }
+
+        public const string FilterNameSelector = ".//span[@class='filter-label-name']";
 
         [FindsBy(How = How.XPath, Using = ".//span[contains(@class,'mat-select-value-text')]")]
         public IWebElement OperatorDropdown { get; set; }
@@ -282,6 +288,13 @@ namespace DashworksTestAutomation.Pages.Evergreen
             var node = doc.DocumentNode.SelectNodes($".//div[@id='{editFilterButton}']")[0];
             var editFilterButtonTooltip = node.InnerHtml;
             Assert.AreEqual(tooltipText, editFilterButtonTooltip, "Tooltip is incorrect for button");
+        }
+
+        public List<IWebElement> GetAddedFilters()
+        {
+            var by = By.XPath(".//div[@class='filter-item ng-star-inserted']");
+            Driver.WaitWhileControlIsNotDisplayed(by);
+            return Driver.FindElements(by).ToList();
         }
     }
 }
