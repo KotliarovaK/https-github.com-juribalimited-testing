@@ -125,7 +125,12 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_StaticLists
             testRunner.When("User clicks the Actions button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
             testRunner.Then("Actions panel is displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
             testRunner.When("User select all rows", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-            testRunner.And("User create static list with \"Static List TestName\" name", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+            TechTalk.SpecFlow.Table table1 = new TechTalk.SpecFlow.Table(new string[] {
+                        "ItemName"});
+            table1.AddRow(new string[] {
+                        ""});
+            testRunner.When("User create static list with \"Static List TestName\" name on \"Users\" page with fol" +
+                    "lowing items", ((string)(null)), table1, "When ");
             testRunner.Then("\"Static List TestName\" list is displayed to user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
             testRunner.When("User clicks the List Details button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
             testRunner.Then("List details panel is displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
@@ -134,16 +139,16 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_StaticLists
             testRunner.And("User click Accept button in List Details panel", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
             testRunner.When("User clicks the Columns button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
             testRunner.Then("Columns panel is displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-            TechTalk.SpecFlow.Table table1 = new TechTalk.SpecFlow.Table(new string[] {
-                        "ColumnName"});
-            table1.AddRow(new string[] {
-                        "Last Logon Date"});
-            testRunner.When("ColumnName is entered into the search box and the selection is clicked", ((string)(null)), table1, "When ");
             TechTalk.SpecFlow.Table table2 = new TechTalk.SpecFlow.Table(new string[] {
                         "ColumnName"});
             table2.AddRow(new string[] {
                         "Last Logon Date"});
-            testRunner.Then("ColumnName is added to the list", ((string)(null)), table2, "Then ");
+            testRunner.When("ColumnName is entered into the search box and the selection is clicked", ((string)(null)), table2, "When ");
+            TechTalk.SpecFlow.Table table3 = new TechTalk.SpecFlow.Table(new string[] {
+                        "ColumnName"});
+            table3.AddRow(new string[] {
+                        "Last Logon Date"});
+            testRunner.Then("ColumnName is added to the list", ((string)(null)), table3, "Then ");
             testRunner.Then("Update list option is NOT available", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
             testRunner.And("Save as a new list option is available", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
             this.ScenarioCleanup();
@@ -281,17 +286,17 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_StaticLists
             testRunner.Then("Actions panel is displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
             testRunner.When("User select all rows", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
             testRunner.When("User select \"Add to static list\" option in Actions panel", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-            TechTalk.SpecFlow.Table table3 = new TechTalk.SpecFlow.Table(new string[] {
+            TechTalk.SpecFlow.Table table4 = new TechTalk.SpecFlow.Table(new string[] {
                         "Listnames"});
-            table3.AddRow(new string[] {
+            table4.AddRow(new string[] {
                         "OwnerPrivate"});
-            table3.AddRow(new string[] {
+            table4.AddRow(new string[] {
                         "NotOwnerSpecifiedAdmin"});
-            table3.AddRow(new string[] {
+            table4.AddRow(new string[] {
                         "NotOwnerSpecifiedEdit"});
-            table3.AddRow(new string[] {
+            table4.AddRow(new string[] {
                         "NotOwnerEveryoneCanEdit"});
-            testRunner.Then("Following options are available in lists dropdown:", ((string)(null)), table3, "Then ");
+            testRunner.Then("Following options are available in lists dropdown:", ((string)(null)), table4, "Then ");
             this.ScenarioCleanup();
         }
     }

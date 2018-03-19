@@ -34,7 +34,7 @@ namespace DashworksTestAutomation.Steps.API
         public void WhenIPerformTestRequestToTheApiAndGetItemSummaryForSection(string pageName, string itemName,
             string sectionName)
         {
-            var itemId = _client.GetDeviceIdByName(itemName, pageName);
+            var itemId = _client.GetItemIdByName(itemName, pageName);
             var section = _sectionConvertor.SectionConvertor(sectionName);
             var requestUri = "";
             if (pageName == "Mailboxes")
