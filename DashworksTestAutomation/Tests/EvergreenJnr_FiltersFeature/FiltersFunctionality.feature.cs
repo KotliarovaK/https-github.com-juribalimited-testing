@@ -1682,25 +1682,24 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_FiltersFeature
         [NUnit.Framework.CategoryAttribute("EvergreenJnr_FilterFeature")]
         [NUnit.Framework.CategoryAttribute("FilterFunctionality")]
         [NUnit.Framework.CategoryAttribute("DAS11838")]
-        [NUnit.Framework.TestCaseAttribute("Red", new string[0])]
-        [NUnit.Framework.TestCaseAttribute("Blue", new string[0])]
-        [NUnit.Framework.TestCaseAttribute("Out Of Scope", new string[0])]
-        [NUnit.Framework.TestCaseAttribute("Light Blue", new string[0])]
-        [NUnit.Framework.TestCaseAttribute("Brown", new string[0])]
-        [NUnit.Framework.TestCaseAttribute("Amber", new string[0])]
-        [NUnit.Framework.TestCaseAttribute("Really Extremely Orange", new string[0])]
-        [NUnit.Framework.TestCaseAttribute("Purple", new string[0])]
-        [NUnit.Framework.TestCaseAttribute("Green", new string[0])]
-        [NUnit.Framework.TestCaseAttribute("Grey", new string[0])]
-        [NUnit.Framework.TestCaseAttribute("None", new string[0])]
-        public virtual void EvergreenJnr_ApplicationsList_CheckThatTheColourOfTheTargetAppReadinessItemIsMatchingTheCaption(string selectedCheckbox, string[] exampleTags)
+        [NUnit.Framework.TestCaseAttribute("Red", "RED", new string[0])]
+        [NUnit.Framework.TestCaseAttribute("Blue", "BLUE", new string[0])]
+        [NUnit.Framework.TestCaseAttribute("Out Of Scope", "OUT OF SCOPE", new string[0])]
+        [NUnit.Framework.TestCaseAttribute("Light Blue", "LIGHT BLUE", new string[0])]
+        [NUnit.Framework.TestCaseAttribute("Brown", "BROWN", new string[0])]
+        [NUnit.Framework.TestCaseAttribute("Amber", "AMBER", new string[0])]
+        [NUnit.Framework.TestCaseAttribute("Really Extremely Orange", "REALLY EXTREMELY ORANGE", new string[0])]
+        [NUnit.Framework.TestCaseAttribute("Purple", "PURPLE", new string[0])]
+        [NUnit.Framework.TestCaseAttribute("Green", "GREEN", new string[0])]
+        [NUnit.Framework.TestCaseAttribute("Grey", "GREY", new string[0])]
+        public virtual void EvergreenJnr_ApplicationsList_CheckThatTheColourOfTheTargetAppReadinessItemIsMatchingTheCaption(string selectedCheckbox, string colorName, string[] exampleTags)
         {
             System.Exception lastException = null;
             for (int i = 0; (i <= 1); i = (i + 1))
             {
                 try
                 {
-                    this.EvergreenJnr_ApplicationsList_CheckThatTheColourOfTheTargetAppReadinessItemIsMatchingTheCaptionInternal(selectedCheckbox, exampleTags);
+                    this.EvergreenJnr_ApplicationsList_CheckThatTheColourOfTheTargetAppReadinessItemIsMatchingTheCaptionInternal(selectedCheckbox, colorName, exampleTags);
                     return;
                 }
                 catch (System.Exception exc)
@@ -1719,7 +1718,7 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_FiltersFeature
             }
         }
         
-        private void EvergreenJnr_ApplicationsList_CheckThatTheColourOfTheTargetAppReadinessItemIsMatchingTheCaptionInternal(string selectedCheckbox, string[] exampleTags)
+        private void EvergreenJnr_ApplicationsList_CheckThatTheColourOfTheTargetAppReadinessItemIsMatchingTheCaptionInternal(string selectedCheckbox, string colorName, string[] exampleTags)
         {
             string[] @__tags = new string[] {
                     "Evergreen",
@@ -1745,6 +1744,7 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_FiltersFeature
                         string.Format("{0}", selectedCheckbox)});
             testRunner.When("User add \"Windows7Mi: Target App Readiness\" filter where type is \"Equals\" with ad" +
                     "ded column and Lookup option", ((string)(null)), table27, "When ");
+            testRunner.Then(string.Format("\"{0}\" color is matching the caption", colorName), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
             this.ScenarioCleanup();
         }
     }

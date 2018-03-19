@@ -437,17 +437,17 @@ Scenario Outline: EvergreenJnr_ApplicationsList_CheckThatTheColourOfTheTargetApp
 	When User add "Windows7Mi: Target App Readiness" filter where type is "Equals" with added column and Lookup option
 	| SelectedValues     |
 	| <SelectedCheckbox> |
+	Then "<ColorName>" color is matching the caption
 
 Examples:
-	| SelectedCheckbox        |
-	| Red                     |
-	| Blue                    |
-	| Out Of Scope            |
-	| Light Blue              |
-	| Brown                   |
-	| Amber                   |
-	| Really Extremely Orange |
-	| Purple                  |
-	| Green                   |
-	| Grey                    |
-	| None                    |
+	| SelectedCheckbox        | ColorName               |
+	| Red                     | RED                     |
+	| Blue                    | BLUE                    |
+	| Out Of Scope            | OUT OF SCOPE            |
+	| Light Blue              | LIGHT BLUE              |
+	| Brown                   | BROWN                   |
+	| Amber                   | AMBER                   |
+	| Really Extremely Orange | REALLY EXTREMELY ORANGE |
+	| Purple                  | PURPLE                  |
+	| Green                   | GREEN                   |
+	| Grey                    | GREY                    |
