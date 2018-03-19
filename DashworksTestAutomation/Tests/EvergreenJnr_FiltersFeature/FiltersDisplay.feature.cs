@@ -974,8 +974,8 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_FiltersFeature
         [NUnit.Framework.CategoryAttribute("DAS10696")]
         [NUnit.Framework.CategoryAttribute("DAS12199")]
         [NUnit.Framework.CategoryAttribute("DAS12220")]
-        [NUnit.Framework.TestCaseAttribute("Equals", "Red", "9,452", "is", new string[0])]
-        [NUnit.Framework.TestCaseAttribute("Does not equal", "Red", "31,883", "is not", new string[0])]
+        [NUnit.Framework.TestCaseAttribute("Equals", "Red", "9,438", "is", new string[0])]
+        [NUnit.Framework.TestCaseAttribute("Does not equal", "Red", "31,897", "is not", new string[0])]
         public virtual void EvergreenJnr_UsersList_CheckThatFilterOperatorsIsCorrectInFilterInfo(string operatorValue, string filterOption, string rowsCount, string operatorValueInInfo, string[] exampleTags)
         {
             System.Exception lastException = null;
@@ -2387,7 +2387,7 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_FiltersFeature
                         "Green",
                         "true"});
             testRunner.When("User change selected checkboxes:", ((string)(null)), table65, "When ");
-            testRunner.Then("\"70\" rows are displayed in the agGrid", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+            testRunner.Then("\"71\" rows are displayed in the agGrid", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
             this.ScenarioCleanup();
         }
         
