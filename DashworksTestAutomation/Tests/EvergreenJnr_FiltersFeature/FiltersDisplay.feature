@@ -945,3 +945,44 @@ Scenario: EvergreenJnr_DevicesLists_CheckThatMailboxOwnerFilterCategoryIsNotDisp
 	Then Filters panel is displayed to the user
 	When User clicks Add New button on the Filter panel
 	Then "Mailbox Owner" section is not displayed in the Filter panel
+
+	@Evergreen @Devices @Evergreen_FiltersFeature @FiltersDisplay @DAS12208 @Delete_Newly_Created_List
+Scenario: EvergreenJnr_DevicesList_CheckThatNoWarningMessageIsNotDisplayedInTheListPanelAfterViewingDependentList
+	When User clicks "Applications" on the left-hand menu
+	Then "Applications" list should be displayed to the user
+	#When User clicks the Columns button
+	#Then Columns panel is displayed to the user
+	#When ColumnName is entered into the search box and the selection is clicked
+	#| ColumnName |
+	#| Compliance |
+	#Then ColumnName is added to the list
+	#| ColumnName |
+	#| Compliance |
+	#When User create custom list with "TestList1262B7" name
+	#Then "TestList1262B7" list is displayed to user
+	#When User clicks "Devices" on the left-hand menu
+	#Then "Devices" list should be displayed to the user
+	#When User clicks the Filters button
+	#Then Filters panel is displayed to the user
+	#When User add "Application (Saved List)" filter where type is "In list" with SelectedList list and following Association:
+	#| SelectedList   | Association        |
+	#| TestList1262B7 | Not used on device |
+	#Then "Application" filter is added to the list
+	#When User create custom list with "TestList186851" name
+	#Then "TestList186851" list is displayed to user
+	#When User clicks the List Details button
+	#Then List details panel is displayed to the user
+	#When User select "Everyone can edit" sharing option
+	#Then "Everyone can edit" sharing option is selected
+	When User clicks the Logout button
+	Then User is logged out
+	When User clicks on the Login link
+	Then Login Page is displayed to the user
+	When User login with "4" account
+	Then Dashworks homepage is displayed to the user in a logged in state
+	When User clicks the Switch to Evergreen link
+	Then Evergreen Dashboards page should be displayed to the user
+	When User clicks "Devices" on the left-hand menu
+	Then "Devices" list should be displayed to the user
+	When User navigates to the "TestList186851" list
+	Then "TestList186851" list is displayed to user
