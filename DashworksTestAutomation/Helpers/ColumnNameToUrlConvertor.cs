@@ -58,6 +58,18 @@ namespace DashworksTestAutomation.Helpers
                 case "Owner Common Name":
                     return "ownerCommonName";
 
+                case "ComputerSc: In Scope":
+                    return "project_40_inScope";
+
+                case "Floor":
+                    return "floor";
+
+                case "Cost Centre":
+                    return "costCentre";
+
+                case "Windows7Mi: Object ID":
+                    return "project_1_objectID";
+
                 case "Windows7Mi: SS Project Date Enabled":
                     return "project_task_1_13063_4_Task";
 
@@ -89,6 +101,9 @@ namespace DashworksTestAutomation.Helpers
                         default:
                             throw new Exception($"'{pageName}' page not found in convertor");
                     }
+
+                case "Babel(Engl: Readiness":
+                    return "project_46_ragStatus";
 
                 case "UserSchedu: Readiness":
                     return "project_41_ragStatus";
@@ -177,6 +192,9 @@ namespace DashworksTestAutomation.Helpers
 
                 case "Owner Username":
                     return "ownerUsername";
+
+                case "ComplianceF": //
+                    return "username,directoryname,displayname,fullydistinguishedobjectname,usermigrationrag";
 
                 case "" +
                      "DAS-" +

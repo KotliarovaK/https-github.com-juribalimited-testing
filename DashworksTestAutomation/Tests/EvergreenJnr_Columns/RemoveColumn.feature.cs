@@ -1144,6 +1144,7 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_Columns
         [NUnit.Framework.CategoryAttribute("EvergreenJnr_Columns")]
         [NUnit.Framework.CategoryAttribute("RemoveColumn")]
         [NUnit.Framework.CategoryAttribute("DAS11515")]
+        [NUnit.Framework.CategoryAttribute("DAS12221")]
         public virtual void EvergreenJnr_ApplicationsList_CheckThatColumnIsDisplayedInColumnsPanelAfterRemovingAColumnWhichAlsoExistsAsAFilter()
         {
             System.Exception lastException = null;
@@ -1178,7 +1179,8 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_Columns
                         "Applications",
                         "EvergreenJnr_Columns",
                         "RemoveColumn",
-                        "DAS11515"});
+                        "DAS11515",
+                        "DAS12221"});
             this.ScenarioSetup(scenarioInfo);
             this.FeatureBackground();
             TechTalk.SpecFlow.Table table52 = new TechTalk.SpecFlow.Table(new string[] {

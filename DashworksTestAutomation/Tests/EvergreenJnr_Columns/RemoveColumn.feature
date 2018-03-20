@@ -375,7 +375,7 @@ Scenario: EvergreenJnr_UsersList_CheckThatColumnIsDisplayedInColumnsPanelAfterRe
 	And "18" subcategories is displayed for "User" category
 	And "47" subcategories is displayed for "Project Tasks: Windows7Mi" category
 
-@Evergreen @Applications @EvergreenJnr_Columns @RemoveColumn @DAS11515
+@Evergreen @Applications @EvergreenJnr_Columns @RemoveColumn @DAS11515 @DAS12221
 Scenario: EvergreenJnr_ApplicationsList_CheckThatColumnIsDisplayedInColumnsPanelAfterRemovingAColumnWhichAlsoExistsAsAFilter
 	When User add following columns using URL to the "Applications" page:
 	| ColumnName                 |

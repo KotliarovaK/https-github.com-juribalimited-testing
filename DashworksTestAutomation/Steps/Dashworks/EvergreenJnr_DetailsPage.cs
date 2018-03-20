@@ -6,6 +6,7 @@ using NUnit.Framework;
 using OpenQA.Selenium.Remote;
 using System.Collections.Generic;
 using System.Linq;
+using System.Net.Mime;
 using System.Threading;
 using OpenQA.Selenium;
 using TechTalk.SpecFlow;
@@ -139,8 +140,8 @@ namespace DashworksTestAutomation.Steps.Dashworks
         public void ThenFilterPanelHasStandardSize()
         {
             var filterPanel = _driver.NowAt<ApplicationsDetailsTabsMenu>();
-            Assert.AreEqual("118px", filterPanel.GetInstalledFilterPanelHeight());
-            Assert.AreEqual("152px", filterPanel.GetInstalledFilterPanelWidth());
+            Assert.AreEqual("109px", filterPanel.GetInstalledFilterPanelHeight());
+            Assert.AreEqual("173.844px", filterPanel.GetInstalledFilterPanelWidth());
         }
 
         [Then(@"Site column has standard size")]
@@ -151,9 +152,9 @@ namespace DashworksTestAutomation.Steps.Dashworks
             {
                 Assert.AreEqual("81px", filterPanel.CollectionSiteColumnWidt());
             }
-            else 
+            else
             {
-                Assert.AreEqual("81px", filterPanel.PackageSiteColumnWidt());             
+                Assert.AreEqual("81px", filterPanel.PackageSiteColumnWidt());
             }
         }
 
@@ -161,7 +162,8 @@ namespace DashworksTestAutomation.Steps.Dashworks
         public void ThenUserEntersTextInTheFilterField(string searchedText)
         {
             var filterElement = _driver.NowAt<ApplicationsDetailsTabsMenu>();
-            _driver.WaitWhileControlIsNotDisplayed<ApplicationsDetailsTabsMenu>(() => filterElement.FilterSearchTextbox);
+            _driver.WaitWhileControlIsNotDisplayed<ApplicationsDetailsTabsMenu>(() =>
+                filterElement.FilterSearchTextbox);
             filterElement.FilterSearchTextbox.SendKeys(searchedText);
         }
 
@@ -320,11 +322,13 @@ namespace DashworksTestAutomation.Steps.Dashworks
 
         [Then(@"Empty rows are displayed if the data is unknown")]
         public void ThenEmptyRowsAreDisplayedIfTheDataIsUnknown()
-
         {
             var detailsPage = _driver.NowAt<DetailsPage>();
-            StringAssert.DoesNotContain("Unknown", detailsPage.TableRowDetails.Text,
-                "Success Message is not displayed");
+            foreach (var element in detailsPage.TableRowDetails)
+            {
+                StringAssert.DoesNotContain("Unknown", element.Text,
+                    "Unknown text is displayed");
+            }
         }
     }
 }

@@ -11,6 +11,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text.RegularExpressions;
+using OpenQA.Selenium;
 using TechTalk.SpecFlow;
 
 namespace DashworksTestAutomation.Steps.Dashworks
@@ -35,6 +36,15 @@ namespace DashworksTestAutomation.Steps.Dashworks
             var filterElement = _driver.NowAt<FiltersElement>();
             Assert.IsTrue(filterElement.FiltersPanel.Displayed(), "Actions panel was not displayed");
             Logger.Write("Actions Panel panel is visible");
+        }
+
+        [When(@"User clicks Add New button on the Filter panel")]
+        public void WhenUserClicksAddNewButtonOnTheFilterPanel()
+        {
+            var menu = _driver.NowAt<FiltersElement>();
+            _driver.WaitWhileControlIsNotDisplayed<FiltersElement>(() => menu.AddNewFilterButton);
+            menu.AddNewFilterButton.Click();
+            Logger.Write("Add New button was clicked");
         }
 
         [When(@"user select ""(.*)"" filter")]
@@ -285,7 +295,8 @@ namespace DashworksTestAutomation.Steps.Dashworks
         }
 
         [When(@"User add ""(.*)"" filter where type is ""(.*)"" with added column and Lookup option")]
-        public void WhenUserAddFilterWhereTypeIsWithAddedColumnAndLookupOption(string filterName, string operatorValue, Table table)
+        public void WhenUserAddFilterWhereTypeIsWithAddedColumnAndLookupOption(string filterName, string operatorValue,
+            Table table)
         {
             var filtersNames = _driver.NowAt<FiltersElement>();
             filtersNames.AddFilter(filterName);
@@ -517,6 +528,23 @@ namespace DashworksTestAutomation.Steps.Dashworks
             filterElement.OperatorOptions.First().SendKeys(OpenQA.Selenium.Keys.Escape);
         }
 
+        [When(@"User deletes one character from the Search field")]
+        public void WhenUserDeletesOneCharacterFromTheSearchField()
+        {
+            var filterElement = _driver.NowAt<FiltersElement>();
+            filterElement.LookupFilterSearchTextbox.SendKeys(OpenQA.Selenium.Keys.Backspace);
+            _driver.WaitForDataLoading();
+        }
+
+        [Then(@"""(.*)"" results are displayed in the Filter panel")]
+        public void ThenResultsAreDisplayedInTheFilterPanel(string showedResultsCount)
+        {
+            var filtersPanel = _driver.NowAt<FiltersElement>();
+            _driver.WaitForDataLoading();
+            Assert.AreEqual(showedResultsCount, filtersPanel.GetShowedResultsCount(),
+                $"Number of rows is not {showedResultsCount}");
+        }
+
         [When(@"User is remove filter by URL")]
         public void WhenUserIsRemoveFilterByURL()
         {
@@ -596,7 +624,8 @@ namespace DashworksTestAutomation.Steps.Dashworks
                     $"{value} is not added to URL for {filterName} filter");
             }
 
-            StringAssert.Contains(ColumnNameToUrlConvertor.Convert(pageName, filterName).ToLower(), urlPartToCheck.ToLower(),
+            StringAssert.Contains(ColumnNameToUrlConvertor.Convert(pageName, filterName).ToLower(),
+                urlPartToCheck.ToLower(),
                 $"{filterName} is not added to URL");
         }
 
@@ -630,12 +659,69 @@ namespace DashworksTestAutomation.Steps.Dashworks
             filter.Do();
         }
 
+        [Then(@"Appropriate filter is added to URL")]
+        public void ThenAppropriateFilterIsAddedToURL()
+        {
+            var filterPanel = _driver.NowAt<FiltersElement>();
+            var basePage = _driver.NowAt<BaseDashboardPage>();
+            var currentUrl = _driver.Url;
+            var pattern = @"\$filter=(.*)&\$";
+            if (filterPanel.GetFiltersNames().Count > 1)
+            {
+                pattern = @"\$filter=(.*)";
+                for (var i = 0; i < filterPanel.GetFiltersNames().Count - 1; i++)
+                {
+                    pattern = pattern + @"%20OR%20(.*)";
+                }
+
+                pattern = pattern + @"&\$";
+            }
+
+            var filtersInUrl = Regex.Match(currentUrl, pattern).Groups;
+            IList<string> filtersValuesInUrl = new List<string>();
+            for (var i = 1; i < Regex.Match(currentUrl, pattern).Groups.Count; i++)
+            {
+                filtersValuesInUrl.Add(filtersInUrl[i].Value);
+            }
+
+            for (var i = 0; i < filterPanel.GetAddedFilters().Count; i++)
+            {
+                var filter = filterPanel.GetAddedFilters()[i];
+                var filterName = filter.FindElement(By.XPath(FiltersElement.FilterNameSelector)).Text;
+                var filterValue = filter.FindElement(By.XPath(FiltersElement.FilterValuesSelector)).Text;
+                var filterOption = filter.FindElement(By.XPath(FiltersElement.FilterOptionsSelector)).Text;
+                var urlPartToCheck = filtersValuesInUrl[i];
+                StringAssert.Contains(ColumnNameToUrlConvertor.Convert(basePage.Heading.Text, filterName),
+                    urlPartToCheck);
+                StringAssert.Contains(FilterOperatorsConvertor.Convert(filterOption), urlPartToCheck);
+                StringAssert.Contains(filterValue, urlPartToCheck);
+            }
+        }
+
         [Then(@"Save button is not available on the Filter panel")]
         public void ThenSaveButtonIsNotAvailableOnTheFilterPanel()
         {
             var filterPanel = _driver.NowAt<FiltersElement>();
             _driver.WaitWhileControlIsNotDisplayed<FiltersElement>(() => filterPanel.SaveButton);
             Assert.IsTrue(Convert.ToBoolean(filterPanel.SaveButton.GetAttribute("disabled")), "Save Button is active");
+        }
+
+        [Then(@"""(.*)"" section is not displayed in the Filter panel")]
+        public void ThenSectionIsNotDisplayedInTheFilterPanel(string categoryName)
+        {
+            var filterElement = _driver.NowAt<FiltersElement>();
+            Assert.IsFalse(filterElement.CategoryIsDisplayed(categoryName),
+                $"{categoryName} category stil displayed in Filter Panel");
+        }
+
+        [Then(@"""(.*)"" color is matching the caption")]
+        public void ThenColorIsMatchingTheCaption(string colorName)
+        {
+            var page = _driver.NowAt<BaseDashboardPage>();
+            var colorItem = By.XPath(".//div[@class='status']");
+            var styleColorItem = _driver.FindElement(colorItem).GetAttribute("style");
+            Assert.IsTrue(page.GetColorByName(colorName).Displayed(), "Captions color does not match the caption");
+            Assert.AreEqual(page.GetColorContainer(styleColorItem), colorName, "Items color does not match the caption");
         }
 
         [Then(@"reset button in Search field at selected Filter is displayed")]

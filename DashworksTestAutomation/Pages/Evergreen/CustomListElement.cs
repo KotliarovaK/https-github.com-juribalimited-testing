@@ -55,7 +55,7 @@ namespace DashworksTestAutomation.Pages.Evergreen
 
         #region DeleteListBlock
 
-        [FindsBy(How = How.XPath, Using = ".//div[@class='inline-error ng-star-inserted']")]
+        [FindsBy(How = How.XPath, Using = ".//div[@class='inline-tip ng-star-inserted']")]
         public IWebElement DeleteConfirmationMessage { get; set; }
 
         [FindsBy(How = How.XPath, Using = ".//span[text()='DELETE']")]

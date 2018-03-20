@@ -19,11 +19,13 @@ namespace DashworksTestAutomation.Steps.Dashworks
     {
         private readonly RemoteWebDriver _driver;
         private readonly RestWebClient _client;
+        private readonly PageToUrlConvertor _page;
 
-        public EvergreenJnr_ColumnsPanel(RemoteWebDriver driver, RestWebClient client)
+        public EvergreenJnr_ColumnsPanel(RemoteWebDriver driver, RestWebClient client, PageToUrlConvertor page)
         {
             _driver = driver;
             _client = client;
+            _page = page;
         }
 
         [Then(@"Columns panel is displayed to the user")]
@@ -193,6 +195,24 @@ namespace DashworksTestAutomation.Steps.Dashworks
             }
         }
 
+        [Then(@"Ascending order sorted on ""(.*)"" column is displayed in URL")]
+        public void ThenAscendingOrderSortedOnColumnIsDisplayedInURL(string columnName)
+        {
+            var currentUrl = _driver.Url;
+            var sorting = _driver.NowAt<BaseDashboardPage>();
+            Assert.IsTrue(sorting.AscendingSortingIcon.Displayed(), "Ascending icon is not displayed");
+            StringAssert.Contains("%20asc", currentUrl, columnName);
+        }
+
+        [Then(@"default URL is displayed on ""(.*)"" page")]
+        public void ThenDefaultURLIsDisplayedOnPage(string pageName)
+        {
+            var currentUrl = _driver.Url;
+            const string pattern = @"evergreen\/#\/(.*)";
+            var currentPageName = Regex.Match(currentUrl, pattern).Groups[1].Value;
+            Assert.AreEqual(currentPageName, pageName.ToLower(), "Incorrect Page Name in URL");
+        }
+
         [When(@"User remove sorted column on ""(.*)"" page by URL")]
         public void WhenUserRemoveSortedColumnOnPageByUrl(string pageName, Table table)
         {
@@ -349,14 +369,22 @@ namespace DashworksTestAutomation.Steps.Dashworks
             columnElement.ExpandColumnsSectionByName(categoryName);
         }
 
+        [Then(@"Lowest value of ""(.*)"" column is null")]
+        public void ThenLowestValueOfColumnIsNull(string columnName)
+        {
+            var page = _driver.NowAt<BaseDashboardPage>();
+            var content = page.GetColumnContent(columnName);
+            Assert.IsFalse(content.Contains("-1"), "The Lowest value is not null");
+        }
+
         [Then(@"""(.*)"" column is added to URL on ""(.*)"" page")]
-        public void ThenColumnIsAddedToURLOnPage(string coolumnName, string pageName)
+        public void ThenColumnIsAddedToURLOnPage(string columnName, string pageName)
         {
             var currentUrl = _driver.Url;
             const string pattern = @"\$select=(.*)";
             var urlPartToCheck = Regex.Match(currentUrl, pattern).Groups[1].Value;
-            StringAssert.Contains(ColumnNameToUrlConvertor.Convert(pageName, coolumnName).ToLower(), urlPartToCheck.ToLower(),
-                $"{coolumnName} is not added to URL");
+            StringAssert.Contains(ColumnNameToUrlConvertor.Convert(pageName, columnName).ToLower(), urlPartToCheck.ToLower(),
+                $"{columnName} is not added to URL");
         }
     }
 }

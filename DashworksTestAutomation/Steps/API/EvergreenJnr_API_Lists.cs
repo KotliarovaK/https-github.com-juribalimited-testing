@@ -70,13 +70,31 @@ namespace DashworksTestAutomation.Steps.API
             _listsDetails.AddList(listName, listId);
         }
 
-        [When(@"User create static list with ""(.*)"" name on ""(.*)"" page")]
-        public void WhenUserCreateStaticListWithNameOnPage(string listName, string pageName)
+        [When(@"User create static list with ""(.*)"" name on ""(.*)"" page with following items")]
+        public void WhenUserCreateStaticListWithNameOnPageWithFollowingItems(string listName, string pageName,
+            Table table)
         {
-            //TODO path Items via step parameters
-            string items = "67941,90234";
+            var items = string.Empty;
+
+            if (string.IsNullOrWhiteSpace(table.Rows.First()["ItemName"]))
+            {
+                foreach (var item in _client.GetAllItemsKeys(pageName))
+                {
+                    items += item + ",";
+                }
+            }
+            else
+            {
+                foreach (var row in table.Rows)
+                {
+                    items += _client.GetItemIdByName(row["ItemName"], pageName) + ",";
+                }
+            }
+
+            items = items.TrimEnd(',');
 
             #region Create list
+
             var requestUri = $"{UrlProvider.RestClientBaseUrl}lists/{pageName.ToLower()}";
             var request = new RestRequest(requestUri);
 
@@ -107,7 +125,7 @@ namespace DashworksTestAutomation.Steps.API
 
             request.AddParameter("Accept", "*/*");
             request.AddParameter("Accept-Encoding", "gzip, deflate");
-            request.AddParameter("Accept-Language", "en-US,en;q=0.9");
+            request.AddParameter("Accept-Language", "en-GB,en;q=0.9,en-US;q=0.8,ru;q=0.7");
             request.AddParameter("Access-Control-Request-Headers", "content-type");
             request.AddParameter("Access-Control-Request-Method", "PUT");
             request.AddParameter("Connection", "keep-alive");
@@ -125,7 +143,7 @@ namespace DashworksTestAutomation.Steps.API
 
             request.AddParameter("Accept", "application/json");
             request.AddParameter("Accept-Encoding", "gzip, deflate");
-            request.AddParameter("Accept-Language", "en-US,en;q=0.9");
+            request.AddParameter("Accept-Language", "en-GB,en;q=0.9,en-US;q=0.8,ru;q=0.7");
             request.AddParameter("Connection", "keep-alive");
             request.AddParameter("Content-Type", "application/json");
             request.AddParameter("Host", UrlProvider.RestClientBaseUrl.TrimEnd('/'));
@@ -134,7 +152,6 @@ namespace DashworksTestAutomation.Steps.API
             request.AddParameter("listId", listId);
             request.AddParameter("listName", listName);
             request.AddParameter("listType", "Static");
-            //TODO path correct query string
             request.AddParameter("queryString", queryString);
             request.AddParameter("sharedAccessType", "Private");
             request.AddParameter("userId", DatabaseWorker.GetUserIdByLogin(_user.UserName));
@@ -155,6 +172,7 @@ namespace DashworksTestAutomation.Steps.API
 
             var url = $"{UrlProvider.EvergreenUrl}#/{pageName.ToLower()}?$listid={listId}";
 
+            _driver.Navigate().Refresh();
             _driver.Navigate().GoToUrl(url);
             _driver.WaitForDataLoading();
 
@@ -165,7 +183,8 @@ namespace DashworksTestAutomation.Steps.API
         [Then(@"User remove list with ""(.*)"" name on ""(.*)"" page")]
         public void ThenUserRemoveListWithNameOnPage(string listName, string pageName)
         {
-            var requestUri = $"{UrlProvider.RestClientBaseUrl}lists/{pageName.ToLower()}/{_listsDetails.GetListIdByName(listName)}";
+            var requestUri =
+                $"{UrlProvider.RestClientBaseUrl}lists/{pageName.ToLower()}/{_listsDetails.GetListIdByName(listName)}";
             var request = new RestRequest(requestUri);
 
             request.AddParameter("Host", UrlProvider.RestClientBaseUrl);
@@ -191,10 +210,12 @@ namespace DashworksTestAutomation.Steps.API
             {
                 queryString = RestWebClient.GetDefaultColumnsUrlByPageName(pageName) + "&$" + originalPart;
             }
+
             if (!originalPart.Contains("filter="))
             {
                 queryString += "&$filter=";
             }
+
             return queryString;
         }
 
