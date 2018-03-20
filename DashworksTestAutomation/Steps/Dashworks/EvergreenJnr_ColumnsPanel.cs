@@ -201,7 +201,7 @@ namespace DashworksTestAutomation.Steps.Dashworks
             var currentUrl = _driver.Url;
             var sorting = _driver.NowAt<BaseDashboardPage>();
             Assert.IsTrue(sorting.AscendingSortingIcon.Displayed(), "Ascending icon is not displayed");
-            StringAssert.Contains("?$orderby=hostname%20asc", currentUrl, columnName);
+            StringAssert.Contains("%20asc", currentUrl, columnName);
         }
 
         [Then(@"default URL is displayed on ""(.*)"" page")]
@@ -378,13 +378,13 @@ namespace DashworksTestAutomation.Steps.Dashworks
         }
 
         [Then(@"""(.*)"" column is added to URL on ""(.*)"" page")]
-        public void ThenColumnIsAddedToURLOnPage(string coolumnName, string pageName)
+        public void ThenColumnIsAddedToURLOnPage(string columnName, string pageName)
         {
             var currentUrl = _driver.Url;
             const string pattern = @"\$select=(.*)";
             var urlPartToCheck = Regex.Match(currentUrl, pattern).Groups[1].Value;
-            StringAssert.Contains(ColumnNameToUrlConvertor.Convert(pageName, coolumnName).ToLower(), urlPartToCheck.ToLower(),
-                $"{coolumnName} is not added to URL");
+            StringAssert.Contains(ColumnNameToUrlConvertor.Convert(pageName, columnName).ToLower(), urlPartToCheck.ToLower(),
+                $"{columnName} is not added to URL");
         }
     }
 }

@@ -13,7 +13,10 @@ Scenario: EvergreenJnr_UsersList_CheckThatNotOwnerUsersDontHavePermissionsToUpda
 	When User clicks the Actions button
 	Then Actions panel is displayed to the user
 	When User select all rows
-	And User create static list with "Static List TestName" name
+	When User create static list with "Static List TestName" name on "Users" page with following items
+	| ItemName |
+	|          |
+	#And User create static list with "Static List TestName" name
 	Then "Static List TestName" list is displayed to user
 	When User clicks the List Details button
 	Then List details panel is displayed to the user
