@@ -140,8 +140,8 @@ namespace DashworksTestAutomation.Steps.Dashworks
         public void ThenFilterPanelHasStandardSize()
         {
             var filterPanel = _driver.NowAt<ApplicationsDetailsTabsMenu>();
-            Assert.AreEqual("109px", filterPanel.GetInstalledFilterPanelHeight());
-            Assert.AreEqual("173.844px", filterPanel.GetInstalledFilterPanelWidth());
+            Assert.AreEqual("118px", filterPanel.GetInstalledFilterPanelHeight());
+            Assert.AreEqual("152px", filterPanel.GetInstalledFilterPanelWidth());
         }
 
         [Then(@"Site column has standard size")]
