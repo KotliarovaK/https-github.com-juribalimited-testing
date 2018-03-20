@@ -451,3 +451,24 @@ Examples:
 	| Purple                  | PURPLE                  |
 	| Green                   | GREEN                   |
 	| Grey                    | GREY                    |
+
+@Evergreen @Devices @EvergreenJnr_FilterFeature @FilterFunctionality @DAS12076
+Scenario: EvergreenJnr_DevicesList_CheckThatColumnIsEmptyWhenEqualNoneAndContainsContentWhenDoesnotequalNoneForWindows7MiCategoryFilter
+	When User clicks "Devices" on the left-hand menu
+	Then "Devices" list should be displayed to the user
+	When User clicks the Filters button
+	Then Filters panel is displayed to the user
+	When User add "Windows7Mi: Category" filter where type is "Equals" with added column and following checkboxes:
+	| SelectedCheckboxes |
+	| None               |
+	Then Content is empty in the column
+	| ColumnName           |
+	| Windows7Mi: Category |
+	When User add "Windows7Mi: Category" filter where type is "Does not equal" without added column and following checkboxes:
+	| SelectedCheckboxes |
+	| None               |
+	When User click on 'Windows7Mi: Category' column header
+	When User click on 'Windows7Mi: Category' column header
+	Then Content is present in the newly added column
+	| ColumnName           |
+	| Windows7Mi: Category |
