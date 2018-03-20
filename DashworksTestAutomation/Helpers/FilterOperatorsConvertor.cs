@@ -1,8 +1,6 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+
+//Convertor for URL check.
 
 namespace DashworksTestAutomation.Helpers
 {
@@ -15,7 +13,11 @@ namespace DashworksTestAutomation.Helpers
                 case "is":
                     return "EQUALS";
                 case "is not":
-                    return "NOT";
+                    return "NOT%20EQUALS";
+                case ",":
+                    return "%2C";
+                case "or":
+                    return "%2C";
                 default:
                     throw new Exception($"{filterOPerator} operator not found in convertor");
             }
