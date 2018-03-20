@@ -366,20 +366,20 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_BaseDashboardPage
         }
         
         [NUnit.Framework.TestAttribute()]
-        [NUnit.Framework.DescriptionAttribute("EvergreenJnr_UsersList_CheckThatURLsAreUpdatedAfterAddingSortingAndFilters")]
+        [NUnit.Framework.DescriptionAttribute("EvergreenJnr_UsersList_CheckThatURLsAreUpdatedAfterAddingFilters")]
         [NUnit.Framework.CategoryAttribute("Evergreen")]
         [NUnit.Framework.CategoryAttribute("Users")]
         [NUnit.Framework.CategoryAttribute("EvergreenJnr_BaseDashboardPage")]
         [NUnit.Framework.CategoryAttribute("BaseDashboardPage")]
         [NUnit.Framework.CategoryAttribute("DAS12174")]
-        public virtual void EvergreenJnr_UsersList_CheckThatURLsAreUpdatedAfterAddingSortingAndFilters()
+        public virtual void EvergreenJnr_UsersList_CheckThatURLsAreUpdatedAfterAddingFilters()
         {
             System.Exception lastException = null;
             for (int i = 0; (i <= 1); i = (i + 1))
             {
                 try
                 {
-                    this.EvergreenJnr_UsersList_CheckThatURLsAreUpdatedAfterAddingSortingAndFiltersInternal();
+                    this.EvergreenJnr_UsersList_CheckThatURLsAreUpdatedAfterAddingFiltersInternal();
                     return;
                 }
                 catch (System.Exception exc)
@@ -398,9 +398,9 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_BaseDashboardPage
             }
         }
         
-        private void EvergreenJnr_UsersList_CheckThatURLsAreUpdatedAfterAddingSortingAndFiltersInternal()
+        private void EvergreenJnr_UsersList_CheckThatURLsAreUpdatedAfterAddingFiltersInternal()
         {
-            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("EvergreenJnr_UsersList_CheckThatURLsAreUpdatedAfterAddingSortingAndFilters", new string[] {
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("EvergreenJnr_UsersList_CheckThatURLsAreUpdatedAfterAddingFilters", new string[] {
                         "Evergreen",
                         "Users",
                         "EvergreenJnr_BaseDashboardPage",
