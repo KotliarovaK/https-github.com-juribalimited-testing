@@ -361,15 +361,12 @@ Scenario: EvergreenJnr_DevicesList_CheckThatEditListMenuNotDisplayedForActiveLis
 	Then "Dynamic List TestName" list is displayed to user
 	When User navigates to the "All Devices" list
 	Then "Devices" list should be displayed to the user
-	When User clicks the Actions button
-	Then Actions panel is displayed to the user
-	When User select "Hostname" rows in the grid
-	| SelectedRowsName |
-	| 00BDM1JUR8IF419  |
-	| 011PLA470S0B9DJ  |
-	| 00OMQQXWA1DRI6   |
-	| 00SH8162NAS524   |
-	And User create static list with "Static List TestName" name
+	When User create static list with "Static List TestName" name on "Devices" page with following items
+	| ItemName        |
+	| 00BDM1JUR8IF419 |
+	| 011PLA470S0B9DJ |
+	| 00OMQQXWA1DRI6  |
+	| 00SH8162NAS524  |
 	Then "Static List TestName" list is displayed to user
 	When User clicks the Columns button
 	Then Columns panel is displayed to the user
