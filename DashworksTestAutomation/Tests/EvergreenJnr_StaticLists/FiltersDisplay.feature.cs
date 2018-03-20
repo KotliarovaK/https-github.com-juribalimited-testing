@@ -77,7 +77,6 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_StaticLists
         [NUnit.Framework.CategoryAttribute("DAS10993")]
         [NUnit.Framework.CategoryAttribute("DAS12152")]
         [NUnit.Framework.CategoryAttribute("Delete_Newly_Created_List")]
-        [NUnit.Framework.CategoryAttribute("Not_Run")]
         public virtual void EvergreenJnr_DevicesList_CheckThatDynamicFiltersAreClearedForStaticListsWhenOpenedAfterDynamicLists()
         {
             System.Exception lastException = null;
@@ -114,8 +113,7 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_StaticLists
                         "FiltersDisplay",
                         "DAS10993",
                         "DAS12152",
-                        "Delete_Newly_Created_List",
-                        "Not_Run"});
+                        "Delete_Newly_Created_List"});
             this.ScenarioSetup(scenarioInfo);
             this.FeatureBackground();
             testRunner.When("User clicks \"Devices\" on the left-hand menu", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
@@ -134,16 +132,14 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_StaticLists
             testRunner.And("\"5,130\" rows are displayed in the agGrid", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
             testRunner.When("User navigates to the \"All Devices\" list", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
             testRunner.Then("\"Devices\" list should be displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-            testRunner.When("User clicks the Actions button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-            testRunner.Then("Actions panel is displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
             TechTalk.SpecFlow.Table table2 = new TechTalk.SpecFlow.Table(new string[] {
-                        "SelectedRowsName"});
+                        "ItemName"});
             table2.AddRow(new string[] {
                         "001BAQXT6JWFPI"});
             table2.AddRow(new string[] {
                         "00HA7MKAVVFDAV"});
-            testRunner.When("User select \"Hostname\" rows in the grid", ((string)(null)), table2, "When ");
-            testRunner.And("User create static list with \"Static List TestName\" name", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+            testRunner.When("User create static list with \"Static List TestName\" name on \"Devices\" page with f" +
+                    "ollowing items", ((string)(null)), table2, "When ");
             testRunner.Then("\"Static List TestName\" list is displayed to user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
             testRunner.And("\"2\" rows are displayed in the agGrid", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
             testRunner.When("User navigates to the \"TestListE5FC4A\" list", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
@@ -163,6 +159,7 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_StaticLists
         [NUnit.Framework.CategoryAttribute("DAS10978")]
         [NUnit.Framework.CategoryAttribute("DAS12034")]
         [NUnit.Framework.CategoryAttribute("DAS12221")]
+        [NUnit.Framework.CategoryAttribute("DAS12232")]
         [NUnit.Framework.CategoryAttribute("Delete_Newly_Created_List")]
         [NUnit.Framework.CategoryAttribute("Not_Run")]
         public virtual void EvergreenJnr_DevicesList_CheckThatFiltersAndColumnsAreRestoredForSavedList()
@@ -201,6 +198,7 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_StaticLists
                         "DAS10978",
                         "DAS12034",
                         "DAS12221",
+                        "DAS12232",
                         "Delete_Newly_Created_List",
                         "Not_Run"});
             this.ScenarioSetup(scenarioInfo);
@@ -243,7 +241,6 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_StaticLists
         [NUnit.Framework.CategoryAttribute("DAS10695")]
         [NUnit.Framework.CategoryAttribute("DAS12152")]
         [NUnit.Framework.CategoryAttribute("Delete_Newly_Created_List")]
-        [NUnit.Framework.CategoryAttribute("Not_Run")]
         public virtual void EvergreenJnr_DevicesList_CheckThat500ErrorIsNotDisplayedWhenAddingNewObjectToStaticList()
         {
             System.Exception lastException = null;
@@ -280,8 +277,7 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_StaticLists
                         "FiltersDisplay",
                         "DAS10695",
                         "DAS12152",
-                        "Delete_Newly_Created_List",
-                        "Not_Run"});
+                        "Delete_Newly_Created_List"});
             this.ScenarioSetup(scenarioInfo);
             this.FeatureBackground();
             testRunner.When("User clicks \"Devices\" on the left-hand menu", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");

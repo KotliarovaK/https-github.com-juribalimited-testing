@@ -152,12 +152,9 @@ Examples:
 
 @Evergreen @AllLists @EvergreenJnr_ListDetails @ListDetailsFunctionality @DAS10880 @DAS12152 @Delete_Newly_Created_List
 Scenario Outline: EvergreenJnr_AllLists_CheckDefaultOptionsInListDetailsForStaticLists
-	When User clicks "<PageName>" on the left-hand menu
-	Then "<PageName>" list should be displayed to the user
-	When User clicks the Actions button
-	Then Actions panel is displayed to the user
-	When User select all rows
-	And User create static list with "Static List TestName" name
+	When User create static list with "Static List TestName" name on "<PageName>" page with following items
+	| ItemName |
+	|          |
 	#Workaround for DAS-11570. Remove after fix
 	#And User navigates to the "Static List TestName" list
 	When User clicks the List Details button
