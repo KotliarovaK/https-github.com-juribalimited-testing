@@ -181,7 +181,8 @@ namespace DashworksTestAutomation.Steps.Dashworks
                 var content = page.GetColumnContent(row["ColumnName"]);
 
                 //Check that at least 10 cells has some content
-                Assert.IsTrue(content.Select(string.IsNullOrEmpty).Count() > 10, "Newly added column is empty");
+                Assert.IsTrue(content.Count(x => !string.IsNullOrEmpty(x)) > 10, "Newly added column is empty");
+                //Assert.IsTrue(content.Select(string.IsNullOrEmpty).Count() > 10, "Newly added column is empty");
             }
         }
 
