@@ -258,7 +258,6 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_Columns
         [NUnit.Framework.CategoryAttribute("EvergreenJnr_Columns")]
         [NUnit.Framework.CategoryAttribute("AddColumnAction")]
         [NUnit.Framework.CategoryAttribute("DAS11689")]
-        [NUnit.Framework.CategoryAttribute("Not_Run")]
         [NUnit.Framework.TestCaseAttribute("Devices", new string[0])]
         [NUnit.Framework.TestCaseAttribute("Applications", new string[0])]
         public virtual void EvergreenJnr_AllLists_CheckThatTableIsFullyLoadedAfterAddingTheColumns(string listName, string[] exampleTags)
@@ -294,8 +293,7 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_Columns
                     "AllLists",
                     "EvergreenJnr_Columns",
                     "AddColumnAction",
-                    "DAS11689",
-                    "Not_Run"};
+                    "DAS11689"};
             if ((exampleTags != null))
             {
                 @__tags = System.Linq.Enumerable.ToArray(System.Linq.Enumerable.Concat(@__tags, exampleTags));
@@ -395,7 +393,6 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_Columns
         [NUnit.Framework.CategoryAttribute("EvergreenJnr_Columns")]
         [NUnit.Framework.CategoryAttribute("AddColumnAction")]
         [NUnit.Framework.CategoryAttribute("DAS11871")]
-        [NUnit.Framework.CategoryAttribute("Not_Run")]
         [NUnit.Framework.TestCaseAttribute("Devices", new string[0])]
         [NUnit.Framework.TestCaseAttribute("Users", new string[0])]
         [NUnit.Framework.TestCaseAttribute("Applications", new string[0])]
@@ -432,8 +429,7 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_Columns
                     "AllLists",
                     "EvergreenJnr_Columns",
                     "AddColumnAction",
-                    "DAS11871",
-                    "Not_Run"};
+                    "DAS11871"};
             if ((exampleTags != null))
             {
                 @__tags = System.Linq.Enumerable.ToArray(System.Linq.Enumerable.Concat(@__tags, exampleTags));
