@@ -43,7 +43,7 @@ Examples:
 	| Max Receive Size (MB) |
 	| Max Send Size (MB)    |
 
-@Evergreen @AllLists @EvergreenJnr_Columns @AddColumnAction @DAS11689
+@Evergreen @AllLists @EvergreenJnr_Columns @AddColumnAction @DAS11689 @Not_Run
 Scenario Outline: EvergreenJnr_AllLists_CheckThatTableIsFullyLoadedAfterAddingTheColumns
 	When User add following columns using URL to the "<ListName>" page:
 	| ColumnName                        |
@@ -75,7 +75,7 @@ Examples:
 	| Windows7Mi: Core Application            |
 	| Windows7Mi: Hide from End Users         |
 
-@Evergreen @AllLists @EvergreenJnr_Columns @AddColumnAction @DAS11871
+@Evergreen @AllLists @EvergreenJnr_Columns @AddColumnAction @DAS11871 @Not_Run
 Scenario Outline: EvergreenJnr_AllLists_CheckThatConsoleErrorsAreNotDisplayedAfterSortingUserScheduReadinessIDColumn
 	When User add following columns using URL to the "<ListName>" page:
 	| ColumnName               |
@@ -83,9 +83,19 @@ Scenario Outline: EvergreenJnr_AllLists_CheckThatConsoleErrorsAreNotDisplayedAft
 	Then Content is present in the newly added column
 	| ColumnName               |
 	| UserSchedu: Readiness ID |
-	Then full list content is displayed to the user
+	#When User clicks "<ListName>" on the left-hand menu
+	#Then "<ListName>" list should be displayed to the user
+	#When User clicks the Columns button
+	#Then Columns panel is displayed to the user
+	#When ColumnName is entered into the search box and the selection is clicked
+	#| ColumnName               |
+	#| UserSchedu: Readiness ID |
+	#Then ColumnName is added to the list
+	#| ColumnName               |
+	#| UserSchedu: Readiness ID |
 	When User click on 'UserSchedu: Readiness ID' column header
 	Then data in table is sorted by 'UserSchedu: Readiness ID' column in descending order
+	Then full list content is displayed to the user
 	Then There are no errors in the browser console
 
 Examples: 

@@ -32,7 +32,7 @@ Scenario: EvergreenJnr_AllLists_CheckThatGroupIconsAreDisplayedForGroupDetailsPa
 	Then User clicks on "NL00G001" search result
 	Then Group Icon for Group Details page is displayed
 
-@Evergreen @AllLists @EvergreenJnr_ItemDetails @ItemDetailsDisplay @DAS11732 @DAS12235 @Not_Run
+@Evergreen @AllLists @EvergreenJnr_ItemDetails @ItemDetailsDisplay @DAS11732 @DAS12235
 Scenario Outline: EvergreenJnr_AllLists_CheckThatDataIsDisplayedAfterAddingColumnsForExpandedSections
 	When User clicks "<PageName>" on the left-hand menu
 	Then "<PageName>" list should be displayed to the user
@@ -57,9 +57,9 @@ Examples:
 	| Applications | Application   | Projects     | Project     | Object ID           | Object ID           |
 	| Applications | Application   | Projects     | Project     | Object Key          | Object Key          |
 	| Mailboxes    | Email Address | Users        | Domain      | Key                 | Key                 |
-	| Mailboxes    | Email Address | Users        | Domain      | Evergreen Object Id | Evergreen Object Id |
+	| Mailboxes    | Email Address | Users        | Domain      | Evergreen Object ID | Evergreen Object ID |
 
-@Evergreen @AllLists @EvergreenJnr_ItemDetails @ItemDetailsDisplay @DAS11732 @DAS12235 @Not_Run
+@Evergreen @AllLists @EvergreenJnr_ItemDetails @ItemDetailsDisplay @DAS11732 @DAS12235
 Scenario Outline: EvergreenJnr_AllLists_CheckThatDataIsDisplayedAfterAddingColumns
 	When User clicks "<PageName>" on the left-hand menu
 	Then "<PageName>" list should be displayed to the user
@@ -88,7 +88,7 @@ Examples:
 	#| Devices      | Hostname      | Applications | Application Summary | Application Detail  | Application   | User Key             | User Key             |
 	| Devices      | Hostname      | Applications | Application Summary | Advertisements      | Application   | Key                  | Key                  |
 	| Devices      | Hostname      | Applications | Application Summary | Advertisements      | Application   | Application Key      | Application Key      |
-	| Devices      | Hostname      | Applications | Application Summary | Advertisements      | Application   | SiteKey              | SiteKey              |
+	| Devices      | Hostname      | Applications | Application Summary | Advertisements      | Application   | Site Key              | Site Key              |
 	| Devices      | Hostname      | Applications | Application Summary | Advertisements      | Application   | Collection Key       | Collection Key       |
 	| Devices      | Hostname      | Applications | Application Summary | Advertisements      | Application   | Program Key          | Program Key          |
 	| Devices      | Hostname      | Applications | Application Summary | Collections         | Collection    | Key                  | Key                  |
@@ -107,7 +107,7 @@ Examples:
 	| Mailboxes    | Email Address | Users        | Users               | Mailbox Permissions | Domain        | Via Group Object Key | Via Group Object Key |
 	| Mailboxes    | Email Address | Users        | Users               | Mailbox Permissions | Domain        | Access Category Key  | Access Category Key  |
 
-@Evergreen @AllLists @EvergreenJnr_ItemDetails @ItemDetailsDisplay @DAS11732 @DAS12053 @DAS12235 @Not_Run
+@Evergreen @AllLists @EvergreenJnr_ItemDetails @ItemDetailsDisplay @DAS11732 @DAS12053 @DAS12235
 Scenario Outline: EvergreenJnr_AllLists_CheckThatDataIsDisplayedAfterAddingColumnsForClosedSections
 	When User clicks "<PageName>" on the left-hand menu
 	Then "<PageName>" list should be displayed to the user
@@ -270,7 +270,7 @@ Scenario: EvergreenJnr_DevicesLists_CheckThatDataOfColumnsIsDisplayedInTheCustom
 	| Label      |
 	| Value      |
 
-@Evergreen @Mailboxes @EvergreenJnr_ItemDetails @ItemDetailsDisplay @DAS11479 @Not_Run
+@Evergreen @Mailboxes @EvergreenJnr_ItemDetails @ItemDetailsDisplay @DAS11479
 Scenario: EvergreenJnr_MailboxesLists_CheckThatLinksAndImageItemAreDisplayedInTheNameAndDisplayNameColumns
 	When User clicks "Mailboxes" on the left-hand menu
 	Then "Mailboxes" list should be displayed to the user
@@ -299,7 +299,7 @@ Examples:
 	| Mailboxes | aaron.u.flores@dwlabs.local      | Email Address | Details | Mailbox           | Department and Location |
 	| Mailboxes | 000F977AC8824FE39B8@bclabs.local | Email Address | Details | Mailbox           | Mailbox                 |
 
-@Evergreen @AllLists @EvergreenJnr_ItemDetails @ItemDetailsDisplay @DAS11762 @DAS12235 @Not_Run
+@Evergreen @AllLists @EvergreenJnr_ItemDetails @ItemDetailsDisplay @DAS11762 @DAS12235
 Scenario Outline: EvergreenJnr_AllLists_CheckThatNoConsoleErrorsAreDisplayedWhenDeleteDataFromFilterTextField
 	When User clicks "<PageName>" on the left-hand menu
 	Then "<PageName>" list should be displayed to the user
@@ -318,7 +318,7 @@ Examples:
 	| Applications | Application   | MSI          | File Name      |
 	| Mailboxes    | Email Address | Users        | Username       |
 
-@Evergreen @Devices @EvergreenJnr_ItemDetails @ItemDetailsDisplay @DAS11628 @Not_Run
+@Evergreen @Devices @EvergreenJnr_ItemDetails @ItemDetailsDisplay @DAS11628
 Scenario: EvergreenJnr_DevicesLists_CheckThatTheFilterDropddownIsDisplayedFullyWhenTheFilterResultNotContainsValues
 	When User clicks "Devices" on the left-hand menu
 	Then "Devices" list should be displayed to the user
