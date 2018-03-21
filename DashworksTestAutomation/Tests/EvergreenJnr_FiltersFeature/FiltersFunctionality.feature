@@ -223,7 +223,7 @@ Scenario: EvergreenJnr_ApplicationsList_CheckThatFilterIsRestoredCorrectlyAfterL
 	Then "5" rows are displayed in the agGrid
 	Then "Application is Microsoft Office 97, Professional Edition" is displayed in added filter info
 
-@Evergreen @Applications @EvergreenJnr_FilterFeature @FilterFunctionality @DAS10977 @Delete_Newly_Created_List @Not_Run
+@Evergreen @Applications @EvergreenJnr_FilterFeature @FilterFunctionality @DAS10977 @Delete_Newly_Created_List
 Scenario: EvergreenJnr_ApplicationsList_CheckThatFilterIsRestoredCorrectlyAfterLeavingThePageAndGoingBackViaTheBrowseBackButtonForListFilters
 	When User add following columns using URL to the "Applications" page:
 	| ColumnName      |
@@ -237,13 +237,13 @@ Scenario: EvergreenJnr_ApplicationsList_CheckThatFilterIsRestoredCorrectlyAfterL
 	When User add "Application (Saved List)" filter where type is "In list" with SelectedList list and following Association:
 	| SelectedList   | Association        |
 	| TestListD75CD3 | Not used on device |
-	Then "Application in list TestListD75CD3 is not used on device" is displayed in added filter info
+	Then "Application in list TestListD75CD3 not used on device" is displayed in added filter info
 	Then "16,565" rows are displayed in the agGrid
 	When User perform search by "00BDM1JUR8IF419"
 	And User click content from "Hostname" column
 	Then User click back button in the browser
 	Then "16,565" rows are displayed in the agGrid
-	Then "Application in list TestListD75CD3 is not used on device" is displayed in added filter info
+	Then "Application in list TestListD75CD3 not used on device" is displayed in added filter info
 
 @Evergreen @Devices @EvergreenJnr_FilterFeature @FilterFunctionality @DAS11560
 Scenario: EvergreenJnr_DevicesList_CheckNumericFilter
@@ -451,3 +451,24 @@ Examples:
 	| Purple                  | PURPLE                  |
 	| Green                   | GREEN                   |
 	| Grey                    | GREY                    |
+
+@Evergreen @Devices @EvergreenJnr_FilterFeature @FilterFunctionality @DAS12076
+Scenario: EvergreenJnr_DevicesList_CheckThatColumnIsEmptyWhenEqualNoneAndContainsContentWhenDoesnotequalNoneForWindows7MiCategoryFilter
+	When User clicks "Devices" on the left-hand menu
+	Then "Devices" list should be displayed to the user
+	When User clicks the Filters button
+	Then Filters panel is displayed to the user
+	When User add "Windows7Mi: Category" filter where type is "Equals" with added column and following checkboxes:
+	| SelectedCheckboxes |
+	| None               |
+	Then Content is empty in the column
+	| ColumnName           |
+	| Windows7Mi: Category |
+	When User add "Windows7Mi: Category" filter where type is "Does not equal" without added column and following checkboxes:
+	| SelectedCheckboxes |
+	| None               |
+	When User click on 'Windows7Mi: Category' column header
+	When User click on 'Windows7Mi: Category' column header
+	Then Content is present in the newly added column
+	| ColumnName           |
+	| Windows7Mi: Category |

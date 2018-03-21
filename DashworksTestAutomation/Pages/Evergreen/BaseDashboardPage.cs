@@ -85,7 +85,7 @@ namespace DashworksTestAutomation.Pages.Evergreen
         public IWebElement UncheckedCheckbox { get; set; }
 
         [FindsBy(How = How.XPath, Using = ".//div[@class='inline-error ng-star-inserted']")]
-        public IWebElement WarningCreateMessage { get; set; }
+        public IWebElement WarningMessage { get; set; }
 
         [FindsBy(How = How.XPath, Using = ".//i")]
         public IWebElement ItemImage { get; set; }
