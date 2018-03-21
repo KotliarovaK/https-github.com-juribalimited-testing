@@ -258,6 +258,7 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_Columns
         [NUnit.Framework.CategoryAttribute("EvergreenJnr_Columns")]
         [NUnit.Framework.CategoryAttribute("AddColumnAction")]
         [NUnit.Framework.CategoryAttribute("DAS11689")]
+        [NUnit.Framework.CategoryAttribute("Not_Run")]
         [NUnit.Framework.TestCaseAttribute("Devices", new string[0])]
         [NUnit.Framework.TestCaseAttribute("Applications", new string[0])]
         public virtual void EvergreenJnr_AllLists_CheckThatTableIsFullyLoadedAfterAddingTheColumns(string listName, string[] exampleTags)
@@ -293,7 +294,8 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_Columns
                     "AllLists",
                     "EvergreenJnr_Columns",
                     "AddColumnAction",
-                    "DAS11689"};
+                    "DAS11689",
+                    "Not_Run"};
             if ((exampleTags != null))
             {
                 @__tags = System.Linq.Enumerable.ToArray(System.Linq.Enumerable.Concat(@__tags, exampleTags));
@@ -393,6 +395,7 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_Columns
         [NUnit.Framework.CategoryAttribute("EvergreenJnr_Columns")]
         [NUnit.Framework.CategoryAttribute("AddColumnAction")]
         [NUnit.Framework.CategoryAttribute("DAS11871")]
+        [NUnit.Framework.CategoryAttribute("Not_Run")]
         [NUnit.Framework.TestCaseAttribute("Devices", new string[0])]
         [NUnit.Framework.TestCaseAttribute("Users", new string[0])]
         [NUnit.Framework.TestCaseAttribute("Applications", new string[0])]
@@ -429,7 +432,8 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_Columns
                     "AllLists",
                     "EvergreenJnr_Columns",
                     "AddColumnAction",
-                    "DAS11871"};
+                    "DAS11871",
+                    "Not_Run"};
             if ((exampleTags != null))
             {
                 @__tags = System.Linq.Enumerable.ToArray(System.Linq.Enumerable.Concat(@__tags, exampleTags));
@@ -448,9 +452,9 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_Columns
             table10.AddRow(new string[] {
                         "UserSchedu: Readiness ID"});
             testRunner.Then("Content is present in the newly added column", ((string)(null)), table10, "Then ");
-            testRunner.Then("full list content is displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
             testRunner.When("User click on \'UserSchedu: Readiness ID\' column header", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
             testRunner.Then("data in table is sorted by \'UserSchedu: Readiness ID\' column in descending order", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+            testRunner.Then("full list content is displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
             testRunner.Then("There are no errors in the browser console", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
             this.ScenarioCleanup();
         }
