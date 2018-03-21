@@ -56,6 +56,20 @@ namespace DashworksTestAutomation.Steps.Dashworks
             Logger.Write("The Save to Custom List Element was NOT displayed");
         }
 
+        [When(@"User clicks Settings button in the list panel")]
+        public void WhenUserClicksSettingsButtonInTheListPanel()
+        {
+            var listElement = _driver.NowAt<CustomListElement>();
+            listElement.SettingsButton.Click();
+        }
+
+        [Then(@"Settings panel is displayed to the user")]
+        public void ThenSettingsPanelIsDisplayedToTheUser()
+        {
+            var listElement = _driver.NowAt<CustomListElement>();
+            Assert.IsTrue(listElement.SettingsPanel.Displayed(), "Settings panel is not displayed");
+        }
+
         [When(@"User create custom list with ""(.*)"" name")]
         public void WhenUserCreateCustomListWithName(string listName)
         {
@@ -113,6 +127,13 @@ namespace DashworksTestAutomation.Steps.Dashworks
         {
             var listElement = _driver.NowAt<CustomListElement>();
             Assert.AreEqual(listName, listElement.CheckAllListName(listName).Text, "Incorrect list name is displayed");
+        }
+
+        [When(@"User clicks Manage in the list panel")]
+        public void WhenUserClicksManageInTheListPanel()
+        {
+            var listDetailsElement = _driver.NowAt<CustomListElement>();
+            listDetailsElement.ManageButton.Click();
         }
 
         [When(@"User update current custom list")]
