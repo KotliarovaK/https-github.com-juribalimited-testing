@@ -10,6 +10,12 @@ namespace DashworksTestAutomation.Pages.Evergreen
 {
     internal class HeaderElement : SeleniumBasePage
     {
+        [FindsBy(How = How.XPath, Using = ".//button[@class='dropdown-toggle user-name notifications notif-area']")]
+        public IWebElement UserNotificationsButton { get; set; }
+
+        [FindsBy(How = How.XPath, Using = ".//div[@class='message message-info']")]
+        public IWebElement UserNotificationsMessage { get; set; }
+
         [FindsBy(How = How.XPath, Using = ".//span[@class='col-ds-visible user-area user-name-words']")]
         public IWebElement UserNameDropdown { get; set; }
 
@@ -21,6 +27,9 @@ namespace DashworksTestAutomation.Pages.Evergreen
 
         [FindsBy(How = How.XPath, Using = ".//ul[@class='user-actions']/li")]
         public IList<IWebElement> MenuItems { get; set; }
+
+        [FindsBy(How = How.XPath, Using = ".//ul[@class='user-actions']")]
+        public IWebElement UserItemsMenu { get; set; }
 
         public override List<By> GetPageIdentitySelectors()
         {
