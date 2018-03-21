@@ -25,6 +25,13 @@ namespace DashworksTestAutomation.Steps.Dashworks
             _userDto = userDto;
         }
 
+        [When(@"User click User Notifications button")]
+        public void WhenUserClickUserNotificationsButton()
+        {
+            var header = _driver.NowAt<HeaderElement>();
+            header.UserNotificationsButton.Click();
+        }
+
         [When(@"User clicks Account Profile dropdown")]
         public void WhenUserClicksAccountProfileDropdown()
         {
