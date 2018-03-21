@@ -33,7 +33,7 @@ namespace DashworksTestAutomation.Pages.Evergreen
 
         [FindsBy(How = How.XPath, Using = ".//div[@class='inline-success ng-star-inserted']")]
         public IWebElement SuccessCreateMessage { get; set; }
-
+      
         [FindsBy(How = How.XPath, Using = ".//div[@id='submenuBlock']//ul//span[@class='submenu-actions-list-name']")]
         public IList<IWebElement> ListsNames { get; set; }
 
@@ -55,7 +55,7 @@ namespace DashworksTestAutomation.Pages.Evergreen
 
         #region DeleteListBlock
 
-        [FindsBy(How = How.XPath, Using = ".//div[@class='inline-error ng-star-inserted']")]
+        [FindsBy(How = How.XPath, Using = ".//div[@class='inline-tip ng-star-inserted']")]
         public IWebElement DeleteConfirmationMessage { get; set; }
 
         [FindsBy(How = How.XPath, Using = ".//span[text()='DELETE']")]
