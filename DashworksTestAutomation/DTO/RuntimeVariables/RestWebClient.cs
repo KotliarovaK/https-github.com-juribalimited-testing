@@ -38,7 +38,7 @@ namespace DashworksTestAutomation.DTO.RuntimeVariables
                 throw new Exception($"Unable to execute request. URI: {requestUri}");
         }
 
-        public string GetDeviceIdByName(string itemName, string pageName)
+        public string GetItemIdByName(string itemName, string pageName)
         {
             var column = "";
             var returnValue = "";
@@ -79,6 +79,49 @@ namespace DashworksTestAutomation.DTO.RuntimeVariables
             var allItems = JsonConvert.DeserializeObject<JObject>(content)["results"];
             var item = allItems.First(x => x[column].ToString().Equals(itemName));
             return item[returnValue].ToString();
+        }
+
+        public List<string> GetAllItemsKeys(string pageName)
+        {
+            var returnValue = "";
+            List<string> returnList = new List<string>();
+            switch (pageName)
+            {
+                case "Devices":
+                    returnValue = "computerKey";
+                    break;
+                case "Users":
+                    returnValue = "objectKey";
+                    break;
+                case "Applications":
+                    returnValue = "packageKey";
+                    break;
+                case "Mailboxes":
+                    returnValue = "mailboxKey";
+                    break;
+                default:
+                    throw new Exception($"{pageName} not found");
+            }
+            var requestUri = $"{UrlProvider.RestClientBaseUrl}{pageName.ToLower()}";
+            var request = new RestRequest(requestUri);
+
+            request.AddParameter("Host", UrlProvider.RestClientBaseUrl);
+            request.AddParameter("Origin", UrlProvider.Url.TrimEnd('/'));
+            request.AddParameter("Referer", UrlProvider.EvergreenUrl);
+
+            var response = Value.Get(request);
+
+            if (response.StatusCode != HttpStatusCode.OK)
+                throw new Exception($"Unable to execute request. URI: {requestUri}");
+            var content = response.Content;
+
+            var allItems = JsonConvert.DeserializeObject<JObject>(content)["results"];
+            foreach (var item in allItems)
+            {
+                returnList.Add(item[returnValue].ToString());
+            }
+
+            return returnList;
         }
 
         public static string GetDefaultColumnsUrlByPageName(string pageName)

@@ -151,7 +151,6 @@ namespace DashworksTestAutomation.Steps.Dashworks
         public void ThenEditListMenuIsNotDisplayed()
         {
             var listElement = _driver.NowAt<CustomListElement>();
-
             Assert.IsFalse(listElement.SaveAsDropdown.Displayed(), "Edit List menu is displayed");
         }
 
@@ -189,6 +188,7 @@ namespace DashworksTestAutomation.Steps.Dashworks
         {
             var page = _driver.NowAt<BaseDashboardPage>();
             page.GetListElementByName(listName).Click();
+            _driver.WaitForDataLoading();
         }
 
         [Then(@"""(.*)"" message is displayed")]

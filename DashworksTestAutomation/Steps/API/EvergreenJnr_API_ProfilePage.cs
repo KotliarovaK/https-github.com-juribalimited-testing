@@ -11,11 +11,11 @@ using TechTalk.SpecFlow;
 namespace DashworksTestAutomation.Steps.API
 {
     [Binding]
-    internal class EvergreenJnr_ProfilePage
+    internal class EvergreenJnr_API_ProfilePage
     {
         private readonly RestWebClient _client;
 
-        public EvergreenJnr_ProfilePage(RestWebClient client)
+        public EvergreenJnr_API_ProfilePage(RestWebClient client)
         {
             _client = client;
         }

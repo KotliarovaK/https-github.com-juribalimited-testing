@@ -442,6 +442,12 @@ namespace DashworksTestAutomation.Extensions
             ex.ExecuteScript("arguments[0].scrollIntoView(true);", element);
         }
 
+        public static void SetAttributeByJavascript(this RemoteWebDriver driver, IWebElement element, string attribute, string text)
+        {
+            IJavaScriptExecutor ex = driver;
+            ex.ExecuteScript($"arguments[0].setAttribute('{attribute}', '{text}')", element);
+        }
+
         #endregion Actions with Javascript
 
         #region Frames

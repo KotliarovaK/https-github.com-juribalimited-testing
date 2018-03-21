@@ -58,6 +58,18 @@ namespace DashworksTestAutomation.Helpers
                 case "Owner Common Name":
                     return "ownerCommonName";
 
+                case "ComputerSc: In Scope":
+                    return "project_40_inScope";
+
+                case "Floor":
+                    return "floor";
+
+                case "Cost Centre":
+                    return "costCentre";
+
+                case "Windows7Mi: Object ID":
+                    return "project_1_objectID";
+
                 case "Windows7Mi: SS Project Date Enabled":
                     return "project_task_1_13063_4_Task";
 
@@ -89,6 +101,9 @@ namespace DashworksTestAutomation.Helpers
                         default:
                             throw new Exception($"'{pageName}' page not found in convertor");
                     }
+
+                case "Babel(Engl: Readiness":
+                    return "project_46_ragStatus";
 
                 case "UserSchedu: Readiness":
                     return "project_41_ragStatus";
@@ -151,10 +166,35 @@ namespace DashworksTestAutomation.Helpers
                     return "emailCount";
 
                 case "Import Type":
-                    return "importType";
+                    switch (pageName)
+                    {
+                        case "Mailboxes":
+                            return "importType";
+                        case "Applications":
+                            return "distributionType";
+                        case "Devices":
+                            return "distributionType";
+                        default:
+                            throw new Exception($"'{pageName}' page not found in convertor");
+                    }
 
                 case "Email Address":
                     return "eMailAddress";
+
+                case "Windows7Mi: Readiness":
+                    return "project_1_ragStatus";
+
+                case "Windows7Mi: Group Computer Rag Radio Date Owner":
+                    return "project_task_1_12865_1_Task";
+
+                case "Department":
+                    return "lDAP_231";
+
+                case "Owner Username":
+                    return "ownerUsername";
+
+                case "ComplianceF": //
+                    return "username,directoryname,displayname,fullydistinguishedobjectname,usermigrationrag";
 
                 case "" +
                      "DAS-" +

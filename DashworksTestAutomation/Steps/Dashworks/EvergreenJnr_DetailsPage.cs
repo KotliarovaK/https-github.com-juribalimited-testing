@@ -6,6 +6,8 @@ using NUnit.Framework;
 using OpenQA.Selenium.Remote;
 using System.Collections.Generic;
 using System.Linq;
+using System.Net.Mime;
+using System.Threading;
 using OpenQA.Selenium;
 using TechTalk.SpecFlow;
 
@@ -36,11 +38,19 @@ namespace DashworksTestAutomation.Steps.Dashworks
             detailsPage.NavigateToSectionByName(sectionName);
         }
 
-        [When(@"User open ""(.*)"" section")]
-        public void WhenUserOpenSection(string sectionName)
+        [When(@"User opens ""(.*)"" section on the Details Page")]
+        public void WhenUserOpensSectionOnTheDetailsPage(string sectionName)
         {
             var detailsPage = _driver.NowAt<DetailsPage>();
             detailsPage.NavigateToSectionByName(sectionName);
+        }
+
+        [Then(@"""(.*)"" message is displayed on the Details Page")]
+        public void ThenMessageIsDisplayedOnTheDetailsPage(string message)
+        {
+            var listElement = _driver.NowAt<DetailsPage>();
+            _driver.WaitWhileControlIsNotDisplayed<DetailsPage>(() => listElement.NoFoundMessage);
+            Assert.AreEqual(message, listElement.NoFoundMessage.Text, $"{message} is not displayed");
         }
 
         [Then(@"Item content is displayed to the User")]
@@ -96,12 +106,73 @@ namespace DashworksTestAutomation.Steps.Dashworks
             page.OpenColumnSettingsByName(columnName);
         }
 
-        [When(@"User click Column button on the Column Settings panel")]
-        public void WhenUserClickColumnButtonOnTheColumnSettingsPanel()
+        [When(@"User have select ""(.*)"" option from column settings on the Details Page")]
+        public void WhenUserHaveSelectOptionFromColumnSettingsOnTheDetailsPage(string settingName)
+        {
+            var page = _driver.NowAt<ApplicationsDetailsTabsMenu>();
+            page.GetSettingByNameDetailsPage(settingName).Click();
+        }
+
+        [When(@"User clicks Column button on the Column Settings panel")]
+        public void WhenUserClicksColumnButtonOnTheColumnSettingsPanel()
         {
             var menu = _driver.NowAt<ApplicationsDetailsTabsMenu>();
             _driver.WaitWhileControlIsNotDisplayed<ApplicationsDetailsTabsMenu>(() => menu.ColumnButton);
             menu.ColumnButton.Click();
+        }
+
+        [When(@"User clicks Filter button on the Column Settings panel")]
+        public void WhenUserClicksFilterButtonOnTheColumnSettingsPanel()
+        {
+            var menu = _driver.NowAt<ApplicationsDetailsTabsMenu>();
+            _driver.WaitWhileControlIsNotDisplayed<ApplicationsDetailsTabsMenu>(() => menu.FilterButton);
+            menu.FilterButton.Click();
+        }
+
+        [Then(@"User select ""(.*)"" checkbox from filter on the Details Page")]
+        public void ThenUserSelectCheckboxFromFilterOnTheDetailsPage(string filterName)
+        {
+            var page = _driver.NowAt<ApplicationsDetailsTabsMenu>();
+            page.GetFilterByName(filterName).Click();
+        }
+
+        [Then(@"Filter panel has standard size")]
+        public void ThenFilterPanelHasStandardSize()
+        {
+            var filterPanel = _driver.NowAt<ApplicationsDetailsTabsMenu>();
+            Assert.AreEqual("118px", filterPanel.GetInstalledFilterPanelHeight());
+            Assert.AreEqual("152px", filterPanel.GetInstalledFilterPanelWidth());
+        }
+
+        [Then(@"Site column has standard size")]
+        public void ThenSiteColumnHasStandardSize()
+        {
+            var filterPanel = _driver.NowAt<ApplicationsDetailsTabsMenu>();
+            if (!_driver.IsElementDisplayed(By.XPath(".//div[@col-id='packageSite']")))
+            {
+                Assert.AreEqual("81px", filterPanel.CollectionSiteColumnWidt());
+            }
+            else
+            {
+                Assert.AreEqual("81px", filterPanel.PackageSiteColumnWidt());
+            }
+        }
+
+        [Then(@"User enters ""(.*)"" text in the Filter field")]
+        public void ThenUserEntersTextInTheFilterField(string searchedText)
+        {
+            var filterElement = _driver.NowAt<ApplicationsDetailsTabsMenu>();
+            _driver.WaitWhileControlIsNotDisplayed<ApplicationsDetailsTabsMenu>(() =>
+                filterElement.FilterSearchTextbox);
+            filterElement.FilterSearchTextbox.SendKeys(searchedText);
+        }
+
+        [When(@"User clears Filter field")]
+        public void WhenUserClearsFilterField()
+        {
+            var page = _driver.NowAt<ApplicationsDetailsTabsMenu>();
+            Thread.Sleep(500);
+            page.FilterSearchTextbox.ClearWithHomeButton(_driver);
         }
 
         [When(@"User select ""(.*)"" checkbox on the Column Settings panel")]
@@ -173,7 +244,7 @@ namespace DashworksTestAutomation.Steps.Dashworks
                 {
                     var content = page.GetColumnIdContent(row["ColumnName"]);
 
-                    Assert.IsTrue(content.Count(x => !string.IsNullOrEmpty(x)) > 1, "Newly added column is empty");
+                    Assert.IsTrue(content.Count(x => !string.IsNullOrEmpty(x)) > 0, "Newly added column is empty");
                 }
             }
         }
@@ -189,7 +260,7 @@ namespace DashworksTestAutomation.Steps.Dashworks
 
 
                 //Check that at least 1 cell has some content
-                Assert.IsTrue(content.Select(string.IsNullOrEmpty).Count() > 0, "Column is empty");
+                Assert.IsTrue(content.Count(x => !string.IsNullOrEmpty(x)) > 0, "Column is empty");
             }
         }
 
@@ -251,11 +322,13 @@ namespace DashworksTestAutomation.Steps.Dashworks
 
         [Then(@"Empty rows are displayed if the data is unknown")]
         public void ThenEmptyRowsAreDisplayedIfTheDataIsUnknown()
-
         {
             var detailsPage = _driver.NowAt<DetailsPage>();
-            StringAssert.DoesNotContain("Unknown", detailsPage.TableRowDetails.Text,
-                "Success Message is not displayed");
+            foreach (var element in detailsPage.TableRowDetails)
+            {
+                StringAssert.DoesNotContain("Unknown", element.Text,
+                    "Unknown text is displayed");
+            }
         }
     }
 }
