@@ -940,21 +940,21 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_ListDetails
         }
         
         [NUnit.Framework.TestAttribute()]
-        [NUnit.Framework.DescriptionAttribute("EvergreenJnr_DevicesList_CheckThatTwoDependencyIsDisplayedInTheDependentsBlock")]
+        [NUnit.Framework.DescriptionAttribute("EvergreenJnr_DevicesList_CheckThatTwoDependencyAreDisplayedInTheDependentsBlock")]
         [NUnit.Framework.CategoryAttribute("Evergreen")]
         [NUnit.Framework.CategoryAttribute("Devices")]
         [NUnit.Framework.CategoryAttribute("EvergreenJnr_ListDetails")]
         [NUnit.Framework.CategoryAttribute("ListDetailsFunctionality")]
         [NUnit.Framework.CategoryAttribute("DAS12190")]
         [NUnit.Framework.CategoryAttribute("Delete_Newly_Created_List")]
-        public virtual void EvergreenJnr_DevicesList_CheckThatTwoDependencyIsDisplayedInTheDependentsBlock()
+        public virtual void EvergreenJnr_DevicesList_CheckThatTwoDependencyAreDisplayedInTheDependentsBlock()
         {
             System.Exception lastException = null;
             for (int i = 0; (i <= 1); i = (i + 1))
             {
                 try
                 {
-                    this.EvergreenJnr_DevicesList_CheckThatTwoDependencyIsDisplayedInTheDependentsBlockInternal();
+                    this.EvergreenJnr_DevicesList_CheckThatTwoDependencyAreDisplayedInTheDependentsBlockInternal();
                     return;
                 }
                 catch (System.Exception exc)
@@ -973,9 +973,9 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_ListDetails
             }
         }
         
-        private void EvergreenJnr_DevicesList_CheckThatTwoDependencyIsDisplayedInTheDependentsBlockInternal()
+        private void EvergreenJnr_DevicesList_CheckThatTwoDependencyAreDisplayedInTheDependentsBlockInternal()
         {
-            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("EvergreenJnr_DevicesList_CheckThatTwoDependencyIsDisplayedInTheDependentsBlock", new string[] {
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("EvergreenJnr_DevicesList_CheckThatTwoDependencyAreDisplayedInTheDependentsBlock", new string[] {
                         "Evergreen",
                         "Devices",
                         "EvergreenJnr_ListDetails",
@@ -1021,13 +1021,13 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_ListDetails
             testRunner.When("User clicks \"Applications\" on the left-hand menu", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
             testRunner.Then("\"Applications\" list should be displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
             testRunner.When("User navigates to the \"Application1\" list", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-            testRunner.When("User clicks Settings button in the list panel", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+            testRunner.And("User clicks Settings button in the list panel", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
             testRunner.Then("Settings panel is displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
             testRunner.When("User clicks Manage in the list panel", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
             testRunner.Then("List details panel is displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
             testRunner.When("user expand Dependants section", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
             testRunner.Then("\"NewDevice\" list is displayed in the Dependants section", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-            testRunner.Then("\"Device1\" list is displayed in the Dependants section", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+            testRunner.And("\"Device1\" list is displayed in the Dependants section", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
             this.ScenarioCleanup();
         }
     }
