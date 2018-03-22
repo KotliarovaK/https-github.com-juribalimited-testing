@@ -526,7 +526,7 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_ListPanel
             testRunner.When("User add \"Compliance\" filter where type is \"Equals\" without added column and foll" +
                     "owing checkboxes:", ((string)(null)), table8, "When ");
             testRunner.Then("\"Compliance\" filter is added to the list", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-            testRunner.When("User create dynamic list with \"L TestList Custom List\" name on \"Users\" page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+            testRunner.When("User create custom list with \"L TestList Custom List\" name", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
             testRunner.Then("\"L TestList Custom List\" list is displayed to user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
             testRunner.When("User navigates to the \"All Users\" list", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
             testRunner.Then("\"Users\" list should be displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
@@ -539,7 +539,7 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_ListPanel
             testRunner.When("User add \"Babel(Engl: Another task\" filter where type is \"Equals\" without added c" +
                     "olumn and following checkboxes:", ((string)(null)), table9, "When ");
             testRunner.Then("\"Babel(Engl: Another task\" filter is added to the list", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-            testRunner.When("User create dynamic list with \"A TestList Custom List\" name on \"Users\" page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+            testRunner.When("User create custom list with \"A TestList Custom List\" name", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
             testRunner.Then("\"A TestList Custom List\" list is displayed to user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
             testRunner.When("User navigates to the \"All Users\" list", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
             testRunner.Then("\"Users\" list should be displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
@@ -583,7 +583,7 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_ListPanel
             testRunner.When("User add \"Enabled\" filter where type is \"Equals\" without added column and followi" +
                     "ng checkboxes:", ((string)(null)), table12, "When ");
             testRunner.Then("\"Enabled\" filter is added to the list", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-            testRunner.When("User create dynamic list with \"X TestList Custom List\" name on \"Users\" page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+            testRunner.When("User create custom list with \"X TestList Custom List\" name", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
             testRunner.Then("\"X TestList Custom List\" list is displayed to user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
             testRunner.When("User navigates to the \"All Users\" list", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
             testRunner.Then("\"Users\" list should be displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
