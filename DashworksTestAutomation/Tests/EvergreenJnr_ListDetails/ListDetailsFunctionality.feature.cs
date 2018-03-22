@@ -842,22 +842,22 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_ListDetails
         }
         
         [NUnit.Framework.TestAttribute()]
-        [NUnit.Framework.DescriptionAttribute("EvergreenJnr_DevicesList_CheckThatWarningMessageIsNotDisplayedInTheListPanelAfter" +
-            "ViewingDependentList")]
+        [NUnit.Framework.DescriptionAttribute("EvergreenJnr_AllLists_CheckThatWarningMessageIsNotDisplayedInTheListPanelAfterVie" +
+            "wingDependentList")]
         [NUnit.Framework.CategoryAttribute("Evergreen")]
-        [NUnit.Framework.CategoryAttribute("Devices")]
+        [NUnit.Framework.CategoryAttribute("AllLists")]
         [NUnit.Framework.CategoryAttribute("EvergreenJnr_ListDetails")]
         [NUnit.Framework.CategoryAttribute("ListDetailsFunctionality")]
         [NUnit.Framework.CategoryAttribute("DAS12208")]
         [NUnit.Framework.CategoryAttribute("Delete_Newly_Created_List")]
-        public virtual void EvergreenJnr_DevicesList_CheckThatWarningMessageIsNotDisplayedInTheListPanelAfterViewingDependentList()
+        public virtual void EvergreenJnr_AllLists_CheckThatWarningMessageIsNotDisplayedInTheListPanelAfterViewingDependentList()
         {
             System.Exception lastException = null;
             for (int i = 0; (i <= 1); i = (i + 1))
             {
                 try
                 {
-                    this.EvergreenJnr_DevicesList_CheckThatWarningMessageIsNotDisplayedInTheListPanelAfterViewingDependentListInternal();
+                    this.EvergreenJnr_AllLists_CheckThatWarningMessageIsNotDisplayedInTheListPanelAfterViewingDependentListInternal();
                     return;
                 }
                 catch (System.Exception exc)
@@ -876,12 +876,12 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_ListDetails
             }
         }
         
-        private void EvergreenJnr_DevicesList_CheckThatWarningMessageIsNotDisplayedInTheListPanelAfterViewingDependentListInternal()
+        private void EvergreenJnr_AllLists_CheckThatWarningMessageIsNotDisplayedInTheListPanelAfterViewingDependentListInternal()
         {
-            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("EvergreenJnr_DevicesList_CheckThatWarningMessageIsNotDisplayedInTheListPanelAfter" +
-                    "ViewingDependentList", new string[] {
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("EvergreenJnr_AllLists_CheckThatWarningMessageIsNotDisplayedInTheListPanelAfterVie" +
+                    "wingDependentList", new string[] {
                         "Evergreen",
-                        "Devices",
+                        "AllLists",
                         "EvergreenJnr_ListDetails",
                         "ListDetailsFunctionality",
                         "DAS12208",
@@ -940,21 +940,21 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_ListDetails
         }
         
         [NUnit.Framework.TestAttribute()]
-        [NUnit.Framework.DescriptionAttribute("EvergreenJnr_DevicesList_CheckThatTwoDependencyAreDisplayedInTheDependentsBlock")]
+        [NUnit.Framework.DescriptionAttribute("EvergreenJnr_AllLists_CheckThatTwoDependencyAreDisplayedInTheDependentsBlock")]
         [NUnit.Framework.CategoryAttribute("Evergreen")]
-        [NUnit.Framework.CategoryAttribute("Devices")]
+        [NUnit.Framework.CategoryAttribute("AllLists")]
         [NUnit.Framework.CategoryAttribute("EvergreenJnr_ListDetails")]
         [NUnit.Framework.CategoryAttribute("ListDetailsFunctionality")]
         [NUnit.Framework.CategoryAttribute("DAS12190")]
         [NUnit.Framework.CategoryAttribute("Delete_Newly_Created_List")]
-        public virtual void EvergreenJnr_DevicesList_CheckThatTwoDependencyAreDisplayedInTheDependentsBlock()
+        public virtual void EvergreenJnr_AllLists_CheckThatTwoDependencyAreDisplayedInTheDependentsBlock()
         {
             System.Exception lastException = null;
             for (int i = 0; (i <= 1); i = (i + 1))
             {
                 try
                 {
-                    this.EvergreenJnr_DevicesList_CheckThatTwoDependencyAreDisplayedInTheDependentsBlockInternal();
+                    this.EvergreenJnr_AllLists_CheckThatTwoDependencyAreDisplayedInTheDependentsBlockInternal();
                     return;
                 }
                 catch (System.Exception exc)
@@ -973,11 +973,11 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_ListDetails
             }
         }
         
-        private void EvergreenJnr_DevicesList_CheckThatTwoDependencyAreDisplayedInTheDependentsBlockInternal()
+        private void EvergreenJnr_AllLists_CheckThatTwoDependencyAreDisplayedInTheDependentsBlockInternal()
         {
-            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("EvergreenJnr_DevicesList_CheckThatTwoDependencyAreDisplayedInTheDependentsBlock", new string[] {
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("EvergreenJnr_AllLists_CheckThatTwoDependencyAreDisplayedInTheDependentsBlock", new string[] {
                         "Evergreen",
-                        "Devices",
+                        "AllLists",
                         "EvergreenJnr_ListDetails",
                         "ListDetailsFunctionality",
                         "DAS12190",

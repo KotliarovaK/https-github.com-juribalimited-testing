@@ -256,8 +256,8 @@ Scenario Outline: EvergreenJnr_AllLists_CheckThatNoAbilityToCreateTheSameNamedLi
 	| Applications | All Applications |
 	| Mailboxes    | All Mailboxes    |
 	
-@Evergreen @Devices @EvergreenJnr_ListDetails @ListDetailsFunctionality @DAS12208 @Delete_Newly_Created_List
-Scenario: EvergreenJnr_DevicesList_CheckThatWarningMessageIsNotDisplayedInTheListPanelAfterViewingDependentList
+@Evergreen @AllLists @EvergreenJnr_ListDetails @ListDetailsFunctionality @DAS12208 @Delete_Newly_Created_List
+Scenario: EvergreenJnr_AllLists_CheckThatWarningMessageIsNotDisplayedInTheListPanelAfterViewingDependentList
 	When User clicks "Applications" on the left-hand menu
 	Then "Applications" list should be displayed to the user
 	When User clicks the Columns button
@@ -298,8 +298,8 @@ Scenario: EvergreenJnr_DevicesList_CheckThatWarningMessageIsNotDisplayedInTheLis
 	Then "TestList186851" list is displayed to user
 	Then no Warning message is displayed in the lists panel
 
-@Evergreen @Devices @EvergreenJnr_ListDetails @ListDetailsFunctionality @DAS12190 @Delete_Newly_Created_List
-Scenario: EvergreenJnr_DevicesList_CheckThatTwoDependencyAreDisplayedInTheDependentsBlock
+@Evergreen @AllLists @EvergreenJnr_ListDetails @ListDetailsFunctionality @DAS12190 @Delete_Newly_Created_List
+Scenario: EvergreenJnr_AllLists_CheckThatTwoDependencyAreDisplayedInTheDependentsBlock
 	When User clicks "Applications" on the left-hand menu
 	Then "Applications" list should be displayed to the user
 	When User click on 'Application' column header
