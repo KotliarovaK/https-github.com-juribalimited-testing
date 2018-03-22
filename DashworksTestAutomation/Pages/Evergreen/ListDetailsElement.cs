@@ -48,6 +48,9 @@ namespace DashworksTestAutomation.Pages.Evergreen
         [FindsBy(How = How.XPath, Using = ".//i[@class='material-icons mat-item_add ng-star-inserted']")]
         public IWebElement ExpandDependantsButton { get; set; }
 
+        [FindsBy(How = How.XPath, Using = ".//div[@class='dependants action-panel-ddl ng-star-inserted']")]
+        public IWebElement DependantsSection { get; set; }
+
         [FindsBy(How = How.XPath, Using = ".//span[text()='Select user']/ancestor::div[@class='mat-select-trigger']")]
         public IWebElement SelectUserDropdown { get; set; }
 
