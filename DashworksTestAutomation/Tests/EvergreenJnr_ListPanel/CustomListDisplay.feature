@@ -110,7 +110,8 @@ Scenario: EvergreenJnr_UsersList_CheckThatListsIsDisplayedInAlphabeticalOrder
 	| SelectedCheckboxes |
 	| Red                |
 	Then "Compliance" filter is added to the list
-	When User create dynamic list with "L TestList Custom List" name on "Users" page
+	When User create custom list with "L TestList Custom List" name
+	#When User create dynamic list with "L TestList Custom List" name on "Users" page
 	Then "L TestList Custom List" list is displayed to user
 	When User navigates to the "All Users" list
 	Then "Users" list should be displayed to the user
@@ -120,7 +121,8 @@ Scenario: EvergreenJnr_UsersList_CheckThatListsIsDisplayedInAlphabeticalOrder
 	| SelectedCheckboxes |
 	| Started            |
 	Then "Babel(Engl: Another task" filter is added to the list
-	When User create dynamic list with "A TestList Custom List" name on "Users" page
+	When User create custom list with "A TestList Custom List" name
+	#When User create dynamic list with "A TestList Custom List" name on "Users" page
 	Then "A TestList Custom List" list is displayed to user
 	When User navigates to the "All Users" list
 	Then "Users" list should be displayed to the user
@@ -156,7 +158,8 @@ Scenario: EvergreenJnr_UsersList_CheckThatListsIsDisplayedInAlphabeticalOrder
 	| SelectedCheckboxes |
 	| TRUE               |
 	Then "Enabled" filter is added to the list
-	When User create dynamic list with "X TestList Custom List" name on "Users" page
+	When User create custom list with "X TestList Custom List" name
+	#When User create dynamic list with "X TestList Custom List" name on "Users" page
 	Then "X TestList Custom List" list is displayed to user
 	When User navigates to the "All Users" list
 	Then "Users" list should be displayed to the user
