@@ -3,6 +3,7 @@ using DashworksTestAutomation.Extensions;
 using OpenQA.Selenium;
 using OpenQA.Selenium.Support.PageObjects;
 using System.Collections.Generic;
+using System.Linq;
 
 namespace DashworksTestAutomation.Pages.Evergreen
 {
@@ -44,6 +45,9 @@ namespace DashworksTestAutomation.Pages.Evergreen
         [FindsBy(How = How.XPath, Using = ".//span[text()='CANCEL']/ancestor::button")]
         public IWebElement CancelButton { get; set; }
 
+        [FindsBy(How = How.XPath, Using = ".//i[@class='material-icons mat-item_add ng-star-inserted']")]
+        public IWebElement ExpandDependantsButton { get; set; }
+
         [FindsBy(How = How.XPath, Using = ".//span[text()='Select user']/ancestor::div[@class='mat-select-trigger']")]
         public IWebElement SelectUserDropdown { get; set; }
 
@@ -60,6 +64,12 @@ namespace DashworksTestAutomation.Pages.Evergreen
             {
                 SelectorFor(this, p => p.ListDetailsPanel),
             };
+        }
+
+        public IWebElement ListNameInDependantsSection(string listName)
+        {
+            Driver.WaitWhileControlIsNotDisplayed(By.XPath($".//a[@class='ng-star-inserted'][text()='{listName}']"));
+            return Driver.FindElement(By.XPath($".//a[@class='ng-star-inserted'][text()='{listName}']"));
         }
 
         public string GetSelectedValue(IWebElement dropdown)
