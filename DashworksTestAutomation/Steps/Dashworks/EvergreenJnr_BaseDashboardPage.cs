@@ -178,6 +178,7 @@ namespace DashworksTestAutomation.Steps.Dashworks
 
             foreach (var row in table.Rows)
             {
+
                 //Sort newly added column to got only value at first places
                 WhenUserClickOnColumnHeader(row["ColumnName"]);
                 var content = page.GetColumnContent(row["ColumnName"]);
