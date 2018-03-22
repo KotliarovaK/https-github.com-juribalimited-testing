@@ -468,7 +468,6 @@ Scenario: EvergreenJnr_DevicesList_CheckThatColumnIsEmptyWhenEqualNoneAndContain
 	| SelectedCheckboxes |
 	| None               |
 	When User click on 'Windows7Mi: Category' column header
-	#When User click on 'Windows7Mi: Category' column header
 	Then Content is present in the newly added column
 	| ColumnName           |
 	| Windows7Mi: Category |
