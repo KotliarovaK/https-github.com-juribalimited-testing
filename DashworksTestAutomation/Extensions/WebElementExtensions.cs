@@ -91,7 +91,7 @@ namespace DashworksTestAutomation.Extensions
 
         #region Checkboxes
 
-        public static void CheckCheckBox(this IWebElement checkbox)
+            public static void CheckCheckBox(this IWebElement checkbox)
         {
             if (!checkbox.Selected)
                 checkbox.Click();
