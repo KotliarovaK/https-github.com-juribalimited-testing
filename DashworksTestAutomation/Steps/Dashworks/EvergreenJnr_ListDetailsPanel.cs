@@ -105,6 +105,20 @@ namespace DashworksTestAutomation.Steps.Dashworks
             Logger.Write("List Details panel is visible");
         }
 
+        [When(@"user expand Dependants section")]
+        public void WhenUserExpandDependantsSection()
+        {
+            var listDetailsElement = _driver.NowAt<ListDetailsElement>();
+            listDetailsElement.ExpandDependantsButton.Click();
+        }
+
+        [Then(@"""(.*)"" list is displayed in the Dependants section")]
+        public void ThenListIsDisplayedInTheDependantsSection(string listName)
+        {
+            var page = _driver.NowAt<ListDetailsElement>();
+            Assert.IsTrue(page.ListNameInDependantsSection(listName).Displayed(), $"{listName} is not displayed");
+        }
+
         [When(@"User select ""(.*)"" sharing option")]
         public void WhenUserSelectSharingOption(string sharingOption)
         {

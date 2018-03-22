@@ -29,7 +29,7 @@ namespace DashworksTestAutomation.Pages.Evergreen
         [FindsBy(How = How.XPath, Using = ".//button[@mattooltip='Cancel']")]
         public IWebElement CancelButton { get; set; }
 
-        [FindsBy(How = How.XPath, Using = ".//div[@class='menu-wrapper']")]
+        [FindsBy(How = How.XPath, Using = ".//i[@class='menu-trigger material-icons mat-settings mat-18 pull-right settings-icon settings-area']")]
         public IWebElement SettingsButton { get; set; }
 
         [FindsBy(How = How.XPath, Using = ".//div[@class='menu ng-star-inserted']")]

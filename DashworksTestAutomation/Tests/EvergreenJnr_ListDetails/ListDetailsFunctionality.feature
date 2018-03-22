@@ -328,8 +328,10 @@ Scenario: EvergreenJnr_DevicesList_CheckThatTwoDependencyIsDisplayedInTheDepende
 	When User clicks "Applications" on the left-hand menu
 	Then "Applications" list should be displayed to the user
 	When User navigates to the "Application1" list
-	#When User clicks Settings button in the list panel
-	#Then Settings panel is displayed to the user
-	#When User clicks Manage in the list panel
-	#Then List details panel is displayed to the user
-	
+	When User clicks Settings button in the list panel
+	Then Settings panel is displayed to the user
+	When User clicks Manage in the list panel
+	Then List details panel is displayed to the user
+	When user expand Dependants section
+	Then "NewDevice" list is displayed in the Dependants section
+	Then "Device1" list is displayed in the Dependants section
