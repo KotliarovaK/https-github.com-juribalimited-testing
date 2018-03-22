@@ -62,6 +62,38 @@ namespace DashworksTestAutomation.Steps.Dashworks
             Assert.IsTrue(Convert.ToBoolean(menu.FilterButton.GetAttribute("disabled")), "Filter Button is active");
         }
 
+        [Then(@"Account Profile menu is displayed correctly")]
+        public void ThenAccountProfileMenuIsDisplayedCorrectly()
+        {
+            var panel = _driver.NowAt<BaseDashboardPage>();
+            var menu = _driver.NowAt<HeaderElement>();
+            try
+            {
+                panel.ColumnButton.Click();
+            }
+            catch
+            {
+                Assert.IsTrue(menu.UserItemsMenu.Displayed);
+            }
+            Assert.IsTrue(menu.UserItemsMenu.Displayed, "Item Menu is not displayed correctly");
+        }
+
+        [Then(@"Notifications message is displayed correctly")]
+        public void ThenNotificationsMessageIsDisplayedCorrectly()
+        {
+            var panel = _driver.NowAt<BaseDashboardPage>();
+            var menu = _driver.NowAt<HeaderElement>();
+            try
+            {
+                panel.ColumnButton.Click();
+            }
+            catch
+            {
+                Assert.IsTrue(menu.UserNotificationsMessage.Displayed);
+            }
+            Assert.IsTrue(menu.UserNotificationsMessage.Displayed, "User Notifications Message is not displayed correctly");
+        }
+
         [Then(@"List details button is disabled")]
         public void ThenListDetailsButtonIsDisabled()
         {
