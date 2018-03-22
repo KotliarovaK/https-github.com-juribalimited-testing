@@ -101,8 +101,39 @@ namespace DashworksTestAutomation.Steps.Dashworks
         {
             var listDetailsElement = _driver.NowAt<ListDetailsElement>();
             _driver.WaitWhileControlIsNotDisplayed<ListDetailsElement>(() => listDetailsElement.ListDetailsPanel);
-            Assert.IsTrue(listDetailsElement.ListDetailsPanel.Displayed(), "List Details panel was not displayed");
+            Assert.IsTrue(listDetailsElement.ListDetailsPanel.Displayed(), "List Details panel is not displayed");
             Logger.Write("List Details panel is visible");
+        }
+
+        [When(@"User expand Dependants section")]
+        public void WhenUserExpandDependantsSection()
+        {
+            var listDetailsElement = _driver.NowAt<ListDetailsElement>();
+            listDetailsElement.ExpandDependantsButton.Click();
+        }
+
+        [Then(@"Dependants section is displayed to the user")]
+        public void ThenDependantsSectionIsDisplayedToTheUser()
+        {
+            var listDetailsElement = _driver.NowAt<ListDetailsElement>();
+            _driver.WaitWhileControlIsNotDisplayed<ListDetailsElement>(() => listDetailsElement.ListDetailsPanel);
+            Assert.IsTrue(listDetailsElement.DependantsSection.Displayed(), "Dependants section is not displayed");
+            Logger.Write("Dependants section is visible");
+        }
+
+        [When(@"User clicks ""(.*)"" list in the Dependants section")]
+        public void WhenUserClicksListInTheDependantsSection(string listName)
+        {
+            var page = _driver.NowAt<ListDetailsElement>();
+            page.ListNameInDependantsSection(listName).Click();
+        }
+
+
+        [Then(@"""(.*)"" list is displayed in the Dependants section")]
+        public void ThenListIsDisplayedInTheDependantsSection(string listName)
+        {
+            var page = _driver.NowAt<ListDetailsElement>();
+            Assert.IsTrue(page.ListNameInDependantsSection(listName).Displayed(), $"{listName} is not displayed");
         }
 
         [When(@"User select ""(.*)"" sharing option")]

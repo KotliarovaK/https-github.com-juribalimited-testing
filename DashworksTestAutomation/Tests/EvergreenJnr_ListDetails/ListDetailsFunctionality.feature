@@ -256,8 +256,8 @@ Scenario Outline: EvergreenJnr_AllLists_CheckThatNoAbilityToCreateTheSameNamedLi
 	| Applications | All Applications |
 	| Mailboxes    | All Mailboxes    |
 	
-@Evergreen @Devices @EvergreenJnr_ListDetails @ListDetailsFunctionality @DAS12208 @Delete_Newly_Created_List
-Scenario: EvergreenJnr_DevicesList_CheckThatWarningMessageIsNotDisplayedInTheListPanelAfterViewingDependentList
+@Evergreen @AllLists @EvergreenJnr_ListDetails @ListDetailsFunctionality @DAS12208 @Delete_Newly_Created_List
+Scenario: EvergreenJnr_AllLists_CheckThatWarningMessageIsNotDisplayedInTheListPanelAfterViewingDependentList
 	When User clicks "Applications" on the left-hand menu
 	Then "Applications" list should be displayed to the user
 	When User clicks the Columns button
@@ -296,4 +296,79 @@ Scenario: EvergreenJnr_DevicesList_CheckThatWarningMessageIsNotDisplayedInTheLis
 	Then "Devices" list should be displayed to the user
 	When User navigates to the "TestList186851" list
 	Then "TestList186851" list is displayed to user
+	Then no Warning message is displayed in the lists panel
+
+@Evergreen @AllLists @EvergreenJnr_ListDetails @ListDetailsFunctionality @DAS12190 @Delete_Newly_Created_List
+Scenario: EvergreenJnr_AllLists_CheckThatTwoDependencyAreDisplayedInTheDependentsBlock
+	When User clicks "Applications" on the left-hand menu
+	Then "Applications" list should be displayed to the user
+	When User click on 'Application' column header
+	And User create custom list with "Application1" name
+	Then "Application1" list is displayed to user
+	When User clicks "Devices" on the left-hand menu
+	Then "Devices" list should be displayed to the user
+	When User clicks the Filters button
+	Then Filters panel is displayed to the user
+	When User add "Application (Saved List)" filter where type is "In list" with SelectedList list and following Association:
+	| SelectedList | Association        |
+	| Application1 | Entitled to device |
+	Then "Application" filter is added to the list
+	When User create custom list with "Device1" name
+	Then "Device1" list is displayed to user
+	When User clicks the Columns button
+	Then Columns panel is displayed to the user
+	When ColumnName is entered into the search box and the selection is clicked
+	| ColumnName |
+	| Build Date |
+	Then ColumnName is added to the list
+	| ColumnName |
+	| Build Date |
+	And User save changes in list with "NewDevice" name
+	And "NewDevice" list is displayed to user
+	When User clicks "Applications" on the left-hand menu
+	Then "Applications" list should be displayed to the user
+	When User navigates to the "Application1" list
+	Then "Application1" list is displayed to user
+	When User clicks Settings button in the list panel
+	Then Settings panel is displayed to the user
+	When User clicks Manage in the list panel
+	Then List details panel is displayed to the user
+	When User expand Dependants section
+	Then "NewDevice" list is displayed in the Dependants section
+	And "Device1" list is displayed in the Dependants section
+
+@Evergreen @AllLists @EvergreenJnr_ListDetails @ListDetailsFunctionality @DAS12169 @Delete_Newly_Created_List
+Scenario: EvergreenJnr_AllLists_CheckThatListDoesNotExistErrorWhenViewingDependentList
+	When User clicks "Applications" on the left-hand menu
+	Then "Applications" list should be displayed to the user
+	When User clicks the Filters button
+	Then Filters panel is displayed to the user
+	When User add "Vendor" filter where type is "Contains" with added column and following value:
+	| Values |
+	| Adobe  |
+	Then "Vendor" filter is added to the list
+	When User create custom list with "Adobe Apps" name
+	Then "Adobe Apps" list is displayed to user
+	When User clicks "Devices" on the left-hand menu
+	Then "Devices" list should be displayed to the user
+	When User clicks the Filters button
+	Then Filters panel is displayed to the user
+	When User add "Application (Saved List)" filter where type is "In list" with SelectedList list and following Association:
+	| SelectedList | Association        |
+	| Adobe Apps   | Entitled to device |
+	Then "Application" filter is added to the list
+	When User create custom list with "Devices with Adobe" name
+	Then "Devices with Adobe" list is displayed to user
+	When User clicks "Applications" on the left-hand menu
+	Then "Applications" list should be displayed to the user
+	When User navigates to the "Adobe Apps" list
+	Then "Adobe Apps" list is displayed to user
+	When User clicks Settings button in the list panel
+	Then Settings panel is displayed to the user
+	When User clicks Manage in the list panel
+	Then List details panel is displayed to the user
+	When User expand Dependants section
+	Then Dependants section is displayed to the user
+	When User clicks "Devices with Adobe" list in the Dependants section
+	Then "Devices with Adobe" list is displayed to user
 	Then no Warning message is displayed in the lists panel
