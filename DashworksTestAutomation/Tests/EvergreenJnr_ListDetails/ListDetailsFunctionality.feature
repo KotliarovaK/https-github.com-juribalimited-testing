@@ -296,4 +296,4 @@ Scenario: EvergreenJnr_DevicesList_CheckThatWarningMessageIsNotDisplayedInTheLis
 	Then "Devices" list should be displayed to the user
 	When User navigates to the "TestList186851" list
 	Then "TestList186851" list is displayed to user
-	Then no Warning message is displayed in the list details panel
+	Then no Warning message is displayed in the lists panel

@@ -97,3 +97,12 @@ Scenario: EvergreenJnr_UsersList_CheckThatURLsAreUpdatedAfterAddingFilters
 	Then Filters panel is displayed to the user
 	When User add "Babel(Engl: Readiness" filter where type is "Equals" with added column and "Blue" Lookup option
 	Then Appropriate filter is added to URL
+
+@Evergreen @Devices @EvergreenJnr_BaseDashboardPage @BaseDashboardPage @DAS11641
+Scenario: EvergreenJnr_DevicesList_CheckThatActionsDetailsColumnsFiltersButtonsAreNotClickableWhenOpenedNotificationsAndUserProfilesDropdownBlocks
+	When User clicks "Devices" on the left-hand menu
+	Then "Devices" list should be displayed to the user
+	When User clicks Account Profile dropdown
+	Then Account Profile menu is displayed correctly
+	When User click User Notifications button
+	Then Notifications message is displayed correctly
