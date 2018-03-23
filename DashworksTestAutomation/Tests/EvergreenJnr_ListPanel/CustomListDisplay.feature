@@ -262,16 +262,11 @@ Scenario: EvergreenJnr_DevicesList_CheckTheSortOrderIsSavedForExistingListAndNot
 
 @Evergreen @Devices @EvergreenJnr_ListPanel @CustomListDisplay @DAS11011 @DAS12152 @Delete_Newly_Created_List
 Scenario: EvergreenJnr_DevicesList_CheckThatNewlySavedListIsCreatedWithTheCorrectColumnsAndSortsAndTheSameRowsOfData
-	When User clicks "Devices" on the left-hand menu
-	Then "Devices" list should be displayed to the user
-	When User clicks the Actions button
-	Then Actions panel is displayed to the user
-	When User select "Hostname" rows in the grid
-	| SelectedRowsName |
-	| 00BDM1JUR8IF419  |
-	| 011PLA470S0B9DJ  |
-	| 00OMQQXWA1DRI6   |
-	And User create static list with "Static List TestName" name
+	When User create static list with "Static List TestName" name on "Devices" page with following items
+	| ItemName        |
+	| 00BDM1JUR8IF419 |
+	| 011PLA470S0B9DJ |
+	| 00OMQQXWA1DRI6  |
 	Then "Static List TestName" list is displayed to user
 	Then "3" rows are displayed in the agGrid
 	When User clicks the Columns button
