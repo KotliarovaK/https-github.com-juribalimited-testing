@@ -373,3 +373,12 @@ Scenario: EvergreenJnr_DevicesLists_CheckThatOpenedSectionIsDisplayedCorrectlyOn
 	Then User closes "Advertisements" section on the Details Page
 	When User opens "Collections" section on the Details Page
 	Then opened section is displayed correctly
+
+@Evergreen @Devices @EvergreenJnr_ItemDetails @ItemDetailsDisplay @DAS12253
+Scenario: EvergreenJnr_DevicesLists_CheckThePossibilityToRecheckingTheWorkflowColumnBlanksFilterAfterUncheckingIt
+	When User clicks "Devices" on the left-hand menu
+	Then "Devices" list should be displayed to the user
+	When User click content from "Hostname" column
+	And User navigates to the "Projects" tab
+	And User opens "Device Projects" section on the Details Page
+	#When User clicks Filter button under "Workflow" column
