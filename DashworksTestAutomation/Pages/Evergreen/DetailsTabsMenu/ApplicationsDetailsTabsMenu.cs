@@ -25,6 +25,9 @@ namespace DashworksTestAutomation.Pages.Evergreen.DetailsTabsMenu
         [FindsBy(How = How.XPath, Using = ".//span[text()='Collections']/ancestor::div[@class='field-category no-side-padding collapsed']")]
         public IWebElement CollectionsSection { get; set; }
 
+        [FindsBy(How = How.XPath, Using = ".//div[@class='mat-select-arrow']")]
+        public IWebElement StringFilter { get; set; }
+
         [FindsBy(How = How.XPath, Using = ".//span[@class='ag-icon ag-icon-columns']")]
         public IWebElement ColumnButton { get; set; }
 
@@ -94,6 +97,15 @@ namespace DashworksTestAutomation.Pages.Evergreen.DetailsTabsMenu
                     x.FindElement(By.XPath(".//span[@class='ag-header-cell-text']")).Text.Equals(columnName))) + 1;
 
             return columnNumber;
+        }
+
+        public void GetStringFilterByColumnName(string columnName)
+        {
+            By byControl =
+                By.XPath($".//div[@class='ag-header-row']/div[1]/div[{GetColumnNumberByName(columnName)}]");
+            Driver.WaitForDataLoading();
+            Driver.WaitWhileControlIsNotDisplayed(byControl);
+            Driver.FindElement(byControl).Click();
         }
 
         public IWebElement GetFilterByName(string filterName)

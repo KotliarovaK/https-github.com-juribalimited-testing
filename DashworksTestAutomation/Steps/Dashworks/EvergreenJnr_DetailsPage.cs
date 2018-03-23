@@ -99,6 +99,13 @@ namespace DashworksTestAutomation.Steps.Dashworks
                 $"{columnName} category stil displayed in Column Panel");
         }
 
+        [When(@"User clicks Filter button under ""(.*)"" column")]
+        public void WhenUserClicksFilterButtonUnderColumn(string columnName)
+        {
+            var filterElement = _driver.NowAt<ApplicationsDetailsTabsMenu>();
+            filterElement.GetStringFilterByColumnName(columnName);
+        }
+
         [When(@"User have opened Column Settings for ""(.*)"" column in the Details Page table")]
         public void WhenUserHaveOpenedColumnSettingsForColumnInTheDetailsPageTable(string columnName)
         {
