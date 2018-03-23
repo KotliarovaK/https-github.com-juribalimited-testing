@@ -357,3 +357,19 @@ Scenario: EvergreenJnr_DevicesLists_CheckThatNoErrorsAreDisplayedWhenOpenedDevic
 	And User opens "Device Owner" section on the Details Page
 	Then "No device owner information found for this device" message is displayed on the Details Page
 	And There are no errors in the browser console
+
+@Evergreen @Devices @EvergreenJnr_ItemDetails @ItemDetailsDisplay @DAS12071
+Scenario: EvergreenJnr_DevicesLists_CheckThatOpenedSectionIsDisplayedCorrectlyOnTheDetailsPage
+	When User clicks "Devices" on the left-hand menu
+	Then "Devices" list should be displayed to the user
+	When User click content from "Hostname" column
+	And User navigates to the "Applications" tab
+	Then User closes "Application Summary" section on the Details Page
+	When User opens "Application Detail" section on the Details Page
+	Then opened section is displayed correctly
+	Then User closes "Application Detail" section on the Details Page
+	When User opens "Advertisements" section on the Details Page
+	Then opened section is displayed correctly
+	Then User closes "Advertisements" section on the Details Page
+	When User opens "Collections" section on the Details Page
+	Then opened section is displayed correctly
