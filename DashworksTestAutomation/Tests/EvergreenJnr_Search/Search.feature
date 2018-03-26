@@ -331,3 +331,14 @@ Scenario: EvergreenJnr_DevicesLists_Search_CheckThatRowCountIsNotDisplayedWhenNo
 	And User enters SearchCriteria into the agGrid Search Box and the correct NumberOfRows are returned
 	| SearchCriteria | NumberOfRows |
 	| Example        |              |
+
+@Evergreen @Devices @EvergreenJnr_Search @Search @DAS11706
+Scenario: EvergreenJnr_DevicesLists_Search_CheckThatValidationForSpecialCharactersInSearchEverythingAndSearchTableFieldsIsPresented
+	When User clicks "Devices" on the left-hand menu
+	Then "Devices" list should be displayed to the user
+	When User type "%%%" in Global Search Field
+	Then "No results found" message is displayed below Global Search field
+	#When User perform search by "CheckTheResetButton"
+	Then User enters invalid SearchCriteria into the agGrid Search Box and "No devices found" message is displayed
+	| SearchCriteria |
+	| %%%            |
