@@ -367,6 +367,7 @@ Scenario: EvergreenJnr_AllLists_CheckThatListDoesNotExistErrorWhenViewingDepende
 	Then Settings panel is displayed to the user
 	When User clicks Manage in the list panel
 	Then List details panel is displayed to the user
+	#Then tooltip is displayed with "Open" text for Permissions section
 	When User expand Dependants section
 	Then Dependants section is displayed to the user
 	When User clicks "Devices with Adobe" list in the Dependants section

@@ -105,6 +105,13 @@ namespace DashworksTestAutomation.Steps.Dashworks
             Logger.Write("List Details panel is visible");
         }
 
+        [Then(@"tooltip is displayed with ""(.*)"" text for Permissions section")]
+        public void ThenTooltipIsDisplayedWithTextForPermissionsSection(string tooltipText)
+        {
+            var lisrElement = _driver.NowAt<ListDetailsElement>();
+            lisrElement.OpenPermissionsSection(tooltipText);
+        }
+
         [When(@"User expand Dependants section")]
         public void WhenUserExpandDependantsSection()
         {
