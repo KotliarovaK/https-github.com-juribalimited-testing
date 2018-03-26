@@ -326,8 +326,8 @@ Scenario: EvergreenJnr_UsersList_CheckThatMultiSelectProjectTaskFiltersAreDispla
 	Then "4,642" rows are displayed in the agGrid
 	When User update current custom list
 
-@Evergreen @Users @Evergreen_FiltersFeature @NewFilterCheck @DAS11830
-Scenario Outline: EvergreenJnr_UsersList_CheckThatOptionsIsAvailableForFiltersOfProjectTaskCategories
+@Evergreen @AllLists @Evergreen_FiltersFeature @NewFilterCheck @DAS11830
+Scenario Outline: EvergreenJnr_AllLists_CheckThatOptionsIsAvailableForFiltersOfProjectTaskCategories
 	When User clicks "<PageName>" on the left-hand menu
 	Then "<PageName>" list should be displayed to the user
 	When User clicks the Filters button
