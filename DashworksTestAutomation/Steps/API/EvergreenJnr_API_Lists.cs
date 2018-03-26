@@ -63,7 +63,7 @@ namespace DashworksTestAutomation.Steps.API
             var listId = responseContent["listId"].ToString();
             var url = $"{UrlProvider.EvergreenUrl}#/{pageName.ToLower()}?$listid={listId}";
 
-            _driver.Navigate().Refresh();
+            //_driver.Navigate().Refresh();
             _driver.Navigate().GoToUrl(url);
             _driver.WaitForDataLoading();
 
