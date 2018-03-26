@@ -151,6 +151,20 @@ namespace DashworksTestAutomation.Steps.Dashworks
             page.GetFilterByName(filterName).Click();
         }
 
+        [When(@"User clicks ""(.*)"" checkbox from string filter on the Details Page")]
+        public void WhenUserClicksCheckboxFromStringFilterOnTheDetailsPage(string filterName)
+        {
+            var page = _driver.NowAt<ApplicationsDetailsTabsMenu>();
+            page.GetStringFilterByName(filterName).Click();
+        }
+
+        [Then(@"""(.*)"" checkbox is checked on the Details Page")]
+        public void ThenCheckboxIsCheckedOnTheDetailsPage(string checkboxName)
+        {
+            var filterElement = _driver.NowAt<ApplicationsDetailsTabsMenu>();
+            Assert.IsTrue(filterElement.ColumnCheckboxChecked.Displayed(), $"{checkboxName} Checkbox is not selected");
+        }
+
         [Then(@"Filter panel has standard size")]
         public void ThenFilterPanelHasStandardSize()
         {

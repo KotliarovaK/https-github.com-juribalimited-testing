@@ -37,6 +37,9 @@ namespace DashworksTestAutomation.Pages.Evergreen.DetailsTabsMenu
         [FindsBy(How = How.XPath, Using = ".//span[@class='ag-column-select-label']")]
         public IWebElement ColumnCheckboxName { get; set; }
 
+        [FindsBy(How = How.XPath, Using = ".//mat-pseudo-checkbox[@class='mat-option-pseudo-checkbox mat-pseudo-checkbox ng-star-inserted mat-pseudo-checkbox-checked']")]
+        public IWebElement ColumnCheckboxChecked { get; set; }
+
         [FindsBy(How = How.XPath, Using = ".//div[@class='ag-filter-body']//input")]
         public IWebElement FilterSearchTextbox { get; set; }
 
@@ -102,7 +105,7 @@ namespace DashworksTestAutomation.Pages.Evergreen.DetailsTabsMenu
         public void GetStringFilterByColumnName(string columnName)
         {
             By byControl =
-                By.XPath($".//div[@class='ag-header-row']/div[1]/div[{GetColumnNumberByName(columnName)}]");
+                By.XPath($".//div[@role='presentation']/div[2]/div[{GetColumnNumberByName(columnName)}][@aria-hidden='true']");
             Driver.WaitForDataLoading();
             Driver.WaitWhileControlIsNotDisplayed(byControl);
             Driver.FindElement(byControl).Click();
@@ -112,6 +115,12 @@ namespace DashworksTestAutomation.Pages.Evergreen.DetailsTabsMenu
         {
             Driver.WaitWhileControlIsNotDisplayed(By.XPath($".//div[@class='ag-filter']//span[text()='{filterName}']"));
             return Driver.FindElement(By.XPath($".//div[@class='ag-filter']//span[text()='{filterName}']"));
+        }
+
+        public IWebElement GetStringFilterByName(string filterName)
+        {
+            Driver.WaitWhileControlIsNotDisplayed(By.XPath($".//div[@class='ng-star-inserted']/span[(text()='{filterName}')]"));
+            return Driver.FindElement(By.XPath($".//div[@class='ng-star-inserted']/span[(text()='{filterName}')]"));
         }
 
         public string GetInstalledFilterPanelHeight()
