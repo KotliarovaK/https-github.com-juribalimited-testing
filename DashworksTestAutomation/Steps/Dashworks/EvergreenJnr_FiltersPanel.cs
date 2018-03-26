@@ -528,6 +528,16 @@ namespace DashworksTestAutomation.Steps.Dashworks
             filterElement.OperatorOptions.First().SendKeys(OpenQA.Selenium.Keys.Escape);
         }
 
+        [Then(@"""(.*)"" checkbox is available for this filter")]
+        public void ThenCheckboxIsAvailableForThisFilter(string checkboxName)
+        {
+            var filterElement = _driver.NowAt<FiltersElement>();
+            var availableOptions = filterElement.FilterCheckboxOptions.Select(value => value.Text).ToList();
+            Assert.AreEqual(checkboxName.Split(',').Select(x => x.TrimStart(' ').TrimEnd(' ')).ToList(),
+                availableOptions, "Some checkbox are not available for selected filter");
+            //filterElement.FilterCheckboxOptions.First().SendKeys(OpenQA.Selenium.Keys.Escape);
+        }
+
         [When(@"User deletes one character from the Search field")]
         public void WhenUserDeletesOneCharacterFromTheSearchField()
         {
