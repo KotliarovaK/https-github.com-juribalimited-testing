@@ -338,7 +338,6 @@ Scenario: EvergreenJnr_DevicesLists_Search_CheckThatValidationForSpecialCharacte
 	Then "Devices" list should be displayed to the user
 	When User type "%%%" in Global Search Field
 	Then "No results found" message is displayed below Global Search field
-	#When User perform search by "CheckTheResetButton"
 	Then User enters invalid SearchCriteria into the agGrid Search Box and "No devices found" message is displayed
 	| SearchCriteria |
 	| %%%            |
