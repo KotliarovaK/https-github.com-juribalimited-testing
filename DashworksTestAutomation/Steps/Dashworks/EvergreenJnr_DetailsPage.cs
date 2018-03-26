@@ -107,6 +107,13 @@ namespace DashworksTestAutomation.Steps.Dashworks
                 $"{columnName} category stil displayed in Column Panel");
         }
 
+        [When(@"User clicks Filter button under ""(.*)"" column")]
+        public void WhenUserClicksFilterButtonUnderColumn(string columnName)
+        {
+            var filterElement = _driver.NowAt<ApplicationsDetailsTabsMenu>();
+            filterElement.GetStringFilterByColumnName(columnName);
+        }
+
         [When(@"User have opened Column Settings for ""(.*)"" column in the Details Page table")]
         public void WhenUserHaveOpenedColumnSettingsForColumnInTheDetailsPageTable(string columnName)
         {
@@ -142,6 +149,20 @@ namespace DashworksTestAutomation.Steps.Dashworks
         {
             var page = _driver.NowAt<ApplicationsDetailsTabsMenu>();
             page.GetFilterByName(filterName).Click();
+        }
+
+        [When(@"User clicks ""(.*)"" checkbox from string filter on the Details Page")]
+        public void WhenUserClicksCheckboxFromStringFilterOnTheDetailsPage(string filterName)
+        {
+            var page = _driver.NowAt<ApplicationsDetailsTabsMenu>();
+            page.GetStringFilterByName(filterName).Click();
+        }
+
+        [Then(@"""(.*)"" checkbox is checked on the Details Page")]
+        public void ThenCheckboxIsCheckedOnTheDetailsPage(string checkboxName)
+        {
+            var filterElement = _driver.NowAt<ApplicationsDetailsTabsMenu>();
+            Assert.IsTrue(filterElement.ColumnCheckboxChecked.Displayed(), $"{checkboxName} Checkbox is not selected");
         }
 
         [Then(@"Filter panel has standard size")]
