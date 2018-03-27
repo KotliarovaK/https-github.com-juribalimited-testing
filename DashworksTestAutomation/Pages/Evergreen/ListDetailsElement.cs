@@ -47,7 +47,10 @@ namespace DashworksTestAutomation.Pages.Evergreen
         public IWebElement CancelButton { get; set; }
 
         [FindsBy(How = How.XPath, Using = ".//i[@class='material-icons mat-item_add ng-star-inserted']")]
-        public IWebElement ExpandDependantsButton { get; set; }
+        public IWebElement OpenDependantsButton { get; set; }
+
+        [FindsBy(How = How.XPath, Using = ".//i[@class='material-icons mat-clear ng-star-inserted']")]
+        public IWebElement ClosePermissionsButton { get; set; }
 
         [FindsBy(How = How.XPath, Using = ".//div[@class='dependants action-panel-ddl ng-star-inserted']")]
         public IWebElement DependantsSection { get; set; }
