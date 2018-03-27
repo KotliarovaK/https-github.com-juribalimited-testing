@@ -114,6 +114,8 @@ namespace DashworksTestAutomation.Steps.Dashworks
         public void ThenAgGridMainObjectListIsReturnedWithData()
         {
             var dashboardPage = _driver.NowAt<BaseDashboardPage>();
+
+            _driver.WaitForDataLoading();
             if (!dashboardPage.NoResultsFoundMessage.Displayed())
             {
                 _driver.WaitForDataLoading();
