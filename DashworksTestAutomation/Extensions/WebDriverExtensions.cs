@@ -573,5 +573,13 @@ namespace DashworksTestAutomation.Extensions
 
             return allRequests;
         }
+
+        public static string GetTooltipText(this RemoteWebDriver driver)
+        {
+            var toolTips = driver.FindElements(By.XPath(".//mat-tooltip-component"));
+            if (!toolTips.Any())
+                throw new Exception("Tool tip was not displayed");
+            return toolTips.First().Text;
+        }
     }
 }

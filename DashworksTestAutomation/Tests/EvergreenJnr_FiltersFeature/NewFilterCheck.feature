@@ -117,7 +117,7 @@ Examples:
 	| Applications | 2,223     |
 	| Mailboxes    | 14,784    |
 
-@Evergreen @Applications @Evergreen_FiltersFeature @NewFilterCheck @DAS10512 @Not_Run
+@Evergreen @Applications @Evergreen_FiltersFeature @NewFilterCheck @DAS10512
 Scenario Outline: EvergreenJnr_ApplicationsList_CheckThatApplicationReadinessFilterIsAddedToTheList
 	When User clicks "Applications" on the left-hand menu
 	Then "Applications" list should be displayed to the user
@@ -134,7 +134,7 @@ Scenario Outline: EvergreenJnr_ApplicationsList_CheckThatApplicationReadinessFil
 	Then "<Text>" is displayed in added filter info
 	Then "<RowsCount>" rows are displayed in the agGrid
 	When User click on '<ColumnName>' column header
-	Then data in table is sorted by '<ColumnName>' column in ascending order 
+	Then data in table is sorted by '<ColumnName>' column in descending order 
 
 Examples: 
 	| ColumnName                        | Operators              | FilterOption | Text                                       | RowsCount |
@@ -146,7 +146,7 @@ Examples:
 	| MigrationP: Application Readiness | Equals, Does not equal | Blue         | MigrationP: Application Readiness is Blue  | 189       |
 	| UserSchedu: Application Readiness | Equals, Does not equal | None         | UserSchedu: Application Readiness is None  | 981       |
 
-@Evergreen @Applications @Evergreen_FiltersFeature @NewFilterCheck @DAS10512 @DAS11509 @DAS11507 @DAS11509 @DAS12026 @Not_Run
+@Evergreen @Applications @Evergreen_FiltersFeature @NewFilterCheck @DAS10512 @DAS11509 @DAS11507 @DAS11509 @DAS12026
 Scenario Outline: EvergreenJnr_ApplicationsList_CheckThatApplicationRationalisationFilterIsAddedToTheList
 	When User clicks "Applications" on the left-hand menu
 	Then "Applications" list should be displayed to the user
@@ -325,3 +325,18 @@ Scenario: EvergreenJnr_UsersList_CheckThatMultiSelectProjectTaskFiltersAreDispla
 	| Sent           | true  |
 	Then "4,642" rows are displayed in the agGrid
 	When User update current custom list
+
+@Evergreen @AllLists @Evergreen_FiltersFeature @NewFilterCheck @DAS11830
+Scenario Outline: EvergreenJnr_AllLists_CheckThatOptionsIsAvailableForFiltersOfProjectTaskCategories
+	When User clicks "<PageName>" on the left-hand menu
+	Then "<PageName>" list should be displayed to the user
+	When User clicks the Filters button
+	Then Filters panel is displayed to the user
+	When user select "<FilterName>" filter
+	Then "Off, On" checkbox is available for this filter
+
+Examples: 
+	| PageName     | FilterName                     |
+	| Users        | ComputerSc: User Off/On        |
+	| Devices      | ComputerSc: Computer Off/On    |
+	| Applications | ComputerSc: Application Off/On |
