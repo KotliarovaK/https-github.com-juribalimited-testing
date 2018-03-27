@@ -114,6 +114,15 @@ namespace DashworksTestAutomation.Steps.Dashworks
             filterElement.GetStringFilterByColumnName(columnName);
         }
 
+        [Then(@"following Values are displayed in the filter on the Details Page")]
+        public void ThenFollowingValuesAreDisplayedInTheFilterOnTheDetailsPage(Table table)
+        {
+            var filterElement = _driver.NowAt<FiltersElement>();
+            var expectedList = table.Rows.SelectMany(row => row.Values);
+            var actualList = filterElement.FilterValues.Select(value => value.Text);
+            Assert.AreEqual(expectedList, actualList, "Filter settings values are different");
+        }
+
         [When(@"User have opened Column Settings for ""(.*)"" column in the Details Page table")]
         public void WhenUserHaveOpenedColumnSettingsForColumnInTheDetailsPageTable(string columnName)
         {

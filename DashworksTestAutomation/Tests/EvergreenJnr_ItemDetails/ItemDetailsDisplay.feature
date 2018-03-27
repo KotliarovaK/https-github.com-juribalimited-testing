@@ -385,3 +385,22 @@ Scenario: EvergreenJnr_DevicesLists_CheckThePossibilityToRecheckingTheWorkflowCo
 	And User clicks "(Blanks)" checkbox from string filter on the Details Page
 	And User clicks "(Blanks)" checkbox from string filter on the Details Page
 	Then "(Blanks)" checkbox is checked on the Details Page
+
+@Evergreen @Devices @EvergreenJnr_ItemDetails @ItemDetailsDisplay @DAS12283
+Scenario: EvergreenJnr_DevicesLists_
+	When User clicks "Devices" on the left-hand menu
+	Then "Devices" list should be displayed to the user
+	When User type "Denied RODC Password Replication Group" in Global Search Field
+	Then User clicks on "Denied RODC Password Replication Group" search result
+	When User navigates to the "Members" tab
+	And User clicks Filter button under "Enabled" column
+	Then following Values are displayed in the filter on the Details Page
+	| Values  |
+	| true    |
+	| false   |
+	| Unknown |
+	Then Values is displayed in added filter info
+	| Values  |
+	| true    |
+	| false   |
+	| Unknown |
