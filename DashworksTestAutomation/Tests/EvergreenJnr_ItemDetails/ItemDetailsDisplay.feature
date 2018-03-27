@@ -387,7 +387,7 @@ Scenario: EvergreenJnr_DevicesLists_CheckThePossibilityToRecheckingTheWorkflowCo
 	Then "(Blanks)" checkbox is checked on the Details Page
 
 @Evergreen @Devices @EvergreenJnr_ItemDetails @ItemDetailsDisplay @DAS12283
-Scenario: EvergreenJnr_DevicesLists_
+Scenario: EvergreenJnr_DevicesLists_CheckThatOneUnknownFilterValueIsShownInGroupDetailsAndFilterWorkingCorrectly
 	When User clicks "Devices" on the left-hand menu
 	Then "Devices" list should be displayed to the user
 	When User type "Denied RODC Password Replication Group" in Global Search Field
