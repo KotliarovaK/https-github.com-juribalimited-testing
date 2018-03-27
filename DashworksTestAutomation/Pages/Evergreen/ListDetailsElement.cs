@@ -4,6 +4,7 @@ using OpenQA.Selenium;
 using OpenQA.Selenium.Support.PageObjects;
 using System.Collections.Generic;
 using System.Linq;
+using NUnit.Framework;
 
 namespace DashworksTestAutomation.Pages.Evergreen
 {
@@ -46,7 +47,10 @@ namespace DashworksTestAutomation.Pages.Evergreen
         public IWebElement CancelButton { get; set; }
 
         [FindsBy(How = How.XPath, Using = ".//i[@class='material-icons mat-item_add ng-star-inserted']")]
-        public IWebElement ExpandDependantsButton { get; set; }
+        public IWebElement OpenDependantsButton { get; set; }
+
+        [FindsBy(How = How.XPath, Using = ".//i[@class='material-icons mat-clear ng-star-inserted']")]
+        public IWebElement ClosePermissionsButton { get; set; }
 
         [FindsBy(How = How.XPath, Using = ".//div[@class='dependants action-panel-ddl ng-star-inserted']")]
         public IWebElement DependantsSection { get; set; }
@@ -73,6 +77,18 @@ namespace DashworksTestAutomation.Pages.Evergreen
         {
             Driver.WaitWhileControlIsNotDisplayed(By.XPath($".//a[@class='ng-star-inserted'][text()='{listName}']"));
             return Driver.FindElement(By.XPath($".//a[@class='ng-star-inserted'][text()='{listName}']"));
+        }
+
+        public void OpenPermissionsSection(string tooltipText)
+        {
+            var openPermissionsSection = Driver.FindElement(By.XPath(
+                ".//i[@class='material-icons mat-item_add ng-star-inserted']")).GetAttribute("aria-describedby");
+            var pageSource = Driver.PageSource;
+            var doc = new HtmlAgilityPack.HtmlDocument();
+            doc.LoadHtml(pageSource);
+            var node = doc.DocumentNode.SelectNodes($".//div[@id='{openPermissionsSection}']")[0];
+            var openPermissionsSectionTooltip = node.InnerHtml;
+            Assert.AreEqual(tooltipText, openPermissionsSectionTooltip, "Tooltip is incorrect for button");
         }
 
         public string GetSelectedValue(IWebElement dropdown)
