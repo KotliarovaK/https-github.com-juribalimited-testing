@@ -945,3 +945,13 @@ Scenario: EvergreenJnr_DevicesLists_CheckThatMailboxOwnerFilterCategoryIsNotDisp
 	Then Filters panel is displayed to the user
 	When User clicks Add New button on the Filter panel
 	Then "Mailbox Owner" section is not displayed in the Filter panel
+
+@Evergreen @Devices @Evergreen_FiltersFeature @FiltersDisplay @DAS11144
+Scenario: EvergreenJnr_DevicesLists_CheckThatChildrenOfTreeBasedFiltersAreIncludedInTheListResults
+	When User clicks "Devices" on the left-hand menu
+	Then "Devices" list should be displayed to the user
+	When User clicks the Filters button
+	Then Filters panel is displayed to the user
+	When User add "Department" filter where type is "Equals" with added column and "Sales" Tree List option
+	Then "Department" filter is added to the list
+	And "3,295" rows are displayed in the agGrid

@@ -186,7 +186,6 @@ namespace DashworksTestAutomation.Steps.Dashworks
         private void CreateFilterWithCheckboxes(string operatorValue, bool columnOption,
             Table table)
         {
-            var filterElement = _driver.NowAt<FiltersElement>();
             var filter = new CheckBoxesFilter(_driver, operatorValue, columnOption, table);
             filter.Do();
         }
@@ -284,6 +283,16 @@ namespace DashworksTestAutomation.Steps.Dashworks
             filter.Do();
         }
 
+        [When(@"User add ""(.*)"" filter where type is ""(.*)"" with added column and ""(.*)"" Tree List option")]
+        public void WhenUserAddFilterWhereTypeIsWithoutAddedColumnAndTreeListOption(string filterName, string operatorValue,
+            string filterValue)
+        {
+            var filtersNames = _driver.NowAt<FiltersElement>();
+            filtersNames.AddFilter(filterName);
+            var filter = new TreeList(_driver, operatorValue, true, filterValue);
+            filter.Do();
+        }
+
         [When(@"User add ""(.*)"" filter where type is ""(.*)"" with added column and ""(.*)"" Lookup option")]
         public void WhenUserAddFilterWhereTypeIsWithAddedColumnAndLookupOption(string filterName, string operatorValue,
             string filterValue)
@@ -291,6 +300,16 @@ namespace DashworksTestAutomation.Steps.Dashworks
             var filtersNames = _driver.NowAt<FiltersElement>();
             filtersNames.AddFilter(filterName);
             var filter = new LookupFilter(_driver, operatorValue, true, filterValue);
+            filter.Do();
+        }
+
+        [When(@"User add ""(.*)"" filter where type is ""(.*)"" without added column and ""(.*)"" Lookup option")]
+        public void WhenUserAddFilterWhereTypeIsWithoutAddedColumnAndLookupOption(string filterName, string operatorValue,
+            string filterValue)
+        {
+            var filtersNames = _driver.NowAt<FiltersElement>();
+            filtersNames.AddFilter(filterName);
+            var filter = new LookupFilter(_driver, operatorValue, false, filterValue);
             filter.Do();
         }
 
@@ -714,6 +733,14 @@ namespace DashworksTestAutomation.Steps.Dashworks
             var filterPanel = _driver.NowAt<FiltersElement>();
             _driver.WaitWhileControlIsNotDisplayed<FiltersElement>(() => filterPanel.SaveButton);
             Assert.IsTrue(Convert.ToBoolean(filterPanel.SaveButton.GetAttribute("disabled")), "Save Button is active");
+        }
+
+        [Then(@"User save change in current filter")]
+        public void ThenUserSaveChangeInCurrentFilter()
+        {
+            var filterPanel = _driver.NowAt<FiltersElement>();
+            _driver.WaitWhileControlIsNotDisplayed<FiltersElement>(() => filterPanel.SaveButton);
+            filterPanel.SaveButton.Click();
         }
 
         [Then(@"""(.*)"" section is not displayed in the Filter panel")]
