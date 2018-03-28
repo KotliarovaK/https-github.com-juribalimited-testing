@@ -1529,21 +1529,14 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_ItemDetails
             TechTalk.SpecFlow.Table table15 = new TechTalk.SpecFlow.Table(new string[] {
                         "Values"});
             table15.AddRow(new string[] {
-                        "true"});
+                        "TRUE"});
             table15.AddRow(new string[] {
-                        "false"});
+                        "FALSE"});
             table15.AddRow(new string[] {
-                        "Unknown"});
+                        "UNKNOWN"});
             testRunner.Then("following Values are displayed in the filter on the Details Page", ((string)(null)), table15, "Then ");
-            TechTalk.SpecFlow.Table table16 = new TechTalk.SpecFlow.Table(new string[] {
-                        "Values"});
-            table16.AddRow(new string[] {
-                        "true"});
-            table16.AddRow(new string[] {
-                        "false"});
-            table16.AddRow(new string[] {
-                        "Unknown"});
-            testRunner.Then("Values is displayed in added filter info", ((string)(null)), table16, "Then ");
+            testRunner.When("User clicks \"TRUE\" checkbox from string filter on the Details Page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+            testRunner.Then("Content is present in the table on the Details Page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
             this.ScenarioCleanup();
         }
     }

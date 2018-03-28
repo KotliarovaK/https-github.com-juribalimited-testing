@@ -117,10 +117,10 @@ namespace DashworksTestAutomation.Steps.Dashworks
         [Then(@"following Values are displayed in the filter on the Details Page")]
         public void ThenFollowingValuesAreDisplayedInTheFilterOnTheDetailsPage(Table table)
         {
-            var filterElement = _driver.NowAt<FiltersElement>();
+            var filterElement = _driver.NowAt<ApplicationsDetailsTabsMenu>();
             var expectedList = table.Rows.SelectMany(row => row.Values);
-            var actualList = filterElement.FilterValues.Select(value => value.Text);
-            Assert.AreEqual(expectedList, actualList, "Filter settings values are different");
+            var actualList = filterElement.FilterCheckboxValues.Select(value => value.Text);
+            Assert.AreEqual(expectedList, actualList, "Filter checkbox values are different");
         }
 
         [When(@"User have opened Column Settings for ""(.*)"" column in the Details Page table")]
@@ -164,7 +164,14 @@ namespace DashworksTestAutomation.Steps.Dashworks
         public void WhenUserClicksCheckboxFromStringFilterOnTheDetailsPage(string filterName)
         {
             var page = _driver.NowAt<ApplicationsDetailsTabsMenu>();
-            page.GetStringFilterByName(filterName).Click();
+            if (page.CheckboxexStringFilter.Displayed())
+            {
+                page.GetStringFilterByName(filterName).Click();
+            }
+            else
+            {
+                page.GetBooleanStringFilterByName(filterName).Click();
+            }
         }
 
         [Then(@"""(.*)"" checkbox is checked on the Details Page")]
@@ -172,6 +179,13 @@ namespace DashworksTestAutomation.Steps.Dashworks
         {
             var filterElement = _driver.NowAt<ApplicationsDetailsTabsMenu>();
             Assert.IsTrue(filterElement.ColumnCheckboxChecked.Displayed(), $"{checkboxName} Checkbox is not selected");
+        }
+
+        [Then(@"Content is present in the table on the Details Page")]
+        public void ThenContentIsPresentInTheTableOnTheDetailsPage()
+        {
+            var tableElement = _driver.NowAt<ApplicationsDetailsTabsMenu>();
+            Assert.IsTrue(tableElement.TableContent.Displayed(), "Table is empty");
         }
 
         [Then(@"Filter panel has standard size")]

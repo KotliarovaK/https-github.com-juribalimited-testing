@@ -396,11 +396,8 @@ Scenario: EvergreenJnr_DevicesLists_CheckThatOneUnknownFilterValueIsShownInGroup
 	And User clicks Filter button under "Enabled" column
 	Then following Values are displayed in the filter on the Details Page
 	| Values  |
-	| true    |
-	| false   |
-	| Unknown |
-	Then Values is displayed in added filter info
-	| Values  |
-	| true    |
-	| false   |
-	| Unknown |
+	| TRUE    |
+	| FALSE   |
+	| UNKNOWN |
+	When User clicks "TRUE" checkbox from string filter on the Details Page
+	Then Content is present in the table on the Details Page
