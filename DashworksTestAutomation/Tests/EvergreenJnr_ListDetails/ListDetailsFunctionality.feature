@@ -337,7 +337,7 @@ Scenario: EvergreenJnr_AllLists_CheckThatTwoDependencyAreDisplayedInTheDependent
 	Then "NewDevice" list is displayed in the Dependants section
 	And "Device1" list is displayed in the Dependants section
 
-@Evergreen @AllLists @EvergreenJnr_ListDetails @ListDetailsFunctionality @DAS12169 @Delete_Newly_Created_List
+@Evergreen @AllLists @EvergreenJnr_ListDetails @ListDetailsFunctionality @DAS12169 @DAS12286 @Delete_Newly_Created_List
 Scenario: EvergreenJnr_AllLists_CheckThatListDoesNotExistErrorWhenViewingDependentList
 	When User clicks "Applications" on the left-hand menu
 	Then "Applications" list should be displayed to the user
@@ -349,6 +349,12 @@ Scenario: EvergreenJnr_AllLists_CheckThatListDoesNotExistErrorWhenViewingDepende
 	Then "Vendor" filter is added to the list
 	When User create custom list with "Adobe Apps" name
 	Then "Adobe Apps" list is displayed to user
+	When User clicks Settings button in the list panel
+	Then Settings panel is displayed to the user
+	When User clicks Manage in the list panel
+	Then List details panel is displayed to the user
+	When User closes Permissions section in the list panel
+	Then tooltip is displayed with "Open" text for Permissions section
 	When User clicks "Devices" on the left-hand menu
 	Then "Devices" list should be displayed to the user
 	When User clicks the Filters button
@@ -367,6 +373,7 @@ Scenario: EvergreenJnr_AllLists_CheckThatListDoesNotExistErrorWhenViewingDepende
 	Then Settings panel is displayed to the user
 	When User clicks Manage in the list panel
 	Then List details panel is displayed to the user
+	Then tooltip is displayed with "Open" text for Dependants section
 	When User expand Dependants section
 	Then Dependants section is displayed to the user
 	When User clicks "Devices with Adobe" list in the Dependants section
