@@ -71,6 +71,9 @@ namespace DashworksTestAutomation.Pages.Evergreen
         [FindsBy(How = How.XPath, Using = ".//button[@class='mat-primary mat-raised-button']")]
         public IWebElement SaveButton { get; set; }
 
+        [FindsBy(How = How.XPath, Using = ".//i[@class='material-icons mat-filter-edit mat-18']")]
+        public IWebElement EditFilterButton { get; set; }
+
         [FindsBy(How = How.XPath, Using = ".//button[@class='mat-raised-button']")]
         public IWebElement CancelButton { get; set; }
 
@@ -281,7 +284,7 @@ namespace DashworksTestAutomation.Pages.Evergreen
             Driver.SelectCustomSelectbox(selectbox, operatorValue);
         }
 
-        public void EditFilterButton(string tooltipText)
+        public void EditFilterButtonToolTip(string tooltipText)
         {
             var editFilterButton = Driver.FindElement(By.XPath(
                 ".//div[@class='btn-group-sm pull-right ng-star-inserted']//i[@class='material-icons mat-filter-edit mat-18']/ancestor::button")).GetAttribute("aria-describedby");

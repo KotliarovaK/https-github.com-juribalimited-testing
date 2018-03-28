@@ -28,6 +28,17 @@ namespace DashworksTestAutomation.Pages.Evergreen.DetailsTabsMenu
         [FindsBy(How = How.XPath, Using = ".//div[@class='mat-select-arrow']")]
         public IWebElement StringFilter { get; set; }
 
+        [FindsBy(How = How.XPath, Using = ".//div[@class='ng-star-inserted']/span")]
+        public IWebElement CheckboxexStringFilter { get; set; }
+
+        [FindsBy(How = How.XPath, Using = ".//div[@class='boolean-icon ng-star-inserted']/span")]
+        public IWebElement CheckboxexBooleanStringFilter { get; set; }
+
+        public const string FilterCheckboxValuesSelector = ".//div[@class='boolean-icon ng-star-inserted']";
+
+        [FindsBy(How = How.XPath, Using = FilterCheckboxValuesSelector)]
+        public IList<IWebElement> FilterCheckboxValues { get; set; }
+
         [FindsBy(How = How.XPath, Using = ".//span[@class='ag-icon ag-icon-columns']")]
         public IWebElement ColumnButton { get; set; }
 
@@ -36,6 +47,9 @@ namespace DashworksTestAutomation.Pages.Evergreen.DetailsTabsMenu
         
         [FindsBy(How = How.XPath, Using = ".//span[@class='ag-column-select-label']")]
         public IWebElement ColumnCheckboxName { get; set; }
+
+        [FindsBy(How = How.XPath, Using = ".//div[@class='ag-body-container']/div")]
+        public IWebElement TableContent { get; set; }
 
         [FindsBy(How = How.XPath, Using = ".//mat-pseudo-checkbox[@class='mat-option-pseudo-checkbox mat-pseudo-checkbox ng-star-inserted mat-pseudo-checkbox-checked']")]
         public IWebElement ColumnCheckboxChecked { get; set; }
@@ -123,6 +137,12 @@ namespace DashworksTestAutomation.Pages.Evergreen.DetailsTabsMenu
             return Driver.FindElement(By.XPath($".//div[@class='ng-star-inserted']/span[(text()='{filterName}')]"));
         }
 
+        public IWebElement GetBooleanStringFilterByName(string filterName)
+        {
+            Driver.WaitWhileControlIsNotDisplayed(By.XPath($".//div[@class='boolean-icon ng-star-inserted']/span[(text()='{filterName}')]"));
+            return Driver.FindElement(By.XPath($".//div[@class='boolean-icon ng-star-inserted']/span[(text()='{filterName}')]"));
+        }
+
         public string GetInstalledFilterPanelHeight()
         {
             return Driver.FindElement(By.XPath(".//div[@class='ag-menu']")).GetCssValue("height");
@@ -199,6 +219,14 @@ namespace DashworksTestAutomation.Pages.Evergreen.DetailsTabsMenu
             var selector = By.XPath(".//span[@role='columnheader']");
             Driver.WaitForDataLoading();
             return Driver.FindElements(selector);
+        }
+
+        public void FilterValuesCheckbox(string checkboxName)
+        {
+            string filterCheckboxSelector =
+                $".//div[@class='boolean-icon ng-star-inserted']/span[text()='{checkboxName}']";
+            //Driver.MouseHover(By.XPath(filterCheckboxSelector));
+            Driver.WaitWhileControlIsNotDisplayed(By.XPath(filterCheckboxSelector));
         }
 
         public bool ColumnIsDisplayed(string columnName)
