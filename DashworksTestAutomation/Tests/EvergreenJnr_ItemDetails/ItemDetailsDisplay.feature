@@ -418,3 +418,16 @@ Scenario: EvergreenJnr_MailboxesLists_CheckThatListLoadedCorrectlyAndNoConsoleEr
 	When User clicks "Users" on the left-hand menu
 	Then "Users" list should be displayed to the user
 	And There are no errors in the browser console
+
+@Evergreen @Devices @EvergreenJnr_ItemDetails @ItemDetailsDisplay @DAS12239
+Scenario: EvergreenJnr_DevicesLists_CheckThatAllTextIsDisplayedAfterClearingFilters
+	When User clicks "Devices" on the left-hand menu
+	Then "Devices" list should be displayed to the user
+	When User click content from "Hostname" column
+	And User navigates to the "Applications" tab
+	Then All text is displayed for "Compliance" column in the String Filter
+	When  User clicks String Filter button for "Compliance" column
+	And User clicks "Red" checkbox from String Filter on the Details Page
+	Then All text is not displayed for "Compliance" column in the String Filter
+	When User clicks Reset Filters button on the Details Page
+	Then All text is displayed for "Compliance" column in the String Filter
