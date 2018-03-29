@@ -43,6 +43,9 @@ namespace DashworksTestAutomation.Pages.Evergreen
         [FindsBy(How = How.XPath, Using = ".//div[@id='agGridTable']")]
         public IWebElement OpenedSection { get; set; }
 
+        [FindsBy(How = How.XPath, Using = ".//div[@class='chartContainer ng-star-inserted']")]
+        public IWebElement GraphicInOpenedSection { get; set; }
+
         public override List<By> GetPageIdentitySelectors()
         {
             Driver.WaitForDataLoading();
