@@ -401,3 +401,20 @@ Scenario: EvergreenJnr_DevicesLists_CheckThatOneUnknownFilterValueIsShownInGroup
 	| UNKNOWN |
 	When User clicks "TRUE" checkbox from string filter on the Details Page
 	Then Content is present in the table on the Details Page
+
+@Evergreen @Mailboxes @EvergreenJnr_ItemDetails @ItemDetailsDisplay @DAS12245
+Scenario: EvergreenJnr_MailboxesLists_CheckThatListLoadedCorrectlyAndNoConsoleErrorIsNotDisplayed
+	When User clicks "Mailboxes" on the left-hand menu
+	Then "Mailboxes" list should be displayed to the user
+	When User perform search by "julia.bell@juriba.com"
+	And User click content from "Email Address" column
+	When User navigates to the "Trend" tab
+	Then Highcharts graphic is displayed on the Details Page
+	And There are no errors in the browser console
+	When User navigates to the "Details" tab
+	Then There are no errors in the browser console
+	When User navigates to the "Trend" tab
+	Then There are no errors in the browser console
+	When User clicks "Users" on the left-hand menu
+	Then "Users" list should be displayed to the user
+	And There are no errors in the browser console
