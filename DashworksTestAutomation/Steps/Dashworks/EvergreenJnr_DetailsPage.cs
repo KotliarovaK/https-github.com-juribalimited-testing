@@ -115,11 +115,34 @@ namespace DashworksTestAutomation.Steps.Dashworks
                 $"{columnName} category stil displayed in Column Panel");
         }
 
-        [When(@"User clicks Filter button under ""(.*)"" column")]
-        public void WhenUserClicksFilterButtonUnderColumn(string columnName)
+        [When(@"User clicks String Filter button for ""(.*)"" column")]
+        public void WhenUserClicksStringFilterButtonForColumn(string columnName)
         {
             var filterElement = _driver.NowAt<ApplicationsDetailsTabsMenu>();
             filterElement.GetStringFilterByColumnName(columnName);
+        }
+
+        [Then(@"All text is displayed for ""(.*)"" column in the String Filter")]
+        public void ThenAllTextIsDisplayedForColumnInTheStringFilter(string columnName)
+        {
+            var filterElement = _driver.NowAt<ApplicationsDetailsTabsMenu>();
+            Assert.IsTrue((filterElement.GetStringFilterTextByColumnName(columnName)), $"All text is not displayed for {columnName} column");
+        }
+
+        [Then(@"All text is not displayed for ""(.*)"" column in the String Filter")]
+        public void ThenAllTextIsNotDisplayedForColumnInTheStringFilter(string columnName)
+        {
+            var filterElement = _driver.NowAt<ApplicationsDetailsTabsMenu>();
+            Assert.IsFalse((filterElement.GetStringFilterTextByColumnName(columnName)), $"All text is displayed for {columnName} column");
+        }
+
+        [When(@"User clicks Reset Filters button on the Details Page")]
+        public void WhenUserClicksResetFiltersButtonOnTheDetailsPage()
+        {
+            var filterElement = _driver.NowAt<ApplicationsDetailsTabsMenu>();
+            filterElement.BodyContainer.Click();
+            _driver.WaitWhileControlIsNotDisplayed<ApplicationsDetailsTabsMenu>(() => filterElement.ResetFiltersButton);
+            filterElement.ResetFiltersButton.Click();
         }
 
         [Then(@"following Values are displayed in the filter on the Details Page")]
@@ -168,7 +191,7 @@ namespace DashworksTestAutomation.Steps.Dashworks
             page.GetFilterByName(filterName).Click();
         }
 
-        [When(@"User clicks ""(.*)"" checkbox from string filter on the Details Page")]
+        [When(@"User clicks ""(.*)"" checkbox from String Filter on the Details Page")]
         public void WhenUserClicksCheckboxFromStringFilterOnTheDetailsPage(string filterName)
         {
             var page = _driver.NowAt<ApplicationsDetailsTabsMenu>();
