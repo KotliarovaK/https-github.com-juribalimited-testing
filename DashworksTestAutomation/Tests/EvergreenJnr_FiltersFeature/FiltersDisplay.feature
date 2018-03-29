@@ -978,4 +978,4 @@ Scenario: EvergreenJnr_DevicesLists_CheckThatFilterTextDisplaysActualListName
 	Then "DevicesList" list is displayed to user
 	When User clicks the Filters button
 	Then Filters panel is displayed to the user
-	Then "(Application (Saved List) = 149 ASSOCIATION = ("entitled to device"))" text is displayed in filter container
+	Then "Application in list [List not found] entitled to device" is displayed in added filter info
