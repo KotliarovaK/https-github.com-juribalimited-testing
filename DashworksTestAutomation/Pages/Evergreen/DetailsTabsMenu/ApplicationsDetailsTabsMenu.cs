@@ -34,6 +34,15 @@ namespace DashworksTestAutomation.Pages.Evergreen.DetailsTabsMenu
         [FindsBy(How = How.XPath, Using = ".//div[@class='boolean-icon ng-star-inserted']/span")]
         public IWebElement CheckboxexBooleanStringFilter { get; set; }
 
+        [FindsBy(How = How.XPath, Using = ".//i[@class='material-icons pull-right mat-laptop']")]
+        public IWebElement DeviceDetailsIcon { get; set; }
+
+        [FindsBy(How = How.XPath, Using = ".//button[@class='button-small mat-primary reset mat-raised-button']")]
+        public IWebElement ResetFiltersButton { get; set; }
+
+        [FindsBy(How = How.XPath, Using = ".//body")]
+        public IWebElement BodyContainer { get; set; }
+
         public const string FilterCheckboxValuesSelector = ".//div[@class='boolean-icon ng-star-inserted']";
 
         [FindsBy(How = How.XPath, Using = FilterCheckboxValuesSelector)]
@@ -123,6 +132,12 @@ namespace DashworksTestAutomation.Pages.Evergreen.DetailsTabsMenu
             Driver.WaitForDataLoading();
             Driver.WaitWhileControlIsNotDisplayed(byControl);
             Driver.FindElement(byControl).Click();
+        }
+
+        public bool GetStringFilterTextByColumnName(string columnName)
+        {
+            return Driver.IsElementDisplayed(
+                By.XPath($".//div[@role='presentation']/div[2]/div[{GetColumnNumberByName(columnName)}]//mat-placeholder[@class='ng-star-inserted'][text()='All']"));
         }
 
         public IWebElement GetFilterByName(string filterName)
