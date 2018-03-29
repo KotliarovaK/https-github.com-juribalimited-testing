@@ -53,6 +53,14 @@ namespace DashworksTestAutomation.Steps.Dashworks
             Assert.IsTrue(detailsPage.OpenedSection.Displayed(), "Section content is not displayed");
         }
 
+        [Then(@"Highcharts graphic is displayed on the Details Page")]
+        public void ThenHighchartsGraphicIsDisplayedOnTheDetailsPage()
+        {
+            var detailsPage = _driver.NowAt<DetailsPage>();
+            _driver.WaitWhileControlIsNotDisplayed<DetailsPage>(() => detailsPage.GraphicInOpenedSection);
+            Assert.IsTrue(detailsPage.GraphicInOpenedSection.Displayed(), "Graphic content is not displayed");
+        }
+
         [Then(@"""(.*)"" message is displayed on the Details Page")]
         public void ThenMessageIsDisplayedOnTheDetailsPage(string message)
         {
