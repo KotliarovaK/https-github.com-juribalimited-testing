@@ -955,6 +955,16 @@ Scenario: EvergreenJnr_DevicesLists_CheckThatChildrenOfTreeBasedFiltersAreInclud
 	When User add "Department" filter where type is "Equals" with added column and "Sales" Tree List option
 	Then "Department" filter is added to the list
 	And "3,295" rows are displayed in the agGrid
+
+@Evergreen @AllLists @Evergreen_FiltersFeature @FiltersDisplay @DAS12205 @Delete_Newly_Created_List
+Scenario: EvergreenJnr_AllLists_CheckThatFilterTextDisplaysActualListName
+	When User clicks "Applications" on the left-hand menu
+	Then "Applications" list should be displayed to the user
+	When User click on 'Application' column header
+	When User create custom list with "ApplicationList" name
+	When User clicks "Devices" on the left-hand menu
+	Then "Devices" list should be displayed to the user
+	When User clicks the Filters button
 	Then Filters panel is displayed to the user
 	When User add "Application (Saved List)" filter where type is "In list" with SelectedList list and following Association:
 	| SelectedList    | Association        |
