@@ -379,4 +379,4 @@ Scenario: EvergreenJnr_AllLists_CheckThatListDoesNotExistErrorWhenViewingDepende
 	Then Dependants section is displayed to the user
 	When User clicks "Devices with Adobe" list in the Dependants section
 	Then "Devices with Adobe" list is displayed to user
-	And no Warning message is displayed in the lists panel
+	And "This list does not exist or you do not have access to it" message is not displayed in the lists panel
