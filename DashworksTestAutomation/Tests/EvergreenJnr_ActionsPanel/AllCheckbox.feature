@@ -18,14 +18,18 @@ Scenario: EvergreenJnr_UsersList_SelectAllCheckboxStatusCheckAfterSearch
 	| SearchCriteria | NumberOfRows |
 	| alain          | 42           |
 	And Select All selectbox is checked
+	When User click on 'Username' column header
+	Then data in table is sorted by 'Username' column in ascending order
+	And Select All selectbox is checked
 	And "42" rows are displayed in the agGrid
 	And "41335" selected rows are displayed in the Actions panel
-	When User is deselect all rows
-	And User select all rows
-	Then The number of rows selected matches the number of rows of the main object list
 	And Clearing the agGrid Search Box
 	And Select All selectbox is checked
-	And "42" selected rows are displayed in the Actions panel
+	When User is deselect all rows
+	Then "0" selected rows are displayed in the Actions panel
+	When User select all rows
+	Then The number of rows selected matches the number of rows of the main object list
+	And Select All selectbox is checked
 
 @Evergreen @AllLists @Evergreen_ActionsPanel @AllCheckbox @DAS10775 @DAS10656
 Scenario Outline: EvergreenJnr_AllLists_CheckThatSelectAllCheckboxStatusAfterClosingActionPanel
