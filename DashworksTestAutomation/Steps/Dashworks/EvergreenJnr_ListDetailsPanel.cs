@@ -106,6 +106,13 @@ namespace DashworksTestAutomation.Steps.Dashworks
             Logger.Write("List Details panel is visible");
         }
 
+        [Then(@"Dependants section is collapsed by default")]
+        public void ThenDependantsSectionIsCollapsedByDefault()
+        {
+            var listDetailsElement = _driver.NowAt<ListDetailsElement>();
+            Assert.IsFalse(listDetailsElement.ExpandedDependantsSection.Displayed() , "Dependants section is expanded");
+        }
+
         [When(@"User closes Permissions section in the list panel")]
         public void WhenUserClosesPermissionsSectionInTheListPanel()
         {

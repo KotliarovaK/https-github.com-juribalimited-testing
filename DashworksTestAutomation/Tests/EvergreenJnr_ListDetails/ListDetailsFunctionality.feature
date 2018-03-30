@@ -333,6 +333,7 @@ Scenario: EvergreenJnr_AllLists_CheckThatTwoDependencyAreDisplayedInTheDependent
 	Then Settings panel is displayed to the user
 	When User clicks Manage in the list panel
 	Then List details panel is displayed to the user
+	Then Dependants section is collapsed by default
 	When User expand Dependants section
 	Then "NewDevice" list is displayed in the Dependants section
 	And "Device1" list is displayed in the Dependants section
