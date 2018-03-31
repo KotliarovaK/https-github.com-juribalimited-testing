@@ -989,3 +989,31 @@ Scenario: EvergreenJnr_AllLists_CheckThatFilterTextDisplaysActualListName
 	When User clicks the Filters button
 	Then Filters panel is displayed to the user
 	Then "Application in list [List not found] entitled to device" is displayed in added filter info
+
+@Evergreen @AllLists @Evergreen_FiltersFeature @FiltersDisplay @DAS12121 @Delete_Newly_Created_List @Not_Run
+Scenario: EvergreenJnr_AllLists_CheckThatTextInTheFilterPanelDisplaysTheCurrentListName
+	When User clicks "Applications" on the left-hand menu
+	Then "Applications" list should be displayed to the user
+	When User click on 'Application' column header
+	And User create custom list with "ApplicationList1" name
+	When User navigates to the "All Applications" list
+	Then "Applications" list should be displayed to the user
+	When User click on 'Vendor' column header
+	And User create custom list with "ApplicationList2" name
+	When User clicks "Devices" on the left-hand menu
+	Then "Devices" list should be displayed to the user
+	When User clicks the Filters button
+	Then Filters panel is displayed to the user
+	When User add "Application (Saved List)" filter where type is "In list" with SelectedList list and following Association:
+	| SelectedList     | Association        |
+	| ApplicationList1 | Entitled to device |
+	When User create custom list with "DevicesList" name
+	Then "(Application Name ~ (adobe, microsoft) ASSOCIATION = (installed on device))" text is displayed in filter container
+	When User navigates to the "All Devices" list
+	Then "Devices" list should be displayed to the user
+	When User clicks "Applications" on the left-hand menu
+	Then "Applications" list should be displayed to the user
+	#When User navigates to the "ApplicationList1" list
+	When User removes custom list with "ApplicationList1" name
+	#When User clicks Settings button in the list panel
+	#Then Settings panel is displayed to the user
