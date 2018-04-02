@@ -129,9 +129,9 @@ Scenario: EvergreenJnr_UsersList_CheckThatListsIsDisplayedInAlphabeticalOrder
 	When User clicks the Actions button
 	Then Actions panel is displayed to the user
 	When User select "Username" rows in the grid
-	| SelectedRowsName    |
-	| 003F5D8E1A844B1FAA5 |
-	| 000F977AC8824FE39B8 |
+	| SelectedRowsName |
+	| AAD1011948       |
+	| AAH0343264       |
 	And User create static list with "KY TestList Static List" name
 	Then "KY TestList Static List" list is displayed to user
 	When User navigates to the "All Users" list
@@ -146,8 +146,8 @@ Scenario: EvergreenJnr_UsersList_CheckThatListsIsDisplayedInAlphabeticalOrder
 	When User clicks the Actions button
 	Then Actions panel is displayed to the user
 	When User select "Username" rows in the grid
-	| SelectedRowsName    |
-	| 002B5DC7D4D34D5C895 |
+	| SelectedRowsName |
+	| ABW1509426       |
 	And User create static list with "QWER TestList Static List" name
 	Then "QWER TestList Static List" list is displayed to user
 	When User navigates to the "All Users" list
@@ -211,11 +211,11 @@ Scenario: EvergreenJnr_UsersList_CheckThatSaveButtonIsInactiveInCustomListCreati
 	Then Actions panel is displayed to the user
 	Then Save to New Custom List element is NOT displayed
 	When User select "Username" rows in the grid
-	| SelectedRowsName    |
-	| 003F5D8E1A844B1FAA5 |
-	| 000F977AC8824FE39B8 |
-	| 002B5DC7D4D34D5C895 |
-	| 002B5DC7D4D34D5C895 |
+	| SelectedRowsName |
+	| AAD1011948       |
+	| AAH0343264       |
+	| AAO3000042       |
+	| AAQ9911340       |
 	Then User type "Test" into Static list name field
 	When User clicks the Actions button
 	Then Save button is inactive for Custom list
@@ -238,8 +238,8 @@ Scenario: EvergreenJnr_DevicesList_CheckTheSortOrderIsSavedForExistingListAndNot
 	Then Actions panel is displayed to the user
 	When User select "Hostname" rows in the grid
 	| SelectedRowsName |
-	| 001BAQXT6JWFPI   |
-	| 00OMQQXWA1DRI6   |
+	| 00BDM1JUR8IF419  |
+	| 00K4CEEQ737BA4L  |
 	And User create static list with "Static List TestName" name
 	Then "Static List TestName" list is displayed to user
 	When User click on 'Owner Display Name' column header
@@ -305,8 +305,8 @@ Scenario: EvergreenJnr_DevicesList_CheckThatSortingWillBeWorkForExistingSavedSta
 	When User select "Hostname" rows in the grid
 	| SelectedRowsName |
 	| 00BDM1JUR8IF419  |
+	| 00K4CEEQ737BA4L  |
 	| 011PLA470S0B9DJ  |
-	| 00OMQQXWA1DRI6   |
 	And User create static list with "Static List TestName" name
 	Then "Static List TestName" list is displayed to user
 	When User clicks the Columns button
@@ -355,16 +355,19 @@ Scenario: EvergreenJnr_DevicesList_CheckThatEditListMenuNotDisplayedForActiveLis
 	Then "Compliance" filter is added to the list
 	When User click on 'Compliance' column header
 	Then data in table is sorted by 'Compliance' column in ascending order
-	When User create dynamic list with "Dynamic List TestName" name on "Devices" page
+	When User create custom list with "Dynamic List TestName" name
 	Then "Dynamic List TestName" list is displayed to user
 	When User navigates to the "All Devices" list
 	Then "Devices" list should be displayed to the user
-	When User create static list with "Static List TestName" name on "Devices" page with following items
-	| ItemName        |
-	| 00BDM1JUR8IF419 |
-	| 011PLA470S0B9DJ |
-	| 00OMQQXWA1DRI6  |
-	| 00SH8162NAS524  |
+	When User clicks the Actions button
+	Then Actions panel is displayed to the user
+	When User select "Hostname" rows in the grid
+	| SelectedRowsName |
+	| 00BDM1JUR8IF419  |
+	| 00K4CEEQ737BA4L  |
+	| 011PLA470S0B9DJ  |
+	| 019BFPQGKK5QT8N  |
+	And User create static list with "Static List TestName" name
 	Then "Static List TestName" list is displayed to user
 	When User clicks the Columns button
 	Then Columns panel is displayed to the user
