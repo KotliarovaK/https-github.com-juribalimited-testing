@@ -410,6 +410,13 @@ namespace DashworksTestAutomation.Steps.Dashworks
             filterElement.GetEditFilterButton(filterName).Click();
         }
 
+        [Then(@"""(.*)"" list is displayed for Saved List filter")]
+        public void ThenListIsDisplayedForSavedListFilter(string listName)
+        {
+            var filterElement = _driver.NowAt<FiltersElement>();
+            Assert.IsTrue(filterElement.ListNameForSavedListFilter(listName), $"{listName} is not displayed for Saved List filter");
+        }
+
         [When(@"User navigate to Edit button for ""(.*)"" filter")]
         public void WhenUserNavigateToEditButtonForFilter(string filterName)
         {
