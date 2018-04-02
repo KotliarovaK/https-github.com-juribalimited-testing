@@ -17,7 +17,7 @@ namespace DashworksTestAutomation.Pages.Evergreen
         public IWebElement GroupIcon { get; set; }
 
         [FindsBy(How = How.XPath, Using = ".//div[@class='empty-message ng-star-inserted']")]
-        public IWebElement NoMailboxOwnerFoundMessage { get; set; }
+        public IWebElement NoFoundContent { get; set; }
 
         [FindsBy(How = How.XPath, Using = ".//div[@class='mat-tab-body-content ng-trigger ng-trigger-translateTab']")]
         public IWebElement ItemDetailsContainer { get; set; }
