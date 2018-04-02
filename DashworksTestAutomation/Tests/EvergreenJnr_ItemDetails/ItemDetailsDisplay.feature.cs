@@ -246,7 +246,6 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_ItemDetails
         [NUnit.Framework.CategoryAttribute("DAS11732")]
         [NUnit.Framework.CategoryAttribute("DAS12235")]
         [NUnit.Framework.TestCaseAttribute("Devices", "Hostname", "Applications", "Application", "Key", "Key", new string[0])]
-        [NUnit.Framework.TestCaseAttribute("Users", "Username", "Groups", "Group", "Key", "Key", new string[0])]
         [NUnit.Framework.TestCaseAttribute("Applications", "Application", "Projects", "Project", "Object ID", "Object ID", new string[0])]
         [NUnit.Framework.TestCaseAttribute("Applications", "Application", "Projects", "Project", "Object Key", "Object Key", new string[0])]
         [NUnit.Framework.TestCaseAttribute("Mailboxes", "Email Address", "Users", "Domain", "Key", "Key", new string[0])]
@@ -324,20 +323,9 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_ItemDetails
         [NUnit.Framework.CategoryAttribute("ItemDetailsDisplay")]
         [NUnit.Framework.CategoryAttribute("DAS11732")]
         [NUnit.Framework.CategoryAttribute("DAS12235")]
-        [NUnit.Framework.TestCaseAttribute("Devices", "Hostname", "Applications", "Application Summary", "Application Detail", "Application", "Application Key", "Application Key", new string[0])]
-        [NUnit.Framework.TestCaseAttribute("Devices", "Hostname", "Applications", "Application Summary", "Application Detail", "Application", "Advertisement Key", "Advertisement Key", new string[0])]
         [NUnit.Framework.TestCaseAttribute("Devices", "Hostname", "Applications", "Application Summary", "Application Detail", "Application", "Group Key", "Group Key", new string[0])]
-        [NUnit.Framework.TestCaseAttribute("Devices", "Hostname", "Applications", "Application Summary", "Application Detail", "Application", "Collection Key", "Collection Key", new string[0])]
-        [NUnit.Framework.TestCaseAttribute("Devices", "Hostname", "Applications", "Application Summary", "Advertisements", "Application", "Key", "Key", new string[0])]
+        [NUnit.Framework.TestCaseAttribute("Devices", "Hostname", "Applications", "Application Summary", "Application Detail", "Application", "User Key", "User Key", new string[0])]
         [NUnit.Framework.TestCaseAttribute("Devices", "Hostname", "Applications", "Application Summary", "Advertisements", "Application", "Application Key", "Application Key", new string[0])]
-        [NUnit.Framework.TestCaseAttribute("Devices", "Hostname", "Applications", "Application Summary", "Advertisements", "Application", "Site Key", "Site Key", new string[0])]
-        [NUnit.Framework.TestCaseAttribute("Devices", "Hostname", "Applications", "Application Summary", "Advertisements", "Application", "Collection Key", "Collection Key", new string[0])]
-        [NUnit.Framework.TestCaseAttribute("Devices", "Hostname", "Applications", "Application Summary", "Advertisements", "Application", "Program Key", "Program Key", new string[0])]
-        [NUnit.Framework.TestCaseAttribute("Devices", "Hostname", "Applications", "Application Summary", "Collections", "Collection", "Key", "Key", new string[0])]
-        [NUnit.Framework.TestCaseAttribute("Devices", "Hostname", "Applications", "Application Summary", "Collections", "Collection", "Site Key", "Site Key", new string[0])]
-        [NUnit.Framework.TestCaseAttribute("Applications", "Application", "Details", "Application", "Advertisements", "Advertisement", "Advertisement Key", "Advertisement Key", new string[0])]
-        [NUnit.Framework.TestCaseAttribute("Applications", "Application", "Details", "Application", "Advertisements", "Advertisement", "Collection Key", "Collection Key", new string[0])]
-        [NUnit.Framework.TestCaseAttribute("Applications", "Application", "Details", "Application", "Programs", "Program", "Program Key", "Program Key", new string[0])]
         [NUnit.Framework.TestCaseAttribute("Applications", "Application", "Distribution", "Users", "Devices", "Device", "Computer Key", "Computer Key", new string[0])]
         [NUnit.Framework.TestCaseAttribute("Applications", "Application", "Distribution", "Users", "Devices", "Device", "Owner Object Key", "Owner Object Key", new string[0])]
         [NUnit.Framework.TestCaseAttribute("Applications", "Application", "Distribution", "Users", "Devices", "Device", "User Key", "User Key", new string[0])]
@@ -975,7 +963,7 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_ItemDetails
             this.FeatureBackground();
             testRunner.When("User clicks \"Devices\" on the left-hand menu", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
             testRunner.Then("\"Devices\" list should be displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-            testRunner.When("User perform search by \"54S1MGR8DYMYKH\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+            testRunner.When("User perform search by \"Benjamin S. Vaughn\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
             testRunner.And("User click content from \"Hostname\" column", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
             testRunner.And("User navigates to the \"Details\" tab", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
             testRunner.Then("User closes \"Device\" section on the Details Page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
@@ -1121,8 +1109,6 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_ItemDetails
         [NUnit.Framework.CategoryAttribute("DAS11762")]
         [NUnit.Framework.CategoryAttribute("DAS12235")]
         [NUnit.Framework.TestCaseAttribute("Devices", "Hostname", "Applications", "Application", new string[0])]
-        [NUnit.Framework.TestCaseAttribute("Users", "Username", "Groups", "Group", new string[0])]
-        [NUnit.Framework.TestCaseAttribute("Applications", "Application", "MSI", "File Name", new string[0])]
         [NUnit.Framework.TestCaseAttribute("Mailboxes", "Email Address", "Users", "Username", new string[0])]
         public virtual void EvergreenJnr_AllLists_CheckThatNoConsoleErrorsAreDisplayedWhenDeleteDataFromFilterTextField(string pageName, string columnName, string tabName, string selectedColumn, string[] exampleTags)
         {
@@ -1232,7 +1218,7 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_ItemDetails
                     "", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
             testRunner.And("User clicks Filter button on the Column Settings panel", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
             testRunner.Then("Filter panel has standard size", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-            testRunner.Then("User select \"FALSE\" checkbox from filter on the Details Page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+            testRunner.Then("User select \"False\" checkbox from filter on the Details Page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
             testRunner.Then("Filter panel has standard size", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
             this.ScenarioCleanup();
         }
@@ -1244,6 +1230,7 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_ItemDetails
         [NUnit.Framework.CategoryAttribute("EvergreenJnr_ItemDetails")]
         [NUnit.Framework.CategoryAttribute("ItemDetailsDisplay")]
         [NUnit.Framework.CategoryAttribute("DAS11647")]
+        [NUnit.Framework.CategoryAttribute("Not_Run")]
         [NUnit.Framework.TestCaseAttribute("Advertisements", new string[0])]
         [NUnit.Framework.TestCaseAttribute("Collections", new string[0])]
         public virtual void EvergreenJnr_DevicesLists_CheckThatAutosizeOptionWorksCorrectlyForSiteColumn(string sectionName, string[] exampleTags)
@@ -1279,7 +1266,8 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_ItemDetails
                     "Devices",
                     "EvergreenJnr_ItemDetails",
                     "ItemDetailsDisplay",
-                    "DAS11647"};
+                    "DAS11647",
+                    "Not_Run"};
             if ((exampleTags != null))
             {
                 @__tags = System.Linq.Enumerable.ToArray(System.Linq.Enumerable.Concat(@__tags, exampleTags));
@@ -1408,13 +1396,13 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_ItemDetails
             testRunner.And("User navigates to the \"Applications\" tab", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
             testRunner.Then("User closes \"Application Summary\" section on the Details Page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
             testRunner.When("User opens \"Application Detail\" section on the Details Page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-            testRunner.Then("opened section is displayed correctly", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+            testRunner.Then("section is loaded correctly", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
             testRunner.And("User closes \"Application Detail\" section on the Details Page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
             testRunner.When("User opens \"Advertisements\" section on the Details Page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-            testRunner.Then("opened section is displayed correctly", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+            testRunner.Then("section is loaded correctly", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
             testRunner.And("User closes \"Advertisements\" section on the Details Page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
             testRunner.When("User opens \"Collections\" section on the Details Page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-            testRunner.Then("opened section is displayed correctly", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+            testRunner.Then("section is loaded correctly", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
             this.ScenarioCleanup();
         }
         
@@ -1529,13 +1517,13 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_ItemDetails
             TechTalk.SpecFlow.Table table15 = new TechTalk.SpecFlow.Table(new string[] {
                         "Values"});
             table15.AddRow(new string[] {
-                        "TRUE"});
+                        "True"});
             table15.AddRow(new string[] {
-                        "FALSE"});
+                        "False"});
             table15.AddRow(new string[] {
-                        "UNKNOWN"});
+                        "Unknown"});
             testRunner.Then("following Values are displayed in the filter on the Details Page", ((string)(null)), table15, "Then ");
-            testRunner.When("User clicks \"TRUE\" checkbox from String Filter on the Details Page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+            testRunner.When("User clicks \"True\" checkbox from String Filter on the Details Page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
             testRunner.Then("Content is present in the table on the Details Page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
             this.ScenarioCleanup();
         }

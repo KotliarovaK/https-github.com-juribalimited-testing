@@ -45,12 +45,20 @@ namespace DashworksTestAutomation.Steps.Dashworks
             detailsPage.NavigateToSectionByName(sectionName);
         }
 
-        [Then(@"opened section is displayed correctly")]
-        public void ThenOpenedSectionIsDisplayedCorrectly()
+        [Then(@"section is loaded correctly")]
+        public void ThenSectionIsLoadedCorrectly()
         {
             var detailsPage = _driver.NowAt<DetailsPage>();
-            _driver.WaitWhileControlIsNotDisplayed<DetailsPage>(() => detailsPage.OpenedSection);
-            Assert.IsTrue(detailsPage.OpenedSection.Displayed(), "Section content is not displayed");
+
+            if (!detailsPage.OpenedSection.Displayed())
+            {
+                Assert.IsTrue(detailsPage.NoFoundContent.Displayed());
+            }
+            else
+            {
+                _driver.WaitWhileControlIsNotDisplayed<DetailsPage>(() => detailsPage.OpenedSection);
+                Assert.IsTrue(detailsPage.OpenedSection.Displayed(), "Section content is not loaded");
+            }
         }
 
         [Then(@"Highcharts graphic is displayed on the Details Page")]
@@ -384,8 +392,8 @@ namespace DashworksTestAutomation.Steps.Dashworks
             var detailsPage = _driver.NowAt<DetailsPage>();
             detailsPage.CloseAllSections();
             detailsPage.NavigateToSectionByName(sectionName);
-            _driver.WaitWhileControlIsNotDisplayed<DetailsPage>(() => detailsPage.NoMailboxOwnerFoundMessage);
-            Assert.AreEqual(textMessage, detailsPage.NoMailboxOwnerFoundMessage.Text,
+            _driver.WaitWhileControlIsNotDisplayed<DetailsPage>(() => detailsPage.NoFoundContent);
+            Assert.AreEqual(textMessage, detailsPage.NoFoundContent.Text,
                 $"{textMessage} is not displayed");
         }
 
