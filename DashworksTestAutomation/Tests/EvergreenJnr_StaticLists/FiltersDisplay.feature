@@ -65,9 +65,9 @@ Scenario: EvergreenJnr_DevicesList_CheckThat500ErrorIsNotDisplayedWhenAddingNewO
 	When User select "Hostname" rows in the grid
 	| SelectedRowsName |
 	| 00BDM1JUR8IF419  |
-	| 00CWZRC4UK6W20   |
-	| 00HA7MKAVVFDAV   |
-	| 00I0COBFWHOF27   |
+	| 00K4CEEQ737BA4L  |
+	| 011PLA470S0B9DJ  |
+	| 019BFPQGKK5QT8N  |
 	And User create static list with "TopFour TestName" name
 	Then "TopFour TestName" list is displayed to user
 	When User navigates to the "All Devices" list
@@ -77,7 +77,7 @@ Scenario: EvergreenJnr_DevicesList_CheckThat500ErrorIsNotDisplayedWhenAddingNewO
 	When User select "Hostname" rows in the grid
 	| SelectedRowsName |
 	| 00BDM1JUR8IF419  |
-	| 00CWZRC4UK6W20   |
+	| 00K4CEEQ737BA4L  |
 	And User create static list with "TopTwo TestName" name
 	Then "TopTwo TestName" list is displayed to user
 	When User clicks the Actions button
@@ -86,7 +86,7 @@ Scenario: EvergreenJnr_DevicesList_CheckThat500ErrorIsNotDisplayedWhenAddingNewO
 	When User select "Hostname" rows in the grid
 	| SelectedRowsName |
 	| 00BDM1JUR8IF419  |
-	| 00CWZRC4UK6W20   |
+	| 00K4CEEQ737BA4L  |
 	Then User add selected rows in "TopFour TestName" list
 	Then "TopFour TestName" list is displayed to user
 	And "4" rows are displayed in the agGrid

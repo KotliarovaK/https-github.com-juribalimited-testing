@@ -289,11 +289,11 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_StaticLists
             table4.AddRow(new string[] {
                         "00BDM1JUR8IF419"});
             table4.AddRow(new string[] {
-                        "00CWZRC4UK6W20"});
+                        "00K4CEEQ737BA4L"});
             table4.AddRow(new string[] {
-                        "00HA7MKAVVFDAV"});
+                        "011PLA470S0B9DJ"});
             table4.AddRow(new string[] {
-                        "00I0COBFWHOF27"});
+                        "019BFPQGKK5QT8N"});
             testRunner.When("User select \"Hostname\" rows in the grid", ((string)(null)), table4, "When ");
             testRunner.And("User create static list with \"TopFour TestName\" name", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
             testRunner.Then("\"TopFour TestName\" list is displayed to user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
@@ -306,7 +306,7 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_StaticLists
             table5.AddRow(new string[] {
                         "00BDM1JUR8IF419"});
             table5.AddRow(new string[] {
-                        "00CWZRC4UK6W20"});
+                        "00K4CEEQ737BA4L"});
             testRunner.When("User select \"Hostname\" rows in the grid", ((string)(null)), table5, "When ");
             testRunner.And("User create static list with \"TopTwo TestName\" name", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
             testRunner.Then("\"TopTwo TestName\" list is displayed to user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
@@ -318,7 +318,7 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_StaticLists
             table6.AddRow(new string[] {
                         "00BDM1JUR8IF419"});
             table6.AddRow(new string[] {
-                        "00CWZRC4UK6W20"});
+                        "00K4CEEQ737BA4L"});
             testRunner.When("User select \"Hostname\" rows in the grid", ((string)(null)), table6, "When ");
             testRunner.Then("User add selected rows in \"TopFour TestName\" list", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
             testRunner.Then("\"TopFour TestName\" list is displayed to user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");

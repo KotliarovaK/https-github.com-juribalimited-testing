@@ -53,7 +53,7 @@ Scenario Outline: EvergreenJnr_AllLists_CheckThatDataIsDisplayedAfterAddingColum
 Examples: 
 	| PageName     | ItemName      | TabName      | ColumnName  | CheckboxName        | NewColumnName       |
 	| Devices      | Hostname      | Applications | Application | Key                 | Key                 |
-	| Users        | Username      | Groups       | Group       | Key                 | Key                 |
+	#| Users        | Username      | Groups       | Group       | Key                 | Key                 |
 	| Applications | Application   | Projects     | Project     | Object ID           | Object ID           |
 	| Applications | Application   | Projects     | Project     | Object Key          | Object Key          |
 	| Mailboxes    | Email Address | Users        | Domain      | Key                 | Key                 |
@@ -81,21 +81,21 @@ Scenario Outline: EvergreenJnr_AllLists_CheckThatDataIsDisplayedAfterAddingColum
 
 Examples: 
 	| PageName     | ItemName      | TabName      | ExpandedSectionName | SectionName         | ColumnName    | CheckboxName         | NewColumnName        |
-	| Devices      | Hostname      | Applications | Application Summary | Application Detail  | Application   | Application Key      | Application Key      |
-	| Devices      | Hostname      | Applications | Application Summary | Application Detail  | Application   | Advertisement Key    | Advertisement Key    |
+	#| Devices      | Hostname      | Applications | Application Summary | Application Detail  | Application   | Application Key      | Application Key      |
+	#| Devices      | Hostname      | Applications | Application Summary | Application Detail  | Application   | Advertisement Key    | Advertisement Key    |
 	| Devices      | Hostname      | Applications | Application Summary | Application Detail  | Application   | Group Key            | Group Key            |
-	| Devices      | Hostname      | Applications | Application Summary | Application Detail  | Application   | Collection Key       | Collection Key       |
-	#| Devices      | Hostname      | Applications | Application Summary | Application Detail  | Application   | User Key             | User Key             |
-	| Devices      | Hostname      | Applications | Application Summary | Advertisements      | Application   | Key                  | Key                  |
+	#| Devices      | Hostname      | Applications | Application Summary | Application Detail  | Application   | Collection Key       | Collection Key       |
+	| Devices      | Hostname      | Applications | Application Summary | Application Detail  | Application   | User Key             | User Key             |
+	#| Devices      | Hostname      | Applications | Application Summary | Advertisements      | Application   | Key                  | Key                  |
 	| Devices      | Hostname      | Applications | Application Summary | Advertisements      | Application   | Application Key      | Application Key      |
-	| Devices      | Hostname      | Applications | Application Summary | Advertisements      | Application   | Site Key              | Site Key              |
-	| Devices      | Hostname      | Applications | Application Summary | Advertisements      | Application   | Collection Key       | Collection Key       |
-	| Devices      | Hostname      | Applications | Application Summary | Advertisements      | Application   | Program Key          | Program Key          |
-	| Devices      | Hostname      | Applications | Application Summary | Collections         | Collection    | Key                  | Key                  |
-	| Devices      | Hostname      | Applications | Application Summary | Collections         | Collection    | Site Key             | Site Key             |
-	| Applications | Application   | Details      | Application         | Advertisements      | Advertisement | Advertisement Key    | Advertisement Key    |
-	| Applications | Application   | Details      | Application         | Advertisements      | Advertisement | Collection Key       | Collection Key       |
-	| Applications | Application   | Details      | Application         | Programs            | Program       | Program Key          | Program Key          |
+	#| Devices      | Hostname      | Applications | Application Summary | Advertisements      | Application   | Site Key              | Site Key              |
+	#| Devices      | Hostname      | Applications | Application Summary | Advertisements      | Application   | Collection Key       | Collection Key       |
+	#| Devices      | Hostname      | Applications | Application Summary | Advertisements      | Application   | Program Key          | Program Key          |
+	#| Devices      | Hostname      | Applications | Application Summary | Collections         | Collection    | Key                  | Key                  |
+	#| Devices      | Hostname      | Applications | Application Summary | Collections         | Collection    | Site Key             | Site Key             |
+	#| Applications | Application   | Details      | Application         | Advertisements      | Advertisement | Advertisement Key    | Advertisement Key    |
+	#| Applications | Application   | Details      | Application         | Advertisements      | Advertisement | Collection Key       | Collection Key       |
+	#| Applications | Application   | Details      | Application         | Programs            | Program       | Program Key          | Program Key          |
 	| Applications | Application   | Distribution | Users               | Devices             | Device        | Computer Key         | Computer Key         |
 	| Applications | Application   | Distribution | Users               | Devices             | Device        | Owner Object Key     | Owner Object Key     |
 	| Applications | Application   | Distribution | Users               | Devices             | Device        | User Key             | User Key             |
@@ -260,7 +260,7 @@ Scenario: EvergreenJnr_MailboxesLists_CheckThatNoConsoleErrorsWhenViewingMailbox
 Scenario: EvergreenJnr_DevicesLists_CheckThatDataOfColumnsIsDisplayedInTheCustomFieldSection
 	When User clicks "Devices" on the left-hand menu
 	Then "Devices" list should be displayed to the user
-	When User perform search by "54S1MGR8DYMYKH"
+	When User perform search by "Benjamin S. Vaughn"
 	And User click content from "Hostname" column
 	And User navigates to the "Details" tab
 	Then User closes "Device" section on the Details Page
@@ -314,8 +314,8 @@ Scenario Outline: EvergreenJnr_AllLists_CheckThatNoConsoleErrorsAreDisplayedWhen
 Examples:
 	| PageName     | ColumnName    | TabName      | SelectedColumn |
 	| Devices      | Hostname      | Applications | Application    |
-	| Users        | Username      | Groups       | Group          |
-	| Applications | Application   | MSI          | File Name      |
+	#| Users        | Username      | Groups       | Group          |
+	#| Applications | Application   | MSI          | File Name      |
 	| Mailboxes    | Email Address | Users        | Username       |
 
 @Evergreen @Devices @EvergreenJnr_ItemDetails @ItemDetailsDisplay @DAS11628
@@ -327,10 +327,10 @@ Scenario: EvergreenJnr_DevicesLists_CheckThatTheFilterDropddownIsDisplayedFullyW
 	And User have opened Column Settings for "Installed" column in the Details Page table
 	And User clicks Filter button on the Column Settings panel
 	Then Filter panel has standard size
-	Then User select "FALSE" checkbox from filter on the Details Page
+	Then User select "False" checkbox from filter on the Details Page
 	Then Filter panel has standard size
 
-@Evergreen @Devices @EvergreenJnr_ItemDetails @ItemDetailsDisplay @DAS11647
+@Evergreen @Devices @EvergreenJnr_ItemDetails @ItemDetailsDisplay @DAS11647 @Not_Run
 Scenario Outline: EvergreenJnr_DevicesLists_CheckThatAutosizeOptionWorksCorrectlyForSiteColumn
 	When User clicks "Devices" on the left-hand menu
 	Then "Devices" list should be displayed to the user
@@ -366,13 +366,13 @@ Scenario: EvergreenJnr_DevicesLists_CheckThatOpenedSectionIsDisplayedCorrectlyOn
 	And User navigates to the "Applications" tab
 	Then User closes "Application Summary" section on the Details Page
 	When User opens "Application Detail" section on the Details Page
-	Then opened section is displayed correctly
+	Then section is loaded correctly
 	And User closes "Application Detail" section on the Details Page
 	When User opens "Advertisements" section on the Details Page
-	Then opened section is displayed correctly
+	Then section is loaded correctly
 	And User closes "Advertisements" section on the Details Page
 	When User opens "Collections" section on the Details Page
-	Then opened section is displayed correctly
+	Then section is loaded correctly
 
 @Evergreen @Devices @EvergreenJnr_ItemDetails @ItemDetailsDisplay @DAS12253
 Scenario: EvergreenJnr_DevicesLists_CheckThePossibilityToRecheckingTheWorkflowColumnBlanksFilterAfterUncheckingIt
@@ -396,10 +396,10 @@ Scenario: EvergreenJnr_DevicesLists_CheckThatOneUnknownFilterValueIsShownInGroup
 	And User clicks String Filter button for "Enabled" column
 	Then following Values are displayed in the filter on the Details Page
 	| Values  |
-	| TRUE    |
-	| FALSE   |
-	| UNKNOWN |
-	When User clicks "TRUE" checkbox from String Filter on the Details Page
+	| True    |
+	| False   |
+	| Unknown |
+	When User clicks "True" checkbox from String Filter on the Details Page
 	Then Content is present in the table on the Details Page
 
 @Evergreen @Mailboxes @EvergreenJnr_ItemDetails @ItemDetailsDisplay @DAS12245
