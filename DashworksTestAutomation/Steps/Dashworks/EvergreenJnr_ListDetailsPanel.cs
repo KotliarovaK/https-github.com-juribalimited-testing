@@ -7,6 +7,7 @@ using DashworksTestAutomation.Utils;
 using NUnit.Framework;
 using OpenQA.Selenium.Remote;
 using System;
+using OpenQA.Selenium;
 using TechTalk.SpecFlow;
 
 namespace DashworksTestAutomation.Steps.Dashworks
@@ -105,11 +106,41 @@ namespace DashworksTestAutomation.Steps.Dashworks
             Logger.Write("List Details panel is visible");
         }
 
+        [Then(@"Dependants section is collapsed by default")]
+        public void ThenDependantsSectionIsCollapsedByDefault()
+        {
+            var listDetailsElement = _driver.NowAt<ListDetailsElement>();
+            Assert.IsFalse(listDetailsElement.ExpandedDependantsSection.Displayed() , "Dependants section is expanded");
+        }
+
+        [When(@"User closes Permissions section in the list panel")]
+        public void WhenUserClosesPermissionsSectionInTheListPanel()
+        {
+            var listDetailsElement = _driver.NowAt<ListDetailsElement>();
+            listDetailsElement.ClosePermissionsButton.Click();
+        }
+
+        [Then(@"tooltip is displayed with ""(.*)"" text for Permissions section")]
+        public void ThenTooltipIsDisplayedWithTextForPermissionsSection(string text)
+        {
+            _driver.MouseHover(By.XPath(".//i[@class='material-icons mat-item_add ng-star-inserted']"));
+            var toolTipText = _driver.GetTooltipText();
+            Assert.AreEqual(text, toolTipText);
+        }
+
+        [Then(@"tooltip is displayed with ""(.*)"" text for Dependants section")]
+        public void ThenTooltipIsDisplayedWithTextForDependantsSection(string text)
+        {
+            _driver.MouseHover(By.XPath(".//i[@class='material-icons mat-item_add ng-star-inserted']"));
+            var toolTipText = _driver.GetTooltipText();
+            Assert.AreEqual(text, toolTipText);
+        }
+
         [When(@"User expand Dependants section")]
         public void WhenUserExpandDependantsSection()
         {
             var listDetailsElement = _driver.NowAt<ListDetailsElement>();
-            listDetailsElement.ExpandDependantsButton.Click();
+            listDetailsElement.OpenDependantsButton.Click();
         }
 
         [Then(@"Dependants section is displayed to the user")]
@@ -206,8 +237,8 @@ namespace DashworksTestAutomation.Steps.Dashworks
         public void ThenWarningMessageWithIsDisplayed(string message)
         {
             var listElement = _driver.NowAt<BaseDashboardPage>();
-            _driver.WaitWhileControlIsNotDisplayed<BaseDashboardPage>(() => listElement.WarningMessage);
-            Assert.AreEqual(message, listElement.WarningMessage.Text, $"{message} is not displayed");
+            _driver.WaitWhileControlIsNotDisplayed<BaseDashboardPage>(() => listElement.ErrorMessage);
+            Assert.AreEqual(message, listElement.ErrorMessage.Text, $"{message} is not displayed");
         }
 
         [Then(@"no Warning message is displayed in the lists panel")]
@@ -215,6 +246,13 @@ namespace DashworksTestAutomation.Steps.Dashworks
         {
             var listElement = _driver.NowAt<BaseDashboardPage>();
             Assert.IsFalse(listElement.WarningMessage.Displayed(), "Warning message is displayed in the list details panel");
+        }
+
+        [Then(@"""(.*)"" message is not displayed in the lists panel")]
+        public void ThenMessageIsNotDisplayedInTheListsPanel(string warningText)
+        {
+            var listElement = _driver.NowAt<BaseDashboardPage>();
+            Assert.IsFalse(listElement.DoesNotExistListMessage.Displayed(), $"{warningText} message is displayed in the list details panel");
         }
 
         [Then(@"Delete list button is disabled in List Details panel")]

@@ -526,7 +526,7 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_ListPanel
             testRunner.When("User add \"Compliance\" filter where type is \"Equals\" without added column and foll" +
                     "owing checkboxes:", ((string)(null)), table8, "When ");
             testRunner.Then("\"Compliance\" filter is added to the list", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-            testRunner.When("User create dynamic list with \"L TestList Custom List\" name on \"Users\" page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+            testRunner.When("User create custom list with \"L TestList Custom List\" name", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
             testRunner.Then("\"L TestList Custom List\" list is displayed to user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
             testRunner.When("User navigates to the \"All Users\" list", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
             testRunner.Then("\"Users\" list should be displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
@@ -539,7 +539,7 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_ListPanel
             testRunner.When("User add \"Babel(Engl: Another task\" filter where type is \"Equals\" without added c" +
                     "olumn and following checkboxes:", ((string)(null)), table9, "When ");
             testRunner.Then("\"Babel(Engl: Another task\" filter is added to the list", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-            testRunner.When("User create dynamic list with \"A TestList Custom List\" name on \"Users\" page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+            testRunner.When("User create custom list with \"A TestList Custom List\" name", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
             testRunner.Then("\"A TestList Custom List\" list is displayed to user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
             testRunner.When("User navigates to the \"All Users\" list", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
             testRunner.Then("\"Users\" list should be displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
@@ -548,9 +548,9 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_ListPanel
             TechTalk.SpecFlow.Table table10 = new TechTalk.SpecFlow.Table(new string[] {
                         "SelectedRowsName"});
             table10.AddRow(new string[] {
-                        "003F5D8E1A844B1FAA5"});
+                        "AAD1011948"});
             table10.AddRow(new string[] {
-                        "000F977AC8824FE39B8"});
+                        "AAH0343264"});
             testRunner.When("User select \"Username\" rows in the grid", ((string)(null)), table10, "When ");
             testRunner.And("User create static list with \"KY TestList Static List\" name", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
             testRunner.Then("\"KY TestList Static List\" list is displayed to user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
@@ -568,7 +568,7 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_ListPanel
             TechTalk.SpecFlow.Table table11 = new TechTalk.SpecFlow.Table(new string[] {
                         "SelectedRowsName"});
             table11.AddRow(new string[] {
-                        "002B5DC7D4D34D5C895"});
+                        "ABW1509426"});
             testRunner.When("User select \"Username\" rows in the grid", ((string)(null)), table11, "When ");
             testRunner.And("User create static list with \"QWER TestList Static List\" name", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
             testRunner.Then("\"QWER TestList Static List\" list is displayed to user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
@@ -583,7 +583,7 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_ListPanel
             testRunner.When("User add \"Enabled\" filter where type is \"Equals\" without added column and followi" +
                     "ng checkboxes:", ((string)(null)), table12, "When ");
             testRunner.Then("\"Enabled\" filter is added to the list", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-            testRunner.When("User create dynamic list with \"X TestList Custom List\" name on \"Users\" page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+            testRunner.When("User create custom list with \"X TestList Custom List\" name", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
             testRunner.Then("\"X TestList Custom List\" list is displayed to user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
             testRunner.When("User navigates to the \"All Users\" list", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
             testRunner.Then("\"Users\" list should be displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
@@ -790,13 +790,13 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_ListPanel
             TechTalk.SpecFlow.Table table16 = new TechTalk.SpecFlow.Table(new string[] {
                         "SelectedRowsName"});
             table16.AddRow(new string[] {
-                        "003F5D8E1A844B1FAA5"});
+                        "AAD1011948"});
             table16.AddRow(new string[] {
-                        "000F977AC8824FE39B8"});
+                        "AAH0343264"});
             table16.AddRow(new string[] {
-                        "002B5DC7D4D34D5C895"});
+                        "AAO3000042"});
             table16.AddRow(new string[] {
-                        "002B5DC7D4D34D5C895"});
+                        "AAQ9911340"});
             testRunner.When("User select \"Username\" rows in the grid", ((string)(null)), table16, "When ");
             testRunner.Then("User type \"Test\" into Static list name field", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
             testRunner.When("User clicks the Actions button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
@@ -873,9 +873,9 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_ListPanel
             TechTalk.SpecFlow.Table table17 = new TechTalk.SpecFlow.Table(new string[] {
                         "SelectedRowsName"});
             table17.AddRow(new string[] {
-                        "001BAQXT6JWFPI"});
+                        "00BDM1JUR8IF419"});
             table17.AddRow(new string[] {
-                        "00OMQQXWA1DRI6"});
+                        "00K4CEEQ737BA4L"});
             testRunner.When("User select \"Hostname\" rows in the grid", ((string)(null)), table17, "When ");
             testRunner.And("User create static list with \"Static List TestName\" name", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
             testRunner.Then("\"Static List TestName\" list is displayed to user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
@@ -948,20 +948,16 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_ListPanel
                         "Delete_Newly_Created_List"});
             this.ScenarioSetup(scenarioInfo);
             this.FeatureBackground();
-            testRunner.When("User clicks \"Devices\" on the left-hand menu", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-            testRunner.Then("\"Devices\" list should be displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-            testRunner.When("User clicks the Actions button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-            testRunner.Then("Actions panel is displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
             TechTalk.SpecFlow.Table table18 = new TechTalk.SpecFlow.Table(new string[] {
-                        "SelectedRowsName"});
+                        "ItemName"});
             table18.AddRow(new string[] {
                         "00BDM1JUR8IF419"});
             table18.AddRow(new string[] {
                         "011PLA470S0B9DJ"});
             table18.AddRow(new string[] {
                         "00OMQQXWA1DRI6"});
-            testRunner.When("User select \"Hostname\" rows in the grid", ((string)(null)), table18, "When ");
-            testRunner.And("User create static list with \"Static List TestName\" name", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+            testRunner.When("User create static list with \"Static List TestName\" name on \"Devices\" page with f" +
+                    "ollowing items", ((string)(null)), table18, "When ");
             testRunner.Then("\"Static List TestName\" list is displayed to user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
             testRunner.Then("\"3\" rows are displayed in the agGrid", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
             testRunner.When("User clicks the Columns button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
@@ -1059,9 +1055,9 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_ListPanel
             table23.AddRow(new string[] {
                         "00BDM1JUR8IF419"});
             table23.AddRow(new string[] {
-                        "011PLA470S0B9DJ"});
+                        "00K4CEEQ737BA4L"});
             table23.AddRow(new string[] {
-                        "00OMQQXWA1DRI6"});
+                        "011PLA470S0B9DJ"});
             testRunner.When("User select \"Hostname\" rows in the grid", ((string)(null)), table23, "When ");
             testRunner.And("User create static list with \"Static List TestName\" name", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
             testRunner.Then("\"Static List TestName\" list is displayed to user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
@@ -1224,22 +1220,24 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_ListPanel
             testRunner.Then("\"Compliance\" filter is added to the list", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
             testRunner.When("User click on \'Compliance\' column header", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
             testRunner.Then("data in table is sorted by \'Compliance\' column in ascending order", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-            testRunner.When("User create dynamic list with \"Dynamic List TestName\" name on \"Devices\" page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+            testRunner.When("User create custom list with \"Dynamic List TestName\" name", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
             testRunner.Then("\"Dynamic List TestName\" list is displayed to user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
             testRunner.When("User navigates to the \"All Devices\" list", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
             testRunner.Then("\"Devices\" list should be displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+            testRunner.When("User clicks the Actions button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+            testRunner.Then("Actions panel is displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
             TechTalk.SpecFlow.Table table28 = new TechTalk.SpecFlow.Table(new string[] {
-                        "ItemName"});
+                        "SelectedRowsName"});
             table28.AddRow(new string[] {
                         "00BDM1JUR8IF419"});
             table28.AddRow(new string[] {
+                        "00K4CEEQ737BA4L"});
+            table28.AddRow(new string[] {
                         "011PLA470S0B9DJ"});
             table28.AddRow(new string[] {
-                        "00OMQQXWA1DRI6"});
-            table28.AddRow(new string[] {
-                        "00SH8162NAS524"});
-            testRunner.When("User create static list with \"Static List TestName\" name on \"Devices\" page with f" +
-                    "ollowing items", ((string)(null)), table28, "When ");
+                        "019BFPQGKK5QT8N"});
+            testRunner.When("User select \"Hostname\" rows in the grid", ((string)(null)), table28, "When ");
+            testRunner.And("User create static list with \"Static List TestName\" name", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
             testRunner.Then("\"Static List TestName\" list is displayed to user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
             testRunner.When("User clicks the Columns button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
             testRunner.Then("Columns panel is displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");

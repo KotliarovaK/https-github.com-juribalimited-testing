@@ -103,6 +103,28 @@ namespace DashworksTestAutomation.Helpers
         }
     }
 
+    public class TreeList : BaseFilter
+    {
+        private string _value { get; set; }
+
+        public TreeList(RemoteWebDriver driver, string operatorValue, bool acceptCheckbox, string value) : base(
+            driver, operatorValue, acceptCheckbox)
+        {
+            _value = value;
+        }
+
+        public override void Do()
+        {
+            SelectOperator();
+            _driver.WaitForDataLoading();
+            _driver.FindElement(
+                    By.XPath(".//div[@class='filterAddPanel ng-star-inserted']//input[@placeholder='Search']"))
+                .SendKeys(_value);
+            _driver.FindElement(By.XPath(".//i[@class='material-icons mat-18 mat-done check-item hideElementIcon']")).Click();
+            SaveFilter();
+        }
+    }
+
     public class LookupFilterTable : BaseFilter
     {
         protected Table Table { get; set; }
@@ -126,7 +148,7 @@ namespace DashworksTestAutomation.Helpers
                         By.XPath(".//div[@class='filterAddPanel ng-star-inserted']//input[@placeholder='Search']"))
                     .SendKeys(row["SelectedValues"]);
                 _driver.FindElement(By.XPath(
-                        $".//div[@class='filterAddPanel ng-star-inserted']//input[@placeholder='Search']"))
+                        ".//div[@class='filterAddPanel ng-star-inserted']//input[@placeholder='Search']"))
                     .Clear();
                 _driver.FindElement(By.XPath(
                         $".//div[@class='filterAddPanel ng-star-inserted']//span[contains(text(),'{row["SelectedValues"]}')]"))

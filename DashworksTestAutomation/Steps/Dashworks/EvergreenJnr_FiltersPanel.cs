@@ -186,7 +186,6 @@ namespace DashworksTestAutomation.Steps.Dashworks
         private void CreateFilterWithCheckboxes(string operatorValue, bool columnOption,
             Table table)
         {
-            var filterElement = _driver.NowAt<FiltersElement>();
             var filter = new CheckBoxesFilter(_driver, operatorValue, columnOption, table);
             filter.Do();
         }
@@ -284,6 +283,16 @@ namespace DashworksTestAutomation.Steps.Dashworks
             filter.Do();
         }
 
+        [When(@"User add ""(.*)"" filter where type is ""(.*)"" with added column and ""(.*)"" Tree List option")]
+        public void WhenUserAddFilterWhereTypeIsWithoutAddedColumnAndTreeListOption(string filterName, string operatorValue,
+            string filterValue)
+        {
+            var filtersNames = _driver.NowAt<FiltersElement>();
+            filtersNames.AddFilter(filterName);
+            var filter = new TreeList(_driver, operatorValue, true, filterValue);
+            filter.Do();
+        }
+
         [When(@"User add ""(.*)"" filter where type is ""(.*)"" with added column and ""(.*)"" Lookup option")]
         public void WhenUserAddFilterWhereTypeIsWithAddedColumnAndLookupOption(string filterName, string operatorValue,
             string filterValue)
@@ -291,6 +300,16 @@ namespace DashworksTestAutomation.Steps.Dashworks
             var filtersNames = _driver.NowAt<FiltersElement>();
             filtersNames.AddFilter(filterName);
             var filter = new LookupFilter(_driver, operatorValue, true, filterValue);
+            filter.Do();
+        }
+
+        [When(@"User add ""(.*)"" filter where type is ""(.*)"" without added column and ""(.*)"" Lookup option")]
+        public void WhenUserAddFilterWhereTypeIsWithoutAddedColumnAndLookupOption(string filterName, string operatorValue,
+            string filterValue)
+        {
+            var filtersNames = _driver.NowAt<FiltersElement>();
+            filtersNames.AddFilter(filterName);
+            var filter = new LookupFilter(_driver, operatorValue, false, filterValue);
             filter.Do();
         }
 
@@ -391,6 +410,13 @@ namespace DashworksTestAutomation.Steps.Dashworks
             filterElement.GetEditFilterButton(filterName).Click();
         }
 
+        [Then(@"""(.*)"" list is displayed for Saved List filter")]
+        public void ThenListIsDisplayedForSavedListFilter(string listName)
+        {
+            var filterElement = _driver.NowAt<FiltersElement>();
+            Assert.IsTrue(filterElement.ListNameForSavedListFilter(listName), $"{listName} is not displayed for Saved List filter");
+        }
+
         [When(@"User navigate to Edit button for ""(.*)"" filter")]
         public void WhenUserNavigateToEditButtonForFilter(string filterName)
         {
@@ -399,10 +425,14 @@ namespace DashworksTestAutomation.Steps.Dashworks
         }
 
         [Then(@"tooltip is displayed with ""(.*)"" text for edit filter button")]
-        public void ThenTooltipIsDisplayedWithTextForEditFilterButton(string tooltipText)
+        public void ThenTooltipIsDisplayedWithTextForEditFilterButton(string text)
         {
+            //var filterElement = _driver.NowAt<FiltersElement>();
+            //filterElement.EditFilterButtonToolTip(tooltipText);
             var filterElement = _driver.NowAt<FiltersElement>();
-            filterElement.EditFilterButton(tooltipText);
+            _driver.MouseHover(filterElement.EditFilterButton);
+            var toolTipText = _driver.GetTooltipText();
+            Assert.AreEqual(text, toolTipText);
         }
 
         [Then(@"""(.*)"" checkbox is checked")]
@@ -526,6 +556,16 @@ namespace DashworksTestAutomation.Steps.Dashworks
             Assert.AreEqual(optionName.Split(',').Select(x => x.TrimStart(' ').TrimEnd(' ')).ToList(),
                 availableOptions, "Some options are not available for selected filter");
             filterElement.OperatorOptions.First().SendKeys(OpenQA.Selenium.Keys.Escape);
+        }
+
+        [Then(@"""(.*)"" checkbox is available for this filter")]
+        public void ThenCheckboxIsAvailableForThisFilter(string checkboxName)
+        {
+            var filterElement = _driver.NowAt<FiltersElement>();
+            var availableOptions = filterElement.FilterCheckboxOptions.Select(value => value.Text).ToList();
+            Assert.AreEqual(checkboxName.Split(',').Select(x => x.TrimStart(' ').TrimEnd(' ')).ToList(),
+                availableOptions, "Some checkbox are not available for selected filter");
+            //filterElement.FilterCheckboxOptions.First().SendKeys(OpenQA.Selenium.Keys.Escape);
         }
 
         [When(@"User deletes one character from the Search field")]
@@ -704,6 +744,14 @@ namespace DashworksTestAutomation.Steps.Dashworks
             var filterPanel = _driver.NowAt<FiltersElement>();
             _driver.WaitWhileControlIsNotDisplayed<FiltersElement>(() => filterPanel.SaveButton);
             Assert.IsTrue(Convert.ToBoolean(filterPanel.SaveButton.GetAttribute("disabled")), "Save Button is active");
+        }
+
+        [Then(@"User save change in current filter")]
+        public void ThenUserSaveChangeInCurrentFilter()
+        {
+            var filterPanel = _driver.NowAt<FiltersElement>();
+            _driver.WaitWhileControlIsNotDisplayed<FiltersElement>(() => filterPanel.SaveButton);
+            filterPanel.SaveButton.Click();
         }
 
         [Then(@"""(.*)"" section is not displayed in the Filter panel")]

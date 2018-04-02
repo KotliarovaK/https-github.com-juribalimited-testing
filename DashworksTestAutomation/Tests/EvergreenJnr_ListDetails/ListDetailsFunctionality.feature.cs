@@ -946,6 +946,7 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_ListDetails
         [NUnit.Framework.CategoryAttribute("EvergreenJnr_ListDetails")]
         [NUnit.Framework.CategoryAttribute("ListDetailsFunctionality")]
         [NUnit.Framework.CategoryAttribute("DAS12190")]
+        [NUnit.Framework.CategoryAttribute("DAS12204")]
         [NUnit.Framework.CategoryAttribute("Delete_Newly_Created_List")]
         public virtual void EvergreenJnr_AllLists_CheckThatTwoDependencyAreDisplayedInTheDependentsBlock()
         {
@@ -981,6 +982,7 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_ListDetails
                         "EvergreenJnr_ListDetails",
                         "ListDetailsFunctionality",
                         "DAS12190",
+                        "DAS12204",
                         "Delete_Newly_Created_List"});
             this.ScenarioSetup(scenarioInfo);
             this.FeatureBackground();
@@ -1026,6 +1028,7 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_ListDetails
             testRunner.Then("Settings panel is displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
             testRunner.When("User clicks Manage in the list panel", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
             testRunner.Then("List details panel is displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+            testRunner.Then("Dependants section is collapsed by default", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
             testRunner.When("User expand Dependants section", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
             testRunner.Then("\"NewDevice\" list is displayed in the Dependants section", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
             testRunner.And("\"Device1\" list is displayed in the Dependants section", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
@@ -1039,6 +1042,7 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_ListDetails
         [NUnit.Framework.CategoryAttribute("EvergreenJnr_ListDetails")]
         [NUnit.Framework.CategoryAttribute("ListDetailsFunctionality")]
         [NUnit.Framework.CategoryAttribute("DAS12169")]
+        [NUnit.Framework.CategoryAttribute("DAS12286")]
         [NUnit.Framework.CategoryAttribute("Delete_Newly_Created_List")]
         public virtual void EvergreenJnr_AllLists_CheckThatListDoesNotExistErrorWhenViewingDependentList()
         {
@@ -1074,6 +1078,7 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_ListDetails
                         "EvergreenJnr_ListDetails",
                         "ListDetailsFunctionality",
                         "DAS12169",
+                        "DAS12286",
                         "Delete_Newly_Created_List"});
             this.ScenarioSetup(scenarioInfo);
             this.FeatureBackground();
@@ -1090,6 +1095,12 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_ListDetails
             testRunner.Then("\"Vendor\" filter is added to the list", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
             testRunner.When("User create custom list with \"Adobe Apps\" name", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
             testRunner.Then("\"Adobe Apps\" list is displayed to user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+            testRunner.When("User clicks Settings button in the list panel", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+            testRunner.Then("Settings panel is displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+            testRunner.When("User clicks Manage in the list panel", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+            testRunner.Then("List details panel is displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+            testRunner.When("User closes Permissions section in the list panel", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+            testRunner.Then("tooltip is displayed with \"Open\" text for Permissions section", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
             testRunner.When("User clicks \"Devices\" on the left-hand menu", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
             testRunner.Then("\"Devices\" list should be displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
             testRunner.When("User clicks the Filters button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
@@ -1113,11 +1124,13 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_ListDetails
             testRunner.Then("Settings panel is displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
             testRunner.When("User clicks Manage in the list panel", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
             testRunner.Then("List details panel is displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+            testRunner.Then("tooltip is displayed with \"Open\" text for Dependants section", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
             testRunner.When("User expand Dependants section", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
             testRunner.Then("Dependants section is displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
             testRunner.When("User clicks \"Devices with Adobe\" list in the Dependants section", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
             testRunner.Then("\"Devices with Adobe\" list is displayed to user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-            testRunner.Then("no Warning message is displayed in the lists panel", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+            testRunner.And("\"This list does not exist or you do not have access to it\" message is not display" +
+                    "ed in the lists panel", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
             this.ScenarioCleanup();
         }
     }

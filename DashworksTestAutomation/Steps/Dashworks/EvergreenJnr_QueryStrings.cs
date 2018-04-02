@@ -114,19 +114,20 @@ namespace DashworksTestAutomation.Steps.Dashworks
         public void ThenAgGridMainObjectListIsReturnedWithData()
         {
             var dashboardPage = _driver.NowAt<BaseDashboardPage>();
-            if (!dashboardPage.NoResultsFoundMessage.Displayed())
-            {
-                _driver.WaitForDataLoading();
-                Assert.IsTrue(dashboardPage.ResultsOnPageCount.Displayed(), "Results count is not displayed");
-                Assert.IsTrue(dashboardPage.TableBody.Displayed(), "Table is not displayed");
-                Logger.Write("Main agGrid dataset is displayed");
-            }
-            else
+
+            _driver.WaitForDataLoading();
+            if (!dashboardPage.ResultsOnPageCount.Displayed())
             {
                 Assert.IsTrue(dashboardPage.NoResultsFoundMessage.Displayed(),
                     "'No Results Found' message is not displayed");
                 Logger.Write(
                     $"Evergreen agGrid Search returned '{dashboardPage.NoResultsFoundMessage.Text}' message");
+            }
+            else
+            {
+                Assert.IsTrue(dashboardPage.ResultsOnPageCount.Displayed(), "Results count is not displayed");
+                Assert.IsTrue(dashboardPage.TableBody.Displayed(), "Table is not displayed");
+                Logger.Write("Main agGrid dataset is displayed");
             }
         }
     }

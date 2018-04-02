@@ -85,7 +85,13 @@ namespace DashworksTestAutomation.Pages.Evergreen
         public IWebElement UncheckedCheckbox { get; set; }
 
         [FindsBy(How = How.XPath, Using = ".//div[@class='inline-error ng-star-inserted']")]
+        public IWebElement ErrorMessage { get; set; }
+
+        [FindsBy(How = How.XPath, Using = ".//div[@class='inline-tip ng-star-inserted']")]
         public IWebElement WarningMessage { get; set; }
+
+        [FindsBy(How = How.XPath, Using = ".//div[text()='This list does not exist or you do not have access to it']")]
+        public IWebElement DoesNotExistListMessage { get; set; }
 
         [FindsBy(How = How.XPath, Using = ".//i")]
         public IWebElement ItemImage { get; set; }
@@ -194,7 +200,7 @@ namespace DashworksTestAutomation.Pages.Evergreen
         {
             By by = By.XPath(
                 ".//*[@id='submenuBlock']/div[contains(@class, 'active-list-wrapper')]/ul/li/span[@class='submenu-actions-list-name']");
-            Driver.WaitWhileControlContainingTextIsNotDisplayed(by);
+            //Driver.WaitWhileControlContainingTextIsNotDisplayed(by);
             return Driver.FindElement(by).Text;
         }
 

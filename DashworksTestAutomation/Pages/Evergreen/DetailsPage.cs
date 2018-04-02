@@ -17,7 +17,7 @@ namespace DashworksTestAutomation.Pages.Evergreen
         public IWebElement GroupIcon { get; set; }
 
         [FindsBy(How = How.XPath, Using = ".//div[@class='empty-message ng-star-inserted']")]
-        public IWebElement NoMailboxOwnerFoundMessage { get; set; }
+        public IWebElement NoFoundContent { get; set; }
 
         [FindsBy(How = How.XPath, Using = ".//div[@class='mat-tab-body-content ng-trigger ng-trigger-translateTab']")]
         public IWebElement ItemDetailsContainer { get; set; }
@@ -39,6 +39,12 @@ namespace DashworksTestAutomation.Pages.Evergreen
 
         [FindsBy(How = How.XPath, Using = ".//td[@class='fld-value']//span[@class='ng-star-inserted']")]
         public IList<IWebElement> TableRowDetails { get; set; }
+
+        [FindsBy(How = How.XPath, Using = ".//div[@id='agGridTable']")]
+        public IWebElement OpenedSection { get; set; }
+
+        [FindsBy(How = How.XPath, Using = ".//div[@class='chartContainer ng-star-inserted']")]
+        public IWebElement GraphicInOpenedSection { get; set; }
 
         public override List<By> GetPageIdentitySelectors()
         {
