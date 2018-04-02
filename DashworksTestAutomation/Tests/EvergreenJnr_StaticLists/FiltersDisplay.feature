@@ -71,6 +71,7 @@ Scenario: EvergreenJnr_DevicesList_CheckThat500ErrorIsNotDisplayedWhenAddingNewO
 	And User create static list with "TopFour TestName" name
 	Then "TopFour TestName" list is displayed to user
 	When User navigates to the "All Devices" list
+	Then "Devices" list should be displayed to the user
 	When User clicks the Actions button
 	Then Actions panel is displayed to the user
 	Then "Devices" list should be displayed to the user
@@ -82,7 +83,6 @@ Scenario: EvergreenJnr_DevicesList_CheckThat500ErrorIsNotDisplayedWhenAddingNewO
 	Then "TopTwo TestName" list is displayed to user
 	When User clicks the Actions button
 	Then Actions panel is displayed to the user
-	Then "Devices" list should be displayed to the user
 	When User select "Hostname" rows in the grid
 	| SelectedRowsName |
 	| 00BDM1JUR8IF419  |
