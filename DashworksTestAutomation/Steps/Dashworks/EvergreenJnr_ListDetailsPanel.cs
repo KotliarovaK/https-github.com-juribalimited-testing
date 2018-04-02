@@ -106,6 +106,13 @@ namespace DashworksTestAutomation.Steps.Dashworks
             Logger.Write("List Details panel is visible");
         }
 
+        [Then(@"Dependants section is collapsed by default")]
+        public void ThenDependantsSectionIsCollapsedByDefault()
+        {
+            var listDetailsElement = _driver.NowAt<ListDetailsElement>();
+            Assert.IsFalse(listDetailsElement.ExpandedDependantsSection.Displayed() , "Dependants section is expanded");
+        }
+
         [When(@"User closes Permissions section in the list panel")]
         public void WhenUserClosesPermissionsSectionInTheListPanel()
         {
@@ -239,6 +246,13 @@ namespace DashworksTestAutomation.Steps.Dashworks
         {
             var listElement = _driver.NowAt<BaseDashboardPage>();
             Assert.IsFalse(listElement.WarningMessage.Displayed(), "Warning message is displayed in the list details panel");
+        }
+
+        [Then(@"""(.*)"" message is not displayed in the lists panel")]
+        public void ThenMessageIsNotDisplayedInTheListsPanel(string warningText)
+        {
+            var listElement = _driver.NowAt<BaseDashboardPage>();
+            Assert.IsFalse(listElement.DoesNotExistListMessage.Displayed(), $"{warningText} message is displayed in the list details panel");
         }
 
         [Then(@"Delete list button is disabled in List Details panel")]

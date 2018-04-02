@@ -381,9 +381,9 @@ Scenario: EvergreenJnr_DevicesLists_CheckThePossibilityToRecheckingTheWorkflowCo
 	When User click content from "Hostname" column
 	And User navigates to the "Projects" tab
 	And User opens "Device Projects" section on the Details Page
-	And User clicks Filter button under "Workflow" column
-	And User clicks "(Blanks)" checkbox from string filter on the Details Page
-	And User clicks "(Blanks)" checkbox from string filter on the Details Page
+	And User clicks String Filter button for "Workflow" column
+	And User clicks "(Blanks)" checkbox from String Filter on the Details Page
+	And User clicks "(Blanks)" checkbox from String Filter on the Details Page
 	Then "(Blanks)" checkbox is checked on the Details Page
 
 @Evergreen @Devices @EvergreenJnr_ItemDetails @ItemDetailsDisplay @DAS12283
@@ -393,11 +393,41 @@ Scenario: EvergreenJnr_DevicesLists_CheckThatOneUnknownFilterValueIsShownInGroup
 	When User type "Denied RODC Password Replication Group" in Global Search Field
 	Then User clicks on "Denied RODC Password Replication Group" search result
 	When User navigates to the "Members" tab
-	And User clicks Filter button under "Enabled" column
+	And User clicks String Filter button for "Enabled" column
 	Then following Values are displayed in the filter on the Details Page
 	| Values  |
 	| TRUE    |
 	| FALSE   |
 	| UNKNOWN |
-	When User clicks "TRUE" checkbox from string filter on the Details Page
+	When User clicks "TRUE" checkbox from String Filter on the Details Page
 	Then Content is present in the table on the Details Page
+
+@Evergreen @Mailboxes @EvergreenJnr_ItemDetails @ItemDetailsDisplay @DAS12245
+Scenario: EvergreenJnr_MailboxesLists_CheckThatListLoadedCorrectlyAndNoConsoleErrorIsNotDisplayed
+	When User clicks "Mailboxes" on the left-hand menu
+	Then "Mailboxes" list should be displayed to the user
+	When User perform search by "julia.bell@juriba.com"
+	And User click content from "Email Address" column
+	When User navigates to the "Trend" tab
+	Then Highcharts graphic is displayed on the Details Page
+	And There are no errors in the browser console
+	When User navigates to the "Details" tab
+	Then There are no errors in the browser console
+	When User navigates to the "Trend" tab
+	Then There are no errors in the browser console
+	When User clicks "Users" on the left-hand menu
+	Then "Users" list should be displayed to the user
+	And There are no errors in the browser console
+
+@Evergreen @Devices @EvergreenJnr_ItemDetails @ItemDetailsDisplay @DAS12239
+Scenario: EvergreenJnr_DevicesLists_CheckThatAllTextIsDisplayedAfterClearingFilters
+	When User clicks "Devices" on the left-hand menu
+	Then "Devices" list should be displayed to the user
+	When User click content from "Hostname" column
+	And User navigates to the "Applications" tab
+	Then All text is displayed for "Compliance" column in the String Filter
+	When  User clicks String Filter button for "Compliance" column
+	And User clicks "Red" checkbox from String Filter on the Details Page
+	Then All text is not displayed for "Compliance" column in the String Filter
+	When User clicks Reset Filters button on the Details Page
+	Then All text is displayed for "Compliance" column in the String Filter
