@@ -431,3 +431,17 @@ Scenario: EvergreenJnr_DevicesLists_CheckThatAllTextIsDisplayedAfterClearingFilt
 	Then All text is not displayed for "Compliance" column in the String Filter
 	When User clicks Reset Filters button on the Details Page
 	Then All text is displayed for "Compliance" column in the String Filter
+
+@Evergreen @Mailboxes @EvergreenJnr_ItemDetails @ItemDetailsDisplay @DAS12088
+Scenario: EvergreenJnr_MailboxesLists_CheckThatMailboxPermissionsAndFolderPermissionsDataAreDisplayedCorrectly
+	When User clicks "Mailboxes" on the left-hand menu
+	Then "Mailboxes" list should be displayed to the user
+	When User perform search by "abraham.f.wong@dwlabs.local"
+	And User click content from "Email Address" column
+	And User navigates to the "Users" tab
+	Then User closes "Users" section on the Details Page
+	When User opens "Mailbox Permissions" section on the Details Page
+	Then Content is present in the table on the Details Page
+	Then User closes "Mailbox Permissions" section on the Details Page
+	When User opens "Folder Permissions" section on the Details Page
+	Then Content is present in the table on the Details Page
