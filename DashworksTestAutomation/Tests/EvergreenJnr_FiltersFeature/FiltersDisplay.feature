@@ -995,11 +995,11 @@ Scenario: EvergreenJnr_AllLists_CheckThatTextInTheFilterPanelDisplaysTheCurrentL
 	When User clicks "Applications" on the left-hand menu
 	Then "Applications" list should be displayed to the user
 	When User click on 'Application' column header
-	And User create custom list with "ApplicationList1" name
+	When User create dynamic list with "ApplicationList1" name on "Applications" page
 	When User navigates to the "All Applications" list
 	Then "Applications" list should be displayed to the user
 	When User click on 'Vendor' column header
-	And User create custom list with "ApplicationList2" name
+	When User create dynamic list with "ApplicationList2" name on "Applications" page
 	When User clicks "Devices" on the left-hand menu
 	Then "Devices" list should be displayed to the user
 	When User clicks the Filters button
@@ -1007,7 +1007,7 @@ Scenario: EvergreenJnr_AllLists_CheckThatTextInTheFilterPanelDisplaysTheCurrentL
 	When User add "Application (Saved List)" filter where type is "In list" with SelectedList list and following Association:
 	| SelectedList     | Association    |
 	| ApplicationList1 | Used on device |
-	When User create custom list with "DevicesList1" name
+	When User create dynamic list with "DevicesList1" name on "Devices" page
 	Then "(Application (Saved List) = ApplicationList1 ASSOCIATION = ("used on device"))" text is displayed in filter container
 	When User clicks "Devices" on the left-hand menu
 	Then "Devices" list should be displayed to the user
@@ -1017,7 +1017,7 @@ Scenario: EvergreenJnr_AllLists_CheckThatTextInTheFilterPanelDisplaysTheCurrentL
 	When User clicks "Devices" on the left-hand menu
 	Then "Devices" list should be displayed to the user
 	When User navigates to the "DevicesList1" list
-	#Then "(Application (Saved List) = 59 ASSOCIATION = ("used on device"))" text is displayed in filter container
+	#Then "(Application (Saved List) = {LIST_ID} ASSOCIATION = ("used on device"))" text is displayed in filter container for "ApplicationList1" list name
 	When User clicks the Filters button
 	Then Filters panel is displayed to the user
 	Then "Application in list [List not found] used on device" is displayed in added filter info
