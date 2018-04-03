@@ -150,8 +150,7 @@ namespace DashworksTestAutomation.Steps.Dashworks
 
         [When(@"User add ""(.*)"" filter where type is ""(.*)"" with added column and following value:")]
         public void WhenUserAddFilterWhereTypeIsWithAddedColumnAndFollowingValue(string filterName,
-            string operatorValue,
-            Table table)
+            string operatorValue, Table table)
         {
             var filtersNames = _driver.NowAt<FiltersElement>();
             filtersNames.AddFilter(filterName);
