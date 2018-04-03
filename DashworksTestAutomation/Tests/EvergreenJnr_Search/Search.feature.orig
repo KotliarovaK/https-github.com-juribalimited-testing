@@ -62,7 +62,7 @@ Scenario: EvergreenJnr_AllLists_CheckSearchFilterAndTableContentDuringNavigation
 	And "17,225" rows are displayed in the agGrid
 	And Search field is empty
 
-@Evergreen @Devices @EvergreenJnr_Search @Search @DAS12206 @DAS10475
+@Evergreen @Devices @EvergreenJnr_Search @Search @DAS12206
 Scenario: EvergreenJnr_DevicesList_SearchTests
 	When User add following columns using URL to the "Devices" page:
 	| ColumnName          |
