@@ -325,7 +325,6 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_ItemDetails
         [NUnit.Framework.CategoryAttribute("DAS12235")]
         [NUnit.Framework.TestCaseAttribute("Devices", "Hostname", "Applications", "Application Summary", "Application Detail", "Application", "Group Key", "Group Key", new string[0])]
         [NUnit.Framework.TestCaseAttribute("Devices", "Hostname", "Applications", "Application Summary", "Application Detail", "Application", "User Key", "User Key", new string[0])]
-        [NUnit.Framework.TestCaseAttribute("Devices", "Hostname", "Applications", "Application Summary", "Advertisements", "Application", "Application Key", "Application Key", new string[0])]
         [NUnit.Framework.TestCaseAttribute("Applications", "Application", "Distribution", "Users", "Devices", "Device", "Computer Key", "Computer Key", new string[0])]
         [NUnit.Framework.TestCaseAttribute("Applications", "Application", "Distribution", "Users", "Devices", "Device", "Owner Object Key", "Owner Object Key", new string[0])]
         [NUnit.Framework.TestCaseAttribute("Applications", "Application", "Distribution", "Users", "Devices", "Device", "User Key", "User Key", new string[0])]
