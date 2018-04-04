@@ -1,4 +1,4 @@
-﻿@retry:0
+﻿@retry:1
 Feature: FiltersDisplay
 	Runs Dynamic Filters Display related tests
 
