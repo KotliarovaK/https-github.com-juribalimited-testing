@@ -1,4 +1,4 @@
-﻿@retry:1
+﻿@retry:0
 Feature: FiltersDisplay
 	Runs Dynamic Filters Display related tests
 
@@ -585,7 +585,7 @@ Scenario: EvergreenJnr_ApplicationsList_CheckThat500ErrorIsNotDisplayedForFilter
 	Then "Application" filter is added to the list
 	And "(Application = DirectX SDK (Version 8.1) (3663.0)) OR (Application = "WPF/E" (codename) Community Technology Preview (Feb 2007))" text is displayed in filter container
 
-@Evergreen @Devices @Evergreen_FiltersFeature @FiltersDisplay @DAS11054 @DAS11578 @Not_Run
+@Evergreen @Devices @Evergreen_FiltersFeature @FiltersDisplay @DAS11054 @DAS11578
 Scenario: EvergreenJnr_DevicesList_CheckThatSpaceAfterCommasInTheFiltersContainerIsDisplayed
 	When User clicks "Devices" on the left-hand menu
 	Then "Devices" list should be displayed to the user
@@ -624,9 +624,9 @@ Scenario: EvergreenJnr_DevicesList_CheckThatSpaceAfterCommasInTheFiltersContaine
 	| Values |
 	|        |
 	Then "Department Code" filter is added to the list
-	When User add "Boot Up Date" filter where type is "Before" with added column and "Thu Dec 14 2017" Date filter
+	When User add "Boot Up Date" filter where type is "Before" with added column and "14 Dec 2017" Date filter
 	Then "Boot Up Date" filter is added to the list
-	When User add "Boot Up Date" filter where type is "After" with added column and "Sun Dec 03 2017" Date filter
+	When User add "Boot Up Date" filter where type is "After" with added column and "3 Dec 2017" Date filter
 	Then "Boot Up Date" filter is added to the list
 	When User add "CPU Count" filter where type is "Greater than" with added column and following value:
 	| Values |
