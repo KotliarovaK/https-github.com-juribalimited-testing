@@ -1,4 +1,4 @@
-﻿@retry:1
+﻿@retry:0
 Feature: FiltersDisplay
 	Runs Dynamic Filters Display related tests
 
@@ -585,7 +585,7 @@ Scenario: EvergreenJnr_ApplicationsList_CheckThat500ErrorIsNotDisplayedForFilter
 	Then "Application" filter is added to the list
 	And "(Application = DirectX SDK (Version 8.1) (3663.0)) OR (Application = "WPF/E" (codename) Community Technology Preview (Feb 2007))" text is displayed in filter container
 
-@Evergreen @Devices @Evergreen_FiltersFeature @FiltersDisplay @DAS11054 @DAS11578 @Not_Run
+@Evergreen @Devices @Evergreen_FiltersFeature @FiltersDisplay @DAS11054 @DAS11578
 Scenario: EvergreenJnr_DevicesList_CheckThatSpaceAfterCommasInTheFiltersContainerIsDisplayed
 	When User clicks "Devices" on the left-hand menu
 	Then "Devices" list should be displayed to the user
@@ -624,9 +624,9 @@ Scenario: EvergreenJnr_DevicesList_CheckThatSpaceAfterCommasInTheFiltersContaine
 	| Values |
 	|        |
 	Then "Department Code" filter is added to the list
-	When User add "Boot Up Date" filter where type is "Before" with added column and "Thu Dec 14 2017" Date filter
+	When User add "Boot Up Date" filter where type is "Before" with added column and "14 Dec 2017" Date filter
 	Then "Boot Up Date" filter is added to the list
-	When User add "Boot Up Date" filter where type is "After" with added column and "Sun Dec 03 2017" Date filter
+	When User add "Boot Up Date" filter where type is "After" with added column and "3 Dec 2017" Date filter
 	Then "Boot Up Date" filter is added to the list
 	When User add "CPU Count" filter where type is "Greater than" with added column and following value:
 	| Values |
@@ -995,11 +995,11 @@ Scenario: EvergreenJnr_AllLists_CheckThatTextInTheFilterPanelDisplaysTheCurrentL
 	When User clicks "Applications" on the left-hand menu
 	Then "Applications" list should be displayed to the user
 	When User click on 'Application' column header
-	And User create custom list with "ApplicationList1" name
+	When User create dynamic list with "ApplicationList1" name on "Applications" page
 	When User navigates to the "All Applications" list
 	Then "Applications" list should be displayed to the user
 	When User click on 'Vendor' column header
-	And User create custom list with "ApplicationList2" name
+	When User create dynamic list with "ApplicationList2" name on "Applications" page
 	When User clicks "Devices" on the left-hand menu
 	Then "Devices" list should be displayed to the user
 	When User clicks the Filters button
@@ -1007,7 +1007,7 @@ Scenario: EvergreenJnr_AllLists_CheckThatTextInTheFilterPanelDisplaysTheCurrentL
 	When User add "Application (Saved List)" filter where type is "In list" with SelectedList list and following Association:
 	| SelectedList     | Association    |
 	| ApplicationList1 | Used on device |
-	When User create custom list with "DevicesList1" name
+	When User create dynamic list with "DevicesList1" name on "Devices" page
 	Then "(Application (Saved List) = ApplicationList1 ASSOCIATION = ("used on device"))" text is displayed in filter container
 	When User clicks "Devices" on the left-hand menu
 	Then "Devices" list should be displayed to the user
@@ -1017,7 +1017,7 @@ Scenario: EvergreenJnr_AllLists_CheckThatTextInTheFilterPanelDisplaysTheCurrentL
 	When User clicks "Devices" on the left-hand menu
 	Then "Devices" list should be displayed to the user
 	When User navigates to the "DevicesList1" list
-	#Then "(Application (Saved List) = 59 ASSOCIATION = ("used on device"))" text is displayed in filter container
+	#Then "(Application (Saved List) = {LIST_ID} ASSOCIATION = ("used on device"))" text is displayed in filter container for "ApplicationList1" list name
 	When User clicks the Filters button
 	Then Filters panel is displayed to the user
 	Then "Application in list [List not found] used on device" is displayed in added filter info

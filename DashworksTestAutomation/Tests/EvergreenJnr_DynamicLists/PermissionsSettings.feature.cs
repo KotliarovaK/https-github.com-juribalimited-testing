@@ -149,7 +149,7 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_DynamicLists
         [NUnit.Framework.CategoryAttribute("Users")]
         [NUnit.Framework.CategoryAttribute("EvergreenJnr_DynamicLists")]
         [NUnit.Framework.CategoryAttribute("PermissionsSettings")]
-        [NUnit.Framework.CategoryAttribute("DAS10945")]
+        [NUnit.Framework.CategoryAttribute("DAS10979")]
         [NUnit.Framework.CategoryAttribute("DAS11553")]
         [NUnit.Framework.CategoryAttribute("DAS10880")]
         [NUnit.Framework.CategoryAttribute("DAS11951")]
@@ -187,7 +187,7 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_DynamicLists
                         "Users",
                         "EvergreenJnr_DynamicLists",
                         "PermissionsSettings",
-                        "DAS10945",
+                        "DAS10979",
                         "DAS11553",
                         "DAS10880",
                         "DAS11951",

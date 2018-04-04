@@ -239,7 +239,7 @@ namespace DashworksTestAutomation.Pages.Evergreen
 
         public List<string> GetFiltersNames()
         {
-            Driver.WaitWhileControlIsNotDisplayed(By.XPath(".//span[@class='filter-label-name']"));
+            Driver.WaitWhileControlIsNotExists(By.XPath(".//span[@class='filter-label-name']"));
             var namesListElements = Driver.FindElements(By.XPath(".//span[@class='filter-label-name']"));
             return namesListElements.Select(name => name.Text).ToList();
         }
