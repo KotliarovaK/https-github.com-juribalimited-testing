@@ -199,9 +199,9 @@
     <Compile Include="Pages\LoginPage.cs" />
     <Compile Include="Pages\LoginPanelPage.cs" />
     <Compile Include="Pages\LogoutPage.cs" />
+    <Compile Include="Pages\Projects\BaseProjectsElements.cs" />
     <Compile Include="Steps\Projects\Projects_CreateProject.cs" />
     <Compile Include="Steps\Projects\Projects_Login.cs" />
-    <Compile Include="Pages\Projects\NavigationMenu.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Providers\Browser.cs" />
     <Compile Include="Providers\ResourceFilesNamesProvider.cs" />
@@ -231,7 +231,6 @@
     <Compile Include="Steps\Dashworks\EvergreenJnr_NewCustomList.cs" />
     <Compile Include="Steps\Dashworks\EvergreenJnr_QueryStrings.cs" />
     <Compile Include="Steps\Logout.cs" />
-    <Compile Include="Steps\Projects\Projects_NavigationMenu.cs" />
     <Compile Include="Tests\EvergreenJnr_ActionsPanel\ActionsPanel.feature.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
