@@ -60,7 +60,7 @@ namespace DashworksTestAutomation.Steps.Dashworks
         public void WhenUserClicksSettingsButtonInTheListPanel()
         {
             var listElement = _driver.NowAt<CustomListElement>();
-            _driver.MouseHover(By.XPath(".//i[@class='menu-trigger material-icons mat-settings mat-18 pull-right settings-icon settings-area']"));
+            _driver.MouseHover(listElement.SettingsButton);
             _driver.WaitWhileControlIsNotDisplayed(By.XPath(".//i[@class='menu-trigger material-icons mat-settings mat-18 pull-right settings-icon settings-area']"));
             listElement.SettingsButton.Click();
         }
