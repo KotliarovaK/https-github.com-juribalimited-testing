@@ -61,7 +61,7 @@ namespace DashworksTestAutomation.Steps.Dashworks
         {
             var listElement = _driver.NowAt<CustomListElement>();
             _driver.MouseHover(listElement.SettingsButton);
-            _driver.WaitWhileControlIsNotDisplayed(By.XPath(".//i[@class='menu-trigger material-icons mat-settings mat-18 pull-right settings-icon settings-area']"));
+            _driver.WaitWhileControlIsNotDisplayed<CustomListElement>(() => listElement.SettingsButton);
             listElement.SettingsButton.Click();
         }
 
@@ -136,6 +136,13 @@ namespace DashworksTestAutomation.Steps.Dashworks
         {
             var listDetailsElement = _driver.NowAt<CustomListElement>();
             listDetailsElement.ManageButton.Click();
+        }
+
+        [When(@"User clicks Delete in the list panel")]
+        public void WhenUserClicksDeleteInTheListPanel()
+        {
+            var listDetailsElement = _driver.NowAt<CustomListElement>();
+            listDetailsElement.DeleteButton.Click();
         }
 
         [When(@"User update current custom list")]
