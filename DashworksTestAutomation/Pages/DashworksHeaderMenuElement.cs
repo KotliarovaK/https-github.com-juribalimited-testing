@@ -22,6 +22,9 @@ namespace DashworksTestAutomation.Pages
         [FindsBy(How = How.XPath, Using = ".//a[@title='Evergreen']")]
         public IWebElement EvergreenLink { get; set; }
 
+        [FindsBy(How = How.XPath, Using = ".//a[@title='Projects']")]
+        public IWebElement ProjectsLink { get; set; }
+
         public override List<By> GetPageIdentitySelectors()
         {
             return new List<By>

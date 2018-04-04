@@ -20,8 +20,8 @@ namespace DashworksTestAutomation.DTO.Projects
         public bool OnboardInstalledApplicationsByAssociation { get; set; }
         public bool OnboardEntitledApplicationsByAssociation { get; set; }
         public OnboardUsedApplicationsByAssociationToEnum OnboardUsedApplicationsByAssociationTo;
-        //public string MasterHTMLEmailTemplate { get; set; }
-        //Attachments
+        public string MasterHtmlEmailTemplate { get; set; }
+        public string Attachments { get; set; }
         public string TaskEmailCcEmailAddress { get; set; }
         public string TaskEmailBccEmailAddress { get; set; }
         public string StartDate { get; set; }
