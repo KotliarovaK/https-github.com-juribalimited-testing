@@ -255,15 +255,6 @@ namespace DashworksTestAutomation.Steps.Dashworks
             Assert.IsFalse(listElement.DoesNotExistListMessage.Displayed(), $"{warningText} message is displayed in the list details panel");
         }
 
-        [Then(@"""(.*)"" ""(.*)"" message is displayed in the lists panel")]
-        public void ThenMessageIsDisplayedInTheListsPanel(string listName, string warningText)
-        {
-            var listElement = _driver.NowAt<CustomListElement>();
-            Assert.IsTrue(listElement.ListNameWarningMessage(listName), $"{listName} is not displayed in the list details panel");
-            Assert.IsTrue(listElement.RemovingDependencyListMessage(warningText), $"{warningText} message is not displayed in the list details panel");
-        }
-
-
         [Then(@"Delete list button is disabled in List Details panel")]
         public void ThenDeleteListButtonIsDisabledInListDetailsPanel()
         {

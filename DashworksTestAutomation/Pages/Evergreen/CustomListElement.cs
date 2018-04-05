@@ -57,6 +57,12 @@ namespace DashworksTestAutomation.Pages.Evergreen
         [FindsBy(How = How.XPath, Using = ".//li[text()='Delete']")]
         public IWebElement DeleteButton { get; set; }
 
+        [FindsBy(How = How.XPath, Using = ".//button[@class='btn mat-button']")]
+        public IWebElement DeleteButtonInWarningMessage { get; set; }
+
+        [FindsBy(How = How.XPath, Using = ".//button[@class='btn btn-transparent mat-button']")]
+        public IWebElement CancelButtonInWarningMessage { get; set; }
+
         #endregion ListSettings
 
         #region DeleteListBlock
