@@ -36,6 +36,7 @@ Scenario: EvergreenJnr_AllLists_CheckThatGroupIconsAreDisplayedForGroupDetailsPa
 Scenario Outline: EvergreenJnr_AllLists_CheckThatDataIsDisplayedAfterAddingColumnsForExpandedSections
 	When User clicks "<PageName>" on the left-hand menu
 	Then "<PageName>" list should be displayed to the user
+	When User perform search by "<SearchTerm>"
 	When User click content from "<ItemName>" column
 	And User navigates to the "<TabName>" tab
 	When User have opened Column Settings for "<ColumnName>" column in the Details Page table
@@ -51,18 +52,19 @@ Scenario Outline: EvergreenJnr_AllLists_CheckThatDataIsDisplayedAfterAddingColum
 	Then There are no errors in the browser console
 
 Examples: 
-	| PageName     | ItemName      | TabName      | ColumnName  | CheckboxName        | NewColumnName       |
-	| Devices      | Hostname      | Applications | Application | Key                 | Key                 |
-	#| Users        | Username      | Groups       | Group       | Key                 | Key                 |
-	| Applications | Application   | Projects     | Project     | Object ID           | Object ID           |
-	| Applications | Application   | Projects     | Project     | Object Key          | Object Key          |
-	| Mailboxes    | Email Address | Users        | Domain      | Key                 | Key                 |
-	| Mailboxes    | Email Address | Users        | Domain      | Evergreen Object ID | Evergreen Object ID |
+	| PageName     | SearchTerm                                              | ItemName      | TabName      | ColumnName  | CheckboxName        | NewColumnName       |
+	| Devices      | 30BGMTLBM9PTW5                                          | Hostname      | Applications | Application | Key                 | Key                 |
+	| Users        | svc_dashworks                                           | Username      | Groups       | Group       | Key                 | Key                 |
+	| Applications | Microsoft Office Visio 2000 Solutions - Custom Patterns | Application   | Projects     | Project     | Object ID           | Object ID           |
+	| Applications | Microsoft Office Visio 2000 Solutions - Custom Patterns | Application   | Projects     | Project     | Object Key          | Object Key          |
+	| Mailboxes    | aaron.u.flores@dwlabs.local                             | Email Address | Users        | Domain      | Key                 | Key                 |
+	| Mailboxes    | aaron.u.flores@dwlabs.local                             | Email Address | Users        | Domain      | Evergreen Object ID | Evergreen Object ID |
 
 @Evergreen @AllLists @EvergreenJnr_ItemDetails @ItemDetailsDisplay @DAS11732 @DAS12235
 Scenario Outline: EvergreenJnr_AllLists_CheckThatDataIsDisplayedAfterAddingColumns
 	When User clicks "<PageName>" on the left-hand menu
 	Then "<PageName>" list should be displayed to the user
+	When User perform search by "<SearchTerm>"
 	When User click content from "<ItemName>" column
 	And User navigates to the "<TabName>" tab
 	Then User closes "<ExpandedSectionName>" section on the Details Page
@@ -80,32 +82,32 @@ Scenario Outline: EvergreenJnr_AllLists_CheckThatDataIsDisplayedAfterAddingColum
 	Then There are no errors in the browser console
 
 Examples: 
-	| PageName     | ItemName      | TabName      | ExpandedSectionName | SectionName         | ColumnName    | CheckboxName         | NewColumnName        |
-	#| Devices      | Hostname      | Applications | Application Summary | Application Detail  | Application   | Application Key      | Application Key      |
-	#| Devices      | Hostname      | Applications | Application Summary | Application Detail  | Application   | Advertisement Key    | Advertisement Key    |
-	| Devices      | Hostname      | Applications | Application Summary | Application Detail  | Application   | Group Key            | Group Key            |
-	#| Devices      | Hostname      | Applications | Application Summary | Application Detail  | Application   | Collection Key       | Collection Key       |
-	| Devices      | Hostname      | Applications | Application Summary | Application Detail  | Application   | User Key             | User Key             |
-	#| Devices      | Hostname      | Applications | Application Summary | Advertisements      | Application   | Key                  | Key                  |
-	| Devices      | Hostname      | Applications | Application Summary | Advertisements      | Application   | Application Key      | Application Key      |
-	#| Devices      | Hostname      | Applications | Application Summary | Advertisements      | Application   | Site Key              | Site Key              |
-	#| Devices      | Hostname      | Applications | Application Summary | Advertisements      | Application   | Collection Key       | Collection Key       |
-	#| Devices      | Hostname      | Applications | Application Summary | Advertisements      | Application   | Program Key          | Program Key          |
-	#| Devices      | Hostname      | Applications | Application Summary | Collections         | Collection    | Key                  | Key                  |
-	#| Devices      | Hostname      | Applications | Application Summary | Collections         | Collection    | Site Key             | Site Key             |
-	#| Applications | Application   | Details      | Application         | Advertisements      | Advertisement | Advertisement Key    | Advertisement Key    |
-	#| Applications | Application   | Details      | Application         | Advertisements      | Advertisement | Collection Key       | Collection Key       |
-	#| Applications | Application   | Details      | Application         | Programs            | Program       | Program Key          | Program Key          |
-	| Applications | Application   | Distribution | Users               | Devices             | Device        | Computer Key         | Computer Key         |
-	| Applications | Application   | Distribution | Users               | Devices             | Device        | Owner Object Key     | Owner Object Key     |
-	| Applications | Application   | Distribution | Users               | Devices             | Device        | User Key             | User Key             |
-	| Applications | Application   | Distribution | Users               | Devices             | Device        | Advertisement Key    | Advertisement Key    |
-	| Applications | Application   | Distribution | Users               | Devices             | Device        | Collection Key       | Collection Key       |
-	| Applications | Application   | Distribution | Users               | Devices             | Device        | Program Key          | Program Key          |
-	| Mailboxes    | Email Address | Users        | Users               | Groups              | Domain        | Key                  | Key                  |
-	| Mailboxes    | Email Address | Users        | Users               | Mailbox Permissions | Domain        | Key                  | Key                  |
-	| Mailboxes    | Email Address | Users        | Users               | Mailbox Permissions | Domain        | Via Group Object Key | Via Group Object Key |
-	| Mailboxes    | Email Address | Users        | Users               | Mailbox Permissions | Domain        | Access Category Key  | Access Category Key  |
+	| PageName     | SearchTerm                                              | ItemName      | TabName      | ExpandedSectionName | SectionName         | ColumnName    | CheckboxName         | NewColumnName        |
+	| Devices      | 30BGMTLBM9PTW5                                          | Hostname      | Applications | Application Summary | Application Detail  | Application   | Application Key      | Application Key      |
+	| Devices      | 30BGMTLBM9PTW5                                          | Hostname      | Applications | Application Summary | Application Detail  | Application   | Advertisement Key    | Advertisement Key    |
+	| Devices      | 30BGMTLBM9PTW5                                          | Hostname      | Applications | Application Summary | Application Detail  | Application   | Group Key            | Group Key            |
+	| Devices      | 30BGMTLBM9PTW5                                          | Hostname      | Applications | Application Summary | Application Detail  | Application   | Collection Key       | Collection Key       |
+	#| Devices      | 30BGMTLBM9PTW5                                          | Hostname      | Applications | Application Summary | Application Detail  | Application   | User Key             | User Key             |
+	| Devices      | 30BGMTLBM9PTW5                                          | Hostname      | Applications | Application Summary | Advertisements      | Application   | Key                  | Key                  |
+	| Devices      | 30BGMTLBM9PTW5                                          | Hostname      | Applications | Application Summary | Advertisements      | Application   | Application Key      | Application Key      |
+	| Devices      | 30BGMTLBM9PTW5                                          | Hostname      | Applications | Application Summary | Advertisements      | Application   | Site Key             | Site Key             |
+	| Devices      | 30BGMTLBM9PTW5                                          | Hostname      | Applications | Application Summary | Advertisements      | Application   | Collection Key       | Collection Key       |
+	| Devices      | 30BGMTLBM9PTW5                                          | Hostname      | Applications | Application Summary | Advertisements      | Application   | Program Key          | Program Key          |
+	| Devices      | 30BGMTLBM9PTW5                                          | Hostname      | Applications | Application Summary | Collections         | Collection    | Key                  | Key                  |
+	| Devices      | 30BGMTLBM9PTW5                                          | Hostname      | Applications | Application Summary | Collections         | Collection    | Site Key             | Site Key             |
+	| Applications | Microsoft Office Visio 2000 Solutions - Custom Patterns | Application   | Details      | Application         | Advertisements      | Advertisement | Advertisement Key    | Advertisement Key    |
+	| Applications | Microsoft Office Visio 2000 Solutions - Custom Patterns | Application   | Details      | Application         | Advertisements      | Advertisement | Collection Key       | Collection Key       |
+	| Applications | Microsoft Office Visio 2000 Solutions - Custom Patterns | Application   | Details      | Application         | Programs            | Program       | Program Key          | Program Key          |
+	| Applications | Microsoft Office Visio 2000 Solutions - Custom Patterns | Application   | Distribution | Users               | Devices             | Device        | Computer Key         | Computer Key         |
+	| Applications | Microsoft Office Visio 2000 Solutions - Custom Patterns | Application   | Distribution | Users               | Devices             | Device        | Owner Object Key     | Owner Object Key     |
+	| Applications | Microsoft Office Visio 2000 Solutions - Custom Patterns | Application   | Distribution | Users               | Devices             | Device        | User Key             | User Key             |
+	| Applications | Microsoft Office Visio 2000 Solutions - Custom Patterns | Application   | Distribution | Users               | Devices             | Device        | Advertisement Key    | Advertisement Key    |
+	| Applications | Microsoft Office Visio 2000 Solutions - Custom Patterns | Application   | Distribution | Users               | Devices             | Device        | Collection Key       | Collection Key       |
+	| Applications | Microsoft Office Visio 2000 Solutions - Custom Patterns | Application   | Distribution | Users               | Devices             | Device        | Program Key          | Program Key          |
+	| Mailboxes    | aaron.u.flores@dwlabs.local                             | Email Address | Users        | Users               | Groups              | Domain        | Key                  | Key                  |
+	| Mailboxes    | aaron.u.flores@dwlabs.local                             | Email Address | Users        | Users               | Mailbox Permissions | Domain        | Key                  | Key                  |
+	| Mailboxes    | aaron.u.flores@dwlabs.local                             | Email Address | Users        | Users               | Mailbox Permissions | Domain        | Via Group Object Key | Via Group Object Key |
+	| Mailboxes    | aaron.u.flores@dwlabs.local                             | Email Address | Users        | Users               | Mailbox Permissions | Domain        | Access Category Key  | Access Category Key  |
 
 @Evergreen @AllLists @EvergreenJnr_ItemDetails @ItemDetailsDisplay @DAS11732 @DAS12053 @DAS12235
 Scenario Outline: EvergreenJnr_AllLists_CheckThatDataIsDisplayedAfterAddingColumnsForClosedSections
@@ -303,6 +305,7 @@ Examples:
 Scenario Outline: EvergreenJnr_AllLists_CheckThatNoConsoleErrorsAreDisplayedWhenDeleteDataFromFilterTextField
 	When User clicks "<PageName>" on the left-hand menu
 	Then "<PageName>" list should be displayed to the user
+	When User perform search by "<SearchTerm>"
 	When User click content from "<ColumnName>" column
 	And User navigates to the "<TabName>" tab
 	And User have opened Column Settings for "<SelectedColumn>" column in the Details Page table
@@ -312,11 +315,11 @@ Scenario Outline: EvergreenJnr_AllLists_CheckThatNoConsoleErrorsAreDisplayedWhen
 	Then There are no errors in the browser console
 
 Examples:
-	| PageName     | ColumnName    | TabName      | SelectedColumn |
-	| Devices      | Hostname      | Applications | Application    |
-	#| Users        | Username      | Groups       | Group          |
-	#| Applications | Application   | MSI          | File Name      |
-	| Mailboxes    | Email Address | Users        | Username       |
+	| PageName     | SearchTerm                                              | ColumnName    | TabName      | SelectedColumn |
+	| Devices      | 30BGMTLBM9PTW5                                          | Hostname      | Applications | Application    |
+	| Users        | svc_dashworks                                           | Username      | Groups       | Group          |
+	| Applications | Microsoft Office Visio 2000 Solutions - Custom Patterns | Application   | MSI          | File Name      |
+	| Mailboxes    | aaron.u.flores@dwlabs.local                             | Email Address | Users        | Username       |
 
 @Evergreen @Devices @EvergreenJnr_ItemDetails @ItemDetailsDisplay @DAS11628
 Scenario: EvergreenJnr_DevicesLists_CheckThatTheFilterDropddownIsDisplayedFullyWhenTheFilterResultNotContainsValues
@@ -330,10 +333,11 @@ Scenario: EvergreenJnr_DevicesLists_CheckThatTheFilterDropddownIsDisplayedFullyW
 	Then User select "False" checkbox from filter on the Details Page
 	Then Filter panel has standard size
 
-@Evergreen @Devices @EvergreenJnr_ItemDetails @ItemDetailsDisplay @DAS11647 @Not_Run
+@Evergreen @Devices @EvergreenJnr_ItemDetails @ItemDetailsDisplay @DAS11647
 Scenario Outline: EvergreenJnr_DevicesLists_CheckThatAutosizeOptionWorksCorrectlyForSiteColumn
 	When User clicks "Devices" on the left-hand menu
 	Then "Devices" list should be displayed to the user
+	When User perform search by "30BGMTLBM9PTW5"
 	When User click content from "Hostname" column
 	And User navigates to the "Applications" tab
 	Then User closes "Application Summary" section on the Details Page
@@ -431,3 +435,17 @@ Scenario: EvergreenJnr_DevicesLists_CheckThatAllTextIsDisplayedAfterClearingFilt
 	Then All text is not displayed for "Compliance" column in the String Filter
 	When User clicks Reset Filters button on the Details Page
 	Then All text is displayed for "Compliance" column in the String Filter
+
+@Evergreen @Mailboxes @EvergreenJnr_ItemDetails @ItemDetailsDisplay @DAS12088
+Scenario: EvergreenJnr_MailboxesLists_CheckThatMailboxPermissionsAndFolderPermissionsDataAreDisplayedCorrectly
+	When User clicks "Mailboxes" on the left-hand menu
+	Then "Mailboxes" list should be displayed to the user
+	When User perform search by "abraham.f.wong@dwlabs.local"
+	And User click content from "Email Address" column
+	And User navigates to the "Users" tab
+	Then User closes "Users" section on the Details Page
+	When User opens "Mailbox Permissions" section on the Details Page
+	Then Content is present in the table on the Details Page
+	Then User closes "Mailbox Permissions" section on the Details Page
+	When User opens "Folder Permissions" section on the Details Page
+	Then Content is present in the table on the Details Page

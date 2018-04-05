@@ -6,7 +6,7 @@ Background: Pre-Conditions
 	Given User is logged in to the Evergreen
 	Then Evergreen Dashboards page should be displayed to the user
 
-@Evergreen @Devices @EvergreenJnr_GridActions @ColumnOrder @DAS10836 @DAS11666 @DAS12325 @Not_Run
+@Evergreen @Devices @EvergreenJnr_GridActions @ColumnOrder @DAS10836 @DAS11666 @DAS12325
 Scenario: EvergreenJnr_DevicesList_CheckThatColumnsOrderSavedAfterSearch
 	When User clicks "Devices" on the left-hand menu
 	Then "Devices" list should be displayed to the user
@@ -18,7 +18,7 @@ Scenario: EvergreenJnr_DevicesList_CheckThatColumnsOrderSavedAfterSearch
 	| Smith          | 11           |
 	Then "Owner Display Name" column is "Left" Pinned
 
-@Evergreen @Users @EvergreenJnr_GridActions @ColumnOrder @DAS10836 @DAS11664 @DAS12325 @Not_Run
+@Evergreen @Users @EvergreenJnr_GridActions @ColumnOrder @DAS10836 @DAS11664 @DAS12325
 Scenario: EvergreenJnr_UsersList_CheckThatColumnsOrderSavedAfterSearch
 	When User clicks "Users" on the left-hand menu
 	Then "Users" list should be displayed to the user

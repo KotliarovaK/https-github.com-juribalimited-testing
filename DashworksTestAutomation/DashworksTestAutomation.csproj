@@ -463,7 +463,11 @@
   <ItemGroup>
     <Service Include="{82A7F48D-3B50-4B1E-B82E-3ADA8210C358}" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <Folder Include="DTO\Projects\" />
+    <Folder Include="Pages\Projects\" />
+    <Folder Include="Steps\Projects\" />
+  </ItemGroup>
   <ItemGroup>
     <None Include="Resources\CorrectFile.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
