@@ -449,3 +449,12 @@ Scenario: EvergreenJnr_MailboxesLists_CheckThatMailboxPermissionsAndFolderPermis
 	Then User closes "Mailbox Permissions" section on the Details Page
 	When User opens "Folder Permissions" section on the Details Page
 	Then Content is present in the table on the Details Page
+
+@Evergreen @Mailboxes @EvergreenJnr_ItemDetails @ItemDetailsDisplay @DAS12210
+Scenario: EvergreenJnr_MailboxesLists_CheckThatDropdownListsInTheProjectDetailsComponentFiltersAreDisplayedCorrectly
+	When User clicks "Devices" on the left-hand menu
+	Then "Devices" list should be displayed to the user
+	When User perform search by "001BAQXT6JWFPI"
+	And User click content from "Hostname" column
+	And User navigates to the "Projects" tab
+	When User opens "Device Projects" section on the Details Page
