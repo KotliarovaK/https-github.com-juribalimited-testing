@@ -127,6 +127,7 @@ namespace DashworksTestAutomation.Steps.Dashworks
         public void WhenUserClicksStringFilterButtonForColumn(string columnName)
         {
             var filterElement = _driver.NowAt<ApplicationsDetailsTabsMenu>();
+            filterElement.BodyContainer.Click();
             filterElement.GetStringFilterByColumnName(columnName);
         }
 
@@ -142,6 +143,14 @@ namespace DashworksTestAutomation.Steps.Dashworks
         {
             var filterElement = _driver.NowAt<ApplicationsDetailsTabsMenu>();
             Assert.IsFalse((filterElement.GetStringFilterTextByColumnName(columnName)), $"All text is displayed for {columnName} column");
+        }
+
+        [Then(@"Dropdown List is displayed correctly in the Filter on the Details Page")]
+        public void ThenDropdownListIsDisplayedCorrectlyInTheFilterOnTheDetailsPage()
+        {
+            var filterElement = _driver.NowAt<ApplicationsDetailsTabsMenu>();
+            Assert.IsTrue(filterElement.AllCheckboxesSelectedStringFilter.Displayed(), "All checkbox is unchecked");
+            Assert.IsFalse(filterElement.UncheckedStringFilters.Displayed(), "Checkbox is selected");
         }
 
         [When(@"User clicks Reset Filters button on the Details Page")]

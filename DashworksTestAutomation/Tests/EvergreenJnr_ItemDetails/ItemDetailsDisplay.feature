@@ -450,11 +450,59 @@ Scenario: EvergreenJnr_MailboxesLists_CheckThatMailboxPermissionsAndFolderPermis
 	When User opens "Folder Permissions" section on the Details Page
 	Then Content is present in the table on the Details Page
 
+@Evergreen @AllLists @EvergreenJnr_ItemDetails @ItemDetailsDisplay @DAS12210
+Scenario Outline: EvergreenJnr_AllLists_CheckThatDropdownListsInTheProjectDetailsFiltersAreDisplayedCorrectlyForCollapsedSections
+	When User clicks "<PageName>" on the left-hand menu
+	Then "<PageName>" list should be displayed to the user
+	When User perform search by "<SearchTerm>"
+	And User click content from "<ColumnName>" column
+	And User navigates to the "<TabName>" tab
+	And User opens "<SectionName>" section on the Details Page
+	And User clicks String Filter button for "Project Type" column
+	Then Dropdown List is displayed correctly in the Filter on the Details Page
+	When User clicks String Filter button for "Request Type" column
+	Then Dropdown List is displayed correctly in the Filter on the Details Page
+	When User clicks String Filter button for "Category" column
+	Then Dropdown List is displayed correctly in the Filter on the Details Page
+
+Examples:
+	| PageName     | SearchTerm                                                 | ColumnName    | TabName  | SectionName           |
+	| Devices      | 001BAQXT6JWFPI                                             | Hostname      | Projects | Device Projects       |
+	| Devices      | 001BAQXT6JWFPI                                             | Hostname      | Projects | Device Owner Projects |
+	| Users        | Loya\, Dan.Employees.Birmingham.UK.bclabs.local            | Username      | Projects | User Projects         |
+	| Users        | Loya\, Dan.Employees.Birmingham.UK.bclabs.local            | Username      | Projects | Mailbox Projects      |
+
+@Evergreen @AllLists @EvergreenJnr_ItemDetails @ItemDetailsDisplay @DAS12210
+Scenario Outline: EvergreenJnr_AllLists_CheckThatDropdownListsInTheProjectDetailsFiltersAreDisplayedCorrectlyForExpandedSections
+	When User clicks "<PageName>" on the left-hand menu
+	Then "<PageName>" list should be displayed to the user
+	When User perform search by "<SearchTerm>"
+	And User click content from "<ColumnName>" column
+	And User navigates to the "<TabName>" tab
+	And User clicks String Filter button for "Project Type" column
+	Then Dropdown List is displayed correctly in the Filter on the Details Page
+	When User clicks String Filter button for "Request Type" column
+	Then Dropdown List is displayed correctly in the Filter on the Details Page
+	When User clicks String Filter button for "Category" column
+	Then Dropdown List is displayed correctly in the Filter on the Details Page
+
+Examples:
+	| PageName     | SearchTerm                                                 | ColumnName    | TabName  |
+	| Applications | "WPF/E" (codename) Community Technology Preview (Feb 2007) | Application   | Projects |
+	| Mailboxes    | 040698EE82354C17B60@bclabs.local                           | Email Address | Projects |
+
 @Evergreen @Mailboxes @EvergreenJnr_ItemDetails @ItemDetailsDisplay @DAS12210
-Scenario: EvergreenJnr_MailboxesLists_CheckThatDropdownListsInTheProjectDetailsComponentFiltersAreDisplayedCorrectly
-	When User clicks "Devices" on the left-hand menu
-	Then "Devices" list should be displayed to the user
-	When User perform search by "001BAQXT6JWFPI"
-	And User click content from "Hostname" column
+Scenario: EvergreenJnr_MailboxesLists_CheckThatDropdownListsInTheProjectDetailsFiltersAreDisplayedCorrectly
+	When User clicks "Mailboxes" on the left-hand menu
+	Then "Mailboxes" list should be displayed to the user
+	When User perform search by "040698EE82354C17B60@bclabs.local"
+	And User click content from "Email Address" column
 	And User navigates to the "Projects" tab
-	When User opens "Device Projects" section on the Details Page
+	Then User closes "Mailbox Projects" section on the Details Page
+	When User opens "Mailbox User Projects" section on the Details Page
+	And User clicks String Filter button for "Project Type" column
+	Then Dropdown List is displayed correctly in the Filter on the Details Page
+	When User clicks String Filter button for "Request Type" column
+	Then Dropdown List is displayed correctly in the Filter on the Details Page
+	When User clicks String Filter button for "Category" column
+	Then Dropdown List is displayed correctly in the Filter on the Details Page
