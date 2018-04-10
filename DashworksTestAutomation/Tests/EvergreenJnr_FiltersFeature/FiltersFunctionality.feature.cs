@@ -854,6 +854,7 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_FiltersFeature
         [NUnit.Framework.CategoryAttribute("FilterFunctionality")]
         [NUnit.Framework.CategoryAttribute("DAS10977")]
         [NUnit.Framework.CategoryAttribute("Delete_Newly_Created_List")]
+        [NUnit.Framework.CategoryAttribute("Not_Run")]
         public virtual void EvergreenJnr_ApplicationsList_CheckThatFilterIsRestoredCorrectlyAfterLeavingThePageAndGoingBackViaTheBrowseBackButtonForListFilters()
         {
             System.Exception lastException = null;
@@ -889,7 +890,8 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_FiltersFeature
                         "EvergreenJnr_FilterFeature",
                         "FilterFunctionality",
                         "DAS10977",
-                        "Delete_Newly_Created_List"});
+                        "Delete_Newly_Created_List",
+                        "Not_Run"});
             this.ScenarioSetup(scenarioInfo);
             this.FeatureBackground();
             TechTalk.SpecFlow.Table table14 = new TechTalk.SpecFlow.Table(new string[] {
