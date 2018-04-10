@@ -6,7 +6,7 @@ Background: Pre-Conditions
 	Given User is logged in to the Evergreen
 	Then Evergreen Dashboards page should be displayed to the user
 
-@Evergreen @Admin @EvergreenJnr_AdminPage @AdminPage @DAS11747 @Not_Run
+@Evergreen @Admin @EvergreenJnr_AdminPage @AdminPage @DAS11747
 Scenario: EvergreenJnr_AdminPage_CheckThatErrorIsNotDisplayedWhenCreateTeamWithTheAlreadyExistName
 	When User clicks Admin on the left-hand menu
 	Then Admin page should be displayed to the user
