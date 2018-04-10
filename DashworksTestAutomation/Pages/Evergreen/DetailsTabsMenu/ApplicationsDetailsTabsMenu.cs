@@ -31,6 +31,21 @@ namespace DashworksTestAutomation.Pages.Evergreen.DetailsTabsMenu
         [FindsBy(How = How.XPath, Using = ".//div[@class='ng-star-inserted']/span")]
         public IWebElement CheckboxexStringFilter { get; set; }
 
+        [FindsBy(How = How.XPath, Using = ".//mat-option[@class='selectAllOption mat-option mat-option-multiple ng-star-inserted']")]
+        public IWebElement AllCheckboxesSelectedStringFilter { get; set; }
+
+        [FindsBy(How = How.XPath, Using = ".//div[@style= 'opacity: 1;']")]
+        public IWebElement StringFilterPanel { get; set; }
+
+        [FindsBy(How = How.XPath, Using = ".//mat-option[contains(@class, 'mat-selected')]")]
+        public IWebElement SelectedStringFilters { get; set; }
+
+        [FindsBy(How = How.XPath, Using = ".//mat-option[@class='mat-option mat-option-multiple ng-star-inserted mat-active']")]
+        public IWebElement UncheckedStringFilters { get; set; }
+
+        [FindsBy(How = How.XPath, Using = ".//mat-pseudo-checkbox[@class='mat-option-pseudo-checkbox mat-pseudo-checkbox ng-star-inserted mat-pseudo-checkbox-checked']")]
+        public IWebElement SelectedCheckboxStringFilter { get; set; }
+
         [FindsBy(How = How.XPath, Using = ".//div[@class='boolean-icon ng-star-inserted']/span")]
         public IWebElement CheckboxexBooleanStringFilter { get; set; }
 
