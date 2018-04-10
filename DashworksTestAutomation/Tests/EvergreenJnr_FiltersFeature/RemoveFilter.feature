@@ -27,7 +27,7 @@ Scenario: EvergreenJnr_DevicesList_CheckThatResetIsUpdatingRowCount
 	And "17,225" rows are displayed in the agGrid
 	Then "Compliance" filter is removed from filters
 
-@Evergreen @Devices @Evergreen_FiltersFeature @RemoveFilter @DAS11506 @Not_Run
+@Evergreen @Devices @Evergreen_FiltersFeature @RemoveFilter @DAS11506
 Scenario: EvergreenJnr_DevicesList_CheckThatDeleteByUrlIsUpdatingRowCount
 	When User clicks "Devices" on the left-hand menu
 	Then "Devices" list should be displayed to the user
@@ -46,7 +46,6 @@ Scenario: EvergreenJnr_DevicesList_CheckThatDeleteByUrlIsUpdatingRowCount
 	| ColumnName |
 	| Compliance |
 	And "17,225" rows are displayed in the agGrid
-	When User clicks the Filters button
 	Then "Compliance" filter is removed from filters
 
 @Evergreen @Users @Evergreen_FiltersFeature @RemoveFilter @DAS11009 @DAS11044 @DAS12199
