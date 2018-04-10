@@ -72,7 +72,7 @@ Scenario: EvergreenJnr_AdminPage_CheckThatCreateButtonIsDisabledForEmptyBucketNa
 	And User select "Admin IT" team in the Team dropdown
 	Then Create Bucket button is disabled
 
-@Evergreen @Admin @EvergreenJnr_AdminPage @AdminPage @DAS11726 @Not_Run
+@Evergreen @Admin @EvergreenJnr_AdminPage @AdminPage @DAS11726
 Scenario: EvergreenJnr_AdminPage_CheckThatCreateButtonIsDisabledForEmptyTeamName
 	When User clicks Admin on the left-hand menu
 	Then Admin page should be displayed to the user
