@@ -76,7 +76,9 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_StaticLists
         [NUnit.Framework.CategoryAttribute("FiltersDisplay")]
         [NUnit.Framework.CategoryAttribute("DAS10993")]
         [NUnit.Framework.CategoryAttribute("DAS12152")]
+        [NUnit.Framework.CategoryAttribute("DAS12351")]
         [NUnit.Framework.CategoryAttribute("Delete_Newly_Created_List")]
+        [NUnit.Framework.CategoryAttribute("Not_Run")]
         public virtual void EvergreenJnr_DevicesList_CheckThatDynamicFiltersAreClearedForStaticListsWhenOpenedAfterDynamicLists()
         {
             System.Exception lastException = null;
@@ -113,7 +115,9 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_StaticLists
                         "FiltersDisplay",
                         "DAS10993",
                         "DAS12152",
-                        "Delete_Newly_Created_List"});
+                        "DAS12351",
+                        "Delete_Newly_Created_List",
+                        "Not_Run"});
             this.ScenarioSetup(scenarioInfo);
             this.FeatureBackground();
             testRunner.When("User clicks \"Devices\" on the left-hand menu", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
@@ -160,7 +164,9 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_StaticLists
         [NUnit.Framework.CategoryAttribute("DAS12034")]
         [NUnit.Framework.CategoryAttribute("DAS12221")]
         [NUnit.Framework.CategoryAttribute("DAS12232")]
+        [NUnit.Framework.CategoryAttribute("DAS12351")]
         [NUnit.Framework.CategoryAttribute("Delete_Newly_Created_List")]
+        [NUnit.Framework.CategoryAttribute("Not_Run")]
         public virtual void EvergreenJnr_DevicesList_CheckThatFiltersAndColumnsAreRestoredForSavedList()
         {
             System.Exception lastException = null;
@@ -198,7 +204,9 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_StaticLists
                         "DAS12034",
                         "DAS12221",
                         "DAS12232",
-                        "Delete_Newly_Created_List"});
+                        "DAS12351",
+                        "Delete_Newly_Created_List",
+                        "Not_Run"});
             this.ScenarioSetup(scenarioInfo);
             this.FeatureBackground();
             testRunner.When("User clicks \"Devices\" on the left-hand menu", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
