@@ -3331,20 +3331,22 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_FiltersFeature
         
         [NUnit.Framework.TestAttribute()]
         [NUnit.Framework.DescriptionAttribute("EvergreenJnr_DevicesLists_CheckThatChildrenOfTreeBasedFiltersAreIncludedInTheList" +
-            "Results")]
+            "ResultsOnDevicesPage")]
         [NUnit.Framework.CategoryAttribute("Evergreen")]
         [NUnit.Framework.CategoryAttribute("Devices")]
         [NUnit.Framework.CategoryAttribute("Evergreen_FiltersFeature")]
         [NUnit.Framework.CategoryAttribute("FiltersDisplay")]
         [NUnit.Framework.CategoryAttribute("DAS11144")]
-        public virtual void EvergreenJnr_DevicesLists_CheckThatChildrenOfTreeBasedFiltersAreIncludedInTheListResults()
+        [NUnit.Framework.CategoryAttribute("DAS12351")]
+        [NUnit.Framework.CategoryAttribute("Not_Run")]
+        public virtual void EvergreenJnr_DevicesLists_CheckThatChildrenOfTreeBasedFiltersAreIncludedInTheListResultsOnDevicesPage()
         {
             System.Exception lastException = null;
             for (int i = 0; (i <= 1); i = (i + 1))
             {
                 try
                 {
-                    this.EvergreenJnr_DevicesLists_CheckThatChildrenOfTreeBasedFiltersAreIncludedInTheListResultsInternal();
+                    this.EvergreenJnr_DevicesLists_CheckThatChildrenOfTreeBasedFiltersAreIncludedInTheListResultsOnDevicesPageInternal();
                     return;
                 }
                 catch (System.Exception exc)
@@ -3363,15 +3365,17 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_FiltersFeature
             }
         }
         
-        private void EvergreenJnr_DevicesLists_CheckThatChildrenOfTreeBasedFiltersAreIncludedInTheListResultsInternal()
+        private void EvergreenJnr_DevicesLists_CheckThatChildrenOfTreeBasedFiltersAreIncludedInTheListResultsOnDevicesPageInternal()
         {
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("EvergreenJnr_DevicesLists_CheckThatChildrenOfTreeBasedFiltersAreIncludedInTheList" +
-                    "Results", new string[] {
+                    "ResultsOnDevicesPage", new string[] {
                         "Evergreen",
                         "Devices",
                         "Evergreen_FiltersFeature",
                         "FiltersDisplay",
-                        "DAS11144"});
+                        "DAS11144",
+                        "DAS12351",
+                        "Not_Run"});
             this.ScenarioSetup(scenarioInfo);
             this.FeatureBackground();
             testRunner.When("User clicks \"Devices\" on the left-hand menu", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
@@ -3382,6 +3386,66 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_FiltersFeature
                     " Tree List option", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
             testRunner.Then("\"Department\" filter is added to the list", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
             testRunner.And("\"3,295\" rows are displayed in the agGrid", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+            this.ScenarioCleanup();
+        }
+        
+        [NUnit.Framework.TestAttribute()]
+        [NUnit.Framework.DescriptionAttribute("EvergreenJnr_UsersLists_CheckThatChildrenOfTreeBasedFiltersAreIncludedInTheListRe" +
+            "sultsOnUsersPage")]
+        [NUnit.Framework.CategoryAttribute("Evergreen")]
+        [NUnit.Framework.CategoryAttribute("Users")]
+        [NUnit.Framework.CategoryAttribute("Evergreen_FiltersFeature")]
+        [NUnit.Framework.CategoryAttribute("FiltersDisplay")]
+        [NUnit.Framework.CategoryAttribute("DAS11144")]
+        [NUnit.Framework.CategoryAttribute("DAS12351")]
+        [NUnit.Framework.CategoryAttribute("Not_Run")]
+        public virtual void EvergreenJnr_UsersLists_CheckThatChildrenOfTreeBasedFiltersAreIncludedInTheListResultsOnUsersPage()
+        {
+            System.Exception lastException = null;
+            for (int i = 0; (i <= 1); i = (i + 1))
+            {
+                try
+                {
+                    this.EvergreenJnr_UsersLists_CheckThatChildrenOfTreeBasedFiltersAreIncludedInTheListResultsOnUsersPageInternal();
+                    return;
+                }
+                catch (System.Exception exc)
+                {
+                    lastException = exc;
+                }
+                if (((i + 1) 
+                            <= 1))
+                {
+                    testRunner.OnScenarioEnd();
+                }
+            }
+            if ((lastException != null))
+            {
+                throw lastException;
+            }
+        }
+        
+        private void EvergreenJnr_UsersLists_CheckThatChildrenOfTreeBasedFiltersAreIncludedInTheListResultsOnUsersPageInternal()
+        {
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("EvergreenJnr_UsersLists_CheckThatChildrenOfTreeBasedFiltersAreIncludedInTheListRe" +
+                    "sultsOnUsersPage", new string[] {
+                        "Evergreen",
+                        "Users",
+                        "Evergreen_FiltersFeature",
+                        "FiltersDisplay",
+                        "DAS11144",
+                        "DAS12351",
+                        "Not_Run"});
+            this.ScenarioSetup(scenarioInfo);
+            this.FeatureBackground();
+            testRunner.When("User clicks \"Users\" on the left-hand menu", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+            testRunner.Then("\"Users\" list should be displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+            testRunner.When("User clicks the Filters button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+            testRunner.Then("Filters panel is displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+            testRunner.When("User add \"Department\" filter where type is \"Does not equal\" with added column and" +
+                    " \"Support\" Tree List option", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+            testRunner.Then("\"Department\" filter is added to the list", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+            testRunner.And("\"35,078\" rows are displayed in the agGrid", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
             this.ScenarioCleanup();
         }
         
