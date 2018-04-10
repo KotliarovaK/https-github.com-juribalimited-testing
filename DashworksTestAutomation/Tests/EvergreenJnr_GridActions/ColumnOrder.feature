@@ -35,7 +35,7 @@ Scenario: EvergreenJnr_UsersList_CheckThatColumnsOrderSavedAfterSearch
 	| Smith          | 59           |
 	Then "Compliance" column is "Right" Pinned
 
-@Evergreen @Devices @EvergreenJnr_GridActions @ColumnOrder @DAS10621 @DAS11666 @DAS12156
+@Evergreen @Devices @EvergreenJnr_GridActions @ColumnOrder @DAS10621 @DAS11666 @DAS12156 @DAS12351 @Not_Run
 Scenario: EvergreenJnr_DevicesList_CheckThatColumnsOrderSavedAfterAddingAFilter
 	When User clicks "Devices" on the left-hand menu
 	Then "Devices" list should be displayed to the user
