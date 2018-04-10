@@ -43,6 +43,7 @@ namespace DashworksTestAutomation.Steps.Dashworks
         {
             var detailsPage = _driver.NowAt<DetailsPage>();
             detailsPage.NavigateToSectionByName(sectionName);
+            _driver.WaitForDataLoading();
         }
 
         [Then(@"section is loaded correctly")]

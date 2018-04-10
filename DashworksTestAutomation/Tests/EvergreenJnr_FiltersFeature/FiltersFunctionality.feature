@@ -185,7 +185,7 @@ Examples:
 	| Applications | MigrationP: Core Application    | FALSE          | 220       | Application   | Quartus II Programmer 4.0                 | MigrationP: Core Application is false      |
 	| Mailboxes    | EmailMigra: Device Type         | Not Identified | 729       | Email Address | alex.cristea@juriba.com                   | EmailMigra: Device Type is Not Identified  |
 
-@Evergreen @AllLists @EvergreenJnr_FilterFeature @FilterFunctionality @DAS10977
+@Evergreen @AllLists @EvergreenJnr_FilterFeature @FilterFunctionality @DAS10977 @DAS12351 @Not_Run
 Scenario Outline: EvergreenJnr_AllLists_CheckThatFilterIsRestoredCorrectlyAfterLeavingThePageAndGoingBackViaTheBrowserBackButtonForLookupFilters
 	When User clicks "<ListName>" on the left-hand menu
 	Then "<ListName>" list should be displayed to the user
@@ -322,13 +322,13 @@ Scenario Outline: EvergreenJnr_UsersList_CheckThatLDAPFilterCategoryHaveAddColum
 
 Examples:
 	| FilterName             | OperatorValues   | EnteredText                                                | SelectedCheckboxes                |
-	#| accountexpires         | Equals           | 9223372036854775807                                        | Add accountexpires column         |
-	#| badpasswordtime        | Contains         | 13146                                                      | Add badpasswordtime column        |
-	#| admincount             | Empty            |                                                            | Add admincount column             |
-	#| employeeid             | Begins with      | ZY or ZX                                                   | Add employeeid column             |
-	#| whencreated            | Does not contain | 2017                                                       | Add whencreated column            |
+	| accountexpires         | Equals           | 9223372036854775807                                        | Add accountexpires column         |
+	| badpasswordtime        | Contains         | 13146                                                      | Add badpasswordtime column        |
+	| admincount             | Empty            |                                                            | Add admincount column             |
+	| employeeid             | Begins with      | ZY or ZX                                                   | Add employeeid column             |
+	| whencreated            | Does not contain | 2017                                                       | Add whencreated column            |
 	| department             | Ends with        | LongName01234567890123456789012345678901234567890123456789 | Add Department column             |
-	#| iscriticalsystemobject | Not empty        |                                                            | Add iscriticalsystemobject column |
+	| iscriticalsystemobject | Not empty        |                                                            | Add iscriticalsystemobject column |
 
 @Evergreen @Devices @EvergreenJnr_FilterFeature @FilterFunctionality @DAS11550 @DAS11749 @API
 Scenario Outline: EvergreenJnr_DevicesList_CheckThatOperatorInSelectedFilterIsDisplayedCorrectlyAPI
