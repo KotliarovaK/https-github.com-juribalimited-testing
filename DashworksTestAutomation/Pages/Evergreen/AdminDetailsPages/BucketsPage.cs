@@ -17,10 +17,13 @@ namespace DashworksTestAutomation.Pages.Evergreen.AdminDetailsPages
         [FindsBy(How = How.XPath, Using = ".//label[text()='Bucket Name']/ancestor::div[@class='form-item']//input")]
         public IWebElement BucketNameField { get; set; }
 
+        [FindsBy(How = How.XPath, Using = ".//input[@id='teams']")]
+        public IWebElement TeamsNameField { get; set; }
+
         [FindsBy(How = How.XPath, Using = ".//span[text()='Select a team']/ancestor::div[@class='mat-select-trigger']")]
         public IWebElement SelectTeamDropdown { get; set; }
 
-        [FindsBy(How = How.XPath, Using = ".//span[text()='CREATE']")]
+        [FindsBy(How = How.XPath, Using = ".//button[@class='mat-primary mat-raised-button']")]
         public IWebElement CreateButton { get; set; }
 
         [FindsBy(How = How.XPath, Using = ".//div[contains(@class, 'inline-success')]")]
@@ -36,6 +39,13 @@ namespace DashworksTestAutomation.Pages.Evergreen.AdminDetailsPages
             {
                 SelectorFor(this, p => p.BucketPageTitle),
             };
+        }
+
+        public void SelectTeam(string teamName)
+        {
+            string TeamNameSelector = $".//span[@class='mat-option-text'][text()='{teamName}']";
+            Driver.WaitWhileControlIsNotDisplayed(By.XPath(TeamNameSelector));
+            Driver.FindElement(By.XPath(TeamNameSelector)).Click();
         }
 
     }
