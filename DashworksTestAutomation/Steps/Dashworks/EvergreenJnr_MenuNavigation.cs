@@ -5,6 +5,7 @@ using NUnit.Framework;
 using OpenQA.Selenium.Remote;
 using System;
 using DashworksTestAutomation.Pages.Evergreen.AdminDetailsPages;
+using DashworksTestAutomation.Providers;
 using TechTalk.SpecFlow;
 
 namespace DashworksTestAutomation.Steps.Dashworks
@@ -124,7 +125,9 @@ namespace DashworksTestAutomation.Steps.Dashworks
         public void WhenUserClicksAdminOnTheLeft_HandMenu()
         {
             var menu = _driver.NowAt<LeftHandMenuElement>();
-            menu.Admin.Click();
+            //menu.Admin.Click();
+            //Admin tab on the left-hand menu is temporarily unavailable
+            _driver.NavigateToUrl($"{UrlProvider.EvergreenUrl}#//admin");
             Logger.Write("Admin page was clicked");
         }
 

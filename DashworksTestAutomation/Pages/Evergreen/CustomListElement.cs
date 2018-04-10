@@ -57,6 +57,12 @@ namespace DashworksTestAutomation.Pages.Evergreen
         [FindsBy(How = How.XPath, Using = ".//li[text()='Delete']")]
         public IWebElement DeleteButton { get; set; }
 
+        [FindsBy(How = How.XPath, Using = ".//button[@class='btn mat-button']")]
+        public IWebElement DeleteButtonInWarningMessage { get; set; }
+
+        [FindsBy(How = How.XPath, Using = ".//button[@class='btn btn-transparent mat-button']")]
+        public IWebElement CancelButtonInWarningMessage { get; set; }
+
         #endregion ListSettings
 
         #region DeleteListBlock
@@ -105,12 +111,24 @@ namespace DashworksTestAutomation.Pages.Evergreen
             Driver.MouseHover(By.XPath(settingsButton));
             Driver.FindElement(By.XPath(settingsButton)).Click();
         }
+
         public IWebElement CheckAllListName(string listName)
         {
             var allListName = $".//div[@class='submenu-selected-list list-selected'][text()='{listName}']";
             Driver.WaitWhileControlIsNotDisplayed(By.XPath(allListName));
             return Driver.FindElement(By.XPath(allListName));
         }
+
+        public bool ListNameWarningMessage(string listName)
+        {
+            return Driver.IsElementDisplayed(By.XPath($".//div[@class='inline-box-text ng-star-inserted']//span[text()='{listName}']"));
+        }
+
+        public bool RemovingDependencyListMessage(string warningText)
+        {
+            return Driver.IsElementDisplayed(By.XPath($".//div[@class='inline-box-text ng-star-inserted']//span[text()='{warningText}']"));
+        }
+
         public bool CheckThatListIsRemoved(string listName)
         {
             return Driver.IsElementDisplayed(By.XPath($".//span[@class='submenu-actions-list-name'][text()='{listName}']"));

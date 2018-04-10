@@ -76,7 +76,6 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_GridActions
         [NUnit.Framework.CategoryAttribute("DAS10836")]
         [NUnit.Framework.CategoryAttribute("DAS11666")]
         [NUnit.Framework.CategoryAttribute("DAS12325")]
-        [NUnit.Framework.CategoryAttribute("Not_Run")]
         public virtual void EvergreenJnr_DevicesList_CheckThatColumnsOrderSavedAfterSearch()
         {
             System.Exception lastException = null;
@@ -112,8 +111,7 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_GridActions
                         "ColumnOrder",
                         "DAS10836",
                         "DAS11666",
-                        "DAS12325",
-                        "Not_Run"});
+                        "DAS12325"});
             this.ScenarioSetup(scenarioInfo);
             this.FeatureBackground();
             testRunner.When("User clicks \"Devices\" on the left-hand menu", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
@@ -142,7 +140,6 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_GridActions
         [NUnit.Framework.CategoryAttribute("DAS10836")]
         [NUnit.Framework.CategoryAttribute("DAS11664")]
         [NUnit.Framework.CategoryAttribute("DAS12325")]
-        [NUnit.Framework.CategoryAttribute("Not_Run")]
         public virtual void EvergreenJnr_UsersList_CheckThatColumnsOrderSavedAfterSearch()
         {
             System.Exception lastException = null;
@@ -178,8 +175,7 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_GridActions
                         "ColumnOrder",
                         "DAS10836",
                         "DAS11664",
-                        "DAS12325",
-                        "Not_Run"});
+                        "DAS12325"});
             this.ScenarioSetup(scenarioInfo);
             this.FeatureBackground();
             testRunner.When("User clicks \"Users\" on the left-hand menu", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
@@ -215,6 +211,8 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_GridActions
         [NUnit.Framework.CategoryAttribute("DAS10621")]
         [NUnit.Framework.CategoryAttribute("DAS11666")]
         [NUnit.Framework.CategoryAttribute("DAS12156")]
+        [NUnit.Framework.CategoryAttribute("DAS12351")]
+        [NUnit.Framework.CategoryAttribute("Not_Run")]
         public virtual void EvergreenJnr_DevicesList_CheckThatColumnsOrderSavedAfterAddingAFilter()
         {
             System.Exception lastException = null;
@@ -250,7 +248,9 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_GridActions
                         "ColumnOrder",
                         "DAS10621",
                         "DAS11666",
-                        "DAS12156"});
+                        "DAS12156",
+                        "DAS12351",
+                        "Not_Run"});
             this.ScenarioSetup(scenarioInfo);
             this.FeatureBackground();
             testRunner.When("User clicks \"Devices\" on the left-hand menu", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
