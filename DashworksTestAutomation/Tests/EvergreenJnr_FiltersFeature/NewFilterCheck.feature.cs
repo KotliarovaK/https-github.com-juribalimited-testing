@@ -786,7 +786,8 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_FiltersFeature
             testRunner.And("User Add And \"UserSchedu: Radio Rag Date Comp\" filter where type is \"Equals\" with" +
                     " added column and following checkboxes:", ((string)(null)), table14, "And ");
             testRunner.Then("\"233\" rows are displayed in the agGrid", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-            testRunner.When("User create custom list with \"Devices_ProjectTaskFilters_AND\" name", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+            testRunner.When("User create dynamic list with \"Devices_ProjectTaskFilters_AND\" name on \"Devices\" " +
+                    "page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
             testRunner.Then("\"Devices_ProjectTaskFilters_AND\" list is displayed to user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
             testRunner.When("User navigates to the \"All Devices\" list", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
             testRunner.Then("\"Devices\" list should be displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
@@ -909,7 +910,8 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_FiltersFeature
             testRunner.And("User Add And \"Windows7Mi: T-60 SMS Message Sent\" filter where type is \"Equals\" wi" +
                     "th added column and following checkboxes:", ((string)(null)), table18, "And ");
             testRunner.Then("\"4,641\" rows are displayed in the agGrid", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-            testRunner.When("User create custom list with \"Users_ProjectTaskFilters_AND\" name", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+            testRunner.When("User create dynamic list with \"Users_ProjectTaskFilters_AND\" name on \"Users\" page" +
+                    "", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
             testRunner.Then("\"Users_ProjectTaskFilters_AND\" list is displayed to user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
             testRunner.When("User navigates to the \"All Users\" list", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
             testRunner.Then("\"Users\" list should be displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");

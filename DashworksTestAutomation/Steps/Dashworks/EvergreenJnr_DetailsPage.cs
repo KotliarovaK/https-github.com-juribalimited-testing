@@ -27,7 +27,6 @@ namespace DashworksTestAutomation.Steps.Dashworks
         public void WhenUserNavigatesToTheTab(string tabName)
         {
             var tabs = _driver.NowAt<BaseDetailsTabsMenu>();
-
             tabs.NavigateToTabByName(tabName);
         }
 
@@ -357,8 +356,6 @@ namespace DashworksTestAutomation.Steps.Dashworks
             foreach (var row in table.Rows)
             {
                 var content = page.GetColumnContent(row["ColumnName"]);
-
-
                 //Check that at least 1 cell has some content
                 Assert.IsTrue(content.Count(x => !string.IsNullOrEmpty(x)) > 0, "Column is empty");
             }
