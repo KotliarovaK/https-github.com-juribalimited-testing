@@ -55,7 +55,6 @@ namespace DashworksTestAutomation.Steps.Dashworks
         public void WhenUserClickOnColumnHeader(string columnName)
         {
             var listpageMenu = _driver.NowAt<BaseDashboardPage>();
-
             _driver.WaitForDataLoading();
             listpageMenu.GetColumnHeaderByName(columnName).Click();
         }

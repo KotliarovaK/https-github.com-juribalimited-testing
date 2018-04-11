@@ -971,7 +971,8 @@ Scenario: EvergreenJnr_AllLists_CheckThatFilterTextDisplaysActualListName
 	When User clicks "Applications" on the left-hand menu
 	Then "Applications" list should be displayed to the user
 	When User click on 'Application' column header
-	When User create custom list with "ApplicationList" name
+	#When User create custom list with "ApplicationList" name
+	When User create dynamic list with "ApplicationList" name on "Applications" page
 	When User clicks "Devices" on the left-hand menu
 	Then "Devices" list should be displayed to the user
 	When User clicks the Filters button
@@ -979,7 +980,8 @@ Scenario: EvergreenJnr_AllLists_CheckThatFilterTextDisplaysActualListName
 	When User add "Application (Saved List)" filter where type is "In list" with SelectedList list and following Association:
 	| SelectedList    | Association        |
 	| ApplicationList | Entitled to device |
-	When User create custom list with "DevicesList" name
+	#When User create custom list with "DevicesList" name
+	When User create dynamic list with "DevicesList" name on "Devices" page
 	When User clicks the List Details button
 	Then List details panel is displayed to the user
 	When User select "Everyone can edit" sharing option
