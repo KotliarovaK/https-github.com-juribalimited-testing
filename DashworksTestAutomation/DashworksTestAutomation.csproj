@@ -199,7 +199,8 @@
     <Compile Include="Pages\LoginPage.cs" />
     <Compile Include="Pages\LoginPanelPage.cs" />
     <Compile Include="Pages\LogoutPage.cs" />
-    <Compile Include="Pages\Projects\BaseProjectsElements.cs" />
+    <Compile Include="Pages\Projects\NavigationMenu.cs" />
+    <Compile Include="Pages\Projects\ManageProjectDetails.cs" />
     <Compile Include="Steps\Projects\Projects_CreateProject.cs" />
     <Compile Include="Steps\Projects\Projects_Login.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -351,6 +352,11 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>Login_Logout.feature</DependentUpon>
     </Compile>
+    <Compile Include="Tests\Projects\CreateProject.feature.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>CreateProject.feature</DependentUpon>
+    </Compile>
     <Compile Include="Utils\ByFactory.cs" />
     <Compile Include="Utils\CustomRemoteWebDriver.cs" />
     <Compile Include="Utils\DatabaseWorker.cs" />
@@ -463,6 +469,10 @@
     <None Include="Tests\Login_Logout.feature">
       <Generator>SpecFlowSingleFileGenerator</Generator>
       <LastGenOutput>Login_Logout.feature.cs</LastGenOutput>
+    </None>
+    <None Include="Tests\Projects\CreateProject.feature">
+      <Generator>SpecFlowSingleFileGenerator</Generator>
+      <LastGenOutput>CreateProject.feature.cs</LastGenOutput>
     </None>
   </ItemGroup>
   <ItemGroup>

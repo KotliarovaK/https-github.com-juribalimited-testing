@@ -1,12 +1,6 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using DashworksTestAutomation.Base;
+﻿using DashworksTestAutomation.Base;
 using DashworksTestAutomation.Extensions;
 using DashworksTestAutomation.Utils;
-using NUnit.Framework;
 using OpenQA.Selenium.Remote;
 using TechTalk.SpecFlow;
 
@@ -36,9 +30,8 @@ namespace DashworksTestAutomation.Pages.Projects
         [Then(@"Projects page is displayed to the user")]
         public void ThenProjectsPageIsDisplayedToTheUser()
         {
-            var page = _driver.NowAt<BaseProjectsElements>();
-
-            Assert.IsTrue(page.ProjectsHomePage.Displayed(), "Projects Home page is not displayed");
+            var page = _driver.NowAt<NavigationMenu>();
+            _driver.WaitForTextToAppear(page.PageHeder, "Projects Home");
             Logger.Write("Projects Home page is displayed");
         }
     }

@@ -1,9 +1,5 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using System.ComponentModel;
+using DashworksTestAutomation.Extensions;
 
 namespace DashworksTestAutomation.DTO.Projects
 {
@@ -26,6 +22,21 @@ namespace DashworksTestAutomation.DTO.Projects
         public string TaskEmailBccEmailAddress { get; set; }
         public string StartDate { get; set; }
         public string EndDate { get; set; }
+
+        public DetailsDto()
+        {
+            DefaultReadinessForOnboardedApplications =
+                EnumExtensions.GetRandomValue<DefaultReadinessForOnboardedApplicationsEnum>();
+            DefaultValueForShowLinkedObjects = EnumExtensions.GetRandomValue<DefaultValueForShowLinkedObjectsEnum>();
+            DefaultViewForProjectObjectApplicationsTab1 =
+                EnumExtensions.GetRandomValue<DefaultViewForProjectObjectApplicationsTab1Enum>();
+            DefaultViewForProjectObjectApplicationsTab2 =
+                EnumExtensions.GetRandomValue<DefaultViewForProjectObjectApplicationsTab2Enum>();
+            DefaultValueForApplicationRationalization =
+                EnumExtensions.GetRandomValue<DefaultValueForApplicationRationalizationEnum>();
+            OnboardUsedApplicationsByAssociationTo =
+                EnumExtensions.GetRandomValue<OnboardUsedApplicationsByAssociationToEnum>();
+        }
     }
 
     public enum DefaultReadinessForOnboardedApplicationsEnum

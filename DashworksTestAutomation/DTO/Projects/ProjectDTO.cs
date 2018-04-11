@@ -1,9 +1,5 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using System.ComponentModel;
+using DashworksTestAutomation.Extensions;
 
 namespace DashworksTestAutomation.DTO.Projects
 {
@@ -15,6 +11,12 @@ namespace DashworksTestAutomation.DTO.Projects
         public ProjectTypeEnum ProjectType;
         public DefaultLanguageEnum DefaultLanguage;
         public DetailsDto Details { get; set; }
+
+        public ProjectDto()
+        {
+            ProjectType = EnumExtensions.GetRandomValue<ProjectTypeEnum>();
+            DefaultLanguage = EnumExtensions.GetRandomValue<DefaultLanguageEnum>();
+        }
     }
 
     public enum ProjectTypeEnum
