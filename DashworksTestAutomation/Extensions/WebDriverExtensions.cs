@@ -254,6 +254,7 @@ namespace DashworksTestAutomation.Extensions
                     $"Element with '{by}' selector is NOT displayed in {waitTimeout.TotalSeconds} seconds", e);
             }
         }
+
         public static void WaitWhileControlContainingTextIsNotDisplayed(this RemoteWebDriver driver, By by)
         {
             try
