@@ -14,10 +14,12 @@ namespace DashworksTestAutomation.Steps.Dashworks
     internal class EvergreenJnr_BaseDashboardPage : SpecFlowContext
     {
         private readonly RemoteWebDriver _driver;
+        private readonly DTO.RuntimeVariables.ListsDetails _listDetails;
 
-        public EvergreenJnr_BaseDashboardPage(RemoteWebDriver driver)
+        public EvergreenJnr_BaseDashboardPage(RemoteWebDriver driver, DTO.RuntimeVariables.ListsDetails listsDetails)
         {
             _driver = driver;
+            _listDetails = listsDetails;
         }
 
         [When(@"User have opened column settings for ""(.*)"" column")]
@@ -53,7 +55,6 @@ namespace DashworksTestAutomation.Steps.Dashworks
         public void WhenUserClickOnColumnHeader(string columnName)
         {
             var listpageMenu = _driver.NowAt<BaseDashboardPage>();
-
             _driver.WaitForDataLoading();
             listpageMenu.GetColumnHeaderByName(columnName).Click();
         }
@@ -227,6 +228,14 @@ namespace DashworksTestAutomation.Steps.Dashworks
             var page = _driver.NowAt<BaseDashboardPage>();
             Assert.AreEqual(text, page.FilterContainer.Text.TrimStart(' ').TrimEnd(' '),
                 $"Filter is created incorrectly");
+        }
+
+        [Then(@"""(.*)"" text is displayed in filter container for ""(.*)"" list name")]
+        public void ThenTextIsDisplayedInFilterContainerForListName(string text, string listName)
+        {
+            var page = _driver.NowAt<BaseDashboardPage>();
+            Assert.AreEqual(text.Replace("{LIST_ID}", _listDetails.GetListIdByName(listName)), page.FilterContainer.Text.TrimStart(' ').TrimEnd(' '),
+                "Filter is created incorrectly");
         }
 
         [Then(@"""(.*)"" Application version is displayed")]

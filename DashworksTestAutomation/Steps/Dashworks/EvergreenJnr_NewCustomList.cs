@@ -60,8 +60,8 @@ namespace DashworksTestAutomation.Steps.Dashworks
         public void WhenUserClicksSettingsButtonInTheListPanel()
         {
             var listElement = _driver.NowAt<CustomListElement>();
-            _driver.MouseHover(By.XPath(".//i[@class='menu-trigger material-icons mat-settings mat-18 pull-right settings-icon settings-area']"));
-            _driver.WaitWhileControlIsNotDisplayed(By.XPath(".//i[@class='menu-trigger material-icons mat-settings mat-18 pull-right settings-icon settings-area']"));
+            _driver.MouseHover(listElement.SettingsButton);
+            _driver.WaitWhileControlIsNotDisplayed<CustomListElement>(() => listElement.SettingsButton);
             listElement.SettingsButton.Click();
         }
 
@@ -136,6 +136,36 @@ namespace DashworksTestAutomation.Steps.Dashworks
         {
             var listDetailsElement = _driver.NowAt<CustomListElement>();
             listDetailsElement.ManageButton.Click();
+        }
+
+        [When(@"User clicks Delete in the list panel")]
+        public void WhenUserClicksDeleteInTheListPanel()
+        {
+            var listDetailsElement = _driver.NowAt<CustomListElement>();
+            listDetailsElement.DeleteButton.Click();
+        }
+
+        [Then(@"Delete and Cancel buttons are available in the warning message")]
+        public void ThenDeleteAndCancelButtonsAreAvailableInTheWarningMessage()
+        {
+            var listDetailsElement = _driver.NowAt<CustomListElement>();
+            Assert.IsTrue((listDetailsElement.CancelButtonInWarningMessage.Displayed), "Cancel button is not displayed");
+            Assert.IsTrue((listDetailsElement.DeleteButtonInWarningMessage.Displayed), "Delete button is not displayed");
+        }
+
+        [When(@"User clicks Cancel button in the warning message")]
+        public void WhenUserClicksCancelButtonInTheWarningMessage()
+        {
+            var listDetailsElement = _driver.NowAt<CustomListElement>();
+            listDetailsElement.CancelButtonInWarningMessage.Click();
+        }
+
+        [Then(@"""(.*)"" ""(.*)"" message is displayed in the lists panel")]
+        public void ThenMessageIsDisplayedInTheListsPanel(string listName, string warningText)
+        {
+            var listElement = _driver.NowAt<CustomListElement>();
+            Assert.IsTrue(listElement.ListNameWarningMessage(listName), $"{listName} is not displayed in the list details panel");
+            Assert.IsTrue(listElement.RemovingDependencyListMessage(warningText), $"{warningText} message is not displayed in the list details panel");
         }
 
         [When(@"User update current custom list")]

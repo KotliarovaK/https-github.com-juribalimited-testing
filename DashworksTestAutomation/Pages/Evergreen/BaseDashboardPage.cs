@@ -22,7 +22,7 @@ namespace DashworksTestAutomation.Pages.Evergreen
         [FindsBy(How = How.XPath, Using = ".//button[@id='_clmnBtn']")]
         public IWebElement ColumnButton { get; set; }
 
-        [FindsBy(How = How.XPath, Using = ".//button[@id='_fltrBtn']")]
+        [FindsBy(How = How.XPath, Using = ".//i[@class='material-icons mat-filter_list']")]
         public IWebElement FilterButton { get; set; }
 
         [FindsBy(How = How.XPath,

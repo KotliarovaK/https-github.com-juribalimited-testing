@@ -241,6 +241,20 @@ namespace DashworksTestAutomation.Extensions
             }
         }
 
+        public static void WaitWhileControlIsNotExists(this RemoteWebDriver driver, By by)
+        {
+            try
+            {
+                WebDriverWait wait = new WebDriverWait(driver, waitTimeout);
+                wait.Until(ExpectedConditions.ElementExists(by));
+            }
+            catch (WebDriverTimeoutException e)
+            {
+                throw new Exception(
+                    $"Element with '{by}' selector is NOT displayed in {waitTimeout.TotalSeconds} seconds", e);
+            }
+        }
+
         public static void WaitWhileControlContainingTextIsNotDisplayed(this RemoteWebDriver driver, By by)
         {
             try

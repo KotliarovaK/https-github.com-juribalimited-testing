@@ -218,12 +218,14 @@ Scenario Outline: EvergreenJnr_AllLists_CheckThatNoAbilityToCreateTheSameNamedLi
 	Then "<PageName>" list should be displayed to the user
 	When User click on '<Columnname>' column header
 	Then data in table is sorted by '<Columnname>' column in ascending order
-	When User create custom list with "2" name
+	#When User create custom list with "2" name
+	When User create dynamic list with "2" name on "<PageName>" page
 	Then "2" list is displayed to user
 	When User navigates to the "<ListToNavigate>" list
 	When User click on '<Columnname>' column header
 	Then data in table is sorted by '<Columnname>' column in ascending order
-	When User create custom list with " 2" name
+	#When User create custom list with " 2" name
+	When User create dynamic list with " 2" name on "<PageName>" page
 	Then Warning message with "List Name should be unique" is displayed
 
 	Examples: 
@@ -256,7 +258,7 @@ Scenario Outline: EvergreenJnr_AllLists_CheckThatNoAbilityToCreateTheSameNamedLi
 	| Applications | All Applications |
 	| Mailboxes    | All Mailboxes    |
 	
-@Evergreen @AllLists @EvergreenJnr_ListDetails @ListDetailsFunctionality @DAS12208 @Delete_Newly_Created_List
+@Evergreen @AllLists @EvergreenJnr_ListDetails @ListDetailsFunctionality @DAS12208 @Delete_Newly_Created_List @Not_Run
 Scenario: EvergreenJnr_AllLists_CheckThatWarningMessageIsNotDisplayedInTheListPanelAfterViewingDependentList
 	When User clicks "Applications" on the left-hand menu
 	Then "Applications" list should be displayed to the user
@@ -268,7 +270,8 @@ Scenario: EvergreenJnr_AllLists_CheckThatWarningMessageIsNotDisplayedInTheListPa
 	Then ColumnName is added to the list
 	| ColumnName |
 	| Compliance |
-	When User create custom list with "TestList1262B7" name
+	#When User create custom list with "TestList1262B7" name
+	When User create dynamic list with "TestList1262B7" name on "Applications" page
 	Then "TestList1262B7" list is displayed to user
 	When User clicks "Devices" on the left-hand menu
 	Then "Devices" list should be displayed to the user
@@ -278,7 +281,8 @@ Scenario: EvergreenJnr_AllLists_CheckThatWarningMessageIsNotDisplayedInTheListPa
 	| SelectedList   | Association        |
 	| TestList1262B7 | Entitled to device |
 	Then "Application" filter is added to the list
-	When User create custom list with "TestList186851" name
+	#When User create custom list with "TestList186851" name
+	When User create dynamic list with "TestList186851" name on "Devices" page
 	Then "TestList186851" list is displayed to user
 	When User clicks the List Details button
 	Then List details panel is displayed to the user
@@ -298,12 +302,13 @@ Scenario: EvergreenJnr_AllLists_CheckThatWarningMessageIsNotDisplayedInTheListPa
 	Then "TestList186851" list is displayed to user
 	Then no Warning message is displayed in the lists panel
 
-@Evergreen @AllLists @EvergreenJnr_ListDetails @ListDetailsFunctionality @DAS12190 @DAS12204 @Delete_Newly_Created_List
+@Evergreen @AllLists @EvergreenJnr_ListDetails @ListDetailsFunctionality @DAS10713 @DAS12190 @DAS12204 @Delete_Newly_Created_List @Not_Run
 Scenario: EvergreenJnr_AllLists_CheckThatTwoDependencyAreDisplayedInTheDependentsBlock
 	When User clicks "Applications" on the left-hand menu
 	Then "Applications" list should be displayed to the user
 	When User click on 'Application' column header
-	And User create custom list with "Application1" name
+	#And User create custom list with "Application1" name
+	When User create dynamic list with "Application1" name on "Applications" page
 	Then "Application1" list is displayed to user
 	When User clicks "Devices" on the left-hand menu
 	Then "Devices" list should be displayed to the user
@@ -313,7 +318,8 @@ Scenario: EvergreenJnr_AllLists_CheckThatTwoDependencyAreDisplayedInTheDependent
 	| SelectedList | Association        |
 	| Application1 | Entitled to device |
 	Then "Application" filter is added to the list
-	When User create custom list with "Device1" name
+	#When User create custom list with "Device1" name
+	When User create dynamic list with "Device1" name on "Devices" page
 	Then "Device1" list is displayed to user
 	When User clicks the Columns button
 	Then Columns panel is displayed to the user
@@ -338,7 +344,7 @@ Scenario: EvergreenJnr_AllLists_CheckThatTwoDependencyAreDisplayedInTheDependent
 	Then "NewDevice" list is displayed in the Dependants section
 	And "Device1" list is displayed in the Dependants section
 
-@Evergreen @AllLists @EvergreenJnr_ListDetails @ListDetailsFunctionality @DAS12169 @DAS12286 @DAS12192 @Delete_Newly_Created_List
+@Evergreen @AllLists @EvergreenJnr_ListDetails @ListDetailsFunctionality @DAS10713 @DAS12169 @DAS12286 @DAS12192 @Delete_Newly_Created_List @Not_Run
 Scenario: EvergreenJnr_AllLists_CheckThatListDoesNotExistErrorWhenViewingDependentList
 	When User clicks "Applications" on the left-hand menu
 	Then "Applications" list should be displayed to the user
@@ -348,7 +354,8 @@ Scenario: EvergreenJnr_AllLists_CheckThatListDoesNotExistErrorWhenViewingDepende
 	| Values |
 	| Adobe  |
 	Then "Vendor" filter is added to the list
-	When User create custom list with "Adobe Apps" name
+	#When User create custom list with "Adobe Apps" name
+	When User create dynamic list with "Adobe Apps" name on "Applications" page
 	Then "Adobe Apps" list is displayed to user
 	When User clicks Settings button in the list panel
 	Then Settings panel is displayed to the user
@@ -364,7 +371,8 @@ Scenario: EvergreenJnr_AllLists_CheckThatListDoesNotExistErrorWhenViewingDepende
 	| SelectedList | Association        |
 	| Adobe Apps   | Entitled to device |
 	Then "Application" filter is added to the list
-	When User create custom list with "Devices with Adobe" name
+	#When User create custom list with "Devices with Adobe" name
+	When User create dynamic list with "Devices with Adobe" name on "Devices" page
 	Then "Devices with Adobe" list is displayed to user
 	When User clicks "Applications" on the left-hand menu
 	Then "Applications" list should be displayed to the user
@@ -381,12 +389,13 @@ Scenario: EvergreenJnr_AllLists_CheckThatListDoesNotExistErrorWhenViewingDepende
 	Then "Devices with Adobe" list is displayed to user
 	And "This list does not exist or you do not have access to it" message is not displayed in the lists panel
 
-@Evergreen @AllLists @EvergreenJnr_ListDetails @ListDetailsFunctionality @DAS12192 @Delete_Newly_Created_List
+@Evergreen @AllLists @EvergreenJnr_ListDetails @ListDetailsFunctionality @DAS10713 @DAS12192 @Delete_Newly_Created_List @Not_Run
 Scenario: EvergreenJnr_AllLists_CheckThatListPanelDoesNotExistErrorWhenViewingDependentList
 	When User clicks "Applications" on the left-hand menu
 	Then "Applications" list should be displayed to the user
 	When User click on 'Application' column header
-	And User create custom list with "A1" name
+	#And User create custom list with "A1" name
+	When User create dynamic list with "A1" name on "Applications" page
 	Then "A1" list is displayed to user
 	When User clicks "Devices" on the left-hand menu
 	Then "Devices" list should be displayed to the user
@@ -396,7 +405,8 @@ Scenario: EvergreenJnr_AllLists_CheckThatListPanelDoesNotExistErrorWhenViewingDe
 	| SelectedList | Association        |
 	| A1           | Entitled to device |
 	Then "Application" filter is added to the list
-	When User create custom list with "D1" name
+	When User create dynamic list with "D1" name on "Devices" page
+	#When User create custom list with "D1" name
 	Then "D1" list is displayed to user
 	When User clicks "Applications" on the left-hand menu
 	Then "Applications" list should be displayed to the user
@@ -411,3 +421,148 @@ Scenario: EvergreenJnr_AllLists_CheckThatListPanelDoesNotExistErrorWhenViewingDe
 	When User clicks "D1" list in the Dependants section
 	Then "D1" list is displayed to user
 	And "This list does not exist or you do not have access to it" message is not displayed in the lists panel
+
+@Evergreen @AllLists @EvergreenJnr_ListDetails @ListDetailsFunctionality @DAS12075 @Delete_Newly_Created_List @Not_Run
+Scenario: EvergreenJnr_AllLists_CheckDisplayingListDeletionWarningMessageForDependenciesDynamicLists
+	When User clicks "Applications" on the left-hand menu
+	Then "Applications" list should be displayed to the user
+	When User click on 'Application' column header
+	When User create dynamic list with "Application1" name on "Applications" page
+	When User clicks "Devices" on the left-hand menu
+	Then "Devices" list should be displayed to the user
+	When User clicks the Filters button
+	Then Filters panel is displayed to the user
+	When User add "Application (Saved List)" filter where type is "In list" with SelectedList list and following Association:
+	| SelectedList | Association    |
+	| Application1 | Used on device |
+	When User create dynamic list with "Devices1" name on "Devices" page
+	When User clicks "Applications" on the left-hand menu
+	Then "Applications" list should be displayed to the user
+	When User navigates to the "Application1" list
+	Then "Application1" list is displayed to user
+	When User clicks Settings button in the list panel
+	Then Settings panel is displayed to the user
+	When User clicks Delete in the list panel
+	Then Delete and Cancel buttons are available in the warning message
+	When User clicks Cancel button in the warning message
+	Then no Warning message is displayed in the lists panel
+	Then "Application1" list is displayed to user
+	When User clicks Settings button in the list panel
+	Then Settings panel is displayed to the user
+	When User clicks Delete in the list panel
+	Then ""Application1" " "list has 1 list(s) that are dependent on it, and will be permanently deleted" message is displayed in the lists panel
+	When User removes custom list with "Application1" name
+	When User clicks "Devices" on the left-hand menu
+	Then "Devices" list should be displayed to the user
+	When User navigates to the "Devices1" list
+	When User clicks the Filters button
+	Then Filters panel is displayed to the user
+	Then "Application in list [List not found] used on device" is displayed in added filter info
+	Then message 'No devices found' is displayed to the user
+
+@Evergreen @AllLists @EvergreenJnr_ListDetails @ListDetailsFunctionality @DAS12075 @Delete_Newly_Created_List @Not_Run
+Scenario: EvergreenJnr_AllLists_CheckDisplayingListDeletionWarningMessageForDependenciesStaticLists
+	When User create static list with "Application2" name on "Applications" page with following items
+	| ItemName                  |
+	| Python 2.2a4              |
+	| Quartus II Programmer 4.0 |
+	| Multi Edit 9 Client       |
+	When User clicks "Devices" on the left-hand menu
+	Then "Devices" list should be displayed to the user
+	When User clicks the Filters button
+	Then Filters panel is displayed to the user
+	When User add "Application (Saved List)" filter where type is "In list" with SelectedList list and following Association:
+	| SelectedList | Association    |
+	| Application2 | Used on device |
+	When User create dynamic list with "Devices2" name on "Devices" page
+	When User clicks "Applications" on the left-hand menu
+	Then "Applications" list should be displayed to the user
+	When User navigates to the "Application2" list
+	Then "Application2" list is displayed to user
+	When User clicks Settings button in the list panel
+	Then Settings panel is displayed to the user
+	When User clicks Delete in the list panel
+	Then ""Application2" " "list has 1 list(s) that are dependent on it, and will be permanently deleted" message is displayed in the lists panel
+	When User removes custom list with "Application2" name
+	When User clicks "Devices" on the left-hand menu
+	Then "Devices" list should be displayed to the user
+	When User navigates to the "Devices2" list
+	When User clicks the Filters button
+	Then Filters panel is displayed to the user
+	Then "Application in list [List not found] used on device" is displayed in added filter info
+	Then message 'No devices found' is displayed to the user
+
+@Evergreen @AllLists @EvergreenJnr_ListDetails @ListDetailsFunctionality @DAS12075 @Delete_Newly_Created_List @Not_Run
+Scenario: EvergreenJnr_AllLists_CheckDisplayingListDeletionWarningMessageForDependenciesLists
+	When User create static list with "Application3" name on "Applications" page with following items
+	| ItemName                                        |
+	| Microsoft SDK Update February 2003 (5.2.3790.0) |
+	| Quartus II Programmer 4.0                       |
+	| Mindreef SOAPscope 4.0                          |
+	When User clicks "Devices" on the left-hand menu
+	Then "Devices" list should be displayed to the user
+	When User clicks the Filters button
+	Then Filters panel is displayed to the user
+	When User add "Application (Saved List)" filter where type is "In list" with SelectedList list and following Association:
+	| SelectedList | Association    |
+	| Application3 | Used on device |
+	When User create dynamic list with "Devices3" name on "Devices" page
+	When User navigates to the "All Devices" list
+	Then "Devices" list should be displayed to the user
+	When User clicks the Filters button
+	Then Filters panel is displayed to the user
+	When User add "Application (Saved List)" filter where type is "In list" with SelectedList list and following Association:
+	| SelectedList | Association        |
+	| Application3 | Entitled to device |
+	When User create dynamic list with "Devices4" name on "Devices" page
+	When User clicks "Applications" on the left-hand menu
+	Then "Applications" list should be displayed to the user
+	When User navigates to the "Application3" list
+	Then "Application3" list is displayed to user
+	When User clicks Settings button in the list panel
+	Then Settings panel is displayed to the user
+	When User clicks Delete in the list panel
+	Then ""Application3" " "list has 2 list(s) that are dependent on it, and will be permanently deleted" message is displayed in the lists panel
+	When User removes custom list with "Application3" name
+	When User clicks "Devices" on the left-hand menu
+	Then "Devices" list should be displayed to the user
+	When User navigates to the "Devices3" list
+	When User clicks the Filters button
+	Then Filters panel is displayed to the user
+	Then "Application in list [List not found] used on device" is displayed in added filter info
+	Then message 'No devices found' is displayed to the user
+
+@Evergreen @AllLists @EvergreenJnr_ListDetails @ListDetailsFunctionality @DAS12075 @Delete_Newly_Created_List @Not_Run
+Scenario: EvergreenJnr_AllLists_CheckDisplayingListDeletionWarningMessageForTwoDependenciesLists
+	When User clicks "Applications" on the left-hand menu
+	Then "Applications" list should be displayed to the user
+	When User click on 'Application' column header
+	When User create dynamic list with "Application4" name on "Applications" page
+	When User add following columns using URL to the "Applications" page:
+	| ColumnName |
+	| Compliance |
+	When User create dynamic list with "Application5" name on "Applications" page
+	When User clicks "Devices" on the left-hand menu
+	Then "Devices" list should be displayed to the user
+	When User clicks the Filters button
+	Then Filters panel is displayed to the user
+	When User add "Application (Saved List)" filter where type is "In list" with SelectedList list and following Association:
+	| SelectedList | Association    |
+	| Application4 | Used on device |
+	| Application5 | Used on device |
+	When User create dynamic list with "Devices4" name on "Devices" page
+	When User clicks "Applications" on the left-hand menu
+	Then "Applications" list should be displayed to the user
+	When User navigates to the "Application4" list
+	Then "Application4" list is displayed to user
+	When User clicks Settings button in the list panel
+	Then Settings panel is displayed to the user
+	When User clicks Delete in the list panel
+	Then ""Application4" " "list has 1 list(s) that are dependent on it, and will be permanently deleted" message is displayed in the lists panel
+	When User removes custom list with "Application4" name
+	When User clicks "Devices" on the left-hand menu
+	Then "Devices" list should be displayed to the user
+	When User navigates to the "Devices4" list
+	When User clicks the Filters button
+	Then Filters panel is displayed to the user
+	Then "Application in list [List not found] or Application5 used on device" is displayed in added filter info

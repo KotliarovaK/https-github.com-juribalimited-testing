@@ -163,12 +163,13 @@ namespace DashworksTestAutomation.Steps.Dashworks
             bucketName.BucketNameField.SendKeys(bucketText);
         }
 
-        [Then(@"User select ""(.*)"" team in the Select a team dropdown")]
-        public void ThenUserSelectTeamInTheSelectATeamDropdown(string userOption)
+        [Then(@"User select ""(.*)"" team in the Team dropdown")]
+        public void ThenUserSelectTeamInTheTeamDropdown(string teamName)
         {
             var createBucketElement = _driver.NowAt<BucketsPage>();
-            _driver.WaitWhileControlIsNotDisplayed<BucketsPage>(() => createBucketElement.SelectTeamDropdown);
-            _driver.SelectCustomSelectbox(createBucketElement.SelectTeamDropdown, userOption);
+            createBucketElement.TeamsNameField.SendKeys(teamName);
+            //_driver.WaitWhileControlIsNotDisplayed<BucketsPage>(() => createBucketElement.SelectTeamDropdown);
+            createBucketElement.SelectTeam(teamName);
         }
 
         [When(@"User clicks Create button on the Create Bucket page")]
@@ -221,11 +222,11 @@ namespace DashworksTestAutomation.Steps.Dashworks
         }
 
         [Then(@"User select ""(.*)"" in the Scope Project dropdown")]
-        public void ThenUserSelectInTheScopeProjectDropdown(string userOption)
+        public void ThenUserSelectInTheScopeProjectDropdown(string listName)
         {
-            var createBucketElement = _driver.NowAt<ProjectsPage>();
-            _driver.WaitWhileControlIsNotDisplayed<ProjectsPage>(() => createBucketElement.SelectScopeProject);
-            _driver.SelectCustomSelectbox(createBucketElement.SelectScopeProject, userOption);
+            var createProjectElement = _driver.NowAt<ProjectsPage>();
+            createProjectElement.ScopeProjectField.Click();
+            createProjectElement.SelectListForProjectCreation(listName);
         }
 
         [Then(@"Create Project button is disabled")]
@@ -233,7 +234,23 @@ namespace DashworksTestAutomation.Steps.Dashworks
         {
             var button = _driver.NowAt<ProjectsPage>();
             _driver.WaitWhileControlIsNotDisplayed<ProjectsPage>(() => button.CreateProjectButton);
-            Assert.IsTrue(Convert.ToBoolean(button.CreateProjectButton.GetAttribute("disabled")), "Create Project button is active");
+            Assert.IsTrue(Convert.ToBoolean(button.CreateProjectButtonOnCreateProjectPage.GetAttribute("disabled")), "Create Project button is active");
+        }
+
+        [Then(@"Create Bucket button is disabled")]
+        public void ThenCreateBucketButtonIsDisabled()
+        {
+            var button = _driver.NowAt<BucketsPage>();
+            _driver.WaitWhileControlIsNotDisplayed<BucketsPage>(() => button.CreateButton);
+            Assert.IsTrue(Convert.ToBoolean(button.CreateButton.GetAttribute("disabled")), "Create Bucket button is active");
+        }
+
+        [Then(@"Create Team button is disabled")]
+        public void ThenCreateTeamButtonIsDisabled()
+        {
+            var button = _driver.NowAt<TeamsPage>();
+            _driver.WaitWhileControlIsNotDisplayed<TeamsPage>(() => button.CreateTeamButtonOnCreateTeamPage);
+            Assert.IsTrue(Convert.ToBoolean(button.CreateTeamButtonOnCreateTeamPage.GetAttribute("disabled")), "Create Team button is active");
         }
 
         [Then(@"Delete ""(.*)"" Project in the Administration")]
@@ -249,16 +266,11 @@ namespace DashworksTestAutomation.Steps.Dashworks
             DatabaseHelper.ExecuteQuery($"delete from[PM].[dbo].[Projects] where[ProjectID] = '{projectId}'");
         }
 
-        //[Then(@"Delete ""(.*)"" Bucket in the Administration")]
-        //public void ThenDeleteBucketInTheAdministration(string p0)
-        //{
-        //    //delete from[PM].[dbo].[EvergreenProjects] where[ProjectId] = '54'
-        //    //delete from[PM].[dbo].[ProjectGroups] where[ProjectID] = '54'
-        //    //delete from[PM].[dbo].[SelfServiceScreenValueLanguage] where[ProjectId] = '54'
-        //    //delete from[PM].[dbo].[SelfService] where[ProjectID] = '54'
-        //    //delete from[PM].[dbo].[SelfServiceScreenValues] where[ProjectID] = '54'
-        //    //delete from[PM].[dbo].[Projects] where[ProjectID] = '54'
-        //    //delete from[PM].[dbo].[Projects] where[ProjectID] = '54'
-        //}
+        [Then(@"Delete ""(.*)"" Bucket in the Administration")]
+        public void ThenDeleteBucketInTheAdministration(string bucketName)
+        {
+            //var projectId = DatabaseHelper.ExecuteReader($"SELECT [ProjectID] FROM[PM].[dbo].[Projects] where[ProjectName] = '{projectName}'", 0)[0];
+            DatabaseHelper.ExecuteQuery($"delete from[PM].[dbo].[ProjectGroups] where[GroupName] = '{bucketName}'");
+        }
     }
 }
