@@ -83,3 +83,27 @@ Scenario: EvergreenJnr_AdminPage_CheckThatCreateButtonIsDisabledForEmptyTeamName
 	And User enters " " in the Team Name field
 	And User enters "test" in the Team Description field
 	Then Create Team button is disabled
+
+@Evergreen @AllLists @EvergreenJnr_AdminPage @AdminPage @DAS11886
+Scenario: EvergreenJnr_AdminPage_CheckThatWarningMessageIsDisplayedAfterDeletingUsedForProjectLists 
+	When User clicks "Users" on the left-hand menu
+	Then "Users" list should be displayed to the user
+	When User click on 'Username' column header
+	When User create dynamic list with "ListForProject" name on "Users" page
+	When User clicks Admin on the left-hand menu
+	Then Admin page should be displayed to the user
+	When User click "Projects" link on the Admin page
+	Then "Projects" page should be displayed to the user
+	When User clicks Create Project button
+	Then Create Project page should be displayed to the user
+	And User enters "TestProject" in the Project Name field
+	And User select "ListForProject" in the Scope Project dropdown
+	When User clicks Create Project button
+	When User clicks "Users" on the left-hand menu
+	Then "Users" list should be displayed to the user
+	When User navigates to the "ListForProject" list
+	Then "ListForProject" list is displayed to user
+	When User removes custom list with "ListForProject" name
+	#Then "{listName}" "{warningText}" message is displayed in the lists panel
+	#Then Then ""Application4" " "list has 1 list(s) that are dependent on it, and will be permanently deleted" message is displayed in the lists panel
+	#Then Delete "TestProject" Project in the Administration

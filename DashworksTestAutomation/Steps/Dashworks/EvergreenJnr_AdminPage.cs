@@ -267,7 +267,7 @@ namespace DashworksTestAutomation.Steps.Dashworks
         }
 
         //[Then(@"Delete ""(.*)"" Bucket in the Administration")]
-        //public void ThenDeleteBucketInTheAdministration(string p0)
+        //public void ThenDeleteBucketInTheAdministration(string bucketName)
         //{
         //    //delete from[PM].[dbo].[EvergreenProjects] where[ProjectId] = '54'
         //    //delete from[PM].[dbo].[ProjectGroups] where[ProjectID] = '54'
