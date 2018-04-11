@@ -218,12 +218,14 @@ Scenario Outline: EvergreenJnr_AllLists_CheckThatNoAbilityToCreateTheSameNamedLi
 	Then "<PageName>" list should be displayed to the user
 	When User click on '<Columnname>' column header
 	Then data in table is sorted by '<Columnname>' column in ascending order
-	When User create custom list with "2" name
+	#When User create custom list with "2" name
+	When User create dynamic list with "2" name on "<PageName>" page
 	Then "2" list is displayed to user
 	When User navigates to the "<ListToNavigate>" list
 	When User click on '<Columnname>' column header
 	Then data in table is sorted by '<Columnname>' column in ascending order
-	When User create custom list with " 2" name
+	#When User create custom list with " 2" name
+	When User create dynamic list with " 2" name on "<PageName>" page
 	Then Warning message with "List Name should be unique" is displayed
 
 	Examples: 
@@ -268,7 +270,8 @@ Scenario: EvergreenJnr_AllLists_CheckThatWarningMessageIsNotDisplayedInTheListPa
 	Then ColumnName is added to the list
 	| ColumnName |
 	| Compliance |
-	When User create custom list with "TestList1262B7" name
+	#When User create custom list with "TestList1262B7" name
+	When User create dynamic list with "TestList1262B7" name on "Applications" page
 	Then "TestList1262B7" list is displayed to user
 	When User clicks "Devices" on the left-hand menu
 	Then "Devices" list should be displayed to the user
@@ -278,7 +281,8 @@ Scenario: EvergreenJnr_AllLists_CheckThatWarningMessageIsNotDisplayedInTheListPa
 	| SelectedList   | Association        |
 	| TestList1262B7 | Entitled to device |
 	Then "Application" filter is added to the list
-	When User create custom list with "TestList186851" name
+	#When User create custom list with "TestList186851" name
+	When User create dynamic list with "TestList186851" name on "Devices" page
 	Then "TestList186851" list is displayed to user
 	When User clicks the List Details button
 	Then List details panel is displayed to the user
@@ -303,7 +307,8 @@ Scenario: EvergreenJnr_AllLists_CheckThatTwoDependencyAreDisplayedInTheDependent
 	When User clicks "Applications" on the left-hand menu
 	Then "Applications" list should be displayed to the user
 	When User click on 'Application' column header
-	And User create custom list with "Application1" name
+	#And User create custom list with "Application1" name
+	When User create dynamic list with "Application1" name on "Applications" page
 	Then "Application1" list is displayed to user
 	When User clicks "Devices" on the left-hand menu
 	Then "Devices" list should be displayed to the user
@@ -313,7 +318,8 @@ Scenario: EvergreenJnr_AllLists_CheckThatTwoDependencyAreDisplayedInTheDependent
 	| SelectedList | Association        |
 	| Application1 | Entitled to device |
 	Then "Application" filter is added to the list
-	When User create custom list with "Device1" name
+	#When User create custom list with "Device1" name
+	When User create dynamic list with "Device1" name on "Devices" page
 	Then "Device1" list is displayed to user
 	When User clicks the Columns button
 	Then Columns panel is displayed to the user
@@ -348,7 +354,8 @@ Scenario: EvergreenJnr_AllLists_CheckThatListDoesNotExistErrorWhenViewingDepende
 	| Values |
 	| Adobe  |
 	Then "Vendor" filter is added to the list
-	When User create custom list with "Adobe Apps" name
+	#When User create custom list with "Adobe Apps" name
+	When User create dynamic list with "Adobe Apps" name on "Applications" page
 	Then "Adobe Apps" list is displayed to user
 	When User clicks Settings button in the list panel
 	Then Settings panel is displayed to the user
@@ -364,7 +371,8 @@ Scenario: EvergreenJnr_AllLists_CheckThatListDoesNotExistErrorWhenViewingDepende
 	| SelectedList | Association        |
 	| Adobe Apps   | Entitled to device |
 	Then "Application" filter is added to the list
-	When User create custom list with "Devices with Adobe" name
+	#When User create custom list with "Devices with Adobe" name
+	When User create dynamic list with "Devices with Adobe" name on "Devices" page
 	Then "Devices with Adobe" list is displayed to user
 	When User clicks "Applications" on the left-hand menu
 	Then "Applications" list should be displayed to the user
@@ -386,7 +394,8 @@ Scenario: EvergreenJnr_AllLists_CheckThatListPanelDoesNotExistErrorWhenViewingDe
 	When User clicks "Applications" on the left-hand menu
 	Then "Applications" list should be displayed to the user
 	When User click on 'Application' column header
-	And User create custom list with "A1" name
+	#And User create custom list with "A1" name
+	When User create dynamic list with "A1" name on "Applications" page
 	Then "A1" list is displayed to user
 	When User clicks "Devices" on the left-hand menu
 	Then "Devices" list should be displayed to the user
@@ -396,7 +405,8 @@ Scenario: EvergreenJnr_AllLists_CheckThatListPanelDoesNotExistErrorWhenViewingDe
 	| SelectedList | Association        |
 	| A1           | Entitled to device |
 	Then "Application" filter is added to the list
-	When User create custom list with "D1" name
+	When User create dynamic list with "D1" name on "Devices" page
+	#When User create custom list with "D1" name
 	Then "D1" list is displayed to user
 	When User clicks "Applications" on the left-hand menu
 	Then "Applications" list should be displayed to the user
