@@ -9,6 +9,9 @@ namespace DashworksTestAutomation.Pages.Projects
 {
     class ProjectProperties
     {
-        
+        public void FillTheProjectFields()
+        {
+            ProjectDto dto = new ProjectDto();
+        }
     }
 }

@@ -11,6 +11,11 @@ namespace DashworksTestAutomation.DTO.Projects
         public ProjectTypeEnum ProjectType;
         public DefaultLanguageEnum DefaultLanguage;
         public DetailsDto Details { get; set; }
+        public RequestTypesDto ReqestType { get; set; }
+        public TeamPropertiesDto TeamProperties { get; set; }
+        public GroupPropertiesDto GroupProperties { get; set; }
+        public MailTemplatePropertiesDto MailTemplateProperties { get; set; }
+        public NewsDto News { get; set; }
 
         public ProjectDto()
         {
