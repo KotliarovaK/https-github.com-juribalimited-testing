@@ -333,10 +333,10 @@ Scenario Outline: EvergreenJnr_MailboxesList_CheckThatFilterOperatorsIsCorrectIn
 
 Examples: 
 	| operatorValue  | filterOption | rowsCount | operatorValueInInfo |
-	| Equals         | 8 Mar 2016   | 3         | is                  |
-	| Does not equal | 8 Mar 2016   | 14,781    | is not              |
-	| Before         | 8 Mar 2016   | 4,699     | is before           |
-	| After          | 8 Mar 2016   | 10,076    | is after            |
+	| Equals         | Mar 8, 2016  | 3         | is                  |
+	| Does not equal | Mar 8, 2016  | 14,781    | is not              |
+	| Before         | Mar 8, 2016  | 4,699     | is before           |
+	| After          | Mar 8, 2016  | 10,076    | is after            |
 	| Empty          |              | 6         | is empty            |
 	| Not empty      |              | 14,778    | is not empty        |
 
@@ -357,10 +357,10 @@ Scenario Outline: EvergreenJnr_DevicesList_CheckThatFilterOperatorsIsCorrectInFi
 
 Examples: 
 	| operatorValue  | filterOption | rowsCount | operatorValueInInfo |
-	| Equals         | 22 Nov 2012  | 16        | is                  |
-	| Does not equal | 22 Nov 2012  | 17,209    | is not              |
-	| Before         | 22 Nov 2012  | 1         | is before           |
-	| After          | 14 May 2012  | 16        | is after            |
+	| Equals         | Nov 22, 2012 | 16        | is                  |
+	| Does not equal | Nov 22, 2012 | 17,209    | is not              |
+	| Before         | Nov 22, 2012 | 1         | is before           |
+	| After          | May 14, 2012 | 16        | is after            |
 	| Empty          |              | 17,208    | is empty            |
 	| Not empty      |              | 17        | is not empty        |
 
@@ -503,8 +503,8 @@ Scenario: EvergreenJnr_DevicesList_CheckThatDateAndTimeFiltersWithEqualsValuesAr
 	When User clicks the Filters button
 	Then Filters panel is displayed to the user
 	When User add "Windows7Mi: Date & Time Task" filter where type is "Equals" with added column and following value:
-	| Values      |
-	| 22 Nov 2012 |
+	| Values       |
+	| Nov 22, 2012 |
 	Then "Windows7Mi: Date & Time Task" filter is added to the list
 	Then "16" rows are displayed in the agGrid
 
@@ -624,9 +624,9 @@ Scenario: EvergreenJnr_DevicesList_CheckThatSpaceAfterCommasInTheFiltersContaine
 	| Values |
 	|        |
 	Then "Department Code" filter is added to the list
-	When User add "Boot Up Date" filter where type is "Before" with added column and "14 Dec 2017" Date filter
+	When User add "Boot Up Date" filter where type is "Before" with added column and "Dec 14, 2017" Date filter
 	Then "Boot Up Date" filter is added to the list
-	When User add "Boot Up Date" filter where type is "After" with added column and "3 Dec 2017" Date filter
+	When User add "Boot Up Date" filter where type is "After" with added column and "Dec 3, 2017" Date filter
 	Then "Boot Up Date" filter is added to the list
 	When User add "CPU Count" filter where type is "Greater than" with added column and following value:
 	| Values |
