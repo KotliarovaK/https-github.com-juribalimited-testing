@@ -41,5 +41,11 @@ namespace DashworksTestAutomation.Pages.Evergreen.AdminDetailsPages
             Driver.WaitWhileControlIsNotDisplayed(By.XPath(ListNameSelector));
             Driver.FindElement(By.XPath(ListNameSelector)).Click();
         }
+
+        public void SelectProjectByName(string ProjectName)
+        {
+            string ProjectNameSelector = $".//a[text()='{ProjectName}']";
+            Driver.FindElement(By.XPath(ProjectNameSelector)).Click();
+        }
     }
 }

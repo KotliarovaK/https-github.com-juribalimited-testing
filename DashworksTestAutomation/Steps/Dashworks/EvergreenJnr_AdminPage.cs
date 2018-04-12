@@ -77,6 +77,20 @@ namespace DashworksTestAutomation.Steps.Dashworks
             Logger.Write($"'{adminLinks}' page is visible");
         }
 
+        [When(@"User clicks ""(.*)"" Project name")]
+        public void WhenUserClicksProjectName(string ProjectName)
+        {
+            var page = _driver.NowAt<ProjectsPage>();
+            page.SelectProjectByName(ProjectName);
+        }
+
+        [Then(@"Project ""(.*)"" is displayed to user")]
+        public void ThenProjectIsDisplayedToUser(string ProjectName)
+        {
+            var page = _driver.NowAt<ProjectsPage>();
+            page.DisplayesProjectByName(ProjectName);
+        }
+
         [When(@"User clicks Create Team button")]
         public void WhenUserClicksCreateTeamButton()
         {

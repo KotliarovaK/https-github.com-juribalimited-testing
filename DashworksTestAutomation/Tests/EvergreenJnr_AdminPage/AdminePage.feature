@@ -105,4 +105,10 @@ Scenario: EvergreenJnr_AdminPage_CheckThatWarningMessageIsDisplayedAfterDeleting
 	Then "ListForProject" list is displayed to user
 	When User removes custom list with "ListForProject" name
 	Then "This list is used by the 1 projects, do you wish to proceed?" message is displayed in the lists panel
-	#Then Delete "TestProject" Project in the Administration
+	When User clicks Admin on the left-hand menu
+	Then Admin page should be displayed to the user
+	When User click "Projects" link on the Admin page
+	Then "Projects" page should be displayed to the user
+	When User clicks "TestProject" Project name
+	#Then Project "TestProject" is displayed to user
+	Then Delete "TestProject" Project in the Administration
