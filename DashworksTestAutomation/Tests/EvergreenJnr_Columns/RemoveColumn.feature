@@ -260,7 +260,6 @@ Scenario: EvergreenJnr_DevicesList_CheckThatRemovingColumnAndFilterFromUrlWorksC
 	Then "Devices" list should be displayed to the user
 	When User click on 'Hostname' column header
 	Then data in table is sorted by 'Hostname' column in ascending order
-	#When User create custom list with "TestList0E8A84" name
 	When User create dynamic list with "TestList0E8A84" name on "Devices" page
 	#Workaround for DAS-11570. Remove after fix
 	#And User navigates to the "TestList0E8A84" list
