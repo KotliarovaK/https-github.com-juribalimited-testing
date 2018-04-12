@@ -104,6 +104,5 @@ Scenario: EvergreenJnr_AdminPage_CheckThatWarningMessageIsDisplayedAfterDeleting
 	When User navigates to the "ListForProject" list
 	Then "ListForProject" list is displayed to user
 	When User removes custom list with "ListForProject" name
-	#Then "{listName}" "{warningText}" message is displayed in the lists panel
-	#Then Then ""Application4" " "list has 1 list(s) that are dependent on it, and will be permanently deleted" message is displayed in the lists panel
+	Then "This list is used by the 1 projects, do you wish to proceed?" message is displayed in the lists panel
 	#Then Delete "TestProject" Project in the Administration
