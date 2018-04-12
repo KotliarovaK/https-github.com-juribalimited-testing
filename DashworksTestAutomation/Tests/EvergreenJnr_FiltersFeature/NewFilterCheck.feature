@@ -256,7 +256,6 @@ Scenario: EvergreenJnr_DevicesList_CheckThatMultiSelectProjectTaskFiltersAreDisp
 	| Failed             |
 	| Complete           |
 	Then "233" rows are displayed in the agGrid
-	#When User create custom list with "Devices_ProjectTaskFilters_AND" name
 	When User create dynamic list with "Devices_ProjectTaskFilters_AND" name on "Devices" page
 	Then "Devices_ProjectTaskFilters_AND" list is displayed to user
 	When User navigates to the "All Devices" list
@@ -300,7 +299,6 @@ Scenario: EvergreenJnr_UsersList_CheckThatMultiSelectProjectTaskFiltersAreDispla
 	| SelectedCheckboxes |
 	| Not Applicable     |
 	Then "4,641" rows are displayed in the agGrid
-	#When User create custom list with "Users_ProjectTaskFilters_AND" name
 	When User create dynamic list with "Users_ProjectTaskFilters_AND" name on "Users" page
 	Then "Users_ProjectTaskFilters_AND" list is displayed to user
 	When User navigates to the "All Users" list

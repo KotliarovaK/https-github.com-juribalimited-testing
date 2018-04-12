@@ -110,7 +110,6 @@ Scenario: EvergreenJnr_UsersList_CheckThatListsIsDisplayedInAlphabeticalOrder
 	| SelectedCheckboxes |
 	| Red                |
 	Then "Compliance" filter is added to the list
-	#When User create custom list with "L TestList Custom List" name
 	When User create dynamic list with "L TestList Custom List" name on "Users" page
 	Then "L TestList Custom List" list is displayed to user
 	When User navigates to the "All Users" list
@@ -121,7 +120,6 @@ Scenario: EvergreenJnr_UsersList_CheckThatListsIsDisplayedInAlphabeticalOrder
 	| SelectedCheckboxes |
 	| Started            |
 	Then "Babel(Engl: Another task" filter is added to the list
-	#When User create custom list with "A TestList Custom List" name
 	When User create dynamic list with "A TestList Custom List" name on "Users" page
 	Then "A TestList Custom List" list is displayed to user
 	When User navigates to the "All Users" list
@@ -158,7 +156,6 @@ Scenario: EvergreenJnr_UsersList_CheckThatListsIsDisplayedInAlphabeticalOrder
 	| SelectedCheckboxes |
 	| TRUE               |
 	Then "Enabled" filter is added to the list
-	#When User create custom list with "X TestList Custom List" name
 	When User create dynamic list with "X TestList Custom List" name on "Users" page
 	Then "X TestList Custom List" list is displayed to user
 	When User navigates to the "All Users" list
@@ -355,7 +352,6 @@ Scenario: EvergreenJnr_DevicesList_CheckThatEditListMenuNotDisplayedForActiveLis
 	Then "Compliance" filter is added to the list
 	When User click on 'Compliance' column header
 	Then data in table is sorted by 'Compliance' column in ascending order
-	#When User create custom list with "Dynamic List TestName" name
 	When User create dynamic list with "Dynamic List TestName" name on "Devices" page
 	Then "Dynamic List TestName" list is displayed to user
 	When User navigates to the "All Devices" list
@@ -696,7 +692,6 @@ Scenario: EvergreenJnr_DevicesLists_CheckThatUserIsNotAbleToCreateListsWithLongN
 	Then "Devices" list should be displayed to the user
 	When User click on 'Hostname' column header
 	Then data in table is sorted by 'Hostname' column in ascending order
-	#When User create custom list with "1234567890123456789012345678901234567890" name
 	When User create dynamic list with "1234567890123456789012345678901234567890" name on "Devices" page
 	Then "1234567890123456789012345678901234567890" list is displayed to user
 	When User duplicates list with "1234567890123456789012345678901234567890" name
