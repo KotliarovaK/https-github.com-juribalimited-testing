@@ -273,7 +273,6 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_Columns
         [NUnit.Framework.CategoryAttribute("DAS11951")]
         [NUnit.Framework.CategoryAttribute("DAS12351")]
         [NUnit.Framework.CategoryAttribute("Delete_Newly_Created_List")]
-        [NUnit.Framework.CategoryAttribute("Not_Run")]
         public virtual void EvergreenJnr_DevicesList_CheckThat500ErrorPageIsNotDisplayedAfterRemovingSortedColumnInCustomListThrowFilters()
         {
             System.Exception lastException = null;
@@ -312,8 +311,7 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_Columns
                         "DAS10973",
                         "DAS11951",
                         "DAS12351",
-                        "Delete_Newly_Created_List",
-                        "Not_Run"});
+                        "Delete_Newly_Created_List"});
             this.ScenarioSetup(scenarioInfo);
             this.FeatureBackground();
             testRunner.When("User clicks \"Devices\" on the left-hand menu", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
@@ -550,7 +548,6 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_Columns
         [NUnit.Framework.CategoryAttribute("DAS10966")]
         [NUnit.Framework.CategoryAttribute("DAS10973")]
         [NUnit.Framework.CategoryAttribute("DAS12351")]
-        [NUnit.Framework.CategoryAttribute("Not_Run")]
         public virtual void EvergreenJnr_DevicesList_CheckThat500ErrorPageIsNotDisplayedAfterRemovingSortedColumnInDefaultListThrowFilters()
         {
             System.Exception lastException = null;
@@ -587,8 +584,7 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_Columns
                         "RemoveColumn",
                         "DAS10966",
                         "DAS10973",
-                        "DAS12351",
-                        "Not_Run"});
+                        "DAS12351"});
             this.ScenarioSetup(scenarioInfo);
             this.FeatureBackground();
             testRunner.When("User clicks \"Devices\" on the left-hand menu", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
@@ -1154,7 +1150,6 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_Columns
         [NUnit.Framework.CategoryAttribute("DAS11515")]
         [NUnit.Framework.CategoryAttribute("DAS12221")]
         [NUnit.Framework.CategoryAttribute("DAS12351")]
-        [NUnit.Framework.CategoryAttribute("Not_Run")]
         public virtual void EvergreenJnr_ApplicationsList_CheckThatColumnIsDisplayedInColumnsPanelAfterRemovingAColumnWhichAlsoExistsAsAFilter()
         {
             System.Exception lastException = null;
@@ -1191,8 +1186,7 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_Columns
                         "RemoveColumn",
                         "DAS11515",
                         "DAS12221",
-                        "DAS12351",
-                        "Not_Run"});
+                        "DAS12351"});
             this.ScenarioSetup(scenarioInfo);
             this.FeatureBackground();
             TechTalk.SpecFlow.Table table52 = new TechTalk.SpecFlow.Table(new string[] {

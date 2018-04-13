@@ -72,7 +72,7 @@ Scenario: EvergreenJnr_DevicesList_CheckThat500ErrorPageIsNotDisplayedAfterRemov
 	| ColumnName   |
 	| Boot Up Date |
 
-@Evergreen @Devices @EvergreenJnr_Columns @RemoveColumn @DAS10966 @DAS10973 @DAS11951 @DAS12351 @Delete_Newly_Created_List @Not_Run
+@Evergreen @Devices @EvergreenJnr_Columns @RemoveColumn @DAS10966 @DAS10973 @DAS11951 @DAS12351 @Delete_Newly_Created_List
 Scenario: EvergreenJnr_DevicesList_CheckThat500ErrorPageIsNotDisplayedAfterRemovingSortedColumnInCustomListThrowFilters
 	When User clicks "Devices" on the left-hand menu
 	Then "Devices" list should be displayed to the user
@@ -166,7 +166,7 @@ Scenario: EvergreenJnr_DevicesList_CheckThat500ErrorPageIsNotDisplayedAfterRemov
 	| Windows7Mi: Date & Time Task |
 	Then data in table is sorted by 'Build Date' column in descending order
 
-@Evergreen @Devices @EvergreenJnr_Columns @RemoveColumn @DAS10966 @DAS10973 @DAS12351 @Not_Run
+@Evergreen @Devices @EvergreenJnr_Columns @RemoveColumn @DAS10966 @DAS10973 @DAS12351
 Scenario: EvergreenJnr_DevicesList_CheckThat500ErrorPageIsNotDisplayedAfterRemovingSortedColumnInDefaultListThrowFilters
 	When User clicks "Devices" on the left-hand menu
 	Then "Devices" list should be displayed to the user
@@ -375,7 +375,7 @@ Scenario: EvergreenJnr_UsersList_CheckThatColumnIsDisplayedInColumnsPanelAfterRe
 	And "18" subcategories is displayed for "User" category
 	And "47" subcategories is displayed for "Project Tasks: Windows7Mi" category
 
-@Evergreen @Applications @EvergreenJnr_Columns @RemoveColumn @DAS11515 @DAS12221 @DAS12351 @Not_Run
+@Evergreen @Applications @EvergreenJnr_Columns @RemoveColumn @DAS11515 @DAS12221 @DAS12351
 Scenario: EvergreenJnr_ApplicationsList_CheckThatColumnIsDisplayedInColumnsPanelAfterRemovingAColumnWhichAlsoExistsAsAFilter
 	When User add following columns using URL to the "Applications" page:
 	| ColumnName                 |
