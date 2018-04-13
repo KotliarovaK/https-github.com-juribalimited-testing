@@ -15,4 +15,4 @@ Scenario: Projects_CreateAProject
 	| ProjectName | ProjectShortName | ProjectDescription | ProjectType            | DefaultLanguage |
 	| Test        | Test             | Test               | User Scheduled Project | English         |
 	Then "Manage Project Details" page is displayed to the user
-	When User fills up Details page
+	When User updating Details page

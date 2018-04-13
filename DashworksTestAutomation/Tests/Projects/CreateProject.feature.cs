@@ -92,10 +92,7 @@ namespace DashworksTestAutomation.Tests.Projects
                         "English"});
             testRunner.When("User creates Project", ((string)(null)), table1, "When ");
             testRunner.Then("\"Manage Project Details\" page is displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-            TechTalk.SpecFlow.Table table2 = new TechTalk.SpecFlow.Table(new string[] {
-                        "ReadinessForOnboardedApplications",
-                        "ValueForShowLinkedObjects"});
-            testRunner.When("User updating Details page", ((string)(null)), table2, "When ");
+            testRunner.When("User updating Details page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
             this.ScenarioCleanup();
         }
     }

@@ -204,6 +204,7 @@
     <Compile Include="Pages\LoginPage.cs" />
     <Compile Include="Pages\LoginPanelPage.cs" />
     <Compile Include="Pages\LogoutPage.cs" />
+    <Compile Include="Pages\Projects\DetailsPage.cs" />
     <Compile Include="Pages\Projects\NavigationMenu.cs" />
     <Compile Include="Pages\Projects\ManageProjectDetails.cs" />
     <Compile Include="Pages\Projects\ProjectPropertiesPage.cs" />
