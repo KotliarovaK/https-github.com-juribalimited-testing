@@ -27,11 +27,11 @@ namespace DashworksTestAutomation.Pages.Projects
             headerMenu.ProjectsLink.Click();
         }
 
-        [Then(@"Projects page is displayed to the user")]
-        public void ThenProjectsPageIsDisplayedToTheUser()
+        [Then(@"""(.*)"" page is displayed to the user")]
+        public void ThenPageIsDisplayedToTheUser(string pageName)
         {
             var page = _driver.NowAt<NavigationMenu>();
-            _driver.WaitForTextToAppear(page.PageHeder, "Projects Home");
+            _driver.WaitForTextToAppear(page.PageHeder, pageName);
             Logger.Write("Projects Home page is displayed");
         }
     }

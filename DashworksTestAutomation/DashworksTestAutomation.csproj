@@ -144,7 +144,12 @@
     <Compile Include="Base\IBaseTest.cs" />
     <Compile Include="Base\SeleniumBasePage.cs" />
     <Compile Include="DTO\Projects\DetailsDto.cs" />
+    <Compile Include="DTO\Projects\GroupPropertiesDto.cs" />
+    <Compile Include="DTO\Projects\MailTemplatePropertiesDto.cs" />
+    <Compile Include="DTO\Projects\NewsDto.cs" />
     <Compile Include="DTO\Projects\ProjectDto.cs" />
+    <Compile Include="DTO\Projects\RequestTypesDto.cs" />
+    <Compile Include="DTO\Projects\TeamPropertiesDto.cs" />
     <Compile Include="DTO\RuntimeVariables\Filter.cs" />
     <Compile Include="DTO\RuntimeVariables\ListsDetails.cs" />
     <Compile Include="DTO\RuntimeVariables\ResponceDetails.cs" />
@@ -201,6 +206,7 @@
     <Compile Include="Pages\LogoutPage.cs" />
     <Compile Include="Pages\Projects\NavigationMenu.cs" />
     <Compile Include="Pages\Projects\ManageProjectDetails.cs" />
+    <Compile Include="Pages\Projects\ProjectPropertiesPage.cs" />
     <Compile Include="Steps\Projects\Projects_CreateProject.cs" />
     <Compile Include="Steps\Projects\Projects_Login.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

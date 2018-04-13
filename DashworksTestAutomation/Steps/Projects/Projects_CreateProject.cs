@@ -35,14 +35,42 @@ namespace DashworksTestAutomation.Steps.Projects
         [When(@"User creates Project")]
         public void WhenUserCreatesProject(Table table)
         {
+            var page = _driver.NowAt<ProjectPropertiesPage>();
+
             table.CreateInstance<ProjectDto>().CopyPropertiesTo(_projectDto);
             _projectDto.ProjectName += TestDataGenerator.RandomString();
+
+            page.ProjectName.SendKeys(_projectDto.ProjectName);
+            page.ProjectShortName.SendKeys(_projectDto.ProjectShortName);
+            page.ProjectDescription.SendKeys(_projectDto.ProjectDescription);
+            page.ProjectType.SelectboxSelect(_projectDto.ProjectType.GetValue());
+            page.DefaultLanguage.SelectboxSelect(_projectDto.DefaultLanguage.GetValue());
+
+            page.CreateProjectButton.Click();
         }
 
-        [Then(@"User fills up Details page")]
-        public void WhenUserFillsUpDetailsPage(Table table)
+        [When(@"User updating Details page")]
+        public void WhenUserupdatingDetailsPage(Table table)
         {
+            var page = _driver.NowAt<DetailsPage>();
+
             table.CreateInstance<DetailsDto>().CopyPropertiesTo(_detailsDto);
+
+            page.ReadinessForOnboardedApplications.SelectboxSelect(_detailsDto.DefaultReadinessForOnboardedApplications.GetValue());
+            page.ValueForShowLinkedObjects.SelectboxSelect(_detailsDto.DefaultValueForShowLinkedObjects.GetValue());
+            page.DefaultViewForProjectObjectApplicationsTab1.SelectboxSelect(_detailsDto.DefaultViewForProjectObjectApplicationsTab1.GetValue());
+            page.DefaultViewForProjectObjectApplicationsTab2.SelectboxSelect(_detailsDto.DefaultViewForProjectObjectApplicationsTab2.GetValue());
+            page.ValueForApplicationRationalization.SelectboxSelect(_detailsDto.DefaultValueForApplicationRationalization.GetValue());
+            //page.ValueForApplicationRationalization.CheckCheckBox();
+            page.OnboardUsedApplicationsByAssociationTo.SelectboxSelect(_detailsDto.OnboardUsedApplicationsByAssociationTo.GetValue());
+            //Master HTML Email Template
+            //Attachments
+            page.TaskEmailCcEmailAddress.SendKeys(_detailsDto.TaskEmailCcEmailAddress);
+            page.TaskEmailBccEmailAddress.SendKeys(_detailsDto.TaskEmailBccEmailAddress);
+            page.StartDate.SendKeys(_detailsDto.StartDate);
+            page.EndDate.SendKeys(_detailsDto.EndDate);
+
+            page.UpdateButton.Click();
         }
 
         [When(@"User navigate to ""(.*)"" tab")]
@@ -59,6 +87,12 @@ namespace DashworksTestAutomation.Steps.Projects
             var tab = _driver.NowAt<ManageProjectDetails>();
             tab.GetButtonElementByName(buttonName).Click();
             _driver.WaitForDataLoading();
+        }
+
+        [Then(@"in the ""(.*)"" team found ""(.*)"" groups")]
+        public void ThenInTheTeamFoundGroups(string teamName, int groups)
+        {
+            
         }
     }
 }

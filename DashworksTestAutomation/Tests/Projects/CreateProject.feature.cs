@@ -75,21 +75,27 @@ namespace DashworksTestAutomation.Tests.Projects
             testRunner.When("User provides the Login and Password and clicks on the login button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
             testRunner.Then("Dashworks homepage is displayed to the user in a logged in state", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
             testRunner.When("User clicks the Switch to Projects link", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-            testRunner.Then("Projects page is displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+            testRunner.Then("\"Projects Home\" page is displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
             testRunner.When("User clicks create Project button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+            testRunner.Then("\"Create Project\" page is displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
             TechTalk.SpecFlow.Table table1 = new TechTalk.SpecFlow.Table(new string[] {
-                        "Name",
-                        "Short Name",
-                        "Description",
-                        "Type",
-                        "Language"});
+                        "ProjectName",
+                        "ProjectShortName",
+                        "ProjectDescription",
+                        "ProjectType",
+                        "DefaultLanguage"});
             table1.AddRow(new string[] {
                         "Test",
                         "Test",
                         "Test",
                         "User Scheduled Project",
                         "English"});
-            testRunner.And("User creates Project", ((string)(null)), table1, "And ");
+            testRunner.When("User creates Project", ((string)(null)), table1, "When ");
+            testRunner.Then("\"Manage Project Details\" page is displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+            TechTalk.SpecFlow.Table table2 = new TechTalk.SpecFlow.Table(new string[] {
+                        "ReadinessForOnboardedApplications",
+                        "ValueForShowLinkedObjects"});
+            testRunner.When("User updating Details page", ((string)(null)), table2, "When ");
             this.ScenarioCleanup();
         }
     }
