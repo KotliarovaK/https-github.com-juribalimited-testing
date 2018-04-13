@@ -145,6 +145,13 @@ namespace DashworksTestAutomation.Steps.Dashworks
             listDetailsElement.DeleteButton.Click();
         }
 
+        [When(@"User clicks Delete in the warning message on the list panel")]
+        public void WhenUserClicksDeleteInTheWarningMessageOnTheListPanel()
+        {
+            var listDetailsElement = _driver.NowAt<CustomListElement>();
+            listDetailsElement.DeleteButtonInWarningMessage.Click();
+        }
+
         [Then(@"Delete and Cancel buttons are available in the warning message")]
         public void ThenDeleteAndCancelButtonsAreAvailableInTheWarningMessage()
         {

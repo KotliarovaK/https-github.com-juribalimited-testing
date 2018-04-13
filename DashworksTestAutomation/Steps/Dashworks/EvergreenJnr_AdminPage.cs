@@ -78,17 +78,40 @@ namespace DashworksTestAutomation.Steps.Dashworks
         }
 
         [When(@"User clicks ""(.*)"" Project name")]
-        public void WhenUserClicksProjectName(string ProjectName)
+        public void WhenUserClicksProjectName(string projectName)
         {
             var page = _driver.NowAt<ProjectsPage>();
-            page.SelectProjectByName(ProjectName);
+            page.SelectProjectByName(projectName);
         }
 
         [Then(@"Project ""(.*)"" is displayed to user")]
-        public void ThenProjectIsDisplayedToUser(string ProjectName)
+        public void ThenProjectIsDisplayedToUser(string projectName)
         {
             var page = _driver.NowAt<ProjectsPage>();
-            page.DisplayesProjectByName(ProjectName);
+           //Assert.AreEqual(projectName, page.ActiveProjectByName(projectName));
+            Assert.IsTrue(page.ActiveProjectByName(projectName), $"{projectName} is not displayed on the  Project page");
+        }
+
+        [When(@"User navigates to the ""(.*)"" tab on the Project details page")]
+        public void WhenUserNavigatesToTheTabOnTheProjectDetailsPage(string tabName)
+        {
+            var projectTabs = _driver.NowAt<ProjectsPage>();
+            projectTabs.NavigateToProjectTabByName(tabName);
+        }
+
+        [Then(@"Warning message with ""(.*)"" text is displayed on the Project details page")]
+        public void ThenWarningMessageWithTextIsDisplayedOnTheProjectDetailsPage(string text)
+        {
+            var page = _driver.NowAt<ProjectsPage>();
+            Assert.AreEqual(page.WarningMessageProjectPage(text), "Warning Message is not displayed");
+        }
+
+        [Then(@"Update Project button is disabled")]
+        public void ThenUpdateProjectButtonIsDisabled()
+        {
+            var button = _driver.NowAt<ProjectsPage>();
+            _driver.WaitWhileControlIsNotDisplayed<ProjectsPage>(() => button.UpdateProjectButton);
+            Assert.IsTrue(Convert.ToBoolean(button.UpdateProjectButton.GetAttribute("disabled")), "Update Project button is active");
         }
 
         [When(@"User clicks Create Team button")]
