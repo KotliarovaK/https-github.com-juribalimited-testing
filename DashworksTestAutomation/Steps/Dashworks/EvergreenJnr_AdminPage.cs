@@ -97,13 +97,14 @@ namespace DashworksTestAutomation.Steps.Dashworks
         {
             var projectTabs = _driver.NowAt<ProjectsPage>();
             projectTabs.NavigateToProjectTabByName(tabName);
+            _driver.WaitForDataLoading();
         }
 
         [Then(@"Warning message with ""(.*)"" text is displayed on the Project details page")]
         public void ThenWarningMessageWithTextIsDisplayedOnTheProjectDetailsPage(string text)
         {
             var page = _driver.NowAt<ProjectsPage>();
-            Assert.AreEqual(page.WarningMessageProjectPage(text), "Warning Message is not displayed");
+            Assert.IsTrue(page.WarningMessageProjectPage(text), "Warning Message is not displayed");
         }
 
         [Then(@"Update Project button is disabled")]
