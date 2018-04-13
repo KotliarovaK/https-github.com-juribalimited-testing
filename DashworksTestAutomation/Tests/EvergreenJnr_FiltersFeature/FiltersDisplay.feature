@@ -946,7 +946,7 @@ Scenario: EvergreenJnr_DevicesLists_CheckThatMailboxOwnerFilterCategoryIsNotDisp
 	When User clicks Add New button on the Filter panel
 	Then "Mailbox Owner" section is not displayed in the Filter panel
 
-@Evergreen @Devices @Evergreen_FiltersFeature @FiltersDisplay @DAS11144 @DAS12351 @Not_Run
+@Evergreen @Devices @Evergreen_FiltersFeature @FiltersDisplay @DAS11144 @DAS12351
 Scenario: EvergreenJnr_DevicesLists_CheckThatChildrenOfTreeBasedFiltersAreIncludedInTheListResultsOnDevicesPage
 	When User clicks "Devices" on the left-hand menu
 	Then "Devices" list should be displayed to the user
