@@ -1789,7 +1789,7 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_FiltersFeature
             TechTalk.SpecFlow.Table table47 = new TechTalk.SpecFlow.Table(new string[] {
                         "Values"});
             table47.AddRow(new string[] {
-                        "Nov 22, 2012"});
+                        "22 Nov 2012"});
             testRunner.When("User add \"Windows7Mi: Date & Time Task\" filter where type is \"Equals\" with added " +
                     "column and following value:", ((string)(null)), table47, "When ");
             testRunner.Then("\"Windows7Mi: Date & Time Task\" filter is added to the list", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
