@@ -503,7 +503,7 @@ Scenario: EvergreenJnr_DevicesList_CheckThatDateAndTimeFiltersWithEqualsValuesAr
 	When User clicks the Filters button
 	Then Filters panel is displayed to the user
 	When User add "Windows7Mi: Date & Time Task" filter where type is "Equals" with added column and following value:
-	| Values       |
+	| Values      |
 	| 22 Nov 2012 |
 	Then "Windows7Mi: Date & Time Task" filter is added to the list
 	Then "16" rows are displayed in the agGrid
