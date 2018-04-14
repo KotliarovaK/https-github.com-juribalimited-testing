@@ -1121,10 +1121,10 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_FiltersFeature
         [NUnit.Framework.CategoryAttribute("FiltersDisplay")]
         [NUnit.Framework.CategoryAttribute("DAS10696")]
         [NUnit.Framework.CategoryAttribute("DAS12114")]
-        [NUnit.Framework.TestCaseAttribute("Equals", "Mar 8, 2016", "3", "is", new string[0])]
-        [NUnit.Framework.TestCaseAttribute("Does not equal", "Mar 8, 2016", "14,781", "is not", new string[0])]
-        [NUnit.Framework.TestCaseAttribute("Before", "Mar 8, 2016", "4,699", "is before", new string[0])]
-        [NUnit.Framework.TestCaseAttribute("After", "Mar 8, 2016", "10,076", "is after", new string[0])]
+        [NUnit.Framework.TestCaseAttribute("Equals", "8 Mar 2016", "3", "is", new string[0])]
+        [NUnit.Framework.TestCaseAttribute("Does not equal", "8 Mar 2016", "14,781", "is not", new string[0])]
+        [NUnit.Framework.TestCaseAttribute("Before", "8 Mar 2016", "4,699", "is before", new string[0])]
+        [NUnit.Framework.TestCaseAttribute("After", "8 Mar 2016", "10,076", "is after", new string[0])]
         [NUnit.Framework.TestCaseAttribute("Empty", "", "6", "is empty", new string[0])]
         [NUnit.Framework.TestCaseAttribute("Not empty", "", "14,778", "is not empty", new string[0])]
         public virtual void EvergreenJnr_MailboxesList_CheckThatFilterOperatorsIsCorrectInFilterInfo(string operatorValue, string filterOption, string rowsCount, string operatorValueInInfo, string[] exampleTags)
@@ -1198,10 +1198,10 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_FiltersFeature
         [NUnit.Framework.CategoryAttribute("DAS10696")]
         [NUnit.Framework.CategoryAttribute("DAS11090")]
         [NUnit.Framework.CategoryAttribute("DAS12114")]
-        [NUnit.Framework.TestCaseAttribute("Equals", "Nov 22, 2012", "16", "is", new string[0])]
-        [NUnit.Framework.TestCaseAttribute("Does not equal", "Nov 22, 2012", "17,209", "is not", new string[0])]
-        [NUnit.Framework.TestCaseAttribute("Before", "Nov 22, 2012", "1", "is before", new string[0])]
-        [NUnit.Framework.TestCaseAttribute("After", "May 14, 2012", "16", "is after", new string[0])]
+        [NUnit.Framework.TestCaseAttribute("Equals", "22 Nov 2012", "16", "is", new string[0])]
+        [NUnit.Framework.TestCaseAttribute("Does not equal", "22 Nov 2012", "17,209", "is not", new string[0])]
+        [NUnit.Framework.TestCaseAttribute("Before", "22 Nov 2012", "1", "is before", new string[0])]
+        [NUnit.Framework.TestCaseAttribute("After", "14 May 2012", "16", "is after", new string[0])]
         [NUnit.Framework.TestCaseAttribute("Empty", "", "17,208", "is empty", new string[0])]
         [NUnit.Framework.TestCaseAttribute("Not empty", "", "17", "is not empty", new string[0])]
         public virtual void EvergreenJnr_DevicesList_CheckThatFilterOperatorsIsCorrectInFilterInfoDatetime(string operatorValue, string filterOption, string rowsCount, string operatorValueInInfo, string[] exampleTags)
@@ -2146,11 +2146,11 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_FiltersFeature
             testRunner.When("User add \"Department Code\" filter where type is \"Not empty\" without added column " +
                     "and following value:", ((string)(null)), table58, "When ");
             testRunner.Then("\"Department Code\" filter is added to the list", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-            testRunner.When("User add \"Boot Up Date\" filter where type is \"Before\" with added column and \"Dec " +
-                    "14, 2017\" Date filter", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+            testRunner.When("User add \"Boot Up Date\" filter where type is \"Before\" with added column and \"14 D" +
+                    "ec 2017\" Date filter", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
             testRunner.Then("\"Boot Up Date\" filter is added to the list", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-            testRunner.When("User add \"Boot Up Date\" filter where type is \"After\" with added column and \"Dec 3" +
-                    ", 2017\" Date filter", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+            testRunner.When("User add \"Boot Up Date\" filter where type is \"After\" with added column and \"3 Dec" +
+                    " 2017\" Date filter", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
             testRunner.Then("\"Boot Up Date\" filter is added to the list", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
             TechTalk.SpecFlow.Table table59 = new TechTalk.SpecFlow.Table(new string[] {
                         "Values"});
