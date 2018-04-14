@@ -16,3 +16,5 @@ Scenario: Projects_CreateAProject
 	| Test        | Test             | Test               | User Scheduled Project | English         |
 	Then "Manage Project Details" page is displayed to the user
 	When User updating Details page
+	| OnboardedApplications | ShowLinkedObjects | ApplicationsTab1 | ApplicationsTab2 | ApplicationRationalization | OnboardUsedApplicationsByAssociationTo | CcEmail | BccEmail | StartDate  | EndDate     |
+	| Light Blue            | Yes               | Target State     | Alphabetical     | Keep                       | User                                   | Test    | Test     | 8 May 2012 | 10 Apr 2018 |

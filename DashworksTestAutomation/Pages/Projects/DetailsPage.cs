@@ -10,25 +10,25 @@ namespace DashworksTestAutomation.Pages.Projects
     internal class DetailsPage : BaseDashboardPage
     {
         [FindsBy(How = How.XPath, Using = ".//div[@class='selectedItemBox']")]
-        public IWebElement ReadinessForOnboardedApplications { get; set; }
+        public IWebElement OnboardedApplications { get; set; }
 
         [FindsBy(How = How.XPath, Using = ".//select[@aria-label='Default Value for Show Linked Objects']")]
-        public IWebElement ValueForShowLinkedObjects { get; set; }
+        public IWebElement ShowLinkedObjects { get; set; }
 
         [FindsBy(How = How.XPath, Using = ".//select[@id='ctl00_MainContent_DV_Project_DefaultAppsViewStateID']")]
-        public IWebElement DefaultViewForProjectObjectApplicationsTab1 { get; set; }
+        public IWebElement ApplicationsTab1 { get; set; }
 
         [FindsBy(How = How.XPath, Using = ".//select[@id='ctl00_MainContent_DV_Project_DefaultAppsViewOrderID']")]
-        public IWebElement DefaultViewForProjectObjectApplicationsTab2 { get; set; }
+        public IWebElement ApplicationsTab2 { get; set; }
 
         [FindsBy(How = How.XPath, Using = ".//select[@aria-label='Default Value for Application Rationalization']")]
-        public IWebElement ValueForApplicationRationalization { get; set; }
+        public IWebElement ApplicationRationalization { get; set; }
 
         [FindsBy(How = How.XPath, Using = ".//input[@aria-label='Show Original Application Column On Application Dashboards']")]
-        public IWebElement ShowOriginalApplicationColumnOnApplicationDashboards { get; set; }
+        public IWebElement OriginalApplicationColumn { get; set; }
 
         [FindsBy(How = How.XPath, Using = ".//input[@aria-label='Include Site Name in Application Name']")]
-        public IWebElement IncludeSiteNameInApplicationName { get; set; }
+        public IWebElement IncludeSiteName { get; set; }
 
         [FindsBy(How = How.XPath, Using = ".//input[@aria-label='Onboard Not Applicable Applications']")]
         public IWebElement OnboardNotApplicableApplications { get; set; }
@@ -43,10 +43,10 @@ namespace DashworksTestAutomation.Pages.Projects
         public IWebElement OnboardUsedApplicationsByAssociationTo { get; set; }
 
         [FindsBy(How = How.XPath, Using = ".//input[@title='Task Email CC Email Address']")]
-        public IWebElement TaskEmailCcEmailAddress { get; set; }
+        public IWebElement CcEmail { get; set; }
 
         [FindsBy(How = How.XPath, Using = ".//input[@title='Task Email BCC Email Address']")]
-        public IWebElement TaskEmailBccEmailAddress { get; set; }
+        public IWebElement BccEmail { get; set; }
 
         [FindsBy(How = How.XPath, Using = ".//input[@id='ctl00_MainContent_DV_Project_UC_ProjectStartDate_TB_SelectDate']")]
         public IWebElement StartDate { get; set; }
@@ -61,19 +61,19 @@ namespace DashworksTestAutomation.Pages.Projects
         {
             return new List<By>
             {
-                SelectorFor(this, p => p.ReadinessForOnboardedApplications),
-                SelectorFor(this, p => p.ValueForShowLinkedObjects),
-                SelectorFor(this, p => p.DefaultViewForProjectObjectApplicationsTab1),
-                SelectorFor(this, p => p.DefaultViewForProjectObjectApplicationsTab2),
-                SelectorFor(this, p => p.ValueForApplicationRationalization),
-                SelectorFor(this, p => p.ShowOriginalApplicationColumnOnApplicationDashboards),
-                SelectorFor(this, p => p.IncludeSiteNameInApplicationName),
+                SelectorFor(this, p => p.OnboardedApplications),
+                SelectorFor(this, p => p.ShowLinkedObjects),
+                SelectorFor(this, p => p.ApplicationsTab1),
+                SelectorFor(this, p => p.ApplicationsTab2),
+                SelectorFor(this, p => p.ApplicationRationalization),
+                SelectorFor(this, p => p.OriginalApplicationColumn),
+                SelectorFor(this, p => p.IncludeSiteName),
                 SelectorFor(this, p => p.OnboardNotApplicableApplications),
                 SelectorFor(this, p => p.OnboardInstalledApplicationsByAssociation),
                 SelectorFor(this, p => p.OnboardEntitledApplicationsByAssociation),
                 SelectorFor(this, p => p.OnboardUsedApplicationsByAssociationTo),
-                SelectorFor(this, p => p.TaskEmailCcEmailAddress),
-                SelectorFor(this, p => p.TaskEmailBccEmailAddress),
+                SelectorFor(this, p => p.CcEmail),
+                SelectorFor(this, p => p.BccEmail),
                 SelectorFor(this, p => p.StartDate),
                 SelectorFor(this, p => p.EndDate)
             };

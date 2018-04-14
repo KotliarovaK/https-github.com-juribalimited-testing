@@ -56,17 +56,17 @@ namespace DashworksTestAutomation.Steps.Projects
 
             table.CreateInstance<DetailsDto>().CopyPropertiesTo(_detailsDto);
 
-            page.ReadinessForOnboardedApplications.SelectboxSelect(_detailsDto.DefaultReadinessForOnboardedApplications.GetValue());
-            page.ValueForShowLinkedObjects.SelectboxSelect(_detailsDto.DefaultValueForShowLinkedObjects.GetValue());
-            page.DefaultViewForProjectObjectApplicationsTab1.SelectboxSelect(_detailsDto.DefaultViewForProjectObjectApplicationsTab1.GetValue());
-            page.DefaultViewForProjectObjectApplicationsTab2.SelectboxSelect(_detailsDto.DefaultViewForProjectObjectApplicationsTab2.GetValue());
-            page.ValueForApplicationRationalization.SelectboxSelect(_detailsDto.DefaultValueForApplicationRationalization.GetValue());
+            page.OnboardedApplications.SelectboxSelect(_detailsDto.DefaultReadinessForOnboardedApplications.GetValue());
+            page.ShowLinkedObjects.SelectboxSelect(_detailsDto.DefaultValueForShowLinkedObjects.GetValue());
+            page.ApplicationsTab1.SelectboxSelect(_detailsDto.DefaultViewForProjectObjectApplicationsTab1.GetValue());
+            page.ApplicationsTab2.SelectboxSelect(_detailsDto.DefaultViewForProjectObjectApplicationsTab2.GetValue());
+            page.ApplicationRationalization.SelectboxSelect(_detailsDto.DefaultValueForApplicationRationalization.GetValue());
             //page.ValueForApplicationRationalization.CheckCheckBox();
             page.OnboardUsedApplicationsByAssociationTo.SelectboxSelect(_detailsDto.OnboardUsedApplicationsByAssociationTo.GetValue());
             //Master HTML Email Template
             //Attachments
-            page.TaskEmailCcEmailAddress.SendKeys(_detailsDto.TaskEmailCcEmailAddress);
-            page.TaskEmailBccEmailAddress.SendKeys(_detailsDto.TaskEmailBccEmailAddress);
+            page.CcEmail.SendKeys(_detailsDto.TaskEmailCcEmailAddress);
+            page.BccEmail.SendKeys(_detailsDto.TaskEmailBccEmailAddress);
             page.StartDate.SendKeys(_detailsDto.StartDate);
             page.EndDate.SendKeys(_detailsDto.EndDate);
 

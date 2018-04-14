@@ -143,6 +143,7 @@
     <Compile Include="Base\BeforeAfterActions.cs" />
     <Compile Include="Base\IBaseTest.cs" />
     <Compile Include="Base\SeleniumBasePage.cs" />
+    <Compile Include="DTO\Projects\CategoryPropertiesDto.cs" />
     <Compile Include="DTO\Projects\DetailsDto.cs" />
     <Compile Include="DTO\Projects\GroupPropertiesDto.cs" />
     <Compile Include="DTO\Projects\MailTemplatePropertiesDto.cs" />

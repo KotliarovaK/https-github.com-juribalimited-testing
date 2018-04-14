@@ -92,7 +92,29 @@ namespace DashworksTestAutomation.Tests.Projects
                         "English"});
             testRunner.When("User creates Project", ((string)(null)), table1, "When ");
             testRunner.Then("\"Manage Project Details\" page is displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-            testRunner.When("User updating Details page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+            TechTalk.SpecFlow.Table table2 = new TechTalk.SpecFlow.Table(new string[] {
+                        "OnboardedApplications",
+                        "ShowLinkedObjects",
+                        "ApplicationsTab1",
+                        "ApplicationsTab2",
+                        "ApplicationRationalization",
+                        "OnboardUsedApplicationsByAssociationTo",
+                        "CcEmail",
+                        "BccEmail",
+                        "StartDate",
+                        "EndDate"});
+            table2.AddRow(new string[] {
+                        "Light Blue",
+                        "Yes",
+                        "Target State",
+                        "Alphabetical",
+                        "Keep",
+                        "User",
+                        "Test",
+                        "Test",
+                        "8 May 2012",
+                        "10 Apr 2018"});
+            testRunner.When("User updating Details page", ((string)(null)), table2, "When ");
             this.ScenarioCleanup();
         }
     }
