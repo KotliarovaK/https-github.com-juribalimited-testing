@@ -77,16 +77,16 @@ namespace DashworksTestAutomation.Steps.Projects
         [When(@"User navigate to ""(.*)"" tab")]
         public void WhenUserNavigateToTab(string tabName)
         {
-            var tab = _driver.NowAt<ManageProjectDetails>();
+            var tab = _driver.NowAt<BaseElements>();
             tab.GetTabElementByName(tabName).Click();
             _driver.WaitForDataLoading();
         }
 
-        [When(@"User click on ""(.*)"" button")]
-        public void WhenUserClickOnButton(string buttonName)
+        [When(@"User click create button")]
+        public void WhenUserClickCreateButton()
         {
-            var tab = _driver.NowAt<ManageProjectDetails>();
-            tab.GetButtonElementByName(buttonName).Click();
+            var tab = _driver.NowAt<BaseElements>();
+            tab.CreateButton.Click();
             _driver.WaitForDataLoading();
         }
 
