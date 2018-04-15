@@ -1,4 +1,4 @@
-﻿@retry:0
+﻿@retry:1
 Feature: CustomListDisplay
 	Runs Custom List Creation block related tests
 

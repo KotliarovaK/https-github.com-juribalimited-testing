@@ -1,6 +1,6 @@
 ﻿@retry:1
 Feature: NewFilterCheck
-	Runs New filters full check related tests
+	Runs New filters check related tests
 
 Background: Pre-Conditions
 	Given User is logged in to the Evergreen
