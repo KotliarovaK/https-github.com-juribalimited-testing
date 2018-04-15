@@ -376,7 +376,6 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_AdminPage
         [NUnit.Framework.CategoryAttribute("EvergreenJnr_AdminPage")]
         [NUnit.Framework.CategoryAttribute("AdminPage")]
         [NUnit.Framework.CategoryAttribute("DAS11886")]
-        [NUnit.Framework.CategoryAttribute("Not_Run")]
         public virtual void EvergreenJnr_AdminPage_CheckThatWarningMessageIsDisplayedAfterDeletingUsedForProjectLists()
         {
             System.Exception lastException = null;
@@ -411,8 +410,7 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_AdminPage
                         "AllLists",
                         "EvergreenJnr_AdminPage",
                         "AdminPage",
-                        "DAS11886",
-                        "Not_Run"});
+                        "DAS11886"});
             this.ScenarioSetup(scenarioInfo);
             this.FeatureBackground();
             testRunner.When("User clicks \"Users\" on the left-hand menu", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");

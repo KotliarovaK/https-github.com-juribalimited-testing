@@ -84,7 +84,7 @@ Scenario: EvergreenJnr_AdminPage_CheckThatCreateButtonIsDisabledForEmptyTeamName
 	And User enters "test" in the Team Description field
 	Then Create Team button is disabled
 
-@Evergreen @AllLists @EvergreenJnr_AdminPage @AdminPage @DAS11886 @Not_Run
+@Evergreen @AllLists @EvergreenJnr_AdminPage @AdminPage @DAS11886
 Scenario: EvergreenJnr_AdminPage_CheckThatWarningMessageIsDisplayedAfterDeletingUsedForProjectLists 
 	When User clicks "Users" on the left-hand menu
 	Then "Users" list should be displayed to the user
