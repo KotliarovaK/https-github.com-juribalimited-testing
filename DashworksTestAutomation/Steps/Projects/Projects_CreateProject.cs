@@ -56,7 +56,8 @@ namespace DashworksTestAutomation.Steps.Projects
 
             table.CreateInstance<DetailsDto>().CopyPropertiesTo(_detailsDto);
 
-            page.OnboardedApplications.SelectboxSelect(_detailsDto.DefaultReadinessForOnboardedApplications.GetValue());
+            page.SelectOnboardedApplications(_detailsDto.DefaultReadinessForOnboardedApplications);
+            //page.OnboardedApplications.SelectboxSelect(_detailsDto.DefaultReadinessForOnboardedApplications.GetValue());
             page.ShowLinkedObjects.SelectboxSelect(_detailsDto.DefaultValueForShowLinkedObjects.GetValue());
             page.ApplicationsTab1.SelectboxSelect(_detailsDto.DefaultViewForProjectObjectApplicationsTab1.GetValue());
             page.ApplicationsTab2.SelectboxSelect(_detailsDto.DefaultViewForProjectObjectApplicationsTab2.GetValue());

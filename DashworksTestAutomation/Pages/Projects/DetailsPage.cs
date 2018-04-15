@@ -1,6 +1,8 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using DashworksTestAutomation.DTO.Projects;
+using DashworksTestAutomation.Extensions;
 using DashworksTestAutomation.Pages.Evergreen;
 using OpenQA.Selenium;
 using OpenQA.Selenium.Support.PageObjects;
@@ -11,6 +13,9 @@ namespace DashworksTestAutomation.Pages.Projects
     {
         [FindsBy(How = How.XPath, Using = ".//div[@class='selectedItemBox']")]
         public IWebElement OnboardedApplications { get; set; }
+
+        private const string OnboardedApplicationsColorsSelector =
+            ".//div[contains(@id,'DefaultPkgOnboardRagStatusID')]//label[text()='{0}']";
 
         [FindsBy(How = How.XPath, Using = ".//select[@aria-label='Default Value for Show Linked Objects']")]
         public IWebElement ShowLinkedObjects { get; set; }
@@ -77,6 +82,14 @@ namespace DashworksTestAutomation.Pages.Projects
                 SelectorFor(this, p => p.StartDate),
                 SelectorFor(this, p => p.EndDate)
             };
+        }
+
+        public void SelectOnboardedApplications(DefaultReadinessForOnboardedApplicationsEnum color)
+        {
+            OnboardedApplications.Click();
+            string selector = string.Format(OnboardedApplicationsColorsSelector, color.GetValue());
+            Driver.WaitWhileControlIsNotDisplayed(By.XPath(selector));
+            Driver.FindElement(By.XPath(selector)).Click();
         }
     }
 }
