@@ -88,7 +88,6 @@ namespace DashworksTestAutomation.Steps.Dashworks
         public void ThenProjectIsDisplayedToUser(string projectName)
         {
             var page = _driver.NowAt<ProjectsPage>();
-           //Assert.AreEqual(projectName, page.ActiveProjectByName(projectName));
             Assert.IsTrue(page.ActiveProjectByName(projectName), $"{projectName} is not displayed on the  Project page");
         }
 
@@ -206,7 +205,6 @@ namespace DashworksTestAutomation.Steps.Dashworks
         {
             var createBucketElement = _driver.NowAt<BucketsPage>();
             createBucketElement.TeamsNameField.SendKeys(teamName);
-            //_driver.WaitWhileControlIsNotDisplayed<BucketsPage>(() => createBucketElement.SelectTeamDropdown);
             createBucketElement.SelectTeam(teamName);
         }
 
