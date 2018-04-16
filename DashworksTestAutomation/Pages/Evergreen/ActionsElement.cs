@@ -62,6 +62,7 @@ namespace DashworksTestAutomation.Pages.Evergreen
 
         public string GetSelectedRowsCount()
         {
+            Driver.WaitWhileControlIsNotDisplayed(By.XPath(RowsSelectedCountSelctor));
             return Driver.FindElement(By.XPath(RowsSelectedCountSelctor)).Text.Split(' ').First();
         }
     }
