@@ -233,6 +233,27 @@ namespace DashworksTestAutomation.Steps.Dashworks
             Assert.AreEqual(text, page.ErrorMessageBucketsPage.Text, "Error Message is not displayed");
         }
 
+        [When(@"User have opened Column Settings for ""(.*)"" column on the Buckets Page")]
+        public void WhenUserHaveOpenedColumnSettingsForColumnOnTheBucketsPage(string columnName)
+        {
+            var page = _driver.NowAt<BucketsPage>();
+            page.OpenColumnSettingsByName(columnName);
+        }
+
+        [When(@"User have opened Column Settings for ""(.*)"" column on the Teams Page")]
+        public void WhenUserHaveOpenedColumnSettingsForColumnOnTheTeamsPage(string columnName)
+        {
+            var page = _driver.NowAt<TeamsPage>();
+            page.OpenColumnSettingsByName(columnName);
+        }
+
+        [When(@"User perform search by ""(.*)"" for ""(.*)"" column on the Teams Page")]
+        public void WhenUserPerformSearchByForColumnOnTheTeamsPage(string searchText, string columnName)
+        {
+            ScenarioContext.Current.Pending();
+        }
+
+
         [When(@"User clicks Create Project button")]
         public void WhenUserClicksCreateProjectButton()
         {

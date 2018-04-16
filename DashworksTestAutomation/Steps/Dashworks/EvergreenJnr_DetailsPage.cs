@@ -343,7 +343,6 @@ namespace DashworksTestAutomation.Steps.Dashworks
                 if ((row["ColumnName"] != "Group Key" && row["ColumnName"] != "Category Key"))
                 {
                     var content = page.GetColumnIdContent(row["ColumnName"]);
-
                     Assert.IsTrue(content.Count(x => !string.IsNullOrEmpty(x)) > 0, "Newly added column is empty");
                 }
             }
