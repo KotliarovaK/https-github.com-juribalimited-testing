@@ -18,7 +18,7 @@ Scenario: EvergreenJnr_UsersList_CheckThat500ErrorIsNotReturnedForFilterWithSpec
 	Then "Display Name" filter is added to the list
 	And "2" rows are displayed in the agGrid
 
-@Evergreen @Applications @Evergreen_FiltersFeature @FiltersFunctionality @DAS10639
+@Evergreen @Applications @Evergreen_FiltersFeature @FiltersFunctionality @DAS10639 @DAS12207
 Scenario: EvergreenJnr_ApplicationsList_Check500ErrorIsNotReturnedForBooleanFilterWithUnknownOption
 	When User clicks "Applications" on the left-hand menu
 	Then "Applications" list should be displayed to the user
@@ -46,7 +46,7 @@ Scenario: EvergreenJnr_ApplicationsList_Check500ErrorIsNotReturnedForBooleanFilt
 	Then "Windows7Mi: Hide from End Users" filter is added to the list
 	And "1,156" rows are displayed in the agGrid
 
-@Evergreen @Applications @EvergreenJnr_FiltersFeature @FilterFunctionality @DAS10734 @DAS11507
+@Evergreen @Applications @EvergreenJnr_FiltersFeature @FilterFunctionality @DAS10734 @DAS11507 @DAS12351 @Not_Run
 Scenario: EvergreenJnr_ApplicationsList_CheckThatAddColumnCheckboxWorksCorrectly
 	When User clicks "Applications" on the left-hand menu
 	Then "Applications" list should be displayed to the user
@@ -58,7 +58,7 @@ Scenario: EvergreenJnr_ApplicationsList_CheckThatAddColumnCheckboxWorksCorrectly
 	Then "Windows7Mi: Category" filter is added to the list
 	Then table data is filtered correctly
 
-@Evergreen @Applications @EvergreenJnr_FiltersFeature @FilterFunctionality @DAS11166 @DAS11665 @Delete_Newly_Created_List @Not_Run
+@Evergreen @Applications @EvergreenJnr_FiltersFeature @FilterFunctionality @DAS11166 @DAS11665 @Delete_Newly_Created_List
 Scenario: EvergreenJnr_ApplicationsList_CheckThatFilterIsRestoredAfterGoingBackToTheListAgain
 	When User clicks "Applications" on the left-hand menu
 	Then "Applications" list should be displayed to the user
@@ -70,7 +70,7 @@ Scenario: EvergreenJnr_ApplicationsList_CheckThatFilterIsRestoredAfterGoingBackT
 	| Microsoft Office 97, Developer Edition Tools |
 	| Microsoft Office 97, Standard Edition        |
 	Then "Application" filter is added to the list
-	When User create custom list with "TestList5D30CF" name
+	When User create dynamic list with "TestList5D30CF" name on "Applications" page
 	Then "TestList5D30CF" list is displayed to user
 	When User clicks the Filters button
 	Then Filters panel is displayed to the user
@@ -114,7 +114,7 @@ Scenario: EvergreenJnr_DevicesList_CheckThatAddColumnCheckboxIsCheckedAfterSavin
 	| SelectedCheckboxes |
 	| Red                |
 	Then "Compliance" filter is added to the list
-	When User create custom list with "TestList4A5CD6" name
+	When User create dynamic list with "TestList4A5CD6" name on "Devices" page
 	Then "TestList4A5CD6" list is displayed to user
 	When User navigates to the "All Devices" list
 	Then "Devices" list should be displayed to the user
@@ -159,7 +159,7 @@ Scenario: EvergreenJnr_DevicesList_CheckThatAddColumnCheckboxIsUncheckedAfterSav
 	Then "Add column" checkbox is unchecked
 	And "Add column" checkbox is not disabled
 
-@Evergreen @AllLists @EvergreenJnr_FilterFeature @FilterFunctionality @DAS10977 @DAS11507
+@Evergreen @AllLists @EvergreenJnr_FilterFeature @FilterFunctionality @DAS10977 @DAS11507 @DAS12221 @DAS12351 @Not_Run
 Scenario Outline: EvergreenJnr_AllLists_CheckThatFilterIsRestoredCorrectlyAfterLeavingThePageAndGoingBackViaTheBrowserBackButtonForCheckboxesFilters
 	When User clicks "<ListName>" on the left-hand menu
 	Then "<ListName>" list should be displayed to the user
@@ -185,7 +185,7 @@ Examples:
 	| Applications | MigrationP: Core Application    | FALSE          | 220       | Application   | Quartus II Programmer 4.0                 | MigrationP: Core Application is false      |
 	| Mailboxes    | EmailMigra: Device Type         | Not Identified | 729       | Email Address | alex.cristea@juriba.com                   | EmailMigra: Device Type is Not Identified  |
 
-@Evergreen @AllLists @EvergreenJnr_FilterFeature @FilterFunctionality @DAS10977
+@Evergreen @AllLists @EvergreenJnr_FilterFeature @FilterFunctionality @DAS10977 @DAS12351 @Not_Run
 Scenario Outline: EvergreenJnr_AllLists_CheckThatFilterIsRestoredCorrectlyAfterLeavingThePageAndGoingBackViaTheBrowserBackButtonForLookupFilters
 	When User clicks "<ListName>" on the left-hand menu
 	Then "<ListName>" list should be displayed to the user
@@ -223,16 +223,12 @@ Scenario: EvergreenJnr_ApplicationsList_CheckThatFilterIsRestoredCorrectlyAfterL
 	Then "5" rows are displayed in the agGrid
 	Then "Application is Microsoft Office 97, Professional Edition" is displayed in added filter info
 
-@Evergreen @Applications @EvergreenJnr_FilterFeature @FilterFunctionality @DAS10977 @Delete_Newly_Created_List
+@Evergreen @Applications @EvergreenJnr_FilterFeature @FilterFunctionality @DAS10977 @Delete_Newly_Created_List @Not_Run
 Scenario: EvergreenJnr_ApplicationsList_CheckThatFilterIsRestoredCorrectlyAfterLeavingThePageAndGoingBackViaTheBrowseBackButtonForListFilters
-	When User clicks "Applications" on the left-hand menu
-	Then "Applications" list should be displayed to the user
-	When User clicks the Columns button
-	Then Columns panel is displayed to the user
-	When ColumnName is entered into the search box and the selection is clicked
+	When User add following columns using URL to the "Applications" page:
 	| ColumnName      |
 	| Application Key |
-	When User create custom list with "TestListD75CD3" name
+	When User create dynamic list with "TestListD75CD3" name on "Applications" page
 	Then "TestListD75CD3" list is displayed to user
 	When User clicks "Devices" on the left-hand menu
 	Then "Devices" list should be displayed to the user
@@ -241,13 +237,13 @@ Scenario: EvergreenJnr_ApplicationsList_CheckThatFilterIsRestoredCorrectlyAfterL
 	When User add "Application (Saved List)" filter where type is "In list" with SelectedList list and following Association:
 	| SelectedList   | Association        |
 	| TestListD75CD3 | Not used on device |
-	Then "Application in list TestListD75CD3 is not used on device" is displayed in added filter info
+	Then "Application in list TestListD75CD3 not used on device" is displayed in added filter info
 	Then "16,565" rows are displayed in the agGrid
 	When User perform search by "00BDM1JUR8IF419"
 	And User click content from "Hostname" column
 	Then User click back button in the browser
 	Then "16,565" rows are displayed in the agGrid
-	Then "Application in list TestListD75CD3 is not used on device" is displayed in added filter info
+	Then "Application in list TestListD75CD3 not used on device" is displayed in added filter info
 
 @Evergreen @Devices @EvergreenJnr_FilterFeature @FilterFunctionality @DAS11560
 Scenario: EvergreenJnr_DevicesList_CheckNumericFilter
@@ -353,7 +349,7 @@ Examples:
 	| Application Custom Fields | General information field 1 |
 	| Application Custom Fields | User Field 2                |
 
-@Evergreen @Users @EvergreenJnr_FilterFeature @FilterFunctionality @DAS11738
+@Evergreen @Users @EvergreenJnr_FilterFeature @FilterFunctionality @DAS11738 @DAS12194 @DAS12199 @DAS12220
 Scenario: EvergreenJnr_UsersList_CheckThatToolTipShownWithEditFilterTextWhenEditingAFilterDisplayed 
 	When User clicks "Users" on the left-hand menu
 	Then "Users" list should be displayed to the user
@@ -415,3 +411,63 @@ Scenario: EvergreenJnr_DevicesList_CheckThatErrorsDoNotAppearAndFullDataIsDispla
 	| TRUE               |
 	Then full list content is displayed to the user
 	Then There are no errors in the browser console
+
+@Evergreen @Devices @EvergreenJnr_FilterFeature @FilterFunctionality @DAS11760 @Delete_Newly_Created_List
+Scenario: EvergreenJnr_DevicesList_CheckThatTheSaveButtonIsNotAvailableWithoutTheFilterValue
+	When User clicks "Devices" on the left-hand menu
+	Then "Devices" list should be displayed to the user
+	When User clicks the Filters button
+	Then Filters panel is displayed to the user
+	When user select "Application Name" filter
+	When User select "Not entitled to device" in Association 
+	Then Save button is not available on the Filter panel
+	When User have reset all filters
+	When User add "Application Name" filter where type is "Equals" with following Value and Association:
+	| Values | Association    |
+	| adobe  | Used on device |
+	When User create dynamic list with "TestListF58LY5" name on "Devices" page
+	Then Edit List menu is not displayed
+
+@Evergreen @Applications @EvergreenJnr_FilterFeature @FilterFunctionality @DAS11838
+Scenario Outline: EvergreenJnr_ApplicationsList_CheckThatTheColourOfTheTargetAppReadinessItemIsMatchingTheCaption
+	When User clicks "Applications" on the left-hand menu
+	Then "Applications" list should be displayed to the user
+	When User clicks the Filters button
+	Then Filters panel is displayed to the user
+	When User add "Windows7Mi: Target App Readiness" filter where type is "Equals" with added column and Lookup option
+	| SelectedValues     |
+	| <SelectedCheckbox> |
+	Then "<ColorName>" color is matching the caption
+
+Examples:
+	| SelectedCheckbox        | ColorName               |
+	| Red                     | RED                     |
+	| Blue                    | BLUE                    |
+	| Out Of Scope            | OUT OF SCOPE            |
+	| Light Blue              | LIGHT BLUE              |
+	#| Brown                   | BROWN                   |
+	| Amber                   | AMBER                   |
+	| Really Extremely Orange | REALLY EXTREMELY ORANGE |
+	| Purple                  | PURPLE                  |
+	| Green                   | GREEN                   |
+	| Grey                    | GREY                    |
+
+@Evergreen @Devices @EvergreenJnr_FilterFeature @FilterFunctionality @DAS12076 @DAS12351 @Not_Run
+Scenario: EvergreenJnr_DevicesList_CheckThatColumnIsEmptyWhenEqualNoneAndContainsContentWhenDoesnotequalNoneForWindows7MiCategoryFilter
+	When User clicks "Devices" on the left-hand menu
+	Then "Devices" list should be displayed to the user
+	When User clicks the Filters button
+	Then Filters panel is displayed to the user
+	When User add "Windows7Mi: Category" filter where type is "Equals" with added column and following checkboxes:
+	| SelectedCheckboxes |
+	| None               |
+	Then Content is empty in the column
+	| ColumnName           |
+	| Windows7Mi: Category |
+	When User add "Windows7Mi: Category" filter where type is "Does not equal" without added column and following checkboxes:
+	| SelectedCheckboxes |
+	| None               |
+	When User click on 'Windows7Mi: Category' column header
+	Then Content is present in the newly added column
+	| ColumnName           |
+	| Windows7Mi: Category |

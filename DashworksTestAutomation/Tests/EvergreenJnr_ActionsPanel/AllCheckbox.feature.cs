@@ -75,7 +75,7 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_ActionsPanel
         [NUnit.Framework.CategoryAttribute("AllCheckbox")]
         [NUnit.Framework.CategoryAttribute("DAS10769")]
         [NUnit.Framework.CategoryAttribute("DAS10656")]
-        [NUnit.Framework.CategoryAttribute("Not_Run")]
+        [NUnit.Framework.CategoryAttribute("DAS12206")]
         public virtual void EvergreenJnr_UsersList_SelectAllCheckboxStatusCheckAfterSearch()
         {
             System.Exception lastException = null;
@@ -111,7 +111,7 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_ActionsPanel
                         "AllCheckbox",
                         "DAS10769",
                         "DAS10656",
-                        "Not_Run"});
+                        "DAS12206"});
             this.ScenarioSetup(scenarioInfo);
             this.FeatureBackground();
             testRunner.When("User clicks \"Users\" on the left-hand menu", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
@@ -129,14 +129,18 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_ActionsPanel
             testRunner.And("User enters SearchCriteria into the agGrid Search Box and the correct NumberOfRow" +
                     "s are returned", ((string)(null)), table1, "And ");
             testRunner.And("Select All selectbox is checked", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+            testRunner.When("User click on \'Username\' column header", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+            testRunner.Then("data in table is sorted by \'Username\' column in ascending order", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+            testRunner.And("Select All selectbox is checked", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
             testRunner.And("\"42\" rows are displayed in the agGrid", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
             testRunner.And("\"41335\" selected rows are displayed in the Actions panel", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-            testRunner.When("User is deselect all rows", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-            testRunner.And("User select all rows", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-            testRunner.Then("The number of rows selected matches the number of rows of the main object list", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
             testRunner.And("Clearing the agGrid Search Box", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
             testRunner.And("Select All selectbox is checked", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-            testRunner.And("\"42\" selected rows are displayed in the Actions panel", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+            testRunner.When("User is deselect all rows", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+            testRunner.Then("\"0\" selected rows are displayed in the Actions panel", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+            testRunner.When("User select all rows", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+            testRunner.Then("The number of rows selected matches the number of rows of the main object list", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+            testRunner.And("Select All selectbox is checked", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
             this.ScenarioCleanup();
         }
         
@@ -213,6 +217,7 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_ActionsPanel
         [NUnit.Framework.CategoryAttribute("DAS10772")]
         [NUnit.Framework.CategoryAttribute("DAS10656")]
         [NUnit.Framework.CategoryAttribute("DAS11664")]
+        [NUnit.Framework.CategoryAttribute("DAS12206")]
         public virtual void EvergreenJnr_DevicesList_SearchWithinAllRows()
         {
             System.Exception lastException = null;
@@ -248,7 +253,8 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_ActionsPanel
                         "AllCheckbox",
                         "DAS10772",
                         "DAS10656",
-                        "DAS11664"});
+                        "DAS11664",
+                        "DAS12206"});
             this.ScenarioSetup(scenarioInfo);
             this.FeatureBackground();
             testRunner.When("User clicks \"Devices\" on the left-hand menu", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
@@ -282,10 +288,10 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_ActionsPanel
         [NUnit.Framework.CategoryAttribute("Evergreen_ActionsPanel")]
         [NUnit.Framework.CategoryAttribute("AllCheckbox")]
         [NUnit.Framework.CategoryAttribute("DAS10656")]
-        [NUnit.Framework.TestCaseAttribute("Devices", "17225", "Hostname", "001BAQXT6JWFPI", "17224", new string[0])]
-        [NUnit.Framework.TestCaseAttribute("Users", "41335", "Username", "002B5DC7D4D34D5C895", "41334", new string[0])]
-        [NUnit.Framework.TestCaseAttribute("Applications", "2223", "Application", "7zip", "2222", new string[0])]
-        [NUnit.Framework.TestCaseAttribute("Mailboxes", "14784", "Email Address", "00B5CCB89AD0404B965@bclabs.local", "14783", new string[0])]
+        [NUnit.Framework.TestCaseAttribute("Devices", "17225", "Hostname", "00BDM1JUR8IF419", "17224", new string[0])]
+        [NUnit.Framework.TestCaseAttribute("Users", "41335", "Username", "AAD1011948", "41334", new string[0])]
+        [NUnit.Framework.TestCaseAttribute("Applications", "2223", "Application", "Python 2.2a4", "2222", new string[0])]
+        [NUnit.Framework.TestCaseAttribute("Mailboxes", "14784", "Email Address", "aaron.u.flores@dwlabs.local", "14783", new string[0])]
         public virtual void EvergreenJnr_AllLists_SelectAllChecboxMainFunctionalityTest(string pageName, string selectedRowsCount, string columnname, string selectedRowName, string selectedRowsCountAfterDiselect, string[] exampleTags)
         {
             System.Exception lastException = null;

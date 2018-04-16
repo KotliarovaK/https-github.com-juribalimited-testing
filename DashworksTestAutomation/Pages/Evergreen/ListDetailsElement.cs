@@ -3,6 +3,8 @@ using DashworksTestAutomation.Extensions;
 using OpenQA.Selenium;
 using OpenQA.Selenium.Support.PageObjects;
 using System.Collections.Generic;
+using System.Linq;
+using NUnit.Framework;
 
 namespace DashworksTestAutomation.Pages.Evergreen
 {
@@ -44,6 +46,18 @@ namespace DashworksTestAutomation.Pages.Evergreen
         [FindsBy(How = How.XPath, Using = ".//span[text()='CANCEL']/ancestor::button")]
         public IWebElement CancelButton { get; set; }
 
+        [FindsBy(How = How.XPath, Using = ".//i[@class='material-icons mat-item_add ng-star-inserted']")]
+        public IWebElement OpenDependantsButton { get; set; }
+
+        [FindsBy(How = How.XPath, Using = ".//i[@class='material-icons mat-clear ng-star-inserted']")]
+        public IWebElement ClosePermissionsButton { get; set; }
+
+        [FindsBy(How = How.XPath, Using = ".//div[@class='dependants action-panel-ddl ng-star-inserted']")]
+        public IWebElement DependantsSection { get; set; }
+
+        [FindsBy(How = How.XPath, Using = ".//div[@class='form-item']")]
+        public IWebElement ExpandedDependantsSection { get; set; }
+
         [FindsBy(How = How.XPath, Using = ".//span[text()='Select user']/ancestor::div[@class='mat-select-trigger']")]
         public IWebElement SelectUserDropdown { get; set; }
 
@@ -60,6 +74,24 @@ namespace DashworksTestAutomation.Pages.Evergreen
             {
                 SelectorFor(this, p => p.ListDetailsPanel),
             };
+        }
+
+        public IWebElement ListNameInDependantsSection(string listName)
+        {
+            Driver.WaitWhileControlIsNotDisplayed(By.XPath($".//a[@class='ng-star-inserted'][text()='{listName}']"));
+            return Driver.FindElement(By.XPath($".//a[@class='ng-star-inserted'][text()='{listName}']"));
+        }
+
+        public void OpenPermissionsSection(string tooltipText)
+        {
+            var openPermissionsSection = Driver.FindElement(By.XPath(
+                ".//i[@class='material-icons mat-item_add ng-star-inserted']")).GetAttribute("aria-describedby");
+            var pageSource = Driver.PageSource;
+            var doc = new HtmlAgilityPack.HtmlDocument();
+            doc.LoadHtml(pageSource);
+            var node = doc.DocumentNode.SelectNodes($".//div[@id='{openPermissionsSection}']")[0];
+            var openPermissionsSectionTooltip = node.InnerHtml;
+            Assert.AreEqual(tooltipText, openPermissionsSectionTooltip, "Tooltip is incorrect for button");
         }
 
         public string GetSelectedValue(IWebElement dropdown)

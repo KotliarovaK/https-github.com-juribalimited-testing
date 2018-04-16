@@ -32,10 +32,11 @@ Scenario: EvergreenJnr_AllLists_CheckThatGroupIconsAreDisplayedForGroupDetailsPa
 	Then User clicks on "NL00G001" search result
 	Then Group Icon for Group Details page is displayed
 
-@Evergreen @AllLists @EvergreenJnr_ItemDetails @ItemDetailsDisplay @DAS11732
+@Evergreen @AllLists @EvergreenJnr_ItemDetails @ItemDetailsDisplay @DAS11732 @DAS12235
 Scenario Outline: EvergreenJnr_AllLists_CheckThatDataIsDisplayedAfterAddingColumnsForExpandedSections
 	When User clicks "<PageName>" on the left-hand menu
 	Then "<PageName>" list should be displayed to the user
+	When User perform search by "<SearchTerm>"
 	When User click content from "<ItemName>" column
 	And User navigates to the "<TabName>" tab
 	When User have opened Column Settings for "<ColumnName>" column in the Details Page table
@@ -51,22 +52,23 @@ Scenario Outline: EvergreenJnr_AllLists_CheckThatDataIsDisplayedAfterAddingColum
 	Then There are no errors in the browser console
 
 Examples: 
-	| PageName     | ItemName      | TabName      | ColumnName  | CheckboxName      | NewColumnName     |
-	| Devices      | Hostname      | Applications | Application | Key               | Key               |
-	| Users        | Username      | Groups       | Group       | Key               | Key               |
-	| Applications | Application   | Projects     | Project     | Object ID         | Object ID         |
-	| Applications | Application   | Projects     | Project     | Object Key        | Object Key        |
-	| Mailboxes    | Email Address | Users        | Domain      | Key               | Key               |
-	| Mailboxes    | Email Address | Users        | Domain      | EvergreenObjectId | EvergreenObjectId |
+	| PageName     | SearchTerm                                              | ItemName      | TabName      | ColumnName  | CheckboxName        | NewColumnName       |
+	| Devices      | 30BGMTLBM9PTW5                                          | Hostname      | Applications | Application | Key                 | Key                 |
+	| Users        | svc_dashworks                                           | Username      | Groups       | Group       | Key                 | Key                 |
+	| Applications | Microsoft Office Visio 2000 Solutions - Custom Patterns | Application   | Projects     | Project     | Object ID           | Object ID           |
+	| Applications | Microsoft Office Visio 2000 Solutions - Custom Patterns | Application   | Projects     | Project     | Object Key          | Object Key          |
+	| Mailboxes    | aaron.u.flores@dwlabs.local                             | Email Address | Users        | Domain      | Key                 | Key                 |
+	| Mailboxes    | aaron.u.flores@dwlabs.local                             | Email Address | Users        | Domain      | Evergreen Object ID | Evergreen Object ID |
 
-@Evergreen @AllLists @EvergreenJnr_ItemDetails @ItemDetailsDisplay @DAS11732
+@Evergreen @AllLists @EvergreenJnr_ItemDetails @ItemDetailsDisplay @DAS11732 @DAS12235
 Scenario Outline: EvergreenJnr_AllLists_CheckThatDataIsDisplayedAfterAddingColumns
 	When User clicks "<PageName>" on the left-hand menu
 	Then "<PageName>" list should be displayed to the user
+	When User perform search by "<SearchTerm>"
 	When User click content from "<ItemName>" column
 	And User navigates to the "<TabName>" tab
 	Then User closes "<ExpandedSectionName>" section on the Details Page
-	When User open "<SectionName>" section
+	When User opens "<SectionName>" section on the Details Page
 	When User have opened Column Settings for "<ColumnName>" column in the Details Page table
 	When User clicks Column button on the Column Settings panel
 	When User select "<CheckboxName>" checkbox on the Column Settings panel
@@ -80,40 +82,40 @@ Scenario Outline: EvergreenJnr_AllLists_CheckThatDataIsDisplayedAfterAddingColum
 	Then There are no errors in the browser console
 
 Examples: 
-	| PageName     | ItemName      | TabName      | ExpandedSectionName | SectionName         | ColumnName    | CheckboxName      | NewColumnName     |
-	| Devices      | Hostname      | Applications | Application Summary | Application Detail  | Application   | Application Key   | Application Key   |
-	| Devices      | Hostname      | Applications | Application Summary | Application Detail  | Application   | Advertisement Key | Advertisement Key |
-	| Devices      | Hostname      | Applications | Application Summary | Application Detail  | Application   | Group Key         | Group Key         |
-	| Devices      | Hostname      | Applications | Application Summary | Application Detail  | Application   | Collection Key    | Collection Key    |
-	#| Devices      | Hostname      | Applications | Application Summary | Application Detail  | Application   | User Key          | User Key          |
-	| Devices      | Hostname      | Applications | Application Summary | Advertisements      | Application   | Key               | Key               |
-	| Devices      | Hostname      | Applications | Application Summary | Advertisements      | Application   | Application Key   | Application Key   |
-	| Devices      | Hostname      | Applications | Application Summary | Advertisements      | Application   | SiteKey           | SiteKey           |
-	| Devices      | Hostname      | Applications | Application Summary | Advertisements      | Application   | Collection Key    | Collection Key    |
-	| Devices      | Hostname      | Applications | Application Summary | Advertisements      | Application   | Program Key       | Program Key       |
-	| Devices      | Hostname      | Applications | Application Summary | Collections         | Collection    | Key               | Key               |
-	| Devices      | Hostname      | Applications | Application Summary | Collections         | Collection    | SiteKey           | SiteKey           |
-	| Applications | Application   | Details      | Application         | Advertisements      | Advertisement | Advertisement Key | Advertisement Key |
-	| Applications | Application   | Details      | Application         | Advertisements      | Advertisement | Collection Key    | Collection Key    |
-	| Applications | Application   | Details      | Application         | Programs            | Program       | Program Key       | Program Key       |
-	| Applications | Application   | Distribution | Users               | Devices             | Device        | Computer Key      | Computer Key      |
-	| Applications | Application   | Distribution | Users               | Devices             | Device        | Owner Object Key  | Owner Object Key  |
-	| Applications | Application   | Distribution | Users               | Devices             | Device        | User Key          | User Key          |
-	| Applications | Application   | Distribution | Users               | Devices             | Device        | Advertisement Key | Advertisement Key |
-	| Applications | Application   | Distribution | Users               | Devices             | Device        | Collection Key    | Collection Key    |
-	| Applications | Application   | Distribution | Users               | Devices             | Device        | Program Key       | Program Key       |
-	| Mailboxes    | Email Address | Users        | Users               | Groups              | Domain        | Key               | Key               |
-	| Mailboxes    | Email Address | Users        | Users               | Mailbox Permissions | Domain        | Key               | Key               |
-	| Mailboxes    | Email Address | Users        | Users               | Mailbox Permissions | Domain        | ViaGroupObjectKey | ViaGroupObjectKey |
-	| Mailboxes    | Email Address | Users        | Users               | Mailbox Permissions | Domain        | AccessCategoryKey | AccessCategoryKey |
+	| PageName     | SearchTerm                                              | ItemName      | TabName      | ExpandedSectionName | SectionName         | ColumnName    | CheckboxName         | NewColumnName        |
+	| Devices      | 30BGMTLBM9PTW5                                          | Hostname      | Applications | Application Summary | Application Detail  | Application   | Application Key      | Application Key      |
+	| Devices      | 30BGMTLBM9PTW5                                          | Hostname      | Applications | Application Summary | Application Detail  | Application   | Advertisement Key    | Advertisement Key    |
+	| Devices      | 30BGMTLBM9PTW5                                          | Hostname      | Applications | Application Summary | Application Detail  | Application   | Group Key            | Group Key            |
+	| Devices      | 30BGMTLBM9PTW5                                          | Hostname      | Applications | Application Summary | Application Detail  | Application   | Collection Key       | Collection Key       |
+	#| Devices      | 30BGMTLBM9PTW5                                          | Hostname      | Applications | Application Summary | Application Detail  | Application   | User Key             | User Key             |
+	| Devices      | 30BGMTLBM9PTW5                                          | Hostname      | Applications | Application Summary | Advertisements      | Application   | Key                  | Key                  |
+	| Devices      | 30BGMTLBM9PTW5                                          | Hostname      | Applications | Application Summary | Advertisements      | Application   | Application Key      | Application Key      |
+	| Devices      | 30BGMTLBM9PTW5                                          | Hostname      | Applications | Application Summary | Advertisements      | Application   | Site Key             | Site Key             |
+	| Devices      | 30BGMTLBM9PTW5                                          | Hostname      | Applications | Application Summary | Advertisements      | Application   | Collection Key       | Collection Key       |
+	| Devices      | 30BGMTLBM9PTW5                                          | Hostname      | Applications | Application Summary | Advertisements      | Application   | Program Key          | Program Key          |
+	| Devices      | 30BGMTLBM9PTW5                                          | Hostname      | Applications | Application Summary | Collections         | Collection    | Key                  | Key                  |
+	| Devices      | 30BGMTLBM9PTW5                                          | Hostname      | Applications | Application Summary | Collections         | Collection    | Site Key             | Site Key             |
+	| Applications | Microsoft Office Visio 2000 Solutions - Custom Patterns | Application   | Details      | Application         | Advertisements      | Advertisement | Advertisement Key    | Advertisement Key    |
+	| Applications | Microsoft Office Visio 2000 Solutions - Custom Patterns | Application   | Details      | Application         | Advertisements      | Advertisement | Collection Key       | Collection Key       |
+	| Applications | Microsoft Office Visio 2000 Solutions - Custom Patterns | Application   | Details      | Application         | Programs            | Program       | Program Key          | Program Key          |
+	| Applications | Microsoft Office Visio 2000 Solutions - Custom Patterns | Application   | Distribution | Users               | Devices             | Device        | Computer Key         | Computer Key         |
+	| Applications | Microsoft Office Visio 2000 Solutions - Custom Patterns | Application   | Distribution | Users               | Devices             | Device        | Owner Object Key     | Owner Object Key     |
+	| Applications | Microsoft Office Visio 2000 Solutions - Custom Patterns | Application   | Distribution | Users               | Devices             | Device        | User Key             | User Key             |
+	| Applications | Microsoft Office Visio 2000 Solutions - Custom Patterns | Application   | Distribution | Users               | Devices             | Device        | Advertisement Key    | Advertisement Key    |
+	| Applications | Microsoft Office Visio 2000 Solutions - Custom Patterns | Application   | Distribution | Users               | Devices             | Device        | Collection Key       | Collection Key       |
+	| Applications | Microsoft Office Visio 2000 Solutions - Custom Patterns | Application   | Distribution | Users               | Devices             | Device        | Program Key          | Program Key          |
+	| Mailboxes    | aaron.u.flores@dwlabs.local                             | Email Address | Users        | Users               | Groups              | Domain        | Key                  | Key                  |
+	| Mailboxes    | aaron.u.flores@dwlabs.local                             | Email Address | Users        | Users               | Mailbox Permissions | Domain        | Key                  | Key                  |
+	| Mailboxes    | aaron.u.flores@dwlabs.local                             | Email Address | Users        | Users               | Mailbox Permissions | Domain        | Via Group Object Key | Via Group Object Key |
+	| Mailboxes    | aaron.u.flores@dwlabs.local                             | Email Address | Users        | Users               | Mailbox Permissions | Domain        | Access Category Key  | Access Category Key  |
 
-@Evergreen @AllLists @EvergreenJnr_ItemDetails @ItemDetailsDisplay @DAS11732 @DAS12053 
+@Evergreen @AllLists @EvergreenJnr_ItemDetails @ItemDetailsDisplay @DAS11732 @DAS12053 @DAS12235
 Scenario Outline: EvergreenJnr_AllLists_CheckThatDataIsDisplayedAfterAddingColumnsForClosedSections
 	When User clicks "<PageName>" on the left-hand menu
 	Then "<PageName>" list should be displayed to the user
 	When User click content from "<ItemName>" column
 	And User navigates to the "<TabName>" tab
-	When User open "<SectionName>" section
+	When User opens "<SectionName>" section on the Details Page
 	When User have opened Column Settings for "<ColumnName>" column in the Details Page table
 	When User clicks Column button on the Column Settings panel
 	When User select "<CheckboxName>" checkbox on the Column Settings panel
@@ -131,7 +133,7 @@ Examples:
 	| Devices  | Hostname | Compliance | Software Compliance Issues | Application | PackageKey       | PackageKey       |
 	| Devices  | Hostname | Projects   | Device Projects            | Project     | Object ID        | Object ID        |
 	| Devices  | Hostname | Projects   | Device Projects            | Project     | Key              | Key              |
-	#| Devices  | Hostname | Projects   | Device Owner Projects      | Username    | ObjecyKey        | ObjecyKey        |
+	| Devices  | Hostname | Projects   | Device Owner Projects      | Username    | Object Key       | Object Key       |
 	| Devices  | Hostname | Projects   | Device Owner Projects      | Username    | Object ID        | Object ID        |
 	| Devices  | Hostname | Projects   | Device Owner Projects      | Username    | Key              | Key              |
 	| Devices  | Hostname | Projects   | Device Owner Projects      | Username    | Request Type Key | Request Type Key |
@@ -162,7 +164,7 @@ Scenario: EvergreenJnr_DevicesLists_CheckThatSelectedCheckboxesMatchTheColumnsIn
 	Then "Devices" list should be displayed to the user
 	When User click content from "Hostname" column
 	And User navigates to the "Projects" tab
-	When User open "Device Projects" section
+	When User opens "Device Projects" section on the Details Page
 	When User have opened Column Settings for "Project" column in the Details Page table
 	When User clicks Column button on the Column Settings panel
 	When User select "Key" checkbox on the Column Settings panel
@@ -218,7 +220,7 @@ Scenario Outline: EvergreenJnr_AllLists_CheckRenamedColumnForApplicationDetailSe
 	And User click content from "<ColumnName>" column
 	And User navigates to the "Applications" tab
 	Then User closes "Application Summary" section on the Details Page
-	When User open "Application Detail" section
+	When User opens "Application Detail" section on the Details Page
 	Then "Manufacturer" column is not displayed to the user
 	And ColumnName is added to the list in the Details Page table
 	| ColumnName |
@@ -236,7 +238,7 @@ Scenario Outline: EvergreenJnr_AllLists_CheckRenamedColumnAndStringFilterForSoft
 	When User perform search by "<SelectedName>"
 	And User click content from "<ColumnName>" column
 	And User navigates to the "Compliance" tab
-	When User open "Software Compliance Issues" section
+	When User opens "Software Compliance Issues" section on the Details Page
 	Then "Manufacturer" column is not displayed to the user
 	And ColumnName is added to the list in the Details Page table
 	| ColumnName |
@@ -260,11 +262,11 @@ Scenario: EvergreenJnr_MailboxesLists_CheckThatNoConsoleErrorsWhenViewingMailbox
 Scenario: EvergreenJnr_DevicesLists_CheckThatDataOfColumnsIsDisplayedInTheCustomFieldSection
 	When User clicks "Devices" on the left-hand menu
 	Then "Devices" list should be displayed to the user
-	When User perform search by "54S1MGR8DYMYKH"
+	When User perform search by "Benjamin S. Vaughn"
 	And User click content from "Hostname" column
 	And User navigates to the "Details" tab
 	Then User closes "Device" section on the Details Page
-	When User open "Custom Fields" section
+	When User opens "Custom Fields" section on the Details Page
 	Then Content is present in the column of the Details Page table
 	| ColumnName |
 	| Label      |
@@ -277,31 +279,33 @@ Scenario: EvergreenJnr_MailboxesLists_CheckThatLinksAndImageItemAreDisplayedInTh
 	When User click content from "Email Address" column
 	And User navigates to the "Users" tab
 	Then User closes "Users" section on the Details Page
-	When User open "Mailbox Permissions" section
+	When User opens "Mailbox Permissions" section on the Details Page
 	Then Image item from "Name" column is displayed to the user
 	Then Links from "Name" column is displayed to the user
 
-@Evergreen @AllLists @EvergreenJnr_ItemDetails @ItemDetailsDisplay @DAS11983
+@Evergreen @AllLists @EvergreenJnr_ItemDetails @ItemDetailsDisplay @DAS11983 @DAS11926
 Scenario Outline: EvergreenJnr_AllLists_CheckThatRowsInTheTableAreEmptyIfTheDataIsUnknown
 	When User clicks "<PageName>" on the left-hand menu
 	Then "<PageName>" list should be displayed to the user
 	When User perform search by "<SelectedName>"
 	And User click content from "<ColumnName>" column
-	And User navigates to the "Details" tab
-	Then User closes "<SectionName>" section on the Details Page
-	When User open "Department and Location" section
+	And User navigates to the "<TabName>" tab
+	Then User closes "<ClosesSectionName>" section on the Details Page
+	When User opens "<OpensSectionName>" section on the Details Page
 	Then Empty rows are displayed if the data is unknown
 
 Examples:
-	| PageName  | SelectedName                | ColumnName    | SectionName |
-	| Devices   | 00K4CEEQ737BA4L             | Hostname      | Device      |
-	| Users     | $231000-3AC04R8AR431        | Username      | AD Object   |
-	| Mailboxes | aaron.u.flores@dwlabs.local | Email Address | Mailbox     |
+	| PageName  | SelectedName                     | ColumnName    | TabName | ClosesSectionName | OpensSectionName        |
+	| Devices   | 00K4CEEQ737BA4L                  | Hostname      | Details | Device            | Department and Location |
+	| Users     | $231000-3AC04R8AR431             | Username      | Details | AD Object         | Department and Location |
+	| Mailboxes | aaron.u.flores@dwlabs.local      | Email Address | Details | Mailbox           | Department and Location |
+	| Mailboxes | 000F977AC8824FE39B8@bclabs.local | Email Address | Details | Mailbox           | Mailbox                 |
 
-@Evergreen @AllLists @EvergreenJnr_ItemDetails @ItemDetailsDisplay @DAS11762
+@Evergreen @AllLists @EvergreenJnr_ItemDetails @ItemDetailsDisplay @DAS11762 @DAS12235
 Scenario Outline: EvergreenJnr_AllLists_CheckThatNoConsoleErrorsAreDisplayedWhenDeleteDataFromFilterTextField
 	When User clicks "<PageName>" on the left-hand menu
 	Then "<PageName>" list should be displayed to the user
+	When User perform search by "<SearchTerm>"
 	When User click content from "<ColumnName>" column
 	And User navigates to the "<TabName>" tab
 	And User have opened Column Settings for "<SelectedColumn>" column in the Details Page table
@@ -311,8 +315,194 @@ Scenario Outline: EvergreenJnr_AllLists_CheckThatNoConsoleErrorsAreDisplayedWhen
 	Then There are no errors in the browser console
 
 Examples:
-	| PageName     | ColumnName    | TabName      | SelectedColumn |
-	| Devices      | Hostname      | Applications | Application    |
-	| Users        | Username      | Groups       | Group          |
-	| Applications | Application   | MSI          | File Name      |
-	| Mailboxes    | Email Address | Users        | Username       |
+	| PageName     | SearchTerm                                              | ColumnName    | TabName      | SelectedColumn |
+	| Devices      | 30BGMTLBM9PTW5                                          | Hostname      | Applications | Application    |
+	| Users        | svc_dashworks                                           | Username      | Groups       | Group          |
+	| Applications | Microsoft Office Visio 2000 Solutions - Custom Patterns | Application   | MSI          | File Name      |
+	| Mailboxes    | aaron.u.flores@dwlabs.local                             | Email Address | Users        | Username       |
+
+@Evergreen @Devices @EvergreenJnr_ItemDetails @ItemDetailsDisplay @DAS11628
+Scenario: EvergreenJnr_DevicesLists_CheckThatTheFilterDropddownIsDisplayedFullyWhenTheFilterResultNotContainsValues
+	When User clicks "Devices" on the left-hand menu
+	Then "Devices" list should be displayed to the user
+	When User click content from "Hostname" column
+	And User navigates to the "Applications" tab
+	And User have opened Column Settings for "Installed" column in the Details Page table
+	And User clicks Filter button on the Column Settings panel
+	Then Filter panel has standard size
+	Then User select "False" checkbox from filter on the Details Page
+	Then Filter panel has standard size
+
+@Evergreen @Devices @EvergreenJnr_ItemDetails @ItemDetailsDisplay @DAS11647
+Scenario Outline: EvergreenJnr_DevicesLists_CheckThatAutosizeOptionWorksCorrectlyForSiteColumn
+	When User clicks "Devices" on the left-hand menu
+	Then "Devices" list should be displayed to the user
+	When User perform search by "30BGMTLBM9PTW5"
+	When User click content from "Hostname" column
+	And User navigates to the "Applications" tab
+	Then User closes "Application Summary" section on the Details Page
+	When User opens "<SectionName>" section on the Details Page
+	And User have opened Column Settings for "Site" column in the Details Page table
+	And User have select "Autosize This column" option from column settings on the Details Page
+	Then Site column has standard size
+
+	Examples:
+	| SectionName    |
+	| Advertisements |
+	| Collections    |
+
+@Evergreen @Devices @EvergreenJnr_ItemDetails @ItemDetailsDisplay @DAS12043
+Scenario: EvergreenJnr_DevicesLists_CheckThatNoErrorsAreDisplayedWhenOpenedDeviceDetailsThatDoesNotContainOwnerInformation
+	When User clicks "Devices" on the left-hand menu
+	Then "Devices" list should be displayed to the user
+	When User perform search by "06Y8HSNCPVHENV"
+	And User click content from "Hostname" column
+	And User navigates to the "Details" tab
+	And User opens "Device Owner" section on the Details Page
+	Then "No device owner information found for this device" message is displayed on the Details Page
+	And There are no errors in the browser console
+
+@Evergreen @Devices @EvergreenJnr_ItemDetails @ItemDetailsDisplay @DAS12071
+Scenario: EvergreenJnr_DevicesLists_CheckThatOpenedSectionIsDisplayedCorrectlyOnTheDetailsPage
+	When User clicks "Devices" on the left-hand menu
+	Then "Devices" list should be displayed to the user
+	When User click content from "Hostname" column
+	And User navigates to the "Applications" tab
+	Then User closes "Application Summary" section on the Details Page
+	When User opens "Application Detail" section on the Details Page
+	Then section is loaded correctly
+	And User closes "Application Detail" section on the Details Page
+	When User opens "Advertisements" section on the Details Page
+	Then section is loaded correctly
+	And User closes "Advertisements" section on the Details Page
+	When User opens "Collections" section on the Details Page
+	Then section is loaded correctly
+
+@Evergreen @Devices @EvergreenJnr_ItemDetails @ItemDetailsDisplay @DAS12253
+Scenario: EvergreenJnr_DevicesLists_CheckThePossibilityToRecheckingTheWorkflowColumnBlanksFilterAfterUncheckingIt
+	When User clicks "Devices" on the left-hand menu
+	Then "Devices" list should be displayed to the user
+	When User click content from "Hostname" column
+	And User navigates to the "Projects" tab
+	And User opens "Device Projects" section on the Details Page
+	And User clicks String Filter button for "Workflow" column
+	And User clicks "(Blanks)" checkbox from String Filter on the Details Page
+	And User clicks "(Blanks)" checkbox from String Filter on the Details Page
+	Then "(Blanks)" checkbox is checked on the Details Page
+
+@Evergreen @Devices @EvergreenJnr_ItemDetails @ItemDetailsDisplay @DAS12283
+Scenario: EvergreenJnr_DevicesLists_CheckThatOneUnknownFilterValueIsShownInGroupDetailsAndFilterWorkingCorrectly
+	When User clicks "Devices" on the left-hand menu
+	Then "Devices" list should be displayed to the user
+	When User type "Denied RODC Password Replication Group" in Global Search Field
+	Then User clicks on "Denied RODC Password Replication Group" search result
+	When User navigates to the "Members" tab
+	And User clicks String Filter button for "Enabled" column
+	Then following Values are displayed in the filter on the Details Page
+	| Values  |
+	| True    |
+	| False   |
+	| Unknown |
+	When User clicks "True" checkbox from String Filter on the Details Page
+	Then Content is present in the table on the Details Page
+
+@Evergreen @Mailboxes @EvergreenJnr_ItemDetails @ItemDetailsDisplay @DAS12245
+Scenario: EvergreenJnr_MailboxesLists_CheckThatListLoadedCorrectlyAndNoConsoleErrorIsNotDisplayed
+	When User clicks "Mailboxes" on the left-hand menu
+	Then "Mailboxes" list should be displayed to the user
+	When User perform search by "julia.bell@juriba.com"
+	And User click content from "Email Address" column
+	When User navigates to the "Trend" tab
+	Then Highcharts graphic is displayed on the Details Page
+	And There are no errors in the browser console
+	When User navigates to the "Details" tab
+	Then There are no errors in the browser console
+	When User navigates to the "Trend" tab
+	Then There are no errors in the browser console
+	When User clicks "Users" on the left-hand menu
+	Then "Users" list should be displayed to the user
+	And There are no errors in the browser console
+
+@Evergreen @Devices @EvergreenJnr_ItemDetails @ItemDetailsDisplay @DAS12239
+Scenario: EvergreenJnr_DevicesLists_CheckThatAllTextIsDisplayedAfterClearingFilters
+	When User clicks "Devices" on the left-hand menu
+	Then "Devices" list should be displayed to the user
+	When User click content from "Hostname" column
+	And User navigates to the "Applications" tab
+	Then All text is displayed for "Compliance" column in the String Filter
+	When  User clicks String Filter button for "Compliance" column
+	And User clicks "Red" checkbox from String Filter on the Details Page
+	Then All text is not displayed for "Compliance" column in the String Filter
+	When User clicks Reset Filters button on the Details Page
+	Then All text is displayed for "Compliance" column in the String Filter
+
+@Evergreen @Mailboxes @EvergreenJnr_ItemDetails @ItemDetailsDisplay @DAS12088
+Scenario: EvergreenJnr_MailboxesLists_CheckThatMailboxPermissionsAndFolderPermissionsDataAreDisplayedCorrectly
+	When User clicks "Mailboxes" on the left-hand menu
+	Then "Mailboxes" list should be displayed to the user
+	When User perform search by "abraham.f.wong@dwlabs.local"
+	And User click content from "Email Address" column
+	And User navigates to the "Users" tab
+	Then User closes "Users" section on the Details Page
+	When User opens "Mailbox Permissions" section on the Details Page
+	Then Content is present in the table on the Details Page
+	Then User closes "Mailbox Permissions" section on the Details Page
+	When User opens "Folder Permissions" section on the Details Page
+	Then Content is present in the table on the Details Page
+
+@Evergreen @AllLists @EvergreenJnr_ItemDetails @ItemDetailsDisplay @DAS12210
+Scenario Outline: EvergreenJnr_AllLists_CheckThatDropdownListsInTheProjectDetailsFiltersAreDisplayedCorrectlyForCollapsedSections
+	When User clicks "<PageName>" on the left-hand menu
+	Then "<PageName>" list should be displayed to the user
+	When User perform search by "<SearchTerm>"
+	And User click content from "<ColumnName>" column
+	And User navigates to the "<TabName>" tab
+	And User opens "<SectionName>" section on the Details Page
+	And User clicks String Filter button for "Project Type" column
+	Then Dropdown List is displayed correctly in the Filter on the Details Page
+	When User clicks String Filter button for "Request Type" column
+	Then Dropdown List is displayed correctly in the Filter on the Details Page
+	When User clicks String Filter button for "Category" column
+	Then Dropdown List is displayed correctly in the Filter on the Details Page
+
+Examples:
+	| PageName     | SearchTerm                                                 | ColumnName    | TabName  | SectionName           |
+	| Devices      | 001BAQXT6JWFPI                                             | Hostname      | Projects | Device Projects       |
+	| Devices      | 001BAQXT6JWFPI                                             | Hostname      | Projects | Device Owner Projects |
+	| Users        | Loya\, Dan.Employees.Birmingham.UK.bclabs.local            | Username      | Projects | User Projects         |
+	| Users        | Loya\, Dan.Employees.Birmingham.UK.bclabs.local            | Username      | Projects | Mailbox Projects      |
+
+@Evergreen @AllLists @EvergreenJnr_ItemDetails @ItemDetailsDisplay @DAS12210
+Scenario Outline: EvergreenJnr_AllLists_CheckThatDropdownListsInTheProjectDetailsFiltersAreDisplayedCorrectlyForExpandedSections
+	When User clicks "<PageName>" on the left-hand menu
+	Then "<PageName>" list should be displayed to the user
+	When User perform search by "<SearchTerm>"
+	And User click content from "<ColumnName>" column
+	And User navigates to the "<TabName>" tab
+	And User clicks String Filter button for "Project Type" column
+	Then Dropdown List is displayed correctly in the Filter on the Details Page
+	When User clicks String Filter button for "Request Type" column
+	Then Dropdown List is displayed correctly in the Filter on the Details Page
+	When User clicks String Filter button for "Category" column
+	Then Dropdown List is displayed correctly in the Filter on the Details Page
+
+Examples:
+	| PageName     | SearchTerm                                                 | ColumnName    | TabName  |
+	| Applications | "WPF/E" (codename) Community Technology Preview (Feb 2007) | Application   | Projects |
+	| Mailboxes    | 040698EE82354C17B60@bclabs.local                           | Email Address | Projects |
+
+@Evergreen @Mailboxes @EvergreenJnr_ItemDetails @ItemDetailsDisplay @DAS12210
+Scenario: EvergreenJnr_MailboxesLists_CheckThatDropdownListsInTheProjectDetailsFiltersAreDisplayedCorrectly
+	When User clicks "Mailboxes" on the left-hand menu
+	Then "Mailboxes" list should be displayed to the user
+	When User perform search by "040698EE82354C17B60@bclabs.local"
+	And User click content from "Email Address" column
+	And User navigates to the "Projects" tab
+	Then User closes "Mailbox Projects" section on the Details Page
+	When User opens "Mailbox User Projects" section on the Details Page
+	And User clicks String Filter button for "Project Type" column
+	Then Dropdown List is displayed correctly in the Filter on the Details Page
+	When User clicks String Filter button for "Request Type" column
+	Then Dropdown List is displayed correctly in the Filter on the Details Page
+	When User clicks String Filter button for "Category" column
+	Then Dropdown List is displayed correctly in the Filter on the Details Page

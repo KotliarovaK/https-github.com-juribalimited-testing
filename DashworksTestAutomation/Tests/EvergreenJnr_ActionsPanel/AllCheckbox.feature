@@ -6,7 +6,7 @@ Background: Pre-Conditions
 	Given User is logged in to the Evergreen
 	Then Evergreen Dashboards page should be displayed to the user
 
-@Evergreen @Users @Evergreen_ActionsPanel @AllCheckbox @DAS10769 @DAS10656 @Not_Run
+@Evergreen @Users @Evergreen_ActionsPanel @AllCheckbox @DAS10769 @DAS10656 @DAS12206
 Scenario: EvergreenJnr_UsersList_SelectAllCheckboxStatusCheckAfterSearch
 	When User clicks "Users" on the left-hand menu
 	Then "Users" list should be displayed to the user
@@ -18,14 +18,18 @@ Scenario: EvergreenJnr_UsersList_SelectAllCheckboxStatusCheckAfterSearch
 	| SearchCriteria | NumberOfRows |
 	| alain          | 42           |
 	And Select All selectbox is checked
+	When User click on 'Username' column header
+	Then data in table is sorted by 'Username' column in ascending order
+	And Select All selectbox is checked
 	And "42" rows are displayed in the agGrid
 	And "41335" selected rows are displayed in the Actions panel
-	When User is deselect all rows
-	And User select all rows
-	Then The number of rows selected matches the number of rows of the main object list
 	And Clearing the agGrid Search Box
 	And Select All selectbox is checked
-	And "42" selected rows are displayed in the Actions panel
+	When User is deselect all rows
+	Then "0" selected rows are displayed in the Actions panel
+	When User select all rows
+	Then The number of rows selected matches the number of rows of the main object list
+	And Select All selectbox is checked
 
 @Evergreen @AllLists @Evergreen_ActionsPanel @AllCheckbox @DAS10775 @DAS10656
 Scenario Outline: EvergreenJnr_AllLists_CheckThatSelectAllCheckboxStatusAfterClosingActionPanel
@@ -44,7 +48,7 @@ Examples:
 	| Applications |
 	| Mailboxes    |
 
-@Evergreen @Devices @Evergreen_ActionsPanel @AllCheckbox @DAS10772 @DAS10656 @DAS11664
+@Evergreen @Devices @Evergreen_ActionsPanel @AllCheckbox @DAS10772 @DAS10656 @DAS11664 @DAS12206
 Scenario: EvergreenJnr_DevicesList_SearchWithinAllRows
 	When User clicks "Devices" on the left-hand menu
 	Then "Devices" list should be displayed to the user
@@ -80,11 +84,11 @@ Scenario Outline: EvergreenJnr_AllLists_SelectAllChecboxMainFunctionalityTest
 	And "<SelectedRowsCountAfterDiselect>" selected rows are displayed in the Actions panel
 
 Examples: 
-	| PageName     | SelectedRowsCount | Columnname    | SelectedRowName                  | SelectedRowsCountAfterDiselect |
-	| Devices      | 17225             | Hostname      | 001BAQXT6JWFPI                   | 17224                          |
-	| Users        | 41335             | Username      | 002B5DC7D4D34D5C895              | 41334                          |
-	| Applications | 2223              | Application   | 7zip                             | 2222                           |
-	| Mailboxes    | 14784             | Email Address | 00B5CCB89AD0404B965@bclabs.local | 14783                          |
+	| PageName     | SelectedRowsCount | Columnname    | SelectedRowName             | SelectedRowsCountAfterDiselect |
+	| Devices      | 17225             | Hostname      | 00BDM1JUR8IF419             | 17224                          |
+	| Users        | 41335             | Username      | AAD1011948                  | 41334                          |
+	| Applications | 2223              | Application   | Python 2.2a4                | 2222                           |
+	| Mailboxes    | 14784             | Email Address | aaron.u.flores@dwlabs.local | 14783                          |
 
 @Evergreen @AllLists @Evergreen_ActionsPanel @AllCheckbox @DAS10656
 Scenario: EvergreenJnr_UsersList_CheckThatSelectAllWorksCorrectlyForFilteredListsWithAdditionalColumn

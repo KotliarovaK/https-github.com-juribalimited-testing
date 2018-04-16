@@ -56,6 +56,22 @@ namespace DashworksTestAutomation.Steps.Dashworks
             Logger.Write("The Save to Custom List Element was NOT displayed");
         }
 
+        [When(@"User clicks Settings button in the list panel")]
+        public void WhenUserClicksSettingsButtonInTheListPanel()
+        {
+            var listElement = _driver.NowAt<CustomListElement>();
+            _driver.MouseHover(listElement.SettingsButton);
+            _driver.WaitWhileControlIsNotDisplayed<CustomListElement>(() => listElement.SettingsButton);
+            listElement.SettingsButton.Click();
+        }
+
+        [Then(@"Settings panel is displayed to the user")]
+        public void ThenSettingsPanelIsDisplayedToTheUser()
+        {
+            var listElement = _driver.NowAt<CustomListElement>();
+            Assert.IsTrue(listElement.SettingsPanel.Displayed(), "Settings panel is not displayed");
+        }
+
         [When(@"User create custom list with ""(.*)"" name")]
         public void WhenUserCreateCustomListWithName(string listName)
         {
@@ -115,6 +131,50 @@ namespace DashworksTestAutomation.Steps.Dashworks
             Assert.AreEqual(listName, listElement.CheckAllListName(listName).Text, "Incorrect list name is displayed");
         }
 
+        [When(@"User clicks Manage in the list panel")]
+        public void WhenUserClicksManageInTheListPanel()
+        {
+            var listDetailsElement = _driver.NowAt<CustomListElement>();
+            listDetailsElement.ManageButton.Click();
+        }
+
+        [When(@"User clicks Delete in the list panel")]
+        public void WhenUserClicksDeleteInTheListPanel()
+        {
+            var listDetailsElement = _driver.NowAt<CustomListElement>();
+            listDetailsElement.DeleteButton.Click();
+        }
+
+        [When(@"User clicks Delete in the warning message on the list panel")]
+        public void WhenUserClicksDeleteInTheWarningMessageOnTheListPanel()
+        {
+            var listDetailsElement = _driver.NowAt<CustomListElement>();
+            listDetailsElement.DeleteButtonInWarningMessage.Click();
+        }
+
+        [Then(@"Delete and Cancel buttons are available in the warning message")]
+        public void ThenDeleteAndCancelButtonsAreAvailableInTheWarningMessage()
+        {
+            var listDetailsElement = _driver.NowAt<CustomListElement>();
+            Assert.IsTrue((listDetailsElement.CancelButtonInWarningMessage.Displayed), "Cancel button is not displayed");
+            Assert.IsTrue((listDetailsElement.DeleteButtonInWarningMessage.Displayed), "Delete button is not displayed");
+        }
+
+        [When(@"User clicks Cancel button in the warning message")]
+        public void WhenUserClicksCancelButtonInTheWarningMessage()
+        {
+            var listDetailsElement = _driver.NowAt<CustomListElement>();
+            listDetailsElement.CancelButtonInWarningMessage.Click();
+        }
+
+        [Then(@"""(.*)"" list ""(.*)"" message is displayed in the lists panel")]
+        public void ThenListMessageIsDisplayedInTheListsPanel(string listName, string warningText)
+        {
+            var listElement = _driver.NowAt<CustomListElement>();
+            Assert.IsTrue(listElement.ListNameWarningMessage(listName), $"{listName} is not displayed in the list details panel");
+            Assert.IsTrue(listElement.RemovingDependencyListMessage(warningText), $"{warningText} message is not displayed in the list details panel");
+        }
+
         [When(@"User update current custom list")]
         public void WhenUserUpdateCurrentCustomList()
         {
@@ -151,7 +211,6 @@ namespace DashworksTestAutomation.Steps.Dashworks
         public void ThenEditListMenuIsNotDisplayed()
         {
             var listElement = _driver.NowAt<CustomListElement>();
-
             Assert.IsFalse(listElement.SaveAsDropdown.Displayed(), "Edit List menu is displayed");
         }
 
@@ -189,6 +248,7 @@ namespace DashworksTestAutomation.Steps.Dashworks
         {
             var page = _driver.NowAt<BaseDashboardPage>();
             page.GetListElementByName(listName).Click();
+            _driver.WaitForDataLoading();
         }
 
         [Then(@"""(.*)"" message is displayed")]

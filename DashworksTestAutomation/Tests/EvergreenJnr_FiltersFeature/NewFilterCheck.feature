@@ -1,6 +1,6 @@
 ﻿@retry:1
 Feature: NewFilterCheck
-	Runs New filters full check related tests
+	Runs New filters check related tests
 
 Background: Pre-Conditions
 	Given User is logged in to the Evergreen
@@ -117,7 +117,7 @@ Examples:
 	| Applications | 2,223     |
 	| Mailboxes    | 14,784    |
 
-@Evergreen @Applications @Evergreen_FiltersFeature @NewFilterCheck @DAS10512 @Not_Run
+@Evergreen @Applications @Evergreen_FiltersFeature @NewFilterCheck @DAS10512
 Scenario Outline: EvergreenJnr_ApplicationsList_CheckThatApplicationReadinessFilterIsAddedToTheList
 	When User clicks "Applications" on the left-hand menu
 	Then "Applications" list should be displayed to the user
@@ -134,7 +134,7 @@ Scenario Outline: EvergreenJnr_ApplicationsList_CheckThatApplicationReadinessFil
 	Then "<Text>" is displayed in added filter info
 	Then "<RowsCount>" rows are displayed in the agGrid
 	When User click on '<ColumnName>' column header
-	Then data in table is sorted by '<ColumnName>' column in ascending order 
+	Then data in table is sorted by '<ColumnName>' column in descending order 
 
 Examples: 
 	| ColumnName                        | Operators              | FilterOption | Text                                       | RowsCount |
@@ -146,7 +146,7 @@ Examples:
 	| MigrationP: Application Readiness | Equals, Does not equal | Blue         | MigrationP: Application Readiness is Blue  | 189       |
 	| UserSchedu: Application Readiness | Equals, Does not equal | None         | UserSchedu: Application Readiness is None  | 981       |
 
-@Evergreen @Applications @Evergreen_FiltersFeature @NewFilterCheck @DAS10512 @DAS11509 @DAS11507 @DAS11509
+@Evergreen @Applications @Evergreen_FiltersFeature @NewFilterCheck @DAS10512 @DAS11509 @DAS11507 @DAS11509 @DAS12026
 Scenario Outline: EvergreenJnr_ApplicationsList_CheckThatApplicationRationalisationFilterIsAddedToTheList
 	When User clicks "Applications" on the left-hand menu
 	Then "Applications" list should be displayed to the user
@@ -169,7 +169,7 @@ Scenario Outline: EvergreenJnr_ApplicationsList_CheckThatApplicationRationalisat
 
 Examples: 
 	| ColumnName                              | Operators              | FilterOption  | Text                                                     | RowsCount |
-	| Windows7Mi: Application Rationalisation | Equals, Does not equal | RETIRE        | Windows7Mi: Application Rationalisation is Retire        | 85        |
+	| Windows7Mi: Application Rationalisation | Equals, Does not equal | RETIRE        | Windows7Mi: Application Rationalisation is Retire        | 86        |
 	| Babel(Engl: Application Rationalisation | Equals, Does not equal | UNCATEGORISED | Babel(Engl: Application Rationalisation is Uncategorised | 302       |
 	| Barry'sUse: Application Rationalisation | Equals, Does not equal | KEEP          | Barry'sUse: Application Rationalisation is Keep          | 2         |
 	| ComputerSc: Application Rationalisation | Equals, Does not equal | FORWARD PATH  | ComputerSc: Application Rationalisation is Forward Path  | 10        |
@@ -238,3 +238,105 @@ Examples:
 	| Havoc(BigD: Hide from End Users | Equals, Does not equal | UNKNOWN      | Havoc(BigD: Hide from End Users is Unknown | 1,156     |
 	| MigrationP: Hide from End Users | Equals, Does not equal | FALSE        | MigrationP: Hide from End Users is false   | 220       |
 	| UserSchedu: Hide from End Users | Equals, Does not equal | UNKNOWN      | UserSchedu: Hide from End Users is Unknown | 1,242     |
+
+@Evergreen @Devices @Evergreen_FiltersFeature @NewFilterCheck @DAS12232 @DAS12351 @Not_Run
+Scenario: EvergreenJnr_DevicesList_CheckThatMultiSelectProjectTaskFiltersAreDisplayedCorrectlyOnDevicesPage
+	When User clicks "Devices" on the left-hand menu
+	Then "Devices" list should be displayed to the user
+	When User clicks the Filters button
+	Then Filters panel is displayed to the user
+	When User add "Windows7Mi: Values but no RAG" filter where type is "Equals" without added column and following checkboxes:
+	| SelectedCheckboxes |
+	| One                |
+	| Three              |
+	And User Add And "UserSchedu: Radio Rag Date Comp" filter where type is "Equals" with added column and following checkboxes:
+	| SelectedCheckboxes |
+	| Not Applicable     |
+	| Started            |
+	| Failed             |
+	| Complete           |
+	Then "233" rows are displayed in the agGrid
+	When User create dynamic list with "Devices_ProjectTaskFilters_AND" name on "Devices" page
+	Then "Devices_ProjectTaskFilters_AND" list is displayed to user
+	When User navigates to the "All Devices" list
+	Then "Devices" list should be displayed to the user
+	When User navigates to the "Devices_ProjectTaskFilters_AND" list
+	When User clicks the Filters button
+	Then Filters panel is displayed to the user
+	Then "Windows7Mi: Values but no RAG is One or Three" is displayed in added filter info
+	And "UserSchedu: Radio Rag Date Comp is Not Applicable, Started, Failed or Complete" is displayed in added filter info
+	When User click Edit button for "Windows7Mi: Values but no RAG" filter
+	And User change selected checkboxes:
+	| Option | State |
+	| One    | false |
+	| Two    | false |
+	| Three  | true  |
+	And User click Edit button for "UserSchedu: Radio Rag Date Comp" filter
+	And User select "Does not equal" Operator value
+	And User change selected checkboxes:
+	| Option         | State |
+	| Not Applicable | true  |
+	| Not Started    | false |
+	| Started        | false |
+	| Failed         | false |
+	| Complete       | false |
+	Then "1" rows are displayed in the agGrid
+	When User update current custom list
+
+@Evergreen @Users @Evergreen_FiltersFeature @NewFilterCheck @DAS12232 @DAS12351 @Not_Run
+Scenario: EvergreenJnr_UsersList_CheckThatMultiSelectProjectTaskFiltersAreDisplayedCorrectlyOnUsersPage
+	When User clicks "Users" on the left-hand menu
+	Then "Users" list should be displayed to the user
+	When User clicks the Filters button
+	Then Filters panel is displayed to the user
+	When User add "Windows7Mi: Read Only on Bulk Update Page" filter where type is "Equals" without added column and following checkboxes:
+	| SelectedCheckboxes |
+	| Not Applicable     |
+	| Started            |
+	| Failed             |
+	| Complete           |
+	And User Add And "Windows7Mi: T-60 SMS Message Sent" filter where type is "Equals" with added column and following checkboxes:
+	| SelectedCheckboxes |
+	| Not Applicable     |
+	Then "4,641" rows are displayed in the agGrid
+	When User create dynamic list with "Users_ProjectTaskFilters_AND" name on "Users" page
+	Then "Users_ProjectTaskFilters_AND" list is displayed to user
+	When User navigates to the "All Users" list
+	Then "Users" list should be displayed to the user
+	When User navigates to the "Users_ProjectTaskFilters_AND" list
+	When User clicks the Filters button
+	Then Filters panel is displayed to the user
+	Then "Windows7Mi: Read Only on Bulk Update Page is Not Applicable, Started, Failed or Complete" is displayed in added filter info
+	And "Windows7Mi: T-60 SMS Message Sent is Not Applicable" is displayed in added filter info
+	When User click Edit button for "Windows7Mi: Read Only on Bulk Update Page" filter
+	And User select "Does not equal" Operator value
+	And User change selected checkboxes:
+	| Option         | State |
+	| Not Applicable | false |
+	| Not Started    | true  |
+	| Started        | true  |
+	| Failed         | true  |
+	| Complete       | true  |
+	And User click Edit button for "Windows7Mi: T-60 SMS Message Sent" filter
+	And User change selected checkboxes:
+	| Option         | State |
+	| Not Applicable | true  |
+	| Not Sent       | false |
+	| Sent           | true  |
+	Then "4,642" rows are displayed in the agGrid
+	When User update current custom list
+
+@Evergreen @AllLists @Evergreen_FiltersFeature @NewFilterCheck @DAS11830
+Scenario Outline: EvergreenJnr_AllLists_CheckThatOptionsIsAvailableForFiltersOfProjectTaskCategories
+	When User clicks "<PageName>" on the left-hand menu
+	Then "<PageName>" list should be displayed to the user
+	When User clicks the Filters button
+	Then Filters panel is displayed to the user
+	When user select "<FilterName>" filter
+	Then "Off, On" checkbox is available for this filter
+
+Examples: 
+	| PageName     | FilterName                     |
+	| Users        | ComputerSc: User Off/On        |
+	| Devices      | ComputerSc: Computer Off/On    |
+	| Applications | ComputerSc: Application Off/On |

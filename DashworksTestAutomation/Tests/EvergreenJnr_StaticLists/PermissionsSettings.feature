@@ -6,15 +6,12 @@ Background: Pre-Conditions
 	Given User is logged in to the Evergreen
 	Then Evergreen Dashboards page should be displayed to the user
 
-
-@Evergreen @Users @EvergreenJnr_StaticLists @PermissionsSettings @DAS10945 @DAS11553 @DAS10880 @Delete_Newly_Created_List
+@Evergreen @Users @EvergreenJnr_StaticLists @PermissionsSettings @DAS10945 @DAS11553 @DAS10880 @DAS12152 @Delete_Newly_Created_List
 Scenario: EvergreenJnr_UsersList_CheckThatNotOwnerUsersDontHavePermissionsToUpdateStaticList
-	When User clicks "Users" on the left-hand menu
-	Then "Users" list should be displayed to the user
-	When User clicks the Actions button
-	Then Actions panel is displayed to the user
-	When User select all rows
-	And User create static list with "Static List TestName" name
+	When User create static list with "Static List TestName" name on "Users" page with following items
+	| ItemName |
+	|          |
+	#And User create static list with "Static List TestName" name
 	Then "Static List TestName" list is displayed to user
 	When User clicks the List Details button
 	Then List details panel is displayed to the user
@@ -32,22 +29,18 @@ Scenario: EvergreenJnr_UsersList_CheckThatNotOwnerUsersDontHavePermissionsToUpda
 	Then Update list option is NOT available
 	And Save as a new list option is available
 
-@Evergreen @Devices @EvergreenJnr_StaticLists @PermissionsSettings @DAS11022 @DAS11553 @DAS10880 @Delete_Newly_Created_List
+@Evergreen @Devices @EvergreenJnr_StaticLists @PermissionsSettings @DAS11022 @DAS11553 @DAS10880 @DAS12152 @Delete_Newly_Created_List @Not_Run
 Scenario: EvergreenJnr_DevicesList_CheckThatAddRowsOptionsIsAvailableForSpecifiedPermissionLevel
-	When User clicks "Devices" on the left-hand menu
-	Then "Devices" list should be displayed to the user
-	When User clicks the Actions button
-	Then Actions panel is displayed to the user
-	When User select all rows
-	And User create static list with "OwnerPrivate" name
+	When User create static list with "OwnerPrivate" name on "Devices" page with following items
+	| ItemName |
+	|          |
 	#Workaround for DAS-11570. Remove after fix
 	#And User navigates to the "OwnerPrivate" list
 	When User navigates to the "All Devices" list
 	Then "Devices" list should be displayed to the user
-	When User clicks the Actions button
-	Then Actions panel is displayed to the user
-	When User select all rows
-	And User create static list with "NotOwnerSpecifiedAdmin" name
+	When User create static list with "NotOwnerSpecifiedAdmin" name on "Devices" page with following items
+	| ItemName |
+	|          |
 	#Workaround for DAS-11570. Remove after fix
 	#And User navigates to the "NotOwnerSpecifiedAdmin" list
 	When User clicks the List Details button
@@ -61,10 +54,9 @@ Scenario: EvergreenJnr_DevicesList_CheckThatAddRowsOptionsIsAvailableForSpecifie
 	And User click Accept button in List Details panel
 	When User navigates to the "All Devices" list
 	Then "Devices" list should be displayed to the user
-	When User clicks the Actions button
-	Then Actions panel is displayed to the user
-	When User select all rows
-	And User create static list with "NotOwnerSpecifiedEdit" name
+	When User create static list with "NotOwnerSpecifiedEdit" name on "Devices" page with following items
+	| ItemName |
+	|          |
 	#Workaround for DAS-11570. Remove after fix
 	#And User navigates to the "NotOwnerSpecifiedEdit" list
 	When User clicks the List Details button
@@ -78,10 +70,9 @@ Scenario: EvergreenJnr_DevicesList_CheckThatAddRowsOptionsIsAvailableForSpecifie
 	And User click Accept button in List Details panel
 	When User navigates to the "All Devices" list
 	Then "Devices" list should be displayed to the user
-	When User clicks the Actions button
-	Then Actions panel is displayed to the user
-	When User select all rows
-	And User create static list with "NotOwnerSpecifiedRead" name
+	When User create static list with "NotOwnerSpecifiedRead" name on "Devices" page with following items
+	| ItemName |
+	|          |
 	#Workaround for DAS-11570. Remove after fix
 	#And User navigates to the "NotOwnerSpecifiedRead" list
 	When User clicks the List Details button
@@ -95,10 +86,9 @@ Scenario: EvergreenJnr_DevicesList_CheckThatAddRowsOptionsIsAvailableForSpecifie
 	And User click Accept button in List Details panel
 	When User navigates to the "All Devices" list
 	Then "Devices" list should be displayed to the user
-	When User clicks the Actions button
-	Then Actions panel is displayed to the user
-	When User select all rows
-	And User create static list with "NotOwnerEveryoneCanEdit" name
+	When User create static list with "NotOwnerEveryoneCanEdit" name on "Devices" page with following items
+	| ItemName |
+	|          |
 	#Workaround for DAS-11570. Remove after fix
 	#And User navigates to the "NotOwnerEveryoneCanEdit" list
 	When User clicks the List Details button
@@ -108,10 +98,9 @@ Scenario: EvergreenJnr_DevicesList_CheckThatAddRowsOptionsIsAvailableForSpecifie
 	And User click Accept button in List Details panel
 	When User navigates to the "All Devices" list
 	Then "Devices" list should be displayed to the user
-	When User clicks the Actions button
-	Then Actions panel is displayed to the user
-	When User select all rows
-	And User create static list with "NotOwnerEveryoneCanSee" name
+	When User create static list with "NotOwnerEveryoneCanSee" name on "Devices" page with following items
+	| ItemName |
+	|          |
 	#Workaround for DAS-11570. Remove after fix
 	#When User navigates to the "NotOwnerEveryoneCanSee" list
 	When User clicks the List Details button

@@ -11,7 +11,7 @@ Scenario: EvergreenJnr_DevicesList_CheckThatQuickSearchResetWhenMovingBetweenLis
 	When User add following columns using URL to the "Devices" page:
 	| ColumnName |
 	| Build Date |
-	When User create custom list with "TestList7BA11B" name
+	When User create dynamic list with "TestList7BA11B" name on "Devices" page
 	Then "TestList7BA11B" list is displayed to user
 	Then User enters SearchCriteria into the agGrid Search Box and the correct NumberOfRows are returned
 	| SearchCriteria | NumberOfRows |
@@ -62,34 +62,25 @@ Scenario: EvergreenJnr_AllLists_CheckSearchFilterAndTableContentDuringNavigation
 	And "17,225" rows are displayed in the agGrid
 	And Search field is empty
 
-@Evergreen @Devices @EvergreenJnr_Search @Search
+@Evergreen @Devices @EvergreenJnr_Search @Search @DAS12206 @DAS10475
 Scenario: EvergreenJnr_DevicesList_SearchTests
-	When User clicks "Devices" on the left-hand menu
-	Then "Devices" list should be displayed to the user
-	When User clicks the Columns button
-	Then Columns panel is displayed to the user
-	When ColumnName is entered into the search box and the selection is clicked
+	When User add following columns using URL to the "Devices" page:
 	| ColumnName          |
 	| Compliance          |
 	| Owner Email Address |
 	| IP Address          |
-	Then ColumnName is added to the list
-	| ColumnName          |
-	| Compliance          |
-	| Owner Email Address |
-	| IP Address          |
-	And User enters SearchCriteria into the agGrid Search Box and the correct NumberOfRows are returned
+	Then User enters SearchCriteria into the agGrid Search Box and the correct NumberOfRows are returned
 	| SearchCriteria      | NumberOfRows |
 	| Véronique Duplessis | 1            |
 	| Virtual             | 1,996        |
 	| Windows Vista       | 475          |
-	#| O'Connor            | 13           |
+	| O'Connor            | 13           |
 	| @demo.juriba.com    | 16,717       |
 	| 192.168.6           | 5,100        |
 	| RED                 | 9,238        |
 	| 0JIE                | 1            |
 
-@Evergreen @Devices @EvergreenJnr_Search @Search @DAS11012
+@Evergreen @Devices @EvergreenJnr_Search @Search @DAS11012 @DAS12206
 Scenario: EvergreenJnr_DevicesList_ClearingSearchReturnsTheFullDataSet
 	When User clicks "Devices" on the left-hand menu
 	Then "Devices" list should be displayed to the user
@@ -101,7 +92,7 @@ Scenario: EvergreenJnr_DevicesList_ClearingSearchReturnsTheFullDataSet
 	Then "17,225" rows are displayed in the agGrid
 	Then URL is "http://automation.corp.juriba.com/evergreen/#/devices"
 
-@Evergreen @Users @EvergreenJnr_Search @Search @DAS11012
+@Evergreen @Users @EvergreenJnr_Search @Search @DAS11012 @DAS12206
 Scenario: EvergreenJnr_UsersList_ClearingSearchReturnsTheFullDataSet
 	When User clicks "Users" on the left-hand menu
 	Then "Users" list should be displayed to the user
@@ -115,21 +106,12 @@ Scenario: EvergreenJnr_UsersList_ClearingSearchReturnsTheFullDataSet
 
 @Evergreen @Devices @EvergreenJnr_Search @Search
 Scenario: EvergreenJnr_DevicesList_Search_NoDevicesFound
-	When User clicks "Devices" on the left-hand menu
-	Then "Devices" list should be displayed to the user
-	When User clicks the Columns button
-	Then Columns panel is displayed to the user
-	When ColumnName is entered into the search box and the selection is clicked
+	When User add following columns using URL to the "Devices" page:
 	| ColumnName          |
 	| Compliance          |
 	| Owner Email Address |
 	| IP Address          |
-	Then ColumnName is added to the list
-	| ColumnName          |
-	| Compliance          |
-	| Owner Email Address |
-	| IP Address          |
-	And User enters invalid SearchCriteria into the agGrid Search Box and "No devices found" message is displayed
+	Then User enters invalid SearchCriteria into the agGrid Search Box and "No devices found" message is displayed
 	| SearchCriteria    |
 	| 0281Z793OLLLDU66  |
 	| Xavier Beaule     |
@@ -189,7 +171,7 @@ Scenario: EvergreenJnr_DevicesList_Search_CheckThatSearchFieldHaveResetButtonAtL
 	Then "Devices" list should be displayed to the user
 	When User click on 'Hostname' column header
 	Then data in table is sorted by 'Hostname' column in ascending order
-	When User create custom list with "TestListDED759" name
+	When User create dynamic list with "TestListDED759" name on "Devices" page
 	When User enters "CheckTheResetButton" text in Search field at List Panel
 	Then reset button in Search field at List Panel is displayed
 
@@ -209,17 +191,10 @@ Examples:
 
 @Evergreen @AllLists @EvergreenJnr_Search @Search @DAS11511
 Scenario Outline: EvergreenJnr_AllLists_Search_CheckThatTableSearchIsWorkingCorrectly
-	When User clicks "<PageName>" on the left-hand menu
-	Then "<PageName>" list should be displayed to the user
-	When User clicks the Columns button
-	Then Columns panel is displayed to the user
-	When ColumnName is entered into the search box and the selection is clicked
+	When User add following columns using URL to the "<PageName>" page:
 	| ColumnName   |
 	| <ColumnName> |
-	Then ColumnName is added to the list
-	| ColumnName   |
-	| <ColumnName> |
-	And User enters SearchCriteria into the agGrid Search Box and the correct NumberOfRows are returned
+	Then User enters SearchCriteria into the agGrid Search Box and the correct NumberOfRows are returned
 	| SearchCriteria   | NumberOfRows   |
 	| <SearchCriteria> | <NumberOfRows> |
 
@@ -261,14 +236,7 @@ Scenario: EvergreenJnr_DevicesLists_Search_CheckThatTableSearchWorksCorrectlyFor
 
 @Evergreen @Devices @EvergreenJnr_Search @Search @DAS11664
 Scenario: EvergreenJnr_DevicesLists_Search_CheckThatTableSearchWorksCorrectlyForOwnerUsernameColumn
-	When User clicks "Devices" on the left-hand menu
-	Then "Devices" list should be displayed to the user
-	When User clicks the Columns button
-	Then Columns panel is displayed to the user
-	When ColumnName is entered into the search box and the selection is clicked
-	| ColumnName     |
-	| Owner Username |
-	Then ColumnName is added to the list
+	When User add following columns using URL to the "Devices" page:
 	| ColumnName     |
 	| Owner Username |
 	When User clicks the Columns button
@@ -333,14 +301,7 @@ Scenario: EvergreenJnr_MailboxesLists_Search_CheckThatTableSearchWorksCorrectlyF
 
 @Evergreen @Mailboxes @EvergreenJnr_Search @Search @DAS11664
 Scenario: EvergreenJnr_MailboxesLists_Search_CheckThatTableSearchWorksCorrectlyForOwnerUsernameColumn
-	When User clicks "Mailboxes" on the left-hand menu
-	Then "Mailboxes" list should be displayed to the user
-	When User clicks the Columns button
-	Then Columns panel is displayed to the user
-	When ColumnName is entered into the search box and the selection is clicked
-	| ColumnName     |
-	| Owner Username |
-	Then ColumnName is added to the list
+	When User add following columns using URL to the "Mailboxes" page:
 	| ColumnName     |
 	| Owner Username |
 	When User clicks the Columns button
@@ -370,3 +331,13 @@ Scenario: EvergreenJnr_DevicesLists_Search_CheckThatRowCountIsNotDisplayedWhenNo
 	And User enters SearchCriteria into the agGrid Search Box and the correct NumberOfRows are returned
 	| SearchCriteria | NumberOfRows |
 	| Example        |              |
+
+@Evergreen @Devices @EvergreenJnr_Search @Search @DAS11706
+Scenario: EvergreenJnr_DevicesLists_Search_CheckThatValidationForSpecialCharactersInSearchEverythingAndSearchTableFieldsIsPresented
+	When User clicks "Devices" on the left-hand menu
+	Then "Devices" list should be displayed to the user
+	When User type "%%%" in Global Search Field
+	Then "No results found" message is displayed below Global Search field
+	Then User enters invalid SearchCriteria into the agGrid Search Box and "No devices found" message is displayed
+	| SearchCriteria |
+	| %%%            |

@@ -4,6 +4,7 @@ using OpenQA.Selenium;
 using OpenQA.Selenium.Support.PageObjects;
 using System.Collections.Generic;
 using System.Linq;
+using System.Threading;
 using NUnit.Framework;
 
 namespace DashworksTestAutomation.Pages.Evergreen
@@ -19,7 +20,9 @@ namespace DashworksTestAutomation.Pages.Evergreen
         [FindsBy(How = How.XPath, Using = ".//button[contains(@class, 'filter-select addNewContainer ng-star-inserted')]")]
         public IWebElement AddAndFilterButton { get; set; }
 
-        [FindsBy(How = How.XPath, Using = ".//input[@name='search']")]
+        private const string SearchTextboxSelector = ".//input[@name='search']";
+
+        [FindsBy(How = How.XPath, Using = SearchTextboxSelector)]
         public IWebElement SearchTextbox { get; set; }
 
         [FindsBy(How = How.XPath,
@@ -54,6 +57,8 @@ namespace DashworksTestAutomation.Pages.Evergreen
         [FindsBy(How = How.XPath, Using = ".//div[@class='styleSelectDropdown']")]
         public IWebElement FilterTypeDropdown { get; set; }
 
+        private const string ShowedResultsCount = ".//div[@class='pagination-info ng-star-inserted']";
+
         [FindsBy(How = How.XPath, Using = ".//span[text()='None']")]
         public IWebElement NoneCheckbox { get; set; }
 
@@ -65,6 +70,9 @@ namespace DashworksTestAutomation.Pages.Evergreen
 
         [FindsBy(How = How.XPath, Using = ".//button[@class='mat-primary mat-raised-button']")]
         public IWebElement SaveButton { get; set; }
+
+        [FindsBy(How = How.XPath, Using = ".//i[@class='material-icons mat-filter-edit mat-18']")]
+        public IWebElement EditFilterButton { get; set; }
 
         [FindsBy(How = How.XPath, Using = ".//button[@class='mat-raised-button']")]
         public IWebElement CancelButton { get; set; }
@@ -83,17 +91,26 @@ namespace DashworksTestAutomation.Pages.Evergreen
         [FindsBy(How = How.XPath, Using = ".//span[text()='RESET']/ancestor::button")]
         public IWebElement ResetFiltersButton { get; set; }
 
-        [FindsBy(How = How.XPath, Using = ".//span[contains(@class, 'filter-label-value')]")]
+        public const string FilterValuesSelector = ".//span[contains(@class, 'filter-label-value')]";
+
+        [FindsBy(How = How.XPath, Using = FilterValuesSelector)]
         public IList<IWebElement> FilterValues { get; set; }
 
-        [FindsBy(How = How.XPath, Using = ".//span[@class='filter-label-op']")]
+        public const string FilterOptionsSelector = ".//span[@class='filter-label-op']";
+
+        [FindsBy(How = How.XPath, Using = FilterOptionsSelector)]
         public IList<IWebElement> FilterOptions { get; set; }
+
+        public const string FilterNameSelector = ".//span[@class='filter-label-name']";
 
         [FindsBy(How = How.XPath, Using = ".//span[contains(@class,'mat-select-value-text')]")]
         public IWebElement OperatorDropdown { get; set; }
 
         [FindsBy(How = How.XPath, Using = ".//div[contains(@class,'mat-select-content')]/mat-option")]
         public IList<IWebElement> OperatorOptions { get; set; }
+
+        [FindsBy(How = How.XPath, Using = ".//div[contains(@class,'list-container')]")]
+        public IList<IWebElement> FilterCheckboxOptions { get; set; }
 
         [FindsBy(How = How.XPath, Using = ".//div[@class='filter-label']")]
         public IList<IWebElement> AddedFilterLabels { get; set; }
@@ -124,6 +141,13 @@ namespace DashworksTestAutomation.Pages.Evergreen
             return filterValues;
         }
 
+        public void GetAssociationCheckbox(string checkboxName)
+        {
+            string checkboxSettingsSelector = $".//li[@class='ng-star-inserted']//span[text()='{checkboxName}']";
+            Driver.WaitWhileControlIsNotDisplayed(By.XPath(checkboxSettingsSelector));
+            Driver.FindElement(By.XPath(checkboxSettingsSelector)).Click();
+        }
+
         public void AddFilter(string filterName)
         {
             if (Driver.IsElementExists(AddNewFilterButton))
@@ -134,8 +158,10 @@ namespace DashworksTestAutomation.Pages.Evergreen
 
             if (FilterCategories.Any())
                 Driver.MouseHover(FilterCategories.Last());
-            Driver.MouseHover(SearchTextbox);
-            SearchTextbox.SendKeys(filterName);
+            Driver.MouseHover(By.XPath(SearchTextboxSelector));
+            Driver.WaitWhileControlIsNotClickable(By.XPath(SearchTextboxSelector));
+            Driver.FindElement(By.XPath(SearchTextboxSelector)).Click();
+            Driver.FindElement(By.XPath(SearchTextboxSelector)).SendKeys(filterName);
             var selector = string.Empty;
             if (filterName.Contains("'"))
             {
@@ -153,6 +179,12 @@ namespace DashworksTestAutomation.Pages.Evergreen
 
             Driver.WaitForDataLoading();
             Driver.WaitWhileControlIsDisplayed<FiltersElement>(() => AddNewFilterButton);
+        }
+
+        public string GetShowedResultsCount()
+        {
+            LookupFilterSearchTextbox.Click();
+            return Driver.FindElement(By.XPath(ShowedResultsCount)).Text;
         }
 
         public void AddAndFilter(string filterName)
@@ -199,9 +231,15 @@ namespace DashworksTestAutomation.Pages.Evergreen
             return Driver.IsElementDisplayed(selector);
         }
 
+        public bool CategoryIsDisplayed(string sectionsName)
+        {
+            return Driver.IsElementDisplayed(
+                By.XPath($".//div[@class='filter-category-label blue-color bold-text'][contains(text(),'{sectionsName}"));
+        }
+
         public List<string> GetFiltersNames()
         {
-            Driver.WaitWhileControlIsNotDisplayed(By.XPath(".//span[@class='filter-label-name']"));
+            Driver.WaitWhileControlIsNotExists(By.XPath(".//span[@class='filter-label-name']"));
             var namesListElements = Driver.FindElements(By.XPath(".//span[@class='filter-label-name']"));
             return namesListElements.Select(name => name.Text).ToList();
         }
@@ -216,6 +254,11 @@ namespace DashworksTestAutomation.Pages.Evergreen
             var editFilterSelector =
                 $".//span[@class='filter-label-name'][text()='{filterName}']//ancestor::div[@class='filter-group no-border-bottom ng-star-inserted']//button";
             return Driver.FindElement(By.XPath(editFilterSelector));
+        }
+
+        public bool ListNameForSavedListFilter(string filterName)
+        {
+            return Driver.IsElementDisplayed(By.XPath($".//div[@class='list-container']/span[text()='{filterName}']"));
         }
 
         public IWebElement GetBooleanCheckboxImg(string booleanValue)
@@ -246,7 +289,7 @@ namespace DashworksTestAutomation.Pages.Evergreen
             Driver.SelectCustomSelectbox(selectbox, operatorValue);
         }
 
-        public void EditFilterButton(string tooltipText)
+        public void EditFilterButtonToolTip(string tooltipText)
         {
             var editFilterButton = Driver.FindElement(By.XPath(
                 ".//div[@class='btn-group-sm pull-right ng-star-inserted']//i[@class='material-icons mat-filter-edit mat-18']/ancestor::button")).GetAttribute("aria-describedby");
@@ -256,6 +299,13 @@ namespace DashworksTestAutomation.Pages.Evergreen
             var node = doc.DocumentNode.SelectNodes($".//div[@id='{editFilterButton}']")[0];
             var editFilterButtonTooltip = node.InnerHtml;
             Assert.AreEqual(tooltipText, editFilterButtonTooltip, "Tooltip is incorrect for button");
+        }
+
+        public List<IWebElement> GetAddedFilters()
+        {
+            var by = By.XPath(".//div[@class='filter-item ng-star-inserted']");
+            Driver.WaitWhileControlIsNotDisplayed(by);
+            return Driver.FindElements(by).ToList();
         }
     }
 }

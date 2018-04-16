@@ -241,6 +241,20 @@ namespace DashworksTestAutomation.Extensions
             }
         }
 
+        public static void WaitWhileControlIsNotExists(this RemoteWebDriver driver, By by)
+        {
+            try
+            {
+                WebDriverWait wait = new WebDriverWait(driver, waitTimeout);
+                wait.Until(ExpectedConditions.ElementExists(by));
+            }
+            catch (WebDriverTimeoutException e)
+            {
+                throw new Exception(
+                    $"Element with '{by}' selector is NOT displayed in {waitTimeout.TotalSeconds} seconds", e);
+            }
+        }
+
         public static void WaitWhileControlContainingTextIsNotDisplayed(this RemoteWebDriver driver, By by)
         {
             try
@@ -442,6 +456,12 @@ namespace DashworksTestAutomation.Extensions
             ex.ExecuteScript("arguments[0].scrollIntoView(true);", element);
         }
 
+        public static void SetAttributeByJavascript(this RemoteWebDriver driver, IWebElement element, string attribute, string text)
+        {
+            IJavaScriptExecutor ex = driver;
+            ex.ExecuteScript($"arguments[0].setAttribute('{attribute}', '{text}')", element);
+        }
+
         #endregion Actions with Javascript
 
         #region Frames
@@ -566,6 +586,14 @@ namespace DashworksTestAutomation.Extensions
             }
 
             return allRequests;
+        }
+
+        public static string GetTooltipText(this RemoteWebDriver driver)
+        {
+            var toolTips = driver.FindElements(By.XPath(".//mat-tooltip-component"));
+            if (!toolTips.Any())
+                throw new Exception("Tool tip was not displayed");
+            return toolTips.First().Text;
         }
     }
 }
