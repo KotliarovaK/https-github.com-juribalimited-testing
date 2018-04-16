@@ -1,5 +1,4 @@
-﻿using System.ComponentModel;
-using DashworksTestAutomation.Extensions;
+﻿using DashworksTestAutomation.Extensions;
 
 namespace DashworksTestAutomation.DTO.Projects
 {

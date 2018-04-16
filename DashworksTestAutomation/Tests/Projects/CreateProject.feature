@@ -12,9 +12,13 @@ Scenario: Projects_CreateAProject
 	When User clicks create Project button
 	Then "Create Project" page is displayed to the user
 	When User creates Project
-	| ProjectName | ProjectShortName | ProjectDescription | ProjectType            | DefaultLanguage |
-	| Test        | Test             | Test               | User Scheduled Project | English         |
+	| ProjectName | ProjectShortName | ProjectDescription | ProjectType                |
+	| Test        | Test             | Test               | Computer Scheduled Project |
 	Then "Manage Project Details" page is displayed to the user
 	When User updating Details page
-	| OnboardedApplications | ShowLinkedObjects | ApplicationsTab1 | ApplicationsTab2 | ApplicationRationalization | OnboardUsedApplicationsByAssociationTo | CcEmail | BccEmail | StartDate  | EndDate     |
-	| Light Blue            | Yes               | Target State     | Alphabetical     | Keep                       | User                                   | Test    | Test     | 8 May 2012 | 10 Apr 2018 |
+	| ShowOriginalColumn | IncludeSiteName | NotApplicableApplications | InstalledApplications | EntitledApplications | TaskEmailCcEmailAddress | TaskEmailBccEmailAddress | StartDate  | EndDate     |
+	| true               | true            | true                      | true                  | true                 | Test@test.com           | Test@test.com            | 8 May 2012 | 10 Apr 2018 |
+	When User navigate to "Request Types" tab
+	When User create Request Type
+	| Name | Description |
+	| Test | Test        |

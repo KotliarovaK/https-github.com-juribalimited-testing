@@ -82,39 +82,43 @@ namespace DashworksTestAutomation.Tests.Projects
                         "ProjectName",
                         "ProjectShortName",
                         "ProjectDescription",
-                        "ProjectType",
-                        "DefaultLanguage"});
+                        "ProjectType"});
             table1.AddRow(new string[] {
                         "Test",
                         "Test",
                         "Test",
-                        "User Scheduled Project",
-                        "English"});
+                        "Computer Scheduled Project"});
             testRunner.When("User creates Project", ((string)(null)), table1, "When ");
             testRunner.Then("\"Manage Project Details\" page is displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
             TechTalk.SpecFlow.Table table2 = new TechTalk.SpecFlow.Table(new string[] {
-                        "OnboardedApplications",
-                        "ShowLinkedObjects",
-                        "ApplicationsTab1",
-                        "ApplicationsTab2",
-                        "ApplicationRationalization",
-                        "OnboardUsedApplicationsByAssociationTo",
-                        "CcEmail",
-                        "BccEmail",
+                        "ShowOriginalColumn",
+                        "IncludeSiteName",
+                        "NotApplicableApplications",
+                        "InstalledApplications",
+                        "EntitledApplications",
+                        "TaskEmailCcEmailAddress",
+                        "TaskEmailBccEmailAddress",
                         "StartDate",
                         "EndDate"});
             table2.AddRow(new string[] {
-                        "Light Blue",
-                        "Yes",
-                        "Target State",
-                        "Alphabetical",
-                        "Keep",
-                        "User",
-                        "Test",
-                        "Test",
+                        "true",
+                        "true",
+                        "true",
+                        "true",
+                        "true",
+                        "Test@test.com",
+                        "Test@test.com",
                         "8 May 2012",
                         "10 Apr 2018"});
             testRunner.When("User updating Details page", ((string)(null)), table2, "When ");
+            testRunner.When("User navigate to \"Request Types\" tab", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+            TechTalk.SpecFlow.Table table3 = new TechTalk.SpecFlow.Table(new string[] {
+                        "Name",
+                        "Description"});
+            table3.AddRow(new string[] {
+                        "Test",
+                        "Test"});
+            testRunner.When("User create Request Type", ((string)(null)), table3, "When ");
             this.ScenarioCleanup();
         }
     }

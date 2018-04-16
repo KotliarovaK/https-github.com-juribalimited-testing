@@ -11,6 +11,15 @@ namespace DashworksTestAutomation.Pages.Projects
 {
     internal class DetailsPage : BaseDashboardPage
     {
+        [FindsBy(How = How.XPath, Using = ".//input[@title='Project Name']")]
+        public IWebElement ProjectName { get; set; }
+
+        [FindsBy(How = How.XPath, Using = ".//input[@aria-label='Project Short Name']")]
+        public IWebElement ProjectShortName { get; set; }
+
+        [FindsBy(How = How.XPath, Using = ".//textarea[@id='ctl00_MainContent_DV_Project_ProjectDescription']")]
+        public IWebElement ProjectDescription { get; set; }
+
         [FindsBy(How = How.XPath, Using = ".//div[@class='selectedItemBox']")]
         public IWebElement OnboardedApplications { get; set; }
 
@@ -30,19 +39,19 @@ namespace DashworksTestAutomation.Pages.Projects
         public IWebElement ApplicationRationalization { get; set; }
 
         [FindsBy(How = How.XPath, Using = ".//input[@aria-label='Show Original Application Column On Application Dashboards']")]
-        public IWebElement OriginalApplicationColumn { get; set; }
+        public IWebElement OriginalApplicationColumnCheckbox { get; set; }
 
         [FindsBy(How = How.XPath, Using = ".//input[@aria-label='Include Site Name in Application Name']")]
-        public IWebElement IncludeSiteName { get; set; }
+        public IWebElement IncludeSiteNameCheckbox { get; set; }
 
         [FindsBy(How = How.XPath, Using = ".//input[@aria-label='Onboard Not Applicable Applications']")]
-        public IWebElement OnboardNotApplicableApplications { get; set; }
+        public IWebElement OnboardNotApplicableApplicationsCheckbox { get; set; }
 
         [FindsBy(How = How.XPath, Using = ".//input[@aria-label='Onboard Installed Applications by Association']")]
-        public IWebElement OnboardInstalledApplicationsByAssociation { get; set; }
+        public IWebElement OnboardInstalledApplicationsByAssociationCheckbox { get; set; }
 
         [FindsBy(How = How.XPath, Using = ".//input[@aria-label='Onboard Entitled Applications by Association']")]
-        public IWebElement OnboardEntitledApplicationsByAssociation { get; set; }
+        public IWebElement OnboardEntitledApplicationsByAssociationCheckbox { get; set; }
 
         [FindsBy(How = How.XPath, Using = ".//select[@title='Onboard Used Applications by Association to']")]
         public IWebElement OnboardUsedApplicationsByAssociationTo { get; set; }
@@ -59,23 +68,23 @@ namespace DashworksTestAutomation.Pages.Projects
         [FindsBy(How = How.XPath, Using = ".//input[@id='ctl00_MainContent_DV_Project_UC_ProjectEndDate_TB_SelectDate']")]
         public IWebElement EndDate { get; set; }
 
-        [FindsBy(How = How.XPath, Using = ".//input[@value='Update']")]
-        public IWebElement UpdateButton { get; set; }
-
         public override List<By> GetPageIdentitySelectors()
         {
             return new List<By>
             {
+                SelectorFor(this, p => p.ProjectName),
+                SelectorFor(this, p => p.ProjectShortName),
+                SelectorFor(this, p => p.ProjectDescription),
                 SelectorFor(this, p => p.OnboardedApplications),
                 SelectorFor(this, p => p.ShowLinkedObjects),
                 SelectorFor(this, p => p.ApplicationsTab1),
                 SelectorFor(this, p => p.ApplicationsTab2),
                 SelectorFor(this, p => p.ApplicationRationalization),
-                SelectorFor(this, p => p.OriginalApplicationColumn),
-                SelectorFor(this, p => p.IncludeSiteName),
-                SelectorFor(this, p => p.OnboardNotApplicableApplications),
-                SelectorFor(this, p => p.OnboardInstalledApplicationsByAssociation),
-                SelectorFor(this, p => p.OnboardEntitledApplicationsByAssociation),
+                SelectorFor(this, p => p.OriginalApplicationColumnCheckbox),
+                SelectorFor(this, p => p.IncludeSiteNameCheckbox),
+                SelectorFor(this, p => p.OnboardNotApplicableApplicationsCheckbox),
+                SelectorFor(this, p => p.OnboardInstalledApplicationsByAssociationCheckbox),
+                SelectorFor(this, p => p.OnboardEntitledApplicationsByAssociationCheckbox),
                 SelectorFor(this, p => p.OnboardUsedApplicationsByAssociationTo),
                 SelectorFor(this, p => p.CcEmail),
                 SelectorFor(this, p => p.BccEmail),

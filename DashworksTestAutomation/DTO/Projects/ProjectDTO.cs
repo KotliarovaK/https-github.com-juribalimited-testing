@@ -12,6 +12,9 @@ namespace DashworksTestAutomation.DTO.Projects
         public DefaultLanguageEnum DefaultLanguage;
         public DetailsDto Details { get; set; }
         public RequestTypesDto ReqestType { get; set; }
+        public CategoryPropertiesDto Categories { get; set; }
+        public StagePropertiesDto Stages { get; set; }
+        public TaskPropertiesDto Tasks { get; set; }
         public TeamPropertiesDto TeamProperties { get; set; }
         public GroupPropertiesDto GroupProperties { get; set; }
         public MailTemplatePropertiesDto MailTemplateProperties { get; set; }
@@ -19,7 +22,6 @@ namespace DashworksTestAutomation.DTO.Projects
 
         public ProjectDto()
         {
-            ProjectType = EnumExtensions.GetRandomValue<ProjectTypeEnum>();
             DefaultLanguage = EnumExtensions.GetRandomValue<DefaultLanguageEnum>();
         }
     }

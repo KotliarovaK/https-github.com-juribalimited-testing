@@ -5,16 +5,19 @@ namespace DashworksTestAutomation.DTO.Projects
 {
     public class DetailsDto
     {
+        public string ProjectName { get; set; }
+        public string ProjectShortName { get; set; }
+        public string ProjectDescription { get; set; }
         public DefaultReadinessForOnboardedApplicationsEnum DefaultReadinessForOnboardedApplications;
         public DefaultValueForShowLinkedObjectsEnum DefaultValueForShowLinkedObjects;
         public DefaultViewForProjectObjectApplicationsTab1Enum DefaultViewForProjectObjectApplicationsTab1;
         public DefaultViewForProjectObjectApplicationsTab2Enum DefaultViewForProjectObjectApplicationsTab2;
         public DefaultValueForApplicationRationalizationEnum DefaultValueForApplicationRationalization;
-        public bool ShowOriginalApplicationColumnOnApplicationDashboards { get; set; }
-        public bool IncludeSiteNameInApplicationName { get; set; }
-        public bool OnboardNotApplicableApplications { get; set; }
-        public bool OnboardInstalledApplicationsByAssociation { get; set; }
-        public bool OnboardEntitledApplicationsByAssociation { get; set; }
+        public bool ShowOriginalColumn { get; set; }
+        public bool IncludeSiteName{ get; set; }
+        public bool NotApplicableApplications { get; set; }
+        public bool InstalledApplications { get; set; }
+        public bool EntitledApplications { get; set; }
         public OnboardUsedApplicationsByAssociationToEnum OnboardUsedApplicationsByAssociationTo;
         public string MasterHtmlEmailTemplate { get; set; }
         public string Attachments { get; set; }
@@ -90,7 +93,7 @@ namespace DashworksTestAutomation.DTO.Projects
 
     public enum OnboardUsedApplicationsByAssociationToEnum
     {
-        Computer,
+        //Computer,
         User,
         [Description("Do not onboard")]
         DoNotOnboard
