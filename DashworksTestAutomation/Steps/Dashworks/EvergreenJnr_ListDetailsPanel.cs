@@ -241,6 +241,13 @@ namespace DashworksTestAutomation.Steps.Dashworks
             Assert.AreEqual(message, listElement.ErrorMessage.Text, $"{message} is not displayed");
         }
 
+        [Then(@"""(.*)"" message is displayed in the lists panel")]
+        public void ThenMessageIsDisplayedInTheListsPanel(string warningText)
+        {
+            var listElement = _driver.NowAt<CustomListElement>();
+            Assert.IsTrue(listElement.RemovingDependencyListMessage(warningText), $"{warningText} message is not displayed in the list details panel");
+        }
+
         [Then(@"no Warning message is displayed in the lists panel")]
         public void ThenNoWarningMessageIsDisplayedInTheLissPanel()
         {

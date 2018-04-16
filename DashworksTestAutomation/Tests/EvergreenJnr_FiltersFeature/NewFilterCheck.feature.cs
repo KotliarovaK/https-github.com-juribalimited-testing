@@ -28,7 +28,7 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_FiltersFeature
         public virtual void FeatureSetup()
         {
             testRunner = TechTalk.SpecFlow.TestRunnerManager.GetTestRunner();
-            TechTalk.SpecFlow.FeatureInfo featureInfo = new TechTalk.SpecFlow.FeatureInfo(new System.Globalization.CultureInfo("en-US"), "NewFilterCheck", "\tRuns New filters full check related tests", ProgrammingLanguage.CSharp, new string[] {
+            TechTalk.SpecFlow.FeatureInfo featureInfo = new TechTalk.SpecFlow.FeatureInfo(new System.Globalization.CultureInfo("en-US"), "NewFilterCheck", "\tRuns New filters check related tests", ProgrammingLanguage.CSharp, new string[] {
                         "retry:1"});
             testRunner.OnFeatureStart(featureInfo);
         }
@@ -721,7 +721,6 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_FiltersFeature
         [NUnit.Framework.CategoryAttribute("NewFilterCheck")]
         [NUnit.Framework.CategoryAttribute("DAS12232")]
         [NUnit.Framework.CategoryAttribute("DAS12351")]
-        [NUnit.Framework.CategoryAttribute("Not_Run")]
         public virtual void EvergreenJnr_DevicesList_CheckThatMultiSelectProjectTaskFiltersAreDisplayedCorrectlyOnDevicesPage()
         {
             System.Exception lastException = null;
@@ -757,8 +756,7 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_FiltersFeature
                         "Evergreen_FiltersFeature",
                         "NewFilterCheck",
                         "DAS12232",
-                        "DAS12351",
-                        "Not_Run"});
+                        "DAS12351"});
             this.ScenarioSetup(scenarioInfo);
             this.FeatureBackground();
             testRunner.When("User clicks \"Devices\" on the left-hand menu", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
@@ -847,7 +845,6 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_FiltersFeature
         [NUnit.Framework.CategoryAttribute("NewFilterCheck")]
         [NUnit.Framework.CategoryAttribute("DAS12232")]
         [NUnit.Framework.CategoryAttribute("DAS12351")]
-        [NUnit.Framework.CategoryAttribute("Not_Run")]
         public virtual void EvergreenJnr_UsersList_CheckThatMultiSelectProjectTaskFiltersAreDisplayedCorrectlyOnUsersPage()
         {
             System.Exception lastException = null;
@@ -883,8 +880,7 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_FiltersFeature
                         "Evergreen_FiltersFeature",
                         "NewFilterCheck",
                         "DAS12232",
-                        "DAS12351",
-                        "Not_Run"});
+                        "DAS12351"});
             this.ScenarioSetup(scenarioInfo);
             this.FeatureBackground();
             testRunner.When("User clicks \"Users\" on the left-hand menu", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");

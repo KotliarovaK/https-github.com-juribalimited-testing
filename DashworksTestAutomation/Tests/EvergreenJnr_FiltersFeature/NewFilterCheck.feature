@@ -1,6 +1,6 @@
 ﻿@retry:1
 Feature: NewFilterCheck
-	Runs New filters full check related tests
+	Runs New filters check related tests
 
 Background: Pre-Conditions
 	Given User is logged in to the Evergreen
@@ -239,7 +239,7 @@ Examples:
 	| MigrationP: Hide from End Users | Equals, Does not equal | FALSE        | MigrationP: Hide from End Users is false   | 220       |
 	| UserSchedu: Hide from End Users | Equals, Does not equal | UNKNOWN      | UserSchedu: Hide from End Users is Unknown | 1,242     |
 
-@Evergreen @Devices @Evergreen_FiltersFeature @NewFilterCheck @DAS12232 @DAS12351 @Not_Run
+@Evergreen @Devices @Evergreen_FiltersFeature @NewFilterCheck @DAS12232 @DAS12351
 Scenario: EvergreenJnr_DevicesList_CheckThatMultiSelectProjectTaskFiltersAreDisplayedCorrectlyOnDevicesPage
 	When User clicks "Devices" on the left-hand menu
 	Then "Devices" list should be displayed to the user
@@ -256,7 +256,6 @@ Scenario: EvergreenJnr_DevicesList_CheckThatMultiSelectProjectTaskFiltersAreDisp
 	| Failed             |
 	| Complete           |
 	Then "233" rows are displayed in the agGrid
-	#When User create custom list with "Devices_ProjectTaskFilters_AND" name
 	When User create dynamic list with "Devices_ProjectTaskFilters_AND" name on "Devices" page
 	Then "Devices_ProjectTaskFilters_AND" list is displayed to user
 	When User navigates to the "All Devices" list
@@ -284,7 +283,7 @@ Scenario: EvergreenJnr_DevicesList_CheckThatMultiSelectProjectTaskFiltersAreDisp
 	Then "1" rows are displayed in the agGrid
 	When User update current custom list
 
-@Evergreen @Users @Evergreen_FiltersFeature @NewFilterCheck @DAS12232 @DAS12351 @Not_Run
+@Evergreen @Users @Evergreen_FiltersFeature @NewFilterCheck @DAS12232 @DAS12351
 Scenario: EvergreenJnr_UsersList_CheckThatMultiSelectProjectTaskFiltersAreDisplayedCorrectlyOnUsersPage
 	When User clicks "Users" on the left-hand menu
 	Then "Users" list should be displayed to the user
@@ -300,7 +299,6 @@ Scenario: EvergreenJnr_UsersList_CheckThatMultiSelectProjectTaskFiltersAreDispla
 	| SelectedCheckboxes |
 	| Not Applicable     |
 	Then "4,641" rows are displayed in the agGrid
-	#When User create custom list with "Users_ProjectTaskFilters_AND" name
 	When User create dynamic list with "Users_ProjectTaskFilters_AND" name on "Users" page
 	Then "Users_ProjectTaskFilters_AND" list is displayed to user
 	When User navigates to the "All Users" list

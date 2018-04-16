@@ -1,5 +1,6 @@
-﻿Feature: MainFunctionality
-	Runs Profile Details related tests
+﻿@retry:1
+Feature: MainFunctionality
+	Runs Main Functionality related tests
 
 Background: Pre-Conditions
 	Given User is logged in to the Evergreen
