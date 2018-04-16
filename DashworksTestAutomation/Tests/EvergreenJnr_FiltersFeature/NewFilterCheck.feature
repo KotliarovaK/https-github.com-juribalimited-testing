@@ -1,6 +1,6 @@
 ﻿@retry:1
 Feature: NewFilterCheck
-	Runs New filters full check related tests
+	Runs New filters check related tests
 
 Background: Pre-Conditions
 	Given User is logged in to the Evergreen
@@ -169,7 +169,7 @@ Scenario Outline: EvergreenJnr_ApplicationsList_CheckThatApplicationRationalisat
 
 Examples: 
 	| ColumnName                              | Operators              | FilterOption  | Text                                                     | RowsCount |
-	| Windows7Mi: Application Rationalisation | Equals, Does not equal | RETIRE        | Windows7Mi: Application Rationalisation is Retire        | 85        |
+	| Windows7Mi: Application Rationalisation | Equals, Does not equal | RETIRE        | Windows7Mi: Application Rationalisation is Retire        | 86        |
 	| Babel(Engl: Application Rationalisation | Equals, Does not equal | UNCATEGORISED | Babel(Engl: Application Rationalisation is Uncategorised | 302       |
 	| Barry'sUse: Application Rationalisation | Equals, Does not equal | KEEP          | Barry'sUse: Application Rationalisation is Keep          | 2         |
 	| ComputerSc: Application Rationalisation | Equals, Does not equal | FORWARD PATH  | ComputerSc: Application Rationalisation is Forward Path  | 10        |
@@ -256,7 +256,6 @@ Scenario: EvergreenJnr_DevicesList_CheckThatMultiSelectProjectTaskFiltersAreDisp
 	| Failed             |
 	| Complete           |
 	Then "233" rows are displayed in the agGrid
-	#When User create custom list with "Devices_ProjectTaskFilters_AND" name
 	When User create dynamic list with "Devices_ProjectTaskFilters_AND" name on "Devices" page
 	Then "Devices_ProjectTaskFilters_AND" list is displayed to user
 	When User navigates to the "All Devices" list
@@ -300,7 +299,6 @@ Scenario: EvergreenJnr_UsersList_CheckThatMultiSelectProjectTaskFiltersAreDispla
 	| SelectedCheckboxes |
 	| Not Applicable     |
 	Then "4,641" rows are displayed in the agGrid
-	#When User create custom list with "Users_ProjectTaskFilters_AND" name
 	When User create dynamic list with "Users_ProjectTaskFilters_AND" name on "Users" page
 	Then "Users_ProjectTaskFilters_AND" list is displayed to user
 	When User navigates to the "All Users" list

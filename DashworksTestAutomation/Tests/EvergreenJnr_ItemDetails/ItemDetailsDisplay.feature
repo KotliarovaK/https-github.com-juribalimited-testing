@@ -272,7 +272,7 @@ Scenario: EvergreenJnr_DevicesLists_CheckThatDataOfColumnsIsDisplayedInTheCustom
 	| Label      |
 	| Value      |
 
-@Evergreen @Mailboxes @EvergreenJnr_ItemDetails @ItemDetailsDisplay @DAS11479
+@Evergreen @Mailboxes @EvergreenJnr_ItemDetails @ItemDetailsDisplay @DAS11479 @Not_Run
 Scenario: EvergreenJnr_MailboxesLists_CheckThatLinksAndImageItemAreDisplayedInTheNameAndDisplayNameColumns
 	When User clicks "Mailboxes" on the left-hand menu
 	Then "Mailboxes" list should be displayed to the user

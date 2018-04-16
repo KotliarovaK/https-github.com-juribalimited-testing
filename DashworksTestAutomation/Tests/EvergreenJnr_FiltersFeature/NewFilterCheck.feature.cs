@@ -28,7 +28,7 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_FiltersFeature
         public virtual void FeatureSetup()
         {
             testRunner = TechTalk.SpecFlow.TestRunnerManager.GetTestRunner();
-            TechTalk.SpecFlow.FeatureInfo featureInfo = new TechTalk.SpecFlow.FeatureInfo(new System.Globalization.CultureInfo("en-US"), "NewFilterCheck", "\tRuns New filters full check related tests", ProgrammingLanguage.CSharp, new string[] {
+            TechTalk.SpecFlow.FeatureInfo featureInfo = new TechTalk.SpecFlow.FeatureInfo(new System.Globalization.CultureInfo("en-US"), "NewFilterCheck", "\tRuns New filters check related tests", ProgrammingLanguage.CSharp, new string[] {
                         "retry:1"});
             testRunner.OnFeatureStart(featureInfo);
         }
@@ -466,7 +466,7 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_FiltersFeature
         [NUnit.Framework.CategoryAttribute("DAS11507")]
         [NUnit.Framework.CategoryAttribute("DAS11509")]
         [NUnit.Framework.CategoryAttribute("DAS12026")]
-        [NUnit.Framework.TestCaseAttribute("Windows7Mi: Application Rationalisation", "Equals, Does not equal", "RETIRE", "Windows7Mi: Application Rationalisation is Retire", "85", new string[0])]
+        [NUnit.Framework.TestCaseAttribute("Windows7Mi: Application Rationalisation", "Equals, Does not equal", "RETIRE", "Windows7Mi: Application Rationalisation is Retire", "86", new string[0])]
         [NUnit.Framework.TestCaseAttribute("Babel(Engl: Application Rationalisation", "Equals, Does not equal", "UNCATEGORISED", "Babel(Engl: Application Rationalisation is Uncategorised", "302", new string[0])]
         [NUnit.Framework.TestCaseAttribute("Barry\'sUse: Application Rationalisation", "Equals, Does not equal", "KEEP", "Barry\'sUse: Application Rationalisation is Keep", "2", new string[0])]
         [NUnit.Framework.TestCaseAttribute("ComputerSc: Application Rationalisation", "Equals, Does not equal", "FORWARD PATH", "ComputerSc: Application Rationalisation is Forward Path", "10", new string[0])]
