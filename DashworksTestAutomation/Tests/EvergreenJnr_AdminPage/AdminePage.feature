@@ -83,3 +83,36 @@ Scenario: EvergreenJnr_AdminPage_CheckThatCreateButtonIsDisabledForEmptyTeamName
 	And User enters " " in the Team Name field
 	And User enters "test" in the Team Description field
 	Then Create Team button is disabled
+
+@Evergreen @AllLists @EvergreenJnr_AdminPage @AdminPage @DAS11886
+Scenario: EvergreenJnr_AdminPage_CheckThatWarningMessageIsDisplayedAfterDeletingUsedForProjectLists 
+	When User clicks "Users" on the left-hand menu
+	Then "Users" list should be displayed to the user
+	When User click on 'Username' column header
+	When User create dynamic list with "ListForProject" name on "Users" page
+	When User clicks Admin on the left-hand menu
+	Then Admin page should be displayed to the user
+	When User click "Projects" link on the Admin page
+	Then "Projects" page should be displayed to the user
+	When User clicks Create Project button
+	Then Create Project page should be displayed to the user
+	And User enters "TestProject" in the Project Name field
+	And User select "ListForProject" in the Scope Project dropdown
+	When User clicks Create Project button
+	When User clicks "Users" on the left-hand menu
+	Then "Users" list should be displayed to the user
+	When User navigates to the "ListForProject" list
+	Then "ListForProject" list is displayed to user
+	When User removes custom list with "ListForProject" name
+	Then "This list is used by the 1 projects, do you wish to proceed?" message is displayed in the lists panel
+	When User clicks Delete in the warning message on the list panel 
+	When User clicks Admin on the left-hand menu
+	Then Admin page should be displayed to the user
+	When User click "Projects" link on the Admin page
+	Then "Projects" page should be displayed to the user
+	When User clicks "TestProject" Project name
+	Then Project "TestProject" is displayed to user
+	When User navigates to the "Project Scope Changes" tab on the Project details page
+	Then Warning message with "The scope for this project refers to a deleted list, this must be updated before proceeding" text is displayed on the Project details page
+	Then Update Project button is disabled
+	Then Delete "TestProject" Project in the Administration
