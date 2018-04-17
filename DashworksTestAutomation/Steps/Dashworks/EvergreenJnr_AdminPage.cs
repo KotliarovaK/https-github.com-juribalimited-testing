@@ -88,7 +88,7 @@ namespace DashworksTestAutomation.Steps.Dashworks
         public void ThenProjectIsDisplayedToUser(string projectName)
         {
             var page = _driver.NowAt<ProjectsPage>();
-            Assert.IsTrue(page.ActiveProjectByName(projectName), $"{projectName} is not displayed on the  Project page");
+            Assert.IsTrue(page.ActiveProjectByName(projectName), $"{projectName} is not displayed on the Project page");
         }
 
         [When(@"User navigates to the ""(.*)"" tab on the Project details page")]
@@ -99,11 +99,32 @@ namespace DashworksTestAutomation.Steps.Dashworks
             _driver.WaitForDataLoading();
         }
 
+        [When(@"User clicks ""(.*)"" tab in the Project Scope Changes section")]
+        public void WhenUserClicksTabInTheProjectScopeChangesSection(string tabName)
+        {
+            var projectTabs = _driver.NowAt<ProjectsPage>();
+            projectTabs.ClickToTabByNameProjectScopeChanges(tabName);
+        }
+
+        [Then(@"""(.*)"" is displayed to the user in the Project Scope Changes section")]
+        public void ThenIsDisplayedToTheUserInTheProjectScopeChangesSection(string text)
+        {
+            var page = _driver.NowAt<ProjectsPage>();
+            Assert.IsTrue(page.SelectedItemInProjectScopeChangesSection(text), $"{text} is not displayed in the Project Scope Changes section");
+        }
+
         [Then(@"Warning message with ""(.*)"" text is displayed on the Project details page")]
         public void ThenWarningMessageWithTextIsDisplayedOnTheProjectDetailsPage(string text)
         {
             var page = _driver.NowAt<ProjectsPage>();
             Assert.IsTrue(page.WarningMessageProjectPage(text), "Warning Message is not displayed");
+        }
+
+        [When(@"User select ""(.*)"" checkbox on the Project details page")]
+        public void WhenUserSelectCheckboxOnTheProjectDetailsPage(string checkboxName)
+        {
+            var checkbox = _driver.NowAt<ProjectsPage>();
+            checkbox.SelectCheckboxByName(checkboxName);
         }
 
         [Then(@"Update Project button is disabled")]

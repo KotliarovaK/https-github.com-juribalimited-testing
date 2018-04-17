@@ -117,7 +117,7 @@ Scenario: EvergreenJnr_AdminPage_CheckThatWarningMessageIsDisplayedAfterDeleting
 	Then Update Project button is disabled
 	Then Delete "TestProject" Project in the Administration
 
-@Evergreen @Admin @EvergreenJnr_AdminPage @AdminPage @DAS11977
+@Evergreen @Admin @EvergreenJnr_AdminPage @AdminPage @DAS11977 @DAS11959
 Scenario: EvergreenJnr_AdminPage_CheckThatAfterDoNotIncludeDeviceOwnersListHas0ItemsInTheUsersTab
 	When User clicks Admin on the left-hand menu
 	Then Admin page should be displayed to the user
@@ -131,4 +131,9 @@ Scenario: EvergreenJnr_AdminPage_CheckThatAfterDoNotIncludeDeviceOwnersListHas0I
 	When User click "Projects" link on the Admin page
 	Then "Projects" page should be displayed to the user
 	When User clicks "TestProject1596" Project name
-	#Then Project "TestProject1596" is displayed to user
+	Then Project "TestProject1596" is displayed to user
+	When User select "Do not include device owners" checkbox on the Project details page
+	And User navigates to the "Project Scope Changes" tab on the Project details page
+	And User clicks "Users" tab in the Project Scope Changes section 
+	Then "Users to add (0 of 0 selected)" is displayed to the user in the Project Scope Changes section
+	Then Delete "TestProject" Project in the Administration
