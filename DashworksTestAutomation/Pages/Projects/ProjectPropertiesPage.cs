@@ -32,7 +32,6 @@ namespace DashworksTestAutomation.Pages.Projects
                 SelectorFor(this, p => p.ProjectName),
                 SelectorFor(this, p => p.ProjectShortName),
                 SelectorFor(this, p => p.ProjectDescription),
-                SelectorFor(this, p => p.ProjectType),
                 SelectorFor(this, p => p.DefaultLanguage)
             };
         }

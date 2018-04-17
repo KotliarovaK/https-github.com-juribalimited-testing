@@ -7,6 +7,9 @@ namespace DashworksTestAutomation.Pages.Projects
 {
     internal class StagePropertiesPage : BaseDashboardPage
     {
+        [FindsBy(How = How.XPath, Using = ".//input[@value='Create Stage']")]
+        public IWebElement CreateStageButton { get; set; }
+
         [FindsBy(How = How.XPath, Using = ".//input[@title='Stage Name']")]
         public IWebElement StageName { get; set; }
 

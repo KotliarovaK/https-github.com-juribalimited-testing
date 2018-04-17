@@ -9,8 +9,11 @@ using OpenQA.Selenium.Support.PageObjects;
 
 namespace DashworksTestAutomation.Pages.Projects
 {
-    class MailTemplatePropertiesPage : BaseDashboardPage
+    internal class MailTemplatePropertiesPage : BaseDashboardPage
     {
+        [FindsBy(How = How.XPath, Using = ".//input[@value='Create Mail Template']")]
+        public IWebElement CreateMailTemplateButton { get; set; }
+
         [FindsBy(How = How.XPath, Using = ".//input[@id='ctl00_MainContent_Name']")]
         public IWebElement Name { get; set; }
 

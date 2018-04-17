@@ -43,8 +43,6 @@ namespace DashworksTestAutomation.DTO.Projects
         BritishEnglish,
         English,
         Polish,
-        Russian,
-        [Description("Mailbox Scheduled Project")]
-        MailboxScheduledProject
+        Russian
     }
 }

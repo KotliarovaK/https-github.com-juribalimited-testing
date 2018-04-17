@@ -5,8 +5,11 @@ using OpenQA.Selenium.Support.PageObjects;
 
 namespace DashworksTestAutomation.Pages.Projects
 {
-    class TeamPropertiesPage : BaseDashboardPage
+    internal class TeamPropertiesPage : BaseDashboardPage
     {
+        [FindsBy(How = How.XPath, Using = ".//input[@value='Create Team']")]
+        public IWebElement CreateTeamButton { get; set; }
+
         [FindsBy(How = How.XPath, Using = ".//input[@title='Team Name']")]
         public IWebElement TeamName { get; set; }
 

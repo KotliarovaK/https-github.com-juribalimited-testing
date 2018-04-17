@@ -7,6 +7,10 @@ namespace DashworksTestAutomation.Pages.Projects
 {
     internal class RequestTypePropertiesPage : BaseDashboardPage
     {
+
+        [FindsBy(How = How.XPath, Using = ".//input[@id='ctl00_MainContent_Btn_CreateRequestType']")]
+        public IWebElement CreateRequestTypesButton { get; set; }
+
         [FindsBy(How = How.XPath, Using = ".//input[@id='tb_Name']")]
         public IWebElement Name { get; set; }
 
@@ -15,6 +19,9 @@ namespace DashworksTestAutomation.Pages.Projects
 
         [FindsBy(How = How.XPath, Using = ".//select[@id='select_ObjectType']")]
         public IWebElement ObjectType { get; set; }
+
+        [FindsBy(How = How.XPath, Using = ".//input[@value='Create Request Type & Select Tasks...']")]
+        public IWebElement ConfirmCreateRequestTypesButton { get; set; }
 
         public override List<By> GetPageIdentitySelectors()
         {

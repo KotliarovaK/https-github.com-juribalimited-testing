@@ -16,19 +16,22 @@ namespace DashworksTestAutomation.Steps.Projects
         private readonly ProjectDto _projectDto;
         private readonly DetailsDto _detailsDto;
         private readonly RequestTypesDto _requestTypesDto;
+        private readonly CategoryPropertiesDto _categoryPropertiesDto;
 
-        public Projects_CreateProject(RemoteWebDriver driver, ProjectDto projectDto, DetailsDto detailsDto, RequestTypesDto requestTypesDto)
+        public Projects_CreateProject(RemoteWebDriver driver, ProjectDto projectDto, DetailsDto detailsDto, RequestTypesDto requestTypesDto, CategoryPropertiesDto categoryPropertiesDto)
         {
             _driver = driver;
             _projectDto = projectDto;
             _detailsDto = detailsDto;
             _requestTypesDto = requestTypesDto;
+            _categoryPropertiesDto = categoryPropertiesDto;
         }
 
         [When(@"User clicks create Project button")]
         public void WhenUserClicksCreateProjectButton()
         {
             var menu = _driver.NowAt<NavigationMenu>();
+
             _driver.MouseHover(menu.Administration);
             _driver.WaitWhileControlIsNotDisplayed<NavigationMenu>(() => menu.CreateProject);
             _driver.MouseHover(menu.CreateProject);
@@ -83,7 +86,7 @@ namespace DashworksTestAutomation.Steps.Projects
         [When(@"User navigate to ""(.*)"" tab")]
         public void WhenUserNavigateToTab(string tabName)
         {
-            var tab = _driver.NowAt<NavigationTabs>();
+            var tab = _driver.NowAt<NavigationTabsMenu>();
 
             switch (tabName)
             {
@@ -144,21 +147,42 @@ namespace DashworksTestAutomation.Steps.Projects
             _driver.WaitForDataLoading();
         }
 
+        [When(@"User click create Request Type button")]
+        public void WhenUserClickCreateRequestTypeButton()
+        {
+            var page = _driver.NowAt<RequestTypePropertiesPage>();
+            page.CreateRequestTypesButton.Click();
+        }
+
         [When(@"User create Request Type")]
         public void WhenUserCreateRequestType(Table table)
         {
-            var tab = _driver.NowAt<BaseElements>();
             var page = _driver.NowAt<RequestTypePropertiesPage>();
 
             table.CreateInstance<RequestTypesDto>().CopyPropertiesTo(_requestTypesDto);
-
-            tab.CreateRequestTypesButton.Click();
 
             page.Name.SendKeys(_requestTypesDto.Name);
             page.Description.SendKeys(_requestTypesDto.Description);
             page.ObjectType.SelectboxSelect(_requestTypesDto.ObjectType.GetValue());
 
-            tab.ConfirmCreationButton.Click();
+            page.ConfirmCreateRequestTypesButton.Click();
+        }
+
+        [When(@"User create Categories")]
+        public void WhenUserCreateCategories(Table table)
+        {
+            var page = _driver.NowAt<CategoryPropertiesPage>();
+            var tab = _driver.NowAt<BaseElements>();
+
+            table.CreateInstance<CategoryPropertiesDto>().CopyPropertiesTo(_categoryPropertiesDto);
+
+            page.CreateCategoryButton.Click();
+
+            page.Name.SendKeys(_categoryPropertiesDto.Name);
+            page.Description.SendKeys(_categoryPropertiesDto.Description);
+            page.ObjectType.SelectboxSelect(_categoryPropertiesDto.ObjectType.GetValue());
+
+            //tab.ConfirmCreationButton.Click();
         }
 
         //TODO Selector for Groups on Teams tab

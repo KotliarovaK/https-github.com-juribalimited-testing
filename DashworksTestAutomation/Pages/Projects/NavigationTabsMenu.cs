@@ -5,7 +5,7 @@ using OpenQA.Selenium.Support.PageObjects;
 
 namespace DashworksTestAutomation.Pages.Projects
 {
-    internal class NavigationTabs : SeleniumBasePage
+    internal class NavigationTabsMenu : SeleniumBasePage
     {
         [FindsBy(How = How.XPath, Using = ".//a[@id='ctl00_MainContent_PMManageNav_LB_Details']")]
         public IWebElement DetailsTab { get; set; }

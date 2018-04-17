@@ -7,30 +7,29 @@ using TechTalk.SpecFlow;
 namespace DashworksTestAutomation.Pages.Projects
 {
     [Binding]
-    internal class Projects_Login : SeleniumBasePage
+    internal class ProjectsLogin : SpecFlowContext
     {
         private readonly RemoteWebDriver _driver;
 
-        public Projects_Login(RemoteWebDriver driver)
+        public ProjectsLogin(RemoteWebDriver driver)
         {
             _driver = driver;
         }
 
-        [When(@"User clicks the Switch to Projects link")]
-        public void WhenUserClicksTheSwitchToProjectsLink()
+        [When(@"User navigate to Projects link")]
+        public void WhenUserNavigateToProjectsLink()
         {
-            var headerMenu = _driver.NowAt<DashworksHeaderMenuElement>();
+            var page = _driver.NowAt<ProjectLogin>();
 
-            _driver.MouseHover(headerMenu.AnalysisLink);
-
-            _driver.WaitWhileControlIsNotClickable<DashworksHeaderMenuElement>(() => headerMenu.ProjectsLink);
-            headerMenu.ProjectsLink.Click();
+            _driver.MouseHover(page.ProjectsLink);
+            page.ProjectsLink.Click();
         }
 
         [Then(@"""(.*)"" page is displayed to the user")]
         public void ThenPageIsDisplayedToTheUser(string pageName)
         {
             var page = _driver.NowAt<NavigationMenu>();
+
             _driver.WaitForTextToAppear(page.PageHeder, pageName);
             Logger.Write("Projects Home page is displayed");
         }

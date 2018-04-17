@@ -1,8 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using System.Collections.Generic;
 using DashworksTestAutomation.Pages.Evergreen;
 using OpenQA.Selenium;
 using OpenQA.Selenium.Support.PageObjects;
@@ -11,6 +7,9 @@ namespace DashworksTestAutomation.Pages.Projects
 {
     internal class TaskPropertiesPage : BaseDashboardPage
     {
+        [FindsBy(How = How.XPath, Using = ".//input[@value='Create Task']")]
+        public IWebElement CreateTaskButton { get; set; }
+
         [FindsBy(How = How.XPath, Using = ".//input[@id='ctl00_MainContent_TB_TaskName']")]
         public IWebElement Name { get; set; }
 

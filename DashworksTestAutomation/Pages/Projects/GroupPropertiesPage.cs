@@ -9,8 +9,11 @@ using OpenQA.Selenium.Support.PageObjects;
 
 namespace DashworksTestAutomation.Pages.Projects
 {
-    class GroupPropertiesPage : BaseDashboardPage
+    internal class GroupPropertiesPage : BaseDashboardPage
     {
+        [FindsBy(How = How.XPath, Using = ".//input[@value='Create Group']")]
+        public IWebElement CreateGroupButton { get; set; }
+
         [FindsBy(How = How.XPath, Using = ".//input[@id='ctl00_MainContent_TB_GroupName']")]
         public IWebElement GroupName { get; set; }
 

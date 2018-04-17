@@ -213,8 +213,9 @@
     <Compile Include="Pages\Projects\GroupPropertiesPage.cs" />
     <Compile Include="Pages\Projects\MailTemplatePropertiesPage.cs" />
     <Compile Include="Pages\Projects\NavigationMenu.cs" />
-    <Compile Include="Pages\Projects\NavigationTabs.cs" />
+    <Compile Include="Pages\Projects\NavigationTabsMenu.cs" />
     <Compile Include="Pages\Projects\NewsPage.cs" />
+    <Compile Include="Pages\Projects\ProjectLogin.cs" />
     <Compile Include="Pages\Projects\ProjectPropertiesPage.cs" />
     <Compile Include="Pages\Projects\RequestTypePropertiesPage.cs" />
     <Compile Include="Pages\Projects\StagePropertiesPage.cs" />
