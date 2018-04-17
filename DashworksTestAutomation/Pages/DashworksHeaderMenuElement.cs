@@ -27,7 +27,7 @@ namespace DashworksTestAutomation.Pages
             return new List<By>
             {
                 SelectorFor(this, p => p.PageHeader),
-                SelectorFor(this, p => p.AnalysisLink)
+                SelectorFor(this, p => p.EvergreenLink)
             };
         }
     }
