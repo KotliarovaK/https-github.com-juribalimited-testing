@@ -126,7 +126,7 @@ namespace DashworksTestAutomation.Pages.Evergreen
 
         public string RemovingDependencyListMessage()
         {
-            return Driver.FindElement(By.XPath(".//span[@class='list-deleting-name']/parent::div")).Text;
+            return Driver.FindElement(By.XPath(".//span[@class='list-deleting-text']/parent::div")).Text;
         }
 
         public bool CheckThatListIsRemoved(string listName)
