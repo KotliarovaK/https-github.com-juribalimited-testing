@@ -75,7 +75,7 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_FiltersFeature
         [NUnit.Framework.CategoryAttribute("NewFilterCheck")]
         [NUnit.Framework.CategoryAttribute("DAS10828")]
         [NUnit.Framework.CategoryAttribute("DAS12388")]
-        [NUnit.Framework.CategoryAttribute("Not_Rum")]
+        [NUnit.Framework.CategoryAttribute("Not_Run")]
         [NUnit.Framework.TestCaseAttribute("Windows7Mi: Target App", "Equals, Does not equal", "WebZIP (A01)", "Windows7Mi: Target App is WebZIP (A01)", "3", new string[0])]
         [NUnit.Framework.TestCaseAttribute("Babel(Engl: Target App", "Equals, Does not equal", "sndconfig", "Babel(Engl: Target App is sndconfig", "1", new string[0])]
         [NUnit.Framework.TestCaseAttribute("Barry\'sUse: Target App", "Equals, Does not equal", "World Watch (A01)", "Barry\'sUse: Target App is World Watch (A01)", "1", new string[0])]
@@ -118,7 +118,7 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_FiltersFeature
                     "NewFilterCheck",
                     "DAS10828",
                     "DAS12388",
-                    "Not_Rum"};
+                    "Not_Run"};
             if ((exampleTags != null))
             {
                 @__tags = System.Linq.Enumerable.ToArray(System.Linq.Enumerable.Concat(@__tags, exampleTags));
