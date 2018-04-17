@@ -273,6 +273,7 @@ namespace DashworksTestAutomation.Steps.Dashworks
             var page = _driver.NowAt<ApplicationsDetailsTabsMenu>();
             Thread.Sleep(500);
             page.FilterSearchTextbox.ClearWithHomeButton(_driver);
+            page.BodyContainer.Click();
         }
 
         [When(@"User select ""(.*)"" checkbox on the Column Settings panel")]

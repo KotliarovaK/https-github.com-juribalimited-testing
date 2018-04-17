@@ -1,8 +1,10 @@
-﻿using DashworksTestAutomation.Base;
+﻿using System;
+using DashworksTestAutomation.Base;
 using DashworksTestAutomation.Extensions;
 using OpenQA.Selenium;
 using OpenQA.Selenium.Support.PageObjects;
 using System.Collections.Generic;
+using System.Linq;
 
 namespace DashworksTestAutomation.Pages.Evergreen.AdminDetailsPages
 {
@@ -36,6 +38,33 @@ namespace DashworksTestAutomation.Pages.Evergreen.AdminDetailsPages
             {
                 SelectorFor(this, p => p.TeamsPageTitle),
             };
+        }
+
+        public int GetColumnNumberByName(string columnName)
+        {
+            var allHeadersSelector = By.XPath(".//div[@class='ag-header-container']/div/div");
+            Driver.WaitForDataLoading();
+            Driver.WaitWhileControlIsNotDisplayed(allHeadersSelector);
+            var allHeaders = Driver.FindElements(allHeadersSelector);
+            if (!allHeaders.Any())
+                throw new Exception("Table does not contains any columns");
+            var columnNumber =
+                allHeaders.IndexOf(allHeaders.First(x =>
+                    x.FindElement(By.XPath(".//span[@class='ag-header-cell-text']")).Text.Equals(columnName))) + 1;
+
+            return columnNumber;
+        }
+
+        public void GetSearchByColumnName(string columnName, string searchText)
+        {
+            By byControl =
+                By.XPath($".//div[@class='ag-header-row']/div[2]/div[{GetColumnNumberByName(columnName)}][@aria-hidden='true']");
+            Driver.WaitForDataLoading();
+            //Driver.WaitWhileControlIsNotDisplayed(byControl);
+            //Driver.MouseHover(byControl);
+            //Driver.WaitWhileControlIsNotClickable(byControl);
+            Driver.FindElement(byControl).Click();
+            Driver.FindElement(byControl).SendKeys(searchText);
         }
 
         public void OpenColumnSettingsByName(string columnName)

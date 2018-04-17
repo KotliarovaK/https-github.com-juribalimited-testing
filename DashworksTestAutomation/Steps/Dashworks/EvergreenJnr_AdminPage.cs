@@ -247,12 +247,12 @@ namespace DashworksTestAutomation.Steps.Dashworks
             page.OpenColumnSettingsByName(columnName);
         }
 
-        [When(@"User perform search by ""(.*)"" for ""(.*)"" column on the Teams Page")]
-        public void WhenUserPerformSearchByForColumnOnTheTeamsPage(string searchText, string columnName)
+        [When(@"User perform search for ""(.*)"" column by ""(.*)""  on the Teams Page")]
+        public void WhenUserPerformSearchForColumnByOnTheTeamsPage(string searchText, string columnName)
         {
-            ScenarioContext.Current.Pending();
+            var filterElement = _driver.NowAt<TeamsPage>();
+            filterElement.GetSearchByColumnName(searchText, (columnName));
         }
-
 
         [When(@"User clicks Create Project button")]
         public void WhenUserClicksCreateProjectButton()

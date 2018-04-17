@@ -140,6 +140,7 @@ Scenario: EvergreenJnr_AdminPage_CheckThatNoConsoleErrorsAreDisplayedWhenDeleteD
 	Then User enters "123455465" text in the Filter field
 	When User clears Filter field
 	Then There are no errors in the browser console
-	When User perform search by " " for " " column on the Teams Page
-	When User perform search by "Administrator.Users.dwlabs.local"
-	When User click content from "Hostname" column
+	When User perform search for "Team" column by "Admin"  on the Teams Page
+	#When User perform search by "Administrator.Users.dwlabs.local"
+	#When User click content from "Hostname" column
+	#When User clicks String Filter button for "Category" column
