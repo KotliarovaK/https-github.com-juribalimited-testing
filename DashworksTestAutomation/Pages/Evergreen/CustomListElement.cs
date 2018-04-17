@@ -124,9 +124,9 @@ namespace DashworksTestAutomation.Pages.Evergreen
             return Driver.IsElementDisplayed(By.XPath($".//div[@class='inline-box-text ng-star-inserted']//span[text()='{listName}']"));
         }
 
-        public bool RemovingDependencyListMessage(string warningText)
+        public string RemovingDependencyListMessage()
         {
-            return Driver.IsElementDisplayed(By.XPath($".//div//span[text()='{warningText}']"));
+            return Driver.FindElement(By.XPath(".//span[@class='list-deleting-name']/parent::div")).Text;
         }
 
         public bool CheckThatListIsRemoved(string listName)

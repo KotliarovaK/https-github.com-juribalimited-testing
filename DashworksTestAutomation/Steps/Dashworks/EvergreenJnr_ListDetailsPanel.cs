@@ -245,7 +245,7 @@ namespace DashworksTestAutomation.Steps.Dashworks
         public void ThenMessageIsDisplayedInTheListsPanel(string warningText)
         {
             var listElement = _driver.NowAt<CustomListElement>();
-            Assert.IsTrue(listElement.RemovingDependencyListMessage(warningText), $"{warningText} message is not displayed in the list details panel");
+            Assert.AreEqual(listElement.RemovingDependencyListMessage(), warningText, $"{warningText} message is not displayed in the list details panel");
         }
 
         [Then(@"no Warning message is displayed in the lists panel")]

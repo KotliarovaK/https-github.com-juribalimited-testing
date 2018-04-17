@@ -439,7 +439,7 @@ Scenario: EvergreenJnr_AllLists_CheckDisplayingListDeletionWarningMessageForDepe
 	When User clicks Settings button in the list panel
 	Then Settings panel is displayed to the user
 	When User clicks Delete in the list panel
-	Then ""Application1" " "list has 1 list(s) that are dependent on it, and will be permanently deleted" message is displayed in the lists panel
+	Then ""Application1" list has 1 list(s) that are dependent on it, and will be permanently deleted" message is displayed in the lists panel
 	When User removes custom list with "Application1" name
 	And User clicks "Devices" on the left-hand menu
 	Then "Devices" list should be displayed to the user
@@ -471,7 +471,7 @@ Scenario: EvergreenJnr_AllLists_CheckDisplayingListDeletionWarningMessageForDepe
 	When User clicks Settings button in the list panel
 	Then Settings panel is displayed to the user
 	When User clicks Delete in the list panel
-	Then ""Application2" " "list has 1 list(s) that are dependent on it, and will be permanently deleted" message is displayed in the lists panel
+	Then ""Application2" list has 1 list(s) that are dependent on it, and will be permanently deleted" message is displayed in the lists panel
 	When User removes custom list with "Application2" name
 	And User clicks "Devices" on the left-hand menu
 	Then "Devices" list should be displayed to the user
@@ -511,7 +511,7 @@ Scenario: EvergreenJnr_AllLists_CheckDisplayingListDeletionWarningMessageForDepe
 	When User clicks Settings button in the list panel
 	Then Settings panel is displayed to the user
 	When User clicks Delete in the list panel
-	Then ""Application3" " "list has 2 list(s) that are dependent on it, and will be permanently deleted" message is displayed in the lists panel
+	Then ""Application3" list has 2 list(s) that are dependent on it, and will be permanently deleted" message is displayed in the lists panel
 	When User removes custom list with "Application3" name
 	And User clicks "Devices" on the left-hand menu
 	Then "Devices" list should be displayed to the user
@@ -547,7 +547,7 @@ Scenario: EvergreenJnr_AllLists_CheckDisplayingListDeletionWarningMessageForTwoD
 	When User clicks Settings button in the list panel
 	Then Settings panel is displayed to the user
 	When User clicks Delete in the list panel
-	Then ""Application4" " "list has 1 list(s) that are dependent on it, and will be permanently deleted" message is displayed in the lists panel
+	Then ""Application4" list has 1 list(s) that are dependent on it, and will be permanently deleted" message is displayed in the lists panel
 	When User removes custom list with "Application4" name
 	And User clicks "Devices" on the left-hand menu
 	Then "Devices" list should be displayed to the user

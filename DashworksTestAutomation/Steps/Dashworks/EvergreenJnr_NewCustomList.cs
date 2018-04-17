@@ -167,14 +167,6 @@ namespace DashworksTestAutomation.Steps.Dashworks
             listDetailsElement.CancelButtonInWarningMessage.Click();
         }
 
-        [Then(@"""(.*)"" list ""(.*)"" message is displayed in the lists panel")]
-        public void ThenListMessageIsDisplayedInTheListsPanel(string listName, string warningText)
-        {
-            var listElement = _driver.NowAt<CustomListElement>();
-            Assert.IsTrue(listElement.ListNameWarningMessage(listName), $"{listName} is not displayed in the list details panel");
-            Assert.IsTrue(listElement.RemovingDependencyListMessage(warningText), $"{warningText} message is not displayed in the list details panel");
-        }
-
         [When(@"User update current custom list")]
         public void WhenUserUpdateCurrentCustomList()
         {
