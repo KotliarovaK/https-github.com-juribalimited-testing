@@ -6,7 +6,7 @@ Background: Pre-Conditions
 	Given User is logged in to the Evergreen
 	Then Evergreen Dashboards page should be displayed to the user
 
-@Evergreen @Admin @EvergreenJnr_AdminPage @AdminPage @DAS11747
+@Evergreen @Admin @EvergreenJnr_AdminPage @AdminPage @DAS11747 @DAS12009
 Scenario: EvergreenJnr_AdminPage_CheckThatErrorIsNotDisplayedWhenCreateTeamWithTheAlreadyExistName
 	When User clicks Admin on the left-hand menu
 	Then Admin page should be displayed to the user
@@ -27,7 +27,7 @@ Scenario: EvergreenJnr_AdminPage_CheckThatErrorIsNotDisplayedWhenCreateTeamWithT
 	And There are no errors in the browser console
 	And Delete "TestTeam" Team in the Administration
 
-@Evergreen @Admin @EvergreenJnr_AdminPage @AdminPage @DAS11747
+@Evergreen @Admin @EvergreenJnr_AdminPage @AdminPage @DAS11747 @DAS12009
 Scenario: EvergreenJnr_AdminPage_CheckThatErrorIsNotDisplayedWhenCreateBucketWithTheAlreadyExistName
 	When User clicks Admin on the left-hand menu
 	Then Admin page should be displayed to the user
@@ -60,7 +60,7 @@ Scenario: EvergreenJnr_AdminPage_CheckThatCreateButtonIsDisabledForEmptyProjectN
 	And User select "All Devices" in the Scope Project dropdown
 	And Create Project button is disabled
 
-@Evergreen @Admin @EvergreenJnr_AdminPage @AdminPage @DAS11726
+@Evergreen @Admin @EvergreenJnr_AdminPage @AdminPage @DAS11726 @DAS12009
 Scenario: EvergreenJnr_AdminPage_CheckThatCreateButtonIsDisabledForEmptyBucketName
 	When User clicks Admin on the left-hand menu
 	Then Admin page should be displayed to the user
@@ -117,7 +117,7 @@ Scenario: EvergreenJnr_AdminPage_CheckThatWarningMessageIsDisplayedAfterDeleting
 	Then Update Project button is disabled
 	Then Delete "TestProject" Project in the Administration
 
-@Evergreen @Admin @EvergreenJnr_AdminPage @AdminPage @DAS11762
+@Evergreen @Admin @EvergreenJnr_AdminPage @AdminPage @DAS11762 @DAS12009
 Scenario: EvergreenJnr_AdminPage_CheckThatNoConsoleErrorsAreDisplayedWhenDeleteDataFromFilterTextFieldForBuckets
 	When User clicks Admin on the left-hand menu
 	Then Admin page should be displayed to the user
@@ -129,7 +129,7 @@ Scenario: EvergreenJnr_AdminPage_CheckThatNoConsoleErrorsAreDisplayedWhenDeleteD
 	When User clears Filter field
 	Then There are no errors in the browser console
 
-@Evergreen @Admin @EvergreenJnr_AdminPage @AdminPage @DAS11762
+@Evergreen @Admin @EvergreenJnr_AdminPage @AdminPage @DAS11762 @DAS12009
 Scenario: EvergreenJnr_AdminPage_CheckThatNoConsoleErrorsAreDisplayedWhenDeleteDataFromFilterTextFieldForTeams
 	When User clicks Admin on the left-hand menu
 	Then Admin page should be displayed to the user
@@ -140,7 +140,7 @@ Scenario: EvergreenJnr_AdminPage_CheckThatNoConsoleErrorsAreDisplayedWhenDeleteD
 	Then User enters "123455465" text in the Filter field
 	When User clears Filter field
 	Then There are no errors in the browser console
-	When User perform search for "Team" column by "Admin"  on the Teams Page
+	#When User perform search for "Team" column by "Admin"  on the Teams Page
 	#When User perform search by "Administrator.Users.dwlabs.local"
 	#When User click content from "Hostname" column
 	#When User clicks String Filter button for "Category" column

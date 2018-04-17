@@ -60,9 +60,6 @@ namespace DashworksTestAutomation.Pages.Evergreen.AdminDetailsPages
             By byControl =
                 By.XPath($".//div[@class='ag-header-row']/div[2]/div[{GetColumnNumberByName(columnName)}][@aria-hidden='true']");
             Driver.WaitForDataLoading();
-            //Driver.WaitWhileControlIsNotDisplayed(byControl);
-            //Driver.MouseHover(byControl);
-            //Driver.WaitWhileControlIsNotClickable(byControl);
             Driver.FindElement(byControl).Click();
             Driver.FindElement(byControl).SendKeys(searchText);
         }
