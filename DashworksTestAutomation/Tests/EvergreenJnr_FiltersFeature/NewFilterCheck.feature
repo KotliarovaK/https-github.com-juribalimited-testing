@@ -6,7 +6,7 @@ Background: Pre-Conditions
 	Given User is logged in to the Evergreen
 	Then Evergreen Dashboards page should be displayed to the user
 
-@Evergreen @Applications @Evergreen_FiltersFeature @NewFilterCheck @DAS10828
+@Evergreen @Applications @Evergreen_FiltersFeature @NewFilterCheck @DAS10828 @DAS12388 @Not_Rum
 Scenario Outline: EvergreenJnr_ApplicationsList_CheckThatTargetAppFilterIsAddedToTheList
 	When User add following columns using URL to the "Applications" page:
 	| ColumnName   |
