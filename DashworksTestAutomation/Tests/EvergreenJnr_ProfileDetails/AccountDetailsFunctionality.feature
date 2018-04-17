@@ -41,7 +41,7 @@ Scenario: EvergreenJnr_AccountDetails_CheckThatCorrectErrorMessagesAreDisplayed
 	When User Upload incorrect avatar to Account Details
 	Then "The file uploaded is not recognised as an image" error message is displayed
 	When User Upload correct avatar to Account Details
-	Then Success message with "Image uploaded" text is displayed on Account Details page
+	Then Success message with "Image changed" text is displayed on Account Details page
 	Then User picture is changed to uploaded photo
 	When User clicks Remove on Account details page
 	Then Success message with "Image removed" text is displayed on Account Details page

@@ -121,10 +121,11 @@ namespace DashworksTestAutomation.Pages.Evergreen
 
         public bool ListNameWarningMessage(string listName)
         {
+            return Driver.IsElementDisplayed(By.XPath($".//div[@class='inline-box-text ng-star-inserted']//span[text()='\"{listName}\" ']"));
             return Driver.IsElementDisplayed(By.XPath($".//div[@class='inline-box-text ng-star-inserted']//span[text()='{listName}']"));
         }
 
-        public string RemovingDependencyListMessage()
+        public bool RemovingDependencyListMessage(string warningText)
         {
             return Driver.FindElement(By.XPath(".//span[@class='list-deleting-text']/parent::div")).Text;
         }
