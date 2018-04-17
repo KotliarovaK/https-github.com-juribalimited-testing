@@ -67,7 +67,8 @@ namespace DashworksTestAutomation.Pages.Evergreen.AdminDetailsPages
 
         public bool WarningMessageProjectPage(string text)
         {
-            return Driver.IsElementDisplayed(By.XPath($".//div[@class='ng-star-inserted inline-tip'][text()='{text}']"));
+            Driver.WaitForElement(By.XPath(".//div[@class='ng-star-inserted inline-tip']"));
+        return Driver.IsElementDisplayed(By.XPath($".//div[@class='ng-star-inserted inline-tip'][text()='{text}']"));
         }
     }
 }
