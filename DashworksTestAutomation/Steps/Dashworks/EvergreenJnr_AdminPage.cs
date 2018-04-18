@@ -294,6 +294,13 @@ namespace DashworksTestAutomation.Steps.Dashworks
             Assert.IsTrue(Convert.ToBoolean(button.CreateProjectButtonOnCreateProjectPage.GetAttribute("disabled")), "Create Project button is active");
         }
 
+        [When(@"User enters ""(.*)"" text in the Search field for ""(.*)"" column")]
+        public void WhenUserEntersTextInTheSearchFieldForColumn(string text, string columnName)
+        {
+            var searchElement = _driver.NowAt<ProjectsPage>();
+            searchElement.GetSearchFieldByColumnName((columnName), text);
+        }
+
         [Then(@"Create Bucket button is disabled")]
         public void ThenCreateBucketButtonIsDisabled()
         {

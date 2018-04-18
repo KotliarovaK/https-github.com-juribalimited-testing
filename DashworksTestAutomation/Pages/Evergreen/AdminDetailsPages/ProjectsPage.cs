@@ -1,8 +1,10 @@
-﻿using DashworksTestAutomation.Base;
+﻿using System;
+using DashworksTestAutomation.Base;
 using DashworksTestAutomation.Extensions;
 using OpenQA.Selenium;
 using OpenQA.Selenium.Support.PageObjects;
 using System.Collections.Generic;
+using System.Linq;
 
 namespace DashworksTestAutomation.Pages.Evergreen.AdminDetailsPages
 {
@@ -80,6 +82,31 @@ namespace DashworksTestAutomation.Pages.Evergreen.AdminDetailsPages
         public bool SelectedItemInProjectScopeChangesSection(string text)
         {
             return Driver.IsElementDisplayed(By.XPath($".//span[@class='mat-checkbox-label'][text()='{text}']"));
+        }
+
+        public int GetColumnNumberByName(string columnName)
+        {
+            var allHeadersSelector = By.XPath(".//div[@class='ag-header-container']/div/div");
+            Driver.WaitForDataLoading();
+            Driver.WaitWhileControlIsNotDisplayed(allHeadersSelector);
+            var allHeaders = Driver.FindElements(allHeadersSelector);
+            if (!allHeaders.Any())
+                throw new Exception("Table does not contains any columns");
+            var columnNumber =
+                allHeaders.IndexOf(allHeaders.First(x =>
+                    x.FindElement(By.XPath(".//span[@class='ag-header-cell-text']")).Text.Equals(columnName))) + 1;
+
+            return columnNumber;
+        }
+
+        public void GetSearchFieldByColumnName(string columnName, string text)
+        {
+            By byControl =
+                By.XPath($".//div[@role='presentation']/div[2]/div[{GetColumnNumberByName(columnName)}]//div[@class='ag-floating-filter-full-body']");
+            Driver.WaitForDataLoading();
+            Driver.WaitWhileControlIsNotDisplayed(byControl);
+            Driver.FindElement(byControl).Click();
+            Driver.FindElement(byControl).SendKeys(text);
         }
 
         public bool WarningMessageProjectPage(string text)
