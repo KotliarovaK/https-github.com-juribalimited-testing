@@ -60,9 +60,26 @@ namespace DashworksTestAutomation.Pages.Evergreen.AdminDetailsPages
             tab.Click();
         }
 
+        public void ClickToTabByNameProjectScopeChanges(string tabName)
+        {
+            var tab = Driver.FindElement(By.XPath($".//div[@class='detail-label ng-star-inserted']/span[text()='{tabName}']"));
+            tab.Click();
+        }
+
+        public void SelectCheckboxByName(string checkboxName)
+        {
+            var tab = Driver.FindElement(By.XPath($".//div[@class='mat-radio-label-content'][text()='{checkboxName}']"));
+            tab.Click();
+        }
+
         public bool ActiveProjectByName(string projectName)
         {
             return Driver.IsElementDisplayed(By.XPath($".//h1[text()='{projectName}']"));
+        }
+
+        public bool SelectedItemInProjectScopeChangesSection(string text)
+        {
+            return Driver.IsElementDisplayed(By.XPath($".//span[@class='mat-checkbox-label'][text()='{text}']"));
         }
 
         public bool WarningMessageProjectPage(string text)

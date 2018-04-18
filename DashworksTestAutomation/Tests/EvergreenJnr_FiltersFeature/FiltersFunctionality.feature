@@ -445,7 +445,7 @@ Examples:
 	| Blue                    | BLUE                    |
 	| Out Of Scope            | OUT OF SCOPE            |
 	| Light Blue              | LIGHT BLUE              |
-	#| Brown                   | BROWN                   |
+	| Brown                   | BROWN                   |
 	| Amber                   | AMBER                   |
 	| Really Extremely Orange | REALLY EXTREMELY ORANGE |
 	| Purple                  | PURPLE                  |

@@ -121,7 +121,7 @@ namespace DashworksTestAutomation.Pages.Evergreen
 
         public bool ListNameWarningMessage(string listName)
         {
-            return Driver.IsElementDisplayed(By.XPath($".//div[@class='inline-box-text ng-star-inserted']//span[text()='{listName}']"));
+            return Driver.IsElementDisplayed(By.XPath($".//div[@class='inline-box-text ng-star-inserted']//span[text()='\"{listName}\" ']"));
         }
 
         public bool RemovingDependencyListMessage(string warningText)

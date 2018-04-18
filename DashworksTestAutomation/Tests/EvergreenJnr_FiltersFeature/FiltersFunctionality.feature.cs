@@ -1692,6 +1692,7 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_FiltersFeature
         [NUnit.Framework.TestCaseAttribute("Blue", "BLUE", new string[0])]
         [NUnit.Framework.TestCaseAttribute("Out Of Scope", "OUT OF SCOPE", new string[0])]
         [NUnit.Framework.TestCaseAttribute("Light Blue", "LIGHT BLUE", new string[0])]
+        [NUnit.Framework.TestCaseAttribute("Brown", "BROWN", new string[0])]
         [NUnit.Framework.TestCaseAttribute("Amber", "AMBER", new string[0])]
         [NUnit.Framework.TestCaseAttribute("Really Extremely Orange", "REALLY EXTREMELY ORANGE", new string[0])]
         [NUnit.Framework.TestCaseAttribute("Purple", "PURPLE", new string[0])]

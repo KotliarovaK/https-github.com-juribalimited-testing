@@ -116,3 +116,24 @@ Scenario: EvergreenJnr_AdminPage_CheckThatWarningMessageIsDisplayedAfterDeleting
 	Then Warning message with "The scope for this project refers to a deleted list, this must be updated before proceeding" text is displayed on the Project details page
 	Then Update Project button is disabled
 	Then Delete "TestProject" Project in the Administration
+
+@Evergreen @Admin @EvergreenJnr_AdminPage @AdminPage @DAS11977 @DAS11959
+Scenario: EvergreenJnr_AdminPage_CheckThatAfterApplyingDoNotIncludeDeviceOwnersListHas0ItemsInTheUsersTab
+	When User clicks Admin on the left-hand menu
+	Then Admin page should be displayed to the user
+	When User click "Projects" link on the Admin page
+	Then "Projects" page should be displayed to the user
+	When User clicks Create Project button
+	Then Create Project page should be displayed to the user
+	And User enters "TestProject1596" in the Project Name field
+	And User select "All Devices" in the Scope Project dropdown
+	When User clicks Create Project button
+	When User click "Projects" link on the Admin page
+	Then "Projects" page should be displayed to the user
+	When User clicks "TestProject1596" Project name
+	Then Project "TestProject1596" is displayed to user
+	When User select "Do not include device owners" checkbox on the Project details page
+	And User navigates to the "Project Scope Changes" tab on the Project details page
+	And User clicks "Users" tab in the Project Scope Changes section 
+	Then "Users to add (0 of 0 selected)" is displayed to the user in the Project Scope Changes section
+	Then Delete "TestProject1596" Project in the Administration

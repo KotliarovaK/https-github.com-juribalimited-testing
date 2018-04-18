@@ -124,7 +124,8 @@ namespace DashworksTestAutomation.Steps.Dashworks
         {
             var headerMenu = _driver.NowAt<DashworksHeaderMenuElement>();
 
-            _driver.MouseHover(headerMenu.AnalysisLink);
+            //Commented this part because now Switch to Evergreen link is displayed on page header, without Switch Site
+            //_driver.MouseHover(headerMenu.AnalysisLink);
 
             _driver.WaitWhileControlIsNotClickable<DashworksHeaderMenuElement>(() => headerMenu.EvergreenLink);
             headerMenu.EvergreenLink.Click();
