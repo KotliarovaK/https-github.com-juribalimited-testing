@@ -29,7 +29,7 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_StaticLists
         {
             testRunner = TechTalk.SpecFlow.TestRunnerManager.GetTestRunner();
             TechTalk.SpecFlow.FeatureInfo featureInfo = new TechTalk.SpecFlow.FeatureInfo(new System.Globalization.CultureInfo("en-US"), "FiltersDisplay", "\tRuns Static Filters Display related tests", ProgrammingLanguage.CSharp, new string[] {
-                        "retry:0"});
+                        "retry:1"});
             testRunner.OnFeatureStart(featureInfo);
         }
         
@@ -78,11 +78,10 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_StaticLists
         [NUnit.Framework.CategoryAttribute("DAS12152")]
         [NUnit.Framework.CategoryAttribute("DAS12351")]
         [NUnit.Framework.CategoryAttribute("Delete_Newly_Created_List")]
-        [NUnit.Framework.CategoryAttribute("Not_Run")]
         public virtual void EvergreenJnr_DevicesList_CheckThatDynamicFiltersAreClearedForStaticListsWhenOpenedAfterDynamicLists()
         {
             System.Exception lastException = null;
-            for (int i = 0; (i <= 0); i = (i + 1))
+            for (int i = 0; (i <= 1); i = (i + 1))
             {
                 try
                 {
@@ -94,7 +93,7 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_StaticLists
                     lastException = exc;
                 }
                 if (((i + 1) 
-                            <= 0))
+                            <= 1))
                 {
                     testRunner.OnScenarioEnd();
                 }
@@ -116,8 +115,7 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_StaticLists
                         "DAS10993",
                         "DAS12152",
                         "DAS12351",
-                        "Delete_Newly_Created_List",
-                        "Not_Run"});
+                        "Delete_Newly_Created_List"});
             this.ScenarioSetup(scenarioInfo);
             this.FeatureBackground();
             testRunner.When("User clicks \"Devices\" on the left-hand menu", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
@@ -166,11 +164,10 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_StaticLists
         [NUnit.Framework.CategoryAttribute("DAS12232")]
         [NUnit.Framework.CategoryAttribute("DAS12351")]
         [NUnit.Framework.CategoryAttribute("Delete_Newly_Created_List")]
-        [NUnit.Framework.CategoryAttribute("Not_Run")]
         public virtual void EvergreenJnr_DevicesList_CheckThatFiltersAndColumnsAreRestoredForSavedList()
         {
             System.Exception lastException = null;
-            for (int i = 0; (i <= 0); i = (i + 1))
+            for (int i = 0; (i <= 1); i = (i + 1))
             {
                 try
                 {
@@ -182,7 +179,7 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_StaticLists
                     lastException = exc;
                 }
                 if (((i + 1) 
-                            <= 0))
+                            <= 1))
                 {
                     testRunner.OnScenarioEnd();
                 }
@@ -205,8 +202,7 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_StaticLists
                         "DAS12221",
                         "DAS12232",
                         "DAS12351",
-                        "Delete_Newly_Created_List",
-                        "Not_Run"});
+                        "Delete_Newly_Created_List"});
             this.ScenarioSetup(scenarioInfo);
             this.FeatureBackground();
             testRunner.When("User clicks \"Devices\" on the left-hand menu", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
@@ -250,7 +246,7 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_StaticLists
         public virtual void EvergreenJnr_DevicesList_CheckThat500ErrorIsNotDisplayedWhenAddingExistingObjectToStaticList()
         {
             System.Exception lastException = null;
-            for (int i = 0; (i <= 0); i = (i + 1))
+            for (int i = 0; (i <= 1); i = (i + 1))
             {
                 try
                 {
@@ -262,7 +258,7 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_StaticLists
                     lastException = exc;
                 }
                 if (((i + 1) 
-                            <= 0))
+                            <= 1))
                 {
                     testRunner.OnScenarioEnd();
                 }

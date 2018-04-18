@@ -77,6 +77,64 @@ namespace DashworksTestAutomation.Steps.Dashworks
             Logger.Write($"'{adminLinks}' page is visible");
         }
 
+        [When(@"User clicks ""(.*)"" Project name")]
+        public void WhenUserClicksProjectName(string projectName)
+        {
+            var page = _driver.NowAt<ProjectsPage>();
+            page.SelectProjectByName(projectName);
+        }
+
+        [Then(@"Project ""(.*)"" is displayed to user")]
+        public void ThenProjectIsDisplayedToUser(string projectName)
+        {
+            var page = _driver.NowAt<ProjectsPage>();
+            Assert.IsTrue(page.ActiveProjectByName(projectName), $"{projectName} is not displayed on the Project page");
+        }
+
+        [When(@"User navigates to the ""(.*)"" tab on the Project details page")]
+        public void WhenUserNavigatesToTheTabOnTheProjectDetailsPage(string tabName)
+        {
+            var projectTabs = _driver.NowAt<ProjectsPage>();
+            projectTabs.NavigateToProjectTabByName(tabName);
+            _driver.WaitForDataLoading();
+        }
+
+        [When(@"User clicks ""(.*)"" tab in the Project Scope Changes section")]
+        public void WhenUserClicksTabInTheProjectScopeChangesSection(string tabName)
+        {
+            var projectTabs = _driver.NowAt<ProjectsPage>();
+            projectTabs.ClickToTabByNameProjectScopeChanges(tabName);
+        }
+
+        [Then(@"""(.*)"" is displayed to the user in the Project Scope Changes section")]
+        public void ThenIsDisplayedToTheUserInTheProjectScopeChangesSection(string text)
+        {
+            var page = _driver.NowAt<ProjectsPage>();
+            Assert.IsTrue(page.SelectedItemInProjectScopeChangesSection(text), $"{text} is not displayed in the Project Scope Changes section");
+        }
+
+        [Then(@"Warning message with ""(.*)"" text is displayed on the Project details page")]
+        public void ThenWarningMessageWithTextIsDisplayedOnTheProjectDetailsPage(string text)
+        {
+            var page = _driver.NowAt<ProjectsPage>();
+            Assert.IsTrue(page.WarningMessageProjectPage(text), "Warning Message is not displayed");
+        }
+
+        [When(@"User select ""(.*)"" checkbox on the Project details page")]
+        public void WhenUserSelectCheckboxOnTheProjectDetailsPage(string checkboxName)
+        {
+            var checkbox = _driver.NowAt<ProjectsPage>();
+            checkbox.SelectCheckboxByName(checkboxName);
+        }
+
+        [Then(@"Update Project button is disabled")]
+        public void ThenUpdateProjectButtonIsDisabled()
+        {
+            var button = _driver.NowAt<ProjectsPage>();
+            _driver.WaitWhileControlIsNotDisplayed<ProjectsPage>(() => button.UpdateProjectButton);
+            Assert.IsTrue(Convert.ToBoolean(button.UpdateProjectButton.GetAttribute("disabled")), "Update Project button is active");
+        }
+
         [When(@"User clicks Create Team button")]
         public void WhenUserClicksCreateTeamButton()
         {
@@ -168,7 +226,6 @@ namespace DashworksTestAutomation.Steps.Dashworks
         {
             var createBucketElement = _driver.NowAt<BucketsPage>();
             createBucketElement.TeamsNameField.SendKeys(teamName);
-            //_driver.WaitWhileControlIsNotDisplayed<BucketsPage>(() => createBucketElement.SelectTeamDropdown);
             createBucketElement.SelectTeam(teamName);
         }
 

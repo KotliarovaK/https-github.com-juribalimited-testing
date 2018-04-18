@@ -224,7 +224,6 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_FiltersFeature
         [NUnit.Framework.CategoryAttribute("DAS10734")]
         [NUnit.Framework.CategoryAttribute("DAS11507")]
         [NUnit.Framework.CategoryAttribute("DAS12351")]
-        [NUnit.Framework.CategoryAttribute("Not_Run")]
         public virtual void EvergreenJnr_ApplicationsList_CheckThatAddColumnCheckboxWorksCorrectly()
         {
             System.Exception lastException = null;
@@ -260,8 +259,7 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_FiltersFeature
                         "FilterFunctionality",
                         "DAS10734",
                         "DAS11507",
-                        "DAS12351",
-                        "Not_Run"});
+                        "DAS12351"});
             this.ScenarioSetup(scenarioInfo);
             this.FeatureBackground();
             testRunner.When("User clicks \"Applications\" on the left-hand menu", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
@@ -645,7 +643,6 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_FiltersFeature
         [NUnit.Framework.CategoryAttribute("DAS11507")]
         [NUnit.Framework.CategoryAttribute("DAS12221")]
         [NUnit.Framework.CategoryAttribute("DAS12351")]
-        [NUnit.Framework.CategoryAttribute("Not_Run")]
         [NUnit.Framework.TestCaseAttribute("Devices", "Babel(Engl: Category", "None", "62", "Hostname", "01COJATLYVAR7A6", "Babel(Engl: Category is None", new string[0])]
         [NUnit.Framework.TestCaseAttribute("Devices", "Barry\'sUse: In Scope", "FALSE", "15,896", "Hostname", "00BDM1JUR8IF419", "Barry\'sUse: In Scope is false", new string[0])]
         [NUnit.Framework.TestCaseAttribute("Devices", "ComputerSc: Request Type", "Request Type A", "132", "Hostname", "46DIQRWG3BM6K9Z", "ComputerSc: Request Type is Request Type A", new string[0])]
@@ -688,8 +685,7 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_FiltersFeature
                     "DAS10977",
                     "DAS11507",
                     "DAS12221",
-                    "DAS12351",
-                    "Not_Run"};
+                    "DAS12351"};
             if ((exampleTags != null))
             {
                 @__tags = System.Linq.Enumerable.ToArray(System.Linq.Enumerable.Concat(@__tags, exampleTags));
@@ -727,7 +723,6 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_FiltersFeature
         [NUnit.Framework.CategoryAttribute("FilterFunctionality")]
         [NUnit.Framework.CategoryAttribute("DAS10977")]
         [NUnit.Framework.CategoryAttribute("DAS12351")]
-        [NUnit.Framework.CategoryAttribute("Not_Run")]
         [NUnit.Framework.TestCaseAttribute("Applications", "Barry\'sUse: Target App", "Python 2.2a4 (SMS_GEN)", "1", "Application", "Python 2.2a4", "Barry\'sUse: Target App is Python 2.2a4 (SMS_GEN)", new string[0])]
         [NUnit.Framework.TestCaseAttribute("Mailboxes", "EmailMigra: BT/QMM Switch Status", "Not Started", "729", "Email Address", "alex.cristea@juriba.com", "EmailMigra: BT/QMM Switch Status is Not Started", new string[0])]
         public virtual void EvergreenJnr_AllLists_CheckThatFilterIsRestoredCorrectlyAfterLeavingThePageAndGoingBackViaTheBrowserBackButtonForLookupFilters(string listName, string filterName, string filterValue, string rowsCount, string columnName, string objectName, string text, string[] exampleTags)
@@ -764,8 +759,7 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_FiltersFeature
                     "EvergreenJnr_FilterFeature",
                     "FilterFunctionality",
                     "DAS10977",
-                    "DAS12351",
-                    "Not_Run"};
+                    "DAS12351"};
             if ((exampleTags != null))
             {
                 @__tags = System.Linq.Enumerable.ToArray(System.Linq.Enumerable.Concat(@__tags, exampleTags));
@@ -1198,7 +1192,13 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_FiltersFeature
         [NUnit.Framework.CategoryAttribute("EvergreenJnr_FilterFeature")]
         [NUnit.Framework.CategoryAttribute("FilterFunctionality")]
         [NUnit.Framework.CategoryAttribute("DAS11577")]
+        [NUnit.Framework.TestCaseAttribute("accountexpires", "Equals", "9223372036854775807", "Add accountexpires column", new string[0])]
+        [NUnit.Framework.TestCaseAttribute("badpasswordtime", "Contains", "13146", "Add badpasswordtime column", new string[0])]
+        [NUnit.Framework.TestCaseAttribute("admincount", "Empty", "", "Add admincount column", new string[0])]
+        [NUnit.Framework.TestCaseAttribute("employeeid", "Begins with", "ZY or ZX", "Add employeeid column", new string[0])]
+        [NUnit.Framework.TestCaseAttribute("whencreated", "Does not contain", "2017", "Add whencreated column", new string[0])]
         [NUnit.Framework.TestCaseAttribute("department", "Ends with", "LongName01234567890123456789012345678901234567890123456789", "Add Department column", new string[0])]
+        [NUnit.Framework.TestCaseAttribute("iscriticalsystemobject", "Not empty", "", "Add iscriticalsystemobject column", new string[0])]
         public virtual void EvergreenJnr_UsersList_CheckThatLDAPFilterCategoryHaveAddColumnCheckboxes(string filterName, string operatorValues, string enteredText, string selectedCheckboxes, string[] exampleTags)
         {
             System.Exception lastException = null;
@@ -1763,7 +1763,6 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_FiltersFeature
         [NUnit.Framework.CategoryAttribute("FilterFunctionality")]
         [NUnit.Framework.CategoryAttribute("DAS12076")]
         [NUnit.Framework.CategoryAttribute("DAS12351")]
-        [NUnit.Framework.CategoryAttribute("Not_Run")]
         public virtual void EvergreenJnr_DevicesList_CheckThatColumnIsEmptyWhenEqualNoneAndContainsContentWhenDoesnotequalNoneForWindows7MiCategoryFilter()
         {
             System.Exception lastException = null;
@@ -1799,8 +1798,7 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_FiltersFeature
                         "EvergreenJnr_FilterFeature",
                         "FilterFunctionality",
                         "DAS12076",
-                        "DAS12351",
-                        "Not_Run"});
+                        "DAS12351"});
             this.ScenarioSetup(scenarioInfo);
             this.FeatureBackground();
             testRunner.When("User clicks \"Devices\" on the left-hand menu", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");

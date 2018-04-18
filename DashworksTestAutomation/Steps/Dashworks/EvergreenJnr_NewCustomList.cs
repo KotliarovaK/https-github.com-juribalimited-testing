@@ -145,6 +145,13 @@ namespace DashworksTestAutomation.Steps.Dashworks
             listDetailsElement.DeleteButton.Click();
         }
 
+        [When(@"User clicks Delete in the warning message on the list panel")]
+        public void WhenUserClicksDeleteInTheWarningMessageOnTheListPanel()
+        {
+            var listDetailsElement = _driver.NowAt<CustomListElement>();
+            listDetailsElement.DeleteButtonInWarningMessage.Click();
+        }
+
         [Then(@"Delete and Cancel buttons are available in the warning message")]
         public void ThenDeleteAndCancelButtonsAreAvailableInTheWarningMessage()
         {
@@ -160,8 +167,8 @@ namespace DashworksTestAutomation.Steps.Dashworks
             listDetailsElement.CancelButtonInWarningMessage.Click();
         }
 
-        [Then(@"""(.*)"" ""(.*)"" message is displayed in the lists panel")]
-        public void ThenMessageIsDisplayedInTheListsPanel(string listName, string warningText)
+        [Then(@"""(.*)"" list ""(.*)"" message is displayed in the list panel")]
+        public void ThenListMessageIsDisplayedInTheListPanel(string listName, string warningText)
         {
             var listElement = _driver.NowAt<CustomListElement>();
             Assert.IsTrue(listElement.ListNameWarningMessage(listName), $"{listName} is not displayed in the list details panel");

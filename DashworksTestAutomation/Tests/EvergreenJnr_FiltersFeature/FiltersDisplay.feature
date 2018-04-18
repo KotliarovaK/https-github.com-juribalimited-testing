@@ -333,10 +333,10 @@ Scenario Outline: EvergreenJnr_MailboxesList_CheckThatFilterOperatorsIsCorrectIn
 
 Examples: 
 	| operatorValue  | filterOption | rowsCount | operatorValueInInfo |
-	| Equals         | Mar 8, 2016  | 3         | is                  |
-	| Does not equal | Mar 8, 2016  | 14,781    | is not              |
-	| Before         | Mar 8, 2016  | 4,699     | is before           |
-	| After          | Mar 8, 2016  | 10,076    | is after            |
+	| Equals         | 8 Mar 2016   | 3         | is                  |
+	| Does not equal | 8 Mar 2016   | 14,781    | is not              |
+	| Before         | 8 Mar 2016   | 4,699     | is before           |
+	| After          | 8 Mar 2016   | 10,076    | is after            |
 	| Empty          |              | 6         | is empty            |
 	| Not empty      |              | 14,778    | is not empty        |
 
@@ -357,10 +357,10 @@ Scenario Outline: EvergreenJnr_DevicesList_CheckThatFilterOperatorsIsCorrectInFi
 
 Examples: 
 	| operatorValue  | filterOption | rowsCount | operatorValueInInfo |
-	| Equals         | Nov 22, 2012 | 16        | is                  |
-	| Does not equal | Nov 22, 2012 | 17,209    | is not              |
-	| Before         | Nov 22, 2012 | 1         | is before           |
-	| After          | May 14, 2012 | 16        | is after            |
+	| Equals         | 22 Nov 2012  | 16        | is                  |
+	| Does not equal | 22 Nov 2012  | 17,209    | is not              |
+	| Before         | 22 Nov 2012  | 1         | is before           |
+	| After          | 14 May 2012  | 16        | is after            |
 	| Empty          |              | 17,208    | is empty            |
 	| Not empty      |              | 17        | is not empty        |
 
@@ -503,8 +503,8 @@ Scenario: EvergreenJnr_DevicesList_CheckThatDateAndTimeFiltersWithEqualsValuesAr
 	When User clicks the Filters button
 	Then Filters panel is displayed to the user
 	When User add "Windows7Mi: Date & Time Task" filter where type is "Equals" with added column and following value:
-	| Values       |
-	| Nov 22, 2012 |
+	| Values      |
+	| 22 Nov 2012 |
 	Then "Windows7Mi: Date & Time Task" filter is added to the list
 	Then "16" rows are displayed in the agGrid
 
@@ -624,9 +624,9 @@ Scenario: EvergreenJnr_DevicesList_CheckThatSpaceAfterCommasInTheFiltersContaine
 	| Values |
 	|        |
 	Then "Department Code" filter is added to the list
-	When User add "Boot Up Date" filter where type is "Before" with added column and "Dec 14, 2017" Date filter
+	When User add "Boot Up Date" filter where type is "Before" with added column and "14 Dec 2017" Date filter
 	Then "Boot Up Date" filter is added to the list
-	When User add "Boot Up Date" filter where type is "After" with added column and "Dec 3, 2017" Date filter
+	When User add "Boot Up Date" filter where type is "After" with added column and "3 Dec 2017" Date filter
 	Then "Boot Up Date" filter is added to the list
 	When User add "CPU Count" filter where type is "Greater than" with added column and following value:
 	| Values |
@@ -946,7 +946,7 @@ Scenario: EvergreenJnr_DevicesLists_CheckThatMailboxOwnerFilterCategoryIsNotDisp
 	When User clicks Add New button on the Filter panel
 	Then "Mailbox Owner" section is not displayed in the Filter panel
 
-@Evergreen @Devices @Evergreen_FiltersFeature @FiltersDisplay @DAS11144 @DAS12351 @Not_Run
+@Evergreen @Devices @Evergreen_FiltersFeature @FiltersDisplay @DAS11144 @DAS12351
 Scenario: EvergreenJnr_DevicesLists_CheckThatChildrenOfTreeBasedFiltersAreIncludedInTheListResultsOnDevicesPage
 	When User clicks "Devices" on the left-hand menu
 	Then "Devices" list should be displayed to the user
@@ -956,7 +956,7 @@ Scenario: EvergreenJnr_DevicesLists_CheckThatChildrenOfTreeBasedFiltersAreInclud
 	Then "Department" filter is added to the list
 	And "3,295" rows are displayed in the agGrid
 
-@Evergreen @Users @Evergreen_FiltersFeature @FiltersDisplay @DAS11144 @DAS12351 @Not_Run
+@Evergreen @Users @Evergreen_FiltersFeature @FiltersDisplay @DAS11144 @DAS12351
 Scenario: EvergreenJnr_UsersLists_CheckThatChildrenOfTreeBasedFiltersAreIncludedInTheListResultsOnUsersPage
 	When User clicks "Users" on the left-hand menu
 	Then "Users" list should be displayed to the user
@@ -971,7 +971,6 @@ Scenario: EvergreenJnr_AllLists_CheckThatFilterTextDisplaysActualListName
 	When User clicks "Applications" on the left-hand menu
 	Then "Applications" list should be displayed to the user
 	When User click on 'Application' column header
-	#When User create custom list with "ApplicationList" name
 	When User create dynamic list with "ApplicationList" name on "Applications" page
 	When User clicks "Devices" on the left-hand menu
 	Then "Devices" list should be displayed to the user
@@ -980,7 +979,6 @@ Scenario: EvergreenJnr_AllLists_CheckThatFilterTextDisplaysActualListName
 	When User add "Application (Saved List)" filter where type is "In list" with SelectedList list and following Association:
 	| SelectedList    | Association        |
 	| ApplicationList | Entitled to device |
-	#When User create custom list with "DevicesList" name
 	When User create dynamic list with "DevicesList" name on "Devices" page
 	When User clicks the List Details button
 	Then List details panel is displayed to the user
