@@ -17,13 +17,12 @@ namespace DashworksTestAutomation.DTO.Projects
         public ValueTypeEnum ValueType;
         public TaskObjectTypeEnum ObjectType;
         public TaskValuesTemplateEnum TaskValuesTemplate;
-        public bool OnboardEntitledApplicationsByAssociation { get; set; }
+        public bool TaskValuesTemplateCheckbox { get; set; }
 
         public TaskPropertiesDto()
         {
-            StageName = EnumExtensions.GetRandomValue<StageNameEnum>();
             TaskType = EnumExtensions.GetRandomValue<TaskTypeEnum>();
-            ValueType = EnumExtensions.GetRandomValue<ValueTypeEnum>();
+            //ValueType = EnumExtensions.GetRandomValue<ValueTypeEnum>();
             ObjectType = EnumExtensions.GetRandomValue<TaskObjectTypeEnum>();
             TaskValuesTemplate = EnumExtensions.GetRandomValue<TaskValuesTemplateEnum>();
         }
@@ -31,12 +30,15 @@ namespace DashworksTestAutomation.DTO.Projects
 
     public enum StageNameEnum
     {
+        [Description("[Select]")]
+        Select,
+        Test
     }
 
     public enum TaskTypeEnum
     {
         Normal,
-        Croup
+        Group
     }
 
     public enum ValueTypeEnum
@@ -49,6 +51,8 @@ namespace DashworksTestAutomation.DTO.Projects
 
     public enum TaskObjectTypeEnum
     {
+        [Description("[Select]")]
+        Select,
         User,
         Computer,
         Application

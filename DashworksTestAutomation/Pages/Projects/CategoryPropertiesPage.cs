@@ -7,8 +7,7 @@ namespace DashworksTestAutomation.Pages.Projects
 {
     internal class CategoryPropertiesPage : BaseDashboardPage
     {
-        [FindsBy(How = How.XPath, Using = ".//input[@value='Create Category']")]
-        public IWebElement CreateCategoryButton { get; set; }
+
 
         [FindsBy(How = How.XPath, Using = ".//input[@id='tb_Name']")]
         public IWebElement Name { get; set; }
@@ -18,6 +17,9 @@ namespace DashworksTestAutomation.Pages.Projects
 
         [FindsBy(How = How.XPath, Using = ".//select[@id='select_ObjectType']")]
         public IWebElement ObjectType { get; set; }
+
+        [FindsBy(How = How.XPath, Using = ".//input[@id='btn_Create']")]
+        public IWebElement ConfirmCreateCategoryButton { get; set; }
 
         public override List<By> GetPageIdentitySelectors()
         {

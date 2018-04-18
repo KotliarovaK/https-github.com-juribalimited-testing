@@ -28,7 +28,7 @@ namespace DashworksTestAutomation.Pages.Projects
         [Then(@"""(.*)"" page is displayed to the user")]
         public void ThenPageIsDisplayedToTheUser(string pageName)
         {
-            var page = _driver.NowAt<NavigationMenu>();
+            var page = _driver.NowAt<BaseElements>();
 
             _driver.WaitForTextToAppear(page.PageHeder, pageName);
             Logger.Write("Projects Home page is displayed");

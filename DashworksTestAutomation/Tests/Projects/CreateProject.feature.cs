@@ -84,7 +84,7 @@ namespace DashworksTestAutomation.Tests.Projects
                         "ProjectDescription",
                         "ProjectType"});
             table1.AddRow(new string[] {
-                        "Test",
+                        "TestProject",
                         "Test",
                         "Test",
                         "Computer Scheduled Project"});
@@ -113,23 +113,89 @@ namespace DashworksTestAutomation.Tests.Projects
             testRunner.When("User updating Details page", ((string)(null)), table2, "When ");
             testRunner.When("User navigate to \"Request Types\" tab", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
             testRunner.Then("\"Manage Request Types\" page is displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-            testRunner.When("User click create Request Type button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+            testRunner.When("User clicks \"Request Type\" create button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
             TechTalk.SpecFlow.Table table3 = new TechTalk.SpecFlow.Table(new string[] {
                         "Name",
                         "Description"});
             table3.AddRow(new string[] {
-                        "Test",
+                        "TestRequestType",
                         "Test"});
-            testRunner.When("User create Request Type", ((string)(null)), table3, "When ");
-            testRunner.When("User navigate to \"Manage Categories\" tab", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+            testRunner.Then("User create Request Type", ((string)(null)), table3, "Then ");
+            testRunner.When("User navigate to \"Categories\" tab", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
             testRunner.Then("\"Manage Categories\" page is displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+            testRunner.When("User clicks \"Category\" create button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
             TechTalk.SpecFlow.Table table4 = new TechTalk.SpecFlow.Table(new string[] {
                         "Name",
                         "Description"});
             table4.AddRow(new string[] {
+                        "TestCategory",
+                        "Test"});
+            testRunner.Then("User create Category", ((string)(null)), table4, "Then ");
+            testRunner.When("User navigate to \"Stages\" tab", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+            testRunner.Then("\"Manage Stages\" page is displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+            testRunner.When("User clicks \"Stage\" create button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+            TechTalk.SpecFlow.Table table5 = new TechTalk.SpecFlow.Table(new string[] {
+                        "StageName"});
+            table5.AddRow(new string[] {
+                        "Test"});
+            testRunner.Then("User create Stage", ((string)(null)), table5, "Then ");
+            testRunner.When("User navigate to \"Tasks\" tab", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+            testRunner.Then("\"Manage Tasks\" page is displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+            testRunner.When("User clicks \"Task\" create button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+            TechTalk.SpecFlow.Table table6 = new TechTalk.SpecFlow.Table(new string[] {
+                        "Name",
+                        "Help",
+                        "StageName",
+                        "ValueType",
+                        "TaskValuesTemplateCheckbox"});
+            table6.AddRow(new string[] {
+                        "TestTask",
+                        "Test",
+                        "Test",
+                        "Radiobutton",
+                        "false"});
+            testRunner.Then("User create Task", ((string)(null)), table6, "Then ");
+            testRunner.When("User navigate to \"Teams\" tab", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+            testRunner.Then("\"Manage Teams\" page is displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+            testRunner.When("User clicks \"Team\" create button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+            TechTalk.SpecFlow.Table table7 = new TechTalk.SpecFlow.Table(new string[] {
+                        "TeamName",
+                        "ShortDescription"});
+            table7.AddRow(new string[] {
+                        "TestTeam",
+                        "Test"});
+            testRunner.Then("User create Team", ((string)(null)), table7, "Then ");
+            testRunner.When("User navigate to \"Groups\" tab", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+            testRunner.Then("\"Manage Groups\" page is displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+            testRunner.When("User clicks \"Group\" create button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+            TechTalk.SpecFlow.Table table8 = new TechTalk.SpecFlow.Table(new string[] {
+                        "GroupName"});
+            table8.AddRow(new string[] {
+                        "TestGroup"});
+            testRunner.Then("User create Group", ((string)(null)), table8, "Then ");
+            testRunner.When("User navigate to \"Mail Templates\" tab", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+            testRunner.Then("\"Manage Mail Templates\" page is displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+            testRunner.When("User clicks \"Mail Template\" create button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+            TechTalk.SpecFlow.Table table9 = new TechTalk.SpecFlow.Table(new string[] {
+                        "GroupName",
+                        "Description",
+                        "SubjectLine",
+                        "BodyText"});
+            table9.AddRow(new string[] {
+                        "TestMailTemplate",
+                        "Test",
                         "Test",
                         "Test"});
-            testRunner.When("User create Categories", ((string)(null)), table4, "When ");
+            testRunner.Then("User create Mail Template", ((string)(null)), table9, "Then ");
+            testRunner.When("User navigate to \"News\" tab", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+            testRunner.Then("\"Manage News\" page is displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+            TechTalk.SpecFlow.Table table10 = new TechTalk.SpecFlow.Table(new string[] {
+                        "Title",
+                        "Text"});
+            table10.AddRow(new string[] {
+                        "TestGroup",
+                        "Test"});
+            testRunner.Then("User updating News page", ((string)(null)), table10, "Then ");
             this.ScenarioCleanup();
         }
     }

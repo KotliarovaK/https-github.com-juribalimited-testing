@@ -21,6 +21,8 @@ namespace DashworksTestAutomation.DTO.Projects
         [Description("IB Team")]
         IBTeam,
         [Description("My Team")]
-        MyTeam
+        MyTeam,
+        [Description("Team 0")]
+        Team0
     }
 }

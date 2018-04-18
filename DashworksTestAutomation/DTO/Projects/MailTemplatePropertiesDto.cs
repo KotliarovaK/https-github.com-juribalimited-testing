@@ -8,6 +8,5 @@ namespace DashworksTestAutomation.DTO.Projects
         public string Description { get; set; }
         public string SubjectLine { get; set; }
         public string BodyText { get; set; }
-        public string Attachments { get; set; }
     }
 }
