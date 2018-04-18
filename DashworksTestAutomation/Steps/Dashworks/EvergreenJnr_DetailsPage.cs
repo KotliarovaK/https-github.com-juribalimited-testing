@@ -88,10 +88,10 @@ namespace DashworksTestAutomation.Steps.Dashworks
         public void ThenImageItemFromColumnIsDisplayedToTheUser(string columnName)
         {
             var tableElement = _driver.NowAtWithoutWait<BaseDashboardPage>();
-            var content = _driver.FindElements(By.XPath(".//div[@col-id='userName'][@role='gridcell']"));
+            var content = _driver.FindElements(By.XPath(BaseDashboardPage.ColumnWithImageSelector));
             foreach (var element in content)
             {
-                var image = element.FindElement(By.XPath(".//i"));
+                var image = element.FindElement(By.XPath(BaseDashboardPage.ItemImageSelector));
                 Assert.IsTrue(image.Displayed(), "Image item is not found");
             }
         }
