@@ -118,7 +118,7 @@ Scenario: EvergreenJnr_AdminPage_CheckThatWarningMessageIsDisplayedAfterDeleting
 	Then Delete "TestProject" Project in the Administration
 
 @Evergreen @Admin @EvergreenJnr_AdminPage @AdminPage @DAS11977 @DAS11959
-Scenario: EvergreenJnr_AdminPage_CheckThatAfterDoNotIncludeDeviceOwnersListHas0ItemsInTheUsersTab
+Scenario: EvergreenJnr_AdminPage_CheckThatAfterApplyingDoNotIncludeDeviceOwnersListHas0ItemsInTheUsersTab
 	When User clicks Admin on the left-hand menu
 	Then Admin page should be displayed to the user
 	When User click "Projects" link on the Admin page
