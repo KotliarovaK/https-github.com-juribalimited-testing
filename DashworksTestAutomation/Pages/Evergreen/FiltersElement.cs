@@ -181,6 +181,40 @@ namespace DashworksTestAutomation.Pages.Evergreen
             Driver.WaitWhileControlIsDisplayed<FiltersElement>(() => AddNewFilterButton);
         }
 
+        public void AddFilterForCategory(string filterName, string categoryName)
+        {
+            if (Driver.IsElementExists(AddNewFilterButton))
+            {
+                Driver.MouseHover(AddNewFilterButton);
+                AddNewFilterButton.Click();
+            }
+
+            if (FilterCategories.Any())
+                Driver.MouseHover(FilterCategories.Last());
+            Driver.MouseHover(By.XPath(SearchTextboxSelector));
+            Driver.WaitWhileControlIsNotClickable(By.XPath(SearchTextboxSelector));
+            Driver.FindElement(By.XPath(SearchTextboxSelector)).Click();
+            Driver.FindElement(By.XPath(SearchTextboxSelector)).SendKeys(filterName);
+            var selector = string.Empty;
+            if (filterName.Contains("'"))
+            {
+                var strings = filterName.Split('\'');
+                selector =
+                    $".//div[contains(@class, 'filter-add')][contains(text(),'{strings[0]}')][contains(text(), '{strings[1]}')]";
+            }
+            else
+            {
+                selector = $".//div[contains(@class, 'filter-add')][text()='{filterName}']";
+            }
+             
+
+            Driver.WaitWhileControlIsNotDisplayed(By.XPath(selector));
+            Driver.FindElement(By.XPath(selector)).Click();
+
+            Driver.WaitForDataLoading();
+            Driver.WaitWhileControlIsDisplayed<FiltersElement>(() => AddNewFilterButton);
+        }
+
         public string GetShowedResultsCount()
         {
             LookupFilterSearchTextbox.Click();

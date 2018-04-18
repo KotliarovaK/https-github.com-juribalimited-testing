@@ -532,6 +532,7 @@ Scenario Outline: EvergreenJnr_DevicesList_CheckThatCustomFiltersAreContainsAllE
 	When User clicks the Filters button
 	Then Filters panel is displayed to the user
 	When user select "<FilterName>" filter
+	When User selects " " filter for " " category
 	Then Associations is displayed in the filter
 	| Associations                   |
 	| Used on device                 |
