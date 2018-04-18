@@ -449,22 +449,22 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_AdminPage
         }
         
         [NUnit.Framework.TestAttribute()]
-        [NUnit.Framework.DescriptionAttribute("EvergreenJnr_AdminPage_CheckThatAfterDoNotIncludeDeviceOwnersListHas0ItemsInTheUs" +
-            "ersTab")]
+        [NUnit.Framework.DescriptionAttribute("EvergreenJnr_AdminPage_CheckThatAfterApplyingDoNotIncludeDeviceOwnersListHas0Item" +
+            "sInTheUsersTab")]
         [NUnit.Framework.CategoryAttribute("Evergreen")]
         [NUnit.Framework.CategoryAttribute("Admin")]
         [NUnit.Framework.CategoryAttribute("EvergreenJnr_AdminPage")]
         [NUnit.Framework.CategoryAttribute("AdminPage")]
         [NUnit.Framework.CategoryAttribute("DAS11977")]
         [NUnit.Framework.CategoryAttribute("DAS11959")]
-        public virtual void EvergreenJnr_AdminPage_CheckThatAfterDoNotIncludeDeviceOwnersListHas0ItemsInTheUsersTab()
+        public virtual void EvergreenJnr_AdminPage_CheckThatAfterApplyingDoNotIncludeDeviceOwnersListHas0ItemsInTheUsersTab()
         {
             System.Exception lastException = null;
             for (int i = 0; (i <= 1); i = (i + 1))
             {
                 try
                 {
-                    this.EvergreenJnr_AdminPage_CheckThatAfterDoNotIncludeDeviceOwnersListHas0ItemsInTheUsersTabInternal();
+                    this.EvergreenJnr_AdminPage_CheckThatAfterApplyingDoNotIncludeDeviceOwnersListHas0ItemsInTheUsersTabInternal();
                     return;
                 }
                 catch (System.Exception exc)
@@ -483,10 +483,10 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_AdminPage
             }
         }
         
-        private void EvergreenJnr_AdminPage_CheckThatAfterDoNotIncludeDeviceOwnersListHas0ItemsInTheUsersTabInternal()
+        private void EvergreenJnr_AdminPage_CheckThatAfterApplyingDoNotIncludeDeviceOwnersListHas0ItemsInTheUsersTabInternal()
         {
-            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("EvergreenJnr_AdminPage_CheckThatAfterDoNotIncludeDeviceOwnersListHas0ItemsInTheUs" +
-                    "ersTab", new string[] {
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("EvergreenJnr_AdminPage_CheckThatAfterApplyingDoNotIncludeDeviceOwnersListHas0Item" +
+                    "sInTheUsersTab", new string[] {
                         "Evergreen",
                         "Admin",
                         "EvergreenJnr_AdminPage",
