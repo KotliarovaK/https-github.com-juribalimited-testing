@@ -148,7 +148,7 @@ namespace DashworksTestAutomation.Pages.Evergreen
             Driver.FindElement(By.XPath(checkboxSettingsSelector)).Click();
         }
 
-        public void AddFilter(string filterName)
+        public void AddFilter(string filterName, string categoryName = null)
         {
             if (Driver.IsElementExists(AddNewFilterButton))
             {
@@ -163,6 +163,7 @@ namespace DashworksTestAutomation.Pages.Evergreen
             Driver.FindElement(By.XPath(SearchTextboxSelector)).Click();
             Driver.FindElement(By.XPath(SearchTextboxSelector)).SendKeys(filterName);
             var selector = string.Empty;
+            IWebElement category = null;
             if (filterName.Contains("'"))
             {
                 var strings = filterName.Split('\'');
@@ -175,7 +176,16 @@ namespace DashworksTestAutomation.Pages.Evergreen
             }
 
             Driver.WaitWhileControlIsNotDisplayed(By.XPath(selector));
-            Driver.FindElement(By.XPath(selector)).Click();
+            if (categoryName != null)
+            {
+                category = Driver.FindElement(By.XPath(
+                    $".//div[contains(text(), '{categoryName}')]//ancestor::div[@class='filter-category ng-star-inserted']"));
+                category.FindElement(By.XPath(selector)).Click();
+            }
+            else
+            {
+                Driver.FindElement(By.XPath(selector)).Click();
+            }
 
             Driver.WaitForDataLoading();
             Driver.WaitWhileControlIsDisplayed<FiltersElement>(() => AddNewFilterButton);
