@@ -136,4 +136,4 @@ Scenario: EvergreenJnr_AdminPage_CheckThatAfterApplyingDoNotIncludeDeviceOwnersL
 	And User navigates to the "Project Scope Changes" tab on the Project details page
 	And User clicks "Users" tab in the Project Scope Changes section 
 	Then "Users to add (0 of 0 selected)" is displayed to the user in the Project Scope Changes section
-	Then Delete "TestProject" Project in the Administration
+	Then Delete "TestProject1596" Project in the Administration
