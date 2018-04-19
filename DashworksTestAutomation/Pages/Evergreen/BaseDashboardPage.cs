@@ -93,10 +93,6 @@ namespace DashworksTestAutomation.Pages.Evergreen
         [FindsBy(How = How.XPath, Using = ".//div[text()='This list does not exist or you do not have access to it']")]
         public IWebElement DoesNotExistListMessage { get; set; }
 
-        public const string ItemImageSelector = ".//i";
-
-        public const string ColumnWithImageSelector = ".//div[@col-id='userName'][@role='gridcell']";
-
         #region TableColumns
 
         [FindsBy(How = How.XPath, Using = ".//div[@colid='lastLogonDate'][@role='gridcell']")]
