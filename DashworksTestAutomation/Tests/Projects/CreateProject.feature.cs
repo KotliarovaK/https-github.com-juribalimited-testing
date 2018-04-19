@@ -61,12 +61,12 @@ namespace DashworksTestAutomation.Tests.Projects
         }
         
         [NUnit.Framework.TestAttribute()]
-        [NUnit.Framework.DescriptionAttribute("Projects_CreateAProject")]
+        [NUnit.Framework.DescriptionAttribute("Projects_CreateProject")]
         [NUnit.Framework.CategoryAttribute("Projects")]
         [NUnit.Framework.CategoryAttribute("CreateProject")]
-        public virtual void Projects_CreateAProject()
+        public virtual void Projects_CreateProject()
         {
-            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Projects_CreateAProject", new string[] {
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Projects_CreateProject", new string[] {
                         "Projects",
                         "CreateProject"});
             this.ScenarioSetup(scenarioInfo);
@@ -111,7 +111,7 @@ namespace DashworksTestAutomation.Tests.Projects
                         "8 May 2012",
                         "10 Apr 2018"});
             testRunner.When("User updating Details page", ((string)(null)), table2, "When ");
-            testRunner.When("User navigate to \"Request Types\" tab", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+            testRunner.And("User navigate to \"Request Types\" tab", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
             testRunner.Then("\"Manage Request Types\" page is displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
             testRunner.When("User clicks \"Request Type\" create button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
             TechTalk.SpecFlow.Table table3 = new TechTalk.SpecFlow.Table(new string[] {
@@ -195,7 +195,65 @@ namespace DashworksTestAutomation.Tests.Projects
             table10.AddRow(new string[] {
                         "TestGroup",
                         "Test"});
-            testRunner.Then("User updating News page", ((string)(null)), table10, "Then ");
+            testRunner.And("User updating News page", ((string)(null)), table10, "And ");
+            this.ScenarioCleanup();
+        }
+        
+        [NUnit.Framework.TestAttribute()]
+        [NUnit.Framework.DescriptionAttribute("Projects_checkHowManyGroupInATeam")]
+        [NUnit.Framework.CategoryAttribute("Projects")]
+        [NUnit.Framework.CategoryAttribute("CreateProject")]
+        [NUnit.Framework.CategoryAttribute("Teams")]
+        public virtual void Projects_CheckHowManyGroupInATeam()
+        {
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Projects_checkHowManyGroupInATeam", new string[] {
+                        "Projects",
+                        "CreateProject",
+                        "Teams"});
+            this.ScenarioSetup(scenarioInfo);
+            testRunner.Given("User is on Dashworks Homepage", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
+            testRunner.Then("Login Page is displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+            testRunner.When("User provides the Login and Password and clicks on the login button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+            testRunner.Then("Dashworks homepage is displayed to the user in a logged in state", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+            testRunner.When("User navigate to Projects link", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+            testRunner.Then("\"Projects Home\" page is displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+            testRunner.When("User clicks create Project button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+            testRunner.Then("\"Create Project\" page is displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+            TechTalk.SpecFlow.Table table11 = new TechTalk.SpecFlow.Table(new string[] {
+                        "ProjectName",
+                        "ProjectShortName",
+                        "ProjectDescription",
+                        "ProjectType"});
+            table11.AddRow(new string[] {
+                        "TestProject",
+                        "Test",
+                        "Test",
+                        "Computer Scheduled Project"});
+            testRunner.When("User creates Project", ((string)(null)), table11, "When ");
+            testRunner.Then("\"Manage Project Details\" page is displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+            testRunner.When("User navigate to \"Teams\" tab", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+            testRunner.Then("\"Manage Teams\" page is displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+            testRunner.When("User clicks \"Team\" create button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+            TechTalk.SpecFlow.Table table12 = new TechTalk.SpecFlow.Table(new string[] {
+                        "TeamName",
+                        "ShortDescription"});
+            table12.AddRow(new string[] {
+                        "AAA TestTeam",
+                        "Test"});
+            testRunner.Then("User create Team", ((string)(null)), table12, "Then ");
+            testRunner.When("User navigate to \"Groups\" tab", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+            testRunner.Then("\"Manage Groups\" page is displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+            testRunner.When("User clicks \"Group\" create button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+            TechTalk.SpecFlow.Table table13 = new TechTalk.SpecFlow.Table(new string[] {
+                        "GroupName",
+                        "Owned By Team"});
+            table13.AddRow(new string[] {
+                        "TestGroup",
+                        "AAA TestTeam"});
+            testRunner.Then("User create Group", ((string)(null)), table13, "Then ");
+            testRunner.When("User navigate to \"Teams\" tab", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+            testRunner.Then("\"Manage Teams\" page is displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+            testRunner.Then("in the \"\"(.*)\"\" team found \"\"(.*)\"\" groups", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
             this.ScenarioCleanup();
         }
     }
