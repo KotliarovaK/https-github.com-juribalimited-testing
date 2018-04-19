@@ -61,7 +61,8 @@ namespace DashworksTestAutomation.Pages.Evergreen.AdminDetailsPages
         public void GetSearchFieldByColumnName(string columnName, string text)
         {
             By byControl =
-                By.XPath($".//div[@role='presentation']/div[2]/div[{GetColumnNumberByName(columnName)}]//div[@class='ag-floating-filter-full-body']//input");
+                By.XPath(
+                    $".//div[@role='presentation']/div[2]/div[{GetColumnNumberByName(columnName)}]//div[@class='ag-floating-filter-full-body']//input");
             Driver.WaitForDataLoading();
             Driver.WaitWhileControlIsNotDisplayed(byControl);
             Driver.FindElement(byControl).Click();
@@ -85,13 +86,12 @@ namespace DashworksTestAutomation.Pages.Evergreen.AdminDetailsPages
 
         public void OpenColumnSettingsByName(string columnName)
         {
-            string columnSettingsSelector =
+            var columnSettingsSelector =
                 $".//div[@role='presentation']/span[text()='{columnName}']/ancestor::div[@class='ag-header-cell ag-header-cell-sortable']//span[@ref='eMenu']";
-            Driver.MouseHover(By.XPath(columnSettingsSelector));
+            var columnHeaderSelector = $".//div[@role='presentation']/span[text()='{columnName}']";
+            Driver.MouseHover(By.XPath(columnHeaderSelector));
             Driver.WaitWhileControlIsNotDisplayed(By.XPath(columnSettingsSelector));
             Driver.FindElement(By.XPath(columnSettingsSelector)).Click();
         }
     }
-
-
 }

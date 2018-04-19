@@ -45,6 +45,7 @@ namespace DashworksTestAutomation.Steps.Dashworks
                 default:
                     throw new Exception($"'{adminLinks}' link is not valid menu item and can not be opened");
             }
+
             Logger.Write($"{adminLinks} left-hand menu was clicked");
         }
 
@@ -74,6 +75,7 @@ namespace DashworksTestAutomation.Steps.Dashworks
                 default:
                     throw new Exception($"'{adminLinks}' menu item is not valid ");
             }
+
             Logger.Write($"'{adminLinks}' page is visible");
         }
 
@@ -110,7 +112,8 @@ namespace DashworksTestAutomation.Steps.Dashworks
         public void ThenIsDisplayedToTheUserInTheProjectScopeChangesSection(string text)
         {
             var page = _driver.NowAt<ProjectsPage>();
-            Assert.IsTrue(page.SelectedItemInProjectScopeChangesSection(text), $"{text} is not displayed in the Project Scope Changes section");
+            Assert.IsTrue(page.SelectedItemInProjectScopeChangesSection(text),
+                $"{text} is not displayed in the Project Scope Changes section");
         }
 
         [Then(@"Warning message with ""(.*)"" text is displayed on the Project details page")]
@@ -132,7 +135,8 @@ namespace DashworksTestAutomation.Steps.Dashworks
         {
             var button = _driver.NowAt<ProjectsPage>();
             _driver.WaitWhileControlIsNotDisplayed<ProjectsPage>(() => button.UpdateProjectButton);
-            Assert.IsTrue(Convert.ToBoolean(button.UpdateProjectButton.GetAttribute("disabled")), "Update Project button is active");
+            Assert.IsTrue(Convert.ToBoolean(button.UpdateProjectButton.GetAttribute("disabled")),
+                "Update Project button is active");
         }
 
         [When(@"User clicks Create Team button")]
@@ -180,7 +184,7 @@ namespace DashworksTestAutomation.Steps.Dashworks
             page.CreateTeamButton.Click();
             Logger.Write("Create Team button was clicked");
         }
-        
+
         [Then(@"Success message is displayed and contains ""(.*)"" text on the Teams page")]
         public void ThenSuccessMessageIsDisplayedAndContainsTextOnTheTeamsPage(string text)
         {
@@ -335,7 +339,8 @@ namespace DashworksTestAutomation.Steps.Dashworks
         {
             var button = _driver.NowAt<ProjectsPage>();
             _driver.WaitWhileControlIsNotDisplayed<ProjectsPage>(() => button.CreateProjectButton);
-            Assert.IsTrue(Convert.ToBoolean(button.CreateProjectButtonOnCreateProjectPage.GetAttribute("disabled")), "Create Project button is active");
+            Assert.IsTrue(Convert.ToBoolean(button.CreateProjectButtonOnCreateProjectPage.GetAttribute("disabled")),
+                "Create Project button is active");
         }
 
         [When(@"User enters ""(.*)"" text in the Search field for ""(.*)"" column on the Projects page")]
@@ -368,7 +373,8 @@ namespace DashworksTestAutomation.Steps.Dashworks
         {
             var projectElement = _driver.NowAt<ProjectsPage>();
             _driver.WaitWhileControlIsNotDisplayed<ProjectsPage>(() => projectElement.SuccessDeleteMessage);
-            Assert.IsTrue(projectElement.SuccessDeletingMessage(textMessage), $"{textMessage} is not displayed on the Project page");
+            Assert.IsTrue(projectElement.SuccessDeletingMessage(textMessage),
+                $"{textMessage} is not displayed on the Project page");
         }
 
         [Then(@"Create Bucket button is disabled")]
@@ -376,7 +382,8 @@ namespace DashworksTestAutomation.Steps.Dashworks
         {
             var button = _driver.NowAt<BucketsPage>();
             _driver.WaitWhileControlIsNotDisplayed<BucketsPage>(() => button.CreateButton);
-            Assert.IsTrue(Convert.ToBoolean(button.CreateButton.GetAttribute("disabled")), "Create Bucket button is active");
+            Assert.IsTrue(Convert.ToBoolean(button.CreateButton.GetAttribute("disabled")),
+                "Create Bucket button is active");
         }
 
         [Then(@"Create Team button is disabled")]
@@ -384,18 +391,23 @@ namespace DashworksTestAutomation.Steps.Dashworks
         {
             var button = _driver.NowAt<TeamsPage>();
             _driver.WaitWhileControlIsNotDisplayed<TeamsPage>(() => button.CreateTeamButtonOnCreateTeamPage);
-            Assert.IsTrue(Convert.ToBoolean(button.CreateTeamButtonOnCreateTeamPage.GetAttribute("disabled")), "Create Team button is active");
+            Assert.IsTrue(Convert.ToBoolean(button.CreateTeamButtonOnCreateTeamPage.GetAttribute("disabled")),
+                "Create Team button is active");
         }
 
         [Then(@"Delete ""(.*)"" Project in the Administration")]
         public void ThenDeleteProjectInTheAdministration(string projectName)
         {
-            var projectId = DatabaseHelper.ExecuteReader($"SELECT [ProjectID] FROM[PM].[dbo].[Projects] where[ProjectName] = '{projectName}'", 0)[0];
+            var projectId =
+                DatabaseHelper.ExecuteReader(
+                    $"SELECT [ProjectID] FROM[PM].[dbo].[Projects] where[ProjectName] = '{projectName}'", 0)[0];
             DatabaseHelper.ExecuteQuery($"delete from[PM].[dbo].[EvergreenProjects] where[ProjectId] = '{projectId}'");
             DatabaseHelper.ExecuteQuery($"delete from[PM].[dbo].[ProjectGroups] where[ProjectID] = '{projectId}'");
-            DatabaseHelper.ExecuteQuery($"delete from[PM].[dbo].[SelfServiceScreenValueLanguage] where[ProjectId] = '{projectId}'");
+            DatabaseHelper.ExecuteQuery(
+                $"delete from[PM].[dbo].[SelfServiceScreenValueLanguage] where[ProjectId] = '{projectId}'");
             DatabaseHelper.ExecuteQuery($"delete from[PM].[dbo].[SelfService] where[ProjectID] = '{projectId}'");
-            DatabaseHelper.ExecuteQuery($"delete from[PM].[dbo].[SelfServiceScreenValues] where[ProjectID] = '{projectId}'");
+            DatabaseHelper.ExecuteQuery(
+                $"delete from[PM].[dbo].[SelfServiceScreenValues] where[ProjectID] = '{projectId}'");
             DatabaseHelper.ExecuteQuery($"delete from[PM].[dbo].[Projects] where[ProjectID] = '{projectId}'");
             DatabaseHelper.ExecuteQuery($"delete from[PM].[dbo].[Projects] where[ProjectID] = '{projectId}'");
         }

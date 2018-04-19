@@ -45,7 +45,8 @@ namespace DashworksTestAutomation.Pages.Evergreen.AdminDetailsPages
         {
             string columnSettingsSelector =
                 $".//div[@role='presentation']/span[text()='{columnName}']/ancestor::div[@class='ag-header-cell ag-header-cell-sortable']//span[@ref='eMenu']";
-            Driver.MouseHover(By.XPath(columnSettingsSelector));
+            var columnHeaderSelector = $".//div[@role='presentation']/span[text()='{columnName}']";
+            Driver.MouseHover(By.XPath(columnHeaderSelector));
             Driver.WaitWhileControlIsNotDisplayed(By.XPath(columnSettingsSelector));
             Driver.FindElement(By.XPath(columnSettingsSelector)).Click();
         }
@@ -56,6 +57,5 @@ namespace DashworksTestAutomation.Pages.Evergreen.AdminDetailsPages
             Driver.WaitWhileControlIsNotDisplayed(By.XPath(TeamNameSelector));
             Driver.FindElement(By.XPath(TeamNameSelector)).Click();
         }
-
     }
 }
