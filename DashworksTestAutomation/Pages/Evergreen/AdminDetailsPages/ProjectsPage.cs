@@ -46,11 +46,14 @@ namespace DashworksTestAutomation.Pages.Evergreen.AdminDetailsPages
         [FindsBy(How = How.XPath, Using = ".//button[@class='button-small mat-raised-button mat-accent ng-star-inserted']")]
         public IWebElement DeleteButtonOnPage { get; set; }
 
-        [FindsBy(How = How.XPath, Using = ".//div[@class='inline-tip ng-star-inserted']")]
+        [FindsBy(How = How.XPath, Using = ".//div[@class='ng-star-inserted inline-tip']")]
         public IWebElement DeleteWarningMessage { get; set; }
 
         [FindsBy(How = How.XPath, Using = ".//button[@class='btn mat-button ng-star-inserted']")]
         public IWebElement DeleteButtonInWarningMessage { get; set; }
+
+        [FindsBy(How = How.XPath, Using = ".//div[@class='inline-success ng-star-inserted']")]
+        public IWebElement SuccessDeleteMessage { get; set; }
 
         public override List<By> GetPageIdentitySelectors()
         {

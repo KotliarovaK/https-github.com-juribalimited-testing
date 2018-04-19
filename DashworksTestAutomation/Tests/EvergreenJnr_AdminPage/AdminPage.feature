@@ -117,7 +117,7 @@ Scenario: EvergreenJnr_AdminPage_CheckThatWarningMessageIsDisplayedAfterDeleting
 	Then Update Project button is disabled
 	Then Delete "TestProject" Project in the Administration
 
-@Evergreen @Admin @EvergreenJnr_AdminPage @AdminPage @DAS11977 @DAS11959 @DAS11931
+@Evergreen @Admin @EvergreenJnr_AdminPage @AdminPage @DAS11977 @DAS11959
 Scenario: EvergreenJnr_AdminPage_CheckThatAfterApplyingDoNotIncludeDeviceOwnersListHas0ItemsInTheUsersTab
 	When User clicks Admin on the left-hand menu
 	Then Admin page should be displayed to the user
@@ -136,12 +136,29 @@ Scenario: EvergreenJnr_AdminPage_CheckThatAfterApplyingDoNotIncludeDeviceOwnersL
 	And User navigates to the "Project Scope Changes" tab on the Project details page
 	And User clicks "Users" tab in the Project Scope Changes section 
 	Then "Users to add (0 of 0 selected)" is displayed to the user in the Project Scope Changes section
+	Then Delete "TestProject1596" Project in the Administration
+
+@Evergreen @Admin @EvergreenJnr_AdminPage @AdminPage @DAS11931
+Scenario Outline: EvergreenJnr_AdminPage_CheckThatProjectsAreDeletedSuccessfullyAndThereAreNoConsoleErrors
 	When User clicks Admin on the left-hand menu
 	Then Admin page should be displayed to the user
 	When User click "Projects" link on the Admin page
 	Then "Projects" page should be displayed to the user
-	When User enters "TestProject1596" text in the Search field for "Project" column
+	When User clicks Create Project button
+	Then Create Project page should be displayed to the user
+	And User enters "<ProjectName>" in the Project Name field
+	And User select "<ScopeList>" in the Scope Project dropdown
+	When User clicks Create Project button
+	When User click "Projects" link on the Admin page
+	Then "Projects" page should be displayed to the user
+	When User enters "<ProjectName>" text in the Search field for "Project" column
 	When User selects all rows on the Projects page
 	When User removes selected Project
 	Then Success message with "The selected project has been deleted" text is displayed on the Projects page
-	Then There are no errors in the browser console
+	#Then There are no errors in the browser console
+
+	Examples:
+	| ProjectName     | ScopeList     |
+	| TestProject1626 | All Devices   |
+	| TestProject7586 | All Users     |
+	| TestProject7511 | All Mailboxes |
