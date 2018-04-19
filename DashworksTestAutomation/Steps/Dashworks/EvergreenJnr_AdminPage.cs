@@ -268,11 +268,34 @@ namespace DashworksTestAutomation.Steps.Dashworks
             page.OpenColumnSettingsByName(columnName);
         }
 
-        [When(@"User perform search for ""(.*)"" column by ""(.*)""  on the Teams Page")]
-        public void WhenUserPerformSearchForColumnByOnTheTeamsPage(string searchText, string columnName)
+        [When(@"User clicks Filter button in the Column Settings panel on the Teams Page")]
+        public void WhenUserClicksFilterButtonInTheColumnSettingsPanelOnTheTeamsPage()
+        {
+            var menu = _driver.NowAt<TeamsPage>();
+            _driver.WaitWhileControlIsNotDisplayed<TeamsPage>(() => menu.FilterButton);
+            menu.FilterButton.Click();
+        }
+
+        [When(@"User enters ""(.*)"" text in the Search field for ""(.*)"" column on the Teams page")]
+        public void WhenUserEntersTextInTheSearchFieldForColumnOnTheTeamsPage(string text, string columnName)
         {
             var filterElement = _driver.NowAt<TeamsPage>();
-            filterElement.GetSearchByColumnName(searchText, (columnName));
+            filterElement.GetSearchFieldByColumnName((columnName), text);
+        }
+
+        [When(@"User clicks content from ""(.*)"" column on the Teams page")]
+        public void WhenUserClicksContentFromColumnOnTheTeamsPage(string columnName)
+        {
+            var tableElement = _driver.NowAtWithoutWait<TeamsPage>();
+            tableElement.ClickContentByColumnName(columnName);
+            _driver.WaitForDataLoading();
+        }
+
+        [Then(@"""(.*)"" team details is displayed to the user")]
+        public void ThenTeamDetailsIsDisplayedToTheUser(string teamName)
+        {
+            var teamElement = _driver.NowAt<TeamsPage>();
+            Assert.IsTrue(teamElement.AppropriateTeamName(teamName), $"{teamName} is not displayed on the Teams page");
         }
 
         [When(@"User clicks Create Project button")]
@@ -315,8 +338,8 @@ namespace DashworksTestAutomation.Steps.Dashworks
             Assert.IsTrue(Convert.ToBoolean(button.CreateProjectButtonOnCreateProjectPage.GetAttribute("disabled")), "Create Project button is active");
         }
 
-        [When(@"User enters ""(.*)"" text in the Search field for ""(.*)"" column")]
-        public void WhenUserEntersTextInTheSearchFieldForColumn(string text, string columnName)
+        [When(@"User enters ""(.*)"" text in the Search field for ""(.*)"" column on the Projects page")]
+        public void WhenUserEntersTextInTheSearchFieldForColumnOnTheProjectsPage(string text, string columnName)
         {
             var searchElement = _driver.NowAt<ProjectsPage>();
             searchElement.GetSearchFieldByColumnName((columnName), text);

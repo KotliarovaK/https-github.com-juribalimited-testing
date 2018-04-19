@@ -10,7 +10,7 @@ namespace DashworksTestAutomation.Pages.Evergreen.AdminDetailsPages
 {
     internal class TeamsPage : SeleniumBasePage
     {
-        [FindsBy(How = How.XPath, Using = ".//h1[text()='Teams']")]
+        [FindsBy(How = How.XPath, Using = ".//div[@class='title-container']")]
         public IWebElement TeamsPageTitle { get; set; }
 
         [FindsBy(How = How.XPath, Using = ".//span[text()='CREATE TEAM']")]
@@ -21,6 +21,9 @@ namespace DashworksTestAutomation.Pages.Evergreen.AdminDetailsPages
 
         [FindsBy(How = How.XPath, Using = ".//label[text()='Team Name']/ancestor::div[@class='form-item']//input")]
         public IWebElement TeamNameField { get; set; }
+
+        [FindsBy(How = How.XPath, Using = ".//span[@class='ag-tab']//span[@class='ag-icon ag-icon-filter']")]
+        public IWebElement FilterButton { get; set; }
 
         [FindsBy(How = How.XPath, Using = ".//textarea[@placeholder='Team Description']")]
         public IWebElement TeamDescriptionField { get; set; }
@@ -55,13 +58,29 @@ namespace DashworksTestAutomation.Pages.Evergreen.AdminDetailsPages
             return columnNumber;
         }
 
-        public void GetSearchByColumnName(string columnName, string searchText)
+        public void GetSearchFieldByColumnName(string columnName, string text)
         {
             By byControl =
-                By.XPath($".//div[@class='ag-header-row']/div[2]/div[{GetColumnNumberByName(columnName)}][@aria-hidden='true']");
+                By.XPath($".//div[@role='presentation']/div[2]/div[{GetColumnNumberByName(columnName)}]//div[@class='ag-floating-filter-full-body']//input");
             Driver.WaitForDataLoading();
+            Driver.WaitWhileControlIsNotDisplayed(byControl);
             Driver.FindElement(byControl).Click();
-            Driver.FindElement(byControl).SendKeys(searchText);
+            Driver.FindElement(byControl).SendKeys(text);
+        }
+
+        public void ClickContentByColumnName(string columnName)
+        {
+            By byControl =
+                By.XPath($".//div[@class='ag-body-container']/div[1]/div[{GetColumnNumberByName(columnName)}]//a");
+
+            Driver.WaitForDataLoading();
+            Driver.WaitWhileControlIsNotDisplayed(byControl);
+            Driver.FindElement(byControl).Click();
+        }
+
+        public bool AppropriateTeamName(string teamName)
+        {
+            return Driver.IsElementDisplayed(By.XPath($".//h1[text()='{teamName}']"));
         }
 
         public void OpenColumnSettingsByName(string columnName)
