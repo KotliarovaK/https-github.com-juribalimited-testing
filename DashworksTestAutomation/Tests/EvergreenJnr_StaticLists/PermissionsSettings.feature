@@ -8,11 +8,11 @@ Background: Pre-Conditions
 
 @Evergreen @Users @EvergreenJnr_StaticLists @PermissionsSettings @DAS10945 @DAS11553 @DAS10880 @DAS12152 @Delete_Newly_Created_List
 Scenario: EvergreenJnr_UsersList_CheckThatNotOwnerUsersDontHavePermissionsToUpdateStaticList
-	When User create static list with "Static List TestName" name on "Users" page with following items
+	When User create static list with "Static List TestName23" name on "Users" page with following items
 	| ItemName |
 	|          |
 	#And User create static list with "Static List TestName" name
-	Then "Static List TestName" list is displayed to user
+	Then "Static List TestName23" list is displayed to user
 	When User clicks the List Details button
 	Then List details panel is displayed to the user
 	When User select "Everyone can see" sharing option

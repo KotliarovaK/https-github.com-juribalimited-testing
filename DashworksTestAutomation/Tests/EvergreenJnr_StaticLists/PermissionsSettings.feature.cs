@@ -124,9 +124,9 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_StaticLists
                         "ItemName"});
             table1.AddRow(new string[] {
                         ""});
-            testRunner.When("User create static list with \"Static List TestName\" name on \"Users\" page with fol" +
-                    "lowing items", ((string)(null)), table1, "When ");
-            testRunner.Then("\"Static List TestName\" list is displayed to user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+            testRunner.When("User create static list with \"Static List TestName23\" name on \"Users\" page with f" +
+                    "ollowing items", ((string)(null)), table1, "When ");
+            testRunner.Then("\"Static List TestName23\" list is displayed to user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
             testRunner.When("User clicks the List Details button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
             testRunner.Then("List details panel is displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
             testRunner.When("User select \"Everyone can see\" sharing option", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
