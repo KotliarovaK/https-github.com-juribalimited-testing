@@ -34,6 +34,24 @@ namespace DashworksTestAutomation.Pages.Evergreen.AdminDetailsPages
         [FindsBy(How = How.XPath, Using = ".//input[@role='combobox']")]
         public IWebElement ScopeProjectField { get; set; }
 
+        [FindsBy(How = How.XPath, Using = ".//span[@class='ag-header-select-all']")]
+        public IWebElement SelectAllProjectsCheckbox { get; set; }
+
+        [FindsBy(How = How.XPath, Using = ".//div[@class='mat-select-value']")]
+        public IWebElement ActionsButton { get; set; }
+
+        [FindsBy(How = How.XPath, Using = ".//span[@class='mat-option-text']")]
+        public IWebElement DeleteProjectButtonInActions { get; set; }
+
+        [FindsBy(How = How.XPath, Using = ".//button[@class='button-small mat-raised-button mat-accent ng-star-inserted']")]
+        public IWebElement DeleteButtonOnPage { get; set; }
+
+        [FindsBy(How = How.XPath, Using = ".//div[@class='inline-tip ng-star-inserted']")]
+        public IWebElement DeleteWarningMessage { get; set; }
+
+        [FindsBy(How = How.XPath, Using = ".//button[@class='btn mat-button ng-star-inserted']")]
+        public IWebElement DeleteButtonInWarningMessage { get; set; }
+
         public override List<By> GetPageIdentitySelectors()
         {
             Driver.WaitForDataLoading();
@@ -77,6 +95,11 @@ namespace DashworksTestAutomation.Pages.Evergreen.AdminDetailsPages
         public bool ActiveProjectByName(string projectName)
         {
             return Driver.IsElementDisplayed(By.XPath($".//h1[text()='{projectName}']"));
+        }
+
+        public bool SuccessDeletingMessage(string textMessage)
+        {
+            return Driver.IsElementDisplayed(By.XPath($".//div[text()='{textMessage}']"));
         }
 
         public bool SelectedItemInProjectScopeChangesSection(string text)

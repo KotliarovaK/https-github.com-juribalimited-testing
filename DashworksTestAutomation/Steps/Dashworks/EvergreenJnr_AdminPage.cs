@@ -301,6 +301,31 @@ namespace DashworksTestAutomation.Steps.Dashworks
             searchElement.GetSearchFieldByColumnName((columnName), text);
         }
 
+        [When(@"User selects all rows on the Projects page")]
+        public void WhenUserSelectsAllRowsOnTheProjectsPage()
+        {
+            var checkbox = _driver.NowAt<ProjectsPage>();
+            checkbox.SelectAllProjectsCheckbox.Click();
+        }
+
+        [When(@"User removes selected Project")]
+        public void WhenUserRemovesSelectedProject()
+        {
+            var projectElement = _driver.NowAt<ProjectsPage>();
+            projectElement.ActionsButton.Click();
+            projectElement.DeleteProjectButtonInActions.Click();
+            projectElement.DeleteButtonOnPage.Click();
+            _driver.WaitWhileControlIsNotDisplayed<ProjectsPage>(() => projectElement.DeleteWarningMessage);
+            projectElement.DeleteButtonInWarningMessage.Click();
+        }
+
+        [Then(@"Success message with ""(.*)"" text is displayed on the Projects page")]
+        public void ThenSuccessMessageWithTextIsDisplayedOnTheProjectsPage(string textMessage)
+        {
+            var projectElement = _driver.NowAt<ProjectsPage>();
+            Assert.IsTrue(projectElement.SuccessDeletingMessage(textMessage), $"{textMessage} is not displayed on the Project page");
+        }
+
         [Then(@"Create Bucket button is disabled")]
         public void ThenCreateBucketButtonIsDisabled()
         {
