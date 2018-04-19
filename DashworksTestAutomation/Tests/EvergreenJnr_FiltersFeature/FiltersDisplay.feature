@@ -102,7 +102,7 @@ Scenario: EvergreenJnr_DevicesList_CheckThatAddColumnOptionIsNotAvailableForAppl
 	Then "Devices" list should be displayed to the user
 	When User clicks the Filters button
 	Then Filters panel is displayed to the user
-	When user select "Computer Warranty" filter
+	When User selects "Computer Warranty" filter from "Application Custom Fields" category
 	Then "Add column" checkbox is not displayed
 
 @Evergreen @AllLisrs @Evergreen_FiltersFeature @FiltersDisplay @DAS10771
@@ -531,7 +531,8 @@ Scenario Outline: EvergreenJnr_DevicesList_CheckThatCustomFiltersAreContainsAllE
 	Then "Devices" list should be displayed to the user
 	When User clicks the Filters button
 	Then Filters panel is displayed to the user
-	When user select "<FilterName>" filter
+	#When user select "<FilterName>" filter
+	When User selects "<FilterName>" filter from "Application Custom Fields" category
 	Then Associations is displayed in the filter
 	| Associations                   |
 	| Used on device                 |
