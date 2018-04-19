@@ -231,10 +231,10 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>ActionsPanel.feature</DependentUpon>
     </Compile>
-    <Compile Include="Tests\EvergreenJnr_AdminPage\AdminePage.feature.cs">
+    <Compile Include="Tests\EvergreenJnr_AdminPage\AdminPage.feature.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>AdminePage.feature</DependentUpon>
+      <DependentUpon>AdminPage.feature</DependentUpon>
     </Compile>
     <Compile Include="Tests\EvergreenJnr_BaseDashboardPage\BaseDashboardPage.feature.cs">
       <AutoGen>True</AutoGen>
@@ -367,9 +367,9 @@
       <Generator>SpecFlowSingleFileGenerator</Generator>
       <LastGenOutput>ActionsPanel.feature.cs</LastGenOutput>
     </None>
-    <None Include="Tests\EvergreenJnr_AdminPage\AdminePage.feature">
+    <None Include="Tests\EvergreenJnr_AdminPage\AdminPage.feature">
       <Generator>SpecFlowSingleFileGenerator</Generator>
-      <LastGenOutput>AdminePage.feature.cs</LastGenOutput>
+      <LastGenOutput>AdminPage.feature.cs</LastGenOutput>
     </None>
     <None Include="Tests\EvergreenJnr_BaseDashboardPage\BaseDashboardPage.feature">
       <Generator>SpecFlowSingleFileGenerator</Generator>

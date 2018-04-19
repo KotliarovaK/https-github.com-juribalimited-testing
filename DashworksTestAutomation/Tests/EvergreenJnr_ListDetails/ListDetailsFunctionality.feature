@@ -90,22 +90,22 @@ Scenario Outline: EvergreenJnr_AllLists_CheckThatFavoriteAListWorkingCorrectlyFo
 	When User clicks the Actions button
 	Then Actions panel is displayed to the user
 	When User select all rows
-	And User create static list with "Static List TestName" name
+	And User create static list with "Static List TestName36" name
 	#Workaround for DAS-11570. Remove after fix
 	#And User navigates to the "Static List TestName" list
 	When User clicks the List Details button
 	Then List details panel is displayed to the user
 	When User mark list as favorite
 	When User navigates to the "<ListToNavigate>" list
-	Then Star icon is displayed for "Static List TestName" list
-	When User navigates to the "Static List TestName" list
-	Then Star icon is not displayed for "Static List TestName" list
+	Then Star icon is displayed for "Static List TestName36" list
+	When User navigates to the "Static List TestName36" list
+	Then Star icon is not displayed for "Static List TestName36" list
 	When User clicks the List Details button
 	Then List details panel is displayed to the user
 	When User mark list as unfavorite
-	Then Star icon is not displayed for "Static List TestName" list
+	Then Star icon is not displayed for "Static List TestName36" list
 	When User navigates to the "<ListToNavigate>" list
-	Then Star icon is not displayed for "Static List TestName" list
+	Then Star icon is not displayed for "Static List TestName36" list
 
 Examples: 
 	| PageName     | ListToNavigate   |
@@ -439,7 +439,7 @@ Scenario: EvergreenJnr_AllLists_CheckDisplayingListDeletionWarningMessageForDepe
 	When User clicks Settings button in the list panel
 	Then Settings panel is displayed to the user
 	When User clicks Delete in the list panel
-	Then ""Application1" " "list has 1 list(s) that are dependent on it, and will be permanently deleted" message is displayed in the lists panel
+	Then "Application1" list "list has 1 list(s) that are dependent on it, and will be permanently deleted" message is displayed in the list panel
 	When User removes custom list with "Application1" name
 	And User clicks "Devices" on the left-hand menu
 	Then "Devices" list should be displayed to the user
@@ -471,7 +471,7 @@ Scenario: EvergreenJnr_AllLists_CheckDisplayingListDeletionWarningMessageForDepe
 	When User clicks Settings button in the list panel
 	Then Settings panel is displayed to the user
 	When User clicks Delete in the list panel
-	Then ""Application2" " "list has 1 list(s) that are dependent on it, and will be permanently deleted" message is displayed in the lists panel
+	Then "Application2" list "list has 1 list(s) that are dependent on it, and will be permanently deleted" message is displayed in the list panel
 	When User removes custom list with "Application2" name
 	And User clicks "Devices" on the left-hand menu
 	Then "Devices" list should be displayed to the user
@@ -511,7 +511,7 @@ Scenario: EvergreenJnr_AllLists_CheckDisplayingListDeletionWarningMessageForDepe
 	When User clicks Settings button in the list panel
 	Then Settings panel is displayed to the user
 	When User clicks Delete in the list panel
-	Then ""Application3" " "list has 2 list(s) that are dependent on it, and will be permanently deleted" message is displayed in the lists panel
+	Then "Application3" list "list has 2 list(s) that are dependent on it, and will be permanently deleted" message is displayed in the list panel
 	When User removes custom list with "Application3" name
 	And User clicks "Devices" on the left-hand menu
 	Then "Devices" list should be displayed to the user
@@ -547,7 +547,7 @@ Scenario: EvergreenJnr_AllLists_CheckDisplayingListDeletionWarningMessageForTwoD
 	When User clicks Settings button in the list panel
 	Then Settings panel is displayed to the user
 	When User clicks Delete in the list panel
-	Then ""Application4" " "list has 1 list(s) that are dependent on it, and will be permanently deleted" message is displayed in the lists panel
+	Then "Application4" list "list has 1 list(s) that are dependent on it, and will be permanently deleted" message is displayed in the list panel
 	When User removes custom list with "Application4" name
 	And User clicks "Devices" on the left-hand menu
 	Then "Devices" list should be displayed to the user

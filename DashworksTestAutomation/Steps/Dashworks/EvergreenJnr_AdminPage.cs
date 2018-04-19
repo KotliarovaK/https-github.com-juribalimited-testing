@@ -88,7 +88,7 @@ namespace DashworksTestAutomation.Steps.Dashworks
         public void ThenProjectIsDisplayedToUser(string projectName)
         {
             var page = _driver.NowAt<ProjectsPage>();
-            Assert.IsTrue(page.ActiveProjectByName(projectName), $"{projectName} is not displayed on the  Project page");
+            Assert.IsTrue(page.ActiveProjectByName(projectName), $"{projectName} is not displayed on the Project page");
         }
 
         [When(@"User navigates to the ""(.*)"" tab on the Project details page")]
@@ -99,11 +99,32 @@ namespace DashworksTestAutomation.Steps.Dashworks
             _driver.WaitForDataLoading();
         }
 
+        [When(@"User clicks ""(.*)"" tab in the Project Scope Changes section")]
+        public void WhenUserClicksTabInTheProjectScopeChangesSection(string tabName)
+        {
+            var projectTabs = _driver.NowAt<ProjectsPage>();
+            projectTabs.ClickToTabByNameProjectScopeChanges(tabName);
+        }
+
+        [Then(@"""(.*)"" is displayed to the user in the Project Scope Changes section")]
+        public void ThenIsDisplayedToTheUserInTheProjectScopeChangesSection(string text)
+        {
+            var page = _driver.NowAt<ProjectsPage>();
+            Assert.IsTrue(page.SelectedItemInProjectScopeChangesSection(text), $"{text} is not displayed in the Project Scope Changes section");
+        }
+
         [Then(@"Warning message with ""(.*)"" text is displayed on the Project details page")]
         public void ThenWarningMessageWithTextIsDisplayedOnTheProjectDetailsPage(string text)
         {
             var page = _driver.NowAt<ProjectsPage>();
             Assert.IsTrue(page.WarningMessageProjectPage(text), "Warning Message is not displayed");
+        }
+
+        [When(@"User select ""(.*)"" checkbox on the Project details page")]
+        public void WhenUserSelectCheckboxOnTheProjectDetailsPage(string checkboxName)
+        {
+            var checkbox = _driver.NowAt<ProjectsPage>();
+            checkbox.SelectCheckboxByName(checkboxName);
         }
 
         [Then(@"Update Project button is disabled")]
@@ -292,6 +313,39 @@ namespace DashworksTestAutomation.Steps.Dashworks
             var button = _driver.NowAt<ProjectsPage>();
             _driver.WaitWhileControlIsNotDisplayed<ProjectsPage>(() => button.CreateProjectButton);
             Assert.IsTrue(Convert.ToBoolean(button.CreateProjectButtonOnCreateProjectPage.GetAttribute("disabled")), "Create Project button is active");
+        }
+
+        [When(@"User enters ""(.*)"" text in the Search field for ""(.*)"" column")]
+        public void WhenUserEntersTextInTheSearchFieldForColumn(string text, string columnName)
+        {
+            var searchElement = _driver.NowAt<ProjectsPage>();
+            searchElement.GetSearchFieldByColumnName((columnName), text);
+        }
+
+        [When(@"User selects all rows on the Projects page")]
+        public void WhenUserSelectsAllRowsOnTheProjectsPage()
+        {
+            var checkbox = _driver.NowAt<ProjectsPage>();
+            checkbox.SelectAllProjectsCheckbox.Click();
+        }
+
+        [When(@"User removes selected Project")]
+        public void WhenUserRemovesSelectedProject()
+        {
+            var projectElement = _driver.NowAt<ProjectsPage>();
+            projectElement.ActionsButton.Click();
+            projectElement.DeleteProjectButtonInActions.Click();
+            projectElement.DeleteButtonOnPage.Click();
+            _driver.WaitWhileControlIsNotDisplayed<ProjectsPage>(() => projectElement.DeleteWarningMessage);
+            projectElement.DeleteButtonInWarningMessage.Click();
+        }
+
+        [Then(@"Success message with ""(.*)"" text is displayed on the Projects page")]
+        public void ThenSuccessMessageWithTextIsDisplayedOnTheProjectsPage(string textMessage)
+        {
+            var projectElement = _driver.NowAt<ProjectsPage>();
+            _driver.WaitWhileControlIsNotDisplayed<ProjectsPage>(() => projectElement.SuccessDeleteMessage);
+            Assert.IsTrue(projectElement.SuccessDeletingMessage(textMessage), $"{textMessage} is not displayed on the Project page");
         }
 
         [Then(@"Create Bucket button is disabled")]
