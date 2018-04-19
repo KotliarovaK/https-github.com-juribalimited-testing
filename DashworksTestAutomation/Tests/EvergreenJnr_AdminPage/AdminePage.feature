@@ -116,31 +116,3 @@ Scenario: EvergreenJnr_AdminPage_CheckThatWarningMessageIsDisplayedAfterDeleting
 	Then Warning message with "The scope for this project refers to a deleted list, this must be updated before proceeding" text is displayed on the Project details page
 	Then Update Project button is disabled
 	Then Delete "TestProject" Project in the Administration
-
-@Evergreen @Admin @EvergreenJnr_AdminPage @AdminPage @DAS11762 @DAS12009
-Scenario: EvergreenJnr_AdminPage_CheckThatNoConsoleErrorsAreDisplayedWhenDeleteDataFromFilterTextFieldForBuckets
-	When User clicks Admin on the left-hand menu
-	Then Admin page should be displayed to the user
-	When User click "Buckets" link on the Admin page
-	Then "Buckets" page should be displayed to the user
-	When User have opened Column Settings for "Bucket" column on the Buckets Page
-	And User clicks Filter button on the Column Settings panel
-	Then User enters "123455465" text in the Filter field
-	When User clears Filter field
-	Then There are no errors in the browser console
-
-@Evergreen @Admin @EvergreenJnr_AdminPage @AdminPage @DAS11762 @DAS12009
-Scenario: EvergreenJnr_AdminPage_CheckThatNoConsoleErrorsAreDisplayedWhenDeleteDataFromFilterTextFieldForTeams
-	When User clicks Admin on the left-hand menu
-	Then Admin page should be displayed to the user
-	When User click "Teams" link on the Admin page
-	Then "Teams" page should be displayed to the user
-	When User have opened Column Settings for "Team" column on the Teams Page
-	And User clicks Filter button on the Column Settings panel
-	Then User enters "123455465" text in the Filter field
-	When User clears Filter field
-	Then There are no errors in the browser console
-	#When User perform search for "Team" column by "Admin"  on the Teams Page
-	#When User perform search by "Administrator.Users.dwlabs.local"
-	#When User click content from "Hostname" column
-	#When User clicks String Filter button for "Category" column
