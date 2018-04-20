@@ -21,15 +21,15 @@ Scenario: EvergreenJnr_DevicesList_CheckThatDynamicFiltersAreClearedForStaticLis
 	And "5,130" rows are displayed in the agGrid
 	When User navigates to the "All Devices" list
 	Then "Devices" list should be displayed to the user
-	When User create static list with "Static List TestName" name on "Devices" page with following items
+	When User create static list with "Static List TestName14" name on "Devices" page with following items
 	| ItemName       |
 	| 001BAQXT6JWFPI |
 	| 00HA7MKAVVFDAV |
-	Then "Static List TestName" list is displayed to user
+	Then "Static List TestName14" list is displayed to user
 	And "2" rows are displayed in the agGrid
 	When User navigates to the "TestListE5FC4A" list
 	Then "5,130" rows are displayed in the agGrid
-	When User navigates to the "Static List TestName" list
+	When User navigates to the "Static List TestName14" list
 	Then "2" rows are displayed in the agGrid
 	Then Filters Button is disabled
 
