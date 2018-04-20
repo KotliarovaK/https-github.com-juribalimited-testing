@@ -34,6 +34,9 @@ namespace DashworksTestAutomation.Pages.Evergreen.AdminDetailsPages
         [FindsBy(How = How.XPath, Using = ".//div[contains(@class, 'inline-error ng-star-inserted')]")]
         public IWebElement ErrorMessageTeamPage { get; set; }
 
+        [FindsBy(How = How.XPath, Using = ".//div[@class='ag-body-container']/div")]
+        public IWebElement TableContent { get; set; }
+
         public override List<By> GetPageIdentitySelectors()
         {
             Driver.WaitForDataLoading();

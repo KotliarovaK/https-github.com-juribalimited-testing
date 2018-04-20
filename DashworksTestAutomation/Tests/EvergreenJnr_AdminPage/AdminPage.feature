@@ -191,3 +191,7 @@ Scenario: EvergreenJnr_AdminPage_CheckThatNoConsoleErrorsAreDisplayedWhenDeleteD
 	Then "Administrative Team" team details is displayed to the user
 	When User have opened Column Settings for "Username" column on the Teams Page
 	And User clicks Filter button in the Column Settings panel on the Teams Page
+	Then User enters "123455465" text in the Filter field
+	When User clears Filter field
+	Then Content is present in the table on the Teams Page
+	Then There are no errors in the browser console

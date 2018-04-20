@@ -280,6 +280,13 @@ namespace DashworksTestAutomation.Steps.Dashworks
             menu.FilterButton.Click();
         }
 
+        [Then(@"Content is present in the table on the Teams Page")]
+        public void ThenContentIsPresentInTheTableOnTheTeamsPage()
+        {
+            var tableElement = _driver.NowAt<TeamsPage>();
+            Assert.IsTrue(tableElement.TableContent.Displayed(), "Table is empty");
+        }
+
         [When(@"User enters ""(.*)"" text in the Search field for ""(.*)"" column on the Teams page")]
         public void WhenUserEntersTextInTheSearchFieldForColumnOnTheTeamsPage(string text, string columnName)
         {
