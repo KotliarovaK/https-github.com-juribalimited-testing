@@ -209,3 +209,27 @@ Scenario: EvergreenJnr_AdminPage_CheckThatYouCanNotDeleteTheDefaultBucketWarning
 	Then User select "Delete Bucket" in the Actions dropdown on the Buckets page
 	Then User clicks Delete button on the Buckets page
 	Then "You can not delete the default bucket" warning message is not displayed on the Buckets page
+
+@Evergreen @Admin @EvergreenJnr_AdminPage @AdminPage @DAS12182 @Not_Run
+Scenario: EvergreenJnr_AdminPage_CheckThatNumberOfApplicationsInProjectScopeIsCorrectlyUpdated
+	When User clicks Admin on the left-hand menu
+	Then Admin page should be displayed to the user
+	When User click "Projects" link on the Admin page
+	Then "Projects" page should be displayed to the user
+	When User clicks Create Project button
+	Then Create Project page should be displayed to the user
+	And User enters "TestProject9512" in the Project Name field
+	And User select "All Users" in the Scope Project dropdown
+	When User clicks Create Project button
+	When User click "Projects" link on the Admin page
+	Then "Projects" page should be displayed to the user
+	When User clicks "TestProject9512" Project name
+	Then Project "TestProject9512" is displayed to user
+	When User navigates to the "Project Scope Changes" tab on the Project details page
+	And User clicks "Applications" tab in the Project Scope Changes section
+	Then "Applications to add (2081 of 2081 selected)" is displayed to the user in the Project Scope Changes section
+	When User navigates to the "Scope" tab on the Project details page
+	When User select "Do not include owned devices" checkbox on the Project details page
+	When User navigates to the "Project Scope Changes" tab on the Project details page
+	Then "Applications to add (247 of 247 selected)" is displayed to the user in the Project Scope Changes section
+	Then Delete "TestProject9512" Project in the Administration
