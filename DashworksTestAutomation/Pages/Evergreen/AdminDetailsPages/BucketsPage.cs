@@ -41,12 +41,21 @@ namespace DashworksTestAutomation.Pages.Evergreen.AdminDetailsPages
             };
         }
 
+        public void OpenColumnSettingsByName(string columnName)
+        {
+            string columnSettingsSelector =
+                $".//div[@role='presentation']/span[text()='{columnName}']/ancestor::div[@class='ag-header-cell ag-header-cell-sortable']//span[@ref='eMenu']";
+            var columnHeaderSelector = $".//div[@role='presentation']/span[text()='{columnName}']";
+            Driver.MouseHover(By.XPath(columnHeaderSelector));
+            Driver.WaitWhileControlIsNotDisplayed(By.XPath(columnSettingsSelector));
+            Driver.FindElement(By.XPath(columnSettingsSelector)).Click();
+        }
+
         public void SelectTeam(string teamName)
         {
             string TeamNameSelector = $".//span[@class='mat-option-text'][text()='{teamName}']";
             Driver.WaitWhileControlIsNotDisplayed(By.XPath(TeamNameSelector));
             Driver.FindElement(By.XPath(TeamNameSelector)).Click();
         }
-
     }
 }

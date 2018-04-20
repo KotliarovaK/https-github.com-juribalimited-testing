@@ -271,6 +271,7 @@ namespace DashworksTestAutomation.Steps.Dashworks
             var page = _driver.NowAt<ApplicationsDetailsTabsMenu>();
             Thread.Sleep(500);
             page.FilterSearchTextbox.ClearWithHomeButton(_driver);
+            page.BodyContainer.Click();
         }
 
         [When(@"User select ""(.*)"" checkbox on the Column Settings panel")]
@@ -341,7 +342,6 @@ namespace DashworksTestAutomation.Steps.Dashworks
                 if ((row["ColumnName"] != "Group Key" && row["ColumnName"] != "Category Key"))
                 {
                     var content = page.GetColumnIdContent(row["ColumnName"]);
-
                     Assert.IsTrue(content.Count(x => !string.IsNullOrEmpty(x)) > 0, "Newly added column is empty");
                 }
             }
