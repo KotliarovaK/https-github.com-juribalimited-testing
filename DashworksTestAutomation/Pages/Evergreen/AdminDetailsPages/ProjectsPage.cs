@@ -5,6 +5,7 @@ using OpenQA.Selenium;
 using OpenQA.Selenium.Support.PageObjects;
 using System.Collections.Generic;
 using System.Linq;
+using System.Threading;
 
 namespace DashworksTestAutomation.Pages.Evergreen.AdminDetailsPages
 {
