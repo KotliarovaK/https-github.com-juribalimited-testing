@@ -46,6 +46,12 @@ namespace DashworksTestAutomation.Pages.Evergreen
         [FindsBy(How = How.XPath, Using = ".//div[@class='chartContainer ng-star-inserted']")]
         public IWebElement GraphicInOpenedSection { get; set; }
 
+        public const string ItemImageSelector = ".//i";
+
+        public const string LinkSelector = ".//a";
+
+        public const string ColumnWithImageAndLinkSelector = ".//div[@col-id='userName'][@role='gridcell']";
+
         public override List<By> GetPageIdentitySelectors()
         {
             Driver.WaitForDataLoading();

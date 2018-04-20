@@ -87,11 +87,10 @@ namespace DashworksTestAutomation.Steps.Dashworks
         [Then(@"Image item from ""(.*)"" column is displayed to the user")]
         public void ThenImageItemFromColumnIsDisplayedToTheUser(string columnName)
         {
-            var tableElement = _driver.NowAtWithoutWait<BaseDashboardPage>();
-            var content = _driver.FindElements(By.XPath(".//div[@col-id='userName'][@role='gridcell']"));
+            var content = _driver.FindElements(By.XPath(DetailsPage.ColumnWithImageAndLinkSelector));
             foreach (var element in content)
             {
-                var image = element.FindElement(By.XPath(".//i"));
+                var image = element.FindElement(By.XPath(DetailsPage.ItemImageSelector));
                 Assert.IsTrue(image.Displayed(), "Image item is not found");
             }
         }
@@ -99,11 +98,10 @@ namespace DashworksTestAutomation.Steps.Dashworks
         [Then(@"Links from ""(.*)"" column is displayed to the user")]
         public void ThenLinksFromColumnIsDisplayedToTheUser(string columnName)
         {
-            var tableElement = _driver.NowAtWithoutWait<BaseDashboardPage>();
-            var content = _driver.FindElements(By.XPath(".//div[@col-id='userName'][@role='gridcell']"));
+            var content = _driver.FindElements(By.XPath(DetailsPage.ColumnWithImageAndLinkSelector));
             foreach (var element in content)
             {
-                var text = element.FindElement(By.XPath(".//a"));
+                var text = element.FindElement(By.XPath(DetailsPage.LinkSelector));
                 Assert.IsTrue(text.GetAttribute("href") != String.Empty);
             }
         }
@@ -273,6 +271,7 @@ namespace DashworksTestAutomation.Steps.Dashworks
             var page = _driver.NowAt<ApplicationsDetailsTabsMenu>();
             Thread.Sleep(500);
             page.FilterSearchTextbox.ClearWithHomeButton(_driver);
+            page.BodyContainer.Click();
         }
 
         [When(@"User select ""(.*)"" checkbox on the Column Settings panel")]
@@ -343,7 +342,6 @@ namespace DashworksTestAutomation.Steps.Dashworks
                 if ((row["ColumnName"] != "Group Key" && row["ColumnName"] != "Category Key"))
                 {
                     var content = page.GetColumnIdContent(row["ColumnName"]);
-
                     Assert.IsTrue(content.Count(x => !string.IsNullOrEmpty(x)) > 0, "Newly added column is empty");
                 }
             }
