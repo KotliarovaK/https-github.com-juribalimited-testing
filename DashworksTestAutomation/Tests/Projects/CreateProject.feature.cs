@@ -137,7 +137,7 @@ namespace DashworksTestAutomation.Tests.Projects
             TechTalk.SpecFlow.Table table5 = new TechTalk.SpecFlow.Table(new string[] {
                         "StageName"});
             table5.AddRow(new string[] {
-                        "Test"});
+                        "AAA Test"});
             testRunner.Then("User create Stage", ((string)(null)), table5, "Then ");
             testRunner.When("User navigate to \"Tasks\" tab", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
             testRunner.Then("\"Manage Tasks\" page is displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
@@ -145,16 +145,14 @@ namespace DashworksTestAutomation.Tests.Projects
             TechTalk.SpecFlow.Table table6 = new TechTalk.SpecFlow.Table(new string[] {
                         "Name",
                         "Help",
-                        "StageName",
                         "ValueType",
                         "TaskValuesTemplateCheckbox"});
             table6.AddRow(new string[] {
                         "TestTask",
                         "Test",
-                        "Test",
                         "Radiobutton",
                         "false"});
-            testRunner.Then("User create Task", ((string)(null)), table6, "Then ");
+            testRunner.Then("User create Task for \"AAA Test\" Stage", ((string)(null)), table6, "Then ");
             testRunner.When("User navigate to \"Teams\" tab", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
             testRunner.Then("\"Manage Teams\" page is displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
             testRunner.When("User clicks \"Team\" create button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
@@ -162,7 +160,7 @@ namespace DashworksTestAutomation.Tests.Projects
                         "TeamName",
                         "ShortDescription"});
             table7.AddRow(new string[] {
-                        "TestTeam",
+                        "AAA TestTeam",
                         "Test"});
             testRunner.Then("User create Team", ((string)(null)), table7, "Then ");
             testRunner.When("User navigate to \"Groups\" tab", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
@@ -253,7 +251,46 @@ namespace DashworksTestAutomation.Tests.Projects
             testRunner.Then("User create Group", ((string)(null)), table13, "Then ");
             testRunner.When("User navigate to \"Teams\" tab", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
             testRunner.Then("\"Manage Teams\" page is displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-            testRunner.Then("in the \"\"(.*)\"\" team found \"\"(.*)\"\" groups", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+            testRunner.Then("groups is displayed in the \"AAA TestTeam\" team", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+            this.ScenarioCleanup();
+        }
+        
+        [NUnit.Framework.TestAttribute()]
+        [NUnit.Framework.DescriptionAttribute("Projects_checkSelfServiceandCapacityTabs")]
+        [NUnit.Framework.CategoryAttribute("Projects")]
+        [NUnit.Framework.CategoryAttribute("CreateProject")]
+        [NUnit.Framework.CategoryAttribute("Teams")]
+        public virtual void Projects_CheckSelfServiceandCapacityTabs()
+        {
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Projects_checkSelfServiceandCapacityTabs", new string[] {
+                        "Projects",
+                        "CreateProject",
+                        "Teams"});
+            this.ScenarioSetup(scenarioInfo);
+            testRunner.Given("User is on Dashworks Homepage", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
+            testRunner.Then("Login Page is displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+            testRunner.When("User provides the Login and Password and clicks on the login button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+            testRunner.Then("Dashworks homepage is displayed to the user in a logged in state", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+            testRunner.When("User navigate to Projects link", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+            testRunner.Then("\"Projects Home\" page is displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+            testRunner.When("User clicks create Project button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+            testRunner.Then("\"Create Project\" page is displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+            TechTalk.SpecFlow.Table table14 = new TechTalk.SpecFlow.Table(new string[] {
+                        "ProjectName",
+                        "ProjectShortName",
+                        "ProjectDescription",
+                        "ProjectType"});
+            table14.AddRow(new string[] {
+                        "TestProject",
+                        "Test",
+                        "Test",
+                        "Computer Scheduled Project"});
+            testRunner.When("User creates Project", ((string)(null)), table14, "When ");
+            testRunner.Then("\"Manage Project Details\" page is displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+            testRunner.When("User navigate to \"Self Service\" tab", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+            testRunner.Then("\"Manage Self Service\" page is displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+            testRunner.When("User update Details on Self Service tab", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+            testRunner.When("User navigate to \"\" button on selected tab", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
             this.ScenarioCleanup();
         }
     }

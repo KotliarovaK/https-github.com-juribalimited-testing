@@ -1,4 +1,5 @@
-﻿using System.ComponentModel;
+﻿using System.Collections.Generic;
+using System.ComponentModel;
 using DashworksTestAutomation.Extensions;
 
 namespace DashworksTestAutomation.DTO.Projects
@@ -16,13 +17,14 @@ namespace DashworksTestAutomation.DTO.Projects
         public StagePropertiesDto Stages { get; set; }
         public TaskPropertiesDto Tasks { get; set; }
         public TeamPropertiesDto TeamProperties { get; set; }
-        public GroupPropertiesDto GroupProperties { get; set; }
+        public List<GroupPropertiesDto> GroupProperties { get; set; }
         public MailTemplatePropertiesDto MailTemplateProperties { get; set; }
         public NewsDto News { get; set; }
 
         public ProjectDto()
         {
             DefaultLanguage = EnumExtensions.GetRandomValue<DefaultLanguageEnum>();
+            GroupProperties = new List<GroupPropertiesDto>();
         }
     }
 

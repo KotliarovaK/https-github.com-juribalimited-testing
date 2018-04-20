@@ -1,8 +1,10 @@
 ﻿using System;
+using System.Linq;
 using DashworksTestAutomation.DTO.Projects;
 using DashworksTestAutomation.Extensions;
 using DashworksTestAutomation.Pages.Projects;
 using DashworksTestAutomation.Utils;
+using NUnit.Framework;
 using OpenQA.Selenium.Remote;
 using TechTalk.SpecFlow;
 using TechTalk.SpecFlow.Assist;
@@ -58,6 +60,14 @@ namespace DashworksTestAutomation.Steps.Projects
             tab.GetTabElementByName(tabName).Click();
         }
 
+        [When(@"User navigate to ""(.*)"" button on selected tab")]
+        public void WhenUserNavigateToButtonOnSelectedTab(string tabName)
+        {
+            var tab = _driver.NowAt<BaseElements>();
+
+            tab.GetTabElementByNameOnSelectedTab(tabName).Click();
+        }
+
         [When(@"User clicks ""(.*)"" create button")]
         public void WhenUserClicksCreateButton(string buttonName)
         {
@@ -94,7 +104,7 @@ namespace DashworksTestAutomation.Steps.Projects
             page.SelectOnboardedApplications(_detailsDto.DefaultReadinessForOnboardedApplications);
             page.ShowLinkedObjects.SelectboxSelect(_detailsDto.DefaultValueForShowLinkedObjects.GetValue());
             page.ApplicationsTab1.SelectboxSelect(_detailsDto.DefaultViewForProjectObjectApplicationsTab1.GetValue());
-            //TODO DefaultViewForProjectObjectApplicationsTab2
+            page.ApplicationsTab2.SelectboxSelect(_detailsDto.DefaultViewForProjectObjectApplicationsTab2.GetValue());
             page.ApplicationRationalization.SelectboxSelect(_detailsDto.DefaultValueForApplicationRationalization.GetValue());
             page.OriginalApplicationColumnCheckbox.SetCheckboxState(_detailsDto.ShowOriginalColumn);
             page.IncludeSiteNameCheckbox.SetCheckboxState(_detailsDto.IncludeSiteName);
@@ -189,6 +199,7 @@ namespace DashworksTestAutomation.Steps.Projects
             var page = _driver.NowAt<GroupPropertiesPage>();
 
             table.CreateInstance<GroupPropertiesDto>().CopyPropertiesTo(_groupPropertiesDto);
+            _projectDto.GroupProperties.Add(_groupPropertiesDto);
 
             page.GroupName.SendKeys(_groupPropertiesDto.GroupName);
             page.OwnedByTeam.SelectboxSelect(_groupPropertiesDto.OwnedByTeam.GetValue());
@@ -226,10 +237,14 @@ namespace DashworksTestAutomation.Steps.Projects
             upd.UpdateButton.Click();
         }
 
-        //TODO Selector for Groups on Teams tab
-        [Then(@"in the ""(.*)"" team found ""(.*)"" groups")]
-        public void ThenInTheTeamFoundGroups(string teamName, int groups)
+        [Then(@"groups is displayed in the ""(.*)"" team")]
+        public void ThenGroupsIsDisplayedInTheTeam(string teamName)
         {
+            var groups = _driver.NowAt<TeamsPage>();
+
+            var groupsInTeam = _projectDto.GroupProperties.Count(x => x.Equals(teamName));
+
+            Assert.AreEqual(groupsInTeam, groups.GetGroupsCountByTeamName(teamName), "Number of groups is incorrect");
         }
     }
 }

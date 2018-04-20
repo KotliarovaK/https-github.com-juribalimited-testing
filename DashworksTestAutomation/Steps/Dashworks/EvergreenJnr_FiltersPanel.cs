@@ -143,7 +143,6 @@ namespace DashworksTestAutomation.Steps.Dashworks
         [When(@"User have create ""(.*)"" Values filter with column and following options:")]
         public void WhenUserHaveCreateValuesFilterWithColumnAndFollowingOptions(string operatorValue, Table table)
         {
-            var filterElement = _driver.NowAt<FiltersElement>();
             var filter = new ValueFilter(_driver, operatorValue, true, table);
             filter.Do();
         }

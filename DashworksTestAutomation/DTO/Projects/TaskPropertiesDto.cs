@@ -30,7 +30,6 @@ namespace DashworksTestAutomation.DTO.Projects
 
     public enum StageNameEnum
     {
-        [Description("[Select]")]
         Select,
         Test
     }
@@ -51,8 +50,6 @@ namespace DashworksTestAutomation.DTO.Projects
 
     public enum TaskObjectTypeEnum
     {
-        [Description("[Select]")]
-        Select,
         User,
         Computer,
         Application

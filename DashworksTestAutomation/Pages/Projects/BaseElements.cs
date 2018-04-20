@@ -41,6 +41,13 @@ namespace DashworksTestAutomation.Pages.Projects
             return Driver.FindElement(selector);
         }
 
+        public IWebElement GetTabElementByNameOnSelectedTab(string tabName)
+        {
+            var selector = By.XPath($".//a[@class='level1 static'][text()='{tabName}']");
+            Driver.WaitWhileControlIsNotDisplayed(selector);
+            return Driver.FindElement(selector);
+        }
+
         public IWebElement GetCreateButtonElementByName(string buttonName)
         {
             var selector = By.XPath($".//input[@value='Create {buttonName}']");

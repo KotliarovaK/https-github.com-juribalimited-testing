@@ -243,6 +243,7 @@
     <Compile Include="Pages\Projects\StagePropertiesPage.cs" />
     <Compile Include="Pages\Projects\TaskPropertiesPage.cs" />
     <Compile Include="Pages\Projects\TeamPropertiesPage.cs" />
+    <Compile Include="Pages\Projects\TeamsPage.cs" />
     <Compile Include="Steps\Projects\Projects_CreateProject.cs" />
     <Compile Include="Steps\Projects\Projects_Login.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
