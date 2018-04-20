@@ -265,6 +265,53 @@ namespace DashworksTestAutomation.Steps.Dashworks
             page.OpenColumnSettingsByName(columnName);
         }
 
+        [When(@"User enters ""(.*)"" text in the Search field for ""(.*)"" column on the Buckets page")]
+        public void WhenUserEntersTextInTheSearchFieldForColumnOnTheBucketsPage(string text, string columnName)
+        {
+            var filterElement = _driver.NowAt<BucketsPage>();
+            filterElement.GetSearchFieldByColumnName((columnName), text);
+        }
+
+        [When(@"User selects all rows on the Buckets page")]
+        public void WhenUserSelectsAllRowsOnTheBucketsPage()
+        {
+            var checkbox = _driver.NowAt<BucketsPage>();
+            checkbox.SelectAllProjectsCheckbox.Click();
+        }
+
+        [Then(@"User clicks on Actions button on the Buckets page")]
+        public void ThenUserClicksOnActionsButtonOnTheBucketsPage()
+        {
+            var button = _driver.NowAt<BucketsPage>();
+            _driver.WaitWhileControlIsNotDisplayed<BucketsPage>(() => button.ActionsButton);
+            button.ActionsButton.Click();
+            Logger.Write("Actions button was clicked");
+        }
+
+        [Then(@"User select ""(.*)"" in the Actions dropdown on the Buckets page")]
+        public void ThenUserSelectInTheActionsDropdownOnTheBucketsPage(string actionName)
+        {
+            var action = _driver.NowAt<BucketsPage>();
+            action.SelectActions(actionName);
+        }
+
+        [Then(@"User clicks Delete button on the Buckets page")]
+        public void ThenUserClicksDeleteButtonOnTheBucketsPage()
+        {
+            var button = _driver.NowAt<BucketsPage>();
+            _driver.WaitWhileControlIsNotDisplayed<BucketsPage>(() => button.ActionsButton);
+            button.DeleteButtonOnPage.Click();
+            Logger.Write("Delete button was clicked");
+        }
+
+        [Then(@"""(.*)"" warning message is not displayed on the Buckets page")]
+        public void ThenWarningMessageIsNotDisplayedOnTheBucketsPage(string warningText)
+        {
+            var message = _driver.NowAt<BucketsPage>();
+            Assert.IsFalse(message.WarningDeleteBucketMessage(warningText),
+                $"{warningText} warning message is displayed on the Buckets page");
+        }
+
         [When(@"User have opened Column Settings for ""(.*)"" column on the Teams Page")]
         public void WhenUserHaveOpenedColumnSettingsForColumnOnTheTeamsPage(string columnName)
         {
