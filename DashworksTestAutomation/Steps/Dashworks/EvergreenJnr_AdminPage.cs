@@ -6,6 +6,7 @@ using OpenQA.Selenium.Remote;
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using DashworksTestAutomation.DTO;
 using DashworksTestAutomation.Helpers;
 using DashworksTestAutomation.Pages.Evergreen.AdminDetailsPages;
 using DashworksTestAutomation.Utils;

@@ -310,7 +310,7 @@ Scenario Outline: EvergreenJnr_AllLists_CheckThatNoConsoleErrorsAreDisplayedWhen
 	And User navigates to the "<TabName>" tab
 	And User have opened Column Settings for "<SelectedColumn>" column in the Details Page table
 	And User clicks Filter button on the Column Settings panel
-	Then User enters "12345" text in the Filter field
+	Then User enters "123455465" text in the Filter field
 	When User clears Filter field
 	Then There are no errors in the browser console
 

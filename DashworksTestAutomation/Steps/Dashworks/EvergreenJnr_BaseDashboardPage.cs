@@ -169,7 +169,6 @@ namespace DashworksTestAutomation.Steps.Dashworks
             //}
         }
 
-
         [Then(@"full list content is displayed to the user")]
         public void ThenFullListContentIsDisplayedToTheUser()
         {
