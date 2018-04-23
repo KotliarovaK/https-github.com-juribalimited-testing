@@ -233,3 +233,38 @@ Scenario: EvergreenJnr_AdminPage_CheckThatNumberOfApplicationsInProjectScopeIsCo
 	When User navigates to the "Project Scope Changes" tab on the Project details page
 	Then "Applications to add (247 of 247 selected)" is displayed to the user in the Project Scope Changes section
 	Then Delete "TestProject9512" Project in the Administration
+
+@Evergreen @Admin @EvergreenJnr_AdminPage @AdminPage @DAS12154 @Delete_Newly_Created_List
+Scenario: EvergreenJnr_AdminPage_CheckThatWarningMessageIsNotDisplayedWhenDeletingListUsingInTheProjectThatWasDeleted
+	When User clicks "Devices" on the left-hand menu
+	Then "Devices" list should be displayed to the user
+	When User clicks the Filters button
+	Then Filters panel is displayed to the user
+	When User add "Compliance" filter where type is "Equals" with added column and following checkboxes:
+	| SelectedCheckboxes |
+	| Red                |
+	Then "Compliance" filter is added to the list
+	When User create dynamic list with "TestList0A78U9" name on "Devices" page
+	Then "TestList0A78U9" list is displayed to user
+	When User clicks Admin on the left-hand menu
+	Then Admin page should be displayed to the user
+	When User click "Projects" link on the Admin page
+	Then "Projects" page should be displayed to the user
+	When User clicks Create Project button
+	Then Create Project page should be displayed to the user
+	And User enters "TestProject9547" in the Project Name field
+	And User select "TestList0A78U9" in the Scope Project dropdown
+	When User clicks Create Project button
+	Then "Projects" page should be displayed to the user
+	When User enters "TestProject9547" text in the Search field for "Project" column on the Projects page
+	When User selects all rows on the Projects page
+	When User removes selected Project
+	When User clicks "Devices" on the left-hand menu
+	Then "Devices" list should be displayed to the user
+	When User navigates to the "TestList0A78U9" list
+	When User clicks Settings button in the list panel
+	Then Settings panel is displayed to the user
+	When User clicks Delete in the list panel
+	Then "list will be permanently deleted" message is displayed in the lists panel
+	Then User clicks Delete button on the warning message in the lists panel
+	Then no Warning message is displayed in the lists panel
