@@ -54,6 +54,14 @@ namespace DashworksTestAutomation.Steps.Dashworks
             filterElement.AddFilter(filterName);
         }
 
+        [When(@"User selects ""(.*)"" filter from ""(.*)"" category")]
+        public void WhenUserSelectsFilterFromCategory(string filterName, string categoryName)
+        {
+            var filterElement = _driver.NowAt<FiltersElement>();
+            filterElement.AddFilter(filterName, categoryName);
+        }
+
+
         [When(@"User enters ""(.*)"" text in Search field at Filters Panel")]
         public void WhenUserEntersTextInSearchFieldAtFiltersPanel(string searchedText)
         {

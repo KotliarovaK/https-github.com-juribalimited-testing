@@ -190,6 +190,7 @@
     <Compile Include="Helpers\DetailsSectionToUrlConvertor.cs" />
     <Compile Include="Helpers\FilterOperatorsConvertor.cs" />
     <Compile Include="Helpers\HttpClientHelper.cs" />
+    <Compile Include="Helpers\SortingHelper.cs" />
     <Compile Include="Pages\EvergreenDashboardsPage.cs" />
     <Compile Include="Pages\Evergreen\ActionsElement.cs" />
     <Compile Include="Pages\Evergreen\AdminDetailsPages\AdminLeftHandMenu.cs" />
@@ -250,6 +251,7 @@
     <Compile Include="Steps\Projects\Projects_Login.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Providers\Browser.cs" />
+    <Compile Include="Providers\Database.cs" />
     <Compile Include="Providers\ResourceFilesNamesProvider.cs" />
     <Compile Include="Providers\SauceLabsCredentialsProvider.cs" />
     <Compile Include="Providers\UserProvider.cs" />
