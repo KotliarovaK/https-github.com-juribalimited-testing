@@ -10,7 +10,7 @@ namespace DashworksTestAutomation.Pages.Evergreen.AdminDetailsPages
 {
     internal class BucketsPage : SeleniumBasePage
     {
-        [FindsBy(How = How.XPath, Using = ".//h1[text()='Buckets']")]
+        [FindsBy(How = How.XPath, Using = ".//a[text()='Administration']")]
         public IWebElement BucketPageTitle { get; set; }
 
         [FindsBy(How = How.XPath, Using = ".//span[text()='CREATE BUCKET']")]
@@ -42,6 +42,21 @@ namespace DashworksTestAutomation.Pages.Evergreen.AdminDetailsPages
 
         [FindsBy(How = How.XPath, Using = ".//div[contains(@class, 'inline-error ng-star-inserted')]")]
         public IWebElement ErrorMessageBucketsPage { get; set; }
+
+        [FindsBy(How = How.XPath, Using = ".//span[text()='ADD DEVICE']")]
+        public IWebElement AddDeviceButton { get; set; }
+
+        [FindsBy(How = How.XPath, Using = ".//span[text()='ADD DEVICES']")]
+        public IWebElement AddDevicesButton { get; set; }
+
+        [FindsBy(How = How.XPath, Using = ".//span[text()='ADD USER']")]
+        public IWebElement AddUserButton { get; set; }
+
+        [FindsBy(How = How.XPath, Using = ".//span[text()='ADD MAILBOX']")]
+        public IWebElement AddMailboxButton { get; set; }
+
+        [FindsBy(How = How.XPath, Using = ".//input[@placeholder='Search']")]
+        public IWebElement SearchTextbox { get; set; }
 
         public override List<By> GetPageIdentitySelectors()
         {
@@ -96,17 +111,44 @@ namespace DashworksTestAutomation.Pages.Evergreen.AdminDetailsPages
             Driver.FindElement(byControl).SendKeys(text);
         }
 
+        public void SelectBucketByName(string bucketName)
+        {
+            string bucketNameSelector = $".//a[text()='{bucketName}']";
+            Driver.FindElement(By.XPath(bucketNameSelector)).Click();
+        }
+
+        public bool ActiveBucketByName(string bucketName)
+        {
+            return Driver.IsElementDisplayed(By.XPath($".//h1[text()='{bucketName}']"));
+        }
+
         public bool WarningDeleteBucketMessage(string warningText)
         {
             return Driver.IsElementDisplayed(
                 By.XPath($".//div[@class='ng-star-inserted inline-tip'][text()='{warningText}']"));
         }
 
+        public void AddBucket(string bucketName)
+        {
+            SearchTextbox.SendKeys(bucketName);
+            var selector = String.Empty;
+            selector = $".//span[text()='{bucketName}']";
+            Driver.WaitWhileControlIsNotDisplayed(By.XPath(selector));
+            Driver.FindElement(By.XPath(selector)).Click();
+        }
+
+        public void SelectTabByName(string tabName)
+        {
+            string tabNameSelector = $".//li[@class='ng-star-inserted']//span[text()='{tabName}']";
+            Driver.WaitWhileControlIsNotDisplayed(By.XPath(tabNameSelector));
+            Driver.FindElement(By.XPath(tabNameSelector)).Click();
+        }
+
         public void SelectTeam(string teamName)
         {
-            string TeamNameSelector = $".//span[@class='mat-option-text'][text()='{teamName}']";
-            Driver.WaitWhileControlIsNotDisplayed(By.XPath(TeamNameSelector));
-            Driver.FindElement(By.XPath(TeamNameSelector)).Click();
+            string teamNameSelector = $".//span[@class='mat-option-text'][text()='{teamName}']";
+            Driver.WaitWhileControlIsNotDisplayed(By.XPath(teamNameSelector));
+            Driver.FindElement(By.XPath(teamNameSelector)).Click();
         }
     }
 }
