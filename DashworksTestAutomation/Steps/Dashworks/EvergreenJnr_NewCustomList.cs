@@ -160,6 +160,13 @@ namespace DashworksTestAutomation.Steps.Dashworks
             Assert.IsTrue((listDetailsElement.DeleteButtonInWarningMessage.Displayed), "Delete button is not displayed");
         }
 
+        [Then(@"User clicks Delete button on the warning message in the lists panel")]
+        public void ThenUserClicksDeleteButtonOnTheWarningMessageInTheListsPanel()
+        {
+            var listDetailsElement = _driver.NowAt<CustomListElement>();
+            listDetailsElement.DeleteButtonInWarningMessage.Click();
+        }
+
         [When(@"User clicks Cancel button in the warning message")]
         public void WhenUserClicksCancelButtonInTheWarningMessage()
         {
