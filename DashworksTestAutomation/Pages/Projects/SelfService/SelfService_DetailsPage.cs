@@ -16,8 +16,23 @@ namespace DashworksTestAutomation.Pages.Projects
         [FindsBy(How = How.XPath, Using = ".//input[@id='ctl00_MainContent_CB_Details_ProjectDefault']")]
         public IWebElement ThisProjectDefault { get; set; }
 
+        [FindsBy(How = How.XPath, Using = ".//input[@id='ctl00_MainContent_RBL_SelfServiceMode_0']")]
+        public IWebElement ModeUser { get; set; }
+
+        [FindsBy(How = How.XPath, Using = ".//input[@id='ctl00_MainContent_RBL_SelfServiceMode_1']")]
+        public IWebElement ModeComputer { get; set; }
+
         [FindsBy(How = How.XPath, Using = ".//input[@id='ctl00_MainContent_TB_Details_BaseUrl']")]
         public IWebElement BaseUrl { get; set; }
+
+        [FindsBy(How = How.XPath, Using = ".//input[@id='RBL_LogoUrlType_0']")]
+        public IWebElement NoLink { get; set; }
+
+        [FindsBy(How = How.XPath, Using = ".//input[@id='RBL_LogoUrlType_1']")]
+        public IWebElement DashworksProjectHomepage { get; set; }
+
+        [FindsBy(How = How.XPath, Using = ".//input[@id='RBL_LogoUrlType_2']")]
+        public IWebElement CustomUrl { get; set; }
 
         [FindsBy(How = How.XPath, Using = ".//input[@id='TB_BackgroundColor']")]
         public IWebElement BackgroundColour { get; set; }

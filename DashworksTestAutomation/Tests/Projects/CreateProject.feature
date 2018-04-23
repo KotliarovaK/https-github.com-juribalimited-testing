@@ -15,7 +15,7 @@ Scenario: Projects_CreateProject
 	| ProjectName | ProjectShortName | ProjectDescription | ProjectType                |
 	| TestProject | Test             | Test               | Computer Scheduled Project |
 	Then "Manage Project Details" page is displayed to the user
-	When User updating Details page
+	When User updates the Details page
 	| ShowOriginalColumn | IncludeSiteName | NotApplicableApplications | InstalledApplications | EntitledApplications | TaskEmailCcEmailAddress | TaskEmailBccEmailAddress | StartDate  | EndDate     |
 	| true               | true            | true                      | true                  | true                 | Test@test.com           | Test@test.com            | 8 May 2012 | 10 Apr 2018 |
 	And User navigate to "Request Types" tab
@@ -35,13 +35,13 @@ Scenario: Projects_CreateProject
 	When User clicks "Stage" create button
 	Then User create Stage
 	| StageName |
-	| AAA Test      |
+	| AAA Test  |
 	When User navigate to "Tasks" tab
 	Then "Manage Tasks" page is displayed to the user
 	When User clicks "Task" create button
-	Then User create Task for "AAA Test" Stage
-	| Name     | Help | ValueType   | TaskValuesTemplateCheckbox |
-	| TestTask | Test | Radiobutton | false                      |
+	Then User create Task
+	| Name     | Help | StageName | ValueType   | ObjectType | TaskValuesTemplateCheckbox |
+	| TestTask | Test | AAA Test  | Radiobutton | User       | true                       |
 	When User navigate to "Teams" tab
 	Then "Manage Teams" page is displayed to the user
 	When User clicks "Team" create button
@@ -58,7 +58,7 @@ Scenario: Projects_CreateProject
 	Then "Manage Mail Templates" page is displayed to the user
 	When User clicks "Mail Template" create button
 	Then User create Mail Template
-	| GroupName        | Description | SubjectLine | BodyText |
+	| Name             | Description | SubjectLine | BodyText |
 	| TestMailTemplate | Test        | Test        | Test     |
 	When User navigate to "News" tab
 	Then "Manage News" page is displayed to the user
@@ -84,17 +84,17 @@ Scenario: Projects_checkHowManyGroupInATeam
 	Then "Manage Teams" page is displayed to the user
 	When User clicks "Team" create button
 	Then User create Team
-	| TeamName     | ShortDescription |
-	| AAA TestTeam | Test             |
+	| TeamName    | ShortDescription |
+	| AAATestTeam | Test             |
 	When User navigate to "Groups" tab
 	Then "Manage Groups" page is displayed to the user
 	When User clicks "Group" create button
 	Then User create Group
-	| GroupName | Owned By Team |
-	| TestGroup | AAA TestTeam  |
+	| GroupName   | Owned By Team |
+	| AAATestTeam | AAATestTeam   |
 	When User navigate to "Teams" tab
 	Then "Manage Teams" page is displayed to the user
-	Then groups is displayed in the "AAA TestTeam" team
+	Then groups is displayed in the "AAATestTeam" team
 
 @Projects @CreateProject @Teams
 Scenario: Projects_checkSelfServiceandCapacityTabs
@@ -112,5 +112,18 @@ Scenario: Projects_checkSelfServiceandCapacityTabs
 	Then "Manage Project Details" page is displayed to the user
 	When User navigate to "Self Service" tab
 	Then "Manage Self Service" page is displayed to the user
-	When User update Details on Self Service tab
-	When User navigate to "" button on selected tab
+	When User updates the Details on Self Service tab
+	| EnableSelfServicePortal | AllowAnonymousUsers | ThisProjectDefault | ModeUser | ModeComputer | NoLink | DashworksProjectHomepage | CustomUrl |
+	| false                   | false               | true               | false    | true         | true   | false                    | false     |
+	When User navigate to "Welcome" on selected tab
+	When User updates the Welcome on Self Service tab
+	| AllowToSearchForAnotherUser | AllowToChangeLanguage | ShowProjectSelector | ShowMoreDetailsLink | Type      | PageDescription | ProjectName |
+	| true                        | false                 | false               | true                | Attribute | Test            | AAA Test    |
+	When User navigate to "Computer Ownership" on selected tab
+	When User updates the Computer Ownership on Self Service tab
+	| ShowScreen | ShowComputers | ShowCategory | AllowUsersToSearch | AllowUsersToSetPrimary | AllowUsersToAddANote | LimitMaximum | LimitMinimum | PageDescription |
+	| true       | true          | false        | false              | false                  | false                | 100          | 10           | Test            |
+	When User navigate to "Department and Location" on selected tab
+	When User updates the Department and Location on Self Service tab
+	| ShowScreen | ShowDepartmentFullPath | ShowLocationFullPath | AllowUsersToAddANote | Department | Location | DepartmentFeed | HrLocationFeed | ManualLocationFeed | HistoricLocationFeed |
+	| true       | false                  | false                | false                | false      | false    | true           | true           | true               | true                 |

@@ -36,14 +36,14 @@ namespace DashworksTestAutomation.Pages.Projects
 
         public IWebElement GetTabElementByName(string tabName)
         {
-            var selector = By.XPath($".//a[text()='{tabName}']");
+            var selector = By.XPath($".//div[@class='toolbar toolbar-row']//div//a[text()='{tabName}']");
             Driver.WaitWhileControlIsNotDisplayed(selector);
             return Driver.FindElement(selector);
         }
 
         public IWebElement GetTabElementByNameOnSelectedTab(string tabName)
         {
-            var selector = By.XPath($".//a[@class='level1 static'][text()='{tabName}']");
+            var selector = By.XPath($".//li[@role='menuitem']//a[text()='{tabName}']");
             Driver.WaitWhileControlIsNotDisplayed(selector);
             return Driver.FindElement(selector);
         }

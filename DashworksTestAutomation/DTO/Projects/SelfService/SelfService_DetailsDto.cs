@@ -11,9 +11,12 @@ namespace DashworksTestAutomation.DTO.Projects
         public bool EnableSelfServicePortal;
         public bool AllowAnonymousUsers;
         public bool ThisProjectDefault;
-        //TODO public bool SelfServiceMode;
+        public bool ModeUser;
+        public bool ModeComputer;
         public string BaseUrl { get; set; }
-        //TODO public bool HeaderLogoUrl;
+        public bool NoLink;
+        public bool DashworksProjectHomepage;
+        public bool CustomUrl;
         //TODO HeaderLogo Choose File
         //TODO BannerImage Choose File
         public string BackgroundColour { get; set; }

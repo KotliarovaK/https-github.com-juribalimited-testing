@@ -1,9 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using System.ComponentModel;
 using DashworksTestAutomation.Extensions;
 
 namespace DashworksTestAutomation.DTO.Projects
@@ -22,16 +17,12 @@ namespace DashworksTestAutomation.DTO.Projects
         public TaskPropertiesDto()
         {
             TaskType = EnumExtensions.GetRandomValue<TaskTypeEnum>();
-            //ValueType = EnumExtensions.GetRandomValue<ValueTypeEnum>();
-            ObjectType = EnumExtensions.GetRandomValue<TaskObjectTypeEnum>();
             TaskValuesTemplate = EnumExtensions.GetRandomValue<TaskValuesTemplateEnum>();
         }
     }
 
     public enum StageNameEnum
     {
-        Select,
-        Test
     }
 
     public enum TaskTypeEnum

@@ -595,5 +595,25 @@ namespace DashworksTestAutomation.Extensions
                 throw new Exception("Tool tip was not displayed");
             return toolTips.First().Text;
         }
+
+        #region JavaSctipt Alert
+
+        public static void AcceptAlert(this RemoteWebDriver driver)
+        {
+            driver.SwitchTo().Alert().Accept();
+        }
+
+        public static void DismissAlert(this RemoteWebDriver driver)
+        {
+            driver.SwitchTo().Alert().Dismiss();
+        }
+
+        public static bool IsAlertPresent(this RemoteWebDriver driver)
+        {
+            IAlert alert = ExpectedConditions.AlertIsPresent().Invoke(driver);
+            return (alert != null);
+        }
+
+        #endregion
     }
 }

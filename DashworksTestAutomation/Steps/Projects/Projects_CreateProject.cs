@@ -21,12 +21,13 @@ namespace DashworksTestAutomation.Steps.Projects
         private readonly CategoryPropertiesDto _categoryPropertiesDto;
         private readonly StagePropertiesDto _stagePropertiesDto;
         private readonly TaskPropertiesDto _taskPropertiesDto;
+        private readonly TaskProperties_DetailsDto _taskPropertiesDetailsDto;
         private readonly TeamPropertiesDto _teamPropertiesDto;
         private readonly GroupPropertiesDto _groupPropertiesDto;
         private readonly MailTemplatePropertiesDto _mailTemplatePropertiesDto;
         private readonly NewsDto _newsDto;
 
-        public Projects_CreateProject(RemoteWebDriver driver, ProjectDto projectDto, DetailsDto detailsDto, RequestTypesDto requestTypesDto, CategoryPropertiesDto categoryPropertiesDto, StagePropertiesDto stagePropertiesDto, TaskPropertiesDto taskPropertiesDto, TeamPropertiesDto teamPropertiesDto, GroupPropertiesDto groupPropertiesDto, MailTemplatePropertiesDto mailTemplatePropertiesDto, NewsDto newsDto)
+        public Projects_CreateProject(RemoteWebDriver driver, ProjectDto projectDto, DetailsDto detailsDto, RequestTypesDto requestTypesDto, CategoryPropertiesDto categoryPropertiesDto, StagePropertiesDto stagePropertiesDto, TaskPropertiesDto taskPropertiesDto, TeamPropertiesDto teamPropertiesDto, GroupPropertiesDto groupPropertiesDto, MailTemplatePropertiesDto mailTemplatePropertiesDto, NewsDto newsDto, TaskProperties_DetailsDto taskPropertiesDetailsDto)
         {
             _driver = driver;
             _projectDto = projectDto;
@@ -39,6 +40,7 @@ namespace DashworksTestAutomation.Steps.Projects
             _groupPropertiesDto = groupPropertiesDto;
             _mailTemplatePropertiesDto = mailTemplatePropertiesDto;
             _newsDto = newsDto;
+            _taskPropertiesDetailsDto = taskPropertiesDetailsDto;
         }
 
         [When(@"User clicks create Project button")]
@@ -58,14 +60,6 @@ namespace DashworksTestAutomation.Steps.Projects
             var tab = _driver.NowAt<BaseElements>();
 
             tab.GetTabElementByName(tabName).Click();
-        }
-
-        [When(@"User navigate to ""(.*)"" button on selected tab")]
-        public void WhenUserNavigateToButtonOnSelectedTab(string tabName)
-        {
-            var tab = _driver.NowAt<BaseElements>();
-
-            tab.GetTabElementByNameOnSelectedTab(tabName).Click();
         }
 
         [When(@"User clicks ""(.*)"" create button")]
@@ -93,8 +87,8 @@ namespace DashworksTestAutomation.Steps.Projects
             page.CreateProjectButton.Click();
         }
 
-        [When(@"User updating Details page")]
-        public void WhenUserupdatingDetailsPage(Table table)
+        [When(@"User updates the Details page")]
+        public void WhenUserupdatesTheDetailsPage(Table table)
         {
             var page = _driver.NowAt<DetailsPage>();
             var upd = _driver.NowAt<BaseElements>();
@@ -159,6 +153,8 @@ namespace DashworksTestAutomation.Steps.Projects
             page.StageName.SendKeys(_stagePropertiesDto.StageName);
 
             page.ConfirmCreateStageButton.Click();
+
+            _projectDto.Stages = _stagePropertiesDto;
         }
 
         [Then(@"User create Task")]
@@ -170,7 +166,7 @@ namespace DashworksTestAutomation.Steps.Projects
 
             page.Name.SendKeys(_taskPropertiesDto.Name);
             page.Help.SendKeys(_taskPropertiesDto.Help);
-            page.StageName.SelectboxSelect(_taskPropertiesDto.StageName.GetValue());
+            page.StageName.SelectboxSelect(_projectDto.Stages.StageName);
             page.TaskType.SelectboxSelect(_taskPropertiesDto.TaskType.GetValue());
             page.ValueType.SelectboxSelect(_taskPropertiesDto.ValueType.GetValue());
             page.ObjectType.SelectboxSelect(_taskPropertiesDto.ObjectType.GetValue());
@@ -179,6 +175,36 @@ namespace DashworksTestAutomation.Steps.Projects
 
             page.ConfirmCreateTaskButton.Click();
         }
+
+        [Then(@"User updates the Task page")]
+        public void ThenUserUpdatesTheTaskPage(Table table)
+        {
+            var page = _driver.NowAt<TaskProperties_DetailsPage>();
+
+            table.CreateInstance<TaskProperties_DetailsDto>().CopyPropertiesTo(_taskPropertiesDetailsDto);
+
+            page.ValueType.SelectboxSelect(_taskPropertiesDetailsDto.ValueType.GetValue());
+            page.TaskHaADueDate.SetCheckboxState(_taskPropertiesDetailsDto.TaskHaADueDate);
+            page.TaskProjectRole.SelectboxSelect(_taskPropertiesDetailsDto.TaskProjectRole.GetValue());
+            page.TaskImpactsReadiness.SetCheckboxState(_taskPropertiesDetailsDto.TaskImpactsReadiness);
+            page.TaskHasAnOwner.SetCheckboxState(_taskPropertiesDetailsDto.TaskHasAnOwner);
+            page.ShowDetails.SetCheckboxState(_taskPropertiesDetailsDto.ShowDetails);
+            page.ProjectObject.SetCheckboxState(_taskPropertiesDetailsDto.ProjectObject);
+            page.BulkUpdate.SetCheckboxState(_taskPropertiesDetailsDto.BulkUpdate);
+            page.SelfService.SetCheckboxState(_taskPropertiesDetailsDto.SelfService);
+
+            page.UpdateTaskButton.Click();
+        }
+
+        [Then(@"User click ""(.*)"" button")]
+        public void ThenUserClickButton(string buttonName)
+        {
+            var page = _driver.NowAt<TaskProperties_DetailsPage>();
+
+            page.GetCreateButtonElementByName(buttonName).Click();
+            _driver.AcceptAlert();
+        }
+
 
         [Then(@"User create Team")]
         public void ThenUserCreateTeam(Table table)

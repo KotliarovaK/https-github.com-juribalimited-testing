@@ -14,15 +14,20 @@ namespace DashworksTestAutomation.DTO.Projects
         public bool ShowLocationFullPath;
         public bool AllowUsersToAddANote;
         public bool Department;
+        public bool DepartmentDoNotPush;
+        public bool DepartmentPushToOwned;
+        public bool PushToAll;
         public bool Location;
-        //TODO 6 checkbox 
-        public bool ShowDepartmentFeed;
+        public bool LocationDoNotPush;
+        public bool LocationPushToOwned;
+        public bool LocationPushToAll;
+        public bool DepartmentFeed;
         //TODO Additional Tasks
         public string LongName { get; set; }
         public string ShortName { get; set; }
         public string PageDescription { get; set; }
-        public bool ShowHRLocationFeed;
-        public bool ShowManualLocationFeed;
-        public bool ShowHistoricLocationFeed;
+        public bool HrLocationFeed;
+        public bool ManualLocationFeed;
+        public bool HistoricLocationFeed;
     }
 }
