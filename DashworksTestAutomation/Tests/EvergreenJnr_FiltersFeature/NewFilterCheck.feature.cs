@@ -147,7 +147,6 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_FiltersFeature
         [NUnit.Framework.CategoryAttribute("NewFilterCheck")]
         [NUnit.Framework.CategoryAttribute("DAS10828")]
         [NUnit.Framework.CategoryAttribute("DAS12388")]
-        [NUnit.Framework.CategoryAttribute("Not_Run")]
         [NUnit.Framework.TestCaseAttribute("Windows7Mi: Target App Key", "Equals, Does not equal, Greater than, Greater than or equal to, Less than, Less t" +
             "han or equal to", "1051", "Windows7Mi: Target App Key is 1051", "4", new string[0])]
         [NUnit.Framework.TestCaseAttribute("Babel(Engl: Target App Key", "Equals, Does not equal, Greater than, Greater than or equal to, Less than, Less t" +
@@ -196,8 +195,7 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_FiltersFeature
                     "Evergreen_FiltersFeature",
                     "NewFilterCheck",
                     "DAS10828",
-                    "DAS12388",
-                    "Not_Run"};
+                    "DAS12388"};
             if ((exampleTags != null))
             {
                 @__tags = System.Linq.Enumerable.ToArray(System.Linq.Enumerable.Concat(@__tags, exampleTags));
