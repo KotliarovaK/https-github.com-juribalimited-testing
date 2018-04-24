@@ -267,3 +267,20 @@ Scenario: EvergreenJnr_AdminPage_CheckThatWarningMessageIsNotDisplayedWhenDeleti
 	Then "list will be permanently deleted" message is displayed in the lists panel
 	Then User clicks Delete button on the warning message in the lists panel
 	Then no Warning message is displayed in the lists panel
+
+@Evergreen @Admin @EvergreenJnr_AdminPage @AdminPage @DAS11748
+Scenario: EvergreenJnr_AdminPage_CheckThatNotificationMessageIsDisplayedAfterUpdatingBucketToDefaultType
+	When User clicks Admin on the left-hand menu
+	Then Admin page should be displayed to the user
+	When User click "Buckets" link on the Admin page
+	Then "Buckets" page should be displayed to the user
+	When User clicks Create Bucket button
+	Then Create Bucket page should be displayed to the user
+	And User enters "TestBucket2" in the Bucket Name field
+	And User select "Team 1045" team in the Team dropdown
+	When User clicks Create button on the Create Bucket page
+	Then Success message is displayed and contains "The bucket has been created" text on the Buckets page
+	When User enters "TestBucket2" text in the Search field for "Bucket" column on the Buckets page
+	When User clicks content from "Bucket" column on the Buckets page
+	Then "TestBucket2" bucket details is displayed to the user
+	Then Delete "TestBucket2" Bucket in the Administration

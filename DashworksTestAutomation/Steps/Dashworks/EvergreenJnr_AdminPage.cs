@@ -273,6 +273,21 @@ namespace DashworksTestAutomation.Steps.Dashworks
             filterElement.GetSearchFieldByColumnName((columnName), text);
         }
 
+        [When(@"User clicks content from ""(.*)"" column on the Buckets page")]
+        public void WhenUserClicksContentFromColumnOnTheBucketsPage(string columnName)
+        {
+            var tableElement = _driver.NowAtWithoutWait<BucketsPage>();
+            tableElement.ClickContentByColumnName(columnName);
+            _driver.WaitForDataLoading();
+        }
+
+        [Then(@"""(.*)"" bucket details is displayed to the user")]
+        public void ThenBucketDetailsIsDisplayedToTheUser(string bucketName)
+        {
+            var teamElement = _driver.NowAt<BucketsPage>();
+            Assert.IsTrue(teamElement.AppropriateBucketName(bucketName), $"{bucketName} is not displayed on the Bucket page");
+        }
+
         [When(@"User selects all rows on the Buckets page")]
         public void WhenUserSelectsAllRowsOnTheBucketsPage()
         {

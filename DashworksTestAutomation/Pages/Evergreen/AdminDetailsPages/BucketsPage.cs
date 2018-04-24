@@ -85,6 +85,21 @@ namespace DashworksTestAutomation.Pages.Evergreen.AdminDetailsPages
             return columnNumber;
         }
 
+        public void ClickContentByColumnName(string columnName)
+        {
+            By byControl =
+                By.XPath($".//div[@class='ag-body-container']/div[1]/div[{GetColumnNumberByName(columnName)}]//a");
+
+            Driver.WaitForDataLoading();
+            Driver.WaitWhileControlIsNotDisplayed(byControl);
+            Driver.FindElement(byControl).Click();
+        }
+
+        public bool AppropriateBucketName(string bucketName)
+        {
+            return Driver.IsElementDisplayed(By.XPath($".//h1[text()='{bucketName}']"));
+        }
+
         public void GetSearchFieldByColumnName(string columnName, string text)
         {
             By byControl =
