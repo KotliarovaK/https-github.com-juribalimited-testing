@@ -58,6 +58,12 @@ namespace DashworksTestAutomation.Pages.Evergreen.AdminDetailsPages
         [FindsBy(How = How.XPath, Using = ".//input[@placeholder='Search']")]
         public IWebElement SearchTextbox { get; set; }
 
+        [FindsBy(How = How.XPath, Using = ".//span[@class='mat-checkbox-label'][text()='Default Bucket']")]
+        public IWebElement DefaultBucketCheckbox { get; set; }
+
+        [FindsBy(How = How.XPath, Using = ".//span[text()='UPDATE BUCKET']")]
+        public IWebElement UpdateBucketButton { get; set; }
+
         public override List<By> GetPageIdentitySelectors()
         {
             Driver.WaitForDataLoading();
@@ -113,6 +119,11 @@ namespace DashworksTestAutomation.Pages.Evergreen.AdminDetailsPages
         public bool AppropriateBucketName(string bucketName)
         {
             return Driver.IsElementDisplayed(By.XPath($".//h1[text()='{bucketName}']"));
+        }
+
+        public bool SuccessUpdatedMessageBucketsPage(string bucketName)
+        {
+            return Driver.IsElementDisplayed(By.XPath($".//div[text()='The {bucketName} bucket has been updated']"));
         }
 
         public void GetSearchFieldByColumnName(string columnName, string text)

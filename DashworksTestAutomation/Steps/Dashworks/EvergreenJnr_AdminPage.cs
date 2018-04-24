@@ -254,6 +254,14 @@ namespace DashworksTestAutomation.Steps.Dashworks
             StringAssert.Contains(text, page.SuccessMessageBucketsPage.Text, "Success Message is not displayed");
         }
 
+        [Then(@"Success message The ""(.*)"" bucket has been updated is displayed on the Buckets page")]
+        public void ThenSuccessMessageTheBucketHasBeenUpdatedIsDisplayedOnTheBucketsPage(string bucketName)
+        {
+            var page = _driver.NowAt<BucketsPage>();
+            _driver.WaitWhileControlIsNotDisplayed<BucketsPage>(() => page.SuccessMessageBucketsPage);
+            Assert.IsTrue(page.SuccessUpdatedMessageBucketsPage(bucketName), $"Success Message is not displayed for {bucketName}");
+        }
+
         [Then(@"Error message with ""(.*)"" text is displayed on the Buckets page")]
         public void ThenErrorMessageWithTextIsDisplayedOnTheBucketsPage(string text)
         {
@@ -314,8 +322,8 @@ namespace DashworksTestAutomation.Steps.Dashworks
             action.SelectActions(actionName);
         }
 
-        [Then(@"User clicks Delete button on the Buckets page")]
-        public void ThenUserClicksDeleteButtonOnTheBucketsPage()
+        [When(@"User clicks Delete button on the Buckets page")]
+        public void WhenUserClicksDeleteButtonOnTheBucketsPage()
         {
             var button = _driver.NowAt<BucketsPage>();
             _driver.WaitWhileControlIsNotDisplayed<BucketsPage>(() => button.ActionsButton);
@@ -366,6 +374,20 @@ namespace DashworksTestAutomation.Steps.Dashworks
         {
             var page = _driver.NowAt<BucketsPage>();
             page.SelectTabByName(tabName);
+        }
+
+        [When(@"User clicks Default Bucket checkbox on the Buckets page")]
+        public void WhenUserClicksDefaultBucketCheckboxOnTheBucketsPage()
+        {
+            var ckeckbox = _driver.NowAt<BucketsPage>();
+            ckeckbox.DefaultBucketCheckbox.Click();
+        }
+
+        [When(@"User clicks Update Bucket button on the Buckets page")]
+        public void WhenUserClicksUpdateBucketButtonOnTheBucketsPage()
+        {
+            var button = _driver.NowAt<BucketsPage>();
+             button.UpdateBucketButton.Click();
         }
 
         [Then(@"User add following devices in the Bucket")]
