@@ -7,6 +7,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using DashworksTestAutomation.DTO;
+using DashworksTestAutomation.DTO.RuntimeVariables;
 using DashworksTestAutomation.Helpers;
 using DashworksTestAutomation.Pages.Evergreen.AdminDetailsPages;
 using DashworksTestAutomation.Utils;
@@ -18,10 +19,12 @@ namespace DashworksTestAutomation.Steps.Dashworks
     internal class EvergreenJnr_AdminPage : SpecFlowContext
     {
         private readonly RemoteWebDriver _driver;
+        private readonly UsedUsers _usedUsers;
 
-        public EvergreenJnr_AdminPage(RemoteWebDriver driver)
+        public EvergreenJnr_AdminPage(RemoteWebDriver driver, UsedUsers usedUsers)
         {
             _driver = driver;
+            _usedUsers = usedUsers;
         }
 
         [When(@"User click ""(.*)"" link on the Admin page")]
@@ -226,8 +229,8 @@ namespace DashworksTestAutomation.Steps.Dashworks
             bucketName.BucketNameField.SendKeys(bucketText);
         }
 
-        [Then(@"User select ""(.*)"" team in the Team dropdown")]
-        public void ThenUserSelectTeamInTheTeamDropdown(string teamName)
+        [Then(@"User select ""(.*)"" team in the Team dropdown on the Buckets page")]
+        public void ThenUserSelectTeamInTheTeamDropdownOnTheBucketsPage(string teamName)
         {
             var createBucketElement = _driver.NowAt<BucketsPage>();
             createBucketElement.TeamsNameField.SendKeys(teamName);
@@ -328,6 +331,56 @@ namespace DashworksTestAutomation.Steps.Dashworks
                 $"{warningText} warning message is displayed on the Buckets page");
         }
 
+        [Then(@"Create Bucket button is disabled")]
+        public void ThenCreateBucketButtonIsDisabled()
+        {
+            var button = _driver.NowAt<BucketsPage>();
+            _driver.WaitWhileControlIsNotDisplayed<BucketsPage>(() => button.CreateButton);
+            Assert.IsTrue(Convert.ToBoolean(button.CreateButton.GetAttribute("disabled")),
+                "Create Bucket button is active");
+        }
+
+        [When(@"User clicks ""(.*)"" Bucket name")]
+        public void WhenUserClicksBucketName(string bucketName)
+        {
+            var page = _driver.NowAt<BucketsPage>();
+            page.SelectBucketByName(bucketName);
+        }
+
+        [Then(@"Bucket ""(.*)"" is displayed to user")]
+        public void ThenBucketIsDisplayedToUser(string bucketName)
+        {
+            var page = _driver.NowAt<BucketsPage>();
+            Assert.IsTrue(page.ActiveBucketByName(bucketName), $"{bucketName} is not displayed on the Buckets page");
+        }
+
+        [When(@"User clicks Add Device button on the Buckets page")]
+        public void WhenUserClicksAddDeviceButtonOnTheBucketsPage()
+        {
+            var button = _driver.NowAt<BucketsPage>();
+            button.AddDeviceButton.Click();
+        }
+
+        [Then(@"User clicks ""(.*)"" tab on the Buckets page")]
+        public void ThenUserClicksTabOnTheBucketsPage(string tabName)
+        {
+            var page = _driver.NowAt<BucketsPage>();
+            page.SelectTabByName(tabName);
+        }
+
+        [Then(@"User add following devices in the Bucket")]
+        public void ThenUserAddFollowingDevicesInTheBucket(Table table)
+        {
+            var bucketElement = _driver.NowAt<BucketsPage>();
+
+            foreach (var row in table.Rows)
+            {
+                bucketElement.AddBucket(row["DeviceName"]);
+                bucketElement.SearchTextbox.ClearWithHomeButton(_driver);
+            }
+            bucketElement.AddDevicesButton.Click();
+        }
+
         [When(@"User have opened Column Settings for ""(.*)"" column on the Teams Page")]
         public void WhenUserHaveOpenedColumnSettingsForColumnOnTheTeamsPage(string columnName)
         {
@@ -392,8 +445,8 @@ namespace DashworksTestAutomation.Steps.Dashworks
         [Then(@"User enters ""(.*)"" in the Project Name field")]
         public void ThenUserEntersInTheProjectNameField(string projectText)
         {
-            var bucketName = _driver.NowAt<ProjectsPage>();
-            bucketName.ProjectNameField.SendKeys(projectText);
+            var projectName = _driver.NowAt<ProjectsPage>();
+            projectName.ProjectNameField.SendKeys(projectText);
         }
 
         [Then(@"User select ""(.*)"" in the Scope Project dropdown")]
@@ -446,16 +499,7 @@ namespace DashworksTestAutomation.Steps.Dashworks
             Assert.IsTrue(projectElement.SuccessDeletingMessage(textMessage),
                 $"{textMessage} is not displayed on the Project page");
         }
-
-        [Then(@"Create Bucket button is disabled")]
-        public void ThenCreateBucketButtonIsDisabled()
-        {
-            var button = _driver.NowAt<BucketsPage>();
-            _driver.WaitWhileControlIsNotDisplayed<BucketsPage>(() => button.CreateButton);
-            Assert.IsTrue(Convert.ToBoolean(button.CreateButton.GetAttribute("disabled")),
-                "Create Bucket button is active");
-        }
-
+        
         [Then(@"Create Team button is disabled")]
         public void ThenCreateTeamButtonIsDisabled()
         {
@@ -487,6 +531,36 @@ namespace DashworksTestAutomation.Steps.Dashworks
         {
             //var projectId = DatabaseHelper.ExecuteReader($"SELECT [ProjectID] FROM[PM].[dbo].[Projects] where[ProjectName] = '{projectName}'", 0)[0];
             DatabaseHelper.ExecuteQuery($"delete from[PM].[dbo].[ProjectGroups] where[GroupName] = '{bucketName}'");
+        }
+
+        [AfterScenario("Delete_Newly_Created_Team")]
+        public void DeleteAllTeamsAfterScenarioRun()
+        {
+
+            try
+            {
+                if (_usedUsers.Value == null || !_usedUsers.Value.Any())
+                    return;
+
+                foreach (UserDto userDto in _usedUsers.Value)
+                {
+                    try
+                    {
+                        var listsIds = DatabaseHelper.ExecuteReader(
+                            $"select l.ListId from [aspnetdb].[dbo].[aspnet_Users] u join [PM].[dbo].[Teams] t on u.UserId = t.UserId where u.LoweredUserName = '{userDto.UserName}'",
+                            0);
+
+                        DatabaseHelper.RemoveLists(listsIds);
+                        //DatabaseHelper.ExecuteQuery($"delete from[PM].[dbo].[Teams] where[TeamName] = '{teamName}'");
+                    }
+                    catch
+                    {
+                    }
+                }
+            }
+            catch
+            {
+            }
         }
     }
 }
