@@ -84,9 +84,9 @@ namespace DashworksTestAutomation.Tests.Projects
                         "ProjectDescription",
                         "ProjectType"});
             table1.AddRow(new string[] {
-                        "TestProject",
-                        "Test",
-                        "Test",
+                        "TestProjectName",
+                        "TestText",
+                        "TestText",
                         "Computer Scheduled Project"});
             testRunner.When("User creates Project", ((string)(null)), table1, "When ");
             testRunner.Then("\"Manage Project Details\" page is displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
@@ -118,8 +118,8 @@ namespace DashworksTestAutomation.Tests.Projects
                         "Name",
                         "Description"});
             table3.AddRow(new string[] {
-                        "TestRequestType",
-                        "Test"});
+                        "TestRequestTypeName",
+                        "TestText"});
             testRunner.Then("User create Request Type", ((string)(null)), table3, "Then ");
             testRunner.When("User navigate to \"Categories\" tab", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
             testRunner.Then("\"Manage Categories\" page is displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
@@ -128,8 +128,8 @@ namespace DashworksTestAutomation.Tests.Projects
                         "Name",
                         "Description"});
             table4.AddRow(new string[] {
-                        "TestCategory",
-                        "Test"});
+                        "TestCategoryName",
+                        "TestText"});
             testRunner.Then("User create Category", ((string)(null)), table4, "Then ");
             testRunner.When("User navigate to \"Stages\" tab", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
             testRunner.Then("\"Manage Stages\" page is displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
@@ -137,7 +137,7 @@ namespace DashworksTestAutomation.Tests.Projects
             TechTalk.SpecFlow.Table table5 = new TechTalk.SpecFlow.Table(new string[] {
                         "StageName"});
             table5.AddRow(new string[] {
-                        "AAA Test"});
+                        "TestStageName"});
             testRunner.Then("User create Stage", ((string)(null)), table5, "Then ");
             testRunner.When("User navigate to \"Tasks\" tab", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
             testRunner.Then("\"Manage Tasks\" page is displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
@@ -145,59 +145,236 @@ namespace DashworksTestAutomation.Tests.Projects
             TechTalk.SpecFlow.Table table6 = new TechTalk.SpecFlow.Table(new string[] {
                         "Name",
                         "Help",
-                        "StageName",
+                        "TaskType",
                         "ValueType",
-                        "ObjectType",
                         "TaskValuesTemplateCheckbox"});
             table6.AddRow(new string[] {
-                        "TestTask",
-                        "Test",
-                        "AAA Test",
+                        "TestTaskName",
+                        "TestText",
+                        "Normal",
                         "Radiobutton",
-                        "User",
                         "true"});
             testRunner.Then("User create Task", ((string)(null)), table6, "Then ");
+            TechTalk.SpecFlow.Table table7 = new TechTalk.SpecFlow.Table(new string[] {
+                        "ValueType",
+                        "TaskHaADueDate",
+                        "TaskImpactsReadiness",
+                        "TaskHasAnOwner",
+                        "ShowDetails",
+                        "ProjectObject",
+                        "BulkUpdate",
+                        "SelfService"});
+            table7.AddRow(new string[] {
+                        "Radiobutton",
+                        "true",
+                        "false",
+                        "false",
+                        "false",
+                        "true",
+                        "false",
+                        "true"});
+            testRunner.Then("User updates the Task page", ((string)(null)), table7, "Then ");
+            testRunner.Then("User publishes the task", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
             testRunner.When("User navigate to \"Teams\" tab", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
             testRunner.Then("\"Manage Teams\" page is displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
             testRunner.When("User clicks \"Team\" create button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-            TechTalk.SpecFlow.Table table7 = new TechTalk.SpecFlow.Table(new string[] {
+            TechTalk.SpecFlow.Table table8 = new TechTalk.SpecFlow.Table(new string[] {
                         "TeamName",
                         "ShortDescription"});
-            table7.AddRow(new string[] {
-                        "AAA TestTeam",
-                        "Test"});
-            testRunner.Then("User create Team", ((string)(null)), table7, "Then ");
+            table8.AddRow(new string[] {
+                        "001 TestTeamName",
+                        "TestText"});
+            testRunner.Then("User create Team", ((string)(null)), table8, "Then ");
             testRunner.When("User navigate to \"Groups\" tab", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
             testRunner.Then("\"Manage Groups\" page is displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
             testRunner.When("User clicks \"Group\" create button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-            TechTalk.SpecFlow.Table table8 = new TechTalk.SpecFlow.Table(new string[] {
+            TechTalk.SpecFlow.Table table9 = new TechTalk.SpecFlow.Table(new string[] {
                         "GroupName"});
-            table8.AddRow(new string[] {
-                        "TestGroup"});
-            testRunner.Then("User create Group", ((string)(null)), table8, "Then ");
+            table9.AddRow(new string[] {
+                        "TestGroupName"});
+            testRunner.Then("User create Group", ((string)(null)), table9, "Then ");
             testRunner.When("User navigate to \"Mail Templates\" tab", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
             testRunner.Then("\"Manage Mail Templates\" page is displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
             testRunner.When("User clicks \"Mail Template\" create button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-            TechTalk.SpecFlow.Table table9 = new TechTalk.SpecFlow.Table(new string[] {
+            TechTalk.SpecFlow.Table table10 = new TechTalk.SpecFlow.Table(new string[] {
                         "Name",
                         "Description",
                         "SubjectLine",
                         "BodyText"});
-            table9.AddRow(new string[] {
-                        "TestMailTemplate",
-                        "Test",
-                        "Test",
-                        "Test"});
-            testRunner.Then("User create Mail Template", ((string)(null)), table9, "Then ");
+            table10.AddRow(new string[] {
+                        "TestMailTemplateName",
+                        "TestText",
+                        "TestText",
+                        "TestText"});
+            testRunner.Then("User create Mail Template", ((string)(null)), table10, "Then ");
             testRunner.When("User navigate to \"News\" tab", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
             testRunner.Then("\"Manage News\" page is displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-            TechTalk.SpecFlow.Table table10 = new TechTalk.SpecFlow.Table(new string[] {
+            TechTalk.SpecFlow.Table table11 = new TechTalk.SpecFlow.Table(new string[] {
                         "Title",
                         "Text"});
-            table10.AddRow(new string[] {
-                        "TestGroup",
-                        "Test"});
-            testRunner.And("User updating News page", ((string)(null)), table10, "And ");
+            table11.AddRow(new string[] {
+                        "TestTitle",
+                        "TestText"});
+            testRunner.And("User updating News page", ((string)(null)), table11, "And ");
+            testRunner.When("User navigate to \"Self Service\" tab", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+            testRunner.Then("\"Manage Self Service\" page is displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+            TechTalk.SpecFlow.Table table12 = new TechTalk.SpecFlow.Table(new string[] {
+                        "EnableSelfServicePortal",
+                        "AllowAnonymousUsers",
+                        "ThisProjectDefault",
+                        "ModeUser",
+                        "ModeComputer",
+                        "NoLink",
+                        "DashworksProjectHomepage",
+                        "CustomUrl"});
+            table12.AddRow(new string[] {
+                        "false",
+                        "false",
+                        "true",
+                        "false",
+                        "true",
+                        "true",
+                        "false",
+                        "false"});
+            testRunner.Then("User updates the Details on Self Service tab", ((string)(null)), table12, "Then ");
+            testRunner.When("User navigate to \"Welcome\" on selected tab", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+            TechTalk.SpecFlow.Table table13 = new TechTalk.SpecFlow.Table(new string[] {
+                        "AllowToSearchForAnotherUser",
+                        "AllowToChangeLanguage",
+                        "ShowProjectSelector",
+                        "ShowMoreDetailsLink",
+                        "Type",
+                        "PageDescription",
+                        "ProjectName"});
+            table13.AddRow(new string[] {
+                        "true",
+                        "false",
+                        "false",
+                        "true",
+                        "Attribute",
+                        "TestText",
+                        "ProjectName"});
+            testRunner.Then("User updates the Welcome on Self Service tab", ((string)(null)), table13, "Then ");
+            testRunner.When("User navigate to \"Computer Ownership\" on selected tab", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+            TechTalk.SpecFlow.Table table14 = new TechTalk.SpecFlow.Table(new string[] {
+                        "ShowScreen",
+                        "ShowComputers",
+                        "ShowCategory",
+                        "AllowUsersToSearch",
+                        "AllowUsersToSetPrimary",
+                        "AllowUsersToAddANote",
+                        "LimitMaximum",
+                        "LimitMinimum",
+                        "PageDescription"});
+            table14.AddRow(new string[] {
+                        "true",
+                        "true",
+                        "false",
+                        "false",
+                        "false",
+                        "false",
+                        "100",
+                        "10",
+                        "TestText"});
+            testRunner.Then("User updates the Computer Ownership on Self Service tab", ((string)(null)), table14, "Then ");
+            testRunner.When("User navigate to \"Department and Location\" on selected tab", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+            TechTalk.SpecFlow.Table table15 = new TechTalk.SpecFlow.Table(new string[] {
+                        "ShowScreen",
+                        "ShowDepartmentFullPath",
+                        "ShowLocationFullPath",
+                        "AllowUsersToAddANote",
+                        "Department",
+                        "Location",
+                        "DepartmentFeed",
+                        "HrLocationFeed",
+                        "ManualLocationFeed",
+                        "HistoricLocationFeed"});
+            table15.AddRow(new string[] {
+                        "true",
+                        "false",
+                        "false",
+                        "false",
+                        "false",
+                        "false",
+                        "true",
+                        "true",
+                        "true",
+                        "true"});
+            testRunner.Then("User updates the Department and Location on Self Service tab", ((string)(null)), table15, "Then ");
+            testRunner.When("User navigate to \"Apps List\" on selected tab", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+            TechTalk.SpecFlow.Table table16 = new TechTalk.SpecFlow.Table(new string[] {
+                        "ShowThisScreen",
+                        "ShowCoreApps",
+                        "ShowTargetStateReadiness",
+                        "ShowRequiredColumnAndSticky",
+                        "ShowOnlyApplication",
+                        "AllowUsersToAddANote",
+                        "PageDescription"});
+            table16.AddRow(new string[] {
+                        "true",
+                        "true",
+                        "true",
+                        "true",
+                        "true",
+                        "true",
+                        "TestText"});
+            testRunner.Then("User updates the Apps List on Self Service tab", ((string)(null)), table16, "Then ");
+            testRunner.When("User navigate to \"Project Date\" on selected tab", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+            TechTalk.SpecFlow.Table table17 = new TechTalk.SpecFlow.Table(new string[] {
+                        "ShowScreen",
+                        "AllowUsersToAddANote",
+                        "MinimumHours",
+                        "MaximumHours",
+                        "PageDescription"});
+            table17.AddRow(new string[] {
+                        "true",
+                        "true",
+                        "10",
+                        "100",
+                        "TestText"});
+            testRunner.Then("User updates the Project Date on Self Service tab", ((string)(null)), table17, "Then ");
+            testRunner.When("User navigate to \"Other Options 1\" on selected tab", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+            TechTalk.SpecFlow.Table table18 = new TechTalk.SpecFlow.Table(new string[] {
+                        "ShowScreen",
+                        "AllowUsersToAddANote",
+                        "OnlyOwned",
+                        "AllLinked",
+                        "PageDescription"});
+            table18.AddRow(new string[] {
+                        "false",
+                        "true",
+                        "true",
+                        "",
+                        "TestText"});
+            testRunner.Then("User updates the first Other Options on Self Service tab", ((string)(null)), table18, "Then ");
+            testRunner.When("User navigate to \"Other Options 2\" on selected tab", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+            TechTalk.SpecFlow.Table table19 = new TechTalk.SpecFlow.Table(new string[] {
+                        "ShowScreen",
+                        "AllowUsersToAddANote",
+                        "OnlyOwned",
+                        "AllLinked",
+                        "PageDescription"});
+            table19.AddRow(new string[] {
+                        "false",
+                        "true",
+                        "true",
+                        "",
+                        "TestText"});
+            testRunner.Then("User updates the second Other Options on Self Service tab", ((string)(null)), table19, "Then ");
+            testRunner.When("User navigate to \"Thank You\" on selected tab", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+            TechTalk.SpecFlow.Table table20 = new TechTalk.SpecFlow.Table(new string[] {
+                        "SelfServicePortal",
+                        "NavigationMenu",
+                        "ChoicesSummary",
+                        "IncludeLink",
+                        "PageDescription"});
+            table20.AddRow(new string[] {
+                        "true",
+                        "false",
+                        "false",
+                        "false",
+                        "TestText"});
+            testRunner.Then("User updates the Thank You on Self Service tab", ((string)(null)), table20, "Then ");
             this.ScenarioCleanup();
         }
         
@@ -221,41 +398,39 @@ namespace DashworksTestAutomation.Tests.Projects
             testRunner.Then("\"Projects Home\" page is displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
             testRunner.When("User clicks create Project button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
             testRunner.Then("\"Create Project\" page is displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-            TechTalk.SpecFlow.Table table11 = new TechTalk.SpecFlow.Table(new string[] {
+            TechTalk.SpecFlow.Table table21 = new TechTalk.SpecFlow.Table(new string[] {
                         "ProjectName",
                         "ProjectShortName",
                         "ProjectDescription",
                         "ProjectType"});
-            table11.AddRow(new string[] {
+            table21.AddRow(new string[] {
                         "TestProject",
                         "Test",
                         "Test",
                         "Computer Scheduled Project"});
-            testRunner.When("User creates Project", ((string)(null)), table11, "When ");
+            testRunner.When("User creates Project", ((string)(null)), table21, "When ");
             testRunner.Then("\"Manage Project Details\" page is displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
             testRunner.When("User navigate to \"Teams\" tab", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
             testRunner.Then("\"Manage Teams\" page is displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
             testRunner.When("User clicks \"Team\" create button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-            TechTalk.SpecFlow.Table table12 = new TechTalk.SpecFlow.Table(new string[] {
+            TechTalk.SpecFlow.Table table22 = new TechTalk.SpecFlow.Table(new string[] {
                         "TeamName",
                         "ShortDescription"});
-            table12.AddRow(new string[] {
-                        "AAATestTeam",
+            table22.AddRow(new string[] {
+                        "AAA01TestTeam",
                         "Test"});
-            testRunner.Then("User create Team", ((string)(null)), table12, "Then ");
+            testRunner.Then("User create Team", ((string)(null)), table22, "Then ");
             testRunner.When("User navigate to \"Groups\" tab", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
             testRunner.Then("\"Manage Groups\" page is displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
             testRunner.When("User clicks \"Group\" create button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-            TechTalk.SpecFlow.Table table13 = new TechTalk.SpecFlow.Table(new string[] {
-                        "GroupName",
-                        "Owned By Team"});
-            table13.AddRow(new string[] {
-                        "AAATestTeam",
-                        "AAATestTeam"});
-            testRunner.Then("User create Group", ((string)(null)), table13, "Then ");
+            TechTalk.SpecFlow.Table table23 = new TechTalk.SpecFlow.Table(new string[] {
+                        "GroupName"});
+            table23.AddRow(new string[] {
+                        "TestGroup"});
+            testRunner.Then("User create Group", ((string)(null)), table23, "Then ");
             testRunner.When("User navigate to \"Teams\" tab", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
             testRunner.Then("\"Manage Teams\" page is displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-            testRunner.Then("groups is displayed in the \"AAATestTeam\" team", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+            testRunner.Then("groups is displayed in the \"AAA01TestTeam\" team", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
             this.ScenarioCleanup();
         }
         
@@ -279,103 +454,34 @@ namespace DashworksTestAutomation.Tests.Projects
             testRunner.Then("\"Projects Home\" page is displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
             testRunner.When("User clicks create Project button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
             testRunner.Then("\"Create Project\" page is displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-            TechTalk.SpecFlow.Table table14 = new TechTalk.SpecFlow.Table(new string[] {
+            TechTalk.SpecFlow.Table table24 = new TechTalk.SpecFlow.Table(new string[] {
                         "ProjectName",
                         "ProjectShortName",
                         "ProjectDescription",
                         "ProjectType"});
-            table14.AddRow(new string[] {
+            table24.AddRow(new string[] {
                         "TestProject",
-                        "Test",
-                        "Test",
+                        "TestText",
+                        "TestText",
                         "Computer Scheduled Project"});
-            testRunner.When("User creates Project", ((string)(null)), table14, "When ");
+            testRunner.When("User creates Project", ((string)(null)), table24, "When ");
             testRunner.Then("\"Manage Project Details\" page is displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
             testRunner.When("User navigate to \"Self Service\" tab", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
             testRunner.Then("\"Manage Self Service\" page is displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-            TechTalk.SpecFlow.Table table15 = new TechTalk.SpecFlow.Table(new string[] {
-                        "EnableSelfServicePortal",
-                        "AllowAnonymousUsers",
-                        "ThisProjectDefault",
-                        "ModeUser",
-                        "ModeComputer",
-                        "NoLink",
-                        "DashworksProjectHomepage",
-                        "CustomUrl"});
-            table15.AddRow(new string[] {
-                        "false",
-                        "false",
-                        "true",
-                        "false",
-                        "true",
-                        "true",
-                        "false",
-                        "false"});
-            testRunner.When("User updates the Details on Self Service tab", ((string)(null)), table15, "When ");
-            testRunner.When("User navigate to \"Welcome\" on selected tab", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-            TechTalk.SpecFlow.Table table16 = new TechTalk.SpecFlow.Table(new string[] {
-                        "AllowToSearchForAnotherUser",
-                        "AllowToChangeLanguage",
-                        "ShowProjectSelector",
-                        "ShowMoreDetailsLink",
-                        "Type",
-                        "PageDescription",
-                        "ProjectName"});
-            table16.AddRow(new string[] {
-                        "true",
-                        "false",
-                        "false",
-                        "true",
-                        "Attribute",
-                        "Test",
-                        "AAA Test"});
-            testRunner.When("User updates the Welcome on Self Service tab", ((string)(null)), table16, "When ");
-            testRunner.When("User navigate to \"Computer Ownership\" on selected tab", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-            TechTalk.SpecFlow.Table table17 = new TechTalk.SpecFlow.Table(new string[] {
-                        "ShowScreen",
-                        "ShowComputers",
-                        "ShowCategory",
-                        "AllowUsersToSearch",
-                        "AllowUsersToSetPrimary",
-                        "AllowUsersToAddANote",
-                        "LimitMaximum",
-                        "LimitMinimum",
+            testRunner.When("User navigate to \"Thank You\" on selected tab", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+            TechTalk.SpecFlow.Table table25 = new TechTalk.SpecFlow.Table(new string[] {
+                        "SelfServicePortal",
+                        "NavigationMenu",
+                        "ChoicesSummary",
+                        "IncludeLink",
                         "PageDescription"});
-            table17.AddRow(new string[] {
-                        "true",
-                        "true",
-                        "false",
-                        "false",
-                        "false",
-                        "false",
-                        "100",
-                        "10",
-                        "Test"});
-            testRunner.When("User updates the Computer Ownership on Self Service tab", ((string)(null)), table17, "When ");
-            testRunner.When("User navigate to \"Department and Location\" on selected tab", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-            TechTalk.SpecFlow.Table table18 = new TechTalk.SpecFlow.Table(new string[] {
-                        "ShowScreen",
-                        "ShowDepartmentFullPath",
-                        "ShowLocationFullPath",
-                        "AllowUsersToAddANote",
-                        "Department",
-                        "Location",
-                        "DepartmentFeed",
-                        "HrLocationFeed",
-                        "ManualLocationFeed",
-                        "HistoricLocationFeed"});
-            table18.AddRow(new string[] {
+            table25.AddRow(new string[] {
                         "true",
                         "false",
                         "false",
                         "false",
-                        "false",
-                        "false",
-                        "true",
-                        "true",
-                        "true",
-                        "true"});
-            testRunner.When("User updates the Department and Location on Self Service tab", ((string)(null)), table18, "When ");
+                        "TestText"});
+            testRunner.Then("User updates the Thank You on Self Service tab", ((string)(null)), table25, "Then ");
             this.ScenarioCleanup();
         }
     }

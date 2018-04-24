@@ -9,9 +9,9 @@ namespace DashworksTestAutomation.DTO.Projects
     public class SelfService_ThankYouDto
     {
         //TODO add a language?
-        public bool ShowInTheSelfServicePortal;
-        public bool ShowInTheNavigationMenu;
-        public bool ShowChoicesSummary;
+        public bool SelfServicePortal;
+        public bool NavigationMenu;
+        public bool ChoicesSummary;
         public bool IncludeLink;
         public string LongName { get; set; }
         public string ShortName { get; set; }

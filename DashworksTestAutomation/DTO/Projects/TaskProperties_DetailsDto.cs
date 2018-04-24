@@ -7,6 +7,7 @@ namespace DashworksTestAutomation.DTO.Projects
     {
         public ValueTypeUpdateEnum ValueType;
         public bool TaskHaADueDate { get; set; }
+        //public DateModeEnum DateMode;
         public TaskProjectRoleEnum TaskProjectRole;
         public bool TaskImpactsReadiness { get; set; }
         public bool TaskHasAnOwner { get; set; }
@@ -19,6 +20,7 @@ namespace DashworksTestAutomation.DTO.Projects
         public TaskProperties_DetailsDto()
         {
             TaskProjectRole = EnumExtensions.GetRandomValue<TaskProjectRoleEnum>();
+            //DateMode = EnumExtensions.GetRandomValue<DateModeEnum>();
         }
     }
 
@@ -28,6 +30,14 @@ namespace DashworksTestAutomation.DTO.Projects
         DropDownList,
         Date,
         Text
+    }
+
+    public enum DateModeEnum
+    {
+        [Description("Date Only")]
+        DateOnly,
+        [Description("Date & Time")]
+        DateTime
     }
 
     public enum TaskProjectRoleEnum

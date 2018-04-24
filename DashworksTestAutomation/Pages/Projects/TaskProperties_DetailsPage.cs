@@ -26,6 +26,9 @@ namespace DashworksTestAutomation.Pages.Projects
         [FindsBy(How = How.XPath, Using = ".//input[@id='ctl00_MainContent_CB_ShowLastChangeInfo']")]
         public IWebElement ShowDetails { get; set; }
 
+        //[FindsBy(How = How.XPath, Using = ".//select[@id='DDL_DateMode']")]
+        //public IWebElement DateMode { get; set; }
+
         [FindsBy(How = How.XPath, Using = ".//input[@id='ctl00_MainContent_CB_ReadOnly_ProjectObject']")]
         public IWebElement ProjectObject { get; set; }
 
@@ -38,6 +41,12 @@ namespace DashworksTestAutomation.Pages.Projects
         [FindsBy(How = How.XPath, Using = ".//input[@value='Update Task']")]
         public IWebElement UpdateTaskButton { get; set; }
 
+        [FindsBy(How = How.XPath, Using = ".//input[@id='ctl00_MainContent_BtnSequence1']")]
+        public IWebElement PublishTaskButton { get; set; }
+
+        [FindsBy(How = How.XPath, Using = ".//input[@id='ctl00_MainContent_BtnDeSequence1']")]
+        public IWebElement UnpublishTaskButton { get; set; }
+
         public override List<By> GetPageIdentitySelectors()
         {
             return new List<By>
@@ -48,17 +57,11 @@ namespace DashworksTestAutomation.Pages.Projects
                 SelectorFor(this, p => p.TaskImpactsReadiness),
                 SelectorFor(this, p => p.TaskHasAnOwner),
                 SelectorFor(this, p => p.ShowDetails),
+                //SelectorFor(this, p => p.DateMode),
                 SelectorFor(this, p => p.ProjectObject),
                 SelectorFor(this, p => p.BulkUpdate),
                 SelectorFor(this, p => p.SelfService)
             };
-        }
-
-        public IWebElement GetCreateButtonElementByName(string buttonName)
-        {
-            var selector = By.XPath($".//input[@value='{buttonName}...']");
-            Driver.WaitWhileControlIsNotDisplayed(selector);
-            return Driver.FindElement(selector);
         }
     }
 }

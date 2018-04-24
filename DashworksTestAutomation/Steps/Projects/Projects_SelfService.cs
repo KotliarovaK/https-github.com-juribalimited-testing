@@ -15,14 +15,24 @@ namespace DashworksTestAutomation.Steps.Projects
         private readonly SelfService_WelcomeDto _welcomeDto;
         private readonly SelfService_ComputerOwnershipDto _computerOwnershipDto;
         private readonly SelfService_DepartmentAndLocationDto _departmentAndLocationDto;
+        private readonly SelfService_AppsListDto _appsListDto;
+        private readonly SelfService_ProjectDateDto _projectDateDto;
+        private readonly SelfService_OtherOptions1Dto _options1Dto;
+        private readonly SelfService_OtherOptions2Dto _options2Dto;
+        private readonly SelfService_ThankYouDto _thankYouDto;
 
-        public Projects_SelfService(RemoteWebDriver driver, SelfService_DetailsDto detailsDto, SelfService_WelcomeDto welcomeDto, SelfService_ComputerOwnershipDto computerOwnershipDto, SelfService_DepartmentAndLocationDto departmentAndLocationDto)
+        public Projects_SelfService(RemoteWebDriver driver, SelfService_DetailsDto detailsDto, SelfService_WelcomeDto welcomeDto, SelfService_ComputerOwnershipDto computerOwnershipDto, SelfService_DepartmentAndLocationDto departmentAndLocationDto, SelfService_AppsListDto appsListDto, SelfService_ProjectDateDto projectDateDto, SelfService_OtherOptions1Dto otherOptions1Dto, SelfService_OtherOptions2Dto otherOptions2Dto, SelfService_ThankYouDto thankYouDto)
         {
             _driver = driver;
             _detailsDto = detailsDto;
             _welcomeDto = welcomeDto;
             _computerOwnershipDto = computerOwnershipDto;
             _departmentAndLocationDto = departmentAndLocationDto;
+            _appsListDto = appsListDto;
+            _projectDateDto = projectDateDto;
+            _options1Dto = otherOptions1Dto;
+            _options2Dto = otherOptions2Dto;
+            _thankYouDto = thankYouDto;
         }
 
         [When(@"User navigate to ""(.*)"" on selected tab")]
@@ -33,8 +43,8 @@ namespace DashworksTestAutomation.Steps.Projects
             tab.GetTabElementByNameOnSelectedTab(tabName).Click();
         }
 
-        [When(@"User updates the Details on Self Service tab")]
-        public void WhenUserUpdatesTheDetailsOnSelfServiceTab(Table table)
+        [Then(@"User updates the Details on Self Service tab")]
+        public void ThenUserUpdatesTheDetailsOnSelfServiceTab(Table table)
         {
             var page = _driver.NowAt<SelfService_DetailsPage>();
             var upd = _driver.NowAt<BaseElements>();
@@ -54,8 +64,8 @@ namespace DashworksTestAutomation.Steps.Projects
             upd.UpdateButton.Click();
         }
 
-        [When(@"User updates the Welcome on Self Service tab")]
-        public void WhenUserUpdatesTheWelcomeOnSelfServiceTab(Table table)
+        [Then(@"User updates the Welcome on Self Service tab")]
+        public void ThenUserUpdatesTheWelcomeOnSelfServiceTab(Table table)
         {
             var page = _driver.NowAt<SelfService_WelcomePage>();
             var upd = _driver.NowAt<BaseElements>();
@@ -76,8 +86,8 @@ namespace DashworksTestAutomation.Steps.Projects
             upd.UpdateButton.Click();
         }
 
-        [When(@"User updates the Computer Ownership on Self Service tab")]
-        public void WhenUserUpdatesTheComputerOwnershipOnSelfServiceTab(Table table)
+        [Then(@"User updates the Computer Ownership on Self Service tab")]
+        public void ThenUserUpdatesTheComputerOwnershipOnSelfServiceTab(Table table)
         {
             var page = _driver.NowAt<SelfService_ComputerOwnershipPage>();
             var upd = _driver.NowAt<BaseElements>();
@@ -98,8 +108,8 @@ namespace DashworksTestAutomation.Steps.Projects
             upd.UpdateButton.Click();
         }
 
-        [When(@"User updates the Department and Location on Self Service tab")]
-        public void WhenUserUpdatesTheDepartmentAndLocationOnSelfServiceTab(Table table)
+        [Then(@"User updates the Department and Location on Self Service tab")]
+        public void ThenUserUpdatesTheDepartmentAndLocationOnSelfServiceTab(Table table)
         {
             var page = _driver.NowAt<SelfService_DepartmentAndLocationPage>();
             var upd = _driver.NowAt<BaseElements>();
@@ -114,6 +124,95 @@ namespace DashworksTestAutomation.Steps.Projects
             //TODO
             page.Location.SetCheckboxState(_departmentAndLocationDto.Location);
             //TODO
+
+            upd.UpdateButton.Click();
+        }
+
+        [Then(@"User updates the Apps List on Self Service tab")]
+        public void ThenUserUpdatesTheAppsListOnSelfServiceTab(Table table)
+        {
+            var page = _driver.NowAt<SelfService_AppsListPage>();
+            var upd = _driver.NowAt<BaseElements>();
+
+            table.CreateInstance<SelfService_AppsListDto>().CopyPropertiesTo(_appsListDto);
+
+            page.ShowScreen.SetCheckboxState(_appsListDto.ShowThisScreen);
+            page.ShowCoreApps.SetCheckboxState(_appsListDto.ShowCoreApps);
+            page.ShowTargetStateReadiness.SetCheckboxState(_appsListDto.ShowTargetStateReadiness);
+            page.ShowRequiredColumnAndSticky.SetCheckboxState(_appsListDto.ShowRequiredColumnAndSticky);
+            page.ShowOnlyApplication.SetCheckboxState(_appsListDto.ShowOnlyApplication);
+            page.AllowUsersToAddANote.SetCheckboxState(_appsListDto.AllowUsersToAddANote);
+            page.View.SelectboxSelect(_appsListDto.View.GetValue());
+            page.PageDescription.SendKeys(_appsListDto.PageDescription);
+
+            upd.UpdateButton.Click();
+        }
+
+        [Then(@"User updates the Project Date on Self Service tab")]
+        public void ThenUserUpdatesTheProjectDateOnSelfServiceTab(Table table)
+        {
+            var page = _driver.NowAt<SelfService_ProjectDatePage>();
+            var upd = _driver.NowAt<BaseElements>();
+
+            table.CreateInstance<SelfService_ProjectDateDto>().CopyPropertiesTo(_projectDateDto);
+
+            page.ShowScreen.SetCheckboxState(_projectDateDto.ShowThisScreen);
+            page.ShowComputerName.SelectboxSelect(_projectDateDto.ShowComputerName.GetValue());
+            page.AllowUsersToAddANote.SetCheckboxState(_projectDateDto.AllowUsersToAddANote);
+            page.MinimumHours.SendKeys(_projectDateDto.MinimumHours);
+            page.MaximumHours.SendKeys(_projectDateDto.MaximumHours);
+            page.PageDescription.SendKeys(_projectDateDto.PageDescription);
+
+            upd.UpdateButton.Click();
+        }
+
+        [Then(@"User updates the first Other Options on Self Service tab")]
+        public void ThenUserUpdatesTheFirstOtherOptionsOnSelfServiceTab(Table table)
+        {
+            var page = _driver.NowAt<SelfService_OtherOptions1Page>();
+            var upd = _driver.NowAt<BaseElements>();
+
+            table.CreateInstance<SelfService_OtherOptions1Dto>().CopyPropertiesTo(_options1Dto);
+
+            page.ShowScreen.SetCheckboxState(_options1Dto.ShowScreen);
+            page.AllowUsersToAddANote.SetCheckboxState(_options1Dto.AllowUsersToAddANote);
+            page.OnlyOwned.SetCheckboxState(_options1Dto.OnlyOwned);
+            page.AllLinked.SetCheckboxState(_options1Dto.AllLinked);
+            page.PageDescription.SendKeys(_options1Dto.PageDescription);
+
+            upd.UpdateButton.Click();
+        }
+
+        [Then(@"User updates the second Other Options on Self Service tab")]
+        public void ThenUserUpdatesTheSecondOtherOptionsOnSelfServiceTab(Table table)
+        {
+            var page = _driver.NowAt<SelfService_OtherOptions2Page>();
+            var upd = _driver.NowAt<BaseElements>();
+
+            table.CreateInstance<SelfService_OtherOptions2Dto>().CopyPropertiesTo(_options2Dto);
+
+            page.ShowScreen.SetCheckboxState(_options1Dto.ShowScreen);
+            page.AllowUsersToAddANote.SetCheckboxState(_options1Dto.AllowUsersToAddANote);
+            page.OnlyOwned.SetCheckboxState(_options1Dto.OnlyOwned);
+            page.AllLinked.SetCheckboxState(_options1Dto.AllLinked);
+            page.PageDescription.SendKeys(_options1Dto.PageDescription);
+
+            upd.UpdateButton.Click();
+        }
+
+        [Then(@"User updates the Thank You on Self Service tab")]
+        public void ThenUserUpdatesTheThankYouOnSelfServiceTab(Table table)
+        {
+            var page = _driver.NowAt<SelfService_ThankYouPage>();
+            var upd = _driver.NowAt<BaseElements>();
+
+            table.CreateInstance<SelfService_ThankYouDto>().CopyPropertiesTo(_thankYouDto);
+
+            page.ShowInTheSelfServicePortal.ChangeCheckboxState(_thankYouDto.SelfServicePortal);
+            page.ShowInTheNavigationMenu.ChangeCheckboxState(_thankYouDto.NavigationMenu);
+            page.ShowChoicesSummary.ChangeCheckboxState(_thankYouDto.ChoicesSummary);
+            page.IncludeLink.ChangeCheckboxState(_thankYouDto.IncludeLink);
+            page.PageDescription.SendKeys(_thankYouDto.PageDescription);
 
             upd.UpdateButton.Click();
         }

@@ -15,7 +15,12 @@ namespace DashworksTestAutomation.Pages.Projects
         [FindsBy(How = How.XPath, Using = ".//input[@id='cb_otherOptions_allowUsersToAddANoteFromThisPage']")]
         public IWebElement AllowUsersToAddANote { get; set; }
 
-        //TODO Display tasks for
+        [FindsBy(How = How.XPath, Using = ".//input[@id='input_otherOptions_displayOnlyOwnedObjects']")]
+        public IWebElement OnlyOwned { get; set; }
+
+        [FindsBy(How = How.XPath, Using = ".//input[@id='input_otherOptions_displayAllLinkedObjects']")]
+        public IWebElement AllLinked { get; set; }
+
         //TODO User Task Name
         //TODO Computer Task Name
 

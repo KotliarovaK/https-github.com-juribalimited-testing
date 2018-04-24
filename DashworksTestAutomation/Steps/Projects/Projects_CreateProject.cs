@@ -185,7 +185,7 @@ namespace DashworksTestAutomation.Steps.Projects
 
             page.ValueType.SelectboxSelect(_taskPropertiesDetailsDto.ValueType.GetValue());
             page.TaskHaADueDate.SetCheckboxState(_taskPropertiesDetailsDto.TaskHaADueDate);
-            page.TaskProjectRole.SelectboxSelect(_taskPropertiesDetailsDto.TaskProjectRole.GetValue());
+            //page.DateMode.SelectboxSelect(_taskPropertiesDetailsDto.DateMode.GetValue());
             page.TaskImpactsReadiness.SetCheckboxState(_taskPropertiesDetailsDto.TaskImpactsReadiness);
             page.TaskHasAnOwner.SetCheckboxState(_taskPropertiesDetailsDto.TaskHasAnOwner);
             page.ShowDetails.SetCheckboxState(_taskPropertiesDetailsDto.ShowDetails);
@@ -196,15 +196,23 @@ namespace DashworksTestAutomation.Steps.Projects
             page.UpdateTaskButton.Click();
         }
 
-        [Then(@"User click ""(.*)"" button")]
-        public void ThenUserClickButton(string buttonName)
+        [Then(@"User publishes the task")]
+        public void ThenUserPublishesTheTask()
         {
             var page = _driver.NowAt<TaskProperties_DetailsPage>();
 
-            page.GetCreateButtonElementByName(buttonName).Click();
+            page.PublishTaskButton.Click();
             _driver.AcceptAlert();
         }
 
+        [Then(@"User unpublishes the task")]
+        public void ThenUserUnpublishesTheTask()
+        {
+            var page = _driver.NowAt<TaskProperties_DetailsPage>();
+
+            page.UnpublishTaskButton.Click();
+            _driver.AcceptAlert();
+        }
 
         [Then(@"User create Team")]
         public void ThenUserCreateTeam(Table table)
@@ -217,6 +225,8 @@ namespace DashworksTestAutomation.Steps.Projects
             page.ShortDescription.SendKeys(_teamPropertiesDto.ShortDescription);
 
             page.ConfirmCreateTeamButton.Click();
+
+            _projectDto.TeamProperties = _teamPropertiesDto;
         }
 
         [Then(@"User create Group")]
@@ -228,7 +238,7 @@ namespace DashworksTestAutomation.Steps.Projects
             _projectDto.GroupProperties.Add(_groupPropertiesDto);
 
             page.GroupName.SendKeys(_groupPropertiesDto.GroupName);
-            page.OwnedByTeam.SelectboxSelect(_groupPropertiesDto.OwnedByTeam.GetValue());
+            page.OwnedByTeam.SelectboxSelect(_projectDto.TeamProperties.TeamName);
 
             page.ConfirmCreateGroupButton.Click();
         }

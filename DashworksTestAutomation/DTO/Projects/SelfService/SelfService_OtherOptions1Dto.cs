@@ -11,7 +11,8 @@ namespace DashworksTestAutomation.DTO.Projects
         //TODO add a language?
         public bool ShowScreen;
         public bool AllowUsersToAddANote;
-        //TODO Display tasks for
+        public bool OnlyOwned;
+        public bool AllLinked;
         //TODO User Task Name?!?
         //TODO Computer Task Name?!?
         public string LongName { get; set; }

@@ -91,7 +91,7 @@ namespace DashworksTestAutomation.Extensions
 
         #region Checkboxes
 
-            public static void CheckCheckBox(this IWebElement checkbox)
+        public static void CheckCheckBox(this IWebElement checkbox)
         {
             if (!checkbox.Selected)
                 checkbox.Click();
@@ -116,6 +116,28 @@ namespace DashworksTestAutomation.Extensions
                     checkbox.Click();
             }
         }
+
+        //public static void ChangeCheckboxState(this IWebElement checkbox, bool desiredState)
+        //{
+        //    if (desiredState.Equals(true))
+        //    {
+        //        if (!checkbox.Selected)
+        //        {
+        //            checkbox.Click();
+        //        }
+        //        else
+        //        {
+                    
+        //        }
+        //    }
+        //    if (desiredState.Equals(false))
+        //    {
+        //        if (checkbox.Selected)
+        //        {
+        //            checkbox.Click();
+        //        }
+        //    }
+        //}
 
         /// <summary>
         /// This method is used for checkboxes in Filters panel
