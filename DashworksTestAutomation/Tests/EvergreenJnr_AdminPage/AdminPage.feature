@@ -288,3 +288,15 @@ Scenario: EvergreenJnr_AdminPage_CheckThatNotificationMessageIsDisplayedAfterUpd
 	When User clicks Update Bucket button on the Buckets page
 	Then Success message The "TestBucket2" bucket has been updated is displayed on the Buckets page
 	Then Delete "TestBucket2" Bucket in the Administration
+
+@Evergreen @Admin @EvergreenJnr_AdminPage @AdminPage @DAS11763
+Scenario: EvergreenJnr_AdminPage_CheckThatNoConsoleErrorsAreDisplayedWhenDeletingBucketFromBucketsSection
+	When User clicks Admin on the left-hand menu
+	Then Admin page should be displayed to the user
+	When User click "Teams" link on the Admin page
+	Then "Teams" page should be displayed to the user
+	When User enters "IB Team" text in the Search field for "Team" column on the Teams page
+	And User clicks content from "Team" column on the Teams page
+	Then "IB Team" team details is displayed to the user
+	And User clicks "Buckets" tab on the Teams page
+	And There are no errors in the browser console

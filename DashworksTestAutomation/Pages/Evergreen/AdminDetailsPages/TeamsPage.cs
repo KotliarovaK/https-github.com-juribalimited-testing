@@ -87,6 +87,13 @@ namespace DashworksTestAutomation.Pages.Evergreen.AdminDetailsPages
             return Driver.IsElementDisplayed(By.XPath($".//h1[text()='{teamName}']"));
         }
 
+        public void SelectTabByName(string tabName)
+        {
+            string tabNameSelector = $".//li[@class='ng-star-inserted']//span[text()='{tabName}']";
+            Driver.WaitWhileControlIsNotDisplayed(By.XPath(tabNameSelector));
+            Driver.FindElement(By.XPath(tabNameSelector)).Click();
+        }
+
         public void OpenColumnSettingsByName(string columnName)
         {
             var columnSettingsSelector =

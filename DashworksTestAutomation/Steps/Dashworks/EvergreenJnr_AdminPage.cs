@@ -447,6 +447,13 @@ namespace DashworksTestAutomation.Steps.Dashworks
             Assert.IsTrue(teamElement.AppropriateTeamName(teamName), $"{teamName} is not displayed on the Teams page");
         }
 
+        [Then(@"User clicks ""(.*)"" tab on the Teams page")]
+        public void ThenUserClicksTabOnTheTeamsPage(string tabName)
+        {
+            var page = _driver.NowAt<TeamsPage>();
+            page.SelectTabByName(tabName);
+        }
+
         [When(@"User clicks Create Project button")]
         public void WhenUserClicksCreateProjectButton()
         {
