@@ -47,7 +47,6 @@ Scenario: EvergreenJnr_AdminPage_CheckThatErrorIsNotDisplayedWhenCreateBucketWit
 	Then Error message with "A bucket already exists with this name" text is displayed on the Buckets page
 	And There are no errors in the browser console
 	Then Delete "TestBucket1" Bucket in the Administration
-	Then Delete "12" Bucket in the Administration
 
 @Evergreen @Admin @EvergreenJnr_AdminPage @AdminPage @DAS11726
 Scenario: EvergreenJnr_AdminPage_CheckThatCreateButtonIsDisabledForEmptyProjectName
