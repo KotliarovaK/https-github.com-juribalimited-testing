@@ -6,6 +6,7 @@ using OpenQA.Selenium.Remote;
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using DashworksTestAutomation.Helpers;
 using TechTalk.SpecFlow;
 
 namespace DashworksTestAutomation.Steps.Dashworks
@@ -139,31 +140,34 @@ namespace DashworksTestAutomation.Steps.Dashworks
         {
             var listpageMenu = _driver.NowAt<BaseDashboardPage>();
 
-            List<string> expectedList = listpageMenu.GetColumnContent(columnName).Where(x => !x.Equals("")).ToList();
-            List<KeyValuePair<DateTime, string>> unsortedList = new List<KeyValuePair<DateTime, string>>();
-            DateTime datevalue;
-            foreach (var date in expectedList)
-            {
-                var unconvertedDate = DateTime.TryParse(date, out datevalue);
-                unsortedList.Add(unconvertedDate
-                    ? new KeyValuePair<DateTime, string>(datevalue, date)
-                    : new KeyValuePair<DateTime, string>(DateTime.MinValue, date));
-            }
+            List<string> originalList = listpageMenu.GetColumnContent(columnName).ToList();
+            SortingHelper.IsListSorted(originalList);
+            //var listpageMenu = _driver.NowAt<BaseDashboardPage>();
 
-            try
-            {
-                Assert.AreEqual(expectedList.OrderBy(s => s).ToList(), expectedList, "Incorrect sorting order");
-            }
-            catch (Exception)
-            {
-                for (int i = 0; i < expectedList.Count; i++)
-                {
-                    Assert.AreEqual(unsortedList.OrderBy(x => x.Key).Select(x => x.Value).ToArray()[i],
-                        expectedList[i], "Incorrect sorting order");
-                }
-            }
+            //List<string> expectedList = listpageMenu.GetColumnContent(columnName).Where(x => !x.Equals("")).ToList();
+            //List<KeyValuePair<DateTime, string>> unsortedList = new List<KeyValuePair<DateTime, string>>();
+            //DateTime datevalue;
+            //foreach (var date in expectedList)
+            //{
+            //    var unconvertedDate = DateTime.TryParse(date, out datevalue);
+            //    unsortedList.Add(unconvertedDate
+            //        ? new KeyValuePair<DateTime, string>(datevalue, date)
+            //        : new KeyValuePair<DateTime, string>(DateTime.MinValue, date));
+            //}
+
+            //try
+            //{
+            //    Assert.AreEqual(expectedList.OrderBy(s => s).ToList(), expectedList, "Incorrect sorting order");
+            //}
+            //catch (Exception)
+            //{
+            //    for (int i = 0; i < expectedList.Count; i++)
+            //    {
+            //        Assert.AreEqual(unsortedList.OrderBy(x => x.Key).Select(x => x.Value).ToArray()[i],
+            //            expectedList[i], "Incorrect sorting order");
+            //    }
+            //}
         }
-
 
         [Then(@"full list content is displayed to the user")]
         public void ThenFullListContentIsDisplayedToTheUser()
