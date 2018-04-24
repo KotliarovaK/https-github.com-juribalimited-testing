@@ -6,6 +6,8 @@ using OpenQA.Selenium.Remote;
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using DashworksTestAutomation.DTO;
+using DashworksTestAutomation.DTO.RuntimeVariables;
 using DashworksTestAutomation.Helpers;
 using DashworksTestAutomation.Pages.Evergreen.AdminDetailsPages;
 using DashworksTestAutomation.Utils;
@@ -17,10 +19,12 @@ namespace DashworksTestAutomation.Steps.Dashworks
     internal class EvergreenJnr_AdminPage : SpecFlowContext
     {
         private readonly RemoteWebDriver _driver;
+        private readonly UsedUsers _usedUsers;
 
-        public EvergreenJnr_AdminPage(RemoteWebDriver driver)
+        public EvergreenJnr_AdminPage(RemoteWebDriver driver, UsedUsers usedUsers)
         {
             _driver = driver;
+            _usedUsers = usedUsers;
         }
 
         [When(@"User click ""(.*)"" link on the Admin page")]
@@ -512,6 +516,36 @@ namespace DashworksTestAutomation.Steps.Dashworks
         {
             //var projectId = DatabaseHelper.ExecuteReader($"SELECT [ProjectID] FROM[PM].[dbo].[Projects] where[ProjectName] = '{projectName}'", 0)[0];
             DatabaseHelper.ExecuteQuery($"delete from[PM].[dbo].[ProjectGroups] where[GroupName] = '{bucketName}'");
+        }
+
+        [AfterScenario("Delete_Newly_Created_Team")]
+        public void DeleteAllTeamsAfterScenarioRun()
+        {
+
+            try
+            {
+                if (_usedUsers.Value == null || !_usedUsers.Value.Any())
+                    return;
+
+                foreach (UserDto userDto in _usedUsers.Value)
+                {
+                    try
+                    {
+                        var listsIds = DatabaseHelper.ExecuteReader(
+                            $"select l.ListId from [aspnetdb].[dbo].[aspnet_Users] u join [PM].[dbo].[Teams] t on u.UserId = t.UserId where u.LoweredUserName = '{userDto.UserName}'",
+                            0);
+
+                        DatabaseHelper.RemoveLists(listsIds);
+                        //DatabaseHelper.ExecuteQuery($"delete from[PM].[dbo].[Teams] where[TeamName] = '{teamName}'");
+                    }
+                    catch
+                    {
+                    }
+                }
+            }
+            catch
+            {
+            }
         }
     }
 }
