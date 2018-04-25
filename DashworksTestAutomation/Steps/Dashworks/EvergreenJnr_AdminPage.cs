@@ -205,6 +205,106 @@ namespace DashworksTestAutomation.Steps.Dashworks
             Assert.AreEqual(text, page.ErrorMessageTeamPage.Text, "Error Message is not displayed");
         }
 
+        [When(@"User have opened Column Settings for ""(.*)"" column on the Teams Page")]
+        public void WhenUserHaveOpenedColumnSettingsForColumnOnTheTeamsPage(string columnName)
+        {
+            var page = _driver.NowAt<TeamsPage>();
+            page.OpenColumnSettingsByName(columnName);
+        }
+
+        [When(@"User clicks Filter button in the Column Settings panel on the Teams Page")]
+        public void WhenUserClicksFilterButtonInTheColumnSettingsPanelOnTheTeamsPage()
+        {
+            var menu = _driver.NowAt<TeamsPage>();
+            _driver.WaitWhileControlIsNotDisplayed<TeamsPage>(() => menu.FilterButton);
+            menu.FilterButton.Click();
+        }
+
+        [Then(@"Content is present in the table on the Teams Page")]
+        public void ThenContentIsPresentInTheTableOnTheTeamsPage()
+        {
+            var tableElement = _driver.NowAt<TeamsPage>();
+            Assert.IsTrue(tableElement.TableContent.Displayed(), "Table is empty");
+        }
+
+        [When(@"User enters ""(.*)"" text in the Search field for ""(.*)"" column on the Teams page")]
+        public void WhenUserEntersTextInTheSearchFieldForColumnOnTheTeamsPage(string text, string columnName)
+        {
+            var filterElement = _driver.NowAt<TeamsPage>();
+            filterElement.GetSearchFieldByColumnName((columnName), text);
+        }
+
+        [When(@"User selects all rows on the Teams page")]
+        public void WhenUserSelectsAllRowsOnTheTeamsPage()
+        {
+            var checkbox = _driver.NowAt<TeamsPage>();
+            checkbox.SelectAllProjectsCheckbox.Click();
+        }
+
+        [Then(@"User clicks on Actions button on the Teams page")]
+        public void ThenUserClicksOnActionsButtonOnTheTeamsPage()
+        {
+            var button = _driver.NowAt<TeamsPage>();
+            _driver.WaitWhileControlIsNotDisplayed<TeamsPage>(() => button.ActionsButton);
+            button.ActionsButton.Click();
+            Logger.Write("Actions button was clicked");
+        }
+
+        [Then(@"User select ""(.*)"" in the Actions dropdown on the Teams page")]
+        public void ThenUserSelectInTheActionsDropdownOnTheTeamsPage(string actionName)
+        {
+            var action = _driver.NowAt<TeamsPage>();
+            action.SelectActions(actionName);
+        }
+
+        [When(@"User clicks content from ""(.*)"" column on the Teams page")]
+        public void WhenUserClicksContentFromColumnOnTheTeamsPage(string columnName)
+        {
+            var tableElement = _driver.NowAtWithoutWait<TeamsPage>();
+            tableElement.ClickContentByColumnName(columnName);
+            _driver.WaitForDataLoading();
+        }
+
+        [Then(@"""(.*)"" team details is displayed to the user")]
+        public void ThenTeamDetailsIsDisplayedToTheUser(string teamName)
+        {
+            var teamElement = _driver.NowAt<TeamsPage>();
+            Assert.IsTrue(teamElement.AppropriateTeamName(teamName), $"{teamName} is not displayed on the Teams page");
+        }
+
+        [Then(@"User clicks ""(.*)"" tab on the Teams page")]
+        public void ThenUserClicksTabOnTheTeamsPage(string tabName)
+        {
+            var page = _driver.NowAt<TeamsPage>();
+            page.SelectTabByName(tabName);
+        }
+
+        [Then(@"Create Team button is disabled")]
+        public void ThenCreateTeamButtonIsDisabled()
+        {
+            var button = _driver.NowAt<TeamsPage>();
+            _driver.WaitWhileControlIsNotDisplayed<TeamsPage>(() => button.CreateTeamButtonOnCreateTeamPage);
+            Assert.IsTrue(Convert.ToBoolean(button.CreateTeamButtonOnCreateTeamPage.GetAttribute("disabled")),
+                "Create Team button is active");
+        }
+
+        [When(@"User clicks Delete button on the Teams page")]
+        public void WhenUserClicksDeleteButtonOnTheTeamsPage()
+        {
+            var button = _driver.NowAt<TeamsPage>();
+            _driver.WaitWhileControlIsNotDisplayed<TeamsPage>(() => button.ActionsButton);
+            button.DeleteButtonOnPage.Click();
+            Logger.Write("Delete button was clicked");
+        }
+
+        [Then(@"Reassign Objects is displayed on the Teams page")]
+        public void ThenReassignObjectsIsDisplayedOnTheTeamsPage()
+        {
+            var page = _driver.NowAt<TeamsPage>();
+            _driver.WaitWhileControlIsNotDisplayed<TeamsPage>(() => page.ReassignObjectsSummary);
+            Assert.IsTrue(page.ReassignObjectsSummary.Displayed(), "Reassign Objects was not displayed");
+        }
+
         [When(@"User clicks Create Bucket button")]
         public void WhenUserClicksCreateBucketButton()
         {
@@ -403,56 +503,6 @@ namespace DashworksTestAutomation.Steps.Dashworks
             bucketElement.AddDevicesButton.Click();
         }
 
-        [When(@"User have opened Column Settings for ""(.*)"" column on the Teams Page")]
-        public void WhenUserHaveOpenedColumnSettingsForColumnOnTheTeamsPage(string columnName)
-        {
-            var page = _driver.NowAt<TeamsPage>();
-            page.OpenColumnSettingsByName(columnName);
-        }
-
-        [When(@"User clicks Filter button in the Column Settings panel on the Teams Page")]
-        public void WhenUserClicksFilterButtonInTheColumnSettingsPanelOnTheTeamsPage()
-        {
-            var menu = _driver.NowAt<TeamsPage>();
-            _driver.WaitWhileControlIsNotDisplayed<TeamsPage>(() => menu.FilterButton);
-            menu.FilterButton.Click();
-        }
-
-        [Then(@"Content is present in the table on the Teams Page")]
-        public void ThenContentIsPresentInTheTableOnTheTeamsPage()
-        {
-            var tableElement = _driver.NowAt<TeamsPage>();
-            Assert.IsTrue(tableElement.TableContent.Displayed(), "Table is empty");
-        }
-
-        [When(@"User enters ""(.*)"" text in the Search field for ""(.*)"" column on the Teams page")]
-        public void WhenUserEntersTextInTheSearchFieldForColumnOnTheTeamsPage(string text, string columnName)
-        {
-            var filterElement = _driver.NowAt<TeamsPage>();
-            filterElement.GetSearchFieldByColumnName((columnName), text);
-        }
-
-        [When(@"User clicks content from ""(.*)"" column on the Teams page")]
-        public void WhenUserClicksContentFromColumnOnTheTeamsPage(string columnName)
-        {
-            var tableElement = _driver.NowAtWithoutWait<TeamsPage>();
-            tableElement.ClickContentByColumnName(columnName);
-            _driver.WaitForDataLoading();
-        }
-
-        [Then(@"""(.*)"" team details is displayed to the user")]
-        public void ThenTeamDetailsIsDisplayedToTheUser(string teamName)
-        {
-            var teamElement = _driver.NowAt<TeamsPage>();
-            Assert.IsTrue(teamElement.AppropriateTeamName(teamName), $"{teamName} is not displayed on the Teams page");
-        }
-
-        [Then(@"User clicks ""(.*)"" tab on the Teams page")]
-        public void ThenUserClicksTabOnTheTeamsPage(string tabName)
-        {
-            var page = _driver.NowAt<TeamsPage>();
-            page.SelectTabByName(tabName);
-        }
 
         [When(@"User clicks Create Project button")]
         public void WhenUserClicksCreateProjectButton()
@@ -527,15 +577,6 @@ namespace DashworksTestAutomation.Steps.Dashworks
             _driver.WaitWhileControlIsNotDisplayed<ProjectsPage>(() => projectElement.SuccessDeleteMessage);
             Assert.IsTrue(projectElement.SuccessDeletingMessage(textMessage),
                 $"{textMessage} is not displayed on the Project page");
-        }
-        
-        [Then(@"Create Team button is disabled")]
-        public void ThenCreateTeamButtonIsDisabled()
-        {
-            var button = _driver.NowAt<TeamsPage>();
-            _driver.WaitWhileControlIsNotDisplayed<TeamsPage>(() => button.CreateTeamButtonOnCreateTeamPage);
-            Assert.IsTrue(Convert.ToBoolean(button.CreateTeamButtonOnCreateTeamPage.GetAttribute("disabled")),
-                "Create Team button is active");
         }
 
         [Then(@"Delete ""(.*)"" Project in the Administration")]

@@ -299,4 +299,10 @@ Scenario: EvergreenJnr_AdminPage_CheckThatNoConsoleErrorsAreDisplayedWhenDeletin
 	And User clicks content from "Team" column on the Teams page
 	Then "IB Team" team details is displayed to the user
 	And User clicks "Buckets" tab on the Teams page
-	And There are no errors in the browser console
+	When User enters "Group IB Team" text in the Search field for "Bucket" column on the Teams page
+	When User selects all rows on the Teams page
+	Then User clicks on Actions button on the Teams page
+	Then User select "Delete Buckets" in the Actions dropdown on the Teams page
+	When User clicks Delete button on the Teams page
+	Then Reassign Objects is displayed on the Teams page
+	Then There are no errors in the browser console
