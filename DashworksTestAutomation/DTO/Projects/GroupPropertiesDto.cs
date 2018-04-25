@@ -11,15 +11,5 @@ namespace DashworksTestAutomation.DTO.Projects
 
     public enum OwnedByTeamEnum
     {
-        [Description("AAA01TestTeam")]
-        AAA01TestTeam,
-        [Description("Admin IT")]
-        AdminIT,
-        [Description("IB Team")]
-        IBTeam,
-        [Description("My Team")]
-        MyTeam,
-        [Description("Team 0")]
-        Team0
     }
 }

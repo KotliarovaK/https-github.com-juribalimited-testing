@@ -226,6 +226,7 @@
     <Compile Include="Pages\Projects\Capacity\Capacity_DetailsPage.cs" />
     <Compile Include="Pages\Projects\Capacity\Capacity_OverrideDatesPage.cs" />
     <Compile Include="Pages\Projects\CategoryPropertiesPage.cs" />
+    <Compile Include="Pages\Projects\DeleteElements.cs" />
     <Compile Include="Pages\Projects\DetailsPage.cs" />
     <Compile Include="Pages\Projects\GroupPropertiesPage.cs" />
     <Compile Include="Pages\Projects\MailTemplatePropertiesPage.cs" />
@@ -247,6 +248,7 @@
     <Compile Include="Pages\Projects\TaskProperties_DetailsPage.cs" />
     <Compile Include="Pages\Projects\TeamPropertiesPage.cs" />
     <Compile Include="Pages\Projects\TeamsPage.cs" />
+    <Compile Include="Steps\Projects\Projects_Capacity.cs" />
     <Compile Include="Steps\Projects\Projects_CreateProject.cs" />
     <Compile Include="Steps\Projects\Projects_Login.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

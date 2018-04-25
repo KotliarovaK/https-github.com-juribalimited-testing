@@ -9,7 +9,7 @@ namespace DashworksTestAutomation.Pages.Projects
     {
         //TODO add a language?
 
-        [FindsBy(How = How.XPath, Using = ".//input[@id='cb_otherOptions2_ShowScreen']']")]
+        [FindsBy(How = How.XPath, Using = ".//input[@id='cb_otherOptions2_ShowScreen']")]
         public IWebElement ShowScreen { get; set; }
 
         [FindsBy(How = How.XPath, Using = ".//input[@id='cb_otherOptions2_allowUsersToAddANoteFromThisPage']")]

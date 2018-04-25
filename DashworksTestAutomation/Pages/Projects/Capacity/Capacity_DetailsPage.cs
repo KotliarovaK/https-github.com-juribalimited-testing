@@ -16,7 +16,7 @@ namespace DashworksTestAutomation.Pages.Projects
         [FindsBy(How = How.XPath, Using = ".//input[@id='ctl00_MainContent_CB_Details_EnforceCapacityOnSelfServicePage']")]
         public IWebElement EnforceOonSelfServicePage { get; set; }
 
-        [FindsBy(How = How.XPath, Using = "ctl00_MainContent_CB_Details_EnforceCapacityOnProjectObjectPage")]
+        [FindsBy(How = How.XPath, Using = ".//input[@id='ctl00_MainContent_CB_Details_EnforceCapacityOnProjectObjectPage']")]
         public IWebElement EnforceOnProjectObjectPage { get; set; }
 
         [FindsBy(How = How.XPath, Using = ".//input[@id='TB_Details_PercentageCapacity']")]

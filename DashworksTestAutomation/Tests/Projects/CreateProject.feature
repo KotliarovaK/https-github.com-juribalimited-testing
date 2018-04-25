@@ -106,6 +106,19 @@ Scenario: Projects_CreateProject
 	Then User updates the Thank You on Self Service tab
 	| SelfServicePortal | NavigationMenu | ChoicesSummary | IncludeLink | PageDescription |
 	| true              | false          | false          | false       | TestText        |
+	When User navigate to "Capacity" tab
+	Then "Manage Capacity" page is displayed to the user
+	Then User updates the Details on Capacity tab
+	| EnablePlanning | DisplayColors | EnforceOonSelfServicePage | EnforceOnProjectObjectPage | CapacityToReach |
+	| true           | true          | true                      | false                      | 23              |
+	When User navigate to "Override Dates" on selected tab
+	Then User updates the Override Dates on Capacity tab
+	| Date        | Capacity | Comment  |
+	| 03 Apr 2016 | TestText | TestText |
+	When User navigate to "Groups" tab
+	Then User remove "TestGroupName" group
+	When User navigate to "Details" tab
+	Then User remove Project
 
 @Projects @CreateProject @Teams
 Scenario: Projects_checkHowManyGroupInATeam
@@ -125,17 +138,21 @@ Scenario: Projects_checkHowManyGroupInATeam
 	Then "Manage Teams" page is displayed to the user
 	When User clicks "Team" create button
 	Then User create Team
-	| TeamName      | ShortDescription |
-	| AAA01TestTeam | Test             |
+	| TeamName   | ShortDescription |
+	| 123 onetwo | Test             |
 	When User navigate to "Groups" tab
 	Then "Manage Groups" page is displayed to the user
 	When User clicks "Group" create button
 	Then User create Group
 	| GroupName |
-	| TestGroup |
+	| onetwo    |
 	When User navigate to "Teams" tab
 	Then "Manage Teams" page is displayed to the user
-	Then groups is displayed in the "AAA01TestTeam" team
+	Then groups is displayed in the "123 onetwo" team
+	When User navigate to "Groups" tab
+	Then User remove "onetwo" group
+	When User navigate to "Details" tab
+	Then User remove Project
 
 @Projects @CreateProject @Teams
 Scenario: Projects_checkSelfServiceandCapacityTabs
@@ -151,9 +168,9 @@ Scenario: Projects_checkSelfServiceandCapacityTabs
 	| ProjectName | ProjectShortName | ProjectDescription | ProjectType                |
 	| TestProject | TestText         | TestText           | Computer Scheduled Project |
 	Then "Manage Project Details" page is displayed to the user
-	When User navigate to "Self Service" tab
-	Then "Manage Self Service" page is displayed to the user
-	When User navigate to "Thank You" on selected tab
-	Then User updates the Thank You on Self Service tab
-	| SelfServicePortal | NavigationMenu | ChoicesSummary | IncludeLink | PageDescription |
-	| true              | false          | false          | false       | TestText        |
+	When User navigate to "Capacity" tab
+	Then "Manage Capacity" page is displayed to the user
+	When User navigate to "Override Dates" on selected tab
+	Then User updates the Override Dates on Capacity tab
+	| Date        | Capacity | Comment  |
+	| 03 Apr 2016 | TestText | TestText |

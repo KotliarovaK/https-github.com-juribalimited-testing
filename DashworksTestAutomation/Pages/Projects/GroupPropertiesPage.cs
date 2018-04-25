@@ -1,4 +1,5 @@
 ﻿using System.Collections.Generic;
+using DashworksTestAutomation.Extensions;
 using DashworksTestAutomation.Pages.Evergreen;
 using OpenQA.Selenium;
 using OpenQA.Selenium.Support.PageObjects;

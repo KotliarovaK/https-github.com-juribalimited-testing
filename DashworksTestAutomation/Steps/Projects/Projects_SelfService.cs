@@ -208,10 +208,10 @@ namespace DashworksTestAutomation.Steps.Projects
 
             table.CreateInstance<SelfService_ThankYouDto>().CopyPropertiesTo(_thankYouDto);
 
-            page.ShowInTheSelfServicePortal.ChangeCheckboxState(_thankYouDto.SelfServicePortal);
-            page.ShowInTheNavigationMenu.ChangeCheckboxState(_thankYouDto.NavigationMenu);
-            page.ShowChoicesSummary.ChangeCheckboxState(_thankYouDto.ChoicesSummary);
-            page.IncludeLink.ChangeCheckboxState(_thankYouDto.IncludeLink);
+            page.ShowInTheSelfServicePortal.SetCheckboxState(_thankYouDto.SelfServicePortal);
+            page.ShowInTheNavigationMenu.SetCheckboxState(_thankYouDto.NavigationMenu);
+            page.ShowChoicesSummary.SetCheckboxState(_thankYouDto.ChoicesSummary);
+            page.IncludeLink.SetCheckboxState(_thankYouDto.IncludeLink);
             page.PageDescription.SendKeys(_thankYouDto.PageDescription);
 
             upd.UpdateButton.Click();

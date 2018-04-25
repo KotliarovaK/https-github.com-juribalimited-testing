@@ -276,11 +276,33 @@ namespace DashworksTestAutomation.Steps.Projects
         [Then(@"groups is displayed in the ""(.*)"" team")]
         public void ThenGroupsIsDisplayedInTheTeam(string teamName)
         {
-            var groups = _driver.NowAt<TeamsPage>();
+            var taem = _driver.NowAt<BaseElements>();
 
             var groupsInTeam = _projectDto.GroupProperties.Count(x => x.Equals(teamName));
+            var groups = taem.GetGroupsCountByTeamName(teamName);
 
-            Assert.AreEqual(groupsInTeam, groups.GetGroupsCountByTeamName(teamName), "Number of groups is incorrect");
+            Assert.AreEqual(groups, groupsInTeam,  "Number of groups is incorrect");
+        }
+
+        [Then(@"User remove ""(.*)"" group")]
+        public void ThenUserRemoveGroup(string groupName)
+        {
+            var page = _driver.NowAt<BaseElements>();
+
+            page.GetDeleteButtonElementByName(groupName).Click();
+            page.DeleteGroupButton.Click();
+            _driver.AcceptAlert();
+        }
+
+        [Then(@"User remove Project")]
+        public void ThenUserRemoveProject()
+        {
+            var page = _driver.NowAt<BaseElements>();
+
+            page.DeleteProjectButton.Click();
+            _driver.AcceptAlert();
+            page.ConfirmDeletedTheProjectButton.Click();
+            _driver.AcceptAlert();
         }
     }
 }

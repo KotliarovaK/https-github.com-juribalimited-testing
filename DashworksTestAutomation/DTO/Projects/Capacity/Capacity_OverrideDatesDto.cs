@@ -9,7 +9,7 @@ namespace DashworksTestAutomation.DTO.Projects
         public string Date { get; set; }
         public OverrideTeamEnum OverrideTeam;
         public OverrideRequestTypeEnum OverrideRequestType;
-        public int Capacity { get; set; }
+        public string Capacity { get; set; }
         public string Comment { get; set; }
 
         public Capacity_OverrideDatesDto()
