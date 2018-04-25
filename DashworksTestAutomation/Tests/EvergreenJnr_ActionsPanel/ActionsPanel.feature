@@ -10,6 +10,8 @@ Background: Pre-Conditions
 Scenario: EvergreenJnr_UsersList_CheckThatAfterInterruptingProcessSelectingAllRowsAtActionsPanelProgressIndicatorDoesNotContinueToRun
 	When User clicks "Users" on the left-hand menu
 	Then "Users" list should be displayed to the user
+	When User click on 'Username' column header
+	When User click on 'Username' column header
 	When User clicks the Actions button
 	Then Actions panel is displayed to the user
 	When User select all rows

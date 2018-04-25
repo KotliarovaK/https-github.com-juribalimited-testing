@@ -254,6 +254,8 @@ Examples:
 Scenario: EvergreenJnr_MailboxesLists_CheckThatNoConsoleErrorsWhenViewingMailboxDetails
 	When User clicks "Mailboxes" on the left-hand menu
 	Then "Mailboxes" list should be displayed to the user
+	When User click on 'Email Address' column header
+	When User click on 'Email Address' column header
 	When User click content from "Email Address" column
 	Then Item content is displayed to the User
 	Then There are no errors in the browser console
