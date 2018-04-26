@@ -15,14 +15,14 @@ Scenario: EvergreenJnr_AdminPage_CheckThatErrorIsNotDisplayedWhenCreateTeamWithT
 	When User clicks Create Team button
 	Then Create Team page should be displayed to the user
 	And User enters "TestTeam" in the Team Name field
-	And User enters "test" in the Team Description field
-	When User clicks Create Team button on the Create Team page
+	When User enters "test" in the Team Description field
+	And User clicks Create Team button on the Create Team page
 	Then Success message is displayed and contains "The team has been created" text on the Teams page
 	When User clicks Create Team button
 	Then Create Team page should be displayed to the user
 	And User enters "TestTeam" in the Team Name field
-	And User enters "test" in the Team Description field
-	When User clicks Create Team button on the Create Team page
+	When User enters "test" in the Team Description field
+	And User clicks Create Team button on the Create Team page
 	Then Error message with "A team already exists with this name" text is displayed on the Teams page
 	And There are no errors in the browser console
 	And Delete "TestTeam" Team in the Administration
@@ -81,7 +81,7 @@ Scenario: EvergreenJnr_AdminPage_CheckThatCreateButtonIsDisabledForEmptyTeamName
 	When User clicks Create Team button
 	Then Create Team page should be displayed to the user
 	And User enters " " in the Team Name field
-	And User enters "test" in the Team Description field
+	When User enters "test" in the Team Description field
 	Then Create Team button is disabled
 
 @Evergreen @AllLists @EvergreenJnr_AdminPage @AdminPage @DAS11886
@@ -155,7 +155,7 @@ Scenario Outline: EvergreenJnr_AdminPage_CheckThatProjectsAreDeletedSuccessfully
 	When User selects all rows on the Projects page
 	And User removes selected Project
 	Then Success message with "The selected project has been deleted" text is displayed on the Projects page
-	#Then There are no errors in the browser console
+	Then There are no errors in the browser console
 
 	Examples:
 	| ProjectName     | ScopeList     |
@@ -306,3 +306,29 @@ Scenario: EvergreenJnr_AdminPage_CheckThatNoConsoleErrorsAreDisplayedWhenDeletin
 	When User clicks Delete button on the Teams page
 	Then Reassign Objects is displayed on the Teams page
 	Then There are no errors in the browser console
+
+@Evergreen @Admin @EvergreenJnr_AdminPage @AdminPage @DAS11761
+Scenario: EvergreenJnr_AdminPage_CheckThatErrorsDoNotAppearAfterUpdatingTeamDescriptionField
+	When User clicks Admin on the left-hand menu
+	Then Admin page should be displayed to the user
+	When User click "Teams" link on the Admin page
+	Then "Teams" page should be displayed to the user
+	When User clicks Create Team button
+	Then Create Team page should be displayed to the user
+	And User enters "TestTeam1" in the Team Name field
+	When User enters "test" in the Team Description field
+	When User clicks Create Team button on the Create Team page
+	Then Success message is displayed and contains "The team has been created" text on the Teams page
+	When User enters "TestTeam1" text in the Search field for "Team" column on the Teams page
+	And User clicks content from "Team" column on the Teams page
+	Then "TestTeam1" team details is displayed to the user
+	And User clicks "Team Settings" tab on the Teams page
+	When User enters "" in the Team Description field
+	Then Update Team button is disabled
+	When User enters " " in the Team Description field
+	Then Update Team button is disabled
+	When User enters "testTeamtest" in the Team Description field
+	When User clicks Update Team button
+	Then Success message is displayed and contains "The team was successfully updated" text on the Teams page
+	Then There are no errors in the browser console
+	And Delete "TestTeam1" Team in the Administration

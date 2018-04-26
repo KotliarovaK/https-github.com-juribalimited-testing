@@ -93,12 +93,6 @@ namespace DashworksTestAutomation.Pages.Evergreen
         [FindsBy(How = How.XPath, Using = ".//div[text()='This list does not exist or you do not have access to it']")]
         public IWebElement DoesNotExistListMessage { get; set; }
 
-        [FindsBy(How = How.XPath, Using = ".//div[@class='status']")]
-        public IWebElement ColorItemSelector { get; set; }
-
-        [FindsBy(How = How.XPath, Using = ".//img[contains(@src,'png')]")]
-        public IWebElement ImageItemSelector { get; set; }
-
         public const string ColorItem = ".//div[@class='status']";
 
         public const string ImageItem = ".//div[@class='ag-body-container']//img[contains(@src,'png')]";
@@ -301,7 +295,7 @@ namespace DashworksTestAutomation.Pages.Evergreen
         {
             switch (styleImageItem)
             {
-                case "http://automation.corp.juriba.com/evergreen/img/forwardPath.png":
+                case "forwardPath.png":
                     return "FORWARD PATH";
                 default: throw new Exception($"{styleImageItem} is not valid Image path");
             }

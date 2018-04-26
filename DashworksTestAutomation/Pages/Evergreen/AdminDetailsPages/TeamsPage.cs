@@ -49,6 +49,9 @@ namespace DashworksTestAutomation.Pages.Evergreen.AdminDetailsPages
         [FindsBy(How = How.XPath, Using = ".//h2[text()='Reassign Objects']")]
         public IWebElement ReassignObjectsSummary { get; set; }
 
+        [FindsBy(How = How.XPath, Using = ".//button[@class='mat-primary mat-raised-button']")]
+        public IWebElement UpdateTeamButton { get; set; }
+
         public override List<By> GetPageIdentitySelectors()
         {
             Driver.WaitForDataLoading();
