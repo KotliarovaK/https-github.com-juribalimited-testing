@@ -78,30 +78,8 @@ namespace DashworksTestAutomation.Steps.Dashworks
             var listpageMenu = _driver.NowAt<BaseDashboardPage>();
 
             List<string> expectedList = listpageMenu.GetColumnContent(columnName).Where(x => !x.Equals("")).ToList();
-            List<KeyValuePair<DateTime, string>> unsortedList = new List<KeyValuePair<DateTime, string>>();
-            DateTime datevalue;
-            Assert.IsTrue(listpageMenu.DescendingSortingIcon.Displayed(), "Descending icon is not displayed");
-            foreach (var date in expectedList)
-            {
-                var unconvertedDate = DateTime.TryParse(date, out datevalue);
-                unsortedList.Add(unconvertedDate
-                    ? new KeyValuePair<DateTime, string>(datevalue, date)
-                    : new KeyValuePair<DateTime, string>(DateTime.MinValue, date));
-            }
-
-            try
-            {
-                Assert.AreEqual(expectedList.OrderByDescending(s => s).ToList(), expectedList,
-                    "Incorrect sorting order");
-            }
-            catch (Exception)
-            {
-                for (int i = 0; i < expectedList.Count; i++)
-                {
-                    Assert.AreEqual(unsortedList.OrderByDescending(x => x.Key).Select(x => x.Value).ToArray()[i],
-                        expectedList[i], "Incorrect sorting order");
-                }
-            }
+            SortingHelper.IsListSorted(expectedList, false);
+            Assert.IsTrue(listpageMenu.DescendingSortingIcon.Displayed);
         }
 
         [Then(@"data in table is sorted by '(.*)' column in ascending order")]
@@ -109,30 +87,29 @@ namespace DashworksTestAutomation.Steps.Dashworks
         {
             var listpageMenu = _driver.NowAt<BaseDashboardPage>();
 
-            List<string> expectedList = listpageMenu.GetColumnContent(columnName).Where(x => !x.Equals("")).ToList();
-            List<KeyValuePair<DateTime, string>> unsortedList = new List<KeyValuePair<DateTime, string>>();
-            DateTime datevalue;
-            Assert.IsTrue(listpageMenu.AscendingSortingIcon.Displayed(), "Ascending icon is not displayed");
-            foreach (var date in expectedList)
-            {
-                var unconvertedDate = DateTime.TryParse(date, out datevalue);
-                unsortedList.Add(unconvertedDate
-                    ? new KeyValuePair<DateTime, string>(datevalue, date)
-                    : new KeyValuePair<DateTime, string>(DateTime.MinValue, date));
-            }
+            List<string> actualList = listpageMenu.GetColumnContent(columnName).Where(x => !x.Equals("")).ToList();
+            SortingHelper.IsListSorted(actualList);
+            Assert.IsTrue(listpageMenu.AscendingSortingIcon.Displayed);
+        }
 
-            try
-            {
-                Assert.AreEqual(expectedList.OrderBy(s => s).ToList(), expectedList, "Incorrect sorting order");
-            }
-            catch (Exception)
-            {
-                for (int i = 0; i < expectedList.Count; i++)
-                {
-                    Assert.AreEqual(unsortedList.OrderBy(x => x.Key).Select(x => x.Value).ToArray()[i],
-                        expectedList[i], "Incorrect sorting order");
-                }
-            }
+        [Then(@"date in table is sorted by '(.*)' column in descending order")]
+        public void ThenDateInTableIsSortedByColumnInDescendingOrder(string columnName)
+        {
+            var listpageMenu = _driver.NowAt<BaseDashboardPage>();
+
+            List<string> expectedList = listpageMenu.GetColumnContent(columnName).Where(x => !x.Equals("")).ToList();
+            SortingHelper.IsListSortedByDate(expectedList);
+            Assert.IsTrue(listpageMenu.DescendingSortingIcon.Displayed);
+        }
+
+        [Then(@"date in table is sorted by '(.*)' column in ascending order")]
+        public void ThenDateInTableIsSortedByColumnInAscendingOrder(string columnName)
+        {
+            var listpageMenu = _driver.NowAt<BaseDashboardPage>();
+
+            List<string> expectedList = listpageMenu.GetColumnContent(columnName).Where(x => !x.Equals("")).ToList();
+            SortingHelper.IsListSortedByDate(expectedList, false);
+            Assert.IsTrue(listpageMenu.AscendingSortingIcon.Displayed);
         }
 
         [Then(@"data in the table is sorted by ""(.*)"" column in ascending order by default")]
@@ -142,31 +119,6 @@ namespace DashworksTestAutomation.Steps.Dashworks
 
             List<string> originalList = listpageMenu.GetColumnContent(columnName).ToList();
             SortingHelper.IsListSorted(originalList);
-            //var listpageMenu = _driver.NowAt<BaseDashboardPage>();
-
-            //List<string> expectedList = listpageMenu.GetColumnContent(columnName).Where(x => !x.Equals("")).ToList();
-            //List<KeyValuePair<DateTime, string>> unsortedList = new List<KeyValuePair<DateTime, string>>();
-            //DateTime datevalue;
-            //foreach (var date in expectedList)
-            //{
-            //    var unconvertedDate = DateTime.TryParse(date, out datevalue);
-            //    unsortedList.Add(unconvertedDate
-            //        ? new KeyValuePair<DateTime, string>(datevalue, date)
-            //        : new KeyValuePair<DateTime, string>(DateTime.MinValue, date));
-            //}
-
-            //try
-            //{
-            //    Assert.AreEqual(expectedList.OrderBy(s => s).ToList(), expectedList, "Incorrect sorting order");
-            //}
-            //catch (Exception)
-            //{
-            //    for (int i = 0; i < expectedList.Count; i++)
-            //    {
-            //        Assert.AreEqual(unsortedList.OrderBy(x => x.Key).Select(x => x.Value).ToArray()[i],
-            //            expectedList[i], "Incorrect sorting order");
-            //    }
-            //}
         }
 
         [Then(@"full list content is displayed to the user")]

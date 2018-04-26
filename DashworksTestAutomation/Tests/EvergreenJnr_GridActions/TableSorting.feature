@@ -47,13 +47,13 @@ Scenario: EvergreenJnr_MailboxesList_CheckSortByDateFunctionality
 	| SearchCriteria | NumberOfRows |
 	| Sonja          | 4            |
 	When User click on 'Created Date' column header
-	Then data in table is sorted by 'Created Date' column in descending order
+	Then date in table is sorted by 'Created Date' column in descending order
 	When User click on 'Created Date' column header
-	Then data in table is sorted by 'Created Date' column in ascending order
+	Then date in table is sorted by 'Created Date' column in ascending order
 	When User click on 'EmailMigra: Scheduled date' column header
-	Then data in table is sorted by 'EmailMigra: Scheduled date' column in descending order
+	Then date in table is sorted by 'EmailMigra: Scheduled date' column in descending order
 	When User click on 'EmailMigra: Scheduled date' column header
-	Then data in table is sorted by 'EmailMigra: Scheduled date' column in ascending order
+	Then date in table is sorted by 'EmailMigra: Scheduled date' column in ascending order
 
 @Evergreen @Users @EvergreenJnr_GridActions @TableSorting @DAS10612
 Scenario: EvergreenJnr_UsersList_CheckSortByDateFunctionality

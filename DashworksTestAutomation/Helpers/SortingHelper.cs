@@ -9,21 +9,24 @@ namespace DashworksTestAutomation.Helpers
 {
     public class SortingHelper
     {
-        public static void IsListSorted(List<string> originalList)
+        public static void IsListSorted(List<string> originalList, bool isAscending = true)
         {
             originalList = originalList.Where(x => !x.Equals("")).ToList();
+            List<string> expectedList = originalList.OrderBy(s => s).ToList();
+            if (!isAscending)
+                expectedList.Reverse();
 
             try
             {
                 //Compare two lists
-                Assert.AreEqual(originalList.OrderBy(s => s).ToList(), originalList, "Incorrect sorting order");
+                Assert.AreEqual(expectedList, originalList, "Incorrect sorting order");
             }
             catch (Exception)
             {
                 //Compare each elements just to find elements that a different
                 for (int i = 0; i < originalList.Count; i++)
                 {
-                    Assert.AreEqual(originalList.OrderBy(s => s).ToArray()[i],
+                    Assert.AreEqual(expectedList[i],
                         originalList[i], "Incorrect sorting order");
                 }
             }
@@ -63,9 +66,12 @@ namespace DashworksTestAutomation.Helpers
             }
         }
 
-        public static void IsListSortedByDate(List<string> originalList)
+        public static void IsListSortedByDate(List<string> originalList, bool isDescending = true)
         {
             originalList = originalList.Where(x => !x.Equals("")).ToList();
+            List<string> expectedList = originalList.OrderBy(s => s).ToList();
+            if (!isDescending)
+                expectedList.Reverse();
 
             List<KeyValuePair<DateTime, string>> unsortedList = new List<KeyValuePair<DateTime, string>>();
             DateTime datevalue;
@@ -84,7 +90,7 @@ namespace DashworksTestAutomation.Helpers
             try
             {
                 //Compare two lists
-                Assert.AreEqual(originalList.OrderBy(s => s).ToList(), originalList, "Incorrect sorting order");
+                Assert.AreEqual(originalList.OrderBy(s => s).ToList(), expectedList, "Incorrect sorting order");
             }
             catch (Exception)
             {
