@@ -773,28 +773,30 @@ namespace DashworksTestAutomation.Steps.Dashworks
         public void ThenColorIsMatchingTheCaption(string colorName)
         {
             var page = _driver.NowAt<BaseDashboardPage>();
-            var colorItem = (By.XPath(BaseDashboardPage.ColorItem));
+            var colorItem = By.XPath(BaseDashboardPage.ColorItem);
             var colors = _driver.FindElements(colorItem);
             foreach (var color in colors)
             {
                 var styleColorItem = color.GetAttribute("style");
-                _driver.WaitWhileControlIsNotDisplayed<BaseDashboardPage>(() => page.ColorItemSelector);
+                //_driver.WaitWhileControlIsNotDisplayed<BaseDashboardPage>(() => page.ColorItem);
+                _driver.WaitWhileControlIsNotDisplayed(colorItem);
                 Assert.IsTrue(page.GetColorByName(colorName).Displayed(), "Captions color does not match the caption");
                 Assert.AreEqual(page.GetColorContainer(styleColorItem), colorName, "Items color does not match the caption");
             }
-            
         }
 
         [Then(@"""(.*)"" image is matching the caption")]
         public void ThenImageIsMatchingTheCaption(string imageName)
         {
             var page = _driver.NowAt<BaseDashboardPage>();
-            var columnWithImage = By.XPath((BaseDashboardPage.ImageItem));
-            var images = _driver.FindElements(columnWithImage);
+            var imageItem = By.XPath(BaseDashboardPage.ImageItem);
+            var images = _driver.FindElements(imageItem);
             foreach (var image in images)
             {
-                var imageItemName = image.GetAttribute("src");
-                _driver.WaitWhileControlIsNotDisplayed<BaseDashboardPage>(() => page.ImageItemSelector);
+                var imageItemSource = image.GetAttribute("src");
+                var imageItemName = imageItemSource.Split('/').Last();
+                _driver.WaitWhileControlIsNotDisplayed(imageItem);
+                //_driver.WaitWhileControlIsNotDisplayed<BaseDashboardPage>(() => page.ImageItemSelector);
                 Assert.AreEqual(page.GetImageContainer(imageItemName), imageName, "Image does not match the caption");
             }
         }

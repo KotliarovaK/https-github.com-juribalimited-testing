@@ -173,11 +173,30 @@ namespace DashworksTestAutomation.Steps.Dashworks
             teamName.TeamNameField.SendKeys(teamText);
         }
 
-        [Then(@"User enters ""(.*)"" in the Team Description field")]
-        public void ThenUserEntersInTheTeamDescriptionField(string descriptionText)
+        [When(@"User enters ""(.*)"" in the Team Description field")]
+        public void WhenUserEntersInTheTeamDescriptionField(string descriptionText)
         {
             var teamName = _driver.NowAt<TeamsPage>();
+            teamName.TeamDescriptionField.Clear();
             teamName.TeamDescriptionField.SendKeys(descriptionText);
+        }
+
+        [When(@"User clicks Update Team button")]
+        public void WhenUserClicksUpdateTeamButton()
+        {
+            var button = _driver.NowAt<TeamsPage>();
+            _driver.WaitWhileControlIsNotDisplayed<TeamsPage>(() => button.UpdateTeamButton);
+            button.UpdateTeamButton.Click();
+            Logger.Write("Update Team button was clicked");
+        }
+
+        [Then(@"Update Team button is disabled")]
+        public void ThenUpdateTeamButtonIsDisabled()
+        {
+            var button = _driver.NowAt<TeamsPage>();
+            _driver.WaitWhileControlIsNotDisplayed<TeamsPage>(() => button.UpdateTeamButton);
+            Assert.IsTrue(Convert.ToBoolean(button.UpdateTeamButton.GetAttribute("disabled")),
+                "Update Team button is active");
         }
 
         [When(@"User clicks Create Team button on the Create Team page")]
