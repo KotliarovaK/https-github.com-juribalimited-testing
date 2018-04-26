@@ -60,7 +60,7 @@ Examples:
 	| Mailboxes    | aaron.u.flores@dwlabs.local                             | Email Address | Users        | Domain      | Key                 | Key                 |
 	| Mailboxes    | aaron.u.flores@dwlabs.local                             | Email Address | Users        | Domain      | Evergreen Object ID | Evergreen Object ID |
 
-@Evergreen @AllLists @EvergreenJnr_ItemDetails @ItemDetailsDisplay @DAS11732 @DAS12235 @Not_Run
+@Evergreen @AllLists @EvergreenJnr_ItemDetails @ItemDetailsDisplay @DAS11732 @DAS12235
 Scenario Outline: EvergreenJnr_AllLists_CheckThatDataIsDisplayedAfterAddingColumns
 	When User clicks "<PageName>" on the left-hand menu
 	Then "<PageName>" list should be displayed to the user
@@ -254,6 +254,8 @@ Examples:
 Scenario: EvergreenJnr_MailboxesLists_CheckThatNoConsoleErrorsWhenViewingMailboxDetails
 	When User clicks "Mailboxes" on the left-hand menu
 	Then "Mailboxes" list should be displayed to the user
+	When User click on 'Email Address' column header
+	When User click on 'Email Address' column header
 	When User click content from "Email Address" column
 	Then Item content is displayed to the User
 	Then There are no errors in the browser console
@@ -310,7 +312,7 @@ Scenario Outline: EvergreenJnr_AllLists_CheckThatNoConsoleErrorsAreDisplayedWhen
 	And User navigates to the "<TabName>" tab
 	And User have opened Column Settings for "<SelectedColumn>" column in the Details Page table
 	And User clicks Filter button on the Column Settings panel
-	Then User enters "12345" text in the Filter field
+	Then User enters "123455465" text in the Filter field
 	When User clears Filter field
 	Then There are no errors in the browser console
 
