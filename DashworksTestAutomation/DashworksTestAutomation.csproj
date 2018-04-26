@@ -226,7 +226,6 @@
     <Compile Include="Pages\Projects\Capacity\Capacity_DetailsPage.cs" />
     <Compile Include="Pages\Projects\Capacity\Capacity_OverrideDatesPage.cs" />
     <Compile Include="Pages\Projects\CategoryPropertiesPage.cs" />
-    <Compile Include="Pages\Projects\DeleteElements.cs" />
     <Compile Include="Pages\Projects\DetailsPage.cs" />
     <Compile Include="Pages\Projects\GroupPropertiesPage.cs" />
     <Compile Include="Pages\Projects\MailTemplatePropertiesPage.cs" />
@@ -281,6 +280,7 @@
     <Compile Include="Steps\Dashworks\EvergreenJnr_NewCustomList.cs" />
     <Compile Include="Steps\Dashworks\EvergreenJnr_QueryStrings.cs" />
     <Compile Include="Steps\Logout.cs" />
+    <Compile Include="Steps\Projects\Projects_Removing.cs" />
     <Compile Include="Steps\Projects\Projects_SelfService.cs" />
     <Compile Include="Tests\EvergreenJnr_ActionsPanel\ActionsPanel.feature.cs">
       <AutoGen>True</AutoGen>

@@ -61,7 +61,7 @@ namespace DashworksTestAutomation.Steps.Projects
             page.Capacity.SendKeys(_overrideDatesDto.Capacity);
             page.Comment.SendKeys(_overrideDatesDto.Comment);
 
-            upd.UpdateButton.Click();
+            upd.AddButton.Click();
         }
     }
 }

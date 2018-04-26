@@ -283,26 +283,5 @@ namespace DashworksTestAutomation.Steps.Projects
 
             Assert.AreEqual(groups, groupsInTeam,  "Number of groups is incorrect");
         }
-
-        [Then(@"User remove ""(.*)"" group")]
-        public void ThenUserRemoveGroup(string groupName)
-        {
-            var page = _driver.NowAt<BaseElements>();
-
-            page.GetDeleteButtonElementByName(groupName).Click();
-            page.DeleteGroupButton.Click();
-            _driver.AcceptAlert();
-        }
-
-        [Then(@"User remove Project")]
-        public void ThenUserRemoveProject()
-        {
-            var page = _driver.NowAt<BaseElements>();
-
-            page.DeleteProjectButton.Click();
-            _driver.AcceptAlert();
-            page.ConfirmDeletedTheProjectButton.Click();
-            _driver.AcceptAlert();
-        }
     }
 }

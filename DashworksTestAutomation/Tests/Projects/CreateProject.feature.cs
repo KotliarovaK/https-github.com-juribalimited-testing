@@ -401,11 +401,13 @@ namespace DashworksTestAutomation.Tests.Projects
                         "TestText"});
             testRunner.Then("User updates the Override Dates on Capacity tab", ((string)(null)), table22, "Then ");
             testRunner.When("User navigate to \"Groups\" tab", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-            testRunner.Then("User remove \"TestGroupName\" group", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+            testRunner.Then("User remove \"TestGroupName\" Group", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
             testRunner.When("User navigate to \"Teams\" tab", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-            testRunner.Then("User remove \"001 TestTeamName\" team", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-            testRunner.When("User navigate to \"Details\" tab", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-            testRunner.Then("User remove Project", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+            testRunner.Then("User remove \"001 TestTeamName\" Team", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+            testRunner.When("User navigate to \"Tasks\" tab", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+            testRunner.Then("User remove \"TestStageName\" Task", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+            testRunner.When("User navigate to \"Stages\" tab", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+            testRunner.Then("User remove \"TestStageName\" Stage", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
             this.ScenarioCleanup();
         }
         
@@ -463,56 +465,11 @@ namespace DashworksTestAutomation.Tests.Projects
             testRunner.Then("\"Manage Teams\" page is displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
             testRunner.Then("groups is displayed in the \"123 onetwo\" team", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
             testRunner.When("User navigate to \"Groups\" tab", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-            testRunner.Then("User remove \"onetwo\" group", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+            testRunner.Then("User remove \"onetwo\" Group", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+            testRunner.When("User navigate to \"Teams\" tab", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+            testRunner.Then("User remove \"123 onetwo\" Team", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
             testRunner.When("User navigate to \"Details\" tab", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
             testRunner.Then("User remove Project", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-            this.ScenarioCleanup();
-        }
-        
-        [NUnit.Framework.TestAttribute()]
-        [NUnit.Framework.DescriptionAttribute("Projects_checkSelfServiceandCapacityTabs")]
-        [NUnit.Framework.CategoryAttribute("Projects")]
-        [NUnit.Framework.CategoryAttribute("CreateProject")]
-        [NUnit.Framework.CategoryAttribute("Teams")]
-        public virtual void Projects_CheckSelfServiceandCapacityTabs()
-        {
-            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Projects_checkSelfServiceandCapacityTabs", new string[] {
-                        "Projects",
-                        "CreateProject",
-                        "Teams"});
-            this.ScenarioSetup(scenarioInfo);
-            testRunner.Given("User is on Dashworks Homepage", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
-            testRunner.Then("Login Page is displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-            testRunner.When("User provides the Login and Password and clicks on the login button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-            testRunner.Then("Dashworks homepage is displayed to the user in a logged in state", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-            testRunner.When("User navigate to Projects link", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-            testRunner.Then("\"Projects Home\" page is displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-            testRunner.When("User clicks create Project button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-            testRunner.Then("\"Create Project\" page is displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-            TechTalk.SpecFlow.Table table26 = new TechTalk.SpecFlow.Table(new string[] {
-                        "ProjectName",
-                        "ProjectShortName",
-                        "ProjectDescription",
-                        "ProjectType"});
-            table26.AddRow(new string[] {
-                        "TestProject",
-                        "TestText",
-                        "TestText",
-                        "Computer Scheduled Project"});
-            testRunner.When("User creates Project", ((string)(null)), table26, "When ");
-            testRunner.Then("\"Manage Project Details\" page is displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-            testRunner.When("User navigate to \"Capacity\" tab", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-            testRunner.Then("\"Manage Capacity\" page is displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-            testRunner.When("User navigate to \"Override Dates\" on selected tab", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-            TechTalk.SpecFlow.Table table27 = new TechTalk.SpecFlow.Table(new string[] {
-                        "Date",
-                        "Capacity",
-                        "Comment"});
-            table27.AddRow(new string[] {
-                        "03 Apr 2016",
-                        "TestText",
-                        "TestText"});
-            testRunner.Then("User updates the Override Dates on Capacity tab", ((string)(null)), table27, "Then ");
             this.ScenarioCleanup();
         }
     }
