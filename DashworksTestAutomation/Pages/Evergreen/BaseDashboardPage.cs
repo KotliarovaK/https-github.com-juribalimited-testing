@@ -303,12 +303,6 @@ namespace DashworksTestAutomation.Pages.Evergreen
             {
                 case "http://automation.corp.juriba.com/evergreen/img/forwardPath.png":
                     return "FORWARD PATH";
-                //case "http://automation.corp.juriba.com/evergreen/img/forwardPath.png":
-                //    return "FORWARD PATH";
-                //case "http://automation.corp.juriba.com/evergreen/img/forwardPath.png":
-                //    return "FORWARD PATH";
-                //case "http://automation.corp.juriba.com/evergreen/img/forwardPath.png":
-                //    return "FORWARD PATH";
                 default: throw new Exception($"{styleImageItem} is not valid Image path");
             }
         }
