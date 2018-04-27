@@ -105,6 +105,21 @@ namespace DashworksTestAutomation.Steps.Dashworks
             _driver.WaitForDataLoading();
         }
 
+        [When(@"User navigates to the ""(.*)"" tab in the Scope section on the Project details page")]
+        public void WhenUserNavigatesToTheTabInTheScopeSectionOnTheProjectDetailsPage(string tabName)
+        {
+            var projectTabs = _driver.NowAt<ProjectsPage>();
+            projectTabs.NavigateToProjectTabByName(tabName);
+            _driver.WaitForDataLoading();
+        }
+
+        [Then(@"All Association are selected by default")]
+        public void ThenAllAssociationAreSelectedByDefault()
+        {
+            var projectsPage = _driver.NowAt<ProjectsPage>();
+            Assert.IsFalse(projectsPage.UncheckedCheckbox.Displayed(), "Not all checkboxes are selected");
+        }
+
         [When(@"User clicks ""(.*)"" tab in the Project Scope Changes section")]
         public void WhenUserClicksTabInTheProjectScopeChangesSection(string tabName)
         {

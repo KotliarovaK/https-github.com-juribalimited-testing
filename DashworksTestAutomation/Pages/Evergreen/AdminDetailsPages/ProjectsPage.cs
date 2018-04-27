@@ -56,6 +56,9 @@ namespace DashworksTestAutomation.Pages.Evergreen.AdminDetailsPages
         [FindsBy(How = How.XPath, Using = ".//div[@class='inline-success ng-star-inserted']")]
         public IWebElement SuccessDeleteMessage { get; set; }
 
+        [FindsBy(How = How.XPath, Using = ".//input[@aria-checked='false']")]
+        public IWebElement UncheckedCheckbox { get; set; }
+
         public override List<By> GetPageIdentitySelectors()
         {
             Driver.WaitForDataLoading();
