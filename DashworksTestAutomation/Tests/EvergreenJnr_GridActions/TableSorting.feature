@@ -42,7 +42,6 @@ Scenario: EvergreenJnr_MailboxesList_CheckSortByDateFunctionality
 	When User add following columns using URL to the "Mailboxes" page:
 	| ColumnName                 |
 	| Created Date               |
-	| EmailMigra: Scheduled date |
 	Then User enters SearchCriteria into the agGrid Search Box and the correct NumberOfRows are returned
 	| SearchCriteria | NumberOfRows |
 	| Sonja          | 4            |
@@ -50,10 +49,6 @@ Scenario: EvergreenJnr_MailboxesList_CheckSortByDateFunctionality
 	Then date in table is sorted by 'Created Date' column in descending order
 	When User click on 'Created Date' column header
 	Then date in table is sorted by 'Created Date' column in ascending order
-	#When User click on 'EmailMigra: Scheduled date' column header
-	#Then date in table is sorted by 'EmailMigra: Scheduled date' column in descending order
-	#When User click on 'EmailMigra: Scheduled date' column header
-	#Then date in table is sorted by 'EmailMigra: Scheduled date' column in ascending order
 
 @Evergreen @Users @EvergreenJnr_GridActions @TableSorting @DAS10612
 Scenario: EvergreenJnr_UsersList_CheckSortByDateFunctionality

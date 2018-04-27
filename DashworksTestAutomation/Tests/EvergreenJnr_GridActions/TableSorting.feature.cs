@@ -250,8 +250,6 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_GridActions
                         "ColumnName"});
             table5.AddRow(new string[] {
                         "Created Date"});
-            table5.AddRow(new string[] {
-                        "EmailMigra: Scheduled date"});
             testRunner.When("User add following columns using URL to the \"Mailboxes\" page:", ((string)(null)), table5, "When ");
             TechTalk.SpecFlow.Table table6 = new TechTalk.SpecFlow.Table(new string[] {
                         "SearchCriteria",

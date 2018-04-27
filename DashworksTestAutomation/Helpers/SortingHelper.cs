@@ -69,9 +69,6 @@ namespace DashworksTestAutomation.Helpers
         public static void IsListSortedByDate(List<string> originalList, bool isDescending = true)
         {
             originalList = originalList.Where(x => !x.Equals("")).ToList();
-            List<string> expectedList = originalList.OrderBy(s => s).ToList();
-            if (!isDescending)
-                expectedList.Reverse();
 
             List<KeyValuePair<DateTime, string>> unsortedList = new List<KeyValuePair<DateTime, string>>();
             DateTime datevalue;
@@ -87,15 +84,18 @@ namespace DashworksTestAutomation.Helpers
             var unsortedCount = originalList.Count(x => !DateTime.TryParse(x, out datevalue));
             Assert.AreNotEqual(unsortedCount, originalList.Count, "Original list was not sorted at all/Can't be sorted. Nothing to compare. Please check method logic or input list");
 
+            List<KeyValuePair<DateTime, string>> sortedList = unsortedList.OrderBy(s => s.Key).ToList();
+            if (isDescending)
+                sortedList.Reverse();
+
             try
             {
                 //Compare two lists
-                Assert.AreEqual(originalList.OrderBy(s => s).ToList(), originalList, "Incorrect sorting order");
+                Assert.AreEqual(sortedList.Select(s => s.Value), originalList, "Incorrect sorting order");
             }
             catch (Exception)
             {
-                List<KeyValuePair<DateTime, string>> sortedList = unsortedList.OrderBy(s => s.Key).ToList();
-                sortedList.Reverse();
+
                 //Compare each elements just to find elements that a different
                 for (int i = 0; i < originalList.Count; i++)
                 {
