@@ -333,7 +333,7 @@ Scenario: EvergreenJnr_AdminPage_CheckThatErrorsDoNotAppearAfterUpdatingTeamDesc
 	And There are no errors in the browser console
 	And Delete "TestTeam1" Team in the Administration
 
-@Evergreen @Admin @EvergreenJnr_AdminPage @AdminPage @DAS11765
+@Evergreen @Admin @EvergreenJnr_AdminPage @AdminPage @DAS11765 @DAS12170
 Scenario: EvergreenJnr_AdminPage_CheckThatMailboxesAreSuccessfullyAddedToBuckets
 	When User clicks Admin on the left-hand menu
 	Then Admin page should be displayed to the user
@@ -350,7 +350,7 @@ Scenario: EvergreenJnr_AdminPage_CheckThatMailboxesAreSuccessfullyAddedToBuckets
 	And Success message is displayed and contains "The selected mailboxes have been added to the selected bucket" text on the Buckets page
 	And There are no errors in the browser console
 
-@Evergreen @Admin @EvergreenJnr_AdminPage @AdminPage @DAS11765
+@Evergreen @Admin @EvergreenJnr_AdminPage @AdminPage @DAS11765 @DAS12170
 Scenario: EvergreenJnr_AdminPage_CheckThatErrorsDoNotAppearAfterAddingMailboxesToTheBucketWhereNoMailboxesExist
 	When User clicks Admin on the left-hand menu
 	Then Admin page should be displayed to the user
@@ -382,3 +382,48 @@ Scenario: EvergreenJnr_AdminPage_CheckThatAllAssociationsAreSelectedByDefaultInT
 	When User navigates to the "Application Scope" tab in the Scope section on the Project details page
 	Then All Association are selected by default
 	And Delete "TestProject7" Project in the Administration
+
+@Evergreen @Admin @EvergreenJnr_AdminPage @AdminPage @DAS12170
+Scenario: EvergreenJnr_AdminPage_CheckThatConsoleErrorsAreNotDisplayedAfterAddingDevicesInTheBuckets
+	When User clicks Admin on the left-hand menu
+	Then Admin page should be displayed to the user
+	When User click "Buckets" link on the Admin page
+	Then "Buckets" page should be displayed to the user
+	When User enters "Bangor" text in the Search field for "Bucket" column on the Buckets page
+	And User clicks content from "Bucket" column on the Buckets page
+	When User clicks Add Device button on the Buckets page
+	Then User add following devices to the Bucket
+	| DeviceName      |
+	| 01N3Y2GUS6XTK7  |
+	| D0V2G8I0DWW85E6 |
+	And Success message is displayed and contains "The selected devices have been added to the selected bucket" text on the Buckets page
+	And There are no errors in the browser console
+
+@Evergreen @Admin @EvergreenJnr_AdminPage @AdminPage @DAS12170
+Scenario: EvergreenJnr_AdminPage_CheckThatErrorsDoNotAppearAfterAddingDevicesToTheBucketWhereNoDevicesExist
+	When User clicks Admin on the left-hand menu
+	Then Admin page should be displayed to the user
+	When User click "Buckets" link on the Admin page
+	Then "Buckets" page should be displayed to the user
+	When User enters "Amsterdam" text in the Search field for "Bucket" column on the Buckets page
+	And User clicks content from "Bucket" column on the Buckets page
+	When User clicks Add Device button on the Buckets page
+	Then No items text is displayed on the Buckets page
+	And There are no errors in the browser console
+
+@Evergreen @Admin @EvergreenJnr_AdminPage @AdminPage @DAS12170
+Scenario: EvergreenJnr_AdminPage_CheckThatConsoleErrorsAreNotDisplayedAfterAddingUsersInTheBuckets
+	When User clicks Admin on the left-hand menu
+	Then Admin page should be displayed to the user
+	When User click "Buckets" link on the Admin page
+	Then "Buckets" page should be displayed to the user
+	When User enters "Bangor" text in the Search field for "Bucket" column on the Buckets page
+	And User clicks content from "Bucket" column on the Buckets page
+	Then User clicks "Users" tab on the Buckets page
+	When User clicks Add User button on the Buckets page
+	Then User add following users to the Bucket
+	| UserName                            |
+	| FR\KSD3827534 (Philippine Langlois) |
+	| UK\LBM661859 (Jenifer V. Allison)   |
+	And Success message is displayed and contains "The selected users have been added to the selected bucket" text on the Buckets page
+	And There are no errors in the browser console

@@ -510,6 +510,13 @@ namespace DashworksTestAutomation.Steps.Dashworks
             button.AddMailboxButton.Click();
         }
 
+        [When(@"User clicks Add User button on the Buckets page")]
+        public void WhenUserClicksAddUserButtonOnTheBucketsPage()
+        {
+            var button = _driver.NowAt<BucketsPage>();
+            button.AddUserButton.Click();
+        }
+
         [Then(@"No items text is displayed on the Buckets page")]
         public void ThenNoItemsTextIsDisplayedOnTheBucketsPage()
         {
@@ -549,6 +556,19 @@ namespace DashworksTestAutomation.Steps.Dashworks
                 bucketElement.SearchTextbox.ClearWithHomeButton(_driver);
             }
             bucketElement.AddDevicesButton.Click();
+        }
+
+        [Then(@"User add following users to the Bucket")]
+        public void ThenUserAddFollowingUsersToTheBucket(Table table)
+        {
+            var bucketElement = _driver.NowAt<BucketsPage>();
+
+            foreach (var row in table.Rows)
+            {
+                bucketElement.AddUser(row["UserName"]);
+                bucketElement.SearchTextbox.ClearWithHomeButton(_driver);
+            }
+            bucketElement.AddUsersButton.Click();
         }
 
         [Then(@"User add following mailboxes to the Bucket")]
