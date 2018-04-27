@@ -50,10 +50,10 @@ Scenario: EvergreenJnr_MailboxesList_CheckSortByDateFunctionality
 	Then date in table is sorted by 'Created Date' column in descending order
 	When User click on 'Created Date' column header
 	Then date in table is sorted by 'Created Date' column in ascending order
-	When User click on 'EmailMigra: Scheduled date' column header
-	Then date in table is sorted by 'EmailMigra: Scheduled date' column in descending order
-	When User click on 'EmailMigra: Scheduled date' column header
-	Then date in table is sorted by 'EmailMigra: Scheduled date' column in ascending order
+	#When User click on 'EmailMigra: Scheduled date' column header
+	#Then date in table is sorted by 'EmailMigra: Scheduled date' column in descending order
+	#When User click on 'EmailMigra: Scheduled date' column header
+	#Then date in table is sorted by 'EmailMigra: Scheduled date' column in ascending order
 
 @Evergreen @Users @EvergreenJnr_GridActions @TableSorting @DAS10612
 Scenario: EvergreenJnr_UsersList_CheckSortByDateFunctionality

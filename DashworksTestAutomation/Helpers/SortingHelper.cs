@@ -90,15 +90,16 @@ namespace DashworksTestAutomation.Helpers
             try
             {
                 //Compare two lists
-                Assert.AreEqual(originalList.OrderBy(s => s).ToList(), expectedList, "Incorrect sorting order");
+                Assert.AreEqual(originalList.OrderBy(s => s).ToList(), originalList, "Incorrect sorting order");
             }
             catch (Exception)
             {
+                List<KeyValuePair<DateTime, string>> sortedList = unsortedList.OrderBy(s => s.Key).ToList();
+                sortedList.Reverse();
                 //Compare each elements just to find elements that a different
                 for (int i = 0; i < originalList.Count; i++)
                 {
-                    Assert.AreEqual(unsortedList.OrderBy(x => x.Key).Select(x => x.Value).ToArray()[i],
-                        originalList[i], "Incorrect sorting order");
+                    Assert.AreEqual(sortedList[i].Value, originalList[i], "Incorrect sorting order");
                 }
             }
         }

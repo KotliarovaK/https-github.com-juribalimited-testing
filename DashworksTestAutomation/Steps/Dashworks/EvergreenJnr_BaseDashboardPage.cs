@@ -97,8 +97,8 @@ namespace DashworksTestAutomation.Steps.Dashworks
         {
             var listpageMenu = _driver.NowAt<BaseDashboardPage>();
 
-            List<string> expectedList = listpageMenu.GetColumnContent(columnName).Where(x => !x.Equals("")).ToList();
-            SortingHelper.IsListSortedByDate(expectedList);
+            List<string> originalList = listpageMenu.GetColumnContent(columnName).Where(x => !x.Equals("")).ToList();
+            SortingHelper.IsListSortedByDate(originalList);
             Assert.IsTrue(listpageMenu.DescendingSortingIcon.Displayed);
         }
 
@@ -107,8 +107,8 @@ namespace DashworksTestAutomation.Steps.Dashworks
         {
             var listpageMenu = _driver.NowAt<BaseDashboardPage>();
 
-            List<string> expectedList = listpageMenu.GetColumnContent(columnName).Where(x => !x.Equals("")).ToList();
-            SortingHelper.IsListSortedByDate(expectedList, false);
+            List<string> originalList = listpageMenu.GetColumnContent(columnName).Where(x => !x.Equals("")).ToList();
+            SortingHelper.IsListSortedByDate(originalList, false);
             Assert.IsTrue(listpageMenu.AscendingSortingIcon.Displayed);
         }
 
