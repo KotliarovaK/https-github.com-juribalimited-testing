@@ -58,6 +58,9 @@ Scenario: Projects_CreateProject
 	Then User create Group
 	| GroupName     |
 	| TestGroupName |
+	When User navigate to "Teams" tab
+	Then "Manage Teams" page is displayed to the user
+	Then groups is displayed in the "001 TestTeamName" team
 	When User navigate to "Mail Templates" tab
 	Then "Manage Mail Templates" page is displayed to the user
 	When User clicks "Mail Template" create button
@@ -111,59 +114,27 @@ Scenario: Projects_CreateProject
 	Then User updates the Details on Capacity tab
 	| EnablePlanning | DisplayColors | EnforceOonSelfServicePage | EnforceOnProjectObjectPage | CapacityToReach |
 	| true           | true          | true                      | false                      | 23              |
+	When User navigate to "Capacity" on selected tab
+	Then User updates the Capacity on Capacity tab
+	| RequestType     | StartDate   | EndDate     | MondayCheckbox | TuesdayCheckbox | WednesdayCheckbox | ThursdayCheckbox | FridayCheckbox | SaturdayCheckbox | SundayCheckbox | Monday | Tuesday | Wednesday | Thursday | Friday | Saturday | Sunday |
+	| DefaultComputer | 06 Apr 2016 | 19 Apr 2018 | true           | true            | true              | true             | true           | true             | true           | 100    | 100     | 100       | 100      | 100    | 100      | 100    |
 	When User navigate to "Override Dates" on selected tab
 	Then User updates the Override Dates on Capacity tab
 	| Date        | Capacity | Comment  |
-	| 03 Apr 2016 | TestText | TestText |
+	| 03 Apr 2016 | 10       | TestText |
 	When User navigate to "Groups" tab
 	Then User remove "TestGroupName" Group
 	When User navigate to "Teams" tab
 	Then User remove "001 TestTeamName" Team
 	When User navigate to "Tasks" tab
-	Then User remove "TestStageName" Task
+	Then User remove "TestTaskName" Task
 	When User navigate to "Stages" tab
 	Then User remove "TestStageName" Stage
-	#When User navigate to "Categories" tab
-	#Then User remove "TestCategoryName" Category
-	#When User navigate to "Mail Templates" tab
-	#Then User remove "TestMailTemplateName" Mail Templates
-	#When User navigate to "Request Types" tab
-	#Then User remove "TestRequestTypeName" Request Type
-	#When User navigate to "Details" tab
-	#Then User remove Project
-
-@Projects @CreateProject @Teams
-Scenario: Projects_checkHowManyGroupInATeam
-	Given User is on Dashworks Homepage
-	Then Login Page is displayed to the user
-	When User provides the Login and Password and clicks on the login button
-	Then Dashworks homepage is displayed to the user in a logged in state
-	When User navigate to Projects link
-	Then "Projects Home" page is displayed to the user
-	When User clicks create Project button
-	Then "Create Project" page is displayed to the user
-	When User creates Project
-	| ProjectName | ProjectShortName | ProjectDescription | ProjectType                |
-	| TestProject | Test             | Test               | Computer Scheduled Project |
-	Then "Manage Project Details" page is displayed to the user
-	When User navigate to "Teams" tab
-	Then "Manage Teams" page is displayed to the user
-	When User clicks "Team" create button
-	Then User create Team
-	| TeamName   | ShortDescription |
-	| 123 onetwo | Test             |
-	When User navigate to "Groups" tab
-	Then "Manage Groups" page is displayed to the user
-	When User clicks "Group" create button
-	Then User create Group
-	| GroupName |
-	| onetwo    |
-	When User navigate to "Teams" tab
-	Then "Manage Teams" page is displayed to the user
-	Then groups is displayed in the "123 onetwo" team
-	When User navigate to "Groups" tab
-	Then User remove "onetwo" Group
-	When User navigate to "Teams" tab
-	Then User remove "123 onetwo" Team
+	When User navigate to "Categories" tab
+	Then User remove "TestCategoryName" Category
+	When User navigate to "Request Types" tab
+	Then User remove "TestRequestTypeName" Request Type
+	When User navigate to "Mail Templates" tab
+	Then User remove "TestMailTemplateName" Mail Templates
 	When User navigate to "Details" tab
 	Then User remove Project

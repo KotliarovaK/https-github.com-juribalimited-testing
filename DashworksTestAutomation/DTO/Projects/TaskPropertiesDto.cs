@@ -70,6 +70,6 @@ namespace DashworksTestAutomation.DTO.Projects
         NoReadinessNaEnabledDisabled,
         [Description("Self Service Screen Confirm")]
         SelfServiceScreenConfirm,
-        None
+        //None
     }
 }

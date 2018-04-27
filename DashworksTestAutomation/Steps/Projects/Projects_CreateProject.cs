@@ -127,6 +127,8 @@ namespace DashworksTestAutomation.Steps.Projects
             page.ObjectType.SelectboxSelect(_requestTypesDto.ObjectType.GetValue());
 
             page.ConfirmCreateRequestTypesButton.Click();
+
+            _projectDto.ReqestType = _requestTypesDto;
         }
 
         [Then(@"User create Category")]
@@ -241,6 +243,8 @@ namespace DashworksTestAutomation.Steps.Projects
             page.OwnedByTeam.SelectboxSelect(_projectDto.TeamProperties.TeamName);
 
             page.ConfirmCreateGroupButton.Click();
+
+            _groupPropertiesDto.OwnedByTeam = _projectDto.TeamProperties.TeamName;
         }
 
         [Then(@"User create Mail Template")]
@@ -278,7 +282,7 @@ namespace DashworksTestAutomation.Steps.Projects
         {
             var taem = _driver.NowAt<BaseElements>();
 
-            var groupsInTeam = _projectDto.GroupProperties.Count(x => x.Equals(teamName));
+            var groupsInTeam = _projectDto.GroupProperties.Count(x => x.OwnedByTeam.Equals(teamName));
             var groups = taem.GetGroupsCountByTeamName(teamName);
 
             Assert.AreEqual(groups, groupsInTeam,  "Number of groups is incorrect");

@@ -13,6 +13,54 @@ namespace DashworksTestAutomation.Pages.Projects
         [FindsBy(How = How.XPath, Using = ".//select[@id='ctl00_MainContent_DDL_Capacity_RequestType']")]
         public IWebElement RequestType { get; set; }
 
+        [FindsBy(How = How.XPath, Using = ".//tr//td[text()='Start Date']/..//input[@class='datepicker hasDatepicker']")]
+        public IWebElement StartDate { get; set; }
+
+        [FindsBy(How = How.XPath, Using = ".//tr//td[text()='End Date']/..//input[@class='datepicker hasDatepicker']")]
+        public IWebElement EndDate { get; set; }
+
+        [FindsBy(How = How.XPath, Using = ".//input[@id='ctl00_MainContent_RP_Capacity_Days_ctl01_CB_Capacity_DayEnabled']")]
+        public IWebElement MondayCheckbox { get; set; }
+
+        [FindsBy(How = How.XPath, Using = ".//input[@id='ctl00_MainContent_RP_Capacity_Days_ctl02_CB_Capacity_DayEnabled']")]
+        public IWebElement TuesdayCheckbox { get; set; }
+
+        [FindsBy(How = How.XPath, Using = ".//input[@id='ctl00_MainContent_RP_Capacity_Days_ctl03_CB_Capacity_DayEnabled']")]
+        public IWebElement WednesdayCheckbox { get; set; }
+
+        [FindsBy(How = How.XPath, Using = ".//input[@id='ctl00_MainContent_RP_Capacity_Days_ctl04_CB_Capacity_DayEnabled']")]
+        public IWebElement ThursdayCheckbox { get; set; }
+
+        [FindsBy(How = How.XPath, Using = ".//input[@id='ctl00_MainContent_RP_Capacity_Days_ctl05_CB_Capacity_DayEnabled']")]
+        public IWebElement FridayCheckbox { get; set; }
+
+        [FindsBy(How = How.XPath, Using = ".//input[@id='ctl00_MainContent_RP_Capacity_Days_ctl06_CB_Capacity_DayEnabled']")]
+        public IWebElement SaturdayCheckbox { get; set; }
+
+        [FindsBy(How = How.XPath, Using = ".//input[@id='ctl00_MainContent_RP_Capacity_Days_ctl07_CB_Capacity_DayEnabled']")]
+        public IWebElement SundayCheckbox { get; set; }
+
+        [FindsBy(How = How.XPath, Using = ".//input[@id='ctl00_MainContent_RP_Capacity_Days_ctl01_TB_Capacity_DayMaximum']")]
+        public IWebElement Monday { get; set; }
+
+        [FindsBy(How = How.XPath, Using = ".//input[@id='ctl00_MainContent_RP_Capacity_Days_ctl02_TB_Capacity_DayMaximum']")]
+        public IWebElement Tuesday { get; set; }
+
+        [FindsBy(How = How.XPath, Using = ".//input[@id='ctl00_MainContent_RP_Capacity_Days_ctl03_TB_Capacity_DayMaximum']")]
+        public IWebElement Wednesday { get; set; }
+
+        [FindsBy(How = How.XPath, Using = ".//input[@id='ctl00_MainContent_RP_Capacity_Days_ctl04_TB_Capacity_DayMaximum']")]
+        public IWebElement Thursday { get; set; }
+
+        [FindsBy(How = How.XPath, Using = ".//input[@id='ctl00_MainContent_RP_Capacity_Days_ctl05_TB_Capacity_DayMaximum']")]
+        public IWebElement Friday { get; set; }
+
+        [FindsBy(How = How.XPath, Using = ".//input[@id='ctl00_MainContent_RP_Capacity_Days_ctl06_TB_Capacity_DayMaximum']")]
+        public IWebElement Saturday { get; set; }
+
+        [FindsBy(How = How.XPath, Using = ".//input[@id='ctl00_MainContent_RP_Capacity_Days_ctl07_TB_Capacity_DayMaximum']")]
+        public IWebElement Sunday { get; set; }
+
         //TODO Request Type [Default(Computer)]
 
         public override List<By> GetPageIdentitySelectors()
@@ -20,7 +68,12 @@ namespace DashworksTestAutomation.Pages.Projects
             return new List<By>
             {
                 SelectorFor(this, p => p.Team),
-                SelectorFor(this, p => p.RequestType)
+                SelectorFor(this, p => p.RequestType),
+                SelectorFor(this, p => p.StartDate),
+                SelectorFor(this, p => p.EndDate),
+                //SelectorFor(this, p => p.RequestType),
+                //SelectorFor(this, p => p.RequestType),
+
             };
         }
     }
