@@ -452,15 +452,22 @@ Examples:
 	| Grey                    | GREY                    |
 
 @Evergreen @Applications @EvergreenJnr_FilterFeature @FilterFunctionality @DAS11838
-Scenario: EvergreenJnr_ApplicationsList_CheckThatTheColourOfTheApplicationRationalisationItemIsMatchingTheCaption
+Scenario Outline: EvergreenJnr_ApplicationsList_CheckThatTheColourOfTheApplicationRationalisationItemIsMatchingTheCaption
 	When User clicks "Applications" on the left-hand menu
 	Then "Applications" list should be displayed to the user
 	When User clicks the Filters button
 	Then Filters panel is displayed to the user
 	When User add "ComputerSc: Application Rationalisation" filter where type is "Equal" with added column and following checkboxes:
 	| SelectedCheckboxes |
-	| FORWARD PATH       |
-	Then "FORWARD PATH" image is matching the caption
+	| <SelectedCheckbox> |
+	Then "<ImageName>" image is matching the caption
+
+	Examples:
+	| SelectedCheckbox | ImageName     |
+	| FORWARD PATH     | FORWARD PATH  |
+	| KEEP             | KEEP          |
+	| RETIRE           | RETIRE        |
+	| UNCATEGORISED    | UNCATEGORISED |
 
 @Evergreen @Devices @EvergreenJnr_FilterFeature @FilterFunctionality @DAS12076 @DAS12351
 Scenario: EvergreenJnr_DevicesList_CheckThatColumnIsEmptyWhenEqualNoneAndContainsContentWhenDoesnotequalNoneForWindows7MiCategoryFilter

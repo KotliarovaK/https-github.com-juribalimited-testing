@@ -488,6 +488,20 @@ namespace DashworksTestAutomation.Steps.Dashworks
             button.AddDeviceButton.Click();
         }
 
+        [When(@"User clicks Add Mailbox button on the Buckets page")]
+        public void WhenUserClicksAddMailboxButtonOnTheBucketsPage()
+        {
+            var button = _driver.NowAt<BucketsPage>();
+            button.AddMailboxButton.Click();
+        }
+
+        [Then(@"No items text is displayed on the Buckets page")]
+        public void ThenNoItemsTextIsDisplayedOnTheBucketsPage()
+        {
+            var text = _driver.NowAt<BucketsPage>();
+            Assert.IsTrue(text.NoItesMessage.Displayed, "No items text is not displayed");
+        }
+
         [Then(@"User clicks ""(.*)"" tab on the Buckets page")]
         public void ThenUserClicksTabOnTheBucketsPage(string tabName)
         {
@@ -509,8 +523,8 @@ namespace DashworksTestAutomation.Steps.Dashworks
              button.UpdateBucketButton.Click();
         }
 
-        [Then(@"User add following devices in the Bucket")]
-        public void ThenUserAddFollowingDevicesInTheBucket(Table table)
+        [Then(@"User add following devices to the Bucket")]
+        public void ThenUserAddFollowingDevicesToTheBucket(Table table)
         {
             var bucketElement = _driver.NowAt<BucketsPage>();
 
@@ -522,6 +536,18 @@ namespace DashworksTestAutomation.Steps.Dashworks
             bucketElement.AddDevicesButton.Click();
         }
 
+        [Then(@"User add following mailboxes to the Bucket")]
+        public void ThenUserAddFollowingMailboxesToTheBucket(Table table)
+        {
+            var bucketElement = _driver.NowAt<BucketsPage>();
+
+            foreach (var row in table.Rows)
+            {
+                bucketElement.AddMailbox(row["MailboxName"]);
+                bucketElement.SearchTextbox.ClearWithHomeButton(_driver);
+            }
+            bucketElement.AddMailboxesButton.Click();
+        }
 
         [When(@"User clicks Create Project button")]
         public void WhenUserClicksCreateProjectButton()
