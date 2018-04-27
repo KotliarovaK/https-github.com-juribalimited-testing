@@ -395,7 +395,6 @@ namespace DashworksTestAutomation.Tests.Projects
             testRunner.Then("User updates the Details on Capacity tab", ((string)(null)), table21, "Then ");
             testRunner.When("User navigate to \"Capacity\" on selected tab", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
             TechTalk.SpecFlow.Table table22 = new TechTalk.SpecFlow.Table(new string[] {
-                        "RequestType",
                         "StartDate",
                         "EndDate",
                         "MondayCheckbox",
@@ -413,7 +412,6 @@ namespace DashworksTestAutomation.Tests.Projects
                         "Saturday",
                         "Sunday"});
             table22.AddRow(new string[] {
-                        "DefaultComputer",
                         "06 Apr 2016",
                         "19 Apr 2018",
                         "true",
