@@ -49,6 +49,9 @@ namespace DashworksTestAutomation.Pages.Evergreen.AdminDetailsPages
         [FindsBy(How = How.XPath, Using = ".//span[text()='ADD DEVICES']")]
         public IWebElement AddDevicesButton { get; set; }
 
+        [FindsBy(How = How.XPath, Using = ".//span[text()='ADD MAILBOXES']")]
+        public IWebElement AddMailboxesButton { get; set; }
+
         [FindsBy(How = How.XPath, Using = ".//span[text()='ADD USER']")]
         public IWebElement AddUserButton { get; set; }
 
@@ -57,6 +60,15 @@ namespace DashworksTestAutomation.Pages.Evergreen.AdminDetailsPages
 
         [FindsBy(How = How.XPath, Using = ".//input[@placeholder='Search']")]
         public IWebElement SearchTextbox { get; set; }
+
+        [FindsBy(How = How.XPath, Using = ".//span[@class='mat-checkbox-label'][text()='Default Bucket']")]
+        public IWebElement DefaultBucketCheckbox { get; set; }
+
+        [FindsBy(How = How.XPath, Using = ".//span[text()='UPDATE BUCKET']")]
+        public IWebElement UpdateBucketButton { get; set; }
+
+        [FindsBy(How = How.XPath, Using = ".//div[@class='empty-message ng-star-inserted'][text()='No items']")]
+        public IWebElement NoItesMessage { get; set; }
 
         public override List<By> GetPageIdentitySelectors()
         {
@@ -100,6 +112,26 @@ namespace DashworksTestAutomation.Pages.Evergreen.AdminDetailsPages
             return columnNumber;
         }
 
+        public void ClickContentByColumnName(string columnName)
+        {
+            By byControl =
+                By.XPath($".//div[@class='ag-body-container']/div[1]/div[{GetColumnNumberByName(columnName)}]//a");
+
+            Driver.WaitForDataLoading();
+            Driver.WaitWhileControlIsNotDisplayed(byControl);
+            Driver.FindElement(byControl).Click();
+        }
+
+        public bool AppropriateBucketName(string bucketName)
+        {
+            return Driver.IsElementDisplayed(By.XPath($".//h1[text()='{bucketName}']"));
+        }
+
+        public bool SuccessUpdatedMessageBucketsPage(string bucketName)
+        {
+            return Driver.IsElementDisplayed(By.XPath($".//div[text()='The {bucketName} bucket has been updated']"));
+        }
+
         public void GetSearchFieldByColumnName(string columnName, string text)
         {
             By byControl =
@@ -133,6 +165,15 @@ namespace DashworksTestAutomation.Pages.Evergreen.AdminDetailsPages
             SearchTextbox.SendKeys(bucketName);
             var selector = String.Empty;
             selector = $".//span[text()='{bucketName}']";
+            Driver.WaitWhileControlIsNotDisplayed(By.XPath(selector));
+            Driver.FindElement(By.XPath(selector)).Click();
+        }
+
+        public void AddMailbox(string mailboxName)
+        {
+            SearchTextbox.SendKeys(mailboxName);
+            var selector = String.Empty;
+            selector = $".//span[text()='{mailboxName}']";
             Driver.WaitWhileControlIsNotDisplayed(By.XPath(selector));
             Driver.FindElement(By.XPath(selector)).Click();
         }

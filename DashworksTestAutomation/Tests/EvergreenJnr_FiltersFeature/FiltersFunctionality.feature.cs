@@ -1688,7 +1688,6 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_FiltersFeature
         [NUnit.Framework.CategoryAttribute("DAS11838")]
         [NUnit.Framework.TestCaseAttribute("Red", "RED", new string[0])]
         [NUnit.Framework.TestCaseAttribute("Blue", "BLUE", new string[0])]
-        [NUnit.Framework.TestCaseAttribute("Out Of Scope", "OUT OF SCOPE", new string[0])]
         [NUnit.Framework.TestCaseAttribute("Light Blue", "LIGHT BLUE", new string[0])]
         [NUnit.Framework.TestCaseAttribute("Brown", "BROWN", new string[0])]
         [NUnit.Framework.TestCaseAttribute("Amber", "AMBER", new string[0])]
@@ -1746,9 +1745,77 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_FiltersFeature
                         "SelectedValues"});
             table27.AddRow(new string[] {
                         string.Format("{0}", selectedCheckbox)});
-            testRunner.When("User add \"Windows7Mi: Target App Readiness\" filter where type is \"Equals\" with ad" +
+            testRunner.When("User add \"ComputerSc: Target App Readiness\" filter where type is \"Equals\" with ad" +
                     "ded column and Lookup option", ((string)(null)), table27, "When ");
             testRunner.Then(string.Format("\"{0}\" color is matching the caption", colorName), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+            this.ScenarioCleanup();
+        }
+        
+        [NUnit.Framework.TestAttribute()]
+        [NUnit.Framework.DescriptionAttribute("EvergreenJnr_ApplicationsList_CheckThatTheColourOfTheApplicationRationalisationIt" +
+            "emIsMatchingTheCaption")]
+        [NUnit.Framework.CategoryAttribute("Evergreen")]
+        [NUnit.Framework.CategoryAttribute("Applications")]
+        [NUnit.Framework.CategoryAttribute("EvergreenJnr_FilterFeature")]
+        [NUnit.Framework.CategoryAttribute("FilterFunctionality")]
+        [NUnit.Framework.CategoryAttribute("DAS11838")]
+        [NUnit.Framework.TestCaseAttribute("FORWARD PATH", "FORWARD PATH", new string[0])]
+        [NUnit.Framework.TestCaseAttribute("KEEP", "KEEP", new string[0])]
+        [NUnit.Framework.TestCaseAttribute("RETIRE", "RETIRE", new string[0])]
+        [NUnit.Framework.TestCaseAttribute("UNCATEGORISED", "UNCATEGORISED", new string[0])]
+        public virtual void EvergreenJnr_ApplicationsList_CheckThatTheColourOfTheApplicationRationalisationItemIsMatchingTheCaption(string selectedCheckbox, string imageName, string[] exampleTags)
+        {
+            System.Exception lastException = null;
+            for (int i = 0; (i <= 1); i = (i + 1))
+            {
+                try
+                {
+                    this.EvergreenJnr_ApplicationsList_CheckThatTheColourOfTheApplicationRationalisationItemIsMatchingTheCaptionInternal(selectedCheckbox, imageName, exampleTags);
+                    return;
+                }
+                catch (System.Exception exc)
+                {
+                    lastException = exc;
+                }
+                if (((i + 1) 
+                            <= 1))
+                {
+                    testRunner.OnScenarioEnd();
+                }
+            }
+            if ((lastException != null))
+            {
+                throw lastException;
+            }
+        }
+        
+        private void EvergreenJnr_ApplicationsList_CheckThatTheColourOfTheApplicationRationalisationItemIsMatchingTheCaptionInternal(string selectedCheckbox, string imageName, string[] exampleTags)
+        {
+            string[] @__tags = new string[] {
+                    "Evergreen",
+                    "Applications",
+                    "EvergreenJnr_FilterFeature",
+                    "FilterFunctionality",
+                    "DAS11838"};
+            if ((exampleTags != null))
+            {
+                @__tags = System.Linq.Enumerable.ToArray(System.Linq.Enumerable.Concat(@__tags, exampleTags));
+            }
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("EvergreenJnr_ApplicationsList_CheckThatTheColourOfTheApplicationRationalisationIt" +
+                    "emIsMatchingTheCaption", @__tags);
+            this.ScenarioSetup(scenarioInfo);
+            this.FeatureBackground();
+            testRunner.When("User clicks \"Applications\" on the left-hand menu", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+            testRunner.Then("\"Applications\" list should be displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+            testRunner.When("User clicks the Filters button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+            testRunner.Then("Filters panel is displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+            TechTalk.SpecFlow.Table table28 = new TechTalk.SpecFlow.Table(new string[] {
+                        "SelectedCheckboxes"});
+            table28.AddRow(new string[] {
+                        string.Format("{0}", selectedCheckbox)});
+            testRunner.When("User add \"ComputerSc: Application Rationalisation\" filter where type is \"Equal\" w" +
+                    "ith added column and following checkboxes:", ((string)(null)), table28, "When ");
+            testRunner.Then(string.Format("\"{0}\" image is matching the caption", imageName), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
             this.ScenarioCleanup();
         }
         
@@ -1803,29 +1870,29 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_FiltersFeature
             testRunner.Then("\"Devices\" list should be displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
             testRunner.When("User clicks the Filters button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
             testRunner.Then("Filters panel is displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-            TechTalk.SpecFlow.Table table28 = new TechTalk.SpecFlow.Table(new string[] {
+            TechTalk.SpecFlow.Table table29 = new TechTalk.SpecFlow.Table(new string[] {
                         "SelectedCheckboxes"});
-            table28.AddRow(new string[] {
+            table29.AddRow(new string[] {
                         "None"});
             testRunner.When("User add \"Windows7Mi: Category\" filter where type is \"Equals\" with added column a" +
-                    "nd following checkboxes:", ((string)(null)), table28, "When ");
-            TechTalk.SpecFlow.Table table29 = new TechTalk.SpecFlow.Table(new string[] {
-                        "ColumnName"});
-            table29.AddRow(new string[] {
-                        "Windows7Mi: Category"});
-            testRunner.Then("Content is empty in the column", ((string)(null)), table29, "Then ");
+                    "nd following checkboxes:", ((string)(null)), table29, "When ");
             TechTalk.SpecFlow.Table table30 = new TechTalk.SpecFlow.Table(new string[] {
-                        "SelectedCheckboxes"});
+                        "ColumnName"});
             table30.AddRow(new string[] {
+                        "Windows7Mi: Category"});
+            testRunner.Then("Content is empty in the column", ((string)(null)), table30, "Then ");
+            TechTalk.SpecFlow.Table table31 = new TechTalk.SpecFlow.Table(new string[] {
+                        "SelectedCheckboxes"});
+            table31.AddRow(new string[] {
                         "None"});
             testRunner.When("User add \"Windows7Mi: Category\" filter where type is \"Does not equal\" without add" +
-                    "ed column and following checkboxes:", ((string)(null)), table30, "When ");
+                    "ed column and following checkboxes:", ((string)(null)), table31, "When ");
             testRunner.When("User click on \'Windows7Mi: Category\' column header", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-            TechTalk.SpecFlow.Table table31 = new TechTalk.SpecFlow.Table(new string[] {
+            TechTalk.SpecFlow.Table table32 = new TechTalk.SpecFlow.Table(new string[] {
                         "ColumnName"});
-            table31.AddRow(new string[] {
+            table32.AddRow(new string[] {
                         "Windows7Mi: Category"});
-            testRunner.Then("Content is present in the newly added column", ((string)(null)), table31, "Then ");
+            testRunner.Then("Content is present in the newly added column", ((string)(null)), table32, "Then ");
             this.ScenarioCleanup();
         }
     }

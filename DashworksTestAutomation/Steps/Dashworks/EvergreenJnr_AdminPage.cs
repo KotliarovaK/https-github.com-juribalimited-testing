@@ -105,6 +105,21 @@ namespace DashworksTestAutomation.Steps.Dashworks
             _driver.WaitForDataLoading();
         }
 
+        [When(@"User navigates to the ""(.*)"" tab in the Scope section on the Project details page")]
+        public void WhenUserNavigatesToTheTabInTheScopeSectionOnTheProjectDetailsPage(string tabName)
+        {
+            var projectTabs = _driver.NowAt<ProjectsPage>();
+            projectTabs.NavigateToProjectTabByName(tabName);
+            _driver.WaitForDataLoading();
+        }
+
+        [Then(@"All Association are selected by default")]
+        public void ThenAllAssociationAreSelectedByDefault()
+        {
+            var projectsPage = _driver.NowAt<ProjectsPage>();
+            Assert.IsFalse(projectsPage.UncheckedCheckbox.Displayed(), "Not all checkboxes are selected");
+        }
+
         [When(@"User clicks ""(.*)"" tab in the Project Scope Changes section")]
         public void WhenUserClicksTabInTheProjectScopeChangesSection(string tabName)
         {
@@ -173,11 +188,30 @@ namespace DashworksTestAutomation.Steps.Dashworks
             teamName.TeamNameField.SendKeys(teamText);
         }
 
-        [Then(@"User enters ""(.*)"" in the Team Description field")]
-        public void ThenUserEntersInTheTeamDescriptionField(string descriptionText)
+        [When(@"User enters ""(.*)"" in the Team Description field")]
+        public void WhenUserEntersInTheTeamDescriptionField(string descriptionText)
         {
             var teamName = _driver.NowAt<TeamsPage>();
+            teamName.TeamDescriptionField.Clear();
             teamName.TeamDescriptionField.SendKeys(descriptionText);
+        }
+
+        [When(@"User clicks Update Team button")]
+        public void WhenUserClicksUpdateTeamButton()
+        {
+            var button = _driver.NowAt<TeamsPage>();
+            _driver.WaitWhileControlIsNotDisplayed<TeamsPage>(() => button.UpdateTeamButton);
+            button.UpdateTeamButton.Click();
+            Logger.Write("Update Team button was clicked");
+        }
+
+        [Then(@"Update Team button is disabled")]
+        public void ThenUpdateTeamButtonIsDisabled()
+        {
+            var button = _driver.NowAt<TeamsPage>();
+            _driver.WaitWhileControlIsNotDisplayed<TeamsPage>(() => button.UpdateTeamButton);
+            Assert.IsTrue(Convert.ToBoolean(button.UpdateTeamButton.GetAttribute("disabled")),
+                "Update Team button is active");
         }
 
         [When(@"User clicks Create Team button on the Create Team page")]
@@ -203,6 +237,106 @@ namespace DashworksTestAutomation.Steps.Dashworks
             var page = _driver.NowAt<TeamsPage>();
             _driver.WaitWhileControlIsNotDisplayed<TeamsPage>(() => page.ErrorMessageTeamPage);
             Assert.AreEqual(text, page.ErrorMessageTeamPage.Text, "Error Message is not displayed");
+        }
+
+        [When(@"User have opened Column Settings for ""(.*)"" column on the Teams Page")]
+        public void WhenUserHaveOpenedColumnSettingsForColumnOnTheTeamsPage(string columnName)
+        {
+            var page = _driver.NowAt<TeamsPage>();
+            page.OpenColumnSettingsByName(columnName);
+        }
+
+        [When(@"User clicks Filter button in the Column Settings panel on the Teams Page")]
+        public void WhenUserClicksFilterButtonInTheColumnSettingsPanelOnTheTeamsPage()
+        {
+            var menu = _driver.NowAt<TeamsPage>();
+            _driver.WaitWhileControlIsNotDisplayed<TeamsPage>(() => menu.FilterButton);
+            menu.FilterButton.Click();
+        }
+
+        [Then(@"Content is present in the table on the Teams Page")]
+        public void ThenContentIsPresentInTheTableOnTheTeamsPage()
+        {
+            var tableElement = _driver.NowAt<TeamsPage>();
+            Assert.IsTrue(tableElement.TableContent.Displayed(), "Table is empty");
+        }
+
+        [When(@"User enters ""(.*)"" text in the Search field for ""(.*)"" column on the Teams page")]
+        public void WhenUserEntersTextInTheSearchFieldForColumnOnTheTeamsPage(string text, string columnName)
+        {
+            var filterElement = _driver.NowAt<TeamsPage>();
+            filterElement.GetSearchFieldByColumnName((columnName), text);
+        }
+
+        [When(@"User selects all rows on the Teams page")]
+        public void WhenUserSelectsAllRowsOnTheTeamsPage()
+        {
+            var checkbox = _driver.NowAt<TeamsPage>();
+            checkbox.SelectAllProjectsCheckbox.Click();
+        }
+
+        [Then(@"User clicks on Actions button on the Teams page")]
+        public void ThenUserClicksOnActionsButtonOnTheTeamsPage()
+        {
+            var button = _driver.NowAt<TeamsPage>();
+            _driver.WaitWhileControlIsNotDisplayed<TeamsPage>(() => button.ActionsButton);
+            button.ActionsButton.Click();
+            Logger.Write("Actions button was clicked");
+        }
+
+        [Then(@"User select ""(.*)"" in the Actions dropdown on the Teams page")]
+        public void ThenUserSelectInTheActionsDropdownOnTheTeamsPage(string actionName)
+        {
+            var action = _driver.NowAt<TeamsPage>();
+            action.SelectActions(actionName);
+        }
+
+        [When(@"User clicks content from ""(.*)"" column on the Teams page")]
+        public void WhenUserClicksContentFromColumnOnTheTeamsPage(string columnName)
+        {
+            var tableElement = _driver.NowAtWithoutWait<TeamsPage>();
+            tableElement.ClickContentByColumnName(columnName);
+            _driver.WaitForDataLoading();
+        }
+
+        [Then(@"""(.*)"" team details is displayed to the user")]
+        public void ThenTeamDetailsIsDisplayedToTheUser(string teamName)
+        {
+            var teamElement = _driver.NowAt<TeamsPage>();
+            Assert.IsTrue(teamElement.AppropriateTeamName(teamName), $"{teamName} is not displayed on the Teams page");
+        }
+
+        [Then(@"User clicks ""(.*)"" tab on the Teams page")]
+        public void ThenUserClicksTabOnTheTeamsPage(string tabName)
+        {
+            var page = _driver.NowAt<TeamsPage>();
+            page.SelectTabByName(tabName);
+        }
+
+        [Then(@"Create Team button is disabled")]
+        public void ThenCreateTeamButtonIsDisabled()
+        {
+            var button = _driver.NowAt<TeamsPage>();
+            _driver.WaitWhileControlIsNotDisplayed<TeamsPage>(() => button.CreateTeamButtonOnCreateTeamPage);
+            Assert.IsTrue(Convert.ToBoolean(button.CreateTeamButtonOnCreateTeamPage.GetAttribute("disabled")),
+                "Create Team button is active");
+        }
+
+        [When(@"User clicks Delete button on the Teams page")]
+        public void WhenUserClicksDeleteButtonOnTheTeamsPage()
+        {
+            var button = _driver.NowAt<TeamsPage>();
+            _driver.WaitWhileControlIsNotDisplayed<TeamsPage>(() => button.ActionsButton);
+            button.DeleteButtonOnPage.Click();
+            Logger.Write("Delete button was clicked");
+        }
+
+        [Then(@"Reassign Objects is displayed on the Teams page")]
+        public void ThenReassignObjectsIsDisplayedOnTheTeamsPage()
+        {
+            var page = _driver.NowAt<TeamsPage>();
+            _driver.WaitWhileControlIsNotDisplayed<TeamsPage>(() => page.ReassignObjectsSummary);
+            Assert.IsTrue(page.ReassignObjectsSummary.Displayed(), "Reassign Objects was not displayed");
         }
 
         [When(@"User clicks Create Bucket button")]
@@ -254,6 +388,14 @@ namespace DashworksTestAutomation.Steps.Dashworks
             StringAssert.Contains(text, page.SuccessMessageBucketsPage.Text, "Success Message is not displayed");
         }
 
+        [Then(@"Success message The ""(.*)"" bucket has been updated is displayed on the Buckets page")]
+        public void ThenSuccessMessageTheBucketHasBeenUpdatedIsDisplayedOnTheBucketsPage(string bucketName)
+        {
+            var page = _driver.NowAt<BucketsPage>();
+            _driver.WaitWhileControlIsNotDisplayed<BucketsPage>(() => page.SuccessMessageBucketsPage);
+            Assert.IsTrue(page.SuccessUpdatedMessageBucketsPage(bucketName), $"Success Message is not displayed for {bucketName}");
+        }
+
         [Then(@"Error message with ""(.*)"" text is displayed on the Buckets page")]
         public void ThenErrorMessageWithTextIsDisplayedOnTheBucketsPage(string text)
         {
@@ -274,6 +416,21 @@ namespace DashworksTestAutomation.Steps.Dashworks
         {
             var filterElement = _driver.NowAt<BucketsPage>();
             filterElement.GetSearchFieldByColumnName((columnName), text);
+        }
+
+        [When(@"User clicks content from ""(.*)"" column on the Buckets page")]
+        public void WhenUserClicksContentFromColumnOnTheBucketsPage(string columnName)
+        {
+            var tableElement = _driver.NowAtWithoutWait<BucketsPage>();
+            tableElement.ClickContentByColumnName(columnName);
+            _driver.WaitForDataLoading();
+        }
+
+        [Then(@"""(.*)"" bucket details is displayed to the user")]
+        public void ThenBucketDetailsIsDisplayedToTheUser(string bucketName)
+        {
+            var teamElement = _driver.NowAt<BucketsPage>();
+            Assert.IsTrue(teamElement.AppropriateBucketName(bucketName), $"{bucketName} is not displayed on the Bucket page");
         }
 
         [When(@"User selects all rows on the Buckets page")]
@@ -299,8 +456,8 @@ namespace DashworksTestAutomation.Steps.Dashworks
             action.SelectActions(actionName);
         }
 
-        [Then(@"User clicks Delete button on the Buckets page")]
-        public void ThenUserClicksDeleteButtonOnTheBucketsPage()
+        [When(@"User clicks Delete button on the Buckets page")]
+        public void WhenUserClicksDeleteButtonOnTheBucketsPage()
         {
             var button = _driver.NowAt<BucketsPage>();
             _driver.WaitWhileControlIsNotDisplayed<BucketsPage>(() => button.ActionsButton);
@@ -346,6 +503,20 @@ namespace DashworksTestAutomation.Steps.Dashworks
             button.AddDeviceButton.Click();
         }
 
+        [When(@"User clicks Add Mailbox button on the Buckets page")]
+        public void WhenUserClicksAddMailboxButtonOnTheBucketsPage()
+        {
+            var button = _driver.NowAt<BucketsPage>();
+            button.AddMailboxButton.Click();
+        }
+
+        [Then(@"No items text is displayed on the Buckets page")]
+        public void ThenNoItemsTextIsDisplayedOnTheBucketsPage()
+        {
+            var text = _driver.NowAt<BucketsPage>();
+            Assert.IsTrue(text.NoItesMessage.Displayed, "No items text is not displayed");
+        }
+
         [Then(@"User clicks ""(.*)"" tab on the Buckets page")]
         public void ThenUserClicksTabOnTheBucketsPage(string tabName)
         {
@@ -353,8 +524,22 @@ namespace DashworksTestAutomation.Steps.Dashworks
             page.SelectTabByName(tabName);
         }
 
-        [Then(@"User add following devices in the Bucket")]
-        public void ThenUserAddFollowingDevicesInTheBucket(Table table)
+        [When(@"User clicks Default Bucket checkbox on the Buckets page")]
+        public void WhenUserClicksDefaultBucketCheckboxOnTheBucketsPage()
+        {
+            var ckeckbox = _driver.NowAt<BucketsPage>();
+            ckeckbox.DefaultBucketCheckbox.Click();
+        }
+
+        [When(@"User clicks Update Bucket button on the Buckets page")]
+        public void WhenUserClicksUpdateBucketButtonOnTheBucketsPage()
+        {
+            var button = _driver.NowAt<BucketsPage>();
+             button.UpdateBucketButton.Click();
+        }
+
+        [Then(@"User add following devices to the Bucket")]
+        public void ThenUserAddFollowingDevicesToTheBucket(Table table)
         {
             var bucketElement = _driver.NowAt<BucketsPage>();
 
@@ -366,48 +551,17 @@ namespace DashworksTestAutomation.Steps.Dashworks
             bucketElement.AddDevicesButton.Click();
         }
 
-        [When(@"User have opened Column Settings for ""(.*)"" column on the Teams Page")]
-        public void WhenUserHaveOpenedColumnSettingsForColumnOnTheTeamsPage(string columnName)
+        [Then(@"User add following mailboxes to the Bucket")]
+        public void ThenUserAddFollowingMailboxesToTheBucket(Table table)
         {
-            var page = _driver.NowAt<TeamsPage>();
-            page.OpenColumnSettingsByName(columnName);
-        }
+            var bucketElement = _driver.NowAt<BucketsPage>();
 
-        [When(@"User clicks Filter button in the Column Settings panel on the Teams Page")]
-        public void WhenUserClicksFilterButtonInTheColumnSettingsPanelOnTheTeamsPage()
-        {
-            var menu = _driver.NowAt<TeamsPage>();
-            _driver.WaitWhileControlIsNotDisplayed<TeamsPage>(() => menu.FilterButton);
-            menu.FilterButton.Click();
-        }
-
-        [Then(@"Content is present in the table on the Teams Page")]
-        public void ThenContentIsPresentInTheTableOnTheTeamsPage()
-        {
-            var tableElement = _driver.NowAt<TeamsPage>();
-            Assert.IsTrue(tableElement.TableContent.Displayed(), "Table is empty");
-        }
-
-        [When(@"User enters ""(.*)"" text in the Search field for ""(.*)"" column on the Teams page")]
-        public void WhenUserEntersTextInTheSearchFieldForColumnOnTheTeamsPage(string text, string columnName)
-        {
-            var filterElement = _driver.NowAt<TeamsPage>();
-            filterElement.GetSearchFieldByColumnName((columnName), text);
-        }
-
-        [When(@"User clicks content from ""(.*)"" column on the Teams page")]
-        public void WhenUserClicksContentFromColumnOnTheTeamsPage(string columnName)
-        {
-            var tableElement = _driver.NowAtWithoutWait<TeamsPage>();
-            tableElement.ClickContentByColumnName(columnName);
-            _driver.WaitForDataLoading();
-        }
-
-        [Then(@"""(.*)"" team details is displayed to the user")]
-        public void ThenTeamDetailsIsDisplayedToTheUser(string teamName)
-        {
-            var teamElement = _driver.NowAt<TeamsPage>();
-            Assert.IsTrue(teamElement.AppropriateTeamName(teamName), $"{teamName} is not displayed on the Teams page");
+            foreach (var row in table.Rows)
+            {
+                bucketElement.AddMailbox(row["MailboxName"]);
+                bucketElement.SearchTextbox.ClearWithHomeButton(_driver);
+            }
+            bucketElement.AddMailboxesButton.Click();
         }
 
         [When(@"User clicks Create Project button")]
@@ -483,15 +637,6 @@ namespace DashworksTestAutomation.Steps.Dashworks
             _driver.WaitWhileControlIsNotDisplayed<ProjectsPage>(() => projectElement.SuccessDeleteMessage);
             Assert.IsTrue(projectElement.SuccessDeletingMessage(textMessage),
                 $"{textMessage} is not displayed on the Project page");
-        }
-        
-        [Then(@"Create Team button is disabled")]
-        public void ThenCreateTeamButtonIsDisabled()
-        {
-            var button = _driver.NowAt<TeamsPage>();
-            _driver.WaitWhileControlIsNotDisplayed<TeamsPage>(() => button.CreateTeamButtonOnCreateTeamPage);
-            Assert.IsTrue(Convert.ToBoolean(button.CreateTeamButtonOnCreateTeamPage.GetAttribute("disabled")),
-                "Create Team button is active");
         }
 
         [Then(@"Delete ""(.*)"" Project in the Administration")]
