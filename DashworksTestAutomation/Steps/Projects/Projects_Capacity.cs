@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Reflection;
 using System.Text;
 using System.Threading.Tasks;
 using DashworksTestAutomation.DTO.Projects;
@@ -60,7 +61,15 @@ namespace DashworksTestAutomation.Steps.Projects
             page.RequestType.SelectboxSelect(_projectDto.ReqestType.Name);
             //TODO check all Request Type
             _driver.WaitWhileControlIsNotDisplayed<Capacity_CapacityPage>(() => page.StartDate);
-            page.StartDate.SendKeys(_capacityDto.StartDate);
+            try
+            {
+                page.StartDate.SendKeys(_capacityDto.StartDate);
+            }
+            catch (TargetInvocationException)
+            {
+                _driver.WaitWhileControlIsNotDisplayed<Capacity_CapacityPage>(() => page.StartDate);
+                page.StartDate.SendKeys(_capacityDto.StartDate);
+            }
             page.EndDate.SendKeys(_capacityDto.EndDate);
             page.MondayCheckbox.SetCheckboxState(_capacityDto.MondayCheckbox);
             page.TuesdayCheckbox.SetCheckboxState(_capacityDto.TuesdayCheckbox);
