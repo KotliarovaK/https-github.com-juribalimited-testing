@@ -93,6 +93,18 @@ namespace DashworksTestAutomation.Pages.Evergreen
         [FindsBy(How = How.XPath, Using = ".//div[text()='This list does not exist or you do not have access to it']")]
         public IWebElement DoesNotExistListMessage { get; set; }
 
+        [FindsBy(How = How.XPath, Using = ".//div[@tabindex='-1']//span//a")]
+        public IWebElement FirstDevicesCell { get; set; }
+
+        [FindsBy(How = How.XPath, Using = ".//div[@tabindex='-1']//span//a[@href='#/user/71622/']")]
+        public IWebElement FirstUsersCell { get; set; }
+
+        [FindsBy(How = How.XPath, Using = ".//div[@tabindex='-1']//span//a[@href='#/application/4249/']")]
+        public IWebElement FirstApplicationsCell { get; set; }
+
+        [FindsBy(How = How.XPath, Using = ".//div[@tabindex='-1']//span//a[@href='#/mailbox/49258/']")]
+        public IWebElement FirstMailboxesCell { get; set; }
+
         public const string ColorItem = ".//div[@class='status']";
 
         public const string ImageItem = ".//div[@class='ag-body-container']//img[contains(@src,'png')]";
