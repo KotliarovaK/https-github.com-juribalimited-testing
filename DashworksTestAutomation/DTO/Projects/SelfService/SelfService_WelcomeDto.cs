@@ -25,7 +25,7 @@ namespace DashworksTestAutomation.DTO.Projects
 
         public SelfService_WelcomeDto()
         {
-            //Type = EnumExtensions.GetRandomValue<TypeEnum>();
+            Type = TypeEnum.Attribute;
             Field = EnumExtensions.GetRandomValue<FieldEnum>();
         }
     }

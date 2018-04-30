@@ -78,8 +78,6 @@ namespace DashworksTestAutomation.Steps.Projects
             page.ShowMoreDetailsLink.SetCheckboxState(_welcomeDto.ShowMoreDetailsLink);
             page.Type.SelectboxSelect(_welcomeDto.Type.GetValue());
             page.Field.SelectboxSelect(_welcomeDto.Field.GetValue());
-            //page.LongName.SendKeys(_welcomeDto.LongName);
-            //page.ShortName.SendKeys(_welcomeDto.ShortName);
             page.PageDescription.SendKeys(_welcomeDto.PageDescription);
             page.ProjectName.SendKeys(_welcomeDto.ProjectName);
 

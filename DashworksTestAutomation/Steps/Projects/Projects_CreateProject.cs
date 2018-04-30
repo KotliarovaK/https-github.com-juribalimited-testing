@@ -121,6 +121,7 @@ namespace DashworksTestAutomation.Steps.Projects
             var page = _driver.NowAt<RequestTypePropertiesPage>();
 
             table.CreateInstance<RequestTypesDto>().CopyPropertiesTo(_requestTypesDto);
+            _requestTypesDto.Name += TestDataGenerator.RandomString();
 
             page.Name.SendKeys(_requestTypesDto.Name);
             page.Description.SendKeys(_requestTypesDto.Description);
@@ -137,12 +138,15 @@ namespace DashworksTestAutomation.Steps.Projects
             var page = _driver.NowAt<CategoryPropertiesPage>();
 
             table.CreateInstance<CategoryPropertiesDto>().CopyPropertiesTo(_categoryPropertiesDto);
+            _categoryPropertiesDto.Name += TestDataGenerator.RandomString();
 
             page.Name.SendKeys(_categoryPropertiesDto.Name);
             page.Description.SendKeys(_categoryPropertiesDto.Description);
             page.ObjectType.SelectboxSelect(_categoryPropertiesDto.ObjectType.GetValue());
 
             page.ConfirmCreateCategoryButton.Click();
+
+            _projectDto.Categories = _categoryPropertiesDto;
         }
 
         [Then(@"User create Stage")]
@@ -151,6 +155,7 @@ namespace DashworksTestAutomation.Steps.Projects
             var page = _driver.NowAt<StagePropertiesPage>();
 
             table.CreateInstance<StagePropertiesDto>().CopyPropertiesTo(_stagePropertiesDto);
+            _stagePropertiesDto.StageName += TestDataGenerator.RandomString();
 
             page.StageName.SendKeys(_stagePropertiesDto.StageName);
 
@@ -165,6 +170,7 @@ namespace DashworksTestAutomation.Steps.Projects
             var page = _driver.NowAt<TaskPropertiesPage>();
 
             table.CreateInstance<TaskPropertiesDto>().CopyPropertiesTo(_taskPropertiesDto);
+            _taskPropertiesDto.Name += TestDataGenerator.RandomString();
 
             page.Name.SendKeys(_taskPropertiesDto.Name);
             page.Help.SendKeys(_taskPropertiesDto.Help);
@@ -176,6 +182,8 @@ namespace DashworksTestAutomation.Steps.Projects
             page.TaskValuesTemplateCheckbox.SetCheckboxState(_taskPropertiesDto.TaskValuesTemplateCheckbox);
 
             page.ConfirmCreateTaskButton.Click();
+
+            _projectDto.Tasks = _taskPropertiesDto;
         }
 
         [Then(@"User updates the Task page")]
@@ -222,6 +230,7 @@ namespace DashworksTestAutomation.Steps.Projects
             var page = _driver.NowAt<TeamPropertiesPage>();
 
             table.CreateInstance<TeamPropertiesDto>().CopyPropertiesTo(_teamPropertiesDto);
+            _teamPropertiesDto.TeamName += TestDataGenerator.RandomString();
 
             page.TeamName.SendKeys(_teamPropertiesDto.TeamName);
             page.ShortDescription.SendKeys(_teamPropertiesDto.ShortDescription);
@@ -237,6 +246,7 @@ namespace DashworksTestAutomation.Steps.Projects
             var page = _driver.NowAt<GroupPropertiesPage>();
 
             table.CreateInstance<GroupPropertiesDto>().CopyPropertiesTo(_groupPropertiesDto);
+            //_groupPropertiesDto.GroupName += TestDataGenerator.RandomString();
             _projectDto.GroupProperties.Add(_groupPropertiesDto);
 
             page.GroupName.SendKeys(_groupPropertiesDto.GroupName);
@@ -253,6 +263,7 @@ namespace DashworksTestAutomation.Steps.Projects
             var page = _driver.NowAt<MailTemplatePropertiesPage>();
 
             table.CreateInstance<MailTemplatePropertiesDto>().CopyPropertiesTo(_mailTemplatePropertiesDto);
+            _mailTemplatePropertiesDto.Name += TestDataGenerator.RandomString();
 
             page.Name.SendKeys(_mailTemplatePropertiesDto.Name);
             page.Description.SendKeys(_mailTemplatePropertiesDto.Description);
@@ -261,6 +272,8 @@ namespace DashworksTestAutomation.Steps.Projects
             //TODO Attachments
 
             page.ConfirmCreateMailTemplateButton.Click();
+
+            _projectDto.MailTemplateProperties = _mailTemplatePropertiesDto;
         }
 
         [Then(@"User updating News page")]
@@ -277,15 +290,15 @@ namespace DashworksTestAutomation.Steps.Projects
             upd.UpdateButton.Click();
         }
 
-        [Then(@"groups is displayed in the ""(.*)"" team")]
-        public void ThenGroupsIsDisplayedInTheTeam(string teamName)
+        [Then(@"required number of groups is displayed for created team")]
+        public void ThenRequiredNumberOfGroupsIsDisplayedForCreatedTeam()
         {
             var taem = _driver.NowAt<BaseElements>();
 
-            var groupsInTeam = _projectDto.GroupProperties.Count(x => x.OwnedByTeam.Equals(teamName));
-            var groups = taem.GetGroupsCountByTeamName(teamName);
+            var groupsInTeam = _projectDto.GroupProperties.Count(x => x.OwnedByTeam.Equals(_projectDto.TeamProperties.TeamName));
+            var groups = taem.GetGroupsCountByTeamName(_projectDto.TeamProperties.TeamName);
 
-            Assert.AreEqual(groups, groupsInTeam,  "Number of groups is incorrect");
+            Assert.AreEqual(groups, groupsInTeam, "Number of groups is incorrect");
         }
     }
 }

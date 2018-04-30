@@ -42,6 +42,7 @@ namespace DashworksTestAutomation.Steps.Projects
             page.DisplayColorsOnDatePicker.SetCheckboxState(_detailsDto.DisplayColors);
             page.EnforceOonSelfServicePage.SetCheckboxState(_detailsDto.EnforceOonSelfServicePage);
             page.EnforceOnProjectObjectPage.SetCheckboxState(_detailsDto.EnforceOnProjectObjectPage);
+            page.CapacityToReach.Clear();
             page.CapacityToReach.SendKeys(_detailsDto.CapacityToReach);
 
             upd.UpdateButton.Click();
@@ -90,8 +91,8 @@ namespace DashworksTestAutomation.Steps.Projects
             table.CreateInstance<Capacity_OverrideDatesDto>().CopyPropertiesTo(_overrideDatesDto);
 
             page.Date.SendKeys(_overrideDatesDto.Date);
-            page.OverrideTeam.SelectboxSelect(_overrideDatesDto.OverrideTeam.GetValue());
-            page.OverrideRequestType.SelectboxSelect(_overrideDatesDto.OverrideRequestType.GetValue());
+            page.OverrideTeam.SelectboxSelect(_projectDto.TeamProperties.TeamName);
+            page.OverrideRequestType.SelectboxSelect(_projectDto.ReqestType.Name);
             page.Capacity.SendKeys(_overrideDatesDto.Capacity.ToString());
             page.Comment.SendKeys(_overrideDatesDto.Comment);
 

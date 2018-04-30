@@ -81,13 +81,11 @@ namespace DashworksTestAutomation.Tests.Projects
             TechTalk.SpecFlow.Table table1 = new TechTalk.SpecFlow.Table(new string[] {
                         "ProjectName",
                         "ProjectShortName",
-                        "ProjectDescription",
-                        "ProjectType"});
+                        "ProjectDescription"});
             table1.AddRow(new string[] {
                         "TestProjectName",
                         "TestText",
-                        "TestText",
-                        "ComputerScheduledProject"});
+                        "TestText"});
             testRunner.When("User creates Project", ((string)(null)), table1, "When ");
             testRunner.Then("\"Manage Project Details\" page is displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
             TechTalk.SpecFlow.Table table2 = new TechTalk.SpecFlow.Table(new string[] {
@@ -116,12 +114,10 @@ namespace DashworksTestAutomation.Tests.Projects
             testRunner.When("User clicks \"Request Type\" create button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
             TechTalk.SpecFlow.Table table3 = new TechTalk.SpecFlow.Table(new string[] {
                         "Name",
-                        "Description",
-                        "ObjectType"});
+                        "Description"});
             table3.AddRow(new string[] {
                         "TestRequestTypeName",
-                        "TestText",
-                        "Computer"});
+                        "TestText"});
             testRunner.Then("User create Request Type", ((string)(null)), table3, "Then ");
             testRunner.When("User navigate to \"Categories\" tab", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
             testRunner.Then("\"Manage Categories\" page is displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
@@ -147,18 +143,13 @@ namespace DashworksTestAutomation.Tests.Projects
             TechTalk.SpecFlow.Table table6 = new TechTalk.SpecFlow.Table(new string[] {
                         "Name",
                         "Help",
-                        "TaskType",
-                        "ValueType",
                         "TaskValuesTemplateCheckbox"});
             table6.AddRow(new string[] {
                         "TestTaskName",
                         "TestText",
-                        "Normal",
-                        "Radiobutton",
                         "true"});
             testRunner.Then("User create Task", ((string)(null)), table6, "Then ");
             TechTalk.SpecFlow.Table table7 = new TechTalk.SpecFlow.Table(new string[] {
-                        "ValueType",
                         "TaskHaADueDate",
                         "TaskImpactsReadiness",
                         "TaskHasAnOwner",
@@ -167,7 +158,6 @@ namespace DashworksTestAutomation.Tests.Projects
                         "BulkUpdate",
                         "SelfService"});
             table7.AddRow(new string[] {
-                        "Radiobutton",
                         "true",
                         "true",
                         "true",
@@ -197,7 +187,7 @@ namespace DashworksTestAutomation.Tests.Projects
             testRunner.Then("User create Group", ((string)(null)), table9, "Then ");
             testRunner.When("User navigate to \"Teams\" tab", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
             testRunner.Then("\"Manage Teams\" page is displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-            testRunner.Then("groups is displayed in the \"001 TestTeamName\" team", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+            testRunner.Then("required number of groups is displayed for created team", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
             testRunner.When("User navigate to \"Mail Templates\" tab", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
             testRunner.Then("\"Manage Mail Templates\" page is displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
             testRunner.When("User clicks \"Mail Template\" create button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
@@ -248,7 +238,6 @@ namespace DashworksTestAutomation.Tests.Projects
                         "AllowToChangeLanguage",
                         "ShowProjectSelector",
                         "ShowMoreDetailsLink",
-                        "Type",
                         "PageDescription",
                         "ProjectName"});
             table13.AddRow(new string[] {
@@ -256,7 +245,6 @@ namespace DashworksTestAutomation.Tests.Projects
                         "false",
                         "false",
                         "true",
-                        "Attribute",
                         "TestText",
                         "ProjectName"});
             testRunner.Then("User updates the Welcome on Self Service tab", ((string)(null)), table13, "Then ");
@@ -300,7 +288,7 @@ namespace DashworksTestAutomation.Tests.Projects
                         "false",
                         "false",
                         "false",
-                        "false",
+                        "true",
                         "true",
                         "true",
                         "true",
@@ -346,8 +334,8 @@ namespace DashworksTestAutomation.Tests.Projects
             table18.AddRow(new string[] {
                         "false",
                         "true",
+                        "false",
                         "true",
-                        "",
                         "TestText"});
             testRunner.Then("User updates the first Other Options on Self Service tab", ((string)(null)), table18, "Then ");
             testRunner.When("User navigate to \"Other Options 2\" on selected tab", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
@@ -361,7 +349,7 @@ namespace DashworksTestAutomation.Tests.Projects
                         "false",
                         "true",
                         "true",
-                        "",
+                        "false",
                         "TestText"});
             testRunner.Then("User updates the second Other Options on Self Service tab", ((string)(null)), table19, "Then ");
             testRunner.When("User navigate to \"Thank You\" on selected tab", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
@@ -406,17 +394,17 @@ namespace DashworksTestAutomation.Tests.Projects
             testRunner.When("User navigate to \"Groups\" tab", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
             testRunner.Then("User remove \"TestGroupName\" Group", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
             testRunner.When("User navigate to \"Teams\" tab", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-            testRunner.Then("User remove \"001 TestTeamName\" Team", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+            testRunner.Then("User remove created Team", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
             testRunner.When("User navigate to \"Tasks\" tab", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-            testRunner.Then("User remove \"TestTaskName\" Task", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+            testRunner.Then("User remove created Task", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
             testRunner.When("User navigate to \"Stages\" tab", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-            testRunner.Then("User remove \"TestStageName\" Stage", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+            testRunner.Then("User remove created Stage", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
             testRunner.When("User navigate to \"Categories\" tab", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-            testRunner.Then("User remove \"TestCategoryName\" Category", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+            testRunner.Then("User remove created Category", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
             testRunner.When("User navigate to \"Request Types\" tab", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-            testRunner.Then("User remove \"TestRequestTypeName\" Request Type", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+            testRunner.Then("User remove created Request Type", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
             testRunner.When("User navigate to \"Mail Templates\" tab", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-            testRunner.Then("User remove \"TestMailTemplateName\" Mail Templates", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+            testRunner.Then("User remove created Mail Template", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
             testRunner.When("User navigate to \"Details\" tab", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
             testRunner.Then("User remove Project", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
             this.ScenarioCleanup();

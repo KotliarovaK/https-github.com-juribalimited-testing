@@ -19,6 +19,7 @@ namespace DashworksTestAutomation.DTO.Projects
 
         public TaskProperties_DetailsDto()
         {
+            ValueType = ValueTypeUpdateEnum.Radiobutton;
             TaskProjectRole = EnumExtensions.GetRandomValue<TaskProjectRoleEnum>();
             //DateMode = EnumExtensions.GetRandomValue<DateModeEnum>();
         }
@@ -42,7 +43,6 @@ namespace DashworksTestAutomation.DTO.Projects
 
     public enum TaskProjectRoleEnum
     {
-        //None,
         [Description("Email Notifications (User)")]
         EmailNotificationsUser,
         [Description("Self Service Applications List Completed (User mode)")]
