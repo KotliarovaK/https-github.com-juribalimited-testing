@@ -112,6 +112,54 @@ namespace DashworksTestAutomation.Steps.Dashworks
             Assert.IsTrue(listpageMenu.AscendingSortingIcon.Displayed);
         }
 
+        [Then(@"numeric data in table is sorted by '(.*)' column in ascending order")]
+        public void ThenNumericDataInTableIsSortedByColumnInAscendingOrder(string columnName)
+        {
+            var listpageMenu = _driver.NowAt<BaseDashboardPage>();
+
+            List<string> actualList = listpageMenu.GetColumnContent(columnName).Where(x => !x.Equals("")).ToList();
+            SortingHelper.IsListSorted(actualList);
+            Assert.IsTrue(listpageMenu.AscendingSortingIcon.Displayed);
+        }
+
+        [Then(@"numeric data in table is sorted by '(.*)' column in descending order")]
+        public void ThenNumericDataInTableIsSortedByColumnInDescendingOrder(string columnName)
+        {
+            var listpageMenu = _driver.NowAt<BaseDashboardPage>();
+
+            List<string> expectedList = listpageMenu.GetColumnContent(columnName).Where(x => !x.Equals("")).ToList();
+            SortingHelper.IsListSorted(expectedList, false);
+            Assert.IsTrue(listpageMenu.DescendingSortingIcon.Displayed);
+        }
+
+        [Then(@"The first cell of the table matches to default sorting ""(.*)"" list")]
+        public void ThenTheFirstRowOfTheTableMatchesToDefaultSortingList(string listName)
+        {
+            var content = _driver.NowAt<BaseDashboardPage>();
+
+            switch (listName)
+            {
+                case "Devices":
+                    Assert.AreEqual("001BAQXT6JWFPI", content.GetColumnContent("Hostname").First());
+                    break;
+
+                case "Users":
+                    Assert.IsEmpty(content.GetColumnContent("Username").First());
+                    break;
+
+                case "Applications":
+                    Assert.IsEmpty(content.GetColumnContent("Application").First());
+                    break;
+
+                case "Mailboxes":
+                    Assert.IsEmpty(content.GetColumnContent("Email Address").First());
+                    break;
+
+                default:
+                    throw new Exception($"'{listName}' has the incorrect first cell");
+            }
+        }
+
         [Then(@"data in the table is sorted by ""(.*)"" column in ascending order by default")]
         public void ThenDataInTheTableIsSortedByColumnInAscendingOrderByDefault(string columnName)
         {

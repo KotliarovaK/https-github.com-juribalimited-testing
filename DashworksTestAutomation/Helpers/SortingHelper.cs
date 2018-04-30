@@ -70,6 +70,10 @@ namespace DashworksTestAutomation.Helpers
         {
             originalList = originalList.Where(x => !x.Equals("")).ToList();
 
+            //Return if nothing to sort
+            if (!originalList.Any())
+                return;
+
             List<KeyValuePair<DateTime, string>> unsortedList = new List<KeyValuePair<DateTime, string>>();
             DateTime datevalue;
             foreach (var date in originalList)

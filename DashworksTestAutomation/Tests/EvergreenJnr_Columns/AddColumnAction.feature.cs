@@ -604,6 +604,7 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_Columns
         [NUnit.Framework.CategoryAttribute("AddColumnAction")]
         [NUnit.Framework.CategoryAttribute("DAS12194")]
         [NUnit.Framework.CategoryAttribute("DAS12220")]
+        [NUnit.Framework.CategoryAttribute("Not_Run")]
         [NUnit.Framework.TestCaseAttribute("Devices", "Compliance", "Compliance", new string[0])]
         [NUnit.Framework.TestCaseAttribute("Devices", "Owner Compliance", "Owner Compliance", new string[0])]
         [NUnit.Framework.TestCaseAttribute("Users", "Compliance", "Compliance", new string[0])]
@@ -643,7 +644,8 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_Columns
                     "EvergreenJnr_Columns",
                     "AddColumnAction",
                     "DAS12194",
-                    "DAS12220"};
+                    "DAS12220",
+                    "Not_Run"};
             if ((exampleTags != null))
             {
                 @__tags = System.Linq.Enumerable.ToArray(System.Linq.Enumerable.Concat(@__tags, exampleTags));
