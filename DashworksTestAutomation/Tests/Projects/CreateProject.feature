@@ -12,8 +12,8 @@ Scenario: Projects_CreateProject
 	When User clicks create Project button
 	Then "Create Project" page is displayed to the user
 	When User creates Project
-	| ProjectName     | ProjectShortName | ProjectDescription | ProjectType                |
-	| TestProjectName | TestText         | TestText           | Computer Scheduled Project |
+	| ProjectName     | ProjectShortName | ProjectDescription | ProjectType              |
+	| TestProjectName | TestText         | TestText           | ComputerScheduledProject |
 	Then "Manage Project Details" page is displayed to the user
 	When User updates the Details page
 	| ShowOriginalColumn | IncludeSiteName | NotApplicableApplications | InstalledApplications | EntitledApplications | TaskEmailCcEmailAddress | TaskEmailBccEmailAddress | StartDate  | EndDate     |
@@ -22,8 +22,8 @@ Scenario: Projects_CreateProject
 	Then "Manage Request Types" page is displayed to the user
 	When User clicks "Request Type" create button
 	Then User create Request Type
-	| Name                | Description |
-	| TestRequestTypeName | TestText    |
+	| Name                | Description | ObjectType |
+	| TestRequestTypeName | TestText    | Computer   |
 	When User navigate to "Categories" tab
 	Then "Manage Categories" page is displayed to the user
 	When User clicks "Category" create button
@@ -44,7 +44,7 @@ Scenario: Projects_CreateProject
 	| TestTaskName | TestText | Normal   | Radiobutton | true                       |
 	Then User updates the Task page
 	| ValueType   | TaskHaADueDate | TaskImpactsReadiness | TaskHasAnOwner | ShowDetails | ProjectObject | BulkUpdate | SelfService |
-	| Radiobutton | true           | false                | false          | false       | true          | false      | true        |
+	| Radiobutton | true           | true                 | true           | true        | true          | true       | true        |
 	Then User publishes the task
 	When User navigate to "Teams" tab
 	Then "Manage Teams" page is displayed to the user
@@ -95,8 +95,8 @@ Scenario: Projects_CreateProject
 	| true           | true         | true                     | true                        | true                | true                 | TestText        |
 	When User navigate to "Project Date" on selected tab
 	Then User updates the Project Date on Self Service tab
-	| ShowScreen | AllowUsersToAddANote | MinimumHours | MaximumHours | PageDescription |
-	| true       | true                 | 10           | 100          | TestText        |
+	| AllowUsersToAddANote | MinimumHours | MaximumHours | PageDescription |
+	| true                 | 10           | 100          | TestText        |
 	When User navigate to "Other Options 1" on selected tab
 	Then User updates the first Other Options on Self Service tab
 	| ShowScreen | AllowUsersToAddANote | OnlyOwned | AllLinked | PageDescription |
@@ -114,10 +114,10 @@ Scenario: Projects_CreateProject
 	Then User updates the Details on Capacity tab
 	| EnablePlanning | DisplayColors | EnforceOonSelfServicePage | EnforceOnProjectObjectPage | CapacityToReach |
 	| true           | true          | true                      | false                      | 23              |
-	When User navigate to "Capacity" on selected tab
-	Then User updates the Capacity on Capacity tab
-	| StartDate   | EndDate     | MondayCheckbox | TuesdayCheckbox | WednesdayCheckbox | ThursdayCheckbox | FridayCheckbox | SaturdayCheckbox | SundayCheckbox | Monday | Tuesday | Wednesday | Thursday | Friday | Saturday | Sunday |
-	| 06 Apr 2016 | 19 Apr 2018 | true           | true            | true              | true             | true           | true             | true           | 100    | 100     | 100       | 100      | 100    | 100      | 100    |
+	#When User navigate to "Capacity" on selected tab
+	#Then User updates the Capacity on Capacity tab
+	#| StartDate   | EndDate     | MondayCheckbox | TuesdayCheckbox | WednesdayCheckbox | ThursdayCheckbox | FridayCheckbox | SaturdayCheckbox | SundayCheckbox | Monday | Tuesday | Wednesday | Thursday | Friday | Saturday | Sunday |
+	#| 06 Apr 2016 | 19 Apr 2018 | true           | true            | true              | true             | true           | true             | true           | 100    | 100     | 100       | 100      | 100    | 100      | 100    |
 	When User navigate to "Override Dates" on selected tab
 	Then User updates the Override Dates on Capacity tab
 	| Date        | Capacity | Comment  |

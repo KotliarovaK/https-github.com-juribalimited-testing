@@ -58,9 +58,10 @@ namespace DashworksTestAutomation.Steps.Projects
             page.Team.SelectboxSelect(_projectDto.TeamProperties.TeamName);
             _driver.WaitWhileControlIsNotDisplayed<Capacity_CapacityPage>(() => page.RequestType);
             page.RequestType.SelectboxSelect(_projectDto.ReqestType.Name);
-            //TODO check all Request Type
             _driver.WaitWhileControlIsNotDisplayed<Capacity_CapacityPage>(() => page.StartDate);
+            page.StartDateButton.Click();
             page.StartDate.SendKeys(_capacityDto.StartDate);
+            page.EndDateButton.Click();
             page.EndDate.SendKeys(_capacityDto.EndDate);
             page.MondayCheckbox.SetCheckboxState(_capacityDto.MondayCheckbox);
             page.TuesdayCheckbox.SetCheckboxState(_capacityDto.TuesdayCheckbox);

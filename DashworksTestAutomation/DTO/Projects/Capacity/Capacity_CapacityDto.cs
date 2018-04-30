@@ -23,6 +23,11 @@ namespace DashworksTestAutomation.DTO.Projects
         public string Friday { get; set; }
         public string Saturday { get; set; }
         public string Sunday { get; set; }
+
+        public Capacity_CapacityDto()
+        {
+            RequestType = EnumExtensions.GetRandomValue<RequestTypeEnum>();
+        }
     }
 
     public enum RequestTypeEnum

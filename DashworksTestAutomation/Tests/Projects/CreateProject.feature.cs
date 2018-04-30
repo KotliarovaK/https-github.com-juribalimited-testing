@@ -87,7 +87,7 @@ namespace DashworksTestAutomation.Tests.Projects
                         "TestProjectName",
                         "TestText",
                         "TestText",
-                        "Computer Scheduled Project"});
+                        "ComputerScheduledProject"});
             testRunner.When("User creates Project", ((string)(null)), table1, "When ");
             testRunner.Then("\"Manage Project Details\" page is displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
             TechTalk.SpecFlow.Table table2 = new TechTalk.SpecFlow.Table(new string[] {
@@ -116,10 +116,12 @@ namespace DashworksTestAutomation.Tests.Projects
             testRunner.When("User clicks \"Request Type\" create button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
             TechTalk.SpecFlow.Table table3 = new TechTalk.SpecFlow.Table(new string[] {
                         "Name",
-                        "Description"});
+                        "Description",
+                        "ObjectType"});
             table3.AddRow(new string[] {
                         "TestRequestTypeName",
-                        "TestText"});
+                        "TestText",
+                        "Computer"});
             testRunner.Then("User create Request Type", ((string)(null)), table3, "Then ");
             testRunner.When("User navigate to \"Categories\" tab", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
             testRunner.Then("\"Manage Categories\" page is displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
@@ -167,11 +169,11 @@ namespace DashworksTestAutomation.Tests.Projects
             table7.AddRow(new string[] {
                         "Radiobutton",
                         "true",
-                        "false",
-                        "false",
-                        "false",
                         "true",
-                        "false",
+                        "true",
+                        "true",
+                        "true",
+                        "true",
                         "true"});
             testRunner.Then("User updates the Task page", ((string)(null)), table7, "Then ");
             testRunner.Then("User publishes the task", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
@@ -324,13 +326,11 @@ namespace DashworksTestAutomation.Tests.Projects
             testRunner.Then("User updates the Apps List on Self Service tab", ((string)(null)), table16, "Then ");
             testRunner.When("User navigate to \"Project Date\" on selected tab", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
             TechTalk.SpecFlow.Table table17 = new TechTalk.SpecFlow.Table(new string[] {
-                        "ShowScreen",
                         "AllowUsersToAddANote",
                         "MinimumHours",
                         "MaximumHours",
                         "PageDescription"});
             table17.AddRow(new string[] {
-                        "true",
                         "true",
                         "10",
                         "100",
@@ -393,52 +393,16 @@ namespace DashworksTestAutomation.Tests.Projects
                         "false",
                         "23"});
             testRunner.Then("User updates the Details on Capacity tab", ((string)(null)), table21, "Then ");
-            testRunner.When("User navigate to \"Capacity\" on selected tab", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-            TechTalk.SpecFlow.Table table22 = new TechTalk.SpecFlow.Table(new string[] {
-                        "StartDate",
-                        "EndDate",
-                        "MondayCheckbox",
-                        "TuesdayCheckbox",
-                        "WednesdayCheckbox",
-                        "ThursdayCheckbox",
-                        "FridayCheckbox",
-                        "SaturdayCheckbox",
-                        "SundayCheckbox",
-                        "Monday",
-                        "Tuesday",
-                        "Wednesday",
-                        "Thursday",
-                        "Friday",
-                        "Saturday",
-                        "Sunday"});
-            table22.AddRow(new string[] {
-                        "06 Apr 2016",
-                        "19 Apr 2018",
-                        "true",
-                        "true",
-                        "true",
-                        "true",
-                        "true",
-                        "true",
-                        "true",
-                        "100",
-                        "100",
-                        "100",
-                        "100",
-                        "100",
-                        "100",
-                        "100"});
-            testRunner.Then("User updates the Capacity on Capacity tab", ((string)(null)), table22, "Then ");
             testRunner.When("User navigate to \"Override Dates\" on selected tab", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-            TechTalk.SpecFlow.Table table23 = new TechTalk.SpecFlow.Table(new string[] {
+            TechTalk.SpecFlow.Table table22 = new TechTalk.SpecFlow.Table(new string[] {
                         "Date",
                         "Capacity",
                         "Comment"});
-            table23.AddRow(new string[] {
+            table22.AddRow(new string[] {
                         "03 Apr 2016",
                         "10",
                         "TestText"});
-            testRunner.Then("User updates the Override Dates on Capacity tab", ((string)(null)), table23, "Then ");
+            testRunner.Then("User updates the Override Dates on Capacity tab", ((string)(null)), table22, "Then ");
             testRunner.When("User navigate to \"Groups\" tab", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
             testRunner.Then("User remove \"TestGroupName\" Group", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
             testRunner.When("User navigate to \"Teams\" tab", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");

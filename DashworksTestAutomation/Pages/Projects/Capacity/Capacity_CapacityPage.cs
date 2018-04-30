@@ -13,8 +13,14 @@ namespace DashworksTestAutomation.Pages.Projects
         [FindsBy(How = How.XPath, Using = ".//select[@id='ctl00_MainContent_DDL_Capacity_RequestType']")]
         public IWebElement RequestType { get; set; }
 
+        [FindsBy(How = How.XPath, Using = ".//tr//td[text()='Start Date']/..//button[@class='ui-datepicker-trigger']")]
+        public IWebElement StartDateButton { get; set; }
+
         [FindsBy(How = How.XPath, Using = ".//tr//td[text()='Start Date']/..//input[@class='datepicker hasDatepicker']")]
         public IWebElement StartDate { get; set; }
+
+        [FindsBy(How = How.XPath, Using = ".//tr//td[text()='End Date']/..//button[@class='ui-datepicker-trigger']")]
+        public IWebElement EndDateButton { get; set; }
 
         [FindsBy(How = How.XPath, Using = ".//tr//td[text()='End Date']/..//input[@class='datepicker hasDatepicker']")]
         public IWebElement EndDate { get; set; }
@@ -68,12 +74,7 @@ namespace DashworksTestAutomation.Pages.Projects
             return new List<By>
             {
                 SelectorFor(this, p => p.Team),
-                SelectorFor(this, p => p.RequestType),
-                SelectorFor(this, p => p.StartDate),
-                SelectorFor(this, p => p.EndDate),
-                //SelectorFor(this, p => p.RequestType),
-                //SelectorFor(this, p => p.RequestType),
-
+                SelectorFor(this, p => p.RequestType)
             };
         }
     }

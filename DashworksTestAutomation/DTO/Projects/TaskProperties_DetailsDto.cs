@@ -42,7 +42,7 @@ namespace DashworksTestAutomation.DTO.Projects
 
     public enum TaskProjectRoleEnum
     {
-        None,
+        //None,
         [Description("Email Notifications (User)")]
         EmailNotificationsUser,
         [Description("Self Service Applications List Completed (User mode)")]

@@ -25,6 +25,7 @@ namespace DashworksTestAutomation.DTO.Projects
         {
             DefaultLanguage = EnumExtensions.GetRandomValue<DefaultLanguageEnum>();
             GroupProperties = new List<GroupPropertiesDto>();
+            ProjectType = ProjectTypeEnum.ComputerScheduledProject;
         }
     }
 
