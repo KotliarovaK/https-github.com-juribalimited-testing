@@ -1759,14 +1759,18 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_FiltersFeature
         [NUnit.Framework.CategoryAttribute("EvergreenJnr_FilterFeature")]
         [NUnit.Framework.CategoryAttribute("FilterFunctionality")]
         [NUnit.Framework.CategoryAttribute("DAS11838")]
-        public virtual void EvergreenJnr_ApplicationsList_CheckThatTheColourOfTheApplicationRationalisationItemIsMatchingTheCaption()
+        [NUnit.Framework.TestCaseAttribute("FORWARD PATH", "FORWARD PATH", new string[0])]
+        [NUnit.Framework.TestCaseAttribute("KEEP", "KEEP", new string[0])]
+        [NUnit.Framework.TestCaseAttribute("RETIRE", "RETIRE", new string[0])]
+        [NUnit.Framework.TestCaseAttribute("UNCATEGORISED", "UNCATEGORISED", new string[0])]
+        public virtual void EvergreenJnr_ApplicationsList_CheckThatTheColourOfTheApplicationRationalisationItemIsMatchingTheCaption(string selectedCheckbox, string imageName, string[] exampleTags)
         {
             System.Exception lastException = null;
             for (int i = 0; (i <= 1); i = (i + 1))
             {
                 try
                 {
-                    this.EvergreenJnr_ApplicationsList_CheckThatTheColourOfTheApplicationRationalisationItemIsMatchingTheCaptionInternal();
+                    this.EvergreenJnr_ApplicationsList_CheckThatTheColourOfTheApplicationRationalisationItemIsMatchingTheCaptionInternal(selectedCheckbox, imageName, exampleTags);
                     return;
                 }
                 catch (System.Exception exc)
@@ -1785,15 +1789,20 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_FiltersFeature
             }
         }
         
-        private void EvergreenJnr_ApplicationsList_CheckThatTheColourOfTheApplicationRationalisationItemIsMatchingTheCaptionInternal()
+        private void EvergreenJnr_ApplicationsList_CheckThatTheColourOfTheApplicationRationalisationItemIsMatchingTheCaptionInternal(string selectedCheckbox, string imageName, string[] exampleTags)
         {
+            string[] @__tags = new string[] {
+                    "Evergreen",
+                    "Applications",
+                    "EvergreenJnr_FilterFeature",
+                    "FilterFunctionality",
+                    "DAS11838"};
+            if ((exampleTags != null))
+            {
+                @__tags = System.Linq.Enumerable.ToArray(System.Linq.Enumerable.Concat(@__tags, exampleTags));
+            }
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("EvergreenJnr_ApplicationsList_CheckThatTheColourOfTheApplicationRationalisationIt" +
-                    "emIsMatchingTheCaption", new string[] {
-                        "Evergreen",
-                        "Applications",
-                        "EvergreenJnr_FilterFeature",
-                        "FilterFunctionality",
-                        "DAS11838"});
+                    "emIsMatchingTheCaption", @__tags);
             this.ScenarioSetup(scenarioInfo);
             this.FeatureBackground();
             testRunner.When("User clicks \"Applications\" on the left-hand menu", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
@@ -1803,10 +1812,10 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_FiltersFeature
             TechTalk.SpecFlow.Table table28 = new TechTalk.SpecFlow.Table(new string[] {
                         "SelectedCheckboxes"});
             table28.AddRow(new string[] {
-                        "FORWARD PATH"});
+                        string.Format("{0}", selectedCheckbox)});
             testRunner.When("User add \"ComputerSc: Application Rationalisation\" filter where type is \"Equal\" w" +
                     "ith added column and following checkboxes:", ((string)(null)), table28, "When ");
-            testRunner.Then("\"FORWARD PATH\" image is matching the caption", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+            testRunner.Then(string.Format("\"{0}\" image is matching the caption", imageName), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
             this.ScenarioCleanup();
         }
         

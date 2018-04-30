@@ -309,6 +309,12 @@ namespace DashworksTestAutomation.Pages.Evergreen
             {
                 case "forwardPath.png":
                     return "FORWARD PATH";
+                case "tick.png":
+                    return "KEEP";
+                case "cross.png":
+                    return "RETIRE";
+                case "unknown.png":
+                    return "UNCATEGORISED";
                 default: throw new Exception($"{styleImageItem} is not valid Image path");
             }
         }

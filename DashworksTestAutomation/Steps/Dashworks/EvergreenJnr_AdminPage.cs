@@ -108,6 +108,21 @@ namespace DashworksTestAutomation.Steps.Dashworks
             _driver.WaitForDataLoading();
         }
 
+        [When(@"User navigates to the ""(.*)"" tab in the Scope section on the Project details page")]
+        public void WhenUserNavigatesToTheTabInTheScopeSectionOnTheProjectDetailsPage(string tabName)
+        {
+            var projectTabs = _driver.NowAt<ProjectsPage>();
+            projectTabs.NavigateToProjectTabByName(tabName);
+            _driver.WaitForDataLoading();
+        }
+
+        [Then(@"All Association are selected by default")]
+        public void ThenAllAssociationAreSelectedByDefault()
+        {
+            var projectsPage = _driver.NowAt<ProjectsPage>();
+            Assert.IsFalse(projectsPage.UncheckedCheckbox.Displayed(), "Not all checkboxes are selected");
+        }
+
         [When(@"User clicks ""(.*)"" tab in the Project Scope Changes section")]
         public void WhenUserClicksTabInTheProjectScopeChangesSection(string tabName)
         {
@@ -521,6 +536,27 @@ namespace DashworksTestAutomation.Steps.Dashworks
             button.AddDeviceButton.Click();
         }
 
+        [When(@"User clicks Add Mailbox button on the Buckets page")]
+        public void WhenUserClicksAddMailboxButtonOnTheBucketsPage()
+        {
+            var button = _driver.NowAt<BucketsPage>();
+            button.AddMailboxButton.Click();
+        }
+
+        [When(@"User clicks Add User button on the Buckets page")]
+        public void WhenUserClicksAddUserButtonOnTheBucketsPage()
+        {
+            var button = _driver.NowAt<BucketsPage>();
+            button.AddUserButton.Click();
+        }
+
+        [Then(@"No items text is displayed on the Buckets page")]
+        public void ThenNoItemsTextIsDisplayedOnTheBucketsPage()
+        {
+            var text = _driver.NowAt<BucketsPage>();
+            Assert.IsTrue(text.NoItesMessage.Displayed, "No items text is not displayed");
+        }
+
         [Then(@"User clicks ""(.*)"" tab on the Buckets page")]
         public void ThenUserClicksTabOnTheBucketsPage(string tabName)
         {
@@ -542,8 +578,8 @@ namespace DashworksTestAutomation.Steps.Dashworks
              button.UpdateBucketButton.Click();
         }
 
-        [Then(@"User add following devices in the Bucket")]
-        public void ThenUserAddFollowingDevicesInTheBucket(Table table)
+        [Then(@"User add following devices to the Bucket")]
+        public void ThenUserAddFollowingDevicesToTheBucket(Table table)
         {
             var bucketElement = _driver.NowAt<BucketsPage>();
 
@@ -555,6 +591,31 @@ namespace DashworksTestAutomation.Steps.Dashworks
             bucketElement.AddDevicesButton.Click();
         }
 
+        [Then(@"User add following users to the Bucket")]
+        public void ThenUserAddFollowingUsersToTheBucket(Table table)
+        {
+            var bucketElement = _driver.NowAt<BucketsPage>();
+
+            foreach (var row in table.Rows)
+            {
+                bucketElement.AddUser(row["UserName"]);
+                bucketElement.SearchTextbox.ClearWithHomeButton(_driver);
+            }
+            bucketElement.AddUsersButton.Click();
+        }
+
+        [Then(@"User add following mailboxes to the Bucket")]
+        public void ThenUserAddFollowingMailboxesToTheBucket(Table table)
+        {
+            var bucketElement = _driver.NowAt<BucketsPage>();
+
+            foreach (var row in table.Rows)
+            {
+                bucketElement.AddMailbox(row["MailboxName"]);
+                bucketElement.SearchTextbox.ClearWithHomeButton(_driver);
+            }
+            bucketElement.AddMailboxesButton.Click();
+        }
 
         [When(@"User clicks Create Project button")]
         public void WhenUserClicksCreateProjectButton()

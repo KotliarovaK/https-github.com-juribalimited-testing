@@ -99,14 +99,14 @@ Scenario: EvergreenJnr_AdminPage_CheckThatWarningMessageIsDisplayedAfterDeleting
 	And User enters "TestProject" in the Project Name field
 	And User select "ListForProject" in the Scope Project dropdown
 	When User clicks Create Project button
-	When User clicks "Users" on the left-hand menu
+	And User clicks "Users" on the left-hand menu
 	Then "Users" list should be displayed to the user
 	When User navigates to the "ListForProject" list
 	Then "ListForProject" list is displayed to user
 	When User removes custom list with "ListForProject" name
 	Then "This list is used by the 1 projects, do you wish to proceed?" message is displayed in the lists panel
 	When User clicks Delete in the warning message on the list panel 
-	When User clicks Admin on the left-hand menu
+	And User clicks Admin on the left-hand menu
 	Then Admin page should be displayed to the user
 	When User click "Projects" link on the Admin page
 	Then "Projects" page should be displayed to the user
@@ -125,18 +125,18 @@ Scenario: EvergreenJnr_AdminPage_CheckThatAfterApplyingDoNotIncludeDeviceOwnersL
 	Then "Projects" page should be displayed to the user
 	When User clicks Create Project button
 	Then Create Project page should be displayed to the user
-	And User enters "TestProject1596" in the Project Name field
+	And User enters "TestProject1" in the Project Name field
 	And User select "All Devices" in the Scope Project dropdown
 	When User clicks Create Project button
-	When User click "Projects" link on the Admin page
+	And User click "Projects" link on the Admin page
 	Then "Projects" page should be displayed to the user
-	When User clicks "TestProject1596" Project name
-	Then Project "TestProject1596" is displayed to user
+	When User clicks "TestProject1" Project name
+	Then Project "TestProject1" is displayed to user
 	When User select "Do not include device owners" checkbox on the Project details page
 	And User navigates to the "Project Scope Changes" tab on the Project details page
 	And User clicks "Users" tab in the Project Scope Changes section 
 	Then "Users to add (0 of 0 selected)" is displayed to the user in the Project Scope Changes section
-	And Delete "TestProject1596" Project in the Administration
+	And Delete "TestProject1" Project in the Administration
 
 @Evergreen @Admin @EvergreenJnr_AdminPage @AdminPage @DAS11931
 Scenario Outline: EvergreenJnr_AdminPage_CheckThatProjectsAreDeletedSuccessfullyAndThereAreNoConsoleErrors
@@ -152,16 +152,16 @@ Scenario Outline: EvergreenJnr_AdminPage_CheckThatProjectsAreDeletedSuccessfully
 	And User click "Projects" link on the Admin page
 	Then "Projects" page should be displayed to the user
 	When User enters "<ProjectName>" text in the Search field for "Project" column on the Projects page
-	When User selects all rows on the Projects page
+	And User selects all rows on the Projects page
 	And User removes selected Project
 	Then Success message with "The selected project has been deleted" text is displayed on the Projects page
-	Then There are no errors in the browser console
+	And There are no errors in the browser console
 
 	Examples:
 	| ProjectName     | ScopeList     |
-	| TestProject1626 | All Devices   |
-	| TestProject7586 | All Users     |
-	| TestProject7511 | All Mailboxes |
+	| TestProject2 | All Devices   |
+	| TestProject3 | All Users     |
+	| TestProject4 | All Mailboxes |
 
 @Evergreen @Admin @EvergreenJnr_AdminPage @AdminPage @DAS11762 @DAS12009
 Scenario: EvergreenJnr_AdminPage_CheckThatNoConsoleErrorsAreDisplayedWhenDeleteDataFromFilterTextFieldForBuckets
@@ -217,13 +217,13 @@ Scenario: EvergreenJnr_AdminPage_CheckThatNumberOfApplicationsInProjectScopeIsCo
 	Then "Projects" page should be displayed to the user
 	When User clicks Create Project button
 	Then Create Project page should be displayed to the user
-	And User enters "TestProject9512" in the Project Name field
+	And User enters "TestProject5" in the Project Name field
 	And User select "All Users" in the Scope Project dropdown
 	When User clicks Create Project button
 	And User click "Projects" link on the Admin page
 	Then "Projects" page should be displayed to the user
-	When User clicks "TestProject9512" Project name
-	Then Project "TestProject9512" is displayed to user
+	When User clicks "TestProject5" Project name
+	Then Project "TestProject5" is displayed to user
 	When User navigates to the "Project Scope Changes" tab on the Project details page
 	And User clicks "Applications" tab in the Project Scope Changes section
 	Then "Applications to add (2081 of 2081 selected)" is displayed to the user in the Project Scope Changes section
@@ -231,7 +231,7 @@ Scenario: EvergreenJnr_AdminPage_CheckThatNumberOfApplicationsInProjectScopeIsCo
 	And User select "Do not include owned devices" checkbox on the Project details page
 	And User navigates to the "Project Scope Changes" tab on the Project details page
 	Then "Applications to add (247 of 247 selected)" is displayed to the user in the Project Scope Changes section
-	And Delete "TestProject9512" Project in the Administration
+	And Delete "TestProject5" Project in the Administration
 
 @Evergreen @Admin @EvergreenJnr_AdminPage @AdminPage @DAS12154 @Delete_Newly_Created_List
 Scenario: EvergreenJnr_AdminPage_CheckThatWarningMessageIsNotDisplayedWhenDeletingListUsingInTheProjectThatWasDeleted
@@ -251,11 +251,11 @@ Scenario: EvergreenJnr_AdminPage_CheckThatWarningMessageIsNotDisplayedWhenDeleti
 	Then "Projects" page should be displayed to the user
 	When User clicks Create Project button
 	Then Create Project page should be displayed to the user
-	And User enters "TestProject9547" in the Project Name field
+	And User enters "TestProject6" in the Project Name field
 	And User select "TestList0A78U9" in the Scope Project dropdown
 	When User clicks Create Project button
 	Then "Projects" page should be displayed to the user
-	When User enters "TestProject9547" text in the Search field for "Project" column on the Projects page
+	When User enters "TestProject6" text in the Search field for "Project" column on the Projects page
 	And User selects all rows on the Projects page
 	And User removes selected Project
 	And User clicks "Devices" on the left-hand menu
@@ -285,9 +285,9 @@ Scenario: EvergreenJnr_AdminPage_CheckThatNotificationMessageIsDisplayedAfterUpd
 	Then "TestBucket2" bucket details is displayed to the user
 	And User clicks "Bucket Settings" tab on the Buckets page
 	When User clicks Default Bucket checkbox on the Buckets page
-	When User clicks Update Bucket button on the Buckets page
+	And User clicks Update Bucket button on the Buckets page
 	Then Success message The "TestBucket2" bucket has been updated is displayed on the Buckets page
-	Then Delete "TestBucket2" Bucket in the Administration
+	And Delete "TestBucket2" Bucket in the Administration
 
 @Evergreen @Admin @EvergreenJnr_AdminPage @AdminPage @DAS11763
 Scenario: EvergreenJnr_AdminPage_CheckThatNoConsoleErrorsAreDisplayedWhenDeletingBucketFromBucketsSection
@@ -300,12 +300,12 @@ Scenario: EvergreenJnr_AdminPage_CheckThatNoConsoleErrorsAreDisplayedWhenDeletin
 	Then "IB Team" team details is displayed to the user
 	And User clicks "Buckets" tab on the Teams page
 	When User enters "Group IB Team" text in the Search field for "Bucket" column on the Teams page
-	When User selects all rows on the Teams page
+	And User selects all rows on the Teams page
 	Then User clicks on Actions button on the Teams page
-	Then User select "Delete Buckets" in the Actions dropdown on the Teams page
+	And User select "Delete Buckets" in the Actions dropdown on the Teams page
 	When User clicks Delete button on the Teams page
 	Then Reassign Objects is displayed on the Teams page
-	Then There are no errors in the browser console
+	And There are no errors in the browser console
 
 @Evergreen @Admin @EvergreenJnr_AdminPage @AdminPage @DAS11761
 Scenario: EvergreenJnr_AdminPage_CheckThatErrorsDoNotAppearAfterUpdatingTeamDescriptionField
@@ -317,7 +317,7 @@ Scenario: EvergreenJnr_AdminPage_CheckThatErrorsDoNotAppearAfterUpdatingTeamDesc
 	Then Create Team page should be displayed to the user
 	And User enters "TestTeam1" in the Team Name field
 	When User enters "test" in the Team Description field
-	When User clicks Create Team button on the Create Team page
+	And User clicks Create Team button on the Create Team page
 	Then Success message is displayed and contains "The team has been created" text on the Teams page
 	When User enters "TestTeam1" text in the Search field for "Team" column on the Teams page
 	And User clicks content from "Team" column on the Teams page
@@ -328,7 +328,102 @@ Scenario: EvergreenJnr_AdminPage_CheckThatErrorsDoNotAppearAfterUpdatingTeamDesc
 	When User enters " " in the Team Description field
 	Then Update Team button is disabled
 	When User enters "testTeamtest" in the Team Description field
-	When User clicks Update Team button
+	And User clicks Update Team button
 	Then Success message is displayed and contains "The team was successfully updated" text on the Teams page
-	Then There are no errors in the browser console
+	And There are no errors in the browser console
 	And Delete "TestTeam1" Team in the Administration
+
+@Evergreen @Admin @EvergreenJnr_AdminPage @AdminPage @DAS11765 @DAS12170
+Scenario: EvergreenJnr_AdminPage_CheckThatMailboxesAreSuccessfullyAddedToBuckets
+	When User clicks Admin on the left-hand menu
+	Then Admin page should be displayed to the user
+	When User click "Buckets" link on the Admin page
+	Then "Buckets" page should be displayed to the user
+	When User enters "Birmingham" text in the Search field for "Bucket" column on the Buckets page
+	And User clicks content from "Bucket" column on the Buckets page
+	Then User clicks "Mailboxes" tab on the Buckets page
+	When User clicks Add Mailbox button on the Buckets page
+	Then User add following mailboxes to the Bucket
+	| MailboxName                    |
+	| abigail.u.aguilar@dwlabs.local |
+	| adam.w.harrell@dwlabs.local    |
+	And Success message is displayed and contains "The selected mailboxes have been added to the selected bucket" text on the Buckets page
+	And There are no errors in the browser console
+
+@Evergreen @Admin @EvergreenJnr_AdminPage @AdminPage @DAS11765 @DAS12170
+Scenario: EvergreenJnr_AdminPage_CheckThatErrorsDoNotAppearAfterAddingMailboxesToTheBucketWhereNoMailboxesExist
+	When User clicks Admin on the left-hand menu
+	Then Admin page should be displayed to the user
+	When User click "Buckets" link on the Admin page
+	Then "Buckets" page should be displayed to the user
+	When User enters "Administration" text in the Search field for "Bucket" column on the Buckets page
+	And User clicks content from "Bucket" column on the Buckets page
+	Then User clicks "Mailboxes" tab on the Buckets page
+	When User clicks Add Mailbox button on the Buckets page
+	Then No items text is displayed on the Buckets page
+	And There are no errors in the browser console
+
+@Evergreen @Admin @EvergreenJnr_AdminPage @AdminPage @DAS11982
+Scenario: EvergreenJnr_AdminPage_CheckThatAllAssociationsAreSelectedByDefaultInTheProjectApplicationsScope
+	When User clicks Admin on the left-hand menu
+	Then Admin page should be displayed to the user
+	When User click "Projects" link on the Admin page
+	Then "Projects" page should be displayed to the user
+	When User clicks Create Project button
+	Then Create Project page should be displayed to the user
+	And User enters "TestProject7" in the Project Name field
+	And User select "All Devices" in the Scope Project dropdown
+	When User clicks Create Project button
+	And User click "Projects" link on the Admin page
+	Then "Projects" page should be displayed to the user
+	When User enters "TestProject7" text in the Search field for "Project" column on the Projects page
+	And User clicks content from "Project" column on the Buckets page
+	Then Project "TestProject7" is displayed to user
+	When User navigates to the "Application Scope" tab in the Scope section on the Project details page
+	Then All Association are selected by default
+	And Delete "TestProject7" Project in the Administration
+
+@Evergreen @Admin @EvergreenJnr_AdminPage @AdminPage @DAS12170
+Scenario: EvergreenJnr_AdminPage_CheckThatConsoleErrorsAreNotDisplayedAfterAddingDevicesInTheBuckets
+	When User clicks Admin on the left-hand menu
+	Then Admin page should be displayed to the user
+	When User click "Buckets" link on the Admin page
+	Then "Buckets" page should be displayed to the user
+	When User enters "Bangor" text in the Search field for "Bucket" column on the Buckets page
+	And User clicks content from "Bucket" column on the Buckets page
+	When User clicks Add Device button on the Buckets page
+	Then User add following devices to the Bucket
+	| DeviceName      |
+	| 01N3Y2GUS6XTK7  |
+	| D0V2G8I0DWW85E6 |
+	And Success message is displayed and contains "The selected devices have been added to the selected bucket" text on the Buckets page
+	And There are no errors in the browser console
+
+@Evergreen @Admin @EvergreenJnr_AdminPage @AdminPage @DAS12170
+Scenario: EvergreenJnr_AdminPage_CheckThatErrorsDoNotAppearAfterAddingDevicesToTheBucketWhereNoDevicesExist
+	When User clicks Admin on the left-hand menu
+	Then Admin page should be displayed to the user
+	When User click "Buckets" link on the Admin page
+	Then "Buckets" page should be displayed to the user
+	When User enters "Amsterdam" text in the Search field for "Bucket" column on the Buckets page
+	And User clicks content from "Bucket" column on the Buckets page
+	When User clicks Add Device button on the Buckets page
+	Then No items text is displayed on the Buckets page
+	And There are no errors in the browser console
+
+@Evergreen @Admin @EvergreenJnr_AdminPage @AdminPage @DAS12170
+Scenario: EvergreenJnr_AdminPage_CheckThatConsoleErrorsAreNotDisplayedAfterAddingUsersInTheBuckets
+	When User clicks Admin on the left-hand menu
+	Then Admin page should be displayed to the user
+	When User click "Buckets" link on the Admin page
+	Then "Buckets" page should be displayed to the user
+	When User enters "Bangor" text in the Search field for "Bucket" column on the Buckets page
+	And User clicks content from "Bucket" column on the Buckets page
+	Then User clicks "Users" tab on the Buckets page
+	When User clicks Add User button on the Buckets page
+	Then User add following users to the Bucket
+	| UserName                            |
+	| FR\KSD3827534 (Philippine Langlois) |
+	| UK\LBM661859 (Jenifer V. Allison)   |
+	And Success message is displayed and contains "The selected users have been added to the selected bucket" text on the Buckets page
+	And There are no errors in the browser console

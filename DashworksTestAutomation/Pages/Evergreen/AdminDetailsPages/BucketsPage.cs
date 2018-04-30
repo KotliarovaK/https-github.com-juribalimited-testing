@@ -49,6 +49,12 @@ namespace DashworksTestAutomation.Pages.Evergreen.AdminDetailsPages
         [FindsBy(How = How.XPath, Using = ".//span[text()='ADD DEVICES']")]
         public IWebElement AddDevicesButton { get; set; }
 
+        [FindsBy(How = How.XPath, Using = ".//span[text()='ADD MAILBOXES']")]
+        public IWebElement AddMailboxesButton { get; set; }
+
+        [FindsBy(How = How.XPath, Using = ".//span[text()='ADD USERS']")]
+        public IWebElement AddUsersButton { get; set; }
+
         [FindsBy(How = How.XPath, Using = ".//span[text()='ADD USER']")]
         public IWebElement AddUserButton { get; set; }
 
@@ -63,6 +69,9 @@ namespace DashworksTestAutomation.Pages.Evergreen.AdminDetailsPages
 
         [FindsBy(How = How.XPath, Using = ".//span[text()='UPDATE BUCKET']")]
         public IWebElement UpdateBucketButton { get; set; }
+
+        [FindsBy(How = How.XPath, Using = ".//div[@class='empty-message ng-star-inserted'][text()='No items']")]
+        public IWebElement NoItesMessage { get; set; }
 
         public override List<By> GetPageIdentitySelectors()
         {
@@ -159,6 +168,24 @@ namespace DashworksTestAutomation.Pages.Evergreen.AdminDetailsPages
             SearchTextbox.SendKeys(bucketName);
             var selector = String.Empty;
             selector = $".//span[text()='{bucketName}']";
+            Driver.WaitWhileControlIsNotDisplayed(By.XPath(selector));
+            Driver.FindElement(By.XPath(selector)).Click();
+        }
+
+        public void AddMailbox(string mailboxName)
+        {
+            SearchTextbox.SendKeys(mailboxName);
+            var selector = String.Empty;
+            selector = $".//span[text()='{mailboxName}']";
+            Driver.WaitWhileControlIsNotDisplayed(By.XPath(selector));
+            Driver.FindElement(By.XPath(selector)).Click();
+        }
+
+        public void AddUser(string userName)
+        {
+            SearchTextbox.SendKeys(userName);
+            var selector = String.Empty;
+            selector = $".//span[text()='{userName}']";
             Driver.WaitWhileControlIsNotDisplayed(By.XPath(selector));
             Driver.FindElement(By.XPath(selector)).Click();
         }
