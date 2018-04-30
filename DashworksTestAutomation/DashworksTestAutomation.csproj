@@ -170,6 +170,7 @@
     <Compile Include="DTO\RuntimeVariables\ListsDetails.cs" />
     <Compile Include="DTO\RuntimeVariables\ResponceDetails.cs" />
     <Compile Include="DTO\RuntimeVariables\RestWebClient.cs" />
+    <Compile Include="DTO\RuntimeVariables\TeamName.cs" />
     <Compile Include="DTO\RuntimeVariables\UsedUsers.cs" />
     <Compile Include="DTO\AuthObject.cs" />
     <Compile Include="DTO\RuntimeVariables\UsersWithSharedLists.cs" />

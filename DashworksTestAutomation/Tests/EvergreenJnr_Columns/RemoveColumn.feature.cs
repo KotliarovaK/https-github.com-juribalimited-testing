@@ -246,7 +246,7 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_Columns
             table11.AddRow(new string[] {
                         "Build Date"});
             testRunner.Then("ColumnName is removed from the list", ((string)(null)), table11, "Then ");
-            testRunner.Then("data in table is sorted by \'Boot Up Date\' column in descending order", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+            testRunner.Then("date in table is sorted by \'Boot Up Date\' column in descending order", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
             TechTalk.SpecFlow.Table table12 = new TechTalk.SpecFlow.Table(new string[] {
                         "ColumnName"});
             table12.AddRow(new string[] {
@@ -521,7 +521,7 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_Columns
             table25.AddRow(new string[] {
                         "Boot Up Date"});
             testRunner.Then("ColumnName is removed from the list", ((string)(null)), table25, "Then ");
-            testRunner.Then("data in table is sorted by \'Windows7Mi: Date & Time Task\' column in descending or" +
+            testRunner.Then("date in table is sorted by \'Windows7Mi: Date & Time Task\' column in descending or" +
                     "der", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
             TechTalk.SpecFlow.Table table26 = new TechTalk.SpecFlow.Table(new string[] {
                         "ColumnName"});
@@ -534,7 +534,7 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_Columns
             table27.AddRow(new string[] {
                         "Windows7Mi: Date & Time Task"});
             testRunner.Then("ColumnName is removed from the list", ((string)(null)), table27, "Then ");
-            testRunner.Then("data in table is sorted by \'Build Date\' column in descending order", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+            testRunner.Then("date in table is sorted by \'Build Date\' column in descending order", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
             this.ScenarioCleanup();
         }
         
