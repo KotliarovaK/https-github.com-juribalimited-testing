@@ -10,7 +10,7 @@ namespace DashworksTestAutomation.DTO.Projects
 
         public RequestTypesDto()
         {
-            ObjectType = EnumExtensions.GetRandomValue<ObjectTypeEnum>();
+            ObjectType = ObjectTypeEnum.Computer;
         }
     }
 

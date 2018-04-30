@@ -156,7 +156,7 @@ namespace DashworksTestAutomation.Steps.Projects
 
             table.CreateInstance<SelfService_ProjectDateDto>().CopyPropertiesTo(_projectDateDto);
 
-            page.ShowScreen.SetCheckboxState(_projectDateDto.ShowThisScreen);
+            //page.ShowScreen.SetCheckboxState(_projectDateDto.ShowThisScreen);
             page.ShowComputerName.SelectboxSelect(_projectDateDto.ShowComputerName.GetValue());
             page.AllowUsersToAddANote.SetCheckboxState(_projectDateDto.AllowUsersToAddANote);
             page.MinimumHours.SendKeys(_projectDateDto.MinimumHours);

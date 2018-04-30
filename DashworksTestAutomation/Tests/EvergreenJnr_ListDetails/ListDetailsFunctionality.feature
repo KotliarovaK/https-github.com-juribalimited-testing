@@ -14,7 +14,6 @@ Scenario Outline: EvergreenJnr_AllLists_CheckThatRenamingAListWorkingCorrectlyFo
 	Then data in table is sorted by '<Columnname>' column in ascending order
 	When User create dynamic list with "TestList12CA0D" name on "<PageName>" page
 	#Workaround for DAS-11570. Remove after fix
-	#And User navigates to the "TestList12CA0D" list
 	When User clicks the List Details button
 	Then List details panel is displayed to the user
 	When User changes list name to "RenamedList"
@@ -135,7 +134,6 @@ Scenario Outline: EvergreenJnr_AllLists_CheckDefaultOptionsInListDetailsForDynam
 	Then data in table is sorted by '<Columnname>' column in ascending order
 	When User create dynamic list with "TestListCED2D6" name on "<PageName>" page
 	#Workaround for DAS-11570. Remove after fix
-	#And User navigates to the "TestListCED2D6" list
 	When User clicks the List Details button
 	Then List details panel is displayed to the user
 	Then "TestListCED2D6" name is displayed in list details panel

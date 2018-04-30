@@ -24,6 +24,7 @@ Examples:
 Scenario Outline: EvergreenJnr_AllList_CheckDefaultSortOrderOnTheLists
 	When User clicks "<ListName>" on the left-hand menu
 	Then "<ListName>" list should be displayed to the user
+	Then The first row of the table matches to default sorting "<ListName>" list
 	Then data in the table is sorted by "<ColumnName>" column in ascending order by default
 
 Examples: 
