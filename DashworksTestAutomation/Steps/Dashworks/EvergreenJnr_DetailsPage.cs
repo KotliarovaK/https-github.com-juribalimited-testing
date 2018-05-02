@@ -231,7 +231,8 @@ namespace DashworksTestAutomation.Steps.Dashworks
         public void ThenContentIsPresentInTheTableOnTheDetailsPage()
         {
             var tableElement = _driver.NowAt<ApplicationsDetailsTabsMenu>();
-            Assert.IsTrue(tableElement.TableContent.Displayed(), "Table is empty");
+            //Assert.IsTrue(tableElement.TableContent.Displayed(), "Table is empty");
+            Assert.IsTrue(tableElement.TableRows.Count > 5, "Table is empty");
         }
 
         [Then(@"Filter panel has standard size")]

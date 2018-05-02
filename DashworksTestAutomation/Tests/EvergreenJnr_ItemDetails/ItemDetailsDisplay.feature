@@ -278,6 +278,7 @@ Scenario: EvergreenJnr_DevicesLists_CheckThatDataOfColumnsIsDisplayedInTheCustom
 Scenario: EvergreenJnr_MailboxesLists_CheckThatLinksAndImageItemAreDisplayedInTheNameAndDisplayNameColumns
 	When User clicks "Mailboxes" on the left-hand menu
 	Then "Mailboxes" list should be displayed to the user
+	When User perform search by "00C8BC63E7424A6E862@bclabs.local"
 	When User click content from "Email Address" column
 	And User navigates to the "Users" tab
 	Then User closes "Users" section on the Details Page

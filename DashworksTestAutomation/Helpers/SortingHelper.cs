@@ -32,9 +32,13 @@ namespace DashworksTestAutomation.Helpers
             }
         }
 
-        public static void IsNumericListSorted(List<string> originalList)
+        public static void IsNumericListSorted(List<string> originalList, bool isDescending = true)
         {
             originalList = originalList.Where(x => !x.Equals("")).ToList();
+
+            //Return if nothing to sort
+            if (!originalList.Any())
+                return;
 
             List<KeyValuePair<int, string>> unsortedList = new List<KeyValuePair<int, string>>();
             int intValue;
@@ -48,7 +52,8 @@ namespace DashworksTestAutomation.Helpers
 
             //Get count of the values from original list that can't be converted to DateTime
             var unsortedCount = originalList.Count(x => !int.TryParse(x, out intValue));
-            Assert.AreNotEqual(unsortedCount, originalList.Count, "Original list was not sorted at all/Can't be sorted. Nothing to compare. Please check method logic or input list");
+            Assert.AreNotEqual(unsortedCount, originalList.Count,
+                "Original list was not sorted at all/Can't be sorted. Nothing to compare. Please check method logic or input list");
 
             try
             {
