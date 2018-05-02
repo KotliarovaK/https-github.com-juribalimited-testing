@@ -1,8 +1,8 @@
-﻿using DashworksTestAutomation.Base;
+﻿using System.Collections.Generic;
+using DashworksTestAutomation.Base;
 using DashworksTestAutomation.Extensions;
 using OpenQA.Selenium;
 using OpenQA.Selenium.Support.PageObjects;
-using System.Collections.Generic;
 
 namespace DashworksTestAutomation.Pages.Evergreen
 {
@@ -31,7 +31,7 @@ namespace DashworksTestAutomation.Pages.Evergreen
                 SelectorFor(this, p => p.Devices),
                 SelectorFor(this, p => p.Users),
                 SelectorFor(this, p => p.Applications),
-                SelectorFor(this, p => p.Mailboxes),
+                SelectorFor(this, p => p.Mailboxes)
                 //SelectorFor(this, p => p.Admin)
             };
         }

@@ -1,15 +1,15 @@
 ﻿using System;
-using System.Net;
+using OpenQA.Selenium;
 
 namespace DashworksTestAutomation.Extensions
 {
     public static class CookieExtensions
     {
-        public static OpenQA.Selenium.Cookie ToSeleniumCookies(this Cookie cookie)
+        public static Cookie ToSeleniumCookies(this System.Net.Cookie cookie)
         {
             try
             {
-                return new OpenQA.Selenium.Cookie(cookie.Name, cookie.Value, cookie.Domain, cookie.Path, cookie.Expires);
+                return new Cookie(cookie.Name, cookie.Value, cookie.Domain, cookie.Path, cookie.Expires);
             }
             catch (Exception e)
             {

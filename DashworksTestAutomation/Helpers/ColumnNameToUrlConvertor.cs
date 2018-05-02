@@ -1,5 +1,4 @@
 ﻿using System;
-using DashworksTestAutomation.Utils;
 
 namespace DashworksTestAutomation.Helpers
 {

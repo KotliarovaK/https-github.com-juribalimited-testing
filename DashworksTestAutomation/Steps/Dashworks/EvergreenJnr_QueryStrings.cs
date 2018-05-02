@@ -1,4 +1,5 @@
-﻿using DashworksTestAutomation.DTO.RuntimeVariables;
+﻿using System;
+using DashworksTestAutomation.DTO.RuntimeVariables;
 using DashworksTestAutomation.Extensions;
 using DashworksTestAutomation.Pages;
 using DashworksTestAutomation.Pages.Evergreen;
@@ -6,7 +7,6 @@ using DashworksTestAutomation.Providers;
 using DashworksTestAutomation.Utils;
 using NUnit.Framework;
 using OpenQA.Selenium.Remote;
-using System;
 using TechTalk.SpecFlow;
 
 namespace DashworksTestAutomation.Steps.Dashworks
@@ -14,9 +14,9 @@ namespace DashworksTestAutomation.Steps.Dashworks
     [Binding]
     internal class EvergreenJnr_QueryStrings : SpecFlowContext
     {
+        private readonly RestWebClient _client;
         private readonly RemoteWebDriver _driver;
         private readonly WebsiteUrl _url;
-        private readonly RestWebClient _client;
 
         public EvergreenJnr_QueryStrings(RemoteWebDriver driver, WebsiteUrl url, RestWebClient client)
         {
@@ -102,9 +102,7 @@ namespace DashworksTestAutomation.Steps.Dashworks
                 var page = _driver.NowAt<EvergreenDashboardsPage>();
 
                 if (page.StatusCodeLabel.Displayed())
-                {
                     throw new Exception($"500 error was returned for: {row["QueryType"]} query");
-                }
 
                 Logger.Write($"Evergreen agGrid Main Object List is returned with data for: {row["QueryType"]} query");
             }

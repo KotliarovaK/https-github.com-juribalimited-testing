@@ -1,9 +1,6 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.Linq;
 using System.Net;
-using System.Text;
-using System.Threading.Tasks;
 using DashworksTestAutomation.DTO.RuntimeVariables;
 using DashworksTestAutomation.Helpers;
 using DashworksTestAutomation.Providers;
@@ -38,15 +35,11 @@ namespace DashworksTestAutomation.Steps.API
             var section = _sectionConvertor.SectionConvertor(sectionName);
             var requestUri = "";
             if (pageName == "Mailboxes")
-            {
                 requestUri =
                     $"{UrlProvider.RestClientBaseUrl}{pageName.ToLower().TrimEnd('s').TrimEnd('e')}/{itemId}/{section}?$lang=en-GB";
-            }
             else
-            {
                 requestUri =
                     $"{UrlProvider.RestClientBaseUrl}{pageName.ToLower().TrimEnd('s')}/{itemId}/{section}?$lang=en-GB";
-            }
 
             var request = new RestRequest(requestUri);
 

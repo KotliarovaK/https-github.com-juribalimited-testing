@@ -4,7 +4,7 @@
 
 namespace DashworksTestAutomation.Helpers
 {
-    class FilterOperatorsConvertor
+    internal class FilterOperatorsConvertor
     {
         public static string Convert(string filterOPerator)
         {

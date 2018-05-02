@@ -6,11 +6,11 @@ namespace DashworksTestAutomation.DTO.RuntimeVariables
     //to be able to remove list after test execution
     internal class UsersWithSharedLists
     {
-        public List<string> Value { get; set; }
-
         public UsersWithSharedLists()
         {
             Value = new List<string>();
         }
+
+        public List<string> Value { get; set; }
     }
 }

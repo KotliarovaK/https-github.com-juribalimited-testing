@@ -1,23 +1,23 @@
-﻿using DashworksTestAutomation.Providers;
-using DashworksTestAutomation.Utils;
-using RestSharp;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Net;
+using DashworksTestAutomation.Providers;
+using DashworksTestAutomation.Utils;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Linq;
+using RestSharp;
 
 namespace DashworksTestAutomation.DTO.RuntimeVariables
 {
     internal class RestWebClient
     {
-        public RestClient Value { get; set; }
-
         public RestWebClient()
         {
             Value = new RestClient(UrlProvider.RestClientBaseUrl);
         }
+
+        public RestClient Value { get; set; }
 
         public void ChangeUserProfileLanguage(string userName, string language)
         {
@@ -63,6 +63,7 @@ namespace DashworksTestAutomation.DTO.RuntimeVariables
                 default:
                     throw new Exception($"{pageName} not found");
             }
+
             var requestUri = $"{UrlProvider.RestClientBaseUrl}{pageName.ToLower()}";
             var request = new RestRequest(requestUri);
 
@@ -102,6 +103,7 @@ namespace DashworksTestAutomation.DTO.RuntimeVariables
                 default:
                     throw new Exception($"{pageName} not found");
             }
+
             var requestUri = $"{UrlProvider.RestClientBaseUrl}{pageName.ToLower()}";
             var request = new RestRequest(requestUri);
 
@@ -116,10 +118,7 @@ namespace DashworksTestAutomation.DTO.RuntimeVariables
             var content = response.Content;
 
             var allItems = JsonConvert.DeserializeObject<JObject>(content)["results"];
-            foreach (var item in allItems)
-            {
-                returnList.Add(item[returnValue].ToString());
-            }
+            foreach (var item in allItems) returnList.Add(item[returnValue].ToString());
 
             return returnList;
         }

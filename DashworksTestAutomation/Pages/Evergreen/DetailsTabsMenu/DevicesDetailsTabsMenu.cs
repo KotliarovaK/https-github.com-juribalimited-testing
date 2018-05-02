@@ -1,7 +1,7 @@
-﻿using DashworksTestAutomation.Extensions;
+﻿using System.Collections.Generic;
+using DashworksTestAutomation.Extensions;
 using OpenQA.Selenium;
 using OpenQA.Selenium.Support.PageObjects;
-using System.Collections.Generic;
 
 namespace DashworksTestAutomation.Pages.Evergreen.DetailsTabsMenu
 {

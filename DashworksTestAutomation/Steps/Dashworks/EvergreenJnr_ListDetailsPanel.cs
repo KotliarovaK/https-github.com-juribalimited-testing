@@ -1,13 +1,13 @@
-﻿using DashworksTestAutomation.DTO;
+﻿using System;
+using DashworksTestAutomation.DTO;
 using DashworksTestAutomation.DTO.RuntimeVariables;
 using DashworksTestAutomation.Extensions;
 using DashworksTestAutomation.Helpers;
 using DashworksTestAutomation.Pages.Evergreen;
 using DashworksTestAutomation.Utils;
 using NUnit.Framework;
-using OpenQA.Selenium.Remote;
-using System;
 using OpenQA.Selenium;
+using OpenQA.Selenium.Remote;
 using TechTalk.SpecFlow;
 
 namespace DashworksTestAutomation.Steps.Dashworks
@@ -16,8 +16,8 @@ namespace DashworksTestAutomation.Steps.Dashworks
     internal class EvergreenJnr_ListDetailsPanel : SpecFlowContext
     {
         private readonly RemoteWebDriver _driver;
-        private readonly UsersWithSharedLists _usersWithSharedLists;
         private readonly UserDto _userDto;
+        private readonly UsersWithSharedLists _usersWithSharedLists;
 
         public EvergreenJnr_ListDetailsPanel(RemoteWebDriver driver, UsersWithSharedLists usersWithSharedLists,
             UserDto userDto)
@@ -110,7 +110,7 @@ namespace DashworksTestAutomation.Steps.Dashworks
         public void ThenDependantsSectionIsCollapsedByDefault()
         {
             var listDetailsElement = _driver.NowAt<ListDetailsElement>();
-            Assert.IsFalse(listDetailsElement.ExpandedDependantsSection.Displayed() , "Dependants section is expanded");
+            Assert.IsFalse(listDetailsElement.ExpandedDependantsSection.Displayed(), "Dependants section is expanded");
         }
 
         [When(@"User closes Permissions section in the list panel")]
@@ -245,21 +245,24 @@ namespace DashworksTestAutomation.Steps.Dashworks
         public void ThenMessageIsDisplayedInTheListsPanel(string warningText)
         {
             var listElement = _driver.NowAt<CustomListElement>();
-            Assert.IsTrue(listElement.RemovingDependencyListMessage(warningText), $"{warningText} message is not displayed in the list details panel");
+            Assert.IsTrue(listElement.RemovingDependencyListMessage(warningText),
+                $"{warningText} message is not displayed in the list details panel");
         }
 
         [Then(@"no Warning message is displayed in the lists panel")]
         public void ThenNoWarningMessageIsDisplayedInTheLissPanel()
         {
             var listElement = _driver.NowAt<BaseDashboardPage>();
-            Assert.IsFalse(listElement.WarningMessage.Displayed(), "Warning message is displayed in the list details panel");
+            Assert.IsFalse(listElement.WarningMessage.Displayed(),
+                "Warning message is displayed in the list details panel");
         }
 
         [Then(@"""(.*)"" message is not displayed in the lists panel")]
         public void ThenMessageIsNotDisplayedInTheListsPanel(string warningText)
         {
             var listElement = _driver.NowAt<BaseDashboardPage>();
-            Assert.IsFalse(listElement.DoesNotExistListMessage.Displayed(), $"{warningText} message is displayed in the list details panel");
+            Assert.IsFalse(listElement.DoesNotExistListMessage.Displayed(),
+                $"{warningText} message is displayed in the list details panel");
         }
 
         [Then(@"Delete list button is disabled in List Details panel")]

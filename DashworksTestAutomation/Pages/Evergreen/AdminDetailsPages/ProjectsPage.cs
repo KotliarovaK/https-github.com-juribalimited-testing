@@ -1,11 +1,10 @@
 ﻿using System;
+using System.Collections.Generic;
+using System.Linq;
 using DashworksTestAutomation.Base;
 using DashworksTestAutomation.Extensions;
 using OpenQA.Selenium;
 using OpenQA.Selenium.Support.PageObjects;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading;
 
 namespace DashworksTestAutomation.Pages.Evergreen.AdminDetailsPages
 {
@@ -26,7 +25,9 @@ namespace DashworksTestAutomation.Pages.Evergreen.AdminDetailsPages
         [FindsBy(How = How.XPath, Using = ".//label[text()='Project Name']/ancestor::div[@class='form-item']//input")]
         public IWebElement ProjectNameField { get; set; }
 
-        [FindsBy(How = How.XPath, Using = ".//label[@for='scope']span[@class='mat-form-field-label-wrapper mat-input-placeholder-wrapper mat-form-field-placeholder-wrapper']")]
+        [FindsBy(How = How.XPath,
+            Using =
+                ".//label[@for='scope']span[@class='mat-form-field-label-wrapper mat-input-placeholder-wrapper mat-form-field-placeholder-wrapper']")]
         public IWebElement SelectScopeProject { get; set; }
 
         [FindsBy(How = How.XPath, Using = ".//button[@class='mat-primary mat-raised-button']")]
@@ -44,7 +45,8 @@ namespace DashworksTestAutomation.Pages.Evergreen.AdminDetailsPages
         [FindsBy(How = How.XPath, Using = ".//span[@class='mat-option-text']")]
         public IWebElement DeleteProjectButtonInActions { get; set; }
 
-        [FindsBy(How = How.XPath, Using = ".//button[@class='button-small mat-raised-button mat-accent ng-star-inserted']")]
+        [FindsBy(How = How.XPath,
+            Using = ".//button[@class='button-small mat-raised-button mat-accent ng-star-inserted']")]
         public IWebElement DeleteButtonOnPage { get; set; }
 
         [FindsBy(How = How.XPath, Using = ".//div[@class='ng-star-inserted inline-tip']")]
@@ -64,7 +66,7 @@ namespace DashworksTestAutomation.Pages.Evergreen.AdminDetailsPages
             Driver.WaitForDataLoading();
             return new List<By>
             {
-                SelectorFor(this, p => p.AdminPageTitle),
+                SelectorFor(this, p => p.AdminPageTitle)
             };
         }
 
@@ -89,13 +91,15 @@ namespace DashworksTestAutomation.Pages.Evergreen.AdminDetailsPages
 
         public void ClickToTabByNameProjectScopeChanges(string tabName)
         {
-            var tab = Driver.FindElement(By.XPath($".//div[@class='detail-label ng-star-inserted']/span[text()='{tabName}']"));
+            var tab = Driver.FindElement(
+                By.XPath($".//div[@class='detail-label ng-star-inserted']/span[text()='{tabName}']"));
             tab.Click();
         }
 
         public void SelectCheckboxByName(string checkboxName)
         {
-            var tab = Driver.FindElement(By.XPath($".//div[@class='mat-radio-label-content'][text()='{checkboxName}']"));
+            var tab = Driver.FindElement(
+                By.XPath($".//div[@class='mat-radio-label-content'][text()='{checkboxName}']"));
             tab.Click();
         }
 
@@ -132,7 +136,8 @@ namespace DashworksTestAutomation.Pages.Evergreen.AdminDetailsPages
         public void GetSearchFieldByColumnName(string columnName, string text)
         {
             By byControl =
-                By.XPath($".//div[@role='presentation']/div[2]/div[{GetColumnNumberByName(columnName)}]//div[@class='ag-floating-filter-full-body']//input");
+                By.XPath(
+                    $".//div[@role='presentation']/div[2]/div[{GetColumnNumberByName(columnName)}]//div[@class='ag-floating-filter-full-body']//input");
             Driver.WaitForDataLoading();
             Driver.WaitWhileControlIsNotDisplayed(byControl);
             Driver.FindElement(byControl).Click();
@@ -142,7 +147,8 @@ namespace DashworksTestAutomation.Pages.Evergreen.AdminDetailsPages
         public bool WarningMessageProjectPage(string text)
         {
             Driver.WaitForElement(By.XPath(".//div[@class='ng-star-inserted inline-tip']"));
-        return Driver.IsElementDisplayed(By.XPath($".//div[@class='ng-star-inserted inline-tip'][text()='{text}']"));
+            return Driver.IsElementDisplayed(
+                By.XPath($".//div[@class='ng-star-inserted inline-tip'][text()='{text}']"));
         }
     }
 }

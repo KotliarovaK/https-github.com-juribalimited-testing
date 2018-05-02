@@ -4,15 +4,12 @@ using System.IO;
 
 namespace DashworksTestAutomation.Utils
 {
-    class FileSystemHelper
+    internal class FileSystemHelper
     {
         public static void EnsureScreensotsFolderExists()
         {
             var folder = GetScreenshotFolder();
-            if (!Directory.Exists(folder))
-            {
-                Directory.CreateDirectory(folder);
-            }
+            if (!Directory.Exists(folder)) Directory.CreateDirectory(folder);
         }
 
         public static string GetPathForScreenshot(string testName)

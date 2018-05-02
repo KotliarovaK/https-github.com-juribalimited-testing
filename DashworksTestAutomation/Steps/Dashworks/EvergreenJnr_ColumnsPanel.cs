@@ -1,15 +1,15 @@
-﻿using DashworksTestAutomation.Extensions;
-using DashworksTestAutomation.Helpers;
-using DashworksTestAutomation.Pages;
-using DashworksTestAutomation.Pages.Evergreen;
-using DashworksTestAutomation.Utils;
-using NUnit.Framework;
-using OpenQA.Selenium.Remote;
-using System;
+﻿using System;
 using System.Text.RegularExpressions;
 using System.Threading;
 using DashworksTestAutomation.DTO.RuntimeVariables;
+using DashworksTestAutomation.Extensions;
+using DashworksTestAutomation.Helpers;
+using DashworksTestAutomation.Pages;
+using DashworksTestAutomation.Pages.Evergreen;
 using DashworksTestAutomation.Providers;
+using DashworksTestAutomation.Utils;
+using NUnit.Framework;
+using OpenQA.Selenium.Remote;
 using TechTalk.SpecFlow;
 
 namespace DashworksTestAutomation.Steps.Dashworks
@@ -17,8 +17,8 @@ namespace DashworksTestAutomation.Steps.Dashworks
     [Binding]
     internal class EvergreenJnr_ColumnsPanel : SpecFlowContext
     {
-        private readonly RemoteWebDriver _driver;
         private readonly RestWebClient _client;
+        private readonly RemoteWebDriver _driver;
         private readonly PageToUrlConvertor _page;
 
         public EvergreenJnr_ColumnsPanel(RemoteWebDriver driver, RestWebClient client, PageToUrlConvertor page)
@@ -75,11 +75,10 @@ namespace DashworksTestAutomation.Steps.Dashworks
         [When(@"User add following columns using URL to the ""(.*)"" page:")]
         public void WhenUserAddFollowingColumnsUsingUrlToThePage(string pageName, Table table)
         {
-            var requestUri = $"{UrlProvider.EvergreenUrl}#/{pageName.ToLower()}?{RestWebClient.GetDefaultColumnsUrlByPageName(pageName)}";
+            var requestUri =
+                $"{UrlProvider.EvergreenUrl}#/{pageName.ToLower()}?{RestWebClient.GetDefaultColumnsUrlByPageName(pageName)}";
             foreach (var row in table.Rows)
-            {
                 requestUri += $",{ColumnNameToUrlConvertor.Convert(pageName, row["ColumnName"])}";
-            }
             _driver.NavigateToUrl(requestUri);
             _driver.WaitForDataLoading();
             CheckColumnDisplayedState(table, true);
@@ -98,6 +97,7 @@ namespace DashworksTestAutomation.Steps.Dashworks
                 originalPart = Regex.Match(currentUrl, pattern).Groups[1].Value;
                 changedPart = originalPart + $",{ColumnNameToUrlConvertor.Convert(pageName, row["ColumnName"])}";
             }
+
             _driver.NavigateToUrl(currentUrl.Replace(originalPart, changedPart));
             _driver.WaitForDataLoading();
             CheckColumnDisplayedState(table, true);
@@ -124,10 +124,8 @@ namespace DashworksTestAutomation.Steps.Dashworks
             _driver.WaitForDataLoading();
             Thread.Sleep(1000);
             foreach (var row in table.Rows)
-            {
                 Assert.AreEqual(displayedState, listpageMenu.IsColumnPresent(row["ColumnName"]),
                     $"Column '{row["ColumnName"]}' displayed state should be {displayedState}");
-            }
         }
 
         [When(@"User add all Columns from specific category")]
@@ -135,10 +133,7 @@ namespace DashworksTestAutomation.Steps.Dashworks
         {
             var columnElement = _driver.NowAt<ColumnsElement>();
 
-            foreach (var row in table.Rows)
-            {
-                columnElement.AddAllColumnsFromCategory(row["CategoryName"]);
-            }
+            foreach (var row in table.Rows) columnElement.AddAllColumnsFromCategory(row["CategoryName"]);
         }
 
         [When(@"User add ""(.*)"" Column from expanded category")]
@@ -161,10 +156,7 @@ namespace DashworksTestAutomation.Steps.Dashworks
         {
             var columnElement = _driver.NowAt<ColumnsElement>();
             columnElement.ExpandColumnsSectionByName("Selected Columns");
-            foreach (var row in table.Rows)
-            {
-                columnElement.GetDeleteColumnButton(row["ColumnName"]).Click();
-            }
+            foreach (var row in table.Rows) columnElement.GetDeleteColumnButton(row["ColumnName"]).Click();
         }
 
         [When(@"User have reset all columns")]
@@ -184,14 +176,14 @@ namespace DashworksTestAutomation.Steps.Dashworks
             foreach (var row in table.Rows)
             {
                 var originalPart = Regex.Match(currentUrl, pattern).Groups[1].Value;
-                var changedPart = originalPart.Replace($",{ColumnNameToUrlConvertor.Convert(pageName, row["ColumnName"])}", string.Empty);
+                var changedPart =
+                    originalPart.Replace($",{ColumnNameToUrlConvertor.Convert(pageName, row["ColumnName"])}",
+                        string.Empty);
                 _driver.NavigateToUrl(currentUrl.Replace(originalPart, changedPart));
 
                 var page = _driver.NowAt<EvergreenDashboardsPage>();
                 if (page.StatusCodeLabel.Displayed())
-                {
                     throw new Exception($"500 error was returned for: {row["ColumnName"]} column");
-                }
             }
         }
 
@@ -221,14 +213,14 @@ namespace DashworksTestAutomation.Steps.Dashworks
             foreach (var row in table.Rows)
             {
                 var originalPart = Regex.Match(currentUrl, pattern).Groups[1].Value;
-                var changedPart = originalPart.Replace($",{ColumnNameToUrlConvertor.Convert(pageName, row["ColumnName"])}", string.Empty);
+                var changedPart =
+                    originalPart.Replace($",{ColumnNameToUrlConvertor.Convert(pageName, row["ColumnName"])}",
+                        string.Empty);
                 _driver.NavigateToUrl(currentUrl.Replace(originalPart, changedPart));
 
                 var page = _driver.NowAt<EvergreenDashboardsPage>();
                 if (page.StatusCodeLabel.Displayed())
-                {
                     throw new Exception($"500 error was returned for: {row["ColumnName"]} column");
-                }
             }
         }
 
@@ -239,13 +231,11 @@ namespace DashworksTestAutomation.Steps.Dashworks
             const string pattern = @"select=(.*)";
 
             var originalPart = Regex.Match(currentUrl, pattern).Groups[1].Value;
-            _driver.NavigateToUrl(currentUrl.Replace(originalPart, String.Empty));
+            _driver.NavigateToUrl(currentUrl.Replace(originalPart, string.Empty));
 
             var page = _driver.NowAt<EvergreenDashboardsPage>();
             if (page.StatusCodeLabel.Displayed())
-            {
                 throw new Exception("500 error was returned after removing all columns from URL");
-            }
         }
 
         [When(@"User removes all filters and columns by url")]
@@ -255,13 +245,11 @@ namespace DashworksTestAutomation.Steps.Dashworks
             const string pattern = @"\&(.*)";
 
             var originalPart = Regex.Match(currentUrl, pattern).Value;
-            _driver.NavigateToUrl(currentUrl.Replace(originalPart, String.Empty));
+            _driver.NavigateToUrl(currentUrl.Replace(originalPart, string.Empty));
 
             var page = _driver.NowAt<EvergreenDashboardsPage>();
             if (page.StatusCodeLabel.Displayed())
-            {
                 throw new Exception("500 error was returned after removing all columns from URL");
-            }
         }
 
         [When(@"User removes all filters and columns and custom list by url")]
@@ -271,13 +259,11 @@ namespace DashworksTestAutomation.Steps.Dashworks
             const string pattern = @"\?(.*)";
 
             var originalPart = Regex.Match(currentUrl, pattern).Value;
-            _driver.NavigateToUrl(currentUrl.Replace(originalPart, String.Empty));
+            _driver.NavigateToUrl(currentUrl.Replace(originalPart, string.Empty));
 
             var page = _driver.NowAt<EvergreenDashboardsPage>();
             if (page.StatusCodeLabel.Displayed())
-            {
                 throw new Exception("500 error was returned after removing all columns from URL");
-            }
         }
 
         [Then(@"""(.*)"" subcategories is displayed for ""(.*)"" category")]
@@ -285,10 +271,7 @@ namespace DashworksTestAutomation.Steps.Dashworks
         {
             var columnElement = _driver.NowAt<ColumnsElement>();
             var resetButton = columnElement.SearchTextboxResetButton;
-            if (resetButton.Displayed())
-            {
-                resetButton.Click();
-            }
+            if (resetButton.Displayed()) resetButton.Click();
 
             Assert.AreEqual(subCategoriesCount, columnElement.GetSubcategoriesCountByCategoryName(categoryName),
                 $"Incorrect subcategories count for {categoryName} category");
@@ -383,7 +366,8 @@ namespace DashworksTestAutomation.Steps.Dashworks
             var currentUrl = _driver.Url;
             const string pattern = @"\$select=(.*)";
             var urlPartToCheck = Regex.Match(currentUrl, pattern).Groups[1].Value;
-            StringAssert.Contains(ColumnNameToUrlConvertor.Convert(pageName, columnName).ToLower(), urlPartToCheck.ToLower(),
+            StringAssert.Contains(ColumnNameToUrlConvertor.Convert(pageName, columnName).ToLower(),
+                urlPartToCheck.ToLower(),
                 $"{columnName} is not added to URL");
         }
     }

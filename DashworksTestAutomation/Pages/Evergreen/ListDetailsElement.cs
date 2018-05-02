@@ -1,10 +1,10 @@
-﻿using DashworksTestAutomation.Base;
+﻿using System.Collections.Generic;
+using DashworksTestAutomation.Base;
 using DashworksTestAutomation.Extensions;
+using HtmlAgilityPack;
+using NUnit.Framework;
 using OpenQA.Selenium;
 using OpenQA.Selenium.Support.PageObjects;
-using System.Collections.Generic;
-using System.Linq;
-using NUnit.Framework;
 
 namespace DashworksTestAutomation.Pages.Evergreen
 {
@@ -22,7 +22,8 @@ namespace DashworksTestAutomation.Pages.Evergreen
         [FindsBy(How = How.XPath, Using = ".//i[contains(@class,'material-icons pull-left list-star-icon')]")]
         public IWebElement FavoriteButton { get; set; }
 
-        [FindsBy(How = How.XPath, Using = ".//i[contains(@class,'material-icons pull-left list-star-icon star-filled')]")]
+        [FindsBy(How = How.XPath,
+            Using = ".//i[contains(@class,'material-icons pull-left list-star-icon star-filled')]")]
         public IWebElement UnfavoriteButton { get; set; }
 
         [FindsBy(How = How.XPath, Using = ".//button[@class='btn btn-default btn-remove mat-icon-button']")]
@@ -72,7 +73,7 @@ namespace DashworksTestAutomation.Pages.Evergreen
             Driver.WaitForDataLoading();
             return new List<By>
             {
-                SelectorFor(this, p => p.ListDetailsPanel),
+                SelectorFor(this, p => p.ListDetailsPanel)
             };
         }
 
@@ -87,7 +88,7 @@ namespace DashworksTestAutomation.Pages.Evergreen
             var openPermissionsSection = Driver.FindElement(By.XPath(
                 ".//i[@class='material-icons mat-item_add ng-star-inserted']")).GetAttribute("aria-describedby");
             var pageSource = Driver.PageSource;
-            var doc = new HtmlAgilityPack.HtmlDocument();
+            var doc = new HtmlDocument();
             doc.LoadHtml(pageSource);
             var node = doc.DocumentNode.SelectNodes($".//div[@id='{openPermissionsSection}']")[0];
             var openPermissionsSectionTooltip = node.InnerHtml;
