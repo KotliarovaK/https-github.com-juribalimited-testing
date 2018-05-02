@@ -23,7 +23,7 @@ Scenario: EvergreenJnr_DevicesList_CheckThatDynamicFiltersAreClearedForStaticLis
 	Then "Devices" list should be displayed to the user
 	When User create static list with "Static List TestName14" name on "Devices" page with following items
 	| ItemName       |
-	| 001BAQXT6JWFPI |
+	| 0281Z79JGPVPH4 |
 	| 00HA7MKAVVFDAV |
 	Then "Static List TestName14" list is displayed to user
 	And "2" rows are displayed in the agGrid

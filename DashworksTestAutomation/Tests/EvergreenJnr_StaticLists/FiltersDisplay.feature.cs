@@ -137,7 +137,7 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_StaticLists
             TechTalk.SpecFlow.Table table2 = new TechTalk.SpecFlow.Table(new string[] {
                         "ItemName"});
             table2.AddRow(new string[] {
-                        "001BAQXT6JWFPI"});
+                        "0281Z79JGPVPH4"});
             table2.AddRow(new string[] {
                         "00HA7MKAVVFDAV"});
             testRunner.When("User create static list with \"Static List TestName14\" name on \"Devices\" page with" +
