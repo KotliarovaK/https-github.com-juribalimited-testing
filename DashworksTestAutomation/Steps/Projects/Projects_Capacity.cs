@@ -81,7 +81,7 @@ namespace DashworksTestAutomation.Steps.Projects
             page.Sunday.SendKeys(_capacityDto.Sunday);
 
             var upd = _driver.NowAt<BaseElements>();
-            upd.AddButton.Click();
+            upd.UpdateButton.Click();
         }
 
         [Then(@"User updates the Override Dates on Capacity tab")]

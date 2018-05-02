@@ -1,5 +1,6 @@
 ﻿using System.Linq;
 using DashworksTestAutomation.DTO.Projects;
+using DashworksTestAutomation.DTO.RuntimeVariables;
 using DashworksTestAutomation.Extensions;
 using DashworksTestAutomation.Pages.Projects;
 using OpenQA.Selenium.Remote;
@@ -12,11 +13,13 @@ namespace DashworksTestAutomation.Steps.Projects
     {
         private readonly RemoteWebDriver _driver;
         private readonly ProjectDto _projectDto;
+        private readonly TeamName _teamName;
 
-        public Projects_Removing(RemoteWebDriver driver, ProjectDto projectDto)
+        public Projects_Removing(RemoteWebDriver driver, ProjectDto projectDto, TeamName teamName)
         {
             _driver = driver;
             _projectDto = projectDto;
+            _teamName = teamName;
         }
 
         [Then(@"User remove ""(.*)"" Request Type")]
@@ -101,7 +104,6 @@ namespace DashworksTestAutomation.Steps.Projects
         public void ThenUserRemoveCreatedTeam()
         {
             var page = _driver.NowAt<BaseElements>();
-
             page.GetDeleteTeamButtonElementByName(_projectDto.TeamProperties.TeamName).Click();
             page.DeleteGroupButton.Click();
             _driver.AcceptAlert();

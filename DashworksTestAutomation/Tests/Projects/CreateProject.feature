@@ -114,10 +114,10 @@ Scenario: Projects_CreateProject
 	Then User updates the Details on Capacity tab
 	| EnablePlanning | DisplayColors | EnforceOonSelfServicePage | EnforceOnProjectObjectPage | CapacityToReach |
 	| true           | true          | true                      | false                      | 23              |
-	#When User navigate to "Capacity" on selected tab
-	#Then User updates the Capacity on Capacity tab
-	#| StartDate   | EndDate     | MondayCheckbox | TuesdayCheckbox | WednesdayCheckbox | ThursdayCheckbox | FridayCheckbox | SaturdayCheckbox | SundayCheckbox | Monday | Tuesday | Wednesday | Thursday | Friday | Saturday | Sunday |
-	#| 06 Apr 2016 | 19 Apr 2018 | true           | true            | true              | true             | true           | true             | true           | 100    | 100     | 100       | 100      | 100    | 100      | 100    |
+	When User navigate to "Capacity" on selected tab
+	Then User updates the Capacity on Capacity tab
+	| StartDate   | EndDate     | MondayCheckbox | TuesdayCheckbox | WednesdayCheckbox | ThursdayCheckbox | FridayCheckbox | SaturdayCheckbox | SundayCheckbox | Monday | Tuesday | Wednesday | Thursday | Friday | Saturday | Sunday |
+	| 06 Apr 2016 | 19 Apr 2018 | false          | false           | false             | false            | false          | false            | false          | 100    | 100     | 100       | 100      | 100    | 100      | 100    |
 	When User navigate to "Override Dates" on selected tab
 	Then User updates the Override Dates on Capacity tab
 	| Date        | Capacity | Comment  |

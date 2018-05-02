@@ -37,8 +37,7 @@ namespace DashworksTestAutomation.DTO.Projects
                 EnumExtensions.GetRandomValue<DefaultViewForProjectObjectApplicationsTab2Enum>();
             DefaultValueForApplicationRationalization =
                 EnumExtensions.GetRandomValue<DefaultValueForApplicationRationalizationEnum>();
-            OnboardUsedApplicationsByAssociationTo =
-                EnumExtensions.GetRandomValue<OnboardUsedApplicationsByAssociationToEnum>();
+            OnboardUsedApplicationsByAssociationTo = OnboardUsedApplicationsByAssociationToEnum.Computer;
         }
     }
 
@@ -93,7 +92,7 @@ namespace DashworksTestAutomation.DTO.Projects
 
     public enum OnboardUsedApplicationsByAssociationToEnum
     {
-        //Computer,
+        Computer,
         User,
         [Description("Do not onboard")]
         DoNotOnboard
