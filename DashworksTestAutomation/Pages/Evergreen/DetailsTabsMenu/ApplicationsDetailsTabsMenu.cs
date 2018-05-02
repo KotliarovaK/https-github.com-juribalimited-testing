@@ -81,6 +81,9 @@ namespace DashworksTestAutomation.Pages.Evergreen.DetailsTabsMenu
         [FindsBy(How = How.XPath, Using = ".//div[@class='ag-filter-body']//input")]
         public IWebElement FilterSearchTextbox { get; set; }
 
+        [FindsBy(How = How.XPath, Using = ".//div[@role='row']")]
+        public IList<IWebElement> TableRows { get; set; }
+
         public override List<By> GetPageIdentitySelectors()
         {
             Driver.WaitForDataLoading();
@@ -96,8 +99,8 @@ namespace DashworksTestAutomation.Pages.Evergreen.DetailsTabsMenu
 
         public void OpenColumnSettingsByName(string columnName)
         {
-            string columnSettingsSelector = 
-                $".//div[@role='presentation']/span[text()='{columnName}']/ancestor::div[@class='ag-header-cell ag-header-cell-sortable']//span[@ref='eMenu']";
+            string columnSettingsSelector =
+                $".//div[@role='presentation']/span[text()='{columnName}']//ancestor::div[@class='ag-cell-label-container ag-header-cell-sorted-none']//span[@class='ag-icon ag-icon-menu']";
             Driver.MouseHover(By.XPath(columnSettingsSelector));
             Driver.WaitWhileControlIsNotDisplayed(By.XPath(columnSettingsSelector));
             Driver.FindElement(By.XPath(columnSettingsSelector)).Click();
@@ -196,7 +199,7 @@ namespace DashworksTestAutomation.Pages.Evergreen.DetailsTabsMenu
         public List<string> GetColumnIdContent(string columnName)
         {
             By by = By.XPath(
-                $".//div[@class='ag-body']//div[@class='ag-body-container']/div/div[@col-id='{GetColumnIdByColumnName(columnName)}']");
+                $".//div[@class='ag-body-container']/div/div[@col-id='{GetColumnIdByColumnName(columnName)}']");
             return Driver.FindElements(by).Select(x => x.Text).ToList();
         }
 

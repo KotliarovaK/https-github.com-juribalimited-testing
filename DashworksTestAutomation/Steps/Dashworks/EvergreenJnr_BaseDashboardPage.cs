@@ -118,7 +118,7 @@ namespace DashworksTestAutomation.Steps.Dashworks
             var listpageMenu = _driver.NowAt<BaseDashboardPage>();
 
             List<string> actualList = listpageMenu.GetColumnContent(columnName).Where(x => !x.Equals("")).ToList();
-            SortingHelper.IsListSorted(actualList);
+            SortingHelper.IsNumericListSorted(actualList);
             Assert.IsTrue(listpageMenu.AscendingSortingIcon.Displayed);
         }
 
@@ -126,14 +126,14 @@ namespace DashworksTestAutomation.Steps.Dashworks
         public void ThenNumericDataInTableIsSortedByColumnInDescendingOrder(string columnName)
         {
             var listpageMenu = _driver.NowAt<BaseDashboardPage>();
-
+            _driver.WaitForDataLoading();
             List<string> expectedList = listpageMenu.GetColumnContent(columnName).Where(x => !x.Equals("")).ToList();
-            SortingHelper.IsListSorted(expectedList, false);
+            SortingHelper.IsNumericListSorted(expectedList, false);
             Assert.IsTrue(listpageMenu.DescendingSortingIcon.Displayed);
         }
 
         [Then(@"The first cell of the table matches to default sorting ""(.*)"" list")]
-        public void ThenTheFirstRowOfTheTableMatchesToDefaultSortingList(string listName)
+        public void ThenTheFirstCellOfTheTableMatchesToDefaultSortingList(string listName)
         {
             var content = _driver.NowAt<BaseDashboardPage>();
 
