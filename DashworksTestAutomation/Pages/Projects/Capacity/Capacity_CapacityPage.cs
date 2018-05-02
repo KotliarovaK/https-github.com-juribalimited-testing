@@ -13,17 +13,20 @@ namespace DashworksTestAutomation.Pages.Projects
         [FindsBy(How = How.XPath, Using = ".//select[@id='ctl00_MainContent_DDL_Capacity_RequestType']")]
         public IWebElement RequestType { get; set; }
 
-        [FindsBy(How = How.XPath, Using = ".//tr//td[text()='Start Date']/..//button[@class='ui-datepicker-trigger']")]
+        [FindsBy(How = How.XPath, Using = ".//td[text()='Start Date']/..//button[@aria-label='Select Date']")]
         public IWebElement StartDateButton { get; set; }
 
-        [FindsBy(How = How.XPath, Using = ".//tr//td[text()='Start Date']/..//input[@class='datepicker hasDatepicker']")]
+        [FindsBy(How = How.XPath, Using = ".//input[@id='ctl00_MainContent_UC_Capacity_StartDate_TB_SelectDate']")]
         public IWebElement StartDate { get; set; }
 
         [FindsBy(How = How.XPath, Using = ".//tr//td[text()='End Date']/..//button[@class='ui-datepicker-trigger']")]
         public IWebElement EndDateButton { get; set; }
 
-        [FindsBy(How = How.XPath, Using = ".//tr//td[text()='End Date']/..//input[@class='datepicker hasDatepicker']")]
+        [FindsBy(How = How.XPath, Using = ".//td[text()='End Date']/..//input[@class='datepicker hasDatepicker']")]
         public IWebElement EndDate { get; set; }
+
+        [FindsBy(How = How.XPath, Using = ".//table[@class='pmGrid pmAdminGrid']")]
+        public IWebElement Table { get; set; }
 
         [FindsBy(How = How.XPath, Using = ".//input[@id='ctl00_MainContent_RP_Capacity_Days_ctl01_CB_Capacity_DayEnabled']")]
         public IWebElement MondayCheckbox { get; set; }
@@ -66,8 +69,6 @@ namespace DashworksTestAutomation.Pages.Projects
 
         [FindsBy(How = How.XPath, Using = ".//input[@id='ctl00_MainContent_RP_Capacity_Days_ctl07_TB_Capacity_DayMaximum']")]
         public IWebElement Sunday { get; set; }
-
-        //TODO Request Type [Default(Computer)]
 
         public override List<By> GetPageIdentitySelectors()
         {

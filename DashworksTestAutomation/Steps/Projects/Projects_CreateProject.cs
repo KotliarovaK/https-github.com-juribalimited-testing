@@ -91,7 +91,6 @@ namespace DashworksTestAutomation.Steps.Projects
         public void WhenUserupdatesTheDetailsPage(Table table)
         {
             var page = _driver.NowAt<DetailsPage>();
-            var upd = _driver.NowAt<BaseElements>();
 
             table.CreateInstance<DetailsDto>().CopyPropertiesTo(_detailsDto);
 
@@ -112,6 +111,7 @@ namespace DashworksTestAutomation.Steps.Projects
             page.StartDate.SendKeys(_detailsDto.StartDate);
             page.EndDate.SendKeys(_detailsDto.EndDate);
 
+            var upd = _driver.NowAt<BaseElements>();
             upd.UpdateButton.Click();
         }
 
@@ -246,7 +246,7 @@ namespace DashworksTestAutomation.Steps.Projects
             var page = _driver.NowAt<GroupPropertiesPage>();
 
             table.CreateInstance<GroupPropertiesDto>().CopyPropertiesTo(_groupPropertiesDto);
-            //_groupPropertiesDto.GroupName += TestDataGenerator.RandomString();
+            _groupPropertiesDto.GroupName += TestDataGenerator.RandomString();
             _projectDto.GroupProperties.Add(_groupPropertiesDto);
 
             page.GroupName.SendKeys(_groupPropertiesDto.GroupName);
@@ -280,13 +280,13 @@ namespace DashworksTestAutomation.Steps.Projects
         public void ThenUserUpdatingNewsPage(Table table)
         {
             var page = _driver.NowAt<NewsPage>();
-            var upd = _driver.NowAt<BaseElements>();
 
             table.CreateInstance<NewsDto>().CopyPropertiesTo(_newsDto);
 
             page.Title.SendKeys(_newsDto.Title);
             page.Text.SendKeys(_newsDto.Text);
 
+            var upd = _driver.NowAt<BaseElements>();
             upd.UpdateButton.Click();
         }
 

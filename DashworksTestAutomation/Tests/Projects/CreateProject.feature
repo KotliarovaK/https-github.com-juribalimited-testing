@@ -1,7 +1,7 @@
 ﻿Feature: CreateProject
 	Runs Project related tests
 
-@Projects @CreateProject
+@Projects @CreateProject @Delete_Newly_Created_Team
 Scenario: Projects_CreateProject
 	Given User is on Dashworks Homepage
 	Then Login Page is displayed to the user
@@ -123,7 +123,7 @@ Scenario: Projects_CreateProject
 	| Date        | Capacity | Comment  |
 	| 03 Apr 2016 | 10       | TestText |
 	When User navigate to "Groups" tab
-	Then User remove "TestGroupName" Group
+	Then User remove created Group
 	When User navigate to "Teams" tab
 	Then User remove created Team
 	When User navigate to "Tasks" tab

@@ -1,4 +1,5 @@
-﻿using DashworksTestAutomation.DTO.Projects;
+﻿using System.Linq;
+using DashworksTestAutomation.DTO.Projects;
 using DashworksTestAutomation.Extensions;
 using DashworksTestAutomation.Pages.Projects;
 using OpenQA.Selenium.Remote;
@@ -116,13 +117,12 @@ namespace DashworksTestAutomation.Steps.Projects
             _driver.AcceptAlert();
         }
 
-        //TODO removing created Group
         [Then(@"User remove created Group")]
         public void ThenUserRemoveCreatedGroup()
         {
             var page = _driver.NowAt<BaseElements>();
 
-            //page.GetDeleteGroupButtonElementByName(_projectDto.GroupProperties.Name).Click();
+            page.GetDeleteGroupButtonElementByName(_projectDto.GroupProperties.First().GroupName).Click();
             page.DeleteGroupButton.Click();
             _driver.AcceptAlert();
         }

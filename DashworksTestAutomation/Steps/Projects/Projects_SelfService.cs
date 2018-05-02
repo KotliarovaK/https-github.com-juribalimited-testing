@@ -47,7 +47,6 @@ namespace DashworksTestAutomation.Steps.Projects
         public void ThenUserUpdatesTheDetailsOnSelfServiceTab(Table table)
         {
             var page = _driver.NowAt<SelfService_DetailsPage>();
-            var upd = _driver.NowAt<BaseElements>();
 
             table.CreateInstance<SelfService_DetailsDto>().CopyPropertiesTo(_detailsDto);
 
@@ -61,6 +60,7 @@ namespace DashworksTestAutomation.Steps.Projects
             page.DashworksProjectHomepage.SetCheckboxState(_detailsDto.DashworksProjectHomepage);
             page.CustomUrl.SetCheckboxState(_detailsDto.CustomUrl);
 
+            var upd = _driver.NowAt<BaseElements>();
             upd.UpdateButton.Click();
         }
 
@@ -68,7 +68,6 @@ namespace DashworksTestAutomation.Steps.Projects
         public void ThenUserUpdatesTheWelcomeOnSelfServiceTab(Table table)
         {
             var page = _driver.NowAt<SelfService_WelcomePage>();
-            var upd = _driver.NowAt<BaseElements>();
 
             table.CreateInstance<SelfService_WelcomeDto>().CopyPropertiesTo(_welcomeDto);
 
@@ -81,6 +80,7 @@ namespace DashworksTestAutomation.Steps.Projects
             page.PageDescription.SendKeys(_welcomeDto.PageDescription);
             page.ProjectName.SendKeys(_welcomeDto.ProjectName);
 
+            var upd = _driver.NowAt<BaseElements>();
             upd.UpdateButton.Click();
         }
 
@@ -88,7 +88,6 @@ namespace DashworksTestAutomation.Steps.Projects
         public void ThenUserUpdatesTheComputerOwnershipOnSelfServiceTab(Table table)
         {
             var page = _driver.NowAt<SelfService_ComputerOwnershipPage>();
-            var upd = _driver.NowAt<BaseElements>();
 
             table.CreateInstance<SelfService_ComputerOwnershipDto>().CopyPropertiesTo(_computerOwnershipDto);
 
@@ -103,6 +102,7 @@ namespace DashworksTestAutomation.Steps.Projects
             page.LimitMinimum.SendKeys(_computerOwnershipDto.LimitMinimum);
             page.PageDescription.SendKeys(_computerOwnershipDto.PageDescription);
 
+            var upd = _driver.NowAt<BaseElements>();
             upd.UpdateButton.Click();
         }
 
@@ -110,7 +110,6 @@ namespace DashworksTestAutomation.Steps.Projects
         public void ThenUserUpdatesTheDepartmentAndLocationOnSelfServiceTab(Table table)
         {
             var page = _driver.NowAt<SelfService_DepartmentAndLocationPage>();
-            var upd = _driver.NowAt<BaseElements>();
 
             table.CreateInstance<SelfService_DepartmentAndLocationDto>().CopyPropertiesTo(_departmentAndLocationDto);
 
@@ -123,6 +122,7 @@ namespace DashworksTestAutomation.Steps.Projects
             page.Location.SetCheckboxState(_departmentAndLocationDto.Location);
             //TODO
 
+            var upd = _driver.NowAt<BaseElements>();
             upd.UpdateButton.Click();
         }
 
@@ -130,7 +130,6 @@ namespace DashworksTestAutomation.Steps.Projects
         public void ThenUserUpdatesTheAppsListOnSelfServiceTab(Table table)
         {
             var page = _driver.NowAt<SelfService_AppsListPage>();
-            var upd = _driver.NowAt<BaseElements>();
 
             table.CreateInstance<SelfService_AppsListDto>().CopyPropertiesTo(_appsListDto);
 
@@ -143,6 +142,7 @@ namespace DashworksTestAutomation.Steps.Projects
             page.View.SelectboxSelect(_appsListDto.View.GetValue());
             page.PageDescription.SendKeys(_appsListDto.PageDescription);
 
+            var upd = _driver.NowAt<BaseElements>();
             upd.UpdateButton.Click();
         }
 
@@ -150,7 +150,6 @@ namespace DashworksTestAutomation.Steps.Projects
         public void ThenUserUpdatesTheProjectDateOnSelfServiceTab(Table table)
         {
             var page = _driver.NowAt<SelfService_ProjectDatePage>();
-            var upd = _driver.NowAt<BaseElements>();
 
             table.CreateInstance<SelfService_ProjectDateDto>().CopyPropertiesTo(_projectDateDto);
 
@@ -161,6 +160,7 @@ namespace DashworksTestAutomation.Steps.Projects
             page.MaximumHours.SendKeys(_projectDateDto.MaximumHours);
             page.PageDescription.SendKeys(_projectDateDto.PageDescription);
 
+            var upd = _driver.NowAt<BaseElements>();
             upd.UpdateButton.Click();
         }
 
@@ -168,7 +168,6 @@ namespace DashworksTestAutomation.Steps.Projects
         public void ThenUserUpdatesTheFirstOtherOptionsOnSelfServiceTab(Table table)
         {
             var page = _driver.NowAt<SelfService_OtherOptions1Page>();
-            var upd = _driver.NowAt<BaseElements>();
 
             table.CreateInstance<SelfService_OtherOptions1Dto>().CopyPropertiesTo(_options1Dto);
 
@@ -178,6 +177,7 @@ namespace DashworksTestAutomation.Steps.Projects
             page.AllLinked.SetCheckboxState(_options1Dto.AllLinked);
             page.PageDescription.SendKeys(_options1Dto.PageDescription);
 
+            var upd = _driver.NowAt<BaseElements>();
             upd.UpdateButton.Click();
         }
 
@@ -185,7 +185,6 @@ namespace DashworksTestAutomation.Steps.Projects
         public void ThenUserUpdatesTheSecondOtherOptionsOnSelfServiceTab(Table table)
         {
             var page = _driver.NowAt<SelfService_OtherOptions2Page>();
-            var upd = _driver.NowAt<BaseElements>();
 
             table.CreateInstance<SelfService_OtherOptions2Dto>().CopyPropertiesTo(_options2Dto);
 
@@ -195,6 +194,7 @@ namespace DashworksTestAutomation.Steps.Projects
             page.AllLinked.SetCheckboxState(_options1Dto.AllLinked);
             page.PageDescription.SendKeys(_options1Dto.PageDescription);
 
+            var upd = _driver.NowAt<BaseElements>();
             upd.UpdateButton.Click();
         }
 
@@ -202,7 +202,6 @@ namespace DashworksTestAutomation.Steps.Projects
         public void ThenUserUpdatesTheThankYouOnSelfServiceTab(Table table)
         {
             var page = _driver.NowAt<SelfService_ThankYouPage>();
-            var upd = _driver.NowAt<BaseElements>();
 
             table.CreateInstance<SelfService_ThankYouDto>().CopyPropertiesTo(_thankYouDto);
 
@@ -212,6 +211,7 @@ namespace DashworksTestAutomation.Steps.Projects
             page.IncludeLink.SetCheckboxState(_thankYouDto.IncludeLink);
             page.PageDescription.SendKeys(_thankYouDto.PageDescription);
 
+            var upd = _driver.NowAt<BaseElements>();
             upd.UpdateButton.Click();
         }
     }

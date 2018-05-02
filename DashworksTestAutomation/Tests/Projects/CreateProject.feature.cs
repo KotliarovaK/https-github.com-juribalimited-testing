@@ -64,11 +64,13 @@ namespace DashworksTestAutomation.Tests.Projects
         [NUnit.Framework.DescriptionAttribute("Projects_CreateProject")]
         [NUnit.Framework.CategoryAttribute("Projects")]
         [NUnit.Framework.CategoryAttribute("CreateProject")]
+        [NUnit.Framework.CategoryAttribute("Delete_Newly_Created_Team")]
         public virtual void Projects_CreateProject()
         {
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Projects_CreateProject", new string[] {
                         "Projects",
-                        "CreateProject"});
+                        "CreateProject",
+                        "Delete_Newly_Created_Team"});
             this.ScenarioSetup(scenarioInfo);
             testRunner.Given("User is on Dashworks Homepage", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
             testRunner.Then("Login Page is displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
@@ -392,7 +394,7 @@ namespace DashworksTestAutomation.Tests.Projects
                         "TestText"});
             testRunner.Then("User updates the Override Dates on Capacity tab", ((string)(null)), table22, "Then ");
             testRunner.When("User navigate to \"Groups\" tab", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-            testRunner.Then("User remove \"TestGroupName\" Group", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+            testRunner.Then("User remove created Group", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
             testRunner.When("User navigate to \"Teams\" tab", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
             testRunner.Then("User remove created Team", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
             testRunner.When("User navigate to \"Tasks\" tab", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");

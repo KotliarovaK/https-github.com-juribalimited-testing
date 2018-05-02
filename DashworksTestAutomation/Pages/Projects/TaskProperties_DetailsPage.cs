@@ -35,7 +35,7 @@ namespace DashworksTestAutomation.Pages.Projects
         [FindsBy(How = How.XPath, Using = ".//input[@id='ctl00_MainContent_CB_ReadOnly_BulkUpdate']")]
         public IWebElement BulkUpdate { get; set; }
 
-        [FindsBy(How = How.XPath, Using = ".//input[@id='ctl00_MainContent_CB_ShowLastChangeInfo']")]
+        [FindsBy(How = How.XPath, Using = ".//input[@id='ctl00_MainContent_CB_ReadOnly_SelfService']")]
         public IWebElement SelfService { get; set; }
 
         [FindsBy(How = How.XPath, Using = ".//input[@value='Update Task']")]
@@ -57,7 +57,6 @@ namespace DashworksTestAutomation.Pages.Projects
                 SelectorFor(this, p => p.TaskImpactsReadiness),
                 SelectorFor(this, p => p.TaskHasAnOwner),
                 SelectorFor(this, p => p.ShowDetails),
-                //SelectorFor(this, p => p.DateMode),
                 SelectorFor(this, p => p.ProjectObject),
                 SelectorFor(this, p => p.BulkUpdate),
                 SelectorFor(this, p => p.SelfService)

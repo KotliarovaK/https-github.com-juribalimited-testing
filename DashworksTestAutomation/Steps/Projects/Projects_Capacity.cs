@@ -34,7 +34,6 @@ namespace DashworksTestAutomation.Steps.Projects
         public void ThenUserUpdatesTheDetailsOnCapacityTab(Table table)
         {
             var page = _driver.NowAt<Capacity_DetailsPage>();
-            var upd = _driver.NowAt<BaseElements>();
 
             table.CreateInstance<Capacity_DetailsDto>().CopyPropertiesTo(_detailsDto);
 
@@ -45,6 +44,7 @@ namespace DashworksTestAutomation.Steps.Projects
             page.CapacityToReach.Clear();
             page.CapacityToReach.SendKeys(_detailsDto.CapacityToReach);
 
+            var upd = _driver.NowAt<BaseElements>();
             upd.UpdateButton.Click();
         }
 
@@ -52,18 +52,18 @@ namespace DashworksTestAutomation.Steps.Projects
         public void ThenUserUpdatesTheCapacityOnCapacityTab(Table table)
         {
             var page = _driver.NowAt<Capacity_CapacityPage>();
-            var upd = _driver.NowAt<BaseElements>();
 
             table.CreateInstance<Capacity_CapacityDto>().CopyPropertiesTo(_capacityDto);
 
             page.Team.SelectboxSelect(_projectDto.TeamProperties.TeamName);
-            _driver.WaitWhileControlIsNotDisplayed<Capacity_CapacityPage>(() => page.RequestType);
+            _driver.WaitForDataLoading();
+            _driver.WaitWhileControlIsNotClickable<Capacity_CapacityPage>(() => page.RequestType);
             page.RequestType.SelectboxSelect(_projectDto.ReqestType.Name);
-            _driver.WaitWhileControlIsNotDisplayed<Capacity_CapacityPage>(() => page.StartDate);
-            page.StartDateButton.Click();
+            _driver.WaitWhileControlIsNotDisplayed<Capacity_CapacityPage>(() => page.Table);
             page.StartDate.SendKeys(_capacityDto.StartDate);
-            page.EndDateButton.Click();
+            page.StartDateButton.Click();
             page.EndDate.SendKeys(_capacityDto.EndDate);
+            page.EndDateButton.Click();
             page.MondayCheckbox.SetCheckboxState(_capacityDto.MondayCheckbox);
             page.TuesdayCheckbox.SetCheckboxState(_capacityDto.TuesdayCheckbox);
             page.WednesdayCheckbox.SetCheckboxState(_capacityDto.WednesdayCheckbox);
@@ -79,6 +79,7 @@ namespace DashworksTestAutomation.Steps.Projects
             page.Saturday.SendKeys(_capacityDto.Saturday);
             page.Sunday.SendKeys(_capacityDto.Sunday);
 
+            var upd = _driver.NowAt<BaseElements>();
             upd.AddButton.Click();
         }
 
@@ -86,7 +87,6 @@ namespace DashworksTestAutomation.Steps.Projects
         public void ThenUserUpdatesTheOverrideDatesOnCapacityTab(Table table)
         {
             var page = _driver.NowAt<Capacity_OverrideDatesPage>();
-            var upd = _driver.NowAt<BaseElements>();
 
             table.CreateInstance<Capacity_OverrideDatesDto>().CopyPropertiesTo(_overrideDatesDto);
 
@@ -96,6 +96,7 @@ namespace DashworksTestAutomation.Steps.Projects
             page.Capacity.SendKeys(_overrideDatesDto.Capacity.ToString());
             page.Comment.SendKeys(_overrideDatesDto.Comment);
 
+            var upd = _driver.NowAt<BaseElements>();
             upd.AddButton.Click();
         }
     }
