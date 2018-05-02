@@ -85,7 +85,7 @@ namespace DashworksTestAutomation.Pages.Evergreen.AdminDetailsPages
         public void OpenColumnSettingsByName(string columnName)
         {
             string columnSettingsSelector =
-                $".//div[@role='presentation']/span[text()='{columnName}']/ancestor::div[@class='ag-header-cell ag-header-cell-sortable']//span[@ref='eMenu']";
+                $".//div[@role='presentation']/span[text()='{columnName}']//ancestor::div[@class='ag-cell-label-container ag-header-cell-sorted-none']//span[@class='ag-icon ag-icon-menu']";
             var columnHeaderSelector = $".//div[@role='presentation']/span[text()='{columnName}']";
             Driver.MouseHover(By.XPath(columnHeaderSelector));
             Driver.WaitWhileControlIsNotDisplayed(By.XPath(columnSettingsSelector));
