@@ -1,8 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using NUnit.Framework;
 
 namespace DashworksTestAutomation.Helpers
@@ -25,10 +23,8 @@ namespace DashworksTestAutomation.Helpers
             {
                 //Compare each elements just to find elements that a different
                 for (int i = 0; i < originalList.Count; i++)
-                {
                     Assert.AreEqual(expectedList[i],
                         originalList[i], "Incorrect sorting order");
-                }
             }
         }
 
@@ -64,10 +60,8 @@ namespace DashworksTestAutomation.Helpers
             {
                 //Compare each elements just to find elements that a different
                 for (int i = 0; i < originalList.Count; i++)
-                {
                     Assert.AreEqual(unsortedList.OrderBy(x => x.Key).Select(x => x.Value).ToArray()[i],
                         originalList[i], "Incorrect sorting order");
-                }
             }
         }
 
@@ -91,7 +85,8 @@ namespace DashworksTestAutomation.Helpers
 
             //Get count of the values from original list that can't be converted to DateTime
             var unsortedCount = originalList.Count(x => !DateTime.TryParse(x, out datevalue));
-            Assert.AreNotEqual(unsortedCount, originalList.Count, "Original list was not sorted at all/Can't be sorted. Nothing to compare. Please check method logic or input list");
+            Assert.AreNotEqual(unsortedCount, originalList.Count,
+                "Original list was not sorted at all/Can't be sorted. Nothing to compare. Please check method logic or input list");
 
             List<KeyValuePair<DateTime, string>> sortedList = unsortedList.OrderBy(s => s.Key).ToList();
             if (isDescending)
@@ -104,12 +99,9 @@ namespace DashworksTestAutomation.Helpers
             }
             catch (Exception)
             {
-
                 //Compare each elements just to find elements that a different
                 for (int i = 0; i < originalList.Count; i++)
-                {
                     Assert.AreEqual(sortedList[i].Value, originalList[i], "Incorrect sorting order");
-                }
             }
         }
     }

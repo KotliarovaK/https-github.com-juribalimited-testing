@@ -1,11 +1,9 @@
-﻿using DashworksTestAutomation.Extensions;
+﻿using System.Threading;
+using DashworksTestAutomation.Extensions;
 using DashworksTestAutomation.Pages.Evergreen;
 using DashworksTestAutomation.Utils;
 using NUnit.Framework;
 using OpenQA.Selenium.Remote;
-using System;
-using System.Threading;
-using OpenQA.Selenium;
 using TechTalk.SpecFlow;
 
 namespace DashworksTestAutomation.Steps.Dashworks
@@ -70,9 +68,7 @@ namespace DashworksTestAutomation.Steps.Dashworks
 
             var inputLength = listPageElement.TableSearchTextbox.GetAttribute("value").Length;
             for (int i = 0; i < inputLength; i++)
-            {
                 listPageElement.TableSearchTextbox.SendKeys(OpenQA.Selenium.Keys.Backspace);
-            }
 
             _driver.WaitForDataLoading();
         }
@@ -81,7 +77,7 @@ namespace DashworksTestAutomation.Steps.Dashworks
         public void ThenRowsAreDisplayedInTheAgGrid(string numberOfRows)
         {
             var listPageElement = _driver.NowAt<BaseDashboardPage>();
-            if (!String.IsNullOrWhiteSpace(numberOfRows))
+            if (!string.IsNullOrWhiteSpace(numberOfRows))
             {
                 Thread.Sleep(1000);
 

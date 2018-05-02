@@ -1,11 +1,11 @@
-﻿using DashworksTestAutomation.Extensions;
+﻿using System;
+using DashworksTestAutomation.Extensions;
 using DashworksTestAutomation.Pages.Evergreen;
+using DashworksTestAutomation.Pages.Evergreen.AdminDetailsPages;
+using DashworksTestAutomation.Providers;
 using DashworksTestAutomation.Utils;
 using NUnit.Framework;
 using OpenQA.Selenium.Remote;
-using System;
-using DashworksTestAutomation.Pages.Evergreen.AdminDetailsPages;
-using DashworksTestAutomation.Providers;
 using TechTalk.SpecFlow;
 
 namespace DashworksTestAutomation.Steps.Dashworks
@@ -138,6 +138,5 @@ namespace DashworksTestAutomation.Steps.Dashworks
             Assert.IsTrue(page.AdminSubMenu.Displayed(), "Admin page was not displayed");
             Logger.Write("Admin page is visible");
         }
-
     }
 }

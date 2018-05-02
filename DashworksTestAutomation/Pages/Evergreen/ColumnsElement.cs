@@ -1,16 +1,19 @@
-﻿using DashworksTestAutomation.Base;
-using DashworksTestAutomation.Extensions;
-using OpenQA.Selenium;
-using OpenQA.Selenium.Support.PageObjects;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading;
+using DashworksTestAutomation.Base;
+using DashworksTestAutomation.Extensions;
+using OpenQA.Selenium;
+using OpenQA.Selenium.Support.PageObjects;
 
 namespace DashworksTestAutomation.Pages.Evergreen
 {
     internal class ColumnsElement : SeleniumBasePage
     {
+        private const string GroupTitleSelector =
+            ".//div[contains(@class,'filter-category-title filter-selection')]";
+
         [FindsBy(How = How.XPath, Using = ".//div[@class='columns-panel']")]
         public IWebElement ColumnsPanel { get; set; }
 
@@ -30,9 +33,6 @@ namespace DashworksTestAutomation.Pages.Evergreen
             Using = ".//div[@class='columns-panel']//i[@class='material-icons mat-item_add mat-18']")]
         public IList<IWebElement> MaximizeGroupButton { get; set; }
 
-        private const string GroupTitleSelector =
-            ".//div[contains(@class,'filter-category-title filter-selection')]";
-
         [FindsBy(How = How.XPath, Using = GroupTitleSelector)]
         public IList<IWebElement> GroupTitle { get; set; }
 
@@ -45,14 +45,14 @@ namespace DashworksTestAutomation.Pages.Evergreen
             return new List<By>
             {
                 SelectorFor(this, p => p.ColumnsPanel),
-                SelectorFor(this, p => p.SearchTextbox),
+                SelectorFor(this, p => p.SearchTextbox)
             };
         }
 
         public void AddColumn(string columnName)
         {
             SearchTextbox.SendKeys(columnName);
-            var selector = String.Empty;
+            var selector = string.Empty;
             if (columnName.Contains("'"))
             {
                 var strings = columnName.Split('\'');
@@ -72,7 +72,7 @@ namespace DashworksTestAutomation.Pages.Evergreen
 
         public void AddColumnFromExpandedSection(string columnName)
         {
-            var selector = String.Empty;
+            var selector = string.Empty;
             if (columnName.Contains("'"))
             {
                 var strings = columnName.Split('\'');
@@ -112,14 +112,10 @@ namespace DashworksTestAutomation.Pages.Evergreen
                 if (Driver.IsElementExists(By.XPath(
                     $".//div[contains(@class,'filter-category-label blue-color bold-text')][text()='{categoryName}']/ancestor::div[@class='filter-category ng-star-inserted']")
                 ))
-                {
                     subCategories = FilterCategory(categoryName)
                         .FindElements(By.XPath(".//div[@class='sub-categories ng-star-inserted']/div"));
-                }
                 else
-                {
                     break;
-                }
             }
         }
 

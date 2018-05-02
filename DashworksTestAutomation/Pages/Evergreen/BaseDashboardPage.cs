@@ -1,15 +1,19 @@
-﻿using DashworksTestAutomation.Base;
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using DashworksTestAutomation.Base;
 using DashworksTestAutomation.Extensions;
 using OpenQA.Selenium;
 using OpenQA.Selenium.Support.PageObjects;
-using System;
-using System.Collections.Generic;
-using System.Linq;
 
 namespace DashworksTestAutomation.Pages.Evergreen
 {
     internal class BaseDashboardPage : SeleniumBasePage
     {
+        public const string ColorItem = ".//div[@class='status']";
+
+        public const string ImageItem = ".//div[@class='ag-body-container']//img[contains(@src,'png')]";
+
         [FindsBy(How = How.XPath, Using = ".//div[@id='pagetitle-text']/descendant::h1")]
         public IWebElement Heading { get; set; }
 
@@ -105,10 +109,6 @@ namespace DashworksTestAutomation.Pages.Evergreen
         [FindsBy(How = How.XPath, Using = ".//div[@tabindex='-1']//span//a[@href='#/mailbox/49258/']")]
         public IWebElement FirstMailboxesCell { get; set; }
 
-        public const string ColorItem = ".//div[@class='status']";
-
-        public const string ImageItem = ".//div[@class='ag-body-container']//img[contains(@src,'png')]";
-
         #region TableColumns
 
         [FindsBy(How = How.XPath, Using = ".//div[@colid='lastLogonDate'][@role='gridcell']")]
@@ -155,7 +155,7 @@ namespace DashworksTestAutomation.Pages.Evergreen
 
         public IWebElement GetColumnHeaderByName(string columnName)
         {
-            var selector = String.Empty;
+            var selector = string.Empty;
             if (columnName.Contains("'"))
             {
                 var strings = columnName.Split('\'');
@@ -231,7 +231,7 @@ namespace DashworksTestAutomation.Pages.Evergreen
         {
             By byControl =
                 By.XPath($".//div[@class='ag-body-container']/div[1]/div[{GetColumnNumberByName(columnName)}]");
-             
+
             Driver.WaitForDataLoading();
             Driver.WaitWhileControlIsNotDisplayed(byControl);
             return Driver.FindElement(byControl);
@@ -284,9 +284,9 @@ namespace DashworksTestAutomation.Pages.Evergreen
                 case "background-color: rgba(47, 133, 184, 0.5); border: 2px solid rgb(47, 133, 184);":
                     return "BLUE";
                 case "background-color: rgba(55, 61, 69, 0.5); border: 2px solid rgb(55, 61, 69);":
-                    return "OUT OF SCOPE"; 
+                    return "OUT OF SCOPE";
                 case "background-color: rgba(71, 209, 209, 0.5); border: 2px solid rgb(71, 209, 209);":
-                    return "LIGHT BLUE"; 
+                    return "LIGHT BLUE";
                 case "background-color: rgba(153, 118, 84, 0.5); border: 2px solid rgb(153, 118, 84);":
                     return "BROWN";
                 case "background-color: rgba(235, 175, 37, 0.5); border: 2px solid rgb(235, 175, 37);":

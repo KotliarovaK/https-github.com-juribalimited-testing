@@ -1,8 +1,8 @@
-﻿using DashworksTestAutomation.Base;
+﻿using System.Collections.Generic;
+using DashworksTestAutomation.Base;
 using DashworksTestAutomation.Extensions;
 using OpenQA.Selenium;
 using OpenQA.Selenium.Support.PageObjects;
-using System.Collections.Generic;
 
 namespace DashworksTestAutomation.Pages.Evergreen.ProfileDetailsPages
 {
@@ -44,7 +44,7 @@ namespace DashworksTestAutomation.Pages.Evergreen.ProfileDetailsPages
                 SelectorFor(this, p => p.UpdateButton),
                 SelectorFor(this, p => p.FullNameField),
                 SelectorFor(this, p => p.EmailField),
-                SelectorFor(this, p => p.RolesList),
+                SelectorFor(this, p => p.RolesList)
             };
         }
 

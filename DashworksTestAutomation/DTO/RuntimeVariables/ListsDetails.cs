@@ -1,8 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using DashworksTestAutomation.Helpers;
 
 namespace DashworksTestAutomation.DTO.RuntimeVariables
@@ -10,12 +8,12 @@ namespace DashworksTestAutomation.DTO.RuntimeVariables
     //Store all created Lists names and Ids in this class
     public class ListsDetails
     {
-        private Dictionary<string, string> Lists { get; set; }
-
         public ListsDetails()
         {
             Lists = new Dictionary<string, string>();
         }
+
+        private Dictionary<string, string> Lists { get; }
 
         public void AddList(string listName)
         {

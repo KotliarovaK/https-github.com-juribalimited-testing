@@ -1,10 +1,10 @@
 ﻿using System;
+using System.Collections.Generic;
+using System.Linq;
 using DashworksTestAutomation.Base;
 using DashworksTestAutomation.Extensions;
 using OpenQA.Selenium;
 using OpenQA.Selenium.Support.PageObjects;
-using System.Collections.Generic;
-using System.Linq;
 
 namespace DashworksTestAutomation.Pages.Evergreen.AdminDetailsPages
 {
@@ -43,7 +43,8 @@ namespace DashworksTestAutomation.Pages.Evergreen.AdminDetailsPages
         [FindsBy(How = How.XPath, Using = ".//div[@class='mat-select-value']")]
         public IWebElement ActionsButton { get; set; }
 
-        [FindsBy(How = How.XPath, Using = ".//button[@class='button-small mat-raised-button mat-accent ng-star-inserted']")]
+        [FindsBy(How = How.XPath,
+            Using = ".//button[@class='button-small mat-raised-button mat-accent ng-star-inserted']")]
         public IWebElement DeleteButtonOnPage { get; set; }
 
         [FindsBy(How = How.XPath, Using = ".//h2[text()='Reassign Objects']")]
@@ -57,7 +58,7 @@ namespace DashworksTestAutomation.Pages.Evergreen.AdminDetailsPages
             Driver.WaitForDataLoading();
             return new List<By>
             {
-                SelectorFor(this, p => p.TeamsPageTitle),
+                SelectorFor(this, p => p.TeamsPageTitle)
             };
         }
 

@@ -1,13 +1,14 @@
-﻿using BoDi;
-using DashworksTestAutomation.Extensions;
-using DashworksTestAutomation.Utils;
-using OpenQA.Selenium.Remote;
-using System;
+﻿using System;
 using System.Configuration;
 using System.Reflection;
+using BoDi;
+using DashworksTestAutomation.Extensions;
 using DashworksTestAutomation.Providers;
+using DashworksTestAutomation.Utils;
 using NUnit.Framework;
+using NUnit.Framework.Interfaces;
 using OpenQA.Selenium;
+using OpenQA.Selenium.Remote;
 using TechTalk.SpecFlow;
 
 namespace DashworksTestAutomation.Base
@@ -20,21 +21,21 @@ namespace DashworksTestAutomation.Base
 
         public BeforeAfterActions(IObjectContainer objectContainer, ScenarioContext scenarioContext)
         {
-            this._objectContainer = objectContainer;
-            this._scenarioContext = scenarioContext;
+            _objectContainer = objectContainer;
+            _scenarioContext = scenarioContext;
         }
 
-        [BeforeScenario()]
+        [BeforeScenario]
         public void OnStartUp()
         {
             var driverInstance = CreateBrowserDriver();
 
             driverInstance.Manage().Window.Maximize();
 
-            _objectContainer.RegisterInstanceAs<RemoteWebDriver>(driverInstance);
+            _objectContainer.RegisterInstanceAs(driverInstance);
         }
 
-        [AfterScenario()]
+        [AfterScenario]
         public void OnTearDown()
         {
             try
@@ -46,18 +47,18 @@ namespace DashworksTestAutomation.Base
                     if (Browser.RemoteDriver.Equals("sauceLabs"))
                     {
                         bool passed = TestContext.CurrentContext.Result.Outcome.Status ==
-                                      NUnit.Framework.Interfaces.TestStatus.Passed;
+                                      TestStatus.Passed;
 
                         try
                         {
                             // Logs the result to Sauce Labs
-                            ((IJavaScriptExecutor)driver).ExecuteScript(
+                            ((IJavaScriptExecutor) driver).ExecuteScript(
                                 "sauce:job-result=" + (passed ? "passed" : "failed"));
                         }
                         finally
                         {
                             Console.WriteLine(
-                                $"SauceOnDemandSessionID={((CustomRemoteWebDriver)driver).getSessionId()} job-name={TestContext.CurrentContext.Test.MethodName}");
+                                $"SauceOnDemandSessionID={((CustomRemoteWebDriver) driver).getSessionId()} job-name={TestContext.CurrentContext.Test.MethodName}");
                         }
                     }
 
@@ -107,7 +108,7 @@ namespace DashworksTestAutomation.Base
         {
             PropertyInfo pInfo =
                 typeof(ScenarioContext).GetProperty("TestStatus", BindingFlags.Instance | BindingFlags.NonPublic);
-            MethodInfo getter = pInfo.GetGetMethod(nonPublic: true);
+            MethodInfo getter = pInfo.GetGetMethod(true);
             object testResult = getter.Invoke(_scenarioContext, null);
             var testResults = testResult.ToString();
             return testResults;

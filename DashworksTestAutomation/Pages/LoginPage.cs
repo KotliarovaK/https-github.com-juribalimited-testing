@@ -1,8 +1,8 @@
-﻿using DashworksTestAutomation.Base;
+﻿using System.Collections.Generic;
+using DashworksTestAutomation.Base;
 using DashworksTestAutomation.Extensions;
 using OpenQA.Selenium;
 using OpenQA.Selenium.Support.PageObjects;
-using System.Collections.Generic;
 
 namespace DashworksTestAutomation.Pages
 {
@@ -20,6 +20,13 @@ namespace DashworksTestAutomation.Pages
         [FindsBy(How = How.Id, Using = "ctl00_MainContent_Btn_Login")]
         public IWebElement LoginButton { get; set; }
 
+        public override List<By> GetPageIdentitySelectors()
+        {
+            Driver.WaitForDataLoading();
+
+            return new List<By>();
+        }
+
         #region Login Splash page
 
         [FindsBy(How = How.XPath, Using = ".//div[@class='loginsplash-panel']")]
@@ -35,12 +42,5 @@ namespace DashworksTestAutomation.Pages
         public IWebElement SplashLoginButton { get; set; }
 
         #endregion Login Splash page
-
-        public override List<By> GetPageIdentitySelectors()
-        {
-            Driver.WaitForDataLoading();
-
-            return new List<By> { };
-        }
     }
 }

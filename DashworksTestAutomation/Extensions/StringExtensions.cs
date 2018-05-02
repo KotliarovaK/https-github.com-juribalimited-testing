@@ -6,13 +6,13 @@ namespace DashworksTestAutomation.Extensions
 {
     public static class StringExtensions
     {
+        private static readonly Regex SpaceTrimmer = new Regex(@"\s\s+");
+
         public static bool ContainsText(this string fullText, string term)
         {
             CultureInfo culture = CultureInfo.InvariantCulture;
             return culture.CompareInfo.IndexOf(fullText, term, CompareOptions.IgnoreCase) >= 0;
         }
-
-        private static readonly Regex SpaceTrimmer = new Regex(@"\s\s+");
 
         public static string RemoveExtraSpaces(this string str)
         {

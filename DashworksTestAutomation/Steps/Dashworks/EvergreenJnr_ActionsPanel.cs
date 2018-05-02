@@ -1,12 +1,12 @@
-﻿using DashworksTestAutomation.Extensions;
+﻿using System;
+using System.Linq;
+using System.Threading;
+using DashworksTestAutomation.Extensions;
 using DashworksTestAutomation.Pages.Evergreen;
 using DashworksTestAutomation.Utils;
 using NUnit.Framework;
 using OpenQA.Selenium;
 using OpenQA.Selenium.Remote;
-using System;
-using System.Linq;
-using System.Threading;
 using TechTalk.SpecFlow;
 
 namespace DashworksTestAutomation.Steps.Dashworks
@@ -110,7 +110,7 @@ namespace DashworksTestAutomation.Steps.Dashworks
                 string.IsNullOrEmpty(dashboardPage.ResultsOnPageCount.Text.Split(' ').First()))
                 throw new Exception("Rows count in table is missed");
             var numberoOfRowsInTable =
-                dashboardPage.ResultsOnPageCount.Text.Split(' ').First().Replace(",", String.Empty);
+                dashboardPage.ResultsOnPageCount.Text.Split(' ').First().Replace(",", string.Empty);
             var actionsPanel = _driver.NowAt<ActionsElement>();
             var numberOfRowsInActions = actionsPanel.GetSelectedRowsCount();
             Assert.AreEqual(numberoOfRowsInTable, numberOfRowsInActions,

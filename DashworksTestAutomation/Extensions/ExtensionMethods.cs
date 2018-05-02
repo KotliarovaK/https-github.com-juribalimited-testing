@@ -9,10 +9,7 @@ namespace DashworksTestAutomation.Extensions
         {
             var plist = from prop in typeof(T).GetProperties() where prop.CanRead && prop.CanWrite select prop;
 
-            foreach (PropertyInfo prop in plist)
-            {
-                prop.SetValue(dest, prop.GetValue(source, null), null);
-            }
+            foreach (PropertyInfo prop in plist) prop.SetValue(dest, prop.GetValue(source, null), null);
         }
     }
 }

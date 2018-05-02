@@ -1,26 +1,37 @@
-﻿using DashworksTestAutomation.Base;
+﻿using System.Collections.Generic;
+using System.Linq;
+using DashworksTestAutomation.Base;
 using DashworksTestAutomation.Extensions;
+using HtmlAgilityPack;
+using NUnit.Framework;
 using OpenQA.Selenium;
 using OpenQA.Selenium.Support.PageObjects;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading;
-using NUnit.Framework;
 
 namespace DashworksTestAutomation.Pages.Evergreen
 {
     internal class FiltersElement : SeleniumBasePage
     {
+        private const string SearchTextboxSelector = ".//input[@name='search']";
+
+        private const string ShowedResultsCount = ".//div[@class='pagination-info ng-star-inserted']";
+
+        public const string FilterValuesSelector = ".//span[contains(@class, 'filter-label-value')]";
+
+        public const string FilterOptionsSelector = ".//span[@class='filter-label-op']";
+
+        public const string FilterNameSelector = ".//span[@class='filter-label-name']";
+
+        private const string GroupTitleSelector = ".//div[contains(@class,'filter-category-title ng-star-inserted')]";
+
         [FindsBy(How = How.XPath, Using = ".//div[@class='filter-panel']")]
         public IWebElement FiltersPanel { get; set; }
 
         [FindsBy(How = How.XPath, Using = ".//button[contains(@class, 'filter-add-group')]")]
         public IWebElement AddNewFilterButton { get; set; }
 
-        [FindsBy(How = How.XPath, Using = ".//button[contains(@class, 'filter-select addNewContainer ng-star-inserted')]")]
+        [FindsBy(How = How.XPath,
+            Using = ".//button[contains(@class, 'filter-select addNewContainer ng-star-inserted')]")]
         public IWebElement AddAndFilterButton { get; set; }
-
-        private const string SearchTextboxSelector = ".//input[@name='search']";
 
         [FindsBy(How = How.XPath, Using = SearchTextboxSelector)]
         public IWebElement SearchTextbox { get; set; }
@@ -57,8 +68,6 @@ namespace DashworksTestAutomation.Pages.Evergreen
         [FindsBy(How = How.XPath, Using = ".//div[@class='styleSelectDropdown']")]
         public IWebElement FilterTypeDropdown { get; set; }
 
-        private const string ShowedResultsCount = ".//div[@class='pagination-info ng-star-inserted']";
-
         [FindsBy(How = How.XPath, Using = ".//span[text()='None']")]
         public IWebElement NoneCheckbox { get; set; }
 
@@ -91,17 +100,11 @@ namespace DashworksTestAutomation.Pages.Evergreen
         [FindsBy(How = How.XPath, Using = ".//span[text()='RESET']/ancestor::button")]
         public IWebElement ResetFiltersButton { get; set; }
 
-        public const string FilterValuesSelector = ".//span[contains(@class, 'filter-label-value')]";
-
         [FindsBy(How = How.XPath, Using = FilterValuesSelector)]
         public IList<IWebElement> FilterValues { get; set; }
 
-        public const string FilterOptionsSelector = ".//span[@class='filter-label-op']";
-
         [FindsBy(How = How.XPath, Using = FilterOptionsSelector)]
         public IList<IWebElement> FilterOptions { get; set; }
-
-        public const string FilterNameSelector = ".//span[@class='filter-label-name']";
 
         [FindsBy(How = How.XPath, Using = ".//span[contains(@class,'mat-select-value-text')]")]
         public IWebElement OperatorDropdown { get; set; }
@@ -115,8 +118,6 @@ namespace DashworksTestAutomation.Pages.Evergreen
         [FindsBy(How = How.XPath, Using = ".//div[@class='filter-label']")]
         public IList<IWebElement> AddedFilterLabels { get; set; }
 
-        private const string GroupTitleSelector = ".//div[contains(@class,'filter-category-title ng-star-inserted')]";
-
         [FindsBy(How = How.XPath, Using = GroupTitleSelector)]
         public IList<IWebElement> GroupTitle { get; set; }
 
@@ -128,7 +129,7 @@ namespace DashworksTestAutomation.Pages.Evergreen
             Driver.WaitForDataLoading();
             return new List<By>
             {
-                SelectorFor(this, p => p.FiltersPanel),
+                SelectorFor(this, p => p.FiltersPanel)
             };
         }
 
@@ -216,7 +217,7 @@ namespace DashworksTestAutomation.Pages.Evergreen
             {
                 selector = $".//div[contains(@class, 'filter-add')][text()='{filterName}']";
             }
-             
+
 
             Driver.WaitWhileControlIsNotDisplayed(By.XPath(selector));
             Driver.FindElement(By.XPath(selector)).Click();
@@ -264,10 +265,7 @@ namespace DashworksTestAutomation.Pages.Evergreen
 
         public bool CheckFilterAvailability(string filterName)
         {
-            if (AddNewFilterButton.Displayed())
-            {
-                AddNewFilterButton.Click();
-            }
+            if (AddNewFilterButton.Displayed()) AddNewFilterButton.Click();
 
             SearchTextbox.Clear();
             SearchTextbox.SendKeys(filterName);
@@ -278,7 +276,8 @@ namespace DashworksTestAutomation.Pages.Evergreen
         public bool CategoryIsDisplayed(string sectionsName)
         {
             return Driver.IsElementDisplayed(
-                By.XPath($".//div[@class='filter-category-label blue-color bold-text'][contains(text(),'{sectionsName}"));
+                By.XPath(
+                    $".//div[@class='filter-category-label blue-color bold-text'][contains(text(),'{sectionsName}"));
         }
 
         public List<string> GetFiltersNames()
@@ -336,9 +335,10 @@ namespace DashworksTestAutomation.Pages.Evergreen
         public void EditFilterButtonToolTip(string tooltipText)
         {
             var editFilterButton = Driver.FindElement(By.XPath(
-                ".//div[@class='btn-group-sm pull-right ng-star-inserted']//i[@class='material-icons mat-filter-edit mat-18']/ancestor::button")).GetAttribute("aria-describedby");
+                    ".//div[@class='btn-group-sm pull-right ng-star-inserted']//i[@class='material-icons mat-filter-edit mat-18']/ancestor::button"))
+                .GetAttribute("aria-describedby");
             var pageSource = Driver.PageSource;
-            var doc = new HtmlAgilityPack.HtmlDocument();
+            var doc = new HtmlDocument();
             doc.LoadHtml(pageSource);
             var node = doc.DocumentNode.SelectNodes($".//div[@id='{editFilterButton}']")[0];
             var editFilterButtonTooltip = node.InnerHtml;
