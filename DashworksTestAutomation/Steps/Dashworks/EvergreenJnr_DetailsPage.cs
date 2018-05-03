@@ -229,7 +229,7 @@ namespace DashworksTestAutomation.Steps.Dashworks
         {
             var tableElement = _driver.NowAt<ApplicationsDetailsTabsMenu>();
             //Assert.IsTrue(tableElement.TableContent.Displayed(), "Table is empty");
-            Assert.IsTrue(tableElement.TableRows.Count > 5, "Table is empty");
+            Assert.IsTrue(tableElement.TableRows.Count > 0, "Table is empty");
         }
 
         [Then(@"Filter panel has standard size")]
@@ -244,10 +244,10 @@ namespace DashworksTestAutomation.Steps.Dashworks
         public void ThenSiteColumnHasStandardSize()
         {
             var filterPanel = _driver.NowAt<ApplicationsDetailsTabsMenu>();
-            if (!_driver.IsElementDisplayed(By.XPath(".//div[@col-id='packageSite']")))
-                Assert.AreEqual("81px", filterPanel.CollectionSiteColumnWidt());
+            if (!_driver.IsElementDisplayed(By.XPath(ApplicationsDetailsTabsMenu.SiteColumnSelector)))
+            { }
             else
-                Assert.AreEqual("81px", filterPanel.PackageSiteColumnWidt());
+                Assert.AreEqual("101px", filterPanel.PackageSiteColumnWidt());
         }
 
         [Then(@"User enters ""(.*)"" text in the Filter field")]
