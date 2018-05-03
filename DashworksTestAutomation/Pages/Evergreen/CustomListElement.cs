@@ -1,13 +1,16 @@
-﻿using DashworksTestAutomation.Base;
+﻿using System.Collections.Generic;
+using DashworksTestAutomation.Base;
 using DashworksTestAutomation.Extensions;
 using OpenQA.Selenium;
 using OpenQA.Selenium.Support.PageObjects;
-using System.Collections.Generic;
 
 namespace DashworksTestAutomation.Pages.Evergreen
 {
     internal class CustomListElement : SeleniumBasePage
     {
+        public string SettingButtonSelector =
+            ".//li//i[@class='menu-trigger material-icons mat-settings mat-18 pull-right settings-icon settings-area']";
+
         [FindsBy(How = How.XPath, Using = ".//div[@class='listEdit list-edit-wrapper']")]
         public IWebElement CreateCustomListElement { get; set; }
 
@@ -29,19 +32,64 @@ namespace DashworksTestAutomation.Pages.Evergreen
         [FindsBy(How = How.XPath, Using = ".//button[@mattooltip='Cancel']")]
         public IWebElement CancelButton { get; set; }
 
-        [FindsBy(How = How.XPath, Using = ".//i[@class='menu-trigger material-icons mat-settings mat-18 pull-right settings-icon settings-area']")]
+        [FindsBy(How = How.XPath,
+            Using =
+                ".//i[@class='menu-trigger material-icons mat-settings mat-18 pull-right settings-icon settings-area']")]
         public IWebElement SettingsButton { get; set; }
 
         [FindsBy(How = How.XPath, Using = ".//div[@class='menu ng-star-inserted']")]
         public IWebElement SettingsPanel { get; set; }
 
-        public string SettingButtonSelector = ".//li//i[@class='menu-trigger material-icons mat-settings mat-18 pull-right settings-icon settings-area']";
-
         [FindsBy(How = How.XPath, Using = ".//div[@class='inline-success ng-star-inserted']")]
         public IWebElement SuccessCreateMessage { get; set; }
-      
+
         [FindsBy(How = How.XPath, Using = ".//div[@id='submenuBlock']//ul//span[@class='submenu-actions-list-name']")]
         public IList<IWebElement> ListsNames { get; set; }
+
+        public override List<By> GetPageIdentitySelectors()
+        {
+            Driver.WaitForDataLoading();
+            return new List<By>();
+        }
+
+        public bool GetFavoriteStatus(string listName)
+        {
+            return Driver.IsElementDisplayed(By.XPath(
+                $".//span[@class='submenu-actions-list-name'][text()='{listName}']//ancestor::li//i[@class='material-icons mat-star']"));
+        }
+
+        public void ClickSettingsButtonByListName(string listName)
+        {
+            var settingsButton =
+                $".//span[@class='submenu-actions-list-name'][text()='{listName}']//ancestor::li//i[@class='menu-trigger material-icons mat-settings mat-18 pull-right settings-icon settings-area']";
+            Driver.WaitWhileControlIsDisplayed<CustomListElement>(() => UpdateCurrentListButton);
+            Driver.MouseHover(By.XPath(settingsButton));
+            Driver.FindElement(By.XPath(settingsButton)).Click();
+        }
+
+        public IWebElement CheckAllListName(string listName)
+        {
+            var allListName = $".//div[@class='submenu-selected-list list-selected'][text()='{listName}']";
+            Driver.WaitWhileControlIsNotDisplayed(By.XPath(allListName));
+            return Driver.FindElement(By.XPath(allListName));
+        }
+
+        public bool ListNameWarningMessage(string listName)
+        {
+            return Driver.IsElementDisplayed(
+                By.XPath($".//div[@class='inline-box-text ng-star-inserted']//span[text()='\"{listName}\" ']"));
+        }
+
+        public bool RemovingDependencyListMessage(string warningText)
+        {
+            return Driver.IsElementDisplayed(By.XPath($".//div//span[text()='{warningText}']"));
+        }
+
+        public bool CheckThatListIsRemoved(string listName)
+        {
+            return Driver.IsElementDisplayed(
+                By.XPath($".//span[@class='submenu-actions-list-name'][text()='{listName}']"));
+        }
 
         #region ListSettings
 
@@ -90,48 +138,5 @@ namespace DashworksTestAutomation.Pages.Evergreen
         public IWebElement SaveAsNewListButton { get; set; }
 
         #endregion UpdateList
-
-        public override List<By> GetPageIdentitySelectors()
-        {
-            Driver.WaitForDataLoading();
-            return new List<By> { };
-        }
-
-        public bool GetFavoriteStatus(string listName)
-        {
-            return Driver.IsElementDisplayed(By.XPath(
-                $".//span[@class='submenu-actions-list-name'][text()='{listName}']//ancestor::li//i[@class='material-icons mat-star']"));
-        }
-
-        public void ClickSettingsButtonByListName(string listName)
-        {
-            var settingsButton =
-                $".//span[@class='submenu-actions-list-name'][text()='{listName}']//ancestor::li//i[@class='menu-trigger material-icons mat-settings mat-18 pull-right settings-icon settings-area']";
-            Driver.WaitWhileControlIsDisplayed<CustomListElement>(() => UpdateCurrentListButton);
-            Driver.MouseHover(By.XPath(settingsButton));
-            Driver.FindElement(By.XPath(settingsButton)).Click();
-        }
-
-        public IWebElement CheckAllListName(string listName)
-        {
-            var allListName = $".//div[@class='submenu-selected-list list-selected'][text()='{listName}']";
-            Driver.WaitWhileControlIsNotDisplayed(By.XPath(allListName));
-            return Driver.FindElement(By.XPath(allListName));
-        }
-
-        public bool ListNameWarningMessage(string listName)
-        {
-            return Driver.IsElementDisplayed(By.XPath($".//div[@class='inline-box-text ng-star-inserted']//span[text()='\"{listName}\" ']"));
-        }
-
-        public bool RemovingDependencyListMessage(string warningText)
-        {
-            return Driver.IsElementDisplayed(By.XPath($".//div//span[text()='{warningText}']"));
-        }
-
-        public bool CheckThatListIsRemoved(string listName)
-        {
-            return Driver.IsElementDisplayed(By.XPath($".//span[@class='submenu-actions-list-name'][text()='{listName}']"));
-        }
     }
 }

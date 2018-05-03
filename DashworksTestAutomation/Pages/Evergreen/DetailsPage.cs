@@ -1,15 +1,21 @@
-﻿using DashworksTestAutomation.Base;
+﻿using System.Collections.Generic;
+using System.Linq;
+using DashworksTestAutomation.Base;
 using DashworksTestAutomation.Extensions;
 using NUnit.Framework;
 using OpenQA.Selenium;
 using OpenQA.Selenium.Support.PageObjects;
-using System.Collections.Generic;
-using System.Linq;
 
 namespace DashworksTestAutomation.Pages.Evergreen
 {
     internal class DetailsPage : SeleniumBasePage
     {
+        public const string ItemImageSelector = ".//i";
+
+        public const string LinkSelector = ".//a";
+
+        public const string ColumnWithImageAndLinkSelector = ".//div[@col-id='userName'][@role='gridcell']";
+
         [FindsBy(How = How.XPath, Using = ".//div[@class='tabContainer ng-star-inserted']")]
         public IWebElement TabContainer { get; set; }
 
@@ -46,12 +52,6 @@ namespace DashworksTestAutomation.Pages.Evergreen
         [FindsBy(How = How.XPath, Using = ".//div[@class='chartContainer ng-star-inserted']")]
         public IWebElement GraphicInOpenedSection { get; set; }
 
-        public const string ItemImageSelector = ".//i";
-
-        public const string LinkSelector = ".//a";
-
-        public const string ColumnWithImageAndLinkSelector = ".//div[@col-id='userName'][@role='gridcell']";
-
         public override List<By> GetPageIdentitySelectors()
         {
             Driver.WaitForDataLoading();
@@ -77,11 +77,12 @@ namespace DashworksTestAutomation.Pages.Evergreen
 
         public void ExpandAllSections()
         {
-            Driver.WaitWhileControlIsNotDisplayed(By.XPath(".//i[@class='material-icons mat-item_add mat-18']/ancestor::button"));
-            var expandButtons = Driver.FindElements(By.XPath(".//i[@class='material-icons mat-item_add mat-18']/ancestor::button"));
+            Driver.WaitWhileControlIsNotDisplayed(
+                By.XPath(".//i[@class='material-icons mat-item_add mat-18']/ancestor::button"));
+            var expandButtons =
+                Driver.FindElements(By.XPath(".//i[@class='material-icons mat-item_add mat-18']/ancestor::button"));
 
             if (expandButtons.Any())
-            {
                 foreach (IWebElement button in expandButtons)
                 {
                     //Driver.WaitWhileControlIsNotDisplayed<DetailsPage>(() => button);
@@ -89,22 +90,20 @@ namespace DashworksTestAutomation.Pages.Evergreen
                     button.Click();
                     Driver.WaitForDataLoading();
                 }
-            }
         }
 
         public void CloseAllSections()
         {
-            var closeButtons = Driver.FindElements(By.XPath(".//button[@aria-describedby='cdk-describedby-message-25']"));
+            var closeButtons =
+                Driver.FindElements(By.XPath(".//button[@aria-describedby='cdk-describedby-message-25']"));
 
             if (closeButtons.Any())
-            {
                 foreach (IWebElement button in closeButtons)
                 {
                     Driver.MouseHover(button);
                     button.Click();
                     Driver.WaitForDataLoading();
                 }
-            }
         }
 
         public List<KeyValuePair<string, string>> GetFieldsWithContent(string categoryName)
@@ -129,10 +128,7 @@ namespace DashworksTestAutomation.Pages.Evergreen
         {
             var allFieldsContent = Driver.FindElements(By.XPath(".//tbody/tr/td[2]"));
 
-            foreach (IWebElement element in allFieldsContent)
-            {
-                Assert.IsFalse(string.IsNullOrEmpty(element.Text));
-            }
+            foreach (IWebElement element in allFieldsContent) Assert.IsFalse(string.IsNullOrEmpty(element.Text));
         }
 
         public bool IsFieldPresent(string fieldName)

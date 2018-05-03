@@ -1,11 +1,11 @@
-﻿using DashworksTestAutomation.Providers;
+﻿using System;
+using DashworksTestAutomation.Providers;
+using DashworksTestAutomation.Utils;
 using OpenQA.Selenium.Chrome;
 using OpenQA.Selenium.Edge;
 using OpenQA.Selenium.Firefox;
 using OpenQA.Selenium.IE;
 using OpenQA.Selenium.Remote;
-using System;
-using DashworksTestAutomation.Utils;
 
 namespace DashworksTestAutomation.Base
 {
@@ -83,7 +83,7 @@ namespace DashworksTestAutomation.Base
             capabilities.SetCapability(CapabilityType.Platform, Browser.Platform);
             capabilities.SetCapability("screenResolution", Browser.Resolution);
 
-            capabilities.SetCapability("username",SauceLabsCredentialsProvider.Username);
+            capabilities.SetCapability("username", SauceLabsCredentialsProvider.Username);
             capabilities.SetCapability("accessKey", SauceLabsCredentialsProvider.AccessKey);
 
             var driver = new CustomRemoteWebDriver(new Uri(Browser.HubUri), capabilities, TimeSpan.FromSeconds(60));

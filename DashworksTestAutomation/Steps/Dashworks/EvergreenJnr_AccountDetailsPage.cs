@@ -1,4 +1,6 @@
-﻿using DashworksTestAutomation.DTO;
+﻿using System.IO;
+using System.Threading;
+using DashworksTestAutomation.DTO;
 using DashworksTestAutomation.Extensions;
 using DashworksTestAutomation.Pages.Evergreen;
 using DashworksTestAutomation.Pages.Evergreen.ProfileDetailsPages;
@@ -6,9 +8,6 @@ using DashworksTestAutomation.Providers;
 using NUnit.Framework;
 using OpenQA.Selenium;
 using OpenQA.Selenium.Remote;
-using System;
-using System.IO;
-using System.Threading;
 using TechTalk.SpecFlow;
 
 namespace DashworksTestAutomation.Steps.Dashworks
@@ -156,7 +155,7 @@ namespace DashworksTestAutomation.Steps.Dashworks
         public void WhenUserUploadIncorrectAvatarToAccountDetails()
         {
             var page = _driver.NowAt<AccountDetailsPage>();
-            IAllowsFileDetection allowsDetection = (IAllowsFileDetection) _driver;
+            IAllowsFileDetection allowsDetection = _driver;
             allowsDetection.FileDetector = new LocalFileDetector();
             string file = Path.GetDirectoryName(Path.GetDirectoryName(TestContext.CurrentContext.TestDirectory)) +
                           ResourceFilesNamesProvider.IncorrectFile;
@@ -167,7 +166,7 @@ namespace DashworksTestAutomation.Steps.Dashworks
         public void WhenUserUploadIncorrectAvatarToProfileDetails()
         {
             var page = _driver.NowAt<AccountDetailsPage>();
-            IAllowsFileDetection allowsDetection = (IAllowsFileDetection) _driver;
+            IAllowsFileDetection allowsDetection = _driver;
             allowsDetection.FileDetector = new LocalFileDetector();
             string file = Path.GetDirectoryName(Path.GetDirectoryName(TestContext.CurrentContext.TestDirectory)) +
                           ResourceFilesNamesProvider.CorrectFile;
@@ -223,7 +222,7 @@ namespace DashworksTestAutomation.Steps.Dashworks
                 page.FullNameField.Clear();
                 page.FullNameField.SendKeys(_userDto.FullName);
                 page.EmailField.Clear();
-                page.EmailField.SendKeys(String.IsNullOrEmpty(_userDto.Email)
+                page.EmailField.SendKeys(string.IsNullOrEmpty(_userDto.Email)
                     ? "automation@juriba.com"
                     : _userDto.Email);
                 page.RemoveButton.Click();

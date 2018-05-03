@@ -1,18 +1,14 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using System.Collections.Generic;
 
 namespace DashworksTestAutomation.DTO.RuntimeVariables
 {
-    public class TeamName 
+    public class TeamName
     {
-        public List<string> Value { get; set; }
-
         public TeamName()
         {
             Value = new List<string>();
         }
+
+        public List<string> Value { get; set; }
     }
 }

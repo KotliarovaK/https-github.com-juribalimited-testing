@@ -1,9 +1,9 @@
-﻿using DashworksTestAutomation.Extensions;
+﻿using System;
+using DashworksTestAutomation.Extensions;
 using DashworksTestAutomation.Pages.Evergreen;
 using DashworksTestAutomation.Utils;
 using NUnit.Framework;
 using OpenQA.Selenium.Remote;
-using System;
 using TechTalk.SpecFlow;
 
 namespace DashworksTestAutomation.Steps.Dashworks
@@ -75,6 +75,7 @@ namespace DashworksTestAutomation.Steps.Dashworks
             {
                 Assert.IsTrue(menu.UserItemsMenu.Displayed);
             }
+
             Assert.IsTrue(menu.UserItemsMenu.Displayed, "Item Menu is not displayed correctly");
         }
 
@@ -91,7 +92,9 @@ namespace DashworksTestAutomation.Steps.Dashworks
             {
                 Assert.IsTrue(menu.UserNotificationsMessage.Displayed);
             }
-            Assert.IsTrue(menu.UserNotificationsMessage.Displayed, "User Notifications Message is not displayed correctly");
+
+            Assert.IsTrue(menu.UserNotificationsMessage.Displayed,
+                "User Notifications Message is not displayed correctly");
         }
 
         [Then(@"List details button is disabled")]

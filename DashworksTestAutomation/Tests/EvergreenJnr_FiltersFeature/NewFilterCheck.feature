@@ -31,7 +31,7 @@ Examples:
 	| MigrationP: Target App | Equals, Does not equal | Zune (A01)        | MigrationP: Target App is Zune (A01)        | 1         |
 	| UserSchedu: Target App | Equals, Does not equal | Zune (A01)        | UserSchedu: Target App is Zune (A01)        | 1         |
 
-@Evergreen @Applications @Evergreen_FiltersFeature @NewFilterCheck @DAS10828 @DAS12388
+@Evergreen @Applications @Evergreen_FiltersFeature @NewFilterCheck @DAS10828
 Scenario Outline: EvergreenJnr_ApplicationsList_CheckThatTargetAppKeyFilterIsAddedToTheList
 	When User clicks "Applications" on the left-hand menu
 	Then "Applications" list should be displayed to the user
@@ -90,6 +90,51 @@ Examples:
 	| Havoc(BigD: Target App Readiness | Equals, Does not equal | None         | Havoc(BigD: Target App Readiness is None  | 1,067     |
 	| MigrationP: Target App Readiness | Equals, Does not equal | Blue         | MigrationP: Target App Readiness is Blue  | 189       |
 	| UserSchedu: Target App Readiness | Equals, Does not equal | Grey         | UserSchedu: Target App Readiness is Grey  | 981       |
+
+	@Evergreen @Applications @Evergreen_FiltersFeature @NewFilterCheck @DAS12388
+Scenario Outline: EvergreenJnr_ApplicationsList_CheckThatAddColumnCheckboxIsDisplayedForTargetAppKeyFilters
+	When User clicks "Applications" on the left-hand menu
+	Then "Applications" list should be displayed to the user
+	When User clicks the Filters button
+	Then Filters panel is displayed to the user
+	When user select "<FilterName>" filter
+	Then checkboxes are displayed to the User:
+	| SelectedCheckboxes        |
+	| Add Target App Key column |
+
+	Examples: 
+	| FilterName                 |
+	| Windows7Mi: Target App Key |
+	| Babel(Engl: Target App Key |
+	| Barry'sUse: Target App Key |
+	| ComputerSc: Target App Key |
+	| Havoc(BigD: Target App Key |
+	| MigrationP: Target App Key |
+	| UserSchedu: Target App Key |
+	| prK: Target App Key        |
+
+	@Evergreen @Applications @Evergreen_FiltersFeature @NewFilterCheck @DAS12388
+Scenario Outline: EvergreenJnr_ApplicationsList_CheckThatAddColumnCheckboxIsDisplayedForTargetAppIDFilters
+	When User clicks "Applications" on the left-hand menu
+	Then "Applications" list should be displayed to the user
+	When User clicks the Filters button
+	Then Filters panel is displayed to the user
+	When user select "<FilterName>" filter
+	Then checkboxes are displayed to the User:
+	| SelectedCheckboxes        |
+	| Add Target App ID column |
+
+	Examples: 
+	| FilterName                |
+	| Windows7Mi: Target App ID |
+	| Babel(Engl: Target App ID |
+	| Barry'sUse: Target App ID |
+	| ComputerSc: Target App ID |
+	| EmailMigra: Target App ID |
+	| Havoc(BigD: Target App ID |
+	| MigrationP: Target App ID |
+	| UserSchedu: Target App ID |
+	| prK: Target App ID        |
 
 @Evergreen @AllLists @Evergreen_FiltersFeature @NewFilterCheck @DAS10578
 Scenario Outline: EvergreenJnr_AllLists_CheckThatDashworksFirstSeenFilterIsAddedToTheFilterList

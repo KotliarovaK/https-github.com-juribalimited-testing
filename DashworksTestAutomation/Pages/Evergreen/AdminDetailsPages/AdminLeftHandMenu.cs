@@ -1,8 +1,8 @@
-﻿using DashworksTestAutomation.Base;
+﻿using System.Collections.Generic;
+using DashworksTestAutomation.Base;
 using DashworksTestAutomation.Extensions;
 using OpenQA.Selenium;
 using OpenQA.Selenium.Support.PageObjects;
-using System.Collections.Generic;
 
 namespace DashworksTestAutomation.Pages.Evergreen.AdminDetailsPages
 {
@@ -40,7 +40,7 @@ namespace DashworksTestAutomation.Pages.Evergreen.AdminDetailsPages
                 SelectorFor(this, p => p.AdminTitle),
                 SelectorFor(this, p => p.Projects),
                 SelectorFor(this, p => p.Teams),
-                SelectorFor(this, p => p.Buckets),
+                SelectorFor(this, p => p.Buckets)
             };
         }
     }

@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Linq.Expressions;
 using DashworksTestAutomation.Extensions;
+using DashworksTestAutomation.Utils;
 using OpenQA.Selenium;
 using OpenQA.Selenium.Interactions;
 using OpenQA.Selenium.Remote;
@@ -27,17 +28,17 @@ namespace DashworksTestAutomation.Base
                 .GetProperties()
                 .Select(p => p.GetFirstDecoration<FindsByAttribute>())
                 .Where(a =>
-                    ((object) a) != null
+                    (object) a != null
                     && a != null)
-                .Select(Utils.ByFactory.From)
+                .Select(ByFactory.From)
                 .ToList();
         }
 
         public By SelectorFor<TPage, TProperty>(TPage page, Expression<Func<TPage, TProperty>> expression)
         {
-            var attribute = Extensions.ReflectionExtensions.ResolveMember(page, expression)
+            var attribute = ReflectionExtensions.ResolveMember(page, expression)
                 .GetFirstDecoration<FindsByAttribute>();
-            return Utils.ByFactory.From(attribute);
+            return ByFactory.From(attribute);
         }
     }
 }

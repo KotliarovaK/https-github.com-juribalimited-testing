@@ -1,12 +1,13 @@
-﻿using DashworksTestAutomation.Extensions;
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using DashworksTestAutomation.DTO.RuntimeVariables;
+using DashworksTestAutomation.Extensions;
+using DashworksTestAutomation.Helpers;
 using DashworksTestAutomation.Pages.Evergreen;
 using NUnit.Framework;
 using OpenQA.Selenium.Interactions;
 using OpenQA.Selenium.Remote;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using DashworksTestAutomation.Helpers;
 using TechTalk.SpecFlow;
 
 namespace DashworksTestAutomation.Steps.Dashworks
@@ -15,9 +16,9 @@ namespace DashworksTestAutomation.Steps.Dashworks
     internal class EvergreenJnr_BaseDashboardPage : SpecFlowContext
     {
         private readonly RemoteWebDriver _driver;
-        private readonly DTO.RuntimeVariables.ListsDetails _listDetails;
+        private readonly ListsDetails _listDetails;
 
-        public EvergreenJnr_BaseDashboardPage(RemoteWebDriver driver, DTO.RuntimeVariables.ListsDetails listsDetails)
+        public EvergreenJnr_BaseDashboardPage(RemoteWebDriver driver, ListsDetails listsDetails)
         {
             _driver = driver;
             _listDetails = listsDetails;
@@ -184,7 +185,6 @@ namespace DashworksTestAutomation.Steps.Dashworks
 
             foreach (var row in table.Rows)
             {
-
                 //Sort newly added column to got only value at first places
                 WhenUserClickOnColumnHeader(row["ColumnName"]);
                 var content = page.GetColumnContent(row["ColumnName"]);
@@ -238,7 +238,8 @@ namespace DashworksTestAutomation.Steps.Dashworks
         public void ThenTextIsDisplayedInFilterContainerForListName(string text, string listName)
         {
             var page = _driver.NowAt<BaseDashboardPage>();
-            Assert.AreEqual(text.Replace("{LIST_ID}", _listDetails.GetListIdByName(listName)), page.FilterContainer.Text.TrimStart(' ').TrimEnd(' '),
+            Assert.AreEqual(text.Replace("{LIST_ID}", _listDetails.GetListIdByName(listName)),
+                page.FilterContainer.Text.TrimStart(' ').TrimEnd(' '),
                 "Filter is created incorrectly");
         }
 

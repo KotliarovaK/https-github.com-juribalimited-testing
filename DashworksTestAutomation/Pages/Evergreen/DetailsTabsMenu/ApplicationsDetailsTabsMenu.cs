@@ -1,11 +1,8 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using DashworksTestAutomation.Base;
 using DashworksTestAutomation.Extensions;
-using Microsoft.VisualStudio.TestTools.UnitTesting;
 using OpenQA.Selenium;
 using OpenQA.Selenium.Support.PageObjects;
 
@@ -13,16 +10,25 @@ namespace DashworksTestAutomation.Pages.Evergreen.DetailsTabsMenu
 {
     internal class ApplicationsDetailsTabsMenu : SeleniumBasePage
     {
-        [FindsBy(How = How.XPath, Using =".//span[text()='Application Summary']/ancestor::div[@class='field-category no-side-padding collapsed']")]
+        public const string FilterCheckboxValuesSelector = ".//div[@class='boolean-icon ng-star-inserted']";
+
+        [FindsBy(How = How.XPath,
+            Using =
+                ".//span[text()='Application Summary']/ancestor::div[@class='field-category no-side-padding collapsed']")]
         public IWebElement ApplicationSummarySection { get; set; }
 
-        [FindsBy(How = How.XPath, Using =".//span[text()='Application Detail']/ancestor::div[@class='field-category no-side-padding collapsed']")]
+        [FindsBy(How = How.XPath,
+            Using =
+                ".//span[text()='Application Detail']/ancestor::div[@class='field-category no-side-padding collapsed']")]
         public IWebElement ApplicationDetailSection { get; set; }
 
-        [FindsBy(How = How.XPath, Using =".//span[text()='Advertisements']/ancestor::div[@class='field-category no-side-padding collapsed']")]
+        [FindsBy(How = How.XPath,
+            Using =
+                ".//span[text()='Advertisements']/ancestor::div[@class='field-category no-side-padding collapsed']")]
         public IWebElement AdvertisementsSection { get; set; }
 
-        [FindsBy(How = How.XPath, Using = ".//span[text()='Collections']/ancestor::div[@class='field-category no-side-padding collapsed']")]
+        [FindsBy(How = How.XPath,
+            Using = ".//span[text()='Collections']/ancestor::div[@class='field-category no-side-padding collapsed']")]
         public IWebElement CollectionsSection { get; set; }
 
         [FindsBy(How = How.XPath, Using = ".//div[@class='mat-select-arrow']")]
@@ -31,7 +37,8 @@ namespace DashworksTestAutomation.Pages.Evergreen.DetailsTabsMenu
         [FindsBy(How = How.XPath, Using = ".//div[@class='ng-star-inserted']/span")]
         public IWebElement CheckboxexStringFilter { get; set; }
 
-        [FindsBy(How = How.XPath, Using = ".//mat-option[@class='selectAllOption mat-option mat-option-multiple ng-star-inserted']")]
+        [FindsBy(How = How.XPath,
+            Using = ".//mat-option[@class='selectAllOption mat-option mat-option-multiple ng-star-inserted']")]
         public IWebElement AllCheckboxesSelectedStringFilter { get; set; }
 
         [FindsBy(How = How.XPath, Using = ".//div[@style= 'opacity: 1;']")]
@@ -40,10 +47,13 @@ namespace DashworksTestAutomation.Pages.Evergreen.DetailsTabsMenu
         [FindsBy(How = How.XPath, Using = ".//mat-option[contains(@class, 'mat-selected')]")]
         public IWebElement SelectedStringFilters { get; set; }
 
-        [FindsBy(How = How.XPath, Using = ".//mat-option[@class='mat-option mat-option-multiple ng-star-inserted mat-active']")]
+        [FindsBy(How = How.XPath,
+            Using = ".//mat-option[@class='mat-option mat-option-multiple ng-star-inserted mat-active']")]
         public IWebElement UncheckedStringFilters { get; set; }
 
-        [FindsBy(How = How.XPath, Using = ".//mat-pseudo-checkbox[@class='mat-option-pseudo-checkbox mat-pseudo-checkbox ng-star-inserted mat-pseudo-checkbox-checked']")]
+        [FindsBy(How = How.XPath,
+            Using =
+                ".//mat-pseudo-checkbox[@class='mat-option-pseudo-checkbox mat-pseudo-checkbox ng-star-inserted mat-pseudo-checkbox-checked']")]
         public IWebElement SelectedCheckboxStringFilter { get; set; }
 
         [FindsBy(How = How.XPath, Using = ".//div[@class='boolean-icon ng-star-inserted']/span")]
@@ -58,8 +68,6 @@ namespace DashworksTestAutomation.Pages.Evergreen.DetailsTabsMenu
         [FindsBy(How = How.XPath, Using = ".//body")]
         public IWebElement BodyContainer { get; set; }
 
-        public const string FilterCheckboxValuesSelector = ".//div[@class='boolean-icon ng-star-inserted']";
-
         [FindsBy(How = How.XPath, Using = FilterCheckboxValuesSelector)]
         public IList<IWebElement> FilterCheckboxValues { get; set; }
 
@@ -68,33 +76,31 @@ namespace DashworksTestAutomation.Pages.Evergreen.DetailsTabsMenu
 
         [FindsBy(How = How.XPath, Using = ".//span[@class='ag-tab']//span[@class='ag-icon ag-icon-filter']")]
         public IWebElement FilterButton { get; set; }
-        
+
         [FindsBy(How = How.XPath, Using = ".//span[@class='ag-column-select-label']")]
         public IWebElement ColumnCheckboxName { get; set; }
 
         [FindsBy(How = How.XPath, Using = ".//div[@class='ag-body-container']/div")]
         public IWebElement TableContent { get; set; }
 
-        [FindsBy(How = How.XPath, Using = ".//mat-pseudo-checkbox[@class='mat-option-pseudo-checkbox mat-pseudo-checkbox ng-star-inserted mat-pseudo-checkbox-checked']")]
+        [FindsBy(How = How.XPath,
+            Using =
+                ".//mat-pseudo-checkbox[@class='mat-option-pseudo-checkbox mat-pseudo-checkbox ng-star-inserted mat-pseudo-checkbox-checked']")]
         public IWebElement ColumnCheckboxChecked { get; set; }
 
         [FindsBy(How = How.XPath, Using = ".//div[@class='ag-filter-body']//input")]
         public IWebElement FilterSearchTextbox { get; set; }
 
-        [FindsBy(How = How.XPath, Using = ".//div[@role='row']")]
+        [FindsBy(How = How.XPath, Using = ".//div[@class='ag-body-container']/div[@role='row']")]
         public IList<IWebElement> TableRows { get; set; }
+
+        public const string SiteColumnSelector = ".//div[@col-id='packageSite']";
 
         public override List<By> GetPageIdentitySelectors()
         {
             Driver.WaitForDataLoading();
 
-            return new List<By>
-            {
-                //SelectorFor(this, p => p.ApplicationSummarySection),
-                //SelectorFor(this, p => p.ApplicationDetailSection),
-                //SelectorFor(this, p => p.AdvertisementsSection),
-                //SelectorFor(this, p => p.CollectionsSection),
-            };
+            return new List<By>();
         }
 
         public void OpenColumnSettingsByName(string columnName)
@@ -112,19 +118,21 @@ namespace DashworksTestAutomation.Pages.Evergreen.DetailsTabsMenu
             if (columnName.Contains("'"))
             {
                 var strings = columnName.Split('\'');
-                selector = $".//div[@role='presentation']/span[contains(text(),'{strings[0]}')][contains(text(), '{strings[1]}')]";
+                selector =
+                    $".//div[@role='presentation']/span[contains(text(),'{strings[0]}')][contains(text(), '{strings[1]}')]";
             }
             else
             {
                 selector = $".//div[@role='presentation']/span[text()='{columnName}']";
             }
+
             return Driver.IsElementDisplayed(By.XPath(selector));
         }
 
         public List<string> GetColumnContent(string columnName)
         {
             By by = By.XPath(
-                $".//div[@class='ag-body']//div[@class='ag-body-container']/div/div[{GetColumnNumberByName(columnName)}]");
+                $".//div[@class='ag-body-viewport']//div[@class='ag-body-container']/div/div[{GetColumnNumberByName(columnName)}]");
             return Driver.FindElements(by).Select(x => x.Text).ToList();
         }
 
@@ -146,7 +154,8 @@ namespace DashworksTestAutomation.Pages.Evergreen.DetailsTabsMenu
         public void GetStringFilterByColumnName(string columnName)
         {
             By byControl =
-                By.XPath($".//div[@role='presentation']/div[2]/div[{GetColumnNumberByName(columnName)}][@aria-hidden='true']");
+                By.XPath(
+                    $".//div[@role='presentation']/div[2]/div[{GetColumnNumberByName(columnName)}][@aria-hidden='true']");
             Driver.WaitForDataLoading();
             Driver.WaitWhileControlIsNotDisplayed(byControl);
             Driver.FindElement(byControl).Click();
@@ -155,7 +164,8 @@ namespace DashworksTestAutomation.Pages.Evergreen.DetailsTabsMenu
         public bool GetStringFilterTextByColumnName(string columnName)
         {
             return Driver.IsElementDisplayed(
-                By.XPath($".//div[@role='presentation']/div[2]/div[{GetColumnNumberByName(columnName)}]//mat-placeholder[@class='ng-star-inserted'][text()='All']"));
+                By.XPath(
+                    $".//div[@role='presentation']/div[2]/div[{GetColumnNumberByName(columnName)}]//mat-placeholder[@class='ng-star-inserted'][text()='All']"));
         }
 
         public IWebElement GetFilterByName(string filterName)
@@ -166,14 +176,17 @@ namespace DashworksTestAutomation.Pages.Evergreen.DetailsTabsMenu
 
         public IWebElement GetStringFilterByName(string filterName)
         {
-            Driver.WaitWhileControlIsNotDisplayed(By.XPath($".//div[@class='ng-star-inserted']/span[(text()='{filterName}')]"));
+            Driver.WaitWhileControlIsNotDisplayed(
+                By.XPath($".//div[@class='ng-star-inserted']/span[(text()='{filterName}')]"));
             return Driver.FindElement(By.XPath($".//div[@class='ng-star-inserted']/span[(text()='{filterName}')]"));
         }
 
         public IWebElement GetBooleanStringFilterByName(string filterName)
         {
-            Driver.WaitWhileControlIsNotDisplayed(By.XPath($".//div[@class='boolean-icon ng-star-inserted']/span[(text()='{filterName}')]"));
-            return Driver.FindElement(By.XPath($".//div[@class='boolean-icon ng-star-inserted']/span[(text()='{filterName}')]"));
+            Driver.WaitWhileControlIsNotDisplayed(
+                By.XPath($".//div[@class='boolean-icon ng-star-inserted']/span[(text()='{filterName}')]"));
+            return Driver.FindElement(
+                By.XPath($".//div[@class='boolean-icon ng-star-inserted']/span[(text()='{filterName}')]"));
         }
 
         public string GetInstalledFilterPanelHeight()
@@ -205,14 +218,16 @@ namespace DashworksTestAutomation.Pages.Evergreen.DetailsTabsMenu
 
         public string GetColumnIdByColumnName(string columnName)
         {
-            var headerSelector = By.XPath($".//div[@class='ag-header-container']//span[text()='{columnName}']//ancestor::div[@col-id]");
+            var headerSelector =
+                By.XPath($".//div[@class='ag-header-container']//span[text()='{columnName}']//ancestor::div[@col-id]");
             Driver.WaitForDataLoading();
             return Driver.FindElement(headerSelector).GetAttribute("col-id");
         }
 
         public IWebElement GetSettingByNameDetailsPage(string settingName)
         {
-            Driver.WaitWhileControlIsNotDisplayed(By.XPath($".//span[@class='ag-menu-option-text'][text()='{settingName}']"));
+            Driver.WaitWhileControlIsNotDisplayed(
+                By.XPath($".//span[@class='ag-menu-option-text'][text()='{settingName}']"));
             return Driver.FindElement(By.XPath($".//span[@id='eName'][text()='{settingName}']"));
         }
 
@@ -267,6 +282,5 @@ namespace DashworksTestAutomation.Pages.Evergreen.DetailsTabsMenu
             return Driver.IsElementDisplayed(
                 By.XPath($".//div[@class='ag-header-cell-label']/span[text()='{columnName}']"));
         }
-
     }
 }

@@ -1,7 +1,5 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using System.Linq;
-using DashworksTestAutomation.DTO.RuntimeVariables;
 using NUnit.Framework;
 using OpenQA.Selenium;
 using OpenQA.Selenium.Remote;
@@ -30,12 +28,8 @@ namespace DashworksTestAutomation.Steps.Base
         {
             List<LogEntry> errorsList = new List<LogEntry>();
             foreach (var entry in _driver.Manage().Logs.GetLog(LogType.Browser).ToList())
-            {
                 if (entry.Level == LogLevel.Severe)
-                {
                     errorsList.Add(entry);
-                }
-            }
             Assert.IsEmpty(errorsList, "Error message is displayed in the console");
         }
     }

@@ -1,17 +1,13 @@
-﻿using DashworksTestAutomation.Extensions;
-using DashworksTestAutomation.Pages.Evergreen;
-using NUnit.Framework;
-using OpenQA.Selenium.Interactions;
-using OpenQA.Selenium.Remote;
-using System;
-using System.Collections.Generic;
+﻿using System;
 using System.Linq;
-using DashworksTestAutomation.DTO;
 using DashworksTestAutomation.DTO.RuntimeVariables;
+using DashworksTestAutomation.Extensions;
 using DashworksTestAutomation.Helpers;
 using DashworksTestAutomation.Pages.Evergreen.AdminDetailsPages;
 using DashworksTestAutomation.Utils;
+using NUnit.Framework;
 using OpenQA.Selenium;
+using OpenQA.Selenium.Remote;
 using TechTalk.SpecFlow;
 
 namespace DashworksTestAutomation.Steps.Dashworks
@@ -20,8 +16,8 @@ namespace DashworksTestAutomation.Steps.Dashworks
     internal class EvergreenJnr_AdminPage : SpecFlowContext
     {
         private readonly RemoteWebDriver _driver;
-        private readonly UsedUsers _usedUsers;
         private readonly TeamName _teamName;
+        private readonly UsedUsers _usedUsers;
 
         public EvergreenJnr_AdminPage(RemoteWebDriver driver, UsedUsers usedUsers, TeamName teamName)
         {
@@ -142,6 +138,7 @@ namespace DashworksTestAutomation.Steps.Dashworks
             {
                 page = _driver.NowAt<ProjectsPage>();
             }
+
             Assert.IsTrue(page.SelectedItemInProjectScopeChangesSection(text),
                 $"{text} is not displayed in the Project Scope Changes section");
         }
@@ -191,16 +188,16 @@ namespace DashworksTestAutomation.Steps.Dashworks
                 return;
 
             foreach (string name in _teamName.Value)
-            {
                 try
                 {
                     DeleteTeam(name);
                 }
-                catch { }
-            }
+                catch
+                {
+                }
         }
 
-        private void DeleteTeam (string teamName)
+        private void DeleteTeam(string teamName)
         {
             DatabaseHelper.ExecuteQuery($"delete from[PM].[dbo].[Teams] where[TeamName] = '{teamName}'");
         }
@@ -299,7 +296,7 @@ namespace DashworksTestAutomation.Steps.Dashworks
         public void WhenUserEntersTextInTheSearchFieldForColumnOnTheTeamsPage(string text, string columnName)
         {
             var filterElement = _driver.NowAt<TeamsPage>();
-            filterElement.GetSearchFieldByColumnName((columnName), text);
+            filterElement.GetSearchFieldByColumnName(columnName, text);
         }
 
         [When(@"User selects all rows on the Teams page")]
@@ -427,7 +424,8 @@ namespace DashworksTestAutomation.Steps.Dashworks
         {
             var page = _driver.NowAt<BucketsPage>();
             _driver.WaitWhileControlIsNotDisplayed<BucketsPage>(() => page.SuccessMessageBucketsPage);
-            Assert.IsTrue(page.SuccessUpdatedMessageBucketsPage(bucketName), $"Success Message is not displayed for {bucketName}");
+            Assert.IsTrue(page.SuccessUpdatedMessageBucketsPage(bucketName),
+                $"Success Message is not displayed for {bucketName}");
         }
 
         [Then(@"Error message with ""(.*)"" text is displayed on the Buckets page")]
@@ -449,7 +447,7 @@ namespace DashworksTestAutomation.Steps.Dashworks
         public void WhenUserEntersTextInTheSearchFieldForColumnOnTheBucketsPage(string text, string columnName)
         {
             var filterElement = _driver.NowAt<BucketsPage>();
-            filterElement.GetSearchFieldByColumnName((columnName), text);
+            filterElement.GetSearchFieldByColumnName(columnName, text);
         }
 
         [When(@"User clicks content from ""(.*)"" column on the Buckets page")]
@@ -464,7 +462,8 @@ namespace DashworksTestAutomation.Steps.Dashworks
         public void ThenBucketDetailsIsDisplayedToTheUser(string bucketName)
         {
             var teamElement = _driver.NowAt<BucketsPage>();
-            Assert.IsTrue(teamElement.AppropriateBucketName(bucketName), $"{bucketName} is not displayed on the Bucket page");
+            Assert.IsTrue(teamElement.AppropriateBucketName(bucketName),
+                $"{bucketName} is not displayed on the Bucket page");
         }
 
         [When(@"User selects all rows on the Buckets page")]
@@ -576,7 +575,7 @@ namespace DashworksTestAutomation.Steps.Dashworks
         public void WhenUserClicksUpdateBucketButtonOnTheBucketsPage()
         {
             var button = _driver.NowAt<BucketsPage>();
-             button.UpdateBucketButton.Click();
+            button.UpdateBucketButton.Click();
         }
 
         [Then(@"User add following devices to the Bucket")]
@@ -589,6 +588,7 @@ namespace DashworksTestAutomation.Steps.Dashworks
                 bucketElement.AddBucket(row["DeviceName"]);
                 bucketElement.SearchTextbox.ClearWithHomeButton(_driver);
             }
+
             bucketElement.AddDevicesButton.Click();
         }
 
@@ -602,6 +602,7 @@ namespace DashworksTestAutomation.Steps.Dashworks
                 bucketElement.AddUser(row["UserName"]);
                 bucketElement.SearchTextbox.ClearWithHomeButton(_driver);
             }
+
             bucketElement.AddUsersButton.Click();
         }
 
@@ -615,6 +616,7 @@ namespace DashworksTestAutomation.Steps.Dashworks
                 bucketElement.AddMailbox(row["MailboxName"]);
                 bucketElement.SearchTextbox.ClearWithHomeButton(_driver);
             }
+
             bucketElement.AddMailboxesButton.Click();
         }
 
@@ -663,7 +665,7 @@ namespace DashworksTestAutomation.Steps.Dashworks
         public void WhenUserEntersTextInTheSearchFieldForColumnOnTheProjectsPage(string text, string columnName)
         {
             var searchElement = _driver.NowAt<ProjectsPage>();
-            searchElement.GetSearchFieldByColumnName((columnName), text);
+            searchElement.GetSearchFieldByColumnName(columnName, text);
         }
 
         [When(@"User selects all rows on the Projects page")]

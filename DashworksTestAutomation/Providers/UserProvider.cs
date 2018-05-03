@@ -1,21 +1,23 @@
-﻿using DashworksTestAutomation.DTO;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Configuration;
 using System.Linq;
 using System.Threading;
+using DashworksTestAutomation.DTO;
 
 namespace DashworksTestAutomation.Providers
 {
     internal class UserProvider
     {
-        private static Mutex _mut = new Mutex();
+        private static readonly Mutex _mut = new Mutex();
 
         private static int _iter;
 
         public static string Password = ConfigurationManager.AppSettings["user.password"];
 
-        private static List<UserDto> _accounts = new List<UserDto>(){ new UserDto()
+        private static readonly List<UserDto> _accounts = new List<UserDto>
+        {
+            new UserDto
             {
                 UserName = ConfigurationManager.AppSettings["user.login"],
                 Password = Password,
@@ -26,14 +28,12 @@ namespace DashworksTestAutomation.Providers
         static UserProvider()
         {
             for (int i = 2; i < int.Parse(ConfigurationManager.AppSettings["availableUsersRange"]); i++)
-            {
-                _accounts.Add(new UserDto()
+                _accounts.Add(new UserDto
                 {
                     UserName = $"automation_admin{i}",
                     Password = Password,
                     Language = ConfigurationManager.AppSettings["user.language"]
                 });
-            }
         }
 
         public static UserDto GetFreeUserAccount()

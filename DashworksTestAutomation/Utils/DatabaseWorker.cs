@@ -2,10 +2,10 @@
 
 namespace DashworksTestAutomation.Utils
 {
-    class DatabaseWorker
+    internal class DatabaseWorker
     {
         /// <summary>
-        /// Get user login name by his full name
+        ///     Get user login name by his full name
         /// </summary>
         /// <param name="fullName">[FullName] from [DesktopBI].[dbo].[UserProfiles] database</param>
         /// <returns></returns>
@@ -18,7 +18,7 @@ namespace DashworksTestAutomation.Utils
         }
 
         /// <summary>
-        /// Get user full name by his login
+        ///     Get user full name by his login
         /// </summary>
         /// <param name="name">User login on website</param>
         /// <returns></returns>
@@ -31,7 +31,7 @@ namespace DashworksTestAutomation.Utils
         }
 
         /// <summary>
-        /// Get user ID by his login
+        ///     Get user ID by his login
         /// </summary>
         /// <param name="name">User login on website</param>
         /// <returns></returns>

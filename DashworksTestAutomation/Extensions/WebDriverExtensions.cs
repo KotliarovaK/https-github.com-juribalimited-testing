@@ -1,17 +1,17 @@
-﻿using DashworksTestAutomation.Base;
-using DashworksTestAutomation.Utils;
-using OpenQA.Selenium;
-using OpenQA.Selenium.Interactions;
-using OpenQA.Selenium.Remote;
-using OpenQA.Selenium.Support.PageObjects;
-using OpenQA.Selenium.Support.UI;
-using System;
+﻿using System;
 using System.Collections;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.Linq;
 using System.Linq.Expressions;
 using System.Threading;
+using DashworksTestAutomation.Base;
+using DashworksTestAutomation.Utils;
+using OpenQA.Selenium;
+using OpenQA.Selenium.Interactions;
+using OpenQA.Selenium.Remote;
+using OpenQA.Selenium.Support.PageObjects;
+using OpenQA.Selenium.Support.UI;
 
 namespace DashworksTestAutomation.Extensions
 {
@@ -33,13 +33,13 @@ namespace DashworksTestAutomation.Extensions
             var type = typeof(T);
             var property = type.GetProperty(propertyName);
             var findsByAttributes =
-                property.GetCustomAttributes(typeof(FindsByAttribute), inherit: false).Single() as FindsByAttribute;
+                property.GetCustomAttributes(typeof(FindsByAttribute), false).Single() as FindsByAttribute;
             return ByFactory.From(findsByAttributes);
         }
 
         public static T NowAt<T>(this RemoteWebDriver driver) where T : SeleniumBasePage, new()
         {
-            var page = new T { Driver = driver, Actions = new Actions(driver) };
+            var page = new T {Driver = driver, Actions = new Actions(driver)};
             driver.WaitForLoadingElements(page, null);
             page.InitElements();
             return page;
@@ -47,7 +47,7 @@ namespace DashworksTestAutomation.Extensions
 
         public static T NowAtWithoutWait<T>(this RemoteWebDriver driver) where T : SeleniumBasePage, new()
         {
-            var page = new T { Driver = driver, Actions = new Actions(driver) };
+            var page = new T {Driver = driver, Actions = new Actions(driver)};
             page.InitElements();
             return page;
         }
@@ -60,7 +60,7 @@ namespace DashworksTestAutomation.Extensions
                 var formatedFileName =
                     fileName.Replace("\\", string.Empty).Replace("/", string.Empty).Replace("\"", "'");
                 var filePath = FileSystemHelper.GetPathForScreenshot(formatedFileName);
-                var screenshot = ((ITakesScreenshot)driver).GetScreenshot();
+                var screenshot = ((ITakesScreenshot) driver).GetScreenshot();
 
                 screenshot.SaveAsFile(filePath, ScreenshotImageFormat.Png);
                 Logger.Write($"Check screenshot by folklowing path: {filePath}");
@@ -122,15 +122,13 @@ namespace DashworksTestAutomation.Extensions
 
         public static void WaitForLoadingElements(this RemoteWebDriver driver, SeleniumBasePage page, By bySelector)
         {
-            var bys = bySelector != null ? new List<By> { bySelector } : page.GetPageIdentitySelectors();
+            var bys = bySelector != null ? new List<By> {bySelector} : page.GetPageIdentitySelectors();
 
             foreach (var by in bys)
-            {
                 //((IJavaScriptExecutor)driver).ExecuteScript("arguments[0].style.border='3px solid red'",
                 //	driver.FindElement(@by));
 
                 driver.WaitForElement(by);
-            }
 
             page.InitElements();
         }
@@ -139,7 +137,6 @@ namespace DashworksTestAutomation.Extensions
         {
             var attempts = NumberOfTimesToWait;
             while (attempts > 0)
-            {
                 try
                 {
                     attempts--;
@@ -168,7 +165,6 @@ namespace DashworksTestAutomation.Extensions
                 {
                     throw new Exception($"Error waiting element by '{by}' : {e.Message}");
                 }
-            }
         }
 
         public static void WaitForElements(this RemoteWebDriver driver, ReadOnlyCollection<IWebElement> elements)
@@ -200,7 +196,7 @@ namespace DashworksTestAutomation.Extensions
         public static void WaitWhileControlIsNotClickable<T>(this RemoteWebDriver driver,
             Expression<Func<IWebElement>> elementGetter)
         {
-            var propertyName = ((MemberExpression)elementGetter.Body).Member.Name;
+            var propertyName = ((MemberExpression) elementGetter.Body).Member.Name;
             var by = GetByFor<T>(propertyName);
             driver.WaitWhileControlIsNotClickable(by);
         }
@@ -222,7 +218,7 @@ namespace DashworksTestAutomation.Extensions
         public static void WaitWhileControlIsNotDisplayed<T>(this RemoteWebDriver driver,
             Expression<Func<IWebElement>> elementGetter)
         {
-            var propertyName = ((MemberExpression)elementGetter.Body).Member.Name;
+            var propertyName = ((MemberExpression) elementGetter.Body).Member.Name;
             var by = GetByFor<T>(propertyName);
             driver.WaitWhileControlIsNotDisplayed(by);
         }
@@ -273,7 +269,7 @@ namespace DashworksTestAutomation.Extensions
         public static void WaitWhileControlIsDisplayed<T>(this RemoteWebDriver driver,
             Expression<Func<IWebElement>> elementGetter)
         {
-            var propertyName = ((MemberExpression)elementGetter.Body).Member.Name;
+            var propertyName = ((MemberExpression) elementGetter.Body).Member.Name;
             var by = GetByFor<T>(propertyName);
             driver.WaitWhileControlIsDisplayed(by);
         }
@@ -292,7 +288,7 @@ namespace DashworksTestAutomation.Extensions
             }
         }
 
-        public static void WaitForTextToAppear(this RemoteWebDriver driver, IWebElement element, String textToAppear)
+        public static void WaitForTextToAppear(this RemoteWebDriver driver, IWebElement element, string textToAppear)
         {
             try
             {
@@ -307,7 +303,7 @@ namespace DashworksTestAutomation.Extensions
             }
         }
 
-        public static void WaitForTextToAppear(this RemoteWebDriver driver, By by, String textToAppear)
+        public static void WaitForTextToAppear(this RemoteWebDriver driver, By by, string textToAppear)
         {
             try
             {
@@ -351,7 +347,6 @@ namespace DashworksTestAutomation.Extensions
                 attempts++;
                 wasLoadingSpinnerDisplayed = driver.IsElementDisplayed(by);
                 if (wasLoadingSpinnerDisplayed)
-                {
                     try
                     {
                         WebDriverWait wait = new WebDriverWait(driver, waitTimeout);
@@ -363,22 +358,21 @@ namespace DashworksTestAutomation.Extensions
                             $"WARNING: Loading spinner is displayed longer that {waitTimeout.Seconds * attempts} seconds: {driver.Url}");
                         throw e;
                     }
-                }
                 else
                     break;
             } while (wasLoadingSpinnerDisplayed && attempts < 3);
         }
 
         /// <summary>
-        /// An expectation for checking that all elements present on the web page that
-        /// match the locator are NOT visible. Visibility means that the elements are not
-        /// only displayed but also have a height and width that is greater than 0.
+        ///     An expectation for checking that all elements present on the web page that
+        ///     match the locator are NOT visible. Visibility means that the elements are not
+        ///     only displayed but also have a height and width that is greater than 0.
         /// </summary>
         /// <param name="locator">The locator used to find the element.</param>
-        /// <returns>The list of <see cref="IWebElement"/> once it is located and visible.</returns>
+        /// <returns>The list of <see cref="IWebElement" /> once it is located and visible.</returns>
         public static Func<IWebDriver, bool> InvisibilityOfAllElementsLocatedBy(By locator)
         {
-            return (driver) =>
+            return driver =>
             {
                 try
                 {
@@ -398,6 +392,58 @@ namespace DashworksTestAutomation.Extensions
                     return true;
                 }
             };
+        }
+
+        #region Web element extensions
+
+        public static void SelectCustomSelectbox(this RemoteWebDriver driver, IWebElement selectbox, string option)
+        {
+            selectbox.Click();
+
+            //Small wait for dropdown display
+            Thread.Sleep(300);
+            var options = driver.FindElements(By.XPath(
+                ".//div[contains(@class,'mat-select-content ng-trigger ng-trigger-fadeInContent')]/mat-option"));
+            if (!options.Any())
+                throw new Exception($"Filter options were not loaded, unable to select '{option}'");
+            driver.MouseHover(options.Last());
+            options = driver.FindElements(By.XPath(
+                ".//div[contains(@class,'mat-select-content ng-trigger ng-trigger-fadeInContent')]/mat-option"));
+            driver.ClickByJavascript(options.First(x => x.Text.ContainsText(option)));
+        }
+
+        #endregion Web element extensions
+
+        /// <summary>
+        ///     Execute this method after some actions on page to get sent requests
+        /// </summary>
+        /// <param name="driver"></param>
+        /// <returns></returns>
+        public static List<string> GetAllRequests(this RemoteWebDriver driver)
+        {
+            var allRequests = new List<string>();
+            var scriptToExecute =
+                "var performance = window.performance || window.mozPerformance || window.msPerformance || window.webkitPerformance || {}; var network = performance.getEntries() || {}; return network;";
+            var netData = driver.ExecuteScript(scriptToExecute);
+            var collection = (IList) netData;
+            foreach (object o in collection)
+            {
+                var innerCollection = (Dictionary<string, object>) o;
+                foreach (KeyValuePair<string, object> keyValuePair in innerCollection)
+                    if (keyValuePair.Key.Equals("name") && !string.IsNullOrEmpty(keyValuePair.Value.ToString()) &&
+                        keyValuePair.Value.ToString().Contains("http"))
+                        allRequests.Add(keyValuePair.Value.ToString());
+            }
+
+            return allRequests;
+        }
+
+        public static string GetTooltipText(this RemoteWebDriver driver)
+        {
+            var toolTips = driver.FindElements(By.XPath(".//mat-tooltip-component"));
+            if (!toolTips.Any())
+                throw new Exception("Tool tip was not displayed");
+            return toolTips.First().Text;
         }
 
         #region Actions
@@ -456,7 +502,8 @@ namespace DashworksTestAutomation.Extensions
             ex.ExecuteScript("arguments[0].scrollIntoView(true);", element);
         }
 
-        public static void SetAttributeByJavascript(this RemoteWebDriver driver, IWebElement element, string attribute, string text)
+        public static void SetAttributeByJavascript(this RemoteWebDriver driver, IWebElement element, string attribute,
+            string text)
         {
             IJavaScriptExecutor ex = driver;
             ex.ExecuteScript($"arguments[0].setAttribute('{attribute}', '{text}')", element);
@@ -543,58 +590,6 @@ namespace DashworksTestAutomation.Extensions
         }
 
         #endregion Availability of element
-
-        #region Web element extensions
-
-        public static void SelectCustomSelectbox(this RemoteWebDriver driver, IWebElement selectbox, string option)
-        {
-            selectbox.Click();
-
-            //Small wait for dropdown display
-            Thread.Sleep(300);
-            var options = driver.FindElements(By.XPath(
-                ".//div[contains(@class,'mat-select-content ng-trigger ng-trigger-fadeInContent')]/mat-option"));
-            if (!options.Any())
-                throw new Exception($"Filter options were not loaded, unable to select '{option}'");
-            driver.MouseHover(options.Last());
-            options = driver.FindElements(By.XPath(
-                ".//div[contains(@class,'mat-select-content ng-trigger ng-trigger-fadeInContent')]/mat-option"));
-            driver.ClickByJavascript(options.First(x => x.Text.ContainsText(option)));
-        }
-
-        #endregion Web element extensions
-
-        /// <summary>
-        /// Execute this method after some actions on page to get sent requests
-        /// </summary>
-        /// <param name="driver"></param>
-        /// <returns></returns>
-        public static List<string> GetAllRequests(this RemoteWebDriver driver)
-        {
-            var allRequests = new List<string>();
-            var scriptToExecute = "var performance = window.performance || window.mozPerformance || window.msPerformance || window.webkitPerformance || {}; var network = performance.getEntries() || {}; return network;";
-            var netData = driver.ExecuteScript(scriptToExecute);
-            var collection = (IList)netData;
-            foreach (object o in collection)
-            {
-                var innerCollection = (Dictionary<string, object>)o;
-                foreach (KeyValuePair<string, object> keyValuePair in innerCollection)
-                {
-                    if (keyValuePair.Key.Equals("name") && !string.IsNullOrEmpty(keyValuePair.Value.ToString()) && keyValuePair.Value.ToString().Contains("http"))
-                        allRequests.Add(keyValuePair.Value.ToString());
-                }
-            }
-
-            return allRequests;
-        }
-
-        public static string GetTooltipText(this RemoteWebDriver driver)
-        {
-            var toolTips = driver.FindElements(By.XPath(".//mat-tooltip-component"));
-            if (!toolTips.Any())
-                throw new Exception("Tool tip was not displayed");
-            return toolTips.First().Text;
-        }
 
         #region JavaSctipt Alert
 

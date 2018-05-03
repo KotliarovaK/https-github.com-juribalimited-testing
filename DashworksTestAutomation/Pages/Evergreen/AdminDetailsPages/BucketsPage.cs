@@ -1,10 +1,10 @@
 ﻿using System;
+using System.Collections.Generic;
+using System.Linq;
 using DashworksTestAutomation.Base;
 using DashworksTestAutomation.Extensions;
 using OpenQA.Selenium;
 using OpenQA.Selenium.Support.PageObjects;
-using System.Collections.Generic;
-using System.Linq;
 
 namespace DashworksTestAutomation.Pages.Evergreen.AdminDetailsPages
 {
@@ -37,7 +37,8 @@ namespace DashworksTestAutomation.Pages.Evergreen.AdminDetailsPages
         [FindsBy(How = How.XPath, Using = ".//div[@class='mat-select-value']")]
         public IWebElement ActionsButton { get; set; }
 
-        [FindsBy(How = How.XPath, Using = ".//button[@class='button-small mat-raised-button mat-accent ng-star-inserted']")]
+        [FindsBy(How = How.XPath,
+            Using = ".//button[@class='button-small mat-raised-button mat-accent ng-star-inserted']")]
         public IWebElement DeleteButtonOnPage { get; set; }
 
         [FindsBy(How = How.XPath, Using = ".//div[contains(@class, 'inline-error ng-star-inserted')]")]
@@ -78,13 +79,13 @@ namespace DashworksTestAutomation.Pages.Evergreen.AdminDetailsPages
             Driver.WaitForDataLoading();
             return new List<By>
             {
-                SelectorFor(this, p => p.BucketPageTitle),
+                SelectorFor(this, p => p.BucketPageTitle)
             };
         }
 
         public void OpenColumnSettingsByName(string columnName)
         {
-            string columnSettingsSelector =
+            var columnSettingsSelector =
                 $".//div[@role='presentation']/span[text()='{columnName}']//ancestor::div[@class='ag-cell-label-container ag-header-cell-sorted-none']//span[@class='ag-icon ag-icon-menu']";
             var columnHeaderSelector = $".//div[@role='presentation']/span[text()='{columnName}']";
             Driver.MouseHover(By.XPath(columnHeaderSelector));
@@ -94,7 +95,7 @@ namespace DashworksTestAutomation.Pages.Evergreen.AdminDetailsPages
 
         public void SelectActions(string actionName)
         {
-            string selectedActionName =
+            var selectedActionName =
                 $".//div[@class='mat-select-content ng-trigger ng-trigger-fadeInContent']//span[text()='{actionName}']";
             Driver.WaitWhileControlIsNotDisplayed(By.XPath(selectedActionName));
             Driver.FindElement(By.XPath(selectedActionName)).Click();
@@ -148,7 +149,7 @@ namespace DashworksTestAutomation.Pages.Evergreen.AdminDetailsPages
 
         public void SelectBucketByName(string bucketName)
         {
-            string bucketNameSelector = $".//a[text()='{bucketName}']";
+            var bucketNameSelector = $".//a[text()='{bucketName}']";
             Driver.FindElement(By.XPath(bucketNameSelector)).Click();
         }
 
@@ -166,8 +167,7 @@ namespace DashworksTestAutomation.Pages.Evergreen.AdminDetailsPages
         public void AddBucket(string bucketName)
         {
             SearchTextbox.SendKeys(bucketName);
-            var selector = String.Empty;
-            selector = $".//span[text()='{bucketName}']";
+            var selector = $".//span[text()='{bucketName}']";
             Driver.WaitWhileControlIsNotDisplayed(By.XPath(selector));
             Driver.FindElement(By.XPath(selector)).Click();
         }
@@ -175,8 +175,7 @@ namespace DashworksTestAutomation.Pages.Evergreen.AdminDetailsPages
         public void AddMailbox(string mailboxName)
         {
             SearchTextbox.SendKeys(mailboxName);
-            var selector = String.Empty;
-            selector = $".//span[text()='{mailboxName}']";
+            var selector = $".//span[text()='{mailboxName}']";
             Driver.WaitWhileControlIsNotDisplayed(By.XPath(selector));
             Driver.FindElement(By.XPath(selector)).Click();
         }
@@ -184,22 +183,21 @@ namespace DashworksTestAutomation.Pages.Evergreen.AdminDetailsPages
         public void AddUser(string userName)
         {
             SearchTextbox.SendKeys(userName);
-            var selector = String.Empty;
-            selector = $".//span[text()='{userName}']";
+            var selector = $".//span[text()='{userName}']";
             Driver.WaitWhileControlIsNotDisplayed(By.XPath(selector));
             Driver.FindElement(By.XPath(selector)).Click();
         }
 
         public void SelectTabByName(string tabName)
         {
-            string tabNameSelector = $".//li[@class='ng-star-inserted']//span[text()='{tabName}']";
+            var tabNameSelector = $".//li[@class='ng-star-inserted']//span[text()='{tabName}']";
             Driver.WaitWhileControlIsNotDisplayed(By.XPath(tabNameSelector));
             Driver.FindElement(By.XPath(tabNameSelector)).Click();
         }
 
         public void SelectTeam(string teamName)
         {
-            string teamNameSelector = $".//span[@class='mat-option-text'][text()='{teamName}']";
+            var teamNameSelector = $".//span[@class='mat-option-text'][text()='{teamName}']";
             Driver.WaitWhileControlIsNotDisplayed(By.XPath(teamNameSelector));
             Driver.FindElement(By.XPath(teamNameSelector)).Click();
         }

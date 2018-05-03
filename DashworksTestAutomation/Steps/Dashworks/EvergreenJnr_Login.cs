@@ -1,26 +1,26 @@
-﻿using DashworksTestAutomation.DTO;
+﻿using System;
+using DashworksTestAutomation.DTO;
 using DashworksTestAutomation.DTO.RuntimeVariables;
 using DashworksTestAutomation.Extensions;
 using DashworksTestAutomation.Helpers;
 using DashworksTestAutomation.Pages;
 using DashworksTestAutomation.Providers;
+using DashworksTestAutomation.Utils;
 using NUnit.Framework;
+using OpenQA.Selenium;
 using OpenQA.Selenium.Remote;
 using RestSharp;
-using System;
 using TechTalk.SpecFlow;
-using Cookie = OpenQA.Selenium.Cookie;
-using Logger = DashworksTestAutomation.Utils.Logger;
 
 namespace DashworksTestAutomation.Steps.Dashworks
 {
     [Binding]
     internal class EvergreenJnr_Login : SpecFlowContext
     {
-        private readonly RemoteWebDriver _driver;
-        private readonly UserDto _user;
-        private readonly UsedUsers _usedUsers;
         private readonly RestWebClient _client;
+        private readonly RemoteWebDriver _driver;
+        private readonly UsedUsers _usedUsers;
+        private readonly UserDto _user;
 
         public EvergreenJnr_Login(RemoteWebDriver driver, UserDto user, UsedUsers usedUsers, RestWebClient client)
         {
@@ -53,10 +53,7 @@ namespace DashworksTestAutomation.Steps.Dashworks
             _driver.NavigateToUrl(UrlProvider.Url);
 
             //Set cookies to browser
-            foreach (Cookie cookie in client.SeleniumCookiesJar)
-            {
-                _driver.Manage().Cookies.AddCookie(cookie);
-            }
+            foreach (Cookie cookie in client.SeleniumCookiesJar) _driver.Manage().Cookies.AddCookie(cookie);
 
             // Add cookies to the RestClient to authorize it
             _client.Value.AddCookies(client.CookiesJar);
