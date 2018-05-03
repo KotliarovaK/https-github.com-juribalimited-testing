@@ -63,12 +63,30 @@ namespace DashworksTestAutomation.Steps.Projects
             tab.GetTabElementByName(tabName).Click();
         }
 
-        [When(@"User clicks ""(.*)"" create button")]
+        [When(@"User clicks ""(.*)"" button")]
         public void WhenUserClicksCreateButton(string buttonName)
         {
             var tab = _driver.NowAt<BaseElements>();
 
-            tab.GetCreateButtonElementByName(buttonName).Click();
+            tab.GetButtonElementByName(buttonName).Click();
+        }
+
+        [Then(@"Success message is displayed with ""(.*)"" text")]
+        public void ThenSuccessMessageIsDisplayedWithText(string text)
+        {
+            var page = _driver.NowAt<BaseElements>();
+
+            _driver.WaitWhileControlIsNotDisplayed<BaseElements>(() => page.SuccessMessage);
+            StringAssert.Contains(text, page.SuccessMessage.Text, "Success Message is not displayed");
+        }
+
+        [Then(@"Success message is displayed")]
+        public void ThenSuccessMessageIsDisplayed()
+        {
+            var page = _driver.NowAt<BaseElements>();
+
+            _driver.WaitWhileControlIsNotDisplayed<BaseElements>(() => page.SuccessMessage);
+            Assert.IsTrue(page.SuccessMessage.Displayed(), "Success Message is not displayed");
         }
 
         [When(@"User creates Project")]
@@ -116,8 +134,8 @@ namespace DashworksTestAutomation.Steps.Projects
             upd.UpdateButton.Click();
         }
 
-        [Then(@"User create Request Type")]
-        public void ThenUserCreateRequestType(Table table)
+        [When(@"User create Request Type")]
+        public void WhenUserCreateRequestType(Table table)
         {
             var page = _driver.NowAt<RequestTypePropertiesPage>();
 
@@ -133,8 +151,8 @@ namespace DashworksTestAutomation.Steps.Projects
             _projectDto.ReqestType = _requestTypesDto;
         }
 
-        [Then(@"User create Category")]
-        public void ThenUserCreateCategory(Table table)
+        [When(@"User create Category")]
+        public void WhenUserCreateCategory(Table table)
         {
             var page = _driver.NowAt<CategoryPropertiesPage>();
 
@@ -150,8 +168,8 @@ namespace DashworksTestAutomation.Steps.Projects
             _projectDto.Categories = _categoryPropertiesDto;
         }
 
-        [Then(@"User create Stage")]
-        public void ThenUserCreateStage(Table table)
+        [When(@"User create Stage")]
+        public void WhenUserCreateStage(Table table)
         {
             var page = _driver.NowAt<StagePropertiesPage>();
 
@@ -165,8 +183,8 @@ namespace DashworksTestAutomation.Steps.Projects
             _projectDto.Stages = _stagePropertiesDto;
         }
 
-        [Then(@"User create Task")]
-        public void ThenUserCreateTask(Table table)
+        [When(@"User create Task")]
+        public void WhenUserCreateTask(Table table)
         {
             var page = _driver.NowAt<TaskPropertiesPage>();
 
@@ -187,8 +205,8 @@ namespace DashworksTestAutomation.Steps.Projects
             _projectDto.Tasks = _taskPropertiesDto;
         }
 
-        [Then(@"User updates the Task page")]
-        public void ThenUserUpdatesTheTaskPage(Table table)
+        [When(@"User updates the Task page")]
+        public void WhenUserUpdatesTheTaskPage(Table table)
         {
             var page = _driver.NowAt<TaskProperties_DetailsPage>();
 
@@ -207,8 +225,8 @@ namespace DashworksTestAutomation.Steps.Projects
             page.UpdateTaskButton.Click();
         }
 
-        [Then(@"User publishes the task")]
-        public void ThenUserPublishesTheTask()
+        [When(@"User publishes the task")]
+        public void WhenUserPublishesTheTask()
         {
             var page = _driver.NowAt<TaskProperties_DetailsPage>();
 
@@ -216,8 +234,8 @@ namespace DashworksTestAutomation.Steps.Projects
             _driver.AcceptAlert();
         }
 
-        [Then(@"User unpublishes the task")]
-        public void ThenUserUnpublishesTheTask()
+        [When(@"User unpublishes the task")]
+        public void WhenUserUnpublishesTheTask()
         {
             var page = _driver.NowAt<TaskProperties_DetailsPage>();
 
@@ -225,8 +243,17 @@ namespace DashworksTestAutomation.Steps.Projects
             _driver.AcceptAlert();
         }
 
-        [Then(@"User create Team")]
-        public void ThenUserCreateTeam(Table table)
+        [Then(@"selected task was published")]
+        public void ThenSelectedTaskWasPublished()
+        {
+            var page = _driver.NowAt<BaseElements>();
+
+            _driver.WaitWhileControlIsNotDisplayed<BaseElements>(() => page.SuccessPublishedTaskFlag);
+            Assert.IsTrue(page.SuccessPublishedTaskFlag.Displayed(), "Success Flag is not displayed");
+        }
+
+        [When(@"User create Team")]
+        public void WhenUserCreateTeam(Table table)
         {
             var page = _driver.NowAt<TeamPropertiesPage>();
 
@@ -241,8 +268,8 @@ namespace DashworksTestAutomation.Steps.Projects
             _projectDto.TeamProperties = _teamPropertiesDto;
         }
 
-        [Then(@"User create Group")]
-        public void ThenUserCreateGroup(Table table)
+        [When(@"User create Group")]
+        public void WhenUserCreateGroup(Table table)
         {
             var page = _driver.NowAt<GroupPropertiesPage>();
 
@@ -258,8 +285,8 @@ namespace DashworksTestAutomation.Steps.Projects
             _groupPropertiesDto.OwnedByTeam = _projectDto.TeamProperties.TeamName;
         }
 
-        [Then(@"User create Mail Template")]
-        public void ThenUserCreateMailTemplate(Table table)
+        [When(@"User create Mail Template")]
+        public void WhenUserCreateMailTemplate(Table table)
         {
             var page = _driver.NowAt<MailTemplatePropertiesPage>();
 
@@ -277,8 +304,8 @@ namespace DashworksTestAutomation.Steps.Projects
             _projectDto.MailTemplateProperties = _mailTemplatePropertiesDto;
         }
 
-        [Then(@"User updating News page")]
-        public void ThenUserUpdatingNewsPage(Table table)
+        [When(@"User updating News page")]
+        public void WhenUserUpdatingNewsPage(Table table)
         {
             var page = _driver.NowAt<NewsPage>();
 
@@ -289,6 +316,60 @@ namespace DashworksTestAutomation.Steps.Projects
 
             var upd = _driver.NowAt<BaseElements>();
             upd.UpdateButton.Click();
+        }
+
+        [Then(@"created Team is displayed in the table")]
+        public void ThenCreatedTeamIsDisplayedInTable()
+        {
+            var page = _driver.NowAt<BaseElements>();
+
+            var team = page.GetTheCreatedElementInTableByName(_projectDto.TeamProperties.TeamName);
+            Assert.IsTrue(team.Displayed(), "Selected Team is not displayed in the table");
+        }
+
+        [Then(@"created Group is displayed in the table")]
+        public void ThenCreatedGroupIsDisplayedInTable()
+        {
+            var page = _driver.NowAt<BaseElements>();
+
+            var group = page.GetTheCreatedElementInTableByName(_projectDto.GroupProperties.First().GroupName);
+            Assert.IsTrue(group.Displayed(), "Selected Group is not displayed in the table");
+        }
+
+        [Then(@"created Task is displayed in the table")]
+        public void ThenCreatedTaskIsDisplayedInTheTable()
+        {
+            var page = _driver.NowAt<BaseElements>();
+
+            var task = page.GetTheCreatedTaskInTableByName(_projectDto.Tasks.Name);
+            Assert.IsTrue(task.Displayed(), "Selected Task is not displayed in the table");
+        }
+
+        [Then(@"created Request Type is displayed in the table")]
+        public void ThenCreatedRequestTypeIsDisplayedInTheTable()
+        {
+            var page = _driver.NowAt<BaseElements>();
+
+            var requestType = page.GetTheCreatedRequestTypeInTableByName(_projectDto.ReqestType.Name);
+            Assert.IsTrue(requestType.Displayed(), "Selected Request Type is not displayed in the table");
+        }
+
+        [Then(@"created Category is displayed in the table")]
+        public void ThenCreatedCategoryIsDisplayedInTheTable()
+        {
+            var page = _driver.NowAt<BaseElements>();
+
+            var category = page.GetTheCreatedCategoryInTableByName(_projectDto.Categories.Name);
+            Assert.IsTrue(category.Displayed, "Selected Category is not displayed in the table");
+        }
+
+        [Then(@"created Stage is displayed in the table")]
+        public void ThenCreatedStageIsDisplayedInTheTable()
+        {
+            var page = _driver.NowAt<BaseElements>();
+
+            var stage = page.GetTheCreatedElementInTableByName(_projectDto.Stages.StageName);
+            Assert.IsTrue(stage.Displayed(), "Selected Stage is not displayed in the table");
         }
 
         [Then(@"required number of groups is displayed for created team")]

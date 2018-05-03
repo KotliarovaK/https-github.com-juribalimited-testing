@@ -12,6 +12,12 @@ namespace DashworksTestAutomation.Pages.Projects
         [FindsBy(How = How.XPath, Using = ".//h1")]
         public IWebElement PageHeder { get; set; }
 
+        [FindsBy(How = How.XPath, Using = ".//div[contains(@class, 'tooltipbar-success')]")]
+        public IWebElement SuccessMessage { get; set; }
+
+        [FindsBy(How = How.XPath, Using = ".//li[contains(text(), 'This task is published')]")]
+        public IWebElement SuccessPublishedTaskFlag { get; set; }
+
         #region Navigation Tab
 
         [FindsBy(How = How.XPath, Using = ".//a[text()='Administration']")]
@@ -25,6 +31,27 @@ namespace DashworksTestAutomation.Pages.Projects
 
         [FindsBy(How = How.XPath, Using = ".//input[@value='Add']")]
         public IWebElement AddButton { get; set; }
+
+        public IWebElement GetTabElementByName(string tabName)
+        {
+            var selector = By.XPath($".//div[@class='toolbar toolbar-row']//a[contains(text(), '{tabName}')]");
+            Driver.WaitWhileControlIsNotDisplayed(selector);
+            return Driver.FindElement(selector);
+        }
+
+        public IWebElement GetTabElementByNameOnSelfServiceTab(string tabName)
+        {
+            var selector = By.XPath($".//div[@class='dwmenu navigation-menu alignList manageSelfServiceMenu']//a[contains(text(), '{tabName}')]");
+            Driver.WaitWhileControlIsNotDisplayed(selector);
+            return Driver.FindElement(selector);
+        }
+
+        public IWebElement GetTabElementByNameOnCapacityTab(string tabName)
+        {
+            var selector = By.XPath($".//div[@class='dwmenu navigation-menu']//a[contains(text(), '{tabName}')]");
+            Driver.WaitWhileControlIsNotDisplayed(selector);
+            return Driver.FindElement(selector);
+        }
 
         #endregion
 
@@ -100,26 +127,44 @@ namespace DashworksTestAutomation.Pages.Projects
             };
         }
 
-        public IWebElement GetTabElementByName(string tabName)
+        public IWebElement GetButtonElementByName(string buttonName)
         {
-            var selector = By.XPath($".//div[@class='toolbar toolbar-row']//div//a[text()='{tabName}']");
+            var selector = By.XPath($".//input[@value='{buttonName}']");
             Driver.WaitWhileControlIsNotDisplayed(selector);
             return Driver.FindElement(selector);
         }
 
-        public IWebElement GetTabElementByNameOnSelectedTab(string tabName)
+        #region Check creating elements
+
+        public IWebElement GetTheCreatedElementInTableByName(string name)
         {
-            var selector = By.XPath($".//li[@role='menuitem']//a[text()='{tabName}']");
+            var selector = By.XPath($".//td[@title='{name}']/..//td[1]");
             Driver.WaitWhileControlIsNotDisplayed(selector);
             return Driver.FindElement(selector);
         }
 
-        public IWebElement GetCreateButtonElementByName(string buttonName)
+        public IWebElement GetTheCreatedRequestTypeInTableByName(string requestTypeName)
         {
-            var selector = By.XPath($".//input[@value='Create {buttonName}']");
+            var selector = By.XPath($".//a[contains(@id, 'RequestType')]/..//a[contains(text(), '{requestTypeName}')]");
             Driver.WaitWhileControlIsNotDisplayed(selector);
             return Driver.FindElement(selector);
         }
+
+        public IWebElement GetTheCreatedTaskInTableByName(string taskName)
+        {
+            var selector = By.XPath($".//a[contains(@id, 'TaskName')]/..//a[contains(text(), '{taskName}')]");
+            Driver.WaitWhileControlIsNotDisplayed(selector);
+            return Driver.FindElement(selector);
+        }
+
+        public IWebElement GetTheCreatedCategoryInTableByName(string categoryName)
+        {
+            var selector = By.XPath($".//a[contains(@id, 'CategoryName')]/..//a[contains(text(), '{categoryName}')]");
+            Driver.WaitWhileControlIsNotDisplayed(selector);
+            return Driver.FindElement(selector);
+        }
+
+        #endregion
 
         public int GetGroupsCountByTeamName(string teamName)
         {

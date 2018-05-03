@@ -35,12 +35,20 @@ namespace DashworksTestAutomation.Steps.Projects
             _thankYouDto = thankYouDto;
         }
 
-        [When(@"User navigate to ""(.*)"" on selected tab")]
-        public void WhenUserNavigateToOnSelectedTab(string tabName)
+        [When(@"User navigate to ""(.*)"" on Self Service tab")]
+        public void WhenUserNavigateToOnSelfServiceTab(string tabName)
         {
             var tab = _driver.NowAt<BaseElements>();
 
-            tab.GetTabElementByNameOnSelectedTab(tabName).Click();
+            tab.GetTabElementByNameOnSelfServiceTab(tabName).Click();
+        }
+
+        [When(@"User navigate to ""(.*)"" on Capacity tab")]
+        public void WhenUserNavigateToOnCapacityTab(string tabName)
+        {
+            var tab = _driver.NowAt<BaseElements>();
+
+            tab.GetTabElementByNameOnCapacityTab(tabName).Click();
         }
 
         [Then(@"User updates the Details on Self Service tab")]

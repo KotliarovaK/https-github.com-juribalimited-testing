@@ -32,6 +32,6 @@ namespace DashworksTestAutomation.DTO.Projects
         RemoteHost,
         [Description("X-Forwarded-For")]
         XForwardedFor,
-        Other
+        //Other
     }
 }
