@@ -1,14 +1,13 @@
 ﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Threading;
 using DashworksTestAutomation.Extensions;
 using DashworksTestAutomation.Pages.Evergreen;
 using DashworksTestAutomation.Pages.Evergreen.DetailsTabsMenu;
 using NUnit.Framework;
-using OpenQA.Selenium.Remote;
-using System.Collections.Generic;
-using System.Linq;
-using System.Net.Mime;
-using System.Threading;
 using OpenQA.Selenium;
+using OpenQA.Selenium.Remote;
 using TechTalk.SpecFlow;
 
 namespace DashworksTestAutomation.Steps.Dashworks
@@ -102,7 +101,7 @@ namespace DashworksTestAutomation.Steps.Dashworks
             foreach (var element in content)
             {
                 var text = element.FindElement(By.XPath(DetailsPage.LinkSelector));
-                Assert.IsTrue(text.GetAttribute("href") != String.Empty);
+                Assert.IsTrue(text.GetAttribute("href") != string.Empty);
             }
         }
 
@@ -133,14 +132,16 @@ namespace DashworksTestAutomation.Steps.Dashworks
         public void ThenAllTextIsDisplayedForColumnInTheStringFilter(string columnName)
         {
             var filterElement = _driver.NowAt<ApplicationsDetailsTabsMenu>();
-            Assert.IsTrue((filterElement.GetStringFilterTextByColumnName(columnName)), $"All text is not displayed for {columnName} column");
+            Assert.IsTrue(filterElement.GetStringFilterTextByColumnName(columnName),
+                $"All text is not displayed for {columnName} column");
         }
 
         [Then(@"All text is not displayed for ""(.*)"" column in the String Filter")]
         public void ThenAllTextIsNotDisplayedForColumnInTheStringFilter(string columnName)
         {
             var filterElement = _driver.NowAt<ApplicationsDetailsTabsMenu>();
-            Assert.IsFalse((filterElement.GetStringFilterTextByColumnName(columnName)), $"All text is displayed for {columnName} column");
+            Assert.IsFalse(filterElement.GetStringFilterTextByColumnName(columnName),
+                $"All text is displayed for {columnName} column");
         }
 
         [Then(@"Dropdown List is displayed correctly in the Filter on the Details Page")]
@@ -211,13 +212,9 @@ namespace DashworksTestAutomation.Steps.Dashworks
         {
             var page = _driver.NowAt<ApplicationsDetailsTabsMenu>();
             if (page.CheckboxexStringFilter.Displayed())
-            {
                 page.GetStringFilterByName(filterName).Click();
-            }
             else
-            {
                 page.GetBooleanStringFilterByName(filterName).Click();
-            }
         }
 
         [Then(@"""(.*)"" checkbox is checked on the Details Page")]
@@ -231,7 +228,8 @@ namespace DashworksTestAutomation.Steps.Dashworks
         public void ThenContentIsPresentInTheTableOnTheDetailsPage()
         {
             var tableElement = _driver.NowAt<ApplicationsDetailsTabsMenu>();
-            Assert.IsTrue(tableElement.TableContent.Displayed(), "Table is empty");
+            //Assert.IsTrue(tableElement.TableContent.Displayed(), "Table is empty");
+            Assert.IsTrue(tableElement.TableRows.Count > 0, "Table is empty");
         }
 
         [Then(@"Filter panel has standard size")]
@@ -246,14 +244,10 @@ namespace DashworksTestAutomation.Steps.Dashworks
         public void ThenSiteColumnHasStandardSize()
         {
             var filterPanel = _driver.NowAt<ApplicationsDetailsTabsMenu>();
-            if (!_driver.IsElementDisplayed(By.XPath(".//div[@col-id='packageSite']")))
-            {
-                Assert.AreEqual("81px", filterPanel.CollectionSiteColumnWidt());
-            }
+            if (!_driver.IsElementDisplayed(By.XPath(ApplicationsDetailsTabsMenu.SiteColumnSelector)))
+            { }
             else
-            {
-                Assert.AreEqual("81px", filterPanel.PackageSiteColumnWidt());
-            }
+                Assert.AreEqual("101px", filterPanel.PackageSiteColumnWidt());
         }
 
         [Then(@"User enters ""(.*)"" text in the Filter field")]
@@ -338,13 +332,11 @@ namespace DashworksTestAutomation.Steps.Dashworks
             var page = _driver.NowAt<ApplicationsDetailsTabsMenu>();
 
             foreach (var row in table.Rows)
-            {
-                if ((row["ColumnName"] != "Group Key" && row["ColumnName"] != "Category Key"))
+                if (row["ColumnName"] != "Group Key" && row["ColumnName"] != "Category Key")
                 {
                     var content = page.GetColumnIdContent(row["ColumnName"]);
                     Assert.IsTrue(content.Count(x => !string.IsNullOrEmpty(x)) > 0, "Newly added column is empty");
                 }
-            }
         }
 
         [Then(@"Content is present in the column of the Details Page table")]
@@ -421,10 +413,8 @@ namespace DashworksTestAutomation.Steps.Dashworks
         {
             var detailsPage = _driver.NowAt<DetailsPage>();
             foreach (var element in detailsPage.TableRowDetails)
-            {
                 StringAssert.DoesNotContain("Unknown", element.Text,
                     "Unknown text is displayed");
-            }
         }
     }
 }

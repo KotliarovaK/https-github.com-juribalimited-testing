@@ -1,4 +1,8 @@
-﻿using DashworksTestAutomation.DTO.RuntimeVariables;
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text.RegularExpressions;
+using DashworksTestAutomation.DTO.RuntimeVariables;
 using DashworksTestAutomation.Extensions;
 using DashworksTestAutomation.Helpers;
 using DashworksTestAutomation.Pages;
@@ -6,12 +10,8 @@ using DashworksTestAutomation.Pages.Evergreen;
 using DashworksTestAutomation.Providers;
 using DashworksTestAutomation.Utils;
 using NUnit.Framework;
-using OpenQA.Selenium.Remote;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text.RegularExpressions;
 using OpenQA.Selenium;
+using OpenQA.Selenium.Remote;
 using TechTalk.SpecFlow;
 
 namespace DashworksTestAutomation.Steps.Dashworks
@@ -19,8 +19,8 @@ namespace DashworksTestAutomation.Steps.Dashworks
     [Binding]
     internal class EvergreenJnr_FiltersPanel : SpecFlowContext
     {
-        private readonly RemoteWebDriver _driver;
         private readonly ColumnNameToUrlConvertor _convertor;
+        private readonly RemoteWebDriver _driver;
         private readonly Filter _filter;
 
         public EvergreenJnr_FiltersPanel(RemoteWebDriver driver, ColumnNameToUrlConvertor convertor, Filter filter)
@@ -84,7 +84,7 @@ namespace DashworksTestAutomation.Steps.Dashworks
         public void WhenUserEntersTextInSearchFieldAtSelectedFilter(string searchedText)
         {
             var filterElement = _driver.NowAt<FiltersElement>();
-            if (!String.IsNullOrWhiteSpace(searchedText))
+            if (!string.IsNullOrWhiteSpace(searchedText))
             {
                 _driver.WaitWhileControlIsNotDisplayed<FiltersElement>(() => filterElement.FilterSearchTextbox);
                 filterElement.FilterSearchTextbox.Clear();
@@ -120,10 +120,8 @@ namespace DashworksTestAutomation.Steps.Dashworks
             var searchCriteria = filterElement.LookupFilterSearchTextbox.GetAttribute("value");
             List<string> associationList = filterElement.GetAssociationsList().Select(element => element.Text).ToList();
             foreach (var association in associationList)
-            {
                 StringAssert.Contains(searchCriteria.ToLower(), association.ToLower(),
                     $"Search in Associations list is not working for {searchCriteria} value");
-            }
         }
 
         [When(@"User clears search textbox in Filters panel")]
@@ -291,7 +289,8 @@ namespace DashworksTestAutomation.Steps.Dashworks
         }
 
         [When(@"User add ""(.*)"" filter where type is ""(.*)"" with added column and ""(.*)"" Tree List option")]
-        public void WhenUserAddFilterWhereTypeIsWithoutAddedColumnAndTreeListOption(string filterName, string operatorValue,
+        public void WhenUserAddFilterWhereTypeIsWithoutAddedColumnAndTreeListOption(string filterName,
+            string operatorValue,
             string filterValue)
         {
             var filtersNames = _driver.NowAt<FiltersElement>();
@@ -311,7 +310,8 @@ namespace DashworksTestAutomation.Steps.Dashworks
         }
 
         [When(@"User add ""(.*)"" filter where type is ""(.*)"" without added column and ""(.*)"" Lookup option")]
-        public void WhenUserAddFilterWhereTypeIsWithoutAddedColumnAndLookupOption(string filterName, string operatorValue,
+        public void WhenUserAddFilterWhereTypeIsWithoutAddedColumnAndLookupOption(string filterName,
+            string operatorValue,
             string filterValue)
         {
             var filtersNames = _driver.NowAt<FiltersElement>();
@@ -383,10 +383,7 @@ namespace DashworksTestAutomation.Steps.Dashworks
                         }
                     }
 
-                    if (result)
-                    {
-                        break;
-                    }
+                    if (result) break;
                 }
 
                 Assert.IsTrue(result, "Table data is filtered incorrectly");
@@ -421,7 +418,8 @@ namespace DashworksTestAutomation.Steps.Dashworks
         public void ThenListIsDisplayedForSavedListFilter(string listName)
         {
             var filterElement = _driver.NowAt<FiltersElement>();
-            Assert.IsTrue(filterElement.ListNameForSavedListFilter(listName), $"{listName} is not displayed for Saved List filter");
+            Assert.IsTrue(filterElement.ListNameForSavedListFilter(listName),
+                $"{listName} is not displayed for Saved List filter");
         }
 
         [When(@"User navigate to Edit button for ""(.*)"" filter")]
@@ -446,7 +444,14 @@ namespace DashworksTestAutomation.Steps.Dashworks
         public void ThenCheckboxIsChecked(string addColumn)
         {
             var filterElement = _driver.NowAt<FiltersElement>();
-            Assert.IsTrue(filterElement.AddCategoryColumnCheckbox.Selected, $"{addColumn} Checkbox is not selected");
+            Assert.IsTrue(filterElement.AddCategoryColumnCheckbox.Selected, $"{addColumn} Checkbox is not checked");
+        }
+
+        [Then(@"Add ""(.*)"" column checkbox is displayed to the user")]
+        public void ThenAddColumnCheckboxIsDisplayedToTheUser(string checkboxName)
+        {
+            var filterElement = _driver.NowAt<FiltersElement>();
+            filterElement.CheckboxNameForFilter(checkboxName);
         }
 
         [Then(@"""(.*)""checkbox is checked and cannot be unchecked")]
@@ -602,10 +607,7 @@ namespace DashworksTestAutomation.Steps.Dashworks
             _driver.NavigateToUrl(urlToNavigate);
 
             var page = _driver.NowAt<EvergreenDashboardsPage>();
-            if (page.StatusCodeLabel.Displayed())
-            {
-                throw new Exception("500 error was returned");
-            }
+            if (page.StatusCodeLabel.Displayed()) throw new Exception("500 error was returned");
         }
 
         [When(@"User is remove part of filter URL")]
@@ -618,10 +620,7 @@ namespace DashworksTestAutomation.Steps.Dashworks
             _driver.NavigateToUrl(urlToNavigate);
 
             var page = _driver.NowAt<EvergreenDashboardsPage>();
-            if (page.StatusCodeLabel.Displayed())
-            {
-                throw new Exception("500 error was returned");
-            }
+            if (page.StatusCodeLabel.Displayed()) throw new Exception("500 error was returned");
         }
 
         [Then(@"Options is displayed in added filter info")]
@@ -638,9 +637,7 @@ namespace DashworksTestAutomation.Steps.Dashworks
         {
             var filterElement = _driver.NowAt<FiltersElement>();
             foreach (var row in table.Rows)
-            {
                 filterElement.GetAssociationsList().Select(value => value.Text).ToList().Contains(row.Values.First());
-            }
         }
 
         [Then(@"Associations panel is displayed in the filter")]
@@ -666,10 +663,8 @@ namespace DashworksTestAutomation.Steps.Dashworks
             var urlPartToCheck = Regex.Match(currentUrl, pattern).Groups[1].Value;
             var valuesList = values.Split(',');
             foreach (var value in valuesList)
-            {
                 StringAssert.Contains(value.TrimStart(' ').TrimEnd(' ').ToLower(), urlPartToCheck.ToLower(),
                     $"{value} is not added to URL for {filterName} filter");
-            }
 
             StringAssert.Contains(ColumnNameToUrlConvertor.Convert(pageName, filterName).ToLower(),
                 urlPartToCheck.ToLower(),
@@ -716,10 +711,7 @@ namespace DashworksTestAutomation.Steps.Dashworks
             if (filterPanel.GetFiltersNames().Count > 1)
             {
                 pattern = @"\$filter=(.*)";
-                for (var i = 0; i < filterPanel.GetFiltersNames().Count - 1; i++)
-                {
-                    pattern = pattern + @"%20OR%20(.*)";
-                }
+                for (var i = 0; i < filterPanel.GetFiltersNames().Count - 1; i++) pattern = pattern + @"%20OR%20(.*)";
 
                 pattern = pattern + @"&\$";
             }
@@ -727,9 +719,7 @@ namespace DashworksTestAutomation.Steps.Dashworks
             var filtersInUrl = Regex.Match(currentUrl, pattern).Groups;
             IList<string> filtersValuesInUrl = new List<string>();
             for (var i = 1; i < Regex.Match(currentUrl, pattern).Groups.Count; i++)
-            {
                 filtersValuesInUrl.Add(filtersInUrl[i].Value);
-            }
 
             for (var i = 0; i < filterPanel.GetAddedFilters().Count; i++)
             {
@@ -773,10 +763,33 @@ namespace DashworksTestAutomation.Steps.Dashworks
         public void ThenColorIsMatchingTheCaption(string colorName)
         {
             var page = _driver.NowAt<BaseDashboardPage>();
-            var colorItem = By.XPath(".//div[@class='status']");
-            var styleColorItem = _driver.FindElement(colorItem).GetAttribute("style");
-            Assert.IsTrue(page.GetColorByName(colorName).Displayed(), "Captions color does not match the caption");
-            Assert.AreEqual(page.GetColorContainer(styleColorItem), colorName, "Items color does not match the caption");
+            var colorItem = By.XPath(BaseDashboardPage.ColorItem);
+            var colors = _driver.FindElements(colorItem);
+            foreach (var color in colors)
+            {
+                var styleColorItem = color.GetAttribute("style");
+                //_driver.WaitWhileControlIsNotDisplayed<BaseDashboardPage>(() => page.ColorItem);
+                _driver.WaitWhileControlIsNotDisplayed(colorItem);
+                Assert.IsTrue(page.GetColorByName(colorName).Displayed(), "Captions color does not match the caption");
+                Assert.AreEqual(page.GetColorContainer(styleColorItem), colorName,
+                    "Items color does not match the caption");
+            }
+        }
+
+        [Then(@"""(.*)"" image is matching the caption")]
+        public void ThenImageIsMatchingTheCaption(string imageName)
+        {
+            var page = _driver.NowAt<BaseDashboardPage>();
+            var imageItem = By.XPath(BaseDashboardPage.ImageItem);
+            var images = _driver.FindElements(imageItem);
+            foreach (var image in images)
+            {
+                var imageItemSource = image.GetAttribute("src");
+                var imageItemName = imageItemSource.Split('/').Last();
+                _driver.WaitWhileControlIsNotDisplayed(imageItem);
+                //_driver.WaitWhileControlIsNotDisplayed<BaseDashboardPage>(() => page.ImageItemSelector);
+                Assert.AreEqual(page.GetImageContainer(imageItemName), imageName, "Image does not match the caption");
+            }
         }
 
         [Then(@"reset button in Search field at selected Filter is displayed")]

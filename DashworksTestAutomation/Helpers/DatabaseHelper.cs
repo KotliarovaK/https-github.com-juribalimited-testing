@@ -1,15 +1,15 @@
-﻿using DashworksTestAutomation.Providers;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Data;
 using System.Data.SqlClient;
 using System.Linq;
+using DashworksTestAutomation.Providers;
 
 namespace DashworksTestAutomation.Helpers
 {
     internal class DatabaseHelper
     {
-        private static string _connectionString = Database.ConnectionsString;
+        private static readonly string _connectionString = Database.ConnectionsString;
 
         public static void ExecuteQuery(string query)
         {
@@ -27,11 +27,11 @@ namespace DashworksTestAutomation.Helpers
         }
 
         /// <summary>
-        /// columnIndex starts from 0.
-        /// columnIndex is the index of the column
-        /// [0] is the index of the row
-        /// Usage: DatabaseWorker.ExecuteReader(dbName.ECA_database, query, 0)[0]
-        /// To get data from the last row just use '.LastOrDefault()' instead of [0] index
+        ///     columnIndex starts from 0.
+        ///     columnIndex is the index of the column
+        ///     [0] is the index of the row
+        ///     Usage: DatabaseWorker.ExecuteReader(dbName.ECA_database, query, 0)[0]
+        ///     To get data from the last row just use '.LastOrDefault()' instead of [0] index
         /// </summary>
         /// <returns></returns>
         public static List<string> ExecuteReader(string query, int columnIndex)
@@ -40,8 +40,7 @@ namespace DashworksTestAutomation.Helpers
 
             if (results.Any())
                 return results;
-            else
-                throw new Exception("Database query returns zero results");
+            throw new Exception("Database query returns zero results");
         }
 
         public static List<string> ExecuteReaderWithoutZeroResultCheck(string query, int columnIndex)
@@ -68,7 +67,6 @@ namespace DashworksTestAutomation.Helpers
         public static void RemoveLists(List<string> listsIds)
         {
             foreach (string id in listsIds)
-            {
                 using (SqlConnection con = new SqlConnection(_connectionString))
                 {
                     using (SqlCommand cmd = new SqlCommand("[API].[List_Remove]", con))
@@ -79,7 +77,6 @@ namespace DashworksTestAutomation.Helpers
                         cmd.ExecuteNonQuery();
                     }
                 }
-            }
         }
     }
 }

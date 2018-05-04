@@ -63,7 +63,7 @@ Scenario: EvergreenJnr_DevicesList_CheckThat500ErrorPageIsNotDisplayedAfterRemov
 	Then ColumnName is removed from the list
 	| ColumnName |
 	| Build Date |
-	Then data in table is sorted by 'Boot Up Date' column in descending order
+	Then date in table is sorted by 'Boot Up Date' column in descending order
 	When User remove sorted column on "Devices" page by URL
 	| ColumnName   |
 	| Boot Up Date |
@@ -156,7 +156,7 @@ Scenario: EvergreenJnr_DevicesList_CheckThat500ErrorPageIsNotDisplayedAfterRemov
 	Then ColumnName is removed from the list
 	| ColumnName   |
 	| Boot Up Date |
-	Then data in table is sorted by 'Windows7Mi: Date & Time Task' column in descending order
+	Then date in table is sorted by 'Windows7Mi: Date & Time Task' column in descending order
 	When User remove sorted column on "Devices" page by URL
 	| ColumnName                   |
 	| Windows7Mi: Date & Time Task |
@@ -164,7 +164,7 @@ Scenario: EvergreenJnr_DevicesList_CheckThat500ErrorPageIsNotDisplayedAfterRemov
 	Then ColumnName is removed from the list
 	| ColumnName                   |
 	| Windows7Mi: Date & Time Task |
-	Then data in table is sorted by 'Build Date' column in descending order
+	Then date in table is sorted by 'Build Date' column in descending order
 
 @Evergreen @Devices @EvergreenJnr_Columns @RemoveColumn @DAS10966 @DAS10973 @DAS12351
 Scenario: EvergreenJnr_DevicesList_CheckThat500ErrorPageIsNotDisplayedAfterRemovingSortedColumnInDefaultListThrowFilters
@@ -235,7 +235,6 @@ Scenario: EvergreenJnr_DevicesList_CheckThatRemovingColumnsFromUrlIsWorksCorrect
 	When User create dynamic list with "TestListC6636D" name on "Devices" page
 	Then "TestListC6636D" list is displayed to user
 	#Workaround for DAS-11570. Remove after fix
-	#And User navigates to the "TestListC6636D" list
 	When User clicks the Columns button
 	Then Columns panel is displayed to the user
 	When ColumnName is entered into the search box and the selection is clicked
@@ -262,7 +261,6 @@ Scenario: EvergreenJnr_DevicesList_CheckThatRemovingColumnAndFilterFromUrlWorksC
 	Then data in table is sorted by 'Hostname' column in ascending order
 	When User create dynamic list with "TestList0E8A84" name on "Devices" page
 	#Workaround for DAS-11570. Remove after fix
-	#And User navigates to the "TestList0E8A84" list
 	When User clicks the Columns button
 	Then Columns panel is displayed to the user
 	When ColumnName is entered into the search box and the selection is clicked
@@ -299,7 +297,6 @@ Scenario: EvergreenJnr_DevicesList_CheckThatRemovingColumnAndFilterAndCustomList
 	When User create dynamic list with "TestList3C5E3C" name on "Devices" page
 	Then "TestList3C5E3C" list is displayed to user
 	#Workaround for DAS-11570. Remove after fix
-	#And User navigates to the "TestList3C5E3C" list
 	When User clicks the Columns button
 	Then Columns panel is displayed to the user
 	When ColumnName is entered into the search box and the selection is clicked

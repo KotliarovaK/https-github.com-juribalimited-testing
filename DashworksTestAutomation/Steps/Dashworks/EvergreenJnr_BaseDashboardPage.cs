@@ -1,11 +1,13 @@
-﻿using DashworksTestAutomation.Extensions;
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using DashworksTestAutomation.DTO.RuntimeVariables;
+using DashworksTestAutomation.Extensions;
+using DashworksTestAutomation.Helpers;
 using DashworksTestAutomation.Pages.Evergreen;
 using NUnit.Framework;
 using OpenQA.Selenium.Interactions;
 using OpenQA.Selenium.Remote;
-using System;
-using System.Collections.Generic;
-using System.Linq;
 using TechTalk.SpecFlow;
 
 namespace DashworksTestAutomation.Steps.Dashworks
@@ -14,9 +16,9 @@ namespace DashworksTestAutomation.Steps.Dashworks
     internal class EvergreenJnr_BaseDashboardPage : SpecFlowContext
     {
         private readonly RemoteWebDriver _driver;
-        private readonly DTO.RuntimeVariables.ListsDetails _listDetails;
+        private readonly ListsDetails _listDetails;
 
-        public EvergreenJnr_BaseDashboardPage(RemoteWebDriver driver, DTO.RuntimeVariables.ListsDetails listsDetails)
+        public EvergreenJnr_BaseDashboardPage(RemoteWebDriver driver, ListsDetails listsDetails)
         {
             _driver = driver;
             _listDetails = listsDetails;
@@ -77,30 +79,8 @@ namespace DashworksTestAutomation.Steps.Dashworks
             var listpageMenu = _driver.NowAt<BaseDashboardPage>();
 
             List<string> expectedList = listpageMenu.GetColumnContent(columnName).Where(x => !x.Equals("")).ToList();
-            List<KeyValuePair<DateTime, string>> unsortedList = new List<KeyValuePair<DateTime, string>>();
-            DateTime datevalue;
-            Assert.IsTrue(listpageMenu.DescendingSortingIcon.Displayed(), "Descending icon is not displayed");
-            foreach (var date in expectedList)
-            {
-                var unconvertedDate = DateTime.TryParse(date, out datevalue);
-                unsortedList.Add(unconvertedDate
-                    ? new KeyValuePair<DateTime, string>(datevalue, date)
-                    : new KeyValuePair<DateTime, string>(DateTime.MinValue, date));
-            }
-
-            try
-            {
-                Assert.AreEqual(expectedList.OrderByDescending(s => s).ToList(), expectedList,
-                    "Incorrect sorting order");
-            }
-            catch (Exception)
-            {
-                for (int i = 0; i < expectedList.Count; i++)
-                {
-                    Assert.AreEqual(unsortedList.OrderByDescending(x => x.Key).Select(x => x.Value).ToArray()[i],
-                        expectedList[i], "Incorrect sorting order");
-                }
-            }
+            SortingHelper.IsListSorted(expectedList, false);
+            Assert.IsTrue(listpageMenu.DescendingSortingIcon.Displayed);
         }
 
         [Then(@"data in table is sorted by '(.*)' column in ascending order")]
@@ -108,29 +88,76 @@ namespace DashworksTestAutomation.Steps.Dashworks
         {
             var listpageMenu = _driver.NowAt<BaseDashboardPage>();
 
-            List<string> expectedList = listpageMenu.GetColumnContent(columnName).Where(x => !x.Equals("")).ToList();
-            List<KeyValuePair<DateTime, string>> unsortedList = new List<KeyValuePair<DateTime, string>>();
-            DateTime datevalue;
-            Assert.IsTrue(listpageMenu.AscendingSortingIcon.Displayed(), "Ascending icon is not displayed");
-            foreach (var date in expectedList)
-            {
-                var unconvertedDate = DateTime.TryParse(date, out datevalue);
-                unsortedList.Add(unconvertedDate
-                    ? new KeyValuePair<DateTime, string>(datevalue, date)
-                    : new KeyValuePair<DateTime, string>(DateTime.MinValue, date));
-            }
+            List<string> actualList = listpageMenu.GetColumnContent(columnName).Where(x => !x.Equals("")).ToList();
+            SortingHelper.IsListSorted(actualList);
+            Assert.IsTrue(listpageMenu.AscendingSortingIcon.Displayed);
+        }
 
-            try
+        [Then(@"date in table is sorted by '(.*)' column in descending order")]
+        public void ThenDateInTableIsSortedByColumnInDescendingOrder(string columnName)
+        {
+            var listpageMenu = _driver.NowAt<BaseDashboardPage>();
+
+            List<string> originalList = listpageMenu.GetColumnContent(columnName).Where(x => !x.Equals("")).ToList();
+            SortingHelper.IsListSortedByDate(originalList);
+            Assert.IsTrue(listpageMenu.DescendingSortingIcon.Displayed);
+        }
+
+        [Then(@"date in table is sorted by '(.*)' column in ascending order")]
+        public void ThenDateInTableIsSortedByColumnInAscendingOrder(string columnName)
+        {
+            var listpageMenu = _driver.NowAt<BaseDashboardPage>();
+
+            List<string> originalList = listpageMenu.GetColumnContent(columnName).Where(x => !x.Equals("")).ToList();
+            SortingHelper.IsListSortedByDate(originalList, false);
+            Assert.IsTrue(listpageMenu.AscendingSortingIcon.Displayed);
+        }
+
+        [Then(@"numeric data in table is sorted by '(.*)' column in ascending order")]
+        public void ThenNumericDataInTableIsSortedByColumnInAscendingOrder(string columnName)
+        {
+            var listpageMenu = _driver.NowAt<BaseDashboardPage>();
+
+            List<string> actualList = listpageMenu.GetColumnContent(columnName).Where(x => !x.Equals("")).ToList();
+            SortingHelper.IsNumericListSorted(actualList);
+            Assert.IsTrue(listpageMenu.AscendingSortingIcon.Displayed);
+        }
+
+        [Then(@"numeric data in table is sorted by '(.*)' column in descending order")]
+        public void ThenNumericDataInTableIsSortedByColumnInDescendingOrder(string columnName)
+        {
+            var listpageMenu = _driver.NowAt<BaseDashboardPage>();
+            _driver.WaitForDataLoading();
+            List<string> expectedList = listpageMenu.GetColumnContent(columnName).Where(x => !x.Equals("")).ToList();
+            SortingHelper.IsNumericListSorted(expectedList, false);
+            Assert.IsTrue(listpageMenu.DescendingSortingIcon.Displayed);
+        }
+
+        [Then(@"The first cell of the table matches to default sorting ""(.*)"" list")]
+        public void ThenTheFirstCellOfTheTableMatchesToDefaultSortingList(string listName)
+        {
+            var content = _driver.NowAt<BaseDashboardPage>();
+
+            switch (listName)
             {
-                Assert.AreEqual(expectedList.OrderBy(s => s).ToList(), expectedList, "Incorrect sorting order");
-            }
-            catch (Exception)
-            {
-                for (int i = 0; i < expectedList.Count; i++)
-                {
-                    Assert.AreEqual(unsortedList.OrderBy(x => x.Key).Select(x => x.Value).ToArray()[i],
-                        expectedList[i], "Incorrect sorting order");
-                }
+                case "Devices":
+                    Assert.AreEqual("001BAQXT6JWFPI", content.GetColumnContent("Hostname").First());
+                    break;
+
+                case "Users":
+                    Assert.IsEmpty(content.GetColumnContent("Username").First());
+                    break;
+
+                case "Applications":
+                    Assert.IsEmpty(content.GetColumnContent("Application").First());
+                    break;
+
+                case "Mailboxes":
+                    Assert.IsEmpty(content.GetColumnContent("Email Address").First());
+                    break;
+
+                default:
+                    throw new Exception($"'{listName}' has the incorrect first cell");
             }
         }
 
@@ -139,31 +166,9 @@ namespace DashworksTestAutomation.Steps.Dashworks
         {
             var listpageMenu = _driver.NowAt<BaseDashboardPage>();
 
-            List<string> expectedList = listpageMenu.GetColumnContent(columnName).Where(x => !x.Equals("")).ToList();
-            List<KeyValuePair<DateTime, string>> unsortedList = new List<KeyValuePair<DateTime, string>>();
-            DateTime datevalue;
-            foreach (var date in expectedList)
-            {
-                var unconvertedDate = DateTime.TryParse(date, out datevalue);
-                unsortedList.Add(unconvertedDate
-                    ? new KeyValuePair<DateTime, string>(datevalue, date)
-                    : new KeyValuePair<DateTime, string>(DateTime.MinValue, date));
-            }
-
-            try
-            {
-                Assert.AreEqual(expectedList.OrderBy(s => s).ToList(), expectedList, "Incorrect sorting order");
-            }
-            catch (Exception)
-            {
-                for (int i = 0; i < expectedList.Count; i++)
-                {
-                    Assert.AreEqual(unsortedList.OrderBy(x => x.Key).Select(x => x.Value).ToArray()[i],
-                        expectedList[i], "Incorrect sorting order");
-                }
-            }
+            List<string> originalList = listpageMenu.GetColumnContent(columnName).ToList();
+            SortingHelper.IsListSorted(originalList);
         }
-
 
         [Then(@"full list content is displayed to the user")]
         public void ThenFullListContentIsDisplayedToTheUser()
@@ -180,7 +185,6 @@ namespace DashworksTestAutomation.Steps.Dashworks
 
             foreach (var row in table.Rows)
             {
-
                 //Sort newly added column to got only value at first places
                 WhenUserClickOnColumnHeader(row["ColumnName"]);
                 var content = page.GetColumnContent(row["ColumnName"]);
@@ -234,7 +238,8 @@ namespace DashworksTestAutomation.Steps.Dashworks
         public void ThenTextIsDisplayedInFilterContainerForListName(string text, string listName)
         {
             var page = _driver.NowAt<BaseDashboardPage>();
-            Assert.AreEqual(text.Replace("{LIST_ID}", _listDetails.GetListIdByName(listName)), page.FilterContainer.Text.TrimStart(' ').TrimEnd(' '),
+            Assert.AreEqual(text.Replace("{LIST_ID}", _listDetails.GetListIdByName(listName)),
+                page.FilterContainer.Text.TrimStart(' ').TrimEnd(' '),
                 "Filter is created incorrectly");
         }
 

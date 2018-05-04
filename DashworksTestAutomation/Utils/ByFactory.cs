@@ -38,9 +38,10 @@ namespace DashworksTestAutomation.Utils
                 case How.XPath:
                     return By.XPath(@using);
             }
+
             throw new ArgumentException(string
                 .Format(CultureInfo.InvariantCulture, "Did not know how to construct How from how {0}, using {1}",
-                new object[] { how, @using }));
+                    new object[] {how, @using}));
         }
     }
 }

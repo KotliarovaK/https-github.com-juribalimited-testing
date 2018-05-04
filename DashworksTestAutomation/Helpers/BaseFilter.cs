@@ -1,21 +1,16 @@
-﻿using DashworksTestAutomation.Extensions;
+﻿using System;
+using System.Linq;
+using DashworksTestAutomation.Extensions;
 using DashworksTestAutomation.Pages.Evergreen;
 using NUnit.Framework;
 using OpenQA.Selenium;
 using OpenQA.Selenium.Remote;
-using System;
-using System.Linq;
 using TechTalk.SpecFlow;
 
 namespace DashworksTestAutomation.Helpers
 {
     public class BaseFilter
     {
-        protected RemoteWebDriver _driver { get; set; }
-        protected string _operatorValue { get; set; }
-        protected bool _acceptCheckbox { get; set; }
-        protected Table _table { get; set; }
-
         public BaseFilter(RemoteWebDriver driver, string operatorValue, bool acceptCheckbox)
         {
             _driver = driver;
@@ -28,6 +23,11 @@ namespace DashworksTestAutomation.Helpers
             _driver = driver;
             _table = table;
         }
+
+        protected RemoteWebDriver _driver { get; set; }
+        protected string _operatorValue { get; set; }
+        protected bool _acceptCheckbox { get; set; }
+        protected Table _table { get; set; }
 
         public void SelectOperator()
         {
@@ -59,21 +59,19 @@ namespace DashworksTestAutomation.Helpers
 
     public class DateFilter : BaseFilter
     {
-        private string _dateValue { get; set; }
-
         public DateFilter(RemoteWebDriver driver, string operatorValue, bool acceptCheckbox, string dateValue) : base(
             driver, operatorValue, acceptCheckbox)
         {
             _dateValue = dateValue;
         }
 
+        private string _dateValue { get; }
+
         public override void Do()
         {
             SelectOperator();
             if (_driver.IsElementDisplayed(By.XPath(".//input[@aria-label='Date']")))
-            {
                 _driver.FindElement(By.XPath(".//input[@aria-label='Date']")).SendKeys(_dateValue);
-            }
 
             SaveFilter();
         }
@@ -81,13 +79,13 @@ namespace DashworksTestAutomation.Helpers
 
     public class LookupFilter : BaseFilter
     {
-        private string _value { get; set; }
-
         public LookupFilter(RemoteWebDriver driver, string operatorValue, bool acceptCheckbox, string value) : base(
             driver, operatorValue, acceptCheckbox)
         {
             _value = value;
         }
+
+        private string _value { get; }
 
         public override void Do()
         {
@@ -105,13 +103,13 @@ namespace DashworksTestAutomation.Helpers
 
     public class TreeList : BaseFilter
     {
-        private string _value { get; set; }
-
         public TreeList(RemoteWebDriver driver, string operatorValue, bool acceptCheckbox, string value) : base(
             driver, operatorValue, acceptCheckbox)
         {
             _value = value;
         }
+
+        private string _value { get; }
 
         public override void Do()
         {
@@ -120,20 +118,21 @@ namespace DashworksTestAutomation.Helpers
             _driver.FindElement(
                     By.XPath(".//div[@class='filterAddPanel ng-star-inserted']//input[@placeholder='Search']"))
                 .SendKeys(_value);
-            _driver.FindElement(By.XPath(".//i[@class='material-icons mat-18 mat-done check-item hideElementIcon']")).Click();
+            _driver.FindElement(By.XPath(".//i[@class='material-icons mat-18 mat-done check-item hideElementIcon']"))
+                .Click();
             SaveFilter();
         }
     }
 
     public class LookupFilterTable : BaseFilter
     {
-        protected Table Table { get; set; }
-
         public LookupFilterTable(RemoteWebDriver driver, string operatorValue, bool acceptCheckbox, Table table) : base(
             driver, operatorValue, acceptCheckbox)
         {
             Table = table;
         }
+
+        protected Table Table { get; set; }
 
         public override void Do()
         {
@@ -154,19 +153,18 @@ namespace DashworksTestAutomation.Helpers
                         $".//div[@class='filterAddPanel ng-star-inserted']//span[contains(text(),'{row["SelectedValues"]}')]"))
                     .Click();
             }
-         SaveFilter();
+
+            SaveFilter();
         }
     }
 
     public class CheckBoxesFilter : BaseFilter
     {
-        protected Table _optionsTable { get; set; }
+        protected string CheckboxSelector =
+            ".//div[@class='filterAddPanel ng-star-inserted']//span[text()='{0}']/../preceding-sibling::i";
 
         protected string CheckboxSelectorName =
             ".//div[@class='filterAddPanel ng-star-inserted']//span[text()='{0}']";
-
-        protected string CheckboxSelector =
-            ".//div[@class='filterAddPanel ng-star-inserted']//span[text()='{0}']/../preceding-sibling::i";
 
         public CheckBoxesFilter(RemoteWebDriver driver, string operatorValue, bool acceptCheckbox, Table optionsTable) :
             base(driver, operatorValue, acceptCheckbox)
@@ -174,15 +172,15 @@ namespace DashworksTestAutomation.Helpers
             _optionsTable = optionsTable;
         }
 
+        protected Table _optionsTable { get; set; }
+
         public override void Do()
         {
             SelectOperator();
             _driver.WaitForDataLoading();
             foreach (var row in _optionsTable.Rows)
-            {
                 _driver.FindElement(
                     By.XPath(string.Format(CheckboxSelectorName, row["SelectedCheckboxes"]))).Click();
-            }
 
             SaveFilter();
         }
@@ -219,13 +217,13 @@ namespace DashworksTestAutomation.Helpers
 
     public class ChangeCheckboxesFilter : CheckBoxesFilter
     {
-        private Table Table { get; set; }
-
         public ChangeCheckboxesFilter(RemoteWebDriver driver, Table table) :
             base(driver, "", false, table)
         {
             Table = table;
         }
+
+        private Table Table { get; }
 
         public override void Do()
         {
@@ -234,10 +232,7 @@ namespace DashworksTestAutomation.Helpers
                 var selector = string.Format(CheckboxSelector, row["Option"]);
                 _driver.WaitWhileControlIsNotDisplayed(By.XPath(selector));
                 var checkbox = _driver.FindElement(By.XPath(selector));
-                if (bool.Parse(row["State"]) != checkbox.GetFilterCheckboxSelectedState())
-                {
-                    checkbox.Click();
-                }
+                if (bool.Parse(row["State"]) != checkbox.GetFilterCheckboxSelectedState()) checkbox.Click();
             }
 
             SaveFilter();
@@ -246,13 +241,13 @@ namespace DashworksTestAutomation.Helpers
 
     public class ValueFilter : BaseFilter
     {
-        private Table _optionsTable { get; set; }
-
         public ValueFilter(RemoteWebDriver driver, string operatorValue, bool acceptCheckbox, Table optionsTable) :
             base(driver, operatorValue, acceptCheckbox)
         {
             _optionsTable = optionsTable;
         }
+
+        private Table _optionsTable { get; }
 
         public override void Do()
         {
@@ -262,7 +257,9 @@ namespace DashworksTestAutomation.Helpers
                 ".//div[@class='filterAddPanel ng-star-inserted']/div[@class='form-container']//div[@class='form-group ng-star-inserted']//li/span";
             var filterValueSelector = By.XPath(
                 ".//div[@class='filterAddPanel ng-star-inserted']//div[@class='mat-input-infix mat-form-field-infix']//input");
-            var addButtonSelector = By.XPath(".//div[@class='filterAddPanel ng-star-inserted']//button[@class='button-small mat-primary mat-raised-button ng-star-inserted']");
+            var addButtonSelector =
+                By.XPath(
+                    ".//div[@class='filterAddPanel ng-star-inserted']//button[@class='button-small mat-primary mat-raised-button ng-star-inserted']");
 
             SelectOperator();
             _driver.WaitForDataLoading();
@@ -290,23 +287,21 @@ namespace DashworksTestAutomation.Helpers
 
     public class ListFilter : BaseFilter
     {
-        private Table Table { get; set; }
-
         public ListFilter(RemoteWebDriver driver, string operatorValue, Table table) :
             base(driver, operatorValue, false)
         {
             Table = table;
         }
 
+        private Table Table { get; }
+
         public override void Do()
         {
             SelectOperator();
             _driver.WaitForDataLoading();
             foreach (var row in Table.Rows)
-            {
                 _driver.FindElement(By.XPath(
                     $".//div[@id='perfectScrolBar']//span[text()='{row["SelectedList"]}']")).Click();
-            }
 
             foreach (var row in Table.Rows)
             {
@@ -320,13 +315,13 @@ namespace DashworksTestAutomation.Helpers
 
     public class LookupValueAssociationFilter : BaseFilter
     {
-        private Table Table { get; set; }
-
         public LookupValueAssociationFilter(RemoteWebDriver driver, string operatorValue, Table table) : base(
             driver, operatorValue, false)
         {
             Table = table;
         }
+
+        private Table Table { get; }
 
         public override void Do()
         {
@@ -344,7 +339,8 @@ namespace DashworksTestAutomation.Helpers
 
             foreach (var row in Table.Rows)
             {
-                _driver.FindElement(By.XPath(".//div[@class='dropdown-select input-wrapper']//input[@id='mat-input-1']")).Click();
+                _driver.FindElement(
+                    By.XPath(".//div[@class='dropdown-select input-wrapper']//input[@id='mat-input-1']")).Click();
                 _driver.FindElement(By.XPath($".//li//span[text()='{row["Association"]}']")).Click();
             }
 
@@ -354,13 +350,13 @@ namespace DashworksTestAutomation.Helpers
 
     public class ValueAssociationFilter : BaseFilter
     {
-        private Table Table { get; set; }
-
         public ValueAssociationFilter(RemoteWebDriver driver, string operatorValue, Table table) : base(
             driver, operatorValue, false)
         {
             Table = table;
         }
+
+        private Table Table { get; }
 
         public override void Do()
         {

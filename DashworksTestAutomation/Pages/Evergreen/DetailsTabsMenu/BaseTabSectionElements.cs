@@ -2,7 +2,6 @@
 using DashworksTestAutomation.Extensions;
 using OpenQA.Selenium;
 using OpenQA.Selenium.Support.PageObjects;
-using System.Collections.Generic;
 
 namespace DashworksTestAutomation.Pages.Evergreen.DetailsTabsMenu
 {
@@ -19,6 +18,5 @@ namespace DashworksTestAutomation.Pages.Evergreen.DetailsTabsMenu
             Driver.WaitWhileControlIsNotDisplayed(By.XPath(columnSettingsSelector));
             Driver.FindElement(By.XPath(columnSettingsSelector)).Click();
         }
-
     }
 }

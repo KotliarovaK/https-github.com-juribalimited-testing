@@ -1,9 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using DashworksTestAutomation.Base;
+﻿using System.Collections.Generic;
 using DashworksTestAutomation.Extensions;
 using OpenQA.Selenium;
 using OpenQA.Selenium.Support.PageObjects;
@@ -15,7 +10,7 @@ namespace DashworksTestAutomation.Pages.Evergreen.DetailsTabsMenu
         [FindsBy(How = How.XPath,
             Using =
                 ".//span[text()='Application Summary']/ancestor::div[@class='field-category no-side-padding collapsed']")]
-        public IWebElement ApplicationSummarySection { get; set; }//CHANGE ALL xpATH
+        public IWebElement ApplicationSummarySection { get; set; } //CHANGE ALL xpATH
 
         [FindsBy(How = How.XPath,
             Using =

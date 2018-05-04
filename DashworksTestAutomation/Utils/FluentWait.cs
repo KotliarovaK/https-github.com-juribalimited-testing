@@ -4,21 +4,16 @@ using OpenQA.Selenium.Support.UI;
 
 namespace DashworksTestAutomation.Utils
 {
-    class FluentWait : IWait<IWebDriver>
+    internal class FluentWait : IWait<IWebDriver>
     {
-        private WebDriverWait _wait;
-        private TimeSpan _deafultTimeout = TimeSpan.FromSeconds(5);
+        private readonly TimeSpan _deafultTimeout = TimeSpan.FromSeconds(5);
         private IWebDriver _driver;
+        private readonly WebDriverWait _wait;
 
         private FluentWait(IWebDriver webDriver)
         {
             _wait = new WebDriverWait(webDriver, _deafultTimeout);
             _driver = webDriver;
-        }
-
-        public static FluentWait Create(IWebDriver webDriver)
-        {
-            return new FluentWait(webDriver);
         }
 
         public void IgnoreExceptionTypes(params Type[] exceptionTypes)
@@ -33,18 +28,25 @@ namespace DashworksTestAutomation.Utils
 
         public TimeSpan Timeout
         {
-            get { return _wait.Timeout; }
-            set { _wait.Timeout = value; }
+            get => _wait.Timeout;
+            set => _wait.Timeout = value;
         }
+
         public TimeSpan PollingInterval
         {
-            get { return _wait.PollingInterval; }
-            set { _wait.PollingInterval = value; }
+            get => _wait.PollingInterval;
+            set => _wait.PollingInterval = value;
         }
+
         public string Message
         {
-            get { return _wait.Message; }
-            set { _wait.Message = value; }
+            get => _wait.Message;
+            set => _wait.Message = value;
+        }
+
+        public static FluentWait Create(IWebDriver webDriver)
+        {
+            return new FluentWait(webDriver);
         }
 
         public FluentWait WithTimeout(TimeSpan timeout)

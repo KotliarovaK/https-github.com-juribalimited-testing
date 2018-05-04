@@ -1,4 +1,8 @@
-﻿using DashworksTestAutomation.DTO;
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Threading;
+using DashworksTestAutomation.DTO;
 using DashworksTestAutomation.DTO.RuntimeVariables;
 using DashworksTestAutomation.Extensions;
 using DashworksTestAutomation.Helpers;
@@ -7,10 +11,6 @@ using DashworksTestAutomation.Utils;
 using NUnit.Framework;
 using OpenQA.Selenium;
 using OpenQA.Selenium.Remote;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading;
 using TechTalk.SpecFlow;
 
 namespace DashworksTestAutomation.Steps.Dashworks
@@ -19,10 +19,10 @@ namespace DashworksTestAutomation.Steps.Dashworks
     internal class EvergreenJnr_NewCustomList : SpecFlowContext
     {
         private readonly RemoteWebDriver _driver;
-        private readonly UserDto _user;
-        private readonly UsedUsers _usedUsers;
-        private readonly UsersWithSharedLists _usersWithSharedLists;
         private readonly ListsDetails _listsDetails;
+        private readonly UsedUsers _usedUsers;
+        private readonly UserDto _user;
+        private readonly UsersWithSharedLists _usersWithSharedLists;
 
         public EvergreenJnr_NewCustomList(RemoteWebDriver driver, UserDto user, UsedUsers usedUsers,
             UsersWithSharedLists usersWithSharedLists, ListsDetails listsDetails)
@@ -156,8 +156,15 @@ namespace DashworksTestAutomation.Steps.Dashworks
         public void ThenDeleteAndCancelButtonsAreAvailableInTheWarningMessage()
         {
             var listDetailsElement = _driver.NowAt<CustomListElement>();
-            Assert.IsTrue((listDetailsElement.CancelButtonInWarningMessage.Displayed), "Cancel button is not displayed");
-            Assert.IsTrue((listDetailsElement.DeleteButtonInWarningMessage.Displayed), "Delete button is not displayed");
+            Assert.IsTrue(listDetailsElement.CancelButtonInWarningMessage.Displayed, "Cancel button is not displayed");
+            Assert.IsTrue(listDetailsElement.DeleteButtonInWarningMessage.Displayed, "Delete button is not displayed");
+        }
+
+        [Then(@"User clicks Delete button on the warning message in the lists panel")]
+        public void ThenUserClicksDeleteButtonOnTheWarningMessageInTheListsPanel()
+        {
+            var listDetailsElement = _driver.NowAt<CustomListElement>();
+            listDetailsElement.DeleteButtonInWarningMessage.Click();
         }
 
         [When(@"User clicks Cancel button in the warning message")]
@@ -171,8 +178,10 @@ namespace DashworksTestAutomation.Steps.Dashworks
         public void ThenListMessageIsDisplayedInTheListPanel(string listName, string warningText)
         {
             var listElement = _driver.NowAt<CustomListElement>();
-            Assert.IsTrue(listElement.ListNameWarningMessage(listName), $"{listName} is not displayed in the list details panel");
-            Assert.IsTrue(listElement.RemovingDependencyListMessage(warningText), $"{warningText} message is not displayed in the list details panel");
+            Assert.IsTrue(listElement.ListNameWarningMessage(listName),
+                $"{listName} is not displayed in the list details panel");
+            Assert.IsTrue(listElement.RemovingDependencyListMessage(warningText),
+                $"{warningText} message is not displayed in the list details panel");
         }
 
         [When(@"User update current custom list")]
@@ -273,10 +282,7 @@ namespace DashworksTestAutomation.Steps.Dashworks
             var listElement = _driver.NowAt<CustomListElement>();
             _driver.WaitWhileControlIsNotDisplayed<CustomListElement>(() => listElement.SaveAsDropdown);
 
-            if (!listElement.UpdateCurrentListButton.Displayed())
-            {
-                listElement.SaveAsDropdown.Click();
-            }
+            if (!listElement.UpdateCurrentListButton.Displayed()) listElement.SaveAsDropdown.Click();
 
             Assert.IsFalse(listElement.UpdateCurrentListButton.Displayed(), "Update Current List button is displayed");
         }
@@ -306,10 +312,7 @@ namespace DashworksTestAutomation.Steps.Dashworks
         {
             var listElement = _driver.NowAt<CustomListElement>();
             _driver.WaitWhileControlIsNotDisplayed<CustomListElement>(() => listElement.SaveAsDropdown);
-            if (!listElement.UpdateCurrentListButton.Displayed())
-            {
-                listElement.SaveAsDropdown.Click();
-            }
+            if (!listElement.UpdateCurrentListButton.Displayed()) listElement.SaveAsDropdown.Click();
 
             Assert.IsTrue(listElement.UpdateCurrentListButton.Displayed(),
                 "Update Current List button is NOT displayed");
@@ -320,10 +323,7 @@ namespace DashworksTestAutomation.Steps.Dashworks
         {
             var listElement = _driver.NowAt<CustomListElement>();
             _driver.WaitWhileControlIsNotDisplayed<CustomListElement>(() => listElement.SaveAsDropdown);
-            if (!listElement.SaveAsNewListButton.Displayed())
-            {
-                listElement.SaveAsDropdown.Click();
-            }
+            if (!listElement.SaveAsNewListButton.Displayed()) listElement.SaveAsDropdown.Click();
 
             Assert.IsFalse(listElement.SaveAsNewListButton.Displayed(), "Save As New List button is displayed");
         }
@@ -333,10 +333,7 @@ namespace DashworksTestAutomation.Steps.Dashworks
         {
             var listElement = _driver.NowAt<CustomListElement>();
             _driver.WaitWhileControlIsNotDisplayed<CustomListElement>(() => listElement.SaveAsDropdown);
-            if (!listElement.SaveAsNewListButton.Displayed())
-            {
-                listElement.SaveAsDropdown.Click();
-            }
+            if (!listElement.SaveAsNewListButton.Displayed()) listElement.SaveAsDropdown.Click();
 
             Assert.IsTrue(listElement.SaveAsNewListButton.Displayed(), "Save As New List button is NOT displayed");
         }
@@ -390,7 +387,6 @@ namespace DashworksTestAutomation.Steps.Dashworks
                     return;
 
                 foreach (UserDto userDto in _usedUsers.Value)
-                {
                     try
                     {
                         //All lists for all users
@@ -404,7 +400,6 @@ namespace DashworksTestAutomation.Steps.Dashworks
                     catch
                     {
                     }
-                }
             }
             catch
             {
@@ -420,7 +415,6 @@ namespace DashworksTestAutomation.Steps.Dashworks
                     return;
 
                 foreach (string user in _usersWithSharedLists.Value)
-                {
                     try
                     {
                         //All lists for all users
@@ -434,7 +428,6 @@ namespace DashworksTestAutomation.Steps.Dashworks
                     catch
                     {
                     }
-                }
             }
             catch
             {
@@ -446,7 +439,6 @@ namespace DashworksTestAutomation.Steps.Dashworks
             var listElement = _driver.NowAt<CustomListElement>();
 
             foreach (var button in _driver.FindElements(By.XPath(listElement.SettingButtonSelector)))
-            {
                 if (_driver.IsElementExists(By.XPath(listElement.SettingButtonSelector)))
                 {
                     Thread.Sleep(500);
@@ -459,7 +451,6 @@ namespace DashworksTestAutomation.Steps.Dashworks
                         listElement.DeleteConfirmationMessage);
                     listElement.ConfirmDeleteButton.Click();
                 }
-            }
         }
     }
 }

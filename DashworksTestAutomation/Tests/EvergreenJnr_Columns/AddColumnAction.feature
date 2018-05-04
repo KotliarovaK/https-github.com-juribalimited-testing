@@ -84,7 +84,7 @@ Scenario Outline: EvergreenJnr_AllLists_CheckThatConsoleErrorsAreNotDisplayedAft
 	| ColumnName               |
 	| UserSchedu: Readiness ID |
 	When User click on 'UserSchedu: Readiness ID' column header
-	Then data in table is sorted by 'UserSchedu: Readiness ID' column in descending order
+	Then numeric data in table is sorted by 'UserSchedu: Readiness ID' column in descending order
 	Then full list content is displayed to the user
 	Then There are no errors in the browser console
 
@@ -129,10 +129,10 @@ Scenario: EvergreenJnr_MailboxesLists_CheckThatTheLowestValueOfUserCountColumnIs
 	| User Count |
 	When User click on 'User Count' column header
 	When User click on 'User Count' column header
-	Then data in table is sorted by 'User Count' column in ascending order
+	Then numeric data in table is sorted by 'User Count' column in ascending order
 	Then Lowest value of "User Count" column is null
 	
-@Evergreen @AllLists @EvergreenJnr_Columns @AddColumnAction @DAS12194 @DAS12220 
+@Evergreen @AllLists @EvergreenJnr_Columns @AddColumnAction @DAS12194 @DAS12220 @Not_Run
 Scenario Outline: EvergreenJnr_AllLists_CheckThat500ErrorIsNotDisplayedAfterAddingComplianceDataToLists
 	When User clicks "<ListName>" on the left-hand menu
 	Then "<ListName>" list should be displayed to the user

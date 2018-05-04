@@ -289,9 +289,9 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_ActionsPanel
         [NUnit.Framework.CategoryAttribute("AllCheckbox")]
         [NUnit.Framework.CategoryAttribute("DAS10656")]
         [NUnit.Framework.TestCaseAttribute("Devices", "17225", "Hostname", "00BDM1JUR8IF419", "17224", new string[0])]
-        [NUnit.Framework.TestCaseAttribute("Users", "41335", "Username", "AAD1011948", "41334", new string[0])]
-        [NUnit.Framework.TestCaseAttribute("Applications", "2223", "Application", "Python 2.2a4", "2222", new string[0])]
-        [NUnit.Framework.TestCaseAttribute("Mailboxes", "14784", "Email Address", "aaron.u.flores@dwlabs.local", "14783", new string[0])]
+        [NUnit.Framework.TestCaseAttribute("Users", "41335", "Username", "$6BE000-SUDQ9614UVO8", "41334", new string[0])]
+        [NUnit.Framework.TestCaseAttribute("Applications", "2223", "Application", "\"WPF/E\" (codename) Community Technology Preview (Feb 2007)", "2222", new string[0])]
+        [NUnit.Framework.TestCaseAttribute("Mailboxes", "14784", "Email Address", "000F977AC8824FE39B8@bclabs.local", "14783", new string[0])]
         public virtual void EvergreenJnr_AllLists_SelectAllChecboxMainFunctionalityTest(string pageName, string selectedRowsCount, string columnname, string selectedRowName, string selectedRowsCountAfterDiselect, string[] exampleTags)
         {
             System.Exception lastException = null;

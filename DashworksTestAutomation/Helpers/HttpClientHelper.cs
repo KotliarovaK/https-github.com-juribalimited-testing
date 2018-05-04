@@ -1,22 +1,21 @@
-﻿using DashworksTestAutomation.DTO;
-using DashworksTestAutomation.Extensions;
-using DashworksTestAutomation.Providers;
-using RestSharp;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Net;
 using System.Net.Http;
+using DashworksTestAutomation.DTO;
+using DashworksTestAutomation.Extensions;
+using DashworksTestAutomation.Providers;
+using RestSharp;
 
 namespace DashworksTestAutomation.Helpers
 {
     public class HttpClientHelper
     {
-        private CookieContainer _cookies = new CookieContainer();
-        private HttpClientHandler _handler = new HttpClientHandler();
+        private readonly CookieContainer _cookies = new CookieContainer();
+        private readonly HttpClientHandler _handler = new HttpClientHandler();
 
-        public IEnumerable<System.Net.Cookie> CookiesJar = null;
-        public IEnumerable<OpenQA.Selenium.Cookie> SeleniumCookiesJar => CookiesJar.Select(x => x.ToSeleniumCookies());
+        public IEnumerable<Cookie> CookiesJar;
 
         public HttpClientHelper()
         {
@@ -30,12 +29,13 @@ namespace DashworksTestAutomation.Helpers
             InitCookies(credentials, auth);
         }
 
+        public IEnumerable<OpenQA.Selenium.Cookie> SeleniumCookiesJar => CookiesJar.Select(x => x.ToSeleniumCookies());
+
         private void InitCookies(UserDto credentials, AuthObject auth)
         {
             var loginUrl = $"{UrlProvider.Url}LoginSplash.aspx?ReturnUrl=/";
 
             if (CookiesJar == null)
-            {
                 using (var httpClient = new HttpClient(_handler))
                 {
                     var uri = new Uri(loginUrl);
@@ -47,7 +47,7 @@ namespace DashworksTestAutomation.Helpers
                         new KeyValuePair<string, string>("__EVENTVALIDATION", auth.Eventvalidation),
                         new KeyValuePair<string, string>("TB_UserName", credentials.UserName),
                         new KeyValuePair<string, string>("TB_Password", credentials.Password),
-                        new KeyValuePair<string, string>("Btn_Login", "Login"),
+                        new KeyValuePair<string, string>("Btn_Login", "Login")
                     });
 
                     // Execute Authorisation request
@@ -56,7 +56,6 @@ namespace DashworksTestAutomation.Helpers
                     // Get all cookies
                     CookiesJar = _cookies.GetCookies(uri).Cast<Cookie>();
                 }
-            }
         }
     }
 }

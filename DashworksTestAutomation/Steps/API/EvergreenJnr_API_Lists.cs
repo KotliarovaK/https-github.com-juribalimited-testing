@@ -1,10 +1,7 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.Linq;
 using System.Net;
-using System.Text;
 using System.Text.RegularExpressions;
-using System.Threading.Tasks;
 using DashworksTestAutomation.DTO;
 using DashworksTestAutomation.DTO.RuntimeVariables;
 using DashworksTestAutomation.Extensions;
@@ -22,9 +19,9 @@ namespace DashworksTestAutomation.Steps.API
     internal class EvergreenJnr_Lists : SpecFlowContext
     {
         private readonly RestWebClient _client;
-        private readonly UserDto _user;
         private readonly RemoteWebDriver _driver;
         private readonly ListsDetails _listsDetails;
+        private readonly UserDto _user;
 
         public EvergreenJnr_Lists(RestWebClient client, UserDto user, RemoteWebDriver driver, ListsDetails listsDetails)
         {
@@ -78,19 +75,11 @@ namespace DashworksTestAutomation.Steps.API
             var items = string.Empty;
 
             if (string.IsNullOrWhiteSpace(table.Rows.First()["ItemName"]))
-            {
                 foreach (var item in _client.GetAllItemsKeys(pageName))
-                {
                     items += item + ",";
-                }
-            }
             else
-            {
                 foreach (var row in table.Rows)
-                {
                     items += _client.GetItemIdByName(row["ItemName"], pageName) + ",";
-                }
-            }
 
             items = items.TrimEnd(',');
 
@@ -204,18 +193,11 @@ namespace DashworksTestAutomation.Steps.API
             var pattern = @"\?\$(.*)";
             string originalPart = Regex.Match(url, pattern).Groups[1].Value;
             if (originalPart.Contains("select="))
-            {
                 queryString = "$" + originalPart;
-            }
             else
-            {
                 queryString = RestWebClient.GetDefaultColumnsUrlByPageName(pageName) + "&$" + originalPart;
-            }
 
-            if (!originalPart.Contains("filter="))
-            {
-                queryString += "&$filter=";
-            }
+            if (!originalPart.Contains("filter=")) queryString += "&$filter=";
 
             return queryString;
         }

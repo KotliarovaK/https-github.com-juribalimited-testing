@@ -1,10 +1,10 @@
-﻿using DashworksTestAutomation.DTO;
-using HtmlAgilityPack;
-using RestSharp;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Net;
 using System.Threading;
+using DashworksTestAutomation.DTO;
+using HtmlAgilityPack;
+using RestSharp;
 
 namespace DashworksTestAutomation.Extensions
 {
@@ -16,17 +16,13 @@ namespace DashworksTestAutomation.Extensions
 
             var cookiesJar = new CookieContainer();
 
-            foreach (Cookie cookie in cookies)
-            {
-                cookiesJar.Add(cookie);
-            }
+            foreach (Cookie cookie in cookies) cookiesJar.Add(cookie);
 
             client.CookieContainer = cookiesJar;
         }
 
         public static AuthObject GetAuthenticationDetails(this RestClient client, string url)
         {
-
             var cientBaseUrl = client.BaseUrl;
 
             client.BaseUrl = new Uri(url);
@@ -64,7 +60,7 @@ namespace DashworksTestAutomation.Extensions
 
                 client.BaseUrl = cientBaseUrl;
 
-                return new AuthObject()
+                return new AuthObject
                 {
                     Eventvalidation = eventvalidation,
                     Viewstate = viewstate,

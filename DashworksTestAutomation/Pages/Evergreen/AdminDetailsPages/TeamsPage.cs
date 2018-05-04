@@ -1,10 +1,10 @@
 ﻿using System;
+using System.Collections.Generic;
+using System.Linq;
 using DashworksTestAutomation.Base;
 using DashworksTestAutomation.Extensions;
 using OpenQA.Selenium;
 using OpenQA.Selenium.Support.PageObjects;
-using System.Collections.Generic;
-using System.Linq;
 
 namespace DashworksTestAutomation.Pages.Evergreen.AdminDetailsPages
 {
@@ -37,12 +37,28 @@ namespace DashworksTestAutomation.Pages.Evergreen.AdminDetailsPages
         [FindsBy(How = How.XPath, Using = ".//div[@class='ag-body-container']/div")]
         public IWebElement TableContent { get; set; }
 
+        [FindsBy(How = How.XPath, Using = ".//span[@class='ag-header-select-all']")]
+        public IWebElement SelectAllProjectsCheckbox { get; set; }
+
+        [FindsBy(How = How.XPath, Using = ".//div[@class='mat-select-value']")]
+        public IWebElement ActionsButton { get; set; }
+
+        [FindsBy(How = How.XPath,
+            Using = ".//button[@class='button-small mat-raised-button mat-accent ng-star-inserted']")]
+        public IWebElement DeleteButtonOnPage { get; set; }
+
+        [FindsBy(How = How.XPath, Using = ".//h2[text()='Reassign Objects']")]
+        public IWebElement ReassignObjectsSummary { get; set; }
+
+        [FindsBy(How = How.XPath, Using = ".//button[@class='mat-primary mat-raised-button']")]
+        public IWebElement UpdateTeamButton { get; set; }
+
         public override List<By> GetPageIdentitySelectors()
         {
             Driver.WaitForDataLoading();
             return new List<By>
             {
-                SelectorFor(this, p => p.TeamsPageTitle),
+                SelectorFor(this, p => p.TeamsPageTitle)
             };
         }
 
@@ -87,11 +103,26 @@ namespace DashworksTestAutomation.Pages.Evergreen.AdminDetailsPages
             return Driver.IsElementDisplayed(By.XPath($".//h1[text()='{teamName}']"));
         }
 
+        public void SelectTabByName(string tabName)
+        {
+            string tabNameSelector = $".//li[@class='ng-star-inserted']//span[text()='{tabName}']";
+            Driver.WaitWhileControlIsNotDisplayed(By.XPath(tabNameSelector));
+            Driver.FindElement(By.XPath(tabNameSelector)).Click();
+        }
+
+        public void SelectActions(string actionName)
+        {
+            string selectedActionName =
+                $".//div[@class='mat-select-content ng-trigger ng-trigger-fadeInContent']//span[text()='{actionName}']";
+            Driver.WaitWhileControlIsNotDisplayed(By.XPath(selectedActionName));
+            Driver.FindElement(By.XPath(selectedActionName)).Click();
+        }
+
         public void OpenColumnSettingsByName(string columnName)
         {
-            var columnSettingsSelector =
-                $".//div[@role='presentation']/span[text()='{columnName}']/ancestor::div[@class='ag-header-cell ag-header-cell-sortable']//span[@ref='eMenu']";
-            var columnHeaderSelector = $".//div[@role='presentation']/span[text()='{columnName}']";
+            string columnSettingsSelector =
+                $".//div[@role='presentation']/span[text()='{columnName}']//ancestor::div[@class='ag-cell-label-container ag-header-cell-sorted-none']//span[@class='ag-icon ag-icon-menu']";
+            var columnHeaderSelector = $".//span[@class='ag-header-cell-text'][text()='{columnName}']";
             Driver.MouseHover(By.XPath(columnHeaderSelector));
             Driver.WaitWhileControlIsNotDisplayed(By.XPath(columnSettingsSelector));
             Driver.FindElement(By.XPath(columnSettingsSelector)).Click();

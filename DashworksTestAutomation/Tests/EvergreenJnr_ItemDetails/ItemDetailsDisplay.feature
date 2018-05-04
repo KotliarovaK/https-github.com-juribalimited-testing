@@ -60,7 +60,7 @@ Examples:
 	| Mailboxes    | aaron.u.flores@dwlabs.local                             | Email Address | Users        | Domain      | Key                 | Key                 |
 	| Mailboxes    | aaron.u.flores@dwlabs.local                             | Email Address | Users        | Domain      | Evergreen Object ID | Evergreen Object ID |
 
-@Evergreen @AllLists @EvergreenJnr_ItemDetails @ItemDetailsDisplay @DAS11732 @DAS12235 @Not_Run
+@Evergreen @AllLists @EvergreenJnr_ItemDetails @ItemDetailsDisplay @DAS11732 @DAS12235
 Scenario Outline: EvergreenJnr_AllLists_CheckThatDataIsDisplayedAfterAddingColumns
 	When User clicks "<PageName>" on the left-hand menu
 	Then "<PageName>" list should be displayed to the user
@@ -100,14 +100,40 @@ Examples:
 	| Applications | Microsoft Office Visio 2000 Solutions - Custom Patterns | Application   | Details      | Application         | Programs            | Program       | Program Key          | Program Key          |
 	| Applications | Microsoft Office Visio 2000 Solutions - Custom Patterns | Application   | Distribution | Users               | Devices             | Device        | Computer Key         | Computer Key         |
 	| Applications | Microsoft Office Visio 2000 Solutions - Custom Patterns | Application   | Distribution | Users               | Devices             | Device        | Owner Object Key     | Owner Object Key     |
-	| Applications | Microsoft Office Visio 2000 Solutions - Custom Patterns | Application   | Distribution | Users               | Devices             | Device        | User Key             | User Key             |
-	| Applications | Microsoft Office Visio 2000 Solutions - Custom Patterns | Application   | Distribution | Users               | Devices             | Device        | Advertisement Key    | Advertisement Key    |
-	| Applications | Microsoft Office Visio 2000 Solutions - Custom Patterns | Application   | Distribution | Users               | Devices             | Device        | Collection Key       | Collection Key       |
-	| Applications | Microsoft Office Visio 2000 Solutions - Custom Patterns | Application   | Distribution | Users               | Devices             | Device        | Program Key          | Program Key          |
 	| Mailboxes    | aaron.u.flores@dwlabs.local                             | Email Address | Users        | Users               | Groups              | Domain        | Key                  | Key                  |
 	| Mailboxes    | aaron.u.flores@dwlabs.local                             | Email Address | Users        | Users               | Mailbox Permissions | Domain        | Key                  | Key                  |
 	| Mailboxes    | aaron.u.flores@dwlabs.local                             | Email Address | Users        | Users               | Mailbox Permissions | Domain        | Via Group Object Key | Via Group Object Key |
 	| Mailboxes    | aaron.u.flores@dwlabs.local                             | Email Address | Users        | Users               | Mailbox Permissions | Domain        | Access Category Key  | Access Category Key  |
+
+@Evergreen @AllLists @EvergreenJnr_ItemDetails @ItemDetailsDisplay @DAS11732 @DAS12235
+Scenario Outline: EvergreenJnr_AllLists_CheckThatDataIsDisplayedAfterAddingColumnsToTheTable
+	When User clicks "<PageName>" on the left-hand menu
+	Then "<PageName>" list should be displayed to the user
+	When User perform search by "<SearchTerm>"
+	When User click content from "<ItemName>" column
+	And User navigates to the "<TabName>" tab
+	Then User closes "<ExpandedSectionName>" section on the Details Page
+	When User opens "<SectionName>" section on the Details Page
+	When User have opened Column Settings for "<ColumnName>" column in the Details Page table
+	When User clicks Column button on the Column Settings panel
+	When User select "Device" checkbox on the Column Settings panel
+	When User select "Installed" checkbox on the Column Settings panel
+	When User select "<CheckboxName>" checkbox on the Column Settings panel
+	When User clicks Column button on the Column Settings panel
+	Then ColumnName is added to the list in the Details Page table
+	| ColumnName      |
+	| <NewColumnName> |
+	And Content is present in the newly added column in the Details Page table
+	| ColumnName      |
+	| <NewColumnName> |
+	Then There are no errors in the browser console
+
+Examples: 
+	| PageName     | SearchTerm                                              | ItemName      | TabName      | ExpandedSectionName | SectionName         | ColumnName    | CheckboxName         | NewColumnName        |
+	| Applications | Microsoft Office Visio 2000 Solutions - Custom Patterns | Application   | Distribution | Users               | Devices             | Device        | User Key             | User Key             |
+	| Applications | Microsoft Office Visio 2000 Solutions - Custom Patterns | Application   | Distribution | Users               | Devices             | Device        | Advertisement Key    | Advertisement Key    |
+	| Applications | Microsoft Office Visio 2000 Solutions - Custom Patterns | Application   | Distribution | Users               | Devices             | Device        | Collection Key       | Collection Key       |
+	| Applications | Microsoft Office Visio 2000 Solutions - Custom Patterns | Application   | Distribution | Users               | Devices             | Device        | Program Key          | Program Key          |
 
 @Evergreen @AllLists @EvergreenJnr_ItemDetails @ItemDetailsDisplay @DAS11732 @DAS12053 @DAS12235
 Scenario Outline: EvergreenJnr_AllLists_CheckThatDataIsDisplayedAfterAddingColumnsForClosedSections
@@ -254,6 +280,8 @@ Examples:
 Scenario: EvergreenJnr_MailboxesLists_CheckThatNoConsoleErrorsWhenViewingMailboxDetails
 	When User clicks "Mailboxes" on the left-hand menu
 	Then "Mailboxes" list should be displayed to the user
+	When User click on 'Email Address' column header
+	When User click on 'Email Address' column header
 	When User click content from "Email Address" column
 	Then Item content is displayed to the User
 	Then There are no errors in the browser console
@@ -276,6 +304,7 @@ Scenario: EvergreenJnr_DevicesLists_CheckThatDataOfColumnsIsDisplayedInTheCustom
 Scenario: EvergreenJnr_MailboxesLists_CheckThatLinksAndImageItemAreDisplayedInTheNameAndDisplayNameColumns
 	When User clicks "Mailboxes" on the left-hand menu
 	Then "Mailboxes" list should be displayed to the user
+	When User perform search by "00C8BC63E7424A6E862@bclabs.local"
 	When User click content from "Email Address" column
 	And User navigates to the "Users" tab
 	Then User closes "Users" section on the Details Page
@@ -310,7 +339,7 @@ Scenario Outline: EvergreenJnr_AllLists_CheckThatNoConsoleErrorsAreDisplayedWhen
 	And User navigates to the "<TabName>" tab
 	And User have opened Column Settings for "<SelectedColumn>" column in the Details Page table
 	And User clicks Filter button on the Column Settings panel
-	Then User enters "12345" text in the Filter field
+	Then User enters "123455465" text in the Filter field
 	When User clears Filter field
 	Then There are no errors in the browser console
 
