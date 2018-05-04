@@ -183,6 +183,7 @@
     <Compile Include="DTO\Projects\NewsDto.cs" />
     <Compile Include="DTO\Projects\ProjectDto.cs" />
     <Compile Include="DTO\Projects\RequestTypesDto.cs" />
+    <Compile Include="DTO\Projects\RequestType_DetailsDto.cs" />
     <Compile Include="DTO\Projects\SelfService\SelfService_AppsListDto.cs" />
     <Compile Include="DTO\Projects\SelfService\SelfService_ComputerOwnershipDto.cs" />
     <Compile Include="DTO\Projects\SelfService\SelfService_DepartmentAndLocationDto.cs" />
@@ -252,6 +253,7 @@
     <Compile Include="Pages\LoginPage.cs" />
     <Compile Include="Pages\LoginPanelPage.cs" />
     <Compile Include="Pages\LogoutPage.cs" />
+    <Compile Include="Pages\ManagementConsolePage.cs" />
     <Compile Include="Pages\Projects\BaseElements.cs" />
     <Compile Include="Pages\Projects\Capacity\Capacity_CapacityPage.cs" />
     <Compile Include="Pages\Projects\Capacity\Capacity_DetailsPage.cs" />
@@ -264,6 +266,7 @@
     <Compile Include="Pages\Projects\ProjectLogin.cs" />
     <Compile Include="Pages\Projects\ProjectPropertiesPage.cs" />
     <Compile Include="Pages\Projects\RequestTypePropertiesPage.cs" />
+    <Compile Include="Pages\Projects\RequestType_DetailsPage.cs" />
     <Compile Include="Pages\Projects\SelfService\SelfService_AppsListPage.cs" />
     <Compile Include="Pages\Projects\SelfService\SelfService_ComputerOwnershipPage.cs" />
     <Compile Include="Pages\Projects\SelfService\SelfService_DepartmentAndLocationPage.cs" />
@@ -278,6 +281,7 @@
     <Compile Include="Pages\Projects\TaskProperties_DetailsPage.cs" />
     <Compile Include="Pages\Projects\TeamPropertiesPage.cs" />
     <Compile Include="Pages\Projects\TeamsPage.cs" />
+    <Compile Include="Steps\ManagementConsole\ManagementConsole.cs" />
     <Compile Include="Steps\Projects\Projects_Capacity.cs" />
     <Compile Include="Steps\Projects\Projects_CreateProject.cs" />
     <Compile Include="Steps\Projects\Projects_Login.cs" />

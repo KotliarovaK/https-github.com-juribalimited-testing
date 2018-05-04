@@ -18,6 +18,7 @@ namespace DashworksTestAutomation.Steps.Projects
         private readonly ProjectDto _projectDto;
         private readonly DetailsDto _detailsDto;
         private readonly RequestTypesDto _requestTypesDto;
+        private readonly RequestType_DetailsDto _requestTypeDetailsDto;
         private readonly CategoryPropertiesDto _categoryPropertiesDto;
         private readonly StagePropertiesDto _stagePropertiesDto;
         private readonly TaskPropertiesDto _taskPropertiesDto;
@@ -28,7 +29,7 @@ namespace DashworksTestAutomation.Steps.Projects
         private readonly NewsDto _newsDto;
 
 
-        public Projects_CreateProject(RemoteWebDriver driver, ProjectDto projectDto, DetailsDto detailsDto, RequestTypesDto requestTypesDto, CategoryPropertiesDto categoryPropertiesDto, StagePropertiesDto stagePropertiesDto, TaskPropertiesDto taskPropertiesDto, TeamPropertiesDto teamPropertiesDto, GroupPropertiesDto groupPropertiesDto, MailTemplatePropertiesDto mailTemplatePropertiesDto, NewsDto newsDto, TaskProperties_DetailsDto taskPropertiesDetailsDto)
+        public Projects_CreateProject(RemoteWebDriver driver, ProjectDto projectDto, DetailsDto detailsDto, RequestTypesDto requestTypesDto, CategoryPropertiesDto categoryPropertiesDto, StagePropertiesDto stagePropertiesDto, TaskPropertiesDto taskPropertiesDto, TeamPropertiesDto teamPropertiesDto, GroupPropertiesDto groupPropertiesDto, MailTemplatePropertiesDto mailTemplatePropertiesDto, NewsDto newsDto, TaskProperties_DetailsDto taskPropertiesDetailsDto, RequestType_DetailsDto requestTypeDetailsDto)
         {
             _driver = driver;
             _projectDto = projectDto;
@@ -42,6 +43,7 @@ namespace DashworksTestAutomation.Steps.Projects
             _mailTemplatePropertiesDto = mailTemplatePropertiesDto;
             _newsDto = newsDto;
             _taskPropertiesDetailsDto = taskPropertiesDetailsDto;
+            _requestTypeDetailsDto = requestTypeDetailsDto;
         }
 
         [When(@"User clicks create Project button")]
@@ -149,6 +151,34 @@ namespace DashworksTestAutomation.Steps.Projects
             page.ConfirmCreateRequestTypesButton.Click();
 
             _projectDto.ReqestType = _requestTypesDto;
+        }
+
+        [When(@"User click on the created Request Type")]
+        public void WhenUserClickOnTheCreatedRequestType()
+        {
+            var page = _driver.NowAt<BaseElements>();
+
+            page.GetTheCreatedRequestTypeInTableByName(_projectDto.ReqestType.Name).Click();
+        }
+
+        [When(@"User click on the ""(.*)"" Request Type")]
+        public void WhenUserClickOnTheRequestType(string requestTypeName)
+        {
+            var page = _driver.NowAt<BaseElements>();
+
+            page.GetTheCreatedRequestTypeInTableByName(requestTypeName).Click();
+        }
+
+        [Then(@"User updates the Request Type page")]
+        public void ThenUserUpdatesTheRequestTypePage(Table table)
+        {
+            var page = _driver.NowAt<RequestType_DetailsPage>();
+
+            table.CreateInstance<RequestType_DetailsDto>().CopyPropertiesTo(_requestTypeDetailsDto);
+
+            page.DefaultRequestType.SetCheckboxState(_requestTypeDetailsDto.DefaultRequestType);
+
+            page.UpdateDetailsButton.Click();
         }
 
         [When(@"User create Category")]
@@ -372,13 +402,24 @@ namespace DashworksTestAutomation.Steps.Projects
             Assert.IsTrue(stage.Displayed(), "Selected Stage is not displayed in the table");
         }
 
+        [Then(@"created Request Type is a Default")]
+        public void ThenCreatedRequestTypeIsADefault()
+        {
+            var page = _driver.NowAt<BaseElements>();
+
+            //var requestName = _projectDto.ReqestType.Name;
+            //page.GetDefaultRequestTypeCountByName(requestName);
+            _driver.WaitForDataLoading();
+            Assert.IsTrue(page.GetDefaultRequestTypeCountByName(_projectDto.ReqestType.Name).Displayed(), "Selected Request Type is not 'Default'");
+        }
+
         [Then(@"required number of groups is displayed for created team")]
         public void ThenRequiredNumberOfGroupsIsDisplayedForCreatedTeam()
         {
-            var taem = _driver.NowAt<BaseElements>();
+            var page = _driver.NowAt<BaseElements>();
 
             var groupsInTeam = _projectDto.GroupProperties.Count(x => x.OwnedByTeam.Equals(_projectDto.TeamProperties.TeamName));
-            var groups = taem.GetGroupsCountByTeamName(_projectDto.TeamProperties.TeamName);
+            var groups = page.GetGroupsCountByTeamName(_projectDto.TeamProperties.TeamName);
 
             Assert.AreEqual(groups, groupsInTeam, "Number of groups is incorrect");
         }

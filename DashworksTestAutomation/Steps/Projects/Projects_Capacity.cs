@@ -1,10 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Reflection;
-using System.Text;
-using System.Threading.Tasks;
-using DashworksTestAutomation.DTO.Projects;
+﻿using DashworksTestAutomation.DTO.Projects;
 using DashworksTestAutomation.Extensions;
 using DashworksTestAutomation.Pages.Projects;
 using OpenQA.Selenium.Remote;
@@ -92,8 +86,8 @@ namespace DashworksTestAutomation.Steps.Projects
             table.CreateInstance<Capacity_OverrideDatesDto>().CopyPropertiesTo(_overrideDatesDto);
 
             page.Date.SendKeys(_overrideDatesDto.Date);
-            page.OverrideTeam.SelectboxSelect(_projectDto.TeamProperties.TeamName);
-            page.OverrideRequestType.SelectboxSelect(_projectDto.ReqestType.Name);
+            page.OverrideTeam.SelectboxSelect(_overrideDatesDto.OverrideTeam.GetValue());
+            page.OverrideRequestType.SelectboxSelect(_overrideDatesDto.OverrideRequestType.GetValue());
             page.Capacity.SendKeys(_overrideDatesDto.Capacity.ToString());
             page.Comment.SendKeys(_overrideDatesDto.Comment);
 

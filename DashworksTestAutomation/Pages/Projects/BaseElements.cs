@@ -90,7 +90,6 @@ namespace DashworksTestAutomation.Pages.Projects
         public IWebElement GetDeleteTaskButtonElementByName(string taskName)
         {
             var selector = By.XPath($".//a[text()='{taskName}']/../following-sibling::td//input[@title='Delete']");
-
             Driver.WaitWhileControlIsNotDisplayed(selector);
             return Driver.FindElement(selector);
         }
@@ -170,6 +169,13 @@ namespace DashworksTestAutomation.Pages.Projects
         {
             var groupsCount = Driver.FindElement(By.XPath($".//td[@title='{teamName}']/..//td[4]")).Text;
             return int.Parse(groupsCount);
+        }
+
+        public IWebElement GetDefaultRequestTypeCountByName(string requestName)
+        {
+            var selector = By.XPath($".//a[contains(text(), '{requestName}')]/../following-sibling::td//input[@src='/images/tick2.png']");
+            Driver.WaitWhileControlIsNotDisplayed(selector);
+            return Driver.FindElement(selector);
         }
     }
 }

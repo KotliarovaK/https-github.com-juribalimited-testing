@@ -7,7 +7,13 @@ Scenario: Projects_CreateProject
 	Then Login Page is displayed to the user
 	When User provides the Login and Password and clicks on the login button
 	Then Dashworks homepage is displayed to the user in a logged in state
-	When User navigate to Projects link
+	When User navigate to "Manage" link
+	When User select "Manage Users" option in Management Console
+	Then User create a new Dashworks User
+	| Username | FullName | Password | ConfirmPassword |
+	|          |          |          |                 |
+	When User navigate to "Dashworks User Site" link
+	When User navigate to "Projects" link
 	Then "Projects Home" page is displayed to the user
 	When User clicks create Project button
 	Then "Create Project" page is displayed to the user
@@ -147,7 +153,7 @@ Scenario: Projects_CreateProject
 	Then "Manage Capacity" page is displayed to the user
 	Then User updates the Details on Capacity tab
 	| EnablePlanning | DisplayColors | EnforceOonSelfServicePage | EnforceOnProjectObjectPage | CapacityToReach |
-	| true           | true          | true                      | false                      | 23              |
+	| false          | false         | true                      | false                      | 80              |
 	Then Success message is displayed with "Details successfully updated." text
 	When User navigate to "Capacity" on Capacity tab
 	Then User updates the Capacity on Capacity tab
@@ -178,6 +184,12 @@ Scenario: Projects_CreateProject
 	#Then selected Category removed
 	Then Success message is displayed with "Category successfully deleted." text
 	When User navigate to "Request Types" tab
+	When User click on the "[Default (Computer)]" Request Type
+	Then User updates the Request Type page
+	| DefaultRequestType |
+	| true               |
+	Then Success message is displayed with "Request Type successfully updated" text
+	When User clicks "Cancel" button
 	Then User remove created Request Type
 	#Then selected Request Type removed
 	Then Success message is displayed with "Request Type successfully deleted" text

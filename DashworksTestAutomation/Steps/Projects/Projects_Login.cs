@@ -16,13 +16,13 @@ namespace DashworksTestAutomation.Pages.Projects
             _driver = driver;
         }
 
-        [When(@"User navigate to Projects link")]
-        public void WhenUserNavigateToProjectsLink()
+        [When(@"User navigate to ""(.*)"" link")]
+        public void WhenUserNavigateToLink(string linkName)
         {
             var page = _driver.NowAt<ProjectLogin>();
 
-            _driver.MouseHover(page.ProjectsLink);
-            page.ProjectsLink.Click();
+            _driver.MouseHover(page.GetLinkByName(linkName));
+            page.GetLinkByName(linkName).Click();
         }
 
         [Then(@"""(.*)"" page is displayed to the user")]
