@@ -72,6 +72,20 @@ namespace DashworksTestAutomation.Steps.Dashworks
             listpageMenu.ColumnButton.Click();
         }
 
+        [When(@"User adds columns to the list")]
+        public void WhenUserAddsColumnsToTheList(Table table)
+        {
+            var columnElement = _driver.NowAt<ColumnsElement>();
+
+            foreach (var row in table.Rows)
+            {
+                columnElement.AddColumn(row["ColumnName"]);
+
+                //Clear the textbox after adding a column, so it is reset for the next loop
+                columnElement.SearchTextbox.ClearWithHomeButton(_driver);
+            }
+        }
+
         [When(@"User add following columns using URL to the ""(.*)"" page:")]
         public void WhenUserAddFollowingColumnsUsingUrlToThePage(string pageName, Table table)
         {

@@ -34,15 +34,20 @@ Examples:
 	| Applications | Application   |
 	| Mailboxes    | Email Address |
 
-@Evergreen @AllLists @EvergreenJnr_BaseDashboardPage @BaseDashboardPage @DAS11988
-Scenario Outline: EvergreenJnr_AllList_CheckThatSaveListFunctionIsAvailableAfterSortingAColumn
+@Evergreen @AllLists @EvergreenJnr_BaseDashboardPage @BaseDashboardPage @DAS11988 @DAS10972
+Scenario Outline: EvergreenJnr_AllList_CheckThatSaveListFunctionIsAvailableAfterSortingColumns
 	When User clicks "<ListName>" on the left-hand menu
 	Then "<ListName>" list should be displayed to the user
 	When User click on '<ColumnName>' column header
 	Then data in table is sorted by '<ColumnName>' column in ascending order
-	Then Save to New Custom List element is displayed
+	And Save to New Custom List element is displayed
+	When User click on '<ColumnName>' column header
+	Then data in table is sorted by '<ColumnName>' column in descending order
+	And Save to New Custom List element is displayed
+	When User click on '<ColumnName>' column header
+	Then Save to New Custom List element is NOT displayed
 
-Examples: 
+Examples:
 	| ListName     | ColumnName    |
 	| Devices      | Hostname      |
 	| Users        | Username      |

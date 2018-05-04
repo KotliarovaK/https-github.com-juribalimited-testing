@@ -105,21 +105,41 @@ Scenario: EvergreenJnr_DevicesList_CheckThatAddColumnOptionIsNotAvailableForAppl
 	When User selects "Computer Warranty" filter from "Application Custom Fields" category
 	Then "Add column" checkbox is not displayed
 
-@Evergreen @AllLisrs @Evergreen_FiltersFeature @FiltersDisplay @DAS10771
+@Evergreen @AllLisrs @Evergreen_FiltersFeature @FiltersDisplay @DAS10771 @DAS10972
 Scenario Outline: EvergreenJnr_AllLisrs_CheckThatNoneOptionIsAvailableForFilters
 	When User clicks "<PageName>" on the left-hand menu
 	Then "<PageName>" list should be displayed to the user
 	When User clicks the Filters button
 	Then Filters panel is displayed to the user
-	When user select "<FilterName>" filter
-	Then "None" option is available at first place
+	When User add "<FilterName>" filter where type is "Equals" without added column and following checkboxes:
+	| SelectedCheckboxes |
+	| None               |
+	Then Save to New Custom List element is displayed
+	When User click Edit button for "<FilterName>" filter
+	Then User changes filter type to "Does not equal"
+	Then Save to New Custom List element is displayed
+	When User have reset all filters
+	Then Save to New Custom List element is NOT displayed
+	When User add "<FilterName>" filter where type is "Equals" without added column and following checkboxes:
+	| SelectedCheckboxes |
+	| None               |
+	Then Save to New Custom List element is displayed
+	When User Add And "<NewFilterName>" filter where type is "Equals" without added column and following checkboxes:
+	| SelectedCheckboxes |
+	| Red                |
+	When User Add And "<NewFilterName>" filter where type is "Equals" without added column and following checkboxes:
+	| SelectedCheckboxes |
+	| Amber              |
+	Then Save to New Custom List element is displayed
+	When User have reset all filters
+	Then Save to New Custom List element is NOT displayed
 
-Examples: 
-	| PageName     | FilterName           |
-	| Devices      | Windows7Mi: Category |
-	| Users        | UserSchedu: Category |
-	| Applications | Havoc(BigD: Category |
-	| Mailboxes    | EmailMigra: Category |
+Examples:
+	| PageName     | FilterName           | NewFilterName    |
+	| Devices      | Windows7Mi: Category | Compliance       |
+	| Users        | UserSchedu: Category | Compliance       |
+	| Applications | Havoc(BigD: Category | Compliance       |
+	| Mailboxes    | EmailMigra: Category | Owner Compliance |
 
 @Evergreen @Devices @Evergreen_FiltersFeature @FiltersDisplay @DAS10696 @Delete_Newly_Created_List
 Scenario: EvergreenJnr_DevicesList_CheckThatFilterDataIsDisplayedCorrectlyWhenNavigatingBetweenLists

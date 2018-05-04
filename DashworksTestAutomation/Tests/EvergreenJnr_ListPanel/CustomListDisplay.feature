@@ -716,3 +716,36 @@ Examples:
 	| Applications | All Applications |
 	| Users        | All Users        |
 	| Mailboxes    | All Mailboxes    |
+
+@Evergreen @AllLists @EvergreenJnr_ListPanel @CustomListDisplay @DAS10972
+Scenario Outline: EvergreenJnr_AllListsLists_CheckThatTheSaveListFunctionIsTriggeredOrHiddenAfterAddingOrRemovingColumns
+	When User clicks "<ListName>" on the left-hand menu
+	Then "<ListName>" list should be displayed to the user
+	When User clicks the Columns button
+	Then Columns panel is displayed to the user
+	When User adds columns to the list
+	| ColumnName   |
+	| <ColumnName> |
+	Then Save to New Custom List element is displayed
+	When User removes "<ColumnName>" column by Column panel
+	Then Save to New Custom List element is NOT displayed
+	When User adds columns to the list
+	| ColumnName   |
+	| <ColumnName> |
+	Then Save to New Custom List element is displayed
+	When User adds columns to the list
+	| ColumnName      |
+	| <NewColumnName> |
+	When User adds columns to the list
+	| ColumnName       |
+	| <MoreColumnName> |
+	Then Save to New Custom List element is displayed
+	When User have reset all columns
+	Then Save to New Custom List element is NOT displayed
+
+Examples:
+	| ListName     | ColumnName      | NewColumnName | MoreColumnName       |
+	| Devices      | Import          | Country       | Windows7Mi: Category |
+	| Applications | Application Key | Compliance    | App field 2          |
+	| Users        | City            | Description   | Floor                |
+	| Mailboxes    | Alias           | Time Zone     | Building             |
