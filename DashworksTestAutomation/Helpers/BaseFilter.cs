@@ -266,7 +266,7 @@ namespace DashworksTestAutomation.Helpers
             foreach (var row in _optionsTable.Rows)
             {
                 if (!_driver.IsElementDisplayed(filterValueSelector)) continue;
-                _driver.FindElement(filterValueSelector).SendKeys(row["Values"]);
+                _driver.FindElement(filterValueSelector).SendkeysWithDelay(row["Values"]);
 
                 if (_optionsTable.RowCount > 1)
                 {
