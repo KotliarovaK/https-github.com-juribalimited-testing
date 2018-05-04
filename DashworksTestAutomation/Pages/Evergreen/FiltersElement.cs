@@ -304,6 +304,11 @@ namespace DashworksTestAutomation.Pages.Evergreen
             return Driver.IsElementDisplayed(By.XPath($".//div[@class='list-container']/span[text()='{filterName}']"));
         }
 
+        public bool CheckboxNameForFilter(string checkboxName)
+        {
+            return Driver.IsElementDisplayed(By.XPath($".//span[contains(text(), '{checkboxName}')]"));
+        }
+
         public IWebElement GetBooleanCheckboxImg(string booleanValue)
         {
             var imgSelector =
