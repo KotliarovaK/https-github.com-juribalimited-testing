@@ -66,16 +66,9 @@ namespace DashworksTestAutomation.Pages.Projects
         [FindsBy(How = How.XPath, Using = ".//input[@id='ctl00_MainContent_Btn_DeleteProject']")]
         public IWebElement ConfirmDeletedTheProjectButton { get; set; }
 
-        public IWebElement GetDeleteRequestTypeButtonElementByName(string requestType)
+        public IWebElement GetDeleteButtonElementByName(string name)
         {
-            var selector = By.XPath($".//a[text()='{requestType}']/../following-sibling::td/input[@title='Delete']");
-            Driver.WaitWhileControlIsNotDisplayed(selector);
-            return Driver.FindElement(selector);
-        }
-
-        public IWebElement GetDeleteCategoryButtonElementByName(string categoryName)
-        {
-            var selector = By.XPath($".//a[text()='{categoryName}']/../following-sibling::td/input[@title='Delete']");
+            var selector = By.XPath($".//a[text()='{name}']/../following-sibling::td/input[@title='Delete']");
             Driver.WaitWhileControlIsNotDisplayed(selector);
             return Driver.FindElement(selector);
         }
@@ -83,34 +76,6 @@ namespace DashworksTestAutomation.Pages.Projects
         public IWebElement GetDeleteStageButtonElementByName(string stageName)
         {
             var selector = By.XPath($".//td[@title='{stageName}']/..//td[2]//input[@title='Delete']");
-            Driver.WaitWhileControlIsNotDisplayed(selector);
-            return Driver.FindElement(selector);
-        }
-
-        public IWebElement GetDeleteTaskButtonElementByName(string taskName)
-        {
-            var selector = By.XPath($".//a[text()='{taskName}']/../following-sibling::td//input[@title='Delete']");
-            Driver.WaitWhileControlIsNotDisplayed(selector);
-            return Driver.FindElement(selector);
-        }
-
-        public IWebElement GetDeleteGroupButtonElementByName(string groupName)
-        {
-            var selector = By.XPath($".//a[text()='{groupName}']/../following-sibling::td//input[@title='Delete']");
-            Driver.WaitWhileControlIsNotDisplayed(selector);
-            return Driver.FindElement(selector);
-        }
-
-        public IWebElement GetDeleteTeamButtonElementByName(string teamName)
-        {
-            var selector = By.XPath($".//a[text()='{teamName}']/../following-sibling::td//input[@title='Delete']");
-            Driver.WaitWhileControlIsNotDisplayed(selector);
-            return Driver.FindElement(selector);
-        }
-
-        public IWebElement GetDeleteTemplateButtonElementByName(string templateName)
-        {
-            var selector = By.XPath($".//a[text()='{templateName}']/../following-sibling::td//input[@title='Delete']");
             Driver.WaitWhileControlIsNotDisplayed(selector);
             return Driver.FindElement(selector);
         }

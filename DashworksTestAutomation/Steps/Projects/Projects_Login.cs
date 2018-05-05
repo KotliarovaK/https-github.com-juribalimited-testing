@@ -1,5 +1,6 @@
 ﻿using DashworksTestAutomation.Base;
 using DashworksTestAutomation.Extensions;
+using DashworksTestAutomation.Pages.ManagementConsole;
 using DashworksTestAutomation.Utils;
 using OpenQA.Selenium.Remote;
 using TechTalk.SpecFlow;
@@ -16,13 +17,31 @@ namespace DashworksTestAutomation.Pages.Projects
             _driver = driver;
         }
 
-        [When(@"User navigate to ""(.*)"" link")]
-        public void WhenUserNavigateToLink(string linkName)
+        [When(@"User navigate to Manage link")]
+        public void WhenUserNavigateToManageLink()
+        {
+            var page = _driver.NowAt<ManagementConsolePage>();
+
+            _driver.MouseHover(page.ManageLink);
+            page.ManageLink.Click();
+        }
+
+        [When(@"User navigate to Dashworks User Site link")]
+        public void WhenUserNavigateToDashworksUserSiteLink()
+        {
+            var page = _driver.NowAt<BaseElementsPage>();
+
+            _driver.MouseHover(page.DashworksUserSiteLink);
+            page.DashworksUserSiteLink.Click();
+        }
+
+        [When(@"User navigate to Projects link")]
+        public void WhenUserNavigateToProjectsLink()
         {
             var page = _driver.NowAt<ProjectLogin>();
 
-            _driver.MouseHover(page.GetLinkByName(linkName));
-            page.GetLinkByName(linkName).Click();
+            _driver.MouseHover(page.ProjectsLink);
+            page.ProjectsLink.Click();
         }
 
         [Then(@"""(.*)"" page is displayed to the user")]

@@ -407,8 +407,6 @@ namespace DashworksTestAutomation.Steps.Projects
         {
             var page = _driver.NowAt<BaseElements>();
 
-            //var requestName = _projectDto.ReqestType.Name;
-            //page.GetDefaultRequestTypeCountByName(requestName);
             _driver.WaitForDataLoading();
             Assert.IsTrue(page.GetDefaultRequestTypeCountByName(_projectDto.ReqestType.Name).Displayed(), "Selected Request Type is not 'Default'");
         }

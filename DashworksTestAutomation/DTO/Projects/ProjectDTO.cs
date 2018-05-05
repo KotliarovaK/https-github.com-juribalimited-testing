@@ -1,5 +1,6 @@
 ﻿using System.Collections.Generic;
 using System.ComponentModel;
+using DashworksTestAutomation.DTO.ManagementConsole;
 using DashworksTestAutomation.Extensions;
 
 namespace DashworksTestAutomation.DTO.Projects
@@ -20,6 +21,7 @@ namespace DashworksTestAutomation.DTO.Projects
         public List<GroupPropertiesDto> GroupProperties { get; set; }
         public MailTemplatePropertiesDto MailTemplateProperties { get; set; }
         public NewsDto News { get; set; }
+        public ManageUsersDto ManageUsers { get; set; }
 
         public ProjectDto()
         {

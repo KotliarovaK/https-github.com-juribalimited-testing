@@ -173,6 +173,8 @@
     <Compile Include="Base\BeforeAfterActions.cs" />
     <Compile Include="Base\IBaseTest.cs" />
     <Compile Include="Base\SeleniumBasePage.cs" />
+    <Compile Include="DTO\Colors.cs" />
+    <Compile Include="DTO\ManagementConsole\ManageUsersDto.cs" />
     <Compile Include="DTO\Projects\Capacity\Capacity_CapacityDto.cs" />
     <Compile Include="DTO\Projects\Capacity\Capacity_DetailsDto.cs" />
     <Compile Include="DTO\Projects\Capacity\Capacity_OverrideDatesDto.cs" />
@@ -253,7 +255,9 @@
     <Compile Include="Pages\LoginPage.cs" />
     <Compile Include="Pages\LoginPanelPage.cs" />
     <Compile Include="Pages\LogoutPage.cs" />
-    <Compile Include="Pages\ManagementConsolePage.cs" />
+    <Compile Include="Pages\ManagementConsole\BaseElementsPage.cs" />
+    <Compile Include="Pages\ManagementConsole\ManagementConsolePage.cs" />
+    <Compile Include="Pages\ManagementConsole\ManageUserPage.cs" />
     <Compile Include="Pages\Projects\BaseElements.cs" />
     <Compile Include="Pages\Projects\Capacity\Capacity_CapacityPage.cs" />
     <Compile Include="Pages\Projects\Capacity\Capacity_DetailsPage.cs" />

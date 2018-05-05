@@ -7,13 +7,15 @@ Scenario: Projects_CreateProject
 	Then Login Page is displayed to the user
 	When User provides the Login and Password and clicks on the login button
 	Then Dashworks homepage is displayed to the user in a logged in state
-	When User navigate to "Manage" link
+	When User navigate to Manage link
 	When User select "Manage Users" option in Management Console
 	Then User create a new Dashworks User
-	| Username | FullName | Password | ConfirmPassword |
-	|          |          |          |                 |
-	When User navigate to "Dashworks User Site" link
-	When User navigate to "Projects" link
+	| Username | FullName     | Password | ConfirmPassword |
+	| AAATest  | TestUserName | 1234qwer | 1234qwer        |
+	Then Success message is displayed
+	#Then created User is displayed in the table
+	When User navigate to Dashworks User Site link
+	When User navigate to Projects link
 	Then "Projects Home" page is displayed to the user
 	When User clicks create Project button
 	Then "Create Project" page is displayed to the user
@@ -166,22 +168,22 @@ Scenario: Projects_CreateProject
 	| 03 Apr 2016 | 0        | TestText |
 	Then Success message is displayed with "Override date successfully inserted" text
 	When User navigate to "Groups" tab
-	Then User remove created Group
-	#Then selected Group removed
+	Then User removes created Group
+	#Then selected Group was removed
 	When User navigate to "Teams" tab
-	Then User remove created Team
-	#Then selected Team removed
+	Then User removes created Team
+	#Then selected Team was removed
 	When User navigate to "Tasks" tab
-	Then User remove created Task
-	#Then selected Task removed
+	Then User removes created Task
+	#Then selected Task was removed
 	Then Success message is displayed with "Task successfully deleted." text
 	When User navigate to "Stages" tab
-	Then User remove created Stage
-	#Then selected Stage removed
+	Then User removes created Stage
+	#Then selected Stage was removed
 	Then Success message is displayed with "Stage successfully deleted." text
 	When User navigate to "Categories" tab
-	Then User remove created Category
-	#Then selected Category removed
+	Then User removes created Category
+	#Then selected Category was removed
 	Then Success message is displayed with "Category successfully deleted." text
 	When User navigate to "Request Types" tab
 	When User click on the "[Default (Computer)]" Request Type
@@ -190,13 +192,18 @@ Scenario: Projects_CreateProject
 	| true               |
 	Then Success message is displayed with "Request Type successfully updated" text
 	When User clicks "Cancel" button
-	Then User remove created Request Type
-	#Then selected Request Type removed
+	Then User removes created Request Type
+	#Then selected Request Type was removed
 	Then Success message is displayed with "Request Type successfully deleted" text
 	When User navigate to "Mail Templates" tab
-	Then User remove created Mail Template
-	#Then selected Mail Template removed
+	Then User removes created Mail Template
+	#Then selected Mail Template was removed
 	Then Success message is displayed with "Mail Template successfully deleted." text
 	When User navigate to "Details" tab
-	Then User remove Project
+	Then User removes the Project
 	Then Success message is displayed with "Project successfully deleted" text
+	When User navigate to Manage link
+	When User select "Manage Users" option in Management Console
+	Then User removes created User
+	Then Success message is displayed
+	Then selected User was removed

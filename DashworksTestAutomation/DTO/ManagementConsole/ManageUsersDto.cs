@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace DashworksTestAutomation.DTO.ManagementConsole
 {
-    public class ManageUsers
+    public class ManageUsersDto
     {
         public string Username { get; set; }
         public string FullName { get; set; }
