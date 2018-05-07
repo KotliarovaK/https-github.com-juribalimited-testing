@@ -145,8 +145,8 @@ Scenario Outline: EvergreenJnr_AllLists_CheckThat500ErrorIsNotDisplayedAfterAddi
 	| Amber              |
 	| Green              |
 	| Not Applicable     |
-	When User clicks the Filters button
 	Then "<FilterName>" filter is added to the list
+	When User clicks the Filters button
 	When User click on '<ColumnHeader>' column header
 	Then color data is sorted by '<ColumnHeader>' column in ascending order
 	When User click on '<ColumnHeader>' column header

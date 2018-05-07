@@ -76,14 +76,30 @@ Scenario: EvergreenJnr_DevicesList_CheckThatCustomListCreationBlockIsNotDisplaye
 	When User have reset all filters
 	Then Edit List menu is displayed
 
-@Evergreen @Devices @EvergreenJnr_ListPanel @CustomListDisplay @DAS10998
-Scenario: EvergreenJnr_DevicesList_CheckThatSearchDoesNotTriggerNewCustomList
-	When User clicks "Devices" on the left-hand menu
-	Then "Devices" list should be displayed to the user
+@Evergreen @AllLists @EvergreenJnr_ListPanel @CustomListDisplay @DAS10998 @DAS10972
+Scenario Outline: EvergreenJnr_AllList_CheckThatSearchDoesNotTriggerNewCustomList
+	When User clicks "<ListName>" on the left-hand menu
+	Then "<ListName>" list should be displayed to the user
 	And User enters SearchCriteria into the agGrid Search Box and the correct NumberOfRows are returned
 	| SearchCriteria | NumberOfRows |
-	| Henry          | 34           |
+	| <Search>       | <Rows>       |
 	Then Save to New Custom List element is NOT displayed
+	And "<ListName>" list should be displayed to the user
+	And User enters SearchCriteria into the agGrid Search Box and the correct NumberOfRows are returned
+	| SearchCriteria | NumberOfRows |
+	| Mary           | <NewRows>    |
+	Then Save to New Custom List element is NOT displayed
+	And "<ListName>" list should be displayed to the user
+	And Clearing the agGrid Search Box
+	And Save to New Custom List element is NOT displayed
+	And "<ListName>" list should be displayed to the user
+
+	Examples:
+	| ListName     | Search | Rows | NewRows |
+	| Devices      | Henry  | 34   | 17      |
+	| Users        | Henry  | 67   | 142     |
+	| Applications | Hen    | 5    | 1       |
+	| Mailboxes    | Henry  | 22   | 73      |
 
 @Evergreen @Devices @EvergreenJnr_ListPanel @CustomListDisplay @DAS11081 @DAS11951 @DAS12152 @Delete_Newly_Created_List
 Scenario: EvergreenJnr_DevicesList_CheckThatNewListCreatedMessageForStaticListIsDisplayed
