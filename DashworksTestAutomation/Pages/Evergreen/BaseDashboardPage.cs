@@ -109,6 +109,12 @@ namespace DashworksTestAutomation.Pages.Evergreen
         [FindsBy(How = How.XPath, Using = ".//div[@tabindex='-1']//span//a[@href='#/mailbox/49258/']")]
         public IWebElement FirstMailboxesCell { get; set; }
 
+        [FindsBy(How = How.XPath, Using = ".//mat-select[@name='createActions']/div[@class='mat-select-trigger']")]
+        public IWebElement CreateActionButton { get; set; }
+
+        [FindsBy(How = How.XPath, Using = ".//span[@class='mat-option-text'][text()='Project']")]
+        public IWebElement CreateProjectButton { get; set; }
+
         #region TableColumns
 
         [FindsBy(How = How.XPath, Using = ".//div[@colid='lastLogonDate'][@role='gridcell']")]
