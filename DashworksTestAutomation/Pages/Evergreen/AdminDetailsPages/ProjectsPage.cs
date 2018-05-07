@@ -22,6 +22,9 @@ namespace DashworksTestAutomation.Pages.Evergreen.AdminDetailsPages
         [FindsBy(How = How.XPath, Using = ".//button[@class='mat-primary mat-raised-button']")]
         public IWebElement CreateProjectButtonOnCreateProjectPage { get; set; }
 
+        [FindsBy(How = How.XPath, Using = ".//button[@class='mat-raised-button']/span[text()='CANCEL']")]
+        public IWebElement CancelButton { get; set; }
+
         [FindsBy(How = How.XPath, Using = ".//label[text()='Project Name']/ancestor::div[@class='form-item']//input")]
         public IWebElement ProjectNameField { get; set; }
 

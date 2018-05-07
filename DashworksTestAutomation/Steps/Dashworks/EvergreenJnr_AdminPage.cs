@@ -166,6 +166,16 @@ namespace DashworksTestAutomation.Steps.Dashworks
                 "Update Project button is active");
         }
 
+        [When(@"User clicks Cancel button")]
+        public void WhenUserClicksCancelButton()
+        {
+            var page = _driver.NowAt<ProjectsPage>();
+            _driver.WaitWhileControlIsNotDisplayed<ProjectsPage>(() => page.CancelButton);
+            page.CancelButton.Click();
+            Logger.Write("Cancel button was clicked");
+        }
+
+
         [When(@"User clicks Create Team button")]
         public void WhenUserClicksCreateTeamButton()
         {

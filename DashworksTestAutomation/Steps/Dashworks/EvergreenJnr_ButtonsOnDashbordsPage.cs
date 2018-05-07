@@ -54,6 +54,16 @@ namespace DashworksTestAutomation.Steps.Dashworks
             Logger.Write("Filters button was clicked");
         }
 
+        [When(@"User clicks Create Project")]
+        public void WhenUserClicksCreateProject()
+        {
+            var menu = _driver.NowAt<BaseDashboardPage>();
+            _driver.WaitWhileControlIsNotDisplayed<BaseDashboardPage>(() => menu.CreateActionButton);
+            menu.CreateActionButton.Click();
+            menu.CreateProjectButton.Click();
+            Logger.Write("Filters button was clicked");
+        }
+
         [Then(@"Filters Button is disabled")]
         public void ThenFiltersButtonIsDisabled()
         {
