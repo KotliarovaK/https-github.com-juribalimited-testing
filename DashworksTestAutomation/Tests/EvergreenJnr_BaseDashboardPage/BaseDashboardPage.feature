@@ -41,18 +41,26 @@ Scenario Outline: EvergreenJnr_AllList_CheckThatSaveListFunctionIsAvailableAfter
 	When User click on '<ColumnName>' column header
 	Then data in table is sorted by '<ColumnName>' column in ascending order
 	And Save to New Custom List element is displayed
+	When User click on '<AddSortOrders>' column header
+	Then data in table is sorted by '<AddSortOrders>' column in ascending order
+	And Save to New Custom List element is displayed
+	When User click on '<AddSortOrders>' column header
+	Then data in table is sorted by '<AddSortOrders>' column in descending order
+	And Save to New Custom List element is displayed
+	When User click on '<ColumnName>' column header
+	Then data in table is sorted by '<ColumnName>' column in ascending order
+	And Save to New Custom List element is displayed
 	When User click on '<ColumnName>' column header
 	Then data in table is sorted by '<ColumnName>' column in descending order
-	And Save to New Custom List element is displayed
 	When User click on '<ColumnName>' column header
 	Then Save to New Custom List element is NOT displayed
 
 Examples:
-	| ListName     | ColumnName    |
-	| Devices      | Hostname      |
-	| Users        | Username      |
-	| Applications | Application   |
-	| Mailboxes    | Email Address |
+	| ListName     | ColumnName    | AddSortOrders    |
+	| Devices      | Hostname      | Device Type      |
+	| Users        | Username      | Domain           |
+	| Applications | Application   | Vendor           |
+	| Mailboxes    | Email Address | Mailbox Platform |
 
 @Evergreen @AllLists @EvergreenJnr_BaseDashboardPage @BaseDashboardPage @DAS11895
 Scenario: EvergreenJnr_AllList_CheckThatNoConsoleErrorsAreDisplayedAfterQuicklyNavigateBetweenMainTabs

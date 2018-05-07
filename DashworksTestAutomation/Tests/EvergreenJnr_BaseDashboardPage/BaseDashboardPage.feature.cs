@@ -193,18 +193,18 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_BaseDashboardPage
         [NUnit.Framework.CategoryAttribute("BaseDashboardPage")]
         [NUnit.Framework.CategoryAttribute("DAS11988")]
         [NUnit.Framework.CategoryAttribute("DAS10972")]
-        [NUnit.Framework.TestCaseAttribute("Devices", "Hostname", new string[0])]
-        [NUnit.Framework.TestCaseAttribute("Users", "Username", new string[0])]
-        [NUnit.Framework.TestCaseAttribute("Applications", "Application", new string[0])]
-        [NUnit.Framework.TestCaseAttribute("Mailboxes", "Email Address", new string[0])]
-        public virtual void EvergreenJnr_AllList_CheckThatSaveListFunctionIsAvailableAfterSortingColumns(string listName, string columnName, string[] exampleTags)
+        [NUnit.Framework.TestCaseAttribute("Devices", "Hostname", "Device Type", new string[0])]
+        [NUnit.Framework.TestCaseAttribute("Users", "Username", "Domain", new string[0])]
+        [NUnit.Framework.TestCaseAttribute("Applications", "Application", "Vendor", new string[0])]
+        [NUnit.Framework.TestCaseAttribute("Mailboxes", "Email Address", "Mailbox Platform", new string[0])]
+        public virtual void EvergreenJnr_AllList_CheckThatSaveListFunctionIsAvailableAfterSortingColumns(string listName, string columnName, string addSortOrders, string[] exampleTags)
         {
             System.Exception lastException = null;
             for (int i = 0; (i <= 1); i = (i + 1))
             {
                 try
                 {
-                    this.EvergreenJnr_AllList_CheckThatSaveListFunctionIsAvailableAfterSortingColumnsInternal(listName, columnName, exampleTags);
+                    this.EvergreenJnr_AllList_CheckThatSaveListFunctionIsAvailableAfterSortingColumnsInternal(listName, columnName, addSortOrders, exampleTags);
                     return;
                 }
                 catch (System.Exception exc)
@@ -223,7 +223,7 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_BaseDashboardPage
             }
         }
         
-        private void EvergreenJnr_AllList_CheckThatSaveListFunctionIsAvailableAfterSortingColumnsInternal(string listName, string columnName, string[] exampleTags)
+        private void EvergreenJnr_AllList_CheckThatSaveListFunctionIsAvailableAfterSortingColumnsInternal(string listName, string columnName, string addSortOrders, string[] exampleTags)
         {
             string[] @__tags = new string[] {
                     "Evergreen",
@@ -244,9 +244,17 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_BaseDashboardPage
             testRunner.When(string.Format("User click on \'{0}\' column header", columnName), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
             testRunner.Then(string.Format("data in table is sorted by \'{0}\' column in ascending order", columnName), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
             testRunner.And("Save to New Custom List element is displayed", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+            testRunner.When(string.Format("User click on \'{0}\' column header", addSortOrders), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+            testRunner.Then(string.Format("data in table is sorted by \'{0}\' column in ascending order", addSortOrders), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+            testRunner.And("Save to New Custom List element is displayed", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+            testRunner.When(string.Format("User click on \'{0}\' column header", addSortOrders), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+            testRunner.Then(string.Format("data in table is sorted by \'{0}\' column in descending order", addSortOrders), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+            testRunner.And("Save to New Custom List element is displayed", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+            testRunner.When(string.Format("User click on \'{0}\' column header", columnName), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+            testRunner.Then(string.Format("data in table is sorted by \'{0}\' column in ascending order", columnName), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+            testRunner.And("Save to New Custom List element is displayed", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
             testRunner.When(string.Format("User click on \'{0}\' column header", columnName), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
             testRunner.Then(string.Format("data in table is sorted by \'{0}\' column in descending order", columnName), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-            testRunner.And("Save to New Custom List element is displayed", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
             testRunner.When(string.Format("User click on \'{0}\' column header", columnName), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
             testRunner.Then("Save to New Custom List element is NOT displayed", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
             this.ScenarioCleanup();

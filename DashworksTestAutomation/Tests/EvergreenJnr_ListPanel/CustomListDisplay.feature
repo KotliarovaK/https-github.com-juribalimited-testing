@@ -749,3 +749,16 @@ Examples:
 	| Applications | Application Key | Compliance    | App field 2          |
 	| Users        | City            | Description   | Floor                |
 	| Mailboxes    | Alias           | Time Zone     | Building             |
+
+#@Evergreen @AllLists @EvergreenJnr_ListPanel @CustomListDisplay @DAS10972
+#Scenario Outline: EvergreenJnr_AllListsLists_CheckThatTheSaveListFunctionIsTriggeredOrHiddenAfterChangenSortOrder
+#	When User clicks "<ListName>" on the left-hand menu
+#	Then "<ListName>" list should be displayed to the user
+#
+#
+#Examples:
+#	| ListName     | ColumnName      |
+#	| Devices      | All Devices      |
+#	| Applications | All Applications |
+#	| Users        | All Users        |
+#	| Mailboxes    | All Mailboxes    |
