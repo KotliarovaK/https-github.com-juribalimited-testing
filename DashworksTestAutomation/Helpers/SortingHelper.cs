@@ -30,17 +30,17 @@ namespace DashworksTestAutomation.Helpers
             }
         }
 
-        public static void IsNumericListSortedByColor(List<string> originalList, bool isDescending = true)
+        public static void IsListSortedByEnum<T>(List<string> originalList, bool isAscending = true)
         {
             originalList = originalList.Where(x => !x.Equals("")).ToList();
-            var originalColorsList = originalList.Select(x => Enum.Parse(typeof(Colors), x)).ToList();
+            var originalColorsList = originalList.Select(x => Enum.Parse(typeof(T), x.Replace(" ", String.Empty))).ToList();
             var originalColorsListSorted = originalColorsList.OrderBy(s => s).ToList();
 
             //Return if nothing to sort
             if (!originalList.Any())
                 return;
 
-            if (!isDescending)
+            if (!isAscending)
                 originalColorsListSorted.Reverse();
 
             try
@@ -57,7 +57,7 @@ namespace DashworksTestAutomation.Helpers
             }
         }
 
-        public static void IsNumericListSorted(List<string> originalList, bool isDescending = true)
+        public static void IsNumericListSorted(List<string> originalList, bool isAscending = true)
         {
             originalList = originalList.Where(x => !x.Equals("")).ToList();
 
@@ -81,24 +81,25 @@ namespace DashworksTestAutomation.Helpers
                 "Original list was not sorted at all/Can't be sorted. Nothing to compare. Please check method logic or input list");
 
             List<KeyValuePair<int, string>> sortedList = unsortedList.OrderBy(s => s.Key).ToList();
-            if (!isDescending)
+            if (!isAscending)
                 sortedList.Reverse();
 
             try
             {
                 //Compare two lists
-                Assert.AreEqual(originalList.OrderBy(s => s).ToList(), originalList, "Incorrect sorting order");
+                Assert.AreEqual(sortedList.Select(s => s.Value), originalList, "Incorrect sorting order");
             }
             catch (Exception)
             {
                 //Compare each elements just to find elements that a different
                 for (int i = 0; i < originalList.Count; i++)
-                    Assert.AreEqual(sortedList.OrderBy(x => x.Key).Select(x => x.Value).ToArray()[i],
-                        originalList[i], "Incorrect sorting order");
+                {
+                    Assert.AreEqual(sortedList[i].Value, originalList[i], "Incorrect sorting order");
+                }
             }
         }
 
-        public static void IsListSortedByDate(List<string> originalList, bool isDescending = true)
+        public static void IsListSortedByDate(List<string> originalList, bool isAscending = true)
         {
             originalList = originalList.Where(x => !x.Equals("")).ToList();
 
@@ -122,7 +123,7 @@ namespace DashworksTestAutomation.Helpers
                 "Original list was not sorted at all/Can't be sorted. Nothing to compare. Please check method logic or input list");
 
             List<KeyValuePair<DateTime, string>> sortedList = unsortedList.OrderBy(s => s.Key).ToList();
-            if (!isDescending)
+            if (!isAscending)
                 sortedList.Reverse();
 
             try

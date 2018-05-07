@@ -8,9 +8,11 @@ namespace DashworksTestAutomation.DTO
 {
     enum Colors
     {
-        GREEN = 4,
-        AMBER = 3,
-        RED = 2,
-        UNKNOWN = 1
+        GREEN = 1,
+        AMBER = 2,
+        RED = 3,
+        UNKNOWN = 4,
+        NOTAPPLICABLE = 5
+
     }
 }
