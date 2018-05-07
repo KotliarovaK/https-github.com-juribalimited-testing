@@ -355,8 +355,7 @@ namespace DashworksTestAutomation.Steps.Dashworks
         public void ThenFilterIsAddedToTheList(string filterName)
         {
             var filterElement = _driver.NowAt<FiltersElement>();
-            Assert.Contains(filterName, filterElement.GetFiltersNames(),
-                $"{filterName} filter is not added to the list");
+            filterElement.GetFiltersNamesFromFilterPanel(filterName);
         }
 
         [Then(@"table data is filtered correctly")]
