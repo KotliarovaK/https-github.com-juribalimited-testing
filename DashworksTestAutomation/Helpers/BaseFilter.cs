@@ -252,7 +252,7 @@ namespace DashworksTestAutomation.Helpers
         public override void Do()
         {
             var addedOptionSelector =
-                ".//div[@class='filterAddPanel ng-star-inserted']/div[@class='form-container']//div[@class='form-group ng-star-inserted']//li/span[contains(text(),'{0}')]";
+                ".//span[@class='chips-item-text ng-star-inserted']";
             var allAddedOptionsSelector =
                 ".//div[@class='filterAddPanel ng-star-inserted']/div[@class='form-container']//div[@class='form-group ng-star-inserted']//li/span";
             var filterValueSelector = By.XPath(
@@ -271,7 +271,6 @@ namespace DashworksTestAutomation.Helpers
                 if (_optionsTable.RowCount > 1)
                 {
                     _driver.FindElement(addButtonSelector).Click();
-
                     //Show all added values
                     if (_driver.IsElementDisplayed(By.XPath(string.Format(addedOptionSelector, "more"))))
                         _driver.FindElement(By.XPath(string.Format(addedOptionSelector, "more"))).Click();

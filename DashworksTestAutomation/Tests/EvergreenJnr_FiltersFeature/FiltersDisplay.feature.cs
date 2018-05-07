@@ -1557,11 +1557,11 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_FiltersFeature
             TechTalk.SpecFlow.Table table41 = new TechTalk.SpecFlow.Table(new string[] {
                         "Values"});
             table41.AddRow(new string[] {
+                        "NI LabVIEW PID Control Toolset 6.0 (for LabVIEW 7.1)"});
+            table41.AddRow(new string[] {
                         "Windows Installer SDK (Version 2.0) (3718.1)"});
             table41.AddRow(new string[] {
                         "Janus Systems Controls for Microsoft .NET (TRIAL)"});
-            table41.AddRow(new string[] {
-                        "NI LabVIEW PID Control Toolset 6.0 (for LabVIEW 7.1)"});
             testRunner.When("User add \"Application\" filter where type is \"Equals\" with added column and follow" +
                     "ing value:", ((string)(null)), table41, "When ");
             testRunner.Then("\"Application\" filter is added to the list", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
@@ -1594,11 +1594,11 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_FiltersFeature
             table44.AddRow(new string[] {
                         "wxPython 2.5.3.1 (unicode) for Python 2.3"});
             table44.AddRow(new string[] {
+                        "NI LabVIEW PID Control Toolset 6.0 (for LabVIEW 7.1)"});
+            table44.AddRow(new string[] {
                         "Windows Installer SDK (Version 2.0) (3718.1)"});
             table44.AddRow(new string[] {
                         "Janus Systems Controls for Microsoft .NET (TRIAL)"});
-            table44.AddRow(new string[] {
-                        "NI LabVIEW PID Control Toolset 6.0 (for LabVIEW 7.1)"});
             table44.AddRow(new string[] {
                         "(Version 6.0) (3672.1)"});
             table44.AddRow(new string[] {
