@@ -432,7 +432,7 @@ Scenario: EvergreenJnr_AdminPage_CheckThatConsoleErrorsAreNotDisplayedAfterAddin
 Scenario Outline: EvergreenJnr_AdminPage_CheckThatCancelButtonOnTheCreateProjectPageRedirectsToTheLastPage
 	When User clicks "<ListName>" on the left-hand menu
 	Then "<ListName>" list should be displayed to the user
-	When User clicks Create Project
+	When User clicks Create Project from the main list
 	Then Create Project page should be displayed to the user
 	When User clicks Cancel button
 	Then "<ListName>" list should be displayed to the user
