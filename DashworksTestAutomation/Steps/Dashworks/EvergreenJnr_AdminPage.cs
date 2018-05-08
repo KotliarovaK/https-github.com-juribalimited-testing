@@ -115,7 +115,7 @@ namespace DashworksTestAutomation.Steps.Dashworks
         public void WhenUserNavigatesToTheTabInTheScopeSectionOnTheProjectDetailsPage(string tabName)
         {
             var projectTabs = _driver.NowAt<ProjectsPage>();
-            projectTabs.NavigateToProjectTabByName(tabName);
+            projectTabs.NavigateToProjectTabInScopSectionByName(tabName);
             _driver.WaitForDataLoading();
         }
 

@@ -95,6 +95,12 @@ namespace DashworksTestAutomation.Pages.Evergreen.AdminDetailsPages
             tab.Click();
         }
 
+        public void NavigateToProjectTabInScopSectionByName(string tabName)
+        {
+            var tab = Driver.FindElement(By.XPath($".//div[@class='detail-label ng-star-inserted']//span[text()='{tabName}']"));
+            tab.Click();
+        }
+
         public void ClickToTabByNameProjectScopeChanges(string tabName)
         {
             var tab = Driver.FindElement(
@@ -157,9 +163,9 @@ namespace DashworksTestAutomation.Pages.Evergreen.AdminDetailsPages
 
         public bool WarningMessageProjectPage(string text)
         {
-            Driver.WaitForElement(By.XPath(".//div[@class='ng-star-inserted inline-tip']"));
+            Driver.WaitForElement(By.XPath(".//div[@class='inline-tip ng-star-inserted']"));
             return Driver.IsElementDisplayed(
-                By.XPath($".//div[@class='ng-star-inserted inline-tip'][text()='{text}']"));
+                By.XPath($".//div[@class='inline-tip ng-star-inserted'][text()='{text}']"));
         }
     }
 }
