@@ -96,8 +96,15 @@ namespace DashworksTestAutomation.Steps.Dashworks
             Assert.IsTrue(page.ActiveProjectByName(projectName), $"{projectName} is not displayed on the Project page");
         }
 
-        [When(@"User navigates to the ""(.*)"" tab on the Project details page")]
-        public void WhenUserNavigatesToTheTabOnTheProjectDetailsPage(string tabName)
+        [When(@"User opens Scope section on the Project details page")]
+        public void WhenUserOpensScopeSectionOnTheProjectDetailsPage()
+        {
+            var page = _driver.NowAt<ProjectsPage>();
+            page.ScopeSection.Click();
+        }
+
+        [When(@"User select ""(.*)"" tab on the Project details page")]
+        public void WhenUserSelectTabOnTheProjectDetailsPage(string tabName)
         {
             var projectTabs = _driver.NowAt<ProjectsPage>();
             projectTabs.NavigateToProjectTabByName(tabName);
@@ -124,6 +131,17 @@ namespace DashworksTestAutomation.Steps.Dashworks
         {
             var projectTabs = _driver.NowAt<ProjectsPage>();
             projectTabs.ClickToTabByNameProjectScopeChanges(tabName);
+            ProjectsPage page;
+            try
+            {
+                page = _driver.NowAt<ProjectsPage>();
+            }
+            catch (WebDriverTimeoutException)
+            {
+                page = _driver.NowAt<ProjectsPage>();
+            }
+            Assert.IsTrue(page.SelectedTabInProjectScopeChangesSection(tabName),
+                $"{tabName} is not displayed in the Project Scope Changes section");
         }
 
         [Then(@"""(.*)"" is displayed to the user in the Project Scope Changes section")]

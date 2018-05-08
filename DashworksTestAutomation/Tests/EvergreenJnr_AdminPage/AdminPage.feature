@@ -112,7 +112,7 @@ Scenario: EvergreenJnr_AdminPage_CheckThatWarningMessageIsDisplayedAfterDeleting
 	Then "Projects" page should be displayed to the user
 	When User clicks "TestProject" Project name
 	Then Project "TestProject" is displayed to user
-	When User navigates to the "Project Scope Changes" tab on the Project details page
+	When User select "ScopeChanges" tab on the Project details page
 	Then Warning message with "The scope for this project refers to a deleted list, this must be updated before proceeding" text is displayed on the Project details page
 	And Update Project button is disabled
 	And Delete "TestProject" Project in the Administration
@@ -133,7 +133,8 @@ Scenario: EvergreenJnr_AdminPage_CheckThatAfterApplyingDoNotIncludeDeviceOwnersL
 	When User clicks "TestProject1" Project name
 	Then Project "TestProject1" is displayed to user
 	When User select "Do not include device owners" checkbox on the Project details page
-	And User navigates to the "Project Scope Changes" tab on the Project details page
+	When User opens Scope section on the Project details page
+	When User select "ScopeChanges" tab on the Project details page
 	And User clicks "Users" tab in the Project Scope Changes section 
 	Then "Users to add (0 of 0 selected)" is displayed to the user in the Project Scope Changes section
 	And Delete "TestProject1" Project in the Administration
@@ -224,12 +225,12 @@ Scenario: EvergreenJnr_AdminPage_CheckThatNumberOfApplicationsInProjectScopeIsCo
 	Then "Projects" page should be displayed to the user
 	When User clicks "TestProject5" Project name
 	Then Project "TestProject5" is displayed to user
-	When User navigates to the "Project Scope Changes" tab on the Project details page
+	When User select "ScopeChanges" tab on the Project details page
 	And User clicks "Applications" tab in the Project Scope Changes section
 	Then "Applications to add (2081 of 2081 selected)" is displayed to the user in the Project Scope Changes section
-	When User navigates to the "Scope" tab on the Project details page
+	When User select "ScopeChanges" tab on the Project details page
 	And User select "Do not include owned devices" checkbox on the Project details page
-	And User navigates to the "Project Scope Changes" tab on the Project details page
+	When User select "ScopeChanges" tab on the Project details page
 	Then "Applications to add (247 of 247 selected)" is displayed to the user in the Project Scope Changes section
 	And Delete "TestProject5" Project in the Administration
 
@@ -432,7 +433,7 @@ Scenario: EvergreenJnr_AdminPage_CheckThatConsoleErrorsAreNotDisplayedAfterAddin
 Scenario Outline: EvergreenJnr_AdminPage_CheckThatCancelButtonOnTheCreateProjectPageRedirectsToTheLastPage
 	When User clicks "<ListName>" on the left-hand menu
 	Then "<ListName>" list should be displayed to the user
-	When User clicks Create Project
+	When User clicks Create Project from the main list
 	Then Create Project page should be displayed to the user
 	When User clicks Cancel button
 	Then "<ListName>" list should be displayed to the user
@@ -442,3 +443,22 @@ Scenario Outline: EvergreenJnr_AdminPage_CheckThatCancelButtonOnTheCreateProject
 	| Devices   |
 	| Users     |
 	| Mailboxes |
+
+@Evergreen @Admin @EvergreenJnr_AdminPage @AdminPage @DAS12162
+Scenario: EvergreenJnr_AdminPage_CheckThatConsoleErrorsAreNotDisplayedAfterNavigatingScopeChangesTab
+	When User clicks "Devices" on the left-hand menu
+	Then "Devices" list should be displayed to the user
+	When User clicks Create Project from the main list
+	Then Create Project page should be displayed to the user
+	And User enters "TestProject8" in the Project Name field
+	When User clicks Create Project button
+	And User click "Projects" link on the Admin page
+	Then "Projects" page should be displayed to the user
+	When User clicks "TestProject8" Project name
+	Then Project "TestProject8" is displayed to user
+	When User opens Scope section on the Project details page
+	When User select "ScopeChanges" tab on the Project details page
+	And User clicks "Users" tab in the Project Scope Changes section
+	And User clicks "Devices" tab in the Project Scope Changes section
+	And User clicks "Applications" tab in the Project Scope Changes section
+	Then There are no errors in the browser console
