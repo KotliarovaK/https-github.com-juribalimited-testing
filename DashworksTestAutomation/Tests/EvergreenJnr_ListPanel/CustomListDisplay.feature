@@ -796,30 +796,28 @@ Scenario Outline: EvergreenJnr_AllListsLists_CheckThatTheSaveListFunctionIsTrigg
 	Then "<ListName>" list should be displayed to the user
 	When User click on '<ColumnName>' column header
 	Then data in table is sorted by '<ColumnName>' column in ascending order
-	When User create dynamic list with "<DynamicList>" name on "<ListName>" page
+	When User create dynamic list with "DynamicList" name on "<ListName>" page
 	And User clicks the Columns button
 	And User adds columns to the list
 	| ColumnName      |
 	| <NewColumnName> |
-	Then Save to New Custom List element is displayed
+	Then Edit List menu is displayed
 	When User have reset all columns
-	Then Save to New Custom List element is NOT displayed
-	When User navigates to the "All Devices" list
-	Then "<ListName>" list should be displayed to the user
-	When User create static list with "<StaticListName>" name on "<ListName>" page with following items
+	Then Edit List menu is not displayed
+	When User create static list with "StaticList" name on "<ListName>" page with following items
 	| ItemName       |
 	| <SelectedItem> |
 	When User clicks the Columns button
 	And User adds columns to the list
 	| ColumnName      |
 	| <NewColumnName> |
-	Then Save to New Custom List element is displayed
+	Then Edit List menu is displayed
 	When User have reset all columns
-	Then Save to New Custom List element is NOT displayed
+	Then Edit List menu is not displayed
 
 Examples:
-	| ListName     | ColumnName    | NewColumnName   | DynamicListName | StaticListName | SelectedItems                                              |
-	| Devices      | Hostname      | Import          | DynamicList     | StaticList     | 001BAQXT6JWFPI                                             |
-	| Applications | Application   | Application Key | DynamicList     | StaticList     | "WPF/E" (codename) Community Technology Preview (Feb 2007) |
-	| Users        | Username      | City            | DynamicList     | StaticList     | $6BE000-SUDQ9614UVO8                                       |
-	| Mailboxes    | Email Address | Alias           | DynamicList     | StaticList     | 000F977AC8824FE39B8@bclabs.local                           |
+	| ListName     | ColumnName    | NewColumnName   | SelectedItem                                               |
+	| Devices      | Hostname      | Import          | 001BAQXT6JWFPI                                             |
+	| Applications | Application   | Application Key | "WPF/E" (codename) Community Technology Preview (Feb 2007) |
+	| Users        | Username      | City            | $6BE000-SUDQ9614UVO8                                       |
+	| Mailboxes    | Email Address | Alias           | 000F977AC8824FE39B8@bclabs.local                           |
