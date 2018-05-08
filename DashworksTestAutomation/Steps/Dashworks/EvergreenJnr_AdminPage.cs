@@ -96,8 +96,15 @@ namespace DashworksTestAutomation.Steps.Dashworks
             Assert.IsTrue(page.ActiveProjectByName(projectName), $"{projectName} is not displayed on the Project page");
         }
 
-        [When(@"User navigates to the ""(.*)"" tab on the Project details page")]
-        public void WhenUserNavigatesToTheTabOnTheProjectDetailsPage(string tabName)
+        [When(@"User opens Scope section on the Project details page")]
+        public void WhenUserOpensScopeSectionOnTheProjectDetailsPage()
+        {
+            var page = _driver.NowAt<ProjectsPage>();
+            page.ScopeSection.Click();
+        }
+
+        [When(@"User select ""(.*)"" tab on the Project details page")]
+        public void WhenUserSelectTabOnTheProjectDetailsPage(string tabName)
         {
             var projectTabs = _driver.NowAt<ProjectsPage>();
             projectTabs.NavigateToProjectTabByName(tabName);
@@ -108,7 +115,7 @@ namespace DashworksTestAutomation.Steps.Dashworks
         public void WhenUserNavigatesToTheTabInTheScopeSectionOnTheProjectDetailsPage(string tabName)
         {
             var projectTabs = _driver.NowAt<ProjectsPage>();
-            projectTabs.NavigateToProjectTabByName(tabName);
+            projectTabs.NavigateToProjectTabInScopSectionByName(tabName);
             _driver.WaitForDataLoading();
         }
 
@@ -124,6 +131,17 @@ namespace DashworksTestAutomation.Steps.Dashworks
         {
             var projectTabs = _driver.NowAt<ProjectsPage>();
             projectTabs.ClickToTabByNameProjectScopeChanges(tabName);
+            ProjectsPage page;
+            try
+            {
+                page = _driver.NowAt<ProjectsPage>();
+            }
+            catch (WebDriverTimeoutException)
+            {
+                page = _driver.NowAt<ProjectsPage>();
+            }
+            Assert.IsTrue(page.SelectedTabInProjectScopeChangesSection(tabName),
+                $"{tabName} is not displayed in the Project Scope Changes section");
         }
 
         [Then(@"""(.*)"" is displayed to the user in the Project Scope Changes section")]
@@ -165,6 +183,16 @@ namespace DashworksTestAutomation.Steps.Dashworks
             Assert.IsTrue(Convert.ToBoolean(button.UpdateProjectButton.GetAttribute("disabled")),
                 "Update Project button is active");
         }
+
+        [When(@"User clicks Cancel button")]
+        public void WhenUserClicksCancelButton()
+        {
+            var page = _driver.NowAt<ProjectsPage>();
+            _driver.WaitWhileControlIsNotDisplayed<ProjectsPage>(() => page.CancelButton);
+            page.CancelButton.Click();
+            Logger.Write("Cancel button was clicked");
+        }
+
 
         [When(@"User clicks Create Team button")]
         public void WhenUserClicksCreateTeamButton()
