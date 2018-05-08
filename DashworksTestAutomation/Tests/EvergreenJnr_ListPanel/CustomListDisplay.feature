@@ -766,15 +766,60 @@ Examples:
 	| Users        | City            | Description   | Floor                |
 	| Mailboxes    | Alias           | Time Zone     | Building             |
 
-#@Evergreen @AllLists @EvergreenJnr_ListPanel @CustomListDisplay @DAS10972
-#Scenario Outline: EvergreenJnr_AllListsLists_CheckThatTheSaveListFunctionIsTriggeredOrHiddenAfterChangenSortOrder
-#	When User clicks "<ListName>" on the left-hand menu
-#	Then "<ListName>" list should be displayed to the user
-#
-#
-#Examples:
-#	| ListName     | ColumnName      |
-#	| Devices      | All Devices      |
-#	| Applications | All Applications |
-#	| Users        | All Users        |
-#	| Mailboxes    | All Mailboxes    |
+@Evergreen @AllLists @EvergreenJnr_ListPanel @CustomListDisplay @DAS10972
+Scenario Outline: EvergreenJnr_AllListsLists_CheckThatTheSaveListFunctionIsHiddenAfterChangingPinnedColumns
+	When User clicks "<ListName>" on the left-hand menu
+	Then "<ListName>" list should be displayed to the user
+	When User have opened column settings for "<ColumnName>" column
+	When User have select "Pin Left" option from column settings
+	Then "<ListName>" list should be displayed to the user
+	Then Save to New Custom List element is NOT displayed
+	When User have opened column settings for "<ColumnName>" column
+	When User have select "Pin Right" option from column settings
+	Then "<ListName>" list should be displayed to the user
+	Then Save to New Custom List element is NOT displayed
+	When User have opened column settings for "<ColumnName>" column
+	When User have select "No Pin" option from column settings
+	Then "<ListName>" list should be displayed to the user
+	Then Save to New Custom List element is NOT displayed
+
+Examples:
+	| ListName     | ColumnName       |
+	| Devices      | Device Type      |
+	| Applications | Vendor           |
+	| Users        | Domain           |
+	| Mailboxes    | Mailbox Platform |
+
+@Evergreen @AllLists @EvergreenJnr_ListPanel @CustomListDisplay @DAS10972 @Delete_Newly_Created_List
+Scenario Outline: EvergreenJnr_AllListsLists_CheckThatTheSaveListFunctionIsTriggeredOrHiddenForCustomListsAfterAddingOrRemovingColumns
+	When User clicks "<ListName>" on the left-hand menu
+	Then "<ListName>" list should be displayed to the user
+	When User click on '<ColumnName>' column header
+	Then data in table is sorted by '<ColumnName>' column in ascending order
+	When User create dynamic list with "<DynamicList>" name on "<ListName>" page
+	And User clicks the Columns button
+	And User adds columns to the list
+	| ColumnName      |
+	| <NewColumnName> |
+	Then Save to New Custom List element is displayed
+	When User have reset all columns
+	Then Save to New Custom List element is NOT displayed
+	When User navigates to the "All Devices" list
+	Then "<ListName>" list should be displayed to the user
+	When User create static list with "<StaticListName>" name on "<ListName>" page with following items
+	| ItemName       |
+	| <SelectedItem> |
+	When User clicks the Columns button
+	And User adds columns to the list
+	| ColumnName      |
+	| <NewColumnName> |
+	Then Save to New Custom List element is displayed
+	When User have reset all columns
+	Then Save to New Custom List element is NOT displayed
+
+Examples:
+	| ListName     | ColumnName    | NewColumnName   | DynamicListName | StaticListName | SelectedItems                                              |
+	| Devices      | Hostname      | Import          | DynamicList     | StaticList     | 001BAQXT6JWFPI                                             |
+	| Applications | Application   | Application Key | DynamicList     | StaticList     | "WPF/E" (codename) Community Technology Preview (Feb 2007) |
+	| Users        | Username      | City            | DynamicList     | StaticList     | $6BE000-SUDQ9614UVO8                                       |
+	| Mailboxes    | Email Address | Alias           | DynamicList     | StaticList     | 000F977AC8824FE39B8@bclabs.local                           |

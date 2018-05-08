@@ -907,7 +907,6 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_Search
         [NUnit.Framework.CategoryAttribute("EvergreenJnr_Search")]
         [NUnit.Framework.CategoryAttribute("Search")]
         [NUnit.Framework.CategoryAttribute("DAS11495")]
-        [NUnit.Framework.CategoryAttribute("DAS10972")]
         [NUnit.Framework.TestCaseAttribute("Devices", new string[0])]
         [NUnit.Framework.TestCaseAttribute("Users", new string[0])]
         [NUnit.Framework.TestCaseAttribute("Applications", new string[0])]
@@ -945,8 +944,7 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_Search
                     "AllLists",
                     "EvergreenJnr_Search",
                     "Search",
-                    "DAS11495",
-                    "DAS10972"};
+                    "DAS11495"};
             if ((exampleTags != null))
             {
                 @__tags = System.Linq.Enumerable.ToArray(System.Linq.Enumerable.Concat(@__tags, exampleTags));
