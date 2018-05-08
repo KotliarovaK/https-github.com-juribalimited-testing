@@ -54,8 +54,8 @@ namespace DashworksTestAutomation.Steps.Dashworks
             Logger.Write("Filters button was clicked");
         }
 
-        [When(@"User clicks Create Project")]
-        public void WhenUserClicksCreateProject()
+        [When(@"User clicks Create Project from the main list")]
+        public void WhenUserClicksCreateProjectFromTheMainList()
         {
             var menu = _driver.NowAt<BaseDashboardPage>();
             _driver.WaitWhileControlIsNotDisplayed<BaseDashboardPage>(() => menu.CreateActionButton);
