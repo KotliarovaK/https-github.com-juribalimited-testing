@@ -12,6 +12,15 @@ namespace DashworksTestAutomation.Pages.Projects
         [FindsBy(How = How.XPath, Using = ".//h1")]
         public IWebElement PageHeder { get; set; }
 
+        [FindsBy(How = How.XPath, Using = ".//a[text()='Administration']")]
+        public IWebElement Administration { get; set; }
+
+        [FindsBy(How = How.XPath, Using = ".//a[text()='Create Project']")]
+        public IWebElement CreateProject { get; set; }
+
+        [FindsBy(How = How.XPath, Using = ".//a[text()='Manage Project']")]
+        public IWebElement ManageProject { get; set; }
+
         [FindsBy(How = How.XPath, Using = ".//div[contains(@class, 'tooltipbar-success')]")]
         public IWebElement SuccessMessage { get; set; }
 
@@ -20,17 +29,34 @@ namespace DashworksTestAutomation.Pages.Projects
 
         #region Navigation Tab
 
-        [FindsBy(How = How.XPath, Using = ".//a[text()='Administration']")]
-        public IWebElement Administration { get; set; }
-
-        [FindsBy(How = How.XPath, Using = ".//a[text()='Create Project']")]
-        public IWebElement CreateProject { get; set; }
-
         [FindsBy(How = How.XPath, Using = ".//input[@value='Update']")]
         public IWebElement UpdateButton { get; set; }
 
         [FindsBy(How = How.XPath, Using = ".//input[@value='Add']")]
         public IWebElement AddButton { get; set; }
+
+        public override List<By> GetPageIdentitySelectors()
+        {
+            Driver.WaitForDataLoading();
+            return new List<By>
+            {
+                SelectorFor(this, p => p.PageHeder)
+            };
+        }
+
+        public IWebElement GetOpenedProjectName(string projectName)
+        {
+            var selector = By.XPath($".//div[text()='Project: {projectName}']");
+            Driver.WaitWhileControlIsNotDisplayed(selector);
+            return Driver.FindElement(selector);
+        }
+
+        public IWebElement GetProjectByName(string projectName)
+        {
+            var selector = By.XPath($".//a[text()='{projectName}']");
+            Driver.WaitWhileControlIsNotDisplayed(selector);
+            return Driver.FindElement(selector);
+        }
 
         public IWebElement GetTabElementByName(string tabName)
         {
@@ -81,15 +107,6 @@ namespace DashworksTestAutomation.Pages.Projects
         }
 
         #endregion
-
-        public override List<By> GetPageIdentitySelectors()
-        {
-            Driver.WaitForDataLoading();
-            return new List<By>
-            {
-                SelectorFor(this, p => p.PageHeder)
-            };
-        }
 
         public IWebElement GetButtonElementByName(string buttonName)
         {

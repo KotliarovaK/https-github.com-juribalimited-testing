@@ -1,10 +1,10 @@
-﻿using System.Linq;
-using DashworksTestAutomation.DTO.ManagementConsole;
+﻿using DashworksTestAutomation.DTO.ManagementConsole;
 using DashworksTestAutomation.DTO.Projects;
 using DashworksTestAutomation.Extensions;
 using DashworksTestAutomation.Pages;
 using DashworksTestAutomation.Pages.ManagementConsole;
 using DashworksTestAutomation.Pages.Projects;
+using DashworksTestAutomation.Utils;
 using NUnit.Framework;
 using OpenQA.Selenium.Remote;
 using TechTalk.SpecFlow;
@@ -43,6 +43,7 @@ namespace DashworksTestAutomation.Steps
             page.CreateNewUserButton.Click();
 
             table.CreateInstance<ManageUsersDto>().CopyPropertiesTo(_manageUsers);
+            _manageUsers.Username += TestDataGenerator.RandomString();
 
             page.Username.SendKeys(_manageUsers.Username);
             page.FullName.SendKeys(_manageUsers.FullName);
@@ -50,6 +51,8 @@ namespace DashworksTestAutomation.Steps
             page.ConfirmPassword.SendKeys(_manageUsers.ConfirmPassword);
 
             page.CreateUserButton.Click();
+
+            _projectDto.ManageUsers = _manageUsers;
         }
 
         [Then(@"created User is displayed in the table")]

@@ -7,14 +7,6 @@ Scenario: Projects_CreateProject
 	Then Login Page is displayed to the user
 	When User provides the Login and Password and clicks on the login button
 	Then Dashworks homepage is displayed to the user in a logged in state
-	When User navigate to Manage link
-	When User select "Manage Users" option in Management Console
-	Then User create a new Dashworks User
-	| Username | FullName     | Password | ConfirmPassword |
-	| AAATest  | TestUserName | 1234qwer | 1234qwer        |
-	Then Success message is displayed
-	#Then created User is displayed in the table
-	When User navigate to Dashworks User Site link
 	When User navigate to Projects link
 	Then "Projects Home" page is displayed to the user
 	When User clicks create Project button
@@ -23,6 +15,22 @@ Scenario: Projects_CreateProject
 	| ProjectName     | ProjectShortName | ProjectDescription | 
 	| TestProjectName | TestText         | TestText           |
 	Then "Manage Project Details" page is displayed to the user
+	When User navigate to Manage link
+	When User select "Manage Users" option in Management Console
+	Then User create a new Dashworks User
+	| Username | FullName     | Password | ConfirmPassword |
+	| AAATest  | TestUserName | 1234qwer | 1234qwer        |
+	Then Success message is displayed
+	Then created User is displayed in the table
+	When User navigate to Dashworks User Site link
+	When User navigate to Projects link
+	Then "Projects Home" page is displayed to the user
+	When User select Project
+	Then User make this Project Default
+	Then Default Project News Title is displayed correctly
+	Then User navigate to created Project
+	Then "Manage Project Details" page is displayed to the user
+	Then Project Name is displayed correctly
 	When User updates the Details page
 	| ShowOriginalColumn | IncludeSiteName | NotApplicableApplications | InstalledApplications | EntitledApplications | TaskEmailCcEmailAddress | TaskEmailBccEmailAddress | StartDate  | EndDate     |
 	| true               | true            | true                      | true                  | true                 | Test@test.com           | Test@test.com            | 8 May 2012 | 10 Apr 2018 |
@@ -91,7 +99,8 @@ Scenario: Projects_CreateProject
 	Then created Group is displayed in the table
 	When User navigate to "Teams" tab
 	Then "Manage Teams" page is displayed to the user
-	Then required number of groups is displayed for created team
+	Then required number of Groups is displayed for created team
+	#Then required number of Members is displayed for created team
 	When User navigate to "Mail Templates" tab
 	Then "Manage Mail Templates" page is displayed to the user
 	When User clicks "Create Mail Template" button
@@ -155,7 +164,7 @@ Scenario: Projects_CreateProject
 	Then "Manage Capacity" page is displayed to the user
 	Then User updates the Details on Capacity tab
 	| EnablePlanning | DisplayColors | EnforceOonSelfServicePage | EnforceOnProjectObjectPage | CapacityToReach |
-	| false          | false         | true                      | false                      | 80              |
+	| true           | true          | true                      | true                       | 80              |
 	Then Success message is displayed with "Details successfully updated." text
 	When User navigate to "Capacity" on Capacity tab
 	Then User updates the Capacity on Capacity tab
@@ -206,4 +215,4 @@ Scenario: Projects_CreateProject
 	When User select "Manage Users" option in Management Console
 	Then User removes created User
 	Then Success message is displayed
-	Then selected User was removed
+	#Then selected User was removed

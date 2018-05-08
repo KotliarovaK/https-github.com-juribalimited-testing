@@ -1,5 +1,4 @@
-﻿using System;
-using System.Linq;
+﻿using System.Linq;
 using DashworksTestAutomation.DTO.Projects;
 using DashworksTestAutomation.Extensions;
 using DashworksTestAutomation.Pages.Projects;
@@ -411,7 +410,7 @@ namespace DashworksTestAutomation.Steps.Projects
             Assert.IsTrue(page.GetDefaultRequestTypeCountByName(_projectDto.ReqestType.Name).Displayed(), "Selected Request Type is not 'Default'");
         }
 
-        [Then(@"required number of groups is displayed for created team")]
+        [Then(@"required number of Groups is displayed for created team")]
         public void ThenRequiredNumberOfGroupsIsDisplayedForCreatedTeam()
         {
             var page = _driver.NowAt<BaseElements>();
@@ -420,6 +419,12 @@ namespace DashworksTestAutomation.Steps.Projects
             var groups = page.GetGroupsCountByTeamName(_projectDto.TeamProperties.TeamName);
 
             Assert.AreEqual(groups, groupsInTeam, "Number of groups is incorrect");
+        }
+
+        [Then(@"required number of Members is displayed for created team")]
+        public void ThenRequiredNumberOfMembersIsDisplayedForCreatedTeam()
+        {
+            
         }
     }
 }

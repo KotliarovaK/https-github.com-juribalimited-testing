@@ -24,6 +24,7 @@ namespace DashworksTestAutomation.Pages.Projects
 
             _driver.MouseHover(page.ManageLink);
             page.ManageLink.Click();
+            _driver.WaitForDataLoading();
         }
 
         [When(@"User navigate to Dashworks User Site link")]
@@ -33,6 +34,7 @@ namespace DashworksTestAutomation.Pages.Projects
 
             _driver.MouseHover(page.DashworksUserSiteLink);
             page.DashworksUserSiteLink.Click();
+            _driver.WaitForDataLoading();
         }
 
         [When(@"User navigate to Projects link")]
@@ -42,6 +44,7 @@ namespace DashworksTestAutomation.Pages.Projects
 
             _driver.MouseHover(page.ProjectsLink);
             page.ProjectsLink.Click();
+            _driver.WaitForDataLoading();
         }
 
         [Then(@"""(.*)"" page is displayed to the user")]
