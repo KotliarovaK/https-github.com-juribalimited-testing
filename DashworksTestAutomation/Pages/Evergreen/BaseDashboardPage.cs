@@ -112,8 +112,11 @@ namespace DashworksTestAutomation.Pages.Evergreen
         [FindsBy(How = How.XPath, Using = ".//mat-select[@name='createActions']/div[@class='mat-select-trigger']")]
         public IWebElement CreateActionButton { get; set; }
 
-        [FindsBy(How = How.XPath, Using = ".//span[@class='mat-option-text'][text()='Project']")]
+        [FindsBy(How = How.XPath, Using = ".//span[text()='Project']")]
         public IWebElement CreateProjectButton { get; set; }
+
+        [FindsBy(How = How.XPath, Using = ".//mat-option[@aria-disabled='true']//span[text()='Project']")]
+        public IWebElement DisabledCreateProjectButton { get; set; }
 
         #region TableColumns
 

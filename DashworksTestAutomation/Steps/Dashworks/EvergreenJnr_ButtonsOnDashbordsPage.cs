@@ -54,6 +54,15 @@ namespace DashworksTestAutomation.Steps.Dashworks
             Logger.Write("Filters button was clicked");
         }
 
+        [When(@"User clicks Create button on the Base Dashboard Page")]
+        public void WhenUserClicksCreateButtonOnTheBaseDashboardPage()
+        {
+            var menu = _driver.NowAt<BaseDashboardPage>();
+            _driver.WaitWhileControlIsNotDisplayed<BaseDashboardPage>(() => menu.CreateActionButton);
+            menu.CreateActionButton.Click();
+            Logger.Write("Create Button button was clicked");
+        }
+
         [When(@"User clicks Create Project from the main list")]
         public void WhenUserClicksCreateProjectFromTheMainList()
         {
@@ -61,7 +70,24 @@ namespace DashworksTestAutomation.Steps.Dashworks
             _driver.WaitWhileControlIsNotDisplayed<BaseDashboardPage>(() => menu.CreateActionButton);
             menu.CreateActionButton.Click();
             menu.CreateProjectButton.Click();
-            Logger.Write("Filters button was clicked");
+            Logger.Write("Create Project Button button was clicked");
+        }
+
+        [Then(@"Create Project button is disabled on the Base Dashboard Page")]
+        public void ThenCreateProjectButtonIsDisabledOnTheBaseDashboardPage()
+        {
+            var button = _driver.NowAt<BaseDashboardPage>();
+            _driver.WaitWhileControlIsNotDisplayed<BaseDashboardPage>(() => button.CreateProjectButton);
+            button.DisabledCreateProjectButton.Displayed();
+        }
+
+        [Then(@"tooltip is displayed with ""(.*)"" text for Create Project button")]
+        public void ThenTooltipIsDisplayedWithTextForCreateProjectButton(string text)
+        {
+            var button = _driver.NowAt<BaseDashboardPage>();
+            _driver.MouseHover(button.CreateProjectButton);
+            var toolTipText = _driver.GetTooltipText();
+            Assert.AreEqual(text, toolTipText);
         }
 
         [Then(@"Filters Button is disabled")]
