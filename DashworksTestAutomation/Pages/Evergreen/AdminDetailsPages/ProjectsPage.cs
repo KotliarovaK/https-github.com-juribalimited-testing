@@ -64,6 +64,9 @@ namespace DashworksTestAutomation.Pages.Evergreen.AdminDetailsPages
         [FindsBy(How = How.XPath, Using = ".//input[@aria-checked='false']")]
         public IWebElement UncheckedCheckbox { get; set; }
 
+        [FindsBy(How = How.XPath, Using = ".//span['_ngcontent-c11'][text()='Scope']")]
+        public IWebElement ScopeSection { get; set; }
+
         public override List<By> GetPageIdentitySelectors()
         {
             Driver.WaitForDataLoading();
@@ -88,7 +91,7 @@ namespace DashworksTestAutomation.Pages.Evergreen.AdminDetailsPages
 
         public void NavigateToProjectTabByName(string tabName)
         {
-            var tab = Driver.FindElement(By.XPath($".//div[@class='mat-tab-labels']//span[text()='{tabName}']"));
+            var tab = Driver.FindElement(By.XPath($".//ul[@class='subMenu-items ng-star-inserted']//span[text()='{tabName}']"));
             tab.Click();
         }
 
@@ -119,6 +122,11 @@ namespace DashworksTestAutomation.Pages.Evergreen.AdminDetailsPages
         public bool SelectedItemInProjectScopeChangesSection(string text)
         {
             return Driver.IsElementDisplayed(By.XPath($".//span[@class='mat-checkbox-label'][text()='{text}']"));
+        }
+
+        public bool SelectedTabInProjectScopeChangesSection(string tabName)
+        {
+            return Driver.IsElementDisplayed(By.XPath($".//label//span[contains(text(),'{tabName} ')]"));
         }
 
         public int GetColumnNumberByName(string columnName)
