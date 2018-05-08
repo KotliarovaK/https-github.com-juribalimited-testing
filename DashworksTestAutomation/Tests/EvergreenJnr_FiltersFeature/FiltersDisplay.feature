@@ -436,9 +436,9 @@ Scenario: EvergreenJnr_ApplicationsList_CheckThatBracketsAreDisplayedCorrectlyIn
 	Then "Application" filter is added to the list
 	When User add "Application" filter where type is "Equals" with added column and following value:
 	| Values                                               |
+	| NI LabVIEW PID Control Toolset 6.0 (for LabVIEW 7.1) |
 	| Windows Installer SDK (Version 2.0) (3718.1)         |
 	| Janus Systems Controls for Microsoft .NET (TRIAL)    |
-	| NI LabVIEW PID Control Toolset 6.0 (for LabVIEW 7.1) |
 	Then "Application" filter is added to the list
 	When User add "Application" filter where type is "Contains" with added column and following value:
 	| Values                                      |
@@ -461,9 +461,9 @@ Scenario: EvergreenJnr_ApplicationsList_CheckThatBracketsAreDisplayedCorrectlyIn
 	And Values is displayed in added filter info
 	| Values                                               |
 	| wxPython 2.5.3.1 (unicode) for Python 2.3            |
+	| NI LabVIEW PID Control Toolset 6.0 (for LabVIEW 7.1) |
 	| Windows Installer SDK (Version 2.0) (3718.1)         |
 	| Janus Systems Controls for Microsoft .NET (TRIAL)    |
-	| NI LabVIEW PID Control Toolset 6.0 (for LabVIEW 7.1) |
 	| (Version 6.0) (3672.1)                               |
 	| (self-installing)                                    |
 
