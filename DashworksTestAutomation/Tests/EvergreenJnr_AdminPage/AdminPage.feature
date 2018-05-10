@@ -469,7 +469,7 @@ Scenario: EvergreenJnr_AdminPage_CheckThatConsoleErrorsAreNotDisplayedAfterNavig
 	Then There are no errors in the browser console
 	And Delete "TestProject8" Project in the Administration
 
-@Evergreen @Admin @EvergreenJnr_AdminPage @AdminPage @DAS12189 @Delete_Newly_Created_List
+@Evergreen @Admin @EvergreenJnr_AdminPage @AdminPage @DAS12189 @Delete_Newly_Created_List @Not_Run
 Scenario: EvergreenJnr_AdminPage_CheckThatNoErrorsAreDisplayedInTheProjectScopeChangesSectionAfterUsingSavedDevicesList
 	When User clicks "Applications" on the left-hand menu
 	Then "Applications" list should be displayed to the user
@@ -495,8 +495,6 @@ Scenario: EvergreenJnr_AdminPage_CheckThatNoErrorsAreDisplayedInTheProjectScopeC
 	When User clicks Create Project from the main list
 	Then Create Project page should be displayed to the user
 	And User enters "TestProject9" in the Project Name field
-	And User select "DevicesList1584" in the Scope Project dropdown
-	When User clicks Create Project button
 	When User clicks Create Project button
 	And User click "Projects" link on the Admin page
 	Then "Projects" page should be displayed to the user
