@@ -212,17 +212,19 @@ namespace DashworksTestAutomation.Steps.Dashworks
         [AfterScenario("Delete_Newly_Created_Team")]
         public void DeleteAllTeamsAfterScenarioRun()
         {
-            if (!_teamName.Value.Any())
-                return;
+            try
+            {
+                if (!_teamName.Value.Any())
+                    return;
 
-            foreach (string name in _teamName.Value)
-                try
-                {
-                    DeleteTeam(name);
-                }
-                catch
-                {
-                }
+                foreach (string name in _teamName.Value)
+                    try
+                    {
+                        DeleteTeam(name);
+                    }
+                    catch { }
+            }
+            catch {}
         }
 
         private void DeleteTeam(string teamName)
