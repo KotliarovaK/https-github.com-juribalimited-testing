@@ -120,3 +120,55 @@ Scenario: EvergreenJnr_DevicesList_CheckThatActionsDetailsColumnsFiltersButtonsA
 	Then Account Profile menu is displayed correctly
 	When User click User Notifications button
 	Then Notifications message is displayed correctly
+
+	@Evergreen @AllLists @EvergreenJnr_BaseDashboardPage @BaseDashboardPage @DAS10972
+Scenario Outline: EvergreenJnr_AllList_CheckThatEditListFunctionIsAvailableAfterSortingColumns
+	When User clicks "<ListName>" on the left-hand menu
+	Then "<ListName>" list should be displayed to the user
+	When User clicks the Columns button
+	And User adds columns to the list
+	| ColumnName  |
+	| <AddColumn> |
+	When User create dynamic list with "DynamicList1" name on "<ListName>" page
+	When User click on '<ColumnName>' column header
+	Then data in table is sorted by '<ColumnName>' column in ascending order
+	Then Edit List menu is displayed
+	When User click on '<AddSortOrders>' column header
+	Then data in table is sorted by '<AddSortOrders>' column in ascending order
+	Then Edit List menu is displayed
+	When User click on '<AddSortOrders>' column header
+	Then data in table is sorted by '<AddSortOrders>' column in descending order
+	Then Edit List menu is displayed
+	When User click on '<ColumnName>' column header
+	Then data in table is sorted by '<ColumnName>' column in ascending order
+	Then Edit List menu is displayed
+	When User click on '<ColumnName>' column header
+	Then data in table is sorted by '<ColumnName>' column in descending order
+	When User click on '<ColumnName>' column header
+	Then Edit List menu is not displayed
+	When User clicks the Actions button
+	Then Actions panel is displayed to the user
+	When User select all rows
+	When User create static list with "StaticList1" name
+	When User click on '<ColumnName>' column header
+	Then data in table is sorted by '<ColumnName>' column in ascending order
+	Then Edit List menu is displayed
+	When User click on '<AddSortOrders>' column header
+	Then data in table is sorted by '<AddSortOrders>' column in ascending order
+	Then Edit List menu is displayed
+	When User click on '<AddSortOrders>' column header
+	Then data in table is sorted by '<AddSortOrders>' column in descending order
+	Then Edit List menu is displayed
+	When User click on '<ColumnName>' column header
+	Then data in table is sorted by '<ColumnName>' column in ascending order
+	Then Edit List menu is displayed
+	When User click on '<ColumnName>' column header
+	Then data in table is sorted by '<ColumnName>' column in descending order
+	When User click on '<ColumnName>' column header
+
+Examples:
+	| ListName     | ColumnName    | AddSortOrders    | AddColumn                |
+	| Devices      | Hostname      | Device Type      | UserSchedu: Readiness ID |
+	| Users        | Username      | Domain           | UserSchedu: Readiness ID |
+	| Applications | Application   | Vendor           | UserSchedu: Readiness ID |
+	| Mailboxes    | Email Address | Mailbox Platform | EmailMigra: Readiness ID |

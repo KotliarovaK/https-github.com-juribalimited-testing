@@ -797,10 +797,15 @@ Scenario Outline: EvergreenJnr_AllListsLists_CheckThatTheSaveListFunctionIsTrigg
 	When User click on '<ColumnName>' column header
 	Then data in table is sorted by '<ColumnName>' column in ascending order
 	When User create dynamic list with "DynamicList" name on "<ListName>" page
-	And User clicks the Columns button
+	When User clicks the Columns button
 	And User adds columns to the list
 	| ColumnName      |
 	| <NewColumnName> |
+	Then Edit List menu is displayed
+	When User adds columns to the list
+	| ColumnName         |
+	| <AddColumnName>    |
+	| <AddAnotherColumn> |
 	Then Edit List menu is displayed
 	When User have reset all columns
 	Then Edit List menu is not displayed
@@ -812,12 +817,17 @@ Scenario Outline: EvergreenJnr_AllListsLists_CheckThatTheSaveListFunctionIsTrigg
 	| ColumnName      |
 	| <NewColumnName> |
 	Then Edit List menu is displayed
+	When User adds columns to the list
+	| ColumnName         |
+	| <AddColumnName>    |
+	| <AddAnotherColumn> |
+	Then Edit List menu is displayed
 	When User have reset all columns
 	Then Edit List menu is not displayed
 
 Examples:
-	| ListName     | ColumnName    | NewColumnName   | SelectedItem                                               |
-	| Devices      | Hostname      | Import          | 001BAQXT6JWFPI                                             |
-	| Applications | Application   | Application Key | "WPF/E" (codename) Community Technology Preview (Feb 2007) |
-	| Users        | Username      | City            | $6BE000-SUDQ9614UVO8                                       |
-	| Mailboxes    | Email Address | Alias           | 000F977AC8824FE39B8@bclabs.local                           |
+	| ListName     | ColumnName    | NewColumnName   | SelectedItem                                               | AddColumnName | AddAnotherColumn |
+	| Devices      | Hostname      | Import          | 001BAQXT6JWFPI                                             | Network Card  | Owner City       |
+	| Applications | Application   | Application Key | "WPF/E" (codename) Community Technology Preview (Feb 2007) | prK: In Scope | Compliance       |
+	| Users        | Username      | City            | $6BE000-SUDQ9614UVO8                                       | Cost Centre   | Department Name  |
+	| Mailboxes    | Email Address | Alias           | 000F977AC8824FE39B8@bclabs.local                           | Enabled       | Import           |
