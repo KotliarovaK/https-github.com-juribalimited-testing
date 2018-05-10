@@ -131,8 +131,8 @@ Scenario: EvergreenJnr_MailboxesLists_CheckThatTheLowestValueOfUserCountColumnIs
 	When User click on 'User Count' column header
 	Then numeric data in table is sorted by 'User Count' column in ascending order
 	Then Lowest value of "User Count" column is null
-	
-@Evergreen @AllLists @EvergreenJnr_Columns @AddColumnAction @DAS12194 @DAS12220 @Not_Run
+
+@Evergreen @AllLists @EvergreenJnr_Columns @AddColumnAction @DAS12194 @DAS12220
 Scenario Outline: EvergreenJnr_AllLists_CheckThat500ErrorIsNotDisplayedAfterAddingComplianceDataToLists
 	When User clicks "<ListName>" on the left-hand menu
 	Then "<ListName>" list should be displayed to the user
@@ -146,10 +146,11 @@ Scenario Outline: EvergreenJnr_AllLists_CheckThat500ErrorIsNotDisplayedAfterAddi
 	| Green              |
 	| Not Applicable     |
 	Then "<FilterName>" filter is added to the list
+	When User clicks the Filters button
 	When User click on '<ColumnHeader>' column header
-	Then data in table is sorted by '<ColumnHeader>' column in ascending order
+	Then color data is sorted by '<ColumnHeader>' column in ascending order
 	When User click on '<ColumnHeader>' column header
-	Then data in table is sorted by '<ColumnHeader>' column in descending order
+	Then color data is sorted by '<ColumnHeader>' column in descending order
 
 Examples:
 	| ListName     | FilterName       | ColumnHeader     |

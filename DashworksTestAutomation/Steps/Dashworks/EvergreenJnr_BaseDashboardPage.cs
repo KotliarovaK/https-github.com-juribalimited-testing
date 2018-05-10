@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using DashworksTestAutomation.DTO;
 using DashworksTestAutomation.DTO.RuntimeVariables;
 using DashworksTestAutomation.Extensions;
 using DashworksTestAutomation.Helpers;
@@ -99,7 +100,7 @@ namespace DashworksTestAutomation.Steps.Dashworks
             var listpageMenu = _driver.NowAt<BaseDashboardPage>();
 
             List<string> originalList = listpageMenu.GetColumnContent(columnName).Where(x => !x.Equals("")).ToList();
-            SortingHelper.IsListSortedByDate(originalList);
+            SortingHelper.IsListSortedByDate(originalList, false);
             Assert.IsTrue(listpageMenu.DescendingSortingIcon.Displayed);
         }
 
@@ -109,7 +110,7 @@ namespace DashworksTestAutomation.Steps.Dashworks
             var listpageMenu = _driver.NowAt<BaseDashboardPage>();
 
             List<string> originalList = listpageMenu.GetColumnContent(columnName).Where(x => !x.Equals("")).ToList();
-            SortingHelper.IsListSortedByDate(originalList, false);
+            SortingHelper.IsListSortedByDate(originalList);
             Assert.IsTrue(listpageMenu.AscendingSortingIcon.Displayed);
         }
 
@@ -130,6 +131,24 @@ namespace DashworksTestAutomation.Steps.Dashworks
             _driver.WaitForDataLoading();
             List<string> expectedList = listpageMenu.GetColumnContent(columnName).Where(x => !x.Equals("")).ToList();
             SortingHelper.IsNumericListSorted(expectedList, false);
+            Assert.IsTrue(listpageMenu.DescendingSortingIcon.Displayed);
+        }
+
+        [Then(@"color data is sorted by '(.*)' column in ascending order")]
+        public void ThenColorDataIsSortedByColumnInAscendingOrder(string columnName)
+        {
+            var listpageMenu = _driver.NowAt<BaseDashboardPage>();
+            List<string> expectedList = listpageMenu.GetColumnContent(columnName).Where(x => !x.Equals("")).ToList();
+            SortingHelper.IsListSortedByEnum<Colors>(new List<string>(expectedList));
+            Assert.IsTrue(listpageMenu.AscendingSortingIcon.Displayed);
+        }
+
+        [Then(@"color data is sorted by '(.*)' column in descending order")]
+        public void ThenColorDataIsSortedByColumnInDescendingOrder(string columnName)
+        {
+            var listpageMenu = _driver.NowAt<BaseDashboardPage>();
+            List<string> expectedList = listpageMenu.GetColumnContent(columnName).Where(x => !x.Equals("")).ToList();
+            SortingHelper.IsListSortedByEnum<Colors>(new List<string>(expectedList), false);
             Assert.IsTrue(listpageMenu.DescendingSortingIcon.Displayed);
         }
 

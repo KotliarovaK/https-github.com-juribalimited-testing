@@ -83,8 +83,16 @@ namespace DashworksTestAutomation.Steps.Dashworks
 
                 _driver.WaitWhileControlIsNotDisplayed<BaseDashboardPage>(() => listPageElement.ResultsOnPageCount);
 
-                StringAssert.AreEqualIgnoringCase($"{numberOfRows} rows", listPageElement.ResultsOnPageCount.Text,
-                    "Incorrect rows count");
+                if (numberOfRows == "1" )
+                {
+                    StringAssert.AreEqualIgnoringCase($"{numberOfRows} row", listPageElement.ResultsOnPageCount.Text,
+                        "Incorrect rows count");
+                }
+                else
+                {
+                    StringAssert.AreEqualIgnoringCase($"{numberOfRows} rows", listPageElement.ResultsOnPageCount.Text,
+                        "Incorrect rows count");
+                }
                 Logger.Write(
                     $"Evergreen agGrid Search returned the correct number of rows for: {numberOfRows}  search");
             }

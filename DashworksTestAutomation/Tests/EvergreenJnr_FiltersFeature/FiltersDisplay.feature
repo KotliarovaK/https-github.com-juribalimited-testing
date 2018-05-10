@@ -436,9 +436,9 @@ Scenario: EvergreenJnr_ApplicationsList_CheckThatBracketsAreDisplayedCorrectlyIn
 	Then "Application" filter is added to the list
 	When User add "Application" filter where type is "Equals" with added column and following value:
 	| Values                                               |
+	| NI LabVIEW PID Control Toolset 6.0 (for LabVIEW 7.1) |
 	| Windows Installer SDK (Version 2.0) (3718.1)         |
 	| Janus Systems Controls for Microsoft .NET (TRIAL)    |
-	| NI LabVIEW PID Control Toolset 6.0 (for LabVIEW 7.1) |
 	Then "Application" filter is added to the list
 	When User add "Application" filter where type is "Contains" with added column and following value:
 	| Values                                      |
@@ -461,9 +461,9 @@ Scenario: EvergreenJnr_ApplicationsList_CheckThatBracketsAreDisplayedCorrectlyIn
 	And Values is displayed in added filter info
 	| Values                                               |
 	| wxPython 2.5.3.1 (unicode) for Python 2.3            |
+	| NI LabVIEW PID Control Toolset 6.0 (for LabVIEW 7.1) |
 	| Windows Installer SDK (Version 2.0) (3718.1)         |
 	| Janus Systems Controls for Microsoft .NET (TRIAL)    |
-	| NI LabVIEW PID Control Toolset 6.0 (for LabVIEW 7.1) |
 	| (Version 6.0) (3672.1)                               |
 	| (self-installing)                                    |
 
@@ -645,7 +645,7 @@ Scenario: EvergreenJnr_DevicesList_CheckThatSpaceAfterCommasInTheFiltersContaine
 	| Values |
 	| 13     |
 	Then "CPU Count" filter is added to the list
-	And "(Compliance = Unknown, Red, Amber or Green) OR (Import != A01 SMS (Spoof)) OR (Department Code ~ ABC) OR (Department Code !~ ACV) OR (Department Code BEGINS WITH AXZ) OR (Department Code ENDS WITH YQA) OR (Department Code = EMPTY) OR (Department Code != EMPTY) OR (Boot Up Date < 14 Dec 2017) OR (Boot Up Date > 03 Dec 2017) OR (CPU Count > 66) OR (CPU Count >= 12) OR (CPU Count < 31) OR (CPU Count <= 13)" text is displayed in filter container
+	Then "(Compliance = Unknown, Red, Amber or Green) OR (Import != A01 SMS (Spoof)) OR (Department Code ~ ABC) OR (Department Code !~ ACV) OR (Department Code BEGINS WITH AXZ) OR (Department Code ENDS WITH YQA) OR (Department Code = EMPTY) OR (Department Code != EMPTY) OR (Boot Up Date < 14 Dec 2017) OR (Boot Up Date > 03 Dec 2017) OR (CPU Count > 66) OR (CPU Count >= 12) OR (CPU Count < 31) OR (CPU Count <= 13)" text is displayed in filter container
 
 @Evergreen @Devices @Evergreen_FiltersFeature @FiltersDisplay @DAS10790 @Delete_Newly_Created_List
 Scenario: EvergreenJnr_DevicesList_CheckThatApplicationFiltersBeingAppliedAgainstTheDevicesListAreRestoredCorrectlyAndAreShownInTheFiltersPanel

@@ -22,6 +22,9 @@ namespace DashworksTestAutomation.Pages.Evergreen.AdminDetailsPages
         [FindsBy(How = How.XPath, Using = ".//button[@class='mat-primary mat-raised-button']")]
         public IWebElement CreateProjectButtonOnCreateProjectPage { get; set; }
 
+        [FindsBy(How = How.XPath, Using = ".//button[@class='mat-raised-button']/span[text()='CANCEL']")]
+        public IWebElement CancelButton { get; set; }
+
         [FindsBy(How = How.XPath, Using = ".//label[text()='Project Name']/ancestor::div[@class='form-item']//input")]
         public IWebElement ProjectNameField { get; set; }
 
@@ -61,6 +64,9 @@ namespace DashworksTestAutomation.Pages.Evergreen.AdminDetailsPages
         [FindsBy(How = How.XPath, Using = ".//input[@aria-checked='false']")]
         public IWebElement UncheckedCheckbox { get; set; }
 
+        [FindsBy(How = How.XPath, Using = ".//span['_ngcontent-c11'][text()='Scope']")]
+        public IWebElement ScopeSection { get; set; }
+
         public override List<By> GetPageIdentitySelectors()
         {
             Driver.WaitForDataLoading();
@@ -85,7 +91,13 @@ namespace DashworksTestAutomation.Pages.Evergreen.AdminDetailsPages
 
         public void NavigateToProjectTabByName(string tabName)
         {
-            var tab = Driver.FindElement(By.XPath($".//div[@class='mat-tab-labels']//span[text()='{tabName}']"));
+            var tab = Driver.FindElement(By.XPath($".//ul[@class='subMenu-items ng-star-inserted']//span[text()='{tabName}']"));
+            tab.Click();
+        }
+
+        public void NavigateToProjectTabInScopSectionByName(string tabName)
+        {
+            var tab = Driver.FindElement(By.XPath($".//div[@class='detail-label ng-star-inserted']//span[text()='{tabName}']"));
             tab.Click();
         }
 
@@ -118,6 +130,11 @@ namespace DashworksTestAutomation.Pages.Evergreen.AdminDetailsPages
             return Driver.IsElementDisplayed(By.XPath($".//span[@class='mat-checkbox-label'][text()='{text}']"));
         }
 
+        public bool SelectedTabInProjectScopeChangesSection(string tabName)
+        {
+            return Driver.IsElementDisplayed(By.XPath($".//label//span[contains(text(),'{tabName} ')]"));
+        }
+
         public int GetColumnNumberByName(string columnName)
         {
             var allHeadersSelector = By.XPath(".//div[@class='ag-header-container']/div/div");
@@ -146,9 +163,9 @@ namespace DashworksTestAutomation.Pages.Evergreen.AdminDetailsPages
 
         public bool WarningMessageProjectPage(string text)
         {
-            Driver.WaitForElement(By.XPath(".//div[@class='ng-star-inserted inline-tip']"));
+            Driver.WaitForElement(By.XPath(".//div[@class='inline-tip ng-star-inserted']"));
             return Driver.IsElementDisplayed(
-                By.XPath($".//div[@class='ng-star-inserted inline-tip'][text()='{text}']"));
+                By.XPath($".//div[@class='inline-tip ng-star-inserted'][text()='{text}']"));
         }
     }
 }
