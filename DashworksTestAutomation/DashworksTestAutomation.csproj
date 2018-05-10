@@ -240,7 +240,9 @@
     <Compile Include="Pages\Evergreen\DetailsPage.cs" />
     <Compile Include="Pages\Evergreen\DetailsTabsMenu\BaseDetailsTabsMenu.cs" />
     <Compile Include="Pages\Evergreen\DetailsTabsMenu\ApplicationsDetailsTabsMenu.cs" />
+    <Compile Include="Pages\Evergreen\DetailsTabsMenu\BaseTabSectionElements.cs" />
     <Compile Include="Pages\Evergreen\DetailsTabsMenu\DevicesDetailsTabsMenu.cs" />
+    <Compile Include="Pages\Evergreen\DetailsTabsMenu\GroupTabMenu.cs" />
     <Compile Include="Pages\Evergreen\DevicesPage.cs" />
     <Compile Include="Pages\Evergreen\FiltersElement.cs" />
     <Compile Include="Pages\Evergreen\GlobalSearchElement.cs" />
