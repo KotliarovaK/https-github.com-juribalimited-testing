@@ -22,13 +22,13 @@ namespace DashworksTestAutomation.Steps.Projects
         private readonly StagePropertiesDto _stagePropertiesDto;
         private readonly TaskPropertiesDto _taskPropertiesDto;
         private readonly TaskProperties_DetailsDto _taskPropertiesDetailsDto;
+        private readonly TaskProperties_ValuesDto _taskPropertiesValuesDto;
         private readonly TeamPropertiesDto _teamPropertiesDto;
         private readonly GroupPropertiesDto _groupPropertiesDto;
         private readonly MailTemplatePropertiesDto _mailTemplatePropertiesDto;
         private readonly NewsDto _newsDto;
 
-
-        public Projects_CreateProject(RemoteWebDriver driver, ProjectDto projectDto, DetailsDto detailsDto, RequestTypesDto requestTypesDto, CategoryPropertiesDto categoryPropertiesDto, StagePropertiesDto stagePropertiesDto, TaskPropertiesDto taskPropertiesDto, TeamPropertiesDto teamPropertiesDto, GroupPropertiesDto groupPropertiesDto, MailTemplatePropertiesDto mailTemplatePropertiesDto, NewsDto newsDto, TaskProperties_DetailsDto taskPropertiesDetailsDto, RequestType_DetailsDto requestTypeDetailsDto)
+        public Projects_CreateProject(RemoteWebDriver driver, ProjectDto projectDto, DetailsDto detailsDto, RequestTypesDto requestTypesDto, CategoryPropertiesDto categoryPropertiesDto, StagePropertiesDto stagePropertiesDto, TaskPropertiesDto taskPropertiesDto, TeamPropertiesDto teamPropertiesDto, GroupPropertiesDto groupPropertiesDto, MailTemplatePropertiesDto mailTemplatePropertiesDto, NewsDto newsDto, TaskProperties_DetailsDto taskPropertiesDetailsDto, RequestType_DetailsDto requestTypeDetailsDto, TaskProperties_ValuesDto taskPropertiesValuesDto)
         {
             _driver = driver;
             _projectDto = projectDto;
@@ -43,6 +43,7 @@ namespace DashworksTestAutomation.Steps.Projects
             _newsDto = newsDto;
             _taskPropertiesDetailsDto = taskPropertiesDetailsDto;
             _requestTypeDetailsDto = requestTypeDetailsDto;
+            _taskPropertiesValuesDto = taskPropertiesValuesDto;
         }
 
         [When(@"User clicks create Project button")]
@@ -103,8 +104,6 @@ namespace DashworksTestAutomation.Steps.Projects
             page.ProjectDescription.SendKeys(_projectDto.ProjectDescription);
             page.ProjectType.SelectboxSelect(_projectDto.ProjectType.GetValue());
             page.DefaultLanguage.SelectboxSelect(_projectDto.DefaultLanguage.GetValue());
-
-            page.CreateProjectButton.Click();
         }
 
         [When(@"User updates the Details page")]
@@ -279,6 +278,28 @@ namespace DashworksTestAutomation.Steps.Projects
 
             _driver.WaitWhileControlIsNotDisplayed<BaseElements>(() => page.SuccessPublishedTaskFlag);
             Assert.IsTrue(page.SuccessPublishedTaskFlag.Displayed(), "Success Flag is not displayed");
+        }
+
+        [When(@"User navigate to ""(.*)"" on selected tab")]
+        public void WhenUserNavigateToOnTaskTab(string tabName)
+        {
+            var tab = _driver.NowAt<BaseElements>();
+
+            tab.GetTabElementByNameOnSelectedTab(tabName).Click();
+        }
+
+        [Then(@"User create new Value")]
+        public void ThenUserCreateNewValue(Table table)
+        {
+            var page = _driver.NowAt<TaskProperties_ValuesPage>();
+
+            table.CreateInstance<TaskProperties_ValuesDto>().CopyPropertiesTo(_taskPropertiesValuesDto);
+
+            page.Name.SendKeys(_taskPropertiesValuesDto.Name);
+            page.Help.SendKeys(_taskPropertiesValuesDto.Help);
+            page.Readiness.SelectboxSelect(_taskPropertiesValuesDto.Readiness.GetValue());
+            page.TaskStatus.SelectboxSelect(_taskPropertiesValuesDto.TaskStatus.GetValue());
+            page.DefaultValue.SetCheckboxState(_taskPropertiesValuesDto.DefaultValue);
         }
 
         [When(@"User create Team")]

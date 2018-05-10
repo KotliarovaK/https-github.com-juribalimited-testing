@@ -43,13 +43,13 @@ namespace DashworksTestAutomation.Steps.Projects
             tab.GetTabElementByNameOnSelfServiceTab(tabName).Click();
         }
 
-        [When(@"User navigate to ""(.*)"" on Capacity tab")]
-        public void WhenUserNavigateToOnCapacityTab(string tabName)
-        {
-            var tab = _driver.NowAt<BaseElements>();
+        //[When(@"User navigate to ""(.*)"" on Capacity tab")]
+        //public void WhenUserNavigateToOnCapacityTab(string tabName)
+        //{
+        //    var tab = _driver.NowAt<BaseElements>();
 
-            tab.GetTabElementByNameOnCapacityTab(tabName).Click();
-        }
+        //    tab.GetTabElementByNameOnCapacityTab(tabName).Click();
+        //}
 
         [Then(@"User updates the Details on Self Service tab")]
         public void ThenUserUpdatesTheDetailsOnSelfServiceTab(Table table)

@@ -22,9 +22,6 @@ namespace DashworksTestAutomation.Pages.Projects
         [FindsBy(How = How.XPath, Using = ".//select[@title='Default Language']")]
         public IWebElement DefaultLanguage { get; set; }
 
-        [FindsBy(How = How.XPath, Using = ".//input[@value='Create Project']")]
-        public IWebElement CreateProjectButton { get; set; }
-
         public override List<By> GetPageIdentitySelectors()
         {
             return new List<By>

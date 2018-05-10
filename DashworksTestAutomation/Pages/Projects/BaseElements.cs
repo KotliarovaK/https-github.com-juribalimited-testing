@@ -72,7 +72,7 @@ namespace DashworksTestAutomation.Pages.Projects
             return Driver.FindElement(selector);
         }
 
-        public IWebElement GetTabElementByNameOnCapacityTab(string tabName)
+        public IWebElement GetTabElementByNameOnSelectedTab(string tabName)
         {
             var selector = By.XPath($".//div[@class='dwmenu navigation-menu']//a[contains(text(), '{tabName}')]");
             Driver.WaitWhileControlIsNotDisplayed(selector);

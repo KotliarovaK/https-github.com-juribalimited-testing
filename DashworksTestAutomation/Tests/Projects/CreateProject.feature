@@ -14,6 +14,7 @@ Scenario: Projects_CreateProject
 	When User creates Project
 	| ProjectName     | ProjectShortName | ProjectDescription | 
 	| TestProjectName | TestText         | TestText           |
+	When User clicks "Create Project" button
 	Then "Manage Project Details" page is displayed to the user
 	When User navigate to Manage link
 	When User select "Manage Users" option in Management Console
@@ -80,7 +81,18 @@ Scenario: Projects_CreateProject
 	Then Success message is displayed with "Task successfully updated" text
 	When User publishes the task
 	Then selected task was published
-	When User clicks "Cancel" button
+	When User navigate to "Values" on selected tab
+	When User clicks "Add Value" button
+	Then User create new Value
+	| Name          | Help | DefaultValue |
+	| TestValueName | Test | false        |
+	When User clicks "Save Value" button
+	#When User navigate to "Emails" on selected tab
+	#When User clicks "Add Email" button
+	#Then User create new Email
+	#| Name          | Help | DefaultValue |
+	#| TestValueName | Test | false        |
+	When User clicks "« Go Back to Tasks" button
 	Then created Task is displayed in the table
 	When User navigate to "Teams" tab
 	Then "Manage Teams" page is displayed to the user
@@ -166,12 +178,12 @@ Scenario: Projects_CreateProject
 	| EnablePlanning | DisplayColors | EnforceOonSelfServicePage | EnforceOnProjectObjectPage | CapacityToReach |
 	| true           | true          | true                      | true                       | 80              |
 	Then Success message is displayed with "Details successfully updated." text
-	When User navigate to "Capacity" on Capacity tab
+	When User navigate to "Capacity" on selected tab
 	Then User updates the Capacity on Capacity tab
 	| StartDate   | EndDate     | MondayCheckbox | TuesdayCheckbox | WednesdayCheckbox | ThursdayCheckbox | FridayCheckbox | SaturdayCheckbox | SundayCheckbox | Monday | Tuesday | Wednesday | Thursday | Friday | Saturday | Sunday |
 	| 06 Apr 2016 | 19 Apr 2018 | false          | false           | false             | false            | false          | false            | false          | 100    | 100     | 100       | 100      | 100    | 100      | 100    |
 	Then Success message is displayed with "Capacity information successfully updated." text
-	When User navigate to "Override Dates" on Capacity tab
+	When User navigate to "Override Dates" on selected tab
 	Then User updates the Override Dates on Capacity tab
 	| Date        | Capacity | Comment  |
 	| 03 Apr 2016 | 0        | TestText |

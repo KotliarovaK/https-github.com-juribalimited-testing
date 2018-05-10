@@ -5,7 +5,7 @@ using OpenQA.Selenium.Support.PageObjects;
 
 namespace DashworksTestAutomation.Pages.Projects
 {
-    class NewsPage : BaseDashboardPage
+   internal class NewsPage : BaseDashboardPage
     {
         [FindsBy(How = How.XPath, Using = ".//input[@id='NewsTitle']")]
         public IWebElement Title { get; set; }

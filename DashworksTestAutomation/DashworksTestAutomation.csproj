@@ -173,6 +173,7 @@
     <Compile Include="Base\BeforeAfterActions.cs" />
     <Compile Include="Base\IBaseTest.cs" />
     <Compile Include="Base\SeleniumBasePage.cs" />
+    <Compile Include="DTO\Projects\TaskProperties_ValuesDto.cs" />
     <Compile Include="DTO\Readiness.cs" />
     <Compile Include="DTO\Colors.cs" />
     <Compile Include="DTO\ManagementConsole\ManageUsersDto.cs" />
@@ -285,6 +286,7 @@
     <Compile Include="Pages\Projects\StagePropertiesPage.cs" />
     <Compile Include="Pages\Projects\TaskPropertiesPage.cs" />
     <Compile Include="Pages\Projects\TaskProperties_DetailsPage.cs" />
+    <Compile Include="Pages\Projects\TaskProperties_ValuesPage.cs" />
     <Compile Include="Pages\Projects\TeamPropertiesPage.cs" />
     <Compile Include="Pages\Projects\TeamsPage.cs" />
     <Compile Include="Steps\ManagementConsole\ManagementConsole.cs" />
