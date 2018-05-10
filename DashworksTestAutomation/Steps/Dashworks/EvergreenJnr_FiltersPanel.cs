@@ -431,8 +431,6 @@ namespace DashworksTestAutomation.Steps.Dashworks
         [Then(@"tooltip is displayed with ""(.*)"" text for edit filter button")]
         public void ThenTooltipIsDisplayedWithTextForEditFilterButton(string text)
         {
-            //var filterElement = _driver.NowAt<FiltersElement>();
-            //filterElement.EditFilterButtonToolTip(tooltipText);
             var filterElement = _driver.NowAt<FiltersElement>();
             _driver.MouseHover(filterElement.EditFilterButton);
             var toolTipText = _driver.GetTooltipText();
