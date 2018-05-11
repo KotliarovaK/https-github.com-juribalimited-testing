@@ -68,6 +68,13 @@ Scenario: Projects_CreateProject
 	| StageName     |
 	| TestStageName |
 	Then created Stage is displayed in the table
+	When User navigate to "Mail Templates" tab
+	Then "Manage Mail Templates" page is displayed to the user
+	When User clicks "Create Mail Template" button
+	When User create Mail Template
+	| Name                 | Description | SubjectLine | BodyText |
+	| TestMailTemplateName | TestText    | TestText    | TestText |
+	Then Success message is displayed with "Mail Template successfully created." text
 	When User navigate to "Tasks" tab
 	Then "Manage Tasks" page is displayed to the user
 	When User clicks "Create Task" button
@@ -77,7 +84,7 @@ Scenario: Projects_CreateProject
 	Then Success message is displayed with "Task successfully created" text
 	When User updates the Task page
 	| TaskHaADueDate | TaskImpactsReadiness | TaskHasAnOwner | ShowDetails | ProjectObject | BulkUpdate | SelfService |
-	| true           | true                 | true           | true        | true          | true       | true        |
+	| true           | true                 | false          | false       | false         | false      | false       |
 	Then Success message is displayed with "Task successfully updated" text
 	When User publishes the task
 	Then selected task was published
@@ -87,11 +94,13 @@ Scenario: Projects_CreateProject
 	| Name          | Help | DefaultValue |
 	| TestValueName | Test | false        |
 	When User clicks "Save Value" button
-	#When User navigate to "Emails" on selected tab
-	#When User clicks "Add Email" button
-	#Then User create new Email
-	#| Name          | Help | DefaultValue |
-	#| TestValueName | Test | false        |
+	When User navigate to "Emails" on selected tab
+	When User clicks "Add Email" button
+	Then User create new Email
+	| CountDays | SendOnceOnly | RequestTypesAll | ApllyEmailToAll | To             |
+	| true      | true         | true            | false           | Test@email.com |
+	When User clicks "Create Email Notification" button
+	When User clicks "« Go Back" button
 	When User clicks "« Go Back to Tasks" button
 	Then created Task is displayed in the table
 	When User navigate to "Teams" tab
@@ -113,13 +122,6 @@ Scenario: Projects_CreateProject
 	Then "Manage Teams" page is displayed to the user
 	Then required number of Groups is displayed for created team
 	#Then required number of Members is displayed for created team
-	When User navigate to "Mail Templates" tab
-	Then "Manage Mail Templates" page is displayed to the user
-	When User clicks "Create Mail Template" button
-	When User create Mail Template
-	| Name                 | Description | SubjectLine | BodyText |
-	| TestMailTemplateName | TestText    | TestText    | TestText |
-	Then Success message is displayed with "Mail Template successfully created." text
 	When User navigate to "News" tab
 	Then "Manage News" page is displayed to the user
 	When User updating News page

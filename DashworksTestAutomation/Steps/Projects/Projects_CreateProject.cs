@@ -2,6 +2,7 @@
 using DashworksTestAutomation.DTO.Projects;
 using DashworksTestAutomation.Extensions;
 using DashworksTestAutomation.Pages.Projects;
+using DashworksTestAutomation.Pages.Projects.Tasks;
 using DashworksTestAutomation.Utils;
 using NUnit.Framework;
 using OpenQA.Selenium.Remote;
@@ -22,13 +23,14 @@ namespace DashworksTestAutomation.Steps.Projects
         private readonly StagePropertiesDto _stagePropertiesDto;
         private readonly TaskPropertiesDto _taskPropertiesDto;
         private readonly TaskProperties_DetailsDto _taskPropertiesDetailsDto;
+        private readonly TaskProperties_EmailsDto _taskPropertiesEmailsDto;
         private readonly TaskProperties_ValuesDto _taskPropertiesValuesDto;
         private readonly TeamPropertiesDto _teamPropertiesDto;
         private readonly GroupPropertiesDto _groupPropertiesDto;
         private readonly MailTemplatePropertiesDto _mailTemplatePropertiesDto;
         private readonly NewsDto _newsDto;
 
-        public Projects_CreateProject(RemoteWebDriver driver, ProjectDto projectDto, DetailsDto detailsDto, RequestTypesDto requestTypesDto, CategoryPropertiesDto categoryPropertiesDto, StagePropertiesDto stagePropertiesDto, TaskPropertiesDto taskPropertiesDto, TeamPropertiesDto teamPropertiesDto, GroupPropertiesDto groupPropertiesDto, MailTemplatePropertiesDto mailTemplatePropertiesDto, NewsDto newsDto, TaskProperties_DetailsDto taskPropertiesDetailsDto, RequestType_DetailsDto requestTypeDetailsDto, TaskProperties_ValuesDto taskPropertiesValuesDto)
+        public Projects_CreateProject(RemoteWebDriver driver, ProjectDto projectDto, DetailsDto detailsDto, RequestTypesDto requestTypesDto, CategoryPropertiesDto categoryPropertiesDto, StagePropertiesDto stagePropertiesDto, TaskPropertiesDto taskPropertiesDto, TeamPropertiesDto teamPropertiesDto, GroupPropertiesDto groupPropertiesDto, MailTemplatePropertiesDto mailTemplatePropertiesDto, NewsDto newsDto, TaskProperties_DetailsDto taskPropertiesDetailsDto, RequestType_DetailsDto requestTypeDetailsDto, TaskProperties_ValuesDto taskPropertiesValuesDto, TaskProperties_EmailsDto taskPropertiesEmailsDto)
         {
             _driver = driver;
             _projectDto = projectDto;
@@ -44,6 +46,7 @@ namespace DashworksTestAutomation.Steps.Projects
             _taskPropertiesDetailsDto = taskPropertiesDetailsDto;
             _requestTypeDetailsDto = requestTypeDetailsDto;
             _taskPropertiesValuesDto = taskPropertiesValuesDto;
+            _taskPropertiesEmailsDto = taskPropertiesEmailsDto;
         }
 
         [When(@"User clicks create Project button")]
@@ -242,7 +245,7 @@ namespace DashworksTestAutomation.Steps.Projects
 
             page.ValueType.SelectboxSelect(_taskPropertiesDetailsDto.ValueType.GetValue());
             page.TaskHaADueDate.SetCheckboxState(_taskPropertiesDetailsDto.TaskHaADueDate);
-            //page.DateMode.SelectboxSelect(_taskPropertiesDetailsDto.DateMode.GetValue());
+            page.DateMode.SelectboxSelect(_taskPropertiesDetailsDto.DateMode.GetValue());
             page.TaskImpactsReadiness.SetCheckboxState(_taskPropertiesDetailsDto.TaskImpactsReadiness);
             page.TaskHasAnOwner.SetCheckboxState(_taskPropertiesDetailsDto.TaskHasAnOwner);
             page.ShowDetails.SetCheckboxState(_taskPropertiesDetailsDto.ShowDetails);
@@ -297,9 +300,25 @@ namespace DashworksTestAutomation.Steps.Projects
 
             page.Name.SendKeys(_taskPropertiesValuesDto.Name);
             page.Help.SendKeys(_taskPropertiesValuesDto.Help);
+            page.ReadinessClick.Click();
             page.Readiness.SelectboxSelect(_taskPropertiesValuesDto.Readiness.GetValue());
             page.TaskStatus.SelectboxSelect(_taskPropertiesValuesDto.TaskStatus.GetValue());
             page.DefaultValue.SetCheckboxState(_taskPropertiesValuesDto.DefaultValue);
+        }
+
+        [Then(@"User create new Email")]
+        public void ThenUserCreateNewEmail(Table table)
+        {
+            var page = _driver.NowAt<TaskProperties_EmailsPage>();
+
+            table.CreateInstance<TaskProperties_EmailsDto>().CopyPropertiesTo(_taskPropertiesEmailsDto);
+
+            page.CountDays.SetCheckboxState(_taskPropertiesEmailsDto.CountDays);
+            page.MailTemplate.SelectboxSelect(_projectDto.MailTemplateProperties.Name);
+            page.SendOnceOnly.SetCheckboxState(_taskPropertiesEmailsDto.SendOnceOnly);
+            page.RequestTypesAll.SetCheckboxState(_taskPropertiesEmailsDto.RequestTypesAll);
+            page.ApllyEmailToAll.SetCheckboxState(_taskPropertiesEmailsDto.ApllyEmailToAll);
+            page.To.SendKeys(_taskPropertiesEmailsDto.To);
         }
 
         [When(@"User create Team")]

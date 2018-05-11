@@ -9,10 +9,10 @@ namespace DashworksTestAutomation.DTO.Projects
     public class SelfService_OtherOptions1Dto
     {
         //TODO add a language?
-        public bool ShowScreen;
-        public bool AllowUsersToAddANote;
-        public bool OnlyOwned;
-        public bool AllLinked;
+        public bool ShowScreen { get; set; }
+        public bool AllowUsersToAddANote { get; set; }
+        public bool OnlyOwned { get; set; }
+        public bool AllLinked { get; set; }
         //TODO User Task Name?!?
         //TODO Computer Task Name?!?
         public string LongName { get; set; }

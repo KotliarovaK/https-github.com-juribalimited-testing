@@ -8,9 +8,9 @@ namespace DashworksTestAutomation.DTO.Projects
     public class SelfService_ProjectDateDto
     {
         //TODO add a language?
-        public bool ShowThisScreen;
+        public bool ShowThisScreen { get; set; }
         public ShowComputerNameEnum ShowComputerName;
-        public bool AllowUsersToAddANote;
+        public bool AllowUsersToAddANote { get; set; }
         public string MinimumHours { get; set; }
         public string MaximumHours { get; set; }
         //TODO Additional Tasks

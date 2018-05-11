@@ -173,7 +173,8 @@
     <Compile Include="Base\BeforeAfterActions.cs" />
     <Compile Include="Base\IBaseTest.cs" />
     <Compile Include="Base\SeleniumBasePage.cs" />
-    <Compile Include="DTO\Projects\TaskProperties_ValuesDto.cs" />
+    <Compile Include="DTO\Projects\Tasks\TaskProperties_EmailsDto.cs" />
+    <Compile Include="DTO\Projects\Tasks\TaskProperties_ValuesDto.cs" />
     <Compile Include="DTO\Readiness.cs" />
     <Compile Include="DTO\Colors.cs" />
     <Compile Include="DTO\ManagementConsole\ManageUsersDto.cs" />
@@ -198,8 +199,8 @@
     <Compile Include="DTO\Projects\SelfService\SelfService_ThankYouDto.cs" />
     <Compile Include="DTO\Projects\SelfService\SelfService_WelcomeDto.cs" />
     <Compile Include="DTO\Projects\StagePropertiesDto.cs" />
-    <Compile Include="DTO\Projects\TaskPropertiesDto.cs" />
-    <Compile Include="DTO\Projects\TaskProperties_DetailsDto.cs" />
+    <Compile Include="DTO\Projects\Tasks\TaskPropertiesDto.cs" />
+    <Compile Include="DTO\Projects\Tasks\TaskProperties_DetailsDto.cs" />
     <Compile Include="DTO\Projects\TeamPropertiesDto.cs" />
     <Compile Include="DTO\RuntimeVariables\Filter.cs" />
     <Compile Include="DTO\RuntimeVariables\ListsDetails.cs" />
@@ -286,9 +287,10 @@
     <Compile Include="Pages\Projects\SelfService\SelfService_ThankYouPage.cs" />
     <Compile Include="Pages\Projects\SelfService\SelfService_WelcomePage.cs" />
     <Compile Include="Pages\Projects\StagePropertiesPage.cs" />
-    <Compile Include="Pages\Projects\TaskPropertiesPage.cs" />
-    <Compile Include="Pages\Projects\TaskProperties_DetailsPage.cs" />
-    <Compile Include="Pages\Projects\TaskProperties_ValuesPage.cs" />
+    <Compile Include="Pages\Projects\Tasks\TaskPropertiesPage.cs" />
+    <Compile Include="Pages\Projects\Tasks\TaskProperties_DetailsPage.cs" />
+    <Compile Include="Pages\Projects\Tasks\TaskProperties_EmailsPage.cs" />
+    <Compile Include="Pages\Projects\Tasks\TaskProperties_ValuesPage.cs" />
     <Compile Include="Pages\Projects\TeamPropertiesPage.cs" />
     <Compile Include="Pages\Projects\TeamsPage.cs" />
     <Compile Include="Steps\ManagementConsole\ManagementConsole.cs" />

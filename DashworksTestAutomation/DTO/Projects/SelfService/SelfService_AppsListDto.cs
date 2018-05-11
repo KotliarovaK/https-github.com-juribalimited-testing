@@ -6,12 +6,12 @@ namespace DashworksTestAutomation.DTO.Projects
     public class SelfService_AppsListDto
     {
         //TODO add a language?
-        public bool ShowThisScreen;
-        public bool ShowCoreApps;
-        public bool ShowTargetStateReadiness;
-        public bool ShowRequiredColumnAndSticky;
-        public bool ShowOnlyApplication;
-        public bool AllowUsersToAddANote;
+        public bool ShowThisScreen { get; set; }
+        public bool ShowCoreApps { get; set; }
+        public bool ShowTargetStateReadiness { get; set; }
+        public bool ShowRequiredColumnAndSticky { get; set; }
+        public bool ShowOnlyApplication { get; set; }
+        public bool AllowUsersToAddANote { get; set; }
         public ViewEnum View;
         //TODO Additional Tasks
         public string LongName { get; set; }

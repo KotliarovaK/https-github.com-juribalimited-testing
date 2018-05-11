@@ -8,10 +8,10 @@ namespace DashworksTestAutomation.DTO.Projects
 {
     public class Capacity_DetailsDto
     {
-        public bool EnablePlanning;
-        public bool DisplayColors;
-        public bool EnforceOonSelfServicePage;
-        public bool EnforceOnProjectObjectPage;
+        public bool EnablePlanning { get; set; }
+        public bool DisplayColors { get; set; }
+        public bool EnforceOonSelfServicePage { get; set; }
+        public bool EnforceOnProjectObjectPage { get; set; }
         public string CapacityToReach { get; set; }
     }
 }

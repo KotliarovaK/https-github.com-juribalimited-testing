@@ -7,7 +7,7 @@ namespace DashworksTestAutomation.DTO.Projects
     {
         public ValueTypeUpdateEnum ValueType;
         public bool TaskHaADueDate { get; set; }
-        //public DateModeEnum DateMode;
+        public DateModeEnum DateMode;
         public TaskProjectRoleEnum TaskProjectRole;
         public bool TaskImpactsReadiness { get; set; }
         public bool TaskHasAnOwner { get; set; }
@@ -21,7 +21,7 @@ namespace DashworksTestAutomation.DTO.Projects
         {
             ValueType = ValueTypeUpdateEnum.Radiobutton;
             TaskProjectRole = EnumExtensions.GetRandomValue<TaskProjectRoleEnum>();
-            //DateMode = EnumExtensions.GetRandomValue<DateModeEnum>();
+            DateMode = DateModeEnum.DateOnly;
         }
     }
 

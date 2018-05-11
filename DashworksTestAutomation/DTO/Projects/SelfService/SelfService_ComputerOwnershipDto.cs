@@ -7,13 +7,13 @@ namespace DashworksTestAutomation.DTO.Projects
     public class SelfService_ComputerOwnershipDto
     {
         //TODO add a language?
-        public bool ShowScreen;
+        public bool ShowScreen { get; set; }
         public ComputerNameEnum ShowComputerName;
-        public bool ShowComputers;
-        public bool ShowCategory;
-        public bool AllowUsersToSearch;
-        public bool AllowUsersToSetPrimary;
-        public bool AllowUsersToAddANote;
+        public bool ShowComputers { get; set; }
+        public bool ShowCategory { get; set; }
+        public bool AllowUsersToSearch { get; set; }
+        public bool AllowUsersToSetPrimary { get; set; }
+        public bool AllowUsersToAddANote { get; set; }
         public string LimitMaximum  { get; set; }
         public string LimitMinimum { get; set; }
         public string LongName { get; set; }

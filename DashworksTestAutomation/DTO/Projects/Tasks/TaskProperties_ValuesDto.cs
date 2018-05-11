@@ -5,11 +5,11 @@ namespace DashworksTestAutomation.DTO.Projects
 {
     public class TaskProperties_ValuesDto
     {
-        public string Name;
-        public string Help;
+        public string Name { get; set; }
+        public string Help { get; set; }
         public ReadinessEnum Readiness;
         public TaskStatusEnum TaskStatus;
-        public bool DefaultValue;
+        public bool DefaultValue { get; set; }
 
         public TaskProperties_ValuesDto()
         {

@@ -7,13 +7,13 @@ namespace DashworksTestAutomation.Pages.Projects
 {
     internal class TaskProperties_DetailsPage : BaseDashboardPage
     {
-        [FindsBy(How = How.XPath, Using = ".//select[@id='ctl00_MainContent_DDL_TaskControlTypeID']")]
+        [FindsBy(How = How.XPath, Using = ".//select[contains(@id, 'TaskControlTypeID')]")]
         public IWebElement ValueType { get; set; }
 
-        [FindsBy(How = How.XPath, Using = ".//input[@id='CB_HasDueDate']")]
+        [FindsBy(How = How.XPath, Using = ".//input[contains(@id, 'HasDueDate')]")]
         public IWebElement TaskHaADueDate { get; set; }
 
-        [FindsBy(How = How.XPath, Using = ".//select[@id='ctl00_MainContent_DDL_HookType']")]
+        [FindsBy(How = How.XPath, Using = ".//select[contains(@id, 'HookType')]")]
         public IWebElement TaskProjectRole { get; set; }
 
         [FindsBy(How = How.XPath, Using = ".//input[@id='ctl00_MainContent_CB_AffectsStatus']")]
@@ -25,8 +25,8 @@ namespace DashworksTestAutomation.Pages.Projects
         [FindsBy(How = How.XPath, Using = ".//input[@id='ctl00_MainContent_CB_ShowLastChangeInfo']")]
         public IWebElement ShowDetails { get; set; }
 
-        //[FindsBy(How = How.XPath, Using = ".//select[@id='DDL_DateMode']")]
-        //public IWebElement DateMode { get; set; }
+        [FindsBy(How = How.XPath, Using = ".//select[contains(@id, 'DateMode')]")]
+        public IWebElement DateMode { get; set; }
 
         [FindsBy(How = How.XPath, Using = ".//input[@id='ctl00_MainContent_CB_ReadOnly_ProjectObject']")]
         public IWebElement ProjectObject { get; set; }
