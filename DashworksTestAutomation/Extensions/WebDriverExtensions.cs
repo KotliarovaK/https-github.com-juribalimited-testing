@@ -107,6 +107,16 @@ namespace DashworksTestAutomation.Extensions
             catch (Exception e)
             {
                 Logger.Write(e);
+                try
+                {
+                    Thread.Sleep(3000);
+                    Logger.Write("Retrying to quite chromedriver");
+                    driver.Quit();
+                }
+                catch (Exception ex)
+                {
+                    Logger.Write(ex);
+                }
             }
 
             try

@@ -228,9 +228,7 @@ namespace DashworksTestAutomation.Steps.Dashworks
                 page.RemoveButton.Click();
                 page.UpdateButton.Click();
             }
-            catch
-            {
-            }
+            catch {}
         }
     }
 }

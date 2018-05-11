@@ -374,8 +374,12 @@ namespace DashworksTestAutomation.Steps.Dashworks
         [AfterScenario("Delete_Newly_Created_List")]
         public void DeleteAllCustomListsAfterScenarioRun()
         {
-            RemoveUserLists();
-            RemoveSharedLists();
+            try
+            {
+                RemoveUserLists();
+                RemoveSharedLists();
+            }
+            catch {}
         }
 
         private void RemoveUserLists()

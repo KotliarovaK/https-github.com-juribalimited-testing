@@ -121,15 +121,15 @@ Scenario: EvergreenJnr_DevicesList_CheckThatActionsDetailsColumnsFiltersButtonsA
 	When User click User Notifications button
 	Then Notifications message is displayed correctly
 
-	@Evergreen @AllLists @EvergreenJnr_BaseDashboardPage @BaseDashboardPage @DAS10972
-Scenario Outline: EvergreenJnr_AllList_CheckThatEditListFunctionIsAvailableAfterSortingColumns
-	When User clicks "<ListName>" on the left-hand menu
-	Then "<ListName>" list should be displayed to the user
-	When User clicks the Columns button
-	And User adds columns to the list
-	| ColumnName  |
-	| <AddColumn> |
-	When User create dynamic list with "DynamicList1" name on "<ListName>" page
+@Evergreen @Devices @EvergreenJnr_BaseDashboardPage @BaseDashboardPage @DAS11693
+Scenario: EvergreenJnr_DevicesList_CheckThatToolTipIsDisplayedWithCreateProjectButtonFromAnUnsavedList
+	When User clicks "Devices" on the left-hand menu
+	Then "Devices" list should be displayed to the user
+	When User click on 'Hostname' column header
+	Then data in table is sorted by 'Hostname' column in ascending order
+	When User clicks Create button on the Base Dashboard Page
+	Then tooltip is displayed with "This list must be saved before using it to create a project" text for Create Project button
+	Then Create Project button is disabled on the Base Dashboard Page
 	When User click on '<ColumnName>' column header
 	Then data in table is sorted by '<ColumnName>' column in ascending order
 	Then Edit List menu is displayed
