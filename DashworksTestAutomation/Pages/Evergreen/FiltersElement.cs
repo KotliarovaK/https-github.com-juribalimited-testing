@@ -276,6 +276,13 @@ namespace DashworksTestAutomation.Pages.Evergreen
             return Driver.IsElementDisplayed(selector);
         }
 
+        public void SelectFilterType(string filterType)
+        {
+            string selectedfilterType = $".//div[@style='opacity: 1;']//span[text()='{filterType}']";
+            Driver.WaitWhileControlIsNotDisplayed(By.XPath(selectedfilterType));
+            Driver.FindElement(By.XPath(selectedfilterType)).Click();
+        }
+
         public bool CategoryIsDisplayed(string sectionsName)
         {
             return Driver.IsElementDisplayed(
