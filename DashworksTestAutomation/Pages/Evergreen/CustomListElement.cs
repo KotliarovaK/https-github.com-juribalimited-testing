@@ -131,6 +131,9 @@ namespace DashworksTestAutomation.Pages.Evergreen
         [FindsBy(How = How.XPath, Using = ".//div[contains(@class, 'open-action')]/span")]
         public IWebElement SaveAsDropdown { get; set; }
 
+        [FindsBy(How = How.XPath, Using = ".//span[contains(text(),'Edited')]")]
+        public IWebElement EditedList { get; set; }
+
         [FindsBy(How = How.XPath, Using = ".//span[text()='Update list']")]
         public IWebElement UpdateCurrentListButton { get; set; }
 

@@ -66,7 +66,7 @@ Scenario: EvergreenJnr_UsersList_CheckThatDeletePartOfFilterFromUrlIsUpdatingRow
 	| Amber              |
 	| Green              |
 	Then "Compliance" filter is added to the list
-	And "41,161" rows are displayed in the agGrid
+	And "41,164" rows are displayed in the agGrid
 	And table data is filtered correctly
 	And "Compliance" filter with "Red, Amber, Green" values is added to URL on "Users" page
 	And "Compliance" column is added to URL on "Users" page
@@ -74,7 +74,9 @@ Scenario: EvergreenJnr_UsersList_CheckThatDeletePartOfFilterFromUrlIsUpdatingRow
 	Then ColumnName is added to the list
 	| ColumnName |
 	| Compliance |
-	And "41,335" rows are displayed in the agGrid
+	And "41,339" rows are displayed in the agGrid
+	When User clicks the Filters button
+	Then Filters panel is displayed to the user
 	Then "Compliance" filter is removed from filters
 
 @Evergreen @Mailboxes @Evergreen_FiltersFeature @RemoveFilter @DAS10996 @DAS12207

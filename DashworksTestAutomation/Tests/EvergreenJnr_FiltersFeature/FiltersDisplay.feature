@@ -105,21 +105,41 @@ Scenario: EvergreenJnr_DevicesList_CheckThatAddColumnOptionIsNotAvailableForAppl
 	When User selects "Computer Warranty" filter from "Application Custom Fields" category
 	Then "Add column" checkbox is not displayed
 
-@Evergreen @AllLisrs @Evergreen_FiltersFeature @FiltersDisplay @DAS10771
+@Evergreen @AllLisrs @Evergreen_FiltersFeature @FiltersDisplay @DAS10771 @DAS10972
 Scenario Outline: EvergreenJnr_AllLisrs_CheckThatNoneOptionIsAvailableForFilters
 	When User clicks "<PageName>" on the left-hand menu
 	Then "<PageName>" list should be displayed to the user
 	When User clicks the Filters button
 	Then Filters panel is displayed to the user
-	When user select "<FilterName>" filter
-	Then "None" option is available at first place
+	When User add "<FilterName>" filter where type is "Equals" without added column and following checkboxes:
+	| SelectedCheckboxes |
+	| None               |
+	Then Save to New Custom List element is displayed
+	When User click Edit button for "<FilterName>" filter
+	Then User changes filter type to "Does not equal"
+	Then Save to New Custom List element is displayed
+	When User have reset all filters
+	Then Save to New Custom List element is NOT displayed
+	When User add "<FilterName>" filter where type is "Equals" without added column and following checkboxes:
+	| SelectedCheckboxes |
+	| None               |
+	Then Save to New Custom List element is displayed
+	When User Add And "<NewFilterName>" filter where type is "Equals" without added column and following checkboxes:
+	| SelectedCheckboxes |
+	| Red                |
+	When User Add And "<NewFilterName>" filter where type is "Equals" without added column and following checkboxes:
+	| SelectedCheckboxes |
+	| Amber              |
+	Then Save to New Custom List element is displayed
+	When User have reset all filters
+	Then Save to New Custom List element is NOT displayed
 
-Examples: 
-	| PageName     | FilterName           |
-	| Devices      | Windows7Mi: Category |
-	| Users        | UserSchedu: Category |
-	| Applications | Havoc(BigD: Category |
-	| Mailboxes    | EmailMigra: Category |
+Examples:
+	| PageName     | FilterName           | NewFilterName    |
+	| Devices      | Windows7Mi: Category | Compliance       |
+	| Users        | UserSchedu: Category | Compliance       |
+	| Applications | Havoc(BigD: Category | Compliance       |
+	| Mailboxes    | EmailMigra: Category | Owner Compliance |
 
 @Evergreen @Devices @Evergreen_FiltersFeature @FiltersDisplay @DAS10696 @Delete_Newly_Created_List
 Scenario: EvergreenJnr_DevicesList_CheckThatFilterDataIsDisplayedCorrectlyWhenNavigatingBetweenLists
@@ -188,7 +208,7 @@ Scenario: EvergreenJnr_UsersList_CheckThatFilterDataIsDisplayedCorrectlyWhenNavi
 	| Amber  |
 	| Green  |
 
-@Evergreen @Applications @Evergreen_FiltersFeature @FiltersDisplay @DAS10696 @Delete_Newly_Created_List
+@Evergreen @Applications @Evergreen_FiltersFeature @FiltersDisplay @DAS10696 @Delete_Newly_Created_List @Not_Run
 Scenario: EvergreenJnr_ApplicationsList_CheckThatFilterDataIsDisplayedCorrectlyWhenNavigatingBetweenLists
 	When User clicks "Applications" on the left-hand menu
 	Then "Applications" list should be displayed to the user
@@ -290,7 +310,7 @@ Scenario Outline: EvergreenJnr_UsersList_CheckThatFilterOperatorsIsCorrectInFilt
 Examples: 
 	| operatorValue  | filterOption | rowsCount | operatorValueInInfo |
 	| Equals         | Red          | 9,438     | is                  |
-	| Does not equal | Red          | 31,897    | is not              |
+	| Does not equal | Red          | 31,901    | is not              |
 
 @Evergreen @Applications @Evergreen_FiltersFeature @FiltersDisplay @DAS10696
 Scenario Outline: EvergreenJnr_ApplicationsList_CheckThatFilterOperatorsIsCorrectInFilterInfo
@@ -381,8 +401,8 @@ Scenario Outline: EvergreenJnr_UsersList_CheckThatFilterOperatorsIsCorrectInFilt
 
 Examples: 
 	| operatorValue  | filterOption | rowsCount | operatorValueInInfo |
-	| Equals         | TRUE         | 41,228    | is                  |
-	| Does not equal | TRUE         | 107       | is not              |
+	| Equals         | TRUE         | 41,231    | is                  |
+	| Does not equal | TRUE         | 108       | is not              |
 
 @Evergreen @Applications @Evergreen_FiltersFeature @FiltersDisplay @DAS10696 @DAS11512 @Delete_Newly_Created_List @Not_Run
 Scenario: EvergreenJnr_ApplicationsList_CheckThatApplicationSavedListFilterIsWorkingCorrect
@@ -712,7 +732,7 @@ Scenario: EvergreenJnr_UsersList_CheckThatRelevantDataSetBeDisplayedAfterResetti
 	And message 'No users found' is displayed to the user
 	When User have reset all filters
 	Then "Users" list should be displayed to the user
-	And "41,335" rows are displayed in the agGrid
+	And "41,339" rows are displayed in the agGrid
 
 @Evergreen @Applications @Evergreen_FiltersFeature @FiltersDisplay @DAS11552
 Scenario: EvergreenJnr_ApplicationsList_CheckThatRelevantDataSetBeDisplayedAfterRemovingFilter
@@ -965,7 +985,7 @@ Scenario: EvergreenJnr_UsersLists_CheckThatChildrenOfTreeBasedFiltersAreIncluded
 	Then Filters panel is displayed to the user
 	When User add "Department" filter where type is "Does not equal" with added column and "Support" Tree List option
 	Then "Department" filter is added to the list
-	And "35,078" rows are displayed in the agGrid
+	And "35,082" rows are displayed in the agGrid
 
 @Evergreen @AllLists @Evergreen_FiltersFeature @FiltersDisplay @DAS12205 @Delete_Newly_Created_List @Not_Run
 Scenario: EvergreenJnr_AllLists_CheckThatFilterTextDisplaysActualListName 

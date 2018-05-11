@@ -130,6 +130,7 @@ namespace DashworksTestAutomation.Steps.Dashworks
             var listElement = _driver.NowAt<ActionsElement>();
             _driver.WaitWhileControlIsNotDisplayed<ActionsElement>(() => listElement.CreateButton);
             listElement.ListNameTextbox.SendKeys(listName);
+            _driver.WaitWhileControlIsNotDisplayed<ActionsElement>(() => listElement.CreateButton);
             listElement.CreateButton.Click();
 
             //Small wait for message display
