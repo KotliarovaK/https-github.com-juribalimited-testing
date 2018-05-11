@@ -236,7 +236,7 @@ Scenario: EvergreenJnr_AdminPage_CheckThatNumberOfApplicationsInProjectScopeIsCo
 	Then "Applications to add (0 of 247 selected)" is displayed to the user in the Project Scope Changes section
 	And Delete "TestProject5" Project in the Administration
 
-@Evergreen @Admin @EvergreenJnr_AdminPage @AdminPage @DAS12154 @Delete_Newly_Created_List
+@Evergreen @Admin @EvergreenJnr_AdminPage @AdminPage @DAS12154 @Delete_Newly_Created_List @Not_Run
 Scenario: EvergreenJnr_AdminPage_CheckThatWarningMessageIsNotDisplayedWhenDeletingListUsingInTheProjectThatWasDeleted
 	When User clicks "Devices" on the left-hand menu
 	Then "Devices" list should be displayed to the user

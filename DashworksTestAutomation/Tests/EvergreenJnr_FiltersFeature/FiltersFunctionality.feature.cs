@@ -781,7 +781,6 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_FiltersFeature
             testRunner.Then("User click back button in the browser", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
             testRunner.Then(string.Format("\"{0}\" rows are displayed in the agGrid", rowsCount), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
             testRunner.Then(string.Format("\"{0}\" is displayed in added filter info", text), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-            testRunner.Then("tooltip is displayed with \"Edit Filter\" text for edit filter button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
             this.ScenarioCleanup();
         }
         
@@ -1326,7 +1325,11 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_FiltersFeature
             table19.AddRow(new string[] {
                         "Begins with"});
             table19.AddRow(new string[] {
+                        "Does not begin with"});
+            table19.AddRow(new string[] {
                         "Ends with"});
+            table19.AddRow(new string[] {
+                        "Does not end with"});
             testRunner.Then(string.Format("following operators are displayed in \"{0}\" category for \"{1}\" filter on \"Devices\"" +
                         " page:", categoryName, filterName), ((string)(null)), table19, "Then ");
             this.ScenarioCleanup();

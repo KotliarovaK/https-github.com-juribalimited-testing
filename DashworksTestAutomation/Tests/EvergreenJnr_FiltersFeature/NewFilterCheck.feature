@@ -86,7 +86,7 @@ Examples:
 	| Windows7Mi: Target App Readiness | Equals, Does not equal | Red          | Windows7Mi: Target App Readiness is Red   | 28        |
 	| Babel(Engl: Target App Readiness | Equals, Does not equal | None         | Babel(Engl: Target App Readiness is None  | 302       |
 	| Barry'sUse: Target App Readiness | Equals, Does not equal | None         | Barry'sUse: Target App Readiness is None  | 1,045     |
-	| ComputerSc: Target App Readiness | Equals, Does not equal | Green        | ComputerSc: Target App Readiness is Green | 920       |
+	| ComputerSc: Target App Readiness | Equals, Does not equal | Green        | ComputerSc: Target App Readiness is Green | 903       |
 	| Havoc(BigD: Target App Readiness | Equals, Does not equal | None         | Havoc(BigD: Target App Readiness is None  | 1,067     |
 	| MigrationP: Target App Readiness | Equals, Does not equal | Blue         | MigrationP: Target App Readiness is Blue  | 189       |
 	| UserSchedu: Target App Readiness | Equals, Does not equal | Grey         | UserSchedu: Target App Readiness is Grey  | 981       |
@@ -186,7 +186,7 @@ Examples:
 	| Windows7Mi: Application Readiness | Equals, Does not equal | Red          | Windows7Mi: Application Readiness is Red   | 27        |
 	| Babel(Engl: Application Readiness | Equals, Does not equal | None         | Babel(Engl: Application Readiness is None  | 302       |
 	| Barry'sUse: Application Readiness | Equals, Does not equal | None         | Barry'sUse: Application Readiness is None  | 1,072     |
-	| ComputerSc: Application Readiness | Equals, Does not equal | Green        | ComputerSc: Application Readiness is Green | 913       |
+	| ComputerSc: Application Readiness | Equals, Does not equal | Green        | ComputerSc: Application Readiness is Green | 901       |
 	| Havoc(BigD: Application Readiness | Equals, Does not equal | None         | Havoc(BigD: Application Readiness is None  | 1,067     |
 	| MigrationP: Application Readiness | Equals, Does not equal | Blue         | MigrationP: Application Readiness is Blue  | 189       |
 	| UserSchedu: Application Readiness | Equals, Does not equal | None         | UserSchedu: Application Readiness is None  | 981       |
@@ -217,7 +217,7 @@ Examples:
 	| Windows7Mi: Application Rationalisation | Equals, Does not equal | RETIRE        | Windows7Mi: Application Rationalisation is Retire        | 85        |
 	| Babel(Engl: Application Rationalisation | Equals, Does not equal | UNCATEGORISED | Babel(Engl: Application Rationalisation is Uncategorised | 302       |
 	| Barry'sUse: Application Rationalisation | Equals, Does not equal | KEEP          | Barry'sUse: Application Rationalisation is Keep          | 2         |
-	| ComputerSc: Application Rationalisation | Equals, Does not equal | FORWARD PATH  | ComputerSc: Application Rationalisation is Forward Path  | 10        |
+	| ComputerSc: Application Rationalisation | Equals, Does not equal | FORWARD PATH  | ComputerSc: Application Rationalisation is Forward Path  | 15        |
 	| Havoc(BigD: Application Rationalisation | Equals, Does not equal | UNCATEGORISED | Havoc(BigD: Application Rationalisation is Uncategorised | 1,067     |
 	| MigrationP: Application Rationalisation | Equals, Does not equal | RETIRE        | MigrationP: Application Rationalisation is Retire        | 1         |
 	| UserSchedu: Application Rationalisation | Equals, Does not equal | UNCATEGORISED | UserSchedu: Application Rationalisation is Uncategorised | 981       |
