@@ -218,6 +218,19 @@ namespace DashworksTestAutomation.Steps.Dashworks
             filter.Do();
         }
 
+        [When(@"User Add And ""(.*)"" filter where type is ""(.*)"" without added column and following checkboxes:")]
+        public void WhenUserAddAndFilterWhereTypeIsWithoutAddedColumnAndFollowingCheckboxes(string filterName,
+            string operatorValue, Table table)
+        {
+            var filtersNames = _driver.NowAt<FiltersElement>();
+            filtersNames.AddAndFilter(filterName);
+            var filter = new CheckBoxesFilter(_driver, operatorValue, false, table);
+            //Save filter in context
+            _filter.FilterSettings = filter;
+            _filter.FilterName = filterName;
+            filter.Do();
+        }
+
         [When(@"User Add And ""(.*)"" filter where type is ""(.*)"" with added column and following checkboxes:")]
         public void WhenUserAddAndFilterWhereTypeIsWithAddedColumnAndFollowingCheckboxes(string filterName,
             string operatorValue, Table table)
@@ -411,6 +424,15 @@ namespace DashworksTestAutomation.Steps.Dashworks
             var filterElement = _driver.NowAt<FiltersElement>();
 
             filterElement.GetEditFilterButton(filterName).Click();
+        }
+
+        [Then(@"User changes filter type to ""(.*)""")]
+        public void ThenUserChangesFilterTypeTo(string filterType)
+        {
+            var filterElement = _driver.NowAt<FiltersElement>();
+            filterElement.FilterTypeDropdown.Click();
+            filterElement.SelectFilterType(filterType);
+            filterElement.SaveButton.Click();
         }
 
         [Then(@"""(.*)"" list is displayed for Saved List filter")]
