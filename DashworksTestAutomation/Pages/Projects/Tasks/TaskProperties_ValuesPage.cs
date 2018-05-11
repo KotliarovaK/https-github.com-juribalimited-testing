@@ -16,7 +16,7 @@ namespace DashworksTestAutomation.Pages.Projects.Tasks
         [FindsBy(How = How.XPath, Using = ".//div[@class='selectedItemBox']")]
         public IWebElement ReadinessClick { get; set; }
 
-        [FindsBy(How = How.XPath, Using = ".//a[contains(@class, 'listItem')]")]
+        [FindsBy(How = How.XPath, Using = ".//ul[contains (@class, 'listItems')]//li")]
         public IWebElement Readiness { get; set; }
 
         [FindsBy(How = How.XPath, Using = ".//select[contains(@name, 'TaskStatus')]")]
