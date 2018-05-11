@@ -333,13 +333,15 @@ Examples:
 @Evergreen @Devices @EvergreenJnr_FilterFeature @FilterFunctionality @DAS11550 @DAS11749 @API
 Scenario Outline: EvergreenJnr_DevicesList_CheckThatOperatorInSelectedFilterIsDisplayedCorrectlyAPI
 	Then following operators are displayed in "<CategoryName>" category for "<FilterName>" filter on "Devices" page:
-	| OperatorValues   |
-	| Equals           |
-	| Does not equal   |
-	| Contains         |
-	| Does not contain |
-	| Begins with      |
-	| Ends with        |
+	| OperatorValues      |
+	| Equals              |
+	| Does not equal      |
+	| Contains            |
+	| Does not contain    |
+	| Begins with         |
+	| Does not begin with |
+	| Ends with           |
+	| Does not end with   |
 
 Examples:
 	| CategoryName              | FilterName                  |
