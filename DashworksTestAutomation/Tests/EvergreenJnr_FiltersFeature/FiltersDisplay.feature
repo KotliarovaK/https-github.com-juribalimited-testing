@@ -310,7 +310,7 @@ Scenario Outline: EvergreenJnr_UsersList_CheckThatFilterOperatorsIsCorrectInFilt
 Examples: 
 	| operatorValue  | filterOption | rowsCount | operatorValueInInfo |
 	| Equals         | Red          | 9,438     | is                  |
-	| Does not equal | Red          | 31,897    | is not              |
+	| Does not equal | Red          | 31,901    | is not              |
 
 @Evergreen @Applications @Evergreen_FiltersFeature @FiltersDisplay @DAS10696
 Scenario Outline: EvergreenJnr_ApplicationsList_CheckThatFilterOperatorsIsCorrectInFilterInfo
@@ -401,8 +401,8 @@ Scenario Outline: EvergreenJnr_UsersList_CheckThatFilterOperatorsIsCorrectInFilt
 
 Examples: 
 	| operatorValue  | filterOption | rowsCount | operatorValueInInfo |
-	| Equals         | TRUE         | 41,228    | is                  |
-	| Does not equal | TRUE         | 107       | is not              |
+	| Equals         | TRUE         | 41,231    | is                  |
+	| Does not equal | TRUE         | 108       | is not              |
 
 @Evergreen @Applications @Evergreen_FiltersFeature @FiltersDisplay @DAS10696 @DAS11512 @Delete_Newly_Created_List @Not_Run
 Scenario: EvergreenJnr_ApplicationsList_CheckThatApplicationSavedListFilterIsWorkingCorrect
@@ -732,7 +732,7 @@ Scenario: EvergreenJnr_UsersList_CheckThatRelevantDataSetBeDisplayedAfterResetti
 	And message 'No users found' is displayed to the user
 	When User have reset all filters
 	Then "Users" list should be displayed to the user
-	And "41,335" rows are displayed in the agGrid
+	And "41,339" rows are displayed in the agGrid
 
 @Evergreen @Applications @Evergreen_FiltersFeature @FiltersDisplay @DAS11552
 Scenario: EvergreenJnr_ApplicationsList_CheckThatRelevantDataSetBeDisplayedAfterRemovingFilter
@@ -985,7 +985,7 @@ Scenario: EvergreenJnr_UsersLists_CheckThatChildrenOfTreeBasedFiltersAreIncluded
 	Then Filters panel is displayed to the user
 	When User add "Department" filter where type is "Does not equal" with added column and "Support" Tree List option
 	Then "Department" filter is added to the list
-	And "35,078" rows are displayed in the agGrid
+	And "35,082" rows are displayed in the agGrid
 
 @Evergreen @AllLists @Evergreen_FiltersFeature @FiltersDisplay @DAS12205 @Delete_Newly_Created_List @Not_Run
 Scenario: EvergreenJnr_AllLists_CheckThatFilterTextDisplaysActualListName 

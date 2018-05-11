@@ -38,7 +38,7 @@ Scenario: EvergreenJnr_AllLists_CheckSearchFilterAndTableContentDuringNavigation
 	| Smith          | 11           |
 	When User clicks "Users" on the left-hand menu
 	Then "Users" list should be displayed to the user
-	And "41,335" rows are displayed in the agGrid
+	And "41,339" rows are displayed in the agGrid
 	And Search field is empty
 	And User enters SearchCriteria into the agGrid Search Box and the correct NumberOfRows are returned
 	| SearchCriteria | NumberOfRows |
@@ -101,7 +101,7 @@ Scenario: EvergreenJnr_UsersList_ClearingSearchReturnsTheFullDataSet
 	| Luc            | 138          |
 	Then URL is "http://automation.corp.juriba.com/evergreen/#/users"
 	And Clearing the agGrid Search Box
-	Then "41,335" rows are displayed in the agGrid
+	Then "41,339" rows are displayed in the agGrid
 	Then URL is "http://automation.corp.juriba.com/evergreen/#/users"
 
 @Evergreen @Devices @EvergreenJnr_Search @Search
