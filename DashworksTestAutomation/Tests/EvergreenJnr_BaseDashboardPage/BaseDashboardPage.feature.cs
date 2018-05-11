@@ -513,6 +513,7 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_BaseDashboardPage
         [NUnit.Framework.CategoryAttribute("EvergreenJnr_BaseDashboardPage")]
         [NUnit.Framework.CategoryAttribute("BaseDashboardPage")]
         [NUnit.Framework.CategoryAttribute("DAS10972")]
+        [NUnit.Framework.CategoryAttribute("Delete_Newly_Created_List")]
         [NUnit.Framework.TestCaseAttribute("Devices", "Hostname", "Device Type", "UserSchedu: Readiness ID", new string[0])]
         [NUnit.Framework.TestCaseAttribute("Users", "Username", "Domain", "UserSchedu: Readiness ID", new string[0])]
         [NUnit.Framework.TestCaseAttribute("Applications", "Application", "Vendor", "UserSchedu: Readiness ID", new string[0])]
@@ -550,7 +551,8 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_BaseDashboardPage
                     "AllLists",
                     "EvergreenJnr_BaseDashboardPage",
                     "BaseDashboardPage",
-                    "DAS10972"};
+                    "DAS10972",
+                    "Delete_Newly_Created_List"};
             if ((exampleTags != null))
             {
                 @__tags = System.Linq.Enumerable.ToArray(System.Linq.Enumerable.Concat(@__tags, exampleTags));

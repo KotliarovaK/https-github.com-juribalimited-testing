@@ -19,7 +19,7 @@ namespace DashworksTestAutomation.Pages.Evergreen
         [FindsBy(How = How.XPath, Using = ".//div[text()='Select at least one row']")]
         public IWebElement ActionsContainerMessage { get; set; }
 
-        [FindsBy(How = How.XPath, Using = ".//input[@placeholder='List Name']")]
+        [FindsBy(How = How.XPath, Using = ".//input[@placeholder='List name']")]
         public IWebElement ListNameTextbox { get; set; }
 
         [FindsBy(How = How.XPath, Using = ".//span[text()='CREATE']//ancestor::button")]

@@ -791,7 +791,7 @@ Examples:
 	| Mailboxes    | Mailbox Platform |
 
 @Evergreen @AllLists @EvergreenJnr_ListPanel @CustomListDisplay @DAS10972 @Delete_Newly_Created_List
-Scenario Outline: EvergreenJnr_AllListsLists_CheckThatTheSaveListFunctionIsTriggeredOrHiddenForCustomListsAfterAddingOrRemovingColumns
+Scenario Outline: EvergreenJnr_AllListsLists_CheckThatTheEditListFunctionIsTriggeredOrHiddenForCustomListsAfterAddingOrRemovingColumns
 	When User clicks "<ListName>" on the left-hand menu
 	Then "<ListName>" list should be displayed to the user
 	When User click on '<ColumnName>' column header
@@ -831,3 +831,93 @@ Examples:
 	| Applications | Application   | Application Key | "WPF/E" (codename) Community Technology Preview (Feb 2007) | prK: In Scope | Compliance       |
 	| Users        | Username      | City            | $6BE000-SUDQ9614UVO8                                       | Cost Centre   | Department Name  |
 	| Mailboxes    | Email Address | Alias           | 000F977AC8824FE39B8@bclabs.local                           | Enabled       | Import           |
+
+@Evergreen @AllLists @EvergreenJnr_ListPanel @CustomListDisplay @DAS10998 @DAS10972 @Delete_Newly_Created_List
+Scenario Outline: EvergreenJnr_AllList_CheckThatTheEditListFunctionIsHiddenAfterAddingChangingAndRemovingSearchCriteria
+	When User clicks "<ListName>" on the left-hand menu
+	Then "<ListName>" list should be displayed to the user
+	When User click on '<ColumnName>' column header
+	Then data in table is sorted by '<ColumnName>' column in ascending order
+	When User create dynamic list with "DynamicList2" name on "<ListName>" page
+	Then User enters SearchCriteria into the agGrid Search Box and the correct NumberOfRows are returned
+	| SearchCriteria | NumberOfRows |
+	| <Search>       | <Rows>       |
+	Then Edit List menu is not displayed
+	Then "DynamicList2" list is displayed to user
+	And User enters SearchCriteria into the agGrid Search Box and the correct NumberOfRows are returned
+	| SearchCriteria | NumberOfRows |
+	| Mary           | <NewRows>    |
+	Then Edit List menu is not displayed
+	Then "DynamicList2" list is displayed to user
+	And Clearing the agGrid Search Box
+	Then Edit List menu is not displayed
+	Then "DynamicList2" list is displayed to user
+	When User clicks "<ListName>" on the left-hand menu
+	Then "<ListName>" list should be displayed to the user
+	When User clicks the Actions button
+	Then Actions panel is displayed to the user
+	When User select all rows
+	When User create static list with "StaticList2" name
+	Then User enters SearchCriteria into the agGrid Search Box and the correct NumberOfRows are returned
+	| SearchCriteria | NumberOfRows |
+	| <Search>       | <Rows>       |
+	Then Edit List menu is not displayed
+	And "StaticList2" list is displayed to user
+	And User enters SearchCriteria into the agGrid Search Box and the correct NumberOfRows are returned
+	| SearchCriteria | NumberOfRows |
+	| Mary           | <NewRows>    |
+	Then Edit List menu is not displayed
+	And "StaticList2" list is displayed to user
+	And Clearing the agGrid Search Box
+	Then Edit List menu is not displayed
+	And "StaticList2" list is displayed to user
+
+	Examples:
+	| ListName     | ColumnName    | Search    | Rows  | NewRows |
+	| Devices      | Hostname      | Centre    | 3,284 | 17      |
+	| Users        | Username      | Barland   | 3     | 142     |
+	| Applications | Application   | Adobe     | 40    | 1       |
+	| Mailboxes    | Email Address | bc-exch07 | 4,188 | 73      |
+
+@Evergreen @AllLists @EvergreenJnr_ListPanel @CustomListDisplay @DAS10972
+Scenario Outline: EvergreenJnr_AllListsLists_CheckThatTheEditListFunctionIsHiddenAfterChangingPinnedColumns
+	When User clicks "<ListName>" on the left-hand menu
+	Then "<ListName>" list should be displayed to the user
+	When User click on '<ColumnName>' column header
+	Then data in table is sorted by '<ColumnName>' column in ascending order
+	When User create dynamic list with "DynamicList3" name on "<ListName>" page
+	When User have opened column settings for "<PinnedColumnName>" column
+	When User have select "Pin Left" option from column settings
+	Then "DynamicList3" list is displayed to user
+	Then Edit List menu is not displayed
+	When User have opened column settings for "<PinnedColumnName>" column
+	When User have select "Pin Right" option from column settings
+	Then "DynamicList3" list is displayed to user
+	Then Edit List menu is not displayed
+	When User have opened column settings for "<PinnedColumnName>" column
+	When User have select "No Pin" option from column settings
+	Then "DynamicList3" list is displayed to user
+	Then Edit List menu is not displayed
+	When User clicks the Actions button
+	Then Actions panel is displayed to the user
+	When User select all rows
+	When User create static list with "StaticList3" name
+	When User have opened column settings for "<PinnedColumnName>" column
+	When User have select "Pin Left" option from column settings
+	Then "StaticList3" list is displayed to user
+	Then Edit List menu is not displayed
+	When User have opened column settings for "<PinnedColumnName>" column
+	When User have select "Pin Right" option from column settings
+	Then "StaticList3" list is displayed to user
+	Then Edit List menu is not displayed
+	When User have opened column settings for "<PinnedColumnName>" column
+	When User have select "No Pin" option from column settings
+	Then "StaticList3" list is displayed to user
+	Then Edit List menu is not displayed
+
+Examples:
+	| ListName     | ColumnName       | PinnedColumnName |
+	| Devices      | Device Type      | Hostname         |
+	| Applications | Vendor           | Application      |
+	| Users        | Domain           | Username         |
+	| Mailboxes    | Mailbox Platform | Email Address    |
