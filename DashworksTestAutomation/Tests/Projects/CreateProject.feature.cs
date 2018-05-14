@@ -309,8 +309,8 @@ namespace DashworksTestAutomation.Tests.Projects
                         "false",
                         "false",
                         "true",
-                        "false",
                         "true",
+                        "false",
                         "true",
                         "false",
                         "false"});
@@ -376,11 +376,11 @@ namespace DashworksTestAutomation.Tests.Projects
                         "false",
                         "false",
                         "false",
+                        "false",
                         "true",
-                        "true",
-                        "true",
-                        "true",
-                        "true"});
+                        "false",
+                        "false",
+                        "false"});
             testRunner.Then("User updates the Department and Location on Self Service tab", ((string)(null)), table19, "Then ");
             testRunner.Then("Success message is displayed with \"Self Service Screen successfully updated\" text" +
                     "", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");

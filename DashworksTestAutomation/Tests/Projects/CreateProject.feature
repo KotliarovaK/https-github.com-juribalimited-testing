@@ -132,7 +132,7 @@ Scenario: Projects_CreateProject
 	Then "Manage Self Service" page is displayed to the user
 	Then User updates the Details on Self Service tab
 	| EnableSelfServicePortal | AllowAnonymousUsers | ThisProjectDefault | ModeUser | ModeComputer | NoLink | DashworksProjectHomepage | CustomUrl |
-	| false                   | false               | true               | false    | true         | true   | false                    | false     |
+	| false                   | false               | true               | true     | false        | true   | false                    | false     |
 	Then Success message is displayed with "Details successfully updated." text
 	When User navigate to "Welcome" on Self Service tab
 	Then User updates the Welcome on Self Service tab
@@ -147,7 +147,7 @@ Scenario: Projects_CreateProject
 	When User navigate to "Department and Location" on Self Service tab
 	Then User updates the Department and Location on Self Service tab
 	| ShowScreen | ShowDepartmentFullPath | ShowLocationFullPath | AllowUsersToAddANote | Department | Location | DepartmentFeed | HrLocationFeed | ManualLocationFeed | HistoricLocationFeed |
-	| true       | false                  | false                | false                | false      | true     | true           | true           | true               | true                 |
+	| true       | false                  | false                | false                | false      | false    | true           | false          | false              | false                |
 	Then Success message is displayed with "Self Service Screen successfully updated" text
 	When User navigate to "Apps List" on Self Service tab
 	Then User updates the Apps List on Self Service tab

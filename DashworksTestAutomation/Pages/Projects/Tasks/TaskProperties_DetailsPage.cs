@@ -28,7 +28,7 @@ namespace DashworksTestAutomation.Pages.Projects
         [FindsBy(How = How.XPath, Using = ".//select[contains(@id, 'DateMode')]")]
         public IWebElement DateMode { get; set; }
 
-        [FindsBy(How = How.XPath, Using = ".//input[@id='ctl00_MainContent_CB_ReadOnly_ProjectObject']")]
+        [FindsBy(How = How.XPath, Using = ".//input[contains(@id, 'ProjectObject')]")]
         public IWebElement ProjectObject { get; set; }
 
         [FindsBy(How = How.XPath, Using = ".//input[@id='ctl00_MainContent_CB_ReadOnly_BulkUpdate']")]

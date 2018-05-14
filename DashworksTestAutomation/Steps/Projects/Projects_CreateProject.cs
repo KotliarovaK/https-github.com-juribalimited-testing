@@ -300,8 +300,7 @@ namespace DashworksTestAutomation.Steps.Projects
 
             page.Name.SendKeys(_taskPropertiesValuesDto.Name);
             page.Help.SendKeys(_taskPropertiesValuesDto.Help);
-            page.ReadinessClick.Click();
-            page.Readiness.SelectboxSelect(_taskPropertiesValuesDto.Readiness.GetValue());
+            page.SelectOnboardedApplications(_taskPropertiesValuesDto.Readiness);
             page.TaskStatus.SelectboxSelect(_taskPropertiesValuesDto.TaskStatus.GetValue());
             page.DefaultValue.SetCheckboxState(_taskPropertiesValuesDto.DefaultValue);
         }

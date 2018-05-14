@@ -1,4 +1,6 @@
 ﻿using System.Collections.Generic;
+using DashworksTestAutomation.DTO.Projects;
+using DashworksTestAutomation.Extensions;
 using DashworksTestAutomation.Pages.Evergreen;
 using OpenQA.Selenium;
 using OpenQA.Selenium.Support.PageObjects;
@@ -14,10 +16,9 @@ namespace DashworksTestAutomation.Pages.Projects.Tasks
         public IWebElement Help { get; set; }
 
         [FindsBy(How = How.XPath, Using = ".//div[@class='selectedItemBox']")]
-        public IWebElement ReadinessClick { get; set; }
+        public IWebElement ReadinessListClick { get; set; }
 
-        [FindsBy(How = How.XPath, Using = ".//ul[contains (@class, 'listItems')]//li")]
-        public IWebElement Readiness { get; set; }
+        private const string Readiness = ".//input[contains(@class, 'option_value')]/../label[text()='{0}']";
 
         [FindsBy(How = How.XPath, Using = ".//select[contains(@name, 'TaskStatus')]")]
         public IWebElement TaskStatus { get; set; }
@@ -35,6 +36,14 @@ namespace DashworksTestAutomation.Pages.Projects.Tasks
                 //SelectorFor(this, p => p.TaskStatus),
                 //SelectorFor(this, p => p.DefaultValue),
             };
+        }
+
+        public void SelectOnboardedApplications(ReadinessEnum color)
+        {
+            ReadinessListClick.Click();
+            string selector = string.Format(Readiness, color.GetValue());
+            Driver.WaitWhileControlIsNotDisplayed(By.XPath(selector));
+            Driver.FindElement(By.XPath(selector)).Click();
         }
     }
 }
