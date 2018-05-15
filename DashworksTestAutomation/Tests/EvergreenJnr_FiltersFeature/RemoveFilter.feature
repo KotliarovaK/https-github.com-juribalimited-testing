@@ -75,7 +75,6 @@ Scenario: EvergreenJnr_UsersList_CheckThatDeletePartOfFilterFromUrlIsUpdatingRow
 	| ColumnName |
 	| Compliance |
 	And "41,339" rows are displayed in the agGrid
-	When User clicks the Filters button
 	Then Filters panel is displayed to the user
 	Then "Compliance" filter is removed from filters
 
