@@ -27,7 +27,7 @@ Scenario: EvergreenJnr_UsersList_CheckThatNotOwnerUsersDontHavePermissionsToUpda
 	Then Update list option is NOT available
 	And Save as a new list option is available
 
-@Evergreen @Users @EvergreenJnr_DynamicLists @PermissionsSettings @DAS10979 @DAS11553 @DAS10880 @DAS11951 @Delete_Newly_Created_List
+@Evergreen @Users @EvergreenJnr_DynamicLists @PermissionsSettings @DAS10979 @DAS11553 @DAS10880 @DAS11951 @Delete_Newly_Created_List @Not_Run
 Scenario: EvergreenJnr_UsersList_CheckThatAdminUserButNotOwnerIsNotAbleToDeleteList
 	When User clicks "Users" on the left-hand menu
 	Then "Users" list should be displayed to the user

@@ -221,7 +221,7 @@ namespace DashworksTestAutomation.Pages.Evergreen
         public string ActiveCustomListName()
         {
             By by = By.XPath(
-                ".//*[@id='submenuBlock']/div[contains(@class, 'active-list-wrapper')]/ul/li/span[@class='submenu-actions-list-name']");
+                ".//div[contains(@class, 'active-list-wrapper')]/ul/li/span[@class='submenu-actions-list-name']");
             //Driver.WaitWhileControlContainingTextIsNotDisplayed(by);
             return Driver.FindElement(by).Text;
         }

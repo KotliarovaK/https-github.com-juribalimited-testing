@@ -84,7 +84,7 @@ Scenario: EvergreenJnr_AdminPage_CheckThatCreateButtonIsDisabledForEmptyTeamName
 	When User enters "test" in the Team Description field
 	Then Create Team button is disabled
 
-@Evergreen @AllLists @EvergreenJnr_AdminPage @AdminPage @DAS11886 @Delete_Newly_Created_List
+@Evergreen @AllLists @EvergreenJnr_AdminPage @AdminPage @DAS11886 @Delete_Newly_Created_List @Not_Run
 Scenario: EvergreenJnr_AdminPage_CheckThatWarningMessageIsDisplayedAfterDeletingUsedForProjectLists 
 	When User clicks "Users" on the left-hand menu
 	Then "Users" list should be displayed to the user
@@ -446,7 +446,7 @@ Scenario Outline: EvergreenJnr_AdminPage_CheckThatCancelButtonOnTheCreateProject
 	| Users     |
 	| Mailboxes |
 
-@Evergreen @Admin @EvergreenJnr_AdminPage @AdminPage @DAS12162 @Not_Run
+@Evergreen @Admin @EvergreenJnr_AdminPage @AdminPage @DAS12162 @DAS12532 @Not_Run
 Scenario: EvergreenJnr_AdminPage_CheckThatConsoleErrorsAreNotDisplayedAfterNavigatingScopeChangesTab
 	When User clicks "Devices" on the left-hand menu
 	Then "Devices" list should be displayed to the user
