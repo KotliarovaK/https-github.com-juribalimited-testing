@@ -127,12 +127,12 @@ namespace DashworksTestAutomation.Pages.Evergreen.AdminDetailsPages
 
         public bool SelectedItemInProjectScopeChangesSection(string text)
         {
-            return Driver.IsElementDisplayed(By.XPath($".//span[@class='mat-checkbox-label'][text()='{text}']"));
+            return Driver.IsElementDisplayed(By.XPath($".//span[@class='title'][text()='{text}']"));
         }
 
         public bool SelectedTabInProjectScopeChangesSection(string tabName)
         {
-            return Driver.IsElementDisplayed(By.XPath($".//label//span[contains(text(),'{tabName} ')]"));
+            return Driver.IsElementDisplayed(By.XPath($".//div//span[contains(text(),'{tabName} ')]"));
         }
 
         public int GetColumnNumberByName(string columnName)
