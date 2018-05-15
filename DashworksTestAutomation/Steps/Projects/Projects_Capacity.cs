@@ -1,6 +1,8 @@
 ﻿using DashworksTestAutomation.DTO.Projects;
 using DashworksTestAutomation.Extensions;
 using DashworksTestAutomation.Pages.Projects;
+using DashworksTestAutomation.Pages.Projects.Capacity;
+using NUnit.Framework;
 using OpenQA.Selenium.Remote;
 using TechTalk.SpecFlow;
 using TechTalk.SpecFlow.Assist;
@@ -76,6 +78,22 @@ namespace DashworksTestAutomation.Steps.Projects
 
             var upd = _driver.NowAt<BaseElements>();
             upd.UpdateButton.Click();
+        }
+
+        [When(@"User select created request type on Summary tab")]
+        public void WhenUserSelectCreatedRequestTypeOnSummaryTab()
+        {
+            var page = _driver.NowAt<Capacity_SummaryPage>();
+
+            page.GetDefaultRequestTypeByName(_projectDto.ReqestType.Name).Click();
+        }
+
+        [Then(@"table for selected request type is displayed")]
+        public void ThenTableForSelectedRequestTypeIsDisplayed()
+        {
+            var page = _driver.NowAt<Capacity_SummaryPage>();
+
+            Assert.IsTrue(page.Table.Displayed, "Table is not displayed for selected request type");
         }
 
         [Then(@"User updates the Override Dates on Capacity tab")]

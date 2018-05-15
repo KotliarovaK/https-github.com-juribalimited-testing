@@ -26,14 +26,14 @@ namespace DashworksTestAutomation.DTO.Projects
 
         public Capacity_CapacityDto()
         {
-            RequestType = EnumExtensions.GetRandomValue<RequestTypeEnum>();
+            RequestType = RequestTypeEnum.DefaultComputer;
         }
     }
 
     public enum RequestTypeEnum
     {
-        //[Description("[Select]")]
-        //Select,
+        [Description("[Select]")]
+        Select,
         [Description("[Default (Computer)]")]
         DefaultComputer
     }

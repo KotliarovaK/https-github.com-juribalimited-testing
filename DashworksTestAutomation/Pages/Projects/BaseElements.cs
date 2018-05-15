@@ -115,6 +115,13 @@ namespace DashworksTestAutomation.Pages.Projects
             return Driver.FindElement(selector);
         }
 
+        public IWebElement SelectUserForMembersByName(string userName)
+        {
+            var selector = By.XPath($".//td[@title='{userName}']/..//input");
+            Driver.WaitWhileControlIsNotDisplayed(selector);
+            return Driver.FindElement(selector);
+        }
+
         #region Check creating elements
 
         public IWebElement GetTheCreatedElementInTableByName(string name)
@@ -138,6 +145,13 @@ namespace DashworksTestAutomation.Pages.Projects
             return Driver.FindElement(selector);
         }
 
+        public IWebElement GetTheCreatedEmailInTableByName(string name)
+        {
+            var selector = By.XPath($".//td[@title='{name}']/..//td[2]");
+            Driver.WaitWhileControlIsNotDisplayed(selector);
+            return Driver.FindElement(selector);
+        }
+
         public IWebElement GetTheCreatedCategoryInTableByName(string categoryName)
         {
             var selector = By.XPath($".//a[contains(@id, 'CategoryName')]/..//a[contains(text(), '{categoryName}')]");
@@ -150,6 +164,12 @@ namespace DashworksTestAutomation.Pages.Projects
         public int GetGroupsCountByTeamName(string teamName)
         {
             var groupsCount = Driver.FindElement(By.XPath($".//td[@title='{teamName}']/..//td[4]")).Text;
+            return int.Parse(groupsCount);
+        }
+
+        public int GetMembersCountByTeamName(string teamName)
+        {
+            var groupsCount = Driver.FindElement(By.XPath($".//td[@title='{teamName}']/..//td[3]")).Text;
             return int.Parse(groupsCount);
         }
 

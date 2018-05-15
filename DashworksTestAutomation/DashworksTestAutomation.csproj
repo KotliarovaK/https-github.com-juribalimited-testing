@@ -267,6 +267,7 @@
     <Compile Include="Pages\Projects\Capacity\Capacity_CapacityPage.cs" />
     <Compile Include="Pages\Projects\Capacity\Capacity_DetailsPage.cs" />
     <Compile Include="Pages\Projects\Capacity\Capacity_OverrideDatesPage.cs" />
+    <Compile Include="Pages\Projects\Capacity\Capacity_SummaryPage.cs" />
     <Compile Include="Pages\Projects\CategoryPropertiesPage.cs" />
     <Compile Include="Pages\Projects\DetailsPage.cs" />
     <Compile Include="Pages\Projects\GroupPropertiesPage.cs" />
@@ -576,11 +577,7 @@
   <ItemGroup>
     <Service Include="{82A7F48D-3B50-4B1E-B82E-3ADA8210C358}" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="DTO\Projects\" />
-    <Folder Include="Pages\Projects\" />
-    <Folder Include="Steps\Projects\" />
-  </ItemGroup>
+  <ItemGroup />
   <ItemGroup>
     <None Include="Resources\CorrectFile.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>

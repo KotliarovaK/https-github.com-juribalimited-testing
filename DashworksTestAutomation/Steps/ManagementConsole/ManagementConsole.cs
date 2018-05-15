@@ -1,4 +1,5 @@
-﻿using DashworksTestAutomation.DTO.ManagementConsole;
+﻿using System.Linq;
+using DashworksTestAutomation.DTO.ManagementConsole;
 using DashworksTestAutomation.DTO.Projects;
 using DashworksTestAutomation.Extensions;
 using DashworksTestAutomation.Pages;
@@ -62,6 +63,15 @@ namespace DashworksTestAutomation.Steps
 
             var user = page.GetTheCreatedElementInTableByName(_projectDto.ManageUsers.Username);
             Assert.IsTrue(user.Displayed(), "Selected User is not displayed in the table");
+        }
+
+        [Then(@"User select Users by Username")]
+        public void ThenUserSelectUsersByUsername()
+        {
+            var page = _driver.NowAt<BaseElements>();
+
+            page.SelectUserForMembersByName("Admin").Click();
+            page.SelectUserForMembersByName(_projectDto.ManageUsers.Username).Click();
         }
 
         [Then(@"User removes created User")]

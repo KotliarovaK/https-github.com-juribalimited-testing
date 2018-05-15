@@ -17,7 +17,7 @@ namespace DashworksTestAutomation.DTO.Projects
         {
             TaskType = TaskTypeEnum.Normal;
             ValueType = ValueTypeEnum.Radiobutton;
-            ObjectType = EnumExtensions.GetRandomValue<TaskObjectTypeEnum>();
+            ObjectType = TaskObjectTypeEnum.User;
             TaskValuesTemplate = EnumExtensions.GetRandomValue<TaskValuesTemplateEnum>();
         }
     }

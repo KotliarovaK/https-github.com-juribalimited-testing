@@ -312,8 +312,11 @@ namespace DashworksTestAutomation.Steps.Projects
 
             table.CreateInstance<TaskProperties_EmailsDto>().CopyPropertiesTo(_taskPropertiesEmailsDto);
 
+            page.Days.SelectboxSelect(_taskPropertiesEmailsDto.Days.GetValue());
+            page.TaskDue.SelectboxSelect(_taskPropertiesEmailsDto.TaskDue.GetValue());
             page.CountDays.SetCheckboxState(_taskPropertiesEmailsDto.CountDays);
             page.MailTemplate.SelectboxSelect(_projectDto.MailTemplateProperties.Name);
+            page.Importance.SelectboxSelect(_taskPropertiesEmailsDto.Importance.GetValue());
             page.SendOnceOnly.SetCheckboxState(_taskPropertiesEmailsDto.SendOnceOnly);
             page.RequestTypesAll.SetCheckboxState(_taskPropertiesEmailsDto.RequestTypesAll);
             page.ApllyEmailToAll.SetCheckboxState(_taskPropertiesEmailsDto.ApllyEmailToAll);
@@ -413,6 +416,15 @@ namespace DashworksTestAutomation.Steps.Projects
             Assert.IsTrue(task.Displayed(), "Selected Task is not displayed in the table");
         }
 
+        [Then(@"created Email is displayed in the table")]
+        public void ThenCreatedEmailIsDisplayedInTheTable()
+        {
+            var page = _driver.NowAt<BaseElements>();
+
+            var email = page.GetTheCreatedEmailInTableByName(_projectDto.MailTemplateProperties.Name);
+            Assert.IsTrue(email.Displayed(), "Selected Email is not displayed in the table");
+        }
+
         [Then(@"created Request Type is displayed in the table")]
         public void ThenCreatedRequestTypeIsDisplayedInTheTable()
         {
@@ -460,10 +472,13 @@ namespace DashworksTestAutomation.Steps.Projects
             Assert.AreEqual(groups, groupsInTeam, "Number of groups is incorrect");
         }
 
-        [Then(@"required number of Members is displayed for created team")]
-        public void ThenRequiredNumberOfMembersIsDisplayedForCreatedTeam()
+        [Then(@"""(.*)"" number of Members is displayed for created team")]
+        public void ThenRequiredNumberOfMembersIsDisplayedForCreatedTeam(int membersInTeam)
         {
-            
+            var page = _driver.NowAt<BaseElements>();
+
+            var members = page.GetMembersCountByTeamName(_projectDto.TeamProperties.TeamName);
+            Assert.AreEqual(members, membersInTeam, "Number of members is incorrect");
         }
     }
 }

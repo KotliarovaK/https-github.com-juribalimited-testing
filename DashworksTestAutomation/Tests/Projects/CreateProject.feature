@@ -84,7 +84,7 @@ Scenario: Projects_CreateProject
 	Then Success message is displayed with "Task successfully created" text
 	When User updates the Task page
 	| TaskHaADueDate | TaskImpactsReadiness | TaskHasAnOwner | ShowDetails | ProjectObject | BulkUpdate | SelfService |
-	| true           | true                 | false          | false       | false         | false      | false       |
+	| true           | true                 | false          | false       | true          | false      | false       |
 	Then Success message is displayed with "Task successfully updated" text
 	When User publishes the task
 	Then selected task was published
@@ -98,9 +98,11 @@ Scenario: Projects_CreateProject
 	When User clicks "Add Email" button
 	Then User create new Email
 	| CountDays | SendOnceOnly | RequestTypesAll | ApllyEmailToAll | To             |
-	| true      | true         | true            | false           | Test@email.com |
+	| true      | true         | true            | true            | Test@email.com |
 	When User clicks "Create Email Notification" button
+	Then Success message is displayed with "Email notification for task successfully created" text
 	When User clicks "« Go Back" button
+	Then created Email is displayed in the table
 	When User clicks "« Go Back to Tasks" button
 	Then created Task is displayed in the table
 	When User navigate to "Teams" tab
@@ -108,9 +110,13 @@ Scenario: Projects_CreateProject
 	When User clicks "Create Team" button
 	When User create Team
 	| TeamName         | ShortDescription |
-	| 001 TestTeamName | TestText         |
+	| 000 TestTeamName | TestText         |
+	When User clicks "Add Member" button
+	Then User select Users by Username
+	When User clicks "Add Selected" button
 	When User clicks "Cancel" button
 	Then created Team is displayed in the table
+	Then "2" number of Members is displayed for created team
 	When User navigate to "Groups" tab
 	Then "Manage Groups" page is displayed to the user
 	When User clicks "Create Group" button
@@ -121,7 +127,6 @@ Scenario: Projects_CreateProject
 	When User navigate to "Teams" tab
 	Then "Manage Teams" page is displayed to the user
 	Then required number of Groups is displayed for created team
-	#Then required number of Members is displayed for created team
 	When User navigate to "News" tab
 	Then "Manage News" page is displayed to the user
 	When User updating News page
@@ -185,6 +190,9 @@ Scenario: Projects_CreateProject
 	| StartDate   | EndDate     | MondayCheckbox | TuesdayCheckbox | WednesdayCheckbox | ThursdayCheckbox | FridayCheckbox | SaturdayCheckbox | SundayCheckbox | Monday | Tuesday | Wednesday | Thursday | Friday | Saturday | Sunday |
 	| 06 Apr 2016 | 19 Apr 2018 | false          | false           | false             | false            | false          | false            | false          | 100    | 100     | 100       | 100      | 100    | 100      | 100    |
 	Then Success message is displayed with "Capacity information successfully updated." text
+	When User navigate to "Summary" on selected tab
+	When User select created request type on Summary tab
+	Then table for selected request type is displayed
 	When User navigate to "Override Dates" on selected tab
 	Then User updates the Override Dates on Capacity tab
 	| Date        | Capacity | Comment  |

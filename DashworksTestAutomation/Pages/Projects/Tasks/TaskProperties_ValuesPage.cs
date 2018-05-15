@@ -32,9 +32,6 @@ namespace DashworksTestAutomation.Pages.Projects.Tasks
             {
                 SelectorFor(this, p => p.Name),
                 SelectorFor(this, p => p.Help),
-                //SelectorFor(this, p => p.Readiness),
-                //SelectorFor(this, p => p.TaskStatus),
-                //SelectorFor(this, p => p.DefaultValue),
             };
         }
 

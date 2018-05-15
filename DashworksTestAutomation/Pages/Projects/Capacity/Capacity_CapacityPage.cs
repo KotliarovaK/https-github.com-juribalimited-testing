@@ -28,25 +28,25 @@ namespace DashworksTestAutomation.Pages.Projects
         [FindsBy(How = How.XPath, Using = ".//table[@class='pmGrid pmAdminGrid']")]
         public IWebElement Table { get; set; }
 
-        [FindsBy(How = How.XPath, Using = ".//input[@id='ctl00_MainContent_RP_Capacity_Days_ctl01_CB_Capacity_DayEnabled']")]
+        [FindsBy(How = How.XPath, Using = ".//td[contains(text(), 'Monday')]/..//span[@class='dayCapacityCheckbox']//input")]
         public IWebElement MondayCheckbox { get; set; }
 
-        [FindsBy(How = How.XPath, Using = ".//input[@id='ctl00_MainContent_RP_Capacity_Days_ctl02_CB_Capacity_DayEnabled']")]
+        [FindsBy(How = How.XPath, Using = ".//td[contains(text(), 'Tuesday')]/..//span[@class='dayCapacityCheckbox']//input")]
         public IWebElement TuesdayCheckbox { get; set; }
 
-        [FindsBy(How = How.XPath, Using = ".//input[@id='ctl00_MainContent_RP_Capacity_Days_ctl03_CB_Capacity_DayEnabled']")]
+        [FindsBy(How = How.XPath, Using = ".//td[contains(text(), 'Wednesday')]/..//span[@class='dayCapacityCheckbox']//input")]
         public IWebElement WednesdayCheckbox { get; set; }
 
-        [FindsBy(How = How.XPath, Using = ".//input[@id='ctl00_MainContent_RP_Capacity_Days_ctl04_CB_Capacity_DayEnabled']")]
+        [FindsBy(How = How.XPath, Using = ".//td[contains(text(), 'Thursday')]/..//span[@class='dayCapacityCheckbox']//input")]
         public IWebElement ThursdayCheckbox { get; set; }
 
-        [FindsBy(How = How.XPath, Using = ".//input[@id='ctl00_MainContent_RP_Capacity_Days_ctl05_CB_Capacity_DayEnabled']")]
+        [FindsBy(How = How.XPath, Using = ".//td[contains(text(), 'Friday')]/..//span[@class='dayCapacityCheckbox']//input")]
         public IWebElement FridayCheckbox { get; set; }
 
-        [FindsBy(How = How.XPath, Using = ".//input[@id='ctl00_MainContent_RP_Capacity_Days_ctl06_CB_Capacity_DayEnabled']")]
+        [FindsBy(How = How.XPath, Using = ".//td[contains(text(), 'Saturday')]/..//span[@class='dayCapacityCheckbox']//input")]
         public IWebElement SaturdayCheckbox { get; set; }
 
-        [FindsBy(How = How.XPath, Using = ".//input[@id='ctl00_MainContent_RP_Capacity_Days_ctl07_CB_Capacity_DayEnabled']")]
+        [FindsBy(How = How.XPath, Using = ".//td[contains(text(), 'Sunday')]/..//span[@class='dayCapacityCheckbox']//input")]
         public IWebElement SundayCheckbox { get; set; }
 
         [FindsBy(How = How.XPath, Using = ".//input[@id='ctl00_MainContent_RP_Capacity_Days_ctl01_TB_Capacity_DayMaximum']")]

@@ -222,7 +222,7 @@ namespace DashworksTestAutomation.Tests.Projects
                         "true",
                         "false",
                         "false",
-                        "false",
+                        "true",
                         "false",
                         "false"});
             testRunner.When("User updates the Task page", ((string)(null)), table10, "When ");
@@ -253,11 +253,14 @@ namespace DashworksTestAutomation.Tests.Projects
                         "true",
                         "true",
                         "true",
-                        "false",
+                        "true",
                         "Test@email.com"});
             testRunner.Then("User create new Email", ((string)(null)), table12, "Then ");
             testRunner.When("User clicks \"Create Email Notification\" button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+            testRunner.Then("Success message is displayed with \"Email notification for task successfully creat" +
+                    "ed\" text", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
             testRunner.When("User clicks \"« Go Back\" button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+            testRunner.Then("created Email is displayed in the table", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
             testRunner.When("User clicks \"« Go Back to Tasks\" button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
             testRunner.Then("created Task is displayed in the table", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
             testRunner.When("User navigate to \"Teams\" tab", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
@@ -267,11 +270,15 @@ namespace DashworksTestAutomation.Tests.Projects
                         "TeamName",
                         "ShortDescription"});
             table13.AddRow(new string[] {
-                        "001 TestTeamName",
+                        "000 TestTeamName",
                         "TestText"});
             testRunner.When("User create Team", ((string)(null)), table13, "When ");
+            testRunner.When("User clicks \"Add Member\" button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+            testRunner.Then("User select Users by Username", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+            testRunner.When("User clicks \"Add Selected\" button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
             testRunner.When("User clicks \"Cancel\" button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
             testRunner.Then("created Team is displayed in the table", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+            testRunner.Then("\"2\" number of Members is displayed for created team", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
             testRunner.When("User navigate to \"Groups\" tab", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
             testRunner.Then("\"Manage Groups\" page is displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
             testRunner.When("User clicks \"Create Group\" button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
@@ -520,6 +527,9 @@ namespace DashworksTestAutomation.Tests.Projects
             testRunner.Then("User updates the Capacity on Capacity tab", ((string)(null)), table26, "Then ");
             testRunner.Then("Success message is displayed with \"Capacity information successfully updated.\" te" +
                     "xt", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+            testRunner.When("User navigate to \"Summary\" on selected tab", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+            testRunner.When("User select created request type on Summary tab", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+            testRunner.Then("table for selected request type is displayed", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
             testRunner.When("User navigate to \"Override Dates\" on selected tab", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
             TechTalk.SpecFlow.Table table27 = new TechTalk.SpecFlow.Table(new string[] {
                         "Date",
