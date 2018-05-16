@@ -294,13 +294,13 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_StaticLists
             TechTalk.SpecFlow.Table table10 = new TechTalk.SpecFlow.Table(new string[] {
                         "Listnames"});
             table10.AddRow(new string[] {
-                        "OwnerPrivate"});
+                        "NotOwnerEveryoneCanEdit"});
             table10.AddRow(new string[] {
                         "NotOwnerSpecifiedAdmin"});
             table10.AddRow(new string[] {
                         "NotOwnerSpecifiedEdit"});
             table10.AddRow(new string[] {
-                        "NotOwnerEveryoneCanEdit"});
+                        "OwnerPrivate"});
             testRunner.Then("Following options are available in lists dropdown:", ((string)(null)), table10, "Then ");
             this.ScenarioCleanup();
         }
