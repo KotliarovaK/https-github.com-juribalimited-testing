@@ -26,7 +26,7 @@ namespace DashworksTestAutomation.Pages.Evergreen
         [FindsBy(How = How.XPath, Using = ".//input[@aria-label='List Name']")]
         public IWebElement ListNameTextbox { get; set; }
 
-        [FindsBy(How = How.XPath, Using = ".//button[@mattooltip='Save List']")]
+        [FindsBy(How = How.XPath, Using = ".//button[@class='button-small mat-primary save-actions-save mat-raised-button']")]
         public IWebElement SaveButton { get; set; }
 
         [FindsBy(How = How.XPath, Using = ".//button[@mattooltip='Cancel']")]
@@ -37,7 +37,7 @@ namespace DashworksTestAutomation.Pages.Evergreen
                 ".//i[@class='menu-trigger material-icons mat-settings mat-18 pull-right settings-icon settings-area']")]
         public IWebElement SettingsButton { get; set; }
 
-        [FindsBy(How = How.XPath, Using = ".//div[@class='menu ng-star-inserted']")]
+        [FindsBy(How = How.XPath, Using = ".//div[@class='menu']")]
         public IWebElement SettingsPanel { get; set; }
 
         [FindsBy(How = How.XPath, Using = ".//div[@class='inline-success ng-star-inserted']")]
@@ -77,7 +77,7 @@ namespace DashworksTestAutomation.Pages.Evergreen
         public bool ListNameWarningMessage(string listName)
         {
             return Driver.IsElementDisplayed(
-                By.XPath($".//div[@class='inline-box-text ng-star-inserted']//span[text()='\"{listName}\" ']"));
+                By.XPath($".//div[@class='inline-box-text']//span[text()='\"{listName}\" ']"));
         }
 
         public bool RemovingDependencyListMessage(string warningText)
