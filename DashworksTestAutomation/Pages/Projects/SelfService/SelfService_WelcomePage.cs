@@ -1,4 +1,5 @@
 ﻿using System.Collections.Generic;
+using DashworksTestAutomation.Extensions;
 using DashworksTestAutomation.Pages.Evergreen;
 using OpenQA.Selenium;
 using OpenQA.Selenium.Support.PageObjects;
@@ -7,6 +8,12 @@ namespace DashworksTestAutomation.Pages.Projects
 {
     internal class SelfService_WelcomePage : BaseDashboardPage
     {
+        [FindsBy(How = How.XPath, Using = ".//input[contains(@class, 'AddLanguage')]")]
+        public IWebElement AddLanguageButton { get; set; }
+
+        [FindsBy(How = How.XPath, Using = ".//select[@aria-label='Languages']")]
+        public IWebElement Languages { get; set; }
+
         [FindsBy(How = How.XPath, Using = ".//input[@id='cb_allowUserSearchValue']")]
         public IWebElement AllowToSearchForAnotherUser { get; set; }
 
@@ -52,6 +59,20 @@ namespace DashworksTestAutomation.Pages.Projects
                 SelectorFor(this, p => p.PageDescription),
                 SelectorFor(this, p => p.ProjectName)
             };
+        }
+
+        public IWebElement GetLanguagesByName(string languages)
+        {
+            var selector = By.XPath($".//td[contains(text(), '{languages}')]");
+            Driver.WaitWhileControlIsNotDisplayed(selector);
+            return Driver.FindElement(selector);
+        }
+
+        public IWebElement GetDeleteButtonByLanguages(string languages)
+        {
+            var selector = By.XPath($".//td[contains(text(), '{languages}')]/..//img[@title='Delete']");
+            Driver.WaitWhileControlIsNotDisplayed(selector);
+            return Driver.FindElement(selector);
         }
     }
 }

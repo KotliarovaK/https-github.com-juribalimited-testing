@@ -33,8 +33,8 @@ namespace DashworksTestAutomation.Pages.Projects
         [FindsBy(How = How.XPath, Using = ".//select[@id='ctl00_MainContent_DV_Project_DefaultAppsViewOrderID']")]
         public IWebElement ApplicationsTab2 { get; set; }
 
-        [FindsBy(How = How.XPath, Using = ".//select[@aria-label='Default Value for Application Rationalization']")]
-        public IWebElement ApplicationRationalization { get; set; }
+        [FindsBy(How = How.XPath, Using = ".//select[contains(@id, 'DefaultAppsForwardPathTypeID')]")]
+        public IWebElement ApplicationRationalisation { get; set; }
 
         [FindsBy(How = How.XPath, Using = ".//input[@aria-label='Show Original Application Column On Application Dashboards']")]
         public IWebElement OriginalApplicationColumnCheckbox { get; set; }
@@ -77,7 +77,7 @@ namespace DashworksTestAutomation.Pages.Projects
                 SelectorFor(this, p => p.ShowLinkedObjects),
                 SelectorFor(this, p => p.ApplicationsTab1),
                 SelectorFor(this, p => p.ApplicationsTab2),
-                SelectorFor(this, p => p.ApplicationRationalization),
+                SelectorFor(this, p => p.ApplicationRationalisation),
                 SelectorFor(this, p => p.OriginalApplicationColumnCheckbox),
                 SelectorFor(this, p => p.IncludeSiteNameCheckbox),
                 SelectorFor(this, p => p.OnboardNotApplicableApplicationsCheckbox),

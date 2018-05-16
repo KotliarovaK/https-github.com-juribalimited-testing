@@ -8,22 +8,19 @@ namespace DashworksTestAutomation.Pages.Projects.Capacity
 {
     internal class Capacity_SummaryPage : BaseDashboardPage
     {
-        [FindsBy(How = How.XPath, Using = ".//table[@class='grid capacitySummaryGrid']")]
+
+        [FindsBy(How = How.XPath, Using = ".//select[contains(@id, 'RequestType')]")]
+        public IWebElement RequestType { get; set; }
+
+        [FindsBy(How = How.XPath, Using = ".//tr[@class='grid-headerstyle']")]
         public IWebElement Table { get; set; }
 
         public override List<By> GetPageIdentitySelectors()
         {
             return new List<By>
             {
-                SelectorFor(this, p => p.Table)
+                SelectorFor(this, p => p.RequestType)
             };
-        }
-
-        public IWebElement GetDefaultRequestTypeByName(string requestType)
-        {
-            var selector = By.XPath($".//select[contains(@id, 'Summary_RequestType')]/..//option[contains(text(), '{requestType}')]");
-            Driver.WaitWhileControlIsNotDisplayed(selector);
-            return Driver.FindElement(selector);
         }
     }
 }

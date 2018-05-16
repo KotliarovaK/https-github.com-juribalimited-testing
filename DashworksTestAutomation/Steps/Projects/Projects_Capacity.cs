@@ -1,4 +1,5 @@
 ﻿using DashworksTestAutomation.DTO.Projects;
+using DashworksTestAutomation.DTO.Projects.Capacity;
 using DashworksTestAutomation.Extensions;
 using DashworksTestAutomation.Pages.Projects;
 using DashworksTestAutomation.Pages.Projects.Capacity;
@@ -17,14 +18,17 @@ namespace DashworksTestAutomation.Steps.Projects
         private readonly Capacity_DetailsDto _detailsDto;
         private readonly Capacity_CapacityDto _capacityDto;
         private readonly Capacity_OverrideDatesDto _overrideDatesDto;
+        private readonly Capacity_SummaryDto _summaryDto;
 
-        public Projects_Capacity(RemoteWebDriver driver, ProjectDto projectDto, Capacity_DetailsDto detailsDto, Capacity_CapacityDto capacityDto, Capacity_OverrideDatesDto overrideDatesDto)
+
+        public Projects_Capacity(RemoteWebDriver driver, ProjectDto projectDto, Capacity_DetailsDto detailsDto, Capacity_CapacityDto capacityDto, Capacity_OverrideDatesDto overrideDatesDto, Capacity_SummaryDto summaryDto)
         {
             _driver = driver;
             _projectDto = projectDto;
             _detailsDto = detailsDto;
             _capacityDto = capacityDto;
             _overrideDatesDto = overrideDatesDto;
+            _summaryDto = summaryDto;
         }
 
         [Then(@"User updates the Details on Capacity tab")]
@@ -54,15 +58,19 @@ namespace DashworksTestAutomation.Steps.Projects
 
             page.Team.SelectboxSelect(_projectDto.TeamProperties.TeamName);
             _driver.WaitForDataLoading();
-            _driver.WaitWhileControlIsNotClickable<Capacity_CapacityPage>(() => page.RequestType);
             page.RequestType.SelectboxSelect(_projectDto.ReqestType.Name);
+            _driver.WaitForDataLoading();
             _driver.WaitWhileControlIsNotDisplayed<Capacity_CapacityPage>(() => page.Table);
             page.StartDate.SendKeys(_capacityDto.StartDate);
             page.StartDateButton.Click();
+            _driver.WaitForDataLoading();
             page.EndDate.SendKeys(_capacityDto.EndDate);
             page.EndDateButton.Click();
+            _driver.WaitForDataLoading();
             page.MondayCheckbox.SetCheckboxState(_capacityDto.MondayCheckbox);
+            _driver.WaitForDataLoading();
             page.TuesdayCheckbox.SetCheckboxState(_capacityDto.TuesdayCheckbox);
+            _driver.WaitForDataLoading();
             page.WednesdayCheckbox.SetCheckboxState(_capacityDto.WednesdayCheckbox);
             page.ThursdayCheckbox.SetCheckboxState(_capacityDto.ThursdayCheckbox);
             page.FridayCheckbox.SetCheckboxState(_capacityDto.FridayCheckbox);
@@ -85,14 +93,14 @@ namespace DashworksTestAutomation.Steps.Projects
         {
             var page = _driver.NowAt<Capacity_SummaryPage>();
 
-            page.GetDefaultRequestTypeByName(_projectDto.ReqestType.Name).Click();
+            page.RequestType.SelectboxSelect(_projectDto.ReqestType.Name);
         }
 
         [Then(@"table for selected request type is displayed")]
         public void ThenTableForSelectedRequestTypeIsDisplayed()
         {
             var page = _driver.NowAt<Capacity_SummaryPage>();
-
+            _driver.WaitWhileControlIsNotDisplayed<Capacity_SummaryPage>(() => page.Table);
             Assert.IsTrue(page.Table.Displayed, "Table is not displayed for selected request type");
         }
 

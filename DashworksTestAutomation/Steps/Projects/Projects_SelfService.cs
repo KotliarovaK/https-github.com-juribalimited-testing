@@ -1,6 +1,7 @@
 ﻿using DashworksTestAutomation.DTO.Projects;
 using DashworksTestAutomation.Extensions;
 using DashworksTestAutomation.Pages.Projects;
+using NUnit.Framework;
 using OpenQA.Selenium.Remote;
 using TechTalk.SpecFlow;
 using TechTalk.SpecFlow.Assist;
@@ -213,6 +214,33 @@ namespace DashworksTestAutomation.Steps.Projects
 
             var upd = _driver.NowAt<BaseElements>();
             upd.UpdateButton.Click();
+        }
+
+        [When(@"User add new Language")]
+        public void WhenUserAddNewLanguage()
+        {
+            var page = _driver.NowAt<SelfService_WelcomePage>();
+
+            page.Languages.SelectboxSelect(_welcomeDto.Language.GetValue());
+            page.AddLanguageButton.Click();
+        }
+
+        [Then(@"Selected language is added")]
+        public void ThenSelectedLanguageIsAdded()
+        {
+            var page = _driver.NowAt<SelfService_WelcomePage>();
+
+            var language = page.GetLanguagesByName(_welcomeDto.Language.GetValue());
+            Assert.IsTrue(language.Displayed(), "Selected Language is not displayed");
+        }
+
+        [Then(@"User removes added Language")]
+        public void ThenUserRemovesLanguage()
+        {
+            var page = _driver.NowAt<SelfService_WelcomePage>();
+
+            page.GetDeleteButtonByLanguages(_welcomeDto.Language.GetValue()).Click();
+            _driver.AcceptAlert();
         }
     }
 }

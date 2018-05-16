@@ -7,22 +7,22 @@ namespace DashworksTestAutomation.Pages.Projects
 {
     internal class SelfService_DetailsPage : BaseDashboardPage
     {
-        [FindsBy(How = How.XPath, Using = ".//input[@id='ctl00_MainContent_CB_Details_EnableSelfService']")]
+        [FindsBy(How = How.XPath, Using = ".//input[contains(@id,'EnableSelfService')]")]
         public IWebElement EnableSelfServicePortal { get; set; }
 
-        [FindsBy(How = How.XPath, Using = ".//input[@id='ctl00_MainContent_CB_Details_AllowAnonymousUsers']")]
+        [FindsBy(How = How.XPath, Using = ".//input[contains(@id, 'AllowAnonymousUsers')]")]
         public IWebElement AllowAnonymousUsers { get; set; }
 
-        [FindsBy(How = How.XPath, Using = ".//input[@id='ctl00_MainContent_CB_Details_ProjectDefault']")]
+        [FindsBy(How = How.XPath, Using = ".//input[contains(@id, 'ProjectDefault')]")]
         public IWebElement ThisProjectDefault { get; set; }
 
-        [FindsBy(How = How.XPath, Using = ".//input[@id='ctl00_MainContent_RBL_SelfServiceMode_0']")]
+        [FindsBy(How = How.XPath, Using = ".//input[contains(@id, 'SelfServiceMode_0')]")]
         public IWebElement ModeUser { get; set; }
 
-        [FindsBy(How = How.XPath, Using = ".//input[@id='ctl00_MainContent_RBL_SelfServiceMode_1']")]
+        [FindsBy(How = How.XPath, Using = ".//input[contains(@id, 'SelfServiceMode_1')]")]
         public IWebElement ModeComputer { get; set; }
 
-        [FindsBy(How = How.XPath, Using = ".//input[@id='ctl00_MainContent_TB_Details_BaseUrl']")]
+        [FindsBy(How = How.XPath, Using = ".//input[contains(@id, 'BaseUrl')]")]
         public IWebElement BaseUrl { get; set; }
 
         [FindsBy(How = How.XPath, Using = ".//input[@id='RBL_LogoUrlType_0']")]

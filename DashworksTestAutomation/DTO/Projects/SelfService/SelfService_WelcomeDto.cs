@@ -10,7 +10,7 @@ namespace DashworksTestAutomation.DTO.Projects
 {
     public class SelfService_WelcomeDto
     {
-        //TODO add a language?
+        public LanguageEnum Language;
         public bool AllowToSearchForAnotherUser { get; set; }
         public bool AllowToChangeLanguage { get; set; }
         public bool ShowProjectSelector { get; set; }
@@ -27,7 +27,17 @@ namespace DashworksTestAutomation.DTO.Projects
         {
             Type = TypeEnum.Attribute;
             Field = EnumExtensions.GetRandomValue<FieldEnum>();
+            Language = LanguageEnum.Italian;
         }
+    }
+
+    public enum LanguageEnum
+    {
+        Arabic,
+        Estonian,
+        Italian,
+        Russian,
+        Spanish
     }
 
     public enum TypeEnum
