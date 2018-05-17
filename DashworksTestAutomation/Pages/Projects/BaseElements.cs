@@ -110,7 +110,7 @@ namespace DashworksTestAutomation.Pages.Projects
 
         public IWebElement GetButtonElementByName(string buttonName)
         {
-            var selector = By.XPath($".//input[@value='{buttonName}']");
+            var selector = By.XPath($".//input[contains(@value, '{buttonName}')]");
             Driver.WaitWhileControlIsNotDisplayed(selector);
             return Driver.FindElement(selector);
         }

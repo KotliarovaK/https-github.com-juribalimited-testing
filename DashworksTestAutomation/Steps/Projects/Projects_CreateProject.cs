@@ -20,7 +20,7 @@ namespace DashworksTestAutomation.Steps.Projects
         private readonly RequestTypesDto _requestTypesDto;
         private readonly RequestType_DetailsDto _requestTypeDetailsDto;
         private readonly CategoryPropertiesDto _categoryPropertiesDto;
-        private readonly StagePropertiesDto _stagePropertiesDto;
+        private readonly StagesPropertiesDto _stagesPropertiesDto;
         private readonly TaskPropertiesDto _taskPropertiesDto;
         private readonly TaskProperties_DetailsDto _taskPropertiesDetailsDto;
         private readonly TaskProperties_EmailsDto _taskPropertiesEmailsDto;
@@ -30,14 +30,14 @@ namespace DashworksTestAutomation.Steps.Projects
         private readonly MailTemplatePropertiesDto _mailTemplatePropertiesDto;
         private readonly NewsDto _newsDto;
 
-        public Projects_CreateProject(RemoteWebDriver driver, ProjectDto projectDto, DetailsDto detailsDto, RequestTypesDto requestTypesDto, CategoryPropertiesDto categoryPropertiesDto, StagePropertiesDto stagePropertiesDto, TaskPropertiesDto taskPropertiesDto, TeamPropertiesDto teamPropertiesDto, GroupPropertiesDto groupPropertiesDto, MailTemplatePropertiesDto mailTemplatePropertiesDto, NewsDto newsDto, TaskProperties_DetailsDto taskPropertiesDetailsDto, RequestType_DetailsDto requestTypeDetailsDto, TaskProperties_ValuesDto taskPropertiesValuesDto, TaskProperties_EmailsDto taskPropertiesEmailsDto)
+        public Projects_CreateProject(RemoteWebDriver driver, ProjectDto projectDto, DetailsDto detailsDto, RequestTypesDto requestTypesDto, CategoryPropertiesDto categoryPropertiesDto, StagesPropertiesDto stagesPropertiesDto, TaskPropertiesDto taskPropertiesDto, TeamPropertiesDto teamPropertiesDto, GroupPropertiesDto groupPropertiesDto, MailTemplatePropertiesDto mailTemplatePropertiesDto, NewsDto newsDto, TaskProperties_DetailsDto taskPropertiesDetailsDto, RequestType_DetailsDto requestTypeDetailsDto, TaskProperties_ValuesDto taskPropertiesValuesDto, TaskProperties_EmailsDto taskPropertiesEmailsDto)
         {
             _driver = driver;
             _projectDto = projectDto;
             _detailsDto = detailsDto;
             _requestTypesDto = requestTypesDto;
             _categoryPropertiesDto = categoryPropertiesDto;
-            _stagePropertiesDto = stagePropertiesDto;
+            _stagesPropertiesDto = stagesPropertiesDto;
             _taskPropertiesDto = taskPropertiesDto;
             _teamPropertiesDto = teamPropertiesDto;
             _groupPropertiesDto = groupPropertiesDto;
@@ -142,6 +142,7 @@ namespace DashworksTestAutomation.Steps.Projects
         {
             var page = _driver.NowAt<RequestTypePropertiesPage>();
 
+
             table.CreateInstance<RequestTypesDto>().CopyPropertiesTo(_requestTypesDto);
             _requestTypesDto.Name += TestDataGenerator.RandomString();
 
@@ -204,14 +205,14 @@ namespace DashworksTestAutomation.Steps.Projects
         {
             var page = _driver.NowAt<StagePropertiesPage>();
 
-            table.CreateInstance<StagePropertiesDto>().CopyPropertiesTo(_stagePropertiesDto);
-            _stagePropertiesDto.StageName += TestDataGenerator.RandomString();
+            table.CreateInstance<StagesPropertiesDto>().CopyPropertiesTo(_stagesPropertiesDto);
+            _stagesPropertiesDto.StageName += TestDataGenerator.RandomString();
 
-            page.StageName.SendKeys(_stagePropertiesDto.StageName);
+            page.StageName.SendKeys(_stagesPropertiesDto.StageName);
 
             page.ConfirmCreateStageButton.Click();
 
-            _projectDto.Stages = _stagePropertiesDto;
+            _projectDto.Stages.Add(_stagesPropertiesDto);
         }
 
         [When(@"User create Task")]
@@ -224,7 +225,7 @@ namespace DashworksTestAutomation.Steps.Projects
 
             page.Name.SendKeys(_taskPropertiesDto.Name);
             page.Help.SendKeys(_taskPropertiesDto.Help);
-            page.StageName.SelectboxSelect(_projectDto.Stages.StageName);
+            page.StageName.SelectboxSelect(_projectDto.Stages.Last().StageName);
             page.TaskType.SelectboxSelect(_taskPropertiesDto.TaskType.GetValue());
             page.ValueType.SelectboxSelect(_taskPropertiesDto.ValueType.GetValue());
             page.ObjectType.SelectboxSelect(_taskPropertiesDto.ObjectType.GetValue());
@@ -429,7 +430,7 @@ namespace DashworksTestAutomation.Steps.Projects
         public void ThenCreatedRequestTypeIsDisplayedInTheTable()
         {
             var page = _driver.NowAt<BaseElements>();
-
+            _driver.WaitForDataLoading();
             var requestType = page.GetTheCreatedRequestTypeInTableByName(_projectDto.ReqestTypes.Last().Name);
             Assert.IsTrue(requestType.Displayed(), "Selected Request Type is not displayed in the table");
         }
@@ -448,7 +449,7 @@ namespace DashworksTestAutomation.Steps.Projects
         {
             var page = _driver.NowAt<BaseElements>();
 
-            var stage = page.GetTheCreatedElementInTableByName(_projectDto.Stages.StageName);
+            var stage = page.GetTheCreatedElementInTableByName(_projectDto.Stages.Last().StageName);
             Assert.IsTrue(stage.Displayed(), "Selected Stage is not displayed in the table");
         }
 

@@ -16,7 +16,7 @@ namespace DashworksTestAutomation.DTO.Projects
         public List<RequestTypesDto> ReqestTypes { get; set; }
         public RequestType_DetailsDto RequestTypeDetails { get; set; }
         public CategoryPropertiesDto Categories { get; set; }
-        public StagePropertiesDto Stages { get; set; }
+        public List<StagesPropertiesDto> Stages { get; set; }
         public TaskPropertiesDto Tasks { get; set; }
         public TaskProperties_DetailsDto TaskPropertiesDetails { get; set; }
         public TaskProperties_ValuesDto TaskPropertiesValues { get; set; }
@@ -33,6 +33,7 @@ namespace DashworksTestAutomation.DTO.Projects
             ProjectType = ProjectTypeEnum.ComputerScheduledProject;
             GroupProperties = new List<GroupPropertiesDto>();
             ReqestTypes = new List<RequestTypesDto>();
+            Stages = new List<StagesPropertiesDto>();
         }
     }
 

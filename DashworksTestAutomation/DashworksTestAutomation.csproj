@@ -199,7 +199,7 @@
     <Compile Include="DTO\Projects\SelfService\SelfService_ProjectDateDto.cs" />
     <Compile Include="DTO\Projects\SelfService\SelfService_ThankYouDto.cs" />
     <Compile Include="DTO\Projects\SelfService\SelfService_WelcomeDto.cs" />
-    <Compile Include="DTO\Projects\StagePropertiesDto.cs" />
+    <Compile Include="DTO\Projects\StagesPropertiesDto.cs" />
     <Compile Include="DTO\Projects\Tasks\TaskPropertiesDto.cs" />
     <Compile Include="DTO\Projects\Tasks\TaskProperties_DetailsDto.cs" />
     <Compile Include="DTO\Projects\TeamPropertiesDto.cs" />

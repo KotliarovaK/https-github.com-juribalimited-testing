@@ -69,7 +69,7 @@ namespace DashworksTestAutomation.Steps.Projects
         {
             var page = _driver.NowAt<BaseElements>();
 
-            page.GetDeleteStageButtonElementByName(_projectDto.Stages.StageName).Click();
+            page.GetDeleteStageButtonElementByName(_projectDto.Stages.Last().StageName).Click();
             _driver.AcceptAlert();
         }
 
@@ -194,7 +194,7 @@ namespace DashworksTestAutomation.Steps.Projects
         {
             var page = _driver.NowAt<BaseElements>();
 
-            var group = page.GetTheCreatedElementInTableByName(_projectDto.Stages.StageName);
+            var group = page.GetTheCreatedElementInTableByName(_projectDto.Stages.Last().StageName);
             Assert.IsFalse(group.Displayed(), "Selected Stage is displayed in the table");
         }
 
