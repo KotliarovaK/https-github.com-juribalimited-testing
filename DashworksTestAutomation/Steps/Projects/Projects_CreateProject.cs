@@ -151,7 +151,7 @@ namespace DashworksTestAutomation.Steps.Projects
 
             page.ConfirmCreateRequestTypesButton.Click();
 
-            _projectDto.ReqestType = _requestTypesDto;
+            _projectDto.ReqestTypes.Add(_requestTypesDto);
         }
 
         [When(@"User click on the created Request Type")]
@@ -159,7 +159,7 @@ namespace DashworksTestAutomation.Steps.Projects
         {
             var page = _driver.NowAt<BaseElements>();
 
-            page.GetTheCreatedRequestTypeInTableByName(_projectDto.ReqestType.Name).Click();
+            page.GetTheCreatedRequestTypeInTableByName(_projectDto.ReqestTypes.Last().Name).Click();
         }
 
         [When(@"User click on the ""(.*)"" Request Type")]
@@ -430,7 +430,7 @@ namespace DashworksTestAutomation.Steps.Projects
         {
             var page = _driver.NowAt<BaseElements>();
 
-            var requestType = page.GetTheCreatedRequestTypeInTableByName(_projectDto.ReqestType.Name);
+            var requestType = page.GetTheCreatedRequestTypeInTableByName(_projectDto.ReqestTypes.Last().Name);
             Assert.IsTrue(requestType.Displayed(), "Selected Request Type is not displayed in the table");
         }
 
@@ -458,7 +458,7 @@ namespace DashworksTestAutomation.Steps.Projects
             var page = _driver.NowAt<BaseElements>();
 
             _driver.WaitForDataLoading();
-            Assert.IsTrue(page.GetDefaultRequestTypeCountByName(_projectDto.ReqestType.Name).Displayed(), "Selected Request Type is not 'Default'");
+            Assert.IsTrue(page.GetDefaultRequestTypeCountByName(_projectDto.ReqestTypes.Last().Name).Displayed(), "Selected Request Type is not 'Default'");
         }
 
         [Then(@"required number of Groups is displayed for created team")]

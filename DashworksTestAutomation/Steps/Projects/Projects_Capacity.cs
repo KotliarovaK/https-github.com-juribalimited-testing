@@ -1,4 +1,5 @@
-﻿using DashworksTestAutomation.DTO.Projects;
+﻿using System.Linq;
+using DashworksTestAutomation.DTO.Projects;
 using DashworksTestAutomation.DTO.Projects.Capacity;
 using DashworksTestAutomation.Extensions;
 using DashworksTestAutomation.Pages.Projects;
@@ -58,7 +59,7 @@ namespace DashworksTestAutomation.Steps.Projects
 
             page.Team.SelectboxSelect(_projectDto.TeamProperties.TeamName);
             _driver.WaitForDataLoading();
-            page.RequestType.SelectboxSelect(_projectDto.ReqestType.Name);
+            page.RequestType.SelectboxSelect(_projectDto.ReqestTypes.Last().Name);
             _driver.WaitForDataLoading();
             _driver.WaitWhileControlIsNotDisplayed<Capacity_CapacityPage>(() => page.Table);
             page.StartDate.SendKeys(_capacityDto.StartDate);
@@ -93,7 +94,7 @@ namespace DashworksTestAutomation.Steps.Projects
         {
             var page = _driver.NowAt<Capacity_SummaryPage>();
 
-            page.RequestType.SelectboxSelect(_projectDto.ReqestType.Name);
+            page.RequestType.SelectboxSelect(_projectDto.ReqestTypes.Last().Name);
         }
 
         [Then(@"table for selected request type is displayed")]

@@ -36,7 +36,7 @@ namespace DashworksTestAutomation.Steps.Projects
         {
             var page = _driver.NowAt<BaseElements>();
 
-            page.GetDeleteButtonElementByName(_projectDto.ReqestType.Name).Click();
+            page.GetDeleteButtonElementByName(_projectDto.ReqestTypes.Last().Name).Click();
         }
 
         [Then(@"User removes ""(.*)"" Category")]
@@ -212,7 +212,7 @@ namespace DashworksTestAutomation.Steps.Projects
         {
             var page = _driver.NowAt<BaseElements>();
 
-            var group = page.GetTheCreatedElementInTableByName(_projectDto.ReqestType.Name);
+            var group = page.GetTheCreatedElementInTableByName(_projectDto.ReqestTypes.Last().Name);
             Assert.IsFalse(group.Displayed(), "Selected Request Type is displayed in the table");
         }
 

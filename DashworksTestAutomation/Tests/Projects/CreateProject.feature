@@ -40,8 +40,22 @@ Scenario: Projects_CreateProject
 	Then "Manage Request Types" page is displayed to the user
 	When User clicks "Create Request Type" button
 	When User create Request Type
-	| Name                | Description |
-	| TestRequestTypeName | TestText    |
+	| Name                | Description | ObjectType |
+	| TestRequestTypeName | TestText 0  | User       |
+	Then Success message is displayed
+	When User clicks "Cancel" button
+	Then created Request Type is displayed in the table
+	When User clicks "Create Request Type" button
+	When User create Request Type
+	| Name                | Description | ObjectType  |
+	| TestRequestTypeName | TestText 1  | Application |
+	Then Success message is displayed
+	When User clicks "Cancel" button
+	Then created Request Type is displayed in the table
+	When User clicks "Create Request Type" button
+	When User create Request Type
+	| Name                | Description | ObjectType |
+	| TestRequestTypeName | TestText 2  | Computer   |
 	Then Success message is displayed
 	When User clicks "Cancel" button
 	Then created Request Type is displayed in the table

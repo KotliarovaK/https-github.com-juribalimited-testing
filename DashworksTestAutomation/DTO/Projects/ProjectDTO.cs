@@ -13,7 +13,7 @@ namespace DashworksTestAutomation.DTO.Projects
         public ProjectTypeEnum ProjectType;
         public DefaultLanguageEnum DefaultLanguage;
         public DetailsDto Details { get; set; }
-        public RequestTypesDto ReqestType { get; set; }
+        public List<RequestTypesDto> ReqestTypes { get; set; }
         public RequestType_DetailsDto RequestTypeDetails { get; set; }
         public CategoryPropertiesDto Categories { get; set; }
         public StagePropertiesDto Stages { get; set; }
@@ -32,6 +32,7 @@ namespace DashworksTestAutomation.DTO.Projects
             DefaultLanguage = EnumExtensions.GetRandomValue<DefaultLanguageEnum>();
             ProjectType = ProjectTypeEnum.ComputerScheduledProject;
             GroupProperties = new List<GroupPropertiesDto>();
+            ReqestTypes = new List<RequestTypesDto>();
         }
     }
 
