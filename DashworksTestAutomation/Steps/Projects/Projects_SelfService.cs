@@ -72,6 +72,12 @@ namespace DashworksTestAutomation.Steps.Projects
 
             table.CreateInstance<SelfService_WelcomeDto>().CopyPropertiesTo(_welcomeDto);
 
+            page.Languages.SelectboxSelect(_welcomeDto.Language.GetValue());
+            page.AddLanguageButton.Click();
+            var language = page.GetLanguagesByName(_welcomeDto.Language.GetValue());
+            Assert.IsTrue(language.Displayed(), "Selected Language is not displayed");
+            page.GetDeleteButtonByLanguages(_welcomeDto.Language.GetValue()).Click();
+            _driver.AcceptAlert();
             page.AllowToSearchForAnotherUser.SetCheckboxState(_welcomeDto.AllowToSearchForAnotherUser);
             page.AllowToChangeLanguage.SetCheckboxState(_welcomeDto.AllowToChangeLanguage);
             page.ShowProjectSelector.SetCheckboxState(_welcomeDto.ShowProjectSelector);
@@ -214,33 +220,6 @@ namespace DashworksTestAutomation.Steps.Projects
 
             var upd = _driver.NowAt<BaseElements>();
             upd.UpdateButton.Click();
-        }
-
-        [When(@"User add new Language")]
-        public void WhenUserAddNewLanguage()
-        {
-            var page = _driver.NowAt<SelfService_WelcomePage>();
-
-            page.Languages.SelectboxSelect(_welcomeDto.Language.GetValue());
-            page.AddLanguageButton.Click();
-        }
-
-        [Then(@"Selected language is added")]
-        public void ThenSelectedLanguageIsAdded()
-        {
-            var page = _driver.NowAt<SelfService_WelcomePage>();
-
-            var language = page.GetLanguagesByName(_welcomeDto.Language.GetValue());
-            Assert.IsTrue(language.Displayed(), "Selected Language is not displayed");
-        }
-
-        [Then(@"User removes added Language")]
-        public void ThenUserRemovesLanguage()
-        {
-            var page = _driver.NowAt<SelfService_WelcomePage>();
-
-            page.GetDeleteButtonByLanguages(_welcomeDto.Language.GetValue()).Click();
-            _driver.AcceptAlert();
         }
     }
 }

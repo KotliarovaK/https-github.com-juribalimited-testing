@@ -140,10 +140,6 @@ Scenario: Projects_CreateProject
 	| false                   | false               | true               | true     | false        | true   | false                    | false     |
 	Then Success message is displayed with "Details successfully updated." text
 	When User navigate to "Welcome" on Self Service tab
-	When User add new Language
-	Then Selected language is added
-	Then User removes added Language
-	Then Success message is displayed with "Translation deleted." text
 	Then User updates the Welcome on Self Service tab
 	| AllowToSearchForAnotherUser | AllowToChangeLanguage | ShowProjectSelector | ShowMoreDetailsLink | PageDescription | ProjectName |
 	| true                        | false                 | false               | true                | TestText        | ProjectName |
