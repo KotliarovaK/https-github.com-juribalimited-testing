@@ -74,6 +74,7 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_ActionsPanel
         [NUnit.Framework.CategoryAttribute("Users")]
         [NUnit.Framework.CategoryAttribute("EvergreenJnr_ActionsPanel")]
         [NUnit.Framework.CategoryAttribute("DAS10859")]
+        [NUnit.Framework.CategoryAttribute("Not_Run")]
         public virtual void EvergreenJnr_UsersList_CheckThatAfterInterruptingProcessSelectingAllRowsAtActionsPanelProgressIndicatorDoesNotContinueToRun()
         {
             System.Exception lastException = null;
@@ -107,7 +108,8 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_ActionsPanel
                         "Evergreen",
                         "Users",
                         "EvergreenJnr_ActionsPanel",
-                        "DAS10859"});
+                        "DAS10859",
+                        "Not_Run"});
             this.ScenarioSetup(scenarioInfo);
             this.FeatureBackground();
             testRunner.When("User clicks \"Users\" on the left-hand menu", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");

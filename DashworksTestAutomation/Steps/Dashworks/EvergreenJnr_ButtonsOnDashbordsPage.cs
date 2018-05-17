@@ -40,8 +40,10 @@ namespace DashworksTestAutomation.Steps.Dashworks
         public void WhenUserClicksTheColumnsButton()
         {
             var menu = _driver.NowAt<BaseDashboardPage>();
+            _driver.WaitForDataLoading();
             _driver.WaitWhileControlIsNotDisplayed<BaseDashboardPage>(() => menu.ColumnButton);
             menu.ColumnButton.Click();
+            _driver.WaitForDataLoading();
             Logger.Write("Column button was clicked");
         }
 
@@ -49,8 +51,10 @@ namespace DashworksTestAutomation.Steps.Dashworks
         public void WhenUserClicksTheFiltersButton()
         {
             var menu = _driver.NowAt<BaseDashboardPage>();
+            _driver.WaitForDataLoading();
             _driver.WaitWhileControlIsNotDisplayed<BaseDashboardPage>(() => menu.FilterButton);
             menu.FilterButton.Click();
+            _driver.WaitForDataLoading();
             Logger.Write("Filters button was clicked");
         }
 
