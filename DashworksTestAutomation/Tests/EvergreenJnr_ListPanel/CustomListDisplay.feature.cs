@@ -943,7 +943,9 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_ListPanel
         [NUnit.Framework.CategoryAttribute("CustomListDisplay")]
         [NUnit.Framework.CategoryAttribute("DAS11011")]
         [NUnit.Framework.CategoryAttribute("DAS12152")]
+        [NUnit.Framework.CategoryAttribute("DAS12595")]
         [NUnit.Framework.CategoryAttribute("Delete_Newly_Created_List")]
+        [NUnit.Framework.CategoryAttribute("Not_Run")]
         public virtual void EvergreenJnr_DevicesList_CheckThatNewlySavedListIsCreatedWithTheCorrectColumnsAndSortsAndTheSameRowsOfData()
         {
             System.Exception lastException = null;
@@ -980,7 +982,9 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_ListPanel
                         "CustomListDisplay",
                         "DAS11011",
                         "DAS12152",
-                        "Delete_Newly_Created_List"});
+                        "DAS12595",
+                        "Delete_Newly_Created_List",
+                        "Not_Run"});
             this.ScenarioSetup(scenarioInfo);
             this.FeatureBackground();
             TechTalk.SpecFlow.Table table19 = new TechTalk.SpecFlow.Table(new string[] {
@@ -2277,6 +2281,7 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_ListPanel
         [NUnit.Framework.CategoryAttribute("CustomListDisplay")]
         [NUnit.Framework.CategoryAttribute("DAS10972")]
         [NUnit.Framework.CategoryAttribute("Delete_Newly_Created_List")]
+        [NUnit.Framework.CategoryAttribute("Not_Run")]
         [NUnit.Framework.TestCaseAttribute("Devices", "Hostname", "Import", "001BAQXT6JWFPI", "Network Card", "Owner City", new string[0])]
         [NUnit.Framework.TestCaseAttribute("Applications", "Application", "Application Key", "\"WPF/E\" (codename) Community Technology Preview (Feb 2007)", "prK: In Scope", "Compliance", new string[0])]
         [NUnit.Framework.TestCaseAttribute("Users", "Username", "City", "$6BE000-SUDQ9614UVO8", "Cost Centre", "Department Name", new string[0])]
@@ -2315,7 +2320,8 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_ListPanel
                     "EvergreenJnr_ListPanel",
                     "CustomListDisplay",
                     "DAS10972",
-                    "Delete_Newly_Created_List"};
+                    "Delete_Newly_Created_List",
+                    "Not_Run"};
             if ((exampleTags != null))
             {
                 @__tags = System.Linq.Enumerable.ToArray(System.Linq.Enumerable.Concat(@__tags, exampleTags));

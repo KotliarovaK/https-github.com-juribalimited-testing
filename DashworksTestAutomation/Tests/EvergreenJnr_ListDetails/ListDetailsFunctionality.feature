@@ -124,7 +124,7 @@ Examples:
 	| Applications |
 	| Mailboxes    |
 
-@Evergreen @AllLists @EvergreenJnr_ListDetails @ListDetailsFunctionality @DAS10880 @DAS11951 @Delete_Newly_Created_List @Not_Run
+@Evergreen @AllLists @EvergreenJnr_ListDetails @ListDetailsFunctionality @DAS10880 @DAS11951 @Delete_Newly_Created_List
 Scenario Outline: EvergreenJnr_AllLists_CheckDefaultOptionsInListDetailsForDynamicLists
 	When User clicks "<PageName>" on the left-hand menu
 	Then "<PageName>" list should be displayed to the user

@@ -71,6 +71,7 @@ namespace DashworksTestAutomation.Steps.Dashworks
         public void ThenSharingOptionIsSelected(string sharingOption)
         {
             var listDetailsElement = _driver.NowAt<ListDetailsElement>();
+            _driver.WaitForDataLoading();
             Assert.AreEqual(sharingOption, listDetailsElement.GetSelectedValue(listDetailsElement.SharingDropdown),
                 $"Selected option is not {sharingOption}");
         }

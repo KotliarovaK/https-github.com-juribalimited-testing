@@ -273,7 +273,7 @@ Scenario: EvergreenJnr_DevicesList_CheckTheSortOrderIsSavedForExistingListAndNot
 	When User have reset all columns
 	Then data in table is sorted by 'Owner Display Name' column in ascending order
 
-@Evergreen @Devices @EvergreenJnr_ListPanel @CustomListDisplay @DAS11011 @DAS12152 @Delete_Newly_Created_List
+@Evergreen @Devices @EvergreenJnr_ListPanel @CustomListDisplay @DAS11011 @DAS12152 @DAS12595 @Delete_Newly_Created_List @Not_Run
 Scenario: EvergreenJnr_DevicesList_CheckThatNewlySavedListIsCreatedWithTheCorrectColumnsAndSortsAndTheSameRowsOfData
 	When User create static list with "Static List TestName" name on "Devices" page with following items
 	| ItemName        |
@@ -790,7 +790,7 @@ Examples:
 	| Users        | Domain           |
 	| Mailboxes    | Mailbox Platform |
 
-@Evergreen @AllLists @EvergreenJnr_ListPanel @CustomListDisplay @DAS10972 @Delete_Newly_Created_List
+@Evergreen @AllLists @EvergreenJnr_ListPanel @CustomListDisplay @DAS10972 @Delete_Newly_Created_List @Not_Run
 Scenario Outline: EvergreenJnr_AllListsLists_CheckThatTheEditListFunctionIsTriggeredOrHiddenForCustomListsAfterAddingOrRemovingColumns
 	When User clicks "<ListName>" on the left-hand menu
 	Then "<ListName>" list should be displayed to the user

@@ -227,10 +227,8 @@ Scenario: EvergreenJnr_AdminPage_CheckThatNumberOfApplicationsInProjectScopeIsCo
 	When User select "Scope Changes" tab on the Project details page
 	And User clicks "Applications" tab in the Project Scope Changes section
 	Then "Applications to add (0 of 2081 selected)" is displayed to the user in the Project Scope Changes section
-	When User opens Scope section on the Project details page
 	When User select "Scope Details" tab on the Project details page
 	And User select "Do not include owned devices" checkbox on the Project details page
-	When User opens Scope section on the Project details page
 	When User select "Scope Changes" tab on the Project details page
 	And User clicks "Applications" tab in the Project Scope Changes section
 	Then "Applications to add (0 of 247 selected)" is displayed to the user in the Project Scope Changes section
