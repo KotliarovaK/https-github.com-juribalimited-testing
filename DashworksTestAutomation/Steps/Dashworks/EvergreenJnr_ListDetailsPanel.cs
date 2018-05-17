@@ -63,7 +63,7 @@ namespace DashworksTestAutomation.Steps.Dashworks
             var listDetailsElement = _driver.NowAt<ListDetailsElement>();
             var header = _driver.NowAt<HeaderElement>();
             Assert.AreEqual(header.UserNameDropdown.Text,
-                listDetailsElement.GetSelectedValue(listDetailsElement.OwnerDropdown),
+                listDetailsElement.OwnerDropdown.GetAttribute("value"),
                 "Another User is selected as a owner");
         }
 
@@ -71,6 +71,7 @@ namespace DashworksTestAutomation.Steps.Dashworks
         public void ThenSharingOptionIsSelected(string sharingOption)
         {
             var listDetailsElement = _driver.NowAt<ListDetailsElement>();
+            _driver.WaitForDataLoading();
             Assert.AreEqual(sharingOption, listDetailsElement.GetSelectedValue(listDetailsElement.SharingDropdown),
                 $"Selected option is not {sharingOption}");
         }

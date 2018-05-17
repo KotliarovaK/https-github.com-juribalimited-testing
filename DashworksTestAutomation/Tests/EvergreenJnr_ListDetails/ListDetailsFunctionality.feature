@@ -124,14 +124,13 @@ Examples:
 	| Applications |
 	| Mailboxes    |
 
-@Evergreen @AllLists @EvergreenJnr_ListDetails @ListDetailsFunctionality @DAS10880 @DAS11951 @Delete_Newly_Created_List @Not_Run
+@Evergreen @AllLists @EvergreenJnr_ListDetails @ListDetailsFunctionality @DAS10880 @DAS11951 @Delete_Newly_Created_List
 Scenario Outline: EvergreenJnr_AllLists_CheckDefaultOptionsInListDetailsForDynamicLists
 	When User clicks "<PageName>" on the left-hand menu
 	Then "<PageName>" list should be displayed to the user
 	When User click on '<Columnname>' column header
 	Then data in table is sorted by '<Columnname>' column in ascending order
 	When User create dynamic list with "TestListCED2D6" name on "<PageName>" page
-	#Workaround for DAS-11570. Remove after fix
 	When User clicks the List Details button
 	Then List details panel is displayed to the user
 	Then "TestListCED2D6" name is displayed in list details panel
@@ -151,7 +150,6 @@ Scenario Outline: EvergreenJnr_AllLists_CheckDefaultOptionsInListDetailsForStati
 	When User create static list with "Static List TestName" name on "<PageName>" page with following items
 	| ItemName |
 	|          |
-	#Workaround for DAS-11570. Remove after fix
 	When User clicks the List Details button
 	Then List details panel is displayed to the user
 	Then "Static List TestName" name is displayed in list details panel

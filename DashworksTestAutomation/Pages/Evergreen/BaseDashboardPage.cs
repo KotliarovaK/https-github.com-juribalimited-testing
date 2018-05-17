@@ -221,7 +221,7 @@ namespace DashworksTestAutomation.Pages.Evergreen
         public string ActiveCustomListName()
         {
             By by = By.XPath(
-                ".//span[contains(@class, 'list-name')]");
+                ".//div[@class='active-list-wrapper ng-star-inserted']/ul/li/span");
             //Driver.WaitWhileControlContainingTextIsNotDisplayed(by);
             return Driver.FindElement(by).Text;
         }

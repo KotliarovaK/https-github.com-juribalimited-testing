@@ -199,6 +199,7 @@ Scenario Outline: EvergreenJnr_AllLists_CheckThatFilterIsRestoredCorrectlyAfterL
 	And User click content from "<ColumnName>" column
 	Then User click back button in the browser
 	Then "<RowsCount>" rows are displayed in the agGrid
+	When User clicks the Filters button
 	Then "<Text>" is displayed in added filter info
 
 Examples: 
