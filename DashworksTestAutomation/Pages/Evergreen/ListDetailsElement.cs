@@ -10,7 +10,7 @@ namespace DashworksTestAutomation.Pages.Evergreen
 {
     internal class ListDetailsElement : SeleniumBasePage
     {
-        [FindsBy(How = How.XPath, Using = ".//div[@class='listPanel ng-star-inserted']")]
+        [FindsBy(How = How.XPath, Using = ".//div[@class='listPanel']")]
         public IWebElement ListDetailsPanel { get; set; }
 
         [FindsBy(How = How.XPath, Using = ".//input[@placeholder='List Name']")]
@@ -35,7 +35,7 @@ namespace DashworksTestAutomation.Pages.Evergreen
         [FindsBy(How = How.XPath, Using = ".//div[@class='permissions action-panel-ddl']//button[@title='Close']")]
         public IWebElement ClosePermissionBlockButton { get; set; }
 
-        [FindsBy(How = How.XPath, Using = ".//mat-select[@aria-labelledby='owner-label']")]
+        [FindsBy(How = How.XPath, Using = ".//input[@aria-label='Owner']")]
         public IWebElement OwnerDropdown { get; set; }
 
         [FindsBy(How = How.XPath, Using = ".//mat-select[@aria-labelledby='sharing-label']")]
@@ -59,7 +59,7 @@ namespace DashworksTestAutomation.Pages.Evergreen
         [FindsBy(How = How.XPath, Using = ".//div[@class='form-item']")]
         public IWebElement ExpandedDependantsSection { get; set; }
 
-        [FindsBy(How = How.XPath, Using = ".//span[text()='Select user']/ancestor::div[@class='mat-select-trigger']")]
+        [FindsBy(How = How.XPath, Using = ".//input[@aria-label='User']")]
         public IWebElement SelectUserDropdown { get; set; }
 
         [FindsBy(How = How.XPath, Using = ".//span[text()='Select access']/ancestor::div[@class='mat-select-trigger']")]
@@ -97,7 +97,7 @@ namespace DashworksTestAutomation.Pages.Evergreen
 
         public string GetSelectedValue(IWebElement dropdown)
         {
-            return dropdown.FindElement(By.XPath(".//span[contains(@class, 'ng-star-inserted')]")).Text;
+            return dropdown.FindElement(By.XPath(".//div[contains(@class, 'action-panel')]//span[contains(@class, 'mat-select-value-text')]/span")).Text;
         }
     }
 }

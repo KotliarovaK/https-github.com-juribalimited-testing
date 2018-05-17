@@ -213,7 +213,7 @@ namespace DashworksTestAutomation.Steps.Dashworks
             var listElement = _driver.NowAt<CustomListElement>();
 
             _driver.WaitWhileControlIsNotDisplayed<CustomListElement>(() => listElement.SaveAsDropdown);
-            Assert.IsTrue(listElement.SaveAsDropdown.Displayed(), "Edit List menu is not displayed");
+            Assert.IsTrue(listElement.EditedList.Displayed(), "Edit List menu is not displayed");
         }
 
         [Then(@"Edit List menu is not displayed")]

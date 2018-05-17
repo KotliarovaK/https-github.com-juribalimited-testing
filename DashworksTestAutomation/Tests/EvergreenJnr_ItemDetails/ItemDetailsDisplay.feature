@@ -535,3 +535,14 @@ Scenario: EvergreenJnr_MailboxesLists_CheckThatDropdownListsInTheProjectDetailsF
 	Then Dropdown List is displayed correctly in the Filter on the Details Page
 	When User clicks String Filter button for "Category" column
 	Then Dropdown List is displayed correctly in the Filter on the Details Page
+
+@Evergreen @Mailboxes @EvergreenJnr_ItemDetails @ItemDetailsDisplay @DAS12285
+Scenario: EvergreenJnr_MailboxesLists_CheckThatCorrectMessageIsDisplayedForDevicesSectionOnTheDistributionTab
+	When User clicks "Applications" on the left-hand menu
+	Then "Applications" list should be displayed to the user
+	When User perform search by "ACT Data Collection Packages"
+	And User click content from "Application" column
+	And User navigates to the "Distribution" tab
+	Then User closes "Users" section on the Details Page
+	When User opens "Devices" section on the Details Page
+	Then "No devices found for this application" message is displayed on the Details Page

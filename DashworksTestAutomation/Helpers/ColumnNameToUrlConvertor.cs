@@ -201,6 +201,12 @@ namespace DashworksTestAutomation.Helpers
                      "1814":
                     return "customField_2";
 
+                case "Application":
+                    return "packageName";
+
+                case "Hostname":
+                    return "hostname";
+
                 default:
                     throw new Exception($"{columnName} column not found in convertor");
             }

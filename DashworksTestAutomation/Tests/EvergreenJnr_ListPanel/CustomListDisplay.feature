@@ -76,14 +76,30 @@ Scenario: EvergreenJnr_DevicesList_CheckThatCustomListCreationBlockIsNotDisplaye
 	When User have reset all filters
 	Then Edit List menu is displayed
 
-@Evergreen @Devices @EvergreenJnr_ListPanel @CustomListDisplay @DAS10998
-Scenario: EvergreenJnr_DevicesList_CheckThatSearchDoesNotTriggerNewCustomList
-	When User clicks "Devices" on the left-hand menu
-	Then "Devices" list should be displayed to the user
+@Evergreen @AllLists @EvergreenJnr_ListPanel @CustomListDisplay @DAS10998 @DAS10972
+Scenario Outline: EvergreenJnr_AllList_CheckThatSearchDoesNotTriggerNewCustomList
+	When User clicks "<ListName>" on the left-hand menu
+	Then "<ListName>" list should be displayed to the user
 	And User enters SearchCriteria into the agGrid Search Box and the correct NumberOfRows are returned
 	| SearchCriteria | NumberOfRows |
-	| Henry          | 34           |
+	| <Search>       | <Rows>       |
 	Then Save to New Custom List element is NOT displayed
+	And "<ListName>" list should be displayed to the user
+	And User enters SearchCriteria into the agGrid Search Box and the correct NumberOfRows are returned
+	| SearchCriteria | NumberOfRows |
+	| Mary           | <NewRows>    |
+	Then Save to New Custom List element is NOT displayed
+	And "<ListName>" list should be displayed to the user
+	And Clearing the agGrid Search Box
+	And Save to New Custom List element is NOT displayed
+	And "<ListName>" list should be displayed to the user
+
+	Examples:
+	| ListName     | Search | Rows | NewRows |
+	| Devices      | Henry  | 34   | 17      |
+	| Users        | Henry  | 67   | 142     |
+	| Applications | Hen    | 5    | 1       |
+	| Mailboxes    | Henry  | 22   | 73      |
 
 @Evergreen @Devices @EvergreenJnr_ListPanel @CustomListDisplay @DAS11081 @DAS11951 @DAS12152 @Delete_Newly_Created_List
 Scenario: EvergreenJnr_DevicesList_CheckThatNewListCreatedMessageForStaticListIsDisplayed
@@ -716,3 +732,192 @@ Examples:
 	| Applications | All Applications |
 	| Users        | All Users        |
 	| Mailboxes    | All Mailboxes    |
+
+@Evergreen @AllLists @EvergreenJnr_ListPanel @CustomListDisplay @DAS10972
+Scenario Outline: EvergreenJnr_AllListsLists_CheckThatTheSaveListFunctionIsTriggeredOrHiddenAfterAddingOrRemovingColumns
+	When User clicks "<ListName>" on the left-hand menu
+	Then "<ListName>" list should be displayed to the user
+	When User clicks the Columns button
+	Then Columns panel is displayed to the user
+	When User adds columns to the list
+	| ColumnName   |
+	| <ColumnName> |
+	Then Save to New Custom List element is displayed
+	When User removes "<ColumnName>" column by Column panel
+	Then Save to New Custom List element is NOT displayed
+	When User adds columns to the list
+	| ColumnName   |
+	| <ColumnName> |
+	Then Save to New Custom List element is displayed
+	When User adds columns to the list
+	| ColumnName      |
+	| <NewColumnName> |
+	When User adds columns to the list
+	| ColumnName       |
+	| <MoreColumnName> |
+	Then Save to New Custom List element is displayed
+	When User have reset all columns
+	Then Save to New Custom List element is NOT displayed
+
+Examples:
+	| ListName     | ColumnName      | NewColumnName | MoreColumnName       |
+	| Devices      | Import          | Country       | Windows7Mi: Category |
+	| Applications | Application Key | Compliance    | App field 2          |
+	| Users        | City            | Description   | Floor                |
+	| Mailboxes    | Alias           | Time Zone     | Building             |
+
+@Evergreen @AllLists @EvergreenJnr_ListPanel @CustomListDisplay @DAS10972
+Scenario Outline: EvergreenJnr_AllListsLists_CheckThatTheSaveListFunctionIsHiddenAfterChangingPinnedColumns
+	When User clicks "<ListName>" on the left-hand menu
+	Then "<ListName>" list should be displayed to the user
+	When User have opened column settings for "<ColumnName>" column
+	When User have select "Pin Left" option from column settings
+	Then "<ListName>" list should be displayed to the user
+	Then Save to New Custom List element is NOT displayed
+	When User have opened column settings for "<ColumnName>" column
+	When User have select "Pin Right" option from column settings
+	Then "<ListName>" list should be displayed to the user
+	Then Save to New Custom List element is NOT displayed
+	When User have opened column settings for "<ColumnName>" column
+	When User have select "No Pin" option from column settings
+	Then "<ListName>" list should be displayed to the user
+	Then Save to New Custom List element is NOT displayed
+
+Examples:
+	| ListName     | ColumnName       |
+	| Devices      | Device Type      |
+	| Applications | Vendor           |
+	| Users        | Domain           |
+	| Mailboxes    | Mailbox Platform |
+
+@Evergreen @AllLists @EvergreenJnr_ListPanel @CustomListDisplay @DAS10972 @Delete_Newly_Created_List
+Scenario Outline: EvergreenJnr_AllListsLists_CheckThatTheEditListFunctionIsTriggeredOrHiddenForCustomListsAfterAddingOrRemovingColumns
+	When User clicks "<ListName>" on the left-hand menu
+	Then "<ListName>" list should be displayed to the user
+	When User click on '<ColumnName>' column header
+	Then data in table is sorted by '<ColumnName>' column in ascending order
+	When User create dynamic list with "DynamicList" name on "<ListName>" page
+	When User clicks the Columns button
+	And User adds columns to the list
+	| ColumnName      |
+	| <NewColumnName> |
+	Then Edit List menu is displayed
+	When User adds columns to the list
+	| ColumnName         |
+	| <AddColumnName>    |
+	| <AddAnotherColumn> |
+	Then Edit List menu is displayed
+	When User have reset all columns
+	Then Edit List menu is not displayed
+	When User create static list with "StaticList" name on "<ListName>" page with following items
+	| ItemName       |
+	| <SelectedItem> |
+	When User clicks the Columns button
+	And User adds columns to the list
+	| ColumnName      |
+	| <NewColumnName> |
+	Then Edit List menu is displayed
+	When User adds columns to the list
+	| ColumnName         |
+	| <AddColumnName>    |
+	| <AddAnotherColumn> |
+	Then Edit List menu is displayed
+	When User have reset all columns
+	Then Edit List menu is not displayed
+
+Examples:
+	| ListName     | ColumnName    | NewColumnName   | SelectedItem                                               | AddColumnName | AddAnotherColumn |
+	| Devices      | Hostname      | Import          | 001BAQXT6JWFPI                                             | Network Card  | Owner City       |
+	| Applications | Application   | Application Key | "WPF/E" (codename) Community Technology Preview (Feb 2007) | prK: In Scope | Compliance       |
+	| Users        | Username      | City            | $6BE000-SUDQ9614UVO8                                       | Cost Centre   | Department Name  |
+	| Mailboxes    | Email Address | Alias           | 000F977AC8824FE39B8@bclabs.local                           | Enabled       | Import           |
+
+@Evergreen @AllLists @EvergreenJnr_ListPanel @CustomListDisplay @DAS10998 @DAS10972 @Delete_Newly_Created_List
+Scenario Outline: EvergreenJnr_AllList_CheckThatTheEditListFunctionIsHiddenAfterAddingChangingAndRemovingSearchCriteria
+	When User clicks "<ListName>" on the left-hand menu
+	Then "<ListName>" list should be displayed to the user
+	When User click on '<ColumnName>' column header
+	Then data in table is sorted by '<ColumnName>' column in ascending order
+	When User create dynamic list with "DynamicList2" name on "<ListName>" page
+	Then User enters SearchCriteria into the agGrid Search Box and the correct NumberOfRows are returned
+	| SearchCriteria | NumberOfRows |
+	| <Search>       | <Rows>       |
+	Then Edit List menu is not displayed
+	Then "DynamicList2" list is displayed to user
+	And User enters SearchCriteria into the agGrid Search Box and the correct NumberOfRows are returned
+	| SearchCriteria | NumberOfRows |
+	| Mary           | <NewRows>    |
+	Then Edit List menu is not displayed
+	Then "DynamicList2" list is displayed to user
+	And Clearing the agGrid Search Box
+	Then Edit List menu is not displayed
+	Then "DynamicList2" list is displayed to user
+	When User clicks "<ListName>" on the left-hand menu
+	Then "<ListName>" list should be displayed to the user
+	When User clicks the Actions button
+	Then Actions panel is displayed to the user
+	When User select all rows
+	When User create static list with "StaticList2" name
+	Then User enters SearchCriteria into the agGrid Search Box and the correct NumberOfRows are returned
+	| SearchCriteria | NumberOfRows |
+	| <Search>       | <Rows>       |
+	Then Edit List menu is not displayed
+	And "StaticList2" list is displayed to user
+	And User enters SearchCriteria into the agGrid Search Box and the correct NumberOfRows are returned
+	| SearchCriteria | NumberOfRows |
+	| Mary           | <NewRows>    |
+	Then Edit List menu is not displayed
+	And "StaticList2" list is displayed to user
+	And Clearing the agGrid Search Box
+	Then Edit List menu is not displayed
+	And "StaticList2" list is displayed to user
+
+	Examples:
+	| ListName     | ColumnName    | Search    | Rows  | NewRows |
+	| Devices      | Hostname      | Centre    | 3,284 | 17      |
+	| Users        | Username      | Barland   | 3     | 142     |
+	| Applications | Application   | Adobe     | 40    | 1       |
+	| Mailboxes    | Email Address | bc-exch07 | 4,188 | 73      |
+
+@Evergreen @AllLists @EvergreenJnr_ListPanel @CustomListDisplay @DAS10972 @Delete_Newly_Created_List
+Scenario Outline: EvergreenJnr_AllListsLists_CheckThatTheEditListFunctionIsHiddenAfterChangingPinnedColumns
+	When User clicks "<ListName>" on the left-hand menu
+	Then "<ListName>" list should be displayed to the user
+	When User click on '<ColumnName>' column header
+	Then data in table is sorted by '<ColumnName>' column in ascending order
+	When User create dynamic list with "DynamicList3" name on "<ListName>" page
+	When User have opened column settings for "<PinnedColumnName>" column
+	When User have select "Pin Left" option from column settings
+	Then "DynamicList3" list is displayed to user
+	Then Edit List menu is not displayed
+	When User have opened column settings for "<PinnedColumnName>" column
+	When User have select "Pin Right" option from column settings
+	Then "DynamicList3" list is displayed to user
+	Then Edit List menu is not displayed
+	When User have opened column settings for "<PinnedColumnName>" column
+	When User have select "No Pin" option from column settings
+	Then "DynamicList3" list is displayed to user
+	Then Edit List menu is not displayed
+	When User clicks the Actions button
+	Then Actions panel is displayed to the user
+	When User select all rows
+	When User create static list with "StaticList3" name
+	When User have opened column settings for "<PinnedColumnName>" column
+	When User have select "Pin Left" option from column settings
+	Then "StaticList3" list is displayed to user
+	Then Edit List menu is not displayed
+	When User have opened column settings for "<PinnedColumnName>" column
+	When User have select "Pin Right" option from column settings
+	Then "StaticList3" list is displayed to user
+	Then Edit List menu is not displayed
+	When User have opened column settings for "<PinnedColumnName>" column
+	When User have select "No Pin" option from column settings
+	Then "StaticList3" list is displayed to user
+	Then Edit List menu is not displayed
+
+Examples:
+	| ListName     | ColumnName       | PinnedColumnName |
+	| Devices      | Device Type      | Hostname         |
+	| Applications | Vendor           | Application      |
+	| Users        | Domain           | Username         |
+	| Mailboxes    | Mailbox Platform | Email Address    |

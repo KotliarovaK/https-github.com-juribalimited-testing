@@ -20,10 +20,10 @@ namespace DashworksTestAutomation.Pages.Evergreen
         [FindsBy(How = How.XPath, Using = ".//button[@id='_staticListModeBtn']")]
         public IWebElement ActionsButton { get; set; }
 
-        [FindsBy(How = How.XPath, Using = ".//button[@id='_listDtlBtn']")]
+        [FindsBy(How = How.XPath, Using = ".//button[@class='btn btn-default mat-icon-button'][@id='_listDtlBtn']")]
         public IWebElement ListDetailsButton { get; set; }
 
-        [FindsBy(How = How.XPath, Using = ".//button[@id='_clmnBtn']")]
+        [FindsBy(How = How.XPath, Using = ".//button[contains(@id, 'clmnBtn')]")]
         public IWebElement ColumnButton { get; set; }
 
         [FindsBy(How = How.XPath, Using = ".//button[@id='_fltrBtn']")]
@@ -76,7 +76,7 @@ namespace DashworksTestAutomation.Pages.Evergreen
         [FindsBy(How = How.XPath, Using = ".//span[@class='status-text'][text()='RED']")]
         public IList<IWebElement> ContentColor { get; set; }
 
-        [FindsBy(How = How.XPath, Using = ".//div[@id='content']//div[@class='empty-message ng-star-inserted']")]
+        [FindsBy(How = How.XPath, Using = ".//div[@class='empty-message ng-star-inserted'][text()='No devices found']")]
         public IWebElement NoResultsFoundMessage { get; set; }
 
         [FindsBy(How = How.XPath, Using = ".//div[@class='save-action-bar ng-star-inserted']//span[text()='Save']")]
@@ -221,7 +221,7 @@ namespace DashworksTestAutomation.Pages.Evergreen
         public string ActiveCustomListName()
         {
             By by = By.XPath(
-                ".//*[@id='submenuBlock']/div[contains(@class, 'active-list-wrapper')]/ul/li/span[@class='submenu-actions-list-name']");
+                ".//span[contains(@class, 'list-name')]");
             //Driver.WaitWhileControlContainingTextIsNotDisplayed(by);
             return Driver.FindElement(by).Text;
         }

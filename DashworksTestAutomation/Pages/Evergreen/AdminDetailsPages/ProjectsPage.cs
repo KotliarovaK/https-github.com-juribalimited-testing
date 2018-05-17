@@ -55,7 +55,7 @@ namespace DashworksTestAutomation.Pages.Evergreen.AdminDetailsPages
         [FindsBy(How = How.XPath, Using = ".//div[@class='ng-star-inserted inline-tip']")]
         public IWebElement DeleteWarningMessage { get; set; }
 
-        [FindsBy(How = How.XPath, Using = ".//button[@class='btn mat-button ng-star-inserted']")]
+        [FindsBy(How = How.XPath, Using = ".//button[@class='messageAction btn mat-button ng-star-inserted']")]
         public IWebElement DeleteButtonInWarningMessage { get; set; }
 
         [FindsBy(How = How.XPath, Using = ".//div[@class='inline-success ng-star-inserted']")]
@@ -127,12 +127,12 @@ namespace DashworksTestAutomation.Pages.Evergreen.AdminDetailsPages
 
         public bool SelectedItemInProjectScopeChangesSection(string text)
         {
-            return Driver.IsElementDisplayed(By.XPath($".//span[@class='mat-checkbox-label'][text()='{text}']"));
+            return Driver.IsElementDisplayed(By.XPath($".//span[@class='title'][text()='{text}']"));
         }
 
         public bool SelectedTabInProjectScopeChangesSection(string tabName)
         {
-            return Driver.IsElementDisplayed(By.XPath($".//label//span[contains(text(),'{tabName} ')]"));
+            return Driver.IsElementDisplayed(By.XPath($".//div//span[contains(text(),'{tabName} ')]"));
         }
 
         public int GetColumnNumberByName(string columnName)

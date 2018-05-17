@@ -17,7 +17,7 @@ Runs Evergreen URL query strings which include a date field combos query and fil
 	| Mailboxes with apostrophes      | evergreen/#/mailboxes?$filter=(displayName%20CONTAINS%20('o''donnell'%2C'o''brien'%2C'o''neil')%20)&$select=principalEmailAddress,mailboxPlatform,serverName,mailboxType,ownerDisplayName,displayName                                                                                                                                                                                                            |
 	Then agGrid Main Object List is returned with data
 
-@Evergreen @Users @Mailboxes @Devices @Applications @EvergreenJnr_QueryStrings @Query @DAS10782
+@Evergreen @Users @Mailboxes @Devices @Applications @EvergreenJnr_QueryStrings @Query @DAS10782 @Not_Run
 Scenario: EvergreenJnr_QueryString_Complex
 Runs Evergreen URL query strings that are complex, with lots of columns and advanced filters applied
 	When Evergreen QueryStringURL is entered for Complex QueryType

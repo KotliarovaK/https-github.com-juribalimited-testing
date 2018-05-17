@@ -22,7 +22,7 @@ Scenario: EvergreenJnr_UsersList_SelectAllCheckboxStatusCheckAfterSearch
 	Then data in table is sorted by 'Username' column in ascending order
 	And Select All selectbox is checked
 	And "42" rows are displayed in the agGrid
-	And "41335" selected rows are displayed in the Actions panel
+	And "41339" selected rows are displayed in the Actions panel
 	And Clearing the agGrid Search Box
 	And Select All selectbox is checked
 	When User is deselect all rows
@@ -86,7 +86,7 @@ Scenario Outline: EvergreenJnr_AllLists_SelectAllChecboxMainFunctionalityTest
 Examples: 
 	| PageName     | SelectedRowsCount | Columnname    | SelectedRowName                                            | SelectedRowsCountAfterDiselect |
 	| Devices      | 17225             | Hostname      | 00BDM1JUR8IF419                                            | 17224                          |
-	| Users        | 41335             | Username      | $6BE000-SUDQ9614UVO8                                       | 41334                          |
+	| Users        | 41339             | Username      | $6BE000-SUDQ9614UVO8                                       | 41338                          |
 	| Applications | 2223              | Application   | "WPF/E" (codename) Community Technology Preview (Feb 2007) | 2222                           |
 	| Mailboxes    | 14784             | Email Address | 000F977AC8824FE39B8@bclabs.local                           | 14783                          |
 
@@ -103,12 +103,12 @@ Scenario: EvergreenJnr_UsersList_CheckThatSelectAllWorksCorrectlyForFilteredList
 	| FALSE              |
 	| TRUE               |
 	Then "Enabled" filter is added to the list
-	Then "41,335" rows are displayed in the agGrid
+	Then "41,339" rows are displayed in the agGrid
 	And table data is filtered correctly
 	When User clicks the Actions button
 	Then Actions panel is displayed to the user
 	When User select all rows
-	Then "41335" selected rows are displayed in the Actions panel
+	Then "41339" selected rows are displayed in the Actions panel
 
 @Evergreen @Mailboxes @Evergreen_ActionsPanel @AllCheckbox @DAS11894
 Scenario: EvergreenJnr_MailboxesList_CheckThatAllCheckboxesAreCheckedAfterAFirstClick
