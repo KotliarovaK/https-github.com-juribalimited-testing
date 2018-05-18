@@ -67,7 +67,7 @@ namespace DashworksTestAutomation.Steps.API
 
             //Add created list to context
             _listsDetails.AddList(listName, listId);
-            //Delete after fix Edited List
+            //Delete after fix DAS12578
             var page = _driver.NowAt<CustomListElement>();
             if (!page.SaveAsDropdown.Displayed())
             { }
