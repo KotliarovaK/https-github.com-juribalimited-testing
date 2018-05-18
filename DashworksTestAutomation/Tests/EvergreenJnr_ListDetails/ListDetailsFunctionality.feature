@@ -437,7 +437,7 @@ Scenario: EvergreenJnr_AllLists_CheckDisplayingListDeletionWarningMessageForDepe
 	Then "Application in list [List not found] used on device" is displayed in added filter info
 	And message 'No devices found' is displayed to the user
 
-@Evergreen @AllLists @EvergreenJnr_ListDetails @ListDetailsFunctionality @DAS12075 @Delete_Newly_Created_List
+@Evergreen @AllLists @EvergreenJnr_ListDetails @ListDetailsFunctionality @DAS12075 @DAS12578 @Delete_Newly_Created_List @Not_Run
 Scenario: EvergreenJnr_AllLists_CheckDisplayingListDeletionWarningMessageForDependenciesStaticLists
 	When User create static list with "Application2" name on "Applications" page with following items
 	| ItemName                  |
@@ -469,7 +469,7 @@ Scenario: EvergreenJnr_AllLists_CheckDisplayingListDeletionWarningMessageForDepe
 	And "Application in list [List not found] used on device" is displayed in added filter info
 	And message 'No devices found' is displayed to the user
 
-@Evergreen @AllLists @EvergreenJnr_ListDetails @ListDetailsFunctionality @DAS12075 @Delete_Newly_Created_List
+@Evergreen @AllLists @EvergreenJnr_ListDetails @ListDetailsFunctionality @DAS12075 @DAS12578 @Delete_Newly_Created_List @Not_Run
 Scenario: EvergreenJnr_AllLists_CheckDisplayingListDeletionWarningMessageForDependenciesLists
 	When User create static list with "Application3" name on "Applications" page with following items
 	| ItemName                                        |
@@ -509,7 +509,7 @@ Scenario: EvergreenJnr_AllLists_CheckDisplayingListDeletionWarningMessageForDepe
 	And "Application in list [List not found] used on device" is displayed in added filter info
 	And message 'No devices found' is displayed to the user
 
-@Evergreen @AllLists @EvergreenJnr_ListDetails @ListDetailsFunctionality @DAS12075 @Delete_Newly_Created_List
+@Evergreen @AllLists @EvergreenJnr_ListDetails @ListDetailsFunctionality @DAS12075 @DAS12578 @Delete_Newly_Created_List @Not_Run
 Scenario: EvergreenJnr_AllLists_CheckDisplayingListDeletionWarningMessageForTwoDependenciesLists
 	When User clicks "Applications" on the left-hand menu
 	Then "Applications" list should be displayed to the user

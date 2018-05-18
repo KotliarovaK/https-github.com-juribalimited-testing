@@ -69,9 +69,7 @@ namespace DashworksTestAutomation.Steps.API
             _listsDetails.AddList(listName, listId);
             //Delete after fix DAS12578
             var page = _driver.NowAt<CustomListElement>();
-            if (!page.SaveAsDropdown.Displayed())
-            { }
-            else
+            if (page.SaveAsDropdown.Displayed())
             {
                 page.SaveAsDropdown.Click();
                 page.UpdateCurrentListButton.Click();
