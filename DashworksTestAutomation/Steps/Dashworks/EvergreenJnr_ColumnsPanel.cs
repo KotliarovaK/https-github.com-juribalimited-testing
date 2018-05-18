@@ -222,6 +222,7 @@ namespace DashworksTestAutomation.Steps.Dashworks
         [When(@"User remove sorted column on ""(.*)"" page by URL")]
         public void WhenUserRemoveSortedColumnOnPageByUrl(string pageName, Table table)
         {
+            _driver.WaitForDataLoading();
             var currentUrl = _driver.Url;
             const string pattern = @"select=(.*)\&\$orderby";
             foreach (var row in table.Rows)
