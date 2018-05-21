@@ -152,6 +152,7 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_ActionsPanel
         [NUnit.Framework.CategoryAttribute("AllCheckbox")]
         [NUnit.Framework.CategoryAttribute("DAS10775")]
         [NUnit.Framework.CategoryAttribute("DAS10656")]
+        [NUnit.Framework.CategoryAttribute("Not_Run")]
         [NUnit.Framework.TestCaseAttribute("Devices", new string[0])]
         [NUnit.Framework.TestCaseAttribute("Users", new string[0])]
         [NUnit.Framework.TestCaseAttribute("Applications", new string[0])]
@@ -190,7 +191,8 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_ActionsPanel
                     "Evergreen_ActionsPanel",
                     "AllCheckbox",
                     "DAS10775",
-                    "DAS10656"};
+                    "DAS10656",
+                    "Not_Run"};
             if ((exampleTags != null))
             {
                 @__tags = System.Linq.Enumerable.ToArray(System.Linq.Enumerable.Concat(@__tags, exampleTags));
