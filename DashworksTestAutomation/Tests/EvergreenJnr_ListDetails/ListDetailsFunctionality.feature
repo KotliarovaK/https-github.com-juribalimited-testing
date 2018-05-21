@@ -586,3 +586,21 @@ Scenario: EvergreenJnr_Users_CheckThatListDeletionWarningMessageIsNotDisplayedAf
 	When User clicks the List Details button
 	Then List details panel is displayed to the user
 	Then no Warning message is displayed in the list details panel
+
+@Evergreen @Users @EvergreenJnr_ListDetails @ListDetailsFunctionality @DAS12535 @Delete_Newly_Created_List
+Scenario: EvergreenJnr_Users_CheckThatListDetailsPanelIsDisplayedAfterSelectingManageFromListPanelMenu
+	When User clicks "Mailboxes" on the left-hand menu
+	Then "Mailboxes" list should be displayed to the user
+	When User click on 'Email Address' column header
+	Then data in table is sorted by 'Email Address' column in ascending order
+	When User create dynamic list with "DynamicList4557" name on "Mailboxes" page
+	Then "DynamicList4557" list is displayed to user
+	When User navigates to the "All Mailboxes" list
+	When User create static list with "StaticList2845" name on "Mailboxes" page with following items
+	| ItemName                         |
+	| 000F977AC8824FE39B8@bclabs.local |
+	| 002B5DC7D4D34D5C895@bclabs.local |
+	Then "StaticList2845" list is displayed to user
+	When User navigates to the "All Mailboxes" list
+	When User clicks Settings button for "DynamicList4557" list
+	When User clicks Manage in the list panel
