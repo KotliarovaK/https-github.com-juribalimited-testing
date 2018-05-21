@@ -104,7 +104,7 @@ namespace DashworksTestAutomation.Pages.Evergreen.AdminDetailsPages
         public void ClickToTabByNameProjectScopeChanges(string tabName)
         {
             var tab = Driver.FindElement(
-                By.XPath($".//div[@class='detail-label ng-star-inserted']/span[text()='{tabName}']"));
+                By.XPath($".//div[@class='detail-label ng-star-inserted']/span[contains(text(), '{tabName}')]"));
             tab.Click();
         }
 

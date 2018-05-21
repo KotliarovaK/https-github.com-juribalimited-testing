@@ -233,7 +233,7 @@ Scenario: EvergreenJnr_UsersList_CheckThatSaveButtonIsInactiveInCustomListCreati
 	When User clicks the Actions button
 	Then Save button is inactive for Custom list
 
-@Evergreen @Devices @EvergreenJnr_ListPanel @CustomListDisplay @DAS11394 @DAS11951 @DAS12152 @Delete_Newly_Created_List
+@Evergreen @Devices @EvergreenJnr_ListPanel @CustomListDisplay @DAS11394 @DAS11951 @DAS12152 @DAS12595 @Delete_Newly_Created_List
 Scenario: EvergreenJnr_DevicesList_CheckTheSortOrderIsSavedForExistingListAndNotDeletedAfterClickingResetButtonInColumnsMenu
 	When User clicks "Devices" on the left-hand menu
 	Then "Devices" list should be displayed to the user
@@ -273,7 +273,7 @@ Scenario: EvergreenJnr_DevicesList_CheckTheSortOrderIsSavedForExistingListAndNot
 	When User have reset all columns
 	Then data in table is sorted by 'Owner Display Name' column in ascending order
 
-@Evergreen @Devices @EvergreenJnr_ListPanel @CustomListDisplay @DAS11011 @DAS12152 @Delete_Newly_Created_List
+@Evergreen @Devices @EvergreenJnr_ListPanel @CustomListDisplay @DAS11011 @DAS12152 @DAS12595 @Delete_Newly_Created_List
 Scenario: EvergreenJnr_DevicesList_CheckThatNewlySavedListIsCreatedWithTheCorrectColumnsAndSortsAndTheSameRowsOfData
 	When User create static list with "Static List TestName" name on "Devices" page with following items
 	| ItemName        |
@@ -303,7 +303,7 @@ Scenario: EvergreenJnr_DevicesList_CheckThatNewlySavedListIsCreatedWithTheCorrec
 	Then "Devices" list should be displayed to the user
 	When User navigates to the "Static List TestName" list
 	Then "Static List TestName" list is displayed to user
-	And "2" rows are displayed in the agGrid
+	Then "2" rows are displayed in the agGrid
 	And data in table is sorted by 'Owner Display Name' column in ascending order
 	And ColumnName is added to the list
 	| ColumnName |
@@ -496,9 +496,7 @@ Scenario: EvergreenJnr_DevicesLists_CheckThatAnotherUserCanEditsAndSavesASharedL
 	Then List details panel is displayed to the user
 	When User select "Everyone can edit" sharing option
 	Then "Everyone can edit" sharing option is selected
-	#Login under the second user 
-	When User clicks the List Details button
-	And User clicks the Logout button
+	When User clicks the Logout button
 	Then User is logged out
 	When User clicks on the Login link
 	Then Login Page is displayed to the user
@@ -523,7 +521,6 @@ Scenario: EvergreenJnr_DevicesLists_CheckThatAnotherUserCanEditsAndSavesASharedL
 	And "Import" subcategory is selected in Column panel
 	When User update current custom list
 	And User clicks the Columns button
-	#Login under the first user 
 	And User clicks the Logout button
 	Then User is logged out
 	When User clicks on the Login link
@@ -566,8 +563,6 @@ Scenario: EvergreenJnr_DevicesLists_CheckThatAnotherUserCanEditsAndSavesASharedL
 	Then List details panel is displayed to the user
 	When User select "Everyone can edit" sharing option
 	Then "Everyone can edit" sharing option is selected
-	When User clicks the List Details button
-	#Login under the second user
 	When User clicks the Logout button
 	Then User is logged out
 	When User clicks on the Login link
@@ -586,7 +581,6 @@ Scenario: EvergreenJnr_DevicesLists_CheckThatAnotherUserCanEditsAndSavesASharedL
 	Then "City" filter is added to the list
 	When User update current custom list
 	And User clicks the Filters button
-	#Login under the first user 
 	And User clicks the Logout button
 	Then User is logged out
 	When User clicks on the Login link
@@ -621,9 +615,7 @@ Scenario: EvergreenJnr_DevicesLists_CheckThatAnotherUserCanEditsAndSavesASharedL
 	Then List details panel is displayed to the user
 	When User select "Everyone can edit" sharing option
 	Then "Everyone can edit" sharing option is selected
-	When User clicks the List Details button
-	#Login under the second user
-	And User clicks the Logout button
+	When User clicks the Logout button
 	Then User is logged out
 	When User clicks on the Login link
 	Then Login Page is displayed to the user
@@ -638,7 +630,6 @@ Scenario: EvergreenJnr_DevicesLists_CheckThatAnotherUserCanEditsAndSavesASharedL
 	When User click on 'Owner Display Name' column header
 	Then data in table is sorted by 'Owner Display Name' column in ascending order
 	When User update current custom list
-	#Login under the first user 
 	And User clicks the Logout button
 	Then User is logged out
 	When User clicks on the Login link
@@ -790,7 +781,7 @@ Examples:
 	| Users        | Domain           |
 	| Mailboxes    | Mailbox Platform |
 
-@Evergreen @AllLists @EvergreenJnr_ListPanel @CustomListDisplay @DAS10972 @Delete_Newly_Created_List
+@Evergreen @AllLists @EvergreenJnr_ListPanel @CustomListDisplay @DAS10972 @Delete_Newly_Created_List @Not_Run
 Scenario Outline: EvergreenJnr_AllListsLists_CheckThatTheEditListFunctionIsTriggeredOrHiddenForCustomListsAfterAddingOrRemovingColumns
 	When User clicks "<ListName>" on the left-hand menu
 	Then "<ListName>" list should be displayed to the user

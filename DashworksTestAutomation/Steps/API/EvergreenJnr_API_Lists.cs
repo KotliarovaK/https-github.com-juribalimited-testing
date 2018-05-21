@@ -5,6 +5,7 @@ using System.Text.RegularExpressions;
 using DashworksTestAutomation.DTO;
 using DashworksTestAutomation.DTO.RuntimeVariables;
 using DashworksTestAutomation.Extensions;
+using DashworksTestAutomation.Pages.Evergreen;
 using DashworksTestAutomation.Providers;
 using DashworksTestAutomation.Utils;
 using Newtonsoft.Json;
@@ -66,6 +67,13 @@ namespace DashworksTestAutomation.Steps.API
 
             //Add created list to context
             _listsDetails.AddList(listName, listId);
+            //Delete after fix DAS12578
+            var page = _driver.NowAt<CustomListElement>();
+            if (page.SaveAsDropdown.Displayed())
+            {
+                page.SaveAsDropdown.Click();
+                page.UpdateCurrentListButton.Click();
+            }
         }
 
         [When(@"User create static list with ""(.*)"" name on ""(.*)"" page with following items")]
