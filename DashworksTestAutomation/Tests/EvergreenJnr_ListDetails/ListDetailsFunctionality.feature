@@ -543,3 +543,46 @@ Scenario: EvergreenJnr_AllLists_CheckDisplayingListDeletionWarningMessageForTwoD
 	And User clicks the Filters button
 	Then Filters panel is displayed to the user
 	And "Application in list [List not found] or Application5 used on device" is displayed in added filter info
+
+@Evergreen @Users @EvergreenJnr_ListDetails @ListDetailsFunctionality @DAS12536 @Delete_Newly_Created_List
+Scenario: EvergreenJnr_Users_CheckThatListDeletionWarningMessageIsNotDisplayedAfterDeletingAnotherListForDynamicAndStaticLists
+	When User clicks "Users" on the left-hand menu
+	Then "Users" list should be displayed to the user
+	When User click on 'Username' column header
+	Then data in table is sorted by 'Username' column in ascending order
+	When User create dynamic list with "DynamicList2569" name on "Users" page
+	Then "DynamicList2569" list is displayed to user
+	When User navigates to the "All Users" list
+	When User create static list with "StaticList2584" name on "Users" page with following items
+	| ItemName            |
+	| 000F977AC8824FE39B8 |
+	| 002B5DC7D4D34D5C895 |
+	Then "StaticList2584" list is displayed to user
+	When User clicks the List Details button
+	Then List details panel is displayed to the user
+	When User clicks Delete List button on the List Details panel
+	When User navigates to the "DynamicList2569" list
+	Then no Warning message is displayed in the lists panel
+	When User clicks the List Details button
+	Then List details panel is displayed to the user
+	Then no Warning message is displayed in the list details panel
+
+@Evergreen @Users @EvergreenJnr_ListDetails @ListDetailsFunctionality @DAS12536 @Delete_Newly_Created_List
+Scenario: EvergreenJnr_Users_CheckThatListDeletionWarningMessageIsNotDisplayedAfterDeletingAnotherListForDynamicLists
+	When User clicks "Users" on the left-hand menu
+	Then "Users" list should be displayed to the user
+	When User click on 'Username' column header
+	Then data in table is sorted by 'Username' column in ascending order
+	When User create dynamic list with "DynamicList4587" name on "Users" page
+	Then "DynamicList4587" list is displayed to user
+	When User navigates to the "All Users" list
+	When User click on 'Domain' column header
+	Then data in table is sorted by 'Domain' column in ascending order
+	When User create dynamic list with "DynamicList4781" name on "Users" page
+	Then "DynamicList4781" list is displayed to user
+	When User removes custom list with "DynamicList4781" name
+	When User navigates to the "DynamicList4587" list
+	Then no Warning message is displayed in the lists panel
+	When User clicks the List Details button
+	Then List details panel is displayed to the user
+	Then no Warning message is displayed in the list details panel
