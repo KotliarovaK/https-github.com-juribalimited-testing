@@ -97,7 +97,7 @@ namespace DashworksTestAutomation.Pages.Evergreen
 
         public string GetSelectedValue(IWebElement dropdown)
         {
-            return dropdown.FindElement(By.XPath(".//div[contains(@class, 'action-panel')]//span[contains(@class, 'mat-select-value-text')]/span")).Text;
+            return dropdown.FindElement(By.XPath(".//span[contains(@class, 'mat-select-value-text')]/span")).Text;
         }
     }
 }
