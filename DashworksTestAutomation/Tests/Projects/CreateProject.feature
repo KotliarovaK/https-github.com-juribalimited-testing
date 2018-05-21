@@ -19,8 +19,18 @@ Scenario: Projects_CreateProject
 	When User navigate to Manage link
 	When User select "Manage Users" option in Management Console
 	Then User create a new Dashworks User
-	| Username | FullName     | Password | ConfirmPassword |
-	| AAATest  | TestUserName | 1234qwer | 1234qwer        |
+	| Username | FullName       | Password | ConfirmPassword |
+	| AAA0Test | TestUserName 0 | 1234qwer | 1234qwer        |
+	Then Success message is displayed
+	Then created User is displayed in the table
+	Then User create a new Dashworks User
+	| Username | FullName       | Password | ConfirmPassword |
+	| AAA1Test | TestUserName 1 | 1234qwer | 1234qwer        |
+	Then Success message is displayed
+	Then created User is displayed in the table
+	Then User create a new Dashworks User
+	| Username | FullName       | Password | ConfirmPassword |
+	| AAA2Test | TestUserName 2 | 1234qwer | 1234qwer        |
 	Then Success message is displayed
 	Then created User is displayed in the table
 	When User navigate to Dashworks User Site link
@@ -45,6 +55,58 @@ Scenario: Projects_CreateProject
 	Then Success message is displayed
 	When User clicks "Cancel" button
 	Then created Request Type is displayed in the table
+	Then User removes created Request Type
+	When User clicks "Create Request Type" button
+	When User create Request Type
+	| Name                | Description | 
+	| TestRequestTypeName | TestText 1  | 
+	Then Success message is displayed
+	When User clicks "Cancel" button
+	Then created Request Type is displayed in the table
+	Then User removes created Request Type
+	When User clicks "Create Request Type" button
+	When User create Request Type
+	| Name                | Description | 
+	| TestRequestTypeName | TestText 2  |
+	Then Success message is displayed
+	When User clicks "Cancel" button
+	Then created Request Type is displayed in the table
+	Then User removes created Request Type
+	When User clicks "Create Request Type" button
+	When User create Request Type
+	| Name                | Description |
+	| TestRequestTypeName | TestText 0  |
+	Then Success message is displayed
+	When User clicks "Cancel" button
+	Then created Request Type is displayed in the table
+	When User click on the created Request Type
+	Then User updates the Request Type page
+	| DefaultRequestType |
+	| true               |
+	Then Success message is displayed with "Request Type successfully updated" text
+	When User clicks "Cancel" button
+	Then created Request Type is a Default
+	When User clicks "Create Request Type" button
+	When User create Request Type
+	| Name                | Description | 
+	| TestRequestTypeName | TestText 1  |
+	Then Success message is displayed
+	When User clicks "Cancel" button
+	Then created Request Type is displayed in the table
+	When User click on the created Request Type
+	Then User updates the Request Type page
+	| DefaultRequestType |
+	| true               |
+	Then Success message is displayed with "Request Type successfully updated" text
+	When User clicks "Cancel" button
+	Then created Request Type is a Default
+	When User clicks "Create Request Type" button
+	When User create Request Type
+	| Name                | Description | 
+	| TestRequestTypeName | TestText 2  |
+	Then Success message is displayed
+	When User clicks "Cancel" button
+	Then created Request Type is displayed in the table
 	When User click on the created Request Type
 	Then User updates the Request Type page
 	| DefaultRequestType |
@@ -65,8 +127,18 @@ Scenario: Projects_CreateProject
 	Then "Manage Stages" page is displayed to the user
 	When User clicks "Create Stage" button
 	When User create Stage
-	| StageName     |
-	| TestStageName |
+	| StageName       |
+	| 0 TestStageName |
+	Then created Stage is displayed in the table
+	When User clicks "Create Stage" button
+	When User create Stage
+	| StageName       |
+	| 1 TestStageName |
+	Then created Stage is displayed in the table
+	When User clicks "Create Stage" button
+	When User create Stage
+	| StageName       |
+	| 2 TestStageName |
 	Then created Stage is displayed in the table
 	When User navigate to "Mail Templates" tab
 	Then "Manage Mail Templates" page is displayed to the user
@@ -235,6 +307,8 @@ Scenario: Projects_CreateProject
 	Then Success message is displayed with "Project successfully deleted" text
 	When User navigate to Manage link
 	When User select "Manage Users" option in Management Console
+	Then User removes created User
+	Then User removes created User
 	Then User removes created User
 	Then Success message is displayed
 	#Then selected User was removed

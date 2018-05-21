@@ -13,6 +13,15 @@ namespace DashworksTestAutomation.Pages.Projects
         [FindsBy(How = How.XPath, Using = ".//select[contains(@id, 'RequestType')]")]
         public IWebElement RequestType { get; set; }
 
+        public override List<By> GetPageIdentitySelectors()
+        {
+            return new List<By>
+            {
+                SelectorFor(this, p => p.Team),
+                SelectorFor(this, p => p.RequestType)
+            };
+        }
+
         [FindsBy(How = How.XPath, Using = ".//td[text()='Start Date']/..//button[@aria-label='Select Date']")]
         public IWebElement StartDateButton { get; set; }
 
@@ -69,14 +78,5 @@ namespace DashworksTestAutomation.Pages.Projects
 
         [FindsBy(How = How.XPath, Using = ".//td[contains(text(), 'Sunday')]/..//input[contains(@id,'Capacity_DayMaximum')]")]
         public IWebElement Sunday { get; set; }
-
-        public override List<By> GetPageIdentitySelectors()
-        {
-            return new List<By>
-            {
-                SelectorFor(this, p => p.Team),
-                SelectorFor(this, p => p.RequestType)
-            };
-        }
     }
 }

@@ -53,7 +53,7 @@ namespace DashworksTestAutomation.Steps
 
             page.CreateUserButton.Click();
 
-            _projectDto.ManageUsers = _manageUsers;
+            _projectDto.ManageUsers.Add(_manageUsers);
         }
 
         [Then(@"created User is displayed in the table")]
@@ -61,7 +61,7 @@ namespace DashworksTestAutomation.Steps
         {
             var page = _driver.NowAt<BaseElements>();
 
-            var user = page.GetTheCreatedElementInTableByName(_projectDto.ManageUsers.Username);
+            var user = page.GetTheCreatedElementInTableByName(_projectDto.ManageUsers.Last().Username);
             Assert.IsTrue(user.Displayed(), "Selected User is not displayed in the table");
         }
 
@@ -71,7 +71,7 @@ namespace DashworksTestAutomation.Steps
             var page = _driver.NowAt<BaseElements>();
 
             page.SelectUserForMembersByName("Admin").Click();
-            page.SelectUserForMembersByName(_projectDto.ManageUsers.Username).Click();
+            page.SelectUserForMembersByName(_projectDto.ManageUsers.Last().Username).Click();
         }
 
         [Then(@"User removes created User")]
@@ -79,7 +79,7 @@ namespace DashworksTestAutomation.Steps
         {
             var page = _driver.NowAt<BaseElements>();
 
-            page.GetDeleteButtonElementByName(_projectDto.ManageUsers.Username).Click();
+            page.GetDeleteButtonElementByName(_projectDto.ManageUsers.Last().Username).Click();
             _driver.AcceptAlert();
         }
 
@@ -88,7 +88,7 @@ namespace DashworksTestAutomation.Steps
         {
             var page = _driver.NowAt<BaseElements>();
 
-            var user = page.GetTheCreatedElementInTableByName(_projectDto.ManageUsers.Username);
+            var user = page.GetTheCreatedElementInTableByName(_projectDto.ManageUsers.Last().Username);
             Assert.IsFalse(user.Displayed(), "Selected User is displayed in the table");
         }
     }

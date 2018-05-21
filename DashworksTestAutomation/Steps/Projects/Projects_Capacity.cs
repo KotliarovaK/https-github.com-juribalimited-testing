@@ -1,4 +1,5 @@
-﻿using System.Linq;
+﻿using System;
+using System.Linq;
 using DashworksTestAutomation.DTO.Projects;
 using DashworksTestAutomation.DTO.Projects.Capacity;
 using DashworksTestAutomation.Extensions;
@@ -59,7 +60,8 @@ namespace DashworksTestAutomation.Steps.Projects
 
             page.Team.SelectboxSelect(_projectDto.TeamProperties.TeamName);
             _driver.WaitForDataLoading();
-            page.RequestType.SelectboxSelect(_projectDto.ReqestTypes.Last().Name);
+            _driver.WaitWhileControlIsNotDisplayed<Capacity_CapacityPage>(() => page.RequestType);
+            page.RequestType.SelectboxSelect(_projectDto.ReqestTypes[new Random().Next(0, 3)].Name);
             _driver.WaitForDataLoading();
             _driver.WaitWhileControlIsNotDisplayed<Capacity_CapacityPage>(() => page.Table);
             page.StartDate.SendKeys(_capacityDto.StartDate);

@@ -1,4 +1,5 @@
-﻿using System.Linq;
+﻿using System;
+using System.Linq;
 using DashworksTestAutomation.DTO.Projects;
 using DashworksTestAutomation.Extensions;
 using DashworksTestAutomation.Pages.Projects;
@@ -20,7 +21,7 @@ namespace DashworksTestAutomation.Steps.Projects
         private readonly RequestTypesDto _requestTypesDto;
         private readonly RequestType_DetailsDto _requestTypeDetailsDto;
         private readonly CategoryPropertiesDto _categoryPropertiesDto;
-        private readonly StagesPropertiesDto _stagesPropertiesDto;
+        private readonly StagePropertiesDto _stagePropertiesDto;
         private readonly TaskPropertiesDto _taskPropertiesDto;
         private readonly TaskProperties_DetailsDto _taskPropertiesDetailsDto;
         private readonly TaskProperties_EmailsDto _taskPropertiesEmailsDto;
@@ -30,14 +31,14 @@ namespace DashworksTestAutomation.Steps.Projects
         private readonly MailTemplatePropertiesDto _mailTemplatePropertiesDto;
         private readonly NewsDto _newsDto;
 
-        public Projects_CreateProject(RemoteWebDriver driver, ProjectDto projectDto, DetailsDto detailsDto, RequestTypesDto requestTypesDto, CategoryPropertiesDto categoryPropertiesDto, StagesPropertiesDto stagesPropertiesDto, TaskPropertiesDto taskPropertiesDto, TeamPropertiesDto teamPropertiesDto, GroupPropertiesDto groupPropertiesDto, MailTemplatePropertiesDto mailTemplatePropertiesDto, NewsDto newsDto, TaskProperties_DetailsDto taskPropertiesDetailsDto, RequestType_DetailsDto requestTypeDetailsDto, TaskProperties_ValuesDto taskPropertiesValuesDto, TaskProperties_EmailsDto taskPropertiesEmailsDto)
+        public Projects_CreateProject(RemoteWebDriver driver, ProjectDto projectDto, DetailsDto detailsDto, RequestTypesDto requestTypesDto, CategoryPropertiesDto categoryPropertiesDto, StagePropertiesDto stagePropertiesDto, TaskPropertiesDto taskPropertiesDto, TeamPropertiesDto teamPropertiesDto, GroupPropertiesDto groupPropertiesDto, MailTemplatePropertiesDto mailTemplatePropertiesDto, NewsDto newsDto, TaskProperties_DetailsDto taskPropertiesDetailsDto, RequestType_DetailsDto requestTypeDetailsDto, TaskProperties_ValuesDto taskPropertiesValuesDto, TaskProperties_EmailsDto taskPropertiesEmailsDto)
         {
             _driver = driver;
             _projectDto = projectDto;
             _detailsDto = detailsDto;
             _requestTypesDto = requestTypesDto;
             _categoryPropertiesDto = categoryPropertiesDto;
-            _stagesPropertiesDto = stagesPropertiesDto;
+            _stagePropertiesDto = stagePropertiesDto;
             _taskPropertiesDto = taskPropertiesDto;
             _teamPropertiesDto = teamPropertiesDto;
             _groupPropertiesDto = groupPropertiesDto;
@@ -205,14 +206,14 @@ namespace DashworksTestAutomation.Steps.Projects
         {
             var page = _driver.NowAt<StagePropertiesPage>();
 
-            table.CreateInstance<StagesPropertiesDto>().CopyPropertiesTo(_stagesPropertiesDto);
-            _stagesPropertiesDto.StageName += TestDataGenerator.RandomString();
+            table.CreateInstance<StagePropertiesDto>().CopyPropertiesTo(_stagePropertiesDto);
+            _stagePropertiesDto.StageName += TestDataGenerator.RandomString();
 
-            page.StageName.SendKeys(_stagesPropertiesDto.StageName);
+            page.StageName.SendKeys(_stagePropertiesDto.StageName);
 
             page.ConfirmCreateStageButton.Click();
 
-            _projectDto.Stages.Add(_stagesPropertiesDto);
+            _projectDto.Stages.Add(_stagePropertiesDto);
         }
 
         [When(@"User create Task")]
@@ -225,7 +226,7 @@ namespace DashworksTestAutomation.Steps.Projects
 
             page.Name.SendKeys(_taskPropertiesDto.Name);
             page.Help.SendKeys(_taskPropertiesDto.Help);
-            page.StageName.SelectboxSelect(_projectDto.Stages.Last().StageName);
+            page.StageName.SelectboxSelect(_projectDto.Stages[new Random().Next(0, 3)].StageName);
             page.TaskType.SelectboxSelect(_taskPropertiesDto.TaskType.GetValue());
             page.ValueType.SelectboxSelect(_taskPropertiesDto.ValueType.GetValue());
             page.ObjectType.SelectboxSelect(_taskPropertiesDto.ObjectType.GetValue());

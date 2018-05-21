@@ -16,8 +16,8 @@ namespace DashworksTestAutomation.DTO.Projects
 
     public enum ObjectTypeEnum
     {
-        User,
         Computer,
-        Application
+        Application,
+        User
     }
 }
