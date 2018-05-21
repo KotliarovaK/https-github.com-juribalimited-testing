@@ -619,6 +619,7 @@ namespace DashworksTestAutomation.Steps.Dashworks
         [When(@"User is remove filter by URL")]
         public void WhenUserIsRemoveFilterByURL()
         {
+            _driver.WaitForDataLoading();
             var currentUrl = _driver.Url;
             const string pattern = @"\$filter=(.*)\&";
             var originalPart = Regex.Match(currentUrl, pattern).Value;
@@ -632,6 +633,7 @@ namespace DashworksTestAutomation.Steps.Dashworks
         [When(@"User is remove part of filter URL")]
         public void WhenUserIsRemovePartOfFilterURL()
         {
+            _driver.WaitForDataLoading();
             var currentUrl = _driver.Url;
             const string pattern = @"\$filter=(.*)\&";
             var originalPart = Regex.Match(currentUrl, pattern).Groups[1].Value;
