@@ -148,6 +148,7 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_ListDetails
         [NUnit.Framework.CategoryAttribute("DAS10880")]
         [NUnit.Framework.CategoryAttribute("DAS12152")]
         [NUnit.Framework.CategoryAttribute("DAS12555")]
+        [NUnit.Framework.CategoryAttribute("DAS12602")]
         [NUnit.Framework.CategoryAttribute("Delete_Newly_Created_List")]
         [NUnit.Framework.CategoryAttribute("Not_Run")]
         [NUnit.Framework.TestCaseAttribute("Devices", "Hostname", new string[0])]
@@ -190,6 +191,7 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_ListDetails
                     "DAS10880",
                     "DAS12152",
                     "DAS12555",
+                    "DAS12602",
                     "Delete_Newly_Created_List",
                     "Not_Run"};
             if ((exampleTags != null))
@@ -300,6 +302,7 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_ListDetails
         [NUnit.Framework.CategoryAttribute("DAS10880")]
         [NUnit.Framework.CategoryAttribute("DAS12152")]
         [NUnit.Framework.CategoryAttribute("DAS12555")]
+        [NUnit.Framework.CategoryAttribute("DAS12602")]
         [NUnit.Framework.CategoryAttribute("Delete_Newly_Created_List")]
         [NUnit.Framework.CategoryAttribute("Not_Run")]
         [NUnit.Framework.TestCaseAttribute("Devices", "All Devices", new string[0])]
@@ -342,6 +345,7 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_ListDetails
                     "DAS10880",
                     "DAS12152",
                     "DAS12555",
+                    "DAS12602",
                     "Delete_Newly_Created_List",
                     "Not_Run"};
             if ((exampleTags != null))
@@ -787,7 +791,9 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_ListDetails
         [NUnit.Framework.CategoryAttribute("ListDetailsFunctionality")]
         [NUnit.Framework.CategoryAttribute("DAS12029")]
         [NUnit.Framework.CategoryAttribute("DAS12555")]
+        [NUnit.Framework.CategoryAttribute("DAS12602")]
         [NUnit.Framework.CategoryAttribute("Delete_Newly_Created_List")]
+        [NUnit.Framework.CategoryAttribute("Not_Run")]
         [NUnit.Framework.TestCaseAttribute("Devices", "All Devices", new string[0])]
         [NUnit.Framework.TestCaseAttribute("Users", "All Users", new string[0])]
         [NUnit.Framework.TestCaseAttribute("Applications", "All Applications", new string[0])]
@@ -827,7 +833,9 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_ListDetails
                     "ListDetailsFunctionality",
                     "DAS12029",
                     "DAS12555",
-                    "Delete_Newly_Created_List"};
+                    "DAS12602",
+                    "Delete_Newly_Created_List",
+                    "Not_Run"};
             if ((exampleTags != null))
             {
                 @__tags = System.Linq.Enumerable.ToArray(System.Linq.Enumerable.Concat(@__tags, exampleTags));
@@ -1846,22 +1854,22 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_ListDetails
         }
         
         [NUnit.Framework.TestAttribute()]
-        [NUnit.Framework.DescriptionAttribute("EvergreenJnr_ApplicationsLists_CheckThatProgressIndicatorIsDisplayedInsteadSaveBu" +
-            "ttonAfterListCreation")]
+        [NUnit.Framework.DescriptionAttribute("EvergreenJnr_ApplicationsLists_CheckThatTheSaveButtonIsNotDisplayedOnTheListPanel" +
+            "AfterListCreation")]
         [NUnit.Framework.CategoryAttribute("Evergreen")]
         [NUnit.Framework.CategoryAttribute("Applications")]
         [NUnit.Framework.CategoryAttribute("EvergreenJnr_ListDetails")]
         [NUnit.Framework.CategoryAttribute("ListDetailsFunctionality")]
         [NUnit.Framework.CategoryAttribute("DAS12580")]
         [NUnit.Framework.CategoryAttribute("Delete_Newly_Created_List")]
-        public virtual void EvergreenJnr_ApplicationsLists_CheckThatProgressIndicatorIsDisplayedInsteadSaveButtonAfterListCreation()
+        public virtual void EvergreenJnr_ApplicationsLists_CheckThatTheSaveButtonIsNotDisplayedOnTheListPanelAfterListCreation()
         {
             System.Exception lastException = null;
             for (int i = 0; (i <= 1); i = (i + 1))
             {
                 try
                 {
-                    this.EvergreenJnr_ApplicationsLists_CheckThatProgressIndicatorIsDisplayedInsteadSaveButtonAfterListCreationInternal();
+                    this.EvergreenJnr_ApplicationsLists_CheckThatTheSaveButtonIsNotDisplayedOnTheListPanelAfterListCreationInternal();
                     return;
                 }
                 catch (System.Exception exc)
@@ -1880,10 +1888,10 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_ListDetails
             }
         }
         
-        private void EvergreenJnr_ApplicationsLists_CheckThatProgressIndicatorIsDisplayedInsteadSaveButtonAfterListCreationInternal()
+        private void EvergreenJnr_ApplicationsLists_CheckThatTheSaveButtonIsNotDisplayedOnTheListPanelAfterListCreationInternal()
         {
-            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("EvergreenJnr_ApplicationsLists_CheckThatProgressIndicatorIsDisplayedInsteadSaveBu" +
-                    "ttonAfterListCreation", new string[] {
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("EvergreenJnr_ApplicationsLists_CheckThatTheSaveButtonIsNotDisplayedOnTheListPanel" +
+                    "AfterListCreation", new string[] {
                         "Evergreen",
                         "Applications",
                         "EvergreenJnr_ListDetails",

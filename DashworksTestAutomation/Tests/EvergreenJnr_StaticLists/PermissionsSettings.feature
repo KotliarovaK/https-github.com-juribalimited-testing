@@ -29,18 +29,16 @@ Scenario: EvergreenJnr_UsersList_CheckThatNotOwnerUsersDontHavePermissionsToUpda
 	Then Update list option is NOT available
 	And Save as a new list option is available
 
-@Evergreen @Devices @EvergreenJnr_StaticLists @PermissionsSettings @DAS11022 @DAS11553 @DAS10880 @DAS12152 @Delete_Newly_Created_List
+@Evergreen @Devices @EvergreenJnr_StaticLists @PermissionsSettings @DAS11022 @DAS11553 @DAS10880 @DAS12152 @DAS12602 @Delete_Newly_Created_List @Not_Run
 Scenario: EvergreenJnr_DevicesList_CheckThatAddRowsOptionsIsAvailableForSpecifiedPermissionLevel
 	When User create static list with "OwnerPrivate" name on "Devices" page with following items
 	| ItemName |
 	|          |
-	#Workaround for DAS-11570. Remove after fix
 	When User navigates to the "All Devices" list
 	Then "Devices" list should be displayed to the user
 	When User create static list with "NotOwnerSpecifiedAdmin" name on "Devices" page with following items
 	| ItemName |
 	|          |
-	#Workaround for DAS-11570. Remove after fix
 	When User clicks the List Details button
 	Then List details panel is displayed to the user
 	When User select "Specific users" sharing option
@@ -55,7 +53,6 @@ Scenario: EvergreenJnr_DevicesList_CheckThatAddRowsOptionsIsAvailableForSpecifie
 	When User create static list with "NotOwnerSpecifiedEdit" name on "Devices" page with following items
 	| ItemName |
 	|          |
-	#Workaround for DAS-11570. Remove after fix
 	When User clicks the List Details button
 	Then List details panel is displayed to the user
 	When User select "Specific users" sharing option
@@ -70,7 +67,6 @@ Scenario: EvergreenJnr_DevicesList_CheckThatAddRowsOptionsIsAvailableForSpecifie
 	When User create static list with "NotOwnerSpecifiedRead" name on "Devices" page with following items
 	| ItemName |
 	|          |
-	#Workaround for DAS-11570. Remove after fix
 	When User clicks the List Details button
 	Then List details panel is displayed to the user
 	When User select "Specific users" sharing option
@@ -85,7 +81,6 @@ Scenario: EvergreenJnr_DevicesList_CheckThatAddRowsOptionsIsAvailableForSpecifie
 	When User create static list with "NotOwnerEveryoneCanEdit" name on "Devices" page with following items
 	| ItemName |
 	|          |
-	#Workaround for DAS-11570. Remove after fix
 	When User clicks the List Details button
 	Then List details panel is displayed to the user
 	When User select "Everyone can edit" sharing option
@@ -96,7 +91,6 @@ Scenario: EvergreenJnr_DevicesList_CheckThatAddRowsOptionsIsAvailableForSpecifie
 	When User create static list with "NotOwnerEveryoneCanSee" name on "Devices" page with following items
 	| ItemName |
 	|          |
-	#Workaround for DAS-11570. Remove after fix
 	When User clicks the List Details button
 	Then List details panel is displayed to the user
 	When User select "Everyone can see" sharing option
