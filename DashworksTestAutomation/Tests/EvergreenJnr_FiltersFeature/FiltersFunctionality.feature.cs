@@ -1905,21 +1905,24 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_FiltersFeature
         }
         
         [NUnit.Framework.TestAttribute()]
-        [NUnit.Framework.DescriptionAttribute("EvergreenJnr_DevicesList_CheckThatContentIsDisplayedInTheEmailMigraCategoryColumn" +
-            "AfterApplyingIsNotNoneOperator")]
+        [NUnit.Framework.DescriptionAttribute("EvergreenJnr_AllLists_CheckThatContentIsDisplayedInTheAddedColumnAfterApplyingIsN" +
+            "otNoneOperator")]
         [NUnit.Framework.CategoryAttribute("Evergreen")]
-        [NUnit.Framework.CategoryAttribute("Devices")]
+        [NUnit.Framework.CategoryAttribute("AllLists")]
         [NUnit.Framework.CategoryAttribute("EvergreenJnr_FilterFeature")]
         [NUnit.Framework.CategoryAttribute("FilterFunctionality")]
         [NUnit.Framework.CategoryAttribute("DAS12537")]
-        public virtual void EvergreenJnr_DevicesList_CheckThatContentIsDisplayedInTheEmailMigraCategoryColumnAfterApplyingIsNotNoneOperator()
+        [NUnit.Framework.CategoryAttribute("DAS12579")]
+        [NUnit.Framework.TestCaseAttribute("Mailboxes", "EmailMigra: Category", "EmailMigra: Category", new string[0])]
+        [NUnit.Framework.TestCaseAttribute("Devices", "Windows7Mi: Category", "Windows7Mi: Category", new string[0])]
+        public virtual void EvergreenJnr_AllLists_CheckThatContentIsDisplayedInTheAddedColumnAfterApplyingIsNotNoneOperator(string listName, string filterName, string newlyAddedColumn, string[] exampleTags)
         {
             System.Exception lastException = null;
             for (int i = 0; (i <= 1); i = (i + 1))
             {
                 try
                 {
-                    this.EvergreenJnr_DevicesList_CheckThatContentIsDisplayedInTheEmailMigraCategoryColumnAfterApplyingIsNotNoneOperatorInternal();
+                    this.EvergreenJnr_AllLists_CheckThatContentIsDisplayedInTheAddedColumnAfterApplyingIsNotNoneOperatorInternal(listName, filterName, newlyAddedColumn, exampleTags);
                     return;
                 }
                 catch (System.Exception exc)
@@ -1938,31 +1941,37 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_FiltersFeature
             }
         }
         
-        private void EvergreenJnr_DevicesList_CheckThatContentIsDisplayedInTheEmailMigraCategoryColumnAfterApplyingIsNotNoneOperatorInternal()
+        private void EvergreenJnr_AllLists_CheckThatContentIsDisplayedInTheAddedColumnAfterApplyingIsNotNoneOperatorInternal(string listName, string filterName, string newlyAddedColumn, string[] exampleTags)
         {
-            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("EvergreenJnr_DevicesList_CheckThatContentIsDisplayedInTheEmailMigraCategoryColumn" +
-                    "AfterApplyingIsNotNoneOperator", new string[] {
-                        "Evergreen",
-                        "Devices",
-                        "EvergreenJnr_FilterFeature",
-                        "FilterFunctionality",
-                        "DAS12537"});
+            string[] @__tags = new string[] {
+                    "Evergreen",
+                    "AllLists",
+                    "EvergreenJnr_FilterFeature",
+                    "FilterFunctionality",
+                    "DAS12537",
+                    "DAS12579"};
+            if ((exampleTags != null))
+            {
+                @__tags = System.Linq.Enumerable.ToArray(System.Linq.Enumerable.Concat(@__tags, exampleTags));
+            }
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("EvergreenJnr_AllLists_CheckThatContentIsDisplayedInTheAddedColumnAfterApplyingIsN" +
+                    "otNoneOperator", @__tags);
             this.ScenarioSetup(scenarioInfo);
             this.FeatureBackground();
-            testRunner.When("User clicks \"Mailboxes\" on the left-hand menu", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-            testRunner.Then("\"Mailboxes\" list should be displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+            testRunner.When(string.Format("User clicks \"{0}\" on the left-hand menu", listName), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+            testRunner.Then(string.Format("\"{0}\" list should be displayed to the user", listName), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
             testRunner.When("User clicks the Filters button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
             testRunner.Then("Filters panel is displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
             TechTalk.SpecFlow.Table table33 = new TechTalk.SpecFlow.Table(new string[] {
                         "SelectedCheckboxes"});
             table33.AddRow(new string[] {
                         "None"});
-            testRunner.When("User add \"EmailMigra: Category\" filter where type is \"Does not equal\" with added " +
-                    "column and following checkboxes:", ((string)(null)), table33, "When ");
+            testRunner.When(string.Format("User add \"{0}\" filter where type is \"Does not equal\" with added column and follow" +
+                        "ing checkboxes:", filterName), ((string)(null)), table33, "When ");
             TechTalk.SpecFlow.Table table34 = new TechTalk.SpecFlow.Table(new string[] {
                         "ColumnName"});
             table34.AddRow(new string[] {
-                        "EmailMigra: Category"});
+                        string.Format("{0}", newlyAddedColumn)});
             testRunner.Then("Content is present in the newly added column", ((string)(null)), table34, "Then ");
             this.ScenarioCleanup();
         }
