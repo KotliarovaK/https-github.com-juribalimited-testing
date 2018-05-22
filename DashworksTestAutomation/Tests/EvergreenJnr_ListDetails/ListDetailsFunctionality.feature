@@ -610,3 +610,21 @@ Scenario: EvergreenJnr_Users_CheckThatListDetailsPanelIsDisplayedAfterSelectingM
 	And User clicks Manage in the list panel
 	Then "StaticList2845" list is displayed to user
 	And List details panel is displayed to the user
+
+@Evergreen @Applications @EvergreenJnr_ListDetails @ListDetailsFunctionality @DAS12580 @Delete_Newly_Created_List
+Scenario: EvergreenJnr_ApplicationsLists_CheckThatProgressIndicatorIsDisplayedInsteadSaveButtonAfterListCreation
+	When User clicks "Applications" on the left-hand menu
+	Then "Applications" list should be displayed to the user
+	When User clicks the Filters button
+	Then Filters panel is displayed to the user
+	When User add "Dashworks First Seen" filter where type is "Empty" with added column and following value:
+	| Values |
+	|        |
+	When User clicks the Columns button
+	Then Columns panel is displayed to the user
+	When User removes "Application" column by Column panel
+	And User removes "Vendor" column by Column panel
+	And User removes "Version" column by Column panel
+	And User create custom list with "TestList5478" name
+	Then Save and Cancel buttons are not displayed on the list panel
+	And "TestList5478" list is displayed to user
