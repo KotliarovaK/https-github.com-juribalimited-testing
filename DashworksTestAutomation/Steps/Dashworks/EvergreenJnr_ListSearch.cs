@@ -55,9 +55,9 @@ namespace DashworksTestAutomation.Steps.Dashworks
                 PerformSearch(row["SearchCriteria"]);
 
                 var page = _driver.NowAt<BaseDashboardPage>();
-                _driver.WaitWhileControlIsNotDisplayed<BaseDashboardPage>(() => page.NoResultsFoundMessage);
                 _driver.WaitForDataLoading();
-                Assert.AreEqual(message, page.NoResultsFoundMessage.Text, $"{message} is not displayed");
+                _driver.WaitWhileControlIsNotDisplayed<BaseDashboardPage>(() => page.NoResultsFoundMessage);
+                Assert.IsTrue(page.NoResultsFoundMessage.Displayed(), $"{message} is not displayed");
                 _driver.WaitForDataLoading();
             }
         }
