@@ -578,6 +578,7 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_Columns
         [NUnit.Framework.CategoryAttribute("DAS11768")]
         [NUnit.Framework.CategoryAttribute("DAS12152")]
         [NUnit.Framework.CategoryAttribute("DAS12553")]
+        [NUnit.Framework.CategoryAttribute("DAS12602")]
         [NUnit.Framework.CategoryAttribute("Delete_Newly_Created_List")]
         [NUnit.Framework.CategoryAttribute("Not_Run")]
         public virtual void EvergreenJnr_ApplicationsList_CheckTheColumnCategoriesUpdatesAfterAddingColumnForStaticLists()
@@ -617,6 +618,7 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_Columns
                         "DAS11768",
                         "DAS12152",
                         "DAS12553",
+                        "DAS12602",
                         "Delete_Newly_Created_List",
                         "Not_Run"});
             this.ScenarioSetup(scenarioInfo);
