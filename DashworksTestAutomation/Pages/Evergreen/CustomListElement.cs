@@ -91,6 +91,16 @@ namespace DashworksTestAutomation.Pages.Evergreen
                 By.XPath($".//span[@class='submenu-actions-list-name'][text()='{listName}']"));
         }
 
+        public IWebElement OpenSettingsByListName(string listName)
+        {
+            var listSettingsSelector =
+                By.XPath($".//ul[@class='submenu-actions-list ng-star-inserted']//span[text()='{listName}']//ancestor::li[@class='menu-show-on-hover ng-star-inserted']//div[@class='menu-wrapper']//i");
+            Driver.MouseHover(listSettingsSelector);
+            Driver.WaitForDataLoading();
+            Driver.WaitWhileControlIsNotDisplayed(listSettingsSelector);
+            return Driver.FindElement(listSettingsSelector);
+        }
+
         #region ListSettings
 
         [FindsBy(How = How.XPath, Using = ".//li[text()='Manage']")]

@@ -65,6 +65,13 @@ namespace DashworksTestAutomation.Steps.Dashworks
             listElement.SettingsButton.Click();
         }
 
+        [When(@"User clicks Settings button for ""(.*)"" list")]
+        public void WhenUserClicksSettingsButtonForList(string listName)
+        {
+            var page = _driver.NowAt<CustomListElement>();
+            page.OpenSettingsByListName(listName).Click();
+        }
+
         [Then(@"Settings panel is displayed to the user")]
         public void ThenSettingsPanelIsDisplayedToTheUser()
         {
