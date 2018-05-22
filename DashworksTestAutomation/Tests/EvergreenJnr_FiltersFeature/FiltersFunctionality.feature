@@ -495,15 +495,20 @@ Scenario: EvergreenJnr_DevicesList_CheckThatColumnIsEmptyWhenEqualNoneAndContain
 	| ColumnName           |
 	| Windows7Mi: Category |
 
-@Evergreen @Devices @EvergreenJnr_FilterFeature @FilterFunctionality @DAS12537
-Scenario: EvergreenJnr_DevicesList_CheckThatContentIsDisplayedInTheEmailMigraCategoryColumnAfterApplyingIsNotNoneOperator
-	When User clicks "Mailboxes" on the left-hand menu
-	Then "Mailboxes" list should be displayed to the user
+@Evergreen @AllLists @EvergreenJnr_FilterFeature @FilterFunctionality @DAS12537 @DAS12579
+Scenario Outline: EvergreenJnr_AllLists_CheckThatContentIsDisplayedInTheAddedColumnAfterApplyingIsNotNoneOperator
+	When User clicks "<ListName>" on the left-hand menu
+	Then "<ListName>" list should be displayed to the user
 	When User clicks the Filters button
 	Then Filters panel is displayed to the user
-	When User add "EmailMigra: Category" filter where type is "Does not equal" with added column and following checkboxes:
+	When User add "<FilterName>" filter where type is "Does not equal" with added column and following checkboxes:
 	| SelectedCheckboxes |
 	| None               |
 	Then Content is present in the newly added column
-	| ColumnName           |
-	| EmailMigra: Category |
+	| ColumnName         |
+	| <NewlyAddedColumn> |
+
+	Examples:
+	| ListName  | FilterName           | NewlyAddedColumn     |
+	| Mailboxes | EmailMigra: Category | EmailMigra: Category |
+	| Devices   | Windows7Mi: Category | Windows7Mi: Category |
