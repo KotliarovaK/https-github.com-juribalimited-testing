@@ -251,6 +251,7 @@ namespace DashworksTestAutomation.Steps.Dashworks
             filtersNames.AddFilter(filterName);
             var filter = new ListFilter(_driver, operatorValue, table);
             filter.Do();
+            _driver.WaitForDataLoading();
         }
 
         [When(@"User have created ""(.*)"" filter with SelectedList list and following Association:")]

@@ -107,6 +107,22 @@ namespace DashworksTestAutomation.Steps.Dashworks
             Logger.Write("List Details panel is visible");
         }
 
+        [When(@"User clicks Delete List button on the List Details panel")]
+        public void WhenUserClicksDeleteListButtonOnTheListDetailsPanel()
+        {
+            var listDetailsElement = _driver.NowAt<ListDetailsElement>();
+            listDetailsElement.RemoveListButton.Click();
+            listDetailsElement.DeleteButtonInTheWarningMessage.Click();
+        }
+
+        [Then(@"no Warning message is displayed in the list details panel")]
+        public void ThenNoWarningMessageIsDisplayedInTheListDetailsPanel()
+        {
+            var listDetailsElement = _driver.NowAt<ListDetailsElement>();
+            _driver.WaitWhileControlIsNotDisplayed<ListDetailsElement>(() => listDetailsElement.ListDetailsPanel);
+            Assert.IsFalse(listDetailsElement.WarningMessage.Displayed(), "Warning message is displayed in the list details panel");
+        }
+
         [Then(@"Dependants section is collapsed by default")]
         public void ThenDependantsSectionIsCollapsedByDefault()
         {
