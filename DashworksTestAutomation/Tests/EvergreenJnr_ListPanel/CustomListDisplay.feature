@@ -101,7 +101,7 @@ Scenario Outline: EvergreenJnr_AllList_CheckThatSearchDoesNotTriggerNewCustomLis
 	| Applications | Hen    | 5    | 1       |
 	| Mailboxes    | Henry  | 22   | 73      |
 
-@Evergreen @Devices @EvergreenJnr_ListPanel @CustomListDisplay @DAS11081 @DAS11951 @DAS12152 @Delete_Newly_Created_List
+@Evergreen @Devices @EvergreenJnr_ListPanel @CustomListDisplay @DAS11081 @DAS11951 @DAS12152 @DAS12602 @Delete_Newly_Created_List @Not_Run
 Scenario: EvergreenJnr_DevicesList_CheckThatNewListCreatedMessageForStaticListIsDisplayed
 	When User clicks "Devices" on the left-hand menu
 	Then "Devices" list should be displayed to the user
@@ -116,7 +116,7 @@ Scenario: EvergreenJnr_DevicesList_CheckThatNewListCreatedMessageForStaticListIs
 	And "New list created" message is displayed
 	And "UnbelievableTestList" list is displayed to user
 
-@Evergreen @Users @EvergreenJnr_ListPanel @CustomListDisplay @DAS11005 @DAS11489 @DAS12152 @DAS12194 @DAS12199 @DAS12220 @DAS12351 @Delete_Newly_Created_List
+@Evergreen @Users @EvergreenJnr_ListPanel @CustomListDisplay @DAS11005 @DAS11489 @DAS12152 @DAS12194 @DAS12199 @DAS12220 @DAS12351 @DAS12602 @Delete_Newly_Created_List @Not_Run
 Scenario: EvergreenJnr_UsersList_CheckThatListsIsDisplayedInAlphabeticalOrder
 	When User clicks "Users" on the left-hand menu
 	Then "Users" list should be displayed to the user
@@ -823,7 +823,7 @@ Examples:
 	| Users        | Username      | City            | $6BE000-SUDQ9614UVO8                                       | Cost Centre   | Department Name  |
 	| Mailboxes    | Email Address | Alias           | 000F977AC8824FE39B8@bclabs.local                           | Enabled       | Import           |
 
-@Evergreen @AllLists @EvergreenJnr_ListPanel @CustomListDisplay @DAS10998 @DAS10972 @Delete_Newly_Created_List
+@Evergreen @AllLists @EvergreenJnr_ListPanel @CustomListDisplay @DAS10998 @DAS10972 @DAS12602 @Delete_Newly_Created_List @Not_Run
 Scenario Outline: EvergreenJnr_AllList_CheckThatTheEditListFunctionIsHiddenAfterAddingChangingAndRemovingSearchCriteria
 	When User clicks "<ListName>" on the left-hand menu
 	Then "<ListName>" list should be displayed to the user
@@ -870,7 +870,7 @@ Scenario Outline: EvergreenJnr_AllList_CheckThatTheEditListFunctionIsHiddenAfter
 	| Applications | Application   | Adobe     | 40    | 1       |
 	| Mailboxes    | Email Address | bc-exch07 | 4,188 | 73      |
 
-@Evergreen @AllLists @EvergreenJnr_ListPanel @CustomListDisplay @DAS10972 @Delete_Newly_Created_List
+@Evergreen @AllLists @EvergreenJnr_ListPanel @CustomListDisplay @DAS10972 @DAS12602 @Delete_Newly_Created_List @Not_Run
 Scenario Outline: EvergreenJnr_AllListsLists_CheckThatTheEditListFunctionIsHiddenAfterChangingPinnedColumns
 	When User clicks "<ListName>" on the left-hand menu
 	Then "<ListName>" list should be displayed to the user

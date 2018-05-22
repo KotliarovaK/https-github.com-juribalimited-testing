@@ -27,7 +27,7 @@ Examples:
 	| Applications | Application   |
 	| Mailboxes    | Email Address |
 
-@Evergreen @AllLists @EvergreenJnr_ListDetails @ListDetailsFunctionality @DAS10880 @DAS12152 @DAS12555 @Delete_Newly_Created_List @Not_Run
+@Evergreen @AllLists @EvergreenJnr_ListDetails @ListDetailsFunctionality @DAS10880 @DAS12152 @DAS12555 @DAS12602 @Delete_Newly_Created_List @Not_Run
 Scenario Outline: EvergreenJnr_AllLists_CheckThatRenamingAListWorkingCorrectlyForStaticLists
 	When User clicks "<PageName>" on the left-hand menu
 	Then "<PageName>" list should be displayed to the user
@@ -77,7 +77,7 @@ Examples:
 	| Applications | Application   | All Applications |
 	| Mailboxes    | Email Address | All Mailboxes    |
 
-@Evergreen @AllLists @EvergreenJnr_ListDetails @ListDetailsFunctionality @DAS10880 @DAS12152 @DAS12555 @Delete_Newly_Created_List @Not_Run
+@Evergreen @AllLists @EvergreenJnr_ListDetails @ListDetailsFunctionality @DAS10880 @DAS12152 @DAS12555 @DAS12602 @Delete_Newly_Created_List @Not_Run
 Scenario Outline: EvergreenJnr_AllLists_CheckThatFavoriteAListWorkingCorrectlyForStaticLists
 	When User clicks "<PageName>" on the left-hand menu
 	Then "<PageName>" list should be displayed to the user
@@ -220,7 +220,7 @@ Scenario Outline: EvergreenJnr_AllLists_CheckThatNoAbilityToCreateTheSameNamedLi
 	| Applications | Application   | All Applications |
 	| Mailboxes    | Email Address | All Mailboxes    |
 
-@Evergreen @AllLists @EvergreenJnr_ListDetails @ListDetailsFunctionality @DAS12029 @DAS12555 @Delete_Newly_Created_List
+@Evergreen @AllLists @EvergreenJnr_ListDetails @ListDetailsFunctionality @DAS12029 @DAS12555 @DAS12602 @Delete_Newly_Created_List @Not_Run
 Scenario Outline: EvergreenJnr_AllLists_CheckThatNoAbilityToCreateTheSameNamedListsUsingTheSpaceCharacterForStaticLists
 	When User clicks "<PageName>" on the left-hand menu
 	Then "<PageName>" list should be displayed to the user
@@ -553,7 +553,7 @@ Scenario: EvergreenJnr_Users_CheckThatListDeletionWarningMessageIsNotDisplayedAf
 	When User create dynamic list with "DynamicList2569" name on "Users" page
 	Then "DynamicList2569" list is displayed to user
 	When User navigates to the "All Users" list
-	When User create static list with "StaticList2584" name on "Users" page with following items
+	And User create static list with "StaticList2584" name on "Users" page with following items
 	| ItemName            |
 	| 000F977AC8824FE39B8 |
 	| 002B5DC7D4D34D5C895 |
@@ -561,11 +561,11 @@ Scenario: EvergreenJnr_Users_CheckThatListDeletionWarningMessageIsNotDisplayedAf
 	When User clicks the List Details button
 	Then List details panel is displayed to the user
 	When User clicks Delete List button on the List Details panel
-	When User navigates to the "DynamicList2569" list
+	And User navigates to the "DynamicList2569" list
 	Then no Warning message is displayed in the lists panel
 	When User clicks the List Details button
 	Then List details panel is displayed to the user
-	Then no Warning message is displayed in the list details panel
+	And no Warning message is displayed in the list details panel
 
 @Evergreen @Users @EvergreenJnr_ListDetails @ListDetailsFunctionality @DAS12536 @Delete_Newly_Created_List
 Scenario: EvergreenJnr_Users_CheckThatListDeletionWarningMessageIsNotDisplayedAfterDeletingAnotherListForDynamicLists
@@ -576,13 +576,55 @@ Scenario: EvergreenJnr_Users_CheckThatListDeletionWarningMessageIsNotDisplayedAf
 	When User create dynamic list with "DynamicList4587" name on "Users" page
 	Then "DynamicList4587" list is displayed to user
 	When User navigates to the "All Users" list
-	When User click on 'Domain' column header
+	And User click on 'Domain' column header
 	Then data in table is sorted by 'Domain' column in ascending order
 	When User create dynamic list with "DynamicList4781" name on "Users" page
 	Then "DynamicList4781" list is displayed to user
 	When User removes custom list with "DynamicList4781" name
-	When User navigates to the "DynamicList4587" list
+	And User navigates to the "DynamicList4587" list
 	Then no Warning message is displayed in the lists panel
 	When User clicks the List Details button
 	Then List details panel is displayed to the user
-	Then no Warning message is displayed in the list details panel
+	And no Warning message is displayed in the list details panel
+
+@Evergreen @Users @EvergreenJnr_ListDetails @ListDetailsFunctionality @DAS12535 @Delete_Newly_Created_List
+Scenario: EvergreenJnr_Users_CheckThatListDetailsPanelIsDisplayedAfterSelectingManageFromListPanelMenu
+	When User clicks "Mailboxes" on the left-hand menu
+	Then "Mailboxes" list should be displayed to the user
+	When User click on 'Email Address' column header
+	When User create dynamic list with "DynamicList4557" name on "Mailboxes" page
+	Then "DynamicList4557" list is displayed to user
+	When User create static list with "StaticList2845" name on "Mailboxes" page with following items
+	| ItemName                         |
+	| 000F977AC8824FE39B8@bclabs.local |
+	| 002B5DC7D4D34D5C895@bclabs.local |
+	Then "StaticList2845" list is displayed to user
+	When User navigates to the "All Mailboxes" list
+	And User clicks Settings button for "DynamicList4557" list
+	And User clicks Manage in the list panel
+	Then "DynamicList4557" list is displayed to user
+	And List details panel is displayed to the user
+	When User navigates to the "StaticList2845" list
+	Then "StaticList2845" list is displayed to user
+	When User clicks Settings button in the list panel
+	And User clicks Manage in the list panel
+	Then "StaticList2845" list is displayed to user
+	And List details panel is displayed to the user
+
+@Evergreen @Applications @EvergreenJnr_ListDetails @ListDetailsFunctionality @DAS12580 @Delete_Newly_Created_List
+Scenario: EvergreenJnr_ApplicationsLists_CheckThatTheSaveButtonIsNotDisplayedOnTheListPanelAfterListCreation
+	When User clicks "Applications" on the left-hand menu
+	Then "Applications" list should be displayed to the user
+	When User clicks the Filters button
+	Then Filters panel is displayed to the user
+	When User add "Dashworks First Seen" filter where type is "Empty" with added column and following value:
+	| Values |
+	|        |
+	When User clicks the Columns button
+	Then Columns panel is displayed to the user
+	When User removes "Application" column by Column panel
+	And User removes "Vendor" column by Column panel
+	And User removes "Version" column by Column panel
+	And User create custom list with "TestList5478" name
+	Then Save and Cancel buttons are not displayed on the list panel
+	And "TestList5478" list is displayed to user
