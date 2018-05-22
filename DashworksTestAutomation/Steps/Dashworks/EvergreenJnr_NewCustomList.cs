@@ -271,8 +271,17 @@ namespace DashworksTestAutomation.Steps.Dashworks
         public void ThenMessageIsDisplayed(string message)
         {
             var listElement = _driver.NowAt<CustomListElement>();
+            _driver.WaitForDataLoading();
             _driver.WaitWhileControlIsNotDisplayed<CustomListElement>(() => listElement.SuccessCreateMessage);
             Assert.AreEqual(message, listElement.SuccessCreateMessage.Text, $"{message} is not displayed");
+        }
+
+        [Then(@"Save and Cancel buttons are not displayed on the list panel")]
+        public void ThenSaveAndCancelButtonsAreNotDisplayedOnTheListPanel()
+        {
+            var listElement = _driver.NowAt<CustomListElement>();
+            Assert.IsFalse(listElement.SaveButton.Displayed());
+            Assert.IsFalse(listElement.CancelButton.Displayed());
         }
 
         [Then(@"lists are sorted in alphabetical order")]
