@@ -168,10 +168,12 @@ namespace DashworksTestAutomation.Tests.Projects
             testRunner.When("User clicks \"Create Request Type\" button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
             TechTalk.SpecFlow.Table table6 = new TechTalk.SpecFlow.Table(new string[] {
                         "Name",
-                        "Description"});
+                        "Description",
+                        "ObjectTypeString"});
             table6.AddRow(new string[] {
                         "TestRequestTypeName",
-                        "TestText 0"});
+                        "TestText 0",
+                        "User"});
             testRunner.When("User create Request Type", ((string)(null)), table6, "When ");
             testRunner.Then("Success message is displayed", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
             testRunner.When("User clicks \"Cancel\" button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
@@ -180,10 +182,12 @@ namespace DashworksTestAutomation.Tests.Projects
             testRunner.When("User clicks \"Create Request Type\" button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
             TechTalk.SpecFlow.Table table7 = new TechTalk.SpecFlow.Table(new string[] {
                         "Name",
-                        "Description"});
+                        "Description",
+                        "ObjectTypeString"});
             table7.AddRow(new string[] {
                         "TestRequestTypeName",
-                        "TestText 1"});
+                        "TestText 1",
+                        "Application"});
             testRunner.When("User create Request Type", ((string)(null)), table7, "When ");
             testRunner.Then("Success message is displayed", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
             testRunner.When("User clicks \"Cancel\" button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
@@ -192,10 +196,12 @@ namespace DashworksTestAutomation.Tests.Projects
             testRunner.When("User clicks \"Create Request Type\" button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
             TechTalk.SpecFlow.Table table8 = new TechTalk.SpecFlow.Table(new string[] {
                         "Name",
-                        "Description"});
+                        "Description",
+                        "ObjectTypeString"});
             table8.AddRow(new string[] {
                         "TestRequestTypeName",
-                        "TestText 2"});
+                        "TestText 2",
+                        "Computer"});
             testRunner.When("User create Request Type", ((string)(null)), table8, "When ");
             testRunner.Then("Success message is displayed", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
             testRunner.When("User clicks \"Cancel\" button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
@@ -204,10 +210,12 @@ namespace DashworksTestAutomation.Tests.Projects
             testRunner.When("User clicks \"Create Request Type\" button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
             TechTalk.SpecFlow.Table table9 = new TechTalk.SpecFlow.Table(new string[] {
                         "Name",
-                        "Description"});
+                        "Description",
+                        "ObjectTypeString"});
             table9.AddRow(new string[] {
                         "TestRequestTypeName",
-                        "TestText 0"});
+                        "TestText 0",
+                        "User"});
             testRunner.When("User create Request Type", ((string)(null)), table9, "When ");
             testRunner.Then("Success message is displayed", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
             testRunner.When("User clicks \"Cancel\" button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
@@ -224,10 +232,12 @@ namespace DashworksTestAutomation.Tests.Projects
             testRunner.When("User clicks \"Create Request Type\" button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
             TechTalk.SpecFlow.Table table11 = new TechTalk.SpecFlow.Table(new string[] {
                         "Name",
-                        "Description"});
+                        "Description",
+                        "ObjectTypeString"});
             table11.AddRow(new string[] {
                         "TestRequestTypeName",
-                        "TestText 1"});
+                        "TestText 1",
+                        "Application"});
             testRunner.When("User create Request Type", ((string)(null)), table11, "When ");
             testRunner.Then("Success message is displayed", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
             testRunner.When("User clicks \"Cancel\" button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
@@ -244,10 +254,12 @@ namespace DashworksTestAutomation.Tests.Projects
             testRunner.When("User clicks \"Create Request Type\" button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
             TechTalk.SpecFlow.Table table13 = new TechTalk.SpecFlow.Table(new string[] {
                         "Name",
-                        "Description"});
+                        "Description",
+                        "ObjectTypeString"});
             table13.AddRow(new string[] {
                         "TestRequestTypeName",
-                        "TestText 2"});
+                        "TestText 2",
+                        "Computer"});
             testRunner.When("User create Request Type", ((string)(null)), table13, "When ");
             testRunner.Then("Success message is displayed", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
             testRunner.When("User clicks \"Cancel\" button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
@@ -689,8 +701,6 @@ namespace DashworksTestAutomation.Tests.Projects
             testRunner.Then("Success message is displayed with \"Project successfully deleted\" text", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
             testRunner.When("User navigate to Manage link", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
             testRunner.When("User select \"Manage Users\" option in Management Console", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-            testRunner.Then("User removes created User", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-            testRunner.Then("User removes created User", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
             testRunner.Then("User removes created User", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
             testRunner.Then("Success message is displayed", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
             this.ScenarioCleanup();

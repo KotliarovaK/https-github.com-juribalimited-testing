@@ -50,32 +50,32 @@ Scenario: Projects_CreateProject
 	Then "Manage Request Types" page is displayed to the user
 	When User clicks "Create Request Type" button
 	When User create Request Type
-	| Name                | Description |
-	| TestRequestTypeName | TestText 0  |
+	| Name                | Description | ObjectTypeString |
+	| TestRequestTypeName | TestText 0  | User             |
 	Then Success message is displayed
 	When User clicks "Cancel" button
 	Then created Request Type is displayed in the table
 	Then User removes created Request Type
 	When User clicks "Create Request Type" button
 	When User create Request Type
-	| Name                | Description | 
-	| TestRequestTypeName | TestText 1  | 
+	| Name                | Description | ObjectTypeString |
+	| TestRequestTypeName | TestText 1  | Application      |
 	Then Success message is displayed
 	When User clicks "Cancel" button
 	Then created Request Type is displayed in the table
 	Then User removes created Request Type
 	When User clicks "Create Request Type" button
 	When User create Request Type
-	| Name                | Description | 
-	| TestRequestTypeName | TestText 2  |
+	| Name                | Description | ObjectTypeString |
+	| TestRequestTypeName | TestText 2  | Computer         |
 	Then Success message is displayed
 	When User clicks "Cancel" button
 	Then created Request Type is displayed in the table
 	Then User removes created Request Type
 	When User clicks "Create Request Type" button
 	When User create Request Type
-	| Name                | Description |
-	| TestRequestTypeName | TestText 0  |
+	| Name                | Description | ObjectTypeString |
+	| TestRequestTypeName | TestText 0  | User             |
 	Then Success message is displayed
 	When User clicks "Cancel" button
 	Then created Request Type is displayed in the table
@@ -88,8 +88,8 @@ Scenario: Projects_CreateProject
 	Then created Request Type is a Default
 	When User clicks "Create Request Type" button
 	When User create Request Type
-	| Name                | Description | 
-	| TestRequestTypeName | TestText 1  |
+	| Name                | Description | ObjectTypeString |
+	| TestRequestTypeName | TestText 1  | Application      |
 	Then Success message is displayed
 	When User clicks "Cancel" button
 	Then created Request Type is displayed in the table
@@ -102,8 +102,8 @@ Scenario: Projects_CreateProject
 	Then created Request Type is a Default
 	When User clicks "Create Request Type" button
 	When User create Request Type
-	| Name                | Description | 
-	| TestRequestTypeName | TestText 2  |
+	| Name                | Description | ObjectTypeString |
+	| TestRequestTypeName | TestText 2  | Computer         |
 	Then Success message is displayed
 	When User clicks "Cancel" button
 	Then created Request Type is displayed in the table
@@ -298,6 +298,24 @@ Scenario: Projects_CreateProject
 	Then User removes created Request Type
 	#Then selected Request Type was removed
 	Then Success message is displayed with "Request Type successfully deleted" text
+	#When User click on the "[Default (Application)]" Request Type
+	#Then User updates the Request Type page
+	#| DefaultRequestType |
+	#| true               |
+	#Then Success message is displayed with "Request Type successfully updated" text
+	#When User clicks "Cancel" button
+	#Then User removes created Request Type
+	##Then selected Request Type was removed
+	#Then Success message is displayed with "Request Type successfully deleted" text
+	#When User click on the "[Default (User)]" Request Type
+	#Then User updates the Request Type page
+	#| DefaultRequestType |
+	#| true               |
+	#Then Success message is displayed with "Request Type successfully updated" text
+	#When User clicks "Cancel" button
+	#Then User removes created Request Type
+	##Then selected Request Type was removed
+	#Then Success message is displayed with "Request Type successfully deleted" text
 	When User navigate to "Mail Templates" tab
 	Then User removes created Mail Template
 	#Then selected Mail Template was removed
@@ -308,7 +326,11 @@ Scenario: Projects_CreateProject
 	When User navigate to Manage link
 	When User select "Manage Users" option in Management Console
 	Then User removes created User
-	Then User removes created User
-	Then User removes created User
-	Then Success message is displayed
 	#Then selected User was removed
+	Then Success message is displayed
+	#Then User removes created User
+	##Then selected User was removed
+	#Then Success message is displayed
+	#Then User removes created User
+	##Then selected User was removed
+	#Then Success message is displayed

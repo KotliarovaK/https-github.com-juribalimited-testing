@@ -6,12 +6,8 @@ namespace DashworksTestAutomation.DTO.Projects
     {
         public string Name { get; set; }
         public string Description { get; set; }
+        public string ObjectTypeString { get; set; }
         public ObjectTypeEnum ObjectType;
-
-        public RequestTypesDto()
-        {
-            ObjectType = ObjectTypeEnum.Computer;
-        }
     }
 
     public enum ObjectTypeEnum

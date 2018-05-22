@@ -143,8 +143,8 @@ namespace DashworksTestAutomation.Steps.Projects
         {
             var page = _driver.NowAt<RequestTypePropertiesPage>();
 
-
             table.CreateInstance<RequestTypesDto>().CopyPropertiesTo(_requestTypesDto);
+            _requestTypesDto.ObjectType = (ObjectTypeEnum) Enum.Parse(typeof(ObjectTypeEnum), _requestTypesDto.ObjectTypeString);
             _requestTypesDto.Name += TestDataGenerator.RandomString();
 
             page.Name.SendKeys(_requestTypesDto.Name);

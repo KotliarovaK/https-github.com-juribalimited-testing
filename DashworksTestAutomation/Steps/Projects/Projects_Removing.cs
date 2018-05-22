@@ -14,13 +14,11 @@ namespace DashworksTestAutomation.Steps.Projects
     {
         private readonly RemoteWebDriver _driver;
         private readonly ProjectDto _projectDto;
-        private readonly TeamName _teamName;
 
-        public Projects_Removing(RemoteWebDriver driver, ProjectDto projectDto, TeamName teamName)
+        public Projects_Removing(RemoteWebDriver driver, ProjectDto projectDto)
         {
             _driver = driver;
             _projectDto = projectDto;
-            _teamName = teamName;
         }
 
         [Then(@"User removes ""(.*)"" Request Type")]
@@ -69,7 +67,8 @@ namespace DashworksTestAutomation.Steps.Projects
         {
             var page = _driver.NowAt<BaseElements>();
 
-            page.GetDeleteStageButtonElementByName(_projectDto.Stages.Last().StageName).Click();
+            var t = _projectDto.Stages.Last().StageName;
+            page.GetDeleteStageButtonElementByName(t).Click();
             _driver.AcceptAlert();
         }
 
@@ -126,7 +125,7 @@ namespace DashworksTestAutomation.Steps.Projects
         {
             var page = _driver.NowAt<BaseElements>();
 
-            page.GetDeleteButtonElementByName(_projectDto.GroupProperties.First().GroupName).Click();
+            page.GetDeleteButtonElementByName(_projectDto.GroupProperties.Last().GroupName).Click();
             page.DeleteGroupButton.Click();
             _driver.AcceptAlert();
         }
@@ -167,7 +166,8 @@ namespace DashworksTestAutomation.Steps.Projects
         {
             var page = _driver.NowAt<BaseElements>();
 
-            var team = page.GetTheCreatedElementInTableByName(_projectDto.TeamProperties.TeamName);
+            var selectedTeamName = _projectDto.TeamProperties.TeamName;
+            var team = page.GetTheCreatedElementInTableByName(selectedTeamName);
             Assert.IsFalse(team.Displayed(), "Selected Team is displayed in the table");
         }
 
@@ -176,7 +176,8 @@ namespace DashworksTestAutomation.Steps.Projects
         {
             var page = _driver.NowAt<BaseElements>();
 
-            var group = page.GetTheCreatedElementInTableByName(_projectDto.GroupProperties.First().GroupName);
+            var selectedGroupName = _projectDto.GroupProperties.LastOrDefault().GroupName;
+            var group = page.GetTheCreatedElementInTableByName(selectedGroupName);
             Assert.IsFalse(group.Displayed(), "Selected Group is displayed in the table");
         }
 
@@ -185,7 +186,8 @@ namespace DashworksTestAutomation.Steps.Projects
         {
             var page = _driver.NowAt<BaseElements>();
 
-            var group = page.GetTheCreatedElementInTableByName(_projectDto.Tasks.Name);
+            var selectedTaskName = _projectDto.Tasks.Name;
+            var group = page.GetTheCreatedElementInTableByName(selectedTaskName);
             Assert.IsFalse(group.Displayed(), "Selected Task is displayed in the table");
         }
 
@@ -194,7 +196,8 @@ namespace DashworksTestAutomation.Steps.Projects
         {
             var page = _driver.NowAt<BaseElements>();
 
-            var group = page.GetTheCreatedElementInTableByName(_projectDto.Stages.Last().StageName);
+            var selectedStageName = _projectDto.Stages.Last().StageName;
+            var group = page.GetTheCreatedElementInTableByName(selectedStageName);
             Assert.IsFalse(group.Displayed(), "Selected Stage is displayed in the table");
         }
 
@@ -203,7 +206,8 @@ namespace DashworksTestAutomation.Steps.Projects
         {
             var page = _driver.NowAt<BaseElements>();
 
-            var group = page.GetTheCreatedElementInTableByName(_projectDto.Categories.Name);
+            var selectedCtegoryName = _projectDto.Categories.Name;
+            var group = page.GetTheCreatedElementInTableByName(selectedCtegoryName);
             Assert.IsFalse(group.Displayed(), "Selected Category is displayed in the table");
         }
 
@@ -212,7 +216,8 @@ namespace DashworksTestAutomation.Steps.Projects
         {
             var page = _driver.NowAt<BaseElements>();
 
-            var group = page.GetTheCreatedElementInTableByName(_projectDto.ReqestTypes.Last().Name);
+            var selectedRequestTypeName = _projectDto.ReqestTypes.Last().Name;
+            var group = page.GetTheCreatedElementInTableByName(selectedRequestTypeName);
             Assert.IsFalse(group.Displayed(), "Selected Request Type is displayed in the table");
         }
 
@@ -221,7 +226,8 @@ namespace DashworksTestAutomation.Steps.Projects
         {
             var page = _driver.NowAt<BaseElements>();
 
-            var group = page.GetTheCreatedElementInTableByName(_projectDto.MailTemplateProperties.Name);
+            var selectedMailTemplateName = _projectDto.MailTemplateProperties.Name;
+            var group = page.GetTheCreatedElementInTableByName(selectedMailTemplateName);
             Assert.IsFalse(group.Displayed(), "Selected Mail Template is displayed in the table");
         }
 
