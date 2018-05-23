@@ -22,3 +22,5 @@ Scenario: EvergreenJnr_GlobalSearch_CheckThatErrorMessageIsNotDisplayedAfterTypi
 	Then "No results found" message is displayed below Global Search field
 	When User type "___ab " in Global Search Field
 	Then Search results are displayed below Global Search field
+	When User type "admin" in Global Search Field and presses Enter key
+	Then list of results is displayed to the user
