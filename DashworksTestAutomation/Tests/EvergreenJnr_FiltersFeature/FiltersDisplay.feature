@@ -784,7 +784,7 @@ Scenario: EvergreenJnr_DevicesList_CheckThatMultipleFilterCriteriaToApplicationN
 	And "(Application Name ~ (adobe, microsoft) ASSOCIATION = (installed on device))" text is displayed in filter container
 
 
-@Evergreen @Devices @Evergreen_FiltersFeature @FiltersDisplay @DAS11468 @DAS12152 @DAS12602 @Delete_Newly_Created_List @Not_Run
+@Evergreen @Devices @Evergreen_FiltersFeature @FiltersDisplay @DAS11468 @DAS12152 @DAS12602 @Delete_Newly_Created_List
 Scenario: EvergreenJnr_DevicesList_CheckThat500ErrorIsNotDisplayedForStaticListAfterRemovingAssociationsList
 	When User clicks "Applications" on the left-hand menu
 	Then "Applications" list should be displayed to the user
@@ -1055,7 +1055,7 @@ Scenario: EvergreenJnr_AllLists_CheckThatTextInTheFilterPanelDisplaysTheCurrentL
 	When User click Edit button for "Application" filter
 	Then "ApplicationList2" list is displayed for Saved List filter
 
-@Evergreen @Devices @Evergreen_FiltersFeature @FiltersDisplay @DAS12520
+@Evergreen @Devices @Evergreen_FiltersFeature @FiltersDisplay @DAS12520 @Delete_Newly_Created_List
 Scenario: EvergreenJnr_DevicesLists_CheckThatOSBranchFilterWithEquaEmptyValueIsDisplayedCorrectlyInTheFilterPanel
 	When User clicks "Devices" on the left-hand menu
 	Then "Devices" list should be displayed to the user
