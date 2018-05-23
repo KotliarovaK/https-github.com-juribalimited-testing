@@ -1054,3 +1054,20 @@ Scenario: EvergreenJnr_AllLists_CheckThatTextInTheFilterPanelDisplaysTheCurrentL
 	Then "Application in list [List not found] used on device" is displayed in added filter info
 	When User click Edit button for "Application" filter
 	Then "ApplicationList2" list is displayed for Saved List filter
+
+@Evergreen @Devices @Evergreen_FiltersFeature @FiltersDisplay @DAS12520
+Scenario: EvergreenJnr_DevicesLists_CheckThatOSBranchFilterWithEquaEmptyValueIsDisplayedCorrectlyInTheFilterPanel
+	When User clicks "Devices" on the left-hand menu
+	Then "Devices" list should be displayed to the user
+	When User clicks the Filters button
+	Then Filters panel is displayed to the user
+	When User add "OS Branch" filter where type is "Equals" with added column and following checkboxes:
+	| SelectedCheckboxes |
+	| Empty              |
+	When User create custom list with "TestList5433" name
+	#When User create dynamic list with "TestList5433" name on "Devices" page
+	When User navigates to the "All Devices" list
+	When User navigates to the "TestList5433" list
+	When User clicks the Filters button
+	Then Filters panel is displayed to the user
+	Then "OS Branch is Empty" is displayed in added filter info
