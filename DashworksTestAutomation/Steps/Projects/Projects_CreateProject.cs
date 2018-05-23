@@ -222,6 +222,7 @@ namespace DashworksTestAutomation.Steps.Projects
             var page = _driver.NowAt<TaskPropertiesPage>();
 
             table.CreateInstance<TaskPropertiesDto>().CopyPropertiesTo(_taskPropertiesDto);
+            _taskPropertiesDto.ObjectType = (TaskObjectTypeEnum) Enum.Parse(typeof(TaskObjectTypeEnum), _taskPropertiesDto.ObjectTypeString);
             _taskPropertiesDto.Name += TestDataGenerator.RandomString();
 
             page.Name.SendKeys(_taskPropertiesDto.Name);
@@ -338,7 +339,7 @@ namespace DashworksTestAutomation.Steps.Projects
 
             page.ConfirmCreateTeamButton.Click();
 
-            _projectDto.TeamProperties = _teamPropertiesDto;
+            _projectDto.TeamProperties.Add(_teamPropertiesDto);
         }
 
         [When(@"User create Group")]
@@ -351,11 +352,11 @@ namespace DashworksTestAutomation.Steps.Projects
             _projectDto.GroupProperties.Add(_groupPropertiesDto);
 
             page.GroupName.SendKeys(_groupPropertiesDto.GroupName);
-            page.OwnedByTeam.SelectboxSelect(_projectDto.TeamProperties.TeamName);
+            page.OwnedByTeam.SelectboxSelect(_projectDto.TeamProperties.Last().TeamName);
 
             page.ConfirmCreateGroupButton.Click();
 
-            _groupPropertiesDto.OwnedByTeam = _projectDto.TeamProperties.TeamName;
+            _groupPropertiesDto.OwnedByTeam = _projectDto.TeamProperties.Last().TeamName;
         }
 
         [When(@"User create Mail Template")]
@@ -396,7 +397,7 @@ namespace DashworksTestAutomation.Steps.Projects
         {
             var page = _driver.NowAt<BaseElements>();
 
-            var team = page.GetTheCreatedElementInTableByName(_projectDto.TeamProperties.TeamName);
+            var team = page.GetTheCreatedElementInTableByName(_projectDto.TeamProperties.Last().TeamName);
             Assert.IsTrue(team.Displayed(), "Selected Team is not displayed in the table");
         }
 
@@ -431,9 +432,9 @@ namespace DashworksTestAutomation.Steps.Projects
         public void ThenCreatedRequestTypeIsDisplayedInTheTable()
         {
             var page = _driver.NowAt<BaseElements>();
+
             _driver.WaitForDataLoading();
-            var requestType = page.GetTheCreatedRequestTypeInTableByName(_projectDto.ReqestTypes.Last().Name);
-            Assert.IsTrue(requestType.Displayed(), "Selected Request Type is not displayed in the table");
+            Assert.IsTrue(page.GetTheCreatedRequestTypeInTableByName(_projectDto.ReqestTypes.Last().Name).Displayed(), "Selected Request Type is not displayed in the table");
         }
 
         [Then(@"created Category is displayed in the table")]
@@ -441,17 +442,15 @@ namespace DashworksTestAutomation.Steps.Projects
         {
             var page = _driver.NowAt<BaseElements>();
 
-            var category = page.GetTheCreatedCategoryInTableByName(_projectDto.Categories.Name);
-            Assert.IsTrue(category.Displayed, "Selected Category is not displayed in the table");
+            Assert.IsTrue(page.GetTheCreatedCategoryInTableByName(_projectDto.Categories.Name).Displayed, "Selected Category is not displayed in the table");
         }
 
         [Then(@"created Stage is displayed in the table")]
         public void ThenCreatedStageIsDisplayedInTheTable()
         {
             var page = _driver.NowAt<BaseElements>();
-
-            var stage = page.GetTheCreatedElementInTableByName(_projectDto.Stages.Last().StageName);
-            Assert.IsTrue(stage.Displayed(), "Selected Stage is not displayed in the table");
+            
+            Assert.IsTrue(page.GetTheCreatedElementInTableByName(_projectDto.Stages.Last().StageName).Displayed(), "Selected Stage is not displayed in the table");
         }
 
         [Then(@"created Request Type is a Default")]
@@ -468,8 +467,8 @@ namespace DashworksTestAutomation.Steps.Projects
         {
             var page = _driver.NowAt<BaseElements>();
 
-            var groupsInTeam = _projectDto.GroupProperties.Count(x => x.OwnedByTeam.Equals(_projectDto.TeamProperties.TeamName));
-            var groups = page.GetGroupsCountByTeamName(_projectDto.TeamProperties.TeamName);
+            var groupsInTeam = _projectDto.GroupProperties.Count(x => x.OwnedByTeam.Equals(_projectDto.TeamProperties.Last().TeamName));
+            var groups = page.GetGroupsCountByTeamName(_projectDto.TeamProperties.Last().TeamName);
 
             Assert.AreEqual(groups, groupsInTeam, "Number of groups is incorrect");
         }
@@ -479,7 +478,7 @@ namespace DashworksTestAutomation.Steps.Projects
         {
             var page = _driver.NowAt<BaseElements>();
 
-            var members = page.GetMembersCountByTeamName(_projectDto.TeamProperties.TeamName);
+            var members = page.GetMembersCountByTeamName(_projectDto.TeamProperties.Last().TeamName);
             Assert.AreEqual(members, membersInTeam, "Number of members is incorrect");
         }
     }

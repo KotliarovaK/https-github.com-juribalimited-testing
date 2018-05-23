@@ -9,6 +9,7 @@ namespace DashworksTestAutomation.DTO.Projects
         public string Help { get; set; }
         public TaskTypeEnum TaskType;
         public ValueTypeEnum ValueType;
+        public string ObjectTypeString { get; set; }
         public TaskObjectTypeEnum ObjectType;
         public TaskValuesTemplateEnum TaskValuesTemplate;
         public bool TaskValuesTemplateCheckbox { get; set; }
@@ -17,7 +18,6 @@ namespace DashworksTestAutomation.DTO.Projects
         {
             TaskType = TaskTypeEnum.Normal;
             ValueType = ValueTypeEnum.Radiobutton;
-            ObjectType = TaskObjectTypeEnum.User;
             TaskValuesTemplate = EnumExtensions.GetRandomValue<TaskValuesTemplateEnum>();
         }
     }

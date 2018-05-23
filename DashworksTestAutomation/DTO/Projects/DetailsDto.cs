@@ -5,9 +5,6 @@ namespace DashworksTestAutomation.DTO.Projects
 {
     public class DetailsDto
     {
-        public string ProjectName { get; set; }
-        public string ProjectShortName { get; set; }
-        public string ProjectDescription { get; set; }
         public DefaultReadinessForOnboardedApplicationsEnum DefaultReadinessForOnboardedApplications;
         public DefaultValueForShowLinkedObjectsEnum DefaultValueForShowLinkedObjects;
         public DefaultViewForProjectObjectApplicationsTab1Enum DefaultViewForProjectObjectApplicationsTab1;
@@ -19,8 +16,6 @@ namespace DashworksTestAutomation.DTO.Projects
         public bool InstalledApplications { get; set; }
         public bool EntitledApplications { get; set; }
         public OnboardUsedApplicationsByAssociationToEnum OnboardUsedApplicationsByAssociationTo;
-        public string MasterHtmlEmailTemplate { get; set; }
-        public string Attachments { get; set; }
         public string TaskEmailCcEmailAddress { get; set; }
         public string TaskEmailBccEmailAddress { get; set; }
         public string StartDate { get; set; }

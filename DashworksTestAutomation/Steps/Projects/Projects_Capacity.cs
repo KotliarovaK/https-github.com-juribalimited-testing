@@ -58,7 +58,7 @@ namespace DashworksTestAutomation.Steps.Projects
 
             table.CreateInstance<Capacity_CapacityDto>().CopyPropertiesTo(_capacityDto);
 
-            page.Team.SelectboxSelect(_projectDto.TeamProperties.TeamName);
+            page.Team.SelectboxSelect(_projectDto.TeamProperties.Last().TeamName);
             _driver.WaitForDataLoading();
             _driver.WaitWhileControlIsNotDisplayed<Capacity_CapacityPage>(() => page.RequestType);
             page.RequestType.SelectboxSelect(_projectDto.ReqestTypes[new Random().Next(0, 3)].Name);
