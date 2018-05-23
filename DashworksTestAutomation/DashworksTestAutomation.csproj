@@ -159,8 +159,8 @@
       <HintPath>..\packages\SpecFlow.CustomPlugin.2.1.0\lib\net45\TechTalk.SpecFlow.Utils.dll</HintPath>
       <Private>True</Private>
     </Reference>
-    <Reference Include="WebDriver">
-      <HintPath>..\packages\Selenium.WebDriver.3.10.0\lib\net45\WebDriver.dll</HintPath>
+    <Reference Include="WebDriver, Version=3.12.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Selenium.WebDriver.3.12.0\lib\net45\WebDriver.dll</HintPath>
       <Private>True</Private>
     </Reference>
     <Reference Include="WebDriver.Support">
