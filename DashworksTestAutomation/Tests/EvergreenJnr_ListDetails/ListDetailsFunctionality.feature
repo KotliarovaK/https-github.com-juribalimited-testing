@@ -368,7 +368,7 @@ Scenario: EvergreenJnr_AllLists_CheckThatListDoesNotExistErrorWhenViewingDepende
 	Then "Devices with Adobe" list is displayed to user
 	And "This list does not exist or you do not have access to it" message is not displayed in the lists panel
 
-@Evergreen @AllLists @EvergreenJnr_ListDetails @ListDetailsFunctionality @DAS10713 @DAS12192 @Delete_Newly_Created_List @Not_Run
+@Evergreen @AllLists @EvergreenJnr_ListDetails @ListDetailsFunctionality @DAS10713 @DAS12192 @Delete_Newly_Created_List
 Scenario: EvergreenJnr_AllLists_CheckThatListPanelDoesNotExistErrorWhenViewingDependentList
 	When User clicks "Applications" on the left-hand menu
 	Then "Applications" list should be displayed to the user
