@@ -164,15 +164,15 @@ namespace DashworksTestAutomation.Steps.Dashworks
                     break;
 
                 case "Users":
-                    Assert.IsEmpty(content.GetColumnContent("Username").First());
+                    Assert.AreEqual("Empty", content.GetColumnContent("Username").First());
                     break;
 
                 case "Applications":
-                    Assert.IsEmpty(content.GetColumnContent("Application").First());
+                    Assert.AreEqual("Empty", content.GetColumnContent("Application").First());
                     break;
 
                 case "Mailboxes":
-                    Assert.IsEmpty(content.GetColumnContent("Email Address").First());
+                    Assert.AreEqual("Empty", content.GetColumnContent("Email Address").First());
                     break;
 
                 default:

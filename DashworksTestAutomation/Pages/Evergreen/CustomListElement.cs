@@ -37,7 +37,7 @@ namespace DashworksTestAutomation.Pages.Evergreen
                 ".//i[@class='menu-trigger material-icons mat-settings mat-18 pull-right settings-icon settings-area']")]
         public IWebElement SettingsButton { get; set; }
 
-        [FindsBy(How = How.XPath, Using = ".//div[@class='menu']")]
+        [FindsBy(How = How.XPath, Using = ".//div[@class='menu ng-star-inserted']")]
         public IWebElement SettingsPanel { get; set; }
 
         [FindsBy(How = How.XPath, Using = ".//div[@class='inline-success ng-star-inserted']")]
@@ -89,6 +89,16 @@ namespace DashworksTestAutomation.Pages.Evergreen
         {
             return Driver.IsElementDisplayed(
                 By.XPath($".//span[@class='submenu-actions-list-name'][text()='{listName}']"));
+        }
+
+        public IWebElement OpenSettingsByListName(string listName)
+        {
+            var listSettingsSelector =
+                By.XPath($".//ul[@class='submenu-actions-list ng-star-inserted']//span[text()='{listName}']//ancestor::li[@class='menu-show-on-hover ng-star-inserted']//div[@class='menu-wrapper']//i");
+            Driver.MouseHover(listSettingsSelector);
+            Driver.WaitForDataLoading();
+            Driver.WaitWhileControlIsNotDisplayed(listSettingsSelector);
+            return Driver.FindElement(listSettingsSelector);
         }
 
         #region ListSettings
