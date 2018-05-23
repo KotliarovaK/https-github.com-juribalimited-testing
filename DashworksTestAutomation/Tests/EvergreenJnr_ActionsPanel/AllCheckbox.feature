@@ -31,7 +31,7 @@ Scenario: EvergreenJnr_UsersList_SelectAllCheckboxStatusCheckAfterSearch
 	Then The number of rows selected matches the number of rows of the main object list
 	And Select All selectbox is checked
 
-@Evergreen @AllLists @Evergreen_ActionsPanel @AllCheckbox @DAS10775 @DAS10656 @DAS12602 @Not_Run
+@Evergreen @AllLists @Evergreen_ActionsPanel @AllCheckbox @DAS10775 @DAS10656 @DAS12602
 Scenario Outline: EvergreenJnr_AllLists_CheckThatSelectAllCheckboxStatusAfterClosingActionPanel
 	When User clicks "<PageName>" on the left-hand menu
 	Then "<PageName>" list should be displayed to the user
@@ -48,7 +48,7 @@ Examples:
 	| Applications |
 	| Mailboxes    |
 
-@Evergreen @Devices @Evergreen_ActionsPanel @AllCheckbox @DAS10772 @DAS10656 @DAS11664 @DAS12602 @Not_Run
+@Evergreen @Devices @Evergreen_ActionsPanel @AllCheckbox @DAS10772 @DAS10656 @DAS11664 @DAS12602
 Scenario: EvergreenJnr_DevicesList_SearchWithinAllRows
 	When User clicks "Devices" on the left-hand menu
 	Then "Devices" list should be displayed to the user
@@ -63,7 +63,7 @@ Scenario: EvergreenJnr_DevicesList_SearchWithinAllRows
 	And Clearing the agGrid Search Box
 	Then "17,225" rows are displayed in the agGrid
 
-@Evergreen @AllLists @Evergreen_ActionsPanel @AllCheckbox @DAS10656 @DAS12602 @Not_Run
+@Evergreen @AllLists @Evergreen_ActionsPanel @AllCheckbox @DAS10656 @DAS12602
 Scenario Outline: EvergreenJnr_AllLists_SelectAllChecboxMainFunctionalityTest
 	When User clicks "<PageName>" on the left-hand menu
 	Then "<PageName>" list should be displayed to the user
@@ -90,7 +90,7 @@ Examples:
 	| Applications | 2223              | Application   | "WPF/E" (codename) Community Technology Preview (Feb 2007) | 2222                           |
 	| Mailboxes    | 14784             | Email Address | 000F977AC8824FE39B8@bclabs.local                           | 14783                          |
 
-@Evergreen @AllLists @Evergreen_ActionsPanel @AllCheckbox @DAS10656 @DAS12602 @Not_Run
+@Evergreen @AllLists @Evergreen_ActionsPanel @AllCheckbox @DAS10656 @DAS12602
 Scenario: EvergreenJnr_UsersList_CheckThatSelectAllWorksCorrectlyForFilteredListsWithAdditionalColumn
 	When User add following columns using URL to the "Users" page:
 	| ColumnName |
@@ -110,7 +110,7 @@ Scenario: EvergreenJnr_UsersList_CheckThatSelectAllWorksCorrectlyForFilteredList
 	When User select all rows
 	Then "41339" selected rows are displayed in the Actions panel
 
-@Evergreen @Mailboxes @Evergreen_ActionsPanel @AllCheckbox @DAS11894 @DAS12602 @Not_Run
+@Evergreen @Mailboxes @Evergreen_ActionsPanel @AllCheckbox @DAS11894 @DAS12602
 Scenario: EvergreenJnr_MailboxesList_CheckThatAllCheckboxesAreCheckedAfterAFirstClick
 	When User clicks "Mailboxes" on the left-hand menu
 	Then "Mailboxes" list should be displayed to the user

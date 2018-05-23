@@ -121,7 +121,7 @@ Scenario: EvergreenJnr_DevicesList_CheckThatActionsDetailsColumnsFiltersButtonsA
 	When User click User Notifications button
 	Then Notifications message is displayed correctly
 
-@Evergreen @AllLists @EvergreenJnr_BaseDashboardPage @BaseDashboardPage @DAS10972 @DAS12602 @Delete_Newly_Created_List @Not_Run
+@Evergreen @AllLists @EvergreenJnr_BaseDashboardPage @BaseDashboardPage @DAS10972 @DAS12602 @Delete_Newly_Created_List
 Scenario Outline: EvergreenJnr_AllList_CheckThatEditListFunctionIsAvailableAfterSortingColumns
 	When User clicks "<ListName>" on the left-hand menu
 	Then "<ListName>" list should be displayed to the user
