@@ -702,7 +702,7 @@ Scenario: EvergreenJnr_DevicesList_CheckThatFilterCategoriesAreClosedAfterCleari
 	When User clears search textbox in Filters panel
 	Then Maximize buttons are displayed for all category in Filters panel
 
-@Evergreen @Devices @Evergreen_FiltersFeature @FiltersDisplay @DAS11552 @DAS12207 @DAS12639 @Not_Run
+@Evergreen @Devices @Evergreen_FiltersFeature @FiltersDisplay @DAS11552 @DAS12207 @DAS12639
 Scenario: EvergreenJnr_DevicesList_CheckThatRelevantDataSetBeDisplayedAfterEditingFilter
 	When User clicks "Devices" on the left-hand menu
 	Then "Devices" list should be displayed to the user
