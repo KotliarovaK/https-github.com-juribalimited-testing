@@ -174,11 +174,12 @@ Scenario Outline: EvergreenJnr_AllLists_CheckThatFilterIsRestoredCorrectlyAfterL
 	And User click content from "<ColumnName>" column
 	Then User click back button in the browser
 	Then "<RowsCount>" rows are displayed in the agGrid
+	When User clicks the Filters button
 	Then "<Text>" is displayed in added filter info
 
 Examples: 
 	| ListName     | FilterName                      | FilterValue    | RowsCount | ColumnName    | ObjectName                                | Text                                       |
-	| Devices      | Babel(Engl: Category            | None           | 62        | Hostname      | 01COJATLYVAR7A6                           | Babel(Engl: Category is None               |
+	| Devices      | Babel(Engl: Category            | None           | 17,225    | Hostname      | 01COJATLYVAR7A6                           | Babel(Engl: Category is None               |
 	| Devices      | Barry'sUse: In Scope            | FALSE          | 15,896    | Hostname      | 00BDM1JUR8IF419                           | Barry'sUse: In Scope is false              |
 	| Devices      | ComputerSc: Request Type        | Request Type A | 132       | Hostname      | 46DIQRWG3BM6K9Z                           | ComputerSc: Request Type is Request Type A |
 	| Applications | Havoc(BigD: Hide from End Users | UNKNOWN        | 1,156     | Application   | Microsoft Silverlight 2 SDK (2.0.31005.0) | Havoc(BigD: Hide from End Users is Unknown |
@@ -199,6 +200,7 @@ Scenario Outline: EvergreenJnr_AllLists_CheckThatFilterIsRestoredCorrectlyAfterL
 	And User click content from "<ColumnName>" column
 	Then User click back button in the browser
 	Then "<RowsCount>" rows are displayed in the agGrid
+	When User clicks the Filters button
 	Then "<Text>" is displayed in added filter info
 
 Examples: 
@@ -221,6 +223,7 @@ Scenario: EvergreenJnr_ApplicationsList_CheckThatFilterIsRestoredCorrectlyAfterL
 	And User click content from "Application" column
 	Then User click back button in the browser
 	Then "5" rows are displayed in the agGrid
+	When User clicks the Filters button
 	Then "Application is Microsoft Office 97, Professional Edition" is displayed in added filter info
 
 @Evergreen @Applications @EvergreenJnr_FilterFeature @FilterFunctionality @DAS10977 @Delete_Newly_Created_List
@@ -243,6 +246,7 @@ Scenario: EvergreenJnr_ApplicationsList_CheckThatFilterIsRestoredCorrectlyAfterL
 	And User click content from "Hostname" column
 	Then User click back button in the browser
 	Then "16,565" rows are displayed in the agGrid
+	When User clicks the Filters button
 	Then "Application in list TestListD75CD3 not used on device" is displayed in added filter info
 
 @Evergreen @Devices @EvergreenJnr_FilterFeature @FilterFunctionality @DAS11560
@@ -490,3 +494,21 @@ Scenario: EvergreenJnr_DevicesList_CheckThatColumnIsEmptyWhenEqualNoneAndContain
 	Then Content is present in the newly added column
 	| ColumnName           |
 	| Windows7Mi: Category |
+
+@Evergreen @AllLists @EvergreenJnr_FilterFeature @FilterFunctionality @DAS12537 @DAS12579
+Scenario Outline: EvergreenJnr_AllLists_CheckThatContentIsDisplayedInTheAddedColumnAfterApplyingIsNotNoneOperator
+	When User clicks "<ListName>" on the left-hand menu
+	Then "<ListName>" list should be displayed to the user
+	When User clicks the Filters button
+	Then Filters panel is displayed to the user
+	When User add "<FilterName>" filter where type is "Does not equal" with added column and following checkboxes:
+	| SelectedCheckboxes |
+	| None               |
+	Then Content is present in the newly added column
+	| ColumnName         |
+	| <NewlyAddedColumn> |
+
+	Examples:
+	| ListName  | FilterName           | NewlyAddedColumn     |
+	| Mailboxes | EmailMigra: Category | EmailMigra: Category |
+	| Devices   | Windows7Mi: Category | Windows7Mi: Category |

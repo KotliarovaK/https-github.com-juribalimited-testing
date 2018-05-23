@@ -6,14 +6,13 @@ Background: Pre-Conditions
 	Given User is logged in to the Evergreen
 	Then Evergreen Dashboards page should be displayed to the user
 
-@Evergreen @AllLists @EvergreenJnr_ListDetails @ListDetailsFunctionality @DAS10880 @DAS11951 @Delete_Newly_Created_List
+@Evergreen @AllLists @EvergreenJnr_ListDetails @ListDetailsFunctionality @DAS10880 @DAS11951 @Delete_Newly_Created_List @Not_Run
 Scenario Outline: EvergreenJnr_AllLists_CheckThatRenamingAListWorkingCorrectlyForDynamicLists
 	When User clicks "<PageName>" on the left-hand menu
 	Then "<PageName>" list should be displayed to the user
 	When User click on '<Columnname>' column header
 	Then data in table is sorted by '<Columnname>' column in ascending order
 	When User create dynamic list with "TestList12CA0D" name on "<PageName>" page
-	#Workaround for DAS-11570. Remove after fix
 	When User clicks the List Details button
 	Then List details panel is displayed to the user
 	When User changes list name to "RenamedList"
@@ -28,7 +27,7 @@ Examples:
 	| Applications | Application   |
 	| Mailboxes    | Email Address |
 
-@Evergreen @AllLists @EvergreenJnr_ListDetails @ListDetailsFunctionality @DAS10880 @DAS12152 @Delete_Newly_Created_List
+@Evergreen @AllLists @EvergreenJnr_ListDetails @ListDetailsFunctionality @DAS10880 @DAS12152 @DAS12555 @DAS12602 @Delete_Newly_Created_List @Not_Run
 Scenario Outline: EvergreenJnr_AllLists_CheckThatRenamingAListWorkingCorrectlyForStaticLists
 	When User clicks "<PageName>" on the left-hand menu
 	Then "<PageName>" list should be displayed to the user
@@ -36,8 +35,6 @@ Scenario Outline: EvergreenJnr_AllLists_CheckThatRenamingAListWorkingCorrectlyFo
 	Then Actions panel is displayed to the user
 	When User select all rows
 	And User create static list with "Static List TestName" name
-	#Workaround for DAS-11570. Remove after fix
-	#And User navigates to the "Static List TestName" list
 	When User clicks the List Details button
 	Then List details panel is displayed to the user
 	When User changes list name to "RenamedList"
@@ -59,8 +56,6 @@ Scenario Outline: EvergreenJnr_AllLists_CheckThatFavoriteAListWorkingCorrectlyFo
 	When User click on '<Columnname>' column header
 	Then data in table is sorted by '<Columnname>' column in ascending order
 	When User create dynamic list with "TestList80EA23" name on "<PageName>" page
-	#Workaround for DAS-11570. Remove after fix
-	#And User navigates to the "TestList80EA23" list
 	When User clicks the List Details button
 	Then List details panel is displayed to the user
 	When User mark list as favorite
@@ -82,7 +77,7 @@ Examples:
 	| Applications | Application   | All Applications |
 	| Mailboxes    | Email Address | All Mailboxes    |
 
-@Evergreen @AllLists @EvergreenJnr_ListDetails @ListDetailsFunctionality @DAS10880 @DAS12152 @Delete_Newly_Created_List
+@Evergreen @AllLists @EvergreenJnr_ListDetails @ListDetailsFunctionality @DAS10880 @DAS12152 @DAS12555 @DAS12602 @Delete_Newly_Created_List @Not_Run
 Scenario Outline: EvergreenJnr_AllLists_CheckThatFavoriteAListWorkingCorrectlyForStaticLists
 	When User clicks "<PageName>" on the left-hand menu
 	Then "<PageName>" list should be displayed to the user
@@ -90,8 +85,6 @@ Scenario Outline: EvergreenJnr_AllLists_CheckThatFavoriteAListWorkingCorrectlyFo
 	Then Actions panel is displayed to the user
 	When User select all rows
 	And User create static list with "Static List TestName36" name
-	#Workaround for DAS-11570. Remove after fix
-	#And User navigates to the "Static List TestName" list
 	When User clicks the List Details button
 	Then List details panel is displayed to the user
 	When User mark list as favorite
@@ -133,7 +126,6 @@ Scenario Outline: EvergreenJnr_AllLists_CheckDefaultOptionsInListDetailsForDynam
 	When User click on '<Columnname>' column header
 	Then data in table is sorted by '<Columnname>' column in ascending order
 	When User create dynamic list with "TestListCED2D6" name on "<PageName>" page
-	#Workaround for DAS-11570. Remove after fix
 	When User clicks the List Details button
 	Then List details panel is displayed to the user
 	Then "TestListCED2D6" name is displayed in list details panel
@@ -153,8 +145,6 @@ Scenario Outline: EvergreenJnr_AllLists_CheckDefaultOptionsInListDetailsForStati
 	When User create static list with "Static List TestName" name on "<PageName>" page with following items
 	| ItemName |
 	|          |
-	#Workaround for DAS-11570. Remove after fix
-	#And User navigates to the "Static List TestName" list
 	When User clicks the List Details button
 	Then List details panel is displayed to the user
 	Then "Static List TestName" name is displayed in list details panel
@@ -230,7 +220,7 @@ Scenario Outline: EvergreenJnr_AllLists_CheckThatNoAbilityToCreateTheSameNamedLi
 	| Applications | Application   | All Applications |
 	| Mailboxes    | Email Address | All Mailboxes    |
 
-@Evergreen @AllLists @EvergreenJnr_ListDetails @ListDetailsFunctionality @DAS12029 @Delete_Newly_Created_List
+@Evergreen @AllLists @EvergreenJnr_ListDetails @ListDetailsFunctionality @DAS12029 @DAS12555 @DAS12602 @Delete_Newly_Created_List @Not_Run
 Scenario Outline: EvergreenJnr_AllLists_CheckThatNoAbilityToCreateTheSameNamedListsUsingTheSpaceCharacterForStaticLists
 	When User clicks "<PageName>" on the left-hand menu
 	Then "<PageName>" list should be displayed to the user
@@ -335,7 +325,7 @@ Scenario: EvergreenJnr_AllLists_CheckThatTwoDependencyAreDisplayedInTheDependent
 	Then "NewDevice" list is displayed in the Dependants section
 	And "Device1" list is displayed in the Dependants section
 
-@Evergreen @AllLists @EvergreenJnr_ListDetails @ListDetailsFunctionality @DAS10713 @DAS12169 @DAS12286 @DAS12192 @Delete_Newly_Created_List
+@Evergreen @AllLists @EvergreenJnr_ListDetails @ListDetailsFunctionality @DAS10713 @DAS12169 @DAS12286 @DAS12192 @DAS12623 @Delete_Newly_Created_List @Not_Run
 Scenario: EvergreenJnr_AllLists_CheckThatListDoesNotExistErrorWhenViewingDependentList
 	When User clicks "Applications" on the left-hand menu
 	Then "Applications" list should be displayed to the user
@@ -447,7 +437,7 @@ Scenario: EvergreenJnr_AllLists_CheckDisplayingListDeletionWarningMessageForDepe
 	Then "Application in list [List not found] used on device" is displayed in added filter info
 	And message 'No devices found' is displayed to the user
 
-@Evergreen @AllLists @EvergreenJnr_ListDetails @ListDetailsFunctionality @DAS12075 @Delete_Newly_Created_List
+@Evergreen @AllLists @EvergreenJnr_ListDetails @ListDetailsFunctionality @DAS12075 @DAS12578 @Delete_Newly_Created_List
 Scenario: EvergreenJnr_AllLists_CheckDisplayingListDeletionWarningMessageForDependenciesStaticLists
 	When User create static list with "Application2" name on "Applications" page with following items
 	| ItemName                  |
@@ -479,7 +469,7 @@ Scenario: EvergreenJnr_AllLists_CheckDisplayingListDeletionWarningMessageForDepe
 	And "Application in list [List not found] used on device" is displayed in added filter info
 	And message 'No devices found' is displayed to the user
 
-@Evergreen @AllLists @EvergreenJnr_ListDetails @ListDetailsFunctionality @DAS12075 @Delete_Newly_Created_List
+@Evergreen @AllLists @EvergreenJnr_ListDetails @ListDetailsFunctionality @DAS12075 @DAS12578 @Delete_Newly_Created_List
 Scenario: EvergreenJnr_AllLists_CheckDisplayingListDeletionWarningMessageForDependenciesLists
 	When User create static list with "Application3" name on "Applications" page with following items
 	| ItemName                                        |
@@ -519,7 +509,7 @@ Scenario: EvergreenJnr_AllLists_CheckDisplayingListDeletionWarningMessageForDepe
 	And "Application in list [List not found] used on device" is displayed in added filter info
 	And message 'No devices found' is displayed to the user
 
-@Evergreen @AllLists @EvergreenJnr_ListDetails @ListDetailsFunctionality @DAS12075 @Delete_Newly_Created_List
+@Evergreen @AllLists @EvergreenJnr_ListDetails @ListDetailsFunctionality @DAS12075 @DAS12578 @Delete_Newly_Created_List
 Scenario: EvergreenJnr_AllLists_CheckDisplayingListDeletionWarningMessageForTwoDependenciesLists
 	When User clicks "Applications" on the left-hand menu
 	Then "Applications" list should be displayed to the user
@@ -553,3 +543,88 @@ Scenario: EvergreenJnr_AllLists_CheckDisplayingListDeletionWarningMessageForTwoD
 	And User clicks the Filters button
 	Then Filters panel is displayed to the user
 	And "Application in list [List not found] or Application5 used on device" is displayed in added filter info
+
+@Evergreen @Users @EvergreenJnr_ListDetails @ListDetailsFunctionality @DAS12536 @Delete_Newly_Created_List
+Scenario: EvergreenJnr_Users_CheckThatListDeletionWarningMessageIsNotDisplayedAfterDeletingAnotherListForDynamicAndStaticLists
+	When User clicks "Users" on the left-hand menu
+	Then "Users" list should be displayed to the user
+	When User click on 'Username' column header
+	Then data in table is sorted by 'Username' column in ascending order
+	When User create dynamic list with "DynamicList2569" name on "Users" page
+	Then "DynamicList2569" list is displayed to user
+	When User navigates to the "All Users" list
+	And User create static list with "StaticList2584" name on "Users" page with following items
+	| ItemName            |
+	| 000F977AC8824FE39B8 |
+	| 002B5DC7D4D34D5C895 |
+	Then "StaticList2584" list is displayed to user
+	When User clicks the List Details button
+	Then List details panel is displayed to the user
+	When User clicks Delete List button on the List Details panel
+	And User navigates to the "DynamicList2569" list
+	Then no Warning message is displayed in the lists panel
+	When User clicks the List Details button
+	Then List details panel is displayed to the user
+	And no Warning message is displayed in the list details panel
+
+@Evergreen @Users @EvergreenJnr_ListDetails @ListDetailsFunctionality @DAS12536 @Delete_Newly_Created_List
+Scenario: EvergreenJnr_Users_CheckThatListDeletionWarningMessageIsNotDisplayedAfterDeletingAnotherListForDynamicLists
+	When User clicks "Users" on the left-hand menu
+	Then "Users" list should be displayed to the user
+	When User click on 'Username' column header
+	Then data in table is sorted by 'Username' column in ascending order
+	When User create dynamic list with "DynamicList4587" name on "Users" page
+	Then "DynamicList4587" list is displayed to user
+	When User navigates to the "All Users" list
+	And User click on 'Domain' column header
+	Then data in table is sorted by 'Domain' column in ascending order
+	When User create dynamic list with "DynamicList4781" name on "Users" page
+	Then "DynamicList4781" list is displayed to user
+	When User removes custom list with "DynamicList4781" name
+	And User navigates to the "DynamicList4587" list
+	Then no Warning message is displayed in the lists panel
+	When User clicks the List Details button
+	Then List details panel is displayed to the user
+	And no Warning message is displayed in the list details panel
+
+@Evergreen @Users @EvergreenJnr_ListDetails @ListDetailsFunctionality @DAS12535 @Delete_Newly_Created_List
+Scenario: EvergreenJnr_Users_CheckThatListDetailsPanelIsDisplayedAfterSelectingManageFromListPanelMenu
+	When User clicks "Mailboxes" on the left-hand menu
+	Then "Mailboxes" list should be displayed to the user
+	When User click on 'Email Address' column header
+	When User create dynamic list with "DynamicList4557" name on "Mailboxes" page
+	Then "DynamicList4557" list is displayed to user
+	When User create static list with "StaticList2845" name on "Mailboxes" page with following items
+	| ItemName                         |
+	| 000F977AC8824FE39B8@bclabs.local |
+	| 002B5DC7D4D34D5C895@bclabs.local |
+	Then "StaticList2845" list is displayed to user
+	When User navigates to the "All Mailboxes" list
+	And User clicks Settings button for "DynamicList4557" list
+	And User clicks Manage in the list panel
+	Then "DynamicList4557" list is displayed to user
+	And List details panel is displayed to the user
+	When User navigates to the "StaticList2845" list
+	Then "StaticList2845" list is displayed to user
+	When User clicks Settings button in the list panel
+	And User clicks Manage in the list panel
+	Then "StaticList2845" list is displayed to user
+	And List details panel is displayed to the user
+
+@Evergreen @Applications @EvergreenJnr_ListDetails @ListDetailsFunctionality @DAS12580 @Delete_Newly_Created_List
+Scenario: EvergreenJnr_ApplicationsLists_CheckThatTheSaveButtonIsNotDisplayedOnTheListPanelAfterListCreation
+	When User clicks "Applications" on the left-hand menu
+	Then "Applications" list should be displayed to the user
+	When User clicks the Filters button
+	Then Filters panel is displayed to the user
+	When User add "Dashworks First Seen" filter where type is "Empty" with added column and following value:
+	| Values |
+	|        |
+	When User clicks the Columns button
+	Then Columns panel is displayed to the user
+	When User removes "Application" column by Column panel
+	And User removes "Vendor" column by Column panel
+	And User removes "Version" column by Column panel
+	And User create custom list with "TestList5478" name
+	Then Save and Cancel buttons are not displayed on the list panel
+	And "TestList5478" list is displayed to user

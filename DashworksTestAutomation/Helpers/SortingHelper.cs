@@ -10,7 +10,7 @@ namespace DashworksTestAutomation.Helpers
     {
         public static void IsListSorted(List<string> originalList, bool isAscending = true)
         {
-            originalList = originalList.Where(x => !x.Equals("")).ToList();
+            originalList = originalList.Where(x => !x.Equals("") && !x.Equals("Empty")).ToList();
             //Ascending
             List<string> expectedList = originalList.OrderBy(s => s).ToList();
             if (!isAscending)

@@ -63,7 +63,7 @@ namespace DashworksTestAutomation.Steps.Dashworks
             var listDetailsElement = _driver.NowAt<ListDetailsElement>();
             var header = _driver.NowAt<HeaderElement>();
             Assert.AreEqual(header.UserNameDropdown.Text,
-                listDetailsElement.GetSelectedValue(listDetailsElement.OwnerDropdown),
+                listDetailsElement.OwnerDropdown.GetAttribute("value"),
                 "Another User is selected as a owner");
         }
 
@@ -71,6 +71,7 @@ namespace DashworksTestAutomation.Steps.Dashworks
         public void ThenSharingOptionIsSelected(string sharingOption)
         {
             var listDetailsElement = _driver.NowAt<ListDetailsElement>();
+            _driver.WaitForDataLoading();
             Assert.AreEqual(sharingOption, listDetailsElement.GetSelectedValue(listDetailsElement.SharingDropdown),
                 $"Selected option is not {sharingOption}");
         }
@@ -104,6 +105,22 @@ namespace DashworksTestAutomation.Steps.Dashworks
             _driver.WaitWhileControlIsNotDisplayed<ListDetailsElement>(() => listDetailsElement.ListDetailsPanel);
             Assert.IsTrue(listDetailsElement.ListDetailsPanel.Displayed(), "List Details panel is not displayed");
             Logger.Write("List Details panel is visible");
+        }
+
+        [When(@"User clicks Delete List button on the List Details panel")]
+        public void WhenUserClicksDeleteListButtonOnTheListDetailsPanel()
+        {
+            var listDetailsElement = _driver.NowAt<ListDetailsElement>();
+            listDetailsElement.RemoveListButton.Click();
+            listDetailsElement.DeleteButtonInTheWarningMessage.Click();
+        }
+
+        [Then(@"no Warning message is displayed in the list details panel")]
+        public void ThenNoWarningMessageIsDisplayedInTheListDetailsPanel()
+        {
+            var listDetailsElement = _driver.NowAt<ListDetailsElement>();
+            _driver.WaitWhileControlIsNotDisplayed<ListDetailsElement>(() => listDetailsElement.ListDetailsPanel);
+            Assert.IsFalse(listDetailsElement.WarningMessage.Displayed(), "Warning message is displayed in the list details panel");
         }
 
         [Then(@"Dependants section is collapsed by default")]

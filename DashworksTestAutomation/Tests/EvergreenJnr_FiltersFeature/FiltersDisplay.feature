@@ -404,7 +404,7 @@ Examples:
 	| Equals         | TRUE         | 41,231    | is                  |
 	| Does not equal | TRUE         | 108       | is not              |
 
-@Evergreen @Applications @Evergreen_FiltersFeature @FiltersDisplay @DAS10696 @DAS11512 @Delete_Newly_Created_List @Not_Run
+@Evergreen @Applications @Evergreen_FiltersFeature @FiltersDisplay @DAS10696 @DAS11512 @Delete_Newly_Created_List
 Scenario: EvergreenJnr_ApplicationsList_CheckThatApplicationSavedListFilterIsWorkingCorrect
 	When User add following columns using URL to the "Applications" page:
 	| ColumnName      |
@@ -424,7 +424,7 @@ Scenario: EvergreenJnr_ApplicationsList_CheckThatApplicationSavedListFilterIsWor
 	| Values  |
 	| in list |
 
-@Evergreen @Devices @Evergreen_FiltersFeature @FiltersDisplay @DAS10696 @Not_Run
+@Evergreen @Devices @Evergreen_FiltersFeature @FiltersDisplay @DAS10696
 Scenario: EvergreenJnr_DevicesList_CheckThatApplicationsFilterIsContainsAllExpectedAssociations
 	When User clicks "Devices" on the left-hand menu
 	Then "Devices" list should be displayed to the user
@@ -702,7 +702,7 @@ Scenario: EvergreenJnr_DevicesList_CheckThatFilterCategoriesAreClosedAfterCleari
 	When User clears search textbox in Filters panel
 	Then Maximize buttons are displayed for all category in Filters panel
 
-@Evergreen @Devices @Evergreen_FiltersFeature @FiltersDisplay @DAS11552 @DAS12207
+@Evergreen @Devices @Evergreen_FiltersFeature @FiltersDisplay @DAS11552 @DAS12207 @DAS12639
 Scenario: EvergreenJnr_DevicesList_CheckThatRelevantDataSetBeDisplayedAfterEditingFilter
 	When User clicks "Devices" on the left-hand menu
 	Then "Devices" list should be displayed to the user
@@ -784,7 +784,7 @@ Scenario: EvergreenJnr_DevicesList_CheckThatMultipleFilterCriteriaToApplicationN
 	And "(Application Name ~ (adobe, microsoft) ASSOCIATION = (installed on device))" text is displayed in filter container
 
 
-@Evergreen @Devices @Evergreen_FiltersFeature @FiltersDisplay @DAS11468 @DAS12152 @Delete_Newly_Created_List @Not_Run
+@Evergreen @Devices @Evergreen_FiltersFeature @FiltersDisplay @DAS11468 @DAS12152 @DAS12602 @Delete_Newly_Created_List @Not_Run
 Scenario: EvergreenJnr_DevicesList_CheckThat500ErrorIsNotDisplayedForStaticListAfterRemovingAssociationsList
 	When User clicks "Applications" on the left-hand menu
 	Then "Applications" list should be displayed to the user
@@ -809,7 +809,7 @@ Scenario: EvergreenJnr_DevicesList_CheckThat500ErrorIsNotDisplayedForStaticListA
 	When User navigates to the "TestList8D5C03" list
 	Then "TestList8D5C03" list is displayed to user
 
-@Evergreen @Devices @Evergreen_FiltersFeature @FiltersDisplay @DAS11468 @Delete_Newly_Created_List @Not_Run
+@Evergreen @Devices @Evergreen_FiltersFeature @FiltersDisplay @DAS11468 @Delete_Newly_Created_List
 Scenario: EvergreenJnr_DevicesList_CheckThat500ErrorIsNotDisplayedForDynamicListAfterRemovingAssociationsList
 	When User add following columns using URL to the "Applications" page:
 	| ColumnName      |
@@ -987,7 +987,7 @@ Scenario: EvergreenJnr_UsersLists_CheckThatChildrenOfTreeBasedFiltersAreIncluded
 	Then "Department" filter is added to the list
 	And "35,082" rows are displayed in the agGrid
 
-@Evergreen @AllLists @Evergreen_FiltersFeature @FiltersDisplay @DAS12205 @Delete_Newly_Created_List @Not_Run
+@Evergreen @AllLists @Evergreen_FiltersFeature @FiltersDisplay @DAS12205 @DAS12624 @Delete_Newly_Created_List @Not_Run
 Scenario: EvergreenJnr_AllLists_CheckThatFilterTextDisplaysActualListName 
 	When User clicks "Applications" on the left-hand menu
 	Then "Applications" list should be displayed to the user
@@ -1054,3 +1054,20 @@ Scenario: EvergreenJnr_AllLists_CheckThatTextInTheFilterPanelDisplaysTheCurrentL
 	Then "Application in list [List not found] used on device" is displayed in added filter info
 	When User click Edit button for "Application" filter
 	Then "ApplicationList2" list is displayed for Saved List filter
+
+@Evergreen @Devices @Evergreen_FiltersFeature @FiltersDisplay @DAS12520
+Scenario: EvergreenJnr_DevicesLists_CheckThatOSBranchFilterWithEquaEmptyValueIsDisplayedCorrectlyInTheFilterPanel
+	When User clicks "Devices" on the left-hand menu
+	Then "Devices" list should be displayed to the user
+	When User clicks the Filters button
+	Then Filters panel is displayed to the user
+	When User add "OS Branch" filter where type is "Equals" with added column and following checkboxes:
+	| SelectedCheckboxes |
+	| Empty              |
+	When User create custom list with "TestList5433" name
+	#When User create dynamic list with "TestList5433" name on "Devices" page
+	When User navigates to the "All Devices" list
+	When User navigates to the "TestList5433" list
+	When User clicks the Filters button
+	Then Filters panel is displayed to the user
+	Then "OS Branch is Empty" is displayed in added filter info

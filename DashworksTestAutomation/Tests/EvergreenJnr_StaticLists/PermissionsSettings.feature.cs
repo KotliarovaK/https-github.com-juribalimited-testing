@@ -160,7 +160,9 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_StaticLists
         [NUnit.Framework.CategoryAttribute("DAS11553")]
         [NUnit.Framework.CategoryAttribute("DAS10880")]
         [NUnit.Framework.CategoryAttribute("DAS12152")]
+        [NUnit.Framework.CategoryAttribute("DAS12602")]
         [NUnit.Framework.CategoryAttribute("Delete_Newly_Created_List")]
+        [NUnit.Framework.CategoryAttribute("Not_Run")]
         public virtual void EvergreenJnr_DevicesList_CheckThatAddRowsOptionsIsAvailableForSpecifiedPermissionLevel()
         {
             System.Exception lastException = null;
@@ -199,7 +201,9 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_StaticLists
                         "DAS11553",
                         "DAS10880",
                         "DAS12152",
-                        "Delete_Newly_Created_List"});
+                        "DAS12602",
+                        "Delete_Newly_Created_List",
+                        "Not_Run"});
             this.ScenarioSetup(scenarioInfo);
             this.FeatureBackground();
             TechTalk.SpecFlow.Table table4 = new TechTalk.SpecFlow.Table(new string[] {
@@ -294,13 +298,13 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_StaticLists
             TechTalk.SpecFlow.Table table10 = new TechTalk.SpecFlow.Table(new string[] {
                         "Listnames"});
             table10.AddRow(new string[] {
-                        "OwnerPrivate"});
+                        "NotOwnerEveryoneCanEdit"});
             table10.AddRow(new string[] {
                         "NotOwnerSpecifiedAdmin"});
             table10.AddRow(new string[] {
                         "NotOwnerSpecifiedEdit"});
             table10.AddRow(new string[] {
-                        "NotOwnerEveryoneCanEdit"});
+                        "OwnerPrivate"});
             testRunner.Then("Following options are available in lists dropdown:", ((string)(null)), table10, "Then ");
             this.ScenarioCleanup();
         }
