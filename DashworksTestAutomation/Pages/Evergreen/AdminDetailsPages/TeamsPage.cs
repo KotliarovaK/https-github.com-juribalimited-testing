@@ -59,6 +59,12 @@ namespace DashworksTestAutomation.Pages.Evergreen.AdminDetailsPages
         [FindsBy(How = How.XPath, Using = ".//div[@class='width100']")]
         public IWebElement TeamMembersPanel { get; set; }
 
+        [FindsBy(How = How.XPath, Using = ".//span[@class='ng-star-inserted']")]
+        public IWebElement ResultsOnPageCount { get; set; }
+
+        [FindsBy(How = How.XPath, Using = ".//button[@class='button-small mat-primary reset mat-raised-button']")]
+        public IWebElement ResetFiltersButton { get; set; }
+
         public override List<By> GetPageIdentitySelectors()
         {
             Driver.WaitForDataLoading();
