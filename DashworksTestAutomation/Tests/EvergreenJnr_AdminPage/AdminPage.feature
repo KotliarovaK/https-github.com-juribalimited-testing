@@ -502,3 +502,15 @@ Scenario: EvergreenJnr_AdminPage_CheckThatNoErrorsAreDisplayedInTheProjectScopeC
 	And User clicks "Applications" tab in the Project Scope Changes section
 	Then There are no errors in the browser console
 	And Delete "TestProject9" Project in the Administration
+
+@Evergreen @Admin @EvergreenJnr_AdminPage @AdminPage @DAS12375
+Scenario: EvergreenJnr_AdminPage_CheckThatDLLPanelIsExpandedByDefault
+	When User clicks Admin on the left-hand menu
+	Then Admin page should be displayed to the user
+	When User click "Teams" link on the Admin page
+	Then "Teams" page should be displayed to the user
+	When User enters "K-Team" text in the Search field for "Team" column on the Teams page
+	And User clicks content from "Team" column on the Teams page
+	Then "K-Team" team details is displayed to the user
+	When User clicks Add Members button on the Teams page
+	Then Panel of available members is displayed to the user
