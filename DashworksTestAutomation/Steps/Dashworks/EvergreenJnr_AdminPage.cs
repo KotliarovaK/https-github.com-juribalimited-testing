@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Linq;
+using System.Threading;
 using DashworksTestAutomation.DTO.RuntimeVariables;
 using DashworksTestAutomation.Extensions;
 using DashworksTestAutomation.Helpers;
@@ -329,6 +330,33 @@ namespace DashworksTestAutomation.Steps.Dashworks
             filterElement.GetSearchFieldByColumnName(columnName, text);
         }
 
+        [Then(@"""(.*)"" rows are displayed on the Teams page")]
+        public void ThenRowsAreDisplayedOnTheTeamsPage(string numberOfRows)
+        {
+            var listPageElement = _driver.NowAt<TeamsPage>();
+            if (!string.IsNullOrWhiteSpace(numberOfRows))
+            {
+                Thread.Sleep(1000);
+
+                _driver.WaitWhileControlIsNotDisplayed<TeamsPage>(() => listPageElement.ResultsOnPageCount);
+
+                if (numberOfRows == "1")
+                {
+                    StringAssert.AreEqualIgnoringCase($"{numberOfRows} row", listPageElement.ResultsOnPageCount.Text,
+                        "Incorrect rows count");
+                }
+                else
+                {
+                    StringAssert.AreEqualIgnoringCase($"{numberOfRows} rows", listPageElement.ResultsOnPageCount.Text,
+                        "Incorrect rows count");
+                }
+                Logger.Write(
+                    $"Evergreen agGrid Search returned the correct number of rows for: {numberOfRows}  search");
+            }
+            //User clears filters
+            listPageElement.ResetFiltersButton.Click();
+        }
+
         [When(@"User selects all rows on the Teams page")]
         public void WhenUserSelectsAllRowsOnTheTeamsPage()
         {
@@ -358,6 +386,23 @@ namespace DashworksTestAutomation.Steps.Dashworks
             var tableElement = _driver.NowAtWithoutWait<TeamsPage>();
             tableElement.ClickContentByColumnName(columnName);
             _driver.WaitForDataLoading();
+        }
+
+        [When(@"User clicks Add Members button on the Teams page")]
+        public void WhenUserClicksAddMembersButtonOnTheTeamsPage()
+        {
+            var button = _driver.NowAt<TeamsPage>();
+            _driver.WaitWhileControlIsNotDisplayed<TeamsPage>(() => button.AddMembersButton);
+            button.AddMembersButton.Click();
+            Logger.Write("Add Members button was clicked");
+        }
+
+        [Then(@"Panel of available members is displayed to the user")]
+        public void ThenPanelOfAvailableMembersIsDisplayedToTheUser()
+        {
+            var panel = _driver.NowAt<TeamsPage>();
+            _driver.WaitWhileControlIsNotDisplayed<TeamsPage>(() => panel.TeamMembersPanel);
+            Assert.IsTrue(panel.TeamMembersPanel.Displayed(), "Team Members Panel is not displayed on the Teams page");
         }
 
         [Then(@"""(.*)"" team details is displayed to the user")]
@@ -478,6 +523,33 @@ namespace DashworksTestAutomation.Steps.Dashworks
         {
             var filterElement = _driver.NowAt<BucketsPage>();
             filterElement.GetSearchFieldByColumnName(columnName, text);
+        }
+
+        [Then(@"""(.*)"" rows are displayed on the Buckets page")]
+        public void ThenRowsAreDisplayedOnTheBucketsPage(string numberOfRows)
+        {
+            var listPageElement = _driver.NowAt<BucketsPage>();
+            if (!string.IsNullOrWhiteSpace(numberOfRows))
+            {
+                Thread.Sleep(1000);
+
+                _driver.WaitWhileControlIsNotDisplayed<BucketsPage>(() => listPageElement.ResultsOnPageCount);
+
+                if (numberOfRows == "1")
+                {
+                    StringAssert.AreEqualIgnoringCase($"{numberOfRows} row", listPageElement.ResultsOnPageCount.Text,
+                        "Incorrect rows count");
+                }
+                else
+                {
+                    StringAssert.AreEqualIgnoringCase($"{numberOfRows} rows", listPageElement.ResultsOnPageCount.Text,
+                        "Incorrect rows count");
+                }
+                Logger.Write(
+                    $"Evergreen agGrid Search returned the correct number of rows for: {numberOfRows}  search");
+            }
+            //User clears filters
+            listPageElement.ResetFiltersButton.Click();
         }
 
         [When(@"User clicks content from ""(.*)"" column on the Buckets page")]
