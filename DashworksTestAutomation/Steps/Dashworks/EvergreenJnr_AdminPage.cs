@@ -360,6 +360,23 @@ namespace DashworksTestAutomation.Steps.Dashworks
             _driver.WaitForDataLoading();
         }
 
+        [When(@"User clicks Add Members button on the Teams page")]
+        public void WhenUserClicksAddMembersButtonOnTheTeamsPage()
+        {
+            var button = _driver.NowAt<TeamsPage>();
+            _driver.WaitWhileControlIsNotDisplayed<TeamsPage>(() => button.AddMembersButton);
+            button.AddMembersButton.Click();
+            Logger.Write("Add Members button was clicked");
+        }
+
+        [Then(@"Panel of available members is displayed to the user")]
+        public void ThenPanelOfAvailableMembersIsDisplayedToTheUser()
+        {
+            var panel = _driver.NowAt<TeamsPage>();
+            _driver.WaitWhileControlIsNotDisplayed<TeamsPage>(() => panel.TeamMembersPanel);
+            Assert.IsTrue(panel.TeamMembersPanel.Displayed(), "Team Members Panel is not displayed on the Teams page");
+        }
+
         [Then(@"""(.*)"" team details is displayed to the user")]
         public void ThenTeamDetailsIsDisplayedToTheUser(string teamName)
         {
