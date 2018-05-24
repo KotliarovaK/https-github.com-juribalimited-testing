@@ -148,7 +148,7 @@ namespace DashworksTestAutomation.Steps.Dashworks
         }
 
         [When(@"User select ""(.*)"" option in Actions panel")]
-        public void WhenUserSelectOptionInActionsPanel(string p0)
+        public void WhenUserSelectOptionInActionsPanel(string option)
         {
             var actionsElement = _driver.NowAt<ActionsElement>();
             _driver.SelectCustomSelectbox(actionsElement.DropdownBox, "Add to static list");
