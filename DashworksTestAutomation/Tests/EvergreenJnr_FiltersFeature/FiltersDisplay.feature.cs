@@ -3485,7 +3485,6 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_FiltersFeature
         [NUnit.Framework.CategoryAttribute("DAS12205")]
         [NUnit.Framework.CategoryAttribute("DAS12624")]
         [NUnit.Framework.CategoryAttribute("Delete_Newly_Created_List")]
-        [NUnit.Framework.CategoryAttribute("Not_Run")]
         public virtual void EvergreenJnr_AllLists_CheckThatFilterTextDisplaysActualListName()
         {
             System.Exception lastException = null;
@@ -3521,8 +3520,7 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_FiltersFeature
                         "FiltersDisplay",
                         "DAS12205",
                         "DAS12624",
-                        "Delete_Newly_Created_List",
-                        "Not_Run"});
+                        "Delete_Newly_Created_List"});
             this.ScenarioSetup(scenarioInfo);
             this.FeatureBackground();
             testRunner.When("User clicks \"Applications\" on the left-hand menu", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");

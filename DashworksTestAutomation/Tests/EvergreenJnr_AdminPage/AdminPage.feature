@@ -106,7 +106,7 @@ Scenario: EvergreenJnr_AdminPage_CheckThatWarningMessageIsDisplayedAfterDeleting
 	When User clicks Settings button in the list panel
 	Then Settings panel is displayed to the user
 	When User clicks Delete in the list panel
-	Then "list is used by 1 project(s), do you wish to proceed?" message is displayed in the lists panel
+	Then "list is used by 1 project, do you wish to proceed?" message is displayed in the lists panel
 	When User clicks Delete in the warning message on the list panel 
 	And User clicks Admin on the left-hand menu
 	Then Admin page should be displayed to the user
@@ -348,8 +348,8 @@ Scenario: EvergreenJnr_AdminPage_CheckThatMailboxesAreSuccessfullyAddedToBuckets
 	When User clicks Add Mailbox button on the Buckets page
 	Then User add following mailboxes to the Bucket
 	| MailboxName                      |
-	| abraham.d.robertson@dwlabs.local |
-	| abraham.h.maxwell@dwlabs.local   |
+	| alice.x.moyer@dwlabs.local       |
+	| alfonso.x.o'connell@dwlabs.local |
 	And Success message is displayed and contains "The selected mailboxes have been added to the selected bucket" text on the Buckets page
 	And There are no errors in the browser console
 
@@ -398,7 +398,7 @@ Scenario: EvergreenJnr_AdminPage_CheckThatConsoleErrorsAreNotDisplayedAfterAddin
 	Then User add following devices to the Bucket
 	| DeviceName     |
 	| 01DRMO46G58SXK |
-	| 01ERDGD48UDQKE |
+	| 01KFZ6XUVQSII0 |
 	And Success message is displayed and contains "The selected devices have been added to the selected bucket" text on the Buckets page
 	And There are no errors in the browser console
 

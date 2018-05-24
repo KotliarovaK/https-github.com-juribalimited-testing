@@ -440,7 +440,6 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_ListPanel
         [NUnit.Framework.CategoryAttribute("DAS12152")]
         [NUnit.Framework.CategoryAttribute("DAS12602")]
         [NUnit.Framework.CategoryAttribute("Delete_Newly_Created_List")]
-        [NUnit.Framework.CategoryAttribute("Not_Run")]
         public virtual void EvergreenJnr_DevicesList_CheckThatNewListCreatedMessageForStaticListIsDisplayed()
         {
             System.Exception lastException = null;
@@ -478,8 +477,7 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_ListPanel
                         "DAS11951",
                         "DAS12152",
                         "DAS12602",
-                        "Delete_Newly_Created_List",
-                        "Not_Run"});
+                        "Delete_Newly_Created_List"});
             this.ScenarioSetup(scenarioInfo);
             this.FeatureBackground();
             testRunner.When("User clicks \"Devices\" on the left-hand menu", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
@@ -512,7 +510,6 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_ListPanel
         [NUnit.Framework.CategoryAttribute("DAS12351")]
         [NUnit.Framework.CategoryAttribute("DAS12602")]
         [NUnit.Framework.CategoryAttribute("Delete_Newly_Created_List")]
-        [NUnit.Framework.CategoryAttribute("Not_Run")]
         public virtual void EvergreenJnr_UsersList_CheckThatListsIsDisplayedInAlphabeticalOrder()
         {
             System.Exception lastException = null;
@@ -554,8 +551,7 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_ListPanel
                         "DAS12220",
                         "DAS12351",
                         "DAS12602",
-                        "Delete_Newly_Created_List",
-                        "Not_Run"});
+                        "Delete_Newly_Created_List"});
             this.ScenarioSetup(scenarioInfo);
             this.FeatureBackground();
             testRunner.When("User clicks \"Users\" on the left-hand menu", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
@@ -2007,6 +2003,7 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_ListPanel
         [NUnit.Framework.CategoryAttribute("DAS11015")]
         [NUnit.Framework.CategoryAttribute("DAS11951")]
         [NUnit.Framework.CategoryAttribute("Delete_Newly_Created_List")]
+        [NUnit.Framework.CategoryAttribute("Not_Run")]
         public virtual void EvergreenJnr_DevicesLists_CheckThatUserIsNotAbleToCreateListsWithLongNames()
         {
             System.Exception lastException = null;
@@ -2042,7 +2039,8 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_ListPanel
                         "CustomListDisplay",
                         "DAS11015",
                         "DAS11951",
-                        "Delete_Newly_Created_List"});
+                        "Delete_Newly_Created_List",
+                        "Not_Run"});
             this.ScenarioSetup(scenarioInfo);
             this.FeatureBackground();
             testRunner.When("User clicks \"Devices\" on the left-hand menu", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
@@ -2398,7 +2396,6 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_ListPanel
         [NUnit.Framework.CategoryAttribute("DAS10972")]
         [NUnit.Framework.CategoryAttribute("DAS12602")]
         [NUnit.Framework.CategoryAttribute("Delete_Newly_Created_List")]
-        [NUnit.Framework.CategoryAttribute("Not_Run")]
         [NUnit.Framework.TestCaseAttribute("Devices", "Hostname", "Centre", "3,284", "17", new string[0])]
         [NUnit.Framework.TestCaseAttribute("Users", "Username", "Barland", "3", "142", new string[0])]
         [NUnit.Framework.TestCaseAttribute("Applications", "Application", "Adobe", "40", "1", new string[0])]
@@ -2439,8 +2436,7 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_ListPanel
                     "DAS10998",
                     "DAS10972",
                     "DAS12602",
-                    "Delete_Newly_Created_List",
-                    "Not_Run"};
+                    "Delete_Newly_Created_List"};
             if ((exampleTags != null))
             {
                 @__tags = System.Linq.Enumerable.ToArray(System.Linq.Enumerable.Concat(@__tags, exampleTags));
@@ -2519,7 +2515,6 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_ListPanel
         [NUnit.Framework.CategoryAttribute("DAS10972")]
         [NUnit.Framework.CategoryAttribute("DAS12602")]
         [NUnit.Framework.CategoryAttribute("Delete_Newly_Created_List")]
-        [NUnit.Framework.CategoryAttribute("Not_Run")]
         [NUnit.Framework.TestCaseAttribute("Devices", "Device Type", "Hostname", new string[0])]
         [NUnit.Framework.TestCaseAttribute("Applications", "Vendor", "Application", new string[0])]
         [NUnit.Framework.TestCaseAttribute("Users", "Domain", "Username", new string[0])]
@@ -2559,8 +2554,7 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_ListPanel
                     "CustomListDisplay",
                     "DAS10972",
                     "DAS12602",
-                    "Delete_Newly_Created_List",
-                    "Not_Run"};
+                    "Delete_Newly_Created_List"};
             if ((exampleTags != null))
             {
                 @__tags = System.Linq.Enumerable.ToArray(System.Linq.Enumerable.Concat(@__tags, exampleTags));

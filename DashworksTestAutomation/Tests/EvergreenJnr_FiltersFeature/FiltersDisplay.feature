@@ -987,7 +987,7 @@ Scenario: EvergreenJnr_UsersLists_CheckThatChildrenOfTreeBasedFiltersAreIncluded
 	Then "Department" filter is added to the list
 	And "35,082" rows are displayed in the agGrid
 
-@Evergreen @AllLists @Evergreen_FiltersFeature @FiltersDisplay @DAS12205 @DAS12624 @Delete_Newly_Created_List @Not_Run
+@Evergreen @AllLists @Evergreen_FiltersFeature @FiltersDisplay @DAS12205 @DAS12624 @Delete_Newly_Created_List
 Scenario: EvergreenJnr_AllLists_CheckThatFilterTextDisplaysActualListName 
 	When User clicks "Applications" on the left-hand menu
 	Then "Applications" list should be displayed to the user

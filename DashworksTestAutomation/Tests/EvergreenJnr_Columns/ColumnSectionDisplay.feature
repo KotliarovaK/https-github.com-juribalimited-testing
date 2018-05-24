@@ -96,7 +96,7 @@ Scenario: EvergreenJnr_DevicesList_CheckTheColumnCategoriesUpdatesAfterAddingCol
 	| ColumnName |
 	| Build Date |
 
-@Evergreen @Users @EvergreenJnr_Columns @ColumnSectionDisplay @DAS11768 @DAS11951 @Delete_Newly_Created_List @Not_Run
+@Evergreen @Users @EvergreenJnr_Columns @ColumnSectionDisplay @DAS11768 @DAS11951 @Delete_Newly_Created_List
 Scenario: EvergreenJnr_UsersList_CheckTheColumnCategoriesUpdatesAfterAddingColumnForDynamicLists
 	When User clicks "Users" on the left-hand menu
 	Then "Users" list should be displayed to the user
@@ -123,7 +123,7 @@ Scenario: EvergreenJnr_UsersList_CheckTheColumnCategoriesUpdatesAfterAddingColum
 	| ColumnName |
 	| Zip Code   |
 
-@Evergreen @Applications @EvergreenJnr_Columns @ColumnSectionDisplay @DAS11768 @DAS12152 @DAS12553 @DAS12602 @Delete_Newly_Created_List @Not_Run
+@Evergreen @Applications @EvergreenJnr_Columns @ColumnSectionDisplay @DAS11768 @DAS12152 @DAS12553 @DAS12602 @Delete_Newly_Created_List
 Scenario: EvergreenJnr_ApplicationsList_CheckTheColumnCategoriesUpdatesAfterAddingColumnForStaticLists
 	When User clicks "Applications" on the left-hand menu
 	Then "Applications" list should be displayed to the user
@@ -151,7 +151,7 @@ Scenario: EvergreenJnr_ApplicationsList_CheckTheColumnCategoriesUpdatesAfterAddi
 	| ColumnName           |
 	| Windows7Mi: In Scope |
 
-@Evergreen @Mailboxes @EvergreenJnr_Columns @ColumnSectionDisplay @DAS11768 @DAS11951 @Delete_Newly_Created_List @Not_Run
+@Evergreen @Mailboxes @EvergreenJnr_Columns @ColumnSectionDisplay @DAS11768 @DAS11951 @Delete_Newly_Created_List
 Scenario: EvergreenJnr_MailboxesList_CheckTheColumnCategoriesUpdatesAfterAddingColumnForDynamicLists
 	When User clicks "Mailboxes" on the left-hand menu
 	Then "Mailboxes" list should be displayed to the user
