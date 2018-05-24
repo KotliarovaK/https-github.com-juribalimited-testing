@@ -23,16 +23,16 @@ Scenario: Projects_CreateProject
 	| AAA0Test | TestUserName 0 | 1234qwer | 1234qwer        |
 	Then Success message is displayed
 	Then created User is displayed in the table
-	#Then User create a new Dashworks User
-	#| Username | FullName       | Password | ConfirmPassword |
-	#| AAA1Test | TestUserName 1 | 1234qwer | 1234qwer        |
-	#Then Success message is displayed
-	#Then created User is displayed in the table
-	#Then User create a new Dashworks User
-	#| Username | FullName       | Password | ConfirmPassword |
-	#| AAA2Test | TestUserName 2 | 1234qwer | 1234qwer        |
-	#Then Success message is displayed
-	#Then created User is displayed in the table
+	Then User create a new Dashworks User
+	| Username | FullName       | Password | ConfirmPassword |
+	| AAA1Test | TestUserName 1 | 1234qwer | 1234qwer        |
+	Then Success message is displayed
+	Then created User is displayed in the table
+	Then User create a new Dashworks User
+	| Username | FullName       | Password | ConfirmPassword |
+	| AAA2Test | TestUserName 2 | 1234qwer | 1234qwer        |
+	Then Success message is displayed
+	Then created User is displayed in the table
 	When User navigate to Dashworks User Site link
 	When User navigate to Projects link
 	Then "Projects Home" page is displayed to the user
@@ -72,34 +72,34 @@ Scenario: Projects_CreateProject
 	When User clicks "Cancel" button
 	Then created Request Type is displayed in the table
 	Then User removes created Request Type
-	#When User clicks "Create Request Type" button
-	#When User create Request Type
-	#| Name                | Description | ObjectTypeString |
-	#| TestRequestTypeName | TestText 0  | User             |
-	#Then Success message is displayed
-	#When User clicks "Cancel" button
-	#Then created Request Type is displayed in the table
-	#When User click on the created Request Type
-	#Then User updates the Request Type page
-	#| DefaultRequestType |
-	#| true               |
-	#Then Success message is displayed with "Request Type successfully updated" text
-	#When User clicks "Cancel" button
-	#Then created Request Type is a Default
-	#When User clicks "Create Request Type" button
-	#When User create Request Type
-	#| Name                | Description | ObjectTypeString |
-	#| TestRequestTypeName | TestText 1  | Application      |
-	#Then Success message is displayed
-	#When User clicks "Cancel" button
-	#Then created Request Type is displayed in the table
-	#When User click on the created Request Type
-	#Then User updates the Request Type page
-	#| DefaultRequestType |
-	#| true               |
-	#Then Success message is displayed with "Request Type successfully updated" text
-	#When User clicks "Cancel" button
-	#Then created Request Type is a Default
+	When User clicks "Create Request Type" button
+	When User create Request Type
+	| Name                | Description | ObjectTypeString |
+	| TestRequestTypeName | TestText 0  | User             |
+	Then Success message is displayed
+	When User clicks "Cancel" button
+	Then created Request Type is displayed in the table
+	When User click on the created Request Type
+	Then User updates the Request Type page
+	| DefaultRequestType |
+	| true               |
+	Then Success message is displayed with "Request Type successfully updated" text
+	When User clicks "Cancel" button
+	Then created Request Type is a Default
+	When User clicks "Create Request Type" button
+	When User create Request Type
+	| Name                | Description | ObjectTypeString |
+	| TestRequestTypeName | TestText 1  | Application      |
+	Then Success message is displayed
+	When User clicks "Cancel" button
+	Then created Request Type is displayed in the table
+	When User click on the created Request Type
+	Then User updates the Request Type page
+	| DefaultRequestType |
+	| true               |
+	Then Success message is displayed with "Request Type successfully updated" text
+	When User clicks "Cancel" button
+	Then created Request Type is a Default
 	When User clicks "Create Request Type" button
 	When User create Request Type
 	| Name                | Description | ObjectTypeString |
@@ -151,8 +151,8 @@ Scenario: Projects_CreateProject
 	Then "Manage Tasks" page is displayed to the user
 	When User clicks "Create Task" button
 	When User create Task
-	| Name           | Help     | ObjectTypeString | TaskValuesTemplateCheckbox |
-	| TestTaskName 0 | TestText | Computer         | true                       |
+	| Name          | Help     | ObjectTypeString | TaskValuesTemplateCheckbox |
+	| TestTaskName0 | TestText | Computer         | true                       |
 	Then Success message is displayed with "Task successfully created" text
 	When User updates the Task page
 	| TaskHaADueDate | TaskImpactsReadiness | TaskHasAnOwner | ShowDetails | ProjectObject | BulkUpdate | SelfService |
@@ -163,8 +163,8 @@ Scenario: Projects_CreateProject
 	When User navigate to "Values" on selected tab
 	When User clicks "Add Value" button
 	Then User create new Value
-	| Name            | Help   | DefaultValue |
-	| TestValueName 0 | Test 0 | false        |
+	| Name          | Help | DefaultValue |
+	| TestValueName | Test | false        |
 	When User clicks "Save Value" button
 	When User navigate to "Emails" on selected tab
 	When User clicks "Add Email" button
@@ -180,7 +180,7 @@ Scenario: Projects_CreateProject
 	When User clicks "Create Task" button
 	When User create Task
 	| Name           | Help     | ObjectTypeString | TaskValuesTemplateCheckbox |
-	| TestTaskName 1 | TestText | Application      | true                       |
+	| TestTaskName1 | TestText | Application      | true                       |
 	Then Success message is displayed with "Task successfully created" text
 	When User updates the Task page
 	| TaskHaADueDate | TaskImpactsReadiness | TaskHasAnOwner | ShowDetails | ProjectObject | BulkUpdate | SelfService |
@@ -191,15 +191,15 @@ Scenario: Projects_CreateProject
 	When User navigate to "Values" on selected tab
 	When User clicks "Add Value" button
 	Then User create new Value
-	| Name            | Help | DefaultValue |
-	| TestValueName 1 | Test | false        |
+	| Name          | Help | DefaultValue |
+	| TestValueName | Test | false        |
 	When User clicks "Save Value" button
 	When User clicks "« Go Back to Tasks" button
 	Then created Task is displayed in the table
 	When User clicks "Create Task" button
 	When User create Task
-	| Name           | Help     | ObjectTypeString | TaskValuesTemplateCheckbox |
-	| TestTaskName 2 | TestText | User             | true                       |
+	| Name          | Help     | ObjectTypeString | TaskValuesTemplateCheckbox |
+	| TestTaskName2 | TestText | User             | true                       |
 	Then Success message is displayed with "Task successfully created" text
 	When User updates the Task page
 	| TaskHaADueDate | TaskImpactsReadiness | TaskHasAnOwner | ShowDetails | ProjectObject | BulkUpdate | SelfService |
@@ -210,8 +210,8 @@ Scenario: Projects_CreateProject
 	When User navigate to "Values" on selected tab
 	When User clicks "Add Value" button
 	Then User create new Value
-	| Name            | Help | DefaultValue |
-	| TestValueName 2 | Test | true         |
+	| Name          | Help | DefaultValue |
+	| TestValueName | Test | true         |
 	When User clicks "Save Value" button
 	When User navigate to "Emails" on selected tab
 	When User clicks "Add Email" button
@@ -236,43 +236,43 @@ Scenario: Projects_CreateProject
 	When User clicks "Cancel" button
 	Then created Team is displayed in the table
 	Then "2" number of Members is displayed for created team
-	#When User clicks "Create Team" button
-	#When User create Team
-	#| TeamName         | ShortDescription |
-	#| 001 TestTeamName | TestText 1       |
-	#When User clicks "Add Member" button
-	#Then User select Users by Username
-	#When User clicks "Add Selected" button
-	#When User clicks "Cancel" button
-	#Then created Team is displayed in the table
-	#Then "2" number of Members is displayed for created team
-	#When User clicks "Create Team" button
-	#When User create Team
-	#| TeamName         | ShortDescription |
-	#| 002 TestTeamName | TestText 2       |
-	#When User clicks "Add Member" button
-	#Then User select Users by Username
-	#When User clicks "Add Selected" button
-	#When User clicks "Cancel" button
-	#Then created Team is displayed in the table
-	#Then "2" number of Members is displayed for created team
+	When User clicks "Create Team" button
+	When User create Team
+	| TeamName         | ShortDescription |
+	| 001 TestTeamName | TestText 1       |
+	When User clicks "Add Member" button
+	Then User select Users by Username
+	When User clicks "Add Selected" button
+	When User clicks "Cancel" button
+	Then created Team is displayed in the table
+	Then "2" number of Members is displayed for created team
+	When User clicks "Create Team" button
+	When User create Team
+	| TeamName         | ShortDescription |
+	| 002 TestTeamName | TestText 2       |
+	When User clicks "Add Member" button
+	Then User select Users by Username
+	When User clicks "Add Selected" button
+	When User clicks "Cancel" button
+	Then created Team is displayed in the table
+	Then "2" number of Members is displayed for created team
 	When User navigate to "Groups" tab
 	Then "Manage Groups" page is displayed to the user
 	When User clicks "Create Group" button
 	When User create Group
 	| GroupName       |
-	| TestGroupName 0 |
+	| 0 TestGroupName |
 	Then created Group is displayed in the table
-	#When User clicks "Create Group" button
-	#When User create Group
-	#| GroupName       |
-	#| TestGroupName 1 |
-	#Then created Group is displayed in the table
-	#When User clicks "Create Group" button
-	#When User create Group
-	#| GroupName       |
-	#| TestGroupName 2 |
-	#Then created Group is displayed in the table
+	When User clicks "Create Group" button
+	When User create Group
+	| GroupName       |
+	| 1 TestGroupName |
+	Then created Group is displayed in the table
+	When User clicks "Create Group" button
+	When User create Group
+	| GroupName       |
+	| 2 TestGroupName |
+	Then created Group is displayed in the table
 	When User navigate to "Teams" tab
 	Then "Manage Teams" page is displayed to the user
 	Then required number of Groups is displayed for created team
@@ -349,21 +349,41 @@ Scenario: Projects_CreateProject
 	Then Success message is displayed with "Override date successfully inserted" text
 	When User navigate to "Groups" tab
 	Then User removes created Group
-	#Then selected Group was removed
+	Then selected Group was removed
+	Then User removes created Group
+	Then selected Group was removed
+	Then User removes created Group
+	Then selected Group was removed
 	When User navigate to "Teams" tab
 	Then User removes created Team
-	#Then selected Team was removed
+	Then selected Team was removed
+	Then User removes created Team
+	Then selected Team was removed
+	Then User removes created Team
+	Then selected Team was removed
 	When User navigate to "Tasks" tab
 	Then User removes created Task
-	#Then selected Task was removed
+	Then selected Task was removed
+	Then Success message is displayed with "Task successfully deleted." text
+	Then User removes created Task
+	Then selected Task was removed
+	Then Success message is displayed with "Task successfully deleted." text
+	Then User removes created Task
+	Then selected Task was removed
 	Then Success message is displayed with "Task successfully deleted." text
 	When User navigate to "Stages" tab
 	Then User removes created Stage
-	#Then selected Stage was removed
+	Then selected Stage was removed
+	Then Success message is displayed with "Stage successfully deleted." text
+	Then User removes created Stage
+	Then selected Stage was removed
+	Then Success message is displayed with "Stage successfully deleted." text
+	Then User removes created Stage
+	Then selected Stage was removed
 	Then Success message is displayed with "Stage successfully deleted." text
 	When User navigate to "Categories" tab
 	Then User removes created Category
-	#Then selected Category was removed
+	Then selected Category was removed
 	Then Success message is displayed with "Category successfully deleted." text
 	When User navigate to "Request Types" tab
 	When User click on the "[Default (Computer)]" Request Type
@@ -373,29 +393,29 @@ Scenario: Projects_CreateProject
 	Then Success message is displayed with "Request Type successfully updated" text
 	When User clicks "Cancel" button
 	Then User removes created Request Type
-	#Then selected Request Type was removed
+	Then selected Request Type was removed
 	Then Success message is displayed with "Request Type successfully deleted" text
-	#When User click on the "[Default (Application)]" Request Type
-	#Then User updates the Request Type page
-	#| DefaultRequestType |
-	#| true               |
-	#Then Success message is displayed with "Request Type successfully updated" text
-	#When User clicks "Cancel" button
-	#Then User removes created Request Type
-	##Then selected Request Type was removed
-	#Then Success message is displayed with "Request Type successfully deleted" text
-	#When User click on the "[Default (User)]" Request Type
-	#Then User updates the Request Type page
-	#| DefaultRequestType |
-	#| true               |
-	#Then Success message is displayed with "Request Type successfully updated" text
-	#When User clicks "Cancel" button
-	#Then User removes created Request Type
-	##Then selected Request Type was removed
-	#Then Success message is displayed with "Request Type successfully deleted" text
+	When User click on the "[Default (Application)]" Request Type
+	Then User updates the Request Type page
+	| DefaultRequestType |
+	| true               |
+	Then Success message is displayed with "Request Type successfully updated" text
+	When User clicks "Cancel" button
+	Then User removes created Request Type
+	Then selected Request Type was removed
+	Then Success message is displayed with "Request Type successfully deleted" text
+	When User click on the "[Default (User)]" Request Type
+	Then User updates the Request Type page
+	| DefaultRequestType |
+	| true               |
+	Then Success message is displayed with "Request Type successfully updated" text
+	When User clicks "Cancel" button
+	Then User removes created Request Type
+	Then selected Request Type was removed
+	Then Success message is displayed with "Request Type successfully deleted" text
 	When User navigate to "Mail Templates" tab
 	Then User removes created Mail Template
-	#Then selected Mail Template was removed
+	Then selected Mail Template was removed
 	Then Success message is displayed with "Mail Template successfully deleted." text
 	When User navigate to "Details" tab
 	Then User removes the Project
@@ -403,11 +423,11 @@ Scenario: Projects_CreateProject
 	When User navigate to Manage link
 	When User select "Manage Users" option in Management Console
 	Then User removes created User
-	#Then selected User was removed
+	Then selected User was removed
 	Then Success message is displayed
-	#Then User removes created User
-	##Then selected User was removed
-	#Then Success message is displayed
-	#Then User removes created User
-	##Then selected User was removed
-	#Then Success message is displayed
+	Then User removes created User
+	Then selected User was removed
+	Then Success message is displayed
+	Then User removes created User
+	Then selected User was removed
+	Then Success message is displayed

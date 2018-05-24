@@ -15,9 +15,9 @@ namespace DashworksTestAutomation.DTO.Projects
         public DetailsDto Details { get; set; }
         public List<RequestTypesDto> ReqestTypes { get; set; }
         public RequestType_DetailsDto RequestTypeDetails { get; set; }
-        public CategoryPropertiesDto Categories { get; set; }
+        public List<CategoryPropertiesDto> Categories { get; set; }
         public List<StagePropertiesDto> Stages { get; set; }
-        public TaskPropertiesDto Tasks { get; set; }
+        public List<TaskPropertiesDto> Tasks { get; set; }
         public TaskProperties_DetailsDto TaskPropertiesDetails { get; set; }
         public TaskProperties_ValuesDto TaskPropertiesValues { get; set; }
         public TaskProperties_EmailsDto TaskPropertiesEmails { get; set; }
@@ -36,6 +36,8 @@ namespace DashworksTestAutomation.DTO.Projects
             Stages = new List<StagePropertiesDto>();
             ManageUsers = new List<ManageUsersDto>();
             TeamProperties = new List<TeamPropertiesDto>();
+            Tasks = new List<TaskPropertiesDto>();
+            Categories = new List<CategoryPropertiesDto>();
         }
     }
 

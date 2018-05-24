@@ -81,6 +81,8 @@ namespace DashworksTestAutomation.Steps
 
             page.GetDeleteButtonElementByName(_projectDto.ManageUsers.Last().Username).Click();
             _driver.AcceptAlert();
+            //Removing deleted User from userd list
+            _projectDto.ManageUsers.RemoveAt(_projectDto.ManageUsers.Count - 1);
         }
 
         [Then(@"selected User was removed")]
@@ -88,8 +90,7 @@ namespace DashworksTestAutomation.Steps
         {
             var page = _driver.NowAt<BaseElements>();
 
-            var user = page.GetTheCreatedElementInTableByName(_projectDto.ManageUsers.Last().Username);
-            Assert.IsFalse(user.Displayed(), "Selected User is displayed in the table");
+            Assert.IsFalse(page.CheckThatCreatedElementIsRemoved(_projectDto.ManageUsers.Last().Username), "Selected User is displayed in the table");
         }
     }
 }

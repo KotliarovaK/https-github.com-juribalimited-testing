@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Linq;
 using DashworksTestAutomation.Base;
 using DashworksTestAutomation.Extensions;
 using OpenQA.Selenium;
@@ -83,13 +84,13 @@ namespace DashworksTestAutomation.Pages.Projects
 
         #region Delete Buttons
 
-        [FindsBy(How = How.XPath, Using = ".//input[@id='Btn_Delete']")]
+        [FindsBy(How = How.XPath, Using = ".//input[contains(@id, 'Delete')]")]
         public IWebElement DeleteGroupButton { get; set; }
 
-        [FindsBy(How = How.XPath, Using = ".//input[@id='ctl00_MainContent_Btn_GoToDeleteProjectView']")]
+        [FindsBy(How = How.XPath, Using = ".//input[contains(@id, 'GoToDeleteProjectView')]")]
         public IWebElement DeleteProjectButton { get; set; }
 
-        [FindsBy(How = How.XPath, Using = ".//input[@id='ctl00_MainContent_Btn_DeleteProject']")]
+        [FindsBy(How = How.XPath, Using = ".//input[contains@id, 'DeleteProject')]")]
         public IWebElement ConfirmDeletedTheProjectButton { get; set; }
 
         public IWebElement GetDeleteButtonElementByName(string name)
@@ -123,6 +124,11 @@ namespace DashworksTestAutomation.Pages.Projects
         }
 
         #region Check creating elements
+
+        public bool CheckThatCreatedElementIsRemoved(string name)
+        {
+            return Driver.IsElementDisplayed(By.XPath($".//td[@title='{name}']/..//td[1]"));
+        }
 
         public IWebElement GetTheCreatedElementInTableByName(string name)
         {

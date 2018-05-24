@@ -128,7 +128,6 @@ namespace DashworksTestAutomation.Steps.Projects
             page.OnboardInstalledApplicationsByAssociationCheckbox.SetCheckboxState(_detailsDto.InstalledApplications);
             page.OnboardEntitledApplicationsByAssociationCheckbox.SetCheckboxState(_detailsDto.EntitledApplications);
             page.OnboardUsedApplicationsByAssociationTo.SelectboxSelect(_detailsDto.OnboardUsedApplicationsByAssociationTo.GetValue());
-            //TODO Attachments
             page.CcEmail.SendKeys(_detailsDto.TaskEmailCcEmailAddress);
             page.BccEmail.SendKeys(_detailsDto.TaskEmailBccEmailAddress);
             page.StartDate.SendKeys(_detailsDto.StartDate);
@@ -146,14 +145,14 @@ namespace DashworksTestAutomation.Steps.Projects
             table.CreateInstance<RequestTypesDto>().CopyPropertiesTo(_requestTypesDto);
             _requestTypesDto.ObjectType = (ObjectTypeEnum) Enum.Parse(typeof(ObjectTypeEnum), _requestTypesDto.ObjectTypeString);
             _requestTypesDto.Name += TestDataGenerator.RandomString();
+            _projectDto.ReqestTypes.Add(_requestTypesDto);
+
 
             page.Name.SendKeys(_requestTypesDto.Name);
             page.Description.SendKeys(_requestTypesDto.Description);
             page.ObjectType.SelectboxSelect(_requestTypesDto.ObjectType.GetValue());
 
             page.ConfirmCreateRequestTypesButton.Click();
-
-            _projectDto.ReqestTypes.Add(_requestTypesDto);
         }
 
         [When(@"User click on the created Request Type")]
@@ -191,14 +190,13 @@ namespace DashworksTestAutomation.Steps.Projects
 
             table.CreateInstance<CategoryPropertiesDto>().CopyPropertiesTo(_categoryPropertiesDto);
             _categoryPropertiesDto.Name += TestDataGenerator.RandomString();
+            _projectDto.Categories.Add(_categoryPropertiesDto);
 
             page.Name.SendKeys(_categoryPropertiesDto.Name);
             page.Description.SendKeys(_categoryPropertiesDto.Description);
             page.ObjectType.SelectboxSelect(_categoryPropertiesDto.ObjectType.GetValue());
 
             page.ConfirmCreateCategoryButton.Click();
-
-            _projectDto.Categories = _categoryPropertiesDto;
         }
 
         [When(@"User create Stage")]
@@ -208,12 +206,12 @@ namespace DashworksTestAutomation.Steps.Projects
 
             table.CreateInstance<StagePropertiesDto>().CopyPropertiesTo(_stagePropertiesDto);
             _stagePropertiesDto.StageName += TestDataGenerator.RandomString();
+            _projectDto.Stages.Add(_stagePropertiesDto);
+
 
             page.StageName.SendKeys(_stagePropertiesDto.StageName);
 
             page.ConfirmCreateStageButton.Click();
-
-            _projectDto.Stages.Add(_stagePropertiesDto);
         }
 
         [When(@"User create Task")]
@@ -224,6 +222,7 @@ namespace DashworksTestAutomation.Steps.Projects
             table.CreateInstance<TaskPropertiesDto>().CopyPropertiesTo(_taskPropertiesDto);
             _taskPropertiesDto.ObjectType = (TaskObjectTypeEnum) Enum.Parse(typeof(TaskObjectTypeEnum), _taskPropertiesDto.ObjectTypeString);
             _taskPropertiesDto.Name += TestDataGenerator.RandomString();
+            _projectDto.Tasks.Add(_taskPropertiesDto);
 
             page.Name.SendKeys(_taskPropertiesDto.Name);
             page.Help.SendKeys(_taskPropertiesDto.Help);
@@ -235,8 +234,6 @@ namespace DashworksTestAutomation.Steps.Projects
             page.TaskValuesTemplateCheckbox.SetCheckboxState(_taskPropertiesDto.TaskValuesTemplateCheckbox);
 
             page.ConfirmCreateTaskButton.Click();
-
-            _projectDto.Tasks = _taskPropertiesDto;
         }
 
         [When(@"User updates the Task page")]
@@ -333,13 +330,12 @@ namespace DashworksTestAutomation.Steps.Projects
 
             table.CreateInstance<TeamPropertiesDto>().CopyPropertiesTo(_teamPropertiesDto);
             _teamPropertiesDto.TeamName += TestDataGenerator.RandomString();
+            _projectDto.TeamProperties.Add(_teamPropertiesDto);
 
             page.TeamName.SendKeys(_teamPropertiesDto.TeamName);
             page.ShortDescription.SendKeys(_teamPropertiesDto.ShortDescription);
 
             page.ConfirmCreateTeamButton.Click();
-
-            _projectDto.TeamProperties.Add(_teamPropertiesDto);
         }
 
         [When(@"User create Group")]
@@ -371,7 +367,6 @@ namespace DashworksTestAutomation.Steps.Projects
             page.Description.SendKeys(_mailTemplatePropertiesDto.Description);
             page.SubjectLine.SendKeys(_mailTemplatePropertiesDto.SubjectLine);
             page.BodyText.SendKeys(_mailTemplatePropertiesDto.BodyText);
-            //TODO Attachments
 
             page.ConfirmCreateMailTemplateButton.Click();
 
@@ -415,7 +410,7 @@ namespace DashworksTestAutomation.Steps.Projects
         {
             var page = _driver.NowAt<BaseElements>();
 
-            var task = page.GetTheCreatedTaskInTableByName(_projectDto.Tasks.Name);
+            var task = page.GetTheCreatedTaskInTableByName(_projectDto.Tasks.Last().Name);
             Assert.IsTrue(task.Displayed(), "Selected Task is not displayed in the table");
         }
 
@@ -442,7 +437,7 @@ namespace DashworksTestAutomation.Steps.Projects
         {
             var page = _driver.NowAt<BaseElements>();
 
-            Assert.IsTrue(page.GetTheCreatedCategoryInTableByName(_projectDto.Categories.Name).Displayed, "Selected Category is not displayed in the table");
+            Assert.IsTrue(page.GetTheCreatedCategoryInTableByName(_projectDto.Categories.Last().Name).Displayed, "Selected Category is not displayed in the table");
         }
 
         [Then(@"created Stage is displayed in the table")]
