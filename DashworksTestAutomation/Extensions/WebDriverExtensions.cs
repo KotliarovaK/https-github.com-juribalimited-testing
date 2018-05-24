@@ -409,7 +409,6 @@ namespace DashworksTestAutomation.Extensions
         public static void SelectCustomSelectbox(this RemoteWebDriver driver, IWebElement selectbox, string option)
         {
             selectbox.Click();
-
             //Small wait for dropdown display
             Thread.Sleep(300);
             var options = driver.FindElements(By.XPath(

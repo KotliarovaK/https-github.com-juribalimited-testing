@@ -106,7 +106,7 @@ Scenario: EvergreenJnr_AdminPage_CheckThatWarningMessageIsDisplayedAfterDeleting
 	When User clicks Settings button in the list panel
 	Then Settings panel is displayed to the user
 	When User clicks Delete in the list panel
-	Then "list is used by 1 project(s), do you wish to proceed?" message is displayed in the lists panel
+	Then "list is used by 1 project, do you wish to proceed?" message is displayed in the lists panel
 	When User clicks Delete in the warning message on the list panel 
 	And User clicks Admin on the left-hand menu
 	Then Admin page should be displayed to the user
@@ -347,9 +347,9 @@ Scenario: EvergreenJnr_AdminPage_CheckThatMailboxesAreSuccessfullyAddedToBuckets
 	Then User clicks "Mailboxes" tab on the Buckets page
 	When User clicks Add Mailbox button on the Buckets page
 	Then User add following mailboxes to the Bucket
-	| MailboxName                 |
-	| aaron.w.burton@dwlabs.local |
-	| abel.y.hanson@dwlabs.local  |
+	| MailboxName                      |
+	| alice.x.moyer@dwlabs.local       |
+	| alfonso.x.o'connell@dwlabs.local |
 	And Success message is displayed and contains "The selected mailboxes have been added to the selected bucket" text on the Buckets page
 	And There are no errors in the browser console
 
@@ -396,9 +396,9 @@ Scenario: EvergreenJnr_AdminPage_CheckThatConsoleErrorsAreNotDisplayedAfterAddin
 	And User clicks content from "Bucket" column on the Buckets page
 	When User clicks Add Device button on the Buckets page
 	Then User add following devices to the Bucket
-	| DeviceName      |
-	| 02X387UQLFP3ISU |
-	| 34RRSBA00C0EYY  |
+	| DeviceName     |
+	| 01DRMO46G58SXK |
+	| 01KFZ6XUVQSII0 |
 	And Success message is displayed and contains "The selected devices have been added to the selected bucket" text on the Buckets page
 	And There are no errors in the browser console
 
@@ -426,12 +426,12 @@ Scenario: EvergreenJnr_AdminPage_CheckThatConsoleErrorsAreNotDisplayedAfterAddin
 	When User clicks Add User button on the Buckets page
 	Then User add following users to the Bucket
 	| UserName                          |
-	| US-E\ABW081519 (Darrin A. Arnold) |
-	| FR\IIN4276389 (Merci Daoust)      |
+	| UK\LBM661859 (Jenifer V. Allison) |
+	| UK\ANK462406 (Nakia D. Norton)    |
 	And Success message is displayed and contains "The selected users have been added to the selected bucket" text on the Buckets page
 	And There are no errors in the browser console
 
-@Evergreen @Admin @EvergreenJnr_AdminPage @AdminPage @DAS11697
+@Evergreen @Admin @EvergreenJnr_AdminPage @AdminPage @DAS11697 @Not_Run
 Scenario Outline: EvergreenJnr_AdminPage_CheckThatCancelButtonOnTheCreateProjectPageRedirectsToTheLastPage
 	When User clicks "<ListName>" on the left-hand menu
 	Then "<ListName>" list should be displayed to the user
@@ -446,7 +446,7 @@ Scenario Outline: EvergreenJnr_AdminPage_CheckThatCancelButtonOnTheCreateProject
 	| Users     |
 	| Mailboxes |
 
-@Evergreen @Admin @EvergreenJnr_AdminPage @AdminPage @DAS12162 @DAS12532
+@Evergreen @Admin @EvergreenJnr_AdminPage @AdminPage @DAS12162 @DAS12532 @Not_Run
 Scenario: EvergreenJnr_AdminPage_CheckThatConsoleErrorsAreNotDisplayedAfterNavigatingScopeChangesTab
 	When User clicks "Devices" on the left-hand menu
 	Then "Devices" list should be displayed to the user
@@ -465,7 +465,7 @@ Scenario: EvergreenJnr_AdminPage_CheckThatConsoleErrorsAreNotDisplayedAfterNavig
 	Then There are no errors in the browser console
 	And Delete "TestProject8" Project in the Administration
 
-@Evergreen @Admin @EvergreenJnr_AdminPage @AdminPage @DAS12189 @DAS12523 @DAS12521 @Delete_Newly_Created_List
+@Evergreen @Admin @EvergreenJnr_AdminPage @AdminPage @DAS12189 @DAS12523 @DAS12521 @Delete_Newly_Created_List @Not_Run
 Scenario: EvergreenJnr_AdminPage_CheckThatNoErrorsAreDisplayedInTheProjectScopeChangesSectionAfterUsingSavedDevicesList
 	When User clicks "Applications" on the left-hand menu
 	Then "Applications" list should be displayed to the user
@@ -502,3 +502,57 @@ Scenario: EvergreenJnr_AdminPage_CheckThatNoErrorsAreDisplayedInTheProjectScopeC
 	And User clicks "Applications" tab in the Project Scope Changes section
 	Then There are no errors in the browser console
 	And Delete "TestProject9" Project in the Administration
+
+@Evergreen @Admin @EvergreenJnr_AdminPage @AdminPage @DAS12375
+Scenario: EvergreenJnr_AdminPage_CheckThatPanelOfAvailableMemberslIsExpandedByDefault
+	When User clicks Admin on the left-hand menu
+	Then Admin page should be displayed to the user
+	When User click "Teams" link on the Admin page
+	Then "Teams" page should be displayed to the user
+	When User enters "K-Team" text in the Search field for "Team" column on the Teams page
+	And User clicks content from "Team" column on the Teams page
+	Then "K-Team" team details is displayed to the user
+	When User clicks Add Members button on the Teams page
+	Then Panel of available members is displayed to the user
+
+@Evergreen @Admin @EvergreenJnr_AdminPage @AdminPage @DAS12552
+Scenario: EvergreenJnr_AdminPage_CheckThatFiltersAreWorkingCorrectlyOnTheAdminPages
+	When User clicks Admin on the left-hand menu
+	Then Admin page should be displayed to the user
+	When User click "Teams" link on the Admin page
+	Then "Teams" page should be displayed to the user
+	When User enters "Migration phase 3 team" text in the Search field for "Team" column on the Teams page
+	Then "1" rows are displayed on the Teams page
+	When User enters ">=5" text in the Search field for "Project Buckets" column on the Teams page
+	Then "5" rows are displayed on the Teams page
+	When User enters "Administrative Team" text in the Search field for "Team" column on the Teams page
+	And User clicks content from "Team" column on the Teams page
+	When User enters "readonly" text in the Search field for "Username" column on the Teams page
+	Then "1" rows are displayed on the Teams page
+	And User clicks "Buckets" tab on the Teams page
+	When User enters "Cardiff --- Test text fill; Test text fill; ------" text in the Search field for "Bucket" column on the Teams page
+	Then "1" rows are displayed on the Teams page
+	When User enters "<10" text in the Search field for "Devices" column on the Teams page
+	Then "4" rows are displayed on the Teams page
+	When User clicks Admin on the left-hand menu
+	When User click "Buckets" link on the Admin page
+	When User enters "barry's" text in the Search field for "Bucket" column on the Buckets page
+	Then "2" rows are displayed on the Buckets page
+	When User enters "=15" text in the Search field for "Users" column on the Buckets page
+	Then "13" rows are displayed on the Buckets page
+	When User enters "Unassigned" text in the Search field for "Bucket" column on the Buckets page
+	And User clicks content from "Bucket" column on the Buckets page
+	When User enters "BG4H" text in the Search field for "Hostname" column on the Buckets page
+	Then "2" rows are displayed on the Buckets page
+	When User enters "Mac OS X 10.12.3" text in the Search field for "Operating System" column on the Buckets page
+	Then "1" rows are displayed on the Buckets page
+	And User clicks "Users" tab on the Buckets page
+	When User enters "Pinabel Cinq-Mars" text in the Search field for "Display Name" column on the Buckets page
+	Then "1" rows are displayed on the Buckets page
+	When User enters "1DFF" text in the Search field for "Username" column on the Buckets page
+	Then "3" rows are displayed on the Buckets page
+	And User clicks "Mailboxes" tab on the Buckets page
+	When User enters "DiscoverySearchMailbox{D919BA05-46A6-415f-80AD-7E09334BB852}@juriba1.onmicrosoft.com" text in the Search field for "Email Address (Primary)" column on the Buckets page
+	Then "1" rows are displayed on the Buckets page
+	When User enters "RD-EXCH2K3" text in the Search field for "Server Name" column on the Buckets page
+	Then "6" rows are displayed on the Buckets page
