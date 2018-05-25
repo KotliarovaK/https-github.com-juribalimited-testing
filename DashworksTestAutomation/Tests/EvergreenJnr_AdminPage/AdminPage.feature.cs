@@ -1214,9 +1214,9 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_AdminPage
             TechTalk.SpecFlow.Table table2 = new TechTalk.SpecFlow.Table(new string[] {
                         "MailboxName"});
             table2.AddRow(new string[] {
-                        "alice.x.moyer@dwlabs.local"});
+                        "aaron.w.burton@dwlabs.local"});
             table2.AddRow(new string[] {
-                        "alfonso.x.o\'connell@dwlabs.local"});
+                        "abel.y.hanson@dwlabs.local"});
             testRunner.Then("User add following mailboxes to the Bucket", ((string)(null)), table2, "Then ");
             testRunner.And("Success message is displayed and contains \"The selected mailboxes have been added" +
                     " to the selected bucket\" text on the Buckets page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
@@ -1408,9 +1408,9 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_AdminPage
             TechTalk.SpecFlow.Table table3 = new TechTalk.SpecFlow.Table(new string[] {
                         "DeviceName"});
             table3.AddRow(new string[] {
-                        "01DRMO46G58SXK"});
+                        "02X387UQLFP3ISU"});
             table3.AddRow(new string[] {
-                        "01KFZ6XUVQSII0"});
+                        "34RRSBA00C0EYY"});
             testRunner.Then("User add following devices to the Bucket", ((string)(null)), table3, "Then ");
             testRunner.And("Success message is displayed and contains \"The selected devices have been added t" +
                     "o the selected bucket\" text on the Buckets page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
@@ -1533,9 +1533,9 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_AdminPage
             TechTalk.SpecFlow.Table table4 = new TechTalk.SpecFlow.Table(new string[] {
                         "UserName"});
             table4.AddRow(new string[] {
-                        "UK\\LBM661859 (Jenifer V. Allison)"});
+                        "US-E\\ABW081519 (Darrin A. Arnold)"});
             table4.AddRow(new string[] {
-                        "UK\\ANK462406 (Nakia D. Norton)"});
+                        "FR\\IIN4276389 (Merci Daoust)"});
             testRunner.Then("User add following users to the Bucket", ((string)(null)), table4, "Then ");
             testRunner.And("Success message is displayed and contains \"The selected users have been added to " +
                     "the selected bucket\" text on the Buckets page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
