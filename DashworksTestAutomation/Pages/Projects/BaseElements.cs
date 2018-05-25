@@ -90,7 +90,7 @@ namespace DashworksTestAutomation.Pages.Projects
         [FindsBy(How = How.XPath, Using = ".//input[contains(@id, 'GoToDeleteProjectView')]")]
         public IWebElement DeleteProjectButton { get; set; }
 
-        [FindsBy(How = How.XPath, Using = ".//input[contains@id, 'DeleteProject')]")]
+        [FindsBy(How = How.XPath, Using = ".//input[contains(@value, 'Delete')]")]
         public IWebElement ConfirmDeletedTheProjectButton { get; set; }
 
         public IWebElement GetDeleteButtonElementByName(string name)

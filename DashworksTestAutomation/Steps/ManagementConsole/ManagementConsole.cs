@@ -45,6 +45,9 @@ namespace DashworksTestAutomation.Steps
 
             table.CreateInstance<ManageUsersDto>().CopyPropertiesTo(_manageUsers);
             _manageUsers.Username += TestDataGenerator.RandomString();
+            ManageUsersDto tempManageUsersDto = new ManageUsersDto();
+            _manageUsers.CopyPropertiesTo(tempManageUsersDto);
+            _projectDto.ManageUsers.Add(tempManageUsersDto);
 
             page.Username.SendKeys(_manageUsers.Username);
             page.FullName.SendKeys(_manageUsers.FullName);
@@ -52,8 +55,6 @@ namespace DashworksTestAutomation.Steps
             page.ConfirmPassword.SendKeys(_manageUsers.ConfirmPassword);
 
             page.CreateUserButton.Click();
-
-            _projectDto.ManageUsers.Add(_manageUsers);
         }
 
         [Then(@"created User is displayed in the table")]

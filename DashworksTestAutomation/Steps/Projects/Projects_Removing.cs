@@ -136,7 +136,6 @@ namespace DashworksTestAutomation.Steps.Projects
             _driver.AcceptAlert();
             //Removing deleted Group from groups list
             _projectDto.GroupProperties.RemoveAt(_projectDto.GroupProperties.Count - 1);
-            var t = _projectDto.GroupProperties;
         }
 
         [Then(@"User removes ""(.*)"" Mail Templates")]

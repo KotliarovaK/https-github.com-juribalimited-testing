@@ -145,7 +145,9 @@ namespace DashworksTestAutomation.Steps.Projects
             table.CreateInstance<RequestTypesDto>().CopyPropertiesTo(_requestTypesDto);
             _requestTypesDto.ObjectType = (ObjectTypeEnum) Enum.Parse(typeof(ObjectTypeEnum), _requestTypesDto.ObjectTypeString);
             _requestTypesDto.Name += TestDataGenerator.RandomString();
-            _projectDto.ReqestTypes.Add(_requestTypesDto);
+            RequestTypesDto tempRequestTypesDto = new RequestTypesDto();
+            _requestTypesDto.CopyPropertiesTo(tempRequestTypesDto);
+            _projectDto.ReqestTypes.Add(tempRequestTypesDto);
 
 
             page.Name.SendKeys(_requestTypesDto.Name);
@@ -190,7 +192,9 @@ namespace DashworksTestAutomation.Steps.Projects
 
             table.CreateInstance<CategoryPropertiesDto>().CopyPropertiesTo(_categoryPropertiesDto);
             _categoryPropertiesDto.Name += TestDataGenerator.RandomString();
-            _projectDto.Categories.Add(_categoryPropertiesDto);
+            CategoryPropertiesDto tempCategoryPropertiesDto = new CategoryPropertiesDto();
+            _categoryPropertiesDto.CopyPropertiesTo(tempCategoryPropertiesDto);
+            _projectDto.Categories.Add(tempCategoryPropertiesDto);
 
             page.Name.SendKeys(_categoryPropertiesDto.Name);
             page.Description.SendKeys(_categoryPropertiesDto.Description);
@@ -206,7 +210,9 @@ namespace DashworksTestAutomation.Steps.Projects
 
             table.CreateInstance<StagePropertiesDto>().CopyPropertiesTo(_stagePropertiesDto);
             _stagePropertiesDto.StageName += TestDataGenerator.RandomString();
-            _projectDto.Stages.Add(_stagePropertiesDto);
+            StagePropertiesDto tempStagePropertiesDto = new StagePropertiesDto();
+            _stagePropertiesDto.CopyPropertiesTo(tempStagePropertiesDto);
+            _projectDto.Stages.Add(tempStagePropertiesDto);
 
 
             page.StageName.SendKeys(_stagePropertiesDto.StageName);
@@ -222,7 +228,9 @@ namespace DashworksTestAutomation.Steps.Projects
             table.CreateInstance<TaskPropertiesDto>().CopyPropertiesTo(_taskPropertiesDto);
             _taskPropertiesDto.ObjectType = (TaskObjectTypeEnum) Enum.Parse(typeof(TaskObjectTypeEnum), _taskPropertiesDto.ObjectTypeString);
             _taskPropertiesDto.Name += TestDataGenerator.RandomString();
-            _projectDto.Tasks.Add(_taskPropertiesDto);
+            TaskPropertiesDto tempTaskPropertiesDto = new TaskPropertiesDto();
+            _taskPropertiesDto.CopyPropertiesTo(tempTaskPropertiesDto);
+            _projectDto.Tasks.Add(tempTaskPropertiesDto);
 
             page.Name.SendKeys(_taskPropertiesDto.Name);
             page.Help.SendKeys(_taskPropertiesDto.Help);
@@ -330,7 +338,9 @@ namespace DashworksTestAutomation.Steps.Projects
 
             table.CreateInstance<TeamPropertiesDto>().CopyPropertiesTo(_teamPropertiesDto);
             _teamPropertiesDto.TeamName += TestDataGenerator.RandomString();
-            _projectDto.TeamProperties.Add(_teamPropertiesDto);
+            TeamPropertiesDto tempTeamPropertiesDto = new TeamPropertiesDto();
+            _teamPropertiesDto.CopyPropertiesTo(tempTeamPropertiesDto);
+            _projectDto.TeamProperties.Add(tempTeamPropertiesDto);
 
             page.TeamName.SendKeys(_teamPropertiesDto.TeamName);
             page.ShortDescription.SendKeys(_teamPropertiesDto.ShortDescription);
@@ -345,7 +355,9 @@ namespace DashworksTestAutomation.Steps.Projects
 
             table.CreateInstance<GroupPropertiesDto>().CopyPropertiesTo(_groupPropertiesDto);
             _groupPropertiesDto.GroupName += TestDataGenerator.RandomString();
-            _projectDto.GroupProperties.Add(_groupPropertiesDto);
+            GroupPropertiesDto tempGroupPropertiesDto = new GroupPropertiesDto();
+            _groupPropertiesDto.CopyPropertiesTo(tempGroupPropertiesDto);
+            _projectDto.GroupProperties.Add(tempGroupPropertiesDto);
 
             page.GroupName.SendKeys(_groupPropertiesDto.GroupName);
             page.OwnedByTeam.SelectboxSelect(_projectDto.TeamProperties.Last().TeamName);
@@ -462,7 +474,7 @@ namespace DashworksTestAutomation.Steps.Projects
         {
             var page = _driver.NowAt<BaseElements>();
 
-            var groupsInTeam = _projectDto.GroupProperties.Count(x => x.OwnedByTeam.Equals(_projectDto.TeamProperties.Last().TeamName));
+            var groupsInTeam = _projectDto.GroupProperties.Count(x => x.OwnedByTeam.Equals(_projectDto.TeamProperties.LastOrDefault().TeamName));
             var groups = page.GetGroupsCountByTeamName(_projectDto.TeamProperties.Last().TeamName);
 
             Assert.AreEqual(groups, groupsInTeam, "Number of groups is incorrect");
