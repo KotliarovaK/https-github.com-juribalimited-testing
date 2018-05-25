@@ -86,10 +86,12 @@ namespace DashworksTestAutomation.Steps.Dashworks
         [Then(@"Image item from ""(.*)"" column is displayed to the user")]
         public void ThenImageItemFromColumnIsDisplayedToTheUser(string columnName)
         {
+            _driver.WaitForDataLoading();
             var content = _driver.FindElements(By.XPath(DetailsPage.ColumnWithImageAndLinkSelector));
             foreach (var element in content)
             {
                 var image = element.FindElement(By.XPath(DetailsPage.ItemImageSelector));
+                _driver.MouseHover(image);
                 Assert.IsTrue(image.Displayed(), "Image item is not found");
             }
         }
