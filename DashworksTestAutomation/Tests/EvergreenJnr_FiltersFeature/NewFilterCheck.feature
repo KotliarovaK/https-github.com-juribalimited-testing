@@ -87,7 +87,7 @@ Examples:
 	| Babel(Engl: Target App Readiness | Equals, Does not equal | None         | Babel(Engl: Target App Readiness is None  | 302       |
 	| Barry'sUse: Target App Readiness | Equals, Does not equal | None         | Barry'sUse: Target App Readiness is None  | 1,045     |
 	| ComputerSc: Target App Readiness | Equals, Does not equal | Green        | ComputerSc: Target App Readiness is Green | 903       |
-	| Havoc(BigD: Target App Readiness | Equals, Does not equal | None         | Havoc(BigD: Target App Readiness is None  | 1,067     |
+	| Havoc(BigD: Target App Readiness | Equals, Does not equal | None         | Havoc(BigD: Target App Readiness is None  | 1,069     |
 	| MigrationP: Target App Readiness | Equals, Does not equal | Blue         | MigrationP: Target App Readiness is Blue  | 189       |
 	| UserSchedu: Target App Readiness | Equals, Does not equal | Grey         | UserSchedu: Target App Readiness is Grey  | 981       |
 

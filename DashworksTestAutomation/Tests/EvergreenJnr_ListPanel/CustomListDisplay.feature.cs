@@ -1050,7 +1050,6 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_ListPanel
         [NUnit.Framework.CategoryAttribute("DAS11951")]
         [NUnit.Framework.CategoryAttribute("DAS12152")]
         [NUnit.Framework.CategoryAttribute("Delete_Newly_Created_List")]
-        [NUnit.Framework.CategoryAttribute("Not_Run")]
         public virtual void EvergreenJnr_DevicesList_CheckThatSortingWillBeWorkForExistingSavedStaticLists()
         {
             System.Exception lastException = null;
@@ -1087,8 +1086,7 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_ListPanel
                         "DAS10870",
                         "DAS11951",
                         "DAS12152",
-                        "Delete_Newly_Created_List",
-                        "Not_Run"});
+                        "Delete_Newly_Created_List"});
             this.ScenarioSetup(scenarioInfo);
             this.FeatureBackground();
             testRunner.When("User clicks \"Devices\" on the left-hand menu", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
@@ -1139,7 +1137,6 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_ListPanel
         [NUnit.Framework.CategoryAttribute("DAS11951")]
         [NUnit.Framework.CategoryAttribute("DAS12199")]
         [NUnit.Framework.CategoryAttribute("Delete_Newly_Created_List")]
-        [NUnit.Framework.CategoryAttribute("Not_Run")]
         public virtual void EvergreenJnr_DevicesList_CheckThatSortingWillBeWorkForExistingSavedDynamicLists()
         {
             System.Exception lastException = null;
@@ -1176,8 +1173,7 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_ListPanel
                         "DAS10870",
                         "DAS11951",
                         "DAS12199",
-                        "Delete_Newly_Created_List",
-                        "Not_Run"});
+                        "Delete_Newly_Created_List"});
             this.ScenarioSetup(scenarioInfo);
             this.FeatureBackground();
             testRunner.When("User clicks \"Devices\" on the left-hand menu", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
@@ -1198,7 +1194,7 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_ListPanel
                     "", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
             testRunner.Then("\"Dynamic List TestName qq2r\" list is displayed to user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
             testRunner.When("User click on \'Compliance\' column header", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-            testRunner.Then("data in table is sorted by \'Compliance\' column in ascending order", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+            testRunner.Then("color data is sorted by \'Compliance\' column in ascending order", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
             testRunner.And("Edit List menu is displayed", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
             this.ScenarioCleanup();
         }
@@ -1213,7 +1209,6 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_ListPanel
         [NUnit.Framework.CategoryAttribute("DAS12152")]
         [NUnit.Framework.CategoryAttribute("DAS12199")]
         [NUnit.Framework.CategoryAttribute("Delete_Newly_Created_List")]
-        [NUnit.Framework.CategoryAttribute("Not_Run")]
         public virtual void EvergreenJnr_DevicesList_CheckThatEditListMenuNotDisplayedForActiveList()
         {
             System.Exception lastException = null;
@@ -1250,8 +1245,7 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_ListPanel
                         "DAS10914",
                         "DAS12152",
                         "DAS12199",
-                        "Delete_Newly_Created_List",
-                        "Not_Run"});
+                        "Delete_Newly_Created_List"});
             this.ScenarioSetup(scenarioInfo);
             this.FeatureBackground();
             testRunner.When("User clicks \"Devices\" on the left-hand menu", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
@@ -1523,7 +1517,6 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_ListPanel
         [NUnit.Framework.CategoryAttribute("CustomListDisplay")]
         [NUnit.Framework.CategoryAttribute("DAS11465")]
         [NUnit.Framework.CategoryAttribute("Delete_Newly_Created_List")]
-        [NUnit.Framework.CategoryAttribute("Not_Run")]
         public virtual void EvergreenJnr_DevicesLists_CheckThatAnotherUserCanEditsAndSavesASharedListWithSelectedColumnsWithoutErrors()
         {
             System.Exception lastException = null;
@@ -1559,8 +1552,7 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_ListPanel
                         "EvergreenJnr_ListPanel",
                         "CustomListDisplay",
                         "DAS11465",
-                        "Delete_Newly_Created_List",
-                        "Not_Run"});
+                        "Delete_Newly_Created_List"});
             this.ScenarioSetup(scenarioInfo);
             this.FeatureBackground();
             TechTalk.SpecFlow.Table table36 = new TechTalk.SpecFlow.Table(new string[] {
@@ -2288,7 +2280,6 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_ListPanel
         [NUnit.Framework.CategoryAttribute("CustomListDisplay")]
         [NUnit.Framework.CategoryAttribute("DAS10972")]
         [NUnit.Framework.CategoryAttribute("Delete_Newly_Created_List")]
-        [NUnit.Framework.CategoryAttribute("Not_Run")]
         [NUnit.Framework.TestCaseAttribute("Devices", "Hostname", "Import", "001BAQXT6JWFPI", "Network Card", "Owner City", new string[0])]
         [NUnit.Framework.TestCaseAttribute("Applications", "Application", "Application Key", "\"WPF/E\" (codename) Community Technology Preview (Feb 2007)", "prK: In Scope", "Compliance", new string[0])]
         [NUnit.Framework.TestCaseAttribute("Users", "Username", "City", "$6BE000-SUDQ9614UVO8", "Cost Centre", "Department Name", new string[0])]
@@ -2327,8 +2318,7 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_ListPanel
                     "EvergreenJnr_ListPanel",
                     "CustomListDisplay",
                     "DAS10972",
-                    "Delete_Newly_Created_List",
-                    "Not_Run"};
+                    "Delete_Newly_Created_List"};
             if ((exampleTags != null))
             {
                 @__tags = System.Linq.Enumerable.ToArray(System.Linq.Enumerable.Concat(@__tags, exampleTags));
