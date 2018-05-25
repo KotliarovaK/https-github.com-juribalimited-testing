@@ -91,8 +91,7 @@ namespace DashworksTestAutomation.Steps.Dashworks
             foreach (var element in content)
             {
                 var image = element.FindElement(By.XPath(DetailsPage.ItemImageSelector));
-                _driver.MouseHover(image);
-                Assert.IsTrue(image.Displayed(), "Image item is not found");
+                Assert.IsTrue(_driver.IsElementExists(image), "Image item is not found");
             }
         }
 
