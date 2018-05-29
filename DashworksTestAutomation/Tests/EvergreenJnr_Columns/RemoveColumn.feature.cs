@@ -1297,6 +1297,81 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_Columns
             testRunner.And("ColumnName is removed from the list", ((string)(null)), table56, "And ");
             this.ScenarioCleanup();
         }
+        
+        [NUnit.Framework.TestAttribute()]
+        [NUnit.Framework.DescriptionAttribute("EvergreenJnr_AllLists_CheckThatNoErrorsAreDisplayedAfterAddingAndRemovingOwnerEna" +
+            "bledColumn")]
+        [NUnit.Framework.CategoryAttribute("Evergreen")]
+        [NUnit.Framework.CategoryAttribute("AllLists")]
+        [NUnit.Framework.CategoryAttribute("EvergreenJnr_Columns")]
+        [NUnit.Framework.CategoryAttribute("RemoveColumn")]
+        [NUnit.Framework.CategoryAttribute("DAS12513")]
+        [NUnit.Framework.TestCaseAttribute("Devices", "Operating System", "Owner Display Name", "", new string[0])]
+        [NUnit.Framework.TestCaseAttribute("Mailboxes", "Mail Server", "Mailbox Type", "Owner Display Name", new string[0])]
+        public virtual void EvergreenJnr_AllLists_CheckThatNoErrorsAreDisplayedAfterAddingAndRemovingOwnerEnabledColumn(string pageName, string columnName1, string columnName2, string columnName3, string[] exampleTags)
+        {
+            System.Exception lastException = null;
+            for (int i = 0; (i <= 1); i = (i + 1))
+            {
+                try
+                {
+                    this.EvergreenJnr_AllLists_CheckThatNoErrorsAreDisplayedAfterAddingAndRemovingOwnerEnabledColumnInternal(pageName, columnName1, columnName2, columnName3, exampleTags);
+                    return;
+                }
+                catch (System.Exception exc)
+                {
+                    lastException = exc;
+                }
+                if (((i + 1) 
+                            <= 1))
+                {
+                    testRunner.OnScenarioEnd();
+                }
+            }
+            if ((lastException != null))
+            {
+                throw lastException;
+            }
+        }
+        
+        private void EvergreenJnr_AllLists_CheckThatNoErrorsAreDisplayedAfterAddingAndRemovingOwnerEnabledColumnInternal(string pageName, string columnName1, string columnName2, string columnName3, string[] exampleTags)
+        {
+            string[] @__tags = new string[] {
+                    "Evergreen",
+                    "AllLists",
+                    "EvergreenJnr_Columns",
+                    "RemoveColumn",
+                    "DAS12513"};
+            if ((exampleTags != null))
+            {
+                @__tags = System.Linq.Enumerable.ToArray(System.Linq.Enumerable.Concat(@__tags, exampleTags));
+            }
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("EvergreenJnr_AllLists_CheckThatNoErrorsAreDisplayedAfterAddingAndRemovingOwnerEna" +
+                    "bledColumn", @__tags);
+            this.ScenarioSetup(scenarioInfo);
+            this.FeatureBackground();
+            testRunner.When(string.Format("User clicks \"{0}\" on the left-hand menu", pageName), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+            testRunner.Then(string.Format("\"{0}\" list should be displayed to the user", pageName), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+            testRunner.When("User clicks the Filters button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+            testRunner.Then("Filters panel is displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+            TechTalk.SpecFlow.Table table57 = new TechTalk.SpecFlow.Table(new string[] {
+                        "SelectedCheckboxes"});
+            table57.AddRow(new string[] {
+                        "TRUE"});
+            testRunner.When("User add \"Owner Enabled\" filter where type is \"Equals\" with added column and foll" +
+                    "owing checkboxes:", ((string)(null)), table57, "When ");
+            TechTalk.SpecFlow.Table table58 = new TechTalk.SpecFlow.Table(new string[] {
+                        "ColumnName"});
+            table58.AddRow(new string[] {
+                        "Owner Enabled"});
+            testRunner.Then("ColumnName is added to the list", ((string)(null)), table58, "Then ");
+            testRunner.When("User clicks the Columns button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+            testRunner.Then("Columns panel is displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+            testRunner.When(string.Format("User removes \"{0}\" column by Column panel", columnName1), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+            testRunner.When(string.Format("User removes \"{0}\" column by Column panel", columnName2), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+            testRunner.Then(string.Format("\"{0}\" list should be displayed to the user", pageName), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+            this.ScenarioCleanup();
+        }
     }
 }
 #pragma warning restore

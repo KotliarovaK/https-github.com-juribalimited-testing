@@ -538,8 +538,8 @@ Scenario: EvergreenJnr_AdminPage_CheckThatFiltersAreWorkingCorrectlyOnTheAdminPa
 	When User click "Buckets" link on the Admin page
 	When User enters "barry's" text in the Search field for "Bucket" column on the Buckets page
 	Then "2" rows are displayed on the Buckets page
-	When User enters "=15" text in the Search field for "Users" column on the Buckets page
-	Then "13" rows are displayed on the Buckets page
+	When User enters "=13" text in the Search field for "Users" column on the Buckets page
+	Then "7" rows are displayed on the Buckets page
 	When User enters "Unassigned" text in the Search field for "Bucket" column on the Buckets page
 	And User clicks content from "Bucket" column on the Buckets page
 	When User enters "BG4H" text in the Search field for "Hostname" column on the Buckets page
