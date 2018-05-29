@@ -360,7 +360,7 @@ Examples:
 	| Empty          |              | 6         | is empty            |
 	| Not empty      |              | 14,778    | is not empty        |
 
- @Evergreen @Devices @Evergreen_FiltersFeature @FiltersDisplay @DAS10696 @DAS11090 @DAS12114
+ @Evergreen @Devices @Evergreen_FiltersFeature @FiltersDisplay @DAS10696 @DAS11090 @DAS12114 @Not_Run
 Scenario Outline: EvergreenJnr_DevicesList_CheckThatFilterOperatorsIsCorrectInFilterInfoDatetime
 	When User clicks "Devices" on the left-hand menu
 	Then "Devices" list should be displayed to the user
@@ -516,7 +516,7 @@ Examples:
 	| Mailboxes |
 	| Devices   |
 
-@Evergreen @Devices @EvergreenJnr_FiltersFeature @FilterFunctionality @DAS11087 @DAS12114
+@Evergreen @Devices @EvergreenJnr_FiltersFeature @FilterFunctionality @DAS11087 @DAS12114 @Not_Run
 Scenario: EvergreenJnr_DevicesList_CheckThatDateAndTimeFiltersWithEqualsValuesAreWorkingCorrectly
 	When User clicks "Devices" on the left-hand menu
 	Then "Devices" list should be displayed to the user
@@ -528,7 +528,7 @@ Scenario: EvergreenJnr_DevicesList_CheckThatDateAndTimeFiltersWithEqualsValuesAr
 	Then "Windows7Mi: Date & Time Task" filter is added to the list
 	Then "16" rows are displayed in the agGrid
 
-@Evergreen @Devices @EvergreenJnr_FiltersFeature @FilterFunctionality @DAS11087 @DAS11090 @DAS12114
+@Evergreen @Devices @EvergreenJnr_FiltersFeature @FilterFunctionality @DAS11087 @DAS11090 @DAS12114 @Not_Run
 Scenario Outline: EvergreenJnr_DevicesList_CheckThatDateAndTimeFiltersWithDoesNotEqualValuesAreWorkingCorrectly
 	When User clicks "Devices" on the left-hand menu
 	Then "Devices" list should be displayed to the user
@@ -551,7 +551,6 @@ Scenario Outline: EvergreenJnr_DevicesList_CheckThatCustomFiltersAreContainsAllE
 	Then "Devices" list should be displayed to the user
 	When User clicks the Filters button
 	Then Filters panel is displayed to the user
-	#When user select "<FilterName>" filter
 	When User selects "<FilterName>" filter from "Application Custom Fields" category
 	Then Associations is displayed in the filter
 	| Associations                   |
