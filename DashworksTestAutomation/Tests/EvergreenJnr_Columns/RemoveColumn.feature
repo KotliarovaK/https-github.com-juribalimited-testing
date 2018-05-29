@@ -417,10 +417,10 @@ Examples:
 	| Devices  | Hostname   |
 	| Users    | Username   |
 
-@Evergreen @AllLists @EvergreenJnr_Columns @RemoveColumn @DAS12513
-Scenario Outline: EvergreenJnr_AllLists_CheckThatNoErrorsAreDisplayedAfterAddingAndRemovingOwnerEnabledColumn
-	When User clicks "<PageName>" on the left-hand menu
-	Then "<PageName>" list should be displayed to the user
+@Evergreen @Mailboxes @EvergreenJnr_Columns @RemoveColumn @DAS12513
+Scenario: EvergreenJnr_MailboxesList_CheckThatNoErrorsAreDisplayedAfterAddingAndRemovingOwnerEnabledColumnForMailboxes
+	When User clicks "Mailboxes" on the left-hand menu
+	Then "Mailboxes" list should be displayed to the user
 	When User clicks the Filters button
 	Then Filters panel is displayed to the user
 	When User add "Owner Enabled" filter where type is "Equals" with added column and following checkboxes:
@@ -431,11 +431,25 @@ Scenario Outline: EvergreenJnr_AllLists_CheckThatNoErrorsAreDisplayedAfterAdding
 	| Owner Enabled |
 	When User clicks the Columns button
 	Then Columns panel is displayed to the user
-	When User removes "<ColumnName1>" column by Column panel
-	When User removes "<ColumnName2>" column by Column panel
-	Then "<PageName>" list should be displayed to the user
-	
-Examples: 
-	| PageName  | ColumnName1      | ColumnName2        | ColumnName3        |
-	| Devices   | Operating System | Owner Display Name |                    |
-	| Mailboxes | Mail Server      | Mailbox Type       | Owner Display Name |
+	When User removes "Mail Server" column by Column panel
+	When User removes "Mailbox Type" column by Column panel
+	When User removes "Owner Display Name" column by Column panel
+	Then "Mailboxes" list should be displayed to the user
+
+@Evergreen @Devices @EvergreenJnr_Columns @RemoveColumn @DAS12513
+Scenario: EvergreenJnr_DevicesList_CheckThatNoErrorsAreDisplayedAfterAddingAndRemovingOwnerEnabledColumnForDevices
+	When User clicks "Devices" on the left-hand menu
+	Then "Devices" list should be displayed to the user
+	When User clicks the Filters button
+	Then Filters panel is displayed to the user
+	When User add "Owner Enabled" filter where type is "Equals" with added column and following checkboxes:
+	| SelectedCheckboxes |
+	| TRUE               |
+	Then ColumnName is added to the list
+	| ColumnName    |
+	| Owner Enabled |
+	When User clicks the Columns button
+	Then Columns panel is displayed to the user
+	When User removes "Operating System" column by Column panel
+	When User removes "Owner Display Name" column by Column panel
+	Then "Devices" list should be displayed to the user
