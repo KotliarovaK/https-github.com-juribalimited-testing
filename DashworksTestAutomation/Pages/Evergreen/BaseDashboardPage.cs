@@ -222,6 +222,7 @@ namespace DashworksTestAutomation.Pages.Evergreen
         {
             By by = By.XPath(
                 ".//div[@class='active-list-wrapper ng-star-inserted']/ul/li/span");
+            Driver.WaitForElement(by);
             return Driver.FindElement(by).Text;
         }
 
