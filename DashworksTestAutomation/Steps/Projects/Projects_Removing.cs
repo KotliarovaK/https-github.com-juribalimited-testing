@@ -1,5 +1,6 @@
 ﻿using System.Linq;
 using DashworksTestAutomation.DTO.Projects;
+using DashworksTestAutomation.DTO.RuntimeVariables;
 using DashworksTestAutomation.Extensions;
 using DashworksTestAutomation.Pages.Projects;
 using NUnit.Framework;
@@ -11,39 +12,33 @@ namespace DashworksTestAutomation.Steps.Projects
     [Binding]
     internal class Projects_Removing : SpecFlowContext
     {
+        private readonly PrjLastDeletedRequestTypeName _deletedRequestTypeName;
+        private readonly PrjLastDeletedStageName _deletedStageName;
+        private readonly PrjLastDeletedTaskName _deletedTaskName;
+        private readonly PrjLastDeletedTeamName _deletedTeamName;
+        private readonly PrjLastDeletedGroupName _deletedGroupName;
         private readonly RemoteWebDriver _driver;
         private readonly ProjectDto _projectDto;
 
-        public Projects_Removing(RemoteWebDriver driver, ProjectDto projectDto)
+        public Projects_Removing(RemoteWebDriver driver, ProjectDto projectDto, PrjLastDeletedGroupName deletedGroupName, PrjLastDeletedTeamName deletedTeamName, PrjLastDeletedTaskName deletedTaskName, PrjLastDeletedStageName deletedStageName, PrjLastDeletedRequestTypeName deletedRequestTypeName)
         {
             _driver = driver;
             _projectDto = projectDto;
-        }
-
-        [Then(@"User removes ""(.*)"" Request Type")]
-        public void ThenUserRemovesRequestType(string requestType)
-        {
-            var page = _driver.NowAt<BaseElements>();
-
-            page.GetDeleteButtonElementByName(requestType).Click();
+            _deletedGroupName = deletedGroupName;
+            _deletedTeamName = deletedTeamName;
+            _deletedTaskName = deletedTaskName;
+            _deletedStageName = deletedStageName;
+            _deletedRequestTypeName = deletedRequestTypeName;
         }
 
         [Then(@"User removes created Request Type")]
         public void ThenUserRemovesCreatedRequestType()
         {
             var page = _driver.NowAt<BaseElements>();
-
-            page.GetDeleteButtonElementByName(_projectDto.ReqestTypes.Last().Name).Click();
+            _deletedRequestTypeName.Value = _projectDto.ReqestTypes.Last().Name;
+            page.GetDeleteButtonElementByName(_deletedRequestTypeName.Value).Click();
             //Removing deleted Request Type from request types list
             _projectDto.ReqestTypes.RemoveAt(_projectDto.ReqestTypes.Count - 1);
-        }
-
-        [Then(@"User removes ""(.*)"" Category")]
-        public void ThenUserRemovesCategory(string categoryName)
-        {
-            var page = _driver.NowAt<BaseElements>();
-
-            page.GetDeleteButtonElementByName(categoryName).Click();
         }
 
         [Then(@"User removes created Category")]
@@ -54,97 +49,50 @@ namespace DashworksTestAutomation.Steps.Projects
             page.GetDeleteButtonElementByName(_projectDto.Categories.Last().Name).Click();
         }
 
-        [Then(@"User removes ""(.*)"" Stage")]
-        public void ThenUserRemovesStage(string stageName)
-        {
-            var page = _driver.NowAt<BaseElements>();
-
-            page.GetDeleteStageButtonElementByName(stageName).Click();
-            _driver.AcceptAlert();
-        }
-
         [Then(@"User removes created Stage")]
         public void ThenUserRemovesCreatedStage()
         {
             var page = _driver.NowAt<BaseElements>();
-
-            page.GetDeleteStageButtonElementByName(_projectDto.Stages.Last().StageName).Click();
+            _deletedStageName.Value = _projectDto.Stages.Last().StageName;
+            page.GetDeleteStageButtonElementByName(_deletedStageName.Value).Click();
             _driver.AcceptAlert();
             //Removing deleted Stage from stages list
             _projectDto.Stages.RemoveAt(_projectDto.Stages.Count - 1);
-        }
-
-        [Then(@"User removes ""(.*)"" Task")]
-        public void ThenUserRemovesTask(string taskName)
-        {
-            var page = _driver.NowAt<BaseElements>();
-
-            page.GetDeleteButtonElementByName(taskName).Click();
-            _driver.AcceptAlert();
         }
 
         [Then(@"User removes created Task")]
         public void ThenUserRemovesCreatedTask()
         {
             var page = _driver.NowAt<BaseElements>();
-
-            page.GetDeleteButtonElementByName(_projectDto.Tasks.Last().Name).Click();
+            _deletedTaskName.Value = _projectDto.Tasks.Last().Name;
+            page.GetDeleteButtonElementByName(_deletedTaskName.Value).Click();
             _driver.AcceptAlert();
             //Removing deleted Task from tasks list
             _projectDto.Tasks.RemoveAt(_projectDto.Tasks.Count - 1);
-        }
-
-        [Then(@"User removes ""(.*)"" Team")]
-        public void ThenUserRemovesTeam(string teamName)
-        {
-            var page = _driver.NowAt<BaseElements>();
-
-            page.GetDeleteButtonElementByName(teamName).Click();
-            page.DeleteGroupButton.Click();
-            _driver.AcceptAlert();
         }
 
         [Then(@"User removes created Team")]
         public void ThenUserRemovesCreatedTeam()
         {
             var page = _driver.NowAt<BaseElements>();
-
-            page.GetDeleteButtonElementByName(_projectDto.TeamProperties.Last().TeamName).Click();
+            _deletedTeamName.Value = _projectDto.TeamProperties.Last().TeamName;
+            page.GetDeleteButtonElementByName(_deletedTeamName.Value).Click();
             page.DeleteGroupButton.Click();
             _driver.AcceptAlert();
             //Removing deleted Team from teams list
             _projectDto.TeamProperties.RemoveAt(_projectDto.TeamProperties.Count - 1);
         }
 
-        [Then(@"User removes ""(.*)"" Group")]
-        public void ThenUserRemovesGroup(string groupName)
-        {
-            var page = _driver.NowAt<BaseElements>();
-
-            page.GetDeleteButtonElementByName(groupName).Click();
-            page.DeleteGroupButton.Click();
-            _driver.AcceptAlert();
-        }
-
         [Then(@"User removes created Group")]
         public void ThenUserRemovesCreatedGroup()
         {
             var page = _driver.NowAt<BaseElements>();
-
-            page.GetDeleteButtonElementByName(_projectDto.GroupProperties.Last().GroupName).Click();
+            _deletedGroupName.Value = _projectDto.GroupProperties.Last().GroupName;
+            page.GetDeleteButtonElementByName(_deletedGroupName.Value).Click();
             page.DeleteGroupButton.Click();
             _driver.AcceptAlert();
             //Removing deleted Group from groups list
             _projectDto.GroupProperties.RemoveAt(_projectDto.GroupProperties.Count - 1);
-        }
-
-        [Then(@"User removes ""(.*)"" Mail Templates")]
-        public void ThenUserRemovesMailTemplates(string templateName)
-        {
-            var page = _driver.NowAt<BaseElements>();
-
-            page.GetDeleteButtonElementByName(templateName).Click();
-            _driver.AcceptAlert();
         }
 
         [Then(@"User removes created Mail Template")]
@@ -175,7 +123,7 @@ namespace DashworksTestAutomation.Steps.Projects
             var page = _driver.NowAt<BaseElements>();
 
             _driver.WaitForDataLoading();
-            Assert.IsFalse(page.CheckThatCreatedElementIsRemoved(_projectDto.TeamProperties.Last().TeamName), "Selected Team is displayed in the table");
+            Assert.IsFalse(page.CheckThatCreatedElementIsRemoved(_deletedTeamName.Value), "Selected Team is displayed in the table");
         }
 
         [Then(@"selected Group was removed")]
@@ -183,7 +131,7 @@ namespace DashworksTestAutomation.Steps.Projects
         {
             var page = _driver.NowAt<BaseElements>();
 
-            Assert.IsFalse(page.CheckThatCreatedElementIsRemoved(_projectDto.GroupProperties.Last().GroupName), "Selected Group is displayed in the table");
+            Assert.IsFalse(page.CheckThatCreatedElementIsRemoved(_deletedGroupName.Value), "Selected Group is displayed in the table");
         }
 
         [Then(@"selected Task was removed")]
@@ -191,7 +139,7 @@ namespace DashworksTestAutomation.Steps.Projects
         {
             var page = _driver.NowAt<BaseElements>();
             
-            Assert.IsFalse(page.CheckThatCreatedElementIsRemoved(_projectDto.Tasks.Last().Name), "Selected Task is displayed in the table");
+            Assert.IsFalse(page.CheckThatCreatedElementIsRemoved(_deletedTaskName.Value), "Selected Task is displayed in the table");
         }
 
         [Then(@"selected Stage was removed")]
@@ -199,7 +147,7 @@ namespace DashworksTestAutomation.Steps.Projects
         {
             var page = _driver.NowAt<BaseElements>();
 
-            Assert.IsFalse(page.CheckThatCreatedElementIsRemoved(_projectDto.Stages.Last().StageName), "Selected Stage is displayed in the table");
+            Assert.IsFalse(page.CheckThatCreatedElementIsRemoved(_deletedStageName.Value), "Selected Stage is displayed in the table");
         }
 
         [Then(@"selected Category was removed")]
@@ -215,7 +163,7 @@ namespace DashworksTestAutomation.Steps.Projects
         {
             var page = _driver.NowAt<BaseElements>();
 
-            Assert.IsFalse(page.CheckThatCreatedElementIsRemoved(_projectDto.ReqestTypes.Last().Name), "Selected Request Type is displayed in the table");
+            Assert.IsFalse(page.CheckThatCreatedElementIsRemoved(_deletedRequestTypeName.Value), "Selected Request Type is displayed in the table");
         }
 
         [Then(@"selected Mail Template was removed")]

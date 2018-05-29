@@ -205,6 +205,12 @@
     <Compile Include="DTO\Projects\TeamPropertiesDto.cs" />
     <Compile Include="DTO\RuntimeVariables\Filter.cs" />
     <Compile Include="DTO\RuntimeVariables\ListsDetails.cs" />
+    <Compile Include="DTO\RuntimeVariables\PrjLastDeletedRequestTypeName.cs" />
+    <Compile Include="DTO\RuntimeVariables\PrjLastDeletedTaskName.cs" />
+    <Compile Include="DTO\RuntimeVariables\PrjLastDeletedGroupName.cs" />
+    <Compile Include="DTO\RuntimeVariables\PrjLastDeletedStageName.cs" />
+    <Compile Include="DTO\RuntimeVariables\PrjLastDeletedTeamName.cs" />
+    <Compile Include="DTO\RuntimeVariables\PrjLastDeletedUserName.cs" />
     <Compile Include="DTO\RuntimeVariables\ResponceDetails.cs" />
     <Compile Include="DTO\RuntimeVariables\RestWebClient.cs" />
     <Compile Include="DTO\RuntimeVariables\TeamName.cs" />

@@ -364,7 +364,7 @@ namespace DashworksTestAutomation.Steps.Projects
 
             page.ConfirmCreateGroupButton.Click();
 
-            _groupPropertiesDto.OwnedByTeam = _projectDto.TeamProperties.Last().TeamName;
+            tempGroupPropertiesDto.OwnedByTeam = _projectDto.TeamProperties.Last().TeamName;
         }
 
         [When(@"User create Mail Template")]
@@ -474,7 +474,8 @@ namespace DashworksTestAutomation.Steps.Projects
         {
             var page = _driver.NowAt<BaseElements>();
 
-            var groupsInTeam = _projectDto.GroupProperties.Count(x => x.OwnedByTeam.Equals(_projectDto.TeamProperties.LastOrDefault().TeamName));
+            var teamName = _projectDto.TeamProperties.Last().TeamName;
+            var groupsInTeam = _projectDto.GroupProperties.Count(x => x.OwnedByTeam.Equals(teamName));
             var groups = page.GetGroupsCountByTeamName(_projectDto.TeamProperties.Last().TeamName);
 
             Assert.AreEqual(groups, groupsInTeam, "Number of groups is incorrect");

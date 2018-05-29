@@ -1,6 +1,7 @@
 ﻿using System.Linq;
 using DashworksTestAutomation.DTO.ManagementConsole;
 using DashworksTestAutomation.DTO.Projects;
+using DashworksTestAutomation.DTO.RuntimeVariables;
 using DashworksTestAutomation.Extensions;
 using DashworksTestAutomation.Pages;
 using DashworksTestAutomation.Pages.ManagementConsole;
@@ -16,15 +17,17 @@ namespace DashworksTestAutomation.Steps
     [Binding]
     internal class ManagementConsole : SpecFlowContext
     {
+        private readonly PrjLastDeletedUserName _deletedUserName;
         private readonly RemoteWebDriver _driver;
         private readonly ProjectDto _projectDto;
         private readonly ManageUsersDto _manageUsers;
 
-        public ManagementConsole(RemoteWebDriver driver, ProjectDto projectDto, ManageUsersDto manageUsers)
+        public ManagementConsole(RemoteWebDriver driver, ProjectDto projectDto, ManageUsersDto manageUsers, PrjLastDeletedUserName deletedUserName)
         {
             _driver = driver;
             _projectDto = projectDto;
             _manageUsers = manageUsers;
+            _deletedUserName = deletedUserName;
         }
 
         [When(@"User select ""(.*)"" option in Management Console")]
@@ -79,8 +82,8 @@ namespace DashworksTestAutomation.Steps
         public void ThenUserRemoveCreatedUser()
         {
             var page = _driver.NowAt<BaseElements>();
-
-            page.GetDeleteButtonElementByName(_projectDto.ManageUsers.Last().Username).Click();
+            _deletedUserName.Value = _projectDto.ManageUsers.Last().Username;
+            page.GetDeleteButtonElementByName(_deletedUserName.Value).Click();
             _driver.AcceptAlert();
             //Removing deleted User from userd list
             _projectDto.ManageUsers.RemoveAt(_projectDto.ManageUsers.Count - 1);
@@ -91,7 +94,7 @@ namespace DashworksTestAutomation.Steps
         {
             var page = _driver.NowAt<BaseElements>();
 
-            Assert.IsFalse(page.CheckThatCreatedElementIsRemoved(_projectDto.ManageUsers.Last().Username), "Selected User is displayed in the table");
+            Assert.IsFalse(page.CheckThatCreatedElementIsRemoved(_deletedUserName.Value), "Selected User is displayed in the table");
         }
     }
 }

@@ -273,9 +273,9 @@ Scenario: Projects_CreateProject
 	| GroupName       |
 	| 2 TestGroupName |
 	Then created Group is displayed in the table
-	#When User navigate to "Teams" tab
-	#Then "Manage Teams" page is displayed to the user
-	#Then required number of Groups is displayed for created team
+	When User navigate to "Teams" tab
+	Then "Manage Teams" page is displayed to the user
+	Then required number of Groups is displayed for created team
 	When User navigate to "News" tab
 	Then "Manage News" page is displayed to the user
 	When User updating News page
@@ -349,41 +349,41 @@ Scenario: Projects_CreateProject
 	Then Success message is displayed with "Override date successfully inserted" text
 	When User navigate to "Groups" tab
 	Then User removes created Group
-	#Then selected Group was removed
+	Then selected Group was removed
 	Then User removes created Group
-	#Then selected Group was removed
+	Then selected Group was removed
 	Then User removes created Group
-	#Then selected Group was removed
+	Then selected Group was removed
 	When User navigate to "Teams" tab
 	Then User removes created Team
-	#Then selected Team was removed
+	Then selected Team was removed
 	Then User removes created Team
-	#Then selected Team was removed
+	Then selected Team was removed
 	Then User removes created Team
-	#Then selected Team was removed
+	Then selected Team was removed
 	When User navigate to "Tasks" tab
 	Then User removes created Task
-	#Then selected Task was removed
+	Then selected Task was removed
 	Then Success message is displayed with "Task successfully deleted." text
 	Then User removes created Task
-	#Then selected Task was removed
+	Then selected Task was removed
 	Then Success message is displayed with "Task successfully deleted." text
 	Then User removes created Task
-	#Then selected Task was removed
+	Then selected Task was removed
 	Then Success message is displayed with "Task successfully deleted." text
 	When User navigate to "Stages" tab
 	Then User removes created Stage
-	#Then selected Stage was removed
+	Then selected Stage was removed
 	Then Success message is displayed with "Stage successfully deleted." text
 	Then User removes created Stage
-	#Then selected Stage was removed
+	Then selected Stage was removed
 	Then Success message is displayed with "Stage successfully deleted." text
 	Then User removes created Stage
-	#Then selected Stage was removed
+	Then selected Stage was removed
 	Then Success message is displayed with "Stage successfully deleted." text
 	When User navigate to "Categories" tab
 	Then User removes created Category
-	#Then selected Category was removed
+	Then selected Category was removed
 	Then Success message is displayed with "Category successfully deleted." text
 	When User navigate to "Request Types" tab
 	When User click on the "[Default (Computer)]" Request Type
@@ -393,7 +393,7 @@ Scenario: Projects_CreateProject
 	Then Success message is displayed with "Request Type successfully updated" text
 	When User clicks "Cancel" button
 	Then User removes created Request Type
-	#Then selected Request Type was removed
+	Then selected Request Type was removed
 	Then Success message is displayed with "Request Type successfully deleted" text
 	When User click on the "[Default (Application)]" Request Type
 	Then User updates the Request Type page
@@ -402,7 +402,7 @@ Scenario: Projects_CreateProject
 	Then Success message is displayed with "Request Type successfully updated" text
 	When User clicks "Cancel" button
 	Then User removes created Request Type
-	#Then selected Request Type was removed
+	Then selected Request Type was removed
 	Then Success message is displayed with "Request Type successfully deleted" text
 	When User click on the "[Default (User)]" Request Type
 	Then User updates the Request Type page
@@ -411,11 +411,11 @@ Scenario: Projects_CreateProject
 	Then Success message is displayed with "Request Type successfully updated" text
 	When User clicks "Cancel" button
 	Then User removes created Request Type
-	#Then selected Request Type was removed
+	Then selected Request Type was removed
 	Then Success message is displayed with "Request Type successfully deleted" text
 	When User navigate to "Mail Templates" tab
 	Then User removes created Mail Template
-	#Then selected Mail Template was removed
+	Then selected Mail Template was removed
 	Then Success message is displayed with "Mail Template successfully deleted." text
 	When User navigate to "Details" tab
 	Then User removes the Project
@@ -423,11 +423,11 @@ Scenario: Projects_CreateProject
 	When User navigate to Manage link
 	When User select "Manage Users" option in Management Console
 	Then User removes created User
-	#Then selected User was removed
+	Then selected User was removed
 	Then Success message is displayed
 	Then User removes created User
-	#Then selected User was removed
+	Then selected User was removed
 	Then Success message is displayed
 	Then User removes created User
-	#Then selected User was removed
+	Then selected User was removed
 	Then Success message is displayed
