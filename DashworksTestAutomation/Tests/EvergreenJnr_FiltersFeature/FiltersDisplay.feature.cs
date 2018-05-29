@@ -466,9 +466,9 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_FiltersFeature
         }
         
         [NUnit.Framework.TestAttribute()]
-        [NUnit.Framework.DescriptionAttribute("EvergreenJnr_AllLisrs_CheckThatNoneOptionIsAvailableForFilters")]
+        [NUnit.Framework.DescriptionAttribute("EvergreenJnr_AllLists_CheckThatNoneOptionIsAvailableForFilters")]
         [NUnit.Framework.CategoryAttribute("Evergreen")]
-        [NUnit.Framework.CategoryAttribute("AllLisrs")]
+        [NUnit.Framework.CategoryAttribute("AllLists")]
         [NUnit.Framework.CategoryAttribute("Evergreen_FiltersFeature")]
         [NUnit.Framework.CategoryAttribute("FiltersDisplay")]
         [NUnit.Framework.CategoryAttribute("DAS10771")]
@@ -477,14 +477,14 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_FiltersFeature
         [NUnit.Framework.TestCaseAttribute("Users", "UserSchedu: Category", "Compliance", new string[0])]
         [NUnit.Framework.TestCaseAttribute("Applications", "Havoc(BigD: Category", "Compliance", new string[0])]
         [NUnit.Framework.TestCaseAttribute("Mailboxes", "EmailMigra: Category", "Owner Compliance", new string[0])]
-        public virtual void EvergreenJnr_AllLisrs_CheckThatNoneOptionIsAvailableForFilters(string pageName, string filterName, string newFilterName, string[] exampleTags)
+        public virtual void EvergreenJnr_AllLists_CheckThatNoneOptionIsAvailableForFilters(string pageName, string filterName, string newFilterName, string[] exampleTags)
         {
             System.Exception lastException = null;
             for (int i = 0; (i <= 1); i = (i + 1))
             {
                 try
                 {
-                    this.EvergreenJnr_AllLisrs_CheckThatNoneOptionIsAvailableForFiltersInternal(pageName, filterName, newFilterName, exampleTags);
+                    this.EvergreenJnr_AllLists_CheckThatNoneOptionIsAvailableForFiltersInternal(pageName, filterName, newFilterName, exampleTags);
                     return;
                 }
                 catch (System.Exception exc)
@@ -503,11 +503,11 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_FiltersFeature
             }
         }
         
-        private void EvergreenJnr_AllLisrs_CheckThatNoneOptionIsAvailableForFiltersInternal(string pageName, string filterName, string newFilterName, string[] exampleTags)
+        private void EvergreenJnr_AllLists_CheckThatNoneOptionIsAvailableForFiltersInternal(string pageName, string filterName, string newFilterName, string[] exampleTags)
         {
             string[] @__tags = new string[] {
                     "Evergreen",
-                    "AllLisrs",
+                    "AllLists",
                     "Evergreen_FiltersFeature",
                     "FiltersDisplay",
                     "DAS10771",
@@ -516,7 +516,7 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_FiltersFeature
             {
                 @__tags = System.Linq.Enumerable.ToArray(System.Linq.Enumerable.Concat(@__tags, exampleTags));
             }
-            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("EvergreenJnr_AllLisrs_CheckThatNoneOptionIsAvailableForFilters", @__tags);
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("EvergreenJnr_AllLists_CheckThatNoneOptionIsAvailableForFilters", @__tags);
             this.ScenarioSetup(scenarioInfo);
             this.FeatureBackground();
             testRunner.When(string.Format("User clicks \"{0}\" on the left-hand menu", pageName), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");

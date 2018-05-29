@@ -105,8 +105,8 @@ Scenario: EvergreenJnr_DevicesList_CheckThatAddColumnOptionIsNotAvailableForAppl
 	When User selects "Computer Warranty" filter from "Application Custom Fields" category
 	Then "Add column" checkbox is not displayed
 
-@Evergreen @AllLisrs @Evergreen_FiltersFeature @FiltersDisplay @DAS10771 @DAS10972
-Scenario Outline: EvergreenJnr_AllLisrs_CheckThatNoneOptionIsAvailableForFilters
+@Evergreen @AllLists @Evergreen_FiltersFeature @FiltersDisplay @DAS10771 @DAS10972
+Scenario Outline: EvergreenJnr_AllLists_CheckThatNoneOptionIsAvailableForFilters
 	When User clicks "<PageName>" on the left-hand menu
 	Then "<PageName>" list should be displayed to the user
 	When User clicks the Filters button
