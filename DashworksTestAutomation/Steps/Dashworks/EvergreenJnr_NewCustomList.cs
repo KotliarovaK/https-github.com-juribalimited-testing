@@ -126,6 +126,7 @@ namespace DashworksTestAutomation.Steps.Dashworks
         public void ThenListIsDisplayedToUser(string listName)
         {
             var page = _driver.NowAt<BaseDashboardPage>();
+            _driver.WaitForDataLoading();
             Assert.AreEqual(listName, page.ActiveCustomListName());
         }
 
