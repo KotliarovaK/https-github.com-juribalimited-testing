@@ -821,7 +821,7 @@ namespace DashworksTestAutomation.Steps.Dashworks
         public void ThenDeleteButtonIsNotDisplayedToTheUserOnTheProjectsPage()
         {
             var projectElement = _driver.NowAt<ProjectsPage>();
-            Assert.IsTrue(projectElement.DeleteProjectValueInActions.Displayed(), "Delete Project Value is not displayed");
+            Assert.IsTrue(projectElement.ActionsInDropdown.Displayed(), "Actions is not displayed in the dropdown");
             Assert.IsFalse(projectElement.DeleteButtonOnPage.Displayed(), "Delete button is displayed");
         }
 
