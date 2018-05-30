@@ -2049,6 +2049,9 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_ListPanel
             testRunner.When("User clicks the Actions button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
             testRunner.And("User select all rows", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
             testRunner.When("User create static list with \"1234567890123456789012345678901234567890111\" name", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+            testRunner.Then("list name automatically changed to \"1234567890123456789012345678901234567890\" nam" +
+                    "e", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+            testRunner.And("\"1234567890123456789012345678901234567890\" list is displayed to user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
             this.ScenarioCleanup();
         }
         
