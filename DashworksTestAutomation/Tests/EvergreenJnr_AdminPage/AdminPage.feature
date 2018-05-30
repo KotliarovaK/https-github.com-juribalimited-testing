@@ -132,6 +132,13 @@ Scenario: EvergreenJnr_AdminPage_CheckThatAfterApplyingDoNotIncludeDeviceOwnersL
 	When User clicks Create Project button
 	And User click "Projects" link on the Admin page
 	Then "Projects" page should be displayed to the user
+	When User selects all rows on the Projects page
+	When User clicks Actions button on the Projects page
+	When User clicks Delete Project button on the Projects page
+	Then Delete button is displayed to the User on the Projects page
+	When User cancels the selection of all rows on the Projects page
+	Then Delete button is not displayed to the User on the Projects page
+	Then Success message with "The selected project has been deleted" text is displayed on the Projects page
 	When User clicks "TestProject1" Project name
 	Then Project "TestProject1" is displayed to user
 	When User select "Do not include device owners" checkbox on the Project details page

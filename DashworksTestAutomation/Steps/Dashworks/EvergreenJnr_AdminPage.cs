@@ -777,6 +777,27 @@ namespace DashworksTestAutomation.Steps.Dashworks
             checkbox.SelectAllProjectsCheckbox.Click();
         }
 
+        [When(@"User cancels the selection of all rows on the Projects page")]
+        public void WhenUserCancelsTheSelectionOfAllRowsOnTheProjectsPage()
+        {
+            var checkbox = _driver.NowAt<ProjectsPage>();
+            checkbox.SelectAllProjectsCheckbox.Click();
+        }
+
+        [When(@"User clicks Actions button on the Projects page")]
+        public void WhenUserClicksActionsButtonOnTheProjectsPage()
+        {
+            var projectElement = _driver.NowAt<ProjectsPage>();
+            projectElement.ActionsButton.Click();
+        }
+
+        [When(@"User clicks Delete Project button on the Projects page")]
+        public void WhenUserClicksDeleteProjectButtonOnTheProjectsPage()
+        {
+            var projectElement = _driver.NowAt<ProjectsPage>();
+            projectElement.DeleteProjectButtonInActions.Click();
+        }
+
         [When(@"User removes selected Project")]
         public void WhenUserRemovesSelectedProject()
         {
@@ -786,6 +807,22 @@ namespace DashworksTestAutomation.Steps.Dashworks
             projectElement.DeleteButtonOnPage.Click();
             _driver.WaitWhileControlIsNotDisplayed<ProjectsPage>(() => projectElement.DeleteWarningMessage);
             projectElement.DeleteButtonInWarningMessage.Click();
+        }
+
+        [Then(@"Delete button is displayed to the User on the Projects page")]
+        public void ThenDeleteButtonIsDisplayedToTheUserOnTheProjectsPage()
+        {
+            var projectElement = _driver.NowAt<ProjectsPage>();
+            Assert.IsTrue(projectElement.DeleteProjectValueInActions.Displayed(), "Delete Project Value is not displayed");
+            Assert.IsTrue(projectElement.DeleteButtonOnPage.Displayed(), "Delete button is not displayed");
+        }
+
+        [Then(@"Delete button is not displayed to the User on the Projects page")]
+        public void ThenDeleteButtonIsNotDisplayedToTheUserOnTheProjectsPage()
+        {
+            var projectElement = _driver.NowAt<ProjectsPage>();
+            Assert.IsTrue(projectElement.DeleteProjectValueInActions.Displayed(), "Delete Project Value is not displayed");
+            Assert.IsFalse(projectElement.DeleteButtonOnPage.Displayed(), "Delete button is displayed");
         }
 
         [Then(@"Success message with ""(.*)"" text is displayed on the Projects page")]
