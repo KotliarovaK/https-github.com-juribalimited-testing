@@ -468,6 +468,7 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_AdminPage
         [NUnit.Framework.CategoryAttribute("DAS11977")]
         [NUnit.Framework.CategoryAttribute("DAS11959")]
         [NUnit.Framework.CategoryAttribute("DAS12553")]
+        [NUnit.Framework.CategoryAttribute("DAS11744")]
         public virtual void EvergreenJnr_AdminPage_CheckThatAfterApplyingDoNotIncludeDeviceOwnersListHas0ItemsInTheUsersTab()
         {
             System.Exception lastException = null;
@@ -504,7 +505,8 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_AdminPage
                         "AdminPage",
                         "DAS11977",
                         "DAS11959",
-                        "DAS12553"});
+                        "DAS12553",
+                        "DAS11744"});
             this.ScenarioSetup(scenarioInfo);
             this.FeatureBackground();
             testRunner.When("User clicks Admin on the left-hand menu", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
@@ -518,6 +520,12 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_AdminPage
             testRunner.When("User clicks Create Project button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
             testRunner.And("User click \"Projects\" link on the Admin page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
             testRunner.Then("\"Projects\" page should be displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+            testRunner.When("User selects all rows on the Projects page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+            testRunner.When("User clicks Actions button on the Projects page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+            testRunner.When("User clicks Delete Project button on the Projects page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+            testRunner.Then("Delete button is displayed to the User on the Projects page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+            testRunner.When("User cancels the selection of all rows on the Projects page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+            testRunner.Then("Delete button is not displayed to the User on the Projects page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
             testRunner.When("User clicks \"TestProject1\" Project name", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
             testRunner.Then("Project \"TestProject1\" is displayed to user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
             testRunner.When("User select \"Do not include device owners\" checkbox on the Project details page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
@@ -1214,9 +1222,9 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_AdminPage
             TechTalk.SpecFlow.Table table2 = new TechTalk.SpecFlow.Table(new string[] {
                         "MailboxName"});
             table2.AddRow(new string[] {
-                        "alexis.f.bright@dwlabs.local"});
+                        "alexander.j.palmer@dwlabs.local"});
             table2.AddRow(new string[] {
-                        "alice.n.foster@dwlabs.local"});
+                        "alfredo.j.tran@dwlabs.local"});
             testRunner.Then("User add following mailboxes to the Bucket", ((string)(null)), table2, "Then ");
             testRunner.And("Success message is displayed and contains \"The selected mailboxes have been added" +
                     " to the selected bucket\" text on the Buckets page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
@@ -1408,9 +1416,9 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_AdminPage
             TechTalk.SpecFlow.Table table3 = new TechTalk.SpecFlow.Table(new string[] {
                         "DeviceName"});
             table3.AddRow(new string[] {
-                        "01DRMO46G58SXK"});
+                        "00K4CEEQ737BA4L"});
             table3.AddRow(new string[] {
-                        "XV20GW6HJRVE2R"});
+                        "00BDM1JUR8IF419"});
             testRunner.Then("User add following devices to the Bucket", ((string)(null)), table3, "Then ");
             testRunner.And("Success message is displayed and contains \"The selected devices have been added t" +
                     "o the selected bucket\" text on the Buckets page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
@@ -1533,9 +1541,9 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_AdminPage
             TechTalk.SpecFlow.Table table4 = new TechTalk.SpecFlow.Table(new string[] {
                         "UserName"});
             table4.AddRow(new string[] {
-                        "UK\\LBM661859 (Jenifer V. Allison)"});
+                        "FR\\IDC4002720 (Norris Collin)"});
             table4.AddRow(new string[] {
-                        "UK\\ANK462406 (Nakia D. Norton)"});
+                        "FR\\NXX3809320 (Carine Caron)"});
             testRunner.Then("User add following users to the Bucket", ((string)(null)), table4, "Then ");
             testRunner.And("Success message is displayed and contains \"The selected users have been added to " +
                     "the selected bucket\" text on the Buckets page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");

@@ -119,7 +119,7 @@ Scenario: EvergreenJnr_AdminPage_CheckThatWarningMessageIsDisplayedAfterDeleting
 	And Update Project button is disabled
 	And Delete "TestProject" Project in the Administration
 
-@Evergreen @Admin @EvergreenJnr_AdminPage @AdminPage @DAS11977 @DAS11959 @DAS12553
+@Evergreen @Admin @EvergreenJnr_AdminPage @AdminPage @DAS11977 @DAS11959 @DAS12553 @DAS11744
 Scenario: EvergreenJnr_AdminPage_CheckThatAfterApplyingDoNotIncludeDeviceOwnersListHas0ItemsInTheUsersTab
 	When User clicks Admin on the left-hand menu
 	Then Admin page should be displayed to the user
@@ -132,6 +132,12 @@ Scenario: EvergreenJnr_AdminPage_CheckThatAfterApplyingDoNotIncludeDeviceOwnersL
 	When User clicks Create Project button
 	And User click "Projects" link on the Admin page
 	Then "Projects" page should be displayed to the user
+	When User selects all rows on the Projects page
+	When User clicks Actions button on the Projects page
+	When User clicks Delete Project button on the Projects page
+	Then Delete button is displayed to the User on the Projects page
+	When User cancels the selection of all rows on the Projects page
+	Then Delete button is not displayed to the User on the Projects page
 	When User clicks "TestProject1" Project name
 	Then Project "TestProject1" is displayed to user
 	When User select "Do not include device owners" checkbox on the Project details page
@@ -347,9 +353,9 @@ Scenario: EvergreenJnr_AdminPage_CheckThatMailboxesAreSuccessfullyAddedToBuckets
 	Then User clicks "Mailboxes" tab on the Buckets page
 	When User clicks Add Mailbox button on the Buckets page
 	Then User add following mailboxes to the Bucket
-	| MailboxName                  |
-	| alexis.f.bright@dwlabs.local |
-	| alice.n.foster@dwlabs.local  |
+	| MailboxName                     |
+	| alexander.j.palmer@dwlabs.local |
+	| alfredo.j.tran@dwlabs.local     |
 	And Success message is displayed and contains "The selected mailboxes have been added to the selected bucket" text on the Buckets page
 	And There are no errors in the browser console
 
@@ -397,8 +403,8 @@ Scenario: EvergreenJnr_AdminPage_CheckThatConsoleErrorsAreNotDisplayedAfterAddin
 	When User clicks Add Device button on the Buckets page
 	Then User add following devices to the Bucket
 	| DeviceName     |
-	| 01DRMO46G58SXK |
-	| XV20GW6HJRVE2R |
+	| 00K4CEEQ737BA4L |
+	| 00BDM1JUR8IF419 |
 	And Success message is displayed and contains "The selected devices have been added to the selected bucket" text on the Buckets page
 	And There are no errors in the browser console
 
@@ -425,9 +431,9 @@ Scenario: EvergreenJnr_AdminPage_CheckThatConsoleErrorsAreNotDisplayedAfterAddin
 	Then User clicks "Users" tab on the Buckets page
 	When User clicks Add User button on the Buckets page
 	Then User add following users to the Bucket
-	| UserName                          |
-	| UK\LBM661859 (Jenifer V. Allison) |
-	| UK\ANK462406 (Nakia D. Norton)    |
+	| UserName                      |
+	| FR\IDC4002720 (Norris Collin) |
+	| FR\NXX3809320 (Carine Caron)  |
 	And Success message is displayed and contains "The selected users have been added to the selected bucket" text on the Buckets page
 	And There are no errors in the browser console
 
