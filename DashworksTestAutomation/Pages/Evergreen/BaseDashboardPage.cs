@@ -14,6 +14,8 @@ namespace DashworksTestAutomation.Pages.Evergreen
 
         public const string ImageItem = ".//div[@class='ag-body-container']//img[contains(@src,'png')]";
 
+        public By ActiveList = By.XPath(".//div[@class='active-list-wrapper ng-star-inserted']/ul/li/span");
+
         [FindsBy(How = How.XPath, Using = ".//div[@id='pagetitle-text']/descendant::h1")]
         public IWebElement Heading { get; set; }
 
@@ -218,12 +220,15 @@ namespace DashworksTestAutomation.Pages.Evergreen
             return Driver.FindElements(by).Select(x => x.Text).ToList();
         }
 
+        public void WaitForCustomListToBeActive()
+        {
+            Driver.WaitWhileControlIsNotDisplayed(ActiveList);
+        }
+
         public string ActiveCustomListName()
         {
-            By by = By.XPath(
-                ".//div[@class='active-list-wrapper ng-star-inserted']/ul/li/span");
-            Driver.WaitForElement(by);
-            return Driver.FindElement(by).Text;
+            Driver.WaitForElement(ActiveList);
+            return Driver.FindElement(ActiveList).Text;
         }
 
         public void ClickContentByColumnName(string columnName)
