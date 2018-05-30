@@ -6,6 +6,7 @@ using DashworksTestAutomation.Extensions;
 using DashworksTestAutomation.Pages.Projects;
 using DashworksTestAutomation.Pages.Projects.Capacity;
 using NUnit.Framework;
+using OpenQA.Selenium;
 using OpenQA.Selenium.Remote;
 using TechTalk.SpecFlow;
 using TechTalk.SpecFlow.Assist;
@@ -51,22 +52,33 @@ namespace DashworksTestAutomation.Steps.Projects
             upd.UpdateButton.Click();
         }
 
-        [Then(@"User updates the Capacity on Capacity tab")]
-        public void ThenUserUpdatesTheCapacityOnCapacityTab(Table table)
+        [When(@"User updates the Capacity page on Capacity tab for ""(.*)"" Team")]
+        public void WhenUserUpdatesTheCapacityPageOnCapacityTabForTeam(int teamIndex, Table table)
         {
             var page = _driver.NowAt<Capacity_CapacityPage>();
 
             table.CreateInstance<Capacity_CapacityDto>().CopyPropertiesTo(_capacityDto);
 
-            page.Team.SelectboxSelect(_projectDto.TeamProperties.Last().TeamName);
+            page.Team.SelectboxSelect(_projectDto.TeamProperties[teamIndex - 1].TeamName);
             _driver.WaitForDataLoading();
-            _driver.WaitWhileControlIsNotDisplayed<Capacity_CapacityPage>(() => page.RequestType);
-            page.RequestType.SelectboxSelect(_projectDto.ReqestTypes.Last().Name);
+            try
+            {
+                _driver.WaitWhileControlIsNotDisplayed<Capacity_CapacityPage>(() => page.RequestType);
+                page.RequestType.SelectboxSelect(_projectDto.ReqestTypes.Last().Name);
+            }
+            catch (StaleElementReferenceException)
+            {
+                page = _driver.NowAt<Capacity_CapacityPage>();
+                _driver.WaitWhileControlIsNotDisplayed<Capacity_CapacityPage>(() => page.RequestType);
+                page.RequestType.SelectboxSelect(_projectDto.ReqestTypes.Last().Name);
+            }
             _driver.WaitForDataLoading();
             _driver.WaitWhileControlIsNotDisplayed<Capacity_CapacityPage>(() => page.Table);
+            page.StartDate.Clear();
             page.StartDate.SendKeys(_capacityDto.StartDate);
             page.StartDateButton.Click();
             _driver.WaitForDataLoading();
+            page.EndDate.Clear();
             page.EndDate.SendKeys(_capacityDto.EndDate);
             page.EndDateButton.Click();
             _driver.WaitForDataLoading();

@@ -231,51 +231,51 @@ Scenario: Projects_CreateProject
 	| TeamName         | ShortDescription |
 	| 000 TestTeamName | TestText 0       |
 	When User clicks "Add Member" button
-	Then User select Users by Username
+	When User select "1" user to add as member
 	When User clicks "Add Selected" button
 	When User clicks "Cancel" button
 	Then created Team is displayed in the table
-	Then "2" number of Members is displayed for created team
+	Then "2" number of Members is displayed for created Team
 	When User clicks "Create Team" button
 	When User create Team
 	| TeamName         | ShortDescription |
 	| 001 TestTeamName | TestText 1       |
 	When User clicks "Add Member" button
-	Then User select Users by Username
+	When User select "2" user to add as member
 	When User clicks "Add Selected" button
 	When User clicks "Cancel" button
 	Then created Team is displayed in the table
-	Then "2" number of Members is displayed for created team
+	Then "2" number of Members is displayed for created Team
 	When User clicks "Create Team" button
 	When User create Team
 	| TeamName         | ShortDescription |
 	| 002 TestTeamName | TestText 2       |
 	When User clicks "Add Member" button
-	Then User select Users by Username
+	When User select "3" user to add as member
 	When User clicks "Add Selected" button
 	When User clicks "Cancel" button
 	Then created Team is displayed in the table
-	Then "2" number of Members is displayed for created team
+	Then "2" number of Members is displayed for created Team
 	When User navigate to "Groups" tab
 	Then "Manage Groups" page is displayed to the user
 	When User clicks "Create Group" button
-	When User create Group
+	When User create Group owned for "1" Team
 	| GroupName       |
 	| 0 TestGroupName |
 	Then created Group is displayed in the table
 	When User clicks "Create Group" button
-	When User create Group
+	When User create Group owned for "2" Team
 	| GroupName       |
 	| 1 TestGroupName |
 	Then created Group is displayed in the table
 	When User clicks "Create Group" button
-	When User create Group
+	When User create Group owned for "3" Team
 	| GroupName       |
 	| 2 TestGroupName |
 	Then created Group is displayed in the table
 	When User navigate to "Teams" tab
 	Then "Manage Teams" page is displayed to the user
-	Then required number of Groups is displayed for created team
+	Then "1" number of Groups is displayed for "3" Team
 	When User navigate to "News" tab
 	Then "Manage News" page is displayed to the user
 	When User updating News page
@@ -335,9 +335,17 @@ Scenario: Projects_CreateProject
 	| true           | true          | true                      | true                       | 80              |
 	Then Success message is displayed with "Details successfully updated." text
 	When User navigate to "Capacity" on selected tab
-	Then User updates the Capacity on Capacity tab
+	When User updates the Capacity page on Capacity tab for "1" Team
 	| StartDate   | EndDate     | MondayCheckbox | TuesdayCheckbox | WednesdayCheckbox | ThursdayCheckbox | FridayCheckbox | SaturdayCheckbox | SundayCheckbox | Monday | Tuesday | Wednesday | Thursday | Friday | Saturday | Sunday |
 	| 06 Apr 2016 | 19 Apr 2018 | false          | false           | false             | false            | false          | false            | false          | 100    | 100     | 100       | 100      | 100    | 100      | 100    |
+	Then Success message is displayed with "Capacity information successfully updated." text
+	When User updates the Capacity page on Capacity tab for "2" Team
+	| StartDate   | EndDate       | MondayCheckbox | TuesdayCheckbox | WednesdayCheckbox | ThursdayCheckbox | FridayCheckbox | SaturdayCheckbox | SundayCheckbox | Monday | Tuesday | Wednesday | Thursday | Friday | Saturday | Sunday |
+	| 08 May 2013 | 20 March 2015 | false          | false           | false             | false            | false          | false            | false          | 10     | 10      | 10        | 10       | 10     | 10       | 10     |
+	Then Success message is displayed with "Capacity information successfully updated." text
+	When User updates the Capacity page on Capacity tab for "3" Team
+	| StartDate    | EndDate     | MondayCheckbox | TuesdayCheckbox | WednesdayCheckbox | ThursdayCheckbox | FridayCheckbox | SaturdayCheckbox | SundayCheckbox | Monday | Tuesday | Wednesday | Thursday | Friday | Saturday | Sunday |
+	| 16 June 2012 | 27 May 2016 | false          | false           | false             | false            | false          | false            | false          | 100    | 100     | 100       | 100      | 100    | 100      | 100    |
 	Then Success message is displayed with "Capacity information successfully updated." text
 	When User navigate to "Summary" on selected tab
 	When User select created request type on Summary tab

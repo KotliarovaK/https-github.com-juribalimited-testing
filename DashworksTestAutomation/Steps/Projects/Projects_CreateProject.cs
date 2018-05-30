@@ -348,8 +348,8 @@ namespace DashworksTestAutomation.Steps.Projects
             page.ConfirmCreateTeamButton.Click();
         }
 
-        [When(@"User create Group")]
-        public void WhenUserCreateGroup(Table table)
+        [When(@"User create Group owned for ""(.*)"" Team")]
+        public void WhenUserCreateGroupOwnedForTeam(int teamIndex, Table table)
         {
             var page = _driver.NowAt<GroupPropertiesPage>();
 
@@ -360,7 +360,7 @@ namespace DashworksTestAutomation.Steps.Projects
             _projectDto.GroupProperties.Add(tempGroupPropertiesDto);
 
             page.GroupName.SendKeys(_groupPropertiesDto.GroupName);
-            page.OwnedByTeam.SelectboxSelect(_projectDto.TeamProperties.Last().TeamName);
+            page.OwnedByTeam.SelectboxSelect(_projectDto.TeamProperties[teamIndex - 1].TeamName);
 
             page.ConfirmCreateGroupButton.Click();
 
@@ -389,12 +389,9 @@ namespace DashworksTestAutomation.Steps.Projects
         public void WhenUserUpdatingNewsPage(Table table)
         {
             var page = _driver.NowAt<NewsPage>();
-
             table.CreateInstance<NewsDto>().CopyPropertiesTo(_newsDto);
-
             page.Title.SendKeys(_newsDto.Title);
             page.Text.SendKeys(_newsDto.Text);
-
             var upd = _driver.NowAt<BaseElements>();
             upd.UpdateButton.Click();
         }
@@ -403,7 +400,6 @@ namespace DashworksTestAutomation.Steps.Projects
         public void ThenCreatedTeamIsDisplayedInTable()
         {
             var page = _driver.NowAt<BaseElements>();
-
             var team = page.GetTheCreatedElementInTableByName(_projectDto.TeamProperties.Last().TeamName);
             Assert.IsTrue(team.Displayed(), "Selected Team is not displayed in the table");
         }
@@ -412,7 +408,6 @@ namespace DashworksTestAutomation.Steps.Projects
         public void ThenCreatedGroupIsDisplayedInTable()
         {
             var page = _driver.NowAt<BaseElements>();
-
             var group = page.GetTheCreatedElementInTableByName(_projectDto.GroupProperties.First().GroupName);
             Assert.IsTrue(group.Displayed(), "Selected Group is not displayed in the table");
         }
@@ -421,7 +416,6 @@ namespace DashworksTestAutomation.Steps.Projects
         public void ThenCreatedTaskIsDisplayedInTheTable()
         {
             var page = _driver.NowAt<BaseElements>();
-
             var task = page.GetTheCreatedTaskInTableByName(_projectDto.Tasks.Last().Name);
             Assert.IsTrue(task.Displayed(), "Selected Task is not displayed in the table");
         }
@@ -430,7 +424,6 @@ namespace DashworksTestAutomation.Steps.Projects
         public void ThenCreatedEmailIsDisplayedInTheTable()
         {
             var page = _driver.NowAt<BaseElements>();
-
             var email = page.GetTheCreatedEmailInTableByName(_projectDto.MailTemplateProperties.Name);
             Assert.IsTrue(email.Displayed(), "Selected Email is not displayed in the table");
         }
@@ -439,7 +432,6 @@ namespace DashworksTestAutomation.Steps.Projects
         public void ThenCreatedRequestTypeIsDisplayedInTheTable()
         {
             var page = _driver.NowAt<BaseElements>();
-
             _driver.WaitForDataLoading();
             Assert.IsTrue(page.GetTheCreatedRequestTypeInTableByName(_projectDto.ReqestTypes.Last().Name).Displayed(), "Selected Request Type is not displayed in the table");
         }
@@ -448,7 +440,6 @@ namespace DashworksTestAutomation.Steps.Projects
         public void ThenCreatedCategoryIsDisplayedInTheTable()
         {
             var page = _driver.NowAt<BaseElements>();
-
             Assert.IsTrue(page.GetTheCreatedCategoryInTableByName(_projectDto.Categories.Last().Name).Displayed, "Selected Category is not displayed in the table");
         }
 
@@ -456,7 +447,7 @@ namespace DashworksTestAutomation.Steps.Projects
         public void ThenCreatedStageIsDisplayedInTheTable()
         {
             var page = _driver.NowAt<BaseElements>();
-            
+           
             Assert.IsTrue(page.GetTheCreatedElementInTableByName(_projectDto.Stages.Last().StageName).Displayed(), "Selected Stage is not displayed in the table");
         }
 
@@ -464,7 +455,6 @@ namespace DashworksTestAutomation.Steps.Projects
         public void ThenCreatedRequestTypeIsADefault()
         {
             var page = _driver.NowAt<BaseElements>();
-
             _driver.WaitForDataLoading();
             Assert.IsTrue(page.GetDefaultRequestTypeCountByName(_projectDto.ReqestTypes.Last().Name).Displayed(), "Selected Request Type is not 'Default'");
         }
@@ -473,21 +463,26 @@ namespace DashworksTestAutomation.Steps.Projects
         public void ThenRequiredNumberOfGroupsIsDisplayedForCreatedTeam()
         {
             var page = _driver.NowAt<BaseElements>();
-
             var teamName = _projectDto.TeamProperties.Last().TeamName;
             var groupsInTeam = _projectDto.GroupProperties.Count(x => x.OwnedByTeam.Equals(teamName));
             var groups = page.GetGroupsCountByTeamName(_projectDto.TeamProperties.Last().TeamName);
-
             Assert.AreEqual(groups, groupsInTeam, "Number of groups is incorrect");
         }
 
-        [Then(@"""(.*)"" number of Members is displayed for created team")]
-        public void ThenRequiredNumberOfMembersIsDisplayedForCreatedTeam(int membersInTeam)
+        [Then(@"""(.*)"" number of Groups is displayed for ""(.*)"" Team")]
+        public void ThenNumberOfGroupsIsDisplayedForTeam(int numberOfGroups, int teamIndex)
         {
             var page = _driver.NowAt<BaseElements>();
+            var groups = page.GetGroupsCountByTeamName(_projectDto.TeamProperties.Last().TeamName);
+            Assert.AreEqual(groups, numberOfGroups, "Number of groups is incorrect");
+        }
 
+        [Then(@"""(.*)"" number of Members is displayed for created Team")]
+        public void ThenRequiredNumberOfMembersIsDisplayedForCreatedTeam(int numberOfMembers)
+        {
+            var page = _driver.NowAt<BaseElements>();
             var members = page.GetMembersCountByTeamName(_projectDto.TeamProperties.Last().TeamName);
-            Assert.AreEqual(members, membersInTeam, "Number of members is incorrect");
+            Assert.AreEqual(members, numberOfMembers, "Number of members is incorrect");
         }
     }
 }

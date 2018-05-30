@@ -69,13 +69,14 @@ namespace DashworksTestAutomation.Steps
             Assert.IsTrue(user.Displayed(), "Selected User is not displayed in the table");
         }
 
-        [Then(@"User select Users by Username")]
-        public void ThenUserSelectUsersByUsername()
+        [When(@"User select ""(.*)"" user to add as member")]
+        public void WhenUserSelectUserToAddAsMember(int userIndex)
         {
             var page = _driver.NowAt<BaseElements>();
 
+            //Admin is mandatory
             page.SelectUserForMembersByName("Admin").Click();
-            page.SelectUserForMembersByName(_projectDto.ManageUsers.Last().Username).Click();
+            page.SelectUserForMembersByName(_projectDto.ManageUsers[userIndex - 1].Username).Click();
         }
 
         [Then(@"User removes created User")]
