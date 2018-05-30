@@ -347,9 +347,9 @@ Scenario: EvergreenJnr_AdminPage_CheckThatMailboxesAreSuccessfullyAddedToBuckets
 	Then User clicks "Mailboxes" tab on the Buckets page
 	When User clicks Add Mailbox button on the Buckets page
 	Then User add following mailboxes to the Bucket
-	| MailboxName                  |
-	| alexis.f.bright@dwlabs.local |
-	| alice.n.foster@dwlabs.local  |
+	| MailboxName                     |
+	| alexander.j.palmer@dwlabs.local |
+	| alfredo.j.tran@dwlabs.local     |
 	And Success message is displayed and contains "The selected mailboxes have been added to the selected bucket" text on the Buckets page
 	And There are no errors in the browser console
 
@@ -397,8 +397,8 @@ Scenario: EvergreenJnr_AdminPage_CheckThatConsoleErrorsAreNotDisplayedAfterAddin
 	When User clicks Add Device button on the Buckets page
 	Then User add following devices to the Bucket
 	| DeviceName     |
-	| 01DRMO46G58SXK |
-	| XV20GW6HJRVE2R |
+	| 00K4CEEQ737BA4L |
+	| 00BDM1JUR8IF419 |
 	And Success message is displayed and contains "The selected devices have been added to the selected bucket" text on the Buckets page
 	And There are no errors in the browser console
 
@@ -425,9 +425,9 @@ Scenario: EvergreenJnr_AdminPage_CheckThatConsoleErrorsAreNotDisplayedAfterAddin
 	Then User clicks "Users" tab on the Buckets page
 	When User clicks Add User button on the Buckets page
 	Then User add following users to the Bucket
-	| UserName                          |
-	| UK\LBM661859 (Jenifer V. Allison) |
-	| UK\ANK462406 (Nakia D. Norton)    |
+	| UserName                      |
+	| FR\IDC4002720 (Norris Collin) |
+	| FR\NXX3809320 (Carine Caron)  |
 	And Success message is displayed and contains "The selected users have been added to the selected bucket" text on the Buckets page
 	And There are no errors in the browser console
 
