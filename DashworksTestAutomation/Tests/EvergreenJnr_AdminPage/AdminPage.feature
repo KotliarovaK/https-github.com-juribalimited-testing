@@ -347,9 +347,9 @@ Scenario: EvergreenJnr_AdminPage_CheckThatMailboxesAreSuccessfullyAddedToBuckets
 	Then User clicks "Mailboxes" tab on the Buckets page
 	When User clicks Add Mailbox button on the Buckets page
 	Then User add following mailboxes to the Bucket
-	| MailboxName                      |
-	| abraham.d.robertson@dwlabs.local |
-	| abraham.h.maxwell@dwlabs.local   |
+	| MailboxName                  |
+	| alexis.f.bright@dwlabs.local |
+	| alice.n.foster@dwlabs.local  |
 	And Success message is displayed and contains "The selected mailboxes have been added to the selected bucket" text on the Buckets page
 	And There are no errors in the browser console
 
@@ -398,7 +398,7 @@ Scenario: EvergreenJnr_AdminPage_CheckThatConsoleErrorsAreNotDisplayedAfterAddin
 	Then User add following devices to the Bucket
 	| DeviceName     |
 	| 01DRMO46G58SXK |
-	| 01ERDGD48UDQKE |
+	| XV20GW6HJRVE2R |
 	And Success message is displayed and contains "The selected devices have been added to the selected bucket" text on the Buckets page
 	And There are no errors in the browser console
 
