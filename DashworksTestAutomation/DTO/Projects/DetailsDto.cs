@@ -1,10 +1,12 @@
 ﻿using System.ComponentModel;
 using DashworksTestAutomation.Extensions;
+using DashworksTestAutomation.Steps.Projects;
 
 namespace DashworksTestAutomation.DTO.Projects
 {
     public class DetailsDto
     {
+        public ProjectDto Project { get; set; }
         public DefaultReadinessForOnboardedApplicationsEnum DefaultReadinessForOnboardedApplications;
         public DefaultValueForShowLinkedObjectsEnum DefaultValueForShowLinkedObjects;
         public DefaultViewForProjectObjectApplicationsTab1Enum DefaultViewForProjectObjectApplicationsTab1;
@@ -20,6 +22,7 @@ namespace DashworksTestAutomation.DTO.Projects
         public string TaskEmailBccEmailAddress { get; set; }
         public string StartDate { get; set; }
         public string EndDate { get; set; }
+        public OnboardMailboxUsersWithPermissionsEnum OnboardMailboxUsersWithPermissions;
 
         public DetailsDto()
         {
@@ -32,7 +35,16 @@ namespace DashworksTestAutomation.DTO.Projects
                 EnumExtensions.GetRandomValue<DefaultViewForProjectObjectApplicationsTab2Enum>();
             DefaultValueForApplicationRationalization =
                 EnumExtensions.GetRandomValue<DefaultValueForApplicationRationalizationEnum>();
-            OnboardUsedApplicationsByAssociationTo = OnboardUsedApplicationsByAssociationToEnum.Computer;
+            if (Project.ProjectType == ProjectTypeEnum.ComputerScheduledProject)
+            {
+                OnboardUsedApplicationsByAssociationTo = OnboardUsedApplicationsByAssociationToEnum.Computer;
+            }
+            if (Project.ProjectType == ProjectTypeEnum.MailboxScheduledProject)
+            {
+                OnboardUsedApplicationsByAssociationTo = OnboardUsedApplicationsByAssociationToEnum.User;
+                OnboardMailboxUsersWithPermissions =
+                    EnumExtensions.GetRandomValue<OnboardMailboxUsersWithPermissionsEnum>();
+            }
         }
     }
 
@@ -91,5 +103,13 @@ namespace DashworksTestAutomation.DTO.Projects
         User,
         [Description("Do not onboard")]
         DoNotOnboard
+    }
+
+    public enum OnboardMailboxUsersWithPermissionsEnum
+    {
+        [Description("All Permissions")]
+        AllPermissions,
+        [Description("Only Permissions in Data")]
+        OnlyPermissionsInData
     }
 }

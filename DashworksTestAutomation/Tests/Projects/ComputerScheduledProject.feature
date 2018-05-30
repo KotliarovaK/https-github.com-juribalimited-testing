@@ -1,8 +1,8 @@
-﻿Feature: CreateProject
+﻿Feature: CreateComputerScheduledProject
 	Runs Project related tests
 
-@Projects @CreateProject @Delete_Newly_Created_Team
-Scenario: Projects_CreateProject
+@Projects @Project @ComputerScheduledProject @Delete_Newly_Created_Team
+Scenario: Projects_CreateComputerScheduledProject
 	Given User is on Dashworks Homepage
 	Then Login Page is displayed to the user
 	When User provides the Login and Password and clicks on the login button
@@ -12,25 +12,25 @@ Scenario: Projects_CreateProject
 	When User clicks create Project button
 	Then "Create Project" page is displayed to the user
 	When User creates Project
-	| ProjectName     | ProjectShortName | ProjectDescription | 
-	| TestProjectName | TestText         | TestText           |
+	| ProjectName     | ProjectShortName | ProjectDescription | ProjectTypeString        |
+	| TestProjectName | TestText         | TestText           | ComputerScheduledProject |
 	When User clicks "Create Project" button
 	Then "Manage Project Details" page is displayed to the user
 	When User navigate to Manage link
 	When User select "Manage Users" option in Management Console
 	Then User create a new Dashworks User
-	| Username | FullName       | Password | ConfirmPassword |
-	| AAA0Test | TestUserName 0 | 1234qwer | 1234qwer        |
+	| Username | FullName                   | Password | ConfirmPassword |
+	| AAA0Test | ComputerScheduledProject 0 | 1234qwer | 1234qwer        |
 	Then Success message is displayed
 	Then created User is displayed in the table
 	Then User create a new Dashworks User
-	| Username | FullName       | Password | ConfirmPassword |
-	| AAA1Test | TestUserName 1 | 1234qwer | 1234qwer        |
+	| Username | FullName                   | Password | ConfirmPassword |
+	| AAA1Test | ComputerScheduledProject 1 | 1234qwer | 1234qwer        |
 	Then Success message is displayed
 	Then created User is displayed in the table
 	Then User create a new Dashworks User
-	| Username | FullName       | Password | ConfirmPassword |
-	| AAA2Test | TestUserName 2 | 1234qwer | 1234qwer        |
+	| Username | FullName                   | Password | ConfirmPassword |
+	| AAA2Test | ComputerScheduledProject 2 | 1234qwer | 1234qwer        |
 	Then Success message is displayed
 	Then created User is displayed in the table
 	When User navigate to Dashworks User Site link
@@ -50,32 +50,32 @@ Scenario: Projects_CreateProject
 	Then "Manage Request Types" page is displayed to the user
 	When User clicks "Create Request Type" button
 	When User create Request Type
-	| Name                | Description | ObjectTypeString |
-	| TestRequestTypeName | TestText 0  | User             |
+	| Name                | Description                | ObjectTypeString |
+	| TestRequestTypeName | ComputerScheduledProject 0 | User             |
 	Then Success message is displayed
 	When User clicks "Cancel" button
 	Then created Request Type is displayed in the table
 	Then User removes created Request Type
 	When User clicks "Create Request Type" button
 	When User create Request Type
-	| Name                | Description | ObjectTypeString |
-	| TestRequestTypeName | TestText 1  | Application      |
+	| Name                | Description                | ObjectTypeString |
+	| TestRequestTypeName | ComputerScheduledProject 1 | Application      |
 	Then Success message is displayed
 	When User clicks "Cancel" button
 	Then created Request Type is displayed in the table
 	Then User removes created Request Type
 	When User clicks "Create Request Type" button
 	When User create Request Type
-	| Name                | Description | ObjectTypeString |
-	| TestRequestTypeName | TestText 2  | Computer         |
+	| Name                | Description                | ObjectTypeString |
+	| TestRequestTypeName | ComputerScheduledProject 2 | Computer         |
 	Then Success message is displayed
 	When User clicks "Cancel" button
 	Then created Request Type is displayed in the table
 	Then User removes created Request Type
 	When User clicks "Create Request Type" button
 	When User create Request Type
-	| Name                | Description | ObjectTypeString |
-	| TestRequestTypeName | TestText 0  | User             |
+	| Name                | Description                | ObjectTypeString |
+	| TestRequestTypeName | ComputerScheduledProject 0 | User             |
 	Then Success message is displayed
 	When User clicks "Cancel" button
 	Then created Request Type is displayed in the table
@@ -88,8 +88,8 @@ Scenario: Projects_CreateProject
 	Then created Request Type is a Default
 	When User clicks "Create Request Type" button
 	When User create Request Type
-	| Name                | Description | ObjectTypeString |
-	| TestRequestTypeName | TestText 1  | Application      |
+	| Name                | Description                | ObjectTypeString |
+	| TestRequestTypeName | ComputerScheduledProject 1 | Application      |
 	Then Success message is displayed
 	When User clicks "Cancel" button
 	Then created Request Type is displayed in the table
@@ -102,8 +102,8 @@ Scenario: Projects_CreateProject
 	Then created Request Type is a Default
 	When User clicks "Create Request Type" button
 	When User create Request Type
-	| Name                | Description | ObjectTypeString |
-	| TestRequestTypeName | TestText 2  | Computer         |
+	| Name                | Description                | ObjectTypeString |
+	| TestRequestTypeName | ComputerScheduledProject 2 | Computer         |
 	Then Success message is displayed
 	When User clicks "Cancel" button
 	Then created Request Type is displayed in the table
@@ -118,8 +118,8 @@ Scenario: Projects_CreateProject
 	Then "Manage Categories" page is displayed to the user
 	When User clicks "Create Category" button
 	When User create Category
-	| Name             | Description |
-	| TestCategoryName | TestText    |
+	| Name             | Description | ObjectTypeString |
+	| TestCategoryName | TestText    | User             |
 	Then Success message is displayed with "Category successfully created." text
 	When User clicks "« Go Back" button
 	Then created Category is displayed in the table

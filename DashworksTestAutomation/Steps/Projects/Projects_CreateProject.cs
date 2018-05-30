@@ -132,6 +132,10 @@ namespace DashworksTestAutomation.Steps.Projects
             page.BccEmail.SendKeys(_detailsDto.TaskEmailBccEmailAddress);
             page.StartDate.SendKeys(_detailsDto.StartDate);
             page.EndDate.SendKeys(_detailsDto.EndDate);
+            if (_projectDto.ProjectType == ProjectTypeEnum.MailboxScheduledProject)
+            {
+                page.PermissionCategoryExists.SelectboxSelect(_detailsDto.OnboardMailboxUsersWithPermissions.GetValue());
+            }
 
             var upd = _driver.NowAt<BaseElements>();
             upd.UpdateButton.Click();

@@ -18,8 +18,8 @@ namespace DashworksTestAutomation.Tests.Projects
     [System.CodeDom.Compiler.GeneratedCodeAttribute("TechTalk.SpecFlow", "2.1.0.0")]
     [System.Runtime.CompilerServices.CompilerGeneratedAttribute()]
     [NUnit.Framework.TestFixtureAttribute()]
-    [NUnit.Framework.DescriptionAttribute("CreateProject")]
-    public partial class CreateProjectFeature
+    [NUnit.Framework.DescriptionAttribute("CreateComputerScheduledProject")]
+    public partial class CreateComputerScheduledProjectFeature
     {
         
         private TechTalk.SpecFlow.ITestRunner testRunner;
@@ -28,7 +28,7 @@ namespace DashworksTestAutomation.Tests.Projects
         public virtual void FeatureSetup()
         {
             testRunner = TechTalk.SpecFlow.TestRunnerManager.GetTestRunner();
-            TechTalk.SpecFlow.FeatureInfo featureInfo = new TechTalk.SpecFlow.FeatureInfo(new System.Globalization.CultureInfo("en-US"), "CreateProject", "\tRuns Project related tests", ProgrammingLanguage.CSharp, ((string[])(null)));
+            TechTalk.SpecFlow.FeatureInfo featureInfo = new TechTalk.SpecFlow.FeatureInfo(new System.Globalization.CultureInfo("en-US"), "CreateComputerScheduledProject", "\tRuns Project related tests", ProgrammingLanguage.CSharp, ((string[])(null)));
             testRunner.OnFeatureStart(featureInfo);
         }
         
@@ -61,15 +61,17 @@ namespace DashworksTestAutomation.Tests.Projects
         }
         
         [NUnit.Framework.TestAttribute()]
-        [NUnit.Framework.DescriptionAttribute("Projects_CreateProject")]
+        [NUnit.Framework.DescriptionAttribute("Projects_CreateComputerScheduledProject")]
         [NUnit.Framework.CategoryAttribute("Projects")]
-        [NUnit.Framework.CategoryAttribute("CreateProject")]
+        [NUnit.Framework.CategoryAttribute("Project")]
+        [NUnit.Framework.CategoryAttribute("ComputerScheduledProject")]
         [NUnit.Framework.CategoryAttribute("Delete_Newly_Created_Team")]
-        public virtual void Projects_CreateProject()
+        public virtual void Projects_CreateComputerScheduledProject()
         {
-            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Projects_CreateProject", new string[] {
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Projects_CreateComputerScheduledProject", new string[] {
                         "Projects",
-                        "CreateProject",
+                        "Project",
+                        "ComputerScheduledProject",
                         "Delete_Newly_Created_Team"});
             this.ScenarioSetup(scenarioInfo);
             testRunner.Given("User is on Dashworks Homepage", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
@@ -83,11 +85,13 @@ namespace DashworksTestAutomation.Tests.Projects
             TechTalk.SpecFlow.Table table1 = new TechTalk.SpecFlow.Table(new string[] {
                         "ProjectName",
                         "ProjectShortName",
-                        "ProjectDescription"});
+                        "ProjectDescription",
+                        "ProjectTypeString"});
             table1.AddRow(new string[] {
                         "TestProjectName",
                         "TestText",
-                        "TestText"});
+                        "TestText",
+                        "ComputerScheduledProject"});
             testRunner.When("User creates Project", ((string)(null)), table1, "When ");
             testRunner.When("User clicks \"Create Project\" button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
             testRunner.Then("\"Manage Project Details\" page is displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
@@ -100,7 +104,7 @@ namespace DashworksTestAutomation.Tests.Projects
                         "ConfirmPassword"});
             table2.AddRow(new string[] {
                         "AAA0Test",
-                        "TestUserName 0",
+                        "ComputerScheduledProject 0",
                         "1234qwer",
                         "1234qwer"});
             testRunner.Then("User create a new Dashworks User", ((string)(null)), table2, "Then ");
@@ -113,7 +117,7 @@ namespace DashworksTestAutomation.Tests.Projects
                         "ConfirmPassword"});
             table3.AddRow(new string[] {
                         "AAA1Test",
-                        "TestUserName 1",
+                        "ComputerScheduledProject 1",
                         "1234qwer",
                         "1234qwer"});
             testRunner.Then("User create a new Dashworks User", ((string)(null)), table3, "Then ");
@@ -126,7 +130,7 @@ namespace DashworksTestAutomation.Tests.Projects
                         "ConfirmPassword"});
             table4.AddRow(new string[] {
                         "AAA2Test",
-                        "TestUserName 2",
+                        "ComputerScheduledProject 2",
                         "1234qwer",
                         "1234qwer"});
             testRunner.Then("User create a new Dashworks User", ((string)(null)), table4, "Then ");
@@ -172,7 +176,7 @@ namespace DashworksTestAutomation.Tests.Projects
                         "ObjectTypeString"});
             table6.AddRow(new string[] {
                         "TestRequestTypeName",
-                        "TestText 0",
+                        "ComputerScheduledProject 0",
                         "User"});
             testRunner.When("User create Request Type", ((string)(null)), table6, "When ");
             testRunner.Then("Success message is displayed", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
@@ -186,7 +190,7 @@ namespace DashworksTestAutomation.Tests.Projects
                         "ObjectTypeString"});
             table7.AddRow(new string[] {
                         "TestRequestTypeName",
-                        "TestText 1",
+                        "ComputerScheduledProject 1",
                         "Application"});
             testRunner.When("User create Request Type", ((string)(null)), table7, "When ");
             testRunner.Then("Success message is displayed", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
@@ -200,7 +204,7 @@ namespace DashworksTestAutomation.Tests.Projects
                         "ObjectTypeString"});
             table8.AddRow(new string[] {
                         "TestRequestTypeName",
-                        "TestText 2",
+                        "ComputerScheduledProject 2",
                         "Computer"});
             testRunner.When("User create Request Type", ((string)(null)), table8, "When ");
             testRunner.Then("Success message is displayed", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
@@ -214,7 +218,7 @@ namespace DashworksTestAutomation.Tests.Projects
                         "ObjectTypeString"});
             table9.AddRow(new string[] {
                         "TestRequestTypeName",
-                        "TestText 0",
+                        "ComputerScheduledProject 0",
                         "User"});
             testRunner.When("User create Request Type", ((string)(null)), table9, "When ");
             testRunner.Then("Success message is displayed", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
@@ -236,7 +240,7 @@ namespace DashworksTestAutomation.Tests.Projects
                         "ObjectTypeString"});
             table11.AddRow(new string[] {
                         "TestRequestTypeName",
-                        "TestText 1",
+                        "ComputerScheduledProject 1",
                         "Application"});
             testRunner.When("User create Request Type", ((string)(null)), table11, "When ");
             testRunner.Then("Success message is displayed", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
@@ -258,7 +262,7 @@ namespace DashworksTestAutomation.Tests.Projects
                         "ObjectTypeString"});
             table13.AddRow(new string[] {
                         "TestRequestTypeName",
-                        "TestText 2",
+                        "ComputerScheduledProject 2",
                         "Computer"});
             testRunner.When("User create Request Type", ((string)(null)), table13, "When ");
             testRunner.Then("Success message is displayed", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
@@ -278,10 +282,12 @@ namespace DashworksTestAutomation.Tests.Projects
             testRunner.When("User clicks \"Create Category\" button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
             TechTalk.SpecFlow.Table table15 = new TechTalk.SpecFlow.Table(new string[] {
                         "Name",
-                        "Description"});
+                        "Description",
+                        "ObjectTypeString"});
             table15.AddRow(new string[] {
                         "TestCategoryName",
-                        "TestText"});
+                        "TestText",
+                        "User"});
             testRunner.When("User create Category", ((string)(null)), table15, "When ");
             testRunner.Then("Success message is displayed with \"Category successfully created.\" text", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
             testRunner.When("User clicks \"« Go Back\" button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");

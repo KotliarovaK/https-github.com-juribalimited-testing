@@ -458,10 +458,20 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>Login_Logout.feature</DependentUpon>
     </Compile>
-    <Compile Include="Tests\Projects\CreateProject.feature.cs">
+    <Compile Include="Tests\Projects\ComputerScheduledProject.feature.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>CreateProject.feature</DependentUpon>
+      <DependentUpon>ComputerScheduledProject.feature</DependentUpon>
+    </Compile>
+    <Compile Include="Tests\Projects\MailboxScheduledProject.feature.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>MailboxScheduledProject.feature</DependentUpon>
+    </Compile>
+    <Compile Include="Tests\Projects\UserScheduledProject.feature.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>UserScheduledProject.feature</DependentUpon>
     </Compile>
     <Compile Include="Utils\ByFactory.cs" />
     <Compile Include="Utils\CustomRemoteWebDriver.cs" />
@@ -576,9 +586,17 @@
       <Generator>SpecFlowSingleFileGenerator</Generator>
       <LastGenOutput>Login_Logout.feature.cs</LastGenOutput>
     </None>
-    <None Include="Tests\Projects\CreateProject.feature">
+    <None Include="Tests\Projects\ComputerScheduledProject.feature">
       <Generator>SpecFlowSingleFileGenerator</Generator>
-      <LastGenOutput>CreateProject.feature.cs</LastGenOutput>
+      <LastGenOutput>ComputerScheduledProject.feature.cs</LastGenOutput>
+    </None>
+    <None Include="Tests\Projects\MailboxScheduledProject.feature">
+      <Generator>SpecFlowSingleFileGenerator</Generator>
+      <LastGenOutput>MailboxScheduledProject.feature.cs</LastGenOutput>
+    </None>
+    <None Include="Tests\Projects\UserScheduledProject.feature">
+      <Generator>SpecFlowSingleFileGenerator</Generator>
+      <LastGenOutput>UserScheduledProject.feature.cs</LastGenOutput>
     </None>
   </ItemGroup>
   <ItemGroup>

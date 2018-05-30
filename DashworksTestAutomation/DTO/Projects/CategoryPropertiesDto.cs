@@ -6,18 +6,15 @@ namespace DashworksTestAutomation.DTO.Projects
     {
         public string Name { get; set; }
         public string Description { get; set; }
+        public string ObjectTypeString { get; set; }
         public CategoryObjectTypeEnum ObjectType;
-
-        public CategoryPropertiesDto()
-        {
-            ObjectType = EnumExtensions.GetRandomValue<CategoryObjectTypeEnum>();
-        }
     }
 
     public enum CategoryObjectTypeEnum
     {
         User,
         Computer,
-        Application
+        Application,
+        Mailbox
     }
 }

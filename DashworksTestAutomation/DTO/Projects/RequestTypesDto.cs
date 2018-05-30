@@ -4,6 +4,7 @@ namespace DashworksTestAutomation.DTO.Projects
 {
     public class RequestTypesDto
     {
+        public ProjectDto Project { get; set; }
         public string Name { get; set; }
         public string Description { get; set; }
         public string ObjectTypeString { get; set; }
@@ -14,6 +15,7 @@ namespace DashworksTestAutomation.DTO.Projects
     {
         Computer,
         Application,
-        User
+        User,
+        Mailbox
     }
 }
