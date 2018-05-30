@@ -125,8 +125,6 @@ namespace DashworksTestAutomation.Steps.Dashworks
         [Then(@"""(.*)"" list is displayed to user")]
         public void ThenListIsDisplayedToUser(string listName)
         {
-            //Workaround for 11570. Remove after fix
-            //WhenUserNavigatesToTheList(listName);
             var page = _driver.NowAt<BaseDashboardPage>();
             Assert.AreEqual(listName, page.ActiveCustomListName());
         }
@@ -250,6 +248,13 @@ namespace DashworksTestAutomation.Steps.Dashworks
             listElement.ClickSettingsButtonByListName(listName);
             _driver.WaitWhileControlIsNotDisplayed<CustomListElement>(() => listElement.DuplicateButton);
             listElement.DuplicateButton.Click();
+        }
+
+        [Then(@"list name automatically changed to ""(.*)"" name")]
+        public void ThenListNameAutomaticallyChangedToName(string listName)
+        {
+            var page = _driver.NowAt<BaseDashboardPage>();
+            Assert.AreEqual(listName, page.ActiveCustomListName());
         }
 
         [Then(@"list with ""(.*)"" name is removed")]
