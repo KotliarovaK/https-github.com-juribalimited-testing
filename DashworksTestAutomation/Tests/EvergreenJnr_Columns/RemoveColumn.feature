@@ -416,3 +416,40 @@ Examples:
 	| PageName | ColumnName |
 	| Devices  | Hostname   |
 	| Users    | Username   |
+
+@Evergreen @Mailboxes @EvergreenJnr_Columns @RemoveColumn @DAS12513
+Scenario: EvergreenJnr_MailboxesList_CheckThatNoErrorsAreDisplayedAfterAddingAndRemovingOwnerEnabledColumnForMailboxes
+	When User clicks "Mailboxes" on the left-hand menu
+	Then "Mailboxes" list should be displayed to the user
+	When User clicks the Filters button
+	Then Filters panel is displayed to the user
+	When User add "Owner Enabled" filter where type is "Equals" with added column and following checkboxes:
+	| SelectedCheckboxes |
+	| TRUE               |
+	Then ColumnName is added to the list
+	| ColumnName    |
+	| Owner Enabled |
+	When User clicks the Columns button
+	Then Columns panel is displayed to the user
+	When User removes "Mail Server" column by Column panel
+	When User removes "Mailbox Type" column by Column panel
+	When User removes "Owner Display Name" column by Column panel
+	Then "Mailboxes" list should be displayed to the user
+
+@Evergreen @Devices @EvergreenJnr_Columns @RemoveColumn @DAS12513
+Scenario: EvergreenJnr_DevicesList_CheckThatNoErrorsAreDisplayedAfterAddingAndRemovingOwnerEnabledColumnForDevices
+	When User clicks "Devices" on the left-hand menu
+	Then "Devices" list should be displayed to the user
+	When User clicks the Filters button
+	Then Filters panel is displayed to the user
+	When User add "Owner Enabled" filter where type is "Equals" with added column and following checkboxes:
+	| SelectedCheckboxes |
+	| TRUE               |
+	Then ColumnName is added to the list
+	| ColumnName    |
+	| Owner Enabled |
+	When User clicks the Columns button
+	Then Columns panel is displayed to the user
+	When User removes "Operating System" column by Column panel
+	When User removes "Owner Display Name" column by Column panel
+	Then "Devices" list should be displayed to the user
