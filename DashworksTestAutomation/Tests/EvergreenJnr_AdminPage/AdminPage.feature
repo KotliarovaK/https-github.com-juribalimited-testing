@@ -342,7 +342,7 @@ Scenario: EvergreenJnr_AdminPage_CheckThatErrorsDoNotAppearAfterUpdatingTeamDesc
 	And There are no errors in the browser console
 	And Delete "TestTeam1" Team in the Administration
 
-@Evergreen @Admin @EvergreenJnr_AdminPage @AdminPage @DAS11765 @DAS12170
+@Evergreen @Admin @EvergreenJnr_AdminPage @AdminPage @DAS11765 @DAS12170 @Not_Run
 Scenario: EvergreenJnr_AdminPage_CheckThatMailboxesAreSuccessfullyAddedToBuckets
 	When User clicks Admin on the left-hand menu
 	Then Admin page should be displayed to the user
@@ -353,9 +353,9 @@ Scenario: EvergreenJnr_AdminPage_CheckThatMailboxesAreSuccessfullyAddedToBuckets
 	Then User clicks "Mailboxes" tab on the Buckets page
 	When User clicks Add Mailbox button on the Buckets page
 	Then User add following mailboxes to the Bucket
-	| MailboxName                 |
-	| aaron.w.burton@dwlabs.local |
-	| abel.y.hanson@dwlabs.local  |
+	| MailboxName                      |
+	| abraham.d.robertson@dwlabs.local |
+	| abraham.h.maxwell@dwlabs.local   |
 	And Success message is displayed and contains "The selected mailboxes have been added to the selected bucket" text on the Buckets page
 	And There are no errors in the browser console
 
@@ -392,7 +392,7 @@ Scenario: EvergreenJnr_AdminPage_CheckThatAllAssociationsAreSelectedByDefaultInT
 	Then All Association are selected by default
 	And Delete "TestProject7" Project in the Administration
 
-@Evergreen @Admin @EvergreenJnr_AdminPage @AdminPage @DAS12170
+@Evergreen @Admin @EvergreenJnr_AdminPage @AdminPage @DAS12170 @Not_Run
 Scenario: EvergreenJnr_AdminPage_CheckThatConsoleErrorsAreNotDisplayedAfterAddingDevicesInTheBuckets
 	When User clicks Admin on the left-hand menu
 	Then Admin page should be displayed to the user
@@ -402,9 +402,9 @@ Scenario: EvergreenJnr_AdminPage_CheckThatConsoleErrorsAreNotDisplayedAfterAddin
 	And User clicks content from "Bucket" column on the Buckets page
 	When User clicks Add Device button on the Buckets page
 	Then User add following devices to the Bucket
-	| DeviceName      |
-	| 02X387UQLFP3ISU |
-	| 34RRSBA00C0EYY  |
+	| DeviceName     |
+	| 01DRMO46G58SXK |
+	| XV20GW6HJRVE2R |
 	And Success message is displayed and contains "The selected devices have been added to the selected bucket" text on the Buckets page
 	And There are no errors in the browser console
 
@@ -420,7 +420,7 @@ Scenario: EvergreenJnr_AdminPage_CheckThatErrorsDoNotAppearAfterAddingDevicesToT
 	Then No items text is displayed on the Buckets page
 	And There are no errors in the browser console
 
-@Evergreen @Admin @EvergreenJnr_AdminPage @AdminPage @DAS12170
+@Evergreen @Admin @EvergreenJnr_AdminPage @AdminPage @DAS12170 @Not_Run
 Scenario: EvergreenJnr_AdminPage_CheckThatConsoleErrorsAreNotDisplayedAfterAddingUsersInTheBuckets
 	When User clicks Admin on the left-hand menu
 	Then Admin page should be displayed to the user
@@ -432,8 +432,8 @@ Scenario: EvergreenJnr_AdminPage_CheckThatConsoleErrorsAreNotDisplayedAfterAddin
 	When User clicks Add User button on the Buckets page
 	Then User add following users to the Bucket
 	| UserName                          |
-	| US-E\ABW081519 (Darrin A. Arnold) |
-	| FR\IIN4276389 (Merci Daoust)      |
+	| UK\LBM661859 (Jenifer V. Allison) |
+	| UK\ANK462406 (Nakia D. Norton)    |
 	And Success message is displayed and contains "The selected users have been added to the selected bucket" text on the Buckets page
 	And There are no errors in the browser console
 
@@ -544,8 +544,8 @@ Scenario: EvergreenJnr_AdminPage_CheckThatFiltersAreWorkingCorrectlyOnTheAdminPa
 	When User click "Buckets" link on the Admin page
 	When User enters "barry's" text in the Search field for "Bucket" column on the Buckets page
 	Then "2" rows are displayed on the Buckets page
-	When User enters "=15" text in the Search field for "Users" column on the Buckets page
-	Then "13" rows are displayed on the Buckets page
+	When User enters "=13" text in the Search field for "Users" column on the Buckets page
+	Then "7" rows are displayed on the Buckets page
 	When User enters "Unassigned" text in the Search field for "Bucket" column on the Buckets page
 	And User clicks content from "Bucket" column on the Buckets page
 	When User enters "BG4H" text in the Search field for "Hostname" column on the Buckets page
