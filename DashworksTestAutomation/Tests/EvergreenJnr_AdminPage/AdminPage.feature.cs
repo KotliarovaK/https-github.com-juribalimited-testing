@@ -1907,15 +1907,15 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_AdminPage
             testRunner.Then("\"1\" rows are displayed on the Teams page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
             testRunner.When("User enters \"<10\" text in the Search field for \"Devices\" column on the Teams page" +
                     "", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-            testRunner.Then("\"5\" rows are displayed on the Teams page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+            testRunner.Then("\"4\" rows are displayed on the Teams page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
             testRunner.When("User clicks Admin on the left-hand menu", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
             testRunner.When("User click \"Buckets\" link on the Admin page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
             testRunner.When("User enters \"barry\'s\" text in the Search field for \"Bucket\" column on the Buckets" +
                     " page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
             testRunner.Then("\"2\" rows are displayed on the Buckets page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-            testRunner.When("User enters \"=13\" text in the Search field for \"Users\" column on the Buckets page" +
+            testRunner.When("User enters \"=15\" text in the Search field for \"Users\" column on the Buckets page" +
                     "", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-            testRunner.Then("\"7\" rows are displayed on the Buckets page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+            testRunner.Then("\"13\" rows are displayed on the Buckets page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
             testRunner.When("User enters \"Unassigned\" text in the Search field for \"Bucket\" column on the Buck" +
                     "ets page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
             testRunner.And("User clicks content from \"Bucket\" column on the Buckets page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
