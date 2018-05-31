@@ -99,6 +99,29 @@ namespace DashworksTestAutomation.Steps.Dashworks
             _listsDetails.AddList($"{listName}");
         }
 
+        [When(@"User clicks Save button on the list panel")]
+        public void WhenUserClicksSaveButtonOnTheListPanel()
+        {
+            var listElement = _driver.NowAt<CustomListElement>();
+            _driver.WaitWhileControlIsNotDisplayed<CustomListElement>(() => listElement.CreateNewListButton);
+            listElement.CreateNewListButton.Click();
+        }
+
+        [When(@"User selects Save as new list option")]
+        public void WhenUserSelectsSaveAsNewListOption()
+        {
+            var listElement = _driver.NowAt<CustomListElement>();
+            listElement.SaveAsNewListButton.Click();
+        }
+
+        [When(@"User clicks Cancel button on the list panel")]
+        public void WhenUserClicksCancelButtonOnTheListPanel()
+        {
+            var listElement = _driver.NowAt<CustomListElement>();
+            _driver.WaitWhileControlIsNotDisplayed<CustomListElement>(() => listElement.CancelButton);
+            listElement.CancelButton.Click();
+        }
+
         [Then(@"User type ""(.*)"" into Custom list name field")]
         public void ThenUserTypeIntoCustomListNameField(string listName)
         {
@@ -280,6 +303,14 @@ namespace DashworksTestAutomation.Steps.Dashworks
             _driver.WaitForDataLoading();
             _driver.WaitWhileControlIsNotDisplayed<CustomListElement>(() => listElement.SuccessCreateMessage);
             Assert.AreEqual(message, listElement.SuccessCreateMessage.Text, $"{message} is not displayed");
+        }
+
+        [Then(@"Save and Cancel buttons are displayed on the list panel")]
+        public void ThenSaveAndCancelButtonsAreDisplayedOnTheListPanel()
+        {
+            var listElement = _driver.NowAt<CustomListElement>();
+            Assert.IsTrue(listElement.SaveButton.Displayed());
+            Assert.IsTrue(listElement.CancelButton.Displayed());
         }
 
         [Then(@"Save and Cancel buttons are not displayed on the list panel")]

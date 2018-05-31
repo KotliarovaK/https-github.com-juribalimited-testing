@@ -942,3 +942,35 @@ Examples:
 	| Applications | Version            | StaticList8944 |
 	| Users        | Distinguished Name | StaticList7412 |
 	| Mailboxes    | Owner Display Name | StaticList9512 |
+
+@Evergreen @AllLists @EvergreenJnr_ListPanel @CustomListDisplay @DAS12524 @Delete_Newly_Created_List
+Scenario Outline: EvergreenJnr_AllLists_CheckThatSaveAndCancelButtonAreHiddenAfterCancellingProcessOfSavingList
+	When User clicks "<ListName>" on the left-hand menu
+	Then "<ListName>" list should be displayed to the user
+	When User click on '<ColumnName>' column header
+	Then data in table is sorted by '<ColumnName>' column in ascending order
+	When User clicks Save button on the list panel
+	Then Save and Cancel buttons are displayed on the list panel
+	When User clicks Cancel button on the list panel
+	Then Save and Cancel buttons are not displayed on the list panel
+	When User create dynamic list with "<DynamicListName>" name on "<ListName>" page
+	When User clicks the Columns button
+	Then Columns panel is displayed to the user
+	When ColumnName is entered into the search box and the selection is clicked
+	| ColumnName  |
+	| <AddColumn> |
+	Then ColumnName is added to the list
+	| ColumnName  |
+	| <AddColumn> |
+	When User clicks Save button on the list panel
+	When User selects Save as new list option
+	Then Save and Cancel buttons are displayed on the list panel
+	When User clicks Cancel button on the list panel
+	Then Save and Cancel buttons are not displayed on the list panel
+
+Examples:
+	| ListName     | ColumnName    | AddColumn  | DynamicListName |
+	| Devices      | Hostname      | Device Key | DynamicList1178 |
+	| Applications | Application   | Telephone  | DynamicList1125 |
+	| Users        | Username      | GUID       | DynamicList1195 |
+	| Mailboxes    | Email Address | Region     | DynamicList1121 |
