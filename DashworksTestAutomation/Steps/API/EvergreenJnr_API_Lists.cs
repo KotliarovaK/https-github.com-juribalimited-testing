@@ -64,7 +64,6 @@ namespace DashworksTestAutomation.Steps.API
             //_driver.Navigate().Refresh();
             _driver.Navigate().GoToUrl(url);
             var page = _driver.NowAt<BaseDashboardPage>();
-            _driver.WaitForDataLoading();
             page.WaitForCustomListToBeActive();
 
             //Add created list to context
