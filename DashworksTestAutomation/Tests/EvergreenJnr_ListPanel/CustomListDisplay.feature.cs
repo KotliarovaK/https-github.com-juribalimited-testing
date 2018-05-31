@@ -2056,7 +2056,7 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_ListPanel
         }
         
         [NUnit.Framework.TestAttribute()]
-        [NUnit.Framework.DescriptionAttribute("EvergreenJnr_AllListsLists_CheckThatAllListsNamesAreDisplayedCorrectly")]
+        [NUnit.Framework.DescriptionAttribute("EvergreenJnr_AllLists_CheckThatAllListsNamesAreDisplayedCorrectly")]
         [NUnit.Framework.CategoryAttribute("Evergreen")]
         [NUnit.Framework.CategoryAttribute("AllLists")]
         [NUnit.Framework.CategoryAttribute("EvergreenJnr_ListPanel")]
@@ -2066,14 +2066,14 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_ListPanel
         [NUnit.Framework.TestCaseAttribute("Applications", "All Applications", new string[0])]
         [NUnit.Framework.TestCaseAttribute("Users", "All Users", new string[0])]
         [NUnit.Framework.TestCaseAttribute("Mailboxes", "All Mailboxes", new string[0])]
-        public virtual void EvergreenJnr_AllListsLists_CheckThatAllListsNamesAreDisplayedCorrectly(string listName, string allListName, string[] exampleTags)
+        public virtual void EvergreenJnr_AllLists_CheckThatAllListsNamesAreDisplayedCorrectly(string listName, string allListName, string[] exampleTags)
         {
             System.Exception lastException = null;
             for (int i = 0; (i <= 1); i = (i + 1))
             {
                 try
                 {
-                    this.EvergreenJnr_AllListsLists_CheckThatAllListsNamesAreDisplayedCorrectlyInternal(listName, allListName, exampleTags);
+                    this.EvergreenJnr_AllLists_CheckThatAllListsNamesAreDisplayedCorrectlyInternal(listName, allListName, exampleTags);
                     return;
                 }
                 catch (System.Exception exc)
@@ -2092,7 +2092,7 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_ListPanel
             }
         }
         
-        private void EvergreenJnr_AllListsLists_CheckThatAllListsNamesAreDisplayedCorrectlyInternal(string listName, string allListName, string[] exampleTags)
+        private void EvergreenJnr_AllLists_CheckThatAllListsNamesAreDisplayedCorrectlyInternal(string listName, string allListName, string[] exampleTags)
         {
             string[] @__tags = new string[] {
                     "Evergreen",
@@ -2104,7 +2104,7 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_ListPanel
             {
                 @__tags = System.Linq.Enumerable.ToArray(System.Linq.Enumerable.Concat(@__tags, exampleTags));
             }
-            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("EvergreenJnr_AllListsLists_CheckThatAllListsNamesAreDisplayedCorrectly", @__tags);
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("EvergreenJnr_AllLists_CheckThatAllListsNamesAreDisplayedCorrectly", @__tags);
             this.ScenarioSetup(scenarioInfo);
             this.FeatureBackground();
             testRunner.When(string.Format("User clicks \"{0}\" on the left-hand menu", listName), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
@@ -2114,8 +2114,8 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_ListPanel
         }
         
         [NUnit.Framework.TestAttribute()]
-        [NUnit.Framework.DescriptionAttribute("EvergreenJnr_AllListsLists_CheckThatTheSaveListFunctionIsTriggeredOrHiddenAfterAd" +
-            "dingOrRemovingColumns")]
+        [NUnit.Framework.DescriptionAttribute("EvergreenJnr_AllLists_CheckThatTheSaveListFunctionIsTriggeredOrHiddenAfterAddingO" +
+            "rRemovingColumns")]
         [NUnit.Framework.CategoryAttribute("Evergreen")]
         [NUnit.Framework.CategoryAttribute("AllLists")]
         [NUnit.Framework.CategoryAttribute("EvergreenJnr_ListPanel")]
@@ -2125,14 +2125,14 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_ListPanel
         [NUnit.Framework.TestCaseAttribute("Applications", "Application Key", "Compliance", "App field 2", new string[0])]
         [NUnit.Framework.TestCaseAttribute("Users", "City", "Description", "Floor", new string[0])]
         [NUnit.Framework.TestCaseAttribute("Mailboxes", "Alias", "Time Zone", "Building", new string[0])]
-        public virtual void EvergreenJnr_AllListsLists_CheckThatTheSaveListFunctionIsTriggeredOrHiddenAfterAddingOrRemovingColumns(string listName, string columnName, string newColumnName, string moreColumnName, string[] exampleTags)
+        public virtual void EvergreenJnr_AllLists_CheckThatTheSaveListFunctionIsTriggeredOrHiddenAfterAddingOrRemovingColumns(string listName, string columnName, string newColumnName, string moreColumnName, string[] exampleTags)
         {
             System.Exception lastException = null;
             for (int i = 0; (i <= 1); i = (i + 1))
             {
                 try
                 {
-                    this.EvergreenJnr_AllListsLists_CheckThatTheSaveListFunctionIsTriggeredOrHiddenAfterAddingOrRemovingColumnsInternal(listName, columnName, newColumnName, moreColumnName, exampleTags);
+                    this.EvergreenJnr_AllLists_CheckThatTheSaveListFunctionIsTriggeredOrHiddenAfterAddingOrRemovingColumnsInternal(listName, columnName, newColumnName, moreColumnName, exampleTags);
                     return;
                 }
                 catch (System.Exception exc)
@@ -2151,7 +2151,7 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_ListPanel
             }
         }
         
-        private void EvergreenJnr_AllListsLists_CheckThatTheSaveListFunctionIsTriggeredOrHiddenAfterAddingOrRemovingColumnsInternal(string listName, string columnName, string newColumnName, string moreColumnName, string[] exampleTags)
+        private void EvergreenJnr_AllLists_CheckThatTheSaveListFunctionIsTriggeredOrHiddenAfterAddingOrRemovingColumnsInternal(string listName, string columnName, string newColumnName, string moreColumnName, string[] exampleTags)
         {
             string[] @__tags = new string[] {
                     "Evergreen",
@@ -2163,8 +2163,8 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_ListPanel
             {
                 @__tags = System.Linq.Enumerable.ToArray(System.Linq.Enumerable.Concat(@__tags, exampleTags));
             }
-            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("EvergreenJnr_AllListsLists_CheckThatTheSaveListFunctionIsTriggeredOrHiddenAfterAd" +
-                    "dingOrRemovingColumns", @__tags);
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("EvergreenJnr_AllLists_CheckThatTheSaveListFunctionIsTriggeredOrHiddenAfterAddingO" +
+                    "rRemovingColumns", @__tags);
             this.ScenarioSetup(scenarioInfo);
             this.FeatureBackground();
             testRunner.When(string.Format("User clicks \"{0}\" on the left-hand menu", listName), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
@@ -2202,8 +2202,8 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_ListPanel
         }
         
         [NUnit.Framework.TestAttribute()]
-        [NUnit.Framework.DescriptionAttribute("EvergreenJnr_AllListsLists_CheckThatTheSaveListFunctionIsHiddenAfterChangingPinne" +
-            "dColumns")]
+        [NUnit.Framework.DescriptionAttribute("EvergreenJnr_AllLists_CheckThatTheSaveListFunctionIsHiddenAfterChangingPinnedColu" +
+            "mns")]
         [NUnit.Framework.CategoryAttribute("Evergreen")]
         [NUnit.Framework.CategoryAttribute("AllLists")]
         [NUnit.Framework.CategoryAttribute("EvergreenJnr_ListPanel")]
@@ -2213,14 +2213,14 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_ListPanel
         [NUnit.Framework.TestCaseAttribute("Applications", "Vendor", new string[0])]
         [NUnit.Framework.TestCaseAttribute("Users", "Domain", new string[0])]
         [NUnit.Framework.TestCaseAttribute("Mailboxes", "Mailbox Platform", new string[0])]
-        public virtual void EvergreenJnr_AllListsLists_CheckThatTheSaveListFunctionIsHiddenAfterChangingPinnedColumns(string listName, string columnName, string[] exampleTags)
+        public virtual void EvergreenJnr_AllLists_CheckThatTheSaveListFunctionIsHiddenAfterChangingPinnedColumns(string listName, string columnName, string[] exampleTags)
         {
             System.Exception lastException = null;
             for (int i = 0; (i <= 1); i = (i + 1))
             {
                 try
                 {
-                    this.EvergreenJnr_AllListsLists_CheckThatTheSaveListFunctionIsHiddenAfterChangingPinnedColumnsInternal(listName, columnName, exampleTags);
+                    this.EvergreenJnr_AllLists_CheckThatTheSaveListFunctionIsHiddenAfterChangingPinnedColumnsInternal(listName, columnName, exampleTags);
                     return;
                 }
                 catch (System.Exception exc)
@@ -2239,7 +2239,7 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_ListPanel
             }
         }
         
-        private void EvergreenJnr_AllListsLists_CheckThatTheSaveListFunctionIsHiddenAfterChangingPinnedColumnsInternal(string listName, string columnName, string[] exampleTags)
+        private void EvergreenJnr_AllLists_CheckThatTheSaveListFunctionIsHiddenAfterChangingPinnedColumnsInternal(string listName, string columnName, string[] exampleTags)
         {
             string[] @__tags = new string[] {
                     "Evergreen",
@@ -2251,8 +2251,8 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_ListPanel
             {
                 @__tags = System.Linq.Enumerable.ToArray(System.Linq.Enumerable.Concat(@__tags, exampleTags));
             }
-            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("EvergreenJnr_AllListsLists_CheckThatTheSaveListFunctionIsHiddenAfterChangingPinne" +
-                    "dColumns", @__tags);
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("EvergreenJnr_AllLists_CheckThatTheSaveListFunctionIsHiddenAfterChangingPinnedColu" +
+                    "mns", @__tags);
             this.ScenarioSetup(scenarioInfo);
             this.FeatureBackground();
             testRunner.When(string.Format("User clicks \"{0}\" on the left-hand menu", listName), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
@@ -2273,8 +2273,8 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_ListPanel
         }
         
         [NUnit.Framework.TestAttribute()]
-        [NUnit.Framework.DescriptionAttribute("EvergreenJnr_AllListsLists_CheckThatTheEditListFunctionIsTriggeredOrHiddenForCust" +
-            "omListsAfterAddingOrRemovingColumns")]
+        [NUnit.Framework.DescriptionAttribute("EvergreenJnr_AllLists_CheckThatTheEditListFunctionIsTriggeredOrHiddenForCustomLis" +
+            "tsAfterAddingOrRemovingColumns")]
         [NUnit.Framework.CategoryAttribute("Evergreen")]
         [NUnit.Framework.CategoryAttribute("AllLists")]
         [NUnit.Framework.CategoryAttribute("EvergreenJnr_ListPanel")]
@@ -2285,14 +2285,14 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_ListPanel
         [NUnit.Framework.TestCaseAttribute("Applications", "Application", "Application Key", "\"WPF/E\" (codename) Community Technology Preview (Feb 2007)", "prK: In Scope", "Compliance", new string[0])]
         [NUnit.Framework.TestCaseAttribute("Users", "Username", "City", "$6BE000-SUDQ9614UVO8", "Cost Centre", "Department Name", new string[0])]
         [NUnit.Framework.TestCaseAttribute("Mailboxes", "Email Address", "Alias", "000F977AC8824FE39B8@bclabs.local", "Enabled", "Import", new string[0])]
-        public virtual void EvergreenJnr_AllListsLists_CheckThatTheEditListFunctionIsTriggeredOrHiddenForCustomListsAfterAddingOrRemovingColumns(string listName, string columnName, string newColumnName, string selectedItem, string addColumnName, string addAnotherColumn, string[] exampleTags)
+        public virtual void EvergreenJnr_AllLists_CheckThatTheEditListFunctionIsTriggeredOrHiddenForCustomListsAfterAddingOrRemovingColumns(string listName, string columnName, string newColumnName, string selectedItem, string addColumnName, string addAnotherColumn, string[] exampleTags)
         {
             System.Exception lastException = null;
             for (int i = 0; (i <= 1); i = (i + 1))
             {
                 try
                 {
-                    this.EvergreenJnr_AllListsLists_CheckThatTheEditListFunctionIsTriggeredOrHiddenForCustomListsAfterAddingOrRemovingColumnsInternal(listName, columnName, newColumnName, selectedItem, addColumnName, addAnotherColumn, exampleTags);
+                    this.EvergreenJnr_AllLists_CheckThatTheEditListFunctionIsTriggeredOrHiddenForCustomListsAfterAddingOrRemovingColumnsInternal(listName, columnName, newColumnName, selectedItem, addColumnName, addAnotherColumn, exampleTags);
                     return;
                 }
                 catch (System.Exception exc)
@@ -2311,7 +2311,7 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_ListPanel
             }
         }
         
-        private void EvergreenJnr_AllListsLists_CheckThatTheEditListFunctionIsTriggeredOrHiddenForCustomListsAfterAddingOrRemovingColumnsInternal(string listName, string columnName, string newColumnName, string selectedItem, string addColumnName, string addAnotherColumn, string[] exampleTags)
+        private void EvergreenJnr_AllLists_CheckThatTheEditListFunctionIsTriggeredOrHiddenForCustomListsAfterAddingOrRemovingColumnsInternal(string listName, string columnName, string newColumnName, string selectedItem, string addColumnName, string addAnotherColumn, string[] exampleTags)
         {
             string[] @__tags = new string[] {
                     "Evergreen",
@@ -2324,8 +2324,8 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_ListPanel
             {
                 @__tags = System.Linq.Enumerable.ToArray(System.Linq.Enumerable.Concat(@__tags, exampleTags));
             }
-            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("EvergreenJnr_AllListsLists_CheckThatTheEditListFunctionIsTriggeredOrHiddenForCust" +
-                    "omListsAfterAddingOrRemovingColumns", @__tags);
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("EvergreenJnr_AllLists_CheckThatTheEditListFunctionIsTriggeredOrHiddenForCustomLis" +
+                    "tsAfterAddingOrRemovingColumns", @__tags);
             this.ScenarioSetup(scenarioInfo);
             this.FeatureBackground();
             testRunner.When(string.Format("User clicks \"{0}\" on the left-hand menu", listName), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
@@ -2497,8 +2497,8 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_ListPanel
         }
         
         [NUnit.Framework.TestAttribute()]
-        [NUnit.Framework.DescriptionAttribute("EvergreenJnr_AllListsLists_CheckThatTheEditListFunctionIsHiddenAfterChangingPinne" +
-            "dColumns")]
+        [NUnit.Framework.DescriptionAttribute("EvergreenJnr_AllLists_CheckThatTheEditListFunctionIsHiddenAfterChangingPinnedColu" +
+            "mns")]
         [NUnit.Framework.CategoryAttribute("Evergreen")]
         [NUnit.Framework.CategoryAttribute("AllLists")]
         [NUnit.Framework.CategoryAttribute("EvergreenJnr_ListPanel")]
@@ -2510,14 +2510,14 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_ListPanel
         [NUnit.Framework.TestCaseAttribute("Applications", "Vendor", "Application", new string[0])]
         [NUnit.Framework.TestCaseAttribute("Users", "Domain", "Username", new string[0])]
         [NUnit.Framework.TestCaseAttribute("Mailboxes", "Mailbox Platform", "Email Address", new string[0])]
-        public virtual void EvergreenJnr_AllListsLists_CheckThatTheEditListFunctionIsHiddenAfterChangingPinnedColumns(string listName, string columnName, string pinnedColumnName, string[] exampleTags)
+        public virtual void EvergreenJnr_AllLists_CheckThatTheEditListFunctionIsHiddenAfterChangingPinnedColumns(string listName, string columnName, string pinnedColumnName, string[] exampleTags)
         {
             System.Exception lastException = null;
             for (int i = 0; (i <= 1); i = (i + 1))
             {
                 try
                 {
-                    this.EvergreenJnr_AllListsLists_CheckThatTheEditListFunctionIsHiddenAfterChangingPinnedColumnsInternal(listName, columnName, pinnedColumnName, exampleTags);
+                    this.EvergreenJnr_AllLists_CheckThatTheEditListFunctionIsHiddenAfterChangingPinnedColumnsInternal(listName, columnName, pinnedColumnName, exampleTags);
                     return;
                 }
                 catch (System.Exception exc)
@@ -2536,7 +2536,7 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_ListPanel
             }
         }
         
-        private void EvergreenJnr_AllListsLists_CheckThatTheEditListFunctionIsHiddenAfterChangingPinnedColumnsInternal(string listName, string columnName, string pinnedColumnName, string[] exampleTags)
+        private void EvergreenJnr_AllLists_CheckThatTheEditListFunctionIsHiddenAfterChangingPinnedColumnsInternal(string listName, string columnName, string pinnedColumnName, string[] exampleTags)
         {
             string[] @__tags = new string[] {
                     "Evergreen",
@@ -2550,8 +2550,8 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_ListPanel
             {
                 @__tags = System.Linq.Enumerable.ToArray(System.Linq.Enumerable.Concat(@__tags, exampleTags));
             }
-            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("EvergreenJnr_AllListsLists_CheckThatTheEditListFunctionIsHiddenAfterChangingPinne" +
-                    "dColumns", @__tags);
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("EvergreenJnr_AllLists_CheckThatTheEditListFunctionIsHiddenAfterChangingPinnedColu" +
+                    "mns", @__tags);
             this.ScenarioSetup(scenarioInfo);
             this.FeatureBackground();
             testRunner.When(string.Format("User clicks \"{0}\" on the left-hand menu", listName), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
@@ -2586,6 +2586,85 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_ListPanel
             testRunner.When(string.Format("User have opened column settings for \"{0}\" column", pinnedColumnName), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
             testRunner.When("User have select \"No Pin\" option from column settings", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
             testRunner.Then("\"StaticList3\" list is displayed to user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+            testRunner.Then("Edit List menu is not displayed", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+            this.ScenarioCleanup();
+        }
+        
+        [NUnit.Framework.TestAttribute()]
+        [NUnit.Framework.DescriptionAttribute("EvergreenJnr_AllLists_CheckThatNewCustomListMenuIsHiddenInTheListPanelAfterClicki" +
+            "ngActionsButton")]
+        [NUnit.Framework.CategoryAttribute("Evergreen")]
+        [NUnit.Framework.CategoryAttribute("AllLists")]
+        [NUnit.Framework.CategoryAttribute("EvergreenJnr_ListPanel")]
+        [NUnit.Framework.CategoryAttribute("CustomListDisplay")]
+        [NUnit.Framework.CategoryAttribute("DAS12515")]
+        [NUnit.Framework.CategoryAttribute("Delete_Newly_Created_List")]
+        [NUnit.Framework.TestCaseAttribute("Devices", "Owner Display Name", "StaticList5548", new string[0])]
+        [NUnit.Framework.TestCaseAttribute("Applications", "Version", "StaticList8944", new string[0])]
+        [NUnit.Framework.TestCaseAttribute("Users", "Distinguished Name", "StaticList7412", new string[0])]
+        [NUnit.Framework.TestCaseAttribute("Mailboxes", "Owner Display Name", "StaticList9512", new string[0])]
+        public virtual void EvergreenJnr_AllLists_CheckThatNewCustomListMenuIsHiddenInTheListPanelAfterClickingActionsButton(string listName, string columnName, string staticListName, string[] exampleTags)
+        {
+            System.Exception lastException = null;
+            for (int i = 0; (i <= 1); i = (i + 1))
+            {
+                try
+                {
+                    this.EvergreenJnr_AllLists_CheckThatNewCustomListMenuIsHiddenInTheListPanelAfterClickingActionsButtonInternal(listName, columnName, staticListName, exampleTags);
+                    return;
+                }
+                catch (System.Exception exc)
+                {
+                    lastException = exc;
+                }
+                if (((i + 1) 
+                            <= 1))
+                {
+                    testRunner.OnScenarioEnd();
+                }
+            }
+            if ((lastException != null))
+            {
+                throw lastException;
+            }
+        }
+        
+        private void EvergreenJnr_AllLists_CheckThatNewCustomListMenuIsHiddenInTheListPanelAfterClickingActionsButtonInternal(string listName, string columnName, string staticListName, string[] exampleTags)
+        {
+            string[] @__tags = new string[] {
+                    "Evergreen",
+                    "AllLists",
+                    "EvergreenJnr_ListPanel",
+                    "CustomListDisplay",
+                    "DAS12515",
+                    "Delete_Newly_Created_List"};
+            if ((exampleTags != null))
+            {
+                @__tags = System.Linq.Enumerable.ToArray(System.Linq.Enumerable.Concat(@__tags, exampleTags));
+            }
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("EvergreenJnr_AllLists_CheckThatNewCustomListMenuIsHiddenInTheListPanelAfterClicki" +
+                    "ngActionsButton", @__tags);
+            this.ScenarioSetup(scenarioInfo);
+            this.FeatureBackground();
+            testRunner.When(string.Format("User clicks \"{0}\" on the left-hand menu", listName), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+            testRunner.Then(string.Format("\"{0}\" list should be displayed to the user", listName), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+            testRunner.When(string.Format("User click on \'{0}\' column header", columnName), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+            testRunner.Then(string.Format("data in table is sorted by \'{0}\' column in ascending order", columnName), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+            testRunner.Then("Save to New Custom List element is displayed", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+            testRunner.When("User clicks the Actions button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+            testRunner.Then("Actions panel is displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+            testRunner.Then("Save to New Custom List element is NOT displayed", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+            TechTalk.SpecFlow.Table table56 = new TechTalk.SpecFlow.Table(new string[] {
+                        "ItemName"});
+            table56.AddRow(new string[] {
+                        ""});
+            testRunner.When(string.Format("User create static list with \"{0}\" name on \"{1}\" page with following items", staticListName, listName), ((string)(null)), table56, "When ");
+            testRunner.Then(string.Format("\"{0}\" list is displayed to user", staticListName), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+            testRunner.When(string.Format("User click on \'{0}\' column header", columnName), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+            testRunner.Then(string.Format("data in table is sorted by \'{0}\' column in ascending order", columnName), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+            testRunner.Then("Edit List menu is not displayed", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+            testRunner.When("User clicks the Actions button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+            testRunner.Then("Actions panel is displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
             testRunner.Then("Edit List menu is not displayed", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
             this.ScenarioCleanup();
         }
