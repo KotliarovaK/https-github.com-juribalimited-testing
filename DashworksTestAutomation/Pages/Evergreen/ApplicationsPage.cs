@@ -8,6 +8,7 @@ namespace DashworksTestAutomation.Pages.Evergreen
     {
         public override List<By> GetPageIdentitySelectors()
         {
+            Driver.WaitWhileControlIsNotDisplayed<BaseDashboardPage>(() => List);
             Driver.WaitForDataLoading();
             return new List<By>
             {

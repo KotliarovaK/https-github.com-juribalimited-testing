@@ -714,7 +714,7 @@ Scenario: EvergreenJnr_DevicesLists_CheckThatUserIsNotAbleToCreateListsWithLongN
 	And "1234567890123456789012345678901234567890" list is displayed to user
 
 @Evergreen @AllLists @EvergreenJnr_ListPanel @CustomListDisplay @DAS11342
-Scenario Outline: EvergreenJnr_AllListsLists_CheckThatAllListsNamesAreDisplayedCorrectly
+Scenario Outline: EvergreenJnr_AllLists_CheckThatAllListsNamesAreDisplayedCorrectly
 	When User clicks "<ListName>" on the left-hand menu
 	Then "<ListName>" list should be displayed to the user
 	Then "<AllListName>" list name is displayed correctly
@@ -727,7 +727,7 @@ Examples:
 	| Mailboxes    | All Mailboxes    |
 
 @Evergreen @AllLists @EvergreenJnr_ListPanel @CustomListDisplay @DAS10972
-Scenario Outline: EvergreenJnr_AllListsLists_CheckThatTheSaveListFunctionIsTriggeredOrHiddenAfterAddingOrRemovingColumns
+Scenario Outline: EvergreenJnr_AllLists_CheckThatTheSaveListFunctionIsTriggeredOrHiddenAfterAddingOrRemovingColumns
 	When User clicks "<ListName>" on the left-hand menu
 	Then "<ListName>" list should be displayed to the user
 	When User clicks the Columns button
@@ -760,7 +760,7 @@ Examples:
 	| Mailboxes    | Alias           | Time Zone     | Building             |
 
 @Evergreen @AllLists @EvergreenJnr_ListPanel @CustomListDisplay @DAS10972
-Scenario Outline: EvergreenJnr_AllListsLists_CheckThatTheSaveListFunctionIsHiddenAfterChangingPinnedColumns
+Scenario Outline: EvergreenJnr_AllLists_CheckThatTheSaveListFunctionIsHiddenAfterChangingPinnedColumns
 	When User clicks "<ListName>" on the left-hand menu
 	Then "<ListName>" list should be displayed to the user
 	When User have opened column settings for "<ColumnName>" column
@@ -784,7 +784,7 @@ Examples:
 	| Mailboxes    | Mailbox Platform |
 
 @Evergreen @AllLists @EvergreenJnr_ListPanel @CustomListDisplay @DAS10972 @Delete_Newly_Created_List
-Scenario Outline: EvergreenJnr_AllListsLists_CheckThatTheEditListFunctionIsTriggeredOrHiddenForCustomListsAfterAddingOrRemovingColumns
+Scenario Outline: EvergreenJnr_AllLists_CheckThatTheEditListFunctionIsTriggeredOrHiddenForCustomListsAfterAddingOrRemovingColumns
 	When User clicks "<ListName>" on the left-hand menu
 	Then "<ListName>" list should be displayed to the user
 	When User click on '<ColumnName>' column header
@@ -873,7 +873,7 @@ Scenario Outline: EvergreenJnr_AllList_CheckThatTheEditListFunctionIsHiddenAfter
 	| Mailboxes    | Email Address | bc-exch07 | 4,188 | 73      |
 
 @Evergreen @AllLists @EvergreenJnr_ListPanel @CustomListDisplay @DAS10972 @DAS12602 @Delete_Newly_Created_List
-Scenario Outline: EvergreenJnr_AllListsLists_CheckThatTheEditListFunctionIsHiddenAfterChangingPinnedColumns
+Scenario Outline: EvergreenJnr_AllLists_CheckThatTheEditListFunctionIsHiddenAfterChangingPinnedColumns
 	When User clicks "<ListName>" on the left-hand menu
 	Then "<ListName>" list should be displayed to the user
 	When User click on '<ColumnName>' column header
@@ -914,3 +914,31 @@ Examples:
 	| Applications | Vendor           | Application      |
 	| Users        | Domain           | Username         |
 	| Mailboxes    | Mailbox Platform | Email Address    |
+
+@Evergreen @AllLists @EvergreenJnr_ListPanel @CustomListDisplay @DAS12515 @Delete_Newly_Created_List
+Scenario Outline: EvergreenJnr_AllLists_CheckThatNewCustomListMenuIsHiddenInTheListPanelAfterClickingActionsButton
+	When User clicks "<ListName>" on the left-hand menu
+	Then "<ListName>" list should be displayed to the user
+	When User click on '<ColumnName>' column header
+	Then data in table is sorted by '<ColumnName>' column in ascending order
+	Then Save to New Custom List element is displayed
+	When User clicks the Actions button
+	Then Actions panel is displayed to the user
+	Then Save to New Custom List element is NOT displayed
+	When User create static list with "<StaticListName>" name on "<ListName>" page with following items
+	| ItemName |
+	|          |
+	Then "<StaticListName>" list is displayed to user
+	When User click on '<ColumnName>' column header
+	Then data in table is sorted by '<ColumnName>' column in ascending order
+	Then Save to New Custom List element is displayed
+	When User clicks the Actions button
+	Then Actions panel is displayed to the user
+	Then Save to New Custom List element is NOT displayed
+
+Examples:
+	| ListName     | ColumnName         | StaticListName |
+	| Devices      | Owner Display Name | StaticList5548 |
+	| Applications | Version            | StaticList8944 |
+	| Users        | Distinguished Name | StaticList7412 |
+	| Mailboxes    | Owner Display Name | StaticList9512 |
