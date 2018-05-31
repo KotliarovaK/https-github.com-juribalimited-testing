@@ -101,6 +101,8 @@ namespace DashworksTestAutomation.Steps.Projects
             var page = _driver.NowAt<ProjectPropertiesPage>();
 
             table.CreateInstance<ProjectDto>().CopyPropertiesTo(_projectDto);
+            //assign ProjectTypeString to ProjectTypeEnum
+            _projectDto.ProjectType = (ProjectTypeEnum)Enum.Parse(typeof(ProjectTypeEnum), _projectDto.ProjectTypeString);
             _projectDto.ProjectName += TestDataGenerator.RandomString();
 
             page.ProjectName.SendKeys(_projectDto.ProjectName);
@@ -108,6 +110,8 @@ namespace DashworksTestAutomation.Steps.Projects
             page.ProjectDescription.SendKeys(_projectDto.ProjectDescription);
             page.ProjectType.SelectboxSelect(_projectDto.ProjectType.GetValue());
             page.DefaultLanguage.SelectboxSelect(_projectDto.DefaultLanguage.GetValue());
+
+            _detailsDto.Project = _projectDto;
         }
 
         [When(@"User updates the Details page")]
@@ -132,13 +136,15 @@ namespace DashworksTestAutomation.Steps.Projects
             page.BccEmail.SendKeys(_detailsDto.TaskEmailBccEmailAddress);
             page.StartDate.SendKeys(_detailsDto.StartDate);
             page.EndDate.SendKeys(_detailsDto.EndDate);
-            if (_projectDto.ProjectType == ProjectTypeEnum.MailboxScheduledProject)
+            if (_projectDto.ProjectType.Equals(ProjectTypeEnum.MailboxScheduledProject))
             {
                 page.PermissionCategoryExists.SelectboxSelect(_detailsDto.OnboardMailboxUsersWithPermissions.GetValue());
             }
 
             var upd = _driver.NowAt<BaseElements>();
             upd.UpdateButton.Click();
+
+            _projectDto.Details = _detailsDto;
         }
 
         [When(@"User create Request Type")]
@@ -147,6 +153,7 @@ namespace DashworksTestAutomation.Steps.Projects
             var page = _driver.NowAt<RequestTypePropertiesPage>();
 
             table.CreateInstance<RequestTypesDto>().CopyPropertiesTo(_requestTypesDto);
+            //assign ObjectTypeString to ObjectTypeEnum
             _requestTypesDto.ObjectType = (ObjectTypeEnum) Enum.Parse(typeof(ObjectTypeEnum), _requestTypesDto.ObjectTypeString);
             _requestTypesDto.Name += TestDataGenerator.RandomString();
             RequestTypesDto tempRequestTypesDto = new RequestTypesDto();
@@ -195,6 +202,8 @@ namespace DashworksTestAutomation.Steps.Projects
             var page = _driver.NowAt<CategoryPropertiesPage>();
 
             table.CreateInstance<CategoryPropertiesDto>().CopyPropertiesTo(_categoryPropertiesDto);
+            //assign ObjectTypeString to CategoryObjectTypeEnum
+            _categoryPropertiesDto.ObjectType = (CategoryObjectTypeEnum)Enum.Parse(typeof(CategoryObjectTypeEnum), _categoryPropertiesDto.ObjectTypeString);
             _categoryPropertiesDto.Name += TestDataGenerator.RandomString();
             CategoryPropertiesDto tempCategoryPropertiesDto = new CategoryPropertiesDto();
             _categoryPropertiesDto.CopyPropertiesTo(tempCategoryPropertiesDto);
@@ -218,7 +227,6 @@ namespace DashworksTestAutomation.Steps.Projects
             _stagePropertiesDto.CopyPropertiesTo(tempStagePropertiesDto);
             _projectDto.Stages.Add(tempStagePropertiesDto);
 
-
             page.StageName.SendKeys(_stagePropertiesDto.StageName);
 
             page.ConfirmCreateStageButton.Click();
@@ -230,6 +238,7 @@ namespace DashworksTestAutomation.Steps.Projects
             var page = _driver.NowAt<TaskPropertiesPage>();
 
             table.CreateInstance<TaskPropertiesDto>().CopyPropertiesTo(_taskPropertiesDto);
+            //assign ObjectTypeString to TaskObjectTypeEnum
             _taskPropertiesDto.ObjectType = (TaskObjectTypeEnum) Enum.Parse(typeof(TaskObjectTypeEnum), _taskPropertiesDto.ObjectTypeString);
             _taskPropertiesDto.Name += TestDataGenerator.RandomString();
             TaskPropertiesDto tempTaskPropertiesDto = new TaskPropertiesDto();
@@ -295,8 +304,8 @@ namespace DashworksTestAutomation.Steps.Projects
             Assert.IsTrue(page.SuccessPublishedTaskFlag.Displayed(), "Success Flag is not displayed");
         }
 
-        [When(@"User navigate to ""(.*)"" on selected tab")]
-        public void WhenUserNavigateToOnTaskTab(string tabName)
+        [When(@"User navigate to ""(.*)"" page")]
+        public void WhenUserNavigateToPage(string tabName)
         {
             var tab = _driver.NowAt<BaseElements>();
 

@@ -27,6 +27,7 @@ namespace DashworksTestAutomation.DTO.Projects
         public MailTemplatePropertiesDto MailTemplateProperties { get; set; }
         public NewsDto News { get; set; }
         public List<ManageUsersDto> ManageUsers { get; set; }
+        public SelfService_AppsListDto SelfServiceAppsListDto { get; set; }
 
         public ProjectDto()
         {

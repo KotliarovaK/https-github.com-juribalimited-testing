@@ -6,7 +6,6 @@ namespace DashworksTestAutomation.DTO.Projects
 {
     public class DetailsDto
     {
-        public ProjectDto Project { get; set; }
         public DefaultReadinessForOnboardedApplicationsEnum DefaultReadinessForOnboardedApplications;
         public DefaultValueForShowLinkedObjectsEnum DefaultValueForShowLinkedObjects;
         public DefaultViewForProjectObjectApplicationsTab1Enum DefaultViewForProjectObjectApplicationsTab1;
@@ -23,6 +22,7 @@ namespace DashworksTestAutomation.DTO.Projects
         public string StartDate { get; set; }
         public string EndDate { get; set; }
         public OnboardMailboxUsersWithPermissionsEnum OnboardMailboxUsersWithPermissions;
+        public ProjectDto Project { get; set; }
 
         public DetailsDto()
         {
@@ -35,11 +35,11 @@ namespace DashworksTestAutomation.DTO.Projects
                 EnumExtensions.GetRandomValue<DefaultViewForProjectObjectApplicationsTab2Enum>();
             DefaultValueForApplicationRationalization =
                 EnumExtensions.GetRandomValue<DefaultValueForApplicationRationalizationEnum>();
-            if (Project.ProjectType == ProjectTypeEnum.ComputerScheduledProject)
+            if (Project.ProjectType.Equals(ProjectTypeEnum.ComputerScheduledProject))
             {
                 OnboardUsedApplicationsByAssociationTo = OnboardUsedApplicationsByAssociationToEnum.Computer;
             }
-            if (Project.ProjectType == ProjectTypeEnum.MailboxScheduledProject)
+            if (Project.ProjectType.Equals(ProjectTypeEnum.MailboxScheduledProject))
             {
                 OnboardUsedApplicationsByAssociationTo = OnboardUsedApplicationsByAssociationToEnum.User;
                 OnboardMailboxUsersWithPermissions =

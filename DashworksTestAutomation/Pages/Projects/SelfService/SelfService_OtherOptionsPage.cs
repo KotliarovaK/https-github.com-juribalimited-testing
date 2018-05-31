@@ -5,20 +5,18 @@ using OpenQA.Selenium.Support.PageObjects;
 
 namespace DashworksTestAutomation.Pages.Projects
 {
-    internal class SelfService_OtherOptions1Page : BaseDashboardPage
+    internal class SelfService_OtherOptionsPage : BaseDashboardPage
     {
-        //TODO add a language?
-
-        [FindsBy(How = How.XPath, Using = ".//input[@id='cb_otherOptions_ShowScreen']")]
+        [FindsBy(How = How.XPath, Using = ".//input[contains(@id, 'ShowScreen')]")]
         public IWebElement ShowScreen { get; set; }
 
-        [FindsBy(How = How.XPath, Using = ".//input[@id='cb_otherOptions_allowUsersToAddANoteFromThisPage']")]
+        [FindsBy(How = How.XPath, Using = ".//input[contains(@id, 'allowUsersToAddANoteFromThisPage')]")]
         public IWebElement AllowUsersToAddANote { get; set; }
 
-        [FindsBy(How = How.XPath, Using = ".//input[@id='input_otherOptions_displayOnlyOwnedObjects']")]
+        [FindsBy(How = How.XPath, Using = ".//input[contains(@id, 'input_otherOptions2_displayOnlyOwnedObjects')]")]
         public IWebElement OnlyOwned { get; set; }
 
-        [FindsBy(How = How.XPath, Using = ".//input[@id='input_otherOptions_displayAllLinkedObjects']")]
+        [FindsBy(How = How.XPath, Using = ".//input[contains(@id, 'input_otherOptions2_displayAllLinkedObjects')]")]
         public IWebElement AllLinked { get; set; }
 
         //TODO User Task Name

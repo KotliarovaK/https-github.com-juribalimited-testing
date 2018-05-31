@@ -8,7 +8,6 @@ namespace DashworksTestAutomation.DTO.Projects
 {
     public class SelfService_OtherOptions2Dto
     {
-        //TODO add a language?
         public bool ShowScreen { get; set; }
         public bool AllowUsersToAddANote { get; set; }
         public bool OnlyOwned { get; set; }

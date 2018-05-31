@@ -118,8 +118,8 @@ Scenario: Projects_CreateComputerScheduledProject
 	Then "Manage Categories" page is displayed to the user
 	When User clicks "Create Category" button
 	When User create Category
-	| Name             | Description | ObjectTypeString |
-	| TestCategoryName | TestText    | User             |
+	| Name             | Description              | ObjectTypeString |
+	| TestCategoryName | ComputerScheduledProject | User             |
 	Then Success message is displayed with "Category successfully created." text
 	When User clicks "« Go Back" button
 	Then created Category is displayed in the table
@@ -144,15 +144,15 @@ Scenario: Projects_CreateComputerScheduledProject
 	Then "Manage Mail Templates" page is displayed to the user
 	When User clicks "Create Mail Template" button
 	When User create Mail Template
-	| Name                 | Description | SubjectLine | BodyText |
-	| TestMailTemplateName | TestText    | TestText    | TestText |
+	| Name                 | Description              | SubjectLine | BodyText |
+	| TestMailTemplateName | ComputerScheduledProject | TestText    | TestText |
 	Then Success message is displayed with "Mail Template successfully created." text
 	When User navigate to "Tasks" tab
 	Then "Manage Tasks" page is displayed to the user
 	When User clicks "Create Task" button
 	When User create Task
-	| Name          | Help     | ObjectTypeString | TaskValuesTemplateCheckbox |
-	| TestTaskName0 | TestText | Computer         | true                       |
+	| Name          | Help                     | ObjectTypeString | TaskValuesTemplateCheckbox |
+	| TestTaskName0 | ComputerScheduledProject | Computer         | true                       |
 	Then Success message is displayed with "Task successfully created" text
 	When User updates the Task page
 	| TaskHaADueDate | TaskImpactsReadiness | TaskHasAnOwner | ShowDetails | ProjectObject | BulkUpdate | SelfService |
@@ -160,17 +160,17 @@ Scenario: Projects_CreateComputerScheduledProject
 	Then Success message is displayed with "Task successfully updated" text
 	When User publishes the task
 	Then selected task was published
-	When User navigate to "Values" on selected tab
+	When User navigate to "Values" page
 	When User clicks "Add Value" button
 	Then User create new Value
-	| Name          | Help | DefaultValue |
-	| TestValueName | Test | false        |
+	| Name          | Help                     | DefaultValue |
+	| TestValueName | ComputerScheduledProject | false        |
 	When User clicks "Save Value" button
-	When User navigate to "Emails" on selected tab
+	When User navigate to "Emails" page
 	When User clicks "Add Email" button
 	Then User create new Email
-	| CountDays | SendOnceOnly | RequestTypesAll | ApllyEmailToAll | To              |
-	| true      | true         | false           | true            | Test0@email.com |
+	| CountDays | SendOnceOnly | RequestTypesAll | ApllyEmailToAll | To                                  |
+	| true      | true         | false           | true            | ComputerScheduledProject0@email.com |
 	When User clicks "Create Email Notification" button
 	Then Success message is displayed with "Email notification for task successfully created" text
 	When User clicks "« Go Back" button
@@ -179,8 +179,8 @@ Scenario: Projects_CreateComputerScheduledProject
 	Then created Task is displayed in the table
 	When User clicks "Create Task" button
 	When User create Task
-	| Name           | Help     | ObjectTypeString | TaskValuesTemplateCheckbox |
-	| TestTaskName1 | TestText | Application      | true                       |
+	| Name          | Help                     | ObjectTypeString | TaskValuesTemplateCheckbox |
+	| TestTaskName1 | ComputerScheduledProject | Application      | true                       |
 	Then Success message is displayed with "Task successfully created" text
 	When User updates the Task page
 	| TaskHaADueDate | TaskImpactsReadiness | TaskHasAnOwner | ShowDetails | ProjectObject | BulkUpdate | SelfService |
@@ -188,18 +188,18 @@ Scenario: Projects_CreateComputerScheduledProject
 	Then Success message is displayed with "Task successfully updated" text
 	When User publishes the task
 	Then selected task was published
-	When User navigate to "Values" on selected tab
+	When User navigate to "Values" page
 	When User clicks "Add Value" button
 	Then User create new Value
-	| Name          | Help | DefaultValue |
-	| TestValueName | Test | false        |
+	| Name          | Help                     | DefaultValue |
+	| TestValueName | ComputerScheduledProject | false        |
 	When User clicks "Save Value" button
 	When User clicks "« Go Back to Tasks" button
 	Then created Task is displayed in the table
 	When User clicks "Create Task" button
 	When User create Task
-	| Name          | Help     | ObjectTypeString | TaskValuesTemplateCheckbox |
-	| TestTaskName2 | TestText | User             | true                       |
+	| Name          | Help                     | ObjectTypeString | TaskValuesTemplateCheckbox |
+	| TestTaskName2 | ComputerScheduledProject | User             | true                       |
 	Then Success message is displayed with "Task successfully created" text
 	When User updates the Task page
 	| TaskHaADueDate | TaskImpactsReadiness | TaskHasAnOwner | ShowDetails | ProjectObject | BulkUpdate | SelfService |
@@ -207,17 +207,17 @@ Scenario: Projects_CreateComputerScheduledProject
 	Then Success message is displayed with "Task successfully updated" text
 	When User publishes the task
 	Then selected task was published
-	When User navigate to "Values" on selected tab
+	When User navigate to "Values" page
 	When User clicks "Add Value" button
 	Then User create new Value
-	| Name          | Help | DefaultValue |
-	| TestValueName | Test | true         |
+	| Name          | Help                     | DefaultValue |
+	| TestValueName | ComputerScheduledProject | true         |
 	When User clicks "Save Value" button
-	When User navigate to "Emails" on selected tab
+	When User navigate to "Emails" page
 	When User clicks "Add Email" button
 	Then User create new Email
-	| CountDays | SendOnceOnly | RequestTypesAll | ApllyEmailToAll | To              |
-	| true      | true         | true            | true            | Test2@email.com |
+	| CountDays | SendOnceOnly | RequestTypesAll | ApllyEmailToAll | To                                  |
+	| true      | true         | true            | true            | ComputerScheduledProject2@email.com |
 	When User clicks "Create Email Notification" button
 	Then Success message is displayed with "Email notification for task successfully created" text
 	When User clicks "« Go Back" button
@@ -228,8 +228,8 @@ Scenario: Projects_CreateComputerScheduledProject
 	Then "Manage Teams" page is displayed to the user
 	When User clicks "Create Team" button
 	When User create Team
-	| TeamName         | ShortDescription |
-	| 000 TestTeamName | TestText 0       |
+	| TeamName                     | ShortDescription |
+	| 000 ComputerScheduledProject | TestText 0       |
 	When User clicks "Add Member" button
 	When User select "1" user to add as member
 	When User clicks "Add Selected" button
@@ -238,8 +238,8 @@ Scenario: Projects_CreateComputerScheduledProject
 	Then "2" number of Members is displayed for created Team
 	When User clicks "Create Team" button
 	When User create Team
-	| TeamName         | ShortDescription |
-	| 001 TestTeamName | TestText 1       |
+	| TeamName                     | ShortDescription |
+	| 001 ComputerScheduledProject | TestText 1       |
 	When User clicks "Add Member" button
 	When User select "2" user to add as member
 	When User clicks "Add Selected" button
@@ -248,8 +248,8 @@ Scenario: Projects_CreateComputerScheduledProject
 	Then "2" number of Members is displayed for created Team
 	When User clicks "Create Team" button
 	When User create Team
-	| TeamName         | ShortDescription |
-	| 002 TestTeamName | TestText 2       |
+	| TeamName                     | ShortDescription |
+	| 002 ComputerScheduledProject | TestText 2       |
 	When User clicks "Add Member" button
 	When User select "3" user to add as member
 	When User clicks "Add Selected" button
@@ -260,18 +260,18 @@ Scenario: Projects_CreateComputerScheduledProject
 	Then "Manage Groups" page is displayed to the user
 	When User clicks "Create Group" button
 	When User create Group owned for "1" Team
-	| GroupName       |
-	| 0 TestGroupName |
+	| GroupName                  |
+	| 0 ComputerScheduledProject |
 	Then created Group is displayed in the table
 	When User clicks "Create Group" button
 	When User create Group owned for "2" Team
-	| GroupName       |
-	| 1 TestGroupName |
+	| GroupName                  |
+	| 1 ComputerScheduledProject |
 	Then created Group is displayed in the table
 	When User clicks "Create Group" button
 	When User create Group owned for "3" Team
-	| GroupName       |
-	| 2 TestGroupName |
+	| GroupName                  |
+	| 2 ComputerScheduledProject |
 	Then created Group is displayed in the table
 	When User navigate to "Teams" tab
 	Then "Manage Teams" page is displayed to the user
@@ -279,54 +279,54 @@ Scenario: Projects_CreateComputerScheduledProject
 	When User navigate to "News" tab
 	Then "Manage News" page is displayed to the user
 	When User updating News page
-	| Title     | Text     |
-	| TestTitle | TestText |
+	| Title                    | Text     |
+	| ComputerScheduledProject | TestText |
 	Then Success message is displayed with "Project news was successfully updated." text
 	When User navigate to "Self Service" tab
 	Then "Manage Self Service" page is displayed to the user
-	Then User updates the Details on Self Service tab
+	Then User updates the Details page on Self Service tab
 	| EnableSelfServicePortal | AllowAnonymousUsers | ThisProjectDefault | ModeUser | ModeComputer | NoLink | DashworksProjectHomepage | CustomUrl |
 	| false                   | false               | true               | true     | false        | true   | false                    | false     |
 	Then Success message is displayed with "Details successfully updated." text
-	When User navigate to "Welcome" on Self Service tab
-	Then User updates the Welcome on Self Service tab
-	| AllowToSearchForAnotherUser | AllowToChangeLanguage | ShowProjectSelector | ShowMoreDetailsLink | PageDescription | ProjectName |
-	| true                        | false                 | false               | true                | TestText        | ProjectName |
+	When User navigate to "Welcome" page on Self Service tab
+	Then User updates the Welcome page on Self Service tab
+	| AllowToSearchForAnotherUser | AllowToChangeLanguage | ShowProjectSelector | ShowMoreDetailsLink | PageDescription | ProjectName              |
+	| true                        | false                 | false               | true                | TestText        | ComputerScheduledProject |
 	Then Success message is displayed with "Self Service Screen successfully updated" text
-	When User navigate to "Computer Ownership" on Self Service tab
-	Then User updates the Computer Ownership on Self Service tab
-	| ShowScreen | ShowComputers | ShowCategory | AllowUsersToSearch | AllowUsersToSetPrimary | AllowUsersToAddANote | LimitMaximum | LimitMinimum | PageDescription |
-	| true       | true          | false        | false              | false                  | false                | 100          | 10           | TestText        |
+	When User navigate to "Computer Ownership" page on Self Service tab
+	Then User updates the Ownership page on Self Service tab
+	| ShowScreen | ShowComputers | ShowCategory | AllowUsersToSearch | AllowUsersToSetPrimary | AllowUsersToAddANote | LimitMaximum | LimitMinimum | PageDescription          |
+	| true       | true          | false        | false              | false                  | false                | 100          | 10           | ComputerScheduledProject |
 	Then Success message is displayed with "Self Service Screen successfully updated" text
-	When User navigate to "Department and Location" on Self Service tab
-	Then User updates the Department and Location on Self Service tab
+	When User navigate to "Department and Location" page on Self Service tab
+	Then User updates the Department and Location page on Self Service tab
 	| ShowScreen | ShowDepartmentFullPath | ShowLocationFullPath | AllowUsersToAddANote | Department | Location | DepartmentFeed | HrLocationFeed | ManualLocationFeed | HistoricLocationFeed |
 	| true       | false                  | false                | false                | false      | false    | true           | false          | false              | false                |
 	Then Success message is displayed with "Self Service Screen successfully updated" text
-	When User navigate to "Apps List" on Self Service tab
-	Then User updates the Apps List on Self Service tab
-	| ShowThisScreen | ShowCoreApps | ShowTargetStateReadiness | ShowRequiredColumnAndSticky | ShowOnlyApplication | AllowUsersToAddANote | PageDescription |
-	| true           | true         | true                     | true                        | true                | true                 | TestText        |
+	When User navigate to "Apps List" page on Self Service tab
+	Then User updates the Apps List page on Self Service tab
+	| ShowThisScreen | ShowCoreApps | ShowTargetStateReadiness | ShowRequiredColumnAndSticky | ShowOnlyApplication | AllowUsersToAddANote | PageDescription          |
+	| true           | true         | true                     | true                        | true                | true                 | ComputerScheduledProject |
 	Then Success message is displayed with "Self Service Screen successfully updated" text
-	When User navigate to "Project Date" on Self Service tab
-	Then User updates the Project Date on Self Service tab
-	| AllowUsersToAddANote | MinimumHours | MaximumHours | PageDescription |
-	| true                 | 10           | 100          | TestText        |
+	When User navigate to "Project Date" page on Self Service tab
+	Then User updates the Project Date page on Self Service tab
+	| AllowUsersToAddANote | MinimumHours | MaximumHours | PageDescription          |
+	| true                 | 10           | 100          | ComputerScheduledProject |
 	Then Success message is displayed with "Self Service Screen successfully updated" text
-	When User navigate to "Other Options 1" on Self Service tab
-	Then User updates the first Other Options on Self Service tab
-	| ShowScreen | AllowUsersToAddANote | OnlyOwned | AllLinked | PageDescription |
-	| false      | true                 | false     | true      | TestText        |
+	When User navigate to "Other Options 1" page on Self Service tab
+	Then User updates the first Other Options page on Self Service tab
+	| ShowScreen | AllowUsersToAddANote | OnlyOwned | AllLinked | PageDescription          |
+	| false      | true                 | false     | true      | ComputerScheduledProject |
 	Then Success message is displayed with "Self Service Screen successfully updated" text
-	When User navigate to "Other Options 2" on Self Service tab
-	Then User updates the second Other Options on Self Service tab
-	| ShowScreen | AllowUsersToAddANote | OnlyOwned | AllLinked | PageDescription |
-	| false      | true                 | true      | false     | TestText        |
+	When User navigate to "Other Options 2" page on Self Service tab
+	Then User updates the second Other Options page on Self Service tab
+	| ShowScreen | AllowUsersToAddANote | OnlyOwned | AllLinked | PageDescription          |
+	| false      | true                 | true      | false     | ComputerScheduledProject |
 	Then Success message is displayed with "Self Service Screen successfully updated" text
-	When User navigate to "Thank You" on Self Service tab
-	Then User updates the Thank You on Self Service tab
-	| SelfServicePortal | NavigationMenu | ChoicesSummary | IncludeLink | PageDescription |
-	| true              | false          | false          | false       | TestText        |
+	When User navigate to "Thank You" page on Self Service tab
+	Then User updates the Thank You page on Self Service tab
+	| SelfServicePortal | NavigationMenu | ChoicesSummary | IncludeLink | PageDescription          |
+	| true              | false          | false          | false       | ComputerScheduledProject |
 	Then Success message is displayed with "Self Service Screen successfully updated" text
 	When User navigate to "Capacity" tab
 	Then "Manage Capacity" page is displayed to the user
@@ -334,7 +334,7 @@ Scenario: Projects_CreateComputerScheduledProject
 	| EnablePlanning | DisplayColors | EnforceOonSelfServicePage | EnforceOnProjectObjectPage | CapacityToReach |
 	| true           | true          | true                      | true                       | 80              |
 	Then Success message is displayed with "Details successfully updated." text
-	When User navigate to "Capacity" on selected tab
+	When User navigate to "Capacity" page
 	When User updates the Capacity page on Capacity tab for "1" Team
 	| StartDate   | EndDate     | MondayCheckbox | TuesdayCheckbox | WednesdayCheckbox | ThursdayCheckbox | FridayCheckbox | SaturdayCheckbox | SundayCheckbox | Monday | Tuesday | Wednesday | Thursday | Friday | Saturday | Sunday |
 	| 06 Apr 2016 | 19 Apr 2018 | false          | false           | false             | false            | false          | false            | false          | 100    | 100     | 100       | 100      | 100    | 100      | 100    |
@@ -347,13 +347,13 @@ Scenario: Projects_CreateComputerScheduledProject
 	| StartDate    | EndDate     | MondayCheckbox | TuesdayCheckbox | WednesdayCheckbox | ThursdayCheckbox | FridayCheckbox | SaturdayCheckbox | SundayCheckbox | Monday | Tuesday | Wednesday | Thursday | Friday | Saturday | Sunday |
 	| 16 June 2012 | 27 May 2016 | false          | false           | false             | false            | false          | false            | false          | 100    | 100     | 100       | 100      | 100    | 100      | 100    |
 	Then Success message is displayed with "Capacity information successfully updated." text
-	When User navigate to "Summary" on selected tab
+	When User navigate to "Summary" page
 	When User select created request type on Summary tab
 	Then table for selected request type is displayed
-	When User navigate to "Override Dates" on selected tab
+	When User navigate to "Override Dates" page
 	Then User updates the Override Dates on Capacity tab
-	| Date        | Capacity | Comment  |
-	| 03 Apr 2016 | 0        | TestText |
+	| Date        | Capacity | Comment                  |
+	| 03 Apr 2016 | 0        | ComputerScheduledProject |
 	Then Success message is displayed with "Override date successfully inserted" text
 	When User navigate to "Groups" tab
 	Then User removes created Group

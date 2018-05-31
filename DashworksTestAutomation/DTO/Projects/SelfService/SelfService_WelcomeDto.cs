@@ -17,9 +17,6 @@ namespace DashworksTestAutomation.DTO.Projects
         public bool ShowMoreDetailsLink { get; set; }
         public TypeEnum Type;
         public FieldEnum Field;
-        //TODO Add button
-        public string LongName { get; set; }
-        public string ShortName { get; set; }
         public string PageDescription { get; set; }
         public string ProjectName { get; set; }
 

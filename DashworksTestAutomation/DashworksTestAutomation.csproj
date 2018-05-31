@@ -289,8 +289,7 @@
     <Compile Include="Pages\Projects\SelfService\SelfService_ComputerOwnershipPage.cs" />
     <Compile Include="Pages\Projects\SelfService\SelfService_DepartmentAndLocationPage.cs" />
     <Compile Include="Pages\Projects\SelfService\SelfService_DetailsPage.cs" />
-    <Compile Include="Pages\Projects\SelfService\SelfService_OtherOptions1Page.cs" />
-    <Compile Include="Pages\Projects\SelfService\SelfService_OtherOptions2Page.cs" />
+    <Compile Include="Pages\Projects\SelfService\SelfService_OtherOptionsPage.cs" />
     <Compile Include="Pages\Projects\SelfService\SelfService_ProjectDatePage.cs" />
     <Compile Include="Pages\Projects\SelfService\SelfService_ThankYouPage.cs" />
     <Compile Include="Pages\Projects\SelfService\SelfService_WelcomePage.cs" />
