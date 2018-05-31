@@ -931,10 +931,10 @@ Scenario Outline: EvergreenJnr_AllLists_CheckThatNewCustomListMenuIsHiddenInTheL
 	Then "<StaticListName>" list is displayed to user
 	When User click on '<ColumnName>' column header
 	Then data in table is sorted by '<ColumnName>' column in ascending order
-	Then Edit List menu is not displayed
+	Then Save to New Custom List element is displayed
 	When User clicks the Actions button
 	Then Actions panel is displayed to the user
-	Then Edit List menu is not displayed
+	Then Save to New Custom List element is NOT displayed
 
 Examples:
 	| ListName     | ColumnName         | StaticListName |
