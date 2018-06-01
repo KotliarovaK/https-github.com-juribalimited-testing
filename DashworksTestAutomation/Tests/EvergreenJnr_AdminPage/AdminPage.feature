@@ -342,7 +342,7 @@ Scenario: EvergreenJnr_AdminPage_CheckThatErrorsDoNotAppearAfterUpdatingTeamDesc
 	And There are no errors in the browser console
 	And Delete "TestTeam1" Team in the Administration
 
-@Evergreen @Admin @EvergreenJnr_AdminPage @AdminPage @DAS11765 @DAS12170 @Not_Run
+@Evergreen @Admin @EvergreenJnr_AdminPage @AdminPage @DAS11765 @DAS12170
 Scenario: EvergreenJnr_AdminPage_CheckThatMailboxesAreSuccessfullyAddedToBuckets
 	When User clicks Admin on the left-hand menu
 	Then Admin page should be displayed to the user
@@ -392,7 +392,7 @@ Scenario: EvergreenJnr_AdminPage_CheckThatAllAssociationsAreSelectedByDefaultInT
 	Then All Association are selected by default
 	And Delete "TestProject7" Project in the Administration
 
-@Evergreen @Admin @EvergreenJnr_AdminPage @AdminPage @DAS12170 @Not_Run
+@Evergreen @Admin @EvergreenJnr_AdminPage @AdminPage @DAS12170
 Scenario: EvergreenJnr_AdminPage_CheckThatConsoleErrorsAreNotDisplayedAfterAddingDevicesInTheBuckets
 	When User clicks Admin on the left-hand menu
 	Then Admin page should be displayed to the user
@@ -420,7 +420,7 @@ Scenario: EvergreenJnr_AdminPage_CheckThatErrorsDoNotAppearAfterAddingDevicesToT
 	Then No items text is displayed on the Buckets page
 	And There are no errors in the browser console
 
-@Evergreen @Admin @EvergreenJnr_AdminPage @AdminPage @DAS12170 @Not_Run
+@Evergreen @Admin @EvergreenJnr_AdminPage @AdminPage @DAS12170
 Scenario: EvergreenJnr_AdminPage_CheckThatConsoleErrorsAreNotDisplayedAfterAddingUsersInTheBuckets
 	When User clicks Admin on the left-hand menu
 	Then Admin page should be displayed to the user
@@ -544,8 +544,8 @@ Scenario: EvergreenJnr_AdminPage_CheckThatFiltersAreWorkingCorrectlyOnTheAdminPa
 	When User click "Buckets" link on the Admin page
 	When User enters "barry's" text in the Search field for "Bucket" column on the Buckets page
 	Then "2" rows are displayed on the Buckets page
-	When User enters "=13" text in the Search field for "Users" column on the Buckets page
-	Then "7" rows are displayed on the Buckets page
+	When User enters "=17" text in the Search field for "Users" column on the Buckets page
+	Then "6" rows are displayed on the Buckets page
 	When User enters "Unassigned" text in the Search field for "Bucket" column on the Buckets page
 	And User clicks content from "Bucket" column on the Buckets page
 	When User enters "BG4H" text in the Search field for "Hostname" column on the Buckets page
@@ -562,3 +562,37 @@ Scenario: EvergreenJnr_AdminPage_CheckThatFiltersAreWorkingCorrectlyOnTheAdminPa
 	Then "1" rows are displayed on the Buckets page
 	When User enters "RD-EXCH2K3" text in the Search field for "Server Name" column on the Buckets page
 	Then "6" rows are displayed on the Buckets page
+
+@Evergreen @Admin @EvergreenJnr_AdminPage @AdminPage @DAS12236
+Scenario: EvergreenJnr_AdminPage_CheckThatNoConsoleErrorsAreDisplayedAfterUpdatingProjectScopeChanges
+	When User clicks Admin on the left-hand menu
+	Then Admin page should be displayed to the user
+	When User click "Projects" link on the Admin page
+	Then "Projects" page should be displayed to the user
+	When User clicks Create Project button
+	Then Create Project page should be displayed to the user
+	And User enters "TestProject10" in the Project Name field
+	And User select "All Devices" in the Scope Project dropdown
+	When User clicks Create Project button
+	And User click "Projects" link on the Admin page
+	Then "Projects" page should be displayed to the user
+	When User enters "TestProject10" text in the Search field for "Project" column on the Projects page
+	And User clicks content from "Project" column on the Buckets page
+	Then Project "TestProject10" is displayed to user
+	When User navigates to the "Application Scope" tab in the Scope section on the Project details page
+	And User clicks "Entitled to the device owner" checkbox on the Project details page
+	When User select "Scope Changes" tab on the Project details page
+	When User clicks "Applications" tab in the Project Scope Changes section
+	When User clicks "UPDATE APPLICATION CHANGES" button on the Projects page
+	When User clicks Make Changes button on the Projects page
+	Then Success message with "0 objects queued for onboarding, 0 objects offboarded" text is displayed on the Projects page
+	When User select "Scope Details" tab on the Project details page
+	When User navigates to the "Application Scope" tab in the Scope section on the Project details page
+	And User clicks "Entitled to the device owner" checkbox on the Project details page
+	When User select "Scope Changes" tab on the Project details page
+	When User clicks "Applications" tab in the Project Scope Changes section
+	When User clicks "UPDATE APPLICATION CHANGES" button on the Projects page
+	When User clicks Make Changes button on the Projects page
+	Then Success message with "0 objects queued for onboarding, 0 objects offboarded" text is displayed on the Projects page
+	Then There are no errors in the browser console
+	And Delete "TestProject10" Project in the Administration

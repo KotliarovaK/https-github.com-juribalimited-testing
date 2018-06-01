@@ -170,10 +170,32 @@ namespace DashworksTestAutomation.Steps.Dashworks
         }
 
         [When(@"User select ""(.*)"" checkbox on the Project details page")]
-        public void WhenUserSelectCheckboxOnTheProjectDetailsPage(string checkboxName)
+        public void WhenUserSelectCheckboxOnTheProjectDetailsPage(string radioButtonName)
+        {
+            var checkbox = _driver.NowAt<ProjectsPage>();
+            checkbox.SelectRadioButtonByName(radioButtonName);
+        }
+
+        [When(@"User clicks ""(.*)"" checkbox on the Project details page")]
+        public void WhenUserClicksCheckboxOnTheProjectDetailsPage(string checkboxName)
         {
             var checkbox = _driver.NowAt<ProjectsPage>();
             checkbox.SelectCheckboxByName(checkboxName);
+        }
+
+        [When(@"User clicks ""(.*)"" button on the Projects page")]
+        public void WhenUserClicksButtonOnTheProjectsPage(string buttonName)
+        {
+            var button = _driver.NowAt<ProjectsPage>();
+            button.ClickUpdateButtonByName(buttonName);
+        }
+
+        [When(@"User clicks Make Changes button on the Projects page")]
+        public void WhenUserClicksMakeChangesButtonOnTheProjectsPage()
+        {
+            var button = _driver.NowAt<ProjectsPage>();
+            _driver.WaitWhileControlIsNotDisplayed<ProjectsPage>(() => button.MakeChangesButton);
+            button.MakeChangesButton.Click();
         }
 
         [Then(@"Update Project button is disabled")]
@@ -829,8 +851,8 @@ namespace DashworksTestAutomation.Steps.Dashworks
         public void ThenSuccessMessageWithTextIsDisplayedOnTheProjectsPage(string textMessage)
         {
             var projectElement = _driver.NowAt<ProjectsPage>();
-            _driver.WaitWhileControlIsNotDisplayed<ProjectsPage>(() => projectElement.SuccessDeleteMessage);
-            Assert.IsTrue(projectElement.SuccessDeletingMessage(textMessage),
+            _driver.WaitWhileControlIsNotDisplayed<ProjectsPage>(() => projectElement.SuccessMessage);
+            Assert.IsTrue(projectElement.SuccessTextMessage(textMessage),
                 $"{textMessage} is not displayed on the Project page");
         }
 
