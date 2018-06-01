@@ -32,6 +32,7 @@ namespace DashworksTestAutomation.Steps.Dashworks
         {
             var menu = _driver.NowAt<BaseDashboardPage>();
             menu.ListDetailsButton.Click();
+            _driver.WaitForDataLoading();
             Logger.Write("List Details button was clicked");
         }
 

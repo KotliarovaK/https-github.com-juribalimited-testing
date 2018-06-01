@@ -121,6 +121,9 @@ namespace DashworksTestAutomation.Pages.Evergreen
         [FindsBy(How = How.XPath, Using = ".//mat-select[@name='createActions']/div[@class='mat-select-trigger']")]
         public IWebElement CreateActionButton { get; set; }
 
+        [FindsBy(How = How.XPath, Using = ".//div[@class='active-list-wrapper ng-star-inserted']/ul/li/span")]
+        public IWebElement ActiveCustomList { get; set; }
+
         [FindsBy(How = How.XPath, Using = ".//span[text()='Project']")]
         public IWebElement CreateProjectButton { get; set; }
 
@@ -266,6 +269,7 @@ namespace DashworksTestAutomation.Pages.Evergreen
         {
             string columnSettingsSelector =
                 $".//div[@role='presentation']/span[text()='{columnName}']//ancestor::div[@class='ag-cell-label-container ag-header-cell-sorted-none']//span[@class='ag-icon ag-icon-menu']";
+            Driver.WaitForDataLoading();
             Driver.MouseHover(By.XPath(columnSettingsSelector));
             Driver.WaitWhileControlIsNotDisplayed(By.XPath(columnSettingsSelector));
             Driver.FindElement(By.XPath(columnSettingsSelector)).Click();
