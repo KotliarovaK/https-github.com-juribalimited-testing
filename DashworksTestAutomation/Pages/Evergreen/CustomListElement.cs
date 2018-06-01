@@ -29,7 +29,7 @@ namespace DashworksTestAutomation.Pages.Evergreen
         [FindsBy(How = How.XPath, Using = ".//button[@class='button-small mat-primary save-actions-save mat-raised-button']")]
         public IWebElement SaveButton { get; set; }
 
-        [FindsBy(How = How.XPath, Using = ".//button[@mattooltip='Cancel']")]
+        [FindsBy(How = How.XPath, Using = ".//button[@class='button-small save-actions-cancel mat-raised-button']")]
         public IWebElement CancelButton { get; set; }
 
         [FindsBy(How = How.XPath,
