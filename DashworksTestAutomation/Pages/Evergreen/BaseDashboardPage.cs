@@ -20,6 +20,12 @@ namespace DashworksTestAutomation.Pages.Evergreen
         [FindsBy(How = How.XPath, Using = ".//button[@id='_staticListModeBtn']")]
         public IWebElement ActionsButton { get; set; }
 
+        [FindsBy(How = How.XPath, Using = ".//button[@id='_listDtlBtn'][@disabled]")]
+        public IWebElement DisabledListDetailsButton { get; set; }
+
+        [FindsBy(How = How.XPath, Using = ".//button[@class='btn btn-default mat-icon-button']/span/i[@class='material-icons mat-static-list']")]
+        public IWebElement InactiveActionsButton { get; set; }
+
         [FindsBy(How = How.XPath, Using = ".//button[@class='btn btn-default mat-icon-button'][@id='_listDtlBtn']")]
         public IWebElement ListDetailsButton { get; set; }
 
@@ -63,6 +69,9 @@ namespace DashworksTestAutomation.Pages.Evergreen
 
         [FindsBy(How = How.XPath, Using = ".//span[@class='checkbox-styled selectBox']/input")]
         public IWebElement SelectAllCheckbox { get; set; }
+
+        [FindsBy(How = How.XPath, Using = ".//span[@class='ag-selection-checkbox']")]
+        public IWebElement Checkbox { get; set; }
 
         [FindsBy(How = How.XPath, Using = ".//div[@class='ag-body-container']")]
         public IWebElement TableBody { get; set; }
