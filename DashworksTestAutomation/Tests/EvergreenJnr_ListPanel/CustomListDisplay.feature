@@ -976,7 +976,7 @@ Examples:
 	| Mailboxes    | Email Address | Region     | DynamicList1121 |
 
 @Evergreen @AllLists @EvergreenJnr_ListPanel @CustomListDisplay @DAS12524 @Delete_Newly_Created_List
-Scenario: EvergreenJnr_AllLists_CheckThatSaveAndCancelButtonAreHiddenAfterCancellingProcessOfSavingListInTheActionsPanel
+Scenario: EvergreenJnr_AllLists_CheckThatActionsPanelIsHiddenAfterCancellingProcessOfSavingList
 	When User clicks "Applications" on the left-hand menu
 	Then "Applications" list should be displayed to the user
 	When User clicks the Columns button
@@ -994,5 +994,5 @@ Scenario: EvergreenJnr_AllLists_CheckThatSaveAndCancelButtonAreHiddenAfterCancel
 	And User types "StaticList7841" static list name
 	And User clicks Cancel button on the Actions panel
 	Then Checkboxes are not displayed
-	And Save to New Custom List element is displayed
 	And Actions panel is not displayed to the user
+	And Save to New Custom List element is displayed
