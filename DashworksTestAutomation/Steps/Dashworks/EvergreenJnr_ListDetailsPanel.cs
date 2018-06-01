@@ -102,6 +102,7 @@ namespace DashworksTestAutomation.Steps.Dashworks
         public void ThenListDetailsPanelIsDisplayedToTheUser()
         {
             var listDetailsElement = _driver.NowAt<ListDetailsElement>();
+            _driver.WaitForDataLoading();
             _driver.WaitWhileControlIsNotDisplayed<ListDetailsElement>(() => listDetailsElement.ListDetailsPanel);
             Assert.IsTrue(listDetailsElement.ListDetailsPanel.Displayed(), "List Details panel is not displayed");
             Logger.Write("List Details panel is visible");
