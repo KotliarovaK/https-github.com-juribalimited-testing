@@ -7,19 +7,19 @@ namespace DashworksTestAutomation.Pages.Projects
 {
     internal class Capacity_DetailsPage : BaseDashboardPage
     {
-        [FindsBy(How = How.XPath, Using = ".//input[@id='ctl00_MainContent_CB_Details_EnableCapacityPlanning']")]
+        [FindsBy(How = How.XPath, Using = ".//input[contains(@id, 'EnableCapacityPlanning')]")]
         public IWebElement EnablePlanning { get; set; }
 
-        [FindsBy(How = How.XPath, Using = ".//input[@id='ctl00_MainContent_CB_Details_CapacityVisibleWhenEditingDate']")]
+        [FindsBy(How = How.XPath, Using = ".//input[contains(@id, 'CapacityVisibleWhenEditingDate')]")]
         public IWebElement DisplayColorsOnDatePicker { get; set; }
 
-        [FindsBy(How = How.XPath, Using = ".//input[@id='ctl00_MainContent_CB_Details_EnforceCapacityOnSelfServicePage']")]
+        [FindsBy(How = How.XPath, Using = ".//input[contains(@id, 'EnforceCapacityOnSelfServicePage')]")]
         public IWebElement EnforceOonSelfServicePage { get; set; }
 
-        [FindsBy(How = How.XPath, Using = ".//input[@id='ctl00_MainContent_CB_Details_EnforceCapacityOnProjectObjectPage']")]
+        [FindsBy(How = How.XPath, Using = ".//input[contains(@id, 'EnforceCapacityOnProjectObjectPage')]")]
         public IWebElement EnforceOnProjectObjectPage { get; set; }
 
-        [FindsBy(How = How.XPath, Using = ".//input[@id='TB_Details_PercentageCapacity']")]
+        [FindsBy(How = How.XPath, Using = ".//input[contains(@id, 'PercentageCapacity')]")]
         public IWebElement CapacityToReach { get; set; }
 
         public override List<By> GetPageIdentitySelectors()

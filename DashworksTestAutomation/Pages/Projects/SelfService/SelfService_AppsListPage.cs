@@ -7,25 +7,25 @@ namespace DashworksTestAutomation.Pages.Projects
 {
     internal class SelfService_AppsListPage : BaseDashboardPage
     {
-        [FindsBy(How = How.XPath, Using = ".//input[@id='cb_applicationListShowScreen']")]
+        [FindsBy(How = How.XPath, Using = ".//input[contains(@id, 'ShowScreen')]")]
         public IWebElement ShowScreen { get; set; }
 
-        [FindsBy(How = How.XPath, Using = ".//input[@id='cb_applicationsListShowCoreApps']")]
+        [FindsBy(How = How.XPath, Using = ".//input[contains(@id, 'ShowCoreApps')]")]
         public IWebElement ShowCoreApps { get; set; }
 
-        [FindsBy(How = How.XPath, Using = ".//input[@id='cb_applicationsListShowFutureStateReadinessValue']")]
+        [FindsBy(How = How.XPath, Using = ".//input[contains(@id, 'ShowFutureStateReadinessValue')]")]
         public IWebElement ShowTargetStateReadiness { get; set; }
 
-        [FindsBy(How = How.XPath, Using = ".//input[@id='cb_applicationsListShowApplicationSelectorDropDownList']")]
+        [FindsBy(How = How.XPath, Using = ".//input[contains(@id, 'ShowApplicationSelectorDropDownList')]")]
         public IWebElement ShowRequiredColumnAndSticky { get; set; }
 
-        [FindsBy(How = How.XPath, Using = ".//input[@id='cb_applicationsListShowOnlyAppsFromUsersPrimaryComputerValue']")]
+        [FindsBy(How = How.XPath, Using = ".//input[contains(@id, 'ShowOnlyAppsFromUsersPrimaryComputerValue')]")]
         public IWebElement ShowOnlyApplication { get; set; }
 
-        [FindsBy(How = How.XPath, Using = ".//input[@id='cb_applicationsListAllowUsersToAddANoteFromThisPageValue']")]
+        [FindsBy(How = How.XPath, Using = ".//input[contains(@id, 'AllowUsersToAddANoteFromThisPageValue')]")]
         public IWebElement AllowUsersToAddANote { get; set; }
 
-        [FindsBy(How = How.XPath, Using = ".//select[@id='ctl00_MainContent_DDL_ApplicationsListView']")]
+        [FindsBy(How = How.XPath, Using = ".//select[contains(@id, 'ApplicationsListView')]")]
         public IWebElement View { get; set; }
 
         [FindsBy(How = How.XPath, Using = ".//input[@aria-label='Long Name']")]

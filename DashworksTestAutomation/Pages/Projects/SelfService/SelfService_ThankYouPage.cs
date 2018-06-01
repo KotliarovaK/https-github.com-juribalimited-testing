@@ -9,16 +9,16 @@ namespace DashworksTestAutomation.Pages.Projects
     {
         //TODO add a language?
 
-        [FindsBy(How = How.XPath, Using = ".//input[@id='cb_reviewChoiceshowScreen']")]
+        [FindsBy(How = How.XPath, Using = ".//input[contains(@id, 'reviewChoiceshowScreen')]")]
         public IWebElement ShowInTheSelfServicePortal { get; set; }
 
-        [FindsBy(How = How.XPath, Using = ".//input[@id='cb_showInNavChoiceshowScreen']")]
+        [FindsBy(How = How.XPath, Using = ".//input[contains(@id, 'showInNavChoiceshowScreen')]")]
         public IWebElement ShowInTheNavigationMenu { get; set; }
 
-        [FindsBy(How = How.XPath, Using = ".//input[@id='cb_showChoicesSummary']")]
+        [FindsBy(How = How.XPath, Using = ".//input[contains(@id, 'cb_showChoicesSummary')]")]
         public IWebElement ShowChoicesSummary { get; set; }
 
-        [FindsBy(How = How.XPath, Using = ".//input[@id='cb_reviewChoicesIncludeDashworksHomepageButtonValuee']")]
+        [FindsBy(How = How.XPath, Using = ".//input[contains(@id, 'reviewChoicesIncludeDashworksHomepageButtonValuee')]")]
         public IWebElement IncludeLink { get; set; }
 
         [FindsBy(How = How.XPath, Using = ".//input[@aria-label='Long Name']")]

@@ -45,6 +45,10 @@ namespace DashworksTestAutomation.DTO.Projects
                 OnboardMailboxUsersWithPermissions =
                     EnumExtensions.GetRandomValue<OnboardMailboxUsersWithPermissionsEnum>();
             }
+            if (Project.ProjectType.Equals(ProjectTypeEnum.UserScheduledProject))
+            {
+                OnboardUsedApplicationsByAssociationTo = EnumExtensions.GetRandomValue<OnboardUsedApplicationsByAssociationToEnum>();
+            }
         }
     }
 

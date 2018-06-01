@@ -7,22 +7,19 @@ namespace DashworksTestAutomation.Pages.Projects
 {
     internal class MailTemplatePropertiesPage : BaseDashboardPage
     {
-        [FindsBy(How = How.XPath, Using = ".//input[@id='ctl00_MainContent_Name']")]
+        [FindsBy(How = How.XPath, Using = ".//input[contains(@id, 'Name')]")]
         public IWebElement Name { get; set; }
 
-        [FindsBy(How = How.XPath, Using = ".//input[@id='ctl00_MainContent_Description']")]
+        [FindsBy(How = How.XPath, Using = ".//input[contains(@id, 'Description')]")]
         public IWebElement Description { get; set; }
 
-        [FindsBy(How = How.XPath, Using = ".//input[@id='ctl00_MainContent_Subject']")]
+        [FindsBy(How = How.XPath, Using = ".//input[contains(@id, 'Subject')]")]
         public IWebElement SubjectLine { get; set; }
 
-        [FindsBy(How = How.XPath, Using = ".//textarea[@id='ctl00_MainContent_Body']")]
+        [FindsBy(How = How.XPath, Using = ".//textarea[contains(@id, 'MainContent_Body')]")]
         public IWebElement BodyText { get; set; }
 
-        [FindsBy(How = How.XPath, Using = ".//input[@class='uploadAttachment']")]
-        public IWebElement UploadAttachmentButton { get; set; }
-
-        [FindsBy(How = How.XPath, Using = ".//input[@id='ctl00_MainContent_Btn_Create']")]
+        [FindsBy(How = How.XPath, Using = ".//input[@value='Create Mail Template']")]
         public IWebElement ConfirmCreateMailTemplateButton { get; set; }
 
         public override List<By> GetPageIdentitySelectors()

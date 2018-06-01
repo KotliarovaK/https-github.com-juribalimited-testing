@@ -12,7 +12,6 @@ namespace DashworksTestAutomation.DTO.Projects
         public bool ShowOnlyApplication { get; set; }
         public bool AllowUsersToAddANote { get; set; }
         public ViewEnum View;
-        //TODO Additional Tasks
         public string LongName { get; set; }
         public string ShortName { get; set; }
         public string PageDescription { get; set; }
@@ -27,6 +26,10 @@ namespace DashworksTestAutomation.DTO.Projects
             if (Project.ProjectType.Equals(ProjectTypeEnum.MailboxScheduledProject))
             {
                 View = ViewEnum.TargetState;
+            }
+            if (Project.ProjectType.Equals(ProjectTypeEnum.UserScheduledProject))
+            {
+                View = ViewEnum.ComparisonConsolidated;
             }
         }
     }

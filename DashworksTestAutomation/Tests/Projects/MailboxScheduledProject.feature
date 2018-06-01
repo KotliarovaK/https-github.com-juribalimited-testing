@@ -118,8 +118,8 @@ Scenario: Projects_CreateMailboxScheduledProject
 	Then "Manage Categories" page is displayed to the user
 	When User clicks "Create Category" button
 	When User create Category
-	| Name             | Description | ObjectTypeString |
-	| TestCategoryName | TestText    | Mailbox          |
+	| Name             | Description             | ObjectTypeString |
+	| TestCategoryName | MailboxScheduledProject | Mailbox          |
 	Then Success message is displayed with "Category successfully created." text
 	When User clicks "« Go Back" button
 	Then created Category is displayed in the table
@@ -127,18 +127,18 @@ Scenario: Projects_CreateMailboxScheduledProject
 	Then "Manage Stages" page is displayed to the user
 	When User clicks "Create Stage" button
 	When User create Stage
-	| StageName       |
-	| 0 TestStageName |
+	| StageName                 |
+	| 0 MailboxScheduledProject |
 	Then created Stage is displayed in the table
 	When User clicks "Create Stage" button
 	When User create Stage
-	| StageName       |
-	| 1 TestStageName |
+	| StageName                 |
+	| 1 MailboxScheduledProject |
 	Then created Stage is displayed in the table
 	When User clicks "Create Stage" button
 	When User create Stage
-	| StageName       |
-	| 2 TestStageName |
+	| StageName                 |
+	| 2 MailboxScheduledProject |
 	Then created Stage is displayed in the table
 	When User navigate to "Mail Templates" tab
 	Then "Manage Mail Templates" page is displayed to the user
@@ -160,13 +160,13 @@ Scenario: Projects_CreateMailboxScheduledProject
 	Then Success message is displayed with "Task successfully updated" text
 	When User publishes the task
 	Then selected task was published
-	When User navigate to "Values" on selected tab
+	When User navigate to "Values" page
 	When User clicks "Add Value" button
 	Then User create new Value
 	| Name          | Help                    | DefaultValue |
 	| TestValueName | MailboxScheduledProject | false        |
 	When User clicks "Save Value" button
-	When User navigate to "Emails" on selected tab
+	When User navigate to "Emails" page
 	When User clicks "Add Email" button
 	Then User create new Email
 	| CountDays | SendOnceOnly | RequestTypesAll | ApllyEmailToAll | To                                 |
@@ -188,7 +188,7 @@ Scenario: Projects_CreateMailboxScheduledProject
 	Then Success message is displayed with "Task successfully updated" text
 	When User publishes the task
 	Then selected task was published
-	When User navigate to "Values" on selected tab
+	When User navigate to "Values" page
 	When User clicks "Add Value" button
 	Then User create new Value
 	| Name          | Help                    | DefaultValue |
@@ -207,13 +207,13 @@ Scenario: Projects_CreateMailboxScheduledProject
 	Then Success message is displayed with "Task successfully updated" text
 	When User publishes the task
 	Then selected task was published
-	When User navigate to "Values" on selected tab
+	When User navigate to "Values" page
 	When User clicks "Add Value" button
 	Then User create new Value
 	| Name          | Help                    | DefaultValue |
 	| TestValueName | MailboxScheduledProject | true         |
 	When User clicks "Save Value" button
-	When User navigate to "Emails" on selected tab
+	When User navigate to "Emails" page
 	When User clicks "Add Email" button
 	Then User create new Email
 	| CountDays | SendOnceOnly | RequestTypesAll | ApllyEmailToAll | To                                 |
@@ -283,8 +283,8 @@ Scenario: Projects_CreateMailboxScheduledProject
 	| MailboxScheduledProject | TestText |
 	Then Success message is displayed with "Project news was successfully updated." text
 	Then User updates the Details page on Self Service tab
-	| EnableSelfServicePortal | AllowAnonymousUsers | ThisProjectDefault | ModeUser | ModeComputer | NoLink | DashworksProjectHomepage | CustomUrl |
-	| false                   | false               | true               | true     | false        | true   | false                    | false     |
+	| EnableSelfServicePortal | AllowAnonymousUsers | ThisProjectDefault | ModeUser | ModeComputer | NoLink | DashworksProjectHomepage | CustomUrl | CustomUrlTextFiald |
+	| false                   | false               | true               | true     | false        | true   | false                    | false     | http://Test        |
 	Then Success message is displayed with "Details successfully updated." text
 	When User navigate to "Welcome" page on Self Service tab
 	Then User updates the Welcome page on Self Service tab
@@ -298,8 +298,8 @@ Scenario: Projects_CreateMailboxScheduledProject
 	Then Success message is displayed with "Self Service Screen successfully updated" text
 	When User navigate to "Department and Location" page on Self Service tab
 	Then User updates the Department and Location page on Self Service tab
-	| ShowScreen | ShowDepartmentFullPath | ShowLocationFullPath | AllowUsersToAddANote | Department | Location | DepartmentFeed | HrLocationFeed | ManualLocationFeed | HistoricLocationFeed |
-	| true       | false                  | false                | false                | false      | false    | true           | false          | false              | false                |
+	| ShowScreen | ShowDepartmentFullPath | ShowLocationFullPath | AllowUsersToAddANote | Department | DepartmentDoNotPush | DepartmentPushToOwned | DepartmentPushToAll | Location | LocationDoNotPush | LocationPushToOwned | LocationPushToAll | DepartmentFeed | HrLocationFeed | ManualLocationFeed | HistoricLocationFeed |
+	| true       | false                  | false                | false                | true       | true                | false                 | false               | false    | false             | false               | false             | true           | false          | false              | false                |
 	Then Success message is displayed with "Self Service Screen successfully updated" text
 	When User navigate to "Apps List" page on Self Service tab
 	Then User updates the Apps List page on Self Service tab
@@ -332,7 +332,7 @@ Scenario: Projects_CreateMailboxScheduledProject
 	| EnablePlanning | DisplayColors | EnforceOonSelfServicePage | EnforceOnProjectObjectPage | CapacityToReach |
 	| true           | true          | true                      | true                       | 80              |
 	Then Success message is displayed with "Details successfully updated." text
-	When User navigate to "Capacity" page on selected tab
+	When User navigate to "Capacity" page
 	When User updates the Capacity page on Capacity tab for "1" Team
 	| StartDate   | EndDate     | MondayCheckbox | TuesdayCheckbox | WednesdayCheckbox | ThursdayCheckbox | FridayCheckbox | SaturdayCheckbox | SundayCheckbox | Monday | Tuesday | Wednesday | Thursday | Friday | Saturday | Sunday |
 	| 06 Apr 2016 | 19 Apr 2018 | false          | false           | false             | false            | false          | false            | false          | 100    | 100     | 100       | 100      | 100    | 100      | 100    |
@@ -345,10 +345,10 @@ Scenario: Projects_CreateMailboxScheduledProject
 	| StartDate    | EndDate     | MondayCheckbox | TuesdayCheckbox | WednesdayCheckbox | ThursdayCheckbox | FridayCheckbox | SaturdayCheckbox | SundayCheckbox | Monday | Tuesday | Wednesday | Thursday | Friday | Saturday | Sunday |
 	| 16 June 2012 | 27 May 2016 | false          | false           | false             | false            | false          | false            | false          | 100    | 100     | 100       | 100      | 100    | 100      | 100    |
 	Then Success message is displayed with "Capacity information successfully updated." text
-	When User navigate to "Summary" page on selected tab
+	When User navigate to "Summary" page
 	When User select created request type on Summary tab
 	Then table for selected request type is displayed
-	When User navigate to "Override Dates" page on selected tab
+	When User navigate to "Override Dates" page
 	Then User updates the Override Dates on Capacity tab
 	| Date         | Capacity | Comment                 |
 	| 06 June 2016 | 0        | MailboxScheduledProject |

@@ -56,11 +56,18 @@ namespace DashworksTestAutomation.Steps.Projects
             page.EnableSelfServicePortal.SetCheckboxState(_detailsDto.EnableSelfServicePortal);
             page.AllowAnonymousUsers.SetCheckboxState(_detailsDto.AllowAnonymousUsers);
             page.ThisProjectDefault.SetCheckboxState(_detailsDto.ThisProjectDefault);
-            page.ModeUser.SetCheckboxState(_detailsDto.ModeUser);
-            page.ModeComputer.SetCheckboxState(_detailsDto.ModeComputer);
+            if (!_projectDto.ProjectType.Equals(ProjectTypeEnum.UserScheduledProject))
+            {
+                page.Mode1.SetCheckboxState(_detailsDto.Mode1);
+                page.Mode2.SetCheckboxState(_detailsDto.Mode2);
+            }
             page.NoLink.SetCheckboxState(_detailsDto.NoLink);
             page.DashworksProjectHomepage.SetCheckboxState(_detailsDto.DashworksProjectHomepage);
             page.CustomUrl.SetCheckboxState(_detailsDto.CustomUrl);
+            if (_detailsDto.CustomUrl.Equals(true))
+            {
+                page.CustomUrlTextFiald.SendKeys(_detailsDto.CustomUrlTextFiald);
+            }
 
             var upd = _driver.NowAt<BaseElements>();
             upd.UpdateButton.Click();
@@ -101,14 +108,18 @@ namespace DashworksTestAutomation.Steps.Projects
             table.CreateInstance<SelfService_ComputerOwnershipDto>().CopyPropertiesTo(_computerOwnershipDto);
 
             page.ShowScreen.SetCheckboxState(_computerOwnershipDto.ShowScreen);
-            page.ShowComputerName.SelectboxSelect(_computerOwnershipDto.ShowComputerName.GetValue());
-            page.ShowComputers.SetCheckboxState(_computerOwnershipDto.ShowComputers);
+            if (!_projectDto.ProjectType.Equals(ProjectTypeEnum.MailboxScheduledProject))
+            {
+                page.ShowComputerName.SelectboxSelect(_computerOwnershipDto.ShowComputerName.GetValue());
+                page.ShowComputers.SetCheckboxState(_computerOwnershipDto.ShowComputers);
+                page.AllowUsersToSetPrimary.SetCheckboxState(_computerOwnershipDto.AllowUsersToSetPrimary);
+                page.LimitMaximum.SendKeys(_computerOwnershipDto.LimitMaximum);
+                page.LimitMinimum.SendKeys(_computerOwnershipDto.LimitMinimum);
+            }
             page.ShowCategory.SetCheckboxState(_computerOwnershipDto.ShowCategory);
             page.AllowUsersToSearch.SetCheckboxState(_computerOwnershipDto.AllowUsersToSearch);
-            page.AllowUsersToSetPrimary.SetCheckboxState(_computerOwnershipDto.AllowUsersToSetPrimary);
             page.AllowUsersToAddANote.SetCheckboxState(_computerOwnershipDto.AllowUsersToAddANote);
-            page.LimitMaximum.SendKeys(_computerOwnershipDto.LimitMaximum);
-            page.LimitMinimum.SendKeys(_computerOwnershipDto.LimitMinimum);
+
             page.PageDescription.SendKeys(_computerOwnershipDto.PageDescription);
 
             var upd = _driver.NowAt<BaseElements>();
@@ -127,9 +138,18 @@ namespace DashworksTestAutomation.Steps.Projects
             page.ShowLocationFullPath.SetCheckboxState(_departmentAndLocationDto.ShowLocationFullPath);
             page.AllowUsersToAddANote.SetCheckboxState(_departmentAndLocationDto.AllowUsersToAddANote);
             page.Department.SetCheckboxState(_departmentAndLocationDto.Department);
-            //TODO
+            page.DepartmentDoNotPush.SetCheckboxState(_departmentAndLocationDto.DepartmentDoNotPush);
+            page.DepartmentPushToOwned.SetCheckboxState(_departmentAndLocationDto.DepartmentPushToOwned);
+            page.DepartmentPushToAll.SetCheckboxState(_departmentAndLocationDto.DepartmentPushToAll);
             page.Location.SetCheckboxState(_departmentAndLocationDto.Location);
-            //TODO
+            page.LocationDoNotPush.SetCheckboxState(_departmentAndLocationDto.LocationDoNotPush);
+            page.LocationPushToOwned.SetCheckboxState(_departmentAndLocationDto.LocationPushToOwned);
+            page.LocationPushToAll.SetCheckboxState(_departmentAndLocationDto.LocationPushToAll);
+            page.DepartmentFeed.SetCheckboxState(_departmentAndLocationDto.DepartmentFeed);
+            page.HrLocationFeed.SetCheckboxState(_departmentAndLocationDto.HrLocationFeed);
+            page.ManualLocationFeed.SetCheckboxState(_departmentAndLocationDto.ManualLocationFeed);
+            page.HistoricLocationFeed.SetCheckboxState(_departmentAndLocationDto.HistoricLocationFeed);
+            page.PageDescription.SendKeys(_departmentAndLocationDto.PageDescription);
 
             var upd = _driver.NowAt<BaseElements>();
             upd.UpdateButton.Click();
@@ -166,7 +186,7 @@ namespace DashworksTestAutomation.Steps.Projects
 
             //page.ShowScreen.SetCheckboxState(_projectDateDto.ShowThisScreen);
             page.ShowComputerName.SelectboxSelect(_projectDateDto.ShowComputerName.GetValue());
-            if (_projectDto.ProjectType.Equals(ProjectTypeEnum.ComputerScheduledProject))
+            if (!_projectDto.ProjectType.Equals(ProjectTypeEnum.MailboxScheduledProject))
             {
                 page.ShowComputerName.SelectboxSelect(_projectDateDto.ShowComputerName.GetValue());
             }

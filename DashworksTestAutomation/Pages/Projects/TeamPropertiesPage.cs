@@ -13,7 +13,7 @@ namespace DashworksTestAutomation.Pages.Projects
         [FindsBy(How = How.XPath, Using = ".//textarea[@title='Short Description']")]
         public IWebElement ShortDescription	 { get; set; }
 
-        [FindsBy(How = How.XPath, Using = ".//input[@id='ctl00_MainContent_Btn_Create']")]
+        [FindsBy(How = How.XPath, Using = ".//input[@value='Create Team']")]
         public IWebElement ConfirmCreateTeamButton { get; set; }
 
         public override List<By> GetPageIdentitySelectors()

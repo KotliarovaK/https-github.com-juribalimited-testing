@@ -8,31 +8,31 @@ namespace DashworksTestAutomation.Pages.Projects
 {
     internal class SelfService_ComputerOwnershipPage : BaseDashboardPage
     {
-        [FindsBy(How = How.XPath, Using = ".//input[@id='cb_computerOwnershipShowScreen']")]
+        [FindsBy(How = How.XPath, Using = ".//input[contains(@id, 'computerOwnershipShowScreen')]")]
         public IWebElement ShowScreen { get; set; }
 
-        [FindsBy(How = How.XPath, Using = ".//select[@id='ctl00_MainContent_DDL_ComputerOwnership_ShowComputerNameFromHTTPHeader']")]
+        [FindsBy(How = How.XPath, Using = ".//select[contains(@id, 'ShowComputerNameFromHTTPHeader')]")]
         public IWebElement ShowComputerName { get; set; }
 
-        [FindsBy(How = How.XPath, Using = ".//input[@id='cb_computerOwnershipShowComputersUsedButNotOwnedByTheUser']")]
+        [FindsBy(How = How.XPath, Using = ".//input[contains(@id, 'computerOwnershipShowComputersUsedButNotOwnedByTheUser')]")]
         public IWebElement ShowComputers { get; set; }
 
-        [FindsBy(How = How.XPath, Using = ".//input[@id='cb_computerOwnerShowCategoryForComputers']")]
+        [FindsBy(How = How.XPath, Using = ".//input[contains(@id, 'computerOwnerShowCategory')]")]
         public IWebElement ShowCategory { get; set; }
 
-        [FindsBy(How = How.XPath, Using = ".//input[@id='cb_computerOwnershipAllowUsersToSearchForOtherComputers']")]
+        [FindsBy(How = How.XPath, Using = ".//input[contains(@id, 'computerOwnershipAllowUsersToSearch')]")]
         public IWebElement AllowUsersToSearch { get; set; }
 
-        [FindsBy(How = How.XPath, Using = ".//input[@id='cb_computerOwnershipAllowUsersToSetPrimaryComputer']")]
+        [FindsBy(How = How.XPath, Using = ".//input[contains(@id, 'computerOwnershipAllowUsersToSetPrimary')]")]
         public IWebElement AllowUsersToSetPrimary { get; set; }
 
-        [FindsBy(How = How.XPath, Using = ".//input[@id='cb_computerOwnershipAllowUsersToAddANoteFromThisPageValue']")]
+        [FindsBy(How = How.XPath, Using = ".//input[contains(@id, 'computerOwnershipAllowUsersToAddANoteFromThisPageValue')]")]
         public IWebElement AllowUsersToAddANote { get; set; }
 
-        [FindsBy(How = How.XPath, Using = ".//input[@id='tb_computerOwnershipLimitMaximumComputersOfTheUserTo']")]
+        [FindsBy(How = How.XPath, Using = ".//input[contains(@id, 'computerOwnershipLimitMaximumComputersOfTheUserTo')]")]
         public IWebElement LimitMaximum { get; set; }
 
-        [FindsBy(How = How.XPath, Using = ".//input[@id='tb_computerOwnershipLimitMinimumComputersOfTheUserTo']")]
+        [FindsBy(How = How.XPath, Using = ".//input[contains(@id, 'computerOwnershipLimitMinimumComputersOfTheUserTo')]")]
         public IWebElement LimitMinimum { get; set; }
 
         [FindsBy(How = How.XPath, Using = ".//input[@aria-label='Long Name']")]

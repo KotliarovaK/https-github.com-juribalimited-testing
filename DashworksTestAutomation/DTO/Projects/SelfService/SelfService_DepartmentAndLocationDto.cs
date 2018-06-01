@@ -16,15 +16,12 @@ namespace DashworksTestAutomation.DTO.Projects
         public bool Department { get; set; }
         public bool DepartmentDoNotPush { get; set; }
         public bool DepartmentPushToOwned { get; set; }
-        public bool PushToAll { get; set; }
+        public bool DepartmentPushToAll { get; set; }
         public bool Location { get; set; }
         public bool LocationDoNotPush { get; set; }
         public bool LocationPushToOwned { get; set; }
         public bool LocationPushToAll { get; set; }
         public bool DepartmentFeed { get; set; }
-        //TODO Additional Tasks
-        public string LongName { get; set; }
-        public string ShortName { get; set; }
         public string PageDescription { get; set; }
         public bool HrLocationFeed { get; set; }
         public bool ManualLocationFeed { get; set; }

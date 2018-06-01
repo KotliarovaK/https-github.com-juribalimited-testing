@@ -7,10 +7,10 @@ namespace DashworksTestAutomation.Pages.Projects
 {
    internal class NewsPage : BaseDashboardPage
     {
-        [FindsBy(How = How.XPath, Using = ".//input[@id='NewsTitle']")]
+        [FindsBy(How = How.XPath, Using = ".//input[contains(@id, 'NewsTitle')]")]
         public IWebElement Title { get; set; }
 
-        [FindsBy(How = How.XPath, Using = ".//textarea[@id='NewsText']")]
+        [FindsBy(How = How.XPath, Using = ".//textarea[contains(@id, 'NewsText')]")]
         public IWebElement Text { get; set; }
 
         public override List<By> GetPageIdentitySelectors()

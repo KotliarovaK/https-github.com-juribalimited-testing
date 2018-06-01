@@ -7,22 +7,20 @@ namespace DashworksTestAutomation.Pages.Projects
 {
     internal class SelfService_ProjectDatePage : BaseDashboardPage
     {
-        [FindsBy(How = How.XPath, Using = ".//input[@id='cb_projectDateShowScreen']")]
+        [FindsBy(How = How.XPath, Using = ".//input[contains(@id, 'projectDateShowScreen')]")]
         public IWebElement ShowScreen { get; set; }
 
-        [FindsBy(How = How.XPath, Using = ".//select[@id='ctl00_MainContent_DDL_ProjectDate_ShowComputerNameFromHTTPHeader']")]
+        [FindsBy(How = How.XPath, Using = ".//select[contains(@id, 'ShowComputerNameFromHTTPHeader')]")]
         public IWebElement ShowComputerName { get; set; }
 
-        [FindsBy(How = How.XPath, Using = ".//input[@id='cb_projectDateAllowUsersToAddANoteFromThisPageValue']")]
+        [FindsBy(How = How.XPath, Using = ".//input[contains(@id, 'AllowUsersToAddANoteFromThisPageValue')]")]
         public IWebElement AllowUsersToAddANote { get; set; }
 
-        [FindsBy(How = How.XPath, Using = ".//input[@id='tb_projectDateScheduleWindowMinimumHoursValue']")]
+        [FindsBy(How = How.XPath, Using = ".//input[contains(@id, 'ScheduleWindowMinimumHoursValue')]")]
         public IWebElement MinimumHours { get; set; }
 
-        [FindsBy(How = How.XPath, Using = ".//input[@id='tb_projectDateScheduleWindowMaximumHoursValue']")]
+        [FindsBy(How = How.XPath, Using = ".//input[contains(@id, 'ScheduleWindowMaximumHoursValue')]")]
         public IWebElement MaximumHours { get; set; }
-
-        //TODO Additional Tasks
 
         [FindsBy(How = How.XPath, Using = ".//input[@aria-label='Long Name']")]
         public IWebElement LongName { get; set; }

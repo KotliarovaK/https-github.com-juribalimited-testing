@@ -11,10 +11,11 @@ namespace DashworksTestAutomation.DTO.Projects
         public bool EnableSelfServicePortal { get; set; }
         public bool AllowAnonymousUsers { get; set; }
         public bool ThisProjectDefault { get; set; }
-        public bool ModeUser { get; set; }
-        public bool ModeComputer { get; set; }
+        public bool Mode1 { get; set; }
+        public bool Mode2 { get; set; }
         public bool NoLink { get; set; }
         public bool DashworksProjectHomepage { get; set; }
         public bool CustomUrl { get; set; }
+        public string CustomUrlTextFiald { get; set; }
     }
 }

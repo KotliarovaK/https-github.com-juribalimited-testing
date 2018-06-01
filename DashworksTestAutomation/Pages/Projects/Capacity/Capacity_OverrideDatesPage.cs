@@ -7,19 +7,19 @@ namespace DashworksTestAutomation.Pages.Projects
 {
     internal class Capacity_OverrideDatesPage : BaseDashboardPage
     {
-        [FindsBy(How = How.XPath, Using = ".//input[@id='ctl00_MainContent_UC_OverrideDates_Date_TB_SelectDate']")]
+        [FindsBy(How = How.XPath, Using = ".//input[contains(@id, 'SelectDate')]")]
         public IWebElement Date { get; set; }
 
-        [FindsBy(How = How.XPath, Using = ".//select[@id='ctl00_MainContent_DDL_OverrideDates_Team']")]
+        [FindsBy(How = How.XPath, Using = ".//select[contains(@id, 'OverrideDates_Team')]")]
         public IWebElement OverrideTeam { get; set; }
 
-        [FindsBy(How = How.XPath, Using = ".//select[@id='ctl00_MainContent_DDL_OverrideDates_RequestType']")]
+        [FindsBy(How = How.XPath, Using = ".//select[contains(@id, 'OverrideDates_RequestType')]")]
         public IWebElement OverrideRequestType { get; set; }
 
-        [FindsBy(How = How.XPath, Using = ".//input[@id='ctl00_MainContent_TB_OverrideDates_Capacity']")]
+        [FindsBy(How = How.XPath, Using = ".//input[contains(@class, 'dayCapacityTextbox')]")]
         public IWebElement Capacity { get; set; }
 
-        [FindsBy(How = How.XPath, Using = ".//textarea[@id='ctl00_MainContent_TB_OverrideDates_Comment']")]
+        [FindsBy(How = How.XPath, Using = ".//textarea[contains(@id, 'Comment')]")]
         public IWebElement Comment { get; set; }
 
         public override List<By> GetPageIdentitySelectors()

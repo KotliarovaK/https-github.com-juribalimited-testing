@@ -17,22 +17,25 @@ namespace DashworksTestAutomation.Pages.Projects
         public IWebElement ThisProjectDefault { get; set; }
 
         [FindsBy(How = How.XPath, Using = ".//input[contains(@id, 'SelfServiceMode_0')]")]
-        public IWebElement ModeUser { get; set; }
+        public IWebElement Mode1 { get; set; }
 
         [FindsBy(How = How.XPath, Using = ".//input[contains(@id, 'SelfServiceMode_1')]")]
-        public IWebElement ModeComputer { get; set; }
+        public IWebElement Mode2 { get; set; }
 
         [FindsBy(How = How.XPath, Using = ".//input[contains(@id, 'BaseUrl')]")]
         public IWebElement BaseUrl { get; set; }
 
-        [FindsBy(How = How.XPath, Using = ".//input[@id='RBL_LogoUrlType_0']")]
+        [FindsBy(How = How.XPath, Using = ".//input[contains(@id, 'LogoUrlType_0')]")]
         public IWebElement NoLink { get; set; }
 
-        [FindsBy(How = How.XPath, Using = ".//input[@id='RBL_LogoUrlType_1']")]
+        [FindsBy(How = How.XPath, Using = ".//input[contains(@id, 'LogoUrlType_1')]")]
         public IWebElement DashworksProjectHomepage { get; set; }
 
-        [FindsBy(How = How.XPath, Using = ".//input[@id='RBL_LogoUrlType_2']")]
+        [FindsBy(How = How.XPath, Using = ".//input[contains(@id, 'LogoUrlType_2')]")]
         public IWebElement CustomUrl { get; set; }
+
+        [FindsBy(How = How.XPath, Using = ".//input[contains(@id, 'HeaderLogoUrl')]")]
+        public IWebElement CustomUrlTextFiald { get; set; }
 
         [FindsBy(How = How.XPath, Using = ".//input[@id='TB_BackgroundColor']")]
         public IWebElement BackgroundColour { get; set; }

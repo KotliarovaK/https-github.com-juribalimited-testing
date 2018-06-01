@@ -15,7 +15,7 @@ namespace DashworksTestAutomation.Pages.Projects
         [FindsBy(How = How.XPath, Using = ".//input[@aria-label='Project Short Name']")]
         public IWebElement ProjectShortName { get; set; }
 
-        [FindsBy(How = How.XPath, Using = ".//textarea[@id='ctl00_MainContent_DV_Project_ProjectDescription']")]
+        [FindsBy(How = How.XPath, Using = ".//textarea[contains(@id, 'ProjectDescription')]")]
         public IWebElement ProjectDescription { get; set; }
 
         [FindsBy(How = How.XPath, Using = ".//div[@class='selectedItemBox']")]
@@ -27,10 +27,10 @@ namespace DashworksTestAutomation.Pages.Projects
         [FindsBy(How = How.XPath, Using = ".//select[@aria-label='Default Value for Show Linked Objects']")]
         public IWebElement ShowLinkedObjects { get; set; }
 
-        [FindsBy(How = How.XPath, Using = ".//select[@id='ctl00_MainContent_DV_Project_DefaultAppsViewStateID']")]
+        [FindsBy(How = How.XPath, Using = ".//select[contains(@id, 'DefaultAppsViewStateID')]")]
         public IWebElement ApplicationsTab1 { get; set; }
 
-        [FindsBy(How = How.XPath, Using = ".//select[@id='ctl00_MainContent_DV_Project_DefaultAppsViewOrderID']")]
+        [FindsBy(How = How.XPath, Using = ".//select[contains(@id, 'DefaultAppsViewOrderID')]")]
         public IWebElement ApplicationsTab2 { get; set; }
 
         [FindsBy(How = How.XPath, Using = ".//select[contains(@id, 'DefaultAppsForwardPathTypeID')]")]
@@ -60,10 +60,10 @@ namespace DashworksTestAutomation.Pages.Projects
         [FindsBy(How = How.XPath, Using = ".//input[@title='Task Email BCC Email Address']")]
         public IWebElement BccEmail { get; set; }
 
-        [FindsBy(How = How.XPath, Using = ".//input[@id='ctl00_MainContent_DV_Project_UC_ProjectStartDate_TB_SelectDate']")]
+        [FindsBy(How = How.XPath, Using = ".//input[contains(@id, 'ProjectStartDate')]")]
         public IWebElement StartDate { get; set; }
 
-        [FindsBy(How = How.XPath, Using = ".//input[@id='ctl00_MainContent_DV_Project_UC_ProjectEndDate_TB_SelectDate']")]
+        [FindsBy(How = How.XPath, Using = ".//input[contains(@id, 'ProjectEndDate')]")]
         public IWebElement EndDate { get; set; }
 
         [FindsBy(How = How.XPath, Using = ".//select[contains(@id, 'PermissionCategoryExists')]")]

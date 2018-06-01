@@ -9,16 +9,16 @@ namespace DashworksTestAutomation.Pages.Projects
     {
 
 
-        [FindsBy(How = How.XPath, Using = ".//input[@id='tb_Name']")]
+        [FindsBy(How = How.XPath, Using = ".//input[contains(@id, 'Name')]")]
         public IWebElement Name { get; set; }
 
-        [FindsBy(How = How.XPath, Using = ".//textarea[@id='tb_Description']")]
+        [FindsBy(How = How.XPath, Using = ".//textarea[contains(@id, 'Description')]")]
         public IWebElement Description { get; set; }
 
-        [FindsBy(How = How.XPath, Using = ".//select[@id='select_ObjectType']")]
+        [FindsBy(How = How.XPath, Using = ".//select[contains(@id, 'ObjectType')]")]
         public IWebElement ObjectType { get; set; }
 
-        [FindsBy(How = How.XPath, Using = ".//input[@id='btn_Create']")]
+        [FindsBy(How = How.XPath, Using = ".//input[@value='Create']")]
         public IWebElement ConfirmCreateCategoryButton { get; set; }
 
         public override List<By> GetPageIdentitySelectors()

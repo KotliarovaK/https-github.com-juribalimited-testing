@@ -14,22 +14,22 @@ namespace DashworksTestAutomation.Pages.Projects
         [FindsBy(How = How.XPath, Using = ".//select[@aria-label='Languages']")]
         public IWebElement Languages { get; set; }
 
-        [FindsBy(How = How.XPath, Using = ".//input[@id='cb_allowUserSearchValue']")]
+        [FindsBy(How = How.XPath, Using = ".//input[contains(@id, 'SearchValue')]")]
         public IWebElement AllowToSearchForAnotherUser { get; set; }
 
-        [FindsBy(How = How.XPath, Using = ".//input[@id='cb_allowUserToChangeLanguage']")]
+        [FindsBy(How = How.XPath, Using = ".//input[contains(@id, 'allowUserToChangeLanguage')]")]
         public IWebElement AllowToChangeLanguage { get; set; }
 
-        [FindsBy(How = How.XPath, Using = ".//input[@id='cb_showProjectSelector']")]
+        [FindsBy(How = How.XPath, Using = ".//input[contains(@id, 'showProjectSelector')]")]
         public IWebElement ShowProjectSelector { get; set; }
 
-        [FindsBy(How = How.XPath, Using = ".//input[@id='cb_displayFurtherDetailsLink']")]
+        [FindsBy(How = How.XPath, Using = ".//input[contains(@id, 'displayFurtherDetailsLink')]")]
         public IWebElement ShowMoreDetailsLink { get; set; }
 
-        [FindsBy(How = How.XPath, Using = ".//select[@id='select_objectFieldTypes']")]
+        [FindsBy(How = How.XPath, Using = ".//select[contains(@aria-label, 'Type')]")]
         public IWebElement Type { get; set; }
 
-        [FindsBy(How = How.XPath, Using = ".//select[@id='select_objectFieldTypesValues']")]
+        [FindsBy(How = How.XPath, Using = ".//select[contains(@aria-label, 'Field')]")]
         public IWebElement Field { get; set; }
 
         [FindsBy(How = How.XPath, Using = ".//input[@aria-label='Long Name']")]

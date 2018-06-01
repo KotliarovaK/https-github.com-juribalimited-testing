@@ -127,18 +127,18 @@ Scenario: Projects_CreateComputerScheduledProject
 	Then "Manage Stages" page is displayed to the user
 	When User clicks "Create Stage" button
 	When User create Stage
-	| StageName       |
-	| 0 TestStageName |
+	| StageName                  |
+	| 0 ComputerScheduledProject |
 	Then created Stage is displayed in the table
 	When User clicks "Create Stage" button
 	When User create Stage
-	| StageName       |
-	| 1 TestStageName |
+	| StageName                  |
+	| 1 ComputerScheduledProject |
 	Then created Stage is displayed in the table
 	When User clicks "Create Stage" button
 	When User create Stage
-	| StageName       |
-	| 2 TestStageName |
+	| StageName                  |
+	| 2 ComputerScheduledProject |
 	Then created Stage is displayed in the table
 	When User navigate to "Mail Templates" tab
 	Then "Manage Mail Templates" page is displayed to the user
@@ -285,8 +285,8 @@ Scenario: Projects_CreateComputerScheduledProject
 	When User navigate to "Self Service" tab
 	Then "Manage Self Service" page is displayed to the user
 	Then User updates the Details page on Self Service tab
-	| EnableSelfServicePortal | AllowAnonymousUsers | ThisProjectDefault | ModeUser | ModeComputer | NoLink | DashworksProjectHomepage | CustomUrl |
-	| false                   | false               | true               | true     | false        | true   | false                    | false     |
+	| EnableSelfServicePortal | AllowAnonymousUsers | ThisProjectDefault | ModeUser | ModeComputer | NoLink | DashworksProjectHomepage | CustomUrl | CustomUrlTextFiald |
+	| false                   | false               | true               | true     | false        | true   | false                    | false     | http://Test        |
 	Then Success message is displayed with "Details successfully updated." text
 	When User navigate to "Welcome" page on Self Service tab
 	Then User updates the Welcome page on Self Service tab
@@ -300,8 +300,8 @@ Scenario: Projects_CreateComputerScheduledProject
 	Then Success message is displayed with "Self Service Screen successfully updated" text
 	When User navigate to "Department and Location" page on Self Service tab
 	Then User updates the Department and Location page on Self Service tab
-	| ShowScreen | ShowDepartmentFullPath | ShowLocationFullPath | AllowUsersToAddANote | Department | Location | DepartmentFeed | HrLocationFeed | ManualLocationFeed | HistoricLocationFeed |
-	| true       | false                  | false                | false                | false      | false    | true           | false          | false              | false                |
+	| ShowScreen | ShowDepartmentFullPath | ShowLocationFullPath | AllowUsersToAddANote | Department | DepartmentDoNotPush | DepartmentPushToOwned | DepartmentPushToAll | Location | LocationDoNotPush | LocationPushToOwned | LocationPushToAll | DepartmentFeed | HrLocationFeed | ManualLocationFeed | HistoricLocationFeed |
+	| true       | false                  | false                | false                | false      | false               | false                 | false               | false    | false             | false               | false             | true           | false          | false              | false                |
 	Then Success message is displayed with "Self Service Screen successfully updated" text
 	When User navigate to "Apps List" page on Self Service tab
 	Then User updates the Apps List page on Self Service tab

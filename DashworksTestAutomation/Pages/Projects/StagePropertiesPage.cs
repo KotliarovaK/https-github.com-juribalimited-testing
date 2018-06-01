@@ -10,7 +10,7 @@ namespace DashworksTestAutomation.Pages.Projects
         [FindsBy(How = How.XPath, Using = ".//input[@title='Stage Name']")]
         public IWebElement StageName { get; set; }
 
-        [FindsBy(How = How.XPath, Using = ".//input[@id='ctl00_MainContent_Btn_Create']")]
+        [FindsBy(How = How.XPath, Using = ".//input[@value='Create Stage']")]
         public IWebElement ConfirmCreateStageButton { get; set; }
 
         public override List<By> GetPageIdentitySelectors()

@@ -298,21 +298,21 @@ namespace DashworksTestAutomation.Tests.Projects
             TechTalk.SpecFlow.Table table16 = new TechTalk.SpecFlow.Table(new string[] {
                         "StageName"});
             table16.AddRow(new string[] {
-                        "0 TestStageName"});
+                        "0 ComputerScheduledProject"});
             testRunner.When("User create Stage", ((string)(null)), table16, "When ");
             testRunner.Then("created Stage is displayed in the table", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
             testRunner.When("User clicks \"Create Stage\" button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
             TechTalk.SpecFlow.Table table17 = new TechTalk.SpecFlow.Table(new string[] {
                         "StageName"});
             table17.AddRow(new string[] {
-                        "1 TestStageName"});
+                        "1 ComputerScheduledProject"});
             testRunner.When("User create Stage", ((string)(null)), table17, "When ");
             testRunner.Then("created Stage is displayed in the table", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
             testRunner.When("User clicks \"Create Stage\" button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
             TechTalk.SpecFlow.Table table18 = new TechTalk.SpecFlow.Table(new string[] {
                         "StageName"});
             table18.AddRow(new string[] {
-                        "2 TestStageName"});
+                        "2 ComputerScheduledProject"});
             testRunner.When("User create Stage", ((string)(null)), table18, "When ");
             testRunner.Then("created Stage is displayed in the table", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
             testRunner.When("User navigate to \"Mail Templates\" tab", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
@@ -603,7 +603,8 @@ namespace DashworksTestAutomation.Tests.Projects
                         "ModeComputer",
                         "NoLink",
                         "DashworksProjectHomepage",
-                        "CustomUrl"});
+                        "CustomUrl",
+                        "CustomUrlTextFiald"});
             table38.AddRow(new string[] {
                         "false",
                         "false",
@@ -612,7 +613,8 @@ namespace DashworksTestAutomation.Tests.Projects
                         "false",
                         "true",
                         "false",
-                        "false"});
+                        "false",
+                        "http://Test"});
             testRunner.Then("User updates the Details page on Self Service tab", ((string)(null)), table38, "Then ");
             testRunner.Then("Success message is displayed with \"Details successfully updated.\" text", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
             testRunner.When("User navigate to \"Welcome\" page on Self Service tab", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
@@ -664,13 +666,25 @@ namespace DashworksTestAutomation.Tests.Projects
                         "ShowLocationFullPath",
                         "AllowUsersToAddANote",
                         "Department",
+                        "DepartmentDoNotPush",
+                        "DepartmentPushToOwned",
+                        "DepartmentPushToAll",
                         "Location",
+                        "LocationDoNotPush",
+                        "LocationPushToOwned",
+                        "LocationPushToAll",
                         "DepartmentFeed",
                         "HrLocationFeed",
                         "ManualLocationFeed",
                         "HistoricLocationFeed"});
             table41.AddRow(new string[] {
                         "true",
+                        "false",
+                        "false",
+                        "false",
+                        "false",
+                        "false",
+                        "false",
                         "false",
                         "false",
                         "false",

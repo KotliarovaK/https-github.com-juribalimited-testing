@@ -7,13 +7,13 @@ namespace DashworksTestAutomation.Pages.Projects
 {
     internal class GroupPropertiesPage : BaseDashboardPage
     {
-        [FindsBy(How = How.XPath, Using = ".//input[@id='ctl00_MainContent_TB_GroupName']")]
+        [FindsBy(How = How.XPath, Using = ".//input[contains(@id, 'GroupName')]")]
         public IWebElement GroupName { get; set; }
 
-        [FindsBy(How = How.XPath, Using = ".//select[@id='ctl00_MainContent_DDL_TeamId']")]
+        [FindsBy(How = How.XPath, Using = ".//select[contains(@id, 'TeamId')]")]
         public IWebElement OwnedByTeam { get; set; }
 
-        [FindsBy(How = How.XPath, Using = ".//input[@id='ctl00_MainContent_Btn_Create']")]
+        [FindsBy(How = How.XPath, Using = ".//input[@value='Create Group']")]
         public IWebElement ConfirmCreateGroupButton { get; set; }
 
         public override List<By> GetPageIdentitySelectors()

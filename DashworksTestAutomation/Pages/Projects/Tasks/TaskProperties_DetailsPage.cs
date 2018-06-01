@@ -16,13 +16,13 @@ namespace DashworksTestAutomation.Pages.Projects
         [FindsBy(How = How.XPath, Using = ".//select[contains(@id, 'HookType')]")]
         public IWebElement TaskProjectRole { get; set; }
 
-        [FindsBy(How = How.XPath, Using = ".//input[@id='ctl00_MainContent_CB_AffectsStatus']")]
+        [FindsBy(How = How.XPath, Using = ".//input[contains(@id, 'AffectsStatus')]")]
         public IWebElement TaskImpactsReadiness { get; set; }
 
-        [FindsBy(How = How.XPath, Using = ".//input[@id='ctl00_MainContent_CB_HasOwner']")]
+        [FindsBy(How = How.XPath, Using = ".//input[contains(@id, 'HasOwner')]")]
         public IWebElement TaskHasAnOwner { get; set; }
 
-        [FindsBy(How = How.XPath, Using = ".//input[@id='ctl00_MainContent_CB_ShowLastChangeInfo']")]
+        [FindsBy(How = How.XPath, Using = ".//input[contains(@id, 'ShowLastChangeInfo')]")]
         public IWebElement ShowDetails { get; set; }
 
         [FindsBy(How = How.XPath, Using = ".//select[contains(@id, 'DateMode')]")]
@@ -31,19 +31,19 @@ namespace DashworksTestAutomation.Pages.Projects
         [FindsBy(How = How.XPath, Using = ".//input[contains(@id, 'ProjectObject')]")]
         public IWebElement ProjectObject { get; set; }
 
-        [FindsBy(How = How.XPath, Using = ".//input[@id='ctl00_MainContent_CB_ReadOnly_BulkUpdate']")]
+        [FindsBy(How = How.XPath, Using = ".//input[contains(@id, 'BulkUpdate')]")]
         public IWebElement BulkUpdate { get; set; }
 
-        [FindsBy(How = How.XPath, Using = ".//input[@id='ctl00_MainContent_CB_ReadOnly_SelfService']")]
+        [FindsBy(How = How.XPath, Using = ".//input[contains(@id, 'SelfService')]")]
         public IWebElement SelfService { get; set; }
 
         [FindsBy(How = How.XPath, Using = ".//input[@value='Update Task']")]
         public IWebElement UpdateTaskButton { get; set; }
 
-        [FindsBy(How = How.XPath, Using = ".//input[@id='ctl00_MainContent_BtnSequence1']")]
+        [FindsBy(How = How.XPath, Using = ".//input[@value='Publish Task...']")]
         public IWebElement PublishTaskButton { get; set; }
 
-        [FindsBy(How = How.XPath, Using = ".//input[@id='ctl00_MainContent_BtnDeSequence1']")]
+        [FindsBy(How = How.XPath, Using = ".//input[@value='Unpublish Task...']']")]
         public IWebElement UnpublishTaskButton { get; set; }
 
         public override List<By> GetPageIdentitySelectors()
