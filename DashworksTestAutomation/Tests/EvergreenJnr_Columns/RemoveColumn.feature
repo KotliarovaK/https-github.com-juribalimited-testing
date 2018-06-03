@@ -234,7 +234,6 @@ Scenario: EvergreenJnr_DevicesList_CheckThatRemovingColumnsFromUrlIsWorksCorrect
 	Then data in table is sorted by 'Hostname' column in ascending order
 	When User create dynamic list with "TestListC6636D" name on "Devices" page
 	Then "TestListC6636D" list is displayed to user
-	#Workaround for DAS-11570. Remove after fix
 	When User clicks the Columns button
 	Then Columns panel is displayed to the user
 	When ColumnName is entered into the search box and the selection is clicked
@@ -260,7 +259,6 @@ Scenario: EvergreenJnr_DevicesList_CheckThatRemovingColumnAndFilterFromUrlWorksC
 	When User click on 'Hostname' column header
 	Then data in table is sorted by 'Hostname' column in ascending order
 	When User create dynamic list with "TestList0E8A84" name on "Devices" page
-	#Workaround for DAS-11570. Remove after fix
 	When User clicks the Columns button
 	Then Columns panel is displayed to the user
 	When ColumnName is entered into the search box and the selection is clicked
@@ -296,7 +294,6 @@ Scenario: EvergreenJnr_DevicesList_CheckThatRemovingColumnAndFilterAndCustomList
 	Then data in table is sorted by 'Hostname' column in ascending order
 	When User create dynamic list with "TestList3C5E3C" name on "Devices" page
 	Then "TestList3C5E3C" list is displayed to user
-	#Workaround for DAS-11570. Remove after fix
 	When User clicks the Columns button
 	Then Columns panel is displayed to the user
 	When ColumnName is entered into the search box and the selection is clicked
@@ -419,3 +416,40 @@ Examples:
 	| PageName | ColumnName |
 	| Devices  | Hostname   |
 	| Users    | Username   |
+
+@Evergreen @Mailboxes @EvergreenJnr_Columns @RemoveColumn @DAS12513
+Scenario: EvergreenJnr_MailboxesList_CheckThatNoErrorsAreDisplayedAfterAddingAndRemovingOwnerEnabledColumnForMailboxes
+	When User clicks "Mailboxes" on the left-hand menu
+	Then "Mailboxes" list should be displayed to the user
+	When User clicks the Filters button
+	Then Filters panel is displayed to the user
+	When User add "Owner Enabled" filter where type is "Equals" with added column and following checkboxes:
+	| SelectedCheckboxes |
+	| TRUE               |
+	Then ColumnName is added to the list
+	| ColumnName    |
+	| Owner Enabled |
+	When User clicks the Columns button
+	Then Columns panel is displayed to the user
+	When User removes "Mail Server" column by Column panel
+	When User removes "Mailbox Type" column by Column panel
+	When User removes "Owner Display Name" column by Column panel
+	Then "Mailboxes" list should be displayed to the user
+
+@Evergreen @Devices @EvergreenJnr_Columns @RemoveColumn @DAS12513
+Scenario: EvergreenJnr_DevicesList_CheckThatNoErrorsAreDisplayedAfterAddingAndRemovingOwnerEnabledColumnForDevices
+	When User clicks "Devices" on the left-hand menu
+	Then "Devices" list should be displayed to the user
+	When User clicks the Filters button
+	Then Filters panel is displayed to the user
+	When User add "Owner Enabled" filter where type is "Equals" with added column and following checkboxes:
+	| SelectedCheckboxes |
+	| TRUE               |
+	Then ColumnName is added to the list
+	| ColumnName    |
+	| Owner Enabled |
+	When User clicks the Columns button
+	Then Columns panel is displayed to the user
+	When User removes "Operating System" column by Column panel
+	When User removes "Owner Display Name" column by Column panel
+	Then "Devices" list should be displayed to the user

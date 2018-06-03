@@ -2,6 +2,7 @@
 using DashworksTestAutomation.Pages.Evergreen;
 using DashworksTestAutomation.Utils;
 using NUnit.Framework;
+using OpenQA.Selenium;
 using OpenQA.Selenium.Remote;
 using TechTalk.SpecFlow;
 
@@ -24,6 +25,16 @@ namespace DashworksTestAutomation.Steps.Dashworks
             searchElement.SearchEverythingField.Clear();
             searchElement.SearchEverythingField.SendKeys(searchText);
             _driver.WaitForDataLoading();
+        }
+
+        [When(@"User type ""(.*)"" in Global Search Field and presses Enter key")]
+        public void WhenUserTypeInGlobalSearchFieldAndPressesEnterKey(string searchText)
+        {
+            var searchElement = _driver.NowAt<GlobalSearchElement>();
+            searchElement.SearchEverythingField.Clear();
+            searchElement.SearchEverythingField.SendKeys(searchText);
+            _driver.WaitForDataLoading();
+            searchElement.SearchEverythingField.SendKeys(Keys.Enter);
         }
 
         [Then(@"User clicks on ""(.*)"" search result")]
@@ -49,6 +60,15 @@ namespace DashworksTestAutomation.Steps.Dashworks
             var searchElement = _driver.NowAt<GlobalSearchElement>();
             _driver.WaitWhileControlIsNotDisplayed<GlobalSearchElement>(() => searchElement.SearchResults);
             Assert.IsTrue(searchElement.SearchResults.Displayed(), "Search Result are not displayed");
+        }
+
+        [Then(@"list of results is displayed to the user")]
+        public void ThenListOfResultsIsDisplayedToTheUser()
+        {
+            var searchElement = _driver.NowAt<GlobalSearchElement>();
+            _driver.WaitWhileControlIsNotDisplayed<GlobalSearchElement>(() => searchElement.TableOfSearchResults);
+            Assert.IsTrue(searchElement.TableOfSearchResults.Displayed());
+            Assert.IsTrue(searchElement.TableContent.Displayed());
         }
 
         [Then(@"reset button in Global Search field is displayed")]

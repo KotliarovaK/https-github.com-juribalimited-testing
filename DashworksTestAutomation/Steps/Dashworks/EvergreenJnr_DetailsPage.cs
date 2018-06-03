@@ -83,14 +83,24 @@ namespace DashworksTestAutomation.Steps.Dashworks
             Assert.IsTrue(detailsPage.ItemDetailsContainer.Displayed(), "Item content is not displayed");
         }
 
+        [Then(@"Details object page is displayed to the user")]
+        public void ThenDetailsObjectPageIsDisplayedToTheUser()
+        {
+            var detailsPage = _driver.NowAt<DetailsPage>();
+            _driver.WaitForDataLoading();
+            Assert.IsTrue(detailsPage.GroupIcon.Displayed());
+            Assert.IsTrue(detailsPage.ItemDetailsContainer.Displayed());
+        }
+
         [Then(@"Image item from ""(.*)"" column is displayed to the user")]
         public void ThenImageItemFromColumnIsDisplayedToTheUser(string columnName)
         {
+            _driver.WaitForDataLoading();
             var content = _driver.FindElements(By.XPath(DetailsPage.ColumnWithImageAndLinkSelector));
             foreach (var element in content)
             {
                 var image = element.FindElement(By.XPath(DetailsPage.ItemImageSelector));
-                Assert.IsTrue(image.Displayed(), "Image item is not found");
+                Assert.IsTrue(_driver.IsElementExists(image), "Image item is not found");
             }
         }
 

@@ -106,7 +106,7 @@ Scenario: EvergreenJnr_AdminPage_CheckThatWarningMessageIsDisplayedAfterDeleting
 	When User clicks Settings button in the list panel
 	Then Settings panel is displayed to the user
 	When User clicks Delete in the list panel
-	Then "list is used by 1 project(s), do you wish to proceed?" message is displayed in the lists panel
+	Then "list is used by 1 project, do you wish to proceed?" message is displayed in the lists panel
 	When User clicks Delete in the warning message on the list panel 
 	And User clicks Admin on the left-hand menu
 	Then Admin page should be displayed to the user
@@ -119,7 +119,7 @@ Scenario: EvergreenJnr_AdminPage_CheckThatWarningMessageIsDisplayedAfterDeleting
 	And Update Project button is disabled
 	And Delete "TestProject" Project in the Administration
 
-@Evergreen @Admin @EvergreenJnr_AdminPage @AdminPage @DAS11977 @DAS11959
+@Evergreen @Admin @EvergreenJnr_AdminPage @AdminPage @DAS11977 @DAS11959 @DAS12553 @DAS11744
 Scenario: EvergreenJnr_AdminPage_CheckThatAfterApplyingDoNotIncludeDeviceOwnersListHas0ItemsInTheUsersTab
 	When User clicks Admin on the left-hand menu
 	Then Admin page should be displayed to the user
@@ -132,6 +132,12 @@ Scenario: EvergreenJnr_AdminPage_CheckThatAfterApplyingDoNotIncludeDeviceOwnersL
 	When User clicks Create Project button
 	And User click "Projects" link on the Admin page
 	Then "Projects" page should be displayed to the user
+	When User selects all rows on the Projects page
+	When User clicks Actions button on the Projects page
+	When User clicks Delete Project button on the Projects page
+	Then Delete button is displayed to the User on the Projects page
+	When User cancels the selection of all rows on the Projects page
+	Then Delete button is not displayed to the User on the Projects page
 	When User clicks "TestProject1" Project name
 	Then Project "TestProject1" is displayed to user
 	When User select "Do not include device owners" checkbox on the Project details page
@@ -347,9 +353,9 @@ Scenario: EvergreenJnr_AdminPage_CheckThatMailboxesAreSuccessfullyAddedToBuckets
 	Then User clicks "Mailboxes" tab on the Buckets page
 	When User clicks Add Mailbox button on the Buckets page
 	Then User add following mailboxes to the Bucket
-	| MailboxName                 |
-	| aaron.w.burton@dwlabs.local |
-	| abel.y.hanson@dwlabs.local  |
+	| MailboxName                      |
+	| abraham.d.robertson@dwlabs.local |
+	| abraham.h.maxwell@dwlabs.local   |
 	And Success message is displayed and contains "The selected mailboxes have been added to the selected bucket" text on the Buckets page
 	And There are no errors in the browser console
 
@@ -396,9 +402,9 @@ Scenario: EvergreenJnr_AdminPage_CheckThatConsoleErrorsAreNotDisplayedAfterAddin
 	And User clicks content from "Bucket" column on the Buckets page
 	When User clicks Add Device button on the Buckets page
 	Then User add following devices to the Bucket
-	| DeviceName      |
-	| 02X387UQLFP3ISU |
-	| 34RRSBA00C0EYY  |
+	| DeviceName     |
+	| 01DRMO46G58SXK |
+	| XV20GW6HJRVE2R |
 	And Success message is displayed and contains "The selected devices have been added to the selected bucket" text on the Buckets page
 	And There are no errors in the browser console
 
@@ -426,12 +432,12 @@ Scenario: EvergreenJnr_AdminPage_CheckThatConsoleErrorsAreNotDisplayedAfterAddin
 	When User clicks Add User button on the Buckets page
 	Then User add following users to the Bucket
 	| UserName                          |
-	| US-E\ABW081519 (Darrin A. Arnold) |
-	| FR\IIN4276389 (Merci Daoust)      |
+	| UK\LBM661859 (Jenifer V. Allison) |
+	| UK\ANK462406 (Nakia D. Norton)    |
 	And Success message is displayed and contains "The selected users have been added to the selected bucket" text on the Buckets page
 	And There are no errors in the browser console
 
-@Evergreen @Admin @EvergreenJnr_AdminPage @AdminPage @DAS11697
+@Evergreen @Admin @EvergreenJnr_AdminPage @AdminPage @DAS11697 @Not_Run
 Scenario Outline: EvergreenJnr_AdminPage_CheckThatCancelButtonOnTheCreateProjectPageRedirectsToTheLastPage
 	When User clicks "<ListName>" on the left-hand menu
 	Then "<ListName>" list should be displayed to the user
@@ -446,7 +452,7 @@ Scenario Outline: EvergreenJnr_AdminPage_CheckThatCancelButtonOnTheCreateProject
 	| Users     |
 	| Mailboxes |
 
-@Evergreen @Admin @EvergreenJnr_AdminPage @AdminPage @DAS12162 @DAS12532
+@Evergreen @Admin @EvergreenJnr_AdminPage @AdminPage @DAS12162 @DAS12532 @Not_Run
 Scenario: EvergreenJnr_AdminPage_CheckThatConsoleErrorsAreNotDisplayedAfterNavigatingScopeChangesTab
 	When User clicks "Devices" on the left-hand menu
 	Then "Devices" list should be displayed to the user
@@ -465,7 +471,7 @@ Scenario: EvergreenJnr_AdminPage_CheckThatConsoleErrorsAreNotDisplayedAfterNavig
 	Then There are no errors in the browser console
 	And Delete "TestProject8" Project in the Administration
 
-@Evergreen @Admin @EvergreenJnr_AdminPage @AdminPage @DAS12189 @Delete_Newly_Created_List
+@Evergreen @Admin @EvergreenJnr_AdminPage @AdminPage @DAS12189 @DAS12523 @DAS12521 @Delete_Newly_Created_List @Not_Run
 Scenario: EvergreenJnr_AdminPage_CheckThatNoErrorsAreDisplayedInTheProjectScopeChangesSectionAfterUsingSavedDevicesList
 	When User clicks "Applications" on the left-hand menu
 	Then "Applications" list should be displayed to the user
@@ -502,3 +508,91 @@ Scenario: EvergreenJnr_AdminPage_CheckThatNoErrorsAreDisplayedInTheProjectScopeC
 	And User clicks "Applications" tab in the Project Scope Changes section
 	Then There are no errors in the browser console
 	And Delete "TestProject9" Project in the Administration
+
+@Evergreen @Admin @EvergreenJnr_AdminPage @AdminPage @DAS12375
+Scenario: EvergreenJnr_AdminPage_CheckThatPanelOfAvailableMemberslIsExpandedByDefault
+	When User clicks Admin on the left-hand menu
+	Then Admin page should be displayed to the user
+	When User click "Teams" link on the Admin page
+	Then "Teams" page should be displayed to the user
+	When User enters "K-Team" text in the Search field for "Team" column on the Teams page
+	And User clicks content from "Team" column on the Teams page
+	Then "K-Team" team details is displayed to the user
+	When User clicks Add Members button on the Teams page
+	Then Panel of available members is displayed to the user
+
+@Evergreen @Admin @EvergreenJnr_AdminPage @AdminPage @DAS12552
+Scenario: EvergreenJnr_AdminPage_CheckThatFiltersAreWorkingCorrectlyOnTheAdminPages
+	When User clicks Admin on the left-hand menu
+	Then Admin page should be displayed to the user
+	When User click "Teams" link on the Admin page
+	Then "Teams" page should be displayed to the user
+	When User enters "Migration phase 3 team" text in the Search field for "Team" column on the Teams page
+	Then "1" rows are displayed on the Teams page
+	When User enters ">=5" text in the Search field for "Project Buckets" column on the Teams page
+	Then "5" rows are displayed on the Teams page
+	When User enters "Administrative Team" text in the Search field for "Team" column on the Teams page
+	And User clicks content from "Team" column on the Teams page
+	When User enters "readonly" text in the Search field for "Username" column on the Teams page
+	Then "1" rows are displayed on the Teams page
+	And User clicks "Buckets" tab on the Teams page
+	When User enters "Cardiff --- Test text fill; Test text fill; ------" text in the Search field for "Bucket" column on the Teams page
+	Then "1" rows are displayed on the Teams page
+	When User enters "<10" text in the Search field for "Devices" column on the Teams page
+	Then "4" rows are displayed on the Teams page
+	When User clicks Admin on the left-hand menu
+	When User click "Buckets" link on the Admin page
+	When User enters "barry's" text in the Search field for "Bucket" column on the Buckets page
+	Then "2" rows are displayed on the Buckets page
+	When User enters "=17" text in the Search field for "Users" column on the Buckets page
+	Then "6" rows are displayed on the Buckets page
+	When User enters "Unassigned" text in the Search field for "Bucket" column on the Buckets page
+	And User clicks content from "Bucket" column on the Buckets page
+	When User enters "BG4H" text in the Search field for "Hostname" column on the Buckets page
+	Then "2" rows are displayed on the Buckets page
+	When User enters "Mac OS X 10.12.3" text in the Search field for "Operating System" column on the Buckets page
+	Then "1" rows are displayed on the Buckets page
+	And User clicks "Users" tab on the Buckets page
+	When User enters "Pinabel Cinq-Mars" text in the Search field for "Display Name" column on the Buckets page
+	Then "1" rows are displayed on the Buckets page
+	When User enters "1DFF" text in the Search field for "Username" column on the Buckets page
+	Then "3" rows are displayed on the Buckets page
+	And User clicks "Mailboxes" tab on the Buckets page
+	When User enters "DiscoverySearchMailbox{D919BA05-46A6-415f-80AD-7E09334BB852}@juriba1.onmicrosoft.com" text in the Search field for "Email Address (Primary)" column on the Buckets page
+	Then "1" rows are displayed on the Buckets page
+	When User enters "RD-EXCH2K3" text in the Search field for "Server Name" column on the Buckets page
+	Then "6" rows are displayed on the Buckets page
+
+@Evergreen @Admin @EvergreenJnr_AdminPage @AdminPage @DAS12236
+Scenario: EvergreenJnr_AdminPage_CheckThatNoConsoleErrorsAreDisplayedAfterUpdatingProjectScopeChanges
+	When User clicks Admin on the left-hand menu
+	Then Admin page should be displayed to the user
+	When User click "Projects" link on the Admin page
+	Then "Projects" page should be displayed to the user
+	When User clicks Create Project button
+	Then Create Project page should be displayed to the user
+	And User enters "TestProject10" in the Project Name field
+	And User select "All Devices" in the Scope Project dropdown
+	When User clicks Create Project button
+	And User click "Projects" link on the Admin page
+	Then "Projects" page should be displayed to the user
+	When User enters "TestProject10" text in the Search field for "Project" column on the Projects page
+	And User clicks content from "Project" column on the Buckets page
+	Then Project "TestProject10" is displayed to user
+	When User navigates to the "Application Scope" tab in the Scope section on the Project details page
+	And User clicks "Entitled to the device owner" checkbox on the Project details page
+	When User select "Scope Changes" tab on the Project details page
+	When User clicks "Applications" tab in the Project Scope Changes section
+	When User clicks "UPDATE APPLICATION CHANGES" button on the Projects page
+	When User clicks Make Changes button on the Projects page
+	Then Success message with "0 objects queued for onboarding, 0 objects offboarded" text is displayed on the Projects page
+	When User select "Scope Details" tab on the Project details page
+	When User navigates to the "Application Scope" tab in the Scope section on the Project details page
+	And User clicks "Entitled to the device owner" checkbox on the Project details page
+	When User select "Scope Changes" tab on the Project details page
+	When User clicks "Applications" tab in the Project Scope Changes section
+	When User clicks "UPDATE APPLICATION CHANGES" button on the Projects page
+	When User clicks Make Changes button on the Projects page
+	Then Success message with "0 objects queued for onboarding, 0 objects offboarded" text is displayed on the Projects page
+	Then There are no errors in the browser console
+	And Delete "TestProject10" Project in the Administration

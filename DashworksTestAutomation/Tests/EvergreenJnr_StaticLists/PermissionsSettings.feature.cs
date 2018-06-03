@@ -162,7 +162,6 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_StaticLists
         [NUnit.Framework.CategoryAttribute("DAS12152")]
         [NUnit.Framework.CategoryAttribute("DAS12602")]
         [NUnit.Framework.CategoryAttribute("Delete_Newly_Created_List")]
-        [NUnit.Framework.CategoryAttribute("Not_Run")]
         public virtual void EvergreenJnr_DevicesList_CheckThatAddRowsOptionsIsAvailableForSpecifiedPermissionLevel()
         {
             System.Exception lastException = null;
@@ -202,14 +201,19 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_StaticLists
                         "DAS10880",
                         "DAS12152",
                         "DAS12602",
-                        "Delete_Newly_Created_List",
-                        "Not_Run"});
+                        "Delete_Newly_Created_List"});
             this.ScenarioSetup(scenarioInfo);
             this.FeatureBackground();
             TechTalk.SpecFlow.Table table4 = new TechTalk.SpecFlow.Table(new string[] {
                         "ItemName"});
             table4.AddRow(new string[] {
-                        ""});
+                        "001BAQXT6JWFPI"});
+            table4.AddRow(new string[] {
+                        "00HA7MKAVVFDAV"});
+            table4.AddRow(new string[] {
+                        "2ML5YDWPRLFWW55"});
+            table4.AddRow(new string[] {
+                        "700ZHPQ6661CV1N"});
             testRunner.When("User create static list with \"OwnerPrivate\" name on \"Devices\" page with following" +
                     " items", ((string)(null)), table4, "When ");
             testRunner.When("User navigates to the \"All Devices\" list", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
@@ -217,7 +221,13 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_StaticLists
             TechTalk.SpecFlow.Table table5 = new TechTalk.SpecFlow.Table(new string[] {
                         "ItemName"});
             table5.AddRow(new string[] {
-                        ""});
+                        "ZZHYOLP1V7STML"});
+            table5.AddRow(new string[] {
+                        "VMI480Z5UKTLLK"});
+            table5.AddRow(new string[] {
+                        "6B512UPQFLSOVF"});
+            table5.AddRow(new string[] {
+                        "CLUSTERSSAS"});
             testRunner.When("User create static list with \"NotOwnerSpecifiedAdmin\" name on \"Devices\" page with" +
                     " following items", ((string)(null)), table5, "When ");
             testRunner.When("User clicks the List Details button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
@@ -234,7 +244,13 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_StaticLists
             TechTalk.SpecFlow.Table table6 = new TechTalk.SpecFlow.Table(new string[] {
                         "ItemName"});
             table6.AddRow(new string[] {
-                        ""});
+                        "OMHSV0SYAJ1DHH"});
+            table6.AddRow(new string[] {
+                        "KT9QOAK2V45HF7"});
+            table6.AddRow(new string[] {
+                        "CAJ7AN9LAW3QEP"});
+            table6.AddRow(new string[] {
+                        "OMHSV0SYAJ1DHH"});
             testRunner.When("User create static list with \"NotOwnerSpecifiedEdit\" name on \"Devices\" page with " +
                     "following items", ((string)(null)), table6, "When ");
             testRunner.When("User clicks the List Details button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
@@ -251,7 +267,13 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_StaticLists
             TechTalk.SpecFlow.Table table7 = new TechTalk.SpecFlow.Table(new string[] {
                         "ItemName"});
             table7.AddRow(new string[] {
-                        ""});
+                        "U3IKRXYYY4YE0V"});
+            table7.AddRow(new string[] {
+                        "EKGSN1N0X9UKRY"});
+            table7.AddRow(new string[] {
+                        "EKGSN1N0X9UKRY"});
+            table7.AddRow(new string[] {
+                        "W10ASSDUNCAN"});
             testRunner.When("User create static list with \"NotOwnerSpecifiedRead\" name on \"Devices\" page with " +
                     "following items", ((string)(null)), table7, "When ");
             testRunner.When("User clicks the List Details button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
@@ -268,7 +290,13 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_StaticLists
             TechTalk.SpecFlow.Table table8 = new TechTalk.SpecFlow.Table(new string[] {
                         "ItemName"});
             table8.AddRow(new string[] {
-                        ""});
+                        "TVGU1Y24UU9QBQ"});
+            table8.AddRow(new string[] {
+                        "O0DOUNEKCY7HXK"});
+            table8.AddRow(new string[] {
+                        "5PH0YQ5TNBLFZBM"});
+            table8.AddRow(new string[] {
+                        "SANOFI2-POC"});
             testRunner.When("User create static list with \"NotOwnerEveryoneCanEdit\" name on \"Devices\" page wit" +
                     "h following items", ((string)(null)), table8, "When ");
             testRunner.When("User clicks the List Details button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
@@ -281,7 +309,13 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_StaticLists
             TechTalk.SpecFlow.Table table9 = new TechTalk.SpecFlow.Table(new string[] {
                         "ItemName"});
             table9.AddRow(new string[] {
-                        ""});
+                        "9K9Y2LGOD3Z1KW"});
+            table9.AddRow(new string[] {
+                        "HW9RNYX1SNE3BN"});
+            table9.AddRow(new string[] {
+                        "CAS"});
+            table9.AddRow(new string[] {
+                        "WIN8RETAILPRO"});
             testRunner.When("User create static list with \"NotOwnerEveryoneCanSee\" name on \"Devices\" page with" +
                     " following items", ((string)(null)), table9, "When ");
             testRunner.When("User clicks the List Details button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
