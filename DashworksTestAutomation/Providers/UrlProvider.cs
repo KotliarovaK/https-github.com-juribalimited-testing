@@ -4,9 +4,11 @@ namespace DashworksTestAutomation.Providers
 {
     internal class UrlProvider
     {
-        public static string Url => ConfigurationManager.AppSettings["appURL"];
+        private static readonly string BaseUrl = ConfigurationManager.AppSettings["appURL"];
+
+        public static string Url => $"{BaseUrl}/";
         public static string BackupUrl => ConfigurationManager.AppSettings["backupAppURL"];
-        public static string RestClientBaseUrl => ConfigurationManager.AppSettings["restClientBaseUrl"];
-        public static string EvergreenUrl => ConfigurationManager.AppSettings["appURLEvergreen"];
+        public static string RestClientBaseUrl => $"{BaseUrl}:{ConfigurationManager.AppSettings["restClientBaseUrlPort"]}/";
+        public static string EvergreenUrl => $"{BaseUrl}/{ConfigurationManager.AppSettings["appURLEvergreen"]}/";
     }
 }
