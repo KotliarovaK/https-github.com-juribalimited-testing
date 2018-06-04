@@ -305,12 +305,13 @@ Scenario: EvergreenJnr_MailboxesLists_CheckThatLinksAndImageItemAreDisplayedInTh
 	When User clicks "Mailboxes" on the left-hand menu
 	Then "Mailboxes" list should be displayed to the user
 	When User perform search by "00C8BC63E7424A6E862@bclabs.local"
-	When User click content from "Email Address" column
+	And User click content from "Email Address" column
 	And User navigates to the "Users" tab
 	Then User closes "Users" section on the Details Page
 	When User opens "Mailbox Permissions" section on the Details Page
 	Then Image item from "Name" column is displayed to the user
-	Then Links from "Name" column is displayed to the user
+	Then Links from "Name" column is displayed to the user on the Details Page
+	And Links from "Display Name" column is displayed to the user on the Details Page
 
 @Evergreen @AllLists @EvergreenJnr_ItemDetails @ItemDetailsDisplay @DAS11983 @DAS11926
 Scenario Outline: EvergreenJnr_AllLists_CheckThatRowsInTheTableAreEmptyIfTheDataIsUnknown

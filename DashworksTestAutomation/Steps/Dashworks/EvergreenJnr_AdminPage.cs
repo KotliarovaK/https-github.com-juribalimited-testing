@@ -852,7 +852,7 @@ namespace DashworksTestAutomation.Steps.Dashworks
         public void ThenSuccessMessageWithTextIsDisplayedOnTheProjectsPage(string textMessage)
         {
             var projectElement = _driver.NowAt<ProjectsPage>();
-            _driver.WaitWhileControlIsNotDisplayed<ProjectsPage>(() => projectElement.SuccessDeletingMessage);
+            _driver.WaitWhileControlIsNotDisplayed<ProjectsPage>(() => projectElement.SuccessMessage);
             Assert.IsTrue(projectElement.SuccessTextMessage(textMessage),
                 $"{textMessage} is not displayed on the Project page");
         }
