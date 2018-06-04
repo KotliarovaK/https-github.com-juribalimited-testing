@@ -8,6 +8,7 @@ using DashworksTestAutomation.Extensions;
 using DashworksTestAutomation.Pages.Evergreen;
 using DashworksTestAutomation.Providers;
 using DashworksTestAutomation.Utils;
+using Microsoft.VisualStudio.TestTools.UnitTesting;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Linq;
 using OpenQA.Selenium.Remote;
@@ -63,9 +64,12 @@ namespace DashworksTestAutomation.Steps.API
 
             //_driver.Navigate().Refresh();
             _driver.Navigate().GoToUrl(url);
+            _driver.WaitForDataLoading();
 
             //Add created list to context
             _listsDetails.AddList(listName, listId);
+            var list = _driver.NowAt<BaseDashboardPage>();
+            _driver.WaitWhileControlIsNotDisplayed<BaseDashboardPage>(() => list.ActiveCustomList); ;
         }
 
         [When(@"User create static list with ""(.*)"" name on ""(.*)"" page with following items")]
@@ -164,10 +168,11 @@ namespace DashworksTestAutomation.Steps.API
 
             _driver.Navigate().Refresh();
             _driver.Navigate().GoToUrl(url);
-            _driver.WaitForDataLoading();
-
+            
             //Add created list to context
             _listsDetails.AddList(listName, listId);
+            var list = _driver.NowAt<BaseDashboardPage>();
+            _driver.WaitWhileControlIsNotDisplayed<BaseDashboardPage>(() => list.ActiveCustomList); ;
         }
 
         [Then(@"User remove list with ""(.*)"" name on ""(.*)"" page")]

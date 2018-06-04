@@ -29,6 +29,13 @@ namespace DashworksTestAutomation.Steps.Dashworks
             Logger.Write("Actions panel is visible");
         }
 
+        [Then(@"Actions panel is not displayed to the user")]
+        public void ThenActionsPanelIsNotDisplayedToTheUser()
+        {
+            var button = _driver.NowAt<BaseDashboardPage>();
+            Assert.IsTrue(button.InactiveActionsButton.Displayed(), "Actions panel was displayed");
+        }
+
         [Then(@"Actions message container is displayed to the user")]
         public void ThenActionsMessageContainerIsDisplayedToTheUser()
         {
@@ -44,6 +51,14 @@ namespace DashworksTestAutomation.Steps.Dashworks
         {
             var dashboardPage = _driver.NowAt<BaseDashboardPage>();
             dashboardPage.SelectAllCheckbox.Click();
+        }
+
+        [Then(@"Checkboxes are not displayed")]
+        public void ThenCheckboxesAreNotDisplayed()
+        {
+            var dashboardPage = _driver.NowAt<BaseDashboardPage>();
+            Assert.IsFalse(dashboardPage.Checkbox.Displayed());
+            Assert.IsFalse(dashboardPage.SelectAllCheckbox.Displayed());
         }
 
         [When(@"User select ""(.*)"" rows in the grid")]
@@ -122,6 +137,20 @@ namespace DashworksTestAutomation.Steps.Dashworks
         {
             var dashboardPage = _driver.NowAt<BaseDashboardPage>();
             Assert.IsFalse(dashboardPage.SelectAllCheckbox.Displayed(), "Select All checkbox is displayed");
+        }
+
+        [When(@"User types ""(.*)"" static list name")]
+        public void WhenUserTypesStaticListName(string listName)
+        {
+            var listElement = _driver.NowAt<ActionsElement>();
+            listElement.ListNameTextbox.SendKeys(listName);
+        }
+
+        [When(@"User clicks Cancel button on the Actions panel")]
+        public void WhenUserClicksCancelButtonOnTheActionsPanel()
+        {
+            var listElement = _driver.NowAt<ActionsElement>();
+            listElement.CancelButton.Click();
         }
 
         [When(@"User create static list with ""(.*)"" name")]
