@@ -36,6 +36,7 @@ Scenario: EvergreenJnr_DevicesList_CheckThatAddRowsOptionsIsAvailableForSpecifie
 	| 00HA7MKAVVFDAV  |
 	| 2ML5YDWPRLFWW55 |
 	| 700ZHPQ6661CV1N |
+	Then "OwnerPrivate" list is displayed to user
 	When User navigates to the "All Devices" list
 	Then "Devices" list should be displayed to the user
 	When User create static list with "NotOwnerSpecifiedAdmin" name on "Devices" page with following items
@@ -44,6 +45,7 @@ Scenario: EvergreenJnr_DevicesList_CheckThatAddRowsOptionsIsAvailableForSpecifie
 	| VMI480Z5UKTLLK |
 	| 6B512UPQFLSOVF |
 	| CLUSTERSSAS    |
+	Then "NotOwnerSpecifiedAdmin" list is displayed to user
 	When User clicks the List Details button
 	Then List details panel is displayed to the user
 	When User select "Specific users" sharing option
@@ -61,6 +63,7 @@ Scenario: EvergreenJnr_DevicesList_CheckThatAddRowsOptionsIsAvailableForSpecifie
 	| KT9QOAK2V45HF7 |
 	| CAJ7AN9LAW3QEP |
 	| OMHSV0SYAJ1DHH |
+	Then "NotOwnerSpecifiedEdit" list is displayed to user
 	When User clicks the List Details button
 	Then List details panel is displayed to the user
 	When User select "Specific users" sharing option
@@ -78,6 +81,7 @@ Scenario: EvergreenJnr_DevicesList_CheckThatAddRowsOptionsIsAvailableForSpecifie
 	| EKGSN1N0X9UKRY |
 	| EKGSN1N0X9UKRY |
 	| W10ASSDUNCAN   |
+	Then "NotOwnerSpecifiedRead" list is displayed to user
 	When User clicks the List Details button
 	Then List details panel is displayed to the user
 	When User select "Specific users" sharing option
@@ -95,6 +99,7 @@ Scenario: EvergreenJnr_DevicesList_CheckThatAddRowsOptionsIsAvailableForSpecifie
 	| O0DOUNEKCY7HXK  |
 	| 5PH0YQ5TNBLFZBM |
 	| SANOFI2-POC     |
+	Then "NotOwnerEveryoneCanEdit" list is displayed to user
 	When User clicks the List Details button
 	Then List details panel is displayed to the user
 	When User select "Everyone can edit" sharing option
@@ -108,6 +113,7 @@ Scenario: EvergreenJnr_DevicesList_CheckThatAddRowsOptionsIsAvailableForSpecifie
 	| HW9RNYX1SNE3BN |
 	| CAS            |
 	| WIN8RETAILPRO  |
+	Then "NotOwnerEveryoneCanSee" list is displayed to user
 	When User clicks the List Details button
 	Then List details panel is displayed to the user
 	When User select "Everyone can see" sharing option

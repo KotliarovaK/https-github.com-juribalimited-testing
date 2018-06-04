@@ -64,7 +64,7 @@ namespace DashworksTestAutomation.Pages.Evergreen.AdminDetailsPages
         [FindsBy(How = How.XPath, Using = ".//button[@class='messageAction btn mat-button ng-star-inserted']")]
         public IWebElement DeleteButtonInWarningMessage { get; set; }
 
-        [FindsBy(How = How.XPath, Using = ".//div[@class='ng-star-inserted inline-success']")]
+        [FindsBy(How = How.XPath, Using = ".//div[@class='inline-success ng-star-inserted']")]
         public IWebElement SuccessMessage { get; set; }
 
         [FindsBy(How = How.XPath, Using = ".//input[@aria-checked='false']")]
