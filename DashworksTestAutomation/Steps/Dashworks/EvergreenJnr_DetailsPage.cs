@@ -107,12 +107,16 @@ namespace DashworksTestAutomation.Steps.Dashworks
         [Then(@"Links from ""(.*)"" column is displayed to the user")]
         public void ThenLinksFromColumnIsDisplayedToTheUser(string columnName)
         {
-            var content = _driver.FindElements(By.XPath(DetailsPage.ColumnWithImageAndLinkSelector));
-            foreach (var element in content)
-            {
-                var text = element.FindElement(By.XPath(DetailsPage.LinkSelector));
-                Assert.IsTrue(text.GetAttribute("href") != string.Empty);
-            }
+            var content = _driver.NowAt<DetailsPage>();
+            var link = content.GetContentByColumnName(columnName);
+            Assert.IsTrue(link.GetAttribute("href") != string.Empty);
+            //var content = _driver.FindElements(By.XPath(DetailsPage.ColumnWithImageAndLinkSelector));
+
+            //foreach (var element in content)
+            //{
+            //    var text = element.FindElement(By.XPath(DetailsPage.LinkSelector));
+            //    Assert.IsTrue(text.GetAttribute("href") != string.Empty);
+            //}
         }
 
         [Then(@"expanded section is displayed to the User")]

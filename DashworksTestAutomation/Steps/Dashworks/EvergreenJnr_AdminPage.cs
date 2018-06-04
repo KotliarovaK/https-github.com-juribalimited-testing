@@ -825,6 +825,7 @@ namespace DashworksTestAutomation.Steps.Dashworks
         {
             var projectElement = _driver.NowAt<ProjectsPage>();
             projectElement.ActionsButton.Click();
+            _driver.WaitForDataLoading();
             projectElement.DeleteProjectButtonInActions.Click();
             projectElement.DeleteButtonOnPage.Click();
             _driver.WaitWhileControlIsNotDisplayed<ProjectsPage>(() => projectElement.DeleteWarningMessage);
@@ -851,7 +852,7 @@ namespace DashworksTestAutomation.Steps.Dashworks
         public void ThenSuccessMessageWithTextIsDisplayedOnTheProjectsPage(string textMessage)
         {
             var projectElement = _driver.NowAt<ProjectsPage>();
-            _driver.WaitWhileControlIsNotDisplayed<ProjectsPage>(() => projectElement.SuccessMessage);
+            _driver.WaitWhileControlIsNotDisplayed<ProjectsPage>(() => projectElement.SuccessDeletingMessage);
             Assert.IsTrue(projectElement.SuccessTextMessage(textMessage),
                 $"{textMessage} is not displayed on the Project page");
         }

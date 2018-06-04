@@ -107,7 +107,7 @@ namespace DashworksTestAutomation.Steps.Dashworks
         public void ThenEmptyLinkIsDisplayedForFirstRowInTheColumn(string columnName)
         {
             var page = _driver.NowAt<BaseDashboardPage>();
-            page.GetContentByColumnName(columnName).GetAttribute("href");
+            page.GetHrefByColumnName(columnName);
             Assert.AreEqual("Empty", page.GetColumnContent(columnName).First());
         }
 
