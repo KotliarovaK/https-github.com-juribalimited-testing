@@ -8,7 +8,7 @@ namespace DashworksTestAutomation.Pages.Projects
 {
     internal class SelfService_ComputerOwnershipPage : BaseDashboardPage
     {
-        [FindsBy(How = How.XPath, Using = ".//input[contains(@id, 'computerOwnershipShowScreen')]")]
+        [FindsBy(How = How.XPath, Using = ".//input[contains(@id, 'OwnershipShowScreen')]")]
         public IWebElement ShowScreen { get; set; }
 
         [FindsBy(How = How.XPath, Using = ".//select[contains(@id, 'ShowComputerNameFromHTTPHeader')]")]
@@ -49,14 +49,14 @@ namespace DashworksTestAutomation.Pages.Projects
             return new List<By>
             {
                 SelectorFor(this, p => p.ShowScreen),
-                SelectorFor(this, p => p.ShowComputerName),
-                SelectorFor(this, p => p.ShowComputers),
+                //SelectorFor(this, p => p.ShowComputerName),
+                //SelectorFor(this, p => p.ShowComputers),
                 SelectorFor(this, p => p.ShowCategory),
                 SelectorFor(this, p => p.AllowUsersToSearch),
-                SelectorFor(this, p => p.AllowUsersToSetPrimary),
+                //SelectorFor(this, p => p.AllowUsersToSetPrimary),
                 SelectorFor(this, p => p.AllowUsersToAddANote),
-                SelectorFor(this, p => p.LimitMaximum),
-                SelectorFor(this, p => p.LimitMinimum),
+                //SelectorFor(this, p => p.LimitMaximum),
+                //SelectorFor(this, p => p.LimitMinimum),
                 SelectorFor(this, p => p.LongName),
                 SelectorFor(this, p => p.ShortName),
                 SelectorFor(this, p => p.PageDescription),

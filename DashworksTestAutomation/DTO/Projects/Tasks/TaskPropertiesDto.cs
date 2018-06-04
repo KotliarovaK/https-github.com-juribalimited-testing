@@ -40,7 +40,8 @@ namespace DashworksTestAutomation.DTO.Projects
     {
         User,
         Computer,
-        Application
+        Application,
+        Mailbox
     }
 
     public enum TaskValuesTemplateEnum

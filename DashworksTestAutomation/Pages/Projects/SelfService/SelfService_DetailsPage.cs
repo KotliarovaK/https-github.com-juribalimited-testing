@@ -7,7 +7,7 @@ namespace DashworksTestAutomation.Pages.Projects
 {
     internal class SelfService_DetailsPage : BaseDashboardPage
     {
-        [FindsBy(How = How.XPath, Using = ".//input[contains(@id,'EnableSelfService')]")]
+        [FindsBy(How = How.XPath, Using = ".//input[contains(@id, 'EnableSelfService')]")]
         public IWebElement EnableSelfServicePortal { get; set; }
 
         [FindsBy(How = How.XPath, Using = ".//input[contains(@id, 'AllowAnonymousUsers')]")]

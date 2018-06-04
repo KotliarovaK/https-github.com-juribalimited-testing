@@ -44,7 +44,7 @@ Scenario: Projects_CreateMailboxScheduledProject
 	Then Project Name is displayed correctly
 	When User updates the Details page
 	| ShowOriginalColumn | IncludeSiteName | NotApplicableApplications | InstalledApplications | EntitledApplications | TaskEmailCcEmailAddress | TaskEmailBccEmailAddress | StartDate  | EndDate     |
-	| true               | true            | true                      | true                  | true                 | Test@test.com           | Test@test.com            | 8 May 2012 | 10 Apr 2018 |
+	| true               | true            | true                      | true                  | true                 |  Test@test.com           | Test@test.com            | 8 May 2012 | 10 Apr 2018 |
 	Then Success message is displayed with "Project was successfully updated" text
 	When User navigate to "Request Types" tab
 	Then "Manage Request Types" page is displayed to the user
@@ -282,6 +282,8 @@ Scenario: Projects_CreateMailboxScheduledProject
 	| Title                   | Text     |
 	| MailboxScheduledProject | TestText |
 	Then Success message is displayed with "Project news was successfully updated." text
+	When User navigate to "Self Service" tab
+	Then "Manage Self Service" page is displayed to the user
 	Then User updates the Details page on Self Service tab
 	| EnableSelfServicePortal | AllowAnonymousUsers | ThisProjectDefault | ModeUser | ModeComputer | NoLink | DashworksProjectHomepage | CustomUrl | CustomUrlTextFiald |
 	| false                   | false               | true               | true     | false        | true   | false                    | false     | http://Test        |

@@ -110,8 +110,6 @@ namespace DashworksTestAutomation.Steps.Projects
             page.ProjectDescription.SendKeys(_projectDto.ProjectDescription);
             page.ProjectType.SelectboxSelect(_projectDto.ProjectType.GetValue());
             page.DefaultLanguage.SelectboxSelect(_projectDto.DefaultLanguage.GetValue());
-
-            _detailsDto.Project = _projectDto;
         }
 
         [When(@"User updates the Details page")]
@@ -120,6 +118,16 @@ namespace DashworksTestAutomation.Steps.Projects
             var page = _driver.NowAt<DetailsPage>();
 
             table.CreateInstance<DetailsDto>().CopyPropertiesTo(_detailsDto);
+
+            if (_projectDto.ProjectType.Equals(ProjectTypeEnum.ComputerScheduledProject))
+                _detailsDto.OnboardUsedApplicationsByAssociationTo = OnboardUsedApplicationsByAssociationToEnum.Computer;
+
+            if (_projectDto.ProjectType.Equals(ProjectTypeEnum.MailboxScheduledProject))
+                _detailsDto.OnboardUsedApplicationsByAssociationTo = OnboardUsedApplicationsByAssociationToEnum.User;
+
+            if (_projectDto.ProjectType.Equals(ProjectTypeEnum.UserScheduledProject))
+                _detailsDto.OnboardUsedApplicationsByAssociationTo = OnboardUsedApplicationsByAssociationToEnum.Computer;
+
 
             page.SelectOnboardedApplications(_detailsDto.DefaultReadinessForOnboardedApplications);
             page.ShowLinkedObjects.SelectboxSelect(_detailsDto.DefaultValueForShowLinkedObjects.GetValue());
@@ -137,9 +145,7 @@ namespace DashworksTestAutomation.Steps.Projects
             page.StartDate.SendKeys(_detailsDto.StartDate);
             page.EndDate.SendKeys(_detailsDto.EndDate);
             if (_projectDto.ProjectType.Equals(ProjectTypeEnum.MailboxScheduledProject))
-            {
                 page.PermissionCategoryExists.SelectboxSelect(_detailsDto.OnboardMailboxUsersWithPermissions.GetValue());
-            }
 
             var upd = _driver.NowAt<BaseElements>();
             upd.UpdateButton.Click();

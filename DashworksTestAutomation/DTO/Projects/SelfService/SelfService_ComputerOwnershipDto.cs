@@ -19,18 +19,12 @@ namespace DashworksTestAutomation.DTO.Projects
         public string LongName { get; set; }
         public string ShortName { get; set; }
         public string PageDescription { get; set; }
-        //TODO Request Types for Computer Search
-        //TODO Categories for Computer Search
-        //TODO Additional Tasks
         public ProjectDto Project { get; set; }
 
 
         public SelfService_ComputerOwnershipDto()
         {
-            if (!Project.ProjectType.Equals(ProjectTypeEnum.MailboxScheduledProject))
-            {
-                ShowComputerName = EnumExtensions.GetRandomValue<ComputerNameEnum>();
-            }
+            ShowComputerName = EnumExtensions.GetRandomValue<ComputerNameEnum>();
         }
     }
 

@@ -16,22 +16,6 @@ namespace DashworksTestAutomation.DTO.Projects
         public string ShortName { get; set; }
         public string PageDescription { get; set; }
         public ProjectDto Project { get; set; }
-
-        public SelfService_AppsListDto()
-        {
-            if (Project.ProjectType.Equals(ProjectTypeEnum.ComputerScheduledProject))
-            {
-                View = ViewEnum.ComparisonConsolidated;
-            }
-            if (Project.ProjectType.Equals(ProjectTypeEnum.MailboxScheduledProject))
-            {
-                View = ViewEnum.TargetState;
-            }
-            if (Project.ProjectType.Equals(ProjectTypeEnum.UserScheduledProject))
-            {
-                View = ViewEnum.ComparisonConsolidated;
-            }
-        }
     }
 
     public enum ViewEnum

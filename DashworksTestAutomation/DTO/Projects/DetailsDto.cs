@@ -22,7 +22,6 @@ namespace DashworksTestAutomation.DTO.Projects
         public string StartDate { get; set; }
         public string EndDate { get; set; }
         public OnboardMailboxUsersWithPermissionsEnum OnboardMailboxUsersWithPermissions;
-        public ProjectDto Project { get; set; }
 
         public DetailsDto()
         {
@@ -35,20 +34,6 @@ namespace DashworksTestAutomation.DTO.Projects
                 EnumExtensions.GetRandomValue<DefaultViewForProjectObjectApplicationsTab2Enum>();
             DefaultValueForApplicationRationalization =
                 EnumExtensions.GetRandomValue<DefaultValueForApplicationRationalizationEnum>();
-            if (Project.ProjectType.Equals(ProjectTypeEnum.ComputerScheduledProject))
-            {
-                OnboardUsedApplicationsByAssociationTo = OnboardUsedApplicationsByAssociationToEnum.Computer;
-            }
-            if (Project.ProjectType.Equals(ProjectTypeEnum.MailboxScheduledProject))
-            {
-                OnboardUsedApplicationsByAssociationTo = OnboardUsedApplicationsByAssociationToEnum.User;
-                OnboardMailboxUsersWithPermissions =
-                    EnumExtensions.GetRandomValue<OnboardMailboxUsersWithPermissionsEnum>();
-            }
-            if (Project.ProjectType.Equals(ProjectTypeEnum.UserScheduledProject))
-            {
-                OnboardUsedApplicationsByAssociationTo = EnumExtensions.GetRandomValue<OnboardUsedApplicationsByAssociationToEnum>();
-            }
         }
     }
 
@@ -103,8 +88,8 @@ namespace DashworksTestAutomation.DTO.Projects
 
     public enum OnboardUsedApplicationsByAssociationToEnum
     {
-        Computer,
         User,
+        Computer,
         [Description("Do not onboard")]
         DoNotOnboard
     }

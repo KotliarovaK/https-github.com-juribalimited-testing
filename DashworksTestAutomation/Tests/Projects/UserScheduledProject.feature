@@ -43,7 +43,7 @@ Scenario: Projects_CreateUserScheduledProject
 	Then "Manage Project Details" page is displayed to the user
 	Then Project Name is displayed correctly
 	When User updates the Details page
-	| ShowOriginalColumn | IncludeSiteName | NotApplicableApplications | InstalledApplications | EntitledApplications | TaskEmailCcEmailAddress | TaskEmailBccEmailAddress | StartDate  | EndDate     |
+	| ShowOriginalColumn | IncludeSiteName | NotApplicableApplications | InstalledApplications | EntitledApplications |TaskEmailCcEmailAddress | TaskEmailBccEmailAddress | StartDate  | EndDate     |
 	| true               | true            | true                      | true                  | true                 | Test@test.com           | Test@test.com            | 8 May 2012 | 10 Apr 2018 |
 	Then Success message is displayed with "Project was successfully updated" text
 	When User navigate to "Request Types" tab

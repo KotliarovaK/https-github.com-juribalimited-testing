@@ -593,6 +593,8 @@ namespace DashworksTestAutomation.Tests.Projects
                         "TestText"});
             testRunner.When("User updating News page", ((string)(null)), table37, "When ");
             testRunner.Then("Success message is displayed with \"Project news was successfully updated.\" text", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+            testRunner.When("User navigate to \"Self Service\" tab", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+            testRunner.Then("\"Manage Self Service\" page is displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
             TechTalk.SpecFlow.Table table38 = new TechTalk.SpecFlow.Table(new string[] {
                         "EnableSelfServicePortal",
                         "AllowAnonymousUsers",
