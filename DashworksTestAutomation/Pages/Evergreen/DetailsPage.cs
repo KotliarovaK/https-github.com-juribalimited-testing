@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using System.Linq;
 using DashworksTestAutomation.Base;
 using DashworksTestAutomation.Extensions;
@@ -129,6 +130,31 @@ namespace DashworksTestAutomation.Pages.Evergreen
             var allFieldsContent = Driver.FindElements(By.XPath(".//tbody/tr/td[2]"));
 
             foreach (IWebElement element in allFieldsContent) Assert.IsFalse(string.IsNullOrEmpty(element.Text));
+        }
+
+        public int GetColumnNumberByName(string columnName)
+        {
+            var allHeadersSelector = By.XPath(".//div[@class='ag-header-container']/div/div");
+            Driver.WaitForDataLoading();
+            Driver.WaitWhileControlIsNotDisplayed(allHeadersSelector);
+            var allHeaders = Driver.FindElements(allHeadersSelector);
+            if (!allHeaders.Any())
+                throw new Exception("Table does not contains any columns");
+            var columnNumber =
+                allHeaders.IndexOf(allHeaders.First(x =>
+                    x.FindElement(By.XPath(".//span[@class='ag-header-cell-text']")).Text.Equals(columnName))) + 1;
+
+            return columnNumber;
+        }
+
+        public IWebElement GetContentByColumnName(string columnName)
+        {
+            By byControl =
+                By.XPath($".//div[@class='ag-body-container']/div[1]/div[{GetColumnNumberByName(columnName)}]");
+
+            Driver.WaitForDataLoading();
+            Driver.WaitWhileControlIsNotDisplayed(byControl);
+            return Driver.FindElement(byControl);
         }
 
         public bool IsFieldPresent(string fieldName)

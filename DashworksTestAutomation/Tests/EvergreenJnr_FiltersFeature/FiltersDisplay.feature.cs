@@ -1157,11 +1157,11 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_FiltersFeature
         [NUnit.Framework.CategoryAttribute("DAS10696")]
         [NUnit.Framework.CategoryAttribute("DAS12114")]
         [NUnit.Framework.TestCaseAttribute("Equals", "8 Mar 2016", "3", "is", new string[0])]
+        [NUnit.Framework.TestCaseAttribute("Empty", "", "6", "is empty", new string[0])]
+        [NUnit.Framework.TestCaseAttribute("Not empty", "", "14,778", "is not empty", new string[0])]
         [NUnit.Framework.TestCaseAttribute("Does not equal", "8 Mar 2016", "14,781", "is not", new string[0])]
         [NUnit.Framework.TestCaseAttribute("Before", "8 Mar 2016", "4,699", "is before", new string[0])]
         [NUnit.Framework.TestCaseAttribute("After", "8 Mar 2016", "10,076", "is after", new string[0])]
-        [NUnit.Framework.TestCaseAttribute("Empty", "", "6", "is empty", new string[0])]
-        [NUnit.Framework.TestCaseAttribute("Not empty", "", "14,778", "is not empty", new string[0])]
         public virtual void EvergreenJnr_MailboxesList_CheckThatFilterOperatorsIsCorrectInFilterInfo(string operatorValue, string filterOption, string rowsCount, string operatorValueInInfo, string[] exampleTags)
         {
             System.Exception lastException = null;

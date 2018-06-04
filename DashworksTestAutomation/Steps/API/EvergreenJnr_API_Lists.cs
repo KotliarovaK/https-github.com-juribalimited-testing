@@ -69,7 +69,17 @@ namespace DashworksTestAutomation.Steps.API
             //Add created list to context
             _listsDetails.AddList(listName, listId);
             var list = _driver.NowAt<BaseDashboardPage>();
-            _driver.WaitWhileControlIsNotDisplayed<BaseDashboardPage>(() => list.ActiveCustomList); ;
+            list.GetListElementByName(listName).Click();
+            _driver.WaitWhileControlIsNotDisplayed<BaseDashboardPage>(() => list.ActiveCustomList);
+            try
+            {
+                Assert.IsTrue(list.ActiveCustomList.Displayed());
+            }
+            catch (Exception)
+            {
+                list.GetListElementByName(listName).Click();
+                Assert.IsTrue(list.ActiveCustomList.Displayed());
+            }
         }
 
         [When(@"User create static list with ""(.*)"" name on ""(.*)"" page with following items")]
@@ -172,7 +182,17 @@ namespace DashworksTestAutomation.Steps.API
             //Add created list to context
             _listsDetails.AddList(listName, listId);
             var list = _driver.NowAt<BaseDashboardPage>();
-            _driver.WaitWhileControlIsNotDisplayed<BaseDashboardPage>(() => list.ActiveCustomList); ;
+            list.GetListElementByName(listName).Click();
+            _driver.WaitWhileControlIsNotDisplayed<BaseDashboardPage>(() => list.ActiveCustomList);
+            try
+            {
+                Assert.IsTrue(list.ActiveCustomList.Displayed());
+            }
+            catch (Exception)
+            {
+                list.GetListElementByName(listName).Click();
+                Assert.IsTrue(list.ActiveCustomList.Displayed());
+            }
         }
 
         [Then(@"User remove list with ""(.*)"" name on ""(.*)"" page")]
