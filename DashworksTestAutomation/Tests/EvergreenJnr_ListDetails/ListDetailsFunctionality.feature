@@ -476,7 +476,8 @@ Scenario: EvergreenJnr_AllLists_CheckDisplayingListDeletionWarningMessageForDepe
 	| Microsoft SDK Update February 2003 (5.2.3790.0) |
 	| Quartus II Programmer 4.0                       |
 	| Mindreef SOAPscope 4.0                          |
-	And User clicks "Devices" on the left-hand menu
+	Then "Application3" list is displayed to user
+	When User clicks "Devices" on the left-hand menu
 	Then "Devices" list should be displayed to the user
 	When User clicks the Filters button
 	Then Filters panel is displayed to the user
@@ -484,7 +485,8 @@ Scenario: EvergreenJnr_AllLists_CheckDisplayingListDeletionWarningMessageForDepe
 	| SelectedList | Association    |
 	| Application3 | Used on device |
 	And User create dynamic list with "Devices3" name on "Devices" page
-	And User navigates to the "All Devices" list
+	Then "Devices3" list is displayed to user
+	When User navigates to the "All Devices" list
 	Then "Devices" list should be displayed to the user
 	When User clicks the Filters button
 	Then Filters panel is displayed to the user
@@ -492,7 +494,8 @@ Scenario: EvergreenJnr_AllLists_CheckDisplayingListDeletionWarningMessageForDepe
 	| SelectedList | Association        |
 	| Application3 | Entitled to device |
 	And User create dynamic list with "Devices4" name on "Devices" page
-	And User clicks "Applications" on the left-hand menu
+	Then "Devices4" list is displayed to user
+	When User clicks "Applications" on the left-hand menu
 	Then "Applications" list should be displayed to the user
 	When User navigates to the "Application3" list
 	Then "Application3" list is displayed to user

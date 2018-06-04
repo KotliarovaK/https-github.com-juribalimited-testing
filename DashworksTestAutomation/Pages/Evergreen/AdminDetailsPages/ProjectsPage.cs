@@ -64,11 +64,17 @@ namespace DashworksTestAutomation.Pages.Evergreen.AdminDetailsPages
         [FindsBy(How = How.XPath, Using = ".//button[@class='messageAction btn mat-button ng-star-inserted']")]
         public IWebElement DeleteButtonInWarningMessage { get; set; }
 
+        [FindsBy(How = How.XPath, Using = ".//div[@class='ng-star-inserted inline-success']")]
+        public IWebElement SuccessMessage { get; set; }
+
         [FindsBy(How = How.XPath, Using = ".//div[@class='inline-success ng-star-inserted']")]
-        public IWebElement SuccessDeleteMessage { get; set; }
+        public IWebElement SuccessDeletingMessage { get; set; }
 
         [FindsBy(How = How.XPath, Using = ".//input[@aria-checked='false']")]
         public IWebElement UncheckedCheckbox { get; set; }
+
+        [FindsBy(How = How.XPath, Using = ".//span[text()='MAKE CHANGES']")]
+        public IWebElement MakeChangesButton { get; set; }
 
         [FindsBy(How = How.XPath, Using = ".//span['_ngcontent-c11'][text()='Scope']")]
         public IWebElement ScopeSection { get; set; }
@@ -101,6 +107,12 @@ namespace DashworksTestAutomation.Pages.Evergreen.AdminDetailsPages
             tab.Click();
         }
 
+        public void ClickUpdateButtonByName(string buttonName)
+        {
+            var tab = Driver.FindElement(By.XPath($".//span[text()='{buttonName}']"));
+            tab.Click();
+        }
+
         public void NavigateToProjectTabInScopSectionByName(string tabName)
         {
             var tab = Driver.FindElement(By.XPath($".//div[@class='detail-label ng-star-inserted']//span[text()='{tabName}']"));
@@ -114,10 +126,17 @@ namespace DashworksTestAutomation.Pages.Evergreen.AdminDetailsPages
             tab.Click();
         }
 
+        public void SelectRadioButtonByName(string radioButtonName)
+        {
+            var tab = Driver.FindElement(
+                By.XPath($".//div[@class='mat-radio-label-content'][text()='{radioButtonName}']"));
+            tab.Click();
+        }
+
         public void SelectCheckboxByName(string checkboxName)
         {
             var tab = Driver.FindElement(
-                By.XPath($".//div[@class='mat-radio-label-content'][text()='{checkboxName}']"));
+                By.XPath($".//span[@class='mat-checkbox-label'][text()='{checkboxName}']"));
             tab.Click();
         }
 
@@ -126,7 +145,7 @@ namespace DashworksTestAutomation.Pages.Evergreen.AdminDetailsPages
             return Driver.IsElementDisplayed(By.XPath($".//h1[text()='{projectName}']"));
         }
 
-        public bool SuccessDeletingMessage(string textMessage)
+        public bool SuccessTextMessage(string textMessage)
         {
             return Driver.IsElementDisplayed(By.XPath($".//div[text()='{textMessage}']"));
         }
