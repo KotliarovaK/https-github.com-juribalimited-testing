@@ -594,5 +594,5 @@ Scenario: EvergreenJnr_AdminPage_CheckThatNoConsoleErrorsAreDisplayedAfterUpdati
 	When User clicks "UPDATE APPLICATION CHANGES" button on the Projects page
 	When User clicks Make Changes button on the Projects page
 	Then Success message with "0 objects queued for onboarding, 0 objects offboarded" text is displayed on the Projects page
-	Then There are no errors in the browser console
+	And There are no errors in the browser console
 	And Delete "TestProject10" Project in the Administration
