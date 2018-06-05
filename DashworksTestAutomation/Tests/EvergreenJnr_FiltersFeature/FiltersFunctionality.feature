@@ -57,6 +57,8 @@ Scenario: EvergreenJnr_ApplicationsList_CheckThatAddColumnCheckboxWorksCorrectly
 	| A Star Packages     |
 	Then "Windows7Mi: Category" filter is added to the list
 	Then table data is filtered correctly
+	When User clicks refresh button in the browser
+	Then full list content is displayed to the user
 
 @Evergreen @Applications @EvergreenJnr_FiltersFeature @FilterFunctionality @DAS11166 @DAS11665 @Delete_Newly_Created_List
 Scenario: EvergreenJnr_ApplicationsList_CheckThatFilterIsRestoredAfterGoingBackToTheListAgain
