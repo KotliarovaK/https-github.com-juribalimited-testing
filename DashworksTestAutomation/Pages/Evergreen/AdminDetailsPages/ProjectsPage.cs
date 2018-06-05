@@ -70,8 +70,8 @@ namespace DashworksTestAutomation.Pages.Evergreen.AdminDetailsPages
         [FindsBy(How = How.XPath, Using = ".//input[@aria-checked='false']")]
         public IWebElement UncheckedCheckbox { get; set; }
 
-        [FindsBy(How = How.XPath, Using = ".//span[text()='MAKE CHANGES']")]
-        public IWebElement MakeChangesButton { get; set; }
+        [FindsBy(How = How.XPath, Using = ".//span[text()='UPDATE PROJECT']")]
+        public IWebElement UpdateProjectInTheWarning { get; set; }
 
         [FindsBy(How = How.XPath, Using = ".//span['_ngcontent-c11'][text()='Scope']")]
         public IWebElement ScopeSection { get; set; }

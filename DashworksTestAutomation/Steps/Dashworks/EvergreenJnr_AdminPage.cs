@@ -190,12 +190,12 @@ namespace DashworksTestAutomation.Steps.Dashworks
             button.ClickUpdateButtonByName(buttonName);
         }
 
-        [When(@"User clicks Make Changes button on the Projects page")]
-        public void WhenUserClicksMakeChangesButtonOnTheProjectsPage()
+        [When(@"User clicks Update Project button on the Projects page")]
+        public void WhenUserClicksUpdateProjectButtonOnTheProjectsPage()
         {
             var button = _driver.NowAt<ProjectsPage>();
-            _driver.WaitWhileControlIsNotDisplayed<ProjectsPage>(() => button.MakeChangesButton);
-            button.MakeChangesButton.Click();
+            _driver.WaitWhileControlIsNotDisplayed<ProjectsPage>(() => button.UpdateProjectInTheWarning);
+            button.UpdateProjectInTheWarning.Click();
         }
 
         [Then(@"Update Project button is disabled")]
