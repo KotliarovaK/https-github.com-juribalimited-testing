@@ -73,7 +73,7 @@ Scenario: EvergreenJnr_UsersList_CheckSortByDateFunctionality
 	When User click on 'MigrationP: Migrated Date' column header
 	Then date in table is sorted by 'MigrationP: Migrated Date' column in ascending order
 
-@Evergreen @Devices @EvergreenJnr_GridActions @TableSorting @DAS11568 @Not_Run
+@Evergreen @Devices @EvergreenJnr_GridActions @TableSorting @DAS11568
 Scenario: EvergreenJnr_DevicesList_CheckThat500ErrorIsNotDisplayedWhenSortingOwnerComplianceColumnOnDevicesList
 	When User clicks "Devices" on the left-hand menu
 	Then "Devices" list should be displayed to the user
@@ -84,7 +84,7 @@ Scenario: EvergreenJnr_DevicesList_CheckThat500ErrorIsNotDisplayedWhenSortingOwn
 	| Owner Compliance |
 	Then "17,225" rows are displayed in the agGrid
 	When User click on 'Owner Compliance' column header
-	Then data in table is sorted by 'Owner Compliance' column in ascending order
+	Then color data is sorted by 'Owner Compliance' column in ascending order
 	Then "17,225" rows are displayed in the agGrid
 	
 @Evergreen @AllLists @EvergreenJnr_GridActions @TableSorting @DAS11951

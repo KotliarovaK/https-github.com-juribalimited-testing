@@ -352,7 +352,6 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_GridActions
         [NUnit.Framework.CategoryAttribute("EvergreenJnr_GridActions")]
         [NUnit.Framework.CategoryAttribute("TableSorting")]
         [NUnit.Framework.CategoryAttribute("DAS11568")]
-        [NUnit.Framework.CategoryAttribute("Not_Run")]
         public virtual void EvergreenJnr_DevicesList_CheckThat500ErrorIsNotDisplayedWhenSortingOwnerComplianceColumnOnDevicesList()
         {
             System.Exception lastException = null;
@@ -387,8 +386,7 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_GridActions
                         "Devices",
                         "EvergreenJnr_GridActions",
                         "TableSorting",
-                        "DAS11568",
-                        "Not_Run"});
+                        "DAS11568"});
             this.ScenarioSetup(scenarioInfo);
             this.FeatureBackground();
             testRunner.When("User clicks \"Devices\" on the left-hand menu", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
@@ -402,7 +400,7 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_GridActions
             testRunner.When("ColumnName is entered into the search box and the selection is clicked", ((string)(null)), table9, "When ");
             testRunner.Then("\"17,225\" rows are displayed in the agGrid", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
             testRunner.When("User click on \'Owner Compliance\' column header", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-            testRunner.Then("data in table is sorted by \'Owner Compliance\' column in ascending order", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+            testRunner.Then("color data is sorted by \'Owner Compliance\' column in ascending order", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
             testRunner.Then("\"17,225\" rows are displayed in the agGrid", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
             this.ScenarioCleanup();
         }
