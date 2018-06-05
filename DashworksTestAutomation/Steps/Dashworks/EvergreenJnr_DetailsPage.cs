@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading;
 using DashworksTestAutomation.Extensions;
+using DashworksTestAutomation.Helpers;
 using DashworksTestAutomation.Pages.Evergreen;
 using DashworksTestAutomation.Pages.Evergreen.DetailsTabsMenu;
 using NUnit.Framework;
@@ -29,8 +30,8 @@ namespace DashworksTestAutomation.Steps.Dashworks
             tabs.NavigateToTabByName(tabName);
         }
 
-        [Then(@"User closes ""(.*)"" section on the Details Page")]
-        public void ThenUserClosesSectionOnTheDetailsPage(string sectionName)
+        [When(@"User closes ""(.*)"" section on the Details Page")]
+        public void WhenUserClosesSectionOnTheDetailsPage(string sectionName)
         {
             var detailsPage = _driver.NowAt<DetailsPage>();
             detailsPage.NavigateToSectionByName(sectionName);
@@ -42,6 +43,13 @@ namespace DashworksTestAutomation.Steps.Dashworks
             var detailsPage = _driver.NowAt<DetailsPage>();
             detailsPage.NavigateToSectionByName(sectionName);
             _driver.WaitForDataLoading();
+        }
+
+        [When(@"User clicks ""(.*)"" link on the Details Page")]
+        public void WhenUserClicksLinkOnTheDetailsPage(string linkName)
+        {
+            var detailsPage = _driver.NowAt<DetailsPage>();
+            detailsPage.GetLinkByName(linkName).Click();
         }
 
         [Then(@"section is loaded correctly")]
