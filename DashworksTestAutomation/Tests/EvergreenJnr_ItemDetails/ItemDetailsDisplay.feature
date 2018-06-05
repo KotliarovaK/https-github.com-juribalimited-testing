@@ -67,12 +67,12 @@ Scenario Outline: EvergreenJnr_AllLists_CheckThatDataIsDisplayedAfterAddingColum
 	When User perform search by "<SearchTerm>"
 	When User click content from "<ItemName>" column
 	And User navigates to the "<TabName>" tab
-	Then User closes "<ExpandedSectionName>" section on the Details Page
-	When User opens "<SectionName>" section on the Details Page
-	When User have opened Column Settings for "<ColumnName>" column in the Details Page table
-	When User clicks Column button on the Column Settings panel
-	When User select "<CheckboxName>" checkbox on the Column Settings panel
-	When User clicks Column button on the Column Settings panel
+	And User closes "<ExpandedSectionName>" section on the Details Page
+	And User opens "<SectionName>" section on the Details Page
+	And User have opened Column Settings for "<ColumnName>" column in the Details Page table
+	And User clicks Column button on the Column Settings panel
+	And User select "<CheckboxName>" checkbox on the Column Settings panel
+	And User clicks Column button on the Column Settings panel
 	Then ColumnName is added to the list in the Details Page table
 	| ColumnName      |
 	| <NewColumnName> |
@@ -112,14 +112,14 @@ Scenario Outline: EvergreenJnr_AllLists_CheckThatDataIsDisplayedAfterAddingColum
 	When User perform search by "<SearchTerm>"
 	When User click content from "<ItemName>" column
 	And User navigates to the "<TabName>" tab
-	Then User closes "<ExpandedSectionName>" section on the Details Page
-	When User opens "<SectionName>" section on the Details Page
-	When User have opened Column Settings for "<ColumnName>" column in the Details Page table
-	When User clicks Column button on the Column Settings panel
-	When User select "Device" checkbox on the Column Settings panel
-	When User select "Installed" checkbox on the Column Settings panel
-	When User select "<CheckboxName>" checkbox on the Column Settings panel
-	When User clicks Column button on the Column Settings panel
+	And User closes "<ExpandedSectionName>" section on the Details Page
+	And User opens "<SectionName>" section on the Details Page
+	And User have opened Column Settings for "<ColumnName>" column in the Details Page table
+	And User clicks Column button on the Column Settings panel
+	And User select "Device" checkbox on the Column Settings panel
+	And User select "Installed" checkbox on the Column Settings panel
+	And User select "<CheckboxName>" checkbox on the Column Settings panel
+	And User clicks Column button on the Column Settings panel
 	Then ColumnName is added to the list in the Details Page table
 	| ColumnName      |
 	| <NewColumnName> |
@@ -245,8 +245,8 @@ Scenario Outline: EvergreenJnr_AllLists_CheckRenamedColumnForApplicationDetailSe
 	When User perform search by "<SelectedName>"
 	And User click content from "<ColumnName>" column
 	And User navigates to the "Applications" tab
-	Then User closes "Application Summary" section on the Details Page
-	When User opens "Application Detail" section on the Details Page
+	When User closes "Application Summary" section on the Details Page
+	And User opens "Application Detail" section on the Details Page
 	Then "Manufacturer" column is not displayed to the user
 	And ColumnName is added to the list in the Details Page table
 	| ColumnName |
@@ -293,7 +293,7 @@ Scenario: EvergreenJnr_DevicesLists_CheckThatDataOfColumnsIsDisplayedInTheCustom
 	When User perform search by "Benjamin S. Vaughn"
 	And User click content from "Hostname" column
 	And User navigates to the "Details" tab
-	Then User closes "Device" section on the Details Page
+	When User closes "Device" section on the Details Page
 	When User opens "Custom Fields" section on the Details Page
 	Then Content is present in the column of the Details Page table
 	| ColumnName |
@@ -307,10 +307,10 @@ Scenario: EvergreenJnr_MailboxesLists_CheckThatLinksAndImageItemAreDisplayedInTh
 	When User perform search by "00C8BC63E7424A6E862@bclabs.local"
 	And User click content from "Email Address" column
 	And User navigates to the "Users" tab
-	Then User closes "Users" section on the Details Page
-	When User opens "Mailbox Permissions" section on the Details Page
+	When User closes "Users" section on the Details Page
+	And User opens "Mailbox Permissions" section on the Details Page
 	Then Image item from "Name" column is displayed to the user
-	Then Links from "Name" column is displayed to the user on the Details Page
+	And Links from "Name" column is displayed to the user on the Details Page
 	And Links from "Display Name" column is displayed to the user on the Details Page
 
 @Evergreen @AllLists @EvergreenJnr_ItemDetails @ItemDetailsDisplay @DAS11983 @DAS11926
@@ -320,8 +320,8 @@ Scenario Outline: EvergreenJnr_AllLists_CheckThatRowsInTheTableAreEmptyIfTheData
 	When User perform search by "<SelectedName>"
 	And User click content from "<ColumnName>" column
 	And User navigates to the "<TabName>" tab
-	Then User closes "<ClosesSectionName>" section on the Details Page
-	When User opens "<OpensSectionName>" section on the Details Page
+	And User closes "<ClosesSectionName>" section on the Details Page
+	And User opens "<OpensSectionName>" section on the Details Page
 	Then Empty rows are displayed if the data is unknown
 
 Examples:
@@ -370,8 +370,8 @@ Scenario Outline: EvergreenJnr_DevicesLists_CheckThatAutosizeOptionWorksCorrectl
 	When User perform search by "30BGMTLBM9PTW5"
 	When User click content from "Hostname" column
 	And User navigates to the "Applications" tab
-	Then User closes "Application Summary" section on the Details Page
-	When User opens "<SectionName>" section on the Details Page
+	And User closes "Application Summary" section on the Details Page
+	And User opens "<SectionName>" section on the Details Page
 	And User have opened Column Settings for "Site" column in the Details Page table
 	And User have select "Autosize This column" option from column settings on the Details Page
 	Then Site column has standard size
@@ -398,14 +398,14 @@ Scenario: EvergreenJnr_DevicesLists_CheckThatOpenedSectionIsDisplayedCorrectlyOn
 	Then "Devices" list should be displayed to the user
 	When User click content from "Hostname" column
 	And User navigates to the "Applications" tab
-	Then User closes "Application Summary" section on the Details Page
-	When User opens "Application Detail" section on the Details Page
+	When User closes "Application Summary" section on the Details Page
+	And User opens "Application Detail" section on the Details Page
 	Then section is loaded correctly
-	And User closes "Application Detail" section on the Details Page
-	When User opens "Advertisements" section on the Details Page
+	When User closes "Application Detail" section on the Details Page
+	And User opens "Advertisements" section on the Details Page
 	Then section is loaded correctly
-	And User closes "Advertisements" section on the Details Page
-	When User opens "Collections" section on the Details Page
+	When User closes "Advertisements" section on the Details Page
+	And User opens "Collections" section on the Details Page
 	Then section is loaded correctly
 
 @Evergreen @Devices @EvergreenJnr_ItemDetails @ItemDetailsDisplay @DAS12253
@@ -473,11 +473,11 @@ Scenario: EvergreenJnr_MailboxesLists_CheckThatMailboxPermissionsAndFolderPermis
 	When User perform search by "abraham.f.wong@dwlabs.local"
 	And User click content from "Email Address" column
 	And User navigates to the "Users" tab
-	Then User closes "Users" section on the Details Page
-	When User opens "Mailbox Permissions" section on the Details Page
+	When User closes "Users" section on the Details Page
+	And User opens "Mailbox Permissions" section on the Details Page
 	Then Content is present in the table on the Details Page
-	Then User closes "Mailbox Permissions" section on the Details Page
-	When User opens "Folder Permissions" section on the Details Page
+	When User closes "Mailbox Permissions" section on the Details Page
+	And User opens "Folder Permissions" section on the Details Page
 	Then Content is present in the table on the Details Page
 
 @Evergreen @AllLists @EvergreenJnr_ItemDetails @ItemDetailsDisplay @DAS12210
@@ -528,8 +528,8 @@ Scenario: EvergreenJnr_MailboxesLists_CheckThatDropdownListsInTheProjectDetailsF
 	When User perform search by "040698EE82354C17B60@bclabs.local"
 	And User click content from "Email Address" column
 	And User navigates to the "Projects" tab
-	Then User closes "Mailbox Projects" section on the Details Page
-	When User opens "Mailbox User Projects" section on the Details Page
+	When User closes "Mailbox Projects" section on the Details Page
+	And User opens "Mailbox User Projects" section on the Details Page
 	And User clicks String Filter button for "Project Type" column
 	Then Dropdown List is displayed correctly in the Filter on the Details Page
 	When User clicks String Filter button for "Request Type" column
@@ -544,6 +544,29 @@ Scenario: EvergreenJnr_MailboxesLists_CheckThatCorrectMessageIsDisplayedForDevic
 	When User perform search by "ACT Data Collection Packages"
 	And User click content from "Application" column
 	And User navigates to the "Distribution" tab
-	Then User closes "Users" section on the Details Page
-	When User opens "Devices" section on the Details Page
+	And User closes "Users" section on the Details Page
+	And User opens "Devices" section on the Details Page
 	Then "No devices found for this application" message is displayed on the Details Page
+
+@Evergreen @Devices @EvergreenJnr_ItemDetails @ItemDetailsDisplay @DAS12690
+Scenario: EvergreenJnr_DevicesLists_CheckThatLinksInDeviceDetailsAreRedirectedToTheRelevantUserDetailsPage
+	When User clicks "Devices" on the left-hand menu
+	Then "Devices" list should be displayed to the user
+	When User perform search by "001PSUMZYOW581"
+	And User click content from "Hostname" column
+	And User navigates to the "Details" tab
+	And User closes "Device" section on the Details Page
+	And User opens "Device Owner" section on the Details Page
+	And User clicks "Tricia G. Huang" link on the Details Page
+	Then Details object page is displayed to the user
+
+@Evergreen @Mailboxes @EvergreenJnr_ItemDetails @ItemDetailsDisplay @DAS12690
+Scenario: EvergreenJnr_MailboxesLists_CheckThatLinksInMailboxDetailsAreRedirectedToTheRelevantUserDetailsPage
+	When User clicks "Mailboxes" on the left-hand menu
+	Then "Mailboxes" list should be displayed to the user
+	When User perform search by "Joel T. Hartman"
+	And User click content from "Email Address" column
+	And User closes "Mailbox" section on the Details Page
+	And User opens "Mailbox Owner" section on the Details Page
+	And User clicks "hartmajt" link on the Details Page
+	Then Details object page is displayed to the user
