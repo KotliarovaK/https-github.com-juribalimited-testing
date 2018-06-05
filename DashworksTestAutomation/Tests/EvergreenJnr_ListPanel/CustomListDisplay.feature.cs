@@ -2280,6 +2280,8 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_ListPanel
         [NUnit.Framework.CategoryAttribute("EvergreenJnr_ListPanel")]
         [NUnit.Framework.CategoryAttribute("CustomListDisplay")]
         [NUnit.Framework.CategoryAttribute("DAS10972")]
+        [NUnit.Framework.CategoryAttribute("DAS12738")]
+        [NUnit.Framework.CategoryAttribute("Not_Run")]
         [NUnit.Framework.CategoryAttribute("Delete_Newly_Created_List")]
         [NUnit.Framework.TestCaseAttribute("Devices", "Hostname", "Import", "001BAQXT6JWFPI", "Network Card", "Owner City", new string[0])]
         [NUnit.Framework.TestCaseAttribute("Applications", "Application", "Application Key", "\"WPF/E\" (codename) Community Technology Preview (Feb 2007)", "prK: In Scope", "Compliance", new string[0])]
@@ -2319,6 +2321,8 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_ListPanel
                     "EvergreenJnr_ListPanel",
                     "CustomListDisplay",
                     "DAS10972",
+                    "DAS12738",
+                    "Not_Run",
                     "Delete_Newly_Created_List"};
             if ((exampleTags != null))
             {
