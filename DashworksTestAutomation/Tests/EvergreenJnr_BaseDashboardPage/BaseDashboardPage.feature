@@ -173,7 +173,7 @@ Examples:
 	| Applications | Application   | Vendor           | UserSchedu: Readiness ID |
 	| Mailboxes    | Email Address | Mailbox Platform | EmailMigra: Readiness ID |
 
-@Evergreen @Devices @EvergreenJnr_BaseDashboardPage @BaseDashboardPage @DAS11693 @Not_Run
+@Evergreen @Devices @EvergreenJnr_BaseDashboardPage @BaseDashboardPage @DAS11693
 Scenario: EvergreenJnr_DevicesList_CheckThatToolTipIsDisplayedWithCreateProjectButtonFromAnUnsavedList
 	When User clicks "Devices" on the left-hand menu
 	Then "Devices" list should be displayed to the user
