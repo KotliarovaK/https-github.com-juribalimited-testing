@@ -11,7 +11,7 @@ Scenario Outline: EvergreenJnr_AllList_CheckThatColumnHeaderFontWidthConformsToD
 	When User clicks "<ListName>" on the left-hand menu
 	Then "<ListName>" list should be displayed to the user
 	And Appropriate header font weight is displayed
-	Then "v5.2.5.0" Application version is displayed
+	Then "v5.2.6.0" Application version is displayed
 
 Examples: 
 	| ListName     |
@@ -173,7 +173,7 @@ Examples:
 	| Applications | Application   | Vendor           | UserSchedu: Readiness ID |
 	| Mailboxes    | Email Address | Mailbox Platform | EmailMigra: Readiness ID |
 
-@Evergreen @Devices @EvergreenJnr_BaseDashboardPage @BaseDashboardPage @DAS11693 @Not_Run
+@Evergreen @Devices @EvergreenJnr_BaseDashboardPage @BaseDashboardPage @DAS11693
 Scenario: EvergreenJnr_DevicesList_CheckThatToolTipIsDisplayedWithCreateProjectButtonFromAnUnsavedList
 	When User clicks "Devices" on the left-hand menu
 	Then "Devices" list should be displayed to the user

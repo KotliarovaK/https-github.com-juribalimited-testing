@@ -84,7 +84,7 @@ Scenario: EvergreenJnr_AdminPage_CheckThatCreateButtonIsDisabledForEmptyTeamName
 	When User enters "test" in the Team Description field
 	Then Create Team button is disabled
 
-@Evergreen @AllLists @EvergreenJnr_AdminPage @AdminPage @DAS11886 @DAS12613 @Delete_Newly_Created_List @Not_Run
+@Evergreen @AllLists @EvergreenJnr_AdminPage @AdminPage @DAS11886 @DAS12613 @Delete_Newly_Created_List
 Scenario: EvergreenJnr_AdminPage_CheckThatWarningMessageIsDisplayedAfterDeletingUsedForProjectLists 
 	When User clicks "Users" on the left-hand menu
 	Then "Users" list should be displayed to the user
@@ -353,9 +353,9 @@ Scenario: EvergreenJnr_AdminPage_CheckThatMailboxesAreSuccessfullyAddedToBuckets
 	Then User clicks "Mailboxes" tab on the Buckets page
 	When User clicks Add Mailbox button on the Buckets page
 	Then User add following mailboxes to the Bucket
-	| MailboxName                      |
-	| abraham.d.robertson@dwlabs.local |
-	| abraham.h.maxwell@dwlabs.local   |
+	| MailboxName                 |
+	| aaron.w.burton@dwlabs.local |
+	| abel.y.hanson@dwlabs.local  |
 	And Success message is displayed and contains "The selected mailboxes have been added to the selected bucket" text on the Buckets page
 	And There are no errors in the browser console
 
@@ -402,9 +402,9 @@ Scenario: EvergreenJnr_AdminPage_CheckThatConsoleErrorsAreNotDisplayedAfterAddin
 	And User clicks content from "Bucket" column on the Buckets page
 	When User clicks Add Device button on the Buckets page
 	Then User add following devices to the Bucket
-	| DeviceName     |
-	| 01DRMO46G58SXK |
-	| XV20GW6HJRVE2R |
+	| DeviceName      |
+	| 02X387UQLFP3ISU |
+	| 34RRSBA00C0EYY  |
 	And Success message is displayed and contains "The selected devices have been added to the selected bucket" text on the Buckets page
 	And There are no errors in the browser console
 
@@ -432,12 +432,12 @@ Scenario: EvergreenJnr_AdminPage_CheckThatConsoleErrorsAreNotDisplayedAfterAddin
 	When User clicks Add User button on the Buckets page
 	Then User add following users to the Bucket
 	| UserName                          |
-	| UK\LBM661859 (Jenifer V. Allison) |
-	| UK\ANK462406 (Nakia D. Norton)    |
+	| US-E\ABW081519 (Darrin A. Arnold) |
+	| FR\IIN4276389 (Merci Daoust)      |
 	And Success message is displayed and contains "The selected users have been added to the selected bucket" text on the Buckets page
 	And There are no errors in the browser console
 
-@Evergreen @Admin @EvergreenJnr_AdminPage @AdminPage @DAS11697 @Not_Run
+@Evergreen @Admin @EvergreenJnr_AdminPage @AdminPage @DAS11697
 Scenario Outline: EvergreenJnr_AdminPage_CheckThatCancelButtonOnTheCreateProjectPageRedirectsToTheLastPage
 	When User clicks "<ListName>" on the left-hand menu
 	Then "<ListName>" list should be displayed to the user
@@ -452,7 +452,7 @@ Scenario Outline: EvergreenJnr_AdminPage_CheckThatCancelButtonOnTheCreateProject
 	| Users     |
 	| Mailboxes |
 
-@Evergreen @Admin @EvergreenJnr_AdminPage @AdminPage @DAS12162 @DAS12532 @Not_Run
+@Evergreen @Admin @EvergreenJnr_AdminPage @AdminPage @DAS12162 @DAS12532
 Scenario: EvergreenJnr_AdminPage_CheckThatConsoleErrorsAreNotDisplayedAfterNavigatingScopeChangesTab
 	When User clicks "Devices" on the left-hand menu
 	Then "Devices" list should be displayed to the user
@@ -471,7 +471,7 @@ Scenario: EvergreenJnr_AdminPage_CheckThatConsoleErrorsAreNotDisplayedAfterNavig
 	Then There are no errors in the browser console
 	And Delete "TestProject8" Project in the Administration
 
-@Evergreen @Admin @EvergreenJnr_AdminPage @AdminPage @DAS12189 @DAS12523 @DAS12521 @Delete_Newly_Created_List @Not_Run
+@Evergreen @Admin @EvergreenJnr_AdminPage @AdminPage @DAS12189 @DAS12523 @DAS12521 @Delete_Newly_Created_List
 Scenario: EvergreenJnr_AdminPage_CheckThatNoErrorsAreDisplayedInTheProjectScopeChangesSectionAfterUsingSavedDevicesList
 	When User clicks "Applications" on the left-hand menu
 	Then "Applications" list should be displayed to the user
@@ -581,18 +581,18 @@ Scenario: EvergreenJnr_AdminPage_CheckThatNoConsoleErrorsAreDisplayedAfterUpdati
 	Then Project "TestProject10" is displayed to user
 	When User navigates to the "Application Scope" tab in the Scope section on the Project details page
 	And User clicks "Entitled to the device owner" checkbox on the Project details page
-	When User select "Scope Changes" tab on the Project details page
-	When User clicks "Applications" tab in the Project Scope Changes section
-	When User clicks "UPDATE APPLICATION CHANGES" button on the Projects page
-	When User clicks Make Changes button on the Projects page
+	And User select "Scope Changes" tab on the Project details page
+	And User clicks "Applications" tab in the Project Scope Changes section
+	And User clicks "UPDATE APPLICATION CHANGES" button on the Projects page
+	And User clicks Update Project button on the Projects page
 	Then Success message with "0 objects queued for onboarding, 0 objects offboarded" text is displayed on the Projects page
 	When User select "Scope Details" tab on the Project details page
-	When User navigates to the "Application Scope" tab in the Scope section on the Project details page
+	And User navigates to the "Application Scope" tab in the Scope section on the Project details page
 	And User clicks "Entitled to the device owner" checkbox on the Project details page
-	When User select "Scope Changes" tab on the Project details page
-	When User clicks "Applications" tab in the Project Scope Changes section
-	When User clicks "UPDATE APPLICATION CHANGES" button on the Projects page
-	When User clicks Make Changes button on the Projects page
+	And User select "Scope Changes" tab on the Project details page
+	And User clicks "Applications" tab in the Project Scope Changes section
+	And User clicks "UPDATE APPLICATION CHANGES" button on the Projects page
+	And User clicks Update Project button on the Projects page
 	Then Success message with "0 objects queued for onboarding, 0 objects offboarded" text is displayed on the Projects page
-	Then There are no errors in the browser console
+	And There are no errors in the browser console
 	And Delete "TestProject10" Project in the Administration

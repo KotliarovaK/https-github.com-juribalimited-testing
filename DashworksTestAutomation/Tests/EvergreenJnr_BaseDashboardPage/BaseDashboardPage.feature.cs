@@ -122,7 +122,7 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_BaseDashboardPage
             testRunner.When(string.Format("User clicks \"{0}\" on the left-hand menu", listName), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
             testRunner.Then(string.Format("\"{0}\" list should be displayed to the user", listName), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
             testRunner.And("Appropriate header font weight is displayed", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-            testRunner.Then("\"v5.2.5.0\" Application version is displayed", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+            testRunner.Then("\"v5.2.6.0\" Application version is displayed", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
             this.ScenarioCleanup();
         }
         
@@ -617,7 +617,6 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_BaseDashboardPage
         [NUnit.Framework.CategoryAttribute("EvergreenJnr_BaseDashboardPage")]
         [NUnit.Framework.CategoryAttribute("BaseDashboardPage")]
         [NUnit.Framework.CategoryAttribute("DAS11693")]
-        [NUnit.Framework.CategoryAttribute("Not_Run")]
         public virtual void EvergreenJnr_DevicesList_CheckThatToolTipIsDisplayedWithCreateProjectButtonFromAnUnsavedList()
         {
             System.Exception lastException = null;
@@ -652,8 +651,7 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_BaseDashboardPage
                         "Devices",
                         "EvergreenJnr_BaseDashboardPage",
                         "BaseDashboardPage",
-                        "DAS11693",
-                        "Not_Run"});
+                        "DAS11693"});
             this.ScenarioSetup(scenarioInfo);
             this.FeatureBackground();
             testRunner.When("User clicks \"Devices\" on the left-hand menu", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
