@@ -12,7 +12,6 @@ namespace DashworksTestAutomation.DTO.Projects
         public bool AllowUsersToAddANote { get; set; }
         public string MinimumHours { get; set; }
         public string MaximumHours { get; set; }
-        //TODO Additional Tasks
         public string PageDescription { get; set; }
 
         public SelfService_ProjectDateDto()

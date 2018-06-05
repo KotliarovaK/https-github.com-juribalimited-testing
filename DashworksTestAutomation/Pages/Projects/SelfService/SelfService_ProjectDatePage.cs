@@ -36,7 +36,6 @@ namespace DashworksTestAutomation.Pages.Projects
             return new List<By>
             {
                 SelectorFor(this, p => p.ShowScreen),
-                SelectorFor(this, p => p.ShowComputerName),
                 SelectorFor(this, p => p.AllowUsersToAddANote),
                 SelectorFor(this, p => p.MinimumHours),
                 SelectorFor(this, p => p.MaximumHours),

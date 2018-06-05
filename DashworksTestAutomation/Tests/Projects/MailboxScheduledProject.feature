@@ -295,13 +295,13 @@ Scenario: Projects_CreateMailboxScheduledProject
 	Then Success message is displayed with "Self Service Screen successfully updated" text
 	When User navigate to "Mailbox Ownership" page on Self Service tab
 	Then User updates the Ownership page on Self Service tab
-	| ShowScreen | ShowComputers | ShowCategory | AllowUsersToSearch | AllowUsersToSetPrimary | AllowUsersToAddANote | LimitMaximum | LimitMinimum | PageDescription         |
-	| true       | true          | false        | false              | false                  | false                | 100          | 10           | MailboxScheduledProject |
+	| ShowScreen | ShowCategory | AllowUsersToSearch | AllowUsersToSetPrimary | AllowUsersToAddANote | PageDescription         |
+	| true       | false        | false              | false                  | false                | MailboxScheduledProject |
 	Then Success message is displayed with "Self Service Screen successfully updated" text
 	When User navigate to "Department and Location" page on Self Service tab
 	Then User updates the Department and Location page on Self Service tab
 	| ShowScreen | ShowDepartmentFullPath | ShowLocationFullPath | AllowUsersToAddANote | Department | DepartmentDoNotPush | DepartmentPushToOwned | DepartmentPushToAll | Location | LocationDoNotPush | LocationPushToOwned | LocationPushToAll | DepartmentFeed | HrLocationFeed | ManualLocationFeed | HistoricLocationFeed |
-	| true       | false                  | false                | false                | true       | true                | false                 | false               | false    | false             | false               | false             | true           | false          | false              | false                |
+	| true       | false                  | false                | false                | true       | true                | false                 | false               | false    | false             | false               | false             | true           | true           | false              | false                |
 	Then Success message is displayed with "Self Service Screen successfully updated" text
 	When User navigate to "Apps List" page on Self Service tab
 	Then User updates the Apps List page on Self Service tab

@@ -638,23 +638,17 @@ namespace DashworksTestAutomation.Tests.Projects
             testRunner.When("User navigate to \"Mailbox Ownership\" page on Self Service tab", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
             TechTalk.SpecFlow.Table table40 = new TechTalk.SpecFlow.Table(new string[] {
                         "ShowScreen",
-                        "ShowComputers",
                         "ShowCategory",
                         "AllowUsersToSearch",
                         "AllowUsersToSetPrimary",
                         "AllowUsersToAddANote",
-                        "LimitMaximum",
-                        "LimitMinimum",
                         "PageDescription"});
             table40.AddRow(new string[] {
                         "true",
-                        "true",
                         "false",
                         "false",
                         "false",
                         "false",
-                        "100",
-                        "10",
                         "MailboxScheduledProject"});
             testRunner.Then("User updates the Ownership page on Self Service tab", ((string)(null)), table40, "Then ");
             testRunner.Then("Success message is displayed with \"Self Service Screen successfully updated\" text" +
@@ -691,7 +685,7 @@ namespace DashworksTestAutomation.Tests.Projects
                         "false",
                         "false",
                         "true",
-                        "false",
+                        "true",
                         "false",
                         "false"});
             testRunner.Then("User updates the Department and Location page on Self Service tab", ((string)(null)), table41, "Then ");

@@ -16,8 +16,6 @@ namespace DashworksTestAutomation.DTO.Projects
         public bool AllowUsersToAddANote { get; set; }
         public string LimitMaximum  { get; set; }
         public string LimitMinimum { get; set; }
-        public string LongName { get; set; }
-        public string ShortName { get; set; }
         public string PageDescription { get; set; }
         public ProjectDto Project { get; set; }
 
@@ -35,7 +33,6 @@ namespace DashworksTestAutomation.DTO.Projects
         [Description("REMOTE_HOST")]
         RemoteHost,
         [Description("X-Forwarded-For")]
-        XForwardedFor,
-        //Other
+        XForwardedFor
     }
 }

@@ -65,14 +65,15 @@ namespace DashworksTestAutomation.Steps.Projects
             {
                 _driver.WaitWhileControlIsNotDisplayed<Capacity_CapacityPage>(() => page.RequestType);
                 page.RequestType.SelectboxSelect(_projectDto.ReqestTypes.Last().Name);
+                _driver.WaitForDataLoading();
             }
             catch (StaleElementReferenceException)
             {
                 page = _driver.NowAt<Capacity_CapacityPage>();
                 _driver.WaitWhileControlIsNotDisplayed<Capacity_CapacityPage>(() => page.RequestType);
                 page.RequestType.SelectboxSelect(_projectDto.ReqestTypes.Last().Name);
+                _driver.WaitForDataLoading();
             }
-            _driver.WaitForDataLoading();
             _driver.WaitWhileControlIsNotDisplayed<Capacity_CapacityPage>(() => page.Table);
             page.StartDate.Clear();
             page.StartDate.SendKeys(_capacityDto.StartDate);
@@ -83,9 +84,9 @@ namespace DashworksTestAutomation.Steps.Projects
             page.EndDateButton.Click();
             _driver.WaitForDataLoading();
             page.MondayCheckbox.SetCheckboxState(_capacityDto.MondayCheckbox);
-            _driver.WaitForDataLoading();
+            //_driver.WaitForDataLoading();
             page.TuesdayCheckbox.SetCheckboxState(_capacityDto.TuesdayCheckbox);
-            _driver.WaitForDataLoading();
+            //_driver.WaitForDataLoading();
             page.WednesdayCheckbox.SetCheckboxState(_capacityDto.WednesdayCheckbox);
             page.ThursdayCheckbox.SetCheckboxState(_capacityDto.ThursdayCheckbox);
             page.FridayCheckbox.SetCheckboxState(_capacityDto.FridayCheckbox);
@@ -128,7 +129,16 @@ namespace DashworksTestAutomation.Steps.Projects
 
             page.Date.SendKeys(_overrideDatesDto.Date);
             page.OverrideTeam.SelectboxSelect(_overrideDatesDto.OverrideTeam.GetValue());
-            page.OverrideRequestType.SelectboxSelect(_overrideDatesDto.OverrideRequestType.GetValue());
+
+            if (_projectDto.ProjectType.Equals(ProjectTypeEnum.ComputerScheduledProject))
+                _overrideDatesDto.OverrideRequestType = OverrideRequestTypeEnum.DefaultComputer;
+
+            if (_projectDto.ProjectType.Equals(ProjectTypeEnum.MailboxScheduledProject))
+                _overrideDatesDto.OverrideRequestType = OverrideRequestTypeEnum.DefaultMailbox;
+
+            if (_projectDto.ProjectType.Equals(ProjectTypeEnum.UserScheduledProject))
+                _overrideDatesDto.OverrideRequestType = OverrideRequestTypeEnum.DefaultUser;
+
             page.Capacity.SendKeys(_overrideDatesDto.Capacity.ToString());
             page.Comment.SendKeys(_overrideDatesDto.Comment);
 

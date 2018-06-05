@@ -5,7 +5,6 @@ namespace DashworksTestAutomation.DTO.Projects
 {
     public class Capacity_OverrideDatesDto
     {
-        //TODO filter?
         public string Date { get; set; }
         public OverrideTeamEnum OverrideTeam;
         public OverrideRequestTypeEnum OverrideRequestType;
@@ -15,7 +14,6 @@ namespace DashworksTestAutomation.DTO.Projects
         public Capacity_OverrideDatesDto()
         {
             OverrideTeam = OverrideTeamEnum.AllTeams;
-            OverrideRequestType = OverrideRequestTypeEnum.DefaultComputer;
         }
     }
 
@@ -28,6 +26,10 @@ namespace DashworksTestAutomation.DTO.Projects
     public enum OverrideRequestTypeEnum
     {
         [Description("[Default (Computer)]")]
-        DefaultComputer
+        DefaultComputer,
+        [Description("[Default (Mailbox)]")]
+        DefaultMailbox,
+        [Description("[Default (User)]")]
+        DefaultUser
     }
 }

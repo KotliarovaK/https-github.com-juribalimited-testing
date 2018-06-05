@@ -28,7 +28,7 @@ namespace DashworksTestAutomation.Pages.Projects
         [FindsBy(How = How.XPath, Using = ".//td[text()='Start Date']/..//input[contains(@id, 'SelectDate')]")]
         public IWebElement StartDate { get; set; }
 
-        [FindsBy(How = How.XPath, Using = ".//tr//td[text()='End Date']/..//button[@class='ui-datepicker-trigger']")]
+        [FindsBy(How = How.XPath, Using = ".//td[text()='End Date']/..//button[@aria-label='Select Date']")]
         public IWebElement EndDateButton { get; set; }
 
         [FindsBy(How = How.XPath, Using = ".//td[text()='End Date']/..//input[contains(@id, 'SelectDate')]")]
@@ -37,25 +37,25 @@ namespace DashworksTestAutomation.Pages.Projects
         [FindsBy(How = How.XPath, Using = ".//table[contains(@class,'pmAdminGrid')]")]
         public IWebElement Table { get; set; }
 
-        [FindsBy(How = How.XPath, Using = ".//td[contains(text(), 'Monday')]/..//span[@class='dayCapacityCheckbox']//input")]
+        [FindsBy(How = How.XPath, Using = ".//td[contains(text(), 'Monday')]/..//input[@type='checkbox']")]
         public IWebElement MondayCheckbox { get; set; }
 
-        [FindsBy(How = How.XPath, Using = ".//td[contains(text(), 'Tuesday')]/..//span[@class='dayCapacityCheckbox']//input")]
+        [FindsBy(How = How.XPath, Using = ".//td[contains(text(), 'Tuesday')]/..//input[@type='checkbox']")]
         public IWebElement TuesdayCheckbox { get; set; }
 
-        [FindsBy(How = How.XPath, Using = ".//td[contains(text(), 'Wednesday')]/..//span[@class='dayCapacityCheckbox']//input")]
+        [FindsBy(How = How.XPath, Using = ".//td[contains(text(), 'Wednesday')]/..//input[@type='checkbox']")]
         public IWebElement WednesdayCheckbox { get; set; }
 
-        [FindsBy(How = How.XPath, Using = ".//td[contains(text(), 'Thursday')]/..//span[@class='dayCapacityCheckbox']//input")]
+        [FindsBy(How = How.XPath, Using = ".//td[contains(text(), 'Thursday')]/..//input[@type='checkbox']")]
         public IWebElement ThursdayCheckbox { get; set; }
 
-        [FindsBy(How = How.XPath, Using = ".//td[contains(text(), 'Friday')]/..//span[@class='dayCapacityCheckbox']//input")]
+        [FindsBy(How = How.XPath, Using = ".//td[contains(text(), 'Friday')]/..//input[@type='checkbox']")]
         public IWebElement FridayCheckbox { get; set; }
 
-        [FindsBy(How = How.XPath, Using = ".//td[contains(text(), 'Saturday')]/..//span[@class='dayCapacityCheckbox']//input")]
+        [FindsBy(How = How.XPath, Using = ".//td[contains(text(), 'Saturday')]/..//input[@type='checkbox']")]
         public IWebElement SaturdayCheckbox { get; set; }
 
-        [FindsBy(How = How.XPath, Using = ".//td[contains(text(), 'Sunday')]/..//span[@class='dayCapacityCheckbox']//input")]
+        [FindsBy(How = How.XPath, Using = ".//td[contains(text(), 'Sunday')]/..//input[@type='checkbox']")]
         public IWebElement SundayCheckbox { get; set; }
 
         [FindsBy(How = How.XPath, Using = ".//td[contains(text(), 'Monday')]/..//input[contains(@id,'Capacity_DayMaximum')]")]

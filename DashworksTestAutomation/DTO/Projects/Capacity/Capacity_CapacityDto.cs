@@ -23,11 +23,6 @@ namespace DashworksTestAutomation.DTO.Projects
         public string Friday { get; set; }
         public string Saturday { get; set; }
         public string Sunday { get; set; }
-
-        public Capacity_CapacityDto()
-        {
-            RequestType = RequestTypeEnum.DefaultComputer;
-        }
     }
 
     public enum RequestTypeEnum
@@ -35,6 +30,8 @@ namespace DashworksTestAutomation.DTO.Projects
         [Description("[Select]")]
         Select,
         [Description("[Default (Computer)]")]
-        DefaultComputer
+        DefaultComputer,
+        [Description("[Default (Mailbox)]")]
+        DefaultMailbox
     }
 }

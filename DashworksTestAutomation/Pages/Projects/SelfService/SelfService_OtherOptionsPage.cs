@@ -13,14 +13,11 @@ namespace DashworksTestAutomation.Pages.Projects
         [FindsBy(How = How.XPath, Using = ".//input[contains(@id, 'allowUsersToAddANoteFromThisPage')]")]
         public IWebElement AllowUsersToAddANote { get; set; }
 
-        [FindsBy(How = How.XPath, Using = ".//input[contains(@id, 'input_otherOptions2_displayOnlyOwnedObjects')]")]
+        [FindsBy(How = How.XPath, Using = ".//input[contains(@id, 'OnlyOwnedObjects')]")]
         public IWebElement OnlyOwned { get; set; }
 
-        [FindsBy(How = How.XPath, Using = ".//input[contains(@id, 'input_otherOptions2_displayAllLinkedObjects')]")]
+        [FindsBy(How = How.XPath, Using = ".//input[contains(@id, 'AllLinkedObjects')]")]
         public IWebElement AllLinked { get; set; }
-
-        //TODO User Task Name
-        //TODO Computer Task Name
 
         [FindsBy(How = How.XPath, Using = ".//input[@aria-label='Long Name']")]
         public IWebElement LongName { get; set; }

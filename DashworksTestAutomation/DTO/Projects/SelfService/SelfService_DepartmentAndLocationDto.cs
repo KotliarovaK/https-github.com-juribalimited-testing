@@ -8,7 +8,6 @@ namespace DashworksTestAutomation.DTO.Projects
 {
     public class SelfService_DepartmentAndLocationDto
     {
-        //TODO add a language?
         public bool ShowScreen { get; set; }
         public bool ShowDepartmentFullPath { get; set; }
         public bool ShowLocationFullPath { get; set; }
@@ -22,9 +21,9 @@ namespace DashworksTestAutomation.DTO.Projects
         public bool LocationPushToOwned { get; set; }
         public bool LocationPushToAll { get; set; }
         public bool DepartmentFeed { get; set; }
-        public string PageDescription { get; set; }
         public bool HrLocationFeed { get; set; }
         public bool ManualLocationFeed { get; set; }
         public bool HistoricLocationFeed { get; set; }
+        public string PageDescription { get; set; }
     }
 }

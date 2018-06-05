@@ -19,28 +19,28 @@ namespace DashworksTestAutomation.Pages.Projects
         [FindsBy(How = How.XPath, Using = ".//input[contains(@id, 'AllowUsersToAddANoteFromThisPageValue')]")]
         public IWebElement AllowUsersToAddANote { get; set; }
 
-        [FindsBy(How = How.XPath, Using = ".//input[contains(@id, 'DisplayDepartmentForUsers')]")]
+        [FindsBy(How = How.XPath, Using = ".//input[contains(@id, 'DisplayDepartment')]")]
         public IWebElement Department { get; set; }
 
-        [FindsBy(How = How.XPath, Using = ".//td[text()='Do not push changes to linked mailboxes']//following-sibling::td/input[@name='computersTakingUserDepartment']")]
+        [FindsBy(How = How.XPath, Using = ".//td[contains(@id, 'DoNotPushChangeToLinkedComputers')]//following-sibling::td/input[contains(@name, 'Department')]")]
         public IWebElement DepartmentDoNotPush { get; set; }
 
-        [FindsBy(How = How.XPath, Using = ".//td[text()='Push changes to owned mailboxes only']//following-sibling::td/input[@name='computersTakingUserDepartment']")]
+        [FindsBy(How = How.XPath, Using = ".//td[contains(@id, 'PushChangeToOwnedComputers')]//following-sibling::td/input[contains(@name, 'Department')]")]
         public IWebElement DepartmentPushToOwned { get; set; }
 
-        [FindsBy(How = How.XPath, Using = ".//td[text()='Push changes to all linked mailboxes']//following-sibling::td/input[@name='computersTakingUserDepartment']")]
+        [FindsBy(How = How.XPath, Using = ".//td[contains(@id, 'departmentLocationPushChangeToLinkedComputers')]//following-sibling::td/input[contains(@name, 'Department')]")]
         public IWebElement DepartmentPushToAll { get; set; }
 
-        [FindsBy(How = How.XPath, Using = ".//input[contains(@id, 'departmentLocationDisplayLocationForUsers')]")]
+        [FindsBy(How = How.XPath, Using = ".//input[contains(@id, 'departmentLocationDisplayLocation')]")]
         public IWebElement Location { get; set; }
 
-        [FindsBy(How = How.XPath, Using = ".//td[text()='Do not push changes to linked mailboxes']//following-sibling::td/input[@name='computersTakingUserLocation']")]
+        [FindsBy(How = How.XPath, Using = ".//td[contains(@id, 'DoNotPushChangeToLinkedComputers')]//following-sibling::td/input[contains(@name, 'Location')]")]
         public IWebElement LocationDoNotPush { get; set; }
 
-        [FindsBy(How = How.XPath, Using = ".//td[text()='Push changes to owned mailboxes only']//following-sibling::td/input[@name='computersTakingUserLocation']")]
+        [FindsBy(How = How.XPath, Using = ".//td[contains(@id, 'PushChangeToOwnedComputers')]//following-sibling::td/input[contains(@name, 'Location')]")]
         public IWebElement LocationPushToOwned { get; set; }
 
-        [FindsBy(How = How.XPath, Using = ".//td[text()='Push changes to all linked mailboxes']//following-sibling::td/input[@name='computersTakingUserLocation']")]
+        [FindsBy(How = How.XPath, Using = ".//td[contains(@id, 'departmentLocationPushChangeToLinkedComputers')]//following-sibling::td/input[contains(@name, 'Location')]")]
         public IWebElement LocationPushToAll { get; set; }
 
         [FindsBy(How = How.XPath, Using = ".//td[text()='Department Feed']//following-sibling::td/input[@type='checkbox']")]
@@ -61,7 +61,7 @@ namespace DashworksTestAutomation.Pages.Projects
         [FindsBy(How = How.XPath, Using = ".//input[@aria-label='Short Name']")]
         public IWebElement ShortName { get; set; }
 
-        [FindsBy(How = How.XPath, Using = ".//textarea[@aria-label='Page Description']")]
+        [FindsBy(How = How.XPath, Using = ".//textarea[contains(@class, 'description')]")]
         public IWebElement PageDescription { get; set; }
 
         public override List<By> GetPageIdentitySelectors()
@@ -75,8 +75,7 @@ namespace DashworksTestAutomation.Pages.Projects
                 SelectorFor(this, p => p.Department),
                 SelectorFor(this, p => p.Location),
                 SelectorFor(this, p => p.LongName),
-                SelectorFor(this, p => p.ShortName),
-                SelectorFor(this, p => p.PageDescription)
+                SelectorFor(this, p => p.ShortName)
             };
         }
     }
