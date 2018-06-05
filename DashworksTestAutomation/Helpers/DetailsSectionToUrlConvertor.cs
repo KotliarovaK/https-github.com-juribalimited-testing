@@ -18,6 +18,23 @@ namespace DashworksTestAutomation.Helpers
                     throw new Exception($"'{sectionName}' not found convertor");
             }
         }
+
+        public string DetailsIconConvertor(string detailsIconName)
+        {
+            switch (detailsIconName)
+            {
+                case "Mailboxes":
+                    return "material-icons pull-right mat-mail";
+                case "Devices ":
+                    return "material-icons pull-right mat-laptop";
+                case "Applications":
+                    return "material-icons pull-right mat-widgets";
+                case "Users":
+                    return "material-icons pull-right mat-person";
+                default:
+                    throw new Exception($"'{detailsIconName}' not found convertor");
+            }
+        }
     }
 
     internal class PageToUrlConvertor

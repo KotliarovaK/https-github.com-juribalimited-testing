@@ -162,6 +162,22 @@ namespace DashworksTestAutomation.Pages.Evergreen
             return Driver.FindElement(byControl);
         }
 
+        public IWebElement GetLinkByName(string linkName)
+        {
+            By byControl =
+                By.XPath($".//a[@href][text()='{linkName}']");
+            Driver.WaitWhileControlIsNotDisplayed(byControl);
+            return Driver.FindElement(byControl);
+        }
+
+        public IWebElement GetIconByName(string detailsIconName)
+        {
+            By byControl =
+                By.XPath($".//i[@class='{detailsIconName}']");
+            Driver.WaitWhileControlIsNotDisplayed(byControl);
+            return Driver.FindElement(byControl);
+        }
+
         public string GetHrefByColumnName(string columnName)
         {
             By byControl =
