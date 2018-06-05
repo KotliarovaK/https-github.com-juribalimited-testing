@@ -502,7 +502,7 @@ Examples:
 	| Users        | Loya\, Dan.Employees.Birmingham.UK.bclabs.local            | Username      | Projects | User Projects         |
 	| Users        | Loya\, Dan.Employees.Birmingham.UK.bclabs.local            | Username      | Projects | Mailbox Projects      |
 
-@Evergreen @AllLists @EvergreenJnr_ItemDetails @ItemDetailsDisplay @DAS12210 @DAS12738 @Not_Run
+@Evergreen @AllLists @EvergreenJnr_ItemDetails @ItemDetailsDisplay @DAS12210 @DAS12738
 Scenario Outline: EvergreenJnr_AllLists_CheckThatDropdownListsInTheProjectDetailsFiltersAreDisplayedCorrectlyForExpandedSections
 	When User clicks "<PageName>" on the left-hand menu
 	Then "<PageName>" list should be displayed to the user

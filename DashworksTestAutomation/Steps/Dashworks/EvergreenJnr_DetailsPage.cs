@@ -163,7 +163,7 @@ namespace DashworksTestAutomation.Steps.Dashworks
         public void ThenDropdownListIsDisplayedCorrectlyInTheFilterOnTheDetailsPage()
         {
             var filterElement = _driver.NowAt<ApplicationsDetailsTabsMenu>();
-            Assert.IsTrue(filterElement.AllCheckboxesSelectedStringFilter.Displayed(), "All checkbox is unchecked");
+            //Assert.IsTrue(filterElement.AllCheckboxesSelectedStringFilter.Displayed(), "All checkbox is unchecked");
             Assert.IsFalse(filterElement.UncheckedStringFilters.Displayed(), "Checkbox is selected");
         }
 
