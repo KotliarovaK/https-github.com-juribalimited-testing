@@ -226,7 +226,7 @@ namespace DashworksTestAutomation.Steps.Dashworks
         public void WhenUserClicksCheckboxFromStringFilterOnTheDetailsPage(string filterName)
         {
             var page = _driver.NowAt<ApplicationsDetailsTabsMenu>();
-            if (page.CheckboxexStringFilter.Displayed())
+            if (page.CheckboxesStringFilter.Displayed())
                 page.GetStringFilterByName(filterName).Click();
             else
                 page.GetBooleanStringFilterByName(filterName).Click();
