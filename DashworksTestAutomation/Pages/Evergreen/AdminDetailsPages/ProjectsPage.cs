@@ -13,38 +13,6 @@ namespace DashworksTestAutomation.Pages.Evergreen.AdminDetailsPages
         [FindsBy(How = How.XPath, Using = ".//a[text()='Administration']")]
         public IWebElement AdminPageTitle { get; set; }
 
-        /*[FindsBy(How = How.XPath, Using = ".//h1[text()='Projects']")]
-        public IWebElement ProjectsPageTitle { get; set; }*/
-
-        /*[FindsBy(How = How.XPath, Using = ".//span[@class='ag-header-select-all']")]
-        public IWebElement SelectAllProjectsCheckbox { get; set; }*/
-
-        /*[FindsBy(How = How.XPath, Using = ".//div[@class='mat-select-value']")]
-        public IWebElement ActionsButton { get; set; }*/
-
-        /*[FindsBy(How = How.XPath, Using = ".//span[@class='mat-option-text']")]
-        public IWebElement DeleteProjectButtonInActions { get; set; }*/
-
-        /*[FindsBy(How = How.XPath,
-        [FindsBy(How = How.XPath, Using = ".//button[contains(@aria-label, 'update')]")]
-        [FindsBy(How = How.XPath, Using = ".//span[text()='Delete Project']")]
-        public IWebElement DeleteProjectValueInActions { get; set; }
-
-        [FindsBy(How = How.XPath, Using = ".//mat-placeholder[text()='Actions']")]
-        public IWebElement ActionsInDropdown { get; set; }
-
-            Using = ".//button[@class='button-small mat-raised-button mat-accent ng-star-inserted']")]
-        public IWebElement DeleteButtonOnPage { get; set; }*/
-
-        /*[FindsBy(How = How.XPath, Using = ".//div[@class='ng-star-inserted inline-tip']")]
-        public IWebElement DeleteWarningMessage { get; set; }*/
-
-        /*[FindsBy(How = How.XPath, Using = ".//button[@class='messageAction btn mat-button ng-star-inserted']")]
-        public IWebElement DeleteButtonInWarningMessage { get; set; }*/
-
-        //[FindsBy(How = How.XPath, Using = ".//div[contains(@class, 'inline-success')]")]
-        //public IWebElement SuccessMessage { get; set; }
-
         [FindsBy(How = How.XPath, Using = ".//input[@aria-checked='false']")]
         public IWebElement UncheckedCheckbox { get; set; }
 
@@ -62,12 +30,6 @@ namespace DashworksTestAutomation.Pages.Evergreen.AdminDetailsPages
                 SelectorFor(this, p => p.AdminPageTitle)
             };
         }
-
-        /*public void SelectProjectByName(string projectName)
-        {
-            string projectNameSelector = $".//a[text()='{projectName}']";
-            Driver.FindElement(By.XPath(projectNameSelector)).Click();
-        }*/
 
         public void NavigateToProjectTabByName(string tabName)
         {
@@ -127,32 +89,6 @@ namespace DashworksTestAutomation.Pages.Evergreen.AdminDetailsPages
         {
             return Driver.IsElementDisplayed(By.XPath($".//div//span[contains(text(),'{tabName} ')]"));
         }
-
-        /*public int GetColumnNumberByName(string columnName)
-        {
-            var allHeadersSelector = By.XPath(".//div[@class='ag-header-container']/div/div");
-            Driver.WaitForDataLoading();
-            Driver.WaitWhileControlIsNotDisplayed(allHeadersSelector);
-            var allHeaders = Driver.FindElements(allHeadersSelector);
-            if (!allHeaders.Any())
-                throw new Exception("Table does not contains any columns");
-            var columnNumber =
-                allHeaders.IndexOf(allHeaders.First(x =>
-                    x.FindElement(By.XPath(".//span[@class='ag-header-cell-text']")).Text.Equals(columnName))) + 1;
-
-            return columnNumber;
-        }
-
-        public void GetSearchFieldByColumnName(string columnName, string text)
-        {
-            By byControl =
-                By.XPath(
-                    $".//div[@role='presentation']/div[2]/div[{GetColumnNumberByName(columnName)}]//div[@class='ag-floating-filter-full-body']//input");
-            Driver.WaitForDataLoading();
-            Driver.WaitWhileControlIsNotDisplayed(byControl);
-            Driver.FindElement(byControl).Click();
-            Driver.FindElement(byControl).SendKeys(text);
-        }*/
 
         public bool WarningMessageProjectPage(string text)
         {

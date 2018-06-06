@@ -132,11 +132,10 @@ Scenario: EvergreenJnr_AdminPage_CheckThatAfterApplyingDoNotIncludeDeviceOwnersL
 	And User clicks Create button on the Create Project page
 	And User clicks "Projects" link on the Admin page
 	Then "Projects" page should be displayed to the user
-	When User selects all rows on the Projects page
+	When User selects all rows on the grid
 	When User clicks Actions button on the Projects page
-	When User clicks Delete Project button on the Projects page
+	And User clicks Delete button
 	Then Delete button is displayed to the User on the Projects page
-
 	When User cancels the selection of all rows on the Projects page
 	Then Delete button is not displayed to the User on the Projects page
 	Then Project "TestProject1" is displayed to user
@@ -179,8 +178,8 @@ Scenario: EvergreenJnr_AdminPage_CheckThatNoConsoleErrorsAreDisplayedWhenDeleteD
 	Then "Buckets" page should be displayed to the user
 	When User have opened Column Settings for "Bucket" column
 	And User clicks Filter button on the Column Settings panel
-	Then User enters "123455465" text in the Filter field
-	When User clears Filter field
+	And User enters "123455465" text in the Filter field
+	And User clears Filter field
 	Then There are no errors in the browser console
 
 @Evergreen @Admin @EvergreenJnr_AdminPage @AdminPage @DAS11762 @DAS12009
@@ -191,16 +190,16 @@ Scenario: EvergreenJnr_AdminPage_CheckThatNoConsoleErrorsAreDisplayedWhenDeleteD
 	Then "Teams" page should be displayed to the user
 	When User have opened Column Settings for "Team" column
 	And User clicks Filter button in the Column Settings panel on the Teams Page
-	Then User enters "123455465" text in the Filter field
-	When User clears Filter field
+	And User enters "123455465" text in the Filter field
+	And User clears Filter field
 	Then There are no errors in the browser console
 	When User enters "Administrative Team" text in the Search field for "Team" column
 	And User clicks content from "Team" column
 	Then "Administrative Team" team details is displayed to the user
 	When User have opened Column Settings for "Username" column
 	And User clicks Filter button in the Column Settings panel on the Teams Page
-	Then User enters "123455465" text in the Filter field
-	When User clears Filter field
+	And User enters "123455465" text in the Filter field
+	And User clears Filter field
 	Then Content is present in the table on the Teams Page
 	And There are no errors in the browser console
 
@@ -513,10 +512,10 @@ Scenario: EvergreenJnr_AdminPage_CheckThatNoErrorsAreDisplayedInTheProjectScopeC
 Scenario: EvergreenJnr_AdminPage_CheckThatPanelOfAvailableMemberslIsExpandedByDefault
 	When User clicks Admin on the left-hand menu
 	Then Admin page should be displayed to the user
-	When User click "Teams" link on the Admin page
+	When User clicks "Teams" link on the Admin page
 	Then "Teams" page should be displayed to the user
-	When User enters "K-Team" text in the Search field for "Team" column on the Teams page
-	And User clicks content from "Team" column on the Teams page
+	When User enters "K-Team" text in the Search field for "Team" column
+	And User clicks content from "Team" column
 	Then "K-Team" team details is displayed to the user
 	When User clicks Add Members button on the Teams page
 	Then Panel of available members is displayed to the user
@@ -525,77 +524,85 @@ Scenario: EvergreenJnr_AdminPage_CheckThatPanelOfAvailableMemberslIsExpandedByDe
 Scenario: EvergreenJnr_AdminPage_CheckThatFiltersAreWorkingCorrectlyOnTheAdminPages
 	When User clicks Admin on the left-hand menu
 	Then Admin page should be displayed to the user
-	When User click "Teams" link on the Admin page
+	When User clicks "Teams" link on the Admin page
 	Then "Teams" page should be displayed to the user
-	When User enters "Migration phase 3 team" text in the Search field for "Team" column on the Teams page
-	Then "1" rows are displayed on the Teams page
-	When User enters ">=5" text in the Search field for "Project Buckets" column on the Teams page
-	Then "5" rows are displayed on the Teams page
-	When User enters "Administrative Team" text in the Search field for "Team" column on the Teams page
-	And User clicks content from "Team" column on the Teams page
-	When User enters "readonly" text in the Search field for "Username" column on the Teams page
-	Then "1" rows are displayed on the Teams page
-	And User clicks "Buckets" tab on the Teams page
-	When User enters "Cardiff --- Test text fill; Test text fill; ------" text in the Search field for "Bucket" column on the Teams page
-	Then "1" rows are displayed on the Teams page
-	When User enters "<10" text in the Search field for "Devices" column on the Teams page
-	Then "4" rows are displayed on the Teams page
+	When User enters "Migration phase 3 team" text in the Search field for "Team" column
+	Then Counter shows "1" found rows
+	When User clears Search field for "Project Buckets" column
+	And User enters ">=5" text in the Search field for "Project Buckets" column
+	Then Counter shows "5" found rows
+	When User clears Search field for "Project Buckets" column
+	When User enters "Administrative Team" text in the Search field for "Team" column
+	And User clicks content from "Team" column
+	When User enters "readonly" text in the Search field for "Username" column
+	Then Counter shows "1" found rows
+	When User clicks "Buckets" tab
+	And User enters "Cardiff --- Test text fill; Test text fill; ------" text in the Search field for "Bucket" column
+	Then Counter shows "1" found rows
+	When User clears Search field for "Project Buckets" column
+	When User enters "<10" text in the Search field for "Devices" column
+	Then Counter shows "4" found rows
 	When User clicks Admin on the left-hand menu
-	When User click "Buckets" link on the Admin page
-	When User enters "barry's" text in the Search field for "Bucket" column on the Buckets page
-	Then "2" rows are displayed on the Buckets page
-	When User enters "=2" text in the Search field for "Users" column on the Buckets page
-	Then "2" rows are displayed on the Buckets page
-	When User enters "Unassigned" text in the Search field for "Bucket" column on the Buckets page
-	And User clicks content from "Bucket" column on the Buckets page
-	When User enters "BG4H" text in the Search field for "Hostname" column on the Buckets page
-	Then "2" rows are displayed on the Buckets page
-	When User enters "Mac OS X 10.12.3" text in the Search field for "Operating System" column on the Buckets page
-	Then "1" rows are displayed on the Buckets page
-	And User clicks "Users" tab on the Buckets page
-	When User enters "Pinabel Cinq-Mars" text in the Search field for "Display Name" column on the Buckets page
-	Then "1" rows are displayed on the Buckets page
-	When User enters "1DFF" text in the Search field for "Username" column on the Buckets page
-	Then "3" rows are displayed on the Buckets page
-	And User clicks "Mailboxes" tab on the Buckets page
-	When User enters "DiscoverySearchMailbox{D919BA05-46A6-415f-80AD-7E09334BB852}@juriba1.onmicrosoft.com" text in the Search field for "Email Address (Primary)" column on the Buckets page
-	Then "1" rows are displayed on the Buckets page
-	When User enters "RD-EXCH2K3" text in the Search field for "Server Name" column on the Buckets page
-	Then "6" rows are displayed on the Buckets page
+	And User clicks "Buckets" link on the Admin page
+	And User enters "barry's" text in the Search field for "Bucket" column
+	Then Counter shows "2" found rows
+	When User clears Search field for "Project Buckets" column
+	When User enters "=2" text in the Search field for "Users" column
+	Then Counter shows "2" found rows
+	When User clears Search field for "Project Buckets" column
+	When User enters "Unassigned" text in the Search field for "Bucket" column
+	And User clicks content from "Bucket" column
+	And User enters "BG4H" text in the Search field for "Hostname" column
+	Then Counter shows "2" found rows
+	When User clears Search field for "Project Buckets" column
+	When User enters "Mac OS X 10.12.3" text in the Search field for "Operating System" column
+	Then Counter shows "1" found rows
+	When User clicks "Users" tab
+	When User enters "Pinabel Cinq-Mars" text in the Search field for "Display Name" column
+	Then Counter shows "1" found rows
+	When User clears Search field for "Project Buckets" column
+	When User enters "1DFF" text in the Search field for "Username" column
+	Then Counter shows "3" found rows
+	When User clicks "Mailboxes" tab
+	And User enters "DiscoverySearchMailbox{D919BA05-46A6-415f-80AD-7E09334BB852}@juriba1.onmicrosoft.com" text in the Search field for "Email Address (Primary)" column
+	Then Counter shows "1" found rows
+	When User clears Search field for "Project Buckets" column
+	When User enters "RD-EXCH2K3" text in the Search field for "Server Name" column
+	Then Counter shows "6" found rows
 
 @Evergreen @Admin @EvergreenJnr_AdminPage @AdminPage @DAS12236
 Scenario: EvergreenJnr_AdminPage_CheckThatNoConsoleErrorsAreDisplayedAfterUpdatingProjectScopeChanges
 	When User clicks Admin on the left-hand menu
 	Then Admin page should be displayed to the user
-	When User click "Projects" link on the Admin page
+	When User clicks "Projects" link on the Admin page
 	Then "Projects" page should be displayed to the user
-	When User clicks Create Project button
-	Then Create Project page should be displayed to the user
-	And User enters "TestProject10" in the Project Name field
-	And User select "All Devices" in the Scope Project dropdown
-	When User clicks Create Project button
-	And User click "Projects" link on the Admin page
+	When User clicks Create New Item button
+	Then "Create Project" page should be displayed to the user
+	When User enters "TestProject12" in the Project Name field
+	And User selects "All Devices" in the Scope Project dropdown
+	When User clicks Create button on the Create Project page
+	And User clicks "Projects" link on the Admin page
 	Then "Projects" page should be displayed to the user
-	When User enters "TestProject10" text in the Search field for "Project" column on the Projects page
-	And User clicks content from "Project" column on the Buckets page
-	Then Project "TestProject10" is displayed to user
+	When User enters "TestProject12" text in the Search field for "Project" column
+	And User clicks content from "Project" column
+	Then Project "TestProject12" is displayed to user
 	When User navigates to the "Application Scope" tab in the Scope section on the Project details page
 	And User clicks "Entitled to the device owner" checkbox on the Project details page
-	And User select "Scope Changes" tab on the Project details page
+	And User selects "Scope Changes" tab on the Project details page
 	And User clicks "Applications" tab in the Project Scope Changes section
 	And User clicks "UPDATE APPLICATION CHANGES" button on the Projects page
 	And User clicks Update Project button on the Projects page
 	Then Success message with "0 objects queued for onboarding, 0 objects offboarded" text is displayed on the Projects page
-	When User select "Scope Details" tab on the Project details page
+	When User selects "Scope Details" tab on the Project details page
 	And User navigates to the "Application Scope" tab in the Scope section on the Project details page
 	And User clicks "Entitled to the device owner" checkbox on the Project details page
-	And User select "Scope Changes" tab on the Project details page
+	And User selects "Scope Changes" tab on the Project details page
 	And User clicks "Applications" tab in the Project Scope Changes section
 	And User clicks "UPDATE APPLICATION CHANGES" button on the Projects page
 	And User clicks Update Project button on the Projects page
 	Then Success message with "0 objects queued for onboarding, 0 objects offboarded" text is displayed on the Projects page
 	And There are no errors in the browser console
-	And Delete "TestProject10" Project in the Administration
+	And Delete "TestProject12" Project in the Administration
 	
 @Evergreen @Admin @EvergreenJnr_AdminPage @AdminPage @DAS12491
 Scenario: EvergreenJnr_AdminPage_CheckThatSingularFoundItemLabelDisplaysOnActionsToolbarforBucketsList

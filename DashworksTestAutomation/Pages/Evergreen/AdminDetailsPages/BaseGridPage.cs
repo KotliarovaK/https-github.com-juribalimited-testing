@@ -123,6 +123,7 @@ namespace DashworksTestAutomation.Pages.Evergreen.AdminDetailsPages
             Driver.WaitForDataLoading();
             Driver.WaitWhileControlIsNotDisplayed(byControl);
             Driver.FindElement(byControl).Click();
+            Driver.FindElement(byControl).Clear();
             Driver.FindElement(byControl).SendKeys(text);
         }
 
