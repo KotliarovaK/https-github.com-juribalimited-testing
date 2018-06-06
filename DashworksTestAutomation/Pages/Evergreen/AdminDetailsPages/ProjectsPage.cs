@@ -33,7 +33,7 @@ namespace DashworksTestAutomation.Pages.Evergreen.AdminDetailsPages
                 ".//label[@for='scope']span[@class='mat-form-field-label-wrapper mat-input-placeholder-wrapper mat-form-field-placeholder-wrapper']")]
         public IWebElement SelectScopeProject { get; set; }
 
-        [FindsBy(How = How.XPath, Using = ".//button[@class='mat-primary mat-raised-button']")]
+        [FindsBy(How = How.XPath, Using = ".//button[contains(@aria-label, 'update')]")]
         public IWebElement UpdateProjectButton { get; set; }
 
         [FindsBy(How = How.XPath, Using = ".//input[@role='combobox']")]
