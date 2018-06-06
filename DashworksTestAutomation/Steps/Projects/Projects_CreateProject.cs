@@ -75,6 +75,7 @@ namespace DashworksTestAutomation.Steps.Projects
             var tab = _driver.NowAt<BaseElements>();
 
             tab.GetButtonElementByName(buttonName).Click();
+            _driver.WaitForDataLoading();
         }
 
         [Then(@"Success message is displayed with ""(.*)"" text")]
@@ -182,6 +183,20 @@ namespace DashworksTestAutomation.Steps.Projects
             page.GetTheCreatedRequestTypeInTableByName(_projectDto.ReqestTypes.Last().Name).Click();
         }
 
+        [When(@"User makes ""(.*)"" Request Type default")]
+        public void WhenUserMakesRequestTypeDefault(string requestTypeName, Table table)
+        {
+            var tequest = _driver.NowAt<BaseElements>();
+            tequest.GetTheCreatedRequestTypeInTableByName(requestTypeName).Click();
+
+            var page = _driver.NowAt<RequestType_DetailsPage>();
+            table.CreateInstance<RequestType_DetailsDto>().CopyPropertiesTo(_requestTypeDetailsDto);
+            page.DefaultRequestTypeCheckbox.SetCheckboxState(_requestTypeDetailsDto.DefaultRequestType);
+            Assert.IsTrue(page.DefaultRequestTypeCheckbox.Selected, "Selected checkbox is not checked");
+
+            page.UpdateDetailsButton.Click();
+        }
+
         [When(@"User click on the ""(.*)"" Request Type")]
         public void WhenUserClickOnTheRequestType(string requestTypeName)
         {
@@ -196,8 +211,7 @@ namespace DashworksTestAutomation.Steps.Projects
             var page = _driver.NowAt<RequestType_DetailsPage>();
 
             table.CreateInstance<RequestType_DetailsDto>().CopyPropertiesTo(_requestTypeDetailsDto);
-
-            page.DefaultRequestType.SetCheckboxState(_requestTypeDetailsDto.DefaultRequestType);
+            page.DefaultRequestTypeCheckbox.SetCheckboxState(_requestTypeDetailsDto.DefaultRequestType);
 
             page.UpdateDetailsButton.Click();
         }

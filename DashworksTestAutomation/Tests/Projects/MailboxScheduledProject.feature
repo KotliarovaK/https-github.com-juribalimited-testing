@@ -50,32 +50,32 @@ Scenario: Projects_CreateMailboxScheduledProject
 	Then "Manage Request Types" page is displayed to the user
 	When User clicks "Create Request Type" button
 	When User create Request Type
-	| Name                | Description               | ObjectTypeString |
-	| TestRequestTypeName | MailboxScheduledProject 0 | User             |
+	| Name                  | Description               | ObjectTypeString |
+	| 1 TestRequestTypeName | MailboxScheduledProject 1 | User             |
 	Then Success message is displayed
 	When User clicks "Cancel" button
 	Then created Request Type is displayed in the table
 	Then User removes created Request Type
 	When User clicks "Create Request Type" button
 	When User create Request Type
-	| Name                | Description               | ObjectTypeString |
-	| TestRequestTypeName | MailboxScheduledProject 1 | Application      |
+	| Name                  | Description               | ObjectTypeString |
+	| 2 TestRequestTypeName | MailboxScheduledProject 2 | Application      |
 	Then Success message is displayed
 	When User clicks "Cancel" button
 	Then created Request Type is displayed in the table
 	Then User removes created Request Type
 	When User clicks "Create Request Type" button
 	When User create Request Type
-	| Name                | Description               | ObjectTypeString |
-	| TestRequestTypeName | MailboxScheduledProject 2 | Mailbox          |
+	| Name                  | Description               | ObjectTypeString |
+	| 3 TestRequestTypeName | MailboxScheduledProject 3 | Mailbox          |
 	Then Success message is displayed
 	When User clicks "Cancel" button
 	Then created Request Type is displayed in the table
 	Then User removes created Request Type
 	When User clicks "Create Request Type" button
 	When User create Request Type
-	| Name                | Description               | ObjectTypeString |
-	| TestRequestTypeName | MailboxScheduledProject 0 | User             |
+	| Name                  | Description               | ObjectTypeString |
+	| 1 TestRequestTypeName | MailboxScheduledProject 1 | User             |
 	Then Success message is displayed
 	When User clicks "Cancel" button
 	Then created Request Type is displayed in the table
@@ -88,8 +88,8 @@ Scenario: Projects_CreateMailboxScheduledProject
 	Then created Request Type is a Default
 	When User clicks "Create Request Type" button
 	When User create Request Type
-	| Name                | Description               | ObjectTypeString |
-	| TestRequestTypeName | MailboxScheduledProject 1 | Application      |
+	| Name                  | Description               | ObjectTypeString |
+	| 2 TestRequestTypeName | MailboxScheduledProject 2 | Application      |
 	Then Success message is displayed
 	When User clicks "Cancel" button
 	Then created Request Type is displayed in the table
@@ -102,8 +102,8 @@ Scenario: Projects_CreateMailboxScheduledProject
 	Then created Request Type is a Default
 	When User clicks "Create Request Type" button
 	When User create Request Type
-	| Name                | Description               | ObjectTypeString |
-	| TestRequestTypeName | MailboxScheduledProject 2 | Mailbox          |
+	| Name                  | Description               | ObjectTypeString |
+	| 3 TestRequestTypeName | MailboxScheduledProject 3 | Mailbox          |
 	Then Success message is displayed
 	When User clicks "Cancel" button
 	Then created Request Type is displayed in the table
@@ -394,8 +394,9 @@ Scenario: Projects_CreateMailboxScheduledProject
 	Then selected Category was removed
 	Then Success message is displayed with "Category successfully deleted." text
 	When User navigate to "Request Types" tab
-	When User click on the "[Default (Mailbox)]" Request Type
-	Then User updates the Request Type page
+	#When User click on the "[Default (Mailbox)]" Request Type
+	#Then User updates the Request Type page
+	When User makes "[Default (Application)]" Request Type default
 	| DefaultRequestType |
 	| true               |
 	Then Success message is displayed with "Request Type successfully updated" text
@@ -403,8 +404,9 @@ Scenario: Projects_CreateMailboxScheduledProject
 	Then User removes created Request Type
 	Then selected Request Type was removed
 	Then Success message is displayed with "Request Type successfully deleted" text
-	When User click on the "[Default (Application)]" Request Type
-	Then User updates the Request Type page
+	#When User click on the "[Default (Application)]" Request Type
+	#Then User updates the Request Type page
+	When User makes "[Default (Mailbox)]" Request Type default
 	| DefaultRequestType |
 	| true               |
 	Then Success message is displayed with "Request Type successfully updated" text
@@ -412,8 +414,9 @@ Scenario: Projects_CreateMailboxScheduledProject
 	Then User removes created Request Type
 	Then selected Request Type was removed
 	Then Success message is displayed with "Request Type successfully deleted" text
-	When User click on the "[Default (User)]" Request Type
-	Then User updates the Request Type page
+	#When User click on the "[Default (User)]" Request Type
+	#Then User updates the Request Type page
+	When User makes "[Default (User)]" Request Type default
 	| DefaultRequestType |
 	| true               |
 	Then Success message is displayed with "Request Type successfully updated" text

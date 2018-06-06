@@ -7,8 +7,8 @@ namespace DashworksTestAutomation.Pages.Projects
 {
     internal class RequestType_DetailsPage : BaseDashboardPage
     {
-        [FindsBy(How = How.XPath, Using = ".//input[contains (@id, 'DefaultRequestType')]")]
-        public IWebElement DefaultRequestType { get; set; }
+        [FindsBy(How = How.XPath, Using = ".//input[contains(@id,'DefaultRequestType')]")]
+        public IWebElement DefaultRequestTypeCheckbox { get; set; }
 
         [FindsBy(How = How.XPath, Using = ".//input[@value='Update Details']")]
         public IWebElement UpdateDetailsButton { get; set; }
@@ -17,8 +17,8 @@ namespace DashworksTestAutomation.Pages.Projects
         {
             return new List<By>
             {
-                SelectorFor(this, p => p.DefaultRequestType),
-                SelectorFor(this, p => p.UpdateDetailsButton),
+                SelectorFor(this, p => p.DefaultRequestTypeCheckbox),
+                SelectorFor(this, p => p.UpdateDetailsButton)
             };
         }
     }

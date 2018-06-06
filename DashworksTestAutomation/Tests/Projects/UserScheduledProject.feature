@@ -50,32 +50,32 @@ Scenario: Projects_CreateUserScheduledProject
 	Then "Manage Request Types" page is displayed to the user
 	When User clicks "Create Request Type" button
 	When User create Request Type
-	| Name                | Description            | ObjectTypeString |
-	| TestRequestTypeName | UserScheduledProject 0 | User             |
+	| Name                  | Description            | ObjectTypeString |
+	| 1 TestRequestTypeName | UserScheduledProject 1 | User             |
 	Then Success message is displayed
 	When User clicks "Cancel" button
 	Then created Request Type is displayed in the table
 	Then User removes created Request Type
 	When User clicks "Create Request Type" button
 	When User create Request Type
-	| Name                | Description            | ObjectTypeString |
-	| TestRequestTypeName | UserScheduledProject 1 | Application      |
+	| Name                  | Description            | ObjectTypeString |
+	| 2 TestRequestTypeName | UserScheduledProject 2 | Application      |
 	Then Success message is displayed
 	When User clicks "Cancel" button
 	Then created Request Type is displayed in the table
 	Then User removes created Request Type
 	When User clicks "Create Request Type" button
 	When User create Request Type
-	| Name                | Description            | ObjectTypeString |
-	| TestRequestTypeName | UserScheduledProject 2 | Computer         |
+	| Name                  | Description            | ObjectTypeString |
+	| 3 TestRequestTypeName | UserScheduledProject 3 | Computer         |
 	Then Success message is displayed
 	When User clicks "Cancel" button
 	Then created Request Type is displayed in the table
 	Then User removes created Request Type
 	When User clicks "Create Request Type" button
 	When User create Request Type
-	| Name                | Description            | ObjectTypeString |
-	| TestRequestTypeName | UserScheduledProject 0 | User             |
+	| Name                  | Description            | ObjectTypeString |
+	| 1 TestRequestTypeName | UserScheduledProject 1 | Computer         |
 	Then Success message is displayed
 	When User clicks "Cancel" button
 	Then created Request Type is displayed in the table
@@ -88,8 +88,8 @@ Scenario: Projects_CreateUserScheduledProject
 	Then created Request Type is a Default
 	When User clicks "Create Request Type" button
 	When User create Request Type
-	| Name                | Description            | ObjectTypeString |
-	| TestRequestTypeName | UserScheduledProject 1 | Application      |
+	| Name                  | Description            | ObjectTypeString |
+	| 2 TestRequestTypeName | UserScheduledProject 2 | Application      |
 	Then Success message is displayed
 	When User clicks "Cancel" button
 	Then created Request Type is displayed in the table
@@ -102,8 +102,8 @@ Scenario: Projects_CreateUserScheduledProject
 	Then created Request Type is a Default
 	When User clicks "Create Request Type" button
 	When User create Request Type
-	| Name                | Description            | ObjectTypeString |
-	| TestRequestTypeName | UserScheduledProject 2 | Computer         |
+	| Name                  | Description            | ObjectTypeString |
+	| 3 TestRequestTypeName | UserScheduledProject 3 | User             |
 	Then Success message is displayed
 	When User clicks "Cancel" button
 	Then created Request Type is displayed in the table
@@ -156,7 +156,7 @@ Scenario: Projects_CreateUserScheduledProject
 	Then Success message is displayed with "Task successfully created" text
 	When User updates the Task page
 	| TaskHaADueDate | TaskImpactsReadiness | TaskHasAnOwner | ShowDetails | ProjectObject | BulkUpdate | SelfService |
-	| true           | false                | false          | true        | true          | false      | false       |
+	| true           | true                 | false          | true        | true          | false      | false       |
 	Then Success message is displayed with "Task successfully updated" text
 	When User publishes the task
 	Then selected task was published
@@ -394,8 +394,9 @@ Scenario: Projects_CreateUserScheduledProject
 	Then selected Category was removed
 	Then Success message is displayed with "Category successfully deleted." text
 	When User navigate to "Request Types" tab
-	When User click on the "[Default (Computer)]" Request Type
-	Then User updates the Request Type page
+	When User makes "[Default (Application)]" Request Type default
+	#When User click on the "[Default (Application)]" Request Type
+	#Then User updates the Request Type page
 	| DefaultRequestType |
 	| true               |
 	Then Success message is displayed with "Request Type successfully updated" text
@@ -403,8 +404,9 @@ Scenario: Projects_CreateUserScheduledProject
 	Then User removes created Request Type
 	Then selected Request Type was removed
 	Then Success message is displayed with "Request Type successfully deleted" text
-	When User click on the "[Default (Application)]" Request Type
-	Then User updates the Request Type page
+	When User makes "[Default (Computer)]" Request Type default
+	#When User click on the "[Default (Computer)]" Request Type
+	#Then User updates the Request Type page
 	| DefaultRequestType |
 	| true               |
 	Then Success message is displayed with "Request Type successfully updated" text
@@ -412,8 +414,9 @@ Scenario: Projects_CreateUserScheduledProject
 	Then User removes created Request Type
 	Then selected Request Type was removed
 	Then Success message is displayed with "Request Type successfully deleted" text
-	When User click on the "[Default (User)]" Request Type
-	Then User updates the Request Type page
+	When User makes "[Default (User)]" Request Type default
+	#When User click on the "[Default (User)]" Request Type
+	#Then User updates the Request Type page
 	| DefaultRequestType |
 	| true               |
 	Then Success message is displayed with "Request Type successfully updated" text
