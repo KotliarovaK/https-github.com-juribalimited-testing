@@ -1064,7 +1064,6 @@ Scenario: EvergreenJnr_DevicesLists_CheckThatOSBranchFilterWithEquaEmptyValueIsD
 	| SelectedCheckboxes |
 	| Empty              |
 	When User create custom list with "TestList5433" name
-	#When User create dynamic list with "TestList5433" name on "Devices" page
 	When User navigates to the "All Devices" list
 	When User navigates to the "TestList5433" list
 	When User clicks the Filters button

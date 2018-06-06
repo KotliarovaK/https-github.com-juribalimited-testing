@@ -12,6 +12,8 @@ namespace DashworksTestAutomation.Pages.Evergreen.DetailsTabsMenu
     {
         public const string FilterCheckboxValuesSelector = ".//div[@class='boolean-icon ng-star-inserted']";
 
+        public const string Checkboxes = ".//mat-pseudo-checkbox";
+
         [FindsBy(How = How.XPath,
             Using =
                 ".//span[text()='Application Summary']/ancestor::div[@class='field-category no-side-padding collapsed']")]
@@ -35,7 +37,7 @@ namespace DashworksTestAutomation.Pages.Evergreen.DetailsTabsMenu
         public IWebElement StringFilter { get; set; }
 
         [FindsBy(How = How.XPath, Using = ".//div[@class='ng-star-inserted']/span")]
-        public IWebElement CheckboxexStringFilter { get; set; }
+        public IWebElement CheckboxesStringFilter { get; set; }
 
         [FindsBy(How = How.XPath,
             Using = ".//mat-option[@class='selectAllOption mat-option mat-option-multiple ng-star-inserted']")]

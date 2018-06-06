@@ -40,7 +40,7 @@ namespace DashworksTestAutomation.Pages.Evergreen
         public IWebElement SearchTextbox { get; set; }
 
         [FindsBy(How = How.XPath,
-            Using = ".//button[@class='btn btn-default input-toggle mat-icon-button ng-star-inserted']")]
+            Using = ".//button[@class='btn btn-default input-toggle mat-icon-button _mat-animation-noopable ng-star-inserted']")]
         public IWebElement SearchTextboxResetButton { get; set; }
 
         [FindsBy(How = How.XPath,
@@ -80,7 +80,7 @@ namespace DashworksTestAutomation.Pages.Evergreen
         [FindsBy(How = How.XPath, Using = ".//span[text()='B Star Packages']")]
         public IWebElement BStarPackegesCheckbox { get; set; }
 
-        [FindsBy(How = How.XPath, Using = ".//button[@class='mat-primary mat-raised-button']")]
+        [FindsBy(How = How.XPath, Using = ".//button[@class='mat-primary mat-raised-button _mat-animation-noopable']/span[text()='SAVE']")]
         public IWebElement SaveButton { get; set; }
 
         [FindsBy(How = How.XPath, Using = ".//i[@class='material-icons mat-filter-edit mat-18']")]

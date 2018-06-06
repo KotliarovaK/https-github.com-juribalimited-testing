@@ -26,7 +26,7 @@ namespace DashworksTestAutomation.Pages.Evergreen
         [FindsBy(How = How.XPath, Using = ".//input[@aria-label='List Name']")]
         public IWebElement ListNameTextbox { get; set; }
 
-        [FindsBy(How = How.XPath, Using = ".//button[@class='button-small mat-primary save-actions-save mat-raised-button']")]
+        [FindsBy(How = How.XPath, Using = ".//button[@class='button-small mat-primary save-actions-save mat-raised-button _mat-animation-noopable']")]
         public IWebElement SaveButton { get; set; }
 
         [FindsBy(How = How.XPath, Using = ".//button[@class='button-small save-actions-cancel mat-raised-button']")]
@@ -115,7 +115,7 @@ namespace DashworksTestAutomation.Pages.Evergreen
         [FindsBy(How = How.XPath, Using = ".//li[text()='Delete']")]
         public IWebElement DeleteButton { get; set; }
 
-        [FindsBy(How = How.XPath, Using = ".//button[@class='btn mat-button']")]
+        [FindsBy(How = How.XPath, Using = ".//button[@class='btn mat-button _mat-animation-noopable']")]
         public IWebElement DeleteButtonInWarningMessage { get; set; }
 
         [FindsBy(How = How.XPath, Using = ".//button[@class='btn btn-transparent mat-button']")]

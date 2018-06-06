@@ -26,7 +26,7 @@ namespace DashworksTestAutomation.Pages.Evergreen
         [FindsBy(How = How.XPath, Using = ".//button[@class='btn btn-default mat-icon-button']/span/i[@class='material-icons mat-static-list']")]
         public IWebElement InactiveActionsButton { get; set; }
 
-        [FindsBy(How = How.XPath, Using = ".//button[@class='btn btn-default mat-icon-button'][@id='_listDtlBtn']")]
+        [FindsBy(How = How.XPath, Using = ".//button[@class='btn btn-default mat-icon-button _mat-animation-noopable'][@id='_listDtlBtn']")]
         public IWebElement ListDetailsButton { get; set; }
 
         [FindsBy(How = How.XPath, Using = ".//button[contains(@id, 'clmnBtn')]")]
