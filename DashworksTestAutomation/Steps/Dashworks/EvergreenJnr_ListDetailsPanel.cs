@@ -102,6 +102,7 @@ namespace DashworksTestAutomation.Steps.Dashworks
         public void ThenListDetailsPanelIsDisplayedToTheUser()
         {
             var listDetailsElement = _driver.NowAt<ListDetailsElement>();
+            _driver.WaitForDataLoading();
             _driver.WaitWhileControlIsNotDisplayed<ListDetailsElement>(() => listDetailsElement.ListDetailsPanel);
             Assert.IsTrue(listDetailsElement.ListDetailsPanel.Displayed(), "List Details panel is not displayed");
             Logger.Write("List Details panel is visible");
@@ -196,8 +197,9 @@ namespace DashworksTestAutomation.Steps.Dashworks
         {
             //Save user to remove its lists after test execution
             _usersWithSharedLists.Value.Add(DatabaseWorker.GetUserNameByFullName(ownerOption));
-
+            
             var listDetailsElement = _driver.NowAt<ListDetailsElement>();
+            listDetailsElement.OwnerDropdown.ClearWithBackspaces();
             _driver.SelectCustomSelectbox(listDetailsElement.OwnerDropdown, ownerOption);
         }
 
@@ -215,6 +217,7 @@ namespace DashworksTestAutomation.Steps.Dashworks
             var listDetailsElement = _driver.NowAt<ListDetailsElement>();
             _driver.WaitWhileControlIsNotDisplayed<ListDetailsElement>(() => listDetailsElement.AcceptButton);
             listDetailsElement.AcceptButton.Click();
+            _driver.WaitForDataLoading();
         }
 
         [When(@"User click Add User button")]
@@ -263,7 +266,7 @@ namespace DashworksTestAutomation.Steps.Dashworks
         {
             var listElement = _driver.NowAt<CustomListElement>();
             Assert.IsTrue(listElement.RemovingDependencyListMessage(warningText),
-                $"{warningText} message is not displayed in the list details panel");
+                $"'{warningText}' message is not displayed in the list details panel");
         }
 
         [Then(@"no Warning message is displayed in the lists panel")]

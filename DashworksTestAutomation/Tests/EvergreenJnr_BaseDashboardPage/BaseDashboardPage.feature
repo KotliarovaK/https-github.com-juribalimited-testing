@@ -11,7 +11,7 @@ Scenario Outline: EvergreenJnr_AllList_CheckThatColumnHeaderFontWidthConformsToD
 	When User clicks "<ListName>" on the left-hand menu
 	Then "<ListName>" list should be displayed to the user
 	And Appropriate header font weight is displayed
-	Then "v5.2.5.0" Application version is displayed
+	Then "v5.2.6.0" Application version is displayed
 
 Examples: 
 	| ListName     |
@@ -35,7 +35,7 @@ Examples:
 	| Mailboxes    | Email Address |
 
 @Evergreen @AllLists @EvergreenJnr_BaseDashboardPage @BaseDashboardPage @DAS11988 @DAS10972
-Scenario Outline: EvergreenJnr_AllList_CheckThatSaveListFunctionIsAvailableAfterSortingColumns
+Scenario Outline: EvergreenJnr_AllLists_CheckThatSaveListFunctionIsAvailableAfterSortingColumns
 	When User clicks "<ListName>" on the left-hand menu
 	Then "<ListName>" list should be displayed to the user
 	When User click on '<ColumnName>' column header
@@ -113,7 +113,7 @@ Scenario: EvergreenJnr_UsersList_CheckThatURLsAreUpdatedAfterAddingFilters
 	Then Appropriate filter is added to URL
 
 @Evergreen @Devices @EvergreenJnr_BaseDashboardPage @BaseDashboardPage @DAS11641
-Scenario: EvergreenJnr_DevicesList_CheckThatActionsDetailsColumnsFiltersButtonsAreNotClickableWhenOpenedNotificationsAndUserProfilesDropdownBlocks
+Scenario: EvergreenJnr_DevicesLists_CheckThatActionsDetailsColumnsFiltersButtonsAreNotClickableWhenOpenedNotificationsAndUserProfilesDropdownBlocks
 	When User clicks "Devices" on the left-hand menu
 	Then "Devices" list should be displayed to the user
 	When User clicks Account Profile dropdown
@@ -121,7 +121,7 @@ Scenario: EvergreenJnr_DevicesList_CheckThatActionsDetailsColumnsFiltersButtonsA
 	When User click User Notifications button
 	Then Notifications message is displayed correctly
 
-@Evergreen @AllLists @EvergreenJnr_BaseDashboardPage @BaseDashboardPage @DAS10972 @DAS12602 @Delete_Newly_Created_List @Not_Run
+@Evergreen @AllLists @EvergreenJnr_BaseDashboardPage @BaseDashboardPage @DAS10972 @DAS12602 @Delete_Newly_Created_List
 Scenario Outline: EvergreenJnr_AllList_CheckThatEditListFunctionIsAvailableAfterSortingColumns
 	When User clicks "<ListName>" on the left-hand menu
 	Then "<ListName>" list should be displayed to the user
@@ -182,3 +182,15 @@ Scenario: EvergreenJnr_DevicesList_CheckThatToolTipIsDisplayedWithCreateProjectB
 	When User clicks Create button on the Base Dashboard Page
 	Then tooltip is displayed with "This list must be saved before using it to create a project" text for Create Project button
 	Then Create Project button is disabled on the Base Dashboard Page
+
+@Evergreen @AllLists @EvergreenJnr_BaseDashboardPage @BaseDashboardPage @DAS12337
+Scenario Outline: EvergreenJnr_AllLists_CheckThatEmptyLinkIsDisplayedIfThereAreNoData
+	When User clicks "<ListName>" on the left-hand menu
+	Then "<ListName>" list should be displayed to the user
+	Then Empty link is displayed for first row in the "<ColumnName>" column
+
+	Examples:
+	| ListName     | ColumnName    |
+	| Users        | Username      |
+	| Applications | Application   |
+	| Mailboxes    | Email Address |

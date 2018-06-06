@@ -23,6 +23,12 @@ namespace DashworksTestAutomation.Steps.Base
             _driver.Navigate().Back();
         }
 
+        [When(@"User clicks refresh button in the browser")]
+        public void WhenUserClicksRefreshButtonInTheBrowser()
+        {
+            _driver.Navigate().Refresh();
+        }
+
         [Then(@"There are no errors in the browser console")]
         public void ThenThereAreNoErrorsInTheBrowserConsole()
         {

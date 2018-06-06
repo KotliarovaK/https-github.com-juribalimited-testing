@@ -101,7 +101,7 @@ Scenario Outline: EvergreenJnr_AllList_CheckThatSearchDoesNotTriggerNewCustomLis
 	| Applications | Hen    | 5    | 1       |
 	| Mailboxes    | Henry  | 22   | 73      |
 
-@Evergreen @Devices @EvergreenJnr_ListPanel @CustomListDisplay @DAS11081 @DAS11951 @DAS12152 @DAS12602 @Delete_Newly_Created_List @Not_Run
+@Evergreen @Devices @EvergreenJnr_ListPanel @CustomListDisplay @DAS11081 @DAS11951 @DAS12152 @DAS12602 @Delete_Newly_Created_List
 Scenario: EvergreenJnr_DevicesList_CheckThatNewListCreatedMessageForStaticListIsDisplayed
 	When User clicks "Devices" on the left-hand menu
 	Then "Devices" list should be displayed to the user
@@ -116,7 +116,7 @@ Scenario: EvergreenJnr_DevicesList_CheckThatNewListCreatedMessageForStaticListIs
 	And "New list created" message is displayed
 	And "UnbelievableTestList" list is displayed to user
 
-@Evergreen @Users @EvergreenJnr_ListPanel @CustomListDisplay @DAS11005 @DAS11489 @DAS12152 @DAS12194 @DAS12199 @DAS12220 @DAS12351 @DAS12602 @Delete_Newly_Created_List @Not_Run
+@Evergreen @Users @EvergreenJnr_ListPanel @CustomListDisplay @DAS11005 @DAS11489 @DAS12152 @DAS12194 @DAS12199 @DAS12220 @DAS12351 @DAS12602 @Delete_Newly_Created_List
 Scenario: EvergreenJnr_UsersList_CheckThatListsIsDisplayedInAlphabeticalOrder
 	When User clicks "Users" on the left-hand menu
 	Then "Users" list should be displayed to the user
@@ -337,7 +337,7 @@ Scenario: EvergreenJnr_DevicesList_CheckThatSortingWillBeWorkForExistingSavedSta
 	Then data in table is sorted by 'Owner Display Name' column in ascending order
 	And Edit List menu is displayed
 
-@Evergreen @Devices @EvergreenJnr_ListPanel @CustomListDisplay @DAS10870 @DAS11951 @DAS12199 @Delete_Newly_Created_List @Not_Run
+@Evergreen @Devices @EvergreenJnr_ListPanel @CustomListDisplay @DAS10870 @DAS11951 @DAS12199 @Delete_Newly_Created_List
 Scenario: EvergreenJnr_DevicesList_CheckThatSortingWillBeWorkForExistingSavedDynamicLists
 	When User clicks "Devices" on the left-hand menu
 	Then "Devices" list should be displayed to the user
@@ -352,10 +352,10 @@ Scenario: EvergreenJnr_DevicesList_CheckThatSortingWillBeWorkForExistingSavedDyn
 	When User create dynamic list with "Dynamic List TestName qq2r" name on "Devices" page
 	Then "Dynamic List TestName qq2r" list is displayed to user
 	When User click on 'Compliance' column header
-	Then data in table is sorted by 'Compliance' column in ascending order
+	Then color data is sorted by 'Compliance' column in ascending order
 	And Edit List menu is displayed
 
-@Evergreen @Devices @EvergreenJnr_ListPanel @CustomListDisplay @DAS10914 @DAS12152 @DAS12199 @Delete_Newly_Created_List @Not_Run
+@Evergreen @Devices @EvergreenJnr_ListPanel @CustomListDisplay @DAS10914 @DAS12152 @DAS12199 @Delete_Newly_Created_List
 Scenario: EvergreenJnr_DevicesList_CheckThatEditListMenuNotDisplayedForActiveList
 	When User clicks "Devices" on the left-hand menu
 	Then "Devices" list should be displayed to the user
@@ -702,17 +702,19 @@ Scenario: EvergreenJnr_DevicesLists_CheckThatUserIsNotAbleToCreateListsWithLongN
 	When User create dynamic list with "1234567890123456789012345678901234567890" name on "Devices" page
 	Then "1234567890123456789012345678901234567890" list is displayed to user
 	When User duplicates list with "1234567890123456789012345678901234567890" name
-	Then "12345678901234567890123456789012345678901" list is displayed to user
-	When User removes custom list with "12345678901234567890123456789012345678901" name
-	Then list with "12345678901234567890123456789012345678901" name is removed
+	Then "123456789012345678901234567890123456782" list is displayed to user
+	When User removes custom list with "123456789012345678901234567890123456782" name
+	Then list with "123456789012345678901234567890123456782" name is removed
 	When User removes custom list with "1234567890123456789012345678901234567890" name
 	Then list with "1234567890123456789012345678901234567890" name is removed
 	When User clicks the Actions button
 	And User select all rows
 	When User create static list with "1234567890123456789012345678901234567890111" name
+	Then list name automatically changed to "1234567890123456789012345678901234567890" name
+	And "1234567890123456789012345678901234567890" list is displayed to user
 
 @Evergreen @AllLists @EvergreenJnr_ListPanel @CustomListDisplay @DAS11342
-Scenario Outline: EvergreenJnr_AllListsLists_CheckThatAllListsNamesAreDisplayedCorrectly
+Scenario Outline: EvergreenJnr_AllLists_CheckThatAllListsNamesAreDisplayedCorrectly
 	When User clicks "<ListName>" on the left-hand menu
 	Then "<ListName>" list should be displayed to the user
 	Then "<AllListName>" list name is displayed correctly
@@ -725,7 +727,7 @@ Examples:
 	| Mailboxes    | All Mailboxes    |
 
 @Evergreen @AllLists @EvergreenJnr_ListPanel @CustomListDisplay @DAS10972
-Scenario Outline: EvergreenJnr_AllListsLists_CheckThatTheSaveListFunctionIsTriggeredOrHiddenAfterAddingOrRemovingColumns
+Scenario Outline: EvergreenJnr_AllLists_CheckThatTheSaveListFunctionIsTriggeredOrHiddenAfterAddingOrRemovingColumns
 	When User clicks "<ListName>" on the left-hand menu
 	Then "<ListName>" list should be displayed to the user
 	When User clicks the Columns button
@@ -758,7 +760,7 @@ Examples:
 	| Mailboxes    | Alias           | Time Zone     | Building             |
 
 @Evergreen @AllLists @EvergreenJnr_ListPanel @CustomListDisplay @DAS10972
-Scenario Outline: EvergreenJnr_AllListsLists_CheckThatTheSaveListFunctionIsHiddenAfterChangingPinnedColumns
+Scenario Outline: EvergreenJnr_AllLists_CheckThatTheSaveListFunctionIsHiddenAfterChangingPinnedColumns
 	When User clicks "<ListName>" on the left-hand menu
 	Then "<ListName>" list should be displayed to the user
 	When User have opened column settings for "<ColumnName>" column
@@ -781,8 +783,8 @@ Examples:
 	| Users        | Domain           |
 	| Mailboxes    | Mailbox Platform |
 
-@Evergreen @AllLists @EvergreenJnr_ListPanel @CustomListDisplay @DAS10972 @Delete_Newly_Created_List @Not_Run
-Scenario Outline: EvergreenJnr_AllListsLists_CheckThatTheEditListFunctionIsTriggeredOrHiddenForCustomListsAfterAddingOrRemovingColumns
+@Evergreen @AllLists @EvergreenJnr_ListPanel @CustomListDisplay @DAS10972 @DAS12738 @Not_Run @Delete_Newly_Created_List
+Scenario Outline: EvergreenJnr_AllLists_CheckThatTheEditListFunctionIsTriggeredOrHiddenForCustomListsAfterAddingOrRemovingColumns
 	When User clicks "<ListName>" on the left-hand menu
 	Then "<ListName>" list should be displayed to the user
 	When User click on '<ColumnName>' column header
@@ -823,7 +825,7 @@ Examples:
 	| Users        | Username      | City            | $6BE000-SUDQ9614UVO8                                       | Cost Centre   | Department Name  |
 	| Mailboxes    | Email Address | Alias           | 000F977AC8824FE39B8@bclabs.local                           | Enabled       | Import           |
 
-@Evergreen @AllLists @EvergreenJnr_ListPanel @CustomListDisplay @DAS10998 @DAS10972 @DAS12602 @Delete_Newly_Created_List @Not_Run
+@Evergreen @AllLists @EvergreenJnr_ListPanel @CustomListDisplay @DAS10998 @DAS10972 @DAS12602 @Delete_Newly_Created_List
 Scenario Outline: EvergreenJnr_AllList_CheckThatTheEditListFunctionIsHiddenAfterAddingChangingAndRemovingSearchCriteria
 	When User clicks "<ListName>" on the left-hand menu
 	Then "<ListName>" list should be displayed to the user
@@ -870,8 +872,8 @@ Scenario Outline: EvergreenJnr_AllList_CheckThatTheEditListFunctionIsHiddenAfter
 	| Applications | Application   | Adobe     | 40    | 1       |
 	| Mailboxes    | Email Address | bc-exch07 | 4,188 | 73      |
 
-@Evergreen @AllLists @EvergreenJnr_ListPanel @CustomListDisplay @DAS10972 @DAS12602 @Delete_Newly_Created_List @Not_Run
-Scenario Outline: EvergreenJnr_AllListsLists_CheckThatTheEditListFunctionIsHiddenAfterChangingPinnedColumns
+@Evergreen @AllLists @EvergreenJnr_ListPanel @CustomListDisplay @DAS10972 @DAS12602 @Delete_Newly_Created_List
+Scenario Outline: EvergreenJnr_AllLists_CheckThatTheEditListFunctionIsHiddenAfterChangingPinnedColumns
 	When User clicks "<ListName>" on the left-hand menu
 	Then "<ListName>" list should be displayed to the user
 	When User click on '<ColumnName>' column header
@@ -912,3 +914,85 @@ Examples:
 	| Applications | Vendor           | Application      |
 	| Users        | Domain           | Username         |
 	| Mailboxes    | Mailbox Platform | Email Address    |
+
+@Evergreen @AllLists @EvergreenJnr_ListPanel @CustomListDisplay @DAS12515 @Delete_Newly_Created_List
+Scenario Outline: EvergreenJnr_AllLists_CheckThatNewCustomListMenuIsHiddenInTheListPanelAfterClickingActionsButton
+	When User clicks "<ListName>" on the left-hand menu
+	Then "<ListName>" list should be displayed to the user
+	When User click on '<ColumnName>' column header
+	Then data in table is sorted by '<ColumnName>' column in ascending order
+	Then Save to New Custom List element is displayed
+	When User clicks the Actions button
+	Then Actions panel is displayed to the user
+	Then Save to New Custom List element is NOT displayed
+	When User create static list with "<StaticListName>" name on "<ListName>" page with following items
+	| ItemName |
+	|          |
+	Then "<StaticListName>" list is displayed to user
+	When User click on '<ColumnName>' column header
+	Then data in table is sorted by '<ColumnName>' column in ascending order
+	Then Save to New Custom List element is displayed
+	When User clicks the Actions button
+	Then Actions panel is displayed to the user
+	Then Save to New Custom List element is NOT displayed
+
+Examples:
+	| ListName     | ColumnName         | StaticListName |
+	| Devices      | Owner Display Name | StaticList5548 |
+	| Applications | Version            | StaticList8944 |
+	| Users        | Distinguished Name | StaticList7412 |
+	| Mailboxes    | Owner Display Name | StaticList9512 |
+
+@Evergreen @AllLists @EvergreenJnr_ListPanel @CustomListDisplay @DAS12524 @Delete_Newly_Created_List
+Scenario Outline: EvergreenJnr_AllLists_CheckThatSaveAndCancelButtonAreHiddenAfterCancellingProcessOfSavingList
+	When User clicks "<ListName>" on the left-hand menu
+	Then "<ListName>" list should be displayed to the user
+	When User click on '<ColumnName>' column header
+	Then data in table is sorted by '<ColumnName>' column in ascending order
+	When User clicks Save button on the list panel
+	Then Save and Cancel buttons are displayed on the list panel
+	When User clicks Cancel button on the list panel
+	Then Save and Cancel buttons are not displayed on the list panel
+	When User create dynamic list with "<DynamicListName>" name on "<ListName>" page
+	When User clicks the Columns button
+	Then Columns panel is displayed to the user
+	When ColumnName is entered into the search box and the selection is clicked
+	| ColumnName  |
+	| <AddColumn> |
+	Then ColumnName is added to the list
+	| ColumnName  |
+	| <AddColumn> |
+	When User clicks Save button on the list panel
+	When User selects Save as new list option
+	Then Save and Cancel buttons are displayed on the list panel
+	When User clicks Cancel button on the list panel
+	Then Save and Cancel buttons are not displayed on the list panel
+
+Examples:
+	| ListName     | ColumnName    | AddColumn  | DynamicListName |
+	| Devices      | Hostname      | Device Key | DynamicList1178 |
+	| Applications | Application   | Telephone  | DynamicList1125 |
+	| Users        | Username      | GUID       | DynamicList1195 |
+	| Mailboxes    | Email Address | Region     | DynamicList1121 |
+
+@Evergreen @AllLists @EvergreenJnr_ListPanel @CustomListDisplay @DAS12524 @Delete_Newly_Created_List
+Scenario: EvergreenJnr_AllLists_CheckThatActionsPanelIsHiddenAfterCancellingProcessOfSavingList
+	When User clicks "Applications" on the left-hand menu
+	Then "Applications" list should be displayed to the user
+	When User clicks the Columns button
+	Then Columns panel is displayed to the user
+	When ColumnName is entered into the search box and the selection is clicked
+	| ColumnName          |
+	| Device Count (Used) |
+	Then ColumnName is added to the list
+	| ColumnName          |
+	| Device Count (Used) |
+	When User clicks the Actions button
+	Then Actions panel is displayed to the user
+	Then Save and Cancel buttons are not displayed on the list panel
+	When User select all rows
+	And User types "StaticList7841" static list name
+	And User clicks Cancel button on the Actions panel
+	Then Checkboxes are not displayed
+	And Actions panel is not displayed to the user
+	And Save to New Custom List element is displayed

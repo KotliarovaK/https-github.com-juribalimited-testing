@@ -253,6 +253,14 @@ namespace DashworksTestAutomation.Steps.Dashworks
                 $"Filter is created incorrectly");
         }
 
+        [Then(@"Links from ""(.*)"" column is displayed to the user")]
+        public void ThenLinksFromColumnIsDisplayedToTheUser(string columnName)
+        {
+            var content = _driver.NowAt<BaseDashboardPage>();
+            content.GetHrefByColumnName(columnName);
+            Assert.IsTrue(content.GetHrefByColumnName(columnName) != null);
+        }
+
         [Then(@"""(.*)"" text is displayed in filter container for ""(.*)"" list name")]
         public void ThenTextIsDisplayedInFilterContainerForListName(string text, string listName)
         {

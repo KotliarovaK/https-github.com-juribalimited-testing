@@ -159,3 +159,26 @@ Examples:
 	| Users        | Compliance       | Compliance       |
 	| Applications | Compliance       | Compliance       |
 	| Mailboxes    | Owner Compliance | Owner Compliance |
+
+@Evergreen @AllLists @EvergreenJnr_Columns @AddColumnAction @DAS12500
+Scenario Outline: EvergreenJnr_AllLists_CheckThatObjectKeyColumnsContainCorrectLinks
+	When User clicks "<ListName>" on the left-hand menu
+	Then "<ListName>" list should be displayed to the user
+	When User clicks the Columns button
+	Then Columns panel is displayed to the user
+	When ColumnName is entered into the search box and the selection is clicked
+	| ColumnName   |
+	| <ColumnName> |
+	Then ColumnName is added to the list
+	| ColumnName   |
+	| <ColumnName> |
+	Then Links from "<ColumnName>" column is displayed to the user
+	When User click content from "<ColumnName>" column
+	Then Details object page is displayed to the user
+
+Examples:
+	| ListName     | ColumnName      |
+	| Devices      | Device Key      |
+	| Users        | User Key        |
+	| Applications | Application Key |
+	| Mailboxes    | Mailbox Key     |

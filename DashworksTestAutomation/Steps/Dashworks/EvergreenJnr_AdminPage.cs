@@ -167,6 +167,7 @@ namespace DashworksTestAutomation.Steps.Dashworks
             {
                 page = _driver.NowAt<ProjectsPage>();
             }
+
             Assert.IsTrue(page.SelectedTabInProjectScopeChangesSection(tabName),
                 $"{tabName} is not displayed in the Project Scope Changes section");
         }
@@ -196,10 +197,32 @@ namespace DashworksTestAutomation.Steps.Dashworks
         }
 
         [When(@"User selects ""(.*)"" checkbox on the Project details page")]
-        public void WhenUserSelectCheckboxOnTheProjectDetailsPage(string checkboxName)
+        public void WhenUserSelectCheckboxOnTheProjectDetailsPage(string radioButtonName)
+        {
+            var checkbox = _driver.NowAt<ProjectsPage>();
+            checkbox.SelectRadioButtonByName(radioButtonName);
+        }
+
+        [When(@"User clicks ""(.*)"" checkbox on the Project details page")]
+        public void WhenUserClicksCheckboxOnTheProjectDetailsPage(string checkboxName)
         {
             var checkbox = _driver.NowAt<ProjectsPage>();
             checkbox.SelectCheckboxByName(checkboxName);
+        }
+
+        [When(@"User clicks ""(.*)"" button on the Projects page")]
+        public void WhenUserClicksButtonOnTheProjectsPage(string buttonName)
+        {
+            var button = _driver.NowAt<ProjectsPage>();
+            button.ClickUpdateButtonByName(buttonName);
+        }
+
+        [When(@"User clicks Update Project button on the Projects page")]
+        public void WhenUserClicksUpdateProjectButtonOnTheProjectsPage()
+        {
+            var button = _driver.NowAt<ProjectsPage>();
+            _driver.WaitWhileControlIsNotDisplayed<ProjectsPage>(() => button.UpdateProjectInTheWarning);
+            button.UpdateProjectInTheWarning.Click();
         }
 
         [Then(@"Update Project button is disabled")]
@@ -373,6 +396,32 @@ namespace DashworksTestAutomation.Steps.Dashworks
         }*/
 
         /*[When(@"User selects all rows on the Teams page")]
+        public void ThenRowsAreDisplayedOnTheTeamsPage(string numberOfRows)
+        {
+            var listPageElement = _driver.NowAt<TeamsPage>();
+            if (!string.IsNullOrWhiteSpace(numberOfRows))
+            {
+                Thread.Sleep(1000);
+
+                _driver.WaitWhileControlIsNotDisplayed<TeamsPage>(() => listPageElement.ResultsOnPageCount);
+
+                if (numberOfRows == "1")
+                {
+                    StringAssert.AreEqualIgnoringCase($"{numberOfRows} row", listPageElement.ResultsOnPageCount.Text,
+                        "Incorrect rows count");
+                }
+                else
+                {
+                    StringAssert.AreEqualIgnoringCase($"{numberOfRows} rows", listPageElement.ResultsOnPageCount.Text,
+                        "Incorrect rows count");
+                }
+                Logger.Write(
+                    $"Evergreen agGrid Search returned the correct number of rows for: {numberOfRows}  search");
+            }
+            //User clears filters
+            listPageElement.ResetFiltersButton.Click();
+        }
+
         public void WhenUserSelectsAllRowsOnTheTeamsPage()
         {
             var checkbox = _driver.NowAt<TeamsPage>();
@@ -409,6 +458,23 @@ namespace DashworksTestAutomation.Steps.Dashworks
             var tableElement = _driver.NowAtWithoutWait<BaseGridPage>();
             tableElement.ClickContentByColumnName(columnName);
             _driver.WaitForDataLoading();
+        }
+
+        [When(@"User clicks Add Members button on the Teams page")]
+        public void WhenUserClicksAddMembersButtonOnTheTeamsPage()
+        {
+            var button = _driver.NowAt<TeamsPage>();
+            _driver.WaitWhileControlIsNotDisplayed<TeamsPage>(() => button.AddMembersButton);
+            button.AddMembersButton.Click();
+            Logger.Write("Add Members button was clicked");
+        }
+
+        [Then(@"Panel of available members is displayed to the user")]
+        public void ThenPanelOfAvailableMembersIsDisplayedToTheUser()
+        {
+            var panel = _driver.NowAt<TeamsPage>();
+            _driver.WaitWhileControlIsNotDisplayed<TeamsPage>(() => panel.TeamMembersPanel);
+            Assert.IsTrue(panel.TeamMembersPanel.Displayed(), "Team Members Panel is not displayed on the Teams page");
         }
 
         [Then(@"""(.*)"" team details is displayed to the user")]
@@ -558,6 +624,32 @@ namespace DashworksTestAutomation.Steps.Dashworks
         }*/
 
         /*[When(@"User clicks content from ""(.*)"" column on the Buckets page")]
+        public void ThenRowsAreDisplayedOnTheBucketsPage(string numberOfRows)
+        {
+            var listPageElement = _driver.NowAt<BucketsPage>();
+            if (!string.IsNullOrWhiteSpace(numberOfRows))
+            {
+                Thread.Sleep(1000);
+
+                _driver.WaitWhileControlIsNotDisplayed<BucketsPage>(() => listPageElement.ResultsOnPageCount);
+
+                if (numberOfRows == "1")
+                {
+                    StringAssert.AreEqualIgnoringCase($"{numberOfRows} row", listPageElement.ResultsOnPageCount.Text,
+                        "Incorrect rows count");
+                }
+                else
+                {
+                    StringAssert.AreEqualIgnoringCase($"{numberOfRows} rows", listPageElement.ResultsOnPageCount.Text,
+                        "Incorrect rows count");
+                }
+                Logger.Write(
+                    $"Evergreen agGrid Search returned the correct number of rows for: {numberOfRows}  search");
+            }
+            //User clears filters
+            listPageElement.ResetFiltersButton.Click();
+        }
+
         public void WhenUserClicksContentFromColumnOnTheBucketsPage(string columnName)
         {
             var tableElement = _driver.NowAtWithoutWait<BucketsPage>();
@@ -829,10 +921,31 @@ namespace DashworksTestAutomation.Steps.Dashworks
         }*/
 
         /*[When(@"User removes selected Project")]
+        public void WhenUserCancelsTheSelectionOfAllRowsOnTheProjectsPage()
+        {
+            var checkbox = _driver.NowAt<ProjectsPage>();
+            checkbox.SelectAllProjectsCheckbox.Click();
+        }
+
+        [When(@"User clicks Actions button on the Projects page")]
+        public void WhenUserClicksActionsButtonOnTheProjectsPage()
+        {
+            var projectElement = _driver.NowAt<ProjectsPage>();
+            projectElement.ActionsButton.Click();
+        }
+
+        [When(@"User clicks Delete Project button on the Projects page")]
+        public void WhenUserClicksDeleteProjectButtonOnTheProjectsPage()
+        {
+            var projectElement = _driver.NowAt<ProjectsPage>();
+            projectElement.DeleteProjectButtonInActions.Click();
+        }
+
         public void WhenUserRemovesSelectedProject()
         {
             var projectElement = _driver.NowAt<ProjectsPage>();
             projectElement.ActionsButton.Click();
+            _driver.WaitForDataLoading();
             projectElement.DeleteProjectButtonInActions.Click();
             projectElement.DeleteButtonOnPage.Click();
             _driver.WaitWhileControlIsNotDisplayed<ProjectsPage>(() => projectElement.DeleteWarningMessage);
@@ -850,12 +963,36 @@ namespace DashworksTestAutomation.Steps.Dashworks
             projectElement.DeleteButtonInWarningMessage.Click();
         }
 
+        [Then(@"Delete button is displayed to the User on the Projects page")]
+        public void ThenDeleteButtonIsDisplayedToTheUserOnTheProjectsPage()
+        {
+            var projectElement = _driver.NowAt<ProjectsPage>();
+            Assert.IsTrue(projectElement.DeleteProjectValueInActions.Displayed(), "Delete Project Value is not displayed");
+            Assert.IsTrue(projectElement.DeleteButtonOnPage.Displayed(), "Delete button is not displayed");
+        }
+
+        [Then(@"Delete button is not displayed to the User on the Projects page")]
+        public void ThenDeleteButtonIsNotDisplayedToTheUserOnTheProjectsPage()
+        {
+            var projectElement = _driver.NowAt<ProjectsPage>();
+            Assert.IsTrue(projectElement.ActionsInDropdown.Displayed(), "Actions is not displayed in the dropdown");
+            Assert.IsFalse(projectElement.DeleteButtonOnPage.Displayed(), "Delete button is displayed");
+        }
+
         [Then(@"Success message with ""(.*)"" text is displayed on the Projects page")]
         public void ThenSuccessMessageWithTextIsDisplayedOnTheProjectsPage(string textMessage)
         {
-            var projectElement = _driver.NowAt<ProjectsPage>();
-            _driver.WaitWhileControlIsNotDisplayed<ProjectsPage>(() => projectElement.SuccessDeleteMessage);
-            Assert.IsTrue(projectElement.SuccessDeletingMessage(textMessage),
+            ProjectsPage projectElement;
+            try
+            {
+                projectElement = _driver.NowAt<ProjectsPage>();
+            }
+            catch (WebDriverTimeoutException)
+            {
+                projectElement = _driver.NowAt<ProjectsPage>();
+            }
+            _driver.WaitWhileControlIsNotDisplayed<ProjectsPage>(() => projectElement.SuccessMessage);
+            Assert.IsTrue(projectElement.SuccessTextMessage(textMessage),
                 $"{textMessage} is not displayed on the Project page");
         }
 

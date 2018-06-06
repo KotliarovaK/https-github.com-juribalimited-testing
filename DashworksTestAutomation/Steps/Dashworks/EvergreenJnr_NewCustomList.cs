@@ -99,6 +99,29 @@ namespace DashworksTestAutomation.Steps.Dashworks
             _listsDetails.AddList($"{listName}");
         }
 
+        [When(@"User clicks Save button on the list panel")]
+        public void WhenUserClicksSaveButtonOnTheListPanel()
+        {
+            var listElement = _driver.NowAt<CustomListElement>();
+            _driver.WaitWhileControlIsNotDisplayed<CustomListElement>(() => listElement.CreateNewListButton);
+            listElement.CreateNewListButton.Click();
+        }
+
+        [When(@"User selects Save as new list option")]
+        public void WhenUserSelectsSaveAsNewListOption()
+        {
+            var listElement = _driver.NowAt<CustomListElement>();
+            listElement.SaveAsNewListButton.Click();
+        }
+
+        [When(@"User clicks Cancel button on the list panel")]
+        public void WhenUserClicksCancelButtonOnTheListPanel()
+        {
+            var listElement = _driver.NowAt<CustomListElement>();
+            _driver.WaitWhileControlIsNotDisplayed<CustomListElement>(() => listElement.CancelButton);
+            listElement.CancelButton.Click();
+        }
+
         [Then(@"User type ""(.*)"" into Custom list name field")]
         public void ThenUserTypeIntoCustomListNameField(string listName)
         {
@@ -125,9 +148,9 @@ namespace DashworksTestAutomation.Steps.Dashworks
         [Then(@"""(.*)"" list is displayed to user")]
         public void ThenListIsDisplayedToUser(string listName)
         {
-            //Workaround for 11570. Remove after fix
-            //WhenUserNavigatesToTheList(listName);
             var page = _driver.NowAt<BaseDashboardPage>();
+            _driver.WaitForDataLoading();
+            _driver.WaitWhileControlIsNotDisplayed<BaseDashboardPage>(() => page.ActiveCustomList);
             Assert.AreEqual(listName, page.ActiveCustomListName());
         }
 
@@ -252,6 +275,13 @@ namespace DashworksTestAutomation.Steps.Dashworks
             listElement.DuplicateButton.Click();
         }
 
+        [Then(@"list name automatically changed to ""(.*)"" name")]
+        public void ThenListNameAutomaticallyChangedToName(string listName)
+        {
+            var page = _driver.NowAt<BaseDashboardPage>();
+            Assert.AreEqual(listName, page.ActiveCustomListName());
+        }
+
         [Then(@"list with ""(.*)"" name is removed")]
         public void ThenListWithNameIsRemoved(string listName)
         {
@@ -274,6 +304,14 @@ namespace DashworksTestAutomation.Steps.Dashworks
             _driver.WaitForDataLoading();
             _driver.WaitWhileControlIsNotDisplayed<CustomListElement>(() => listElement.SuccessCreateMessage);
             Assert.AreEqual(message, listElement.SuccessCreateMessage.Text, $"{message} is not displayed");
+        }
+
+        [Then(@"Save and Cancel buttons are displayed on the list panel")]
+        public void ThenSaveAndCancelButtonsAreDisplayedOnTheListPanel()
+        {
+            var listElement = _driver.NowAt<CustomListElement>();
+            Assert.IsTrue(listElement.SaveButton.Displayed());
+            Assert.IsTrue(listElement.CancelButton.Displayed());
         }
 
         [Then(@"Save and Cancel buttons are not displayed on the list panel")]

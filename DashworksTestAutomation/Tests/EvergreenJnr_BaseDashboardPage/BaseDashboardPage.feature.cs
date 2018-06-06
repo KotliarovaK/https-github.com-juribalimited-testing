@@ -122,7 +122,7 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_BaseDashboardPage
             testRunner.When(string.Format("User clicks \"{0}\" on the left-hand menu", listName), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
             testRunner.Then(string.Format("\"{0}\" list should be displayed to the user", listName), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
             testRunner.And("Appropriate header font weight is displayed", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-            testRunner.Then("\"v5.2.5.0\" Application version is displayed", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+            testRunner.Then("\"v5.2.6.0\" Application version is displayed", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
             this.ScenarioCleanup();
         }
         
@@ -186,7 +186,7 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_BaseDashboardPage
         }
         
         [NUnit.Framework.TestAttribute()]
-        [NUnit.Framework.DescriptionAttribute("EvergreenJnr_AllList_CheckThatSaveListFunctionIsAvailableAfterSortingColumns")]
+        [NUnit.Framework.DescriptionAttribute("EvergreenJnr_AllLists_CheckThatSaveListFunctionIsAvailableAfterSortingColumns")]
         [NUnit.Framework.CategoryAttribute("Evergreen")]
         [NUnit.Framework.CategoryAttribute("AllLists")]
         [NUnit.Framework.CategoryAttribute("EvergreenJnr_BaseDashboardPage")]
@@ -197,14 +197,14 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_BaseDashboardPage
         [NUnit.Framework.TestCaseAttribute("Users", "Username", "Domain", new string[0])]
         [NUnit.Framework.TestCaseAttribute("Applications", "Application", "Vendor", new string[0])]
         [NUnit.Framework.TestCaseAttribute("Mailboxes", "Email Address", "Mailbox Platform", new string[0])]
-        public virtual void EvergreenJnr_AllList_CheckThatSaveListFunctionIsAvailableAfterSortingColumns(string listName, string columnName, string addSortOrders, string[] exampleTags)
+        public virtual void EvergreenJnr_AllLists_CheckThatSaveListFunctionIsAvailableAfterSortingColumns(string listName, string columnName, string addSortOrders, string[] exampleTags)
         {
             System.Exception lastException = null;
             for (int i = 0; (i <= 1); i = (i + 1))
             {
                 try
                 {
-                    this.EvergreenJnr_AllList_CheckThatSaveListFunctionIsAvailableAfterSortingColumnsInternal(listName, columnName, addSortOrders, exampleTags);
+                    this.EvergreenJnr_AllLists_CheckThatSaveListFunctionIsAvailableAfterSortingColumnsInternal(listName, columnName, addSortOrders, exampleTags);
                     return;
                 }
                 catch (System.Exception exc)
@@ -223,7 +223,7 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_BaseDashboardPage
             }
         }
         
-        private void EvergreenJnr_AllList_CheckThatSaveListFunctionIsAvailableAfterSortingColumnsInternal(string listName, string columnName, string addSortOrders, string[] exampleTags)
+        private void EvergreenJnr_AllLists_CheckThatSaveListFunctionIsAvailableAfterSortingColumnsInternal(string listName, string columnName, string addSortOrders, string[] exampleTags)
         {
             string[] @__tags = new string[] {
                     "Evergreen",
@@ -236,7 +236,7 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_BaseDashboardPage
             {
                 @__tags = System.Linq.Enumerable.ToArray(System.Linq.Enumerable.Concat(@__tags, exampleTags));
             }
-            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("EvergreenJnr_AllList_CheckThatSaveListFunctionIsAvailableAfterSortingColumns", @__tags);
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("EvergreenJnr_AllLists_CheckThatSaveListFunctionIsAvailableAfterSortingColumns", @__tags);
             this.ScenarioSetup(scenarioInfo);
             this.FeatureBackground();
             testRunner.When(string.Format("User clicks \"{0}\" on the left-hand menu", listName), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
@@ -453,21 +453,21 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_BaseDashboardPage
         }
         
         [NUnit.Framework.TestAttribute()]
-        [NUnit.Framework.DescriptionAttribute("EvergreenJnr_DevicesList_CheckThatActionsDetailsColumnsFiltersButtonsAreNotClicka" +
-            "bleWhenOpenedNotificationsAndUserProfilesDropdownBlocks")]
+        [NUnit.Framework.DescriptionAttribute("EvergreenJnr_DevicesLists_CheckThatActionsDetailsColumnsFiltersButtonsAreNotClick" +
+            "ableWhenOpenedNotificationsAndUserProfilesDropdownBlocks")]
         [NUnit.Framework.CategoryAttribute("Evergreen")]
         [NUnit.Framework.CategoryAttribute("Devices")]
         [NUnit.Framework.CategoryAttribute("EvergreenJnr_BaseDashboardPage")]
         [NUnit.Framework.CategoryAttribute("BaseDashboardPage")]
         [NUnit.Framework.CategoryAttribute("DAS11641")]
-        public virtual void EvergreenJnr_DevicesList_CheckThatActionsDetailsColumnsFiltersButtonsAreNotClickableWhenOpenedNotificationsAndUserProfilesDropdownBlocks()
+        public virtual void EvergreenJnr_DevicesLists_CheckThatActionsDetailsColumnsFiltersButtonsAreNotClickableWhenOpenedNotificationsAndUserProfilesDropdownBlocks()
         {
             System.Exception lastException = null;
             for (int i = 0; (i <= 1); i = (i + 1))
             {
                 try
                 {
-                    this.EvergreenJnr_DevicesList_CheckThatActionsDetailsColumnsFiltersButtonsAreNotClickableWhenOpenedNotificationsAndUserProfilesDropdownBlocksInternal();
+                    this.EvergreenJnr_DevicesLists_CheckThatActionsDetailsColumnsFiltersButtonsAreNotClickableWhenOpenedNotificationsAndUserProfilesDropdownBlocksInternal();
                     return;
                 }
                 catch (System.Exception exc)
@@ -486,10 +486,10 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_BaseDashboardPage
             }
         }
         
-        private void EvergreenJnr_DevicesList_CheckThatActionsDetailsColumnsFiltersButtonsAreNotClickableWhenOpenedNotificationsAndUserProfilesDropdownBlocksInternal()
+        private void EvergreenJnr_DevicesLists_CheckThatActionsDetailsColumnsFiltersButtonsAreNotClickableWhenOpenedNotificationsAndUserProfilesDropdownBlocksInternal()
         {
-            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("EvergreenJnr_DevicesList_CheckThatActionsDetailsColumnsFiltersButtonsAreNotClicka" +
-                    "bleWhenOpenedNotificationsAndUserProfilesDropdownBlocks", new string[] {
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("EvergreenJnr_DevicesLists_CheckThatActionsDetailsColumnsFiltersButtonsAreNotClick" +
+                    "ableWhenOpenedNotificationsAndUserProfilesDropdownBlocks", new string[] {
                         "Evergreen",
                         "Devices",
                         "EvergreenJnr_BaseDashboardPage",
@@ -515,7 +515,6 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_BaseDashboardPage
         [NUnit.Framework.CategoryAttribute("DAS10972")]
         [NUnit.Framework.CategoryAttribute("DAS12602")]
         [NUnit.Framework.CategoryAttribute("Delete_Newly_Created_List")]
-        [NUnit.Framework.CategoryAttribute("Not_Run")]
         [NUnit.Framework.TestCaseAttribute("Devices", "Hostname", "Device Type", "UserSchedu: Readiness ID", new string[0])]
         [NUnit.Framework.TestCaseAttribute("Users", "Username", "Domain", "UserSchedu: Readiness ID", new string[0])]
         [NUnit.Framework.TestCaseAttribute("Applications", "Application", "Vendor", "UserSchedu: Readiness ID", new string[0])]
@@ -555,8 +554,7 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_BaseDashboardPage
                     "BaseDashboardPage",
                     "DAS10972",
                     "DAS12602",
-                    "Delete_Newly_Created_List",
-                    "Not_Run"};
+                    "Delete_Newly_Created_List"};
             if ((exampleTags != null))
             {
                 @__tags = System.Linq.Enumerable.ToArray(System.Linq.Enumerable.Concat(@__tags, exampleTags));
@@ -664,6 +662,63 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_BaseDashboardPage
             testRunner.Then("tooltip is displayed with \"This list must be saved before using it to create a pr" +
                     "oject\" text for Create Project button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
             testRunner.Then("Create Project button is disabled on the Base Dashboard Page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+            this.ScenarioCleanup();
+        }
+        
+        [NUnit.Framework.TestAttribute()]
+        [NUnit.Framework.DescriptionAttribute("EvergreenJnr_AllLists_CheckThatEmptyLinkIsDisplayedIfThereAreNoData")]
+        [NUnit.Framework.CategoryAttribute("Evergreen")]
+        [NUnit.Framework.CategoryAttribute("AllLists")]
+        [NUnit.Framework.CategoryAttribute("EvergreenJnr_BaseDashboardPage")]
+        [NUnit.Framework.CategoryAttribute("BaseDashboardPage")]
+        [NUnit.Framework.CategoryAttribute("DAS12337")]
+        [NUnit.Framework.TestCaseAttribute("Users", "Username", new string[0])]
+        [NUnit.Framework.TestCaseAttribute("Applications", "Application", new string[0])]
+        [NUnit.Framework.TestCaseAttribute("Mailboxes", "Email Address", new string[0])]
+        public virtual void EvergreenJnr_AllLists_CheckThatEmptyLinkIsDisplayedIfThereAreNoData(string listName, string columnName, string[] exampleTags)
+        {
+            System.Exception lastException = null;
+            for (int i = 0; (i <= 1); i = (i + 1))
+            {
+                try
+                {
+                    this.EvergreenJnr_AllLists_CheckThatEmptyLinkIsDisplayedIfThereAreNoDataInternal(listName, columnName, exampleTags);
+                    return;
+                }
+                catch (System.Exception exc)
+                {
+                    lastException = exc;
+                }
+                if (((i + 1) 
+                            <= 1))
+                {
+                    testRunner.OnScenarioEnd();
+                }
+            }
+            if ((lastException != null))
+            {
+                throw lastException;
+            }
+        }
+        
+        private void EvergreenJnr_AllLists_CheckThatEmptyLinkIsDisplayedIfThereAreNoDataInternal(string listName, string columnName, string[] exampleTags)
+        {
+            string[] @__tags = new string[] {
+                    "Evergreen",
+                    "AllLists",
+                    "EvergreenJnr_BaseDashboardPage",
+                    "BaseDashboardPage",
+                    "DAS12337"};
+            if ((exampleTags != null))
+            {
+                @__tags = System.Linq.Enumerable.ToArray(System.Linq.Enumerable.Concat(@__tags, exampleTags));
+            }
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("EvergreenJnr_AllLists_CheckThatEmptyLinkIsDisplayedIfThereAreNoData", @__tags);
+            this.ScenarioSetup(scenarioInfo);
+            this.FeatureBackground();
+            testRunner.When(string.Format("User clicks \"{0}\" on the left-hand menu", listName), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+            testRunner.Then(string.Format("\"{0}\" list should be displayed to the user", listName), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+            testRunner.Then(string.Format("Empty link is displayed for first row in the \"{0}\" column", columnName), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
             this.ScenarioCleanup();
         }
     }

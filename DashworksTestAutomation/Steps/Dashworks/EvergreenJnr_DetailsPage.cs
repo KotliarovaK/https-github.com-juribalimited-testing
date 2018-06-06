@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading;
 using DashworksTestAutomation.Extensions;
+using DashworksTestAutomation.Helpers;
 using DashworksTestAutomation.Pages.Evergreen;
 using DashworksTestAutomation.Pages.Evergreen.DetailsTabsMenu;
 using NUnit.Framework;
@@ -29,8 +30,8 @@ namespace DashworksTestAutomation.Steps.Dashworks
             tabs.NavigateToTabByName(tabName);
         }
 
-        [Then(@"User closes ""(.*)"" section on the Details Page")]
-        public void ThenUserClosesSectionOnTheDetailsPage(string sectionName)
+        [When(@"User closes ""(.*)"" section on the Details Page")]
+        public void WhenUserClosesSectionOnTheDetailsPage(string sectionName)
         {
             var detailsPage = _driver.NowAt<DetailsPage>();
             detailsPage.NavigateToSectionByName(sectionName);
@@ -42,6 +43,13 @@ namespace DashworksTestAutomation.Steps.Dashworks
             var detailsPage = _driver.NowAt<DetailsPage>();
             detailsPage.NavigateToSectionByName(sectionName);
             _driver.WaitForDataLoading();
+        }
+
+        [When(@"User clicks ""(.*)"" link on the Details Page")]
+        public void WhenUserClicksLinkOnTheDetailsPage(string linkName)
+        {
+            var detailsPage = _driver.NowAt<DetailsPage>();
+            detailsPage.GetLinkByName(linkName).Click();
         }
 
         [Then(@"section is loaded correctly")]
@@ -83,26 +91,33 @@ namespace DashworksTestAutomation.Steps.Dashworks
             Assert.IsTrue(detailsPage.ItemDetailsContainer.Displayed(), "Item content is not displayed");
         }
 
+        [Then(@"Details object page is displayed to the user")]
+        public void ThenDetailsObjectPageIsDisplayedToTheUser()
+        {
+            var detailsPage = _driver.NowAt<DetailsPage>();
+            _driver.WaitForDataLoading();
+            Assert.IsTrue(detailsPage.GroupIcon.Displayed());
+            Assert.IsTrue(detailsPage.ItemDetailsContainer.Displayed());
+        }
+
         [Then(@"Image item from ""(.*)"" column is displayed to the user")]
         public void ThenImageItemFromColumnIsDisplayedToTheUser(string columnName)
         {
+            _driver.WaitForDataLoading();
             var content = _driver.FindElements(By.XPath(DetailsPage.ColumnWithImageAndLinkSelector));
             foreach (var element in content)
             {
                 var image = element.FindElement(By.XPath(DetailsPage.ItemImageSelector));
-                Assert.IsTrue(image.Displayed(), "Image item is not found");
+                Assert.IsTrue(_driver.IsElementExists(image), "Image item is not found");
             }
         }
 
-        [Then(@"Links from ""(.*)"" column is displayed to the user")]
-        public void ThenLinksFromColumnIsDisplayedToTheUser(string columnName)
+        [Then(@"Links from ""(.*)"" column is displayed to the user on the Details Page")]
+        public void ThenLinksFromColumnIsDisplayedToTheUserOnTheDetailsPage(string columnName)
         {
-            var content = _driver.FindElements(By.XPath(DetailsPage.ColumnWithImageAndLinkSelector));
-            foreach (var element in content)
-            {
-                var text = element.FindElement(By.XPath(DetailsPage.LinkSelector));
-                Assert.IsTrue(text.GetAttribute("href") != string.Empty);
-            }
+            var content = _driver.NowAt<DetailsPage>();
+            content.GetHrefByColumnName(columnName);
+            Assert.IsTrue(content.GetHrefByColumnName(columnName) != null);
         }
 
         [Then(@"expanded section is displayed to the User")]
@@ -148,7 +163,7 @@ namespace DashworksTestAutomation.Steps.Dashworks
         public void ThenDropdownListIsDisplayedCorrectlyInTheFilterOnTheDetailsPage()
         {
             var filterElement = _driver.NowAt<ApplicationsDetailsTabsMenu>();
-            Assert.IsTrue(filterElement.AllCheckboxesSelectedStringFilter.Displayed(), "All checkbox is unchecked");
+            //Assert.IsTrue(filterElement.AllCheckboxesSelectedStringFilter.Displayed(), "All checkbox is unchecked");
             Assert.IsFalse(filterElement.UncheckedStringFilters.Displayed(), "Checkbox is selected");
         }
 
@@ -211,7 +226,7 @@ namespace DashworksTestAutomation.Steps.Dashworks
         public void WhenUserClicksCheckboxFromStringFilterOnTheDetailsPage(string filterName)
         {
             var page = _driver.NowAt<ApplicationsDetailsTabsMenu>();
-            if (page.CheckboxexStringFilter.Displayed())
+            if (page.CheckboxesStringFilter.Displayed())
                 page.GetStringFilterByName(filterName).Click();
             else
                 page.GetBooleanStringFilterByName(filterName).Click();
