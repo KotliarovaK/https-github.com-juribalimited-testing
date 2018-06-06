@@ -2830,66 +2830,6 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_ListPanel
             testRunner.And("Save to New Custom List element is displayed", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
             this.ScenarioCleanup();
         }
-        
-        [NUnit.Framework.TestAttribute()]
-        [NUnit.Framework.DescriptionAttribute("EvergreenJnr_AllLists_CheckThatSingularFoundItemLabelDisplaysOnActionsToolbar")]
-        [NUnit.Framework.CategoryAttribute("Evergreen")]
-        [NUnit.Framework.CategoryAttribute("Mailboxes")]
-        [NUnit.Framework.CategoryAttribute("Devices")]
-        [NUnit.Framework.CategoryAttribute("Users")]
-        [NUnit.Framework.CategoryAttribute("Applications")]
-        [NUnit.Framework.CategoryAttribute("DAS12491")]
-        [NUnit.Framework.TestCaseAttribute("Applications", "ABBYY FineReader 8.0 Professional Edition", new string[0])]
-        [NUnit.Framework.TestCaseAttribute("Mailboxes", "002B5DC7D4D34D5C895@bclabs.local", new string[0])]
-        [NUnit.Framework.TestCaseAttribute("Devices", "001BAQXT6JWFPI", new string[0])]
-        [NUnit.Framework.TestCaseAttribute("Users", "$231000-3AC04R8AR431", new string[0])]
-        public virtual void EvergreenJnr_AllLists_CheckThatSingularFoundItemLabelDisplaysOnActionsToolbar(string pageName, string searchTerm, string[] exampleTags)
-        {
-            System.Exception lastException = null;
-            for (int i = 0; (i <= 1); i = (i + 1))
-            {
-                try
-                {
-                    this.EvergreenJnr_AllLists_CheckThatSingularFoundItemLabelDisplaysOnActionsToolbarInternal(pageName, searchTerm, exampleTags);
-                    return;
-                }
-                catch (System.Exception exc)
-                {
-                    lastException = exc;
-                }
-                if (((i + 1) 
-                            <= 1))
-                {
-                    testRunner.OnScenarioEnd();
-                }
-            }
-            if ((lastException != null))
-            {
-                throw lastException;
-            }
-        }
-        
-        private void EvergreenJnr_AllLists_CheckThatSingularFoundItemLabelDisplaysOnActionsToolbarInternal(string pageName, string searchTerm, string[] exampleTags)
-        {
-            string[] @__tags = new string[] {
-                    "Evergreen",
-                    "Mailboxes",
-                    "Devices",
-                    "Users",
-                    "Applications",
-                    "DAS12491"};
-            if ((exampleTags != null))
-            {
-                @__tags = System.Linq.Enumerable.ToArray(System.Linq.Enumerable.Concat(@__tags, exampleTags));
-            }
-            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("EvergreenJnr_AllLists_CheckThatSingularFoundItemLabelDisplaysOnActionsToolbar", @__tags);
-            this.ScenarioSetup(scenarioInfo);
-            this.FeatureBackground();
-            testRunner.When(string.Format("User clicks \"{0}\" on the left-hand menu", pageName), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-            testRunner.And(string.Format("User perform search by \"{0}\"", searchTerm), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-            testRunner.Then("\"1\" rows are displayed in the agGrid", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-            this.ScenarioCleanup();
-        }
     }
 }
 #pragma warning restore

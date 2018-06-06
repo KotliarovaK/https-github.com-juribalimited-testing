@@ -15,7 +15,7 @@ namespace DashworksTestAutomation.Pages.Evergreen.AdminDetailsPages
 
         /*[FindsBy(How = How.XPath, Using = ".//h1[text()='Projects']")]
         public IWebElement ProjectsPageTitle { get; set; }*/
-        
+
         /*[FindsBy(How = How.XPath, Using = ".//span[@class='ag-header-select-all']")]
         public IWebElement SelectAllProjectsCheckbox { get; set; }*/
 
@@ -42,8 +42,8 @@ namespace DashworksTestAutomation.Pages.Evergreen.AdminDetailsPages
         /*[FindsBy(How = How.XPath, Using = ".//button[@class='messageAction btn mat-button ng-star-inserted']")]
         public IWebElement DeleteButtonInWarningMessage { get; set; }*/
 
-        [FindsBy(How = How.XPath, Using = ".//div[contains(@class, 'inline-success')]")]
-        public IWebElement SuccessMessage { get; set; }
+        //[FindsBy(How = How.XPath, Using = ".//div[contains(@class, 'inline-success')]")]
+        //public IWebElement SuccessMessage { get; set; }
 
         [FindsBy(How = How.XPath, Using = ".//input[@aria-checked='false']")]
         public IWebElement UncheckedCheckbox { get; set; }

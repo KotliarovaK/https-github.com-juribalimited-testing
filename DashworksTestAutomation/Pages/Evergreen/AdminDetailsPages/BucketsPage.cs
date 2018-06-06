@@ -65,8 +65,8 @@ namespace DashworksTestAutomation.Pages.Evergreen.AdminDetailsPages
         [FindsBy(How = How.XPath, Using = ".//span[@class='ng-star-inserted']")]
         public IWebElement ResultsOnPageCount { get; set; }
 
-        [FindsBy(How = How.XPath, Using = ".//button[@class='button-small mat-default reset mat-raised-button _mat-animation-noopable']")]
-        public IWebElement ResetFiltersButton { get; set; }
+        //[FindsBy(How = How.XPath, Using = ".//button[@class='button-small mat-default reset mat-raised-button _mat-animation-noopable']")]
+        //public IWebElement ResetFiltersButton { get; set; }
 
         public override List<By> GetPageIdentitySelectors()
         {
