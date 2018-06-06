@@ -16,7 +16,7 @@ namespace DashworksTestAutomation.Pages.Evergreen.AdminDetailsPages
         [FindsBy(How = How.XPath, Using = ".//span[text()='CREATE TEAM']")]
         public IWebElement CreateTeamButton { get; set; }
 
-        [FindsBy(How = How.XPath, Using = ".//button[@class='mat-primary mat-raised-button']")]
+        [FindsBy(How = How.XPath, Using = ".//button[@class='mat-primary mat-raised-button _mat-animation-noopable']")]
         public IWebElement CreateTeamButtonOnCreateTeamPage { get; set; }
 
         [FindsBy(How = How.XPath, Using = ".//label[text()='Team Name']/ancestor::div[@class='form-item']//input")]
@@ -50,7 +50,7 @@ namespace DashworksTestAutomation.Pages.Evergreen.AdminDetailsPages
         [FindsBy(How = How.XPath, Using = ".//h2[text()='Reassign Objects']")]
         public IWebElement ReassignObjectsSummary { get; set; }
 
-        [FindsBy(How = How.XPath, Using = ".//button[@class='mat-primary mat-raised-button']")]
+        [FindsBy(How = How.XPath, Using = ".//button[@class='mat-primary mat-raised-button _mat-animation-noopable']")]
         public IWebElement UpdateTeamButton { get; set; }
 
         [FindsBy(How = How.XPath, Using = ".//span[text()='ADD MEMBERS']")]

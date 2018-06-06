@@ -22,7 +22,7 @@ namespace DashworksTestAutomation.Pages.Evergreen
 
         [FindsBy(How = How.XPath,
             Using =
-                ".//div[@class='searchPanel input-wrapper']//button[@class='btn btn-default input-toggle mat-icon-button ng-star-inserted']")]
+                "//button[@class='btn btn-default input-toggle mat-icon-button _mat-animation-noopable ng-star-inserted']")]
         public IWebElement SearchTextboxResetButton { get; set; }
 
         [FindsBy(How = How.XPath,
