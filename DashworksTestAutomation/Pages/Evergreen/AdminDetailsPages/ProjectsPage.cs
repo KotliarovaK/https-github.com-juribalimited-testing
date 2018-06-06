@@ -8,55 +8,32 @@ using OpenQA.Selenium.Support.PageObjects;
 
 namespace DashworksTestAutomation.Pages.Evergreen.AdminDetailsPages
 {
-    internal class ProjectsPage : SeleniumBasePage
+    internal class ProjectsPage : BaseGridPage
     {
         [FindsBy(How = How.XPath, Using = ".//a[text()='Administration']")]
         public IWebElement AdminPageTitle { get; set; }
 
-        [FindsBy(How = How.XPath, Using = ".//h1[text()='Projects']")]
-        public IWebElement ProjectsPageTitle { get; set; }
+        /*[FindsBy(How = How.XPath, Using = ".//h1[text()='Projects']")]
+        public IWebElement ProjectsPageTitle { get; set; }*/
+        
+        /*[FindsBy(How = How.XPath, Using = ".//span[@class='ag-header-select-all']")]
+        public IWebElement SelectAllProjectsCheckbox { get; set; }*/
 
-        [FindsBy(How = How.XPath, Using = ".//span[text()='CREATE PROJECT']")]
-        public IWebElement CreateProjectButton { get; set; }
+        /*[FindsBy(How = How.XPath, Using = ".//div[@class='mat-select-value']")]
+        public IWebElement ActionsButton { get; set; }*/
 
-        [FindsBy(How = How.XPath, Using = ".//button[@class='mat-primary mat-raised-button']")]
-        public IWebElement CreateProjectButtonOnCreateProjectPage { get; set; }
+        /*[FindsBy(How = How.XPath, Using = ".//span[@class='mat-option-text']")]
+        public IWebElement DeleteProjectButtonInActions { get; set; }*/
 
-        [FindsBy(How = How.XPath, Using = ".//button[@class='mat-raised-button']/span[text()='CANCEL']")]
-        public IWebElement CancelButton { get; set; }
-
-        [FindsBy(How = How.XPath, Using = ".//label[text()='Project Name']/ancestor::div[@class='form-item']//input")]
-        public IWebElement ProjectNameField { get; set; }
-
-        [FindsBy(How = How.XPath,
-            Using =
-                ".//label[@for='scope']span[@class='mat-form-field-label-wrapper mat-input-placeholder-wrapper mat-form-field-placeholder-wrapper']")]
-        public IWebElement SelectScopeProject { get; set; }
-
-        [FindsBy(How = How.XPath, Using = ".//button[@class='mat-primary mat-raised-button']")]
-        public IWebElement UpdateProjectButton { get; set; }
-
-        [FindsBy(How = How.XPath, Using = ".//input[@role='combobox']")]
-        public IWebElement ScopeProjectField { get; set; }
-
-        [FindsBy(How = How.XPath, Using = ".//span[@class='ag-header-select-all']")]
-        public IWebElement SelectAllProjectsCheckbox { get; set; }
-
-        [FindsBy(How = How.XPath, Using = ".//div[@class='mat-select-value']")]
-        public IWebElement ActionsButton { get; set; }
-
-        [FindsBy(How = How.XPath, Using = ".//span[@class='mat-option-text']")]
-        public IWebElement DeleteProjectButtonInActions { get; set; }
-
-        [FindsBy(How = How.XPath,
+        /*[FindsBy(How = How.XPath,
             Using = ".//button[@class='button-small mat-raised-button mat-accent ng-star-inserted']")]
-        public IWebElement DeleteButtonOnPage { get; set; }
+        public IWebElement DeleteButtonOnPage { get; set; }*/
 
-        [FindsBy(How = How.XPath, Using = ".//div[@class='ng-star-inserted inline-tip']")]
-        public IWebElement DeleteWarningMessage { get; set; }
+        /*[FindsBy(How = How.XPath, Using = ".//div[@class='ng-star-inserted inline-tip']")]
+        public IWebElement DeleteWarningMessage { get; set; }*/
 
-        [FindsBy(How = How.XPath, Using = ".//button[@class='messageAction btn mat-button ng-star-inserted']")]
-        public IWebElement DeleteButtonInWarningMessage { get; set; }
+        /*[FindsBy(How = How.XPath, Using = ".//button[@class='messageAction btn mat-button ng-star-inserted']")]
+        public IWebElement DeleteButtonInWarningMessage { get; set; }*/
 
         [FindsBy(How = How.XPath, Using = ".//div[@class='inline-success ng-star-inserted']")]
         public IWebElement SuccessDeleteMessage { get; set; }
@@ -76,18 +53,11 @@ namespace DashworksTestAutomation.Pages.Evergreen.AdminDetailsPages
             };
         }
 
-        public void SelectListForProjectCreation(string listName)
-        {
-            string ListNameSelector = $".//span[@class='mat-option-text'][text()=' {listName}']";
-            Driver.WaitWhileControlIsNotDisplayed(By.XPath(ListNameSelector));
-            Driver.FindElement(By.XPath(ListNameSelector)).Click();
-        }
-
-        public void SelectProjectByName(string projectName)
+        /*public void SelectProjectByName(string projectName)
         {
             string projectNameSelector = $".//a[text()='{projectName}']";
             Driver.FindElement(By.XPath(projectNameSelector)).Click();
-        }
+        }*/
 
         public void NavigateToProjectTabByName(string tabName)
         {
@@ -135,7 +105,7 @@ namespace DashworksTestAutomation.Pages.Evergreen.AdminDetailsPages
             return Driver.IsElementDisplayed(By.XPath($".//div//span[contains(text(),'{tabName} ')]"));
         }
 
-        public int GetColumnNumberByName(string columnName)
+        /*public int GetColumnNumberByName(string columnName)
         {
             var allHeadersSelector = By.XPath(".//div[@class='ag-header-container']/div/div");
             Driver.WaitForDataLoading();
@@ -159,7 +129,7 @@ namespace DashworksTestAutomation.Pages.Evergreen.AdminDetailsPages
             Driver.WaitWhileControlIsNotDisplayed(byControl);
             Driver.FindElement(byControl).Click();
             Driver.FindElement(byControl).SendKeys(text);
-        }
+        }*/
 
         public bool WarningMessageProjectPage(string text)
         {
