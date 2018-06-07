@@ -548,6 +548,32 @@ Scenario: EvergreenJnr_MailboxesLists_CheckThatCorrectMessageIsDisplayedForDevic
 	And User opens "Devices" section on the Details Page
 	Then "No devices found for this application" message is displayed on the Details Page
 
+@Evergreen @ALlLists @Devices @Users @Applications @DAS12491
+Scenario Outline: EvergreenJnr_AllLists_CheckThatSingularFoundItemLabelDisplaysOnActionsToolbar
+	When User clicks "<PageName>" on the left-hand menu
+	And User perform search by "<SearchTerm>"
+	Then "1" rows are displayed in the agGrid
+
+Examples:
+	| PageName     | SearchTerm                                |
+	| Applications | ABBYY FineReader 8.0 Professional Edition |
+	| Mailboxes    | 002B5DC7D4D34D5C895@bclabs.local          |
+	| Devices      | 001BAQXT6JWFPI                            |
+	| Users        | $231000-3AC04R8AR431                      |
+
+@Evergreen @Applications @Users @EvergreenJnr_ItemDetails @ItemDetailsDisplay @DAS12491
+Scenario Outline: EvergreenJnr_AllLists_CheckThatSingularFoundItemLabelDisplaysOnDetailsPages
+	When User clicks "<PageName>" on the left-hand menu
+	And User perform search by "<SearchTerm>"
+	And User click content from "<Column>" column
+	And User navigates to the "<Tab>" tab
+	Then "1" rows found label displays on Details Page
+
+Examples:
+	| PageName     | SearchTerm          | Column      | Tab       |
+	| Applications | IEWatch 2.1         | Application | MSI       |
+	| Users        | 01A921EFD05545818AA | Username    | Mailboxes |
+	
 @Evergreen @Devices @EvergreenJnr_ItemDetails @ItemDetailsDisplay @DAS12690
 Scenario: EvergreenJnr_DevicesLists_CheckThatLinksInDeviceDetailsAreRedirectedToTheRelevantUserDetailsPage
 	When User clicks "Devices" on the left-hand menu

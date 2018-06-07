@@ -628,5 +628,25 @@ namespace DashworksTestAutomation.Extensions
         }
 
         #endregion Availability of element
+
+        #region JavaSctipt Alert
+
+        public static void AcceptAlert(this RemoteWebDriver driver)
+        {
+            driver.SwitchTo().Alert().Accept();
+        }
+
+        public static void DismissAlert(this RemoteWebDriver driver)
+        {
+            driver.SwitchTo().Alert().Dismiss();
+        }
+
+        public static bool IsAlertPresent(this RemoteWebDriver driver)
+        {
+            IAlert alert = ExpectedConditions.AlertIsPresent().Invoke(driver);
+            return (alert != null);
+        }
+
+        #endregion
     }
 }
