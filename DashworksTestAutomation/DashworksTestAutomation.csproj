@@ -238,7 +238,11 @@
     <Compile Include="Pages\EvergreenDashboardsPage.cs" />
     <Compile Include="Pages\Evergreen\ActionsElement.cs" />
     <Compile Include="Pages\Evergreen\AdminDetailsPages\AdminLeftHandMenu.cs" />
+    <Compile Include="Pages\Evergreen\AdminDetailsPages\BaseGridPage.cs" />
     <Compile Include="Pages\Evergreen\AdminDetailsPages\BucketsPage.cs" />
+    <Compile Include="Pages\Evergreen\AdminDetailsPages\Forms\CreateProjectPage.cs" />
+    <Compile Include="Pages\Evergreen\AdminDetailsPages\Forms\CreateBucketPage.cs" />
+    <Compile Include="Pages\Evergreen\AdminDetailsPages\Forms\CreateTeamPage.cs" />
     <Compile Include="Pages\Evergreen\AdminDetailsPages\TeamsPage.cs" />
     <Compile Include="Pages\Evergreen\AdminDetailsPages\ProjectsPage.cs" />
     <Compile Include="Pages\Evergreen\ApplicationsPage.cs" />
