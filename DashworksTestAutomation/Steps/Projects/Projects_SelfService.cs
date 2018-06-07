@@ -46,7 +46,7 @@ namespace DashworksTestAutomation.Steps.Projects
             tab.GetTabElementByNameOnSelfServiceTab(tabName).Click();
         }
 
-        [Then(@"User updates the Details page on Self Service tab")]
+        [When(@"User updates the Details page on Self Service tab")]
         public void ThenUserUpdatesTheDetailsPageOnSelfServiceTab(Table table)
         {
             var page = _driver.NowAt<SelfService_DetailsPage>();
@@ -71,7 +71,7 @@ namespace DashworksTestAutomation.Steps.Projects
             upd.UpdateButton.Click();
         }
 
-        [Then(@"User updates the Welcome page on Self Service tab")]
+        [When(@"User updates the Welcome page on Self Service tab")]
         public void ThenUserUpdatesTheWelcomePageOnSelfServiceTab(Table table)
         {
             var page = _driver.NowAt<SelfService_WelcomePage>();
@@ -98,7 +98,7 @@ namespace DashworksTestAutomation.Steps.Projects
             upd.UpdateButton.Click();
         }
 
-        [Then(@"User updates the Ownership page on Self Service tab")]
+        [When(@"User updates the Ownership page on Self Service tab")]
         public void ThenUserUpdatesTheOwnershipPageOnSelfServiceTab(Table table)
         {
             var page = _driver.NowAt<SelfService_ComputerOwnershipPage>();
@@ -133,7 +133,7 @@ namespace DashworksTestAutomation.Steps.Projects
             upd.UpdateButton.Click();
         }
 
-        [Then(@"User updates the Department and Location page on Self Service tab")]
+        [When(@"User updates the Department and Location page on Self Service tab")]
         public void ThenUserUpdatesTheDepartmentAndLocationPageOnSelfServiceTab(Table table)
         {
             var page = _driver.NowAt<SelfService_DepartmentAndLocationPage>();
@@ -162,7 +162,7 @@ namespace DashworksTestAutomation.Steps.Projects
             upd.UpdateButton.Click();
         }
 
-        [Then(@"User updates the Apps List page on Self Service tab")]
+        [When(@"User updates the Apps List page on Self Service tab")]
         public void ThenUserUpdatesTheAppsListPageOnSelfServiceTab(Table table)
         {
             var page = _driver.NowAt<SelfService_AppsListPage>();
@@ -193,7 +193,7 @@ namespace DashworksTestAutomation.Steps.Projects
             _projectDto.SelfServiceAppsListDto = _appsListDto;
         }
 
-        [Then(@"User updates the Project Date page on Self Service tab")]
+        [When(@"User updates the Project Date page on Self Service tab")]
         public void ThenUserUpdatesTheProjectDatePageOnSelfServiceTab(Table table)
         {
             var page = _driver.NowAt<SelfService_ProjectDatePage>();
@@ -216,7 +216,7 @@ namespace DashworksTestAutomation.Steps.Projects
             upd.UpdateButton.Click();
         }
 
-        [Then(@"User updates the first Other Options page on Self Service tab")]
+        [When(@"User updates the first Other Options page on Self Service tab")]
         public void ThenUserUpdatesTheFirstOtherOptionsPageOnSelfServiceTab(Table table)
         {
             var page = _driver.NowAt<SelfService_OtherOptionsPage>();
@@ -233,7 +233,7 @@ namespace DashworksTestAutomation.Steps.Projects
             upd.UpdateButton.Click();
         }
 
-        [Then(@"User updates the second Other Options page on Self Service tab")]
+        [When(@"User updates the second Other Options page on Self Service tab")]
         public void ThenUserUpdatesTheSecondOtherOptionsPageOnSelfServiceTab(Table table)
         {
             var page = _driver.NowAt<SelfService_OtherOptionsPage>();
@@ -250,7 +250,7 @@ namespace DashworksTestAutomation.Steps.Projects
             upd.UpdateButton.Click();
         }
 
-        [Then(@"User updates the Thank You page on Self Service tab")]
+        [When(@"User updates the Thank You page on Self Service tab")]
         public void ThenUserUpdatesTheThankYouPageOnSelfServiceTab(Table table)
         {
             var page = _driver.NowAt<SelfService_ThankYouPage>();

@@ -31,17 +31,18 @@ namespace DashworksTestAutomation.Steps.Projects
             _deletedRequestTypeName = deletedRequestTypeName;
         }
 
-        [Then(@"User removes created Request Type")]
+        [When(@"User removes created Request Type")]
         public void ThenUserRemovesCreatedRequestType()
         {
             var page = _driver.NowAt<BaseElements>();
             _deletedRequestTypeName.Value = _projectDto.ReqestTypes.Last().Name;
+            _driver.WaitForDataLoading();
             page.GetDeleteButtonElementByName(_deletedRequestTypeName.Value).Click();
             //Removing deleted Request Type from request types list
             _projectDto.ReqestTypes.RemoveAt(_projectDto.ReqestTypes.Count - 1);
         }
 
-        [Then(@"User removes created Category")]
+        [When(@"User removes created Category")]
         public void ThenUserRemovesCreatedCategory()
         {
             var page = _driver.NowAt<BaseElements>();
@@ -49,7 +50,7 @@ namespace DashworksTestAutomation.Steps.Projects
             page.GetDeleteButtonElementByName(_projectDto.Categories.Last().Name).Click();
         }
 
-        [Then(@"User removes created Stage")]
+        [When(@"User removes created Stage")]
         public void ThenUserRemovesCreatedStage()
         {
             var page = _driver.NowAt<BaseElements>();
@@ -60,7 +61,7 @@ namespace DashworksTestAutomation.Steps.Projects
             _projectDto.Stages.RemoveAt(_projectDto.Stages.Count - 1);
         }
 
-        [Then(@"User removes created Task")]
+        [When(@"User removes created Task")]
         public void ThenUserRemovesCreatedTask()
         {
             var page = _driver.NowAt<BaseElements>();
@@ -71,7 +72,7 @@ namespace DashworksTestAutomation.Steps.Projects
             _projectDto.Tasks.RemoveAt(_projectDto.Tasks.Count - 1);
         }
 
-        [Then(@"User removes created Team")]
+        [When(@"User removes created Team")]
         public void ThenUserRemovesCreatedTeam()
         {
             var page = _driver.NowAt<BaseElements>();
@@ -83,7 +84,7 @@ namespace DashworksTestAutomation.Steps.Projects
             _projectDto.TeamProperties.RemoveAt(_projectDto.TeamProperties.Count - 1);
         }
 
-        [Then(@"User removes created Group")]
+        [When(@"User removes created Group")]
         public void ThenUserRemovesCreatedGroup()
         {
             var page = _driver.NowAt<BaseElements>();
@@ -95,7 +96,7 @@ namespace DashworksTestAutomation.Steps.Projects
             _projectDto.GroupProperties.RemoveAt(_projectDto.GroupProperties.Count - 1);
         }
 
-        [Then(@"User removes created Mail Template")]
+        [When(@"User removes created Mail Template")]
         public void ThenUserRemovesCreatedMailTemplate()
         {
             var page = _driver.NowAt<BaseElements>();
@@ -104,7 +105,7 @@ namespace DashworksTestAutomation.Steps.Projects
             _driver.AcceptAlert();
         }
 
-        [Then(@"User removes the Project")]
+        [When(@"User removes the Project")]
         public void ThenUserRemoveTheProject()
         {
             var page = _driver.NowAt<BaseElements>();

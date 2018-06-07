@@ -79,7 +79,7 @@ namespace DashworksTestAutomation.Steps
             page.SelectUserForMembersByName(_projectDto.ManageUsers[userIndex - 1].Username).Click();
         }
 
-        [Then(@"User removes created User")]
+        [When(@"User removes created User")]
         public void ThenUserRemoveCreatedUser()
         {
             var page = _driver.NowAt<BaseElements>();

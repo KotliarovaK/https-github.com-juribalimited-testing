@@ -205,7 +205,7 @@ namespace DashworksTestAutomation.Steps.Projects
             page.GetTheCreatedRequestTypeInTableByName(requestTypeName).Click();
         }
 
-        [Then(@"User updates the Request Type page")]
+        [When(@"User updates the Request Type page")]
         public void ThenUserUpdatesTheRequestTypePage(Table table)
         {
             var page = _driver.NowAt<RequestType_DetailsPage>();
@@ -332,7 +332,7 @@ namespace DashworksTestAutomation.Steps.Projects
             tab.GetTabElementByNameOnSelectedTab(tabName).Click();
         }
 
-        [Then(@"User create new Value")]
+        [When(@"User create new Value")]
         public void ThenUserCreateNewValue(Table table)
         {
             var page = _driver.NowAt<TaskProperties_ValuesPage>();
@@ -346,7 +346,7 @@ namespace DashworksTestAutomation.Steps.Projects
             page.DefaultValue.SetCheckboxState(_taskPropertiesValuesDto.DefaultValue);
         }
 
-        [Then(@"User create new Email")]
+        [When(@"User create new Email")]
         public void ThenUserCreateNewEmail(Table table)
         {
             var page = _driver.NowAt<TaskProperties_EmailsPage>();

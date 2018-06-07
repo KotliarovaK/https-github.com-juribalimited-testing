@@ -34,7 +34,7 @@ namespace DashworksTestAutomation.Steps.Projects
             _summaryDto = summaryDto;
         }
 
-        [Then(@"User updates the Details on Capacity tab")]
+        [When(@"User updates the Details on Capacity tab")]
         public void ThenUserUpdatesTheDetailsOnCapacityTab(Table table)
         {
             var page = _driver.NowAt<Capacity_DetailsPage>();
@@ -84,9 +84,7 @@ namespace DashworksTestAutomation.Steps.Projects
             page.EndDateButton.Click();
             _driver.WaitForDataLoading();
             page.MondayCheckbox.SetCheckboxState(_capacityDto.MondayCheckbox);
-            //_driver.WaitForDataLoading();
             page.TuesdayCheckbox.SetCheckboxState(_capacityDto.TuesdayCheckbox);
-            //_driver.WaitForDataLoading();
             page.WednesdayCheckbox.SetCheckboxState(_capacityDto.WednesdayCheckbox);
             page.ThursdayCheckbox.SetCheckboxState(_capacityDto.ThursdayCheckbox);
             page.FridayCheckbox.SetCheckboxState(_capacityDto.FridayCheckbox);
@@ -120,7 +118,7 @@ namespace DashworksTestAutomation.Steps.Projects
             Assert.IsTrue(page.Table.Displayed, "Table is not displayed for selected request type");
         }
 
-        [Then(@"User updates the Override Dates on Capacity tab")]
+        [When(@"User updates the Override Dates on Capacity tab")]
         public void ThenUserUpdatesTheOverrideDatesOnCapacityTab(Table table)
         {
             var page = _driver.NowAt<Capacity_OverrideDatesPage>();
