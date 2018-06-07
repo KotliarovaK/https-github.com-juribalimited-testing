@@ -636,25 +636,31 @@ namespace DashworksTestAutomation.Steps.Dashworks
         [Then(@"Delete button is displayed to the User on the Projects page")]
         public void ThenDeleteButtonIsDisplayedToTheUserOnTheProjectsPage()
         {
-            throw new Exception("Please update this step");
-            //var projectElement = _driver.NowAt<ProjectsPage>();
-            //Assert.IsTrue(projectElement.DeleteProjectValueInActions.Displayed(), "Delete Project Value is not displayed");
-            //Assert.IsTrue(projectElement.DeleteButtonOnPage.Displayed(), "Delete button is not displayed");
+            var projectElement = _driver.NowAt<BaseGridPage>();
+            Assert.IsTrue(projectElement.DeleteValueInActions.Displayed(), "Delete Project Value is not displayed");
+            Assert.IsTrue(projectElement.DeleteButtonOnPage.Displayed(), "Delete button is not displayed");
         }
 
         [Then(@"Delete button is not displayed to the User on the Projects page")]
         public void ThenDeleteButtonIsNotDisplayedToTheUserOnTheProjectsPage()
         {
-            throw new Exception("Please update this step");
-            //var projectElement = _driver.NowAt<ProjectsPage>();
-            //Assert.IsTrue(projectElement.ActionsInDropdown.Displayed(), "Actions is not displayed in the dropdown");
-            //Assert.IsFalse(projectElement.DeleteButtonOnPage.Displayed(), "Delete button is displayed");
+            var projectElement = _driver.NowAt<BaseGridPage>();
+            Assert.IsTrue(projectElement.ActionsInDropdown.Displayed(), "Actions is not displayed in the dropdown");
+            Assert.IsFalse(projectElement.DeleteButtonOnPage.Displayed(), "Delete button is displayed");
         }
 
         [Then(@"Success message with ""(.*)"" text is displayed on the Projects page")]
         public void ThenSuccessMessageWithTextIsDisplayedOnTheProjectsPage(string textMessage)
         {
             ProjectsPage projectElement;
+            try
+            {
+                projectElement = _driver.NowAt<ProjectsPage>();
+            }
+            catch (WebDriverTimeoutException)
+            {
+                projectElement = _driver.NowAt<ProjectsPage>();
+            }
             try
             {
                 projectElement = _driver.NowAt<ProjectsPage>();
