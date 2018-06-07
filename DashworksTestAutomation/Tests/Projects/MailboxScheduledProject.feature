@@ -1,7 +1,7 @@
 ﻿Feature: CreateMailboxScheduledProject
 	Runs Project related tests
 
-@Projects @Project @MailboxScheduledProject @Delete_Newly_Created_Team
+@Projects @Project @MailboxScheduledProject @Delete_Newly_Created_Team @Not_Run
 Scenario: Projects_CreateMailboxScheduledProject
 	Given User is on Dashworks Homepage
 	Then Login Page is displayed to the user

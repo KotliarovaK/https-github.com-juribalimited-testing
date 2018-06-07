@@ -1,7 +1,7 @@
 ﻿Feature: CreateUserScheduledProject
 	Runs Project related tests
 
-@Projects @Project @UserScheduledProject @Delete_Newly_Created_Team
+@Projects @Project @UserScheduledProject @Delete_Newly_Created_Team @Not_Run
 Scenario: Projects_CreateUserScheduledProject
 	Given User is on Dashworks Homepage
 	Then Login Page is displayed to the user

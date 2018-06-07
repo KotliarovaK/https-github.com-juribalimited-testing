@@ -66,13 +66,15 @@ namespace DashworksTestAutomation.Tests.Projects
         [NUnit.Framework.CategoryAttribute("Project")]
         [NUnit.Framework.CategoryAttribute("UserScheduledProject")]
         [NUnit.Framework.CategoryAttribute("Delete_Newly_Created_Team")]
+        [NUnit.Framework.CategoryAttribute("Not_Run")]
         public virtual void Projects_CreateUserScheduledProject()
         {
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Projects_CreateUserScheduledProject", new string[] {
                         "Projects",
                         "Project",
                         "UserScheduledProject",
-                        "Delete_Newly_Created_Team"});
+                        "Delete_Newly_Created_Team",
+                        "Not_Run"});
             this.ScenarioSetup(scenarioInfo);
             testRunner.Given("User is on Dashworks Homepage", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
             testRunner.Then("Login Page is displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
