@@ -44,7 +44,7 @@ namespace DashworksTestAutomation.Pages.Evergreen.AdminDetailsPages
         public IWebElement ActionsButton { get; set; }
 
         [FindsBy(How = How.XPath,
-            Using = ".//button[@class='button-small mat-raised-button mat-accent ng-star-inserted']")]
+            Using = ".//button[contains(@class, 'button-small mat-raised-button')]//span[text()='DELETE']")]
         public IWebElement DeleteButtonOnPage { get; set; }
 
         [FindsBy(How = How.XPath, Using = ".//h2[text()='Reassign Objects']")]

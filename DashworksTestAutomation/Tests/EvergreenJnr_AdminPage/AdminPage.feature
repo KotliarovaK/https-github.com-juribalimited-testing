@@ -119,7 +119,7 @@ Scenario: EvergreenJnr_AdminPage_CheckThatWarningMessageIsDisplayedAfterDeleting
 	And Update Project button is disabled
 	And Delete "TestProject1" Project in the Administration
 
-@Evergreen @Admin @EvergreenJnr_AdminPage @AdminPage @DAS11977 @DAS11959 @DAS12553 @DAS11744 @DAS12742 @Not_Run
+@Evergreen @Admin @EvergreenJnr_AdminPage @AdminPage @DAS11977 @DAS11959 @DAS12553 @DAS11744 @DAS12742
 Scenario: EvergreenJnr_AdminPage_CheckThatAfterApplyingDoNotIncludeDeviceOwnersListHas0ItemsInTheUsersTab
 	When User clicks Admin on the left-hand menu
 	Then Admin page should be displayed to the user
@@ -146,7 +146,7 @@ Scenario: EvergreenJnr_AdminPage_CheckThatAfterApplyingDoNotIncludeDeviceOwnersL
 	Then "Users to add (0 of 0 selected)" is displayed to the user in the Project Scope Changes section
 	And Delete "TestProject1" Project in the Administration
 
-@Evergreen @Admin @EvergreenJnr_AdminPage @AdminPage @DAS11931 @DAS12742 @Not_Run
+@Evergreen @Admin @EvergreenJnr_AdminPage @AdminPage @DAS11931 @DAS12742
 Scenario Outline: EvergreenJnr_AdminPage_CheckThatProjectsAreDeletedSuccessfullyAndThereAreNoConsoleErrors
 	When User clicks Admin on the left-hand menu
 	Then Admin page should be displayed to the user
@@ -204,7 +204,7 @@ Scenario: EvergreenJnr_AdminPage_CheckThatNoConsoleErrorsAreDisplayedWhenDeleteD
 	Then Content is present in the table on the Teams Page
 	And There are no errors in the browser console
 
-@Evergreen @Admin @EvergreenJnr_AdminPage @AdminPage @DAS11879 @DAS12742 @Not_Run
+@Evergreen @Admin @EvergreenJnr_AdminPage @AdminPage @DAS11879 @DAS12742
 Scenario: EvergreenJnr_AdminPage_CheckThatYouCanNotDeleteTheDefaultBucketWarningMessageIsNotDisplayedAfterTryingToDeleteNonDefaultBucket
 	When User clicks Admin on the left-hand menu
 	Then Admin page should be displayed to the user
@@ -242,7 +242,7 @@ Scenario: EvergreenJnr_AdminPage_CheckThatNumberOfApplicationsInProjectScopeIsCo
 	Then "Applications to add (0 of 247 selected)" is displayed to the user in the Project Scope Changes section
 	And Delete "TestProject5" Project in the Administration
 
-@Evergreen @Admin @EvergreenJnr_AdminPage @AdminPage @DAS12154 @DAS12742 @Delete_Newly_Created_List @Not_Run
+@Evergreen @Admin @EvergreenJnr_AdminPage @AdminPage @DAS12154 @DAS12742 @Delete_Newly_Created_List
 Scenario: EvergreenJnr_AdminPage_CheckThatWarningMessageIsNotDisplayedWhenDeletingListUsingInTheProjectThatWasDeleted
 	When User clicks "Devices" on the left-hand menu
 	Then "Devices" list should be displayed to the user
@@ -298,7 +298,7 @@ Scenario: EvergreenJnr_AdminPage_CheckThatNotificationMessageIsDisplayedAfterUpd
 	Then Success message The "TestBucket2" bucket has been updated is displayed on the Buckets page
 	And Delete "TestBucket2" Bucket in the Administration
 
-@Evergreen @Admin @EvergreenJnr_AdminPage @AdminPage @DAS11763 @DAS12742 @Not_Run
+@Evergreen @Admin @EvergreenJnr_AdminPage @AdminPage @DAS11763 @DAS12742
 Scenario: EvergreenJnr_AdminPage_CheckThatNoConsoleErrorsAreDisplayedWhenDeletingBucketFromBucketsSection
 	When User clicks Admin on the left-hand menu
 	Then Admin page should be displayed to the user
@@ -437,7 +437,7 @@ Scenario: EvergreenJnr_AdminPage_CheckThatConsoleErrorsAreNotDisplayedAfterAddin
 	And Success message is displayed and contains "The selected users have been added to the selected bucket" text on the Buckets page
 	And There are no errors in the browser console
 
-@Evergreen @Admin @EvergreenJnr_AdminPage @AdminPage @DAS11697 @DAS12744 @Not_Run
+@Evergreen @Admin @EvergreenJnr_AdminPage @AdminPage @DAS11697 @DAS12744
 Scenario Outline: EvergreenJnr_AdminPage_CheckThatCancelButtonOnTheCreateProjectPageRedirectsToTheLastPage
 	When User clicks "<ListName>" on the left-hand menu
 	Then "<ListName>" list should be displayed to the user
@@ -452,7 +452,7 @@ Scenario Outline: EvergreenJnr_AdminPage_CheckThatCancelButtonOnTheCreateProject
 	| Users     |
 	| Mailboxes |
 
-@Evergreen @Admin @EvergreenJnr_AdminPage @AdminPage @DAS12162 @DAS12532 @DAS12744 @Not_Run
+@Evergreen @Admin @EvergreenJnr_AdminPage @AdminPage @DAS12162 @DAS12532 @DAS12744
 Scenario: EvergreenJnr_AdminPage_CheckThatConsoleErrorsAreNotDisplayedAfterNavigatingScopeChangesTab
 	When User clicks "Devices" on the left-hand menu
 	Then "Devices" list should be displayed to the user
@@ -471,7 +471,7 @@ Scenario: EvergreenJnr_AdminPage_CheckThatConsoleErrorsAreNotDisplayedAfterNavig
 	Then There are no errors in the browser console
 	And Delete "TestProject8" Project in the Administration
 
-@Evergreen @Admin @EvergreenJnr_AdminPage @AdminPage @DAS12189 @DAS12523 @DAS12521 @DAS12744 @Delete_Newly_Created_List @Not_Run
+@Evergreen @Admin @EvergreenJnr_AdminPage @AdminPage @DAS12189 @DAS12523 @DAS12521 @DAS12744 @Delete_Newly_Created_List
 Scenario: EvergreenJnr_AdminPage_CheckThatNoErrorsAreDisplayedInTheProjectScopeChangesSectionAfterUsingSavedDevicesList
 	When User clicks "Applications" on the left-hand menu
 	Then "Applications" list should be displayed to the user

@@ -370,6 +370,20 @@ namespace DashworksTestAutomation.Extensions
                     }
                 else
                     break;
+                if (wasLoadingSpinnerDisplayed)
+                    try
+                    {
+                        WebDriverWait wait = new WebDriverWait(driver, waitTimeout);
+                        wait.Until(InvisibilityOfAllElementsLocatedBy(by));
+                    }
+                    catch (Exception e)
+                    {
+                        Logger.Write(
+                            $"WARNING: Loading spinner is displayed longer that {waitTimeout.Seconds * attempts} seconds: {driver.Url}");
+                        throw e;
+                    }
+                else
+                    break;
             } while (wasLoadingSpinnerDisplayed && attempts < 3);
         }
 
@@ -455,10 +469,19 @@ namespace DashworksTestAutomation.Extensions
 
         public static string GetTooltipText(this RemoteWebDriver driver)
         {
-            var toolTips = driver.FindElements(By.XPath(".//mat-tooltip-component"));
+            string selector = ".//mat-tooltip-component";
+            driver.WaitWhileControlIsNotExists(By.XPath(selector));
+            var toolTips = driver.FindElements(By.XPath(selector));
+            var t = driver.PageSource;
             if (!toolTips.Any())
                 throw new Exception("Tool tip was not displayed");
-            return toolTips.First().Text;
+            var toolTipText = toolTips.First().FindElement(By.XPath("./div")).Text;
+            if (String.IsNullOrEmpty(toolTipText))
+            {
+                driver.WaitWhileControlIsNotDisplayed(By.XPath(selector + "/div"));
+                toolTipText = toolTips.First().FindElement(By.XPath("./div")).Text;
+            }
+            return toolTipText;
         }
 
         #region Actions

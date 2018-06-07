@@ -22,7 +22,7 @@ namespace DashworksTestAutomation.Pages.Evergreen.AdminDetailsPages
         [FindsBy(How = How.XPath, Using = ".//button[@class='mat-primary mat-raised-button _mat-animation-noopable']")]
         public IWebElement CreateProjectButtonOnCreateProjectPage { get; set; }
 
-        [FindsBy(How = How.XPath, Using = ".//button[@class='mat-raised-button']/span[text()='CANCEL']")]
+        [FindsBy(How = How.XPath, Using = ".//button[contains(@class, 'mat-raised-button')]//span[text()='CANCEL']")]
         public IWebElement CancelButton { get; set; }
 
         [FindsBy(How = How.XPath, Using = ".//label[text()='Project Name']/ancestor::div[@class='form-item']//input")]
@@ -55,13 +55,13 @@ namespace DashworksTestAutomation.Pages.Evergreen.AdminDetailsPages
         public IWebElement ActionsInDropdown { get; set; }
 
         [FindsBy(How = How.XPath,
-            Using = ".//button[@class='button-small mat-raised-button mat-accent ng-star-inserted']")]
+            Using = ".//button[contains(@class, 'button-small mat-raised-button')]//span[text()='DELETE']")]
         public IWebElement DeleteButtonOnPage { get; set; }
 
         [FindsBy(How = How.XPath, Using = ".//div[@class='ng-star-inserted inline-tip']")]
         public IWebElement DeleteWarningMessage { get; set; }
 
-        [FindsBy(How = How.XPath, Using = ".//button[@class='messageAction btn mat-button ng-star-inserted']")]
+        [FindsBy(How = How.XPath, Using = ".//button[contains(@class, 'messageAction btn mat-button')]")]
         public IWebElement DeleteButtonInWarningMessage { get; set; }
 
         [FindsBy(How = How.XPath, Using = ".//div[contains(@class, 'inline-success')]")]

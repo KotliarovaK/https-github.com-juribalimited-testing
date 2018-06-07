@@ -64,7 +64,7 @@ namespace DashworksTestAutomation.Pages.Evergreen.DetailsTabsMenu
         [FindsBy(How = How.XPath, Using = ".//i[@class='material-icons pull-right mat-laptop']")]
         public IWebElement DeviceDetailsIcon { get; set; }
 
-        [FindsBy(How = How.XPath, Using = ".//button[@class='button-small mat-default reset mat-raised-button']")]
+        [FindsBy(How = How.XPath, Using = ".//button[@class='button-small mat-default reset mat-raised-button _mat-animation-noopable']")]
         public IWebElement ResetFiltersButton { get; set; }
 
         [FindsBy(How = How.XPath, Using = ".//body")]
