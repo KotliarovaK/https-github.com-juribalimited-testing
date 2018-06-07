@@ -139,6 +139,8 @@ Scenario: EvergreenJnr_AdminPage_CheckThatAfterApplyingDoNotIncludeDeviceOwnersL
 	When User cancels the selection of all rows on the Projects page
 	Then Delete button is not displayed to the User on the Projects page
 	Then Project "TestProject1" is displayed to user
+	When User enters "TestProject1" text in the Search field for "Project" column
+	And User clicks content from "Project" column
 	When User selects "Do not include device owners" checkbox on the Project details page
 	And User selects "Scope Changes" tab on the Project details page
 	And User clicks "Users" tab in the Project Scope Changes section 
