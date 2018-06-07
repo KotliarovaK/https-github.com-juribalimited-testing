@@ -75,7 +75,7 @@ namespace DashworksTestAutomation.Pages.Evergreen.AdminDetailsPages
 
         public bool ActiveProjectByName(string projectName)
         {
-            return Driver.IsElementDisplayed(By.XPath($".//a[text()='{projectName}']"));
+            return Driver.IsElementDisplayed(By.XPath($".//h1[text()='{projectName}']"));
         }
 
         public bool SuccessTextMessage(string textMessage)
