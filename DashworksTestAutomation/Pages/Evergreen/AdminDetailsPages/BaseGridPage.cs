@@ -69,7 +69,10 @@ namespace DashworksTestAutomation.Pages.Evergreen.AdminDetailsPages
 
         [FindsBy(How = How.XPath, Using = ".//div[@class='empty-message ng-star-inserted'][text()='No items']")]
         public IWebElement NoItemsMessage { get; set; }
-        
+
+        [FindsBy(How = How.XPath, Using = "//a[@mattooltip='Back']")]
+        public IWebElement BackToTableButton { get; set; }
+
         private By AgIconMenu = By.XPath("//span[contains(@class,'ag-icon-menu')]");
         
         public override List<By> GetPageIdentitySelectors()
