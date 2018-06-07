@@ -617,3 +617,24 @@ Scenario: EvergreenJnr_AdminPage_CheckThatSingularFoundItemLabelDisplaysOnAction
 	And User clicks "Teams" link on the Admin page
 	And User enters "K-Team" text in the Search field for "Team" column
 	Then Counter shows "1" found rows
+
+@Evergreen @Admin @EvergreenJnr_AdminPage @AdminPage @DAS12333
+Scenario: EvergreenJnr_ChecksThatDeviceScopeDDLIsDisabledWhenDoNotIncludeOwnedDevicesIsSelected
+	When User clicks Admin on the left-hand menu
+	Then Admin page should be displayed to the user
+	When User clicks Create New Item button
+	Then "Create Project" page should be displayed to the user
+	When User enters "Rainbow" in the Project Name field
+	And User selects "All Devices" in the Scope Project dropdown
+	When User clicks Create button on the Create Project page
+	When User enters "Rainbow" text in the Search field for "Project" column
+	And User clicks content from "Project" column
+	Then Project "Rainbow" is displayed to user
+	When User selects "Scope Details" tab on the Project details page
+	And User navigates to the "User Scope" tab in the Scope section on the Project details page
+	When User selects "Do not include device owners" checkbox on the Project details page
+	Then selecting device owners is disabled
+	When User click on Back button
+	When User enters "Rainbow" text in the Search field for "Project" column
+	And User selects all rows on the grid
+	When User removes selected item

@@ -579,6 +579,21 @@ namespace DashworksTestAutomation.Steps.Dashworks
                 "Create Project button is active");
         }
 
+        [Then(@"selecting device owners is disabled")]
+        public void ThenSelectingDeviceOwnersIsDisabled()
+        {
+            var dropDown = _driver.NowAt<ProjectsPage>();
+            //_driver.WaitWhileControlIsDisplayed<ProjectsPage>(() => dropDown.DisabledOwnerDropDown);
+            Assert.IsTrue(dropDown.DisabledOwnerDropDown.Displayed, "Drop down menu is available");
+        }
+
+        [When(@"User click on Back button")]
+        public void WhenUserClickOnBackButton()
+        {
+            var button = _driver.NowAt<BaseGridPage>();
+            button.BackToTableButton.Click();
+        }
+
         [When(@"User clears Search field for ""(.*)"" column")]
         public void WhenUserClearsSearchFieldForColumn(string columnName)
         {

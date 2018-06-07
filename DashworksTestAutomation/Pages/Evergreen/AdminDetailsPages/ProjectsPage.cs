@@ -22,6 +22,9 @@ namespace DashworksTestAutomation.Pages.Evergreen.AdminDetailsPages
         [FindsBy(How = How.XPath, Using = ".//span['_ngcontent-c11'][text()='Scope']")]
         public IWebElement ScopeSection { get; set; }
 
+        [FindsBy(How = How.XPath, Using = ".//div[@class='wrapper-disabled']//mat-select[@aria-label='User Scope']")]
+        public IWebElement DisabledOwnerDropDown { get; set; }
+
         public override List<By> GetPageIdentitySelectors()
         {
             Driver.WaitForDataLoading();
