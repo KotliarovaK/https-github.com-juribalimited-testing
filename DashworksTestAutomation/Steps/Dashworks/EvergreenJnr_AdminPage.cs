@@ -106,6 +106,7 @@ namespace DashworksTestAutomation.Steps.Dashworks
         public void ThenProjectIsDisplayedToUser(string projectName)
         {
             var page = _driver.NowAt<ProjectsPage>();
+            _driver.WaitForDataLoading();
             Assert.IsTrue(page.ActiveProjectByName(projectName), $"{projectName} is not displayed on the Project page");
         }
 
@@ -577,6 +578,21 @@ namespace DashworksTestAutomation.Steps.Dashworks
             _driver.WaitWhileControlIsNotDisplayed<CreateProjectPage>(() => button.CreateProjectButton);
             Assert.IsTrue(Convert.ToBoolean(button.CreateProjectButton.GetAttribute("disabled")),
                 "Create Project button is active");
+        }
+
+        [Then(@"selecting device owners is disabled")]
+        public void ThenSelectingDeviceOwnersIsDisabled()
+        {
+            var dropDown = _driver.NowAt<ProjectsPage>();
+            //_driver.WaitWhileControlIsDisplayed<ProjectsPage>(() => dropDown.DisabledOwnerDropDown);
+            Assert.IsTrue(dropDown.DisabledOwnerDropDown.Displayed, "Drop down menu is available");
+        }
+
+        [When(@"User click on Back button")]
+        public void WhenUserClickOnBackButton()
+        {
+            var button = _driver.NowAt<BaseGridPage>();
+            button.BackToTableButton.Click();
         }
 
         [When(@"User clears Search field for ""(.*)"" column")]
