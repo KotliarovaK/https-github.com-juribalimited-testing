@@ -370,20 +370,6 @@ namespace DashworksTestAutomation.Extensions
                     }
                 else
                     break;
-                if (wasLoadingSpinnerDisplayed)
-                    try
-                    {
-                        WebDriverWait wait = new WebDriverWait(driver, waitTimeout);
-                        wait.Until(InvisibilityOfAllElementsLocatedBy(by));
-                    }
-                    catch (Exception e)
-                    {
-                        Logger.Write(
-                            $"WARNING: Loading spinner is displayed longer that {waitTimeout.Seconds * attempts} seconds: {driver.Url}");
-                        throw e;
-                    }
-                else
-                    break;
             } while (wasLoadingSpinnerDisplayed && attempts < 3);
         }
 

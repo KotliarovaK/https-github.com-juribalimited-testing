@@ -40,20 +40,25 @@ namespace DashworksTestAutomation.Pages.Evergreen.AdminDetailsPages
         [FindsBy(How = How.XPath, Using = ".//div[contains(@class, 'inline-error ng-star-inserted')]")]
         public IWebElement ErrorMessage { get; set; }
 
+        [FindsBy(How = How.XPath, Using = ".//span[contains(text(), 'Delete')]")]
+        public IWebElement DeleteValueInActions { get; set; }
+
+        [FindsBy(How = How.XPath, Using = ".//span[contains(@class, 'mat-select-placeholder')]")]
+        public IWebElement ActionsInDropdown { get; set; }
+
         [FindsBy(How = How.XPath, Using = ".//div[@class='mat-select-value']")]
         public IWebElement ActionsButton { get; set; }
 
         [FindsBy(How = How.XPath, Using = ".//span[@class='mat-option-text']/span[contains(text(),'Delete')]")]
         public IWebElement DeleteButtonInActions { get; set; }
 
-        [FindsBy(How = How.XPath,
-            Using = ".//button[@class='button-small mat-raised-button mat-accent ng-star-inserted']")]
+        [FindsBy(How = How.XPath, Using = ".//button[contains(@class, 'button-small mat-raised-button')]/span[text()='DELETE']")]
         public IWebElement DeleteButtonOnPage { get; set; }
-
+        
         [FindsBy(How = How.XPath, Using = ".//div[@class='ng-star-inserted inline-tip']")]
         public IWebElement DeleteWarningMessage { get; set; }
 
-        [FindsBy(How = How.XPath, Using = ".//button[@class='messageAction btn mat-button ng-star-inserted']")]
+        [FindsBy(How = How.XPath, Using = ".//button[contains(@class, 'messageAction btn mat-button')]")]
         public IWebElement DeleteButtonInWarningMessage { get; set; }
 
         [FindsBy(How = How.XPath, Using = ".//input[@placeholder='Search']")]
