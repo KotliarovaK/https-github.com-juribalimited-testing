@@ -106,6 +106,7 @@ namespace DashworksTestAutomation.Steps.Dashworks
         public void ThenProjectIsDisplayedToUser(string projectName)
         {
             var page = _driver.NowAt<ProjectsPage>();
+            _driver.WaitForDataLoading();
             Assert.IsTrue(page.ActiveProjectByName(projectName), $"{projectName} is not displayed on the Project page");
         }
 

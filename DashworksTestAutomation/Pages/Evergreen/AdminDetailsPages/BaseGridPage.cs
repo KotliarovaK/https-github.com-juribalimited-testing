@@ -55,7 +55,7 @@ namespace DashworksTestAutomation.Pages.Evergreen.AdminDetailsPages
         [FindsBy(How = How.XPath, Using = ".//button[contains(@class, 'button-small mat-raised-button')]/span[text()='DELETE']")]
         public IWebElement DeleteButtonOnPage { get; set; }
         
-        [FindsBy(How = How.XPath, Using = ".//div[@class='ng-star-inserted inline-tip']")]
+        [FindsBy(How = How.XPath, Using = ".//div[@id='messageAdmin']")]
         public IWebElement DeleteWarningMessage { get; set; }
 
         [FindsBy(How = How.XPath, Using = ".//button[contains(@class, 'messageAction btn mat-button')]")]
