@@ -496,6 +496,13 @@ namespace DashworksTestAutomation.Steps.Dashworks
                 $"{warningText} warning message is displayed on the Buckets page");
         }
 
+        [When(@"User clicks Delete Bucket button")]
+        public void WhenUserClicksDeleteBucketButton()
+        {
+            var projectElement = _driver.NowAt<BucketsPage>();
+            projectElement.DeleteBucketInActions.Click();
+        }
+
         [Then(@"Create Bucket button is disabled")]
         public void ThenCreateBucketButtonIsDisabled()
         {
@@ -616,6 +623,13 @@ namespace DashworksTestAutomation.Steps.Dashworks
             projectElement.ActionsButton.Click();
         }
 
+        [When(@"User clicks Delete Project button")]
+        public void WhenUserClicksDeleteProjectButton()
+        {
+            var projectElement = _driver.NowAt<ProjectsPage>();
+            projectElement.DeleteProjectInActions.Click();
+        }
+
         [When(@"User removes selected item")]
         public void WhenUserRemovesSelectedItem()
         {
@@ -624,6 +638,7 @@ namespace DashworksTestAutomation.Steps.Dashworks
             projectElement.DeleteButtonInActions.Click();
             projectElement.DeleteButtonOnPage.Click();
             _driver.WaitWhileControlIsNotDisplayed<BaseGridPage>(() => projectElement.DeleteWarningMessage);
+            _driver.WaitForDataLoading();
             projectElement.DeleteButtonInWarningMessage.Click();
         }
 

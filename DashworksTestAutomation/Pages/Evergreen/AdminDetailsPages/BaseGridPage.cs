@@ -49,7 +49,7 @@ namespace DashworksTestAutomation.Pages.Evergreen.AdminDetailsPages
         [FindsBy(How = How.XPath, Using = ".//div[@class='mat-select-value']")]
         public IWebElement ActionsButton { get; set; }
 
-        [FindsBy(How = How.XPath, Using = ".//span[@class='mat-option-text']/span[contains(text(),'Delete')]")]
+        [FindsBy(How = How.XPath, Using = ".//span[@class='mat-option-text']")]
         public IWebElement DeleteButtonInActions { get; set; }
 
         [FindsBy(How = How.XPath, Using = ".//button[contains(@class, 'button-small mat-raised-button')]/span[text()='DELETE']")]

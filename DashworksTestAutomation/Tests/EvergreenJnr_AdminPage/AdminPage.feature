@@ -134,11 +134,11 @@ Scenario: EvergreenJnr_AdminPage_CheckThatAfterApplyingDoNotIncludeDeviceOwnersL
 	Then "Projects" page should be displayed to the user
 	When User selects all rows on the grid
 	When User clicks Actions button on the Projects page
+	When User clicks Delete Project button
 	And User clicks Delete button
 	Then Delete button is displayed to the User on the Projects page
 	When User cancels the selection of all rows on the Projects page
 	Then Delete button is not displayed to the User on the Projects page
-	Then Project "TestProject1" is displayed to user
 	When User enters "TestProject1" text in the Search field for "Project" column
 	And User clicks content from "Project" column
 	When User selects "Do not include device owners" checkbox on the Project details page
@@ -215,6 +215,7 @@ Scenario: EvergreenJnr_AdminPage_CheckThatYouCanNotDeleteTheDefaultBucketWarning
 	When User selects all rows on the grid
 	And User clicks on Actions button
 	And User selects "Delete Bucket" in the Actions dropdown
+	When User clicks Delete Bucket button
 	And User clicks Delete button
 	Then "You can not delete the default bucket" warning message is not displayed on the Buckets page
 

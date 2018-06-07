@@ -13,7 +13,7 @@ namespace DashworksTestAutomation.Pages.Evergreen.AdminDetailsPages
         [FindsBy(How = How.XPath, Using = "//div[contains(@class,'action-container')]//*/h2")]
         public IWebElement CreateProjectFormTitle { get; set; }
 
-        [FindsBy(How = How.XPath, Using = ".//span[text()='CREATE PROJECT']")]
+        [FindsBy(How = How.XPath, Using = "//button[contains(@class,'mat-primary mat-raised-button')]")]
         public IWebElement CreateProjectButton { get; set; }
 
         [FindsBy(How = How.XPath, Using = ".//button[contains(@class, 'mat-raised-button')]/span[text()='CANCEL']")]
