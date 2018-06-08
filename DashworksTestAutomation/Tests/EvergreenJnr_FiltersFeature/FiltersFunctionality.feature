@@ -46,7 +46,7 @@ Scenario: EvergreenJnr_ApplicationsList_Check500ErrorIsNotReturnedForBooleanFilt
 	Then "Windows7Mi: Hide from End Users" filter is added to the list
 	And "1,156" rows are displayed in the agGrid
 
-@Evergreen @Applications @EvergreenJnr_FiltersFeature @FilterFunctionality @DAS10734 @DAS11507 @DAS12351
+@Evergreen @Applications @EvergreenJnr_FiltersFeature @FilterFunctionality @DAS10734 @DAS11507 @DAS12351 @DAS12512
 Scenario: EvergreenJnr_ApplicationsList_CheckThatAddColumnCheckboxWorksCorrectly
 	When User clicks "Applications" on the left-hand menu
 	Then "Applications" list should be displayed to the user
@@ -353,9 +353,9 @@ Examples:
 	| CategoryName              | FilterName                  |
 	| Application               | Application Name            |
 	| Application Custom Fields | App field 1                 |
-	| Application Custom Fields | Computer Warranty           |
+	| Application Custom Fields | Application Owner           |
 	| Application Custom Fields | General information field 1 |
-	| Application Custom Fields | User Field 2                |
+	| Application Custom Fields | App field 2                 |
 
 @Evergreen @Users @EvergreenJnr_FilterFeature @FilterFunctionality @DAS11738 @DAS12194 @DAS12199 @DAS12220
 Scenario: EvergreenJnr_UsersList_CheckThatToolTipShownWithEditFilterTextWhenEditingAFilterDisplayed 

@@ -375,11 +375,9 @@ Scenario: EvergreenJnr_ApplicationsList_CheckThatColumnIsDisplayedInColumnsPanel
 	| ColumnName                 |
 	| Application Key            |
 	| Windows7Mi: Technical Test |
-	| DAS-1814                   |
 	Then "Applications" list should be displayed to the user
 	And "Application Key" column is added to URL on "Applications" page
 	And "Windows7Mi: Technical Test" column is added to URL on "Applications" page
-	And "DAS-1814" column is added to URL on "Applications" page
 	When User clicks the Filters button
 	Then Filters panel is displayed to the user
 	When User add "Windows7Mi: Technical Test" filter where type is "Equals" with added column and following checkboxes:

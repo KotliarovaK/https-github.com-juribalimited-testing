@@ -23,10 +23,10 @@ namespace DashworksTestAutomation.Pages.Evergreen
         [FindsBy(How = How.XPath, Using = ".//button[@id='_listDtlBtn'][@disabled]")]
         public IWebElement DisabledListDetailsButton { get; set; }
 
-        [FindsBy(How = How.XPath, Using = ".//button[@class='btn btn-default mat-icon-button']/span/i[@class='material-icons mat-static-list']")]
+        [FindsBy(How = How.XPath, Using = ".//button[@class='btn btn-default mat-icon-button _mat-animation-noopable']")]
         public IWebElement InactiveActionsButton { get; set; }
 
-        [FindsBy(How = How.XPath, Using = ".//button[@class='btn btn-default mat-icon-button'][@id='_listDtlBtn']")]
+        [FindsBy(How = How.XPath, Using = ".//button[@class='btn btn-default mat-icon-button _mat-animation-noopable'][@id='_listDtlBtn']")]
         public IWebElement ListDetailsButton { get; set; }
 
         [FindsBy(How = How.XPath, Using = ".//button[contains(@id, 'clmnBtn')]")]
@@ -42,14 +42,14 @@ namespace DashworksTestAutomation.Pages.Evergreen
         [FindsBy(How = How.XPath, Using = ".//span[@class='ag-selection-checkbox']")]
         public IList<IWebElement> SelectRowsCheckboxes { get; set; }
 
-        [FindsBy(How = How.XPath, Using = ".//button[@class='btn input-toggle mat-icon-button ng-star-inserted']")]
+        [FindsBy(How = How.XPath, Using = ".//button[contains(@class, 'btn input-toggle')]")]
         public IWebElement SearchTextboxResetButton { get; set; }
 
         [FindsBy(How = How.XPath,
-            Using = ".//button[@class='btn btn-default input-toggle mat-icon-button ng-star-inserted']")]
+            Using = ".//button[contains(@class, 'resetButton mat-button')]")]
         public IWebElement SearchTextboxResetButtonInPanel { get; set; }
 
-        [FindsBy(How = How.XPath, Using = ".//input[@aria-label='Search table']")]
+        [FindsBy(How = How.XPath, Using = ".//input[@aria-label='Search Table']")]
         public IWebElement TableSearchTextbox { get; set; }
 
         [FindsBy(How = How.XPath, Using = ".//button[@aria-label='reload']")]

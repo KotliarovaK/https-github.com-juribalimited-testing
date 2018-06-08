@@ -265,7 +265,7 @@ namespace DashworksTestAutomation.Steps.Dashworks
                 Assert.AreEqual("101px", filterPanel.PackageSiteColumnWidt());
         }
 
-        [Then(@"User enters ""(.*)"" text in the Filter field")]
+        [When(@"User enters ""(.*)"" text in the Filter field")]
         public void ThenUserEntersTextInTheFilterField(string searchedText)
         {
             var filterElement = _driver.NowAt<ApplicationsDetailsTabsMenu>();
@@ -430,6 +430,23 @@ namespace DashworksTestAutomation.Steps.Dashworks
             foreach (var element in detailsPage.TableRowDetails)
                 StringAssert.DoesNotContain("Unknown", element.Text,
                     "Unknown text is displayed");
+        }
+
+        [Then(@"""(.*)"" rows found label displays on Details Page")]
+        public void ThenCorrectFoundRowsLabelDisplaysOnTheDetailsPage(string numberOfRows)
+        {
+            var detailsPage = _driver.NowAt<DetailsPage>();
+
+            if (numberOfRows == "1")
+            {
+                StringAssert.AreEqualIgnoringCase($"{numberOfRows} row", detailsPage.FoundRowsLabel.Text,
+                    "Incorrect rows count");
+            }
+            else
+            {
+                StringAssert.AreEqualIgnoringCase($"{numberOfRows} rows", detailsPage.FoundRowsLabel.Text,
+                    "Incorrect rows count");
+            }
         }
     }
 }
