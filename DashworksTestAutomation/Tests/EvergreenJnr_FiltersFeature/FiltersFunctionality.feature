@@ -514,3 +514,26 @@ Scenario Outline: EvergreenJnr_AllLists_CheckThatContentIsDisplayedInTheAddedCol
 	| ListName  | FilterName           | NewlyAddedColumn     |
 	| Mailboxes | EmailMigra: Category | EmailMigra: Category |
 	| Devices   | Windows7Mi: Category | Windows7Mi: Category |
+
+@Evergreen @Mailboxes @EvergreenJnr_FilterFeature @FilterFunctionality @DAS12543 @Delete_Newly_Created_List
+Scenario: EvergreenJnr_MailboxesList_CheckThatEditFilterElementsBlockIsDisplayedCorrectlyOnTheFiltersPanel 
+	When User clicks "Mailboxes" on the left-hand menu
+	Then "Mailboxes" list should be displayed to the user
+	When User clicks the Filters button
+	Then Filters panel is displayed to the user
+	When User add "EmailMigra: Readiness" filter where type is "Equals" with added column and Lookup option
+	| SelectedValues |
+	| Light Blue     |
+	Then Content is present in the newly added column
+	| ColumnName            |
+	| EmailMigra: Readiness |
+	When User create dynamic list with "TestListF544Y5" name on "Mailboxes" page
+	Then "TestListF544Y5" list is displayed to user
+	When User clicks the Filters button
+	Then Filters panel is displayed to the user
+	Then Values is displayed in added filter info
+	| Values     |
+	| Light Blue |
+	When User click Edit button for "EmailMigra: Readiness" filter
+	Then "Add column" checkbox is checked
+	Then "EmailMigra: Readiness" filter is displayed in the Filters panel
