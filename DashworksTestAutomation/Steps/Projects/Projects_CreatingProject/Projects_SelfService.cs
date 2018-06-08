@@ -41,7 +41,7 @@ namespace DashworksTestAutomation.Steps.Projects
         [When(@"User navigate to ""(.*)"" page on Self Service tab")]
         public void WhenUserNavigateToPageOnSelfServiceTab(string tabName)
         {
-            var tab = _driver.NowAt<BaseElements>();
+            var tab = _driver.NowAt<MainElementsOfProjectCreation>();
 
             tab.GetTabElementByNameOnSelfServiceTab(tabName).Click();
         }
@@ -67,7 +67,7 @@ namespace DashworksTestAutomation.Steps.Projects
             if (_detailsDto.CustomUrl.Equals(true))
                 page.CustomUrlTextFiald.SendKeys(_detailsDto.CustomUrlTextFiald);
 
-            var upd = _driver.NowAt<BaseElements>();
+            var upd = _driver.NowAt<MainElementsOfProjectCreation>();
             upd.UpdateButton.Click();
         }
 
@@ -94,7 +94,7 @@ namespace DashworksTestAutomation.Steps.Projects
             page.PageDescription.SendKeys(_welcomeDto.PageDescription);
             page.ProjectName.SendKeys(_welcomeDto.ProjectName);
 
-            var upd = _driver.NowAt<BaseElements>();
+            var upd = _driver.NowAt<MainElementsOfProjectCreation>();
             upd.UpdateButton.Click();
         }
 
@@ -129,7 +129,7 @@ namespace DashworksTestAutomation.Steps.Projects
             }
             page.PageDescription.SendKeys(_computerOwnershipDto.PageDescription);
 
-            var upd = _driver.NowAt<BaseElements>();
+            var upd = _driver.NowAt<MainElementsOfProjectCreation>();
             upd.UpdateButton.Click();
         }
 
@@ -158,7 +158,7 @@ namespace DashworksTestAutomation.Steps.Projects
             page.HistoricLocationFeed.SetCheckboxState(_departmentAndLocationDto.HistoricLocationFeed);
             //page.PageDescription.SendKeys(_departmentAndLocationDto.PageDescription);
 
-            var upd = _driver.NowAt<BaseElements>();
+            var upd = _driver.NowAt<MainElementsOfProjectCreation>();
             upd.UpdateButton.Click();
         }
 
@@ -187,7 +187,7 @@ namespace DashworksTestAutomation.Steps.Projects
             page.View.SelectboxSelect(_appsListDto.View.GetValue());
             page.PageDescription.SendKeys(_appsListDto.PageDescription);
 
-            var upd = _driver.NowAt<BaseElements>();
+            var upd = _driver.NowAt<MainElementsOfProjectCreation>();
             upd.UpdateButton.Click();
 
             _projectDto.SelfServiceAppsListDto = _appsListDto;
@@ -212,7 +212,7 @@ namespace DashworksTestAutomation.Steps.Projects
             page.MaximumHours.SendKeys(_projectDateDto.MaximumHours);
             page.PageDescription.SendKeys(_projectDateDto.PageDescription);
 
-            var upd = _driver.NowAt<BaseElements>();
+            var upd = _driver.NowAt<MainElementsOfProjectCreation>();
             upd.UpdateButton.Click();
         }
 
@@ -229,7 +229,7 @@ namespace DashworksTestAutomation.Steps.Projects
             page.AllLinked.SetCheckboxState(_options1Dto.AllLinked);
             page.PageDescription.SendKeys(_options1Dto.PageDescription);
 
-            var upd = _driver.NowAt<BaseElements>();
+            var upd = _driver.NowAt<MainElementsOfProjectCreation>();
             upd.UpdateButton.Click();
         }
 
@@ -246,7 +246,7 @@ namespace DashworksTestAutomation.Steps.Projects
             page.AllLinked.SetCheckboxState(_options2Dto.AllLinked);
             page.PageDescription.SendKeys(_options2Dto.PageDescription);
 
-            var upd = _driver.NowAt<BaseElements>();
+            var upd = _driver.NowAt<MainElementsOfProjectCreation>();
             upd.UpdateButton.Click();
         }
 
@@ -263,7 +263,7 @@ namespace DashworksTestAutomation.Steps.Projects
             page.IncludeLink.SetCheckboxState(_thankYouDto.IncludeLink);
             page.PageDescription.SendKeys(_thankYouDto.PageDescription);
 
-            var upd = _driver.NowAt<BaseElements>();
+            var upd = _driver.NowAt<MainElementsOfProjectCreation>();
             upd.UpdateButton.Click();
         }
     }
