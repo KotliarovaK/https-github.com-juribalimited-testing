@@ -969,11 +969,11 @@ Scenario Outline: EvergreenJnr_AllLists_CheckThatSaveAndCancelButtonAreHiddenAft
 	Then Save and Cancel buttons are not displayed on the list panel
 
 Examples:
-	| ListName     | ColumnName    | AddColumn  | DynamicListName |
-	| Devices      | Hostname      | Device Key | DynamicList1178 |
-	| Applications | Application   | Telephone  | DynamicList1125 |
-	| Users        | Username      | GUID       | DynamicList1195 |
-	| Mailboxes    | Email Address | Region     | DynamicList1121 |
+	| ListName     | ColumnName    | AddColumn            | DynamicListName |
+	| Devices      | Hostname      | Device Key           | DynamicList1178 |
+	| Applications | Application   | Barry'sUse: Category | DynamicList1125 |
+	| Users        | Username      | GUID                 | DynamicList1195 |
+	| Mailboxes    | Email Address | Region               | DynamicList1121 |
 
 @Evergreen @AllLists @EvergreenJnr_ListPanel @CustomListDisplay @DAS12524 @Delete_Newly_Created_List
 Scenario: EvergreenJnr_AllLists_CheckThatActionsPanelIsHiddenAfterCancellingProcessOfSavingList

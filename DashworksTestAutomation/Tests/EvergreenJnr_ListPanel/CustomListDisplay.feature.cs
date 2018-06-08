@@ -2683,7 +2683,7 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_ListPanel
         [NUnit.Framework.CategoryAttribute("DAS12524")]
         [NUnit.Framework.CategoryAttribute("Delete_Newly_Created_List")]
         [NUnit.Framework.TestCaseAttribute("Devices", "Hostname", "Device Key", "DynamicList1178", new string[0])]
-        [NUnit.Framework.TestCaseAttribute("Applications", "Application", "Telephone", "DynamicList1125", new string[0])]
+        [NUnit.Framework.TestCaseAttribute("Applications", "Application", "Barry\'sUse: Category", "DynamicList1125", new string[0])]
         [NUnit.Framework.TestCaseAttribute("Users", "Username", "GUID", "DynamicList1195", new string[0])]
         [NUnit.Framework.TestCaseAttribute("Mailboxes", "Email Address", "Region", "DynamicList1121", new string[0])]
         public virtual void EvergreenJnr_AllLists_CheckThatSaveAndCancelButtonAreHiddenAfterCancellingProcessOfSavingList(string listName, string columnName, string addColumn, string dynamicListName, string[] exampleTags)
