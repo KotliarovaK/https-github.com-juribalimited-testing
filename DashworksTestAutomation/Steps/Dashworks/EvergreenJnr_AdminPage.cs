@@ -222,8 +222,8 @@ namespace DashworksTestAutomation.Steps.Dashworks
         [Then(@"Update Project button is disabled")]
         public void ThenUpdateProjectButtonIsDisabled()
         {
-            var button = _driver.NowAt<CreateProjectPage>();
-            _driver.WaitWhileControlIsNotDisplayed<CreateProjectPage>(() => button.UpdateProjectButton);
+            var button = _driver.NowAt<ProjectsPage>();
+            _driver.WaitWhileControlIsNotDisplayed<ProjectsPage>(() => button.UpdateProjectButton);
             Assert.IsTrue(Convert.ToBoolean(button.UpdateProjectButton.GetAttribute("disabled")),
                 "Update Project button is active");
         }
@@ -393,6 +393,24 @@ namespace DashworksTestAutomation.Steps.Dashworks
         public void WhenUserClicksDeleteButton()
         {
             var button = _driver.NowAt<BaseGridPage>();
+            _driver.WaitWhileControlIsNotDisplayed<BaseGridPage>(() => button.DeleteButtonOnPage);
+            button.DeleteButtonOnPage.Click();
+            Logger.Write("Delete button was clicked");
+        }
+
+        [When(@"User clicks Delete button in the warning message")]
+        public void WhenUserClicksDeleteButtonInTheWarningMessage()
+        {
+            var button = _driver.NowAt<BaseGridPage>();
+            _driver.WaitWhileControlIsNotDisplayed<BaseGridPage>(() => button.DeleteWarningMessage);
+            button.DeleteButtonInWarningMessage.Click();
+            Logger.Write("Delete button was clicked");
+        }
+
+        [When(@"User clicks Delete button in Actions")]
+        public void WhenUserClicksDeleteButtonInActions()
+        {
+            var button = _driver.NowAt<BaseGridPage>();
             _driver.WaitWhileControlIsNotDisplayed<BaseGridPage>(() => button.DeleteButtonInActions);
             button.DeleteButtonInActions.Click();
             Logger.Write("Delete button was clicked");
@@ -494,6 +512,13 @@ namespace DashworksTestAutomation.Steps.Dashworks
             var message = _driver.NowAt<BucketsPage>();
             Assert.IsFalse(message.WarningDeleteBucketMessage(warningText),
                 $"{warningText} warning message is displayed on the Buckets page");
+        }
+
+        [When(@"User clicks Delete Bucket button")]
+        public void WhenUserClicksDeleteBucketButton()
+        {
+            var projectElement = _driver.NowAt<BucketsPage>();
+            projectElement.DeleteBucketInActions.Click();
         }
 
         [Then(@"Create Bucket button is disabled")]
@@ -616,6 +641,13 @@ namespace DashworksTestAutomation.Steps.Dashworks
             projectElement.ActionsButton.Click();
         }
 
+        [When(@"User clicks Delete Project button")]
+        public void WhenUserClicksDeleteProjectButton()
+        {
+            var projectElement = _driver.NowAt<ProjectsPage>();
+            projectElement.DeleteProjectInActions.Click();
+        }
+
         [When(@"User removes selected item")]
         public void WhenUserRemovesSelectedItem()
         {
@@ -624,6 +656,7 @@ namespace DashworksTestAutomation.Steps.Dashworks
             projectElement.DeleteButtonInActions.Click();
             projectElement.DeleteButtonOnPage.Click();
             _driver.WaitWhileControlIsNotDisplayed<BaseGridPage>(() => projectElement.DeleteWarningMessage);
+            _driver.WaitForDataLoading();
             projectElement.DeleteButtonInWarningMessage.Click();
         }
 

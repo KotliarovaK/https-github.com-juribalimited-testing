@@ -6,7 +6,7 @@ Background: Pre-Conditions
 	Given User is logged in to the Evergreen
 	Then Evergreen Dashboards page should be displayed to the user
 
-@Evergreen @Devices @EvergreenJnr_Search @Search @DAS10704 @Delete_Newly_Created_List
+@Evergreen @Devices @EvergreenJnr_Search @Search @DAS10704 @Delete_Newly_Created_List @Not_Run
 Scenario: EvergreenJnr_DevicesList_CheckThatQuickSearchResetWhenMovingBetweenLists
 	When User add following columns using URL to the "Devices" page:
 	| ColumnName |
