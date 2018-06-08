@@ -1195,13 +1195,10 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_Columns
                         "Application Key"});
             table52.AddRow(new string[] {
                         "Windows7Mi: Technical Test"});
-            table52.AddRow(new string[] {
-                        "DAS-1814"});
             testRunner.When("User add following columns using URL to the \"Applications\" page:", ((string)(null)), table52, "When ");
             testRunner.Then("\"Applications\" list should be displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
             testRunner.And("\"Application Key\" column is added to URL on \"Applications\" page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
             testRunner.And("\"Windows7Mi: Technical Test\" column is added to URL on \"Applications\" page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-            testRunner.And("\"DAS-1814\" column is added to URL on \"Applications\" page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
             testRunner.When("User clicks the Filters button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
             testRunner.Then("Filters panel is displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
             TechTalk.SpecFlow.Table table53 = new TechTalk.SpecFlow.Table(new string[] {
