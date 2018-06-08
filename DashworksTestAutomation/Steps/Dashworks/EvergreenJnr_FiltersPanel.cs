@@ -565,6 +565,13 @@ namespace DashworksTestAutomation.Steps.Dashworks
             Assert.AreEqual(expectedList, actualList, "Filter settings values are different");
         }
 
+        [Then(@"""(.*)"" filter is displayed in the Filters panel")]
+        public void ThenFilterIsDisplayedInTheFiltersPanel(string filterName)
+        {
+            var filterElement = _driver.NowAt<FiltersElement>();
+            filterElement.FilterNameInThePanel(filterName);
+        }
+
         [Then(@"correct true and false options are displayed in filter settings")]
         public void ThenCorrectTrueAndFalseOptionsAreDisplayedInFilterSettings()
         {
