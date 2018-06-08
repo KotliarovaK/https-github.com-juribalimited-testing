@@ -214,9 +214,8 @@ Scenario: EvergreenJnr_AdminPage_CheckThatYouCanNotDeleteTheDefaultBucketWarning
 	When User enters "Unassigned" text in the Search field for "Bucket" column
 	When User selects all rows on the grid
 	And User clicks on Actions button
-	And User selects "Delete Bucket" in the Actions dropdown
-	When User clicks Delete Bucket button
-	And User clicks Delete button
+	And User selects "Delete" in the Actions dropdown
+	When User clicks Delete button
 	Then "You can not delete the default bucket" warning message is not displayed on the Buckets page
 
 @Evergreen @Admin @EvergreenJnr_AdminPage @AdminPage @DAS12182
@@ -300,7 +299,7 @@ Scenario: EvergreenJnr_AdminPage_CheckThatNotificationMessageIsDisplayedAfterUpd
 	Then Success message The "TestBucket2" bucket has been updated is displayed on the Buckets page
 	And Delete "TestBucket2" Bucket in the Administration
 
-@Evergreen @Admin @EvergreenJnr_AdminPage @AdminPage @DAS11763 @DAS12742
+@Evergreen @Admin @EvergreenJnr_AdminPage @AdminPage @DAS11763 @DAS12742 @Not_Run
 Scenario: EvergreenJnr_AdminPage_CheckThatNoConsoleErrorsAreDisplayedWhenDeletingBucketFromBucketsSection
 	When User clicks Admin on the left-hand menu
 	Then Admin page should be displayed to the user
@@ -314,7 +313,8 @@ Scenario: EvergreenJnr_AdminPage_CheckThatNoConsoleErrorsAreDisplayedWhenDeletin
 	And User selects all rows on the grid
 	And User clicks on Actions button
 	And User selects "Delete Buckets" in the Actions dropdown
-	And User clicks Delete button
+	And User clicks Delete button 
+	When User clicks Delete button in the warning message
 	Then Reassign Objects is displayed on the Teams page
 	And There are no errors in the browser console
 

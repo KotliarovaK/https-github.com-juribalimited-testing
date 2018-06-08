@@ -30,10 +30,6 @@ namespace DashworksTestAutomation.Pages.Evergreen.AdminDetailsPages
         [FindsBy(How = How.XPath, Using = ".//input[@role='combobox']")]
         public IWebElement ScopeProjectField { get; set; }
 
-        [FindsBy(How = How.XPath, Using = ".//button[@class='mat-primary mat-raised-button']")]
-        public IWebElement UpdateProjectButton { get; set; }
-
-
         public override List<By> GetPageIdentitySelectors()
         {
             Driver.WaitForDataLoading();
