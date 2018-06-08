@@ -74,6 +74,7 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_Search
         [NUnit.Framework.CategoryAttribute("EvergreenJnr_Search")]
         [NUnit.Framework.CategoryAttribute("Search")]
         [NUnit.Framework.CategoryAttribute("DAS10704")]
+        [NUnit.Framework.CategoryAttribute("DAS12762")]
         [NUnit.Framework.CategoryAttribute("Delete_Newly_Created_List")]
         [NUnit.Framework.CategoryAttribute("Not_Run")]
         public virtual void EvergreenJnr_DevicesList_CheckThatQuickSearchResetWhenMovingBetweenLists()
@@ -110,6 +111,7 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_Search
                         "EvergreenJnr_Search",
                         "Search",
                         "DAS10704",
+                        "DAS12762",
                         "Delete_Newly_Created_List",
                         "Not_Run"});
             this.ScenarioSetup(scenarioInfo);

@@ -1273,9 +1273,9 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_FiltersFeature
         [NUnit.Framework.CategoryAttribute("API")]
         [NUnit.Framework.TestCaseAttribute("Application", "Application Name", new string[0])]
         [NUnit.Framework.TestCaseAttribute("Application Custom Fields", "App field 1", new string[0])]
-        [NUnit.Framework.TestCaseAttribute("Application Custom Fields", "Computer Warranty", new string[0])]
+        [NUnit.Framework.TestCaseAttribute("Application Custom Fields", "Application Owner", new string[0])]
         [NUnit.Framework.TestCaseAttribute("Application Custom Fields", "General information field 1", new string[0])]
-        [NUnit.Framework.TestCaseAttribute("Application Custom Fields", "User Field 2", new string[0])]
+        [NUnit.Framework.TestCaseAttribute("Application Custom Fields", "App field 2", new string[0])]
         public virtual void EvergreenJnr_DevicesList_CheckThatOperatorInSelectedFilterIsDisplayedCorrectlyAPI(string categoryName, string filterName, string[] exampleTags)
         {
             System.Exception lastException = null;

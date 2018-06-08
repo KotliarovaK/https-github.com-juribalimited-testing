@@ -353,9 +353,9 @@ Examples:
 	| CategoryName              | FilterName                  |
 	| Application               | Application Name            |
 	| Application Custom Fields | App field 1                 |
-	| Application Custom Fields | Computer Warranty           |
+	| Application Custom Fields | Application Owner           |
 	| Application Custom Fields | General information field 1 |
-	| Application Custom Fields | User Field 2                |
+	| Application Custom Fields | App field 2                 |
 
 @Evergreen @Users @EvergreenJnr_FilterFeature @FilterFunctionality @DAS11738 @DAS12194 @DAS12199 @DAS12220
 Scenario: EvergreenJnr_UsersList_CheckThatToolTipShownWithEditFilterTextWhenEditingAFilterDisplayed 
