@@ -73,20 +73,27 @@ namespace DashworksTestAutomation.Tests.Projects.Projects_Dashboards
         [NUnit.Framework.CategoryAttribute("Projects_Dashboards")]
         [NUnit.Framework.CategoryAttribute("Dashboards")]
         [NUnit.Framework.CategoryAttribute("DAS12651")]
-        public virtual void Projects_CheckThatDataInGroupOnDashboardsPageIsDisplayedCorectly()
+        [NUnit.Framework.TestCaseAttribute("User Dashboard", new string[0])]
+        [NUnit.Framework.TestCaseAttribute("Computer Dashboard", new string[0])]
+        public virtual void Projects_CheckThatDataInGroupOnDashboardsPageIsDisplayedCorectly(string pageName, string[] exampleTags)
         {
-            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Projects_CheckThatDataInGroupOnDashboardsPageIsDisplayedCorectly", new string[] {
-                        "Evergreen",
-                        "Projects",
-                        "Projects_Dashboards",
-                        "Dashboards",
-                        "DAS12651"});
+            string[] @__tags = new string[] {
+                    "Evergreen",
+                    "Projects",
+                    "Projects_Dashboards",
+                    "Dashboards",
+                    "DAS12651"};
+            if ((exampleTags != null))
+            {
+                @__tags = System.Linq.Enumerable.ToArray(System.Linq.Enumerable.Concat(@__tags, exampleTags));
+            }
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Projects_CheckThatDataInGroupOnDashboardsPageIsDisplayedCorectly", @__tags);
             this.ScenarioSetup(scenarioInfo);
             this.FeatureBackground();
             testRunner.When("User clicks \"Projects\" on the left-hand menu", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-            testRunner.Then("\"Projects\" page is displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-            testRunner.When("User navigates to the \"Computer Dashboard\" page on Dashboards tab", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-            testRunner.Then("\"Computer Dashboard\" page is displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+            testRunner.Then("\"Projects Home\" page is displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+            testRunner.When(string.Format("User navigates to the \"{0}\" page on Dashboards tab", pageName), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+            testRunner.Then(string.Format("\"{0}\" page is displayed to the user", pageName), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
             testRunner.When("User select \"Barry\'s User Project\" Project on toolbar", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
             testRunner.When("User navigate to \"Barry\'s Pilot Group 1\" group", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
             testRunner.Then("content for the \"Barry\'s Pilot Group 1\" group is displayed correctly", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");

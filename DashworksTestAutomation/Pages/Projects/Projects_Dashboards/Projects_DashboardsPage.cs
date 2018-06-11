@@ -7,20 +7,41 @@ namespace DashworksTestAutomation.Pages.Projects
 {
     internal class Projects_DashboardsPage : SeleniumBasePage
     {
-        public IWebElement GetGroupInTableByName(string groupName)
+        [FindsBy(How = How.XPath, Using = ".//select[contains(@name, 'ProjectId')]")]
+        public IWebElement ProjectDropDown { get; set; }
+
+        public void GetGroupInTableByName(string groupName)
         {
-            var selector = By.XPath($"//td[contains(@aria-describedby, 'GroupName')]//a[text()='{groupName}']");
-            Driver.WaitWhileControlIsNotDisplayed(selector);
-            return Driver.FindElement(selector);
+            var selector = string.Empty;
+
+            if (groupName.Contains("'"))
+            {
+                var strings = groupName.Split('\'');
+                selector = $"//td[contains(@aria-describedby, 'GroupName')]//a[contains(text(),'{strings[0]}')][contains(text(), '{strings[1]}')]";
+            }
+            else
+            {
+                selector = $"//td[contains(@aria-describedby, 'GroupName')]//a[text()='{groupName}']";
+            }
+            Driver.WaitWhileControlIsNotDisplayed(By.XPath(selector));
+            Driver.FindElement(By.XPath(selector)).Click();
         }
 
         public void GetProjectByNameOnToolbar(string projectName)
         {
-            Driver.WaitWhileControlIsNotDisplayed(
-                By.XPath(".//select[contains(@name, 'ProjectId')]"));
-            var selectbox =
-                Driver.FindElement(By.XPath(".//select[contains(@name, 'ProjectId')]"));
-            Driver.SelectCustomSelectbox(selectbox, projectName);
+            var selector = string.Empty;
+
+            if (projectName.Contains("'"))
+            {
+                var strings = projectName.Split('\'');
+                selector = $".//select[contains(@name, 'ProjectId')]//option[contains(text(),'{strings[0]}')][contains(text(), '{strings[1]}')]";
+            }
+            else
+            {
+                selector = $".//select[contains(@name, 'ProjectId')]//option[text()='{projectName}']";
+            }
+            Driver.WaitWhileControlIsNotDisplayed(By.XPath(selector));
+            Driver.FindElement(By.XPath(selector)).Click();
         }
     }
 }

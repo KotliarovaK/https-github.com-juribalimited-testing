@@ -12,9 +12,19 @@ namespace DashworksTestAutomation.Pages.Projects.Projects_Dashboards
 
         public IWebElement GetPageHeaderByGroupName(string groupName)
         {
-            var selector = By.XPath($"//div[contains(@class, 'ui-helper-clearfix')]//span[text()='{groupName}']");
-            Driver.WaitWhileControlIsNotDisplayed(selector);
-            return Driver.FindElement(selector);
+            var selector = string.Empty;
+
+            if (groupName.Contains("'"))
+            {
+                var strings = groupName.Split('\'');
+                selector = $"//div[contains(@class, 'ui-helper-clearfix')]//span[contains(text(),'{strings[0]}')][contains(text(), '{strings[1]}')]";
+            }
+            else
+            {
+                selector = $"//div[contains(@class, 'ui-helper-clearfix')]//span[text()='{groupName}']";
+            }
+            Driver.WaitWhileControlIsNotDisplayed(By.XPath(selector));;
+            return Driver.FindElement(By.XPath(selector));
         }
     }
 }

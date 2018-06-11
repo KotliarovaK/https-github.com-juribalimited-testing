@@ -25,16 +25,17 @@ namespace DashworksTestAutomation.Steps.Projects
         [When(@"User select ""(.*)"" Project on toolbar")]
         public void WhenUserSelectProjectOnToolbar(string projectName)
         {
-            var projectDropDownList = _driver.NowAt<Projects_DashboardsPage>();
+            var page = _driver.NowAt<Projects_DashboardsPage>();
             _driver.WaitForDataLoading();
-            projectDropDownList.GetProjectByNameOnToolbar(projectName);
+            page.ProjectDropDown.Click();
+            page.GetProjectByNameOnToolbar(projectName);
         }
 
         [When(@"User navigate to ""(.*)"" group")]
         public void WhenUserNavigateToGroup(string groupName)
         {
             var group = _driver.NowAt<Projects_DashboardsPage>();
-            group.GetGroupInTableByName(groupName).Click();
+            group.GetGroupInTableByName(groupName);
         }
 
         [Then(@"content for the ""(.*)"" group is displayed correctly")]
