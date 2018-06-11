@@ -593,20 +593,19 @@ Scenario: EvergreenJnr_AdminPage_CheckThatNoConsoleErrorsAreDisplayedAfterUpdati
 	And User clicks "Entitled to the device owner" checkbox on the Project details page
 	And User selects "Scope Changes" tab on the Project details page
 	And User clicks "Applications" tab in the Project Scope Changes section
-	And User clicks "UPDATE APPLICATION CHANGES" button on the Projects page
-	And User clicks Update Project button on the Projects page
-	Then Success message with "0 objects queued for onboarding, 0 objects offboarded" text is displayed on the Projects page
-	When User selects "Scope Details" tab on the Project details page
-	And User navigates to the "Application Scope" tab in the Scope section on the Project details page
-	And User clicks "Entitled to the device owner" checkbox on the Project details page
-	And User selects "Scope Changes" tab on the Project details page
-	And User clicks "Applications" tab in the Project Scope Changes section
-	And User clicks "UPDATE APPLICATION CHANGES" button on the Projects page
-	And User clicks Update Project button on the Projects page
-	Then Success message with "0 objects queued for onboarding, 0 objects offboarded" text is displayed on the Projects page
+	Then "Applications to add (0 of 2129 selected)" is displayed to the user in the Project Scope Changes section
+	When User adds following items to the Project
+	| Item                       |
+	| 20040610sqlserverck(1.0.0) |
+	| 7zip(Unknown)              |
+	| ACDSee 4.0(4.0.0)          |
+	Then message with "3 applications will be added" text is displayed on the Projects page
+	When User clicks Update Project button on the Projects page
+	Then Success message with "3 objects queued for onboarding, 0 objects offboarded" text is displayed on the Projects page
+	And "Applications to add (0 of 2126 selected)" is displayed to the user in the Project Scope Changes section
 	And There are no errors in the browser console
 	And Delete "TestProject12" Project in the Administration
-	
+
 @Evergreen @Admin @EvergreenJnr_AdminPage @AdminPage @DAS12491
 Scenario: EvergreenJnr_AdminPage_CheckThatSingularFoundItemLabelDisplaysOnActionsToolbarforBucketsList
 	When User clicks Admin on the left-hand menu

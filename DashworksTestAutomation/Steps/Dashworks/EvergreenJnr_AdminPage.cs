@@ -573,6 +573,20 @@ namespace DashworksTestAutomation.Steps.Dashworks
             bucketElement.AddItemButton.Click();
         }
 
+        [When(@"User adds following items to the Project")]
+        public void WhenUserAddsFollowingItemsToTheProject(Table table)
+        {
+            var projectElement = _driver.NowAt<BaseGridPage>();
+            projectElement.PlusButton.Click();
+            foreach (var row in table.Rows)
+            {
+                projectElement.AddItem(row["Item"]);
+                projectElement.SearchTextbox.ClearWithHomeButton(_driver);
+            }
+
+            projectElement.AddItemButton.Click();
+        }
+
         [When(@"User clicks Create button on the Create Project page")]
         public void WhenUserClicksCreateButtonOnTheCreateProjectPage()
         {
@@ -705,6 +719,31 @@ namespace DashworksTestAutomation.Steps.Dashworks
                 projectElement = _driver.NowAt<ProjectsPage>();
             }
             _driver.WaitWhileControlIsNotDisplayed<ProjectsPage>(() => projectElement.SuccessMessage);
+            Assert.IsTrue(projectElement.SuccessTextMessage(textMessage),
+                $"{textMessage} is not displayed on the Project page");
+        }
+
+        [Then(@"message with ""(.*)"" text is displayed on the Projects page")]
+        public void ThenMessageWithTextIsDisplayedOnTheProjectsPage(string textMessage)
+        {
+            ProjectsPage projectElement;
+            try
+            {
+                projectElement = _driver.NowAt<ProjectsPage>();
+            }
+            catch (WebDriverTimeoutException)
+            {
+                projectElement = _driver.NowAt<ProjectsPage>();
+            }
+            try
+            {
+                projectElement = _driver.NowAt<ProjectsPage>();
+            }
+            catch (WebDriverTimeoutException)
+            {
+                projectElement = _driver.NowAt<ProjectsPage>();
+            }
+            _driver.WaitWhileControlIsNotDisplayed<ProjectsPage>(() => projectElement.DeleteWarningMessage);
             Assert.IsTrue(projectElement.SuccessTextMessage(textMessage),
                 $"{textMessage} is not displayed on the Project page");
         }
