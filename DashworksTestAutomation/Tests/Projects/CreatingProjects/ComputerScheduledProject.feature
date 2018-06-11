@@ -46,6 +46,7 @@ Scenario: Projects_CreateComputerScheduledProject
 	| ShowOriginalColumn | IncludeSiteName | NotApplicableApplications | InstalledApplications | EntitledApplications |  TaskEmailCcEmailAddress | TaskEmailBccEmailAddress | StartDate  | EndDate     |
 	| true               | true            | true                      | true                  | true                 |Test@test.com           | Test@test.com            | 8 May 2012 | 10 Apr 2018 |
 	Then Success message is displayed with "Project was successfully updated" text
+	#Creating Request Types
 	When User navigate to "Request Types" tab
 	Then "Manage Request Types" page is displayed to the user
 	When User clicks "Create Request Type" button
@@ -125,20 +126,26 @@ Scenario: Projects_CreateComputerScheduledProject
 	Then created Category is displayed in the table
 	When User navigate to "Stages" tab
 	Then "Manage Stages" page is displayed to the user
+	#Creating Stage
 	When User clicks "Create Stage" button
 	And User create Stage
-	| StageName                  |
-	| 0 ComputerScheduledProject |
+	| StageName |
+	| Stage 1   |
 	Then created Stage is displayed in the table
 	When User clicks "Create Stage" button
 	And User create Stage
-	| StageName                  |
-	| 1 ComputerScheduledProject |
+	| StageName |
+	| Stage 2   |
 	Then created Stage is displayed in the table
 	When User clicks "Create Stage" button
 	And User create Stage
-	| StageName                  |
-	| 2 ComputerScheduledProject |
+	| StageName |
+	| Stage 3   |
+	Then created Stage is displayed in the table
+	When User clicks "Create Stage" button
+	And User create Stage
+	| StageName |
+	| Stage 4   |
 	Then created Stage is displayed in the table
 	When User navigate to "Mail Templates" tab
 	Then "Manage Mail Templates" page is displayed to the user
@@ -147,36 +154,34 @@ Scenario: Projects_CreateComputerScheduledProject
 	| Name                 | Description              | SubjectLine | BodyText |
 	| TestMailTemplateName | ComputerScheduledProject | TestText    | TestText |
 	Then Success message is displayed with "Mail Template successfully created." text
+	#Creating Tasks
 	When User navigate to "Tasks" tab
 	Then "Manage Tasks" page is displayed to the user
 	When User clicks "Create Task" button
 	And User create Task
-	| Name          | Help                     | ObjectTypeString | TaskValuesTemplateCheckbox |
-	| TestTaskName0 | ComputerScheduledProject | Computer         | true                       |
+	| Name          | Help          | StageNameString | TaskTypeString | ValueTypeString | ObjectTypeString | TaskValuesTemplateCheckbox |
+	| Forecast Date | Forecast Date | Stage1          | Normal         | Date            | Computer         | true                       |
 	Then Success message is displayed with "Task successfully created" text
 	When User updates the Task page
-	| TaskHaADueDate | TaskImpactsReadiness | TaskHasAnOwner | ShowDetails | ProjectObject | BulkUpdate | SelfService |
-	| true           | true                 | false          | true        | true          | false      | false       |
+	| TaskHaADueDate | DateModeString | TaskProjectRoleString | ShowDetails | ProjectObject | BulkUpdate | SelfService |
+	| true           | DateOnly       | ForecastDate          | true        | false         | false      | false       |
 	Then Success message is displayed with "Task successfully updated" text
-	When User publishes the task
-	Then selected task was published
-	When User navigate to "Values" page
-	And User clicks "Add Value" button
-	And User create new Value
-	| Name          | Help                     | DefaultValue |
-	| TestValueName | ComputerScheduledProject | false        |
-	And User clicks "Save Value" button
-	And User navigate to "Emails" page
-	And User clicks "Add Email" button
-	And User create new Email
-	| CountDays | SendOnceOnly | RequestTypesAll | ApllyEmailToAll | To                                  |
-	| true      | true         | false           | true            | ComputerScheduledProject0@email.com |
-	When User clicks "Create Email Notification" button
-	Then Success message is displayed with "Email notification for task successfully created" text
-	When User clicks "« Go Back" button
-	Then created Email is displayed in the table
-	When User clicks "« Go Back to Tasks" button
+	When User clicks "Cancel" button
 	Then created Task is displayed in the table
+
+
+	When User clicks "Create Task" button
+	And User create Task
+	| Name        | Help        | StageNameString | TaskTypeString | ObjectTypeString | TaskValuesTemplateCheckbox |
+	| Target Date | Target Date | Stage2          | Normal         | Computer         | true                       |
+	Then Success message is displayed with "Task successfully created" text
+	When User updates the Task page
+	| TaskHaADueDate | DateModeString | TaskImpactsReadiness | TaskHasAnOwner | ShowDetails | ProjectObject | BulkUpdate | SelfService |
+	| true           | DateOnly       | true                 | false          | true        | false         | false      | false       |
+	Then Success message is displayed with "Task successfully updated" text
+	When User clicks "Cancel" button
+	Then created Task is displayed in the table
+
 	When User clicks "Create Task" button
 	And User create Task
 	| Name          | Help                     | ObjectTypeString | TaskValuesTemplateCheckbox |

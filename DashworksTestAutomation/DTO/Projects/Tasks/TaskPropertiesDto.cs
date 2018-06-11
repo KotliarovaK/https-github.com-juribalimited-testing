@@ -7,7 +7,11 @@ namespace DashworksTestAutomation.DTO.Projects
     {
         public string Name { get; set; }
         public string Help { get; set; }
+        public string StageNameString { get; set; }
+        public StageNameEnum Stages;
+        public string TaskTypeString { get; set; }
         public TaskTypeEnum TaskType;
+        public string ValueTypeString { get; set; }
         public ValueTypeEnum ValueType;
         public string ObjectTypeString { get; set; }
         public TaskObjectTypeEnum ObjectType;
@@ -16,10 +20,20 @@ namespace DashworksTestAutomation.DTO.Projects
 
         public TaskPropertiesDto()
         {
-            TaskType = TaskTypeEnum.Normal;
-            ValueType = ValueTypeEnum.Radiobutton;
             TaskValuesTemplate = EnumExtensions.GetRandomValue<TaskValuesTemplateEnum>();
         }
+    }
+
+    public enum StageNameEnum
+    {
+        [Description("Stage 1")]
+        Stage1,
+        [Description("Stage 2")]
+        Stage2,
+        [Description("Stage 3")]
+        Stage3,
+        [Description("Stage 4")]
+        Stage4,
     }
 
     public enum TaskTypeEnum

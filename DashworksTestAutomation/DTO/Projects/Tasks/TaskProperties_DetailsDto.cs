@@ -7,7 +7,9 @@ namespace DashworksTestAutomation.DTO.Projects
     {
         public ValueTypeUpdateEnum ValueType;
         public bool TaskHaADueDate { get; set; }
+        public string DateModeString { get; set; }
         public DateModeEnum DateMode;
+        public string TaskProjectRoleString { get; set; }
         public TaskProjectRoleEnum TaskProjectRole;
         public bool TaskImpactsReadiness { get; set; }
         public bool TaskHasAnOwner { get; set; }
@@ -19,9 +21,7 @@ namespace DashworksTestAutomation.DTO.Projects
 
         public TaskProperties_DetailsDto()
         {
-            ValueType = ValueTypeUpdateEnum.Radiobutton;
-            TaskProjectRole = EnumExtensions.GetRandomValue<TaskProjectRoleEnum>();
-            DateMode = DateModeEnum.DateOnly;
+            //ValueType = ValueTypeUpdateEnum.Radiobutton;
         }
     }
 
@@ -56,6 +56,28 @@ namespace DashworksTestAutomation.DTO.Projects
         [Description("Self Service Department & Location Completed (User mode)")]
         SelfServiceDepartmentLocationCompletedUserMode,
         [Description("Self Service Department & Location Enabled (User mode)")]
-        SelfServiceDepartmentLocationEnabledUserMode
+        SelfServiceDepartmentLocationEnabledUserMode,
+        [Description("Completed Date")]
+        CompletedDate,
+        [Description("Forecast Date")]
+        ForecastDate,
+        [Description("Migrated Date")]
+        MigratedDate,
+        [Description("Scheduled Date")]
+        ScheduledDate,
+        [Description("Self Service Applications List Completed Date  (Computer mode)")]
+        SelfServiceApplicationsListCompletedDateComputerMode,
+        [Description("Self Service Computer Ownership Completed Date  (Computer mode)")]
+        SelfServiceComputerOwnershipCompletedDateComputerMode,
+        [Description("Self Service Department & Location Completed Date  (Computer mode)")]
+        SelfServiceDepartmentLocationCompletedDateComputerMode,
+        [Description("Self Service Other Options 1 Completed Date  (Computer mode)")]
+        SelfServiceOtherOptions1CompletedDateComputerMode,
+        [Description("Self Service Other Options 2 Completed Date  (Computer mode)")]
+        SelfServiceOtherOptions2CompletedDateComputerMode,
+        [Description("Self Service Project Date Completed Date  (Computer mode)")]
+        SelfServiceProjectDateCompletedDateComputerMode,
+        [Description("Target Date")]
+        TargetDate
     }
 }

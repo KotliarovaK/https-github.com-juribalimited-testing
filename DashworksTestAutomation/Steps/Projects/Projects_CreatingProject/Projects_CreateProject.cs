@@ -258,8 +258,14 @@ namespace DashworksTestAutomation.Steps.Projects
             var page = _driver.NowAt<TaskPropertiesPage>();
 
             table.CreateInstance<TaskPropertiesDto>().CopyPropertiesTo(_taskPropertiesDto);
+            //assign ValueTypeString to ValueTypeTypeEnum
+            _taskPropertiesDto.ValueType = (ValueTypeEnum)Enum.Parse(typeof(ValueTypeEnum), _taskPropertiesDto.ValueTypeString);
             //assign ObjectTypeString to TaskObjectTypeEnum
             _taskPropertiesDto.ObjectType = (TaskObjectTypeEnum) Enum.Parse(typeof(TaskObjectTypeEnum), _taskPropertiesDto.ObjectTypeString);
+            //assign TaskTypeString to TaskTypeEnum
+            _taskPropertiesDto.TaskType = (TaskTypeEnum) Enum.Parse(typeof(TaskTypeEnum), _taskPropertiesDto.TaskTypeString);
+            //assign StageNameString to StageNameEnum
+            _taskPropertiesDto.Stages = (StageNameEnum)Enum.Parse(typeof(StageNameEnum), _taskPropertiesDto.StageNameString);
             _taskPropertiesDto.Name += TestDataGenerator.RandomString();
             TaskPropertiesDto tempTaskPropertiesDto = new TaskPropertiesDto();
             _taskPropertiesDto.CopyPropertiesTo(tempTaskPropertiesDto);
@@ -267,7 +273,7 @@ namespace DashworksTestAutomation.Steps.Projects
 
             page.Name.SendKeys(_taskPropertiesDto.Name);
             page.Help.SendKeys(_taskPropertiesDto.Help);
-            page.StageName.SelectboxSelect(_projectDto.Stages[new Random().Next(0, 3)].StageName);
+            page.StageName.SelectboxSelect(_taskPropertiesDto.Stages.GetValue());
             page.TaskType.SelectboxSelect(_taskPropertiesDto.TaskType.GetValue());
             page.ValueType.SelectboxSelect(_taskPropertiesDto.ValueType.GetValue());
             page.ObjectType.SelectboxSelect(_taskPropertiesDto.ObjectType.GetValue());
@@ -283,12 +289,20 @@ namespace DashworksTestAutomation.Steps.Projects
             var page = _driver.NowAt<TaskProperties_DetailsPage>();
 
             table.CreateInstance<TaskProperties_DetailsDto>().CopyPropertiesTo(_taskPropertiesDetailsDto);
+            //assign DateModeString to DateModeEnum
+            _taskPropertiesDetailsDto.DateMode = (DateModeEnum)Enum.Parse(typeof(DateModeEnum), _taskPropertiesDetailsDto.DateModeString);
+            //assign TaskProjectRoleString to TaskProjectRoleEnum
+            _taskPropertiesDetailsDto.TaskProjectRole = (TaskProjectRoleEnum)Enum.Parse(typeof(TaskProjectRoleEnum), _taskPropertiesDetailsDto.TaskProjectRoleString);
 
-            page.ValueType.SelectboxSelect(_taskPropertiesDetailsDto.ValueType.GetValue());
+            //page.ValueType.SelectboxSelect(_taskPropertiesDetailsDto.ValueType.GetValue());
             page.TaskHaADueDate.SetCheckboxState(_taskPropertiesDetailsDto.TaskHaADueDate);
             page.DateMode.SelectboxSelect(_taskPropertiesDetailsDto.DateMode.GetValue());
-            page.TaskImpactsReadiness.SetCheckboxState(_taskPropertiesDetailsDto.TaskImpactsReadiness);
-            page.TaskHasAnOwner.SetCheckboxState(_taskPropertiesDetailsDto.TaskHasAnOwner);
+            page.TaskProjectRole.SelectboxSelect(_taskPropertiesDetailsDto.TaskProjectRole.GetValue());
+            if (_taskPropertiesDto.ValueType.Equals(ValueTypeEnum.Radiobutton))
+            {
+                page.TaskImpactsReadiness.SetCheckboxState(_taskPropertiesDetailsDto.TaskImpactsReadiness);
+                page.TaskHasAnOwner.SetCheckboxState(_taskPropertiesDetailsDto.TaskHasAnOwner);
+            }
             page.ShowDetails.SetCheckboxState(_taskPropertiesDetailsDto.ShowDetails);
             page.ProjectObject.SetCheckboxState(_taskPropertiesDetailsDto.ProjectObject);
             page.BulkUpdate.SetCheckboxState(_taskPropertiesDetailsDto.BulkUpdate);
