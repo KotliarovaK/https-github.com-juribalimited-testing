@@ -27,5 +27,12 @@ namespace DashworksTestAutomation.Pages.Projects
             Driver.WaitWhileControlIsNotDisplayed(selector);
             return Driver.FindElement(selector);
         }
+
+        public void GoToTabByName(string tabName)
+        {
+            var selector = By.XPath($"//a[contains(@onclick, '{tabName}')]");
+            Driver.WaitWhileControlIsNotDisplayed(selector);
+            Driver.FindElement(selector).Click();
+        }
     }
 }
