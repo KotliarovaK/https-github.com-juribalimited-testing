@@ -543,8 +543,8 @@ Scenario: EvergreenJnr_AdminPage_CheckThatFiltersAreWorkingCorrectlyOnTheAdminPa
 	And User enters "Cardiff --- Test text fill; Test text fill; ------" text in the Search field for "Bucket" column
 	Then Counter shows "1" found rows
 	When User clears Search field for "Project Buckets" column
-	When User enters "<10" text in the Search field for "Devices" column
-	Then Counter shows "4" found rows
+	When User enters "<20" text in the Search field for "Devices" column
+	Then Counter shows "7" found rows
 	When User clicks Admin on the left-hand menu
 	And User clicks "Buckets" link on the Admin page
 	And User enters "barry's" text in the Search field for "Bucket" column

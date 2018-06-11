@@ -471,6 +471,7 @@ namespace DashworksTestAutomation.Steps.Dashworks
         public void ThenErrorMessageWithTextIsDisplayedOnTheBucketsPage(string text)
         {
             var page = _driver.NowAt<BaseGridPage>();
+            _driver.WaitForDataLoading();
             _driver.WaitWhileControlIsNotDisplayed<BaseGridPage>(() => page.ErrorMessage);
             Assert.AreEqual(text, page.ErrorMessage.Text, "Error Message is not displayed");
         }
