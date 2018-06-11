@@ -355,9 +355,9 @@ Scenario: EvergreenJnr_AdminPage_CheckThatMailboxesAreSuccessfullyAddedToBuckets
 	And User clicks "Mailboxes" tab
 	And User clicks Create New Item button
 	And User adds following items from list
-	| Item                        |
-	| aaron.w.burton@dwlabs.local |
-	| abel.y.hanson@dwlabs.local  |
+	| Item                             |
+	| abraham.d.robertson@dwlabs.local |
+	| abraham.h.maxwell@dwlabs.local   |
 	Then Success message is displayed and contains "The selected mailboxes have been added to the selected bucket" text
 	And There are no errors in the browser console
 
@@ -405,8 +405,8 @@ Scenario: EvergreenJnr_AdminPage_CheckThatConsoleErrorsAreNotDisplayedAfterAddin
 	And User clicks Create New Item button
 	And User adds following items from list
 	| Item            |
-	| 02X387UQLFP3ISU |
-	| 34RRSBA00C0EYY  |
+	| Q43G5WEGFDQ1L8S |
+	| XV20GW6HJRVE2R  |
 	Then Success message is displayed and contains "The selected devices have been added to the selected bucket" text
 	And There are no errors in the browser console
 
@@ -433,9 +433,9 @@ Scenario: EvergreenJnr_AdminPage_CheckThatConsoleErrorsAreNotDisplayedAfterAddin
 	And User clicks "Users" tab
 	And User clicks Create New Item button
 	And User adds following items from list
-	| Item                              |
-	| US-E\ABW081519 (Darrin A. Arnold) |
-	| FR\IIN4276389 (Merci Daoust)      |
+	| Item                                  |
+	| FR\HRQ2819095 (Melusina Courtemanche) |
+	| FR\GBT6643930 (Villette Vallée)       |
 	Then Success message is displayed and contains "The selected users have been added to the selected bucket" text
 	And There are no errors in the browser console
 
@@ -523,7 +523,7 @@ Scenario: EvergreenJnr_AdminPage_CheckThatPanelOfAvailableMemberslIsExpandedByDe
 	When User clicks Add Members button on the Teams page
 	Then Panel of available members is displayed to the user
 
-@Evergreen @Admin @EvergreenJnr_AdminPage @AdminPage @DAS12552
+@Evergreen @Admin @EvergreenJnr_AdminPage @AdminPage @DAS12552 @Not_Run
 Scenario: EvergreenJnr_AdminPage_CheckThatFiltersAreWorkingCorrectlyOnTheAdminPages
 	When User clicks Admin on the left-hand menu
 	Then Admin page should be displayed to the user
@@ -659,3 +659,37 @@ Examples:
 	| Devices   | Hostname      | TestList6589    |
 	| Users     | Username      | TestList6588    |
 	| Mailboxes | Email Address | TestList6587    |
+
+@Evergreen @Admin @EvergreenJnr_AdminPage @AdminPage @DAS12751
+Scenario: EvergreenJnr_AdminPage_CheckThatSelectedCheckboxIsSelectedAfterSwitchingBetweenTabs
+	When User clicks Admin on the left-hand menu
+	Then Admin page should be displayed to the user
+	When User clicks "Projects" link on the Admin page
+	Then "Projects" page should be displayed to the user
+	When User clicks Create New Item button
+	Then "Create Project" page should be displayed to the user
+	When User enters "TestProject13" in the Project Name field
+	And User selects "All Devices" in the Scope Project dropdown
+	When User clicks Create button on the Create Project page
+	And User clicks "Projects" link on the Admin page
+	Then "Projects" page should be displayed to the user
+	When User enters "TestProject13" text in the Search field for "Project" column
+	And User clicks content from "Project" column
+	Then Project "TestProject13" is displayed to user
+	When User selects "Scope Changes" tab on the Project details page
+	And User clicks "Devices" tab in the Project Scope Changes section
+	When User expands the object to add 
+	When User selects following items to the Project
+	| Item           |
+	| 00HA7MKAVVFDAV |
+	Then "Devices to add (1 of 17225 selected)" is displayed to the user in the Project Scope Changes section
+	When User clicks "Users" tab in the Project Scope Changes section
+	When User expands the object to add 
+	When User selects following items to the Project
+	| Item                      |
+	| AAC860150(Kerrie D. Ruiz) |
+	And User clicks "Devices" tab in the Project Scope Changes section
+	When User expands the object to add 
+	Then following items are still selected
+	Then "Devices to add (1 of 17225 selected)" is displayed to the user in the Project Scope Changes section
+	Then Delete "TestProject13" Project in the Administration
