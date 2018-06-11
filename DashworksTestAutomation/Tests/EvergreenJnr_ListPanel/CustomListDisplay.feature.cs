@@ -2830,6 +2830,70 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_ListPanel
             testRunner.And("Save to New Custom List element is displayed", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
             this.ScenarioCleanup();
         }
+        
+        [NUnit.Framework.TestAttribute()]
+        [NUnit.Framework.DescriptionAttribute("EvergreenJnr_DevicesList_CheckThatNoErrorsAreDisplayedAfterDuplicatingANewStaticL" +
+            "istWithALongName")]
+        [NUnit.Framework.CategoryAttribute("Evergreen")]
+        [NUnit.Framework.CategoryAttribute("Devices")]
+        [NUnit.Framework.CategoryAttribute("EvergreenJnr_ListPanel")]
+        [NUnit.Framework.CategoryAttribute("CustomListDisplay")]
+        [NUnit.Framework.CategoryAttribute("DAS12656")]
+        [NUnit.Framework.CategoryAttribute("Delete_Newly_Created_List")]
+        public virtual void EvergreenJnr_DevicesList_CheckThatNoErrorsAreDisplayedAfterDuplicatingANewStaticListWithALongName()
+        {
+            System.Exception lastException = null;
+            for (int i = 0; (i <= 1); i = (i + 1))
+            {
+                try
+                {
+                    this.EvergreenJnr_DevicesList_CheckThatNoErrorsAreDisplayedAfterDuplicatingANewStaticListWithALongNameInternal();
+                    return;
+                }
+                catch (System.Exception exc)
+                {
+                    lastException = exc;
+                }
+                if (((i + 1) 
+                            <= 1))
+                {
+                    testRunner.OnScenarioEnd();
+                }
+            }
+            if ((lastException != null))
+            {
+                throw lastException;
+            }
+        }
+        
+        private void EvergreenJnr_DevicesList_CheckThatNoErrorsAreDisplayedAfterDuplicatingANewStaticListWithALongNameInternal()
+        {
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("EvergreenJnr_DevicesList_CheckThatNoErrorsAreDisplayedAfterDuplicatingANewStaticL" +
+                    "istWithALongName", new string[] {
+                        "Evergreen",
+                        "Devices",
+                        "EvergreenJnr_ListPanel",
+                        "CustomListDisplay",
+                        "DAS12656",
+                        "Delete_Newly_Created_List"});
+            this.ScenarioSetup(scenarioInfo);
+            this.FeatureBackground();
+            TechTalk.SpecFlow.Table table61 = new TechTalk.SpecFlow.Table(new string[] {
+                        "ItemName"});
+            table61.AddRow(new string[] {
+                        "001BAQXT6JWFPI"});
+            table61.AddRow(new string[] {
+                        "001PSUMZYOW581"});
+            testRunner.When("User create static list with \"1111111111111111111111111111111111111111\" name on \"" +
+                    "Devices\" page with following items", ((string)(null)), table61, "When ");
+            testRunner.Then("\"1111111111111111111111111111111111111111\" list is displayed to user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+            testRunner.When("User navigates to the \"All Devices\" list", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+            testRunner.Then("\"Devices\" list should be displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+            testRunner.When("User duplicates list with \"1111111111111111111111111111111111111111\" name", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+            testRunner.Then("\"111111111111111111111111111111111111112\" list is displayed to user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+            testRunner.Then("There are no errors in the browser console", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+            this.ScenarioCleanup();
+        }
     }
 }
 #pragma warning restore
