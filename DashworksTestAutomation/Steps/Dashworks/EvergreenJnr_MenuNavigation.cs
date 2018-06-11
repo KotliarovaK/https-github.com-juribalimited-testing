@@ -43,6 +43,10 @@ namespace DashworksTestAutomation.Steps.Dashworks
                     menu.Mailboxes.Click();
                     break;
 
+                case "Projects":
+                    menu.Projects.Click();
+                    break;
+
                 default:
                     throw new Exception($"'{listPage}' menu name is not valid menu item and can not be opened");
             }
@@ -119,7 +123,6 @@ namespace DashworksTestAutomation.Steps.Dashworks
 
             Logger.Write($"'{listPage}' list is visible");
         }
-
 
         [When(@"User clicks Admin on the left-hand menu")]
         public void WhenUserClicksAdminOnTheLeft_HandMenu()

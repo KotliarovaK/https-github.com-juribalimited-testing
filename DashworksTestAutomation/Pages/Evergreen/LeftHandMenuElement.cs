@@ -20,6 +20,9 @@ namespace DashworksTestAutomation.Pages.Evergreen
         [FindsBy(How = How.XPath, Using = ".//span[text()='Mailboxes']")]
         public IWebElement Mailboxes { get; set; }
 
+        [FindsBy(How = How.XPath, Using = ".//span[text()='Projects']")]
+        public IWebElement Projects { get; set; }
+
         [FindsBy(How = How.XPath, Using = ".//span[text()='Admin']")]
         public IWebElement Admin { get; set; }
 
