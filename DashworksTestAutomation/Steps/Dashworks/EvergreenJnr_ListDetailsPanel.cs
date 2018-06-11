@@ -259,6 +259,7 @@ namespace DashworksTestAutomation.Steps.Dashworks
         public void ThenWarningMessageWithIsDisplayed(string message)
         {
             var listElement = _driver.NowAt<BaseDashboardPage>();
+            _driver.WaitForDataLoading();
             _driver.WaitWhileControlIsNotDisplayed<BaseDashboardPage>(() => listElement.ErrorMessage);
             Assert.AreEqual(message, listElement.ErrorMessage.Text, $"{message} is not displayed");
         }

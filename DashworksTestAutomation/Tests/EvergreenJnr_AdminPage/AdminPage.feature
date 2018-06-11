@@ -166,7 +166,7 @@ Scenario Outline: EvergreenJnr_AdminPage_CheckThatProjectsAreDeletedSuccessfully
 	Then Success message with "The selected project has been deleted" text is displayed on the Projects page
 	And There are no errors in the browser console
 
-	Examples:
+Examples:
 	| ProjectName  | ScopeList     |
 	| TestProject2 | All Devices   |
 	| TestProject3 | All Users     |
@@ -344,7 +344,7 @@ Scenario: EvergreenJnr_AdminPage_CheckThatErrorsDoNotAppearAfterUpdatingTeamDesc
 	And There are no errors in the browser console
 	And Delete "TestTeam1" Team in the Administration
 
-@Evergreen @Admin @EvergreenJnr_AdminPage @AdminPage @DAS11765 @DAS12170 @Not_Run
+@Evergreen @Admin @EvergreenJnr_AdminPage @AdminPage @DAS11765 @DAS12170
 Scenario: EvergreenJnr_AdminPage_CheckThatMailboxesAreSuccessfullyAddedToBuckets
 	When User clicks Admin on the left-hand menu
 	Then Admin page should be displayed to the user
@@ -394,7 +394,7 @@ Scenario: EvergreenJnr_AdminPage_CheckThatAllAssociationsAreSelectedByDefaultInT
 	Then All Association are selected by default
 	And Delete "TestProject7" Project in the Administration
 
-@Evergreen @Admin @EvergreenJnr_AdminPage @AdminPage @DAS12170 @Not_Run
+@Evergreen @Admin @EvergreenJnr_AdminPage @AdminPage @DAS12170
 Scenario: EvergreenJnr_AdminPage_CheckThatConsoleErrorsAreNotDisplayedAfterAddingDevicesInTheBuckets
 	When User clicks Admin on the left-hand menu
 	Then Admin page should be displayed to the user
@@ -422,7 +422,7 @@ Scenario: EvergreenJnr_AdminPage_CheckThatErrorsDoNotAppearAfterAddingDevicesToT
 	Then No items text is displayed
 	And There are no errors in the browser console
 
-@Evergreen @Admin @EvergreenJnr_AdminPage @AdminPage @DAS12170 @Not_Run
+@Evergreen @Admin @EvergreenJnr_AdminPage @AdminPage @DAS12170
 Scenario: EvergreenJnr_AdminPage_CheckThatConsoleErrorsAreNotDisplayedAfterAddingUsersInTheBuckets
 	When User clicks Admin on the left-hand menu
 	Then Admin page should be displayed to the user
@@ -448,7 +448,7 @@ Scenario Outline: EvergreenJnr_AdminPage_CheckThatCancelButtonOnTheCreateProject
 	When User clicks Cancel button
 	Then "<ListName>" list should be displayed to the user
 
-	Examples:
+Examples:
 	| ListName  |
 	| Devices   |
 	| Users     |
@@ -543,8 +543,8 @@ Scenario: EvergreenJnr_AdminPage_CheckThatFiltersAreWorkingCorrectlyOnTheAdminPa
 	And User enters "Cardiff --- Test text fill; Test text fill; ------" text in the Search field for "Bucket" column
 	Then Counter shows "1" found rows
 	When User clears Search field for "Project Buckets" column
-	When User enters "<10" text in the Search field for "Devices" column
-	Then Counter shows "4" found rows
+	When User enters "<20" text in the Search field for "Devices" column
+	Then Counter shows "7" found rows
 	When User clicks Admin on the left-hand menu
 	And User clicks "Buckets" link on the Admin page
 	And User enters "barry's" text in the Search field for "Bucket" column
@@ -561,7 +561,7 @@ Scenario: EvergreenJnr_AdminPage_CheckThatFiltersAreWorkingCorrectlyOnTheAdminPa
 	When User enters "Mac OS X 10.12.3" text in the Search field for "Operating System" column
 	Then Counter shows "1" found rows
 	When User clicks "Users" tab
-	When User enters "Pinabel Cinq-Mars" text in the Search field for "Display Name" column
+	When User enters "Aaron D. Michael" text in the Search field for "Display Name" column
 	Then Counter shows "1" found rows
 	When User clears Search field for "Project Buckets" column
 	When User enters "1DFF" text in the Search field for "Username" column
@@ -641,3 +641,22 @@ Scenario: EvergreenJnr_ChecksThatDeviceScopeDDLIsDisabledWhenDoNotIncludeOwnedDe
 	When User enters "Rainbow" text in the Search field for "Project" column
 	And User selects all rows on the grid
 	When User removes selected item
+
+@Evergreen @Admin @EvergreenJnr_AdminPage @AdminPage @DAS12578 @Delete_Newly_Created_List
+Scenario Outline: EvergreenJnr_AdminPage_CheckThatTheEditListFunctionIsHiddenAfterCancelingCreatingProjectFromTheMainLists
+	When User clicks "<ListName>" on the left-hand menu
+	Then "<ListName>" list should be displayed to the user
+	When User click on '<ColumnName>' column header
+	And User create dynamic list with "<DynamicListName>" name on "<ListName>" page
+	Then "<DynamicListName>" list is displayed to user
+	When User clicks Create Project from the main list
+	Then "Create Project" page should be displayed to the user
+	When User clicks Cancel button
+	Then "<DynamicListName>" list is displayed to user
+	Then Edit List menu is not displayed
+
+Examples:
+	| ListName  | ColumnName    | DynamicListName |
+	| Devices   | Hostname      | TestList6589    |
+	| Users     | Username      | TestList6588    |
+	| Mailboxes | Email Address | TestList6587    |
