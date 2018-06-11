@@ -166,7 +166,7 @@ Scenario Outline: EvergreenJnr_AdminPage_CheckThatProjectsAreDeletedSuccessfully
 	Then Success message with "The selected project has been deleted" text is displayed on the Projects page
 	And There are no errors in the browser console
 
-	Examples:
+Examples:
 	| ProjectName  | ScopeList     |
 	| TestProject2 | All Devices   |
 	| TestProject3 | All Users     |
@@ -448,7 +448,7 @@ Scenario Outline: EvergreenJnr_AdminPage_CheckThatCancelButtonOnTheCreateProject
 	When User clicks Cancel button
 	Then "<ListName>" list should be displayed to the user
 
-	Examples:
+Examples:
 	| ListName  |
 	| Devices   |
 	| Users     |
@@ -641,3 +641,22 @@ Scenario: EvergreenJnr_ChecksThatDeviceScopeDDLIsDisabledWhenDoNotIncludeOwnedDe
 	When User enters "Rainbow" text in the Search field for "Project" column
 	And User selects all rows on the grid
 	When User removes selected item
+
+@Evergreen @Admin @EvergreenJnr_AdminPage @AdminPage @DAS12578 @Delete_Newly_Created_List
+Scenario Outline: EvergreenJnr_AdminPage_CheckThatTheEditListFunctionIsHiddenAfterCancelingCreatingProjectFromTheMainLists
+	When User clicks "<ListName>" on the left-hand menu
+	Then "<ListName>" list should be displayed to the user
+	When User click on '<ColumnName>' column header
+	And User create dynamic list with "<DynamicListName>" name on "<ListName>" page
+	Then "<DynamicListName>" list is displayed to user
+	When User clicks Create Project from the main list
+	Then "Create Project" page should be displayed to the user
+	When User clicks Cancel button
+	Then "<DynamicListName>" list is displayed to user
+	Then Edit List menu is not displayed
+
+Examples:
+	| ListName  | ColumnName    | DynamicListName |
+	| Devices   | Hostname      | TestList6589    |
+	| Users     | Username      | TestList6588    |
+	| Mailboxes | Email Address | TestList6587    |
