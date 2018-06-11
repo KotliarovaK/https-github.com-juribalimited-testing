@@ -307,6 +307,7 @@
     <Compile Include="Pages\Projects\ProjectsBaseElements.cs" />
     <Compile Include="Pages\Projects\Projects_Dashboards\Projects_DashboardsGroupsPage.cs" />
     <Compile Include="Pages\Projects\Projects_Dashboards\Projects_DashboardsPage.cs" />
+    <Compile Include="Pages\Projects\Projects_PMObjectPage.cs" />
     <Compile Include="Steps\ManagementConsole\ManagementConsole.cs" />
     <Compile Include="Steps\Projects\Projects_CreatingProject\Projects_Capacity.cs" />
     <Compile Include="Steps\Projects\Projects_CreatingProject\Projects_CreateProject.cs" />
@@ -342,6 +343,7 @@
     <Compile Include="Steps\Dashworks\EvergreenJnr_NewCustomList.cs" />
     <Compile Include="Steps\Dashworks\EvergreenJnr_QueryStrings.cs" />
     <Compile Include="Steps\Logout.cs" />
+    <Compile Include="Steps\Projects\Projects_PMObject.cs" />
     <Compile Include="Steps\Projects\Projects_ProjectsHome.cs" />
     <Compile Include="Steps\Projects\Projects_CreatingProject\Projects_Removing.cs" />
     <Compile Include="Steps\Projects\Projects_CreatingProject\Projects_SelfService.cs" />
@@ -480,10 +482,15 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>UserScheduledProject.feature</DependentUpon>
     </Compile>
-    <Compile Include="Tests\Projects\Projects_Dashboards\Projects_Dashboards.feature.cs">
+    <Compile Include="Tests\Projects\Projects_Dashboards.feature.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>Projects_Dashboards.feature</DependentUpon>
+    </Compile>
+    <Compile Include="Tests\Projects\Projects_PMObject.feature.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Projects_PMObject.feature</DependentUpon>
     </Compile>
     <Compile Include="Utils\ByFactory.cs" />
     <Compile Include="Utils\CustomRemoteWebDriver.cs" />
@@ -610,9 +617,13 @@
       <Generator>SpecFlowSingleFileGenerator</Generator>
       <LastGenOutput>UserScheduledProject.feature.cs</LastGenOutput>
     </None>
-    <None Include="Tests\Projects\Projects_Dashboards\Projects_Dashboards.feature">
+    <None Include="Tests\Projects\Projects_Dashboards.feature">
       <Generator>SpecFlowSingleFileGenerator</Generator>
       <LastGenOutput>Projects_Dashboards.feature.cs</LastGenOutput>
+    </None>
+    <None Include="Tests\Projects\Projects_PMObject.feature">
+      <Generator>SpecFlowSingleFileGenerator</Generator>
+      <LastGenOutput>Projects_PMObject.feature.cs</LastGenOutput>
     </None>
   </ItemGroup>
   <ItemGroup>

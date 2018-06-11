@@ -141,5 +141,12 @@ namespace DashworksTestAutomation.Steps.Dashworks
             Assert.IsTrue(page.AdminSubMenu.Displayed(), "Admin page was not displayed");
             Logger.Write("Admin page is visible");
         }
+
+        [When(@"User navigates to the PMObject page")]
+        public void WhenUserNavigatesToThePMObjectPage()
+        {
+            _driver.NavigateToUrl($"{UrlProvider.Url}/PMObject.aspx?ObjectId=61085");
+            Logger.Write("PMOObject page was loaded");
+        }
     }
 }
