@@ -63,7 +63,7 @@ namespace DashworksTestAutomation.Steps
         [Then(@"created User is displayed in the table")]
         public void ThenCreatedUserIsDisplayedInTheTable()
         {
-            var page = _driver.NowAt<BaseElements>();
+            var page = _driver.NowAt<MainElementsOfProjectCreation>();
 
             var user = page.GetTheCreatedElementInTableByName(_projectDto.ManageUsers.Last().Username);
             Assert.IsTrue(user.Displayed(), "Selected User is not displayed in the table");
@@ -72,7 +72,7 @@ namespace DashworksTestAutomation.Steps
         [When(@"User select ""(.*)"" user to add as member")]
         public void WhenUserSelectUserToAddAsMember(int userIndex)
         {
-            var page = _driver.NowAt<BaseElements>();
+            var page = _driver.NowAt<MainElementsOfProjectCreation>();
 
             //Admin is mandatory
             page.SelectUserForMembersByName("Admin").Click();
@@ -82,7 +82,7 @@ namespace DashworksTestAutomation.Steps
         [When(@"User removes created User")]
         public void ThenUserRemoveCreatedUser()
         {
-            var page = _driver.NowAt<BaseElements>();
+            var page = _driver.NowAt<MainElementsOfProjectCreation>();
             _deletedUserName.Value = _projectDto.ManageUsers.Last().Username;
             page.GetDeleteButtonElementByName(_deletedUserName.Value).Click();
             _driver.AcceptAlert();
@@ -93,7 +93,7 @@ namespace DashworksTestAutomation.Steps
         [Then(@"selected User was removed")]
         public void ThenSelectedUserWasRemoved()
         {
-            var page = _driver.NowAt<BaseElements>();
+            var page = _driver.NowAt<MainElementsOfProjectCreation>();
 
             Assert.IsFalse(page.CheckThatCreatedElementIsRemoved(_deletedUserName.Value), "Selected User is displayed in the table");
         }

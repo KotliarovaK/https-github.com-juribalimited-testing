@@ -19,6 +19,27 @@ namespace DashworksTestAutomation.Steps.Projects
             _projectDto = projectDto;
         }
 
+        [When(@"User navigates to the ""(.*)"" page on Dashboards tab")]
+        public void WhenUserNavigatesToThePageOnDashboardsTab(string pageName)
+        {
+            var page = _driver.NowAt<ProjectsBaseElements>();
+            _driver.MouseHover(page.DashboardsTab);
+            _driver.MouseHover(page.GetSubTabByName(pageName));
+            page.GetSubTabByName(pageName).Click();
+        }
+
+        [Then(@"User navigate to created Project")]
+        public void ThenUserNavigateToProject()
+        {
+            var menu = _driver.NowAt<ProjectsBaseElements>();
+            _driver.MouseHover(menu.AdministrationTab);
+            var project = _driver.NowAt<MainElementsOfProjectCreation>();
+            _driver.WaitWhileControlIsNotDisplayed<MainElementsOfProjectCreation>(() => project.ManageProject);
+            _driver.MouseHover(project.ManageProject);
+            _driver.MouseHover(menu.GetSubTabByName(_projectDto.ProjectName));
+            menu.GetSubTabByName(_projectDto.ProjectName).Click();
+        }
+
         [When(@"User select Project")]
         public void WhenUserSelectProject()
         {
@@ -44,22 +65,10 @@ namespace DashworksTestAutomation.Steps.Projects
             Assert.IsTrue(message.DefaultProjectNewsTitle.Displayed(), "Default message is not displayed");
         }
 
-        [Then(@"User navigate to created Project")]
-        public void ThenUserNavigateToProject()
-        {
-            var menu = _driver.NowAt<BaseElements>();
-
-            _driver.MouseHover(menu.Administration);
-            _driver.WaitWhileControlIsNotDisplayed<BaseElements>(() => menu.ManageProject);
-            _driver.MouseHover(menu.ManageProject);
-            _driver.MouseHover(menu.GetProjectByName(_projectDto.ProjectName));
-            menu.GetProjectByName(_projectDto.ProjectName).Click();
-        }
-
         [Then(@"Project Name is displayed correctly")]
         public void ThenProjectNameIsDisplayedCorrectly()
         {
-            var menu = _driver.NowAt<BaseElements>();
+            var menu = _driver.NowAt<MainElementsOfProjectCreation>();
 
             var projectName = menu.GetOpenedProjectName(_projectDto.ProjectName);
             Assert.IsTrue(projectName.Displayed, "Project Name is not displayed correctly");

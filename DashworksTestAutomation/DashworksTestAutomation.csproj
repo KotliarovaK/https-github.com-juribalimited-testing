@@ -274,39 +274,43 @@
     <Compile Include="Pages\ManagementConsole\BaseElementsPage.cs" />
     <Compile Include="Pages\ManagementConsole\ManagementConsolePage.cs" />
     <Compile Include="Pages\ManagementConsole\ManageUserPage.cs" />
-    <Compile Include="Pages\Projects\BaseElements.cs" />
-    <Compile Include="Pages\Projects\Capacity\Capacity_CapacityPage.cs" />
-    <Compile Include="Pages\Projects\Capacity\Capacity_DetailsPage.cs" />
-    <Compile Include="Pages\Projects\Capacity\Capacity_OverrideDatesPage.cs" />
-    <Compile Include="Pages\Projects\Capacity\Capacity_SummaryPage.cs" />
-    <Compile Include="Pages\Projects\CategoryPropertiesPage.cs" />
-    <Compile Include="Pages\Projects\DetailsPage.cs" />
-    <Compile Include="Pages\Projects\GroupPropertiesPage.cs" />
-    <Compile Include="Pages\Projects\MailTemplatePropertiesPage.cs" />
-    <Compile Include="Pages\Projects\NewsPage.cs" />
+    <Compile Include="Pages\Projects\CreatingProjects\MainElementsOfProjectCreation.cs" />
+    <Compile Include="Pages\Projects\CreatingProjects\Capacity\Capacity_CapacityPage.cs" />
+    <Compile Include="Pages\Projects\CreatingProjects\Capacity\Capacity_DetailsPage.cs" />
+    <Compile Include="Pages\Projects\CreatingProjects\Capacity\Capacity_OverrideDatesPage.cs" />
+    <Compile Include="Pages\Projects\CreatingProjects\Capacity\Capacity_SummaryPage.cs" />
+    <Compile Include="Pages\Projects\CreatingProjects\CategoryPropertiesPage.cs" />
+    <Compile Include="Pages\Projects\CreatingProjects\DetailsPage.cs" />
+    <Compile Include="Pages\Projects\CreatingProjects\GroupPropertiesPage.cs" />
+    <Compile Include="Pages\Projects\CreatingProjects\MailTemplatePropertiesPage.cs" />
+    <Compile Include="Pages\Projects\CreatingProjects\NewsPage.cs" />
     <Compile Include="Pages\Projects\ProjectLogin.cs" />
-    <Compile Include="Pages\Projects\ProjectPropertiesPage.cs" />
-    <Compile Include="Pages\Projects\ProjectsHomePage.cs" />
-    <Compile Include="Pages\Projects\RequestTypePropertiesPage.cs" />
-    <Compile Include="Pages\Projects\RequestType_DetailsPage.cs" />
-    <Compile Include="Pages\Projects\SelfService\SelfService_AppsListPage.cs" />
-    <Compile Include="Pages\Projects\SelfService\SelfService_ComputerOwnershipPage.cs" />
-    <Compile Include="Pages\Projects\SelfService\SelfService_DepartmentAndLocationPage.cs" />
-    <Compile Include="Pages\Projects\SelfService\SelfService_DetailsPage.cs" />
-    <Compile Include="Pages\Projects\SelfService\SelfService_OtherOptionsPage.cs" />
-    <Compile Include="Pages\Projects\SelfService\SelfService_ProjectDatePage.cs" />
-    <Compile Include="Pages\Projects\SelfService\SelfService_ThankYouPage.cs" />
-    <Compile Include="Pages\Projects\SelfService\SelfService_WelcomePage.cs" />
-    <Compile Include="Pages\Projects\StagePropertiesPage.cs" />
-    <Compile Include="Pages\Projects\Tasks\TaskPropertiesPage.cs" />
-    <Compile Include="Pages\Projects\Tasks\TaskProperties_DetailsPage.cs" />
-    <Compile Include="Pages\Projects\Tasks\TaskProperties_EmailsPage.cs" />
-    <Compile Include="Pages\Projects\Tasks\TaskProperties_ValuesPage.cs" />
-    <Compile Include="Pages\Projects\TeamPropertiesPage.cs" />
-    <Compile Include="Pages\Projects\TeamsPage.cs" />
+    <Compile Include="Pages\Projects\CreatingProjects\ProjectPropertiesPage.cs" />
+    <Compile Include="Pages\Projects\CreatingProjects\ProjectsHomePage.cs" />
+    <Compile Include="Pages\Projects\CreatingProjects\RequestTypePropertiesPage.cs" />
+    <Compile Include="Pages\Projects\CreatingProjects\RequestType_DetailsPage.cs" />
+    <Compile Include="Pages\Projects\CreatingProjects\SelfService\SelfService_AppsListPage.cs" />
+    <Compile Include="Pages\Projects\CreatingProjects\SelfService\SelfService_ComputerOwnershipPage.cs" />
+    <Compile Include="Pages\Projects\CreatingProjects\SelfService\SelfService_DepartmentAndLocationPage.cs" />
+    <Compile Include="Pages\Projects\CreatingProjects\SelfService\SelfService_DetailsPage.cs" />
+    <Compile Include="Pages\Projects\CreatingProjects\SelfService\SelfService_OtherOptionsPage.cs" />
+    <Compile Include="Pages\Projects\CreatingProjects\SelfService\SelfService_ProjectDatePage.cs" />
+    <Compile Include="Pages\Projects\CreatingProjects\SelfService\SelfService_ThankYouPage.cs" />
+    <Compile Include="Pages\Projects\CreatingProjects\SelfService\SelfService_WelcomePage.cs" />
+    <Compile Include="Pages\Projects\CreatingProjects\StagePropertiesPage.cs" />
+    <Compile Include="Pages\Projects\CreatingProjects\Tasks\TaskPropertiesPage.cs" />
+    <Compile Include="Pages\Projects\CreatingProjects\Tasks\TaskProperties_DetailsPage.cs" />
+    <Compile Include="Pages\Projects\CreatingProjects\Tasks\TaskProperties_EmailsPage.cs" />
+    <Compile Include="Pages\Projects\CreatingProjects\Tasks\TaskProperties_ValuesPage.cs" />
+    <Compile Include="Pages\Projects\CreatingProjects\TeamPropertiesPage.cs" />
+    <Compile Include="Pages\Projects\CreatingProjects\TeamsPage.cs" />
+    <Compile Include="Pages\Projects\ProjectsBaseElements.cs" />
+    <Compile Include="Pages\Projects\Projects_Dashboards\Projects_DashboardsGroupsPage.cs" />
+    <Compile Include="Pages\Projects\Projects_Dashboards\Projects_DashboardsPage.cs" />
     <Compile Include="Steps\ManagementConsole\ManagementConsole.cs" />
-    <Compile Include="Steps\Projects\Projects_Capacity.cs" />
-    <Compile Include="Steps\Projects\Projects_CreateProject.cs" />
+    <Compile Include="Steps\Projects\Projects_CreatingProject\Projects_Capacity.cs" />
+    <Compile Include="Steps\Projects\Projects_CreatingProject\Projects_CreateProject.cs" />
+    <Compile Include="Steps\Projects\Projects_Dashboards.cs" />
     <Compile Include="Steps\Projects\Projects_Login.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Providers\Browser.cs" />
@@ -339,8 +343,8 @@
     <Compile Include="Steps\Dashworks\EvergreenJnr_QueryStrings.cs" />
     <Compile Include="Steps\Logout.cs" />
     <Compile Include="Steps\Projects\Projects_ProjectsHome.cs" />
-    <Compile Include="Steps\Projects\Projects_Removing.cs" />
-    <Compile Include="Steps\Projects\Projects_SelfService.cs" />
+    <Compile Include="Steps\Projects\Projects_CreatingProject\Projects_Removing.cs" />
+    <Compile Include="Steps\Projects\Projects_CreatingProject\Projects_SelfService.cs" />
     <Compile Include="Tests\EvergreenJnr_ActionsPanel\ActionsPanel.feature.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -461,20 +465,25 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>Login_Logout.feature</DependentUpon>
     </Compile>
-    <Compile Include="Tests\Projects\ComputerScheduledProject.feature.cs">
+    <Compile Include="Tests\Projects\CreatingProjects\ComputerScheduledProject.feature.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>ComputerScheduledProject.feature</DependentUpon>
     </Compile>
-    <Compile Include="Tests\Projects\MailboxScheduledProject.feature.cs">
+    <Compile Include="Tests\Projects\CreatingProjects\MailboxScheduledProject.feature.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>MailboxScheduledProject.feature</DependentUpon>
     </Compile>
-    <Compile Include="Tests\Projects\UserScheduledProject.feature.cs">
+    <Compile Include="Tests\Projects\CreatingProjects\UserScheduledProject.feature.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>UserScheduledProject.feature</DependentUpon>
+    </Compile>
+    <Compile Include="Tests\Projects\Projects_Dashboards\Projects_Dashboards.feature.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Projects_Dashboards.feature</DependentUpon>
     </Compile>
     <Compile Include="Utils\ByFactory.cs" />
     <Compile Include="Utils\CustomRemoteWebDriver.cs" />
@@ -589,17 +598,21 @@
       <Generator>SpecFlowSingleFileGenerator</Generator>
       <LastGenOutput>Login_Logout.feature.cs</LastGenOutput>
     </None>
-    <None Include="Tests\Projects\ComputerScheduledProject.feature">
+    <None Include="Tests\Projects\CreatingProjects\ComputerScheduledProject.feature">
       <Generator>SpecFlowSingleFileGenerator</Generator>
       <LastGenOutput>ComputerScheduledProject.feature.cs</LastGenOutput>
     </None>
-    <None Include="Tests\Projects\MailboxScheduledProject.feature">
+    <None Include="Tests\Projects\CreatingProjects\MailboxScheduledProject.feature">
       <Generator>SpecFlowSingleFileGenerator</Generator>
       <LastGenOutput>MailboxScheduledProject.feature.cs</LastGenOutput>
     </None>
-    <None Include="Tests\Projects\UserScheduledProject.feature">
+    <None Include="Tests\Projects\CreatingProjects\UserScheduledProject.feature">
       <Generator>SpecFlowSingleFileGenerator</Generator>
       <LastGenOutput>UserScheduledProject.feature.cs</LastGenOutput>
+    </None>
+    <None Include="Tests\Projects\Projects_Dashboards\Projects_Dashboards.feature">
+      <Generator>SpecFlowSingleFileGenerator</Generator>
+      <LastGenOutput>Projects_Dashboards.feature.cs</LastGenOutput>
     </None>
   </ItemGroup>
   <ItemGroup>
