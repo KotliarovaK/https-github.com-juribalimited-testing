@@ -1,4 +1,4 @@
-﻿@retry:1
+﻿@retry:0
 Feature: ListDetailsFunctionality
 	Runs List Details Panel related tests
 

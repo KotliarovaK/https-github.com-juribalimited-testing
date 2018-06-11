@@ -26,10 +26,10 @@ namespace DashworksTestAutomation.Pages.Evergreen
         [FindsBy(How = How.XPath, Using = ".//input[@aria-label='List Name']")]
         public IWebElement ListNameTextbox { get; set; }
 
-        [FindsBy(How = How.XPath, Using = ".//button[@class='button-small mat-primary save-actions-save mat-raised-button _mat-animation-noopable']")]
+        [FindsBy(How = How.XPath, Using = ".//button[contains(@class, 'button-small mat-primary save-actions-save')]")]
         public IWebElement SaveButton { get; set; }
 
-        [FindsBy(How = How.XPath, Using = ".//button[@class='button-small save-actions-cancel mat-raised-button']")]
+        [FindsBy(How = How.XPath, Using = ".//button[contains(@class, 'button-small save-actions-cancel')]")]
         public IWebElement CancelButton { get; set; }
 
         [FindsBy(How = How.XPath,
@@ -115,10 +115,10 @@ namespace DashworksTestAutomation.Pages.Evergreen
         [FindsBy(How = How.XPath, Using = ".//li[text()='Delete']")]
         public IWebElement DeleteButton { get; set; }
 
-        [FindsBy(How = How.XPath, Using = ".//button[@class='btn mat-button _mat-animation-noopable']")]
+        [FindsBy(How = How.XPath, Using = ".//button[contains(@class, 'btn mat-button')]")]
         public IWebElement DeleteButtonInWarningMessage { get; set; }
 
-        [FindsBy(How = How.XPath, Using = ".//button[@class='btn btn-transparent mat-button']")]
+        [FindsBy(How = How.XPath, Using = ".//button[contains(@class, 'btn-transparent mat-button')]")]
         public IWebElement CancelButtonInWarningMessage { get; set; }
 
         #endregion ListSettings

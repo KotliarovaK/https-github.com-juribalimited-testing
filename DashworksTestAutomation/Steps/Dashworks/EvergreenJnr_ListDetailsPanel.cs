@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Threading;
 using DashworksTestAutomation.DTO;
 using DashworksTestAutomation.DTO.RuntimeVariables;
 using DashworksTestAutomation.Extensions;
@@ -136,6 +137,7 @@ namespace DashworksTestAutomation.Steps.Dashworks
         {
             var listDetailsElement = _driver.NowAt<ListDetailsElement>();
             listDetailsElement.ClosePermissionsButton.Click();
+            _driver.WaitForDataLoading();
         }
 
         [Then(@"tooltip is displayed with ""(.*)"" text for Permissions section")]
@@ -257,6 +259,7 @@ namespace DashworksTestAutomation.Steps.Dashworks
         public void ThenWarningMessageWithIsDisplayed(string message)
         {
             var listElement = _driver.NowAt<BaseDashboardPage>();
+            _driver.WaitForDataLoading();
             _driver.WaitWhileControlIsNotDisplayed<BaseDashboardPage>(() => listElement.ErrorMessage);
             Assert.AreEqual(message, listElement.ErrorMessage.Text, $"{message} is not displayed");
         }

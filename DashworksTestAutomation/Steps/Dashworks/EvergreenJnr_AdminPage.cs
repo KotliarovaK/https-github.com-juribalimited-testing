@@ -106,6 +106,7 @@ namespace DashworksTestAutomation.Steps.Dashworks
         public void ThenProjectIsDisplayedToUser(string projectName)
         {
             var page = _driver.NowAt<ProjectsPage>();
+            _driver.WaitForDataLoading();
             Assert.IsTrue(page.ActiveProjectByName(projectName), $"{projectName} is not displayed on the Project page");
         }
 
@@ -221,8 +222,8 @@ namespace DashworksTestAutomation.Steps.Dashworks
         [Then(@"Update Project button is disabled")]
         public void ThenUpdateProjectButtonIsDisabled()
         {
-            var button = _driver.NowAt<CreateProjectPage>();
-            _driver.WaitWhileControlIsNotDisplayed<CreateProjectPage>(() => button.UpdateProjectButton);
+            var button = _driver.NowAt<ProjectsPage>();
+            _driver.WaitWhileControlIsNotDisplayed<ProjectsPage>(() => button.UpdateProjectButton);
             Assert.IsTrue(Convert.ToBoolean(button.UpdateProjectButton.GetAttribute("disabled")),
                 "Update Project button is active");
         }
@@ -392,6 +393,24 @@ namespace DashworksTestAutomation.Steps.Dashworks
         public void WhenUserClicksDeleteButton()
         {
             var button = _driver.NowAt<BaseGridPage>();
+            _driver.WaitWhileControlIsNotDisplayed<BaseGridPage>(() => button.DeleteButtonOnPage);
+            button.DeleteButtonOnPage.Click();
+            Logger.Write("Delete button was clicked");
+        }
+
+        [When(@"User clicks Delete button in the warning message")]
+        public void WhenUserClicksDeleteButtonInTheWarningMessage()
+        {
+            var button = _driver.NowAt<BaseGridPage>();
+            _driver.WaitWhileControlIsNotDisplayed<BaseGridPage>(() => button.DeleteWarningMessage);
+            button.DeleteButtonInWarningMessage.Click();
+            Logger.Write("Delete button was clicked");
+        }
+
+        [When(@"User clicks Delete button in Actions")]
+        public void WhenUserClicksDeleteButtonInActions()
+        {
+            var button = _driver.NowAt<BaseGridPage>();
             _driver.WaitWhileControlIsNotDisplayed<BaseGridPage>(() => button.DeleteButtonInActions);
             button.DeleteButtonInActions.Click();
             Logger.Write("Delete button was clicked");
@@ -452,6 +471,7 @@ namespace DashworksTestAutomation.Steps.Dashworks
         public void ThenErrorMessageWithTextIsDisplayedOnTheBucketsPage(string text)
         {
             var page = _driver.NowAt<BaseGridPage>();
+            _driver.WaitForDataLoading();
             _driver.WaitWhileControlIsNotDisplayed<BaseGridPage>(() => page.ErrorMessage);
             Assert.AreEqual(text, page.ErrorMessage.Text, "Error Message is not displayed");
         }
@@ -493,6 +513,13 @@ namespace DashworksTestAutomation.Steps.Dashworks
             var message = _driver.NowAt<BucketsPage>();
             Assert.IsFalse(message.WarningDeleteBucketMessage(warningText),
                 $"{warningText} warning message is displayed on the Buckets page");
+        }
+
+        [When(@"User clicks Delete Bucket button")]
+        public void WhenUserClicksDeleteBucketButton()
+        {
+            var projectElement = _driver.NowAt<BucketsPage>();
+            projectElement.DeleteBucketInActions.Click();
         }
 
         [Then(@"Create Bucket button is disabled")]
@@ -579,6 +606,21 @@ namespace DashworksTestAutomation.Steps.Dashworks
                 "Create Project button is active");
         }
 
+        [Then(@"selecting device owners is disabled")]
+        public void ThenSelectingDeviceOwnersIsDisabled()
+        {
+            var dropDown = _driver.NowAt<ProjectsPage>();
+            //_driver.WaitWhileControlIsDisplayed<ProjectsPage>(() => dropDown.DisabledOwnerDropDown);
+            Assert.IsTrue(dropDown.DisabledOwnerDropDown.Displayed, "Drop down menu is available");
+        }
+
+        [When(@"User click on Back button")]
+        public void WhenUserClickOnBackButton()
+        {
+            var button = _driver.NowAt<BaseGridPage>();
+            button.BackToTableButton.Click();
+        }
+
         [When(@"User clears Search field for ""(.*)"" column")]
         public void WhenUserClearsSearchFieldForColumn(string columnName)
         {
@@ -600,6 +642,13 @@ namespace DashworksTestAutomation.Steps.Dashworks
             projectElement.ActionsButton.Click();
         }
 
+        [When(@"User clicks Delete Project button")]
+        public void WhenUserClicksDeleteProjectButton()
+        {
+            var projectElement = _driver.NowAt<ProjectsPage>();
+            projectElement.DeleteProjectInActions.Click();
+        }
+
         [When(@"User removes selected item")]
         public void WhenUserRemovesSelectedItem()
         {
@@ -608,6 +657,7 @@ namespace DashworksTestAutomation.Steps.Dashworks
             projectElement.DeleteButtonInActions.Click();
             projectElement.DeleteButtonOnPage.Click();
             _driver.WaitWhileControlIsNotDisplayed<BaseGridPage>(() => projectElement.DeleteWarningMessage);
+            _driver.WaitForDataLoading();
             projectElement.DeleteButtonInWarningMessage.Click();
         }
 
@@ -621,25 +671,31 @@ namespace DashworksTestAutomation.Steps.Dashworks
         [Then(@"Delete button is displayed to the User on the Projects page")]
         public void ThenDeleteButtonIsDisplayedToTheUserOnTheProjectsPage()
         {
-            throw new Exception("Please update this step");
-            //var projectElement = _driver.NowAt<ProjectsPage>();
-            //Assert.IsTrue(projectElement.DeleteProjectValueInActions.Displayed(), "Delete Project Value is not displayed");
-            //Assert.IsTrue(projectElement.DeleteButtonOnPage.Displayed(), "Delete button is not displayed");
+            var projectElement = _driver.NowAt<BaseGridPage>();
+            Assert.IsTrue(projectElement.DeleteValueInActions.Displayed(), "Delete Project Value is not displayed");
+            Assert.IsTrue(projectElement.DeleteButtonOnPage.Displayed(), "Delete button is not displayed");
         }
 
         [Then(@"Delete button is not displayed to the User on the Projects page")]
         public void ThenDeleteButtonIsNotDisplayedToTheUserOnTheProjectsPage()
         {
-            throw new Exception("Please update this step");
-            //var projectElement = _driver.NowAt<ProjectsPage>();
-            //Assert.IsTrue(projectElement.ActionsInDropdown.Displayed(), "Actions is not displayed in the dropdown");
-            //Assert.IsFalse(projectElement.DeleteButtonOnPage.Displayed(), "Delete button is displayed");
+            var projectElement = _driver.NowAt<BaseGridPage>();
+            Assert.IsTrue(projectElement.ActionsInDropdown.Displayed(), "Actions is not displayed in the dropdown");
+            Assert.IsFalse(projectElement.DeleteButtonOnPage.Displayed(), "Delete button is displayed");
         }
 
         [Then(@"Success message with ""(.*)"" text is displayed on the Projects page")]
         public void ThenSuccessMessageWithTextIsDisplayedOnTheProjectsPage(string textMessage)
         {
             ProjectsPage projectElement;
+            try
+            {
+                projectElement = _driver.NowAt<ProjectsPage>();
+            }
+            catch (WebDriverTimeoutException)
+            {
+                projectElement = _driver.NowAt<ProjectsPage>();
+            }
             try
             {
                 projectElement = _driver.NowAt<ProjectsPage>();

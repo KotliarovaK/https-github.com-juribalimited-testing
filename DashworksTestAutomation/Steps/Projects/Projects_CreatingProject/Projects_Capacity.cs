@@ -48,7 +48,7 @@ namespace DashworksTestAutomation.Steps.Projects
             page.CapacityToReach.Clear();
             page.CapacityToReach.SendKeys(_detailsDto.CapacityToReach);
 
-            var upd = _driver.NowAt<BaseElements>();
+            var upd = _driver.NowAt<MainElementsOfProjectCreation>();
             upd.UpdateButton.Click();
         }
 
@@ -98,7 +98,7 @@ namespace DashworksTestAutomation.Steps.Projects
             page.Saturday.SendKeys(_capacityDto.Saturday);
             page.Sunday.SendKeys(_capacityDto.Sunday);
 
-            var upd = _driver.NowAt<BaseElements>();
+            var upd = _driver.NowAt<MainElementsOfProjectCreation>();
             upd.UpdateButton.Click();
         }
 
@@ -140,7 +140,7 @@ namespace DashworksTestAutomation.Steps.Projects
             page.Capacity.SendKeys(_overrideDatesDto.Capacity.ToString());
             page.Comment.SendKeys(_overrideDatesDto.Comment);
 
-            var upd = _driver.NowAt<BaseElements>();
+            var upd = _driver.NowAt<MainElementsOfProjectCreation>();
             upd.AddButton.Click();
         }
     }

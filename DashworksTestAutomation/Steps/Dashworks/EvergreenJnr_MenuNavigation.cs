@@ -43,6 +43,10 @@ namespace DashworksTestAutomation.Steps.Dashworks
                     menu.Mailboxes.Click();
                     break;
 
+                case "Projects":
+                    menu.Projects.Click();
+                    break;
+
                 default:
                     throw new Exception($"'{listPage}' menu name is not valid menu item and can not be opened");
             }
@@ -120,7 +124,6 @@ namespace DashworksTestAutomation.Steps.Dashworks
             Logger.Write($"'{listPage}' list is visible");
         }
 
-
         [When(@"User clicks Admin on the left-hand menu")]
         public void WhenUserClicksAdminOnTheLeft_HandMenu()
         {
@@ -137,6 +140,13 @@ namespace DashworksTestAutomation.Steps.Dashworks
             var page = _driver.NowAt<AdminLeftHandMenu>();
             Assert.IsTrue(page.AdminSubMenu.Displayed(), "Admin page was not displayed");
             Logger.Write("Admin page is visible");
+        }
+
+        [When(@"User navigates to the PMObject page")]
+        public void WhenUserNavigatesToThePMObjectPage()
+        {
+            _driver.NavigateToUrl($"{UrlProvider.Url}/PMObject.aspx?ObjectId=61085");
+            Logger.Write("PMOObject page was loaded");
         }
     }
 }

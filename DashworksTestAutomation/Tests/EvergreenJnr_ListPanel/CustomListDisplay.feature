@@ -969,11 +969,11 @@ Scenario Outline: EvergreenJnr_AllLists_CheckThatSaveAndCancelButtonAreHiddenAft
 	Then Save and Cancel buttons are not displayed on the list panel
 
 Examples:
-	| ListName     | ColumnName    | AddColumn  | DynamicListName |
-	| Devices      | Hostname      | Device Key | DynamicList1178 |
-	| Applications | Application   | Telephone  | DynamicList1125 |
-	| Users        | Username      | GUID       | DynamicList1195 |
-	| Mailboxes    | Email Address | Region     | DynamicList1121 |
+	| ListName     | ColumnName    | AddColumn            | DynamicListName |
+	| Devices      | Hostname      | Device Key           | DynamicList1178 |
+	| Applications | Application   | Barry'sUse: Category | DynamicList1125 |
+	| Users        | Username      | GUID                 | DynamicList1195 |
+	| Mailboxes    | Email Address | Region               | DynamicList1121 |
 
 @Evergreen @AllLists @EvergreenJnr_ListPanel @CustomListDisplay @DAS12524 @Delete_Newly_Created_List
 Scenario: EvergreenJnr_AllLists_CheckThatActionsPanelIsHiddenAfterCancellingProcessOfSavingList
@@ -996,3 +996,16 @@ Scenario: EvergreenJnr_AllLists_CheckThatActionsPanelIsHiddenAfterCancellingProc
 	Then Checkboxes are not displayed
 	And Actions panel is not displayed to the user
 	And Save to New Custom List element is displayed
+
+@Evergreen @Devices @EvergreenJnr_ListPanel @CustomListDisplay @DAS12656 @Delete_Newly_Created_List
+Scenario: EvergreenJnr_DevicesList_CheckThatNoErrorsAreDisplayedAfterDuplicatingANewStaticListWithALongName
+	When User create static list with "1111111111111111111111111111111111111111" name on "Devices" page with following items
+	| ItemName       |
+	| 001BAQXT6JWFPI |
+	| 001PSUMZYOW581 |
+	Then "1111111111111111111111111111111111111111" list is displayed to user
+	When User navigates to the "All Devices" list
+	Then "Devices" list should be displayed to the user
+	When User duplicates list with "1111111111111111111111111111111111111111" name
+	Then "111111111111111111111111111111111111112" list is displayed to user
+	Then There are no errors in the browser console

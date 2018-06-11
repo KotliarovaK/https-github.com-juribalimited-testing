@@ -1,8 +1,8 @@
-﻿Feature: CreateMailboxScheduledProject
+﻿Feature: CreateUserScheduledProject
 	Runs Project related tests
 
-@Projects @Project @MailboxScheduledProject @Delete_Newly_Created_Team @Not_Run
-Scenario: Projects_CreateMailboxScheduledProject
+@Projects @Projects @Projects_Administration @UserScheduledProject @Delete_Newly_Created_Team @Not_Run
+Scenario: Projects_CreateUserScheduledProject
 	Given User is on Dashworks Homepage
 	Then Login Page is displayed to the user
 	When User provides the Login and Password and clicks on the login button
@@ -12,25 +12,25 @@ Scenario: Projects_CreateMailboxScheduledProject
 	When User clicks create Project button
 	Then "Create Project" page is displayed to the user
 	When User creates Project
-	| ProjectName     | ProjectShortName | ProjectDescription | ProjectTypeString       |
-	| TestProjectName | TestText         | TestText           | MailboxScheduledProject |
+	| ProjectName     | ProjectShortName | ProjectDescription | ProjectTypeString    |
+	| TestProjectName | TestText         | TestText           | UserScheduledProject |
 	And User clicks "Create Project" button
 	Then "Manage Project Details" page is displayed to the user
 	When User navigate to Manage link
 	And User select "Manage Users" option in Management Console
 	Then User create a new Dashworks User
-	| Username | FullName                  | Password | ConfirmPassword |
-	| AAA0Test | MailboxScheduledProject 0 | 1234qwer | 1234qwer        |
+	| Username | FullName               | Password | ConfirmPassword |
+	| AAA0Test | UserScheduledProject 0 | 1234qwer | 1234qwer        |
 	And Success message is displayed
 	And created User is displayed in the table
 	And User create a new Dashworks User
-	| Username | FullName                  | Password | ConfirmPassword |
-	| AAA1Test | MailboxScheduledProject 1 | 1234qwer | 1234qwer        |
+	| Username | FullName               | Password | ConfirmPassword |
+	| AAA1Test | UserScheduledProject 1 | 1234qwer | 1234qwer        |
 	And Success message is displayed
 	And created User is displayed in the table
 	And User create a new Dashworks User
-	| Username | FullName                  | Password | ConfirmPassword |
-	| AAA2Test | MailboxScheduledProject 2 | 1234qwer | 1234qwer        |
+	| Username | FullName               | Password | ConfirmPassword |
+	| AAA2Test | UserScheduledProject 2 | 1234qwer | 1234qwer        |
 	And Success message is displayed
 	And created User is displayed in the table
 	When User navigate to Dashworks User Site link
@@ -43,39 +43,39 @@ Scenario: Projects_CreateMailboxScheduledProject
 	And "Manage Project Details" page is displayed to the user
 	And Project Name is displayed correctly
 	When User updates the Details page
-	| ShowOriginalColumn | IncludeSiteName | NotApplicableApplications | InstalledApplications | EntitledApplications | TaskEmailCcEmailAddress | TaskEmailBccEmailAddress | StartDate  | EndDate     |
-	| true               | true            | true                      | true                  | true                 |  Test@test.com           | Test@test.com            | 8 May 2012 | 10 Apr 2018 |
+	| ShowOriginalColumn | IncludeSiteName | NotApplicableApplications | InstalledApplications | EntitledApplications |TaskEmailCcEmailAddress | TaskEmailBccEmailAddress | StartDate  | EndDate     |
+	| true               | true            | true                      | true                  | true                 | Test@test.com           | Test@test.com            | 8 May 2012 | 10 Apr 2018 |
 	Then Success message is displayed with "Project was successfully updated" text
 	When User navigate to "Request Types" tab
 	Then "Manage Request Types" page is displayed to the user
 	When User clicks "Create Request Type" button
 	And User create Request Type
-	| Name                  | Description               | ObjectTypeString |
-	| 1 TestRequestTypeName | MailboxScheduledProject 1 | User             |
+	| Name                  | Description            | ObjectTypeString |
+	| 1 TestRequestTypeName | UserScheduledProject 1 | User             |
 	Then Success message is displayed
 	When User clicks "Cancel" button
 	Then created Request Type is displayed in the table
 	When User removes created Request Type
 	And User clicks "Create Request Type" button
 	And User create Request Type
-	| Name                  | Description               | ObjectTypeString |
-	| 2 TestRequestTypeName | MailboxScheduledProject 2 | Application      |
+	| Name                  | Description            | ObjectTypeString |
+	| 2 TestRequestTypeName | UserScheduledProject 2 | Application      |
 	Then Success message is displayed
 	When User clicks "Cancel" button
 	Then created Request Type is displayed in the table
 	When User removes created Request Type
 	And User clicks "Create Request Type" button
 	And User create Request Type
-	| Name                  | Description               | ObjectTypeString |
-	| 3 TestRequestTypeName | MailboxScheduledProject 3 | Mailbox          |
+	| Name                  | Description            | ObjectTypeString |
+	| 3 TestRequestTypeName | UserScheduledProject 3 | Computer         |
 	Then Success message is displayed
 	When User clicks "Cancel" button
 	Then created Request Type is displayed in the table
 	When User removes created Request Type
 	And User clicks "Create Request Type" button
 	And User create Request Type
-	| Name                  | Description               | ObjectTypeString |
-	| 1 TestRequestTypeName | MailboxScheduledProject 1 | User             |
+	| Name                  | Description            | ObjectTypeString |
+	| 1 TestRequestTypeName | UserScheduledProject 1 | Computer         |
 	Then Success message is displayed
 	When User clicks "Cancel" button
 	Then created Request Type is displayed in the table
@@ -88,8 +88,8 @@ Scenario: Projects_CreateMailboxScheduledProject
 	Then created Request Type is a Default
 	When User clicks "Create Request Type" button
 	And User create Request Type
-	| Name                  | Description               | ObjectTypeString |
-	| 2 TestRequestTypeName | MailboxScheduledProject 2 | Application      |
+	| Name                  | Description            | ObjectTypeString |
+	| 2 TestRequestTypeName | UserScheduledProject 2 | Application      |
 	Then Success message is displayed
 	When User clicks "Cancel" button
 	Then created Request Type is displayed in the table
@@ -102,8 +102,8 @@ Scenario: Projects_CreateMailboxScheduledProject
 	Then created Request Type is a Default
 	When User clicks "Create Request Type" button
 	And User create Request Type
-	| Name                  | Description               | ObjectTypeString |
-	| 3 TestRequestTypeName | MailboxScheduledProject 3 | Mailbox          |
+	| Name                  | Description            | ObjectTypeString |
+	| 3 TestRequestTypeName | UserScheduledProject 3 | User             |
 	Then Success message is displayed
 	When User clicks "Cancel" button
 	Then created Request Type is displayed in the table
@@ -118,8 +118,8 @@ Scenario: Projects_CreateMailboxScheduledProject
 	Then "Manage Categories" page is displayed to the user
 	When User clicks "Create Category" button
 	And User create Category
-	| Name             | Description             | ObjectTypeString |
-	| TestCategoryName | MailboxScheduledProject | Mailbox          |
+	| Name             | Description          | ObjectTypeString |
+	| TestCategoryName | UserScheduledProject | User             |
 	Then Success message is displayed with "Category successfully created." text
 	When User clicks "« Go Back" button
 	Then created Category is displayed in the table
@@ -127,32 +127,32 @@ Scenario: Projects_CreateMailboxScheduledProject
 	Then "Manage Stages" page is displayed to the user
 	When User clicks "Create Stage" button
 	And User create Stage
-	| StageName                 |
-	| 0 MailboxScheduledProject |
+	| StageName              |
+	| 0 UserScheduledProject |
 	Then created Stage is displayed in the table
 	When User clicks "Create Stage" button
 	And User create Stage
-	| StageName                 |
-	| 1 MailboxScheduledProject |
+	| StageName              |
+	| 1 UserScheduledProject |
 	Then created Stage is displayed in the table
 	When User clicks "Create Stage" button
 	And User create Stage
-	| StageName                 |
-	| 2 MailboxScheduledProject |
+	| StageName              |
+	| 2 UserScheduledProject |
 	Then created Stage is displayed in the table
 	When User navigate to "Mail Templates" tab
 	Then "Manage Mail Templates" page is displayed to the user
 	When User clicks "Create Mail Template" button
 	And User create Mail Template
-	| Name                 | Description             | SubjectLine | BodyText |
-	| TestMailTemplateName | MailboxScheduledProject | TestText    | TestText |
+	| Name                 | Description          | SubjectLine | BodyText |
+	| TestMailTemplateName | UserScheduledProject | TestText    | TestText |
 	Then Success message is displayed with "Mail Template successfully created." text
 	When User navigate to "Tasks" tab
 	Then "Manage Tasks" page is displayed to the user
 	When User clicks "Create Task" button
 	And User create Task
-	| Name          | Help                    | ObjectTypeString | TaskValuesTemplateCheckbox |
-	| TestTaskName0 | MailboxScheduledProject | User             | true                       |
+	| Name          | Help                 | ObjectTypeString | TaskValuesTemplateCheckbox |
+	| TestTaskName0 | UserScheduledProject | Computer         | true                       |
 	Then Success message is displayed with "Task successfully created" text
 	When User updates the Task page
 	| TaskHaADueDate | TaskImpactsReadiness | TaskHasAnOwner | ShowDetails | ProjectObject | BulkUpdate | SelfService |
@@ -163,14 +163,14 @@ Scenario: Projects_CreateMailboxScheduledProject
 	When User navigate to "Values" page
 	And User clicks "Add Value" button
 	When User create new Value
-	| Name          | Help                    | DefaultValue |
-	| TestValueName | MailboxScheduledProject | false        |
+	| Name          | Help                 | DefaultValue |
+	| TestValueName | UserScheduledProject | false        |
 	And User clicks "Save Value" button
 	And User navigate to "Emails" page
 	And User clicks "Add Email" button
 	When User create new Email
-	| CountDays | SendOnceOnly | RequestTypesAll | ApllyEmailToAll | To                                 |
-	| true      | true         | false           | true            | MailboxScheduledProject0@email.com |
+	| CountDays | SendOnceOnly | RequestTypesAll | ApllyEmailToAll | To                              |
+	| true      | true         | false           | true            | UserScheduledProject0@email.com |
 	And User clicks "Create Email Notification" button
 	Then Success message is displayed with "Email notification for task successfully created" text
 	When User clicks "« Go Back" button
@@ -179,8 +179,8 @@ Scenario: Projects_CreateMailboxScheduledProject
 	Then created Task is displayed in the table
 	When User clicks "Create Task" button
 	And User create Task
-	| Name          | Help                     | ObjectTypeString | TaskValuesTemplateCheckbox |
-	| TestTaskName1 | ComputerScheduledProject | Application      | true                       |
+	| Name          | Help                 | ObjectTypeString | TaskValuesTemplateCheckbox |
+	| TestTaskName1 | UserScheduledProject | Application      | true                       |
 	Then Success message is displayed with "Task successfully created" text
 	When User updates the Task page
 	| TaskHaADueDate | TaskImpactsReadiness | TaskHasAnOwner | ShowDetails | ProjectObject | BulkUpdate | SelfService |
@@ -191,33 +191,33 @@ Scenario: Projects_CreateMailboxScheduledProject
 	When User navigate to "Values" page
 	And User clicks "Add Value" button
 	When User create new Value
-	| Name          | Help                    | DefaultValue |
-	| TestValueName | MailboxScheduledProject | false        |
+	| Name          | Help                 | DefaultValue |
+	| TestValueName | UserScheduledProject | false        |
 	And User clicks "Save Value" button
 	And User clicks "« Go Back to Tasks" button
 	Then created Task is displayed in the table
 	When User clicks "Create Task" button
 	And User create Task
-	| Name          | Help                    | ObjectTypeString | TaskValuesTemplateCheckbox |
-	| TestTaskName2 | MailboxScheduledProject | Mailbox          | true                       |
+	| Name          | Help                 | ObjectTypeString | TaskValuesTemplateCheckbox |
+	| TestTaskName2 | UserScheduledProject | User             | true                       |
 	Then Success message is displayed with "Task successfully created" text
 	When User updates the Task page
 	| TaskHaADueDate | TaskImpactsReadiness | TaskHasAnOwner | ShowDetails | ProjectObject | BulkUpdate | SelfService |
-	| true           | true                 | false          | false       | true          | false      | false       |
+	| true           | true                 | false          | false       | true          | true       | true        |
 	Then Success message is displayed with "Task successfully updated" text
 	When User publishes the task
 	Then selected task was published
 	When User navigate to "Values" page
 	And User clicks "Add Value" button
 	When User create new Value
-	| Name          | Help                    | DefaultValue |
-	| TestValueName | MailboxScheduledProject | true         |
+	| Name          | Help                 | DefaultValue |
+	| TestValueName | UserScheduledProject | true         |
 	And User clicks "Save Value" button
 	And User navigate to "Emails" page
 	And User clicks "Add Email" button
 	When User create new Email
-	| CountDays | SendOnceOnly | RequestTypesAll | ApllyEmailToAll | To                                 |
-	| true      | true         | true            | true            | MailboxScheduledProject2@email.com |
+	| CountDays | SendOnceOnly | RequestTypesAll | ApllyEmailToAll | To                              |
+	| true      | true         | true            | true            | UserScheduledProject2@email.com |
 	And User clicks "Create Email Notification" button
 	Then Success message is displayed with "Email notification for task successfully created" text
 	When User clicks "« Go Back" button
@@ -228,9 +228,9 @@ Scenario: Projects_CreateMailboxScheduledProject
 	Then "Manage Teams" page is displayed to the user
 	When User clicks "Create Team" button
 	And User create Team
-	| TeamName                    | ShortDescription |
-	| 000 MailboxScheduledProject | TestText 0       |
-	When User clicks "Add Member" button
+	| TeamName                 | ShortDescription |
+	| 000 UserScheduledProject | TestText 0       |
+	And User clicks "Add Member" button
 	And User select "1" user to add as member
 	And User clicks "Add Selected" button
 	And User clicks "Cancel" button
@@ -238,8 +238,8 @@ Scenario: Projects_CreateMailboxScheduledProject
 	And "2" number of Members is displayed for created Team
 	When User clicks "Create Team" button
 	And User create Team
-	| TeamName                    | ShortDescription |
-	| 001 MailboxScheduledProject | TestText 1       |
+	| TeamName                 | ShortDescription |
+	| 001 UserScheduledProject | TestText 1       |
 	When User clicks "Add Member" button
 	And User select "2" user to add as member
 	And User clicks "Add Selected" button
@@ -248,9 +248,9 @@ Scenario: Projects_CreateMailboxScheduledProject
 	And "2" number of Members is displayed for created Team
 	When User clicks "Create Team" button
 	And User create Team
-	| TeamName                    | ShortDescription |
-	| 002 MailboxScheduledProject | TestText 2       |
-	When User clicks "Add Member" button
+	| TeamName                 | ShortDescription |
+	| 002 UserScheduledProject | TestText 2       |
+	And User clicks "Add Member" button
 	And User select "3" user to add as member
 	And User clicks "Add Selected" button
 	And User clicks "Cancel" button
@@ -260,18 +260,18 @@ Scenario: Projects_CreateMailboxScheduledProject
 	Then "Manage Groups" page is displayed to the user
 	When User clicks "Create Group" button
 	And User create Group owned for "1" Team
-	| GroupName                 |
-	| 0 MailboxScheduledProject |
+	| GroupName              |
+	| 0 UserScheduledProject |
 	Then created Group is displayed in the table
 	When User clicks "Create Group" button
 	And User create Group owned for "2" Team
-	| GroupName                 |
-	| 1 MailboxScheduledProject |
+	| GroupName              |
+	| 1 UserScheduledProject |
 	Then created Group is displayed in the table
 	When User clicks "Create Group" button
 	And User create Group owned for "3" Team
-	| GroupName                 |
-	| 2 MailboxScheduledProject |
+	| GroupName              |
+	| 2 UserScheduledProject |
 	Then created Group is displayed in the table
 	When User navigate to "Teams" tab
 	Then "Manage Teams" page is displayed to the user
@@ -279,54 +279,54 @@ Scenario: Projects_CreateMailboxScheduledProject
 	When User navigate to "News" tab
 	Then "Manage News" page is displayed to the user
 	When User updating News page
-	| Title                   | Text     |
-	| MailboxScheduledProject | TestText |
+	| Title                | Text     |
+	| UserScheduledProject | TestText |
 	Then Success message is displayed with "Project news was successfully updated." text
 	When User navigate to "Self Service" tab
 	Then "Manage Self Service" page is displayed to the user
 	When User updates the Details page on Self Service tab
-	| EnableSelfServicePortal | AllowAnonymousUsers | ThisProjectDefault | ModeUser | ModeComputer | NoLink | DashworksProjectHomepage | CustomUrl | CustomUrlTextFiald |
-	| false                   | false               | true               | true     | false        | true   | false                    | false     | http://Test        |
+	| EnableSelfServicePortal | AllowAnonymousUsers | ThisProjectDefault | NoLink | DashworksProjectHomepage | CustomUrl | CustomUrlTextFiald |
+	| false                   | false               | true               | false  | false                    | true      | http://Test        |
 	Then Success message is displayed with "Details successfully updated." text
 	When User navigate to "Welcome" page on Self Service tab
 	And User updates the Welcome page on Self Service tab
-	| AllowToSearchForAnotherUser | AllowToChangeLanguage | ShowProjectSelector | ShowMoreDetailsLink | PageDescription | ProjectName             |
-	| true                        | false                 | false               | true                | TestText        | MailboxScheduledProject |
+	| AllowToSearchForAnotherUser | AllowToChangeLanguage | ShowProjectSelector | ShowMoreDetailsLink | PageDescription | ProjectName          |
+	| true                        | false                 | false               | true                | TestText        | UserScheduledProject |
 	Then Success message is displayed with "Self Service Screen successfully updated" text
-	When User navigate to "Mailbox Ownership" page on Self Service tab
-	And User updates the Ownership page on Self Service tab
-	| ShowScreen | ShowCategory | AllowUsersToSearch | AllowUsersToSetPrimary | AllowUsersToAddANote | PageDescription         |
-	| true       | false        | false              | false                  | false                | MailboxScheduledProject |
+	When User navigate to "Computer Ownership" page on Self Service tab
+	When User updates the Ownership page on Self Service tab
+	| ShowScreen | ShowComputers | ShowCategory | AllowUsersToSearch | AllowUsersToSetPrimary | AllowUsersToAddANote | LimitMaximum | LimitMinimum | PageDescription      |
+	| true       | true          | false        | false              | false                  | false                | 100          | 10           | UserScheduledProject |
 	Then Success message is displayed with "Self Service Screen successfully updated" text
 	When User navigate to "Department and Location" page on Self Service tab
 	And User updates the Department and Location page on Self Service tab
 	| ShowScreen | ShowDepartmentFullPath | ShowLocationFullPath | AllowUsersToAddANote | Department | DepartmentDoNotPush | DepartmentPushToOwned | DepartmentPushToAll | Location | LocationDoNotPush | LocationPushToOwned | LocationPushToAll | DepartmentFeed | HrLocationFeed | ManualLocationFeed | HistoricLocationFeed |
-	| true       | false                  | false                | false                | true       | true                | false                 | false               | false    | false             | false               | false             | true           | true           | false              | false                |
+	| true       | false                  | false                | false                | false      | false               | false                 | false               | true     | true              | false               | false             | true           | false          | true               | false                |
 	Then Success message is displayed with "Self Service Screen successfully updated" text
 	When User navigate to "Apps List" page on Self Service tab
 	And User updates the Apps List page on Self Service tab
-	| ShowThisScreen | ShowCoreApps | ShowTargetStateReadiness | ShowRequiredColumnAndSticky | ShowOnlyApplication | AllowUsersToAddANote | PageDescription         |
-	| true           | true         | true                     | true                        | true                | true                 | MailboxScheduledProject |
+	| ShowThisScreen | ShowCoreApps | ShowTargetStateReadiness | ShowRequiredColumnAndSticky | ShowOnlyApplication | AllowUsersToAddANote | PageDescription      |
+	| true           | true         | true                     | true                        | true                | true                 | UserScheduledProject |
 	Then Success message is displayed with "Self Service Screen successfully updated" text
 	When User navigate to "Project Date" page on Self Service tab
 	And User updates the Project Date page on Self Service tab
-	| AllowUsersToAddANote | MinimumHours | MaximumHours | PageDescription         |
-	| true                 | 10           | 100          | MailboxScheduledProject |
+	| AllowUsersToAddANote | MinimumHours | MaximumHours | PageDescription      |
+	| true                 | 10           | 100          | UserScheduledProject |
 	Then Success message is displayed with "Self Service Screen successfully updated" text
 	When User navigate to "Other Options 1" page on Self Service tab
 	And User updates the first Other Options page on Self Service tab
-	| ShowScreen | AllowUsersToAddANote | OnlyOwned | AllLinked | PageDescription         |
-	| false      | true                 | false     | true      | MailboxScheduledProject |
+	| ShowScreen | AllowUsersToAddANote | OnlyOwned | AllLinked | PageDescription      |
+	| false      | true                 | false     | true      | UserScheduledProject |
 	Then Success message is displayed with "Self Service Screen successfully updated" text
 	When User navigate to "Other Options 2" page on Self Service tab
 	And User updates the second Other Options page on Self Service tab
-	| ShowScreen | AllowUsersToAddANote | OnlyOwned | AllLinked | PageDescription         |
-	| false      | true                 | true      | false     | MailboxScheduledProject |
+	| ShowScreen | AllowUsersToAddANote | OnlyOwned | AllLinked | PageDescription      |
+	| false      | true                 | true      | false     | UserScheduledProject |
 	Then Success message is displayed with "Self Service Screen successfully updated" text
 	When User navigate to "Thank You" page on Self Service tab
 	And User updates the Thank You page on Self Service tab
-	| SelfServicePortal | NavigationMenu | ChoicesSummary | IncludeLink | PageDescription         |
-	| true              | false          | false          | false       | MailboxScheduledProject |
+	| SelfServicePortal | NavigationMenu | ChoicesSummary | IncludeLink | PageDescription      |
+	| true              | false          | false          | false       | UserScheduledProject |
 	Then Success message is displayed with "Self Service Screen successfully updated" text
 	When User navigate to "Capacity" tab
 	Then "Manage Capacity" page is displayed to the user
@@ -337,23 +337,23 @@ Scenario: Projects_CreateMailboxScheduledProject
 	When User navigate to "Capacity" page
 	And User updates the Capacity page on Capacity tab for "1" Team
 	| StartDate   | EndDate     | MondayCheckbox | TuesdayCheckbox | WednesdayCheckbox | ThursdayCheckbox | FridayCheckbox | SaturdayCheckbox | SundayCheckbox | Monday | Tuesday | Wednesday | Thursday | Friday | Saturday | Sunday |
-	| 06 Apr 2016 | 19 Apr 2018 | false          | false           | false             | false            | false          | false            | false          | 100    | 100     | 100       | 100      | 100    | 100      | 100    |
+	| 06 Apr 2016 | 27 May 2018 | false          | false           | false             | false            | false          | false            | false          | 100    | 100     | 100       | 100      | 100    | 100      | 100    |
 	Then Success message is displayed with "Capacity information successfully updated." text
 	When User updates the Capacity page on Capacity tab for "2" Team
-	| StartDate   | EndDate       | MondayCheckbox | TuesdayCheckbox | WednesdayCheckbox | ThursdayCheckbox | FridayCheckbox | SaturdayCheckbox | SundayCheckbox | Monday | Tuesday | Wednesday | Thursday | Friday | Saturday | Sunday |
-	| 08 May 2013 | 20 March 2015 | false          | false           | false             | false            | false          | false            | false          | 10     | 10      | 10        | 10       | 10     | 10       | 10     |
+	| StartDate    | EndDate       | MondayCheckbox | TuesdayCheckbox | WednesdayCheckbox | ThursdayCheckbox | FridayCheckbox | SaturdayCheckbox | SundayCheckbox | Monday | Tuesday | Wednesday | Thursday | Friday | Saturday | Sunday |
+	| 19 Apr  2013 | 20 March 2015 | false          | false           | false             | false            | false          | false            | false          | 10     | 10      | 10        | 10       | 10     | 10       | 10     |
 	Then Success message is displayed with "Capacity information successfully updated." text
 	When User updates the Capacity page on Capacity tab for "3" Team
-	| StartDate    | EndDate     | MondayCheckbox | TuesdayCheckbox | WednesdayCheckbox | ThursdayCheckbox | FridayCheckbox | SaturdayCheckbox | SundayCheckbox | Monday | Tuesday | Wednesday | Thursday | Friday | Saturday | Sunday |
-	| 16 June 2012 | 27 May 2016 | false          | false           | false             | false            | false          | false            | false          | 100    | 100     | 100       | 100      | 100    | 100      | 100    |
+	| StartDate    | EndDate       | MondayCheckbox | TuesdayCheckbox | WednesdayCheckbox | ThursdayCheckbox | FridayCheckbox | SaturdayCheckbox | SundayCheckbox | Monday | Tuesday | Wednesday | Thursday | Friday | Saturday | Sunday |
+	| 16 June 2012 | 03 March 2016 | false          | false           | false             | false            | false          | false            | false          | 100    | 100     | 100       | 100      | 100    | 100      | 100    |
 	Then Success message is displayed with "Capacity information successfully updated." text
 	When User navigate to "Summary" page
 	And User select created request type on Summary tab
 	Then table for selected request type is displayed
 	When User navigate to "Override Dates" page
 	And User updates the Override Dates on Capacity tab
-	| Date         | Capacity | Comment                 |
-	| 06 June 2016 | 0        | MailboxScheduledProject |
+	| Date         | Capacity | Comment              |
+	| 13 June 2016 | 0        | UserScheduledProject |
 	Then Success message is displayed with "Override date successfully inserted" text
 	When User navigate to "Groups" tab
 	And User removes created Group
@@ -394,7 +394,7 @@ Scenario: Projects_CreateMailboxScheduledProject
 	Then selected Category was removed
 	And Success message is displayed with "Category successfully deleted." text
 	When User navigate to "Request Types" tab
-	And User makes "[Default (Mailbox)]" Request Type default
+	And User makes "[Default (User)]" Request Type default
 	| DefaultRequestType |
 	| true               |
 	Then Success message is displayed with "Request Type successfully updated" text
@@ -410,7 +410,7 @@ Scenario: Projects_CreateMailboxScheduledProject
 	And User removes created Request Type
 	Then selected Request Type was removed
 	And Success message is displayed with "Request Type successfully deleted" text
-	When User makes "[Default (User)]" Request Type default
+	When User makes "[Default (Computer)]" Request Type default
 	| DefaultRequestType |
 	| true               |
 	Then Success message is displayed with "Request Type successfully updated" text
