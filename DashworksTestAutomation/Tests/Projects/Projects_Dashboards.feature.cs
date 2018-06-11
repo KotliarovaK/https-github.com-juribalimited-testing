@@ -10,7 +10,7 @@
 // ------------------------------------------------------------------------------
 #region Designer generated code
 #pragma warning disable
-namespace DashworksTestAutomation.Tests.Projects.Projects_Dashboards
+namespace DashworksTestAutomation.Tests.Projects
 {
     using TechTalk.SpecFlow;
     
