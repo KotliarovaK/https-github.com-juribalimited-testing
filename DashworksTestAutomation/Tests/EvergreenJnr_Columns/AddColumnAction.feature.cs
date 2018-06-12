@@ -258,6 +258,8 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_Columns
         [NUnit.Framework.CategoryAttribute("EvergreenJnr_Columns")]
         [NUnit.Framework.CategoryAttribute("AddColumnAction")]
         [NUnit.Framework.CategoryAttribute("DAS11689")]
+        [NUnit.Framework.CategoryAttribute("DAS12780")]
+        [NUnit.Framework.CategoryAttribute("Not_Run")]
         [NUnit.Framework.TestCaseAttribute("Devices", new string[0])]
         [NUnit.Framework.TestCaseAttribute("Applications", new string[0])]
         public virtual void EvergreenJnr_AllLists_CheckThatTableIsFullyLoadedAfterAddingTheColumns(string listName, string[] exampleTags)
@@ -293,7 +295,9 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_Columns
                     "AllLists",
                     "EvergreenJnr_Columns",
                     "AddColumnAction",
-                    "DAS11689"};
+                    "DAS11689",
+                    "DAS12780",
+                    "Not_Run"};
             if ((exampleTags != null))
             {
                 @__tags = System.Linq.Enumerable.ToArray(System.Linq.Enumerable.Concat(@__tags, exampleTags));
@@ -329,6 +333,8 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_Columns
         [NUnit.Framework.CategoryAttribute("DAS10997")]
         [NUnit.Framework.CategoryAttribute("DAS12026")]
         [NUnit.Framework.CategoryAttribute("DAS12156")]
+        [NUnit.Framework.CategoryAttribute("DAS12780")]
+        [NUnit.Framework.CategoryAttribute("Not_Run")]
         [NUnit.Framework.TestCaseAttribute("Windows7Mi: Application Rationalisation", new string[0])]
         [NUnit.Framework.TestCaseAttribute("Windows7Mi: Application Readiness", new string[0])]
         [NUnit.Framework.TestCaseAttribute("Windows7Mi: Core Application", new string[0])]
@@ -368,7 +374,9 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_Columns
                     "AddColumnAction",
                     "DAS10997",
                     "DAS12026",
-                    "DAS12156"};
+                    "DAS12156",
+                    "DAS12780",
+                    "Not_Run"};
             if ((exampleTags != null))
             {
                 @__tags = System.Linq.Enumerable.ToArray(System.Linq.Enumerable.Concat(@__tags, exampleTags));
