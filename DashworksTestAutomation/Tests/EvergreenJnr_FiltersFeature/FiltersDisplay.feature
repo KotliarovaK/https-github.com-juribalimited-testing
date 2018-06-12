@@ -102,7 +102,7 @@ Scenario: EvergreenJnr_DevicesList_CheckThatAddColumnOptionIsNotAvailableForAppl
 	Then "Devices" list should be displayed to the user
 	When User clicks the Filters button
 	Then Filters panel is displayed to the user
-	When User selects "Computer Warranty" filter from "Application Custom Fields" category
+	When User selects "Application Owner" filter from "Application Custom Fields" category
 	Then "Add column" checkbox is not displayed
 
 @Evergreen @AllLists @Evergreen_FiltersFeature @FiltersDisplay @DAS10771 @DAS10972
@@ -354,13 +354,13 @@ Scenario Outline: EvergreenJnr_MailboxesList_CheckThatFilterOperatorsIsCorrectIn
 Examples: 
 	| operatorValue  | filterOption | rowsCount | operatorValueInInfo |
 	| Equals         | 8 Mar 2016   | 3         | is                  |
+	| Empty          |              | 6         | is empty            |
+	| Not empty      |              | 14,778    | is not empty        |
 	| Does not equal | 8 Mar 2016   | 14,781    | is not              |
 	| Before         | 8 Mar 2016   | 4,699     | is before           |
 	| After          | 8 Mar 2016   | 10,076    | is after            |
-	| Empty          |              | 6         | is empty            |
-	| Not empty      |              | 14,778    | is not empty        |
 
- @Evergreen @Devices @Evergreen_FiltersFeature @FiltersDisplay @DAS10696 @DAS11090 @DAS12114 @DAS12698 @Not_Run
+ @Evergreen @Devices @Evergreen_FiltersFeature @FiltersDisplay @DAS10696 @DAS11090 @DAS12114 @DAS12698
 Scenario Outline: EvergreenJnr_DevicesList_CheckThatFilterOperatorsIsCorrectInFilterInfoDatetime
 	When User clicks "Devices" on the left-hand menu
 	Then "Devices" list should be displayed to the user
@@ -516,7 +516,7 @@ Examples:
 	| Mailboxes |
 	| Devices   |
 
-@Evergreen @Devices @EvergreenJnr_FiltersFeature @FilterFunctionality @DAS11087 @DAS12114 @DAS12698 @Not_Run
+@Evergreen @Devices @EvergreenJnr_FiltersFeature @FilterFunctionality @DAS11087 @DAS12114 @DAS12698
 Scenario: EvergreenJnr_DevicesList_CheckThatDateAndTimeFiltersWithEqualsValuesAreWorkingCorrectly
 	When User clicks "Devices" on the left-hand menu
 	Then "Devices" list should be displayed to the user
@@ -528,7 +528,7 @@ Scenario: EvergreenJnr_DevicesList_CheckThatDateAndTimeFiltersWithEqualsValuesAr
 	Then "Windows7Mi: Date & Time Task" filter is added to the list
 	Then "16" rows are displayed in the agGrid
 
-@Evergreen @Devices @EvergreenJnr_FiltersFeature @FilterFunctionality @DAS11087 @DAS11090 @DAS12114 @DAS12698 @Not_Run
+@Evergreen @Devices @EvergreenJnr_FiltersFeature @FilterFunctionality @DAS11087 @DAS11090 @DAS12114 @DAS12698
 Scenario Outline: EvergreenJnr_DevicesList_CheckThatDateAndTimeFiltersWithDoesNotEqualValuesAreWorkingCorrectly
 	When User clicks "Devices" on the left-hand menu
 	Then "Devices" list should be displayed to the user
@@ -570,24 +570,11 @@ Examples:
 	| App field 1                 |
 	| App field 2                 |
 	| Application Owner           |
-	| Computer Field 1            |
-	| Computer Field 2            |
-	| Computer Warranty           |
-	| ComputerCustomField         |
-	| DAS-1814                    |
-	| End of Life Date            |
-	| Friendly Model Name         |
 	| General information field 1 |
 	| General information field 2 |
 	| General information field 3 |
 	| General information field 4 |
 	| General information field 5 |
-	| Mailbox Filter 1            |
-	| Mailbox Filter 2            |
-	| Telephone                   |
-	| User Field 1                |
-	| User Field 2                |
-	| Zip Code                    |
 
 @Evergreen @Applications @EvergreenJnr_FiltersFeature @FilterFunctionality @DAS11165
 Scenario: EvergreenJnr_ApplicationsList_CheckThat500ErrorIsNotDisplayedForFilters
@@ -1064,7 +1051,6 @@ Scenario: EvergreenJnr_DevicesLists_CheckThatOSBranchFilterWithEquaEmptyValueIsD
 	| SelectedCheckboxes |
 	| Empty              |
 	When User create custom list with "TestList5433" name
-	#When User create dynamic list with "TestList5433" name on "Devices" page
 	When User navigates to the "All Devices" list
 	When User navigates to the "TestList5433" list
 	When User clicks the Filters button

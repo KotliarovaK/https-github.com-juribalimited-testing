@@ -367,7 +367,7 @@ Scenario: EvergreenJnr_UsersList_CheckThatColumnIsDisplayedInColumnsPanelAfterRe
 	| Enabled                                      |
 	| Windows7Mi: Read Only on Project Object Page |
 	And "18" subcategories is displayed for "User" category
-	And "47" subcategories is displayed for "Project Tasks: Windows7Mi" category
+	And "50" subcategories is displayed for "Project Tasks: Windows7Mi" category
 
 @Evergreen @Applications @EvergreenJnr_Columns @RemoveColumn @DAS11515 @DAS12221 @DAS12351
 Scenario: EvergreenJnr_ApplicationsList_CheckThatColumnIsDisplayedInColumnsPanelAfterRemovingAColumnWhichAlsoExistsAsAFilter
@@ -375,11 +375,9 @@ Scenario: EvergreenJnr_ApplicationsList_CheckThatColumnIsDisplayedInColumnsPanel
 	| ColumnName                 |
 	| Application Key            |
 	| Windows7Mi: Technical Test |
-	| DAS-1814                   |
 	Then "Applications" list should be displayed to the user
 	And "Application Key" column is added to URL on "Applications" page
 	And "Windows7Mi: Technical Test" column is added to URL on "Applications" page
-	And "DAS-1814" column is added to URL on "Applications" page
 	When User clicks the Filters button
 	Then Filters panel is displayed to the user
 	When User add "Windows7Mi: Technical Test" filter where type is "Equals" with added column and following checkboxes:

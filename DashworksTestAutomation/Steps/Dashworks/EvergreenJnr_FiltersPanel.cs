@@ -149,7 +149,6 @@ namespace DashworksTestAutomation.Steps.Dashworks
         [When(@"User have create ""(.*)"" Values filter with column and following options:")]
         public void WhenUserHaveCreateValuesFilterWithColumnAndFollowingOptions(string operatorValue, Table table)
         {
-            var filterElement = _driver.NowAt<FiltersElement>();
             var filter = new ValueFilter(_driver, operatorValue, true, table);
             filter.Do();
         }
@@ -564,6 +563,13 @@ namespace DashworksTestAutomation.Steps.Dashworks
             var expectedList = table.Rows.SelectMany(row => row.Values);
             var actualList = filterElement.FilterValues.Select(value => value.Text);
             Assert.AreEqual(expectedList, actualList, "Filter settings values are different");
+        }
+
+        [Then(@"""(.*)"" filter is displayed in the Filters panel")]
+        public void ThenFilterIsDisplayedInTheFiltersPanel(string filterName)
+        {
+            var filterElement = _driver.NowAt<FiltersElement>();
+            filterElement.FilterNameInThePanel(filterName);
         }
 
         [Then(@"correct true and false options are displayed in filter settings")]

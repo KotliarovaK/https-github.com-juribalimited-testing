@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Linq;
 using DashworksTestAutomation.Extensions;
 using DashworksTestAutomation.Pages.Evergreen;
 using DashworksTestAutomation.Utils;
@@ -31,6 +32,7 @@ namespace DashworksTestAutomation.Steps.Dashworks
         public void WhenUserClicksTheListDetailsButton()
         {
             var menu = _driver.NowAt<BaseDashboardPage>();
+            _driver.WaitForDataLoading();
             menu.ListDetailsButton.Click();
             _driver.WaitForDataLoading();
             Logger.Write("List Details button was clicked");
@@ -100,6 +102,14 @@ namespace DashworksTestAutomation.Steps.Dashworks
             var menu = _driver.NowAt<BaseDashboardPage>();
             _driver.WaitWhileControlIsNotDisplayed<BaseDashboardPage>(() => menu.FilterButton);
             Assert.IsTrue(Convert.ToBoolean(menu.FilterButton.GetAttribute("disabled")), "Filter Button is active");
+        }
+
+        [Then(@"Empty link is displayed for first row in the ""(.*)"" column")]
+        public void ThenEmptyLinkIsDisplayedForFirstRowInTheColumn(string columnName)
+        {
+            var page = _driver.NowAt<BaseDashboardPage>();
+            page.GetHrefByColumnName(columnName);
+            Assert.AreEqual("Empty", page.GetColumnContent(columnName).First());
         }
 
         [Then(@"Account Profile menu is displayed correctly")]

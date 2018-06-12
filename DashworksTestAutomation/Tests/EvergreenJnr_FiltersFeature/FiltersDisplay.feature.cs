@@ -459,7 +459,7 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_FiltersFeature
             testRunner.Then("\"Devices\" list should be displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
             testRunner.When("User clicks the Filters button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
             testRunner.Then("Filters panel is displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-            testRunner.When("User selects \"Computer Warranty\" filter from \"Application Custom Fields\" category" +
+            testRunner.When("User selects \"Application Owner\" filter from \"Application Custom Fields\" category" +
                     "", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
             testRunner.Then("\"Add column\" checkbox is not displayed", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
             this.ScenarioCleanup();
@@ -1157,11 +1157,11 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_FiltersFeature
         [NUnit.Framework.CategoryAttribute("DAS10696")]
         [NUnit.Framework.CategoryAttribute("DAS12114")]
         [NUnit.Framework.TestCaseAttribute("Equals", "8 Mar 2016", "3", "is", new string[0])]
+        [NUnit.Framework.TestCaseAttribute("Empty", "", "6", "is empty", new string[0])]
+        [NUnit.Framework.TestCaseAttribute("Not empty", "", "14,778", "is not empty", new string[0])]
         [NUnit.Framework.TestCaseAttribute("Does not equal", "8 Mar 2016", "14,781", "is not", new string[0])]
         [NUnit.Framework.TestCaseAttribute("Before", "8 Mar 2016", "4,699", "is before", new string[0])]
         [NUnit.Framework.TestCaseAttribute("After", "8 Mar 2016", "10,076", "is after", new string[0])]
-        [NUnit.Framework.TestCaseAttribute("Empty", "", "6", "is empty", new string[0])]
-        [NUnit.Framework.TestCaseAttribute("Not empty", "", "14,778", "is not empty", new string[0])]
         public virtual void EvergreenJnr_MailboxesList_CheckThatFilterOperatorsIsCorrectInFilterInfo(string operatorValue, string filterOption, string rowsCount, string operatorValueInInfo, string[] exampleTags)
         {
             System.Exception lastException = null;
@@ -1234,7 +1234,6 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_FiltersFeature
         [NUnit.Framework.CategoryAttribute("DAS11090")]
         [NUnit.Framework.CategoryAttribute("DAS12114")]
         [NUnit.Framework.CategoryAttribute("DAS12698")]
-        [NUnit.Framework.CategoryAttribute("Not_Run")]
         [NUnit.Framework.TestCaseAttribute("Equals", "22 Nov 2012", "16", "is", new string[0])]
         [NUnit.Framework.TestCaseAttribute("Does not equal", "22 Nov 2012", "17,209", "is not", new string[0])]
         [NUnit.Framework.TestCaseAttribute("Before", "22 Nov 2012", "1", "is before", new string[0])]
@@ -1277,8 +1276,7 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_FiltersFeature
                     "DAS10696",
                     "DAS11090",
                     "DAS12114",
-                    "DAS12698",
-                    "Not_Run"};
+                    "DAS12698"};
             if ((exampleTags != null))
             {
                 @__tags = System.Linq.Enumerable.ToArray(System.Linq.Enumerable.Concat(@__tags, exampleTags));
@@ -1780,7 +1778,6 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_FiltersFeature
         [NUnit.Framework.CategoryAttribute("DAS11087")]
         [NUnit.Framework.CategoryAttribute("DAS12114")]
         [NUnit.Framework.CategoryAttribute("DAS12698")]
-        [NUnit.Framework.CategoryAttribute("Not_Run")]
         public virtual void EvergreenJnr_DevicesList_CheckThatDateAndTimeFiltersWithEqualsValuesAreWorkingCorrectly()
         {
             System.Exception lastException = null;
@@ -1817,8 +1814,7 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_FiltersFeature
                         "FilterFunctionality",
                         "DAS11087",
                         "DAS12114",
-                        "DAS12698",
-                        "Not_Run"});
+                        "DAS12698"});
             this.ScenarioSetup(scenarioInfo);
             this.FeatureBackground();
             testRunner.When("User clicks \"Devices\" on the left-hand menu", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
@@ -1847,7 +1843,6 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_FiltersFeature
         [NUnit.Framework.CategoryAttribute("DAS11090")]
         [NUnit.Framework.CategoryAttribute("DAS12114")]
         [NUnit.Framework.CategoryAttribute("DAS12698")]
-        [NUnit.Framework.CategoryAttribute("Not_Run")]
         [NUnit.Framework.TestCaseAttribute("Windows7Mi: Date & Time Task", "22 Nov 2012", "17,209", new string[0])]
         [NUnit.Framework.TestCaseAttribute("Build Date", "6 Nov 2004", "17,224", new string[0])]
         public virtual void EvergreenJnr_DevicesList_CheckThatDateAndTimeFiltersWithDoesNotEqualValuesAreWorkingCorrectly(string filterName, string value, string rowCount, string[] exampleTags)
@@ -1886,8 +1881,7 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_FiltersFeature
                     "DAS11087",
                     "DAS11090",
                     "DAS12114",
-                    "DAS12698",
-                    "Not_Run"};
+                    "DAS12698"};
             if ((exampleTags != null))
             {
                 @__tags = System.Linq.Enumerable.ToArray(System.Linq.Enumerable.Concat(@__tags, exampleTags));
@@ -1922,24 +1916,11 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_FiltersFeature
         [NUnit.Framework.TestCaseAttribute("App field 1", new string[0])]
         [NUnit.Framework.TestCaseAttribute("App field 2", new string[0])]
         [NUnit.Framework.TestCaseAttribute("Application Owner", new string[0])]
-        [NUnit.Framework.TestCaseAttribute("Computer Field 1", new string[0])]
-        [NUnit.Framework.TestCaseAttribute("Computer Field 2", new string[0])]
-        [NUnit.Framework.TestCaseAttribute("Computer Warranty", new string[0])]
-        [NUnit.Framework.TestCaseAttribute("ComputerCustomField", new string[0])]
-        [NUnit.Framework.TestCaseAttribute("DAS-1814", new string[0])]
-        [NUnit.Framework.TestCaseAttribute("End of Life Date", new string[0])]
-        [NUnit.Framework.TestCaseAttribute("Friendly Model Name", new string[0])]
         [NUnit.Framework.TestCaseAttribute("General information field 1", new string[0])]
         [NUnit.Framework.TestCaseAttribute("General information field 2", new string[0])]
         [NUnit.Framework.TestCaseAttribute("General information field 3", new string[0])]
         [NUnit.Framework.TestCaseAttribute("General information field 4", new string[0])]
         [NUnit.Framework.TestCaseAttribute("General information field 5", new string[0])]
-        [NUnit.Framework.TestCaseAttribute("Mailbox Filter 1", new string[0])]
-        [NUnit.Framework.TestCaseAttribute("Mailbox Filter 2", new string[0])]
-        [NUnit.Framework.TestCaseAttribute("Telephone", new string[0])]
-        [NUnit.Framework.TestCaseAttribute("User Field 1", new string[0])]
-        [NUnit.Framework.TestCaseAttribute("User Field 2", new string[0])]
-        [NUnit.Framework.TestCaseAttribute("Zip Code", new string[0])]
         public virtual void EvergreenJnr_DevicesList_CheckThatCustomFiltersAreContainsAllExpectedAssociations(string filterName, string[] exampleTags)
         {
             System.Exception lastException = null;

@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading;
 using DashworksTestAutomation.Extensions;
+using DashworksTestAutomation.Helpers;
 using DashworksTestAutomation.Pages.Evergreen;
 using DashworksTestAutomation.Pages.Evergreen.DetailsTabsMenu;
 using NUnit.Framework;
@@ -29,8 +30,8 @@ namespace DashworksTestAutomation.Steps.Dashworks
             tabs.NavigateToTabByName(tabName);
         }
 
-        [Then(@"User closes ""(.*)"" section on the Details Page")]
-        public void ThenUserClosesSectionOnTheDetailsPage(string sectionName)
+        [When(@"User closes ""(.*)"" section on the Details Page")]
+        public void WhenUserClosesSectionOnTheDetailsPage(string sectionName)
         {
             var detailsPage = _driver.NowAt<DetailsPage>();
             detailsPage.NavigateToSectionByName(sectionName);
@@ -42,6 +43,13 @@ namespace DashworksTestAutomation.Steps.Dashworks
             var detailsPage = _driver.NowAt<DetailsPage>();
             detailsPage.NavigateToSectionByName(sectionName);
             _driver.WaitForDataLoading();
+        }
+
+        [When(@"User clicks ""(.*)"" link on the Details Page")]
+        public void WhenUserClicksLinkOnTheDetailsPage(string linkName)
+        {
+            var detailsPage = _driver.NowAt<DetailsPage>();
+            detailsPage.GetLinkByName(linkName).Click();
         }
 
         [Then(@"section is loaded correctly")]
@@ -104,15 +112,12 @@ namespace DashworksTestAutomation.Steps.Dashworks
             }
         }
 
-        [Then(@"Links from ""(.*)"" column is displayed to the user")]
-        public void ThenLinksFromColumnIsDisplayedToTheUser(string columnName)
+        [Then(@"Links from ""(.*)"" column is displayed to the user on the Details Page")]
+        public void ThenLinksFromColumnIsDisplayedToTheUserOnTheDetailsPage(string columnName)
         {
-            var content = _driver.FindElements(By.XPath(DetailsPage.ColumnWithImageAndLinkSelector));
-            foreach (var element in content)
-            {
-                var text = element.FindElement(By.XPath(DetailsPage.LinkSelector));
-                Assert.IsTrue(text.GetAttribute("href") != string.Empty);
-            }
+            var content = _driver.NowAt<DetailsPage>();
+            content.GetHrefByColumnName(columnName);
+            Assert.IsTrue(content.GetHrefByColumnName(columnName) != null);
         }
 
         [Then(@"expanded section is displayed to the User")]
@@ -158,8 +163,15 @@ namespace DashworksTestAutomation.Steps.Dashworks
         public void ThenDropdownListIsDisplayedCorrectlyInTheFilterOnTheDetailsPage()
         {
             var filterElement = _driver.NowAt<ApplicationsDetailsTabsMenu>();
-            Assert.IsTrue(filterElement.AllCheckboxesSelectedStringFilter.Displayed(), "All checkbox is unchecked");
-            Assert.IsFalse(filterElement.UncheckedStringFilters.Displayed(), "Checkbox is selected");
+            if (filterElement.GetCheckboxes().Count() > 5)
+            {
+                Assert.IsTrue(filterElement.AllCheckboxesSelectedStringFilter.Displayed(), "All checkbox is unchecked");
+                Assert.IsFalse(filterElement.UncheckedStringFilters.Displayed(), "Checkbox is selected");
+            }
+            else
+            {
+                Assert.IsFalse(filterElement.UncheckedStringFilters.Displayed(), "Checkbox is selected");
+            }
         }
 
         [When(@"User clicks Reset Filters button on the Details Page")]
@@ -221,7 +233,7 @@ namespace DashworksTestAutomation.Steps.Dashworks
         public void WhenUserClicksCheckboxFromStringFilterOnTheDetailsPage(string filterName)
         {
             var page = _driver.NowAt<ApplicationsDetailsTabsMenu>();
-            if (page.CheckboxexStringFilter.Displayed())
+            if (page.CheckboxesStringFilter.Displayed())
                 page.GetStringFilterByName(filterName).Click();
             else
                 page.GetBooleanStringFilterByName(filterName).Click();
@@ -260,7 +272,7 @@ namespace DashworksTestAutomation.Steps.Dashworks
                 Assert.AreEqual("101px", filterPanel.PackageSiteColumnWidt());
         }
 
-        [Then(@"User enters ""(.*)"" text in the Filter field")]
+        [When(@"User enters ""(.*)"" text in the Filter field")]
         public void ThenUserEntersTextInTheFilterField(string searchedText)
         {
             var filterElement = _driver.NowAt<ApplicationsDetailsTabsMenu>();
@@ -425,6 +437,23 @@ namespace DashworksTestAutomation.Steps.Dashworks
             foreach (var element in detailsPage.TableRowDetails)
                 StringAssert.DoesNotContain("Unknown", element.Text,
                     "Unknown text is displayed");
+        }
+
+        [Then(@"""(.*)"" rows found label displays on Details Page")]
+        public void ThenCorrectFoundRowsLabelDisplaysOnTheDetailsPage(string numberOfRows)
+        {
+            var detailsPage = _driver.NowAt<DetailsPage>();
+
+            if (numberOfRows == "1")
+            {
+                StringAssert.AreEqualIgnoringCase($"{numberOfRows} row", detailsPage.FoundRowsLabel.Text,
+                    "Incorrect rows count");
+            }
+            else
+            {
+                StringAssert.AreEqualIgnoringCase($"{numberOfRows} rows", detailsPage.FoundRowsLabel.Text,
+                    "Incorrect rows count");
+            }
         }
     }
 }

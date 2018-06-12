@@ -224,6 +224,7 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_FiltersFeature
         [NUnit.Framework.CategoryAttribute("DAS10734")]
         [NUnit.Framework.CategoryAttribute("DAS11507")]
         [NUnit.Framework.CategoryAttribute("DAS12351")]
+        [NUnit.Framework.CategoryAttribute("DAS12512")]
         public virtual void EvergreenJnr_ApplicationsList_CheckThatAddColumnCheckboxWorksCorrectly()
         {
             System.Exception lastException = null;
@@ -259,7 +260,8 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_FiltersFeature
                         "FilterFunctionality",
                         "DAS10734",
                         "DAS11507",
-                        "DAS12351"});
+                        "DAS12351",
+                        "DAS12512"});
             this.ScenarioSetup(scenarioInfo);
             this.FeatureBackground();
             testRunner.When("User clicks \"Applications\" on the left-hand menu", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
@@ -274,6 +276,8 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_FiltersFeature
                     "nd following checkboxes:", ((string)(null)), table5, "When ");
             testRunner.Then("\"Windows7Mi: Category\" filter is added to the list", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
             testRunner.Then("table data is filtered correctly", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+            testRunner.When("User clicks refresh button in the browser", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+            testRunner.Then("full list content is displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
             this.ScenarioCleanup();
         }
         
@@ -1269,9 +1273,9 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_FiltersFeature
         [NUnit.Framework.CategoryAttribute("API")]
         [NUnit.Framework.TestCaseAttribute("Application", "Application Name", new string[0])]
         [NUnit.Framework.TestCaseAttribute("Application Custom Fields", "App field 1", new string[0])]
-        [NUnit.Framework.TestCaseAttribute("Application Custom Fields", "Computer Warranty", new string[0])]
+        [NUnit.Framework.TestCaseAttribute("Application Custom Fields", "Application Owner", new string[0])]
         [NUnit.Framework.TestCaseAttribute("Application Custom Fields", "General information field 1", new string[0])]
-        [NUnit.Framework.TestCaseAttribute("Application Custom Fields", "User Field 2", new string[0])]
+        [NUnit.Framework.TestCaseAttribute("Application Custom Fields", "App field 2", new string[0])]
         public virtual void EvergreenJnr_DevicesList_CheckThatOperatorInSelectedFilterIsDisplayedCorrectlyAPI(string categoryName, string filterName, string[] exampleTags)
         {
             System.Exception lastException = null;
@@ -1973,6 +1977,83 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_FiltersFeature
             table34.AddRow(new string[] {
                         string.Format("{0}", newlyAddedColumn)});
             testRunner.Then("Content is present in the newly added column", ((string)(null)), table34, "Then ");
+            this.ScenarioCleanup();
+        }
+        
+        [NUnit.Framework.TestAttribute()]
+        [NUnit.Framework.DescriptionAttribute("EvergreenJnr_MailboxesList_CheckThatEditFilterElementsBlockIsDisplayedCorrectlyOn" +
+            "TheFiltersPanel")]
+        [NUnit.Framework.CategoryAttribute("Evergreen")]
+        [NUnit.Framework.CategoryAttribute("Mailboxes")]
+        [NUnit.Framework.CategoryAttribute("EvergreenJnr_FilterFeature")]
+        [NUnit.Framework.CategoryAttribute("FilterFunctionality")]
+        [NUnit.Framework.CategoryAttribute("DAS12543")]
+        [NUnit.Framework.CategoryAttribute("Delete_Newly_Created_List")]
+        public virtual void EvergreenJnr_MailboxesList_CheckThatEditFilterElementsBlockIsDisplayedCorrectlyOnTheFiltersPanel()
+        {
+            System.Exception lastException = null;
+            for (int i = 0; (i <= 1); i = (i + 1))
+            {
+                try
+                {
+                    this.EvergreenJnr_MailboxesList_CheckThatEditFilterElementsBlockIsDisplayedCorrectlyOnTheFiltersPanelInternal();
+                    return;
+                }
+                catch (System.Exception exc)
+                {
+                    lastException = exc;
+                }
+                if (((i + 1) 
+                            <= 1))
+                {
+                    testRunner.OnScenarioEnd();
+                }
+            }
+            if ((lastException != null))
+            {
+                throw lastException;
+            }
+        }
+        
+        private void EvergreenJnr_MailboxesList_CheckThatEditFilterElementsBlockIsDisplayedCorrectlyOnTheFiltersPanelInternal()
+        {
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("EvergreenJnr_MailboxesList_CheckThatEditFilterElementsBlockIsDisplayedCorrectlyOn" +
+                    "TheFiltersPanel", new string[] {
+                        "Evergreen",
+                        "Mailboxes",
+                        "EvergreenJnr_FilterFeature",
+                        "FilterFunctionality",
+                        "DAS12543",
+                        "Delete_Newly_Created_List"});
+            this.ScenarioSetup(scenarioInfo);
+            this.FeatureBackground();
+            testRunner.When("User clicks \"Mailboxes\" on the left-hand menu", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+            testRunner.Then("\"Mailboxes\" list should be displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+            testRunner.When("User clicks the Filters button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+            testRunner.Then("Filters panel is displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+            TechTalk.SpecFlow.Table table35 = new TechTalk.SpecFlow.Table(new string[] {
+                        "SelectedValues"});
+            table35.AddRow(new string[] {
+                        "Light Blue"});
+            testRunner.When("User add \"EmailMigra: Readiness\" filter where type is \"Equals\" with added column " +
+                    "and Lookup option", ((string)(null)), table35, "When ");
+            TechTalk.SpecFlow.Table table36 = new TechTalk.SpecFlow.Table(new string[] {
+                        "ColumnName"});
+            table36.AddRow(new string[] {
+                        "EmailMigra: Readiness"});
+            testRunner.Then("Content is present in the newly added column", ((string)(null)), table36, "Then ");
+            testRunner.When("User create dynamic list with \"TestListF544Y5\" name on \"Mailboxes\" page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+            testRunner.Then("\"TestListF544Y5\" list is displayed to user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+            testRunner.When("User clicks the Filters button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+            testRunner.Then("Filters panel is displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+            TechTalk.SpecFlow.Table table37 = new TechTalk.SpecFlow.Table(new string[] {
+                        "Values"});
+            table37.AddRow(new string[] {
+                        "Light Blue"});
+            testRunner.Then("Values is displayed in added filter info", ((string)(null)), table37, "Then ");
+            testRunner.When("User click Edit button for \"EmailMigra: Readiness\" filter", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+            testRunner.Then("\"Add column\" checkbox is checked", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+            testRunner.Then("\"EmailMigra: Readiness\" filter is displayed in the Filters panel", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
             this.ScenarioCleanup();
         }
     }

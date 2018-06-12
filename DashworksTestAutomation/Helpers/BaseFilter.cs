@@ -256,10 +256,10 @@ namespace DashworksTestAutomation.Helpers
             var allAddedOptionsSelector =
                 ".//div[@class='filterAddPanel ng-star-inserted']/div[@class='form-container']//div[@class='form-group ng-star-inserted']//li/span";
             var filterValueSelector = By.XPath(
-                ".//div[@class='filterAddPanel ng-star-inserted']//div[@class='mat-input-infix mat-form-field-infix']//input");
+                ".//div[@class='filterAddPanel ng-star-inserted']//div[@class='mat-form-field-infix']//input");
             var addButtonSelector =
                 By.XPath(
-                    ".//div[@class='filterAddPanel ng-star-inserted']//button[@class='button-small mat-primary mat-raised-button ng-star-inserted']");
+                    ".//div[contains(@class,'filterAddPanel')]//button[contains(@class,'button-small')]");
 
             SelectOperator();
             _driver.WaitForDataLoading();
@@ -298,13 +298,15 @@ namespace DashworksTestAutomation.Helpers
         {
             SelectOperator();
             _driver.WaitForDataLoading();
+            var selectboxes = _driver.FindElements(By.XPath(".//div[@id='context']//input[@placeholder='Search']"));
+            selectboxes.First().Click();
             foreach (var row in Table.Rows)
                 _driver.FindElement(By.XPath(
                     $".//div[@id='perfectScrolBar']//span[text()='{row["SelectedList"]}']")).Click();
 
+            selectboxes.Last().Click();
             foreach (var row in Table.Rows)
             {
-                _driver.FindElement(By.XPath(".//div[@id='context']//input[@placeholder='Search']")).Click();
                 _driver.FindElement(By.XPath($".//li//span[text()='{row["Association"]}']")).Click();
             }
 
@@ -364,13 +366,13 @@ namespace DashworksTestAutomation.Helpers
             foreach (var row in Table.Rows)
             {
                 _driver.FindElement(By.XPath(
-                        ".//div[@class='filterAddPanel ng-star-inserted']//div[@class='mat-input-infix mat-form-field-infix']//input"))
+                        ".//div[@class='filterAddPanel ng-star-inserted']//input[@id='chipInput']"))
                     .Click();
                 _driver.FindElement(By.XPath(
-                        ".//div[@class='filterAddPanel ng-star-inserted']//div[@class='mat-input-infix mat-form-field-infix']//input"))
+                        ".//div[@class='filterAddPanel ng-star-inserted']//input[@id='chipInput']"))
                     .SendKeys(row["Values"]);
                 _driver.FindElement(
-                        By.XPath(".//button[@class='button-small mat-primary mat-raised-button ng-star-inserted']"))
+                        By.XPath(".//button[@class='button-small mat-primary mat-raised-button _mat-animation-noopable ng-star-inserted']"))
                     .Click();
             }
 

@@ -54,22 +54,32 @@ namespace DashworksTestAutomation.Steps.API
             if (response.StatusCode != HttpStatusCode.OK)
                 throw new Exception($"Unable to execute request. URI: {requestUri}");
 
-            _driver.Navigate().Refresh();
-
             var content = response.Content;
 
             var responseContent = JsonConvert.DeserializeObject<JObject>(content);
             var listId = responseContent["listId"].ToString();
             var url = $"{UrlProvider.EvergreenUrl}#/{pageName.ToLower()}?$listid={listId}";
 
-            //_driver.Navigate().Refresh();
             _driver.Navigate().GoToUrl(url);
             _driver.WaitForDataLoading();
 
             //Add created list to context
             _listsDetails.AddList(listName, listId);
             var list = _driver.NowAt<BaseDashboardPage>();
-            _driver.WaitWhileControlIsNotDisplayed<BaseDashboardPage>(() => list.ActiveCustomList); ;
+            try
+            {
+                _driver.WaitWhileControlIsNotDisplayed<BaseDashboardPage>(() => list.ActiveCustomList);
+            }
+            catch (Exception)
+            {
+                Logger.Write(
+                    $"Active list was not switched automatically, browser URL: {_driver.Url}");
+                _driver.Navigate().Refresh();
+                _driver.WaitForDataLoading();
+                list.GetListElementByName(listName).Click();
+                _driver.WaitForDataLoading();
+                Assert.IsTrue(list.ActiveCustomList.Displayed());
+            }
         }
 
         [When(@"User create static list with ""(.*)"" name on ""(.*)"" page with following items")]
@@ -166,13 +176,25 @@ namespace DashworksTestAutomation.Steps.API
 
             var url = $"{UrlProvider.EvergreenUrl}#/{pageName.ToLower()}?$listid={listId}";
 
-            _driver.Navigate().Refresh();
             _driver.Navigate().GoToUrl(url);
-            
+
             //Add created list to context
             _listsDetails.AddList(listName, listId);
             var list = _driver.NowAt<BaseDashboardPage>();
-            _driver.WaitWhileControlIsNotDisplayed<BaseDashboardPage>(() => list.ActiveCustomList); ;
+            try
+            {
+                _driver.WaitWhileControlIsNotDisplayed<BaseDashboardPage>(() => list.ActiveCustomList);
+            }
+            catch (Exception)
+            {
+                Logger.Write(
+                    $"Active list was not switched automatically, browser URL: {_driver.Url}");
+                _driver.Navigate().Refresh();
+                _driver.WaitForDataLoading();
+                list.GetListElementByName(listName).Click();
+                _driver.WaitForDataLoading();
+                Assert.IsTrue(list.ActiveCustomList.Displayed());
+            }
         }
 
         [Then(@"User remove list with ""(.*)"" name on ""(.*)"" page")]

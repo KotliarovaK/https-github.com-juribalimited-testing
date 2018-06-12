@@ -46,7 +46,7 @@ Scenario: EvergreenJnr_ApplicationsList_Check500ErrorIsNotReturnedForBooleanFilt
 	Then "Windows7Mi: Hide from End Users" filter is added to the list
 	And "1,156" rows are displayed in the agGrid
 
-@Evergreen @Applications @EvergreenJnr_FiltersFeature @FilterFunctionality @DAS10734 @DAS11507 @DAS12351
+@Evergreen @Applications @EvergreenJnr_FiltersFeature @FilterFunctionality @DAS10734 @DAS11507 @DAS12351 @DAS12512
 Scenario: EvergreenJnr_ApplicationsList_CheckThatAddColumnCheckboxWorksCorrectly
 	When User clicks "Applications" on the left-hand menu
 	Then "Applications" list should be displayed to the user
@@ -57,6 +57,8 @@ Scenario: EvergreenJnr_ApplicationsList_CheckThatAddColumnCheckboxWorksCorrectly
 	| A Star Packages     |
 	Then "Windows7Mi: Category" filter is added to the list
 	Then table data is filtered correctly
+	When User clicks refresh button in the browser
+	Then full list content is displayed to the user
 
 @Evergreen @Applications @EvergreenJnr_FiltersFeature @FilterFunctionality @DAS11166 @DAS11665 @Delete_Newly_Created_List
 Scenario: EvergreenJnr_ApplicationsList_CheckThatFilterIsRestoredAfterGoingBackToTheListAgain
@@ -351,9 +353,9 @@ Examples:
 	| CategoryName              | FilterName                  |
 	| Application               | Application Name            |
 	| Application Custom Fields | App field 1                 |
-	| Application Custom Fields | Computer Warranty           |
+	| Application Custom Fields | Application Owner           |
 	| Application Custom Fields | General information field 1 |
-	| Application Custom Fields | User Field 2                |
+	| Application Custom Fields | App field 2                 |
 
 @Evergreen @Users @EvergreenJnr_FilterFeature @FilterFunctionality @DAS11738 @DAS12194 @DAS12199 @DAS12220
 Scenario: EvergreenJnr_UsersList_CheckThatToolTipShownWithEditFilterTextWhenEditingAFilterDisplayed 
@@ -512,3 +514,26 @@ Scenario Outline: EvergreenJnr_AllLists_CheckThatContentIsDisplayedInTheAddedCol
 	| ListName  | FilterName           | NewlyAddedColumn     |
 	| Mailboxes | EmailMigra: Category | EmailMigra: Category |
 	| Devices   | Windows7Mi: Category | Windows7Mi: Category |
+
+@Evergreen @Mailboxes @EvergreenJnr_FilterFeature @FilterFunctionality @DAS12543 @Delete_Newly_Created_List
+Scenario: EvergreenJnr_MailboxesList_CheckThatEditFilterElementsBlockIsDisplayedCorrectlyOnTheFiltersPanel 
+	When User clicks "Mailboxes" on the left-hand menu
+	Then "Mailboxes" list should be displayed to the user
+	When User clicks the Filters button
+	Then Filters panel is displayed to the user
+	When User add "EmailMigra: Readiness" filter where type is "Equals" with added column and Lookup option
+	| SelectedValues |
+	| Light Blue     |
+	Then Content is present in the newly added column
+	| ColumnName            |
+	| EmailMigra: Readiness |
+	When User create dynamic list with "TestListF544Y5" name on "Mailboxes" page
+	Then "TestListF544Y5" list is displayed to user
+	When User clicks the Filters button
+	Then Filters panel is displayed to the user
+	Then Values is displayed in added filter info
+	| Values     |
+	| Light Blue |
+	When User click Edit button for "EmailMigra: Readiness" filter
+	Then "Add column" checkbox is checked
+	Then "EmailMigra: Readiness" filter is displayed in the Filters panel
