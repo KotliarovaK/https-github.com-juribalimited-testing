@@ -9,20 +9,17 @@ namespace DashworksTestAutomation.DTO.Projects
         public bool TaskHaADueDate { get; set; }
         public string DateModeString { get; set; }
         public DateModeEnum DateMode;
+        public string TextModeString { get; set; }
+        public TextModeEnum TextMode;
         public string TaskProjectRoleString { get; set; }
         public TaskProjectRoleEnum TaskProjectRole;
         public bool TaskImpactsReadiness { get; set; }
         public bool TaskHasAnOwner { get; set; }
         public bool ShowDetails { get; set; }
         public bool ProjectObject { get; set; }
+        public bool GroupTaskDashboard { get; set; }
         public bool BulkUpdate { get; set; }
         public bool SelfService { get; set; }
-
-
-        public TaskProperties_DetailsDto()
-        {
-            //ValueType = ValueTypeUpdateEnum.Radiobutton;
-        }
     }
 
     public enum ValueTypeUpdateEnum
@@ -41,8 +38,21 @@ namespace DashworksTestAutomation.DTO.Projects
         DateTime
     }
 
+    public enum TextModeEnum
+    {
+        [Description("Single Line")]
+        SingleLine,
+        [Description("Multiple Line")]
+        MultipleLine
+    }
+
     public enum TaskProjectRoleEnum
     {
+        [Description("Self Service Enabled (Computer mode)")]
+        SelfServiceEnabledComputerMode,
+        [Description("Readiness (NNSFC with due date & owner)")]
+        ReadinessNnsfcWithDueDateOwner,
+        Workflow,
         [Description("Email Notifications (User)")]
         EmailNotificationsUser,
         [Description("Self Service Applications List Completed (User mode)")]
@@ -78,6 +88,7 @@ namespace DashworksTestAutomation.DTO.Projects
         [Description("Self Service Project Date Completed Date  (Computer mode)")]
         SelfServiceProjectDateCompletedDateComputerMode,
         [Description("Target Date")]
-        TargetDate
+        TargetDate,
+        None
     }
 }

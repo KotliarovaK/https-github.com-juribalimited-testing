@@ -15,13 +15,9 @@ namespace DashworksTestAutomation.DTO.Projects
         public ValueTypeEnum ValueType;
         public string ObjectTypeString { get; set; }
         public TaskObjectTypeEnum ObjectType;
+        public string TaskValuesTemplateString { get; set; }
         public TaskValuesTemplateEnum TaskValuesTemplate;
         public bool TaskValuesTemplateCheckbox { get; set; }
-
-        public TaskPropertiesDto()
-        {
-            TaskValuesTemplate = EnumExtensions.GetRandomValue<TaskValuesTemplateEnum>();
-        }
     }
 
     public enum StageNameEnum
