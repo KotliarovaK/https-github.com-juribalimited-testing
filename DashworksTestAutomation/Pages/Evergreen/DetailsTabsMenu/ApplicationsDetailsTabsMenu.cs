@@ -153,6 +153,12 @@ namespace DashworksTestAutomation.Pages.Evergreen.DetailsTabsMenu
             return columnNumber;
         }
 
+        public IList<IWebElement> GetCheckboxes()
+        {
+            By by = By.XPath(".//mat-pseudo-checkbox");
+            return Driver.FindElements(by);
+        }
+
         public void GetStringFilterByColumnName(string columnName)
         {
             By byControl =
