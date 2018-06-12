@@ -480,7 +480,7 @@ Scenario: EvergreenJnr_MailboxesLists_CheckThatMailboxPermissionsAndFolderPermis
 	And User opens "Folder Permissions" section on the Details Page
 	Then Content is present in the table on the Details Page
 	 
-@Evergreen @AllLists @EvergreenJnr_ItemDetails @ItemDetailsDisplay @DAS12210 @DAS12738 @Not_Run
+@Evergreen @AllLists @EvergreenJnr_ItemDetails @ItemDetailsDisplay @DAS12210 @DAS12738
 Scenario Outline: EvergreenJnr_AllLists_CheckThatDropdownListsInTheProjectDetailsFiltersAreDisplayedCorrectlyForCollapsedSections
 	When User clicks "<PageName>" on the left-hand menu
 	Then "<PageName>" list should be displayed to the user
@@ -490,9 +490,9 @@ Scenario Outline: EvergreenJnr_AllLists_CheckThatDropdownListsInTheProjectDetail
 	And User opens "<SectionName>" section on the Details Page
 	And User clicks String Filter button for "Project Type" column
 	Then Dropdown List is displayed correctly in the Filter on the Details Page
-	When User clicks String Filter button for "Request Type" column
-	Then Dropdown List is displayed correctly in the Filter on the Details Page
 	When User clicks String Filter button for "Category" column
+	Then Dropdown List is displayed correctly in the Filter on the Details Page
+	When User clicks String Filter button for "Request Type" column
 	Then Dropdown List is displayed correctly in the Filter on the Details Page
 
 Examples:
@@ -521,7 +521,7 @@ Examples:
 	| Applications | "WPF/E" (codename) Community Technology Preview (Feb 2007) | Application   | Projects |
 	| Mailboxes    | 040698EE82354C17B60@bclabs.local                           | Email Address | Projects |
 
-@Evergreen @Mailboxes @EvergreenJnr_ItemDetails @ItemDetailsDisplay @DAS12210 @DAS12738 @Not_Run
+@Evergreen @Mailboxes @EvergreenJnr_ItemDetails @ItemDetailsDisplay @DAS12210 @DAS12738
 Scenario: EvergreenJnr_MailboxesLists_CheckThatDropdownListsInTheProjectDetailsFiltersAreDisplayedCorrectly
 	When User clicks "Mailboxes" on the left-hand menu
 	Then "Mailboxes" list should be displayed to the user
@@ -532,9 +532,9 @@ Scenario: EvergreenJnr_MailboxesLists_CheckThatDropdownListsInTheProjectDetailsF
 	And User opens "Mailbox User Projects" section on the Details Page
 	And User clicks String Filter button for "Project Type" column
 	Then Dropdown List is displayed correctly in the Filter on the Details Page
-	When User clicks String Filter button for "Request Type" column
+	When User clicks String Filter button for "Category" column 
 	Then Dropdown List is displayed correctly in the Filter on the Details Page
-	When User clicks String Filter button for "Category" column
+	When User clicks String Filter button for "Request Type" column
 	Then Dropdown List is displayed correctly in the Filter on the Details Page
 
 @Evergreen @Mailboxes @EvergreenJnr_ItemDetails @ItemDetailsDisplay @DAS12285

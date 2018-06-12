@@ -64,8 +64,11 @@ namespace DashworksTestAutomation.Pages.Evergreen.AdminDetailsPages
         [FindsBy(How = How.XPath, Using = ".//input[@placeholder='Search']")]
         public IWebElement SearchTextbox { get; set; }
 
-        [FindsBy(How = How.XPath, Using = ".//button[contains(@title,'Update')]")]
+        [FindsBy(How = How.XPath, Using = ".//button[@mattooltip='Move']")]
         public IWebElement AddItemButton { get; set; }
+
+        [FindsBy(How = How.XPath, Using = ".//button[contains(@title,'Update')]")]
+        public IWebElement UpdateButton { get; set; }
 
         [FindsBy(How = How.XPath, Using = ".//button[@aria-label='Toggle panel']")]
         public IWebElement AddItemCheckbox { get; set; }

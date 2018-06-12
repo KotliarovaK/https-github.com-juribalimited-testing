@@ -610,7 +610,7 @@ namespace DashworksTestAutomation.Steps.Dashworks
                 projectElement.SearchTextbox.ClearWithHomeButton(_driver);
             }
 
-            projectElement.AddItemButton.Click();
+            projectElement.UpdateButton.Click();
         }
 
         [When(@"User clicks Create button on the Create Project page")]

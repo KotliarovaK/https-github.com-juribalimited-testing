@@ -523,7 +523,7 @@ Scenario: EvergreenJnr_AdminPage_CheckThatPanelOfAvailableMemberslIsExpandedByDe
 	When User clicks Add Members button on the Teams page
 	Then Panel of available members is displayed to the user
 
-@Evergreen @Admin @EvergreenJnr_AdminPage @AdminPage @DAS12552 @Not_Run
+@Evergreen @Admin @EvergreenJnr_AdminPage @AdminPage @DAS12552
 Scenario: EvergreenJnr_AdminPage_CheckThatFiltersAreWorkingCorrectlyOnTheAdminPages
 	When User clicks Admin on the left-hand menu
 	Then Admin page should be displayed to the user
