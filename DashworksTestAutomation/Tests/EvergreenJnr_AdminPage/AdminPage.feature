@@ -355,9 +355,9 @@ Scenario: EvergreenJnr_AdminPage_CheckThatMailboxesAreSuccessfullyAddedToBuckets
 	And User clicks "Mailboxes" tab
 	And User clicks Create New Item button
 	And User adds following items from list
-	| Item                             |
-	| abraham.d.robertson@dwlabs.local |
-	| abraham.h.maxwell@dwlabs.local   |
+	| Item                        |
+	| aaron.w.burton@dwlabs.local |
+	| alana.w.warner@dwlabs.local |
 	Then Success message is displayed and contains "The selected mailboxes have been added to the selected bucket" text
 	And There are no errors in the browser console
 
@@ -405,8 +405,8 @@ Scenario: EvergreenJnr_AdminPage_CheckThatConsoleErrorsAreNotDisplayedAfterAddin
 	And User clicks Create New Item button
 	And User adds following items from list
 	| Item            |
-	| Q43G5WEGFDQ1L8S |
-	| XV20GW6HJRVE2R  |
+	| CWVREMWDGTKJORM |
+	| 00K4CEEQ737BA4L |
 	Then Success message is displayed and contains "The selected devices have been added to the selected bucket" text
 	And There are no errors in the browser console
 
@@ -433,9 +433,9 @@ Scenario: EvergreenJnr_AdminPage_CheckThatConsoleErrorsAreNotDisplayedAfterAddin
 	And User clicks "Users" tab
 	And User clicks Create New Item button
 	And User adds following items from list
-	| Item                                  |
-	| FR\HRQ2819095 (Melusina Courtemanche) |
-	| FR\GBT6643930 (Villette Vallée)       |
+	| Item                              |
+	| US-E\ABW081519 (Darrin A. Arnold) |
+	| FR\IIN4276389 (Merci Daoust)      |
 	Then Success message is displayed and contains "The selected users have been added to the selected bucket" text
 	And There are no errors in the browser console
 
@@ -523,7 +523,7 @@ Scenario: EvergreenJnr_AdminPage_CheckThatPanelOfAvailableMemberslIsExpandedByDe
 	When User clicks Add Members button on the Teams page
 	Then Panel of available members is displayed to the user
 
-@Evergreen @Admin @EvergreenJnr_AdminPage @AdminPage @DAS12552
+@Evergreen @Admin @EvergreenJnr_AdminPage @AdminPage @DAS12552 @Not_Run
 Scenario: EvergreenJnr_AdminPage_CheckThatFiltersAreWorkingCorrectlyOnTheAdminPages
 	When User clicks Admin on the left-hand menu
 	Then Admin page should be displayed to the user
