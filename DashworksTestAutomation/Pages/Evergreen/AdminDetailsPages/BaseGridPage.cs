@@ -64,11 +64,23 @@ namespace DashworksTestAutomation.Pages.Evergreen.AdminDetailsPages
         [FindsBy(How = How.XPath, Using = ".//input[@placeholder='Search']")]
         public IWebElement SearchTextbox { get; set; }
 
-        [FindsBy(How = How.XPath, Using = ".//button[contains(@class,'mat-primary mat-raised-button')]")]
+        [FindsBy(How = How.XPath, Using = ".//button[@mattooltip='Move']")]
         public IWebElement AddItemButton { get; set; }
+
+        [FindsBy(How = How.XPath, Using = ".//button[contains(@title,'Update')]")]
+        public IWebElement UpdateButton { get; set; }
+
+        [FindsBy(How = How.XPath, Using = ".//button[@aria-label='Toggle panel']")]
+        public IWebElement AddItemCheckbox { get; set; }
 
         [FindsBy(How = How.XPath, Using = ".//div[@class='empty-message ng-star-inserted'][text()='No items']")]
         public IWebElement NoItemsMessage { get; set; }
+
+        [FindsBy(How = How.XPath, Using = ".//button[@aria-label='Toggle panel']")]
+        public IWebElement PlusButton { get; set; }
+
+        [FindsBy(How = How.XPath, Using = ".//button[@aria-label='Toggle panel']")]
+        public IWebElement SelectedCheckbox { get; set; }
 
         [FindsBy(How = How.XPath, Using = "//a[@mattooltip='Back']")]
         public IWebElement BackToTableButton { get; set; }

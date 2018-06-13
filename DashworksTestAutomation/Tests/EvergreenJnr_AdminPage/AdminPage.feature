@@ -141,6 +141,7 @@ Scenario: EvergreenJnr_AdminPage_CheckThatAfterApplyingDoNotIncludeDeviceOwnersL
 	Then Delete button is not displayed to the User on the Projects page
 	When User enters "TestProject1" text in the Search field for "Project" column
 	And User clicks content from "Project" column
+	When User selects "Scope Details" tab on the Project details page
 	When User selects "Do not include device owners" checkbox on the Project details page
 	And User selects "Scope Changes" tab on the Project details page
 	And User clicks "Users" tab in the Project Scope Changes section 
@@ -241,7 +242,7 @@ Scenario: EvergreenJnr_AdminPage_CheckThatNumberOfApplicationsInProjectScopeIsCo
 	And User selects "Scope Changes" tab on the Project details page
 	And User clicks "Applications" tab in the Project Scope Changes section
 	Then "Applications to add (0 of 247 selected)" is displayed to the user in the Project Scope Changes section
-	And Delete "TestProject5" Project in the Administration
+	#Then Delete "TestProject5" Project in the Administration
 
 @Evergreen @Admin @EvergreenJnr_AdminPage @AdminPage @DAS12154 @DAS12742 @Delete_Newly_Created_List
 Scenario: EvergreenJnr_AdminPage_CheckThatWarningMessageIsNotDisplayedWhenDeletingListUsingInTheProjectThatWasDeleted
@@ -355,9 +356,9 @@ Scenario: EvergreenJnr_AdminPage_CheckThatMailboxesAreSuccessfullyAddedToBuckets
 	And User clicks "Mailboxes" tab
 	And User clicks Create New Item button
 	And User adds following items from list
-	| Item                        |
-	| aaron.w.burton@dwlabs.local |
-	| abel.y.hanson@dwlabs.local  |
+	| Item                       |
+	| abel.y.hanson@dwlabs.local |
+	| abel.z.warner@dwlabs.local |
 	Then Success message is displayed and contains "The selected mailboxes have been added to the selected bucket" text
 	And There are no errors in the browser console
 
@@ -390,6 +391,7 @@ Scenario: EvergreenJnr_AdminPage_CheckThatAllAssociationsAreSelectedByDefaultInT
 	When User enters "TestProject7" text in the Search field for "Project" column
 	And User clicks content from "Project" column
 	Then Project "TestProject7" is displayed to user
+	When User selects "Scope Details" tab on the Project details page
 	When User navigates to the "Application Scope" tab in the Scope section on the Project details page
 	Then All Association are selected by default
 	And Delete "TestProject7" Project in the Administration
@@ -405,8 +407,8 @@ Scenario: EvergreenJnr_AdminPage_CheckThatConsoleErrorsAreNotDisplayedAfterAddin
 	And User clicks Create New Item button
 	And User adds following items from list
 	| Item            |
-	| 02X387UQLFP3ISU |
-	| 34RRSBA00C0EYY  |
+	| 01COJATLYVAR7A6 |
+	| 01DRMO46G58SXK  |
 	Then Success message is displayed and contains "The selected devices have been added to the selected bucket" text
 	And There are no errors in the browser console
 
@@ -433,9 +435,9 @@ Scenario: EvergreenJnr_AdminPage_CheckThatConsoleErrorsAreNotDisplayedAfterAddin
 	And User clicks "Users" tab
 	And User clicks Create New Item button
 	And User adds following items from list
-	| Item                              |
-	| US-E\ABW081519 (Darrin A. Arnold) |
-	| FR\IIN4276389 (Merci Daoust)      |
+	| Item                           |
+	| UK\DTB064395 (Gavin R. Spence) |
+	| UK\ANK462406 (Nakia D. Norton) |
 	Then Success message is displayed and contains "The selected users have been added to the selected bucket" text
 	And There are no errors in the browser console
 
@@ -523,7 +525,7 @@ Scenario: EvergreenJnr_AdminPage_CheckThatPanelOfAvailableMemberslIsExpandedByDe
 	When User clicks Add Members button on the Teams page
 	Then Panel of available members is displayed to the user
 
-@Evergreen @Admin @EvergreenJnr_AdminPage @AdminPage @DAS12552
+@Evergreen @Admin @EvergreenJnr_AdminPage @AdminPage @DAS12552 @Not_Run
 Scenario: EvergreenJnr_AdminPage_CheckThatFiltersAreWorkingCorrectlyOnTheAdminPages
 	When User clicks Admin on the left-hand menu
 	Then Admin page should be displayed to the user
@@ -573,7 +575,7 @@ Scenario: EvergreenJnr_AdminPage_CheckThatFiltersAreWorkingCorrectlyOnTheAdminPa
 	When User enters "RD-EXCH2K3" text in the Search field for "Server Name" column
 	Then Counter shows "6" found rows
 
-@Evergreen @Admin @EvergreenJnr_AdminPage @AdminPage @DAS12236
+@Evergreen @Admin @EvergreenJnr_AdminPage @AdminPage @DAS12236 @Not_Run
 Scenario: EvergreenJnr_AdminPage_CheckThatNoConsoleErrorsAreDisplayedAfterUpdatingProjectScopeChanges
 	When User clicks Admin on the left-hand menu
 	Then Admin page should be displayed to the user
@@ -581,32 +583,32 @@ Scenario: EvergreenJnr_AdminPage_CheckThatNoConsoleErrorsAreDisplayedAfterUpdati
 	Then "Projects" page should be displayed to the user
 	When User clicks Create New Item button
 	Then "Create Project" page should be displayed to the user
-	When User enters "TestProject12" in the Project Name field
+	When User enters "TestProject5" in the Project Name field
 	And User selects "All Devices" in the Scope Project dropdown
 	When User clicks Create button on the Create Project page
 	And User clicks "Projects" link on the Admin page
 	Then "Projects" page should be displayed to the user
-	When User enters "TestProject12" text in the Search field for "Project" column
+	When User enters "TestProject5" text in the Search field for "Project" column
 	And User clicks content from "Project" column
-	Then Project "TestProject12" is displayed to user
+	Then Project "TestProject5" is displayed to user
+	When User selects "Scope Details" tab on the Project details page
 	When User navigates to the "Application Scope" tab in the Scope section on the Project details page
 	And User clicks "Entitled to the device owner" checkbox on the Project details page
 	And User selects "Scope Changes" tab on the Project details page
 	And User clicks "Applications" tab in the Project Scope Changes section
-	And User clicks "UPDATE APPLICATION CHANGES" button on the Projects page
-	And User clicks Update Project button on the Projects page
-	Then Success message with "0 objects queued for onboarding, 0 objects offboarded" text is displayed on the Projects page
-	When User selects "Scope Details" tab on the Project details page
-	And User navigates to the "Application Scope" tab in the Scope section on the Project details page
-	And User clicks "Entitled to the device owner" checkbox on the Project details page
-	And User selects "Scope Changes" tab on the Project details page
-	And User clicks "Applications" tab in the Project Scope Changes section
-	And User clicks "UPDATE APPLICATION CHANGES" button on the Projects page
-	And User clicks Update Project button on the Projects page
-	Then Success message with "0 objects queued for onboarding, 0 objects offboarded" text is displayed on the Projects page
+	Then "Applications to add (0 of 2129 selected)" is displayed to the user in the Project Scope Changes section
+	When User adds following items to the Project
+	| Item                       |
+	| 20040610sqlserverck(1.0.0) |
+	| 7zip(Unknown)              |
+	| ACDSee 4.0(4.0.0)          |
+	Then message with "3 applications will be added" text is displayed on the Projects page
+	When User clicks Update Project button on the Projects page
+	Then Success message with "3 objects queued for onboarding, 0 objects offboarded" text is displayed on the Projects page
+	And "Applications to add (0 of 2126 selected)" is displayed to the user in the Project Scope Changes section
 	And There are no errors in the browser console
-	And Delete "TestProject12" Project in the Administration
-	
+	And Delete "TestProject5" Project in the Administration
+
 @Evergreen @Admin @EvergreenJnr_AdminPage @AdminPage @DAS12491
 Scenario: EvergreenJnr_AdminPage_CheckThatSingularFoundItemLabelDisplaysOnActionsToolbarforBucketsList
 	When User clicks Admin on the left-hand menu
@@ -660,3 +662,37 @@ Examples:
 	| Devices   | Hostname      | TestList6589    |
 	| Users     | Username      | TestList6588    |
 	| Mailboxes | Email Address | TestList6587    |
+
+@Evergreen @Admin @EvergreenJnr_AdminPage @AdminPage @DAS12751
+Scenario: EvergreenJnr_AdminPage_CheckThatSelectedCheckboxIsSelectedAfterSwitchingBetweenTabs
+	When User clicks Admin on the left-hand menu
+	Then Admin page should be displayed to the user
+	When User clicks "Projects" link on the Admin page
+	Then "Projects" page should be displayed to the user
+	When User clicks Create New Item button
+	Then "Create Project" page should be displayed to the user
+	When User enters "TestProject13" in the Project Name field
+	And User selects "All Devices" in the Scope Project dropdown
+	When User clicks Create button on the Create Project page
+	And User clicks "Projects" link on the Admin page
+	Then "Projects" page should be displayed to the user
+	When User enters "TestProject13" text in the Search field for "Project" column
+	And User clicks content from "Project" column
+	Then Project "TestProject13" is displayed to user
+	When User selects "Scope Changes" tab on the Project details page
+	And User clicks "Devices" tab in the Project Scope Changes section
+	When User expands the object to add 
+	When User selects following items to the Project
+	| Item           |
+	| 00HA7MKAVVFDAV |
+	Then "Devices to add (1 of 17225 selected)" is displayed to the user in the Project Scope Changes section
+	When User clicks "Users" tab in the Project Scope Changes section
+	When User expands the object to add 
+	When User selects following items to the Project
+	| Item                      |
+	| AAC860150(Kerrie D. Ruiz) |
+	And User clicks "Devices" tab in the Project Scope Changes section
+	When User expands the object to add 
+	Then following items are still selected
+	Then "Devices to add (1 of 17225 selected)" is displayed to the user in the Project Scope Changes section
+	Then Delete "TestProject13" Project in the Administration

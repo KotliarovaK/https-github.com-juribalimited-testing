@@ -825,7 +825,7 @@ Examples:
 	| Users        | Username      | City            | $6BE000-SUDQ9614UVO8                                       | Cost Centre   | Department Name  |
 	| Mailboxes    | Email Address | Alias           | 000F977AC8824FE39B8@bclabs.local                           | Enabled       | Import           |
 
-@Evergreen @AllLists @EvergreenJnr_ListPanel @CustomListDisplay @DAS10998 @DAS10972 @DAS12602 @Delete_Newly_Created_List
+@Evergreen @AllLists @EvergreenJnr_ListPanel @CustomListDisplay @DAS10998 @DAS10972 @DAS12602 @Delete_Newly_Created_List @Not_Run
 Scenario Outline: EvergreenJnr_AllList_CheckThatTheEditListFunctionIsHiddenAfterAddingChangingAndRemovingSearchCriteria
 	When User clicks "<ListName>" on the left-hand menu
 	Then "<ListName>" list should be displayed to the user
@@ -865,7 +865,7 @@ Scenario Outline: EvergreenJnr_AllList_CheckThatTheEditListFunctionIsHiddenAfter
 	Then Edit List menu is not displayed
 	And "StaticList2" list is displayed to user
 
-	Examples:
+Examples:
 	| ListName     | ColumnName    | Search    | Rows  | NewRows |
 	| Devices      | Hostname      | Centre    | 3,284 | 17      |
 	| Users        | Username      | Barland   | 3     | 142     |
@@ -1009,3 +1009,29 @@ Scenario: EvergreenJnr_DevicesList_CheckThatNoErrorsAreDisplayedAfterDuplicating
 	When User duplicates list with "1111111111111111111111111111111111111111" name
 	Then "111111111111111111111111111111111111112" list is displayed to user
 	Then There are no errors in the browser console
+
+@Evergreen @Devices @EvergreenJnr_ListPanel @CustomListDisplay @DAS12685 @Delete_Newly_Created_List
+Scenario: EvergreenJnr_DevicesList_CheckThatDataFromTheStaticListAreSavedInTheNewListAfterEditing
+	When User create static list with "StaticList1412" name on "Users" page with following items
+	| ItemName            |
+	| 003F5D8E1A844B1FAA5 |
+	| 00A5B910A1004CF5AC4 |
+	Then "StaticList1412" list is displayed to user
+	When User clicks the Columns button
+	Then Columns panel is displayed to the user
+	When ColumnName is entered into the search box and the selection is clicked
+	| ColumnName |
+	| Enabled    |
+	Then ColumnName is added to the list
+	| ColumnName |
+	| Enabled    |
+	#When User click on 'Username' column header
+	#Then data in table is sorted by 'Username' column in ascending order
+	When User clicks Save button on the list panel
+	When User selects Save as new list option
+	When User creates new custom list with "CustomList5588" name
+	Then "CustomList5588" list is displayed to user
+	Then "2" rows are displayed in the agGrid
+	When User duplicates list with "StaticList1412" name
+	Then "StaticList14122" list is displayed to user
+	Then "2" rows are displayed in the agGrid
