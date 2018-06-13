@@ -81,6 +81,7 @@ namespace DashworksTestAutomation.Steps.Dashworks
 
             List<string> expectedList = listpageMenu.GetColumnContent(columnName).Where(x => !x.Equals("")).ToList();
             SortingHelper.IsListSorted(expectedList, false);
+            _driver.WaitForDataLoading();
             Assert.IsTrue(listpageMenu.DescendingSortingIcon.Displayed);
         }
 
@@ -91,6 +92,7 @@ namespace DashworksTestAutomation.Steps.Dashworks
 
             List<string> actualList = listpageMenu.GetColumnContent(columnName).Where(x => !x.Equals("")).ToList();
             SortingHelper.IsListSorted(actualList);
+            _driver.WaitForDataLoading();
             Assert.IsTrue(listpageMenu.AscendingSortingIcon.Displayed);
         }
 
