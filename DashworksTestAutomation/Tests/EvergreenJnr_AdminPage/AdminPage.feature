@@ -356,9 +356,9 @@ Scenario: EvergreenJnr_AdminPage_CheckThatMailboxesAreSuccessfullyAddedToBuckets
 	And User clicks "Mailboxes" tab
 	And User clicks Create New Item button
 	And User adds following items from list
-	| Item                        |
-	| aaron.w.burton@dwlabs.local |
-	| alana.w.warner@dwlabs.local |
+	| Item                         |
+	| aisha.g.arias@dwlabs.local   |
+	| alan.w.mcdaniel@dwlabs.local |
 	Then Success message is displayed and contains "The selected mailboxes have been added to the selected bucket" text
 	And There are no errors in the browser console
 
@@ -407,8 +407,8 @@ Scenario: EvergreenJnr_AdminPage_CheckThatConsoleErrorsAreNotDisplayedAfterAddin
 	And User clicks Create New Item button
 	And User adds following items from list
 	| Item            |
-	| CWVREMWDGTKJORM |
-	| 00K4CEEQ737BA4L |
+	| 34RRSBA00C0EYY  |
+	| 02X387UQLFP3ISU |
 	Then Success message is displayed and contains "The selected devices have been added to the selected bucket" text
 	And There are no errors in the browser console
 
@@ -435,9 +435,9 @@ Scenario: EvergreenJnr_AdminPage_CheckThatConsoleErrorsAreNotDisplayedAfterAddin
 	And User clicks "Users" tab
 	And User clicks Create New Item button
 	And User adds following items from list
-	| Item                              |
-	| US-E\ABW081519 (Darrin A. Arnold) |
-	| FR\IIN4276389 (Merci Daoust)      |
+	| Item                                |
+	| FR\KSD3827534 (Philippine Langlois) |
+	| UK\LBM661859 (Jenifer V. Allison)   |
 	Then Success message is displayed and contains "The selected users have been added to the selected bucket" text
 	And There are no errors in the browser console
 
@@ -575,7 +575,7 @@ Scenario: EvergreenJnr_AdminPage_CheckThatFiltersAreWorkingCorrectlyOnTheAdminPa
 	When User enters "RD-EXCH2K3" text in the Search field for "Server Name" column
 	Then Counter shows "6" found rows
 
-@Evergreen @Admin @EvergreenJnr_AdminPage @AdminPage @DAS12236
+@Evergreen @Admin @EvergreenJnr_AdminPage @AdminPage @DAS12236 @Not_Run
 Scenario: EvergreenJnr_AdminPage_CheckThatNoConsoleErrorsAreDisplayedAfterUpdatingProjectScopeChanges
 	When User clicks Admin on the left-hand menu
 	Then Admin page should be displayed to the user
@@ -583,14 +583,14 @@ Scenario: EvergreenJnr_AdminPage_CheckThatNoConsoleErrorsAreDisplayedAfterUpdati
 	Then "Projects" page should be displayed to the user
 	When User clicks Create New Item button
 	Then "Create Project" page should be displayed to the user
-	When User enters "TestProject12" in the Project Name field
+	When User enters "TestProject5" in the Project Name field
 	And User selects "All Devices" in the Scope Project dropdown
 	When User clicks Create button on the Create Project page
 	And User clicks "Projects" link on the Admin page
 	Then "Projects" page should be displayed to the user
-	When User enters "TestProject12" text in the Search field for "Project" column
+	When User enters "TestProject5" text in the Search field for "Project" column
 	And User clicks content from "Project" column
-	Then Project "TestProject12" is displayed to user
+	Then Project "TestProject5" is displayed to user
 	When User selects "Scope Details" tab on the Project details page
 	When User navigates to the "Application Scope" tab in the Scope section on the Project details page
 	And User clicks "Entitled to the device owner" checkbox on the Project details page
@@ -607,7 +607,7 @@ Scenario: EvergreenJnr_AdminPage_CheckThatNoConsoleErrorsAreDisplayedAfterUpdati
 	Then Success message with "3 objects queued for onboarding, 0 objects offboarded" text is displayed on the Projects page
 	And "Applications to add (0 of 2126 selected)" is displayed to the user in the Project Scope Changes section
 	And There are no errors in the browser console
-	And Delete "TestProject12" Project in the Administration
+	And Delete "TestProject5" Project in the Administration
 
 @Evergreen @Admin @EvergreenJnr_AdminPage @AdminPage @DAS12491
 Scenario: EvergreenJnr_AdminPage_CheckThatSingularFoundItemLabelDisplaysOnActionsToolbarforBucketsList
