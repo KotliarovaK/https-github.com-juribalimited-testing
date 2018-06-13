@@ -141,6 +141,7 @@ Scenario: EvergreenJnr_AdminPage_CheckThatAfterApplyingDoNotIncludeDeviceOwnersL
 	Then Delete button is not displayed to the User on the Projects page
 	When User enters "TestProject1" text in the Search field for "Project" column
 	And User clicks content from "Project" column
+	When User selects "Scope Details" tab on the Project details page
 	When User selects "Do not include device owners" checkbox on the Project details page
 	And User selects "Scope Changes" tab on the Project details page
 	And User clicks "Users" tab in the Project Scope Changes section 
@@ -355,9 +356,9 @@ Scenario: EvergreenJnr_AdminPage_CheckThatMailboxesAreSuccessfullyAddedToBuckets
 	And User clicks "Mailboxes" tab
 	And User clicks Create New Item button
 	And User adds following items from list
-	| Item                             |
-	| abraham.d.robertson@dwlabs.local |
-	| abraham.h.maxwell@dwlabs.local   |
+	| Item                        |
+	| aaron.w.burton@dwlabs.local |
+	| alana.w.warner@dwlabs.local |
 	Then Success message is displayed and contains "The selected mailboxes have been added to the selected bucket" text
 	And There are no errors in the browser console
 
@@ -390,6 +391,7 @@ Scenario: EvergreenJnr_AdminPage_CheckThatAllAssociationsAreSelectedByDefaultInT
 	When User enters "TestProject7" text in the Search field for "Project" column
 	And User clicks content from "Project" column
 	Then Project "TestProject7" is displayed to user
+	When User selects "Scope Details" tab on the Project details page
 	When User navigates to the "Application Scope" tab in the Scope section on the Project details page
 	Then All Association are selected by default
 	And Delete "TestProject7" Project in the Administration
@@ -405,8 +407,8 @@ Scenario: EvergreenJnr_AdminPage_CheckThatConsoleErrorsAreNotDisplayedAfterAddin
 	And User clicks Create New Item button
 	And User adds following items from list
 	| Item            |
-	| Q43G5WEGFDQ1L8S |
-	| XV20GW6HJRVE2R  |
+	| CWVREMWDGTKJORM |
+	| 00K4CEEQ737BA4L |
 	Then Success message is displayed and contains "The selected devices have been added to the selected bucket" text
 	And There are no errors in the browser console
 
@@ -433,9 +435,9 @@ Scenario: EvergreenJnr_AdminPage_CheckThatConsoleErrorsAreNotDisplayedAfterAddin
 	And User clicks "Users" tab
 	And User clicks Create New Item button
 	And User adds following items from list
-	| Item                                  |
-	| FR\HRQ2819095 (Melusina Courtemanche) |
-	| FR\GBT6643930 (Villette Vallée)       |
+	| Item                              |
+	| US-E\ABW081519 (Darrin A. Arnold) |
+	| FR\IIN4276389 (Merci Daoust)      |
 	Then Success message is displayed and contains "The selected users have been added to the selected bucket" text
 	And There are no errors in the browser console
 
@@ -523,7 +525,7 @@ Scenario: EvergreenJnr_AdminPage_CheckThatPanelOfAvailableMemberslIsExpandedByDe
 	When User clicks Add Members button on the Teams page
 	Then Panel of available members is displayed to the user
 
-@Evergreen @Admin @EvergreenJnr_AdminPage @AdminPage @DAS12552
+@Evergreen @Admin @EvergreenJnr_AdminPage @AdminPage @DAS12552 @Not_Run
 Scenario: EvergreenJnr_AdminPage_CheckThatFiltersAreWorkingCorrectlyOnTheAdminPages
 	When User clicks Admin on the left-hand menu
 	Then Admin page should be displayed to the user
@@ -589,6 +591,7 @@ Scenario: EvergreenJnr_AdminPage_CheckThatNoConsoleErrorsAreDisplayedAfterUpdati
 	When User enters "TestProject12" text in the Search field for "Project" column
 	And User clicks content from "Project" column
 	Then Project "TestProject12" is displayed to user
+	When User selects "Scope Details" tab on the Project details page
 	When User navigates to the "Application Scope" tab in the Scope section on the Project details page
 	And User clicks "Entitled to the device owner" checkbox on the Project details page
 	And User selects "Scope Changes" tab on the Project details page

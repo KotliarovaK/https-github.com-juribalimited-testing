@@ -825,7 +825,7 @@ Examples:
 	| Users        | Username      | City            | $6BE000-SUDQ9614UVO8                                       | Cost Centre   | Department Name  |
 	| Mailboxes    | Email Address | Alias           | 000F977AC8824FE39B8@bclabs.local                           | Enabled       | Import           |
 
-@Evergreen @AllLists @EvergreenJnr_ListPanel @CustomListDisplay @DAS10998 @DAS10972 @DAS12602 @Delete_Newly_Created_List
+@Evergreen @AllLists @EvergreenJnr_ListPanel @CustomListDisplay @DAS10998 @DAS10972 @DAS12602 @Delete_Newly_Created_List @Not_Run
 Scenario Outline: EvergreenJnr_AllList_CheckThatTheEditListFunctionIsHiddenAfterAddingChangingAndRemovingSearchCriteria
 	When User clicks "<ListName>" on the left-hand menu
 	Then "<ListName>" list should be displayed to the user
@@ -865,7 +865,7 @@ Scenario Outline: EvergreenJnr_AllList_CheckThatTheEditListFunctionIsHiddenAfter
 	Then Edit List menu is not displayed
 	And "StaticList2" list is displayed to user
 
-	Examples:
+Examples:
 	| ListName     | ColumnName    | Search    | Rows  | NewRows |
 	| Devices      | Hostname      | Centre    | 3,284 | 17      |
 	| Users        | Username      | Barland   | 3     | 142     |
