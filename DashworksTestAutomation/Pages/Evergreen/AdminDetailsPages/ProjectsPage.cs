@@ -98,12 +98,5 @@ namespace DashworksTestAutomation.Pages.Evergreen.AdminDetailsPages
         {
             return Driver.IsElementDisplayed(By.XPath($".//div//span[contains(text(),'{tabName} ')]"));
         }
-
-        public bool WarningMessageProjectPage(string text)
-        {
-            Driver.WaitForElement(By.XPath(".//div[@class='inline-tip ng-star-inserted']"));
-            return Driver.IsElementDisplayed(
-                By.XPath($".//div[@class='inline-tip ng-star-inserted'][text()='{text}']"));
-        }
     }
 }

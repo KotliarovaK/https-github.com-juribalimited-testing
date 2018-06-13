@@ -58,7 +58,7 @@ namespace DashworksTestAutomation.Pages.Evergreen.AdminDetailsPages
         [FindsBy(How = How.XPath, Using = ".//div[@id='messageAdmin']")]
         public IWebElement DeleteWarningMessage { get; set; }
 
-        [FindsBy(How = How.XPath, Using = ".//button[contains(@class, 'messageAction btn mat-button')]/span[text()='DELETE']")]
+        [FindsBy(How = How.XPath, Using = ".//button[contains(@class, 'messageAction')]/span[text()='DELETE']")]
         public IWebElement DeleteButtonInWarningMessage { get; set; }
 
         [FindsBy(How = How.XPath, Using = ".//input[@placeholder='Search']")]
@@ -84,6 +84,9 @@ namespace DashworksTestAutomation.Pages.Evergreen.AdminDetailsPages
 
         [FindsBy(How = How.XPath, Using = "//a[@mattooltip='Back']")]
         public IWebElement BackToTableButton { get; set; }
+
+        [FindsBy(How = How.XPath, Using = ".//span[text()='CANCEL']")]
+        public IWebElement CancelButtonInWarning { get; set; }
 
         private By AgIconMenu = By.XPath("//span[contains(@class,'ag-icon-menu')]");
         
@@ -155,6 +158,13 @@ namespace DashworksTestAutomation.Pages.Evergreen.AdminDetailsPages
             Driver.WaitForDataLoading();
             Driver.WaitWhileControlIsNotDisplayed(byControl);
             Driver.FindElement(byControl).Click();
+        }
+
+        public bool WarningMessageAdminPage(string text)
+        {
+            Driver.WaitForElement(By.XPath(".//div[@id='messageAdmin']"));
+            return Driver.IsElementDisplayed(
+                By.XPath($".//div[@id='messageAdmin'][text()='{text}']"));
         }
 
         public void OpenColumnSettingsByName(string columnName)
