@@ -1033,7 +1033,6 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_AdminPage
         [NUnit.Framework.CategoryAttribute("DAS11763")]
         [NUnit.Framework.CategoryAttribute("DAS12742")]
         [NUnit.Framework.CategoryAttribute("DAS12760")]
-        [NUnit.Framework.CategoryAttribute("Not_Run")]
         public virtual void EvergreenJnr_AdminPage_CheckThatNoConsoleErrorsAreDisplayedWhenDeletingBucketFromBucketsSection()
         {
             System.Exception lastException = null;
@@ -1070,8 +1069,7 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_AdminPage
                         "AdminPage",
                         "DAS11763",
                         "DAS12742",
-                        "DAS12760",
-                        "Not_Run"});
+                        "DAS12760"});
             this.ScenarioSetup(scenarioInfo);
             this.FeatureBackground();
             testRunner.When("User clicks Admin on the left-hand menu", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
@@ -1221,9 +1219,9 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_AdminPage
             TechTalk.SpecFlow.Table table2 = new TechTalk.SpecFlow.Table(new string[] {
                         "Item"});
             table2.AddRow(new string[] {
-                        "abel.y.hanson@dwlabs.local"});
+                        "abigail.u.aguilar@dwlabs.local"});
             table2.AddRow(new string[] {
-                        "abel.z.warner@dwlabs.local"});
+                        "abraham.d.robertson@dwlabs.local"});
             testRunner.And("User adds following items from list", ((string)(null)), table2, "And ");
             testRunner.Then("Success message is displayed and contains \"The selected mailboxes have been added" +
                     " to the selected bucket\" text", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
@@ -1413,9 +1411,9 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_AdminPage
             TechTalk.SpecFlow.Table table3 = new TechTalk.SpecFlow.Table(new string[] {
                         "Item"});
             table3.AddRow(new string[] {
-                        "01COJATLYVAR7A6"});
+                        "XV20GW6HJRVE2R"});
             table3.AddRow(new string[] {
-                        "01DRMO46G58SXK"});
+                        "01N3Y2GUS6XTK7"});
             testRunner.And("User adds following items from list", ((string)(null)), table3, "And ");
             testRunner.Then("Success message is displayed and contains \"The selected devices have been added t" +
                     "o the selected bucket\" text", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
@@ -1536,7 +1534,7 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_AdminPage
             TechTalk.SpecFlow.Table table4 = new TechTalk.SpecFlow.Table(new string[] {
                         "Item"});
             table4.AddRow(new string[] {
-                        "UK\\DTB064395 (Gavin R. Spence)"});
+                        "UK\\LBM661859 (Jenifer V. Allison)"});
             table4.AddRow(new string[] {
                         "UK\\ANK462406 (Nakia D. Norton)"});
             testRunner.And("User adds following items from list", ((string)(null)), table4, "And ");

@@ -2898,22 +2898,22 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_ListPanel
         }
         
         [NUnit.Framework.TestAttribute()]
-        [NUnit.Framework.DescriptionAttribute("EvergreenJnr_DevicesList_CheckThatDataFromTheStaticListAreSavedInTheNewListAfterE" +
-            "diting")]
+        [NUnit.Framework.DescriptionAttribute("EvergreenJnr_UsersList_CheckThatDataFromTheStaticListAreSavedInTheNewListAfterEdi" +
+            "ting")]
         [NUnit.Framework.CategoryAttribute("Evergreen")]
-        [NUnit.Framework.CategoryAttribute("Devices")]
+        [NUnit.Framework.CategoryAttribute("Users")]
         [NUnit.Framework.CategoryAttribute("EvergreenJnr_ListPanel")]
         [NUnit.Framework.CategoryAttribute("CustomListDisplay")]
         [NUnit.Framework.CategoryAttribute("DAS12685")]
         [NUnit.Framework.CategoryAttribute("Delete_Newly_Created_List")]
-        public virtual void EvergreenJnr_DevicesList_CheckThatDataFromTheStaticListAreSavedInTheNewListAfterEditing()
+        public virtual void EvergreenJnr_UsersList_CheckThatDataFromTheStaticListAreSavedInTheNewListAfterEditing()
         {
             System.Exception lastException = null;
             for (int i = 0; (i <= 1); i = (i + 1))
             {
                 try
                 {
-                    this.EvergreenJnr_DevicesList_CheckThatDataFromTheStaticListAreSavedInTheNewListAfterEditingInternal();
+                    this.EvergreenJnr_UsersList_CheckThatDataFromTheStaticListAreSavedInTheNewListAfterEditingInternal();
                     return;
                 }
                 catch (System.Exception exc)
@@ -2932,12 +2932,12 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_ListPanel
             }
         }
         
-        private void EvergreenJnr_DevicesList_CheckThatDataFromTheStaticListAreSavedInTheNewListAfterEditingInternal()
+        private void EvergreenJnr_UsersList_CheckThatDataFromTheStaticListAreSavedInTheNewListAfterEditingInternal()
         {
-            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("EvergreenJnr_DevicesList_CheckThatDataFromTheStaticListAreSavedInTheNewListAfterE" +
-                    "diting", new string[] {
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("EvergreenJnr_UsersList_CheckThatDataFromTheStaticListAreSavedInTheNewListAfterEdi" +
+                    "ting", new string[] {
                         "Evergreen",
-                        "Devices",
+                        "Users",
                         "EvergreenJnr_ListPanel",
                         "CustomListDisplay",
                         "DAS12685",

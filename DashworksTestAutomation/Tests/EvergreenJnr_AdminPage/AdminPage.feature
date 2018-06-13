@@ -300,7 +300,7 @@ Scenario: EvergreenJnr_AdminPage_CheckThatNotificationMessageIsDisplayedAfterUpd
 	Then Success message The "TestBucket2" bucket has been updated is displayed on the Buckets page
 	And Delete "TestBucket2" Bucket in the Administration
 
-@Evergreen @Admin @EvergreenJnr_AdminPage @AdminPage @DAS11763 @DAS12742 @DAS12760 @Not_Run
+@Evergreen @Admin @EvergreenJnr_AdminPage @AdminPage @DAS11763 @DAS12742 @DAS12760
 Scenario: EvergreenJnr_AdminPage_CheckThatNoConsoleErrorsAreDisplayedWhenDeletingBucketFromBucketsSection
 	When User clicks Admin on the left-hand menu
 	Then Admin page should be displayed to the user
@@ -355,9 +355,9 @@ Scenario: EvergreenJnr_AdminPage_CheckThatMailboxesAreSuccessfullyAddedToBuckets
 	And User clicks "Mailboxes" tab
 	And User clicks Create New Item button
 	And User adds following items from list
-	| Item                       |
-	| abel.y.hanson@dwlabs.local |
-	| abel.z.warner@dwlabs.local |
+	| Item                             |
+	| abigail.u.aguilar@dwlabs.local   |
+	| abraham.d.robertson@dwlabs.local |
 	Then Success message is displayed and contains "The selected mailboxes have been added to the selected bucket" text
 	And There are no errors in the browser console
 
@@ -405,9 +405,9 @@ Scenario: EvergreenJnr_AdminPage_CheckThatConsoleErrorsAreNotDisplayedAfterAddin
 	And User clicks content from "Bucket" column
 	And User clicks Create New Item button
 	And User adds following items from list
-	| Item            |
-	| 01COJATLYVAR7A6 |
-	| 01DRMO46G58SXK  |
+	| Item           |
+	| XV20GW6HJRVE2R |
+	| 01N3Y2GUS6XTK7 |
 	Then Success message is displayed and contains "The selected devices have been added to the selected bucket" text
 	And There are no errors in the browser console
 
@@ -434,9 +434,9 @@ Scenario: EvergreenJnr_AdminPage_CheckThatConsoleErrorsAreNotDisplayedAfterAddin
 	And User clicks "Users" tab
 	And User clicks Create New Item button
 	And User adds following items from list
-	| Item                           |
-	| UK\DTB064395 (Gavin R. Spence) |
-	| UK\ANK462406 (Nakia D. Norton) |
+	| Item                              |
+	| UK\LBM661859 (Jenifer V. Allison) |
+	| UK\ANK462406 (Nakia D. Norton)    |
 	Then Success message is displayed and contains "The selected users have been added to the selected bucket" text
 	And There are no errors in the browser console
 
