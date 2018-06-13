@@ -284,6 +284,7 @@
     <Compile Include="Pages\Projects\CreatingProjects\GroupPropertiesPage.cs" />
     <Compile Include="Pages\Projects\CreatingProjects\MailTemplatePropertiesPage.cs" />
     <Compile Include="Pages\Projects\CreatingProjects\NewsPage.cs" />
+    <Compile Include="Pages\Projects\CreatingProjects\Tasks\TaskProperties_RequestTypesPage.cs" />
     <Compile Include="Pages\Projects\ProjectLogin.cs" />
     <Compile Include="Pages\Projects\CreatingProjects\ProjectPropertiesPage.cs" />
     <Compile Include="Pages\Projects\CreatingProjects\ProjectsHomePage.cs" />

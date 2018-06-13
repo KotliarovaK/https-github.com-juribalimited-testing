@@ -46,7 +46,7 @@ Scenario: Projects_CreateComputerScheduledProject
 	| ShowOriginalColumn | IncludeSiteName | NotApplicableApplications | InstalledApplications | EntitledApplications |  TaskEmailCcEmailAddress | TaskEmailBccEmailAddress | StartDate  | EndDate     |
 	| true               | true            | true                      | true                  | true                 |Test@test.com           | Test@test.com            | 8 May 2012 | 10 Apr 2018 |
 	Then Success message is displayed with "Project was successfully updated" text
-	#Creating Request Types
+		#Creating Request Types
 	When User navigate to "Request Types" tab
 	Then "Manage Request Types" page is displayed to the user
 	When User clicks "Create Request Type" button
@@ -126,7 +126,7 @@ Scenario: Projects_CreateComputerScheduledProject
 	Then created Category is displayed in the table
 	When User navigate to "Stages" tab
 	Then "Manage Stages" page is displayed to the user
-	#Creating Stage
+		#Creating Stage
 	When User clicks "Create Stage" button
 	And User create Stage
 	| StageName |
@@ -154,7 +154,7 @@ Scenario: Projects_CreateComputerScheduledProject
 	| Name                 | Description              | SubjectLine | BodyText |
 	| TestMailTemplateName | ComputerScheduledProject | TestText    | TestText |
 	Then Success message is displayed with "Mail Template successfully created." text
-	#Creating Tasks 1
+		#Creating Tasks 1
 	When User navigate to "Tasks" tab
 	Then "Manage Tasks" page is displayed to the user
 	When User clicks "Create Task" button
@@ -168,7 +168,7 @@ Scenario: Projects_CreateComputerScheduledProject
 	Then Success message is displayed with "Task successfully updated" text
 	When User clicks "Cancel" button
 	Then created Task is displayed in the table
-	#Creating Tasks 2
+		#Creating Tasks 2
 	When User clicks "Create Task" button
 	And User create Task
 	| Name        | Help        | StageNameString | TaskTypeString | ValueTypeString | ObjectTypeString | TaskValuesTemplateCheckbox |
@@ -180,7 +180,7 @@ Scenario: Projects_CreateComputerScheduledProject
 	Then Success message is displayed with "Task successfully updated" text
 	When User clicks "Cancel" button
 	Then created Task is displayed in the table
-	#Creating Tasks 3
+		#Creating Tasks 3
 	When User clicks "Create Task" button
 	And User create Task
 	| Name           | Help           | StageNameString | TaskTypeString | ValueTypeString | ObjectTypeString | TaskValuesTemplateCheckbox |
@@ -192,7 +192,7 @@ Scenario: Projects_CreateComputerScheduledProject
 	Then Success message is displayed with "Task successfully updated" text
 	When User clicks "Cancel" button
 	Then created Task is displayed in the table
-	#Creating Tasks 4
+		#Creating Tasks 4
 	When User clicks "Create Task" button
 	And User create Task
 	| Name          | Help          | StageNameString | TaskTypeString | ValueTypeString | ObjectTypeString | TaskValuesTemplateCheckbox |
@@ -204,7 +204,7 @@ Scenario: Projects_CreateComputerScheduledProject
 	Then Success message is displayed with "Task successfully updated" text
 	When User clicks "Cancel" button
 	Then created Task is displayed in the table
-	#Creating Tasks 5
+		#Creating Tasks 5
 	When User clicks "Create Task" button
 	And User create Task
 	| Name           | Help           | StageNameString | TaskTypeString | ValueTypeString | ObjectTypeString | TaskValuesTemplateCheckbox |
@@ -216,7 +216,7 @@ Scenario: Projects_CreateComputerScheduledProject
 	Then Success message is displayed with "Task successfully updated" text
 	When User clicks "Cancel" button
 	Then created Task is displayed in the table
-	#Creating Tasks 6
+		#Creating Tasks 6
 	When User clicks "Create Task" button
 	And User create Task
 	| Name            | Help            | StageNameString | TaskTypeString | ValueTypeString | ObjectTypeString | TaskValuesTemplateCheckbox |
@@ -228,7 +228,7 @@ Scenario: Projects_CreateComputerScheduledProject
 	Then Success message is displayed with "Task successfully updated" text
 	When User clicks "Cancel" button
 	Then created Task is displayed in the table
-	#Creating Tasks 7
+		#Creating Tasks 7
 	When User clicks "Create Task" button
 	And User create Task
 	| Name      | Help      | StageNameString | TaskTypeString | ValueTypeString | ObjectTypeString | TaskValuesTemplateCheckbox |
@@ -240,7 +240,7 @@ Scenario: Projects_CreateComputerScheduledProject
 	Then Success message is displayed with "Task successfully updated" text
 	When User clicks "Cancel" button
 	Then created Task is displayed in the table
-	#Creating Tasks 8
+		#Creating Tasks 8
 	When User clicks "Create Task" button
 	And User create Task
 	| Name                       | Help                       | StageNameString | TaskTypeString | ValueTypeString | ObjectTypeString | TaskValuesTemplateString       | TaskValuesTemplateCheckbox |
@@ -256,10 +256,13 @@ Scenario: Projects_CreateComputerScheduledProject
 	| Name    | ReadinessString | TaskStatusString | DefaultValue |
 	| Blocked | Purple          | Open             | false        |
 	And User clicks "Save Value" button
-	#TODO edit existing value
+	#TODO edit Value
+	And User edit "Not started" Value
+	| Name | Readiness | MakeDefaul |
+	|      | Blue      | true       |
 	And User clicks "« Go Back to Tasks" button
 	Then created Task is displayed in the table
-	#Creating Tasks 9
+		#Creating Tasks 9
 	When User clicks "Create Task" button
 	And User create Task
 	| Name                   | Help                   | StageNameString | TaskTypeString | ValueTypeString | ObjectTypeString | TaskValuesTemplateString     | TaskValuesTemplateCheckbox |
@@ -278,7 +281,7 @@ Scenario: Projects_CreateComputerScheduledProject
 	#TODO edit existing value
 	And User clicks "« Go Back to Tasks" button
 	Then created Task is displayed in the table
-	#Creating Tasks 10
+		#Creating Tasks 10
 	When User clicks "Create Task" button
 	And User create Task
 	| Name                                  | Help                                  | StageNameString | TaskTypeString | ValueTypeString | ObjectTypeString | TaskValuesTemplateString       | TaskValuesTemplateCheckbox |
@@ -297,55 +300,147 @@ Scenario: Projects_CreateComputerScheduledProject
 	#TODO edit existing value
 	And User clicks "« Go Back to Tasks" button
 	Then created Task is displayed in the table
-
-	#
+		#Creating Tasks 11
 	When User clicks "Create Task" button
 	And User create Task
-	| Name          | Help                     | ObjectTypeString | TaskValuesTemplateCheckbox |
-	| TestTaskName1 | ComputerScheduledProject | Application      | true                       |
+	| Name                     | Help                     | StageNameString | TaskTypeString | ValueTypeString | ObjectTypeString | TaskValuesTemplateString  | TaskValuesTemplateCheckbox |
+	| Dropdown RAG Date & Time | Dropdown RAG Date & Time | Stage3          | Normal         | DropDownList    | Computer         | ReadinessNnsfcWithDueDate | false                      |
 	Then Success message is displayed with "Task successfully created" text
 	When User updates the Task page
-	| TaskHaADueDate | TaskImpactsReadiness | TaskHasAnOwner | ShowDetails | ProjectObject | BulkUpdate | SelfService |
-	| true           | true                 | false          | false       | false         | false      | false       |
+	| TaskHaADueDate | DateModeString | TaskProjectRoleString | TaskHasAnOwner | ShowDetails | ProjectObject | BulkUpdate | SelfService |
+	| true           | DateAndTime    | None                  | true           | false       | false         | false      | true        |
 	Then Success message is displayed with "Task successfully updated" text
-	When User publishes the task
-	Then selected task was published
-	When User navigate to "Values" page
-	And User clicks "Add Value" button
-	And User create new Value
-	| Name          | Help                     | DefaultValue |
-	| TestValueName | ComputerScheduledProject | false        |
-	And User clicks "Save Value" button
-	And User clicks "« Go Back to Tasks" button
-	Then created Task is displayed in the table
-	When User clicks "Create Task" button
-	And User create Task
-	| Name          | Help                     | ObjectTypeString | TaskValuesTemplateCheckbox |
-	| TestTaskName2 | ComputerScheduledProject | User             | true                       |
-	Then Success message is displayed with "Task successfully created" text
-	When User updates the Task page
-	| TaskHaADueDate | TaskImpactsReadiness | TaskHasAnOwner | ShowDetails | ProjectObject | BulkUpdate | SelfService |
-	| true           | true                 | false          | false       | true          | false      | false       |
-	Then Success message is displayed with "Task successfully updated" text
-	When User publishes the task
-	Then selected task was published
-	When User navigate to "Values" page
-	And User clicks "Add Value" button
-	And User create new Value
-	| Name          | Help                     | DefaultValue |
-	| TestValueName | ComputerScheduledProject | true         |
-	And User clicks "Save Value" button
-	And User navigate to "Emails" page
-	And User clicks "Add Email" button
-	And User create new Email
-	| CountDays | SendOnceOnly | RequestTypesAll | ApllyEmailToAll | To                                  |
-	| true      | true         | true            | true            | ComputerScheduledProject2@email.com |
-	And User clicks "Create Email Notification" button
-	Then Success message is displayed with "Email notification for task successfully created" text
-	When User clicks "« Go Back" button
-	Then created Email is displayed in the table
+	When User navigate to "Request Types" page
+	When User select "3 TestRequestTypeName" Request Type on Task page
+	When User save selected Request Type
 	When User clicks "« Go Back to Tasks" button
 	Then created Task is displayed in the table
+		#Creating Tasks 12
+	When User clicks "Create Task" button
+	And User create Task
+	| Name             | Help             | StageNameString | TaskTypeString | ValueTypeString | ObjectTypeString | TaskValuesTemplateCheckbox |
+	| Text Task (User) | Text Task (User) | Stage1          | Normal         | Text            | User             | true                       |
+	Then Success message is displayed with "Task successfully created" text
+	When User updates the Task page
+	| TextModeString | TaskProjectRoleString | ShowDetails | ProjectObject | BulkUpdate | SelfService |
+	| MultipleLine   | EmailAddressUser      | true        | false         | false      | false       |
+	Then Success message is displayed with "Task successfully updated" text
+	When User clicks "Cancel" button
+	Then created Task is displayed in the table
+		#Creating Tasks 13
+	When User clicks "Create Task" button
+	And User create Task
+	| Name                              | Help                              | StageNameString | TaskTypeString | ValueTypeString | ObjectTypeString | TaskValuesTemplateString  | TaskValuesTemplateCheckbox |
+	| Radiobutton RAG Owner Date (User) | Radiobutton RAG Owner Date (User) | Stage2          | Normal         | Radiobutton     | User             | ReadinessNnsfcWithDueDate | true                       |
+	Then Success message is displayed with "Task successfully created" text
+	When User updates the Task page
+	| TaskHaADueDate | DateModeString | TaskProjectRoleString      | TaskHasAnOwner | ShowDetails | ProjectObject | BulkUpdate | SelfService |
+	| true           | DateAndTime    | SelfServiceEnabledUserMode | true           | true        | false         | false      | false       |
+	Then Success message is displayed with "Task successfully updated" text
+	When User navigate to "Value" page
+	And User clicks "Add Value" button
+	And User create new Value
+	| Name    | ReadinessString | TaskStatusString | DefaultValue |
+	| Blocked | LightBlue       | Open             | false        |
+	And User clicks "Save Value" button
+	#TODO edit existing value
+	And User clicks "« Go Back to Tasks" button
+	Then created Task is displayed in the table
+		#Creating Tasks 14
+	When User clicks "Create Task" button
+	And User create Task
+	| Name                      | Help                      | StageNameString | TaskTypeString | ValueTypeString | ObjectTypeString | TaskValuesTemplateString | TaskValuesTemplateCheckbox |
+	| Group Dropdown RAG (User) | Group Dropdown RAG (User) | Stage3          | Group          | DropDownList    | User             | ReadinessNnsfc           | false                      |
+	Then Success message is displayed with "Task successfully created" text
+	When User updates the Task page
+	| TaskHaADueDate | TaskProjectRoleString  | ShowDetails | BulkUpdate | GroupTaskDashboard |
+	| false          | EmailNotificationsUser | true        | false      | false              |
+	Then Success message is displayed with "Task successfully updated" text
+	When User navigate to "Value" page
+	#TODO edit existing value
+	When User navigate to "Request Types" page
+	When User select "[Default (User)]" Request Type on Task page
+	When User save selected Request Type
+	And User clicks "« Go Back to Tasks" button
+	Then created Task is displayed in the table
+		#Creating Tasks 15
+	When User clicks "Create Task" button
+	And User create Task
+	| Name             | Help             | StageNameString | TaskTypeString | ValueTypeString | ObjectTypeString | TaskValuesTemplateCheckbox |
+	| Date Task (User) | Date Task (User) | Stage4          | Normal         | Date            | User             | true                       |
+	Then Success message is displayed with "Task successfully created" text
+	When User updates the Task page
+	| TaskHaADueDate | TaskProjectRoleString                       | ShowDetails | ProjectObject | BulkUpdate | SelfService |
+	| true           | SelfServiceProjectDateCompletedDateUserMode | false       | true          | true       | false       |
+	Then Success message is displayed with "Task successfully updated" text
+	When User clicks "Cancel" button
+	Then created Task is displayed in the table
+		#Creating Tasks 16
+	When User clicks "Create Task" button
+	And User create Task
+	| Name                                         | Help                                         | StageNameString | TaskTypeString | ValueTypeString | ObjectTypeString | TaskValuesTemplateString         | TaskValuesTemplateCheckbox |
+	| Radiobutton Non RAG Owner Date (Application) | Radiobutton Non RAG Owner Date (Application) | Stage1          | Normal         | Radiobutton     | Application      | NoReadinessNnsfcWithDueDateOwner | true                       |
+	Then Success message is displayed with "Task successfully created" text
+	When User updates the Task page
+	| TaskHaADueDate | DateModeString | TaskProjectRoleString | ShowDetails | ProjectObject | BulkUpdate | SelfService |
+	| true           | DateAndTime    | Workflow              | true        | false         | false      | false       |
+	Then Success message is displayed with "Task successfully updated" text
+	When User navigate to "Value" page
+	And User clicks "Add Value" button
+	And User create new Value
+	| Name    | TaskStatusString | DefaultValue |
+	| Unknown | Open             | true         |
+	And User clicks "Save Value" button
+	#TODO edit existing value
+	And User clicks "« Go Back to Tasks" button
+	Then created Task is displayed in the table
+		#Creating Tasks 17
+	When User clicks "Create Task" button
+	And User create Task
+	| Name                             | Help                             | StageNameString | TaskTypeString | ValueTypeString | ObjectTypeString | TaskValuesTemplateString | TaskValuesTemplateCheckbox |
+	| Dropdown RAG Owner (Application) | Dropdown RAG Owner (Application) | Stage2          | Normal         | DropDownList    | Application      | ReadinessNnsfc           | false                      |
+	Then Success message is displayed with "Task successfully created" text
+	When User updates the Task page
+	| TaskHaADueDate | TaskProjectRoleString | ShowDetails | ProjectObject | BulkUpdate | SelfService |
+	| false          | None                  | true        | false         | false      | true       |
+	Then Success message is displayed with "Task successfully updated" text
+	When User navigate to "Value" page
+	And User clicks "Add Value" button
+	And User create new Value
+	| Name                | ReadinessString | TaskStatusString | DefaultValue |
+	| Under Investigation | Amber           | Open             | false        |
+	And User clicks "Save Value" button
+	#TODO edit existing value
+	When User navigate to "Request Types" page
+	When User select "2 TestRequestTypeName" Request Type on Task page
+	When User save selected Request Type
+	And User clicks "« Go Back to Tasks" button
+	Then created Task is displayed in the table
+		#Creating Tasks 18
+	When User clicks "Create Task" button
+	And User create Task
+	| Name                      | Help                      | StageNameString | TaskTypeString | ValueTypeString | ObjectTypeString | TaskValuesTemplateCheckbox |
+	| Application Delivery Date | Application Delivery Date | Stage3          | Normal         | Date            | Application      | true                       |
+	Then Success message is displayed with "Task successfully created" text
+	When User updates the Task page
+	| TaskHaADueDate | DateModeString | TaskProjectRoleString   | ShowDetails | ProjectObject | BulkUpdate | SelfService |
+	| true           | DateOnly       | ApplicationDeliveryDate | true        | false         | false      | false       |
+	Then Success message is displayed with "Task successfully updated" text
+	When User clicks "Cancel" button
+	Then created Task is displayed in the table
+		#Creating Tasks 19
+	When User clicks "Create Task" button
+	And User create Task
+	| Name                    | Help                    | StageNameString | TaskTypeString | ValueTypeString | ObjectTypeString | TaskValuesTemplateCheckbox |
+	| Text Task (Application) | Text Task (Application) | Stage4          | Normal         | Text            | Application      | true                       |
+	Then Success message is displayed with "Task successfully created" text
+	When User updates the Task page
+	| TextModeString | TaskProjectRoleString | ShowDetails | ProjectObject | BulkUpdate | SelfService |
+	| SingleLine     | DeploymentTarget      | true        | false         | false      | true        |
+	Then Success message is displayed with "Task successfully updated" text
+	When User clicks "Cancel" button
+	Then created Task is displayed in the table
+		#Creating Teams
 	When User navigate to "Teams" tab
 	Then "Manage Teams" page is displayed to the user
 	When User clicks "Create Team" button
@@ -378,6 +473,7 @@ Scenario: Projects_CreateComputerScheduledProject
 	And User clicks "Cancel" button
 	Then created Team is displayed in the table
 	And "2" number of Members is displayed for created Team
+		#Creating Groups
 	When User navigate to "Groups" tab
 	Then "Manage Groups" page is displayed to the user
 	When User clicks "Create Group" button
@@ -398,12 +494,14 @@ Scenario: Projects_CreateComputerScheduledProject
 	When User navigate to "Teams" tab
 	Then "Manage Teams" page is displayed to the user
 	And "1" number of Groups is displayed for "3" Team
+		#Creating News
 	When User navigate to "News" tab
 	Then "Manage News" page is displayed to the user
 	When User updating News page
 	| Title                    | Text     |
 	| ComputerScheduledProject | TestText |
 	Then Success message is displayed with "Project news was successfully updated." text
+		#Self Service tab
 	When User navigate to "Self Service" tab
 	Then "Manage Self Service" page is displayed to the user
 	When User updates the Details page on Self Service tab
@@ -450,6 +548,7 @@ Scenario: Projects_CreateComputerScheduledProject
 	| SelfServicePortal | NavigationMenu | ChoicesSummary | IncludeLink | PageDescription          |
 	| true              | false          | false          | false       | ComputerScheduledProject |
 	Then Success message is displayed with "Self Service Screen successfully updated" text
+		#Capacity tab
 	When User navigate to "Capacity" tab
 	Then "Manage Capacity" page is displayed to the user
 	When User updates the Details on Capacity tab
@@ -477,6 +576,7 @@ Scenario: Projects_CreateComputerScheduledProject
 	| Date        | Capacity | Comment                  |
 	| 03 Apr 2016 | 0        | ComputerScheduledProject |
 	Then Success message is displayed with "Override date successfully inserted" text
+		#removing
 	When User navigate to "Groups" tab
 	And User removes created Group
 	Then selected Group was removed

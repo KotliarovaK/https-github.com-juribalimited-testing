@@ -3,6 +3,7 @@ using System.Linq;
 using DashworksTestAutomation.DTO.Projects;
 using DashworksTestAutomation.Extensions;
 using DashworksTestAutomation.Pages.Projects;
+using DashworksTestAutomation.Pages.Projects.CreatingProjects.Tasks;
 using DashworksTestAutomation.Pages.Projects.Tasks;
 using DashworksTestAutomation.Utils;
 using NUnit.Framework;
@@ -242,7 +243,7 @@ namespace DashworksTestAutomation.Steps.Projects
             var page = _driver.NowAt<StagePropertiesPage>();
 
             table.CreateInstance<StagePropertiesDto>().CopyPropertiesTo(_stagePropertiesDto);
-            _stagePropertiesDto.StageName += TestDataGenerator.RandomString();
+            //_stagePropertiesDto.StageName += TestDataGenerator.RandomString();
             StagePropertiesDto tempStagePropertiesDto = new StagePropertiesDto();
             _stagePropertiesDto.CopyPropertiesTo(tempStagePropertiesDto);
             _projectDto.Stages.Add(tempStagePropertiesDto);
@@ -268,20 +269,24 @@ namespace DashworksTestAutomation.Steps.Projects
             _taskPropertiesDto.Stages = (StageNameEnum)Enum.Parse(typeof(StageNameEnum), _taskPropertiesDto.StageNameString);
             //assign TaskValuesTemplateString to TaskValuesTemplateEnum
             _taskPropertiesDto.TaskValuesTemplate = (TaskValuesTemplateEnum)Enum.Parse(typeof(TaskValuesTemplateEnum), _taskPropertiesDto.TaskValuesTemplateString);
-            _taskPropertiesDto.Name += TestDataGenerator.RandomString();
             TaskPropertiesDto tempTaskPropertiesDto = new TaskPropertiesDto();
             _taskPropertiesDto.CopyPropertiesTo(tempTaskPropertiesDto);
             _projectDto.Tasks.Add(tempTaskPropertiesDto);
 
-            page.Name.SendKeys(_taskPropertiesDto.Name);
-            page.Help.SendKeys(_taskPropertiesDto.Help);
-            page.StageName.SelectboxSelect(_taskPropertiesDto.Stages.GetValue());
-            page.TaskType.SelectboxSelect(_taskPropertiesDto.TaskType.GetValue());
             page.ValueType.SelectboxSelect(_taskPropertiesDto.ValueType.GetValue());
-            page.ObjectType.SelectboxSelect(_taskPropertiesDto.ObjectType.GetValue());
-            if (_taskPropertiesDto.ValueType.Equals(ValueTypeEnum.Radiobutton) || _taskPropertiesDto.ValueType.Equals(ValueTypeEnum.DropDownList))
+            if (_taskPropertiesDto.ValueType.Equals(ValueTypeEnum.Radiobutton))
                 page.TaskValuesTemplate.SelectboxSelect(_taskPropertiesDto.TaskValuesTemplate.GetValue());
-            page.TaskValuesTemplateCheckbox.SetCheckboxState(_taskPropertiesDto.TaskValuesTemplateCheckbox);
+            if (_taskPropertiesDto.ValueType.Equals(ValueTypeEnum.DropDownList))
+                page.TaskValuesTemplate.SelectboxSelect(_taskPropertiesDto.TaskValuesTemplate.GetValue());
+            else
+            {
+                page.Name.SendKeys(_taskPropertiesDto.Name);
+                page.Help.SendKeys(_taskPropertiesDto.Help);
+                page.StageName.SelectboxSelect(_taskPropertiesDto.Stages.GetValue());
+                page.TaskType.SelectboxSelect(_taskPropertiesDto.TaskType.GetValue());
+                page.ObjectType.SelectboxSelect(_taskPropertiesDto.ObjectType.GetValue());
+                page.TaskValuesTemplateCheckbox.SetCheckboxState(_taskPropertiesDto.TaskValuesTemplateCheckbox);
+            }
 
             page.ConfirmCreateTaskButton.Click();
         }
@@ -301,8 +306,8 @@ namespace DashworksTestAutomation.Steps.Projects
 
             if (_taskPropertiesDto.ValueType.Equals(ValueTypeEnum.DropDownList) || _taskPropertiesDto.ValueType.Equals(ValueTypeEnum.Radiobutton))
             {
-                page.TaskImpactsReadiness.SetCheckboxState(_taskPropertiesDetailsDto.TaskImpactsReadiness);
-                page.TaskHasAnOwner.SetCheckboxState(_taskPropertiesDetailsDto.TaskHasAnOwner);
+                //page.TaskImpactsReadiness.SetCheckboxState(_taskPropertiesDetailsDto.TaskImpactsReadiness);
+                //page.TaskHasAnOwner.SetCheckboxState(_taskPropertiesDetailsDto.TaskHasAnOwner);
                 page.TaskHaADueDate.SetCheckboxState(_taskPropertiesDetailsDto.TaskHaADueDate);
                 if (_taskPropertiesDetailsDto.TaskHaADueDate.Equals(true))
                 page.DateMode.SelectboxSelect(_taskPropertiesDetailsDto.DateMode.GetValue());
@@ -382,6 +387,41 @@ namespace DashworksTestAutomation.Steps.Projects
                 page.SelectOnboardedApplications(_taskPropertiesValuesDto.Readiness);
             page.TaskStatus.SelectboxSelect(_taskPropertiesValuesDto.TaskStatus.GetValue());
             page.DefaultValue.SetCheckboxState(_taskPropertiesValuesDto.DefaultValue);
+        }
+
+        [When(@"User edit ""(.*)"" Value")]
+        public void WhenUserEditValue(string value, Table table)
+        {
+            var page = _driver.NowAt<TaskProperties_ValuesPage>();
+
+            table.CreateInstance<TaskProperties_ValuesDto>().CopyPropertiesTo(_taskPropertiesValuesDto);
+            //assign TaskStatusString to TaskStatusEnum
+            _taskPropertiesValuesDto.TaskStatus = (TaskStatusEnum)Enum.Parse(typeof(TaskStatusEnum), _taskPropertiesValuesDto.TaskStatusString);
+            //assign ReadinessString to ReadinessEnum
+            _taskPropertiesValuesDto.Readiness = (ReadinessEnum)Enum.Parse(typeof(ReadinessEnum), _taskPropertiesValuesDto.ReadinessString);
+
+            page.Name.Clear();
+            page.Name.SendKeys(_taskPropertiesValuesDto.Name);
+            //TODO colors select
+            if (_taskPropertiesDetailsDto.TaskImpactsReadiness.Equals(true))
+                page.SelectOnboardedApplications(_taskPropertiesValuesDto.Readiness);
+            page.TaskStatus.SelectboxSelect(_taskPropertiesValuesDto.TaskStatus.GetValue());
+            page.DefaultValue.SetCheckboxState(_taskPropertiesValuesDto.DefaultValue);
+        }
+
+        [When(@"User select ""(.*)"" Request Type on Task page")]
+        public void WhenUserSelectRequestTypeOnTaskPage(string requestTypeName)
+        {
+            var page = _driver.NowAt<TaskProperties_RequestTypesPage>();
+            page.GetRequestTypeCheckboxByName(requestTypeName).Click();
+        }
+
+        [When(@"User save selected Request Type")]
+        public void WhenUserSaveSelectedRequestType()
+        {
+            var page = _driver.NowAt<TaskProperties_RequestTypesPage>();
+            page.SaveRequestTypeButton.Click();
+            _driver.AcceptAlert();
         }
 
         [When(@"User create new Email")]

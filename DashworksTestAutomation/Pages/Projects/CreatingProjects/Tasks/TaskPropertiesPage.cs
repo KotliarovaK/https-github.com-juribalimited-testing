@@ -44,7 +44,7 @@ namespace DashworksTestAutomation.Pages.Projects
                 SelectorFor(this, p => p.TaskType),
                 SelectorFor(this, p => p.ValueType),
                 SelectorFor(this, p => p.ObjectType),
-                SelectorFor(this, p => p.TaskValuesTemplate),
+                //SelectorFor(this, p => p.TaskValuesTemplate),
                 SelectorFor(this, p => p.TaskValuesTemplateCheckbox)
             };
         }

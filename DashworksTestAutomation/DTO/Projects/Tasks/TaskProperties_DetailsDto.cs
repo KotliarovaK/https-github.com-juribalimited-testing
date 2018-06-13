@@ -48,8 +48,18 @@ namespace DashworksTestAutomation.DTO.Projects
 
     public enum TaskProjectRoleEnum
     {
+        [Description("Deployment Target")]
+        DeploymentTarget,
+        [Description("Application Delivery Date")]
+        ApplicationDeliveryDate,
+        [Description("Email Address (User)")]
+        EmailAddressUser,
+        [Description("Email Address CC (User)")]
+        EmailAddressCCUser,
         [Description("Self Service Enabled (Computer mode)")]
         SelfServiceEnabledComputerMode,
+        [Description("Self Service Enabled (User mode)")]
+        SelfServiceEnabledUserMode,
         [Description("Readiness (NNSFC with due date & owner)")]
         ReadinessNnsfcWithDueDateOwner,
         Workflow,
@@ -87,6 +97,8 @@ namespace DashworksTestAutomation.DTO.Projects
         SelfServiceOtherOptions2CompletedDateComputerMode,
         [Description("Self Service Project Date Completed Date  (Computer mode)")]
         SelfServiceProjectDateCompletedDateComputerMode,
+        [Description("Self Service Project Date Completed Date  (User mode)")]
+        SelfServiceProjectDateCompletedDateUserMode,
         [Description("Target Date")]
         TargetDate,
         None
