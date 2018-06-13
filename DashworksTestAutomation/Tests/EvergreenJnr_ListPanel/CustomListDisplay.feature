@@ -1010,8 +1010,8 @@ Scenario: EvergreenJnr_DevicesList_CheckThatNoErrorsAreDisplayedAfterDuplicating
 	Then "111111111111111111111111111111111111112" list is displayed to user
 	Then There are no errors in the browser console
 
-@Evergreen @Devices @EvergreenJnr_ListPanel @CustomListDisplay @DAS12685 @Delete_Newly_Created_List
-Scenario: EvergreenJnr_DevicesList_CheckThatDataFromTheStaticListAreSavedInTheNewListAfterEditing
+@Evergreen @Users @EvergreenJnr_ListPanel @CustomListDisplay @DAS12685 @Delete_Newly_Created_List
+Scenario: EvergreenJnr_UsersList_CheckThatDataFromTheStaticListAreSavedInTheNewListAfterEditing
 	When User create static list with "StaticList1412" name on "Users" page with following items
 	| ItemName            |
 	| 003F5D8E1A844B1FAA5 |
