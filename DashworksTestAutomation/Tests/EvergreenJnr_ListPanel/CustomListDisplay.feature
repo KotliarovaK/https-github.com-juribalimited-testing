@@ -1017,15 +1017,21 @@ Scenario: EvergreenJnr_DevicesList_CheckThatDataFromTheStaticListAreSavedInTheNe
 	| 003F5D8E1A844B1FAA5 |
 	| 00A5B910A1004CF5AC4 |
 	Then "StaticList1412" list is displayed to user
-	Then "2" rows are displayed in the agGrid
-	When User duplicates list with "StaticList1412" name
-	Then "StaticList14122" list is displayed to user
-	Then "2" rows are displayed in the agGrid
-	When User navigates to the "StaticList1412" list
-	When User click on 'Username' column header
-	Then data in table is sorted by 'Username' column in ascending order
+	When User clicks the Columns button
+	Then Columns panel is displayed to the user
+	When ColumnName is entered into the search box and the selection is clicked
+	| ColumnName |
+	| Enabled    |
+	Then ColumnName is added to the list
+	| ColumnName |
+	| Enabled    |
+	#When User click on 'Username' column header
+	#Then data in table is sorted by 'Username' column in ascending order
 	When User clicks Save button on the list panel
 	When User selects Save as new list option
 	When User creates new custom list with "CustomList5588" name
 	Then "CustomList5588" list is displayed to user
+	Then "2" rows are displayed in the agGrid
+	When User duplicates list with "StaticList1412" name
+	Then "StaticList14122" list is displayed to user
 	Then "2" rows are displayed in the agGrid
