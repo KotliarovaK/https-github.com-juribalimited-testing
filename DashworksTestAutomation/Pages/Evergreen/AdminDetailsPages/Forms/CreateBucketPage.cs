@@ -19,6 +19,9 @@ namespace DashworksTestAutomation.Pages.Evergreen.AdminDetailsPages
         [FindsBy(How = How.XPath, Using = ".//label[text()='Bucket Name']/ancestor::div[@class='form-item']//input")]
         public IWebElement BucketNameField { get; set; }
 
+        [FindsBy(How = How.XPath, Using = ".//span[text()='Default bucket']")]
+        public IWebElement DefaulBucketCheckbox { get; set; }
+
         [FindsBy(How = How.XPath, Using = ".//input[@id='teams']")]
         public IWebElement TeamsNameField { get; set; }
         
