@@ -99,6 +99,16 @@ namespace DashworksTestAutomation.Steps.Dashworks
             _listsDetails.AddList($"{listName}");
         }
 
+        [When(@"User creates new custom list with ""(.*)"" name")]
+        public void WhenUserCreatesNewCustomListWithName(string listName)
+        {
+            var listElement = _driver.NowAt<CustomListElement>();
+            _driver.WaitWhileControlIsNotDisplayed<CustomListElement>(() => listElement.SaveButton);
+            Assert.IsTrue(listElement.SaveButton.Displayed(), "SaveButton is displayed");
+            listElement.ListNameTextbox.SendKeys(listName);
+            listElement.SaveButton.Click();
+        }
+
         [When(@"User clicks Save button on the list panel")]
         public void WhenUserClicksSaveButtonOnTheListPanel()
         {
