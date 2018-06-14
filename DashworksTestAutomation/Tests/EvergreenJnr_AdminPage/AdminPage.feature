@@ -355,9 +355,9 @@ Scenario: EvergreenJnr_AdminPage_CheckThatMailboxesAreSuccessfullyAddedToBuckets
 	And User clicks "Mailboxes" tab
 	And User clicks Create New Item button
 	And User adds following items from list
-	| Item                             |
-	| abigail.u.aguilar@dwlabs.local   |
-	| abraham.d.robertson@dwlabs.local |
+	| Item                        |
+	| aaron.w.burton@dwlabs.local |
+	| abel.y.hanson@dwlabs.local  |
 	Then Success message is displayed and contains "The selected mailboxes have been added to the selected bucket" text
 	And There are no errors in the browser console
 
@@ -406,8 +406,8 @@ Scenario: EvergreenJnr_AdminPage_CheckThatConsoleErrorsAreNotDisplayedAfterAddin
 	And User clicks Create New Item button
 	And User adds following items from list
 	| Item            |
-	| 34RRSBA00C0EYY  |
-	| 02X387UQLFP3ISU |
+	| 01COJATLYVAR7A6  |
+	| 01DRMO46G58SXK |
 	Then Success message is displayed and contains "The selected devices have been added to the selected bucket" text
 	And There are no errors in the browser console
 
@@ -434,9 +434,9 @@ Scenario: EvergreenJnr_AdminPage_CheckThatConsoleErrorsAreNotDisplayedAfterAddin
 	And User clicks "Users" tab
 	And User clicks Create New Item button
 	And User adds following items from list
-	| Item                              |
-	| US-E\ABW081519 (Darrin A. Arnold) |
-	| FR\IIN4276389 (Merci Daoust)      |
+	| Item                                |
+	| FR\KSD3827534 (Philippine Langlois) |
+	| UK\LBM661859 (Jenifer V. Allison)   |
 	Then Success message is displayed and contains "The selected users have been added to the selected bucket" text
 	And There are no errors in the browser console
 
