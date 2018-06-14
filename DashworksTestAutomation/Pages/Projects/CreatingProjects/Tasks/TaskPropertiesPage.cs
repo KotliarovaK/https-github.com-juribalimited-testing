@@ -29,8 +29,11 @@ namespace DashworksTestAutomation.Pages.Projects
         [FindsBy(How = How.XPath, Using = ".//select[contains(@id, 'TaskTemplateID')]")]
         public IWebElement TaskValuesTemplate { get; set; }
 
+        [FindsBy(How = How.XPath, Using = ".//span[contains(@id, 'UpdatePanel')]//select[@disabled='disabled']")]
+        public IWebElement DisabledTaskValuesTemplate { get; set; }
+
         [FindsBy(How = How.XPath, Using = ".//input[contains(@id, 'AllRequestTypes')]")]
-        public IWebElement TaskValuesTemplateCheckbox { get; set; }
+        public IWebElement ApplyToAll { get; set; }
 
         [FindsBy(How = How.XPath, Using = ".//input[@value='Create Task']")]
         public IWebElement ConfirmCreateTaskButton { get; set; }
@@ -41,11 +44,12 @@ namespace DashworksTestAutomation.Pages.Projects
             {
                 SelectorFor(this, p => p.Name),
                 SelectorFor(this, p => p.Help),
+                SelectorFor(this, p => p.StageName),
                 SelectorFor(this, p => p.TaskType),
                 SelectorFor(this, p => p.ValueType),
                 SelectorFor(this, p => p.ObjectType),
-                //SelectorFor(this, p => p.TaskValuesTemplate),
-                SelectorFor(this, p => p.TaskValuesTemplateCheckbox)
+                SelectorFor(this, p => p.TaskValuesTemplate),
+                SelectorFor(this, p => p.ApplyToAll)
             };
         }
     }

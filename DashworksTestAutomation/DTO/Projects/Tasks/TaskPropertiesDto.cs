@@ -7,17 +7,17 @@ namespace DashworksTestAutomation.DTO.Projects
     {
         public string Name { get; set; }
         public string Help { get; set; }
-        public string StageNameString { get; set; }
+        public string StagesNameString { get; set; }
         public StageNameEnum Stages;
         public string TaskTypeString { get; set; }
         public TaskTypeEnum TaskType;
         public string ValueTypeString { get; set; }
         public ValueTypeEnum ValueType;
-        public string ObjectTypeString { get; set; }
+        public string TaskObjectTypeString { get; set; }
         public TaskObjectTypeEnum ObjectType;
         public string TaskValuesTemplateString { get; set; }
         public TaskValuesTemplateEnum TaskValuesTemplate;
-        public bool TaskValuesTemplateCheckbox { get; set; }
+        public bool ApplyToAll { get; set; }
     }
 
     public enum StageNameEnum

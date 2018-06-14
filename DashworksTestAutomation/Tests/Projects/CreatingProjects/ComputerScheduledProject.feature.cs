@@ -347,11 +347,12 @@ namespace DashworksTestAutomation.Tests.Projects.CreatingProjects
             TechTalk.SpecFlow.Table table21 = new TechTalk.SpecFlow.Table(new string[] {
                         "Name",
                         "Help",
-                        "StageNameString",
+                        "StagesNameString",
                         "TaskTypeString",
                         "ValueTypeString",
-                        "ObjectTypeString",
-                        "TaskValuesTemplateCheckbox"});
+                        "TaskObjectTypeString",
+                        "TaskValuesTemplateString",
+                        "ApplyToAll"});
             table21.AddRow(new string[] {
                         "Forecast Date",
                         "Forecast Date",
@@ -359,6 +360,7 @@ namespace DashworksTestAutomation.Tests.Projects.CreatingProjects
                         "Normal",
                         "Date",
                         "Computer",
+                        "",
                         "true"});
             testRunner.And("User create Task", ((string)(null)), table21, "And ");
             testRunner.Then("Success message is displayed with \"Task successfully created\" text", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
@@ -386,11 +388,11 @@ namespace DashworksTestAutomation.Tests.Projects.CreatingProjects
             TechTalk.SpecFlow.Table table23 = new TechTalk.SpecFlow.Table(new string[] {
                         "Name",
                         "Help",
-                        "StageNameString",
+                        "StagesNameString",
                         "TaskTypeString",
                         "ValueTypeString",
-                        "ObjectTypeString",
-                        "TaskValuesTemplateCheckbox"});
+                        "TaskObjectTypeString",
+                        "ApplyToAll"});
             table23.AddRow(new string[] {
                         "Target Date",
                         "Target Date",
@@ -425,11 +427,11 @@ namespace DashworksTestAutomation.Tests.Projects.CreatingProjects
             TechTalk.SpecFlow.Table table25 = new TechTalk.SpecFlow.Table(new string[] {
                         "Name",
                         "Help",
-                        "StageNameString",
+                        "StagesNameString",
                         "TaskTypeString",
                         "ValueTypeString",
-                        "ObjectTypeString",
-                        "TaskValuesTemplateCheckbox"});
+                        "TaskObjectTypeString",
+                        "ApplyToAll"});
             table25.AddRow(new string[] {
                         "Scheduled Date",
                         "Scheduled Date",
@@ -464,11 +466,11 @@ namespace DashworksTestAutomation.Tests.Projects.CreatingProjects
             TechTalk.SpecFlow.Table table27 = new TechTalk.SpecFlow.Table(new string[] {
                         "Name",
                         "Help",
-                        "StageNameString",
+                        "StagesNameString",
                         "TaskTypeString",
                         "ValueTypeString",
-                        "ObjectTypeString",
-                        "TaskValuesTemplateCheckbox"});
+                        "TaskObjectTypeString",
+                        "ApplyToAll"});
             table27.AddRow(new string[] {
                         "Migrated Date",
                         "Migrated Date",
@@ -503,11 +505,11 @@ namespace DashworksTestAutomation.Tests.Projects.CreatingProjects
             TechTalk.SpecFlow.Table table29 = new TechTalk.SpecFlow.Table(new string[] {
                         "Name",
                         "Help",
-                        "StageNameString",
+                        "StagesNameString",
                         "TaskTypeString",
                         "ValueTypeString",
-                        "ObjectTypeString",
-                        "TaskValuesTemplateCheckbox"});
+                        "TaskObjectTypeString",
+                        "ApplyToAll"});
             table29.AddRow(new string[] {
                         "Completed Date",
                         "Completed Date",
@@ -542,11 +544,11 @@ namespace DashworksTestAutomation.Tests.Projects.CreatingProjects
             TechTalk.SpecFlow.Table table31 = new TechTalk.SpecFlow.Table(new string[] {
                         "Name",
                         "Help",
-                        "StageNameString",
+                        "StagesNameString",
                         "TaskTypeString",
                         "ValueTypeString",
-                        "ObjectTypeString",
-                        "TaskValuesTemplateCheckbox"});
+                        "TaskObjectTypeString",
+                        "ApplyToAll"});
             table31.AddRow(new string[] {
                         "Group Date Task",
                         "Group Date Task",
@@ -577,11 +579,11 @@ namespace DashworksTestAutomation.Tests.Projects.CreatingProjects
             TechTalk.SpecFlow.Table table33 = new TechTalk.SpecFlow.Table(new string[] {
                         "Name",
                         "Help",
-                        "StageNameString",
+                        "StagesNameString",
                         "TaskTypeString",
                         "ValueTypeString",
-                        "ObjectTypeString",
-                        "TaskValuesTemplateCheckbox"});
+                        "TaskObjectTypeString",
+                        "ApplyToAll"});
             table33.AddRow(new string[] {
                         "Text Task",
                         "Text Task",
@@ -612,12 +614,12 @@ namespace DashworksTestAutomation.Tests.Projects.CreatingProjects
             TechTalk.SpecFlow.Table table35 = new TechTalk.SpecFlow.Table(new string[] {
                         "Name",
                         "Help",
-                        "StageNameString",
+                        "StagesNameString",
                         "TaskTypeString",
                         "ValueTypeString",
-                        "ObjectTypeString",
+                        "TaskObjectTypeString",
                         "TaskValuesTemplateString",
-                        "TaskValuesTemplateCheckbox"});
+                        "ApplyToAll"});
             table35.AddRow(new string[] {
                         "Radiobutton RAG Owner Date",
                         "Radiobutton RAG Owner Date",
@@ -680,12 +682,12 @@ namespace DashworksTestAutomation.Tests.Projects.CreatingProjects
             TechTalk.SpecFlow.Table table39 = new TechTalk.SpecFlow.Table(new string[] {
                         "Name",
                         "Help",
-                        "StageNameString",
+                        "StagesNameString",
                         "TaskTypeString",
                         "ValueTypeString",
-                        "ObjectTypeString",
+                        "TaskObjectTypeString",
                         "TaskValuesTemplateString",
-                        "TaskValuesTemplateCheckbox"});
+                        "ApplyToAll"});
             table39.AddRow(new string[] {
                         "Dropdown Non RAG Owner",
                         "Dropdown Non RAG Owner",
@@ -735,12 +737,12 @@ namespace DashworksTestAutomation.Tests.Projects.CreatingProjects
             TechTalk.SpecFlow.Table table42 = new TechTalk.SpecFlow.Table(new string[] {
                         "Name",
                         "Help",
-                        "StageNameString",
+                        "StagesNameString",
                         "TaskTypeString",
                         "ValueTypeString",
-                        "ObjectTypeString",
+                        "TaskObjectTypeString",
                         "TaskValuesTemplateString",
-                        "TaskValuesTemplateCheckbox"});
+                        "ApplyToAll"});
             table42.AddRow(new string[] {
                         "Group Radiobutton RAG Date Time Owner",
                         "Group Radiobutton RAG Date Time Owner",
@@ -792,12 +794,12 @@ namespace DashworksTestAutomation.Tests.Projects.CreatingProjects
             TechTalk.SpecFlow.Table table45 = new TechTalk.SpecFlow.Table(new string[] {
                         "Name",
                         "Help",
-                        "StageNameString",
+                        "StagesNameString",
                         "TaskTypeString",
                         "ValueTypeString",
-                        "ObjectTypeString",
+                        "TaskObjectTypeString",
                         "TaskValuesTemplateString",
-                        "TaskValuesTemplateCheckbox"});
+                        "ApplyToAll"});
             table45.AddRow(new string[] {
                         "Dropdown RAG Date & Time",
                         "Dropdown RAG Date & Time",
@@ -838,10 +840,10 @@ namespace DashworksTestAutomation.Tests.Projects.CreatingProjects
             TechTalk.SpecFlow.Table table47 = new TechTalk.SpecFlow.Table(new string[] {
                         "Name",
                         "Help",
-                        "StageNameString",
+                        "StagesNameString",
                         "TaskTypeString",
                         "ValueTypeString",
-                        "ObjectTypeString",
+                        "TaskObjectTypeString",
                         "TaskValuesTemplateCheckbox"});
             table47.AddRow(new string[] {
                         "Text Task (User)",
@@ -875,12 +877,12 @@ namespace DashworksTestAutomation.Tests.Projects.CreatingProjects
             TechTalk.SpecFlow.Table table49 = new TechTalk.SpecFlow.Table(new string[] {
                         "Name",
                         "Help",
-                        "StageNameString",
+                        "StagesNameString",
                         "TaskTypeString",
                         "ValueTypeString",
-                        "ObjectTypeString",
+                        "TaskObjectTypeString",
                         "TaskValuesTemplateString",
-                        "TaskValuesTemplateCheckbox"});
+                        "ApplyToAll"});
             table49.AddRow(new string[] {
                         "Radiobutton RAG Owner Date (User)",
                         "Radiobutton RAG Owner Date (User)",
@@ -932,12 +934,12 @@ namespace DashworksTestAutomation.Tests.Projects.CreatingProjects
             TechTalk.SpecFlow.Table table52 = new TechTalk.SpecFlow.Table(new string[] {
                         "Name",
                         "Help",
-                        "StageNameString",
+                        "StagesNameString",
                         "TaskTypeString",
                         "ValueTypeString",
-                        "ObjectTypeString",
+                        "TaskObjectTypeString",
                         "TaskValuesTemplateString",
-                        "TaskValuesTemplateCheckbox"});
+                        "ApplyToAll"});
             table52.AddRow(new string[] {
                         "Group Dropdown RAG (User)",
                         "Group Dropdown RAG (User)",
@@ -973,10 +975,10 @@ namespace DashworksTestAutomation.Tests.Projects.CreatingProjects
             TechTalk.SpecFlow.Table table54 = new TechTalk.SpecFlow.Table(new string[] {
                         "Name",
                         "Help",
-                        "StageNameString",
+                        "StagesNameString",
                         "TaskTypeString",
                         "ValueTypeString",
-                        "ObjectTypeString",
+                        "TaskObjectTypeString",
                         "TaskValuesTemplateCheckbox"});
             table54.AddRow(new string[] {
                         "Date Task (User)",
@@ -1010,12 +1012,12 @@ namespace DashworksTestAutomation.Tests.Projects.CreatingProjects
             TechTalk.SpecFlow.Table table56 = new TechTalk.SpecFlow.Table(new string[] {
                         "Name",
                         "Help",
-                        "StageNameString",
+                        "StagesNameString",
                         "TaskTypeString",
                         "ValueTypeString",
-                        "ObjectTypeString",
+                        "TaskObjectTypeString",
                         "TaskValuesTemplateString",
-                        "TaskValuesTemplateCheckbox"});
+                        "ApplyToAll"});
             table56.AddRow(new string[] {
                         "Radiobutton Non RAG Owner Date (Application)",
                         "Radiobutton Non RAG Owner Date (Application)",
@@ -1063,12 +1065,12 @@ namespace DashworksTestAutomation.Tests.Projects.CreatingProjects
             TechTalk.SpecFlow.Table table59 = new TechTalk.SpecFlow.Table(new string[] {
                         "Name",
                         "Help",
-                        "StageNameString",
+                        "StagesNameString",
                         "TaskTypeString",
                         "ValueTypeString",
-                        "ObjectTypeString",
+                        "TaskObjectTypeString",
                         "TaskValuesTemplateString",
-                        "TaskValuesTemplateCheckbox"});
+                        "ApplyToAll"});
             table59.AddRow(new string[] {
                         "Dropdown RAG Owner (Application)",
                         "Dropdown RAG Owner (Application)",
@@ -1119,11 +1121,11 @@ namespace DashworksTestAutomation.Tests.Projects.CreatingProjects
             TechTalk.SpecFlow.Table table62 = new TechTalk.SpecFlow.Table(new string[] {
                         "Name",
                         "Help",
-                        "StageNameString",
+                        "StagesNameString",
                         "TaskTypeString",
                         "ValueTypeString",
-                        "ObjectTypeString",
-                        "TaskValuesTemplateCheckbox"});
+                        "TaskObjectTypeString",
+                        "ApplyToAll"});
             table62.AddRow(new string[] {
                         "Application Delivery Date",
                         "Application Delivery Date",
@@ -1158,11 +1160,11 @@ namespace DashworksTestAutomation.Tests.Projects.CreatingProjects
             TechTalk.SpecFlow.Table table64 = new TechTalk.SpecFlow.Table(new string[] {
                         "Name",
                         "Help",
-                        "StageNameString",
+                        "StagesNameString",
                         "TaskTypeString",
                         "ValueTypeString",
-                        "ObjectTypeString",
-                        "TaskValuesTemplateCheckbox"});
+                        "TaskObjectTypeString",
+                        "ApplyToAll"});
             table64.AddRow(new string[] {
                         "Text Task (Application)",
                         "Text Task (Application)",

@@ -268,7 +268,8 @@ namespace DashworksTestAutomation.Pages.Evergreen
 
         public bool CheckFilterAvailability(string filterName)
         {
-            if (AddNewFilterButton.Displayed()) AddNewFilterButton.Click();
+            if (AddNewFilterButton.Displayed())
+                AddNewFilterButton.Click();
 
             SearchTextbox.Clear();
             SearchTextbox.SendKeys(filterName);

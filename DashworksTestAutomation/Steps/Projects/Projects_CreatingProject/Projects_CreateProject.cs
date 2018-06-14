@@ -259,34 +259,35 @@ namespace DashworksTestAutomation.Steps.Projects
             var page = _driver.NowAt<TaskPropertiesPage>();
 
             table.CreateInstance<TaskPropertiesDto>().CopyPropertiesTo(_taskPropertiesDto);
-            //assign ValueTypeString to ValueTypeTypeEnum
-            _taskPropertiesDto.ValueType = (ValueTypeEnum)Enum.Parse(typeof(ValueTypeEnum), _taskPropertiesDto.ValueTypeString);
-            //assign ObjectTypeString to TaskObjectTypeEnum
-            _taskPropertiesDto.ObjectType = (TaskObjectTypeEnum) Enum.Parse(typeof(TaskObjectTypeEnum), _taskPropertiesDto.ObjectTypeString);
+            //assign StagesNameString to StageNameEnum
+            _taskPropertiesDto.Stages = (StageNameEnum)Enum.Parse(typeof(StageNameEnum), _taskPropertiesDto.StagesNameString);
             //assign TaskTypeString to TaskTypeEnum
-            _taskPropertiesDto.TaskType = (TaskTypeEnum) Enum.Parse(typeof(TaskTypeEnum), _taskPropertiesDto.TaskTypeString);
-            //assign StageNameString to StageNameEnum
-            _taskPropertiesDto.Stages = (StageNameEnum)Enum.Parse(typeof(StageNameEnum), _taskPropertiesDto.StageNameString);
-            //assign TaskValuesTemplateString to TaskValuesTemplateEnum
-            _taskPropertiesDto.TaskValuesTemplate = (TaskValuesTemplateEnum)Enum.Parse(typeof(TaskValuesTemplateEnum), _taskPropertiesDto.TaskValuesTemplateString);
+            _taskPropertiesDto.TaskType = (TaskTypeEnum)Enum.Parse(typeof(TaskTypeEnum), _taskPropertiesDto.TaskTypeString);
+            //assign ValueTypeString to ValueTypeEnum
+            _taskPropertiesDto.ValueType = (ValueTypeEnum)Enum.Parse(typeof(ValueTypeEnum), _taskPropertiesDto.ValueTypeString);
+            //assign TaskObjectTypeString to TaskObjectTypeEnum
+            _taskPropertiesDto.ObjectType = (TaskObjectTypeEnum)Enum.Parse(typeof(TaskObjectTypeEnum), _taskPropertiesDto.TaskObjectTypeString);
+
             TaskPropertiesDto tempTaskPropertiesDto = new TaskPropertiesDto();
             _taskPropertiesDto.CopyPropertiesTo(tempTaskPropertiesDto);
             _projectDto.Tasks.Add(tempTaskPropertiesDto);
 
+            page.Name.SendKeys(_taskPropertiesDto.Name);
+            page.Help.SendKeys(_taskPropertiesDto.Help);
+            page.StageName.SelectboxSelect(_taskPropertiesDto.Stages.GetValue());
+            page.TaskType.SelectboxSelect(_taskPropertiesDto.TaskType.GetValue());
             page.ValueType.SelectboxSelect(_taskPropertiesDto.ValueType.GetValue());
-            if (_taskPropertiesDto.ValueType.Equals(ValueTypeEnum.Radiobutton))
-                page.TaskValuesTemplate.SelectboxSelect(_taskPropertiesDto.TaskValuesTemplate.GetValue());
-            if (_taskPropertiesDto.ValueType.Equals(ValueTypeEnum.DropDownList))
-                page.TaskValuesTemplate.SelectboxSelect(_taskPropertiesDto.TaskValuesTemplate.GetValue());
-            else
+            page.ObjectType.SelectboxSelect(_taskPropertiesDto.ObjectType.GetValue());
+            if (!string.IsNullOrEmpty(_taskPropertiesDto.TaskValuesTemplateString))
             {
-                page.Name.SendKeys(_taskPropertiesDto.Name);
-                page.Help.SendKeys(_taskPropertiesDto.Help);
-                page.StageName.SelectboxSelect(_taskPropertiesDto.Stages.GetValue());
-                page.TaskType.SelectboxSelect(_taskPropertiesDto.TaskType.GetValue());
-                page.ObjectType.SelectboxSelect(_taskPropertiesDto.ObjectType.GetValue());
-                page.TaskValuesTemplateCheckbox.SetCheckboxState(_taskPropertiesDto.TaskValuesTemplateCheckbox);
+                //assign TaskValuesTemplateString to TaskValuesTemplateEnum
+                _taskPropertiesDto.TaskValuesTemplate = (TaskValuesTemplateEnum)Enum.Parse(typeof(TaskValuesTemplateEnum), _taskPropertiesDto.TaskValuesTemplateString);
+                if (_taskPropertiesDto.ValueType.Equals(ValueTypeEnum.Radiobutton))
+                    page.TaskValuesTemplate.SelectboxSelect(_taskPropertiesDto.TaskValuesTemplate.GetValue());
+                if (_taskPropertiesDto.ValueType.Equals(ValueTypeEnum.DropDownList))
+                    page.TaskValuesTemplate.SelectboxSelect(_taskPropertiesDto.TaskValuesTemplate.GetValue());
             }
+            page.ApplyToAll.SetCheckboxState(_taskPropertiesDto.ApplyToAll);
 
             page.ConfirmCreateTaskButton.Click();
         }
