@@ -806,6 +806,7 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_AdminPage
         [NUnit.Framework.CategoryAttribute("EvergreenJnr_AdminPage")]
         [NUnit.Framework.CategoryAttribute("AdminPage")]
         [NUnit.Framework.CategoryAttribute("DAS12182")]
+        [NUnit.Framework.CategoryAttribute("Not_Run")]
         public virtual void EvergreenJnr_AdminPage_CheckThatNumberOfApplicationsInProjectScopeIsCorrectlyUpdated()
         {
             System.Exception lastException = null;
@@ -840,7 +841,8 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_AdminPage
                         "Admin",
                         "EvergreenJnr_AdminPage",
                         "AdminPage",
-                        "DAS12182"});
+                        "DAS12182",
+                        "Not_Run"});
             this.ScenarioSetup(scenarioInfo);
             this.FeatureBackground();
             testRunner.When("User clicks Admin on the left-hand menu", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
@@ -866,6 +868,7 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_AdminPage
             testRunner.And("User clicks \"Applications\" tab in the Project Scope Changes section", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
             testRunner.Then("\"Applications to add (0 of 247 selected)\" is displayed to the user in the Project" +
                     " Scope Changes section", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+            testRunner.Then("Delete \"TestProject5\" Project in the Administration", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
             this.ScenarioCleanup();
         }
         
@@ -1411,9 +1414,9 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_AdminPage
             TechTalk.SpecFlow.Table table3 = new TechTalk.SpecFlow.Table(new string[] {
                         "Item"});
             table3.AddRow(new string[] {
-                        "XV20GW6HJRVE2R"});
+                        "34RRSBA00C0EYY"});
             table3.AddRow(new string[] {
-                        "01N3Y2GUS6XTK7"});
+                        "02X387UQLFP3ISU"});
             testRunner.And("User adds following items from list", ((string)(null)), table3, "And ");
             testRunner.Then("Success message is displayed and contains \"The selected devices have been added t" +
                     "o the selected bucket\" text", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
@@ -1534,9 +1537,9 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_AdminPage
             TechTalk.SpecFlow.Table table4 = new TechTalk.SpecFlow.Table(new string[] {
                         "Item"});
             table4.AddRow(new string[] {
-                        "UK\\LBM661859 (Jenifer V. Allison)"});
+                        "US-E\\ABW081519 (Darrin A. Arnold)"});
             table4.AddRow(new string[] {
-                        "UK\\ANK462406 (Nakia D. Norton)"});
+                        "FR\\IIN4276389 (Merci Daoust)"});
             testRunner.And("User adds following items from list", ((string)(null)), table4, "And ");
             testRunner.Then("Success message is displayed and contains \"The selected users have been added to " +
                     "the selected bucket\" text", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");

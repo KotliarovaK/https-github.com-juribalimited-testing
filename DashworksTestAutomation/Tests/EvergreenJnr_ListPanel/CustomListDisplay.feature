@@ -783,7 +783,7 @@ Examples:
 	| Users        | Domain           |
 	| Mailboxes    | Mailbox Platform |
 
-@Evergreen @AllLists @EvergreenJnr_ListPanel @CustomListDisplay @DAS10972 @DAS12738 @Not_Run @Delete_Newly_Created_List
+@Evergreen @AllLists @EvergreenJnr_ListPanel @CustomListDisplay @DAS10972 @DAS12738 @Delete_Newly_Created_List
 Scenario Outline: EvergreenJnr_AllLists_CheckThatTheEditListFunctionIsTriggeredOrHiddenForCustomListsAfterAddingOrRemovingColumns
 	When User clicks "<ListName>" on the left-hand menu
 	Then "<ListName>" list should be displayed to the user
@@ -825,7 +825,7 @@ Examples:
 	| Users        | Username      | City            | $6BE000-SUDQ9614UVO8                                       | Cost Centre   | Department Name  |
 	| Mailboxes    | Email Address | Alias           | 000F977AC8824FE39B8@bclabs.local                           | Enabled       | Import           |
 
-@Evergreen @AllLists @EvergreenJnr_ListPanel @CustomListDisplay @DAS10998 @DAS10972 @DAS12602 @Delete_Newly_Created_List @Not_Run
+@Evergreen @AllLists @EvergreenJnr_ListPanel @CustomListDisplay @DAS10998 @DAS10972 @DAS12602 @Delete_Newly_Created_List
 Scenario Outline: EvergreenJnr_AllList_CheckThatTheEditListFunctionIsHiddenAfterAddingChangingAndRemovingSearchCriteria
 	When User clicks "<ListName>" on the left-hand menu
 	Then "<ListName>" list should be displayed to the user
