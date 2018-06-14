@@ -219,7 +219,7 @@ Scenario: EvergreenJnr_AdminPage_CheckThatYouCanNotDeleteTheDefaultBucketWarning
 	When User clicks Delete button
 	Then "You can not delete the default bucket" warning message is not displayed on the Buckets page
 
-@Evergreen @Admin @EvergreenJnr_AdminPage @AdminPage @DAS12182
+@Evergreen @Admin @EvergreenJnr_AdminPage @AdminPage @DAS12182 @Not_Run
 Scenario: EvergreenJnr_AdminPage_CheckThatNumberOfApplicationsInProjectScopeIsCorrectlyUpdated
 	When User clicks Admin on the left-hand menu
 	Then Admin page should be displayed to the user
@@ -242,7 +242,7 @@ Scenario: EvergreenJnr_AdminPage_CheckThatNumberOfApplicationsInProjectScopeIsCo
 	And User selects "Scope Changes" tab on the Project details page
 	And User clicks "Applications" tab in the Project Scope Changes section
 	Then "Applications to add (0 of 247 selected)" is displayed to the user in the Project Scope Changes section
-	#Then Delete "TestProject5" Project in the Administration
+	Then Delete "TestProject5" Project in the Administration
 
 @Evergreen @Admin @EvergreenJnr_AdminPage @AdminPage @DAS12154 @DAS12742 @Delete_Newly_Created_List
 Scenario: EvergreenJnr_AdminPage_CheckThatWarningMessageIsNotDisplayedWhenDeletingListUsingInTheProjectThatWasDeleted
@@ -405,9 +405,9 @@ Scenario: EvergreenJnr_AdminPage_CheckThatConsoleErrorsAreNotDisplayedAfterAddin
 	And User clicks content from "Bucket" column
 	And User clicks Create New Item button
 	And User adds following items from list
-	| Item           |
-	| XV20GW6HJRVE2R |
-	| 01N3Y2GUS6XTK7 |
+	| Item            |
+	| 34RRSBA00C0EYY  |
+	| 02X387UQLFP3ISU |
 	Then Success message is displayed and contains "The selected devices have been added to the selected bucket" text
 	And There are no errors in the browser console
 
@@ -435,8 +435,8 @@ Scenario: EvergreenJnr_AdminPage_CheckThatConsoleErrorsAreNotDisplayedAfterAddin
 	And User clicks Create New Item button
 	And User adds following items from list
 	| Item                              |
-	| UK\LBM661859 (Jenifer V. Allison) |
-	| UK\ANK462406 (Nakia D. Norton)    |
+	| US-E\ABW081519 (Darrin A. Arnold) |
+	| FR\IIN4276389 (Merci Daoust)      |
 	Then Success message is displayed and contains "The selected users have been added to the selected bucket" text
 	And There are no errors in the browser console
 
