@@ -406,8 +406,8 @@ Scenario: EvergreenJnr_AdminPage_CheckThatConsoleErrorsAreNotDisplayedAfterAddin
 	And User clicks Create New Item button
 	And User adds following items from list
 	| Item            |
-	| 01COJATLYVAR7A6  |
-	| 01DRMO46G58SXK |
+	| 01COJATLYVAR7A6 |
+	| 01DRMO46G58SXK  |
 	Then Success message is displayed and contains "The selected devices have been added to the selected bucket" text
 	And There are no errors in the browser console
 
