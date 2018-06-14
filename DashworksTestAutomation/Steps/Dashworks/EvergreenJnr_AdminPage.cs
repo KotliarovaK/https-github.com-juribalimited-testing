@@ -225,13 +225,25 @@ namespace DashworksTestAutomation.Steps.Dashworks
             button.UpdateProjectInTheWarning.Click();
         }
 
-        [Then(@"Update Project button is disabled")]
-        public void ThenUpdateProjectButtonIsDisabled()
+        [Then(@"Update Project buttons is disabled")]
+        public void ThenUpdateProjectButtonsIsDisabled()
         {
             var button = _driver.NowAt<ProjectsPage>();
             _driver.WaitWhileControlIsNotDisplayed<ProjectsPage>(() => button.UpdateProjectButton);
             Assert.IsTrue(Convert.ToBoolean(button.UpdateProjectButton.GetAttribute("disabled")),
                 "Update Project button is active");
+            Assert.IsTrue(Convert.ToBoolean(button.UpdateAllChangesButton.GetAttribute("disabled")),
+                "Update All Changes button is active");
+        }
+
+        [Then(@"Update Project button is activ")]
+        public void ThenUpdateProjectButtonIsActiv()
+        {
+            var button = _driver.NowAt<ProjectsPage>();
+            Assert.IsFalse(Convert.ToBoolean(button.UpdateProjectButton.GetAttribute("disabled")),
+                "Update Project button is disabled");
+            Assert.IsFalse(Convert.ToBoolean(button.UpdateAllChangesButton.GetAttribute("disabled")),
+                "Update All Changes button is disabled");
         }
 
         [When(@"User clicks Cancel button")]
