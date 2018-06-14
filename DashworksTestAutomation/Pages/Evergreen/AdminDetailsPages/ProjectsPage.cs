@@ -25,6 +25,9 @@ namespace DashworksTestAutomation.Pages.Evergreen.AdminDetailsPages
         [FindsBy(How = How.XPath, Using = ".//button[contains(@title, 'Update')]")]
         public IWebElement UpdateProjectButton { get; set; }
 
+        [FindsBy(How = How.XPath, Using = ".//button[@title='Update All Changes']")]
+        public IWebElement UpdateAllChangesButton { get; set; }
+
         [FindsBy(How = How.XPath, Using = ".//span['_ngcontent-c11'][text()='Scope']")]
         public IWebElement ScopeSection { get; set; }
 
