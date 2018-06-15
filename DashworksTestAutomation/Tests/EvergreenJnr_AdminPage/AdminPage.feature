@@ -116,7 +116,7 @@ Scenario: EvergreenJnr_AdminPage_CheckThatWarningMessageIsDisplayedAfterDeleting
 	Then Project "TestProject1" is displayed to user
 	When User selects "Scope Changes" tab on the Project details page
 	Then Warning message with "The scope for this project refers to a deleted list, this must be updated before proceeding" text is displayed on the Admin page
-	And Update Project button is disabled
+	And Update Project buttons is disabled
 	And Delete "TestProject1" Project in the Administration
 
 @Evergreen @Admin @EvergreenJnr_AdminPage @AdminPage @DAS11977 @DAS11959 @DAS12553 @DAS11744 @DAS12742
@@ -675,7 +675,7 @@ Examples:
 	| Users     | Username      | TestList6588    |
 	| Mailboxes | Email Address | TestList6587    |
 
-@Evergreen @Admin @EvergreenJnr_AdminPage @AdminPage @DAS12751
+@Evergreen @Admin @EvergreenJnr_AdminPage @AdminPage @DAS12751 @DAS12747
 Scenario: EvergreenJnr_AdminPage_CheckThatSelectedCheckboxIsSelectedAfterSwitchingBetweenTabs
 	When User clicks Admin on the left-hand menu
 	Then Admin page should be displayed to the user
@@ -693,10 +693,12 @@ Scenario: EvergreenJnr_AdminPage_CheckThatSelectedCheckboxIsSelectedAfterSwitchi
 	Then Project "TestProject13" is displayed to user
 	When User selects "Scope Changes" tab on the Project details page
 	And User clicks "Devices" tab in the Project Scope Changes section
+	Then Update Project buttons is disabled
 	When User expands the object to add 
 	When User selects following items to the Project
 	| Item           |
 	| 00HA7MKAVVFDAV |
+	Then Update Project button is activ
 	Then "Devices to add (1 of 17225 selected)" is displayed to the user in the Project Scope Changes section
 	When User clicks "Users" tab in the Project Scope Changes section
 	When User expands the object to add 
