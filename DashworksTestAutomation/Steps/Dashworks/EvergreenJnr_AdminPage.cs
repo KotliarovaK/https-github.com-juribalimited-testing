@@ -703,6 +703,13 @@ namespace DashworksTestAutomation.Steps.Dashworks
             searchElement.GetSearchFieldByColumnName(columnName, text);
         }
 
+        [When(@"User clicks Reset Filters button on the Admin page")]
+        public void WhenUserClicksResetFiltersButtonOnTheAdminPage()
+        {
+            var button = _driver.NowAt<BaseGridPage>();
+            button.ResetFiltersButton.Click();
+        }
+
         [When(@"User clicks Actions button on the Projects page")]
         public void WhenUserClicksActionsButtonOnTheProjectsPage()
         {
