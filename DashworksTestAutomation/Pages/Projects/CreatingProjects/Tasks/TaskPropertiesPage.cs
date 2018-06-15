@@ -33,7 +33,7 @@ namespace DashworksTestAutomation.Pages.Projects
         public IWebElement DisabledTaskValuesTemplate { get; set; }
 
         [FindsBy(How = How.XPath, Using = ".//input[contains(@id, 'AllRequestTypes')]")]
-        public IWebElement ApplyToAll { get; set; }
+        public IWebElement ApplyToAllCheckbox { get; set; }
 
         [FindsBy(How = How.XPath, Using = ".//input[@value='Create Task']")]
         public IWebElement ConfirmCreateTaskButton { get; set; }
@@ -49,7 +49,7 @@ namespace DashworksTestAutomation.Pages.Projects
                 SelectorFor(this, p => p.ValueType),
                 SelectorFor(this, p => p.ObjectType),
                 SelectorFor(this, p => p.TaskValuesTemplate),
-                SelectorFor(this, p => p.ApplyToAll)
+                SelectorFor(this, p => p.ApplyToAllCheckbox)
             };
         }
     }

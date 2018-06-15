@@ -13,11 +13,11 @@ namespace DashworksTestAutomation.DTO.Projects
         public TaskTypeEnum TaskType;
         public string ValueTypeString { get; set; }
         public ValueTypeEnum ValueType;
-        public string TaskObjectTypeString { get; set; }
+        public string ObjectTypeString { get; set; }
         public TaskObjectTypeEnum ObjectType;
         public string TaskValuesTemplateString { get; set; }
         public TaskValuesTemplateEnum TaskValuesTemplate;
-        public bool ApplyToAll { get; set; }
+        public bool ApplyToAllCheckbox { get; set; }
     }
 
     public enum StageNameEnum

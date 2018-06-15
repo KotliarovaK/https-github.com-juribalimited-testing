@@ -27,7 +27,8 @@ namespace DashworksTestAutomation.DTO.Projects
         ReallyExtremelyOrange,
         Purple,
         Green,
-        Grey
+        Grey,
+        None
     }
 
     public enum TaskStatusEnum

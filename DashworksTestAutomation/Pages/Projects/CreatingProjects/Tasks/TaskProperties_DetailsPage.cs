@@ -56,15 +56,8 @@ namespace DashworksTestAutomation.Pages.Projects
         {
             return new List<By>
             {
-                SelectorFor(this, p => p.ValueType),
-                SelectorFor(this, p => p.TaskHaADueDate),
-                SelectorFor(this, p => p.TaskProjectRole),
-                SelectorFor(this, p => p.TaskImpactsReadiness),
-                SelectorFor(this, p => p.TaskHasAnOwner),
                 SelectorFor(this, p => p.ShowDetails),
-                SelectorFor(this, p => p.ProjectObject),
-                SelectorFor(this, p => p.BulkUpdate),
-                SelectorFor(this, p => p.SelfService)
+                SelectorFor(this, p => p.BulkUpdate)
             };
         }
     }
