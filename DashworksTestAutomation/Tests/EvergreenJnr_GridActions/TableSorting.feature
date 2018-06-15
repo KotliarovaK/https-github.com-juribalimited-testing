@@ -102,3 +102,36 @@ Scenario Outline: EvergreenJnr_AllList_CheckThatTheDataInTheTablesAreSortedAppro
 	| Users        | Domain             |
 	| Applications | Version            |
 	| Mailboxes    | Owner Display Name |
+
+@Evergreen @AllLists @EvergreenJnr_GridActions @TableSorting @DAS12545 @Delete_Newly_Created_List
+Scenario Outline: EvergreenJnr_AllLists_CheckThatSortingIsSavedForNewSavedList
+	When User clicks "<ListName>" on the left-hand menu
+	Then "<ListName>" list should be displayed to the user
+	When User clicks the Columns button
+	Then Columns panel is displayed to the user
+	When ColumnName is entered into the search box and the selection is clicked
+	| ColumnName   |
+	| <ColumnName> |
+	Then ColumnName is added to the list
+	| ColumnName   |
+	| <ColumnName> |
+	When User click on '<ColumnName>' column header
+	Then numeric data in table is sorted by '<ColumnName>' column in descending order
+	When User create dynamic list with "<DynamicListName>" name on "<ListName>" page
+	Then "<DynamicListName>" list is displayed to user
+	When User navigates to the "<AllListName>" list
+	Then "<ListName>" list should be displayed to the user
+	When User navigates to the "<DynamicListName>" list
+	Then "<DynamicListName>" list is displayed to user
+	Then ColumnName is added to the list
+	| ColumnName   |
+	| <ColumnName> |
+	Then numeric data in table is sorted by '<ColumnName>' column in descending order
+	Then Edit List menu is not displayed
+
+Examples: 
+	| ListName     | ColumnName             | AllListName      | DynamicListName |
+	| Devices      | ComputerSc: Team ID    | All Devices      | DynamicList4857 |
+	| Users        | Windows7Mi: Team ID    | All Users        | DynamicList1857 |
+	| Applications | ComputerSc: Project ID | All Applications | DynamicList2857 |
+	| Mailboxes    | EmailMigra: Team ID    | All Mailboxes    | DynamicList3857 |
