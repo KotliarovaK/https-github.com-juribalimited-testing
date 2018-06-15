@@ -422,7 +422,6 @@ namespace DashworksTestAutomation.Steps.Dashworks
         public void WhenUserClickEditButtonForFilter(string filterName)
         {
             var filterElement = _driver.NowAt<FiltersElement>();
-
             filterElement.GetEditFilterButton(filterName).Click();
         }
 
