@@ -344,13 +344,12 @@ Scenario: EvergreenJnr_AdminPage_CheckThatErrorsDoNotAppearAfterUpdatingTeamDesc
 	And There are no errors in the browser console
 	And Delete "TestTeam1" Team in the Administration
 
-@Evergreen @Admin @EvergreenJnr_AdminPage @AdminPage @DAS11765 @DAS12170 @DAS12795
+@Evergreen @Admin @EvergreenJnr_AdminPage @AdminPage @DAS11765 @DAS12170
 Scenario: EvergreenJnr_AdminPage_CheckThatMailboxesAreSuccessfullyAddedToBuckets
 	When User clicks Admin on the left-hand menu
 	Then Admin page should be displayed to the user
 	When User clicks "Buckets" link on the Admin page
 	Then "Buckets" page should be displayed to the user
-	#Remove this click after DAS-12795 fix
 	When User clicks Reset Filters button on the Admin page
 	When User enters "Birmingham" text in the Search field for "Bucket" column
 	And User clicks content from "Bucket" column
@@ -363,13 +362,12 @@ Scenario: EvergreenJnr_AdminPage_CheckThatMailboxesAreSuccessfullyAddedToBuckets
 	Then Success message is displayed and contains "The selected mailboxes have been added to the selected bucket" text
 	And There are no errors in the browser console
 
-@Evergreen @Admin @EvergreenJnr_AdminPage @AdminPage @DAS11765 @DAS12170 @DAS12795
+@Evergreen @Admin @EvergreenJnr_AdminPage @AdminPage @DAS11765 @DAS12170
 Scenario: EvergreenJnr_AdminPage_CheckThatErrorsDoNotAppearAfterAddingMailboxesToTheBucketWhereNoMailboxesExist
 	When User clicks Admin on the left-hand menu
 	Then Admin page should be displayed to the user
 	When User clicks "Buckets" link on the Admin page
 	Then "Buckets" page should be displayed to the user
-	#Remove this click after DAS-12795 fix
 	When User clicks Reset Filters button on the Admin page
 	When User enters "Administration" text in the Search field for "Bucket" column
 	And User clicks content from "Bucket" column
@@ -399,13 +397,12 @@ Scenario: EvergreenJnr_AdminPage_CheckThatAllAssociationsAreSelectedByDefaultInT
 	Then All Association are selected by default
 	And Delete "TestProject7" Project in the Administration
 
-@Evergreen @Admin @EvergreenJnr_AdminPage @AdminPage @DAS12170 @DAS12795
+@Evergreen @Admin @EvergreenJnr_AdminPage @AdminPage @DAS12170
 Scenario: EvergreenJnr_AdminPage_CheckThatConsoleErrorsAreNotDisplayedAfterAddingDevicesInTheBuckets
 	When User clicks Admin on the left-hand menu
 	Then Admin page should be displayed to the user
 	When User clicks "Buckets" link on the Admin page
 	Then "Buckets" page should be displayed to the user
-	#Remove this click after DAS-12795 fix
 	When User clicks Reset Filters button on the Admin page
 	When User enters "Bangor" text in the Search field for "Bucket" column
 	And User clicks content from "Bucket" column
@@ -417,13 +414,12 @@ Scenario: EvergreenJnr_AdminPage_CheckThatConsoleErrorsAreNotDisplayedAfterAddin
 	Then Success message is displayed and contains "The selected devices have been added to the selected bucket" text
 	And There are no errors in the browser console
 
-@Evergreen @Admin @EvergreenJnr_AdminPage @AdminPage @DAS12170 @DAS12795
+@Evergreen @Admin @EvergreenJnr_AdminPage @AdminPage @DAS12170
 Scenario: EvergreenJnr_AdminPage_CheckThatErrorsDoNotAppearAfterAddingDevicesToTheBucketWhereNoDevicesExist
 	When User clicks Admin on the left-hand menu
 	Then Admin page should be displayed to the user
 	When User clicks "Buckets" link on the Admin page
 	Then "Buckets" page should be displayed to the user
-	#Remove this click after DAS-12795 fix
 	When User clicks Reset Filters button on the Admin page
 	When User enters "Amsterdam" text in the Search field for "Bucket" column
 	And User clicks content from "Bucket" column
@@ -431,13 +427,12 @@ Scenario: EvergreenJnr_AdminPage_CheckThatErrorsDoNotAppearAfterAddingDevicesToT
 	Then No items text is displayed
 	And There are no errors in the browser console
 
-@Evergreen @Admin @EvergreenJnr_AdminPage @AdminPage @DAS12170 @DAS12795
+@Evergreen @Admin @EvergreenJnr_AdminPage @AdminPage @DAS12170
 Scenario: EvergreenJnr_AdminPage_CheckThatConsoleErrorsAreNotDisplayedAfterAddingUsersInTheBuckets
 	When User clicks Admin on the left-hand menu
 	Then Admin page should be displayed to the user
 	When User clicks "Buckets" link on the Admin page
 	Then "Buckets" page should be displayed to the user
-	#Remove this click after DAS-12795 fix
 	When User clicks Reset Filters button on the Admin page
 	When User enters "Bangor" text in the Search field for "Bucket" column
 	And User clicks content from "Bucket" column
@@ -616,14 +611,12 @@ Scenario: EvergreenJnr_AdminPage_CheckThatNoConsoleErrorsAreDisplayedAfterUpdati
 	Then Success message with "3 objects queued for onboarding, 0 objects offboarded" text is displayed on the Projects page
 	And "Applications to add (0 of 2126 selected)" is displayed to the user in the Project Scope Changes section
 	And There are no errors in the browser console
-	And Delete "TestProject5" Project in the Administration
 
-@Evergreen @Admin @EvergreenJnr_AdminPage @AdminPage @DAS12491 @DAS12795
+@Evergreen @Admin @EvergreenJnr_AdminPage @AdminPage @DAS12491
 Scenario: EvergreenJnr_AdminPage_CheckThatSingularFoundItemLabelDisplaysOnActionsToolbarforBucketsList
 	When User clicks Admin on the left-hand menu
 	And User clicks "Buckets" link on the Admin page
 	Then "Buckets" page should be displayed to the user
-	#Remove this click after DAS-12795 fix
 	When User clicks Reset Filters button on the Admin page
 	When User enters "birmingham" text in the Search field for "Bucket" column
 	Then Counter shows "1" found rows
@@ -711,13 +704,12 @@ Scenario: EvergreenJnr_AdminPage_CheckThatSelectedCheckboxIsSelectedAfterSwitchi
 	Then "Devices to add (1 of 17225 selected)" is displayed to the user in the Project Scope Changes section
 	Then Delete "TestProject13" Project in the Administration
 
-@Evergreen @Admin @EvergreenJnr_AdminPage @AdminPage @DAS12760 @DAS12795
-Scenario: EvergreenJnr_AdminPage_CheckThatWarningMessageIsDisplayedWhenDeletingDefaultBucket
+@Evergreen @Admin @EvergreenJnr_AdminPage @AdminPage @DAS12760
+Scenario: EvergreenJnr_AdminPage_CheckMessageThatDisplayedWhenDeletingBucket
 	When User clicks Admin on the left-hand menu
 	Then Admin page should be displayed to the user
 	When User clicks "Buckets" link on the Admin page
 	Then "Buckets" page should be displayed to the user
-	#Remove this click after DAS-12795 fix
 	When User clicks Reset Filters button on the Admin page
 	When User enters "Amsterdam" text in the Search field for "Bucket" column
 	And User selects all rows on the grid
@@ -725,14 +717,7 @@ Scenario: EvergreenJnr_AdminPage_CheckThatWarningMessageIsDisplayedWhenDeletingD
 	And User selects "Delete" in the Actions dropdown
 	And User clicks Delete button 
 	Then Warning message with "You cannot delete the default bucket" text is displayed on the Admin page
-	When User clicks Create New Item button
-	Then "Create Bucket" page should be displayed to the user
-	When User enters "TestBucket3" in the Bucket Name field
-	And User selects "Team 1045" team in the Team dropdown on the Buckets page
-	When User clicks Default bucket checkbox
-	And User clicks Create button on the Create Bucket page
-	Then Success message is displayed and contains "The bucket has been created" text
-	When User enters "TestBucket3" text in the Search field for "Bucket" column
+	When User enters "Unassigned" text in the Search field for "Bucket" column
 	And User selects all rows on the grid
 	And User clicks on Actions button
 	And User selects "Delete" in the Actions dropdown
@@ -758,4 +743,3 @@ Scenario: EvergreenJnr_AdminPage_CheckThatWarningMessageIsDisplayedWhenDeletingD
 	Then Warning message with "These bucket will be permanently deleted and any objects within them reassigned to the default bucket" text is displayed on the Admin page
 	When User clicks Delete button in the warning message
 	Then Success message is displayed and contains "The selected bucket has been deleted" text
-	Then Delete "TestBucket3" Bucket in the Administration
