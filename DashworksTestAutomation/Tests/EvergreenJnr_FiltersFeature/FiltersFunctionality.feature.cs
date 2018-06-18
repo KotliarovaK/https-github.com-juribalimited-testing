@@ -2062,20 +2062,23 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_FiltersFeature
         }
         
         [NUnit.Framework.TestAttribute()]
-        [NUnit.Framework.DescriptionAttribute("EvergreenJnr_DevicesList_CheckThatLocationFilterIsEditedCorrectly")]
+        [NUnit.Framework.DescriptionAttribute("EvergreenJnr_AllLists_CheckThatLocationFilterIsEditedCorrectly")]
         [NUnit.Framework.CategoryAttribute("Evergreen")]
-        [NUnit.Framework.CategoryAttribute("Devices")]
+        [NUnit.Framework.CategoryAttribute("AllLists")]
         [NUnit.Framework.CategoryAttribute("EvergreenJnr_FilterFeature")]
         [NUnit.Framework.CategoryAttribute("FilterFunctionality")]
         [NUnit.Framework.CategoryAttribute("DAS12636")]
-        public virtual void EvergreenJnr_DevicesList_CheckThatLocationFilterIsEditedCorrectly()
+        [NUnit.Framework.TestCaseAttribute("Devices", "NY", new string[0])]
+        [NUnit.Framework.TestCaseAttribute("Users", "NY", new string[0])]
+        [NUnit.Framework.TestCaseAttribute("Mailboxes", "VIC", new string[0])]
+        public virtual void EvergreenJnr_AllLists_CheckThatLocationFilterIsEditedCorrectly(string listName, string filterValue, string[] exampleTags)
         {
             System.Exception lastException = null;
             for (int i = 0; (i <= 1); i = (i + 1))
             {
                 try
                 {
-                    this.EvergreenJnr_DevicesList_CheckThatLocationFilterIsEditedCorrectlyInternal();
+                    this.EvergreenJnr_AllLists_CheckThatLocationFilterIsEditedCorrectlyInternal(listName, filterValue, exampleTags);
                     return;
                 }
                 catch (System.Exception exc)
@@ -2094,31 +2097,41 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_FiltersFeature
             }
         }
         
-        private void EvergreenJnr_DevicesList_CheckThatLocationFilterIsEditedCorrectlyInternal()
+        private void EvergreenJnr_AllLists_CheckThatLocationFilterIsEditedCorrectlyInternal(string listName, string filterValue, string[] exampleTags)
         {
-            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("EvergreenJnr_DevicesList_CheckThatLocationFilterIsEditedCorrectly", new string[] {
-                        "Evergreen",
-                        "Devices",
-                        "EvergreenJnr_FilterFeature",
-                        "FilterFunctionality",
-                        "DAS12636"});
+            string[] @__tags = new string[] {
+                    "Evergreen",
+                    "AllLists",
+                    "EvergreenJnr_FilterFeature",
+                    "FilterFunctionality",
+                    "DAS12636"};
+            if ((exampleTags != null))
+            {
+                @__tags = System.Linq.Enumerable.ToArray(System.Linq.Enumerable.Concat(@__tags, exampleTags));
+            }
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("EvergreenJnr_AllLists_CheckThatLocationFilterIsEditedCorrectly", @__tags);
             this.ScenarioSetup(scenarioInfo);
             this.FeatureBackground();
-            testRunner.When("User clicks \"Devices\" on the left-hand menu", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-            testRunner.Then("\"Devices\" list should be displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+            testRunner.When(string.Format("User clicks \"{0}\" on the left-hand menu", listName), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+            testRunner.Then(string.Format("\"{0}\" list should be displayed to the user", listName), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
             testRunner.When("User clicks the Filters button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
             testRunner.Then("Filters panel is displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
             TechTalk.SpecFlow.Table table38 = new TechTalk.SpecFlow.Table(new string[] {
                         "SelectedValues"});
             table38.AddRow(new string[] {
-                        "NY"});
+                        string.Format("{0}", filterValue)});
             testRunner.When("User add \"State/County\" filter where type is \"Equals\" with added column and Looku" +
                     "p option", ((string)(null)), table38, "When ");
+            testRunner.Then(string.Format("\"{0}\" text is displayed in the table content", filterValue), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
             testRunner.When("User click Edit button for \"State/County\" filter", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-            testRunner.And("User deletes the selected lookup filter \"NY\" value", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-            testRunner.And("User have created \"Equals\" Lookup filter with column and \"CA\" option", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-            testRunner.Then("\"CA\" text is displayed in the table content", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-            testRunner.And("\"State/County is CA\" is displayed in added filter info", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+            testRunner.And(string.Format("User deletes the selected lookup filter \"{0}\" value", filterValue), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+            testRunner.And("User have created \"Equals\" Lookup filter with column and \"Empty\" option", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+            testRunner.Then("\"State/County is Empty\" is displayed in added filter info", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+            TechTalk.SpecFlow.Table table39 = new TechTalk.SpecFlow.Table(new string[] {
+                        "ColumnName"});
+            table39.AddRow(new string[] {
+                        "State/County"});
+            testRunner.And("Content is empty in the column", ((string)(null)), table39, "And ");
             this.ScenarioCleanup();
         }
     }
