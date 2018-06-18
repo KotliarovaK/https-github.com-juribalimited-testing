@@ -518,7 +518,7 @@ Scenario Outline: EvergreenJnr_AllLists_CheckThatContentIsDisplayedInTheAddedCol
 	| Devices   | Windows7Mi: Category | Windows7Mi: Category |
 
 @Evergreen @Mailboxes @EvergreenJnr_FilterFeature @FilterFunctionality @DAS12543 @Delete_Newly_Created_List
-Scenario: EvergreenJnr_MailboxesList_CheckThatEditFilterElementsBlockIsDisplayedCorrectlyOnTheFiltersPanel 
+Scenario: EvergreenJnr_MailboxesList_CheckThatEditFilterElementsBlockIsDisplayedCorrectlyOnTheFiltersPanel
 	When User clicks "Mailboxes" on the left-hand menu
 	Then "Mailboxes" list should be displayed to the user
 	When User clicks the Filters button
@@ -533,9 +533,33 @@ Scenario: EvergreenJnr_MailboxesList_CheckThatEditFilterElementsBlockIsDisplayed
 	Then "TestListF544Y5" list is displayed to user
 	When User clicks the Filters button
 	Then Filters panel is displayed to the user
-	Then Values is displayed in added filter info
+	And Values is displayed in added filter info
 	| Values     |
 	| Light Blue |
 	When User click Edit button for "EmailMigra: Readiness" filter
 	Then "Add column" checkbox is checked
-	Then "EmailMigra: Readiness" filter is displayed in the Filters panel
+	And "EmailMigra: Readiness" filter is displayed in the Filters panel
+
+@Evergreen @AllLists @EvergreenJnr_FilterFeature @FilterFunctionality @DAS12636
+Scenario Outline: EvergreenJnr_AllLists_CheckThatLocationFilterIsEditedCorrectly
+	When User clicks "<ListName>" on the left-hand menu
+	Then "<ListName>" list should be displayed to the user
+	When User clicks the Filters button
+	Then Filters panel is displayed to the user
+	When User add "State/County" filter where type is "Equals" with added column and Lookup option
+	| SelectedValues |
+	| <FilterValue>  |
+	Then "<FilterValue>" text is displayed in the table content
+	When User click Edit button for "State/County" filter
+	And User deletes the selected lookup filter "<FilterValue>" value
+	And User have created "Equals" Lookup filter with column and "Empty" option
+	Then "State/County is Empty" is displayed in added filter info
+	And Content is empty in the column
+	| ColumnName   |
+	| State/County |
+
+	Examples:
+	| ListName  | FilterValue |
+	| Devices   | NY          |
+	| Users     | NY          |
+	| Mailboxes | VIC         |

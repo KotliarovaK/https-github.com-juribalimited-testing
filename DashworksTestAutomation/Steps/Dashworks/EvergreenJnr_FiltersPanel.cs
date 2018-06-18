@@ -422,8 +422,14 @@ namespace DashworksTestAutomation.Steps.Dashworks
         public void WhenUserClickEditButtonForFilter(string filterName)
         {
             var filterElement = _driver.NowAt<FiltersElement>();
-
             filterElement.GetEditFilterButton(filterName).Click();
+        }
+
+        [When(@"User deletes the selected lookup filter ""(.*)"" value")]
+        public void WhenUserDeletesTheSelectedLookupFilterValue(string filterValue)
+        {
+            var filterElement = _driver.NowAt<FiltersElement>();
+            filterElement.CloseFiltersLookupValue(filterValue).Click();
         }
 
         [Then(@"User changes filter type to ""(.*)""")]

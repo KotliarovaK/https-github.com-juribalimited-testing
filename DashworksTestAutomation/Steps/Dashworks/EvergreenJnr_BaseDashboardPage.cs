@@ -218,6 +218,13 @@ namespace DashworksTestAutomation.Steps.Dashworks
             }
         }
 
+        [Then(@"""(.*)"" text is displayed in the table content")]
+        public void ThenTextIsDisplayedInTheTableContent(string text)
+        {
+            var dashboardPage = _driver.NowAt<BaseDashboardPage>();
+            dashboardPage.CheckColumnContent(text);
+        }
+
         [Then(@"Appropriate header font weight is displayed")]
         public void ThenAppropriateHeaderFontWeightIsDisplayed()
         {
