@@ -348,6 +348,8 @@ Scenario Outline: EvergreenJnr_DevicesList_CheckThatOperatorInSelectedFilterIsDi
 	| Does not begin with |
 	| Ends with           |
 	| Does not end with   |
+	| Empty               |
+	| Not empty           |
 
 Examples:
 	| CategoryName              | FilterName                  |
