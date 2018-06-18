@@ -540,17 +540,26 @@ Scenario: EvergreenJnr_MailboxesList_CheckThatEditFilterElementsBlockIsDisplayed
 	Then "Add column" checkbox is checked
 	And "EmailMigra: Readiness" filter is displayed in the Filters panel
 
-@Evergreen @Devices @EvergreenJnr_FilterFeature @FilterFunctionality @DAS12636
-Scenario: EvergreenJnr_DevicesList_CheckThatLocationFilterIsEditedCorrectly
-	When User clicks "Devices" on the left-hand menu
-	Then "Devices" list should be displayed to the user
+@Evergreen @AllLists @EvergreenJnr_FilterFeature @FilterFunctionality @DAS12636
+Scenario Outline: EvergreenJnr_AllLists_CheckThatLocationFilterIsEditedCorrectly
+	When User clicks "<ListName>" on the left-hand menu
+	Then "<ListName>" list should be displayed to the user
 	When User clicks the Filters button
 	Then Filters panel is displayed to the user
 	When User add "State/County" filter where type is "Equals" with added column and Lookup option
 	| SelectedValues |
-	| NY             |
+	| <FilterValue>  |
+	Then "<FilterValue>" text is displayed in the table content
 	When User click Edit button for "State/County" filter
-	And User deletes the selected lookup filter "NY" value
-	And User have created "Equals" Lookup filter with column and "CA" option
-	Then "CA" text is displayed in the table content
-	And "State/County is CA" is displayed in added filter info
+	And User deletes the selected lookup filter "<FilterValue>" value
+	And User have created "Equals" Lookup filter with column and "Empty" option
+	Then "State/County is Empty" is displayed in added filter info
+	And Content is empty in the column
+	| ColumnName   |
+	| State/County |
+
+	Examples:
+	| ListName  | FilterValue |
+	| Devices   | NY          |
+	| Users     | NY          |
+	| Mailboxes | VIC         |
