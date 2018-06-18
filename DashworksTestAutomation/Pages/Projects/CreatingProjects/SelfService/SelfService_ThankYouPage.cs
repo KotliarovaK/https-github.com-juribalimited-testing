@@ -1,14 +1,12 @@
 ﻿using System.Collections.Generic;
-using DashworksTestAutomation.Pages.Evergreen;
+using DashworksTestAutomation.Base;
 using OpenQA.Selenium;
 using OpenQA.Selenium.Support.PageObjects;
 
 namespace DashworksTestAutomation.Pages.Projects
 {
-    internal class SelfService_ThankYouPage : BaseDashboardPage
+    internal class SelfService_ThankYouPage : SeleniumBasePage
     {
-        //TODO add a language?
-
         [FindsBy(How = How.XPath, Using = ".//input[contains(@id, 'reviewChoiceshowScreen')]")]
         public IWebElement ShowInTheSelfServicePortal { get; set; }
 

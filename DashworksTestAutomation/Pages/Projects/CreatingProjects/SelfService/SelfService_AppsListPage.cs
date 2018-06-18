@@ -1,11 +1,11 @@
 ﻿using System.Collections.Generic;
-using DashworksTestAutomation.Pages.Evergreen;
+using DashworksTestAutomation.Base;
 using OpenQA.Selenium;
 using OpenQA.Selenium.Support.PageObjects;
 
 namespace DashworksTestAutomation.Pages.Projects
 {
-    internal class SelfService_AppsListPage : BaseDashboardPage
+    internal class SelfService_AppsListPage : SeleniumBasePage
     {
         [FindsBy(How = How.XPath, Using = ".//input[contains(@id, 'ShowScreen')]")]
         public IWebElement ShowScreen { get; set; }

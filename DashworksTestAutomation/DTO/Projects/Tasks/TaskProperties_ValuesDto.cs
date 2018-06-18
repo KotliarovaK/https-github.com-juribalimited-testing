@@ -6,16 +6,11 @@ namespace DashworksTestAutomation.DTO.Projects
     public class TaskProperties_ValuesDto
     {
         public string Name { get; set; }
-        public string Help { get; set; }
+        public string ReadinessString { get; set; }
         public ReadinessEnum Readiness;
+        public string TaskStatusString { get; set; }
         public TaskStatusEnum TaskStatus;
         public bool DefaultValue { get; set; }
-
-        public TaskProperties_ValuesDto()
-        {
-            Readiness = EnumExtensions.GetRandomValue<ReadinessEnum>();
-            TaskStatus = EnumExtensions.GetRandomValue<TaskStatusEnum>();
-        }
     }
 
     public enum ReadinessEnum
@@ -32,7 +27,8 @@ namespace DashworksTestAutomation.DTO.Projects
         ReallyExtremelyOrange,
         Purple,
         Green,
-        Grey
+        Grey,
+        None
     }
 
     public enum TaskStatusEnum

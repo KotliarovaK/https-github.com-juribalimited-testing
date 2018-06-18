@@ -1,11 +1,11 @@
 ﻿using System.Collections.Generic;
-using DashworksTestAutomation.Pages.Evergreen;
+using DashworksTestAutomation.Base;
 using OpenQA.Selenium;
 using OpenQA.Selenium.Support.PageObjects;
 
 namespace DashworksTestAutomation.Pages.Projects
 {
-    internal class Capacity_OverrideDatesPage : BaseDashboardPage
+    internal class Capacity_OverrideDatesPage : SeleniumBasePage
     {
         [FindsBy(How = How.XPath, Using = ".//input[contains(@id, 'SelectDate')]")]
         public IWebElement Date { get; set; }

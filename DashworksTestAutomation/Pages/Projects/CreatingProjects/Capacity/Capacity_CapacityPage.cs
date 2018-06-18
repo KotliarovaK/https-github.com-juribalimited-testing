@@ -1,11 +1,11 @@
 ﻿using System.Collections.Generic;
-using DashworksTestAutomation.Pages.Evergreen;
+using DashworksTestAutomation.Base;
 using OpenQA.Selenium;
 using OpenQA.Selenium.Support.PageObjects;
 
 namespace DashworksTestAutomation.Pages.Projects
 {
-    internal class Capacity_CapacityPage : BaseDashboardPage
+    internal class Capacity_CapacityPage : SeleniumBasePage
     {
         [FindsBy(How = How.XPath, Using = ".//select[contains(@id, 'Team')]")]
         public IWebElement Team { get; set; }

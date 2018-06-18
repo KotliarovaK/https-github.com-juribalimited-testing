@@ -1,12 +1,11 @@
 ﻿using System.Collections.Generic;
-using DashworksTestAutomation.Extensions;
-using DashworksTestAutomation.Pages.Evergreen;
+using DashworksTestAutomation.Base;
 using OpenQA.Selenium;
 using OpenQA.Selenium.Support.PageObjects;
 
 namespace DashworksTestAutomation.Pages.Projects
 {
-    internal class TaskPropertiesPage : BaseDashboardPage
+    internal class TaskPropertiesPage : SeleniumBasePage
     {
         [FindsBy(How = How.XPath, Using = ".//input[contains(@id, 'TaskName')]")]
         public IWebElement Name { get; set; }
@@ -29,8 +28,11 @@ namespace DashworksTestAutomation.Pages.Projects
         [FindsBy(How = How.XPath, Using = ".//select[contains(@id, 'TaskTemplateID')]")]
         public IWebElement TaskValuesTemplate { get; set; }
 
+        [FindsBy(How = How.XPath, Using = ".//span[contains(@id, 'UpdatePanel')]//select[@disabled='disabled']")]
+        public IWebElement DisabledTaskValuesTemplate { get; set; }
+
         [FindsBy(How = How.XPath, Using = ".//input[contains(@id, 'AllRequestTypes')]")]
-        public IWebElement TaskValuesTemplateCheckbox { get; set; }
+        public IWebElement ApplyToAllCheckbox { get; set; }
 
         [FindsBy(How = How.XPath, Using = ".//input[@value='Create Task']")]
         public IWebElement ConfirmCreateTaskButton { get; set; }
@@ -41,11 +43,12 @@ namespace DashworksTestAutomation.Pages.Projects
             {
                 SelectorFor(this, p => p.Name),
                 SelectorFor(this, p => p.Help),
+                SelectorFor(this, p => p.StageName),
                 SelectorFor(this, p => p.TaskType),
                 SelectorFor(this, p => p.ValueType),
                 SelectorFor(this, p => p.ObjectType),
                 SelectorFor(this, p => p.TaskValuesTemplate),
-                SelectorFor(this, p => p.TaskValuesTemplateCheckbox)
+                SelectorFor(this, p => p.ApplyToAllCheckbox)
             };
         }
     }
