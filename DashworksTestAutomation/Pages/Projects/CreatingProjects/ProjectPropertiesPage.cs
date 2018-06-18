@@ -1,11 +1,11 @@
 ﻿using System.Collections.Generic;
-using DashworksTestAutomation.Pages.Evergreen;
+using DashworksTestAutomation.Base;
 using OpenQA.Selenium;
 using OpenQA.Selenium.Support.PageObjects;
 
 namespace DashworksTestAutomation.Pages.Projects
 {
-    internal class ProjectPropertiesPage : BaseDashboardPage
+    internal class ProjectPropertiesPage : SeleniumBasePage
     {
         [FindsBy(How = How.XPath, Using = ".//input[@title='Project Name']")]
         public IWebElement ProjectName { get; set; }
