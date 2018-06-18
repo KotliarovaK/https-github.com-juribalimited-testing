@@ -548,6 +548,7 @@ Scenario: EvergreenJnr_DevicesList_CheckThatLocationFilterIsEditedCorrectly
 	| SelectedValues |
 	| NY             |
 	When User click Edit button for "State/County" filter
-	When User add "State/County" filter where type is "Equals" with added column and Lookup option
-	| SelectedValues |
-	| NY             |
+	And User deletes the selected lookup filter "NY" value
+	And User have created "Equals" Lookup filter with column and "CA" option
+	Then "CA" text is displayed in the table content
+	And "State/County is CA" is displayed in added filter info

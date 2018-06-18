@@ -2111,12 +2111,10 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_FiltersFeature
             testRunner.When("User add \"State/County\" filter where type is \"Equals\" with added column and Looku" +
                     "p option", ((string)(null)), table38, "When ");
             testRunner.When("User click Edit button for \"State/County\" filter", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-            TechTalk.SpecFlow.Table table39 = new TechTalk.SpecFlow.Table(new string[] {
-                        "SelectedValues"});
-            table39.AddRow(new string[] {
-                        "NY"});
-            testRunner.When("User add \"State/County\" filter where type is \"Equals\" with added column and Looku" +
-                    "p option", ((string)(null)), table39, "When ");
+            testRunner.And("User deletes the selected lookup filter \"NY\" value", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+            testRunner.And("User have created \"Equals\" Lookup filter with column and \"CA\" option", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+            testRunner.Then("\"CA\" text is displayed in the table content", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+            testRunner.And("\"State/County is CA\" is displayed in added filter info", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
             this.ScenarioCleanup();
         }
     }

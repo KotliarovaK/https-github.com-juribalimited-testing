@@ -312,6 +312,12 @@ namespace DashworksTestAutomation.Pages.Evergreen
             return Driver.IsElementDisplayed(By.XPath($".//div[@class='filter-label']//span[text()='{filterName}']"));
         }
 
+        public IWebElement CloseFiltersLookupValue(string filterValue)
+        {
+            var LookupValuerButton = $".//button[contains(@aria-describedby, '{filterValue}')]";
+            return Driver.FindElement(By.XPath(LookupValuerButton));
+        }
+
         public IWebElement GetEditFilterButton(string filterName)
         {
             var editFilterSelector =

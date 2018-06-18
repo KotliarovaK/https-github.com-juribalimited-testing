@@ -258,6 +258,14 @@ namespace DashworksTestAutomation.Pages.Evergreen
             return Driver.FindElement(byControl);
         }
 
+        public string CheckColumnContent(string columnContent)
+        {
+            By byControl =
+                By.XPath($".//div[@class='ag-body-container']/div/div[@title='{columnContent}']");
+            Driver.WaitWhileControlIsNotDisplayed(byControl);
+            return Driver.FindElement(byControl).Text;
+        }
+
         public IWebElement GetHrefByColumnName(string columnName)
         {
             By byControl =
