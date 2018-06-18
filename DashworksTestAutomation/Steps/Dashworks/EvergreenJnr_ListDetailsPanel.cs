@@ -99,6 +99,14 @@ namespace DashworksTestAutomation.Steps.Dashworks
                 $"{listName} is not displayed in Name Field");
         }
 
+        [Then(@"Star icon is active in list details panel")]
+        public void ThenStarIconIsActiveInListDetailsPanel()
+        {
+            var listDetailsElement = _driver.NowAt<ListDetailsElement>();
+            Assert.IsTrue(listDetailsElement.ActiveFavoriteButton.Displayed(),
+                "Star icon is not active");
+        }
+
         [Then(@"List details panel is displayed to the user")]
         public void ThenListDetailsPanelIsDisplayedToTheUser()
         {
