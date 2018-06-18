@@ -550,7 +550,7 @@ Scenario: EvergreenJnr_AdminPage_CheckThatFiltersAreWorkingCorrectlyOnTheAdminPa
 	Then Counter shows "1" found rows
 	When User clears Search field for "Project Buckets" column
 	When User enters "<20" text in the Search field for "Devices" column
-	Then Counter shows "7" found rows
+	Then Counter shows "5" found rows
 	When User clicks Admin on the left-hand menu
 	And User clicks "Buckets" link on the Admin page
 	And User enters "barry's" text in the Search field for "Bucket" column
@@ -743,3 +743,37 @@ Scenario: EvergreenJnr_AdminPage_CheckMessageThatDisplayedWhenDeletingBucket
 	Then Warning message with "These bucket will be permanently deleted and any objects within them reassigned to the default bucket" text is displayed on the Admin page
 	When User clicks Delete button in the warning message
 	Then Success message is displayed and contains "The selected bucket has been deleted" text
+
+@Evergreen @Admin @EvergreenJnr_AdminPage @AdminPage @DAS12387
+Scenario: EvergreenJnr_AdminPage_CheckThatOnboardingOfObjectsIsProceedForScopedProjects
+	When User clicks Admin on the left-hand menu
+	Then Admin page should be displayed to the user
+	When User clicks "Projects" link on the Admin page
+	Then "Projects" page should be displayed to the user
+	When User clicks Create New Item button
+	Then "Create Project" page should be displayed to the user
+	When User enters "TestProject14" in the Project Name field
+	And User selects "All Devices" in the Scope Project dropdown
+	When User clicks Create button on the Create Project page
+	And User clicks "Projects" link on the Admin page
+	Then "Projects" page should be displayed to the user
+	When User enters "TestProject14" text in the Search field for "Project" column
+	And User clicks content from "Project" column
+	Then Project "TestProject14" is displayed to user
+	When User adds following items to the Project
+	| Item           |
+	| 00HA7MKAVVFDAV |
+	| 00I0COBFWHOF27 |
+	When User clicks Update Project button on the Projects page
+	Then Success message with "2 objects queued for onboarding, 0 objects offboarded" text is displayed on the Projects page
+	When User clicks "Users" tab in the Project Scope Changes section
+	When User adds following items to the Project
+	| Item                         |
+	| AAG081456(Melanie Z. Fowler) |
+	| AAH0343264(Luc Gauthier)     |
+	When User clicks Update Project button on the Projects page
+	Then Success message with "2 objects queued for onboarding, 0 objects offboarded" text is displayed on the Projects page
+	When User click on Back button
+	When User enters "TestProject14" text in the Search field for "Project" column
+	And User selects all rows on the grid
+	And User removes selected item
