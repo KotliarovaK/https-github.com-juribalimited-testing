@@ -1,12 +1,11 @@
 ﻿using System.Collections.Generic;
-using DashworksTestAutomation.Extensions;
-using DashworksTestAutomation.Pages.Evergreen;
+using DashworksTestAutomation.Base;
 using OpenQA.Selenium;
 using OpenQA.Selenium.Support.PageObjects;
 
 namespace DashworksTestAutomation.Pages.Projects.Capacity
 {
-    internal class Capacity_SummaryPage : BaseDashboardPage
+    internal class Capacity_SummaryPage : SeleniumBasePage
     {
 
         [FindsBy(How = How.XPath, Using = ".//select[contains(@id, 'RequestType')]")]

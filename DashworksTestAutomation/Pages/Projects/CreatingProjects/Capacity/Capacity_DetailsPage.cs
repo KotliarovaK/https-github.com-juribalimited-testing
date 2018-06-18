@@ -1,11 +1,11 @@
 ﻿using System.Collections.Generic;
-using DashworksTestAutomation.Pages.Evergreen;
+using DashworksTestAutomation.Base;
 using OpenQA.Selenium;
 using OpenQA.Selenium.Support.PageObjects;
 
 namespace DashworksTestAutomation.Pages.Projects
 {
-    internal class Capacity_DetailsPage : BaseDashboardPage
+    internal class Capacity_DetailsPage : SeleniumBasePage
     {
         [FindsBy(How = How.XPath, Using = ".//input[contains(@id, 'EnableCapacityPlanning')]")]
         public IWebElement EnablePlanning { get; set; }

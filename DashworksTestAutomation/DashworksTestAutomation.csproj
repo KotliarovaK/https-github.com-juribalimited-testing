@@ -285,6 +285,7 @@
     <Compile Include="Pages\Projects\CreatingProjects\MailTemplatePropertiesPage.cs" />
     <Compile Include="Pages\Projects\CreatingProjects\NewsPage.cs" />
     <Compile Include="Pages\Projects\CreatingProjects\Tasks\TaskProperties_RequestTypesPage.cs" />
+    <Compile Include="Pages\Projects\CreatingProjects\Tasks\TaskProperties_ValuesPage.cs" />
     <Compile Include="Pages\Projects\ProjectLogin.cs" />
     <Compile Include="Pages\Projects\CreatingProjects\ProjectPropertiesPage.cs" />
     <Compile Include="Pages\Projects\CreatingProjects\ProjectsHomePage.cs" />
@@ -302,7 +303,7 @@
     <Compile Include="Pages\Projects\CreatingProjects\Tasks\TaskPropertiesPage.cs" />
     <Compile Include="Pages\Projects\CreatingProjects\Tasks\TaskProperties_DetailsPage.cs" />
     <Compile Include="Pages\Projects\CreatingProjects\Tasks\TaskProperties_EmailsPage.cs" />
-    <Compile Include="Pages\Projects\CreatingProjects\Tasks\TaskProperties_ValuesPage.cs" />
+    <Compile Include="Pages\Projects\CreatingProjects\Tasks\TaskProperties_CreatingValuesPage.cs" />
     <Compile Include="Pages\Projects\CreatingProjects\TeamPropertiesPage.cs" />
     <Compile Include="Pages\Projects\CreatingProjects\TeamsPage.cs" />
     <Compile Include="Pages\Projects\ProjectsBaseElements.cs" />

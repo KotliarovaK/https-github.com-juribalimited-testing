@@ -10,6 +10,8 @@ using NUnit.Framework;
 using OpenQA.Selenium.Remote;
 using TechTalk.SpecFlow;
 using TechTalk.SpecFlow.Assist;
+using ReadinessEnum = DashworksTestAutomation.DTO.Projects.ReadinessEnum;
+using TaskStatusEnum = DashworksTestAutomation.DTO.Projects.TaskStatusEnum;
 
 namespace DashworksTestAutomation.Steps.Projects
 {
@@ -163,7 +165,7 @@ namespace DashworksTestAutomation.Steps.Projects
             table.CreateInstance<RequestTypesDto>().CopyPropertiesTo(_requestTypesDto);
             //assign ObjectTypeString to ObjectTypeEnum
             _requestTypesDto.ObjectType = (ObjectTypeEnum)Enum.Parse(typeof(ObjectTypeEnum), _requestTypesDto.ObjectTypeString);
-            _requestTypesDto.Name += TestDataGenerator.RandomString();
+            //_requestTypesDto.Name += TestDataGenerator.RandomString();
             RequestTypesDto tempRequestTypesDto = new RequestTypesDto();
             _requestTypesDto.CopyPropertiesTo(tempRequestTypesDto);
             _projectDto.ReqestTypes.Add(tempRequestTypesDto);
@@ -325,8 +327,6 @@ namespace DashworksTestAutomation.Steps.Projects
 
             if (_taskPropertiesDto.ValueType.Equals(ValueTypeEnum.Date))
             {
-                //assign DateModeString to DateModeEnum
-                _taskPropertiesDetailsDto.DateMode = (DateModeEnum)Enum.Parse(typeof(DateModeEnum), _taskPropertiesDetailsDto.DateModeString);
                 //assign TaskProjectRoleString to TaskProjectRoleEnum
                 _taskPropertiesDetailsDto.TaskProjectRole = (TaskProjectRoleEnum)Enum.Parse(typeof(TaskProjectRoleEnum), _taskPropertiesDetailsDto.TaskProjectRoleString);
 
@@ -336,14 +336,17 @@ namespace DashworksTestAutomation.Steps.Projects
                 Assert.AreEqual(_taskPropertiesDetailsDto.TaskHaADueDate,
                     Convert.ToBoolean(page.TaskHaADueDate.GetAttribute("disabled")),
                     "Checkbox state is incorrect");
-                page.DateMode.SelectboxSelect(_taskPropertiesDetailsDto.DateMode.GetValue());
+                if (!string.IsNullOrEmpty(_taskPropertiesDetailsDto.DateModeString))
+                {
+                    //assign DateModeString to DateModeEnum
+                    _taskPropertiesDetailsDto.DateMode = (DateModeEnum)Enum.Parse(typeof(DateModeEnum), _taskPropertiesDetailsDto.DateModeString);
+                    page.DateMode.SelectboxSelect(_taskPropertiesDetailsDto.DateMode.GetValue());
+                }
                 page.TaskProjectRole.SelectboxSelect(_taskPropertiesDetailsDto.TaskProjectRole.GetValue());
             }
 
             if (_taskPropertiesDto.ValueType.Equals(ValueTypeEnum.DropDownList))
             {
-                //assign DateModeString to DateModeEnum
-                _taskPropertiesDetailsDto.DateMode = (DateModeEnum)Enum.Parse(typeof(DateModeEnum), _taskPropertiesDetailsDto.DateModeString);
                 //assign TaskProjectRoleString to TaskProjectRoleEnum
                 _taskPropertiesDetailsDto.TaskProjectRole = (TaskProjectRoleEnum)Enum.Parse(typeof(TaskProjectRoleEnum), _taskPropertiesDetailsDto.TaskProjectRoleString);
 
@@ -352,13 +355,17 @@ namespace DashworksTestAutomation.Steps.Projects
                 page.TaskHasAnOwner.SetCheckboxState(_taskPropertiesDetailsDto.TaskHasAnOwner);
                 page.TaskHaADueDate.SetCheckboxState(_taskPropertiesDetailsDto.TaskHaADueDate);
 
-                if (page.TaskHaADueDate.Selected)
+                if (!string.IsNullOrEmpty(_taskPropertiesDetailsDto.DateModeString))
+                {
+                    //assign DateModeString to DateModeEnum
+                    _taskPropertiesDetailsDto.DateMode = (DateModeEnum)Enum.Parse(typeof(DateModeEnum), _taskPropertiesDetailsDto.DateModeString);
                     page.DateMode.SelectboxSelect(_taskPropertiesDetailsDto.DateMode.GetValue());
+                }
+                    
             }
 
             if (_taskPropertiesDto.ValueType.Equals(ValueTypeEnum.Radiobutton))
             {
-                
                 //assign TaskProjectRoleString to TaskProjectRoleEnum
                 _taskPropertiesDetailsDto.TaskProjectRole = (TaskProjectRoleEnum)Enum.Parse(typeof(TaskProjectRoleEnum), _taskPropertiesDetailsDto.TaskProjectRoleString);
 
@@ -428,31 +435,39 @@ namespace DashworksTestAutomation.Steps.Projects
         [When(@"User create new Value")]
         public void ThenUserCreateNewValue(Table table)
         {
-            var page = _driver.NowAt<TaskProperties_ValuesPage>();
+            var page = _driver.NowAt<TaskProperties_CreatingValuesPage>();
 
             table.CreateInstance<TaskProperties_ValuesDto>().CopyPropertiesTo(_taskPropertiesValuesDto);
+
             //assign TaskStatusString to TaskStatusEnum
             _taskPropertiesValuesDto.TaskStatus = (TaskStatusEnum)Enum.Parse(typeof(TaskStatusEnum), _taskPropertiesValuesDto.TaskStatusString);
-            //assign ReadinessString to ReadinessEnum
-            _taskPropertiesValuesDto.Readiness = (ReadinessEnum)Enum.Parse(typeof(ReadinessEnum), _taskPropertiesValuesDto.ReadinessString);
 
             page.Name.SendKeys(_taskPropertiesValuesDto.Name);
             //TODO colors select
-            if (_taskPropertiesDetailsDto.TaskImpactsReadiness.Equals(true))
+            if (!string.IsNullOrEmpty(_taskPropertiesValuesDto.ReadinessString))
+            {
+                //assign ReadinessString to ReadinessEnum
+                _taskPropertiesValuesDto.Readiness = (ReadinessEnum)Enum.Parse(typeof(ReadinessEnum), _taskPropertiesValuesDto.ReadinessString);
                 page.SelectOnboardedApplications(_taskPropertiesValuesDto.Readiness);
+            }
             page.TaskStatus.SelectboxSelect(_taskPropertiesValuesDto.TaskStatus.GetValue());
             page.DefaultValue.SetCheckboxState(_taskPropertiesValuesDto.DefaultValue);
         }
 
-        [When(@"User edit ""(.*)"" Value")]
-        public void WhenUserEditValue(string value, Table table)
+        [When(@"User navigates to ""(.*)"" Value")]
+        public void WhenUserNavigatesToValue(string value)
         {
             var page = _driver.NowAt<TaskProperties_ValuesPage>();
 
-            table.CreateInstance<TaskProperties_ValuesDto>().CopyPropertiesTo(_taskPropertiesValuesDto);
+            page.NavigateToSelectedValue(value);
+        }
 
-            //assign ReadinessString to ReadinessEnum
-            _taskPropertiesValuesDto.Readiness = (ReadinessEnum)Enum.Parse(typeof(ReadinessEnum), _taskPropertiesValuesDto.ReadinessString);
+        [When(@"User edit selected Value")]
+        public void WhenUserEditSelectedValue(Table table)
+        {
+            var page = _driver.NowAt<TaskProperties_CreatingValuesPage>();
+
+            table.CreateInstance<TaskProperties_ValuesDto>().CopyPropertiesTo(_taskPropertiesValuesDto);
 
             if (!string.IsNullOrEmpty(_taskPropertiesValuesDto.Name))
             {
@@ -460,9 +475,12 @@ namespace DashworksTestAutomation.Steps.Projects
                 page.Name.SendKeys(_taskPropertiesValuesDto.Name);
             }
             //TODO colors select
-            if (_taskPropertiesDetailsDto.TaskImpactsReadiness.Equals(true))
-                if (!string.IsNullOrEmpty(_taskPropertiesValuesDto.ReadinessString))
-                    page.SelectOnboardedApplications(_taskPropertiesValuesDto.Readiness);
+            if (!string.IsNullOrEmpty(_taskPropertiesValuesDto.ReadinessString))
+            {
+                //assign ReadinessString to ReadinessEnum
+                _taskPropertiesValuesDto.Readiness = (ReadinessEnum)Enum.Parse(typeof(ReadinessEnum), _taskPropertiesValuesDto.ReadinessString);
+                page.SelectOnboardedApplications(_taskPropertiesValuesDto.Readiness);
+            }
 
             if (!string.IsNullOrEmpty(_taskPropertiesValuesDto.TaskStatusString))
             {
@@ -477,7 +495,7 @@ namespace DashworksTestAutomation.Steps.Projects
         public void WhenUserSelectRequestTypeOnTaskPage(string requestTypeName)
         {
             var page = _driver.NowAt<TaskProperties_RequestTypesPage>();
-            page.GetRequestTypeCheckboxByName(requestTypeName).Click();
+            page.GetRequestTypeCheckboxByName(requestTypeName);
         }
 
         [When(@"User save selected Request Type")]

@@ -1,12 +1,12 @@
 ﻿using System.Collections.Generic;
+using DashworksTestAutomation.Base;
 using DashworksTestAutomation.Extensions;
-using DashworksTestAutomation.Pages.Evergreen;
 using OpenQA.Selenium;
 using OpenQA.Selenium.Support.PageObjects;
 
 namespace DashworksTestAutomation.Pages.Projects
 {
-    internal class SelfService_WelcomePage : BaseDashboardPage
+    internal class SelfService_WelcomePage : SeleniumBasePage
     {
         [FindsBy(How = How.XPath, Using = ".//input[contains(@class, 'AddLanguage')]")]
         public IWebElement AddLanguageButton { get; set; }

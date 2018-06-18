@@ -1,12 +1,11 @@
 ﻿using System.Collections.Generic;
-using DashworksTestAutomation.Extensions;
-using DashworksTestAutomation.Pages.Evergreen;
+using DashworksTestAutomation.Base;
 using OpenQA.Selenium;
 using OpenQA.Selenium.Support.PageObjects;
 
 namespace DashworksTestAutomation.Pages.Projects
 {
-    internal class TaskPropertiesPage : BaseDashboardPage
+    internal class TaskPropertiesPage : SeleniumBasePage
     {
         [FindsBy(How = How.XPath, Using = ".//input[contains(@id, 'TaskName')]")]
         public IWebElement Name { get; set; }
