@@ -43,7 +43,7 @@ Examples:
 	| Max Receive Size (MB) |
 	| Max Send Size (MB)    |
 
-@Evergreen @AllLists @EvergreenJnr_Columns @AddColumnAction @DAS11689 @DAS12780 @Not_Run
+@Evergreen @AllLists @EvergreenJnr_Columns @AddColumnAction @DAS11689 @DAS12780
 Scenario Outline: EvergreenJnr_AllLists_CheckThatTableIsFullyLoadedAfterAddingTheColumns
 	When User add following columns using URL to the "<ListName>" page:
 	| ColumnName                        |
@@ -61,7 +61,7 @@ Examples:
 	| Devices      |
 	| Applications |
 
-@Evergreen @Applications @EvergreenJnr_Columns @AddColumnAction @DAS10997 @DAS12026 @DAS12156 @DAS12780 @Not_Run
+@Evergreen @Applications @EvergreenJnr_Columns @AddColumnAction @DAS10997 @DAS12026 @DAS12156 @DAS12780
 Scenario Outline: EvergreenJnr_Applications_CheckThatConsoleErrorsAreNotDisplayedForImages
 	When User add following columns using URL to the "Applications" page:
 	| ColumnName   |
