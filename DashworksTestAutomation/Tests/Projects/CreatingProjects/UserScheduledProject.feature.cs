@@ -302,21 +302,21 @@ namespace DashworksTestAutomation.Tests.Projects.CreatingProjects
             TechTalk.SpecFlow.Table table16 = new TechTalk.SpecFlow.Table(new string[] {
                         "StageName"});
             table16.AddRow(new string[] {
-                        "0 UserScheduledProject"});
+                        "Stage 1"});
             testRunner.And("User create Stage", ((string)(null)), table16, "And ");
             testRunner.Then("created Stage is displayed in the table", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
             testRunner.When("User clicks \"Create Stage\" button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
             TechTalk.SpecFlow.Table table17 = new TechTalk.SpecFlow.Table(new string[] {
                         "StageName"});
             table17.AddRow(new string[] {
-                        "1 UserScheduledProject"});
+                        "Stage 2"});
             testRunner.And("User create Stage", ((string)(null)), table17, "And ");
             testRunner.Then("created Stage is displayed in the table", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
             testRunner.When("User clicks \"Create Stage\" button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
             TechTalk.SpecFlow.Table table18 = new TechTalk.SpecFlow.Table(new string[] {
                         "StageName"});
             table18.AddRow(new string[] {
-                        "2 UserScheduledProject"});
+                        "Stage 3"});
             testRunner.And("User create Stage", ((string)(null)), table18, "And ");
             testRunner.Then("created Stage is displayed in the table", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
             testRunner.When("User navigate to \"Mail Templates\" tab", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
@@ -340,17 +340,27 @@ namespace DashworksTestAutomation.Tests.Projects.CreatingProjects
             TechTalk.SpecFlow.Table table20 = new TechTalk.SpecFlow.Table(new string[] {
                         "Name",
                         "Help",
+                        "StagesNameString",
+                        "TaskTypeString",
+                        "ValueTypeString",
                         "ObjectTypeString",
-                        "TaskValuesTemplateCheckbox"});
+                        "TaskValuesTemplateString",
+                        "ApplyToAllCheckbox"});
             table20.AddRow(new string[] {
                         "TestTaskName0",
                         "UserScheduledProject",
+                        "Stage1",
+                        "Normal",
+                        "Radiobutton",
                         "Computer",
+                        "",
                         "true"});
             testRunner.And("User create Task", ((string)(null)), table20, "And ");
             testRunner.Then("Success message is displayed with \"Task successfully created\" text", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
             TechTalk.SpecFlow.Table table21 = new TechTalk.SpecFlow.Table(new string[] {
                         "TaskHaADueDate",
+                        "DateModeString",
+                        "TaskProjectRoleString",
                         "TaskImpactsReadiness",
                         "TaskHasAnOwner",
                         "ShowDetails",
@@ -359,10 +369,12 @@ namespace DashworksTestAutomation.Tests.Projects.CreatingProjects
                         "SelfService"});
             table21.AddRow(new string[] {
                         "true",
+                        "DateOnly",
+                        "Workflow",
                         "true",
                         "false",
                         "true",
-                        "true",
+                        "false",
                         "false",
                         "false"});
             testRunner.When("User updates the Task page", ((string)(null)), table21, "When ");
@@ -373,11 +385,13 @@ namespace DashworksTestAutomation.Tests.Projects.CreatingProjects
             testRunner.And("User clicks \"Add Value\" button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
             TechTalk.SpecFlow.Table table22 = new TechTalk.SpecFlow.Table(new string[] {
                         "Name",
-                        "Help",
+                        "ReadinessString",
+                        "TaskStatusString",
                         "DefaultValue"});
             table22.AddRow(new string[] {
                         "TestValueName",
-                        "UserScheduledProject",
+                        "Purple",
+                        "Open",
                         "false"});
             testRunner.When("User create new Value", ((string)(null)), table22, "When ");
             testRunner.And("User clicks \"Save Value\" button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
@@ -407,17 +421,26 @@ namespace DashworksTestAutomation.Tests.Projects.CreatingProjects
             TechTalk.SpecFlow.Table table24 = new TechTalk.SpecFlow.Table(new string[] {
                         "Name",
                         "Help",
+                        "StagesNameString",
+                        "TaskTypeString",
+                        "ValueTypeString",
                         "ObjectTypeString",
-                        "TaskValuesTemplateCheckbox"});
+                        "TaskValuesTemplateString",
+                        "ApplyToAllCheckbox"});
             table24.AddRow(new string[] {
                         "TestTaskName1",
                         "UserScheduledProject",
+                        "Stage2",
+                        "Normal",
+                        "Radiobutton",
                         "Application",
+                        "",
                         "true"});
             testRunner.And("User create Task", ((string)(null)), table24, "And ");
-            testRunner.Then("Success message is displayed with \"Task successfully created\" text", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
             TechTalk.SpecFlow.Table table25 = new TechTalk.SpecFlow.Table(new string[] {
                         "TaskHaADueDate",
+                        "DateModeString",
+                        "TaskProjectRoleString",
                         "TaskImpactsReadiness",
                         "TaskHasAnOwner",
                         "ShowDetails",
@@ -426,6 +449,8 @@ namespace DashworksTestAutomation.Tests.Projects.CreatingProjects
                         "SelfService"});
             table25.AddRow(new string[] {
                         "true",
+                        "DateOnly",
+                        "None",
                         "true",
                         "false",
                         "false",
@@ -440,11 +465,13 @@ namespace DashworksTestAutomation.Tests.Projects.CreatingProjects
             testRunner.And("User clicks \"Add Value\" button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
             TechTalk.SpecFlow.Table table26 = new TechTalk.SpecFlow.Table(new string[] {
                         "Name",
-                        "Help",
+                        "ReadinessString",
+                        "TaskStatusString",
                         "DefaultValue"});
             table26.AddRow(new string[] {
                         "TestValueName",
-                        "UserScheduledProject",
+                        "Blue",
+                        "Closed",
                         "false"});
             testRunner.When("User create new Value", ((string)(null)), table26, "When ");
             testRunner.And("User clicks \"Save Value\" button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
@@ -454,17 +481,27 @@ namespace DashworksTestAutomation.Tests.Projects.CreatingProjects
             TechTalk.SpecFlow.Table table27 = new TechTalk.SpecFlow.Table(new string[] {
                         "Name",
                         "Help",
+                        "StagesNameString",
+                        "TaskTypeString",
+                        "ValueTypeString",
                         "ObjectTypeString",
-                        "TaskValuesTemplateCheckbox"});
+                        "TaskValuesTemplateString",
+                        "ApplyToAllCheckbox"});
             table27.AddRow(new string[] {
                         "TestTaskName2",
                         "UserScheduledProject",
+                        "Stage3",
+                        "Normal",
+                        "Radiobutton",
                         "User",
+                        "",
                         "true"});
             testRunner.And("User create Task", ((string)(null)), table27, "And ");
             testRunner.Then("Success message is displayed with \"Task successfully created\" text", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
             TechTalk.SpecFlow.Table table28 = new TechTalk.SpecFlow.Table(new string[] {
                         "TaskHaADueDate",
+                        "DateModeString",
+                        "TaskProjectRoleString",
                         "TaskImpactsReadiness",
                         "TaskHasAnOwner",
                         "ShowDetails",
@@ -473,6 +510,8 @@ namespace DashworksTestAutomation.Tests.Projects.CreatingProjects
                         "SelfService"});
             table28.AddRow(new string[] {
                         "true",
+                        "DateOnly",
+                        "None",
                         "true",
                         "false",
                         "false",
@@ -487,12 +526,14 @@ namespace DashworksTestAutomation.Tests.Projects.CreatingProjects
             testRunner.And("User clicks \"Add Value\" button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
             TechTalk.SpecFlow.Table table29 = new TechTalk.SpecFlow.Table(new string[] {
                         "Name",
-                        "Help",
+                        "ReadinessString",
+                        "TaskStatusString",
                         "DefaultValue"});
             table29.AddRow(new string[] {
                         "TestValueName",
-                        "UserScheduledProject",
-                        "true"});
+                        "Blue",
+                        "Closed",
+                        "false"});
             testRunner.When("User create new Value", ((string)(null)), table29, "When ");
             testRunner.And("User clicks \"Save Value\" button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
             testRunner.And("User navigate to \"Emails\" page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
