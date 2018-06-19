@@ -7,19 +7,29 @@ namespace DashworksTestAutomation.DTO.Projects
     {
         public string Name { get; set; }
         public string Help { get; set; }
+        public string StagesNameString { get; set; }
+        public StageNameEnum Stages;
+        public string TaskTypeString { get; set; }
         public TaskTypeEnum TaskType;
+        public string ValueTypeString { get; set; }
         public ValueTypeEnum ValueType;
         public string ObjectTypeString { get; set; }
         public TaskObjectTypeEnum ObjectType;
+        public string TaskValuesTemplateString { get; set; }
         public TaskValuesTemplateEnum TaskValuesTemplate;
-        public bool TaskValuesTemplateCheckbox { get; set; }
+        public bool ApplyToAllCheckbox { get; set; }
+    }
 
-        public TaskPropertiesDto()
-        {
-            TaskType = TaskTypeEnum.Normal;
-            ValueType = ValueTypeEnum.Radiobutton;
-            TaskValuesTemplate = EnumExtensions.GetRandomValue<TaskValuesTemplateEnum>();
-        }
+    public enum StageNameEnum
+    {
+        [Description("Stage 1")]
+        Stage1,
+        [Description("Stage 2")]
+        Stage2,
+        [Description("Stage 3")]
+        Stage3,
+        [Description("Stage 4")]
+        Stage4,
     }
 
     public enum TaskTypeEnum
@@ -67,6 +77,7 @@ namespace DashworksTestAutomation.DTO.Projects
         [Description("No readiness (NA/Enabled/Disabled)")]
         NoReadinessNaEnabledDisabled,
         [Description("Self Service Screen Confirm")]
-        SelfServiceScreenConfirm
+        SelfServiceScreenConfirm,
+        None
     }
 }

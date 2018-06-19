@@ -6,6 +6,7 @@ using DashworksTestAutomation.DTO.RuntimeVariables;
 using DashworksTestAutomation.Extensions;
 using DashworksTestAutomation.Helpers;
 using DashworksTestAutomation.Pages.Evergreen;
+using DashworksTestAutomation.Providers;
 using NUnit.Framework;
 using OpenQA.Selenium.Interactions;
 using OpenQA.Selenium.Remote;
@@ -218,6 +219,13 @@ namespace DashworksTestAutomation.Steps.Dashworks
             }
         }
 
+        [Then(@"""(.*)"" text is displayed in the table content")]
+        public void ThenTextIsDisplayedInTheTableContent(string text)
+        {
+            var dashboardPage = _driver.NowAt<BaseDashboardPage>();
+            dashboardPage.CheckColumnContent(text);
+        }
+
         [Then(@"Appropriate header font weight is displayed")]
         public void ThenAppropriateHeaderFontWeightIsDisplayed()
         {
@@ -236,9 +244,10 @@ namespace DashworksTestAutomation.Steps.Dashworks
         }
 
         [Then(@"URL is ""(.*)""")]
-        public void ThenURLIs(string url)
+        public void ThenURLIs(string urlPart)
         {
-            Assert.AreEqual(url, _driver.Url, $"URL is not {url}");
+            var expectedUrl = $"{UrlProvider.Url}{urlPart}";
+            Assert.AreEqual(expectedUrl, _driver.Url, $"URL is not {expectedUrl}");
         }
 
         [Then(@"URL contains ""(.*)""")]

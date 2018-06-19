@@ -303,6 +303,7 @@ namespace DashworksTestAutomation.Steps.Dashworks
         public void WhenUserNavigatesToTheList(string listName)
         {
             var page = _driver.NowAt<BaseDashboardPage>();
+            _driver.WaitForDataLoading();
             page.GetListElementByName(listName).Click();
             _driver.WaitForDataLoading();
         }

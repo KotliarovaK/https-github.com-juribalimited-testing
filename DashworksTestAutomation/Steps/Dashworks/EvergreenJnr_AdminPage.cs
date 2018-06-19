@@ -159,17 +159,15 @@ namespace DashworksTestAutomation.Steps.Dashworks
             }
             catch (WebDriverTimeoutException)
             {
-                page = _driver.NowAt<ProjectsPage>();
+                try
+                {
+                    page = _driver.NowAt<ProjectsPage>();
+                }
+                catch (WebDriverTimeoutException)
+                {
+                    page = _driver.NowAt<ProjectsPage>();
+                }
             }
-            try
-            {
-                page = _driver.NowAt<ProjectsPage>();
-            }
-            catch (WebDriverTimeoutException)
-            {
-                page = _driver.NowAt<ProjectsPage>();
-            }
-
             Assert.IsTrue(page.SelectedTabInProjectScopeChangesSection(tabName),
                 $"{tabName} is not displayed in the Project Scope Changes section");
         }
@@ -227,13 +225,25 @@ namespace DashworksTestAutomation.Steps.Dashworks
             button.UpdateProjectInTheWarning.Click();
         }
 
-        [Then(@"Update Project button is disabled")]
-        public void ThenUpdateProjectButtonIsDisabled()
+        [Then(@"Update Project buttons is disabled")]
+        public void ThenUpdateProjectButtonsIsDisabled()
         {
             var button = _driver.NowAt<ProjectsPage>();
             _driver.WaitWhileControlIsNotDisplayed<ProjectsPage>(() => button.UpdateProjectButton);
             Assert.IsTrue(Convert.ToBoolean(button.UpdateProjectButton.GetAttribute("disabled")),
                 "Update Project button is active");
+            Assert.IsTrue(Convert.ToBoolean(button.UpdateAllChangesButton.GetAttribute("disabled")),
+                "Update All Changes button is active");
+        }
+
+        [Then(@"Update Project button is activ")]
+        public void ThenUpdateProjectButtonIsActiv()
+        {
+            var button = _driver.NowAt<ProjectsPage>();
+            Assert.IsFalse(Convert.ToBoolean(button.UpdateProjectButton.GetAttribute("disabled")),
+                "Update Project button is disabled");
+            Assert.IsFalse(Convert.ToBoolean(button.UpdateAllChangesButton.GetAttribute("disabled")),
+                "Update All Changes button is disabled");
         }
 
         [When(@"User clicks Cancel button")]
@@ -400,6 +410,13 @@ namespace DashworksTestAutomation.Steps.Dashworks
         {
             var page = _driver.NowAt<TeamsPage>();
             page.SelectTabByName(tabName);
+        }
+
+        [Then(@"Default Bucket checkbox is selected")]
+        public void ThenDefaultBucketCheckboxIsSelected()
+        {
+            var page = _driver.NowAt<BucketsPage>();
+            Assert.IsTrue(page.SelectedDefaultBucketCheckbox.Displayed(), "Default Bucket checkbox is not selected");
         }
 
         [Then(@"Create Team button is disabled")]
@@ -705,6 +722,13 @@ namespace DashworksTestAutomation.Steps.Dashworks
             searchElement.GetSearchFieldByColumnName(columnName, text);
         }
 
+        [When(@"User clicks Reset Filters button on the Admin page")]
+        public void WhenUserClicksResetFiltersButtonOnTheAdminPage()
+        {
+            var button = _driver.NowAt<BaseGridPage>();
+            button.ResetFiltersButton.Click();
+        }
+
         [When(@"User clicks Actions button on the Projects page")]
         public void WhenUserClicksActionsButtonOnTheProjectsPage()
         {
@@ -764,19 +788,26 @@ namespace DashworksTestAutomation.Steps.Dashworks
             }
             catch (WebDriverTimeoutException)
             {
-                projectElement = _driver.NowAt<ProjectsPage>();
+                try
+                {
+                    projectElement = _driver.NowAt<ProjectsPage>();
+                }
+                catch (WebDriverTimeoutException)
+                {
+                    projectElement = _driver.NowAt<ProjectsPage>();
+                }
             }
-            try
-            {
-                projectElement = _driver.NowAt<ProjectsPage>();
-            }
-            catch (WebDriverTimeoutException)
-            {
-                projectElement = _driver.NowAt<ProjectsPage>();
-            }
+
             _driver.WaitWhileControlIsNotDisplayed<ProjectsPage>(() => projectElement.SuccessMessage);
             Assert.IsTrue(projectElement.SuccessTextMessage(textMessage),
                 $"{textMessage} is not displayed on the Project page");
+        }
+
+        [Then(@"Success message is not displayed on the Projects page")]
+        public void ThenSuccessMessageIsNotDisplayedOnTheProjectsPage()
+        {
+            var message = _driver.NowAt<ProjectsPage>();
+            Assert.IsFalse(message.SuccessMessage.Displayed());
         }
 
         [Then(@"message with ""(.*)"" text is displayed on the Projects page")]
@@ -789,15 +820,14 @@ namespace DashworksTestAutomation.Steps.Dashworks
             }
             catch (WebDriverTimeoutException)
             {
-                projectElement = _driver.NowAt<ProjectsPage>();
-            }
-            try
-            {
-                projectElement = _driver.NowAt<ProjectsPage>();
-            }
-            catch (WebDriverTimeoutException)
-            {
-                projectElement = _driver.NowAt<ProjectsPage>();
+                try
+                {
+                    projectElement = _driver.NowAt<ProjectsPage>();
+                }
+                catch (WebDriverTimeoutException)
+                {
+                    projectElement = _driver.NowAt<ProjectsPage>();
+                }
             }
             _driver.WaitWhileControlIsNotDisplayed<ProjectsPage>(() => projectElement.DeleteWarningMessage);
             Assert.IsTrue(projectElement.SuccessTextMessage(textMessage),

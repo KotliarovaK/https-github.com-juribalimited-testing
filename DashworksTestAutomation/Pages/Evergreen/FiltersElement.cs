@@ -268,7 +268,8 @@ namespace DashworksTestAutomation.Pages.Evergreen
 
         public bool CheckFilterAvailability(string filterName)
         {
-            if (AddNewFilterButton.Displayed()) AddNewFilterButton.Click();
+            if (AddNewFilterButton.Displayed())
+                AddNewFilterButton.Click();
 
             SearchTextbox.Clear();
             SearchTextbox.SendKeys(filterName);
@@ -310,6 +311,12 @@ namespace DashworksTestAutomation.Pages.Evergreen
         public bool GetFiltersNamesFromFilterPanel(string filterName)
         {
             return Driver.IsElementDisplayed(By.XPath($".//div[@class='filter-label']//span[text()='{filterName}']"));
+        }
+
+        public IWebElement CloseFiltersLookupValue(string filterValue)
+        {
+            var LookupValuerButton = $".//button[contains(@aria-describedby, '{filterValue}')]";
+            return Driver.FindElement(By.XPath(LookupValuerButton));
         }
 
         public IWebElement GetEditFilterButton(string filterName)
