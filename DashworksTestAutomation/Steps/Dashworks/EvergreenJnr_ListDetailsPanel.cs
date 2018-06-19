@@ -198,6 +198,7 @@ namespace DashworksTestAutomation.Steps.Dashworks
         public void WhenUserSelectSharingOption(string sharingOption)
         {
             var listDetailsElement = _driver.NowAt<ListDetailsElement>();
+            _driver.WaitForDataLoading();
             _driver.SelectCustomSelectbox(listDetailsElement.SharingDropdown, sharingOption);
         }
 
@@ -206,10 +207,10 @@ namespace DashworksTestAutomation.Steps.Dashworks
         {
             //Save user to remove its lists after test execution
             _usersWithSharedLists.Value.Add(DatabaseWorker.GetUserNameByFullName(ownerOption));
-            
             var listDetailsElement = _driver.NowAt<ListDetailsElement>();
             listDetailsElement.OwnerDropdown.ClearWithBackspaces();
             _driver.SelectCustomSelectbox(listDetailsElement.OwnerDropdown, ownerOption);
+            _driver.WaitForDataLoading();
         }
 
         private string GetFullNameByUserName(string userName)
