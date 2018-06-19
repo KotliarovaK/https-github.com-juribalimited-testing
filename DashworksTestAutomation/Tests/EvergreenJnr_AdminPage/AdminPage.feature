@@ -784,7 +784,9 @@ Scenario: EvergreenJnr_AdminPage_CheckThatOnboardingOfObjectsIsProceedForScopedP
 	When User enters "TestProject15" text in the Search field for "Project" column
 	And User clicks content from "Project" column
 	Then Project "TestProject15" is displayed to user
-	Then 
+	Then Success message is not displayed on the Projects page
+	When User click on Back button
 	When User enters "TestProject14" text in the Search field for "Project" column
 	And User selects all rows on the grid
 	And User removes selected item
+	Then Delete "TestProject15" Project in the Administration

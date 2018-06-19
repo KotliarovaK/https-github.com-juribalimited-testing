@@ -796,6 +796,13 @@ namespace DashworksTestAutomation.Steps.Dashworks
                 $"{textMessage} is not displayed on the Project page");
         }
 
+        [Then(@"Success message is not displayed on the Projects page")]
+        public void ThenSuccessMessageIsNotDisplayedOnTheProjectsPage()
+        {
+            var message = _driver.NowAt<ProjectsPage>();
+            Assert.IsFalse(message.SuccessMessage.Displayed());
+        }
+
         [Then(@"message with ""(.*)"" text is displayed on the Projects page")]
         public void ThenMessageWithTextIsDisplayedOnTheProjectsPage(string textMessage)
         {
