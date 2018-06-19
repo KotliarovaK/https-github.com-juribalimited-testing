@@ -110,8 +110,9 @@ Scenario: EvergreenJnr_ApplicationsLists_CheckThatNoDataIsDisplayedInTheApplicat
 	Then "Windows7Mi: In Scope" filter is added to the list
 	When User click on 'Windows7Mi: In Scope' column header
 	And User click on 'Windows7Mi: In Scope' column header
+	When User clicks the Filters button
 	Then data in table is sorted by 'Windows7Mi: In Scope' column in ascending order
-	And Content is empty in the column
+	Then Content is empty in the column
 	| ColumnName                              |
 	| Windows7Mi: Application Rationalisation |
 
