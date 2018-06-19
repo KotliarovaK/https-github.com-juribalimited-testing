@@ -412,6 +412,13 @@ namespace DashworksTestAutomation.Steps.Dashworks
             page.SelectTabByName(tabName);
         }
 
+        [Then(@"Default Bucket checkbox is selected")]
+        public void ThenDefaultBucketCheckboxIsSelected()
+        {
+            var page = _driver.NowAt<BucketsPage>();
+            Assert.IsTrue(page.SelectedDefaultBucketCheckbox.Displayed(), "Default Bucket checkbox is not selected");
+        }
+
         [Then(@"Create Team button is disabled")]
         public void ThenCreateTeamButtonIsDisabled()
         {
