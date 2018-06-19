@@ -140,3 +140,23 @@ Scenario: EvergreenJnr_ApplicationsList_CheckThatAfterDeletingFirstColumnTheColu
 	| ColumnName |
 	| Vendor     |
 	| Version    |
+
+@Evergreen @Applications @EvergreenJnr_Columns @ColumnOrder @DAS12345 @Not_Run
+Scenario Outline: EvergreenJnr_AllList_CheckThatSaveButtonIsNotDisplayedIfTheGridColumnsWasReturnedToDefaultPositionWhenActionsPanelWasOpen
+	#Remove 'not_run' tag after fixed bug DAS12345
+	When User clicks "<PageName>" on the left-hand menu
+	Then "<PageName>" list should be displayed to the user
+	When User clicks the Actions button
+	Then Actions panel is displayed to the user
+	When User move '<FirstColumnName>' column to '<ToColumnName>' column
+	When User move '<SecondColumnName>' column to '<ToColumnName>' column
+	When User clicks Close panel button
+	Then Actions panel is not displayed to the user
+	And Save to New Custom List element is NOT displayed
+
+Examples: 
+	| PageName     | FirstColumnName | SecondColumnName | ToColumnName     |
+	| Devices      | Hostname        | Device Type      | Operating System |
+	| Users        | Username        | Domain           | Display Name     |
+	| Applications | Application     | Vendor           | Version          |
+	| Mailboxes    | Email Address   | Mailbox Platform | Mail Server      |
