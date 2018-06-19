@@ -412,6 +412,13 @@ namespace DashworksTestAutomation.Steps.Dashworks
             page.SelectTabByName(tabName);
         }
 
+        [Then(@"Default Bucket checkbox is selected")]
+        public void ThenDefaultBucketCheckboxIsSelected()
+        {
+            var page = _driver.NowAt<BucketsPage>();
+            Assert.IsTrue(page.SelectedDefaultBucketCheckbox.Displayed(), "Default Bucket checkbox is not selected");
+        }
+
         [Then(@"Create Team button is disabled")]
         public void ThenCreateTeamButtonIsDisabled()
         {
@@ -796,6 +803,13 @@ namespace DashworksTestAutomation.Steps.Dashworks
                 $"{textMessage} is not displayed on the Project page");
         }
 
+        [Then(@"Success message is not displayed on the Projects page")]
+        public void ThenSuccessMessageIsNotDisplayedOnTheProjectsPage()
+        {
+            var message = _driver.NowAt<ProjectsPage>();
+            Assert.IsFalse(message.SuccessMessage.Displayed());
+        }
+
         [Then(@"message with ""(.*)"" text is displayed on the Projects page")]
         public void ThenMessageWithTextIsDisplayedOnTheProjectsPage(string textMessage)
         {
@@ -854,6 +868,18 @@ namespace DashworksTestAutomation.Steps.Dashworks
         {
             //var projectId = DatabaseHelper.ExecuteReader($"SELECT [ProjectID] FROM[PM].[dbo].[Projects] where[ProjectName] = '{projectName}'", 0)[0];
             DatabaseHelper.ExecuteQuery($"delete from [PM].[dbo].[ProjectGroups] where [GroupName] = '{bucketName}'");
+        }
+
+        [When(@"User moves '(.*)' device to '(.*)' bucket")]
+        public void WhenUserMovesDeviceToBucket(string deviceName, string bucketName)
+        {
+            var bucketId = DatabaseHelper.ExecuteReader($"SELECT [GroupID] FROM [PM].[dbo].[ProjectGroups] where [GroupName] = '{bucketName}'", 0)[0];
+        }
+
+        [When(@"User moves '(.*)' user to '(.*)' bucket")]
+        public void WhenUserMovesUserToBucket(string p0, string p1)
+        {
+            ScenarioContext.Current.Pending();
         }
     }
 }

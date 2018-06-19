@@ -38,9 +38,8 @@ namespace DashworksTestAutomation.Steps.Dashworks
         public void SaveToNewCustomListElementIsNOTDisplayed()
         {
             var page = _driver.NowAt<BaseDashboardPage>();
-            _driver.WaitWhileControlIsDisplayed<BaseDashboardPage>(() => page.SaveCustomListButton);
             Assert.IsFalse(page.SaveCustomListButton.Displayed(),
-                "Save Custom list is displayed");
+                "Save New Custom List panel is displayed");
 
             Logger.Write("The Save to Custom List Element was NOT displayed");
         }
@@ -444,7 +443,7 @@ namespace DashworksTestAutomation.Steps.Dashworks
                 RemoveUserLists();
                 RemoveSharedLists();
             }
-            catch {}
+            catch { }
         }
 
         private void RemoveUserLists()

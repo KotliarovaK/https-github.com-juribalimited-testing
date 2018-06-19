@@ -76,7 +76,7 @@ Scenario: Projects_CreateComputerScheduledProject
 	And User clicks "Create Request Type" button
 	And User create Request Type
 	| Name               | Description                | ObjectTypeString |
-	| OneRequestTypeName | ComputerScheduledProject 1 | User             |
+	| 1 TestRequestTypeName | ComputerScheduledProject 1 | User             |
 	Then Success message is displayed
 	When User clicks "Cancel" button
 	Then created Request Type is displayed in the table
@@ -90,7 +90,7 @@ Scenario: Projects_CreateComputerScheduledProject
 	When User clicks "Create Request Type" button
 	And User create Request Type
 	| Name               | Description                | ObjectTypeString |
-	| TwoRequestTypeName | ComputerScheduledProject 2 | Application      |
+	| 2 TestRequestTypeName | ComputerScheduledProject 2 | Application      |
 	Then Success message is displayed
 	When User clicks "Cancel" button
 	Then created Request Type is displayed in the table
@@ -104,7 +104,7 @@ Scenario: Projects_CreateComputerScheduledProject
 	When User clicks "Create Request Type" button
 	And User create Request Type
 	| Name                 | Description                | ObjectTypeString |
-	| ThreeRequestTypeName | ComputerScheduledProject 3 | Computer         |
+	| 3 TestRequestTypeName | ComputerScheduledProject 3 | Computer         |
 	Then Success message is displayed
 	When User clicks "Cancel" button
 	Then created Request Type is displayed in the table
@@ -124,9 +124,9 @@ Scenario: Projects_CreateComputerScheduledProject
 	Then Success message is displayed with "Category successfully created." text
 	When User clicks "« Go Back" button
 	Then created Category is displayed in the table
+		#Creating Stage
 	When User navigate to "Stages" tab
 	Then "Manage Stages" page is displayed to the user
-		#Creating Stage
 	When User clicks "Create Stage" button
 	And User create Stage
 	| StageName |
@@ -147,6 +147,7 @@ Scenario: Projects_CreateComputerScheduledProject
 	| StageName |
 	| Stage 4   |
 	Then created Stage is displayed in the table
+		#Creating Mail Template
 	When User navigate to "Mail Templates" tab
 	Then "Manage Mail Templates" page is displayed to the user
 	When User clicks "Create Mail Template" button
@@ -321,7 +322,7 @@ Scenario: Projects_CreateComputerScheduledProject
 	Then Success message is displayed with "Task successfully updated" text
 	When User navigate to "Request Types" page
 	Then "Edit Task" page is displayed to the user
-	When User select "ThreeRequestTypeName" Request Type on Task page
+	When User select "3 TestRequestTypeName" Request Type on Task page
 	And User save selected Request Type
 	And User clicks "« Go Back to Tasks" button
 	Then created Task is displayed in the table
@@ -440,7 +441,7 @@ Scenario: Projects_CreateComputerScheduledProject
 	And User clicks "Save Value" button
 	And User navigate to "Request Types" page
 	Then "Edit Task" page is displayed to the user
-	When User select "TwoRequestTypeName" Request Type on Task page
+	When User select "2 TestRequestTypeName" Request Type on Task page
 	And User save selected Request Type
 	And User clicks "« Go Back to Tasks" button
 	Then created Task is displayed in the table
@@ -529,7 +530,7 @@ Scenario: Projects_CreateComputerScheduledProject
 	| Title                    | Text     |
 	| ComputerScheduledProject | TestText |
 	Then Success message is displayed with "Project news was successfully updated." text
-		#Self Service tab
+		#Self Service tabs
 	When User navigate to "Self Service" tab
 	Then "Manage Self Service" page is displayed to the user
 	When User updates the Details page on Self Service tab
@@ -576,7 +577,7 @@ Scenario: Projects_CreateComputerScheduledProject
 	| SelfServicePortal | NavigationMenu | ChoicesSummary | IncludeLink | PageDescription          |
 	| true              | false          | false          | false       | ComputerScheduledProject |
 	Then Success message is displayed with "Self Service Screen successfully updated" text
-		#Capacity tab
+		#Capacity tabs
 	When User navigate to "Capacity" tab
 	Then "Manage Capacity" page is displayed to the user
 	When User updates the Details on Capacity tab

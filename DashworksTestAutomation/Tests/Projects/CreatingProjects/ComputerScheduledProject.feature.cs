@@ -221,7 +221,7 @@ namespace DashworksTestAutomation.Tests.Projects.CreatingProjects
                         "Description",
                         "ObjectTypeString"});
             table9.AddRow(new string[] {
-                        "OneRequestTypeName",
+                        "1 TestRequestTypeName",
                         "ComputerScheduledProject 1",
                         "User"});
             testRunner.And("User create Request Type", ((string)(null)), table9, "And ");
@@ -243,7 +243,7 @@ namespace DashworksTestAutomation.Tests.Projects.CreatingProjects
                         "Description",
                         "ObjectTypeString"});
             table11.AddRow(new string[] {
-                        "TwoRequestTypeName",
+                        "2 TestRequestTypeName",
                         "ComputerScheduledProject 2",
                         "Application"});
             testRunner.And("User create Request Type", ((string)(null)), table11, "And ");
@@ -265,7 +265,7 @@ namespace DashworksTestAutomation.Tests.Projects.CreatingProjects
                         "Description",
                         "ObjectTypeString"});
             table13.AddRow(new string[] {
-                        "ThreeRequestTypeName",
+                        "3 TestRequestTypeName",
                         "ComputerScheduledProject 3",
                         "Computer"});
             testRunner.And("User create Request Type", ((string)(null)), table13, "And ");
@@ -883,7 +883,7 @@ namespace DashworksTestAutomation.Tests.Projects.CreatingProjects
             testRunner.Then("Success message is displayed with \"Task successfully updated\" text", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
             testRunner.When("User navigate to \"Request Types\" page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
             testRunner.Then("\"Edit Task\" page is displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-            testRunner.When("User select \"ThreeRequestTypeName\" Request Type on Task page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+            testRunner.When("User select \"3 TestRequestTypeName\" Request Type on Task page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
             testRunner.And("User save selected Request Type", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
             testRunner.And("User clicks \"« Go Back to Tasks\" button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
             testRunner.Then("created Task is displayed in the table", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
@@ -1236,7 +1236,7 @@ namespace DashworksTestAutomation.Tests.Projects.CreatingProjects
             testRunner.And("User clicks \"Save Value\" button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
             testRunner.And("User navigate to \"Request Types\" page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
             testRunner.Then("\"Edit Task\" page is displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-            testRunner.When("User select \"TwoRequestTypeName\" Request Type on Task page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+            testRunner.When("User select \"2 TestRequestTypeName\" Request Type on Task page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
             testRunner.And("User save selected Request Type", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
             testRunner.And("User clicks \"« Go Back to Tasks\" button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
             testRunner.Then("created Task is displayed in the table", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");

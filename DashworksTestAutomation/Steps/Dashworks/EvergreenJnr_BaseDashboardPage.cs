@@ -6,6 +6,7 @@ using DashworksTestAutomation.DTO.RuntimeVariables;
 using DashworksTestAutomation.Extensions;
 using DashworksTestAutomation.Helpers;
 using DashworksTestAutomation.Pages.Evergreen;
+using DashworksTestAutomation.Providers;
 using NUnit.Framework;
 using OpenQA.Selenium.Interactions;
 using OpenQA.Selenium.Remote;
@@ -243,9 +244,10 @@ namespace DashworksTestAutomation.Steps.Dashworks
         }
 
         [Then(@"URL is ""(.*)""")]
-        public void ThenURLIs(string url)
+        public void ThenURLIs(string urlPart)
         {
-            Assert.AreEqual(url, _driver.Url, $"URL is not {url}");
+            var expectedUrl = $"{UrlProvider.Url}{urlPart}";
+            Assert.AreEqual(expectedUrl, _driver.Url, $"URL is not {expectedUrl}");
         }
 
         [Then(@"URL contains ""(.*)""")]
@@ -286,6 +288,20 @@ namespace DashworksTestAutomation.Steps.Dashworks
             page.GetCorrectApplicationVersion(versionNumber);
         }
 
+        [Then(@"All data is unique in the '(.*)' column")]
+        public void ThenAllDataIsUniqueInTheColumn(string columnName)
+        {
+            var grid = _driver.NowAt<BaseDashboardPage>();
+            List<string> columnData = grid.GetColumnDataByScrolling(columnName);
+
+            //Get all elements that has more than one occurence in the list
+            var dupicates = columnData.GroupBy(x => x)
+                .Select(g => new { Value = g.Key, Count = g.Count() })
+                .Where(x => x.Count > 1).ToList();
+            if (dupicates.Any())
+                throw new Exception($"Some duplicates are spotted in the '{columnName}' column");
+        }
+
         [Then(@"Content is empty in the column")]
         public void ThenContentIsEmptyInTheColumn(Table table)
         {
@@ -294,9 +310,15 @@ namespace DashworksTestAutomation.Steps.Dashworks
             foreach (var row in table.Rows)
             {
                 var content = page.GetColumnContent(row["ColumnName"]);
-
                 Assert.IsFalse(content.Count(x => !string.IsNullOrEmpty(x)) > 20, "Column is empty");
             }
+        }
+
+        [When(@"User clicks Close panel button")]
+        public void WhenUserClicksClosePanelButton()
+        {
+            var button = _driver.NowAt<BaseDashboardPage>();
+            button.ClosePanelButton.Click();
         }
     }
 }
