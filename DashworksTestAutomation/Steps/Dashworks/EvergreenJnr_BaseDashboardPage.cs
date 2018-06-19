@@ -300,5 +300,12 @@ namespace DashworksTestAutomation.Steps.Dashworks
                 Assert.IsFalse(content.Count(x => !string.IsNullOrEmpty(x)) > 20, "Column is empty");
             }
         }
+
+        [When(@"User clicks Close panel button")]
+        public void WhenUserClicksClosePanelButton()
+        {
+            var button = _driver.NowAt<BaseDashboardPage>();
+            button.ClosePanelButton.Click();
+        }
     }
 }
