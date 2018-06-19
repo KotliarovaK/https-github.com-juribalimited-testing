@@ -87,10 +87,10 @@ Scenario: EvergreenJnr_DevicesList_ClearingSearchReturnsTheFullDataSet
 	And User enters SearchCriteria into the agGrid Search Box and the correct NumberOfRows are returned
 	| SearchCriteria | NumberOfRows |
 	| Mary           | 17           |
-	Then URL is "http://automation.corp.juriba.com/evergreen/#/devices"
+	Then URL is "evergreen/#/devices"
 	And Clearing the agGrid Search Box
 	Then "17,225" rows are displayed in the agGrid
-	Then URL is "http://automation.corp.juriba.com/evergreen/#/devices"
+	Then URL is "evergreen/#/devices"
 
 @Evergreen @Users @EvergreenJnr_Search @Search @DAS11012 @DAS12206
 Scenario: EvergreenJnr_UsersList_ClearingSearchReturnsTheFullDataSet
@@ -99,10 +99,10 @@ Scenario: EvergreenJnr_UsersList_ClearingSearchReturnsTheFullDataSet
 	And User enters SearchCriteria into the agGrid Search Box and the correct NumberOfRows are returned
 	| SearchCriteria | NumberOfRows |
 	| Luc            | 138          |
-	Then URL is "http://automation.corp.juriba.com/evergreen/#/users"
+	Then URL is "evergreen/#/users"
 	And Clearing the agGrid Search Box
 	Then "41,339" rows are displayed in the agGrid
-	Then URL is "http://automation.corp.juriba.com/evergreen/#/users"
+	Then URL is "evergreen/#/users"
 
 @Evergreen @Devices @EvergreenJnr_Search @Search
 Scenario: EvergreenJnr_DevicesList_Search_NoDevicesFound

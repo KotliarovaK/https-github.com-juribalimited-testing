@@ -203,6 +203,7 @@ Scenario: EvergreenJnr_DevicesLists_CheckThatSelectedCheckboxesMatchTheColumnsIn
 	| ColumnName   |
 	| Project      |
 	| Project Type |
+	| Bucket       |
 	| Request Type |
 	| Workflow     |
 	| Category     |
@@ -215,6 +216,7 @@ Scenario: EvergreenJnr_DevicesLists_CheckThatSelectedCheckboxesMatchTheColumnsIn
 	| Key          |
 	| Project      |
 	| Project Type |
+	| Bucket       |
 	| Request Type |
 	| Workflow     |
 	| Category     |
