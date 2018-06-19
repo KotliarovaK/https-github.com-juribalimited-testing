@@ -1,5 +1,4 @@
 ﻿using System;
-using System.Threading;
 using DashworksTestAutomation.DTO;
 using DashworksTestAutomation.DTO.RuntimeVariables;
 using DashworksTestAutomation.Extensions;
@@ -97,6 +96,14 @@ namespace DashworksTestAutomation.Steps.Dashworks
             var listDetailsElement = _driver.NowAt<ListDetailsElement>();
             Assert.AreEqual(listName, listDetailsElement.ListNameField.GetAttribute("value"),
                 $"{listName} is not displayed in Name Field");
+        }
+
+        [Then(@"Star icon is active in list details panel")]
+        public void ThenStarIconIsActiveInListDetailsPanel()
+        {
+            var listDetailsElement = _driver.NowAt<ListDetailsElement>();
+            Assert.IsTrue(listDetailsElement.ActiveFavoriteButton.Displayed(),
+                "Star icon is not active");
         }
 
         [Then(@"List details panel is displayed to the user")]

@@ -67,7 +67,7 @@ namespace DashworksTestAutomation.Tests.Projects
         }
         
         [NUnit.Framework.TestAttribute()]
-        [NUnit.Framework.DescriptionAttribute("Projects_CheckThatDataInGroupOnDashboardsPageIsDisplayedCorectly")]
+        [NUnit.Framework.DescriptionAttribute("Projects_CheckThatDataInGroupWithApostrophesOnDashboardsPageIsDisplayedCorectly")]
         [NUnit.Framework.CategoryAttribute("Evergreen")]
         [NUnit.Framework.CategoryAttribute("Projects")]
         [NUnit.Framework.CategoryAttribute("Projects_Dashboards")]
@@ -75,7 +75,7 @@ namespace DashworksTestAutomation.Tests.Projects
         [NUnit.Framework.CategoryAttribute("DAS12651")]
         [NUnit.Framework.TestCaseAttribute("User Dashboard", new string[0])]
         [NUnit.Framework.TestCaseAttribute("Computer Dashboard", new string[0])]
-        public virtual void Projects_CheckThatDataInGroupOnDashboardsPageIsDisplayedCorectly(string pageName, string[] exampleTags)
+        public virtual void Projects_CheckThatDataInGroupWithApostrophesOnDashboardsPageIsDisplayedCorectly(string pageName, string[] exampleTags)
         {
             string[] @__tags = new string[] {
                     "Evergreen",
@@ -87,7 +87,7 @@ namespace DashworksTestAutomation.Tests.Projects
             {
                 @__tags = System.Linq.Enumerable.ToArray(System.Linq.Enumerable.Concat(@__tags, exampleTags));
             }
-            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Projects_CheckThatDataInGroupOnDashboardsPageIsDisplayedCorectly", @__tags);
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Projects_CheckThatDataInGroupWithApostrophesOnDashboardsPageIsDisplayedCorectly", @__tags);
             this.ScenarioSetup(scenarioInfo);
             this.FeatureBackground();
             testRunner.When("User clicks \"Projects\" on the left-hand menu", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");

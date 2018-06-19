@@ -17,8 +17,16 @@ Scenario Outline: EvergreenJnr_AllLists_CheckThatRenamingAListWorkingCorrectlyFo
 	Then List details panel is displayed to the user
 	When User changes list name to "RenamedList"
 	Then "RenamedList" name is displayed in list details panel
-	When User is closed List Details panel
+	Then Edit List menu is not displayed
+	When User mark list as favorite
+	Then Star icon is active in list details panel
+	Then Edit List menu is not displayed
+	When User select "Everyone can edit" sharing option
+	Then Edit List menu is not displayed
 	Then "RenamedList" list is displayed to user
+	When User select "Automation Admin 1" as a Owner of a list
+	And User click Accept button in List Details panel
+	Then Edit List menu is not displayed
 
 Examples: 
 	| PageName     | Columnname    |
@@ -39,8 +47,16 @@ Scenario Outline: EvergreenJnr_AllLists_CheckThatRenamingAListWorkingCorrectlyFo
 	Then List details panel is displayed to the user
 	When User changes list name to "RenamedList"
 	Then "RenamedList" name is displayed in list details panel
-	When User is closed List Details panel
+	Then Edit List menu is not displayed
+	When User mark list as favorite
+	Then Star icon is active in list details panel
+	Then Edit List menu is not displayed
+	When User select "Everyone can edit" sharing option
+	Then Edit List menu is not displayed
 	Then "RenamedList" list is displayed to user
+	When User select "Automation Admin 1" as a Owner of a list
+	And User click Accept button in List Details panel
+	Then Edit List menu is not displayed
 
 Examples: 
 	| PageName     | Columnname    |
