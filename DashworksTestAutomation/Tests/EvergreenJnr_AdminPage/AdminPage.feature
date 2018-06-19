@@ -774,6 +774,17 @@ Scenario: EvergreenJnr_AdminPage_CheckThatOnboardingOfObjectsIsProceedForScopedP
 	When User clicks Update Project button on the Projects page
 	Then Success message with "2 objects queued for onboarding, 0 objects offboarded" text is displayed on the Projects page
 	When User click on Back button
+	When User clicks Create New Item button
+	Then "Create Project" page should be displayed to the user
+	When User enters "TestProject15" in the Project Name field
+	And User selects "All Devices" in the Scope Project dropdown
+	When User clicks Create button on the Create Project page
+	And User clicks "Projects" link on the Admin page
+	Then "Projects" page should be displayed to the user
+	When User enters "TestProject15" text in the Search field for "Project" column
+	And User clicks content from "Project" column
+	Then Project "TestProject15" is displayed to user
+	Then 
 	When User enters "TestProject14" text in the Search field for "Project" column
 	And User selects all rows on the grid
 	And User removes selected item
