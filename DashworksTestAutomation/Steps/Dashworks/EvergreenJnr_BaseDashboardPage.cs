@@ -279,6 +279,20 @@ namespace DashworksTestAutomation.Steps.Dashworks
             page.GetCorrectApplicationVersion(versionNumber);
         }
 
+        [Then(@"All data is unique in the '(.*)' column")]
+        public void ThenAllDataIsUniqueInTheColumn(string columnName)
+        {
+            var grid = _driver.NowAt<BaseDashboardPage>();
+            List<string> columnData = grid.GetColumnDataByScrolling(columnName);
+
+            //Get all elements that has more than one occurence in the list
+            var dupicates = columnData.GroupBy(x => x)
+                .Select(g => new { Value = g.Key, Count = g.Count() })
+                .Where(x => x.Count > 1).ToList();
+            if (dupicates.Any())
+                throw new Exception($"Some duplicates are spotted in the '{columnName}' column");
+        }
+
         [Then(@"Content is empty in the column")]
         public void ThenContentIsEmptyInTheColumn(Table table)
         {

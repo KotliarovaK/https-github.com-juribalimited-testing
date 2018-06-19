@@ -72,6 +72,24 @@ namespace DashworksTestAutomation.Steps.Dashworks
             listpageMenu.ColumnButton.Click();
         }
 
+        [When(@"'(.*)' Column Name is entered into the search box and the selection is clicked")]
+        public void WhenColumnNameIsEnteredIntoTheSearchBoxAndTheSelectionIsClicked(string columnName)
+        {
+            var columnElement = _driver.NowAt<ColumnsElement>();
+
+            columnElement.AddColumn(columnName);
+
+            //Clear the textbox after adding a column, so it is reset for the next loop
+            columnElement.SearchTextbox.ClearWithHomeButton(_driver);
+
+            //Minimise the Selected Columns
+            //columnElement.MinimizeGroupButton.Click();
+            //_driver.WaitWhileControlIsDisplayed<ColumnsElement>(() => columnElement.MinimizeGroupButton);
+            //Close the Columns Panel
+            var listpageMenu = _driver.NowAt<BaseDashboardPage>();
+            listpageMenu.ColumnButton.Click();
+        }
+
         [When(@"User adds columns to the list")]
         public void WhenUserAddsColumnsToTheList(Table table)
         {

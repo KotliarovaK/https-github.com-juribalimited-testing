@@ -397,6 +397,11 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>MainFunctionality.feature</DependentUpon>
     </Compile>
+    <Compile Include="Tests\EvergreenJnr_GridActions\DataInTable.feature.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DataInTable.feature</DependentUpon>
+    </Compile>
     <Compile Include="Tests\EvergreenJnr_ListDetails\ListDetailsFunctionality.feature.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -548,6 +553,10 @@
     <None Include="Tests\EvergreenJnr_GlobalSearch\MainFunctionality.feature">
       <Generator>SpecFlowSingleFileGenerator</Generator>
       <LastGenOutput>MainFunctionality.feature.cs</LastGenOutput>
+    </None>
+    <None Include="Tests\EvergreenJnr_GridActions\DataInTable.feature">
+      <Generator>SpecFlowSingleFileGenerator</Generator>
+      <LastGenOutput>DataInTable.feature.cs</LastGenOutput>
     </None>
     <None Include="Tests\EvergreenJnr_ListDetails\ListDetailsFunctionality.feature">
       <Generator>SpecFlowSingleFileGenerator</Generator>
