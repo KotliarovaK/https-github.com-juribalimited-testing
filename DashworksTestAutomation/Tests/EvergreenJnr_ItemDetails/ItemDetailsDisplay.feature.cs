@@ -716,6 +716,8 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_ItemDetails
             table11.AddRow(new string[] {
                         "Project Type"});
             table11.AddRow(new string[] {
+                        "Bucket"});
+            table11.AddRow(new string[] {
                         "Request Type"});
             table11.AddRow(new string[] {
                         "Workflow"});
@@ -738,6 +740,8 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_ItemDetails
                         "Project"});
             table12.AddRow(new string[] {
                         "Project Type"});
+            table12.AddRow(new string[] {
+                        "Bucket"});
             table12.AddRow(new string[] {
                         "Request Type"});
             table12.AddRow(new string[] {
