@@ -124,9 +124,9 @@ Scenario: Projects_CreateComputerScheduledProject
 	Then Success message is displayed with "Category successfully created." text
 	When User clicks "« Go Back" button
 	Then created Category is displayed in the table
+		#Creating Stage
 	When User navigate to "Stages" tab
 	Then "Manage Stages" page is displayed to the user
-		#Creating Stage
 	When User clicks "Create Stage" button
 	And User create Stage
 	| StageName |
@@ -147,6 +147,7 @@ Scenario: Projects_CreateComputerScheduledProject
 	| StageName |
 	| Stage 4   |
 	Then created Stage is displayed in the table
+		#Creating Mail Template
 	When User navigate to "Mail Templates" tab
 	Then "Manage Mail Templates" page is displayed to the user
 	When User clicks "Create Mail Template" button
@@ -529,7 +530,7 @@ Scenario: Projects_CreateComputerScheduledProject
 	| Title                    | Text     |
 	| ComputerScheduledProject | TestText |
 	Then Success message is displayed with "Project news was successfully updated." text
-		#Self Service tab
+		#Self Service tabs
 	When User navigate to "Self Service" tab
 	Then "Manage Self Service" page is displayed to the user
 	When User updates the Details page on Self Service tab
@@ -576,7 +577,7 @@ Scenario: Projects_CreateComputerScheduledProject
 	| SelfServicePortal | NavigationMenu | ChoicesSummary | IncludeLink | PageDescription          |
 	| true              | false          | false          | false       | ComputerScheduledProject |
 	Then Success message is displayed with "Self Service Screen successfully updated" text
-		#Capacity tab
+		#Capacity tabs
 	When User navigate to "Capacity" tab
 	Then "Manage Capacity" page is displayed to the user
 	When User updates the Details on Capacity tab

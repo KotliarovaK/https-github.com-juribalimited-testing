@@ -46,6 +46,7 @@ Scenario: Projects_CreateMailboxScheduledProject
 	| ShowOriginalColumn | IncludeSiteName | NotApplicableApplications | InstalledApplications | EntitledApplications | TaskEmailCcEmailAddress | TaskEmailBccEmailAddress | StartDate  | EndDate     |
 	| true               | true            | true                      | true                  | true                 |  Test@test.com           | Test@test.com            | 8 May 2012 | 10 Apr 2018 |
 	Then Success message is displayed with "Project was successfully updated" text
+		#Creating Request Types
 	When User navigate to "Request Types" tab
 	Then "Manage Request Types" page is displayed to the user
 	When User clicks "Create Request Type" button
@@ -123,23 +124,25 @@ Scenario: Projects_CreateMailboxScheduledProject
 	Then Success message is displayed with "Category successfully created." text
 	When User clicks "« Go Back" button
 	Then created Category is displayed in the table
+		#Creating Stage
 	When User navigate to "Stages" tab
 	Then "Manage Stages" page is displayed to the user
 	When User clicks "Create Stage" button
 	And User create Stage
-	| StageName                 |
-	| 0 MailboxScheduledProject |
+	| StageName |
+	| Stage 1   |
 	Then created Stage is displayed in the table
 	When User clicks "Create Stage" button
 	And User create Stage
-	| StageName                 |
-	| 1 MailboxScheduledProject |
+	| StageName |
+	| Stage 2   |
 	Then created Stage is displayed in the table
 	When User clicks "Create Stage" button
 	And User create Stage
-	| StageName                 |
-	| 2 MailboxScheduledProject |
+	| StageName |
+	| Stage 3   |
 	Then created Stage is displayed in the table
+		#Creating Mail Template
 	When User navigate to "Mail Templates" tab
 	Then "Manage Mail Templates" page is displayed to the user
 	When User clicks "Create Mail Template" button
@@ -147,24 +150,25 @@ Scenario: Projects_CreateMailboxScheduledProject
 	| Name                 | Description             | SubjectLine | BodyText |
 	| TestMailTemplateName | MailboxScheduledProject | TestText    | TestText |
 	Then Success message is displayed with "Mail Template successfully created." text
+		#Creating Tasks 
 	When User navigate to "Tasks" tab
 	Then "Manage Tasks" page is displayed to the user
 	When User clicks "Create Task" button
 	And User create Task
-	| Name          | Help                    | ObjectTypeString | TaskValuesTemplateCheckbox |
-	| TestTaskName0 | MailboxScheduledProject | User             | true                       |
+	| Name          | Help                    | StagesNameString | TaskTypeString | ValueTypeString | ObjectTypeString | TaskValuesTemplateString | ApplyToAllCheckbox |
+	| TestTaskName0 | MailboxScheduledProject | Stage1           | Normal         | Radiobutton     | User             |                          | true               |
 	Then Success message is displayed with "Task successfully created" text
 	When User updates the Task page
-	| TaskHaADueDate | TaskImpactsReadiness | TaskHasAnOwner | ShowDetails | ProjectObject | BulkUpdate | SelfService |
-	| true           | true                 | false          | true        | true          | false      | false       |
+	| TaskHaADueDate | DateModeString | TaskProjectRoleString | TaskImpactsReadiness | TaskHasAnOwner | ShowDetails | ProjectObject | BulkUpdate | SelfService |
+	| true           | DateOnly       | None                  | true                 | false          | true        | true          | false      | false       |
 	Then Success message is displayed with "Task successfully updated" text
 	When User publishes the task
 	Then selected task was published
 	When User navigate to "Values" page
 	And User clicks "Add Value" button
 	When User create new Value
-	| Name          | Help                    | DefaultValue |
-	| TestValueName | MailboxScheduledProject | false        |
+	| Name          | ReadinessString | TaskStatusString | DefaultValue |
+	| TestValueName | Purple          | Open             | true         |
 	And User clicks "Save Value" button
 	And User navigate to "Emails" page
 	And User clicks "Add Email" button
@@ -179,51 +183,29 @@ Scenario: Projects_CreateMailboxScheduledProject
 	Then created Task is displayed in the table
 	When User clicks "Create Task" button
 	And User create Task
-	| Name          | Help                     | ObjectTypeString | TaskValuesTemplateCheckbox |
-	| TestTaskName1 | ComputerScheduledProject | Application      | true                       |
+	| Name          | Help                     | StagesNameString | TaskTypeString | ValueTypeString | ObjectTypeString | TaskValuesTemplateString | ApplyToAllCheckbox |
+	| TestTaskName1 | ComputerScheduledProject | Stage2           | Group          | DropDownList    | User             | ReadinessNnsfc           | true               |
 	Then Success message is displayed with "Task successfully created" text
 	When User updates the Task page
-	| TaskHaADueDate | TaskImpactsReadiness | TaskHasAnOwner | ShowDetails | ProjectObject | BulkUpdate | SelfService |
-	| true           | true                 | false          | false       | false         | false      | false       |
+	| TaskHaADueDate | DateModeString | TaskProjectRoleString | TaskImpactsReadiness | TaskHasAnOwner | ShowDetails | BulkUpdate | GroupTaskDashboard |
+	| true           | DateOnly       | Workflow              | true                 | true           | true        | false      | false              |
 	Then Success message is displayed with "Task successfully updated" text
-	When User publishes the task
-	Then selected task was published
-	When User navigate to "Values" page
-	And User clicks "Add Value" button
-	When User create new Value
-	| Name          | Help                    | DefaultValue |
-	| TestValueName | MailboxScheduledProject | false        |
-	And User clicks "Save Value" button
-	And User clicks "« Go Back to Tasks" button
+	When User clicks "Cancel" button
 	Then created Task is displayed in the table
 	When User clicks "Create Task" button
 	And User create Task
-	| Name          | Help                    | ObjectTypeString | TaskValuesTemplateCheckbox |
-	| TestTaskName2 | MailboxScheduledProject | Mailbox          | true                       |
+	| Name          | Help                    | StagesNameString | TaskTypeString | ValueTypeString | ObjectTypeString | ApplyToAllCheckbox |
+	| TestTaskName2 | MailboxScheduledProject | Stage3           | Normal         | Text            | Mailbox          | true               |
 	Then Success message is displayed with "Task successfully created" text
 	When User updates the Task page
-	| TaskHaADueDate | TaskImpactsReadiness | TaskHasAnOwner | ShowDetails | ProjectObject | BulkUpdate | SelfService |
-	| true           | true                 | false          | false       | true          | false      | false       |
+	| TextModeString | TaskProjectRoleString | ShowDetails | ProjectObject | BulkUpdate | SelfService |
+	| SingleLine     | None                  | true        | false         | true       | false       |
 	Then Success message is displayed with "Task successfully updated" text
 	When User publishes the task
 	Then selected task was published
-	When User navigate to "Values" page
-	And User clicks "Add Value" button
-	When User create new Value
-	| Name          | Help                    | DefaultValue |
-	| TestValueName | MailboxScheduledProject | true         |
-	And User clicks "Save Value" button
-	And User navigate to "Emails" page
-	And User clicks "Add Email" button
-	When User create new Email
-	| CountDays | SendOnceOnly | RequestTypesAll | ApllyEmailToAll | To                                 |
-	| true      | true         | true            | true            | MailboxScheduledProject2@email.com |
-	And User clicks "Create Email Notification" button
-	Then Success message is displayed with "Email notification for task successfully created" text
-	When User clicks "« Go Back" button
-	Then created Email is displayed in the table
-	When User clicks "« Go Back to Tasks" button
+	When User clicks "Cancel" button
 	Then created Task is displayed in the table
+		#Creating Teams
 	When User navigate to "Teams" tab
 	Then "Manage Teams" page is displayed to the user
 	When User clicks "Create Team" button
@@ -256,6 +238,7 @@ Scenario: Projects_CreateMailboxScheduledProject
 	And User clicks "Cancel" button
 	Then created Team is displayed in the table
 	And "2" number of Members is displayed for created Team
+		#Creating Groups
 	When User navigate to "Groups" tab
 	Then "Manage Groups" page is displayed to the user
 	When User clicks "Create Group" button
@@ -276,12 +259,14 @@ Scenario: Projects_CreateMailboxScheduledProject
 	When User navigate to "Teams" tab
 	Then "Manage Teams" page is displayed to the user
 	And "1" number of Groups is displayed for "3" Team
+		#Creating News
 	When User navigate to "News" tab
 	Then "Manage News" page is displayed to the user
 	When User updating News page
 	| Title                   | Text     |
 	| MailboxScheduledProject | TestText |
 	Then Success message is displayed with "Project news was successfully updated." text
+		#Self Service tabs
 	When User navigate to "Self Service" tab
 	Then "Manage Self Service" page is displayed to the user
 	When User updates the Details page on Self Service tab
@@ -328,6 +313,7 @@ Scenario: Projects_CreateMailboxScheduledProject
 	| SelfServicePortal | NavigationMenu | ChoicesSummary | IncludeLink | PageDescription         |
 	| true              | false          | false          | false       | MailboxScheduledProject |
 	Then Success message is displayed with "Self Service Screen successfully updated" text
+		#Capacity tabs
 	When User navigate to "Capacity" tab
 	Then "Manage Capacity" page is displayed to the user
 	When User updates the Details on Capacity tab
@@ -355,6 +341,7 @@ Scenario: Projects_CreateMailboxScheduledProject
 	| Date         | Capacity | Comment                 |
 	| 06 June 2016 | 0        | MailboxScheduledProject |
 	Then Success message is displayed with "Override date successfully inserted" text
+		#removing
 	When User navigate to "Groups" tab
 	And User removes created Group
 	Then selected Group was removed
