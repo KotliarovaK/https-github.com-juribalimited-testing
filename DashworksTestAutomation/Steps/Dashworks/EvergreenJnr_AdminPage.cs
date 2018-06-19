@@ -869,5 +869,17 @@ namespace DashworksTestAutomation.Steps.Dashworks
             //var projectId = DatabaseHelper.ExecuteReader($"SELECT [ProjectID] FROM[PM].[dbo].[Projects] where[ProjectName] = '{projectName}'", 0)[0];
             DatabaseHelper.ExecuteQuery($"delete from [PM].[dbo].[ProjectGroups] where [GroupName] = '{bucketName}'");
         }
+
+        [When(@"User moves '(.*)' device to '(.*)' bucket")]
+        public void WhenUserMovesDeviceToBucket(string deviceName, string bucketName)
+        {
+            var bucketId = DatabaseHelper.ExecuteReader($"SELECT [GroupID] FROM [PM].[dbo].[ProjectGroups] where [GroupName] = '{bucketName}'", 0)[0];
+        }
+
+        [When(@"User moves '(.*)' user to '(.*)' bucket")]
+        public void WhenUserMovesUserToBucket(string p0, string p1)
+        {
+            ScenarioContext.Current.Pending();
+        }
     }
 }
