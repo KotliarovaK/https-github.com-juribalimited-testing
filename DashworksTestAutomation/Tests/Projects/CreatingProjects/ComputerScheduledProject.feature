@@ -76,7 +76,7 @@ Scenario: Projects_CreateComputerScheduledProject
 	And User clicks "Create Request Type" button
 	And User create Request Type
 	| Name               | Description                | ObjectTypeString |
-	| OneRequestTypeName | ComputerScheduledProject 1 | User             |
+	| 1 TestRequestTypeName | ComputerScheduledProject 1 | User             |
 	Then Success message is displayed
 	When User clicks "Cancel" button
 	Then created Request Type is displayed in the table
@@ -90,7 +90,7 @@ Scenario: Projects_CreateComputerScheduledProject
 	When User clicks "Create Request Type" button
 	And User create Request Type
 	| Name               | Description                | ObjectTypeString |
-	| TwoRequestTypeName | ComputerScheduledProject 2 | Application      |
+	| 2 TestRequestTypeName | ComputerScheduledProject 2 | Application      |
 	Then Success message is displayed
 	When User clicks "Cancel" button
 	Then created Request Type is displayed in the table
@@ -104,7 +104,7 @@ Scenario: Projects_CreateComputerScheduledProject
 	When User clicks "Create Request Type" button
 	And User create Request Type
 	| Name                 | Description                | ObjectTypeString |
-	| ThreeRequestTypeName | ComputerScheduledProject 3 | Computer         |
+	| 3 TestRequestTypeName | ComputerScheduledProject 3 | Computer         |
 	Then Success message is displayed
 	When User clicks "Cancel" button
 	Then created Request Type is displayed in the table
@@ -322,7 +322,7 @@ Scenario: Projects_CreateComputerScheduledProject
 	Then Success message is displayed with "Task successfully updated" text
 	When User navigate to "Request Types" page
 	Then "Edit Task" page is displayed to the user
-	When User select "ThreeRequestTypeName" Request Type on Task page
+	When User select "3 TestRequestTypeName" Request Type on Task page
 	And User save selected Request Type
 	And User clicks "« Go Back to Tasks" button
 	Then created Task is displayed in the table
@@ -441,7 +441,7 @@ Scenario: Projects_CreateComputerScheduledProject
 	And User clicks "Save Value" button
 	And User navigate to "Request Types" page
 	Then "Edit Task" page is displayed to the user
-	When User select "TwoRequestTypeName" Request Type on Task page
+	When User select "2 TestRequestTypeName" Request Type on Task page
 	And User save selected Request Type
 	And User clicks "« Go Back to Tasks" button
 	Then created Task is displayed in the table
