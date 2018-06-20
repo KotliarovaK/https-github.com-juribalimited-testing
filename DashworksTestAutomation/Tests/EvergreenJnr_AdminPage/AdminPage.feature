@@ -352,7 +352,7 @@ Scenario: EvergreenJnr_AdminPage_CheckThatErrorsDoNotAppearAfterUpdatingTeamDesc
 	And There are no errors in the browser console
 	And Delete "TestTeam1" Team in the Administration
 
-@Evergreen @Admin @EvergreenJnr_AdminPage @AdminPage @DAS11765 @DAS12170
+@Evergreen @Admin @EvergreenJnr_AdminPage @AdminPage @DAS11765 @DAS12170 @Not_Run
 Scenario: EvergreenJnr_AdminPage_CheckThatMailboxesAreSuccessfullyAddedToBuckets
 	When User clicks Admin on the left-hand menu
 	Then Admin page should be displayed to the user
@@ -365,8 +365,8 @@ Scenario: EvergreenJnr_AdminPage_CheckThatMailboxesAreSuccessfullyAddedToBuckets
 	And User clicks Create New Item button
 	And User adds following items from list
 	| Item                        |
-	| aaron.w.burton@dwlabs.local |
-	| abel.y.hanson@dwlabs.local  |
+	| adam.e.stanley@dwlabs.local |
+	| abraham.u.leon@dwlabs.local |
 	Then Success message is displayed and contains "The selected mailboxes have been added to the selected bucket" text
 	And There are no errors in the browser console
 
@@ -405,7 +405,7 @@ Scenario: EvergreenJnr_AdminPage_CheckThatAllAssociationsAreSelectedByDefaultInT
 	Then All Association are selected by default
 	And Delete "TestProject7" Project in the Administration
 
-@Evergreen @Admin @EvergreenJnr_AdminPage @AdminPage @DAS12170
+@Evergreen @Admin @EvergreenJnr_AdminPage @AdminPage @DAS12170 @Not_Run
 Scenario: EvergreenJnr_AdminPage_CheckThatConsoleErrorsAreNotDisplayedAfterAddingDevicesInTheBuckets
 	When User clicks Admin on the left-hand menu
 	Then Admin page should be displayed to the user
@@ -416,9 +416,9 @@ Scenario: EvergreenJnr_AdminPage_CheckThatConsoleErrorsAreNotDisplayedAfterAddin
 	And User clicks content from "Bucket" column
 	And User clicks Create New Item button
 	And User adds following items from list
-	| Item            |
-	| 01COJATLYVAR7A6 |
-	| 01DRMO46G58SXK  |
+	| Item           |
+	| 34RRSBA00C0EYY |
+	| 01DRMO46G58SXK |
 	Then Success message is displayed and contains "The selected devices have been added to the selected bucket" text
 	And There are no errors in the browser console
 
@@ -435,7 +435,7 @@ Scenario: EvergreenJnr_AdminPage_CheckThatErrorsDoNotAppearAfterAddingDevicesToT
 	Then No items text is displayed
 	And There are no errors in the browser console
 
-@Evergreen @Admin @EvergreenJnr_AdminPage @AdminPage @DAS12170
+@Evergreen @Admin @EvergreenJnr_AdminPage @AdminPage @DAS12170 @Not_Run
 Scenario: EvergreenJnr_AdminPage_CheckThatConsoleErrorsAreNotDisplayedAfterAddingUsersInTheBuckets
 	When User clicks Admin on the left-hand menu
 	Then Admin page should be displayed to the user
@@ -447,9 +447,9 @@ Scenario: EvergreenJnr_AdminPage_CheckThatConsoleErrorsAreNotDisplayedAfterAddin
 	And User clicks "Users" tab
 	And User clicks Create New Item button
 	And User adds following items from list
-	| Item                                |
-	| FR\KSD3827534 (Philippine Langlois) |
-	| UK\LBM661859 (Jenifer V. Allison)   |
+	| Item                              |
+	| US-E\ABW081519 (Darrin A. Arnold) |
+	| FR\IIN4276389 (Merci Daoust)      |
 	Then Success message is displayed and contains "The selected users have been added to the selected bucket" text
 	And There are no errors in the browser console
 

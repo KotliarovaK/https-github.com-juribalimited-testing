@@ -24,3 +24,6 @@ Scenario: EvergreenJnr_GlobalSearch_CheckThatErrorMessageIsNotDisplayedAfterTypi
 	Then Search results are displayed below Global Search field
 	When User type "admin" in Global Search Field and presses Enter key
 	Then list of results is displayed to the user
+	When User type "______#____-" in Global Search Field and presses Enter key
+	Then list of results is displayed to the user
+	Then There are no errors in the browser console
