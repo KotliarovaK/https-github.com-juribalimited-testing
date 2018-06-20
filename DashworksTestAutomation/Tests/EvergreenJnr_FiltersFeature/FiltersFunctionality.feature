@@ -472,7 +472,7 @@ Scenario Outline: EvergreenJnr_ApplicationsList_CheckThatTheColourOfTheApplicati
 	| <SelectedCheckbox> |
 	Then "<ImageName>" image is matching the caption
 
-	Examples:
+Examples:
 	| SelectedCheckbox | ImageName     |
 	| FORWARD PATH     | FORWARD PATH  |
 	| KEEP             | KEEP          |
@@ -512,7 +512,7 @@ Scenario Outline: EvergreenJnr_AllLists_CheckThatContentIsDisplayedInTheAddedCol
 	| ColumnName         |
 	| <NewlyAddedColumn> |
 
-	Examples:
+Examples:
 	| ListName  | FilterName           | NewlyAddedColumn     |
 	| Mailboxes | EmailMigra: Category | EmailMigra: Category |
 	| Devices   | Windows7Mi: Category | Windows7Mi: Category |
@@ -558,8 +558,22 @@ Scenario Outline: EvergreenJnr_AllLists_CheckThatLocationFilterIsEditedCorrectly
 	| ColumnName   |
 	| State/County |
 
-	Examples:
+Examples:
 	| ListName  | FilterValue |
 	| Devices   | NY          |
 	| Users     | NY          |
 	| Mailboxes | VIC         |
+
+@Evergreen @Devices @EvergreenJnr_FilterFeature @FilterFunctionality @DAS11824
+Scenario: EvergreenJnr_DevicesList_CheckingThatError500IsNotDisplayedAfterUsingSpecialCharactersIntoTheApplicationNameFilterAndRefreshingThePage
+	When User clicks "Devices" on the left-hand menu
+	Then "Devices" list should be displayed to the user
+	When User clicks the Filters button
+	Then Filters panel is displayed to the user
+	When User add "Application Name" filter where type is "Equals" with following Value and Association:
+	| Values | Association            |
+	| __     | Entitled to device     |
+	Then "Application Name" filter is added to the list
+	When User clicks refresh button in the browser
+	Then "Devices" list should be displayed to the user
+	Then "(Application Name = __ ASSOCIATION = (entitled to device))" text is displayed in filter container
