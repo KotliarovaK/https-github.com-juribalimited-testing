@@ -149,8 +149,8 @@ Scenario Outline: EvergreenJnr_AllList_CheckThatSaveButtonIsNotDisplayedIfTheGri
 	When User clicks the Actions button
 	Then Actions panel is displayed to the user
 	When User move '<FirstColumnName>' column to '<ToColumnName>' column
-	When User move '<SecondColumnName>' column to '<ToColumnName>' column
-	When User clicks Close panel button
+	And User move '<SecondColumnName>' column to '<ToColumnName>' column
+	And User clicks Close panel button
 	Then Actions panel is not displayed to the user
 	And Save to New Custom List element is NOT displayed
 
@@ -177,7 +177,7 @@ Scenario Outline: EvergreenJnr_AllList_CheckThatSaveButtonIsNotDisplayedIfTheGri
 	Then ColumnName is added to the list
 	| ColumnName   |
 	| <ColumnName> |
-	Then Save to New Custom List element is NOT displayed
+	And Save to New Custom List element is NOT displayed
 
 Examples: 
 	| PageName     | ColumnName         | 
