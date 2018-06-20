@@ -184,7 +184,7 @@ Scenario: EvergreenJnr_UsersLists_CheckThatTheTableColumnsAreNotDuplicatedOnTheD
 	| IP Address     |
 	| Compliance     |
 
-@Evergreen @Devices @EvergreenJnr_ItemDetails @ItemDetailsDisplay @DAS11393
+@Evergreen @Devices @EvergreenJnr_ItemDetails @ItemDetailsDisplay @DAS11393 @DAS12765
 Scenario: EvergreenJnr_DevicesLists_CheckThatSelectedCheckboxesMatchTheColumnsInTheTableOnTheDetailsPage
 	When User clicks "Devices" on the left-hand menu
 	Then "Devices" list should be displayed to the user
@@ -534,16 +534,18 @@ Examples:
 	| Applications | "WPF/E" (codename) Community Technology Preview (Feb 2007) | Application   | Projects |
 	| Mailboxes    | 040698EE82354C17B60@bclabs.local                           | Email Address | Projects |
 
-@Evergreen @Mailboxes @EvergreenJnr_ItemDetails @ItemDetailsDisplay @DAS12210 @DAS12738 @DAS12371
+@Evergreen @Mailboxes @EvergreenJnr_ItemDetails @ItemDetailsDisplay @DAS12210 @DAS12738 @DAS12371 @DAS12765
 Scenario: EvergreenJnr_MailboxesLists_CheckThatDropdownListsInTheProjectDetailsFiltersAreDisplayedCorrectly
 	When User clicks "Mailboxes" on the left-hand menu
 	Then "Mailboxes" list should be displayed to the user
 	When User perform search by "040698EE82354C17B60@bclabs.local"
 	And User click content from "Email Address" column
 	And User navigates to the "Projects" tab
+	Then "Bucket" column is displayed to the user
 	When User closes "Mailbox Projects" section on the Details Page
 	And User opens "Mailbox User Projects" section on the Details Page
-	And User clicks String Filter button for "Project Type" column
+	Then "Bucket" column is displayed to the user
+	When User clicks String Filter button for "Project Type" column
 	Then Dropdown List is displayed correctly in the Filter on the Details Page
 	When User clicks String Filter button for "Category" column 
 	Then Dropdown List is displayed correctly in the Filter on the Details Page
@@ -574,7 +576,7 @@ Examples:
 	| Devices      | 001BAQXT6JWFPI                            |
 	| Users        | $231000-3AC04R8AR431                      |
 
-@Evergreen @Applications @Users @EvergreenJnr_ItemDetails @ItemDetailsDisplay @DAS12491
+@Evergreen @ALlLists @Users @EvergreenJnr_ItemDetails @ItemDetailsDisplay @DAS12491
 Scenario Outline: EvergreenJnr_AllLists_CheckThatSingularFoundItemLabelDisplaysOnDetailsPages
 	When User clicks "<PageName>" on the left-hand menu
 	And User perform search by "<SearchTerm>"
@@ -609,3 +611,20 @@ Scenario: EvergreenJnr_MailboxesLists_CheckThatLinksInMailboxDetailsAreRedirecte
 	And User opens "Mailbox Owner" section on the Details Page
 	And User clicks "hartmajt" link on the Details Page
 	Then Details object page is displayed to the user
+
+@Evergreen @ALlLists @Users @EvergreenJnr_ItemDetails @ItemDetailsDisplay @DAS12765
+Scenario Outline: EvergreenJnr_AllLists_CheckThatBucketColumnIsDisplayedOnDetailsProjectsPages
+	When User clicks "<PageName>" on the left-hand menu
+	And User perform search by "<SearchTerm>"
+	And User click content from "<Column>" column
+	And User navigates to the "<Tab>" tab
+	And User closes "<SectionClose>" section on the Details Page
+	And User opens "<SectionOpen>" section on the Details Page
+	Then "Bucket" column is displayed to the user
+
+Examples:
+	| PageName | SearchTerm     | Column   | Tab      | SectionClose      | SectionOpen           |
+	| Devices  | 001BAQXT6JWFPI | Hostname | Projects | Evergreen Buckets | Device Owner Projects |
+	| Users    | hurstbl        | Username | Projects | Evergreen Buckets | User Projects         |
+	| Users    | hurstbl        | Username | Projects | Evergreen Buckets | Mailbox Projects      |
+	| Users    | ZZZ588323      | Username | Projects | Evergreen Buckets | Device Projects       |
