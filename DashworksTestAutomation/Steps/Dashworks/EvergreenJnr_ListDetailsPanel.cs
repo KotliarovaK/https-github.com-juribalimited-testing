@@ -261,6 +261,7 @@ namespace DashworksTestAutomation.Steps.Dashworks
             var listDetailsElement = _driver.NowAt<ListDetailsElement>();
             _driver.WaitWhileControlIsNotDisplayed<ListDetailsElement>(() => listDetailsElement.SelectAccessDropdown);
             _driver.SelectCustomSelectbox(listDetailsElement.SelectAccessDropdown, accessOption);
+            _driver.WaitForDataLoading();
         }
 
         [Then(@"Warning message with ""(.*)"" is displayed")]
