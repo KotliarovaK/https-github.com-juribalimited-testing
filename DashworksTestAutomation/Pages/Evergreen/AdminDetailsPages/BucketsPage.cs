@@ -56,7 +56,7 @@ namespace DashworksTestAutomation.Pages.Evergreen.AdminDetailsPages
         public bool WarningDeleteBucketMessage(string warningText)
         {
             return Driver.IsElementDisplayed(
-                By.XPath($".//div[@class='ng-star-inserted inline-tip'][text()='{warningText}']"));
+                By.XPath($".//div[@id='messageAdmin'][text()='{warningText}']"));
         }
     }
 }
