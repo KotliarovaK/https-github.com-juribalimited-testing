@@ -798,3 +798,42 @@ Scenario: EvergreenJnr_AdminPage_CheckThatOnboardingOfObjectsIsProceedForScopedP
 	And User selects all rows on the grid
 	And User removes selected item
 	Then Delete "TestProject15" Project in the Administration
+
+@Evergreen @Admin @EvergreenJnr_AdminPage @AdminPage @DAS12332
+Scenario: EvergreenJnr_AdminPage_CheckingThatRedBannerWithOkMessageIsNotDisplayedAfterAddingItemsToCreatedProject
+	When User clicks Admin on the left-hand menu
+	Then Admin page should be displayed to the user
+	When User clicks "Projects" link on the Admin page
+	Then "Projects" page should be displayed to the user
+	When User clicks Create New Item button
+	Then "Create Project" page should be displayed to the user
+	When User enters "TestProject12332" in the Project Name field
+	And User selects "All Devices" in the Scope Project dropdown
+	And User clicks Create button on the Create Project page
+	And User clicks "Projects" link on the Admin page
+	Then "Projects" page should be displayed to the user
+	When User enters "TestProject12332" text in the Search field for "Project" column
+	And User clicks content from "Project" column
+	Then Project "TestProject12332" is displayed to user
+	When User expands the object to add 
+	And User selects following items to the Project
+	| Item           |
+	| 001BAQXT6JWFPI |	
+	And User clicks "Applications" tab in the Project Scope Changes section
+	And User expands the object to add 
+	And User selects following items to the Project
+	| Item                                                                |
+	| "WPF/E" (codename) Community Technology Preview (Feb 2007)(0.8.5.0) |
+	And User clicks "Users" tab in the Project Scope Changes section
+	And User expands the object to add 
+	And User selects following items to the Project
+	| Item                      |
+	| AAC860150(Kerrie D. Ruiz) |
+	And User clicks "UPDATE ALL CHANGES" button on the Projects page
+	And User clicks Update Project button on the Projects page
+	Then Success message with "3 objects queued for onboarding, 0 objects offboarded" text is displayed on the Projects page
+	And There are no errors in the browser console
+	When User click on Back button
+	And User enters "TestProject12332" text in the Search field for "Project" column
+	And User selects all rows on the grid
+	And User removes selected item
