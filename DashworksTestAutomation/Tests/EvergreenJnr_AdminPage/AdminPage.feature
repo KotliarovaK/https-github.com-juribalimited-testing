@@ -212,17 +212,20 @@ Scenario: EvergreenJnr_AdminPage_CheckThatYouCanNotDeleteTheDefaultBucketWarning
 	Then Admin page should be displayed to the user
 	When User clicks "Buckets" link on the Admin page
 	Then "Buckets" page should be displayed to the user
-	When User enters "Unassigned" text in the Search field for "Bucket" column
+	When User clicks Reset Filters button on the Admin page
+	When User enters "Administration" text in the Search field for "Bucket" column
 	And User clicks content from "Bucket" column
 	When User clicks "Bucket Settings" tab
 	Then Default Bucket checkbox is selected
 	When User click on Back button
-	And User enters "Unassigned" text in the Search field for "Bucket" column
+	When User clicks Reset Filters button on the Admin page
+	And User enters "Chicago" text in the Search field for "Bucket" column
 	And User selects all rows on the grid
 	And User clicks on Actions button
 	And User selects "Delete" in the Actions dropdown
 	When User clicks Delete button
 	Then "You can not delete the default bucket" warning message is not displayed on the Buckets page
+	Then Warning message with "These bucket will be permanently deleted and any objects within them reassigned to the default bucket" text is displayed on the Admin page
 
 @Evergreen @Admin @EvergreenJnr_AdminPage @AdminPage @DAS12182 @Not_Run
 Scenario: EvergreenJnr_AdminPage_CheckThatNumberOfApplicationsInProjectScopeIsCorrectlyUpdated
