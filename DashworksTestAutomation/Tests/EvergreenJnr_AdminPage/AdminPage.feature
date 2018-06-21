@@ -705,7 +705,7 @@ Scenario: EvergreenJnr_AdminPage_CheckThatSelectedCheckboxIsSelectedAfterSwitchi
 	And User expands the object to add 
 	And User selects following items to the Project
 	| Item                      |
-	| AAC860150(Kerrie D. Ruiz) |
+	| AAH0343264 (Luc Gauthier) |
 	And User clicks "Devices" tab in the Project Scope Changes section
 	When User expands the object to add 
 	Then following items are still selected
@@ -818,7 +818,7 @@ Scenario: EvergreenJnr_AdminPage_CheckingThatRedBannerWithOkMessageIsNotDisplaye
 	When User expands the object to add 
 	And User selects following items to the Project
 	| Item           |
-	| 001BAQXT6JWFPI |	
+	| 001BAQXT6JWFPI |
 	And User clicks "Applications" tab in the Project Scope Changes section
 	And User expands the object to add 
 	And User selects following items to the Project
@@ -837,3 +837,43 @@ Scenario: EvergreenJnr_AdminPage_CheckingThatRedBannerWithOkMessageIsNotDisplaye
 	And User enters "TestProject12332" text in the Search field for "Project" column
 	And User selects all rows on the grid
 	And User removes selected item
+
+@Evergreen @Admin @EvergreenJnr_AdminPage @AdminPage @DAS12796 @Delete_Newly_Created_List
+Scenario Outline: EvergreenJnr_AdminPage_CheckThatNumberOfObjectIsUpdatedAfterTheChangeInTheScopeChangesOfProject
+	When User clicks "<ListName>" on the left-hand menu
+	Then "<ListName>" list should be displayed to the user
+	When User click on '<ColumnName>' column header
+	And User create dynamic list with "<DynamicListName>" name on "<ListName>" page
+	Then "<DynamicListName>" list is displayed to user
+	And "<RowsCount>" rows are displayed in the agGrid
+	When User clicks Create Project from the main list
+	Then "Create Project" page should be displayed to the user
+	When User enters "<ProjectName>" in the Project Name field
+	And User clicks Create button on the Create Project page
+	And User clicks "Projects" link on the Admin page
+	Then "Projects" page should be displayed to the user
+	When User clicks "<ProjectName>" record in the grid
+	Then Project "<ProjectName>" is displayed to user
+	And "<ObjectsCount>" is displayed to the user in the Project Scope Changes section
+	When User clicks "<ListName>" on the left-hand menu
+	And User navigates to the "<DynamicListName>" list
+	And User clicks the Filters button
+	Then Filters panel is displayed to the user
+	When User add "<FilterName>" filter where type is "Equals" with added column and Lookup option
+	| SelectedValues |
+	| <Checkbox>     |
+	When User update current custom list
+	Then "<NewRowsCount>" rows are displayed in the agGrid
+	When User clicks Admin on the left-hand menu
+	Then Admin page should be displayed to the user
+	When User enters "<ProjectName>" text in the Search field for "Project" column
+	And User clicks content from "Project" column
+	Then Project "<ProjectName>" is displayed to user
+	And "<NewCount>" is displayed to the user in the Project Scope Changes section
+	And Delete "<DeleteProject>" Project in the Administration
+
+Examples:
+	| ListName  | ColumnName    | DynamicListName | RowsCount | ProjectName   | ObjectsCount | FilterName  | Checkbox | NewRowsCount | NewCount | DeleteProject |
+	| Devices   | Hostname      | ProjectList4587 | 17,225    | TestProject16 | 17225        | Device Type | Desktop  | 8,103        | 8103     | TestProject16 |
+	| Users     | Username      | ProjectList4511 | 41,339    | TestProject17 | 41339        | Domain      | CORP     | 103          | 103      | TestProject17 |
+	| Mailboxes | Email Address | ProjectList4548 | 14,784    | TestProject18 | 14784        | Owner City  | London   | 3,294        | 3294     | TestProject18 |

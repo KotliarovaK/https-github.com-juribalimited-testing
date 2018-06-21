@@ -94,7 +94,7 @@ namespace DashworksTestAutomation.Pages.Evergreen.AdminDetailsPages
 
         public bool SelectedItemInProjectScopeChangesSection(string text)
         {
-            return Driver.IsElementDisplayed(By.XPath($".//span[@class='title'][text()='{text}']"));
+            return Driver.IsElementDisplayed(By.XPath($".//span[@class='title'][contains(text(), '{text}')]"));
         }
 
         public bool SelectedTabInProjectScopeChangesSection(string tabName)
