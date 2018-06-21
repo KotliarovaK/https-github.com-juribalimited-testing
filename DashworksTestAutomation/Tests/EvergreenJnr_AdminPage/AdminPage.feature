@@ -699,7 +699,7 @@ Scenario: EvergreenJnr_AdminPage_CheckThatSelectedCheckboxIsSelectedAfterSwitchi
 	And User selects following items to the Project
 	| Item           |
 	| 00HA7MKAVVFDAV |
-	Then Update Project button is activ
+	Then Update Project button is active
 	And "Devices to add (1 of 17225 selected)" is displayed to the user in the Project Scope Changes section
 	When User clicks "Users" tab in the Project Scope Changes section
 	And User expands the object to add 
@@ -839,7 +839,7 @@ Scenario: EvergreenJnr_AdminPage_CheckingThatRedBannerWithOkMessageIsNotDisplaye
 	And User removes selected item
 
 @Evergreen @Admin @EvergreenJnr_AdminPage @AdminPage @DAS12796 @Delete_Newly_Created_List
-Scenario Outline: EvergreenJnr_AdminPage_CheckThatNumberOfObjectIsUpdatedAfterTheChangeInTheScopeChangesOfProject
+Scenario Outline: EvergreenJnr_AdminPage_CheckThatNumberOfObjectIsUpdatedInTheScopeChangesOfProjectAfterTheChangeCustomList
 	When User clicks "<ListName>" on the left-hand menu
 	Then "<ListName>" list should be displayed to the user
 	When User click on '<ColumnName>' column header
@@ -877,3 +877,40 @@ Examples:
 	| Devices   | Hostname      | ProjectList4587 | 17,225    | TestProject16 | 17225        | Device Type | Desktop  | 8,103        | 8103     | TestProject16 |
 	| Users     | Username      | ProjectList4511 | 41,339    | TestProject17 | 41339        | Domain      | CORP     | 103          | 103      | TestProject17 |
 	| Mailboxes | Email Address | ProjectList4548 | 14,784    | TestProject18 | 14784        | Owner City  | London   | 3,294        | 3294     | TestProject18 |
+
+@Evergreen @Admin @EvergreenJnr_AdminPage @AdminPage @DAS12816 
+Scenario: EvergreenJnr_AdminPage_CheckThatObjectsIsOnboardedToTheProjectWithCloneEvergreenBucketsToProjectBuckets
+	When User clicks Admin on the left-hand menu
+	Then Admin page should be displayed to the user
+	When User clicks "Projects" link on the Admin page
+	Then "Projects" page should be displayed to the user
+	When User clicks Create New Item button
+	Then "Create Project" page should be displayed to the user
+	When User enters "TestProject19" in the Project Name field
+	And User selects "All Devices" in the Scope Project dropdown
+	When User selects "Clone evergreen buckets to project buckets" in the Buckets Project dropdown
+	And User clicks Create button on the Create Project page
+	And User clicks "Projects" link on the Admin page
+	Then "Projects" page should be displayed to the user
+	When User enters "TestProject19" text in the Search field for "Project" column
+	And User clicks content from "Project" column
+	Then Project "TestProject19" is displayed to user
+	When User expands the object to add 
+	And User selects following items to the Project
+	| Item            |
+	| 01BQIYGGUW5PRP6 |
+	And User clicks "UPDATE DEVICE CHANGES" button on the Projects page
+	And User clicks Update Project button on the Projects page
+	When User selects "Queue" tab on the Project details page
+	Then following objects are onboarded
+	| Object          |
+	| 01BQIYGGUW5PRP6 |
+	When User selects "History" tab on the Project details page
+	Then following objects are onboarded
+	| Object          |
+	| 01BQIYGGUW5PRP6 |
+	When User click on Back button
+	And User enters "TestProject19" text in the Search field for "Project" column
+	And User selects all rows on the grid
+	And User removes selected item
+	When User clicks refresh button in the browser

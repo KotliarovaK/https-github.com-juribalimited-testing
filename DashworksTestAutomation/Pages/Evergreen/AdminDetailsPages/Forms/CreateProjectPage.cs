@@ -30,6 +30,9 @@ namespace DashworksTestAutomation.Pages.Evergreen.AdminDetailsPages
         [FindsBy(How = How.XPath, Using = ".//input[@role='combobox']")]
         public IWebElement ScopeProjectField { get; set; }
 
+        [FindsBy(How = How.XPath, Using = ".//mat-select[@id='buckets']")]
+        public IWebElement BucketsProjectField { get; set; }
+
         public override List<By> GetPageIdentitySelectors()
         {
             Driver.WaitForDataLoading();
@@ -39,9 +42,9 @@ namespace DashworksTestAutomation.Pages.Evergreen.AdminDetailsPages
             };
         }
 
-        public void SelectListForProjectCreation(string listName)
+        public void SelectObjectForProjectCreation(string objectName)
         {
-            string ListNameSelector = $".//span[@class='mat-option-text'][text()=' {listName}']";
+            string ListNameSelector = $".//span[@class='mat-option-text'][contains(text(), '{objectName}')]";
             Driver.WaitWhileControlIsNotDisplayed(By.XPath(ListNameSelector));
             Driver.FindElement(By.XPath(ListNameSelector)).Click();
         }

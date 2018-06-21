@@ -236,8 +236,8 @@ namespace DashworksTestAutomation.Steps.Dashworks
                 "Update All Changes button is active");
         }
 
-        [Then(@"Update Project button is activ")]
-        public void ThenUpdateProjectButtonIsActiv()
+        [Then(@"Update Project button is active")]
+        public void ThenUpdateProjectButtonIsActive()
         {
             var button = _driver.NowAt<ProjectsPage>();
             Assert.IsFalse(Convert.ToBoolean(button.UpdateProjectButton.GetAttribute("disabled")),
@@ -637,6 +637,25 @@ namespace DashworksTestAutomation.Steps.Dashworks
             }
         }
 
+        [Then(@"following objects are onboarded")]
+        public void ThenFollowingObjectsAreOnboarded(Table table)
+        {
+            var projectElement = _driver.NowAt<BaseGridPage>();
+            Thread.Sleep(15000);
+            foreach (var row in table.Rows)
+            {
+                if (projectElement.OnboardedObjectsTable.Displayed())
+                {
+                    projectElement.OnboardedObjectDisplayed(row["Object"]);
+                }
+                else
+                {
+                    _driver.Navigate().Refresh();
+                    projectElement.OnboardedObjectDisplayed(row["Object"]);
+                }
+            }
+        }
+
         [Then(@"following items are still selected")]
         public void ThenFollowingItemsAreStillSelected()
         {
@@ -677,11 +696,19 @@ namespace DashworksTestAutomation.Steps.Dashworks
         }
 
         [When(@"User selects ""(.*)"" in the Scope Project dropdown")]
-        public void ThenUserSelectsInTheScopeProjectDropdown(string listName)
+        public void ThenUserSelectsInTheScopeProjectDropdown(string objectName)
         {
             var createProjectElement = _driver.NowAt<CreateProjectPage>();
             createProjectElement.ScopeProjectField.Click();
-            createProjectElement.SelectListForProjectCreation(listName);
+            createProjectElement.SelectObjectForProjectCreation(objectName);
+        }
+
+        [When(@"User selects ""(.*)"" in the Buckets Project dropdown")]
+        public void WhenUserSelectsInTheBucketsProjectDropdown(string objectName)
+        {
+            var createProjectElement = _driver.NowAt<CreateProjectPage>();
+            createProjectElement.BucketsProjectField.Click();
+            createProjectElement.SelectObjectForProjectCreation(objectName);
         }
 
         [Then(@"Create Project button is disabled")]
@@ -797,7 +824,7 @@ namespace DashworksTestAutomation.Steps.Dashworks
                     projectElement = _driver.NowAt<ProjectsPage>();
                 }
             }
-
+            
             _driver.WaitWhileControlIsNotDisplayed<ProjectsPage>(() => projectElement.SuccessMessage);
             Assert.IsTrue(projectElement.SuccessTextMessage(textMessage),
                 $"{textMessage} is not displayed on the Project page");
