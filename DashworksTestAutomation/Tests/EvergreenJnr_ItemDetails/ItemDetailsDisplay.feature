@@ -627,3 +627,14 @@ Examples:
 	| Users    | hurstbl        | Username | Projects | Evergreen Buckets | User Projects         |
 	| Users    | hurstbl        | Username | Projects | Evergreen Buckets | Mailbox Projects      |
 	| Users    | ZZZ588323      | Username | Projects | Evergreen Buckets | Device Projects       |
+
+@Evergreen @Devices @EvergreenJnr_ItemDetails @ItemDetailsDisplay @DAS12292
+Scenario: EvergreenJnr_DevicesLists_CheckingThatInRangeOperatorWorkingCorrectly
+	When User clicks "Devices" on the left-hand menu
+	Then "Devices" list should be displayed to the user
+	When User type "001PSUMZYOW581" in Global Search Field
+	Then User clicks on "001PSUMZYOW581" search result
+	When User navigates to the "Projects" tab
+	And User opens "Device Projects" section on the Details Page
+	And User have opened Column Settings for "Date" column in the Details Page table
+	And User clicks Filter button on the Column Settings panel
