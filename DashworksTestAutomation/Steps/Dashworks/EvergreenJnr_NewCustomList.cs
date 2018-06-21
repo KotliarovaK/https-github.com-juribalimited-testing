@@ -38,9 +38,8 @@ namespace DashworksTestAutomation.Steps.Dashworks
         public void SaveToNewCustomListElementIsNOTDisplayed()
         {
             var page = _driver.NowAt<BaseDashboardPage>();
-            _driver.WaitWhileControlIsDisplayed<BaseDashboardPage>(() => page.SaveCustomListButton);
             Assert.IsFalse(page.SaveCustomListButton.Displayed(),
-                "Save Custom list is displayed");
+                "Save New Custom List panel is displayed");
 
             Logger.Write("The Save to Custom List Element was NOT displayed");
         }
@@ -97,6 +96,16 @@ namespace DashworksTestAutomation.Steps.Dashworks
             Thread.Sleep(300);
             _driver.WaitWhileControlIsDisplayed<CustomListElement>(() => listElement.SuccessCreateMessage);
             _listsDetails.AddList($"{listName}");
+        }
+
+        [When(@"User creates new custom list with ""(.*)"" name")]
+        public void WhenUserCreatesNewCustomListWithName(string listName)
+        {
+            var listElement = _driver.NowAt<CustomListElement>();
+            _driver.WaitWhileControlIsNotDisplayed<CustomListElement>(() => listElement.SaveButton);
+            Assert.IsTrue(listElement.SaveButton.Displayed(), "SaveButton is displayed");
+            listElement.ListNameTextbox.SendKeys(listName);
+            listElement.SaveButton.Click();
         }
 
         [When(@"User clicks Save button on the list panel")]
@@ -293,6 +302,7 @@ namespace DashworksTestAutomation.Steps.Dashworks
         public void WhenUserNavigatesToTheList(string listName)
         {
             var page = _driver.NowAt<BaseDashboardPage>();
+            _driver.WaitForDataLoading();
             page.GetListElementByName(listName).Click();
             _driver.WaitForDataLoading();
         }
@@ -433,7 +443,7 @@ namespace DashworksTestAutomation.Steps.Dashworks
                 RemoveUserLists();
                 RemoveSharedLists();
             }
-            catch {}
+            catch { }
         }
 
         private void RemoveUserLists()

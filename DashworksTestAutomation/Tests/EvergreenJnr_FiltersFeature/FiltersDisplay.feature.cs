@@ -459,7 +459,7 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_FiltersFeature
             testRunner.Then("\"Devices\" list should be displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
             testRunner.When("User clicks the Filters button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
             testRunner.Then("Filters panel is displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-            testRunner.When("User selects \"Computer Warranty\" filter from \"Application Custom Fields\" category" +
+            testRunner.When("User selects \"Application Owner\" filter from \"Application Custom Fields\" category" +
                     "", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
             testRunner.Then("\"Add column\" checkbox is not displayed", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
             this.ScenarioCleanup();
@@ -1916,24 +1916,11 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_FiltersFeature
         [NUnit.Framework.TestCaseAttribute("App field 1", new string[0])]
         [NUnit.Framework.TestCaseAttribute("App field 2", new string[0])]
         [NUnit.Framework.TestCaseAttribute("Application Owner", new string[0])]
-        [NUnit.Framework.TestCaseAttribute("Computer Field 1", new string[0])]
-        [NUnit.Framework.TestCaseAttribute("Computer Field 2", new string[0])]
-        [NUnit.Framework.TestCaseAttribute("Computer Warranty", new string[0])]
-        [NUnit.Framework.TestCaseAttribute("ComputerCustomField", new string[0])]
-        [NUnit.Framework.TestCaseAttribute("DAS-1814", new string[0])]
-        [NUnit.Framework.TestCaseAttribute("End of Life Date", new string[0])]
-        [NUnit.Framework.TestCaseAttribute("Friendly Model Name", new string[0])]
         [NUnit.Framework.TestCaseAttribute("General information field 1", new string[0])]
         [NUnit.Framework.TestCaseAttribute("General information field 2", new string[0])]
         [NUnit.Framework.TestCaseAttribute("General information field 3", new string[0])]
         [NUnit.Framework.TestCaseAttribute("General information field 4", new string[0])]
         [NUnit.Framework.TestCaseAttribute("General information field 5", new string[0])]
-        [NUnit.Framework.TestCaseAttribute("Mailbox Filter 1", new string[0])]
-        [NUnit.Framework.TestCaseAttribute("Mailbox Filter 2", new string[0])]
-        [NUnit.Framework.TestCaseAttribute("Telephone", new string[0])]
-        [NUnit.Framework.TestCaseAttribute("User Field 1", new string[0])]
-        [NUnit.Framework.TestCaseAttribute("User Field 2", new string[0])]
-        [NUnit.Framework.TestCaseAttribute("Zip Code", new string[0])]
         public virtual void EvergreenJnr_DevicesList_CheckThatCustomFiltersAreContainsAllExpectedAssociations(string filterName, string[] exampleTags)
         {
             System.Exception lastException = null;

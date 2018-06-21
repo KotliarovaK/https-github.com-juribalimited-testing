@@ -29,7 +29,7 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_ListDetails
         {
             testRunner = TechTalk.SpecFlow.TestRunnerManager.GetTestRunner();
             TechTalk.SpecFlow.FeatureInfo featureInfo = new TechTalk.SpecFlow.FeatureInfo(new System.Globalization.CultureInfo("en-US"), "ListDetailsFunctionality", "\tRuns List Details Panel related tests", ProgrammingLanguage.CSharp, new string[] {
-                        "retry:1"});
+                        "retry:0"});
             testRunner.OnFeatureStart(featureInfo);
         }
         
@@ -83,7 +83,7 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_ListDetails
         public virtual void EvergreenJnr_AllLists_CheckThatRenamingAListWorkingCorrectlyForDynamicLists(string pageName, string columnname, string[] exampleTags)
         {
             System.Exception lastException = null;
-            for (int i = 0; (i <= 1); i = (i + 1))
+            for (int i = 0; (i <= 0); i = (i + 1))
             {
                 try
                 {
@@ -95,7 +95,7 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_ListDetails
                     lastException = exc;
                 }
                 if (((i + 1) 
-                            <= 1))
+                            <= 0))
                 {
                     testRunner.OnScenarioEnd();
                 }
@@ -132,8 +132,16 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_ListDetails
             testRunner.Then("List details panel is displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
             testRunner.When("User changes list name to \"RenamedList\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
             testRunner.Then("\"RenamedList\" name is displayed in list details panel", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-            testRunner.When("User is closed List Details panel", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+            testRunner.Then("Edit List menu is not displayed", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+            testRunner.When("User mark list as favorite", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+            testRunner.Then("Star icon is active in list details panel", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+            testRunner.Then("Edit List menu is not displayed", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+            testRunner.When("User select \"Everyone can edit\" sharing option", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+            testRunner.Then("Edit List menu is not displayed", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
             testRunner.Then("\"RenamedList\" list is displayed to user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+            testRunner.When("User select \"Automation Admin 1\" as a Owner of a list", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+            testRunner.And("User click Accept button in List Details panel", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+            testRunner.Then("Edit List menu is not displayed", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
             this.ScenarioCleanup();
         }
         
@@ -155,7 +163,7 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_ListDetails
         public virtual void EvergreenJnr_AllLists_CheckThatRenamingAListWorkingCorrectlyForStaticLists(string pageName, string columnname, string[] exampleTags)
         {
             System.Exception lastException = null;
-            for (int i = 0; (i <= 1); i = (i + 1))
+            for (int i = 0; (i <= 0); i = (i + 1))
             {
                 try
                 {
@@ -167,7 +175,7 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_ListDetails
                     lastException = exc;
                 }
                 if (((i + 1) 
-                            <= 1))
+                            <= 0))
                 {
                     testRunner.OnScenarioEnd();
                 }
@@ -207,8 +215,16 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_ListDetails
             testRunner.Then("List details panel is displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
             testRunner.When("User changes list name to \"RenamedList\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
             testRunner.Then("\"RenamedList\" name is displayed in list details panel", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-            testRunner.When("User is closed List Details panel", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+            testRunner.Then("Edit List menu is not displayed", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+            testRunner.When("User mark list as favorite", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+            testRunner.Then("Star icon is active in list details panel", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+            testRunner.Then("Edit List menu is not displayed", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+            testRunner.When("User select \"Everyone can edit\" sharing option", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+            testRunner.Then("Edit List menu is not displayed", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
             testRunner.Then("\"RenamedList\" list is displayed to user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+            testRunner.When("User select \"Automation Admin 1\" as a Owner of a list", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+            testRunner.And("User click Accept button in List Details panel", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+            testRunner.Then("Edit List menu is not displayed", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
             this.ScenarioCleanup();
         }
         
@@ -228,7 +244,7 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_ListDetails
         public virtual void EvergreenJnr_AllLists_CheckThatFavoriteAListWorkingCorrectlyForDynamicLists(string pageName, string columnname, string listToNavigate, string[] exampleTags)
         {
             System.Exception lastException = null;
-            for (int i = 0; (i <= 1); i = (i + 1))
+            for (int i = 0; (i <= 0); i = (i + 1))
             {
                 try
                 {
@@ -240,7 +256,7 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_ListDetails
                     lastException = exc;
                 }
                 if (((i + 1) 
-                            <= 1))
+                            <= 0))
                 {
                     testRunner.OnScenarioEnd();
                 }
@@ -307,7 +323,7 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_ListDetails
         public virtual void EvergreenJnr_AllLists_CheckThatFavoriteAListWorkingCorrectlyForStaticLists(string pageName, string listToNavigate, string[] exampleTags)
         {
             System.Exception lastException = null;
-            for (int i = 0; (i <= 1); i = (i + 1))
+            for (int i = 0; (i <= 0); i = (i + 1))
             {
                 try
                 {
@@ -319,7 +335,7 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_ListDetails
                     lastException = exc;
                 }
                 if (((i + 1) 
-                            <= 1))
+                            <= 0))
                 {
                     testRunner.OnScenarioEnd();
                 }
@@ -385,7 +401,7 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_ListDetails
         public virtual void EvergreenJnr_AllLists_CheckThatListDetailsButtonIsDisabledForDefaultLists(string pageName, string[] exampleTags)
         {
             System.Exception lastException = null;
-            for (int i = 0; (i <= 1); i = (i + 1))
+            for (int i = 0; (i <= 0); i = (i + 1))
             {
                 try
                 {
@@ -397,7 +413,7 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_ListDetails
                     lastException = exc;
                 }
                 if (((i + 1) 
-                            <= 1))
+                            <= 0))
                 {
                     testRunner.OnScenarioEnd();
                 }
@@ -445,7 +461,7 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_ListDetails
         public virtual void EvergreenJnr_AllLists_CheckDefaultOptionsInListDetailsForDynamicLists(string pageName, string columnname, string[] exampleTags)
         {
             System.Exception lastException = null;
-            for (int i = 0; (i <= 1); i = (i + 1))
+            for (int i = 0; (i <= 0); i = (i + 1))
             {
                 try
                 {
@@ -457,7 +473,7 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_ListDetails
                     lastException = exc;
                 }
                 if (((i + 1) 
-                            <= 1))
+                            <= 0))
                 {
                     testRunner.OnScenarioEnd();
                 }
@@ -515,7 +531,7 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_ListDetails
         public virtual void EvergreenJnr_AllLists_CheckDefaultOptionsInListDetailsForStaticLists(string pageName, string[] exampleTags)
         {
             System.Exception lastException = null;
-            for (int i = 0; (i <= 1); i = (i + 1))
+            for (int i = 0; (i <= 0); i = (i + 1))
             {
                 try
                 {
@@ -527,7 +543,7 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_ListDetails
                     lastException = exc;
                 }
                 if (((i + 1) 
-                            <= 1))
+                            <= 0))
                 {
                     testRunner.OnScenarioEnd();
                 }
@@ -586,7 +602,7 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_ListDetails
         public virtual void EvergreenJnr_AllLists_CheckThatActiveListIsRefreshedOnListDetailsPanel(string pageName, string columnname, string[] exampleTags)
         {
             System.Exception lastException = null;
-            for (int i = 0; (i <= 1); i = (i + 1))
+            for (int i = 0; (i <= 0); i = (i + 1))
             {
                 try
                 {
@@ -598,7 +614,7 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_ListDetails
                     lastException = exc;
                 }
                 if (((i + 1) 
-                            <= 1))
+                            <= 0))
                 {
                     testRunner.OnScenarioEnd();
                 }
@@ -657,7 +673,7 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_ListDetails
         public virtual void EvergreenJnr_AllLists_CheckThatListDetailsButtonIsDisabledForDefaultListsAfterChangingALanguage(string pageName, string[] exampleTags)
         {
             System.Exception lastException = null;
-            for (int i = 0; (i <= 1); i = (i + 1))
+            for (int i = 0; (i <= 0); i = (i + 1))
             {
                 try
                 {
@@ -669,7 +685,7 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_ListDetails
                     lastException = exc;
                 }
                 if (((i + 1) 
-                            <= 1))
+                            <= 0))
                 {
                     testRunner.OnScenarioEnd();
                 }
@@ -723,7 +739,7 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_ListDetails
         public virtual void EvergreenJnr_AllLists_CheckThatNoAbilityToCreateTheSameNamedListsUsingTheSpaceCharacterForDynamicList(string pageName, string columnName, string listToNavigate, string[] exampleTags)
         {
             System.Exception lastException = null;
-            for (int i = 0; (i <= 1); i = (i + 1))
+            for (int i = 0; (i <= 0); i = (i + 1))
             {
                 try
                 {
@@ -735,7 +751,7 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_ListDetails
                     lastException = exc;
                 }
                 if (((i + 1) 
-                            <= 1))
+                            <= 0))
                 {
                     testRunner.OnScenarioEnd();
                 }
@@ -794,7 +810,7 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_ListDetails
         public virtual void EvergreenJnr_AllLists_CheckThatNoAbilityToCreateTheSameNamedListsUsingTheSpaceCharacterForStaticLists(string pageName, string listToNavigate, string[] exampleTags)
         {
             System.Exception lastException = null;
-            for (int i = 0; (i <= 1); i = (i + 1))
+            for (int i = 0; (i <= 0); i = (i + 1))
             {
                 try
                 {
@@ -806,7 +822,7 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_ListDetails
                     lastException = exc;
                 }
                 if (((i + 1) 
-                            <= 1))
+                            <= 0))
                 {
                     testRunner.OnScenarioEnd();
                 }
@@ -864,7 +880,7 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_ListDetails
         public virtual void EvergreenJnr_AllLists_CheckThatWarningMessageIsNotDisplayedInTheListPanelAfterViewingDependentList()
         {
             System.Exception lastException = null;
-            for (int i = 0; (i <= 1); i = (i + 1))
+            for (int i = 0; (i <= 0); i = (i + 1))
             {
                 try
                 {
@@ -876,7 +892,7 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_ListDetails
                     lastException = exc;
                 }
                 if (((i + 1) 
-                            <= 1))
+                            <= 0))
                 {
                     testRunner.OnScenarioEnd();
                 }
@@ -963,7 +979,7 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_ListDetails
         public virtual void EvergreenJnr_AllLists_CheckThatTwoDependencyAreDisplayedInTheDependentsBlock()
         {
             System.Exception lastException = null;
-            for (int i = 0; (i <= 1); i = (i + 1))
+            for (int i = 0; (i <= 0); i = (i + 1))
             {
                 try
                 {
@@ -975,7 +991,7 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_ListDetails
                     lastException = exc;
                 }
                 if (((i + 1) 
-                            <= 1))
+                            <= 0))
                 {
                     testRunner.OnScenarioEnd();
                 }
@@ -1063,7 +1079,7 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_ListDetails
         public virtual void EvergreenJnr_AllLists_CheckThatListDoesNotExistErrorWhenViewingDependentList()
         {
             System.Exception lastException = null;
-            for (int i = 0; (i <= 1); i = (i + 1))
+            for (int i = 0; (i <= 0); i = (i + 1))
             {
                 try
                 {
@@ -1075,7 +1091,7 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_ListDetails
                     lastException = exc;
                 }
                 if (((i + 1) 
-                            <= 1))
+                            <= 0))
                 {
                     testRunner.OnScenarioEnd();
                 }
@@ -1166,7 +1182,7 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_ListDetails
         public virtual void EvergreenJnr_AllLists_CheckThatListPanelDoesNotExistErrorWhenViewingDependentList()
         {
             System.Exception lastException = null;
-            for (int i = 0; (i <= 1); i = (i + 1))
+            for (int i = 0; (i <= 0); i = (i + 1))
             {
                 try
                 {
@@ -1178,7 +1194,7 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_ListDetails
                     lastException = exc;
                 }
                 if (((i + 1) 
-                            <= 1))
+                            <= 0))
                 {
                     testRunner.OnScenarioEnd();
                 }
@@ -1251,7 +1267,7 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_ListDetails
         public virtual void EvergreenJnr_AllLists_CheckDisplayingListDeletionWarningMessageForDependenciesDynamicLists()
         {
             System.Exception lastException = null;
-            for (int i = 0; (i <= 1); i = (i + 1))
+            for (int i = 0; (i <= 0); i = (i + 1))
             {
                 try
                 {
@@ -1263,7 +1279,7 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_ListDetails
                     lastException = exc;
                 }
                 if (((i + 1) 
-                            <= 1))
+                            <= 0))
                 {
                     testRunner.OnScenarioEnd();
                 }
@@ -1344,7 +1360,7 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_ListDetails
         public virtual void EvergreenJnr_AllLists_CheckDisplayingListDeletionWarningMessageForDependenciesStaticLists()
         {
             System.Exception lastException = null;
-            for (int i = 0; (i <= 1); i = (i + 1))
+            for (int i = 0; (i <= 0); i = (i + 1))
             {
                 try
                 {
@@ -1356,7 +1372,7 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_ListDetails
                     lastException = exc;
                 }
                 if (((i + 1) 
-                            <= 1))
+                            <= 0))
                 {
                     testRunner.OnScenarioEnd();
                 }
@@ -1437,7 +1453,7 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_ListDetails
         public virtual void EvergreenJnr_AllLists_CheckDisplayingListDeletionWarningMessageForDependenciesLists()
         {
             System.Exception lastException = null;
-            for (int i = 0; (i <= 1); i = (i + 1))
+            for (int i = 0; (i <= 0); i = (i + 1))
             {
                 try
                 {
@@ -1449,7 +1465,7 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_ListDetails
                     lastException = exc;
                 }
                 if (((i + 1) 
-                            <= 1))
+                            <= 0))
                 {
                     testRunner.OnScenarioEnd();
                 }
@@ -1546,7 +1562,7 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_ListDetails
         public virtual void EvergreenJnr_AllLists_CheckDisplayingListDeletionWarningMessageForTwoDependenciesLists()
         {
             System.Exception lastException = null;
-            for (int i = 0; (i <= 1); i = (i + 1))
+            for (int i = 0; (i <= 0); i = (i + 1))
             {
                 try
                 {
@@ -1558,7 +1574,7 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_ListDetails
                     lastException = exc;
                 }
                 if (((i + 1) 
-                            <= 1))
+                            <= 0))
                 {
                     testRunner.OnScenarioEnd();
                 }
@@ -1640,7 +1656,7 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_ListDetails
         public virtual void EvergreenJnr_Users_CheckThatListDeletionWarningMessageIsNotDisplayedAfterDeletingAnotherListForDynamicAndStaticLists()
         {
             System.Exception lastException = null;
-            for (int i = 0; (i <= 1); i = (i + 1))
+            for (int i = 0; (i <= 0); i = (i + 1))
             {
                 try
                 {
@@ -1652,7 +1668,7 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_ListDetails
                     lastException = exc;
                 }
                 if (((i + 1) 
-                            <= 1))
+                            <= 0))
                 {
                     testRunner.OnScenarioEnd();
                 }
@@ -1714,7 +1730,7 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_ListDetails
         public virtual void EvergreenJnr_Users_CheckThatListDeletionWarningMessageIsNotDisplayedAfterDeletingAnotherListForDynamicLists()
         {
             System.Exception lastException = null;
-            for (int i = 0; (i <= 1); i = (i + 1))
+            for (int i = 0; (i <= 0); i = (i + 1))
             {
                 try
                 {
@@ -1726,7 +1742,7 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_ListDetails
                     lastException = exc;
                 }
                 if (((i + 1) 
-                            <= 1))
+                            <= 0))
                 {
                     testRunner.OnScenarioEnd();
                 }
@@ -1781,7 +1797,7 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_ListDetails
         public virtual void EvergreenJnr_Users_CheckThatListDetailsPanelIsDisplayedAfterSelectingManageFromListPanelMenu()
         {
             System.Exception lastException = null;
-            for (int i = 0; (i <= 1); i = (i + 1))
+            for (int i = 0; (i <= 0); i = (i + 1))
             {
                 try
                 {
@@ -1793,7 +1809,7 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_ListDetails
                     lastException = exc;
                 }
                 if (((i + 1) 
-                            <= 1))
+                            <= 0))
                 {
                     testRunner.OnScenarioEnd();
                 }
@@ -1856,7 +1872,7 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_ListDetails
         public virtual void EvergreenJnr_ApplicationsLists_CheckThatTheSaveButtonIsNotDisplayedOnTheListPanelAfterListCreation()
         {
             System.Exception lastException = null;
-            for (int i = 0; (i <= 1); i = (i + 1))
+            for (int i = 0; (i <= 0); i = (i + 1))
             {
                 try
                 {
@@ -1868,7 +1884,7 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_ListDetails
                     lastException = exc;
                 }
                 if (((i + 1) 
-                            <= 1))
+                            <= 0))
                 {
                     testRunner.OnScenarioEnd();
                 }
@@ -1924,7 +1940,7 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_ListDetails
         public virtual void EvergreenJnr_ApplicationsLists_CheckThatListOwnerOfDynamicListIsDisplayedCorrectly()
         {
             System.Exception lastException = null;
-            for (int i = 0; (i <= 1); i = (i + 1))
+            for (int i = 0; (i <= 0); i = (i + 1))
             {
                 try
                 {
@@ -1936,7 +1952,7 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_ListDetails
                     lastException = exc;
                 }
                 if (((i + 1) 
-                            <= 1))
+                            <= 0))
                 {
                     testRunner.OnScenarioEnd();
                 }

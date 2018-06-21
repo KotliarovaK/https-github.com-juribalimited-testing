@@ -19,8 +19,20 @@ namespace DashworksTestAutomation.Pages.Evergreen.AdminDetailsPages
         [FindsBy(How = How.XPath, Using = ".//span[text()='UPDATE PROJECT']")]
         public IWebElement UpdateProjectInTheWarning { get; set; }
 
+        [FindsBy(How = How.XPath, Using = ".//span[@class='mat-option-text']")]
+        public IWebElement DeleteProjectInActions { get; set; }
+
+        [FindsBy(How = How.XPath, Using = ".//button[contains(@title, 'Update')]")]
+        public IWebElement UpdateProjectButton { get; set; }
+
+        [FindsBy(How = How.XPath, Using = ".//button[@title='Update All Changes']")]
+        public IWebElement UpdateAllChangesButton { get; set; }
+
         [FindsBy(How = How.XPath, Using = ".//span['_ngcontent-c11'][text()='Scope']")]
         public IWebElement ScopeSection { get; set; }
+
+        [FindsBy(How = How.XPath, Using = ".//div[@class='wrapper-disabled']//mat-select[@aria-label='User Scope']")]
+        public IWebElement DisabledOwnerDropDown { get; set; }
 
         public override List<By> GetPageIdentitySelectors()
         {
@@ -88,13 +100,6 @@ namespace DashworksTestAutomation.Pages.Evergreen.AdminDetailsPages
         public bool SelectedTabInProjectScopeChangesSection(string tabName)
         {
             return Driver.IsElementDisplayed(By.XPath($".//div//span[contains(text(),'{tabName} ')]"));
-        }
-
-        public bool WarningMessageProjectPage(string text)
-        {
-            Driver.WaitForElement(By.XPath(".//div[@class='inline-tip ng-star-inserted']"));
-            return Driver.IsElementDisplayed(
-                By.XPath($".//div[@class='inline-tip ng-star-inserted'][text()='{text}']"));
         }
     }
 }

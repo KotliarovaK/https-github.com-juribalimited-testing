@@ -127,12 +127,20 @@ namespace DashworksTestAutomation.Steps.Dashworks
             Assert.IsTrue(detailsPage.SectionContainer.Displayed(), "Section is not displayed");
         }
 
+        [Then(@"""(.*)"" column is displayed to the user")]
+        public void ThenColumnIsDisplayedToTheUser(string columnName)
+        {
+            var columnHeader = _driver.NowAt<ApplicationsDetailsTabsMenu>();
+            Assert.IsTrue(columnHeader.ColumnIsDisplayed(columnName),
+                $"{columnName} column is not displayed");
+        }
+
         [Then(@"""(.*)"" column is not displayed to the user")]
         public void ThenColumnIsNotDisplayedToTheUser(string columnName)
         {
             var columnHeader = _driver.NowAt<ApplicationsDetailsTabsMenu>();
             Assert.IsFalse(columnHeader.ColumnIsDisplayed(columnName),
-                $"{columnName} category stil displayed in Column Panel");
+                $"{columnName} column still displayed");
         }
 
         [When(@"User clicks String Filter button for ""(.*)"" column")]
@@ -163,8 +171,15 @@ namespace DashworksTestAutomation.Steps.Dashworks
         public void ThenDropdownListIsDisplayedCorrectlyInTheFilterOnTheDetailsPage()
         {
             var filterElement = _driver.NowAt<ApplicationsDetailsTabsMenu>();
-            //Assert.IsTrue(filterElement.AllCheckboxesSelectedStringFilter.Displayed(), "All checkbox is unchecked");
-            Assert.IsFalse(filterElement.UncheckedStringFilters.Displayed(), "Checkbox is selected");
+            if (filterElement.GetCheckboxes().Count() > 5)
+            {
+                Assert.IsTrue(filterElement.AllCheckboxesSelectedStringFilter.Displayed(), "All checkbox is unchecked");
+                Assert.IsFalse(filterElement.UncheckedStringFilters.Displayed(), "Checkbox is selected");
+            }
+            else
+            {
+                Assert.IsFalse(filterElement.UncheckedStringFilters.Displayed(), "Checkbox is selected");
+            }
         }
 
         [When(@"User clicks Reset Filters button on the Details Page")]

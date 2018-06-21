@@ -34,108 +34,138 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="Gherkin, Version=1.0.0.0, Culture=neutral, PublicKeyToken=86496cfa5b4a5851, processorArchitecture=MSIL">
+    <Reference Include="Gherkin">
       <HintPath>..\packages\SpecFlow.CustomPlugin.2.1.0\lib\net45\Gherkin.dll</HintPath>
+      <Private>True</Private>
     </Reference>
-    <Reference Include="HtmlAgilityPack, Version=1.6.11.0, Culture=neutral, PublicKeyToken=bd319b19eaf3b43a, processorArchitecture=MSIL">
+    <Reference Include="HtmlAgilityPack">
       <HintPath>..\packages\HtmlAgilityPack.1.6.11\lib\Net45\HtmlAgilityPack.dll</HintPath>
+      <Private>True</Private>
     </Reference>
     <Reference Include="Microsoft.VisualStudio.QualityTools.UnitTestFramework, Version=10.1.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL" />
-    <Reference Include="Microsoft.Win32.Primitives, Version=4.0.1.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+    <Reference Include="Microsoft.Win32.Primitives">
       <HintPath>..\packages\Microsoft.Win32.Primitives.4.0.1\lib\net46\Microsoft.Win32.Primitives.dll</HintPath>
+      <Private>True</Private>
     </Reference>
-    <Reference Include="Newtonsoft.Json, Version=10.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+    <Reference Include="Newtonsoft.Json">
       <HintPath>..\packages\Newtonsoft.Json.10.0.3\lib\net45\Newtonsoft.Json.dll</HintPath>
+      <Private>True</Private>
     </Reference>
-    <Reference Include="nunit.framework, Version=3.6.1.0, Culture=neutral, PublicKeyToken=2638cd05610744eb, processorArchitecture=MSIL">
+    <Reference Include="nunit.framework">
       <HintPath>..\packages\NUnit.3.6.1\lib\net45\nunit.framework.dll</HintPath>
+      <Private>True</Private>
     </Reference>
-    <Reference Include="RestSharp, Version=106.2.0.0, Culture=neutral, PublicKeyToken=598062e77f915f75, processorArchitecture=MSIL">
+    <Reference Include="RestSharp">
       <HintPath>..\packages\RestSharp.106.2.0\lib\net452\RestSharp.dll</HintPath>
+      <Private>True</Private>
     </Reference>
-    <Reference Include="SpecFlow.Retry.Generator.SpecFlowPlugin, Version=0.1.2.0, Culture=neutral, processorArchitecture=MSIL">
+    <Reference Include="SpecFlow.Retry.Generator.SpecFlowPlugin">
       <HintPath>..\packages\SpecFlow.Retry.2.2.0.1\lib\net45\SpecFlow.Retry.Generator.SpecFlowPlugin.dll</HintPath>
+      <Private>True</Private>
     </Reference>
     <Reference Include="System" />
-    <Reference Include="System.AppContext, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+    <Reference Include="System.AppContext">
       <HintPath>..\packages\System.AppContext.4.1.0\lib\net46\System.AppContext.dll</HintPath>
+      <Private>True</Private>
     </Reference>
     <Reference Include="System.ComponentModel.Composition" />
     <Reference Include="System.configuration" />
-    <Reference Include="System.Console, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+    <Reference Include="System.Console">
       <HintPath>..\packages\System.Console.4.0.0\lib\net46\System.Console.dll</HintPath>
+      <Private>True</Private>
     </Reference>
-    <Reference Include="System.Diagnostics.DiagnosticSource, Version=4.0.0.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+    <Reference Include="System.Diagnostics.DiagnosticSource">
       <HintPath>..\packages\System.Diagnostics.DiagnosticSource.4.0.0\lib\net46\System.Diagnostics.DiagnosticSource.dll</HintPath>
+      <Private>True</Private>
     </Reference>
     <Reference Include="System.Drawing" />
-    <Reference Include="System.Globalization.Calendars, Version=4.0.1.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+    <Reference Include="System.Globalization.Calendars">
       <HintPath>..\packages\System.Globalization.Calendars.4.0.1\lib\net46\System.Globalization.Calendars.dll</HintPath>
+      <Private>True</Private>
     </Reference>
-    <Reference Include="System.IO.Compression, Version=4.1.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+    <Reference Include="System.IO.Compression">
       <HintPath>..\packages\System.IO.Compression.4.1.0\lib\net46\System.IO.Compression.dll</HintPath>
+      <Private>True</Private>
     </Reference>
     <Reference Include="System.IO.Compression.FileSystem" />
-    <Reference Include="System.IO.Compression.ZipFile, Version=4.0.1.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+    <Reference Include="System.IO.Compression.ZipFile">
       <HintPath>..\packages\System.IO.Compression.ZipFile.4.0.1\lib\net46\System.IO.Compression.ZipFile.dll</HintPath>
+      <Private>True</Private>
     </Reference>
-    <Reference Include="System.IO.FileSystem, Version=4.0.1.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+    <Reference Include="System.IO.FileSystem">
       <HintPath>..\packages\System.IO.FileSystem.4.0.1\lib\net46\System.IO.FileSystem.dll</HintPath>
+      <Private>True</Private>
     </Reference>
-    <Reference Include="System.IO.FileSystem.Primitives, Version=4.0.1.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+    <Reference Include="System.IO.FileSystem.Primitives">
       <HintPath>..\packages\System.IO.FileSystem.Primitives.4.0.1\lib\net46\System.IO.FileSystem.Primitives.dll</HintPath>
+      <Private>True</Private>
     </Reference>
-    <Reference Include="System.Net.Http, Version=4.1.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+    <Reference Include="System.Net.Http">
       <HintPath>..\packages\System.Net.Http.4.1.0\lib\net46\System.Net.Http.dll</HintPath>
+      <Private>True</Private>
     </Reference>
-    <Reference Include="System.Net.Sockets, Version=4.1.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+    <Reference Include="System.Net.Sockets">
       <HintPath>..\packages\System.Net.Sockets.4.1.0\lib\net46\System.Net.Sockets.dll</HintPath>
+      <Private>True</Private>
     </Reference>
     <Reference Include="System.Numerics" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="System.Data" />
-    <Reference Include="System.Runtime.InteropServices.RuntimeInformation, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+    <Reference Include="System.Runtime.InteropServices.RuntimeInformation">
       <HintPath>..\packages\System.Runtime.InteropServices.RuntimeInformation.4.0.0\lib\net45\System.Runtime.InteropServices.RuntimeInformation.dll</HintPath>
+      <Private>True</Private>
     </Reference>
-    <Reference Include="System.Runtime.Loader, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+    <Reference Include="System.Runtime.Loader">
       <HintPath>..\packages\System.Runtime.Loader.4.0.0\lib\netstandard1.5\System.Runtime.Loader.dll</HintPath>
+      <Private>True</Private>
     </Reference>
-    <Reference Include="System.Security.Cryptography.Algorithms, Version=4.1.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+    <Reference Include="System.Security.Cryptography.Algorithms">
       <HintPath>..\packages\System.Security.Cryptography.Algorithms.4.2.0\lib\net461\System.Security.Cryptography.Algorithms.dll</HintPath>
+      <Private>True</Private>
     </Reference>
-    <Reference Include="System.Security.Cryptography.Encoding, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+    <Reference Include="System.Security.Cryptography.Encoding">
       <HintPath>..\packages\System.Security.Cryptography.Encoding.4.0.0\lib\net46\System.Security.Cryptography.Encoding.dll</HintPath>
+      <Private>True</Private>
     </Reference>
-    <Reference Include="System.Security.Cryptography.Primitives, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+    <Reference Include="System.Security.Cryptography.Primitives">
       <HintPath>..\packages\System.Security.Cryptography.Primitives.4.0.0\lib\net46\System.Security.Cryptography.Primitives.dll</HintPath>
+      <Private>True</Private>
     </Reference>
-    <Reference Include="System.Security.Cryptography.X509Certificates, Version=4.1.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+    <Reference Include="System.Security.Cryptography.X509Certificates">
       <HintPath>..\packages\System.Security.Cryptography.X509Certificates.4.1.0\lib\net461\System.Security.Cryptography.X509Certificates.dll</HintPath>
+      <Private>True</Private>
     </Reference>
-    <Reference Include="System.ValueTuple, Version=4.0.2.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+    <Reference Include="System.ValueTuple">
       <HintPath>..\packages\System.ValueTuple.4.4.0\lib\net461\System.ValueTuple.dll</HintPath>
+      <Private>True</Private>
     </Reference>
     <Reference Include="System.Web" />
     <Reference Include="System.Web.Extensions" />
     <Reference Include="System.Xml" />
     <Reference Include="System.Xml.Linq" />
-    <Reference Include="TechTalk.SpecFlow, Version=2.1.0.0, Culture=neutral, PublicKeyToken=0778194805d6db41, processorArchitecture=MSIL">
+    <Reference Include="TechTalk.SpecFlow">
       <HintPath>..\packages\SpecFlow.2.1.0\lib\net45\TechTalk.SpecFlow.dll</HintPath>
+      <Private>True</Private>
     </Reference>
-    <Reference Include="TechTalk.SpecFlow.Generator, Version=2.1.0.0, Culture=neutral, PublicKeyToken=0778194805d6db41, processorArchitecture=MSIL">
+    <Reference Include="TechTalk.SpecFlow.Generator">
       <HintPath>..\packages\SpecFlow.CustomPlugin.2.1.0\lib\net45\TechTalk.SpecFlow.Generator.dll</HintPath>
+      <Private>True</Private>
     </Reference>
-    <Reference Include="TechTalk.SpecFlow.Parser, Version=2.1.0.0, Culture=neutral, PublicKeyToken=0778194805d6db41, processorArchitecture=MSIL">
+    <Reference Include="TechTalk.SpecFlow.Parser">
       <HintPath>..\packages\SpecFlow.CustomPlugin.2.1.0\lib\net45\TechTalk.SpecFlow.Parser.dll</HintPath>
+      <Private>True</Private>
     </Reference>
-    <Reference Include="TechTalk.SpecFlow.Utils, Version=2.1.0.0, Culture=neutral, PublicKeyToken=0778194805d6db41, processorArchitecture=MSIL">
+    <Reference Include="TechTalk.SpecFlow.Utils">
       <HintPath>..\packages\SpecFlow.CustomPlugin.2.1.0\lib\net45\TechTalk.SpecFlow.Utils.dll</HintPath>
+      <Private>True</Private>
     </Reference>
     <Reference Include="WebDriver, Version=3.12.0.0, Culture=neutral, processorArchitecture=MSIL">
       <HintPath>..\packages\Selenium.WebDriver.3.12.0\lib\net45\WebDriver.dll</HintPath>
+      <Private>True</Private>
     </Reference>
-    <Reference Include="WebDriver.Support, Version=3.10.0.0, Culture=neutral, processorArchitecture=MSIL">
+    <Reference Include="WebDriver.Support">
       <HintPath>..\packages\Selenium.Support.3.10.0\lib\net45\WebDriver.Support.dll</HintPath>
+      <Private>True</Private>
     </Reference>
   </ItemGroup>
   <ItemGroup>
@@ -143,10 +173,44 @@
     <Compile Include="Base\BeforeAfterActions.cs" />
     <Compile Include="Base\IBaseTest.cs" />
     <Compile Include="Base\SeleniumBasePage.cs" />
+    <Compile Include="DTO\Projects\Capacity\Capacity_SummaryDto.cs" />
+    <Compile Include="DTO\Projects\StagePropertiesDto.cs" />
+    <Compile Include="DTO\Projects\Tasks\TaskProperties_EmailsDto.cs" />
+    <Compile Include="DTO\Projects\Tasks\TaskProperties_ValuesDto.cs" />
     <Compile Include="DTO\Readiness.cs" />
     <Compile Include="DTO\Colors.cs" />
+    <Compile Include="DTO\ManagementConsole\ManageUsersDto.cs" />
+    <Compile Include="DTO\Projects\Capacity\Capacity_CapacityDto.cs" />
+    <Compile Include="DTO\Projects\Capacity\Capacity_DetailsDto.cs" />
+    <Compile Include="DTO\Projects\Capacity\Capacity_OverrideDatesDto.cs" />
+    <Compile Include="DTO\Projects\CategoryPropertiesDto.cs" />
+    <Compile Include="DTO\Projects\DetailsDto.cs" />
+    <Compile Include="DTO\Projects\GroupPropertiesDto.cs" />
+    <Compile Include="DTO\Projects\MailTemplatePropertiesDto.cs" />
+    <Compile Include="DTO\Projects\NewsDto.cs" />
+    <Compile Include="DTO\Projects\ProjectDto.cs" />
+    <Compile Include="DTO\Projects\RequestTypesDto.cs" />
+    <Compile Include="DTO\Projects\RequestType_DetailsDto.cs" />
+    <Compile Include="DTO\Projects\SelfService\SelfService_AppsListDto.cs" />
+    <Compile Include="DTO\Projects\SelfService\SelfService_ComputerOwnershipDto.cs" />
+    <Compile Include="DTO\Projects\SelfService\SelfService_DepartmentAndLocationDto.cs" />
+    <Compile Include="DTO\Projects\SelfService\SelfService_DetailsDto.cs" />
+    <Compile Include="DTO\Projects\SelfService\SelfService_OtherOptions1Dto.cs" />
+    <Compile Include="DTO\Projects\SelfService\SelfService_OtherOptions2Dto.cs" />
+    <Compile Include="DTO\Projects\SelfService\SelfService_ProjectDateDto.cs" />
+    <Compile Include="DTO\Projects\SelfService\SelfService_ThankYouDto.cs" />
+    <Compile Include="DTO\Projects\SelfService\SelfService_WelcomeDto.cs" />
+    <Compile Include="DTO\Projects\Tasks\TaskPropertiesDto.cs" />
+    <Compile Include="DTO\Projects\Tasks\TaskProperties_DetailsDto.cs" />
+    <Compile Include="DTO\Projects\TeamPropertiesDto.cs" />
     <Compile Include="DTO\RuntimeVariables\Filter.cs" />
     <Compile Include="DTO\RuntimeVariables\ListsDetails.cs" />
+    <Compile Include="DTO\RuntimeVariables\PrjLastDeletedRequestTypeName.cs" />
+    <Compile Include="DTO\RuntimeVariables\PrjLastDeletedTaskName.cs" />
+    <Compile Include="DTO\RuntimeVariables\PrjLastDeletedGroupName.cs" />
+    <Compile Include="DTO\RuntimeVariables\PrjLastDeletedStageName.cs" />
+    <Compile Include="DTO\RuntimeVariables\PrjLastDeletedTeamName.cs" />
+    <Compile Include="DTO\RuntimeVariables\PrjLastDeletedUserName.cs" />
     <Compile Include="DTO\RuntimeVariables\ResponceDetails.cs" />
     <Compile Include="DTO\RuntimeVariables\RestWebClient.cs" />
     <Compile Include="DTO\RuntimeVariables\TeamName.cs" />
@@ -207,6 +271,50 @@
     <Compile Include="Pages\LoginPage.cs" />
     <Compile Include="Pages\LoginPanelPage.cs" />
     <Compile Include="Pages\LogoutPage.cs" />
+    <Compile Include="Pages\ManagementConsole\BaseElementsPage.cs" />
+    <Compile Include="Pages\ManagementConsole\ManagementConsolePage.cs" />
+    <Compile Include="Pages\ManagementConsole\ManageUserPage.cs" />
+    <Compile Include="Pages\Projects\CreatingProjects\MainElementsOfProjectCreation.cs" />
+    <Compile Include="Pages\Projects\CreatingProjects\Capacity\Capacity_CapacityPage.cs" />
+    <Compile Include="Pages\Projects\CreatingProjects\Capacity\Capacity_DetailsPage.cs" />
+    <Compile Include="Pages\Projects\CreatingProjects\Capacity\Capacity_OverrideDatesPage.cs" />
+    <Compile Include="Pages\Projects\CreatingProjects\Capacity\Capacity_SummaryPage.cs" />
+    <Compile Include="Pages\Projects\CreatingProjects\CategoryPropertiesPage.cs" />
+    <Compile Include="Pages\Projects\CreatingProjects\DetailsPage.cs" />
+    <Compile Include="Pages\Projects\CreatingProjects\GroupPropertiesPage.cs" />
+    <Compile Include="Pages\Projects\CreatingProjects\MailTemplatePropertiesPage.cs" />
+    <Compile Include="Pages\Projects\CreatingProjects\NewsPage.cs" />
+    <Compile Include="Pages\Projects\CreatingProjects\Tasks\TaskProperties_RequestTypesPage.cs" />
+    <Compile Include="Pages\Projects\CreatingProjects\Tasks\TaskProperties_ValuesPage.cs" />
+    <Compile Include="Pages\Projects\ProjectLogin.cs" />
+    <Compile Include="Pages\Projects\CreatingProjects\ProjectPropertiesPage.cs" />
+    <Compile Include="Pages\Projects\CreatingProjects\ProjectsHomePage.cs" />
+    <Compile Include="Pages\Projects\CreatingProjects\RequestTypePropertiesPage.cs" />
+    <Compile Include="Pages\Projects\CreatingProjects\RequestType_DetailsPage.cs" />
+    <Compile Include="Pages\Projects\CreatingProjects\SelfService\SelfService_AppsListPage.cs" />
+    <Compile Include="Pages\Projects\CreatingProjects\SelfService\SelfService_ComputerOwnershipPage.cs" />
+    <Compile Include="Pages\Projects\CreatingProjects\SelfService\SelfService_DepartmentAndLocationPage.cs" />
+    <Compile Include="Pages\Projects\CreatingProjects\SelfService\SelfService_DetailsPage.cs" />
+    <Compile Include="Pages\Projects\CreatingProjects\SelfService\SelfService_OtherOptionsPage.cs" />
+    <Compile Include="Pages\Projects\CreatingProjects\SelfService\SelfService_ProjectDatePage.cs" />
+    <Compile Include="Pages\Projects\CreatingProjects\SelfService\SelfService_ThankYouPage.cs" />
+    <Compile Include="Pages\Projects\CreatingProjects\SelfService\SelfService_WelcomePage.cs" />
+    <Compile Include="Pages\Projects\CreatingProjects\StagePropertiesPage.cs" />
+    <Compile Include="Pages\Projects\CreatingProjects\Tasks\TaskPropertiesPage.cs" />
+    <Compile Include="Pages\Projects\CreatingProjects\Tasks\TaskProperties_DetailsPage.cs" />
+    <Compile Include="Pages\Projects\CreatingProjects\Tasks\TaskProperties_EmailsPage.cs" />
+    <Compile Include="Pages\Projects\CreatingProjects\Tasks\TaskProperties_CreatingValuesPage.cs" />
+    <Compile Include="Pages\Projects\CreatingProjects\TeamPropertiesPage.cs" />
+    <Compile Include="Pages\Projects\CreatingProjects\TeamsPage.cs" />
+    <Compile Include="Pages\Projects\ProjectsBaseElements.cs" />
+    <Compile Include="Pages\Projects\Projects_Dashboards\Projects_DashboardsGroupsPage.cs" />
+    <Compile Include="Pages\Projects\Projects_Dashboards\Projects_DashboardsPage.cs" />
+    <Compile Include="Pages\Projects\Projects_PMObjectPage.cs" />
+    <Compile Include="Steps\ManagementConsole\ManagementConsole.cs" />
+    <Compile Include="Steps\Projects\Projects_CreatingProject\Projects_Capacity.cs" />
+    <Compile Include="Steps\Projects\Projects_CreatingProject\Projects_CreateProject.cs" />
+    <Compile Include="Steps\Projects\Projects_Dashboards.cs" />
+    <Compile Include="Steps\Projects\Projects_Login.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Providers\Browser.cs" />
     <Compile Include="Providers\Database.cs" />
@@ -237,6 +345,10 @@
     <Compile Include="Steps\Dashworks\EvergreenJnr_NewCustomList.cs" />
     <Compile Include="Steps\Dashworks\EvergreenJnr_QueryStrings.cs" />
     <Compile Include="Steps\Logout.cs" />
+    <Compile Include="Steps\Projects\Projects_PMObject.cs" />
+    <Compile Include="Steps\Projects\Projects_ProjectsHome.cs" />
+    <Compile Include="Steps\Projects\Projects_CreatingProject\Projects_Removing.cs" />
+    <Compile Include="Steps\Projects\Projects_CreatingProject\Projects_SelfService.cs" />
     <Compile Include="Tests\EvergreenJnr_ActionsPanel\ActionsPanel.feature.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -286,6 +398,11 @@
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>MainFunctionality.feature</DependentUpon>
+    </Compile>
+    <Compile Include="Tests\EvergreenJnr_GridActions\DataInTable.feature.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DataInTable.feature</DependentUpon>
     </Compile>
     <Compile Include="Tests\EvergreenJnr_ListDetails\ListDetailsFunctionality.feature.cs">
       <AutoGen>True</AutoGen>
@@ -357,6 +474,31 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>Login_Logout.feature</DependentUpon>
     </Compile>
+    <Compile Include="Tests\Projects\CreatingProjects\ComputerScheduledProject.feature.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ComputerScheduledProject.feature</DependentUpon>
+    </Compile>
+    <Compile Include="Tests\Projects\CreatingProjects\MailboxScheduledProject.feature.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>MailboxScheduledProject.feature</DependentUpon>
+    </Compile>
+    <Compile Include="Tests\Projects\CreatingProjects\UserScheduledProject.feature.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>UserScheduledProject.feature</DependentUpon>
+    </Compile>
+    <Compile Include="Tests\Projects\Projects_Dashboards.feature.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Projects_Dashboards.feature</DependentUpon>
+    </Compile>
+    <Compile Include="Tests\Projects\Projects_PMObject.feature.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Projects_PMObject.feature</DependentUpon>
+    </Compile>
     <Compile Include="Utils\ByFactory.cs" />
     <Compile Include="Utils\CustomRemoteWebDriver.cs" />
     <Compile Include="Utils\DatabaseWorker.cs" />
@@ -414,6 +556,10 @@
       <Generator>SpecFlowSingleFileGenerator</Generator>
       <LastGenOutput>MainFunctionality.feature.cs</LastGenOutput>
     </None>
+    <None Include="Tests\EvergreenJnr_GridActions\DataInTable.feature">
+      <Generator>SpecFlowSingleFileGenerator</Generator>
+      <LastGenOutput>DataInTable.feature.cs</LastGenOutput>
+    </None>
     <None Include="Tests\EvergreenJnr_ListDetails\ListDetailsFunctionality.feature">
       <Generator>SpecFlowSingleFileGenerator</Generator>
       <LastGenOutput>ListDetailsFunctionality.feature.cs</LastGenOutput>
@@ -470,15 +616,31 @@
       <Generator>SpecFlowSingleFileGenerator</Generator>
       <LastGenOutput>Login_Logout.feature.cs</LastGenOutput>
     </None>
+    <None Include="Tests\Projects\CreatingProjects\ComputerScheduledProject.feature">
+      <Generator>SpecFlowSingleFileGenerator</Generator>
+      <LastGenOutput>ComputerScheduledProject.feature.cs</LastGenOutput>
+    </None>
+    <None Include="Tests\Projects\CreatingProjects\MailboxScheduledProject.feature">
+      <Generator>SpecFlowSingleFileGenerator</Generator>
+      <LastGenOutput>MailboxScheduledProject.feature.cs</LastGenOutput>
+    </None>
+    <None Include="Tests\Projects\CreatingProjects\UserScheduledProject.feature">
+      <Generator>SpecFlowSingleFileGenerator</Generator>
+      <LastGenOutput>UserScheduledProject.feature.cs</LastGenOutput>
+    </None>
+    <None Include="Tests\Projects\Projects_Dashboards.feature">
+      <Generator>SpecFlowSingleFileGenerator</Generator>
+      <LastGenOutput>Projects_Dashboards.feature.cs</LastGenOutput>
+    </None>
+    <None Include="Tests\Projects\Projects_PMObject.feature">
+      <Generator>SpecFlowSingleFileGenerator</Generator>
+      <LastGenOutput>Projects_PMObject.feature.cs</LastGenOutput>
+    </None>
   </ItemGroup>
   <ItemGroup>
     <Service Include="{82A7F48D-3B50-4B1E-B82E-3ADA8210C358}" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="DTO\Projects\" />
-    <Folder Include="Pages\Projects\" />
-    <Folder Include="Steps\Projects\" />
-  </ItemGroup>
+  <ItemGroup />
   <ItemGroup>
     <None Include="Resources\CorrectFile.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>

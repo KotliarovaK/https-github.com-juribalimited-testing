@@ -348,14 +348,16 @@ Scenario Outline: EvergreenJnr_DevicesList_CheckThatOperatorInSelectedFilterIsDi
 	| Does not begin with |
 	| Ends with           |
 	| Does not end with   |
+	| Empty               |
+	| Not empty           |
 
 Examples:
 	| CategoryName              | FilterName                  |
 	| Application               | Application Name            |
 	| Application Custom Fields | App field 1                 |
-	| Application Custom Fields | Computer Warranty           |
+	| Application Custom Fields | Application Owner           |
 	| Application Custom Fields | General information field 1 |
-	| Application Custom Fields | User Field 2                |
+	| Application Custom Fields | App field 2                 |
 
 @Evergreen @Users @EvergreenJnr_FilterFeature @FilterFunctionality @DAS11738 @DAS12194 @DAS12199 @DAS12220
 Scenario: EvergreenJnr_UsersList_CheckThatToolTipShownWithEditFilterTextWhenEditingAFilterDisplayed 
@@ -470,7 +472,7 @@ Scenario Outline: EvergreenJnr_ApplicationsList_CheckThatTheColourOfTheApplicati
 	| <SelectedCheckbox> |
 	Then "<ImageName>" image is matching the caption
 
-	Examples:
+Examples:
 	| SelectedCheckbox | ImageName     |
 	| FORWARD PATH     | FORWARD PATH  |
 	| KEEP             | KEEP          |
@@ -510,7 +512,68 @@ Scenario Outline: EvergreenJnr_AllLists_CheckThatContentIsDisplayedInTheAddedCol
 	| ColumnName         |
 	| <NewlyAddedColumn> |
 
-	Examples:
+Examples:
 	| ListName  | FilterName           | NewlyAddedColumn     |
 	| Mailboxes | EmailMigra: Category | EmailMigra: Category |
 	| Devices   | Windows7Mi: Category | Windows7Mi: Category |
+
+@Evergreen @Mailboxes @EvergreenJnr_FilterFeature @FilterFunctionality @DAS12543 @Delete_Newly_Created_List
+Scenario: EvergreenJnr_MailboxesList_CheckThatEditFilterElementsBlockIsDisplayedCorrectlyOnTheFiltersPanel
+	When User clicks "Mailboxes" on the left-hand menu
+	Then "Mailboxes" list should be displayed to the user
+	When User clicks the Filters button
+	Then Filters panel is displayed to the user
+	When User add "EmailMigra: Readiness" filter where type is "Equals" with added column and Lookup option
+	| SelectedValues |
+	| Light Blue     |
+	Then Content is present in the newly added column
+	| ColumnName            |
+	| EmailMigra: Readiness |
+	When User create dynamic list with "TestListF544Y5" name on "Mailboxes" page
+	Then "TestListF544Y5" list is displayed to user
+	When User clicks the Filters button
+	Then Filters panel is displayed to the user
+	And Values is displayed in added filter info
+	| Values     |
+	| Light Blue |
+	When User click Edit button for "EmailMigra: Readiness" filter
+	Then "Add column" checkbox is checked
+	And "EmailMigra: Readiness" filter is displayed in the Filters panel
+
+@Evergreen @AllLists @EvergreenJnr_FilterFeature @FilterFunctionality @DAS12636
+Scenario Outline: EvergreenJnr_AllLists_CheckThatLocationFilterIsEditedCorrectly
+	When User clicks "<ListName>" on the left-hand menu
+	Then "<ListName>" list should be displayed to the user
+	When User clicks the Filters button
+	Then Filters panel is displayed to the user
+	When User add "State/County" filter where type is "Equals" with added column and Lookup option
+	| SelectedValues |
+	| <FilterValue>  |
+	Then "<FilterValue>" text is displayed in the table content
+	When User click Edit button for "State/County" filter
+	And User deletes the selected lookup filter "<FilterValue>" value
+	And User have created "Equals" Lookup filter with column and "Empty" option
+	Then "State/County is Empty" is displayed in added filter info
+	And Content is empty in the column
+	| ColumnName   |
+	| State/County |
+
+Examples:
+	| ListName  | FilterValue |
+	| Devices   | NY          |
+	| Users     | NY          |
+	| Mailboxes | VIC         |
+
+@Evergreen @Devices @EvergreenJnr_FilterFeature @FilterFunctionality @DAS11824
+Scenario: EvergreenJnr_DevicesList_CheckingThatError500IsNotDisplayedAfterUsingSpecialCharactersIntoTheApplicationNameFilterAndRefreshingThePage
+	When User clicks "Devices" on the left-hand menu
+	Then "Devices" list should be displayed to the user
+	When User clicks the Filters button
+	Then Filters panel is displayed to the user
+	When User add "Application Name" filter where type is "Equals" with following Value and Association:
+	| Values | Association            |
+	| __     | Entitled to device     |
+	Then "Application Name" filter is added to the list
+	When User clicks refresh button in the browser
+	Then "Devices" list should be displayed to the user
+	Then "(Application Name = __ ASSOCIATION = (entitled to device))" text is displayed in filter container

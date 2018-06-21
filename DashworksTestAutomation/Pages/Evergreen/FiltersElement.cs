@@ -48,7 +48,7 @@ namespace DashworksTestAutomation.Pages.Evergreen
         public IWebElement LookupFilterSearchTextbox { get; set; }
 
         [FindsBy(How = How.XPath,
-            Using = ".//div[@id='context']//div[@class='mat-input-flex mat-form-field-flex']//input")]
+            Using = ".//div[@id='context']//input[@id='chipInput']")]
         public IWebElement FilterSearchTextbox { get; set; }
 
         [FindsBy(How = How.XPath,
@@ -80,7 +80,7 @@ namespace DashworksTestAutomation.Pages.Evergreen
         [FindsBy(How = How.XPath, Using = ".//span[text()='B Star Packages']")]
         public IWebElement BStarPackegesCheckbox { get; set; }
 
-        [FindsBy(How = How.XPath, Using = ".//button[@class='mat-primary mat-raised-button _mat-animation-noopable']/span[text()='SAVE']")]
+        [FindsBy(How = How.XPath, Using = ".//button[@class='mat-primary mat-raised-button _mat-animation-noopable']")]
         public IWebElement SaveButton { get; set; }
 
         [FindsBy(How = How.XPath, Using = ".//i[@class='material-icons mat-filter-edit mat-18']")]
@@ -268,12 +268,18 @@ namespace DashworksTestAutomation.Pages.Evergreen
 
         public bool CheckFilterAvailability(string filterName)
         {
-            if (AddNewFilterButton.Displayed()) AddNewFilterButton.Click();
+            if (AddNewFilterButton.Displayed())
+                AddNewFilterButton.Click();
 
             SearchTextbox.Clear();
             SearchTextbox.SendKeys(filterName);
             var selector = By.XPath($".//div[contains(@class, 'filter-add')][text()='{filterName}']");
             return Driver.IsElementDisplayed(selector);
+        }
+
+        public bool FilterNameInThePanel(string filterName)
+        {
+            return Driver.IsElementDisplayed(By.XPath($".//div[@class='name-container']/div/span[text()='{filterName}']"));
         }
 
         public void SelectFilterType(string filterType)
@@ -305,6 +311,12 @@ namespace DashworksTestAutomation.Pages.Evergreen
         public bool GetFiltersNamesFromFilterPanel(string filterName)
         {
             return Driver.IsElementDisplayed(By.XPath($".//div[@class='filter-label']//span[text()='{filterName}']"));
+        }
+
+        public IWebElement CloseFiltersLookupValue(string filterValue)
+        {
+            var LookupValuerButton = $".//button[contains(@aria-describedby, '{filterValue}')]";
+            return Driver.FindElement(By.XPath(LookupValuerButton));
         }
 
         public IWebElement GetEditFilterButton(string filterName)

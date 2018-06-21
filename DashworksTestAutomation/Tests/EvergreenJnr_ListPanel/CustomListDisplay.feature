@@ -783,7 +783,7 @@ Examples:
 	| Users        | Domain           |
 	| Mailboxes    | Mailbox Platform |
 
-@Evergreen @AllLists @EvergreenJnr_ListPanel @CustomListDisplay @DAS10972 @DAS12738 @Not_Run @Delete_Newly_Created_List
+@Evergreen @AllLists @EvergreenJnr_ListPanel @CustomListDisplay @DAS10972 @DAS12738 @Delete_Newly_Created_List
 Scenario Outline: EvergreenJnr_AllLists_CheckThatTheEditListFunctionIsTriggeredOrHiddenForCustomListsAfterAddingOrRemovingColumns
 	When User clicks "<ListName>" on the left-hand menu
 	Then "<ListName>" list should be displayed to the user
@@ -865,7 +865,7 @@ Scenario Outline: EvergreenJnr_AllList_CheckThatTheEditListFunctionIsHiddenAfter
 	Then Edit List menu is not displayed
 	And "StaticList2" list is displayed to user
 
-	Examples:
+Examples:
 	| ListName     | ColumnName    | Search    | Rows  | NewRows |
 	| Devices      | Hostname      | Centre    | 3,284 | 17      |
 	| Users        | Username      | Barland   | 3     | 142     |
@@ -969,11 +969,11 @@ Scenario Outline: EvergreenJnr_AllLists_CheckThatSaveAndCancelButtonAreHiddenAft
 	Then Save and Cancel buttons are not displayed on the list panel
 
 Examples:
-	| ListName     | ColumnName    | AddColumn  | DynamicListName |
-	| Devices      | Hostname      | Device Key | DynamicList1178 |
-	| Applications | Application   | Telephone  | DynamicList1125 |
-	| Users        | Username      | GUID       | DynamicList1195 |
-	| Mailboxes    | Email Address | Region     | DynamicList1121 |
+	| ListName     | ColumnName    | AddColumn            | DynamicListName |
+	| Devices      | Hostname      | Device Key           | DynamicList1178 |
+	| Applications | Application   | Barry'sUse: Category | DynamicList1125 |
+	| Users        | Username      | GUID                 | DynamicList1195 |
+	| Mailboxes    | Email Address | Region               | DynamicList1121 |
 
 @Evergreen @AllLists @EvergreenJnr_ListPanel @CustomListDisplay @DAS12524 @Delete_Newly_Created_List
 Scenario: EvergreenJnr_AllLists_CheckThatActionsPanelIsHiddenAfterCancellingProcessOfSavingList
@@ -996,3 +996,42 @@ Scenario: EvergreenJnr_AllLists_CheckThatActionsPanelIsHiddenAfterCancellingProc
 	Then Checkboxes are not displayed
 	And Actions panel is not displayed to the user
 	And Save to New Custom List element is displayed
+
+@Evergreen @Devices @EvergreenJnr_ListPanel @CustomListDisplay @DAS12656 @Delete_Newly_Created_List
+Scenario: EvergreenJnr_DevicesList_CheckThatNoErrorsAreDisplayedAfterDuplicatingANewStaticListWithALongName
+	When User create static list with "1111111111111111111111111111111111111111" name on "Devices" page with following items
+	| ItemName       |
+	| 001BAQXT6JWFPI |
+	| 001PSUMZYOW581 |
+	Then "1111111111111111111111111111111111111111" list is displayed to user
+	When User navigates to the "All Devices" list
+	Then "Devices" list should be displayed to the user
+	When User duplicates list with "1111111111111111111111111111111111111111" name
+	Then "111111111111111111111111111111111111112" list is displayed to user
+	Then There are no errors in the browser console
+
+@Evergreen @Users @EvergreenJnr_ListPanel @CustomListDisplay @DAS12685 @Delete_Newly_Created_List
+Scenario: EvergreenJnr_UsersList_CheckThatDataFromTheStaticListAreSavedInTheNewListAfterEditing
+	When User create static list with "StaticList1412" name on "Users" page with following items
+	| ItemName            |
+	| 003F5D8E1A844B1FAA5 |
+	| 00A5B910A1004CF5AC4 |
+	Then "StaticList1412" list is displayed to user
+	When User clicks the Columns button
+	Then Columns panel is displayed to the user
+	When ColumnName is entered into the search box and the selection is clicked
+	| ColumnName |
+	| Enabled    |
+	Then ColumnName is added to the list
+	| ColumnName |
+	| Enabled    |
+	#When User click on 'Username' column header
+	#Then data in table is sorted by 'Username' column in ascending order
+	When User clicks Save button on the list panel
+	When User selects Save as new list option
+	When User creates new custom list with "CustomList5588" name
+	Then "CustomList5588" list is displayed to user
+	Then "2" rows are displayed in the agGrid
+	When User duplicates list with "StaticList1412" name
+	Then "StaticList14122" list is displayed to user
+	Then "2" rows are displayed in the agGrid

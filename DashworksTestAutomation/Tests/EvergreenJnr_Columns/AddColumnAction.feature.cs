@@ -258,6 +258,7 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_Columns
         [NUnit.Framework.CategoryAttribute("EvergreenJnr_Columns")]
         [NUnit.Framework.CategoryAttribute("AddColumnAction")]
         [NUnit.Framework.CategoryAttribute("DAS11689")]
+        [NUnit.Framework.CategoryAttribute("DAS12780")]
         [NUnit.Framework.TestCaseAttribute("Devices", new string[0])]
         [NUnit.Framework.TestCaseAttribute("Applications", new string[0])]
         public virtual void EvergreenJnr_AllLists_CheckThatTableIsFullyLoadedAfterAddingTheColumns(string listName, string[] exampleTags)
@@ -293,7 +294,8 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_Columns
                     "AllLists",
                     "EvergreenJnr_Columns",
                     "AddColumnAction",
-                    "DAS11689"};
+                    "DAS11689",
+                    "DAS12780"};
             if ((exampleTags != null))
             {
                 @__tags = System.Linq.Enumerable.ToArray(System.Linq.Enumerable.Concat(@__tags, exampleTags));
@@ -329,6 +331,7 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_Columns
         [NUnit.Framework.CategoryAttribute("DAS10997")]
         [NUnit.Framework.CategoryAttribute("DAS12026")]
         [NUnit.Framework.CategoryAttribute("DAS12156")]
+        [NUnit.Framework.CategoryAttribute("DAS12780")]
         [NUnit.Framework.TestCaseAttribute("Windows7Mi: Application Rationalisation", new string[0])]
         [NUnit.Framework.TestCaseAttribute("Windows7Mi: Application Readiness", new string[0])]
         [NUnit.Framework.TestCaseAttribute("Windows7Mi: Core Application", new string[0])]
@@ -368,7 +371,8 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_Columns
                     "AddColumnAction",
                     "DAS10997",
                     "DAS12026",
-                    "DAS12156"};
+                    "DAS12156",
+                    "DAS12780"};
             if ((exampleTags != null))
             {
                 @__tags = System.Linq.Enumerable.ToArray(System.Linq.Enumerable.Concat(@__tags, exampleTags));
@@ -523,12 +527,13 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_Columns
             testRunner.Then("\"Windows7Mi: In Scope\" filter is added to the list", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
             testRunner.When("User click on \'Windows7Mi: In Scope\' column header", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
             testRunner.And("User click on \'Windows7Mi: In Scope\' column header", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+            testRunner.When("User clicks the Filters button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
             testRunner.Then("data in table is sorted by \'Windows7Mi: In Scope\' column in ascending order", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
             TechTalk.SpecFlow.Table table13 = new TechTalk.SpecFlow.Table(new string[] {
                         "ColumnName"});
             table13.AddRow(new string[] {
                         "Windows7Mi: Application Rationalisation"});
-            testRunner.And("Content is empty in the column", ((string)(null)), table13, "And ");
+            testRunner.Then("Content is empty in the column", ((string)(null)), table13, "Then ");
             this.ScenarioCleanup();
         }
         

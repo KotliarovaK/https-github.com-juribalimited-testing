@@ -455,10 +455,19 @@ namespace DashworksTestAutomation.Extensions
 
         public static string GetTooltipText(this RemoteWebDriver driver)
         {
-            var toolTips = driver.FindElements(By.XPath(".//mat-tooltip-component"));
+            string selector = ".//mat-tooltip-component";
+            driver.WaitWhileControlIsNotExists(By.XPath(selector));
+            var toolTips = driver.FindElements(By.XPath(selector));
+            var t = driver.PageSource;
             if (!toolTips.Any())
                 throw new Exception("Tool tip was not displayed");
-            return toolTips.First().Text;
+            var toolTipText = toolTips.First().FindElement(By.XPath("./div")).Text;
+            if (String.IsNullOrEmpty(toolTipText))
+            {
+                driver.WaitWhileControlIsNotDisplayed(By.XPath(selector + "/div"));
+                toolTipText = toolTips.First().FindElement(By.XPath("./div")).Text;
+            }
+            return toolTipText;
         }
 
         #region Actions
@@ -605,5 +614,25 @@ namespace DashworksTestAutomation.Extensions
         }
 
         #endregion Availability of element
+
+        #region JavaSctipt Alert
+
+        public static void AcceptAlert(this RemoteWebDriver driver)
+        {
+            driver.SwitchTo().Alert().Accept();
+        }
+
+        public static void DismissAlert(this RemoteWebDriver driver)
+        {
+            driver.SwitchTo().Alert().Dismiss();
+        }
+
+        public static bool IsAlertPresent(this RemoteWebDriver driver)
+        {
+            IAlert alert = ExpectedConditions.AlertIsPresent().Invoke(driver);
+            return (alert != null);
+        }
+
+        #endregion
     }
 }

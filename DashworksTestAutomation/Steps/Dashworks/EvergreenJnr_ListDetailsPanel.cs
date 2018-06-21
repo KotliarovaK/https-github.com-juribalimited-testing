@@ -98,6 +98,14 @@ namespace DashworksTestAutomation.Steps.Dashworks
                 $"{listName} is not displayed in Name Field");
         }
 
+        [Then(@"Star icon is active in list details panel")]
+        public void ThenStarIconIsActiveInListDetailsPanel()
+        {
+            var listDetailsElement = _driver.NowAt<ListDetailsElement>();
+            Assert.IsTrue(listDetailsElement.ActiveFavoriteButton.Displayed(),
+                "Star icon is not active");
+        }
+
         [Then(@"List details panel is displayed to the user")]
         public void ThenListDetailsPanelIsDisplayedToTheUser()
         {
@@ -136,6 +144,7 @@ namespace DashworksTestAutomation.Steps.Dashworks
         {
             var listDetailsElement = _driver.NowAt<ListDetailsElement>();
             listDetailsElement.ClosePermissionsButton.Click();
+            _driver.WaitForDataLoading();
         }
 
         [Then(@"tooltip is displayed with ""(.*)"" text for Permissions section")]
@@ -189,6 +198,7 @@ namespace DashworksTestAutomation.Steps.Dashworks
         public void WhenUserSelectSharingOption(string sharingOption)
         {
             var listDetailsElement = _driver.NowAt<ListDetailsElement>();
+            _driver.WaitForDataLoading();
             _driver.SelectCustomSelectbox(listDetailsElement.SharingDropdown, sharingOption);
         }
 
@@ -197,10 +207,10 @@ namespace DashworksTestAutomation.Steps.Dashworks
         {
             //Save user to remove its lists after test execution
             _usersWithSharedLists.Value.Add(DatabaseWorker.GetUserNameByFullName(ownerOption));
-            
             var listDetailsElement = _driver.NowAt<ListDetailsElement>();
             listDetailsElement.OwnerDropdown.ClearWithBackspaces();
             _driver.SelectCustomSelectbox(listDetailsElement.OwnerDropdown, ownerOption);
+            _driver.WaitForDataLoading();
         }
 
         private string GetFullNameByUserName(string userName)
@@ -251,12 +261,14 @@ namespace DashworksTestAutomation.Steps.Dashworks
             var listDetailsElement = _driver.NowAt<ListDetailsElement>();
             _driver.WaitWhileControlIsNotDisplayed<ListDetailsElement>(() => listDetailsElement.SelectAccessDropdown);
             _driver.SelectCustomSelectbox(listDetailsElement.SelectAccessDropdown, accessOption);
+            _driver.WaitForDataLoading();
         }
 
         [Then(@"Warning message with ""(.*)"" is displayed")]
         public void ThenWarningMessageWithIsDisplayed(string message)
         {
             var listElement = _driver.NowAt<BaseDashboardPage>();
+            _driver.WaitForDataLoading();
             _driver.WaitWhileControlIsNotDisplayed<BaseDashboardPage>(() => listElement.ErrorMessage);
             Assert.AreEqual(message, listElement.ErrorMessage.Text, $"{message} is not displayed");
         }
