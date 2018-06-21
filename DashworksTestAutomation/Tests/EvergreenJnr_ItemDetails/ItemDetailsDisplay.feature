@@ -190,9 +190,8 @@ Scenario: EvergreenJnr_DevicesLists_CheckThatSelectedCheckboxesMatchTheColumnsIn
 	Then "Devices" list should be displayed to the user
 	When User click content from "Hostname" column
 	And User navigates to the "Projects" tab
-	When User opens "Device Projects" section on the Details Page
-	Then "4" rows found label displays on Details Page
-	When User have opened Column Settings for "Project" column in the Details Page table
+	And User opens "Device Projects" section on the Details Page
+	And User have opened Column Settings for "Project" column in the Details Page table
 	And User clicks Column button on the Column Settings panel
 	And User select "Key" checkbox on the Column Settings panel
 	And User clicks Column button on the Column Settings panel
