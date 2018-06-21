@@ -633,6 +633,20 @@ Scenario: EvergreenJnr_AdminPage_CheckThatSingularFoundItemLabelDisplaysOnAction
 	And User enters "K-Team" text in the Search field for "Team" column
 	Then Counter shows "1" found rows
 
+@Evergreen @Admin @EvergreenJnr_AdminPage @AdminPage @DAS12370
+Scenario: EvergreenJnr_ImportProjectPage_CheckThatImportProjectButtonEnabledAfterWarningOnImportProjectPage
+	When User clicks Admin on the left-hand menu
+	Then Admin page should be displayed to the user
+	And "Projects" page should be displayed to the user
+	When User clicks Import Project button
+	Then "Import Project" page should be displayed to the user
+	When User selects incorrect file to upload on Import Project page
+	And User selects "Import to new project" in the Import dropdown on the Import Project Page
+	And User enters "TestProjectNameDAS12370" in the Project Name field on Import Project page
+	And User clicks Import Project button on the Import Project page
+	And User selects correct file to upload on Import Project page
+	Then Import Project button is enabled
+
 @Evergreen @Admin @EvergreenJnr_AdminPage @AdminPage @DAS12333
 Scenario: EvergreenJnr_ChecksThatDeviceScopeDDLIsDisabledWhenDoNotIncludeOwnedDevicesIsSelected
 	When User clicks Admin on the left-hand menu
