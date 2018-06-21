@@ -837,3 +837,48 @@ Scenario: EvergreenJnr_AdminPage_CheckingThatRedBannerWithOkMessageIsNotDisplaye
 	And User enters "TestProject12332" text in the Search field for "Project" column
 	And User selects all rows on the grid
 	And User removes selected item
+
+@Evergreen @Admin @EvergreenJnr_AdminPage @AdminPage @DAS12490 @Not_Run
+Scenario: EvergreenJnr_AdminPage_CheckingThatProjectDetailsForOnboardedObjectsIsDisplayedCorrectly
+	When User clicks Admin on the left-hand menu
+	Then Admin page should be displayed to the user
+	When User clicks "Projects" link on the Admin page
+	Then "Projects" page should be displayed to the user
+	When User clicks Create New Item button
+	Then "Create Project" page should be displayed to the user
+	When User enters "TestProject12490" in the Project Name field
+	And User selects "All Devices" in the Scope Project dropdown
+	And User clicks Create button on the Create Project page
+	And User clicks "Projects" link on the Admin page
+	Then "Projects" page should be displayed to the user
+	When User enters "TestProject12490" text in the Search field for "Project" column
+	And User clicks content from "Project" column
+	Then Project "TestProject12490" is displayed to user
+	When User expands the object to add 
+	When User selects following items to the Project
+	| Item            |
+	| 07RJRCQQJNBJIJQ |
+	| 08HRHU20R2JY3W  |
+	| 00HA7MKAVVFDAV  |
+	And User clicks "UPDATE ALL CHANGES" button on the Projects page
+	And User clicks Update Project button on the Projects page
+	And User clicks "Users" tab in the Project Scope Changes section
+	And User expands the object to add 
+	And User selects following items to the Project
+	| Item                      |
+	| ACG370114 (James N. Snow) |
+	And User clicks "UPDATE ALL CHANGES" button on the Projects page
+	And User clicks Update Project button on the Projects page
+	When User selects "History" tab on the Project details page
+	When User type "07RJRCQQJNBJIJQ" in Global Search Field
+	Then User clicks on "07RJRCQQJNBJIJQ" search result
+	When User navigates to the "Projects" tab
+	When User opens "Device Projects" section on the Details Page
+	When User clicks "TestProject12490" link on the Details Page
+	Then "Project Object" page is displayed to the user
+	Then User click back button in the browser
+	When User clicks Admin on the left-hand menu
+	Then Admin page should be displayed to the user
+	When User enters "TestProject12332" text in the Search field for "Project" column
+	And User selects all rows on the grid
+	And User removes selected item

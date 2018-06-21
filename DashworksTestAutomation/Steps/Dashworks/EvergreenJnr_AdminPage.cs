@@ -102,119 +102,13 @@ namespace DashworksTestAutomation.Steps.Dashworks
             Logger.Write($"'{pageTitle}' page is visible");
         }
 
-        [Then(@"Project ""(.*)"" is displayed to user")]
-        public void ThenProjectIsDisplayedToUser(string projectName)
-        {
-            var page = _driver.NowAt<ProjectsPage>();
-            _driver.WaitForDataLoading();
-            Assert.IsTrue(page.ActiveProjectByName(projectName), $"{projectName} is not displayed on the Project page");
-        }
-
-        [When(@"User clicks ""(.*)"" record in the grid")]
-        public void WhenUserClicksRecordInThenGrid(string recordName)
+        [When(@"User clicks Create New Item button")]
+        public void WhenUserClicksCreateNewItemButton()
         {
             var page = _driver.NowAt<BaseGridPage>();
-            page.SelectRecordByName(recordName);
-        }
-
-        [When(@"User opens Scope section on the Project details page")]
-        public void WhenUserOpensScopeSectionOnTheProjectDetailsPage()
-        {
-            var page = _driver.NowAt<ProjectsPage>();
-            page.ScopeSection.Click();
-        }
-
-        [When(@"User selects ""(.*)"" tab on the Project details page")]
-        public void WhenUserSelectTabOnTheProjectDetailsPage(string tabName)
-        {
-            var projectTabs = _driver.NowAt<ProjectsPage>();
-            projectTabs.NavigateToProjectTabByName(tabName);
-            _driver.WaitForDataLoading();
-        }
-
-        [When(@"User navigates to the ""(.*)"" tab in the Scope section on the Project details page")]
-        public void WhenUserNavigatesToTheTabInTheScopeSectionOnTheProjectDetailsPage(string tabName)
-        {
-            var projectTabs = _driver.NowAt<ProjectsPage>();
-            projectTabs.NavigateToProjectTabInScopSectionByName(tabName);
-            _driver.WaitForDataLoading();
-        }
-
-        [Then(@"All Association are selected by default")]
-        public void ThenAllAssociationAreSelectedByDefault()
-        {
-            var projectsPage = _driver.NowAt<ProjectsPage>();
-            Assert.IsFalse(projectsPage.UncheckedCheckbox.Displayed(), "Not all checkboxes are selected");
-        }
-
-        [When(@"User clicks ""(.*)"" tab in the Project Scope Changes section")]
-        public void WhenUserClicksTabInTheProjectScopeChangesSection(string tabName)
-        {
-            var projectTabs = _driver.NowAt<ProjectsPage>();
-            projectTabs.ClickToTabByNameProjectScopeChanges(tabName);
-            ProjectsPage page;
-            try
-            {
-                page = _driver.NowAt<ProjectsPage>();
-            }
-            catch (WebDriverTimeoutException)
-            {
-                try
-                {
-                    page = _driver.NowAt<ProjectsPage>();
-                }
-                catch (WebDriverTimeoutException)
-                {
-                    page = _driver.NowAt<ProjectsPage>();
-                }
-            }
-            Assert.IsTrue(page.SelectedTabInProjectScopeChangesSection(tabName),
-                $"{tabName} is not displayed in the Project Scope Changes section");
-        }
-
-        [Then(@"""(.*)"" is displayed to the user in the Project Scope Changes section")]
-        public void ThenIsDisplayedToTheUserInTheProjectScopeChangesSection(string text)
-        {
-            ProjectsPage page;
-            try
-            {
-                page = _driver.NowAt<ProjectsPage>();
-            }
-            catch (WebDriverTimeoutException)
-            {
-                page = _driver.NowAt<ProjectsPage>();
-            }
-            _driver.WaitForDataLoading();
-            Assert.IsTrue(page.SelectedItemInProjectScopeChangesSection(text),
-                $"{text} is not displayed in the Project Scope Changes section");
-        }
-
-        [Then(@"Warning message with ""(.*)"" text is displayed on the Admin page")]
-        public void ThenWarningMessageWithTextIsDisplayedOnTheAdminPage(string text)
-        {
-            var page = _driver.NowAt<BaseGridPage>();
-            Assert.IsTrue(page.WarningMessageAdminPage(text), "Warning Message is not displayed");
-        }
-
-        [When(@"User selects ""(.*)"" checkbox on the Project details page")]
-        public void WhenUserSelectCheckboxOnTheProjectDetailsPage(string radioButtonName)
-        {
-            var checkbox = _driver.NowAt<ProjectsPage>();
-            checkbox.SelectRadioButtonByName(radioButtonName);
-        }
-
-        [When(@"User clicks ""(.*)"" checkbox on the Project details page")]
-        public void WhenUserClicksCheckboxOnTheProjectDetailsPage(string checkboxName)
-        {
-            var checkbox = _driver.NowAt<ProjectsPage>();
-            checkbox.SelectCheckboxByName(checkboxName);
-        }
-
-        [When(@"User clicks ""(.*)"" button on the Projects page")]
-        public void WhenUserClicksButtonOnTheProjectsPage(string buttonName)
-        {
-            var button = _driver.NowAt<ProjectsPage>();
-            button.ClickUpdateButtonByName(buttonName);
+            _driver.WaitWhileControlIsNotDisplayed<BaseGridPage>(() => page.CreateItemButton);
+            page.CreateItemButton.Click();
+            Logger.Write("Create New Item button was clicked");
         }
 
         [When(@"User clicks Update Project button on the Projects page")]
@@ -255,11 +149,105 @@ namespace DashworksTestAutomation.Steps.Dashworks
             Logger.Write("Cancel button was clicked");
         }
 
-        [When(@"User clicks Cancel button in the warning message on the Admin page")]
-        public void WhenUserClicksCancelButtonInTheWarningMessageOnTheAdminPage()
+        [When(@"User clicks ""(.*)"" button on the Projects page")]
+        public void WhenUserClicksButtonOnTheProjectsPage(string buttonName)
+        {
+            var button = _driver.NowAt<ProjectsPage>();
+            button.ClickUpdateButtonByName(buttonName);
+        }
+
+        [When(@"User opens Scope section on the Project details page")]
+        public void WhenUserOpensScopeSectionOnTheProjectDetailsPage()
+        {
+            var page = _driver.NowAt<ProjectsPage>();
+            page.ScopeSection.Click();
+        }
+
+        [When(@"User selects ""(.*)"" tab on the Project details page")]
+        public void WhenUserSelectTabOnTheProjectDetailsPage(string tabName)
+        {
+            var projectTabs = _driver.NowAt<ProjectsPage>();
+            projectTabs.NavigateToProjectTabByName(tabName);
+            _driver.WaitForDataLoading();
+        }
+
+        [When(@"User navigates to the ""(.*)"" tab in the Scope section on the Project details page")]
+        public void WhenUserNavigatesToTheTabInTheScopeSectionOnTheProjectDetailsPage(string tabName)
+        {
+            var projectTabs = _driver.NowAt<ProjectsPage>();
+            projectTabs.NavigateToProjectTabInScopSectionByName(tabName);
+            _driver.WaitForDataLoading();
+        }
+
+        [When(@"User clicks ""(.*)"" tab in the Project Scope Changes section")]
+        public void WhenUserClicksTabInTheProjectScopeChangesSection(string tabName)
+        {
+            var projectTabs = _driver.NowAt<ProjectsPage>();
+            projectTabs.ClickToTabByNameProjectScopeChanges(tabName);
+            ProjectsPage page;
+            try
+            {
+                page = _driver.NowAt<ProjectsPage>();
+            }
+            catch (WebDriverTimeoutException)
+            {
+                try
+                {
+                    page = _driver.NowAt<ProjectsPage>();
+                }
+                catch (WebDriverTimeoutException)
+                {
+                    page = _driver.NowAt<ProjectsPage>();
+                }
+            }
+            Assert.IsTrue(page.SelectedTabInProjectScopeChangesSection(tabName),
+                $"{tabName} is not displayed in the Project Scope Changes section");
+        }
+
+        [Then(@"Project ""(.*)"" is displayed to user")]
+        public void ThenProjectIsDisplayedToUser(string projectName)
+        {
+            var page = _driver.NowAt<ProjectsPage>();
+            _driver.WaitForDataLoading();
+            Assert.IsTrue(page.ActiveProjectByName(projectName), $"{projectName} is not displayed on the Project page");
+        }
+
+        [When(@"User clicks ""(.*)"" record in the grid")]
+        public void WhenUserClicksRecordInThenGrid(string recordName)
         {
             var page = _driver.NowAt<BaseGridPage>();
-            page.CancelButtonInWarning.Click();
+            page.SelectRecordByName(recordName);
+        }
+
+        [Then(@"All Association are selected by default")]
+        public void ThenAllAssociationAreSelectedByDefault()
+        {
+            var projectsPage = _driver.NowAt<ProjectsPage>();
+            Assert.IsFalse(projectsPage.UncheckedCheckbox.Displayed(), "Not all checkboxes are selected");
+        }
+
+        [Then(@"""(.*)"" is displayed to the user in the Project Scope Changes section")]
+        public void ThenIsDisplayedToTheUserInTheProjectScopeChangesSection(string text)
+        {
+            ProjectsPage page;
+            try
+            {
+                page = _driver.NowAt<ProjectsPage>();
+            }
+            catch (WebDriverTimeoutException)
+            {
+                page = _driver.NowAt<ProjectsPage>();
+            }
+            _driver.WaitForDataLoading();
+            Assert.IsTrue(page.SelectedItemInProjectScopeChangesSection(text),
+                $"{text} is not displayed in the Project Scope Changes section");
+        }
+
+        [Then(@"Warning message with ""(.*)"" text is displayed on the Admin page")]
+        public void ThenWarningMessageWithTextIsDisplayedOnTheAdminPage(string text)
+        {
+            var page = _driver.NowAt<BaseGridPage>();
+            Assert.IsTrue(page.WarningMessageAdminPage(text), "Warning Message is not displayed");
         }
 
         [Then(@"Warning message is not displayed on the Admin page")]
@@ -269,13 +257,25 @@ namespace DashworksTestAutomation.Steps.Dashworks
             Assert.IsFalse(page.DeleteWarningMessage.Displayed());
         }
 
-        [When(@"User clicks Create New Item button")]
-        public void WhenUserClicksCreateNewItemButton()
+        [When(@"User clicks Cancel button in the warning message on the Admin page")]
+        public void WhenUserClicksCancelButtonInTheWarningMessageOnTheAdminPage()
         {
             var page = _driver.NowAt<BaseGridPage>();
-            _driver.WaitWhileControlIsNotDisplayed<BaseGridPage>(() => page.CreateItemButton);
-            page.CreateItemButton.Click();
-            Logger.Write("Create New Item button was clicked");
+            page.CancelButtonInWarning.Click();
+        }
+
+        [When(@"User selects ""(.*)"" checkbox on the Project details page")]
+        public void WhenUserSelectCheckboxOnTheProjectDetailsPage(string radioButtonName)
+        {
+            var checkbox = _driver.NowAt<ProjectsPage>();
+            checkbox.SelectRadioButtonByName(radioButtonName);
+        }
+
+        [When(@"User clicks ""(.*)"" checkbox on the Project details page")]
+        public void WhenUserClicksCheckboxOnTheProjectDetailsPage(string checkboxName)
+        {
+            var checkbox = _driver.NowAt<ProjectsPage>();
+            checkbox.SelectCheckboxByName(checkboxName);
         }
 
         [Then(@"Delete ""(.*)"" Team in the Administration")]
