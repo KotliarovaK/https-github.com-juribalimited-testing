@@ -307,12 +307,12 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_ItemDetails
                         "ColumnName"});
             table1.AddRow(new string[] {
                         string.Format("{0}", newColumnName)});
-            testRunner.Then("ColumnName is added to the list in the Details Page table", ((string)(null)), table1, "Then ");
+            testRunner.Then("following columns added to the table:", ((string)(null)), table1, "Then ");
             TechTalk.SpecFlow.Table table2 = new TechTalk.SpecFlow.Table(new string[] {
                         "ColumnName"});
             table2.AddRow(new string[] {
                         string.Format("{0}", newColumnName)});
-            testRunner.And("Content is present in the newly added column in the Details Page table", ((string)(null)), table2, "And ");
+            testRunner.And("content is present in the following newly added columns:", ((string)(null)), table2, "And ");
             testRunner.And("There are no errors in the browser console", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
             this.ScenarioCleanup();
         }
@@ -402,12 +402,12 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_ItemDetails
                         "ColumnName"});
             table3.AddRow(new string[] {
                         string.Format("{0}", newColumnName)});
-            testRunner.Then("ColumnName is added to the list in the Details Page table", ((string)(null)), table3, "Then ");
+            testRunner.Then("following columns added to the table:", ((string)(null)), table3, "Then ");
             TechTalk.SpecFlow.Table table4 = new TechTalk.SpecFlow.Table(new string[] {
                         "ColumnName"});
             table4.AddRow(new string[] {
                         string.Format("{0}", newColumnName)});
-            testRunner.And("Content is present in the newly added column in the Details Page table", ((string)(null)), table4, "And ");
+            testRunner.And("content is present in the following newly added columns:", ((string)(null)), table4, "And ");
             testRunner.Then("There are no errors in the browser console", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
             this.ScenarioCleanup();
         }
@@ -483,12 +483,12 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_ItemDetails
                         "ColumnName"});
             table5.AddRow(new string[] {
                         string.Format("{0}", newColumnName)});
-            testRunner.Then("ColumnName is added to the list in the Details Page table", ((string)(null)), table5, "Then ");
+            testRunner.Then("following columns added to the table:", ((string)(null)), table5, "Then ");
             TechTalk.SpecFlow.Table table6 = new TechTalk.SpecFlow.Table(new string[] {
                         "ColumnName"});
             table6.AddRow(new string[] {
                         string.Format("{0}", newColumnName)});
-            testRunner.And("Content is present in the newly added column in the Details Page table", ((string)(null)), table6, "And ");
+            testRunner.And("content is present in the following newly added columns:", ((string)(null)), table6, "And ");
             testRunner.Then("There are no errors in the browser console", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
             this.ScenarioCleanup();
         }
@@ -569,12 +569,12 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_ItemDetails
                         "ColumnName"});
             table7.AddRow(new string[] {
                         string.Format("{0}", newColumnName)});
-            testRunner.Then("ColumnName is added to the list in the Details Page table", ((string)(null)), table7, "Then ");
+            testRunner.Then("following columns added to the table:", ((string)(null)), table7, "Then ");
             TechTalk.SpecFlow.Table table8 = new TechTalk.SpecFlow.Table(new string[] {
                         "ColumnName"});
             table8.AddRow(new string[] {
                         string.Format("{0}", newColumnName)});
-            testRunner.And("Content is present in the newly added column in the Details Page table", ((string)(null)), table8, "And ");
+            testRunner.And("content is present in the following newly added columns:", ((string)(null)), table8, "And ");
             testRunner.Then("There are no errors in the browser console", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
             this.ScenarioCleanup();
         }
@@ -709,7 +709,7 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_ItemDetails
                         "ColumnName"});
             table10.AddRow(new string[] {
                         "Key"});
-            testRunner.Then("ColumnName is added to the list in the Details Page table", ((string)(null)), table10, "Then ");
+            testRunner.Then("following columns added to the table:", ((string)(null)), table10, "Then ");
             TechTalk.SpecFlow.Table table11 = new TechTalk.SpecFlow.Table(new string[] {
                         "ColumnName"});
             table11.AddRow(new string[] {
@@ -822,7 +822,7 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_ItemDetails
                         "ColumnName"});
             table13.AddRow(new string[] {
                         "Vendor"});
-            testRunner.And("ColumnName is added to the list in the Details Page table", ((string)(null)), table13, "And ");
+            testRunner.And("following columns added to the table:", ((string)(null)), table13, "And ");
             this.ScenarioCleanup();
         }
         
@@ -890,7 +890,7 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_ItemDetails
                         "ColumnName"});
             table14.AddRow(new string[] {
                         "Vendor"});
-            testRunner.And("ColumnName is added to the list in the Details Page table", ((string)(null)), table14, "And ");
+            testRunner.And("following columns added to the table:", ((string)(null)), table14, "And ");
             this.ScenarioCleanup();
         }
         
@@ -958,7 +958,7 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_ItemDetails
                         "ColumnName"});
             table15.AddRow(new string[] {
                         "Vendor"});
-            testRunner.And("ColumnName is added to the list in the Details Page table", ((string)(null)), table15, "And ");
+            testRunner.And("following columns added to the table:", ((string)(null)), table15, "And ");
             testRunner.Then("string filter is displayed for \"Vendor\" column on the Details Page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
             this.ScenarioCleanup();
         }

@@ -337,11 +337,23 @@ namespace DashworksTestAutomation.Steps.Dashworks
             Assert.AreEqual(expectedList, page.GetCheckedElementsText(), "Checkbox is not selected");
         }
 
-        [Then(@"ColumnName is added to the list in the Details Page table")]
-        public void ThenColumnNameIsAddedToTheListInTheDetailsPageTable(Table table)
-
+        [Then(@"following columns added to the table:")]
+        public void ThenFollowingColumnsAddedToTheTable(Table table)
         {
             CheckColumnDisplayedState(table, true);
+        }
+
+        [Then(@"content is present in the following newly added columns:")]
+        public void ThenContentIsPresentInTheFollowingNewlyAddedColumns(Table table)
+        {
+            var page = _driver.NowAt<ApplicationsDetailsTabsMenu>();
+
+            foreach (var row in table.Rows)
+                if (row["ColumnName"] != "Group Key" && row["ColumnName"] != "Category Key")
+                {
+                    var content = page.GetColumnIdContent(row["ColumnName"]);
+                    Assert.IsTrue(content.Count(x => !string.IsNullOrEmpty(x)) > 0, "Newly added column is empty");
+                }
         }
 
         [Then(@"ColumnName is displayed in following order on the Details page:")]
@@ -366,19 +378,6 @@ namespace DashworksTestAutomation.Steps.Dashworks
                 Assert.AreEqual(displayedState, listpageMenu.IsColumnPresent(row["ColumnName"]),
                     $"Column '{row["ColumnName"]}' displayed state should be {displayedState}");
             }
-        }
-
-        [Then(@"Content is present in the newly added column in the Details Page table")]
-        public void ThenContentIsPresentInTheNewlyAddedColumnInTheDetailsPageTable(Table table)
-        {
-            var page = _driver.NowAt<ApplicationsDetailsTabsMenu>();
-
-            foreach (var row in table.Rows)
-                if (row["ColumnName"] != "Group Key" && row["ColumnName"] != "Category Key")
-                {
-                    var content = page.GetColumnIdContent(row["ColumnName"]);
-                    Assert.IsTrue(content.Count(x => !string.IsNullOrEmpty(x)) > 0, "Newly added column is empty");
-                }
         }
 
         [Then(@"Content is present in the column of the Details Page table")]
