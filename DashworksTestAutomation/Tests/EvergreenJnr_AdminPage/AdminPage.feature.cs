@@ -1234,9 +1234,9 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_AdminPage
             TechTalk.SpecFlow.Table table2 = new TechTalk.SpecFlow.Table(new string[] {
                         "Item"});
             table2.AddRow(new string[] {
-                        "adam.e.stanley@dwlabs.local"});
+                        "aaron.w.burton@dwlabs.local"});
             table2.AddRow(new string[] {
-                        "abraham.u.leon@dwlabs.local"});
+                        "abel.y.hanson@dwlabs.local"});
             testRunner.And("User adds following items from list", ((string)(null)), table2, "And ");
             testRunner.Then("Success message is displayed and contains \"The selected mailboxes have been added" +
                     " to the selected bucket\" text", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
@@ -1428,9 +1428,9 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_AdminPage
             TechTalk.SpecFlow.Table table3 = new TechTalk.SpecFlow.Table(new string[] {
                         "Item"});
             table3.AddRow(new string[] {
-                        "34RRSBA00C0EYY"});
+                        "02X387UQLFP3ISU"});
             table3.AddRow(new string[] {
-                        "01DRMO46G58SXK"});
+                        "01KFZ6XUVQSII0"});
             testRunner.And("User adds following items from list", ((string)(null)), table3, "And ");
             testRunner.Then("Success message is displayed and contains \"The selected devices have been added t" +
                     "o the selected bucket\" text", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
@@ -1553,9 +1553,9 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_AdminPage
             TechTalk.SpecFlow.Table table4 = new TechTalk.SpecFlow.Table(new string[] {
                         "Item"});
             table4.AddRow(new string[] {
-                        "US-E\\ABW081519 (Darrin A. Arnold)"});
+                        "UK\\LBM661859 (Jenifer V. Allison)"});
             table4.AddRow(new string[] {
-                        "FR\\IIN4276389 (Merci Daoust)"});
+                        "US-W\\QIY746717 (Jimmy I. Jones)"});
             testRunner.And("User adds following items from list", ((string)(null)), table4, "And ");
             testRunner.Then("Success message is displayed and contains \"The selected users have been added to " +
                     "the selected bucket\" text", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
@@ -2532,9 +2532,9 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_AdminPage
             TechTalk.SpecFlow.Table table11 = new TechTalk.SpecFlow.Table(new string[] {
                         "Item"});
             table11.AddRow(new string[] {
-                        "AAG081456(Melanie Z. Fowler)"});
+                        "AAG081456 (Melanie Z. Fowler)"});
             table11.AddRow(new string[] {
-                        "AAH0343264(Luc Gauthier)"});
+                        "AAH0343264 (Luc Gauthier)"});
             testRunner.And("User adds following items to the Project", ((string)(null)), table11, "And ");
             testRunner.When("User clicks Update Project button on the Projects page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
             testRunner.Then("Success message with \"2 objects queued for onboarding, 0 objects offboarded\" text" +
@@ -2629,14 +2629,14 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_AdminPage
             TechTalk.SpecFlow.Table table13 = new TechTalk.SpecFlow.Table(new string[] {
                         "Item"});
             table13.AddRow(new string[] {
-                        "\"WPF/E\" (codename) Community Technology Preview (Feb 2007)(0.8.5.0)"});
+                        "\"WPF/E\" (codename) Community Technology Preview (Feb 2007) (0.8.5.0)"});
             testRunner.And("User selects following items to the Project", ((string)(null)), table13, "And ");
             testRunner.And("User clicks \"Users\" tab in the Project Scope Changes section", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
             testRunner.And("User expands the object to add", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
             TechTalk.SpecFlow.Table table14 = new TechTalk.SpecFlow.Table(new string[] {
                         "Item"});
             table14.AddRow(new string[] {
-                        "AAC860150(Kerrie D. Ruiz)"});
+                        "AAC860150 (Kerrie D. Ruiz)"});
             testRunner.And("User selects following items to the Project", ((string)(null)), table14, "And ");
             testRunner.And("User clicks \"UPDATE ALL CHANGES\" button on the Projects page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
             testRunner.And("User clicks Update Project button on the Projects page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
@@ -2658,10 +2658,12 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_AdminPage
         [NUnit.Framework.CategoryAttribute("EvergreenJnr_AdminPage")]
         [NUnit.Framework.CategoryAttribute("AdminPage")]
         [NUnit.Framework.CategoryAttribute("DAS12796")]
+        [NUnit.Framework.CategoryAttribute("DAS12872")]
         [NUnit.Framework.CategoryAttribute("Delete_Newly_Created_List")]
-        [NUnit.Framework.TestCaseAttribute("Devices", "Hostname", "ProjectList4587", "17,225", "TestProject16", "17225", "Device Type", "Desktop", "8,103", "8103", "TestProject16", new string[0])]
-        [NUnit.Framework.TestCaseAttribute("Users", "Username", "ProjectList4511", "41,339", "TestProject17", "41339", "Domain", "CORP", "103", "103", "TestProject17", new string[0])]
-        [NUnit.Framework.TestCaseAttribute("Mailboxes", "Email Address", "ProjectList4548", "14,784", "TestProject18", "14784", "Owner City", "London", "3,294", "3294", "TestProject18", new string[0])]
+        [NUnit.Framework.CategoryAttribute("Not_Run")]
+        [NUnit.Framework.TestCaseAttribute("Devices", "Hostname", "ProjectList4587", "17,225", "TestProject4511", "17225", "Device Type", "Desktop", "8,103", "8103", "TestProject4511", new string[0])]
+        [NUnit.Framework.TestCaseAttribute("Users", "Username", "ProjectList4511", "41,339", "TestProject4512", "41339", "Domain", "CORP", "103", "103", "TestProject4512", new string[0])]
+        [NUnit.Framework.TestCaseAttribute("Mailboxes", "Email Address", "ProjectList4548", "14,784", "TestProject4513", "14784", "Owner City", "London", "3,294", "3294", "TestProject4513", new string[0])]
         public virtual void EvergreenJnr_AdminPage_CheckThatNumberOfObjectIsUpdatedInTheScopeChangesOfProjectAfterTheChangeCustomList(string listName, string columnName, string dynamicListName, string rowsCount, string projectName, string objectsCount, string filterName, string checkbox, string newRowsCount, string newCount, string deleteProject, string[] exampleTags)
         {
             System.Exception lastException = null;
@@ -2696,7 +2698,9 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_AdminPage
                     "EvergreenJnr_AdminPage",
                     "AdminPage",
                     "DAS12796",
-                    "Delete_Newly_Created_List"};
+                    "DAS12872",
+                    "Delete_Newly_Created_List",
+                    "Not_Run"};
             if ((exampleTags != null))
             {
                 @__tags = System.Linq.Enumerable.ToArray(System.Linq.Enumerable.Concat(@__tags, exampleTags));
@@ -2737,7 +2741,9 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_AdminPage
             testRunner.And("User clicks content from \"Project\" column", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
             testRunner.Then(string.Format("Project \"{0}\" is displayed to user", projectName), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
             testRunner.And(string.Format("\"{0}\" is displayed to the user in the Project Scope Changes section", newCount), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-            testRunner.And(string.Format("Delete \"{0}\" Project in the Administration", deleteProject), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+            testRunner.When("User enters \"TestProject45\" text in the Search field for \"Project\" column", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+            testRunner.And("User selects all rows on the grid", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+            testRunner.And("User removes selected item", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
             this.ScenarioCleanup();
         }
         
@@ -2749,6 +2755,8 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_AdminPage
         [NUnit.Framework.CategoryAttribute("EvergreenJnr_AdminPage")]
         [NUnit.Framework.CategoryAttribute("AdminPage")]
         [NUnit.Framework.CategoryAttribute("DAS12816")]
+        [NUnit.Framework.CategoryAttribute("DAS12873")]
+        [NUnit.Framework.CategoryAttribute("Not_Run")]
         public virtual void EvergreenJnr_AdminPage_CheckThatObjectsIsOnboardedToTheProjectWithCloneEvergreenBucketsToProjectBuckets()
         {
             System.Exception lastException = null;
@@ -2783,7 +2791,9 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_AdminPage
                         "Admin",
                         "EvergreenJnr_AdminPage",
                         "AdminPage",
-                        "DAS12816"});
+                        "DAS12816",
+                        "DAS12873",
+                        "Not_Run"});
             this.ScenarioSetup(scenarioInfo);
             this.FeatureBackground();
             testRunner.When("User clicks Admin on the left-hand menu", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");

@@ -365,8 +365,8 @@ Scenario: EvergreenJnr_AdminPage_CheckThatMailboxesAreSuccessfullyAddedToBuckets
 	And User clicks Create New Item button
 	And User adds following items from list
 	| Item                        |
-	| adam.e.stanley@dwlabs.local |
-	| abraham.u.leon@dwlabs.local |
+	| aaron.w.burton@dwlabs.local |
+	| abel.y.hanson@dwlabs.local  |
 	Then Success message is displayed and contains "The selected mailboxes have been added to the selected bucket" text
 	And There are no errors in the browser console
 
@@ -416,9 +416,9 @@ Scenario: EvergreenJnr_AdminPage_CheckThatConsoleErrorsAreNotDisplayedAfterAddin
 	And User clicks content from "Bucket" column
 	And User clicks Create New Item button
 	And User adds following items from list
-	| Item           |
-	| 34RRSBA00C0EYY |
-	| 01DRMO46G58SXK |
+	| Item            |
+	| 02X387UQLFP3ISU |
+	| 01KFZ6XUVQSII0  |
 	Then Success message is displayed and contains "The selected devices have been added to the selected bucket" text
 	And There are no errors in the browser console
 
@@ -448,8 +448,8 @@ Scenario: EvergreenJnr_AdminPage_CheckThatConsoleErrorsAreNotDisplayedAfterAddin
 	And User clicks Create New Item button
 	And User adds following items from list
 	| Item                              |
-	| US-E\ABW081519 (Darrin A. Arnold) |
-	| FR\IIN4276389 (Merci Daoust)      |
+	| UK\LBM661859 (Jenifer V. Allison) |
+	| US-W\QIY746717 (Jimmy I. Jones)   |
 	Then Success message is displayed and contains "The selected users have been added to the selected bucket" text
 	And There are no errors in the browser console
 
@@ -776,9 +776,9 @@ Scenario: EvergreenJnr_AdminPage_CheckThatOnboardingOfObjectsIsProceedForScopedP
 	Then Success message with "2 objects queued for onboarding, 0 objects offboarded" text is displayed on the Projects page
 	When User clicks "Users" tab in the Project Scope Changes section
 	And User adds following items to the Project
-	| Item                         |
-	| AAG081456(Melanie Z. Fowler) |
-	| AAH0343264(Luc Gauthier)     |
+	| Item                          |
+	| AAG081456 (Melanie Z. Fowler) |
+	| AAH0343264 (Luc Gauthier)     |
 	When User clicks Update Project button on the Projects page
 	Then Success message with "2 objects queued for onboarding, 0 objects offboarded" text is displayed on the Projects page
 	When User click on Back button
@@ -822,13 +822,13 @@ Scenario: EvergreenJnr_AdminPage_CheckingThatRedBannerWithOkMessageIsNotDisplaye
 	And User clicks "Applications" tab in the Project Scope Changes section
 	And User expands the object to add 
 	And User selects following items to the Project
-	| Item                                                                |
-	| "WPF/E" (codename) Community Technology Preview (Feb 2007)(0.8.5.0) |
+	| Item                                                                 |
+	| "WPF/E" (codename) Community Technology Preview (Feb 2007) (0.8.5.0) |
 	And User clicks "Users" tab in the Project Scope Changes section
 	And User expands the object to add 
 	And User selects following items to the Project
-	| Item                      |
-	| AAC860150(Kerrie D. Ruiz) |
+	| Item                       |
+	| AAC860150 (Kerrie D. Ruiz) |
 	And User clicks "UPDATE ALL CHANGES" button on the Projects page
 	And User clicks Update Project button on the Projects page
 	Then Success message with "3 objects queued for onboarding, 0 objects offboarded" text is displayed on the Projects page
@@ -838,7 +838,7 @@ Scenario: EvergreenJnr_AdminPage_CheckingThatRedBannerWithOkMessageIsNotDisplaye
 	And User selects all rows on the grid
 	And User removes selected item
 
-@Evergreen @Admin @EvergreenJnr_AdminPage @AdminPage @DAS12796 @Delete_Newly_Created_List
+@Evergreen @Admin @EvergreenJnr_AdminPage @AdminPage @DAS12796 @DAS12872 @Delete_Newly_Created_List @Not_Run
 Scenario Outline: EvergreenJnr_AdminPage_CheckThatNumberOfObjectIsUpdatedInTheScopeChangesOfProjectAfterTheChangeCustomList
 	When User clicks "<ListName>" on the left-hand menu
 	Then "<ListName>" list should be displayed to the user
@@ -870,15 +870,17 @@ Scenario Outline: EvergreenJnr_AdminPage_CheckThatNumberOfObjectIsUpdatedInTheSc
 	And User clicks content from "Project" column
 	Then Project "<ProjectName>" is displayed to user
 	And "<NewCount>" is displayed to the user in the Project Scope Changes section
-	And Delete "<DeleteProject>" Project in the Administration
+	When User enters "TestProject45" text in the Search field for "Project" column
+	And User selects all rows on the grid
+	And User removes selected item
 
 Examples:
-	| ListName  | ColumnName    | DynamicListName | RowsCount | ProjectName   | ObjectsCount | FilterName  | Checkbox | NewRowsCount | NewCount | DeleteProject |
-	| Devices   | Hostname      | ProjectList4587 | 17,225    | TestProject16 | 17225        | Device Type | Desktop  | 8,103        | 8103     | TestProject16 |
-	| Users     | Username      | ProjectList4511 | 41,339    | TestProject17 | 41339        | Domain      | CORP     | 103          | 103      | TestProject17 |
-	| Mailboxes | Email Address | ProjectList4548 | 14,784    | TestProject18 | 14784        | Owner City  | London   | 3,294        | 3294     | TestProject18 |
+	| ListName  | ColumnName    | DynamicListName | RowsCount | ProjectName     | ObjectsCount | FilterName  | Checkbox | NewRowsCount | NewCount | DeleteProject   |
+	| Devices   | Hostname      | ProjectList4587 | 17,225    | TestProject4511 | 17225        | Device Type | Desktop  | 8,103        | 8103     | TestProject4511 |
+	| Users     | Username      | ProjectList4511 | 41,339    | TestProject4512 | 41339        | Domain      | CORP     | 103          | 103      | TestProject4512 |
+	| Mailboxes | Email Address | ProjectList4548 | 14,784    | TestProject4513 | 14784        | Owner City  | London   | 3,294        | 3294     | TestProject4513 |
 
-@Evergreen @Admin @EvergreenJnr_AdminPage @AdminPage @DAS12816
+@Evergreen @Admin @EvergreenJnr_AdminPage @AdminPage @DAS12816 @DAS12873 @Not_Run
 Scenario: EvergreenJnr_AdminPage_CheckThatObjectsIsOnboardedToTheProjectWithCloneEvergreenBucketsToProjectBuckets
 	When User clicks Admin on the left-hand menu
 	Then Admin page should be displayed to the user
