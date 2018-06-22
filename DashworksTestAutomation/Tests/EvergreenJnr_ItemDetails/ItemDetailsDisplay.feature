@@ -628,7 +628,7 @@ Examples:
 	| Users    | hurstbl        | Username | Projects | Evergreen Buckets | Mailbox Projects      |
 	| Users    | ZZZ588323      | Username | Projects | Evergreen Buckets | Device Projects       |
 
-@Evergreen @Devices @EvergreenJnr_ItemDetails @ItemDetailsDisplay @DAS12292 @Not_Run
+@Evergreen @Devices @EvergreenJnr_ItemDetails @ItemDetailsDisplay @DAS12292
 Scenario: EvergreenJnr_DevicesLists_CheckingThatInRangeOperatorWorkingCorrectly
 	When User clicks "Devices" on the left-hand menu
 	Then "Devices" list should be displayed to the user
@@ -638,3 +638,7 @@ Scenario: EvergreenJnr_DevicesLists_CheckingThatInRangeOperatorWorkingCorrectly
 	And User opens "Device Projects" section on the Details Page
 	And User have opened Column Settings for "Date" column in the Details Page table
 	And User clicks Filter button on the Column Settings panel
+	And User select In Range value with following date:
+	| DateFrom | DateTo  |
+	| 5222014  | 5202018 |
+	Then "2" rows found label displays on Details Page
