@@ -127,12 +127,20 @@ namespace DashworksTestAutomation.Steps.Dashworks
             Assert.IsTrue(detailsPage.SectionContainer.Displayed(), "Section is not displayed");
         }
 
+        [Then(@"""(.*)"" column is displayed to the user")]
+        public void ThenColumnIsDisplayedToTheUser(string columnName)
+        {
+            var columnHeader = _driver.NowAt<ApplicationsDetailsTabsMenu>();
+            Assert.IsTrue(columnHeader.ColumnIsDisplayed(columnName),
+                $"{columnName} column is not displayed");
+        }
+
         [Then(@"""(.*)"" column is not displayed to the user")]
         public void ThenColumnIsNotDisplayedToTheUser(string columnName)
         {
             var columnHeader = _driver.NowAt<ApplicationsDetailsTabsMenu>();
             Assert.IsFalse(columnHeader.ColumnIsDisplayed(columnName),
-                $"{columnName} category stil displayed in Column Panel");
+                $"{columnName} column still displayed");
         }
 
         [When(@"User clicks String Filter button for ""(.*)"" column")]
@@ -220,6 +228,18 @@ namespace DashworksTestAutomation.Steps.Dashworks
             var menu = _driver.NowAt<ApplicationsDetailsTabsMenu>();
             _driver.WaitWhileControlIsNotDisplayed<ApplicationsDetailsTabsMenu>(() => menu.FilterButton);
             menu.FilterButton.Click();
+        }
+
+        [When(@"User select In Range value with following date:")]
+        public void WhenUserSelectInRangeValueWithFollowingDate(Table table)
+        {
+            var menu = _driver.NowAt<ApplicationsDetailsTabsMenu>();
+            menu.SelectValueForDateColumn("In range");
+            foreach (var row in table.Rows)
+            {
+                menu.DateFromValue.SendkeysWithDelay(row["DateFrom"]);
+                menu.DateToValue.SendkeysWithDelay(row["DateTo"]);
+            }
         }
 
         [Then(@"User select ""(.*)"" checkbox from filter on the Details Page")]

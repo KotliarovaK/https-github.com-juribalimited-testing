@@ -102,19 +102,58 @@ namespace DashworksTestAutomation.Steps.Dashworks
             Logger.Write($"'{pageTitle}' page is visible");
         }
 
-        [Then(@"Project ""(.*)"" is displayed to user")]
-        public void ThenProjectIsDisplayedToUser(string projectName)
-        {
-            var page = _driver.NowAt<ProjectsPage>();
-            _driver.WaitForDataLoading();
-            Assert.IsTrue(page.ActiveProjectByName(projectName), $"{projectName} is not displayed on the Project page");
-        }
-
-        [When(@"User clicks ""(.*)"" record in the grid")]
-        public void WhenUserClicksRecordInThenGrid(string recordName)
+        [When(@"User clicks Create New Item button")]
+        public void WhenUserClicksCreateNewItemButton()
         {
             var page = _driver.NowAt<BaseGridPage>();
-            page.SelectRecordByName(recordName);
+            _driver.WaitWhileControlIsNotDisplayed<BaseGridPage>(() => page.CreateItemButton);
+            page.CreateItemButton.Click();
+            Logger.Write("Create New Item button was clicked");
+        }
+
+        [When(@"User clicks Update Project button on the Projects page")]
+        public void WhenUserClicksUpdateProjectButtonOnTheProjectsPage()
+        {
+            var button = _driver.NowAt<ProjectsPage>();
+            _driver.WaitWhileControlIsNotDisplayed<ProjectsPage>(() => button.UpdateProjectInTheWarning);
+            button.UpdateProjectInTheWarning.Click();
+        }
+
+        [Then(@"Update Project buttons is disabled")]
+        public void ThenUpdateProjectButtonsIsDisabled()
+        {
+            var button = _driver.NowAt<ProjectsPage>();
+            _driver.WaitWhileControlIsNotDisplayed<ProjectsPage>(() => button.UpdateProjectButton);
+            Assert.IsTrue(Convert.ToBoolean(button.UpdateProjectButton.GetAttribute("disabled")),
+                "Update Project button is active");
+            Assert.IsTrue(Convert.ToBoolean(button.UpdateAllChangesButton.GetAttribute("disabled")),
+                "Update All Changes button is active");
+        }
+
+        [Then(@"Update Project button is active")]
+        public void ThenUpdateProjectButtonIsActive()
+        {
+            var button = _driver.NowAt<ProjectsPage>();
+            Assert.IsFalse(Convert.ToBoolean(button.UpdateProjectButton.GetAttribute("disabled")),
+                "Update Project button is disabled");
+            Assert.IsFalse(Convert.ToBoolean(button.UpdateAllChangesButton.GetAttribute("disabled")),
+                "Update All Changes button is disabled");
+        }
+
+        [When(@"User clicks Cancel button")]
+        public void WhenUserClicksCancelButton()
+        {
+            var page = _driver.NowAt<CreateProjectPage>();
+            _driver.WaitWhileControlIsNotDisplayed<CreateProjectPage>(() => page.CancelButton);
+            page.CancelButton.Click();
+            Logger.Write("Cancel button was clicked");
+        }
+
+        [When(@"User clicks ""(.*)"" button on the Projects page")]
+        public void WhenUserClicksButtonOnTheProjectsPage(string buttonName)
+        {
+            var button = _driver.NowAt<ProjectsPage>();
+            button.ClickUpdateButtonByName(buttonName);
         }
 
         [When(@"User opens Scope section on the Project details page")]
@@ -138,13 +177,6 @@ namespace DashworksTestAutomation.Steps.Dashworks
             var projectTabs = _driver.NowAt<ProjectsPage>();
             projectTabs.NavigateToProjectTabInScopSectionByName(tabName);
             _driver.WaitForDataLoading();
-        }
-
-        [Then(@"All Association are selected by default")]
-        public void ThenAllAssociationAreSelectedByDefault()
-        {
-            var projectsPage = _driver.NowAt<ProjectsPage>();
-            Assert.IsFalse(projectsPage.UncheckedCheckbox.Displayed(), "Not all checkboxes are selected");
         }
 
         [When(@"User clicks ""(.*)"" tab in the Project Scope Changes section")]
@@ -172,6 +204,28 @@ namespace DashworksTestAutomation.Steps.Dashworks
                 $"{tabName} is not displayed in the Project Scope Changes section");
         }
 
+        [Then(@"Project ""(.*)"" is displayed to user")]
+        public void ThenProjectIsDisplayedToUser(string projectName)
+        {
+            var page = _driver.NowAt<ProjectsPage>();
+            _driver.WaitForDataLoading();
+            Assert.IsTrue(page.ActiveProjectByName(projectName), $"{projectName} is not displayed on the Project page");
+        }
+
+        [When(@"User clicks ""(.*)"" record in the grid")]
+        public void WhenUserClicksRecordInThenGrid(string recordName)
+        {
+            var page = _driver.NowAt<BaseGridPage>();
+            page.SelectRecordByName(recordName);
+        }
+
+        [Then(@"All Association are selected by default")]
+        public void ThenAllAssociationAreSelectedByDefault()
+        {
+            var projectsPage = _driver.NowAt<ProjectsPage>();
+            Assert.IsFalse(projectsPage.UncheckedCheckbox.Displayed(), "Not all checkboxes are selected");
+        }
+
         [Then(@"""(.*)"" is displayed to the user in the Project Scope Changes section")]
         public void ThenIsDisplayedToTheUserInTheProjectScopeChangesSection(string text)
         {
@@ -196,6 +250,20 @@ namespace DashworksTestAutomation.Steps.Dashworks
             Assert.IsTrue(page.WarningMessageAdminPage(text), "Warning Message is not displayed");
         }
 
+        [Then(@"Warning message is not displayed on the Admin page")]
+        public void ThenWarningMessageIsNotDisplayedOnTheAdminPage()
+        {
+            var page = _driver.NowAt<BaseGridPage>();
+            Assert.IsFalse(page.DeleteWarningMessage.Displayed());
+        }
+
+        [When(@"User clicks Cancel button in the warning message on the Admin page")]
+        public void WhenUserClicksCancelButtonInTheWarningMessageOnTheAdminPage()
+        {
+            var page = _driver.NowAt<BaseGridPage>();
+            page.CancelButtonInWarning.Click();
+        }
+
         [When(@"User selects ""(.*)"" checkbox on the Project details page")]
         public void WhenUserSelectCheckboxOnTheProjectDetailsPage(string radioButtonName)
         {
@@ -208,74 +276,6 @@ namespace DashworksTestAutomation.Steps.Dashworks
         {
             var checkbox = _driver.NowAt<ProjectsPage>();
             checkbox.SelectCheckboxByName(checkboxName);
-        }
-
-        [When(@"User clicks ""(.*)"" button on the Projects page")]
-        public void WhenUserClicksButtonOnTheProjectsPage(string buttonName)
-        {
-            var button = _driver.NowAt<ProjectsPage>();
-            button.ClickUpdateButtonByName(buttonName);
-        }
-
-        [When(@"User clicks Update Project button on the Projects page")]
-        public void WhenUserClicksUpdateProjectButtonOnTheProjectsPage()
-        {
-            var button = _driver.NowAt<ProjectsPage>();
-            _driver.WaitWhileControlIsNotDisplayed<ProjectsPage>(() => button.UpdateProjectInTheWarning);
-            button.UpdateProjectInTheWarning.Click();
-        }
-
-        [Then(@"Update Project buttons is disabled")]
-        public void ThenUpdateProjectButtonsIsDisabled()
-        {
-            var button = _driver.NowAt<ProjectsPage>();
-            _driver.WaitWhileControlIsNotDisplayed<ProjectsPage>(() => button.UpdateProjectButton);
-            Assert.IsTrue(Convert.ToBoolean(button.UpdateProjectButton.GetAttribute("disabled")),
-                "Update Project button is active");
-            Assert.IsTrue(Convert.ToBoolean(button.UpdateAllChangesButton.GetAttribute("disabled")),
-                "Update All Changes button is active");
-        }
-
-        [Then(@"Update Project button is activ")]
-        public void ThenUpdateProjectButtonIsActiv()
-        {
-            var button = _driver.NowAt<ProjectsPage>();
-            Assert.IsFalse(Convert.ToBoolean(button.UpdateProjectButton.GetAttribute("disabled")),
-                "Update Project button is disabled");
-            Assert.IsFalse(Convert.ToBoolean(button.UpdateAllChangesButton.GetAttribute("disabled")),
-                "Update All Changes button is disabled");
-        }
-
-        [When(@"User clicks Cancel button")]
-        public void WhenUserClicksCancelButton()
-        {
-            var page = _driver.NowAt<CreateProjectPage>();
-            _driver.WaitWhileControlIsNotDisplayed<CreateProjectPage>(() => page.CancelButton);
-            page.CancelButton.Click();
-            Logger.Write("Cancel button was clicked");
-        }
-
-        [When(@"User clicks Cancel button in the warning message on the Admin page")]
-        public void WhenUserClicksCancelButtonInTheWarningMessageOnTheAdminPage()
-        {
-            var page = _driver.NowAt<BaseGridPage>();
-            page.CancelButtonInWarning.Click();
-        }
-
-        [Then(@"Warning message is not displayed on the Admin page")]
-        public void ThenWarningMessageIsNotDisplayedOnTheAdminPage()
-        {
-            var page = _driver.NowAt<BaseGridPage>();
-            Assert.IsFalse(page.DeleteWarningMessage.Displayed());
-        }
-
-        [When(@"User clicks Create New Item button")]
-        public void WhenUserClicksCreateNewItemButton()
-        {
-            var page = _driver.NowAt<BaseGridPage>();
-            _driver.WaitWhileControlIsNotDisplayed<BaseGridPage>(() => page.CreateItemButton);
-            page.CreateItemButton.Click();
-            Logger.Write("Create New Item button was clicked");
         }
 
         [Then(@"Delete ""(.*)"" Team in the Administration")]
@@ -637,6 +637,25 @@ namespace DashworksTestAutomation.Steps.Dashworks
             }
         }
 
+        [Then(@"following objects are onboarded")]
+        public void ThenFollowingObjectsAreOnboarded(Table table)
+        {
+            var projectElement = _driver.NowAt<BaseGridPage>();
+            Thread.Sleep(15000);
+            foreach (var row in table.Rows)
+            {
+                if (projectElement.OnboardedObjectsTable.Displayed())
+                {
+                    projectElement.OnboardedObjectDisplayed(row["Object"]);
+                }
+                else
+                {
+                    _driver.Navigate().Refresh();
+                    projectElement.OnboardedObjectDisplayed(row["Object"]);
+                }
+            }
+        }
+
         [Then(@"following items are still selected")]
         public void ThenFollowingItemsAreStillSelected()
         {
@@ -677,11 +696,19 @@ namespace DashworksTestAutomation.Steps.Dashworks
         }
 
         [When(@"User selects ""(.*)"" in the Scope Project dropdown")]
-        public void ThenUserSelectsInTheScopeProjectDropdown(string listName)
+        public void ThenUserSelectsInTheScopeProjectDropdown(string objectName)
         {
             var createProjectElement = _driver.NowAt<CreateProjectPage>();
             createProjectElement.ScopeProjectField.Click();
-            createProjectElement.SelectListForProjectCreation(listName);
+            createProjectElement.SelectObjectForProjectCreation(objectName);
+        }
+
+        [When(@"User selects ""(.*)"" in the Buckets Project dropdown")]
+        public void WhenUserSelectsInTheBucketsProjectDropdown(string objectName)
+        {
+            var createProjectElement = _driver.NowAt<CreateProjectPage>();
+            createProjectElement.BucketsProjectField.Click();
+            createProjectElement.SelectObjectForProjectCreation(objectName);
         }
 
         [Then(@"Create Project button is disabled")]
@@ -797,7 +824,7 @@ namespace DashworksTestAutomation.Steps.Dashworks
                     projectElement = _driver.NowAt<ProjectsPage>();
                 }
             }
-
+            
             _driver.WaitWhileControlIsNotDisplayed<ProjectsPage>(() => projectElement.SuccessMessage);
             Assert.IsTrue(projectElement.SuccessTextMessage(textMessage),
                 $"{textMessage} is not displayed on the Project page");
