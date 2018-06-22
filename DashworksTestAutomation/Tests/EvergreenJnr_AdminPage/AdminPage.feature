@@ -979,3 +979,32 @@ Scenario: EvergreenJnr_AdminPage_CheckingThatCreatingTwoProjectsWithTheSameNameI
 	Then Error message with "A project already exists with this name" text is displayed
 	When User enters "TestProject11737" text in the Search field for "Project" column
 	Then Counter shows "1" found rows
+	When User selects all rows on the grid
+	And User removes selected item
+
+@Evergreen @Admin @EvergreenJnr_AdminPage @AdminPage @DAS11700
+Scenario: EvergreenJnr_AdminPage_CheckingThatTheProjectIdColumnIsAddedAndDisplayedCorrectlyToTheAdminProjectGrid
+	When User clicks Admin on the left-hand menu
+	Then Admin page should be displayed to the user
+	When User clicks "Projects" link on the Admin page
+	Then "Projects" page should be displayed to the user
+	When User clicks Create New Item button
+	Then "Create Project" page should be displayed to the user
+	When User enters "TestProject11700" in the Project Name field
+	And User selects "All Devices" in the Scope Project dropdown
+	And User clicks Create button on the Create Project page
+	And User clicks "Projects" link on the Admin page
+	Then "Projects" page should be displayed to the user
+	When User have opened Column Settings for "Project" column
+	And User clicks Column button on the Column Settings panel
+	And User select "Project ID" checkbox on the Column Settings panel
+	And User clicks Column button on the Column Settings panel
+	Then following columns added to the table:
+	| ColumnName |
+	| Project ID |
+	And content is present in the following newly added columns:
+	| ColumnName |
+	| Project ID |
+	When User enters "TestProject11700" text in the Search field for "Project" column
+	And User selects all rows on the grid
+	And User removes selected item

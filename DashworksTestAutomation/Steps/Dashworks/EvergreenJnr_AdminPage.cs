@@ -4,7 +4,6 @@ using System.Threading;
 using DashworksTestAutomation.DTO.RuntimeVariables;
 using DashworksTestAutomation.Extensions;
 using DashworksTestAutomation.Helpers;
-using DashworksTestAutomation.Pages.Evergreen;
 using DashworksTestAutomation.Pages.Evergreen.AdminDetailsPages;
 using DashworksTestAutomation.Utils;
 using NUnit.Framework;
@@ -350,6 +349,8 @@ namespace DashworksTestAutomation.Steps.Dashworks
             Logger.Write("Create Team button was clicked");
         }
 
+        #region Column Settings
+
         [When(@"User have opened Column Settings for ""(.*)"" column")]
         public void WhenUserHaveOpenedColumnSettingsForColumn(string columnName)
         {
@@ -364,6 +365,10 @@ namespace DashworksTestAutomation.Steps.Dashworks
             _driver.WaitWhileControlIsNotDisplayed<TeamsPage>(() => menu.FilterButton);
             menu.FilterButton.Click();
         }
+
+        #endregion
+
+        #region Table content
 
         [Then(@"Content is present in the table on the Teams Page")]
         public void ThenContentIsPresentInTheTableOnTheTeamsPage()
@@ -380,6 +385,8 @@ namespace DashworksTestAutomation.Steps.Dashworks
             tableElement.ClickContentByColumnName(columnName);
             _driver.WaitForDataLoading();
         }
+
+        #endregion
 
         [When(@"User clicks Add Members button on the Teams page")]
         public void WhenUserClicksAddMembersButtonOnTheTeamsPage()
@@ -494,6 +501,8 @@ namespace DashworksTestAutomation.Steps.Dashworks
             Logger.Write("Create Team button was clicked");
         }
 
+        #region Message
+
         [Then(@"Success message is displayed and contains ""(.*)"" text")]
         public void ThenSuccessMessageIsDisplayedAndContainsText(string text)
         {
@@ -521,6 +530,71 @@ namespace DashworksTestAutomation.Steps.Dashworks
             _driver.WaitWhileControlIsNotDisplayed<BaseGridPage>(() => page.ErrorMessage);
             Assert.AreEqual(text, page.ErrorMessage.Text, "Error Message is not displayed");
         }
+
+        [Then(@"""(.*)"" warning message is not displayed on the Buckets page")]
+        public void ThenWarningMessageIsNotDisplayedOnTheBucketsPage(string warningText)
+        {
+            var message = _driver.NowAt<BucketsPage>();
+            Assert.IsFalse(message.WarningDeleteBucketMessage(warningText),
+                $"{warningText} warning message is displayed on the Buckets page");
+        }
+
+        [Then(@"Success message with ""(.*)"" text is displayed on the Projects page")]
+        public void ThenSuccessMessageWithTextIsDisplayedOnTheProjectsPage(string textMessage)
+        {
+            ProjectsPage projectElement;
+            try
+            {
+                projectElement = _driver.NowAt<ProjectsPage>();
+            }
+            catch (WebDriverTimeoutException)
+            {
+                try
+                {
+                    projectElement = _driver.NowAt<ProjectsPage>();
+                }
+                catch (WebDriverTimeoutException)
+                {
+                    projectElement = _driver.NowAt<ProjectsPage>();
+                }
+            }
+            _driver.WaitWhileControlIsNotDisplayed<ProjectsPage>(() => projectElement.SuccessMessage);
+            Assert.IsTrue(projectElement.SuccessTextMessage(textMessage),
+                $"{textMessage} is not displayed on the Project page");
+        }
+
+        [Then(@"message with ""(.*)"" text is displayed on the Projects page")]
+        public void ThenMessageWithTextIsDisplayedOnTheProjectsPage(string textMessage)
+        {
+            ProjectsPage projectElement;
+            try
+            {
+                projectElement = _driver.NowAt<ProjectsPage>();
+            }
+            catch (WebDriverTimeoutException)
+            {
+                try
+                {
+                    projectElement = _driver.NowAt<ProjectsPage>();
+                }
+                catch (WebDriverTimeoutException)
+                {
+                    projectElement = _driver.NowAt<ProjectsPage>();
+                }
+            }
+            _driver.WaitWhileControlIsNotDisplayed<ProjectsPage>(() => projectElement.DeleteWarningMessage);
+            Assert.IsTrue(projectElement.SuccessTextMessage(textMessage),
+                $"{textMessage} is not displayed on the Project page");
+        }
+
+        [Then(@"Success message is not displayed on the Projects page")]
+        public void ThenSuccessMessageIsNotDisplayedOnTheProjectsPage()
+        {
+            var message = _driver.NowAt<ProjectsPage>();
+            Assert.IsFalse(message.SuccessMessage.Displayed());
+        }
+  
+        #endregion
 
         [Then(@"""(.*)"" bucket details is displayed to the user")]
         public void ThenBucketDetailsIsDisplayedToTheUser(string bucketName)
@@ -551,14 +625,6 @@ namespace DashworksTestAutomation.Steps.Dashworks
         {
             var action = _driver.NowAt<BaseGridPage>();
             action.SelectActions(actionName);
-        }
-
-        [Then(@"""(.*)"" warning message is not displayed on the Buckets page")]
-        public void ThenWarningMessageIsNotDisplayedOnTheBucketsPage(string warningText)
-        {
-            var message = _driver.NowAt<BucketsPage>();
-            Assert.IsFalse(message.WarningDeleteBucketMessage(warningText),
-                $"{warningText} warning message is displayed on the Buckets page");
         }
 
         [When(@"User clicks Delete Bucket button")]
@@ -803,62 +869,6 @@ namespace DashworksTestAutomation.Steps.Dashworks
             var projectElement = _driver.NowAt<BaseGridPage>();
             Assert.IsTrue(projectElement.ActionsInDropdown.Displayed(), "Actions is not displayed in the dropdown");
             Assert.IsFalse(projectElement.DeleteButtonOnPage.Displayed(), "Delete button is displayed");
-        }
-
-        [Then(@"Success message with ""(.*)"" text is displayed on the Projects page")]
-        public void ThenSuccessMessageWithTextIsDisplayedOnTheProjectsPage(string textMessage)
-        {
-            ProjectsPage projectElement;
-            try
-            {
-                projectElement = _driver.NowAt<ProjectsPage>();
-            }
-            catch (WebDriverTimeoutException)
-            {
-                try
-                {
-                    projectElement = _driver.NowAt<ProjectsPage>();
-                }
-                catch (WebDriverTimeoutException)
-                {
-                    projectElement = _driver.NowAt<ProjectsPage>();
-                }
-            }
-            
-            _driver.WaitWhileControlIsNotDisplayed<ProjectsPage>(() => projectElement.SuccessMessage);
-            Assert.IsTrue(projectElement.SuccessTextMessage(textMessage),
-                $"{textMessage} is not displayed on the Project page");
-        }
-
-        [Then(@"Success message is not displayed on the Projects page")]
-        public void ThenSuccessMessageIsNotDisplayedOnTheProjectsPage()
-        {
-            var message = _driver.NowAt<ProjectsPage>();
-            Assert.IsFalse(message.SuccessMessage.Displayed());
-        }
-
-        [Then(@"message with ""(.*)"" text is displayed on the Projects page")]
-        public void ThenMessageWithTextIsDisplayedOnTheProjectsPage(string textMessage)
-        {
-            ProjectsPage projectElement;
-            try
-            {
-                projectElement = _driver.NowAt<ProjectsPage>();
-            }
-            catch (WebDriverTimeoutException)
-            {
-                try
-                {
-                    projectElement = _driver.NowAt<ProjectsPage>();
-                }
-                catch (WebDriverTimeoutException)
-                {
-                    projectElement = _driver.NowAt<ProjectsPage>();
-                }
-            }
-            _driver.WaitWhileControlIsNotDisplayed<ProjectsPage>(() => projectElement.DeleteWarningMessage);
-            Assert.IsTrue(projectElement.SuccessTextMessage(textMessage),
-                $"{textMessage} is not displayed on the Project page");
         }
 
         [Then(@"Counter shows ""(.*)"" found rows")]
