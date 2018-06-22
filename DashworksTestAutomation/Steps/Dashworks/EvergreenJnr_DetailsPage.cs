@@ -230,6 +230,18 @@ namespace DashworksTestAutomation.Steps.Dashworks
             menu.FilterButton.Click();
         }
 
+        [When(@"User select In Range value with following date:")]
+        public void WhenUserSelectInRangeValueWithFollowingDate(Table table)
+        {
+            var menu = _driver.NowAt<ApplicationsDetailsTabsMenu>();
+            menu.SelectValueForDateColumn("In range");
+            foreach (var row in table.Rows)
+            {
+                menu.DateFromValue.SendkeysWithDelay(row["DateFrom"]);
+                menu.DateToValue.SendkeysWithDelay(row["DateTo"]);
+            }
+        }
+
         [Then(@"User select ""(.*)"" checkbox from filter on the Details Page")]
         public void ThenUserSelectCheckboxFromFilterOnTheDetailsPage(string filterName)
         {
