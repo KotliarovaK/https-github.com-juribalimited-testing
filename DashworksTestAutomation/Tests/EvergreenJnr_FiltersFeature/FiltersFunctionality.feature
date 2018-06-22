@@ -576,4 +576,31 @@ Scenario: EvergreenJnr_DevicesList_CheckingThatError500IsNotDisplayedAfterUsingS
 	Then "Application Name" filter is added to the list
 	When User clicks refresh button in the browser
 	Then "Devices" list should be displayed to the user
-	Then "(Application Name = __ ASSOCIATION = (entitled to device))" text is displayed in filter container
+	And "(Application Name = __ ASSOCIATION = (entitled to device))" text is displayed in filter container
+
+@Evergreen @Applications @EvergreenJnr_FilterFeature @FilterFunctionality @DAS12202 @Delete_Newly_Created_List
+Scenario: EvergreenJnr_ApplicationsList_CheckThatCorrectDeviceDataIsReturnedAfterApplyingAStaticListWithApplicationSavedListFilter
+	When User add following columns using URL to the "Applications" page:
+	| ColumnName              |
+	| Device Count (Entitled) |
+	Then Content is present in the newly added column
+	| ColumnName              |
+	| Device Count (Entitled) |
+	When User clicks the Filters button
+	Then Filters panel is displayed to the user
+	When User add "Application" filter where type is "Equals" with added column and following value:
+	| Values                                     |
+	| Exemples de conception de bases de données |
+	When User click on 'Device Count (Entitled)' column header
+	When User clicks the Actions button
+	Then Actions panel is displayed to the user
+	When User select all rows
+	When User create static list with "StaticList6581" name
+	When User clicks "Devices" on the left-hand menu
+	Then "Devices" list should be displayed to the user
+	When User clicks the Filters button
+	Then Filters panel is displayed to the user
+	When User add "Application (Saved List)" filter where type is "In list" with SelectedList list and following Association:
+	| SelectedList   | Association        |
+	| StaticList6581 | Entitled to device |
+	Then "38" rows are displayed in the agGrid
