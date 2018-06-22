@@ -628,7 +628,7 @@ Examples:
 	| Users    | hurstbl        | Username | Projects | Evergreen Buckets | Mailbox Projects      |
 	| Users    | ZZZ588323      | Username | Projects | Evergreen Buckets | Device Projects       |
 
-@Evergreen @Devices @EvergreenJnr_ItemDetails @ItemDetailsDisplay @DAS12292 @Not_Run
+@Evergreen @Devices @EvergreenJnr_ItemDetails @ItemDetailsDisplay @DAS12292
 Scenario: EvergreenJnr_DevicesLists_CheckingThatInRangeOperatorWorkingCorrectly
 	When User clicks "Devices" on the left-hand menu
 	Then "Devices" list should be displayed to the user
