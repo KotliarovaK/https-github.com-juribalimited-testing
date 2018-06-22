@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Threading;
 using DashworksTestAutomation.Base;
 using DashworksTestAutomation.Extensions;
 using OpenQA.Selenium;
@@ -87,6 +88,9 @@ namespace DashworksTestAutomation.Pages.Evergreen.AdminDetailsPages
 
         [FindsBy(How = How.XPath, Using = ".//span[text()='CANCEL']")]
         public IWebElement CancelButtonInWarning { get; set; }
+
+        [FindsBy(How = How.XPath, Using = ".//div[@class='ag-body-container']")]
+        public IWebElement OnboardedObjectsTable { get; set; }
 
         private By AgIconMenu = By.XPath("//span[contains(@class,'ag-icon-menu')]");
         
@@ -198,6 +202,13 @@ namespace DashworksTestAutomation.Pages.Evergreen.AdminDetailsPages
             var selector = $".//span[text()='{itemName}']";
             Driver.WaitWhileControlIsNotDisplayed(By.XPath(selector));
             Driver.FindElement(By.XPath(selector)).Click();
+        }
+
+        public bool OnboardedObjectDisplayed(string objectName)
+        {
+            Driver.WaitForElement(By.XPath(".//div[@id='agGridTable']"));
+            return Driver.IsElementDisplayed(
+                By.XPath($"//a[text()='{objectName}']"));
         }
     }
 }

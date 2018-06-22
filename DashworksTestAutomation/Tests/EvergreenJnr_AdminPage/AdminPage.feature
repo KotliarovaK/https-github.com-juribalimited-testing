@@ -699,13 +699,13 @@ Scenario: EvergreenJnr_AdminPage_CheckThatSelectedCheckboxIsSelectedAfterSwitchi
 	And User selects following items to the Project
 	| Item           |
 	| 00HA7MKAVVFDAV |
-	Then Update Project button is activ
+	Then Update Project button is active
 	And "Devices to add (1 of 17225 selected)" is displayed to the user in the Project Scope Changes section
 	When User clicks "Users" tab in the Project Scope Changes section
 	And User expands the object to add 
 	And User selects following items to the Project
 	| Item                      |
-	| AAC860150(Kerrie D. Ruiz) |
+	| AAH0343264 (Luc Gauthier) |
 	And User clicks "Devices" tab in the Project Scope Changes section
 	When User expands the object to add 
 	Then following items are still selected
@@ -818,7 +818,7 @@ Scenario: EvergreenJnr_AdminPage_CheckingThatRedBannerWithOkMessageIsNotDisplaye
 	When User expands the object to add 
 	And User selects following items to the Project
 	| Item           |
-	| 001BAQXT6JWFPI |	
+	| 001BAQXT6JWFPI |
 	And User clicks "Applications" tab in the Project Scope Changes section
 	And User expands the object to add 
 	And User selects following items to the Project
@@ -838,47 +838,79 @@ Scenario: EvergreenJnr_AdminPage_CheckingThatRedBannerWithOkMessageIsNotDisplaye
 	And User selects all rows on the grid
 	And User removes selected item
 
-@Evergreen @Admin @EvergreenJnr_AdminPage @AdminPage @DAS12490 @Not_Run
-Scenario: EvergreenJnr_AdminPage_CheckingThatProjectDetailsForOnboardedObjectsIsDisplayedCorrectly
+@Evergreen @Admin @EvergreenJnr_AdminPage @AdminPage @DAS12796 @Delete_Newly_Created_List
+Scenario Outline: EvergreenJnr_AdminPage_CheckThatNumberOfObjectIsUpdatedInTheScopeChangesOfProjectAfterTheChangeCustomList
+	When User clicks "<ListName>" on the left-hand menu
+	Then "<ListName>" list should be displayed to the user
+	When User click on '<ColumnName>' column header
+	And User create dynamic list with "<DynamicListName>" name on "<ListName>" page
+	Then "<DynamicListName>" list is displayed to user
+	And "<RowsCount>" rows are displayed in the agGrid
+	When User clicks Create Project from the main list
+	Then "Create Project" page should be displayed to the user
+	When User enters "<ProjectName>" in the Project Name field
+	And User clicks Create button on the Create Project page
+	And User clicks "Projects" link on the Admin page
+	Then "Projects" page should be displayed to the user
+	When User clicks "<ProjectName>" record in the grid
+	Then Project "<ProjectName>" is displayed to user
+	And "<ObjectsCount>" is displayed to the user in the Project Scope Changes section
+	When User clicks "<ListName>" on the left-hand menu
+	And User navigates to the "<DynamicListName>" list
+	And User clicks the Filters button
+	Then Filters panel is displayed to the user
+	When User add "<FilterName>" filter where type is "Equals" with added column and Lookup option
+	| SelectedValues |
+	| <Checkbox>     |
+	When User update current custom list
+	Then "<NewRowsCount>" rows are displayed in the agGrid
+	When User clicks Admin on the left-hand menu
+	Then Admin page should be displayed to the user
+	When User enters "<ProjectName>" text in the Search field for "Project" column
+	And User clicks content from "Project" column
+	Then Project "<ProjectName>" is displayed to user
+	And "<NewCount>" is displayed to the user in the Project Scope Changes section
+	And Delete "<DeleteProject>" Project in the Administration
+
+Examples:
+	| ListName  | ColumnName    | DynamicListName | RowsCount | ProjectName   | ObjectsCount | FilterName  | Checkbox | NewRowsCount | NewCount | DeleteProject |
+	| Devices   | Hostname      | ProjectList4587 | 17,225    | TestProject16 | 17225        | Device Type | Desktop  | 8,103        | 8103     | TestProject16 |
+	| Users     | Username      | ProjectList4511 | 41,339    | TestProject17 | 41339        | Domain      | CORP     | 103          | 103      | TestProject17 |
+	| Mailboxes | Email Address | ProjectList4548 | 14,784    | TestProject18 | 14784        | Owner City  | London   | 3,294        | 3294     | TestProject18 |
+
+@Evergreen @Admin @EvergreenJnr_AdminPage @AdminPage @DAS12816
+Scenario: EvergreenJnr_AdminPage_CheckThatObjectsIsOnboardedToTheProjectWithCloneEvergreenBucketsToProjectBuckets
 	When User clicks Admin on the left-hand menu
 	Then Admin page should be displayed to the user
 	When User clicks "Projects" link on the Admin page
 	Then "Projects" page should be displayed to the user
 	When User clicks Create New Item button
 	Then "Create Project" page should be displayed to the user
-	When User enters "TestProject12490" in the Project Name field
+	When User enters "TestProject19" in the Project Name field
 	And User selects "All Devices" in the Scope Project dropdown
+	When User selects "Clone evergreen buckets to project buckets" in the Buckets Project dropdown
 	And User clicks Create button on the Create Project page
 	And User clicks "Projects" link on the Admin page
 	Then "Projects" page should be displayed to the user
-	When User enters "TestProject12490" text in the Search field for "Project" column
+	When User enters "TestProject19" text in the Search field for "Project" column
 	And User clicks content from "Project" column
-	Then Project "TestProject12490" is displayed to user
+	Then Project "TestProject19" is displayed to user
 	When User expands the object to add 
-	When User selects following items to the Project
-	| Item            |
-	| 07RJRCQQJNBJIJQ |
-	| 08HRHU20R2JY3W  |
-	| 00HA7MKAVVFDAV  |
-	And User clicks "UPDATE ALL CHANGES" button on the Projects page
-	And User clicks Update Project button on the Projects page
-	And User clicks "Users" tab in the Project Scope Changes section
-	And User expands the object to add 
 	And User selects following items to the Project
-	| Item                      |
-	| ACG370114 (James N. Snow) |
-	And User clicks "UPDATE ALL CHANGES" button on the Projects page
+	| Item            |
+	| 01BQIYGGUW5PRP6 |
+	And User clicks "UPDATE DEVICE CHANGES" button on the Projects page
 	And User clicks Update Project button on the Projects page
+	When User selects "Queue" tab on the Project details page
+	Then following objects are onboarded
+	| Object          |
+	| 01BQIYGGUW5PRP6 |
 	When User selects "History" tab on the Project details page
-	When User type "07RJRCQQJNBJIJQ" in Global Search Field
-	Then User clicks on "07RJRCQQJNBJIJQ" search result
-	When User navigates to the "Projects" tab
-	When User opens "Device Projects" section on the Details Page
-	When User clicks "TestProject12490" link on the Details Page
-	Then "Project Object" page is displayed to the user
-	Then User click back button in the browser
-	When User clicks Admin on the left-hand menu
-	Then Admin page should be displayed to the user
-	When User enters "TestProject12332" text in the Search field for "Project" column
+	Then following objects are onboarded
+	| Object          |
+	| 01BQIYGGUW5PRP6 |
+	When User click on Back button
+	And User enters "TestProject19" text in the Search field for "Project" column
 	And User selects all rows on the grid
 	And User removes selected item
+	When User clicks refresh button in the browser
