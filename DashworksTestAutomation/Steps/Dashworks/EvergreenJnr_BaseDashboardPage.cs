@@ -310,9 +310,15 @@ namespace DashworksTestAutomation.Steps.Dashworks
             foreach (var row in table.Rows)
             {
                 var content = page.GetColumnContent(row["ColumnName"]);
-
                 Assert.IsFalse(content.Count(x => !string.IsNullOrEmpty(x)) > 20, "Column is empty");
             }
+        }
+
+        [When(@"User clicks Close panel button")]
+        public void WhenUserClicksClosePanelButton()
+        {
+            var button = _driver.NowAt<BaseDashboardPage>();
+            button.ClosePanelButton.Click();
         }
     }
 }

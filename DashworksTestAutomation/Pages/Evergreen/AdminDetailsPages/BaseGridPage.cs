@@ -31,6 +31,9 @@ namespace DashworksTestAutomation.Pages.Evergreen.AdminDetailsPages
         [FindsBy(How = How.XPath, Using = "//div[@class='edit-action']/button")]
         public IWebElement ResetFiltersButton { get; set; }
 
+        [FindsBy(How = How.XPath, Using = ".//span[contains(text(), 'IMPORT PROJECT')]")]
+        public IWebElement ImportProjectButton { get; set; }
+
         [FindsBy(How = How.XPath, Using = "//div[@class='ag-header-cell']/span[contains(@class,'select-all')]")]
         public IWebElement SelectAllCheckBox { get; set; }
 
@@ -90,6 +93,9 @@ namespace DashworksTestAutomation.Pages.Evergreen.AdminDetailsPages
 
         [FindsBy(How = How.XPath, Using = ".//span[text()='CANCEL']")]
         public IWebElement CancelButtonInWarning { get; set; }
+
+        [FindsBy(How = How.XPath, Using = ".//div[@class='ag-body-container']")]
+        public IWebElement OnboardedObjectsTable { get; set; }
 
         private By AgIconMenu = By.XPath("//span[contains(@class,'ag-icon-menu')]");
         
@@ -201,6 +207,27 @@ namespace DashworksTestAutomation.Pages.Evergreen.AdminDetailsPages
             var selector = $".//span[text()='{itemName}']";
             Driver.WaitWhileControlIsNotDisplayed(By.XPath(selector));
             Driver.FindElement(By.XPath(selector)).Click();
+        }
+
+        public bool OnboardedObjectDisplayed(string objectName)
+        {
+            Driver.WaitForElement(By.XPath(".//div[@id='agGridTable']"));
+            return Driver.IsElementDisplayed(
+                By.XPath($"//a[text()='{objectName}']"));
+        }
+
+        public bool OnboardedObjectNumber(string objectsNumber)
+        {
+            Driver.WaitForElement(By.XPath(".//div[@id='agGridTable']"));
+            return Driver.IsElementDisplayed(
+                By.XPath($".//div[@role='presentation']/div/div[@title='{objectsNumber}']"));
+        }
+
+        public IWebElement GetCreatedProjectName(string projectName)
+        {
+            var selector = By.XPath($"//a[text()='{projectName}']");
+            Driver.WaitWhileControlIsNotDisplayed(selector);
+            return Driver.FindElement(selector);
         }
     }
 }
