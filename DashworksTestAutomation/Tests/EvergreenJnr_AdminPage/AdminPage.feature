@@ -958,7 +958,7 @@ Scenario: EvergreenJnr_AdminPage_CheckingThatProjectDetailsForOnboardedObjectsIs
 	And User click back button in the browser
 	When User clicks Admin on the left-hand menu
 	Then Admin page should be displayed to the user
-	When User enters "TestProject12332" text in the Search field for "Project" column
+	When User enters "TestProject12490" text in the Search field for "Project" column
 	And User selects all rows on the grid
 	And User removes selected item
 
@@ -1012,7 +1012,7 @@ Scenario: EvergreenJnr_AdminPage_CheckingThatTheProjectIdColumnIsAddedAndDisplay
 	And User removes selected item
 
 @Evergreen @Admin @EvergreenJnr_AdminPage @AdminPage @DAS11985
-Scenario: EvergreenJnr_AdminPage_CheckingThatProjectNameIsDisplayedCorrectlyWhenSpecialSymbolsAreUsedInTheProjectName 
+Scenario: EvergreenJnr_AdminPage_CheckingThatProjectNameIsDisplayedCorrectlyWhenSpecialSymbolsAreUsedInTheProjectName
 	When User clicks Admin on the left-hand menu
 	Then Admin page should be displayed to the user
 	When User clicks "Projects" link on the Admin page
@@ -1026,3 +1026,43 @@ Scenario: EvergreenJnr_AdminPage_CheckingThatProjectNameIsDisplayedCorrectlyWhen
 	When User enters "<TestProject11985>" text in the Search field for "Project" column
 	And User selects all rows on the grid
 	And User removes selected item
+
+@Evergreen @Admin @EvergreenJnr_AdminPage @AdminPage @DAS12364 @Delete_Newly_Created_List
+Scenario: EvergreenJnr_AdminPage_CheckingThatTheProjectIsUpdatedWithoutErrors
+	When User clicks "Applications" on the left-hand menu
+	Then "Applications" list should be displayed to the user
+	When User clicks the Filters button
+	Then Filters panel is displayed to the user
+	When User add "Application Key" filter where type is "Equals" with added column and following value:
+	| Values |
+	| 8      |
+	Then "Application Key" filter is added to the list
+	And Values is displayed in added filter info
+	| Values |
+	| 8      |
+	When User create dynamic list with "TestList12364" name on "Applications" page
+	Then "TestList12364" list is displayed to user
+	When User clicks "Devices" on the left-hand menu
+	Then "Devices" list should be displayed to the user
+	When User clicks the Filters button
+	Then Filters panel is displayed to the user
+	When User add "Application (Saved List)" filter where type is "In list" with SelectedList list and following Association:
+	| SelectedList  | Association    |
+	| TestList12364 | Used on device |
+	When User create dynamic list with "SavedList12364" name on "Devices" page
+	Then "SavedList12364" list is displayed to user
+	When User clicks Admin on the left-hand menu
+	Then Admin page should be displayed to the user
+	When User clicks "Projects" link on the Admin page
+	Then "Projects" page should be displayed to the user
+	When User clicks Create New Item button
+	Then "Create Project" page should be displayed to the user
+	When User enters "TestProject12364" in the Project Name field
+	And User selects "SavedList12364" in the Scope Project dropdown
+	And User clicks Create button on the Create Project page
+	Then created Project with "TestProject12364" name is displayed correctly
+	When User enters "TestProject12364" text in the Search field for "Project" column
+	And User clicks content from "Project" column
+	Then Project "TestProject12364" is displayed to user
+	When User selects "Scope Details" tab on the Project details page
+	#Then There are no errors in the browser console
