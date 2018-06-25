@@ -419,7 +419,7 @@ Scenario: EvergreenJnr_ApplicationsList_CheckThatApplicationSavedListFilterIsWor
 	| SelectedList   | Association        |
 	| TestList2854B3 | Not used on device |
 	Then "Application" filter is added to the list
-	Then "16,565" rows are displayed in the agGrid
+	Then "17,126" rows are displayed in the agGrid
 	Then Options is displayed in added filter info
 	| Values  |
 	| in list |
@@ -765,7 +765,7 @@ Scenario: EvergreenJnr_DevicesList_CheckThatMultipleFilterCriteriaToApplicationN
 	And "Application whose Name contains adobe or microsoft installed on device" is displayed in added filter info
 	When User create dynamic list with "TestListF9A187" name on "Devices" page
 	Then "TestListF9A187" list is displayed to user
-	And "10,258" rows are displayed in the agGrid
+	And "10,257" rows are displayed in the agGrid
 	And Edit List menu is not displayed
 	And "(Application Name ~ (adobe, microsoft) ASSOCIATION = (installed on device))" text is displayed in filter container
 

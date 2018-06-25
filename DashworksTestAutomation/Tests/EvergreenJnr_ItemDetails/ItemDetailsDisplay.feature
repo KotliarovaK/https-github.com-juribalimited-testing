@@ -43,10 +43,10 @@ Scenario Outline: EvergreenJnr_AllLists_CheckThatDataIsDisplayedAfterAddingColum
 	And User clicks Column button on the Column Settings panel
 	And User select "<CheckboxName>" checkbox on the Column Settings panel
 	And User clicks Column button on the Column Settings panel
-	Then ColumnName is added to the list in the Details Page table
+	Then following columns added to the table:
 	| ColumnName      |
 	| <NewColumnName> |
-	And Content is present in the newly added column in the Details Page table
+	And content is present in the following newly added columns:
 	| ColumnName      |
 	| <NewColumnName> |
 	And There are no errors in the browser console
@@ -73,10 +73,10 @@ Scenario Outline: EvergreenJnr_AllLists_CheckThatDataIsDisplayedAfterAddingColum
 	And User clicks Column button on the Column Settings panel
 	And User select "<CheckboxName>" checkbox on the Column Settings panel
 	And User clicks Column button on the Column Settings panel
-	Then ColumnName is added to the list in the Details Page table
+	Then following columns added to the table:
 	| ColumnName      |
 	| <NewColumnName> |
-	And Content is present in the newly added column in the Details Page table
+	And content is present in the following newly added columns:
 	| ColumnName      |
 	| <NewColumnName> |
 	Then There are no errors in the browser console
@@ -120,10 +120,10 @@ Scenario Outline: EvergreenJnr_AllLists_CheckThatDataIsDisplayedAfterAddingColum
 	And User select "Installed" checkbox on the Column Settings panel
 	And User select "<CheckboxName>" checkbox on the Column Settings panel
 	And User clicks Column button on the Column Settings panel
-	Then ColumnName is added to the list in the Details Page table
+	Then following columns added to the table:
 	| ColumnName      |
 	| <NewColumnName> |
-	And Content is present in the newly added column in the Details Page table
+	And content is present in the following newly added columns:
 	| ColumnName      |
 	| <NewColumnName> |
 	Then There are no errors in the browser console
@@ -146,10 +146,10 @@ Scenario Outline: EvergreenJnr_AllLists_CheckThatDataIsDisplayedAfterAddingColum
 	And User clicks Column button on the Column Settings panel
 	And User select "<CheckboxName>" checkbox on the Column Settings panel
 	And User clicks Column button on the Column Settings panel
-	Then ColumnName is added to the list in the Details Page table
+	Then following columns added to the table:
 	| ColumnName      |
 	| <NewColumnName> |
-	And Content is present in the newly added column in the Details Page table
+	And content is present in the following newly added columns:
 	| ColumnName      |
 	| <NewColumnName> |
 	Then There are no errors in the browser console
@@ -195,7 +195,7 @@ Scenario: EvergreenJnr_DevicesLists_CheckThatSelectedCheckboxesMatchTheColumnsIn
 	And User clicks Column button on the Column Settings panel
 	And User select "Key" checkbox on the Column Settings panel
 	And User clicks Column button on the Column Settings panel
-	Then ColumnName is added to the list in the Details Page table
+	Then following columns added to the table:
 	| ColumnName |
 	| Key        |
 	And ColumnName is displayed in following order on the Details page:
@@ -231,7 +231,7 @@ Scenario Outline: EvergreenJnr_AllLists_CheckRenamedColumnForApplicationSummaryS
 	And User click content from "<ColumnName>" column
 	And User navigates to the "Applications" tab
 	Then "Manufacturer" column is not displayed to the user
-	And ColumnName is added to the list in the Details Page table
+	And following columns added to the table:
 	| ColumnName |
 	| Vendor     |
 
@@ -250,7 +250,7 @@ Scenario Outline: EvergreenJnr_AllLists_CheckRenamedColumnForApplicationDetailSe
 	When User closes "Application Summary" section on the Details Page
 	And User opens "Application Detail" section on the Details Page
 	Then "Manufacturer" column is not displayed to the user
-	And ColumnName is added to the list in the Details Page table
+	And following columns added to the table:
 	| ColumnName |
 	| Vendor     |
 
@@ -269,7 +269,7 @@ Scenario Outline: EvergreenJnr_AllLists_CheckRenamedColumnAndStringFilterForSoft
 	When User opens "Software Compliance Issues" section on the Details Page
 	Then "<CountRows>" rows found label displays on Details Page
 	And "Manufacturer" column is not displayed to the user
-	And ColumnName is added to the list in the Details Page table
+	And following columns added to the table:
 	| ColumnName |
 	| Vendor     |
 	Then string filter is displayed for "Vendor" column on the Details Page

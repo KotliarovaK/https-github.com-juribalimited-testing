@@ -243,11 +243,11 @@ Scenario: EvergreenJnr_ApplicationsList_CheckThatFilterIsRestoredCorrectlyAfterL
 	| SelectedList   | Association        |
 	| TestListD75CD3 | Not used on device |
 	Then "Application in list TestListD75CD3 not used on device" is displayed in added filter info
-	Then "16,565" rows are displayed in the agGrid
-	When User perform search by "00BDM1JUR8IF419"
+	Then "17,126" rows are displayed in the agGrid
+	When User perform search by "001BAQXT6JWFPI"
 	And User click content from "Hostname" column
 	Then User click back button in the browser
-	Then "16,565" rows are displayed in the agGrid
+	Then "17,126" rows are displayed in the agGrid
 	When User clicks the Filters button
 	Then "Application in list TestListD75CD3 not used on device" is displayed in added filter info
 
