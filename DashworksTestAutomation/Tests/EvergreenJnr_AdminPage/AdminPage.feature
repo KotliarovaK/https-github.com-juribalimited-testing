@@ -227,7 +227,7 @@ Scenario: EvergreenJnr_AdminPage_CheckThatYouCanNotDeleteTheDefaultBucketWarning
 	Then "You can not delete the default bucket" warning message is not displayed on the Buckets page
 	Then Warning message with "These bucket will be permanently deleted and any objects within them reassigned to the default bucket" text is displayed on the Admin page
 
-@Evergreen @Admin @EvergreenJnr_AdminPage @AdminPage @DAS12182 @Not_Run
+@Evergreen @Admin @EvergreenJnr_AdminPage @AdminPage @DAS12182
 Scenario: EvergreenJnr_AdminPage_CheckThatNumberOfApplicationsInProjectScopeIsCorrectlyUpdated
 	When User clicks Admin on the left-hand menu
 	Then Admin page should be displayed to the user
@@ -352,7 +352,7 @@ Scenario: EvergreenJnr_AdminPage_CheckThatErrorsDoNotAppearAfterUpdatingTeamDesc
 	And There are no errors in the browser console
 	And Delete "TestTeam1" Team in the Administration
 
-@Evergreen @Admin @EvergreenJnr_AdminPage @AdminPage @DAS11765 @DAS12170
+@Evergreen @Admin @EvergreenJnr_AdminPage @AdminPage @DAS11765 @DAS12170 @Not_Run
 Scenario: EvergreenJnr_AdminPage_CheckThatMailboxesAreSuccessfullyAddedToBuckets
 	When User clicks Admin on the left-hand menu
 	Then Admin page should be displayed to the user
@@ -405,7 +405,7 @@ Scenario: EvergreenJnr_AdminPage_CheckThatAllAssociationsAreSelectedByDefaultInT
 	Then All Association are selected by default
 	And Delete "TestProject7" Project in the Administration
 
-@Evergreen @Admin @EvergreenJnr_AdminPage @AdminPage @DAS12170
+@Evergreen @Admin @EvergreenJnr_AdminPage @AdminPage @DAS12170 @Not_Run
 Scenario: EvergreenJnr_AdminPage_CheckThatConsoleErrorsAreNotDisplayedAfterAddingDevicesInTheBuckets
 	When User clicks Admin on the left-hand menu
 	Then Admin page should be displayed to the user
@@ -435,7 +435,7 @@ Scenario: EvergreenJnr_AdminPage_CheckThatErrorsDoNotAppearAfterAddingDevicesToT
 	Then No items text is displayed
 	And There are no errors in the browser console
 
-@Evergreen @Admin @EvergreenJnr_AdminPage @AdminPage @DAS12170
+@Evergreen @Admin @EvergreenJnr_AdminPage @AdminPage @DAS12170 @Not_Run
 Scenario: EvergreenJnr_AdminPage_CheckThatConsoleErrorsAreNotDisplayedAfterAddingUsersInTheBuckets
 	When User clicks Admin on the left-hand menu
 	Then Admin page should be displayed to the user
@@ -537,7 +537,7 @@ Scenario: EvergreenJnr_AdminPage_CheckThatPanelOfAvailableMemberslIsExpandedByDe
 	When User clicks Add Members button on the Teams page
 	Then Panel of available members is displayed to the user
 
-@Evergreen @Admin @EvergreenJnr_AdminPage @AdminPage @DAS12552 @Not_Run
+@Evergreen @Admin @EvergreenJnr_AdminPage @AdminPage @DAS12552
 Scenario: EvergreenJnr_AdminPage_CheckThatFiltersAreWorkingCorrectlyOnTheAdminPages
 	When User clicks Admin on the left-hand menu
 	Then Admin page should be displayed to the user
@@ -557,17 +557,18 @@ Scenario: EvergreenJnr_AdminPage_CheckThatFiltersAreWorkingCorrectlyOnTheAdminPa
 	And User enters "Cardiff --- Test text fill; Test text fill; ------" text in the Search field for "Bucket" column
 	Then Counter shows "1" found rows
 	When User clears Search field for "Project Buckets" column
-	When User enters "<20" text in the Search field for "Devices" column
-	Then Counter shows "5" found rows
+	When User enters "<35" text in the Search field for "Devices" column
+	Then Counter shows "10" found rows
 	When User clicks Admin on the left-hand menu
 	And User clicks "Buckets" link on the Admin page
+	When User clicks Reset Filters button on the Admin page
 	And User enters "barry's" text in the Search field for "Bucket" column
 	Then Counter shows "2" found rows
 	When User clears Search field for "Project Buckets" column
 	And User enters "=2" text in the Search field for "Users" column
 	Then Counter shows "2" found rows
 	When User clears Search field for "Project Buckets" column
-	And User enters "Unassigned" text in the Search field for "Bucket" column
+	#And User enters "Unassigned" text in the Search field for "Bucket" column
 	And User clicks content from "Bucket" column
 	And User enters "BG4H" text in the Search field for "Hostname" column
 	Then Counter shows "2" found rows
@@ -610,15 +611,18 @@ Scenario: EvergreenJnr_AdminPage_CheckThatNoConsoleErrorsAreDisplayedAfterUpdati
 	And User clicks "Applications" tab in the Project Scope Changes section
 	Then "Applications to add (0 of 2129 selected)" is displayed to the user in the Project Scope Changes section
 	When User adds following items to the Project
-	| Item                       |
-	| 20040610sqlserverck(1.0.0) |
-	| 7zip(Unknown)              |
-	| ACDSee 4.0(4.0.0)          |
+	| Item                        |
+	| 20040610sqlserverck (1.0.0) |
+	| 7zip (Unknown)              |
+	| ACDSee 4.0 (4.0.0)          |
 	Then message with "3 applications will be added" text is displayed on the Projects page
 	When User clicks Update Project button on the Projects page
 	Then Success message with "3 objects queued for onboarding, 0 objects offboarded" text is displayed on the Projects page
 	And "Applications to add (0 of 2126 selected)" is displayed to the user in the Project Scope Changes section
 	And There are no errors in the browser console
+	When User enters "TestProject5" text in the Search field for "Project" column
+	And User selects all rows on the grid
+	When User removes selected item
 
 @Evergreen @Admin @EvergreenJnr_AdminPage @AdminPage @DAS12491
 Scenario: EvergreenJnr_AdminPage_CheckThatSingularFoundItemLabelDisplaysOnActionsToolbarforBucketsList

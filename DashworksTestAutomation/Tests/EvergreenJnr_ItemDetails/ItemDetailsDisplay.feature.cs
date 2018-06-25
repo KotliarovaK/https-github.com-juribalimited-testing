@@ -2377,7 +2377,7 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_ItemDetails
             testRunner.And(string.Format("User perform search by \"{0}\"", searchTerm), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
             testRunner.And(string.Format("User click content from \"{0}\" column", column), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
             testRunner.And(string.Format("User navigates to the \"{0}\" tab", tab), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-            testRunner.And(string.Format("User closes \"{0}\" section on the Details Page", sectionClose), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+            testRunner.And("User closes \"Project Summary\" section on the Details Page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
             testRunner.And(string.Format("User opens \"{0}\" section on the Details Page", sectionOpen), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
             testRunner.Then("\"Bucket\" column is displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
             this.ScenarioCleanup();

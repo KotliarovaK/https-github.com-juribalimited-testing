@@ -68,7 +68,7 @@ namespace DashworksTestAutomation.Pages.Evergreen
         [FindsBy(How = How.XPath, Using = ".//div[contains(@class,'submenu-selected-list')]")]
         public IWebElement List { get; set; }
 
-        [FindsBy(How = How.XPath, Using = ".//span[@class='rowCount ng-star-inserted']")]
+        [FindsBy(How = How.XPath, Using = ".//span[contains(@class, 'rowCount')]")]
         public IWebElement ResultsOnPageCount { get; set; }
 
         [FindsBy(How = How.XPath, Using = ".//span[@class='checkbox-styled selectBox']/input")]
@@ -92,7 +92,7 @@ namespace DashworksTestAutomation.Pages.Evergreen
         [FindsBy(How = How.XPath, Using = ".//div[@class='empty-message ng-star-inserted'][text()='No devices found']")]
         public IWebElement NoResultsFoundMessage { get; set; }
 
-        [FindsBy(How = How.XPath, Using = ".//div[@class='save-action-bar ng-star-inserted']//span[text()='Save']")]
+        [FindsBy(How = How.XPath, Using = ".//span[@class='action-item']//span[text()='Save']")]
         public IWebElement SaveCustomListButton { get; set; }
 
         [FindsBy(How = How.XPath, Using = ".//span[@class='filter-content']")]
