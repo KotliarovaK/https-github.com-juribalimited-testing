@@ -617,7 +617,7 @@ Scenario Outline: EvergreenJnr_AllLists_CheckThatBucketColumnIsDisplayedOnDetail
 	And User perform search by "<SearchTerm>"
 	And User click content from "<Column>" column
 	And User navigates to the "<Tab>" tab
-	And User closes "<SectionClose>" section on the Details Page
+	And User closes "Project Summary" section on the Details Page
 	And User opens "<SectionOpen>" section on the Details Page
 	Then "Bucket" column is displayed to the user
 
