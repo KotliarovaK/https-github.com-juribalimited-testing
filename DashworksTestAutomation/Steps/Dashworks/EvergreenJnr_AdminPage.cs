@@ -754,6 +754,14 @@ namespace DashworksTestAutomation.Steps.Dashworks
             Logger.Write("Create Project button was clicked");
         }
 
+        [Then(@"created Project with ""(.*)"" name is displayed correctly")]
+        public void ThenCreatedProjectWithNameIsDisplayedCorrectly(string projectName)
+        {
+            var page = _driver.NowAt<BaseGridPage>();
+            _driver.WaitForDataLoading();
+            Assert.IsTrue(page.GetCreatedProjectName(projectName).Displayed(), "Created Project is not found");
+        }
+
         [When(@"User enters ""(.*)"" in the Project Name field")]
         public void ThenUserEntersInTheProjectNameField(string projectText)
         {
