@@ -1074,28 +1074,6 @@ Scenario: EvergreenJnr_AdminPage_CheckThatOnboardedObjectsAreDisplayedAfterChang
 
 @Evergreen @Admin @EvergreenJnr_AdminPage @AdminPage @DAS12364 @Delete_Newly_Created_List
 Scenario: EvergreenJnr_AdminPage_CheckingThatTheProjectIsUpdatedWithoutErrors
-	When User clicks "Applications" on the left-hand menu
-	Then "Applications" list should be displayed to the user
-	When User clicks the Filters button
-	Then Filters panel is displayed to the user
-	When User add "Application Key" filter where type is "Equals" with added column and following value:
-	| Values |
-	| 8      |
-	Then "Application Key" filter is added to the list
-	And Values is displayed in added filter info
-	| Values |
-	| 8      |
-	When User create dynamic list with "TestList12364" name on "Applications" page
-	Then "TestList12364" list is displayed to user
-	When User clicks "Devices" on the left-hand menu
-	Then "Devices" list should be displayed to the user
-	When User clicks the Filters button
-	Then Filters panel is displayed to the user
-	When User add "Application (Saved List)" filter where type is "In list" with SelectedList list and following Association:
-	| SelectedList  | Association    |
-	| TestList12364 | Used on device |
-	When User create dynamic list with "SavedList12364" name on "Devices" page
-	Then "SavedList12364" list is displayed to user
 	When User clicks Admin on the left-hand menu
 	Then Admin page should be displayed to the user
 	When User clicks "Projects" link on the Admin page
@@ -1103,11 +1081,34 @@ Scenario: EvergreenJnr_AdminPage_CheckingThatTheProjectIsUpdatedWithoutErrors
 	When User clicks Create New Item button
 	Then "Create Project" page should be displayed to the user
 	When User enters "TestProject12364" in the Project Name field
-	And User selects "SavedList12364" in the Scope Project dropdown
+	And User selects "All Users" in the Scope Project dropdown
 	And User clicks Create button on the Create Project page
 	Then created Project with "TestProject12364" name is displayed correctly
 	When User enters "TestProject12364" text in the Search field for "Project" column
 	And User clicks content from "Project" column
 	Then Project "TestProject12364" is displayed to user
+	When User selects "Scope Changes" tab on the Project details page
+	When User expands the object to add
+	And User selects following items to the Project
+	| Item                                  |
+	| 003F5D8E1A844B1FAA5 (Hunter, Melanie) |
+	| 01FF97A1FFAC48A1803 (Aultman, Chanel) |
+	When User clicks "Devices" tab in the Project Scope Changes section
+	And User expands the object to add 
+	And User selects following items to the Project
+	| Item            |
+	| 00HA7MKAVVFDAV  |
+	| 04JYNLWLETYE0HJ |
+	When User clicks "Applications" tab in the Project Scope Changes section
+	And User expands the object to add 
+	And User selects following items to the Project
+	| Item                                             |
+	| ACDSee 4.0.2 PowerPack Trial Version (4.00.0002) |
+	| Backburner (2.1.2.0)                             |
+	And User clicks "UPDATE ALL CHANGES" button on the Projects page
+	And User clicks Update Project button on the Projects page
+	Then Success message with "6 objects queued for onboarding, 0 objects offboarded" text is displayed on the Projects page
 	When User selects "Scope Details" tab on the Project details page
-	#Then There are no errors in the browser console
+	When User selects "Scope Changes" tab on the Project details page
+	When User clicks "Applications" tab in the Project Scope Changes section
+	Then There are no errors in the browser console
