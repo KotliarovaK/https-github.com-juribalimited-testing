@@ -807,6 +807,7 @@ namespace DashworksTestAutomation.Steps.Dashworks
         public void WhenUserClickOnBackButton()
         {
             var button = _driver.NowAt<BaseGridPage>();
+            Thread.Sleep(10000);
             button.BackToTableButton.Click();
         }
 

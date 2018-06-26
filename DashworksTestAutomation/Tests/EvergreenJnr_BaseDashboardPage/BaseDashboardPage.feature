@@ -175,6 +175,9 @@ Examples:
 
 @Evergreen @Devices @EvergreenJnr_BaseDashboardPage @BaseDashboardPage @DAS11693 @DAS12867
 Scenario: EvergreenJnr_DevicesList_CheckThatToolTipIsDisplayedWithCreateProjectButtonFromAnUnsavedList
+	When User clicks "Applications" on the left-hand menu
+	Then "Applications" list should be displayed to the user
+	Then Create button is not displayed
 	When User clicks "Devices" on the left-hand menu
 	Then "Devices" list should be displayed to the user
 	When User click on 'Hostname' column header
