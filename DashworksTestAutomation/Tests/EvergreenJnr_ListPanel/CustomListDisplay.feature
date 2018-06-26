@@ -1037,7 +1037,7 @@ Scenario: EvergreenJnr_UsersList_CheckThatDataFromTheStaticListAreSavedInTheNewL
 	Then "2" rows are displayed in the agGrid
 
 @Evergreen @Users @EvergreenJnr_ListPanel @CustomListDisplay @DAS12630
-Scenario: EvergreenJnr_UsersList_CheckThatStaticListIsDisplayedInTheBottomOfTheListPanel
+Scenario: EvergreenJnr_UsersList_CheckThatStaticListIsDisplayedInTheBottomOfTheListPanelWhenNavigateToTheMainList
 	When User create static list with "StaticList6542" name on "Users" page with following items
 	| ItemName            |
 	| 000F977AC8824FE39B8 |
