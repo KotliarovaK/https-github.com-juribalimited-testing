@@ -611,7 +611,7 @@ Scenario: EvergreenJnr_MailboxesLists_CheckThatLinksInMailboxDetailsAreRedirecte
 	And User clicks "hartmajt" link on the Details Page
 	Then Details object page is displayed to the user
 
-@Evergreen @ALlLists @Users @EvergreenJnr_ItemDetails @ItemDetailsDisplay @DAS12765 @DAS12860
+@Evergreen @ALlLists @EvergreenJnr_ItemDetails @ItemDetailsDisplay @DAS12765 @DAS12860
 Scenario Outline: EvergreenJnr_AllLists_CheckThatBucketColumnIsDisplayedOnDetailsProjectsPages
 	When User clicks "<PageName>" on the left-hand menu
 	And User perform search by "<SearchTerm>"
