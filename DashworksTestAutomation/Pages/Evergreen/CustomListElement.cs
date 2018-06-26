@@ -101,6 +101,13 @@ namespace DashworksTestAutomation.Pages.Evergreen
             return Driver.FindElement(listSettingsSelector);
         }
 
+        public IWebElement ListInBottomSection(string listName)
+        {
+            var listSelector =
+                By.XPath($".//li[contains(@class, 'menu-show-on-hover ng-star-inserted')]/span[text()='{listName}']");
+            return Driver.FindElement(listSelector);
+        }
+
         #region ListSettings
 
         [FindsBy(How = How.XPath, Using = ".//li[text()='Manage']")]
