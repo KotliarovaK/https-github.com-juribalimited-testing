@@ -227,7 +227,7 @@ Scenario: EvergreenJnr_AdminPage_CheckThatYouCanNotDeleteTheDefaultBucketWarning
 	Then "You can not delete the default bucket" warning message is not displayed on the Buckets page
 	Then Warning message with "These bucket will be permanently deleted and any objects within them reassigned to the default bucket" text is displayed on the Admin page
 
-@Evergreen @Admin @EvergreenJnr_AdminPage @AdminPage @DAS12182
+@Evergreen @Admin @EvergreenJnr_AdminPage @AdminPage @DAS12182 @Not_Run
 Scenario: EvergreenJnr_AdminPage_CheckThatNumberOfApplicationsInProjectScopeIsCorrectlyUpdated
 	When User clicks Admin on the left-hand menu
 	Then Admin page should be displayed to the user
@@ -537,7 +537,7 @@ Scenario: EvergreenJnr_AdminPage_CheckThatPanelOfAvailableMemberslIsExpandedByDe
 	When User clicks Add Members button on the Teams page
 	Then Panel of available members is displayed to the user
 
-@Evergreen @Admin @EvergreenJnr_AdminPage @AdminPage @DAS12552
+@Evergreen @Admin @EvergreenJnr_AdminPage @AdminPage @DAS12552 @Not_Run
 Scenario: EvergreenJnr_AdminPage_CheckThatFiltersAreWorkingCorrectlyOnTheAdminPages
 	When User clicks Admin on the left-hand menu
 	Then Admin page should be displayed to the user
@@ -588,7 +588,7 @@ Scenario: EvergreenJnr_AdminPage_CheckThatFiltersAreWorkingCorrectlyOnTheAdminPa
 	And User enters "RD-EXCH2K3" text in the Search field for "Server Name" column
 	Then Counter shows "6" found rows
 
-@Evergreen @Admin @EvergreenJnr_AdminPage @AdminPage @DAS12236 @Not_Run
+@Evergreen @Admin @EvergreenJnr_AdminPage @AdminPage @DAS12236
 Scenario: EvergreenJnr_AdminPage_CheckThatNoConsoleErrorsAreDisplayedAfterUpdatingProjectScopeChanges
 	When User clicks Admin on the left-hand menu
 	Then Admin page should be displayed to the user
@@ -620,6 +620,7 @@ Scenario: EvergreenJnr_AdminPage_CheckThatNoConsoleErrorsAreDisplayedAfterUpdati
 	Then Success message with "3 objects queued for onboarding, 0 objects offboarded" text is displayed on the Projects page
 	And "Applications to add (0 of 2126 selected)" is displayed to the user in the Project Scope Changes section
 	And There are no errors in the browser console
+	When User click on Back button
 	When User enters "TestProject5" text in the Search field for "Project" column
 	And User selects all rows on the grid
 	When User removes selected item
@@ -1028,6 +1029,46 @@ Scenario: EvergreenJnr_AdminPage_CheckingThatProjectNameIsDisplayedCorrectlyWhen
 	And User clicks Create button on the Create Project page
 	Then created Project with "<TestProject11985>" name is displayed correctly
 	When User enters "<TestProject11985>" text in the Search field for "Project" column
+	And User selects all rows on the grid
+	And User removes selected item
+
+@Evergreen @Admin @EvergreenJnr_AdminPage @AdminPage @DAS12806
+Scenario: EvergreenJnr_AdminPage_CheckThatOnboardedObjectsAreDisplayedAfterChangingProjectBucketsSetting
+	When User clicks Admin on the left-hand menu
+	Then Admin page should be displayed to the user
+	When User clicks "Projects" link on the Admin page
+	Then "Projects" page should be displayed to the user
+	When User clicks Create New Item button
+	Then "Create Project" page should be displayed to the user
+	When User enters "TestProject20" in the Project Name field
+	And User selects "All Devices" in the Scope Project dropdown
+	And User clicks Create button on the Create Project page
+	When User enters "TestProject20" text in the Search field for "Project" column
+	And User clicks content from "Project" column
+	Then Project "TestProject20" is displayed to user
+	When User clicks "Details" tab
+	When User selects "Clone evergreen buckets to project buckets" in the Buckets Project dropdown
+	When User clicks "UPDATE" button on the Projects page
+	Then Success message is displayed and contains "The project details have been updated" text
+	When User selects "Scope Changes" tab on the Project details page
+	When User expands the object to add
+	And User selects following items to the Project
+	| Item            |
+	| 0281Z793OLLLDU6 |
+	| 03U75EKEMUQMUS  |
+	And User clicks "UPDATE ALL CHANGES" button on the Projects page
+	And User clicks Update Project button on the Projects page
+	Then Success message with "2 objects queued for onboarding, 0 objects offboarded" text is displayed on the Projects page
+	When User click on Back button
+	When User clicks "Teams" link on the Admin page
+	Then "Teams" page should be displayed to the user
+	When User enters "My Team" text in the Search field for "Team" column
+	And User clicks content from "Team" column
+	When User clicks "Buckets" tab
+	When User enters "Unassigned2" text in the Search field for "Bucket" column
+	Then "" Onboarded objects are displayed
+	When User clicks Admin on the left-hand menu
+	When User enters "TestProject20" text in the Search field for "Project" column
 	And User selects all rows on the grid
 	And User removes selected item
 

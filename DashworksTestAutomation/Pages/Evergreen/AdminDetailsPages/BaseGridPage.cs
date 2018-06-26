@@ -210,6 +210,13 @@ namespace DashworksTestAutomation.Pages.Evergreen.AdminDetailsPages
                 By.XPath($"//a[text()='{objectName}']"));
         }
 
+        public bool OnboardedObjectNumber(string objectsNumber)
+        {
+            Driver.WaitForElement(By.XPath(".//div[@id='agGridTable']"));
+            return Driver.IsElementDisplayed(
+                By.XPath($".//div[@role='presentation']/div/div[@title='{objectsNumber}']"));
+        }
+
         public IWebElement GetCreatedProjectName(string projectName)
         {
             var selector = By.XPath($"//a[text()='{projectName}']");
