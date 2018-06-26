@@ -383,5 +383,12 @@ namespace DashworksTestAutomation.Pages.Evergreen
             Driver.WaitWhileControlIsNotDisplayed(by);
             return Driver.FindElements(by).ToList();
         }
+
+        public IWebElement GetOpenedFilter(string filterName)
+        {
+            var selector = By.XPath($"//div[contains(@class, 'filterAddPanel')]/..//span[text()='{filterName}']");
+            Driver.WaitWhileControlIsNotDisplayed(selector);
+            return Driver.FindElement(selector);
+        }
     }
 }
