@@ -31,6 +31,12 @@ namespace DashworksTestAutomation.Pages.Evergreen.AdminDetailsPages
         [FindsBy(How = How.XPath, Using = ".//span['_ngcontent-c11'][text()='Scope']")]
         public IWebElement ScopeSection { get; set; }
 
+        [FindsBy(How = How.XPath, Using = ".//mat-select[@id='buckets']")]
+        public IWebElement BucketsProjectField { get; set; }
+
+        [FindsBy(How = How.XPath, Using = ".//input[@role='combobox']")]
+        public IWebElement ScopeProjectField { get; set; }
+
         [FindsBy(How = How.XPath, Using = ".//div[@class='wrapper-disabled']//mat-select[@aria-label='User Scope']")]
         public IWebElement DisabledOwnerDropDown { get; set; }
 
@@ -97,7 +103,14 @@ namespace DashworksTestAutomation.Pages.Evergreen.AdminDetailsPages
             return Driver.IsElementDisplayed(By.XPath($".//span[@class='title'][contains(text(), '{text}')]"));
         }
 
-        public bool SelectedTabInProjectScopeChangesSection(string tabName)
+        public void SelectObjectForProjectCreation(string objectName)
+        {
+            string ListNameSelector = $".//span[@class='mat-option-text'][contains(text(), '{objectName}')]";
+            Driver.WaitWhileControlIsNotDisplayed(By.XPath(ListNameSelector));
+            Driver.FindElement(By.XPath(ListNameSelector)).Click();
+        }
+
+    public bool SelectedTabInProjectScopeChangesSection(string tabName)
         {
             return Driver.IsElementDisplayed(By.XPath($".//div//span[contains(text(),'{tabName} ')]"));
         }

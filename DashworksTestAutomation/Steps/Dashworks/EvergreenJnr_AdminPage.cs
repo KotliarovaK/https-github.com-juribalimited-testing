@@ -559,6 +559,7 @@ namespace DashworksTestAutomation.Steps.Dashworks
                 }
             }
             _driver.WaitWhileControlIsNotDisplayed<ProjectsPage>(() => projectElement.SuccessMessage);
+            Thread.Sleep(15000);
             Assert.IsTrue(projectElement.SuccessTextMessage(textMessage),
                 $"{textMessage} is not displayed on the Project page");
         }
@@ -772,7 +773,7 @@ namespace DashworksTestAutomation.Steps.Dashworks
         [When(@"User selects ""(.*)"" in the Scope Project dropdown")]
         public void ThenUserSelectsInTheScopeProjectDropdown(string objectName)
         {
-            var createProjectElement = _driver.NowAt<CreateProjectPage>();
+            var createProjectElement = _driver.NowAt<ProjectsPage>();
             createProjectElement.ScopeProjectField.Click();
             createProjectElement.SelectObjectForProjectCreation(objectName);
         }
@@ -780,7 +781,7 @@ namespace DashworksTestAutomation.Steps.Dashworks
         [When(@"User selects ""(.*)"" in the Buckets Project dropdown")]
         public void WhenUserSelectsInTheBucketsProjectDropdown(string objectName)
         {
-            var createProjectElement = _driver.NowAt<CreateProjectPage>();
+            var createProjectElement = _driver.NowAt<ProjectsPage>();
             createProjectElement.BucketsProjectField.Click();
             createProjectElement.SelectObjectForProjectCreation(objectName);
         }
@@ -831,9 +832,10 @@ namespace DashworksTestAutomation.Steps.Dashworks
         }
 
         [Then(@"""(.*)"" Onboarded objects are displayed")]
-        public void ThenOnboardedObjectsAreDisplayed(string p0)
+        public void ThenOnboardedObjectsAreDisplayed(string objectsNumber)
         {
-            ScenarioContext.Current.Pending();
+            var projectElement = _driver.NowAt<BaseGridPage>();
+            projectElement.OnboardedObjectNumber(objectsNumber);
         }
 
         [When(@"User clicks Actions button on the Projects page")]
