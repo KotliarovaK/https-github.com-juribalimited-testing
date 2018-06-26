@@ -617,6 +617,7 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_BaseDashboardPage
         [NUnit.Framework.CategoryAttribute("EvergreenJnr_BaseDashboardPage")]
         [NUnit.Framework.CategoryAttribute("BaseDashboardPage")]
         [NUnit.Framework.CategoryAttribute("DAS11693")]
+        [NUnit.Framework.CategoryAttribute("DAS12867")]
         public virtual void EvergreenJnr_DevicesList_CheckThatToolTipIsDisplayedWithCreateProjectButtonFromAnUnsavedList()
         {
             System.Exception lastException = null;
@@ -651,7 +652,8 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_BaseDashboardPage
                         "Devices",
                         "EvergreenJnr_BaseDashboardPage",
                         "BaseDashboardPage",
-                        "DAS11693"});
+                        "DAS11693",
+                        "DAS12867"});
             this.ScenarioSetup(scenarioInfo);
             this.FeatureBackground();
             testRunner.When("User clicks \"Applications\" on the left-hand menu", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
