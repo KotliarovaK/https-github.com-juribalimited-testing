@@ -222,6 +222,13 @@ namespace DashworksTestAutomation.Steps.Dashworks
             menu.ColumnButton.Click();
         }
 
+        [Then(@"Column Settings was opened")]
+        public void ThenColumnSettingsWasOpened()
+        {
+            var menu = _driver.NowAt<ApplicationsDetailsTabsMenu>();
+            Assert.IsTrue(menu.ColumnSettingsPanel.Displayed(), "Column Settings is not opened");
+        }
+
         [When(@"User clicks Filter button on the Column Settings panel")]
         public void WhenUserClicksFilterButtonOnTheColumnSettingsPanel()
         {

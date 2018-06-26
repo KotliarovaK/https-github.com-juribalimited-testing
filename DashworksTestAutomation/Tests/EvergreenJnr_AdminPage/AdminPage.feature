@@ -1004,7 +1004,8 @@ Scenario: EvergreenJnr_AdminPage_CheckingThatTheProjectIdColumnIsAddedAndDisplay
 	Then "Projects" page should be displayed to the user
 	When User have opened Column Settings for "Project" column
 	And User clicks Column button on the Column Settings panel
-	And User select "Project ID" checkbox on the Column Settings panel
+	Then Column Settings was opened
+	When User select "Project ID" checkbox on the Column Settings panel
 	And User clicks Column button on the Column Settings panel
 	Then following columns added to the table:
 	| ColumnName |
