@@ -611,22 +611,23 @@ Scenario: EvergreenJnr_MailboxesLists_CheckThatLinksInMailboxDetailsAreRedirecte
 	And User clicks "hartmajt" link on the Details Page
 	Then Details object page is displayed to the user
 
-@Evergreen @ALlLists @Users @EvergreenJnr_ItemDetails @ItemDetailsDisplay @DAS12765
+@Evergreen @ALlLists @Users @EvergreenJnr_ItemDetails @ItemDetailsDisplay @DAS12765 @DAS12860
 Scenario Outline: EvergreenJnr_AllLists_CheckThatBucketColumnIsDisplayedOnDetailsProjectsPages
 	When User clicks "<PageName>" on the left-hand menu
 	And User perform search by "<SearchTerm>"
 	And User click content from "<Column>" column
-	And User navigates to the "<Tab>" tab
+	And User navigates to the "Projects" tab
 	And User closes "Project Summary" section on the Details Page
 	And User opens "<SectionOpen>" section on the Details Page
 	Then "Bucket" column is displayed to the user
 
 Examples:
-	| PageName | SearchTerm     | Column   | Tab      | SectionClose      | SectionOpen           |
-	| Devices  | 001BAQXT6JWFPI | Hostname | Projects | Evergreen Buckets | Device Owner Projects |
-	| Users    | hurstbl        | Username | Projects | Evergreen Buckets | User Projects         |
-	| Users    | hurstbl        | Username | Projects | Evergreen Buckets | Mailbox Projects      |
-	| Users    | ZZZ588323      | Username | Projects | Evergreen Buckets | Device Projects       |
+	| PageName  | SearchTerm                       | Column        | SectionOpen           |
+	| Devices   | 001BAQXT6JWFPI                   | Hostname      | Device Owner Projects |
+	| Users     | hurstbl                          | Username      | User Projects         |
+	| Users     | hurstbl                          | Username      | Mailbox Projects      |
+	| Users     | ZZZ588323                        | Username      | Device Projects       |
+	| Mailboxes | 000F977AC8824FE39B8@bclabs.local | Email Address | Mailbox User Projects |
 
 @Evergreen @Devices @EvergreenJnr_ItemDetails @ItemDetailsDisplay @DAS12292
 Scenario: EvergreenJnr_DevicesLists_CheckingThatInRangeOperatorWorkingCorrectly

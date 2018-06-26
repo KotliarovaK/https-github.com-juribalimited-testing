@@ -2327,18 +2327,20 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_ItemDetails
         [NUnit.Framework.CategoryAttribute("EvergreenJnr_ItemDetails")]
         [NUnit.Framework.CategoryAttribute("ItemDetailsDisplay")]
         [NUnit.Framework.CategoryAttribute("DAS12765")]
-        [NUnit.Framework.TestCaseAttribute("Devices", "001BAQXT6JWFPI", "Hostname", "Projects", "Evergreen Buckets", "Device Owner Projects", new string[0])]
-        [NUnit.Framework.TestCaseAttribute("Users", "hurstbl", "Username", "Projects", "Evergreen Buckets", "User Projects", new string[0])]
-        [NUnit.Framework.TestCaseAttribute("Users", "hurstbl", "Username", "Projects", "Evergreen Buckets", "Mailbox Projects", new string[0])]
-        [NUnit.Framework.TestCaseAttribute("Users", "ZZZ588323", "Username", "Projects", "Evergreen Buckets", "Device Projects", new string[0])]
-        public virtual void EvergreenJnr_AllLists_CheckThatBucketColumnIsDisplayedOnDetailsProjectsPages(string pageName, string searchTerm, string column, string tab, string sectionClose, string sectionOpen, string[] exampleTags)
+        [NUnit.Framework.CategoryAttribute("DAS12860")]
+        [NUnit.Framework.TestCaseAttribute("Devices", "001BAQXT6JWFPI", "Hostname", "Device Owner Projects", new string[0])]
+        [NUnit.Framework.TestCaseAttribute("Users", "hurstbl", "Username", "User Projects", new string[0])]
+        [NUnit.Framework.TestCaseAttribute("Users", "hurstbl", "Username", "Mailbox Projects", new string[0])]
+        [NUnit.Framework.TestCaseAttribute("Users", "ZZZ588323", "Username", "Device Projects", new string[0])]
+        [NUnit.Framework.TestCaseAttribute("Mailboxes", "000F977AC8824FE39B8@bclabs.local", "Email Address", "Mailbox User Projects", new string[0])]
+        public virtual void EvergreenJnr_AllLists_CheckThatBucketColumnIsDisplayedOnDetailsProjectsPages(string pageName, string searchTerm, string column, string sectionOpen, string[] exampleTags)
         {
             System.Exception lastException = null;
             for (int i = 0; (i <= 1); i = (i + 1))
             {
                 try
                 {
-                    this.EvergreenJnr_AllLists_CheckThatBucketColumnIsDisplayedOnDetailsProjectsPagesInternal(pageName, searchTerm, column, tab, sectionClose, sectionOpen, exampleTags);
+                    this.EvergreenJnr_AllLists_CheckThatBucketColumnIsDisplayedOnDetailsProjectsPagesInternal(pageName, searchTerm, column, sectionOpen, exampleTags);
                     return;
                 }
                 catch (System.Exception exc)
@@ -2357,7 +2359,7 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_ItemDetails
             }
         }
         
-        private void EvergreenJnr_AllLists_CheckThatBucketColumnIsDisplayedOnDetailsProjectsPagesInternal(string pageName, string searchTerm, string column, string tab, string sectionClose, string sectionOpen, string[] exampleTags)
+        private void EvergreenJnr_AllLists_CheckThatBucketColumnIsDisplayedOnDetailsProjectsPagesInternal(string pageName, string searchTerm, string column, string sectionOpen, string[] exampleTags)
         {
             string[] @__tags = new string[] {
                     "Evergreen",
@@ -2365,7 +2367,8 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_ItemDetails
                     "Users",
                     "EvergreenJnr_ItemDetails",
                     "ItemDetailsDisplay",
-                    "DAS12765"};
+                    "DAS12765",
+                    "DAS12860"};
             if ((exampleTags != null))
             {
                 @__tags = System.Linq.Enumerable.ToArray(System.Linq.Enumerable.Concat(@__tags, exampleTags));
@@ -2376,7 +2379,7 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_ItemDetails
             testRunner.When(string.Format("User clicks \"{0}\" on the left-hand menu", pageName), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
             testRunner.And(string.Format("User perform search by \"{0}\"", searchTerm), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
             testRunner.And(string.Format("User click content from \"{0}\" column", column), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-            testRunner.And(string.Format("User navigates to the \"{0}\" tab", tab), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+            testRunner.And("User navigates to the \"Projects\" tab", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
             testRunner.And("User closes \"Project Summary\" section on the Details Page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
             testRunner.And(string.Format("User opens \"{0}\" section on the Details Page", sectionOpen), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
             testRunner.Then("\"Bucket\" column is displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
