@@ -61,6 +61,13 @@ namespace DashworksTestAutomation.Steps.Dashworks
             filterElement.AddFilter(filterName, categoryName);
         }
 
+        [Then(@"setting section for ""(.*)"" filter is loaded")]
+        public void ThenSettingSectionForFilterIsLoaded(string filterName)
+        {
+            var filterElement = _driver.NowAt<FiltersElement>();
+            _driver.WaitForDataLoading();
+            Assert.IsTrue(filterElement.GetOpenedFilter(filterName).Displayed(), "Setting section for selected filter is not loaded");
+        }
 
         [When(@"User enters ""(.*)"" text in Search field at Filters Panel")]
         public void WhenUserEntersTextInSearchFieldAtFiltersPanel(string searchedText)

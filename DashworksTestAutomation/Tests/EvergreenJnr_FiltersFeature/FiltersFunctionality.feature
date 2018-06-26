@@ -420,7 +420,7 @@ Scenario: EvergreenJnr_DevicesList_CheckThatErrorsDoNotAppearAndFullDataIsDispla
 	| SelectedCheckboxes |
 	| TRUE               |
 	Then full list content is displayed to the user
-	Then There are no errors in the browser console
+	And There are no errors in the browser console
 
 @Evergreen @Devices @EvergreenJnr_FilterFeature @FilterFunctionality @DAS11760 @Delete_Newly_Created_List
 Scenario: EvergreenJnr_DevicesList_CheckThatTheSaveButtonIsNotAvailableWithoutTheFilterValue
@@ -429,13 +429,13 @@ Scenario: EvergreenJnr_DevicesList_CheckThatTheSaveButtonIsNotAvailableWithoutTh
 	When User clicks the Filters button
 	Then Filters panel is displayed to the user
 	When user select "Application Name" filter
-	When User select "Not entitled to device" in Association 
+	And User select "Not entitled to device" in Association 
 	Then Save button is not available on the Filter panel
 	When User have reset all filters
-	When User add "Application Name" filter where type is "Equals" with following Value and Association:
+	And User add "Application Name" filter where type is "Equals" with following Value and Association:
 	| Values | Association    |
 	| adobe  | Used on device |
-	When User create dynamic list with "TestListF58LY5" name on "Devices" page
+	And User create dynamic list with "TestListF58LY5" name on "Devices" page
 	Then Edit List menu is not displayed
 
 @Evergreen @Applications @EvergreenJnr_FilterFeature @FilterFunctionality @DAS11838
@@ -604,3 +604,16 @@ Scenario: EvergreenJnr_ApplicationsList_CheckThatCorrectDeviceDataIsReturnedAfte
 	| SelectedList   | Association        |
 	| StaticList6581 | Entitled to device |
 	Then "38" rows are displayed in the agGrid
+
+@Evergreen @Applications @EvergreenJnr_FilterFeature @FilterFunctionality @DAS12875
+Scenario: EvergreenJnr_ApplicationsList_CheckThatNoConsoleErrorIsDisplayedAfterEditingUserSurnameFilter
+	When User clicks "Applications" on the left-hand menu
+	Then "Applications" list should be displayed to the user
+	When User clicks the Filters button
+	Then Filters panel is displayed to the user
+	When User add "User Surname" filter where type is "Equals" with following Value and Association:
+	| Values       | Association     |
+	| Cotuand      | Entitled to app |
+	| Courtemanche |                 |
+	When User click Edit button for "User " filter
+	Then There are no errors in the browser console

@@ -763,6 +763,13 @@ namespace DashworksTestAutomation.Steps.Dashworks
             Assert.IsTrue(page.GetCreatedProjectName(projectName).Displayed(), "Created Project is not found");
         }
 
+        [Then(@"Import Project button is not displayed")]
+        public void ThenImportProjectButtonIsNotDisplayed()
+        {
+            var button = _driver.NowAt<BaseGridPage>();
+            Assert.IsFalse(button.ImportProjectButton.Displayed());
+        }
+
         [When(@"User enters ""(.*)"" in the Project Name field")]
         public void ThenUserEntersInTheProjectNameField(string projectText)
         {
@@ -807,6 +814,7 @@ namespace DashworksTestAutomation.Steps.Dashworks
         public void WhenUserClickOnBackButton()
         {
             var button = _driver.NowAt<BaseGridPage>();
+            Thread.Sleep(10000);
             button.BackToTableButton.Click();
         }
 
