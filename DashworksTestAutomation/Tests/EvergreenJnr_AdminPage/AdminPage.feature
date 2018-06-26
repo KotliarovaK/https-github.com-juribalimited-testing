@@ -1072,7 +1072,7 @@ Scenario: EvergreenJnr_AdminPage_CheckThatOnboardedObjectsAreDisplayedAfterChang
 	And User selects all rows on the grid
 	And User removes selected item
 
-@Evergreen @Admin @EvergreenJnr_AdminPage @AdminPage @DAS12364 @Delete_Newly_Created_List
+@Evergreen @Admin @EvergreenJnr_AdminPage @AdminPage @DAS12364
 Scenario: EvergreenJnr_AdminPage_CheckingThatTheProjectIsUpdatedWithoutErrors
 	When User clicks Admin on the left-hand menu
 	Then Admin page should be displayed to the user
