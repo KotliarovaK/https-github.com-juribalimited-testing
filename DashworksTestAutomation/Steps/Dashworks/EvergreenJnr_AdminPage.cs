@@ -830,6 +830,12 @@ namespace DashworksTestAutomation.Steps.Dashworks
             button.ResetFiltersButton.Click();
         }
 
+        [Then(@"""(.*)"" Onboarded objects are displayed")]
+        public void ThenOnboardedObjectsAreDisplayed(string p0)
+        {
+            ScenarioContext.Current.Pending();
+        }
+
         [When(@"User clicks Actions button on the Projects page")]
         public void WhenUserClicksActionsButtonOnTheProjectsPage()
         {
