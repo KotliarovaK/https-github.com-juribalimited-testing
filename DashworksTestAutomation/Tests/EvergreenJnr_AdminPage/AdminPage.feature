@@ -963,7 +963,7 @@ Scenario: EvergreenJnr_AdminPage_CheckingThatProjectDetailsForOnboardedObjectsIs
 	And User click back button in the browser
 	When User clicks Admin on the left-hand menu
 	Then Admin page should be displayed to the user
-	When User enters "TestProject12332" text in the Search field for "Project" column
+	When User enters "TestProject12490" text in the Search field for "Project" column
 	And User selects all rows on the grid
 	And User removes selected item
 
@@ -1017,7 +1017,7 @@ Scenario: EvergreenJnr_AdminPage_CheckingThatTheProjectIdColumnIsAddedAndDisplay
 	And User removes selected item
 
 @Evergreen @Admin @EvergreenJnr_AdminPage @AdminPage @DAS11985
-Scenario: EvergreenJnr_AdminPage_CheckingThatProjectNameIsDisplayedCorrectlyWhenSpecialSymbolsAreUsedInTheProjectName 
+Scenario: EvergreenJnr_AdminPage_CheckingThatProjectNameIsDisplayedCorrectlyWhenSpecialSymbolsAreUsedInTheProjectName
 	When User clicks Admin on the left-hand menu
 	Then Admin page should be displayed to the user
 	When User clicks "Projects" link on the Admin page
@@ -1071,3 +1071,44 @@ Scenario: EvergreenJnr_AdminPage_CheckThatOnboardedObjectsAreDisplayedAfterChang
 	When User enters "TestProject20" text in the Search field for "Project" column
 	And User selects all rows on the grid
 	And User removes selected item
+
+@Evergreen @Admin @EvergreenJnr_AdminPage @AdminPage @DAS12364 @Delete_Newly_Created_List
+Scenario: EvergreenJnr_AdminPage_CheckingThatTheProjectIsUpdatedWithoutErrors
+	When User clicks Admin on the left-hand menu
+	Then Admin page should be displayed to the user
+	When User clicks "Projects" link on the Admin page
+	Then "Projects" page should be displayed to the user
+	When User clicks Create New Item button
+	Then "Create Project" page should be displayed to the user
+	When User enters "TestProject12364" in the Project Name field
+	And User selects "All Users" in the Scope Project dropdown
+	And User clicks Create button on the Create Project page
+	Then created Project with "TestProject12364" name is displayed correctly
+	When User enters "TestProject12364" text in the Search field for "Project" column
+	And User clicks content from "Project" column
+	Then Project "TestProject12364" is displayed to user
+	When User selects "Scope Changes" tab on the Project details page
+	When User expands the object to add
+	And User selects following items to the Project
+	| Item                                  |
+	| 003F5D8E1A844B1FAA5 (Hunter, Melanie) |
+	| 01FF97A1FFAC48A1803 (Aultman, Chanel) |
+	When User clicks "Devices" tab in the Project Scope Changes section
+	And User expands the object to add 
+	And User selects following items to the Project
+	| Item            |
+	| 00HA7MKAVVFDAV  |
+	| 04JYNLWLETYE0HJ |
+	When User clicks "Applications" tab in the Project Scope Changes section
+	And User expands the object to add 
+	And User selects following items to the Project
+	| Item                                             |
+	| ACDSee 4.0.2 PowerPack Trial Version (4.00.0002) |
+	| Backburner (2.1.2.0)                             |
+	And User clicks "UPDATE ALL CHANGES" button on the Projects page
+	And User clicks Update Project button on the Projects page
+	Then Success message with "6 objects queued for onboarding, 0 objects offboarded" text is displayed on the Projects page
+	When User selects "Scope Details" tab on the Project details page
+	When User selects "Scope Changes" tab on the Project details page
+	When User clicks "Applications" tab in the Project Scope Changes section
+	Then There are no errors in the browser console
