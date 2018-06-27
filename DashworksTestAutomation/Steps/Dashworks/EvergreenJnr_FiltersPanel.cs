@@ -178,6 +178,7 @@ namespace DashworksTestAutomation.Steps.Dashworks
             filtersNames.AddFilter(filterName);
             var type = new ValueFilter(_driver, operatorValue, false, table);
             type.Do();
+            _driver.WaitForDataLoading();
         }
 
         [When(@"User have created ""(.*)"" filter with column and following options:")]
