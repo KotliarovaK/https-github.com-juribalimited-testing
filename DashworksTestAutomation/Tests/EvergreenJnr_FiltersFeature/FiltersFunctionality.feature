@@ -638,3 +638,26 @@ Scenario: EvergreenJnr_UsersList_CheckThatNoConsoleErrorIsDisplayedAfterAddingUs
 	| YOG2259571 Users | Entitled to app |
 	Then "4" rows are displayed in the agGrid
 	Then There are no errors in the browser console
+
+@Evergreen @Users @EvergreenJnr_FilterFeature @FilterFunctionality @DAS12181 @Delete_Newly_Created_List
+Scenario: EvergreenJnr_UsersList_CheckThatNoErrorIsDisplayedAfterAddingAdvancedFilterForUsernameAndApplicationSavedList
+	When User clicks "Users" on the left-hand menu
+	Then "Users" list should be displayed to the user
+	When User clicks the Filters button
+	Then Filters panel is displayed to the user
+	When User add "Username" filter where type is "Contains" without added column and following value:
+	| Values |
+	| Bob    |
+	When User create dynamic list with "UsersBob" name on "Users" page
+	Then "UsersBob" list is displayed to user
+	When User clicks "Applications" on the left-hand menu
+	Then "Applications" list should be displayed to the user
+	When User clicks the Filters button
+	Then Filters panel is displayed to the user
+	When User add "User (Saved List)" filter where type is "In list" with SelectedList list and following Association:
+	| SelectedList | Association                         |
+	| UsersBob     | Has used app                        |
+	| UsersBob     | Entitled to app                     |
+	| UsersBob     | Owns a device which app was used on |
+	#Then "4" rows are displayed in the agGrid
+	Then There are no errors in the browser console
