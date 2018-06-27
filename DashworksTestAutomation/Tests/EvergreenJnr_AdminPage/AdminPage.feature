@@ -1153,9 +1153,9 @@ Scenario: EvergreenJnr_AdminPage_CheckThatWarningMessageIsDisplayedIfTryToRemove
 	When User clicks "Devices" on the left-hand menu
 	Then "Devices" list should be displayed to the user
 	When User clicks Settings button for "TestDynamicList11729" list
-	When User clicks Delete button for custom list
+	And User clicks Delete button for custom list
 	Then "TestDynamicList11729" list "list is used by 1 project, do you wish to proceed?" message is displayed in the list panel
-	Then User clicks Delete button on the warning message in the lists panel
+	And User clicks Delete button on the warning message in the lists panel
 	When User clicks Admin on the left-hand menu
 	Then Admin page should be displayed to the user
 	When User clicks "Projects" link on the Admin page
@@ -1163,9 +1163,46 @@ Scenario: EvergreenJnr_AdminPage_CheckThatWarningMessageIsDisplayedIfTryToRemove
 	When User enters "TestName11729" text in the Search field for "Project" column
 	And User clicks content from "Project" column
 	Then Project "TestName11729" is displayed to user
-	Then message with "The scope for this project refers to a deleted list, this must be updated before proceeding" text is displayed on the Projects page
-	Then There are no errors in the browser console
+	And message with "The scope for this project refers to a deleted list, this must be updated before proceeding" text is displayed on the Projects page
+	And There are no errors in the browser console
 	When User click on Back button
-	When User enters "TestName11729" text in the Search field for "Project" column
+	And User enters "TestName11729" text in the Search field for "Project" column
 	And User selects all rows on the grid
+	And User removes selected item
+
+@Evergreen @Admin @EvergreenJnr_AdminPage @AdminPage @DAS11758
+Scenario: EvergreenJnr_AdminPage_CheckThatSelectAllCheckboxIsWorkingCorrectlyOnAdminPage
+	When User clicks Admin on the left-hand menu
+	Then Admin page should be displayed to the user
+	When User clicks "Projects" link on the Admin page
+	Then "Projects" page should be displayed to the user
+	When User clicks Create New Item button
+	Then "Create Project" page should be displayed to the user
+	When User enters "1Checkbox11758" in the Project Name field
+	And User selects "All Users" in the Scope Project dropdown
+	And User clicks Create button on the Create Project page
+	Then created Project with "1Checkbox11758" name is displayed correctly
+	When User clicks Create New Item button
+	Then "Create Project" page should be displayed to the user
+	When User enters "2Checkbox11758" in the Project Name field
+	And User selects "All Users" in the Scope Project dropdown
+	And User clicks Create button on the Create Project page
+	Then created Project with "2Checkbox11758" name is displayed correctly
+	When User clicks Create New Item button
+	Then "Create Project" page should be displayed to the user
+	When User enters "3Checkbox11758" in the Project Name field
+	And User selects "All Users" in the Scope Project dropdown
+	And User clicks Create button on the Create Project page
+	Then created Project with "3Checkbox11758" name is displayed correctly
+	When User selects all rows on the grid
+	Then Select All selectbox is checked on the Admin page
+	When User select "Project" rows in the grid on the Admin page
+	| SelectedRowsName |
+	| 1Checkbox11758   |
+	Then Select All selectbox is unchecked on the Admin page
+	When User select "Project" rows in the grid on the Admin page
+	| SelectedRowsName |
+	| 1Checkbox11758   |
+	Then Select All selectbox is checked on the Admin page
+	When User enters "Checkbox11758" text in the Search field for "Project" column
 	And User removes selected item
