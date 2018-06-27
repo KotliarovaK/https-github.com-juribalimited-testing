@@ -592,11 +592,11 @@ Scenario: EvergreenJnr_ApplicationsList_CheckThatCorrectDeviceDataIsReturnedAfte
 	| Values                                     |
 	| Exemples de conception de bases de données |
 	When User click on 'Device Count (Entitled)' column header
-	When User clicks the Actions button
+	And User clicks the Actions button
 	Then Actions panel is displayed to the user
 	When User select all rows
-	When User create static list with "StaticList6581" name
-	When User clicks "Devices" on the left-hand menu
+	And User create static list with "StaticList6581" name
+	And User clicks "Devices" on the left-hand menu
 	Then "Devices" list should be displayed to the user
 	When User clicks the Filters button
 	Then Filters panel is displayed to the user
@@ -616,4 +616,25 @@ Scenario: EvergreenJnr_ApplicationsList_CheckThatNoConsoleErrorIsDisplayedAfterE
 	| Cotuand      | Entitled to app |
 	| Courtemanche |                 |
 	When User click Edit button for "User " filter
+	Then There are no errors in the browser console
+
+@Evergreen @Users @EvergreenJnr_FilterFeature @FilterFunctionality @DAS12167 @Delete_Newly_Created_List
+Scenario: EvergreenJnr_UsersList_CheckThatNoConsoleErrorIsDisplayedAfterAddingUserSavedListFilter
+	When User clicks "Users" on the left-hand menu
+	Then "Users" list should be displayed to the user
+	When User clicks the Filters button
+	Then Filters panel is displayed to the user
+	When User add "Username" filter where type is "Equals" without added column and following value:
+	| Values     |
+	| YOG2259571 |
+	When User create dynamic list with "YOG2259571 Users" name on "Users" page
+	Then "YOG2259571 Users" list is displayed to user
+	When User clicks "Applications" on the left-hand menu
+	Then "Applications" list should be displayed to the user
+	When User clicks the Filters button
+	Then Filters panel is displayed to the user
+	When User add "User (Saved List)" filter where type is "In list" with SelectedList list and following Association:
+	| SelectedList     | Association     |
+	| YOG2259571 Users | Entitled to app |
+	Then "4" rows are displayed in the agGrid
 	Then There are no errors in the browser console
