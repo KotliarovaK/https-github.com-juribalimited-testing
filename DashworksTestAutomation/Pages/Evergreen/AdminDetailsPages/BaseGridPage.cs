@@ -34,6 +34,15 @@ namespace DashworksTestAutomation.Pages.Evergreen.AdminDetailsPages
         [FindsBy(How = How.XPath, Using = "//div[@class='ag-header-cell']/span[contains(@class,'select-all')]")]
         public IWebElement SelectAllCheckBox { get; set; }
 
+        [FindsBy(How = How.XPath, Using = "//span[@class='ag-header-select-all']//span[@class='ag-checkbox-checked']")]
+        public IWebElement SelectAllCheckboxChecked { get; set; }
+
+        [FindsBy(How = How.XPath, Using = "//span[@class='ag-header-select-all']//span[@class='ag-checkbox-unchecked']")]
+        public IWebElement Unchecked { get; set; }
+
+        [FindsBy(How = How.XPath, Using = ".//span[@class='ag-selection-checkbox']")]
+        public IList<IWebElement> SelectRowsCheckboxesOnAdminPage { get; set; }
+
         [FindsBy(How = How.XPath, Using = "//div[@class='ag-header-container']/div[@class='ag-header-row']/div[@col-id]")]
         public IList<IWebElement> GridColumns { get; set; }
 
@@ -95,7 +104,7 @@ namespace DashworksTestAutomation.Pages.Evergreen.AdminDetailsPages
         public IWebElement OnboardedObjectsTable { get; set; }
 
         private By AgIconMenu = By.XPath("//span[contains(@class,'ag-icon-menu')]");
-        
+
         public override List<By> GetPageIdentitySelectors()
         {
             Driver.WaitForDataLoading();
@@ -127,6 +136,13 @@ namespace DashworksTestAutomation.Pages.Evergreen.AdminDetailsPages
         {
             string recordNameSelector = $".//a[text()='{recordName}']";
             Driver.FindElement(By.XPath(recordNameSelector)).Click();
+        }
+
+        public List<string> GetCheckboxByColumnName(string columnName)
+        {
+            By by = By.XPath(
+                $".//div[@class='ag-body-viewport']//div[@class='ag-body-container']/div/div[{GetColumnNumberByName(columnName)}]");
+            return Driver.FindElements(by).Select(x => x.Text).ToList();
         }
 
         public int GetColumnNumberByName(string columnName)
