@@ -1,10 +1,12 @@
 ﻿using System;
+using System.IO;
 using System.Linq;
 using System.Threading;
 using DashworksTestAutomation.DTO.RuntimeVariables;
 using DashworksTestAutomation.Extensions;
 using DashworksTestAutomation.Helpers;
 using DashworksTestAutomation.Pages.Evergreen.AdminDetailsPages;
+using DashworksTestAutomation.Providers;
 using DashworksTestAutomation.Utils;
 using NUnit.Framework;
 using OpenQA.Selenium;
@@ -91,6 +93,12 @@ namespace DashworksTestAutomation.Steps.Dashworks
                 case "Create Project":
                     var createProjectPage = _driver.NowAt<CreateProjectPage>();
                     StringAssert.Contains(createProjectPage.CreateProjectFormTitle.Text.ToLower(), pageTitle.ToLower(),
+                        "Incorrect page is displayed to user");
+                    break;
+
+                case "Import Project":
+                    var importProjectPage = _driver.NowAt<ImportProjectPage>();
+                    StringAssert.Contains(importProjectPage.ImportProjectFormTitle.Text.ToLower(), pageTitle.ToLower(),
                         "Incorrect page is displayed to user");
                     break;
 
@@ -263,6 +271,42 @@ namespace DashworksTestAutomation.Steps.Dashworks
             page.CancelButtonInWarning.Click();
         }
 
+        [When(@"User deselect all rows on the grid")]
+        [When(@"User selects all rows on the grid")]
+        public void WhenUserSelectsAllRowsOnTheGrid()
+        {
+            var checkbox = _driver.NowAt<BaseGridPage>();
+            checkbox.SelectAllCheckBox.Click();
+        }
+
+        [Then(@"Select All selectbox is checked on the Admin page")]
+        public void ThenSelectAllSelectboxIsCheckedOnTheAdminPage()
+        {
+            var page = _driver.NowAt<BaseGridPage>();
+            Assert.IsTrue(page.SelectAllCheckboxChecked.Displayed(), "Select All checkbox is unchecked");
+        }
+
+        [Then(@"Select All selectbox is unchecked on the Admin page")]
+        public void ThenSelectAllSelectboxIsUncheckedOnTheAdminPage()
+        {
+            var page = _driver.NowAt<BaseGridPage>();
+            Assert.IsFalse(page.SelectAllCheckboxChecked.Displayed(), "Select All checkbox is checked");
+        }
+
+        [When(@"User select ""(.*)"" rows in the grid on the Admin page")]
+        public void WhenUserSelectRowsInTheGridOnTheAdminPage(string columnName, Table table)
+        {
+            var page = _driver.NowAt<BaseGridPage>();
+            var columnContent = page.GetCheckboxByColumnName(columnName);
+            foreach (var row in table.Rows)
+            {
+                var rowIndex = columnContent.IndexOf(row["SelectedRowsName"]);
+                if (rowIndex < 0)
+                    throw new Exception($"'{row["SelectedRowsName"]}' is not found in the '{columnName}' column");
+                page.SelectRowsCheckboxesOnAdminPage[rowIndex].Click();
+            }
+        }
+
         [When(@"User selects ""(.*)"" checkbox on the Project details page")]
         public void WhenUserSelectCheckboxOnTheProjectDetailsPage(string radioButtonName)
         {
@@ -275,6 +319,69 @@ namespace DashworksTestAutomation.Steps.Dashworks
         {
             var checkbox = _driver.NowAt<ProjectsPage>();
             checkbox.SelectCheckboxByName(checkboxName);
+        }
+
+        [When(@"User clicks Import Project button")]
+        public void WhenUserClicksImportProjectButton()
+        {
+            var page = _driver.NowAt<ProjectsPage>();
+            page.ImportProjectButton.Click();
+            Logger.Write("Import Project button was clicked");
+        }
+
+        [When(@"User selects incorrect file to upload on Import Project page")]
+        public void WhenUserSelectsIncorrectFileToUploadOnImportProjectPage()
+        {
+            var page = _driver.NowAt<ImportProjectPage>();
+            IAllowsFileDetection allowsDetection = _driver;
+            allowsDetection.FileDetector = new LocalFileDetector();
+            string file = Path.GetDirectoryName(Path.GetDirectoryName(TestContext.CurrentContext.TestDirectory)) +
+                          ResourceFilesNamesProvider.IncorrectFile;
+            page.ButtonChooseFile.SendKeys(file);
+        }
+
+        [When(@"User selects correct file to upload on Import Project page")]
+        public void WhenUserSelectsCorrectFileToUploadOnImportProjectPage()
+        {
+            var page = _driver.NowAt<ImportProjectPage>();
+            IAllowsFileDetection allowsDetection = _driver;
+            allowsDetection.FileDetector = new LocalFileDetector();
+            string file = Path.GetDirectoryName(Path.GetDirectoryName(TestContext.CurrentContext.TestDirectory)) +
+                          ResourceFilesNamesProvider.CorrectFileDas12370;
+            page.ButtonChooseFile.SendKeys(file);
+        }
+
+        [Then(@"Import Project button is enabled")]
+        public void ThenImportProjectButtonIsEnabled()
+        {
+            var button = _driver.NowAt<ImportProjectPage>();
+            _driver.WaitWhileControlIsNotDisplayed<ImportProjectPage>(() => button.ImportProjectButton);
+            Assert.IsFalse(Convert.ToBoolean(button.ImportProjectButton.GetAttribute("disabled")),
+                "Import button is disabled");
+        }
+
+        [When(@"User enters ""(.*)"" in the Project Name field on Import Project page")]
+        public void ThenUserEntersInTheProjectNameFieldOnImportProjectPage(string projectName)
+        {
+            var page = _driver.NowAt<ImportProjectPage>();
+            page.ProjectNameField.SendKeys(projectName);
+        }
+
+        [When(@"User clicks Import Project button on the Import Project page")]
+        public void WhenUserClicksImportButtonOnTheImportProjectPage()
+        {
+            var page = _driver.NowAt<ImportProjectPage>();
+            _driver.WaitWhileControlIsNotDisplayed<ImportProjectPage>(() => page.ImportProjectButton);
+            page.ImportProjectButton.Click();
+            _driver.WaitForDataLoading();
+            Logger.Write("Import Project button was clicked");
+        }
+
+        [When(@"User selects ""(.*)"" in the Import dropdown on the Import Project Page")]
+        public void ThenUserSelectsInTheImportDropdownOnTheImportProjectPage(string optionName)
+        {
+            var importProjectPage = _driver.NowAt<ImportProjectPage>();
+            importProjectPage.SelectImportOption(optionName);
         }
 
         [Then(@"Delete ""(.*)"" Team in the Administration")]
@@ -559,6 +666,7 @@ namespace DashworksTestAutomation.Steps.Dashworks
                 }
             }
             _driver.WaitWhileControlIsNotDisplayed<ProjectsPage>(() => projectElement.SuccessMessage);
+            Thread.Sleep(15000);
             Assert.IsTrue(projectElement.SuccessTextMessage(textMessage),
                 $"{textMessage} is not displayed on the Project page");
         }
@@ -602,13 +710,6 @@ namespace DashworksTestAutomation.Steps.Dashworks
             var teamElement = _driver.NowAt<BucketsPage>();
             Assert.IsTrue(teamElement.AppropriateBucketName(bucketName),
                 $"{bucketName} is not displayed on the Bucket page");
-        }
-
-        [When(@"User selects all rows on the grid")]
-        public void WhenUserSelectsAllRowsOnTheGrid()
-        {
-            var checkbox = _driver.NowAt<BaseGridPage>();
-            checkbox.SelectAllCheckBox.Click();
         }
 
         [When(@"User clicks on Actions button")]
@@ -754,6 +855,21 @@ namespace DashworksTestAutomation.Steps.Dashworks
             Logger.Write("Create Project button was clicked");
         }
 
+        [Then(@"created Project with ""(.*)"" name is displayed correctly")]
+        public void ThenCreatedProjectWithNameIsDisplayedCorrectly(string projectName)
+        {
+            var page = _driver.NowAt<BaseGridPage>();
+            _driver.WaitForDataLoading();
+            Assert.IsTrue(page.GetCreatedProjectName(projectName).Displayed(), "Created Project is not found");
+        }
+
+        [Then(@"Import Project button is not displayed")]
+        public void ThenImportProjectButtonIsNotDisplayed()
+        {
+            var button = _driver.NowAt<BaseGridPage>();
+            Assert.IsFalse(button.ImportProjectButton.Displayed());
+        }
+
         [When(@"User enters ""(.*)"" in the Project Name field")]
         public void ThenUserEntersInTheProjectNameField(string projectText)
         {
@@ -764,7 +880,7 @@ namespace DashworksTestAutomation.Steps.Dashworks
         [When(@"User selects ""(.*)"" in the Scope Project dropdown")]
         public void ThenUserSelectsInTheScopeProjectDropdown(string objectName)
         {
-            var createProjectElement = _driver.NowAt<CreateProjectPage>();
+            var createProjectElement = _driver.NowAt<ProjectsPage>();
             createProjectElement.ScopeProjectField.Click();
             createProjectElement.SelectObjectForProjectCreation(objectName);
         }
@@ -772,7 +888,7 @@ namespace DashworksTestAutomation.Steps.Dashworks
         [When(@"User selects ""(.*)"" in the Buckets Project dropdown")]
         public void WhenUserSelectsInTheBucketsProjectDropdown(string objectName)
         {
-            var createProjectElement = _driver.NowAt<CreateProjectPage>();
+            var createProjectElement = _driver.NowAt<ProjectsPage>();
             createProjectElement.BucketsProjectField.Click();
             createProjectElement.SelectObjectForProjectCreation(objectName);
         }
@@ -798,6 +914,7 @@ namespace DashworksTestAutomation.Steps.Dashworks
         public void WhenUserClickOnBackButton()
         {
             var button = _driver.NowAt<BaseGridPage>();
+            Thread.Sleep(10000);
             button.BackToTableButton.Click();
         }
 
@@ -820,6 +937,13 @@ namespace DashworksTestAutomation.Steps.Dashworks
         {
             var button = _driver.NowAt<BaseGridPage>();
             button.ResetFiltersButton.Click();
+        }
+
+        [Then(@"""(.*)"" Onboarded objects are displayed")]
+        public void ThenOnboardedObjectsAreDisplayed(string objectsNumber)
+        {
+            var projectElement = _driver.NowAt<BaseGridPage>();
+            projectElement.OnboardedObjectNumber(objectsNumber);
         }
 
         [When(@"User clicks Actions button on the Projects page")]
@@ -846,6 +970,20 @@ namespace DashworksTestAutomation.Steps.Dashworks
             _driver.WaitWhileControlIsNotDisplayed<BaseGridPage>(() => projectElement.DeleteWarningMessage);
             _driver.WaitForDataLoading();
             projectElement.DeleteButtonInWarningMessage.Click();
+        }
+
+        [Then(@"""(.*)"" item was removed")]
+        public void ThenItemWasRemoved(string itemName)
+        {
+            var item = _driver.NowAt<BaseGridPage>();
+            if (item.OnboardedObjectsTable.Displayed())
+            {
+                Assert.IsTrue(!item.GetCreatedProjectName(itemName).Displayed, "Selected item was not removed");
+            }
+            else
+            {
+                Assert.IsTrue(item.NoProjectsMessage.Displayed(), "'No projects found' message is not displayed");
+            }
         }
 
         [When(@"User cancels the selection of all rows on the Projects page")]

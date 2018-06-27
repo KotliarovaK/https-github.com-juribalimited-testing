@@ -1056,3 +1056,12 @@ Scenario: EvergreenJnr_DevicesLists_CheckThatOSBranchFilterWithEquaEmptyValueIsD
 	When User clicks the Filters button
 	Then Filters panel is displayed to the user
 	Then "OS Branch is Empty" is displayed in added filter info
+
+@Evergreen @Devices @EvergreenJnr_Search @Search @DAS11466
+Scenario: EvergreenJnr_DevicesList_CheckingThatVendorFilterIsDisplayedInApplicationCategory
+	When User clicks "Devices" on the left-hand menu
+	Then "Devices" list should be displayed to the user
+	When User clicks the Filters button
+	Then Filters panel is displayed to the user
+	When User selects "Application Vendor" filter from "Application" category
+	Then setting section for "Application Vendor" filter is loaded
