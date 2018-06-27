@@ -659,5 +659,17 @@ Scenario: EvergreenJnr_UsersList_CheckThatNoErrorIsDisplayedAfterAddingAdvancedF
 	| UsersBob     | Has used app                        |
 	| UsersBob     | Entitled to app                     |
 	| UsersBob     | Owns a device which app was used on |
-	#Then "4" rows are displayed in the agGrid
+	Then "1" rows are displayed in the agGrid
+	Then There are no errors in the browser console
+
+@Evergreen @Applications @EvergreenJnr_FilterFeature @FilterFunctionality @DAS12827
+Scenario: EvergreenJnr_ApplicationsList_CheckThatUserLastLogonDateFilterWorksCorrectly
+	When User clicks "Applications" on the left-hand menu
+	Then "Applications" list should be displayed to the user
+	When User clicks the Filters button
+	Then Filters panel is displayed to the user
+	When User add "User Last Logon Date" filter where type is "Equals" with following Data Value and Association:
+	| Values      | Association  |
+	| 30 Apr 2018 | Has used app |
+	Then message 'No applications found' is displayed to the user
 	Then There are no errors in the browser console
