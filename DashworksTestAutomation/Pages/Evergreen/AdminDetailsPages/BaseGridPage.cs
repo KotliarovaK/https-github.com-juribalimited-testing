@@ -46,12 +46,6 @@ namespace DashworksTestAutomation.Pages.Evergreen.AdminDetailsPages
         [FindsBy(How = How.XPath, Using = "//div[@class='ag-header-container']/div[@class='ag-header-row']/div[@col-id]")]
         public IList<IWebElement> GridColumns { get; set; }
 
-        [FindsBy(How = How.XPath, Using = ".//div[contains(@class, 'inline-success')]")]
-        public IWebElement SuccessMessage { get; set; }
-
-        [FindsBy(How = How.XPath, Using = ".//div[contains(@class, 'inline-error ng-star-inserted')]")]
-        public IWebElement ErrorMessage { get; set; }
-
         [FindsBy(How = How.XPath, Using = ".//span[contains(text(), 'Delete')]")]
         public IWebElement DeleteValueInActions { get; set; }
 
@@ -66,12 +60,6 @@ namespace DashworksTestAutomation.Pages.Evergreen.AdminDetailsPages
 
         [FindsBy(How = How.XPath, Using = ".//button[contains(@class, 'button-small mat-raised-button')]/span[text()='DELETE']")]
         public IWebElement DeleteButtonOnPage { get; set; }
-        
-        [FindsBy(How = How.XPath, Using = ".//div[@id='messageAdmin']")]
-        public IWebElement DeleteWarningMessage { get; set; }
-
-        [FindsBy(How = How.XPath, Using = ".//button[contains(@class, 'messageAction')]/span[text()='DELETE']")]
-        public IWebElement DeleteButtonInWarningMessage { get; set; }
 
         [FindsBy(How = How.XPath, Using = ".//input[@placeholder='Search']")]
         public IWebElement SearchTextbox { get; set; }
@@ -84,9 +72,6 @@ namespace DashworksTestAutomation.Pages.Evergreen.AdminDetailsPages
 
         [FindsBy(How = How.XPath, Using = ".//button[@aria-label='Toggle panel']")]
         public IWebElement AddItemCheckbox { get; set; }
-
-        [FindsBy(How = How.XPath, Using = ".//div[@class='empty-message ng-star-inserted'][text()='No items']")]
-        public IWebElement NoItemsMessage { get; set; }
 
         [FindsBy(How = How.XPath, Using = ".//button[@aria-label='Toggle panel']")]
         public IWebElement PlusButton { get; set; }
@@ -104,6 +89,34 @@ namespace DashworksTestAutomation.Pages.Evergreen.AdminDetailsPages
         public IWebElement OnboardedObjectsTable { get; set; }
 
         private By AgIconMenu = By.XPath("//span[contains(@class,'ag-icon-menu')]");
+
+        #region Messages
+        [FindsBy(How = How.XPath, Using = "//div[text()='No projects found']")]
+        public IWebElement NoProjectsMessage { get; set; }
+
+        [FindsBy(How = How.XPath, Using = ".//div[contains(@class, 'inline-success')]")]
+        public IWebElement SuccessMessage { get; set; }
+
+        [FindsBy(How = How.XPath, Using = ".//div[contains(@class, 'inline-error ng-star-inserted')]")]
+        public IWebElement ErrorMessage { get; set; }
+
+        [FindsBy(How = How.XPath, Using = ".//div[@id='messageAdmin']")]
+        public IWebElement DeleteWarningMessage { get; set; }
+
+        [FindsBy(How = How.XPath, Using = ".//button[contains(@class, 'messageAction')]/span[text()='DELETE']")]
+        public IWebElement DeleteButtonInWarningMessage { get; set; }
+
+        [FindsBy(How = How.XPath, Using = ".//div[@class='empty-message ng-star-inserted'][text()='No items']")]
+        public IWebElement NoItemsMessage { get; set; }
+
+        public bool WarningMessageAdminPage(string text)
+        {
+            Driver.WaitForElement(By.XPath(".//div[@id='messageAdmin']"));
+            return Driver.IsElementDisplayed(
+                By.XPath($".//div[@id='messageAdmin'][text()='{text}']"));
+        }
+
+        #endregion
 
         public override List<By> GetPageIdentitySelectors()
         {
@@ -180,13 +193,6 @@ namespace DashworksTestAutomation.Pages.Evergreen.AdminDetailsPages
             Driver.WaitForDataLoading();
             Driver.WaitWhileControlIsNotDisplayed(byControl);
             Driver.FindElement(byControl).Click();
-        }
-
-        public bool WarningMessageAdminPage(string text)
-        {
-            Driver.WaitForElement(By.XPath(".//div[@id='messageAdmin']"));
-            return Driver.IsElementDisplayed(
-                By.XPath($".//div[@id='messageAdmin'][text()='{text}']"));
         }
 
         public void OpenColumnSettingsByName(string columnName)

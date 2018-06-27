@@ -972,6 +972,20 @@ namespace DashworksTestAutomation.Steps.Dashworks
             projectElement.DeleteButtonInWarningMessage.Click();
         }
 
+        [Then(@"""(.*)"" item was removed")]
+        public void ThenItemWasRemoved(string itemName)
+        {
+            var item = _driver.NowAt<BaseGridPage>();
+            if (item.OnboardedObjectsTable.Displayed())
+            {
+                Assert.IsTrue(!item.GetCreatedProjectName(itemName).Displayed, "Selected item was not removed");
+            }
+            else
+            {
+                Assert.IsTrue(item.NoProjectsMessage.Displayed(), "'No projects found' message is not displayed");
+            }
+        }
+
         [When(@"User cancels the selection of all rows on the Projects page")]
         public void WhenUserCancelsTheSelectionOfAllRowsOnTheProjectsPage()
         {
