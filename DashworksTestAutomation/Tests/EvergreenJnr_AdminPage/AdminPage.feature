@@ -1132,6 +1132,7 @@ Scenario: EvergreenJnr_AdminPage_CheckingThatTheProjectIsUpdatedWithoutErrors
 	When User enters "TestProject12364" text in the Search field for "Project" column
 	And User selects all rows on the grid
 	And User removes selected item
+	Then "TestProject12364" item was removed
 
 @Evergreen @Admin @EvergreenJnr_AdminPage @AdminPage @DAS11729 @Delete_Newly_Created_List
 Scenario: EvergreenJnr_AdminPage_CheckThatWarningMessageIsDisplayedIfTryToRemoveCreatedListThatUsedInAnyProject
