@@ -978,7 +978,7 @@ namespace DashworksTestAutomation.Steps.Dashworks
             var item = _driver.NowAt<BaseGridPage>();
             if (item.OnboardedObjectsTable.Displayed())
             {
-                Assert.IsTrue(!item.GetCreatedProjectName(itemName).Displayed, "Selected item was not removed");
+                Assert.IsFalse(item.GetCreatedProjectName(itemName).Displayed(), "Selected item was not removed");
             }
             else
             {
