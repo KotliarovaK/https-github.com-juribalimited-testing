@@ -1,10 +1,12 @@
 ﻿using System;
+using System.IO;
 using System.Linq;
 using System.Threading;
 using DashworksTestAutomation.DTO.RuntimeVariables;
 using DashworksTestAutomation.Extensions;
 using DashworksTestAutomation.Helpers;
 using DashworksTestAutomation.Pages.Evergreen.AdminDetailsPages;
+using DashworksTestAutomation.Providers;
 using DashworksTestAutomation.Utils;
 using NUnit.Framework;
 using OpenQA.Selenium;
@@ -91,6 +93,12 @@ namespace DashworksTestAutomation.Steps.Dashworks
                 case "Create Project":
                     var createProjectPage = _driver.NowAt<CreateProjectPage>();
                     StringAssert.Contains(createProjectPage.CreateProjectFormTitle.Text.ToLower(), pageTitle.ToLower(),
+                        "Incorrect page is displayed to user");
+                    break;
+
+                case "Import Project":
+                    var importProjectPage = _driver.NowAt<ImportProjectPage>();
+                    StringAssert.Contains(importProjectPage.ImportProjectFormTitle.Text.ToLower(), pageTitle.ToLower(),
                         "Incorrect page is displayed to user");
                     break;
 
@@ -275,6 +283,69 @@ namespace DashworksTestAutomation.Steps.Dashworks
         {
             var checkbox = _driver.NowAt<ProjectsPage>();
             checkbox.SelectCheckboxByName(checkboxName);
+        }
+
+        [When(@"User clicks Import Project button")]
+        public void WhenUserClicksImportProjectButton()
+        {
+            var page = _driver.NowAt<ProjectsPage>();
+            page.ImportProjectButton.Click();
+            Logger.Write("Import Project button was clicked");
+        }
+
+        [When(@"User selects incorrect file to upload on Import Project page")]
+        public void WhenUserSelectsIncorrectFileToUploadOnImportProjectPage()
+        {
+            var page = _driver.NowAt<ImportProjectPage>();
+            IAllowsFileDetection allowsDetection = _driver;
+            allowsDetection.FileDetector = new LocalFileDetector();
+            string file = Path.GetDirectoryName(Path.GetDirectoryName(TestContext.CurrentContext.TestDirectory)) +
+                          ResourceFilesNamesProvider.IncorrectFile;
+            page.ButtonChooseFile.SendKeys(file);
+        }
+
+        [When(@"User selects correct file to upload on Import Project page")]
+        public void WhenUserSelectsCorrectFileToUploadOnImportProjectPage()
+        {
+            var page = _driver.NowAt<ImportProjectPage>();
+            IAllowsFileDetection allowsDetection = _driver;
+            allowsDetection.FileDetector = new LocalFileDetector();
+            string file = Path.GetDirectoryName(Path.GetDirectoryName(TestContext.CurrentContext.TestDirectory)) +
+                          ResourceFilesNamesProvider.CorrectFileDas12370;
+            page.ButtonChooseFile.SendKeys(file);
+        }
+
+        [Then(@"Import Project button is enabled")]
+        public void ThenImportProjectButtonIsEnabled()
+        {
+            var button = _driver.NowAt<ImportProjectPage>();
+            _driver.WaitWhileControlIsNotDisplayed<ImportProjectPage>(() => button.ImportProjectButton);
+            Assert.IsFalse(Convert.ToBoolean(button.ImportProjectButton.GetAttribute("disabled")),
+                "Import button is disabled");
+        }
+
+        [When(@"User enters ""(.*)"" in the Project Name field on Import Project page")]
+        public void ThenUserEntersInTheProjectNameFieldOnImportProjectPage(string projectName)
+        {
+            var page = _driver.NowAt<ImportProjectPage>();
+            page.ProjectNameField.SendKeys(projectName);
+        }
+
+        [When(@"User clicks Import Project button on the Import Project page")]
+        public void WhenUserClicksImportButtonOnTheImportProjectPage()
+        {
+            var page = _driver.NowAt<ImportProjectPage>();
+            _driver.WaitWhileControlIsNotDisplayed<ImportProjectPage>(() => page.ImportProjectButton);
+            page.ImportProjectButton.Click();
+            _driver.WaitForDataLoading();
+            Logger.Write("Import Project button was clicked");
+        }
+
+        [When(@"User selects ""(.*)"" in the Import dropdown on the Import Project Page")]
+        public void ThenUserSelectsInTheImportDropdownOnTheImportProjectPage(string optionName)
+        {
+            var importProjectPage = _driver.NowAt<ImportProjectPage>();
+            importProjectPage.SelectImportOption(optionName);
         }
 
         [Then(@"Delete ""(.*)"" Team in the Administration")]

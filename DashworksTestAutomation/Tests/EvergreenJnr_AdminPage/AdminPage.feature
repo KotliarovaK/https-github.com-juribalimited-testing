@@ -107,8 +107,8 @@ Scenario: EvergreenJnr_AdminPage_CheckThatWarningMessageIsDisplayedAfterDeleting
 	Then Settings panel is displayed to the user
 	When User clicks Delete in the list panel
 	Then "list is used by 1 project, do you wish to proceed?" message is displayed in the lists panel
-	When User clicks Delete in the warning message on the list panel 
-	And User clicks Admin on the left-hand menu
+	And User clicks Delete button on the warning message in the lists panel
+	When User clicks Admin on the left-hand menu
 	Then Admin page should be displayed to the user
 	When User clicks "Projects" link on the Admin page
 	Then "Projects" page should be displayed to the user
@@ -641,6 +641,20 @@ Scenario: EvergreenJnr_AdminPage_CheckThatSingularFoundItemLabelDisplaysOnAction
 	And User enters "K-Team" text in the Search field for "Team" column
 	Then Counter shows "1" found rows
 
+@Evergreen @Admin @EvergreenJnr_AdminPage @AdminPage @DAS12370
+Scenario: EvergreenJnr_ImportProjectPage_CheckThatImportProjectButtonEnabledAfterWarningOnImportProjectPage
+	When User clicks Admin on the left-hand menu
+	Then Admin page should be displayed to the user
+	And "Projects" page should be displayed to the user
+	When User clicks Import Project button
+	Then "Import Project" page should be displayed to the user
+	When User selects incorrect file to upload on Import Project page
+	And User selects "Import to new project" in the Import dropdown on the Import Project Page
+	And User enters "TestProjectNameDAS12370" in the Project Name field on Import Project page
+	And User clicks Import Project button on the Import Project page
+	And User selects correct file to upload on Import Project page
+	Then Import Project button is enabled
+
 @Evergreen @Admin @EvergreenJnr_AdminPage @AdminPage @DAS12333
 Scenario: EvergreenJnr_ChecksThatDeviceScopeDDLIsDisabledWhenDoNotIncludeOwnedDevicesIsSelected
 	When User clicks Admin on the left-hand menu
@@ -1068,7 +1082,7 @@ Scenario: EvergreenJnr_AdminPage_CheckThatOnboardedObjectsAreDisplayedAfterChang
 	And User clicks content from "Team" column
 	When User clicks "Buckets" tab
 	When User enters "Unassigned2" text in the Search field for "Bucket" column
-	Then "" Onboarded objects are displayed
+	Then "2" Onboarded objects are displayed
 	When User clicks Admin on the left-hand menu
 	When User enters "TestProject20" text in the Search field for "Project" column
 	And User selects all rows on the grid
@@ -1114,3 +1128,44 @@ Scenario: EvergreenJnr_AdminPage_CheckingThatTheProjectIsUpdatedWithoutErrors
 	When User selects "Scope Changes" tab on the Project details page
 	When User clicks "Applications" tab in the Project Scope Changes section
 	Then There are no errors in the browser console
+	When User click on Back button
+	When User enters "TestProject12364" text in the Search field for "Project" column
+	And User selects all rows on the grid
+	And User removes selected item
+
+@Evergreen @Admin @EvergreenJnr_AdminPage @AdminPage @DAS11729 @Delete_Newly_Created_List
+Scenario: EvergreenJnr_AdminPage_CheckThatWarningMessageIsDisplayedIfTryToRemoveCreatedListThatUsedInAnyProject
+	When User clicks "Devices" on the left-hand menu
+	Then "Devices" list should be displayed to the user
+	When User click on 'Hostname' column header
+	And User create dynamic list with "TestDynamicList11729" name on "Devices" page
+	Then "TestDynamicList11729" list is displayed to user
+	When User clicks Admin on the left-hand menu
+	Then Admin page should be displayed to the user
+	When User clicks "Projects" link on the Admin page
+	Then "Projects" page should be displayed to the user
+	When User clicks Create New Item button
+	Then "Create Project" page should be displayed to the user
+	When User enters "TestName11729" in the Project Name field
+	And User selects "TestDynamicList11729" in the Scope Project dropdown
+	And User clicks Create button on the Create Project page
+	Then created Project with "TestName11729" name is displayed correctly
+	When User clicks "Devices" on the left-hand menu
+	Then "Devices" list should be displayed to the user
+	When User clicks Settings button for "TestDynamicList11729" list
+	When User clicks Delete button for custom list
+	Then "TestDynamicList11729" list "list is used by 1 project, do you wish to proceed?" message is displayed in the list panel
+	Then User clicks Delete button on the warning message in the lists panel
+	When User clicks Admin on the left-hand menu
+	Then Admin page should be displayed to the user
+	When User clicks "Projects" link on the Admin page
+	Then "Projects" page should be displayed to the user
+	When User enters "TestName11729" text in the Search field for "Project" column
+	And User clicks content from "Project" column
+	Then Project "TestName11729" is displayed to user
+	Then message with "The scope for this project refers to a deleted list, this must be updated before proceeding" text is displayed on the Projects page
+	Then There are no errors in the browser console
+	When User click on Back button
+	When User enters "TestName11729" text in the Search field for "Project" column
+	And User selects all rows on the grid
+	And User removes selected item
