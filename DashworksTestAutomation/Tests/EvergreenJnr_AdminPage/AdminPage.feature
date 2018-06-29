@@ -48,7 +48,7 @@ Scenario: EvergreenJnr_AdminPage_CheckThatErrorIsNotDisplayedWhenCreateBucketWit
 	And There are no errors in the browser console
 	And Delete "TestBucket1" Bucket in the Administration
 
-@Evergreen @Admin @EvergreenJnr_AdminPage @AdminPage @DAS11726
+@Evergreen @Admin @EvergreenJnr_AdminPage @AdminPage @DAS11726 @DAS12761
 Scenario: EvergreenJnr_AdminPage_CheckThatCreateButtonIsDisabledForEmptyProjectName
 	When User clicks Admin on the left-hand menu
 	Then Admin page should be displayed to the user
@@ -59,6 +59,15 @@ Scenario: EvergreenJnr_AdminPage_CheckThatCreateButtonIsDisabledForEmptyProjectN
 	When User enters " " in the Project Name field
 	And User selects "All Devices" in the Scope Project dropdown
 	Then Create Project button is disabled
+	When User enters "All Devices Project" in the Project Name field
+	And User clicks Create button on the Create Project page
+	When User clicks Create New Item button
+	Then "Create Project" page should be displayed to the user
+	When User enters "all devices project" in the Project Name field
+	And User selects "All Devices" in the Scope Project dropdown
+	And User clicks Create button on the Create Project page
+	Then Error message with "A project already exists with this name" text is displayed
+	And Delete "All Devices Project" Project in the Administration
 
 @Evergreen @Admin @EvergreenJnr_AdminPage @AdminPage @DAS11726
 Scenario: EvergreenJnr_AdminPage_CheckThatCreateButtonIsDisabledForEmptyBucketName
@@ -227,7 +236,7 @@ Scenario: EvergreenJnr_AdminPage_CheckThatYouCanNotDeleteTheDefaultBucketWarning
 	Then "You can not delete the default bucket" warning message is not displayed on the Buckets page
 	Then Warning message with "These bucket will be permanently deleted and any objects within them reassigned to the default bucket" text is displayed on the Admin page
 
-@Evergreen @Admin @EvergreenJnr_AdminPage @AdminPage @DAS12182 @Not_Run
+@Evergreen @Admin @EvergreenJnr_AdminPage @AdminPage @DAS12182
 Scenario: EvergreenJnr_AdminPage_CheckThatNumberOfApplicationsInProjectScopeIsCorrectlyUpdated
 	When User clicks Admin on the left-hand menu
 	Then Admin page should be displayed to the user
@@ -250,7 +259,10 @@ Scenario: EvergreenJnr_AdminPage_CheckThatNumberOfApplicationsInProjectScopeIsCo
 	And User selects "Scope Changes" tab on the Project details page
 	And User clicks "Applications" tab in the Project Scope Changes section
 	Then "Applications to add (0 of 247 selected)" is displayed to the user in the Project Scope Changes section
-	And Delete "TestProject5" Project in the Administration
+	When User click on Back button
+	When User enters "TestProject5" text in the Search field for "Project" column
+	When User selects all rows on the grid
+	And User removes selected item
 
 @Evergreen @Admin @EvergreenJnr_AdminPage @AdminPage @DAS12154 @DAS12742 @Delete_Newly_Created_List
 Scenario: EvergreenJnr_AdminPage_CheckThatWarningMessageIsNotDisplayedWhenDeletingListUsingInTheProjectThatWasDeleted
@@ -352,7 +364,7 @@ Scenario: EvergreenJnr_AdminPage_CheckThatErrorsDoNotAppearAfterUpdatingTeamDesc
 	And There are no errors in the browser console
 	And Delete "TestTeam1" Team in the Administration
 
-@Evergreen @Admin @EvergreenJnr_AdminPage @AdminPage @DAS11765 @DAS12170
+@Evergreen @Admin @EvergreenJnr_AdminPage @AdminPage @DAS11765 @DAS12170 @Not_Run
 Scenario: EvergreenJnr_AdminPage_CheckThatMailboxesAreSuccessfullyAddedToBuckets
 	When User clicks Admin on the left-hand menu
 	Then Admin page should be displayed to the user
@@ -405,7 +417,7 @@ Scenario: EvergreenJnr_AdminPage_CheckThatAllAssociationsAreSelectedByDefaultInT
 	Then All Association are selected by default
 	And Delete "TestProject7" Project in the Administration
 
-@Evergreen @Admin @EvergreenJnr_AdminPage @AdminPage @DAS12170
+@Evergreen @Admin @EvergreenJnr_AdminPage @AdminPage @DAS12170 @Not_Run
 Scenario: EvergreenJnr_AdminPage_CheckThatConsoleErrorsAreNotDisplayedAfterAddingDevicesInTheBuckets
 	When User clicks Admin on the left-hand menu
 	Then Admin page should be displayed to the user
@@ -435,7 +447,7 @@ Scenario: EvergreenJnr_AdminPage_CheckThatErrorsDoNotAppearAfterAddingDevicesToT
 	Then No items text is displayed
 	And There are no errors in the browser console
 
-@Evergreen @Admin @EvergreenJnr_AdminPage @AdminPage @DAS12170
+@Evergreen @Admin @EvergreenJnr_AdminPage @AdminPage @DAS12170 @Not_Run
 Scenario: EvergreenJnr_AdminPage_CheckThatConsoleErrorsAreNotDisplayedAfterAddingUsersInTheBuckets
 	When User clicks Admin on the left-hand menu
 	Then Admin page should be displayed to the user
@@ -641,7 +653,7 @@ Scenario: EvergreenJnr_AdminPage_CheckThatSingularFoundItemLabelDisplaysOnAction
 	And User enters "K-Team" text in the Search field for "Team" column
 	Then Counter shows "1" found rows
 
-@Evergreen @Admin @EvergreenJnr_AdminPage @AdminPage @DAS12370
+@Evergreen @Admin @EvergreenJnr_AdminPage @AdminPage @DAS12370 @Not_Run
 Scenario: EvergreenJnr_ImportProjectPage_CheckThatImportProjectButtonEnabledAfterWarningOnImportProjectPage
 	When User clicks Admin on the left-hand menu
 	Then Admin page should be displayed to the user
@@ -857,7 +869,7 @@ Scenario: EvergreenJnr_AdminPage_CheckingThatRedBannerWithOkMessageIsNotDisplaye
 	And User selects all rows on the grid
 	And User removes selected item
 
-@Evergreen @Admin @EvergreenJnr_AdminPage @AdminPage @DAS12796 @DAS12872 @Delete_Newly_Created_List @Not_Run
+@Evergreen @Admin @EvergreenJnr_AdminPage @AdminPage @DAS12796 @DAS12872 @Delete_Newly_Created_List
 Scenario Outline: EvergreenJnr_AdminPage_CheckThatNumberOfObjectIsUpdatedInTheScopeChangesOfProjectAfterTheChangeCustomList
 	When User clicks "<ListName>" on the left-hand menu
 	Then "<ListName>" list should be displayed to the user
@@ -1132,6 +1144,7 @@ Scenario: EvergreenJnr_AdminPage_CheckingThatTheProjectIsUpdatedWithoutErrors
 	When User enters "TestProject12364" text in the Search field for "Project" column
 	And User selects all rows on the grid
 	And User removes selected item
+	Then "TestProject12364" item was removed
 
 @Evergreen @Admin @EvergreenJnr_AdminPage @AdminPage @DAS11729 @Delete_Newly_Created_List
 Scenario: EvergreenJnr_AdminPage_CheckThatWarningMessageIsDisplayedIfTryToRemoveCreatedListThatUsedInAnyProject
@@ -1153,9 +1166,9 @@ Scenario: EvergreenJnr_AdminPage_CheckThatWarningMessageIsDisplayedIfTryToRemove
 	When User clicks "Devices" on the left-hand menu
 	Then "Devices" list should be displayed to the user
 	When User clicks Settings button for "TestDynamicList11729" list
-	When User clicks Delete button for custom list
+	And User clicks Delete button for custom list
 	Then "TestDynamicList11729" list "list is used by 1 project, do you wish to proceed?" message is displayed in the list panel
-	Then User clicks Delete button on the warning message in the lists panel
+	And User clicks Delete button on the warning message in the lists panel
 	When User clicks Admin on the left-hand menu
 	Then Admin page should be displayed to the user
 	When User clicks "Projects" link on the Admin page
@@ -1163,9 +1176,46 @@ Scenario: EvergreenJnr_AdminPage_CheckThatWarningMessageIsDisplayedIfTryToRemove
 	When User enters "TestName11729" text in the Search field for "Project" column
 	And User clicks content from "Project" column
 	Then Project "TestName11729" is displayed to user
-	Then message with "The scope for this project refers to a deleted list, this must be updated before proceeding" text is displayed on the Projects page
-	Then There are no errors in the browser console
+	And message with "The scope for this project refers to a deleted list, this must be updated before proceeding" text is displayed on the Projects page
+	And There are no errors in the browser console
 	When User click on Back button
-	When User enters "TestName11729" text in the Search field for "Project" column
+	And User enters "TestName11729" text in the Search field for "Project" column
 	And User selects all rows on the grid
+	And User removes selected item
+
+@Evergreen @Admin @EvergreenJnr_AdminPage @AdminPage @DAS11758
+Scenario: EvergreenJnr_AdminPage_CheckThatSelectAllCheckboxIsWorkingCorrectlyOnAdminPage
+	When User clicks Admin on the left-hand menu
+	Then Admin page should be displayed to the user
+	When User clicks "Projects" link on the Admin page
+	Then "Projects" page should be displayed to the user
+	When User clicks Create New Item button
+	Then "Create Project" page should be displayed to the user
+	When User enters "1Checkbox11758" in the Project Name field
+	And User selects "All Users" in the Scope Project dropdown
+	And User clicks Create button on the Create Project page
+	Then created Project with "1Checkbox11758" name is displayed correctly
+	When User clicks Create New Item button
+	Then "Create Project" page should be displayed to the user
+	When User enters "2Checkbox11758" in the Project Name field
+	And User selects "All Users" in the Scope Project dropdown
+	And User clicks Create button on the Create Project page
+	Then created Project with "2Checkbox11758" name is displayed correctly
+	When User clicks Create New Item button
+	Then "Create Project" page should be displayed to the user
+	When User enters "3Checkbox11758" in the Project Name field
+	And User selects "All Users" in the Scope Project dropdown
+	And User clicks Create button on the Create Project page
+	Then created Project with "3Checkbox11758" name is displayed correctly
+	When User selects all rows on the grid
+	Then Select All selectbox is checked on the Admin page
+	When User select "Project" rows in the grid on the Admin page
+	| SelectedRowsName |
+	| 1Checkbox11758   |
+	Then Select All selectbox is unchecked on the Admin page
+	When User select "Project" rows in the grid on the Admin page
+	| SelectedRowsName |
+	| 1Checkbox11758   |
+	Then Select All selectbox is checked on the Admin page
+	When User enters "Checkbox11758" text in the Search field for "Project" column
 	And User removes selected item

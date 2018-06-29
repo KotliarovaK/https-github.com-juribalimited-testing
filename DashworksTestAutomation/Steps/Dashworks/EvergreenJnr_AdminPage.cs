@@ -271,6 +271,42 @@ namespace DashworksTestAutomation.Steps.Dashworks
             page.CancelButtonInWarning.Click();
         }
 
+        [When(@"User deselect all rows on the grid")]
+        [When(@"User selects all rows on the grid")]
+        public void WhenUserSelectsAllRowsOnTheGrid()
+        {
+            var checkbox = _driver.NowAt<BaseGridPage>();
+            checkbox.SelectAllCheckBox.Click();
+        }
+
+        [Then(@"Select All selectbox is checked on the Admin page")]
+        public void ThenSelectAllSelectboxIsCheckedOnTheAdminPage()
+        {
+            var page = _driver.NowAt<BaseGridPage>();
+            Assert.IsTrue(page.SelectAllCheckboxChecked.Displayed(), "Select All checkbox is unchecked");
+        }
+
+        [Then(@"Select All selectbox is unchecked on the Admin page")]
+        public void ThenSelectAllSelectboxIsUncheckedOnTheAdminPage()
+        {
+            var page = _driver.NowAt<BaseGridPage>();
+            Assert.IsFalse(page.SelectAllCheckboxChecked.Displayed(), "Select All checkbox is checked");
+        }
+
+        [When(@"User select ""(.*)"" rows in the grid on the Admin page")]
+        public void WhenUserSelectRowsInTheGridOnTheAdminPage(string columnName, Table table)
+        {
+            var page = _driver.NowAt<BaseGridPage>();
+            var columnContent = page.GetCheckboxByColumnName(columnName);
+            foreach (var row in table.Rows)
+            {
+                var rowIndex = columnContent.IndexOf(row["SelectedRowsName"]);
+                if (rowIndex < 0)
+                    throw new Exception($"'{row["SelectedRowsName"]}' is not found in the '{columnName}' column");
+                page.SelectRowsCheckboxesOnAdminPage[rowIndex].Click();
+            }
+        }
+
         [When(@"User selects ""(.*)"" checkbox on the Project details page")]
         public void WhenUserSelectCheckboxOnTheProjectDetailsPage(string radioButtonName)
         {
@@ -676,13 +712,6 @@ namespace DashworksTestAutomation.Steps.Dashworks
                 $"{bucketName} is not displayed on the Bucket page");
         }
 
-        [When(@"User selects all rows on the grid")]
-        public void WhenUserSelectsAllRowsOnTheGrid()
-        {
-            var checkbox = _driver.NowAt<BaseGridPage>();
-            checkbox.SelectAllCheckBox.Click();
-        }
-
         [When(@"User clicks on Actions button")]
         public void ThenUserClicksOnActionsButton()
         {
@@ -941,6 +970,20 @@ namespace DashworksTestAutomation.Steps.Dashworks
             _driver.WaitWhileControlIsNotDisplayed<BaseGridPage>(() => projectElement.DeleteWarningMessage);
             _driver.WaitForDataLoading();
             projectElement.DeleteButtonInWarningMessage.Click();
+        }
+
+        [Then(@"""(.*)"" item was removed")]
+        public void ThenItemWasRemoved(string itemName)
+        {
+            var item = _driver.NowAt<BaseGridPage>();
+            if (item.OnboardedObjectsTable.Displayed())
+            {
+                Assert.IsFalse(item.GetCreatedProjectName(itemName).Displayed(), "Selected item was not removed");
+            }
+            else
+            {
+                Assert.IsTrue(item.NoProjectsMessage.Displayed(), "'No projects found' message is not displayed");
+            }
         }
 
         [When(@"User cancels the selection of all rows on the Projects page")]
