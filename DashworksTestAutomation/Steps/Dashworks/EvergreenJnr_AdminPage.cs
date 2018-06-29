@@ -933,6 +933,13 @@ namespace DashworksTestAutomation.Steps.Dashworks
             searchElement.GetSearchFieldByColumnName(columnName, text);
         }
 
+        [Then(@"Search fields for ""(.*)"" column contain correctly value")]
+        public void ThenSearchFieldsForColumnContainCorrectlyValue(string columnName)
+        {
+            var searchFild = _driver.NowAt<BaseGridPage>();
+            Assert.IsTrue(searchFild.GetSearchFieldTextByColumnName(columnName).Displayed(), "Incorrect contain value for search field");
+        }
+
         [When(@"User clicks Reset Filters button on the Admin page")]
         public void WhenUserClicksResetFiltersButtonOnTheAdminPage()
         {

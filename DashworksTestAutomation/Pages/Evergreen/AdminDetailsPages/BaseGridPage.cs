@@ -185,6 +185,13 @@ namespace DashworksTestAutomation.Pages.Evergreen.AdminDetailsPages
             Driver.FindElement(byControl).SendKeys(text);
         }
 
+        public IWebElement GetSearchFieldTextByColumnName(string columnName)
+        {
+            var selector = By.XPath($".//div[@role='presentation']/div[2]/div[{GetColumnNumberByName(columnName)}]//div[@class='ag-floating-filter-full-body']//input[@placeholder='Search']");
+            Driver.WaitWhileControlIsNotDisplayed(selector);
+            return Driver.FindElement(selector);
+        }
+
         public void ClickContentByColumnName(string columnName)
         {
             By byControl =
