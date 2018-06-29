@@ -49,6 +49,16 @@ namespace DashworksTestAutomation.Pages.Evergreen.AdminDetailsPages
             };
         }
 
+        public string GetDllPanelHeight()
+        {
+            return Driver.FindElement(By.XPath("//div[@class='cdk-overlay-pane']")).GetCssValue("height");
+        }
+
+        public string GetDllPanelWidth()
+        {
+            return Driver.FindElement(By.XPath("//div[@class='cdk-overlay-pane']")).GetCssValue("width");
+        }
+
         public void NavigateToProjectTabByName(string tabName)
         {
             var tab = Driver.FindElement(By.XPath($".//ul[@class='subMenu-items ng-star-inserted']//span[text()='{tabName}']"));
