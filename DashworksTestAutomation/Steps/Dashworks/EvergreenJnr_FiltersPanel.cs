@@ -54,6 +54,13 @@ namespace DashworksTestAutomation.Steps.Dashworks
             filterElement.AddFilter(filterName);
         }
 
+        [When(@"User clicks Save filter button")]
+        public void WhenUserClicksSaveFilterButton()
+        {
+            var filterElement = _driver.NowAt<FiltersElement>();
+            filterElement.SaveButton.Click();
+        }
+
         [When(@"User selects ""(.*)"" filter from ""(.*)"" category")]
         public void WhenUserSelectsFilterFromCategory(string filterName, string categoryName)
         {
@@ -85,6 +92,14 @@ namespace DashworksTestAutomation.Steps.Dashworks
             _driver.WaitWhileControlIsNotDisplayed<FiltersElement>(() => filterElement.LookupFilterSearchTextbox);
             filterElement.LookupFilterSearchTextbox.Clear();
             filterElement.LookupFilterSearchTextbox.SendKeys(searchedText);
+        }
+
+        [When(@"User clicks checkbox at selected Lookup Filter")]
+        public void WhenUserClicksCheckboxAtSelectedLookupFilter()
+        {
+            var filterElement = _driver.NowAt<FiltersElement>();
+            _driver.WaitForDataLoading();
+            filterElement.LookupFilterCheckbox.Click();
         }
 
         [When(@"User enters ""(.*)"" text in Search field at selected Filter")]
