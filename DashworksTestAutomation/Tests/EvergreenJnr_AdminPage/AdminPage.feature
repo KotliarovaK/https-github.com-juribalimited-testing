@@ -1284,3 +1284,29 @@ Scenario: EvergreenJnr_AdminPage_CheckThatImpossibleToCreateSameNamedProjectUsin
 	When User enters "11770" text in the Search field for "Project" column
 	And User selects all rows on the grid
 	And User removes selected item
+
+@Evergreen @Admin @EvergreenJnr_AdminPage @AdminPage @DAS11881
+Scenario: EvergreenJnr_AdminPage_CheckThatEmptyGreenAlertLineIsNotDisplayedOnProjectScopeChangesPageAfterMakingSomeChangesOnScopePage
+	When User clicks Admin on the left-hand menu
+	Then Admin page should be displayed to the user
+	When User clicks "Projects" link on the Admin page
+	Then "Projects" page should be displayed to the user
+	When User clicks Create New Item button
+	Then "Create Project" page should be displayed to the user
+	When User enters "TestName11881" in the Project Name field
+	And User selects "All Users" in the Scope Project dropdown
+	And User clicks Create button on the Create Project page
+	Then created Project with "TestName11881" name is displayed correctly
+	And Success message with "Your project has been created" text is displayed on the Projects page
+	When User enters "TestName11881" text in the Search field for "Project" column
+	And User clicks content from "Project" column
+	Then Project "TestName11881" is displayed to user
+	When User selects "Scope Details" tab on the Project details page
+	And User navigates to the "Application Scope" tab in the Scope section on the Project details page
+	And User selects "Do not include applications" checkbox on the Project details page
+	And User selects "Scope Changes" tab on the Project details page
+	Then Warning message is not displayed on the Admin page
+	When User click on Back button
+	And User enters "TestName11881" text in the Search field for "Project" column
+	And User selects all rows on the grid
+	And User removes selected item
