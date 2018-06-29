@@ -978,8 +978,8 @@ Scenario: EvergreenJnr_AllLists_CheckThatFilterTextDisplaysActualListName
 	When User clicks "Applications" on the left-hand menu
 	Then "Applications" list should be displayed to the user
 	When User click on 'Application' column header
-	When User create dynamic list with "ApplicationList" name on "Applications" page
-	When User clicks "Devices" on the left-hand menu
+	And User create dynamic list with "ApplicationList" name on "Applications" page
+	And User clicks "Devices" on the left-hand menu
 	Then "Devices" list should be displayed to the user
 	When User clicks the Filters button
 	Then Filters panel is displayed to the user
@@ -987,7 +987,7 @@ Scenario: EvergreenJnr_AllLists_CheckThatFilterTextDisplaysActualListName
 	| SelectedList    | Association        |
 	| ApplicationList | Entitled to device |
 	When User create dynamic list with "DevicesList" name on "Devices" page
-	When User clicks the List Details button
+	And User clicks the List Details button
 	Then List details panel is displayed to the user
 	When User select "Everyone can edit" sharing option
 	Then "Everyone can edit" sharing option is selected
@@ -1005,19 +1005,19 @@ Scenario: EvergreenJnr_AllLists_CheckThatFilterTextDisplaysActualListName
 	Then "DevicesList" list is displayed to user
 	When User clicks the Filters button
 	Then Filters panel is displayed to the user
-	Then "Application in list [List not found] entitled to device" is displayed in added filter info
+	And "Application in list [List not found] entitled to device" is displayed in added filter info
 
 @Evergreen @AllLists @Evergreen_FiltersFeature @FiltersDisplay @DAS12121 @Delete_Newly_Created_List @Not_Run
 Scenario: EvergreenJnr_AllLists_CheckThatTextInTheFilterPanelDisplaysTheCurrentListName
 	When User clicks "Applications" on the left-hand menu
 	Then "Applications" list should be displayed to the user
 	When User click on 'Application' column header
-	When User create dynamic list with "ApplicationList1" name on "Applications" page
-	When User navigates to the "All Applications" list
+	And User create dynamic list with "ApplicationList1" name on "Applications" page
+	And User navigates to the "All Applications" list
 	Then "Applications" list should be displayed to the user
 	When User click on 'Vendor' column header
-	When User create dynamic list with "ApplicationList2" name on "Applications" page
-	When User clicks "Devices" on the left-hand menu
+	And User create dynamic list with "ApplicationList2" name on "Applications" page
+	And User clicks "Devices" on the left-hand menu
 	Then "Devices" list should be displayed to the user
 	When User clicks the Filters button
 	Then Filters panel is displayed to the user
@@ -1031,13 +1031,13 @@ Scenario: EvergreenJnr_AllLists_CheckThatTextInTheFilterPanelDisplaysTheCurrentL
 	When User clicks "Applications" on the left-hand menu
 	Then "Applications" list should be displayed to the user
 	When User removes custom list with "ApplicationList1" name
-	When User clicks "Devices" on the left-hand menu
+	And User clicks "Devices" on the left-hand menu
 	Then "Devices" list should be displayed to the user
 	When User navigates to the "DevicesList1" list
 	Then "(Application (Saved List) = {LIST_ID} ASSOCIATION = ("used on device"))" text is displayed in filter container for "ApplicationList1" list name
 	When User clicks the Filters button
 	Then Filters panel is displayed to the user
-	Then "Application in list [List not found] used on device" is displayed in added filter info
+	And "Application in list [List not found] used on device" is displayed in added filter info
 	When User click Edit button for "Application" filter
 	Then "ApplicationList2" list is displayed for Saved List filter
 
@@ -1050,12 +1050,12 @@ Scenario: EvergreenJnr_DevicesLists_CheckThatOSBranchFilterWithEquaEmptyValueIsD
 	When User add "OS Branch" filter where type is "Equals" with added column and following checkboxes:
 	| SelectedCheckboxes |
 	| Empty              |
-	When User create custom list with "TestList5433" name
-	When User navigates to the "All Devices" list
-	When User navigates to the "TestList5433" list
-	When User clicks the Filters button
+	And User create custom list with "TestList5433" name
+	And User navigates to the "All Devices" list
+	And User navigates to the "TestList5433" list
+	And User clicks the Filters button
 	Then Filters panel is displayed to the user
-	Then "OS Branch is Empty" is displayed in added filter info
+	And "OS Branch is Empty" is displayed in added filter info
 
 @Evergreen @Devices @EvergreenJnr_Search @Search @DAS11466
 Scenario: EvergreenJnr_DevicesList_CheckingThatVendorFilterIsDisplayedInApplicationCategory
@@ -1065,3 +1065,18 @@ Scenario: EvergreenJnr_DevicesList_CheckingThatVendorFilterIsDisplayedInApplicat
 	Then Filters panel is displayed to the user
 	When User selects "Application Vendor" filter from "Application" category
 	Then setting section for "Application Vendor" filter is loaded
+
+@Evergreen @Applications @Evergreen_FiltersFeature @FiltersDisplay @DAS12854
+Scenario: EvergreenJnr_ApplicationsList_CheckThatCorrectValuesAreDisplayedforUserKeyFilters
+	When User clicks "Applications" on the left-hand menu
+	Then "Applications" list should be displayed to the user
+	When User clicks the Filters button
+	Then Filters panel is displayed to the user
+	When User add "User Key" filter where type is "Less than" with following Data and Association:
+	| Values | Association     |
+	| 2      | Entitled to app |
+	And User Add And "User Key" filter where type is "Greater than" with following Data and Association:
+	| Values | Association     |
+	| 8      | Entitled to app |
+	Then "User whose Key is less than 2 entitled to app" is displayed in added filter info
+	And "User whose Key is greater than 8 entitled to app" is displayed in added filter info

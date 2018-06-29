@@ -388,9 +388,9 @@ namespace DashworksTestAutomation.Helpers
         }
     }
 
-    public class DateAssociationFilter : BaseFilter
+    public class DataAssociationFilter : BaseFilter
     {
-            public DateAssociationFilter(RemoteWebDriver driver, string operatorValue, Table table) : base(
+            public DataAssociationFilter(RemoteWebDriver driver, string operatorValue, Table table) : base(
                 driver, operatorValue, false)
             {
                 Table = table;
@@ -405,10 +405,10 @@ namespace DashworksTestAutomation.Helpers
                 foreach (var row in Table.Rows)
                 {
                     _driver.FindElement(By.XPath(
-                            ".//div[@class='mat-form-field-infix']//input[@id='mat-input-2']"))
+                            ".//div[@class='mat-form-field-infix']//input[contains(@id, 'mat-input')]"))
                         .Click();
                     _driver.FindElement(By.XPath(
-                            ".//div[@class='mat-form-field-infix']//input[@id='mat-input-2']"))
+                            ".//div[@class='mat-form-field-infix']//input[contains(@id, 'mat-input')]"))
                         .SendKeys(row["Values"]);
                 }
 

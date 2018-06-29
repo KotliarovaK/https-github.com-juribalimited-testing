@@ -668,7 +668,7 @@ Scenario: EvergreenJnr_ApplicationsList_CheckThatUserLastLogonDateFilterWorksCor
 	Then "Applications" list should be displayed to the user
 	When User clicks the Filters button
 	Then Filters panel is displayed to the user
-	When User add "User Last Logon Date" filter where type is "Equals" with following Data Value and Association:
+	When User add "User Last Logon Date" filter where type is "Equals" with following Data and Association:
 	| Values      | Association  |
 	| 30 Apr 2018 | Has used app |
 	Then message 'No applications found' is displayed to the user
