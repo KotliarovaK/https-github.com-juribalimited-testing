@@ -75,6 +75,9 @@ Scenario: EvergreenJnr_AdminPage_CheckThatCreateButtonIsDisabledForEmptyBucketNa
 	Then Admin page should be displayed to the user
 	When User clicks "Buckets" link on the Admin page
 	Then "Buckets" page should be displayed to the user
+	Then Search fields  for "Devices" column contain correctly value
+	Then Search fields  for "Users" column contain correctly value
+	Then Search fields  for "Mailboxes" column contain correctly value
 	When User clicks Create New Item button
 	Then "Create Bucket" page should be displayed to the user
 	When User enters " " in the Bucket Name field
