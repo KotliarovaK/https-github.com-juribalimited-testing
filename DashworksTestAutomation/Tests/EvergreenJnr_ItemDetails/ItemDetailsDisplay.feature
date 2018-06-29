@@ -643,3 +643,20 @@ Scenario: EvergreenJnr_DevicesLists_CheckingThatInRangeOperatorWorkingCorrectly
 	| DateFrom | DateTo  |
 	| 5222014  | 5202018 |
 	Then "2" rows found label displays on Details Page
+
+@Evergreen @AllLists @EvergreenJnr_ItemDetails @ItemDetailsDisplay @DAS12386
+Scenario Outline: EvergreenJnr_AllLists_CheckThatHyperlinkForKeyColumnsIsRedirectedToTheRelevantDetailsPage
+	When User add following columns using URL to the "<PageName>" page:
+	| ColumnName |
+	| <Column>   |
+	Then Content is present in the newly added column
+	| ColumnName |
+	| <Column>   |
+	When User click content from "<Column>" column
+	Then Details object page is displayed to the user
+Examples:
+	| PageName     | Column          |
+	| Devices      | Device Key      |
+	| Users        | User Key        |
+	| Applications | Application Key |
+	| Mailboxes    | Mailbox Key     |
