@@ -75,6 +75,9 @@ Scenario: EvergreenJnr_AdminPage_CheckThatCreateButtonIsDisabledForEmptyBucketNa
 	Then Admin page should be displayed to the user
 	When User clicks "Buckets" link on the Admin page
 	Then "Buckets" page should be displayed to the user
+	Then Search fields  for "Devices" column contain correctly value
+	Then Search fields  for "Users" column contain correctly value
+	Then Search fields  for "Mailboxes" column contain correctly value
 	When User clicks Create New Item button
 	Then "Create Bucket" page should be displayed to the user
 	When User enters " " in the Bucket Name field
@@ -901,6 +904,7 @@ Scenario Outline: EvergreenJnr_AdminPage_CheckThatNumberOfObjectIsUpdatedInTheSc
 	And User clicks content from "Project" column
 	Then Project "<ProjectName>" is displayed to user
 	And "<NewCount>" is displayed to the user in the Project Scope Changes section
+	When User click on Back button
 	When User enters "TestProject45" text in the Search field for "Project" column
 	And User selects all rows on the grid
 	And User removes selected item
@@ -934,6 +938,7 @@ Scenario: EvergreenJnr_AdminPage_CheckThatObjectsIsOnboardedToTheProjectWithClon
 	| 01BQIYGGUW5PRP6 |
 	And User clicks "UPDATE DEVICE CHANGES" button on the Projects page
 	And User clicks Update Project button on the Projects page
+	Then Success message with "1 object queued for onboarding, 0 objects offboarded" text is displayed on the Projects page
 	When User selects "Queue" tab on the Project details page
 	Then following objects are onboarded
 	| Object          |
@@ -1218,4 +1223,93 @@ Scenario: EvergreenJnr_AdminPage_CheckThatSelectAllCheckboxIsWorkingCorrectlyOnA
 	| 1Checkbox11758   |
 	Then Select All selectbox is checked on the Admin page
 	When User enters "Checkbox11758" text in the Search field for "Project" column
+	And User removes selected item
+
+@Evergreen @Admin @EvergreenJnr_AdminPage @AdminPage @DAS11770 @Delete_Newly_Created_Team
+Scenario: EvergreenJnr_AdminPage_CheckThatImpossibleToCreateSameNamedTeamUsingTheSpaceAsAFirstSymbol
+	When User clicks Admin on the left-hand menu
+	Then Admin page should be displayed to the user
+	When User clicks "Teams" link on the Admin page
+	Then "Teams" page should be displayed to the user
+	When User clicks Create New Item button
+	Then "Create Team" page should be displayed to the user
+	When User enters "11770" in the Team Name field
+	And User enters "test" in the Team Description field
+	And User clicks Create Team button on the Create Team page
+	Then Success message is displayed and contains "The team has been created" text
+	When User clicks Create New Item button
+	Then "Create Team" page should be displayed to the user
+	When User enters " 11770" in the Team Name field
+	And User enters "test" in the Team Description field
+	And User clicks Create Team button on the Create Team page
+	Then Error message with "A team already exists with this name" text is displayed
+	And Delete "11770" Team in the Administration
+
+@Evergreen @Admin @EvergreenJnr_AdminPage @AdminPage @DAS11770
+Scenario: EvergreenJnr_AdminPage_CheckThatImpossibleToCreateSameNamedBucketUsingTheSpaceAsAFirstSymbol
+	When User clicks Admin on the left-hand menu
+	Then Admin page should be displayed to the user
+	When User clicks "Buckets" link on the Admin page
+	Then "Buckets" page should be displayed to the user
+	When User clicks Create New Item button
+	Then "Create Bucket" page should be displayed to the user
+	When User enters "11770" in the Bucket Name field
+	And User selects "Admin IT" team in the Team dropdown on the Buckets page
+	And User clicks Create button on the Create Bucket page
+	Then Success message is displayed and contains "The bucket has been created, Click here to view the 11770 bucket" text
+	When User clicks Create New Item button
+	Then "Create Bucket" page should be displayed to the user
+	When User enters " 11770" in the Bucket Name field
+	And User selects "Admin IT" team in the Team dropdown on the Buckets page
+	And User clicks Create button on the Create Bucket page
+	Then Error message with "A bucket already exists with this name" text is displayed
+	And Delete "11770" Bucket in the Administration
+
+@Evergreen @Admin @EvergreenJnr_AdminPage @AdminPage @DAS11770
+Scenario: EvergreenJnr_AdminPage_CheckThatImpossibleToCreateSameNamedProjectUsingTheSpaceAsAFirstSymbol
+	When User clicks Admin on the left-hand menu
+	Then Admin page should be displayed to the user
+	When User clicks "Projects" link on the Admin page
+	Then "Projects" page should be displayed to the user
+	When User clicks Create New Item button
+	Then "Create Project" page should be displayed to the user
+	When User enters "11770" in the Project Name field
+	And User selects "All Users" in the Scope Project dropdown
+	And User clicks Create button on the Create Project page
+	Then created Project with "11770" name is displayed correctly
+	Then Success message with "Your project has been created" text is displayed on the Projects page
+	When User clicks Create New Item button
+	Then "Create Project" page should be displayed to the user
+	When User enters " 11770" in the Project Name field
+	And User selects "All Users" in the Scope Project dropdown
+	And User clicks Create button on the Create Project page
+	Then Error message with "A project already exists with this name" text is displayed
+	When User enters "11770" text in the Search field for "Project" column
+	And User selects all rows on the grid
+	And User removes selected item
+
+@Evergreen @Admin @EvergreenJnr_AdminPage @AdminPage @DAS11881
+Scenario: EvergreenJnr_AdminPage_CheckThatEmptyGreenAlertLineIsNotDisplayedOnProjectScopeChangesPageAfterMakingSomeChangesOnScopePage
+	When User clicks Admin on the left-hand menu
+	Then Admin page should be displayed to the user
+	When User clicks "Projects" link on the Admin page
+	Then "Projects" page should be displayed to the user
+	When User clicks Create New Item button
+	Then "Create Project" page should be displayed to the user
+	When User enters "TestName11881" in the Project Name field
+	And User selects "All Users" in the Scope Project dropdown
+	And User clicks Create button on the Create Project page
+	Then created Project with "TestName11881" name is displayed correctly
+	And Success message with "Your project has been created" text is displayed on the Projects page
+	When User enters "TestName11881" text in the Search field for "Project" column
+	And User clicks content from "Project" column
+	Then Project "TestName11881" is displayed to user
+	When User selects "Scope Details" tab on the Project details page
+	And User navigates to the "Application Scope" tab in the Scope section on the Project details page
+	And User selects "Do not include applications" checkbox on the Project details page
+	And User selects "Scope Changes" tab on the Project details page
+	Then Warning message is not displayed on the Admin page
+	When User click on Back button
+	And User enters "TestName11881" text in the Search field for "Project" column
+	And User selects all rows on the grid
 	And User removes selected item

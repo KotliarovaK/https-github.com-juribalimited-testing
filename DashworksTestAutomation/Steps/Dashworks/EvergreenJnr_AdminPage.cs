@@ -250,27 +250,6 @@ namespace DashworksTestAutomation.Steps.Dashworks
                 $"{text} is not displayed in the Project Scope Changes section");
         }
 
-        [Then(@"Warning message with ""(.*)"" text is displayed on the Admin page")]
-        public void ThenWarningMessageWithTextIsDisplayedOnTheAdminPage(string text)
-        {
-            var page = _driver.NowAt<BaseGridPage>();
-            Assert.IsTrue(page.WarningMessageAdminPage(text), "Warning Message is not displayed");
-        }
-
-        [Then(@"Warning message is not displayed on the Admin page")]
-        public void ThenWarningMessageIsNotDisplayedOnTheAdminPage()
-        {
-            var page = _driver.NowAt<BaseGridPage>();
-            Assert.IsFalse(page.DeleteWarningMessage.Displayed());
-        }
-
-        [When(@"User clicks Cancel button in the warning message on the Admin page")]
-        public void WhenUserClicksCancelButtonInTheWarningMessageOnTheAdminPage()
-        {
-            var page = _driver.NowAt<BaseGridPage>();
-            page.CancelButtonInWarning.Click();
-        }
-
         [When(@"User deselect all rows on the grid")]
         [When(@"User selects all rows on the grid")]
         public void WhenUserSelectsAllRowsOnTheGrid()
@@ -551,15 +530,6 @@ namespace DashworksTestAutomation.Steps.Dashworks
             Logger.Write("Delete button was clicked");
         }
 
-        [When(@"User clicks Delete button in the warning message")]
-        public void WhenUserClicksDeleteButtonInTheWarningMessage()
-        {
-            var button = _driver.NowAt<BaseGridPage>();
-            _driver.WaitWhileControlIsNotDisplayed<BaseGridPage>(() => button.DeleteWarningMessage);
-            button.DeleteButtonInWarningMessage.Click();
-            Logger.Write("Delete button was clicked");
-        }
-
         [When(@"User clicks Delete button in Actions")]
         public void WhenUserClicksDeleteButtonInActions()
         {
@@ -609,6 +579,37 @@ namespace DashworksTestAutomation.Steps.Dashworks
         }
 
         #region Message
+
+
+        [Then(@"Warning message with ""(.*)"" text is displayed on the Admin page")]
+        public void ThenWarningMessageWithTextIsDisplayedOnTheAdminPage(string text)
+        {
+            var page = _driver.NowAt<BaseGridPage>();
+            Assert.IsTrue(page.WarningMessageAdminPage(text), "Warning Message is not displayed");
+        }
+
+        [Then(@"Warning message is not displayed on the Admin page")]
+        public void ThenWarningMessageIsNotDisplayedOnTheAdminPage()
+        {
+            var page = _driver.NowAt<BaseGridPage>();
+            Assert.IsFalse(page.DeleteWarningMessage.Displayed());
+        }
+
+        [When(@"User clicks Cancel button in the warning message on the Admin page")]
+        public void WhenUserClicksCancelButtonInTheWarningMessageOnTheAdminPage()
+        {
+            var page = _driver.NowAt<BaseGridPage>();
+            page.CancelButtonInWarning.Click();
+        }
+
+        [When(@"User clicks Delete button in the warning message")]
+        public void WhenUserClicksDeleteButtonInTheWarningMessage()
+        {
+            var button = _driver.NowAt<BaseGridPage>();
+            _driver.WaitWhileControlIsNotDisplayed<BaseGridPage>(() => button.DeleteWarningMessage);
+            button.DeleteButtonInWarningMessage.Click();
+            Logger.Write("Delete button was clicked");
+        }
 
         [Then(@"Success message is displayed and contains ""(.*)"" text")]
         public void ThenSuccessMessageIsDisplayedAndContainsText(string text)
@@ -930,6 +931,13 @@ namespace DashworksTestAutomation.Steps.Dashworks
         {
             var searchElement = _driver.NowAt<BaseGridPage>();
             searchElement.GetSearchFieldByColumnName(columnName, text);
+        }
+
+        [Then(@"Search fields  for ""(.*)"" column contain correctly value")]
+        public void ThenSearchFieldsForColumnContainCorrectlyValue(string columnName)
+        {
+            var searchFild = _driver.NowAt<BaseGridPage>();
+            Assert.IsTrue(searchFild.GetSearchFieldTextByColumnName(columnName).Displayed(), "Incorrect contain value for search field");
         }
 
         [When(@"User clicks Reset Filters button on the Admin page")]

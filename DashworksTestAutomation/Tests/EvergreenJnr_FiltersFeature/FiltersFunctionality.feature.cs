@@ -2563,7 +2563,7 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_FiltersFeature
                         "30 Apr 2018",
                         "Has used app"});
             testRunner.When("User add \"User Last Logon Date\" filter where type is \"Equals\" with following Data" +
-                    " Value and Association:", ((string)(null)), table50, "When ");
+                    " and Association:", ((string)(null)), table50, "When ");
             testRunner.Then("message \'No applications found\' is displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
             testRunner.Then("There are no errors in the browser console", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
             this.ScenarioCleanup();

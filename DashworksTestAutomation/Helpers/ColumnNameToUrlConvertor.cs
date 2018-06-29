@@ -210,6 +210,9 @@ namespace DashworksTestAutomation.Helpers
                 case "Device Count (Entitled)":
                     return "computerEntitlements";
 
+                case "Mailbox Key":
+                    return "mailboxKey";
+
                 default:
                     throw new Exception($"{columnName} column not found in convertor");
             }
