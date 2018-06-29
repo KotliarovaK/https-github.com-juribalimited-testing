@@ -76,9 +76,9 @@ namespace DashworksTestAutomation.Pages.Evergreen.AdminDetailsPages
 
         public void SelectRadioButtonByName(string radioButtonName)
         {
-            var tab = Driver.FindElement(
-                By.XPath($".//div[@class='mat-radio-label-content'][text()='{radioButtonName}']"));
-            tab.Click();
+            var button = By.XPath($"//div[text()='{radioButtonName}']/../div[@class='mat-radio-container']");
+            Driver.WaitWhileControlIsNotDisplayed(button);
+            Driver.FindElement(button).Click();
         }
 
         public void SelectCheckboxByName(string checkboxName)
