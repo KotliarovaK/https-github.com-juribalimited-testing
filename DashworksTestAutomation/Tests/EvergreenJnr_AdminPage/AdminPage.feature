@@ -267,7 +267,7 @@ Scenario: EvergreenJnr_AdminPage_CheckThatNumberOfApplicationsInProjectScopeIsCo
 	When User selects all rows on the grid
 	And User removes selected item
 
-@Evergreen @Admin @EvergreenJnr_AdminPage @AdminPage @DAS12154 @DAS12742 @Delete_Newly_Created_List
+@Evergreen @Admin @EvergreenJnr_AdminPage @AdminPage @DAS12154 @DAS12742 @DAS12872 @Delete_Newly_Created_List
 Scenario: EvergreenJnr_AdminPage_CheckThatWarningMessageIsNotDisplayedWhenDeletingListUsingInTheProjectThatWasDeleted
 	When User clicks "Devices" on the left-hand menu
 	Then "Devices" list should be displayed to the user
@@ -289,6 +289,8 @@ Scenario: EvergreenJnr_AdminPage_CheckThatWarningMessageIsNotDisplayedWhenDeleti
 	And User selects "TestList0A78U9" in the Scope Project dropdown
 	And User clicks Create button on the Create Project page
 	Then "Projects" page should be displayed to the user
+	Then Success message with "Your project has been created" text is displayed on the Projects page
+	And There are no errors in the browser console
 	When User enters "TestProject6" text in the Search field for "Project" column
 	And User selects all rows on the grid
 	And User removes selected item
