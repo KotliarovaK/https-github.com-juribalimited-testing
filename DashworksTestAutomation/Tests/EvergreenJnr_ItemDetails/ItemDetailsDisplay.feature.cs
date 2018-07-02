@@ -975,6 +975,7 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_ItemDetails
         [NUnit.Framework.CategoryAttribute("ItemDetailsDisplay")]
         [NUnit.Framework.CategoryAttribute("DAS11667")]
         [NUnit.Framework.CategoryAttribute("DAS12321")]
+        [NUnit.Framework.CategoryAttribute("DAS11921")]
         public virtual void EvergreenJnr_MailboxesLists_CheckThatNoConsoleErrorsWhenViewingMailboxDetails()
         {
             System.Exception lastException = null;
@@ -1009,7 +1010,8 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_ItemDetails
                         "EvergreenJnr_ItemDetails",
                         "ItemDetailsDisplay",
                         "DAS11667",
-                        "DAS12321"});
+                        "DAS12321",
+                        "DAS11921"});
             this.ScenarioSetup(scenarioInfo);
             this.FeatureBackground();
             testRunner.When("User clicks \"Mailboxes\" on the left-hand menu", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
