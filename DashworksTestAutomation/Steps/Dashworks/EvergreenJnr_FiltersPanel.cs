@@ -135,6 +135,15 @@ namespace DashworksTestAutomation.Steps.Dashworks
             filterElement.GetAssociationCheckbox(checkboxName);
         }
 
+        [When(@"User is deselect ""(.*)"" in Association")]
+        public void WhenUserIsDeselectInAssociation(string checkboxName)
+        {
+            var filterElement = _driver.NowAt<FiltersElement>();
+            filterElement.AssociationSearchTextbox.Click();
+            filterElement.AssociationSearchTextbox.SendKeys(checkboxName);
+            filterElement.GetAssociationCheckbox(checkboxName);
+        }
+
         [Then(@"search values in Association section working by specific search criteria")]
         public void ThenSearchValuesInAssociationSectionWorkingBySpecificSearchCriteria()
         {
