@@ -1802,8 +1802,8 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_AdminPage
             table6.AddRow(new string[] {
                         "Vendor is adobe",
                         "Installed on device"});
-            testRunner.When("User add \"Application (Saved List)\" filter where type is \"In list\" with SelectedL" +
-                    "ist list and following Association:", ((string)(null)), table6, "When ");
+            testRunner.When("User add \"Application (Saved List)\" filter where type is \"In list\" with Selected " +
+                    "Value and following Association:", ((string)(null)), table6, "When ");
             testRunner.Then("\"Application\" filter is added to the list", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
             testRunner.When("User create dynamic list with \"DevicesList1584\" name on \"Devices\" page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
             testRunner.Then("\"DevicesList1584\" list is displayed to user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
@@ -4006,8 +4006,8 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_AdminPage
             table30.AddRow(new string[] {
                         "ListName12349",
                         "Used on device"});
-            testRunner.When("User add \"Application (Saved List)\" filter where type is \"In list\" with SelectedL" +
-                    "ist list and following Association:", ((string)(null)), table30, "When ");
+            testRunner.When("User add \"Application (Saved List)\" filter where type is \"In list\" with Selected " +
+                    "Value and following Association:", ((string)(null)), table30, "When ");
             testRunner.Then("\"Application (Saved List)\" filter is added to the list", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
             testRunner.And("\"99\" rows are displayed in the agGrid", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
             testRunner.And("\"Application in list ListName12349 used on device\" is displayed in added filter i" +

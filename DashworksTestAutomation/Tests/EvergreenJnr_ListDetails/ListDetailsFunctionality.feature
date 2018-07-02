@@ -277,7 +277,7 @@ Scenario: EvergreenJnr_AllLists_CheckThatWarningMessageIsNotDisplayedInTheListPa
 	Then "Devices" list should be displayed to the user
 	When User clicks the Filters button
 	Then Filters panel is displayed to the user
-	When User add "Application (Saved List)" filter where type is "In list" with SelectedList list and following Association:
+	When User add "Application (Saved List)" filter where type is "In list" with Selected Value and following Association:
 	| SelectedList   | Association        |
 	| TestList1262B7 | Entitled to device |
 	Then "Application" filter is added to the list
@@ -312,7 +312,7 @@ Scenario: EvergreenJnr_AllLists_CheckThatTwoDependencyAreDisplayedInTheDependent
 	Then "Devices" list should be displayed to the user
 	When User clicks the Filters button
 	Then Filters panel is displayed to the user
-	When User add "Application (Saved List)" filter where type is "In list" with SelectedList list and following Association:
+	When User add "Application (Saved List)" filter where type is "In list" with Selected Value and following Association:
 	| SelectedList | Association        |
 	| Application1 | Entitled to device |
 	Then "Application" filter is added to the list
@@ -363,7 +363,7 @@ Scenario: EvergreenJnr_AllLists_CheckThatListDoesNotExistErrorWhenViewingDepende
 	Then "Devices" list should be displayed to the user
 	When User clicks the Filters button
 	Then Filters panel is displayed to the user
-	When User add "Application (Saved List)" filter where type is "In list" with SelectedList list and following Association:
+	When User add "Application (Saved List)" filter where type is "In list" with Selected Value and following Association:
 	| SelectedList | Association        |
 	| Adobe Apps   | Entitled to device |
 	Then "Application" filter is added to the list
@@ -395,7 +395,7 @@ Scenario: EvergreenJnr_AllLists_CheckThatListPanelDoesNotExistErrorWhenViewingDe
 	Then "Devices" list should be displayed to the user
 	When User clicks the Filters button
 	Then Filters panel is displayed to the user
-	When User add "Application (Saved List)" filter where type is "In list" with SelectedList list and following Association:
+	When User add "Application (Saved List)" filter where type is "In list" with Selected Value and following Association:
 	| SelectedList | Association        |
 	| A1           | Entitled to device |
 	Then "Application" filter is added to the list
@@ -425,7 +425,7 @@ Scenario: EvergreenJnr_AllLists_CheckDisplayingListDeletionWarningMessageForDepe
 	Then "Devices" list should be displayed to the user
 	When User clicks the Filters button
 	Then Filters panel is displayed to the user
-	When User add "Application (Saved List)" filter where type is "In list" with SelectedList list and following Association:
+	When User add "Application (Saved List)" filter where type is "In list" with Selected Value and following Association:
 	| SelectedList | Association    |
 	| Application1 | Used on device |
 	When User create dynamic list with "Devices1" name on "Devices" page
@@ -464,7 +464,7 @@ Scenario: EvergreenJnr_AllLists_CheckDisplayingListDeletionWarningMessageForDepe
 	Then "Devices" list should be displayed to the user
 	When User clicks the Filters button
 	Then Filters panel is displayed to the user
-	When User add "Application (Saved List)" filter where type is "In list" with SelectedList list and following Association:
+	When User add "Application (Saved List)" filter where type is "In list" with Selected Value and following Association:
 	| SelectedList | Association    |
 	| Application2 | Used on device |
 	And User create dynamic list with "Devices2" name on "Devices" page
@@ -497,7 +497,7 @@ Scenario: EvergreenJnr_AllLists_CheckDisplayingListDeletionWarningMessageForDepe
 	Then "Devices" list should be displayed to the user
 	When User clicks the Filters button
 	Then Filters panel is displayed to the user
-	When User add "Application (Saved List)" filter where type is "In list" with SelectedList list and following Association:
+	When User add "Application (Saved List)" filter where type is "In list" with Selected Value and following Association:
 	| SelectedList | Association    |
 	| Application3 | Used on device |
 	And User create dynamic list with "Devices3" name on "Devices" page
@@ -506,7 +506,7 @@ Scenario: EvergreenJnr_AllLists_CheckDisplayingListDeletionWarningMessageForDepe
 	Then "Devices" list should be displayed to the user
 	When User clicks the Filters button
 	Then Filters panel is displayed to the user
-	When User add "Application (Saved List)" filter where type is "In list" with SelectedList list and following Association:
+	When User add "Application (Saved List)" filter where type is "In list" with Selected Value and following Association:
 	| SelectedList | Association        |
 	| Application3 | Entitled to device |
 	And User create dynamic list with "Devices4" name on "Devices" page
@@ -542,7 +542,7 @@ Scenario: EvergreenJnr_AllLists_CheckDisplayingListDeletionWarningMessageForTwoD
 	Then "Devices" list should be displayed to the user
 	When User clicks the Filters button
 	Then Filters panel is displayed to the user
-	When User add "Application (Saved List)" filter where type is "In list" with SelectedList list and following Association:
+	When User add "Application (Saved List)" filter where type is "In list" with Selected Value and following Association:
 	| SelectedList | Association    |
 	| Application4 | Used on device |
 	| Application5 | Used on device |

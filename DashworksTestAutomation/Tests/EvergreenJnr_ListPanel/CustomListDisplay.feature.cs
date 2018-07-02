@@ -1427,8 +1427,8 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_ListPanel
             table35.AddRow(new string[] {
                         "TestList569889",
                         "Not used on device"});
-            testRunner.When("User add \"Application (Saved List)\" filter where type is \"In list\" with SelectedL" +
-                    "ist list and following Association:", ((string)(null)), table35, "When ");
+            testRunner.When("User add \"Application (Saved List)\" filter where type is \"In list\" with Selected " +
+                    "Value and following Association:", ((string)(null)), table35, "When ");
             testRunner.Then("\"Application\" filter is added to the list", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
             testRunner.When("User create dynamic list with \"Applications List TestName\" name on \"Devices\" page" +
                     "", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");

@@ -922,8 +922,8 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_FiltersFeature
             table15.AddRow(new string[] {
                         "TestListD75CD3",
                         "Not used on device"});
-            testRunner.When("User add \"Application (Saved List)\" filter where type is \"In list\" with SelectedL" +
-                    "ist list and following Association:", ((string)(null)), table15, "When ");
+            testRunner.When("User add \"Application (Saved List)\" filter where type is \"In list\" with Selected " +
+                    "Value and following Association:", ((string)(null)), table15, "When ");
             testRunner.Then("\"Application in list TestListD75CD3 not used on device\" is displayed in added fil" +
                     "ter info", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
             testRunner.Then("\"17,126\" rows are displayed in the agGrid", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
@@ -2280,8 +2280,8 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_FiltersFeature
             table44.AddRow(new string[] {
                         "StaticList6581",
                         "Entitled to device"});
-            testRunner.When("User add \"Application (Saved List)\" filter where type is \"In list\" with SelectedL" +
-                    "ist list and following Association:", ((string)(null)), table44, "When ");
+            testRunner.When("User add \"Application (Saved List)\" filter where type is \"In list\" with Selected " +
+                    "Value and following Association:", ((string)(null)), table44, "When ");
             testRunner.Then("\"38\" rows are displayed in the agGrid", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
             this.ScenarioCleanup();
         }
@@ -2420,8 +2420,8 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_FiltersFeature
             table47.AddRow(new string[] {
                         "YOG2259571 Users",
                         "Entitled to app"});
-            testRunner.When("User add \"User (Saved List)\" filter where type is \"In list\" with SelectedList lis" +
-                    "t and following Association:", ((string)(null)), table47, "When ");
+            testRunner.When("User add \"User (Saved List)\" filter where type is \"In list\" with Selected Value a" +
+                    "nd following Association:", ((string)(null)), table47, "When ");
             testRunner.Then("\"4\" rows are displayed in the agGrid", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
             testRunner.And("There are no errors in the browser console", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
             this.ScenarioCleanup();
@@ -2502,8 +2502,8 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_FiltersFeature
             table49.AddRow(new string[] {
                         "UsersBob",
                         "Owns a device which app was used on"});
-            testRunner.When("User add \"User (Saved List)\" filter where type is \"In list\" with SelectedList lis" +
-                    "t and following Association:", ((string)(null)), table49, "When ");
+            testRunner.When("User add \"User (Saved List)\" filter where type is \"In list\" with Selected Value a" +
+                    "nd following Association:", ((string)(null)), table49, "When ");
             testRunner.Then("\"1\" rows are displayed in the agGrid", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
             testRunner.And("There are no errors in the browser console", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
             this.ScenarioCleanup();

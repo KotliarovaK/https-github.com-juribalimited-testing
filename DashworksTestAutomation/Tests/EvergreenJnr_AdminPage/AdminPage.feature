@@ -519,7 +519,7 @@ Scenario: EvergreenJnr_AdminPage_CheckThatNoErrorsAreDisplayedInTheProjectScopeC
 	Then "Devices" list should be displayed to the user
 	When User clicks the Filters button
 	Then Filters panel is displayed to the user
-	When User add "Application (Saved List)" filter where type is "In list" with SelectedList list and following Association:
+	When User add "Application (Saved List)" filter where type is "In list" with Selected Value and following Association:
 	| SelectedList    | Association         |
 	| Vendor is adobe | Used on device      |
 	| Vendor is adobe | Entitled to device  |
@@ -1347,7 +1347,7 @@ Scenario: EvergreenJnr_AdminPage_CheckThat500ISEInvalidColumnNameIsNotDisplayedW
 	Then "Devices" list should be displayed to the user
 	When User clicks the Filters button
 	Then Filters panel is displayed to the user
-	When User add "Application (Saved List)" filter where type is "In list" with SelectedList list and following Association:
+	When User add "Application (Saved List)" filter where type is "In list" with Selected Value and following Association:
 	| SelectedList  | Association    |
 	| ListName12349 | Used on device |
 	Then "Application (Saved List)" filter is added to the list
