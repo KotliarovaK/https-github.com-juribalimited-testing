@@ -1086,7 +1086,7 @@ Scenario: EvergreenJnr_ApplicationsList_CheckThatCorrectValuesAreDisplayedforUse
 	Then "User whose Key is less than 2 entitled to app" is displayed in added filter info
 	And "User whose Key is greater than 8 entitled to app" is displayed in added filter info
 
-@Evergreen @Users @Evergreen_FiltersFeature @FiltersDisplay @DAS12520 @Delete_Newly_Created_List
+@Evergreen @Users @Evergreen_FiltersFeature @FiltersDisplay @DAS12520 @DAS12785 @Delete_Newly_Created_List
 Scenario: EvergreenJnr_UsersList_CheckThatFloorFilterEqualsEmptyValueIsDisplayedCorrectlyInTheFilterPanel
 	When User clicks "Users" on the left-hand menu
 	Then "Users" list should be displayed to the user
@@ -1103,6 +1103,8 @@ Scenario: EvergreenJnr_UsersList_CheckThatFloorFilterEqualsEmptyValueIsDisplayed
 	And User clicks the Filters button
 	Then Filters panel is displayed to the user
 	And "Floor is Empty" is displayed in added filter info
+	When User click Edit button for "Floor" filter
+	Then "Empty" value is displayed in the filter info
 
 @Evergreen @Applications @Evergreen_FiltersFeature @FiltersDisplay @DAS12520 @Delete_Newly_Created_List
 Scenario: EvergreenJnr_ApplicationsList_CheckThatUserRegionFilterEqualsEmptyValueIsDisplayedCorrectlyInTheFilterPanel

@@ -329,6 +329,13 @@ namespace DashworksTestAutomation.Pages.Evergreen
             return Driver.FindElement(By.XPath(editFilterSelector));
         }
 
+        public IWebElement GetFilterValue(string value)
+        {
+            var editFilterSelector =
+                $".//li[@aria-live='assertive']//span[text()='{value}']";
+            return Driver.FindElement(By.XPath(editFilterSelector));
+        }
+
         public bool ListNameForSavedListFilter(string filterName)
         {
             return Driver.IsElementDisplayed(By.XPath($".//div[@class='list-container']/span[text()='{filterName}']"));
