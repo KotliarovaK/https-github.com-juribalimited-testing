@@ -1376,3 +1376,21 @@ Scenario: EvergreenJnr_AdminPage_CheckThat500ISEInvalidColumnNameIsNotDisplayedW
 	And User enters "TestProject12349" text in the Search field for "Project" column
 	And User selects all rows on the grid
 	And User removes selected item
+
+@Evergreen @Admin @EvergreenJnr_AdminPage @AdminPage @DAS12777
+Scenario: EvergreenJnr_AdminPage_CheckThatErrorIsNotDisplayedWhenCreatingProjectWithCloneEvergreenBucketsToProjectBuckets
+	When User clicks Admin on the left-hand menu
+	Then Admin page should be displayed to the user
+	When User clicks "Projects" link on the Admin page
+	Then "Projects" page should be displayed to the user
+	When User clicks Create New Item button
+	Then "Create Project" page should be displayed to the user
+	When User enters "TestProject22" in the Project Name field
+	And User selects "All Devices" in the Scope Project dropdown
+	When User selects "Clone evergreen buckets to project buckets" in the Buckets Project dropdown
+	And User clicks Create button on the Create Project page
+	Then Success message with "Your project has been created" text is displayed on the Projects page
+	And There are no errors in the browser console
+	When User enters "TestProject22" text in the Search field for "Project" column
+	And User selects all rows on the grid
+	And User removes selected item
