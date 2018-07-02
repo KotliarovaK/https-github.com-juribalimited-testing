@@ -709,3 +709,30 @@ Scenario: EvergreenJnr_ApplicationsList_CheckThatProjectGroupCurrentStateFilters
 	| SelectedCheckboxes |
 	| UNCATEGORISED      |
 	Then "21" rows are displayed in the agGrid
+
+@Evergreen @Applications @EvergreenJnr_FilterFeature @FilterFunctionality @DAS12058 @Delete_Newly_Created_List
+Scenario: EvergreenJnr_ApplicationsList_CheckThatProjectGroupTargetStateFiltersInTheApplicationListWorksCorrectly
+	When User add following columns using URL to the "Applications" page:
+	| ColumnName          |
+	| Windows7Mi: Application Rationalisation          |
+	When User clicks the Filters button
+	Then Filters panel is displayed to the user
+	When User add "Windows7Mi: Group (Target State)" filter where type is "Equal" without added column and "Parkfield Office" Lookup option
+	When User click Edit button for "Windows7Mi: Group (Target State)" filter
+	When User enters "Administration" text in Search field at selected Lookup Filter
+	When User clicks checkbox at selected Lookup Filter
+	When User clicks Save filter button
+	Then "29" rows are displayed in the agGrid
+	When User create dynamic list with "Project Group (Target State)" name on "Applications" page
+	When User clicks the Filters button
+	Then Filters panel is displayed to the user
+	When User Add And "Windows7Mi: Application Rationalisation" filter where type is "Equal" without added column and following checkboxes:
+	| SelectedCheckboxes |
+	| KEEP               |
+	Then "9" rows are displayed in the agGrid
+	When User have removed "Windows7Mi: Application Rationalisation" filter
+	When User Add And "Windows7Mi: Application Rationalisation" filter where type is "Equal" without added column and following checkboxes:
+	| SelectedCheckboxes |
+	| UNCATEGORISED      |
+	Then "20" rows are displayed in the agGrid
+	When User have removed "Windows7Mi: Application Rationalisation" filter
