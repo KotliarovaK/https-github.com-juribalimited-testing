@@ -49,6 +49,16 @@ namespace DashworksTestAutomation.Pages.Evergreen.AdminDetailsPages
             };
         }
 
+        public string GetDllPanelHeight()
+        {
+            return Driver.FindElement(By.XPath("//div[@class='cdk-overlay-pane']")).GetCssValue("height");
+        }
+
+        public string GetDllPanelWidth()
+        {
+            return Driver.FindElement(By.XPath("//div[@class='cdk-overlay-pane']")).GetCssValue("width");
+        }
+
         public void NavigateToProjectTabByName(string tabName)
         {
             var tab = Driver.FindElement(By.XPath($".//ul[@class='subMenu-items ng-star-inserted']//span[text()='{tabName}']"));
@@ -76,9 +86,9 @@ namespace DashworksTestAutomation.Pages.Evergreen.AdminDetailsPages
 
         public void SelectRadioButtonByName(string radioButtonName)
         {
-            var tab = Driver.FindElement(
-                By.XPath($".//div[@class='mat-radio-label-content'][text()='{radioButtonName}']"));
-            tab.Click();
+            var button = By.XPath($"//div[text()='{radioButtonName}']/../div[@class='mat-radio-container']");
+            Driver.WaitWhileControlIsNotDisplayed(button);
+            Driver.FindElement(button).Click();
         }
 
         public void SelectCheckboxByName(string checkboxName)

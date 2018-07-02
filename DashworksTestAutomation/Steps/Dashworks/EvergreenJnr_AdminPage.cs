@@ -886,6 +886,21 @@ namespace DashworksTestAutomation.Steps.Dashworks
             createProjectElement.SelectObjectForProjectCreation(objectName);
         }
 
+        [When(@"User clicks in the Scope field on the Admin page")]
+        public void WhenUserClicksInTheScopeFieldOnTheAdminPage()
+        {
+            var createProjectElement = _driver.NowAt<ProjectsPage>();
+            createProjectElement.ScopeProjectField.Click();
+        }
+
+        [Then(@"Scope DDL have the ""(.*)"" Height and the ""(.*)"" Width")]
+        public void ThenScopeDDLHaveTheHeightAndTheWidth(string height, string width)
+        {
+            var panelSize = _driver.NowAt<ProjectsPage>();
+            Assert.AreEqual(height, panelSize.GetDllPanelHeight());
+            Assert.AreEqual(width, panelSize.GetDllPanelWidth());
+        }
+
         [When(@"User selects ""(.*)"" in the Buckets Project dropdown")]
         public void WhenUserSelectsInTheBucketsProjectDropdown(string objectName)
         {
@@ -931,6 +946,13 @@ namespace DashworksTestAutomation.Steps.Dashworks
         {
             var searchElement = _driver.NowAt<BaseGridPage>();
             searchElement.GetSearchFieldByColumnName(columnName, text);
+        }
+
+        [Then(@"Search fields for ""(.*)"" column contain correctly value")]
+        public void ThenSearchFieldsForColumnContainCorrectlyValue(string columnName)
+        {
+            var searchFild = _driver.NowAt<BaseGridPage>();
+            Assert.IsTrue(searchFild.GetSearchFieldTextByColumnName(columnName).Displayed(), "Incorrect contain value for search field");
         }
 
         [When(@"User clicks Reset Filters button on the Admin page")]
