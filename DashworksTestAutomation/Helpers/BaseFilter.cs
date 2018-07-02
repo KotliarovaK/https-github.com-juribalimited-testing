@@ -405,10 +405,10 @@ namespace DashworksTestAutomation.Helpers
                 foreach (var row in Table.Rows)
                 {
                     _driver.FindElement(By.XPath(
-                            ".//div[@class='mat-form-field-infix']//input[contains(@id, 'mat-input')]"))
+                            ".//div[@class='mat-form-field-wrapper']//input[contains(@id, 'mat-input')]"))
                         .Click();
                     _driver.FindElement(By.XPath(
-                            ".//div[@class='mat-form-field-infix']//input[contains(@id, 'mat-input')]"))
+                            ".//div[@class='mat-form-field-wrapper']//input[contains(@id, 'mat-input')]"))
                         .SendKeys(row["Values"]);
                 }
 
