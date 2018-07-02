@@ -637,7 +637,7 @@ Scenario: EvergreenJnr_UsersList_CheckThatNoConsoleErrorIsDisplayedAfterAddingUs
 	| SelectedList     | Association     |
 	| YOG2259571 Users | Entitled to app |
 	Then "4" rows are displayed in the agGrid
-	Then There are no errors in the browser console
+	And There are no errors in the browser console
 
 @Evergreen @Users @EvergreenJnr_FilterFeature @FilterFunctionality @DAS12181 @Delete_Newly_Created_List
 Scenario: EvergreenJnr_UsersList_CheckThatNoErrorIsDisplayedAfterAddingAdvancedFilterForUsernameAndApplicationSavedList
@@ -660,7 +660,7 @@ Scenario: EvergreenJnr_UsersList_CheckThatNoErrorIsDisplayedAfterAddingAdvancedF
 	| UsersBob     | Entitled to app                     |
 	| UsersBob     | Owns a device which app was used on |
 	Then "1" rows are displayed in the agGrid
-	Then There are no errors in the browser console
+	And There are no errors in the browser console
 
 @Evergreen @Applications @EvergreenJnr_FilterFeature @FilterFunctionality @DAS12827
 Scenario: EvergreenJnr_ApplicationsList_CheckThatUserLastLogonDateFilterWorksCorrectly
@@ -672,7 +672,7 @@ Scenario: EvergreenJnr_ApplicationsList_CheckThatUserLastLogonDateFilterWorksCor
 	| Values      | Association  |
 	| 30 Apr 2018 | Has used app |
 	Then message 'No applications found' is displayed to the user
-	Then There are no errors in the browser console
+	And There are no errors in the browser console
 
 @Evergreen @Applications @EvergreenJnr_FilterFeature @FilterFunctionality @DAS12058 @Delete_Newly_Created_List
 Scenario: EvergreenJnr_ApplicationsList_CheckThatProjectGroupCurrentStateFiltersInTheApplicationListWorksCorrectly
@@ -682,30 +682,30 @@ Scenario: EvergreenJnr_ApplicationsList_CheckThatProjectGroupCurrentStateFilters
 	When User clicks the Filters button
 	Then Filters panel is displayed to the user
 	When User add "Windows7Mi: Group (Current State)" filter where type is "Equal" without added column and "Parkfield Office" Lookup option
-	When User click Edit button for "Windows7Mi: Group (Current State)" filter
-	When User enters "Administration" text in Search field at selected Lookup Filter
-	When User clicks checkbox at selected Lookup Filter
-	When User clicks Save filter button
+	And User click Edit button for "Windows7Mi: Group (Current State)" filter
+	And User enters "Administration" text in Search field at selected Lookup Filter
+	And User clicks checkbox at selected Lookup Filter
+	And User clicks Save filter button
 	Then "34" rows are displayed in the agGrid
 	When User create dynamic list with "Project Group (Current State)" name on "Applications" page
-	When User clicks the Filters button
+	And User clicks the Filters button
 	Then Filters panel is displayed to the user
 	When User Add And "Windows7Mi: Application Rationalisation" filter where type is "Equal" without added column and following checkboxes:
 	| SelectedCheckboxes |
 	| FORWARD PATH       |
 	Then "1" rows are displayed in the agGrid
 	When User have removed "Windows7Mi: Application Rationalisation" filter
-	When User Add And "Windows7Mi: Application Rationalisation" filter where type is "Equal" without added column and following checkboxes:
+	And User Add And "Windows7Mi: Application Rationalisation" filter where type is "Equal" without added column and following checkboxes:
 	| SelectedCheckboxes |
 	| RETIRE             |
 	Then "4" rows are displayed in the agGrid
 	When User have removed "Windows7Mi: Application Rationalisation" filter
-	When User Add And "Windows7Mi: Application Rationalisation" filter where type is "Equal" without added column and following checkboxes:
+	And User Add And "Windows7Mi: Application Rationalisation" filter where type is "Equal" without added column and following checkboxes:
 	| SelectedCheckboxes |
 	| KEEP               |
 	Then "8" rows are displayed in the agGrid
 	When User have removed "Windows7Mi: Application Rationalisation" filter
-	When User Add And "Windows7Mi: Application Rationalisation" filter where type is "Equal" without added column and following checkboxes:
+	And User Add And "Windows7Mi: Application Rationalisation" filter where type is "Equal" without added column and following checkboxes:
 	| SelectedCheckboxes |
 	| UNCATEGORISED      |
 	Then "21" rows are displayed in the agGrid
@@ -718,21 +718,37 @@ Scenario: EvergreenJnr_ApplicationsList_CheckThatProjectGroupTargetStateFiltersI
 	When User clicks the Filters button
 	Then Filters panel is displayed to the user
 	When User add "Windows7Mi: Group (Target State)" filter where type is "Equal" without added column and "Parkfield Office" Lookup option
-	When User click Edit button for "Windows7Mi: Group (Target State)" filter
-	When User enters "Administration" text in Search field at selected Lookup Filter
-	When User clicks checkbox at selected Lookup Filter
-	When User clicks Save filter button
+	And User click Edit button for "Windows7Mi: Group (Target State)" filter
+	And User enters "Administration" text in Search field at selected Lookup Filter
+	And User clicks checkbox at selected Lookup Filter
+	And User clicks Save filter button
 	Then "29" rows are displayed in the agGrid
 	When User create dynamic list with "Project Group (Target State)" name on "Applications" page
-	When User clicks the Filters button
+	And User clicks the Filters button
 	Then Filters panel is displayed to the user
 	When User Add And "Windows7Mi: Application Rationalisation" filter where type is "Equal" without added column and following checkboxes:
 	| SelectedCheckboxes |
 	| KEEP               |
 	Then "9" rows are displayed in the agGrid
 	When User have removed "Windows7Mi: Application Rationalisation" filter
-	When User Add And "Windows7Mi: Application Rationalisation" filter where type is "Equal" without added column and following checkboxes:
+	And User Add And "Windows7Mi: Application Rationalisation" filter where type is "Equal" without added column and following checkboxes:
 	| SelectedCheckboxes |
 	| UNCATEGORISED      |
 	Then "20" rows are displayed in the agGrid
 	When User have removed "Windows7Mi: Application Rationalisation" filter
+
+@Evergreen @Applications @EvergreenJnr_FilterFeature @FilterFunctionality @DAS12200
+Scenario: EvergreenJnr_ApplicationsList_CheckThatAdvancedUserFilterReturnsCorrectResults
+	When User clicks "Applications" on the left-hand menu
+	Then "Applications" list should be displayed to the user
+	When User clicks the Filters button
+	Then Filters panel is displayed to the user
+	When User add "User" filter where type is "Equals" with following Lookup Value and Association:
+	| SelectedValues | Association  |
+	| FR\APB5713645  | Has used app |
+	Then "1" rows are displayed in the agGrid
+	When User click Edit button for "User" filter
+	When User is deselect "Has used app" in Association
+	When User select "Has not used app" in Association
+	And User clicks Save filter button
+	Then "2,222" rows are displayed in the agGrid
