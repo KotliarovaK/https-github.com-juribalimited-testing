@@ -415,7 +415,7 @@ Scenario: EvergreenJnr_ApplicationsList_CheckThatApplicationSavedListFilterIsWor
 	Then "Devices" list should be displayed to the user
 	When User clicks the Filters button
 	Then Filters panel is displayed to the user
-	When User add "Application (Saved List)" filter where type is "In list" with SelectedList list and following Association:
+	When User add "Application (Saved List)" filter where type is "In list" with Selected Value and following Association:
 	| SelectedList   | Association        |
 	| TestList2854B3 | Not used on device |
 	Then "Application" filter is added to the list
@@ -782,7 +782,7 @@ Scenario: EvergreenJnr_DevicesList_CheckThat500ErrorIsNotDisplayedForStaticListA
 	Then "Devices" list should be displayed to the user
 	When User clicks the Filters button
 	Then Filters panel is displayed to the user
-	When User add "Application (Saved List)" filter where type is "In list" with SelectedList list and following Association:
+	When User add "Application (Saved List)" filter where type is "In list" with Selected Value and following Association:
 	| SelectedList       | Association        |
 	| StaticListTestName | Not used on device |
 	Then "Application in list StaticListTestName not used on device" is displayed in added filter info
@@ -806,7 +806,7 @@ Scenario: EvergreenJnr_DevicesList_CheckThat500ErrorIsNotDisplayedForDynamicList
 	Then "Devices" list should be displayed to the user
 	When User clicks the Filters button
 	Then Filters panel is displayed to the user
-	When User add "Application (Saved List)" filter where type is "In list" with SelectedList list and following Association:
+	When User add "Application (Saved List)" filter where type is "In list" with Selected Value and following Association:
 	| SelectedList   | Association        |
 	| TestList5E021D | Not used on device |
 	Then "Application in list TestList5E021D not used on device" is displayed in added filter info
@@ -983,7 +983,7 @@ Scenario: EvergreenJnr_AllLists_CheckThatFilterTextDisplaysActualListName
 	Then "Devices" list should be displayed to the user
 	When User clicks the Filters button
 	Then Filters panel is displayed to the user
-	When User add "Application (Saved List)" filter where type is "In list" with SelectedList list and following Association:
+	When User add "Application (Saved List)" filter where type is "In list" with Selected Value and following Association:
 	| SelectedList    | Association        |
 	| ApplicationList | Entitled to device |
 	When User create dynamic list with "DevicesList" name on "Devices" page
@@ -1021,7 +1021,7 @@ Scenario: EvergreenJnr_AllLists_CheckThatTextInTheFilterPanelDisplaysTheCurrentL
 	Then "Devices" list should be displayed to the user
 	When User clicks the Filters button
 	Then Filters panel is displayed to the user
-	When User add "Application (Saved List)" filter where type is "In list" with SelectedList list and following Association:
+	When User add "Application (Saved List)" filter where type is "In list" with Selected Value and following Association:
 	| SelectedList     | Association    |
 	| ApplicationList1 | Used on device |
 	When User create dynamic list with "DevicesList1" name on "Devices" page
@@ -1041,21 +1041,26 @@ Scenario: EvergreenJnr_AllLists_CheckThatTextInTheFilterPanelDisplaysTheCurrentL
 	When User click Edit button for "Application" filter
 	Then "ApplicationList2" list is displayed for Saved List filter
 
-@Evergreen @Devices @Evergreen_FiltersFeature @FiltersDisplay @DAS12520 @Delete_Newly_Created_List
-Scenario: EvergreenJnr_DevicesLists_CheckThatOSBranchFilterWithEquaEmptyValueIsDisplayedCorrectlyInTheFilterPanel
-	When User clicks "Devices" on the left-hand menu
-	Then "Devices" list should be displayed to the user
+@Evergreen @AllLists @Evergreen_FiltersFeature @FiltersDisplay @DAS12520 @Delete_Newly_Created_List
+Scenario Outline: EvergreenJnr_AllLists_CheckThatFilterEqualsEmptyValueIsDisplayedCorrectlyInTheFilterPanel
+	When User clicks "<ListName>" on the left-hand menu
+	Then "<ListName>" list should be displayed to the user
 	When User clicks the Filters button
 	Then Filters panel is displayed to the user
-	When User add "OS Branch" filter where type is "Equals" with added column and following checkboxes:
+	When User add "<FilterName>" filter where type is "Equals" with added column and following checkboxes:
 	| SelectedCheckboxes |
 	| Empty              |
-	And User create custom list with "TestList5433" name
-	And User navigates to the "All Devices" list
-	And User navigates to the "TestList5433" list
+	And User create custom list with "<CustomList>" name
+	And User navigates to the "<AllList>" list
+	And User navigates to the "<CustomList>" list
 	And User clicks the Filters button
 	Then Filters panel is displayed to the user
-	And "OS Branch is Empty" is displayed in added filter info
+	And "<FilterInfo>" is displayed in added filter info
+
+Examples: 
+	| ListName     | FilterName            | CustomList   | AllList          | FilterInfo         |
+	| Devices      | OS Branch             | TestList5433 | All Devices      | OS Branch is Empty |
+	| Mailboxes    | Country               | TestList5436 | All Mailboxes    | Country is Empty   |
 
 @Evergreen @Devices @EvergreenJnr_Search @Search @DAS11466
 Scenario: EvergreenJnr_DevicesList_CheckingThatVendorFilterIsDisplayedInApplicationCategory
@@ -1080,3 +1085,37 @@ Scenario: EvergreenJnr_ApplicationsList_CheckThatCorrectValuesAreDisplayedforUse
 	| 8      | Entitled to app |
 	Then "User whose Key is less than 2 entitled to app" is displayed in added filter info
 	And "User whose Key is greater than 8 entitled to app" is displayed in added filter info
+
+@Evergreen @Users @Evergreen_FiltersFeature @FiltersDisplay @DAS12520 @Delete_Newly_Created_List
+Scenario: EvergreenJnr_UsersList_CheckThatFloorFilterEqualsEmptyValueIsDisplayedCorrectlyInTheFilterPanel
+	When User clicks "Users" on the left-hand menu
+	Then "Users" list should be displayed to the user
+	When User clicks the Filters button
+	Then Filters panel is displayed to the user
+	When user select "Floor" filter
+	When User select "Equals" Operator value
+	When User enters "Empty" text in Search field at selected Lookup Filter
+	When User clicks checkbox at selected Lookup Filter
+	When User clicks Save filter button
+	And User create custom list with "TestList5434" name
+	And User navigates to the "All Users" list
+	And User navigates to the "TestList5434" list
+	And User clicks the Filters button
+	Then Filters panel is displayed to the user
+	And "Floor is Empty" is displayed in added filter info
+
+@Evergreen @Applications @Evergreen_FiltersFeature @FiltersDisplay @DAS12520 @Delete_Newly_Created_List
+Scenario: EvergreenJnr_ApplicationsList_CheckThatUserRegionFilterEqualsEmptyValueIsDisplayedCorrectlyInTheFilterPanel
+	When User clicks "Applications" on the left-hand menu
+	Then "Applications" list should be displayed to the user
+	When User clicks the Filters button
+	Then Filters panel is displayed to the user
+	When User add "User Region" filter where type is "Equals" with Selected Value and following Association:
+	| SelectedList | Association  |
+	| Empty        | Has used app |
+	And User create custom list with "TestList5435" name
+	And User navigates to the "All Applications" list
+	And User navigates to the "TestList5435" list
+	And User clicks the Filters button
+	Then Filters panel is displayed to the user
+	And "User whose Region is Empty has used app" is displayed in added filter info

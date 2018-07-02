@@ -135,6 +135,15 @@ namespace DashworksTestAutomation.Steps.Dashworks
             filterElement.GetAssociationCheckbox(checkboxName);
         }
 
+        [When(@"User is deselect ""(.*)"" in Association")]
+        public void WhenUserIsDeselectInAssociation(string checkboxName)
+        {
+            var filterElement = _driver.NowAt<FiltersElement>();
+            filterElement.AssociationSearchTextbox.Click();
+            filterElement.AssociationSearchTextbox.SendKeys(checkboxName);
+            filterElement.GetAssociationCheckbox(checkboxName);
+        }
+
         [Then(@"search values in Association section working by specific search criteria")]
         public void ThenSearchValuesInAssociationSectionWorkingBySpecificSearchCriteria()
         {
@@ -266,8 +275,8 @@ namespace DashworksTestAutomation.Steps.Dashworks
             filter.Do();
         }
 
-        [When(@"User add ""(.*)"" filter where type is ""(.*)"" with SelectedList list and following Association:")]
-        public void WhenUserAddFilterWhereTypeIsWithSelectedListListAndFollowingAssociation(string filterName,
+        [When(@"User add ""(.*)"" filter where type is ""(.*)"" with Selected Value and following Association:")]
+        public void WhenUserAddFilterWhereTypeIsWithSelectedValueAndFollowingAssociation(string filterName,
             string operatorValue, Table table)
         {
             var filtersNames = _driver.NowAt<FiltersElement>();
