@@ -3852,6 +3852,7 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_FiltersFeature
         [NUnit.Framework.CategoryAttribute("Evergreen_FiltersFeature")]
         [NUnit.Framework.CategoryAttribute("FiltersDisplay")]
         [NUnit.Framework.CategoryAttribute("DAS12520")]
+        [NUnit.Framework.CategoryAttribute("DAS12785")]
         [NUnit.Framework.CategoryAttribute("Delete_Newly_Created_List")]
         public virtual void EvergreenJnr_UsersList_CheckThatFloorFilterEqualsEmptyValueIsDisplayedCorrectlyInTheFilterPanel()
         {
@@ -3888,6 +3889,7 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_FiltersFeature
                         "Evergreen_FiltersFeature",
                         "FiltersDisplay",
                         "DAS12520",
+                        "DAS12785",
                         "Delete_Newly_Created_List"});
             this.ScenarioSetup(scenarioInfo);
             this.FeatureBackground();
@@ -3906,6 +3908,8 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_FiltersFeature
             testRunner.And("User clicks the Filters button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
             testRunner.Then("Filters panel is displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
             testRunner.And("\"Floor is Empty\" is displayed in added filter info", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+            testRunner.When("User click Edit button for \"Floor\" filter", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+            testRunner.Then("\"Empty\" value is displayed in the filter info", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
             this.ScenarioCleanup();
         }
         
