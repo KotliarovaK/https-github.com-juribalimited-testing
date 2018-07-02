@@ -1080,27 +1080,3 @@ Scenario: EvergreenJnr_ApplicationsList_CheckThatCorrectValuesAreDisplayedforUse
 	| 8      | Entitled to app |
 	Then "User whose Key is less than 2 entitled to app" is displayed in added filter info
 	And "User whose Key is greater than 8 entitled to app" is displayed in added filter info
-
-	
-@Evergreen @AllLists @Evergreen_FiltersFeature @FiltersDisplay @DAS12349 @Delete_Newly_Created_List
-Scenario: EvergreenJnr_AllLists_CheckThat500ISEInvalidColumnNameIsNotDisplayedWhenUsedAppSavedListForFilteringDeviceList
-	When User clicks "Applications" on the left-hand menu
-	Then "Applications" list should be displayed to the user
-	When User clicks the Filters button
-	Then Filters panel is displayed to the user
-	When User add "Application Key" filter where type is "Equals" without added column and following value:
-	| Values |
-	| 8      |
-	And User create dynamic list with "ListName12349" name on "Applications" page
-	Then "ListName12349" list is displayed to user
-	When User clicks "Devices" on the left-hand menu
-	Then "Devices" list should be displayed to the user
-	When User clicks the Filters button
-	Then Filters panel is displayed to the user
-	When User add "Application (Saved List)" filter where type is "In list" with SelectedList list and following Association:
-	| SelectedList  | Association    |
-	| ListName12349 | Used on device |
-	Then "Application (Saved List)" filter is added to the list
-	Then "99" rows are displayed in the agGrid
-	Then "Application in list ListName12349 used on device" is displayed in added filter info
-	Then "(Application (Saved List) = ListName12349 ASSOCIATION = ("used on device"))" text is displayed in filter container
