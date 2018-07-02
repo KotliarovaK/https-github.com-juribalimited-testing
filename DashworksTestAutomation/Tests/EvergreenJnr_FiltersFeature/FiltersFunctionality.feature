@@ -748,6 +748,7 @@ Scenario: EvergreenJnr_ApplicationsList_CheckThatAdvancedUserFilterReturnsCorrec
 	| FR\APB5713645  | Has used app |
 	Then "1" rows are displayed in the agGrid
 	When User click Edit button for "User" filter
-	When User select "Does not equal" Operator value
+	When User is deselect "Has used app" in Association
+	When User select "Has not used app" in Association
 	And User clicks Save filter button
-	Then "100" rows are displayed in the agGrid
+	Then "2,222" rows are displayed in the agGrid
