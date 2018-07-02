@@ -1349,9 +1349,9 @@ Scenario: EvergreenJnr_AdminPage_CheckThat500ISEInvalidColumnNameIsNotDisplayedW
 	| SelectedList  | Association    |
 	| ListName12349 | Used on device |
 	Then "Application (Saved List)" filter is added to the list
-	Then "99" rows are displayed in the agGrid
-	Then "Application in list ListName12349 used on device" is displayed in added filter info
-	Then "(Application (Saved List) = ListName12349 ASSOCIATION = ("used on device"))" text is displayed in filter container
+	And "99" rows are displayed in the agGrid
+	And "Application in list ListName12349 used on device" is displayed in added filter info
+	And "(Application (Saved List) = ListName12349 ASSOCIATION = ("used on device"))" text is displayed in filter container
 	When User create dynamic list with "SavedList12349" name on "Devices" page
 	Then "SavedList12349" list is displayed to user
 	When User clicks Admin on the left-hand menu
@@ -1367,6 +1367,10 @@ Scenario: EvergreenJnr_AdminPage_CheckThat500ISEInvalidColumnNameIsNotDisplayedW
 	When User enters "TestProject12349" text in the Search field for "Project" column
 	And User clicks content from "Project" column
 	Then Project "TestProject12349" is displayed to user
-	Then There are no errors in the browser console
+	And There are no errors in the browser console
 	When User selects "Scope Details" tab on the Project details page
 	Then There are no errors in the browser console
+	When User click on Back button
+	And User enters "TestProject12349" text in the Search field for "Project" column
+	And User selects all rows on the grid
+	And User removes selected item
