@@ -369,7 +369,7 @@ Scenario: EvergreenJnr_AdminPage_CheckThatErrorsDoNotAppearAfterUpdatingTeamDesc
 	And There are no errors in the browser console
 	And Delete "TestTeam1" Team in the Administration
 
-@Evergreen @Admin @EvergreenJnr_AdminPage @AdminPage @DAS11765 @DAS12170 @Not_Run
+@Evergreen @Admin @EvergreenJnr_AdminPage @AdminPage @DAS11765 @DAS12170
 Scenario: EvergreenJnr_AdminPage_CheckThatMailboxesAreSuccessfullyAddedToBuckets
 	When User clicks Admin on the left-hand menu
 	Then Admin page should be displayed to the user
@@ -422,7 +422,7 @@ Scenario: EvergreenJnr_AdminPage_CheckThatAllAssociationsAreSelectedByDefaultInT
 	Then All Association are selected by default
 	And Delete "TestProject7" Project in the Administration
 
-@Evergreen @Admin @EvergreenJnr_AdminPage @AdminPage @DAS12170 @Not_Run
+@Evergreen @Admin @EvergreenJnr_AdminPage @AdminPage @DAS12170
 Scenario: EvergreenJnr_AdminPage_CheckThatConsoleErrorsAreNotDisplayedAfterAddingDevicesInTheBuckets
 	When User clicks Admin on the left-hand menu
 	Then Admin page should be displayed to the user
@@ -452,7 +452,7 @@ Scenario: EvergreenJnr_AdminPage_CheckThatErrorsDoNotAppearAfterAddingDevicesToT
 	Then No items text is displayed
 	And There are no errors in the browser console
 
-@Evergreen @Admin @EvergreenJnr_AdminPage @AdminPage @DAS12170 @Not_Run
+@Evergreen @Admin @EvergreenJnr_AdminPage @AdminPage @DAS12170
 Scenario: EvergreenJnr_AdminPage_CheckThatConsoleErrorsAreNotDisplayedAfterAddingUsersInTheBuckets
 	When User clicks Admin on the left-hand menu
 	Then Admin page should be displayed to the user
@@ -1107,7 +1107,7 @@ Scenario: EvergreenJnr_AdminPage_CheckThatOnboardedObjectsAreDisplayedAfterChang
 	And User selects all rows on the grid
 	And User removes selected item
 
-@Evergreen @Admin @EvergreenJnr_AdminPage @AdminPage @DAS12364
+@Evergreen @Admin @EvergreenJnr_AdminPage @AdminPage @DAS12364 @Not_Run
 Scenario: EvergreenJnr_AdminPage_CheckingThatTheProjectIsUpdatedWithoutErrors
 	When User clicks Admin on the left-hand menu
 	Then Admin page should be displayed to the user
@@ -1392,5 +1392,37 @@ Scenario: EvergreenJnr_AdminPage_CheckThatErrorIsNotDisplayedWhenCreatingProject
 	Then Success message with "Your project has been created" text is displayed on the Projects page
 	And There are no errors in the browser console
 	When User enters "TestProject22" text in the Search field for "Project" column
+	And User selects all rows on the grid
+	And User removes selected item
+
+@Evergreen @Admin @EvergreenJnr_AdminPage @AdminPage @DAS12336
+Scenario: EvergreenJnr_AdminPage_CheckThatWarningMessageIsNotDisplayedAfterAddingObjectsOnTheProjectScopeChangesTab
+	When User clicks Admin on the left-hand menu
+	Then Admin page should be displayed to the user
+	When User clicks "Projects" link on the Admin page
+	Then "Projects" page should be displayed to the user
+	When User clicks Create New Item button
+	Then "Create Project" page should be displayed to the user
+	When User enters "TestName12336" in the Project Name field
+	And User selects "All Devices" in the Scope Project dropdown
+	And User clicks Create button on the Create Project page
+	Then created Project with "TestName12336" name is displayed correctly
+	And Success message with "Your project has been created" text is displayed on the Projects page
+	When User enters "TestName12336" text in the Search field for "Project" column
+	And User clicks content from "Project" column
+	Then Project "TestName12336" is displayed to user
+	When User selects "Scope Changes" tab on the Project details page
+	When User expands the object to add
+	And User selects following items to the Project
+	| Item            |
+	| 07RJRCQQJNBJIJQ |
+	| 0CFHJY5A8WLUB0J |
+	And User clicks "UPDATE DEVICE CHANGES" button on the Projects page
+	And User clicks Update Project button on the Projects page
+	Then Success message with "2 objects queued for onboarding, 0 objects offboarded" text is displayed on the Projects page
+	When User selects "Scope Details" tab on the Project details page
+	Then Warning message is not displayed on the Admin page
+	When User click on Back button
+	And User enters "TestName12336" text in the Search field for "Project" column
 	And User selects all rows on the grid
 	And User removes selected item
