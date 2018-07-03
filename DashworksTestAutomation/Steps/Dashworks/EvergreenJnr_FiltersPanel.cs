@@ -373,9 +373,7 @@ namespace DashworksTestAutomation.Steps.Dashworks
         }
 
         [When(@"User add ""(.*)"" filter where type is ""(.*)"" without added column and ""(.*)"" Lookup option")]
-        public void WhenUserAddFilterWhereTypeIsWithoutAddedColumnAndLookupOption(string filterName,
-            string operatorValue,
-            string filterValue)
+        public void WhenUserAddFilterWhereTypeIsWithoutAddedColumnAndLookupOption(string filterName, string operatorValue, string filterValue)
         {
             var filtersNames = _driver.NowAt<FiltersElement>();
             filtersNames.AddFilter(filterName);
