@@ -298,7 +298,7 @@ Scenario: EvergreenJnr_ApplicationsList_CheckThat500ErrorInNotDisplayedWhenUserA
 	Then "1,269" rows are displayed in the agGrid
 	Then "(Device Count (Installed) < 10)" text is displayed in filter container
 
-@Evergreen @Devices @EvergreenJnr_FilterFeature @FilterFunctionality @DAS11551 @DAS11550 @DAS11749 @Not_Run
+@Evergreen @Devices @EvergreenJnr_FilterFeature @FilterFunctionality @DAS11551 @DAS11550 @DAS11749
 Scenario Outline: EvergreenJnr_DevicesList_CheckThatEmptyNotEmptyOperatorsIsWorkedCorrectly
 	When User clicks "Devices" on the left-hand menu
 	Then "Devices" list should be displayed to the user
