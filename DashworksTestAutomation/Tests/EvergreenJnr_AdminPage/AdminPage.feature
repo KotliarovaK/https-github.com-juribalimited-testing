@@ -554,7 +554,7 @@ Scenario: EvergreenJnr_AdminPage_CheckThatPanelOfAvailableMemberslIsExpandedByDe
 	When User clicks Add Members button on the Teams page
 	Then Panel of available members is displayed to the user
 
-@Evergreen @Admin @EvergreenJnr_AdminPage @AdminPage @DAS12552 @Not_Run
+@Evergreen @Admin @EvergreenJnr_AdminPage @AdminPage @DAS12552
 Scenario: EvergreenJnr_AdminPage_CheckThatFiltersAreWorkingCorrectlyOnTheAdminPages
 	When User clicks Admin on the left-hand menu
 	Then Admin page should be displayed to the user
@@ -585,7 +585,6 @@ Scenario: EvergreenJnr_AdminPage_CheckThatFiltersAreWorkingCorrectlyOnTheAdminPa
 	And User enters "=2" text in the Search field for "Users" column
 	Then Counter shows "2" found rows
 	When User clears Search field for "Project Buckets" column
-	#And User enters "Unassigned" text in the Search field for "Bucket" column
 	And User clicks content from "Bucket" column
 	And User enters "BG4H" text in the Search field for "Hostname" column
 	Then Counter shows "2" found rows
@@ -1107,7 +1106,7 @@ Scenario: EvergreenJnr_AdminPage_CheckThatOnboardedObjectsAreDisplayedAfterChang
 	And User selects all rows on the grid
 	And User removes selected item
 
-@Evergreen @Admin @EvergreenJnr_AdminPage @AdminPage @DAS12364 @Not_Run
+@Evergreen @Admin @EvergreenJnr_AdminPage @AdminPage @DAS12364
 Scenario: EvergreenJnr_AdminPage_CheckingThatTheProjectIsUpdatedWithoutErrors
 	When User clicks Admin on the left-hand menu
 	Then Admin page should be displayed to the user
@@ -1131,9 +1130,9 @@ Scenario: EvergreenJnr_AdminPage_CheckingThatTheProjectIsUpdatedWithoutErrors
 	When User clicks "Devices" tab in the Project Scope Changes section
 	And User expands the object to add 
 	And User selects following items to the Project
-	| Item            |
-	| 00HA7MKAVVFDAV  |
-	| 04JYNLWLETYE0HJ |
+	| Item           |
+	| 00HA7MKAVVFDAV |
+	| 00KLL9S8NRF0X6 |
 	When User clicks "Applications" tab in the Project Scope Changes section
 	And User expands the object to add 
 	And User selects following items to the Project
