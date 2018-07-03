@@ -239,7 +239,7 @@ Scenario: EvergreenJnr_ApplicationsList_CheckThatFilterIsRestoredCorrectlyAfterL
 	Then "Devices" list should be displayed to the user
 	When User clicks the Filters button
 	Then Filters panel is displayed to the user
-	When User add "Application (Saved List)" filter where type is "In list" with SelectedList list and following Association:
+	When User add "Application (Saved List)" filter where type is "In list" with Selected Value and following Association:
 	| SelectedList   | Association        |
 	| TestListD75CD3 | Not used on device |
 	Then "Application in list TestListD75CD3 not used on device" is displayed in added filter info
@@ -600,7 +600,7 @@ Scenario: EvergreenJnr_ApplicationsList_CheckThatCorrectDeviceDataIsReturnedAfte
 	Then "Devices" list should be displayed to the user
 	When User clicks the Filters button
 	Then Filters panel is displayed to the user
-	When User add "Application (Saved List)" filter where type is "In list" with SelectedList list and following Association:
+	When User add "Application (Saved List)" filter where type is "In list" with Selected Value and following Association:
 	| SelectedList   | Association        |
 	| StaticList6581 | Entitled to device |
 	Then "38" rows are displayed in the agGrid
@@ -633,7 +633,7 @@ Scenario: EvergreenJnr_UsersList_CheckThatNoConsoleErrorIsDisplayedAfterAddingUs
 	Then "Applications" list should be displayed to the user
 	When User clicks the Filters button
 	Then Filters panel is displayed to the user
-	When User add "User (Saved List)" filter where type is "In list" with SelectedList list and following Association:
+	When User add "User (Saved List)" filter where type is "In list" with Selected Value and following Association:
 	| SelectedList     | Association     |
 	| YOG2259571 Users | Entitled to app |
 	Then "4" rows are displayed in the agGrid
@@ -654,7 +654,7 @@ Scenario: EvergreenJnr_UsersList_CheckThatNoErrorIsDisplayedAfterAddingAdvancedF
 	Then "Applications" list should be displayed to the user
 	When User clicks the Filters button
 	Then Filters panel is displayed to the user
-	When User add "User (Saved List)" filter where type is "In list" with SelectedList list and following Association:
+	When User add "User (Saved List)" filter where type is "In list" with Selected Value and following Association:
 	| SelectedList | Association                         |
 	| UsersBob     | Has used app                        |
 	| UsersBob     | Entitled to app                     |

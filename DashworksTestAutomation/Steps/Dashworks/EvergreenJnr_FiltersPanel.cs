@@ -275,8 +275,8 @@ namespace DashworksTestAutomation.Steps.Dashworks
             filter.Do();
         }
 
-        [When(@"User add ""(.*)"" filter where type is ""(.*)"" with SelectedList list and following Association:")]
-        public void WhenUserAddFilterWhereTypeIsWithSelectedListListAndFollowingAssociation(string filterName,
+        [When(@"User add ""(.*)"" filter where type is ""(.*)"" with Selected Value and following Association:")]
+        public void WhenUserAddFilterWhereTypeIsWithSelectedValueAndFollowingAssociation(string filterName,
             string operatorValue, Table table)
         {
             var filtersNames = _driver.NowAt<FiltersElement>();
@@ -473,6 +473,13 @@ namespace DashworksTestAutomation.Steps.Dashworks
         {
             var filterElement = _driver.NowAt<FiltersElement>();
             filterElement.GetEditFilterButton(filterName).Click();
+        }
+
+        [Then(@"""(.*)"" value is displayed in the filter info")]
+        public void ThenValueIsDisplayedInTheFilterInfo(string value)
+        {
+            var filterElement = _driver.NowAt<FiltersElement>();
+            filterElement.GetFilterValue(value);
         }
 
         [When(@"User deletes the selected lookup filter ""(.*)"" value")]
