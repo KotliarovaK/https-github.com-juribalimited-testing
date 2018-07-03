@@ -1,7 +1,7 @@
 ﻿Feature: CreateComputerScheduledProject
 	Runs Project related tests
 
-@Senior @Projects_Administration @ComputerScheduledProject @Delete_Newly_Created_Team @Not_Run
+@Senior @Projects_Administration @ComputerScheduledProject @Delete_Newly_Created_Team
 Scenario: Projects_CreateComputerScheduledProject
 	Given User is on Dashworks Homepage
 	Then Login Page is displayed to the user
