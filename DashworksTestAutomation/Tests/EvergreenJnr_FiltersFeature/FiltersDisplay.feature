@@ -1121,3 +1121,18 @@ Scenario: EvergreenJnr_ApplicationsList_CheckThatUserRegionFilterEqualsEmptyValu
 	And User clicks the Filters button
 	Then Filters panel is displayed to the user
 	And "User whose Region is Empty has used app" is displayed in added filter info
+
+@Evergreen @Applications @Evergreen_FiltersFeature @FiltersDisplay @DAS12812
+Scenario: EvergreenJnr_ApplicationsList_CheckThatTextInTheAdvancedFilterInfoIsDisplayedCorrectly
+	When User clicks "Applications" on the left-hand menu
+	Then "Applications" list should be displayed to the user
+	When User clicks the Filters button
+	Then Filters panel is displayed to the user
+	When User add "User Enabled" filter where type is "Equals" with selected Checkboxes and following Association:
+	| SelectedCheckboxes | Association  |
+	| FALSE              | Has used app |
+	| TRUE               | Has used app |
+	| UNKNOWN            | Has used app |
+	Then "User whose Enabled is False, True or Unknown has used app" is displayed in added filter info
+	Then Filter name is colored in the added filter info
+	Then Filter value is shown in bold in the added filter info
