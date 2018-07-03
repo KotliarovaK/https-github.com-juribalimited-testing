@@ -1134,7 +1134,6 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_FiltersFeature
         [NUnit.Framework.CategoryAttribute("DAS11551")]
         [NUnit.Framework.CategoryAttribute("DAS11550")]
         [NUnit.Framework.CategoryAttribute("DAS11749")]
-        [NUnit.Framework.CategoryAttribute("Not_Run")]
         [NUnit.Framework.TestCaseAttribute("Empty", new string[0])]
         [NUnit.Framework.TestCaseAttribute("Not Empty", new string[0])]
         public virtual void EvergreenJnr_DevicesList_CheckThatEmptyNotEmptyOperatorsIsWorkedCorrectly(string operatorValues, string[] exampleTags)
@@ -1172,8 +1171,7 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_FiltersFeature
                     "FilterFunctionality",
                     "DAS11551",
                     "DAS11550",
-                    "DAS11749",
-                    "Not_Run"};
+                    "DAS11749"};
             if ((exampleTags != null))
             {
                 @__tags = System.Linq.Enumerable.ToArray(System.Linq.Enumerable.Concat(@__tags, exampleTags));
