@@ -239,15 +239,15 @@ Scenario: EvergreenJnr_ApplicationsList_CheckThatFilterIsRestoredCorrectlyAfterL
 	Then "Devices" list should be displayed to the user
 	When User clicks the Filters button
 	Then Filters panel is displayed to the user
-	When User add "Application (Saved List)" filter where type is "In list" with SelectedList list and following Association:
+	When User add "Application (Saved List)" filter where type is "In list" with Selected Value and following Association:
 	| SelectedList   | Association        |
 	| TestListD75CD3 | Not used on device |
 	Then "Application in list TestListD75CD3 not used on device" is displayed in added filter info
-	Then "16,565" rows are displayed in the agGrid
-	When User perform search by "00BDM1JUR8IF419"
+	Then "17,126" rows are displayed in the agGrid
+	When User perform search by "001BAQXT6JWFPI"
 	And User click content from "Hostname" column
 	Then User click back button in the browser
-	Then "16,565" rows are displayed in the agGrid
+	Then "17,126" rows are displayed in the agGrid
 	When User clicks the Filters button
 	Then "Application in list TestListD75CD3 not used on device" is displayed in added filter info
 
@@ -420,7 +420,7 @@ Scenario: EvergreenJnr_DevicesList_CheckThatErrorsDoNotAppearAndFullDataIsDispla
 	| SelectedCheckboxes |
 	| TRUE               |
 	Then full list content is displayed to the user
-	Then There are no errors in the browser console
+	And There are no errors in the browser console
 
 @Evergreen @Devices @EvergreenJnr_FilterFeature @FilterFunctionality @DAS11760 @Delete_Newly_Created_List
 Scenario: EvergreenJnr_DevicesList_CheckThatTheSaveButtonIsNotAvailableWithoutTheFilterValue
@@ -429,13 +429,13 @@ Scenario: EvergreenJnr_DevicesList_CheckThatTheSaveButtonIsNotAvailableWithoutTh
 	When User clicks the Filters button
 	Then Filters panel is displayed to the user
 	When user select "Application Name" filter
-	When User select "Not entitled to device" in Association 
+	And User select "Not entitled to device" in Association 
 	Then Save button is not available on the Filter panel
 	When User have reset all filters
-	When User add "Application Name" filter where type is "Equals" with following Value and Association:
+	And User add "Application Name" filter where type is "Equals" with following Value and Association:
 	| Values | Association    |
 	| adobe  | Used on device |
-	When User create dynamic list with "TestListF58LY5" name on "Devices" page
+	And User create dynamic list with "TestListF58LY5" name on "Devices" page
 	Then Edit List menu is not displayed
 
 @Evergreen @Applications @EvergreenJnr_FilterFeature @FilterFunctionality @DAS11838
@@ -472,7 +472,7 @@ Scenario Outline: EvergreenJnr_ApplicationsList_CheckThatTheColourOfTheApplicati
 	| <SelectedCheckbox> |
 	Then "<ImageName>" image is matching the caption
 
-	Examples:
+Examples:
 	| SelectedCheckbox | ImageName     |
 	| FORWARD PATH     | FORWARD PATH  |
 	| KEEP             | KEEP          |
@@ -512,7 +512,7 @@ Scenario Outline: EvergreenJnr_AllLists_CheckThatContentIsDisplayedInTheAddedCol
 	| ColumnName         |
 	| <NewlyAddedColumn> |
 
-	Examples:
+Examples:
 	| ListName  | FilterName           | NewlyAddedColumn     |
 	| Mailboxes | EmailMigra: Category | EmailMigra: Category |
 	| Devices   | Windows7Mi: Category | Windows7Mi: Category |
@@ -558,8 +558,197 @@ Scenario Outline: EvergreenJnr_AllLists_CheckThatLocationFilterIsEditedCorrectly
 	| ColumnName   |
 	| State/County |
 
-	Examples:
+Examples:
 	| ListName  | FilterValue |
 	| Devices   | NY          |
 	| Users     | NY          |
 	| Mailboxes | VIC         |
+
+@Evergreen @Devices @EvergreenJnr_FilterFeature @FilterFunctionality @DAS11824
+Scenario: EvergreenJnr_DevicesList_CheckingThatError500IsNotDisplayedAfterUsingSpecialCharactersIntoTheApplicationNameFilterAndRefreshingThePage
+	When User clicks "Devices" on the left-hand menu
+	Then "Devices" list should be displayed to the user
+	When User clicks the Filters button
+	Then Filters panel is displayed to the user
+	When User add "Application Name" filter where type is "Equals" with following Value and Association:
+	| Values | Association            |
+	| __     | Entitled to device     |
+	Then "Application Name" filter is added to the list
+	When User clicks refresh button in the browser
+	Then "Devices" list should be displayed to the user
+	And "(Application Name = __ ASSOCIATION = (entitled to device))" text is displayed in filter container
+
+@Evergreen @Applications @EvergreenJnr_FilterFeature @FilterFunctionality @DAS12202 @Delete_Newly_Created_List
+Scenario: EvergreenJnr_ApplicationsList_CheckThatCorrectDeviceDataIsReturnedAfterApplyingAStaticListWithApplicationSavedListFilter
+	When User add following columns using URL to the "Applications" page:
+	| ColumnName              |
+	| Device Count (Entitled) |
+	Then Content is present in the newly added column
+	| ColumnName              |
+	| Device Count (Entitled) |
+	When User clicks the Filters button
+	Then Filters panel is displayed to the user
+	When User add "Application" filter where type is "Equals" with added column and following value:
+	| Values                                     |
+	| Exemples de conception de bases de données |
+	When User click on 'Device Count (Entitled)' column header
+	And User clicks the Actions button
+	Then Actions panel is displayed to the user
+	When User select all rows
+	And User create static list with "StaticList6581" name
+	And User clicks "Devices" on the left-hand menu
+	Then "Devices" list should be displayed to the user
+	When User clicks the Filters button
+	Then Filters panel is displayed to the user
+	When User add "Application (Saved List)" filter where type is "In list" with Selected Value and following Association:
+	| SelectedList   | Association        |
+	| StaticList6581 | Entitled to device |
+	Then "38" rows are displayed in the agGrid
+
+@Evergreen @Applications @EvergreenJnr_FilterFeature @FilterFunctionality @DAS12875
+Scenario: EvergreenJnr_ApplicationsList_CheckThatNoConsoleErrorIsDisplayedAfterEditingUserSurnameFilter
+	When User clicks "Applications" on the left-hand menu
+	Then "Applications" list should be displayed to the user
+	When User clicks the Filters button
+	Then Filters panel is displayed to the user
+	When User add "User Surname" filter where type is "Equals" with following Value and Association:
+	| Values       | Association     |
+	| Cotuand      | Entitled to app |
+	| Courtemanche |                 |
+	When User click Edit button for "User " filter
+	Then There are no errors in the browser console
+
+@Evergreen @Users @EvergreenJnr_FilterFeature @FilterFunctionality @DAS12167 @Delete_Newly_Created_List
+Scenario: EvergreenJnr_UsersList_CheckThatNoConsoleErrorIsDisplayedAfterAddingUserSavedListFilter
+	When User clicks "Users" on the left-hand menu
+	Then "Users" list should be displayed to the user
+	When User clicks the Filters button
+	Then Filters panel is displayed to the user
+	When User add "Username" filter where type is "Equals" without added column and following value:
+	| Values     |
+	| YOG2259571 |
+	When User create dynamic list with "YOG2259571 Users" name on "Users" page
+	Then "YOG2259571 Users" list is displayed to user
+	When User clicks "Applications" on the left-hand menu
+	Then "Applications" list should be displayed to the user
+	When User clicks the Filters button
+	Then Filters panel is displayed to the user
+	When User add "User (Saved List)" filter where type is "In list" with Selected Value and following Association:
+	| SelectedList     | Association     |
+	| YOG2259571 Users | Entitled to app |
+	Then "4" rows are displayed in the agGrid
+	And There are no errors in the browser console
+
+@Evergreen @Users @EvergreenJnr_FilterFeature @FilterFunctionality @DAS12181 @Delete_Newly_Created_List
+Scenario: EvergreenJnr_UsersList_CheckThatNoErrorIsDisplayedAfterAddingAdvancedFilterForUsernameAndApplicationSavedList
+	When User clicks "Users" on the left-hand menu
+	Then "Users" list should be displayed to the user
+	When User clicks the Filters button
+	Then Filters panel is displayed to the user
+	When User add "Username" filter where type is "Contains" without added column and following value:
+	| Values |
+	| Bob    |
+	When User create dynamic list with "UsersBob" name on "Users" page
+	Then "UsersBob" list is displayed to user
+	When User clicks "Applications" on the left-hand menu
+	Then "Applications" list should be displayed to the user
+	When User clicks the Filters button
+	Then Filters panel is displayed to the user
+	When User add "User (Saved List)" filter where type is "In list" with Selected Value and following Association:
+	| SelectedList | Association                         |
+	| UsersBob     | Has used app                        |
+	| UsersBob     | Entitled to app                     |
+	| UsersBob     | Owns a device which app was used on |
+	Then "1" rows are displayed in the agGrid
+	And There are no errors in the browser console
+
+@Evergreen @Applications @EvergreenJnr_FilterFeature @FilterFunctionality @DAS12827
+Scenario: EvergreenJnr_ApplicationsList_CheckThatUserLastLogonDateFilterWorksCorrectly
+	When User clicks "Applications" on the left-hand menu
+	Then "Applications" list should be displayed to the user
+	When User clicks the Filters button
+	Then Filters panel is displayed to the user
+	When User add "User Last Logon Date" filter where type is "Equals" with following Data and Association:
+	| Values      | Association  |
+	| 30 Apr 2018 | Has used app |
+	Then message 'No applications found' is displayed to the user
+	And There are no errors in the browser console
+
+@Evergreen @Applications @EvergreenJnr_FilterFeature @FilterFunctionality @DAS12058 @Delete_Newly_Created_List
+Scenario: EvergreenJnr_ApplicationsList_CheckThatProjectGroupCurrentStateFiltersInTheApplicationListWorksCorrectly
+	When User add following columns using URL to the "Applications" page:
+	| ColumnName          |
+	| Windows7Mi: Application Rationalisation          |
+	When User clicks the Filters button
+	Then Filters panel is displayed to the user
+	When User add "Windows7Mi: Group (Current State)" filter where type is "Equal" without added column and "Parkfield Office" Lookup option
+	And User click Edit button for "Windows7Mi: Group (Current State)" filter
+	And User enters "Administration" text in Search field at selected Lookup Filter
+	And User clicks checkbox at selected Lookup Filter
+	And User clicks Save filter button
+	Then "34" rows are displayed in the agGrid
+	When User create dynamic list with "Project Group (Current State)" name on "Applications" page
+	And User clicks the Filters button
+	Then Filters panel is displayed to the user
+	When User Add And "Windows7Mi: Application Rationalisation" filter where type is "Equal" without added column and following checkboxes:
+	| SelectedCheckboxes |
+	| FORWARD PATH       |
+	Then "1" rows are displayed in the agGrid
+	When User have removed "Windows7Mi: Application Rationalisation" filter
+	And User Add And "Windows7Mi: Application Rationalisation" filter where type is "Equal" without added column and following checkboxes:
+	| SelectedCheckboxes |
+	| RETIRE             |
+	Then "4" rows are displayed in the agGrid
+	When User have removed "Windows7Mi: Application Rationalisation" filter
+	And User Add And "Windows7Mi: Application Rationalisation" filter where type is "Equal" without added column and following checkboxes:
+	| SelectedCheckboxes |
+	| KEEP               |
+	Then "8" rows are displayed in the agGrid
+	When User have removed "Windows7Mi: Application Rationalisation" filter
+	And User Add And "Windows7Mi: Application Rationalisation" filter where type is "Equal" without added column and following checkboxes:
+	| SelectedCheckboxes |
+	| UNCATEGORISED      |
+	Then "21" rows are displayed in the agGrid
+
+@Evergreen @Applications @EvergreenJnr_FilterFeature @FilterFunctionality @DAS12058 @Delete_Newly_Created_List
+Scenario: EvergreenJnr_ApplicationsList_CheckThatProjectGroupTargetStateFiltersInTheApplicationListWorksCorrectly
+	When User add following columns using URL to the "Applications" page:
+	| ColumnName          |
+	| Windows7Mi: Application Rationalisation          |
+	When User clicks the Filters button
+	Then Filters panel is displayed to the user
+	When User add "Windows7Mi: Group (Target State)" filter where type is "Equal" without added column and "Parkfield Office" Lookup option
+	And User click Edit button for "Windows7Mi: Group (Target State)" filter
+	And User enters "Administration" text in Search field at selected Lookup Filter
+	And User clicks checkbox at selected Lookup Filter
+	And User clicks Save filter button
+	Then "29" rows are displayed in the agGrid
+	When User create dynamic list with "Project Group (Target State)" name on "Applications" page
+	And User clicks the Filters button
+	Then Filters panel is displayed to the user
+	When User Add And "Windows7Mi: Application Rationalisation" filter where type is "Equal" without added column and following checkboxes:
+	| SelectedCheckboxes |
+	| KEEP               |
+	Then "9" rows are displayed in the agGrid
+	When User have removed "Windows7Mi: Application Rationalisation" filter
+	And User Add And "Windows7Mi: Application Rationalisation" filter where type is "Equal" without added column and following checkboxes:
+	| SelectedCheckboxes |
+	| UNCATEGORISED      |
+	Then "20" rows are displayed in the agGrid
+	When User have removed "Windows7Mi: Application Rationalisation" filter
+
+@Evergreen @Applications @EvergreenJnr_FilterFeature @FilterFunctionality @DAS12200
+Scenario: EvergreenJnr_ApplicationsList_CheckThatAdvancedUserFilterReturnsCorrectResults
+	When User clicks "Applications" on the left-hand menu
+	Then "Applications" list should be displayed to the user
+	When User clicks the Filters button
+	Then Filters panel is displayed to the user
+	When User add "User" filter where type is "Equals" with following Lookup Value and Association:
+	| SelectedValues | Association  |
+	| FR\APB5713645  | Has used app |
+	Then "1" rows are displayed in the agGrid
+	When User click Edit button for "User" filter
+	When User is deselect "Has used app" in Association
+	When User select "Has not used app" in Association
+	And User clicks Save filter button
+	Then "2,222" rows are displayed in the agGrid

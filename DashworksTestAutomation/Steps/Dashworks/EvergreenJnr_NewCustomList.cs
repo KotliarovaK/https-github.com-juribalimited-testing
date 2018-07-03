@@ -38,9 +38,8 @@ namespace DashworksTestAutomation.Steps.Dashworks
         public void SaveToNewCustomListElementIsNOTDisplayed()
         {
             var page = _driver.NowAt<BaseDashboardPage>();
-            _driver.WaitWhileControlIsDisplayed<BaseDashboardPage>(() => page.SaveCustomListButton);
             Assert.IsFalse(page.SaveCustomListButton.Displayed(),
-                "Save Custom list is displayed");
+                "Save New Custom List panel is displayed");
 
             Logger.Write("The Save to Custom List Element was NOT displayed");
         }
@@ -72,11 +71,25 @@ namespace DashworksTestAutomation.Steps.Dashworks
             page.OpenSettingsByListName(listName).Click();
         }
 
+        [When(@"User clicks Delete button for custom list")]
+        public void WhenUserClicksDeleteButtonForCustomList()
+        {
+            var button = _driver.NowAt<CustomListElement>();
+            button.DeleteButton.Click();
+        }
+
         [Then(@"Settings panel is displayed to the user")]
         public void ThenSettingsPanelIsDisplayedToTheUser()
         {
             var listElement = _driver.NowAt<CustomListElement>();
             Assert.IsTrue(listElement.SettingsPanel.Displayed(), "Settings panel is not displayed");
+        }
+
+        [Then(@"""(.*)"" list is displayed in the bottom section of the List Panel")]
+        public void ThenListIsDisplayedInTheBottomSectionOfTheListPanel(string listName)
+        {
+            var listElement = _driver.NowAt<CustomListElement>();
+            Assert.IsTrue(listElement.ListInBottomSection(listName).Displayed(), "List is not displayed in the bottom section");
         }
 
         [When(@"User create custom list with ""(.*)"" name")]
@@ -183,13 +196,6 @@ namespace DashworksTestAutomation.Steps.Dashworks
         {
             var listDetailsElement = _driver.NowAt<CustomListElement>();
             listDetailsElement.DeleteButton.Click();
-        }
-
-        [When(@"User clicks Delete in the warning message on the list panel")]
-        public void WhenUserClicksDeleteInTheWarningMessageOnTheListPanel()
-        {
-            var listDetailsElement = _driver.NowAt<CustomListElement>();
-            listDetailsElement.DeleteButtonInWarningMessage.Click();
         }
 
         [Then(@"Delete and Cancel buttons are available in the warning message")]
@@ -444,7 +450,7 @@ namespace DashworksTestAutomation.Steps.Dashworks
                 RemoveUserLists();
                 RemoveSharedLists();
             }
-            catch {}
+            catch { }
         }
 
         private void RemoveUserLists()

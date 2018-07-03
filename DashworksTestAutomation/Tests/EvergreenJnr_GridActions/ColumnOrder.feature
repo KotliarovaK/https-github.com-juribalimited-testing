@@ -140,3 +140,47 @@ Scenario: EvergreenJnr_ApplicationsList_CheckThatAfterDeletingFirstColumnTheColu
 	| ColumnName |
 	| Vendor     |
 	| Version    |
+
+@Evergreen @Applications @EvergreenJnr_Columns @ColumnOrder @DAS12345 @DAS12823
+Scenario Outline: EvergreenJnr_AllList_CheckThatSaveButtonIsNotDisplayedIfTheGridColumnsWasReturnedToDefaultPositionWhenActionsPanelWasOpen
+	When User clicks "<PageName>" on the left-hand menu
+	Then "<PageName>" list should be displayed to the user
+	When User clicks the Actions button
+	Then Actions panel is displayed to the user
+	When User move '<FirstColumnName>' column to '<ToColumnName>' column
+	And User move '<SecondColumnName>' column to '<ToColumnName>' column
+	And User clicks Close panel button
+	Then Actions panel is not displayed to the user
+	And Save to New Custom List element is NOT displayed
+
+Examples: 
+	| PageName     | FirstColumnName | SecondColumnName | ToColumnName     |
+	| Devices      | Hostname        | Device Type      | Operating System |
+	| Users        | Username        | Domain           | Display Name     |
+	| Applications | Application     | Vendor           | Version          |
+	| Mailboxes    | Email Address   | Mailbox Platform | Mail Server      |
+
+@Evergreen @Applications @EvergreenJnr_Columns @ColumnOrder @DAS11836
+Scenario Outline: EvergreenJnr_AllList_CheckThatSaveButtonIsNotDisplayedIfTheGridColumnsWasRemovedAndReturnedToDefaultPosition 
+	When User clicks "<PageName>" on the left-hand menu
+	Then "<PageName>" list should be displayed to the user
+	When User clicks the Columns button
+	Then Columns panel is displayed to the user
+	When User removes "<ColumnName>" column by Column panel
+	Then ColumnName is removed from the list
+	| ColumnName   |
+	| <ColumnName> |
+	When ColumnName is entered into the search box and the selection is clicked
+	| ColumnName   |
+	| <ColumnName> |
+	Then ColumnName is added to the list
+	| ColumnName   |
+	| <ColumnName> |
+	And Save to New Custom List element is NOT displayed
+
+Examples: 
+	| PageName     | ColumnName         | 
+	| Devices      | Owner Display Name | 
+	| Users        | Distinguished Name | 
+	| Applications | Version            | 
+	| Mailboxes    | Owner Display Name |

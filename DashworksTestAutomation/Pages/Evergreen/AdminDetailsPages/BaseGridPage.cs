@@ -16,6 +16,9 @@ namespace DashworksTestAutomation.Pages.Evergreen.AdminDetailsPages
         [FindsBy(How = How.XPath, Using = "//div[contains(@class,'actions-create')]/button")]
         public IWebElement CreateItemButton { get; set; }
 
+        [FindsBy(How = How.XPath, Using = "//div[contains(@class,'actions-right')]//*/button")]
+        public IWebElement ImportProjectButton { get; set; }
+
         [FindsBy(How = How.XPath, Using = "//div[contains(@class,'actions-list')]//*/mat-select")]
         public IWebElement ActionsList { get; set; }
 
@@ -27,18 +30,21 @@ namespace DashworksTestAutomation.Pages.Evergreen.AdminDetailsPages
 
         [FindsBy(How = How.XPath, Using = "//div[@class='edit-action']/button")]
         public IWebElement ResetFiltersButton { get; set; }
-
+        
         [FindsBy(How = How.XPath, Using = "//div[@class='ag-header-cell']/span[contains(@class,'select-all')]")]
         public IWebElement SelectAllCheckBox { get; set; }
 
+        [FindsBy(How = How.XPath, Using = "//span[@class='ag-header-select-all']//span[@class='ag-checkbox-checked']")]
+        public IWebElement SelectAllCheckboxChecked { get; set; }
+
+        [FindsBy(How = How.XPath, Using = "//span[@class='ag-header-select-all']//span[@class='ag-checkbox-unchecked']")]
+        public IWebElement Unchecked { get; set; }
+
+        [FindsBy(How = How.XPath, Using = ".//span[@class='ag-selection-checkbox']")]
+        public IList<IWebElement> SelectRowsCheckboxesOnAdminPage { get; set; }
+
         [FindsBy(How = How.XPath, Using = "//div[@class='ag-header-container']/div[@class='ag-header-row']/div[@col-id]")]
         public IList<IWebElement> GridColumns { get; set; }
-
-        [FindsBy(How = How.XPath, Using = ".//div[contains(@class, 'inline-success')]")]
-        public IWebElement SuccessMessage { get; set; }
-
-        [FindsBy(How = How.XPath, Using = ".//div[contains(@class, 'inline-error ng-star-inserted')]")]
-        public IWebElement ErrorMessage { get; set; }
 
         [FindsBy(How = How.XPath, Using = ".//span[contains(text(), 'Delete')]")]
         public IWebElement DeleteValueInActions { get; set; }
@@ -54,12 +60,6 @@ namespace DashworksTestAutomation.Pages.Evergreen.AdminDetailsPages
 
         [FindsBy(How = How.XPath, Using = ".//button[contains(@class, 'button-small mat-raised-button')]/span[text()='DELETE']")]
         public IWebElement DeleteButtonOnPage { get; set; }
-        
-        [FindsBy(How = How.XPath, Using = ".//div[@id='messageAdmin']")]
-        public IWebElement DeleteWarningMessage { get; set; }
-
-        [FindsBy(How = How.XPath, Using = ".//button[contains(@class, 'messageAction')]/span[text()='DELETE']")]
-        public IWebElement DeleteButtonInWarningMessage { get; set; }
 
         [FindsBy(How = How.XPath, Using = ".//input[@placeholder='Search']")]
         public IWebElement SearchTextbox { get; set; }
@@ -73,9 +73,6 @@ namespace DashworksTestAutomation.Pages.Evergreen.AdminDetailsPages
         [FindsBy(How = How.XPath, Using = ".//button[@aria-label='Toggle panel']")]
         public IWebElement AddItemCheckbox { get; set; }
 
-        [FindsBy(How = How.XPath, Using = ".//div[@class='empty-message ng-star-inserted'][text()='No items']")]
-        public IWebElement NoItemsMessage { get; set; }
-
         [FindsBy(How = How.XPath, Using = ".//button[@aria-label='Toggle panel']")]
         public IWebElement PlusButton { get; set; }
 
@@ -88,8 +85,39 @@ namespace DashworksTestAutomation.Pages.Evergreen.AdminDetailsPages
         [FindsBy(How = How.XPath, Using = ".//span[text()='CANCEL']")]
         public IWebElement CancelButtonInWarning { get; set; }
 
+        [FindsBy(How = How.XPath, Using = ".//div[@class='ag-body-container']")]
+        public IWebElement OnboardedObjectsTable { get; set; }
+
         private By AgIconMenu = By.XPath("//span[contains(@class,'ag-icon-menu')]");
-        
+
+        #region Messages
+        [FindsBy(How = How.XPath, Using = "//div[text()='No projects found']")]
+        public IWebElement NoProjectsMessage { get; set; }
+
+        [FindsBy(How = How.XPath, Using = ".//div[contains(@class, 'inline-success')]")]
+        public IWebElement SuccessMessage { get; set; }
+
+        [FindsBy(How = How.XPath, Using = ".//div[contains(@class, 'inline-error ng-star-inserted')]")]
+        public IWebElement ErrorMessage { get; set; }
+
+        [FindsBy(How = How.XPath, Using = ".//div[@id='messageAdmin']")]
+        public IWebElement DeleteWarningMessage { get; set; }
+
+        [FindsBy(How = How.XPath, Using = ".//button[contains(@class, 'messageAction')]/span[text()='DELETE']")]
+        public IWebElement DeleteButtonInWarningMessage { get; set; }
+
+        [FindsBy(How = How.XPath, Using = ".//div[@class='empty-message ng-star-inserted'][text()='No items']")]
+        public IWebElement NoItemsMessage { get; set; }
+
+        public bool WarningMessageAdminPage(string text)
+        {
+            Driver.WaitForElement(By.XPath(".//div[@id='messageAdmin']"));
+            return Driver.IsElementDisplayed(
+                By.XPath($".//div[@id='messageAdmin'][text()='{text}']"));
+        }
+
+        #endregion
+
         public override List<By> GetPageIdentitySelectors()
         {
             Driver.WaitForDataLoading();
@@ -123,6 +151,13 @@ namespace DashworksTestAutomation.Pages.Evergreen.AdminDetailsPages
             Driver.FindElement(By.XPath(recordNameSelector)).Click();
         }
 
+        public List<string> GetCheckboxByColumnName(string columnName)
+        {
+            By by = By.XPath(
+                $".//div[@class='ag-body-viewport']//div[@class='ag-body-container']/div/div[{GetColumnNumberByName(columnName)}]");
+            return Driver.FindElements(by).Select(x => x.Text).ToList();
+        }
+
         public int GetColumnNumberByName(string columnName)
         {
             var allHeadersSelector = By.XPath(".//div[@class='ag-header-container']/div/div");
@@ -150,6 +185,13 @@ namespace DashworksTestAutomation.Pages.Evergreen.AdminDetailsPages
             Driver.FindElement(byControl).SendKeys(text);
         }
 
+        public IWebElement GetSearchFieldTextByColumnName(string columnName)
+        {
+            var selector = By.XPath($".//div[@role='presentation']/div[2]/div[{GetColumnNumberByName(columnName)}]//div[@class='ag-floating-filter-full-body']//input[@placeholder='Search']");
+            Driver.WaitWhileControlIsNotDisplayed(selector);
+            return Driver.FindElement(selector);
+        }
+
         public void ClickContentByColumnName(string columnName)
         {
             By byControl =
@@ -158,13 +200,6 @@ namespace DashworksTestAutomation.Pages.Evergreen.AdminDetailsPages
             Driver.WaitForDataLoading();
             Driver.WaitWhileControlIsNotDisplayed(byControl);
             Driver.FindElement(byControl).Click();
-        }
-
-        public bool WarningMessageAdminPage(string text)
-        {
-            Driver.WaitForElement(By.XPath(".//div[@id='messageAdmin']"));
-            return Driver.IsElementDisplayed(
-                By.XPath($".//div[@id='messageAdmin'][text()='{text}']"));
         }
 
         public void OpenColumnSettingsByName(string columnName)
@@ -198,6 +233,27 @@ namespace DashworksTestAutomation.Pages.Evergreen.AdminDetailsPages
             var selector = $".//span[text()='{itemName}']";
             Driver.WaitWhileControlIsNotDisplayed(By.XPath(selector));
             Driver.FindElement(By.XPath(selector)).Click();
+        }
+
+        public bool OnboardedObjectDisplayed(string objectName)
+        {
+            Driver.WaitForElement(By.XPath(".//div[@id='agGridTable']"));
+            return Driver.IsElementDisplayed(
+                By.XPath($"//a[text()='{objectName}']"));
+        }
+
+        public bool OnboardedObjectNumber(string objectsNumber)
+        {
+            Driver.WaitForElement(By.XPath(".//div[@id='agGridTable']"));
+            return Driver.IsElementDisplayed(
+                By.XPath($".//div[@role='presentation']/div/div[@title='{objectsNumber}']"));
+        }
+
+        public IWebElement GetCreatedProjectName(string projectName)
+        {
+            var selector = By.XPath($"//a[text()='{projectName}']");
+            Driver.WaitWhileControlIsNotDisplayed(selector);
+            return Driver.FindElement(selector);
         }
     }
 }

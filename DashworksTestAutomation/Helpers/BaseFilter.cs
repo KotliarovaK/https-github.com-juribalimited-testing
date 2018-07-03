@@ -372,7 +372,8 @@ namespace DashworksTestAutomation.Helpers
                         ".//div[@class='filterAddPanel ng-star-inserted']//input[@id='chipInput']"))
                     .SendKeys(row["Values"]);
                 _driver.FindElement(
-                        By.XPath(".//button[@class='button-small mat-primary mat-raised-button _mat-animation-noopable ng-star-inserted']"))
+                        By.XPath(
+                            ".//button[@class='button-small mat-primary mat-raised-button _mat-animation-noopable ng-star-inserted']"))
                     .Click();
             }
 
@@ -385,5 +386,40 @@ namespace DashworksTestAutomation.Helpers
 
             SaveFilter();
         }
+    }
+
+    public class DataAssociationFilter : BaseFilter
+    {
+            public DataAssociationFilter(RemoteWebDriver driver, string operatorValue, Table table) : base(
+                driver, operatorValue, false)
+            {
+                Table = table;
+            }
+
+            private Table Table { get; }
+
+            public override void Do()
+            {
+                SelectOperator();
+                _driver.WaitForDataLoading();
+                foreach (var row in Table.Rows)
+                {
+                    _driver.FindElement(By.XPath(
+                            ".//div[@class='mat-form-field-wrapper']//input[contains(@id, 'mat-input')]"))
+                        .Click();
+                    _driver.FindElement(By.XPath(
+                            ".//div[@class='mat-form-field-wrapper']//input[contains(@id, 'mat-input')]"))
+                        .SendKeys(row["Values"]);
+                }
+
+                foreach (var row in Table.Rows)
+                {
+                    _driver.FindElement(By.XPath(".//div[@id='context']//input[@placeholder='Search']")).Click();
+                    if (!_driver.IsElementDisplayed(By.XPath($".//li//span[text()='{row["Association"]}']"))) continue;
+                    _driver.FindElement(By.XPath($".//li//span[text()='{row["Association"]}']")).Click();
+                }
+
+                SaveFilter();
+            }
     }
 }
