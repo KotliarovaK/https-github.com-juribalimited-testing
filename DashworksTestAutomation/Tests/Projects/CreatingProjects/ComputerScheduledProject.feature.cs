@@ -62,21 +62,17 @@ namespace DashworksTestAutomation.Tests.Projects.CreatingProjects
         
         [NUnit.Framework.TestAttribute()]
         [NUnit.Framework.DescriptionAttribute("Projects_CreateComputerScheduledProject")]
-        [NUnit.Framework.CategoryAttribute("Projects")]
-        [NUnit.Framework.CategoryAttribute("Projects")]
+        [NUnit.Framework.CategoryAttribute("Senior")]
         [NUnit.Framework.CategoryAttribute("Projects_Administration")]
         [NUnit.Framework.CategoryAttribute("ComputerScheduledProject")]
         [NUnit.Framework.CategoryAttribute("Delete_Newly_Created_Team")]
-        [NUnit.Framework.CategoryAttribute("Not_Run")]
         public virtual void Projects_CreateComputerScheduledProject()
         {
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Projects_CreateComputerScheduledProject", new string[] {
-                        "Projects",
-                        "Projects",
+                        "Senior",
                         "Projects_Administration",
                         "ComputerScheduledProject",
-                        "Delete_Newly_Created_Team",
-                        "Not_Run"});
+                        "Delete_Newly_Created_Team"});
             this.ScenarioSetup(scenarioInfo);
             testRunner.Given("User is on Dashworks Homepage", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
             testRunner.Then("Login Page is displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
