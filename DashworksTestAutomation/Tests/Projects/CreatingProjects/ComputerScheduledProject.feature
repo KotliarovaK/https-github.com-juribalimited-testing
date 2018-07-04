@@ -10,26 +10,26 @@ Scenario: Projects_CreateComputerScheduledProject
 	When User clicks create Project button
 	Then "Create Project" page is displayed to the user
 	When User creates Project
-	| ProjectName     | ProjectShortName | ProjectDescription | ProjectTypeString        |
-	| TestProjectName | TestText         | TestText           | ComputerScheduledProject |
+	| ProjectName              | ProjectShortName | ProjectDescription | ProjectTypeString        |
+	| ComputerScheduledProject | TestText         | TestText           | ComputerScheduledProject |
 	And User clicks "Create Project" button
 	Then "Manage Project Details" page is displayed to the user
 	When User navigate to Manage link
 	And User select "Manage Users" option in Management Console
 	Then User create a new Dashworks User
-	| Username | FullName                   | Password | ConfirmPassword |
-	| AAA0Test | ComputerScheduledProject 0 | 1234qwer | 1234qwer        |
+	| Username                     | FullName                   | Password | ConfirmPassword |
+	| AAA0ComputerScheduledProject | ComputerScheduledProject 0 | 1234qwer | 1234qwer        |
 	And Success message is displayed
 	And created User is displayed in the table
 	And User create a new Dashworks User
-	| Username | FullName                   | Password | ConfirmPassword |
-	| AAA1Test | ComputerScheduledProject 1 | 1234qwer | 1234qwer        |
+	| Username                     | FullName                   | Password | ConfirmPassword |
+	| AAA1ComputerScheduledProject | ComputerScheduledProject 1 | 1234qwer | 1234qwer        |
 	And Success message is displayed
 	And created User is displayed in the table
 	And User create a new Dashworks User
-	| Username | FullName                   | Password | ConfirmPassword |
-	| AAA2Test | ComputerScheduledProject 2 | 1234qwer | 1234qwer        |
-	Then Success message is displayed
+	| Username                     | FullName                   | Password | ConfirmPassword |
+	| AAA2ComputerScheduledProject | ComputerScheduledProject 2 | 1234qwer | 1234qwer        |
+	And Success message is displayed
 	And created User is displayed in the table
 	When User navigate to Dashworks User Site link
 	And User navigate to Projects link

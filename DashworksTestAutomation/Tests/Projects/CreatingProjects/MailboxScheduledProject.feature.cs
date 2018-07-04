@@ -89,7 +89,7 @@ namespace DashworksTestAutomation.Tests.Projects.CreatingProjects
                         "ProjectDescription",
                         "ProjectTypeString"});
             table1.AddRow(new string[] {
-                        "TestProjectName",
+                        "MailboxScheduledProject",
                         "TestText",
                         "TestText",
                         "MailboxScheduledProject"});
@@ -104,7 +104,7 @@ namespace DashworksTestAutomation.Tests.Projects.CreatingProjects
                         "Password",
                         "ConfirmPassword"});
             table2.AddRow(new string[] {
-                        "AAA0Test",
+                        "AAA0MailboxScheduledProject",
                         "MailboxScheduledProject 0",
                         "1234qwer",
                         "1234qwer"});
@@ -117,7 +117,7 @@ namespace DashworksTestAutomation.Tests.Projects.CreatingProjects
                         "Password",
                         "ConfirmPassword"});
             table3.AddRow(new string[] {
-                        "AAA1Test",
+                        "AAA1MailboxScheduledProject",
                         "MailboxScheduledProject 1",
                         "1234qwer",
                         "1234qwer"});
@@ -130,7 +130,7 @@ namespace DashworksTestAutomation.Tests.Projects.CreatingProjects
                         "Password",
                         "ConfirmPassword"});
             table4.AddRow(new string[] {
-                        "AAA2Test",
+                        "AAA2MailboxScheduledProject",
                         "MailboxScheduledProject 2",
                         "1234qwer",
                         "1234qwer"});
