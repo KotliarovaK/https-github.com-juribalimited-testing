@@ -251,7 +251,7 @@ namespace DashworksTestAutomation.Steps.Projects
             _projectDto.Stages.Add(tempStagePropertiesDto);
 
             page.StageName.SendKeys(_stagePropertiesDto.StageName);
-
+            _driver.WaitForDataLoading();
             page.ConfirmCreateStageButton.Click();
         }
 

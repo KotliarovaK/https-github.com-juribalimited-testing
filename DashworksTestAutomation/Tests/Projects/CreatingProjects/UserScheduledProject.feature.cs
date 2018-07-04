@@ -299,21 +299,21 @@ namespace DashworksTestAutomation.Tests.Projects.CreatingProjects
             TechTalk.SpecFlow.Table table16 = new TechTalk.SpecFlow.Table(new string[] {
                         "StageName"});
             table16.AddRow(new string[] {
-                        "Stage 1"});
+                        "1  UserScheduledProject Stage"});
             testRunner.And("User create Stage", ((string)(null)), table16, "And ");
             testRunner.Then("created Stage is displayed in the table", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
             testRunner.When("User clicks \"Create Stage\" button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
             TechTalk.SpecFlow.Table table17 = new TechTalk.SpecFlow.Table(new string[] {
                         "StageName"});
             table17.AddRow(new string[] {
-                        "Stage 2"});
+                        "2 UserScheduledProject Stage"});
             testRunner.And("User create Stage", ((string)(null)), table17, "And ");
             testRunner.Then("created Stage is displayed in the table", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
             testRunner.When("User clicks \"Create Stage\" button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
             TechTalk.SpecFlow.Table table18 = new TechTalk.SpecFlow.Table(new string[] {
                         "StageName"});
             table18.AddRow(new string[] {
-                        "Stage 3"});
+                        "3 UserScheduledProject Stage"});
             testRunner.And("User create Stage", ((string)(null)), table18, "And ");
             testRunner.Then("created Stage is displayed in the table", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
             testRunner.When("User navigate to \"Mail Templates\" tab", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
