@@ -840,9 +840,8 @@ Scenario Outline: EvergreenJnr_ApplicationsList_CheckThat500ISEInvalidColumnName
 Examples: 
 	| FilterName                 | SelectedCheckboxes          | Rows  |
 	| Windows7Mi: Category       | A Star Packages             | 3     |
-	| Windows7Mi: Technical Test | Started                     | 5     |
+	| Windows7Mi: Technical Test | Started                     | 4     |
 	| Babel(Engl: Category       | None                        | 2,223 |
-	| Barry'sUse: Category       | None                        | 2,223 |
 	| ComputerSc: Category       | None                        | 2,223 |
 	| EmailMigra: Category       | None                        | 2,223 |
 	| Havoc(BigD: Category       | None                        | 2,223 |
@@ -884,13 +883,12 @@ Scenario Outline: EvergreenJnr_DevicesList_CheckThat500ISEInvalidColumnNameError
 	Then "<PageName>" list should be displayed to the user
 	When User clicks the Filters button
 	Then Filters panel is displayed to the user
-	When User add "Department" filter where type is "Equals" without added column and "<SelectedCheckboxes>" Lookup option
+	When User add "Department" filter where type is "Equals" with added column and "<SelectedCheckboxes>" Tree List option
 	Then "Department" filter is added to the list
-	Then table data is filtered correctly
 	Then "<Rows>" rows are displayed in the agGrid
 
 Examples: 
 	| PageName  | SelectedCheckboxes      | Rows  |
-	| Devices   | Application Development | 837   |
+	| Devices   | Application Development | 873   |
 	| Users     | Application Development | 1,857 |
 	| Mailboxes | Application Development | 1,118 |
