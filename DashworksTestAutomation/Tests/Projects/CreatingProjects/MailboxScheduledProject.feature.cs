@@ -89,7 +89,7 @@ namespace DashworksTestAutomation.Tests.Projects.CreatingProjects
                         "ProjectDescription",
                         "ProjectTypeString"});
             table1.AddRow(new string[] {
-                        "MailboxScheduledProject",
+                        "000 MailboxScheduledProject",
                         "TestText",
                         "TestText",
                         "MailboxScheduledProject"});
