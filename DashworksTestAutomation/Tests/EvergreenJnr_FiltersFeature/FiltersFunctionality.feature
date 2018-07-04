@@ -662,7 +662,7 @@ Scenario: EvergreenJnr_UsersList_CheckThatNoErrorIsDisplayedAfterAddingAdvancedF
 	Then "1" rows are displayed in the agGrid
 	And There are no errors in the browser console
 
-@Evergreen @Applications @EvergreenJnr_FilterFeature @FilterFunctionality @DAS12827
+@Evergreen @Applications @EvergreenJnr_FilterFeature @FilterFunctionality @DAS12827 @DAS12812
 Scenario: EvergreenJnr_ApplicationsList_CheckThatUserLastLogonDateFilterWorksCorrectly
 	When User clicks "Applications" on the left-hand menu
 	Then "Applications" list should be displayed to the user
@@ -672,13 +672,15 @@ Scenario: EvergreenJnr_ApplicationsList_CheckThatUserLastLogonDateFilterWorksCor
 	| Values      | Association  |
 	| 30 Apr 2018 | Has used app |
 	Then message 'No applications found' is displayed to the user
+	And Filter name is colored in the added filter info
+	And Filter value is shown in bold in the added filter info
 	And There are no errors in the browser console
 
 @Evergreen @Applications @EvergreenJnr_FilterFeature @FilterFunctionality @DAS12058 @Delete_Newly_Created_List
 Scenario: EvergreenJnr_ApplicationsList_CheckThatProjectGroupCurrentStateFiltersInTheApplicationListWorksCorrectly
 	When User add following columns using URL to the "Applications" page:
-	| ColumnName          |
-	| Windows7Mi: Application Rationalisation          |
+	| ColumnName                              |
+	| Windows7Mi: Application Rationalisation |
 	When User clicks the Filters button
 	Then Filters panel is displayed to the user
 	When User add "Windows7Mi: Group (Current State)" filter where type is "Equal" without added column and "Parkfield Office" Lookup option

@@ -394,6 +394,16 @@ namespace DashworksTestAutomation.Pages.Evergreen
             return Driver.FindElements(by).ToList();
         }
 
+        public string GetFilterFontWeight()
+        {
+            return Driver.FindElement(By.XPath(".//span[contains(@class, 'filter-label-value')]")).GetCssValue("font-weight");
+        }
+
+        public string GetFilterFontColor()
+        {
+            return Driver.FindElement(By.XPath(".//span[@class='filter-label-name']")).GetCssValue("color");
+        }
+
         public IWebElement GetOpenedFilter(string filterName)
         {
             var selector = By.XPath($"//div[contains(@class, 'filterAddPanel')]/..//span[text()='{filterName}']");

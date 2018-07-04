@@ -173,8 +173,8 @@ Scenario: Projects_CreateUserScheduledProject
 	And User navigate to "Emails" page
 	And User clicks "Add Email" button
 	When User create new Email
-	| CountDays | SendOnceOnly | RequestTypesAll | ApllyEmailToAll | To                              |
-	| true      | true         | false           | true            | UserScheduledProject0@email.com |
+	| CountDays | To                              | SendOnceOnly | RequestTypesAll | ApllyEmailToAll |
+	| true      | UserScheduledProject0@email.com | true         | false           | true            |
 	And User clicks "Create Email Notification" button
 	Then Success message is displayed with "Email notification for task successfully created" text
 	When User clicks "« Go Back" button
@@ -219,8 +219,8 @@ Scenario: Projects_CreateUserScheduledProject
 	And User navigate to "Emails" page
 	And User clicks "Add Email" button
 	When User create new Email
-	| CountDays | SendOnceOnly | RequestTypesAll | ApllyEmailToAll | To                              |
-	| true      | true         | true            | true            | UserScheduledProject2@email.com |
+	| CountDays | To                              | SendOnceOnly | RequestTypesAll | ApllyEmailToAll |
+	| true      | UserScheduledProject2@email.com | true         | true            | true            |
 	And User clicks "Create Email Notification" button
 	Then Success message is displayed with "Email notification for task successfully created" text
 	When User clicks "« Go Back" button
