@@ -1071,7 +1071,7 @@ Scenario: EvergreenJnr_DevicesList_CheckingThatVendorFilterIsDisplayedInApplicat
 	When User selects "Application Vendor" filter from "Application" category
 	Then setting section for "Application Vendor" filter is loaded
 
-@Evergreen @Applications @Evergreen_FiltersFeature @FiltersDisplay @DAS12854
+@Evergreen @Applications @Evergreen_FiltersFeature @FiltersDisplay @DAS12854 @DAS12812
 Scenario: EvergreenJnr_ApplicationsList_CheckThatCorrectValuesAreDisplayedforUserKeyFilters
 	When User clicks "Applications" on the left-hand menu
 	Then "Applications" list should be displayed to the user
@@ -1080,9 +1080,13 @@ Scenario: EvergreenJnr_ApplicationsList_CheckThatCorrectValuesAreDisplayedforUse
 	When User add "User Key" filter where type is "Less than" with following Data and Association:
 	| Values | Association     |
 	| 2      | Entitled to app |
-	And User Add And "User Key" filter where type is "Greater than" with following Data and Association:
+	Then Filter name is colored in the added filter info
+	And Filter value is shown in bold in the added filter info
+	When User Add And "User Key" filter where type is "Greater than" with following Data and Association:
 	| Values | Association     |
 	| 8      | Entitled to app |
+	Then Filter name is colored in the added filter info
+	And Filter value is shown in bold in the added filter info
 	Then "User whose Key is less than 2 entitled to app" is displayed in added filter info
 	And "User whose Key is greater than 8 entitled to app" is displayed in added filter info
 
@@ -1121,3 +1125,39 @@ Scenario: EvergreenJnr_ApplicationsList_CheckThatUserRegionFilterEqualsEmptyValu
 	And User clicks the Filters button
 	Then Filters panel is displayed to the user
 	And "User whose Region is Empty has used app" is displayed in added filter info
+
+@Evergreen @Applications @Evergreen_FiltersFeature @FiltersDisplay @DAS12812
+Scenario Outline: EvergreenJnr_ApplicationsList_CheckThatTextInTheAdvancedFilterWithCheckboxesIsDisplayedCorrectly
+	When User clicks "Applications" on the left-hand menu
+	Then "Applications" list should be displayed to the user
+	When User clicks the Filters button
+	Then Filters panel is displayed to the user
+	When User add "<FilterName>" filter where type is "Equals" with selected Checkboxes and following Association:
+	| SelectedCheckboxes | Association  |
+	| <Checkbox>         | Has used app |
+	Then "<FilterInfo>" is displayed in added filter info
+	And Filter name is colored in the added filter info
+	And Filter value is shown in bold in the added filter info
+
+Examples: 
+	| FilterName      | Checkbox | FilterInfo                                |
+	| User Enabled    | FALSE    | User whose Enabled is False has used app  |
+	| User Compliance | Red      | User whose Compliance is Red has used app |
+
+@Evergreen @Applications @Evergreen_FiltersFeature @FiltersDisplay @DAS12812
+Scenario Outline: EvergreenJnr_ApplicationsList_CheckThatTextInTheAdvancedFilterInfoIsDisplayedCorrectly
+	When User clicks "Applications" on the left-hand menu
+	Then "Applications" list should be displayed to the user
+	When User clicks the Filters button
+	Then Filters panel is displayed to the user
+	When User add "<FilterName>" filter where type is "Begins with" with following Value and Association:
+	| Values    | Association         |
+	| <FilterValue>     | Has used app |
+	Then "<FilterInfo>" is displayed in added filter info
+	And Filter name is colored in the added filter info
+	And Filter value is shown in bold in the added filter info
+
+Examples: 
+	| FilterName | FilterValue   | FilterInfo                                             |
+	| User SID   | S-1-5-99      | User whose SID begins with S-1-5-99 has used app       |
+	| User GUID  | 180a2898-9ab2 | User whose GUID begins with 180a2898-9ab2 has used app |
