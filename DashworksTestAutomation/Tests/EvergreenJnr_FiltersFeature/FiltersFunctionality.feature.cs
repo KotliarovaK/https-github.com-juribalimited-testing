@@ -2818,6 +2818,392 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_FiltersFeature
             testRunner.Then("\"2,222\" rows are displayed in the agGrid", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
             this.ScenarioCleanup();
         }
+        
+        [NUnit.Framework.TestAttribute()]
+        [NUnit.Framework.DescriptionAttribute("EvergreenJnr_DevicesList_CheckThat500ISEInvalidColumnNameErrorIsNotDisplayedIfUse" +
+            "SelectedFilterOnDevicesPage")]
+        [NUnit.Framework.CategoryAttribute("Evergreen")]
+        [NUnit.Framework.CategoryAttribute("DevicesList")]
+        [NUnit.Framework.CategoryAttribute("EvergreenJnr_FilterFeature")]
+        [NUnit.Framework.CategoryAttribute("FilterFunctionality")]
+        [NUnit.Framework.CategoryAttribute("DAS12351")]
+        [NUnit.Framework.TestCaseAttribute("Windows7Mi: Category", "None", "17,194", new string[0])]
+        [NUnit.Framework.TestCaseAttribute("Windows7Mi: Values but no RAG", "Three", "1", new string[0])]
+        [NUnit.Framework.TestCaseAttribute("Windows7Mi: SS Application List Completed", "Not Applicable", "5,161", new string[0])]
+        [NUnit.Framework.TestCaseAttribute("Babel(Engl: Category", "None", "17,225", new string[0])]
+        [NUnit.Framework.TestCaseAttribute("Barry\'sUse: Category", "None", "17,225", new string[0])]
+        [NUnit.Framework.TestCaseAttribute("ComputerSc: Category", "None", "17,059", new string[0])]
+        [NUnit.Framework.TestCaseAttribute("ICSP: Category", "None", "17,217", new string[0])]
+        [NUnit.Framework.TestCaseAttribute("MigrationP: Category", "None", "17,220", new string[0])]
+        [NUnit.Framework.TestCaseAttribute("Babel(Engl: Request Type", "Machines", "62", new string[0])]
+        [NUnit.Framework.TestCaseAttribute("ComputerSc: Request Type", "Request Type A", "132", new string[0])]
+        [NUnit.Framework.TestCaseAttribute("ICSP: Request Type", "[Default (Computer)]", "8", new string[0])]
+        [NUnit.Framework.TestCaseAttribute("MigrationP: Request Type", "[Default (Computer)]", "41", new string[0])]
+        [NUnit.Framework.TestCaseAttribute("prK: Request Type", "[Default (Computer)]", "31", new string[0])]
+        [NUnit.Framework.TestCaseAttribute("UserSchedu: Request Type", "Request Type A", "60", new string[0])]
+        [NUnit.Framework.TestCaseAttribute("Windows7Mi: Request Type", "Computer: PC Rebuild", "1", new string[0])]
+        public virtual void EvergreenJnr_DevicesList_CheckThat500ISEInvalidColumnNameErrorIsNotDisplayedIfUseSelectedFilterOnDevicesPage(string filterName, string selectedCheckboxes, string rows, string[] exampleTags)
+        {
+            System.Exception lastException = null;
+            for (int i = 0; (i <= 1); i = (i + 1))
+            {
+                try
+                {
+                    this.EvergreenJnr_DevicesList_CheckThat500ISEInvalidColumnNameErrorIsNotDisplayedIfUseSelectedFilterOnDevicesPageInternal(filterName, selectedCheckboxes, rows, exampleTags);
+                    return;
+                }
+                catch (System.Exception exc)
+                {
+                    lastException = exc;
+                }
+                if (((i + 1) 
+                            <= 1))
+                {
+                    testRunner.OnScenarioEnd();
+                }
+            }
+            if ((lastException != null))
+            {
+                throw lastException;
+            }
+        }
+        
+        private void EvergreenJnr_DevicesList_CheckThat500ISEInvalidColumnNameErrorIsNotDisplayedIfUseSelectedFilterOnDevicesPageInternal(string filterName, string selectedCheckboxes, string rows, string[] exampleTags)
+        {
+            string[] @__tags = new string[] {
+                    "Evergreen",
+                    "DevicesList",
+                    "EvergreenJnr_FilterFeature",
+                    "FilterFunctionality",
+                    "DAS12351"};
+            if ((exampleTags != null))
+            {
+                @__tags = System.Linq.Enumerable.ToArray(System.Linq.Enumerable.Concat(@__tags, exampleTags));
+            }
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("EvergreenJnr_DevicesList_CheckThat500ISEInvalidColumnNameErrorIsNotDisplayedIfUse" +
+                    "SelectedFilterOnDevicesPage", @__tags);
+            this.ScenarioSetup(scenarioInfo);
+            this.FeatureBackground();
+            testRunner.When("User clicks \"Devices\" on the left-hand menu", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+            testRunner.Then("\"Devices\" list should be displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+            testRunner.When("User clicks the Filters button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+            testRunner.Then("Filters panel is displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+            TechTalk.SpecFlow.Table table60 = new TechTalk.SpecFlow.Table(new string[] {
+                        "SelectedCheckboxes"});
+            table60.AddRow(new string[] {
+                        string.Format("{0}", selectedCheckboxes)});
+            testRunner.When(string.Format("User add \"{0}\" filter where type is \"Equals\" with added column and following chec" +
+                        "kboxes:", filterName), ((string)(null)), table60, "When ");
+            testRunner.Then(string.Format("\"{0}\" filter is added to the list", filterName), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+            testRunner.Then("table data is filtered correctly", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+            testRunner.Then(string.Format("\"{0}\" rows are displayed in the agGrid", rows), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+            this.ScenarioCleanup();
+        }
+        
+        [NUnit.Framework.TestAttribute()]
+        [NUnit.Framework.DescriptionAttribute("EvergreenJnr_UsersList_CheckThat500ISEInvalidColumnNameErrorIsNotDisplayedIfUseSe" +
+            "lectedFilterOnUsersPage")]
+        [NUnit.Framework.CategoryAttribute("Evergreen")]
+        [NUnit.Framework.CategoryAttribute("UsersList")]
+        [NUnit.Framework.CategoryAttribute("EvergreenJnr_FilterFeature")]
+        [NUnit.Framework.CategoryAttribute("FilterFunctionality")]
+        [NUnit.Framework.CategoryAttribute("DAS12351")]
+        [NUnit.Framework.TestCaseAttribute("Windows7Mi: Category", "Terminated", "1", new string[0])]
+        [NUnit.Framework.TestCaseAttribute("Windows7Mi: Read Only on Bulk Update Page", "Not Applicable", "4,642", new string[0])]
+        [NUnit.Framework.TestCaseAttribute("Babel(Engl: Category", "The first", "8", new string[0])]
+        [NUnit.Framework.TestCaseAttribute("Barry\'sUse: Category", "None", "41,339", new string[0])]
+        [NUnit.Framework.TestCaseAttribute("ComputerSc: Category", "None", "41,339", new string[0])]
+        [NUnit.Framework.TestCaseAttribute("EmailMigra: Category", "None", "41,339", new string[0])]
+        [NUnit.Framework.TestCaseAttribute("ICSP: Category", "i-user category", "8", new string[0])]
+        [NUnit.Framework.TestCaseAttribute("MigrationP: Category", "None", "41,339", new string[0])]
+        [NUnit.Framework.TestCaseAttribute("prK: Category", "user category K", "25", new string[0])]
+        [NUnit.Framework.TestCaseAttribute("UserSchedu: Category", "None", "41,339", new string[0])]
+        [NUnit.Framework.TestCaseAttribute("Babel(Engl: Request Type", "Overseers", "34", new string[0])]
+        [NUnit.Framework.TestCaseAttribute("ComputerSc: Request Type", "Request Type A", "92", new string[0])]
+        [NUnit.Framework.TestCaseAttribute("ComputerSc: Group User Default Request Type", "Not Applicable", "1,789", new string[0])]
+        [NUnit.Framework.TestCaseAttribute("ComputerSc: Group User No Request Type", "Not Applicable", "1,981", new string[0])]
+        [NUnit.Framework.TestCaseAttribute("EmailMigra: Request Type", "Standard User", "720", new string[0])]
+        [NUnit.Framework.TestCaseAttribute("Havoc(BigD: Request Type", "[Default (User)]", "7,578", new string[0])]
+        [NUnit.Framework.TestCaseAttribute("ICSP: Request Type", "[Default (User)]", "8", new string[0])]
+        [NUnit.Framework.TestCaseAttribute("MigrationP: Request Type", "VIP", "2", new string[0])]
+        [NUnit.Framework.TestCaseAttribute("prK: Request Type", "[Default (User)]", "36", new string[0])]
+        [NUnit.Framework.TestCaseAttribute("UserSchedu: Request Type", "Request Type A", "38", new string[0])]
+        [NUnit.Framework.TestCaseAttribute("UserSchedu: Group User Default Request Type", "Not Applicable", "679", new string[0])]
+        [NUnit.Framework.TestCaseAttribute("Windows7Mi: Request Type", "User: VIP", "6", new string[0])]
+        public virtual void EvergreenJnr_UsersList_CheckThat500ISEInvalidColumnNameErrorIsNotDisplayedIfUseSelectedFilterOnUsersPage(string filterName, string selectedCheckboxes, string rows, string[] exampleTags)
+        {
+            System.Exception lastException = null;
+            for (int i = 0; (i <= 1); i = (i + 1))
+            {
+                try
+                {
+                    this.EvergreenJnr_UsersList_CheckThat500ISEInvalidColumnNameErrorIsNotDisplayedIfUseSelectedFilterOnUsersPageInternal(filterName, selectedCheckboxes, rows, exampleTags);
+                    return;
+                }
+                catch (System.Exception exc)
+                {
+                    lastException = exc;
+                }
+                if (((i + 1) 
+                            <= 1))
+                {
+                    testRunner.OnScenarioEnd();
+                }
+            }
+            if ((lastException != null))
+            {
+                throw lastException;
+            }
+        }
+        
+        private void EvergreenJnr_UsersList_CheckThat500ISEInvalidColumnNameErrorIsNotDisplayedIfUseSelectedFilterOnUsersPageInternal(string filterName, string selectedCheckboxes, string rows, string[] exampleTags)
+        {
+            string[] @__tags = new string[] {
+                    "Evergreen",
+                    "UsersList",
+                    "EvergreenJnr_FilterFeature",
+                    "FilterFunctionality",
+                    "DAS12351"};
+            if ((exampleTags != null))
+            {
+                @__tags = System.Linq.Enumerable.ToArray(System.Linq.Enumerable.Concat(@__tags, exampleTags));
+            }
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("EvergreenJnr_UsersList_CheckThat500ISEInvalidColumnNameErrorIsNotDisplayedIfUseSe" +
+                    "lectedFilterOnUsersPage", @__tags);
+            this.ScenarioSetup(scenarioInfo);
+            this.FeatureBackground();
+            testRunner.When("User clicks \"Users\" on the left-hand menu", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+            testRunner.Then("\"Users\" list should be displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+            testRunner.When("User clicks the Filters button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+            testRunner.Then("Filters panel is displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+            TechTalk.SpecFlow.Table table61 = new TechTalk.SpecFlow.Table(new string[] {
+                        "SelectedCheckboxes"});
+            table61.AddRow(new string[] {
+                        string.Format("{0}", selectedCheckboxes)});
+            testRunner.When(string.Format("User add \"{0}\" filter where type is \"Equals\" with added column and following chec" +
+                        "kboxes:", filterName), ((string)(null)), table61, "When ");
+            testRunner.Then(string.Format("\"{0}\" filter is added to the list", filterName), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+            testRunner.Then("table data is filtered correctly", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+            testRunner.Then(string.Format("\"{0}\" rows are displayed in the agGrid", rows), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+            this.ScenarioCleanup();
+        }
+        
+        [NUnit.Framework.TestAttribute()]
+        [NUnit.Framework.DescriptionAttribute("EvergreenJnr_ApplicationsList_CheckThat500ISEInvalidColumnNameErrorIsNotDisplayed" +
+            "IfUseSelectedFilterOnApplicationsPage")]
+        [NUnit.Framework.CategoryAttribute("Evergreen")]
+        [NUnit.Framework.CategoryAttribute("ApplicationsList")]
+        [NUnit.Framework.CategoryAttribute("EvergreenJnr_FilterFeature")]
+        [NUnit.Framework.CategoryAttribute("FilterFunctionality")]
+        [NUnit.Framework.CategoryAttribute("DAS12351")]
+        [NUnit.Framework.TestCaseAttribute("Windows7Mi: Category", "A Star Packages", "3", new string[0])]
+        [NUnit.Framework.TestCaseAttribute("Windows7Mi: Technical Test", "Started", "4", new string[0])]
+        [NUnit.Framework.TestCaseAttribute("Babel(Engl: Category", "None", "2,223", new string[0])]
+        [NUnit.Framework.TestCaseAttribute("ComputerSc: Category", "None", "2,223", new string[0])]
+        [NUnit.Framework.TestCaseAttribute("EmailMigra: Category", "None", "2,223", new string[0])]
+        [NUnit.Framework.TestCaseAttribute("Havoc(BigD: Category", "None", "2,223", new string[0])]
+        [NUnit.Framework.TestCaseAttribute("ICSP: Category", "i-app category", "148", new string[0])]
+        [NUnit.Framework.TestCaseAttribute("MigrationP: Category", "None", "2,223", new string[0])]
+        [NUnit.Framework.TestCaseAttribute("prK: Category", "app category K", "196", new string[0])]
+        [NUnit.Framework.TestCaseAttribute("UserSchedu: Category", "None", "2,223", new string[0])]
+        [NUnit.Framework.TestCaseAttribute("Babel(Engl: Request Type", "Tools", "302", new string[0])]
+        [NUnit.Framework.TestCaseAttribute("ComputerSc: Request Type", "Request Type A", "55", new string[0])]
+        [NUnit.Framework.TestCaseAttribute("EmailMigra: Request Type", "Public Folder", "50", new string[0])]
+        [NUnit.Framework.TestCaseAttribute("Havoc(BigD: Request Type", "[Default (Application)]", "1,067", new string[0])]
+        [NUnit.Framework.TestCaseAttribute("ICSP: Request Type", "[Default (Application)]", "148", new string[0])]
+        [NUnit.Framework.TestCaseAttribute("MigrationP: Request Type", "Group A Application", "1", new string[0])]
+        [NUnit.Framework.TestCaseAttribute("prK: Request Type", "[Default (Application)]", "231", new string[0])]
+        [NUnit.Framework.TestCaseAttribute("UserSchedu: Request Type", "Request Type A", "47", new string[0])]
+        [NUnit.Framework.TestCaseAttribute("Windows7Mi: Request Type", "Application: Request Type A", "7", new string[0])]
+        public virtual void EvergreenJnr_ApplicationsList_CheckThat500ISEInvalidColumnNameErrorIsNotDisplayedIfUseSelectedFilterOnApplicationsPage(string filterName, string selectedCheckboxes, string rows, string[] exampleTags)
+        {
+            System.Exception lastException = null;
+            for (int i = 0; (i <= 1); i = (i + 1))
+            {
+                try
+                {
+                    this.EvergreenJnr_ApplicationsList_CheckThat500ISEInvalidColumnNameErrorIsNotDisplayedIfUseSelectedFilterOnApplicationsPageInternal(filterName, selectedCheckboxes, rows, exampleTags);
+                    return;
+                }
+                catch (System.Exception exc)
+                {
+                    lastException = exc;
+                }
+                if (((i + 1) 
+                            <= 1))
+                {
+                    testRunner.OnScenarioEnd();
+                }
+            }
+            if ((lastException != null))
+            {
+                throw lastException;
+            }
+        }
+        
+        private void EvergreenJnr_ApplicationsList_CheckThat500ISEInvalidColumnNameErrorIsNotDisplayedIfUseSelectedFilterOnApplicationsPageInternal(string filterName, string selectedCheckboxes, string rows, string[] exampleTags)
+        {
+            string[] @__tags = new string[] {
+                    "Evergreen",
+                    "ApplicationsList",
+                    "EvergreenJnr_FilterFeature",
+                    "FilterFunctionality",
+                    "DAS12351"};
+            if ((exampleTags != null))
+            {
+                @__tags = System.Linq.Enumerable.ToArray(System.Linq.Enumerable.Concat(@__tags, exampleTags));
+            }
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("EvergreenJnr_ApplicationsList_CheckThat500ISEInvalidColumnNameErrorIsNotDisplayed" +
+                    "IfUseSelectedFilterOnApplicationsPage", @__tags);
+            this.ScenarioSetup(scenarioInfo);
+            this.FeatureBackground();
+            testRunner.When("User clicks \"Applications\" on the left-hand menu", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+            testRunner.Then("\"Applications\" list should be displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+            testRunner.When("User clicks the Filters button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+            testRunner.Then("Filters panel is displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+            TechTalk.SpecFlow.Table table62 = new TechTalk.SpecFlow.Table(new string[] {
+                        "SelectedCheckboxes"});
+            table62.AddRow(new string[] {
+                        string.Format("{0}", selectedCheckboxes)});
+            testRunner.When(string.Format("User add \"{0}\" filter where type is \"Equals\" with added column and following chec" +
+                        "kboxes:", filterName), ((string)(null)), table62, "When ");
+            testRunner.Then(string.Format("\"{0}\" filter is added to the list", filterName), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+            testRunner.Then("table data is filtered correctly", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+            testRunner.Then(string.Format("\"{0}\" rows are displayed in the agGrid", rows), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+            this.ScenarioCleanup();
+        }
+        
+        [NUnit.Framework.TestAttribute()]
+        [NUnit.Framework.DescriptionAttribute("EvergreenJnr_MailboxesList_CheckThat500ISEInvalidColumnNameErrorIsNotDisplayedIfU" +
+            "seSelectedFilterOnMailboxesPage")]
+        [NUnit.Framework.CategoryAttribute("Evergreen")]
+        [NUnit.Framework.CategoryAttribute("MailboxesList")]
+        [NUnit.Framework.CategoryAttribute("EvergreenJnr_FilterFeature")]
+        [NUnit.Framework.CategoryAttribute("FilterFunctionality")]
+        [NUnit.Framework.CategoryAttribute("DAS12351")]
+        [NUnit.Framework.TestCaseAttribute("EmailMigra: Category", "Mailbox Category A", "6", new string[0])]
+        [NUnit.Framework.TestCaseAttribute("EmailMigra: Request Type", "Personal Mailbox - VIP", "6", new string[0])]
+        public virtual void EvergreenJnr_MailboxesList_CheckThat500ISEInvalidColumnNameErrorIsNotDisplayedIfUseSelectedFilterOnMailboxesPage(string filterName, string selectedCheckboxes, string rows, string[] exampleTags)
+        {
+            System.Exception lastException = null;
+            for (int i = 0; (i <= 1); i = (i + 1))
+            {
+                try
+                {
+                    this.EvergreenJnr_MailboxesList_CheckThat500ISEInvalidColumnNameErrorIsNotDisplayedIfUseSelectedFilterOnMailboxesPageInternal(filterName, selectedCheckboxes, rows, exampleTags);
+                    return;
+                }
+                catch (System.Exception exc)
+                {
+                    lastException = exc;
+                }
+                if (((i + 1) 
+                            <= 1))
+                {
+                    testRunner.OnScenarioEnd();
+                }
+            }
+            if ((lastException != null))
+            {
+                throw lastException;
+            }
+        }
+        
+        private void EvergreenJnr_MailboxesList_CheckThat500ISEInvalidColumnNameErrorIsNotDisplayedIfUseSelectedFilterOnMailboxesPageInternal(string filterName, string selectedCheckboxes, string rows, string[] exampleTags)
+        {
+            string[] @__tags = new string[] {
+                    "Evergreen",
+                    "MailboxesList",
+                    "EvergreenJnr_FilterFeature",
+                    "FilterFunctionality",
+                    "DAS12351"};
+            if ((exampleTags != null))
+            {
+                @__tags = System.Linq.Enumerable.ToArray(System.Linq.Enumerable.Concat(@__tags, exampleTags));
+            }
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("EvergreenJnr_MailboxesList_CheckThat500ISEInvalidColumnNameErrorIsNotDisplayedIfU" +
+                    "seSelectedFilterOnMailboxesPage", @__tags);
+            this.ScenarioSetup(scenarioInfo);
+            this.FeatureBackground();
+            testRunner.When("User clicks \"Mailboxes\" on the left-hand menu", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+            testRunner.Then("\"Mailboxes\" list should be displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+            testRunner.When("User clicks the Filters button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+            testRunner.Then("Filters panel is displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+            TechTalk.SpecFlow.Table table63 = new TechTalk.SpecFlow.Table(new string[] {
+                        "SelectedCheckboxes"});
+            table63.AddRow(new string[] {
+                        string.Format("{0}", selectedCheckboxes)});
+            testRunner.When(string.Format("User add \"{0}\" filter where type is \"Equals\" with added column and following chec" +
+                        "kboxes:", filterName), ((string)(null)), table63, "When ");
+            testRunner.Then(string.Format("\"{0}\" filter is added to the list", filterName), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+            testRunner.Then("table data is filtered correctly", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+            testRunner.Then(string.Format("\"{0}\" rows are displayed in the agGrid", rows), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+            this.ScenarioCleanup();
+        }
+        
+        [NUnit.Framework.TestAttribute()]
+        [NUnit.Framework.DescriptionAttribute("EvergreenJnr_DevicesList_CheckThat500ISEInvalidColumnNameErrorIsNotDisplayedIfUse" +
+            "DepartmentFilter")]
+        [NUnit.Framework.CategoryAttribute("Evergreen")]
+        [NUnit.Framework.CategoryAttribute("AllLists")]
+        [NUnit.Framework.CategoryAttribute("EvergreenJnr_FilterFeature")]
+        [NUnit.Framework.CategoryAttribute("FilterFunctionality")]
+        [NUnit.Framework.CategoryAttribute("DAS12351")]
+        [NUnit.Framework.TestCaseAttribute("Devices", "Application Development", "873", new string[0])]
+        [NUnit.Framework.TestCaseAttribute("Users", "Application Development", "1,857", new string[0])]
+        [NUnit.Framework.TestCaseAttribute("Mailboxes", "Application Development", "1,118", new string[0])]
+        public virtual void EvergreenJnr_DevicesList_CheckThat500ISEInvalidColumnNameErrorIsNotDisplayedIfUseDepartmentFilter(string pageName, string selectedCheckboxes, string rows, string[] exampleTags)
+        {
+            System.Exception lastException = null;
+            for (int i = 0; (i <= 1); i = (i + 1))
+            {
+                try
+                {
+                    this.EvergreenJnr_DevicesList_CheckThat500ISEInvalidColumnNameErrorIsNotDisplayedIfUseDepartmentFilterInternal(pageName, selectedCheckboxes, rows, exampleTags);
+                    return;
+                }
+                catch (System.Exception exc)
+                {
+                    lastException = exc;
+                }
+                if (((i + 1) 
+                            <= 1))
+                {
+                    testRunner.OnScenarioEnd();
+                }
+            }
+            if ((lastException != null))
+            {
+                throw lastException;
+            }
+        }
+        
+        private void EvergreenJnr_DevicesList_CheckThat500ISEInvalidColumnNameErrorIsNotDisplayedIfUseDepartmentFilterInternal(string pageName, string selectedCheckboxes, string rows, string[] exampleTags)
+        {
+            string[] @__tags = new string[] {
+                    "Evergreen",
+                    "AllLists",
+                    "EvergreenJnr_FilterFeature",
+                    "FilterFunctionality",
+                    "DAS12351"};
+            if ((exampleTags != null))
+            {
+                @__tags = System.Linq.Enumerable.ToArray(System.Linq.Enumerable.Concat(@__tags, exampleTags));
+            }
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("EvergreenJnr_DevicesList_CheckThat500ISEInvalidColumnNameErrorIsNotDisplayedIfUse" +
+                    "DepartmentFilter", @__tags);
+            this.ScenarioSetup(scenarioInfo);
+            this.FeatureBackground();
+            testRunner.When(string.Format("User clicks \"{0}\" on the left-hand menu", pageName), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+            testRunner.Then(string.Format("\"{0}\" list should be displayed to the user", pageName), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+            testRunner.When("User clicks the Filters button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+            testRunner.Then("Filters panel is displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+            testRunner.When(string.Format("User add \"Department\" filter where type is \"Equals\" with added column and \"{0}\" T" +
+                        "ree List option", selectedCheckboxes), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+            testRunner.Then("\"Department\" filter is added to the list", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+            testRunner.Then(string.Format("\"{0}\" rows are displayed in the agGrid", rows), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+            this.ScenarioCleanup();
+        }
     }
 }
 #pragma warning restore

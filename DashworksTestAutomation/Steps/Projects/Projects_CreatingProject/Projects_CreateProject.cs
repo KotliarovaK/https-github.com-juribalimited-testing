@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Linq;
+using System.Threading;
 using DashworksTestAutomation.DTO.Projects;
 using DashworksTestAutomation.Extensions;
 using DashworksTestAutomation.Pages.Projects;
@@ -251,7 +252,7 @@ namespace DashworksTestAutomation.Steps.Projects
             _projectDto.Stages.Add(tempStagePropertiesDto);
 
             page.StageName.SendKeys(_stagePropertiesDto.StageName);
-
+            _driver.WaitForDataLoading();
             page.ConfirmCreateStageButton.Click();
         }
 
@@ -443,7 +444,6 @@ namespace DashworksTestAutomation.Steps.Projects
             _taskPropertiesValuesDto.TaskStatus = (TaskStatusEnum)Enum.Parse(typeof(TaskStatusEnum), _taskPropertiesValuesDto.TaskStatusString);
 
             page.Name.SendKeys(_taskPropertiesValuesDto.Name);
-            //TODO colors select
             if (!string.IsNullOrEmpty(_taskPropertiesValuesDto.ReadinessString))
             {
                 //assign ReadinessString to ReadinessEnum
@@ -474,7 +474,6 @@ namespace DashworksTestAutomation.Steps.Projects
                 page.Name.Clear();
                 page.Name.SendKeys(_taskPropertiesValuesDto.Name);
             }
-            //TODO colors select
             if (!string.IsNullOrEmpty(_taskPropertiesValuesDto.ReadinessString))
             {
                 //assign ReadinessString to ReadinessEnum
@@ -539,6 +538,8 @@ namespace DashworksTestAutomation.Steps.Projects
             page.ShortDescription.SendKeys(_teamPropertiesDto.ShortDescription);
 
             page.ConfirmCreateTeamButton.Click();
+
+            tempTeamPropertiesDto.TeamName = _teamPropertiesDto.TeamName;
         }
 
         [When(@"User create Group owned for ""(.*)"" Team")]
@@ -553,11 +554,13 @@ namespace DashworksTestAutomation.Steps.Projects
             _projectDto.GroupProperties.Add(tempGroupPropertiesDto);
 
             page.GroupName.SendKeys(_groupPropertiesDto.GroupName);
+            //_driver.WaitForDataLoading();
+            Thread.Sleep(500);
             page.OwnedByTeam.SelectboxSelect(_projectDto.TeamProperties[teamIndex - 1].TeamName);
 
             page.ConfirmCreateGroupButton.Click();
 
-            tempGroupPropertiesDto.OwnedByTeam = _projectDto.TeamProperties.Last().TeamName;
+            //tempGroupPropertiesDto.OwnedByTeam = _projectDto.TeamProperties.Last().TeamName;
         }
 
         [When(@"User create Mail Template")]

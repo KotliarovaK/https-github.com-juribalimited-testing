@@ -1,37 +1,35 @@
 ﻿Feature: CreateComputerScheduledProject
 	Runs Project related tests
 
+Background: Pre-Conditions
+	Given User is logged in to the Projects
+	Then "Projects Home" page is displayed to the user
+
 @Senior @Projects_Administration @ComputerScheduledProject @Delete_Newly_Created_Team
 Scenario: Projects_CreateComputerScheduledProject
-	Given User is on Dashworks Homepage
-	Then Login Page is displayed to the user
-	When User provides the Login and Password and clicks on the login button
-	Then Dashworks homepage is displayed to the user in a logged in state
-	When User navigate to Projects link
-	Then "Projects Home" page is displayed to the user
 	When User clicks create Project button
 	Then "Create Project" page is displayed to the user
 	When User creates Project
-	| ProjectName     | ProjectShortName | ProjectDescription | ProjectTypeString        |
-	| TestProjectName | TestText         | TestText           | ComputerScheduledProject |
+	| ProjectName                  | ProjectShortName | ProjectDescription | ProjectTypeString        |
+	| 000 ComputerScheduledProject | TestText         | TestText           | ComputerScheduledProject |
 	And User clicks "Create Project" button
 	Then "Manage Project Details" page is displayed to the user
 	When User navigate to Manage link
 	And User select "Manage Users" option in Management Console
 	Then User create a new Dashworks User
-	| Username | FullName                   | Password | ConfirmPassword |
-	| AAA0Test | ComputerScheduledProject 0 | 1234qwer | 1234qwer        |
+	| Username                     | FullName                   | Password | ConfirmPassword |
+	| AAA0ComputerScheduledProject | ComputerScheduledProject 0 | 1234qwer | 1234qwer        |
 	And Success message is displayed
 	And created User is displayed in the table
 	And User create a new Dashworks User
-	| Username | FullName                   | Password | ConfirmPassword |
-	| AAA1Test | ComputerScheduledProject 1 | 1234qwer | 1234qwer        |
+	| Username                     | FullName                   | Password | ConfirmPassword |
+	| AAA1ComputerScheduledProject | ComputerScheduledProject 1 | 1234qwer | 1234qwer        |
 	And Success message is displayed
 	And created User is displayed in the table
 	And User create a new Dashworks User
-	| Username | FullName                   | Password | ConfirmPassword |
-	| AAA2Test | ComputerScheduledProject 2 | 1234qwer | 1234qwer        |
-	Then Success message is displayed
+	| Username                     | FullName                   | Password | ConfirmPassword |
+	| AAA2ComputerScheduledProject | ComputerScheduledProject 2 | 1234qwer | 1234qwer        |
+	And Success message is displayed
 	And created User is displayed in the table
 	When User navigate to Dashworks User Site link
 	And User navigate to Projects link
@@ -103,7 +101,7 @@ Scenario: Projects_CreateComputerScheduledProject
 	Then created Request Type is a Default
 	When User clicks "Create Request Type" button
 	And User create Request Type
-	| Name                 | Description                | ObjectTypeString |
+	| Name                  | Description                | ObjectTypeString |
 	| 3 TestRequestTypeName | ComputerScheduledProject 3 | Computer         |
 	Then Success message is displayed
 	When User clicks "Cancel" button
