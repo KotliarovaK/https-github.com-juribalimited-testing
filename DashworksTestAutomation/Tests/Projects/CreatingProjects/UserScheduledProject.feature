@@ -10,8 +10,8 @@ Scenario: Projects_CreateUserScheduledProject
 	When User clicks create Project button
 	Then "Create Project" page is displayed to the user
 	When User creates Project
-	| ProjectName          | ProjectShortName | ProjectDescription | ProjectTypeString    |
-	| UserScheduledProject | TestText         | TestText           | UserScheduledProject |
+	| ProjectName              | ProjectShortName | ProjectDescription | ProjectTypeString    |
+	| 000 UserScheduledProject | TestText         | TestText           | UserScheduledProject |
 	And User clicks "Create Project" button
 	Then "Manage Project Details" page is displayed to the user
 	When User navigate to Manage link
