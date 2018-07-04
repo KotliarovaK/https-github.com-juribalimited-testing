@@ -778,8 +778,7 @@ Examples:
 	| ComputerSc: Category                      | None                 | 17,059 |
 	| ICSP: Category                            | None                 | 17,217 |
 	| MigrationP: Category                      | None                 | 17,220 |
-	| Babel(Engl: Request Type                  | Machines             | 58     |
-	#| Barry'sUse: Request Type                  | Desktop Replacement  | 1,329  |
+	| Babel(Engl: Request Type                  | Machines             | 62     |
 	| ComputerSc: Request Type                  | Request Type A       | 132    |
 	| ICSP: Request Type                        | [Default (Computer)] | 8      |
 	| MigrationP: Request Type                  | [Default (Computer)] | 41     |
@@ -804,7 +803,6 @@ Examples:
 	| FilterName                                  | SelectedCheckboxes | Rows   |
 	| Windows7Mi: Category                        | Terminated         | 1      |
 	| Windows7Mi: Read Only on Bulk Update Page   | Not Applicable     | 4,642  |
-	| Babel(Engl: Let there be tasks              | Not Applicable     | 58     |
 	| Babel(Engl: Category                        | The first          | 8      |
 	| Barry'sUse: Category                        | None               | 41,339 |
 	| ComputerSc: Category                        | None               | 41,339 |
