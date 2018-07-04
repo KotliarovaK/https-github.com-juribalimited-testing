@@ -152,7 +152,14 @@ namespace DashworksTestAutomation.Steps.Dashworks
             _client.Value.AddCookies(client.CookiesJar);
 
             //Change profile language
-            _client.ChangeUserProfileLanguage(_user.UserName, _user.Language);
+            try
+            {
+                _client.ChangeUserProfileLanguage(_user.UserName, _user.Language);
+            }
+            catch (Exception e)
+            {
+                _client.ChangeUserProfileLanguage(_user.UserName, _user.Language);
+            }
         }
     }
 }
