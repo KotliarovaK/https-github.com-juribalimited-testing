@@ -17,12 +17,12 @@ Scenario: Projects_CreateUserScheduledProject
 	When User navigate to Manage link
 	And User select "Manage Users" option in Management Console
 	Then User create a new Dashworks User
-	| Username | FullName               | Password | ConfirmPassword |
+	| Username                 | FullName               | Password | ConfirmPassword |
 	| AAA0UserScheduledProject | UserScheduledProject 0 | 1234qwer | 1234qwer        |
 	And Success message is displayed
 	And created User is displayed in the table
 	And User create a new Dashworks User
-	| Username | FullName               | Password | ConfirmPassword |
+	| Username                 | FullName               | Password | ConfirmPassword |
 	| AAA1UserScheduledProject | UserScheduledProject 1 | 1234qwer | 1234qwer        |
 	And Success message is displayed
 	And created User is displayed in the table
@@ -127,18 +127,18 @@ Scenario: Projects_CreateUserScheduledProject
 	Then "Manage Stages" page is displayed to the user
 	When User clicks "Create Stage" button
 	And User create Stage
-	| StageName                     |
-	| 1  UserScheduledProject Stage |
+	| StageName |
+	| Stage 1   |
 	Then created Stage is displayed in the table
 	When User clicks "Create Stage" button
 	And User create Stage
-	| StageName                    |
-	| 2 UserScheduledProject Stage |
+	| StageName |
+	| Stage 2   |
 	Then created Stage is displayed in the table
 	When User clicks "Create Stage" button
 	And User create Stage
-	| StageName                    |
-	| 3 UserScheduledProject Stage |
+	| StageName |
+	| Stage 3   |
 	Then created Stage is displayed in the table
 		#Creating Mail Template
 	When User navigate to "Mail Templates" tab

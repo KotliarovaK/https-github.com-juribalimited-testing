@@ -127,18 +127,18 @@ Scenario: Projects_CreateMailboxScheduledProject
 	Then "Manage Stages" page is displayed to the user
 	When User clicks "Create Stage" button
 	And User create Stage
-	| StageName                       |
-	| 1 MailboxScheduledProject Stage |
+	| StageName |
+	| Stage 1   |
 	Then created Stage is displayed in the table
 	When User clicks "Create Stage" button
 	And User create Stage
-	| StageName                       |
-	| 2 MailboxScheduledProject Stage |
+	| StageName |
+	| Stage 2   |
 	Then created Stage is displayed in the table
 	When User clicks "Create Stage" button
 	And User create Stage
-	| StageName                       |
-	| 3 MailboxScheduledProject Stage |
+	| StageName |
+	| Stage 3   |
 	Then created Stage is displayed in the table
 		#Creating Mail Template
 	When User navigate to "Mail Templates" tab
