@@ -777,6 +777,7 @@ Scenario: EvergreenJnr_DevicesList_CheckThat500ErrorIsNotDisplayedForStaticListA
 	When User clicks the Actions button
 	Then Actions panel is displayed to the user
 	When User select all rows
+	And User selects "Create static list" in the Actions dropdown
 	And User create static list with "StaticListTestName" name
 	When User clicks "Devices" on the left-hand menu
 	Then "Devices" list should be displayed to the user
@@ -785,7 +786,7 @@ Scenario: EvergreenJnr_DevicesList_CheckThat500ErrorIsNotDisplayedForStaticListA
 	When User add "Application (Saved List)" filter where type is "In list" with Selected Value and following Association:
 	| SelectedList       | Association        |
 	| StaticListTestName | Not used on device |
-	Then "Application in list StaticListTestName not used on device" is displayed in added filter info
+	Then "Any Application in list StaticListTestName not used on device" is displayed in added filter info
 	When User create dynamic list with "TestList8D5C03" name on "Devices" page
 	When User clicks "Applications" on the left-hand menu
 	Then "Applications" list should be displayed to the user
@@ -809,7 +810,7 @@ Scenario: EvergreenJnr_DevicesList_CheckThat500ErrorIsNotDisplayedForDynamicList
 	When User add "Application (Saved List)" filter where type is "In list" with Selected Value and following Association:
 	| SelectedList   | Association        |
 	| TestList5E021D | Not used on device |
-	Then "Application in list TestList5E021D not used on device" is displayed in added filter info
+	Then "Any Application in list TestList5E021D not used on device" is displayed in added filter info
 	When User create dynamic list with "TestList5E021D" name on "Devices" page
 	Then "TestList5E021D" list is displayed to user
 	When User clicks "Applications" on the left-hand menu
@@ -1005,7 +1006,7 @@ Scenario: EvergreenJnr_AllLists_CheckThatFilterTextDisplaysActualListName
 	Then "DevicesList" list is displayed to user
 	When User clicks the Filters button
 	Then Filters panel is displayed to the user
-	And "Application in list [List not found] entitled to device" is displayed in added filter info
+	And "Any Application in list [List not found] entitled to device" is displayed in added filter info
 
 @Evergreen @AllLists @Evergreen_FiltersFeature @FiltersDisplay @DAS12121 @Delete_Newly_Created_List @Not_Run
 Scenario: EvergreenJnr_AllLists_CheckThatTextInTheFilterPanelDisplaysTheCurrentListName
