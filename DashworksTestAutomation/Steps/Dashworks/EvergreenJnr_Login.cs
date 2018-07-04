@@ -156,7 +156,7 @@ namespace DashworksTestAutomation.Steps.Dashworks
             {
                 _client.ChangeUserProfileLanguage(_user.UserName, _user.Language);
             }
-            catch (Exception e)
+            catch (Exception)
             {
                 _client.ChangeUserProfileLanguage(_user.UserName, _user.Language);
             }
