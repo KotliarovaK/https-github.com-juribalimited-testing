@@ -537,6 +537,8 @@ namespace DashworksTestAutomation.Steps.Projects
             page.ShortDescription.SendKeys(_teamPropertiesDto.ShortDescription);
 
             page.ConfirmCreateTeamButton.Click();
+
+            tempTeamPropertiesDto.TeamName = _teamPropertiesDto.TeamName;
         }
 
         [When(@"User create Group owned for ""(.*)"" Team")]
@@ -556,7 +558,7 @@ namespace DashworksTestAutomation.Steps.Projects
 
             page.ConfirmCreateGroupButton.Click();
 
-            tempGroupPropertiesDto.OwnedByTeam = _projectDto.TeamProperties.Last().TeamName;
+            //tempGroupPropertiesDto.OwnedByTeam = _projectDto.TeamProperties.Last().TeamName;
         }
 
         [When(@"User create Mail Template")]
