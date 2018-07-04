@@ -443,7 +443,6 @@ namespace DashworksTestAutomation.Steps.Projects
             _taskPropertiesValuesDto.TaskStatus = (TaskStatusEnum)Enum.Parse(typeof(TaskStatusEnum), _taskPropertiesValuesDto.TaskStatusString);
 
             page.Name.SendKeys(_taskPropertiesValuesDto.Name);
-            //TODO colors select
             if (!string.IsNullOrEmpty(_taskPropertiesValuesDto.ReadinessString))
             {
                 //assign ReadinessString to ReadinessEnum
@@ -474,7 +473,6 @@ namespace DashworksTestAutomation.Steps.Projects
                 page.Name.Clear();
                 page.Name.SendKeys(_taskPropertiesValuesDto.Name);
             }
-            //TODO colors select
             if (!string.IsNullOrEmpty(_taskPropertiesValuesDto.ReadinessString))
             {
                 //assign ReadinessString to ReadinessEnum
@@ -553,6 +551,7 @@ namespace DashworksTestAutomation.Steps.Projects
             _projectDto.GroupProperties.Add(tempGroupPropertiesDto);
 
             page.GroupName.SendKeys(_groupPropertiesDto.GroupName);
+            _driver.WaitForDataLoading();
             page.OwnedByTeam.SelectboxSelect(_projectDto.TeamProperties[teamIndex - 1].TeamName);
 
             page.ConfirmCreateGroupButton.Click();

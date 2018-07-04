@@ -89,7 +89,7 @@ namespace DashworksTestAutomation.Tests.Projects.CreatingProjects
                         "ProjectDescription",
                         "ProjectTypeString"});
             table1.AddRow(new string[] {
-                        "TestProjectName",
+                        "ComputerScheduledProject",
                         "TestText",
                         "TestText",
                         "ComputerScheduledProject"});
@@ -104,7 +104,7 @@ namespace DashworksTestAutomation.Tests.Projects.CreatingProjects
                         "Password",
                         "ConfirmPassword"});
             table2.AddRow(new string[] {
-                        "AAA0Test",
+                        "AAA0ComputerScheduledProject",
                         "ComputerScheduledProject 0",
                         "1234qwer",
                         "1234qwer"});
@@ -117,7 +117,7 @@ namespace DashworksTestAutomation.Tests.Projects.CreatingProjects
                         "Password",
                         "ConfirmPassword"});
             table3.AddRow(new string[] {
-                        "AAA1Test",
+                        "AAA1ComputerScheduledProject",
                         "ComputerScheduledProject 1",
                         "1234qwer",
                         "1234qwer"});
@@ -130,12 +130,12 @@ namespace DashworksTestAutomation.Tests.Projects.CreatingProjects
                         "Password",
                         "ConfirmPassword"});
             table4.AddRow(new string[] {
-                        "AAA2Test",
+                        "AAA2ComputerScheduledProject",
                         "ComputerScheduledProject 2",
                         "1234qwer",
                         "1234qwer"});
             testRunner.And("User create a new Dashworks User", ((string)(null)), table4, "And ");
-            testRunner.Then("Success message is displayed", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+            testRunner.And("Success message is displayed", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
             testRunner.And("created User is displayed in the table", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
             testRunner.When("User navigate to Dashworks User Site link", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
             testRunner.And("User navigate to Projects link", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");

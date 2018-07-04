@@ -10,25 +10,25 @@ Scenario: Projects_CreateUserScheduledProject
 	When User clicks create Project button
 	Then "Create Project" page is displayed to the user
 	When User creates Project
-	| ProjectName     | ProjectShortName | ProjectDescription | ProjectTypeString    |
-	| TestProjectName | TestText         | TestText           | UserScheduledProject |
+	| ProjectName          | ProjectShortName | ProjectDescription | ProjectTypeString    |
+	| UserScheduledProject | TestText         | TestText           | UserScheduledProject |
 	And User clicks "Create Project" button
 	Then "Manage Project Details" page is displayed to the user
 	When User navigate to Manage link
 	And User select "Manage Users" option in Management Console
 	Then User create a new Dashworks User
 	| Username | FullName               | Password | ConfirmPassword |
-	| AAA0Test | UserScheduledProject 0 | 1234qwer | 1234qwer        |
+	| AAA0UserScheduledProject | UserScheduledProject 0 | 1234qwer | 1234qwer        |
 	And Success message is displayed
 	And created User is displayed in the table
 	And User create a new Dashworks User
 	| Username | FullName               | Password | ConfirmPassword |
-	| AAA1Test | UserScheduledProject 1 | 1234qwer | 1234qwer        |
+	| AAA1UserScheduledProject | UserScheduledProject 1 | 1234qwer | 1234qwer        |
 	And Success message is displayed
 	And created User is displayed in the table
 	And User create a new Dashworks User
-	| Username | FullName               | Password | ConfirmPassword |
-	| AAA2Test | UserScheduledProject 2 | 1234qwer | 1234qwer        |
+	| Username                 | FullName               | Password | ConfirmPassword |
+	| AAA2UserScheduledProject | UserScheduledProject 2 | 1234qwer | 1234qwer        |
 	And Success message is displayed
 	And created User is displayed in the table
 	When User navigate to Dashworks User Site link
@@ -230,8 +230,8 @@ Scenario: Projects_CreateUserScheduledProject
 	Then "Manage Teams" page is displayed to the user
 	When User clicks "Create Team" button
 	And User create Team
-	| TeamName                 | ShortDescription |
-	| 000 UserScheduledProject | TestText 0       |
+	| TeamName                      | ShortDescription |
+	| 000 UserScheduledProject Team | TestText 0       |
 	And User clicks "Add Member" button
 	And User select "1" user to add as member
 	And User clicks "Add Selected" button
@@ -240,8 +240,8 @@ Scenario: Projects_CreateUserScheduledProject
 	And "2" number of Members is displayed for created Team
 	When User clicks "Create Team" button
 	And User create Team
-	| TeamName                 | ShortDescription |
-	| 001 UserScheduledProject | TestText 1       |
+	| TeamName                      | ShortDescription |
+	| 001 UserScheduledProject Team | TestText 1       |
 	When User clicks "Add Member" button
 	And User select "2" user to add as member
 	And User clicks "Add Selected" button
@@ -250,8 +250,8 @@ Scenario: Projects_CreateUserScheduledProject
 	And "2" number of Members is displayed for created Team
 	When User clicks "Create Team" button
 	And User create Team
-	| TeamName                 | ShortDescription |
-	| 002 UserScheduledProject | TestText 2       |
+	| TeamName                      | ShortDescription |
+	| 002 UserScheduledProject Team | TestText 2       |
 	And User clicks "Add Member" button
 	And User select "3" user to add as member
 	And User clicks "Add Selected" button

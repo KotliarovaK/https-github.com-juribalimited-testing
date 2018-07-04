@@ -10,25 +10,25 @@ Scenario: Projects_CreateMailboxScheduledProject
 	When User clicks create Project button
 	Then "Create Project" page is displayed to the user
 	When User creates Project
-	| ProjectName     | ProjectShortName | ProjectDescription | ProjectTypeString       |
-	| TestProjectName | TestText         | TestText           | MailboxScheduledProject |
+	| ProjectName             | ProjectShortName | ProjectDescription | ProjectTypeString       |
+	| MailboxScheduledProject | TestText         | TestText           | MailboxScheduledProject |
 	And User clicks "Create Project" button
 	Then "Manage Project Details" page is displayed to the user
 	When User navigate to Manage link
 	And User select "Manage Users" option in Management Console
 	Then User create a new Dashworks User
-	| Username | FullName                  | Password | ConfirmPassword |
-	| AAA0Test | MailboxScheduledProject 0 | 1234qwer | 1234qwer        |
+	| Username                    | FullName                  | Password | ConfirmPassword |
+	| AAA0MailboxScheduledProject | MailboxScheduledProject 0 | 1234qwer | 1234qwer        |
 	And Success message is displayed
 	And created User is displayed in the table
 	And User create a new Dashworks User
-	| Username | FullName                  | Password | ConfirmPassword |
-	| AAA1Test | MailboxScheduledProject 1 | 1234qwer | 1234qwer        |
+	| Username                    | FullName                  | Password | ConfirmPassword |
+	| AAA1MailboxScheduledProject | MailboxScheduledProject 1 | 1234qwer | 1234qwer        |
 	And Success message is displayed
 	And created User is displayed in the table
 	And User create a new Dashworks User
-	| Username | FullName                  | Password | ConfirmPassword |
-	| AAA2Test | MailboxScheduledProject 2 | 1234qwer | 1234qwer        |
+	| Username                    | FullName                  | Password | ConfirmPassword |
+	| AAA2MailboxScheduledProject | MailboxScheduledProject 2 | 1234qwer | 1234qwer        |
 	And Success message is displayed
 	And created User is displayed in the table
 	When User navigate to Dashworks User Site link
