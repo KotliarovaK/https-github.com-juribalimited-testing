@@ -101,6 +101,13 @@ namespace DashworksTestAutomation.Pages.Evergreen
             return Driver.FindElement(listSettingsSelector);
         }
 
+        public IWebElement ListInBottomSection(string listName)
+        {
+            var listSelector =
+                By.XPath($".//li[contains(@class, 'menu-show-on-hover ng-star-inserted')]/span[text()='{listName}']");
+            return Driver.FindElement(listSelector);
+        }
+
         #region ListSettings
 
         [FindsBy(How = How.XPath, Using = ".//li[text()='Manage']")]
@@ -112,7 +119,7 @@ namespace DashworksTestAutomation.Pages.Evergreen
         [FindsBy(How = How.XPath, Using = ".//li[text()='Duplicate']")]
         public IWebElement DuplicateButton { get; set; }
 
-        [FindsBy(How = How.XPath, Using = ".//li[text()='Delete']")]
+        [FindsBy(How = How.XPath, Using = ".//li[contains(text(), 'Delete')]")]
         public IWebElement DeleteButton { get; set; }
 
         [FindsBy(How = How.XPath, Using = ".//button[contains(@class, 'btn mat-button')]")]

@@ -240,6 +240,7 @@
     <Compile Include="Pages\Evergreen\AdminDetailsPages\AdminLeftHandMenu.cs" />
     <Compile Include="Pages\Evergreen\AdminDetailsPages\BaseGridPage.cs" />
     <Compile Include="Pages\Evergreen\AdminDetailsPages\BucketsPage.cs" />
+    <Compile Include="Pages\Evergreen\AdminDetailsPages\Forms\ImportProjectPage.cs" />
     <Compile Include="Pages\Evergreen\AdminDetailsPages\Forms\CreateProjectPage.cs" />
     <Compile Include="Pages\Evergreen\AdminDetailsPages\Forms\CreateBucketPage.cs" />
     <Compile Include="Pages\Evergreen\AdminDetailsPages\Forms\CreateTeamPage.cs" />
@@ -399,6 +400,11 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>MainFunctionality.feature</DependentUpon>
     </Compile>
+    <Compile Include="Tests\EvergreenJnr_GridActions\DataInTable.feature.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DataInTable.feature</DependentUpon>
+    </Compile>
     <Compile Include="Tests\EvergreenJnr_ListDetails\ListDetailsFunctionality.feature.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -551,6 +557,10 @@
       <Generator>SpecFlowSingleFileGenerator</Generator>
       <LastGenOutput>MainFunctionality.feature.cs</LastGenOutput>
     </None>
+    <None Include="Tests\EvergreenJnr_GridActions\DataInTable.feature">
+      <Generator>SpecFlowSingleFileGenerator</Generator>
+      <LastGenOutput>DataInTable.feature.cs</LastGenOutput>
+    </None>
     <None Include="Tests\EvergreenJnr_ListDetails\ListDetailsFunctionality.feature">
       <Generator>SpecFlowSingleFileGenerator</Generator>
       <LastGenOutput>ListDetailsFunctionality.feature.cs</LastGenOutput>
@@ -631,7 +641,9 @@
   <ItemGroup>
     <Service Include="{82A7F48D-3B50-4B1E-B82E-3ADA8210C358}" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <Content Include="Resources\CorrectFile_DAS12370.xml" />
+  </ItemGroup>
   <ItemGroup>
     <None Include="Resources\CorrectFile.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>

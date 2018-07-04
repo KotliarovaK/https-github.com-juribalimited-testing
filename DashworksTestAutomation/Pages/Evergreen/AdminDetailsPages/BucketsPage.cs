@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using DashworksTestAutomation.Base;
 using DashworksTestAutomation.Extensions;
+using DashworksTestAutomation.Helpers;
 using OpenQA.Selenium;
 using OpenQA.Selenium.Support.PageObjects;
 
@@ -15,6 +16,9 @@ namespace DashworksTestAutomation.Pages.Evergreen.AdminDetailsPages
         
         [FindsBy(How = How.XPath, Using = ".//span[@class='mat-checkbox-label'][text()='Default Bucket']")]
         public IWebElement DefaultBucketCheckbox { get; set; }
+
+        [FindsBy(How = How.XPath, Using = ".//input[@aria-checked='true']")]
+        public IWebElement SelectedDefaultBucketCheckbox { get; set; }
 
         [FindsBy(How = How.XPath, Using = ".//span[text()='UPDATE BUCKET']")]
         public IWebElement UpdateBucketButton { get; set; }
@@ -52,7 +56,7 @@ namespace DashworksTestAutomation.Pages.Evergreen.AdminDetailsPages
         public bool WarningDeleteBucketMessage(string warningText)
         {
             return Driver.IsElementDisplayed(
-                By.XPath($".//div[@class='ng-star-inserted inline-tip'][text()='{warningText}']"));
+                By.XPath($".//div[@id='messageAdmin'][text()='{warningText}']"));
         }
     }
 }

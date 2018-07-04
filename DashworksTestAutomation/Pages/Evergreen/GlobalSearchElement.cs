@@ -38,7 +38,7 @@ namespace DashworksTestAutomation.Pages.Evergreen
         public IWebElement SearchResult(string searchText)
         {
             return Driver.FindElement(
-                By.XPath($".//div[contains(@class, 'result-table')]//a[text()='{searchText}']"));
+                By.XPath($".//div[contains(@class, 'result-table')]//a[contains(text(), '{searchText}')]"));
         }
     }
 }

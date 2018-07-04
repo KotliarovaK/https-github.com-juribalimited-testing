@@ -453,7 +453,7 @@ Scenario: EvergreenJnr_DevicesList_CheckThatEditListMenuNotDisplayedForDifferent
 	Then "Devices" list should be displayed to the user
 	When User clicks the Filters button
 	Then Filters panel is displayed to the user
-	When User add "Application (Saved List)" filter where type is "In list" with SelectedList list and following Association:
+	When User add "Application (Saved List)" filter where type is "In list" with Selected Value and following Association:
 	| SelectedList   | Association        |
 	| TestList569889 | Not used on device |
 	Then "Application" filter is added to the list
@@ -1035,3 +1035,18 @@ Scenario: EvergreenJnr_UsersList_CheckThatDataFromTheStaticListAreSavedInTheNewL
 	When User duplicates list with "StaticList1412" name
 	Then "StaticList14122" list is displayed to user
 	Then "2" rows are displayed in the agGrid
+
+@Evergreen @Users @EvergreenJnr_ListPanel @CustomListDisplay @DAS12630
+Scenario: EvergreenJnr_UsersList_CheckThatStaticListIsDisplayedInTheBottomOfTheListPanelWhenNavigateToTheMainList
+	When User create static list with "StaticList6542" name on "Users" page with following items
+	| ItemName            |
+	| 000F977AC8824FE39B8 |
+	| 00A5B910A1004CF5AC4 |
+	Then "StaticList6542" list is displayed to user
+	When User navigates to the "All Users" list
+	Then "StaticList6542" list is displayed in the bottom section of the List Panel
+	When User clicks Settings button for "StaticList6542" list
+	When User clicks Delete button for custom list
+	Then "list will be permanently deleted" message is displayed in the lists panel
+	And User clicks Delete button on the warning message in the lists panel
+	And "List Deleted" message is displayed

@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Threading;
 using DashworksTestAutomation.Base;
 using DashworksTestAutomation.Extensions;
 using OpenQA.Selenium;
@@ -35,6 +36,9 @@ namespace DashworksTestAutomation.Pages.Evergreen
         [FindsBy(How = How.XPath, Using = ".//button[@id='_fltrBtn']")]
         public IWebElement FilterButton { get; set; }
 
+        [FindsBy(How = How.XPath, Using = ".//button[contains(@class, 'pull-left context-toggle')]//i[@class='material-icons mat-clear']")]
+        public IWebElement ClosePanelButton { get; set; }
+
         [FindsBy(How = How.XPath,
             Using = ".//div[@role='presentation']//div[@class='ag-header-cell']//header-cell//input")]
         public IWebElement SelectAllRowsAction { get; set; }
@@ -64,7 +68,7 @@ namespace DashworksTestAutomation.Pages.Evergreen
         [FindsBy(How = How.XPath, Using = ".//div[contains(@class,'submenu-selected-list')]")]
         public IWebElement List { get; set; }
 
-        [FindsBy(How = How.XPath, Using = ".//span[@class='rowCount ng-star-inserted']")]
+        [FindsBy(How = How.XPath, Using = ".//span[contains(@class, 'rowCount')]")]
         public IWebElement ResultsOnPageCount { get; set; }
 
         [FindsBy(How = How.XPath, Using = ".//span[@class='checkbox-styled selectBox']/input")]
@@ -88,7 +92,7 @@ namespace DashworksTestAutomation.Pages.Evergreen
         [FindsBy(How = How.XPath, Using = ".//div[@class='empty-message ng-star-inserted'][text()='No devices found']")]
         public IWebElement NoResultsFoundMessage { get; set; }
 
-        [FindsBy(How = How.XPath, Using = ".//div[@class='save-action-bar ng-star-inserted']//span[text()='Save']")]
+        [FindsBy(How = How.XPath, Using = ".//span[@class='action-item']//span[text()='Save']")]
         public IWebElement SaveCustomListButton { get; set; }
 
         [FindsBy(How = How.XPath, Using = ".//span[@class='filter-content']")]
@@ -150,6 +154,12 @@ namespace DashworksTestAutomation.Pages.Evergreen
             };
         }
 
+        //Null value can be returned
+        public IWebElement GetGridCell(int rowIndex, int columnNumber)
+        {
+            return (IWebElement)Driver.ExecuteScript($"return document.querySelector(\"div[row-index = '{rowIndex}']>div:nth-of-type({columnNumber})\")");
+        }
+
         public string GetHeaderFontWeight()
         {
             return Driver.FindElement(By.XPath(".//span[@class='ag-header-cell-text']")).GetCssValue("font-weight");
@@ -200,6 +210,56 @@ namespace DashworksTestAutomation.Pages.Evergreen
             return Driver.FindElement(selector);
         }
 
+        public List<string> GetColumnDataByScrolling(string columnName)
+        {
+            List<string> columnData = new List<string>();
+            var columnNumber = GetColumnNumberByName(columnName);
+            int iter = 0;
+            var element = GetGridCell(iter, columnNumber);
+            columnData.Add(element.Text);
+            do
+            {
+                iter++;
+                try
+                {
+                    Driver.MouseHoverByJavascript(element);
+                    element = GetGridCell(iter, columnNumber);
+                }
+                catch (StaleElementReferenceException)
+                {
+                    Thread.Sleep(2000);
+                    element = GetGridCell(iter, columnNumber);
+                    Driver.MouseHoverByJavascript(element);
+                }
+
+                //Data loading
+                if (element == null)
+                {
+                    Thread.Sleep(2000);
+                    element = GetGridCell(iter, columnNumber);
+                }
+                try
+                {
+                    columnData.Add(element.Text);
+                }
+                catch (StaleElementReferenceException)
+                {
+                    Thread.Sleep(2000);
+                    element = GetGridCell(iter, columnNumber);
+                    columnData.Add(element.Text);
+                }
+                catch (NullReferenceException)
+                {
+                    break;
+                }
+
+                if (iter > 2002)
+                    break;
+            } while (element != null);
+
+            return columnData;
+        }
+
         public IWebElement GetColorByName(string colorName)
         {
             var selector = By.XPath(
@@ -248,6 +308,11 @@ namespace DashworksTestAutomation.Pages.Evergreen
             Driver.FindElement(byControl).Click();
         }
 
+        /// <summary>
+        /// Get just data from first row
+        /// </summary>
+        /// <param name="columnName">Column name in the grid</param>
+        /// <returns></returns>
         public IWebElement GetContentByColumnName(string columnName)
         {
             By byControl =

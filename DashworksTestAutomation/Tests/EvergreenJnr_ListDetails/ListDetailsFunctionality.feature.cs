@@ -941,8 +941,8 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_ListDetails
             table4.AddRow(new string[] {
                         "TestList1262B7",
                         "Entitled to device"});
-            testRunner.When("User add \"Application (Saved List)\" filter where type is \"In list\" with SelectedL" +
-                    "ist list and following Association:", ((string)(null)), table4, "When ");
+            testRunner.When("User add \"Application (Saved List)\" filter where type is \"In list\" with Selected " +
+                    "Value and following Association:", ((string)(null)), table4, "When ");
             testRunner.Then("\"Application\" filter is added to the list", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
             testRunner.When("User create dynamic list with \"TestList186851\" name on \"Devices\" page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
             testRunner.Then("\"TestList186851\" list is displayed to user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
@@ -1030,8 +1030,8 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_ListDetails
             table5.AddRow(new string[] {
                         "Application1",
                         "Entitled to device"});
-            testRunner.When("User add \"Application (Saved List)\" filter where type is \"In list\" with SelectedL" +
-                    "ist list and following Association:", ((string)(null)), table5, "When ");
+            testRunner.When("User add \"Application (Saved List)\" filter where type is \"In list\" with Selected " +
+                    "Value and following Association:", ((string)(null)), table5, "When ");
             testRunner.Then("\"Application\" filter is added to the list", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
             testRunner.When("User create dynamic list with \"Device1\" name on \"Devices\" page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
             testRunner.Then("\"Device1\" list is displayed to user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
@@ -1146,8 +1146,8 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_ListDetails
             table9.AddRow(new string[] {
                         "Adobe Apps",
                         "Entitled to device"});
-            testRunner.When("User add \"Application (Saved List)\" filter where type is \"In list\" with SelectedL" +
-                    "ist list and following Association:", ((string)(null)), table9, "When ");
+            testRunner.When("User add \"Application (Saved List)\" filter where type is \"In list\" with Selected " +
+                    "Value and following Association:", ((string)(null)), table9, "When ");
             testRunner.Then("\"Application\" filter is added to the list", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
             testRunner.When("User create dynamic list with \"Devices with Adobe\" name on \"Devices\" page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
             testRunner.Then("\"Devices with Adobe\" list is displayed to user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
@@ -1233,8 +1233,8 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_ListDetails
             table10.AddRow(new string[] {
                         "A1",
                         "Entitled to device"});
-            testRunner.When("User add \"Application (Saved List)\" filter where type is \"In list\" with SelectedL" +
-                    "ist list and following Association:", ((string)(null)), table10, "When ");
+            testRunner.When("User add \"Application (Saved List)\" filter where type is \"In list\" with Selected " +
+                    "Value and following Association:", ((string)(null)), table10, "When ");
             testRunner.Then("\"Application\" filter is added to the list", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
             testRunner.When("User create dynamic list with \"D1\" name on \"Devices\" page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
             testRunner.Then("\"D1\" list is displayed to user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
@@ -1263,6 +1263,7 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_ListDetails
         [NUnit.Framework.CategoryAttribute("EvergreenJnr_ListDetails")]
         [NUnit.Framework.CategoryAttribute("ListDetailsFunctionality")]
         [NUnit.Framework.CategoryAttribute("DAS12075")]
+        [NUnit.Framework.CategoryAttribute("DAS12874")]
         [NUnit.Framework.CategoryAttribute("Delete_Newly_Created_List")]
         public virtual void EvergreenJnr_AllLists_CheckDisplayingListDeletionWarningMessageForDependenciesDynamicLists()
         {
@@ -1299,6 +1300,7 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_ListDetails
                         "EvergreenJnr_ListDetails",
                         "ListDetailsFunctionality",
                         "DAS12075",
+                        "DAS12874",
                         "Delete_Newly_Created_List"});
             this.ScenarioSetup(scenarioInfo);
             this.FeatureBackground();
@@ -1316,8 +1318,8 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_ListDetails
             table11.AddRow(new string[] {
                         "Application1",
                         "Used on device"});
-            testRunner.When("User add \"Application (Saved List)\" filter where type is \"In list\" with SelectedL" +
-                    "ist list and following Association:", ((string)(null)), table11, "When ");
+            testRunner.When("User add \"Application (Saved List)\" filter where type is \"In list\" with Selected " +
+                    "Value and following Association:", ((string)(null)), table11, "When ");
             testRunner.When("User create dynamic list with \"Devices1\" name on \"Devices\" page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
             testRunner.And("User clicks \"Applications\" on the left-hand menu", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
             testRunner.Then("\"Applications\" list should be displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
@@ -1416,8 +1418,8 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_ListDetails
             table13.AddRow(new string[] {
                         "Application2",
                         "Used on device"});
-            testRunner.When("User add \"Application (Saved List)\" filter where type is \"In list\" with SelectedL" +
-                    "ist list and following Association:", ((string)(null)), table13, "When ");
+            testRunner.When("User add \"Application (Saved List)\" filter where type is \"In list\" with Selected " +
+                    "Value and following Association:", ((string)(null)), table13, "When ");
             testRunner.And("User create dynamic list with \"Devices2\" name on \"Devices\" page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
             testRunner.And("User clicks \"Applications\" on the left-hand menu", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
             testRunner.Then("\"Applications\" list should be displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
@@ -1510,8 +1512,8 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_ListDetails
             table15.AddRow(new string[] {
                         "Application3",
                         "Used on device"});
-            testRunner.When("User add \"Application (Saved List)\" filter where type is \"In list\" with SelectedL" +
-                    "ist list and following Association:", ((string)(null)), table15, "When ");
+            testRunner.When("User add \"Application (Saved List)\" filter where type is \"In list\" with Selected " +
+                    "Value and following Association:", ((string)(null)), table15, "When ");
             testRunner.And("User create dynamic list with \"Devices3\" name on \"Devices\" page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
             testRunner.Then("\"Devices3\" list is displayed to user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
             testRunner.When("User navigates to the \"All Devices\" list", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
@@ -1524,8 +1526,8 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_ListDetails
             table16.AddRow(new string[] {
                         "Application3",
                         "Entitled to device"});
-            testRunner.When("User add \"Application (Saved List)\" filter where type is \"In list\" with SelectedL" +
-                    "ist list and following Association:", ((string)(null)), table16, "When ");
+            testRunner.When("User add \"Application (Saved List)\" filter where type is \"In list\" with Selected " +
+                    "Value and following Association:", ((string)(null)), table16, "When ");
             testRunner.And("User create dynamic list with \"Devices4\" name on \"Devices\" page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
             testRunner.Then("\"Devices4\" list is displayed to user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
             testRunner.When("User clicks \"Applications\" on the left-hand menu", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
@@ -1621,8 +1623,8 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_ListDetails
             table18.AddRow(new string[] {
                         "Application5",
                         "Used on device"});
-            testRunner.When("User add \"Application (Saved List)\" filter where type is \"In list\" with SelectedL" +
-                    "ist list and following Association:", ((string)(null)), table18, "When ");
+            testRunner.When("User add \"Application (Saved List)\" filter where type is \"In list\" with Selected " +
+                    "Value and following Association:", ((string)(null)), table18, "When ");
             testRunner.And("User create dynamic list with \"Devices4\" name on \"Devices\" page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
             testRunner.And("User clicks \"Applications\" on the left-hand menu", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
             testRunner.Then("\"Applications\" list should be displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
