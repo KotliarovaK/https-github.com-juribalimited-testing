@@ -1,14 +1,12 @@
 ﻿Feature: CreateMailboxScheduledProject
 	Runs Project related tests
 
+Background: Pre-Conditions
+	Given User is logged in to the Projects
+	Then "Projects Home" page is displayed to the user
+
 @Senior @Projects_Administration @MailboxScheduledProject @Delete_Newly_Created_Team
 Scenario: Projects_CreateMailboxScheduledProject
-	Given User is on Dashworks Homepage
-	Then Login Page is displayed to the user
-	When User provides the Login and Password and clicks on the login button
-	Then Dashworks homepage is displayed to the user in a logged in state
-	When User navigate to Projects link
-	Then "Projects Home" page is displayed to the user
 	When User clicks create Project button
 	Then "Create Project" page is displayed to the user
 	When User creates Project
