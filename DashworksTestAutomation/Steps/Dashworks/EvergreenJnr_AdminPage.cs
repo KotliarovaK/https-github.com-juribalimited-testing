@@ -722,8 +722,8 @@ namespace DashworksTestAutomation.Steps.Dashworks
             Logger.Write("Actions button was clicked");
         }
 
-        [When(@"User selects ""(.*)"" in the Actions dropdown")]
-        public void ThenUserSelectInTheActionsDropdown(string actionName)
+        [When(@"User selects ""(.*)"" in the Actions")]
+        public void ThenUserSelectInTheActions(string actionName)
         {
             var action = _driver.NowAt<BaseGridPage>();
             action.SelectActions(actionName);

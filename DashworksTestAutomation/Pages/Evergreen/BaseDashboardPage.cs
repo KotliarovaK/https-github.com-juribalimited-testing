@@ -27,6 +27,9 @@ namespace DashworksTestAutomation.Pages.Evergreen
         [FindsBy(How = How.XPath, Using = ".//button[@class='btn btn-default mat-icon-button _mat-animation-noopable']")]
         public IWebElement InactiveActionsButton { get; set; }
 
+        [FindsBy(How = How.XPath, Using = ".//mat-select[@aria-label='Actions']")]
+        public IWebElement ActionsDropdown { get; set; }
+
         [FindsBy(How = How.XPath, Using = ".//button[@class='btn btn-default mat-icon-button _mat-animation-noopable'][@id='_listDtlBtn']")]
         public IWebElement ListDetailsButton { get; set; }
 
@@ -423,6 +426,14 @@ namespace DashworksTestAutomation.Pages.Evergreen
                     return "UNCATEGORISED";
                 default: throw new Exception($"{styleImageItem} is not valid Image path");
             }
+        }
+
+        public void SelectActions(string actionsName)
+        {
+            var selectedActionsName =
+                $".//mat-option[@role='option']/span[text()='{actionsName}']";
+            Driver.WaitWhileControlIsNotDisplayed(By.XPath(selectedActionsName));
+            Driver.FindElement(By.XPath(selectedActionsName)).Click();
         }
 
         public IList<IWebElement> GetAllColumnHeaders()

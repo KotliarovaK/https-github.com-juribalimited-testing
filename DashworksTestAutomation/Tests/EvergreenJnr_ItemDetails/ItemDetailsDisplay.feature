@@ -200,6 +200,7 @@ Scenario: EvergreenJnr_DevicesLists_CheckThatSelectedCheckboxesMatchTheColumnsIn
 	| Key        |
 	And ColumnName is displayed in following order on the Details page:
 	| ColumnName   |
+	| Key          |
 	| Project      |
 	| Project Type |
 	| Bucket       |
@@ -209,7 +210,6 @@ Scenario: EvergreenJnr_DevicesLists_CheckThatSelectedCheckboxesMatchTheColumnsIn
 	| Status       |
 	| Date         |
 	| Readiness    |
-	| Key          |
 	And Checkboxes are checked on the Column Settings panel for "Key" Column Settings panel:
 	| Checkbox     |
 	| Key          |
