@@ -101,7 +101,7 @@ Scenario: Projects_CreateComputerScheduledProject
 	Then created Request Type is a Default
 	When User clicks "Create Request Type" button
 	And User create Request Type
-	| Name                 | Description                | ObjectTypeString |
+	| Name                  | Description                | ObjectTypeString |
 	| 3 TestRequestTypeName | ComputerScheduledProject 3 | Computer         |
 	Then Success message is displayed
 	When User clicks "Cancel" button
