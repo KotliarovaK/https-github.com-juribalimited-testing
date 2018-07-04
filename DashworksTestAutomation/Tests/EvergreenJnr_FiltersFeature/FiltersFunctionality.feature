@@ -679,8 +679,8 @@ Scenario: EvergreenJnr_ApplicationsList_CheckThatUserLastLogonDateFilterWorksCor
 @Evergreen @Applications @EvergreenJnr_FilterFeature @FilterFunctionality @DAS12058 @Delete_Newly_Created_List
 Scenario: EvergreenJnr_ApplicationsList_CheckThatProjectGroupCurrentStateFiltersInTheApplicationListWorksCorrectly
 	When User add following columns using URL to the "Applications" page:
-	| ColumnName          |
-	| Windows7Mi: Application Rationalisation          |
+	| ColumnName                              |
+	| Windows7Mi: Application Rationalisation |
 	When User clicks the Filters button
 	Then Filters panel is displayed to the user
 	When User add "Windows7Mi: Group (Current State)" filter where type is "Equal" without added column and "Parkfield Office" Lookup option
