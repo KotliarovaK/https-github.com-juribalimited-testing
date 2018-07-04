@@ -395,16 +395,16 @@ namespace DashworksTestAutomation.Tests.Projects.CreatingProjects
             testRunner.And("User clicks \"Add Email\" button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
             TechTalk.SpecFlow.Table table23 = new TechTalk.SpecFlow.Table(new string[] {
                         "CountDays",
+                        "To",
                         "SendOnceOnly",
                         "RequestTypesAll",
-                        "ApllyEmailToAll",
-                        "To"});
+                        "ApllyEmailToAll"});
             table23.AddRow(new string[] {
                         "true",
+                        "UserScheduledProject0@email.com",
                         "true",
                         "false",
-                        "true",
-                        "UserScheduledProject0@email.com"});
+                        "true"});
             testRunner.When("User create new Email", ((string)(null)), table23, "When ");
             testRunner.And("User clicks \"Create Email Notification\" button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
             testRunner.Then("Success message is displayed with \"Email notification for task successfully creat" +
@@ -536,16 +536,16 @@ namespace DashworksTestAutomation.Tests.Projects.CreatingProjects
             testRunner.And("User clicks \"Add Email\" button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
             TechTalk.SpecFlow.Table table30 = new TechTalk.SpecFlow.Table(new string[] {
                         "CountDays",
+                        "To",
                         "SendOnceOnly",
                         "RequestTypesAll",
-                        "ApllyEmailToAll",
-                        "To"});
+                        "ApllyEmailToAll"});
             table30.AddRow(new string[] {
                         "true",
+                        "UserScheduledProject2@email.com",
                         "true",
                         "true",
-                        "true",
-                        "UserScheduledProject2@email.com"});
+                        "true"});
             testRunner.When("User create new Email", ((string)(null)), table30, "When ");
             testRunner.And("User clicks \"Create Email Notification\" button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
             testRunner.Then("Success message is displayed with \"Email notification for task successfully creat" +
