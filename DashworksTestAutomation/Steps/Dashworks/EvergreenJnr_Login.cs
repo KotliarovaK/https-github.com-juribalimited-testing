@@ -43,24 +43,19 @@ namespace DashworksTestAutomation.Steps.Dashworks
         [Given(@"User is logged in to the Evergreen")]
         public void GivenUserIsLoggedInToTheEvergreen()
         {
-            var user = GetFreeUserAndAddToUsedUsersList();
-
-            var restClient = new RestClient(UrlProvider.Url);
-            //Get cookies
-            HttpClientHelper client = new HttpClientHelper(user, restClient);
-
-            //Init session
-            _driver.NavigateToUrl(UrlProvider.Url);
-
-            //Set cookies to browser
-            foreach (Cookie cookie in client.SeleniumCookiesJar) _driver.Manage().Cookies.AddCookie(cookie);
-
-            // Add cookies to the RestClient to authorize it
-            _client.Value.AddCookies(client.CookiesJar);
-            //Change profile language
-            _client.ChangeUserProfileLanguage(_user.UserName, _user.Language);
-            //Open website
+            //Login to website via api
+            loginViaApi();
+            //Navigate to Evergreen page
             _driver.NavigateToUrl(UrlProvider.EvergreenUrl);
+        }
+
+        [Given(@"User is logged in to the Projects")]
+        public void GivenUserIsLoggedInToTheProjects()
+        {
+            //Login to website via api
+            loginViaApi();
+            //navigate to Projects page
+            _driver.NavigateToUrl(UrlProvider.ProjectsUrl);
         }
 
         [When(@"User provides the Login and Password and clicks on the login button")]
@@ -137,6 +132,27 @@ namespace DashworksTestAutomation.Steps.Dashworks
                 throw new Exception("500 error was displayed");
 
             Logger.Write("Evergreen Dashboards page is displayed");
+        }
+
+        private void loginViaApi()
+        {
+            var user = GetFreeUserAndAddToUsedUsersList();
+
+            var restClient = new RestClient(UrlProvider.Url);
+            //Get cookies
+            HttpClientHelper client = new HttpClientHelper(user, restClient);
+
+            //Init session
+            _driver.NavigateToUrl(UrlProvider.Url);
+
+            //Set cookies to browser
+            foreach (Cookie cookie in client.SeleniumCookiesJar) _driver.Manage().Cookies.AddCookie(cookie);
+
+            // Add cookies to the RestClient to authorize it
+            _client.Value.AddCookies(client.CookiesJar);
+
+            //Change profile language
+            _client.ChangeUserProfileLanguage(_user.UserName, _user.Language);
         }
     }
 }
