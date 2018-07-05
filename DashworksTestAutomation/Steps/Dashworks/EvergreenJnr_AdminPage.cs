@@ -794,6 +794,15 @@ namespace DashworksTestAutomation.Steps.Dashworks
             projectElement.PlusButton.Click();
         }
 
+        [When(@"User selects all objects to the Project")]
+        [When(@"User cancels the selection objects in the Project")]
+        public void WhenUserSelectsAllObjects()
+        {
+              var projectElement = _driver.NowAt<BaseGridPage>();
+            projectElement.AllItemCheckbox.Click();
+            _driver.WaitForDataLoading();
+        }
+
         [When(@"User selects following items to the Project")]
         public void WhenUserSelectsFollowingItemsToTheProject(Table table)
         {
@@ -803,6 +812,13 @@ namespace DashworksTestAutomation.Steps.Dashworks
                 projectElement.AddItem(row["Item"]);
                 projectElement.SearchTextbox.ClearWithHomeButton(_driver);
             }
+        }
+
+        [When(@"User enters ""(.*)"" text in the Object Search field")]
+        public void WhenUserEntersTextInTheObjectSearchField(string text)
+        {
+            var searchElement = _driver.NowAt<BaseGridPage>();
+            searchElement.GetObgectField(text);
         }
 
         [Then(@"following objects are onboarded")]

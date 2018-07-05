@@ -116,6 +116,13 @@ namespace DashworksTestAutomation.Steps.Dashworks
             Logger.Write("List Details panel is visible");
         }
 
+        [Then(@"Owner field is disabled as read-only")]
+        public void ThenOwnerFieldIsDisabledAsRead_Only()
+        {
+            var listDetailsElement = _driver.NowAt<ListDetailsElement>();
+            Assert.IsFalse(listDetailsElement.AvailableOwnerField.Displayed(), "Owner field is active");
+        }
+
         [When(@"User clicks Delete List button on the List Details panel")]
         public void WhenUserClicksDeleteListButtonOnTheListDetailsPanel()
         {
