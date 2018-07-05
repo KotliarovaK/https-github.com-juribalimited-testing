@@ -138,6 +138,9 @@ namespace DashworksTestAutomation.Pages.Evergreen
         [FindsBy(How = How.XPath, Using = ".//span[text()='DELETE']")]
         public IWebElement ConfirmDeleteButton { get; set; }
 
+        [FindsBy(How = How.XPath, Using = ".//button[contains(@class, 'btn-transparent')]//span[text()='CANCEL']")]
+        public IWebElement CancelButtonColor { get; set; }
+
         [FindsBy(How = How.XPath, Using = ".//span[text()='CANCEL']")]
         public IWebElement CancelDeletingButton { get; set; }
 
