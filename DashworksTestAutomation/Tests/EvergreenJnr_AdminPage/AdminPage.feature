@@ -994,6 +994,7 @@ Scenario: EvergreenJnr_AdminPage_CheckingThatProjectDetailsForOnboardedObjectsIs
 	And User opens "Device Projects" section on the Details Page
 	And User clicks "TestProject12490" link on the Details Page
 	Then "Project Object" page is displayed to the user
+	Then There are no errors in the browser console
 	And User click back button in the browser
 	When User clicks Admin on the left-hand menu
 	Then Admin page should be displayed to the user
