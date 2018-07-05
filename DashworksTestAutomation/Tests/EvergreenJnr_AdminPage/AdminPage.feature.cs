@@ -1258,9 +1258,9 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_AdminPage
             TechTalk.SpecFlow.Table table2 = new TechTalk.SpecFlow.Table(new string[] {
                         "Item"});
             table2.AddRow(new string[] {
-                        "040698EE82354C17B60@bclabs.local"});
+                        "04D8FC40F25547E7B4D@bclabs.local"});
             table2.AddRow(new string[] {
-                        "0A491C42879549A4936@bclabs.local"});
+                        "0B89FCBB1D2F49B8AD6@bclabs.local"});
             testRunner.And("User adds following items from list", ((string)(null)), table2, "And ");
             testRunner.Then("Success message is displayed and contains \"The selected mailboxes have been added" +
                     " to the selected bucket\" text", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
@@ -1452,9 +1452,9 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_AdminPage
             TechTalk.SpecFlow.Table table3 = new TechTalk.SpecFlow.Table(new string[] {
                         "Item"});
             table3.AddRow(new string[] {
-                        "00BDM1JUR8IF419"});
+                        "00K4CEEQ737BA4L"});
             table3.AddRow(new string[] {
-                        "01ERDGD48UDQKE"});
+                        "01COJATLYVAR7A6"});
             testRunner.And("User adds following items from list", ((string)(null)), table3, "And ");
             testRunner.Then("Success message is displayed and contains \"The selected devices have been added t" +
                     "o the selected bucket\" text", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
@@ -1579,7 +1579,7 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_AdminPage
             table4.AddRow(new string[] {
                         "US-W\\AAC860150 (Kerrie D. Ruiz)"});
             table4.AddRow(new string[] {
-                        "FR\\AAH0343264 (Luc Gauthier)"});
+                        "UK\\AAT858228 (Cheri B. Evans)"});
             testRunner.And("User adds following items from list", ((string)(null)), table4, "And ");
             testRunner.Then("Success message is displayed and contains \"The selected users have been added to " +
                     "the selected bucket\" text", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
