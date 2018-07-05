@@ -78,6 +78,7 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_GlobalSearch
         [NUnit.Framework.CategoryAttribute("DAS11745")]
         [NUnit.Framework.CategoryAttribute("DAS11706")]
         [NUnit.Framework.CategoryAttribute("DAS12544")]
+        [NUnit.Framework.CategoryAttribute("DAS12047")]
         public virtual void EvergreenJnr_GlobalSearch_CheckThatErrorMessageIsNotDisplayedAfterTypingThreeSpaces()
         {
             System.Exception lastException = null;
@@ -115,7 +116,8 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_GlobalSearch
                         "DAS11490",
                         "DAS11745",
                         "DAS11706",
-                        "DAS12544"});
+                        "DAS12544",
+                        "DAS12047"});
             this.ScenarioSetup(scenarioInfo);
             this.FeatureBackground();
             testRunner.When("User type \"   \" in Global Search Field", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
@@ -133,12 +135,16 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_GlobalSearch
             testRunner.When("User type \"___ab \" in Global Search Field", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
             testRunner.Then("Search results are displayed below Global Search field", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
             testRunner.When("User type \"admin\" in Global Search Field and presses Enter key", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-            testRunner.Then("list of results is displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+            testRunner.Then("\"Search results for \"admin\"\" is displayed below Global Search field", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+            testRunner.And("\"195\" rows are displayed on the Global Search", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+            testRunner.And("list of results is displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
             testRunner.When("User type \"______#____-\" in Global Search Field and presses Enter key", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-            testRunner.Then("list of results is displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+            testRunner.Then("\"Search results for \"______#____-\"\" is displayed below Global Search field", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+            testRunner.And("\"1\" rows are displayed on the Global Search", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+            testRunner.And("list of results is displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
             testRunner.When("User type \"!@#$%^&*()\" in Global Search Field", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
             testRunner.Then("\"No results found\" message is displayed below Global Search field", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-            testRunner.Then("There are no errors in the browser console", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+            testRunner.And("There are no errors in the browser console", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
             this.ScenarioCleanup();
         }
     }
