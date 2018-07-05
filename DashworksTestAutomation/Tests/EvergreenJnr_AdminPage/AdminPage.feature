@@ -384,8 +384,8 @@ Scenario: EvergreenJnr_AdminPage_CheckThatMailboxesAreSuccessfullyAddedToBuckets
 	And User clicks Create New Item button
 	And User adds following items from list
 	| Item                             |
-	| 040698EE82354C17B60@bclabs.local |
-	| 0A491C42879549A4936@bclabs.local |
+	| 04D8FC40F25547E7B4D@bclabs.local |
+	| 0B89FCBB1D2F49B8AD6@bclabs.local |
 	Then Success message is displayed and contains "The selected mailboxes have been added to the selected bucket" text
 	And There are no errors in the browser console
 
@@ -436,8 +436,8 @@ Scenario: EvergreenJnr_AdminPage_CheckThatConsoleErrorsAreNotDisplayedAfterAddin
 	And User clicks Create New Item button
 	And User adds following items from list
 	| Item            |
-	| 00BDM1JUR8IF419 |
-	| 01ERDGD48UDQKE  |
+	| 00K4CEEQ737BA4L |
+	| 01COJATLYVAR7A6 |
 	Then Success message is displayed and contains "The selected devices have been added to the selected bucket" text
 	And There are no errors in the browser console
 
@@ -468,7 +468,7 @@ Scenario: EvergreenJnr_AdminPage_CheckThatConsoleErrorsAreNotDisplayedAfterAddin
 	And User adds following items from list
 	| Item                            |
 	| US-W\AAC860150 (Kerrie D. Ruiz) |
-	| FR\AAH0343264 (Luc Gauthier)    |
+	| UK\AAT858228 (Cheri B. Evans)   |
 	Then Success message is displayed and contains "The selected users have been added to the selected bucket" text
 	And There are no errors in the browser console
 
