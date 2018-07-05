@@ -1,4 +1,5 @@
-﻿using DashworksTestAutomation.Extensions;
+﻿using System.Threading;
+using DashworksTestAutomation.Extensions;
 using DashworksTestAutomation.Pages.Evergreen;
 using DashworksTestAutomation.Utils;
 using NUnit.Framework;
@@ -35,6 +36,49 @@ namespace DashworksTestAutomation.Steps.Dashworks
             searchElement.SearchEverythingField.SendKeys(searchText);
             _driver.WaitForDataLoading();
             searchElement.SearchEverythingField.SendKeys(Keys.Enter);
+        }
+
+        [Then(@"""(.*)"" is displayed below Global Search field")]
+        public void ThenIsDisplayedBelowGlobalSearchField(string searchText)
+        {
+            var searchElement = _driver.NowAt<GlobalSearchElement>();
+            searchElement.SearchResultName(searchText);
+        }
+
+        [Then(@"""(.*)"" rows are displayed on the Global Search")]
+        public void ThenRowsAreDisplayedOnTheGlobalSearch(string numberOfRows)
+        {
+            var listPageElement = _driver.NowAt<GlobalSearchElement>();
+            if (!string.IsNullOrWhiteSpace(numberOfRows))
+            {
+                Thread.Sleep(1000);
+
+                _driver.WaitWhileControlIsNotDisplayed<GlobalSearchElement>(() => listPageElement.ResultsRowsCount);
+
+                if (numberOfRows == "1")
+                {
+                    StringAssert.AreEqualIgnoringCase($"{numberOfRows} row", listPageElement.ResultsRowsCount.Text,
+                        "Incorrect rows count");
+                }
+                else
+                {
+                    StringAssert.AreEqualIgnoringCase($"{numberOfRows} rows", listPageElement.ResultsRowsCount.Text,
+                        "Incorrect rows count");
+                }
+                Logger.Write(
+                    $"Evergreen Global Search returned the correct number of rows for: {numberOfRows}  search");
+            }
+            else
+            {
+                _driver.IsElementDisplayed(listPageElement.ResultsRowsCount);
+                _driver.WaitWhileControlIsDisplayed<GlobalSearchElement>(() => listPageElement.ResultsRowsCount);
+                Assert.IsFalse(listPageElement.ResultsRowsCount.Displayed(), "Rows count is displayed");
+                _driver.WaitWhileControlIsNotDisplayed<GlobalSearchElement>(() => listPageElement.ResultsRowsCount);
+                Assert.IsTrue(listPageElement.ResultsRowsCount.Displayed(),
+                    "'No Results Found' message not displayed");
+                Logger.Write(
+                    $"Evergreen agGrid Search returned '{listPageElement.ResultsRowsCount.Text}' message");
+            }
         }
 
         [Then(@"User clicks on ""(.*)"" search result")]

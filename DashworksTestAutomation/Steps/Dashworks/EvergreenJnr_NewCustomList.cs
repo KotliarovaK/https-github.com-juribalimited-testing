@@ -281,6 +281,30 @@ namespace DashworksTestAutomation.Steps.Dashworks
             listElement.ConfirmDeleteButton.Click();
         }
 
+        [When(@"User click Delete button for custom list with ""(.*)"" name")]
+        public void WhenUserClickDeleteButtonForCustomListWithName(string listName)
+        {
+            var listElement = _driver.NowAt<CustomListElement>();
+
+            listElement.ClickSettingsButtonByListName(listName);
+            _driver.WaitWhileControlIsNotDisplayed<CustomListElement>(() => listElement.DeleteButton);
+            listElement.DeleteButton.Click();
+        }
+
+        [Then(@"User confirm removed list")]
+        public void ThenUserConfirmRemovedList()
+        {
+            var listElement = _driver.NowAt<CustomListElement>();
+            listElement.ConfirmDeleteButton.Click();
+        }
+
+        [Then(@"Cancel button is displayed with correctly color")]
+        public void ThenCancelButtonIsDisplayedWithCorrectlyColor()
+        {
+            var button = _driver.NowAt<CustomListElement>();
+            Assert.IsTrue(button.CancelButtonColor.Displayed(), "Cancel button is not displayed or displayed with incorrectly color");
+        }
+
         [When(@"User duplicates list with ""(.*)"" name")]
         public void WhenUserDuplicatesListWithName(string listName)
         {
