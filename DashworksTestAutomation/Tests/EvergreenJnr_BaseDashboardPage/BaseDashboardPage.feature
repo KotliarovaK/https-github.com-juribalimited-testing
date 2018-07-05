@@ -149,6 +149,7 @@ Scenario Outline: EvergreenJnr_AllList_CheckThatEditListFunctionIsAvailableAfter
 	When User clicks the Actions button
 	Then Actions panel is displayed to the user
 	When User select all rows
+	When User selects "Create static list" in the Actions dropdown
 	When User create static list with "StaticList1" name
 	When User click on '<ColumnName>' column header
 	Then data in table is sorted by '<ColumnName>' column in ascending order

@@ -242,14 +242,14 @@ Scenario: EvergreenJnr_ApplicationsList_CheckThatFilterIsRestoredCorrectlyAfterL
 	When User add "Application (Saved List)" filter where type is "In list" with Selected Value and following Association:
 	| SelectedList   | Association        |
 	| TestListD75CD3 | Not used on device |
-	Then "Application in list TestListD75CD3 not used on device" is displayed in added filter info
+	Then "Any Application in list TestListD75CD3 not used on device" is displayed in added filter info
 	Then "17,126" rows are displayed in the agGrid
 	When User perform search by "001BAQXT6JWFPI"
 	And User click content from "Hostname" column
 	Then User click back button in the browser
 	Then "17,126" rows are displayed in the agGrid
 	When User clicks the Filters button
-	Then "Application in list TestListD75CD3 not used on device" is displayed in added filter info
+	Then "Any Application in list TestListD75CD3 not used on device" is displayed in added filter info
 
 @Evergreen @Devices @EvergreenJnr_FilterFeature @FilterFunctionality @DAS11560
 Scenario: EvergreenJnr_DevicesList_CheckNumericFilter
@@ -595,6 +595,7 @@ Scenario: EvergreenJnr_ApplicationsList_CheckThatCorrectDeviceDataIsReturnedAfte
 	And User clicks the Actions button
 	Then Actions panel is displayed to the user
 	When User select all rows
+	And User selects "Create static list" in the Actions dropdown
 	And User create static list with "StaticList6581" name
 	And User clicks "Devices" on the left-hand menu
 	Then "Devices" list should be displayed to the user

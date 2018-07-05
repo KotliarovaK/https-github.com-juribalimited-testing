@@ -715,6 +715,8 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_ItemDetails
             TechTalk.SpecFlow.Table table11 = new TechTalk.SpecFlow.Table(new string[] {
                         "ColumnName"});
             table11.AddRow(new string[] {
+                        "Key"});
+            table11.AddRow(new string[] {
                         "Project"});
             table11.AddRow(new string[] {
                         "Project Type"});
@@ -732,8 +734,6 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_ItemDetails
                         "Date"});
             table11.AddRow(new string[] {
                         "Readiness"});
-            table11.AddRow(new string[] {
-                        "Key"});
             testRunner.And("ColumnName is displayed in following order on the Details page:", ((string)(null)), table11, "And ");
             TechTalk.SpecFlow.Table table12 = new TechTalk.SpecFlow.Table(new string[] {
                         "Checkbox"});

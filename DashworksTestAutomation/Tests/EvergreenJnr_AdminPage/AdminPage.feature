@@ -154,6 +154,7 @@ Scenario: EvergreenJnr_AdminPage_CheckThatAfterApplyingDoNotIncludeDeviceOwnersL
 	When User enters "TestProject1" text in the Search field for "Project" column
 	And User clicks content from "Project" column
 	When User selects "Scope Details" tab on the Project details page
+	And User navigates to the "User Scope" tab in the Scope section on the Project details page
 	When User selects "Do not include device owners" checkbox on the Project details page
 	And User selects "Scope Changes" tab on the Project details page
 	And User clicks "Users" tab in the Project Scope Changes section 
@@ -234,7 +235,7 @@ Scenario: EvergreenJnr_AdminPage_CheckThatYouCanNotDeleteTheDefaultBucketWarning
 	And User enters "Chicago" text in the Search field for "Bucket" column
 	And User selects all rows on the grid
 	And User clicks on Actions button
-	And User selects "Delete" in the Actions dropdown
+	And User selects "Delete" in the Actions
 	When User clicks Delete button
 	Then "You can not delete the default bucket" warning message is not displayed on the Buckets page
 	Then Warning message with "These bucket will be permanently deleted and any objects within them reassigned to the default bucket" text is displayed on the Admin page
@@ -258,6 +259,7 @@ Scenario: EvergreenJnr_AdminPage_CheckThatNumberOfApplicationsInProjectScopeIsCo
 	And User clicks "Applications" tab in the Project Scope Changes section
 	Then "Applications to add (0 of 2081 selected)" is displayed to the user in the Project Scope Changes section
 	When User selects "Scope Details" tab on the Project details page
+	And User navigates to the "Device Scope" tab in the Scope section on the Project details page
 	And User selects "Do not include owned devices" checkbox on the Project details page
 	And User selects "Scope Changes" tab on the Project details page
 	And User clicks "Applications" tab in the Project Scope Changes section
@@ -338,7 +340,7 @@ Scenario: EvergreenJnr_AdminPage_CheckThatNoConsoleErrorsAreDisplayedWhenDeletin
 	And User enters "Group IB Team" text in the Search field for "Bucket" column
 	And User selects all rows on the grid
 	And User clicks on Actions button
-	And User selects "Delete Buckets" in the Actions dropdown
+	And User selects "Delete Buckets" in the Actions
 	And User clicks Delete button 
 	Then Warning message with "You cannot delete the default bucket" text is displayed on the Admin page
 	And There are no errors in the browser console
@@ -381,9 +383,9 @@ Scenario: EvergreenJnr_AdminPage_CheckThatMailboxesAreSuccessfullyAddedToBuckets
 	And User clicks "Mailboxes" tab
 	And User clicks Create New Item button
 	And User adds following items from list
-	| Item                        |
-	| abraham.u.leon@dwlabs.local |
-	| alan.p.house@dwlabs.local   |
+	| Item                             |
+	| 040698EE82354C17B60@bclabs.local |
+	| 0A491C42879549A4936@bclabs.local |
 	Then Success message is displayed and contains "The selected mailboxes have been added to the selected bucket" text
 	And There are no errors in the browser console
 
@@ -434,8 +436,8 @@ Scenario: EvergreenJnr_AdminPage_CheckThatConsoleErrorsAreNotDisplayedAfterAddin
 	And User clicks Create New Item button
 	And User adds following items from list
 	| Item            |
-	| 1A10S74F8GAB7Q7 |
-	| 01N3Y2GUS6XTK7  |
+	| 00BDM1JUR8IF419 |
+	| 01ERDGD48UDQKE  |
 	Then Success message is displayed and contains "The selected devices have been added to the selected bucket" text
 	And There are no errors in the browser console
 
@@ -464,9 +466,9 @@ Scenario: EvergreenJnr_AdminPage_CheckThatConsoleErrorsAreNotDisplayedAfterAddin
 	And User clicks "Users" tab
 	And User clicks Create New Item button
 	And User adds following items from list
-	| Item                           |
-	| UK\ANK462406 (Nakia D. Norton) |
-	| UK\DTB064395 (Gavin R. Spence) |
+	| Item                            |
+	| US-W\AAC860150 (Kerrie D. Ruiz) |
+	| FR\AAH0343264 (Luc Gauthier)    |
 	Then Success message is displayed and contains "The selected users have been added to the selected bucket" text
 	And There are no errors in the browser console
 
@@ -629,7 +631,7 @@ Scenario: EvergreenJnr_AdminPage_CheckThatNoConsoleErrorsAreDisplayedAfterUpdati
 	When User adds following items to the Project
 	| Item                        |
 	| 20040610sqlserverck (1.0.0) |
-	| 7zip (Unknown)              |
+	| 7zip                        |
 	| ACDSee 4.0 (4.0.0)          |
 	Then message with "3 applications will be added" text is displayed on the Projects page
 	When User clicks Update Project button on the Projects page
@@ -757,13 +759,13 @@ Scenario: EvergreenJnr_AdminPage_CheckMessageThatDisplayedWhenDeletingBucket
 	And User enters "Amsterdam" text in the Search field for "Bucket" column
 	And User selects all rows on the grid
 	And User clicks on Actions button
-	And User selects "Delete" in the Actions dropdown
+	And User selects "Delete" in the Actions
 	And User clicks Delete button 
 	Then Warning message with "You cannot delete the default bucket" text is displayed on the Admin page
 	When User enters "Unassigned" text in the Search field for "Bucket" column
 	And User selects all rows on the grid
 	And User clicks on Actions button
-	And User selects "Delete" in the Actions dropdown
+	And User selects "Delete" in the Actions
 	And User clicks Delete button 
 	Then Warning message with "You cannot delete the default bucket" text is displayed on the Admin page
 	When User clicks Create New Item button
@@ -775,13 +777,13 @@ Scenario: EvergreenJnr_AdminPage_CheckMessageThatDisplayedWhenDeletingBucket
 	When User enters "TestBucket4" text in the Search field for "Bucket" column
 	And User selects all rows on the grid
 	And User clicks on Actions button
-	And User selects "Delete" in the Actions dropdown
+	And User selects "Delete" in the Actions
 	And User clicks Delete button 
 	Then Warning message with "These bucket will be permanently deleted and any objects within them reassigned to the default bucket" text is displayed on the Admin page
 	When User clicks Cancel button in the warning message on the Admin page
 	Then Warning message is not displayed on the Admin page
 	When User clicks on Actions button
-	And User selects "Delete" in the Actions dropdown
+	And User selects "Delete" in the Actions
 	And User clicks Delete button 
 	Then Warning message with "These bucket will be permanently deleted and any objects within them reassigned to the default bucket" text is displayed on the Admin page
 	When User clicks Delete button in the warning message
@@ -1106,7 +1108,7 @@ Scenario: EvergreenJnr_AdminPage_CheckThatOnboardedObjectsAreDisplayedAfterChang
 	And User selects all rows on the grid
 	And User removes selected item
 
-@Evergreen @Admin @EvergreenJnr_AdminPage @AdminPage @DAS12364
+@Evergreen @Admin @EvergreenJnr_AdminPage @AdminPage @DAS12364 @Not_Run
 Scenario: EvergreenJnr_AdminPage_CheckingThatTheProjectIsUpdatedWithoutErrors
 	When User clicks Admin on the left-hand menu
 	Then Admin page should be displayed to the user
@@ -1351,7 +1353,7 @@ Scenario: EvergreenJnr_AdminPage_CheckThat500ISEInvalidColumnNameIsNotDisplayedW
 	| ListName12349 | Used on device |
 	Then "Application (Saved List)" filter is added to the list
 	And "99" rows are displayed in the agGrid
-	And "Application in list ListName12349 used on device" is displayed in added filter info
+	And "Any Application in list ListName12349 used on device" is displayed in added filter info
 	And "(Application (Saved List) = ListName12349 ASSOCIATION = ("used on device"))" text is displayed in filter container
 	When User create dynamic list with "SavedList12349" name on "Devices" page
 	Then "SavedList12349" list is displayed to user

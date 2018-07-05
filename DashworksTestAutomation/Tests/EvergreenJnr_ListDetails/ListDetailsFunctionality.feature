@@ -42,18 +42,19 @@ Scenario Outline: EvergreenJnr_AllLists_CheckThatRenamingAListWorkingCorrectlyFo
 	When User clicks the Actions button
 	Then Actions panel is displayed to the user
 	When User select all rows
+	And User selects "Create static list" in the Actions dropdown
 	And User create static list with "Static List TestName" name
-	When User clicks the List Details button
+	And User clicks the List Details button
 	Then List details panel is displayed to the user
 	When User changes list name to "RenamedList"
 	Then "RenamedList" name is displayed in list details panel
-	Then Edit List menu is not displayed
+	And Edit List menu is not displayed
 	When User mark list as favorite
 	Then Star icon is active in list details panel
-	Then Edit List menu is not displayed
+	And Edit List menu is not displayed
 	When User select "Everyone can edit" sharing option
 	Then Edit List menu is not displayed
-	Then "RenamedList" list is displayed to user
+	And "RenamedList" list is displayed to user
 	When User select "Automation Admin 1" as a Owner of a list
 	And User click Accept button in List Details panel
 	Then Edit List menu is not displayed
@@ -100,8 +101,9 @@ Scenario Outline: EvergreenJnr_AllLists_CheckThatFavoriteAListWorkingCorrectlyFo
 	When User clicks the Actions button
 	Then Actions panel is displayed to the user
 	When User select all rows
+	And User selects "Create static list" in the Actions dropdown
 	And User create static list with "Static List TestName36" name
-	When User clicks the List Details button
+	And User clicks the List Details button
 	Then List details panel is displayed to the user
 	When User mark list as favorite
 	When User navigates to the "<ListToNavigate>" list
@@ -243,12 +245,14 @@ Scenario Outline: EvergreenJnr_AllLists_CheckThatNoAbilityToCreateTheSameNamedLi
 	When User clicks the Actions button
 	Then Actions panel is displayed to the user
 	When User select all rows
+	And User selects "Create static list" in the Actions dropdown
 	And User create static list with "2" name
 	Then "2" list is displayed to user
 	When User navigates to the "<ListToNavigate>" list
 	And User clicks the Actions button
 	Then Actions panel is displayed to the user
 	When User select all rows
+	And User selects "Create static list" in the Actions dropdown
 	And User create static list with " 2" name
 	Then Warning message with "List Name should be unique" is displayed
 
@@ -450,7 +454,7 @@ Scenario: EvergreenJnr_AllLists_CheckDisplayingListDeletionWarningMessageForDepe
 	When User navigates to the "Devices1" list
 	And User clicks the Filters button
 	Then Filters panel is displayed to the user
-	Then "Application in list [List not found] used on device" is displayed in added filter info
+	Then "Any Application in list [List not found] used on device" is displayed in added filter info
 	And message 'No devices found' is displayed to the user
 
 @Evergreen @AllLists @EvergreenJnr_ListDetails @ListDetailsFunctionality @DAS12075 @DAS12578 @Delete_Newly_Created_List
@@ -482,7 +486,7 @@ Scenario: EvergreenJnr_AllLists_CheckDisplayingListDeletionWarningMessageForDepe
 	When User navigates to the "Devices2" list
 	And User clicks the Filters button
 	Then Filters panel is displayed to the user
-	And "Application in list [List not found] used on device" is displayed in added filter info
+	And "Any Application in list [List not found] used on device" is displayed in added filter info
 	And message 'No devices found' is displayed to the user
 
 @Evergreen @AllLists @EvergreenJnr_ListDetails @ListDetailsFunctionality @DAS12075 @DAS12578 @Delete_Newly_Created_List
@@ -525,7 +529,7 @@ Scenario: EvergreenJnr_AllLists_CheckDisplayingListDeletionWarningMessageForDepe
 	When User navigates to the "Devices3" list
 	And User clicks the Filters button
 	Then Filters panel is displayed to the user
-	And "Application in list [List not found] used on device" is displayed in added filter info
+	And "Any Application in list [List not found] used on device" is displayed in added filter info
 	And message 'No devices found' is displayed to the user
 
 @Evergreen @AllLists @EvergreenJnr_ListDetails @ListDetailsFunctionality @DAS12075 @DAS12578 @Delete_Newly_Created_List
@@ -561,7 +565,7 @@ Scenario: EvergreenJnr_AllLists_CheckDisplayingListDeletionWarningMessageForTwoD
 	When User navigates to the "Devices4" list
 	And User clicks the Filters button
 	Then Filters panel is displayed to the user
-	And "Application in list [List not found] or Application5 used on device" is displayed in added filter info
+	And "Any Application in list [List not found] or Application5 used on device" is displayed in added filter info
 
 @Evergreen @Users @EvergreenJnr_ListDetails @ListDetailsFunctionality @DAS12536 @Delete_Newly_Created_List
 Scenario: EvergreenJnr_Users_CheckThatListDeletionWarningMessageIsNotDisplayedAfterDeletingAnotherListForDynamicAndStaticLists
