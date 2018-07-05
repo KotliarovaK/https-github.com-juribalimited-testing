@@ -990,7 +990,7 @@ Scenario: EvergreenJnr_AdminPage_CheckingThatProjectDetailsForOnboardedObjectsIs
 	When User type "ACG370114" in Global Search Field
 	Then User clicks on "ACG370114 (James N. Snow)" search result
 	When User navigates to the "Projects" tab
-	And User opens "Device Projects" section on the Details Page
+	And User opens "User Projects" section on the Details Page
 	And User clicks "TestProject12490" link on the Details Page
 	Then "Project Object" page is displayed to the user
 	Then There are no errors in the browser console
