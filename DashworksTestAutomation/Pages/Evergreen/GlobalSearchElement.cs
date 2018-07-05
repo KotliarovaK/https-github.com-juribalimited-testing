@@ -23,6 +23,9 @@ namespace DashworksTestAutomation.Pages.Evergreen
         [FindsBy(How = How.XPath, Using = ".//span[contains(@class, 'no-result')]")]
         public IWebElement NoResultFound { get; set; }
 
+        [FindsBy(How = How.XPath, Using = ".//span[@class='ng-star-inserted']")]
+        public IWebElement ResultsRowsCount { get; set; }
+
         [FindsBy(How = How.XPath, Using = ".//button[@class='btn input-toggle mat-icon-button ng-star-inserted']")]
         public IWebElement SearchTextboxResetButton { get; set; }
 
@@ -39,6 +42,12 @@ namespace DashworksTestAutomation.Pages.Evergreen
         {
             return Driver.FindElement(
                 By.XPath($".//div[contains(@class, 'result-table')]//a[contains(text(), '{searchText}')]"));
+        }
+
+        public IWebElement SearchResultName(string searchText)
+        {
+            return Driver.FindElement(
+                By.XPath($".//div[@id='pagetitle-text']/pagetitle-text/h1[text()='{searchText}']"));
         }
     }
 }
