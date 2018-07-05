@@ -667,7 +667,7 @@ namespace DashworksTestAutomation.Steps.Dashworks
                 }
             }
             _driver.WaitWhileControlIsNotDisplayed<ProjectsPage>(() => projectElement.SuccessMessage);
-            Thread.Sleep(15000);
+            Thread.Sleep(10000);
             Assert.IsTrue(projectElement.SuccessTextMessage(textMessage),
                 $"{textMessage} is not displayed on the Project page");
         }
