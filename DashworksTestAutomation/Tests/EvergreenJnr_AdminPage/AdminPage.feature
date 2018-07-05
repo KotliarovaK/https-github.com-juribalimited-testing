@@ -1108,7 +1108,7 @@ Scenario: EvergreenJnr_AdminPage_CheckThatOnboardedObjectsAreDisplayedAfterChang
 	And User selects all rows on the grid
 	And User removes selected item
 
-@Evergreen @Admin @EvergreenJnr_AdminPage @AdminPage @DAS12364 @Not_Run
+@Evergreen @Admin @EvergreenJnr_AdminPage @AdminPage @DAS12364
 Scenario: EvergreenJnr_AdminPage_CheckingThatTheProjectIsUpdatedWithoutErrors
 	When User clicks Admin on the left-hand menu
 	Then Admin page should be displayed to the user
@@ -1414,11 +1414,20 @@ Scenario: EvergreenJnr_AdminPage_CheckThatWarningMessageIsNotDisplayedAfterAddin
 	Then Project "TestName12336" is displayed to user
 	When User selects "Scope Changes" tab on the Project details page
 	When User expands the object to add
-	And User selects following items to the Project
+	When User selects all objects to the Project
+	Then "Devices to add (17225 of 17225 selected)" is displayed to the user in the Project Scope Changes section
+	When User cancels the selection objects in the Project
+	Then "Devices to add (0 of 17225 selected)" is displayed to the user in the Project Scope Changes section
+	When User enters "111" text in the Object Search field
+	When User selects all objects to the Project
+	Then "Devices to add (5 of 17225 selected)" is displayed to the user in the Project Scope Changes section
+	When User cancels the selection objects in the Project
+	When User selects following items to the Project
 	| Item            |
 	| 07RJRCQQJNBJIJQ |
 	| 0CFHJY5A8WLUB0J |
-	And User clicks "UPDATE DEVICE CHANGES" button on the Projects page
+	Then "Devices to add (2 of 17225 selected)" is displayed to the user in the Project Scope Changes section
+	When User clicks "UPDATE DEVICE CHANGES" button on the Projects page
 	And User clicks Update Project button on the Projects page
 	Then Success message with "2 objects queued for onboarding, 0 objects offboarded" text is displayed on the Projects page
 	When User selects "Scope Details" tab on the Project details page
