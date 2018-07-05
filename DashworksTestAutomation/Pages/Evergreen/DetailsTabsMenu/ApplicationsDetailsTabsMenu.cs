@@ -85,9 +85,7 @@ namespace DashworksTestAutomation.Pages.Evergreen.DetailsTabsMenu
         [FindsBy(How = How.XPath, Using = ".//div[@class='ag-body-container']/div")]
         public IWebElement TableContent { get; set; }
 
-        [FindsBy(How = How.XPath,
-            Using =
-                ".//mat-pseudo-checkbox[@class='mat-option-pseudo-checkbox mat-pseudo-checkbox ng-star-inserted mat-pseudo-checkbox-checked']")]
+        [FindsBy(How = How.XPath, Using = ".//mat-pseudo-checkbox[contains(@class, 'mat-pseudo-checkbox-checked')]")]
         public IWebElement ColumnCheckboxChecked { get; set; }
 
         [FindsBy(How = How.XPath, Using = ".//div[@class='ag-filter-body']//input")]
@@ -95,6 +93,15 @@ namespace DashworksTestAutomation.Pages.Evergreen.DetailsTabsMenu
 
         [FindsBy(How = How.XPath, Using = ".//div[@class='ag-body-container']/div[@role='row']")]
         public IList<IWebElement> TableRows { get; set; }
+
+        [FindsBy(How = How.XPath, Using = ".//div[@id='filterDateFromPanel']/input")]
+        public IWebElement DateFromValue { get; set; }
+
+        [FindsBy(How = How.XPath, Using = ".//div[@id='filterDateToPanel']/input")]
+        public IWebElement DateToValue { get; set; }
+
+        [FindsBy(How = How.XPath, Using = "//div[@class='ag-menu']")]
+        public IWebElement ColumnSettingsPanel { get; set; }
 
         public const string SiteColumnSelector = ".//div[@col-id='packageSite']";
 
@@ -289,6 +296,17 @@ namespace DashworksTestAutomation.Pages.Evergreen.DetailsTabsMenu
         {
             return Driver.IsElementDisplayed(
                 By.XPath($".//div[@class='ag-header-cell-label']/span[text()='{columnName}']"));
+        }
+
+        public void SelectValueForDateColumn(string dateValue)
+        {
+            var selectbox = By.XPath(".//select[@class='ag-filter-select']");
+            Driver.WaitWhileControlIsNotDisplayed(selectbox);
+            Driver.FindElement(selectbox).Click();
+            Driver.WaitWhileControlIsNotDisplayed(
+                By.XPath($".//select[@class='ag-filter-select']//option[text()='{dateValue}']"));
+            var value = By.XPath($".//select[@class='ag-filter-select']//option[text()='{dateValue}']");
+            Driver.FindElement(value).Click();
         }
     }
 }

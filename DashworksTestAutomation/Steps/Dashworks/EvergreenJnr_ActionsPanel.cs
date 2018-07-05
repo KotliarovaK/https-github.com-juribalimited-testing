@@ -53,6 +53,14 @@ namespace DashworksTestAutomation.Steps.Dashworks
             dashboardPage.SelectAllCheckbox.Click();
         }
 
+        [When(@"User selects ""(.*)"" in the Actions dropdown")]
+        public void WhenUserSelectsInTheActionsDropdown(string actionsName)
+        {
+            var action = _driver.NowAt<BaseDashboardPage>();
+            action.ActionsDropdown.Click();
+            action.SelectActions(actionsName);
+        }
+
         [Then(@"Checkboxes are not displayed")]
         public void ThenCheckboxesAreNotDisplayed()
         {

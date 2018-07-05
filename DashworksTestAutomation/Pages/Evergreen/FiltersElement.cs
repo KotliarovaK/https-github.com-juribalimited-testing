@@ -103,6 +103,9 @@ namespace DashworksTestAutomation.Pages.Evergreen
         [FindsBy(How = How.XPath, Using = ".//span[text()='RESET']/ancestor::button")]
         public IWebElement ResetFiltersButton { get; set; }
 
+        [FindsBy(How = How.XPath, Using = ".//i[contains(@class, 'hideElementIcon')]")]
+        public IWebElement LookupFilterCheckbox { get; set; }
+
         [FindsBy(How = How.XPath, Using = FilterValuesSelector)]
         public IList<IWebElement> FilterValues { get; set; }
 
@@ -326,6 +329,13 @@ namespace DashworksTestAutomation.Pages.Evergreen
             return Driver.FindElement(By.XPath(editFilterSelector));
         }
 
+        public IWebElement GetFilterValue(string value)
+        {
+            var editFilterSelector =
+                $".//li[@aria-live='assertive']//span[text()='{value}']";
+            return Driver.FindElement(By.XPath(editFilterSelector));
+        }
+
         public bool ListNameForSavedListFilter(string filterName)
         {
             return Driver.IsElementDisplayed(By.XPath($".//div[@class='list-container']/span[text()='{filterName}']"));
@@ -382,6 +392,23 @@ namespace DashworksTestAutomation.Pages.Evergreen
             var by = By.XPath(".//div[@class='filter-item ng-star-inserted']");
             Driver.WaitWhileControlIsNotDisplayed(by);
             return Driver.FindElements(by).ToList();
+        }
+
+        public string GetFilterFontWeight()
+        {
+            return Driver.FindElement(By.XPath(".//span[contains(@class, 'filter-label-value')]")).GetCssValue("font-weight");
+        }
+
+        public string GetFilterFontColor()
+        {
+            return Driver.FindElement(By.XPath(".//span[@class='filter-label-name']")).GetCssValue("color");
+        }
+
+        public IWebElement GetOpenedFilter(string filterName)
+        {
+            var selector = By.XPath($"//div[contains(@class, 'filterAddPanel')]/..//span[text()='{filterName}']");
+            Driver.WaitWhileControlIsNotDisplayed(selector);
+            return Driver.FindElement(selector);
         }
     }
 }

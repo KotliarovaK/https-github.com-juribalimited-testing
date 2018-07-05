@@ -75,6 +75,7 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_ItemDetails
         [NUnit.Framework.CategoryAttribute("EvergreenJnr_ItemDetails")]
         [NUnit.Framework.CategoryAttribute("ItemDetailsDisplay")]
         [NUnit.Framework.CategoryAttribute("DAS11531")]
+        [NUnit.Framework.CategoryAttribute("DAS12321")]
         public virtual void EvergreenJnr_MailboxesList_CheckThat404ErrorIsNotDisplayedOccurringWhenViewingMailboxDetailsWhereThereIsNoMailboxOwner()
         {
             System.Exception lastException = null;
@@ -109,7 +110,8 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_ItemDetails
                         "Mailboxes",
                         "EvergreenJnr_ItemDetails",
                         "ItemDetailsDisplay",
-                        "DAS11531"});
+                        "DAS11531",
+                        "DAS12321"});
             this.ScenarioSetup(scenarioInfo);
             this.FeatureBackground();
             testRunner.When("User clicks \"Mailboxes\" on the left-hand menu", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
@@ -307,12 +309,12 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_ItemDetails
                         "ColumnName"});
             table1.AddRow(new string[] {
                         string.Format("{0}", newColumnName)});
-            testRunner.Then("ColumnName is added to the list in the Details Page table", ((string)(null)), table1, "Then ");
+            testRunner.Then("following columns added to the table:", ((string)(null)), table1, "Then ");
             TechTalk.SpecFlow.Table table2 = new TechTalk.SpecFlow.Table(new string[] {
                         "ColumnName"});
             table2.AddRow(new string[] {
                         string.Format("{0}", newColumnName)});
-            testRunner.And("Content is present in the newly added column in the Details Page table", ((string)(null)), table2, "And ");
+            testRunner.And("content is present in the following newly added columns:", ((string)(null)), table2, "And ");
             testRunner.And("There are no errors in the browser console", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
             this.ScenarioCleanup();
         }
@@ -402,12 +404,12 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_ItemDetails
                         "ColumnName"});
             table3.AddRow(new string[] {
                         string.Format("{0}", newColumnName)});
-            testRunner.Then("ColumnName is added to the list in the Details Page table", ((string)(null)), table3, "Then ");
+            testRunner.Then("following columns added to the table:", ((string)(null)), table3, "Then ");
             TechTalk.SpecFlow.Table table4 = new TechTalk.SpecFlow.Table(new string[] {
                         "ColumnName"});
             table4.AddRow(new string[] {
                         string.Format("{0}", newColumnName)});
-            testRunner.And("Content is present in the newly added column in the Details Page table", ((string)(null)), table4, "And ");
+            testRunner.And("content is present in the following newly added columns:", ((string)(null)), table4, "And ");
             testRunner.Then("There are no errors in the browser console", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
             this.ScenarioCleanup();
         }
@@ -483,12 +485,12 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_ItemDetails
                         "ColumnName"});
             table5.AddRow(new string[] {
                         string.Format("{0}", newColumnName)});
-            testRunner.Then("ColumnName is added to the list in the Details Page table", ((string)(null)), table5, "Then ");
+            testRunner.Then("following columns added to the table:", ((string)(null)), table5, "Then ");
             TechTalk.SpecFlow.Table table6 = new TechTalk.SpecFlow.Table(new string[] {
                         "ColumnName"});
             table6.AddRow(new string[] {
                         string.Format("{0}", newColumnName)});
-            testRunner.And("Content is present in the newly added column in the Details Page table", ((string)(null)), table6, "And ");
+            testRunner.And("content is present in the following newly added columns:", ((string)(null)), table6, "And ");
             testRunner.Then("There are no errors in the browser console", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
             this.ScenarioCleanup();
         }
@@ -569,12 +571,12 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_ItemDetails
                         "ColumnName"});
             table7.AddRow(new string[] {
                         string.Format("{0}", newColumnName)});
-            testRunner.Then("ColumnName is added to the list in the Details Page table", ((string)(null)), table7, "Then ");
+            testRunner.Then("following columns added to the table:", ((string)(null)), table7, "Then ");
             TechTalk.SpecFlow.Table table8 = new TechTalk.SpecFlow.Table(new string[] {
                         "ColumnName"});
             table8.AddRow(new string[] {
                         string.Format("{0}", newColumnName)});
-            testRunner.And("Content is present in the newly added column in the Details Page table", ((string)(null)), table8, "And ");
+            testRunner.And("content is present in the following newly added columns:", ((string)(null)), table8, "And ");
             testRunner.Then("There are no errors in the browser console", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
             this.ScenarioCleanup();
         }
@@ -709,9 +711,11 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_ItemDetails
                         "ColumnName"});
             table10.AddRow(new string[] {
                         "Key"});
-            testRunner.Then("ColumnName is added to the list in the Details Page table", ((string)(null)), table10, "Then ");
+            testRunner.Then("following columns added to the table:", ((string)(null)), table10, "Then ");
             TechTalk.SpecFlow.Table table11 = new TechTalk.SpecFlow.Table(new string[] {
                         "ColumnName"});
+            table11.AddRow(new string[] {
+                        "Key"});
             table11.AddRow(new string[] {
                         "Project"});
             table11.AddRow(new string[] {
@@ -730,8 +734,6 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_ItemDetails
                         "Date"});
             table11.AddRow(new string[] {
                         "Readiness"});
-            table11.AddRow(new string[] {
-                        "Key"});
             testRunner.And("ColumnName is displayed in following order on the Details page:", ((string)(null)), table11, "And ");
             TechTalk.SpecFlow.Table table12 = new TechTalk.SpecFlow.Table(new string[] {
                         "Checkbox"});
@@ -822,7 +824,7 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_ItemDetails
                         "ColumnName"});
             table13.AddRow(new string[] {
                         "Vendor"});
-            testRunner.And("ColumnName is added to the list in the Details Page table", ((string)(null)), table13, "And ");
+            testRunner.And("following columns added to the table:", ((string)(null)), table13, "And ");
             this.ScenarioCleanup();
         }
         
@@ -890,7 +892,7 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_ItemDetails
                         "ColumnName"});
             table14.AddRow(new string[] {
                         "Vendor"});
-            testRunner.And("ColumnName is added to the list in the Details Page table", ((string)(null)), table14, "And ");
+            testRunner.And("following columns added to the table:", ((string)(null)), table14, "And ");
             this.ScenarioCleanup();
         }
         
@@ -958,7 +960,7 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_ItemDetails
                         "ColumnName"});
             table15.AddRow(new string[] {
                         "Vendor"});
-            testRunner.And("ColumnName is added to the list in the Details Page table", ((string)(null)), table15, "And ");
+            testRunner.And("following columns added to the table:", ((string)(null)), table15, "And ");
             testRunner.Then("string filter is displayed for \"Vendor\" column on the Details Page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
             this.ScenarioCleanup();
         }
@@ -970,6 +972,8 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_ItemDetails
         [NUnit.Framework.CategoryAttribute("EvergreenJnr_ItemDetails")]
         [NUnit.Framework.CategoryAttribute("ItemDetailsDisplay")]
         [NUnit.Framework.CategoryAttribute("DAS11667")]
+        [NUnit.Framework.CategoryAttribute("DAS12321")]
+        [NUnit.Framework.CategoryAttribute("DAS11921")]
         public virtual void EvergreenJnr_MailboxesLists_CheckThatNoConsoleErrorsWhenViewingMailboxDetails()
         {
             System.Exception lastException = null;
@@ -1003,7 +1007,9 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_ItemDetails
                         "Mailboxes",
                         "EvergreenJnr_ItemDetails",
                         "ItemDetailsDisplay",
-                        "DAS11667"});
+                        "DAS11667",
+                        "DAS12321",
+                        "DAS11921"});
             this.ScenarioSetup(scenarioInfo);
             this.FeatureBackground();
             testRunner.When("User clicks \"Mailboxes\" on the left-hand menu", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
@@ -1087,6 +1093,7 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_ItemDetails
         [NUnit.Framework.CategoryAttribute("EvergreenJnr_ItemDetails")]
         [NUnit.Framework.CategoryAttribute("ItemDetailsDisplay")]
         [NUnit.Framework.CategoryAttribute("DAS11479")]
+        [NUnit.Framework.CategoryAttribute("DAS12321")]
         public virtual void EvergreenJnr_MailboxesLists_CheckThatLinksAndImageItemAreDisplayedInTheNameAndDisplayNameColumns()
         {
             System.Exception lastException = null;
@@ -1121,7 +1128,8 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_ItemDetails
                         "Mailboxes",
                         "EvergreenJnr_ItemDetails",
                         "ItemDetailsDisplay",
-                        "DAS11479"});
+                        "DAS11479",
+                        "DAS12321"});
             this.ScenarioSetup(scenarioInfo);
             this.FeatureBackground();
             testRunner.When("User clicks \"Mailboxes\" on the left-hand menu", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
@@ -1646,6 +1654,7 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_ItemDetails
         [NUnit.Framework.CategoryAttribute("EvergreenJnr_ItemDetails")]
         [NUnit.Framework.CategoryAttribute("ItemDetailsDisplay")]
         [NUnit.Framework.CategoryAttribute("DAS12245")]
+        [NUnit.Framework.CategoryAttribute("DAS12321")]
         public virtual void EvergreenJnr_MailboxesLists_CheckThatListLoadedCorrectlyAndNoConsoleErrorIsNotDisplayed()
         {
             System.Exception lastException = null;
@@ -1680,7 +1689,8 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_ItemDetails
                         "Mailboxes",
                         "EvergreenJnr_ItemDetails",
                         "ItemDetailsDisplay",
-                        "DAS12245"});
+                        "DAS12245",
+                        "DAS12321"});
             this.ScenarioSetup(scenarioInfo);
             this.FeatureBackground();
             testRunner.When("User clicks \"Mailboxes\" on the left-hand menu", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
@@ -1764,6 +1774,7 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_ItemDetails
         [NUnit.Framework.CategoryAttribute("EvergreenJnr_ItemDetails")]
         [NUnit.Framework.CategoryAttribute("ItemDetailsDisplay")]
         [NUnit.Framework.CategoryAttribute("DAS12088")]
+        [NUnit.Framework.CategoryAttribute("DAS12321")]
         public virtual void EvergreenJnr_MailboxesLists_CheckThatMailboxPermissionsAndFolderPermissionsDataAreDisplayedCorrectly()
         {
             System.Exception lastException = null;
@@ -1798,7 +1809,8 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_ItemDetails
                         "Mailboxes",
                         "EvergreenJnr_ItemDetails",
                         "ItemDetailsDisplay",
-                        "DAS12088"});
+                        "DAS12088",
+                        "DAS12321"});
             this.ScenarioSetup(scenarioInfo);
             this.FeatureBackground();
             testRunner.When("User clicks \"Mailboxes\" on the left-hand menu", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
@@ -1972,6 +1984,7 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_ItemDetails
         [NUnit.Framework.CategoryAttribute("DAS12738")]
         [NUnit.Framework.CategoryAttribute("DAS12371")]
         [NUnit.Framework.CategoryAttribute("DAS12765")]
+        [NUnit.Framework.CategoryAttribute("DAS12321")]
         public virtual void EvergreenJnr_MailboxesLists_CheckThatDropdownListsInTheProjectDetailsFiltersAreDisplayedCorrectly()
         {
             System.Exception lastException = null;
@@ -2009,7 +2022,8 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_ItemDetails
                         "DAS12210",
                         "DAS12738",
                         "DAS12371",
-                        "DAS12765"});
+                        "DAS12765",
+                        "DAS12321"});
             this.ScenarioSetup(scenarioInfo);
             this.FeatureBackground();
             testRunner.When("User clicks \"Mailboxes\" on the left-hand menu", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
@@ -2271,6 +2285,7 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_ItemDetails
         [NUnit.Framework.CategoryAttribute("EvergreenJnr_ItemDetails")]
         [NUnit.Framework.CategoryAttribute("ItemDetailsDisplay")]
         [NUnit.Framework.CategoryAttribute("DAS12690")]
+        [NUnit.Framework.CategoryAttribute("DAS12321")]
         public virtual void EvergreenJnr_MailboxesLists_CheckThatLinksInMailboxDetailsAreRedirectedToTheRelevantUserDetailsPage()
         {
             System.Exception lastException = null;
@@ -2305,7 +2320,8 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_ItemDetails
                         "Mailboxes",
                         "EvergreenJnr_ItemDetails",
                         "ItemDetailsDisplay",
-                        "DAS12690"});
+                        "DAS12690",
+                        "DAS12321"});
             this.ScenarioSetup(scenarioInfo);
             this.FeatureBackground();
             testRunner.When("User clicks \"Mailboxes\" on the left-hand menu", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
@@ -2323,22 +2339,23 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_ItemDetails
         [NUnit.Framework.DescriptionAttribute("EvergreenJnr_AllLists_CheckThatBucketColumnIsDisplayedOnDetailsProjectsPages")]
         [NUnit.Framework.CategoryAttribute("Evergreen")]
         [NUnit.Framework.CategoryAttribute("ALlLists")]
-        [NUnit.Framework.CategoryAttribute("Users")]
         [NUnit.Framework.CategoryAttribute("EvergreenJnr_ItemDetails")]
         [NUnit.Framework.CategoryAttribute("ItemDetailsDisplay")]
         [NUnit.Framework.CategoryAttribute("DAS12765")]
-        [NUnit.Framework.TestCaseAttribute("Devices", "001BAQXT6JWFPI", "Hostname", "Projects", "Evergreen Buckets", "Device Owner Projects", new string[0])]
-        [NUnit.Framework.TestCaseAttribute("Users", "hurstbl", "Username", "Projects", "Evergreen Buckets", "User Projects", new string[0])]
-        [NUnit.Framework.TestCaseAttribute("Users", "hurstbl", "Username", "Projects", "Evergreen Buckets", "Mailbox Projects", new string[0])]
-        [NUnit.Framework.TestCaseAttribute("Users", "ZZZ588323", "Username", "Projects", "Evergreen Buckets", "Device Projects", new string[0])]
-        public virtual void EvergreenJnr_AllLists_CheckThatBucketColumnIsDisplayedOnDetailsProjectsPages(string pageName, string searchTerm, string column, string tab, string sectionClose, string sectionOpen, string[] exampleTags)
+        [NUnit.Framework.CategoryAttribute("DAS12860")]
+        [NUnit.Framework.TestCaseAttribute("Devices", "001BAQXT6JWFPI", "Hostname", "Device Owner Projects", new string[0])]
+        [NUnit.Framework.TestCaseAttribute("Users", "hurstbl", "Username", "User Projects", new string[0])]
+        [NUnit.Framework.TestCaseAttribute("Users", "hurstbl", "Username", "Mailbox Projects", new string[0])]
+        [NUnit.Framework.TestCaseAttribute("Users", "ZZZ588323", "Username", "Device Projects", new string[0])]
+        [NUnit.Framework.TestCaseAttribute("Mailboxes", "000F977AC8824FE39B8@bclabs.local", "Email Address", "Mailbox User Projects", new string[0])]
+        public virtual void EvergreenJnr_AllLists_CheckThatBucketColumnIsDisplayedOnDetailsProjectsPages(string pageName, string searchTerm, string column, string sectionOpen, string[] exampleTags)
         {
             System.Exception lastException = null;
             for (int i = 0; (i <= 1); i = (i + 1))
             {
                 try
                 {
-                    this.EvergreenJnr_AllLists_CheckThatBucketColumnIsDisplayedOnDetailsProjectsPagesInternal(pageName, searchTerm, column, tab, sectionClose, sectionOpen, exampleTags);
+                    this.EvergreenJnr_AllLists_CheckThatBucketColumnIsDisplayedOnDetailsProjectsPagesInternal(pageName, searchTerm, column, sectionOpen, exampleTags);
                     return;
                 }
                 catch (System.Exception exc)
@@ -2357,15 +2374,15 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_ItemDetails
             }
         }
         
-        private void EvergreenJnr_AllLists_CheckThatBucketColumnIsDisplayedOnDetailsProjectsPagesInternal(string pageName, string searchTerm, string column, string tab, string sectionClose, string sectionOpen, string[] exampleTags)
+        private void EvergreenJnr_AllLists_CheckThatBucketColumnIsDisplayedOnDetailsProjectsPagesInternal(string pageName, string searchTerm, string column, string sectionOpen, string[] exampleTags)
         {
             string[] @__tags = new string[] {
                     "Evergreen",
                     "ALlLists",
-                    "Users",
                     "EvergreenJnr_ItemDetails",
                     "ItemDetailsDisplay",
-                    "DAS12765"};
+                    "DAS12765",
+                    "DAS12860"};
             if ((exampleTags != null))
             {
                 @__tags = System.Linq.Enumerable.ToArray(System.Linq.Enumerable.Concat(@__tags, exampleTags));
@@ -2376,8 +2393,8 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_ItemDetails
             testRunner.When(string.Format("User clicks \"{0}\" on the left-hand menu", pageName), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
             testRunner.And(string.Format("User perform search by \"{0}\"", searchTerm), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
             testRunner.And(string.Format("User click content from \"{0}\" column", column), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-            testRunner.And(string.Format("User navigates to the \"{0}\" tab", tab), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-            testRunner.And(string.Format("User closes \"{0}\" section on the Details Page", sectionClose), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+            testRunner.And("User navigates to the \"Projects\" tab", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+            testRunner.And("User closes \"Project Summary\" section on the Details Page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
             testRunner.And(string.Format("User opens \"{0}\" section on the Details Page", sectionOpen), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
             testRunner.Then("\"Bucket\" column is displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
             this.ScenarioCleanup();
@@ -2390,7 +2407,6 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_ItemDetails
         [NUnit.Framework.CategoryAttribute("EvergreenJnr_ItemDetails")]
         [NUnit.Framework.CategoryAttribute("ItemDetailsDisplay")]
         [NUnit.Framework.CategoryAttribute("DAS12292")]
-        [NUnit.Framework.CategoryAttribute("Not_Run")]
         public virtual void EvergreenJnr_DevicesLists_CheckingThatInRangeOperatorWorkingCorrectly()
         {
             System.Exception lastException = null;
@@ -2424,8 +2440,7 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_ItemDetails
                         "Devices",
                         "EvergreenJnr_ItemDetails",
                         "ItemDetailsDisplay",
-                        "DAS12292",
-                        "Not_Run"});
+                        "DAS12292"});
             this.ScenarioSetup(scenarioInfo);
             this.FeatureBackground();
             testRunner.When("User clicks \"Devices\" on the left-hand menu", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
@@ -2436,6 +2451,83 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_ItemDetails
             testRunner.And("User opens \"Device Projects\" section on the Details Page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
             testRunner.And("User have opened Column Settings for \"Date\" column in the Details Page table", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
             testRunner.And("User clicks Filter button on the Column Settings panel", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+            TechTalk.SpecFlow.Table table18 = new TechTalk.SpecFlow.Table(new string[] {
+                        "DateFrom",
+                        "DateTo"});
+            table18.AddRow(new string[] {
+                        "5222014",
+                        "5202018"});
+            testRunner.And("User select In Range value with following date:", ((string)(null)), table18, "And ");
+            testRunner.Then("\"2\" rows found label displays on Details Page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+            this.ScenarioCleanup();
+        }
+        
+        [NUnit.Framework.TestAttribute()]
+        [NUnit.Framework.DescriptionAttribute("EvergreenJnr_AllLists_CheckThatHyperlinkForKeyColumnsIsRedirectedToTheRelevantDet" +
+            "ailsPage")]
+        [NUnit.Framework.CategoryAttribute("Evergreen")]
+        [NUnit.Framework.CategoryAttribute("AllLists")]
+        [NUnit.Framework.CategoryAttribute("EvergreenJnr_ItemDetails")]
+        [NUnit.Framework.CategoryAttribute("ItemDetailsDisplay")]
+        [NUnit.Framework.CategoryAttribute("DAS12386")]
+        [NUnit.Framework.TestCaseAttribute("Devices", "Device Key", new string[0])]
+        [NUnit.Framework.TestCaseAttribute("Users", "User Key", new string[0])]
+        [NUnit.Framework.TestCaseAttribute("Applications", "Application Key", new string[0])]
+        [NUnit.Framework.TestCaseAttribute("Mailboxes", "Mailbox Key", new string[0])]
+        public virtual void EvergreenJnr_AllLists_CheckThatHyperlinkForKeyColumnsIsRedirectedToTheRelevantDetailsPage(string pageName, string column, string[] exampleTags)
+        {
+            System.Exception lastException = null;
+            for (int i = 0; (i <= 1); i = (i + 1))
+            {
+                try
+                {
+                    this.EvergreenJnr_AllLists_CheckThatHyperlinkForKeyColumnsIsRedirectedToTheRelevantDetailsPageInternal(pageName, column, exampleTags);
+                    return;
+                }
+                catch (System.Exception exc)
+                {
+                    lastException = exc;
+                }
+                if (((i + 1) 
+                            <= 1))
+                {
+                    testRunner.OnScenarioEnd();
+                }
+            }
+            if ((lastException != null))
+            {
+                throw lastException;
+            }
+        }
+        
+        private void EvergreenJnr_AllLists_CheckThatHyperlinkForKeyColumnsIsRedirectedToTheRelevantDetailsPageInternal(string pageName, string column, string[] exampleTags)
+        {
+            string[] @__tags = new string[] {
+                    "Evergreen",
+                    "AllLists",
+                    "EvergreenJnr_ItemDetails",
+                    "ItemDetailsDisplay",
+                    "DAS12386"};
+            if ((exampleTags != null))
+            {
+                @__tags = System.Linq.Enumerable.ToArray(System.Linq.Enumerable.Concat(@__tags, exampleTags));
+            }
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("EvergreenJnr_AllLists_CheckThatHyperlinkForKeyColumnsIsRedirectedToTheRelevantDet" +
+                    "ailsPage", @__tags);
+            this.ScenarioSetup(scenarioInfo);
+            this.FeatureBackground();
+            TechTalk.SpecFlow.Table table19 = new TechTalk.SpecFlow.Table(new string[] {
+                        "ColumnName"});
+            table19.AddRow(new string[] {
+                        string.Format("{0}", column)});
+            testRunner.When(string.Format("User add following columns using URL to the \"{0}\" page:", pageName), ((string)(null)), table19, "When ");
+            TechTalk.SpecFlow.Table table20 = new TechTalk.SpecFlow.Table(new string[] {
+                        "ColumnName"});
+            table20.AddRow(new string[] {
+                        string.Format("{0}", column)});
+            testRunner.Then("Content is present in the newly added column", ((string)(null)), table20, "Then ");
+            testRunner.When(string.Format("User click content from \"{0}\" column", column), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+            testRunner.Then("Details object page is displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
             this.ScenarioCleanup();
         }
     }

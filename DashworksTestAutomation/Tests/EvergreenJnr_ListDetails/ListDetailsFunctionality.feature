@@ -42,18 +42,19 @@ Scenario Outline: EvergreenJnr_AllLists_CheckThatRenamingAListWorkingCorrectlyFo
 	When User clicks the Actions button
 	Then Actions panel is displayed to the user
 	When User select all rows
+	And User selects "Create static list" in the Actions dropdown
 	And User create static list with "Static List TestName" name
-	When User clicks the List Details button
+	And User clicks the List Details button
 	Then List details panel is displayed to the user
 	When User changes list name to "RenamedList"
 	Then "RenamedList" name is displayed in list details panel
-	Then Edit List menu is not displayed
+	And Edit List menu is not displayed
 	When User mark list as favorite
 	Then Star icon is active in list details panel
-	Then Edit List menu is not displayed
+	And Edit List menu is not displayed
 	When User select "Everyone can edit" sharing option
 	Then Edit List menu is not displayed
-	Then "RenamedList" list is displayed to user
+	And "RenamedList" list is displayed to user
 	When User select "Automation Admin 1" as a Owner of a list
 	And User click Accept button in List Details panel
 	Then Edit List menu is not displayed
@@ -100,8 +101,9 @@ Scenario Outline: EvergreenJnr_AllLists_CheckThatFavoriteAListWorkingCorrectlyFo
 	When User clicks the Actions button
 	Then Actions panel is displayed to the user
 	When User select all rows
+	And User selects "Create static list" in the Actions dropdown
 	And User create static list with "Static List TestName36" name
-	When User clicks the List Details button
+	And User clicks the List Details button
 	Then List details panel is displayed to the user
 	When User mark list as favorite
 	When User navigates to the "<ListToNavigate>" list
@@ -243,12 +245,14 @@ Scenario Outline: EvergreenJnr_AllLists_CheckThatNoAbilityToCreateTheSameNamedLi
 	When User clicks the Actions button
 	Then Actions panel is displayed to the user
 	When User select all rows
+	And User selects "Create static list" in the Actions dropdown
 	And User create static list with "2" name
 	Then "2" list is displayed to user
 	When User navigates to the "<ListToNavigate>" list
 	And User clicks the Actions button
 	Then Actions panel is displayed to the user
 	When User select all rows
+	And User selects "Create static list" in the Actions dropdown
 	And User create static list with " 2" name
 	Then Warning message with "List Name should be unique" is displayed
 
@@ -259,7 +263,7 @@ Scenario Outline: EvergreenJnr_AllLists_CheckThatNoAbilityToCreateTheSameNamedLi
 	| Applications | All Applications |
 	| Mailboxes    | All Mailboxes    |
 	
-@Evergreen @AllLists @EvergreenJnr_ListDetails @ListDetailsFunctionality @DAS12208 @Delete_Newly_Created_List
+@Evergreen @AllLists @EvergreenJnr_ListDetails @ListDetailsFunctionality @DAS12208 @DAS12684 @Delete_Newly_Created_List
 Scenario: EvergreenJnr_AllLists_CheckThatWarningMessageIsNotDisplayedInTheListPanelAfterViewingDependentList
 	When User clicks "Applications" on the left-hand menu
 	Then "Applications" list should be displayed to the user
@@ -277,7 +281,7 @@ Scenario: EvergreenJnr_AllLists_CheckThatWarningMessageIsNotDisplayedInTheListPa
 	Then "Devices" list should be displayed to the user
 	When User clicks the Filters button
 	Then Filters panel is displayed to the user
-	When User add "Application (Saved List)" filter where type is "In list" with SelectedList list and following Association:
+	When User add "Application (Saved List)" filter where type is "In list" with Selected Value and following Association:
 	| SelectedList   | Association        |
 	| TestList1262B7 | Entitled to device |
 	Then "Application" filter is added to the list
@@ -300,6 +304,9 @@ Scenario: EvergreenJnr_AllLists_CheckThatWarningMessageIsNotDisplayedInTheListPa
 	When User navigates to the "TestList186851" list
 	Then "TestList186851" list is displayed to user
 	And no Warning message is displayed in the lists panel
+	When User clicks the List Details button
+	Then List details panel is displayed to the user
+	Then Owner field is disabled as read-only
 
 @Evergreen @AllLists @EvergreenJnr_ListDetails @ListDetailsFunctionality @DAS10713 @DAS12190 @DAS12204 @Delete_Newly_Created_List
 Scenario: EvergreenJnr_AllLists_CheckThatTwoDependencyAreDisplayedInTheDependentsBlock
@@ -312,7 +319,7 @@ Scenario: EvergreenJnr_AllLists_CheckThatTwoDependencyAreDisplayedInTheDependent
 	Then "Devices" list should be displayed to the user
 	When User clicks the Filters button
 	Then Filters panel is displayed to the user
-	When User add "Application (Saved List)" filter where type is "In list" with SelectedList list and following Association:
+	When User add "Application (Saved List)" filter where type is "In list" with Selected Value and following Association:
 	| SelectedList | Association        |
 	| Application1 | Entitled to device |
 	Then "Application" filter is added to the list
@@ -363,7 +370,7 @@ Scenario: EvergreenJnr_AllLists_CheckThatListDoesNotExistErrorWhenViewingDepende
 	Then "Devices" list should be displayed to the user
 	When User clicks the Filters button
 	Then Filters panel is displayed to the user
-	When User add "Application (Saved List)" filter where type is "In list" with SelectedList list and following Association:
+	When User add "Application (Saved List)" filter where type is "In list" with Selected Value and following Association:
 	| SelectedList | Association        |
 	| Adobe Apps   | Entitled to device |
 	Then "Application" filter is added to the list
@@ -395,7 +402,7 @@ Scenario: EvergreenJnr_AllLists_CheckThatListPanelDoesNotExistErrorWhenViewingDe
 	Then "Devices" list should be displayed to the user
 	When User clicks the Filters button
 	Then Filters panel is displayed to the user
-	When User add "Application (Saved List)" filter where type is "In list" with SelectedList list and following Association:
+	When User add "Application (Saved List)" filter where type is "In list" with Selected Value and following Association:
 	| SelectedList | Association        |
 	| A1           | Entitled to device |
 	Then "Application" filter is added to the list
@@ -415,7 +422,7 @@ Scenario: EvergreenJnr_AllLists_CheckThatListPanelDoesNotExistErrorWhenViewingDe
 	Then "D1" list is displayed to user
 	And "This list does not exist or you do not have access to it" message is not displayed in the lists panel
 
-@Evergreen @AllLists @EvergreenJnr_ListDetails @ListDetailsFunctionality @DAS12075 @Delete_Newly_Created_List
+@Evergreen @AllLists @EvergreenJnr_ListDetails @ListDetailsFunctionality @DAS12075 @DAS12874 @Delete_Newly_Created_List
 Scenario: EvergreenJnr_AllLists_CheckDisplayingListDeletionWarningMessageForDependenciesDynamicLists
 	When User clicks "Applications" on the left-hand menu
 	Then "Applications" list should be displayed to the user
@@ -425,7 +432,7 @@ Scenario: EvergreenJnr_AllLists_CheckDisplayingListDeletionWarningMessageForDepe
 	Then "Devices" list should be displayed to the user
 	When User clicks the Filters button
 	Then Filters panel is displayed to the user
-	When User add "Application (Saved List)" filter where type is "In list" with SelectedList list and following Association:
+	When User add "Application (Saved List)" filter where type is "In list" with Selected Value and following Association:
 	| SelectedList | Association    |
 	| Application1 | Used on device |
 	When User create dynamic list with "Devices1" name on "Devices" page
@@ -450,7 +457,7 @@ Scenario: EvergreenJnr_AllLists_CheckDisplayingListDeletionWarningMessageForDepe
 	When User navigates to the "Devices1" list
 	And User clicks the Filters button
 	Then Filters panel is displayed to the user
-	Then "Application in list [List not found] used on device" is displayed in added filter info
+	Then "Any Application in list [List not found] used on device" is displayed in added filter info
 	And message 'No devices found' is displayed to the user
 
 @Evergreen @AllLists @EvergreenJnr_ListDetails @ListDetailsFunctionality @DAS12075 @DAS12578 @Delete_Newly_Created_List
@@ -464,7 +471,7 @@ Scenario: EvergreenJnr_AllLists_CheckDisplayingListDeletionWarningMessageForDepe
 	Then "Devices" list should be displayed to the user
 	When User clicks the Filters button
 	Then Filters panel is displayed to the user
-	When User add "Application (Saved List)" filter where type is "In list" with SelectedList list and following Association:
+	When User add "Application (Saved List)" filter where type is "In list" with Selected Value and following Association:
 	| SelectedList | Association    |
 	| Application2 | Used on device |
 	And User create dynamic list with "Devices2" name on "Devices" page
@@ -482,7 +489,7 @@ Scenario: EvergreenJnr_AllLists_CheckDisplayingListDeletionWarningMessageForDepe
 	When User navigates to the "Devices2" list
 	And User clicks the Filters button
 	Then Filters panel is displayed to the user
-	And "Application in list [List not found] used on device" is displayed in added filter info
+	And "Any Application in list [List not found] used on device" is displayed in added filter info
 	And message 'No devices found' is displayed to the user
 
 @Evergreen @AllLists @EvergreenJnr_ListDetails @ListDetailsFunctionality @DAS12075 @DAS12578 @Delete_Newly_Created_List
@@ -497,7 +504,7 @@ Scenario: EvergreenJnr_AllLists_CheckDisplayingListDeletionWarningMessageForDepe
 	Then "Devices" list should be displayed to the user
 	When User clicks the Filters button
 	Then Filters panel is displayed to the user
-	When User add "Application (Saved List)" filter where type is "In list" with SelectedList list and following Association:
+	When User add "Application (Saved List)" filter where type is "In list" with Selected Value and following Association:
 	| SelectedList | Association    |
 	| Application3 | Used on device |
 	And User create dynamic list with "Devices3" name on "Devices" page
@@ -506,7 +513,7 @@ Scenario: EvergreenJnr_AllLists_CheckDisplayingListDeletionWarningMessageForDepe
 	Then "Devices" list should be displayed to the user
 	When User clicks the Filters button
 	Then Filters panel is displayed to the user
-	When User add "Application (Saved List)" filter where type is "In list" with SelectedList list and following Association:
+	When User add "Application (Saved List)" filter where type is "In list" with Selected Value and following Association:
 	| SelectedList | Association        |
 	| Application3 | Entitled to device |
 	And User create dynamic list with "Devices4" name on "Devices" page
@@ -525,7 +532,7 @@ Scenario: EvergreenJnr_AllLists_CheckDisplayingListDeletionWarningMessageForDepe
 	When User navigates to the "Devices3" list
 	And User clicks the Filters button
 	Then Filters panel is displayed to the user
-	And "Application in list [List not found] used on device" is displayed in added filter info
+	And "Any Application in list [List not found] used on device" is displayed in added filter info
 	And message 'No devices found' is displayed to the user
 
 @Evergreen @AllLists @EvergreenJnr_ListDetails @ListDetailsFunctionality @DAS12075 @DAS12578 @Delete_Newly_Created_List
@@ -542,7 +549,7 @@ Scenario: EvergreenJnr_AllLists_CheckDisplayingListDeletionWarningMessageForTwoD
 	Then "Devices" list should be displayed to the user
 	When User clicks the Filters button
 	Then Filters panel is displayed to the user
-	When User add "Application (Saved List)" filter where type is "In list" with SelectedList list and following Association:
+	When User add "Application (Saved List)" filter where type is "In list" with Selected Value and following Association:
 	| SelectedList | Association    |
 	| Application4 | Used on device |
 	| Application5 | Used on device |
@@ -561,7 +568,7 @@ Scenario: EvergreenJnr_AllLists_CheckDisplayingListDeletionWarningMessageForTwoD
 	When User navigates to the "Devices4" list
 	And User clicks the Filters button
 	Then Filters panel is displayed to the user
-	And "Application in list [List not found] or Application5 used on device" is displayed in added filter info
+	And "Any Application in list [List not found] or Application5 used on device" is displayed in added filter info
 
 @Evergreen @Users @EvergreenJnr_ListDetails @ListDetailsFunctionality @DAS12536 @Delete_Newly_Created_List
 Scenario: EvergreenJnr_Users_CheckThatListDeletionWarningMessageIsNotDisplayedAfterDeletingAnotherListForDynamicAndStaticLists

@@ -6,7 +6,7 @@ Background: Pre-Conditions
 	Given User is logged in to the Evergreen
 	Then Evergreen Dashboards page should be displayed to the user
 
-@Evergreen @Mailboxes @EvergreenJnr_ItemDetails @ItemDetailsDisplay @DAS11531
+@Evergreen @Mailboxes @EvergreenJnr_ItemDetails @ItemDetailsDisplay @DAS11531 @DAS12321
 Scenario: EvergreenJnr_MailboxesList_CheckThat404ErrorIsNotDisplayedOccurringWhenViewingMailboxDetailsWhereThereIsNoMailboxOwner
 	When User clicks "Mailboxes" on the left-hand menu
 	Then "Mailboxes" list should be displayed to the user
@@ -43,10 +43,10 @@ Scenario Outline: EvergreenJnr_AllLists_CheckThatDataIsDisplayedAfterAddingColum
 	And User clicks Column button on the Column Settings panel
 	And User select "<CheckboxName>" checkbox on the Column Settings panel
 	And User clicks Column button on the Column Settings panel
-	Then ColumnName is added to the list in the Details Page table
+	Then following columns added to the table:
 	| ColumnName      |
 	| <NewColumnName> |
-	And Content is present in the newly added column in the Details Page table
+	And content is present in the following newly added columns:
 	| ColumnName      |
 	| <NewColumnName> |
 	And There are no errors in the browser console
@@ -73,10 +73,10 @@ Scenario Outline: EvergreenJnr_AllLists_CheckThatDataIsDisplayedAfterAddingColum
 	And User clicks Column button on the Column Settings panel
 	And User select "<CheckboxName>" checkbox on the Column Settings panel
 	And User clicks Column button on the Column Settings panel
-	Then ColumnName is added to the list in the Details Page table
+	Then following columns added to the table:
 	| ColumnName      |
 	| <NewColumnName> |
-	And Content is present in the newly added column in the Details Page table
+	And content is present in the following newly added columns:
 	| ColumnName      |
 	| <NewColumnName> |
 	Then There are no errors in the browser console
@@ -120,10 +120,10 @@ Scenario Outline: EvergreenJnr_AllLists_CheckThatDataIsDisplayedAfterAddingColum
 	And User select "Installed" checkbox on the Column Settings panel
 	And User select "<CheckboxName>" checkbox on the Column Settings panel
 	And User clicks Column button on the Column Settings panel
-	Then ColumnName is added to the list in the Details Page table
+	Then following columns added to the table:
 	| ColumnName      |
 	| <NewColumnName> |
-	And Content is present in the newly added column in the Details Page table
+	And content is present in the following newly added columns:
 	| ColumnName      |
 	| <NewColumnName> |
 	Then There are no errors in the browser console
@@ -146,10 +146,10 @@ Scenario Outline: EvergreenJnr_AllLists_CheckThatDataIsDisplayedAfterAddingColum
 	And User clicks Column button on the Column Settings panel
 	And User select "<CheckboxName>" checkbox on the Column Settings panel
 	And User clicks Column button on the Column Settings panel
-	Then ColumnName is added to the list in the Details Page table
+	Then following columns added to the table:
 	| ColumnName      |
 	| <NewColumnName> |
-	And Content is present in the newly added column in the Details Page table
+	And content is present in the following newly added columns:
 	| ColumnName      |
 	| <NewColumnName> |
 	Then There are no errors in the browser console
@@ -195,11 +195,12 @@ Scenario: EvergreenJnr_DevicesLists_CheckThatSelectedCheckboxesMatchTheColumnsIn
 	And User clicks Column button on the Column Settings panel
 	And User select "Key" checkbox on the Column Settings panel
 	And User clicks Column button on the Column Settings panel
-	Then ColumnName is added to the list in the Details Page table
+	Then following columns added to the table:
 	| ColumnName |
 	| Key        |
 	And ColumnName is displayed in following order on the Details page:
 	| ColumnName   |
+	| Key          |
 	| Project      |
 	| Project Type |
 	| Bucket       |
@@ -209,7 +210,6 @@ Scenario: EvergreenJnr_DevicesLists_CheckThatSelectedCheckboxesMatchTheColumnsIn
 	| Status       |
 	| Date         |
 	| Readiness    |
-	| Key          |
 	And Checkboxes are checked on the Column Settings panel for "Key" Column Settings panel:
 	| Checkbox     |
 	| Key          |
@@ -231,7 +231,7 @@ Scenario Outline: EvergreenJnr_AllLists_CheckRenamedColumnForApplicationSummaryS
 	And User click content from "<ColumnName>" column
 	And User navigates to the "Applications" tab
 	Then "Manufacturer" column is not displayed to the user
-	And ColumnName is added to the list in the Details Page table
+	And following columns added to the table:
 	| ColumnName |
 	| Vendor     |
 
@@ -250,7 +250,7 @@ Scenario Outline: EvergreenJnr_AllLists_CheckRenamedColumnForApplicationDetailSe
 	When User closes "Application Summary" section on the Details Page
 	And User opens "Application Detail" section on the Details Page
 	Then "Manufacturer" column is not displayed to the user
-	And ColumnName is added to the list in the Details Page table
+	And following columns added to the table:
 	| ColumnName |
 	| Vendor     |
 
@@ -269,7 +269,7 @@ Scenario Outline: EvergreenJnr_AllLists_CheckRenamedColumnAndStringFilterForSoft
 	When User opens "Software Compliance Issues" section on the Details Page
 	Then "<CountRows>" rows found label displays on Details Page
 	And "Manufacturer" column is not displayed to the user
-	And ColumnName is added to the list in the Details Page table
+	And following columns added to the table:
 	| ColumnName |
 	| Vendor     |
 	Then string filter is displayed for "Vendor" column on the Details Page
@@ -279,7 +279,7 @@ Examples:
 	| Devices  | 001BAQXT6JWFPI | Hostname   | 2         |
 	| Users    | ZZZ588323      | Username   | 1         |
 
-@Evergreen @Mailboxes @EvergreenJnr_ItemDetails @ItemDetailsDisplay @DAS11667
+@Evergreen @Mailboxes @EvergreenJnr_ItemDetails @ItemDetailsDisplay @DAS11667 @DAS12321 @DAS11921
 Scenario: EvergreenJnr_MailboxesLists_CheckThatNoConsoleErrorsWhenViewingMailboxDetails
 	When User clicks "Mailboxes" on the left-hand menu
 	Then "Mailboxes" list should be displayed to the user
@@ -304,7 +304,7 @@ Scenario: EvergreenJnr_DevicesLists_CheckThatDataOfColumnsIsDisplayedInTheCustom
 	| Label      |
 	| Value      |
 
-@Evergreen @Mailboxes @EvergreenJnr_ItemDetails @ItemDetailsDisplay @DAS11479
+@Evergreen @Mailboxes @EvergreenJnr_ItemDetails @ItemDetailsDisplay @DAS11479 @DAS12321
 Scenario: EvergreenJnr_MailboxesLists_CheckThatLinksAndImageItemAreDisplayedInTheNameAndDisplayNameColumns
 	When User clicks "Mailboxes" on the left-hand menu
 	Then "Mailboxes" list should be displayed to the user
@@ -445,7 +445,7 @@ Scenario: EvergreenJnr_DevicesLists_CheckThatOneUnknownFilterValueIsShownInGroup
 	When User clicks "True" checkbox from String Filter on the Details Page
 	Then Content is present in the table on the Details Page
 
-@Evergreen @Mailboxes @EvergreenJnr_ItemDetails @ItemDetailsDisplay @DAS12245
+@Evergreen @Mailboxes @EvergreenJnr_ItemDetails @ItemDetailsDisplay @DAS12245 @DAS12321
 Scenario: EvergreenJnr_MailboxesLists_CheckThatListLoadedCorrectlyAndNoConsoleErrorIsNotDisplayed
 	When User clicks "Mailboxes" on the left-hand menu
 	Then "Mailboxes" list should be displayed to the user
@@ -475,7 +475,7 @@ Scenario: EvergreenJnr_DevicesLists_CheckThatAllTextIsDisplayedAfterClearingFilt
 	When User clicks Reset Filters button on the Details Page
 	Then All text is displayed for "Compliance" column in the String Filter
 
-@Evergreen @Mailboxes @EvergreenJnr_ItemDetails @ItemDetailsDisplay @DAS12088
+@Evergreen @Mailboxes @EvergreenJnr_ItemDetails @ItemDetailsDisplay @DAS12088 @DAS12321
 Scenario: EvergreenJnr_MailboxesLists_CheckThatMailboxPermissionsAndFolderPermissionsDataAreDisplayedCorrectly
 	When User clicks "Mailboxes" on the left-hand menu
 	Then "Mailboxes" list should be displayed to the user
@@ -533,7 +533,7 @@ Examples:
 	| Applications | "WPF/E" (codename) Community Technology Preview (Feb 2007) | Application   | Projects |
 	| Mailboxes    | 040698EE82354C17B60@bclabs.local                           | Email Address | Projects |
 
-@Evergreen @Mailboxes @EvergreenJnr_ItemDetails @ItemDetailsDisplay @DAS12210 @DAS12738 @DAS12371 @DAS12765
+@Evergreen @Mailboxes @EvergreenJnr_ItemDetails @ItemDetailsDisplay @DAS12210 @DAS12738 @DAS12371 @DAS12765 @DAS12321
 Scenario: EvergreenJnr_MailboxesLists_CheckThatDropdownListsInTheProjectDetailsFiltersAreDisplayedCorrectly
 	When User clicks "Mailboxes" on the left-hand menu
 	Then "Mailboxes" list should be displayed to the user
@@ -600,7 +600,7 @@ Scenario: EvergreenJnr_DevicesLists_CheckThatLinksInDeviceDetailsAreRedirectedTo
 	And User clicks "Tricia G. Huang" link on the Details Page
 	Then Details object page is displayed to the user
 
-@Evergreen @Mailboxes @EvergreenJnr_ItemDetails @ItemDetailsDisplay @DAS12690
+@Evergreen @Mailboxes @EvergreenJnr_ItemDetails @ItemDetailsDisplay @DAS12690 @DAS12321
 Scenario: EvergreenJnr_MailboxesLists_CheckThatLinksInMailboxDetailsAreRedirectedToTheRelevantUserDetailsPage
 	When User clicks "Mailboxes" on the left-hand menu
 	Then "Mailboxes" list should be displayed to the user
@@ -611,24 +611,25 @@ Scenario: EvergreenJnr_MailboxesLists_CheckThatLinksInMailboxDetailsAreRedirecte
 	And User clicks "hartmajt" link on the Details Page
 	Then Details object page is displayed to the user
 
-@Evergreen @ALlLists @Users @EvergreenJnr_ItemDetails @ItemDetailsDisplay @DAS12765
+@Evergreen @ALlLists @EvergreenJnr_ItemDetails @ItemDetailsDisplay @DAS12765 @DAS12860
 Scenario Outline: EvergreenJnr_AllLists_CheckThatBucketColumnIsDisplayedOnDetailsProjectsPages
 	When User clicks "<PageName>" on the left-hand menu
 	And User perform search by "<SearchTerm>"
 	And User click content from "<Column>" column
-	And User navigates to the "<Tab>" tab
-	And User closes "<SectionClose>" section on the Details Page
+	And User navigates to the "Projects" tab
+	And User closes "Project Summary" section on the Details Page
 	And User opens "<SectionOpen>" section on the Details Page
 	Then "Bucket" column is displayed to the user
 
 Examples:
-	| PageName | SearchTerm     | Column   | Tab      | SectionClose      | SectionOpen           |
-	| Devices  | 001BAQXT6JWFPI | Hostname | Projects | Evergreen Buckets | Device Owner Projects |
-	| Users    | hurstbl        | Username | Projects | Evergreen Buckets | User Projects         |
-	| Users    | hurstbl        | Username | Projects | Evergreen Buckets | Mailbox Projects      |
-	| Users    | ZZZ588323      | Username | Projects | Evergreen Buckets | Device Projects       |
+	| PageName  | SearchTerm                       | Column        | SectionOpen           |
+	| Devices   | 001BAQXT6JWFPI                   | Hostname      | Device Owner Projects |
+	| Users     | hurstbl                          | Username      | User Projects         |
+	| Users     | hurstbl                          | Username      | Mailbox Projects      |
+	| Users     | ZZZ588323                        | Username      | Device Projects       |
+	| Mailboxes | 000F977AC8824FE39B8@bclabs.local | Email Address | Mailbox User Projects |
 
-@Evergreen @Devices @EvergreenJnr_ItemDetails @ItemDetailsDisplay @DAS12292 @Not_Run
+@Evergreen @Devices @EvergreenJnr_ItemDetails @ItemDetailsDisplay @DAS12292
 Scenario: EvergreenJnr_DevicesLists_CheckingThatInRangeOperatorWorkingCorrectly
 	When User clicks "Devices" on the left-hand menu
 	Then "Devices" list should be displayed to the user
@@ -638,3 +639,25 @@ Scenario: EvergreenJnr_DevicesLists_CheckingThatInRangeOperatorWorkingCorrectly
 	And User opens "Device Projects" section on the Details Page
 	And User have opened Column Settings for "Date" column in the Details Page table
 	And User clicks Filter button on the Column Settings panel
+	And User select In Range value with following date:
+	| DateFrom | DateTo  |
+	| 5222014  | 5202018 |
+	Then "2" rows found label displays on Details Page
+
+@Evergreen @AllLists @EvergreenJnr_ItemDetails @ItemDetailsDisplay @DAS12386
+Scenario Outline: EvergreenJnr_AllLists_CheckThatHyperlinkForKeyColumnsIsRedirectedToTheRelevantDetailsPage
+	When User add following columns using URL to the "<PageName>" page:
+	| ColumnName |
+	| <Column>   |
+	Then Content is present in the newly added column
+	| ColumnName |
+	| <Column>   |
+	When User click content from "<Column>" column
+	Then Details object page is displayed to the user
+
+Examples:
+	| PageName     | Column          |
+	| Devices      | Device Key      |
+	| Users        | User Key        |
+	| Applications | Application Key |
+	| Mailboxes    | Mailbox Key     |

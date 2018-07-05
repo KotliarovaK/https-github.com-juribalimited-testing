@@ -11,7 +11,7 @@ Scenario Outline: EvergreenJnr_AllList_CheckThatColumnHeaderFontWidthConformsToD
 	When User clicks "<ListName>" on the left-hand menu
 	Then "<ListName>" list should be displayed to the user
 	And Appropriate header font weight is displayed
-	Then "v5.2.6.0" Application version is displayed
+	Then "v5.2.7.0" Application version is displayed
 
 Examples: 
 	| ListName     |
@@ -149,6 +149,7 @@ Scenario Outline: EvergreenJnr_AllList_CheckThatEditListFunctionIsAvailableAfter
 	When User clicks the Actions button
 	Then Actions panel is displayed to the user
 	When User select all rows
+	When User selects "Create static list" in the Actions dropdown
 	When User create static list with "StaticList1" name
 	When User click on '<ColumnName>' column header
 	Then data in table is sorted by '<ColumnName>' column in ascending order
@@ -173,8 +174,11 @@ Examples:
 	| Applications | Application   | Vendor           | UserSchedu: Readiness ID |
 	| Mailboxes    | Email Address | Mailbox Platform | EmailMigra: Readiness ID |
 
-@Evergreen @Devices @EvergreenJnr_BaseDashboardPage @BaseDashboardPage @DAS11693
+@Evergreen @Devices @EvergreenJnr_BaseDashboardPage @BaseDashboardPage @DAS11693 @DAS12867
 Scenario: EvergreenJnr_DevicesList_CheckThatToolTipIsDisplayedWithCreateProjectButtonFromAnUnsavedList
+	When User clicks "Applications" on the left-hand menu
+	Then "Applications" list should be displayed to the user
+	Then Create button is not displayed
 	When User clicks "Devices" on the left-hand menu
 	Then "Devices" list should be displayed to the user
 	When User click on 'Hostname' column header

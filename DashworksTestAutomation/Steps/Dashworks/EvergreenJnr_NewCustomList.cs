@@ -71,11 +71,25 @@ namespace DashworksTestAutomation.Steps.Dashworks
             page.OpenSettingsByListName(listName).Click();
         }
 
+        [When(@"User clicks Delete button for custom list")]
+        public void WhenUserClicksDeleteButtonForCustomList()
+        {
+            var button = _driver.NowAt<CustomListElement>();
+            button.DeleteButton.Click();
+        }
+
         [Then(@"Settings panel is displayed to the user")]
         public void ThenSettingsPanelIsDisplayedToTheUser()
         {
             var listElement = _driver.NowAt<CustomListElement>();
             Assert.IsTrue(listElement.SettingsPanel.Displayed(), "Settings panel is not displayed");
+        }
+
+        [Then(@"""(.*)"" list is displayed in the bottom section of the List Panel")]
+        public void ThenListIsDisplayedInTheBottomSectionOfTheListPanel(string listName)
+        {
+            var listElement = _driver.NowAt<CustomListElement>();
+            Assert.IsTrue(listElement.ListInBottomSection(listName).Displayed(), "List is not displayed in the bottom section");
         }
 
         [When(@"User create custom list with ""(.*)"" name")]
@@ -184,13 +198,6 @@ namespace DashworksTestAutomation.Steps.Dashworks
             listDetailsElement.DeleteButton.Click();
         }
 
-        [When(@"User clicks Delete in the warning message on the list panel")]
-        public void WhenUserClicksDeleteInTheWarningMessageOnTheListPanel()
-        {
-            var listDetailsElement = _driver.NowAt<CustomListElement>();
-            listDetailsElement.DeleteButtonInWarningMessage.Click();
-        }
-
         [Then(@"Delete and Cancel buttons are available in the warning message")]
         public void ThenDeleteAndCancelButtonsAreAvailableInTheWarningMessage()
         {
@@ -272,6 +279,30 @@ namespace DashworksTestAutomation.Steps.Dashworks
             listElement.DeleteButton.Click();
             _driver.WaitWhileControlIsNotDisplayed<CustomListElement>(() => listElement.DeleteConfirmationMessage);
             listElement.ConfirmDeleteButton.Click();
+        }
+
+        [When(@"User click Delete button for custom list with ""(.*)"" name")]
+        public void WhenUserClickDeleteButtonForCustomListWithName(string listName)
+        {
+            var listElement = _driver.NowAt<CustomListElement>();
+
+            listElement.ClickSettingsButtonByListName(listName);
+            _driver.WaitWhileControlIsNotDisplayed<CustomListElement>(() => listElement.DeleteButton);
+            listElement.DeleteButton.Click();
+        }
+
+        [Then(@"User confirm removed list")]
+        public void ThenUserConfirmRemovedList()
+        {
+            var listElement = _driver.NowAt<CustomListElement>();
+            listElement.ConfirmDeleteButton.Click();
+        }
+
+        [Then(@"Cancel button is displayed with correctly color")]
+        public void ThenCancelButtonIsDisplayedWithCorrectlyColor()
+        {
+            var button = _driver.NowAt<CustomListElement>();
+            Assert.IsTrue(button.CancelButtonColor.Displayed(), "Cancel button is not displayed or displayed with incorrectly color");
         }
 
         [When(@"User duplicates list with ""(.*)"" name")]

@@ -35,7 +35,7 @@ namespace DashworksTestAutomation.DTO.RuntimeVariables
             var response = Value.Put(request);
 
             if (response.StatusCode != HttpStatusCode.OK)
-                throw new Exception($"Unable to execute request. URI: {requestUri}");
+                throw new Exception($"Unable to execute request. Status Code: {response.StatusCode}, URI: {requestUri}");
         }
 
         public string GetItemIdByName(string itemName, string pageName)
@@ -74,7 +74,7 @@ namespace DashworksTestAutomation.DTO.RuntimeVariables
             var response = Value.Get(request);
 
             if (response.StatusCode != HttpStatusCode.OK)
-                throw new Exception($"Unable to execute request. URI: {requestUri}");
+                throw new Exception($"Unable to execute request. Status Code: {response.StatusCode}, URI: {requestUri}");
             var content = response.Content;
 
             var allItems = JsonConvert.DeserializeObject<JObject>(content)["results"];
@@ -114,7 +114,7 @@ namespace DashworksTestAutomation.DTO.RuntimeVariables
             var response = Value.Get(request);
 
             if (response.StatusCode != HttpStatusCode.OK)
-                throw new Exception($"Unable to execute request. URI: {requestUri}");
+                throw new Exception($"Unable to execute request. Status Code: {response.StatusCode}, URI: {requestUri}");
             var content = response.Content;
 
             var allItems = JsonConvert.DeserializeObject<JObject>(content)["results"];
