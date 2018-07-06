@@ -12,7 +12,7 @@ Scenario: Projects_CreateComputerScheduledProject
 	When User creates Project
 	| ProjectName                  | ProjectShortName | ProjectDescription | ProjectTypeString        |
 	| 000 ComputerScheduledProject | TestText         | TestText           | ComputerScheduledProject |
-	And User clicks "Create Project" button
+	When User clicks "Create Project" button
 	Then "Manage Project Details" page is displayed to the user
 	When User navigate to Manage link
 	And User select "Manage Users" option in Management Console

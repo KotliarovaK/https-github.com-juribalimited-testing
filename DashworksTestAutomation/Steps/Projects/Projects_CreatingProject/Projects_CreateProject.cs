@@ -100,6 +100,13 @@ namespace DashworksTestAutomation.Steps.Projects
             Assert.IsTrue(page.SuccessMessage.Displayed(), "Success Message is not displayed");
         }
 
+        [Then(@"Error message is not displayed")]
+        public void ThenErrorMessageIsNotDisplayed()
+        {
+            var page = _driver.NowAt<MainElementsOfProjectCreation>();
+            Assert.IsFalse(page.ErrorMessage.Displayed(), $"Error message is displayed with following text: {page.ErrorMessage.Text}");
+        }
+
         [When(@"User creates Project")]
         public void WhenUserCreatesProject(Table table)
         {

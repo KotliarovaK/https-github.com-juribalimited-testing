@@ -29,6 +29,9 @@ namespace DashworksTestAutomation.Pages.Projects
         [FindsBy(How = How.XPath, Using = ".//div[contains(@class, 'tooltipbar-success')]")]
         public IWebElement SuccessMessage { get; set; }
 
+        [FindsBy(How = How.XPath, Using = ".//li[@class='tooltip-alert']")]
+        public IWebElement ErrorMessage { get; set; }
+
         [FindsBy(How = How.XPath, Using = ".//li[contains(text(), 'This task is published')]")]
         public IWebElement SuccessPublishedTaskFlag { get; set; }
 
