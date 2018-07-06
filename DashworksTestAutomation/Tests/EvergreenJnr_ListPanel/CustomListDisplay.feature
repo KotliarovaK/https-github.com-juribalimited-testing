@@ -1062,3 +1062,15 @@ Scenario: EvergreenJnr_UsersList_CheckThatStaticListIsDisplayedInTheBottomOfTheL
 	Then "list will be permanently deleted" message is displayed in the lists panel
 	And User clicks Delete button on the warning message in the lists panel
 	And "List Deleted" message is displayed
+
+@Evergreen @Devices @EvergreenJnr_ListPanel @CustomListDisplay @DAS12891 @Delete_Newly_Created_List
+Scenario: EvergreenJnr_DevicesList_CheckThatCancelButtonIsDisplayedWithCorrectlyColorOnListPanel
+	When User clicks "Devices" on the left-hand menu
+	Then "Devices" list should be displayed to the user
+	When User click on 'Hostname' column header
+	Then data in table is sorted by 'Hostname' column in ascending order
+	When User create dynamic list with "TestList12891" name on "Devices" page
+	Then "TestList12891" list is displayed to user
+	When User click Delete button for custom list with "TestList12891" name
+	Then Cancel button is displayed with correctly color
+	Then User confirm removed list
