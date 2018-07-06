@@ -94,7 +94,6 @@ namespace DashworksTestAutomation.Tests.Projects.CreatingProjects
                         "TestText",
                         "UserScheduledProject"});
             testRunner.When("User creates Project", ((string)(null)), table1, "When ");
-            testRunner.Then("Error message is not displayed", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
             testRunner.When("User clicks \"Create Project\" button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
             testRunner.Then("Error message is not displayed", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
             testRunner.Then("\"Manage Project Details\" page is displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");

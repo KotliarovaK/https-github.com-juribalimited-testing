@@ -129,16 +129,19 @@ Scenario: Projects_CreateMailboxScheduledProject
 	And User create Stage
 	| StageName |
 	| Stage 1   |
+	Then Error message is not displayed
 	Then created Stage is displayed in the table
 	When User clicks "Create Stage" button
 	And User create Stage
 	| StageName |
 	| Stage 2   |
+	Then Error message is not displayed
 	Then created Stage is displayed in the table
 	When User clicks "Create Stage" button
 	And User create Stage
 	| StageName |
 	| Stage 3   |
+	Then Error message is not displayed
 	Then created Stage is displayed in the table
 		#Creating Mail Template
 	When User navigate to "Mail Templates" tab
