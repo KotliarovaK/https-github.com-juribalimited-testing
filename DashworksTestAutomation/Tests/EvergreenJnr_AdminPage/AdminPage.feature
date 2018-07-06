@@ -972,24 +972,23 @@ Scenario: EvergreenJnr_AdminPage_CheckingThatProjectDetailsForOnboardedObjectsIs
 	When User enters "TestProject12490" text in the Search field for "Project" column
 	And User clicks content from "Project" column
 	Then Project "TestProject12490" is displayed to user
-	When User expands the object to add 
-	And User selects following items to the Project
-	| Item            |
-	| 07RJRCQQJNBJIJQ |
-	| 08HRHU20R2JY3W  |
-	| 05NITEIIH3CGB55 |
-	And User clicks "UPDATE ALL CHANGES" button on the Projects page
-	And User clicks Update Project button on the Projects page
-	And User clicks "Users" tab in the Project Scope Changes section
+	When User clicks "Devices" tab in the Project Scope Changes section
 	And User expands the object to add 
 	And User selects following items to the Project
-	| Item                      |
-	| ACG370114 (James N. Snow) |
+	| Item           |
+	| 0IJB93JZPG72PX |
 	And User clicks "UPDATE ALL CHANGES" button on the Projects page
 	And User clicks Update Project button on the Projects page
-	And User selects "History" tab on the Project details page
-	And User type "07RJRCQQJNBJIJQ" in Global Search Field
-	Then User clicks on "07RJRCQQJNBJIJQ" search result
+	When User selects "Queue" tab on the Project details page
+	Then following objects are onboarded
+	| Item           |
+	| 0IJB93JZPG72PX |
+	When User selects "History" tab on the Project details page
+	Then following objects are onboarded
+	| Item           |
+	| 0IJB93JZPG72PX |
+	When User type "0IJB93JZPG72PX" in Global Search Field
+	Then User clicks on "0IJB93JZPG72PX (Carmen H. Benson)" search result
 	When User navigates to the "Projects" tab
 	And User opens "Device Projects" section on the Details Page
 	And User clicks "TestProject12490" link on the Details Page
