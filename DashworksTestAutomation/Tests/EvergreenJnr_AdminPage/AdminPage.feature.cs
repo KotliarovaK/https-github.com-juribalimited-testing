@@ -2991,35 +2991,31 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_AdminPage
             testRunner.When("User enters \"TestProject12490\" text in the Search field for \"Project\" column", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
             testRunner.And("User clicks content from \"Project\" column", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
             testRunner.Then("Project \"TestProject12490\" is displayed to user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-            testRunner.When("User clicks \"Users\" tab in the Project Scope Changes section", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+            testRunner.When("User clicks \"Devices\" tab in the Project Scope Changes section", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
             testRunner.And("User expands the object to add", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
             TechTalk.SpecFlow.Table table19 = new TechTalk.SpecFlow.Table(new string[] {
                         "Item"});
             table19.AddRow(new string[] {
-                        "07RJRCQQJNBJIJQ"});
-            table19.AddRow(new string[] {
-                        "08HRHU20R2JY3W"});
-            table19.AddRow(new string[] {
-                        "00HA7MKAVVFDAV"});
+                        "0IJB93JZPG72PX"});
             testRunner.And("User selects following items to the Project", ((string)(null)), table19, "And ");
             testRunner.And("User clicks \"UPDATE ALL CHANGES\" button on the Projects page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
             testRunner.And("User clicks Update Project button on the Projects page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
             testRunner.When("User selects \"Queue\" tab on the Project details page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
             TechTalk.SpecFlow.Table table20 = new TechTalk.SpecFlow.Table(new string[] {
-                        "Object"});
+                        "Item"});
             table20.AddRow(new string[] {
-                        "ACG370114 (James N. Snow)"});
+                        "0IJB93JZPG72PX"});
             testRunner.Then("following objects are onboarded", ((string)(null)), table20, "Then ");
             testRunner.When("User selects \"History\" tab on the Project details page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
             TechTalk.SpecFlow.Table table21 = new TechTalk.SpecFlow.Table(new string[] {
-                        "Object"});
+                        "Item"});
             table21.AddRow(new string[] {
-                        "ACG370114 (James N. Snow)"});
+                        "0IJB93JZPG72PX"});
             testRunner.Then("following objects are onboarded", ((string)(null)), table21, "Then ");
-            testRunner.When("User type \"ACG370114\" in Global Search Field", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-            testRunner.Then("User clicks on \"ACG370114 (James N. Snow)\" search result", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+            testRunner.When("User type \"0IJB93JZPG72PX\" in Global Search Field", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+            testRunner.Then("User clicks on \"0IJB93JZPG72PX (Carmen H. Benson)\" search result", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
             testRunner.When("User navigates to the \"Projects\" tab", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-            testRunner.And("User opens \"User Projects\" section on the Details Page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+            testRunner.And("User opens \"Device Projects\" section on the Details Page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
             testRunner.And("User clicks \"TestProject12490\" link on the Details Page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
             testRunner.Then("\"Project Object\" page is displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
             testRunner.Then("There are no errors in the browser console", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
