@@ -104,7 +104,8 @@ namespace DashworksTestAutomation.Steps.Projects
         public void ThenErrorMessageIsNotDisplayed()
         {
             var page = _driver.NowAt<MainElementsOfProjectCreation>();
-            Assert.IsFalse(page.ErrorMessage.Displayed(), $"Error message is displayed with following text: {page.ErrorMessage.Text}");
+            if (page.ErrorMessage.Displayed())
+                Assert.IsFalse(page.ErrorMessage.Displayed(), $"Error message is displayed with following text: {page.ErrorMessage.Text}");
         }
 
         [When(@"User creates Project")]
@@ -260,7 +261,8 @@ namespace DashworksTestAutomation.Steps.Projects
 
             page.StageName.SendKeys(_stagePropertiesDto.StageName);
             _driver.WaitForDataLoading();
-            page.ConfirmCreateStageButton.Click();
+
+            //page.ConfirmCreateStageButton.Click();
         }
 
         [When(@"User create Task")]
