@@ -1,6 +1,5 @@
 ﻿using System;
 using System.Linq;
-using System.Threading;
 using DashworksTestAutomation.DTO.Projects;
 using DashworksTestAutomation.Extensions;
 using DashworksTestAutomation.Pages.Projects;
@@ -569,7 +568,7 @@ namespace DashworksTestAutomation.Steps.Projects
                 page.OwnedByTeam.SelectboxSelect(_projectDto.TeamProperties[teamIndex - 1].TeamName);
                 _driver.WaitForDataLoading();
             }
-            catch (StaleElementReferenceException)
+            catch (NoSuchElementException)
             {
                 page = _driver.NowAt<GroupPropertiesPage>();
                 page.OwnedByTeam.SelectboxSelect(_projectDto.TeamProperties[teamIndex - 1].TeamName);
