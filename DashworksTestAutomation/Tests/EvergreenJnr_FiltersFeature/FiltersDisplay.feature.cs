@@ -3782,6 +3782,7 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_FiltersFeature
         [NUnit.Framework.CategoryAttribute("FiltersDisplay")]
         [NUnit.Framework.CategoryAttribute("DAS12854")]
         [NUnit.Framework.CategoryAttribute("DAS12812")]
+        [NUnit.Framework.CategoryAttribute("DAS12056")]
         public virtual void EvergreenJnr_ApplicationsList_CheckThatCorrectValuesAreDisplayedforUserKeyFilters()
         {
             System.Exception lastException = null;
@@ -3817,7 +3818,8 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_FiltersFeature
                         "Evergreen_FiltersFeature",
                         "FiltersDisplay",
                         "DAS12854",
-                        "DAS12812"});
+                        "DAS12812",
+                        "DAS12056"});
             this.ScenarioSetup(scenarioInfo);
             this.FeatureBackground();
             testRunner.When("User clicks \"Applications\" on the left-hand menu", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
@@ -3996,6 +3998,7 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_FiltersFeature
         [NUnit.Framework.CategoryAttribute("Evergreen_FiltersFeature")]
         [NUnit.Framework.CategoryAttribute("FiltersDisplay")]
         [NUnit.Framework.CategoryAttribute("DAS12812")]
+        [NUnit.Framework.CategoryAttribute("DAS12056")]
         [NUnit.Framework.TestCaseAttribute("User Enabled", "FALSE", "User whose Enabled is False has used app", new string[0])]
         [NUnit.Framework.TestCaseAttribute("User Compliance", "Red", "User whose Compliance is Red has used app", new string[0])]
         public virtual void EvergreenJnr_ApplicationsList_CheckThatTextInTheAdvancedFilterWithCheckboxesIsDisplayedCorrectly(string filterName, string checkbox, string filterInfo, string[] exampleTags)
@@ -4031,7 +4034,8 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_FiltersFeature
                     "Applications",
                     "Evergreen_FiltersFeature",
                     "FiltersDisplay",
-                    "DAS12812"};
+                    "DAS12812",
+                    "DAS12056"};
             if ((exampleTags != null))
             {
                 @__tags = System.Linq.Enumerable.ToArray(System.Linq.Enumerable.Concat(@__tags, exampleTags));
@@ -4066,16 +4070,18 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_FiltersFeature
         [NUnit.Framework.CategoryAttribute("Evergreen_FiltersFeature")]
         [NUnit.Framework.CategoryAttribute("FiltersDisplay")]
         [NUnit.Framework.CategoryAttribute("DAS12812")]
-        [NUnit.Framework.TestCaseAttribute("User SID", "S-1-5-99", "User whose SID begins with S-1-5-99 has used app", new string[0])]
-        [NUnit.Framework.TestCaseAttribute("User GUID", "180a2898-9ab2", "User whose GUID begins with 180a2898-9ab2 has used app", new string[0])]
-        public virtual void EvergreenJnr_ApplicationsList_CheckThatTextInTheAdvancedFilterInfoIsDisplayedCorrectly(string filterName, string filterValue, string filterInfo, string[] exampleTags)
+        [NUnit.Framework.CategoryAttribute("DAS12056")]
+        [NUnit.Framework.TestCaseAttribute("User SID", "Begins with", "S-1-5-99", "User whose SID begins with S-1-5-99 has used app", new string[0])]
+        [NUnit.Framework.TestCaseAttribute("User GUID", "Begins with", "180a2898-9ab2", "User whose GUID begins with 180a2898-9ab2 has used app", new string[0])]
+        [NUnit.Framework.TestCaseAttribute("User Username", "Contains", "ZDP", "User whose Username contains ZDP has used app", new string[0])]
+        public virtual void EvergreenJnr_ApplicationsList_CheckThatTextInTheAdvancedFilterInfoIsDisplayedCorrectly(string filterName, string filterType, string filterValue, string filterInfo, string[] exampleTags)
         {
             System.Exception lastException = null;
             for (int i = 0; (i <= 1); i = (i + 1))
             {
                 try
                 {
-                    this.EvergreenJnr_ApplicationsList_CheckThatTextInTheAdvancedFilterInfoIsDisplayedCorrectlyInternal(filterName, filterValue, filterInfo, exampleTags);
+                    this.EvergreenJnr_ApplicationsList_CheckThatTextInTheAdvancedFilterInfoIsDisplayedCorrectlyInternal(filterName, filterType, filterValue, filterInfo, exampleTags);
                     return;
                 }
                 catch (System.Exception exc)
@@ -4094,14 +4100,15 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_FiltersFeature
             }
         }
         
-        private void EvergreenJnr_ApplicationsList_CheckThatTextInTheAdvancedFilterInfoIsDisplayedCorrectlyInternal(string filterName, string filterValue, string filterInfo, string[] exampleTags)
+        private void EvergreenJnr_ApplicationsList_CheckThatTextInTheAdvancedFilterInfoIsDisplayedCorrectlyInternal(string filterName, string filterType, string filterValue, string filterInfo, string[] exampleTags)
         {
             string[] @__tags = new string[] {
                     "Evergreen",
                     "Applications",
                     "Evergreen_FiltersFeature",
                     "FiltersDisplay",
-                    "DAS12812"};
+                    "DAS12812",
+                    "DAS12056"};
             if ((exampleTags != null))
             {
                 @__tags = System.Linq.Enumerable.ToArray(System.Linq.Enumerable.Concat(@__tags, exampleTags));
@@ -4120,8 +4127,7 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_FiltersFeature
             table89.AddRow(new string[] {
                         string.Format("{0}", filterValue),
                         "Has used app"});
-            testRunner.When(string.Format("User add \"{0}\" filter where type is \"Begins with\" with following Value and Associ" +
-                        "ation:", filterName), ((string)(null)), table89, "When ");
+            testRunner.When(string.Format("User add \"{0}\" filter where type is \"{1}\" with following Value and Association:", filterName, filterType), ((string)(null)), table89, "When ");
             testRunner.Then(string.Format("\"{0}\" is displayed in added filter info", filterInfo), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
             testRunner.And("Filter name is colored in the added filter info", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
             testRunner.And("Filter value is shown in bold in the added filter info", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
