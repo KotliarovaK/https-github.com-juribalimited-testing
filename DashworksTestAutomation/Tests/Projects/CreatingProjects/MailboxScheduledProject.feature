@@ -13,6 +13,7 @@ Scenario: Projects_CreateMailboxScheduledProject
 	| ProjectName                 | ProjectShortName | ProjectDescription | ProjectTypeString       |
 	| 000 MailboxScheduledProject | TestText         | TestText           | MailboxScheduledProject |
 	And User clicks "Create Project" button
+	Then Error message is not displayed
 	Then "Manage Project Details" page is displayed to the user
 	When User navigate to Manage link
 	And User select "Manage Users" option in Management Console
