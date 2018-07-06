@@ -8,6 +8,7 @@ using DashworksTestAutomation.Helpers;
 using DashworksTestAutomation.Pages.Evergreen;
 using DashworksTestAutomation.Providers;
 using NUnit.Framework;
+using OpenQA.Selenium;
 using OpenQA.Selenium.Interactions;
 using OpenQA.Selenium.Remote;
 using TechTalk.SpecFlow;
@@ -224,6 +225,18 @@ namespace DashworksTestAutomation.Steps.Dashworks
         {
             var dashboardPage = _driver.NowAt<BaseDashboardPage>();
             dashboardPage.CheckColumnContent(text);
+        }
+
+        [Then(@"table content is present")]
+        public void ThenTableContentIsPresent()
+        {
+            var content = _driver.FindElements(By.XPath(BaseDashboardPage.FullTable));
+            _driver.WaitForDataLoading();
+            foreach (var element in content)
+            {
+                var tableText = element.FindElement(By.XPath(BaseDashboardPage.TableTextContent));
+                Assert.IsTrue(_driver.IsElementExists(tableText), "Table is empty");
+            }
         }
 
         [Then(@"Appropriate header font weight is displayed")]
