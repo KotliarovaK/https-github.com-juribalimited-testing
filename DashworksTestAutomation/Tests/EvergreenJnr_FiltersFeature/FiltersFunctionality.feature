@@ -619,7 +619,7 @@ Scenario: EvergreenJnr_ApplicationsList_CheckThatNoConsoleErrorIsDisplayedAfterE
 	When User click Edit button for "User " filter
 	Then There are no errors in the browser console
 
-@Evergreen @Users @EvergreenJnr_FilterFeature @FilterFunctionality @DAS12167 @Delete_Newly_Created_List
+@Evergreen @Users @EvergreenJnr_FilterFeature @FilterFunctionality @DAS12167 @DAS12056 @Delete_Newly_Created_List
 Scenario: EvergreenJnr_UsersList_CheckThatNoConsoleErrorIsDisplayedAfterAddingUserSavedListFilter
 	When User clicks "Users" on the left-hand menu
 	Then "Users" list should be displayed to the user
@@ -638,6 +638,10 @@ Scenario: EvergreenJnr_UsersList_CheckThatNoConsoleErrorIsDisplayedAfterAddingUs
 	| SelectedList     | Association     |
 	| YOG2259571 Users | Entitled to app |
 	Then "4" rows are displayed in the agGrid
+	Then "Any User in list YOG2259571 Users entitled to app" is displayed in added filter info
+	And Filter name is colored in the added filter info
+	And Filter value is shown in bold in the added filter info
+
 	And There are no errors in the browser console
 
 @Evergreen @Users @EvergreenJnr_FilterFeature @FilterFunctionality @DAS12181 @Delete_Newly_Created_List
