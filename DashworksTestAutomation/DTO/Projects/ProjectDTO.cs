@@ -54,11 +54,9 @@ namespace DashworksTestAutomation.DTO.Projects
 
     public enum DefaultLanguageEnum
     {
-        Arabic,
         [Description("British English")]
         BritishEnglish,
         English,
-        Polish,
         Russian
     }
 }
