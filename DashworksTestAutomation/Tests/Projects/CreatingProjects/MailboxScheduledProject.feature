@@ -12,7 +12,8 @@ Scenario: Projects_CreateMailboxScheduledProject
 	When User creates Project
 	| ProjectName                 | ProjectShortName | ProjectDescription | ProjectTypeString       |
 	| 000 MailboxScheduledProject | TestText         | TestText           | MailboxScheduledProject |
-	And User clicks "Create Project" button
+	Then Error message is not displayed
+	When User clicks "Create Project" button
 	Then Error message is not displayed
 	Then "Manage Project Details" page is displayed to the user
 	When User navigate to Manage link

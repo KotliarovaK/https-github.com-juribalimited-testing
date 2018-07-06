@@ -8,6 +8,7 @@ using DashworksTestAutomation.Pages.Projects.CreatingProjects.Tasks;
 using DashworksTestAutomation.Pages.Projects.Tasks;
 using DashworksTestAutomation.Utils;
 using NUnit.Framework;
+using OpenQA.Selenium;
 using OpenQA.Selenium.Remote;
 using TechTalk.SpecFlow;
 using TechTalk.SpecFlow.Assist;
@@ -563,13 +564,20 @@ namespace DashworksTestAutomation.Steps.Projects
             _projectDto.GroupProperties.Add(tempGroupPropertiesDto);
 
             page.GroupName.SendKeys(_groupPropertiesDto.GroupName);
-            //_driver.WaitForDataLoading();
-            Thread.Sleep(500);
-            page.OwnedByTeam.SelectboxSelect(_projectDto.TeamProperties[teamIndex - 1].TeamName);
+            _driver.WaitForDataLoading();
+            try
+            {
+                page.OwnedByTeam.SelectboxSelect(_projectDto.TeamProperties[teamIndex - 1].TeamName);
+            }
+            catch (StaleElementReferenceException)
+            {
+                page = _driver.NowAt<GroupPropertiesPage>();
+                page.OwnedByTeam.SelectboxSelect(_projectDto.TeamProperties[teamIndex - 1].TeamName);
+            }
 
             page.ConfirmCreateGroupButton.Click();
 
-            //tempGroupPropertiesDto.OwnedByTeam = _projectDto.TeamProperties.Last().TeamName;
+            tempGroupPropertiesDto.OwnedByTeam = _projectDto.TeamProperties.Last().TeamName;
         }
 
         [When(@"User create Mail Template")]
