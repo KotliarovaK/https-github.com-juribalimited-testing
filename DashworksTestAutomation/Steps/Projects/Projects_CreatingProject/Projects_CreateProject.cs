@@ -490,7 +490,6 @@ namespace DashworksTestAutomation.Steps.Projects
                 _taskPropertiesValuesDto.Readiness = (ReadinessEnum)Enum.Parse(typeof(ReadinessEnum), _taskPropertiesValuesDto.ReadinessString);
                 page.SelectOnboardedApplications(_taskPropertiesValuesDto.Readiness);
             }
-
             if (!string.IsNullOrEmpty(_taskPropertiesValuesDto.TaskStatusString))
             {
                 //assign TaskStatusString to TaskStatusEnum
@@ -568,11 +567,13 @@ namespace DashworksTestAutomation.Steps.Projects
             try
             {
                 page.OwnedByTeam.SelectboxSelect(_projectDto.TeamProperties[teamIndex - 1].TeamName);
+                _driver.WaitForDataLoading();
             }
             catch (StaleElementReferenceException)
             {
                 page = _driver.NowAt<GroupPropertiesPage>();
                 page.OwnedByTeam.SelectboxSelect(_projectDto.TeamProperties[teamIndex - 1].TeamName);
+                _driver.WaitForDataLoading();
             }
 
             page.ConfirmCreateGroupButton.Click();
