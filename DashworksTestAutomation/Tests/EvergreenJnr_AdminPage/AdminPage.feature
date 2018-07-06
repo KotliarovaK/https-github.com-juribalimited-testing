@@ -556,7 +556,7 @@ Scenario: EvergreenJnr_AdminPage_CheckThatPanelOfAvailableMemberslIsExpandedByDe
 	When User clicks Add Members button on the Teams page
 	Then Panel of available members is displayed to the user
 
-@Evergreen @Admin @EvergreenJnr_AdminPage @AdminPage @DAS12552
+@Evergreen @Admin @EvergreenJnr_AdminPage @AdminPage @DAS12552 @Not_Run
 Scenario: EvergreenJnr_AdminPage_CheckThatFiltersAreWorkingCorrectlyOnTheAdminPages
 	When User clicks Admin on the left-hand menu
 	Then Admin page should be displayed to the user
@@ -735,7 +735,7 @@ Scenario: EvergreenJnr_AdminPage_CheckThatSelectedCheckboxIsSelectedAfterSwitchi
 	When User expands the object to add 
 	And User selects following items to the Project
 	| Item           |
-	| 00HA7MKAVVFDAV |
+	| 02UXAL8OAR3K1O |
 	Then Update Project button is active
 	And "Devices to add (1 of 17225 selected)" is displayed to the user in the Project Scope Changes section
 	When User clicks "Users" tab in the Project Scope Changes section
@@ -807,7 +807,7 @@ Scenario: EvergreenJnr_AdminPage_CheckThatOnboardingOfObjectsIsProceedForScopedP
 	Then Project "TestProject14" is displayed to user
 	When User adds following items to the Project
 	| Item           |
-	| 00HA7MKAVVFDAV |
+	| 0317IPQGQBVAQV |
 	| 00I0COBFWHOF27 |
 	When User clicks Update Project button on the Projects page
 	Then Success message with "2 objects queued for onboarding, 0 objects offboarded" text is displayed on the Projects page
@@ -918,7 +918,7 @@ Examples:
 	| Users     | Username      | ProjectList4511 | 41,339    | TestProject4512 | 41339        | Domain      | CORP     | 103          | 103      | TestProject4512 |
 	| Mailboxes | Email Address | ProjectList4548 | 14,784    | TestProject4513 | 14784        | Owner City  | London   | 3,294        | 3294     | TestProject4513 |
 
-@Evergreen @Admin @EvergreenJnr_AdminPage @AdminPage @DAS12816 @DAS12873
+@Evergreen @Admin @EvergreenJnr_AdminPage @AdminPage @DAS12816 @DAS12873 @Not_Run
 Scenario: EvergreenJnr_AdminPage_CheckThatObjectsIsOnboardedToTheProjectWithCloneEvergreenBucketsToProjectBuckets
 	When User clicks Admin on the left-hand menu
 	Then Admin page should be displayed to the user
@@ -972,25 +972,25 @@ Scenario: EvergreenJnr_AdminPage_CheckingThatProjectDetailsForOnboardedObjectsIs
 	When User enters "TestProject12490" text in the Search field for "Project" column
 	And User clicks content from "Project" column
 	Then Project "TestProject12490" is displayed to user
-	When User clicks "Users" tab in the Project Scope Changes section
+	When User clicks "Devices" tab in the Project Scope Changes section
 	And User expands the object to add 
 	And User selects following items to the Project
-	| Item                      |
-	| ACG370114 (James N. Snow) |
+	| Item           |
+	| 0IJB93JZPG72PX |
 	And User clicks "UPDATE ALL CHANGES" button on the Projects page
 	And User clicks Update Project button on the Projects page
 	When User selects "Queue" tab on the Project details page
 	Then following objects are onboarded
-	| Object                    |
-	| ACG370114 (James N. Snow) |
+	| Item           |
+	| 0IJB93JZPG72PX |
 	When User selects "History" tab on the Project details page
 	Then following objects are onboarded
-	| Object                    |
-	| ACG370114 (James N. Snow) |
-	When User type "ACG370114" in Global Search Field
-	Then User clicks on "ACG370114 (James N. Snow)" search result
+	| Item           |
+	| 0IJB93JZPG72PX |
+	When User type "0IJB93JZPG72PX" in Global Search Field
+	Then User clicks on "0IJB93JZPG72PX (Carmen H. Benson)" search result
 	When User navigates to the "Projects" tab
-	And User opens "User Projects" section on the Details Page
+	And User opens "Device Projects" section on the Details Page
 	And User clicks "TestProject12490" link on the Details Page
 	Then "Project Object" page is displayed to the user
 	Then There are no errors in the browser console
