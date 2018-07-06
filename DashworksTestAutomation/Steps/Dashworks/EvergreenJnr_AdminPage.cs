@@ -884,7 +884,7 @@ namespace DashworksTestAutomation.Steps.Dashworks
         public void ThenImportProjectButtonIsNotDisplayed()
         {
             var button = _driver.NowAt<BaseGridPage>();
-            Assert.IsFalse(button.ImportProjectButton.Displayed());
+            Assert.IsFalse(button.ImportProjectButton.Displayed(), "Import Project button is displayed");
         }
 
         [When(@"User enters ""(.*)"" in the Project Name field")]
