@@ -12,7 +12,9 @@ Scenario: Projects_CreateMailboxScheduledProject
 	When User creates Project
 	| ProjectName                 | ProjectShortName | ProjectDescription | ProjectTypeString       |
 	| 000 MailboxScheduledProject | TestText         | TestText           | MailboxScheduledProject |
-	And User clicks "Create Project" button
+	Then Error message is not displayed
+	When User clicks "Create Project" button
+	Then Error message is not displayed
 	Then "Manage Project Details" page is displayed to the user
 	When User navigate to Manage link
 	And User select "Manage Users" option in Management Console
@@ -129,16 +131,22 @@ Scenario: Projects_CreateMailboxScheduledProject
 	And User create Stage
 	| StageName |
 	| Stage 1   |
+	When User clicks "Create Stage" button
+	Then Error message is not displayed
 	Then created Stage is displayed in the table
 	When User clicks "Create Stage" button
 	And User create Stage
 	| StageName |
 	| Stage 2   |
+	When User clicks "Create Stage" button
+	Then Error message is not displayed
 	Then created Stage is displayed in the table
 	When User clicks "Create Stage" button
 	And User create Stage
 	| StageName |
 	| Stage 3   |
+	When User clicks "Create Stage" button
+	Then Error message is not displayed
 	Then created Stage is displayed in the table
 		#Creating Mail Template
 	When User navigate to "Mail Templates" tab
