@@ -382,8 +382,8 @@ Scenario: EvergreenJnr_AdminPage_CheckThatMailboxesAreSuccessfullyAddedToBuckets
 	And User clicks content from "Bucket" column
 	And User clicks "Mailboxes" tab
 	And User clicks Create New Item button
-	And User adds following items from list
-	| Item                             |
+	And User adds following Objects from list
+	| Objects                          |
 	| 040698EE82354C17B60@bclabs.local |
 	| 04D8FC40F25547E7B4D@bclabs.local |
 	Then Success message is displayed and contains "The selected mailboxes have been added to the selected bucket" text
@@ -434,8 +434,8 @@ Scenario: EvergreenJnr_AdminPage_CheckThatConsoleErrorsAreNotDisplayedAfterAddin
 	And User enters "Bangor" text in the Search field for "Bucket" column
 	And User clicks content from "Bucket" column
 	And User clicks Create New Item button
-	And User adds following items from list
-	| Item           |
+	And User adds following Objects from list
+	| Objects        |
 	| VXERDNJ3KRJ421 |
 	| XV20GW6HJRVE2R |
 	Then Success message is displayed and contains "The selected devices have been added to the selected bucket" text
@@ -465,8 +465,8 @@ Scenario: EvergreenJnr_AdminPage_CheckThatConsoleErrorsAreNotDisplayedAfterAddin
 	And User clicks content from "Bucket" column
 	And User clicks "Users" tab
 	And User clicks Create New Item button
-	And User adds following items from list
-	| Item                           |
+	And User adds following Objects from list
+	| Objects                           |
 	| UK\ADK614179 (Audrey B. Dixon) |
 	| UK\AAT858228 (Cheri B. Evans)  |
 	Then Success message is displayed and contains "The selected users have been added to the selected bucket" text
@@ -630,8 +630,8 @@ Scenario: EvergreenJnr_AdminPage_CheckThatNoConsoleErrorsAreDisplayedAfterUpdati
 	And User selects "Scope Changes" tab on the Project details page
 	And User clicks "Applications" tab in the Project Scope Changes section
 	Then "Applications to add (0 of 2129 selected)" is displayed to the user in the Project Scope Changes section
-	When User adds following items to the Project
-	| Item                        |
+	When User adds following Objects to the Project
+	| Objects                     |
 	| 20040610sqlserverck (1.0.0) |
 	| 7zip                        |
 	| ACDSee 4.0 (4.0.0)          |
@@ -735,15 +735,15 @@ Scenario: EvergreenJnr_AdminPage_CheckThatSelectedCheckboxIsSelectedAfterSwitchi
 	And User clicks "Devices" tab in the Project Scope Changes section
 	Then Update Project buttons is disabled
 	When User expands the object to add 
-	And User selects following items to the Project
-	| Item           |
+	And User selects following Objects to the Project
+	| Objects        |
 	| 02UXAL8OAR3K1O |
 	Then Update Project button is active
 	And "Devices to add (1 of 17225 selected)" is displayed to the user in the Project Scope Changes section
 	When User clicks "Users" tab in the Project Scope Changes section
 	And User expands the object to add 
-	And User selects following items to the Project
-	| Item                      |
+	And User selects following Objects to the Project
+	| Objects                   |
 	| AAH0343264 (Luc Gauthier) |
 	And User clicks "Devices" tab in the Project Scope Changes section
 	When User expands the object to add 
@@ -807,15 +807,15 @@ Scenario: EvergreenJnr_AdminPage_CheckThatOnboardingOfObjectsIsProceedForScopedP
 	When User enters "TestProject14" text in the Search field for "Project" column
 	And User clicks content from "Project" column
 	Then Project "TestProject14" is displayed to user
-	When User adds following items to the Project
-	| Item           |
+	When User adds following Objects to the Project
+	| Objects        |
 	| 0317IPQGQBVAQV |
 	| 00I0COBFWHOF27 |
 	When User clicks Update Project button on the Projects page
 	Then Success message with "2 objects queued for onboarding, 0 objects offboarded" text is displayed on the Projects page
 	When User clicks "Users" tab in the Project Scope Changes section
-	And User adds following items to the Project
-	| Item                          |
+	And User adds following Objects to the Project
+	| Objects                       |
 	| AAG081456 (Melanie Z. Fowler) |
 	| AAH0343264 (Luc Gauthier)     |
 	When User clicks Update Project button on the Projects page
@@ -855,18 +855,18 @@ Scenario: EvergreenJnr_AdminPage_CheckingThatRedBannerWithOkMessageIsNotDisplaye
 	And User clicks content from "Project" column
 	Then Project "TestProject12332" is displayed to user
 	When User expands the object to add 
-	And User selects following items to the Project
-	| Item           |
+	And User selects following Objects to the Project
+	| Objects        |
 	| 1DPQO52HJQZJ0H |
 	And User clicks "Applications" tab in the Project Scope Changes section
 	And User expands the object to add 
-	And User selects following items to the Project
-	| Item                                                                 |
+	And User selects following Objects to the Project
+	| Objects                                                              |
 	| "WPF/E" (codename) Community Technology Preview (Feb 2007) (0.8.5.0) |
 	And User clicks "Users" tab in the Project Scope Changes section
 	And User expands the object to add 
-	And User selects following items to the Project
-	| Item                       |
+	And User selects following Objects to the Project
+	| Objects                    |
 	| AAC860150 (Kerrie D. Ruiz) |
 	And User clicks "UPDATE ALL CHANGES" button on the Projects page
 	And User clicks Update Project button on the Projects page
@@ -938,19 +938,19 @@ Scenario: EvergreenJnr_AdminPage_CheckThatObjectsIsOnboardedToTheProjectWithClon
 	And User clicks content from "Project" column
 	Then Project "TestProject19" is displayed to user
 	When User expands the object to add 
-	And User selects following items to the Project
-	| Item            |
+	And User selects following Objects to the Project
+	| Objects         |
 	| 01BQIYGGUW5PRP6 |
 	And User clicks "UPDATE DEVICE CHANGES" button on the Projects page
 	And User clicks Update Project button on the Projects page
 	Then Success message with "1 object queued for onboarding, 0 objects offboarded" text is displayed on the Projects page
 	When User selects "Queue" tab on the Project details page
-	Then following objects are onboarded
-	| Object          |
+	Then following Items are onboarded
+	| Items           |
 	| 01BQIYGGUW5PRP6 |
 	When User selects "History" tab on the Project details page
-	Then following objects are onboarded
-	| Object          |
+	Then following Items are onboarded
+	| Items           |
 	| 01BQIYGGUW5PRP6 |
 	When User click on Back button
 	And User enters "TestProject19" text in the Search field for "Project" column
@@ -976,18 +976,18 @@ Scenario: EvergreenJnr_AdminPage_CheckingThatProjectDetailsForOnboardedObjectsIs
 	Then Project "TestProject12490" is displayed to user
 	When User clicks "Devices" tab in the Project Scope Changes section
 	And User expands the object to add 
-	And User selects following items to the Project
-	| Item           |
+	And User selects following Objects to the Project
+	| Objects        |
 	| 0IJB93JZPG72PX |
 	And User clicks "UPDATE ALL CHANGES" button on the Projects page
 	And User clicks Update Project button on the Projects page
 	When User selects "Queue" tab on the Project details page
-	Then following objects are onboarded
-	| Item           |
+	Then following Items are onboarded
+	| Items          |
 	| 0IJB93JZPG72PX |
 	When User selects "History" tab on the Project details page
-	Then following objects are onboarded
-	| Item           |
+	Then following Items are onboarded
+	| Items          |
 	| 0IJB93JZPG72PX |
 	When User type "0IJB93JZPG72PX" in Global Search Field
 	Then User clicks on "0IJB93JZPG72PX (Carmen H. Benson)" search result
@@ -1090,8 +1090,8 @@ Scenario: EvergreenJnr_AdminPage_CheckThatOnboardedObjectsAreDisplayedAfterChang
 	Then Success message is displayed and contains "The project details have been updated" text
 	When User selects "Scope Changes" tab on the Project details page
 	When User expands the object to add
-	And User selects following items to the Project
-	| Item            |
+	And User selects following Objects to the Project
+	| Objects         |
 	| 0281Z793OLLLDU6 |
 	| 03U75EKEMUQMUS  |
 	And User clicks "UPDATE ALL CHANGES" button on the Projects page
@@ -1127,20 +1127,20 @@ Scenario: EvergreenJnr_AdminPage_CheckingThatTheProjectIsUpdatedWithoutErrors
 	Then Project "TestProject12364" is displayed to user
 	When User selects "Scope Changes" tab on the Project details page
 	When User expands the object to add
-	And User selects following items to the Project
-	| Item                                  |
+	And User selects following Objects to the Project
+	| Objects                               |
 	| 003F5D8E1A844B1FAA5 (Hunter, Melanie) |
 	| 01FF97A1FFAC48A1803 (Aultman, Chanel) |
 	When User clicks "Devices" tab in the Project Scope Changes section
 	And User expands the object to add 
-	And User selects following items to the Project
-	| Item           |
+	And User selects following Objects to the Project
+	| Objects        |
 	| 77JBRXGQLKJ6ZE |
 	| 7FKJAVNVA2AGEM |
 	When User clicks "Applications" tab in the Project Scope Changes section
 	And User expands the object to add 
-	And User selects following items to the Project
-	| Item                                             |
+	And User selects following Objects to the Project
+	| Objects                                          |
 	| ACDSee 4.0.2 PowerPack Trial Version (4.00.0002) |
 	| Backburner (2.1.2.0)                             |
 	And User clicks "UPDATE ALL CHANGES" button on the Projects page
@@ -1424,8 +1424,8 @@ Scenario: EvergreenJnr_AdminPage_CheckThatWarningMessageIsNotDisplayedAfterAddin
 	And User selects all objects to the Project
 	Then "Devices to add (5 of 17225 selected)" is displayed to the user in the Project Scope Changes section
 	When User cancels the selection objects in the Project
-	And User selects following items to the Project
-	| Item            |
+	And User selects following Objects to the Project
+	| Objects         |
 	| 07RJRCQQJNBJIJQ |
 	| 0CFHJY5A8WLUB0J |
 	Then "Devices to add (2 of 17225 selected)" is displayed to the user in the Project Scope Changes section
