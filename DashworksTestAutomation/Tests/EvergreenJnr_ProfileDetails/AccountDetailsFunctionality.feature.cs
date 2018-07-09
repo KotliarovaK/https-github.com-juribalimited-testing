@@ -76,7 +76,6 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_ProfileDetails
         [NUnit.Framework.CategoryAttribute("DAS10756")]
         [NUnit.Framework.CategoryAttribute("DAS12947")]
         [NUnit.Framework.CategoryAttribute("Remove_Profile_Changes")]
-        [NUnit.Framework.CategoryAttribute("Not_Run")]
         public virtual void EvergreenJnr_AccountDetails_CheckThatErrorIsNotDisplayedAfterChangingProfileData()
         {
             System.Exception lastException = null;
@@ -112,8 +111,7 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_ProfileDetails
                         "AccountDetailsFunctionality",
                         "DAS10756",
                         "DAS12947",
-                        "Remove_Profile_Changes",
-                        "Not_Run"});
+                        "Remove_Profile_Changes"});
             this.ScenarioSetup(scenarioInfo);
             this.FeatureBackground();
             testRunner.When("User clicks Profile in Account Dropdown", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
@@ -136,7 +134,6 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_ProfileDetails
         [NUnit.Framework.CategoryAttribute("DAS10756")]
         [NUnit.Framework.CategoryAttribute("DAS12947")]
         [NUnit.Framework.CategoryAttribute("Remove_Profile_Changes")]
-        [NUnit.Framework.CategoryAttribute("Not_Run")]
         public virtual void EvergreenJnr_AccountDetails_CheckThatCorrectErrorMessagesAreDisplayed()
         {
             System.Exception lastException = null;
@@ -172,8 +169,7 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_ProfileDetails
                         "AccountDetailsFunctionality",
                         "DAS10756",
                         "DAS12947",
-                        "Remove_Profile_Changes",
-                        "Not_Run"});
+                        "Remove_Profile_Changes"});
             this.ScenarioSetup(scenarioInfo);
             this.FeatureBackground();
             testRunner.When("User clicks Profile in Account Dropdown", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
@@ -216,7 +212,6 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_ProfileDetails
         [NUnit.Framework.CategoryAttribute("DAS11524")]
         [NUnit.Framework.CategoryAttribute("DAS12947")]
         [NUnit.Framework.CategoryAttribute("Remove_Profile_Changes")]
-        [NUnit.Framework.CategoryAttribute("Not_Run")]
         public virtual void EvergreenJnr_AccountDetails_CheckThatErrorIsNotDisplayedAfterChangingProfileDataTwice()
         {
             System.Exception lastException = null;
@@ -253,8 +248,7 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_ProfileDetails
                         "AccountDetailsFunctionality",
                         "DAS11524",
                         "DAS12947",
-                        "Remove_Profile_Changes",
-                        "Not_Run"});
+                        "Remove_Profile_Changes"});
             this.ScenarioSetup(scenarioInfo);
             this.FeatureBackground();
             testRunner.When("User clicks Profile in Account Dropdown", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
@@ -330,7 +324,6 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_ProfileDetails
         [NUnit.Framework.CategoryAttribute("DAS11646")]
         [NUnit.Framework.CategoryAttribute("DAS12947")]
         [NUnit.Framework.CategoryAttribute("Remove_Profile_Changes")]
-        [NUnit.Framework.CategoryAttribute("Not_Run")]
         public virtual void EvergreenJnr_AccountDetails_CheckThatNotificationMessageDisappearsAfter5Seconds()
         {
             System.Exception lastException = null;
@@ -366,8 +359,7 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_ProfileDetails
                         "AccountDetailsFunctionality",
                         "DAS11646",
                         "DAS12947",
-                        "Remove_Profile_Changes",
-                        "Not_Run"});
+                        "Remove_Profile_Changes"});
             this.ScenarioSetup(scenarioInfo);
             this.FeatureBackground();
             testRunner.When("User clicks Profile in Account Dropdown", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
