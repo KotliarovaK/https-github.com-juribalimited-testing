@@ -423,7 +423,7 @@ Scenario: EvergreenJnr_AllLists_CheckThatListPanelDoesNotExistErrorWhenViewingDe
 	And "This list does not exist or you do not have access to it" message is not displayed in the lists panel
 
 @Evergreen @AllLists @EvergreenJnr_ListDetails @ListDetailsFunctionality @DAS12075 @DAS12874 @Delete_Newly_Created_List
-Scenario: EvergreenJnr_AllLists_CheckDisplayingListDeletionWarningMessageForDependenciesDynamicLists
+Scenario Outline: EvergreenJnr_AllLists_CheckDisplayingListDeletionWarningMessageForDependenciesDynamicLists
 	When User clicks "Applications" on the left-hand menu
 	Then "Applications" list should be displayed to the user
 	When User click on 'Application' column header
@@ -433,8 +433,8 @@ Scenario: EvergreenJnr_AllLists_CheckDisplayingListDeletionWarningMessageForDepe
 	When User clicks the Filters button
 	Then Filters panel is displayed to the user
 	When User add "Application (Saved List)" filter where type is "In list" with Selected Value and following Association:
-	| SelectedList | Association    |
-	| Application1 | Used on device |
+	| SelectedList | Association   |
+	| <ListName>   | <Association> |
 	When User create dynamic list with "Devices1" name on "Devices" page
 	And User clicks "Applications" on the left-hand menu
 	Then "Applications" list should be displayed to the user
@@ -457,8 +457,13 @@ Scenario: EvergreenJnr_AllLists_CheckDisplayingListDeletionWarningMessageForDepe
 	When User navigates to the "Devices1" list
 	And User clicks the Filters button
 	Then Filters panel is displayed to the user
-	Then "Any Application in list [List not found] used on device" is displayed in added filter info
-	And message 'No devices found' is displayed to the user
+	Then "<FilterInfoText>" is displayed in added filter info
+
+Examples: 
+	| ListName     | Association                | FilterInfoText                                                      |
+	| Application1 | Used on device             | Any Application in list [List not found] used on device             |
+	| Application1 | Used by device's owner     | Any Application in list [List not found] used by device's owner     |
+	| Application1 | Not used by device's owner | Any Application in list [List not found] not used by device's owner |
 
 @Evergreen @AllLists @EvergreenJnr_ListDetails @ListDetailsFunctionality @DAS12075 @DAS12578 @DAS12791 @DAS12952 @Delete_Newly_Created_List @Not_Run
 Scenario: EvergreenJnr_AllLists_CheckDisplayingListDeletionWarningMessageForDependenciesStaticLists
