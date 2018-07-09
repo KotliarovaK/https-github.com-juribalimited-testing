@@ -1258,9 +1258,9 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_AdminPage
             TechTalk.SpecFlow.Table table2 = new TechTalk.SpecFlow.Table(new string[] {
                         "Objects"});
             table2.AddRow(new string[] {
-                        "0A491C42879549A4936@bclabs.local"});
+                        "040698EE82354C17B60@bclabs.local"});
             table2.AddRow(new string[] {
-                        "0F1ED67386AD4FA7BF4@bclabs.local"});
+                        "04D8FC40F25547E7B4D@bclabs.local"});
             testRunner.And("User adds following Objects from list", ((string)(null)), table2, "And ");
             testRunner.Then("Success message is displayed and contains \"The selected mailboxes have been added" +
                     " to the selected bucket\" text", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
@@ -1452,9 +1452,9 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_AdminPage
             TechTalk.SpecFlow.Table table3 = new TechTalk.SpecFlow.Table(new string[] {
                         "Objects"});
             table3.AddRow(new string[] {
-                        "01KFZ6XUVQSII0"});
+                        "VXERDNJ3KRJ421"});
             table3.AddRow(new string[] {
-                        "01N3Y2GUS6XTK7"});
+                        "XV20GW6HJRVE2R"});
             testRunner.And("User adds following Objects from list", ((string)(null)), table3, "And ");
             testRunner.Then("Success message is displayed and contains \"The selected devices have been added t" +
                     "o the selected bucket\" text", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
@@ -1577,9 +1577,9 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_AdminPage
             TechTalk.SpecFlow.Table table4 = new TechTalk.SpecFlow.Table(new string[] {
                         "Objects"});
             table4.AddRow(new string[] {
-                        "FR\\AAH0343264 (Luc Gauthier)"});
+                        "UK\\ADK614179 (Audrey B. Dixon)"});
             table4.AddRow(new string[] {
-                        "US-E\\ADT475776 (Faith L. Mueller)"});
+                        "UK\\AAT858228 (Cheri B. Evans)"});
             testRunner.And("User adds following Objects from list", ((string)(null)), table4, "And ");
             testRunner.Then("Success message is displayed and contains \"The selected users have been added to " +
                     "the selected bucket\" text", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
@@ -3926,7 +3926,7 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_AdminPage
             testRunner.When("User clicks Create New Item button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
             testRunner.Then("\"Create Project\" page should be displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
             testRunner.When("User clicks in the Scope field on the Admin page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-            testRunner.Then("Scope DDL have the \"352px\" Height and the \"658.406px\" Width", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+            testRunner.Then("Scope DDL have the \"304px\" Height and the \"658.406px\" Width", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
             this.ScenarioCleanup();
         }
         
