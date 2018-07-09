@@ -1280,14 +1280,17 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_ListDetails
         [NUnit.Framework.CategoryAttribute("DAS12075")]
         [NUnit.Framework.CategoryAttribute("DAS12874")]
         [NUnit.Framework.CategoryAttribute("Delete_Newly_Created_List")]
-        public virtual void EvergreenJnr_AllLists_CheckDisplayingListDeletionWarningMessageForDependenciesDynamicLists()
+        [NUnit.Framework.TestCaseAttribute("Application1", "Used on device", "Any Application in list [List not found] used on device", new string[0])]
+        [NUnit.Framework.TestCaseAttribute("Application1", "Used by device\'s owner", "Any Application in list [List not found] used by device\'s owner", new string[0])]
+        [NUnit.Framework.TestCaseAttribute("Application1", "Not used by device\'s owner", "Any Application in list [List not found] not used by device\'s owner", new string[0])]
+        public virtual void EvergreenJnr_AllLists_CheckDisplayingListDeletionWarningMessageForDependenciesDynamicLists(string listName, string association, string filterInfoText, string[] exampleTags)
         {
             System.Exception lastException = null;
             for (int i = 0; (i <= 0); i = (i + 1))
             {
                 try
                 {
-                    this.EvergreenJnr_AllLists_CheckDisplayingListDeletionWarningMessageForDependenciesDynamicListsInternal();
+                    this.EvergreenJnr_AllLists_CheckDisplayingListDeletionWarningMessageForDependenciesDynamicListsInternal(listName, association, filterInfoText, exampleTags);
                     return;
                 }
                 catch (System.Exception exc)
@@ -1306,17 +1309,22 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_ListDetails
             }
         }
         
-        private void EvergreenJnr_AllLists_CheckDisplayingListDeletionWarningMessageForDependenciesDynamicListsInternal()
+        private void EvergreenJnr_AllLists_CheckDisplayingListDeletionWarningMessageForDependenciesDynamicListsInternal(string listName, string association, string filterInfoText, string[] exampleTags)
         {
+            string[] @__tags = new string[] {
+                    "Evergreen",
+                    "AllLists",
+                    "EvergreenJnr_ListDetails",
+                    "ListDetailsFunctionality",
+                    "DAS12075",
+                    "DAS12874",
+                    "Delete_Newly_Created_List"};
+            if ((exampleTags != null))
+            {
+                @__tags = System.Linq.Enumerable.ToArray(System.Linq.Enumerable.Concat(@__tags, exampleTags));
+            }
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("EvergreenJnr_AllLists_CheckDisplayingListDeletionWarningMessageForDependenciesDyn" +
-                    "amicLists", new string[] {
-                        "Evergreen",
-                        "AllLists",
-                        "EvergreenJnr_ListDetails",
-                        "ListDetailsFunctionality",
-                        "DAS12075",
-                        "DAS12874",
-                        "Delete_Newly_Created_List"});
+                    "amicLists", @__tags);
             this.ScenarioSetup(scenarioInfo);
             this.FeatureBackground();
             testRunner.When("User clicks \"Applications\" on the left-hand menu", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
@@ -1331,8 +1339,8 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_ListDetails
                         "SelectedList",
                         "Association"});
             table11.AddRow(new string[] {
-                        "Application1",
-                        "Used on device"});
+                        string.Format("{0}", listName),
+                        string.Format("{0}", association)});
             testRunner.When("User add \"Application (Saved List)\" filter where type is \"In list\" with Selected " +
                     "Value and following Association:", ((string)(null)), table11, "When ");
             testRunner.When("User create dynamic list with \"Devices1\" name on \"Devices\" page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
@@ -1358,9 +1366,7 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_ListDetails
             testRunner.When("User navigates to the \"Devices1\" list", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
             testRunner.And("User clicks the Filters button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
             testRunner.Then("Filters panel is displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-            testRunner.Then("\"Any Application in list [List not found] used on device\" is displayed in added f" +
-                    "ilter info", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-            testRunner.And("message \'No devices found\' is displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+            testRunner.Then(string.Format("\"{0}\" is displayed in added filter info", filterInfoText), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
             this.ScenarioCleanup();
         }
         
