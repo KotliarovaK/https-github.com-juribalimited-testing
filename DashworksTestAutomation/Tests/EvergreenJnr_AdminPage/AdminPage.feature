@@ -1135,8 +1135,8 @@ Scenario: EvergreenJnr_AdminPage_CheckingThatTheProjectIsUpdatedWithoutErrors
 	And User expands the object to add 
 	And User selects following Objects to the Project
 	| Objects        |
-	| 77JBRXGQLKJ6ZE |
-	| 7FKJAVNVA2AGEM |
+	| 0SH2BQ3EPXTEWN |
+	| 30LA8G32UF7HQC |
 	When User clicks "Applications" tab in the Project Scope Changes section
 	And User expands the object to add 
 	And User selects following Objects to the Project
