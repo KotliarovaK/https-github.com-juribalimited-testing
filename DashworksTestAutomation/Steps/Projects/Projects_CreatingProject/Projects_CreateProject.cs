@@ -1,6 +1,5 @@
 ﻿using System;
 using System.Linq;
-using System.Threading;
 using DashworksTestAutomation.DTO.Projects;
 using DashworksTestAutomation.Extensions;
 using DashworksTestAutomation.Pages.Projects;
@@ -8,6 +7,7 @@ using DashworksTestAutomation.Pages.Projects.CreatingProjects.Tasks;
 using DashworksTestAutomation.Pages.Projects.Tasks;
 using DashworksTestAutomation.Utils;
 using NUnit.Framework;
+using OpenQA.Selenium;
 using OpenQA.Selenium.Remote;
 using TechTalk.SpecFlow;
 using TechTalk.SpecFlow.Assist;
@@ -98,6 +98,14 @@ namespace DashworksTestAutomation.Steps.Projects
 
             _driver.WaitWhileControlIsNotDisplayed<MainElementsOfProjectCreation>(() => page.SuccessMessage);
             Assert.IsTrue(page.SuccessMessage.Displayed(), "Success Message is not displayed");
+        }
+
+        [Then(@"Error message is not displayed")]
+        public void ThenErrorMessageIsNotDisplayed()
+        {
+            var page = _driver.NowAt<MainElementsOfProjectCreation>();
+            if (page.ErrorMessage.Displayed())
+                Assert.IsFalse(page.ErrorMessage.Displayed(), $"Error message is displayed with following text: {page.ErrorMessage.Text}");
         }
 
         [When(@"User creates Project")]
@@ -253,7 +261,8 @@ namespace DashworksTestAutomation.Steps.Projects
 
             page.StageName.SendKeys(_stagePropertiesDto.StageName);
             _driver.WaitForDataLoading();
-            page.ConfirmCreateStageButton.Click();
+
+            //page.ConfirmCreateStageButton.Click();
         }
 
         [When(@"User create Task")]
@@ -480,7 +489,6 @@ namespace DashworksTestAutomation.Steps.Projects
                 _taskPropertiesValuesDto.Readiness = (ReadinessEnum)Enum.Parse(typeof(ReadinessEnum), _taskPropertiesValuesDto.ReadinessString);
                 page.SelectOnboardedApplications(_taskPropertiesValuesDto.Readiness);
             }
-
             if (!string.IsNullOrEmpty(_taskPropertiesValuesDto.TaskStatusString))
             {
                 //assign TaskStatusString to TaskStatusEnum
@@ -554,13 +562,22 @@ namespace DashworksTestAutomation.Steps.Projects
             _projectDto.GroupProperties.Add(tempGroupPropertiesDto);
 
             page.GroupName.SendKeys(_groupPropertiesDto.GroupName);
-            //_driver.WaitForDataLoading();
-            Thread.Sleep(500);
-            page.OwnedByTeam.SelectboxSelect(_projectDto.TeamProperties[teamIndex - 1].TeamName);
+            _driver.WaitForDataLoading();
+            try
+            {
+                page.OwnedByTeam.SelectboxSelect(_projectDto.TeamProperties[teamIndex - 1].TeamName);
+                _driver.WaitForDataLoading();
+            }
+            catch (NoSuchElementException)
+            {
+                page = _driver.NowAt<GroupPropertiesPage>();
+                page.OwnedByTeam.SelectboxSelect(_projectDto.TeamProperties[teamIndex - 1].TeamName);
+                _driver.WaitForDataLoading();
+            }
 
             page.ConfirmCreateGroupButton.Click();
 
-            //tempGroupPropertiesDto.OwnedByTeam = _projectDto.TeamProperties.Last().TeamName;
+            tempGroupPropertiesDto.OwnedByTeam = _projectDto.TeamProperties.Last().TeamName;
         }
 
         [When(@"User create Mail Template")]

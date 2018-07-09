@@ -15,6 +15,10 @@ namespace DashworksTestAutomation.Pages.Evergreen
 
         public const string ImageItem = ".//div[@class='ag-body-container']//img[contains(@src,'png')]";
 
+        public const string TableTextContent = ".//div[@role='row']/div/span";
+
+        public const string FullTable = ".//div[@class='ag-body-viewport']/div";
+
         [FindsBy(How = How.XPath, Using = ".//div[@id='pagetitle-text']/descendant::h1")]
         public IWebElement Heading { get; set; }
 

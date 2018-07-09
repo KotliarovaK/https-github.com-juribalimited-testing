@@ -384,8 +384,8 @@ Scenario: EvergreenJnr_AdminPage_CheckThatMailboxesAreSuccessfullyAddedToBuckets
 	And User clicks Create New Item button
 	And User adds following items from list
 	| Item                             |
-	| 04D8FC40F25547E7B4D@bclabs.local |
-	| 0B89FCBB1D2F49B8AD6@bclabs.local |
+	| 0A491C42879549A4936@bclabs.local |
+	| 0F1ED67386AD4FA7BF4@bclabs.local |
 	Then Success message is displayed and contains "The selected mailboxes have been added to the selected bucket" text
 	And There are no errors in the browser console
 
@@ -435,9 +435,9 @@ Scenario: EvergreenJnr_AdminPage_CheckThatConsoleErrorsAreNotDisplayedAfterAddin
 	And User clicks content from "Bucket" column
 	And User clicks Create New Item button
 	And User adds following items from list
-	| Item            |
-	| 00K4CEEQ737BA4L |
-	| 01COJATLYVAR7A6 |
+	| Item           |
+	| 01KFZ6XUVQSII0 |
+	| 01N3Y2GUS6XTK7 |
 	Then Success message is displayed and contains "The selected devices have been added to the selected bucket" text
 	And There are no errors in the browser console
 
@@ -466,9 +466,9 @@ Scenario: EvergreenJnr_AdminPage_CheckThatConsoleErrorsAreNotDisplayedAfterAddin
 	And User clicks "Users" tab
 	And User clicks Create New Item button
 	And User adds following items from list
-	| Item                            |
-	| US-W\AAC860150 (Kerrie D. Ruiz) |
-	| UK\AAT858228 (Cheri B. Evans)   |
+	| Item                              |
+	| FR\AAH0343264 (Luc Gauthier)      |
+	| US-E\ADT475776 (Faith L. Mueller) |
 	Then Success message is displayed and contains "The selected users have been added to the selected bucket" text
 	And There are no errors in the browser console
 
@@ -556,7 +556,7 @@ Scenario: EvergreenJnr_AdminPage_CheckThatPanelOfAvailableMemberslIsExpandedByDe
 	When User clicks Add Members button on the Teams page
 	Then Panel of available members is displayed to the user
 
-@Evergreen @Admin @EvergreenJnr_AdminPage @AdminPage @DAS12552 @Not_Run
+@Evergreen @Admin @EvergreenJnr_AdminPage @AdminPage @DAS12552
 Scenario: EvergreenJnr_AdminPage_CheckThatFiltersAreWorkingCorrectlyOnTheAdminPages
 	When User clicks Admin on the left-hand menu
 	Then Admin page should be displayed to the user
@@ -588,17 +588,19 @@ Scenario: EvergreenJnr_AdminPage_CheckThatFiltersAreWorkingCorrectlyOnTheAdminPa
 	Then Counter shows "2" found rows
 	When User clears Search field for "Project Buckets" column
 	And User clicks content from "Bucket" column
-	And User enters "BG4H" text in the Search field for "Hostname" column
+	And User enters "M1D" text in the Search field for "Hostname" column
+	Then Counter shows "1" found rows
+	When User clears Search field for "Project Buckets" column
+	And User enters "Windows XP" text in the Search field for "Operating System" column
 	Then Counter shows "2" found rows
-	When User clears Search field for "Project Buckets" column
-	And User enters "Mac OS X 10.12.3" text in the Search field for "Operating System" column
-	Then Counter shows "1" found rows
 	When User clicks "Users" tab
-	When User enters "Aaron D. Michael" text in the Search field for "Display Name" column
+	When User enters "Danielle A. Tate" text in the Search field for "Display Name" column
 	Then Counter shows "1" found rows
 	When User clears Search field for "Project Buckets" column
-	And User enters "1DFF" text in the Search field for "Username" column
-	Then Counter shows "3" found rows
+	And User enters "TZV202" text in the Search field for "Username" column
+	Then Counter shows "1" found rows
+	When User click on Back button
+	And User clicks content from "Bucket" column
 	When User clicks "Mailboxes" tab
 	And User enters "DiscoverySearchMailbox{D919BA05-46A6-415f-80AD-7E09334BB852}@juriba1.onmicrosoft.com" text in the Search field for "Email Address (Primary)" column
 	Then Counter shows "1" found rows
@@ -659,7 +661,7 @@ Scenario: EvergreenJnr_AdminPage_CheckThatSingularFoundItemLabelDisplaysOnAction
 	And User enters "K-Team" text in the Search field for "Team" column
 	Then Counter shows "1" found rows
 
-@Evergreen @Admin @EvergreenJnr_AdminPage @AdminPage @DAS12370 @Not_Run
+@Evergreen @Admin @EvergreenJnr_AdminPage @AdminPage @DAS12370
 Scenario: EvergreenJnr_ImportProjectPage_CheckThatImportProjectButtonEnabledAfterWarningOnImportProjectPage
 	When User clicks Admin on the left-hand menu
 	Then Admin page should be displayed to the user
@@ -855,7 +857,7 @@ Scenario: EvergreenJnr_AdminPage_CheckingThatRedBannerWithOkMessageIsNotDisplaye
 	When User expands the object to add 
 	And User selects following items to the Project
 	| Item           |
-	| 001BAQXT6JWFPI |
+	| 1DPQO52HJQZJ0H |
 	And User clicks "Applications" tab in the Project Scope Changes section
 	And User expands the object to add 
 	And User selects following items to the Project
@@ -1063,7 +1065,7 @@ Scenario: EvergreenJnr_AdminPage_CheckingThatProjectNameIsDisplayedCorrectlyWhen
 	And User selects "All Devices" in the Scope Project dropdown
 	And User clicks Create button on the Create Project page
 	Then created Project with "<TestProject11985>" name is displayed correctly
-	Then Import Project button is not displayed
+	#Then Import Project button is not displayed
 	When User enters "<TestProject11985>" text in the Search field for "Project" column
 	And User selects all rows on the grid
 	And User removes selected item
@@ -1133,8 +1135,8 @@ Scenario: EvergreenJnr_AdminPage_CheckingThatTheProjectIsUpdatedWithoutErrors
 	And User expands the object to add 
 	And User selects following items to the Project
 	| Item           |
-	| 00HA7MKAVVFDAV |
-	| 00KLL9S8NRF0X6 |
+	| 77JBRXGQLKJ6ZE |
+	| 7FKJAVNVA2AGEM |
 	When User clicks "Applications" tab in the Project Scope Changes section
 	And User expands the object to add 
 	And User selects following items to the Project
@@ -1152,7 +1154,7 @@ Scenario: EvergreenJnr_AdminPage_CheckingThatTheProjectIsUpdatedWithoutErrors
 	When User enters "TestProject12364" text in the Search field for "Project" column
 	And User selects all rows on the grid
 	And User removes selected item
-	Then "TestProject12364" item was removed
+	#Then "TestProject12364" item was removed
 
 @Evergreen @Admin @EvergreenJnr_AdminPage @AdminPage @DAS11729 @Delete_Newly_Created_List
 Scenario: EvergreenJnr_AdminPage_CheckThatWarningMessageIsDisplayedIfTryToRemoveCreatedListThatUsedInAnyProject
