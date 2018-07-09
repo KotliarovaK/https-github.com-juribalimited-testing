@@ -384,8 +384,8 @@ Scenario: EvergreenJnr_AdminPage_CheckThatMailboxesAreSuccessfullyAddedToBuckets
 	And User clicks Create New Item button
 	And User adds following items from list
 	| Item                             |
-	| 0A491C42879549A4936@bclabs.local |
-	| 0F1ED67386AD4FA7BF4@bclabs.local |
+	| 040698EE82354C17B60@bclabs.local |
+	| 04D8FC40F25547E7B4D@bclabs.local |
 	Then Success message is displayed and contains "The selected mailboxes have been added to the selected bucket" text
 	And There are no errors in the browser console
 
@@ -436,8 +436,8 @@ Scenario: EvergreenJnr_AdminPage_CheckThatConsoleErrorsAreNotDisplayedAfterAddin
 	And User clicks Create New Item button
 	And User adds following items from list
 	| Item           |
-	| 01KFZ6XUVQSII0 |
-	| 01N3Y2GUS6XTK7 |
+	| VXERDNJ3KRJ421 |
+	| XV20GW6HJRVE2R |
 	Then Success message is displayed and contains "The selected devices have been added to the selected bucket" text
 	And There are no errors in the browser console
 
@@ -466,9 +466,9 @@ Scenario: EvergreenJnr_AdminPage_CheckThatConsoleErrorsAreNotDisplayedAfterAddin
 	And User clicks "Users" tab
 	And User clicks Create New Item button
 	And User adds following items from list
-	| Item                              |
-	| FR\AAH0343264 (Luc Gauthier)      |
-	| US-E\ADT475776 (Faith L. Mueller) |
+	| Item                           |
+	| UK\ADK614179 (Audrey B. Dixon) |
+	| UK\AAT858228 (Cheri B. Evans)  |
 	Then Success message is displayed and contains "The selected users have been added to the selected bucket" text
 	And There are no errors in the browser console
 
@@ -1333,7 +1333,7 @@ Scenario: EvergreenJnr_AdminPage_CheckThatScopePanelHaveCorrectlySizeWhenUsedLis
 	When User clicks Create New Item button
 	Then "Create Project" page should be displayed to the user
 	When User clicks in the Scope field on the Admin page
-	Then Scope DDL have the "352px" Height and the "658.406px" Width
+	Then Scope DDL have the "304px" Height and the "658.406px" Width
 
 @Evergreen @Admin @EvergreenJnr_AdminPage @AdminPage @DAS12349 @Delete_Newly_Created_List
 Scenario: EvergreenJnr_AdminPage_CheckThat500ISEInvalidColumnNameIsNotDisplayedWhenUsedAppSavedListForFilteringDeviceList
