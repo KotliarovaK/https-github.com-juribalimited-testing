@@ -1835,8 +1835,8 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_ListDetails
         }
         
         [NUnit.Framework.TestAttribute()]
-        [NUnit.Framework.DescriptionAttribute("EvergreenJnr_Users_CheckThatListDetailsPanelIsDisplayedAfterSelectingManageFromLi" +
-            "stPanelMenu")]
+        [NUnit.Framework.DescriptionAttribute("EvergreenJnr_MailboxesList_CheckThatListDetailsPanelIsDisplayedAfterSelectingMana" +
+            "geFromListPanelMenu")]
         [NUnit.Framework.CategoryAttribute("Evergreen")]
         [NUnit.Framework.CategoryAttribute("Users")]
         [NUnit.Framework.CategoryAttribute("EvergreenJnr_ListDetails")]
@@ -1845,14 +1845,14 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_ListDetails
         [NUnit.Framework.CategoryAttribute("DAS12791")]
         [NUnit.Framework.CategoryAttribute("DAS12952")]
         [NUnit.Framework.CategoryAttribute("Delete_Newly_Created_List")]
-        public virtual void EvergreenJnr_Users_CheckThatListDetailsPanelIsDisplayedAfterSelectingManageFromListPanelMenu()
+        public virtual void EvergreenJnr_MailboxesList_CheckThatListDetailsPanelIsDisplayedAfterSelectingManageFromListPanelMenu()
         {
             System.Exception lastException = null;
             for (int i = 0; (i <= 0); i = (i + 1))
             {
                 try
                 {
-                    this.EvergreenJnr_Users_CheckThatListDetailsPanelIsDisplayedAfterSelectingManageFromListPanelMenuInternal();
+                    this.EvergreenJnr_MailboxesList_CheckThatListDetailsPanelIsDisplayedAfterSelectingManageFromListPanelMenuInternal();
                     return;
                 }
                 catch (System.Exception exc)
@@ -1871,10 +1871,10 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_ListDetails
             }
         }
         
-        private void EvergreenJnr_Users_CheckThatListDetailsPanelIsDisplayedAfterSelectingManageFromListPanelMenuInternal()
+        private void EvergreenJnr_MailboxesList_CheckThatListDetailsPanelIsDisplayedAfterSelectingManageFromListPanelMenuInternal()
         {
-            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("EvergreenJnr_Users_CheckThatListDetailsPanelIsDisplayedAfterSelectingManageFromLi" +
-                    "stPanelMenu", new string[] {
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("EvergreenJnr_MailboxesList_CheckThatListDetailsPanelIsDisplayedAfterSelectingMana" +
+                    "geFromListPanelMenu", new string[] {
                         "Evergreen",
                         "Users",
                         "EvergreenJnr_ListDetails",
