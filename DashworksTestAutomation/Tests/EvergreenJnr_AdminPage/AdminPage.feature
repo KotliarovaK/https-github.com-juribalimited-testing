@@ -556,7 +556,7 @@ Scenario: EvergreenJnr_AdminPage_CheckThatPanelOfAvailableMemberslIsExpandedByDe
 	When User clicks Add Members button on the Teams page
 	Then Panel of available members is displayed to the user
 
-@Evergreen @Admin @EvergreenJnr_AdminPage @AdminPage @DAS12552 @Not_Run
+@Evergreen @Admin @EvergreenJnr_AdminPage @AdminPage @DAS12552
 Scenario: EvergreenJnr_AdminPage_CheckThatFiltersAreWorkingCorrectlyOnTheAdminPages
 	When User clicks Admin on the left-hand menu
 	Then Admin page should be displayed to the user
@@ -588,17 +588,19 @@ Scenario: EvergreenJnr_AdminPage_CheckThatFiltersAreWorkingCorrectlyOnTheAdminPa
 	Then Counter shows "2" found rows
 	When User clears Search field for "Project Buckets" column
 	And User clicks content from "Bucket" column
-	And User enters "BG4H" text in the Search field for "Hostname" column
+	And User enters "M1D" text in the Search field for "Hostname" column
+	Then Counter shows "1" found rows
+	When User clears Search field for "Project Buckets" column
+	And User enters "Windows XP" text in the Search field for "Operating System" column
 	Then Counter shows "2" found rows
-	When User clears Search field for "Project Buckets" column
-	And User enters "Mac OS X 10.12.3" text in the Search field for "Operating System" column
-	Then Counter shows "1" found rows
 	When User clicks "Users" tab
-	When User enters "Aaron D. Michael" text in the Search field for "Display Name" column
+	When User enters "Danielle A. Tate" text in the Search field for "Display Name" column
 	Then Counter shows "1" found rows
 	When User clears Search field for "Project Buckets" column
-	And User enters "1DFF" text in the Search field for "Username" column
-	Then Counter shows "3" found rows
+	And User enters "TZV202" text in the Search field for "Username" column
+	Then Counter shows "1" found rows
+	When User click on Back button
+	And User clicks content from "Bucket" column
 	When User clicks "Mailboxes" tab
 	And User enters "DiscoverySearchMailbox{D919BA05-46A6-415f-80AD-7E09334BB852}@juriba1.onmicrosoft.com" text in the Search field for "Email Address (Primary)" column
 	Then Counter shows "1" found rows
@@ -855,7 +857,7 @@ Scenario: EvergreenJnr_AdminPage_CheckingThatRedBannerWithOkMessageIsNotDisplaye
 	When User expands the object to add 
 	And User selects following items to the Project
 	| Item           |
-	| 001BAQXT6JWFPI |
+	| 1DPQO52HJQZJ0H |
 	And User clicks "Applications" tab in the Project Scope Changes section
 	And User expands the object to add 
 	And User selects following items to the Project
@@ -1133,8 +1135,8 @@ Scenario: EvergreenJnr_AdminPage_CheckingThatTheProjectIsUpdatedWithoutErrors
 	And User expands the object to add 
 	And User selects following items to the Project
 	| Item           |
-	| 0APITIMGVDVYDP |
-	| 00KLL9S8NRF0X6 |
+	| 77JBRXGQLKJ6ZE |
+	| 7FKJAVNVA2AGEM |
 	When User clicks "Applications" tab in the Project Scope Changes section
 	And User expands the object to add 
 	And User selects following items to the Project
