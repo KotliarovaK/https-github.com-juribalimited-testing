@@ -3393,9 +3393,9 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_AdminPage
             TechTalk.SpecFlow.Table table26 = new TechTalk.SpecFlow.Table(new string[] {
                         "Objects"});
             table26.AddRow(new string[] {
-                        "77JBRXGQLKJ6ZE"});
+                        "0SH2BQ3EPXTEWN"});
             table26.AddRow(new string[] {
-                        "7FKJAVNVA2AGEM"});
+                        "30LA8G32UF7HQC"});
             testRunner.And("User selects following Objects to the Project", ((string)(null)), table26, "And ");
             testRunner.When("User clicks \"Applications\" tab in the Project Scope Changes section", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
             testRunner.And("User expands the object to add", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
