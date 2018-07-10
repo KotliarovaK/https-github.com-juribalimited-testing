@@ -61,6 +61,21 @@ namespace DashworksTestAutomation.Pages.Evergreen
         [FindsBy(How = How.XPath, Using = ".//div[@id='aggridHeaderCounter']//span[@class='ng-star-inserted' and count(*)=0]")]
         public IWebElement FoundRowsLabel { get; set; }
 
+        [FindsBy(How = How.XPath, Using = "//div[@class='editText']")]
+        public IWebElement BucketLink { get; set; }
+
+        [FindsBy(How = How.XPath, Using = "//i[@class='material-icons mat-filter-edit']")]
+        public IWebElement EditButtonBucketLink { get; set; }
+
+        [FindsBy(How = How.XPath, Using = "//mat-dialog-container[contains(@class, 'mat-dialog-container')]")]
+        public IWebElement EditBucketWindow { get; set; }
+
+        [FindsBy(How = How.XPath, Using = "//div[@class='mat-select-arrow-wrapper']")]
+        public IWebElement NewBucketDropdown { get; set; }
+
+        [FindsBy(How = How.XPath, Using = "//div[@class='ag-header-cell']/span[contains(@class,'select-all')]")]
+        public IWebElement SelectAllCheckBox { get; set; }
+
         public override List<By> GetPageIdentitySelectors()
         {
             Driver.WaitForDataLoading();
@@ -68,6 +83,11 @@ namespace DashworksTestAutomation.Pages.Evergreen
             {
                 SelectorFor(this, p => p.TabContainer)
             };
+        }
+
+        public string GetInstalledBucketWindowWidth()
+        {
+            return Driver.FindElement(By.XPath("//mat-dialog-container[contains(@class, 'mat-dialog-container')]")).GetCssValue("width");
         }
 
         public void NavigateToSectionByName(string sectionName)
@@ -196,6 +216,20 @@ namespace DashworksTestAutomation.Pages.Evergreen
         {
             return Driver.IsElementDisplayed(
                 By.XPath($".//div[@class='ng-star-inserted']//td[@class='fld-label']//span[text()='{fieldName}']"));
+        }
+
+        public IWebElement GetBucketByName(string bucketName)
+        {
+            var selector = By.XPath($"//span[@class='mat-option-text'][text()='{bucketName}']");
+            Driver.WaitWhileControlIsNotDisplayed(selector);
+            return Driver.FindElement(selector);
+        }
+
+        public IWebElement GetButtonByNameOnBucketWindow(string buttonName)
+        {
+            var selector = By.XPath($"//button//span[text()='{buttonName}']");
+            Driver.WaitWhileControlIsNotDisplayed(selector);
+            return Driver.FindElement(selector);
         }
     }
 }
