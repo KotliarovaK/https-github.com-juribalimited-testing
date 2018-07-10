@@ -1111,7 +1111,7 @@ Scenario: EvergreenJnr_UsersList_CheckThatFloorFilterEqualsEmptyValueIsDisplayed
 	When User click Edit button for "Floor" filter
 	Then "Empty" value is displayed in the filter info
 
-@Evergreen @Applications @Evergreen_FiltersFeature @FiltersDisplay @DAS12520 @Delete_Newly_Created_List
+@Evergreen @Applications @Evergreen_FiltersFeature @FiltersDisplay @DAS12520 @Delete_Newly_Created_List @Not_Run
 Scenario: EvergreenJnr_ApplicationsList_CheckThatUserRegionFilterEqualsEmptyValueIsDisplayedCorrectlyInTheFilterPanel
 	When User clicks "Applications" on the left-hand menu
 	Then "Applications" list should be displayed to the user
