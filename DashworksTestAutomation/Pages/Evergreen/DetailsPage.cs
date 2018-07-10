@@ -70,7 +70,7 @@ namespace DashworksTestAutomation.Pages.Evergreen
         [FindsBy(How = How.XPath, Using = "//mat-dialog-container[contains(@class, 'mat-dialog-container')]")]
         public IWebElement EditBucketWindow { get; set; }
 
-        [FindsBy(How = How.XPath, Using = "//div[@class='mat-form-field-infix']//label[text()='Select']")]
+        [FindsBy(How = How.XPath, Using = "//div[@class='mat-select-arrow-wrapper']")]
         public IWebElement NewBucketDropdown { get; set; }
 
         [FindsBy(How = How.XPath, Using = "//div[@class='ag-header-cell']/span[contains(@class,'select-all')]")]
@@ -227,7 +227,7 @@ namespace DashworksTestAutomation.Pages.Evergreen
 
         public IWebElement GetButtonByNameOnBucketWindow(string buttonName)
         {
-            var selector = By.XPath($"//span[text()='{buttonName}']");
+            var selector = By.XPath($"//button//span[text()='{buttonName}']");
             Driver.WaitWhileControlIsNotDisplayed(selector);
             return Driver.FindElement(selector);
         }

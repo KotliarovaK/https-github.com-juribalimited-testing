@@ -303,7 +303,7 @@ namespace DashworksTestAutomation.Steps.Dashworks
         public void ThenBucketPop_UpHasStandardSizeOnTheDetailsPage()
         {
             var detailsPage = _driver.NowAt<DetailsPage>();
-            Assert.AreEqual("152px", detailsPage.GetInstalledBucketWindowWidth());
+            Assert.AreEqual("1638.4px", detailsPage.GetInstalledBucketWindowWidth());
         }
 
         [When(@"User enters ""(.*)"" text in the Filter field")]
@@ -501,6 +501,7 @@ namespace DashworksTestAutomation.Steps.Dashworks
         public void ThenChangeBucketPop_UpIsOpened()
         {
             var detailsPage = _driver.NowAt<DetailsPage>();
+            _driver.WaitForDataLoading();
             Assert.IsTrue(detailsPage.EditBucketWindow.Displayed(), "Bucket Window is not loaded");
         }
 
@@ -515,7 +516,7 @@ namespace DashworksTestAutomation.Steps.Dashworks
         public void WhenUserClicksButtonOnChangeBucketWindow(string buttonName)
         {
             var detailsPage = _driver.NowAt<DetailsPage>();
-            detailsPage.GetButtonByNameOnBucketWindow(buttonName);
+            detailsPage.GetButtonByNameOnBucketWindow(buttonName).Click();
         }
 
         [When(@"User select ""(.*)"" Bucket on the Details Page")]

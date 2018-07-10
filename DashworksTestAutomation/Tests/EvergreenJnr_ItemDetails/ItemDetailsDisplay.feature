@@ -682,12 +682,12 @@ Scenario Outline: EvergreenJnr_AllLists_CheckThatPopupIsBiggerAndIsShownProperly
 	When User navigates to the "Projects" tab
 	When User clicks on Evergreen Bucket link
 	Then Change Bucket pop-up is opened
+	Then Bucket pop-up has standard size on the Details Page
 	When User opens "<Section>" section on the Details Page
 	Then section is loaded correctly
 	When User selects all rows on the grid on the Details Page
 	Then User clicks on New Bucket dropdown
 	When User select "Bucket12883" Bucket on the Details Page
-	When User clicks "CHANGE" button on Change Bucket window 
 	Then Bucket pop-up has standard size on the Details Page
 	And Delete "Bucket12883" Bucket in the Administration
 
