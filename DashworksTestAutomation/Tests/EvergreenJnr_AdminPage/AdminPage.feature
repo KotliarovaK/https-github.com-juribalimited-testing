@@ -1334,7 +1334,7 @@ Scenario: EvergreenJnr_AdminPage_CheckThatScopePanelHaveCorrectlySizeWhenUsedLis
 	When User clicks in the Scope field on the Admin page
 	Then Scope DDL have the "304px" Height and the "658.406px" Width
 
-@Evergreen @Admin @EvergreenJnr_AdminPage @AdminPage @DAS12349 @Delete_Newly_Created_List
+@Evergreen @Admin @EvergreenJnr_AdminPage @AdminPage @DAS12349 @DAS12364 @Delete_Newly_Created_List
 Scenario: EvergreenJnr_AdminPage_CheckThat500ISEInvalidColumnNameIsNotDisplayedWhenUsedAppSavedListForFilteringDeviceList
 	When User clicks "Applications" on the left-hand menu
 	Then "Applications" list should be displayed to the user
@@ -1373,7 +1373,14 @@ Scenario: EvergreenJnr_AdminPage_CheckThat500ISEInvalidColumnNameIsNotDisplayedW
 	Then Project "TestProject12349" is displayed to user
 	And There are no errors in the browser console
 	Then Error message is not displayed
-	When User clicks "Applications" tab in the Project Scope Changes section
+	When User expands the object to add 
+	And User selects following Objects to the Project
+	| Objects         |
+	| 0QLZFK7RHMWJLQM |
+	| 0RGBQGA7XOOPJSW |
+	And User clicks "UPDATE ALL CHANGES" button on the Projects page
+	And User clicks Update Project button on the Projects page
+	Then Success message with "2 objects queued for onboarding, 0 objects offboarded" text is displayed on the Projects page
 	Then There are no errors in the browser console
 	Then Error message is not displayed
 	When User selects "Scope Details" tab on the Project details page
