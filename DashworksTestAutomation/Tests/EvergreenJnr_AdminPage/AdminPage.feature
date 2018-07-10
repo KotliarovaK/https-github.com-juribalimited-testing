@@ -130,7 +130,7 @@ Scenario: EvergreenJnr_AdminPage_CheckThatWarningMessageIsDisplayedAfterDeleting
 	Then Warning message with "The scope for this project refers to a deleted list, this must be updated before proceeding" text is displayed on the Admin page
 	And Update Project buttons is disabled
 
-@Evergreen @Admin @EvergreenJnr_AdminPage @AdminPage @DAS11977 @DAS11959 @DAS12553 @DAS11744 @DAS12742
+@Evergreen @Admin @EvergreenJnr_AdminPage @AdminPage @DAS11977 @DAS11959 @DAS12553 @DAS11744 @DAS12742 @Delete_Newly_Created_Project
 Scenario: EvergreenJnr_AdminPage_CheckThatAfterApplyingDoNotIncludeDeviceOwnersListHas0ItemsInTheUsersTab
 	When User clicks Admin on the left-hand menu
 	Then Admin page should be displayed to the user
@@ -158,7 +158,7 @@ Scenario: EvergreenJnr_AdminPage_CheckThatAfterApplyingDoNotIncludeDeviceOwnersL
 	And User selects "Scope Changes" tab on the Project details page
 	And User clicks "Users" tab in the Project Scope Changes section 
 	Then "Users to add (0 of 0 selected)" is displayed to the user in the Project Scope Changes section
-	And Delete "TestProject1" Project in the Administration
+	#And Delete "TestProject1" Project in the Administration
 
 @Evergreen @Admin @EvergreenJnr_AdminPage @AdminPage @DAS11931 @DAS12742
 Scenario Outline: EvergreenJnr_AdminPage_CheckThatProjectsAreDeletedSuccessfullyAndThereAreNoConsoleErrors
