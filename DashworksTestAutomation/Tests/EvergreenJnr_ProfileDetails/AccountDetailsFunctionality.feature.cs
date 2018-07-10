@@ -68,22 +68,22 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_ProfileDetails
         }
         
         [NUnit.Framework.TestAttribute()]
-        [NUnit.Framework.DescriptionAttribute("EvergreenJnr_AccountDetails_CheckThatErrorIsNotDisplayedAfterChangingProfileData")]
+        [NUnit.Framework.DescriptionAttribute("EvergreenJnr_UserProfile_CheckThatErrorIsNotDisplayedAfterChangingProfileData")]
         [NUnit.Framework.CategoryAttribute("Evergreen")]
         [NUnit.Framework.CategoryAttribute("ProfileDetails")]
         [NUnit.Framework.CategoryAttribute("EvergreenJnr_ProfileDetails")]
-        [NUnit.Framework.CategoryAttribute("AccountDetailsFunctionality")]
+        [NUnit.Framework.CategoryAttribute("UserProfile")]
         [NUnit.Framework.CategoryAttribute("DAS10756")]
         [NUnit.Framework.CategoryAttribute("DAS12947")]
         [NUnit.Framework.CategoryAttribute("Remove_Profile_Changes")]
-        public virtual void EvergreenJnr_AccountDetails_CheckThatErrorIsNotDisplayedAfterChangingProfileData()
+        public virtual void EvergreenJnr_UserProfile_CheckThatErrorIsNotDisplayedAfterChangingProfileData()
         {
             System.Exception lastException = null;
             for (int i = 0; (i <= 1); i = (i + 1))
             {
                 try
                 {
-                    this.EvergreenJnr_AccountDetails_CheckThatErrorIsNotDisplayedAfterChangingProfileDataInternal();
+                    this.EvergreenJnr_UserProfile_CheckThatErrorIsNotDisplayedAfterChangingProfileDataInternal();
                     return;
                 }
                 catch (System.Exception exc)
@@ -102,13 +102,13 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_ProfileDetails
             }
         }
         
-        private void EvergreenJnr_AccountDetails_CheckThatErrorIsNotDisplayedAfterChangingProfileDataInternal()
+        private void EvergreenJnr_UserProfile_CheckThatErrorIsNotDisplayedAfterChangingProfileDataInternal()
         {
-            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("EvergreenJnr_AccountDetails_CheckThatErrorIsNotDisplayedAfterChangingProfileData", new string[] {
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("EvergreenJnr_UserProfile_CheckThatErrorIsNotDisplayedAfterChangingProfileData", new string[] {
                         "Evergreen",
                         "ProfileDetails",
                         "EvergreenJnr_ProfileDetails",
-                        "AccountDetailsFunctionality",
+                        "UserProfile",
                         "DAS10756",
                         "DAS12947",
                         "Remove_Profile_Changes"});
@@ -126,22 +126,22 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_ProfileDetails
         }
         
         [NUnit.Framework.TestAttribute()]
-        [NUnit.Framework.DescriptionAttribute("EvergreenJnr_AccountDetails_CheckThatCorrectErrorMessagesAreDisplayed")]
+        [NUnit.Framework.DescriptionAttribute("EvergreenJnr_UserProfile_CheckThatCorrectErrorMessagesAreDisplayed")]
         [NUnit.Framework.CategoryAttribute("Evergreen")]
         [NUnit.Framework.CategoryAttribute("ProfileDetails")]
         [NUnit.Framework.CategoryAttribute("EvergreenJnr_ProfileDetails")]
-        [NUnit.Framework.CategoryAttribute("AccountDetailsFunctionality")]
+        [NUnit.Framework.CategoryAttribute("UserProfile")]
         [NUnit.Framework.CategoryAttribute("DAS10756")]
         [NUnit.Framework.CategoryAttribute("DAS12947")]
         [NUnit.Framework.CategoryAttribute("Remove_Profile_Changes")]
-        public virtual void EvergreenJnr_AccountDetails_CheckThatCorrectErrorMessagesAreDisplayed()
+        public virtual void EvergreenJnr_UserProfile_CheckThatCorrectErrorMessagesAreDisplayed()
         {
             System.Exception lastException = null;
             for (int i = 0; (i <= 1); i = (i + 1))
             {
                 try
                 {
-                    this.EvergreenJnr_AccountDetails_CheckThatCorrectErrorMessagesAreDisplayedInternal();
+                    this.EvergreenJnr_UserProfile_CheckThatCorrectErrorMessagesAreDisplayedInternal();
                     return;
                 }
                 catch (System.Exception exc)
@@ -160,13 +160,13 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_ProfileDetails
             }
         }
         
-        private void EvergreenJnr_AccountDetails_CheckThatCorrectErrorMessagesAreDisplayedInternal()
+        private void EvergreenJnr_UserProfile_CheckThatCorrectErrorMessagesAreDisplayedInternal()
         {
-            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("EvergreenJnr_AccountDetails_CheckThatCorrectErrorMessagesAreDisplayed", new string[] {
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("EvergreenJnr_UserProfile_CheckThatCorrectErrorMessagesAreDisplayed", new string[] {
                         "Evergreen",
                         "ProfileDetails",
                         "EvergreenJnr_ProfileDetails",
-                        "AccountDetailsFunctionality",
+                        "UserProfile",
                         "DAS10756",
                         "DAS12947",
                         "Remove_Profile_Changes"});
@@ -203,23 +203,23 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_ProfileDetails
         }
         
         [NUnit.Framework.TestAttribute()]
-        [NUnit.Framework.DescriptionAttribute("EvergreenJnr_AccountDetails_CheckThatErrorIsNotDisplayedAfterChangingProfileDataT" +
-            "wice")]
+        [NUnit.Framework.DescriptionAttribute("EvergreenJnr_UserProfile_CheckThatErrorIsNotDisplayedAfterChangingProfileDataTwic" +
+            "e")]
         [NUnit.Framework.CategoryAttribute("Evergreen")]
         [NUnit.Framework.CategoryAttribute("ProfileDetails")]
         [NUnit.Framework.CategoryAttribute("EvergreenJnr_ProfileDetails")]
-        [NUnit.Framework.CategoryAttribute("AccountDetailsFunctionality")]
+        [NUnit.Framework.CategoryAttribute("UserProfile")]
         [NUnit.Framework.CategoryAttribute("DAS11524")]
         [NUnit.Framework.CategoryAttribute("DAS12947")]
         [NUnit.Framework.CategoryAttribute("Remove_Profile_Changes")]
-        public virtual void EvergreenJnr_AccountDetails_CheckThatErrorIsNotDisplayedAfterChangingProfileDataTwice()
+        public virtual void EvergreenJnr_UserProfile_CheckThatErrorIsNotDisplayedAfterChangingProfileDataTwice()
         {
             System.Exception lastException = null;
             for (int i = 0; (i <= 1); i = (i + 1))
             {
                 try
                 {
-                    this.EvergreenJnr_AccountDetails_CheckThatErrorIsNotDisplayedAfterChangingProfileDataTwiceInternal();
+                    this.EvergreenJnr_UserProfile_CheckThatErrorIsNotDisplayedAfterChangingProfileDataTwiceInternal();
                     return;
                 }
                 catch (System.Exception exc)
@@ -238,14 +238,14 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_ProfileDetails
             }
         }
         
-        private void EvergreenJnr_AccountDetails_CheckThatErrorIsNotDisplayedAfterChangingProfileDataTwiceInternal()
+        private void EvergreenJnr_UserProfile_CheckThatErrorIsNotDisplayedAfterChangingProfileDataTwiceInternal()
         {
-            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("EvergreenJnr_AccountDetails_CheckThatErrorIsNotDisplayedAfterChangingProfileDataT" +
-                    "wice", new string[] {
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("EvergreenJnr_UserProfile_CheckThatErrorIsNotDisplayedAfterChangingProfileDataTwic" +
+                    "e", new string[] {
                         "Evergreen",
                         "ProfileDetails",
                         "EvergreenJnr_ProfileDetails",
-                        "AccountDetailsFunctionality",
+                        "UserProfile",
                         "DAS11524",
                         "DAS12947",
                         "Remove_Profile_Changes"});
@@ -265,22 +265,22 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_ProfileDetails
         }
         
         [NUnit.Framework.TestAttribute()]
-        [NUnit.Framework.DescriptionAttribute("EvergreenJnr_AccountDetails_CheckThatDefaultListPageSizeIs1000API")]
+        [NUnit.Framework.DescriptionAttribute("EvergreenJnr_UserProfile_CheckThatDefaultListPageSizeIs1000API")]
         [NUnit.Framework.CategoryAttribute("Evergreen")]
         [NUnit.Framework.CategoryAttribute("ProfileDetails")]
         [NUnit.Framework.CategoryAttribute("EvergreenJnr_FilterFeature")]
-        [NUnit.Framework.CategoryAttribute("FilterFunctionality")]
+        [NUnit.Framework.CategoryAttribute("UserProfile")]
         [NUnit.Framework.CategoryAttribute("DAS11723")]
         [NUnit.Framework.CategoryAttribute("API")]
         [NUnit.Framework.CategoryAttribute("Not_Run")]
-        public virtual void EvergreenJnr_AccountDetails_CheckThatDefaultListPageSizeIs1000API()
+        public virtual void EvergreenJnr_UserProfile_CheckThatDefaultListPageSizeIs1000API()
         {
             System.Exception lastException = null;
             for (int i = 0; (i <= 1); i = (i + 1))
             {
                 try
                 {
-                    this.EvergreenJnr_AccountDetails_CheckThatDefaultListPageSizeIs1000APIInternal();
+                    this.EvergreenJnr_UserProfile_CheckThatDefaultListPageSizeIs1000APIInternal();
                     return;
                 }
                 catch (System.Exception exc)
@@ -299,13 +299,13 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_ProfileDetails
             }
         }
         
-        private void EvergreenJnr_AccountDetails_CheckThatDefaultListPageSizeIs1000APIInternal()
+        private void EvergreenJnr_UserProfile_CheckThatDefaultListPageSizeIs1000APIInternal()
         {
-            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("EvergreenJnr_AccountDetails_CheckThatDefaultListPageSizeIs1000API", new string[] {
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("EvergreenJnr_UserProfile_CheckThatDefaultListPageSizeIs1000API", new string[] {
                         "Evergreen",
                         "ProfileDetails",
                         "EvergreenJnr_FilterFeature",
-                        "FilterFunctionality",
+                        "UserProfile",
                         "DAS11723",
                         "API",
                         "Not_Run"});
@@ -316,22 +316,22 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_ProfileDetails
         }
         
         [NUnit.Framework.TestAttribute()]
-        [NUnit.Framework.DescriptionAttribute("EvergreenJnr_AccountDetails_CheckThatNotificationMessageDisappearsAfter5Seconds")]
+        [NUnit.Framework.DescriptionAttribute("EvergreenJnr_UserProfile_CheckThatNotificationMessageDisappearsAfter5Seconds")]
         [NUnit.Framework.CategoryAttribute("Evergreen")]
         [NUnit.Framework.CategoryAttribute("ProfileDetails")]
         [NUnit.Framework.CategoryAttribute("EvergreenJnr_ProfileDetails")]
-        [NUnit.Framework.CategoryAttribute("AccountDetailsFunctionality")]
+        [NUnit.Framework.CategoryAttribute("UserProfile")]
         [NUnit.Framework.CategoryAttribute("DAS11646")]
         [NUnit.Framework.CategoryAttribute("DAS12947")]
         [NUnit.Framework.CategoryAttribute("Remove_Profile_Changes")]
-        public virtual void EvergreenJnr_AccountDetails_CheckThatNotificationMessageDisappearsAfter5Seconds()
+        public virtual void EvergreenJnr_UserProfile_CheckThatNotificationMessageDisappearsAfter5Seconds()
         {
             System.Exception lastException = null;
             for (int i = 0; (i <= 1); i = (i + 1))
             {
                 try
                 {
-                    this.EvergreenJnr_AccountDetails_CheckThatNotificationMessageDisappearsAfter5SecondsInternal();
+                    this.EvergreenJnr_UserProfile_CheckThatNotificationMessageDisappearsAfter5SecondsInternal();
                     return;
                 }
                 catch (System.Exception exc)
@@ -350,13 +350,13 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_ProfileDetails
             }
         }
         
-        private void EvergreenJnr_AccountDetails_CheckThatNotificationMessageDisappearsAfter5SecondsInternal()
+        private void EvergreenJnr_UserProfile_CheckThatNotificationMessageDisappearsAfter5SecondsInternal()
         {
-            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("EvergreenJnr_AccountDetails_CheckThatNotificationMessageDisappearsAfter5Seconds", new string[] {
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("EvergreenJnr_UserProfile_CheckThatNotificationMessageDisappearsAfter5Seconds", new string[] {
                         "Evergreen",
                         "ProfileDetails",
                         "EvergreenJnr_ProfileDetails",
-                        "AccountDetailsFunctionality",
+                        "UserProfile",
                         "DAS11646",
                         "DAS12947",
                         "Remove_Profile_Changes"});

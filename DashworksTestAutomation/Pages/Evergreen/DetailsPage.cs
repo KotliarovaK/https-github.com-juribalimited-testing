@@ -231,5 +231,12 @@ namespace DashworksTestAutomation.Pages.Evergreen
             Driver.WaitWhileControlIsNotDisplayed(selector);
             return Driver.FindElement(selector);
         }
+
+        public IWebElement GetBucketLinkByName(string bucketName)
+        {
+            var selector = By.XPath($"//div[@class='editText']//span[text()='{bucketName}']");
+            Driver.WaitWhileControlIsNotDisplayed(selector);
+            return Driver.FindElement(selector);
+        }
     }
 }
