@@ -1471,3 +1471,27 @@ Scenario: EvergreenJnr_AdminPage_CheckThatCancelButtonIsDisplayedWithCorrectlyCo
 	And User clicks Delete button
 	Then Cancel button is displayed with correctly color
 	When User clicks Delete button in the warning message
+
+@Evergreen @Admin @EvergreenJnr_AdminPage @AdminPage @DAS11701 @Delete_Newly_Created_Project
+Scenario: EvergreenJnr_AdminPage_CheckThatTheFilterSearchIsNotCaseSensitive
+	When User clicks Admin on the left-hand menu
+	Then Admin page should be displayed to the user
+	When User clicks "Projects" link on the Admin page
+	Then "Projects" page should be displayed to the user
+	When User clicks Create New Item button
+	Then "Create Project" page should be displayed to the user
+	When User enters "TESTNAME_capital letters" in the Project Name field
+	And User selects "All Devices" in the Scope Project dropdown
+	And User clicks Create button on the Create Project page
+	Then created Project with "TESTNAME_capital letters" name is displayed correctly
+	And Success message with "Your project has been created" text is displayed on the Projects page
+	When User clicks Create New Item button
+	Then "Create Project" page should be displayed to the user
+	When User enters "testname_small letters" in the Project Name field
+	And User selects "All Devices" in the Scope Project dropdown
+	And User clicks Create button on the Create Project page
+	Then created Project with "testname_small letters" name is displayed correctly
+	And Success message with "Your project has been created" text is displayed on the Projects page
+	When User enters "TestName" text in the Search field for "Project" column
+	Then created Project with "testname_small letters" name is displayed correctly
+	Then created Project with "TESTNAME_capital letters" name is displayed correctly
