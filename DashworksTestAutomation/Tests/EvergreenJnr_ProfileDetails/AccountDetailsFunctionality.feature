@@ -6,7 +6,7 @@ Background: Pre-Conditions
 	Given User is logged in to the Evergreen
 	Then Evergreen Dashboards page should be displayed to the user
 
-@Evergreen @ProfileDetails @EvergreenJnr_ProfileDetails @AccountDetailsFunctionality @DAS10756 @Remove_Profile_Changes
+@Evergreen @ProfileDetails @EvergreenJnr_ProfileDetails @AccountDetailsFunctionality @DAS10756 @DAS12947 @Remove_Profile_Changes
 Scenario: EvergreenJnr_AccountDetails_CheckThatErrorIsNotDisplayedAfterChangingProfileData
 	When User clicks Profile in Account Dropdown
 	Then Profile page is displayed to user
@@ -17,7 +17,7 @@ Scenario: EvergreenJnr_AccountDetails_CheckThatErrorIsNotDisplayedAfterChangingP
 	And "TestAdmin" is displayed in Full Name field
 	And "automation2@juriba.com" is displayed in Email field
 
-@Evergreen @ProfileDetails @EvergreenJnr_ProfileDetails @AccountDetailsFunctionality @DAS10756 @Remove_Profile_Changes
+@Evergreen @ProfileDetails @EvergreenJnr_ProfileDetails @AccountDetailsFunctionality @DAS10756 @DAS12947 @Remove_Profile_Changes
 Scenario: EvergreenJnr_AccountDetails_CheckThatCorrectErrorMessagesAreDisplayed
 	When User clicks Profile in Account Dropdown
 	Then Profile page is displayed to user
@@ -47,7 +47,7 @@ Scenario: EvergreenJnr_AccountDetails_CheckThatCorrectErrorMessagesAreDisplayed
 	Then Success message with "Image removed" text is displayed on Account Details page
 	Then User picture changed to default
 
-@Evergreen @ProfileDetails @EvergreenJnr_ProfileDetails @AccountDetailsFunctionality @DAS11524 @Remove_Profile_Changes
+@Evergreen @ProfileDetails @EvergreenJnr_ProfileDetails @AccountDetailsFunctionality @DAS11524 @DAS12947 @Remove_Profile_Changes
 Scenario: EvergreenJnr_AccountDetails_CheckThatErrorIsNotDisplayedAfterChangingProfileDataTwice
 	When User clicks Profile in Account Dropdown
 	Then Profile page is displayed to user
@@ -64,7 +64,7 @@ Scenario: EvergreenJnr_AccountDetails_CheckThatErrorIsNotDisplayedAfterChangingP
 Scenario: EvergreenJnr_AccountDetails_CheckThatDefaultListPageSizeIs1000API
 	Then default list page Size is "1000" and Cache "10"
 
-@Evergreen @ProfileDetails @EvergreenJnr_ProfileDetails @AccountDetailsFunctionality @DAS11646 @Remove_Profile_Changes
+@Evergreen @ProfileDetails @EvergreenJnr_ProfileDetails @AccountDetailsFunctionality @DAS11646 @DAS12947 @Remove_Profile_Changes
 Scenario: EvergreenJnr_AccountDetails_CheckThatNotificationMessageDisappearsAfter5Seconds
 	When User clicks Profile in Account Dropdown
 	Then Profile page is displayed to user
