@@ -318,8 +318,9 @@ namespace DashworksTestAutomation.Helpers
                 {
                     selector = $".//li//span[text()='{row["Association"]}']";
                 }
-                    _driver.FindElement(By.XPath(".//div[@id='context']//input[@placeholder='Search']")).SendkeysWithDelay(row["Association"]);
+                    selectboxes.Last().SendkeysWithDelay(row["Association"]);
                     _driver.FindElement(By.XPath(selector)).Click();
+                    _driver.FindElement(By.XPath(".//div[@id='context']//input[@placeholder='Search']")).Clear();
             }
 
             SaveFilter();
