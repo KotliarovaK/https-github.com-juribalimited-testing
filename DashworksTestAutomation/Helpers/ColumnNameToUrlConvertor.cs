@@ -213,6 +213,12 @@ namespace DashworksTestAutomation.Helpers
                 case "Mailbox Key":
                     return "mailboxKey";
 
+                case "Device Count (Installed)":
+                    return "installed";
+
+                case "Device Count (Used)":
+                    return "computerUsage";
+
                 default:
                     throw new Exception($"{columnName} column not found in convertor");
             }
