@@ -897,3 +897,21 @@ Examples:
 	| Devices   | Application Development | 873   |
 	| Users     | Application Development | 1,857 |
 	| Mailboxes | Application Development | 1,118 |
+
+@Evergreen @Devices @EvergreenJnr_FilterFeature @FilterFunctionality @DAS12522
+Scenario Outline: EvergreenJnr_DevicesList_CheckThat500ErrorIsNotDisplayedAfterApplyingGBFilters
+	When User clicks "Devices" on the left-hand menu
+	Then "Devices" list should be displayed to the user
+	When User clicks the Filters button
+	Then Filters panel is displayed to the user
+	When User add "<FilterName>" filter where type is "Equals" with added column and following value:
+	| Values   |
+	| <Values> |
+	Then "<RowsCount>" rows are displayed in the agGrid
+	And There are no errors in the browser console
+
+Examples: 
+	| FilterName                   | Values | RowsCount |
+	| Memory (GB)                  | 20.48  | 2         |
+	| HDD Total Size (GB)          | 152.77 | 2         |
+	| Target Drive Free Space (GB) | 995.54 | 1         |
