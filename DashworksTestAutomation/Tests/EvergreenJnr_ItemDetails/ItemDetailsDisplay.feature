@@ -661,3 +661,71 @@ Examples:
 	| Users        | User Key        |
 	| Applications | Application Key |
 	| Mailboxes    | Mailbox Key     |
+
+@Evergreen @AdminPage @AllLists @EvergreenJnr_ItemDetails @ItemDetailsDisplay @DAS12883
+Scenario: EvergreenJnr_AllLists_CheckThatPopupIsBiggerAndIsShownProperlyBucketIsChangedSuccessfully
+	When User clicks Admin on the left-hand menu
+	Then Admin page should be displayed to the user
+	When User clicks "Buckets" link on the Admin page
+	Then "Buckets" page should be displayed to the user
+	When User clicks Create New Item button
+	Then "Create Bucket" page should be displayed to the user
+	When User enters "Bucket12883" in the Bucket Name field
+	And User selects "Admin IT" team in the Team dropdown on the Buckets page
+	And User clicks Create button on the Create Bucket page
+	Then Success message is displayed and contains "The bucket has been created" text
+	When User clicks "Devices" on the left-hand menu
+	Then "Devices" list should be displayed to the user
+	When User perform search by "05NITEIIH3CGB55"
+	And User click content from "Hostname" column
+	Then Details object page is displayed to the user
+	When User navigates to the "Projects" tab
+	When User clicks on Evergreen Bucket link
+	Then Change Bucket pop-up is opened
+	Then Bucket pop-up has standard size on the Details Page
+	When User opens "Related Users" section on the Details Page
+	Then section is loaded correctly
+	When User selects all rows on the grid on the Details Page
+	Then User clicks on New Bucket dropdown
+	When User select "Bucket12883" Bucket on the Details Page
+	Then Bucket pop-up has standard size on the Details Page
+	When User clicks "CHANGE" button on Change Bucket window
+	Then Evergreen Bucket link "Bucket12883" is displayed
+	#Then There are no errors in the browser console
+	When User clicks "Users" on the left-hand menu
+	Then "Users" list should be displayed to the user
+	When User perform search by "01C44C91EB7E4BE88F6"
+	And User click content from "Username" column
+	Then Details object page is displayed to the user
+	When User navigates to the "Projects" tab
+	When User clicks on Evergreen Bucket link
+	Then Change Bucket pop-up is opened
+	Then Bucket pop-up has standard size on the Details Page
+	When User opens "Related Mailboxes" section on the Details Page
+	Then section is loaded correctly
+	When User selects all rows on the grid on the Details Page
+	Then User clicks on New Bucket dropdown
+	When User select "Bucket12883" Bucket on the Details Page
+	Then Bucket pop-up has standard size on the Details Page
+	When User clicks "CHANGE" button on Change Bucket window
+	Then Evergreen Bucket link "Bucket12883" is displayed
+	#Then There are no errors in the browser console
+	When User clicks "Mailboxes" on the left-hand menu
+	Then "Mailboxes" list should be displayed to the user
+	When User perform search by "05A694C737C045C2B4F@bclabs.local"
+	And User click content from "Email Address" column
+	Then Details object page is displayed to the user
+	When User navigates to the "Projects" tab
+	When User clicks on Evergreen Bucket link
+	Then Change Bucket pop-up is opened
+	Then Bucket pop-up has standard size on the Details Page
+	When User opens "Related Users" section on the Details Page
+	Then section is loaded correctly
+	When User selects all rows on the grid on the Details Page
+	Then User clicks on New Bucket dropdown
+	When User select "Bucket12883" Bucket on the Details Page
+	Then Bucket pop-up has standard size on the Details Page
+	When User clicks "CHANGE" button on Change Bucket window
+	Then Evergreen Bucket link "Bucket12883" is displayed
+	#Then There are no errors in the browser console
+	And Delete "Bucket12883" Bucket in the Administration
