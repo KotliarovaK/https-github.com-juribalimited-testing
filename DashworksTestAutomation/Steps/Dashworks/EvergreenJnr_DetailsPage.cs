@@ -497,6 +497,13 @@ namespace DashworksTestAutomation.Steps.Dashworks
             _driver.WaitForDataLoading();
         }
 
+        [Then(@"Evergreen Bucket link ""(.*)"" is displayed")]
+        public void ThenEvergreenBucketLinkIsDisplayed(string bucketName)
+        {
+            var detailsPage = _driver.NowAt<DetailsPage>();
+            Assert.IsTrue(detailsPage.GetBucketLinkByName(bucketName).Displayed(), "Bucket link name was not changed");
+        }
+
         [Then(@"Change Bucket pop-up is opened")]
         public void ThenChangeBucketPop_UpIsOpened()
         {
