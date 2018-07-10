@@ -1,6 +1,7 @@
 ﻿using System;
 using System.IO;
 using System.Linq;
+using System.Net;
 using System.Threading;
 using DashworksTestAutomation.DTO.RuntimeVariables;
 using DashworksTestAutomation.Extensions;
@@ -11,6 +12,7 @@ using DashworksTestAutomation.Utils;
 using NUnit.Framework;
 using OpenQA.Selenium;
 using OpenQA.Selenium.Remote;
+using RestSharp;
 using TechTalk.SpecFlow;
 
 namespace DashworksTestAutomation.Steps.Dashworks
@@ -21,12 +23,16 @@ namespace DashworksTestAutomation.Steps.Dashworks
         private readonly RemoteWebDriver _driver;
         private readonly TeamName _teamName;
         private readonly UsedUsers _usedUsers;
+        private readonly DTO.RuntimeVariables.Projects _projects;
+        private readonly RestWebClient _client;
 
-        public EvergreenJnr_AdminPage(RemoteWebDriver driver, UsedUsers usedUsers, TeamName teamName)
+        public EvergreenJnr_AdminPage(RemoteWebDriver driver, UsedUsers usedUsers, TeamName teamName, DTO.RuntimeVariables.Projects projects, RestWebClient client)
         {
             _driver = driver;
             _usedUsers = usedUsers;
             _teamName = teamName;
+            _projects = projects;
+            _client = client;
         }
 
         [When(@"User clicks ""(.*)"" link on the Admin page")]
@@ -384,7 +390,7 @@ namespace DashworksTestAutomation.Steps.Dashworks
                     }
                     catch { }
             }
-            catch {}
+            catch { }
         }
 
         private void DeleteTeam(string teamName)
@@ -702,7 +708,7 @@ namespace DashworksTestAutomation.Steps.Dashworks
             var message = _driver.NowAt<ProjectsPage>();
             Assert.IsFalse(message.SuccessMessage.Displayed());
         }
-  
+
         #endregion
 
         [Then(@"""(.*)"" bucket details is displayed to the user")]
@@ -784,7 +790,7 @@ namespace DashworksTestAutomation.Steps.Dashworks
         [When(@"User cancels the selection objects in the Project")]
         public void WhenUserSelectsAllObjects()
         {
-              var projectElement = _driver.NowAt<BaseGridPage>();
+            var projectElement = _driver.NowAt<BaseGridPage>();
             projectElement.AllItemCheckbox.Click();
             _driver.WaitForDataLoading();
         }
@@ -896,6 +902,10 @@ namespace DashworksTestAutomation.Steps.Dashworks
         {
             var projectName = _driver.NowAt<CreateProjectPage>();
             projectName.ProjectNameField.SendKeys(projectText);
+            if (!string.IsNullOrEmpty(projectText))
+            {
+                _projects.Value.Add(projectText);
+            }
         }
 
         [When(@"User selects ""(.*)"" in the Scope Project dropdown")]
@@ -1067,9 +1077,7 @@ namespace DashworksTestAutomation.Steps.Dashworks
         [Then(@"Delete ""(.*)"" Project in the Administration")]
         public void ThenDeleteProjectInTheAdministration(string projectName)
         {
-            var projectId =
-                DatabaseHelper.ExecuteReader(
-                    $"SELECT [ProjectID] FROM[PM].[dbo].[Projects] where[ProjectName] = '{projectName}'", 0)[0];
+            var projectId = GetProjectId(projectName);
             DatabaseHelper.ExecuteQuery($"delete from[PM].[dbo].[EvergreenProjects] where[ProjectId] = '{projectId}'");
             DatabaseHelper.ExecuteQuery($"delete from[PM].[dbo].[ProjectGroups] where[ProjectID] = '{projectId}'");
             DatabaseHelper.ExecuteQuery(
@@ -1079,6 +1087,37 @@ namespace DashworksTestAutomation.Steps.Dashworks
                 $"delete from[PM].[dbo].[SelfServiceScreenValues] where[ProjectID] = '{projectId}'");
             DatabaseHelper.ExecuteQuery($"delete from[PM].[dbo].[Projects] where[ProjectID] = '{projectId}'");
             DatabaseHelper.ExecuteQuery($"delete from[PM].[dbo].[Projects] where[ProjectID] = '{projectId}'");
+        }
+
+        [AfterScenario("Delete_Newly_Created_Project")]
+        public void DeleteNewlyCreatedProject()
+        {
+            var requestUri = $"{UrlProvider.RestClientBaseUrl}/admin/projects/deleteProjects";
+
+            foreach (var projectName in _projects.Value)
+            {
+                var projectId = GetProjectId(projectName);
+
+                var request = new RestRequest(requestUri);
+
+                request.AddParameter("Host", UrlProvider.RestClientBaseUrl);
+                request.AddParameter("Origin", UrlProvider.Url.TrimEnd('/'));
+                request.AddParameter("Referer", UrlProvider.EvergreenUrl);
+                request.AddParameter("selectedObjectsList", projectId);
+
+                var response = _client.Value.Post(request);
+
+                if (response.StatusCode != HttpStatusCode.OK)
+                    throw new Exception($"Unable to execute request. URI: {requestUri}");
+            }
+        }
+
+        private string GetProjectId(string projectName)
+        {
+            var projectId =
+                DatabaseHelper.ExecuteReader(
+                    $"SELECT [ProjectID] FROM[PM].[dbo].[Projects] where[ProjectName] = '{projectName}'", 0)[0];
+            return projectId;
         }
 
         [Then(@"Delete ""(.*)"" Bucket in the Administration")]
