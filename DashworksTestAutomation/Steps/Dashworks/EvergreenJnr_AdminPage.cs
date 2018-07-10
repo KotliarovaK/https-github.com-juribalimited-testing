@@ -667,7 +667,7 @@ namespace DashworksTestAutomation.Steps.Dashworks
                 }
             }
             _driver.WaitWhileControlIsNotDisplayed<ProjectsPage>(() => projectElement.SuccessMessage);
-            Thread.Sleep(15000);
+            Thread.Sleep(10000);
             Assert.IsTrue(projectElement.SuccessTextMessage(textMessage),
                 $"{textMessage} is not displayed on the Project page");
         }
@@ -722,8 +722,8 @@ namespace DashworksTestAutomation.Steps.Dashworks
             Logger.Write("Actions button was clicked");
         }
 
-        [When(@"User selects ""(.*)"" in the Actions dropdown")]
-        public void ThenUserSelectInTheActionsDropdown(string actionName)
+        [When(@"User selects ""(.*)"" in the Actions")]
+        public void ThenUserSelectInTheActions(string actionName)
         {
             var action = _driver.NowAt<BaseGridPage>();
             action.SelectActions(actionName);
@@ -773,20 +773,6 @@ namespace DashworksTestAutomation.Steps.Dashworks
             button.UpdateBucketButton.Click();
         }
 
-        [When(@"User adds following items from list")]
-        public void ThenUserAddFollowingItemsFromList(Table table)
-        {
-            var bucketElement = _driver.NowAt<BaseGridPage>();
-
-            foreach (var row in table.Rows)
-            {
-                bucketElement.AddItem(row["Item"]);
-                bucketElement.SearchTextbox.ClearWithHomeButton(_driver);
-            }
-
-            bucketElement.AddItemButton.Click();
-        }
-
         [When(@"User expands the object to add")]
         public void WhenUserExpandsTheObjectToAdd()
         {
@@ -794,19 +780,58 @@ namespace DashworksTestAutomation.Steps.Dashworks
             projectElement.PlusButton.Click();
         }
 
-        [When(@"User selects following items to the Project")]
-        public void WhenUserSelectsFollowingItemsToTheProject(Table table)
+        [When(@"User selects all objects to the Project")]
+        [When(@"User cancels the selection objects in the Project")]
+        public void WhenUserSelectsAllObjects()
+        {
+              var projectElement = _driver.NowAt<BaseGridPage>();
+            projectElement.AllItemCheckbox.Click();
+            _driver.WaitForDataLoading();
+        }
+
+        #region Adding Objects
+
+        [When(@"User adds following Objects from list")]
+        public void ThenUserAddFollowingObjectsFromList(Table table)
+        {
+            var bucketElement = _driver.NowAt<BaseGridPage>();
+
+            foreach (var row in table.Rows)
+            {
+                bucketElement.AddItem(row["Objects"]);
+                bucketElement.SearchTextbox.ClearWithHomeButton(_driver);
+            }
+
+            bucketElement.AddItemButton.Click();
+        }
+
+        [When(@"User adds following Objects to the Project")]
+        public void WhenUserAddsFollowingObjectsToTheProject(Table table)
+        {
+            var projectElement = _driver.NowAt<BaseGridPage>();
+            projectElement.PlusButton.Click();
+            foreach (var row in table.Rows)
+            {
+                projectElement.AddItem(row["Objects"]);
+                projectElement.SearchTextbox.ClearWithHomeButton(_driver);
+            }
+
+            projectElement.UpdateButton.Click();
+        }
+
+        [When(@"User selects following Objects to the Project")]
+        public void WhenUserSelectsFollowingObjectsToTheProject(Table table)
         {
             var projectElement = _driver.NowAt<BaseGridPage>();
             foreach (var row in table.Rows)
             {
-                projectElement.AddItem(row["Item"]);
+                projectElement.AddItem(row["Objects"]);
                 projectElement.SearchTextbox.ClearWithHomeButton(_driver);
             }
         }
 
-        [Then(@"following objects are onboarded")]
-        public void ThenFollowingObjectsAreOnboarded(Table table)
+        [Then(@"following Items are onboarded")]
+        public void ThenFollowingItemsAreOnboarded(Table table)
         {
             var projectElement = _driver.NowAt<BaseGridPage>();
             Thread.Sleep(15000);
@@ -814,14 +839,23 @@ namespace DashworksTestAutomation.Steps.Dashworks
             {
                 if (projectElement.OnboardedObjectsTable.Displayed())
                 {
-                    projectElement.OnboardedObjectDisplayed(row["Object"]);
+                    projectElement.OnboardedObjectDisplayed(row["Items"]);
                 }
                 else
                 {
                     _driver.Navigate().Refresh();
-                    projectElement.OnboardedObjectDisplayed(row["Object"]);
+                    projectElement.OnboardedObjectDisplayed(row["Items"]);
                 }
             }
+        }
+
+        #endregion
+
+        [When(@"User enters ""(.*)"" text in the Object Search field")]
+        public void WhenUserEntersTextInTheObjectSearchField(string text)
+        {
+            var searchElement = _driver.NowAt<BaseGridPage>();
+            searchElement.GetObgectField(text);
         }
 
         [Then(@"following items are still selected")]
@@ -830,20 +864,6 @@ namespace DashworksTestAutomation.Steps.Dashworks
             var projectElement = _driver.NowAt<BaseGridPage>();
             Assert.IsTrue(projectElement.SelectedCheckbox.Displayed(), "Items are not selected");
             Assert.IsTrue(projectElement.AddItemCheckbox.Displayed(), "Item checkbox is not checked");
-        }
-
-        [When(@"User adds following items to the Project")]
-        public void WhenUserAddsFollowingItemsToTheProject(Table table)
-        {
-            var projectElement = _driver.NowAt<BaseGridPage>();
-            projectElement.PlusButton.Click();
-            foreach (var row in table.Rows)
-            {
-                projectElement.AddItem(row["Item"]);
-                projectElement.SearchTextbox.ClearWithHomeButton(_driver);
-            }
-
-            projectElement.UpdateButton.Click();
         }
 
         [When(@"User clicks Create button on the Create Project page")]
@@ -868,7 +888,7 @@ namespace DashworksTestAutomation.Steps.Dashworks
         public void ThenImportProjectButtonIsNotDisplayed()
         {
             var button = _driver.NowAt<BaseGridPage>();
-            Assert.IsFalse(button.ImportProjectButton.Displayed());
+            Assert.IsFalse(button.ImportProjectButton.Displayed(), "Import Project button is displayed");
         }
 
         [When(@"User enters ""(.*)"" in the Project Name field")]

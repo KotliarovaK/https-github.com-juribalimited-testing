@@ -777,6 +777,7 @@ Scenario: EvergreenJnr_DevicesList_CheckThat500ErrorIsNotDisplayedForStaticListA
 	When User clicks the Actions button
 	Then Actions panel is displayed to the user
 	When User select all rows
+	And User selects "Create static list" in the Actions dropdown
 	And User create static list with "StaticListTestName" name
 	When User clicks "Devices" on the left-hand menu
 	Then "Devices" list should be displayed to the user
@@ -785,7 +786,7 @@ Scenario: EvergreenJnr_DevicesList_CheckThat500ErrorIsNotDisplayedForStaticListA
 	When User add "Application (Saved List)" filter where type is "In list" with Selected Value and following Association:
 	| SelectedList       | Association        |
 	| StaticListTestName | Not used on device |
-	Then "Application in list StaticListTestName not used on device" is displayed in added filter info
+	Then "Any Application in list StaticListTestName not used on device" is displayed in added filter info
 	When User create dynamic list with "TestList8D5C03" name on "Devices" page
 	When User clicks "Applications" on the left-hand menu
 	Then "Applications" list should be displayed to the user
@@ -809,7 +810,7 @@ Scenario: EvergreenJnr_DevicesList_CheckThat500ErrorIsNotDisplayedForDynamicList
 	When User add "Application (Saved List)" filter where type is "In list" with Selected Value and following Association:
 	| SelectedList   | Association        |
 	| TestList5E021D | Not used on device |
-	Then "Application in list TestList5E021D not used on device" is displayed in added filter info
+	Then "Any Application in list TestList5E021D not used on device" is displayed in added filter info
 	When User create dynamic list with "TestList5E021D" name on "Devices" page
 	Then "TestList5E021D" list is displayed to user
 	When User clicks "Applications" on the left-hand menu
@@ -1005,7 +1006,7 @@ Scenario: EvergreenJnr_AllLists_CheckThatFilterTextDisplaysActualListName
 	Then "DevicesList" list is displayed to user
 	When User clicks the Filters button
 	Then Filters panel is displayed to the user
-	And "Application in list [List not found] entitled to device" is displayed in added filter info
+	And "Any Application in list [List not found] entitled to device" is displayed in added filter info
 
 @Evergreen @AllLists @Evergreen_FiltersFeature @FiltersDisplay @DAS12121 @Delete_Newly_Created_List @Not_Run
 Scenario: EvergreenJnr_AllLists_CheckThatTextInTheFilterPanelDisplaysTheCurrentListName
@@ -1071,7 +1072,7 @@ Scenario: EvergreenJnr_DevicesList_CheckingThatVendorFilterIsDisplayedInApplicat
 	When User selects "Application Vendor" filter from "Application" category
 	Then setting section for "Application Vendor" filter is loaded
 
-@Evergreen @Applications @Evergreen_FiltersFeature @FiltersDisplay @DAS12854
+@Evergreen @Applications @Evergreen_FiltersFeature @FiltersDisplay @DAS12854 @DAS12812 @DAS12056
 Scenario: EvergreenJnr_ApplicationsList_CheckThatCorrectValuesAreDisplayedforUserKeyFilters
 	When User clicks "Applications" on the left-hand menu
 	Then "Applications" list should be displayed to the user
@@ -1080,9 +1081,13 @@ Scenario: EvergreenJnr_ApplicationsList_CheckThatCorrectValuesAreDisplayedforUse
 	When User add "User Key" filter where type is "Less than" with following Data and Association:
 	| Values | Association     |
 	| 2      | Entitled to app |
-	And User Add And "User Key" filter where type is "Greater than" with following Data and Association:
+	Then Filter name is colored in the added filter info
+	And Filter value is shown in bold in the added filter info
+	When User Add And "User Key" filter where type is "Greater than" with following Data and Association:
 	| Values | Association     |
 	| 8      | Entitled to app |
+	Then Filter name is colored in the added filter info
+	And Filter value is shown in bold in the added filter info
 	Then "User whose Key is less than 2 entitled to app" is displayed in added filter info
 	And "User whose Key is greater than 8 entitled to app" is displayed in added filter info
 
@@ -1121,3 +1126,40 @@ Scenario: EvergreenJnr_ApplicationsList_CheckThatUserRegionFilterEqualsEmptyValu
 	And User clicks the Filters button
 	Then Filters panel is displayed to the user
 	And "User whose Region is Empty has used app" is displayed in added filter info
+
+@Evergreen @Applications @Evergreen_FiltersFeature @FiltersDisplay @DAS12812 @DAS12056
+Scenario Outline: EvergreenJnr_ApplicationsList_CheckThatTextInTheAdvancedFilterWithCheckboxesIsDisplayedCorrectly
+	When User clicks "Applications" on the left-hand menu
+	Then "Applications" list should be displayed to the user
+	When User clicks the Filters button
+	Then Filters panel is displayed to the user
+	When User add "<FilterName>" filter where type is "Equals" with selected Checkboxes and following Association:
+	| SelectedCheckboxes | Association  |
+	| <Checkbox>         | Has used app |
+	Then "<FilterInfo>" is displayed in added filter info
+	And Filter name is colored in the added filter info
+	And Filter value is shown in bold in the added filter info
+
+Examples: 
+	| FilterName      | Checkbox | FilterInfo                                |
+	| User Enabled    | FALSE    | User whose Enabled is False has used app  |
+	| User Compliance | Red      | User whose Compliance is Red has used app |
+
+@Evergreen @Applications @Evergreen_FiltersFeature @FiltersDisplay @DAS12812 @DAS12056
+Scenario Outline: EvergreenJnr_ApplicationsList_CheckThatTextInTheAdvancedFilterInfoIsDisplayedCorrectly
+	When User clicks "Applications" on the left-hand menu
+	Then "Applications" list should be displayed to the user
+	When User clicks the Filters button
+	Then Filters panel is displayed to the user
+	When User add "<FilterName>" filter where type is "<FilterType>" with following Value and Association:
+	| Values        | Association  |
+	| <FilterValue> | Has used app |
+	Then "<FilterInfo>" is displayed in added filter info
+	And Filter name is colored in the added filter info
+	And Filter value is shown in bold in the added filter info
+
+Examples: 
+	| FilterName    | FilterType  | FilterValue   | FilterInfo                                             |
+	| User SID      | Begins with | S-1-5-99      | User whose SID begins with S-1-5-99 has used app       |
+	| User GUID     | Begins with | 180a2898-9ab2 | User whose GUID begins with 180a2898-9ab2 has used app |
+	| User Username | Contains    | ZDP           | User whose Username contains ZDP has used app          |

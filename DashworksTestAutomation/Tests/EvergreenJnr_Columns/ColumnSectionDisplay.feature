@@ -130,6 +130,7 @@ Scenario: EvergreenJnr_ApplicationsList_CheckTheColumnCategoriesUpdatesAfterAddi
 	When User clicks the Actions button
 	Then Actions panel is displayed to the user
 	When User select all rows
+	When User selects "Create static list" in the Actions dropdown
 	And User create static list with "StaticList" name
 	Then "StaticList" list is displayed to user
 	When User clicks the Columns button

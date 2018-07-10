@@ -307,7 +307,20 @@ namespace DashworksTestAutomation.Helpers
             selectboxes.Last().Click();
             foreach (var row in Table.Rows)
             {
-                _driver.FindElement(By.XPath($".//li//span[text()='{row["Association"]}']")).Click();
+                var selector = string.Empty;
+                if (row["Association"].Contains("'"))
+                {
+                    var strings = row["Association"].Split('\'');
+                    selector =
+                        $".//li//span[contains(text(),'{strings[0]}')][contains(text(), '{strings[1]}')]";
+                }
+                else
+                {
+                    selector = $".//li//span[text()='{row["Association"]}']";
+                }
+                selectboxes.Last().SendkeysWithDelay(row["Association"]);
+                _driver.FindElement(By.XPath(selector)).Click();
+                selectboxes.Last().Clear();
             }
 
             SaveFilter();
@@ -346,6 +359,42 @@ namespace DashworksTestAutomation.Helpers
             }
 
             SaveFilter();
+        }
+    }
+
+    public class CheckboxesAssociationFilter : BaseFilter
+    {
+        protected string CheckboxSelector =
+            ".//div[@class='filterAddPanel ng-star-inserted']//span[contains(text(), '{0} ']/../preceding-sibling::i";
+
+        protected string CheckboxSelectorName =
+            ".//div[@class='filterAddPanel ng-star-inserted']//span[contains(text(), '{0}')]";
+
+        public CheckboxesAssociationFilter(RemoteWebDriver driver, string operatorValue, bool acceptCheckbox, Table optionsTable) :
+            base(driver, operatorValue, acceptCheckbox)
+        {
+            table = optionsTable;
+        }
+
+        protected Table table { get; set; }
+
+        public override void Do()
+        {
+            SelectOperator();
+            _driver.WaitForDataLoading();
+            foreach (var row in table.Rows)
+                _driver.FindElement(
+                    By.XPath(string.Format(CheckboxSelectorName, row["SelectedCheckboxes"]))).Click();
+            SelectOperator();
+            _driver.WaitForDataLoading();
+            var selectboxes = _driver.FindElements(By.XPath(".//div[@id='context']//input[@placeholder='Search']"));
+            selectboxes.First().Click();
+
+            selectboxes.Last().Click();
+            foreach (var row in table.Rows)
+            {
+                _driver.FindElement(By.XPath($".//li//span[text()='{row["Association"]}']")).Click();
+            }
         }
     }
 

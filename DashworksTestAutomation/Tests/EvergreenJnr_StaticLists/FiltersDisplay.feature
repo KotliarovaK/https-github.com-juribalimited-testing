@@ -56,7 +56,7 @@ Scenario: EvergreenJnr_DevicesList_CheckThatFiltersAndColumnsAreRestoredForSaved
 	Then Filters panel is displayed to the user
 	And "Windows7Mi: SS Application List Completed is Not Applicable or No" is displayed in added filter info
 
-@Evergreen @Devices @EvergreenJnr_StaticLists @FiltersDisplay @DAS10695 @DAS12152 @Delete_Newly_Created_List
+@Evergreen @Devices @EvergreenJnr_StaticLists @FiltersDisplay @DAS10695 @DAS12152 @DAS12966 @Delete_Newly_Created_List @Not_Run
 Scenario: EvergreenJnr_DevicesList_CheckThat500ErrorIsNotDisplayedWhenAddingExistingObjectToStaticList
 	When User clicks "Devices" on the left-hand menu
 	Then "Devices" list should be displayed to the user
@@ -68,6 +68,7 @@ Scenario: EvergreenJnr_DevicesList_CheckThat500ErrorIsNotDisplayedWhenAddingExis
 	| 00K4CEEQ737BA4L  |
 	| 011PLA470S0B9DJ  |
 	| 019BFPQGKK5QT8N  |
+	And User selects "Create static list" in the Actions dropdown
 	And User create static list with "TopFour TestName" name
 	Then "TopFour TestName" list is displayed to user
 	When User navigates to the "All Devices" list
@@ -79,6 +80,7 @@ Scenario: EvergreenJnr_DevicesList_CheckThat500ErrorIsNotDisplayedWhenAddingExis
 	| SelectedRowsName |
 	| 00BDM1JUR8IF419  |
 	| 00K4CEEQ737BA4L  |
+	And User selects "Create static list" in the Actions dropdown
 	And User create static list with "TopTwo TestName" name
 	Then "TopTwo TestName" list is displayed to user
 	When User clicks the Actions button

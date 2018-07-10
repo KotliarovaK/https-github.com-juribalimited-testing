@@ -108,6 +108,7 @@ Scenario: EvergreenJnr_DevicesList_CheckThatNewListCreatedMessageForStaticListIs
 	When User clicks the Actions button
 	Then Actions panel is displayed to the user
 	When User select all rows
+	And User selects "Create static list" in the Actions dropdown
 	And User create static list with "TestList4A22A5" name
 	Then "TestList4A22A5" list is displayed to user
 	When User click on 'Hostname' column header
@@ -116,7 +117,7 @@ Scenario: EvergreenJnr_DevicesList_CheckThatNewListCreatedMessageForStaticListIs
 	And "New list created" message is displayed
 	And "UnbelievableTestList" list is displayed to user
 
-@Evergreen @Users @EvergreenJnr_ListPanel @CustomListDisplay @DAS11005 @DAS11489 @DAS12152 @DAS12194 @DAS12199 @DAS12220 @DAS12351 @DAS12602 @Delete_Newly_Created_List
+@Evergreen @Users @EvergreenJnr_ListPanel @CustomListDisplay @DAS11005 @DAS11489 @DAS12152 @DAS12194 @DAS12199 @DAS12220 @DAS12351 @DAS12602 @DAS12966 @Delete_Newly_Created_List @Not_Run
 Scenario: EvergreenJnr_UsersList_CheckThatListsIsDisplayedInAlphabeticalOrder
 	When User clicks "Users" on the left-hand menu
 	Then "Users" list should be displayed to the user
@@ -146,6 +147,7 @@ Scenario: EvergreenJnr_UsersList_CheckThatListsIsDisplayedInAlphabeticalOrder
 	| SelectedRowsName    |
 	| 000F977AC8824FE39B8 |
 	| 002B5DC7D4D34D5C895 |
+	And User selects "Create static list" in the Actions dropdown
 	And User create static list with "KY TestList Static List" name
 	Then "KY TestList Static List" list is displayed to user
 	When User navigates to the "All Users" list
@@ -153,6 +155,7 @@ Scenario: EvergreenJnr_UsersList_CheckThatListsIsDisplayedInAlphabeticalOrder
 	When User clicks the Actions button
 	Then Actions panel is displayed to the user
 	When User select all rows
+	And User selects "Create static list" in the Actions dropdown
 	And User create static list with "NINJA TestList Static List" name
 	Then "NINJA TestList Static List" list is displayed to user
 	When User navigates to the "All Users" list
@@ -162,6 +165,7 @@ Scenario: EvergreenJnr_UsersList_CheckThatListsIsDisplayedInAlphabeticalOrder
 	When User select "Username" rows in the grid
 	| SelectedRowsName     |
 	| $231000-3AC04R8AR431 |
+	And User selects "Create static list" in the Actions dropdown
 	And User create static list with "QWER TestList Static List" name
 	Then "QWER TestList Static List" list is displayed to user
 	When User navigates to the "All Users" list
@@ -219,16 +223,17 @@ Scenario: EvergreenJnr_UsersList_CheckThatSaveButtonIsInactiveInCustomListCreati
 	| ColumnName          |
 	| Compliance          |
 	Then Save to New Custom List element is displayed
-	Then User type "Test" into Custom list name field
+	And User type "Test" into Custom list name field
 	When User clicks the Actions button
 	Then Actions panel is displayed to the user
 	Then Save to New Custom List element is NOT displayed
 	When User select "Username" rows in the grid
 	| SelectedRowsName    |
 	| 000F977AC8824FE39B8 |
-	| 002B5DC7D4D34D5C895 |
+	| 003F5D8E1A844B1FAA5 |
 	| 002B5DC7D4D34D5C895 |
 	| 003F5D8E1A844B1FAA5 |
+	And User selects "Create static list" in the Actions dropdown
 	Then User type "Test" into Static list name field
 	When User clicks the Actions button
 	Then Save button is inactive for Custom list
@@ -253,6 +258,7 @@ Scenario: EvergreenJnr_DevicesList_CheckTheSortOrderIsSavedForExistingListAndNot
 	| SelectedRowsName |
 	| 00BDM1JUR8IF419  |
 	| 00K4CEEQ737BA4L  |
+	And User selects "Create static list" in the Actions dropdown
 	And User create static list with "Static List TestName" name
 	Then "Static List TestName" list is displayed to user
 	When User click on 'Owner Display Name' column header
@@ -320,6 +326,7 @@ Scenario: EvergreenJnr_DevicesList_CheckThatSortingWillBeWorkForExistingSavedSta
 	| 00BDM1JUR8IF419  |
 	| 00K4CEEQ737BA4L  |
 	| 011PLA470S0B9DJ  |
+	And User selects "Create static list" in the Actions dropdown
 	And User create static list with "Static List TestName" name
 	Then "Static List TestName" list is displayed to user
 	When User clicks the Columns button
@@ -380,6 +387,7 @@ Scenario: EvergreenJnr_DevicesList_CheckThatEditListMenuNotDisplayedForActiveLis
 	| 00K4CEEQ737BA4L  |
 	| 011PLA470S0B9DJ  |
 	| 019BFPQGKK5QT8N  |
+	And User selects "Create static list" in the Actions dropdown
 	And User create static list with "Static List TestName" name
 	Then "Static List TestName" list is displayed to user
 	When User clicks the Columns button
@@ -709,6 +717,7 @@ Scenario: EvergreenJnr_DevicesLists_CheckThatUserIsNotAbleToCreateListsWithLongN
 	Then list with "1234567890123456789012345678901234567890" name is removed
 	When User clicks the Actions button
 	And User select all rows
+	And User selects "Create static list" in the Actions dropdown
 	When User create static list with "1234567890123456789012345678901234567890111" name
 	Then list name automatically changed to "1234567890123456789012345678901234567890" name
 	And "1234567890123456789012345678901234567890" list is displayed to user
@@ -850,6 +859,7 @@ Scenario Outline: EvergreenJnr_AllList_CheckThatTheEditListFunctionIsHiddenAfter
 	When User clicks the Actions button
 	Then Actions panel is displayed to the user
 	When User select all rows
+	And User selects "Create static list" in the Actions dropdown
 	When User create static list with "StaticList2" name
 	Then User enters SearchCriteria into the agGrid Search Box and the correct NumberOfRows are returned
 	| SearchCriteria | NumberOfRows |
@@ -894,19 +904,20 @@ Scenario Outline: EvergreenJnr_AllLists_CheckThatTheEditListFunctionIsHiddenAfte
 	When User clicks the Actions button
 	Then Actions panel is displayed to the user
 	When User select all rows
-	When User create static list with "StaticList3" name
-	When User have opened column settings for "<PinnedColumnName>" column
-	When User have select "Pin Left" option from column settings
+	And User selects "Create static list" in the Actions dropdown
+	And User create static list with "StaticList3" name
+	And User have opened column settings for "<PinnedColumnName>" column
+	And User have select "Pin Left" option from column settings
 	Then "StaticList3" list is displayed to user
-	Then Edit List menu is not displayed
+	And Edit List menu is not displayed
 	When User have opened column settings for "<PinnedColumnName>" column
-	When User have select "Pin Right" option from column settings
+	And User have select "Pin Right" option from column settings
 	Then "StaticList3" list is displayed to user
-	Then Edit List menu is not displayed
+	And Edit List menu is not displayed
 	When User have opened column settings for "<PinnedColumnName>" column
-	When User have select "No Pin" option from column settings
+	And User have select "No Pin" option from column settings
 	Then "StaticList3" list is displayed to user
-	Then Edit List menu is not displayed
+	And Edit List menu is not displayed
 
 Examples:
 	| ListName     | ColumnName       | PinnedColumnName |
@@ -991,6 +1002,7 @@ Scenario: EvergreenJnr_AllLists_CheckThatActionsPanelIsHiddenAfterCancellingProc
 	Then Actions panel is displayed to the user
 	Then Save and Cancel buttons are not displayed on the list panel
 	When User select all rows
+	And User selects "Create static list" in the Actions dropdown
 	And User types "StaticList7841" static list name
 	And User clicks Cancel button on the Actions panel
 	Then Checkboxes are not displayed
@@ -1050,3 +1062,15 @@ Scenario: EvergreenJnr_UsersList_CheckThatStaticListIsDisplayedInTheBottomOfTheL
 	Then "list will be permanently deleted" message is displayed in the lists panel
 	And User clicks Delete button on the warning message in the lists panel
 	And "List Deleted" message is displayed
+
+@Evergreen @Devices @EvergreenJnr_ListPanel @CustomListDisplay @DAS12891 @Delete_Newly_Created_List
+Scenario: EvergreenJnr_DevicesList_CheckThatCancelButtonIsDisplayedWithCorrectlyColorOnListPanel
+	When User clicks "Devices" on the left-hand menu
+	Then "Devices" list should be displayed to the user
+	When User click on 'Hostname' column header
+	Then data in table is sorted by 'Hostname' column in ascending order
+	When User create dynamic list with "TestList12891" name on "Devices" page
+	Then "TestList12891" list is displayed to user
+	When User click Delete button for custom list with "TestList12891" name
+	Then Cancel button is displayed with correctly color
+	Then User confirm removed list

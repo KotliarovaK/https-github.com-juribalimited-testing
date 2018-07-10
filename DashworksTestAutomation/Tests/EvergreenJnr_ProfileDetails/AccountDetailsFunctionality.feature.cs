@@ -74,6 +74,7 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_ProfileDetails
         [NUnit.Framework.CategoryAttribute("EvergreenJnr_ProfileDetails")]
         [NUnit.Framework.CategoryAttribute("AccountDetailsFunctionality")]
         [NUnit.Framework.CategoryAttribute("DAS10756")]
+        [NUnit.Framework.CategoryAttribute("DAS12947")]
         [NUnit.Framework.CategoryAttribute("Remove_Profile_Changes")]
         public virtual void EvergreenJnr_AccountDetails_CheckThatErrorIsNotDisplayedAfterChangingProfileData()
         {
@@ -109,6 +110,7 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_ProfileDetails
                         "EvergreenJnr_ProfileDetails",
                         "AccountDetailsFunctionality",
                         "DAS10756",
+                        "DAS12947",
                         "Remove_Profile_Changes"});
             this.ScenarioSetup(scenarioInfo);
             this.FeatureBackground();
@@ -130,6 +132,7 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_ProfileDetails
         [NUnit.Framework.CategoryAttribute("EvergreenJnr_ProfileDetails")]
         [NUnit.Framework.CategoryAttribute("AccountDetailsFunctionality")]
         [NUnit.Framework.CategoryAttribute("DAS10756")]
+        [NUnit.Framework.CategoryAttribute("DAS12947")]
         [NUnit.Framework.CategoryAttribute("Remove_Profile_Changes")]
         public virtual void EvergreenJnr_AccountDetails_CheckThatCorrectErrorMessagesAreDisplayed()
         {
@@ -165,6 +168,7 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_ProfileDetails
                         "EvergreenJnr_ProfileDetails",
                         "AccountDetailsFunctionality",
                         "DAS10756",
+                        "DAS12947",
                         "Remove_Profile_Changes"});
             this.ScenarioSetup(scenarioInfo);
             this.FeatureBackground();
@@ -206,6 +210,7 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_ProfileDetails
         [NUnit.Framework.CategoryAttribute("EvergreenJnr_ProfileDetails")]
         [NUnit.Framework.CategoryAttribute("AccountDetailsFunctionality")]
         [NUnit.Framework.CategoryAttribute("DAS11524")]
+        [NUnit.Framework.CategoryAttribute("DAS12947")]
         [NUnit.Framework.CategoryAttribute("Remove_Profile_Changes")]
         public virtual void EvergreenJnr_AccountDetails_CheckThatErrorIsNotDisplayedAfterChangingProfileDataTwice()
         {
@@ -242,6 +247,7 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_ProfileDetails
                         "EvergreenJnr_ProfileDetails",
                         "AccountDetailsFunctionality",
                         "DAS11524",
+                        "DAS12947",
                         "Remove_Profile_Changes"});
             this.ScenarioSetup(scenarioInfo);
             this.FeatureBackground();
@@ -316,6 +322,7 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_ProfileDetails
         [NUnit.Framework.CategoryAttribute("EvergreenJnr_ProfileDetails")]
         [NUnit.Framework.CategoryAttribute("AccountDetailsFunctionality")]
         [NUnit.Framework.CategoryAttribute("DAS11646")]
+        [NUnit.Framework.CategoryAttribute("DAS12947")]
         [NUnit.Framework.CategoryAttribute("Remove_Profile_Changes")]
         public virtual void EvergreenJnr_AccountDetails_CheckThatNotificationMessageDisappearsAfter5Seconds()
         {
@@ -351,6 +358,7 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_ProfileDetails
                         "EvergreenJnr_ProfileDetails",
                         "AccountDetailsFunctionality",
                         "DAS11646",
+                        "DAS12947",
                         "Remove_Profile_Changes"});
             this.ScenarioSetup(scenarioInfo);
             this.FeatureBackground();

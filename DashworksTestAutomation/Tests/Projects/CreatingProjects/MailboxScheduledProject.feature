@@ -1,36 +1,36 @@
 ﻿Feature: CreateMailboxScheduledProject
 	Runs Project related tests
 
+Background: Pre-Conditions
+	Given User is logged in to the Projects
+	Then "Projects Home" page is displayed to the user
+
 @Senior @Projects_Administration @MailboxScheduledProject @Delete_Newly_Created_Team
 Scenario: Projects_CreateMailboxScheduledProject
-	Given User is on Dashworks Homepage
-	Then Login Page is displayed to the user
-	When User provides the Login and Password and clicks on the login button
-	Then Dashworks homepage is displayed to the user in a logged in state
-	When User navigate to Projects link
-	Then "Projects Home" page is displayed to the user
 	When User clicks create Project button
 	Then "Create Project" page is displayed to the user
 	When User creates Project
-	| ProjectName     | ProjectShortName | ProjectDescription | ProjectTypeString       |
-	| TestProjectName | TestText         | TestText           | MailboxScheduledProject |
-	And User clicks "Create Project" button
+	| ProjectName                 | ProjectShortName | ProjectDescription | ProjectTypeString       |
+	| 000 MailboxScheduledProject | TestText         | TestText           | MailboxScheduledProject |
+	Then Error message is not displayed
+	When User clicks "Create Project" button
+	Then Error message is not displayed
 	Then "Manage Project Details" page is displayed to the user
 	When User navigate to Manage link
 	And User select "Manage Users" option in Management Console
 	Then User create a new Dashworks User
-	| Username | FullName                  | Password | ConfirmPassword |
-	| AAA0Test | MailboxScheduledProject 0 | 1234qwer | 1234qwer        |
+	| Username                    | FullName                  | Password | ConfirmPassword |
+	| AAA0MailboxScheduledProject | MailboxScheduledProject 0 | 1234qwer | 1234qwer        |
 	And Success message is displayed
 	And created User is displayed in the table
 	And User create a new Dashworks User
-	| Username | FullName                  | Password | ConfirmPassword |
-	| AAA1Test | MailboxScheduledProject 1 | 1234qwer | 1234qwer        |
+	| Username                    | FullName                  | Password | ConfirmPassword |
+	| AAA1MailboxScheduledProject | MailboxScheduledProject 1 | 1234qwer | 1234qwer        |
 	And Success message is displayed
 	And created User is displayed in the table
 	And User create a new Dashworks User
-	| Username | FullName                  | Password | ConfirmPassword |
-	| AAA2Test | MailboxScheduledProject 2 | 1234qwer | 1234qwer        |
+	| Username                    | FullName                  | Password | ConfirmPassword |
+	| AAA2MailboxScheduledProject | MailboxScheduledProject 2 | 1234qwer | 1234qwer        |
 	And Success message is displayed
 	And created User is displayed in the table
 	When User navigate to Dashworks User Site link
@@ -131,16 +131,22 @@ Scenario: Projects_CreateMailboxScheduledProject
 	And User create Stage
 	| StageName |
 	| Stage 1   |
+	When User clicks "Create Stage" button
+	Then Error message is not displayed
 	Then created Stage is displayed in the table
 	When User clicks "Create Stage" button
 	And User create Stage
 	| StageName |
 	| Stage 2   |
+	When User clicks "Create Stage" button
+	Then Error message is not displayed
 	Then created Stage is displayed in the table
 	When User clicks "Create Stage" button
 	And User create Stage
 	| StageName |
 	| Stage 3   |
+	When User clicks "Create Stage" button
+	Then Error message is not displayed
 	Then created Stage is displayed in the table
 		#Creating Mail Template
 	When User navigate to "Mail Templates" tab
@@ -173,8 +179,8 @@ Scenario: Projects_CreateMailboxScheduledProject
 	And User navigate to "Emails" page
 	And User clicks "Add Email" button
 	When User create new Email
-	| CountDays | SendOnceOnly | RequestTypesAll | ApllyEmailToAll | To                                 |
-	| true      | true         | false           | true            | MailboxScheduledProject0@email.com |
+	| CountDays | To                                 | SendOnceOnly | RequestTypesAll | ApllyEmailToAll |
+	| true      | MailboxScheduledProject0@email.com | true         | false           | true            |
 	And User clicks "Create Email Notification" button
 	Then Success message is displayed with "Email notification for task successfully created" text
 	When User clicks "« Go Back" button

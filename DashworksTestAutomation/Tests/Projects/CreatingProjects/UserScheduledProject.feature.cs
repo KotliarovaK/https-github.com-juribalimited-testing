@@ -60,6 +60,12 @@ namespace DashworksTestAutomation.Tests.Projects.CreatingProjects
             testRunner.CollectScenarioErrors();
         }
         
+        public virtual void FeatureBackground()
+        {
+            testRunner.Given("User is logged in to the Projects", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
+            testRunner.Then("\"Projects Home\" page is displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+        }
+        
         [NUnit.Framework.TestAttribute()]
         [NUnit.Framework.DescriptionAttribute("Projects_CreateUserScheduledProject")]
         [NUnit.Framework.CategoryAttribute("Senior")]
@@ -74,12 +80,7 @@ namespace DashworksTestAutomation.Tests.Projects.CreatingProjects
                         "UserScheduledProject",
                         "Delete_Newly_Created_Team"});
             this.ScenarioSetup(scenarioInfo);
-            testRunner.Given("User is on Dashworks Homepage", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
-            testRunner.Then("Login Page is displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-            testRunner.When("User provides the Login and Password and clicks on the login button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-            testRunner.Then("Dashworks homepage is displayed to the user in a logged in state", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-            testRunner.When("User navigate to Projects link", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-            testRunner.Then("\"Projects Home\" page is displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+            this.FeatureBackground();
             testRunner.When("User clicks create Project button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
             testRunner.Then("\"Create Project\" page is displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
             TechTalk.SpecFlow.Table table1 = new TechTalk.SpecFlow.Table(new string[] {
@@ -88,12 +89,14 @@ namespace DashworksTestAutomation.Tests.Projects.CreatingProjects
                         "ProjectDescription",
                         "ProjectTypeString"});
             table1.AddRow(new string[] {
-                        "TestProjectName",
+                        "000 UserScheduledProject",
                         "TestText",
                         "TestText",
                         "UserScheduledProject"});
             testRunner.When("User creates Project", ((string)(null)), table1, "When ");
-            testRunner.And("User clicks \"Create Project\" button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+            testRunner.Then("Error message is not displayed", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+            testRunner.When("User clicks \"Create Project\" button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+            testRunner.Then("Error message is not displayed", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
             testRunner.Then("\"Manage Project Details\" page is displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
             testRunner.When("User navigate to Manage link", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
             testRunner.And("User select \"Manage Users\" option in Management Console", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
@@ -103,7 +106,7 @@ namespace DashworksTestAutomation.Tests.Projects.CreatingProjects
                         "Password",
                         "ConfirmPassword"});
             table2.AddRow(new string[] {
-                        "AAA0Test",
+                        "AAA0UserScheduledProject",
                         "UserScheduledProject 0",
                         "1234qwer",
                         "1234qwer"});
@@ -116,7 +119,7 @@ namespace DashworksTestAutomation.Tests.Projects.CreatingProjects
                         "Password",
                         "ConfirmPassword"});
             table3.AddRow(new string[] {
-                        "AAA1Test",
+                        "AAA1UserScheduledProject",
                         "UserScheduledProject 1",
                         "1234qwer",
                         "1234qwer"});
@@ -129,7 +132,7 @@ namespace DashworksTestAutomation.Tests.Projects.CreatingProjects
                         "Password",
                         "ConfirmPassword"});
             table4.AddRow(new string[] {
-                        "AAA2Test",
+                        "AAA2UserScheduledProject",
                         "UserScheduledProject 2",
                         "1234qwer",
                         "1234qwer"});
@@ -300,6 +303,8 @@ namespace DashworksTestAutomation.Tests.Projects.CreatingProjects
             table16.AddRow(new string[] {
                         "Stage 1"});
             testRunner.And("User create Stage", ((string)(null)), table16, "And ");
+            testRunner.When("User clicks \"Create Stage\" button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+            testRunner.Then("Error message is not displayed", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
             testRunner.Then("created Stage is displayed in the table", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
             testRunner.When("User clicks \"Create Stage\" button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
             TechTalk.SpecFlow.Table table17 = new TechTalk.SpecFlow.Table(new string[] {
@@ -307,6 +312,8 @@ namespace DashworksTestAutomation.Tests.Projects.CreatingProjects
             table17.AddRow(new string[] {
                         "Stage 2"});
             testRunner.And("User create Stage", ((string)(null)), table17, "And ");
+            testRunner.When("User clicks \"Create Stage\" button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+            testRunner.Then("Error message is not displayed", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
             testRunner.Then("created Stage is displayed in the table", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
             testRunner.When("User clicks \"Create Stage\" button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
             TechTalk.SpecFlow.Table table18 = new TechTalk.SpecFlow.Table(new string[] {
@@ -314,6 +321,8 @@ namespace DashworksTestAutomation.Tests.Projects.CreatingProjects
             table18.AddRow(new string[] {
                         "Stage 3"});
             testRunner.And("User create Stage", ((string)(null)), table18, "And ");
+            testRunner.When("User clicks \"Create Stage\" button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+            testRunner.Then("Error message is not displayed", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
             testRunner.Then("created Stage is displayed in the table", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
             testRunner.When("User navigate to \"Mail Templates\" tab", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
             testRunner.Then("\"Manage Mail Templates\" page is displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
@@ -395,16 +404,16 @@ namespace DashworksTestAutomation.Tests.Projects.CreatingProjects
             testRunner.And("User clicks \"Add Email\" button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
             TechTalk.SpecFlow.Table table23 = new TechTalk.SpecFlow.Table(new string[] {
                         "CountDays",
+                        "To",
                         "SendOnceOnly",
                         "RequestTypesAll",
-                        "ApllyEmailToAll",
-                        "To"});
+                        "ApllyEmailToAll"});
             table23.AddRow(new string[] {
                         "true",
+                        "UserScheduledProject0@email.com",
                         "true",
                         "false",
-                        "true",
-                        "UserScheduledProject0@email.com"});
+                        "true"});
             testRunner.When("User create new Email", ((string)(null)), table23, "When ");
             testRunner.And("User clicks \"Create Email Notification\" button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
             testRunner.Then("Success message is displayed with \"Email notification for task successfully creat" +
@@ -536,16 +545,16 @@ namespace DashworksTestAutomation.Tests.Projects.CreatingProjects
             testRunner.And("User clicks \"Add Email\" button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
             TechTalk.SpecFlow.Table table30 = new TechTalk.SpecFlow.Table(new string[] {
                         "CountDays",
+                        "To",
                         "SendOnceOnly",
                         "RequestTypesAll",
-                        "ApllyEmailToAll",
-                        "To"});
+                        "ApllyEmailToAll"});
             table30.AddRow(new string[] {
                         "true",
+                        "UserScheduledProject2@email.com",
                         "true",
                         "true",
-                        "true",
-                        "UserScheduledProject2@email.com"});
+                        "true"});
             testRunner.When("User create new Email", ((string)(null)), table30, "When ");
             testRunner.And("User clicks \"Create Email Notification\" button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
             testRunner.Then("Success message is displayed with \"Email notification for task successfully creat" +
@@ -561,7 +570,7 @@ namespace DashworksTestAutomation.Tests.Projects.CreatingProjects
                         "TeamName",
                         "ShortDescription"});
             table31.AddRow(new string[] {
-                        "000 UserScheduledProject",
+                        "000 UserScheduledProject Team",
                         "TestText 0"});
             testRunner.And("User create Team", ((string)(null)), table31, "And ");
             testRunner.And("User clicks \"Add Member\" button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
@@ -575,7 +584,7 @@ namespace DashworksTestAutomation.Tests.Projects.CreatingProjects
                         "TeamName",
                         "ShortDescription"});
             table32.AddRow(new string[] {
-                        "001 UserScheduledProject",
+                        "001 UserScheduledProject Team",
                         "TestText 1"});
             testRunner.And("User create Team", ((string)(null)), table32, "And ");
             testRunner.When("User clicks \"Add Member\" button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
@@ -589,7 +598,7 @@ namespace DashworksTestAutomation.Tests.Projects.CreatingProjects
                         "TeamName",
                         "ShortDescription"});
             table33.AddRow(new string[] {
-                        "002 UserScheduledProject",
+                        "002 UserScheduledProject Team",
                         "TestText 2"});
             testRunner.And("User create Team", ((string)(null)), table33, "And ");
             testRunner.And("User clicks \"Add Member\" button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");

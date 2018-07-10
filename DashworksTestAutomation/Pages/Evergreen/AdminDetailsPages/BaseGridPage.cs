@@ -73,6 +73,9 @@ namespace DashworksTestAutomation.Pages.Evergreen.AdminDetailsPages
         [FindsBy(How = How.XPath, Using = ".//button[@aria-label='Toggle panel']")]
         public IWebElement AddItemCheckbox { get; set; }
 
+        [FindsBy(How = How.XPath, Using = ".//div[@class='mat-checkbox-inner-container']")]
+        public IWebElement AllItemCheckbox { get; set; }
+
         [FindsBy(How = How.XPath, Using = ".//button[@aria-label='Toggle panel']")]
         public IWebElement PlusButton { get; set; }
 
@@ -185,6 +188,18 @@ namespace DashworksTestAutomation.Pages.Evergreen.AdminDetailsPages
             Driver.FindElement(byControl).SendKeys(text);
         }
 
+        public void GetObgectField(string text)
+        {
+            By byControl =
+                By.XPath(
+                    $".//div[@class='mat-form-field-infix']/input");
+            Driver.WaitForDataLoading();
+            Driver.WaitWhileControlIsNotDisplayed(byControl);
+            Driver.FindElement(byControl).Click();
+            Driver.FindElement(byControl).Clear();
+            Driver.FindElement(byControl).SendKeys(text);
+        }
+
         public IWebElement GetSearchFieldTextByColumnName(string columnName)
         {
             var selector = By.XPath($".//div[@role='presentation']/div[2]/div[{GetColumnNumberByName(columnName)}]//div[@class='ag-floating-filter-full-body']//input[@placeholder='Search']");
@@ -229,6 +244,7 @@ namespace DashworksTestAutomation.Pages.Evergreen.AdminDetailsPages
 
         public void AddItem(string itemName)
         {
+            SearchTextbox.Clear();
             SearchTextbox.SendKeys(itemName);
             var selector = $".//span[text()='{itemName}']";
             Driver.WaitWhileControlIsNotDisplayed(By.XPath(selector));
