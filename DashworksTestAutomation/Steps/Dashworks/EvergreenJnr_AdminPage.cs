@@ -1092,7 +1092,7 @@ namespace DashworksTestAutomation.Steps.Dashworks
         [AfterScenario("Delete_Newly_Created_Project")]
         public void DeleteNewlyCreatedProject()
         {
-            var requestUri = $"{UrlProvider.RestClientBaseUrl}/admin/projects/deleteProjects";
+            var requestUri = $"{UrlProvider.RestClientBaseUrl}admin/projects/deleteProjects";
 
             foreach (var projectName in _projects.Value)
             {
