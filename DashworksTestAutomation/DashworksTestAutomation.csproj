@@ -211,6 +211,7 @@
     <Compile Include="DTO\RuntimeVariables\PrjLastDeletedStageName.cs" />
     <Compile Include="DTO\RuntimeVariables\PrjLastDeletedTeamName.cs" />
     <Compile Include="DTO\RuntimeVariables\PrjLastDeletedUserName.cs" />
+    <Compile Include="DTO\RuntimeVariables\Projects.cs" />
     <Compile Include="DTO\RuntimeVariables\ResponceDetails.cs" />
     <Compile Include="DTO\RuntimeVariables\RestWebClient.cs" />
     <Compile Include="DTO\RuntimeVariables\TeamName.cs" />
