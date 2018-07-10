@@ -1135,8 +1135,8 @@ Scenario: EvergreenJnr_AdminPage_CheckingThatTheProjectIsUpdatedWithoutErrors
 	And User expands the object to add 
 	And User selects following Objects to the Project
 	| Objects        |
-	| 77JBRXGQLKJ6ZE |
-	| 7FKJAVNVA2AGEM |
+	| 0SH2BQ3EPXTEWN |
+	| 30LA8G32UF7HQC |
 	When User clicks "Applications" tab in the Project Scope Changes section
 	And User expands the object to add 
 	And User selects following Objects to the Project
@@ -1373,8 +1373,13 @@ Scenario: EvergreenJnr_AdminPage_CheckThat500ISEInvalidColumnNameIsNotDisplayedW
 	And User clicks content from "Project" column
 	Then Project "TestProject12349" is displayed to user
 	And There are no errors in the browser console
+	Then Error message is not displayed
+	When User clicks "Applications" tab in the Project Scope Changes section
+	Then There are no errors in the browser console
+	Then Error message is not displayed
 	When User selects "Scope Details" tab on the Project details page
 	Then There are no errors in the browser console
+	Then Error message is not displayed
 	When User click on Back button
 	And User enters "TestProject12349" text in the Search field for "Project" column
 	And User selects all rows on the grid
