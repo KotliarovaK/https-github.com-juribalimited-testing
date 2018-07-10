@@ -599,6 +599,7 @@ Scenario: EvergreenJnr_AdminPage_CheckThatFiltersAreWorkingCorrectlyOnTheAdminPa
 	And User enters "TZV202" text in the Search field for "Username" column
 	Then Counter shows "1" found rows
 	When User click on Back button
+	When User enters "Unassigned" text in the Search field for "Bucket" column
 	And User clicks content from "Bucket" column
 	When User clicks "Mailboxes" tab
 	And User enters "DiscoverySearchMailbox{D919BA05-46A6-415f-80AD-7E09334BB852}@juriba1.onmicrosoft.com" text in the Search field for "Email Address (Primary)" column
