@@ -1092,7 +1092,7 @@ namespace DashworksTestAutomation.Steps.Dashworks
         [AfterScenario("Delete_Newly_Created_Project")]
         public void DeleteNewlyCreatedProject()
         {
-            var requestUri = $"{UrlProvider.RestClientBaseUrl}/admin/projects/deleteProjects";
+            var requestUri = $"{UrlProvider.RestClientBaseUrl}admin/projects/deleteProjects";
 
             foreach (var projectName in _projects.Value)
             {
@@ -1116,7 +1116,7 @@ namespace DashworksTestAutomation.Steps.Dashworks
         {
             var projectId =
                 DatabaseHelper.ExecuteReader(
-                    $"SELECT [ProjectID] FROM[PM].[dbo].[Projects] where[ProjectName] = '{projectName}'", 0)[0];
+                    $"SELECT [ProjectID] FROM[PM].[dbo].[Projects] where[ProjectName] = '{projectName}'", 0).LastOrDefault();
             return projectId;
         }
 
