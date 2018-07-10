@@ -743,6 +743,15 @@ Scenario: EvergreenJnr_ApplicationsList_CheckThatProjectGroupTargetStateFiltersI
 	| UNCATEGORISED      |
 	Then "20" rows are displayed in the agGrid
 	When User have removed "Windows7Mi: Application Rationalisation" filter
+	And User Add And "Windows7Mi: Application Rationalisation" filter where type is "Equal" without added column and following checkboxes:
+	| SelectedCheckboxes |
+	| RETIRE			 |
+	Then message 'No applications found' is displayed to the user
+	When User have removed "Windows7Mi: Application Rationalisation" filter
+	And User Add And "Windows7Mi: Application Rationalisation" filter where type is "Equal" without added column and following checkboxes:
+	| SelectedCheckboxes |
+	| FORWARD PATH		 |
+	Then message 'No applications found' is displayed to the user
 
 @Evergreen @Applications @EvergreenJnr_FilterFeature @FilterFunctionality @DAS12200
 Scenario: EvergreenJnr_ApplicationsList_CheckThatAdvancedUserFilterReturnsCorrectResults
