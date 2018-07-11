@@ -303,7 +303,7 @@ namespace DashworksTestAutomation.Steps.Dashworks
         public void ThenBucketPop_UpHasStandardSizeOnTheDetailsPage()
         {
             var detailsPage = _driver.NowAt<DetailsPage>();
-            Assert.AreEqual("1638.4px", detailsPage.GetInstalledBucketWindowWidth());
+            Assert.AreEqual("1536px", detailsPage.GetInstalledBucketWindowWidth());
         }
 
         [When(@"User enters ""(.*)"" text in the Filter field")]
