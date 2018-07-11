@@ -236,7 +236,7 @@ Scenario: EvergreenJnr_AdminPage_CheckThatYouCanNotDeleteTheDefaultBucketWarning
 	And User selects "Delete" in the Actions
 	When User clicks Delete button
 	Then "You can not delete the default bucket" warning message is not displayed on the Buckets page
-	Then Warning message with "These bucket will be permanently deleted and any objects within them reassigned to the default bucket" text is displayed on the Admin page
+	Then Warning message with "This bucket will be permanently deleted and any objects within it reassigned to the default bucket" text is displayed on the Admin page
 
 @Evergreen @Admin @EvergreenJnr_AdminPage @AdminPage @DAS12182 @Delete_Newly_Created_Project
 Scenario: EvergreenJnr_AdminPage_CheckThatNumberOfApplicationsInProjectScopeIsCorrectlyUpdated
@@ -365,7 +365,7 @@ Scenario: EvergreenJnr_AdminPage_CheckThatErrorsDoNotAppearAfterUpdatingTeamDesc
 	And There are no errors in the browser console
 	And Delete "TestTeam1" Team in the Administration
 
-@Evergreen @Admin @EvergreenJnr_AdminPage @AdminPage @DAS11765 @DAS12170
+@Evergreen @Admin @EvergreenJnr_AdminPage @AdminPage @DAS11765 @DAS12170 @Not_Run
 Scenario: EvergreenJnr_AdminPage_CheckThatMailboxesAreSuccessfullyAddedToBuckets
 	When User clicks Admin on the left-hand menu
 	Then Admin page should be displayed to the user
@@ -417,7 +417,7 @@ Scenario: EvergreenJnr_AdminPage_CheckThatAllAssociationsAreSelectedByDefaultInT
 	And User navigates to the "Application Scope" tab in the Scope section on the Project details page
 	Then All Association are selected by default
 
-@Evergreen @Admin @EvergreenJnr_AdminPage @AdminPage @DAS12170
+@Evergreen @Admin @EvergreenJnr_AdminPage @AdminPage @DAS12170 @Not_Run
 Scenario: EvergreenJnr_AdminPage_CheckThatConsoleErrorsAreNotDisplayedAfterAddingDevicesInTheBuckets
 	When User clicks Admin on the left-hand menu
 	Then Admin page should be displayed to the user
@@ -447,7 +447,7 @@ Scenario: EvergreenJnr_AdminPage_CheckThatErrorsDoNotAppearAfterAddingDevicesToT
 	Then No items text is displayed
 	And There are no errors in the browser console
 
-@Evergreen @Admin @EvergreenJnr_AdminPage @AdminPage @DAS12170
+@Evergreen @Admin @EvergreenJnr_AdminPage @AdminPage @DAS12170 @Not_Run
 Scenario: EvergreenJnr_AdminPage_CheckThatConsoleErrorsAreNotDisplayedAfterAddingUsersInTheBuckets
 	When User clicks Admin on the left-hand menu
 	Then Admin page should be displayed to the user
@@ -765,13 +765,13 @@ Scenario: EvergreenJnr_AdminPage_CheckMessageThatDisplayedWhenDeletingBucket
 	And User clicks on Actions button
 	And User selects "Delete" in the Actions
 	And User clicks Delete button 
-	Then Warning message with "These bucket will be permanently deleted and any objects within them reassigned to the default bucket" text is displayed on the Admin page
+	Then Warning message with "This bucket will be permanently deleted and any objects within it reassigned to the default bucket" text is displayed on the Admin page
 	When User clicks Cancel button in the warning message on the Admin page
 	Then Warning message is not displayed on the Admin page
 	When User clicks on Actions button
 	And User selects "Delete" in the Actions
 	And User clicks Delete button 
-	Then Warning message with "These bucket will be permanently deleted and any objects within them reassigned to the default bucket" text is displayed on the Admin page
+	Then Warning message with "This bucket will be permanently deleted and any objects within it reassigned to the default bucket" text is displayed on the Admin page
 	When User clicks Delete button in the warning message
 	Then Success message is displayed and contains "The selected bucket has been deleted" text
 

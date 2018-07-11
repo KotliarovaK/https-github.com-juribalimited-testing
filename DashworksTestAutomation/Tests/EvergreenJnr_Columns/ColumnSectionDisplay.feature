@@ -178,3 +178,85 @@ Scenario: EvergreenJnr_MailboxesList_CheckTheColumnCategoriesUpdatesAfterAddingC
 	Then ColumnName is added to the list
 	| ColumnName                 |
 	| EmailMigra: Scheduled date |
+
+@Evergreen @Devices @EvergreenJnr_GridActions @ColumnOrder @DAS11463
+Scenario: EvergreenJnr_AllLists_CheckThatColumnsIsNotRemovedAfterDraggingThemOutsideTheAgGrid
+	When User clicks "Devices" on the left-hand menu
+	Then "Devices" list should be displayed to the user
+	When User moves "Hostname" column beyond the Grid
+	When User moves "Device Type" column beyond the Grid
+	When User moves "Operating System" column beyond the Grid
+	When User moves "Owner Display Name" column beyond the Grid
+	Then Column is displayed in following order:
+	| ColumnName         |
+	| Hostname           |
+	| Device Type        |
+	| Operating System   |
+	| Owner Display Name |
+	When User clicks the Columns button
+	Then Columns panel is displayed to the user
+	Then ColumnName is added to the list
+	| ColumnName         |
+	| Hostname           |
+	| Device Type        |
+	| Operating System   |
+	| Owner Display Name |
+	When User clicks "Users" on the left-hand menu
+	Then "Users" list should be displayed to the user
+	When User moves "Username" column beyond the Grid
+	When User moves "Domain" column beyond the Grid
+	When User moves "Display Name" column beyond the Grid
+	When User moves "Distinguished Name" column beyond the Grid
+	Then Column is displayed in following order:
+	| ColumnName         |
+	| Username           |
+	| Domain             |
+	| Display Name       |
+	| Distinguished Name |
+	When User clicks the Columns button
+	Then Columns panel is displayed to the user
+	Then ColumnName is added to the list
+	| ColumnName         |
+	| Username           |
+	| Domain             |
+	| Display Name       |
+	| Distinguished Name |
+	When User clicks "Applications" on the left-hand menu
+	Then "Applications" list should be displayed to the user
+	When User moves "Vendor" column beyond the Grid
+	When User moves "Version" column beyond the Grid
+	Then Column is displayed in following order:
+	| ColumnName  |
+	| Application |
+	| Vendor      |
+	| Version     |
+	When User clicks the Columns button
+	Then Columns panel is displayed to the user
+	Then ColumnName is added to the list
+	| ColumnName  |
+	| Application |
+	| Vendor      |
+	| Version     |
+	When User clicks "Mailboxes" on the left-hand menu
+	Then "Mailboxes" list should be displayed to the user
+	When User moves "Email Address" column beyond the Grid
+	When User moves "Mailbox Platform" column beyond the Grid
+	When User moves "Mail Server" column beyond the Grid
+	When User moves "Mailbox Type" column beyond the Grid
+	When User moves "Owner Display Name" column beyond the Grid
+	Then Column is displayed in following order:
+	| ColumnName         |
+	| Email Address      |
+	| Mailbox Platform   |
+	| Mail Server        |
+	| Mailbox Type       |
+	| Owner Display Name |
+	When User clicks the Columns button
+	Then Columns panel is displayed to the user
+	Then ColumnName is added to the list
+	| ColumnName         |
+	| Email Address      |
+	| Mailbox Platform   |
+	| Mail Server        |
+	| Mailbox Type       |
+	| Owner Display Name |
