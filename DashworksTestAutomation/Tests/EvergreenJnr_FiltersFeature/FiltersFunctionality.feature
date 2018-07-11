@@ -210,7 +210,7 @@ Examples:
 	| Applications | Barry'sUse: Target App           | Python 2.2a4 (SMS_GEN) | 1         | Application   | Python 2.2a4            | Barry'sUse: Target App is Python 2.2a4 (SMS_GEN) |
 	| Mailboxes    | EmailMigra: BT/QMM Switch Status | Not Started            | 729       | Email Address | alex.cristea@juriba.com | EmailMigra: BT/QMM Switch Status is Not Started  |
 
-@Evergreen @Applications @EvergreenJnr_FilterFeature @FilterFunctionality @DAS10977
+@Evergreen @Applications @EvergreenJnr_FilterFeature @FilterFunctionality @DAS10977 @DAS12954
 Scenario: EvergreenJnr_ApplicationsList_CheckThatFilterIsRestoredCorrectlyAfterLeavingThePageAndGoingBackViaTheBrowserbackButtonForValuesFilters
 	When User clicks "Applications" on the left-hand menu
 	Then "Applications" list should be displayed to the user
@@ -222,7 +222,10 @@ Scenario: EvergreenJnr_ApplicationsList_CheckThatFilterIsRestoredCorrectlyAfterL
 	Then "Application is Microsoft Office 97, Professional Edition" is displayed in added filter info
 	Then "5" rows are displayed in the agGrid
 	When User perform search by "Microsoft Office 97, Professional Edition"
-	And User click content from "Application" column
+	And User clicks the Actions button
+	Then Actions panel is displayed to the user
+	Then Select All selectbox is unchecked
+	When User click content from "Application" column
 	Then User click back button in the browser
 	Then "5" rows are displayed in the agGrid
 	When User clicks the Filters button

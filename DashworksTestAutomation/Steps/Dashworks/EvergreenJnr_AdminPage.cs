@@ -630,7 +630,6 @@ namespace DashworksTestAutomation.Steps.Dashworks
         {
             var pageBase = _driver.NowAt<BaseGridPage>();
             _driver.WaitWhileControlIsNotDisplayed<BaseGridPage>(() => pageBase.SuccessMessage);
-
             var pageBuckets = _driver.NowAt<BucketsPage>();
             Assert.IsTrue(pageBuckets.SuccessUpdatedMessageBucketsPage(bucketName),
                 $"Success Message is not displayed for {bucketName}");
