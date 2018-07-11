@@ -3041,11 +3041,11 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_FiltersFeature
         [NUnit.Framework.TestCaseAttribute("Windows7Mi: Category", "None", "17,194", new string[0])]
         [NUnit.Framework.TestCaseAttribute("Windows7Mi: Values but no RAG", "Three", "1", new string[0])]
         [NUnit.Framework.TestCaseAttribute("Windows7Mi: SS Application List Completed", "Not Applicable", "5,161", new string[0])]
+        [NUnit.Framework.TestCaseAttribute("MigrationP: Category", "None", "17,220", new string[0])]
         [NUnit.Framework.TestCaseAttribute("Babel(Engl: Request Type", "Machines", "62", new string[0])]
         [NUnit.Framework.TestCaseAttribute("ComputerSc: Request Type", "Request Type A", "132", new string[0])]
-        [NUnit.Framework.TestCaseAttribute("ICSP: Request Type", "[Default (Computer)]", "8", new string[0])]
+        [NUnit.Framework.TestCaseAttribute("MigrationP: Request Type", "[Default (Computer)]", "41", new string[0])]
         [NUnit.Framework.TestCaseAttribute("UserSchedu: Request Type", "Request Type A", "60", new string[0])]
-        [NUnit.Framework.TestCaseAttribute("Windows7Mi: Request Type", "Computer: PC Rebuild", "1", new string[0])]
         public virtual void EvergreenJnr_DevicesList_CheckThat500ISEInvalidColumnNameErrorIsNotDisplayedIfUseSelectedFilterOnDevicesPage(string filterName, string selectedCheckboxes, string rows, string[] exampleTags)
         {
             System.Exception lastException = null;
@@ -3115,9 +3115,9 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_FiltersFeature
         [NUnit.Framework.TestCaseAttribute("Windows7Mi: Category", "Terminated", "1", new string[0])]
         [NUnit.Framework.TestCaseAttribute("Windows7Mi: Read Only on Bulk Update Page", "Not Applicable", "4,642", new string[0])]
         [NUnit.Framework.TestCaseAttribute("Barry\'sUse: Category", "None", "41,339", new string[0])]
-        [NUnit.Framework.TestCaseAttribute("EmailMigra: Category", "None", "41,339", new string[0])]
-        [NUnit.Framework.TestCaseAttribute("Babel(Engl: Request Type", "Overseers", "34", new string[0])]
-        [NUnit.Framework.TestCaseAttribute("ComputerSc: Group User No Request Type", "Not Applicable", "1,981", new string[0])]
+        [NUnit.Framework.TestCaseAttribute("ComputerSc: Group User Default Request Type", "Not Applicable", "1,789", new string[0])]
+        [NUnit.Framework.TestCaseAttribute("Havoc(BigD: Request Type", "[Default (User)]", "7,578", new string[0])]
+        [NUnit.Framework.TestCaseAttribute("UserSchedu: Group User Default Request Type", "Not Applicable", "679", new string[0])]
         public virtual void EvergreenJnr_UsersList_CheckThat500ISEInvalidColumnNameErrorIsNotDisplayedIfUseSelectedFilterOnUsersPage(string filterName, string selectedCheckboxes, string rows, string[] exampleTags)
         {
             System.Exception lastException = null;
@@ -3186,23 +3186,11 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_FiltersFeature
         [NUnit.Framework.CategoryAttribute("DAS12351")]
         [NUnit.Framework.TestCaseAttribute("Windows7Mi: Category", "A Star Packages", "3", new string[0])]
         [NUnit.Framework.TestCaseAttribute("Windows7Mi: Technical Test", "Started", "4", new string[0])]
-        [NUnit.Framework.TestCaseAttribute("Babel(Engl: Category", "None", "2,223", new string[0])]
-        [NUnit.Framework.TestCaseAttribute("ComputerSc: Category", "None", "2,223", new string[0])]
         [NUnit.Framework.TestCaseAttribute("EmailMigra: Category", "None", "2,223", new string[0])]
-        [NUnit.Framework.TestCaseAttribute("Havoc(BigD: Category", "None", "2,223", new string[0])]
-        [NUnit.Framework.TestCaseAttribute("ICSP: Category", "i-app category", "148", new string[0])]
-        [NUnit.Framework.TestCaseAttribute("MigrationP: Category", "None", "2,223", new string[0])]
-        [NUnit.Framework.TestCaseAttribute("prK: Category", "app category K", "196", new string[0])]
         [NUnit.Framework.TestCaseAttribute("UserSchedu: Category", "None", "2,223", new string[0])]
         [NUnit.Framework.TestCaseAttribute("Babel(Engl: Request Type", "Tools", "302", new string[0])]
-        [NUnit.Framework.TestCaseAttribute("ComputerSc: Request Type", "Request Type A", "55", new string[0])]
         [NUnit.Framework.TestCaseAttribute("EmailMigra: Request Type", "Public Folder", "50", new string[0])]
-        [NUnit.Framework.TestCaseAttribute("Havoc(BigD: Request Type", "[Default (Application)]", "1,067", new string[0])]
-        [NUnit.Framework.TestCaseAttribute("ICSP: Request Type", "[Default (Application)]", "148", new string[0])]
-        [NUnit.Framework.TestCaseAttribute("MigrationP: Request Type", "Group A Application", "1", new string[0])]
-        [NUnit.Framework.TestCaseAttribute("prK: Request Type", "[Default (Application)]", "231", new string[0])]
         [NUnit.Framework.TestCaseAttribute("UserSchedu: Request Type", "Request Type A", "47", new string[0])]
-        [NUnit.Framework.TestCaseAttribute("Windows7Mi: Request Type", "Application: Request Type A", "7", new string[0])]
         public virtual void EvergreenJnr_ApplicationsList_CheckThat500ISEInvalidColumnNameErrorIsNotDisplayedIfUseSelectedFilterOnApplicationsPage(string filterName, string selectedCheckboxes, string rows, string[] exampleTags)
         {
             System.Exception lastException = null;
