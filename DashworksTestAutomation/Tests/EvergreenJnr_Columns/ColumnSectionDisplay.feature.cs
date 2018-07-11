@@ -741,6 +741,173 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_Columns
             testRunner.Then("ColumnName is added to the list", ((string)(null)), table20, "Then ");
             this.ScenarioCleanup();
         }
+        
+        [NUnit.Framework.TestAttribute()]
+        [NUnit.Framework.DescriptionAttribute("EvergreenJnr_AllLists_CheckThatColumnsIsNotRemovedAfterDraggingThemOutsideTheAgGr" +
+            "id")]
+        [NUnit.Framework.CategoryAttribute("Evergreen")]
+        [NUnit.Framework.CategoryAttribute("Devices")]
+        [NUnit.Framework.CategoryAttribute("EvergreenJnr_GridActions")]
+        [NUnit.Framework.CategoryAttribute("ColumnOrder")]
+        [NUnit.Framework.CategoryAttribute("DAS11463")]
+        public virtual void EvergreenJnr_AllLists_CheckThatColumnsIsNotRemovedAfterDraggingThemOutsideTheAgGrid()
+        {
+            System.Exception lastException = null;
+            for (int i = 0; (i <= 1); i = (i + 1))
+            {
+                try
+                {
+                    this.EvergreenJnr_AllLists_CheckThatColumnsIsNotRemovedAfterDraggingThemOutsideTheAgGridInternal();
+                    return;
+                }
+                catch (System.Exception exc)
+                {
+                    lastException = exc;
+                }
+                if (((i + 1) 
+                            <= 1))
+                {
+                    testRunner.OnScenarioEnd();
+                }
+            }
+            if ((lastException != null))
+            {
+                throw lastException;
+            }
+        }
+        
+        private void EvergreenJnr_AllLists_CheckThatColumnsIsNotRemovedAfterDraggingThemOutsideTheAgGridInternal()
+        {
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("EvergreenJnr_AllLists_CheckThatColumnsIsNotRemovedAfterDraggingThemOutsideTheAgGr" +
+                    "id", new string[] {
+                        "Evergreen",
+                        "Devices",
+                        "EvergreenJnr_GridActions",
+                        "ColumnOrder",
+                        "DAS11463"});
+            this.ScenarioSetup(scenarioInfo);
+            this.FeatureBackground();
+            testRunner.When("User clicks \"Devices\" on the left-hand menu", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+            testRunner.Then("\"Devices\" list should be displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+            testRunner.When("User moves \"Hostname\" column beyond the Grid", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+            testRunner.When("User moves \"Device Type\" column beyond the Grid", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+            testRunner.When("User moves \"Operating System\" column beyond the Grid", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+            testRunner.When("User moves \"Owner Display Name\" column beyond the Grid", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+            TechTalk.SpecFlow.Table table21 = new TechTalk.SpecFlow.Table(new string[] {
+                        "ColumnName"});
+            table21.AddRow(new string[] {
+                        "Hostname"});
+            table21.AddRow(new string[] {
+                        "Device Type"});
+            table21.AddRow(new string[] {
+                        "Operating System"});
+            table21.AddRow(new string[] {
+                        "Owner Display Name"});
+            testRunner.Then("Column is displayed in following order:", ((string)(null)), table21, "Then ");
+            testRunner.When("User clicks the Columns button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+            testRunner.Then("Columns panel is displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+            TechTalk.SpecFlow.Table table22 = new TechTalk.SpecFlow.Table(new string[] {
+                        "ColumnName"});
+            table22.AddRow(new string[] {
+                        "Hostname"});
+            table22.AddRow(new string[] {
+                        "Device Type"});
+            table22.AddRow(new string[] {
+                        "Operating System"});
+            table22.AddRow(new string[] {
+                        "Owner Display Name"});
+            testRunner.Then("ColumnName is added to the list", ((string)(null)), table22, "Then ");
+            testRunner.When("User clicks \"Users\" on the left-hand menu", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+            testRunner.Then("\"Users\" list should be displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+            testRunner.When("User moves \"Username\" column beyond the Grid", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+            testRunner.When("User moves \"Domain\" column beyond the Grid", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+            testRunner.When("User moves \"Display Name\" column beyond the Grid", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+            testRunner.When("User moves \"Distinguished Name\" column beyond the Grid", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+            TechTalk.SpecFlow.Table table23 = new TechTalk.SpecFlow.Table(new string[] {
+                        "ColumnName"});
+            table23.AddRow(new string[] {
+                        "Username"});
+            table23.AddRow(new string[] {
+                        "Domain"});
+            table23.AddRow(new string[] {
+                        "Display Name"});
+            table23.AddRow(new string[] {
+                        "Distinguished Name"});
+            testRunner.Then("Column is displayed in following order:", ((string)(null)), table23, "Then ");
+            testRunner.When("User clicks the Columns button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+            testRunner.Then("Columns panel is displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+            TechTalk.SpecFlow.Table table24 = new TechTalk.SpecFlow.Table(new string[] {
+                        "ColumnName"});
+            table24.AddRow(new string[] {
+                        "Username"});
+            table24.AddRow(new string[] {
+                        "Domain"});
+            table24.AddRow(new string[] {
+                        "Display Name"});
+            table24.AddRow(new string[] {
+                        "Distinguished Name"});
+            testRunner.Then("ColumnName is added to the list", ((string)(null)), table24, "Then ");
+            testRunner.When("User clicks \"Applications\" on the left-hand menu", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+            testRunner.Then("\"Applications\" list should be displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+            testRunner.When("User moves \"Vendor\" column beyond the Grid", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+            testRunner.When("User moves \"Version\" column beyond the Grid", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+            TechTalk.SpecFlow.Table table25 = new TechTalk.SpecFlow.Table(new string[] {
+                        "ColumnName"});
+            table25.AddRow(new string[] {
+                        "Application"});
+            table25.AddRow(new string[] {
+                        "Vendor"});
+            table25.AddRow(new string[] {
+                        "Version"});
+            testRunner.Then("Column is displayed in following order:", ((string)(null)), table25, "Then ");
+            testRunner.When("User clicks the Columns button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+            testRunner.Then("Columns panel is displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+            TechTalk.SpecFlow.Table table26 = new TechTalk.SpecFlow.Table(new string[] {
+                        "ColumnName"});
+            table26.AddRow(new string[] {
+                        "Application"});
+            table26.AddRow(new string[] {
+                        "Vendor"});
+            table26.AddRow(new string[] {
+                        "Version"});
+            testRunner.Then("ColumnName is added to the list", ((string)(null)), table26, "Then ");
+            testRunner.When("User clicks \"Mailboxes\" on the left-hand menu", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+            testRunner.Then("\"Mailboxes\" list should be displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+            testRunner.When("User moves \"Email Address\" column beyond the Grid", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+            testRunner.When("User moves \"Mailbox Platform\" column beyond the Grid", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+            testRunner.When("User moves \"Mail Server\" column beyond the Grid", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+            testRunner.When("User moves \"Mailbox Type\" column beyond the Grid", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+            testRunner.When("User moves \"Owner Display Name\" column beyond the Grid", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+            TechTalk.SpecFlow.Table table27 = new TechTalk.SpecFlow.Table(new string[] {
+                        "ColumnName"});
+            table27.AddRow(new string[] {
+                        "Email Address"});
+            table27.AddRow(new string[] {
+                        "Mailbox Platform"});
+            table27.AddRow(new string[] {
+                        "Mail Server"});
+            table27.AddRow(new string[] {
+                        "Mailbox Type"});
+            table27.AddRow(new string[] {
+                        "Owner Display Name"});
+            testRunner.Then("Column is displayed in following order:", ((string)(null)), table27, "Then ");
+            testRunner.When("User clicks the Columns button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+            testRunner.Then("Columns panel is displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+            TechTalk.SpecFlow.Table table28 = new TechTalk.SpecFlow.Table(new string[] {
+                        "ColumnName"});
+            table28.AddRow(new string[] {
+                        "Email Address"});
+            table28.AddRow(new string[] {
+                        "Mailbox Platform"});
+            table28.AddRow(new string[] {
+                        "Mail Server"});
+            table28.AddRow(new string[] {
+                        "Mailbox Type"});
+            table28.AddRow(new string[] {
+                        "Owner Display Name"});
+            testRunner.Then("ColumnName is added to the list", ((string)(null)), table28, "Then ");
+            this.ScenarioCleanup();
+        }
     }
 }
 #pragma warning restore

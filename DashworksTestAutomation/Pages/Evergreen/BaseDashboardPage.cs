@@ -141,6 +141,9 @@ namespace DashworksTestAutomation.Pages.Evergreen
         [FindsBy(How = How.XPath, Using = ".//mat-option[@aria-disabled='true']//span[text()='Project']")]
         public IWebElement DisabledCreateProjectButton { get; set; }
 
+        [FindsBy(How = How.XPath, Using = "//div[@class='top-tools-item top-tools-left-side']")]
+        public IWebElement OutsideGridPanel { get; set; }
+
         #region TableColumns
 
         [FindsBy(How = How.XPath, Using = ".//div[@colid='lastLogonDate'][@role='gridcell']")]

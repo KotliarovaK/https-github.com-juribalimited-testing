@@ -56,6 +56,13 @@ namespace DashworksTestAutomation.Steps.Dashworks
                 page.GetColumnHeaderByName(columnNameToMove));
         }
 
+        [When(@"User moves ""(.*)"" column beyond the Grid")]
+        public void WhenUserMovesColumnBeyondTheGrid(string columnName)
+        {
+            var page = _driver.NowAt<BaseDashboardPage>();
+            _driver.DragAndDrop(page.GetColumnHeaderByName(columnName), page.OutsideGridPanel);
+        }
+
         [When(@"User click on '(.*)' column header")]
         public void WhenUserClickOnColumnHeader(string columnName)
         {
