@@ -325,7 +325,7 @@ Scenario: EvergreenJnr_MailboxesLists_Search_CheckThatTableSearchWorksCorrectlyF
 	| 00B            | 16           |
 
 @Evergreen @Devices @EvergreenJnr_Search @Search @DAS11663
-Scenario: EvergreenJnr_DevicesLists_Search_CheckThatRowCountIsNotDisplayedWhenNoObjectsAreFoundAfterUsingAgGrid
+Scenario: EvergreenJnr_DevicesList_Search_CheckThatRowCountIsNotDisplayedWhenNoObjectsAreFoundAfterUsingAgGrid
 	When User clicks "Devices" on the left-hand menu
 	Then "Devices" list should be displayed to the user
 	And User enters SearchCriteria into the agGrid Search Box and the correct NumberOfRows are returned

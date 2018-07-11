@@ -662,7 +662,7 @@ Examples:
 	| Applications | Application Key |
 	| Mailboxes    | Mailbox Key     |
 
-@Evergreen @AdminPage @AllLists @EvergreenJnr_ItemDetails @ItemDetailsDisplay @DAS12883
+@Evergreen @AdminPage @AllLists @EvergreenJnr_ItemDetails @ItemDetailsDisplay @DAS12883 @Not_Run
 Scenario: EvergreenJnr_AllLists_CheckThatPopupIsBiggerAndIsShownProperlyBucketIsChangedSuccessfully
 	When User clicks Admin on the left-hand menu
 	Then Admin page should be displayed to the user
