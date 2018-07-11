@@ -56,7 +56,7 @@ Scenario: EvergreenJnr_DevicesList_CheckThatFiltersAndColumnsAreRestoredForSaved
 	Then Filters panel is displayed to the user
 	And "Windows7Mi: SS Application List Completed is Not Applicable or No" is displayed in added filter info
 
-@Evergreen @Devices @EvergreenJnr_StaticLists @FiltersDisplay @DAS10695 @DAS12152 @Delete_Newly_Created_List
+@Evergreen @Devices @EvergreenJnr_StaticLists @FiltersDisplay @DAS10695 @DAS12152 @DAS12966 @Delete_Newly_Created_List
 Scenario: EvergreenJnr_DevicesList_CheckThat500ErrorIsNotDisplayedWhenAddingExistingObjectToStaticList
 	When User clicks "Devices" on the left-hand menu
 	Then "Devices" list should be displayed to the user

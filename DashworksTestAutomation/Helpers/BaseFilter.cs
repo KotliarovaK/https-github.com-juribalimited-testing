@@ -307,7 +307,20 @@ namespace DashworksTestAutomation.Helpers
             selectboxes.Last().Click();
             foreach (var row in Table.Rows)
             {
-                _driver.FindElement(By.XPath($".//li//span[text()='{row["Association"]}']")).Click();
+                var selector = string.Empty;
+                if (row["Association"].Contains("'"))
+                {
+                    var strings = row["Association"].Split('\'');
+                    selector =
+                        $".//li//span[contains(text(),'{strings[0]}')][contains(text(), '{strings[1]}')]";
+                }
+                else
+                {
+                    selector = $".//li//span[text()='{row["Association"]}']";
+                }
+                selectboxes.Last().SendkeysWithDelay(row["Association"]);
+                _driver.FindElement(By.XPath(selector)).Click();
+                selectboxes.Last().Clear();
             }
 
             SaveFilter();

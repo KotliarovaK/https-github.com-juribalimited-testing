@@ -210,7 +210,7 @@ Examples:
 	| Applications | Barry'sUse: Target App           | Python 2.2a4 (SMS_GEN) | 1         | Application   | Python 2.2a4            | Barry'sUse: Target App is Python 2.2a4 (SMS_GEN) |
 	| Mailboxes    | EmailMigra: BT/QMM Switch Status | Not Started            | 729       | Email Address | alex.cristea@juriba.com | EmailMigra: BT/QMM Switch Status is Not Started  |
 
-@Evergreen @Applications @EvergreenJnr_FilterFeature @FilterFunctionality @DAS10977
+@Evergreen @Applications @EvergreenJnr_FilterFeature @FilterFunctionality @DAS10977 @DAS12954
 Scenario: EvergreenJnr_ApplicationsList_CheckThatFilterIsRestoredCorrectlyAfterLeavingThePageAndGoingBackViaTheBrowserbackButtonForValuesFilters
 	When User clicks "Applications" on the left-hand menu
 	Then "Applications" list should be displayed to the user
@@ -222,7 +222,10 @@ Scenario: EvergreenJnr_ApplicationsList_CheckThatFilterIsRestoredCorrectlyAfterL
 	Then "Application is Microsoft Office 97, Professional Edition" is displayed in added filter info
 	Then "5" rows are displayed in the agGrid
 	When User perform search by "Microsoft Office 97, Professional Edition"
-	And User click content from "Application" column
+	And User clicks the Actions button
+	Then Actions panel is displayed to the user
+	Then Select All selectbox is unchecked
+	When User click content from "Application" column
 	Then User click back button in the browser
 	Then "5" rows are displayed in the agGrid
 	When User clicks the Filters button
@@ -606,6 +609,65 @@ Scenario: EvergreenJnr_ApplicationsList_CheckThatCorrectDeviceDataIsReturnedAfte
 	| StaticList6581 | Entitled to device |
 	Then "38" rows are displayed in the agGrid
 
+@Evergreen @Applications @EvergreenJnr_FilterFeature @FilterFunctionality @DAS12202 @Delete_Newly_Created_List
+Scenario: EvergreenJnr_ApplicationsList_CheckThatCorrectDeviceDataIsReturnedWhenUsingAStaticListAsTheFilteredApplicationSavedList
+	When User add following columns using URL to the "Applications" page:
+	| ColumnName               |
+	| Device Count (Entitled)  |
+	| Device Count (Used)      |
+	| Device Count (Installed) |
+	Then Content is present in the newly added column
+	| ColumnName               |
+	| Device Count (Entitled)  |
+	| Device Count (Used)      |
+	| Device Count (Installed) |
+	When User clicks the Filters button
+	Then Filters panel is displayed to the user
+	When User add "Application" filter where type is "Equals" with added column and following value:
+	| Values                    |
+	| MKS Source Integrity 7.3d |
+	And User clicks the Actions button
+	Then Actions panel is displayed to the user
+	When User select all rows
+	And User selects "Create static list" in the Actions dropdown
+	And User create static list with "StaticList6778" name
+	And User clicks "Devices" on the left-hand menu
+	Then "Devices" list should be displayed to the user
+	When User clicks the Filters button
+	Then Filters panel is displayed to the user
+	When User add "Application (Saved List)" filter where type is "In list" with Selected Value and following Association:
+	| SelectedList   | Association        |
+	| StaticList6778 | Entitled to device |
+	Then "123" rows are displayed in the agGrid
+
+@Evergreen @Applications @EvergreenJnr_FilterFeature @FilterFunctionality @DAS12202 @Delete_Newly_Created_List
+Scenario: EvergreenJnr_ApplicationsList_CheckThatCorrectDeviceDataIsReturnedWhenUsingADynamicListAsTheFilteredApplicationSavedList
+	When User add following columns using URL to the "Applications" page:
+	| ColumnName               |
+	| Device Count (Entitled)  |
+	| Device Count (Used)      |
+	| Device Count (Installed) |
+	Then Content is present in the newly added column
+	| ColumnName               |
+	| Device Count (Entitled)  |
+	| Device Count (Used)      |
+	| Device Count (Installed) |
+	When User clicks the Filters button
+	Then Filters panel is displayed to the user
+	When User add "Application" filter where type is "Equals" with added column and following value:
+	| Values                    |
+	| MKS Source Integrity 7.3d |
+	When User clicks the Filters button
+	And User create dynamic list with "DynamicList4116" name on "Applications" page
+	And User clicks "Devices" on the left-hand menu
+	Then "Devices" list should be displayed to the user
+	When User clicks the Filters button
+	Then Filters panel is displayed to the user
+	When User add "Application (Saved List)" filter where type is "In list" with Selected Value and following Association:
+	| SelectedList    | Association        |
+	| DynamicList4116 | Entitled to device |
+	Then "123" rows are displayed in the agGrid
+
 @Evergreen @Applications @EvergreenJnr_FilterFeature @FilterFunctionality @DAS12875
 Scenario: EvergreenJnr_ApplicationsList_CheckThatNoConsoleErrorIsDisplayedAfterEditingUserSurnameFilter
 	When User clicks "Applications" on the left-hand menu
@@ -743,6 +805,15 @@ Scenario: EvergreenJnr_ApplicationsList_CheckThatProjectGroupTargetStateFiltersI
 	| UNCATEGORISED      |
 	Then "20" rows are displayed in the agGrid
 	When User have removed "Windows7Mi: Application Rationalisation" filter
+	And User Add And "Windows7Mi: Application Rationalisation" filter where type is "Equal" without added column and following checkboxes:
+	| SelectedCheckboxes |
+	| RETIRE			 |
+	Then message 'No applications found' is displayed to the user
+	When User have removed "Windows7Mi: Application Rationalisation" filter
+	And User Add And "Windows7Mi: Application Rationalisation" filter where type is "Equal" without added column and following checkboxes:
+	| SelectedCheckboxes |
+	| FORWARD PATH		 |
+	Then message 'No applications found' is displayed to the user
 
 @Evergreen @Applications @EvergreenJnr_FilterFeature @FilterFunctionality @DAS12200
 Scenario: EvergreenJnr_ApplicationsList_CheckThatAdvancedUserFilterReturnsCorrectResults
@@ -897,3 +968,21 @@ Examples:
 	| Devices   | Application Development | 873   |
 	| Users     | Application Development | 1,857 |
 	| Mailboxes | Application Development | 1,118 |
+
+@Evergreen @Devices @EvergreenJnr_FilterFeature @FilterFunctionality @DAS12522
+Scenario Outline: EvergreenJnr_DevicesList_CheckThat500ErrorIsNotDisplayedAfterApplyingGBFilters
+	When User clicks "Devices" on the left-hand menu
+	Then "Devices" list should be displayed to the user
+	When User clicks the Filters button
+	Then Filters panel is displayed to the user
+	When User add "<FilterName>" filter where type is "Equals" with added column and following value:
+	| Values   |
+	| <Values> |
+	Then "<RowsCount>" rows are displayed in the agGrid
+	And There are no errors in the browser console
+
+Examples: 
+	| FilterName                   | Values | RowsCount |
+	| Memory (GB)                  | 20.48  | 2         |
+	| HDD Total Size (GB)          | 152.77 | 2         |
+	| Target Drive Free Space (GB) | 995.54 | 1         |

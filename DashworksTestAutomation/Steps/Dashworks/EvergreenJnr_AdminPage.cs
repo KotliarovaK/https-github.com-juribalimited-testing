@@ -1,6 +1,7 @@
 ﻿using System;
 using System.IO;
 using System.Linq;
+using System.Net;
 using System.Threading;
 using DashworksTestAutomation.DTO.RuntimeVariables;
 using DashworksTestAutomation.Extensions;
@@ -11,6 +12,7 @@ using DashworksTestAutomation.Utils;
 using NUnit.Framework;
 using OpenQA.Selenium;
 using OpenQA.Selenium.Remote;
+using RestSharp;
 using TechTalk.SpecFlow;
 
 namespace DashworksTestAutomation.Steps.Dashworks
@@ -21,12 +23,16 @@ namespace DashworksTestAutomation.Steps.Dashworks
         private readonly RemoteWebDriver _driver;
         private readonly TeamName _teamName;
         private readonly UsedUsers _usedUsers;
+        private readonly DTO.RuntimeVariables.Projects _projects;
+        private readonly RestWebClient _client;
 
-        public EvergreenJnr_AdminPage(RemoteWebDriver driver, UsedUsers usedUsers, TeamName teamName)
+        public EvergreenJnr_AdminPage(RemoteWebDriver driver, UsedUsers usedUsers, TeamName teamName, DTO.RuntimeVariables.Projects projects, RestWebClient client)
         {
             _driver = driver;
             _usedUsers = usedUsers;
             _teamName = teamName;
+            _projects = projects;
+            _client = client;
         }
 
         [When(@"User clicks ""(.*)"" link on the Admin page")]
@@ -384,7 +390,7 @@ namespace DashworksTestAutomation.Steps.Dashworks
                     }
                     catch { }
             }
-            catch {}
+            catch { }
         }
 
         private void DeleteTeam(string teamName)
@@ -624,7 +630,6 @@ namespace DashworksTestAutomation.Steps.Dashworks
         {
             var pageBase = _driver.NowAt<BaseGridPage>();
             _driver.WaitWhileControlIsNotDisplayed<BaseGridPage>(() => pageBase.SuccessMessage);
-
             var pageBuckets = _driver.NowAt<BucketsPage>();
             Assert.IsTrue(pageBuckets.SuccessUpdatedMessageBucketsPage(bucketName),
                 $"Success Message is not displayed for {bucketName}");
@@ -702,7 +707,7 @@ namespace DashworksTestAutomation.Steps.Dashworks
             var message = _driver.NowAt<ProjectsPage>();
             Assert.IsFalse(message.SuccessMessage.Displayed());
         }
-  
+
         #endregion
 
         [Then(@"""(.*)"" bucket details is displayed to the user")]
@@ -773,20 +778,6 @@ namespace DashworksTestAutomation.Steps.Dashworks
             button.UpdateBucketButton.Click();
         }
 
-        [When(@"User adds following items from list")]
-        public void ThenUserAddFollowingItemsFromList(Table table)
-        {
-            var bucketElement = _driver.NowAt<BaseGridPage>();
-
-            foreach (var row in table.Rows)
-            {
-                bucketElement.AddItem(row["Item"]);
-                bucketElement.SearchTextbox.ClearWithHomeButton(_driver);
-            }
-
-            bucketElement.AddItemButton.Click();
-        }
-
         [When(@"User expands the object to add")]
         public void WhenUserExpandsTheObjectToAdd()
         {
@@ -798,21 +789,72 @@ namespace DashworksTestAutomation.Steps.Dashworks
         [When(@"User cancels the selection objects in the Project")]
         public void WhenUserSelectsAllObjects()
         {
-              var projectElement = _driver.NowAt<BaseGridPage>();
+            var projectElement = _driver.NowAt<BaseGridPage>();
             projectElement.AllItemCheckbox.Click();
             _driver.WaitForDataLoading();
         }
 
-        [When(@"User selects following items to the Project")]
-        public void WhenUserSelectsFollowingItemsToTheProject(Table table)
+        #region Adding Objects
+
+        [When(@"User adds following Objects from list")]
+        public void ThenUserAddFollowingObjectsFromList(Table table)
+        {
+            var bucketElement = _driver.NowAt<BaseGridPage>();
+
+            foreach (var row in table.Rows)
+            {
+                bucketElement.AddItem(row["Objects"]);
+                bucketElement.SearchTextbox.ClearWithHomeButton(_driver);
+            }
+
+            bucketElement.AddItemButton.Click();
+        }
+
+        [When(@"User adds following Objects to the Project")]
+        public void WhenUserAddsFollowingObjectsToTheProject(Table table)
+        {
+            var projectElement = _driver.NowAt<BaseGridPage>();
+            projectElement.PlusButton.Click();
+            foreach (var row in table.Rows)
+            {
+                projectElement.AddItem(row["Objects"]);
+                projectElement.SearchTextbox.ClearWithHomeButton(_driver);
+            }
+
+            projectElement.UpdateButton.Click();
+        }
+
+        [When(@"User selects following Objects to the Project")]
+        public void WhenUserSelectsFollowingObjectsToTheProject(Table table)
         {
             var projectElement = _driver.NowAt<BaseGridPage>();
             foreach (var row in table.Rows)
             {
-                projectElement.AddItem(row["Item"]);
+                projectElement.AddItem(row["Objects"]);
                 projectElement.SearchTextbox.ClearWithHomeButton(_driver);
             }
         }
+
+        [Then(@"following Items are onboarded")]
+        public void ThenFollowingItemsAreOnboarded(Table table)
+        {
+            var projectElement = _driver.NowAt<BaseGridPage>();
+            Thread.Sleep(15000);
+            foreach (var row in table.Rows)
+            {
+                if (projectElement.OnboardedObjectsTable.Displayed())
+                {
+                    projectElement.OnboardedObjectDisplayed(row["Items"]);
+                }
+                else
+                {
+                    _driver.Navigate().Refresh();
+                    projectElement.OnboardedObjectDisplayed(row["Items"]);
+                }
+            }
+        }
+
+        #endregion
 
         [When(@"User enters ""(.*)"" text in the Object Search field")]
         public void WhenUserEntersTextInTheObjectSearchField(string text)
@@ -821,45 +863,12 @@ namespace DashworksTestAutomation.Steps.Dashworks
             searchElement.GetObgectField(text);
         }
 
-        [Then(@"following objects are onboarded")]
-        public void ThenFollowingObjectsAreOnboarded(Table table)
-        {
-            var projectElement = _driver.NowAt<BaseGridPage>();
-            Thread.Sleep(15000);
-            foreach (var row in table.Rows)
-            {
-                if (projectElement.OnboardedObjectsTable.Displayed())
-                {
-                    projectElement.OnboardedObjectDisplayed(row["Object"]);
-                }
-                else
-                {
-                    _driver.Navigate().Refresh();
-                    projectElement.OnboardedObjectDisplayed(row["Object"]);
-                }
-            }
-        }
-
         [Then(@"following items are still selected")]
         public void ThenFollowingItemsAreStillSelected()
         {
             var projectElement = _driver.NowAt<BaseGridPage>();
             Assert.IsTrue(projectElement.SelectedCheckbox.Displayed(), "Items are not selected");
             Assert.IsTrue(projectElement.AddItemCheckbox.Displayed(), "Item checkbox is not checked");
-        }
-
-        [When(@"User adds following items to the Project")]
-        public void WhenUserAddsFollowingItemsToTheProject(Table table)
-        {
-            var projectElement = _driver.NowAt<BaseGridPage>();
-            projectElement.PlusButton.Click();
-            foreach (var row in table.Rows)
-            {
-                projectElement.AddItem(row["Item"]);
-                projectElement.SearchTextbox.ClearWithHomeButton(_driver);
-            }
-
-            projectElement.UpdateButton.Click();
         }
 
         [When(@"User clicks Create button on the Create Project page")]
@@ -884,7 +893,7 @@ namespace DashworksTestAutomation.Steps.Dashworks
         public void ThenImportProjectButtonIsNotDisplayed()
         {
             var button = _driver.NowAt<BaseGridPage>();
-            Assert.IsFalse(button.ImportProjectButton.Displayed());
+            Assert.IsFalse(button.ImportProjectButton.Displayed(), "Import Project button is displayed");
         }
 
         [When(@"User enters ""(.*)"" in the Project Name field")]
@@ -892,6 +901,10 @@ namespace DashworksTestAutomation.Steps.Dashworks
         {
             var projectName = _driver.NowAt<CreateProjectPage>();
             projectName.ProjectNameField.SendKeys(projectText);
+            if (!string.IsNullOrEmpty(projectText))
+            {
+                _projects.Value.Add(projectText);
+            }
         }
 
         [When(@"User selects ""(.*)"" in the Scope Project dropdown")]
@@ -1063,9 +1076,7 @@ namespace DashworksTestAutomation.Steps.Dashworks
         [Then(@"Delete ""(.*)"" Project in the Administration")]
         public void ThenDeleteProjectInTheAdministration(string projectName)
         {
-            var projectId =
-                DatabaseHelper.ExecuteReader(
-                    $"SELECT [ProjectID] FROM[PM].[dbo].[Projects] where[ProjectName] = '{projectName}'", 0)[0];
+            var projectId = GetProjectId(projectName);
             DatabaseHelper.ExecuteQuery($"delete from[PM].[dbo].[EvergreenProjects] where[ProjectId] = '{projectId}'");
             DatabaseHelper.ExecuteQuery($"delete from[PM].[dbo].[ProjectGroups] where[ProjectID] = '{projectId}'");
             DatabaseHelper.ExecuteQuery(
@@ -1075,6 +1086,37 @@ namespace DashworksTestAutomation.Steps.Dashworks
                 $"delete from[PM].[dbo].[SelfServiceScreenValues] where[ProjectID] = '{projectId}'");
             DatabaseHelper.ExecuteQuery($"delete from[PM].[dbo].[Projects] where[ProjectID] = '{projectId}'");
             DatabaseHelper.ExecuteQuery($"delete from[PM].[dbo].[Projects] where[ProjectID] = '{projectId}'");
+        }
+
+        [AfterScenario("Delete_Newly_Created_Project")]
+        public void DeleteNewlyCreatedProject()
+        {
+            var requestUri = $"{UrlProvider.RestClientBaseUrl}admin/projects/deleteProjects";
+
+            foreach (var projectName in _projects.Value)
+            {
+                var projectId = GetProjectId(projectName);
+
+                var request = new RestRequest(requestUri);
+
+                request.AddParameter("Host", UrlProvider.RestClientBaseUrl);
+                request.AddParameter("Origin", UrlProvider.Url.TrimEnd('/'));
+                request.AddParameter("Referer", UrlProvider.EvergreenUrl);
+                request.AddParameter("selectedObjectsList", projectId);
+
+                var response = _client.Value.Post(request);
+
+                if (response.StatusCode != HttpStatusCode.OK)
+                    throw new Exception($"Unable to execute request. URI: {requestUri}");
+            }
+        }
+
+        private string GetProjectId(string projectName)
+        {
+            var projectId =
+                DatabaseHelper.ExecuteReader(
+                    $"SELECT [ProjectID] FROM[PM].[dbo].[Projects] where[ProjectName] = '{projectName}'", 0).LastOrDefault();
+            return projectId;
         }
 
         [Then(@"Delete ""(.*)"" Bucket in the Administration")]

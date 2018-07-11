@@ -299,6 +299,13 @@ namespace DashworksTestAutomation.Steps.Dashworks
                 Assert.AreEqual("101px", filterPanel.PackageSiteColumnWidt());
         }
 
+        [Then(@"Bucket pop-up has standard size on the Details Page")]
+        public void ThenBucketPop_UpHasStandardSizeOnTheDetailsPage()
+        {
+            var detailsPage = _driver.NowAt<DetailsPage>();
+            Assert.AreEqual("1536px", detailsPage.GetInstalledBucketWindowWidth());
+        }
+
         [When(@"User enters ""(.*)"" text in the Filter field")]
         public void ThenUserEntersTextInTheFilterField(string searchedText)
         {
@@ -334,13 +341,11 @@ namespace DashworksTestAutomation.Steps.Dashworks
             Assert.AreEqual(expectedList, page.GetCheckedElementsText(), "Checkbox is not selected");
         }
 
-        [Then(@"Checkboxes are checked on the Column Settings panel :")]
+        [Then(@"Checkboxes are checked on the Column Settings panel:")]
         public void ThenCheckboxesAreCheckedOnTheColumnSettingsPanel(Table table)
         {
             var page = _driver.NowAt<ApplicationsDetailsTabsMenu>();
             var expectedList = table.Rows.SelectMany(row => row.Values).ToList();
-            //var actualList = page.ColumnCheckboxName.Select(value => value.Text);
-            //Assert.AreEqual(expectedList, actualList, "Selected Checkbox are different");
             Assert.AreEqual(expectedList, page.GetCheckedElementsText(), "Checkbox is not selected");
         }
 
@@ -480,6 +485,59 @@ namespace DashworksTestAutomation.Steps.Dashworks
                 StringAssert.AreEqualIgnoringCase($"{numberOfRows} rows", detailsPage.FoundRowsLabel.Text,
                     "Incorrect rows count");
             }
+        }
+
+        [When(@"User clicks on Evergreen Bucket link")]
+        public void WhenUserClicksOnEvergreenBucketLink()
+        {
+            var detailsPage = _driver.NowAt<DetailsPage>();
+            _driver.MouseHover(detailsPage.BucketLink);
+            _driver.WaitWhileControlIsNotDisplayed<DetailsPage>(() => detailsPage.EditButtonBucketLink);
+            detailsPage.EditButtonBucketLink.Click();
+            _driver.WaitForDataLoading();
+        }
+
+        [Then(@"Evergreen Bucket link ""(.*)"" is displayed")]
+        public void ThenEvergreenBucketLinkIsDisplayed(string bucketName)
+        {
+            var detailsPage = _driver.NowAt<DetailsPage>();
+            Assert.IsTrue(detailsPage.GetBucketLinkByName(bucketName).Displayed(), "Bucket link name was not changed");
+        }
+
+        [Then(@"Change Bucket pop-up is opened")]
+        public void ThenChangeBucketPop_UpIsOpened()
+        {
+            var detailsPage = _driver.NowAt<DetailsPage>();
+            _driver.WaitForDataLoading();
+            Assert.IsTrue(detailsPage.EditBucketWindow.Displayed(), "Bucket Window is not loaded");
+        }
+
+        [Then(@"User clicks on New Bucket dropdown")]
+        public void ThenUserClicksOnNewBucketDropdown()
+        {
+            var detailsPage = _driver.NowAt<DetailsPage>();
+            detailsPage.NewBucketDropdown.Click();
+        }
+
+        [When(@"User clicks ""(.*)"" button on Change Bucket window")]
+        public void WhenUserClicksButtonOnChangeBucketWindow(string buttonName)
+        {
+            var detailsPage = _driver.NowAt<DetailsPage>();
+            detailsPage.GetButtonByNameOnBucketWindow(buttonName).Click();
+        }
+
+        [When(@"User select ""(.*)"" Bucket on the Details Page")]
+        public void WhenUserSelectBucketOnTheDetailsPage(string bucketName)
+        {
+            var detailsPage = _driver.NowAt<DetailsPage>();
+            detailsPage.GetBucketByName(bucketName).Click();
+        }
+
+        [When(@"User selects all rows on the grid on the Details Page")]
+        public void WhenUserSelectsAllRowsOnTheGridOnTheDetailsPage()
+        {
+            var detailsPage = _driver.NowAt<DetailsPage>();
+            detailsPage.SelectAllCheckBox.Click();
         }
     }
 }
