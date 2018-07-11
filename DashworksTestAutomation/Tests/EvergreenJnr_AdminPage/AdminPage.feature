@@ -1437,6 +1437,25 @@ Scenario: EvergreenJnr_AdminPage_CheckThatWarningMessageIsNotDisplayedAfterAddin
 	And User selects all rows on the grid
 	And User removes selected item
 
+@Evergreen @Admin @EvergreenJnr_AdminPage @AdminPage @DAS12894
+Scenario: EvergreenJnr_AdminPage_CheckThatCancelButtonDisplaysInBannerWhenDeletingProject
+	When User clicks Admin on the left-hand menu
+	Then Admin page should be displayed to the user
+	When User clicks "Projects" link on the Admin page
+	Then "Projects" page should be displayed to the user
+	When User clicks Create New Item button
+	Then "Create Project" page should be displayed to the user
+	When User enters "Test_Project_DAS_12894" in the Project Name field
+	And User selects "All Users" in the Scope Project dropdown
+	And User clicks Create button on the Create Project page
+	And User enters "Test_Project_DAS_12894" text in the Search field for "Project" column
+	And User selects all rows on the grid
+	And User clicks Actions button on the Projects page
+	And User clicks Delete button in Actions
+	And User clicks Delete button
+	Then User sees Cancel button in banner
+	When User clicks Delete button in the warning message
+
 @Evergreen @Admin @EvergreenJnr_AdminPage @AdminPage @DAS12891
 Scenario: EvergreenJnr_AdminPage_CheckThatCancelButtonIsDisplayedWithCorrectlyColorOnAdminPage
 	When User clicks Admin on the left-hand menu

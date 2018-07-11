@@ -305,6 +305,13 @@ namespace DashworksTestAutomation.Steps.Dashworks
             Assert.IsTrue(button.CancelButtonColor.Displayed(), "Cancel button is not displayed or displayed with incorrectly color");
         }
 
+        [Then(@"User sees Cancel button in banner")]
+        public void ThenUserSeesCancelButtonInBanner()
+        {
+            var button = _driver.NowAt<CustomListElement>();
+            Assert.IsTrue(button.CancelDeletingButton.Displayed(), "Cancel button is not displayed in banner");
+        }
+
         [When(@"User duplicates list with ""(.*)"" name")]
         public void WhenUserDuplicatesListWithName(string listName)
         {
