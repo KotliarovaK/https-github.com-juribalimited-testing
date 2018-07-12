@@ -804,6 +804,7 @@ namespace DashworksTestAutomation.Steps.Dashworks
         public void ThenMessageIsDisplayedToTheUser(string message)
         {
             var page = _driver.NowAt<FiltersElement>();
+            _driver.WaitForDataLoading();
             Assert.AreEqual(message, page.NoResultsFoundMessage.Text, $"{message} is not displayed");
         }
 
