@@ -37,6 +37,9 @@ namespace DashworksTestAutomation.Pages.Evergreen.AdminDetailsPages
         [FindsBy(How = How.XPath, Using = ".//input[@role='combobox']")]
         public IWebElement ScopeProjectField { get; set; }
 
+        [FindsBy(How = How.XPath, Using = ".//mat-select[@aria-label='Scope']")]
+        public IWebElement ScopeListDropdown { get; set; }
+
         [FindsBy(How = How.XPath, Using = ".//div[@class='wrapper-disabled']//mat-select[@aria-label='User Scope']")]
         public IWebElement DisabledOwnerDropDown { get; set; }
 
