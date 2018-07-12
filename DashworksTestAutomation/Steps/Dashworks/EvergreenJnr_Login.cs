@@ -120,7 +120,7 @@ namespace DashworksTestAutomation.Steps.Dashworks
                     loginPage.SplashPasswordTextbox.SendKeys(row["Password"]);
                     loginPage.SplashLoginButton.Click();
                 }
-            }            
+            }
         }
 
         [Then(@"Dashworks homepage is displayed to the user in a logged in state")]

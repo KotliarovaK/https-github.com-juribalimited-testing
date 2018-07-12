@@ -55,6 +55,7 @@ namespace DashworksTestAutomation.Steps
                     page.Roles.SelectboxSelect(row["Roles"]);
             }          
             page.Roles.SelectboxSelect("Dashworks Users");
+            page.Roles.SelectboxSelect("Dashworks Evergreen Users");
             page.AddRoleButton.Click();
             page.CreateUserButton.Click();
         }

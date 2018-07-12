@@ -50,5 +50,11 @@ Scenario: EvergreenJnr_AllLists_CheckUserCapabilitiesWithoutBulkUpdaterAndProjec
 	Then Dashworks homepage is displayed to the user in a logged in state
 	When User clicks the Switch to Evergreen link
 	Then Evergreen Dashboards page should be displayed to the user
-	When User clicks "Devices" on the left-hand menu
-	Then "Devices" list should be displayed to the user
+	When User clicks "Users" on the left-hand menu
+	Then "Users" list should be displayed to the user
+	When User clicks the Actions button
+	Then Actions panel is displayed to the user
+	When User select "Hostname" rows in the grid
+	| SelectedRowsName |
+	| 001BAQXT6JWFPI   |
+	| 001PSUMZYOW581   |
