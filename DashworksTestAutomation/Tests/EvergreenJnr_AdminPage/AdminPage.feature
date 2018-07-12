@@ -27,7 +27,7 @@ Scenario: EvergreenJnr_AdminPage_CheckThatErrorIsNotDisplayedWhenCreateTeamWithT
 	And There are no errors in the browser console
 	And Delete "TestTeam" Team in the Administration
 
-@Evergreen @Admin @EvergreenJnr_AdminPage @AdminPage @DAS11747
+@Evergreen @Admin @EvergreenJnr_AdminPage @AdminPage @DAS11747 @Delete_Newly_Created_Bucket
 Scenario: EvergreenJnr_AdminPage_CheckThatErrorIsNotDisplayedWhenCreateBucketWithTheAlreadyExistName
 	When User clicks Admin on the left-hand menu
 	Then Admin page should be displayed to the user
@@ -46,7 +46,6 @@ Scenario: EvergreenJnr_AdminPage_CheckThatErrorIsNotDisplayedWhenCreateBucketWit
 	And User clicks Create button on the Create Bucket page
 	Then Error message with "A bucket already exists with this name" text is displayed
 	And There are no errors in the browser console
-	And Delete "TestBucket1" Bucket in the Administration
 
 @Evergreen @Admin @EvergreenJnr_AdminPage @AdminPage @DAS11726 @DAS12761
 Scenario: EvergreenJnr_AdminPage_CheckThatCreateButtonIsDisabledForEmptyProjectName
