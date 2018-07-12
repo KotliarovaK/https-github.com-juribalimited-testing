@@ -418,7 +418,11 @@ Scenario: EvergreenJnr_AdminPage_CheckThatAllAssociationsAreSelectedByDefaultInT
 	Then Project "TestProject7" is displayed to user
 	When User selects "Scope Details" tab on the Project details page
 	And User navigates to the "Application Scope" tab in the Scope section on the Project details page
-	Then All Association are selected by default
+	Then All Associations are selected by default
+	When  User selects "Do not include applications" checkbox on the Project details page
+	Then All Associations are disabled
+	When  User selects "Include applications" checkbox on the Project details page
+	Then All Associations are selected by default
 
 @Evergreen @Admin @EvergreenJnr_AdminPage @AdminPage @DAS12170
 Scenario: EvergreenJnr_AdminPage_CheckThatConsoleErrorsAreNotDisplayedAfterAddingDevicesInTheBuckets
@@ -851,7 +855,8 @@ Scenario: EvergreenJnr_AdminPage_CheckingThatRedBannerWithOkMessageIsNotDisplaye
 	| Objects                    |
 	| AAC860150 (Kerrie D. Ruiz) |
 	And User clicks "UPDATE ALL CHANGES" button on the Projects page
-	And User clicks Update Project button on the Projects page
+	Then message with "1 device will be added, 1 user will be added, 1 application will be added" text is displayed on the Projects page
+	When User clicks Update Project button on the Projects page
 	Then Success message with "3 objects queued for onboarding, 0 objects offboarded" text is displayed on the Projects page
 	And There are no errors in the browser console
 
@@ -1349,27 +1354,8 @@ Scenario: EvergreenJnr_AdminPage_CheckThatWarningMessageIsNotDisplayedAfterAddin
 	When User selects "Scope Details" tab on the Project details page
 	Then Warning message is not displayed on the Admin page
 
-@Evergreen @Admin @EvergreenJnr_AdminPage @AdminPage @DAS12894
-Scenario: EvergreenJnr_AdminPage_CheckThatCancelButtonDisplaysInBannerWhenDeletingProject
-	When User clicks Admin on the left-hand menu
-	Then Admin page should be displayed to the user
-	When User clicks "Projects" link on the Admin page
-	Then "Projects" page should be displayed to the user
-	When User clicks Create New Item button
-	Then "Create Project" page should be displayed to the user
-	When User enters "Test_Project_DAS_12894" in the Project Name field
-	And User selects "All Users" in the Scope Project dropdown
-	And User clicks Create button on the Create Project page
-	And User enters "Test_Project_DAS_12894" text in the Search field for "Project" column
-	And User selects all rows on the grid
-	And User clicks Actions button on the Projects page
-	And User clicks Delete button in Actions
-	And User clicks Delete button
-	Then User sees Cancel button in banner
-	When User clicks Delete button in the warning message
-
-@Evergreen @Admin @EvergreenJnr_AdminPage @AdminPage @DAS12891
-Scenario: EvergreenJnr_AdminPage_CheckThatCancelButtonIsDisplayedWithCorrectlyColorOnAdminPage
+@Evergreen @Admin @EvergreenJnr_AdminPage @AdminPage @DAS12891 @DAS12894
+Scenario: EvergreenJnr_AdminPage_CheckThatCancelButtonIsDisplayedWithCorrectColourOnAdminPage
 	When User clicks Admin on the left-hand menu
 	Then Admin page should be displayed to the user
 	When User clicks "Projects" link on the Admin page
@@ -1386,6 +1372,7 @@ Scenario: EvergreenJnr_AdminPage_CheckThatCancelButtonIsDisplayedWithCorrectlyCo
 	And User clicks Actions button on the Projects page
 	And User clicks Delete button in Actions
 	And User clicks Delete button
+	Then User sees Cancel button in banner
 	Then Cancel button is displayed with correctly color
 	When User clicks Delete button in the warning message
 

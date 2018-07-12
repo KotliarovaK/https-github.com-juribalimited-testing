@@ -234,11 +234,18 @@ namespace DashworksTestAutomation.Steps.Dashworks
             page.SelectRecordByName(recordName);
         }
 
-        [Then(@"All Association are selected by default")]
-        public void ThenAllAssociationAreSelectedByDefault()
+        [Then(@"All Associations are selected by default")]
+        public void ThenAllAssociationsAreSelectedByDefault()
         {
             var projectsPage = _driver.NowAt<ProjectsPage>();
             Assert.IsFalse(projectsPage.UncheckedCheckbox.Displayed(), "Not all checkboxes are selected");
+        }
+
+        [Then(@"All Associations are disabled")]
+        public void ThenAllAssociationsAreDisabled()
+        {
+            var projectsPage = _driver.NowAt<ProjectsPage>();
+            Assert.IsTrue(projectsPage.DisabledAllAssociations.Displayed(), "All Associations is active");
         }
 
         [Then(@"""(.*)"" is displayed to the user in the Project Scope Changes section")]
