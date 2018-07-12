@@ -60,7 +60,7 @@ namespace DashworksTestAutomation.Pages.Projects
         [When(@"User cliks Logout link")]
         public void WhenUserCliksLogoutLink()
         {
-            var page = _driver.NowAt<ProjectLogin>();
+            var page = _driver.NowAt<BaseElementsPage>();
 
             _driver.MouseHover(page.LogoutLink);
             page.LogoutLink.Click();
