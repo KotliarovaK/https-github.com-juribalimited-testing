@@ -126,9 +126,12 @@ Scenario: EvergreenJnr_AdminPage_CheckThatWarningMessageIsDisplayedAfterDeleting
 	Then "Projects" page should be displayed to the user
 	When User clicks "TestProject1" record in the grid
 	Then Project "TestProject1" is displayed to user
-	When User selects "Scope Changes" tab on the Project details page
 	Then Warning message with "The scope for this project refers to a deleted list, this must be updated before proceeding" text is displayed on the Admin page
 	And Update Project buttons is disabled
+	When User selects "Scope Details" tab on the Project details page
+	When User selects "All Users" in the Scope Project details
+	When User selects "Scope Changes" tab on the Project details page
+	Then Warning message is not displayed on the Admin page
 
 @Evergreen @Admin @EvergreenJnr_AdminPage @AdminPage @DAS11977 @DAS11959 @DAS12553 @DAS11744 @DAS12742 @Delete_Newly_Created_Project
 Scenario: EvergreenJnr_AdminPage_CheckThatAfterApplyingDoNotIncludeDeviceOwnersListHas0ItemsInTheUsersTab

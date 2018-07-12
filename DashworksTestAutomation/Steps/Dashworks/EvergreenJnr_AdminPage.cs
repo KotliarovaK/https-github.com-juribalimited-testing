@@ -915,6 +915,14 @@ namespace DashworksTestAutomation.Steps.Dashworks
             createProjectElement.SelectObjectForProjectCreation(objectName);
         }
 
+        [When(@"User selects ""(.*)"" in the Scope Project details")]
+        public void WhenUserSelectsInTheScopeProjectDetails(string listName)
+        {
+            var projectElement = _driver.NowAt<ProjectsPage>();
+            projectElement.ScopeListDropdown.Click();
+            projectElement.SelectObjectForProjectCreation(listName);
+        }
+
         [When(@"User clicks in the Scope field on the Admin page")]
         public void WhenUserClicksInTheScopeFieldOnTheAdminPage()
         {
