@@ -16,6 +16,9 @@ namespace DashworksTestAutomation.Pages.Evergreen.AdminDetailsPages
         [FindsBy(How = How.XPath, Using = ".//input[@aria-checked='false']")]
         public IWebElement UncheckedCheckbox { get; set; }
 
+        [FindsBy(How = How.XPath, Using = "//div[contains(@class, 'wrapper-disabled')]")]
+        public IWebElement DisabledAllAssociations { get; set; }
+
         [FindsBy(How = How.XPath, Using = ".//span[text()='UPDATE PROJECT']")]
         public IWebElement UpdateProjectInTheWarning { get; set; }
 
@@ -36,6 +39,9 @@ namespace DashworksTestAutomation.Pages.Evergreen.AdminDetailsPages
 
         [FindsBy(How = How.XPath, Using = ".//input[@role='combobox']")]
         public IWebElement ScopeProjectField { get; set; }
+
+        [FindsBy(How = How.XPath, Using = ".//mat-select[@aria-label='Scope']")]
+        public IWebElement ScopeListDropdown { get; set; }
 
         [FindsBy(How = How.XPath, Using = ".//div[@class='wrapper-disabled']//mat-select[@aria-label='User Scope']")]
         public IWebElement DisabledOwnerDropDown { get; set; }

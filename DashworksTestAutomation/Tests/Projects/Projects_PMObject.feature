@@ -5,7 +5,7 @@ Background: Pre-Conditions
 	Given User is logged in to the Evergreen
 	Then Evergreen Dashboards page should be displayed to the user
 
-@Evergreen @Projects @Projects_Dashboards @Dashboards @DAS12695
+@Senior @PMObject @Applications_tab @Dashworks @DAS12695
 Scenario: Projects_CheckThatErrorIsNotDisplayedWhenUsedDDLForApplicationsTabOnPMObjectPage
 	When User clicks "Projects" on the left-hand menu
 	Then "Projects Home" page is displayed to the user
