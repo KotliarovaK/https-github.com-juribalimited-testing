@@ -1011,7 +1011,6 @@ Scenario: EvergreenJnr_AdminPage_CheckingThatProjectNameIsDisplayedCorrectlyWhen
 	And User selects "All Devices" in the Scope Project dropdown
 	And User clicks Create button on the Create Project page
 	Then created Project with "<TestProject11985>" name is displayed correctly
-	#Then Import Project button is not displayed
 
 @Evergreen @Admin @EvergreenJnr_AdminPage @AdminPage @DAS12806 @Delete_Newly_Created_Project
 Scenario: EvergreenJnr_AdminPage_CheckThatOnboardedObjectsAreDisplayedAfterChangingProjectBucketsSetting
