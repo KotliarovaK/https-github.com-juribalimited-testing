@@ -1108,7 +1108,7 @@ namespace DashworksTestAutomation.Steps.Dashworks
                     request.AddParameter("objectId", null);
                     request.AddParameter("selectedObjectsList", bucketId);
 
-                    var response = _client.Value.Post(request);
+                    var response = _client.Value.Put(request);
 
                     if (response.StatusCode != HttpStatusCode.OK)
                         throw new Exception($"Unable to execute request. URI: {requestUri}");
