@@ -566,6 +566,7 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_AdminPage
         [NUnit.Framework.CategoryAttribute("AdminPage")]
         [NUnit.Framework.CategoryAttribute("DAS11931")]
         [NUnit.Framework.CategoryAttribute("DAS12742")]
+        [NUnit.Framework.CategoryAttribute("DAS11769")]
         [NUnit.Framework.TestCaseAttribute("TestProject2", "All Devices", new string[0])]
         [NUnit.Framework.TestCaseAttribute("TestProject3", "All Users", new string[0])]
         [NUnit.Framework.TestCaseAttribute("TestProject4", "All Mailboxes", new string[0])]
@@ -603,7 +604,8 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_AdminPage
                     "EvergreenJnr_AdminPage",
                     "AdminPage",
                     "DAS11931",
-                    "DAS12742"};
+                    "DAS12742",
+                    "DAS11769"};
             if ((exampleTags != null))
             {
                 @__tags = System.Linq.Enumerable.ToArray(System.Linq.Enumerable.Concat(@__tags, exampleTags));
@@ -629,6 +631,7 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_AdminPage
             testRunner.Then("Success message with \"The selected project has been deleted\" text is displayed on" +
                     " the Projects page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
             testRunner.And("There are no errors in the browser console", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+            testRunner.Then(string.Format("\"{0}\" item was removed", projectName), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
             this.ScenarioCleanup();
         }
         
