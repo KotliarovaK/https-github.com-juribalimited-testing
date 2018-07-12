@@ -161,7 +161,7 @@ Scenario: EvergreenJnr_AdminPage_CheckThatAfterApplyingDoNotIncludeDeviceOwnersL
 	And User clicks "Users" tab in the Project Scope Changes section 
 	Then "Users to add (0 of 0 selected)" is displayed to the user in the Project Scope Changes section
 
-@Evergreen @Admin @EvergreenJnr_AdminPage @AdminPage @DAS11931 @DAS12742
+@Evergreen @Admin @EvergreenJnr_AdminPage @AdminPage @DAS11931 @DAS12742 @DAS11769
 Scenario Outline: EvergreenJnr_AdminPage_CheckThatProjectsAreDeletedSuccessfullyAndThereAreNoConsoleErrors
 	When User clicks Admin on the left-hand menu
 	Then Admin page should be displayed to the user
@@ -179,6 +179,7 @@ Scenario Outline: EvergreenJnr_AdminPage_CheckThatProjectsAreDeletedSuccessfully
 	And User removes selected item
 	Then Success message with "The selected project has been deleted" text is displayed on the Projects page
 	And There are no errors in the browser console
+	Then "<ProjectName>" item was removed
 
 Examples:
 	| ProjectName  | ScopeList     |
@@ -1091,7 +1092,6 @@ Scenario: EvergreenJnr_AdminPage_CheckingThatTheProjectIsUpdatedWithoutErrors
 	When User selects "Scope Changes" tab on the Project details page
 	When User clicks "Applications" tab in the Project Scope Changes section
 	Then There are no errors in the browser console
-	#Then "TestProject12364" item was removed
 
 @Evergreen @Admin @EvergreenJnr_AdminPage @AdminPage @DAS11729 @Delete_Newly_Created_List @Delete_Newly_Created_Project
 Scenario: EvergreenJnr_AdminPage_CheckThatWarningMessageIsDisplayedIfTryToRemoveCreatedListThatUsedInAnyProject
