@@ -635,7 +635,6 @@ namespace DashworksTestAutomation.Steps.Dashworks
         {
             var pageBase = _driver.NowAt<BaseGridPage>();
             _driver.WaitWhileControlIsNotDisplayed<BaseGridPage>(() => pageBase.SuccessMessage);
-
             var pageBuckets = _driver.NowAt<BucketsPage>();
             Assert.IsTrue(pageBuckets.SuccessUpdatedMessageBucketsPage(bucketName),
                 $"Success Message is not displayed for {bucketName}");
@@ -919,6 +918,14 @@ namespace DashworksTestAutomation.Steps.Dashworks
             var createProjectElement = _driver.NowAt<ProjectsPage>();
             createProjectElement.ScopeProjectField.Click();
             createProjectElement.SelectObjectForProjectCreation(objectName);
+        }
+
+        [When(@"User selects ""(.*)"" in the Scope Project details")]
+        public void WhenUserSelectsInTheScopeProjectDetails(string listName)
+        {
+            var projectElement = _driver.NowAt<ProjectsPage>();
+            projectElement.ScopeListDropdown.Click();
+            projectElement.SelectObjectForProjectCreation(listName);
         }
 
         [When(@"User clicks in the Scope field on the Admin page")]

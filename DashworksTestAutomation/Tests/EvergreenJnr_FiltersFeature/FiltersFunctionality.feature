@@ -210,7 +210,7 @@ Examples:
 	| Applications | Barry'sUse: Target App           | Python 2.2a4 (SMS_GEN) | 1         | Application   | Python 2.2a4            | Barry'sUse: Target App is Python 2.2a4 (SMS_GEN) |
 	| Mailboxes    | EmailMigra: BT/QMM Switch Status | Not Started            | 729       | Email Address | alex.cristea@juriba.com | EmailMigra: BT/QMM Switch Status is Not Started  |
 
-@Evergreen @Applications @EvergreenJnr_FilterFeature @FilterFunctionality @DAS10977
+@Evergreen @Applications @EvergreenJnr_FilterFeature @FilterFunctionality @DAS10977 @DAS12954
 Scenario: EvergreenJnr_ApplicationsList_CheckThatFilterIsRestoredCorrectlyAfterLeavingThePageAndGoingBackViaTheBrowserbackButtonForValuesFilters
 	When User clicks "Applications" on the left-hand menu
 	Then "Applications" list should be displayed to the user
@@ -222,7 +222,10 @@ Scenario: EvergreenJnr_ApplicationsList_CheckThatFilterIsRestoredCorrectlyAfterL
 	Then "Application is Microsoft Office 97, Professional Edition" is displayed in added filter info
 	Then "5" rows are displayed in the agGrid
 	When User perform search by "Microsoft Office 97, Professional Edition"
-	And User click content from "Application" column
+	And User clicks the Actions button
+	Then Actions panel is displayed to the user
+	Then Select All selectbox is unchecked
+	When User click content from "Application" column
 	Then User click back button in the browser
 	Then "5" rows are displayed in the agGrid
 	When User clicks the Filters button
@@ -846,18 +849,11 @@ Examples:
 	| Windows7Mi: Category                      | None                 | 17,194 |
 	| Windows7Mi: Values but no RAG             | Three                | 1      |
 	| Windows7Mi: SS Application List Completed | Not Applicable       | 5,161  |
-	| Babel(Engl: Category                      | None                 | 17,225 |
-	| Barry'sUse: Category                      | None                 | 17,225 |
-	| ComputerSc: Category                      | None                 | 17,059 |
-	| ICSP: Category                            | None                 | 17,217 |
 	| MigrationP: Category                      | None                 | 17,220 |
 	| Babel(Engl: Request Type                  | Machines             | 62     |
 	| ComputerSc: Request Type                  | Request Type A       | 132    |
-	| ICSP: Request Type                        | [Default (Computer)] | 8      |
 	| MigrationP: Request Type                  | [Default (Computer)] | 41     |
-	| prK: Request Type                         | [Default (Computer)] | 31     |
 	| UserSchedu: Request Type                  | Request Type A       | 60     |
-	| Windows7Mi: Request Type                  | Computer: PC Rebuild | 1      |
 	
 @Evergreen @UsersList @EvergreenJnr_FilterFeature @FilterFunctionality @DAS12351
 Scenario Outline: EvergreenJnr_UsersList_CheckThat500ISEInvalidColumnNameErrorIsNotDisplayedIfUseSelectedFilterOnUsersPage
@@ -876,26 +872,10 @@ Examples:
 	| FilterName                                  | SelectedCheckboxes | Rows   |
 	| Windows7Mi: Category                        | Terminated         | 1      |
 	| Windows7Mi: Read Only on Bulk Update Page   | Not Applicable     | 4,642  |
-	| Babel(Engl: Category                        | The first          | 8      |
 	| Barry'sUse: Category                        | None               | 41,339 |
-	| ComputerSc: Category                        | None               | 41,339 |
-	| EmailMigra: Category                        | None               | 41,339 |
-	| ICSP: Category                              | i-user category    | 8      |
-	| MigrationP: Category                        | None               | 41,339 |
-	| prK: Category                               | user category K    | 25     |
-	| UserSchedu: Category                        | None               | 41,339 |
-	| Babel(Engl: Request Type                    | Overseers          | 34     |
-	| ComputerSc: Request Type                    | Request Type A     | 92     |
 	| ComputerSc: Group User Default Request Type | Not Applicable     | 1,789  |
-	| ComputerSc: Group User No Request Type      | Not Applicable     | 1,981  |
-	| EmailMigra: Request Type                    | Standard User      | 720    |
 	| Havoc(BigD: Request Type                    | [Default (User)]   | 7,578  |
-	| ICSP: Request Type                          | [Default (User)]   | 8      |
-	| MigrationP: Request Type                    | VIP                | 2      |
-	| prK: Request Type                           | [Default (User)]   | 36     |
-	| UserSchedu: Request Type                    | Request Type A     | 38     |
 	| UserSchedu: Group User Default Request Type | Not Applicable     | 679    |
-	| Windows7Mi: Request Type                    | User: VIP          | 6      |
 
 @Evergreen @ApplicationsList @EvergreenJnr_FilterFeature @FilterFunctionality @DAS12351
 Scenario Outline: EvergreenJnr_ApplicationsList_CheckThat500ISEInvalidColumnNameErrorIsNotDisplayedIfUseSelectedFilterOnApplicationsPage
@@ -914,23 +894,11 @@ Examples:
 	| FilterName                 | SelectedCheckboxes          | Rows  |
 	| Windows7Mi: Category       | A Star Packages             | 3     |
 	| Windows7Mi: Technical Test | Started                     | 4     |
-	| Babel(Engl: Category       | None                        | 2,223 |
-	| ComputerSc: Category       | None                        | 2,223 |
 	| EmailMigra: Category       | None                        | 2,223 |
-	| Havoc(BigD: Category       | None                        | 2,223 |
-	| ICSP: Category             | i-app category              | 148   |
-	| MigrationP: Category       | None                        | 2,223 |
-	| prK: Category              | app category K              | 196   |
 	| UserSchedu: Category       | None                        | 2,223 |
 	| Babel(Engl: Request Type   | Tools                       | 302   |
-	| ComputerSc: Request Type   | Request Type A              | 55    |
 	| EmailMigra: Request Type   | Public Folder               | 50    |
-	| Havoc(BigD: Request Type   | [Default (Application)]     | 1,067 |
-	| ICSP: Request Type         | [Default (Application)]     | 148   |
-	| MigrationP: Request Type   | Group A Application         | 1     |
-	| prK: Request Type          | [Default (Application)]     | 231   |
 	| UserSchedu: Request Type   | Request Type A              | 47    |
-	| Windows7Mi: Request Type   | Application: Request Type A | 7     |
 
 @Evergreen @MailboxesList @EvergreenJnr_FilterFeature @FilterFunctionality @DAS12351
 Scenario Outline: EvergreenJnr_MailboxesList_CheckThat500ISEInvalidColumnNameErrorIsNotDisplayedIfUseSelectedFilterOnMailboxesPage
