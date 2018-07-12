@@ -47,6 +47,27 @@ namespace DashworksTestAutomation.Pages.Projects
             _driver.WaitForDataLoading();
         }
 
+        [When(@"User navigate to Evergreen link")]
+        public void WhenUserNavigateToEvergreenLink()
+        {
+            var page = _driver.NowAt<ProjectLogin>();
+
+            _driver.MouseHover(page.EvergreenLink);
+            page.EvergreenLink.Click();
+            _driver.WaitForDataLoading();
+        }
+
+        [When(@"User cliks Logout link")]
+        public void WhenUserCliksLogoutLink()
+        {
+            var page = _driver.NowAt<ProjectLogin>();
+
+            _driver.MouseHover(page.LogoutLink);
+            page.LogoutLink.Click();
+            _driver.WaitForDataLoading();
+            _driver.AcceptAlert();
+        }
+
         [Then(@"""(.*)"" page is displayed to the user")]
         public void ThenPageIsDisplayedToTheUser(string pageName)
         {

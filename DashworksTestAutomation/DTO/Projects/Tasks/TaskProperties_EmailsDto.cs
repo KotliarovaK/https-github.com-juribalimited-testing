@@ -14,7 +14,6 @@ namespace DashworksTestAutomation.DTO.Projects
         public bool RequestTypesAll { get; set; }
         public bool ApllyEmailToAll { get; set; }
         public GroupTypeEnum GroupType;
-        //TODO Groups
         public string To { get; set; }
 
         public TaskProperties_EmailsDto()

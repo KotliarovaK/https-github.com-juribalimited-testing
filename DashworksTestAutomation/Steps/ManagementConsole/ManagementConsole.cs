@@ -1,4 +1,5 @@
-﻿using System.Linq;
+﻿using System;
+using System.Linq;
 using DashworksTestAutomation.DTO.ManagementConsole;
 using DashworksTestAutomation.DTO.Projects;
 using DashworksTestAutomation.DTO.RuntimeVariables;
@@ -51,11 +52,18 @@ namespace DashworksTestAutomation.Steps
             ManageUsersDto tempManageUsersDto = new ManageUsersDto();
             _manageUsers.CopyPropertiesTo(tempManageUsersDto);
             _projectDto.ManageUsers.Add(tempManageUsersDto);
+            //assign RolesString to RolesEnum
+            _manageUsers.Roles = (RolesEnum)Enum.Parse(typeof(RolesEnum), _manageUsers.RolesString);
 
             page.Username.SendKeys(_manageUsers.Username);
             page.FullName.SendKeys(_manageUsers.FullName);
             page.Password.SendKeys(_manageUsers.Password);
             page.ConfirmPassword.SendKeys(_manageUsers.ConfirmPassword);
+            page.Roles.SelectboxSelect(_manageUsers.Roles.GetValue());
+            page.Roles.SelectboxSelect("DashworksUsers");
+            page.AddRoleButton.Click();
+            page.Roles.SelectboxSelect(_manageUsers.Roles.GetValue());
+            page.AddRoleButton.Click();
 
             page.CreateUserButton.Click();
         }
