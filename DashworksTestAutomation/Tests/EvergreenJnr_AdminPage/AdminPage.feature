@@ -418,7 +418,11 @@ Scenario: EvergreenJnr_AdminPage_CheckThatAllAssociationsAreSelectedByDefaultInT
 	Then Project "TestProject7" is displayed to user
 	When User selects "Scope Details" tab on the Project details page
 	And User navigates to the "Application Scope" tab in the Scope section on the Project details page
-	Then All Association are selected by default
+	Then All Associations are selected by default
+	When  User selects "Do not include applications" checkbox on the Project details page
+	Then All Associations are disabled
+	When  User selects "Include applications" checkbox on the Project details page
+	Then All Associations are selected by default
 
 @Evergreen @Admin @EvergreenJnr_AdminPage @AdminPage @DAS12170
 Scenario: EvergreenJnr_AdminPage_CheckThatConsoleErrorsAreNotDisplayedAfterAddingDevicesInTheBuckets
@@ -851,7 +855,8 @@ Scenario: EvergreenJnr_AdminPage_CheckingThatRedBannerWithOkMessageIsNotDisplaye
 	| Objects                    |
 	| AAC860150 (Kerrie D. Ruiz) |
 	And User clicks "UPDATE ALL CHANGES" button on the Projects page
-	And User clicks Update Project button on the Projects page
+	Then message with "1 device will be added, 1 user will be added, 1 application will be added" text is displayed on the Projects page
+	When User clicks Update Project button on the Projects page
 	Then Success message with "3 objects queued for onboarding, 0 objects offboarded" text is displayed on the Projects page
 	And There are no errors in the browser console
 
