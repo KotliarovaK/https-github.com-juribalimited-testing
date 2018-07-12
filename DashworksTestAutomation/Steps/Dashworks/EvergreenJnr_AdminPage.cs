@@ -24,15 +24,17 @@ namespace DashworksTestAutomation.Steps.Dashworks
         private readonly TeamName _teamName;
         private readonly UsedUsers _usedUsers;
         private readonly DTO.RuntimeVariables.Projects _projects;
+        private readonly Buckets _buckets;
         private readonly RestWebClient _client;
 
-        public EvergreenJnr_AdminPage(RemoteWebDriver driver, UsedUsers usedUsers, TeamName teamName, DTO.RuntimeVariables.Projects projects, RestWebClient client)
+        public EvergreenJnr_AdminPage(RemoteWebDriver driver, UsedUsers usedUsers, TeamName teamName, DTO.RuntimeVariables.Projects projects, RestWebClient client, Buckets buckets)
         {
             _driver = driver;
             _usedUsers = usedUsers;
             _teamName = teamName;
             _projects = projects;
             _client = client;
+            _buckets = buckets;
         }
 
         [When(@"User clicks ""(.*)"" link on the Admin page")]
@@ -558,6 +560,9 @@ namespace DashworksTestAutomation.Steps.Dashworks
         {
             var bucketName = _driver.NowAt<CreateBucketPage>();
             bucketName.BucketNameField.SendKeys(bucketText);
+
+            if (!string.IsNullOrEmpty(bucketText))
+                _buckets.Value.Add(bucketText);
         }
 
         [When(@"User selects ""(.*)"" team in the Team dropdown on the Buckets page")]
@@ -1074,6 +1079,40 @@ namespace DashworksTestAutomation.Steps.Dashworks
                 "Incorrect rows count");
         }
 
+        [AfterScenario("Delete_Newly_Created_Bucket")]
+        public void DeleteAllBucketAfterScenarioRun()
+        {
+            try
+            {
+                var requestUri = $"{UrlProvider.RestClientBaseUrl}admin/bucket/deleteBuckets";
+
+                foreach (var bucketName in _buckets.Value)
+                {
+                    if (string.IsNullOrEmpty(bucketName))
+                        continue;
+
+                    var bucketId = DatabaseHelper.ExecuteReader($"SELECT [GroupID] FROM [PM].[dbo].[ProjectGroups] where [GroupName] = '{bucketName}'", 0)[0];
+
+                    var request = new RestRequest(requestUri);
+
+                    request.AddParameter("Host", UrlProvider.RestClientBaseUrl);
+                    request.AddParameter("Origin", UrlProvider.Url.TrimEnd('/'));
+                    request.AddParameter("Referer", UrlProvider.EvergreenUrl);
+                    request.AddParameter("objectId", null);
+                    request.AddParameter("selectedObjectsList", bucketId);
+
+                    var response = _client.Value.Post(request);
+
+                    if (response.StatusCode != HttpStatusCode.OK)
+                        throw new Exception($"Unable to execute request. URI: {requestUri}");
+                }
+            }
+            catch (Exception e)
+            {
+                Console.WriteLine(e);
+            }
+        }
+
         [Then(@"Delete ""(.*)"" Project in the Administration")]
         public void ThenDeleteProjectInTheAdministration(string projectName)
         {
@@ -1092,23 +1131,33 @@ namespace DashworksTestAutomation.Steps.Dashworks
         [AfterScenario("Delete_Newly_Created_Project")]
         public void DeleteNewlyCreatedProject()
         {
-            var requestUri = $"{UrlProvider.RestClientBaseUrl}admin/projects/deleteProjects";
-
-            foreach (var projectName in _projects.Value)
+            try
             {
-                var projectId = GetProjectId(projectName);
+                var requestUri = $"{UrlProvider.RestClientBaseUrl}admin/projects/deleteProjects";
 
-                var request = new RestRequest(requestUri);
+                foreach (var projectName in _projects.Value)
+                {
+                    if (string.IsNullOrEmpty(projectName))
+                        continue;
 
-                request.AddParameter("Host", UrlProvider.RestClientBaseUrl);
-                request.AddParameter("Origin", UrlProvider.Url.TrimEnd('/'));
-                request.AddParameter("Referer", UrlProvider.EvergreenUrl);
-                request.AddParameter("selectedObjectsList", projectId);
+                    var projectId = GetProjectId(projectName);
 
-                var response = _client.Value.Post(request);
+                    var request = new RestRequest(requestUri);
 
-                if (response.StatusCode != HttpStatusCode.OK)
-                    throw new Exception($"Unable to execute request. URI: {requestUri}");
+                    request.AddParameter("Host", UrlProvider.RestClientBaseUrl);
+                    request.AddParameter("Origin", UrlProvider.Url.TrimEnd('/'));
+                    request.AddParameter("Referer", UrlProvider.EvergreenUrl);
+                    request.AddParameter("selectedObjectsList", projectId);
+
+                    var response = _client.Value.Post(request);
+
+                    if (response.StatusCode != HttpStatusCode.OK)
+                        throw new Exception($"Unable to execute request. URI: {requestUri}");
+                }
+            }
+            catch (Exception e)
+            {
+                Console.WriteLine(e);
             }
         }
 
@@ -1131,12 +1180,6 @@ namespace DashworksTestAutomation.Steps.Dashworks
         public void WhenUserMovesDeviceToBucket(string deviceName, string bucketName)
         {
             var bucketId = DatabaseHelper.ExecuteReader($"SELECT [GroupID] FROM [PM].[dbo].[ProjectGroups] where [GroupName] = '{bucketName}'", 0)[0];
-        }
-
-        [When(@"User moves '(.*)' user to '(.*)' bucket")]
-        public void WhenUserMovesUserToBucket(string p0, string p1)
-        {
-            ScenarioContext.Current.Pending();
         }
     }
 }
