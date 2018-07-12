@@ -400,7 +400,7 @@ Scenario: EvergreenJnr_DevicesList_CheckThatErrorsDoNotAppearWhenAddingAdvancedA
 	| 07 Dec 2017 |
 	Then There are no errors in the browser console
 
-@Evergreen @Devices @EvergreenJnr_FilterFeature @FilterFunctionality @DAS11741
+@Evergreen @Devices @EvergreenJnr_FilterFeature @FilterFunctionality @DAS11741 @DAS13001 @Not_Run
 Scenario: EvergreenJnr_DevicesList_CheckThatErrorsDoNotAppearAndFullDataIsDisplayedWhenAddingDifferentFilters
 	When User clicks "Devices" on the left-hand menu
 	Then "Devices" list should be displayed to the user
@@ -441,7 +441,7 @@ Scenario: EvergreenJnr_DevicesList_CheckThatTheSaveButtonIsNotAvailableWithoutTh
 	And User create dynamic list with "TestListF58LY5" name on "Devices" page
 	Then Edit List menu is not displayed
 
-@Evergreen @Applications @EvergreenJnr_FilterFeature @FilterFunctionality @DAS11838
+@Evergreen @Applications @EvergreenJnr_FilterFeature @FilterFunctionality @DAS11838 @DAS13001 @Not_Run
 Scenario Outline: EvergreenJnr_ApplicationsList_CheckThatTheColourOfTheTargetAppReadinessItemIsMatchingTheCaption
 	When User clicks "Applications" on the left-hand menu
 	Then "Applications" list should be displayed to the user
@@ -520,7 +520,7 @@ Examples:
 	| Mailboxes | EmailMigra: Category | EmailMigra: Category |
 	| Devices   | Windows7Mi: Category | Windows7Mi: Category |
 
-@Evergreen @Mailboxes @EvergreenJnr_FilterFeature @FilterFunctionality @DAS12543 @Delete_Newly_Created_List
+@Evergreen @Mailboxes @EvergreenJnr_FilterFeature @FilterFunctionality @DAS12543 @DAS13001 @Delete_Newly_Created_List @Not_Run
 Scenario: EvergreenJnr_MailboxesList_CheckThatEditFilterElementsBlockIsDisplayedCorrectlyOnTheFiltersPanel
 	When User clicks "Mailboxes" on the left-hand menu
 	Then "Mailboxes" list should be displayed to the user

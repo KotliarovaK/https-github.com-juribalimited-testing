@@ -203,6 +203,7 @@
     <Compile Include="DTO\Projects\Tasks\TaskPropertiesDto.cs" />
     <Compile Include="DTO\Projects\Tasks\TaskProperties_DetailsDto.cs" />
     <Compile Include="DTO\Projects\TeamPropertiesDto.cs" />
+    <Compile Include="DTO\RuntimeVariables\Buckets.cs" />
     <Compile Include="DTO\RuntimeVariables\Filter.cs" />
     <Compile Include="DTO\RuntimeVariables\ListsDetails.cs" />
     <Compile Include="DTO\RuntimeVariables\PrjLastDeletedRequestTypeName.cs" />
