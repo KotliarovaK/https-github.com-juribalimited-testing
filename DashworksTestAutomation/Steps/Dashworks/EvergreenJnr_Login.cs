@@ -101,6 +101,28 @@ namespace DashworksTestAutomation.Steps.Dashworks
             }
         }
 
+        [When(@"User login with following credentials:")]
+        public void WhenUserLoginWithFollowingCredentials(Table table)
+        {
+            var loginPage = _driver.NowAt<LoginPage>();
+
+            foreach (var row in table.Rows)
+            {
+                if (loginPage.LoginGroupbox.Displayed())
+                {
+                    loginPage.UserNameTextbox.SendKeys(row["Username"]);
+                    loginPage.PasswordTextbox.SendKeys(row["Password"]);
+                    loginPage.LoginButton.Click();
+                }
+                else
+                {
+                    loginPage.SplashUserNameTextbox.SendKeys(row["Username"]);
+                    loginPage.SplashPasswordTextbox.SendKeys(row["Password"]);
+                    loginPage.SplashLoginButton.Click();
+                }
+            }            
+        }
+
         [Then(@"Dashworks homepage is displayed to the user in a logged in state")]
         public void ThenDashworksHomepageIsDisplayedToTheUserInALoggedInState()
         {

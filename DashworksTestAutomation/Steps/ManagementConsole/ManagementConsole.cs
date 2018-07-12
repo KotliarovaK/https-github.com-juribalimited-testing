@@ -40,6 +40,25 @@ namespace DashworksTestAutomation.Steps
             page.GetLinkInManagementConsoleByName(optionName).Click();
         }
 
+        [When(@"User create new User")]
+        public void WhenUserCreateNewUser(Table table)
+        {
+            var page = _driver.NowAt<ManageUserPage>();
+            page.CreateNewUserButton.Click();
+            foreach (var row in table.Rows)
+            {
+                page.Username.SendKeys(row["Username"]);
+                page.FullName.SendKeys(row["FullName"]);
+                page.Password.SendKeys(row["Password"]);
+                page.ConfirmPassword.SendKeys(row["ConfirmPassword"]);
+                if (!string.IsNullOrEmpty(row["Roles"]))
+                    page.Roles.SelectboxSelect(row["Roles"]);
+            }          
+            page.Roles.SelectboxSelect("Dashworks Users");
+            page.AddRoleButton.Click();
+            page.CreateUserButton.Click();
+        }
+
         [Then(@"User create a new Dashworks User")]
         public void ThenUserCreateANewDashworksUser(Table table)
         {
@@ -52,17 +71,20 @@ namespace DashworksTestAutomation.Steps
             ManageUsersDto tempManageUsersDto = new ManageUsersDto();
             _manageUsers.CopyPropertiesTo(tempManageUsersDto);
             _projectDto.ManageUsers.Add(tempManageUsersDto);
-            //assign RolesString to RolesEnum
-            _manageUsers.Roles = (RolesEnum)Enum.Parse(typeof(RolesEnum), _manageUsers.RolesString);
 
             page.Username.SendKeys(_manageUsers.Username);
             page.FullName.SendKeys(_manageUsers.FullName);
             page.Password.SendKeys(_manageUsers.Password);
             page.ConfirmPassword.SendKeys(_manageUsers.ConfirmPassword);
             page.Roles.SelectboxSelect(_manageUsers.Roles.GetValue());
-            page.Roles.SelectboxSelect("DashworksUsers");
+            page.Roles.SelectboxSelect("Dashworks Users");
             page.AddRoleButton.Click();
-            page.Roles.SelectboxSelect(_manageUsers.Roles.GetValue());
+            if (!string.IsNullOrEmpty(_manageUsers.RolesString))
+            {
+                //assign RolesString to RolesEnum
+                _manageUsers.Roles = (RolesEnum)Enum.Parse(typeof(RolesEnum), _manageUsers.RolesString);
+                page.Roles.SelectboxSelect(_manageUsers.Roles.GetValue());
+            }
             page.AddRoleButton.Click();
 
             page.CreateUserButton.Click();

@@ -233,21 +233,26 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_ActionsPanel
                         "FullName",
                         "Password",
                         "ConfirmPassword",
-                        "RolesString"});
+                        "Roles"});
             table1.AddRow(new string[] {
                         "000WithoutRoles",
                         "WithoutRoles",
                         "1234qwer",
                         "1234qwer",
-                        "DashworksEvergreenUsers"});
-            testRunner.Then("User create a new Dashworks User", ((string)(null)), table1, "Then ");
-            testRunner.And("Success message is displayed", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-            testRunner.And("created User is displayed in the table", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+                        ""});
+            testRunner.When("User create new User", ((string)(null)), table1, "When ");
+            testRunner.Then("Success message is displayed", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
             testRunner.When("User cliks Logout link", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
             testRunner.Then("User is logged out", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
             testRunner.When("User clicks on the Login link", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
             testRunner.Then("Login Page is displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-            testRunner.When("User provides the Login and Password and clicks on the login button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+            TechTalk.SpecFlow.Table table2 = new TechTalk.SpecFlow.Table(new string[] {
+                        "Username",
+                        "Password"});
+            table2.AddRow(new string[] {
+                        "000WithoutRoles",
+                        "1234qwer"});
+            testRunner.When("User login with following credentials:", ((string)(null)), table2, "When ");
             testRunner.Then("Dashworks homepage is displayed to the user in a logged in state", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
             testRunner.When("User clicks the Switch to Evergreen link", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
             testRunner.Then("Evergreen Dashboards page should be displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
