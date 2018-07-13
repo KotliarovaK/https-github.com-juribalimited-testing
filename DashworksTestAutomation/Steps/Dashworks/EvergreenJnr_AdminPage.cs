@@ -958,6 +958,13 @@ namespace DashworksTestAutomation.Steps.Dashworks
             createProjectElement.SelectObjectForProjectCreation(objectName);
         }
 
+        [Then(@"""(.*)"" is displayed in the Bucket dropdown")]
+        public void ThenIsDisplayedInTheBucketDropdown(string textBucket)
+        {
+            var projectElement = _driver.NowAt<ProjectsPage>();
+            Assert.IsTrue(projectElement.BucketDropdownDisplay(textBucket), "Incorrect text is displayed in the Bucket dropdown");
+        }
+
         [Then(@"Create Project button is disabled")]
         public void ThenCreateProjectButtonIsDisabled()
         {

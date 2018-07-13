@@ -1039,6 +1039,7 @@ Scenario: EvergreenJnr_AdminPage_CheckThatOnboardedObjectsAreDisplayedAfterChang
 	When User clicks "UPDATE" button on the Projects page
 	Then Success message is displayed and contains "The project details have been updated" text
 	When User selects "Scope Changes" tab on the Project details page
+	Then "Match to Evergreen Bucket" is displayed in the Bucket dropdown
 	When User expands the object to add
 	And User selects following Objects to the Project
 	| Objects         |
