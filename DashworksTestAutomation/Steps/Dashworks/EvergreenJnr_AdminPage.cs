@@ -234,11 +234,18 @@ namespace DashworksTestAutomation.Steps.Dashworks
             page.SelectRecordByName(recordName);
         }
 
-        [Then(@"All Association are selected by default")]
-        public void ThenAllAssociationAreSelectedByDefault()
+        [Then(@"All Associations are selected by default")]
+        public void ThenAllAssociationsAreSelectedByDefault()
         {
             var projectsPage = _driver.NowAt<ProjectsPage>();
             Assert.IsFalse(projectsPage.UncheckedCheckbox.Displayed(), "Not all checkboxes are selected");
+        }
+
+        [Then(@"All Associations are disabled")]
+        public void ThenAllAssociationsAreDisabled()
+        {
+            var projectsPage = _driver.NowAt<ProjectsPage>();
+            Assert.IsTrue(projectsPage.DisabledAllAssociations.Displayed(), "All Associations is active");
         }
 
         [Then(@"""(.*)"" is displayed to the user in the Project Scope Changes section")]
@@ -891,7 +898,7 @@ namespace DashworksTestAutomation.Steps.Dashworks
         {
             var page = _driver.NowAt<BaseGridPage>();
             _driver.WaitForDataLoading();
-            Assert.IsTrue(page.GetCreatedProjectName(projectName).Displayed(), "Created Project is not found");
+            Assert.IsTrue(page.GetCreatedProjectName(projectName), "Created Project is not found");
         }
 
         [Then(@"Import Project button is not displayed")]
@@ -949,6 +956,13 @@ namespace DashworksTestAutomation.Steps.Dashworks
             var createProjectElement = _driver.NowAt<ProjectsPage>();
             createProjectElement.BucketsProjectField.Click();
             createProjectElement.SelectObjectForProjectCreation(objectName);
+        }
+
+        [Then(@"""(.*)"" is displayed in the Bucket dropdown")]
+        public void ThenIsDisplayedInTheBucketDropdown(string textBucket)
+        {
+            var projectElement = _driver.NowAt<ProjectsPage>();
+            Assert.IsTrue(projectElement.BucketDropdownDisplay(textBucket), "Incorrect text is displayed in the Bucket dropdown");
         }
 
         [Then(@"Create Project button is disabled")]
@@ -1041,14 +1055,15 @@ namespace DashworksTestAutomation.Steps.Dashworks
         public void ThenItemWasRemoved(string itemName)
         {
             var item = _driver.NowAt<BaseGridPage>();
-            if (item.OnboardedObjectsTable.Displayed())
-            {
-                Assert.IsFalse(item.GetCreatedProjectName(itemName).Displayed(), "Selected item was not removed");
-            }
-            else
-            {
-                Assert.IsTrue(item.NoProjectsMessage.Displayed(), "'No projects found' message is not displayed");
-            }
+            Assert.IsFalse(item.GetCreatedProjectName(itemName), "Selected item was not removed");
+            //if (item.OnboardedObjectsTable.Displayed())
+            //{
+            //    Assert.IsFalse(item.GetCreatedProjectName(itemName).Displayed(), "Selected item was not removed");
+            //}
+            //else
+            //{
+            //    Assert.IsTrue(item.NoProjectsMessage.Displayed(), "'No projects found' message is not displayed");
+            //}
         }
 
         [When(@"User cancels the selection of all rows on the Projects page")]

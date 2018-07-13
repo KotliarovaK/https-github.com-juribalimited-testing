@@ -68,18 +68,18 @@ namespace DashworksTestAutomation.Tests.Projects
         
         [NUnit.Framework.TestAttribute()]
         [NUnit.Framework.DescriptionAttribute("Projects_CheckThatErrorIsNotDisplayedWhenUsedDDLForApplicationsTabOnPMObjectPage")]
-        [NUnit.Framework.CategoryAttribute("Evergreen")]
-        [NUnit.Framework.CategoryAttribute("Projects")]
-        [NUnit.Framework.CategoryAttribute("Projects_Dashboards")]
-        [NUnit.Framework.CategoryAttribute("Dashboards")]
+        [NUnit.Framework.CategoryAttribute("Senior")]
+        [NUnit.Framework.CategoryAttribute("PMObject")]
+        [NUnit.Framework.CategoryAttribute("Applications_tab")]
+        [NUnit.Framework.CategoryAttribute("Dashworks")]
         [NUnit.Framework.CategoryAttribute("DAS12695")]
         public virtual void Projects_CheckThatErrorIsNotDisplayedWhenUsedDDLForApplicationsTabOnPMObjectPage()
         {
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Projects_CheckThatErrorIsNotDisplayedWhenUsedDDLForApplicationsTabOnPMObjectPage", new string[] {
-                        "Evergreen",
-                        "Projects",
-                        "Projects_Dashboards",
-                        "Dashboards",
+                        "Senior",
+                        "PMObject",
+                        "Applications_tab",
+                        "Dashworks",
                         "DAS12695"});
             this.ScenarioSetup(scenarioInfo);
             this.FeatureBackground();
