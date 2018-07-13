@@ -265,11 +265,9 @@ namespace DashworksTestAutomation.Pages.Evergreen.AdminDetailsPages
                 By.XPath($".//div[@role='presentation']/div/div[@title='{objectsNumber}']"));
         }
 
-        public IWebElement GetCreatedProjectName(string projectName)
+        public bool GetCreatedProjectName(string projectName)
         {
-            var selector = By.XPath($"//a[text()='{projectName}']");
-            Driver.WaitWhileControlIsNotDisplayed(selector);
-            return Driver.FindElement(selector);
+            return Driver.IsElementDisplayed(By.XPath($".//a[text()='{projectName}']"));
         }
     }
 }
