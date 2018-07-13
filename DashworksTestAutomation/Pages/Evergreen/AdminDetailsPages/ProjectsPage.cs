@@ -114,6 +114,11 @@ namespace DashworksTestAutomation.Pages.Evergreen.AdminDetailsPages
             return Driver.IsElementDisplayed(By.XPath($".//div[text()='{textMessage}']"));
         }
 
+        public bool BucketDropdownDisplay(string textBucket)
+        {
+            return Driver.IsElementDisplayed(By.XPath($".//span[text()='{textBucket}']"));
+        }
+
         public bool SelectedItemInProjectScopeChangesSection(string text)
         {
             return Driver.IsElementDisplayed(By.XPath($".//span[@class='title'][contains(text(), '{text}')]"));
