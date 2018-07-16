@@ -16,6 +16,9 @@ namespace DashworksTestAutomation.Pages.Evergreen.AdminDetailsPages
         [FindsBy(How = How.XPath, Using = ".//input[@aria-checked='false']")]
         public IWebElement UncheckedCheckbox { get; set; }
 
+        [FindsBy(How = How.XPath, Using = "//div[contains(@class, 'wrapper-disabled')]")]
+        public IWebElement DisabledAllAssociations { get; set; }
+
         [FindsBy(How = How.XPath, Using = ".//span[text()='UPDATE PROJECT']")]
         public IWebElement UpdateProjectInTheWarning { get; set; }
 
@@ -109,6 +112,11 @@ namespace DashworksTestAutomation.Pages.Evergreen.AdminDetailsPages
         public bool SuccessTextMessage(string textMessage)
         {
             return Driver.IsElementDisplayed(By.XPath($".//div[text()='{textMessage}']"));
+        }
+
+        public bool BucketDropdownDisplay(string textBucket)
+        {
+            return Driver.IsElementDisplayed(By.XPath($".//span[text()='{textBucket}']"));
         }
 
         public bool SelectedItemInProjectScopeChangesSection(string text)

@@ -296,6 +296,17 @@ namespace DashworksTestAutomation.Steps.Dashworks
             _driver.WaitForDataLoading();
         }
 
+        [When(@"User Add And ""(.*)"" filter where type is ""(.*)"" with Selected Value and following Association:")]
+        public void WhenUserAddAndFilterWhereTypeIsWithSelectedValueAndFollowingAssociation(string filterName,
+            string operatorValue, Table table)
+        {
+            var filtersNames = _driver.NowAt<FiltersElement>();
+            filtersNames.AddAndFilter(filterName);
+            var filter = new ListFilter(_driver, operatorValue, table);
+            filter.Do();
+            _driver.WaitForDataLoading();
+        }
+
         [When(@"User have created ""(.*)"" filter with SelectedList list and following Association:")]
         public void WhenUserHaveCreatedFilterWithSelectedListListAndFollowingAssociation(string operatorValue,
             Table table)
@@ -341,6 +352,7 @@ namespace DashworksTestAutomation.Steps.Dashworks
             filtersNames.AddFilter(filterName);
             var filter = new ValueAssociationFilter(_driver, operatorValue, table);
             filter.Do();
+            _driver.WaitForDataLoading();
         }
 
         [When(@"User add ""(.*)"" filter where type is ""(.*)"" with added column and ""(.*)"" Date filter")]
