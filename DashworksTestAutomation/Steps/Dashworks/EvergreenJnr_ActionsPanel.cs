@@ -3,6 +3,7 @@ using System.Linq;
 using System.Threading;
 using DashworksTestAutomation.Extensions;
 using DashworksTestAutomation.Pages.Evergreen;
+using DashworksTestAutomation.Pages.Evergreen.DetailsTabsMenu;
 using DashworksTestAutomation.Utils;
 using NUnit.Framework;
 using OpenQA.Selenium;
@@ -51,6 +52,13 @@ namespace DashworksTestAutomation.Steps.Dashworks
         {
             var dashboardPage = _driver.NowAt<BaseDashboardPage>();
             dashboardPage.SelectAllCheckbox.Click();
+        }
+
+        [When(@"User clicks on Action drop-down")]
+        public void WhenUserClicksOnActionDrop_Down()
+        {
+            var action = _driver.NowAt<BaseDashboardPage>();
+            action.ActionsDropdown.Click();
         }
 
         [When(@"User selects ""(.*)"" in the Actions dropdown")]
@@ -205,6 +213,17 @@ namespace DashworksTestAutomation.Steps.Dashworks
             _driver.FindElement(By.XPath(actionsElement.listsDropdown)).Click();
             Assert.AreEqual(table.Rows.SelectMany(row => row.Values).ToList(),
                 actionsElement.GetDropdownOptions().Select(p => p.Text), "Incorrect options in lists dropdown");
+        }
+
+        [Then(@"following Values are displayed in Action drop-down:")]
+        public void ThenFollowingValuesAreDisplayedInActionDrop_Down(Table table)
+        {
+            var actionsElement = _driver.NowAt<ActionsElement>();
+            var expectedList = table.Rows.SelectMany(row => row.Values);
+            var actualList = actionsElement.ActionValues.Select(value => value.Text);
+            Assert.AreEqual(expectedList, actualList, "Action values are different");
+            var filterElement = _driver.NowAt<ApplicationsDetailsTabsMenu>();
+            filterElement.BodyContainer.Click();
         }
     }
 }

@@ -121,6 +121,14 @@ namespace DashworksTestAutomation.Steps
             _projectDto.ManageUsers.RemoveAt(_projectDto.ManageUsers.Count - 1);
         }
 
+        [When(@"User removes ""(.*)"" User")]
+        public void WhenUserRemovesUser(string userName)
+        {
+            var page = _driver.NowAt<MainElementsOfProjectCreation>();
+            page.GetDeleteButtonElementByName(userName).Click();
+            _driver.AcceptAlert();
+        }
+
         [Then(@"selected User was removed")]
         public void ThenSelectedUserWasRemoved()
         {
