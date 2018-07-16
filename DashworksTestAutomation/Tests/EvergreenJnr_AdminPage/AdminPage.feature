@@ -6,47 +6,6 @@ Background: Pre-Conditions
 	Given User is logged in to the Evergreen
 	Then Evergreen Dashboards page should be displayed to the user
 
-@Evergreen @Admin @EvergreenJnr_AdminPage @AdminPage @DAS11747 @Delete_Newly_Created_Team @Teams
-Scenario: EvergreenJnr_AdminPage_CheckThatErrorIsNotDisplayedWhenCreateTeamWithTheAlreadyExistName
-	When User clicks Admin on the left-hand menu
-	Then Admin page should be displayed to the user
-	When User clicks "Teams" link on the Admin page
-	Then "Teams" page should be displayed to the user
-	When User clicks Create New Item button
-	Then "Create Team" page should be displayed to the user
-	When User enters "TestTeam" in the Team Name field
-	And User enters "test" in the Team Description field
-	And User clicks Create Team button on the Create Team page
-	Then Success message is displayed and contains "The team has been created" text
-	When User clicks Create New Item button
-	Then "Create Team" page should be displayed to the user
-	When User enters "TestTeam" in the Team Name field
-	And User enters "test" in the Team Description field
-	And User clicks Create Team button on the Create Team page
-	Then Error message with "A team already exists with this name" text is displayed
-	And There are no errors in the browser console
-	And Delete "TestTeam" Team in the Administration
-
-@Evergreen @Admin @EvergreenJnr_AdminPage @AdminPage @DAS11747 @Delete_Newly_Created_Bucket @Buckets
-Scenario: EvergreenJnr_AdminPage_CheckThatErrorIsNotDisplayedWhenCreateBucketWithTheAlreadyExistName
-	When User clicks Admin on the left-hand menu
-	Then Admin page should be displayed to the user
-	When User clicks "Buckets" link on the Admin page
-	Then "Buckets" page should be displayed to the user
-	When User clicks Create New Item button
-	Then "Create Bucket" page should be displayed to the user
-	When User enters "TestBucket1" in the Bucket Name field
-	And User selects "Admin IT" team in the Team dropdown on the Buckets page
-	And User clicks Create button on the Create Bucket page
-	Then Success message is displayed and contains "The bucket has been created" text
-	When User clicks Create New Item button
-	Then "Create Bucket" page should be displayed to the user
-	When User enters "TestBucket1" in the Bucket Name field
-	And User selects "Admin IT" team in the Team dropdown on the Buckets page
-	And User clicks Create button on the Create Bucket page
-	Then Error message with "A bucket already exists with this name" text is displayed
-	And There are no errors in the browser console
-
 @Evergreen @Admin @EvergreenJnr_AdminPage @AdminPage @DAS11726 @DAS12761 @Project_Creation_and_Scope
 Scenario: EvergreenJnr_AdminPage_CheckThatCreateButtonIsDisabledForEmptyProjectName
 	When User clicks Admin on the left-hand menu
@@ -68,7 +27,7 @@ Scenario: EvergreenJnr_AdminPage_CheckThatCreateButtonIsDisabledForEmptyProjectN
 	Then Error message with "A project already exists with this name" text is displayed
 	And Delete "All Devices Project" Project in the Administration
 
-@Evergreen @Admin @EvergreenJnr_AdminPage @AdminPage @DAS11726 @Buckets
+@Evergreen @Admin @EvergreenJnr_AdminPage @AdminPage @DAS11726 @DAS11891 @DAS11747 @Delete_Newly_Created_Bucket @Buckets
 Scenario: EvergreenJnr_AdminPage_CheckThatCreateButtonIsDisabledForEmptyBucketName
 	When User clicks Admin on the left-hand menu
 	Then Admin page should be displayed to the user
@@ -82,8 +41,22 @@ Scenario: EvergreenJnr_AdminPage_CheckThatCreateButtonIsDisabledForEmptyBucketNa
 	When User enters " " in the Bucket Name field
 	And User selects "Admin IT" team in the Team dropdown on the Buckets page
 	Then Create Bucket button is disabled
+	When User clicks "Buckets" link on the Admin page
+	When User clicks Create New Item button
+	Then "Create Bucket" page should be displayed to the user
+	When User enters "TestBucket1" in the Bucket Name field
+	And User selects "Admin IT" team in the Team dropdown on the Buckets page
+	And User clicks Create button on the Create Bucket page
+	Then Success message is displayed and contains "The bucket has been created" text
+	When User clicks Create New Item button
+	Then "Create Bucket" page should be displayed to the user
+	When User enters "TestBucket1" in the Bucket Name field
+	And User selects "Admin IT" team in the Team dropdown on the Buckets page
+	And User clicks Create button on the Create Bucket page
+	Then Error message with "A bucket already exists with this name" text is displayed
+	And There are no errors in the browser console
 
-@Evergreen @Admin @EvergreenJnr_AdminPage @AdminPage @DAS11726 @Teams
+@Evergreen @Admin @EvergreenJnr_AdminPage @AdminPage @DAS11726 @DAS11747 @Delete_Newly_Created_Team @Teams
 Scenario: EvergreenJnr_AdminPage_CheckThatCreateButtonIsDisabledForEmptyTeamName
 	When User clicks Admin on the left-hand menu
 	Then Admin page should be displayed to the user
@@ -94,6 +67,17 @@ Scenario: EvergreenJnr_AdminPage_CheckThatCreateButtonIsDisabledForEmptyTeamName
 	When User enters " " in the Team Name field
 	And User enters "test" in the Team Description field
 	Then Create Team button is disabled
+	When User enters "TestTeam" in the Team Name field
+	And User enters "test" in the Team Description field
+	And User clicks Create Team button on the Create Team page
+	Then Success message is displayed and contains "The team has been created" text
+	When User clicks Create New Item button
+	Then "Create Team" page should be displayed to the user
+	When User enters "TestTeam" in the Team Name field
+	And User enters "test" in the Team Description field
+	And User clicks Create Team button on the Create Team page
+	Then Error message with "A team already exists with this name" text is displayed
+	And There are no errors in the browser console
 
 @Evergreen @AllLists @EvergreenJnr_AdminPage @AdminPage @DAS11886 @DAS12613 @Delete_Newly_Created_List @Delete_Newly_Created_Project @Project_Creation_and_Scope
 Scenario: EvergreenJnr_AdminPage_CheckThatWarningMessageIsDisplayedAfterDeletingUsedForProjectLists 
@@ -193,10 +177,36 @@ Scenario: EvergreenJnr_AdminPage_CheckThatNoConsoleErrorsAreDisplayedWhenDeleteD
 	Then Admin page should be displayed to the user
 	When User clicks "Buckets" link on the Admin page
 	Then "Buckets" page should be displayed to the user
+	When User clicks Reset Filters button on the Admin page
 	When User have opened Column Settings for "Bucket" column
 	And User clicks Filter button on the Column Settings panel
 	And User enters "123455465" text in the Filter field
 	And User clears Filter field
+	Then There are no errors in the browser console
+	When User have opened Column Settings for "Devices" column
+	And User enters "123455465" text in the Filter field
+	And User clears Filter field
+	Then Content is present in the table on the Admin page
+	Then There are no errors in the browser console
+	When User have opened Column Settings for "Default" column
+	When User clicks "True" checkbox from String Filter on the Admin page
+	Then There are no errors in the browser console
+	When User have opened Column Settings for "Project" column
+	When User clicks "Select All" checkbox from String Filter on the Admin page
+	Then There are no errors in the browser console
+	When User clicks Reset Filters button on the Admin page
+	When User click on "Bucket" column header on the Admin page
+	Then data in table is sorted by "Bucket" column in ascending order on the Admin page
+	When User click on "Bucket" column header on the Admin page
+	Then data in table is sorted by "Bucket" column in descending order on the Admin page
+	When User click on "Devices" column header on the Admin page
+	Then numeric data in table is sorted by "Devices" column in descending order on the Admin page
+	When User click on "Devices" column header on the Admin page
+	Then numeric data in table is sorted by "Devices" column in ascending order on the Admin page
+	When User click on "Default" column header on the Admin page
+	Then color data in table is sorted by "Default" column in ascending order on the Admin page
+	When User click on "Default" column header on the Admin page
+	Then color data in table is sorted by "Default" column in descending order on the Admin page
 	Then There are no errors in the browser console
 
 @Evergreen @Admin @EvergreenJnr_AdminPage @AdminPage @DAS11762 @DAS12009 @Teams
@@ -217,8 +227,27 @@ Scenario: EvergreenJnr_AdminPage_CheckThatNoConsoleErrorsAreDisplayedWhenDeleteD
 	And User clicks Filter button in the Column Settings panel on the Teams Page
 	And User enters "123455465" text in the Filter field
 	And User clears Filter field
-	Then Content is present in the table on the Teams Page
-	And There are no errors in the browser console
+	Then There are no errors in the browser console
+	When User click on Back button
+	When User have opened Column Settings for "Default" column
+	And User clicks Filter button in the Column Settings panel on the Teams Page
+	When User clicks "True" checkbox from String Filter on the Admin page
+	Then There are no errors in the browser console
+	When User clicks Reset Filters button on the Admin page
+	Then Content is present in the table on the Admin page
+	When User click on "Description" column header on the Admin page
+	Then data in table is sorted by "Description" column in ascending order on the Admin page
+	When User click on "Description" column header on the Admin page
+	Then data in table is sorted by "Description" column in descending order on the Admin page
+	When User click on "Members" column header on the Admin page
+	Then numeric data in table is sorted by "Members" column in descending order on the Admin page
+	When User click on "Members" column header on the Admin page
+	Then numeric data in table is sorted by "Members" column in ascending order on the Admin page
+	When User click on "Default" column header on the Admin page
+	Then color data in table is sorted by "Default" column in ascending order on the Admin page
+	When User click on "Default" column header on the Admin page
+	Then color data in table is sorted by "Default" column in descending order on the Admin page
+	Then There are no errors in the browser console
 
 @Evergreen @Admin @EvergreenJnr_AdminPage @AdminPage @DAS11879 @DAS12742 @DAS12752 @Buckets
 Scenario: EvergreenJnr_AdminPage_CheckThatYouCanNotDeleteTheDefaultBucketWarningMessageIsNotDisplayedAfterTryingToDeleteNonDefaultBucket
@@ -322,6 +351,10 @@ Scenario: EvergreenJnr_AdminPage_CheckThatNotificationMessageIsDisplayedAfterUpd
 	When User clicks Default Bucket checkbox on the Buckets page
 	And User clicks Update Bucket button on the Buckets page
 	Then Success message The "TestBucket2" bucket has been updated is displayed on the Buckets page
+	When User enters "TestBucket2" text in the Search field for "Bucket" column
+	And User clicks content from "Bucket" column
+	When User clicks "Bucket Settings" tab
+	Then Default Bucket checkbox is selected
 	And Delete "TestBucket2" Bucket in the Administration
 
 @Evergreen @Admin @EvergreenJnr_AdminPage @AdminPage @DAS11763 @DAS12742 @DAS12760 @Buckets @Teams
@@ -366,9 +399,18 @@ Scenario: EvergreenJnr_AdminPage_CheckThatErrorsDoNotAppearAfterUpdatingTeamDesc
 	And User clicks Update Team button
 	Then Success message is displayed and contains "The team was successfully updated" text
 	And There are no errors in the browser console
-	And Delete "TestTeam1" Team in the Administration
+	When User clicks refresh button in the browser
+	When User enters "" in the Team Name field
+	Then Update Team button is disabled
+	When User enters " " in the Team Name field
+	Then Update Team button is disabled
+	When User enters "NewTeamName" in the Team Name field
+	And User clicks Update Team button
+	Then Success message is displayed and contains "The team was successfully updated" text
+	And There are no errors in the browser console
+	Then Delete "NewTeamName" Team in the Administration
 
-@Evergreen @Admin @EvergreenJnr_AdminPage @AdminPage @DAS11765 @DAS12170 @Buckets @DAS13011 @Not_Run
+@Evergreen @Admin @EvergreenJnr_AdminPage @AdminPage @DAS11765 @DAS12170 @Buckets @DAS13011
 Scenario: EvergreenJnr_AdminPage_CheckThatMailboxesAreSuccessfullyAddedToBuckets
 	When User clicks Admin on the left-hand menu
 	Then Admin page should be displayed to the user
@@ -378,12 +420,14 @@ Scenario: EvergreenJnr_AdminPage_CheckThatMailboxesAreSuccessfullyAddedToBuckets
 	And User enters "Birmingham" text in the Search field for "Bucket" column
 	And User clicks content from "Bucket" column
 	And User clicks "Mailboxes" tab
-	And User clicks Create New Item button
+	Then Counter shows "147" found rows
+	When User clicks Create New Item button
 	And User adds following Objects from list
 	| Objects                          |
 	| 040698EE82354C17B60@bclabs.local |
 	| 04D8FC40F25547E7B4D@bclabs.local |
 	Then Success message is displayed and contains "The selected mailboxes have been added to the selected bucket" text
+	And Counter shows "149" found rows
 	And There are no errors in the browser console
 
 @Evergreen @Admin @EvergreenJnr_AdminPage @AdminPage @DAS11765 @DAS12170 @DAS13011 @Buckets @Not_Run
@@ -424,7 +468,7 @@ Scenario: EvergreenJnr_AdminPage_CheckThatAllAssociationsAreSelectedByDefaultInT
 	When  User selects "Include applications" checkbox on the Project details page
 	Then All Associations are selected by default
 
-@Evergreen @Admin @EvergreenJnr_AdminPage @AdminPage @DAS12170 @Buckets @DAS13011 @Not_Run
+@Evergreen @Admin @EvergreenJnr_AdminPage @AdminPage @DAS12170 @Buckets @DAS13011
 Scenario: EvergreenJnr_AdminPage_CheckThatConsoleErrorsAreNotDisplayedAfterAddingDevicesInTheBuckets
 	When User clicks Admin on the left-hand menu
 	Then Admin page should be displayed to the user
@@ -433,15 +477,17 @@ Scenario: EvergreenJnr_AdminPage_CheckThatConsoleErrorsAreNotDisplayedAfterAddin
 	When User clicks Reset Filters button on the Admin page
 	And User enters "Bangor" text in the Search field for "Bucket" column
 	And User clicks content from "Bucket" column
-	And User clicks Create New Item button
+	Then Counter shows "20" found rows
+	When User clicks Create New Item button
 	And User adds following Objects from list
 	| Objects        |
 	| VXERDNJ3KRJ421 |
 	| XV20GW6HJRVE2R |
 	Then Success message is displayed and contains "The selected devices have been added to the selected bucket" text
+	And Counter shows "22" found rows
 	And There are no errors in the browser console
 
-@Evergreen @Admin @EvergreenJnr_AdminPage @AdminPage @DAS12170 @Buckets @DAS13011 @Not_Run
+@Evergreen @Admin @EvergreenJnr_AdminPage @AdminPage @DAS12170 @Buckets @DAS13011
 Scenario: EvergreenJnr_AdminPage_CheckThatErrorsDoNotAppearAfterAddingDevicesToTheBucketWhereNoDevicesExist
 	When User clicks Admin on the left-hand menu
 	Then Admin page should be displayed to the user
@@ -454,7 +500,7 @@ Scenario: EvergreenJnr_AdminPage_CheckThatErrorsDoNotAppearAfterAddingDevicesToT
 	Then No items text is displayed
 	And There are no errors in the browser console
 
-@Evergreen @Admin @EvergreenJnr_AdminPage @AdminPage @DAS12170 @Buckets @DAS13011 @Not_Run
+@Evergreen @Admin @EvergreenJnr_AdminPage @AdminPage @DAS12170 @DAS13011 @Buckets
 Scenario: EvergreenJnr_AdminPage_CheckThatConsoleErrorsAreNotDisplayedAfterAddingUsersInTheBuckets
 	When User clicks Admin on the left-hand menu
 	Then Admin page should be displayed to the user
@@ -464,12 +510,14 @@ Scenario: EvergreenJnr_AdminPage_CheckThatConsoleErrorsAreNotDisplayedAfterAddin
 	And User enters "Bangor" text in the Search field for "Bucket" column
 	And User clicks content from "Bucket" column
 	And User clicks "Users" tab
-	And User clicks Create New Item button
+	Then Counter shows "15" found rows
+	When User clicks Create New Item button
 	And User adds following Objects from list
 	| Objects                        |
 	| UK\ADK614179 (Audrey B. Dixon) |
 	| UK\AAT858228 (Cheri B. Evans)  |
 	Then Success message is displayed and contains "The selected users have been added to the selected bucket" text
+	And Counter shows "17" found rows
 	And There are no errors in the browser console
 
 @Evergreen @Admin @EvergreenJnr_AdminPage @AdminPage @DAS11697 @DAS12744
@@ -487,25 +535,7 @@ Examples:
 	| Users     |
 	| Mailboxes |
 
-@Evergreen @Admin @EvergreenJnr_AdminPage @AdminPage @DAS12162 @DAS12532 @DAS12744 @Delete_Newly_Created_Project @Project_Creation_and_Scope
-Scenario: EvergreenJnr_AdminPage_CheckThatConsoleErrorsAreNotDisplayedAfterNavigatingScopeChangesTab
-	When User clicks "Devices" on the left-hand menu
-	Then "Devices" list should be displayed to the user
-	When User clicks Create Project from the main list
-	Then "Create Project" page should be displayed to the user
-	When User enters "TestProject8" in the Project Name field
-	And User clicks Create button on the Create Project page
-	And User clicks "Projects" link on the Admin page
-	Then "Projects" page should be displayed to the user
-	When User clicks "TestProject8" record in the grid
-	Then Project "TestProject8" is displayed to user
-	When User selects "Scope Changes" tab on the Project details page
-	And User clicks "Users" tab in the Project Scope Changes section
-	And User clicks "Devices" tab in the Project Scope Changes section
-	And User clicks "Applications" tab in the Project Scope Changes section
-	Then There are no errors in the browser console
-
-@Evergreen @Admin @EvergreenJnr_AdminPage @AdminPage @DAS12189 @DAS12523 @DAS12521 @DAS12744 @Delete_Newly_Created_List @Delete_Newly_Created_Project @Project_Creation_and_Scope
+@Evergreen @Admin @EvergreenJnr_AdminPage @AdminPage @DAS12189 @DAS12523 @DAS12521 @DAS12744 @DAS12162 @DAS12532 @Delete_Newly_Created_List @Delete_Newly_Created_Project @Project_Creation_and_Scope
 Scenario: EvergreenJnr_AdminPage_CheckThatNoErrorsAreDisplayedInTheProjectScopeChangesSectionAfterUsingSavedDevicesList
 	When User clicks "Applications" on the left-hand menu
 	Then "Applications" list should be displayed to the user
@@ -1197,7 +1227,6 @@ Scenario: EvergreenJnr_AdminPage_CheckThatImpossibleToCreateSameNamedTeamUsingTh
 	And User enters "test" in the Team Description field
 	And User clicks Create Team button on the Create Team page
 	Then Error message with "A team already exists with this name" text is displayed
-	And Delete "11770" Team in the Administration
 
 @Evergreen @Admin @EvergreenJnr_AdminPage @AdminPage @DAS11770 @Buckets
 Scenario: EvergreenJnr_AdminPage_CheckThatImpossibleToCreateSameNamedBucketUsingTheSpaceAsAFirstSymbol
