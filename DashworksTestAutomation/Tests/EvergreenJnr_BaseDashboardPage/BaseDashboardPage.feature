@@ -91,7 +91,7 @@ Scenario: EvergreenJnr_DevicesList_CheckThatURLsAreUpdatedAfterAddingSortingAndC
 	When User navigates to the "All Devices" list
 	Then default URL is displayed on "Devices" page
 
-@Evergreen @Users @EvergreenJnr_BaseDashboardPage @BaseDashboardPage @DAS12174 @DAS13001 @Not_Run
+@Evergreen @Users @EvergreenJnr_BaseDashboardPage @BaseDashboardPage @DAS12174 @DAS13001
 Scenario: EvergreenJnr_UsersList_CheckThatURLsAreUpdatedAfterAddingFilters
 	When User clicks "Users" on the left-hand menu
 	Then "Users" list should be displayed to the user

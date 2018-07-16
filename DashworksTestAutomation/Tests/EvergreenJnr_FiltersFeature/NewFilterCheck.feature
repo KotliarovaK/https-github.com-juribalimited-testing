@@ -62,7 +62,7 @@ Examples:
 	| MigrationP: Target App Key | Equals, Does not equal, Greater than, Greater than or equal to, Less than, Less than or equal to | 960          | MigrationP: Target App Key is 960  | 1         |
 	| UserSchedu: Target App Key | Equals, Does not equal, Greater than, Greater than or equal to, Less than, Less than or equal to | 1            | UserSchedu: Target App Key is 1    | 1         |
 
-@Evergreen @Applications @Evergreen_FiltersFeature @NewFilterCheck @DAS10828 @DAS13001 @Not_Run
+@Evergreen @Applications @Evergreen_FiltersFeature @NewFilterCheck @DAS10828 @DAS13001
 Scenario Outline: EvergreenJnr_ApplicationsList_CheckThatTargetAppReadinessFilterIsAddedToTheList
 	When User clicks "Applications" on the left-hand menu
 	Then "Applications" list should be displayed to the user
@@ -162,7 +162,7 @@ Examples:
 	| Applications | 2,223     |
 	| Mailboxes    | 14,784    |
 
-@Evergreen @Applications @Evergreen_FiltersFeature @NewFilterCheck @DAS10512 @DAS13001 @Not_Run
+@Evergreen @Applications @Evergreen_FiltersFeature @NewFilterCheck @DAS10512 @DAS13001
 Scenario Outline: EvergreenJnr_ApplicationsList_CheckThatApplicationReadinessFilterIsAddedToTheList
 	When User clicks "Applications" on the left-hand menu
 	Then "Applications" list should be displayed to the user
