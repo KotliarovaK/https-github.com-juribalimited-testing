@@ -27,26 +27,6 @@ Scenario: EvergreenJnr_AdminPage_CheckThatErrorIsNotDisplayedWhenCreateTeamWithT
 	And There are no errors in the browser console
 	And Delete "TestTeam" Team in the Administration
 
-@Evergreen @Admin @EvergreenJnr_AdminPage @AdminPage @DAS11747 @Delete_Newly_Created_Bucket @Buckets
-Scenario: EvergreenJnr_AdminPage_CheckThatErrorIsNotDisplayedWhenCreateBucketWithTheAlreadyExistName
-	When User clicks Admin on the left-hand menu
-	Then Admin page should be displayed to the user
-	When User clicks "Buckets" link on the Admin page
-	Then "Buckets" page should be displayed to the user
-	When User clicks Create New Item button
-	Then "Create Bucket" page should be displayed to the user
-	When User enters "TestBucket1" in the Bucket Name field
-	And User selects "Admin IT" team in the Team dropdown on the Buckets page
-	And User clicks Create button on the Create Bucket page
-	Then Success message is displayed and contains "The bucket has been created" text
-	When User clicks Create New Item button
-	Then "Create Bucket" page should be displayed to the user
-	When User enters "TestBucket1" in the Bucket Name field
-	And User selects "Admin IT" team in the Team dropdown on the Buckets page
-	And User clicks Create button on the Create Bucket page
-	Then Error message with "A bucket already exists with this name" text is displayed
-	And There are no errors in the browser console
-
 @Evergreen @Admin @EvergreenJnr_AdminPage @AdminPage @DAS11726 @DAS12761 @Project_Creation_and_Scope
 Scenario: EvergreenJnr_AdminPage_CheckThatCreateButtonIsDisabledForEmptyProjectName
 	When User clicks Admin on the left-hand menu
@@ -68,7 +48,7 @@ Scenario: EvergreenJnr_AdminPage_CheckThatCreateButtonIsDisabledForEmptyProjectN
 	Then Error message with "A project already exists with this name" text is displayed
 	And Delete "All Devices Project" Project in the Administration
 
-@Evergreen @Admin @EvergreenJnr_AdminPage @AdminPage @DAS11726 @DAS11891 @Buckets
+@Evergreen @Admin @EvergreenJnr_AdminPage @AdminPage @DAS11726 @DAS11891 @DAS11747 @Delete_Newly_Created_Bucket @Buckets
 Scenario: EvergreenJnr_AdminPage_CheckThatCreateButtonIsDisabledForEmptyBucketName
 	When User clicks Admin on the left-hand menu
 	Then Admin page should be displayed to the user
@@ -82,6 +62,20 @@ Scenario: EvergreenJnr_AdminPage_CheckThatCreateButtonIsDisabledForEmptyBucketNa
 	When User enters " " in the Bucket Name field
 	And User selects "Admin IT" team in the Team dropdown on the Buckets page
 	Then Create Bucket button is disabled
+	When User clicks "Buckets" link on the Admin page
+	When User clicks Create New Item button
+	Then "Create Bucket" page should be displayed to the user
+	When User enters "TestBucket1" in the Bucket Name field
+	And User selects "Admin IT" team in the Team dropdown on the Buckets page
+	And User clicks Create button on the Create Bucket page
+	Then Success message is displayed and contains "The bucket has been created" text
+	When User clicks Create New Item button
+	Then "Create Bucket" page should be displayed to the user
+	When User enters "TestBucket1" in the Bucket Name field
+	And User selects "Admin IT" team in the Team dropdown on the Buckets page
+	And User clicks Create button on the Create Bucket page
+	Then Error message with "A bucket already exists with this name" text is displayed
+	And There are no errors in the browser console
 
 @Evergreen @Admin @EvergreenJnr_AdminPage @AdminPage @DAS11726 @Teams
 Scenario: EvergreenJnr_AdminPage_CheckThatCreateButtonIsDisabledForEmptyTeamName
@@ -193,10 +187,36 @@ Scenario: EvergreenJnr_AdminPage_CheckThatNoConsoleErrorsAreDisplayedWhenDeleteD
 	Then Admin page should be displayed to the user
 	When User clicks "Buckets" link on the Admin page
 	Then "Buckets" page should be displayed to the user
+	When User clicks Reset Filters button on the Admin page
 	When User have opened Column Settings for "Bucket" column
 	And User clicks Filter button on the Column Settings panel
 	And User enters "123455465" text in the Filter field
 	And User clears Filter field
+	Then There are no errors in the browser console
+	When User have opened Column Settings for "Devices" column
+	And User enters "123455465" text in the Filter field
+	And User clears Filter field
+	Then Content is present in the table on the Admin page
+	Then There are no errors in the browser console
+	When User have opened Column Settings for "Default" column
+	When User clicks "True" checkbox from String Filter on the Admin page
+	Then There are no errors in the browser console
+	When User have opened Column Settings for "Project" column
+	When User clicks "Select All" checkbox from String Filter on the Admin page
+	Then There are no errors in the browser console
+	When User clicks Reset Filters button on the Admin page
+	When User click on "Bucket" column header on the Admin page
+	Then data in table is sorted by "Bucket" column in ascending order on the Admin page
+	When User click on "Bucket" column header on the Admin page
+	Then data in table is sorted by "Bucket" column in descending order on the Admin page
+	When User click on "Devices" column header on the Admin page
+	Then numeric data in table is sorted by "Devices" column in descending order on the Admin page
+	When User click on "Devices" column header on the Admin page
+	Then numeric data in table is sorted by "Devices" column in ascending order on the Admin page
+	When User click on "Default" column header on the Admin page
+	Then color data in table is sorted by "Default" column in ascending order on the Admin page
+	When User click on "Default" column header on the Admin page
+	Then color data in table is sorted by "Default" column in descending order on the Admin page
 	Then There are no errors in the browser console
 
 @Evergreen @Admin @EvergreenJnr_AdminPage @AdminPage @DAS11762 @DAS12009 @Teams
@@ -217,8 +237,27 @@ Scenario: EvergreenJnr_AdminPage_CheckThatNoConsoleErrorsAreDisplayedWhenDeleteD
 	And User clicks Filter button in the Column Settings panel on the Teams Page
 	And User enters "123455465" text in the Filter field
 	And User clears Filter field
-	Then Content is present in the table on the Teams Page
-	And There are no errors in the browser console
+	Then There are no errors in the browser console
+	When User click on Back button
+	When User have opened Column Settings for "Default" column
+	And User clicks Filter button in the Column Settings panel on the Teams Page
+	When User clicks "True" checkbox from String Filter on the Admin page
+	Then There are no errors in the browser console
+	When User clicks Reset Filters button on the Admin page
+	Then Content is present in the table on the Admin page
+	When User click on "Description" column header on the Admin page
+	Then data in table is sorted by "Description" column in ascending order on the Admin page
+	When User click on "Description" column header on the Admin page
+	Then data in table is sorted by "Description" column in descending order on the Admin page
+	When User click on "Members" column header on the Admin page
+	Then numeric data in table is sorted by "Members" column in descending order on the Admin page
+	When User click on "Members" column header on the Admin page
+	Then numeric data in table is sorted by "Members" column in ascending order on the Admin page
+	When User click on "Default" column header on the Admin page
+	Then color data in table is sorted by "Default" column in ascending order on the Admin page
+	When User click on "Default" column header on the Admin page
+	Then color data in table is sorted by "Default" column in descending order on the Admin page
+	Then There are no errors in the browser console
 
 @Evergreen @Admin @EvergreenJnr_AdminPage @AdminPage @DAS11879 @DAS12742 @DAS12752 @Buckets
 Scenario: EvergreenJnr_AdminPage_CheckThatYouCanNotDeleteTheDefaultBucketWarningMessageIsNotDisplayedAfterTryingToDeleteNonDefaultBucket

@@ -16,9 +16,6 @@ namespace DashworksTestAutomation.Pages.Evergreen.AdminDetailsPages
         [FindsBy(How = How.XPath, Using = ".//span[@class='ag-tab']//span[@class='ag-icon ag-icon-filter']")]
         public IWebElement FilterButton { get; set; }
         
-        [FindsBy(How = How.XPath, Using = ".//div[@class='ag-body-container']/div")]
-        public IWebElement TableContent { get; set; }
-        
         [FindsBy(How = How.XPath, Using = ".//h2[text()='Reassign Objects']")]
         public IWebElement ReassignObjectsSummary { get; set; }
 
