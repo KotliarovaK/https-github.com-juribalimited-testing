@@ -281,6 +281,7 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_AdminPage
         [NUnit.Framework.CategoryAttribute("EvergreenJnr_AdminPage")]
         [NUnit.Framework.CategoryAttribute("AdminPage")]
         [NUnit.Framework.CategoryAttribute("DAS11726")]
+        [NUnit.Framework.CategoryAttribute("DAS11891")]
         [NUnit.Framework.CategoryAttribute("Buckets")]
         public virtual void EvergreenJnr_AdminPage_CheckThatCreateButtonIsDisabledForEmptyBucketName()
         {
@@ -316,6 +317,7 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_AdminPage
                         "EvergreenJnr_AdminPage",
                         "AdminPage",
                         "DAS11726",
+                        "DAS11891",
                         "Buckets"});
             this.ScenarioSetup(scenarioInfo);
             this.FeatureBackground();
