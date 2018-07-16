@@ -488,6 +488,7 @@ namespace DashworksTestAutomation.Steps.Dashworks
         public void ThenUserEntersInTheTeamNameField(string teamName)
         {
             var teamPage = _driver.NowAt<CreateTeamPage>();
+            teamPage.TeamNameField.Clear();
             teamPage.TeamNameField.SendKeys(teamName);
             _teamName.Value.Add(teamName);
         }
