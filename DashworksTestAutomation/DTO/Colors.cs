@@ -12,7 +12,8 @@ namespace DashworksTestAutomation.DTO
         AMBER = 2,
         RED = 3,
         UNKNOWN = 4,
-        NOTAPPLICABLE = 5
-
+        NOTAPPLICABLE = 5,
+        TRUE = 6,
+        FALSE = 7
     }
 }

@@ -1,8 +1,10 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Net;
 using System.Threading;
+using DashworksTestAutomation.DTO;
 using DashworksTestAutomation.DTO.RuntimeVariables;
 using DashworksTestAutomation.Extensions;
 using DashworksTestAutomation.Helpers;
@@ -219,6 +221,74 @@ namespace DashworksTestAutomation.Steps.Dashworks
                 $"{tabName} is not displayed in the Project Scope Changes section");
         }
 
+        [When(@"User click on ""(.*)"" column header on the Admin page")]
+        public void WhenUserClickOnColumnHeaderOnTheAdminPage(string columnName)
+        {
+            var adminTable = _driver.NowAt<BaseGridPage>();
+            _driver.WaitForDataLoading();
+            adminTable.GetColumnHeaderByName(columnName).Click();
+        }
+
+        [Then(@"data in table is sorted by ""(.*)"" column in ascending order on the Admin page")]
+        public void ThenDataInTableIsSortedByColumnInAscendingOrderOnTheAdminPage(string columnName)
+        {
+            var adminTable = _driver.NowAt<BaseGridPage>();
+
+            List<string> actualList = adminTable.GetColumnContent(columnName).Where(x => !x.Equals("")).ToList();
+            SortingHelper.IsListSorted(actualList);
+            _driver.WaitForDataLoading();
+            Assert.IsTrue(adminTable.AscendingSortingIcon.Displayed);
+        }
+
+        [Then(@"data in table is sorted by ""(.*)"" column in descending order on the Admin page")]
+        public void ThenDataInTableIsSortedByColumnInDescendingOrderOnTheAdminPage(string columnName)
+        {
+            var adminTable = _driver.NowAt<BaseGridPage>();
+
+            List<string> expectedList = adminTable.GetColumnContent(columnName).Where(x => !x.Equals("")).ToList();
+            SortingHelper.IsListSorted(expectedList, false);
+            _driver.WaitForDataLoading();
+            Assert.IsTrue(adminTable.DescendingSortingIcon.Displayed);
+        }
+
+        [Then(@"numeric data in table is sorted by ""(.*)"" column in ascending order on the Admin page")]
+        public void ThenNumericDataInTableIsSortedByColumnInAscendingOrderOnTheAdminPage(string columnName)
+        {
+            var listpageMenu = _driver.NowAt<BaseGridPage>();
+
+            List<string> actualList = listpageMenu.GetColumnContent(columnName).Where(x => !x.Equals("")).ToList();
+            SortingHelper.IsNumericListSorted(actualList);
+            Assert.IsTrue(listpageMenu.AscendingSortingIcon.Displayed);
+        }
+
+        [Then(@"numeric data in table is sorted by ""(.*)"" column in descending order on the Admin page")]
+        public void ThenNumericDataInTableIsSortedByColumnInDescendingOrderOnTheAdminPage(string columnName)
+        {
+            var listpageMenu = _driver.NowAt<BaseGridPage>();
+            _driver.WaitForDataLoading();
+            List<string> expectedList = listpageMenu.GetColumnContent(columnName).Where(x => !x.Equals("")).ToList();
+            SortingHelper.IsNumericListSorted(expectedList, false);
+            Assert.IsTrue(listpageMenu.DescendingSortingIcon.Displayed);
+        }
+
+        [Then(@"color data in table is sorted by ""(.*)"" column in ascending order on the Admin page")]
+        public void ThenColorDataInTableIsSortedByColumnInAscendingOrderOnTheAdminPage(string columnName)
+        {
+            var listpageMenu = _driver.NowAt<BaseGridPage>();
+            List<string> expectedList = listpageMenu.GetColumnContent(columnName).Where(x => !x.Equals("")).ToList();
+            SortingHelper.IsListSortedByEnum<Colors>(new List<string>(expectedList));
+            Assert.IsTrue(listpageMenu.AscendingSortingIcon.Displayed);
+        }
+
+        [Then(@"color data in table is sorted by ""(.*)"" column in descending order on the Admin page")]
+        public void ThenColorDataInTableIsSortedByColumnInDescendingOrderOnTheAdminPage(string columnName)
+        {
+            var listpageMenu = _driver.NowAt<BaseGridPage>();
+            List<string> expectedList = listpageMenu.GetColumnContent(columnName).Where(x => !x.Equals("")).ToList();
+            SortingHelper.IsListSortedByEnum<Colors>(new List<string>(expectedList), false);
+            Assert.IsTrue(listpageMenu.DescendingSortingIcon.Displayed);
+        }
+
         [Then(@"Project ""(.*)"" is displayed to user")]
         public void ThenProjectIsDisplayedToUser(string projectName)
         {
@@ -232,6 +302,13 @@ namespace DashworksTestAutomation.Steps.Dashworks
         {
             var page = _driver.NowAt<BaseGridPage>();
             page.SelectRecordByName(recordName);
+        }
+
+        [When(@"User clicks ""(.*)"" checkbox from String Filter on the Admin page")]
+        public void WhenUserClicksCheckboxFromStringFilterOnTheAdminPage(string filterName)
+        {
+            var page = _driver.NowAt<BaseGridPage>();
+            page.GetBooleanStringFilterByName(filterName);
         }
 
         [Then(@"All Associations are selected by default")]
@@ -411,6 +488,7 @@ namespace DashworksTestAutomation.Steps.Dashworks
         public void ThenUserEntersInTheTeamNameField(string teamName)
         {
             var teamPage = _driver.NowAt<CreateTeamPage>();
+            teamPage.TeamNameField.Clear();
             teamPage.TeamNameField.SendKeys(teamName);
             _teamName.Value.Add(teamName);
         }
@@ -471,11 +549,11 @@ namespace DashworksTestAutomation.Steps.Dashworks
 
         #region Table content
 
-        [Then(@"Content is present in the table on the Teams Page")]
-        public void ThenContentIsPresentInTheTableOnTheTeamsPage()
+        [Then(@"Content is present in the table on the Admin page")]
+        public void ThenContentIsPresentInTheTableOnTheAdminPage()
         {
-            var tableElement = _driver.NowAt<TeamsPage>();
-            _driver.WaitWhileControlIsNotDisplayed<TeamsPage>(() => tableElement.TableContent);
+            var tableElement = _driver.NowAt<BaseGridPage>();
+            _driver.WaitWhileControlIsNotDisplayed<BaseGridPage>(() => tableElement.TableContent);
             Assert.IsTrue(tableElement.TableContent.Displayed(), "Table is empty");
         }
 
