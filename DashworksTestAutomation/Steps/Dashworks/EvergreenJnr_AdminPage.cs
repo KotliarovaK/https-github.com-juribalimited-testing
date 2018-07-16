@@ -1056,14 +1056,6 @@ namespace DashworksTestAutomation.Steps.Dashworks
         {
             var item = _driver.NowAt<BaseGridPage>();
             Assert.IsFalse(item.GetCreatedProjectName(itemName), "Selected item was not removed");
-            //if (item.OnboardedObjectsTable.Displayed())
-            //{
-            //    Assert.IsFalse(item.GetCreatedProjectName(itemName).Displayed(), "Selected item was not removed");
-            //}
-            //else
-            //{
-            //    Assert.IsTrue(item.NoProjectsMessage.Displayed(), "'No projects found' message is not displayed");
-            //}
         }
 
         [When(@"User cancels the selection of all rows on the Projects page")]
