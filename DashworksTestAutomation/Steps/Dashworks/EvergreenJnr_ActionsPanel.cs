@@ -69,6 +69,58 @@ namespace DashworksTestAutomation.Steps.Dashworks
             action.SelectActions(actionsName);
         }
 
+        [When(@"User selects ""(.*)"" Bulk Update Type on Action panel")]
+        public void WhenUserSelectsBulkUpdateTypeOnActionPanel(string typeName)
+        {
+            var action = _driver.NowAt<BaseDashboardPage>();
+            action.RequestTypeDropdown.Click();
+            action.SelectActions(typeName);
+        }
+
+        [When(@"User selects ""(.*)"" Project on Action panel")]
+        public void WhenUserSelectsProjectOnActionPanel(string projectName)
+        {
+            var action = _driver.NowAt<BaseDashboardPage>();
+            action.ProjectField.SendKeys(projectName);
+            action.OptionName.Click();
+        }
+
+        [When(@"User selects ""(.*)"" Request Type on Action panel")]
+        public void WhenUserSelectsRequestTypeOnActionPanel(string requestType)
+        {
+            var action = _driver.NowAt<BaseDashboardPage>();
+            action.RequestTypeField.SendKeys(requestType);
+            action.OptionName.Click();
+        }
+
+        [When(@"User clicks ""(.*)"" button on Action panel")]
+        public void WhenUserClicksButtonOnActionPanel(string buttonName)
+        {
+            var action = _driver.NowAt<BaseDashboardPage>();
+            action.GetButtonByNameOnActionPanel(buttonName).Click();
+        }
+
+        [Then(@"Warning message with ""(.*)"" text is displayed on Action panel")]
+        public void ThenWarningMessageWithTextIsDisplayedOnActionPanel(string textMessage)
+        {
+            var action = _driver.NowAt<BaseDashboardPage>();
+            Assert.IsTrue(action.WarningMessageActionPanel(textMessage), "Warning Message is not displayed");
+        }
+
+        [Then(@"Success message with ""(.*)"" text is displayed on Action panel")]
+        public void ThenSuccessMessageWithTextIsDisplayedOnActionPanel(string textMessage)
+        {
+            var action = _driver.NowAt<BaseDashboardPage>();
+            Assert.IsTrue(action.SuccessMessageActionPanel(textMessage), "Success Message is not displayed");
+        }
+
+        [Then(@"User clicks ""(.*)"" button on message box")]
+        public void ThenUserClicksButtonOnMessageBox(string buttonName)
+        {
+            var action = _driver.NowAt<BaseDashboardPage>();
+            action.GetButtonOnMessageBoxByNameOnActionPanel(buttonName).Click();
+        }
+
         [Then(@"Checkboxes are not displayed")]
         public void ThenCheckboxesAreNotDisplayed()
         {
