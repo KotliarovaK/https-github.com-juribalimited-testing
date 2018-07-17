@@ -3,6 +3,7 @@ using System.Linq;
 using System.Threading;
 using DashworksTestAutomation.Extensions;
 using DashworksTestAutomation.Pages.Evergreen;
+using DashworksTestAutomation.Pages.Evergreen.DetailsTabsMenu;
 using DashworksTestAutomation.Utils;
 using NUnit.Framework;
 using OpenQA.Selenium;
@@ -53,12 +54,71 @@ namespace DashworksTestAutomation.Steps.Dashworks
             dashboardPage.SelectAllCheckbox.Click();
         }
 
+        [When(@"User clicks on Action drop-down")]
+        public void WhenUserClicksOnActionDrop_Down()
+        {
+            var action = _driver.NowAt<BaseDashboardPage>();
+            action.ActionsDropdown.Click();
+        }
+
         [When(@"User selects ""(.*)"" in the Actions dropdown")]
         public void WhenUserSelectsInTheActionsDropdown(string actionsName)
         {
             var action = _driver.NowAt<BaseDashboardPage>();
             action.ActionsDropdown.Click();
             action.SelectActions(actionsName);
+        }
+
+        [When(@"User selects ""(.*)"" Bulk Update Type on Action panel")]
+        public void WhenUserSelectsBulkUpdateTypeOnActionPanel(string typeName)
+        {
+            var action = _driver.NowAt<BaseDashboardPage>();
+            action.RequestTypeDropdown.Click();
+            action.SelectActions(typeName);
+        }
+
+        [When(@"User selects ""(.*)"" Project on Action panel")]
+        public void WhenUserSelectsProjectOnActionPanel(string projectName)
+        {
+            var action = _driver.NowAt<BaseDashboardPage>();
+            action.ProjectField.SendKeys(projectName);
+            action.OptionName.Click();
+        }
+
+        [When(@"User selects ""(.*)"" Request Type on Action panel")]
+        public void WhenUserSelectsRequestTypeOnActionPanel(string requestType)
+        {
+            var action = _driver.NowAt<BaseDashboardPage>();
+            action.RequestTypeField.SendKeys(requestType);
+            action.OptionName.Click();
+        }
+
+        [When(@"User clicks ""(.*)"" button on Action panel")]
+        public void WhenUserClicksButtonOnActionPanel(string buttonName)
+        {
+            var action = _driver.NowAt<BaseDashboardPage>();
+            action.GetButtonByNameOnActionPanel(buttonName).Click();
+        }
+
+        [Then(@"Warning message with ""(.*)"" text is displayed on Action panel")]
+        public void ThenWarningMessageWithTextIsDisplayedOnActionPanel(string textMessage)
+        {
+            var action = _driver.NowAt<BaseDashboardPage>();
+            Assert.IsTrue(action.WarningMessageActionPanel(textMessage), "Warning Message is not displayed");
+        }
+
+        [Then(@"Success message with ""(.*)"" text is displayed on Action panel")]
+        public void ThenSuccessMessageWithTextIsDisplayedOnActionPanel(string textMessage)
+        {
+            var action = _driver.NowAt<BaseDashboardPage>();
+            Assert.IsTrue(action.SuccessMessageActionPanel(textMessage), "Success Message is not displayed");
+        }
+
+        [Then(@"User clicks ""(.*)"" button on message box")]
+        public void ThenUserClicksButtonOnMessageBox(string buttonName)
+        {
+            var action = _driver.NowAt<BaseDashboardPage>();
+            action.GetButtonOnMessageBoxByNameOnActionPanel(buttonName).Click();
         }
 
         [Then(@"Checkboxes are not displayed")]
@@ -205,6 +265,17 @@ namespace DashworksTestAutomation.Steps.Dashworks
             _driver.FindElement(By.XPath(actionsElement.listsDropdown)).Click();
             Assert.AreEqual(table.Rows.SelectMany(row => row.Values).ToList(),
                 actionsElement.GetDropdownOptions().Select(p => p.Text), "Incorrect options in lists dropdown");
+        }
+
+        [Then(@"following Values are displayed in Action drop-down:")]
+        public void ThenFollowingValuesAreDisplayedInActionDrop_Down(Table table)
+        {
+            var actionsElement = _driver.NowAt<ActionsElement>();
+            var expectedList = table.Rows.SelectMany(row => row.Values);
+            var actualList = actionsElement.ActionValues.Select(value => value.Text);
+            Assert.AreEqual(expectedList, actualList, "Action values are different");
+            var filterElement = _driver.NowAt<ApplicationsDetailsTabsMenu>();
+            filterElement.BodyContainer.Click();
         }
     }
 }

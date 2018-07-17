@@ -26,6 +26,12 @@ namespace DashworksTestAutomation.Pages.ManagementConsole
         [FindsBy(How = How.XPath, Using = ".//input[@value='Create User']")]
         public IWebElement CreateUserButton { get; set; }
 
+        [FindsBy(How = How.XPath, Using = "//select[@id='availableRoles']")]
+        public IWebElement Roles { get; set; }
+
+        [FindsBy(How = How.XPath, Using = "//input[@value='Add Role »']")]
+        public IWebElement AddRoleButton { get; set; }
+
         public override List<By> GetPageIdentitySelectors()
         {
             return new List<By>

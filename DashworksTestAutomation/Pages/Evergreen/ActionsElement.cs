@@ -9,6 +9,8 @@ namespace DashworksTestAutomation.Pages.Evergreen
 {
     internal class ActionsElement : SeleniumBasePage
     {
+        public const string ActionValuesSelector = ".//mat-option[contains(@id, 'mat-option')]";
+
         private const string RowsSelectedCountSelctor = ".//div[@class='actions-container-row-select']";
 
         public string listsDropdown = ".//mat-select[@aria-label='Static Lists']";
@@ -39,6 +41,9 @@ namespace DashworksTestAutomation.Pages.Evergreen
 
         [FindsBy(How = How.XPath, Using = ".//span[text()='ADD']//ancestor::button")]
         public IWebElement AddButton { get; set; }
+
+        [FindsBy(How = How.XPath, Using = ActionValuesSelector)]
+        public IList<IWebElement> ActionValues { get; set; }
 
         public override List<By> GetPageIdentitySelectors()
         {

@@ -8,6 +8,8 @@ namespace DashworksTestAutomation.Pages.Evergreen.ProfileDetailsPages
 {
     internal class AccountDetailsPage : SeleniumBasePage
     {
+        public const string RoleSelector = "//li[@class='ng-star-inserted']/span";
+
         [FindsBy(How = How.XPath, Using = ".//input[@id='fileUploader']")]
         public IWebElement UploadButton { get; set; }
 
@@ -34,6 +36,9 @@ namespace DashworksTestAutomation.Pages.Evergreen.ProfileDetailsPages
 
         [FindsBy(How = How.XPath, Using = ".//div[@class='user-profile']//div[@class='img-bg']")]
         public IWebElement UserPicture { get; set; }
+
+        [FindsBy(How = How.XPath, Using = RoleSelector)]
+        public IList<IWebElement> AvailableRoles { get; set; }
 
         public override List<By> GetPageIdentitySelectors()
         {

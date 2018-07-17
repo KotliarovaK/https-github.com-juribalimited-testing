@@ -1,4 +1,5 @@
 ﻿using System.IO;
+using System.Linq;
 using System.Threading;
 using DashworksTestAutomation.DTO;
 using DashworksTestAutomation.Extensions;
@@ -211,6 +212,15 @@ namespace DashworksTestAutomation.Steps.Dashworks
             Assert.IsTrue(page.SuccessMessage.Displayed(), "Success message is not displayed");
             Thread.Sleep(5000);
             Assert.IsFalse(page.SuccessMessage.Displayed(), "Success message is displayed for more than 5 seconds");
+        }
+
+        [Then(@"following Roles are available for User:")]
+        public void ThenFollowingRolesAreAvailableForUser(Table table)
+        {
+            var page = _driver.NowAt<AccountDetailsPage>();
+            var expectedList = table.Rows.SelectMany(row => row.Values);
+            var actualList = page.AvailableRoles.Select(value => value.Text);
+            Assert.AreEqual(expectedList, actualList, "Available Roles are different");
         }
 
         [AfterScenario("Remove_Profile_Changes")]

@@ -71,7 +71,7 @@ namespace DashworksTestAutomation.Pages.Evergreen
         [FindsBy(How = How.XPath, Using = ".//input[@aria-label='User']")]
         public IWebElement SelectUserDropdown { get; set; }
 
-        [FindsBy(How = How.XPath, Using = ".//span[text()='Select access']/ancestor::div[@class='mat-select-trigger']")]
+        [FindsBy(How = How.XPath, Using = ".//span[text()='Permission']/ancestor::div[@class='mat-select-trigger']")]
         public IWebElement SelectAccessDropdown { get; set; }
 
         [FindsBy(How = How.XPath, Using = ".//span[text()='ADD USER']/ancestor::button")]
