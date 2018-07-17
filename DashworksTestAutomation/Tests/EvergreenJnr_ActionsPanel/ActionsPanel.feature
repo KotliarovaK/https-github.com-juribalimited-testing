@@ -131,8 +131,8 @@ Scenario: EvergreenJnr_DevicesList_CheckThatUserWithoutJustTheProjectAdministrat
 	And User select "Manage Users" option in Management Console
 	When User removes "000WithPBU" User
 
-@Evergreen @Devices @EvergreenJnr_ActionsPanel @DAS12932
-Scenario: EvergreenJnr_DevicesList_CheckThatUserWithoutJustTheProjectBulkUpdaterRoleCanStillBulkUpdateObjects
+@Evergreen @Applications @EvergreenJnr_ActionsPanel @DAS12932
+Scenario: EvergreenJnr_ApplicationsList_CheckThatUserWithoutJustTheProjectBulkUpdaterRoleCanStillBulkUpdateObjects
 	When User clicks "Projects" on the left-hand menu
 	Then "Projects Home" page is displayed to the user
 	When User navigate to Manage link
