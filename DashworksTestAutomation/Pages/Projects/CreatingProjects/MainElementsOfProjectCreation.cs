@@ -160,13 +160,13 @@ namespace DashworksTestAutomation.Pages.Projects
 
         public int GetGroupsCountByTeamName(string teamName)
         {
-            var groupsCount = Driver.FindElement(By.XPath($".//td[@title='{teamName}']/..//td[4]")).Text;
+            var groupsCount = Driver.FindElement(By.XPath($".//td[@title='{teamName}']/..//td[5]")).Text;
             return int.Parse(groupsCount);
         }
 
         public int GetMembersCountByTeamName(string teamName)
         {
-            var groupsCount = Driver.FindElement(By.XPath($".//td[@title='{teamName}']/..//td[3]")).Text;
+            var groupsCount = Driver.FindElement(By.XPath($".//td[@title='{teamName}']/..//td[4]")).Text;
             return int.Parse(groupsCount);
         }
 
