@@ -22,17 +22,33 @@ namespace DashworksTestAutomation.Pages.Evergreen
         [FindsBy(How = How.XPath, Using = ".//div[@id='pagetitle-text']/descendant::h1")]
         public IWebElement Heading { get; set; }
 
-        [FindsBy(How = How.XPath, Using = ".//button[@id='_staticListModeBtn']")]
-        public IWebElement ActionsButton { get; set; }
-
         [FindsBy(How = How.XPath, Using = ".//button[@id='_listDtlBtn'][@disabled]")]
         public IWebElement DisabledListDetailsButton { get; set; }
 
         [FindsBy(How = How.XPath, Using = ".//button[@class='btn btn-default mat-icon-button _mat-animation-noopable']")]
         public IWebElement InactiveActionsButton { get; set; }
 
+        #region Action Panel
+
+        [FindsBy(How = How.XPath, Using = ".//button[@id='_staticListModeBtn']")]
+        public IWebElement ActionsButton { get; set; }
+
         [FindsBy(How = How.XPath, Using = ".//mat-select[@aria-label='Actions']")]
         public IWebElement ActionsDropdown { get; set; }
+
+        [FindsBy(How = How.XPath, Using = ".//mat-select[@aria-labelledby='request-label']")]
+        public IWebElement RequestTypeDropdown { get; set; }
+
+        [FindsBy(How = How.XPath, Using = "//input[@placeholder='Project']")]
+        public IWebElement ProjectField { get; set; }
+
+        [FindsBy(How = How.XPath, Using = "//mat-option[@role='option']")]
+        public IWebElement OptionName { get; set; }
+
+        [FindsBy(How = How.XPath, Using = "//input[@placeholder='Request Type']")]
+        public IWebElement RequestTypeField { get; set; }
+
+        #endregion
 
         [FindsBy(How = How.XPath, Using = ".//button[@class='btn btn-default mat-icon-button _mat-animation-noopable'][@id='_listDtlBtn']")]
         public IWebElement ListDetailsButton { get; set; }
@@ -164,6 +180,20 @@ namespace DashworksTestAutomation.Pages.Evergreen
             };
         }
 
+        public bool WarningMessageActionPanel(string text)
+        {
+            Driver.WaitForElement(By.XPath("//div[@class='inline-tip ng-star-inserted']"));
+            return Driver.IsElementDisplayed(
+                By.XPath($".//div[@class='inline-tip ng-star-inserted']/div[text()='{text}']"));
+        }
+
+        public bool SuccessMessageActionPanel(string text)
+        {
+            Driver.WaitForElement(By.XPath("//div[@class='inline-success ng-star-inserted']"));
+            return Driver.IsElementDisplayed(
+                By.XPath($"//div[@class='inline-success ng-star-inserted']/div[text()='{text}']"));
+        }
+
         //Null value can be returned
         public IWebElement GetGridCell(int rowIndex, int columnNumber)
         {
@@ -274,6 +304,22 @@ namespace DashworksTestAutomation.Pages.Evergreen
         {
             var selector = By.XPath(
                 $".//span[@class='status-text'][text()='{colorName}']");
+            Driver.WaitWhileControlIsNotDisplayed(selector);
+            return Driver.FindElement(selector);
+        }
+
+        public IWebElement GetButtonByNameOnActionPanel(string button)
+        {
+            var selector = By.XPath(
+                $"//span[text()='{button}']/ancestor::button");
+            Driver.WaitWhileControlIsNotDisplayed(selector);
+            return Driver.FindElement(selector);
+        }
+
+        public IWebElement GetButtonOnMessageBoxByNameOnActionPanel(string button)
+        {
+            var selector = By.XPath(
+                $"//button[contains(@class, 'mat-button _mat-animation-noopable')]/span[text()='{button}']");
             Driver.WaitWhileControlIsNotDisplayed(selector);
             return Driver.FindElement(selector);
         }
