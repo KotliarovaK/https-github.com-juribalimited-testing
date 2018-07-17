@@ -1439,3 +1439,35 @@ Scenario: EvergreenJnr_AdminPage_CheckThatTheFilterSearchIsNotCaseSensitive
 	When User enters "TestName" text in the Search field for "Project" column
 	Then created Project with "testname_small letters" name is displayed correctly
 	Then created Project with "TESTNAME_capital letters" name is displayed correctly
+
+@Evergreen @Admin @EvergreenJnr_AdminPage @AdminPage @DAS12999 @Delete_Newly_Created_Project @Delete_Newly_Created_List
+Scenario: EvergreenJnr_AdminPage_CheckThatDevicesToAddAndRemoveAreChangingAppropriate
+	When User create static list with "StaticList6527" name on "Devices" page with following items
+	| ItemName        |
+	| 00BDM1JUR8IF419 |
+	| 011PLA470S0B9DJ |
+	Then "StaticList6527" list is displayed to user
+	When User clicks Admin on the left-hand menu
+	Then Admin page should be displayed to the user
+	When User clicks "Projects" link on the Admin page
+	Then "Projects" page should be displayed to the user
+	When User clicks Create New Item button
+	Then "Create Project" page should be displayed to the user
+	When User enters "DevicesProject" in the Project Name field
+	And User selects "All Devices" in the Scope Project dropdown
+	And User clicks Create button on the Create Project page
+	Then created Project with "DevicesProject" name is displayed correctly
+	And Success message with "Your project has been created" text is displayed on the Projects page
+	When User enters "DevicesProject" text in the Search field for "Project" column
+	And User clicks content from "Project" column
+	Then Project "DevicesProject" is displayed to user
+	When User selects "Scope Changes" tab on the Project details page
+	And User selects following Objects to the Project
+	| Objects         |
+	| 07RJRCQQJNBJIJQ |
+	| 0CFHJY5A8WLUB0J |
+	Then "Devices to add (2 of 17225 selected)" is displayed to the user in the Project Scope Changes section
+	When User clicks "UPDATE DEVICE CHANGES" button on the Projects page
+	When User selects "Scope Details" tab on the Project details page
+	When User selects "StaticList6527" in the Scope Project details
+	When User selects "Scope Changes" tab on the Project details page
