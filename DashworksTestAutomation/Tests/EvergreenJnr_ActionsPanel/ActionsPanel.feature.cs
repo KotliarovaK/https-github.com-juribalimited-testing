@@ -411,20 +411,20 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_ActionsPanel
         }
         
         [NUnit.Framework.TestAttribute()]
-        [NUnit.Framework.DescriptionAttribute("EvergreenJnr_DevicesList_CheckThatUserWithoutJustTheProjectBulkUpdaterRoleCanStil" +
-            "lBulkUpdateObjects")]
+        [NUnit.Framework.DescriptionAttribute("EvergreenJnr_ApplicationsList_CheckThatUserWithoutJustTheProjectBulkUpdaterRoleCa" +
+            "nStillBulkUpdateObjects")]
         [NUnit.Framework.CategoryAttribute("Evergreen")]
-        [NUnit.Framework.CategoryAttribute("Devices")]
+        [NUnit.Framework.CategoryAttribute("Applications")]
         [NUnit.Framework.CategoryAttribute("EvergreenJnr_ActionsPanel")]
         [NUnit.Framework.CategoryAttribute("DAS12932")]
-        public virtual void EvergreenJnr_DevicesList_CheckThatUserWithoutJustTheProjectBulkUpdaterRoleCanStillBulkUpdateObjects()
+        public virtual void EvergreenJnr_ApplicationsList_CheckThatUserWithoutJustTheProjectBulkUpdaterRoleCanStillBulkUpdateObjects()
         {
             System.Exception lastException = null;
             for (int i = 0; (i <= 1); i = (i + 1))
             {
                 try
                 {
-                    this.EvergreenJnr_DevicesList_CheckThatUserWithoutJustTheProjectBulkUpdaterRoleCanStillBulkUpdateObjectsInternal();
+                    this.EvergreenJnr_ApplicationsList_CheckThatUserWithoutJustTheProjectBulkUpdaterRoleCanStillBulkUpdateObjectsInternal();
                     return;
                 }
                 catch (System.Exception exc)
@@ -443,12 +443,12 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_ActionsPanel
             }
         }
         
-        private void EvergreenJnr_DevicesList_CheckThatUserWithoutJustTheProjectBulkUpdaterRoleCanStillBulkUpdateObjectsInternal()
+        private void EvergreenJnr_ApplicationsList_CheckThatUserWithoutJustTheProjectBulkUpdaterRoleCanStillBulkUpdateObjectsInternal()
         {
-            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("EvergreenJnr_DevicesList_CheckThatUserWithoutJustTheProjectBulkUpdaterRoleCanStil" +
-                    "lBulkUpdateObjects", new string[] {
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("EvergreenJnr_ApplicationsList_CheckThatUserWithoutJustTheProjectBulkUpdaterRoleCa" +
+                    "nStillBulkUpdateObjects", new string[] {
                         "Evergreen",
-                        "Devices",
+                        "Applications",
                         "EvergreenJnr_ActionsPanel",
                         "DAS12932"});
             this.ScenarioSetup(scenarioInfo);
