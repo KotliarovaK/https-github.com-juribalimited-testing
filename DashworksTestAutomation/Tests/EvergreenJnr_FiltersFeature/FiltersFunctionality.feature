@@ -710,23 +710,73 @@ Scenario: EvergreenJnr_UsersList_CheckThatNoConsoleErrorIsDisplayedAfterAddingUs
 Scenario: EvergreenJnr_UsersList_CheckThatNoErrorIsDisplayedAfterAddingAdvancedFilterForUsernameAndApplicationSavedList
 	When User clicks "Users" on the left-hand menu
 	Then "Users" list should be displayed to the user
-	When User clicks the Filters button
-	Then Filters panel is displayed to the user
-	When User add "Username" filter where type is "Contains" without added column and following value:
-	| Values |
-	| Bob    |
-	When User create dynamic list with "UsersBob" name on "Users" page
-	Then "UsersBob" list is displayed to user
+	When  User clicks the Actions button
+	Then Actions panel is displayed to the user
+	When User select all rows
+	And User selects "Create static list" in the Actions dropdown
+	And User create static list with "StaticList8546" name
 	When User clicks "Applications" on the left-hand menu
 	Then "Applications" list should be displayed to the user
 	When User clicks the Filters button
 	Then Filters panel is displayed to the user
-	When User add "User (Saved List)" filter where type is "In list" with Selected Value and following Association:
-	| SelectedList | Association                         |
-	| UsersBob     | Has used app                        |
-	| UsersBob     | Entitled to app                     |
-	| UsersBob     | Owns a device which app was used on |
-	Then "1" rows are displayed in the agGrid
+	When User add "User Username" filter where type is "Contains" with following Value and Association:
+	| Values | Association                            |
+	| Bob    | Has used app                           |
+	| Bob    | Entitled to app                        |
+	| Bob    | Owns a device which app was used on    |
+	| Bob    | Owns a device which app is entitled to |
+	When User create dynamic list with "UsersBob" name on "Applications" page
+	Then "UsersBob" list is displayed to user
+	When User clicks the Filters button
+	Then Filters panel is displayed to the user
+	When User Add And "User (Saved List)" filter where type is "In list" with Selected Value and following Association:
+	| SelectedList   | Association                         |
+	| StaticList8546 | Has used app                        |
+	| StaticList8546 | Entitled to app                     |
+	| StaticList8546 | Owns a device which app was used on |
+	Then "5" rows are displayed in the agGrid
+	Then There are no errors in the browser console
+
+@Evergreen @Applications @EvergreenJnr_FilterFeature @FilterFunctionality @DAS12181 @Delete_Newly_Created_List
+Scenario: EvergreenJnr_ApplicationsList_CheckThatNoErrorIsDisplayedAfterAddingFewAdvancedFilters
+	When User clicks "Applications" on the left-hand menu
+	Then "Applications" list should be displayed to the user
+	When User clicks the Filters button
+	Then Filters panel is displayed to the user
+	When User add "User" filter where type is "Does not equal" with following Lookup Value and Association:
+	| SelectedValues              | Association  |
+	| DWLABS\$231000-3AC04R8AR431 | Has used app |
+	When User add "User Last Logon Date" filter where type is "Before" with following Data and Association:
+	| Values     | Association     |
+	| 1 Feb 2018 | Entitled to app |
+	When User add "User SID" filter where type is "Begins with" with following Value and Association:
+	| Values | Association                         |
+	| 555    | Owns a device which app was used on |
+	Then "247" rows are displayed in the agGrid
+	And There are no errors in the browser console
+
+@Evergreen @Applications @EvergreenJnr_FilterFeature @FilterFunctionality @DAS12181 @Delete_Newly_Created_List
+Scenario: EvergreenJnr_ApplicationsList_CheckThatNoErrorIsDisplayedAfterAddingFewAdvancedFiltersAndFewStandardFilters
+	When User clicks "Applications" on the left-hand menu
+	Then "Applications" list should be displayed to the user
+	When User clicks the Filters button
+	Then Filters panel is displayed to the user
+	When User add "User Compliance" filter where type is "Equals" with selected Checkboxes and following Association:
+	| SelectedCheckboxes | Association  |
+	| Red                | Has used app |
+	When User add "User Enabled" filter where type is "Equals" with selected Checkboxes and following Association:
+	| SelectedCheckboxes | Association     |
+	| TRUE               | Entitled to app |
+	When User Add And "User Last Logon Date" filter where type is "Before" with following Data and Association:
+	| Values      | Association     |
+	| 15 Feb 2016 | Entitled to app |
+	When User add "Application" filter where type is "Contains" with added column and following value:
+	| Values |
+	| Office |
+	When User add "Vendor" filter where type is "Contains" with added column and following value:
+	| Values    |
+	| Microsoft |
+	Then "1,514" rows are displayed in the agGrid
 	And There are no errors in the browser console
 
 @Evergreen @Applications @EvergreenJnr_FilterFeature @FilterFunctionality @DAS12827 @DAS12812

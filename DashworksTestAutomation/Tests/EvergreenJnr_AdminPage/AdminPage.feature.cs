@@ -68,145 +68,6 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_AdminPage
         }
         
         [NUnit.Framework.TestAttribute()]
-        [NUnit.Framework.DescriptionAttribute("EvergreenJnr_AdminPage_CheckThatErrorIsNotDisplayedWhenCreateTeamWithTheAlreadyEx" +
-            "istName")]
-        [NUnit.Framework.CategoryAttribute("Evergreen")]
-        [NUnit.Framework.CategoryAttribute("Admin")]
-        [NUnit.Framework.CategoryAttribute("EvergreenJnr_AdminPage")]
-        [NUnit.Framework.CategoryAttribute("AdminPage")]
-        [NUnit.Framework.CategoryAttribute("DAS11747")]
-        [NUnit.Framework.CategoryAttribute("Delete_Newly_Created_Team")]
-        [NUnit.Framework.CategoryAttribute("Teams")]
-        public virtual void EvergreenJnr_AdminPage_CheckThatErrorIsNotDisplayedWhenCreateTeamWithTheAlreadyExistName()
-        {
-            System.Exception lastException = null;
-            for (int i = 0; (i <= 1); i = (i + 1))
-            {
-                try
-                {
-                    this.EvergreenJnr_AdminPage_CheckThatErrorIsNotDisplayedWhenCreateTeamWithTheAlreadyExistNameInternal();
-                    return;
-                }
-                catch (System.Exception exc)
-                {
-                    lastException = exc;
-                }
-                if (((i + 1) 
-                            <= 1))
-                {
-                    testRunner.OnScenarioEnd();
-                }
-            }
-            if ((lastException != null))
-            {
-                throw lastException;
-            }
-        }
-        
-        private void EvergreenJnr_AdminPage_CheckThatErrorIsNotDisplayedWhenCreateTeamWithTheAlreadyExistNameInternal()
-        {
-            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("EvergreenJnr_AdminPage_CheckThatErrorIsNotDisplayedWhenCreateTeamWithTheAlreadyEx" +
-                    "istName", new string[] {
-                        "Evergreen",
-                        "Admin",
-                        "EvergreenJnr_AdminPage",
-                        "AdminPage",
-                        "DAS11747",
-                        "Delete_Newly_Created_Team",
-                        "Teams"});
-            this.ScenarioSetup(scenarioInfo);
-            this.FeatureBackground();
-            testRunner.When("User clicks Admin on the left-hand menu", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-            testRunner.Then("Admin page should be displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-            testRunner.When("User clicks \"Teams\" link on the Admin page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-            testRunner.Then("\"Teams\" page should be displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-            testRunner.When("User clicks Create New Item button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-            testRunner.Then("\"Create Team\" page should be displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-            testRunner.When("User enters \"TestTeam\" in the Team Name field", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-            testRunner.And("User enters \"test\" in the Team Description field", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-            testRunner.And("User clicks Create Team button on the Create Team page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-            testRunner.Then("Success message is displayed and contains \"The team has been created\" text", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-            testRunner.When("User clicks Create New Item button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-            testRunner.Then("\"Create Team\" page should be displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-            testRunner.When("User enters \"TestTeam\" in the Team Name field", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-            testRunner.And("User enters \"test\" in the Team Description field", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-            testRunner.And("User clicks Create Team button on the Create Team page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-            testRunner.Then("Error message with \"A team already exists with this name\" text is displayed", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-            testRunner.And("There are no errors in the browser console", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-            testRunner.And("Delete \"TestTeam\" Team in the Administration", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-            this.ScenarioCleanup();
-        }
-        
-        [NUnit.Framework.TestAttribute()]
-        [NUnit.Framework.DescriptionAttribute("EvergreenJnr_AdminPage_CheckThatErrorIsNotDisplayedWhenCreateBucketWithTheAlready" +
-            "ExistName")]
-        [NUnit.Framework.CategoryAttribute("Evergreen")]
-        [NUnit.Framework.CategoryAttribute("Admin")]
-        [NUnit.Framework.CategoryAttribute("EvergreenJnr_AdminPage")]
-        [NUnit.Framework.CategoryAttribute("AdminPage")]
-        [NUnit.Framework.CategoryAttribute("DAS11747")]
-        [NUnit.Framework.CategoryAttribute("Delete_Newly_Created_Bucket")]
-        [NUnit.Framework.CategoryAttribute("Buckets")]
-        public virtual void EvergreenJnr_AdminPage_CheckThatErrorIsNotDisplayedWhenCreateBucketWithTheAlreadyExistName()
-        {
-            System.Exception lastException = null;
-            for (int i = 0; (i <= 1); i = (i + 1))
-            {
-                try
-                {
-                    this.EvergreenJnr_AdminPage_CheckThatErrorIsNotDisplayedWhenCreateBucketWithTheAlreadyExistNameInternal();
-                    return;
-                }
-                catch (System.Exception exc)
-                {
-                    lastException = exc;
-                }
-                if (((i + 1) 
-                            <= 1))
-                {
-                    testRunner.OnScenarioEnd();
-                }
-            }
-            if ((lastException != null))
-            {
-                throw lastException;
-            }
-        }
-        
-        private void EvergreenJnr_AdminPage_CheckThatErrorIsNotDisplayedWhenCreateBucketWithTheAlreadyExistNameInternal()
-        {
-            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("EvergreenJnr_AdminPage_CheckThatErrorIsNotDisplayedWhenCreateBucketWithTheAlready" +
-                    "ExistName", new string[] {
-                        "Evergreen",
-                        "Admin",
-                        "EvergreenJnr_AdminPage",
-                        "AdminPage",
-                        "DAS11747",
-                        "Delete_Newly_Created_Bucket",
-                        "Buckets"});
-            this.ScenarioSetup(scenarioInfo);
-            this.FeatureBackground();
-            testRunner.When("User clicks Admin on the left-hand menu", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-            testRunner.Then("Admin page should be displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-            testRunner.When("User clicks \"Buckets\" link on the Admin page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-            testRunner.Then("\"Buckets\" page should be displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-            testRunner.When("User clicks Create New Item button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-            testRunner.Then("\"Create Bucket\" page should be displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-            testRunner.When("User enters \"TestBucket1\" in the Bucket Name field", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-            testRunner.And("User selects \"Admin IT\" team in the Team dropdown on the Buckets page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-            testRunner.And("User clicks Create button on the Create Bucket page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-            testRunner.Then("Success message is displayed and contains \"The bucket has been created\" text", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-            testRunner.When("User clicks Create New Item button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-            testRunner.Then("\"Create Bucket\" page should be displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-            testRunner.When("User enters \"TestBucket1\" in the Bucket Name field", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-            testRunner.And("User selects \"Admin IT\" team in the Team dropdown on the Buckets page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-            testRunner.And("User clicks Create button on the Create Bucket page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-            testRunner.Then("Error message with \"A bucket already exists with this name\" text is displayed", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-            testRunner.And("There are no errors in the browser console", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-            this.ScenarioCleanup();
-        }
-        
-        [NUnit.Framework.TestAttribute()]
         [NUnit.Framework.DescriptionAttribute("EvergreenJnr_AdminPage_CheckThatCreateButtonIsDisabledForEmptyProjectName")]
         [NUnit.Framework.CategoryAttribute("Evergreen")]
         [NUnit.Framework.CategoryAttribute("Admin")]
@@ -214,6 +75,7 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_AdminPage
         [NUnit.Framework.CategoryAttribute("AdminPage")]
         [NUnit.Framework.CategoryAttribute("DAS11726")]
         [NUnit.Framework.CategoryAttribute("DAS12761")]
+        [NUnit.Framework.CategoryAttribute("DAS11770")]
         [NUnit.Framework.CategoryAttribute("Project_Creation_and_Scope")]
         public virtual void EvergreenJnr_AdminPage_CheckThatCreateButtonIsDisabledForEmptyProjectName()
         {
@@ -250,6 +112,7 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_AdminPage
                         "AdminPage",
                         "DAS11726",
                         "DAS12761",
+                        "DAS11770",
                         "Project_Creation_and_Scope"});
             this.ScenarioSetup(scenarioInfo);
             this.FeatureBackground();
@@ -281,6 +144,9 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_AdminPage
         [NUnit.Framework.CategoryAttribute("EvergreenJnr_AdminPage")]
         [NUnit.Framework.CategoryAttribute("AdminPage")]
         [NUnit.Framework.CategoryAttribute("DAS11726")]
+        [NUnit.Framework.CategoryAttribute("DAS11891")]
+        [NUnit.Framework.CategoryAttribute("DAS11747")]
+        [NUnit.Framework.CategoryAttribute("Delete_Newly_Created_Bucket")]
         [NUnit.Framework.CategoryAttribute("Buckets")]
         public virtual void EvergreenJnr_AdminPage_CheckThatCreateButtonIsDisabledForEmptyBucketName()
         {
@@ -316,6 +182,9 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_AdminPage
                         "EvergreenJnr_AdminPage",
                         "AdminPage",
                         "DAS11726",
+                        "DAS11891",
+                        "DAS11747",
+                        "Delete_Newly_Created_Bucket",
                         "Buckets"});
             this.ScenarioSetup(scenarioInfo);
             this.FeatureBackground();
@@ -331,6 +200,21 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_AdminPage
             testRunner.When("User enters \" \" in the Bucket Name field", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
             testRunner.And("User selects \"Admin IT\" team in the Team dropdown on the Buckets page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
             testRunner.Then("Create Bucket button is disabled", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+            testRunner.When("User clicks \"Buckets\" link on the Admin page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+            testRunner.When("User clicks Create New Item button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+            testRunner.Then("\"Create Bucket\" page should be displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+            testRunner.When("User enters \"TestBucket1\" in the Bucket Name field", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+            testRunner.And("User selects \"Admin IT\" team in the Team dropdown on the Buckets page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+            testRunner.And("User clicks Create button on the Create Bucket page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+            testRunner.Then("Success message is displayed and contains \"The bucket has been created\" text", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+            testRunner.When("User clicks Create New Item button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+            testRunner.Then("\"Create Bucket\" page should be displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+            testRunner.When("User enters \"TestBucket1\" in the Bucket Name field", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+            testRunner.And("User selects \"Admin IT\" team in the Team dropdown on the Buckets page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+            testRunner.And("User clicks Create button on the Create Bucket page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+            testRunner.Then("Error message with \"A bucket already exists with this name\" text is displayed", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+            testRunner.And("There are no errors in the browser console", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+            testRunner.Then("Delete \"TestBucket1\" Bucket in the Administration", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
             this.ScenarioCleanup();
         }
         
@@ -341,6 +225,8 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_AdminPage
         [NUnit.Framework.CategoryAttribute("EvergreenJnr_AdminPage")]
         [NUnit.Framework.CategoryAttribute("AdminPage")]
         [NUnit.Framework.CategoryAttribute("DAS11726")]
+        [NUnit.Framework.CategoryAttribute("DAS11747")]
+        [NUnit.Framework.CategoryAttribute("Delete_Newly_Created_Team")]
         [NUnit.Framework.CategoryAttribute("Teams")]
         public virtual void EvergreenJnr_AdminPage_CheckThatCreateButtonIsDisabledForEmptyTeamName()
         {
@@ -376,6 +262,8 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_AdminPage
                         "EvergreenJnr_AdminPage",
                         "AdminPage",
                         "DAS11726",
+                        "DAS11747",
+                        "Delete_Newly_Created_Team",
                         "Teams"});
             this.ScenarioSetup(scenarioInfo);
             this.FeatureBackground();
@@ -388,6 +276,17 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_AdminPage
             testRunner.When("User enters \" \" in the Team Name field", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
             testRunner.And("User enters \"test\" in the Team Description field", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
             testRunner.Then("Create Team button is disabled", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+            testRunner.When("User enters \"TestTeam\" in the Team Name field", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+            testRunner.And("User enters \"test\" in the Team Description field", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+            testRunner.And("User clicks Create Team button on the Create Team page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+            testRunner.Then("Success message is displayed and contains \"The team has been created\" text", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+            testRunner.When("User clicks Create New Item button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+            testRunner.Then("\"Create Team\" page should be displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+            testRunner.When("User enters \"TestTeam\" in the Team Name field", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+            testRunner.And("User enters \"test\" in the Team Description field", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+            testRunner.And("User clicks Create Team button on the Create Team page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+            testRunner.Then("Error message with \"A team already exists with this name\" text is displayed", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+            testRunner.And("There are no errors in the browser console", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
             this.ScenarioCleanup();
         }
         
@@ -704,10 +603,40 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_AdminPage
             testRunner.Then("Admin page should be displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
             testRunner.When("User clicks \"Buckets\" link on the Admin page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
             testRunner.Then("\"Buckets\" page should be displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+            testRunner.When("User clicks Reset Filters button on the Admin page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
             testRunner.When("User have opened Column Settings for \"Bucket\" column", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
             testRunner.And("User clicks Filter button on the Column Settings panel", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
             testRunner.And("User enters \"123455465\" text in the Filter field", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
             testRunner.And("User clears Filter field", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+            testRunner.Then("There are no errors in the browser console", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+            testRunner.When("User have opened Column Settings for \"Devices\" column", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+            testRunner.And("User enters \"123455465\" text in the Filter field", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+            testRunner.And("User clears Filter field", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+            testRunner.Then("Content is present in the table on the Admin page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+            testRunner.Then("There are no errors in the browser console", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+            testRunner.When("User have opened Column Settings for \"Default\" column", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+            testRunner.When("User clicks \"True\" checkbox from String Filter on the Admin page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+            testRunner.Then("There are no errors in the browser console", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+            testRunner.When("User have opened Column Settings for \"Project\" column", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+            testRunner.When("User clicks \"Select All\" checkbox from String Filter on the Admin page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+            testRunner.Then("There are no errors in the browser console", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+            testRunner.When("User clicks Reset Filters button on the Admin page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+            testRunner.When("User click on \"Bucket\" column header on the Admin page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+            testRunner.Then("data in table is sorted by \"Bucket\" column in ascending order on the Admin page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+            testRunner.When("User click on \"Bucket\" column header on the Admin page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+            testRunner.Then("data in table is sorted by \"Bucket\" column in descending order on the Admin page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+            testRunner.When("User click on \"Devices\" column header on the Admin page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+            testRunner.Then("numeric data in table is sorted by \"Devices\" column in descending order on the Ad" +
+                    "min page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+            testRunner.When("User click on \"Devices\" column header on the Admin page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+            testRunner.Then("numeric data in table is sorted by \"Devices\" column in ascending order on the Adm" +
+                    "in page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+            testRunner.When("User click on \"Default\" column header on the Admin page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+            testRunner.Then("color data in table is sorted by \"Default\" column in ascending order on the Admin" +
+                    " page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+            testRunner.When("User click on \"Default\" column header on the Admin page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+            testRunner.Then("color data in table is sorted by \"Default\" column in descending order on the Admi" +
+                    "n page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
             testRunner.Then("There are no errors in the browser console", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
             this.ScenarioCleanup();
         }
@@ -777,8 +706,33 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_AdminPage
             testRunner.And("User clicks Filter button in the Column Settings panel on the Teams Page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
             testRunner.And("User enters \"123455465\" text in the Filter field", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
             testRunner.And("User clears Filter field", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-            testRunner.Then("Content is present in the table on the Teams Page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-            testRunner.And("There are no errors in the browser console", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+            testRunner.Then("There are no errors in the browser console", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+            testRunner.When("User click on Back button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+            testRunner.When("User have opened Column Settings for \"Default\" column", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+            testRunner.And("User clicks Filter button in the Column Settings panel on the Teams Page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+            testRunner.When("User clicks \"True\" checkbox from String Filter on the Admin page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+            testRunner.Then("There are no errors in the browser console", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+            testRunner.When("User clicks Reset Filters button on the Admin page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+            testRunner.Then("Content is present in the table on the Admin page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+            testRunner.When("User click on \"Description\" column header on the Admin page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+            testRunner.Then("data in table is sorted by \"Description\" column in ascending order on the Admin p" +
+                    "age", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+            testRunner.When("User click on \"Description\" column header on the Admin page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+            testRunner.Then("data in table is sorted by \"Description\" column in descending order on the Admin " +
+                    "page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+            testRunner.When("User click on \"Members\" column header on the Admin page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+            testRunner.Then("numeric data in table is sorted by \"Members\" column in descending order on the Ad" +
+                    "min page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+            testRunner.When("User click on \"Members\" column header on the Admin page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+            testRunner.Then("numeric data in table is sorted by \"Members\" column in ascending order on the Adm" +
+                    "in page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+            testRunner.When("User click on \"Default\" column header on the Admin page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+            testRunner.Then("color data in table is sorted by \"Default\" column in ascending order on the Admin" +
+                    " page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+            testRunner.When("User click on \"Default\" column header on the Admin page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+            testRunner.Then("color data in table is sorted by \"Default\" column in descending order on the Admi" +
+                    "n page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+            testRunner.Then("There are no errors in the browser console", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
             this.ScenarioCleanup();
         }
         
@@ -1092,6 +1046,10 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_AdminPage
             testRunner.And("User clicks Update Bucket button on the Buckets page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
             testRunner.Then("Success message The \"TestBucket2\" bucket has been updated is displayed on the Buc" +
                     "kets page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+            testRunner.When("User enters \"TestBucket2\" text in the Search field for \"Bucket\" column", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+            testRunner.And("User clicks content from \"Bucket\" column", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+            testRunner.When("User clicks \"Bucket Settings\" tab", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+            testRunner.Then("Default Bucket checkbox is selected", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
             testRunner.And("Delete \"TestBucket2\" Bucket in the Administration", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
             this.ScenarioCleanup();
         }
@@ -1238,7 +1196,17 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_AdminPage
             testRunner.Then("Success message is displayed and contains \"The team was successfully updated\" tex" +
                     "t", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
             testRunner.And("There are no errors in the browser console", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-            testRunner.And("Delete \"TestTeam1\" Team in the Administration", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+            testRunner.When("User clicks refresh button in the browser", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+            testRunner.When("User enters \"\" in the Team Name field", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+            testRunner.Then("Update Team button is disabled", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+            testRunner.When("User enters \" \" in the Team Name field", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+            testRunner.Then("Update Team button is disabled", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+            testRunner.When("User enters \"NewTeamName\" in the Team Name field", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+            testRunner.And("User clicks Update Team button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+            testRunner.Then("Success message is displayed and contains \"The team was successfully updated\" tex" +
+                    "t", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+            testRunner.And("There are no errors in the browser console", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+            testRunner.Then("Delete \"NewTeamName\" Team in the Administration", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
             this.ScenarioCleanup();
         }
         
@@ -1250,9 +1218,8 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_AdminPage
         [NUnit.Framework.CategoryAttribute("AdminPage")]
         [NUnit.Framework.CategoryAttribute("DAS11765")]
         [NUnit.Framework.CategoryAttribute("DAS12170")]
-        [NUnit.Framework.CategoryAttribute("Buckets")]
         [NUnit.Framework.CategoryAttribute("DAS13011")]
-        [NUnit.Framework.CategoryAttribute("Not_Run")]
+        [NUnit.Framework.CategoryAttribute("Buckets")]
         public virtual void EvergreenJnr_AdminPage_CheckThatMailboxesAreSuccessfullyAddedToBuckets()
         {
             System.Exception lastException = null;
@@ -1288,9 +1255,8 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_AdminPage
                         "AdminPage",
                         "DAS11765",
                         "DAS12170",
-                        "Buckets",
                         "DAS13011",
-                        "Not_Run"});
+                        "Buckets"});
             this.ScenarioSetup(scenarioInfo);
             this.FeatureBackground();
             testRunner.When("User clicks Admin on the left-hand menu", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
@@ -1301,7 +1267,8 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_AdminPage
             testRunner.And("User enters \"Birmingham\" text in the Search field for \"Bucket\" column", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
             testRunner.And("User clicks content from \"Bucket\" column", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
             testRunner.And("User clicks \"Mailboxes\" tab", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-            testRunner.And("User clicks Create New Item button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+            testRunner.Then("Counter shows \"147\" found rows", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+            testRunner.When("User clicks Create New Item button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
             TechTalk.SpecFlow.Table table2 = new TechTalk.SpecFlow.Table(new string[] {
                         "Objects"});
             table2.AddRow(new string[] {
@@ -1311,6 +1278,7 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_AdminPage
             testRunner.And("User adds following Objects from list", ((string)(null)), table2, "And ");
             testRunner.Then("Success message is displayed and contains \"The selected mailboxes have been added" +
                     " to the selected bucket\" text", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+            testRunner.And("Counter shows \"149\" found rows", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
             testRunner.And("There are no errors in the browser console", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
             this.ScenarioCleanup();
         }
@@ -1466,7 +1434,6 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_AdminPage
         [NUnit.Framework.CategoryAttribute("DAS12170")]
         [NUnit.Framework.CategoryAttribute("Buckets")]
         [NUnit.Framework.CategoryAttribute("DAS13011")]
-        [NUnit.Framework.CategoryAttribute("Not_Run")]
         public virtual void EvergreenJnr_AdminPage_CheckThatConsoleErrorsAreNotDisplayedAfterAddingDevicesInTheBuckets()
         {
             System.Exception lastException = null;
@@ -1503,8 +1470,7 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_AdminPage
                         "AdminPage",
                         "DAS12170",
                         "Buckets",
-                        "DAS13011",
-                        "Not_Run"});
+                        "DAS13011"});
             this.ScenarioSetup(scenarioInfo);
             this.FeatureBackground();
             testRunner.When("User clicks Admin on the left-hand menu", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
@@ -1514,7 +1480,8 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_AdminPage
             testRunner.When("User clicks Reset Filters button on the Admin page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
             testRunner.And("User enters \"Bangor\" text in the Search field for \"Bucket\" column", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
             testRunner.And("User clicks content from \"Bucket\" column", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-            testRunner.And("User clicks Create New Item button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+            testRunner.Then("Counter shows \"20\" found rows", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+            testRunner.When("User clicks Create New Item button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
             TechTalk.SpecFlow.Table table3 = new TechTalk.SpecFlow.Table(new string[] {
                         "Objects"});
             table3.AddRow(new string[] {
@@ -1524,6 +1491,7 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_AdminPage
             testRunner.And("User adds following Objects from list", ((string)(null)), table3, "And ");
             testRunner.Then("Success message is displayed and contains \"The selected devices have been added t" +
                     "o the selected bucket\" text", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+            testRunner.And("Counter shows \"22\" found rows", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
             testRunner.And("There are no errors in the browser console", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
             this.ScenarioCleanup();
         }
@@ -1538,7 +1506,6 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_AdminPage
         [NUnit.Framework.CategoryAttribute("DAS12170")]
         [NUnit.Framework.CategoryAttribute("Buckets")]
         [NUnit.Framework.CategoryAttribute("DAS13011")]
-        [NUnit.Framework.CategoryAttribute("Not_Run")]
         public virtual void EvergreenJnr_AdminPage_CheckThatErrorsDoNotAppearAfterAddingDevicesToTheBucketWhereNoDevicesExist()
         {
             System.Exception lastException = null;
@@ -1575,8 +1542,7 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_AdminPage
                         "AdminPage",
                         "DAS12170",
                         "Buckets",
-                        "DAS13011",
-                        "Not_Run"});
+                        "DAS13011"});
             this.ScenarioSetup(scenarioInfo);
             this.FeatureBackground();
             testRunner.When("User clicks Admin on the left-hand menu", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
@@ -1600,9 +1566,8 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_AdminPage
         [NUnit.Framework.CategoryAttribute("EvergreenJnr_AdminPage")]
         [NUnit.Framework.CategoryAttribute("AdminPage")]
         [NUnit.Framework.CategoryAttribute("DAS12170")]
-        [NUnit.Framework.CategoryAttribute("Buckets")]
         [NUnit.Framework.CategoryAttribute("DAS13011")]
-        [NUnit.Framework.CategoryAttribute("Not_Run")]
+        [NUnit.Framework.CategoryAttribute("Buckets")]
         public virtual void EvergreenJnr_AdminPage_CheckThatConsoleErrorsAreNotDisplayedAfterAddingUsersInTheBuckets()
         {
             System.Exception lastException = null;
@@ -1638,9 +1603,8 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_AdminPage
                         "EvergreenJnr_AdminPage",
                         "AdminPage",
                         "DAS12170",
-                        "Buckets",
                         "DAS13011",
-                        "Not_Run"});
+                        "Buckets"});
             this.ScenarioSetup(scenarioInfo);
             this.FeatureBackground();
             testRunner.When("User clicks Admin on the left-hand menu", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
@@ -1651,7 +1615,8 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_AdminPage
             testRunner.And("User enters \"Bangor\" text in the Search field for \"Bucket\" column", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
             testRunner.And("User clicks content from \"Bucket\" column", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
             testRunner.And("User clicks \"Users\" tab", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-            testRunner.And("User clicks Create New Item button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+            testRunner.Then("Counter shows \"15\" found rows", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+            testRunner.When("User clicks Create New Item button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
             TechTalk.SpecFlow.Table table4 = new TechTalk.SpecFlow.Table(new string[] {
                         "Objects"});
             table4.AddRow(new string[] {
@@ -1661,6 +1626,7 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_AdminPage
             testRunner.And("User adds following Objects from list", ((string)(null)), table4, "And ");
             testRunner.Then("Success message is displayed and contains \"The selected users have been added to " +
                     "the selected bucket\" text", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+            testRunner.And("Counter shows \"17\" found rows", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
             testRunner.And("There are no errors in the browser console", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
             this.ScenarioCleanup();
         }
@@ -1730,77 +1696,6 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_AdminPage
         }
         
         [NUnit.Framework.TestAttribute()]
-        [NUnit.Framework.DescriptionAttribute("EvergreenJnr_AdminPage_CheckThatConsoleErrorsAreNotDisplayedAfterNavigatingScopeC" +
-            "hangesTab")]
-        [NUnit.Framework.CategoryAttribute("Evergreen")]
-        [NUnit.Framework.CategoryAttribute("Admin")]
-        [NUnit.Framework.CategoryAttribute("EvergreenJnr_AdminPage")]
-        [NUnit.Framework.CategoryAttribute("AdminPage")]
-        [NUnit.Framework.CategoryAttribute("DAS12162")]
-        [NUnit.Framework.CategoryAttribute("DAS12532")]
-        [NUnit.Framework.CategoryAttribute("DAS12744")]
-        [NUnit.Framework.CategoryAttribute("Delete_Newly_Created_Project")]
-        [NUnit.Framework.CategoryAttribute("Project_Creation_and_Scope")]
-        public virtual void EvergreenJnr_AdminPage_CheckThatConsoleErrorsAreNotDisplayedAfterNavigatingScopeChangesTab()
-        {
-            System.Exception lastException = null;
-            for (int i = 0; (i <= 1); i = (i + 1))
-            {
-                try
-                {
-                    this.EvergreenJnr_AdminPage_CheckThatConsoleErrorsAreNotDisplayedAfterNavigatingScopeChangesTabInternal();
-                    return;
-                }
-                catch (System.Exception exc)
-                {
-                    lastException = exc;
-                }
-                if (((i + 1) 
-                            <= 1))
-                {
-                    testRunner.OnScenarioEnd();
-                }
-            }
-            if ((lastException != null))
-            {
-                throw lastException;
-            }
-        }
-        
-        private void EvergreenJnr_AdminPage_CheckThatConsoleErrorsAreNotDisplayedAfterNavigatingScopeChangesTabInternal()
-        {
-            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("EvergreenJnr_AdminPage_CheckThatConsoleErrorsAreNotDisplayedAfterNavigatingScopeC" +
-                    "hangesTab", new string[] {
-                        "Evergreen",
-                        "Admin",
-                        "EvergreenJnr_AdminPage",
-                        "AdminPage",
-                        "DAS12162",
-                        "DAS12532",
-                        "DAS12744",
-                        "Delete_Newly_Created_Project",
-                        "Project_Creation_and_Scope"});
-            this.ScenarioSetup(scenarioInfo);
-            this.FeatureBackground();
-            testRunner.When("User clicks \"Devices\" on the left-hand menu", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-            testRunner.Then("\"Devices\" list should be displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-            testRunner.When("User clicks Create Project from the main list", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-            testRunner.Then("\"Create Project\" page should be displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-            testRunner.When("User enters \"TestProject8\" in the Project Name field", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-            testRunner.And("User clicks Create button on the Create Project page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-            testRunner.And("User clicks \"Projects\" link on the Admin page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-            testRunner.Then("\"Projects\" page should be displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-            testRunner.When("User clicks \"TestProject8\" record in the grid", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-            testRunner.Then("Project \"TestProject8\" is displayed to user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-            testRunner.When("User selects \"Scope Changes\" tab on the Project details page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-            testRunner.And("User clicks \"Users\" tab in the Project Scope Changes section", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-            testRunner.And("User clicks \"Devices\" tab in the Project Scope Changes section", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-            testRunner.And("User clicks \"Applications\" tab in the Project Scope Changes section", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-            testRunner.Then("There are no errors in the browser console", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-            this.ScenarioCleanup();
-        }
-        
-        [NUnit.Framework.TestAttribute()]
         [NUnit.Framework.DescriptionAttribute("EvergreenJnr_AdminPage_CheckThatNoErrorsAreDisplayedInTheProjectScopeChangesSecti" +
             "onAfterUsingSavedDevicesList")]
         [NUnit.Framework.CategoryAttribute("Evergreen")]
@@ -1811,6 +1706,8 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_AdminPage
         [NUnit.Framework.CategoryAttribute("DAS12523")]
         [NUnit.Framework.CategoryAttribute("DAS12521")]
         [NUnit.Framework.CategoryAttribute("DAS12744")]
+        [NUnit.Framework.CategoryAttribute("DAS12162")]
+        [NUnit.Framework.CategoryAttribute("DAS12532")]
         [NUnit.Framework.CategoryAttribute("Delete_Newly_Created_List")]
         [NUnit.Framework.CategoryAttribute("Delete_Newly_Created_Project")]
         [NUnit.Framework.CategoryAttribute("Project_Creation_and_Scope")]
@@ -1852,6 +1749,8 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_AdminPage
                         "DAS12523",
                         "DAS12521",
                         "DAS12744",
+                        "DAS12162",
+                        "DAS12532",
                         "Delete_Newly_Created_List",
                         "Delete_Newly_Created_Project",
                         "Project_Creation_and_Scope"});
@@ -3714,7 +3613,6 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_AdminPage
             testRunner.And("User enters \"test\" in the Team Description field", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
             testRunner.And("User clicks Create Team button on the Create Team page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
             testRunner.Then("Error message with \"A team already exists with this name\" text is displayed", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-            testRunner.And("Delete \"11770\" Team in the Administration", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
             this.ScenarioCleanup();
         }
         
@@ -4343,6 +4241,194 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_AdminPage
             testRunner.When("User enters \"TestName\" text in the Search field for \"Project\" column", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
             testRunner.Then("created Project with \"testname_small letters\" name is displayed correctly", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
             testRunner.Then("created Project with \"TESTNAME_capital letters\" name is displayed correctly", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+            this.ScenarioCleanup();
+        }
+        
+        [NUnit.Framework.TestAttribute()]
+        [NUnit.Framework.DescriptionAttribute("EvergreenJnr_AdminPage_CheckThatDevicesToAddAndRemoveAreChangingAppropriate")]
+        [NUnit.Framework.CategoryAttribute("Evergreen")]
+        [NUnit.Framework.CategoryAttribute("Admin")]
+        [NUnit.Framework.CategoryAttribute("EvergreenJnr_AdminPage")]
+        [NUnit.Framework.CategoryAttribute("AdminPage")]
+        [NUnit.Framework.CategoryAttribute("DAS12999")]
+        [NUnit.Framework.CategoryAttribute("Delete_Newly_Created_Project")]
+        [NUnit.Framework.CategoryAttribute("Delete_Newly_Created_List")]
+        public virtual void EvergreenJnr_AdminPage_CheckThatDevicesToAddAndRemoveAreChangingAppropriate()
+        {
+            System.Exception lastException = null;
+            for (int i = 0; (i <= 1); i = (i + 1))
+            {
+                try
+                {
+                    this.EvergreenJnr_AdminPage_CheckThatDevicesToAddAndRemoveAreChangingAppropriateInternal();
+                    return;
+                }
+                catch (System.Exception exc)
+                {
+                    lastException = exc;
+                }
+                if (((i + 1) 
+                            <= 1))
+                {
+                    testRunner.OnScenarioEnd();
+                }
+            }
+            if ((lastException != null))
+            {
+                throw lastException;
+            }
+        }
+        
+        private void EvergreenJnr_AdminPage_CheckThatDevicesToAddAndRemoveAreChangingAppropriateInternal()
+        {
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("EvergreenJnr_AdminPage_CheckThatDevicesToAddAndRemoveAreChangingAppropriate", new string[] {
+                        "Evergreen",
+                        "Admin",
+                        "EvergreenJnr_AdminPage",
+                        "AdminPage",
+                        "DAS12999",
+                        "Delete_Newly_Created_Project",
+                        "Delete_Newly_Created_List"});
+            this.ScenarioSetup(scenarioInfo);
+            this.FeatureBackground();
+            TechTalk.SpecFlow.Table table34 = new TechTalk.SpecFlow.Table(new string[] {
+                        "ItemName"});
+            table34.AddRow(new string[] {
+                        "00BDM1JUR8IF419"});
+            table34.AddRow(new string[] {
+                        "011PLA470S0B9DJ"});
+            testRunner.When("User create static list with \"StaticList6527\" name on \"Devices\" page with followi" +
+                    "ng items", ((string)(null)), table34, "When ");
+            testRunner.Then("\"StaticList6527\" list is displayed to user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+            testRunner.When("User clicks Admin on the left-hand menu", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+            testRunner.Then("Admin page should be displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+            testRunner.When("User clicks \"Projects\" link on the Admin page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+            testRunner.Then("\"Projects\" page should be displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+            testRunner.When("User clicks Create New Item button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+            testRunner.Then("\"Create Project\" page should be displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+            testRunner.When("User enters \"DevicesProject\" in the Project Name field", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+            testRunner.And("User selects \"All Devices\" in the Scope Project dropdown", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+            testRunner.And("User clicks Create button on the Create Project page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+            testRunner.When("User enters \"DevicesProject\" text in the Search field for \"Project\" column", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+            testRunner.And("User clicks content from \"Project\" column", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+            testRunner.Then("Project \"DevicesProject\" is displayed to user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+            testRunner.When("User selects \"Scope Changes\" tab on the Project details page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+            testRunner.When("User expands the object to add", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+            TechTalk.SpecFlow.Table table35 = new TechTalk.SpecFlow.Table(new string[] {
+                        "Objects"});
+            table35.AddRow(new string[] {
+                        "07RJRCQQJNBJIJQ"});
+            table35.AddRow(new string[] {
+                        "0CFHJY5A8WLUB0J"});
+            testRunner.And("User selects following Objects to the Project", ((string)(null)), table35, "And ");
+            testRunner.Then("\"Devices to add (2 of 17225 selected)\" is displayed to the user in the Project Sc" +
+                    "ope Changes section", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+            testRunner.When("User clicks \"UPDATE DEVICE CHANGES\" button on the Projects page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+            testRunner.And("User clicks Update Project button on the Projects page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+            testRunner.Then("Success message with \"2 objects queued for onboarding, 0 objects offboarded\" text" +
+                    " is displayed on the Projects page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+            testRunner.When("User selects \"Scope Details\" tab on the Project details page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+            testRunner.When("User selects \"StaticList6527\" in the Scope Project details", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+            testRunner.When("User selects \"Scope Changes\" tab on the Project details page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+            testRunner.Then("\"Devices to add (0 of 2 selected)\" is displayed to the user in the Project Scope " +
+                    "Changes section", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+            testRunner.Then("\"Devices to remove (0 of 2 selected)\" is displayed to the user in the Project Sco" +
+                    "pe Changes section", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+            this.ScenarioCleanup();
+        }
+        
+        [NUnit.Framework.TestAttribute()]
+        [NUnit.Framework.DescriptionAttribute("EvergreenJnr_AdminPage_CheckThatUsersToAddAndRemoveAreChangingAppropriate")]
+        [NUnit.Framework.CategoryAttribute("Evergreen")]
+        [NUnit.Framework.CategoryAttribute("Admin")]
+        [NUnit.Framework.CategoryAttribute("EvergreenJnr_AdminPage")]
+        [NUnit.Framework.CategoryAttribute("AdminPage")]
+        [NUnit.Framework.CategoryAttribute("DAS12999")]
+        [NUnit.Framework.CategoryAttribute("Delete_Newly_Created_Project")]
+        [NUnit.Framework.CategoryAttribute("Delete_Newly_Created_List")]
+        public virtual void EvergreenJnr_AdminPage_CheckThatUsersToAddAndRemoveAreChangingAppropriate()
+        {
+            System.Exception lastException = null;
+            for (int i = 0; (i <= 1); i = (i + 1))
+            {
+                try
+                {
+                    this.EvergreenJnr_AdminPage_CheckThatUsersToAddAndRemoveAreChangingAppropriateInternal();
+                    return;
+                }
+                catch (System.Exception exc)
+                {
+                    lastException = exc;
+                }
+                if (((i + 1) 
+                            <= 1))
+                {
+                    testRunner.OnScenarioEnd();
+                }
+            }
+            if ((lastException != null))
+            {
+                throw lastException;
+            }
+        }
+        
+        private void EvergreenJnr_AdminPage_CheckThatUsersToAddAndRemoveAreChangingAppropriateInternal()
+        {
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("EvergreenJnr_AdminPage_CheckThatUsersToAddAndRemoveAreChangingAppropriate", new string[] {
+                        "Evergreen",
+                        "Admin",
+                        "EvergreenJnr_AdminPage",
+                        "AdminPage",
+                        "DAS12999",
+                        "Delete_Newly_Created_Project",
+                        "Delete_Newly_Created_List"});
+            this.ScenarioSetup(scenarioInfo);
+            this.FeatureBackground();
+            TechTalk.SpecFlow.Table table36 = new TechTalk.SpecFlow.Table(new string[] {
+                        "ItemName"});
+            table36.AddRow(new string[] {
+                        "000F977AC8824FE39B8"});
+            table36.AddRow(new string[] {
+                        "002B5DC7D4D34D5C895"});
+            table36.AddRow(new string[] {
+                        "05D3699C79384A27A4C"});
+            testRunner.When("User create static list with \"StaticList6528\" name on \"Users\" page with following" +
+                    " items", ((string)(null)), table36, "When ");
+            testRunner.Then("\"StaticList6528\" list is displayed to user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+            testRunner.When("User clicks Admin on the left-hand menu", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+            testRunner.Then("Admin page should be displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+            testRunner.When("User clicks \"Projects\" link on the Admin page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+            testRunner.Then("\"Projects\" page should be displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+            testRunner.When("User clicks Create New Item button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+            testRunner.Then("\"Create Project\" page should be displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+            testRunner.When("User enters \"UsersProject\" in the Project Name field", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+            testRunner.And("User selects \"All Users\" in the Scope Project dropdown", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+            testRunner.And("User clicks Create button on the Create Project page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+            testRunner.When("User enters \"UsersProject\" text in the Search field for \"Project\" column", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+            testRunner.And("User clicks content from \"Project\" column", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+            testRunner.Then("Project \"UsersProject\" is displayed to user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+            testRunner.When("User selects \"Scope Changes\" tab on the Project details page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+            testRunner.When("User expands the object to add", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+            TechTalk.SpecFlow.Table table37 = new TechTalk.SpecFlow.Table(new string[] {
+                        "Objects"});
+            table37.AddRow(new string[] {
+                        "02642091E2484C9C989 (Bewset, Adane)"});
+            table37.AddRow(new string[] {
+                        "02769746B44A414593E (Allen, June)"});
+            testRunner.And("User selects following Objects to the Project", ((string)(null)), table37, "And ");
+            testRunner.Then("\"Users to add (2 of 41339 selected)\" is displayed to the user in the Project Scop" +
+                    "e Changes section", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+            testRunner.When("User clicks \"UPDATE USER CHANGES\" button on the Projects page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+            testRunner.And("User clicks Update Project button on the Projects page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+            testRunner.Then("Success message with \"2 objects queued for onboarding, 0 objects offboarded\" text" +
+                    " is displayed on the Projects page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+            testRunner.When("User selects \"Scope Details\" tab on the Project details page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+            testRunner.When("User selects \"StaticList6528\" in the Scope Project details", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+            testRunner.When("User selects \"Scope Changes\" tab on the Project details page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+            testRunner.Then("\"Users to add (0 of 3 selected)\" is displayed to the user in the Project Scope Ch" +
+                    "anges section", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+            testRunner.Then("\"Users to remove (0 of 2 selected)\" is displayed to the user in the Project Scope" +
+                    " Changes section", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
             this.ScenarioCleanup();
         }
     }

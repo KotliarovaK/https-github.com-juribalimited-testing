@@ -37,11 +37,17 @@ namespace DashworksTestAutomation.Pages.Evergreen.AdminDetailsPages
         [FindsBy(How = How.XPath, Using = "//span[@class='ag-header-select-all']//span[@class='ag-checkbox-checked']")]
         public IWebElement SelectAllCheckboxChecked { get; set; }
 
+        [FindsBy(How = How.XPath, Using = ".//span[@class='ag-header-icon ag-sort-descending-icon']")]
+        public IWebElement DescendingSortingIcon { get; set; }
+
         [FindsBy(How = How.XPath, Using = "//span[@class='ag-header-select-all']//span[@class='ag-checkbox-unchecked']")]
         public IWebElement Unchecked { get; set; }
 
         [FindsBy(How = How.XPath, Using = ".//span[@class='ag-selection-checkbox']")]
         public IList<IWebElement> SelectRowsCheckboxesOnAdminPage { get; set; }
+
+        [FindsBy(How = How.XPath, Using = ".//span[@class='ag-header-icon ag-sort-ascending-icon']")]
+        public IWebElement AscendingSortingIcon { get; set; }
 
         [FindsBy(How = How.XPath, Using = "//div[@class='ag-header-container']/div[@class='ag-header-row']/div[@col-id]")]
         public IList<IWebElement> GridColumns { get; set; }
@@ -75,6 +81,9 @@ namespace DashworksTestAutomation.Pages.Evergreen.AdminDetailsPages
 
         [FindsBy(How = How.XPath, Using = ".//div[@class='mat-checkbox-inner-container']")]
         public IWebElement AllItemCheckbox { get; set; }
+
+        [FindsBy(How = How.XPath, Using = ".//div[@class='ag-body-container']/div")]
+        public IWebElement TableContent { get; set; }
 
         [FindsBy(How = How.XPath, Using = ".//button[@aria-label='Toggle panel']")]
         public IWebElement PlusButton { get; set; }
@@ -263,6 +272,45 @@ namespace DashworksTestAutomation.Pages.Evergreen.AdminDetailsPages
             Driver.WaitForElement(By.XPath(".//div[@id='agGridTable']"));
             return Driver.IsElementDisplayed(
                 By.XPath($".//div[@role='presentation']/div/div[@title='{objectsNumber}']"));
+        }
+
+        public IWebElement GetColumnHeaderByName(string columnName)
+        {
+            var selector = string.Empty;
+            if (columnName.Contains("'"))
+            {
+                var strings = columnName.Split('\'');
+                selector =
+                    $".//div[@role='presentation']/span[contains(text(),'{strings[0]}')][contains(text(), '{strings[1]}')]/..";
+            }
+            else
+            {
+                selector = $".//div[@role='presentation']/span[text()='{columnName}']/..";
+            }
+
+            Driver.WaitWhileControlIsNotDisplayed(By.XPath(selector));
+            return Driver.FindElement(By.XPath(selector));
+        }
+
+        public List<string> GetColumnContent(string columnName)
+        {
+            By by = By.XPath(
+                $".//div[@class='ag-body-viewport']//div[@class='ag-body-container']/div/div[{GetColumnNumberByName(columnName)}]");
+            return Driver.FindElements(by).Select(x => x.Text).ToList();
+        }
+
+        public void GetBooleanStringFilterByName(string filterName)
+        {
+            string filterSelector = $".//span[(text()='{filterName}')]";
+            Driver.WaitWhileControlIsNotDisplayed(By.XPath(filterSelector));
+            Driver.FindElement(By.XPath(filterSelector)).Click();
+        }
+
+        public void GetStringFilterByCheckboxName(string filterName)
+        {
+            string filterSelector = $".//span[@class='boolean-icon text-container']/span[(text()='{filterName}')]";
+            Driver.WaitWhileControlIsNotDisplayed(By.XPath(filterSelector));
+            Driver.FindElement(By.XPath(filterSelector)).Click();
         }
 
         public bool GetCreatedProjectName(string projectName)
