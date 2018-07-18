@@ -116,6 +116,27 @@ namespace DashworksTestAutomation.Steps.Dashworks
             Logger.Write("List Details panel is visible");
         }
 
+        [Then(@"User open the Dependents component")]
+        public void ThenUserOpenTheDependentsComponent()
+        {
+            var list = _driver.NowAt<ListDetailsElement>();
+            list.DependantsButton.Click();
+        }
+
+        [Then(@"dependent ""(.*)"" list is displayed")]
+        public void ThenDependentListIsDisplayed(string listName)
+        {
+            var list = _driver.NowAt<ListDetailsElement>();
+            Assert.IsTrue(list.GetDependentListByName(listName).Displayed(), $"Dependent '{listName}' list is not displayed");
+        }
+
+        [When(@"User navigates to the dependent ""(.*)"" list")]
+        public void WhenUserNavigatesToTheDependentList(string listName)
+        {
+            var list = _driver.NowAt<ListDetailsElement>();
+            list.GetDependentListByName(listName).Click();
+        }
+
         [Then(@"Owner field is disabled as read-only")]
         public void ThenOwnerFieldIsDisabledAsRead_Only()
         {

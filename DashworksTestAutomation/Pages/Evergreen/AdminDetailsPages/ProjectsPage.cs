@@ -16,11 +16,17 @@ namespace DashworksTestAutomation.Pages.Evergreen.AdminDetailsPages
         [FindsBy(How = How.XPath, Using = ".//input[@aria-checked='false']")]
         public IWebElement UncheckedCheckbox { get; set; }
 
+        [FindsBy(How = How.XPath, Using = "//div[contains(@class, 'wrapper-disabled')]")]
+        public IWebElement DisabledAllAssociations { get; set; }
+
         [FindsBy(How = How.XPath, Using = ".//span[text()='UPDATE PROJECT']")]
         public IWebElement UpdateProjectInTheWarning { get; set; }
 
         [FindsBy(How = How.XPath, Using = ".//span[@class='mat-option-text']")]
         public IWebElement DeleteProjectInActions { get; set; }
+
+        [FindsBy(How = How.XPath, Using = "//label[contains(@class, 'mat-form-field-empty')]")]
+        public IWebElement EmptyScopeField { get; set; }
 
         [FindsBy(How = How.XPath, Using = ".//button[contains(@title, 'Update')]")]
         public IWebElement UpdateProjectButton { get; set; }
@@ -36,6 +42,9 @@ namespace DashworksTestAutomation.Pages.Evergreen.AdminDetailsPages
 
         [FindsBy(How = How.XPath, Using = ".//input[@role='combobox']")]
         public IWebElement ScopeProjectField { get; set; }
+
+        [FindsBy(How = How.XPath, Using = ".//mat-select[@aria-label='Scope']")]
+        public IWebElement ScopeListDropdown { get; set; }
 
         [FindsBy(How = How.XPath, Using = ".//div[@class='wrapper-disabled']//mat-select[@aria-label='User Scope']")]
         public IWebElement DisabledOwnerDropDown { get; set; }
@@ -106,6 +115,11 @@ namespace DashworksTestAutomation.Pages.Evergreen.AdminDetailsPages
         public bool SuccessTextMessage(string textMessage)
         {
             return Driver.IsElementDisplayed(By.XPath($".//div[text()='{textMessage}']"));
+        }
+
+        public bool BucketDropdownDisplay(string textBucket)
+        {
+            return Driver.IsElementDisplayed(By.XPath($".//span[text()='{textBucket}']"));
         }
 
         public bool SelectedItemInProjectScopeChangesSection(string text)

@@ -233,6 +233,7 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_FiltersFeature
         [NUnit.Framework.CategoryAttribute("Evergreen_FiltersFeature")]
         [NUnit.Framework.CategoryAttribute("NewFilterCheck")]
         [NUnit.Framework.CategoryAttribute("DAS10828")]
+        [NUnit.Framework.CategoryAttribute("DAS13001")]
         [NUnit.Framework.TestCaseAttribute("Windows7Mi: Target App Readiness", "Equals, Does not equal", "Red", "Windows7Mi: Target App Readiness is Red", "28", new string[0])]
         [NUnit.Framework.TestCaseAttribute("Babel(Engl: Target App Readiness", "Equals, Does not equal", "None", "Babel(Engl: Target App Readiness is None", "302", new string[0])]
         [NUnit.Framework.TestCaseAttribute("Barry\'sUse: Target App Readiness", "Equals, Does not equal", "None", "Barry\'sUse: Target App Readiness is None", "1,045", new string[0])]
@@ -273,7 +274,8 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_FiltersFeature
                     "Applications",
                     "Evergreen_FiltersFeature",
                     "NewFilterCheck",
-                    "DAS10828"};
+                    "DAS10828",
+                    "DAS13001"};
             if ((exampleTags != null))
             {
                 @__tags = System.Linq.Enumerable.ToArray(System.Linq.Enumerable.Concat(@__tags, exampleTags));
@@ -527,6 +529,7 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_FiltersFeature
         [NUnit.Framework.CategoryAttribute("Evergreen_FiltersFeature")]
         [NUnit.Framework.CategoryAttribute("NewFilterCheck")]
         [NUnit.Framework.CategoryAttribute("DAS10512")]
+        [NUnit.Framework.CategoryAttribute("DAS13001")]
         [NUnit.Framework.TestCaseAttribute("Windows7Mi: Application Readiness", "Equals, Does not equal", "Red", "Windows7Mi: Application Readiness is Red", "27", new string[0])]
         [NUnit.Framework.TestCaseAttribute("Babel(Engl: Application Readiness", "Equals, Does not equal", "None", "Babel(Engl: Application Readiness is None", "302", new string[0])]
         [NUnit.Framework.TestCaseAttribute("Barry\'sUse: Application Readiness", "Equals, Does not equal", "None", "Barry\'sUse: Application Readiness is None", "1,072", new string[0])]
@@ -567,7 +570,8 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_FiltersFeature
                     "Applications",
                     "Evergreen_FiltersFeature",
                     "NewFilterCheck",
-                    "DAS10512"};
+                    "DAS10512",
+                    "DAS13001"};
             if ((exampleTags != null))
             {
                 @__tags = System.Linq.Enumerable.ToArray(System.Linq.Enumerable.Concat(@__tags, exampleTags));

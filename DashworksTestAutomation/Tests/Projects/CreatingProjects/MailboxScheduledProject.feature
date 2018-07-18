@@ -19,18 +19,18 @@ Scenario: Projects_CreateMailboxScheduledProject
 	When User navigate to Manage link
 	And User select "Manage Users" option in Management Console
 	Then User create a new Dashworks User
-	| Username                    | FullName                  | Password | ConfirmPassword |
-	| AAA0MailboxScheduledProject | MailboxScheduledProject 0 | 1234qwer | 1234qwer        |
+	| Username                    | FullName                  | Password | ConfirmPassword | RolesString |
+	| AAA0MailboxScheduledProject | MailboxScheduledProject 0 | 1234qwer | 1234qwer        |             |
 	And Success message is displayed
 	And created User is displayed in the table
 	And User create a new Dashworks User
-	| Username                    | FullName                  | Password | ConfirmPassword |
-	| AAA1MailboxScheduledProject | MailboxScheduledProject 1 | 1234qwer | 1234qwer        |
+	| Username                    | FullName                  | Password | ConfirmPassword | RolesString |
+	| AAA1MailboxScheduledProject | MailboxScheduledProject 1 | 1234qwer | 1234qwer        |             |
 	And Success message is displayed
 	And created User is displayed in the table
 	And User create a new Dashworks User
-	| Username                    | FullName                  | Password | ConfirmPassword |
-	| AAA2MailboxScheduledProject | MailboxScheduledProject 2 | 1234qwer | 1234qwer        |
+	| Username                    | FullName                  | Password | ConfirmPassword | RolesString |
+	| AAA2MailboxScheduledProject | MailboxScheduledProject 2 | 1234qwer | 1234qwer        |             |
 	And Success message is displayed
 	And created User is displayed in the table
 	When User navigate to Dashworks User Site link
