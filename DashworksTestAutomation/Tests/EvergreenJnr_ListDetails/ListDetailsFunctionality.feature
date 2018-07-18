@@ -269,13 +269,13 @@ Scenario: EvergreenJnr_AllLists_CheckThatWarningMessageIsNotDisplayedInTheListPa
 	Then "Projects Home" page is displayed to the user
 	When User navigate to Manage link
 	And User select "Manage Users" option in Management Console
-	When User create new User
+	And User create new User
 	| Username | FullName | Password | ConfirmPassword | Roles |
 	| User2    | User2    | 1234qwer | 1234qwer        |       |
 	Then Success message is displayed
 	When User navigate to Dashworks User Site link
-	When User navigate to Evergreen link
-	When User clicks "Applications" on the left-hand menu
+	And User navigate to Evergreen link
+	And User clicks "Applications" on the left-hand menu
 	Then "Applications" list should be displayed to the user
 	When User clicks the Columns button
 	Then Columns panel is displayed to the user
@@ -322,10 +322,11 @@ Scenario: EvergreenJnr_AllLists_CheckThatWarningMessageIsNotDisplayedInTheListPa
 	And no Warning message is displayed in the lists panel
 	When User clicks the List Details button
 	Then List details panel is displayed to the user
-	Then User open the Dependents component
-	Then dependent "TestDevicesList12208" list is displayed
+	And User open the Dependents component
+	And dependent "TestDevicesList12208" list is displayed
 	When User navigates to the dependent "TestDevicesList12208" list
 	Then "TestDevicesList12208" list is displayed to user
+	And no Warning message is displayed in the lists panel
 
 @Evergreen @AllLists @EvergreenJnr_ListDetails @ListDetailsFunctionality @DAS10713 @DAS12190 @DAS12204 @Delete_Newly_Created_List
 Scenario: EvergreenJnr_AllLists_CheckThatTwoDependencyAreDisplayedInTheDependentsBlock
