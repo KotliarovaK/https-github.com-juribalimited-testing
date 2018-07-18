@@ -54,12 +54,12 @@ Scenario: EvergreenJnr_AdminPage_CheckThatCreateButtonIsDisabledForEmptyProjectN
 	Then "Projects" page should be displayed to the user
 	When User clicks Create New Item button
 	Then "Create Project" page should be displayed to the user
-	When User enters "TestProject85" in the Project Name field
+	When User enters "DevicesProject1258" in the Project Name field
 	And User selects "DynamicList5531" in the Scope Project dropdown
 	And User clicks Create button on the Create Project page
-	Then Success message with "Your project has been created" text is displayed on the Projects page
-	And Delete "All Devices Project" Project in the Administration
-	And Delete "TestProject85" Project in the Administration
+	And User enters "Devices" text in the Search field for "Project" column
+	And User selects all rows on the grid
+	And User removes selected item
 
 @Evergreen @Admin @EvergreenJnr_AdminPage @AdminPage @DAS11726 @DAS11891 @DAS11747 @Delete_Newly_Created_Bucket @Buckets
 Scenario: EvergreenJnr_AdminPage_CheckThatCreateButtonIsDisabledForEmptyBucketName
@@ -500,7 +500,7 @@ Scenario: EvergreenJnr_AdminPage_CheckThatMailboxesAreSuccessfullyAddedToBuckets
 	And Counter shows "149" found rows
 	And There are no errors in the browser console
 
-@Evergreen @Admin @EvergreenJnr_AdminPage @AdminPage @DAS11765 @DAS12170 @DAS13011 @Buckets @Not_Run
+@Evergreen @Admin @EvergreenJnr_AdminPage @AdminPage @DAS11765 @DAS12170 @DAS13011 @Buckets
 Scenario: EvergreenJnr_AdminPage_CheckThatErrorsDoNotAppearAfterAddingMailboxesToTheBucketWhereNoMailboxesExist
 	When User clicks Admin on the left-hand menu
 	Then Admin page should be displayed to the user
@@ -1510,48 +1510,17 @@ Scenario: EvergreenJnr_AdminPage_CheckThatTheFilterSearchIsNotCaseSensitive
 	Then created Project with "testname_small letters" name is displayed correctly
 	Then created Project with "TESTNAME_capital letters" name is displayed correctly
 
-@Evergreen @Admin @EvergreenJnr_AdminPage @AdminPage @DAS12999 @Delete_Newly_Created_Project @Delete_Newly_Created_List @Not_Run
+@Evergreen @Admin @EvergreenJnr_AdminPage @AdminPage @DAS12999 @Delete_Newly_Created_Project @Delete_Newly_Created_List
 Scenario: EvergreenJnr_AdminPage_CheckThatDevicesToAddAndRemoveAreChangingAppropriate
 	When User create static list with "StaticList6527" name on "Devices" page with following items
 	| ItemName        |
 	| 00BDM1JUR8IF419 |
 	| 011PLA470S0B9DJ |
 	Then "StaticList6527" list is displayed to user
-	When User clicks Admin on the left-hand menu
-	Then Admin page should be displayed to the user
-	When User clicks "Projects" link on the Admin page
-	Then "Projects" page should be displayed to the user
-	When User clicks Create New Item button
-	Then "Create Project" page should be displayed to the user
-	When User enters "DevicesProject" in the Project Name field
-	And User selects "All Devices" in the Scope Project dropdown
-	And User clicks Create button on the Create Project page
-	When User enters "DevicesProject" text in the Search field for "Project" column
-	And User clicks content from "Project" column
-	Then Project "DevicesProject" is displayed to user
-	When User selects "Scope Changes" tab on the Project details page
-	When User expands the object to add 
-	And User selects following Objects to the Project
-	| Objects        |
+	When User create static list with "StaticList6528" name on "Devices" page with following items
+	| ItemName       |
 	| 041V8ZALQ4XPL9 |
 	| 04WJ5P9DN0VEEW |
-	Then "Devices to add (2 of 17225 selected)" is displayed to the user in the Project Scope Changes section
-	When User clicks "UPDATE DEVICE CHANGES" button on the Projects page
-	And User clicks Update Project button on the Projects page
-	Then Success message with "2 objects queued for onboarding, 0 objects offboarded" text is displayed on the Projects page
-	When User selects "Scope Details" tab on the Project details page
-	When User selects "StaticList6527" in the Scope Project details
-	When User selects "Scope Changes" tab on the Project details page
-	Then "Devices to add (0 of 2 selected)" is displayed to the user in the Project Scope Changes section
-	Then "Devices to remove (0 of 2 selected)" is displayed to the user in the Project Scope Changes section
-
-@Evergreen @Admin @EvergreenJnr_AdminPage @AdminPage @DAS12999 @Delete_Newly_Created_Project @Delete_Newly_Created_List @Not_Run
-Scenario: EvergreenJnr_AdminPage_CheckThatUsersToAddAndRemoveAreChangingAppropriate
-	When User create static list with "StaticList6528" name on "Users" page with following items
-	| ItemName            |
-	| 000F977AC8824FE39B8 |
-	| 002B5DC7D4D34D5C895 |
-	| 05D3699C79384A27A4C |
 	Then "StaticList6528" list is displayed to user
 	When User clicks Admin on the left-hand menu
 	Then Admin page should be displayed to the user
@@ -1559,24 +1528,114 @@ Scenario: EvergreenJnr_AdminPage_CheckThatUsersToAddAndRemoveAreChangingAppropri
 	Then "Projects" page should be displayed to the user
 	When User clicks Create New Item button
 	Then "Create Project" page should be displayed to the user
-	When User enters "UsersProject" in the Project Name field
-	And User selects "All Users" in the Scope Project dropdown
+	When User enters "DevicesProject" in the Project Name field
+	And User selects "StaticList6527" in the Scope Project dropdown
 	And User clicks Create button on the Create Project page
-	When User enters "UsersProject" text in the Search field for "Project" column
+	When User enters "DevicesProject" text in the Search field for "Project" column
 	And User clicks content from "Project" column
-	Then Project "UsersProject" is displayed to user
+	Then Project "DevicesProject" is displayed to user
 	When User selects "Scope Changes" tab on the Project details page
+	Then "Devices to add (0 of 2 selected)" is displayed to the user in the Project Scope Changes section
 	When User expands the object to add 
 	And User selects following Objects to the Project
-	| Objects                             |
-	| 02642091E2484C9C989 (Bewset, Adane) |
-	| 02769746B44A414593E (Allen, June)   |
-	Then "Users to add (2 of 41339 selected)" is displayed to the user in the Project Scope Changes section
-	When User clicks "UPDATE USER CHANGES" button on the Projects page
+	| Objects         |
+	| 00BDM1JUR8IF419 |
+	| 011PLA470S0B9DJ |
+	Then "Devices to add (2 of 2 selected)" is displayed to the user in the Project Scope Changes section
+	When User clicks "UPDATE DEVICE CHANGES" button on the Projects page
 	And User clicks Update Project button on the Projects page
 	Then Success message with "2 objects queued for onboarding, 0 objects offboarded" text is displayed on the Projects page
 	When User selects "Scope Details" tab on the Project details page
 	When User selects "StaticList6528" in the Scope Project details
 	When User selects "Scope Changes" tab on the Project details page
+	Then "Devices to add (0 of 2 selected)" is displayed to the user in the Project Scope Changes section
+	Then "Devices to remove (0 of 2 selected)" is displayed to the user in the Project Scope Changes section
+
+@Evergreen @Admin @EvergreenJnr_AdminPage @AdminPage @DAS12999 @Delete_Newly_Created_Project @Delete_Newly_Created_List
+Scenario: EvergreenJnr_AdminPage_CheckThatUsersToAddAndRemoveAreChangingAppropriate
+	When User create static list with "StaticList6529" name on "Users" page with following items
+	| ItemName            |
+	| 000F977AC8824FE39B8 |
+	| 002B5DC7D4D34D5C895 |
+	| 05D3699C79384A27A4C |
+	Then "StaticList6529" list is displayed to user
+	When User create static list with "StaticList6530" name on "Users" page with following items
+	| ItemName            |
+	| 02642091E2484C9C989 |
+	| 02769746B44A414593E |
+	Then "StaticList6530" list is displayed to user
+	When User clicks Admin on the left-hand menu
+	Then Admin page should be displayed to the user
+	When User clicks "Projects" link on the Admin page
+	Then "Projects" page should be displayed to the user
+	When User clicks Create New Item button
+	Then "Create Project" page should be displayed to the user
+	When User enters "UsersProject" in the Project Name field
+	And User selects "StaticList6529" in the Scope Project dropdown
+	And User clicks Create button on the Create Project page
+	When User enters "UsersProject" text in the Search field for "Project" column
+	And User clicks content from "Project" column
+	Then Project "UsersProject" is displayed to user
+	When User selects "Scope Changes" tab on the Project details page
 	Then "Users to add (0 of 3 selected)" is displayed to the user in the Project Scope Changes section
-	Then "Users to remove (0 of 2 selected)" is displayed to the user in the Project Scope Changes section
+	When User expands the object to add 
+	And User selects following Objects to the Project
+	| Objects                                   |
+	| 000F977AC8824FE39B8 (Spruill, Shea)       |
+	| 002B5DC7D4D34D5C895 (Collor, Christopher) |
+	| 05D3699C79384A27A4C (Burnell, Helen)      |
+	Then "Users to add (3 of 3 selected)" is displayed to the user in the Project Scope Changes section
+	When User clicks "UPDATE USER CHANGES" button on the Projects page
+	And User clicks Update Project button on the Projects page
+	Then Success message with "3 objects queued for onboarding, 0 objects offboarded" text is displayed on the Projects page
+	When User selects "Scope Details" tab on the Project details page
+	When User selects "StaticList6530" in the Scope Project details
+	When User selects "Scope Changes" tab on the Project details page
+	Then "Users to add (0 of 2 selected)" is displayed to the user in the Project Scope Changes section
+	Then "Users to remove (0 of 3 selected)" is displayed to the user in the Project Scope Changes section
+
+@Evergreen @Admin @EvergreenJnr_AdminPage @AdminPage @DAS12999 @Delete_Newly_Created_Project @Delete_Newly_Created_List
+Scenario Outline: EvergreenJnr_AdminPage_CheckProjectCreationFromListPageWithUseEvergreenBucket
+	When User clicks "<ListName>" on the left-hand menu
+	Then "<ListName>" list should be displayed to the user
+	When User clicks Create Project from the main list
+	Then "Create Project" page should be displayed to the user
+	When User enters "<ProjectName>" in the Project Name field
+	Then Scope field is automatically populated
+	When User selects "Use evergreen buckets" in the Buckets Project dropdown
+	When User clicks Create button on the Create Project page
+	Then Success message with "Your project has been created" text is displayed on the Projects page
+	When User enters "<ProjectName>" text in the Search field for "Project" column
+	And User selects all rows on the grid
+	And User removes selected item
+	When User create static list with "<StaticList>" name on "<ListName>" page with following items
+	| ItemName |
+	| <Item>   |
+	Then "<StaticList>" list is displayed to user
+	When User clicks Create Project from the main list
+	Then "Create Project" page should be displayed to the user
+	When User enters "<ProjectName>" in the Project Name field
+	Then Scope field is automatically populated
+	When User selects "Use evergreen buckets" in the Buckets Project dropdown
+	When User clicks Create button on the Create Project page
+	Then Success message with "Your project has been created" text is displayed on the Projects page
+	When User enters "<ProjectName>" text in the Search field for "Project" column
+	And User selects all rows on the grid
+	And User removes selected item
+	When User clicks "<ListName>" on the left-hand menu
+	Then "<ListName>" list should be displayed to the user
+	When User click on '<ColumnName>' column header
+	And User create dynamic list with "<DynamicList>" name on "<ListName>" page
+	Then "<DynamicList>" list is displayed to user
+	When User clicks Create Project from the main list
+	Then "Create Project" page should be displayed to the user
+	When User enters "<ProjectName>" in the Project Name field
+	Then Scope field is automatically populated
+	When User selects "Use evergreen buckets" in the Buckets Project dropdown
+	And User clicks Create button on the Create Project page
+	Then Success message with "Your project has been created" text is displayed on the Projects page
+
+	Examples:
+	| ListName  | ProjectName | StaticList     | Item                   | ColumnName    | DynamicList  |
+	| Devices   | Project2587 | StaticList6521 | 00KLL9S8NRF0X6         | Hostname      | TestList6584 |
+	| Mailboxes | Project2587 | StaticList6522 | ZVI880605@bclabs.local | Email Address | TestList6583 |
