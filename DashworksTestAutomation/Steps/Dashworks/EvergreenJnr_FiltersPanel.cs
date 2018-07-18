@@ -827,6 +827,17 @@ namespace DashworksTestAutomation.Steps.Dashworks
             filter.Do();
         }
 
+        [When(@"User changes filter date to ""(.*)""")]
+        public void WhenUserChangesFilterDateDate(string date)
+        {
+            var page = _driver.NowAt<FiltersElement>();
+            _driver.WaitWhileControlIsNotDisplayed<FiltersElement>(() => page.InputDate);
+
+            page.InputDate.Clear();
+            page.InputDate.SendKeys(date);
+            page.SaveButton.Click();
+        }
+
         [Then(@"Appropriate filter is added to URL")]
         public void ThenAppropriateFilterIsAddedToURL()
         {
