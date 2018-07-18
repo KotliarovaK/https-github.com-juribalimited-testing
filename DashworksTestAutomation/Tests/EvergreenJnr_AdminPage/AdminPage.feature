@@ -1710,8 +1710,6 @@ Scenario Outline: EvergreenJnr_AdminPage_CheckProjectCreationWithCloneEvergreenB
 	When User enters "<ProjectName>" text in the Search field for "Project" column
 	And User selects all rows on the grid
 	And User removes selected item
-	Then Success message with "The selected project has been deleted" text is displayed on the Projects page
-	And There are no errors in the browser console
 	When User create static list with "<StaticList>" name on "<PageName>" page with following items
 	| ItemName |
 	| <Item>   |
@@ -1743,3 +1741,48 @@ Examples:
 	| ProjectName     | StaticList     | PageName | Item                | ColumnName | DynamicList     |
 	| TestProject9543 | StaticList8851 | Devices  | 00KWQ4J3WKQM0G      | Hostname   | DynamicList9527 |
 	| TestProject9544 | StaticList8852 | Users    | 003F5D8E1A844B1FAA5 | Username   | DynamicList9528 |
+
+	@Evergreen @Admin @EvergreenJnr_AdminPage @AdminPage @DAS12999 @Delete_Newly_Created_Project @Delete_Newly_Created_List
+Scenario Outline: EvergreenJnr_AdminPage_CheckProjectCreationWithProjectBucketsFromListPage
+	When User clicks "<PageName>" on the left-hand menu
+	Then "<PageName>" list should be displayed to the user
+	When User clicks Create Project from the main list
+	Then "Create Project" page should be displayed to the user
+	When User enters "<ProjectName>" in the Project Name field
+	Then Scope field is automatically populated
+	When User clicks Create button on the Create Project page
+	Then Success message with "Your project has been created" text is displayed on the Projects page
+	When User clicks "Projects" link on the Admin page
+	Then "Projects" page should be displayed to the user
+	When User enters "<ProjectName>" text in the Search field for "Project" column
+	And User selects all rows on the grid
+	And User removes selected item
+	When User create static list with "<StaticList>" name on "<PageName>" page with following items
+	| ItemName |
+	| <Item>   |
+	Then "<StaticList>" list is displayed to user
+	When User clicks Create Project from the main list
+	Then "Create Project" page should be displayed to the user
+	When User enters "<ProjectName>" in the Project Name field
+	Then Scope field is automatically populated
+	When User clicks Create button on the Create Project page
+	Then Success message with "Your project has been created" text is displayed on the Projects page
+	When User enters "<ProjectName>" text in the Search field for "Project" column
+	And User selects all rows on the grid
+	And User removes selected item
+	When User clicks "<PageName>" on the left-hand menu
+	Then "<PageName>" list should be displayed to the user
+	When User click on '<ColumnName>' column header
+	And User create dynamic list with "<DynamicList>" name on "<PageName>" page
+	Then "<DynamicList>" list is displayed to user
+	When User clicks Create Project from the main list
+	Then "Create Project" page should be displayed to the user
+	When User enters "<ProjectName>" in the Project Name field
+	Then Scope field is automatically populated
+	When User clicks Create button on the Create Project page
+	Then Success message with "Your project has been created" text is displayed on the Projects page
+
+Examples:
+	| ProjectName     | StaticList     | PageName  | Item                             | ColumnName    | DynamicList     |
+	| TestProject9553 | StaticList8891 | Mailboxes | 00A5B910A1004CF5AC4@bclabs.local | Email Address | DynamicList9537 |
+	| TestProject9554 | StaticList8892 | Users     | 003F5D8E1A844B1FAA5              | Username      | DynamicList9538 |
