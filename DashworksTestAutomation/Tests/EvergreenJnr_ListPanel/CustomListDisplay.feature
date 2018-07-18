@@ -1063,6 +1063,61 @@ Scenario: EvergreenJnr_UsersList_CheckThatStaticListIsDisplayedInTheBottomOfTheL
 	And User clicks Delete button on the warning message in the lists panel
 	And "List Deleted" message is displayed
 
+@Evergreen @Devices @CustomListDisplay @EvergreenJnr_ListPanel @DAS12917 
+Scenario: EvergreenJnr_DevicesList_CheckThatFilterNameIsNotChangedAfterRenameWhileUpdateValuesOfFilter
+	When User clicks "Devices" on the left-hand menu
+	Then "Devices" list should be displayed to the user
+	When User clicks the Filters button
+	Then Filters panel is displayed to the user
+	When User add "Application Compliance" filter where type is "Equals" with selected Checkboxes and following Association:
+	| SelectedCheckboxes | Association        |
+	| Red                | Used on device     |
+	| Green              | Entitled to device |
+	And User create custom list with "Test_Device_Filter_DAS_12917" name
+	And User clicks the List Details button
+	And User changes list name to "EDITED_Device_Filter_DAS_12917"
+	And User clicks the Filters button
+	And User click Edit button for "Application " filter
+	And User change selected checkboxes:
+	| Option | State |
+	| Red    | false |
+	Then "EDITED_Device_Filter_DAS_12917" edited list is displayed to user
+
+@Evergreen @Applications @CustomListDisplay @EvergreenJnr_ListPanel @DAS12917 
+Scenario: EvergreenJnr_ApplicationsList_CheckThatFilterNameIsNotChangedAfterRenameWhileUpdateValuesOfFilter
+	When User clicks "Applications" on the left-hand menu
+	Then "Applications" list should be displayed to the user
+	When User clicks the Filters button
+	Then Filters panel is displayed to the user
+	When User add "Compliance" filter where type is "Equals" without added column and following checkboxes:
+	| SelectedCheckboxes |
+	| Red                |
+	| Amber              |
+	And User create custom list with "Test_Application_Filter_DAS_12917" name
+	And User clicks the List Details button
+	And User changes list name to "EDITED_Application_Filter_DAS_12917"
+	And User clicks the Filters button
+	And User click Edit button for "Compliance" filter
+	And User change selected checkboxes:
+	| Option | State |
+	| Amber  | false |
+	Then "EDITED_Application_Filter_DAS_12917" edited list is displayed to user
+
+@Evergreen @Mailboxes @CustomListDisplay @EvergreenJnr_ListPanel @DAS12917 
+Scenario: EvergreenJnr_MailboxesList_CheckThatFilterNameIsNotChangedAfterRenameWhileUpdateValuesOfFilter
+	When User clicks "Mailboxes" on the left-hand menu
+	Then "Mailboxes" list should be displayed to the user
+	When User clicks the Filters button
+	Then Filters panel is displayed to the user
+	When User add "Created Date" filter where type is "Before" with added column and "11 Dec 2017" Date filter
+	And User create custom list with "Test_Mailbox_Filter_DAS_12917" name
+	And User clicks the List Details button
+	And User changes list name to "EDITED_Mailbox_Filter_DAS_12917"
+	And User clicks the Filters button
+	And User click Edit button for "Created Date" filter
+	And User changes filter date to "13 Dec 2017"
+	Then "EDITED_Mailbox_Filter_DAS_12917" edited list is displayed to user
+
 @Evergreen @Devices @EvergreenJnr_ListPanel @CustomListDisplay @DAS12891 @Delete_Newly_Created_List
 Scenario: EvergreenJnr_DevicesList_CheckThatCancelButtonIsDisplayedWithCorrectlyColorOnListPanel
 	When User clicks "Devices" on the left-hand menu
