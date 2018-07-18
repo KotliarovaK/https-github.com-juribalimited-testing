@@ -36,7 +36,7 @@ Scenario: EvergreenJnr_UsersList_CheckThatUserWithoutRelevantRolesCannotSeeBulkU
 	Then "Projects Home" page is displayed to the user
 	When User navigate to Manage link
 	And User select "Manage Users" option in Management Console
-	When User create new User
+	And User create new User
 	| Username        | FullName     | Password | ConfirmPassword | Roles |
 	| 000WithoutRoles | WithoutRoles | 1234qwer | 1234qwer        |       |
 	Then Success message is displayed
@@ -58,13 +58,13 @@ Scenario: EvergreenJnr_UsersList_CheckThatUserWithoutRelevantRolesCannotSeeBulkU
 	| SelectedRowsName    |
 	| 002B5DC7D4D34D5C895 |
 	| 0088FC8A50DD4344B92 |
-	When User clicks on Action drop-down
+	And User clicks on Action drop-down
 	Then following Values are displayed in Action drop-down:
 	| Value              |
 	| Create static list |
 	When User clicks Profile in Account Dropdown
 	Then Profile page is displayed to user
-	Then following Roles are available for User:
+	And following Roles are available for User:
 	| Roles                     |
 	| Dashworks Users           |
 	| Dashworks Evergreen Users |
@@ -76,7 +76,7 @@ Scenario: EvergreenJnr_UsersList_CheckThatUserWithoutRelevantRolesCannotSeeBulkU
 	Then Dashworks homepage is displayed to the user in a logged in state
 	When User navigate to Manage link
 	And User select "Manage Users" option in Management Console
-	When User removes "000WithoutRoles" User
+	And User removes "000WithoutRoles" User
 
 @Evergreen @Devices @EvergreenJnr_ActionsPanel @DAS12932
 Scenario: EvergreenJnr_DevicesList_CheckThatUserWithoutJustTheProjectAdministratorRoleCanStillBulkUpdateObjects
@@ -84,7 +84,7 @@ Scenario: EvergreenJnr_DevicesList_CheckThatUserWithoutJustTheProjectAdministrat
 	Then "Projects Home" page is displayed to the user
 	When User navigate to Manage link
 	And User select "Manage Users" option in Management Console
-	When User create new User
+	And User create new User
 	| Username   | FullName             | Password | ConfirmPassword | Roles                |
 	| 000WithPBU | Project Bulk Updater | 1234qwer | 1234qwer        | Project Bulk Updater |
 	Then Success message is displayed
@@ -105,20 +105,20 @@ Scenario: EvergreenJnr_DevicesList_CheckThatUserWithoutJustTheProjectAdministrat
 	When ColumnName is entered into the search box and the selection is clicked
 	| ColumnName               |
 	| Windows7Mi: Request Type |
-	When User perform search by "0DTXL41673EW7O"
-	When User clicks the Actions button
+	And User perform search by "0DTXL41673EW7O"
+	And User clicks the Actions button
 	Then Actions panel is displayed to the user
 	When User select "Hostname" rows in the grid
 	| SelectedRowsName |
 	| 0DTXL41673EW7O   |
 	And User selects "Bulk Update" in the Actions dropdown
-	When User selects "Update request type" Bulk Update Type on Action panel
-	When User selects "Windows7Mi" Project on Action panel
-	When User selects "Computer: Laptop Replacement" Request Type on Action panel
-	When User clicks "UPDATE" button on Action panel
+	And User selects "Update request type" Bulk Update Type on Action panel
+	And User selects "Windows7Mi" Project on Action panel
+	And User selects "Computer: Laptop Replacement" Request Type on Action panel
+	And User clicks "UPDATE" button on Action panel
 	Then Warning message with "Are you sure you want proceed, this operation cannot be undone." text is displayed on Action panel
-	Then User clicks "UPDATE" button on message box
-	Then Success message with "1 of 1 objects were valid for the update. Your changes have successfully been queued." text is displayed on Action panel
+	And User clicks "UPDATE" button on message box
+	And Success message with "1 of 1 objects were valid for the update. Your changes have successfully been queued." text is displayed on Action panel
 	When User refreshes agGrid
 	Then "Computer: Laptop Replacement" text is displayed in the table content
 	When User clicks the Logout button
@@ -129,7 +129,7 @@ Scenario: EvergreenJnr_DevicesList_CheckThatUserWithoutJustTheProjectAdministrat
 	Then Dashworks homepage is displayed to the user in a logged in state
 	When User navigate to Manage link
 	And User select "Manage Users" option in Management Console
-	When User removes "000WithPBU" User
+	And User removes "000WithPBU" User
 
 @Evergreen @Applications @EvergreenJnr_ActionsPanel @DAS12932
 Scenario: EvergreenJnr_ApplicationsList_CheckThatUserWithoutJustTheProjectBulkUpdaterRoleCanStillBulkUpdateObjects
@@ -137,7 +137,7 @@ Scenario: EvergreenJnr_ApplicationsList_CheckThatUserWithoutJustTheProjectBulkUp
 	Then "Projects Home" page is displayed to the user
 	When User navigate to Manage link
 	And User select "Manage Users" option in Management Console
-	When User create new User
+	And User create new User
 	| Username  | FullName              | Password | ConfirmPassword | Roles                 |
 	| 000WithPA | Project Administrator | 1234qwer | 1234qwer        | Project Administrator |
 	Then Success message is displayed
@@ -158,20 +158,20 @@ Scenario: EvergreenJnr_ApplicationsList_CheckThatUserWithoutJustTheProjectBulkUp
 	When ColumnName is entered into the search box and the selection is clicked
 	| ColumnName               |
 	| EmailMigra: Request Type |
-	When User perform search by "0047 - Microsoft Access 97 SR-2 Francais"
-	When User clicks the Actions button
+	And User perform search by "0047 - Microsoft Access 97 SR-2 Francais"
+	And User clicks the Actions button
 	Then Actions panel is displayed to the user
 	When User select "Application" rows in the grid
 	| SelectedRowsName                         |
 	| 0047 - Microsoft Access 97 SR-2 Francais |
 	And User selects "Bulk Update" in the Actions dropdown
-	When User selects "Update request type" Bulk Update Type on Action panel
-	When User selects "EmailMigra" Project on Action panel
-	When User selects "Sharepoint Application" Request Type on Action panel
-	When User clicks "UPDATE" button on Action panel
+	And User selects "Update request type" Bulk Update Type on Action panel
+	And User selects "EmailMigra" Project on Action panel
+	And User selects "Sharepoint Application" Request Type on Action panel
+	And User clicks "UPDATE" button on Action panel
 	Then Warning message with "Are you sure you want proceed, this operation cannot be undone." text is displayed on Action panel
-	Then User clicks "UPDATE" button on message box
-	Then Success message with "1 of 1 objects were valid for the update. Your changes have successfully been queued." text is displayed on Action panel
+	And User clicks "UPDATE" button on message box
+	And Success message with "1 of 1 objects were valid for the update. Your changes have successfully been queued." text is displayed on Action panel
 	When User refreshes agGrid
 	Then "Sharepoint Application" text is displayed in the table content
 	When User clicks the Logout button
@@ -182,4 +182,4 @@ Scenario: EvergreenJnr_ApplicationsList_CheckThatUserWithoutJustTheProjectBulkUp
 	Then Dashworks homepage is displayed to the user in a logged in state
 	When User navigate to Manage link
 	And User select "Manage Users" option in Management Console
-	When User removes "000WithPA" User
+	And User removes "000WithPA" User

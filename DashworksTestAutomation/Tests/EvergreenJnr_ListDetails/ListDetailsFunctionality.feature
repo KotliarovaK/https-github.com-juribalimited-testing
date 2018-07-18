@@ -265,6 +265,16 @@ Scenario Outline: EvergreenJnr_AllLists_CheckThatNoAbilityToCreateTheSameNamedLi
 	
 @Evergreen @AllLists @EvergreenJnr_ListDetails @ListDetailsFunctionality @DAS12208 @DAS12684 @Delete_Newly_Created_List
 Scenario: EvergreenJnr_AllLists_CheckThatWarningMessageIsNotDisplayedInTheListPanelAfterViewingDependentList
+	When User clicks "Projects" on the left-hand menu
+	Then "Projects Home" page is displayed to the user
+	When User navigate to Manage link
+	And User select "Manage Users" option in Management Console
+	When User create new User
+	| Username | FullName | Password | ConfirmPassword | Roles |
+	| User2    | User2    | 1234qwer | 1234qwer        |       |
+	Then Success message is displayed
+	When User navigate to Dashworks User Site link
+	When User navigate to Evergreen link
 	When User clicks "Applications" on the left-hand menu
 	Then "Applications" list should be displayed to the user
 	When User clicks the Columns button
@@ -275,18 +285,22 @@ Scenario: EvergreenJnr_AllLists_CheckThatWarningMessageIsNotDisplayedInTheListPa
 	Then ColumnName is added to the list
 	| ColumnName |
 	| Compliance |
-	When User create dynamic list with "TestList1262B7" name on "Applications" page
-	Then "TestList1262B7" list is displayed to user
+	When User create dynamic list with "TestApplicationsList12208" name on "Applications" page
+	Then "TestApplicationsList12208" list is displayed to user
+	When User clicks the List Details button
+	Then List details panel is displayed to the user
+	When User select "Everyone can see" sharing option
+	Then "Everyone can see" sharing option is selected
 	When User clicks "Devices" on the left-hand menu
 	Then "Devices" list should be displayed to the user
 	When User clicks the Filters button
 	Then Filters panel is displayed to the user
 	When User add "Application (Saved List)" filter where type is "In list" with Selected Value and following Association:
-	| SelectedList   | Association        |
-	| TestList1262B7 | Entitled to device |
+	| SelectedList              | Association        |
+	| TestApplicationsList12208 | Entitled to device |
 	Then "Application" filter is added to the list
-	When User create dynamic list with "TestList186851" name on "Devices" page
-	Then "TestList186851" list is displayed to user
+	When User create dynamic list with "TestDevicesList12208" name on "Devices" page
+	Then "TestDevicesList12208" list is displayed to user
 	When User clicks the List Details button
 	Then List details panel is displayed to the user
 	When User select "Everyone can edit" sharing option
@@ -295,18 +309,23 @@ Scenario: EvergreenJnr_AllLists_CheckThatWarningMessageIsNotDisplayedInTheListPa
 	Then User is logged out
 	When User clicks on the Login link
 	Then Login Page is displayed to the user
-	When User provides the Login and Password and clicks on the login button
+	When User login with following credentials:
+	| Username | Password |
+	| User2    | 1234qwer |
 	Then Dashworks homepage is displayed to the user in a logged in state
 	When User clicks the Switch to Evergreen link
 	Then Evergreen Dashboards page should be displayed to the user
-	When User clicks "Devices" on the left-hand menu
-	Then "Devices" list should be displayed to the user
-	When User navigates to the "TestList186851" list
-	Then "TestList186851" list is displayed to user
+	When User clicks "Applications" on the left-hand menu
+	Then "Applications" list should be displayed to the user
+	When User navigates to the "TestApplicationsList12208" list
+	Then "TestApplicationsList12208" list is displayed to user
 	And no Warning message is displayed in the lists panel
 	When User clicks the List Details button
 	Then List details panel is displayed to the user
-	Then Owner field is disabled as read-only
+	Then User open the Dependents component
+	Then dependent "TestDevicesList12208" list is displayed
+	When User navigates to the dependent "TestDevicesList12208" list
+	Then "TestDevicesList12208" list is displayed to user
 
 @Evergreen @AllLists @EvergreenJnr_ListDetails @ListDetailsFunctionality @DAS10713 @DAS12190 @DAS12204 @Delete_Newly_Created_List
 Scenario: EvergreenJnr_AllLists_CheckThatTwoDependencyAreDisplayedInTheDependentsBlock
