@@ -762,7 +762,7 @@ namespace DashworksTestAutomation.Steps.Dashworks
                 }
             }
             _driver.WaitWhileControlIsNotDisplayed<ProjectsPage>(() => projectElement.SuccessMessage);
-            Thread.Sleep(10000);
+            Thread.Sleep(15000);
             Assert.IsTrue(projectElement.SuccessTextMessage(textMessage),
                 $"{textMessage} is not displayed on the Project page");
         }
@@ -1011,7 +1011,7 @@ namespace DashworksTestAutomation.Steps.Dashworks
             var projectElement = _driver.NowAt<ProjectsPage>();
             projectElement.ScopeListDropdown.Click();
             projectElement.SelectObjectForProjectCreation(listName);
-            Thread.Sleep(5000);
+            Thread.Sleep(10000);
         }
 
         [When(@"User clicks in the Scope field on the Admin page")]
