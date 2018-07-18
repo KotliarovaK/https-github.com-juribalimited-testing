@@ -151,6 +151,9 @@ namespace DashworksTestAutomation.Pages.Evergreen
         [FindsBy(How = How.XPath, Using = ".//div[@class='active-list-wrapper ng-star-inserted']/ul/li/span")]
         public IWebElement ActiveCustomList { get; set; }
 
+        [FindsBy(How = How.XPath, Using = ".//div[contains(@class,'ng-star-inserted')]/div/span[@class='list-selected-name']")]
+        public IWebElement ActiveCustomListEdited { get; set; }
+
         [FindsBy(How = How.XPath, Using = ".//span[text()='Project']")]
         public IWebElement CreateProjectButton { get; set; }
 
