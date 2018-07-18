@@ -149,6 +149,13 @@ namespace DashworksTestAutomation.Steps.Dashworks
             CheckColumnDisplayedState(table, false);
         }
 
+        [When(@"User refreshes agGrid")]
+        public void WhenUserRefreshesAgGrid()
+        {
+            var page = _driver.NowAt<BaseDashboardPage>();
+            page.RefreshTableButton.Click();
+        }
+
         private void CheckColumnDisplayedState(Table table, bool displayedState)
         {
             var listpageMenu = _driver.NowAt<BaseDashboardPage>();

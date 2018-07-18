@@ -1,4 +1,5 @@
-﻿using System.Linq;
+﻿using System;
+using System.Linq;
 using DashworksTestAutomation.DTO.ManagementConsole;
 using DashworksTestAutomation.DTO.Projects;
 using DashworksTestAutomation.DTO.RuntimeVariables;
@@ -39,6 +40,26 @@ namespace DashworksTestAutomation.Steps
             page.GetLinkInManagementConsoleByName(optionName).Click();
         }
 
+        [When(@"User create new User")]
+        public void WhenUserCreateNewUser(Table table)
+        {
+            var page = _driver.NowAt<ManageUserPage>();
+            page.CreateNewUserButton.Click();
+            foreach (var row in table.Rows)
+            {
+                page.Username.SendKeys(row["Username"]);
+                page.FullName.SendKeys(row["FullName"]);
+                page.Password.SendKeys(row["Password"]);
+                page.ConfirmPassword.SendKeys(row["ConfirmPassword"]);
+                if (!string.IsNullOrEmpty(row["Roles"]))
+                    page.Roles.SelectboxSelect(row["Roles"]);
+            }          
+            page.Roles.SelectboxSelect("Dashworks Users");
+            page.Roles.SelectboxSelect("Dashworks Evergreen Users");
+            page.AddRoleButton.Click();
+            page.CreateUserButton.Click();
+        }
+
         [Then(@"User create a new Dashworks User")]
         public void ThenUserCreateANewDashworksUser(Table table)
         {
@@ -56,6 +77,16 @@ namespace DashworksTestAutomation.Steps
             page.FullName.SendKeys(_manageUsers.FullName);
             page.Password.SendKeys(_manageUsers.Password);
             page.ConfirmPassword.SendKeys(_manageUsers.ConfirmPassword);
+            page.Roles.SelectboxSelect(_manageUsers.Roles.GetValue());
+            page.Roles.SelectboxSelect("Dashworks Users");
+            page.AddRoleButton.Click();
+            if (!string.IsNullOrEmpty(_manageUsers.RolesString))
+            {
+                //assign RolesString to RolesEnum
+                _manageUsers.Roles = (RolesEnum)Enum.Parse(typeof(RolesEnum), _manageUsers.RolesString);
+                page.Roles.SelectboxSelect(_manageUsers.Roles.GetValue());
+            }
+            page.AddRoleButton.Click();
 
             page.CreateUserButton.Click();
         }
@@ -88,6 +119,14 @@ namespace DashworksTestAutomation.Steps
             _driver.AcceptAlert();
             //Removing deleted User from userd list
             _projectDto.ManageUsers.RemoveAt(_projectDto.ManageUsers.Count - 1);
+        }
+
+        [When(@"User removes ""(.*)"" User")]
+        public void WhenUserRemovesUser(string userName)
+        {
+            var page = _driver.NowAt<MainElementsOfProjectCreation>();
+            page.GetDeleteButtonElementByName(userName).Click();
+            _driver.AcceptAlert();
         }
 
         [Then(@"selected User was removed")]

@@ -10,6 +10,9 @@ namespace DashworksTestAutomation.Pages.ManagementConsole
         [FindsBy(How = How.XPath, Using = ".//a[contains(text(), 'Dashworks User Site')]")]
         public IWebElement DashworksUserSiteLink { get; set; }
 
+        [FindsBy(How = How.XPath, Using = ".//a[contains(text(), '[Logout]')]")]
+        public IWebElement LogoutLink { get; set; }
+
         public override List<By> GetPageIdentitySelectors()
         {
             return new List<By>

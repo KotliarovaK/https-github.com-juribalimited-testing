@@ -104,12 +104,14 @@ namespace DashworksTestAutomation.Tests.Projects.CreatingProjects
                         "Username",
                         "FullName",
                         "Password",
-                        "ConfirmPassword"});
+                        "ConfirmPassword",
+                        "RolesString"});
             table2.AddRow(new string[] {
                         "AAA0MailboxScheduledProject",
                         "MailboxScheduledProject 0",
                         "1234qwer",
-                        "1234qwer"});
+                        "1234qwer",
+                        "DashworksEvergreenUsers"});
             testRunner.Then("User create a new Dashworks User", ((string)(null)), table2, "Then ");
             testRunner.And("Success message is displayed", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
             testRunner.And("created User is displayed in the table", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
@@ -117,12 +119,14 @@ namespace DashworksTestAutomation.Tests.Projects.CreatingProjects
                         "Username",
                         "FullName",
                         "Password",
-                        "ConfirmPassword"});
+                        "ConfirmPassword",
+                        "RolesString"});
             table3.AddRow(new string[] {
                         "AAA1MailboxScheduledProject",
                         "MailboxScheduledProject 1",
                         "1234qwer",
-                        "1234qwer"});
+                        "1234qwer",
+                        "DashworksEvergreenUsers"});
             testRunner.And("User create a new Dashworks User", ((string)(null)), table3, "And ");
             testRunner.And("Success message is displayed", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
             testRunner.And("created User is displayed in the table", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
@@ -130,12 +134,14 @@ namespace DashworksTestAutomation.Tests.Projects.CreatingProjects
                         "Username",
                         "FullName",
                         "Password",
-                        "ConfirmPassword"});
+                        "ConfirmPassword",
+                        "RolesString"});
             table4.AddRow(new string[] {
                         "AAA2MailboxScheduledProject",
                         "MailboxScheduledProject 2",
                         "1234qwer",
-                        "1234qwer"});
+                        "1234qwer",
+                        "DashworksEvergreenUsers"});
             testRunner.And("User create a new Dashworks User", ((string)(null)), table4, "And ");
             testRunner.And("Success message is displayed", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
             testRunner.And("created User is displayed in the table", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
