@@ -111,7 +111,7 @@ namespace DashworksTestAutomation.Tests.Projects.CreatingProjects
                         "UserScheduledProject 0",
                         "1234qwer",
                         "1234qwer",
-                        "DashworksEvergreenUsers"});
+                        "System Administrator"});
             testRunner.Then("User create a new Dashworks User", ((string)(null)), table2, "Then ");
             testRunner.And("Success message is displayed", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
             testRunner.And("created User is displayed in the table", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
@@ -126,7 +126,7 @@ namespace DashworksTestAutomation.Tests.Projects.CreatingProjects
                         "UserScheduledProject 1",
                         "1234qwer",
                         "1234qwer",
-                        "DashworksEvergreenUsers"});
+                        "System Administrator"});
             testRunner.And("User create a new Dashworks User", ((string)(null)), table3, "And ");
             testRunner.And("Success message is displayed", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
             testRunner.And("created User is displayed in the table", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
@@ -141,7 +141,7 @@ namespace DashworksTestAutomation.Tests.Projects.CreatingProjects
                         "UserScheduledProject 2",
                         "1234qwer",
                         "1234qwer",
-                        "DashworksEvergreenUsers"});
+                        "System Administrator"});
             testRunner.And("User create a new Dashworks User", ((string)(null)), table4, "And ");
             testRunner.And("Success message is displayed", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
             testRunner.And("created User is displayed in the table", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");

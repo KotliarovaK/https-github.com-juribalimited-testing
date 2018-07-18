@@ -19,18 +19,18 @@ Scenario: Projects_CreateComputerScheduledProject
 	When User navigate to Manage link
 	And User select "Manage Users" option in Management Console
 	Then User create a new Dashworks User
-	| Username                     | FullName                   | Password | ConfirmPassword | RolesString             |
-	| AAA0ComputerScheduledProject | ComputerScheduledProject 0 | 1234qwer | 1234qwer        | DashworksEvergreenUsers |
+	| Username                     | FullName                   | Password | ConfirmPassword | RolesString          |
+	| AAA0ComputerScheduledProject | ComputerScheduledProject 0 | 1234qwer | 1234qwer        | System Administrator |
 	And Success message is displayed
 	And created User is displayed in the table
 	And User create a new Dashworks User
-	| Username                     | FullName                   | Password | ConfirmPassword | RolesString             |
-	| AAA1ComputerScheduledProject | ComputerScheduledProject 1 | 1234qwer | 1234qwer        | DashworksEvergreenUsers |
+	| Username                     | FullName                   | Password | ConfirmPassword | RolesString          |
+	| AAA1ComputerScheduledProject | ComputerScheduledProject 1 | 1234qwer | 1234qwer        | System Administrator |
 	And Success message is displayed
 	And created User is displayed in the table
 	And User create a new Dashworks User
-	| Username                     | FullName                   | Password | ConfirmPassword | RolesString             |
-	| AAA2ComputerScheduledProject | ComputerScheduledProject 2 | 1234qwer | 1234qwer        | DashworksEvergreenUsers |
+	| Username                     | FullName                   | Password | ConfirmPassword | RolesString          |
+	| AAA2ComputerScheduledProject | ComputerScheduledProject 2 | 1234qwer | 1234qwer        | System Administrator |
 	And Success message is displayed
 	And created User is displayed in the table
 	When User navigate to Dashworks User Site link
