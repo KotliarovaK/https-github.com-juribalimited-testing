@@ -1517,6 +1517,11 @@ Scenario: EvergreenJnr_AdminPage_CheckThatDevicesToAddAndRemoveAreChangingApprop
 	| 00BDM1JUR8IF419 |
 	| 011PLA470S0B9DJ |
 	Then "StaticList6527" list is displayed to user
+		When User create static list with "StaticList6528" name on "Devices" page with following items
+	| ItemName       |
+	| 041V8ZALQ4XPL9 |
+	| 04WJ5P9DN0VEEW |
+	Then "StaticList6527" list is displayed to user
 	When User clicks Admin on the left-hand menu
 	Then Admin page should be displayed to the user
 	When User clicks "Projects" link on the Admin page
@@ -1524,35 +1529,31 @@ Scenario: EvergreenJnr_AdminPage_CheckThatDevicesToAddAndRemoveAreChangingApprop
 	When User clicks Create New Item button
 	Then "Create Project" page should be displayed to the user
 	When User enters "DevicesProject" in the Project Name field
-	And User selects "All Devices" in the Scope Project dropdown
+	And User selects "StaticList6527" in the Scope Project dropdown
 	And User clicks Create button on the Create Project page
 	When User enters "DevicesProject" text in the Search field for "Project" column
 	And User clicks content from "Project" column
 	Then Project "DevicesProject" is displayed to user
 	When User selects "Scope Changes" tab on the Project details page
-	When User expands the object to add 
-	And User selects following Objects to the Project
-	| Objects        |
-	| 041V8ZALQ4XPL9 |
-	| 04WJ5P9DN0VEEW |
-	Then "Devices to add (2 of 17225 selected)" is displayed to the user in the Project Scope Changes section
-	When User clicks "UPDATE DEVICE CHANGES" button on the Projects page
-	And User clicks Update Project button on the Projects page
-	Then Success message with "2 objects queued for onboarding, 0 objects offboarded" text is displayed on the Projects page
-	When User selects "Scope Details" tab on the Project details page
-	When User selects "StaticList6527" in the Scope Project details
+	Then "Devices to add (0 of 2 selected)" is displayed to the user in the Project Scope Changes section
+	When User selects "StaticList6528" in the Scope Project details
 	When User selects "Scope Changes" tab on the Project details page
 	Then "Devices to add (0 of 2 selected)" is displayed to the user in the Project Scope Changes section
 	Then "Devices to remove (0 of 2 selected)" is displayed to the user in the Project Scope Changes section
 
 @Evergreen @Admin @EvergreenJnr_AdminPage @AdminPage @DAS12999 @Delete_Newly_Created_Project @Delete_Newly_Created_List @Not_Run
 Scenario: EvergreenJnr_AdminPage_CheckThatUsersToAddAndRemoveAreChangingAppropriate
-	When User create static list with "StaticList6528" name on "Users" page with following items
+	When User create static list with "StaticList6529" name on "Users" page with following items
 	| ItemName            |
 	| 000F977AC8824FE39B8 |
 	| 002B5DC7D4D34D5C895 |
 	| 05D3699C79384A27A4C |
-	Then "StaticList6528" list is displayed to user
+	Then "StaticList6529" list is displayed to user
+	When User create static list with "StaticList6530" name on "Users" page with following items
+	| ItemName            |
+	| 02642091E2484C9C989 |
+	| 02769746B44A414593E |
+	Then "StaticList6530" list is displayed to user
 	When User clicks Admin on the left-hand menu
 	Then Admin page should be displayed to the user
 	When User clicks "Projects" link on the Admin page
@@ -1560,21 +1561,13 @@ Scenario: EvergreenJnr_AdminPage_CheckThatUsersToAddAndRemoveAreChangingAppropri
 	When User clicks Create New Item button
 	Then "Create Project" page should be displayed to the user
 	When User enters "UsersProject" in the Project Name field
-	And User selects "All Users" in the Scope Project dropdown
+	And User selects "StaticList6529" in the Scope Project dropdown
 	And User clicks Create button on the Create Project page
 	When User enters "UsersProject" text in the Search field for "Project" column
 	And User clicks content from "Project" column
 	Then Project "UsersProject" is displayed to user
 	When User selects "Scope Changes" tab on the Project details page
-	When User expands the object to add 
-	And User selects following Objects to the Project
-	| Objects                             |
-	| 02642091E2484C9C989 (Bewset, Adane) |
-	| 02769746B44A414593E (Allen, June)   |
-	Then "Users to add (2 of 41339 selected)" is displayed to the user in the Project Scope Changes section
-	When User clicks "UPDATE USER CHANGES" button on the Projects page
-	And User clicks Update Project button on the Projects page
-	Then Success message with "2 objects queued for onboarding, 0 objects offboarded" text is displayed on the Projects page
+	Then "Users to add (0 of 3 selected)" is displayed to the user in the Project Scope Changes section
 	When User selects "Scope Details" tab on the Project details page
 	When User selects "StaticList6528" in the Scope Project details
 	When User selects "Scope Changes" tab on the Project details page
