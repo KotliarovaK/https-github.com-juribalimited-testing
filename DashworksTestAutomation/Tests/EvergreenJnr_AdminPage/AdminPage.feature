@@ -1051,8 +1051,6 @@ Scenario: EvergreenJnr_AdminPage_CheckingThatProjectDetailsForOnboardedObjectsIs
 	When User enters "TestProject12490" in the Project Name field
 	And User selects "All Devices" in the Scope Project dropdown
 	And User clicks Create button on the Create Project page
-	And User clicks "Projects" link on the Admin page
-	Then "Projects" page should be displayed to the user
 	When User enters "TestProject12490" text in the Search field for "Project" column
 	And User clicks content from "Project" column
 	Then Project "TestProject12490" is displayed to user
