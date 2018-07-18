@@ -500,7 +500,7 @@ Scenario: EvergreenJnr_AdminPage_CheckThatMailboxesAreSuccessfullyAddedToBuckets
 	And Counter shows "149" found rows
 	And There are no errors in the browser console
 
-@Evergreen @Admin @EvergreenJnr_AdminPage @AdminPage @DAS11765 @DAS12170 @DAS13011 @Buckets @Not_Run
+@Evergreen @Admin @EvergreenJnr_AdminPage @AdminPage @DAS11765 @DAS12170 @DAS13011 @Buckets
 Scenario: EvergreenJnr_AdminPage_CheckThatErrorsDoNotAppearAfterAddingMailboxesToTheBucketWhereNoMailboxesExist
 	When User clicks Admin on the left-hand menu
 	Then Admin page should be displayed to the user
@@ -1593,3 +1593,49 @@ Scenario: EvergreenJnr_AdminPage_CheckThatUsersToAddAndRemoveAreChangingAppropri
 	When User selects "Scope Changes" tab on the Project details page
 	Then "Users to add (0 of 2 selected)" is displayed to the user in the Project Scope Changes section
 	Then "Users to remove (0 of 3 selected)" is displayed to the user in the Project Scope Changes section
+
+@Evergreen @Admin @EvergreenJnr_AdminPage @AdminPage @DAS12999 @Delete_Newly_Created_Project @Delete_Newly_Created_List
+Scenario Outline: EvergreenJnr_AdminPage_CheckProjectCreationFromListPageWithUseEvergreenBucket
+	When User clicks "<ListName>" on the left-hand menu
+	Then "<ListName>" list should be displayed to the user
+	When User clicks Create Project from the main list
+	Then "Create Project" page should be displayed to the user
+	When User enters "<ProjectName>" in the Project Name field
+	Then Scope field is automatically populated
+	When User selects "Use evergreen buckets" in the Buckets Project dropdown
+	When User clicks Create button on the Create Project page
+	Then Success message with "Your project has been created" text is displayed on the Projects page
+	When User enters "<ProjectName>" text in the Search field for "Project" column
+	And User selects all rows on the grid
+	And User removes selected item
+	When User create static list with "<StaticList>" name on "<ListName>" page with following items
+	| ItemName |
+	| <Item>   |
+	Then "<StaticList>" list is displayed to user
+	When User clicks Create Project from the main list
+	Then "Create Project" page should be displayed to the user
+	When User enters "<ProjectName>" in the Project Name field
+	Then Scope field is automatically populated
+	When User selects "Use evergreen buckets" in the Buckets Project dropdown
+	When User clicks Create button on the Create Project page
+	Then Success message with "Your project has been created" text is displayed on the Projects page
+	When User enters "<ProjectName>" text in the Search field for "Project" column
+	And User selects all rows on the grid
+	And User removes selected item
+	When User clicks "<ListName>" on the left-hand menu
+	Then "<ListName>" list should be displayed to the user
+	When User click on '<ColumnName>' column header
+	And User create dynamic list with "<DynamicList>" name on "<ListName>" page
+	Then "<DynamicList>" list is displayed to user
+	When User clicks Create Project from the main list
+	Then "Create Project" page should be displayed to the user
+	When User enters "<ProjectName>" in the Project Name field
+	Then Scope field is automatically populated
+	When User selects "Use evergreen buckets" in the Buckets Project dropdown
+	And User clicks Create button on the Create Project page
+	Then Success message with "Your project has been created" text is displayed on the Projects page
+
+	Examples:
+	| ListName  | ProjectName | StaticList     | Item                   | ColumnName    | DynamicList  |
+	| Devices   | Project2587 | StaticList6521 | 00KLL9S8NRF0X6         | Hostname      | TestList6584 |
+	| Mailboxes | Project2587 | StaticList6522 | ZVI880605@bclabs.local | Email Address | TestList6583 |

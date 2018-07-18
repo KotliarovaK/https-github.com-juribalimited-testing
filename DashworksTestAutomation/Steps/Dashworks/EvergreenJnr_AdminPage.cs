@@ -147,6 +147,14 @@ namespace DashworksTestAutomation.Steps.Dashworks
                 "Update All Changes button is active");
         }
 
+        [Then(@"Scope field is automatically populated")]
+        public void ThenScopeFieldIsAutomaticallyPopulated()
+        {
+            var page = _driver.NowAt<ProjectsPage>();
+            _driver.WaitForDataLoading();
+            Assert.IsFalse(page.EmptyScopeField.Displayed(), "Scope field is empty");
+        }
+
         [Then(@"Update Project button is active")]
         public void ThenUpdateProjectButtonIsActive()
         {

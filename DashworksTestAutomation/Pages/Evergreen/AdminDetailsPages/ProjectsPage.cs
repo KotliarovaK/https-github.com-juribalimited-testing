@@ -25,6 +25,9 @@ namespace DashworksTestAutomation.Pages.Evergreen.AdminDetailsPages
         [FindsBy(How = How.XPath, Using = ".//span[@class='mat-option-text']")]
         public IWebElement DeleteProjectInActions { get; set; }
 
+        [FindsBy(How = How.XPath, Using = "//label[contains(@class, 'mat-form-field-empty')]")]
+        public IWebElement EmptyScopeField { get; set; }
+
         [FindsBy(How = How.XPath, Using = ".//button[contains(@title, 'Update')]")]
         public IWebElement UpdateProjectButton { get; set; }
 
