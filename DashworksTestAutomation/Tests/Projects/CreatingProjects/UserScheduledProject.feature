@@ -19,18 +19,18 @@ Scenario: Projects_CreateUserScheduledProject
 	When User navigate to Manage link
 	And User select "Manage Users" option in Management Console
 	Then User create a new Dashworks User
-	| Username                 | FullName               | Password | ConfirmPassword | RolesString             |
-	| AAA0UserScheduledProject | UserScheduledProject 0 | 1234qwer | 1234qwer        | DashworksEvergreenUsers |
+	| Username                 | FullName               | Password | ConfirmPassword | RolesString |
+	| AAA0UserScheduledProject | UserScheduledProject 0 | 1234qwer | 1234qwer        |             |
 	And Success message is displayed
 	And created User is displayed in the table
 	And User create a new Dashworks User
-	| Username                 | FullName               | Password | ConfirmPassword | RolesString             |
-	| AAA1UserScheduledProject | UserScheduledProject 1 | 1234qwer | 1234qwer        | DashworksEvergreenUsers |
+	| Username                 | FullName               | Password | ConfirmPassword | RolesString |
+	| AAA1UserScheduledProject | UserScheduledProject 1 | 1234qwer | 1234qwer        |             |
 	And Success message is displayed
 	And created User is displayed in the table
 	And User create a new Dashworks User
-	| Username                 | FullName               | Password | ConfirmPassword | RolesString             |
-	| AAA2UserScheduledProject | UserScheduledProject 2 | 1234qwer | 1234qwer        | DashworksEvergreenUsers |
+	| Username                 | FullName               | Password | ConfirmPassword | RolesString |
+	| AAA2UserScheduledProject | UserScheduledProject 2 | 1234qwer | 1234qwer        |             |
 	And Success message is displayed
 	And created User is displayed in the table
 	When User navigate to Dashworks User Site link

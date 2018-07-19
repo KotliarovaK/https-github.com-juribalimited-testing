@@ -47,6 +47,9 @@ namespace DashworksTestAutomation.Pages.Evergreen
         [FindsBy(How = How.XPath, Using = ".//input[@aria-label='Owner'][contains(@class, 'ng-pristine ng-valid')]")]
         public IWebElement AvailableOwnerField { get; set; }
 
+        [FindsBy(How = How.XPath, Using = "//i[@class='material-icons mat-item_add ng-star-inserted']")]
+        public IWebElement DependantsButton { get; set; }
+
         [FindsBy(How = How.XPath, Using = ".//mat-select[@aria-labelledby='sharing-label']")]
         public IWebElement SharingDropdown { get; set; }
 
@@ -110,6 +113,13 @@ namespace DashworksTestAutomation.Pages.Evergreen
         public string GetSelectedValue(IWebElement dropdown)
         {
             return dropdown.FindElement(By.XPath(".//span[contains(@class, 'mat-select-value-text')]/span")).Text;
+        }
+
+        public IWebElement GetDependentListByName(string listName)
+        {
+            var selector = By.XPath($"//a[text()='{listName}']");
+            Driver.WaitWhileControlIsNotDisplayed(selector);
+            return Driver.FindElement(selector);
         }
     }
 }
