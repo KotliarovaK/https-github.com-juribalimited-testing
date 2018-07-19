@@ -1019,7 +1019,7 @@ namespace DashworksTestAutomation.Steps.Dashworks
             var projectElement = _driver.NowAt<ProjectsPage>();
             projectElement.ScopeListDropdown.Click();
             projectElement.SelectObjectForProjectCreation(listName);
-            Thread.Sleep(10000);
+            Thread.Sleep(15000);
         }
 
         [When(@"User clicks in the Scope field on the Admin page")]
