@@ -773,6 +773,13 @@ namespace DashworksTestAutomation.Steps.Dashworks
             Assert.IsFalse(message.SuccessMessage.Displayed());
         }
 
+        [When(@"User clicks newly created project link")]
+        public void WhenUserClicksNewlyCreatedProjectLink()
+        {
+            var projectElement = _driver.NowAt<ProjectsPage>();
+            projectElement.NewProjectLink.Click();
+        }
+
         [Then(@"message with ""(.*)"" text is displayed on the Projects page")]
         public void ThenMessageWithTextIsDisplayedOnTheProjectsPage(string textMessage)
         {

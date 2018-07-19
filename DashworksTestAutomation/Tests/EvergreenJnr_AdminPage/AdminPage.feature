@@ -886,20 +886,11 @@ Scenario: EvergreenJnr_AdminPage_CheckThatOnboardingOfObjectsIsProceedForScopedP
 	When User enters "TestProject14" in the Project Name field
 	And User selects "All Devices" in the Scope Project dropdown
 	When User clicks Create button on the Create Project page
-Scenario: EvergreenJnr_AdminPage_CheckThatOnboardingOfObjectsIsProceedForScopedProjects
-	When User clicks Admin on the left-hand menu
-	Then Admin page should be displayed to the user
-	When User clicks "Projects" link on the Admin page
+	And User clicks "Projects" link on the Admin page
 	Then "Projects" page should be displayed to the user
-	When User clicks Create New Item button
-	Then "Create Project" page should be displayed to the user
-	When User enters "TestProject14" in the Project Name field
-	And User selects "All Devices" in the Scope Project dropdown
-	When User clicks Create button on the Create Project page
-	Then Success message with "Your project has been created" text is displayed on the Projects page
-	When User clicks newly created project link
+	When User enters "TestProject14" text in the Search field for "Project" column
+	And User clicks content from "Project" column
 	Then Project "TestProject14" is displayed to user
-	When User selects "Scope Changes" tab on the Project details page
 	When User adds following Objects to the Project
 	| Objects        |
 	| 0317IPQGQBVAQV |
@@ -919,8 +910,10 @@ Scenario: EvergreenJnr_AdminPage_CheckThatOnboardingOfObjectsIsProceedForScopedP
 	When User enters "TestProject15" in the Project Name field
 	And User selects "All Devices" in the Scope Project dropdown
 	When User clicks Create button on the Create Project page
-	Then Success message with "Your project has been created" text is displayed on the Projects page
-	When User clicks newly created project link
+	And User clicks "Projects" link on the Admin page
+	Then "Projects" page should be displayed to the user
+	When User enters "TestProject15" text in the Search field for "Project" column
+	And User clicks content from "Project" column
 	Then Project "TestProject15" is displayed to user
 	And Success message is not displayed on the Projects page
 
@@ -1039,7 +1032,7 @@ Scenario: EvergreenJnr_AdminPage_CheckThatObjectsIsOnboardedToTheProjectWithClon
 	And User removes selected item
 	When User clicks refresh button in the browser
 
-@Evergreen @Admin @EvergreenJnr_AdminPage @AdminPage @DAS12490 @Not_Run @Project_Creation_and_Scope @Projects
+@Evergreen @Admin @EvergreenJnr_AdminPage @AdminPage @DAS12490 @DAS13007 @Not_Run @Project_Creation_and_Scope @Projects
 Scenario: EvergreenJnr_AdminPage_CheckingThatProjectDetailsForOnboardedObjectsIsDisplayedCorrectly
 	When User clicks Admin on the left-hand menu
 	Then Admin page should be displayed to the user
@@ -1634,7 +1627,7 @@ Scenario Outline: EvergreenJnr_AdminPage_CheckProjectCreationFromListPageWithUse
 	And User clicks Create button on the Create Project page
 	Then Success message with "Your project has been created" text is displayed on the Projects page
 
-	Examples:
+Examples:
 	| ListName  | ProjectName | StaticList     | Item                   | ColumnName    | DynamicList  |
 	| Devices   | Project2587 | StaticList6521 | 00KLL9S8NRF0X6         | Hostname      | TestList6584 |
 	| Mailboxes | Project2587 | StaticList6522 | ZVI880605@bclabs.local | Email Address | TestList6583 |
