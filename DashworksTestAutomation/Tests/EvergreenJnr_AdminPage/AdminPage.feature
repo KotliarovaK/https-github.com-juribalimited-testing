@@ -419,7 +419,7 @@ Scenario: EvergreenJnr_AdminPage_CheckThatNotificationMessageIsDisplayedAfterUpd
 	And User clicks content from "Bucket" column
 	Then "TestBucket2" bucket details is displayed to the user
 	When User clicks "Bucket Settings" tab
-	When User clicks Default Bucket checkbox on the Buckets page
+	When User clicks Default bucket checkbox
 	And User clicks Update Bucket button on the Buckets page
 	Then Success message The "TestBucket2" bucket has been updated is displayed on the Buckets page
 	When User enters "TestBucket2" text in the Search field for "Bucket" column
@@ -1794,3 +1794,62 @@ Examples:
 	| ProjectName     | StaticList     | PageName  | Item                             | ColumnName    | DynamicList     |
 	| TestProject9553 | StaticList8891 | Mailboxes | 00A5B910A1004CF5AC4@bclabs.local | Email Address | DynamicList9537 |
 	| TestProject9554 | StaticList8892 | Users     | 003F5D8E1A844B1FAA5              | Username      | DynamicList9538 |
+
+@Evergreen @Admin @EvergreenJnr_AdminPage @AdminPage @DAS12948 @Delete_Newly_Created_Project @Buckets
+Scenario: EvergreenJnr_AdminPage_CheckTheBucketStateForOnboardedObjects
+	When User clicks Admin on the left-hand menu
+	Then Admin page should be displayed to the user
+	When User clicks "Projects" link on the Admin page
+	Then "Projects" page should be displayed to the user
+	When User clicks Create New Item button
+	Then "Create Project" page should be displayed to the user
+	When User enters "Project12948" in the Project Name field
+	And User selects "All Devices" in the Scope Project dropdown
+	And User selects "Use evergreen buckets" in the Buckets Project dropdown
+	And User clicks Create button on the Create Project page
+	Then Success message with "Your project has been created" text is displayed on the Projects page
+	When User clicks "Buckets" link on the Admin page
+	Then "Buckets" page should be displayed to the user
+	When User clicks Create New Item button
+	Then "Create Bucket" page should be displayed to the user
+	When User enters "Bucket12948" in the Bucket Name field
+	And User selects "Admin IT" team in the Team dropdown on the Buckets page
+	And User clicks Default bucket checkbox
+	And User clicks Create button on the Create Bucket page
+	Then Success message is displayed and contains "The bucket has been created" text
+	When User clicks "Projects" link on the Admin page
+	Then "Projects" page should be displayed to the user
+	When User enters "Project12948" text in the Search field for "Project" column
+	And User clicks content from "Project" column
+	And User selects "Scope Changes" tab on the Project details page
+	And User expands the object to add 
+	And User selects following Objects to the Project
+	| Objects        |
+	| 0TTSZRQ1ZTIXWM |
+	And User clicks "UPDATE ALL CHANGES" button on the Projects page
+	And User clicks Update Project button on the Projects page
+	And User selects "Queue" tab on the Project details page
+	Then following Items are onboarded
+	| Items          |
+	| 0TTSZRQ1ZTIXWM |
+	When User have opened Column Settings for "Action" column
+	And User clicks Column button on the Column Settings panel
+	Then Column Settings was opened
+	When User select "Bucket" checkbox on the Column Settings panel
+	And User clicks Column button on the Column Settings panel
+	Then following columns added to the table:
+	| ColumnName |
+	| Bucket     |
+	Then "Unassigned" text is displayed in the table content
+	When User click on Back button
+	When User clicks "Buckets" link on the Admin page
+	Then "Buckets" page should be displayed to the user
+	When User enters "Unassigned" text in the Search field for "Bucket" column
+	And User clicks content from "Bucket" column
+	Then "Unassigned" bucket details is displayed to the user
+	When User clicks "Bucket Settings" tab
+	#Update all steps with 'default bucket' checkbox after fixed DAS13073
+	And User updates the Default Bucket checkbox state
+	And User clicks Update Bucket button on the Buckets page
+	Then Success message The "Unassigned" bucket has been updated is displayed on the Buckets page
+	And Delete "Bucket12948" Bucket in the Administration
