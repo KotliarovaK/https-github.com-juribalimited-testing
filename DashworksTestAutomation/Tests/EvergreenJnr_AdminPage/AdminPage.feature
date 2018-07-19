@@ -782,7 +782,7 @@ Scenario: EvergreenJnr_ChecksThatDeviceScopeDDLIsDisabledWhenDoNotIncludeOwnedDe
 	When User selects "Do not include device owners" checkbox on the Project details page
 	Then selecting device owners is disabled
 
-@Evergreen @Admin @EvergreenJnr_AdminPage @AdminPage @DAS12578 @Delete_Newly_Created_List
+@Evergreen @Admin @EvergreenJnr_AdminPage @AdminPage @DAS12578 @DAS12999 @Delete_Newly_Created_List @Projects
 Scenario Outline: EvergreenJnr_AdminPage_CheckThatTheEditListFunctionIsHiddenAfterCancelingCreatingProjectFromTheMainLists
 	When User clicks "<ListName>" on the left-hand menu
 	Then "<ListName>" list should be displayed to the user
@@ -794,6 +794,14 @@ Scenario Outline: EvergreenJnr_AdminPage_CheckThatTheEditListFunctionIsHiddenAft
 	When User clicks Cancel button
 	Then "<DynamicListName>" list is displayed to user
 	And Edit List menu is not displayed
+	When User clicks Admin on the left-hand menu
+	Then Admin page should be displayed to the user
+	When User clicks Create New Item button
+	Then "Create Project" page should be displayed to the user
+	When User enters "TestProject7894" in the Project Name field
+	And User selects "All Devices" in the Scope Project dropdown
+	When User clicks Cancel button
+	Then "Projects" page should be displayed to the user
 
 Examples:
 	| ListName  | ColumnName    | DynamicListName |
