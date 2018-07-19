@@ -386,6 +386,7 @@ Scenario: EvergreenJnr_AdminPage_CheckThatWarningMessageIsNotDisplayedWhenDeleti
 	When User enters "TestProject6" in the Project Name field
 	And User selects "TestList0A78U9" in the Scope Project dropdown
 	And User clicks Create button on the Create Project page
+	Then "Projects" page should be displayed to the user
 	Then Success message with "Your project has been created" text is displayed on the Projects page
 	And There are no errors in the browser console
 	When User enters "TestProject6" text in the Search field for "Project" column
@@ -885,6 +886,16 @@ Scenario: EvergreenJnr_AdminPage_CheckThatOnboardingOfObjectsIsProceedForScopedP
 	When User enters "TestProject14" in the Project Name field
 	And User selects "All Devices" in the Scope Project dropdown
 	When User clicks Create button on the Create Project page
+Scenario: EvergreenJnr_AdminPage_CheckThatOnboardingOfObjectsIsProceedForScopedProjects
+	When User clicks Admin on the left-hand menu
+	Then Admin page should be displayed to the user
+	When User clicks "Projects" link on the Admin page
+	Then "Projects" page should be displayed to the user
+	When User clicks Create New Item button
+	Then "Create Project" page should be displayed to the user
+	When User enters "TestProject14" in the Project Name field
+	And User selects "All Devices" in the Scope Project dropdown
+	When User clicks Create button on the Create Project page
 	Then Success message with "Your project has been created" text is displayed on the Projects page
 	When User clicks newly created project link
 	Then Project "TestProject14" is displayed to user
@@ -986,7 +997,7 @@ Examples:
 	| Users     | Username      | ProjectList4511 | 41,339    | TestProject4512 | 41339        | Domain      | CORP     | 103          | 103      | TestProject4512 |
 	| Mailboxes | Email Address | ProjectList4548 | 14,784    | TestProject4513 | 14784        | Owner City  | London   | 3,294        | 3294     | TestProject4513 |
 
-@Evergreen @Admin @EvergreenJnr_AdminPage @AdminPage @DAS12816 @DAS12873 @Project_Creation_and_Scope @Projects @Not_Run
+@Evergreen @Admin @EvergreenJnr_AdminPage @AdminPage @DAS12816 @DAS12873 @DAS13007 @Not_Run @Project_Creation_and_Scope
 Scenario: EvergreenJnr_AdminPage_CheckThatObjectsIsOnboardedToTheProjectWithCloneEvergreenBucketsToProjectBuckets
 	When User clicks Admin on the left-hand menu
 	Then Admin page should be displayed to the user
@@ -1011,10 +1022,14 @@ Scenario: EvergreenJnr_AdminPage_CheckThatObjectsIsOnboardedToTheProjectWithClon
 	And User clicks Update Project button on the Projects page
 	Then Success message with "1 object queued for onboarding, 0 objects offboarded" text is displayed on the Projects page
 	When User selects "Queue" tab on the Project details page
+	Then There are no errors in the browser console
+	Then Error message is not displayed on the Projects page
 	Then following Items are onboarded
 	| Items           |
 	| 01BQIYGGUW5PRP6 |
 	When User selects "History" tab on the Project details page
+	Then There are no errors in the browser console
+	Then Error message is not displayed on the Projects page
 	Then following Items are onboarded
 	| Items           |
 	| 01BQIYGGUW5PRP6 |
@@ -1047,10 +1062,14 @@ Scenario: EvergreenJnr_AdminPage_CheckingThatProjectDetailsForOnboardedObjectsIs
 	And User clicks "UPDATE ALL CHANGES" button on the Projects page
 	And User clicks Update Project button on the Projects page
 	When User selects "Queue" tab on the Project details page
+	Then There are no errors in the browser console
+	Then Error message is not displayed on the Projects page
 	Then following Items are onboarded
 	| Items          |
 	| 0IJB93JZPG72PX |
 	When User selects "History" tab on the Project details page
+	Then There are no errors in the browser console
+	Then Error message is not displayed on the Projects page
 	Then following Items are onboarded
 	| Items          |
 	| 0IJB93JZPG72PX |
