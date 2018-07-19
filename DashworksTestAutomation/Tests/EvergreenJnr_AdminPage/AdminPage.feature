@@ -514,7 +514,7 @@ Scenario: EvergreenJnr_AdminPage_CheckThatErrorsDoNotAppearAfterAddingMailboxesT
 	Then No items text is displayed
 	And There are no errors in the browser console
 
-@Evergreen @Admin @EvergreenJnr_AdminPage @AdminPage @DAS11982 @Delete_Newly_Created_Project @Project_Creation_and_Scope @Projects
+@Evergreen @Admin @EvergreenJnr_AdminPage @AdminPage @DAS11982 @DAS12773 @Delete_Newly_Created_Project @Project_Creation_and_Scope @Projects
 Scenario: EvergreenJnr_AdminPage_CheckThatAllAssociationsAreSelectedByDefaultInTheProjectApplicationsScope
 	When User clicks Admin on the left-hand menu
 	Then Admin page should be displayed to the user
@@ -528,8 +528,7 @@ Scenario: EvergreenJnr_AdminPage_CheckThatAllAssociationsAreSelectedByDefaultInT
 	Then Success message with "Your project has been created" text is displayed on the Projects page
 	When User clicks newly created project link
 	Then Project "TestProject7" is displayed to user
-	When User selects "Scope Details" tab on the Project details page
-	And User navigates to the "Application Scope" tab in the Scope section on the Project details page
+	When User navigates to the "Application Scope" tab in the Scope section on the Project details page
 	Then All Associations are selected by default
 	When  User selects "Do not include applications" checkbox on the Project details page
 	Then All Associations are disabled
