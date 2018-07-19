@@ -699,6 +699,14 @@ namespace DashworksTestAutomation.Steps.Dashworks
             Assert.IsFalse(page.DeleteWarningMessage.Displayed());
         }
 
+        [Then(@"""(.*)"" warning message is not displayed on the Buckets page")]
+        public void ThenWarningMessageIsNotDisplayedOnTheBucketsPage(string warningText)
+        {
+            var message = _driver.NowAt<BucketsPage>();
+            Assert.IsFalse(message.WarningDeleteBucketMessage(warningText),
+                $"{warningText} warning message is displayed on the Buckets page");
+        }
+
         [When(@"User clicks Cancel button in the warning message on the Admin page")]
         public void WhenUserClicksCancelButtonInTheWarningMessageOnTheAdminPage()
         {
@@ -733,23 +741,6 @@ namespace DashworksTestAutomation.Steps.Dashworks
                 $"Success Message is not displayed for {bucketName}");
         }
 
-        [Then(@"Error message with ""(.*)"" text is displayed")]
-        public void ThenErrorMessageWithTextIsDisplayedOnTheBucketsPage(string text)
-        {
-            var page = _driver.NowAt<BaseGridPage>();
-            _driver.WaitForDataLoading();
-            _driver.WaitWhileControlIsNotDisplayed<BaseGridPage>(() => page.ErrorMessage);
-            Assert.AreEqual(text, page.ErrorMessage.Text, "Error Message is not displayed");
-        }
-
-        [Then(@"""(.*)"" warning message is not displayed on the Buckets page")]
-        public void ThenWarningMessageIsNotDisplayedOnTheBucketsPage(string warningText)
-        {
-            var message = _driver.NowAt<BucketsPage>();
-            Assert.IsFalse(message.WarningDeleteBucketMessage(warningText),
-                $"{warningText} warning message is displayed on the Buckets page");
-        }
-
         [Then(@"Success message with ""(.*)"" text is displayed on the Projects page")]
         public void ThenSuccessMessageWithTextIsDisplayedOnTheProjectsPage(string textMessage)
         {
@@ -773,6 +764,13 @@ namespace DashworksTestAutomation.Steps.Dashworks
             Thread.Sleep(15000);
             Assert.IsTrue(projectElement.SuccessTextMessage(textMessage),
                 $"{textMessage} is not displayed on the Project page");
+        }
+
+        [Then(@"Success message is not displayed on the Projects page")]
+        public void ThenSuccessMessageIsNotDisplayedOnTheProjectsPage()
+        {
+            var message = _driver.NowAt<ProjectsPage>();
+            Assert.IsFalse(message.SuccessMessage.Displayed());
         }
 
         [Then(@"message with ""(.*)"" text is displayed on the Projects page")]
@@ -799,11 +797,20 @@ namespace DashworksTestAutomation.Steps.Dashworks
                 $"{textMessage} is not displayed on the Project page");
         }
 
-        [Then(@"Success message is not displayed on the Projects page")]
-        public void ThenSuccessMessageIsNotDisplayedOnTheProjectsPage()
+        [Then(@"Error message with ""(.*)"" text is displayed")]
+        public void ThenErrorMessageWithTextIsDisplayedOnTheBucketsPage(string text)
         {
-            var message = _driver.NowAt<ProjectsPage>();
-            Assert.IsFalse(message.SuccessMessage.Displayed());
+            var page = _driver.NowAt<BaseGridPage>();
+            _driver.WaitForDataLoading();
+            _driver.WaitWhileControlIsNotDisplayed<BaseGridPage>(() => page.ErrorMessage);
+            Assert.AreEqual(text, page.ErrorMessage.Text, "Error Message is not displayed");
+        }
+
+        [Then(@"Error message is not displayed on the Projects page")]
+        public void ThenErrorMessageIsNotDisplayedOnTheProjectsPage()
+        {
+            var page = _driver.NowAt<BaseGridPage>();
+            Assert.IsFalse(page.ErrorMessage.Displayed(), "Error Message is displayed");
         }
 
         #endregion

@@ -1000,7 +1000,7 @@ Examples:
 	| Users     | Username      | ProjectList4511 | 41,339    | TestProject4512 | 41339        | Domain      | CORP     | 103          | 103      | TestProject4512 |
 	| Mailboxes | Email Address | ProjectList4548 | 14,784    | TestProject4513 | 14784        | Owner City  | London   | 3,294        | 3294     | TestProject4513 |
 
-@Evergreen @Admin @EvergreenJnr_AdminPage @AdminPage @DAS12816 @DAS12873 @Not_Run @Project_Creation_and_Scope
+@Evergreen @Admin @EvergreenJnr_AdminPage @AdminPage @DAS12816 @DAS12873 @DAS13007 @Not_Run @Project_Creation_and_Scope
 Scenario: EvergreenJnr_AdminPage_CheckThatObjectsIsOnboardedToTheProjectWithCloneEvergreenBucketsToProjectBuckets
 	When User clicks Admin on the left-hand menu
 	Then Admin page should be displayed to the user
@@ -1027,10 +1027,14 @@ Scenario: EvergreenJnr_AdminPage_CheckThatObjectsIsOnboardedToTheProjectWithClon
 	And User clicks Update Project button on the Projects page
 	Then Success message with "1 object queued for onboarding, 0 objects offboarded" text is displayed on the Projects page
 	When User selects "Queue" tab on the Project details page
+	Then There are no errors in the browser console
+	Then Error message is not displayed on the Projects page
 	Then following Items are onboarded
 	| Items           |
 	| 01BQIYGGUW5PRP6 |
 	When User selects "History" tab on the Project details page
+	Then There are no errors in the browser console
+	Then Error message is not displayed on the Projects page
 	Then following Items are onboarded
 	| Items           |
 	| 01BQIYGGUW5PRP6 |
@@ -1040,7 +1044,7 @@ Scenario: EvergreenJnr_AdminPage_CheckThatObjectsIsOnboardedToTheProjectWithClon
 	And User removes selected item
 	When User clicks refresh button in the browser
 
-@Evergreen @Admin @EvergreenJnr_AdminPage @AdminPage @DAS12490 @Not_Run @Project_Creation_and_Scope
+@Evergreen @Admin @EvergreenJnr_AdminPage @AdminPage @DAS12490 @DAS13007 @Not_Run @Project_Creation_and_Scope
 Scenario: EvergreenJnr_AdminPage_CheckingThatProjectDetailsForOnboardedObjectsIsDisplayedCorrectly
 	When User clicks Admin on the left-hand menu
 	Then Admin page should be displayed to the user
@@ -1062,10 +1066,14 @@ Scenario: EvergreenJnr_AdminPage_CheckingThatProjectDetailsForOnboardedObjectsIs
 	And User clicks "UPDATE ALL CHANGES" button on the Projects page
 	And User clicks Update Project button on the Projects page
 	When User selects "Queue" tab on the Project details page
+	Then There are no errors in the browser console
+	Then Error message is not displayed on the Projects page
 	Then following Items are onboarded
 	| Items          |
 	| 0IJB93JZPG72PX |
 	When User selects "History" tab on the Project details page
+	Then There are no errors in the browser console
+	Then Error message is not displayed on the Projects page
 	Then following Items are onboarded
 	| Items          |
 	| 0IJB93JZPG72PX |
