@@ -775,6 +775,13 @@ namespace DashworksTestAutomation.Steps.Dashworks
                 $"{textMessage} is not displayed on the Project page");
         }
 
+        [When(@"User clicks newly created project link")]
+        public void WhenUserClicksNewlyCreatedProjectLink()
+        {
+            var projectElement = _driver.NowAt<ProjectsPage>();
+            projectElement.NewProjectLink.Click();
+        }
+
         [Then(@"message with ""(.*)"" text is displayed on the Projects page")]
         public void ThenMessageWithTextIsDisplayedOnTheProjectsPage(string textMessage)
         {
@@ -965,8 +972,8 @@ namespace DashworksTestAutomation.Steps.Dashworks
         public void ThenFollowingItemsAreStillSelected()
         {
             var projectElement = _driver.NowAt<BaseGridPage>();
-            Assert.IsTrue(projectElement.SelectedCheckbox.Displayed(), "Items are not selected");
-            Assert.IsTrue(projectElement.AddItemCheckbox.Displayed(), "Item checkbox is not checked");
+            Assert.IsTrue(projectElement.PlusButton.Displayed(), "Items are not selected");
+            Assert.IsTrue(projectElement.AllItemCheckbox.Displayed(), "Item checkbox is not checked");
         }
 
         [When(@"User clicks Create button on the Create Project page")]
