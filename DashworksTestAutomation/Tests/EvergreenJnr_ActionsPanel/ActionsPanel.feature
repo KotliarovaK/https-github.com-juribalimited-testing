@@ -113,7 +113,7 @@ Scenario: EvergreenJnr_DevicesList_CheckThatUserWithoutJustTheProjectAdministrat
 	| 0DTXL41673EW7O   |
 	And User selects "Bulk Update" in the Actions dropdown
 	And User selects "Update request type" Bulk Update Type on Action panel
-	And User selects "Windows7Mi" Project on Action panel
+	And User selects "Windows 7 Migration (Computer Scheduled Project)" Project on Action panel
 	And User selects "Computer: Laptop Replacement" Request Type on Action panel
 	And User clicks "UPDATE" button on Action panel
 	Then Warning message with "Are you sure you want proceed, this operation cannot be undone." text is displayed on Action panel
@@ -166,7 +166,7 @@ Scenario: EvergreenJnr_ApplicationsList_CheckThatUserWithoutJustTheProjectBulkUp
 	| 0047 - Microsoft Access 97 SR-2 Francais |
 	And User selects "Bulk Update" in the Actions dropdown
 	And User selects "Update request type" Bulk Update Type on Action panel
-	And User selects "EmailMigra" Project on Action panel
+	And User selects "Email Migration" Project on Action panel
 	And User selects "Sharepoint Application" Request Type on Action panel
 	And User clicks "UPDATE" button on Action panel
 	Then Warning message with "Are you sure you want proceed, this operation cannot be undone." text is displayed on Action panel
