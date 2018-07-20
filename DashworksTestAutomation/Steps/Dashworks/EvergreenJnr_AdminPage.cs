@@ -28,8 +28,10 @@ namespace DashworksTestAutomation.Steps.Dashworks
         private readonly DTO.RuntimeVariables.Projects _projects;
         private readonly Buckets _buckets;
         private readonly RestWebClient _client;
+        private readonly LastUsedBucket _lastUsedBucket;
+        private readonly AddedObjects _addedObjects;
 
-        public EvergreenJnr_AdminPage(RemoteWebDriver driver, UsedUsers usedUsers, TeamName teamName, DTO.RuntimeVariables.Projects projects, RestWebClient client, Buckets buckets)
+        public EvergreenJnr_AdminPage(RemoteWebDriver driver, UsedUsers usedUsers, TeamName teamName, DTO.RuntimeVariables.Projects projects, RestWebClient client, Buckets buckets, LastUsedBucket lastUsedBucket, AddedObjects addedObjects)
         {
             _driver = driver;
             _usedUsers = usedUsers;
@@ -37,6 +39,8 @@ namespace DashworksTestAutomation.Steps.Dashworks
             _projects = projects;
             _client = client;
             _buckets = buckets;
+            _lastUsedBucket = lastUsedBucket;
+            _addedObjects = addedObjects;
         }
 
         [When(@"User clicks ""(.*)"" link on the Admin page")]
@@ -824,13 +828,6 @@ namespace DashworksTestAutomation.Steps.Dashworks
             action.SelectActions(actionName);
         }
 
-        [When(@"User clicks Delete Bucket button")]
-        public void WhenUserClicksDeleteBucketButton()
-        {
-            var projectElement = _driver.NowAt<BucketsPage>();
-            projectElement.DeleteBucketInActions.Click();
-        }
-
         [Then(@"Create Bucket button is disabled")]
         public void ThenCreateBucketButtonIsDisabled()
         {
@@ -893,8 +890,11 @@ namespace DashworksTestAutomation.Steps.Dashworks
 
             foreach (var row in table.Rows)
             {
-                bucketElement.AddItem(row["Objects"]);
+                var text = row["Objects"];
+                bucketElement.AddItem(text);
                 bucketElement.SearchTextbox.ClearWithHomeButton(_driver);
+                //Save added objects to remove it from the bucket
+                _addedObjects.Value.Add(text, _lastUsedBucket.Value);
             }
 
             bucketElement.AddItemButton.Click();
@@ -1080,6 +1080,9 @@ namespace DashworksTestAutomation.Steps.Dashworks
         {
             var searchElement = _driver.NowAt<BaseGridPage>();
             searchElement.GetSearchFieldByColumnName(columnName, text);
+            //Store bucket name for further usage
+            if (columnName.Equals("Bucket"))
+                _lastUsedBucket.Value = text;
         }
 
         [Then(@"Search fields for ""(.*)"" column contain correctly value")]
@@ -1266,12 +1269,6 @@ namespace DashworksTestAutomation.Steps.Dashworks
         {
             //var projectId = DatabaseHelper.ExecuteReader($"SELECT [ProjectID] FROM[PM].[dbo].[Projects] where[ProjectName] = '{projectName}'", 0)[0];
             DatabaseHelper.ExecuteQuery($"delete from [PM].[dbo].[ProjectGroups] where [GroupName] = '{bucketName}'");
-        }
-
-        [When(@"User moves '(.*)' device to '(.*)' bucket")]
-        public void WhenUserMovesDeviceToBucket(string deviceName, string bucketName)
-        {
-            var bucketId = DatabaseHelper.ExecuteReader($"SELECT [GroupID] FROM [PM].[dbo].[ProjectGroups] where [GroupName] = '{bucketName}'", 0)[0];
         }
     }
 }
