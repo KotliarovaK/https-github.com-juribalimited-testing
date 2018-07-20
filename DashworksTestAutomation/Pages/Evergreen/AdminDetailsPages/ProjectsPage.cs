@@ -19,11 +19,11 @@ namespace DashworksTestAutomation.Pages.Evergreen.AdminDetailsPages
         [FindsBy(How = How.XPath, Using = "//div[contains(@class, 'wrapper-disabled')]")]
         public IWebElement DisabledAllAssociations { get; set; }
 
-        [FindsBy(How = How.XPath, Using = ".//span[text()='UPDATE PROJECT']")]
-        public IWebElement UpdateProjectInTheWarning { get; set; }
-
         [FindsBy(How = How.XPath, Using = ".//span[@class='mat-option-text']")]
         public IWebElement DeleteProjectInActions { get; set; }
+
+        [FindsBy(How = How.XPath, Using = "//label[contains(@class, 'mat-form-field-empty')]")]
+        public IWebElement EmptyScopeField { get; set; }
 
         [FindsBy(How = How.XPath, Using = ".//button[contains(@title, 'Update')]")]
         public IWebElement UpdateProjectButton { get; set; }
@@ -42,6 +42,9 @@ namespace DashworksTestAutomation.Pages.Evergreen.AdminDetailsPages
 
         [FindsBy(How = How.XPath, Using = ".//mat-select[@aria-label='Scope']")]
         public IWebElement ScopeListDropdown { get; set; }
+
+        [FindsBy(How = How.XPath, Using = "//span[@class='inline-link ng-star-inserted']/a")]
+        public IWebElement NewProjectLink { get; set; }
 
         [FindsBy(How = How.XPath, Using = ".//div[@class='wrapper-disabled']//mat-select[@aria-label='User Scope']")]
         public IWebElement DisabledOwnerDropDown { get; set; }
@@ -68,12 +71,6 @@ namespace DashworksTestAutomation.Pages.Evergreen.AdminDetailsPages
         public void NavigateToProjectTabByName(string tabName)
         {
             var tab = Driver.FindElement(By.XPath($".//ul[@class='subMenu-items ng-star-inserted']//span[text()='{tabName}']"));
-            tab.Click();
-        }
-
-        public void ClickUpdateButtonByName(string buttonName)
-        {
-            var tab = Driver.FindElement(By.XPath($".//span[text()='{buttonName}']"));
             tab.Click();
         }
 
@@ -131,7 +128,7 @@ namespace DashworksTestAutomation.Pages.Evergreen.AdminDetailsPages
             Driver.FindElement(By.XPath(ListNameSelector)).Click();
         }
 
-    public bool SelectedTabInProjectScopeChangesSection(string tabName)
+        public bool SelectedTabInProjectScopeChangesSection(string tabName)
         {
             return Driver.IsElementDisplayed(By.XPath($".//div//span[contains(text(),'{tabName} ')]"));
         }

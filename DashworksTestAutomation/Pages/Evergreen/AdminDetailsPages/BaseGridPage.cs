@@ -13,9 +13,6 @@ namespace DashworksTestAutomation.Pages.Evergreen.AdminDetailsPages
         [FindsBy(How = How.XPath, Using = ".//div/h1")]
         public IWebElement PageTitle { get; set; }
 
-        [FindsBy(How = How.XPath, Using = ".//div[contains(@class,'actions-create')]/button")]
-        public IWebElement CreateItemButton { get; set; }
-
         [FindsBy(How = How.XPath, Using = ".//mat-select[@id='actions']")]
         public IWebElement ActionsSelectbox { get; set; }
 
@@ -82,9 +79,6 @@ namespace DashworksTestAutomation.Pages.Evergreen.AdminDetailsPages
         [FindsBy(How = How.XPath, Using = ".//button[contains(@title,'Update')]")]
         public IWebElement UpdateButton { get; set; }
 
-        [FindsBy(How = How.XPath, Using = ".//button[@aria-label='Toggle panel']")]
-        public IWebElement AddItemCheckbox { get; set; }
-
         [FindsBy(How = How.XPath, Using = ".//div[@class='mat-checkbox-inner-container']")]
         public IWebElement AllItemCheckbox { get; set; }
 
@@ -93,9 +87,6 @@ namespace DashworksTestAutomation.Pages.Evergreen.AdminDetailsPages
 
         [FindsBy(How = How.XPath, Using = ".//button[@aria-label='Toggle panel']")]
         public IWebElement PlusButton { get; set; }
-
-        [FindsBy(How = How.XPath, Using = ".//button[@aria-label='Toggle panel']")]
-        public IWebElement SelectedCheckbox { get; set; }
 
         [FindsBy(How = How.XPath, Using = ".//a[@mattooltip='Back']")]
         public IWebElement BackToTableButton { get; set; }

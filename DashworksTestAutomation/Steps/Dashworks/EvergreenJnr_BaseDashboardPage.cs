@@ -69,6 +69,7 @@ namespace DashworksTestAutomation.Steps.Dashworks
             var listpageMenu = _driver.NowAt<BaseDashboardPage>();
             _driver.WaitForDataLoading();
             listpageMenu.GetColumnHeaderByName(columnName).Click();
+            _driver.WaitForDataLoading();
         }
 
         [When(@"User sort table by multiple columns")]

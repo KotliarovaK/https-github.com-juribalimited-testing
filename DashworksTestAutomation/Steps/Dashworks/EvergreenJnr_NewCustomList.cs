@@ -177,6 +177,15 @@ namespace DashworksTestAutomation.Steps.Dashworks
             Assert.AreEqual(listName, page.ActiveCustomListName());
         }
 
+        [Then(@"""(.*)"" edited list is displayed to user")]
+        public void ThenEditedListIsDisplayedToUser(string listName)
+        {
+            var page = _driver.NowAt<BaseDashboardPage>();
+            _driver.WaitForDataLoading();
+            _driver.WaitWhileControlIsNotDisplayed<BaseDashboardPage>(() => page.ActiveCustomListEdited);
+            Assert.AreEqual(listName, page.ActiveCustomListEdited.Text);
+        }
+
         [Then(@"""(.*)"" list name is displayed correctly")]
         public void ThenListNameIsDisplayedCorrectly(string listName)
         {
