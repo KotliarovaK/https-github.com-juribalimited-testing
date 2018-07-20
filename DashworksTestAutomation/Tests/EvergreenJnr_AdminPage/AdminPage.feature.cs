@@ -2148,7 +2148,7 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_AdminPage
             table9.AddRow(new string[] {
                         "ACDSee 4.0 (4.0.0)"});
             testRunner.When("User selects following Objects to the Project", ((string)(null)), table9, "When ");
-            testRunner.And("User clicks \"UPDATE APPLICATION CHANGES\" button on the Projects page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+            testRunner.And("User clicks the \"UPDATE APPLICATION CHANGES\" Action button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
             testRunner.Then("message with \"3 applications will be added\" text is displayed on the Projects pag" +
                     "e", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
             testRunner.When("User clicks the \"UPDATE PROJECT\" Action button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
@@ -5217,7 +5217,7 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_AdminPage
             testRunner.When("User selects following Objects to the Project", ((string)(null)), table49, "When ");
             testRunner.And(string.Format("User clicks \"{0}\" button on the Projects page", buttonName), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
             testRunner.Then(string.Format("message with \"{0}\" text is displayed on the Projects page", warningMessageText), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-            testRunner.When("User clicks Update Project button on the Projects page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+            testRunner.When("User clicks the \"UPDATE PROJECT\" Action button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
             testRunner.Then(string.Format("Success message with \"{0}\" text is displayed on the Projects page", successMessageText), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
             this.ScenarioCleanup();
         }
