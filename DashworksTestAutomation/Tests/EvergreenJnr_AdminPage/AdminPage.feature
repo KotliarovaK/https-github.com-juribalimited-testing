@@ -730,7 +730,7 @@ Scenario: EvergreenJnr_AdminPage_CheckThatNoConsoleErrorsAreDisplayedAfterUpdati
 	| 20040610sqlserverck (1.0.0) |
 	| 7zip                        |
 	| ACDSee 4.0 (4.0.0)          |
-	And User clicks "UPDATE APPLICATION CHANGES" button on the Projects page
+	And User clicks the "UPDATE APPLICATION CHANGES" Action button
 	Then message with "3 applications will be added" text is displayed on the Projects page
 	When User clicks the "UPDATE PROJECT" Action button
 	Then Success message with "3 objects queued for onboarding, 0 objects offboarded" text is displayed on the Projects page
@@ -1873,7 +1873,7 @@ Scenario Outline: EvergreenJnr_AdminPage_CheckOnboardingObjectUsingUpdateAppropr
 	| <ObjectsToAdd> |
 	And User clicks "<ButtonName>" button on the Projects page
 	Then message with "<WarningMessageText>" text is displayed on the Projects page
-	When User clicks Update Project button on the Projects page
+	When User clicks the "UPDATE PROJECT" Action button
 	Then Success message with "<SuccessMessageText>" text is displayed on the Projects page
 
 	Examples:
