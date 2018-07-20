@@ -41,22 +41,9 @@ namespace DashworksTestAutomation.Steps.Dashworks
                     When($"User enters \"{bucketName}\" text in the Search field for \"{"Bucket"}\" column");
                     When($"User clicks content from \"{"Bucket"}\" column");
 
-                    #region Devices
-
                     MoveObject("Devices", bucketName, "Hostname");
 
-                    When($"User clicks \"{"Devices"}\" tab");
-
-
-                    #endregion
-
-                    #region Users
-
                     MoveObject("Users", bucketName, "Username");
-
-                    
-
-                    #endregion
 
                     MoveObject("Mailboxes", bucketName, "Email Address (Primary)");
 
