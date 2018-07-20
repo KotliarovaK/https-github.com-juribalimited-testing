@@ -668,7 +668,7 @@ Scenario: EvergreenJnr_AllLists_CheckThatPopupIsBiggerAndIsShownProperlyBucketIs
 	Then Admin page should be displayed to the user
 	When User clicks "Buckets" link on the Admin page
 	Then "Buckets" page should be displayed to the user
-	When User clicks Create New Item button
+	When User clicks the "CREATE BUCKET" Action button
 	Then "Create Bucket" page should be displayed to the user
 	When User enters "Bucket12883" in the Bucket Name field
 	And User selects "Admin IT" team in the Team dropdown on the Buckets page
