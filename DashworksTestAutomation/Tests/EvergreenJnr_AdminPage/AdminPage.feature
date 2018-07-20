@@ -352,8 +352,8 @@ Scenario: EvergreenJnr_AdminPage_CheckThatNumberOfApplicationsInProjectScopeIsCo
 	When User enters "TestProject5" in the Project Name field
 	And User selects "All Users" in the Scope Project dropdown
 	And User clicks Create button on the Create Project page
-	When User clicks newly created project link
 	Then Success message with "Your project has been created" text is displayed on the Projects page
+	When User clicks newly created project link
 	Then Project "TestProject5" is displayed to user
 	When User selects "Scope Changes" tab on the Project details page
 	And User clicks "Applications" tab in the Project Scope Changes section
@@ -974,7 +974,8 @@ Scenario Outline: EvergreenJnr_AdminPage_CheckThatNumberOfObjectIsUpdatedInTheSc
 	Then Success message with "Your project has been created" text is displayed on the Projects page
 	When User clicks newly created project link
 	Then Project "<ProjectName>" is displayed to user
-	And "<ObjectsCount>" is displayed to the user in the Project Scope Changes section
+	When User selects "Scope Changes" tab on the Project details page
+	Then "<ObjectsCount>" is displayed to the user in the Project Scope Changes section
 	When User clicks "<ListName>" on the left-hand menu
 	And User navigates to the "<DynamicListName>" list
 	And User clicks the Filters button
@@ -989,7 +990,8 @@ Scenario Outline: EvergreenJnr_AdminPage_CheckThatNumberOfObjectIsUpdatedInTheSc
 	When User enters "<ProjectName>" text in the Search field for "Project" column
 	And User clicks content from "Project" column
 	Then Project "<ProjectName>" is displayed to user
-	And "<NewCount>" is displayed to the user in the Project Scope Changes section
+	When User selects "Scope Changes" tab on the Project details page
+	Then "<NewCount>" is displayed to the user in the Project Scope Changes section
 
 Examples:
 	| ListName  | ColumnName    | DynamicListName | RowsCount | ProjectName     | ObjectsCount | FilterName  | Checkbox | NewRowsCount | NewCount | DeleteProject   |
@@ -1395,6 +1397,7 @@ Scenario: EvergreenJnr_AdminPage_CheckThat500ISEInvalidColumnNameIsNotDisplayedW
 	Then Project "TestProject12349" is displayed to user
 	And There are no errors in the browser console
 	Then Error message is not displayed
+	When User selects "Scope Changes" tab on the Project details page
 	When User expands the object to add 
 	And User selects following Objects to the Project
 	| Objects         |
