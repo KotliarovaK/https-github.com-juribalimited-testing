@@ -724,11 +724,13 @@ Scenario: EvergreenJnr_AdminPage_CheckThatNoConsoleErrorsAreDisplayedAfterUpdati
 	And User selects "Scope Changes" tab on the Project details page
 	And User clicks "Applications" tab in the Project Scope Changes section
 	Then "Applications to add (0 of 2129 selected)" is displayed to the user in the Project Scope Changes section
-	When User adds following Objects to the Project
-	| Objects                     |
+	When User expands the object to add 
+	When User selects following Objects to the Project
+	| Objects        |
 	| 20040610sqlserverck (1.0.0) |
 	| 7zip                        |
 	| ACDSee 4.0 (4.0.0)          |
+	And User clicks "UPDATE APPLICATION CHANGES" button on the Projects page
 	Then message with "3 applications will be added" text is displayed on the Projects page
 	When User clicks Update Project button on the Projects page
 	Then Success message with "3 objects queued for onboarding, 0 objects offboarded" text is displayed on the Projects page
@@ -1848,3 +1850,33 @@ Scenario: EvergreenJnr_AdminPage_CheckTheBucketStateForOnboardedObjects
 	And User clicks Update Bucket button on the Buckets page
 	Then Success message The "Unassigned" bucket has been updated is displayed on the Buckets page
 	And Delete "Bucket12948" Bucket in the Administration
+
+@Evergreen @Admin @EvergreenJnr_AdminPage @AdminPage @DAS12999 @Delete_Newly_Created_Project @Projects
+Scenario Outline: EvergreenJnr_AdminPage_CheckOnboardingObjectUsingUpdateAppropriateChangesButton
+	When User clicks Admin on the left-hand menu
+	Then Admin page should be displayed to the user
+	When User clicks "Projects" link on the Admin page
+	Then "Projects" page should be displayed to the user
+	When User clicks Create New Item button
+	Then "Create Project" page should be displayed to the user
+	When User enters "TestProject9753" in the Project Name field
+	And User selects "<AllListName>" in the Scope Project dropdown
+	And User clicks Create button on the Create Project page
+	Then Success message with "Your project has been created" text is displayed on the Projects page
+	When User clicks newly created project link
+	Then Project "TestProject9753" is displayed to user
+	When User selects "Scope Changes" tab on the Project details page
+	When User clicks "<TabName>" tab in the Project Scope Changes section
+	When User expands the object to add 
+	When User selects following Objects to the Project
+	| Objects        |
+	| <ObjectsToAdd> |
+	And User clicks "<ButtonName>" button on the Projects page
+	Then message with "<WarningMessageText>" text is displayed on the Projects page
+	When User clicks Update Project button on the Projects page
+	Then Success message with "<SuccessMessageText>" text is displayed on the Projects page
+
+	Examples:
+	| AllListName   | TabName   | ButtonName             | ObjectsToAdd                                       | WarningMessageText      | SuccessMessageText                                   |
+	| All Mailboxes | Mailboxes | UPDATE MAILBOX CHANGES | 003F5D8E1A844B1FAA5@bclabs.local (Hunter, Melanie) | 1 mailbox will be added | 1 object queued for onboarding, 0 objects offboarded |
+	| All Devices   | Users     | UPDATE USER CHANGES    | ADC714277 (Dina Q. Knight)                         | 1 user will be added    | 1 object queued for onboarding, 0 objects offboarded |
