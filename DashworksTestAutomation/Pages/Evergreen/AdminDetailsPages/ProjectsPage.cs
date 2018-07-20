@@ -19,9 +19,6 @@ namespace DashworksTestAutomation.Pages.Evergreen.AdminDetailsPages
         [FindsBy(How = How.XPath, Using = "//div[contains(@class, 'wrapper-disabled')]")]
         public IWebElement DisabledAllAssociations { get; set; }
 
-        [FindsBy(How = How.XPath, Using = ".//span[text()='UPDATE PROJECT']")]
-        public IWebElement UpdateProjectInTheWarning { get; set; }
-
         [FindsBy(How = How.XPath, Using = ".//span[@class='mat-option-text']")]
         public IWebElement DeleteProjectInActions { get; set; }
 
@@ -74,12 +71,6 @@ namespace DashworksTestAutomation.Pages.Evergreen.AdminDetailsPages
         public void NavigateToProjectTabByName(string tabName)
         {
             var tab = Driver.FindElement(By.XPath($".//ul[@class='subMenu-items ng-star-inserted']//span[text()='{tabName}']"));
-            tab.Click();
-        }
-
-        public void ClickUpdateButtonByName(string buttonName)
-        {
-            var tab = Driver.FindElement(By.XPath($".//span[text()='{buttonName}']"));
             tab.Click();
         }
 
@@ -137,7 +128,7 @@ namespace DashworksTestAutomation.Pages.Evergreen.AdminDetailsPages
             Driver.FindElement(By.XPath(ListNameSelector)).Click();
         }
 
-    public bool SelectedTabInProjectScopeChangesSection(string tabName)
+        public bool SelectedTabInProjectScopeChangesSection(string tabName)
         {
             return Driver.IsElementDisplayed(By.XPath($".//div//span[contains(text(),'{tabName} ')]"));
         }
