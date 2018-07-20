@@ -119,15 +119,6 @@ namespace DashworksTestAutomation.Steps.Dashworks
             Logger.Write($"'{pageTitle}' page is visible");
         }
 
-        [When(@"User clicks Create New Item button")]
-        public void WhenUserClicksCreateNewItemButton()
-        {
-            var page = _driver.NowAt<BaseGridPage>();
-            _driver.WaitWhileControlIsNotDisplayed<BaseGridPage>(() => page.CreateItemButton);
-            page.CreateItemButton.Click();
-            Logger.Write("Create New Item button was clicked");
-        }
-
         #region Check button state
 
         [Then(@"Update Project buttons is disabled")]

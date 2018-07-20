@@ -13,9 +13,6 @@ namespace DashworksTestAutomation.Pages.Evergreen.AdminDetailsPages
         [FindsBy(How = How.XPath, Using = "//div/h1")]
         public IWebElement PageTitle { get; set; }
 
-        [FindsBy(How = How.XPath, Using = "//div[contains(@class,'actions-create')]/button")]
-        public IWebElement CreateItemButton { get; set; }
-
         [FindsBy(How = How.XPath, Using = "//div[contains(@class,'actions-right')]//*/button")]
         public IWebElement ImportProjectButton { get; set; }
 
