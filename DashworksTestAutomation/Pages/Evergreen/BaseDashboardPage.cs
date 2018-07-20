@@ -39,7 +39,7 @@ namespace DashworksTestAutomation.Pages.Evergreen
         [FindsBy(How = How.XPath, Using = ".//mat-select[@aria-labelledby='request-label']")]
         public IWebElement RequestTypeDropdown { get; set; }
 
-        [FindsBy(How = How.XPath, Using = "//input[@placeholder='Project']")]
+        [FindsBy(How = How.XPath, Using = "//textarea[@placeholder='Project']")]
         public IWebElement ProjectField { get; set; }
 
         [FindsBy(How = How.XPath, Using = "//mat-option[@role='option']")]
@@ -179,7 +179,7 @@ namespace DashworksTestAutomation.Pages.Evergreen
             return new List<By>
             {
                 SelectorFor(this, p => p.Heading),
-                SelectorFor(this, p => p.List)
+                //SelectorFor(this, p => p.List)
             };
         }
 

@@ -20,6 +20,9 @@ namespace DashworksTestAutomation.Pages.Evergreen.AdminDetailsPages
         public IWebElement BucketNameField { get; set; }
 
         [FindsBy(How = How.XPath, Using = ".//span[text()='Default bucket']")]
+        public IWebElement IncorrectDefaulBucketCheckbox { get; set; }
+
+        [FindsBy(How = How.XPath, Using = ".//span[text()='Default Bucket']")]
         public IWebElement DefaulBucketCheckbox { get; set; }
 
         [FindsBy(How = How.XPath, Using = ".//input[@id='teams']")]
