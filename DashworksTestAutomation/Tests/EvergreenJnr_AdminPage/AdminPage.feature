@@ -593,7 +593,7 @@ Scenario Outline: EvergreenJnr_AdminPage_CheckThatCancelButtonOnTheCreateProject
 	Then "<ListName>" list should be displayed to the user
 	When User clicks Create Project from the main list
 	Then "Create Project" page should be displayed to the user
-	When User clicks Cancel button
+	When User clicks the "CANCEL" Action button
 	Then "<ListName>" list should be displayed to the user
 
 Examples:
@@ -732,7 +732,7 @@ Scenario: EvergreenJnr_AdminPage_CheckThatNoConsoleErrorsAreDisplayedAfterUpdati
 	| ACDSee 4.0 (4.0.0)          |
 	And User clicks "UPDATE APPLICATION CHANGES" button on the Projects page
 	Then message with "3 applications will be added" text is displayed on the Projects page
-	When User clicks Update Project button on the Projects page
+	When User clicks the "UPDATE PROJECT" Action button
 	Then Success message with "3 objects queued for onboarding, 0 objects offboarded" text is displayed on the Projects page
 	And "Applications to add (0 of 2126 selected)" is displayed to the user in the Project Scope Changes section
 	And There are no errors in the browser console
@@ -758,7 +758,7 @@ Scenario: EvergreenJnr_ImportProjectPage_CheckThatImportProjectButtonEnabledAfte
 	When User clicks Admin on the left-hand menu
 	Then Admin page should be displayed to the user
 	And "Projects" page should be displayed to the user
-	When User clicks Import Project button
+	When User clicks the "IMPORT PROJECT" Action button
 	Then "Import Project" page should be displayed to the user
 	When User selects incorrect file to upload on Import Project page
 	And User selects "Import to new project" in the Import dropdown on the Import Project Page
@@ -793,7 +793,7 @@ Scenario Outline: EvergreenJnr_AdminPage_CheckThatTheEditListFunctionIsHiddenAft
 	Then "<DynamicListName>" list is displayed to user
 	When User clicks Create Project from the main list
 	Then "Create Project" page should be displayed to the user
-	When User clicks Cancel button
+	When User clicks the "CANCEL" Action button
 	Then "<DynamicListName>" list is displayed to user
 	And Edit List menu is not displayed
 	When User clicks Admin on the left-hand menu
@@ -802,7 +802,7 @@ Scenario Outline: EvergreenJnr_AdminPage_CheckThatTheEditListFunctionIsHiddenAft
 	Then "Create Project" page should be displayed to the user
 	When User enters "TestProject7894" in the Project Name field
 	And User selects "All Devices" in the Scope Project dropdown
-	When User clicks Cancel button
+	When User clicks the "CANCEL" Action button
 	Then "Projects" page should be displayed to the user
 
 Examples:
@@ -904,14 +904,14 @@ Scenario: EvergreenJnr_AdminPage_CheckThatOnboardingOfObjectsIsProceedForScopedP
 	| Objects        |
 	| 0317IPQGQBVAQV |
 	| 00I0COBFWHOF27 |
-	When User clicks Update Project button on the Projects page
+	When User clicks the "UPDATE PROJECT" Action button
 	Then Success message with "2 objects queued for onboarding, 0 objects offboarded" text is displayed on the Projects page
 	When User clicks "Users" tab in the Project Scope Changes section
 	And User adds following Objects to the Project
 	| Objects                       |
 	| AAG081456 (Melanie Z. Fowler) |
 	| AAH0343264 (Luc Gauthier)     |
-	When User clicks Update Project button on the Projects page
+	When User clicks the "UPDATE PROJECT" Action button
 	Then Success message with "2 objects queued for onboarding, 0 objects offboarded" text is displayed on the Projects page
 	When User click on Back button
 	And User clicks Create New Item button
@@ -955,9 +955,9 @@ Scenario: EvergreenJnr_AdminPage_CheckingThatRedBannerWithOkMessageIsNotDisplaye
 	And User selects following Objects to the Project
 	| Objects                    |
 	| AAC860150 (Kerrie D. Ruiz) |
-	And User clicks "UPDATE ALL CHANGES" button on the Projects page
+	And User clicks the "UPDATE ALL CHANGES" Action button
 	Then message with "1 device will be added, 1 user will be added, 1 application will be added" text is displayed on the Projects page
-	When User clicks Update Project button on the Projects page
+	When User clicks the "UPDATE PROJECT" Action button
 	Then Success message with "3 objects queued for onboarding, 0 objects offboarded" text is displayed on the Projects page
 	And There are no errors in the browser console
 
@@ -1022,8 +1022,8 @@ Scenario: EvergreenJnr_AdminPage_CheckThatObjectsIsOnboardedToTheProjectWithClon
 	And User selects following Objects to the Project
 	| Objects         |
 	| 01BQIYGGUW5PRP6 |
-	And User clicks "UPDATE DEVICE CHANGES" button on the Projects page
-	And User clicks Update Project button on the Projects page
+	And User clicks the "UPDATE DEVICE CHANGES" Action button
+	And User clicks the "UPDATE PROJECT" Action button
 	Then Success message with "1 object queued for onboarding, 0 objects offboarded" text is displayed on the Projects page
 	When User selects "Queue" tab on the Project details page
 	Then There are no errors in the browser console
@@ -1063,8 +1063,8 @@ Scenario: EvergreenJnr_AdminPage_CheckingThatProjectDetailsForOnboardedObjectsIs
 	And User selects following Objects to the Project
 	| Objects        |
 	| 0IJB93JZPG72PX |
-	And User clicks "UPDATE ALL CHANGES" button on the Projects page
-	And User clicks Update Project button on the Projects page
+	And User clicks the "UPDATE ALL CHANGES" Action button
+	When User clicks the "UPDATE PROJECT" Action button
 	When User selects "Queue" tab on the Project details page
 	Then There are no errors in the browser console
 	Then Error message is not displayed on the Projects page
@@ -1143,7 +1143,7 @@ Scenario: EvergreenJnr_AdminPage_CheckThatOnboardedObjectsAreDisplayedAfterChang
 	Then Project "TestProject20" is displayed to user
 	When User clicks "Details" tab
 	When User selects "Clone evergreen buckets to project buckets" in the Buckets Project dropdown
-	When User clicks "UPDATE" button on the Projects page
+	When User clicks the "UPDATE" Action button
 	Then Success message is displayed and contains "The project details have been updated" text
 	When User selects "Scope Changes" tab on the Project details page
 	Then "Match to Evergreen Bucket" is displayed in the Bucket dropdown
@@ -1152,8 +1152,8 @@ Scenario: EvergreenJnr_AdminPage_CheckThatOnboardedObjectsAreDisplayedAfterChang
 	| Objects         |
 	| 0281Z793OLLLDU6 |
 	| 03U75EKEMUQMUS  |
-	And User clicks "UPDATE ALL CHANGES" button on the Projects page
-	And User clicks Update Project button on the Projects page
+	And User clicks the "UPDATE ALL CHANGES" Action button
+	And User clicks the "UPDATE PROJECT" Action button
 	Then Success message with "2 objects queued for onboarding, 0 objects offboarded" text is displayed on the Projects page
 	When User click on Back button
 	When User clicks "Teams" link on the Admin page
@@ -1201,8 +1201,8 @@ Scenario: EvergreenJnr_AdminPage_CheckingThatTheProjectIsUpdatedWithoutErrors
 	| Objects                                          |
 	| ACDSee 4.0.2 PowerPack Trial Version (4.00.0002) |
 	| Backburner (2.1.2.0)                             |
-	When User clicks "UPDATE ALL CHANGES" button on the Projects page
-	And User clicks Update Project button on the Projects page
+	When User clicks the "UPDATE ALL CHANGES" Action button
+	And User clicks the "UPDATE PROJECT" Action button
 	Then Success message with "6 objects queued for onboarding, 0 objects offboarded" text is displayed on the Projects page
 	Then "Applications to add (0 of 2079 selected)" is displayed to the user in the Project Scope Changes section
 	When User clicks "Devices" tab in the Project Scope Changes section
@@ -1405,8 +1405,8 @@ Scenario: EvergreenJnr_AdminPage_CheckThat500ISEInvalidColumnNameIsNotDisplayedW
 	| Objects         |
 	| 0QLZFK7RHMWJLQM |
 	| 0RGBQGA7XOOPJSW |
-	And User clicks "UPDATE ALL CHANGES" button on the Projects page
-	And User clicks Update Project button on the Projects page
+	And User clicks the "UPDATE ALL CHANGES" Action button
+	And User clicks the "UPDATE PROJECT" Action button
 	Then Success message with "2 objects queued for onboarding, 0 objects offboarded" text is displayed on the Projects page
 	Then There are no errors in the browser console
 	Then Error message is not displayed
@@ -1462,8 +1462,8 @@ Scenario: EvergreenJnr_AdminPage_CheckThatWarningMessageIsNotDisplayedAfterAddin
 	| 07RJRCQQJNBJIJQ |
 	| 0CFHJY5A8WLUB0J |
 	Then "Devices to add (2 of 17225 selected)" is displayed to the user in the Project Scope Changes section
-	When User clicks "UPDATE DEVICE CHANGES" button on the Projects page
-	And User clicks Update Project button on the Projects page
+	When User clicks the "UPDATE DEVICE CHANGES" Action button
+	And User clicks the "UPDATE PROJECT" Action button
 	Then Success message with "2 objects queued for onboarding, 0 objects offboarded" text is displayed on the Projects page
 	When User selects "Scope Details" tab on the Project details page
 	Then Warning message is not displayed on the Admin page
@@ -1546,8 +1546,8 @@ Scenario: EvergreenJnr_AdminPage_CheckThatDevicesToAddAndRemoveAreChangingApprop
 	| 00BDM1JUR8IF419 |
 	| 011PLA470S0B9DJ |
 	Then "Devices to add (2 of 2 selected)" is displayed to the user in the Project Scope Changes section
-	When User clicks "UPDATE DEVICE CHANGES" button on the Projects page
-	And User clicks Update Project button on the Projects page
+	When User clicks the "UPDATE DEVICE CHANGES" Action button
+	And User clicks the "UPDATE PROJECT" Action button
 	Then Success message with "2 objects queued for onboarding, 0 objects offboarded" text is displayed on the Projects page
 	When User selects "Scope Details" tab on the Project details page
 	When User selects "StaticList6528" in the Scope Project details
@@ -1589,8 +1589,8 @@ Scenario: EvergreenJnr_AdminPage_CheckThatUsersToAddAndRemoveAreChangingAppropri
 	| 002B5DC7D4D34D5C895 (Collor, Christopher) |
 	| 05D3699C79384A27A4C (Burnell, Helen)      |
 	Then "Users to add (3 of 3 selected)" is displayed to the user in the Project Scope Changes section
-	When User clicks "UPDATE USER CHANGES" button on the Projects page
-	And User clicks Update Project button on the Projects page
+	When User clicks the "UPDATE USER CHANGES" Action button
+	And User clicks the "UPDATE PROJECT" Action button
 	Then Success message with "3 objects queued for onboarding, 0 objects offboarded" text is displayed on the Projects page
 	When User selects "Scope Details" tab on the Project details page
 	When User selects "StaticList6530" in the Scope Project details
@@ -1823,8 +1823,8 @@ Scenario: EvergreenJnr_AdminPage_CheckTheBucketStateForOnboardedObjects
 	And User selects following Objects to the Project
 	| Objects        |
 	| 0TTSZRQ1ZTIXWM |
-	And User clicks "UPDATE ALL CHANGES" button on the Projects page
-	And User clicks Update Project button on the Projects page
+	And User clicks the "UPDATE ALL CHANGES" Action button
+	And User clicks the "UPDATE PROJECT" Action button
 	And User selects "Queue" tab on the Project details page
 	Then following Items are onboarded
 	| Items          |

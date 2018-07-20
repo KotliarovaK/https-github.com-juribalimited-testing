@@ -128,13 +128,7 @@ namespace DashworksTestAutomation.Steps.Dashworks
             Logger.Write("Create New Item button was clicked");
         }
 
-        [When(@"User clicks Update Project button on the Projects page")]
-        public void WhenUserClicksUpdateProjectButtonOnTheProjectsPage()
-        {
-            var button = _driver.NowAt<ProjectsPage>();
-            _driver.WaitWhileControlIsNotDisplayed<ProjectsPage>(() => button.UpdateProjectInTheWarning);
-            button.UpdateProjectInTheWarning.Click();
-        }
+        #region Check button state
 
         [Then(@"Update Project buttons is disabled")]
         public void ThenUpdateProjectButtonsIsDisabled()
@@ -147,12 +141,13 @@ namespace DashworksTestAutomation.Steps.Dashworks
                 "Update All Changes button is active");
         }
 
-        [Then(@"Scope field is automatically populated")]
-        public void ThenScopeFieldIsAutomaticallyPopulated()
+        [Then(@"Create Project button is disabled")]
+        public void ThenCreateProjectButtonIsDisabled()
         {
-            var page = _driver.NowAt<ProjectsPage>();
-            _driver.WaitForDataLoading();
-            Assert.IsFalse(page.EmptyScopeField.Displayed(), "Scope field is empty");
+            var button = _driver.NowAt<CreateProjectPage>();
+            _driver.WaitWhileControlIsNotDisplayed<CreateProjectPage>(() => button.CreateProjectButton);
+            Assert.IsTrue(Convert.ToBoolean(button.CreateProjectButton.GetAttribute("disabled")),
+                "Create Project button is active");
         }
 
         [Then(@"Update Project button is active")]
@@ -165,20 +160,23 @@ namespace DashworksTestAutomation.Steps.Dashworks
                 "Update All Changes button is disabled");
         }
 
-        [When(@"User clicks Cancel button")]
-        public void WhenUserClicksCancelButton()
+        [Then(@"Import Project button is enabled")]
+        public void ThenImportProjectButtonIsEnabled()
         {
-            var page = _driver.NowAt<CreateProjectPage>();
-            _driver.WaitWhileControlIsNotDisplayed<CreateProjectPage>(() => page.CancelButton);
-            page.CancelButton.Click();
-            Logger.Write("Cancel button was clicked");
+            var button = _driver.NowAt<ImportProjectPage>();
+            _driver.WaitWhileControlIsNotDisplayed<ImportProjectPage>(() => button.ImportProjectButton);
+            Assert.IsFalse(Convert.ToBoolean(button.ImportProjectButton.GetAttribute("disabled")),
+                "Import button is disabled");
         }
 
-        [When(@"User clicks ""(.*)"" button on the Projects page")]
-        public void WhenUserClicksButtonOnTheProjectsPage(string buttonName)
+        #endregion
+
+        [Then(@"Scope field is automatically populated")]
+        public void ThenScopeFieldIsAutomaticallyPopulated()
         {
-            var button = _driver.NowAt<ProjectsPage>();
-            button.ClickUpdateButtonByName(buttonName);
+            var page = _driver.NowAt<ProjectsPage>();
+            _driver.WaitForDataLoading();
+            Assert.IsFalse(page.EmptyScopeField.Displayed(), "Scope field is empty");
         }
 
         [When(@"User opens Scope section on the Project details page")]
@@ -400,14 +398,6 @@ namespace DashworksTestAutomation.Steps.Dashworks
             checkbox.SelectCheckboxByName(checkboxName);
         }
 
-        [When(@"User clicks Import Project button")]
-        public void WhenUserClicksImportProjectButton()
-        {
-            var page = _driver.NowAt<ProjectsPage>();
-            page.ImportProjectButton.Click();
-            Logger.Write("Import Project button was clicked");
-        }
-
         [When(@"User selects incorrect file to upload on Import Project page")]
         public void WhenUserSelectsIncorrectFileToUploadOnImportProjectPage()
         {
@@ -428,15 +418,6 @@ namespace DashworksTestAutomation.Steps.Dashworks
             string file = Path.GetDirectoryName(Path.GetDirectoryName(TestContext.CurrentContext.TestDirectory)) +
                           ResourceFilesNamesProvider.CorrectFileDas12370;
             page.ButtonChooseFile.SendKeys(file);
-        }
-
-        [Then(@"Import Project button is enabled")]
-        public void ThenImportProjectButtonIsEnabled()
-        {
-            var button = _driver.NowAt<ImportProjectPage>();
-            _driver.WaitWhileControlIsNotDisplayed<ImportProjectPage>(() => button.ImportProjectButton);
-            Assert.IsFalse(Convert.ToBoolean(button.ImportProjectButton.GetAttribute("disabled")),
-                "Import button is disabled");
         }
 
         [When(@"User enters ""(.*)"" in the Project Name field on Import Project page")]
@@ -689,9 +670,8 @@ namespace DashworksTestAutomation.Steps.Dashworks
             page.CreateBucketButton.Click();
             Logger.Write("Create Team button was clicked");
         }
-
+        
         #region Message
-
 
         [Then(@"Warning message with ""(.*)"" text is displayed on the Admin page")]
         public void ThenWarningMessageWithTextIsDisplayedOnTheAdminPage(string text)
@@ -1065,15 +1045,6 @@ namespace DashworksTestAutomation.Steps.Dashworks
         {
             var projectElement = _driver.NowAt<ProjectsPage>();
             Assert.IsTrue(projectElement.BucketDropdownDisplay(textBucket), "Incorrect text is displayed in the Bucket dropdown");
-        }
-
-        [Then(@"Create Project button is disabled")]
-        public void ThenCreateProjectButtonIsDisabled()
-        {
-            var button = _driver.NowAt<CreateProjectPage>();
-            _driver.WaitWhileControlIsNotDisplayed<CreateProjectPage>(() => button.CreateProjectButton);
-            Assert.IsTrue(Convert.ToBoolean(button.CreateProjectButton.GetAttribute("disabled")),
-                "Create Project button is active");
         }
 
         [Then(@"selecting device owners is disabled")]
