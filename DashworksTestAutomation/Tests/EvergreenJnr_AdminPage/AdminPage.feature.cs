@@ -2148,7 +2148,7 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_AdminPage
             table9.AddRow(new string[] {
                         "ACDSee 4.0 (4.0.0)"});
             testRunner.When("User selects following Objects to the Project", ((string)(null)), table9, "When ");
-            testRunner.And("User clicks \"UPDATE APPLICATION CHANGES\" button on the Projects page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+            testRunner.And("User clicks the \"UPDATE APPLICATION CHANGES\" Action button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
             testRunner.Then("message with \"3 applications will be added\" text is displayed on the Projects pag" +
                     "e", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
             testRunner.When("User clicks the \"UPDATE PROJECT\" Action button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
