@@ -418,7 +418,8 @@ Scenario: EvergreenJnr_AdminPage_CheckThatNotificationMessageIsDisplayedAfterUpd
 	And User clicks content from "Bucket" column
 	Then "TestBucket2" bucket details is displayed to the user
 	When User clicks "Bucket Settings" tab
-	When User clicks Default bucket checkbox
+	#Update all steps with 'default bucket' checkbox after fixed DAS13073
+	And User updates the Default Bucket checkbox state
 	And User clicks Update Bucket button on the Buckets page
 	Then Success message The "TestBucket2" bucket has been updated is displayed on the Buckets page
 	When User enters "TestBucket2" text in the Search field for "Bucket" column
@@ -1866,12 +1867,12 @@ Scenario Outline: EvergreenJnr_AdminPage_CheckOnboardingObjectUsingUpdateAppropr
 	When User clicks newly created project link
 	Then Project "TestProject9753" is displayed to user
 	When User selects "Scope Changes" tab on the Project details page
-	When User clicks "<TabName>" tab in the Project Scope Changes section
-	When User expands the object to add 
-	When User selects following Objects to the Project
+	And User clicks "<TabName>" tab in the Project Scope Changes section
+	And User expands the object to add 
+	And User selects following Objects to the Project
 	| Objects        |
 	| <ObjectsToAdd> |
-	And User clicks "<ButtonName>" button on the Projects page
+	And User clicks the "<ButtonName>" Action button
 	Then message with "<WarningMessageText>" text is displayed on the Projects page
 	When User clicks the "UPDATE PROJECT" Action button
 	Then Success message with "<SuccessMessageText>" text is displayed on the Projects page
