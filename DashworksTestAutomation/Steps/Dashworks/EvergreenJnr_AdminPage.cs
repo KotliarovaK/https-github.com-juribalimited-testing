@@ -666,8 +666,16 @@ namespace DashworksTestAutomation.Steps.Dashworks
             createBucketElement.SelectTeam(teamName);
         }
 
+        //Update all steps with 'default bucket' checkbox after fixed DAS13073
         [When(@"User clicks Default bucket checkbox")]
         public void WhenUserClicksDefaultBucketCheckbox()
+        {
+            var createBucketElement = _driver.NowAt<CreateBucketPage>();
+            createBucketElement.IncorrectDefaulBucketCheckbox.Click();
+        }
+
+        [When(@"User updates the Default Bucket checkbox state")]
+        public void WhenUserUpdatesTheDefaultBucketCheckboxState()
         {
             var createBucketElement = _driver.NowAt<CreateBucketPage>();
             createBucketElement.DefaulBucketCheckbox.Click();
@@ -697,6 +705,14 @@ namespace DashworksTestAutomation.Steps.Dashworks
         {
             var page = _driver.NowAt<BaseGridPage>();
             Assert.IsFalse(page.DeleteWarningMessage.Displayed());
+        }
+
+        [Then(@"""(.*)"" warning message is not displayed on the Buckets page")]
+        public void ThenWarningMessageIsNotDisplayedOnTheBucketsPage(string warningText)
+        {
+            var message = _driver.NowAt<BucketsPage>();
+            Assert.IsFalse(message.WarningDeleteBucketMessage(warningText),
+                $"{warningText} warning message is displayed on the Buckets page");
         }
 
         [When(@"User clicks Cancel button in the warning message on the Admin page")]
@@ -733,23 +749,6 @@ namespace DashworksTestAutomation.Steps.Dashworks
                 $"Success Message is not displayed for {bucketName}");
         }
 
-        [Then(@"Error message with ""(.*)"" text is displayed")]
-        public void ThenErrorMessageWithTextIsDisplayedOnTheBucketsPage(string text)
-        {
-            var page = _driver.NowAt<BaseGridPage>();
-            _driver.WaitForDataLoading();
-            _driver.WaitWhileControlIsNotDisplayed<BaseGridPage>(() => page.ErrorMessage);
-            Assert.AreEqual(text, page.ErrorMessage.Text, "Error Message is not displayed");
-        }
-
-        [Then(@"""(.*)"" warning message is not displayed on the Buckets page")]
-        public void ThenWarningMessageIsNotDisplayedOnTheBucketsPage(string warningText)
-        {
-            var message = _driver.NowAt<BucketsPage>();
-            Assert.IsFalse(message.WarningDeleteBucketMessage(warningText),
-                $"{warningText} warning message is displayed on the Buckets page");
-        }
-
         [Then(@"Success message with ""(.*)"" text is displayed on the Projects page")]
         public void ThenSuccessMessageWithTextIsDisplayedOnTheProjectsPage(string textMessage)
         {
@@ -773,6 +772,20 @@ namespace DashworksTestAutomation.Steps.Dashworks
             Thread.Sleep(15000);
             Assert.IsTrue(projectElement.SuccessTextMessage(textMessage),
                 $"{textMessage} is not displayed on the Project page");
+        }
+
+        [Then(@"Success message is not displayed on the Projects page")]
+        public void ThenSuccessMessageIsNotDisplayedOnTheProjectsPage()
+        {
+            var message = _driver.NowAt<ProjectsPage>();
+            Assert.IsFalse(message.SuccessMessage.Displayed());
+        }
+
+        [When(@"User clicks newly created project link")]
+        public void WhenUserClicksNewlyCreatedProjectLink()
+        {
+            var projectElement = _driver.NowAt<ProjectsPage>();
+            projectElement.NewProjectLink.Click();
         }
 
         [Then(@"message with ""(.*)"" text is displayed on the Projects page")]
@@ -799,11 +812,20 @@ namespace DashworksTestAutomation.Steps.Dashworks
                 $"{textMessage} is not displayed on the Project page");
         }
 
-        [Then(@"Success message is not displayed on the Projects page")]
-        public void ThenSuccessMessageIsNotDisplayedOnTheProjectsPage()
+        [Then(@"Error message with ""(.*)"" text is displayed")]
+        public void ThenErrorMessageWithTextIsDisplayedOnTheBucketsPage(string text)
         {
-            var message = _driver.NowAt<ProjectsPage>();
-            Assert.IsFalse(message.SuccessMessage.Displayed());
+            var page = _driver.NowAt<BaseGridPage>();
+            _driver.WaitForDataLoading();
+            _driver.WaitWhileControlIsNotDisplayed<BaseGridPage>(() => page.ErrorMessage);
+            Assert.AreEqual(text, page.ErrorMessage.Text, "Error Message is not displayed");
+        }
+
+        [Then(@"Error message is not displayed on the Projects page")]
+        public void ThenErrorMessageIsNotDisplayedOnTheProjectsPage()
+        {
+            var page = _driver.NowAt<BaseGridPage>();
+            Assert.IsFalse(page.ErrorMessage.Displayed(), "Error Message is displayed");
         }
 
         #endregion
@@ -860,13 +882,6 @@ namespace DashworksTestAutomation.Steps.Dashworks
         {
             var text = _driver.NowAt<BucketsPage>();
             Assert.IsTrue(text.NoItemsMessage.Displayed, "No items text is not displayed");
-        }
-
-        [When(@"User clicks Default Bucket checkbox on the Buckets page")]
-        public void WhenUserClicksDefaultBucketCheckboxOnTheBucketsPage()
-        {
-            var ckeckbox = _driver.NowAt<BucketsPage>();
-            ckeckbox.DefaultBucketCheckbox.Click();
         }
 
         [When(@"User clicks Update Bucket button on the Buckets page")]
@@ -965,8 +980,8 @@ namespace DashworksTestAutomation.Steps.Dashworks
         public void ThenFollowingItemsAreStillSelected()
         {
             var projectElement = _driver.NowAt<BaseGridPage>();
-            Assert.IsTrue(projectElement.SelectedCheckbox.Displayed(), "Items are not selected");
-            Assert.IsTrue(projectElement.AddItemCheckbox.Displayed(), "Item checkbox is not checked");
+            Assert.IsTrue(projectElement.PlusButton.Displayed(), "Items are not selected");
+            Assert.IsTrue(projectElement.AllItemCheckbox.Displayed(), "Item checkbox is not checked");
         }
 
         [When(@"User clicks Create button on the Create Project page")]
