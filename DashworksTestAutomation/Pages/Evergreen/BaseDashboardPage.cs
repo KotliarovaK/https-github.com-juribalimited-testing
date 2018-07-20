@@ -311,7 +311,7 @@ namespace DashworksTestAutomation.Pages.Evergreen
             return Driver.FindElement(selector);
         }
 
-        public IWebElement GetButtonByNameOnActionPanel(string button)
+        public IWebElement GetActionsButtonByName(string button)
         {
             var selector = By.XPath(
                 $"//span[text()='{button}']/ancestor::button");
