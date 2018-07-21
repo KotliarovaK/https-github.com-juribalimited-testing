@@ -23,9 +23,6 @@ namespace DashworksTestAutomation.Pages.Evergreen.AdminDetailsPages
         [FindsBy(How = How.XPath, Using = ".//span[text()='UPDATE BUCKET']")]
         public IWebElement UpdateBucketButton { get; set; }
 
-        [FindsBy(How = How.XPath, Using = ".//span[@class='mat-option-text']/span[contains(@class, 'mat-accent')]")]
-        public IWebElement DeleteBucketInActions { get; set; }
-
         [FindsBy(How = How.XPath, Using = ".//span[@class='ng-star-inserted']")]
         public IWebElement ResultsOnPageCount { get; set; }
         
