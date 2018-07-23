@@ -1103,7 +1103,7 @@ Scenario: EvergreenJnr_ApplicationsList_CheckThatFilterNameIsNotChangedAfterRena
 	| Amber  | false |
 	Then "EDITED_Application_Filter_DAS_12917" edited list is displayed to user
 
-@Evergreen @Mailboxes @CustomListDisplay @EvergreenJnr_ListPanel @DAS12917 
+@Evergreen @Mailboxes @CustomListDisplay @EvergreenJnr_ListPanel @DAS12917 @Delete_Newly_Created_List
 Scenario: EvergreenJnr_MailboxesList_CheckThatFilterNameIsNotChangedAfterRenameWhileUpdateValuesOfFilter
 	When User clicks "Mailboxes" on the left-hand menu
 	Then "Mailboxes" list should be displayed to the user

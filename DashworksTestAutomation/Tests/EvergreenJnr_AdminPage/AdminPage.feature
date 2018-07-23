@@ -151,7 +151,7 @@ Scenario: EvergreenJnr_AdminPage_CheckThatWarningMessageIsDisplayedAfterDeleting
 	When User selects "Scope Changes" tab on the Project details page
 	Then Warning message is not displayed on the Admin page
 
-@Evergreen @Admin @EvergreenJnr_AdminPage @AdminPage @DAS11977 @DAS11959 @DAS12553 @DAS11744 @DAS12742 @Delete_Newly_Created_Project @Project_Creation_and_Scope
+@Evergreen @Admin @EvergreenJnr_AdminPage @AdminPage @DAS11977 @DAS11959 @DAS12553 @DAS11744 @DAS12742 @DAS12999 @Delete_Newly_Created_Project @Project_Creation_and_Scope @Projects
 Scenario: EvergreenJnr_AdminPage_CheckThatAfterApplyingDoNotIncludeDeviceOwnersListHas0ItemsInTheUsersTab
 	When User clicks Admin on the left-hand menu
 	Then Admin page should be displayed to the user
@@ -162,8 +162,19 @@ Scenario: EvergreenJnr_AdminPage_CheckThatAfterApplyingDoNotIncludeDeviceOwnersL
 	When User enters "TestProject1" in the Project Name field
 	And User selects "All Devices" in the Scope Project dropdown
 	And User clicks Create button on the Create Project page
-	And User clicks "Projects" link on the Admin page
-	Then "Projects" page should be displayed to the user
+	Then Success message is displayed and contains "Your project has been created" text
+	When User clicks newly created project link
+	Then Project "TestProject1" is displayed to user
+	When User clicks "Details" tab
+	When User changes Project Name to "NewProjectName"
+	When User changes Project Short Name to "NewProjectShortName"
+	When User changes Project Description to "ProjectDescriptionText"
+	When User changes project language to "Dutch"
+	When User selects "Use evergreen buckets" in the Buckets Project dropdown
+	And User clicks the "UPDATE" Action button
+	Then Success message is displayed and contains "The project details have been updated" text
+	Then There are no errors in the browser console
+	When User click on Back button
 	When User selects all rows on the grid
 	And User clicks Actions button on the Projects page
 	And User clicks Delete Project button
@@ -171,7 +182,7 @@ Scenario: EvergreenJnr_AdminPage_CheckThatAfterApplyingDoNotIncludeDeviceOwnersL
 	Then Delete button is displayed to the User on the Projects page
 	When User cancels the selection of all rows on the Projects page
 	Then Delete button is not displayed to the User on the Projects page
-	When User enters "TestProject1" text in the Search field for "Project" column
+	When User enters "NewProjectName" text in the Search field for "Project" column
 	And User clicks content from "Project" column
 	When User selects "Scope Details" tab on the Project details page
 	And User navigates to the "User Scope" tab in the Scope section on the Project details page
@@ -179,8 +190,12 @@ Scenario: EvergreenJnr_AdminPage_CheckThatAfterApplyingDoNotIncludeDeviceOwnersL
 	And User selects "Scope Changes" tab on the Project details page
 	And User clicks "Users" tab in the Project Scope Changes section 
 	Then "Users to add (0 of 0 selected)" is displayed to the user in the Project Scope Changes section
+	When User click on Back button
+	When User enters "NewProjectName" text in the Search field for "Project" column
+	And User selects all rows on the grid
+	And User removes selected item
 
-@Evergreen @Admin @EvergreenJnr_AdminPage @AdminPage @DAS11931 @DAS12742 @DAS11769 @DAS12999 @Project_Creation_and_Scope @Delete_Newly_Created_Project @Delete_Newly_Created_List
+@Evergreen @Admin @EvergreenJnr_AdminPage @AdminPage @DAS11931 @DAS12742 @DAS11769 @DAS12999 @Project_Creation_and_Scope @Delete_Newly_Created_Project @Delete_Newly_Created_List @Projects
 Scenario Outline: EvergreenJnr_AdminPage_CheckThatProjectsAreDeletedSuccessfullyAndThereAreNoConsoleErrors
 	When User clicks Admin on the left-hand menu
 	Then Admin page should be displayed to the user
@@ -341,7 +356,7 @@ Scenario: EvergreenJnr_AdminPage_CheckThatYouCanNotDeleteTheDefaultBucketWarning
 	Then "You can not delete the default bucket" warning message is not displayed on the Buckets page
 	Then Warning message with "This bucket will be permanently deleted and any objects within it reassigned to the default bucket" text is displayed on the Admin page
 
-@Evergreen @Admin @EvergreenJnr_AdminPage @AdminPage @DAS12182 @Delete_Newly_Created_Project @Project_Creation_and_Scope @Projects
+@Evergreen @Admin @EvergreenJnr_AdminPage @AdminPage @DAS12182 @DAS12999 @Delete_Newly_Created_Project @Project_Creation_and_Scope @Projects
 Scenario: EvergreenJnr_AdminPage_CheckThatNumberOfApplicationsInProjectScopeIsCorrectlyUpdated
 	When User clicks Admin on the left-hand menu
 	Then Admin page should be displayed to the user
@@ -364,6 +379,13 @@ Scenario: EvergreenJnr_AdminPage_CheckThatNumberOfApplicationsInProjectScopeIsCo
 	And User selects "Scope Changes" tab on the Project details page
 	And User clicks "Applications" tab in the Project Scope Changes section
 	Then "Applications to add (0 of 247 selected)" is displayed to the user in the Project Scope Changes section
+	When User clicks "Details" tab
+	When User selects "Clone evergreen buckets to project buckets" in the Buckets Project dropdown
+	And User clicks the "UPDATE" Action button
+	Then Success message is displayed and contains "The project details have been updated" text
+	Then There are no errors in the browser console
+	When User selects "Scope Changes" tab on the Project details page
+	Then "Match to Evergreen Bucket" is displayed in the Bucket dropdown
 
 @Evergreen @Admin @EvergreenJnr_AdminPage @AdminPage @DAS12154 @DAS12742 @DAS12872 @Delete_Newly_Created_List @Project_Creation_and_Scope @Projects
 Scenario: EvergreenJnr_AdminPage_CheckThatWarningMessageIsNotDisplayedWhenDeletingListUsingInTheProjectThatWasDeleted
@@ -426,6 +448,15 @@ Scenario: EvergreenJnr_AdminPage_CheckThatNotificationMessageIsDisplayedAfterUpd
 	And User clicks content from "Bucket" column
 	When User clicks "Bucket Settings" tab
 	Then Default Bucket checkbox is selected
+	When User click on Back button
+	And User enters "Unassigned" text in the Search field for "Bucket" column
+	Then "FALSE" value is displayed for Default column
+	When User clicks content from "Bucket" column
+	And User clicks "Bucket Settings" tab
+	#Update all steps with 'default bucket' checkbox after fixed DAS13073
+	And User updates the Default Bucket checkbox state
+	And User clicks Update Bucket button on the Buckets page
+	Then Success message The "Unassigned" bucket has been updated is displayed on the Buckets page
 	And Delete "TestBucket2" Bucket in the Administration
 
 @Evergreen @Admin @EvergreenJnr_AdminPage @AdminPage @DAS11763 @DAS12742 @DAS12760 @Buckets @Teams
@@ -581,9 +612,9 @@ Scenario: EvergreenJnr_AdminPage_CheckThatConsoleErrorsAreNotDisplayedAfterAddin
 	Then Counter shows "15" found rows
 	When User clicks the "ADD USER" Action button
 	And User adds following Objects from list
-	| Objects                        |
-	| UK\ADK614179 (Audrey B. Dixon) |
-	| UK\AAT858228 (Cheri B. Evans)  |
+	| Objects   |
+	| ADK614179 |
+	| AAT858228 |
 	Then Success message is displayed and contains "The selected users have been added to the selected bucket" text
 	And Counter shows "17" found rows
 	And There are no errors in the browser console
@@ -1552,7 +1583,7 @@ Scenario: EvergreenJnr_AdminPage_CheckThatDevicesToAddAndRemoveAreChangingApprop
 	When User selects "StaticList6528" in the Scope Project details
 	When User selects "Scope Changes" tab on the Project details page
 	Then "Devices to add (0 of 2 selected)" is displayed to the user in the Project Scope Changes section
-	Then "Devices to remove (0 of 2 selected)" is displayed to the user in the Project Scope Changes section
+	#Then "Devices to remove (0 of 2 selected)" is displayed to the user in the Project Scope Changes section
 
 @Evergreen @Admin @EvergreenJnr_AdminPage @AdminPage @DAS12999 @Delete_Newly_Created_Project @Delete_Newly_Created_List @Projects
 Scenario: EvergreenJnr_AdminPage_CheckThatUsersToAddAndRemoveAreChangingAppropriate
@@ -1595,7 +1626,7 @@ Scenario: EvergreenJnr_AdminPage_CheckThatUsersToAddAndRemoveAreChangingAppropri
 	When User selects "StaticList6530" in the Scope Project details
 	When User selects "Scope Changes" tab on the Project details page
 	Then "Users to add (0 of 2 selected)" is displayed to the user in the Project Scope Changes section
-	Then "Users to remove (0 of 3 selected)" is displayed to the user in the Project Scope Changes section
+	#Then "Users to remove (0 of 3 selected)" is displayed to the user in the Project Scope Changes section
 
 @Evergreen @Admin @EvergreenJnr_AdminPage @AdminPage @DAS12999 @Delete_Newly_Created_Project @Delete_Newly_Created_List
 Scenario Outline: EvergreenJnr_AdminPage_CheckProjectCreationFromListPageWithUseEvergreenBucket
@@ -1791,7 +1822,7 @@ Examples:
 	| TestProject9553 | StaticList8891 | Mailboxes | 00A5B910A1004CF5AC4@bclabs.local | Email Address | DynamicList9537 |
 	| TestProject9554 | StaticList8892 | Users     | 003F5D8E1A844B1FAA5              | Username      | DynamicList9538 |
 
-@Evergreen @Admin @EvergreenJnr_AdminPage @AdminPage @DAS12948 @DAS13073 @Delete_Newly_Created_Project @Buckets
+@Evergreen @Admin @EvergreenJnr_AdminPage @AdminPage @DAS12948 @DAS13073 @DAS12999 @Delete_Newly_Created_Project @Buckets @Projects
 Scenario: EvergreenJnr_AdminPage_CheckTheBucketStateForOnboardedObjects
 	When User clicks Admin on the left-hand menu
 	Then Admin page should be displayed to the user
@@ -1849,6 +1880,17 @@ Scenario: EvergreenJnr_AdminPage_CheckTheBucketStateForOnboardedObjects
 	And User clicks Update Bucket button on the Buckets page
 	Then Success message The "Unassigned" bucket has been updated is displayed on the Buckets page
 	And Delete "Bucket12948" Bucket in the Administration
+	When User clicks "Projects" link on the Admin page
+	Then "Projects" page should be displayed to the user
+	When User enters "Project12948" text in the Search field for "Project" column
+	And User clicks content from "Project" column
+	And User clicks "Details" tab
+	And User selects "Clone evergreen buckets to project buckets" in the Buckets Project dropdown
+	And User clicks the "UPDATE" Action button
+	Then Success message is displayed and contains "The project details have been updated" text
+	And There are no errors in the browser console
+	When User selects "Scope Changes" tab on the Project details page
+	Then "Match to Evergreen Bucket" is displayed in the Bucket dropdown
 
 @Evergreen @Admin @EvergreenJnr_AdminPage @AdminPage @DAS12999 @Delete_Newly_Created_Project @Projects
 Scenario Outline: EvergreenJnr_AdminPage_CheckOnboardingObjectUsingUpdateAppropriateChangesButton
@@ -1864,6 +1906,7 @@ Scenario Outline: EvergreenJnr_AdminPage_CheckOnboardingObjectUsingUpdateAppropr
 	Then Success message is displayed and contains "Your project has been created" text
 	When User clicks newly created project link
 	Then Project "TestProject9753" is displayed to user
+	Then Info message is displayed and contains "There are no objects in this project, use Scope Changes to add objects to your project" text
 	When User selects "Scope Changes" tab on the Project details page
 	And User clicks "<TabName>" tab in the Project Scope Changes section
 	And User expands the object to add 
@@ -1879,3 +1922,71 @@ Scenario Outline: EvergreenJnr_AdminPage_CheckOnboardingObjectUsingUpdateAppropr
 	| AllListName   | TabName   | ButtonName             | ObjectsToAdd                                       | WarningMessageText      | SuccessMessageText                                   |
 	| All Mailboxes | Mailboxes | UPDATE MAILBOX CHANGES | 003F5D8E1A844B1FAA5@bclabs.local (Hunter, Melanie) | 1 mailbox will be added | 1 object queued for onboarding, 0 objects offboarded |
 	| All Devices   | Users     | UPDATE USER CHANGES    | ADC714277 (Dina Q. Knight)                         | 1 user will be added    | 1 object queued for onboarding, 0 objects offboarded |
+
+@Evergreen @Admin @EvergreenJnr_AdminPage @AdminPage @DAS12999 @Projects @Delete_Newly_Created_Project
+Scenario: EvergreenJnr_AdminPage_ChangingBucketFromUseEvergreenBucketsToCloneEvergreenBuckets
+	When User clicks Admin on the left-hand menu
+	Then Admin page should be displayed to the user
+	When User clicks "Projects" link on the Admin page
+	Then "Projects" page should be displayed to the user
+	When User clicks the "CREATE PROJECT" Action button
+	Then "Create Project" page should be displayed to the user
+	When User enters "MailboxesProject27" in the Project Name field
+	And User selects "Use evergreen buckets" in the Buckets Project dropdown
+	And User selects "All Mailboxes" in the Scope Project dropdown
+	And User clicks Create button on the Create Project page
+	Then Success message is displayed and contains "Your project has been created" text
+	When User clicks newly created project link
+	And User clicks "Details" tab
+	And User selects "Use project buckets" in the Buckets Project dropdown
+	And User clicks the "UPDATE" Action button
+	Then Success message is displayed and contains "The project details have been updated" text
+	And There are no errors in the browser console
+	When User selects "Scope Changes" tab on the Project details page
+	Then "Unassigned" is displayed in the Bucket dropdown
+
+@Evergreen @Admin @EvergreenJnr_AdminPage @AdminPage @DAS12999 @Delete_Newly_Created_Project @Project_Creation_and_Scope @Projects
+Scenario: EvergreenJnr_AdminPage_ChangingBucketFromCloneEvergreenBucketsToUseProjectBuckets
+	When User clicks Admin on the left-hand menu
+	Then Admin page should be displayed to the user
+	When User clicks "Projects" link on the Admin page
+	Then "Projects" page should be displayed to the user
+	When User clicks the "CREATE PROJECT" Action button
+	Then "Create Project" page should be displayed to the user
+	When User enters "UsersProject5" in the Project Name field
+	And User selects "All Users" in the Scope Project dropdown
+	When User selects "Clone evergreen buckets to project buckets" in the Buckets Project dropdown
+	And User clicks Create button on the Create Project page
+	Then Success message is displayed and contains "Your project has been created" text
+	When User clicks newly created project link
+	And User clicks "Details" tab
+	And User selects "Use project buckets" in the Buckets Project dropdown
+	And User clicks the "UPDATE" Action button
+	Then Success message is displayed and contains "The project details have been updated" text
+	And There are no errors in the browser console
+	When User selects "Scope Changes" tab on the Project details page
+	Then "Unassigned" is displayed in the Bucket dropdown
+	And There are no errors in the browser console
+
+@Evergreen @Admin @EvergreenJnr_AdminPage @AdminPage @DAS12999 @Delete_Newly_Created_Project @Project_Creation_and_Scope @Projects
+Scenario: EvergreenJnr_AdminPage_ChangingBucketFromCloneEvergreenBucketsToUseEvergreenBuckets
+	When User clicks Admin on the left-hand menu
+	Then Admin page should be displayed to the user
+	When User clicks "Projects" link on the Admin page
+	Then "Projects" page should be displayed to the user
+	When User clicks the "CREATE PROJECT" Action button
+	Then "Create Project" page should be displayed to the user
+	When User enters "MailboxesProject5" in the Project Name field
+	And User selects "All Mailboxes" in the Scope Project dropdown
+	When User selects "Clone evergreen buckets to project buckets" in the Buckets Project dropdown
+	And User clicks Create button on the Create Project page
+	Then Success message is displayed and contains "Your project has been created" text
+	When User clicks newly created project link
+	And User clicks "Details" tab
+	And User selects "Use project buckets" in the Buckets Project dropdown
+	And User clicks the "UPDATE" Action button
+	Then Success message is displayed and contains "The project details have been updated" text
+	And There are no errors in the browser console
+	When User selects "Scope Changes" tab on the Project details page
+	Then "Unassigned" is displayed in the Bucket dropdown
+	And There are no errors in the browser console
