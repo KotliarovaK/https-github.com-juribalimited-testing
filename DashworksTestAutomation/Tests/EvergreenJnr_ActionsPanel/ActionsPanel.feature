@@ -166,7 +166,7 @@ Scenario: EvergreenJnr_ApplicationsList_CheckThatUserWithoutJustTheProjectBulkUp
 	| 0047 - Microsoft Access 97 SR-2 Francais |
 	And User selects "Bulk Update" in the Actions dropdown
 	And User selects "Update request type" Bulk Update Type on Action panel
-	And User selects "Email Migration" Project on Action panel
+	And User selects "Email Mi" Project on Action panel
 	And User selects "Sharepoint Application" Request Type on Action panel
 	And User clicks the "UPDATE" Action button
 	Then Warning message with "Are you sure you want proceed, this operation cannot be undone." text is displayed on Action panel
