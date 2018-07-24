@@ -673,15 +673,33 @@ namespace DashworksTestAutomation.Steps.Dashworks
         [Then(@"Warning message with ""(.*)"" text is displayed on the Admin page")]
         public void ThenWarningMessageWithTextIsDisplayedOnTheAdminPage(string text)
         {
-            var page = _driver.NowAt<BaseGridPage>();
-            Assert.IsTrue(page.WarningMessageAdminPage(text), "Warning Message is not displayed");
+            BaseGridPage message;
+            try
+            {
+                message = _driver.NowAt<BaseGridPage>();
+            }
+            catch (WebDriverTimeoutException)
+            {
+                try
+                {
+                    message = _driver.NowAt<BaseGridPage>();
+                }
+                catch (WebDriverTimeoutException)
+                {
+                    message = _driver.NowAt<BaseGridPage>();
+                }
+            }
+            _driver.WaitWhileControlIsNotDisplayed<BaseGridPage>(() => message.WarningMessage);
+            Assert.AreEqual("rgba(234, 161, 39, 1)", message.GetMessageColor());//Amber color
+            Assert.IsTrue(message.TextMessage(text),
+                $"{text} is not displayed on the Project page");
         }
 
         [Then(@"Warning message is not displayed on the Admin page")]
         public void ThenWarningMessageIsNotDisplayedOnTheAdminPage()
         {
             var page = _driver.NowAt<BaseGridPage>();
-            Assert.IsFalse(page.DeleteWarningMessage.Displayed());
+            Assert.IsFalse(page.WarningMessage.Displayed());
         }
 
         [Then(@"""(.*)"" warning message is not displayed on the Buckets page")]
@@ -703,7 +721,7 @@ namespace DashworksTestAutomation.Steps.Dashworks
         public void WhenUserClicksDeleteButtonInTheWarningMessage()
         {
             var button = _driver.NowAt<BaseGridPage>();
-            _driver.WaitWhileControlIsNotDisplayed<BaseGridPage>(() => button.DeleteWarningMessage);
+            _driver.WaitWhileControlIsNotDisplayed<BaseGridPage>(() => button.WarningMessage);
             button.DeleteButtonInWarningMessage.Click();
             Logger.Write("Delete button was clicked");
         }
@@ -739,25 +757,25 @@ namespace DashworksTestAutomation.Steps.Dashworks
         [Then(@"Success message with ""(.*)"" text is displayed on the Projects page")]
         public void ThenSuccessMessageWithTextIsDisplayedOnTheProjectsPage(string textMessage)
         {
-            ProjectsPage projectElement;
+            BaseGridPage projectElement;
             try
             {
-                projectElement = _driver.NowAt<ProjectsPage>();
+                projectElement = _driver.NowAt<BaseGridPage>();
             }
             catch (WebDriverTimeoutException)
             {
                 try
                 {
-                    projectElement = _driver.NowAt<ProjectsPage>();
+                    projectElement = _driver.NowAt<BaseGridPage>();
                 }
                 catch (WebDriverTimeoutException)
                 {
-                    projectElement = _driver.NowAt<ProjectsPage>();
+                    projectElement = _driver.NowAt<BaseGridPage>();
                 }
             }
-            _driver.WaitWhileControlIsNotDisplayed<ProjectsPage>(() => projectElement.SuccessMessage);
+            _driver.WaitWhileControlIsNotDisplayed<BaseGridPage>(() => projectElement.SuccessMessage);
             Thread.Sleep(15000);
-            Assert.IsTrue(projectElement.SuccessTextMessage(textMessage),
+            Assert.IsTrue(projectElement.TextMessage(textMessage),
                 $"{textMessage} is not displayed on the Project page");
         }
 
@@ -773,30 +791,6 @@ namespace DashworksTestAutomation.Steps.Dashworks
         {
             var projectElement = _driver.NowAt<ProjectsPage>();
             projectElement.NewProjectLink.Click();
-        }
-
-        [Then(@"message with ""(.*)"" text is displayed on the Projects page")]
-        public void ThenMessageWithTextIsDisplayedOnTheProjectsPage(string textMessage)
-        {
-            ProjectsPage projectElement;
-            try
-            {
-                projectElement = _driver.NowAt<ProjectsPage>();
-            }
-            catch (WebDriverTimeoutException)
-            {
-                try
-                {
-                    projectElement = _driver.NowAt<ProjectsPage>();
-                }
-                catch (WebDriverTimeoutException)
-                {
-                    projectElement = _driver.NowAt<ProjectsPage>();
-                }
-            }
-            _driver.WaitWhileControlIsNotDisplayed<ProjectsPage>(() => projectElement.DeleteWarningMessage);
-            Assert.IsTrue(projectElement.SuccessTextMessage(textMessage),
-                $"{textMessage} is not displayed on the Project page");
         }
 
         [Then(@"Error message with ""(.*)"" text is displayed")]
@@ -1087,7 +1081,7 @@ namespace DashworksTestAutomation.Steps.Dashworks
         {
             var page = _driver.NowAt<ProjectPropertiesPage>();
             page.DefaultLanguage.Click();
-            page.SelectProjectLanguage(language);
+            //page.SelectProjectLanguage(language);
         }
 
         [When(@"User click on Back button")]
@@ -1164,7 +1158,7 @@ namespace DashworksTestAutomation.Steps.Dashworks
             projectElement.ActionsButton.Click();
             projectElement.DeleteButtonInActions.Click();
             projectElement.DeleteButtonOnPage.Click();
-            _driver.WaitWhileControlIsNotDisplayed<BaseGridPage>(() => projectElement.DeleteWarningMessage);
+            _driver.WaitWhileControlIsNotDisplayed<BaseGridPage>(() => projectElement.WarningMessage);
             _driver.WaitForDataLoading();
             projectElement.DeleteButtonInWarningMessage.Click();
         }

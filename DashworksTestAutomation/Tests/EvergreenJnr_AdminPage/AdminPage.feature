@@ -763,7 +763,7 @@ Scenario: EvergreenJnr_AdminPage_CheckThatNoConsoleErrorsAreDisplayedAfterUpdati
 	| 7zip                        |
 	| ACDSee 4.0 (4.0.0)          |
 	And User clicks the "UPDATE APPLICATION CHANGES" Action button
-	Then message with "3 applications will be added" text is displayed on the Projects page
+	Then Warning message with "3 applications will be added" text is displayed on the Admin page
 	When User clicks the "UPDATE PROJECT" Action button
 	Then Success message is displayed and contains "3 objects queued for onboarding, 0 objects offboarded" text
 	And "Applications to add (0 of 2126 selected)" is displayed to the user in the Project Scope Changes section
@@ -985,7 +985,7 @@ Scenario: EvergreenJnr_AdminPage_CheckingThatRedBannerWithOkMessageIsNotDisplaye
 	| Objects                    |
 	| AAC860150 (Kerrie D. Ruiz) |
 	And User clicks the "UPDATE ALL CHANGES" Action button
-	Then message with "1 device will be added, 1 user will be added, 1 application will be added" text is displayed on the Projects page
+	Then Warning message with "1 device will be added, 1 user will be added, 1 application will be added" text is displayed on the Admin page
 	When User clicks the "UPDATE PROJECT" Action button
 	Then Success message is displayed and contains "3 objects queued for onboarding, 0 objects offboarded" text
 	And There are no errors in the browser console
@@ -1273,7 +1273,7 @@ Scenario: EvergreenJnr_AdminPage_CheckThatWarningMessageIsDisplayedIfTryToRemove
 	When User enters "TestName11729" text in the Search field for "Project" column
 	And User clicks content from "Project" column
 	Then Project "TestName11729" is displayed to user
-	And message with "The scope for this project refers to a deleted list, this must be updated before proceeding" text is displayed on the Projects page
+	Then Warning message with "The scope for this project refers to a deleted list, this must be updated before proceeding" text is displayed on the Admin page
 	And There are no errors in the browser console
 
 @Evergreen @Admin @EvergreenJnr_AdminPage @AdminPage @DAS11758
@@ -1365,7 +1365,6 @@ Scenario: EvergreenJnr_AdminPage_CheckThatEmptyGreenAlertLineIsNotDisplayedOnPro
 	And User clicks Create button on the Create Project page
 	Then created Project with "TestName11881" name is displayed correctly
 	Then Success message is displayed and contains "Your project has been created" text
-	#Then Success message with "Your project has been created" text is displayed on the Projects page
 	When User clicks newly created project link
 	Then Project "TestName11881" is displayed to user
 	When User selects "Scope Details" tab on the Project details page
@@ -1583,7 +1582,7 @@ Scenario: EvergreenJnr_AdminPage_CheckThatDevicesToAddAndRemoveAreChangingApprop
 	When User selects "StaticList6528" in the Scope Project details
 	When User selects "Scope Changes" tab on the Project details page
 	Then "Devices to add (0 of 2 selected)" is displayed to the user in the Project Scope Changes section
-	#Then "Devices to remove (0 of 2 selected)" is displayed to the user in the Project Scope Changes section
+	Then "Devices to remove (0 of 2 selected)" is displayed to the user in the Project Scope Changes section
 
 @Evergreen @Admin @EvergreenJnr_AdminPage @AdminPage @DAS12999 @Delete_Newly_Created_Project @Delete_Newly_Created_List @Projects
 Scenario: EvergreenJnr_AdminPage_CheckThatUsersToAddAndRemoveAreChangingAppropriate
@@ -1610,6 +1609,7 @@ Scenario: EvergreenJnr_AdminPage_CheckThatUsersToAddAndRemoveAreChangingAppropri
 	Then Success message with "Your project has been created" text is displayed on the Projects page
 	When User clicks newly created project link
 	Then Project "UsersProject" is displayed to user
+	Then Info message is displayed and contains "There are no objects in this project, use Scope Changes to add objects to your project" text
 	When User selects "Scope Changes" tab on the Project details page
 	Then "Users to add (0 of 3 selected)" is displayed to the user in the Project Scope Changes section
 	When User expands the object to add 
@@ -1626,7 +1626,7 @@ Scenario: EvergreenJnr_AdminPage_CheckThatUsersToAddAndRemoveAreChangingAppropri
 	When User selects "StaticList6530" in the Scope Project details
 	When User selects "Scope Changes" tab on the Project details page
 	Then "Users to add (0 of 2 selected)" is displayed to the user in the Project Scope Changes section
-	#Then "Users to remove (0 of 3 selected)" is displayed to the user in the Project Scope Changes section
+	Then "Users to remove (0 of 3 selected)" is displayed to the user in the Project Scope Changes section
 
 @Evergreen @Admin @EvergreenJnr_AdminPage @AdminPage @DAS12999 @Delete_Newly_Created_Project @Delete_Newly_Created_List
 Scenario Outline: EvergreenJnr_AdminPage_CheckProjectCreationFromListPageWithUseEvergreenBucket
@@ -1914,11 +1914,11 @@ Scenario Outline: EvergreenJnr_AdminPage_CheckOnboardingObjectUsingUpdateAppropr
 	| Objects        |
 	| <ObjectsToAdd> |
 	And User clicks the "<ButtonName>" Action button
-	Then message with "<WarningMessageText>" text is displayed on the Projects page
+	Then Warning message with "<WarningMessageText>" text is displayed on the Admin page
 	When User clicks the "UPDATE PROJECT" Action button
 	Then Success message is displayed and contains "<SuccessMessageText>" text
 
-	Examples:
+Examples:
 	| AllListName   | TabName   | ButtonName             | ObjectsToAdd                                       | WarningMessageText      | SuccessMessageText                                   |
 	| All Mailboxes | Mailboxes | UPDATE MAILBOX CHANGES | 003F5D8E1A844B1FAA5@bclabs.local (Hunter, Melanie) | 1 mailbox will be added | 1 object queued for onboarding, 0 objects offboarded |
 	| All Devices   | Users     | UPDATE USER CHANGES    | ADC714277 (Dina Q. Knight)                         | 1 user will be added    | 1 object queued for onboarding, 0 objects offboarded |
@@ -1990,3 +1990,123 @@ Scenario: EvergreenJnr_AdminPage_ChangingBucketFromCloneEvergreenBucketsToUseEve
 	When User selects "Scope Changes" tab on the Project details page
 	Then "Unassigned" is displayed in the Bucket dropdown
 	And There are no errors in the browser console
+
+@Evergreen @Admin @EvergreenJnr_AdminPage @AdminPage @DAS12999 @Delete_Newly_Created_Project @Delete_Newly_Created_List @Projects
+Scenario: EvergreenJnr_AdminPage_ChangingDevicesScopeListToAnotherListUsingEvergreenBuckets
+	When User clicks "Devices" on the left-hand menu
+	Then "Devices" list should be displayed to the user
+	When User clicks the Filters button
+	Then Filters panel is displayed to the user
+	When User add "Device Type" filter where type is "Equals" with added column and Lookup option
+	| SelectedValues |
+	| Laptop         |
+	Then "3,808" rows are displayed in the agGrid
+	When User create dynamic list with "DynamicList54" name on "Devices" page
+	Then "DynamicList54" list is displayed to user
+	When User clicks Create Project from the main list
+	Then "Create Project" page should be displayed to the user
+	When User enters "DevicesProject34" in the Project Name field
+	Then Scope field is automatically populated
+	When User selects "Use evergreen buckets" in the Buckets Project dropdown
+	And User clicks Create button on the Create Project page
+	Then Success message is displayed and contains "Your project has been created" text
+	When User clicks newly created project link
+	And User selects "Scope Changes" tab on the Project details page
+	Then "Devices to add (0 of 3808 selected)" is displayed to the user in the Project Scope Changes section
+	When User selects "Scope Details" tab on the Project details page
+	And User selects "All Devices" in the Scope Project details
+	And User selects "Scope Changes" tab on the Project details page
+	Then "Devices to add (0 of 17225 selected)" is displayed to the user in the Project Scope Changes section
+	And There are no errors in the browser console
+
+@Evergreen @Admin @EvergreenJnr_AdminPage @AdminPage @DAS12999 @Delete_Newly_Created_Project @Delete_Newly_Created_List @Projects
+Scenario Outline: EvergreenJnr_AdminPage_ChangingDevicesScopeListToAnotherList
+	When User clicks "Devices" on the left-hand menu
+	Then "Devices" list should be displayed to the user
+	When User clicks the Filters button
+	Then Filters panel is displayed to the user
+	When User add "Operating System" filter where type is "Equals" with added column and Lookup option
+	| SelectedValues |
+	| OS X 10.10     |
+	Then "1" rows are displayed in the agGrid
+	When User create dynamic list with "DynamicList56" name on "Devices" page
+	Then "DynamicList56" list is displayed to user
+	When User create static list with "StaticList6579" name on "Devices" page with following items
+	| ItemName        |
+	| 00SH8162NAS524  |
+	| 011PLA470S0B9DJ |
+	Then "StaticList6579" list is displayed to user
+	Then "2" rows are displayed in the agGrid
+	When User clicks Admin on the left-hand menu
+	Then Admin page should be displayed to the user
+	When User clicks the "CREATE PROJECT" Action button
+	Then "Create Project" page should be displayed to the user
+	When User enters "DevicesProject2" in the Project Name field
+	And User selects "All Devices" in the Scope Project dropdown
+	And User clicks Create button on the Create Project page
+	Then Success message is displayed and contains "Your project has been created" text
+	When User clicks newly created project link
+	And User selects "Scope Changes" tab on the Project details page
+	When User clicks "<TabName>" tab in the Project Scope Changes section
+	Then "Applications to add (0 of 2129 selected)" is displayed to the user in the Project Scope Changes section
+	When User selects "Scope Details" tab on the Project details page
+	When User navigates to the "Application Scope" tab in the Scope section on the Project details page
+	And User selects "<ChangingToList1>" in the Scope Project details
+	And User selects "Scope Changes" tab on the Project details page
+	When User clicks "Applications" tab in the Project Scope Changes section
+	Then "<ApplicationsToAdd1>" is displayed to the user in the Project Scope Changes section
+	When User selects "Scope Details" tab on the Project details page
+	When User navigates to the "Application Scope" tab in the Scope section on the Project details page
+	And User selects "<ChangingToList2>" in the Scope Project details
+	Then There are no errors in the browser console
+
+Examples:
+	| ChangingToList1 | ChangingToList2 | TabName | ObjectsToAdd                     | ObjectsToAdd1                    | ObjectsToAdd2                        |
+	| StaticList6579  | DynamicList56   | Devices | Devices to add (0 of 1 selected) | Devices to add (0 of 1 selected) | Devices to add (0 of 2 selected)     |
+	| All Devices     | StaticList6579  | Users   | Devices to add (0 of 2 selected) | Devices to add (0 of 2 selected) | Devices to add (0 of 17225 selected) |
+
+@Evergreen @Admin @EvergreenJnr_AdminPage @AdminPage @DAS12999 @Delete_Newly_Created_Project @Delete_Newly_Created_List @Projects
+Scenario Outline: EvergreenJnr_ChangingApplicationsScopeListToAnotherList
+	When User clicks "Applications" on the left-hand menu
+	Then "Applications" list should be displayed to the user
+	When User clicks the Filters button
+	Then Filters panel is displayed to the user
+	When User add "Vendor" filter where type is "Equals" with added column and following value:
+	| Values |
+	| Adobe  |
+	Then "39" rows are displayed in the agGrid
+	When User create dynamic list with "DynamicList57" name on "Applications" page
+	Then "DynamicList57" list is displayed to user
+	When User create static list with "StaticList6379" name on "Applications" page with following items
+	| ItemName         |
+	| ACD Display 3.4  |
+	| Acrobat Reader 4 |
+	Then "StaticList6379" list is displayed to user
+	Then "2" rows are displayed in the agGrid
+	When User clicks Admin on the left-hand menu
+	Then Admin page should be displayed to the user
+	When User clicks the "CREATE PROJECT" Action button
+	Then "Create Project" page should be displayed to the user
+	When User enters "DevicesProject4" in the Project Name field
+	And User selects "All Devices" in the Scope Project dropdown
+	And User clicks Create button on the Create Project page
+	Then Success message is displayed and contains "Your project has been created" text
+	When User clicks newly created project link
+	And User selects "Scope Changes" tab on the Project details page
+	When User clicks "Applications" tab in the Project Scope Changes section
+	Then "Applications to add (0 of 2129 selected)" is displayed to the user in the Project Scope Changes section
+	When User selects "Scope Details" tab on the Project details page
+	When User navigates to the "Application Scope" tab in the Scope section on the Project details page
+	And User selects "<ChangingToList1>" in the Scope Project details
+	And User selects "Scope Changes" tab on the Project details page
+	When User clicks "Applications" tab in the Project Scope Changes section
+	Then "<ApplicationsToAdd1>" is displayed to the user in the Project Scope Changes section
+	When User selects "Scope Details" tab on the Project details page
+	When User navigates to the "Application Scope" tab in the Scope section on the Project details page
+	And User selects "<ChangingToList2>" in the Scope Project details
+	Then There are no errors in the browser console
+
+Examples:
+	| ChangingToList1  | ChangingToList2  | ApplicationsToAdd1                       | ApplicationsToAdd2                       |
+	| All Applications | DynamicList57    | Applications to add (0 of 2129 selected) | Applications to add (0 of 39 selected)   |
+	| StaticList6379   | All Applications | Applications to add (0 of 2 selected)    | Applications to add (0 of 2129 selected) |
