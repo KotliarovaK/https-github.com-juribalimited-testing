@@ -42,7 +42,7 @@ namespace DashworksTestAutomation.Pages.Evergreen.AdminDetailsPages
         [FindsBy(How = How.XPath, Using = ".//input[@role='combobox']")]
         public IWebElement ScopeProjectField { get; set; }
 
-        [FindsBy(How = How.XPath, Using = ".//mat-select[@aria-label='Scope']")]
+        [FindsBy(How = How.XPath, Using = "//mat-select[contains(@aria-label, 'Scope')]")]
         public IWebElement ScopeListDropdown { get; set; }
 
         [FindsBy(How = How.XPath, Using = "//span[@class='inline-link ng-star-inserted']/a")]
@@ -106,11 +106,6 @@ namespace DashworksTestAutomation.Pages.Evergreen.AdminDetailsPages
         public bool ActiveProjectByName(string projectName)
         {
             return Driver.IsElementDisplayed(By.XPath($".//h1[text()='{projectName}']"));
-        }
-
-        public bool SuccessTextMessage(string textMessage)
-        {
-            return Driver.IsElementDisplayed(By.XPath($".//div[text()='{textMessage}']"));
         }
 
         public bool BucketDropdownDisplay(string textBucket)
