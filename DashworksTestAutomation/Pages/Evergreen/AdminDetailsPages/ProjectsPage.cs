@@ -48,6 +48,21 @@ namespace DashworksTestAutomation.Pages.Evergreen.AdminDetailsPages
         [FindsBy(How = How.XPath, Using = "//span[@class='inline-link ng-star-inserted']/a")]
         public IWebElement NewProjectLink { get; set; }
 
+        [FindsBy(How = How.XPath, Using = "//input[@placeholder='Project Name']")]
+        public IWebElement ProjectName { get; set; }
+
+        [FindsBy(How = How.XPath, Using = "//textarea[@placeholder='Project Short Name']")]
+        public IWebElement ProjectShortName { get; set; }
+
+        [FindsBy(How = How.XPath, Using = "//input[@placeholder='Project Description']")]
+        public IWebElement ProjectDescription { get; set; }
+
+        [FindsBy(How = How.XPath, Using = "//input[@placeholder='Project Type']")]
+        public IWebElement ProjectType { get; set; }
+
+        [FindsBy(How = How.XPath, Using = "//mat-select[@aria-label='Default Language']")]
+        public IWebElement DefaultLanguage { get; set; }
+
         [FindsBy(How = How.XPath, Using = ".//div[@class='wrapper-disabled']//mat-select[@aria-label='User Scope']")]
         public IWebElement DisabledOwnerDropDown { get; set; }
 
@@ -121,6 +136,13 @@ namespace DashworksTestAutomation.Pages.Evergreen.AdminDetailsPages
         public void SelectObjectForProjectCreation(string objectName)
         {
             string ListNameSelector = $".//span[@class='mat-option-text'][contains(text(), '{objectName}')]";
+            Driver.WaitWhileControlIsNotDisplayed(By.XPath(ListNameSelector));
+            Driver.FindElement(By.XPath(ListNameSelector)).Click();
+        }
+
+        public void SelectProjectLanguage(string language)
+        {
+            string ListNameSelector = $"//span[@class='mat-option-text'][text()='{language}']";
             Driver.WaitWhileControlIsNotDisplayed(By.XPath(ListNameSelector));
             Driver.FindElement(By.XPath(ListNameSelector)).Click();
         }

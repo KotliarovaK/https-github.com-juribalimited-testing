@@ -1055,7 +1055,7 @@ namespace DashworksTestAutomation.Steps.Dashworks
         [When(@"User changes Project Name to ""(.*)""")]
         public void WhenUserChangesProjectNameTo(string projectName)
         {
-            var projectElement = _driver.NowAt<ProjectPropertiesPage>();
+            var projectElement = _driver.NowAt<ProjectsPage>();
             projectElement.ProjectName.Clear();
             projectElement.ProjectName.SendKeys(projectName);
         }
@@ -1063,7 +1063,7 @@ namespace DashworksTestAutomation.Steps.Dashworks
         [When(@"User changes Project Short Name to ""(.*)""")]
         public void WhenUserChangesProjectShortNameTo(string shortProjectName)
         {
-            var projectElement = _driver.NowAt<ProjectPropertiesPage>();
+            var projectElement = _driver.NowAt<ProjectsPage>();
             projectElement.ProjectShortName.Clear();
             projectElement.ProjectShortName.SendKeys(shortProjectName);
         }
@@ -1071,7 +1071,7 @@ namespace DashworksTestAutomation.Steps.Dashworks
         [When(@"User changes Project Description to ""(.*)""")]
         public void WhenUserChangesProjectDescriptionTo(string descriptionName)
         {
-            var projectElement = _driver.NowAt<ProjectPropertiesPage>();
+            var projectElement = _driver.NowAt<ProjectsPage>();
             projectElement.ProjectDescription.Clear();
             projectElement.ProjectDescription.SendKeys(descriptionName);
         }
@@ -1079,9 +1079,9 @@ namespace DashworksTestAutomation.Steps.Dashworks
         [When(@"User changes project language to ""(.*)""")]
         public void WhenUserChangesProjectLanguageTo(string language)
         {
-            var page = _driver.NowAt<ProjectPropertiesPage>();
+            var page = _driver.NowAt<ProjectsPage>();
             page.DefaultLanguage.Click();
-            //page.SelectProjectLanguage(language);
+            page.SelectProjectLanguage(language);
         }
 
         [When(@"User click on Back button")]

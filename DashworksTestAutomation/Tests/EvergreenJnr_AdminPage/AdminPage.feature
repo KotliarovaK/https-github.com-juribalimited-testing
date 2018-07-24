@@ -2020,7 +2020,7 @@ Scenario: EvergreenJnr_AdminPage_ChangingDevicesScopeListToAnotherListUsingEverg
 	And There are no errors in the browser console
 
 @Evergreen @Admin @EvergreenJnr_AdminPage @AdminPage @DAS12999 @Delete_Newly_Created_Project @Delete_Newly_Created_List @Projects
-Scenario Outline: EvergreenJnr_AdminPage_ChangingDevicesScopeListToAnotherList
+Scenario: EvergreenJnr_AdminPage_ChangingDevicesScopeListToAnotherListForDevicesProject
 	When User clicks "Devices" on the left-hand menu
 	Then "Devices" list should be displayed to the user
 	When User clicks the Filters button
@@ -2047,23 +2047,44 @@ Scenario Outline: EvergreenJnr_AdminPage_ChangingDevicesScopeListToAnotherList
 	Then Success message is displayed and contains "Your project has been created" text
 	When User clicks newly created project link
 	And User selects "Scope Changes" tab on the Project details page
-	When User clicks "<TabName>" tab in the Project Scope Changes section
-	Then "Applications to add (0 of 2129 selected)" is displayed to the user in the Project Scope Changes section
+	Then "Devices to add (0 of 17225 selected)" is displayed to the user in the Project Scope Changes section
 	When User selects "Scope Details" tab on the Project details page
-	When User navigates to the "Application Scope" tab in the Scope section on the Project details page
-	And User selects "<ChangingToList1>" in the Scope Project details
+	And User selects "StaticList6579" in the Scope Project details
 	And User selects "Scope Changes" tab on the Project details page
-	When User clicks "Applications" tab in the Project Scope Changes section
-	Then "<ApplicationsToAdd1>" is displayed to the user in the Project Scope Changes section
+	Then "Devices to add (0 of 2 selected)" is displayed to the user in the Project Scope Changes section
 	When User selects "Scope Details" tab on the Project details page
-	When User navigates to the "Application Scope" tab in the Scope section on the Project details page
-	And User selects "<ChangingToList2>" in the Scope Project details
+	And User selects "DynamicList56" in the Scope Project details
+	And User selects "Scope Changes" tab on the Project details page
+	Then "Devices to add (0 of 1 selected)" is displayed to the user in the Project Scope Changes section
 	Then There are no errors in the browser console
 
-Examples:
-	| ChangingToList1 | ChangingToList2 | TabName | ObjectsToAdd                     | ObjectsToAdd1                    | ObjectsToAdd2                        |
-	| StaticList6579  | DynamicList56   | Devices | Devices to add (0 of 1 selected) | Devices to add (0 of 1 selected) | Devices to add (0 of 2 selected)     |
-	| All Devices     | StaticList6579  | Users   | Devices to add (0 of 2 selected) | Devices to add (0 of 2 selected) | Devices to add (0 of 17225 selected) |
+@Evergreen @Admin @EvergreenJnr_AdminPage @AdminPage @DAS12999 @Delete_Newly_Created_Project @Delete_Newly_Created_List @Projects
+Scenario: EvergreenJnr_AdminPage_ChangingUserScopeListToAnotherList
+	When User create static list with "StaticList6179" name on "Users" page with following items
+	| ItemName |
+	| barbosaj |
+	| clarkc   |
+	Then "StaticList6179" list is displayed to user
+	Then "2" rows are displayed in the agGrid
+	When User clicks Admin on the left-hand menu
+	Then Admin page should be displayed to the user
+	When User clicks the "CREATE PROJECT" Action button
+	Then "Create Project" page should be displayed to the user
+	When User enters "DevicesProject6" in the Project Name field
+	And User selects "All Devices" in the Scope Project dropdown
+	And User clicks Create button on the Create Project page
+	Then Success message is displayed and contains "Your project has been created" text
+	When User clicks newly created project link
+	And User selects "Scope Changes" tab on the Project details page
+	When User clicks "Users" tab in the Project Scope Changes section
+	Then "Users to add (0 of 14631 selected)" is displayed to the user in the Project Scope Changes section
+	When User selects "Scope Details" tab on the Project details page
+	When User navigates to the "User Scope" tab in the Scope section on the Project details page
+	And User selects "StaticList6179" in the Scope Project details
+	And User selects "Scope Changes" tab on the Project details page
+	When User clicks "Users" tab in the Project Scope Changes section
+	Then "Users to add (0 of 0 selected)" is displayed to the user in the Project Scope Changes section
+	Then There are no errors in the browser console
 
 @Evergreen @Admin @EvergreenJnr_AdminPage @AdminPage @DAS12999 @Delete_Newly_Created_Project @Delete_Newly_Created_List @Projects
 Scenario Outline: EvergreenJnr_ChangingApplicationsScopeListToAnotherList
@@ -2104,9 +2125,57 @@ Scenario Outline: EvergreenJnr_ChangingApplicationsScopeListToAnotherList
 	When User selects "Scope Details" tab on the Project details page
 	When User navigates to the "Application Scope" tab in the Scope section on the Project details page
 	And User selects "<ChangingToList2>" in the Scope Project details
+	And User selects "Scope Changes" tab on the Project details page
+	When User clicks "Applications" tab in the Project Scope Changes section
+	Then "<ApplicationsToAdd2>" is displayed to the user in the Project Scope Changes section
 	Then There are no errors in the browser console
 
 Examples:
 	| ChangingToList1  | ChangingToList2  | ApplicationsToAdd1                       | ApplicationsToAdd2                       |
 	| All Applications | DynamicList57    | Applications to add (0 of 2129 selected) | Applications to add (0 of 39 selected)   |
 	| StaticList6379   | All Applications | Applications to add (0 of 2 selected)    | Applications to add (0 of 2129 selected) |
+
+@Evergreen @Admin @EvergreenJnr_AdminPage @AdminPage @DAS12999 @Delete_Newly_Created_Project @Delete_Newly_Created_List @Projects
+Scenario Outline: EvergreenJnr_ChangingUsersScopeListToAnotherListForUsersProject
+	When User clicks "Users" on the left-hand menu
+	Then "Users" list should be displayed to the user
+	When User clicks the Filters button
+	Then Filters panel is displayed to the user
+	When User add "Domain" filter where type is "Equals" with added column and Lookup option
+	| SelectedValues |
+	| DEV50          |
+	Then "92" rows are displayed in the agGrid
+	When User create dynamic list with "DynamicList37" name on "Users" page
+	Then "DynamicList37" list is displayed to user
+	When User create static list with "StaticList6329" name on "Users" page with following items
+	| ItemName |
+	| barbosaj |
+	| clarkc   |
+	Then "StaticList6329" list is displayed to user
+	Then "2" rows are displayed in the agGrid
+	When User clicks Admin on the left-hand menu
+	Then Admin page should be displayed to the user
+	When User clicks the "CREATE PROJECT" Action button
+	Then "Create Project" page should be displayed to the user
+	When User enters "DevicesProject5" in the Project Name field
+	And User selects "All Users" in the Scope Project dropdown
+	When User selects "<Buckets>" in the Buckets Project dropdown
+	And User clicks Create button on the Create Project page
+	Then Success message is displayed and contains "Your project has been created" text
+	When User clicks newly created project link
+	And User selects "Scope Changes" tab on the Project details page
+	Then "Users to add (0 of 41339 selected)" is displayed to the user in the Project Scope Changes section
+	When User selects "Scope Details" tab on the Project details page
+	And User selects "<ChangingToList1>" in the Scope Project details
+	And User selects "Scope Changes" tab on the Project details page
+	Then "<ObjectsToAdd1>" is displayed to the user in the Project Scope Changes section
+	When User selects "Scope Details" tab on the Project details page
+	And User selects "<ChangingToList2>" in the Scope Project details
+	And User selects "Scope Changes" tab on the Project details page
+	Then "<ObjectsToAdd2>" is displayed to the user in the Project Scope Changes section
+	Then There are no errors in the browser console
+
+Examples:
+	| ChangingToList1 | ChangingToList2 | Buckets                                    | ObjectsToAdd1                      | ObjectsToAdd2                  |
+	| All Users       | StaticList6329  | Clone evergreen buckets to project buckets | Users to add (0 of 41339 selected) | Users to add (0 of 2 selected) |
+	| StaticList6329  | DynamicList37   | Use project buckets                        |Users to add (0 of 2 selected)     | Users to add (0 of 92 selected) |
