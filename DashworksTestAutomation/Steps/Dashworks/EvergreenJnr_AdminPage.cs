@@ -9,6 +9,7 @@ using DashworksTestAutomation.DTO.RuntimeVariables;
 using DashworksTestAutomation.Extensions;
 using DashworksTestAutomation.Helpers;
 using DashworksTestAutomation.Pages.Evergreen.AdminDetailsPages;
+using DashworksTestAutomation.Pages.Projects;
 using DashworksTestAutomation.Providers;
 using DashworksTestAutomation.Utils;
 using NUnit.Framework;
@@ -16,6 +17,7 @@ using OpenQA.Selenium;
 using OpenQA.Selenium.Remote;
 using RestSharp;
 using TechTalk.SpecFlow;
+using TeamsPage = DashworksTestAutomation.Pages.Evergreen.AdminDetailsPages.TeamsPage;
 
 namespace DashworksTestAutomation.Steps.Dashworks
 {
@@ -195,6 +197,18 @@ namespace DashworksTestAutomation.Steps.Dashworks
             var projectTabs = _driver.NowAt<ProjectsPage>();
             projectTabs.NavigateToProjectTabInScopSectionByName(tabName);
             _driver.WaitForDataLoading();
+        }
+
+        [Then(@"following associations are disabled:")]
+        public void ThenFollowingAssociationsAreDisabled(Table table)
+        {
+            var associations = _driver.NowAt<ProjectsPage>();
+            foreach (var row in table.Rows)
+            {
+                _driver.WaitForDataLoading();
+                Assert.IsTrue(associations.GetDisabledAssociationName(row["AssociationName"]),
+                    $"Following '{row["AssociationName"]}' are active");
+            }
         }
 
         [When(@"User clicks ""(.*)"" tab in the Project Scope Changes section")]
@@ -671,15 +685,33 @@ namespace DashworksTestAutomation.Steps.Dashworks
         [Then(@"Warning message with ""(.*)"" text is displayed on the Admin page")]
         public void ThenWarningMessageWithTextIsDisplayedOnTheAdminPage(string text)
         {
-            var page = _driver.NowAt<BaseGridPage>();
-            Assert.IsTrue(page.WarningMessageAdminPage(text), "Warning Message is not displayed");
+            BaseGridPage message;
+            try
+            {
+                message = _driver.NowAt<BaseGridPage>();
+            }
+            catch (WebDriverTimeoutException)
+            {
+                try
+                {
+                    message = _driver.NowAt<BaseGridPage>();
+                }
+                catch (WebDriverTimeoutException)
+                {
+                    message = _driver.NowAt<BaseGridPage>();
+                }
+            }
+            _driver.WaitWhileControlIsNotDisplayed<BaseGridPage>(() => message.WarningMessage);
+            Assert.AreEqual("rgba(234, 161, 39, 1)", message.GetMessageColor());//Amber color
+            Assert.IsTrue(message.TextMessage(text),
+                $"{text} is not displayed on the Project page");
         }
 
         [Then(@"Warning message is not displayed on the Admin page")]
         public void ThenWarningMessageIsNotDisplayedOnTheAdminPage()
         {
             var page = _driver.NowAt<BaseGridPage>();
-            Assert.IsFalse(page.DeleteWarningMessage.Displayed());
+            Assert.IsFalse(page.WarningMessage.Displayed());
         }
 
         [Then(@"""(.*)"" warning message is not displayed on the Buckets page")]
@@ -701,7 +733,7 @@ namespace DashworksTestAutomation.Steps.Dashworks
         public void WhenUserClicksDeleteButtonInTheWarningMessage()
         {
             var button = _driver.NowAt<BaseGridPage>();
-            _driver.WaitWhileControlIsNotDisplayed<BaseGridPage>(() => button.DeleteWarningMessage);
+            _driver.WaitWhileControlIsNotDisplayed<BaseGridPage>(() => button.WarningMessage);
             button.DeleteButtonInWarningMessage.Click();
             Logger.Write("Delete button was clicked");
         }
@@ -711,7 +743,17 @@ namespace DashworksTestAutomation.Steps.Dashworks
         {
             var page = _driver.NowAt<BaseGridPage>();
             _driver.WaitWhileControlIsNotDisplayed<BaseGridPage>(() => page.SuccessMessage);
+            Assert.AreEqual("rgba(126, 189, 56, 1)", page.GetMessageColor());//Green color
             StringAssert.Contains(text, page.SuccessMessage.Text, "Success Message is not displayed");
+        }
+
+        [Then(@"Info message is displayed and contains ""(.*)"" text")]
+        public void ThenInfoMessageIsDisplayedAndContainsText(string text)
+        {
+            var page = _driver.NowAt<BaseGridPage>();
+            _driver.WaitWhileControlIsNotDisplayed<BaseGridPage>(() => page.InfoMessage);
+            Assert.AreEqual("rgba(49, 122, 193, 1)", page.GetMessageColor());//Blue color
+            StringAssert.Contains(text, page.InfoMessage.Text, "Success Message is not displayed");
         }
 
         [Then(@"Success message The ""(.*)"" bucket has been updated is displayed on the Buckets page")]
@@ -727,25 +769,25 @@ namespace DashworksTestAutomation.Steps.Dashworks
         [Then(@"Success message with ""(.*)"" text is displayed on the Projects page")]
         public void ThenSuccessMessageWithTextIsDisplayedOnTheProjectsPage(string textMessage)
         {
-            ProjectsPage projectElement;
+            BaseGridPage projectElement;
             try
             {
-                projectElement = _driver.NowAt<ProjectsPage>();
+                projectElement = _driver.NowAt<BaseGridPage>();
             }
             catch (WebDriverTimeoutException)
             {
                 try
                 {
-                    projectElement = _driver.NowAt<ProjectsPage>();
+                    projectElement = _driver.NowAt<BaseGridPage>();
                 }
                 catch (WebDriverTimeoutException)
                 {
-                    projectElement = _driver.NowAt<ProjectsPage>();
+                    projectElement = _driver.NowAt<BaseGridPage>();
                 }
             }
-            _driver.WaitWhileControlIsNotDisplayed<ProjectsPage>(() => projectElement.SuccessMessage);
+            _driver.WaitWhileControlIsNotDisplayed<BaseGridPage>(() => projectElement.SuccessMessage);
             Thread.Sleep(15000);
-            Assert.IsTrue(projectElement.SuccessTextMessage(textMessage),
+            Assert.IsTrue(projectElement.TextMessage(textMessage),
                 $"{textMessage} is not displayed on the Project page");
         }
 
@@ -761,30 +803,6 @@ namespace DashworksTestAutomation.Steps.Dashworks
         {
             var projectElement = _driver.NowAt<ProjectsPage>();
             projectElement.NewProjectLink.Click();
-        }
-
-        [Then(@"message with ""(.*)"" text is displayed on the Projects page")]
-        public void ThenMessageWithTextIsDisplayedOnTheProjectsPage(string textMessage)
-        {
-            ProjectsPage projectElement;
-            try
-            {
-                projectElement = _driver.NowAt<ProjectsPage>();
-            }
-            catch (WebDriverTimeoutException)
-            {
-                try
-                {
-                    projectElement = _driver.NowAt<ProjectsPage>();
-                }
-                catch (WebDriverTimeoutException)
-                {
-                    projectElement = _driver.NowAt<ProjectsPage>();
-                }
-            }
-            _driver.WaitWhileControlIsNotDisplayed<ProjectsPage>(() => projectElement.DeleteWarningMessage);
-            Assert.IsTrue(projectElement.SuccessTextMessage(textMessage),
-                $"{textMessage} is not displayed on the Project page");
         }
 
         [Then(@"Error message with ""(.*)"" text is displayed")]
@@ -1008,6 +1026,13 @@ namespace DashworksTestAutomation.Steps.Dashworks
             Thread.Sleep(20000);
         }
 
+        [Then(@"Scope List dropdown is disabled")]
+        public void ThenScopeListDropdownIsDisabled()
+        {
+            var projectElement = _driver.NowAt<ProjectsPage>();
+            Assert.IsTrue(projectElement.DisabledScopeListDropdown.Displayed());
+        }
+
         [When(@"User clicks in the Scope field on the Admin page")]
         public void WhenUserClicksInTheScopeFieldOnTheAdminPage()
         {
@@ -1046,6 +1071,38 @@ namespace DashworksTestAutomation.Steps.Dashworks
             Assert.IsTrue(dropDown.DisabledOwnerDropDown.Displayed, "Drop down menu is available");
         }
 
+        [When(@"User changes Project Name to ""(.*)""")]
+        public void WhenUserChangesProjectNameTo(string projectName)
+        {
+            var projectElement = _driver.NowAt<ProjectsPage>();
+            projectElement.ProjectName.Clear();
+            projectElement.ProjectName.SendKeys(projectName);
+        }
+
+        [When(@"User changes Project Short Name to ""(.*)""")]
+        public void WhenUserChangesProjectShortNameTo(string shortProjectName)
+        {
+            var projectElement = _driver.NowAt<ProjectsPage>();
+            projectElement.ProjectShortName.Clear();
+            projectElement.ProjectShortName.SendKeys(shortProjectName);
+        }
+
+        [When(@"User changes Project Description to ""(.*)""")]
+        public void WhenUserChangesProjectDescriptionTo(string descriptionName)
+        {
+            var projectElement = _driver.NowAt<ProjectsPage>();
+            projectElement.ProjectDescription.Clear();
+            projectElement.ProjectDescription.SendKeys(descriptionName);
+        }
+
+        [When(@"User changes project language to ""(.*)""")]
+        public void WhenUserChangesProjectLanguageTo(string language)
+        {
+            var page = _driver.NowAt<ProjectsPage>();
+            page.DefaultLanguage.Click();
+            page.SelectProjectLanguage(language);
+        }
+
         [When(@"User click on Back button")]
         public void WhenUserClickOnBackButton()
         {
@@ -1069,6 +1126,13 @@ namespace DashworksTestAutomation.Steps.Dashworks
             //Store bucket name for further usage
             if (columnName.Equals("Bucket"))
                 _lastUsedBucket.Value = text;
+        }
+
+        [Then(@"""(.*)"" value is displayed for Default column")]
+        public void ThenValueIsDisplayedForDefaultColumn(string defaultValue)
+        {
+            var column = _driver.NowAt<BaseGridPage>();
+            Assert.IsTrue(column.GetDefaultColumnValue(defaultValue));
         }
 
         [Then(@"Search fields for ""(.*)"" column contain correctly value")]
@@ -1113,7 +1177,7 @@ namespace DashworksTestAutomation.Steps.Dashworks
             projectElement.ActionsButton.Click();
             projectElement.DeleteButtonInActions.Click();
             projectElement.DeleteButtonOnPage.Click();
-            _driver.WaitWhileControlIsNotDisplayed<BaseGridPage>(() => projectElement.DeleteWarningMessage);
+            _driver.WaitWhileControlIsNotDisplayed<BaseGridPage>(() => projectElement.WarningMessage);
             _driver.WaitForDataLoading();
             projectElement.DeleteButtonInWarningMessage.Click();
         }
