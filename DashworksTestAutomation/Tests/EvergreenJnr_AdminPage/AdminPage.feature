@@ -1608,7 +1608,6 @@ Scenario: EvergreenJnr_AdminPage_CheckThatUsersToAddAndRemoveAreChangingAppropri
 	| ItemName            |
 	| 000F977AC8824FE39B8 |
 	| 002B5DC7D4D34D5C895 |
-	| 05D3699C79384A27A4C |
 	Then "StaticList6529" list is displayed to user
 	When User create static list with "StaticList6530" name on "Users" page with following items
 	| ItemName            |
@@ -1629,22 +1628,21 @@ Scenario: EvergreenJnr_AdminPage_CheckThatUsersToAddAndRemoveAreChangingAppropri
 	Then Project "UsersProject" is displayed to user
 	Then Info message is displayed and contains "There are no objects in this project, use Scope Changes to add objects to your project" text
 	When User selects "Scope Changes" tab on the Project details page
-	Then "Users to add (0 of 3 selected)" is displayed to the user in the Project Scope Changes section
+	Then "Users to add (0 of 2 selected)" is displayed to the user in the Project Scope Changes section
 	When User expands the object to add 
 	And User selects following Objects to the Project
 	| Objects                                   |
 	| 000F977AC8824FE39B8 (Spruill, Shea)       |
 	| 002B5DC7D4D34D5C895 (Collor, Christopher) |
-	| 05D3699C79384A27A4C (Burnell, Helen)      |
-	Then "Users to add (3 of 3 selected)" is displayed to the user in the Project Scope Changes section
+	Then "Users to add (2 of 2 selected)" is displayed to the user in the Project Scope Changes section
 	When User clicks the "UPDATE USER CHANGES" Action button
 	And User clicks the "UPDATE PROJECT" Action button
-	Then Success message with "3 objects queued for onboarding, 0 objects offboarded" text is displayed on the Projects page
+	Then Success message with "2 objects queued for onboarding, 0 objects offboarded" text is displayed on the Projects page
 	When User selects "Scope Details" tab on the Project details page
 	When User selects "StaticList6530" in the Scope Project details
 	When User selects "Scope Changes" tab on the Project details page
 	Then "Users to add (0 of 2 selected)" is displayed to the user in the Project Scope Changes section
-	Then "Users to remove (0 of 3 selected)" is displayed to the user in the Project Scope Changes section
+	Then "Users to remove (0 of 2 selected)" is displayed to the user in the Project Scope Changes section
 
 @Evergreen @Admin @EvergreenJnr_AdminPage @AdminPage @DAS12999 @Delete_Newly_Created_Project @Delete_Newly_Created_List
 Scenario Outline: EvergreenJnr_AdminPage_CheckProjectCreationFromListPageWithUseEvergreenBucket
