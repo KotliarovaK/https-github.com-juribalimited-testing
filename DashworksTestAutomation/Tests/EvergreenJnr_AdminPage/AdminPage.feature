@@ -2235,3 +2235,96 @@ Scenario: EvergreenJnr_AdminPage_ChangingDevicesScopeListToAnotherListForDevices
 	When User clicks "Devices" tab in the Project Scope Changes section
 	Then "Devices to add (0 of 16765 selected)" is displayed to the user in the Project Scope Changes section
 	Then There are no errors in the browser console
+
+@Evergreen @Admin @EvergreenJnr_AdminPage @AdminPage @DAS12999 @Delete_Newly_Created_Project @Delete_Newly_Created_List @Projects
+Scenario Outline: EvergreenJnr_ChangingApplicationScopeListToAnotherListForUserProject
+	When User clicks "Applications" on the left-hand menu
+	Then "Applications" list should be displayed to the user
+	When User clicks the Filters button
+	Then Filters panel is displayed to the user
+	When User add "Version" filter where type is "Does not contain" with added column and following value:
+	| Values            |
+	| 97.1.0.0918(1031) |
+	Then "1,741" rows are displayed in the agGrid
+	When User create dynamic list with "DynamicList17" name on "Applications" page
+	Then "DynamicList17" list is displayed to user
+	When User create static list with "StaticList6429" name on "Applications" page with following items
+	| ItemName             |
+	| WMI Tools            |
+	| Windows Live Toolbar |
+	Then "StaticList6429" list is displayed to user
+	Then "2" rows are displayed in the agGrid
+	When User clicks Admin on the left-hand menu
+	Then Admin page should be displayed to the user
+	When User clicks the "CREATE PROJECT" Action button
+	Then "Create Project" page should be displayed to the user
+	When User enters "DevicesProject9" in the Project Name field
+	And User selects "All Users" in the Scope Project dropdown
+	And User clicks Create button on the Create Project page
+	Then Success message is displayed and contains "Your project has been created" text
+	When User clicks newly created project link
+	And User selects "Scope Changes" tab on the Project details page
+	When User clicks "Applications" tab in the Project Scope Changes section
+	Then "Applications to add (0 of 2081 selected)" is displayed to the user in the Project Scope Changes section
+	When User selects "Scope Details" tab on the Project details page
+	When User navigates to the "Application Scope" tab in the Scope section on the Project details page
+	And User selects "<ChangingToList1>" in the Scope Project details
+	And User selects "Scope Changes" tab on the Project details page
+	When User clicks "Applications" tab in the Project Scope Changes section
+	Then "<ObjectsToAdd1>" is displayed to the user in the Project Scope Changes section
+	When User selects "Scope Details" tab on the Project details page
+	When User navigates to the "Application Scope" tab in the Scope section on the Project details page
+	And User selects "<ChangingToList2>" in the Scope Project details
+	And User selects "Scope Changes" tab on the Project details page
+	When User clicks "Applications" tab in the Project Scope Changes section
+	Then "<ObjectsToAdd2>" is displayed to the user in the Project Scope Changes section
+	Then There are no errors in the browser console
+
+Examples:
+	| ChangingToList1  | ChangingToList2 | ObjectsToAdd1                            | ObjectsToAdd2                            |
+	| All Applications | StaticList6429  | Applications to add (0 of 2081 selected) | Applications to add (0 of 2 selected)    |
+	| StaticList6429   | DynamicList17   | Applications to add (0 of 2 selected)    | Applications to add (0 of 1612 selected) |
+
+@Evergreen @Admin @EvergreenJnr_AdminPage @AdminPage @DAS12999 @Delete_Newly_Created_Project @Delete_Newly_Created_List @Projects
+Scenario Outline: EvergreenJnr_ChangingMailboxScopeListToAnotherListForMailboxProject
+	When User clicks "Mailboxes" on the left-hand menu
+	Then "Mailboxes" list should be displayed to the user
+	When User clicks the Filters button
+	Then Filters panel is displayed to the user
+	When User add "Mailbox Platform" filter where type is "Equals" without added column and following checkboxes:
+	| SelectedCheckboxes |
+	| Exchange 2003      |
+	Then "6" rows are displayed in the agGrid
+	When User create dynamic list with "DynamicList77" name on "Mailboxes" page
+	Then "DynamicList77" list is displayed to user
+	When User create static list with "StaticList1429" name on "Mailboxes" page with following items
+	| ItemName                |
+	| ZVF5144799@bclabs.local |
+	| zunigamn@bclabs.local   |
+	Then "StaticList1429" list is displayed to user
+	Then "2" rows are displayed in the agGrid
+	When User clicks Admin on the left-hand menu
+	Then Admin page should be displayed to the user
+	When User clicks the "CREATE PROJECT" Action button
+	Then "Create Project" page should be displayed to the user
+	When User enters "DevicesProject10" in the Project Name field
+	And User selects "All Mailboxes" in the Scope Project dropdown
+	And User clicks Create button on the Create Project page
+	Then Success message is displayed and contains "Your project has been created" text
+	When User clicks newly created project link
+	And User selects "Scope Changes" tab on the Project details page
+	Then "Mailboxes to add (0 of 14784 selected)" is displayed to the user in the Project Scope Changes section
+	When User selects "Scope Details" tab on the Project details page
+	And User selects "<ChangingToList1>" in the Scope Project details
+	And User selects "Scope Changes" tab on the Project details page
+	Then "<ObjectsToAdd1>" is displayed to the user in the Project Scope Changes section
+	When User selects "Scope Details" tab on the Project details page
+	And User selects "<ChangingToList2>" in the Scope Project details
+	And User selects "Scope Changes" tab on the Project details page
+	Then "<ObjectsToAdd2>" is displayed to the user in the Project Scope Changes section
+	Then There are no errors in the browser console
+
+Examples:
+	| ChangingToList1 | ChangingToList2 | ObjectsToAdd1                          | ObjectsToAdd2                      |
+	| All Mailboxes   | StaticList1429  | Mailboxes to add (0 of 14784 selected) | Mailboxes to add (0 of 2 selected) |
+	| StaticList1429  | DynamicList77   | Mailboxes to add (0 of 2 selected)     | Mailboxes to add (0 of 6 selected) |
