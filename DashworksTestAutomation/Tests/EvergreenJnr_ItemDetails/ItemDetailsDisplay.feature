@@ -60,7 +60,7 @@ Examples:
 	| Mailboxes    | aaron.u.flores@dwlabs.local                             | Email Address | Users        | Domain      | Key                 | Key                 |
 	| Mailboxes    | aaron.u.flores@dwlabs.local                             | Email Address | Users        | Domain      | Evergreen Object ID | Evergreen Object ID |
 
-@Evergreen @AllLists @EvergreenJnr_ItemDetails @ItemDetailsDisplay @DAS11732 @DAS12235
+@Evergreen @AllLists @EvergreenJnr_ItemDetails @ItemDetailsDisplay @DAS11732 @DAS12235 @DAS12799 @Not_Run
 Scenario Outline: EvergreenJnr_AllLists_CheckThatDataIsDisplayedAfterAddingColumns
 	When User clicks "<PageName>" on the left-hand menu
 	Then "<PageName>" list should be displayed to the user
