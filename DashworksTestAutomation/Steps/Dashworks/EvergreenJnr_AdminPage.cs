@@ -199,6 +199,18 @@ namespace DashworksTestAutomation.Steps.Dashworks
             _driver.WaitForDataLoading();
         }
 
+        [Then(@"following associations are disabled:")]
+        public void ThenFollowingAssociationsAreDisabled(Table table)
+        {
+            var associations = _driver.NowAt<ProjectsPage>();
+            foreach (var row in table.Rows)
+            {
+                _driver.WaitForDataLoading();
+                Assert.IsTrue(associations.GetDisabledAssociationName(row["AssociationName"]),
+                    $"Following '{row["AssociationName"]}' are active");
+            }
+        }
+
         [When(@"User clicks ""(.*)"" tab in the Project Scope Changes section")]
         public void WhenUserClicksTabInTheProjectScopeChangesSection(string tabName)
         {
@@ -1012,6 +1024,13 @@ namespace DashworksTestAutomation.Steps.Dashworks
             projectElement.ScopeListDropdown.Click();
             projectElement.SelectObjectForProjectCreation(listName);
             Thread.Sleep(20000);
+        }
+
+        [Then(@"Scope List dropdown is disabled")]
+        public void ThenScopeListDropdownIsDisabled()
+        {
+            var projectElement = _driver.NowAt<ProjectsPage>();
+            Assert.IsTrue(projectElement.DisabledScopeListDropdown.Displayed());
         }
 
         [When(@"User clicks in the Scope field on the Admin page")]

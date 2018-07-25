@@ -374,9 +374,18 @@ Scenario: EvergreenJnr_AdminPage_CheckThatNumberOfApplicationsInProjectScopeIsCo
 	And User clicks "Applications" tab in the Project Scope Changes section
 	Then "Applications to add (0 of 2081 selected)" is displayed to the user in the Project Scope Changes section
 	When User selects "Scope Details" tab on the Project details page
-	And User navigates to the "Device Scope" tab in the Scope section on the Project details page
+	When User navigates to the "Application Scope" tab in the Scope section on the Project details page
+	Then All Associations are selected by default
+	When User navigates to the "Device Scope" tab in the Scope section on the Project details page
 	And User selects "Do not include owned devices" checkbox on the Project details page
-	And User selects "Scope Changes" tab on the Project details page
+	Then Scope List dropdown is disabled
+	When User navigates to the "Application Scope" tab in the Scope section on the Project details page
+	Then following associations are disabled:
+	| AssociationName                         |
+	| Entitled to a device owned by the user  |
+	| Installed on a device owned by the user |
+	| Used on an owned device by any user     |
+	When User selects "Scope Changes" tab on the Project details page
 	And User clicks "Applications" tab in the Project Scope Changes section
 	Then "Applications to add (0 of 247 selected)" is displayed to the user in the Project Scope Changes section
 	When User clicks "Details" tab
@@ -560,10 +569,19 @@ Scenario: EvergreenJnr_AdminPage_CheckThatAllAssociationsAreSelectedByDefaultInT
 	Then Success message is displayed and contains "Your project has been created" text
 	When User clicks newly created project link
 	Then Project "TestProject7" is displayed to user
+	When User selects "Scope Changes" tab on the Project details page
+	When User clicks "Applications" tab in the Project Scope Changes section
+	Then "Applications to add (0 of 2129 selected)" is displayed to the user in the Project Scope Changes section
+	When User selects "Scope Details" tab on the Project details page
 	When User navigates to the "Application Scope" tab in the Scope section on the Project details page
 	Then All Associations are selected by default
 	When  User selects "Do not include applications" checkbox on the Project details page
 	Then All Associations are disabled
+	When User selects "Scope Changes" tab on the Project details page
+	When User clicks "Applications" tab in the Project Scope Changes section
+	Then "Applications to add (0 of 0 selected)" is displayed to the user in the Project Scope Changes section
+	When User selects "Scope Details" tab on the Project details page
+	When User navigates to the "Application Scope" tab in the Scope section on the Project details page
 	When  User selects "Include applications" checkbox on the Project details page
 	Then All Associations are selected by default
 
@@ -2136,7 +2154,7 @@ Examples:
 	| StaticList6379   | All Applications | Applications to add (0 of 2 selected)    | Applications to add (0 of 2129 selected) |
 
 @Evergreen @Admin @EvergreenJnr_AdminPage @AdminPage @DAS12999 @Delete_Newly_Created_Project @Delete_Newly_Created_List @Projects
-Scenario Outline: EvergreenJnr_ChangingUsersScopeListToAnotherListForUsersProject
+Scenario Outline: EvergreenJnr_ChangingUsersScopeListToAnotherListForUserProject
 	When User clicks "Users" on the left-hand menu
 	Then "Users" list should be displayed to the user
 	When User clicks the Filters button
@@ -2179,3 +2197,41 @@ Examples:
 	| ChangingToList1 | ChangingToList2 | Buckets                                    | ObjectsToAdd1                      | ObjectsToAdd2                  |
 	| All Users       | StaticList6329  | Clone evergreen buckets to project buckets | Users to add (0 of 41339 selected) | Users to add (0 of 2 selected) |
 	| StaticList6329  | DynamicList37   | Use project buckets                        |Users to add (0 of 2 selected)     | Users to add (0 of 92 selected) |
+
+@Evergreen @Admin @EvergreenJnr_AdminPage @AdminPage @DAS12999 @Delete_Newly_Created_Project @Delete_Newly_Created_List @Projects
+Scenario: EvergreenJnr_AdminPage_ChangingDevicesScopeListToAnotherListForDevicesProjectForUserProject
+	When User clicks "Devices" on the left-hand menu
+	Then "Devices" list should be displayed to the user
+	When User clicks the Filters button
+	Then Filters panel is displayed to the user
+	When User add "Operating System" filter where type is "Equals" with added column and Lookup option
+	| SelectedValues |
+	| Windows 8      |
+	Then "28" rows are displayed in the agGrid
+	When User create dynamic list with "DynamicList58" name on "Devices" page
+	Then "DynamicList58" list is displayed to user
+	When User clicks Admin on the left-hand menu
+	Then Admin page should be displayed to the user
+	When User clicks the "CREATE PROJECT" Action button
+	Then "Create Project" page should be displayed to the user
+	When User enters "DevicesProject8" in the Project Name field
+	And User selects "All Users" in the Scope Project dropdown
+	And User clicks Create button on the Create Project page
+	Then Success message is displayed and contains "Your project has been created" text
+	When User clicks newly created project link
+	And User selects "Scope Changes" tab on the Project details page
+	When User clicks "Devices" tab in the Project Scope Changes section
+	Then "Devices to add (0 of 16765 selected)" is displayed to the user in the Project Scope Changes section
+	When User selects "Scope Details" tab on the Project details page
+	When User navigates to the "Device Scope" tab in the Scope section on the Project details page
+	And User selects "DynamicList58" in the Scope Project details
+	And User selects "Scope Changes" tab on the Project details page
+	When User clicks "Devices" tab in the Project Scope Changes section
+	Then "Devices to add (0 of 24 selected)" is displayed to the user in the Project Scope Changes section
+	When User selects "Scope Details" tab on the Project details page
+	When User navigates to the "Device Scope" tab in the Scope section on the Project details page
+	And User selects "All Devices" in the Scope Project details
+	And User selects "Scope Changes" tab on the Project details page
+	When User clicks "Devices" tab in the Project Scope Changes section
+	Then "Devices to add (0 of 16765 selected)" is displayed to the user in the Project Scope Changes section
+	Then There are no errors in the browser console
