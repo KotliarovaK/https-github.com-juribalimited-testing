@@ -1112,14 +1112,6 @@ namespace DashworksTestAutomation.Steps.Dashworks
             Assert.IsTrue(projectElement.BucketDropdownDisplay(textBucket), "Incorrect text is displayed in the Bucket dropdown");
         }
 
-        [Then(@"selecting device owners is disabled")]
-        public void ThenSelectingDeviceOwnersIsDisabled()
-        {
-            var dropDown = _driver.NowAt<ProjectsPage>();
-            _driver.WaitWhileControlIsDisplayed<ProjectsPage>(() => dropDown.DisabledOwnerDropDown);
-            Assert.IsTrue(dropDown.DisabledOwnerDropDown.Displayed, "Drop down menu is available");
-        }
-
         [When(@"User changes Project Name to ""(.*)""")]
         public void WhenUserChangesProjectNameTo(string projectName)
         {

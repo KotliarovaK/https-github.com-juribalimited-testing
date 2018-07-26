@@ -836,7 +836,7 @@ Scenario: EvergreenJnr_ChecksThatDeviceScopeDDLIsDisabledWhenDoNotIncludeOwnedDe
 	When User selects "Scope Details" tab on the Project details page
 	And User navigates to the "User Scope" tab in the Scope section on the Project details page
 	When User selects "Do not include device owners" checkbox on the Project details page
-	Then selecting device owners is disabled
+	Then Scope List dropdown is disabled
 
 @Evergreen @Admin @EvergreenJnr_AdminPage @AdminPage @DAS12578 @DAS12999 @Delete_Newly_Created_List @Projects
 Scenario Outline: EvergreenJnr_AdminPage_CheckThatTheEditListFunctionIsHiddenAfterCancelingCreatingProjectFromTheMainLists
@@ -1658,7 +1658,7 @@ Scenario: EvergreenJnr_AdminPage_CheckThatUsersToAddAndRemoveAreChangingAppropri
 	When User selects "StaticList6530" in the Scope Project details
 	When User selects "Scope Changes" tab on the Project details page
 	Then "Users to add (0 of 2 selected)" is displayed to the user in the Project Scope Changes section
-	Then "Users to remove (0 of 2 selected)" is displayed to the user in the Project Scope Changes section
+	#Then "Users to remove (0 of 2 selected)" is displayed to the user in the Project Scope Changes section
 
 @Evergreen @Admin @EvergreenJnr_AdminPage @AdminPage @DAS12999 @Delete_Newly_Created_Project @Delete_Newly_Created_List
 Scenario Outline: EvergreenJnr_AdminPage_CheckProjectCreationFromListPageWithUseEvergreenBucket
