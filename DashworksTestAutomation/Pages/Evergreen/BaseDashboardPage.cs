@@ -187,7 +187,7 @@ namespace DashworksTestAutomation.Pages.Evergreen
         {
             Driver.WaitForElement(By.XPath("//div[@class='inline-tip ng-star-inserted']"));
             return Driver.IsElementDisplayed(
-                By.XPath($".//div[@class='inline-tip ng-star-inserted']/div[text()='{text}']"));
+                By.XPath($"//div[@class='inline-tip ng-star-inserted']/div[text()='{text}']"));
         }
 
         public bool SuccessMessageActionPanel(string text)

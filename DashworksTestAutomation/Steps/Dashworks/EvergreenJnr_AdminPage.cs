@@ -1122,6 +1122,7 @@ namespace DashworksTestAutomation.Steps.Dashworks
         public void WhenUserClearsSearchFieldForColumn(string columnName)
         {
             var searchElement = _driver.NowAt<BaseGridPage>();
+            _driver.WaitForDataLoading();
             searchElement.ResetFiltersButton.Click();
         }
 
@@ -1153,6 +1154,7 @@ namespace DashworksTestAutomation.Steps.Dashworks
         public void WhenUserClicksResetFiltersButtonOnTheAdminPage()
         {
             var button = _driver.NowAt<BaseGridPage>();
+            _driver.WaitForDataLoading();
             button.ResetFiltersButton.Click();
         }
 
