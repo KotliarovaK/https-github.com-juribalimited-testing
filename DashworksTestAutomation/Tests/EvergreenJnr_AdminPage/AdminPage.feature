@@ -2357,26 +2357,53 @@ Scenario: EvergreenJnr_AdminPage_ChangingUserScopePermissionsForMailboxProject
 	When User clicks the "CREATE PROJECT" Action button
 	Then "Create Project" page should be displayed to the user
 	When User enters "TestName11881" in the Project Name field
-	And User selects "All Mailbox " in the Scope Project dropdown
+	And User selects "All Mailboxes" in the Scope Project dropdown
 	And User clicks Create button on the Create Project page
 	Then created Project with "TestName11881" name is displayed correctly
 	Then Success message is displayed and contains "Your project has been created" text
 	When User clicks newly created project link
 	Then Project "TestName11881" is displayed to user
 	When User selects "Scope Details" tab on the Project details page
-	And User navigates to the "Application Scope" tab in the Scope section on the Project details page
-	And User selects "Do not include applications" checkbox on the Project details page
+	And User navigates to the "User Scope" tab in the Scope section on the Project details page
+	And User selects "Do not include users" checkbox on the Project details page
 	Then Scope List dropdown is disabled
-	Then All Associations are disabled
+	Then User Scope checkboxes are disabled
+	Then Application Scope tab is hidden
 	When User selects "Scope Changes" tab on the Project details page
-	Then Warning message is not displayed on the Admin page
-	When User clicks "Applications" tab in the Project Scope Changes section
-	Then "Applications to add (0 of 0 selected)" is displayed to the user in the Project Scope Changes section
+	When User clicks "Users" tab in the Project Scope Changes section
+	Then "Users to add (0 of 0 selected)" is displayed to the user in the Project Scope Changes section
+	When User selects "Scope Details" tab on the Project details page
+	And User navigates to the "User Scope" tab in the Scope section on the Project details page
+	And User selects "Include users associated to mailboxes" checkbox on the Project details page
+	Then Scope List dropdown is active
+	Then User Scope checkboxes are active
+	Then Application Scope tab is displayed
+	When User selects "Scope Changes" tab on the Project details page
+	When User clicks "Users" tab in the Project Scope Changes section
+	Then "Users to add (0 of 14747 selected)" is displayed to the user in the Project Scope Changes section
+
+@Evergreen @Admin @EvergreenJnr_AdminPage @AdminPage @DAS12999 @Delete_Newly_Created_Project @Projects
+Scenario: EvergreenJnr_AdminPage_ChangingApplicationScopePermissionsForMailboxProject
+	When User clicks Admin on the left-hand menu
+	Then Admin page should be displayed to the user
+	When User clicks "Projects" link on the Admin page
+	Then "Projects" page should be displayed to the user
+	When User clicks the "CREATE PROJECT" Action button
+	Then "Create Project" page should be displayed to the user
+	When User enters "TestName12881" in the Project Name field
+	And User selects "All Mailboxes" in the Scope Project dropdown
+	And User clicks Create button on the Create Project page
+	Then Success message is displayed and contains "Your project has been created" text
+	When User clicks newly created project link
+	Then Project "TestName12881" is displayed to user
 	When User selects "Scope Details" tab on the Project details page
 	And User navigates to the "Application Scope" tab in the Scope section on the Project details page
 	And User selects "Include applications" checkbox on the Project details page
-	Then All Associations are selected by default
 	Then Scope List dropdown is active
+	Then Application Scope checkboxes are active
+	When User selects "Do not include applications" checkbox on the Project details page
+	Then Scope List dropdown is disabled
+	Then Application Scope checkboxes are disabled
 	When User selects "Scope Changes" tab on the Project details page
 	When User clicks "Applications" tab in the Project Scope Changes section
-	Then "Applications to add (0 of 2081 selected)" is displayed to the user in the Project Scope Changes section
+	Then "Applications to add (0 of 0 selected)" is displayed to the user in the Project Scope Changes section
