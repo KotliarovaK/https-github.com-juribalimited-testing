@@ -1033,6 +1033,13 @@ namespace DashworksTestAutomation.Steps.Dashworks
             Assert.IsTrue(projectElement.DisabledScopeListDropdown.Displayed());
         }
 
+        [Then(@"Scope List dropdown is active")]
+        public void ThenScopeListDropdownIsActive()
+        {
+            var projectElement = _driver.NowAt<ProjectsPage>();
+            Assert.IsTrue(projectElement.ActiveScopeListDropdown.Displayed());
+        }
+
         [When(@"User clicks in the Scope field on the Admin page")]
         public void WhenUserClicksInTheScopeFieldOnTheAdminPage()
         {
@@ -1067,7 +1074,7 @@ namespace DashworksTestAutomation.Steps.Dashworks
         public void ThenSelectingDeviceOwnersIsDisabled()
         {
             var dropDown = _driver.NowAt<ProjectsPage>();
-            //_driver.WaitWhileControlIsDisplayed<ProjectsPage>(() => dropDown.DisabledOwnerDropDown);
+            _driver.WaitWhileControlIsDisplayed<ProjectsPage>(() => dropDown.DisabledOwnerDropDown);
             Assert.IsTrue(dropDown.DisabledOwnerDropDown.Displayed, "Drop down menu is available");
         }
 

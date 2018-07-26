@@ -45,8 +45,11 @@ namespace DashworksTestAutomation.Pages.Evergreen.AdminDetailsPages
         [FindsBy(How = How.XPath, Using = "//mat-select[contains(@aria-label, 'Scope')]")]
         public IWebElement ScopeListDropdown { get; set; }
 
-        [FindsBy(How = How.XPath, Using = "//div[@class='mat-form-field-infix']/mat-select[contains(@class, 'disabled')]")]
+        [FindsBy(How = How.XPath, Using = "//div[@class='mat-form-field-infix']/mat-select[@aria-disabled='true']")]
         public IWebElement DisabledScopeListDropdown { get; set; }
+
+        [FindsBy(How = How.XPath, Using = "//div[@class='mat-form-field-infix']/mat-select[@aria-disabled='false']")]
+        public IWebElement ActiveScopeListDropdown { get; set; }
 
         [FindsBy(How = How.XPath, Using = "//span[@class='inline-link ng-star-inserted']/a")]
         public IWebElement NewProjectLink { get; set; }
