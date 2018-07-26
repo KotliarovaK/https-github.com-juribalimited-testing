@@ -340,6 +340,48 @@ namespace DashworksTestAutomation.Steps.Dashworks
             Assert.IsTrue(projectsPage.DisabledAllAssociations.Displayed(), "All Associations is active");
         }
 
+        [Then(@"User Scope checkboxes are disabled")]
+        public void ThenUserScopeCheckboxesAreDisabled()
+        {
+            var projectsPage = _driver.NowAt<ProjectsPage>();
+            Assert.IsFalse(projectsPage.UserScopeCheckboxes.Displayed(), "User Scope checkboxes are active");
+        }
+
+        [Then(@"User Scope checkboxes are active")]
+        public void ThenUserScopeCheckboxesAreActive()
+        {
+            var projectsPage = _driver.NowAt<ProjectsPage>();
+            Assert.IsTrue(projectsPage.UserScopeCheckboxes.Displayed(), "User Scope checkboxes are disabled");
+        }
+
+        [Then(@"Application Scope checkboxes are disabled")]
+        public void ThenApplicationScopeCheckboxesAreDisabled()
+        {
+            var projectsPage = _driver.NowAt<ProjectsPage>();
+            Assert.IsTrue(projectsPage.ApplicationScopeCheckboxes.Displayed(), "Application Scope checkboxes are active");
+        }
+
+        [Then(@"Application Scope checkboxes are active")]
+        public void ThenApplicationScopeCheckboxesAreActive()
+        {
+            var projectsPage = _driver.NowAt<ProjectsPage>();
+            Assert.IsFalse(projectsPage.ApplicationScopeCheckboxes.Displayed(), "Application Scope checkboxes are disabled");
+        }
+
+        [Then(@"Application Scope tab is hidden")]
+        public void ThenApplicationScopeTabIsHidden()
+        {
+            var projectsPage = _driver.NowAt<ProjectsPage>();
+            Assert.IsFalse(projectsPage.ApplicationScopeTab.Displayed(), "Application Scope tab is displayed");
+        }
+
+        [Then(@"Application Scope tab is displayed")]
+        public void ThenApplicationScopeTabIsDisplayed()
+        {
+            var projectsPage = _driver.NowAt<ProjectsPage>();
+            Assert.IsTrue(projectsPage.ApplicationScopeTab.Displayed(), "Application Scope tab is not displayed");
+        }
+
         [Then(@"""(.*)"" is displayed to the user in the Project Scope Changes section")]
         public void ThenIsDisplayedToTheUserInTheProjectScopeChangesSection(string text)
         {
