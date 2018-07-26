@@ -104,6 +104,7 @@ namespace DashworksTestAutomation.Steps.Dashworks
         public void ThenWarningMessageWithTextIsDisplayedOnActionPanel(string textMessage)
         {
             var action = _driver.NowAt<BaseDashboardPage>();
+            _driver.WaitForDataLoading();
             Assert.IsTrue(action.WarningMessageActionPanel(textMessage), "Warning Message is not displayed");
         }
 

@@ -2347,3 +2347,36 @@ Examples:
 	| ChangingToList1 | ChangingToList2 | ObjectsToAdd1                          | ObjectsToAdd2                      |
 	| All Mailboxes   | StaticList1429  | Mailboxes to add (0 of 14784 selected) | Mailboxes to add (0 of 2 selected) |
 	| StaticList1429  | DynamicList77   | Mailboxes to add (0 of 2 selected)     | Mailboxes to add (0 of 6 selected) |
+
+@Evergreen @Admin @EvergreenJnr_AdminPage @AdminPage @DAS12999 @Delete_Newly_Created_Project @Projects
+Scenario: EvergreenJnr_AdminPage_ChangingUserScopePermissionsForMailboxProject
+	When User clicks Admin on the left-hand menu
+	Then Admin page should be displayed to the user
+	When User clicks "Projects" link on the Admin page
+	Then "Projects" page should be displayed to the user
+	When User clicks the "CREATE PROJECT" Action button
+	Then "Create Project" page should be displayed to the user
+	When User enters "TestName11881" in the Project Name field
+	And User selects "All Mailbox " in the Scope Project dropdown
+	And User clicks Create button on the Create Project page
+	Then created Project with "TestName11881" name is displayed correctly
+	Then Success message is displayed and contains "Your project has been created" text
+	When User clicks newly created project link
+	Then Project "TestName11881" is displayed to user
+	When User selects "Scope Details" tab on the Project details page
+	And User navigates to the "Application Scope" tab in the Scope section on the Project details page
+	And User selects "Do not include applications" checkbox on the Project details page
+	Then Scope List dropdown is disabled
+	Then All Associations are disabled
+	When User selects "Scope Changes" tab on the Project details page
+	Then Warning message is not displayed on the Admin page
+	When User clicks "Applications" tab in the Project Scope Changes section
+	Then "Applications to add (0 of 0 selected)" is displayed to the user in the Project Scope Changes section
+	When User selects "Scope Details" tab on the Project details page
+	And User navigates to the "Application Scope" tab in the Scope section on the Project details page
+	And User selects "Include applications" checkbox on the Project details page
+	Then All Associations are selected by default
+	Then Scope List dropdown is active
+	When User selects "Scope Changes" tab on the Project details page
+	When User clicks "Applications" tab in the Project Scope Changes section
+	Then "Applications to add (0 of 2081 selected)" is displayed to the user in the Project Scope Changes section
