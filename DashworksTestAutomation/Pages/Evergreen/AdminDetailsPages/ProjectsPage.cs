@@ -75,9 +75,6 @@ namespace DashworksTestAutomation.Pages.Evergreen.AdminDetailsPages
         [FindsBy(How = How.XPath, Using = "//mat-select[@aria-label='Default Language']")]
         public IWebElement DefaultLanguage { get; set; }
 
-        [FindsBy(How = How.XPath, Using = ".//div[@class='wrapper-disabled']//mat-select[@aria-label='User Scope']")]
-        public IWebElement DisabledOwnerDropDown { get; set; }
-
         [FindsBy(How = How.XPath, Using = "//span[text()='Application Scope']")]
         public IWebElement ApplicationScopeTab { get; set; }
 
