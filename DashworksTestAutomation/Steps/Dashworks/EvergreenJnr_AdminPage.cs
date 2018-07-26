@@ -340,6 +340,48 @@ namespace DashworksTestAutomation.Steps.Dashworks
             Assert.IsTrue(projectsPage.DisabledAllAssociations.Displayed(), "All Associations is active");
         }
 
+        [Then(@"User Scope checkboxes are disabled")]
+        public void ThenUserScopeCheckboxesAreDisabled()
+        {
+            var projectsPage = _driver.NowAt<ProjectsPage>();
+            Assert.IsFalse(projectsPage.UserScopeCheckboxes.Displayed(), "User Scope checkboxes are active");
+        }
+
+        [Then(@"User Scope checkboxes are active")]
+        public void ThenUserScopeCheckboxesAreActive()
+        {
+            var projectsPage = _driver.NowAt<ProjectsPage>();
+            Assert.IsTrue(projectsPage.UserScopeCheckboxes.Displayed(), "User Scope checkboxes are disabled");
+        }
+
+        [Then(@"Application Scope checkboxes are disabled")]
+        public void ThenApplicationScopeCheckboxesAreDisabled()
+        {
+            var projectsPage = _driver.NowAt<ProjectsPage>();
+            Assert.IsTrue(projectsPage.ApplicationScopeCheckboxes.Displayed(), "Application Scope checkboxes are active");
+        }
+
+        [Then(@"Application Scope checkboxes are active")]
+        public void ThenApplicationScopeCheckboxesAreActive()
+        {
+            var projectsPage = _driver.NowAt<ProjectsPage>();
+            Assert.IsFalse(projectsPage.ApplicationScopeCheckboxes.Displayed(), "Application Scope checkboxes are disabled");
+        }
+
+        [Then(@"Application Scope tab is hidden")]
+        public void ThenApplicationScopeTabIsHidden()
+        {
+            var projectsPage = _driver.NowAt<ProjectsPage>();
+            Assert.IsFalse(projectsPage.ApplicationScopeTab.Displayed(), "Application Scope tab is displayed");
+        }
+
+        [Then(@"Application Scope tab is displayed")]
+        public void ThenApplicationScopeTabIsDisplayed()
+        {
+            var projectsPage = _driver.NowAt<ProjectsPage>();
+            Assert.IsTrue(projectsPage.ApplicationScopeTab.Displayed(), "Application Scope tab is not displayed");
+        }
+
         [Then(@"""(.*)"" is displayed to the user in the Project Scope Changes section")]
         public void ThenIsDisplayedToTheUserInTheProjectScopeChangesSection(string text)
         {
@@ -1033,6 +1075,13 @@ namespace DashworksTestAutomation.Steps.Dashworks
             Assert.IsTrue(projectElement.DisabledScopeListDropdown.Displayed());
         }
 
+        [Then(@"Scope List dropdown is active")]
+        public void ThenScopeListDropdownIsActive()
+        {
+            var projectElement = _driver.NowAt<ProjectsPage>();
+            Assert.IsTrue(projectElement.ActiveScopeListDropdown.Displayed());
+        }
+
         [When(@"User clicks in the Scope field on the Admin page")]
         public void WhenUserClicksInTheScopeFieldOnTheAdminPage()
         {
@@ -1067,7 +1116,7 @@ namespace DashworksTestAutomation.Steps.Dashworks
         public void ThenSelectingDeviceOwnersIsDisabled()
         {
             var dropDown = _driver.NowAt<ProjectsPage>();
-            //_driver.WaitWhileControlIsDisplayed<ProjectsPage>(() => dropDown.DisabledOwnerDropDown);
+            _driver.WaitWhileControlIsDisplayed<ProjectsPage>(() => dropDown.DisabledOwnerDropDown);
             Assert.IsTrue(dropDown.DisabledOwnerDropDown.Displayed, "Drop down menu is available");
         }
 
@@ -1115,6 +1164,7 @@ namespace DashworksTestAutomation.Steps.Dashworks
         public void WhenUserClearsSearchFieldForColumn(string columnName)
         {
             var searchElement = _driver.NowAt<BaseGridPage>();
+            _driver.WaitForDataLoading();
             searchElement.ResetFiltersButton.Click();
         }
 
@@ -1146,6 +1196,7 @@ namespace DashworksTestAutomation.Steps.Dashworks
         public void WhenUserClicksResetFiltersButtonOnTheAdminPage()
         {
             var button = _driver.NowAt<BaseGridPage>();
+            _driver.WaitForDataLoading();
             button.ResetFiltersButton.Click();
         }
 

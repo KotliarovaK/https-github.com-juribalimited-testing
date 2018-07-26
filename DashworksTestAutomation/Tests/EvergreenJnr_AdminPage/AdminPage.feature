@@ -373,6 +373,8 @@ Scenario: EvergreenJnr_AdminPage_CheckThatNumberOfApplicationsInProjectScopeIsCo
 	When User selects "Scope Changes" tab on the Project details page
 	And User clicks "Applications" tab in the Project Scope Changes section
 	Then "Applications to add (0 of 2081 selected)" is displayed to the user in the Project Scope Changes section
+	When User clicks "Devices" tab in the Project Scope Changes section
+	Then "Devices to add (0 of 16765 selected)" is displayed to the user in the Project Scope Changes section
 	When User selects "Scope Details" tab on the Project details page
 	When User navigates to the "Application Scope" tab in the Scope section on the Project details page
 	Then All Associations are selected by default
@@ -388,6 +390,8 @@ Scenario: EvergreenJnr_AdminPage_CheckThatNumberOfApplicationsInProjectScopeIsCo
 	When User selects "Scope Changes" tab on the Project details page
 	And User clicks "Applications" tab in the Project Scope Changes section
 	Then "Applications to add (0 of 247 selected)" is displayed to the user in the Project Scope Changes section
+	When User clicks "Devices" tab in the Project Scope Changes section
+	Then "Devices to add (0 of 0 selected)" is displayed to the user in the Project Scope Changes section
 	When User clicks "Details" tab
 	When User selects "Clone evergreen buckets to project buckets" in the Buckets Project dropdown
 	And User clicks the "UPDATE" Action button
@@ -1370,7 +1374,7 @@ Scenario: EvergreenJnr_AdminPage_CheckThatImpossibleToCreateSameNamedBucketUsing
 	Then Error message with "A bucket already exists with this name" text is displayed
 	And Delete "11770" Bucket in the Administration
 
-@Evergreen @Admin @EvergreenJnr_AdminPage @AdminPage @DAS11881 @Delete_Newly_Created_Project @Projects
+@Evergreen @Admin @EvergreenJnr_AdminPage @AdminPage @DAS11881 @DAS12999 @Delete_Newly_Created_Project @Projects
 Scenario: EvergreenJnr_AdminPage_CheckThatEmptyGreenAlertLineIsNotDisplayedOnProjectScopeChangesPageAfterMakingSomeChangesOnScopePage
 	When User clicks Admin on the left-hand menu
 	Then Admin page should be displayed to the user
@@ -1388,8 +1392,20 @@ Scenario: EvergreenJnr_AdminPage_CheckThatEmptyGreenAlertLineIsNotDisplayedOnPro
 	When User selects "Scope Details" tab on the Project details page
 	And User navigates to the "Application Scope" tab in the Scope section on the Project details page
 	And User selects "Do not include applications" checkbox on the Project details page
-	And User selects "Scope Changes" tab on the Project details page
+	Then Scope List dropdown is disabled
+	Then All Associations are disabled
+	When User selects "Scope Changes" tab on the Project details page
 	Then Warning message is not displayed on the Admin page
+	When User clicks "Applications" tab in the Project Scope Changes section
+	Then "Applications to add (0 of 0 selected)" is displayed to the user in the Project Scope Changes section
+	When User selects "Scope Details" tab on the Project details page
+	And User navigates to the "Application Scope" tab in the Scope section on the Project details page
+	And User selects "Include applications" checkbox on the Project details page
+	Then All Associations are selected by default
+	Then Scope List dropdown is active
+	When User selects "Scope Changes" tab on the Project details page
+	When User clicks "Applications" tab in the Project Scope Changes section
+	Then "Applications to add (0 of 2081 selected)" is displayed to the user in the Project Scope Changes section
 
 @Evergreen @Admin @EvergreenJnr_AdminPage @AdminPage @DAS12155 @Delete_Newly_Created_List @Project_Creation_and_Scope
 Scenario: EvergreenJnr_AdminPage_CheckThatScopePanelHaveCorrectlySizeWhenUsedListWithLongName
@@ -2197,42 +2213,47 @@ Examples:
 	| StaticList6329  | DynamicList37   | Use project buckets                        |Users to add (0 of 2 selected)     | Users to add (0 of 92 selected) |
 
 @Evergreen @Admin @EvergreenJnr_AdminPage @AdminPage @DAS12999 @Delete_Newly_Created_Project @Delete_Newly_Created_List @Projects
-Scenario: EvergreenJnr_AdminPage_ChangingDevicesScopeListToAnotherListForDevicesProjectForUserProject
-	When User clicks "Devices" on the left-hand menu
-	Then "Devices" list should be displayed to the user
+Scenario Outline: EvergreenJnr_AdminPage_ChangingDynamicListToAllListForUserAndMailboxProjects
+	When User clicks "<ListName>" on the left-hand menu
+	Then "<ListName>" list should be displayed to the user
 	When User clicks the Filters button
 	Then Filters panel is displayed to the user
-	When User add "Operating System" filter where type is "Equals" with added column and Lookup option
+	When User add "<FilterName>" filter where type is "Equals" with added column and Lookup option
 	| SelectedValues |
-	| Windows 8      |
-	Then "28" rows are displayed in the agGrid
-	When User create dynamic list with "DynamicList58" name on "Devices" page
+	| <FilterValue>  |
+	Then "<Rows>" rows are displayed in the agGrid
+	When User create dynamic list with "DynamicList58" name on "<ListName>" page
 	Then "DynamicList58" list is displayed to user
 	When User clicks Admin on the left-hand menu
 	Then Admin page should be displayed to the user
 	When User clicks the "CREATE PROJECT" Action button
 	Then "Create Project" page should be displayed to the user
 	When User enters "DevicesProject8" in the Project Name field
-	And User selects "All Users" in the Scope Project dropdown
+	And User selects "<ProjectList>" in the Scope Project dropdown
 	And User clicks Create button on the Create Project page
 	Then Success message is displayed and contains "Your project has been created" text
 	When User clicks newly created project link
 	And User selects "Scope Changes" tab on the Project details page
-	When User clicks "Devices" tab in the Project Scope Changes section
-	Then "Devices to add (0 of 16765 selected)" is displayed to the user in the Project Scope Changes section
+	When User clicks "<ScopeChanges>" tab in the Project Scope Changes section
+	Then "<ObjectsToAdd>" is displayed to the user in the Project Scope Changes section
 	When User selects "Scope Details" tab on the Project details page
-	When User navigates to the "Device Scope" tab in the Scope section on the Project details page
+	When User navigates to the "<ScopeDetails>" tab in the Scope section on the Project details page
 	And User selects "DynamicList58" in the Scope Project details
 	And User selects "Scope Changes" tab on the Project details page
-	When User clicks "Devices" tab in the Project Scope Changes section
-	Then "Devices to add (0 of 24 selected)" is displayed to the user in the Project Scope Changes section
+	When User clicks "<ScopeChanges>" tab in the Project Scope Changes section
+	Then "<ObjectsToAdd1>" is displayed to the user in the Project Scope Changes section
 	When User selects "Scope Details" tab on the Project details page
-	When User navigates to the "Device Scope" tab in the Scope section on the Project details page
-	And User selects "All Devices" in the Scope Project details
+	When User navigates to the "<ScopeDetails>" tab in the Scope section on the Project details page
+	And User selects "<AllList>" in the Scope Project details
 	And User selects "Scope Changes" tab on the Project details page
-	When User clicks "Devices" tab in the Project Scope Changes section
-	Then "Devices to add (0 of 16765 selected)" is displayed to the user in the Project Scope Changes section
+	When User clicks "<ScopeChanges>" tab in the Project Scope Changes section
+	Then "<ObjectsToAdd2>" is displayed to the user in the Project Scope Changes section
 	Then There are no errors in the browser console
+
+Examples:
+	| ListName | FilterName       | FilterValue | Rows | ProjectList | AllList     | ScopeChanges | ScopeDetails | ObjectsToAdd                         | ChangingToList | ObjectsToAdd1                     | ObjectsToAdd2                        |
+	| Devices  | Operating System | Windows 8   | 28   | All Users   | All Devices | Devices      | Device Scope | Devices to add (0 of 16765 selected) | StaticList6429 | Devices to add (0 of 24 selected) | Devices to add (0 of 16765 selected) |
+	| Users    | Domain           | CA          | 850  | All Mailbox | All Users   | Users        | User Scope   | Users to add (0 of 14747 selected)   | DynamicList17  | Users to add (0 of 0 selected)    | Users to add (0 of 14747 selected)   |
 
 @Evergreen @Admin @EvergreenJnr_AdminPage @AdminPage @DAS12999 @Delete_Newly_Created_Project @Delete_Newly_Created_List @Projects
 Scenario Outline: EvergreenJnr_ChangingApplicationScopeListToAnotherListForUserProject
@@ -2326,3 +2347,63 @@ Examples:
 	| ChangingToList1 | ChangingToList2 | ObjectsToAdd1                          | ObjectsToAdd2                      |
 	| All Mailboxes   | StaticList1429  | Mailboxes to add (0 of 14784 selected) | Mailboxes to add (0 of 2 selected) |
 	| StaticList1429  | DynamicList77   | Mailboxes to add (0 of 2 selected)     | Mailboxes to add (0 of 6 selected) |
+
+@Evergreen @Admin @EvergreenJnr_AdminPage @AdminPage @DAS12999 @Delete_Newly_Created_Project @Projects
+Scenario: EvergreenJnr_AdminPage_ChangingUserScopePermissionsForMailboxProject
+	When User clicks Admin on the left-hand menu
+	Then Admin page should be displayed to the user
+	When User clicks "Projects" link on the Admin page
+	Then "Projects" page should be displayed to the user
+	When User clicks the "CREATE PROJECT" Action button
+	Then "Create Project" page should be displayed to the user
+	When User enters "TestName11881" in the Project Name field
+	And User selects "All Mailboxes" in the Scope Project dropdown
+	And User clicks Create button on the Create Project page
+	Then created Project with "TestName11881" name is displayed correctly
+	Then Success message is displayed and contains "Your project has been created" text
+	When User clicks newly created project link
+	Then Project "TestName11881" is displayed to user
+	When User selects "Scope Details" tab on the Project details page
+	And User navigates to the "User Scope" tab in the Scope section on the Project details page
+	And User selects "Do not include users" checkbox on the Project details page
+	Then Scope List dropdown is disabled
+	Then User Scope checkboxes are disabled
+	Then Application Scope tab is hidden
+	When User selects "Scope Changes" tab on the Project details page
+	When User clicks "Users" tab in the Project Scope Changes section
+	Then "Users to add (0 of 0 selected)" is displayed to the user in the Project Scope Changes section
+	When User selects "Scope Details" tab on the Project details page
+	And User navigates to the "User Scope" tab in the Scope section on the Project details page
+	And User selects "Include users associated to mailboxes" checkbox on the Project details page
+	Then Scope List dropdown is active
+	Then User Scope checkboxes are active
+	Then Application Scope tab is displayed
+	When User selects "Scope Changes" tab on the Project details page
+	When User clicks "Users" tab in the Project Scope Changes section
+	Then "Users to add (0 of 14747 selected)" is displayed to the user in the Project Scope Changes section
+
+@Evergreen @Admin @EvergreenJnr_AdminPage @AdminPage @DAS12999 @Delete_Newly_Created_Project @Projects
+Scenario: EvergreenJnr_AdminPage_ChangingApplicationScopePermissionsForMailboxProject
+	When User clicks Admin on the left-hand menu
+	Then Admin page should be displayed to the user
+	When User clicks "Projects" link on the Admin page
+	Then "Projects" page should be displayed to the user
+	When User clicks the "CREATE PROJECT" Action button
+	Then "Create Project" page should be displayed to the user
+	When User enters "TestName12881" in the Project Name field
+	And User selects "All Mailboxes" in the Scope Project dropdown
+	And User clicks Create button on the Create Project page
+	Then Success message is displayed and contains "Your project has been created" text
+	When User clicks newly created project link
+	Then Project "TestName12881" is displayed to user
+	When User selects "Scope Details" tab on the Project details page
+	And User navigates to the "Application Scope" tab in the Scope section on the Project details page
+	And User selects "Include applications" checkbox on the Project details page
+	Then Scope List dropdown is active
+	Then Application Scope checkboxes are active
+	When User selects "Do not include applications" checkbox on the Project details page
+	Then Scope List dropdown is disabled
+	Then Application Scope checkboxes are disabled
+	When User selects "Scope Changes" tab on the Project details page
+	When User clicks "Applications" tab in the Project Scope Changes section
+	Then "Applications to add (0 of 0 selected)" is displayed to the user in the Project Scope Changes section

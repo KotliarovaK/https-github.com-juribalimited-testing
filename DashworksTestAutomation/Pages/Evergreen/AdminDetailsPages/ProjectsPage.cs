@@ -21,6 +21,12 @@ namespace DashworksTestAutomation.Pages.Evergreen.AdminDetailsPages
         [FindsBy(How = How.XPath, Using = "//div[contains(@class, 'wrapper-disabled')]")]
         public IWebElement DisabledAllAssociations { get; set; }
 
+        [FindsBy(How = How.XPath, Using = "//div[@class='ng-star-inserted']/div")]
+        public IWebElement UserScopeCheckboxes { get; set; }
+
+        [FindsBy(How = How.XPath, Using = "//div[@class='wrapper-disabled']")]
+        public IWebElement ApplicationScopeCheckboxes { get; set; }
+
         [FindsBy(How = How.XPath, Using = ".//span[@class='mat-option-text']")]
         public IWebElement DeleteProjectInActions { get; set; }
 
@@ -45,8 +51,11 @@ namespace DashworksTestAutomation.Pages.Evergreen.AdminDetailsPages
         [FindsBy(How = How.XPath, Using = "//mat-select[contains(@aria-label, 'Scope')]")]
         public IWebElement ScopeListDropdown { get; set; }
 
-        [FindsBy(How = How.XPath, Using = "//div[@class='mat-form-field-infix']/mat-select[contains(@class, 'disabled')]")]
+        [FindsBy(How = How.XPath, Using = "//div[@class='mat-form-field-infix']/mat-select[@aria-disabled='true']")]
         public IWebElement DisabledScopeListDropdown { get; set; }
+
+        [FindsBy(How = How.XPath, Using = "//div[@class='mat-form-field-infix']/mat-select[@aria-disabled='false']")]
+        public IWebElement ActiveScopeListDropdown { get; set; }
 
         [FindsBy(How = How.XPath, Using = "//span[@class='inline-link ng-star-inserted']/a")]
         public IWebElement NewProjectLink { get; set; }
@@ -68,6 +77,9 @@ namespace DashworksTestAutomation.Pages.Evergreen.AdminDetailsPages
 
         [FindsBy(How = How.XPath, Using = ".//div[@class='wrapper-disabled']//mat-select[@aria-label='User Scope']")]
         public IWebElement DisabledOwnerDropDown { get; set; }
+
+        [FindsBy(How = How.XPath, Using = "//span[text()='Application Scope']")]
+        public IWebElement ApplicationScopeTab { get; set; }
 
         public override List<By> GetPageIdentitySelectors()
         {
