@@ -370,7 +370,7 @@ Scenario: Projects_CreateUserScheduledProject
 	| 13 June 2016 | 0        | UserScheduledProject |
 	Then Success message is displayed with "Override date successfully inserted" text
 		#removing
-	#When User navigate to "Groups" tab
+	When User navigate to "Groups" tab
 	#And User removes created Group
 	#Then selected Group was removed
 	#When User removes created Group
