@@ -273,6 +273,26 @@ namespace DashworksTestAutomation.Steps.Dashworks
             Assert.IsTrue(adminTable.DescendingSortingIcon.Displayed);
         }
 
+        [Then(@"data in table is sorted by ""(.*)"" column in ascending order by default on the Admin page")]
+        public void ThenDataInTableIsSortedByColumnInAscendingOrderByDefaultOnTheAdminPage(string columnName)
+        {
+            var adminTable = _driver.NowAt<BaseGridPage>();
+
+            List<string> actualList = adminTable.GetColumnContent(columnName).Where(x => !x.Equals("")).ToList();
+            SortingHelper.IsListSorted(actualList);
+            _driver.WaitForDataLoading();
+        }
+
+        [Then(@"data in table is sorted by ""(.*)"" column in descending by default order on the Admin page")]
+        public void ThenDataInTableIsSortedByColumnInDescendingByDefaultOrderOnTheAdminPage(string columnName)
+        {
+            var adminTable = _driver.NowAt<BaseGridPage>();
+
+            List<string> expectedList = adminTable.GetColumnContent(columnName).Where(x => !x.Equals("")).ToList();
+            SortingHelper.IsListSorted(expectedList, false);
+            _driver.WaitForDataLoading();
+        }
+
         [Then(@"numeric data in table is sorted by ""(.*)"" column in ascending order on the Admin page")]
         public void ThenNumericDataInTableIsSortedByColumnInAscendingOrderOnTheAdminPage(string columnName)
         {
@@ -791,6 +811,7 @@ namespace DashworksTestAutomation.Steps.Dashworks
         public void ThenSuccessMessageIsDisplayedAndContainsText(string text)
         {
             var page = _driver.NowAt<BaseGridPage>();
+            _driver.WaitForDataLoading();
             _driver.WaitWhileControlIsNotDisplayed<BaseGridPage>(() => page.SuccessMessage);
             Assert.AreEqual("rgba(126, 189, 56, 1)", page.GetMessageColor());//Green color
             StringAssert.Contains(text, page.SuccessMessage.Text, "Success Message is not displayed");
@@ -990,7 +1011,7 @@ namespace DashworksTestAutomation.Steps.Dashworks
         public void ThenFollowingItemsAreOnboarded(Table table)
         {
             var projectElement = _driver.NowAt<BaseGridPage>();
-            Thread.Sleep(15000);
+            Thread.Sleep(20000);
             foreach (var row in table.Rows)
             {
                 if (projectElement.OnboardedObjectsTable.Displayed())

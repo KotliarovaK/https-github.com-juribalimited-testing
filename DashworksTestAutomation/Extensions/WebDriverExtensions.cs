@@ -346,12 +346,22 @@ namespace DashworksTestAutomation.Extensions
 
         public static void WaitForDataLoading(this RemoteWebDriver driver)
         {
+            WaitForDataToBeLoaded(driver, ".//div[contains(@class,'spinner')]", waitTimeout);
+        }
+
+        public static void WaitForDataLoadingOnProjects(this RemoteWebDriver driver)
+        {
+            WaitForDataToBeLoaded(driver, ".//div[@id='ajaxProgressMessage']/img", waitTimeout);
+        }
+
+        private static void WaitForDataToBeLoaded(RemoteWebDriver driver, string loadingSpinnerSelector, TimeSpan timepout)
+        {
             int attempts = 0;
             bool wasLoadingSpinnerDisplayed = false;
 
             //Small sleep for Spinner waiting
             Thread.Sleep(400);
-            var by = By.XPath(".//div[contains(@class,'spinner')]");
+            var by = By.XPath(loadingSpinnerSelector);
 
             do
             {
@@ -360,13 +370,13 @@ namespace DashworksTestAutomation.Extensions
                 if (wasLoadingSpinnerDisplayed)
                     try
                     {
-                        WebDriverWait wait = new WebDriverWait(driver, waitTimeout);
+                        WebDriverWait wait = new WebDriverWait(driver, timepout);
                         wait.Until(InvisibilityOfAllElementsLocatedBy(by));
                     }
                     catch (Exception e)
                     {
                         Logger.Write(
-                            $"WARNING: Loading spinner is displayed longer that {waitTimeout.Seconds * attempts} seconds: {driver.Url}");
+                            $"WARNING: Loading spinner is displayed longer that {timepout.Seconds * attempts} seconds: {driver.Url}");
                         throw e;
                     }
                 else
