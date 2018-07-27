@@ -211,6 +211,13 @@ namespace DashworksTestAutomation.Steps.Dashworks
             }
         }
 
+        [Then(@"All Associations are available")]
+        public void ThenAllAssociationsAreAvailable()
+        {
+            var associations = _driver.NowAt<ProjectsPage>();
+            Assert.IsFalse(associations.DisabledAssociation.Displayed(), "Some Associations are disabled");
+        }
+
         [When(@"User clicks ""(.*)"" tab in the Project Scope Changes section")]
         public void WhenUserClicksTabInTheProjectScopeChangesSection(string tabName)
         {
