@@ -110,24 +110,20 @@ namespace DashworksTestAutomation.Pages.Evergreen.AdminDetailsPages
         [FindsBy(How = How.XPath, Using = ".//div[contains(@class, 'inline-success')]")]
         public IWebElement SuccessMessage { get; set; }
 
+        [FindsBy(How = How.XPath, Using = "//div[contains(@class, 'inline-info')]")]
+        public IWebElement InfoMessage { get; set; }
+
         [FindsBy(How = How.XPath, Using = ".//div[contains(@class, 'inline-error ng-star-inserted')]")]
         public IWebElement ErrorMessage { get; set; }
 
-        [FindsBy(How = How.XPath, Using = ".//div[@id='messageAdmin']")]
-        public IWebElement DeleteWarningMessage { get; set; }
+        [FindsBy(How = How.XPath, Using = "//div[contains(@class, 'inline-tip')]")]
+        public IWebElement WarningMessage { get; set; }
 
         [FindsBy(How = How.XPath, Using = ".//button[contains(@class, 'messageAction')]/span[text()='DELETE']")]
         public IWebElement DeleteButtonInWarningMessage { get; set; }
 
         [FindsBy(How = How.XPath, Using = ".//div[@class='empty-message ng-star-inserted'][text()='No items']")]
         public IWebElement NoItemsMessage { get; set; }
-
-        public bool WarningMessageAdminPage(string text)
-        {
-            Driver.WaitForElement(By.XPath(".//div[@id='messageAdmin']"));
-            return Driver.IsElementDisplayed(
-                By.XPath($".//div[@id='messageAdmin'][text()='{text}']"));
-        }
 
         #endregion
 
@@ -260,7 +256,7 @@ namespace DashworksTestAutomation.Pages.Evergreen.AdminDetailsPages
         {
             SearchTextbox.Clear();
             SearchTextbox.SendKeys(itemName);
-            var selector = $".//span[text()='{itemName}']";
+            var selector = $".//span[contains(text(), '{itemName}')]";
             Driver.WaitWhileControlIsNotDisplayed(By.XPath(selector));
             Driver.FindElement(By.XPath(selector)).Click();
         }
@@ -277,6 +273,11 @@ namespace DashworksTestAutomation.Pages.Evergreen.AdminDetailsPages
             Driver.WaitForElement(By.XPath(".//div[@id='agGridTable']"));
             return Driver.IsElementDisplayed(
                 By.XPath($".//div[@role='presentation']/div/div[@title='{objectsNumber}']"));
+        }
+
+        public bool TextMessage(string textMessage)
+        {
+            return Driver.IsElementDisplayed(By.XPath($".//div[text()='{textMessage}']"));
         }
 
         public IWebElement GetColumnHeaderByName(string columnName)
@@ -321,6 +322,16 @@ namespace DashworksTestAutomation.Pages.Evergreen.AdminDetailsPages
         public bool GetCreatedProjectName(string projectName)
         {
             return Driver.IsElementDisplayed(By.XPath($".//a[text()='{projectName}']"));
+        }
+
+        public string GetMessageColor()
+        {
+            return Driver.FindElement(By.XPath("//div[@id='messageAdmin']")).GetCssValue("background-color");
+        }
+
+        public bool GetDefaultColumnValue(string defaultValue)
+        {
+            return Driver.IsElementDisplayed(By.XPath($"//span[contains(@class, 'boolean')][text()='{defaultValue}']"));
         }
     }
 }

@@ -111,12 +111,12 @@ Scenario: EvergreenJnr_DevicesList_CheckThatUserWithoutJustTheProjectAdministrat
 	When User select "Hostname" rows in the grid
 	| SelectedRowsName |
 	| 0DTXL41673EW7O   |
-	And User selects "Bulk Update" in the Actions dropdown
+	And User selects "Bulk update" in the Actions dropdown
 	And User selects "Update request type" Bulk Update Type on Action panel
 	And User selects "Windows" Project on Action panel
 	And User selects "Computer: Laptop Replacement" Request Type on Action panel
 	And User clicks the "UPDATE" Action button
-	Then Warning message with "Are you sure you want proceed, this operation cannot be undone." text is displayed on Action panel
+	Then Warning message with "Are you sure you want to proceed, this operation cannot be undone." text is displayed on Action panel
 	And User clicks "UPDATE" button on message box
 	And Success message with "1 of 1 objects were valid for the update. Your changes have successfully been queued." text is displayed on Action panel
 	When User refreshes agGrid
@@ -164,12 +164,12 @@ Scenario: EvergreenJnr_ApplicationsList_CheckThatUserWithoutJustTheProjectBulkUp
 	When User select "Application" rows in the grid
 	| SelectedRowsName                         |
 	| 0047 - Microsoft Access 97 SR-2 Francais |
-	And User selects "Bulk Update" in the Actions dropdown
+	And User selects "Bulk update" in the Actions dropdown
 	And User selects "Update request type" Bulk Update Type on Action panel
-	And User selects "Email Migration" Project on Action panel
+	And User selects "Email Mi" Project on Action panel
 	And User selects "Sharepoint Application" Request Type on Action panel
 	And User clicks the "UPDATE" Action button
-	Then Warning message with "Are you sure you want proceed, this operation cannot be undone." text is displayed on Action panel
+	Then Warning message with "Are you sure you want to proceed, this operation cannot be undone." text is displayed on Action panel
 	And User clicks "UPDATE" button on message box
 	And Success message with "1 of 1 objects were valid for the update. Your changes have successfully been queued." text is displayed on Action panel
 	When User refreshes agGrid
