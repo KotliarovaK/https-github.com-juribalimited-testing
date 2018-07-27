@@ -187,9 +187,24 @@ Scenario: EvergreenJnr_AdminPage_CheckThatAfterApplyingDoNotIncludeDeviceOwnersL
 	When User selects "Scope Details" tab on the Project details page
 	And User navigates to the "User Scope" tab in the Scope section on the Project details page
 	When User selects "Do not include device owners" checkbox on the Project details page
-	And User selects "Scope Changes" tab on the Project details page
+	Then Scope List dropdown is disabled
+	When User navigates to the "Application Scope" tab in the Scope section on the Project details page
+	Then following associations are disabled:
+	| AssociationName                        |
+	| Entitled to the device owner           |
+	| Used by the device owner on any device |
+	When User selects "Scope Changes" tab on the Project details page
 	And User clicks "Users" tab in the Project Scope Changes section 
 	Then "Users to add (0 of 0 selected)" is displayed to the user in the Project Scope Changes section
+	When User selects "Scope Details" tab on the Project details page
+	And User navigates to the "User Scope" tab in the Scope section on the Project details page
+	When User selects "Include device owners" checkbox on the Project details page
+	Then Scope List dropdown is active
+	When User navigates to the "Application Scope" tab in the Scope section on the Project details page
+	Then All Associations are available
+	When User selects "Scope Changes" tab on the Project details page
+	And User clicks "Users" tab in the Project Scope Changes section 
+	Then "Users to add (0 of 14631 selected)" is displayed to the user in the Project Scope Changes section
 	When User click on Back button
 	When User enters "NewProjectName" text in the Search field for "Project" column
 	And User selects all rows on the grid
@@ -1052,7 +1067,7 @@ Examples:
 	| Users     | Username      | ProjectList4511 | 41,339    | TestProject4512 | 41339        | Domain      | CORP     | 103          | 103      | TestProject4512 |
 	| Mailboxes | Email Address | ProjectList4548 | 14,784    | TestProject4513 | 14784        | Owner City  | London   | 3,294        | 3294     | TestProject4513 |
 
-@Evergreen @Admin @EvergreenJnr_AdminPage @AdminPage @DAS12816 @DAS12873 @DAS13007 @Not_Run @Project_Creation_and_Scope
+@Evergreen @Admin @EvergreenJnr_AdminPage @AdminPage @DAS12816 @DAS12873 @DAS13007 @Project_Creation_and_Scope @Not_Run
 Scenario: EvergreenJnr_AdminPage_CheckThatObjectsIsOnboardedToTheProjectWithCloneEvergreenBucketsToProjectBuckets
 	When User clicks Admin on the left-hand menu
 	Then Admin page should be displayed to the user
@@ -1216,7 +1231,7 @@ Scenario: EvergreenJnr_AdminPage_CheckThatOnboardedObjectsAreDisplayedAfterChang
 	Then "2" Onboarded objects are displayed
 	When User clicks Admin on the left-hand menu
 
-@Evergreen @Admin @EvergreenJnr_AdminPage @AdminPage @DAS12364 @Delete_Newly_Created_Project @Project_Creation_and_Scope @Projects
+@Evergreen @Admin @EvergreenJnr_AdminPage @AdminPage @DAS12364 @DAS12999 @Delete_Newly_Created_Project @Project_Creation_and_Scope @Projects
 Scenario: EvergreenJnr_AdminPage_CheckingThatTheProjectIsUpdatedWithoutErrors
 	When User clicks Admin on the left-hand menu
 	Then Admin page should be displayed to the user
@@ -1230,6 +1245,7 @@ Scenario: EvergreenJnr_AdminPage_CheckingThatTheProjectIsUpdatedWithoutErrors
 	Then created Project with "TestProject12364" name is displayed correctly
 	Then Success message is displayed and contains "Your project has been created" text
 	When User clicks newly created project link
+	Then Info message is displayed and contains "There are no objects in this project, use Scope Changes to add objects to your project" text
 	Then Project "TestProject12364" is displayed to user
 	When User selects "Scope Changes" tab on the Project details page
 	Then "Users to add (0 of 41339 selected)" is displayed to the user in the Project Scope Changes section
@@ -2407,3 +2423,48 @@ Scenario: EvergreenJnr_AdminPage_ChangingApplicationScopePermissionsForMailboxPr
 	When User selects "Scope Changes" tab on the Project details page
 	When User clicks "Applications" tab in the Project Scope Changes section
 	Then "Applications to add (0 of 0 selected)" is displayed to the user in the Project Scope Changes section
+
+@Evergreen @Admin @EvergreenJnr_AdminPage @AdminPage @DAS12999 @Delete_Newly_Created_Project @Project_Creation_and_Scope @Projects
+Scenario: EvergreenJnr_AdminPage_OnboardingMailboxesUsersApplicationsObjectsUsingUpdateAllChangesButton
+	When User clicks Admin on the left-hand menu
+	Then Admin page should be displayed to the user
+	When User clicks "Projects" link on the Admin page
+	Then "Projects" page should be displayed to the user
+	When User clicks the "CREATE PROJECT" Action button
+	Then "Create Project" page should be displayed to the user
+	When User enters "TestProject65" in the Project Name field
+	And User selects " All Mailboxes" in the Scope Project dropdown
+	And User clicks Create button on the Create Project page
+	Then Success message is displayed and contains "Your project has been created" text
+	When User clicks newly created project link
+	Then Info message is displayed and contains "There are no objects in this project, use Scope Changes to add objects to your project" text
+	Then Project "TestProject65" is displayed to user
+	When User selects "Scope Changes" tab on the Project details page
+	Then "Mailboxes to add (0 of 14784 selected)" is displayed to the user in the Project Scope Changes section
+	When User expands the object to add
+	And User selects following Objects to the Project
+	| Objects                                            |
+	| 003F5D8E1A844B1FAA5@bclabs.local (Hunter, Melanie) |
+	| 00DB4000EDD84951993@bclabs.local (CSC, SS)         |
+	When User clicks "Users" tab in the Project Scope Changes section
+	Then "Users to add (0 of 14747 selected)" is displayed to the user in the Project Scope Changes section
+	When User expands the object to add 
+	And User selects following Objects to the Project
+	| Objects                            |
+	| 02E0346DF7804F25835 (Gill, Donna)  |
+	| 037AF4CF47C1452D8A4 (Vanetti, Joe) |
+	#When User clicks "Applications" tab in the Project Scope Changes section
+	#Then "Applications to add (0 of 0 selected)" is displayed to the user in the Project Scope Changes section
+	#When User expands the object to add 
+	#And User selects following Objects to the Project
+	#| Objects                                          |
+	#| ACDSee 4.0.2 PowerPack Trial Version (4.00.0002) |
+	#| Backburner (2.1.2.0)                             |
+	When User clicks the "UPDATE ALL CHANGES" Action button
+	And User clicks the "UPDATE PROJECT" Action button
+	Then Success message is displayed and contains "4 objects queued for onboarding, 0 objects offboarded" text
+	#Then "Applications to add (0 of 2079 selected)" is displayed to the user in the Project Scope Changes section
+	When User clicks "Mailboxes" tab in the Project Scope Changes section
+	Then "Mailboxes to add (0 of 14782 selected)" is displayed to the user in the Project Scope Changes section
+	When User clicks "Users" tab in the Project Scope Changes section
+	Then "Users to add (0 of 14745 selected)" is displayed to the user in the Project Scope Changes section
