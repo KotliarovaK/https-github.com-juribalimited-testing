@@ -296,10 +296,11 @@ Scenario: EvergreenJnr_AdminPage_CheckThatNoConsoleErrorsAreDisplayedWhenDeleteD
 	When User clicks "Select All" checkbox from String Filter on the Admin page
 	Then There are no errors in the browser console
 	When User clicks Reset Filters button on the Admin page
-	When User click on "Bucket" column header on the Admin page
-	Then data in table is sorted by "Bucket" column in ascending order on the Admin page
-	When User click on "Bucket" column header on the Admin page
-	Then data in table is sorted by "Bucket" column in descending order on the Admin page
+	#Add sorting check for "Bucket" column
+	When User click on "Project" column header on the Admin page
+	Then data in table is sorted by "Project" column in ascending order on the Admin page
+	When User click on "Project" column header on the Admin page
+	Then data in table is sorted by "Project" column in descending order on the Admin page
 	When User click on "Devices" column header on the Admin page
 	Then numeric data in table is sorted by "Devices" column in descending order on the Admin page
 	When User click on "Devices" column header on the Admin page
@@ -1722,7 +1723,7 @@ Examples:
 	| Devices   | Project2587 | StaticList6521 | 00KLL9S8NRF0X6         | Hostname      | TestList6584 |
 	| Mailboxes | Project2587 | StaticList6522 | ZVI880605@bclabs.local | Email Address | TestList6583 |
 
-@Evergreen @Admin @EvergreenJnr_AdminPage @AdminPage @DAS12999 @Project_Creation_and_Scope @Delete_Newly_Created_Project @Delete_Newly_Created_List
+@Evergreen @Admin @EvergreenJnr_AdminPage @AdminPage @DAS12999 @DAS12799 @Project_Creation_and_Scope @Delete_Newly_Created_Project @Delete_Newly_Created_List @Not_Run
 Scenario: EvergreenJnr_AdminPage_CheckMailboxProjectCreationWithCloneEvergreenBuckets
 	When User clicks Admin on the left-hand menu
 	Then Admin page should be displayed to the user
