@@ -614,132 +614,132 @@ Scenario: Projects_CreateComputerScheduledProject
 	| 03 Apr 2016 | 0        | ComputerScheduledProject |
 	Then Success message is displayed with "Override date successfully inserted" text
 		#removing
-	When User navigate to "Groups" tab
-	And User removes created Group
-	Then selected Group was removed
-	When User removes created Group
-	Then selected Group was removed
-	When User removes created Group
-	Then selected Group was removed
-	When User navigate to "Teams" tab
-	And User removes created Team
-	Then selected Team was removed
-	When User removes created Team
-	Then selected Team was removed
-	When User removes created Team
-	Then selected Team was removed
-	When User navigate to "Tasks" tab
-	And User removes created Task
-	Then selected Task was removed
-	And Success message is displayed with "Task successfully deleted." text
-	When User removes created Task
-	Then selected Task was removed
-	And Success message is displayed with "Task successfully deleted." text
-	When User removes created Task
-	Then selected Task was removed
-	And Success message is displayed with "Task successfully deleted." text
-	When User removes created Task
-	Then selected Task was removed
-	And Success message is displayed with "Task successfully deleted." text
-	When User removes created Task
-	Then selected Task was removed
-	And Success message is displayed with "Task successfully deleted." text
-	When User removes created Task
-	Then selected Task was removed
-	And Success message is displayed with "Task successfully deleted." text
-	When User removes created Task
-	Then selected Task was removed
-	And Success message is displayed with "Task successfully deleted." text
-	When User removes created Task
-	Then selected Task was removed
-	And Success message is displayed with "Task successfully deleted." text
-	When User removes created Task
-	Then selected Task was removed
-	And Success message is displayed with "Task successfully deleted." text
-	When User removes created Task
-	Then selected Task was removed
-	And Success message is displayed with "Task successfully deleted." text
-	When User removes created Task
-	Then selected Task was removed
-	And Success message is displayed with "Task successfully deleted." text
-	When User removes created Task
-	Then selected Task was removed
-	And Success message is displayed with "Task successfully deleted." text
-	When User removes created Task
-	Then selected Task was removed
-	And Success message is displayed with "Task successfully deleted." text
-	When User removes created Task
-	Then selected Task was removed
-	And Success message is displayed with "Task successfully deleted." text
-	When User removes created Task
-	Then selected Task was removed
-	And Success message is displayed with "Task successfully deleted." text
-	When User removes created Task
-	Then selected Task was removed
-	And Success message is displayed with "Task successfully deleted." text
-	When User removes created Task
-	Then selected Task was removed
-	And Success message is displayed with "Task successfully deleted." text
-	When User removes created Task
-	Then selected Task was removed
-	And Success message is displayed with "Task successfully deleted." text
-	When User removes created Task
-	Then selected Task was removed
-	And Success message is displayed with "Task successfully deleted." text
-	When User navigate to "Stages" tab
-	And User removes created Stage
-	Then selected Stage was removed
-	And Success message is displayed with "Stage successfully deleted." text
-	When User removes created Stage
-	Then selected Stage was removed
-	And Success message is displayed with "Stage successfully deleted." text
-	When User removes created Stage
-	Then selected Stage was removed
-	And Success message is displayed with "Stage successfully deleted." text
-	When User navigate to "Categories" tab
-	And User removes created Category
-	Then selected Category was removed
-	And Success message is displayed with "Category successfully deleted." text
-	When User navigate to "Request Types" tab
-	And User makes "[Default (Computer)]" Request Type default
-	| DefaultRequestType |
-	| true               |
-	Then Success message is displayed with "Request Type successfully updated" text
-	When User clicks "Cancel" button
-	And User removes created Request Type
-	Then selected Request Type was removed
-	And Success message is displayed with "Request Type successfully deleted" text
-	When User makes "[Default (Application)]" Request Type default
-	| DefaultRequestType |
-	| true               |
-	Then Success message is displayed with "Request Type successfully updated" text
-	When User clicks "Cancel" button
-	And User removes created Request Type
-	Then selected Request Type was removed
-	And Success message is displayed with "Request Type successfully deleted" text
-	When User makes "[Default (User)]" Request Type default
-	| DefaultRequestType |
-	| true               |
-	Then Success message is displayed with "Request Type successfully updated" text
-	When User clicks "Cancel" button
-	And User removes created Request Type
-	Then selected Request Type was removed
-	And Success message is displayed with "Request Type successfully deleted" text
-	When User navigate to "Mail Templates" tab
-	And User removes created Mail Template
-	Then selected Mail Template was removed
-	And Success message is displayed with "Mail Template successfully deleted." text
-	When User navigate to "Details" tab
-	And User removes the Project
-	Then Success message is displayed with "Project successfully deleted" text
-	When User navigate to Manage link
-	And User select "Manage Users" option in Management Console
-	And User removes created User
-	Then selected User was removed
-	And Success message is displayed
-	When User removes created User
-	Then selected User was removed
-	And Success message is displayed
-	When User removes created User
-	Then selected User was removed
-	And Success message is displayed
+	#When User navigate to "Groups" tab
+	#And User removes created Group
+	#Then selected Group was removed
+	#When User removes created Group
+	#Then selected Group was removed
+	#When User removes created Group
+	#Then selected Group was removed
+	#When User navigate to "Teams" tab
+	#And User removes created Team
+	#Then selected Team was removed
+	#When User removes created Team
+	#Then selected Team was removed
+	#When User removes created Team
+	#Then selected Team was removed
+	#When User navigate to "Tasks" tab
+	#And User removes created Task
+	#Then selected Task was removed
+	#And Success message is displayed with "Task successfully deleted." text
+	#When User removes created Task
+	#Then selected Task was removed
+	#And Success message is displayed with "Task successfully deleted." text
+	#When User removes created Task
+	#Then selected Task was removed
+	#And Success message is displayed with "Task successfully deleted." text
+	#When User removes created Task
+	#Then selected Task was removed
+	#And Success message is displayed with "Task successfully deleted." text
+	#When User removes created Task
+	#Then selected Task was removed
+	#And Success message is displayed with "Task successfully deleted." text
+	#When User removes created Task
+	#Then selected Task was removed
+	#And Success message is displayed with "Task successfully deleted." text
+	#When User removes created Task
+	#Then selected Task was removed
+	#And Success message is displayed with "Task successfully deleted." text
+	#When User removes created Task
+	#Then selected Task was removed
+	#And Success message is displayed with "Task successfully deleted." text
+	#When User removes created Task
+	#Then selected Task was removed
+	#And Success message is displayed with "Task successfully deleted." text
+	#When User removes created Task
+	#Then selected Task was removed
+	#And Success message is displayed with "Task successfully deleted." text
+	#When User removes created Task
+	#Then selected Task was removed
+	#And Success message is displayed with "Task successfully deleted." text
+	#When User removes created Task
+	#Then selected Task was removed
+	#And Success message is displayed with "Task successfully deleted." text
+	#When User removes created Task
+	#Then selected Task was removed
+	#And Success message is displayed with "Task successfully deleted." text
+	#When User removes created Task
+	#Then selected Task was removed
+	#And Success message is displayed with "Task successfully deleted." text
+	#When User removes created Task
+	#Then selected Task was removed
+	#And Success message is displayed with "Task successfully deleted." text
+	#When User removes created Task
+	#Then selected Task was removed
+	#And Success message is displayed with "Task successfully deleted." text
+	#When User removes created Task
+	#Then selected Task was removed
+	#And Success message is displayed with "Task successfully deleted." text
+	#When User removes created Task
+	#Then selected Task was removed
+	#And Success message is displayed with "Task successfully deleted." text
+	#When User removes created Task
+	#Then selected Task was removed
+	#And Success message is displayed with "Task successfully deleted." text
+	#When User navigate to "Stages" tab
+	#And User removes created Stage
+	#Then selected Stage was removed
+	#And Success message is displayed with "Stage successfully deleted." text
+	#When User removes created Stage
+	#Then selected Stage was removed
+	#And Success message is displayed with "Stage successfully deleted." text
+	#When User removes created Stage
+	#Then selected Stage was removed
+	#And Success message is displayed with "Stage successfully deleted." text
+	#When User navigate to "Categories" tab
+	#And User removes created Category
+	#Then selected Category was removed
+	#And Success message is displayed with "Category successfully deleted." text
+	#When User navigate to "Request Types" tab
+	#And User makes "[Default (Computer)]" Request Type default
+	#| DefaultRequestType |
+	#| true               |
+	#Then Success message is displayed with "Request Type successfully updated" text
+	#When User clicks "Cancel" button
+	#And User removes created Request Type
+	#Then selected Request Type was removed
+	#And Success message is displayed with "Request Type successfully deleted" text
+	#When User makes "[Default (Application)]" Request Type default
+	#| DefaultRequestType |
+	#| true               |
+	#Then Success message is displayed with "Request Type successfully updated" text
+	#When User clicks "Cancel" button
+	#And User removes created Request Type
+	#Then selected Request Type was removed
+	#And Success message is displayed with "Request Type successfully deleted" text
+	#When User makes "[Default (User)]" Request Type default
+	#| DefaultRequestType |
+	#| true               |
+	#Then Success message is displayed with "Request Type successfully updated" text
+	#When User clicks "Cancel" button
+	#And User removes created Request Type
+	#Then selected Request Type was removed
+	#And Success message is displayed with "Request Type successfully deleted" text
+	#When User navigate to "Mail Templates" tab
+	#And User removes created Mail Template
+	#Then selected Mail Template was removed
+	#And Success message is displayed with "Mail Template successfully deleted." text
+	#When User navigate to "Details" tab
+	#And User removes the Project
+	#Then Success message is displayed with "Project successfully deleted" text
+	#When User navigate to Manage link
+	#And User select "Manage Users" option in Management Console
+	#And User removes created User
+	#Then selected User was removed
+	#And Success message is displayed
+	#When User removes created User
+	#Then selected User was removed
+	#And Success message is displayed
+	#When User removes created User
+	#Then selected User was removed
+	#And Success message is displayed
