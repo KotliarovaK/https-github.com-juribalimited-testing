@@ -973,7 +973,6 @@ namespace DashworksTestAutomation.Tests.Projects.CreatingProjects
                         "UserScheduledProject"});
             testRunner.And("User updates the Override Dates on Capacity tab", ((string)(null)), table51, "And ");
             testRunner.Then("Success message is displayed with \"Override date successfully inserted\" text", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-            testRunner.When("User navigate to \"Groups\" tab", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
             this.ScenarioCleanup();
         }
     }
