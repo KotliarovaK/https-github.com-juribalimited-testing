@@ -954,7 +954,7 @@ Scenario: EvergreenJnr_AdminPage_CheckMessageThatDisplayedWhenDeletingBucket
 	When User clicks Delete button in the warning message
 	Then Success message is displayed and contains "The selected bucket has been deleted" text
 
-@Evergreen @Admin @EvergreenJnr_AdminPage @AdminPage @DAS12387 @DAS12757 @Delete_Newly_Created_Project @Project_Creation_and_Scope @Projects
+@Evergreen @Admin @EvergreenJnr_AdminPage @AdminPage @DAS12387 @DAS12757 @DAS12999 @Delete_Newly_Created_Project @Project_Creation_and_Scope @Projects
 Scenario: EvergreenJnr_AdminPage_CheckThatOnboardingOfObjectsIsProceedForScopedProjects
 	When User clicks Admin on the left-hand menu
 	Then Admin page should be displayed to the user
@@ -985,13 +985,17 @@ Scenario: EvergreenJnr_AdminPage_CheckThatOnboardingOfObjectsIsProceedForScopedP
 	When User click on Back button
 	And User clicks the "CREATE PROJECT" Action button
 	Then "Create Project" page should be displayed to the user
-	When User enters "TestProject15" in the Project Name field
+	When User enters "NewProject15" in the Project Name field
 	And User selects "All Devices" in the Scope Project dropdown
 	When User clicks Create button on the Create Project page
 	Then Success message is displayed and contains "Your project has been created" text
 	When User clicks newly created project link
-	Then Project "TestProject15" is displayed to user
+	Then Project "NewProject15" is displayed to user
 	And Success message is not displayed on the Projects page
+	When User click on Back button
+	Then data in table is sorted by "Project" column in ascending order by default on the Admin page
+	When User enters "NewProject15" text in the Search field for "Project" column
+	Then Counter shows "1" found rows
 
 @Evergreen @Admin @EvergreenJnr_AdminPage @AdminPage @DAS12332 @Delete_Newly_Created_Project @Project_Creation_and_Scope @Projects
 Scenario: EvergreenJnr_AdminPage_CheckingThatRedBannerWithOkMessageIsNotDisplayedAfterAddingItemsToCreatedProject
@@ -1110,7 +1114,7 @@ Scenario: EvergreenJnr_AdminPage_CheckThatObjectsIsOnboardedToTheProjectWithClon
 	And User removes selected item
 	When User clicks refresh button in the browser
 
-@Evergreen @Admin @EvergreenJnr_AdminPage @AdminPage @DAS12490 @DAS13007 @Project_Creation_and_Scope @Projects @Not_Run
+@Evergreen @Admin @EvergreenJnr_AdminPage @AdminPage @DAS12490 @DAS13007 @DAS12999 @Project_Creation_and_Scope @Delete_Newly_Created_Project @Projects @Not_Run
 Scenario: EvergreenJnr_AdminPage_CheckingThatProjectDetailsForOnboardedObjectsIsDisplayedCorrectly
 	When User clicks Admin on the left-hand menu
 	Then Admin page should be displayed to the user
@@ -1130,6 +1134,7 @@ Scenario: EvergreenJnr_AdminPage_CheckingThatProjectDetailsForOnboardedObjectsIs
 	And User selects following Objects to the Project
 	| Objects        |
 	| 0IJB93JZPG72PX |
+	| 04I01QSFL1AWKM |
 	And User clicks the "UPDATE ALL CHANGES" Action button
 	When User clicks the "UPDATE PROJECT" Action button
 	When User selects "Queue" tab on the Project details page
@@ -1138,25 +1143,26 @@ Scenario: EvergreenJnr_AdminPage_CheckingThatProjectDetailsForOnboardedObjectsIs
 	Then following Items are onboarded
 	| Items          |
 	| 0IJB93JZPG72PX |
+	| 04I01QSFL1AWKM |
+	Then Counter shows "2" found rows
 	When User selects "History" tab on the Project details page
 	Then There are no errors in the browser console
 	Then Error message is not displayed on the Projects page
 	Then following Items are onboarded
 	| Items          |
 	| 0IJB93JZPG72PX |
+	| 04I01QSFL1AWKM |
+	Then Counter shows "2" found rows
+	Then data in table is sorted by "Item" column in ascending order by default on the Admin page
+	Then data in table is sorted by "Date" column in descending by default order on the Admin page
 	When User type "0IJB93JZPG72PX" in Global Search Field
 	Then User clicks on "0IJB93JZPG72PX (Carmen H. Benson)" search result
 	When User navigates to the "Projects" tab
 	And User opens "Device Projects" section on the Details Page
+	#Remove Hash after fixed
 	And User clicks "TestProject12490" link on the Details Page
 	Then "Project Object" page is displayed to the user
 	Then There are no errors in the browser console
-	And User click back button in the browser
-	When User clicks Admin on the left-hand menu
-	Then Admin page should be displayed to the user
-	When User enters "TestProject12490" text in the Search field for "Project" column
-	And User selects all rows on the grid
-	And User removes selected item
 
 @Evergreen @Admin @EvergreenJnr_AdminPage @AdminPage @DAS11700 @Delete_Newly_Created_Project @Project_Creation_and_Scope
 Scenario: EvergreenJnr_AdminPage_CheckingThatTheProjectIdColumnIsAddedAndDisplayedCorrectlyToTheAdminProjectGrid
@@ -1194,7 +1200,7 @@ Scenario: EvergreenJnr_AdminPage_CheckingThatProjectNameIsDisplayedCorrectlyWhen
 	And User clicks Create button on the Create Project page
 	Then created Project with "<TestProject11985>" name is displayed correctly
 
-@Evergreen @Admin @EvergreenJnr_AdminPage @AdminPage @DAS12806 @Delete_Newly_Created_Project @Project_Creation_and_Scope @Projects @Teams
+@Evergreen @Admin @EvergreenJnr_AdminPage @AdminPage @DAS12806 @DAS12999 @Delete_Newly_Created_Project @Project_Creation_and_Scope @Projects @Teams
 Scenario: EvergreenJnr_AdminPage_CheckThatOnboardedObjectsAreDisplayedAfterChangingProjectBucketsSetting
 	When User clicks Admin on the left-hand menu
 	Then Admin page should be displayed to the user
