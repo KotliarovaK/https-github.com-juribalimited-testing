@@ -2343,7 +2343,7 @@ Scenario Outline: EvergreenJnr_ChangingMailboxScopeListToAnotherListForMailboxPr
 	Then Admin page should be displayed to the user
 	When User clicks the "CREATE PROJECT" Action button
 	Then "Create Project" page should be displayed to the user
-	When User enters "DevicesProject10" in the Project Name field
+	When User enters "MailboxesProject3" in the Project Name field
 	And User selects "All Mailboxes" in the Scope Project dropdown
 	And User clicks Create button on the Create Project page
 	Then Success message is displayed and contains "Your project has been created" text
@@ -2469,3 +2469,43 @@ Scenario: EvergreenJnr_AdminPage_OnboardingMailboxesUsersApplicationsObjectsUsin
 	Then "Mailboxes to add (0 of 14782 selected)" is displayed to the user in the Project Scope Changes section
 	When User clicks "Users" tab in the Project Scope Changes section
 	Then "Users to add (0 of 14745 selected)" is displayed to the user in the Project Scope Changes section
+
+@Evergreen @Admin @EvergreenJnr_AdminPage @AdminPage @DAS12999 @Delete_Newly_Created_Project @Delete_Newly_Created_List @Projects
+Scenario Outline: EvergreenJnr_ChangingApplicationScopeListToAnotherListForMailboxProject
+	When User clicks "Applications" on the left-hand menu
+	Then "Applications" list should be displayed to the user
+	When User clicks the Filters button
+	Then Filters panel is displayed to the user
+	When User add "Vendor" filter where type is "Equals" with added column and following value:
+	| Values |
+	| Adobe  |
+	Then "39" rows are displayed in the agGrid
+	When User create dynamic list with "DynamicList87" name on "Applications" page
+	Then "DynamicList87" list is displayed to user
+	When User create static list with "StaticList1529" name on "Applications" page with following items
+	| ItemName             |
+	| WMI Tools            |
+	| Windows Live Toolbar |
+	Then "StaticList1529" list is displayed to user
+	Then "2" rows are displayed in the agGrid
+	When User clicks Admin on the left-hand menu
+	Then Admin page should be displayed to the user
+	When User clicks the "CREATE PROJECT" Action button
+	Then "Create Project" page should be displayed to the user
+	When User enters "MailboxProject2" in the Project Name field
+	And User selects "All Mailboxes" in the Scope Project dropdown
+	And User clicks Create button on the Create Project page
+	Then Success message is displayed and contains "Your project has been created" text
+	When User clicks newly created project link
+	And User selects "Scope Changes" tab on the Project details page
+	When User clicks "Applications" tab in the Project Scope Changes section
+	Then "Applications to add (0 of 0 selected)" is displayed to the user in the Project Scope Changes section
+	When User selects "Scope Details" tab on the Project details page
+	When User navigates to the "Application Scope" tab in the Scope section on the Project details page
+	When  User selects "Include applications" checkbox on the Project details page
+	And User selects "<ChangingToList1>" in the Scope Project details
+
+Examples:
+	| ChangingToList1  | ChangingToList2 | ObjectsToAdd1                         | ObjectsToAdd2                         |
+	| All Applications | StaticList1529  | Applications to add (0 of 0 selected) | Applications to add (0 of 0 selected) |
+	| StaticList1529   | DynamicList87   | Applications to add (0 of 0 selected) | Applications to add (0 of 0 selected) |
