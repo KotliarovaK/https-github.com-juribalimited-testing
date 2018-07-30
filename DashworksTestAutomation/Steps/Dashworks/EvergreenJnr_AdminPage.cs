@@ -331,6 +331,24 @@ namespace DashworksTestAutomation.Steps.Dashworks
             Assert.IsTrue(listpageMenu.DescendingSortingIcon.Displayed);
         }
 
+        [Then(@"date in table is sorted by ""(.*)"" column in ascending order on the Admin page")]
+        public void ThenDateInTableIsSortedByColumnInAscendingOrderOnTheAdminPage(string columnName)
+        {
+            var listpageMenu = _driver.NowAt<BaseGridPage>();
+            List<string> originalList = listpageMenu.GetColumnContent(columnName).Where(x => !x.Equals("")).ToList();
+            SortingHelper.IsListSortedByDate(originalList, false);
+            Assert.IsTrue(listpageMenu.AscendingSortingIcon.Displayed);
+        }
+
+        [Then(@"date in table is sorted by ""(.*)"" column in descending order on the Admin page")]
+        public void ThenDateInTableIsSortedByColumnInDescendingOrderOnTheAdminPage(string columnName)
+        {
+            var listpageMenu = _driver.NowAt<BaseGridPage>();
+            List<string> originalList = listpageMenu.GetColumnContent(columnName).Where(x => !x.Equals("")).ToList();
+            SortingHelper.IsListSortedByDate(originalList, false);
+            Assert.IsTrue(listpageMenu.DescendingSortingIcon.Displayed);
+        }
+
         [Then(@"Project ""(.*)"" is displayed to user")]
         public void ThenProjectIsDisplayedToUser(string projectName)
         {
@@ -351,6 +369,19 @@ namespace DashworksTestAutomation.Steps.Dashworks
         {
             var page = _driver.NowAt<BaseGridPage>();
             page.GetBooleanStringFilterByName(filterName);
+        }
+
+        [When(@"User selects following date filter on the Projects page")]
+        public void WhenUserSelectsFollowingDateFilterOnTheProjectsPage(Table table)
+        {
+            var filter = _driver.NowAt<ProjectsPage>();
+            _driver.WaitForDataLoading();
+            filter.ResetFiltersButton.Click();
+            foreach (var row in table.Rows)
+            {
+                filter.DateFilterValue.SendKeys(row["FilterData"]);
+            }
+            _driver.WaitForDataLoading();
         }
 
         [Then(@"All Associations are selected by default")]
@@ -1192,6 +1223,7 @@ namespace DashworksTestAutomation.Steps.Dashworks
         public void WhenUserEntersTextInTheSearchFieldForColumn(string text, string columnName)
         {
             var searchElement = _driver.NowAt<BaseGridPage>();
+            searchElement.ResetFiltersButton.Click();
             searchElement.GetSearchFieldByColumnName(columnName, text);
             //Store bucket name for further usage
             if (columnName.Equals("Bucket"))
