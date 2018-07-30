@@ -13,6 +13,7 @@ using DashworksTestAutomation.Pages.Projects;
 using DashworksTestAutomation.Providers;
 using DashworksTestAutomation.Utils;
 using NUnit.Framework;
+using NUnit.Framework.Interfaces;
 using OpenQA.Selenium;
 using OpenQA.Selenium.Remote;
 using RestSharp;
@@ -189,6 +190,13 @@ namespace DashworksTestAutomation.Steps.Dashworks
             var projectTabs = _driver.NowAt<ProjectsPage>();
             projectTabs.NavigateToProjectTabByName(tabName);
             _driver.WaitForDataLoading();
+        }
+
+        [Then(@"Bucket dropdown is not displayed on the Project details page")]
+        public void ThenBucketDropdownIsNotDisplayedOnTheProjectDetailsPage()
+        {
+            var projectPage = _driver.NowAt<ProjectsPage>();
+            Assert.IsFalse(projectPage.BucketDropdown.Displayed(), "Bucket dropdown is displayed");
         }
 
         [When(@"User navigates to the ""(.*)"" tab in the Scope section on the Project details page")]

@@ -63,6 +63,9 @@ namespace DashworksTestAutomation.Pages.Evergreen.AdminDetailsPages
         [FindsBy(How = How.XPath, Using = "//span[@class='inline-link ng-star-inserted']/a")]
         public IWebElement NewProjectLink { get; set; }
 
+        [FindsBy(How = How.XPath, Using = "//mat-select[@id='buckets']")]
+        public IWebElement BucketDropdown { get; set; }
+
         [FindsBy(How = How.XPath, Using = "//input[@placeholder='Project Name']")]
         public IWebElement ProjectName { get; set; }
 
