@@ -16,6 +16,9 @@ namespace DashworksTestAutomation.Pages.Evergreen.AdminDetailsPages
         [FindsBy(How = How.XPath, Using = ".//mat-select[@id='actions']")]
         public IWebElement ActionsSelectbox { get; set; }
 
+        [FindsBy(How = How.XPath, Using = ".//body")]
+        public IWebElement BodyContainer { get; set; }
+
         [FindsBy(How = How.XPath, Using = ".//div[contains(@class,'actions-right')]//*/button")]
         public IWebElement ImportProjectButton { get; set; }
 
@@ -307,7 +310,7 @@ namespace DashworksTestAutomation.Pages.Evergreen.AdminDetailsPages
 
         public void GetBooleanStringFilterByName(string filterName)
         {
-            string filterSelector = $".//span[(text()='{filterName}')]";
+            string filterSelector = $"//div[@class='ng-star-inserted']/span[(text()='{filterName}')]";
             Driver.WaitWhileControlIsNotDisplayed(By.XPath(filterSelector));
             Driver.FindElement(By.XPath(filterSelector)).Click();
         }
@@ -322,6 +325,16 @@ namespace DashworksTestAutomation.Pages.Evergreen.AdminDetailsPages
         public bool GetCreatedProjectName(string projectName)
         {
             return Driver.IsElementDisplayed(By.XPath($".//a[text()='{projectName}']"));
+        }
+
+        public void GetStringFilterByColumnName(string columnName)
+        {
+            By byControl =
+                By.XPath(
+                    $".//div[@role='presentation']/div[2]/div[{GetColumnNumberByName(columnName)}][@aria-hidden='true']");
+            Driver.WaitForDataLoading();
+            Driver.WaitWhileControlIsNotDisplayed(byControl);
+            Driver.FindElement(byControl).Click();
         }
 
         public string GetMessageColor()

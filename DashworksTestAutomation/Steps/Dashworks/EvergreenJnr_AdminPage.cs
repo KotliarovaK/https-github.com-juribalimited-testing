@@ -369,6 +369,7 @@ namespace DashworksTestAutomation.Steps.Dashworks
         {
             var page = _driver.NowAt<BaseGridPage>();
             page.GetBooleanStringFilterByName(filterName);
+            page.BodyContainer.Click();
         }
 
         [When(@"User selects following date filter on the Projects page")]
@@ -1223,11 +1224,18 @@ namespace DashworksTestAutomation.Steps.Dashworks
         public void WhenUserEntersTextInTheSearchFieldForColumn(string text, string columnName)
         {
             var searchElement = _driver.NowAt<BaseGridPage>();
-            searchElement.ResetFiltersButton.Click();
             searchElement.GetSearchFieldByColumnName(columnName, text);
             //Store bucket name for further usage
             if (columnName.Equals("Bucket"))
                 _lastUsedBucket.Value = text;
+        }
+
+        [When(@"User clicks String Filter button for ""(.*)"" column on the Admin page")]
+        public void WhenUserClicksStringFilterButtonForColumnOnTheAdminPage(string columnName)
+        {
+            var filterElement = _driver.NowAt<BaseGridPage>();
+            filterElement.BodyContainer.Click();
+            filterElement.GetStringFilterByColumnName(columnName);
         }
 
         [Then(@"""(.*)"" value is displayed for Default column")]
