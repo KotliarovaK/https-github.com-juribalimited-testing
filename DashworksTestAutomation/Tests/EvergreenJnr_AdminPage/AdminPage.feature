@@ -1072,7 +1072,7 @@ Examples:
 	| Users     | Username      | ProjectList4511 | 41,339    | TestProject4512 | 41339        | Domain      | CORP     | 103          | 103      | TestProject4512 |
 	| Mailboxes | Email Address | ProjectList4548 | 14,784    | TestProject4513 | 14784        | Owner City  | London   | 3,294        | 3294     | TestProject4513 |
 
-@Evergreen @Admin @EvergreenJnr_AdminPage @AdminPage @DAS12816 @DAS12873 @DAS13007 @Project_Creation_and_Scope @Not_Run
+@Evergreen @Admin @EvergreenJnr_AdminPage @AdminPage @DAS12816 @DAS12873 @DAS13007 @Project_Creation_and_Scope
 Scenario: EvergreenJnr_AdminPage_CheckThatObjectsIsOnboardedToTheProjectWithCloneEvergreenBucketsToProjectBuckets
 	When User clicks Admin on the left-hand menu
 	Then Admin page should be displayed to the user
@@ -1114,7 +1114,7 @@ Scenario: EvergreenJnr_AdminPage_CheckThatObjectsIsOnboardedToTheProjectWithClon
 	And User removes selected item
 	When User clicks refresh button in the browser
 
-@Evergreen @Admin @EvergreenJnr_AdminPage @AdminPage @DAS12490 @DAS13007 @DAS12999 @Project_Creation_and_Scope @Delete_Newly_Created_Project @Projects @Not_Run
+@Evergreen @Admin @EvergreenJnr_AdminPage @AdminPage @DAS12490 @DAS13007 @DAS12999 @Project_Creation_and_Scope @Delete_Newly_Created_Project @Projects
 Scenario: EvergreenJnr_AdminPage_CheckingThatProjectDetailsForOnboardedObjectsIsDisplayedCorrectly
 	When User clicks Admin on the left-hand menu
 	Then Admin page should be displayed to the user
@@ -1185,15 +1185,23 @@ Scenario: EvergreenJnr_AdminPage_CheckingThatProjectDetailsForOnboardedObjectsIs
 	| FilterData |
 	| 7302018    |
 	Then Counter shows "6" found rows
+	When User clicks Reset Filters button on the Admin page
 	When User selects following date filter on the Projects page
 	| FilterData |
 	| 7302017    |
 	Then Counter shows "0" found rows
+	When User clicks Reset Filters button on the Admin page
 	When User enters "0IJB93JZPG72PX" text in the Search field for "Item" column
 	Then Counter shows "1" found rows
+	When User clicks Reset Filters button on the Admin page
 	When User enters "User" text in the Search field for "Object Type" column
 	Then Counter shows "2" found rows
+	When User clicks Reset Filters button on the Admin page
 	When User enters "Unassigned" text in the Search field for "Bucket" column
+	Then Counter shows "4" found rows
+	When User clicks Reset Filters button on the Admin page
+	When User clicks String Filter button for "Action" column on the Admin page
+	When User clicks "Onboard Computer Object" checkbox from String Filter on the Admin page
 	Then Counter shows "4" found rows
 	When User selects "History" tab on the Project details page
 	Then There are no errors in the browser console
@@ -1209,13 +1217,59 @@ Scenario: EvergreenJnr_AdminPage_CheckingThatProjectDetailsForOnboardedObjectsIs
 	Then Counter shows "6" found rows
 	Then data in table is sorted by "Item" column in ascending order by default on the Admin page
 	Then data in table is sorted by "Date" column in descending by default order on the Admin page
+	When User click on "Date" column header on the Admin page
+	Then date in table is sorted by "Date" column in descending order on the Admin page
+	When User click on "Date" column header on the Admin page
+	Then date in table is sorted by "Date" column in ascending order on the Admin page
+	When User click on "Item" column header on the Admin page
+	Then data in table is sorted by "Item" column in ascending order on the Admin page
+	When User click on "Item" column header on the Admin page
+	Then data in table is sorted by "Item" column in descending order on the Admin page
+	When User click on "Object Type" column header on the Admin page
+	Then data in table is sorted by "Object Type" column in ascending order on the Admin page
+	When User click on "Object Type" column header on the Admin page
+	Then data in table is sorted by "Object Type" column in descending order on the Admin page
+	When User click on "Action" column header on the Admin page
+	Then data in table is sorted by "Action" column in ascending order on the Admin page
+	When User click on "Action" column header on the Admin page
+	Then data in table is sorted by "Action" column in descending order on the Admin page
+	When User click on "Status" column header on the Admin page
+	Then data in table is sorted by "Status" column in ascending order on the Admin page
+	When User click on "Status" column header on the Admin page
+	Then data in table is sorted by "Status" column in descending order on the Admin page
+	When User selects following date filter on the Projects page
+	| FilterData |
+	| 7302018    |
+	Then Counter shows "6" found rows
+	When User clicks Reset Filters button on the Admin page
+	When User selects following date filter on the Projects page
+	| FilterData |
+	| 7302017    |
+	Then Counter shows "0" found rows
+	When User clicks Reset Filters button on the Admin page
+	When User enters "0IJB93JZPG72PX" text in the Search field for "Item" column
+	Then Counter shows "1" found rows
+	When User clicks Reset Filters button on the Admin page
+	When User enters "User" text in the Search field for "Object Type" column
+	Then Counter shows "2" found rows
+	When User clicks Reset Filters button on the Admin page
+	When User enters "Unassigned" text in the Search field for "Bucket" column
+	Then Counter shows "4" found rows
+	When User clicks Reset Filters button on the Admin page
+	When User clicks String Filter button for "Action" column on the Admin page
+	When User clicks "Onboard Computer Object" checkbox from String Filter on the Admin page
+	Then Counter shows "4" found rows
+	When User clicks String Filter button for "Status" column on the Admin page
+	When User clicks "Succeeded" checkbox from String Filter on the Admin page
+	Then Counter shows "0" found rows
 	When User type "0IJB93JZPG72PX" in Global Search Field
 	Then User clicks on "0IJB93JZPG72PX (Carmen H. Benson)" search result
 	When User navigates to the "Projects" tab
 	And User opens "Device Projects" section on the Details Page
-	And User clicks "TestProject12490" link on the Details Page
-	Then "Project Object" page is displayed to the user
-	Then There are no errors in the browser console
+	#Remove hash after fix
+	#And User clicks "TestProject12490" link on the Details Page
+	#Then "Project Object" page is displayed to the user
+	#Then There are no errors in the browser console
 
 @Evergreen @Admin @EvergreenJnr_AdminPage @AdminPage @DAS11700 @Delete_Newly_Created_Project @Project_Creation_and_Scope
 Scenario: EvergreenJnr_AdminPage_CheckingThatTheProjectIdColumnIsAddedAndDisplayedCorrectlyToTheAdminProjectGrid
@@ -1734,7 +1788,7 @@ Scenario: EvergreenJnr_AdminPage_CheckThatUsersToAddAndRemoveAreChangingAppropri
 	When User selects "StaticList6530" in the Scope Project details
 	When User selects "Scope Changes" tab on the Project details page
 	Then "Users to add (0 of 2 selected)" is displayed to the user in the Project Scope Changes section
-	#Then "Users to remove (0 of 2 selected)" is displayed to the user in the Project Scope Changes section
+	Then "Users to remove (0 of 2 selected)" is displayed to the user in the Project Scope Changes section
 
 @Evergreen @Admin @EvergreenJnr_AdminPage @AdminPage @DAS12999 @Delete_Newly_Created_Project @Delete_Newly_Created_List
 Scenario Outline: EvergreenJnr_AdminPage_CheckProjectCreationFromListPageWithUseEvergreenBucket
