@@ -1130,29 +1130,83 @@ Scenario: EvergreenJnr_AdminPage_CheckingThatProjectDetailsForOnboardedObjectsIs
 	Then Project "TestProject12490" is displayed to user
 	When User selects "Scope Changes" tab on the Project details page
 	When User clicks "Devices" tab in the Project Scope Changes section
-	And User expands the object to add 
+	And User expands the object to add
 	And User selects following Objects to the Project
 	| Objects        |
 	| 0IJB93JZPG72PX |
 	| 04I01QSFL1AWKM |
+	When User clicks "Applications" tab in the Project Scope Changes section
+	And User expands the object to add
+	And User selects following Objects to the Project
+	| Objects                        |
+	| ACDSee 4.0.1 Std Trial Version |
+	| ACDSee 8 (8.0.39)              |
+	When User clicks "Users" tab in the Project Scope Changes section
+	And User expands the object to add
+	And User selects following Objects to the Project
+	| Objects                        |
+	| ABQ575757 (Salvador K. Waller) |
+	| ADG685492 (Eugene N. Stanton)  |
 	And User clicks the "UPDATE ALL CHANGES" Action button
 	When User clicks the "UPDATE PROJECT" Action button
 	When User selects "Queue" tab on the Project details page
 	Then There are no errors in the browser console
 	Then Error message is not displayed on the Projects page
 	Then following Items are onboarded
-	| Items          |
-	| 0IJB93JZPG72PX |
-	| 04I01QSFL1AWKM |
+	| Items                          |
+	| 0IJB93JZPG72PX                 |
+	| 04I01QSFL1AWKM                 |
+	| ABQ575757 (Salvador K. Waller) |
+	| ADG685492 (Eugene N. Stanton)  |
+	| ACDSee 4.0.1 Std Trial Version |
+	| ACDSee 8 (8.0.39)              |
+	Then Counter shows "6" found rows
+	When User click on "Date" column header on the Admin page
+	Then date in table is sorted by "Date" column in descending order on the Admin page
+	When User click on "Date" column header on the Admin page
+	Then date in table is sorted by "Date" column in ascending order on the Admin page
+	When User click on "Item" column header on the Admin page
+	Then data in table is sorted by "Item" column in ascending order on the Admin page
+	When User click on "Item" column header on the Admin page
+	Then data in table is sorted by "Item" column in descending order on the Admin page
+	When User click on "Object Type" column header on the Admin page
+	Then data in table is sorted by "Object Type" column in ascending order on the Admin page
+	When User click on "Object Type" column header on the Admin page
+	Then data in table is sorted by "Object Type" column in descending order on the Admin page
+	When User click on "Action" column header on the Admin page
+	Then data in table is sorted by "Action" column in ascending order on the Admin page
+	When User click on "Action" column header on the Admin page
+	Then data in table is sorted by "Action" column in descending order on the Admin page
+	#When User click on "Bucket" column header on the Admin page
+	#Then data in table is sorted by "Bucket" column in ascending order on the Admin page
+	#When User click on "Bucket" column header on the Admin page
+	#Then data in table is sorted by "Bucket" column in descending order on the Admin page
+	When User selects following date filter on the Projects page
+	| FilterData |
+	| 7302018    |
+	Then Counter shows "6" found rows
+	When User selects following date filter on the Projects page
+	| FilterData |
+	| 7302017    |
+	Then Counter shows "0" found rows
+	When User enters "0IJB93JZPG72PX" text in the Search field for "Item" column
+	Then Counter shows "1" found rows
+	When User enters "User" text in the Search field for "Object Type" column
 	Then Counter shows "2" found rows
+	When User enters "Unassigned" text in the Search field for "Bucket" column
+	Then Counter shows "4" found rows
 	When User selects "History" tab on the Project details page
 	Then There are no errors in the browser console
 	Then Error message is not displayed on the Projects page
 	Then following Items are onboarded
-	| Items          |
-	| 0IJB93JZPG72PX |
-	| 04I01QSFL1AWKM |
-	Then Counter shows "2" found rows
+	| Items                          |
+	| 0IJB93JZPG72PX                 |
+	| 04I01QSFL1AWKM                 |
+	| ABQ575757 (Salvador K. Waller) |
+	| ADG685492 (Eugene N. Stanton)  |
+	| ACDSee 4.0.1 Std Trial Version |
+	| ACDSee 8 (8.0.39)              |
+	Then Counter shows "6" found rows
 	Then data in table is sorted by "Item" column in ascending order by default on the Admin page
 	Then data in table is sorted by "Date" column in descending by default order on the Admin page
 	When User type "0IJB93JZPG72PX" in Global Search Field
