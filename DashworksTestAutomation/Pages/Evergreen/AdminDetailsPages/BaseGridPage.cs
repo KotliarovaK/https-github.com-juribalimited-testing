@@ -310,7 +310,7 @@ namespace DashworksTestAutomation.Pages.Evergreen.AdminDetailsPages
 
         public void GetBooleanStringFilterByName(string filterName)
         {
-            string filterSelector = $"//div[@class='ng-star-inserted']/span[(text()='{filterName}')]";
+            string filterSelector = $"//span[(text()='{filterName}')]";
             Driver.WaitWhileControlIsNotDisplayed(By.XPath(filterSelector));
             Driver.FindElement(By.XPath(filterSelector)).Click();
         }

@@ -890,6 +890,7 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_ListDetails
         [NUnit.Framework.CategoryAttribute("DAS12208")]
         [NUnit.Framework.CategoryAttribute("DAS12684")]
         [NUnit.Framework.CategoryAttribute("Delete_Newly_Created_List")]
+        [NUnit.Framework.CategoryAttribute("Not_Run")]
         public virtual void EvergreenJnr_AllLists_CheckThatWarningMessageIsNotDisplayedInTheListPanelAfterViewingDependentList()
         {
             System.Exception lastException = null;
@@ -926,7 +927,8 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_ListDetails
                         "ListDetailsFunctionality",
                         "DAS12208",
                         "DAS12684",
-                        "Delete_Newly_Created_List"});
+                        "Delete_Newly_Created_List",
+                        "Not_Run"});
             this.ScenarioSetup(scenarioInfo);
             this.FeatureBackground();
             testRunner.When("User clicks \"Projects\" on the left-hand menu", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");

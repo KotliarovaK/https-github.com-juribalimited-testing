@@ -1183,11 +1183,6 @@ Scenario: EvergreenJnr_AdminPage_CheckingThatProjectDetailsForOnboardedObjectsIs
 	#Then data in table is sorted by "Bucket" column in descending order on the Admin page
 	When User selects following date filter on the Projects page
 	| FilterData |
-	| 7302018    |
-	Then Counter shows "6" found rows
-	When User clicks Reset Filters button on the Admin page
-	When User selects following date filter on the Projects page
-	| FilterData |
 	| 7302017    |
 	Then Counter shows "0" found rows
 	When User clicks Reset Filters button on the Admin page
@@ -1201,7 +1196,7 @@ Scenario: EvergreenJnr_AdminPage_CheckingThatProjectDetailsForOnboardedObjectsIs
 	Then Counter shows "4" found rows
 	When User clicks Reset Filters button on the Admin page
 	When User clicks String Filter button for "Action" column on the Admin page
-	When User clicks "Onboard Computer Object" checkbox from String Filter on the Admin page
+	When User clicks "Onboard Computer Object" checkbox from String Filter on the Projects page
 	Then Counter shows "4" found rows
 	When User selects "History" tab on the Project details page
 	Then There are no errors in the browser console
@@ -1239,11 +1234,6 @@ Scenario: EvergreenJnr_AdminPage_CheckingThatProjectDetailsForOnboardedObjectsIs
 	Then data in table is sorted by "Status" column in descending order on the Admin page
 	When User selects following date filter on the Projects page
 	| FilterData |
-	| 7302018    |
-	Then Counter shows "6" found rows
-	When User clicks Reset Filters button on the Admin page
-	When User selects following date filter on the Projects page
-	| FilterData |
 	| 7302017    |
 	Then Counter shows "0" found rows
 	When User clicks Reset Filters button on the Admin page
@@ -1257,10 +1247,10 @@ Scenario: EvergreenJnr_AdminPage_CheckingThatProjectDetailsForOnboardedObjectsIs
 	Then Counter shows "4" found rows
 	When User clicks Reset Filters button on the Admin page
 	When User clicks String Filter button for "Action" column on the Admin page
-	When User clicks "Onboard Computer Object" checkbox from String Filter on the Admin page
+	When User clicks "Onboard Computer Object" checkbox from String Filter on the Projects page
 	Then Counter shows "4" found rows
 	When User clicks String Filter button for "Status" column on the Admin page
-	When User clicks "Succeeded" checkbox from String Filter on the Admin page
+	When User clicks "Succeeded" checkbox from String Filter on the Projects page
 	Then Counter shows "0" found rows
 	When User type "0IJB93JZPG72PX" in Global Search Field
 	Then User clicks on "0IJB93JZPG72PX (Carmen H. Benson)" search result
