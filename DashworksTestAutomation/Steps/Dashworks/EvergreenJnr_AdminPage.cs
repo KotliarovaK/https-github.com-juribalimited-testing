@@ -393,6 +393,14 @@ namespace DashworksTestAutomation.Steps.Dashworks
             _driver.WaitForDataLoading();
         }
 
+        [When(@"User clicks ""(.*)"" checkbox from String Filter on the Projects page")]
+        public void WhenUserClicksCheckboxFromStringFilterOnTheProjectsPage(string filterName)
+        {
+            var page = _driver.NowAt<ProjectsPage>();
+            page.GetCheckboxStringFilterByName(filterName);
+            page.BodyContainer.Click();
+        }
+
         [Then(@"All Associations are selected by default")]
         public void ThenAllAssociationsAreSelectedByDefault()
         {
@@ -1335,9 +1343,8 @@ namespace DashworksTestAutomation.Steps.Dashworks
         public void ThenRowsAreDisplayedInTheAgGrid(string numberOfRows)
         {
             var foundRowsCounter = _driver.NowAt<BaseGridPage>();
-
+            _driver.WaitForDataLoading();
             _driver.WaitWhileControlIsNotDisplayed<BaseGridPage>(() => foundRowsCounter.RowsCounter);
-
             StringAssert.AreEqualIgnoringCase(numberOfRows == "1" ? $"{numberOfRows} row" : $"{numberOfRows} rows",
                 foundRowsCounter.RowsCounter.Text,
                 "Incorrect rows count");
