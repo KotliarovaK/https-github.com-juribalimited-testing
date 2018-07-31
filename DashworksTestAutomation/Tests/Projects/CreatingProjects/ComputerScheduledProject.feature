@@ -268,7 +268,7 @@ Scenario: Projects_CreateComputerScheduledProject
 	And User navigates to "Not Started" Value
 	And User edit selected Value
 	| Name | ReadinessString | TaskStatusString | DefaultValue |
-	|      | Blue            |                  | true         |
+	|      | Grey            |                  | true         |
 	And User clicks "Save Value" button
 	And User clicks "« Go Back to Tasks" button
 	Then created Task is displayed in the table
@@ -285,8 +285,8 @@ Scenario: Projects_CreateComputerScheduledProject
 	When User navigate to "Values" page
 	And User clicks "Add Value" button
 	And User create new Value
-	| Name         | ReadinessString | TaskStatusString | DefaultValue |
-	| Out of Scope |                 | Closed           | false        |
+	| Name | ReadinessString | TaskStatusString | DefaultValue |
+	| None |                 | Closed           | false        |
 	And User clicks "Save Value" button
 	And User navigates to "Enabled" Value
 	And User edit selected Value
@@ -360,7 +360,7 @@ Scenario: Projects_CreateComputerScheduledProject
 	And User clicks "Add Value" button
 	And User create new Value
 	| Name    | ReadinessString | TaskStatusString | DefaultValue |
-	| Blocked | LightBlue       | Open             | false        |
+	| Blocked | Grey            | Open             | false        |
 	And User clicks "Save Value" button
 	And User navigates to "Not Started" Value
 	And User edit selected Value
@@ -383,7 +383,7 @@ Scenario: Projects_CreateComputerScheduledProject
 	And User navigates to "Complete" Value
 	And User edit selected Value
 	| Name     | ReadinessString | TaskStatusString | DefaultValue |
-	| Finished | Brown           |                  | false        |
+	| Finished | Green           |                  | false        |
 	And User clicks "Save Value" button
 	And User navigate to "Request Types" page
 	Then "Edit Task" page is displayed to the user
