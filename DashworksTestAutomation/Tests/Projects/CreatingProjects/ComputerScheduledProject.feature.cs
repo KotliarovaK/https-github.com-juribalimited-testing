@@ -833,7 +833,7 @@ namespace DashworksTestAutomation.Tests.Projects.CreatingProjects
                         "DefaultValue"});
             table45.AddRow(new string[] {
                         "Unknown",
-                        "ReallyExtremelyOrange",
+                        "Amber",
                         "Open",
                         "true"});
             testRunner.And("User create new Value", ((string)(null)), table45, "And ");

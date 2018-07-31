@@ -308,8 +308,8 @@ Scenario: Projects_CreateComputerScheduledProject
 	When User navigate to "Values" page
 	And User clicks "Add Value" button
 	And User create new Value
-	| Name    | ReadinessString       | TaskStatusString | DefaultValue |
-	| Unknown | ReallyExtremelyOrange | Open             | true         |
+	| Name    | ReadinessString | TaskStatusString | DefaultValue |
+	| Unknown | Amber           | Open             | true         |
 	And User clicks "Save Value" button
 	And User navigates to "Not Applicable" Value
 	And User edit selected Value
