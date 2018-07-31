@@ -174,7 +174,7 @@ Scenario: Projects_CreateMailboxScheduledProject
 	And User clicks "Add Value" button
 	When User create new Value
 	| Name          | ReadinessString | TaskStatusString | DefaultValue |
-	| TestValueName | Purple          | Open             | true         |
+	| TestValueName | Red             | Open             | true         |
 	And User clicks "Save Value" button
 	And User navigate to "Emails" page
 	And User clicks "Add Email" button
