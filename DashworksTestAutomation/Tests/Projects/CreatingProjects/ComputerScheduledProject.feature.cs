@@ -691,7 +691,7 @@ namespace DashworksTestAutomation.Tests.Projects.CreatingProjects
                         "DefaultValue"});
             table37.AddRow(new string[] {
                         "Blocked",
-                        "Purple",
+                        "Red",
                         "Open",
                         "false"});
             testRunner.And("User create new Value", ((string)(null)), table37, "And ");

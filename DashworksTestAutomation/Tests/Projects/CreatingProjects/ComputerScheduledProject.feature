@@ -263,7 +263,7 @@ Scenario: Projects_CreateComputerScheduledProject
 	And User clicks "Add Value" button
 	And User create new Value
 	| Name    | ReadinessString | TaskStatusString | DefaultValue |
-	| Blocked | Purple          | Open             | false        |
+	| Blocked | Red             | Open             | false        |
 	And User clicks "Save Value" button
 	And User navigates to "Not Started" Value
 	And User edit selected Value
