@@ -60,9 +60,6 @@ namespace DashworksTestAutomation.Pages.Evergreen.AdminDetailsPages
         [FindsBy(How = How.XPath, Using = "//div[@class='mat-form-field-infix']/mat-select[@aria-disabled='false']")]
         public IWebElement ActiveScopeListDropdown { get; set; }
 
-        [FindsBy(How = How.XPath, Using = "//span[@class='inline-link ng-star-inserted']/a")]
-        public IWebElement NewProjectLink { get; set; }
-
         [FindsBy(How = How.XPath, Using = "//mat-select[@id='buckets']")]
         public IWebElement BucketDropdown { get; set; }
 
