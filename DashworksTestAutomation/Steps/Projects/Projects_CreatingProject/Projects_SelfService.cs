@@ -152,10 +152,11 @@ namespace DashworksTestAutomation.Steps.Projects
             page.LocationDoNotPush.SetCheckboxState(_departmentAndLocationDto.LocationDoNotPush);
             page.LocationPushToOwned.SetCheckboxState(_departmentAndLocationDto.LocationPushToOwned);
             page.LocationPushToAll.SetCheckboxState(_departmentAndLocationDto.LocationPushToAll);
-            page.DepartmentFeed.SetCheckboxState(_departmentAndLocationDto.DepartmentFeed);
-            page.HrLocationFeed.SetCheckboxState(_departmentAndLocationDto.HrLocationFeed);
-            page.ManualLocationFeed.SetCheckboxState(_departmentAndLocationDto.ManualLocationFeed);
-            page.HistoricLocationFeed.SetCheckboxState(_departmentAndLocationDto.HistoricLocationFeed);
+            //Those chackboxes are not exist. Commented by Lisa request
+            //page.DepartmentFeed.SetCheckboxState(_departmentAndLocationDto.DepartmentFeed);
+            //page.HrLocationFeed.SetCheckboxState(_departmentAndLocationDto.HrLocationFeed);
+            //page.ManualLocationFeed.SetCheckboxState(_departmentAndLocationDto.ManualLocationFeed);
+            //page.HistoricLocationFeed.SetCheckboxState(_departmentAndLocationDto.HistoricLocationFeed);
             //page.PageDescription.SendKeys(_departmentAndLocationDto.PageDescription);
 
             var upd = _driver.NowAt<MainElementsOfProjectCreation>();
