@@ -60,8 +60,8 @@ namespace DashworksTestAutomation.Pages.Evergreen.AdminDetailsPages
         [FindsBy(How = How.XPath, Using = "//div[@class='mat-form-field-infix']/mat-select[@aria-disabled='false']")]
         public IWebElement ActiveScopeListDropdown { get; set; }
 
-        [FindsBy(How = How.XPath, Using = "//span[@class='inline-link ng-star-inserted']/a")]
-        public IWebElement NewProjectLink { get; set; }
+        [FindsBy(How = How.XPath, Using = "//mat-select[@id='buckets']")]
+        public IWebElement BucketDropdown { get; set; }
 
         [FindsBy(How = How.XPath, Using = "//input[@placeholder='Project Name']")]
         public IWebElement ProjectName { get; set; }
@@ -77,6 +77,9 @@ namespace DashworksTestAutomation.Pages.Evergreen.AdminDetailsPages
 
         [FindsBy(How = How.XPath, Using = "//mat-select[@aria-label='Default Language']")]
         public IWebElement DefaultLanguage { get; set; }
+
+        [FindsBy(How = How.XPath, Using = "//input[@class='ag-filter-filter']")]
+        public IWebElement DateFilterValue { get; set; }
 
         [FindsBy(How = How.XPath, Using = "//span[text()='Application Scope']")]
         public IWebElement ApplicationScopeTab { get; set; }
@@ -153,6 +156,13 @@ namespace DashworksTestAutomation.Pages.Evergreen.AdminDetailsPages
             string ListNameSelector = $".//span[@class='mat-option-text'][contains(text(), '{objectName}')]";
             Driver.WaitWhileControlIsNotDisplayed(By.XPath(ListNameSelector));
             Driver.FindElement(By.XPath(ListNameSelector)).Click();
+        }
+
+        public void GetCheckboxStringFilterByName(string filterName)
+        {
+            string filterSelector = $"//div[@class='ng-star-inserted']/span[(text()='{filterName}')]";
+            Driver.WaitWhileControlIsNotDisplayed(By.XPath(filterSelector));
+            Driver.FindElement(By.XPath(filterSelector)).Click();
         }
 
         public void SelectProjectLanguage(string language)

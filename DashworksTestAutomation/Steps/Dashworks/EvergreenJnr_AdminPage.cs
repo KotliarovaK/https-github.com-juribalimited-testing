@@ -13,6 +13,7 @@ using DashworksTestAutomation.Pages.Projects;
 using DashworksTestAutomation.Providers;
 using DashworksTestAutomation.Utils;
 using NUnit.Framework;
+using NUnit.Framework.Interfaces;
 using OpenQA.Selenium;
 using OpenQA.Selenium.Remote;
 using RestSharp;
@@ -191,6 +192,13 @@ namespace DashworksTestAutomation.Steps.Dashworks
             _driver.WaitForDataLoading();
         }
 
+        [Then(@"Bucket dropdown is not displayed on the Project details page")]
+        public void ThenBucketDropdownIsNotDisplayedOnTheProjectDetailsPage()
+        {
+            var projectPage = _driver.NowAt<ProjectsPage>();
+            Assert.IsFalse(projectPage.BucketDropdown.Displayed(), "Bucket dropdown is displayed");
+        }
+
         [When(@"User navigates to the ""(.*)"" tab in the Scope section on the Project details page")]
         public void WhenUserNavigatesToTheTabInTheScopeSectionOnTheProjectDetailsPage(string tabName)
         {
@@ -273,6 +281,26 @@ namespace DashworksTestAutomation.Steps.Dashworks
             Assert.IsTrue(adminTable.DescendingSortingIcon.Displayed);
         }
 
+        [Then(@"data in table is sorted by ""(.*)"" column in ascending order by default on the Admin page")]
+        public void ThenDataInTableIsSortedByColumnInAscendingOrderByDefaultOnTheAdminPage(string columnName)
+        {
+            var adminTable = _driver.NowAt<BaseGridPage>();
+
+            List<string> actualList = adminTable.GetColumnContent(columnName).Where(x => !x.Equals("")).ToList();
+            SortingHelper.IsListSorted(actualList);
+            _driver.WaitForDataLoading();
+        }
+
+        [Then(@"data in table is sorted by ""(.*)"" column in descending by default order on the Admin page")]
+        public void ThenDataInTableIsSortedByColumnInDescendingByDefaultOrderOnTheAdminPage(string columnName)
+        {
+            var adminTable = _driver.NowAt<BaseGridPage>();
+
+            List<string> expectedList = adminTable.GetColumnContent(columnName).Where(x => !x.Equals("")).ToList();
+            SortingHelper.IsListSorted(expectedList, false);
+            _driver.WaitForDataLoading();
+        }
+
         [Then(@"numeric data in table is sorted by ""(.*)"" column in ascending order on the Admin page")]
         public void ThenNumericDataInTableIsSortedByColumnInAscendingOrderOnTheAdminPage(string columnName)
         {
@@ -311,6 +339,24 @@ namespace DashworksTestAutomation.Steps.Dashworks
             Assert.IsTrue(listpageMenu.DescendingSortingIcon.Displayed);
         }
 
+        [Then(@"date in table is sorted by ""(.*)"" column in ascending order on the Admin page")]
+        public void ThenDateInTableIsSortedByColumnInAscendingOrderOnTheAdminPage(string columnName)
+        {
+            var listpageMenu = _driver.NowAt<BaseGridPage>();
+            List<string> originalList = listpageMenu.GetColumnContent(columnName).Where(x => !x.Equals("")).ToList();
+            SortingHelper.IsListSortedByDate(originalList, false);
+            Assert.IsTrue(listpageMenu.AscendingSortingIcon.Displayed);
+        }
+
+        [Then(@"date in table is sorted by ""(.*)"" column in descending order on the Admin page")]
+        public void ThenDateInTableIsSortedByColumnInDescendingOrderOnTheAdminPage(string columnName)
+        {
+            var listpageMenu = _driver.NowAt<BaseGridPage>();
+            List<string> originalList = listpageMenu.GetColumnContent(columnName).Where(x => !x.Equals("")).ToList();
+            SortingHelper.IsListSortedByDate(originalList, false);
+            Assert.IsTrue(listpageMenu.DescendingSortingIcon.Displayed);
+        }
+
         [Then(@"Project ""(.*)"" is displayed to user")]
         public void ThenProjectIsDisplayedToUser(string projectName)
         {
@@ -331,6 +377,28 @@ namespace DashworksTestAutomation.Steps.Dashworks
         {
             var page = _driver.NowAt<BaseGridPage>();
             page.GetBooleanStringFilterByName(filterName);
+            page.BodyContainer.Click();
+        }
+
+        [When(@"User selects following date filter on the Projects page")]
+        public void WhenUserSelectsFollowingDateFilterOnTheProjectsPage(Table table)
+        {
+            var filter = _driver.NowAt<ProjectsPage>();
+            _driver.WaitForDataLoading();
+            filter.ResetFiltersButton.Click();
+            foreach (var row in table.Rows)
+            {
+                filter.DateFilterValue.SendKeys(row["FilterData"]);
+            }
+            _driver.WaitForDataLoading();
+        }
+
+        [When(@"User clicks ""(.*)"" checkbox from String Filter on the Projects page")]
+        public void WhenUserClicksCheckboxFromStringFilterOnTheProjectsPage(string filterName)
+        {
+            var page = _driver.NowAt<ProjectsPage>();
+            page.GetCheckboxStringFilterByName(filterName);
+            page.BodyContainer.Click();
         }
 
         [Then(@"All Associations are selected by default")]
@@ -848,10 +916,10 @@ namespace DashworksTestAutomation.Steps.Dashworks
             Assert.IsFalse(message.SuccessMessage.Displayed());
         }
 
-        [When(@"User clicks newly created project link")]
-        public void WhenUserClicksNewlyCreatedProjectLink()
+        [When(@"User clicks newly created object link")]
+        public void WhenUserClicksNewlyCreatedObjectLink()
         {
-            var projectElement = _driver.NowAt<ProjectsPage>();
+            var projectElement = _driver.NowAt<BaseGridPage>();
             projectElement.NewProjectLink.Click();
         }
 
@@ -991,7 +1059,7 @@ namespace DashworksTestAutomation.Steps.Dashworks
         public void ThenFollowingItemsAreOnboarded(Table table)
         {
             var projectElement = _driver.NowAt<BaseGridPage>();
-            Thread.Sleep(15000);
+            Thread.Sleep(20000);
             foreach (var row in table.Rows)
             {
                 if (projectElement.OnboardedObjectsTable.Displayed())
@@ -1178,6 +1246,14 @@ namespace DashworksTestAutomation.Steps.Dashworks
                 _lastUsedBucket.Value = text;
         }
 
+        [When(@"User clicks String Filter button for ""(.*)"" column on the Admin page")]
+        public void WhenUserClicksStringFilterButtonForColumnOnTheAdminPage(string columnName)
+        {
+            var filterElement = _driver.NowAt<BaseGridPage>();
+            filterElement.BodyContainer.Click();
+            filterElement.GetStringFilterByColumnName(columnName);
+        }
+
         [Then(@"""(.*)"" value is displayed for Default column")]
         public void ThenValueIsDisplayedForDefaultColumn(string defaultValue)
         {
@@ -1267,9 +1343,8 @@ namespace DashworksTestAutomation.Steps.Dashworks
         public void ThenRowsAreDisplayedInTheAgGrid(string numberOfRows)
         {
             var foundRowsCounter = _driver.NowAt<BaseGridPage>();
-
+            _driver.WaitForDataLoading();
             _driver.WaitWhileControlIsNotDisplayed<BaseGridPage>(() => foundRowsCounter.RowsCounter);
-
             StringAssert.AreEqualIgnoringCase(numberOfRows == "1" ? $"{numberOfRows} row" : $"{numberOfRows} rows",
                 foundRowsCounter.RowsCounter.Text,
                 "Incorrect rows count");
