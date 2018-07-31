@@ -616,6 +616,14 @@ namespace DashworksTestAutomation.Steps.Dashworks
             teamName.TeamDescriptionField.SendKeys(descriptionText);
         }
 
+        [When(@"User selects ""(.*)"" in the Add Members dropdown")]
+        public void WhenUserSelectsInTheAddMembersDropdown(string optionName)
+        {
+            var createProjectElement = _driver.NowAt<CreateTeamPage>();
+            createProjectElement.AddMembersCheckbox.Click();
+            createProjectElement.SelectObjectForTeamCreation(optionName);
+        }
+
         [When(@"User clicks Update Team button")]
         public void WhenUserClicksUpdateTeamButton()
         {
@@ -632,6 +640,13 @@ namespace DashworksTestAutomation.Steps.Dashworks
             _driver.WaitWhileControlIsNotDisplayed<TeamsPage>(() => button.UpdateTeamButton);
             Assert.IsTrue(Convert.ToBoolean(button.UpdateTeamButton.GetAttribute("disabled")),
                 "Update Team button is active");
+        }
+
+        [When(@"User clicks Default Team checkbox")]
+        public void WhenUserClicksDefaultTeamCheckbox()
+        {
+            var createBucketElement = _driver.NowAt<TeamsPage>();
+            createBucketElement.DefaulTeamCheckbox.Click();
         }
 
         [When(@"User clicks Create Team button on the Create Team page")]
@@ -1044,8 +1059,8 @@ namespace DashworksTestAutomation.Steps.Dashworks
             projectElement.UpdateButton.Click();
         }
 
-        [When(@"User selects following Objects to the Project")]
-        public void WhenUserSelectsFollowingObjectsToTheProject(Table table)
+        [When(@"User selects following Objects")]
+        public void WhenUserSelectsFollowingObjects(Table table)
         {
             var projectElement = _driver.NowAt<BaseGridPage>();
             foreach (var row in table.Rows)

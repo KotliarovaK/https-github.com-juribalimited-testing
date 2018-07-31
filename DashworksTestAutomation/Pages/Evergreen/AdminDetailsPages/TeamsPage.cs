@@ -25,6 +25,9 @@ namespace DashworksTestAutomation.Pages.Evergreen.AdminDetailsPages
         [FindsBy(How = How.XPath, Using = ".//span[text()='ADD MEMBERS']")]
         public IWebElement AddMembersButton { get; set; }
 
+        [FindsBy(How = How.XPath, Using = "//span[text()='Default Team']")]
+        public IWebElement DefaulTeamCheckbox { get; set; }
+
         [FindsBy(How = How.XPath, Using = ".//div[@class='width100']")]
         public IWebElement TeamMembersPanel { get; set; }
 
