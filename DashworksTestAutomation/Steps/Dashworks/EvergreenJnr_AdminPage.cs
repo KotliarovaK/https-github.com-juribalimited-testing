@@ -916,10 +916,10 @@ namespace DashworksTestAutomation.Steps.Dashworks
             Assert.IsFalse(message.SuccessMessage.Displayed());
         }
 
-        [When(@"User clicks newly created project link")]
-        public void WhenUserClicksNewlyCreatedProjectLink()
+        [When(@"User clicks newly created object link")]
+        public void WhenUserClicksNewlyCreatedObjectLink()
         {
-            var projectElement = _driver.NowAt<ProjectsPage>();
+            var projectElement = _driver.NowAt<BaseGridPage>();
             projectElement.NewProjectLink.Click();
         }
 

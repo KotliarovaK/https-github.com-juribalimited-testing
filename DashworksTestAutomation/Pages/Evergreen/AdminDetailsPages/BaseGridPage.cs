@@ -34,6 +34,9 @@ namespace DashworksTestAutomation.Pages.Evergreen.AdminDetailsPages
         [FindsBy(How = How.XPath, Using = ".//span[text()='CONTINUE']")]
         public IWebElement ContinueButton { get; set; }
 
+        [FindsBy(How = How.XPath, Using = "//span[@class='inline-link ng-star-inserted']/a")]
+        public IWebElement NewProjectLink { get; set; }
+
         [FindsBy(How = How.XPath, Using = ".//button//span[contains(text(), 'RESET FILTERS')]")]
         public IWebElement ResetFiltersButton { get; set; }
 
