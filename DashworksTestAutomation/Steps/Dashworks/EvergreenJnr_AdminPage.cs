@@ -658,6 +658,26 @@ namespace DashworksTestAutomation.Steps.Dashworks
             Logger.Write("Create Team button was clicked");
         }
 
+        [When(@"User selects ""(.*)"" tab on the Team details page")]
+        public void WhenUserSelectsTabOnTheTeamDetailsPage(string tabName)
+        {
+            var projectTabs = _driver.NowAt<TeamsPage>();
+            projectTabs.NavigateToTeamTabByName(tabName);
+            _driver.WaitForDataLoading();
+        }
+
+        [When(@"User removes selected members")]
+        public void WhenUserRemovesSelectedMembers()
+        {
+            var projectElement = _driver.NowAt<TeamsPage>();
+            projectElement.ActionsButton.Click();
+            projectElement.RemoveButtonInActions.Click();
+            projectElement.RemoveButtonOnPage.Click();
+            _driver.WaitWhileControlIsNotDisplayed<BaseGridPage>(() => projectElement.WarningMessage);
+            _driver.WaitForDataLoading();
+            projectElement.RemoveButtonInWarningMessage.Click();
+        }
+
         #region Column Settings
 
         [When(@"User have opened Column Settings for ""(.*)"" column")]
