@@ -201,7 +201,7 @@ Scenario: Projects_CreateUserScheduledProject
 	And User clicks "Add Value" button
 	When User create new Value
 	| Name          | ReadinessString | TaskStatusString | DefaultValue |
-	| TestValueName | Blue            | Closed           | false        |
+	| TestValueName | Grey            | Closed           | false        |
 	And User clicks "Save Value" button
 	And User clicks "« Go Back to Tasks" button
 	Then created Task is displayed in the table
@@ -220,7 +220,7 @@ Scenario: Projects_CreateUserScheduledProject
 	And User clicks "Add Value" button
 	When User create new Value
 	| Name          | ReadinessString | TaskStatusString | DefaultValue |
-	| TestValueName | Blue            | Closed           | false        |
+	| TestValueName | Grey            | Closed           | false        |
 	And User clicks "Save Value" button
 	And User navigate to "Emails" page
 	And User clicks "Add Email" button
