@@ -161,6 +161,13 @@ namespace DashworksTestAutomation.Pages.Evergreen.AdminDetailsPages
             Driver.FindElement(By.XPath(ListNameSelector)).Click();
         }
 
+        public void GetCheckboxStringFilterByName(string filterName)
+        {
+            string filterSelector = $"//div[@class='ng-star-inserted']/span[(text()='{filterName}')]";
+            Driver.WaitWhileControlIsNotDisplayed(By.XPath(filterSelector));
+            Driver.FindElement(By.XPath(filterSelector)).Click();
+        }
+
         public void SelectProjectLanguage(string language)
         {
             string ListNameSelector = $"//span[@class='mat-option-text'][text()='{language}']";
