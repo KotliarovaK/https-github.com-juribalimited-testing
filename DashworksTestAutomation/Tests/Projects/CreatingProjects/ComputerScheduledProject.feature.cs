@@ -691,7 +691,7 @@ namespace DashworksTestAutomation.Tests.Projects.CreatingProjects
                         "DefaultValue"});
             table37.AddRow(new string[] {
                         "Blocked",
-                        "Purple",
+                        "Red",
                         "Open",
                         "false"});
             testRunner.And("User create new Value", ((string)(null)), table37, "And ");
@@ -704,7 +704,7 @@ namespace DashworksTestAutomation.Tests.Projects.CreatingProjects
                         "DefaultValue"});
             table38.AddRow(new string[] {
                         "",
-                        "Blue",
+                        "Grey",
                         "",
                         "true"});
             testRunner.And("User edit selected Value", ((string)(null)), table38, "And ");
@@ -762,7 +762,7 @@ namespace DashworksTestAutomation.Tests.Projects.CreatingProjects
                         "TaskStatusString",
                         "DefaultValue"});
             table41.AddRow(new string[] {
-                        "Out of Scope",
+                        "None",
                         "",
                         "Closed",
                         "false"});
@@ -991,7 +991,7 @@ namespace DashworksTestAutomation.Tests.Projects.CreatingProjects
                         "DefaultValue"});
             table53.AddRow(new string[] {
                         "Blocked",
-                        "LightBlue",
+                        "Grey",
                         "Open",
                         "false"});
             testRunner.And("User create new Value", ((string)(null)), table53, "And ");
@@ -1059,7 +1059,7 @@ namespace DashworksTestAutomation.Tests.Projects.CreatingProjects
                         "DefaultValue"});
             table57.AddRow(new string[] {
                         "Finished",
-                        "Brown",
+                        "Green",
                         "",
                         "false"});
             testRunner.And("User edit selected Value", ((string)(null)), table57, "And ");

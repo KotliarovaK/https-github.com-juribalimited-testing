@@ -401,7 +401,7 @@ namespace DashworksTestAutomation.Tests.Projects.CreatingProjects
                         "DefaultValue"});
             table22.AddRow(new string[] {
                         "TestValueName",
-                        "Purple",
+                        "Red",
                         "Open",
                         "true"});
             testRunner.When("User create new Value", ((string)(null)), table22, "When ");
