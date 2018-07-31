@@ -794,7 +794,7 @@ Scenario: EvergreenJnr_AdminPage_CheckThatNoConsoleErrorsAreDisplayedAfterUpdati
 	And User clicks "Applications" tab in the Project Scope Changes section
 	Then "Applications to add (0 of 2129 selected)" is displayed to the user in the Project Scope Changes section
 	When User expands the object to add 
-	When User selects following Objects to the Project
+	When User selects following Objects
 	| Objects        |
 	| 20040610sqlserverck (1.0.0) |
 	| 7zip                        |
@@ -898,14 +898,14 @@ Scenario: EvergreenJnr_AdminPage_CheckThatSelectedCheckboxIsSelectedAfterSwitchi
 	And User clicks "Devices" tab in the Project Scope Changes section
 	Then Update Project buttons is disabled
 	When User expands the object to add 
-	And User selects following Objects to the Project
+	And User selects following Objects
 	| Objects        |
 	| 02UXAL8OAR3K1O |
 	Then Update Project button is active
 	And "Devices to add (1 of 17225 selected)" is displayed to the user in the Project Scope Changes section
 	When User clicks "Users" tab in the Project Scope Changes section
 	And User expands the object to add 
-	And User selects following Objects to the Project
+	And User selects following Objects
 	| Objects                   |
 	| AAH0343264 (Luc Gauthier) |
 	And User clicks "Devices" tab in the Project Scope Changes section
@@ -1012,17 +1012,17 @@ Scenario: EvergreenJnr_AdminPage_CheckingThatRedBannerWithOkMessageIsNotDisplaye
 	Then Project "TestProject12332" is displayed to user
 	When User selects "Scope Changes" tab on the Project details page
 	When User expands the object to add 
-	And User selects following Objects to the Project
+	And User selects following Objects
 	| Objects        |
 	| 1DPQO52HJQZJ0H |
 	And User clicks "Applications" tab in the Project Scope Changes section
 	And User expands the object to add 
-	And User selects following Objects to the Project
+	And User selects following Objects
 	| Objects                                                              |
 	| "WPF/E" (codename) Community Technology Preview (Feb 2007) (0.8.5.0) |
 	And User clicks "Users" tab in the Project Scope Changes section
 	And User expands the object to add 
-	And User selects following Objects to the Project
+	And User selects following Objects
 	| Objects                    |
 	| AAC860150 (Kerrie D. Ruiz) |
 	And User clicks the "UPDATE ALL CHANGES" Action button
@@ -1089,7 +1089,7 @@ Scenario: EvergreenJnr_AdminPage_CheckThatObjectsIsOnboardedToTheProjectWithClon
 	Then Project "TestProject19" is displayed to user
 	When User selects "Scope Changes" tab on the Project details page
 	When User expands the object to add 
-	And User selects following Objects to the Project
+	And User selects following Objects
 	| Objects         |
 	| 01BQIYGGUW5PRP6 |
 	And User clicks the "UPDATE DEVICE CHANGES" Action button
@@ -1130,19 +1130,19 @@ Scenario: EvergreenJnr_AdminPage_CheckingThatProjectDetailsForOnboardedObjectsIs
 	When User selects "Scope Changes" tab on the Project details page
 	When User clicks "Devices" tab in the Project Scope Changes section
 	And User expands the object to add
-	And User selects following Objects to the Project
+	And User selects following Objects
 	| Objects        |
 	| 0IJB93JZPG72PX |
 	| 04I01QSFL1AWKM |
 	When User clicks "Applications" tab in the Project Scope Changes section
 	And User expands the object to add
-	And User selects following Objects to the Project
+	And User selects following Objects
 	| Objects                        |
 	| ACDSee 4.0.1 Std Trial Version |
 	| ACDSee 8 (8.0.39)              |
 	When User clicks "Users" tab in the Project Scope Changes section
 	And User expands the object to add
-	And User selects following Objects to the Project
+	And User selects following Objects
 	| Objects                        |
 	| ABQ575757 (Salvador K. Waller) |
 	| ADG685492 (Eugene N. Stanton)  |
@@ -1317,7 +1317,7 @@ Scenario: EvergreenJnr_AdminPage_CheckThatOnboardedObjectsAreDisplayedAfterChang
 	When User selects "Scope Changes" tab on the Project details page
 	Then "Match to Evergreen Bucket" is displayed in the Bucket dropdown
 	When User expands the object to add
-	And User selects following Objects to the Project
+	And User selects following Objects
 	| Objects         |
 	| 0281Z793OLLLDU6 |
 	| 03U75EKEMUQMUS  |
@@ -1353,21 +1353,21 @@ Scenario: EvergreenJnr_AdminPage_CheckingThatTheProjectIsUpdatedWithoutErrors
 	When User selects "Scope Changes" tab on the Project details page
 	Then "Users to add (0 of 41339 selected)" is displayed to the user in the Project Scope Changes section
 	When User expands the object to add
-	And User selects following Objects to the Project
+	And User selects following Objects
 	| Objects                               |
 	| 003F5D8E1A844B1FAA5 (Hunter, Melanie) |
 	| 01FF97A1FFAC48A1803 (Aultman, Chanel) |
 	When User clicks "Devices" tab in the Project Scope Changes section
 	Then "Devices to add (0 of 16765 selected)" is displayed to the user in the Project Scope Changes section
 	When User expands the object to add 
-	And User selects following Objects to the Project
+	And User selects following Objects
 	| Objects        |
 	| 0SH2BQ3EPXTEWN |
 	| 30LA8G32UF7HQC |
 	When User clicks "Applications" tab in the Project Scope Changes section
 	Then "Applications to add (0 of 2081 selected)" is displayed to the user in the Project Scope Changes section
 	When User expands the object to add 
-	And User selects following Objects to the Project
+	And User selects following Objects
 	| Objects                                          |
 	| ACDSee 4.0.2 PowerPack Trial Version (4.00.0002) |
 	| Backburner (2.1.2.0)                             |
@@ -1454,7 +1454,7 @@ Scenario: EvergreenJnr_AdminPage_CheckThatSelectAllCheckboxIsWorkingCorrectlyOnA
 	When User enters "Checkbox11758" text in the Search field for "Project" column
 	And User removes selected item
 
-@Evergreen @Admin @EvergreenJnr_AdminPage @AdminPage @DAS11770 @Delete_Newly_Created_Team @Teams
+@Evergreen @Admin @EvergreenJnr_AdminPage @AdminPage @DAS11770 @DAS12999 @Delete_Newly_Created_Team @Teams
 Scenario: EvergreenJnr_AdminPage_CheckThatImpossibleToCreateSameNamedTeamUsingTheSpaceAsAFirstSymbol
 	When User clicks Admin on the left-hand menu
 	Then Admin page should be displayed to the user
@@ -1466,6 +1466,23 @@ Scenario: EvergreenJnr_AdminPage_CheckThatImpossibleToCreateSameNamedTeamUsingTh
 	And User enters "test" in the Team Description field
 	And User clicks Create Team button on the Create Team page
 	Then Success message is displayed and contains "The team has been created" text
+	When User clicks newly created object link
+	Then "11770" team details is displayed to the user
+	When User clicks "Team Settings" tab
+	And User clicks Default Team checkbox
+	And User clicks the "UPDATE TEAM" Action button
+	Then Success message is displayed and contains "The team was successfully updated" text
+	When User click on Back button
+	When User enters "My Team" text in the Search field for "Team" column
+	Then "FALSE" value is displayed for Default column
+	When User clicks content from "Team" column
+	And User clicks "Team Settings" tab
+	And User clicks Default Team checkbox
+	And User clicks the "UPDATE TEAM" Action button
+	Then Success message is displayed and contains "The team was successfully updated" text
+	When User click on Back button
+	When User enters "My Team" text in the Search field for "Team" column
+	Then "TRUE" value is displayed for Default column
 	When User clicks the "CREATE TEAM" Action button
 	Then "Create Team" page should be displayed to the user
 	When User enters " 11770" in the Team Name field
@@ -1583,7 +1600,7 @@ Scenario: EvergreenJnr_AdminPage_CheckThat500ISEInvalidColumnNameIsNotDisplayedW
 	Then Error message is not displayed
 	When User selects "Scope Changes" tab on the Project details page
 	When User expands the object to add 
-	And User selects following Objects to the Project
+	And User selects following Objects
 	| Objects         |
 	| 0QLZFK7RHMWJLQM |
 	| 0RGBQGA7XOOPJSW |
@@ -1639,7 +1656,7 @@ Scenario: EvergreenJnr_AdminPage_CheckThatWarningMessageIsNotDisplayedAfterAddin
 	And User selects all objects to the Project
 	Then "Devices to add (5 of 17225 selected)" is displayed to the user in the Project Scope Changes section
 	When User cancels the selection objects in the Project
-	And User selects following Objects to the Project
+	And User selects following Objects
 	| Objects         |
 	| 07RJRCQQJNBJIJQ |
 	| 0CFHJY5A8WLUB0J |
@@ -1723,7 +1740,7 @@ Scenario: EvergreenJnr_AdminPage_CheckThatDevicesToAddAndRemoveAreChangingApprop
 	When User selects "Scope Changes" tab on the Project details page
 	Then "Devices to add (0 of 2 selected)" is displayed to the user in the Project Scope Changes section
 	When User expands the object to add 
-	And User selects following Objects to the Project
+	And User selects following Objects
 	| Objects         |
 	| 00BDM1JUR8IF419 |
 	| 011PLA470S0B9DJ |
@@ -1765,7 +1782,7 @@ Scenario: EvergreenJnr_AdminPage_CheckThatUsersToAddAndRemoveAreChangingAppropri
 	When User selects "Scope Changes" tab on the Project details page
 	Then "Users to add (0 of 2 selected)" is displayed to the user in the Project Scope Changes section
 	When User expands the object to add 
-	And User selects following Objects to the Project
+	And User selects following Objects
 	| Objects                                   |
 	| 000F977AC8824FE39B8 (Spruill, Shea)       |
 	| 002B5DC7D4D34D5C895 (Collor, Christopher) |
@@ -2005,7 +2022,7 @@ Scenario: EvergreenJnr_AdminPage_CheckTheBucketStateForOnboardedObjects
 	And User clicks content from "Project" column
 	And User selects "Scope Changes" tab on the Project details page
 	And User expands the object to add 
-	And User selects following Objects to the Project
+	And User selects following Objects
 	| Objects        |
 	| 0TTSZRQ1ZTIXWM |
 	And User clicks the "UPDATE ALL CHANGES" Action button
@@ -2065,7 +2082,7 @@ Scenario Outline: EvergreenJnr_AdminPage_CheckOnboardingObjectUsingUpdateAppropr
 	When User selects "Scope Changes" tab on the Project details page
 	And User clicks "<TabName>" tab in the Project Scope Changes section
 	And User expands the object to add 
-	And User selects following Objects to the Project
+	And User selects following Objects
 	| Objects        |
 	| <ObjectsToAdd> |
 	And User clicks the "<ButtonName>" Action button
@@ -2549,21 +2566,21 @@ Scenario: EvergreenJnr_AdminPage_OnboardingMailboxesUsersApplicationsObjectsUsin
 	When User selects "Scope Changes" tab on the Project details page
 	Then "Mailboxes to add (0 of 14784 selected)" is displayed to the user in the Project Scope Changes section
 	When User expands the object to add
-	And User selects following Objects to the Project
+	And User selects following Objects
 	| Objects                                            |
 	| 003F5D8E1A844B1FAA5@bclabs.local (Hunter, Melanie) |
 	| 00DB4000EDD84951993@bclabs.local (CSC, SS)         |
 	When User clicks "Users" tab in the Project Scope Changes section
 	Then "Users to add (0 of 14747 selected)" is displayed to the user in the Project Scope Changes section
 	When User expands the object to add 
-	And User selects following Objects to the Project
+	And User selects following Objects
 	| Objects                            |
 	| 02E0346DF7804F25835 (Gill, Donna)  |
 	| 037AF4CF47C1452D8A4 (Vanetti, Joe) |
 	#When User clicks "Applications" tab in the Project Scope Changes section
 	#Then "Applications to add (0 of 0 selected)" is displayed to the user in the Project Scope Changes section
 	#When User expands the object to add 
-	#And User selects following Objects to the Project
+	#And User selects following Objects
 	#| Objects                                          |
 	#| ACDSee 4.0.2 PowerPack Trial Version (4.00.0002) |
 	#| Backburner (2.1.2.0)                             |
@@ -2615,3 +2632,21 @@ Examples:
 	| ChangingToList1  | ChangingToList2 | ObjectsToAdd1                         | ObjectsToAdd2                         |
 	| All Applications | StaticList1529  | Applications to add (0 of 0 selected) | Applications to add (0 of 0 selected) |
 	| StaticList1529   | DynamicList87   | Applications to add (0 of 0 selected) | Applications to add (0 of 0 selected) |
+
+@Evergreen @Admin @EvergreenJnr_AdminPage @AdminPage @DAS12999 @Delete_Newly_Created_Team @Teams
+Scenario: EvergreenJnr_AdminPage_AddingMembersToTheTeam
+	When User clicks Admin on the left-hand menu
+	Then Admin page should be displayed to the user
+	When User clicks "Teams" link on the Admin page
+	Then "Teams" page should be displayed to the user
+	When User clicks the "CREATE TEAM" Action button
+	Then "Create Team" page should be displayed to the user
+	When User enters "TestTeam2" in the Team Name field
+	And User enters "test" in the Team Description field
+	When User selects "Add members from another team" in the Add Members dropdown
+	And User selects following Objects
+	| Objects                |
+	| Migration Phase 3 Team |
+	| Retail Team            |
+	And User clicks Create Team button on the Create Team page
+	Then Success message is displayed and contains "The team has been created" text
