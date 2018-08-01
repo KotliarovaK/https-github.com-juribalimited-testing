@@ -166,6 +166,48 @@ namespace DashworksTestAutomation.Steps.Projects
             _projectDto.Details = _detailsDto;
         }
 
+        [Then(@"CC email field is displayed with ""(.*)"" text")]
+        public void ThenCсEmailFieldIsDisplayedWithText(string emailText)
+        {
+            var page = _driver.NowAt<DetailsPage>();
+            Assert.IsTrue(page.GetTextInCcEmailAddressField(emailText).Displayed(), $"Email with '{emailText}' text is not displayed");
+        }
+
+        [Then(@"BCC email field is displayed with ""(.*)"" text")]
+        public void ThenBCсEmailFieldIsDisplayedWithText(string emailText)
+        {
+            var page = _driver.NowAt<DetailsPage>();
+            Assert.IsTrue(page.GetTextInBccEmailAddressField(emailText).Displayed(), $"Email with '{emailText}' text is not displayed");
+        }
+
+        [When(@"User clearing CC email field")]
+        public void WhenUserClearingCсEmailField()
+        {
+            var page = _driver.NowAt<DetailsPage>();
+            page.CcEmail.Clear();
+        }
+
+        [When(@"User clearing BCC email field")]
+        public void WhenUserClearingBссEmailField()
+        {
+            var page = _driver.NowAt<DetailsPage>();
+            page.BccEmail.Clear();
+        }
+
+        [Then(@"CC email field is empty")]
+        public void ThenCсEmailFieldIsEmpty()
+        {
+            var page = _driver.NowAt<DetailsPage>();
+            Assert.IsEmpty(page.CcEmail.GetAttribute("value"), "CC email field is not empty");
+        }
+
+        [Then(@"BCC email field is empty")]
+        public void ThenBссEmailFieldIsEmpty()
+        {
+            var page = _driver.NowAt<DetailsPage>();
+            Assert.IsEmpty(page.BccEmail.GetAttribute("value"), "BCC email field is not empty");
+        }
+
         [When(@"User create Request Type")]
         public void WhenUserCreateRequestType(Table table)
         {
@@ -370,8 +412,7 @@ namespace DashworksTestAutomation.Steps.Projects
                     //assign DateModeString to DateModeEnum
                     _taskPropertiesDetailsDto.DateMode = (DateModeEnum)Enum.Parse(typeof(DateModeEnum), _taskPropertiesDetailsDto.DateModeString);
                     page.DateMode.SelectboxSelect(_taskPropertiesDetailsDto.DateMode.GetValue());
-                }
-                    
+                }      
             }
 
             if (_taskPropertiesDto.ValueType.Equals(ValueTypeEnum.Radiobutton))
