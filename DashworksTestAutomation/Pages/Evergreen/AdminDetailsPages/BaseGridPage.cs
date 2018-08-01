@@ -34,6 +34,9 @@ namespace DashworksTestAutomation.Pages.Evergreen.AdminDetailsPages
         [FindsBy(How = How.XPath, Using = ".//span[text()='CONTINUE']")]
         public IWebElement ContinueButton { get; set; }
 
+        [FindsBy(How = How.XPath, Using = "//span[@class='inline-link ng-star-inserted']/a")]
+        public IWebElement NewProjectLink { get; set; }
+
         [FindsBy(How = How.XPath, Using = ".//button//span[contains(text(), 'RESET FILTERS')]")]
         public IWebElement ResetFiltersButton { get; set; }
 
@@ -76,7 +79,7 @@ namespace DashworksTestAutomation.Pages.Evergreen.AdminDetailsPages
         [FindsBy(How = How.XPath, Using = ".//input[@placeholder='Search']")]
         public IWebElement SearchTextbox { get; set; }
 
-        [FindsBy(How = How.XPath, Using = ".//button[@mattooltip='Move']")]
+        [FindsBy(How = How.XPath, Using = "//button/span[contains(text(), 'ADD')]")]
         public IWebElement AddItemButton { get; set; }
 
         [FindsBy(How = How.XPath, Using = ".//button[contains(@title,'Update')]")]
@@ -122,7 +125,7 @@ namespace DashworksTestAutomation.Pages.Evergreen.AdminDetailsPages
         [FindsBy(How = How.XPath, Using = "//div[contains(@class, 'inline-tip')]")]
         public IWebElement WarningMessage { get; set; }
 
-        [FindsBy(How = How.XPath, Using = ".//button[contains(@class, 'messageAction')]/span[text()='DELETE']")]
+        [FindsBy(How = How.XPath, Using = ".//button[contains(@class, 'messageAction')]/span[contains(text(), 'DELETE')]")]
         public IWebElement DeleteButtonInWarningMessage { get; set; }
 
         [FindsBy(How = How.XPath, Using = ".//div[@class='empty-message ng-star-inserted'][text()='No items']")]

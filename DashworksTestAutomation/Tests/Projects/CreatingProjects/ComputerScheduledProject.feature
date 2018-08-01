@@ -43,9 +43,16 @@ Scenario: Projects_CreateComputerScheduledProject
 	And "Manage Project Details" page is displayed to the user
 	And Project Name is displayed correctly
 	When User updates the Details page
-	| ShowOriginalColumn | IncludeSiteName | NotApplicableApplications | InstalledApplications | EntitledApplications |  TaskEmailCcEmailAddress | TaskEmailBccEmailAddress | StartDate  | EndDate     |
-	| true               | true            | true                      | true                  | true                 |Test@test.com           | Test@test.com            | 8 May 2012 | 10 Apr 2018 |
+	| ShowOriginalColumn | IncludeSiteName | NotApplicableApplications | InstalledApplications | EntitledApplications | TaskEmailCcEmailAddress | TaskEmailBccEmailAddress | StartDate  | EndDate     |
+	| true               | true            | true                      | true                  | true                 | TestOne@test.com        | TestTwo@test.com         | 8 May 2012 | 10 Apr 2018 |
 	Then Success message is displayed with "Project was successfully updated" text
+	Then CC email field is displayed with "TestOne@test.com" text
+	Then BCC email field is displayed with "TestTwo@test.com" text
+	When User clearing CC email field
+	When User clearing BCC email field
+	And User clicks "Update" button
+	Then CC email field is empty
+	Then BCC email field is empty
 		#Creating Request Types
 	When User navigate to "Request Types" tab
 	Then "Manage Request Types" page is displayed to the user
@@ -263,12 +270,12 @@ Scenario: Projects_CreateComputerScheduledProject
 	And User clicks "Add Value" button
 	And User create new Value
 	| Name    | ReadinessString | TaskStatusString | DefaultValue |
-	| Blocked | Purple          | Open             | false        |
+	| Blocked | Red             | Open             | false        |
 	And User clicks "Save Value" button
 	And User navigates to "Not Started" Value
 	And User edit selected Value
 	| Name | ReadinessString | TaskStatusString | DefaultValue |
-	|      | Blue            |                  | true         |
+	|      | Grey            |                  | true         |
 	And User clicks "Save Value" button
 	And User clicks "« Go Back to Tasks" button
 	Then created Task is displayed in the table
@@ -285,8 +292,8 @@ Scenario: Projects_CreateComputerScheduledProject
 	When User navigate to "Values" page
 	And User clicks "Add Value" button
 	And User create new Value
-	| Name         | ReadinessString | TaskStatusString | DefaultValue |
-	| Out of Scope |                 | Closed           | false        |
+	| Name | ReadinessString | TaskStatusString | DefaultValue |
+	| None |                 | Closed           | false        |
 	And User clicks "Save Value" button
 	And User navigates to "Enabled" Value
 	And User edit selected Value
@@ -308,8 +315,8 @@ Scenario: Projects_CreateComputerScheduledProject
 	When User navigate to "Values" page
 	And User clicks "Add Value" button
 	And User create new Value
-	| Name    | ReadinessString       | TaskStatusString | DefaultValue |
-	| Unknown | ReallyExtremelyOrange | Open             | true         |
+	| Name    | ReadinessString | TaskStatusString | DefaultValue |
+	| Unknown | Amber           | Open             | true         |
 	And User clicks "Save Value" button
 	And User navigates to "Not Applicable" Value
 	And User edit selected Value
@@ -360,7 +367,7 @@ Scenario: Projects_CreateComputerScheduledProject
 	And User clicks "Add Value" button
 	And User create new Value
 	| Name    | ReadinessString | TaskStatusString | DefaultValue |
-	| Blocked | LightBlue       | Open             | false        |
+	| Blocked | Grey            | Open             | false        |
 	And User clicks "Save Value" button
 	And User navigates to "Not Started" Value
 	And User edit selected Value
@@ -383,7 +390,7 @@ Scenario: Projects_CreateComputerScheduledProject
 	And User navigates to "Complete" Value
 	And User edit selected Value
 	| Name     | ReadinessString | TaskStatusString | DefaultValue |
-	| Finished | Brown           |                  | false        |
+	| Finished | Green           |                  | false        |
 	And User clicks "Save Value" button
 	And User navigate to "Request Types" page
 	Then "Edit Task" page is displayed to the user

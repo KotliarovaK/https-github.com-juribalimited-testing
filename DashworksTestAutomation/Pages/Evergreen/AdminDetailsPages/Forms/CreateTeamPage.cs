@@ -18,7 +18,10 @@ namespace DashworksTestAutomation.Pages.Evergreen.AdminDetailsPages
 
         [FindsBy(How = How.XPath, Using = ".//label[text()='Team Name']/ancestor::div[@class='form-item']//input")]
         public IWebElement TeamNameField { get; set; }
-        
+
+        [FindsBy(How = How.XPath, Using = "//span[text()='Add Members (Optional)']")]
+        public IWebElement AddMembersCheckbox { get; set; }
+
         [FindsBy(How = How.XPath, Using = ".//textarea[@placeholder='Team Description']")]
         public IWebElement TeamDescriptionField { get; set; }
         
@@ -29,6 +32,13 @@ namespace DashworksTestAutomation.Pages.Evergreen.AdminDetailsPages
             {
                 SelectorFor(this, p => p.CreateTeamFormTitle)
             };
+        }
+
+        public void SelectObjectForTeamCreation(string objectName)
+        {
+            string ListNameSelector = $".//span[@class='mat-option-text'][contains(text(), '{objectName}')]";
+            Driver.WaitWhileControlIsNotDisplayed(By.XPath(ListNameSelector));
+            Driver.FindElement(By.XPath(ListNameSelector)).Click();
         }
     }
 }

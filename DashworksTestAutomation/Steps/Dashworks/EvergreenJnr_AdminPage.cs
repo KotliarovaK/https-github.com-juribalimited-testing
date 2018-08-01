@@ -616,6 +616,14 @@ namespace DashworksTestAutomation.Steps.Dashworks
             teamName.TeamDescriptionField.SendKeys(descriptionText);
         }
 
+        [When(@"User selects ""(.*)"" in the Add Members dropdown")]
+        public void WhenUserSelectsInTheAddMembersDropdown(string optionName)
+        {
+            var createProjectElement = _driver.NowAt<CreateTeamPage>();
+            createProjectElement.AddMembersCheckbox.Click();
+            createProjectElement.SelectObjectForTeamCreation(optionName);
+        }
+
         [When(@"User clicks Update Team button")]
         public void WhenUserClicksUpdateTeamButton()
         {
@@ -634,6 +642,13 @@ namespace DashworksTestAutomation.Steps.Dashworks
                 "Update Team button is active");
         }
 
+        [When(@"User clicks Default Team checkbox")]
+        public void WhenUserClicksDefaultTeamCheckbox()
+        {
+            var createBucketElement = _driver.NowAt<TeamsPage>();
+            createBucketElement.DefaulTeamCheckbox.Click();
+        }
+
         [When(@"User clicks Create Team button on the Create Team page")]
         public void ThenUserClicksCreateTeamButtonOnTheCreateTeamPage()
         {
@@ -641,6 +656,79 @@ namespace DashworksTestAutomation.Steps.Dashworks
             _driver.WaitWhileControlIsNotDisplayed<CreateTeamPage>(() => page.CreateTeamButton);
             page.CreateTeamButton.Click();
             Logger.Write("Create Team button was clicked");
+        }
+
+        [When(@"User selects ""(.*)"" tab on the Team details page")]
+        public void WhenUserSelectsTabOnTheTeamDetailsPage(string tabName)
+        {
+            var projectTabs = _driver.NowAt<TeamsPage>();
+            projectTabs.NavigateToTeamTabByName(tabName);
+            _driver.WaitForDataLoading();
+        }
+
+        [When(@"User removes selected members")]
+        public void WhenUserRemovesSelectedMembers()
+        {
+            var teamElement = _driver.NowAt<TeamsPage>();
+            teamElement.ActionsButton.Click();
+            teamElement.RemoveButtonInActions.Click();
+            teamElement.RemoveButtonOnPage.Click();
+            _driver.WaitWhileControlIsNotDisplayed<BaseGridPage>(() => teamElement.WarningMessage);
+            _driver.WaitForDataLoading();
+            teamElement.RemoveButtonInWarningMessage.Click();
+        }
+
+        [When(@"User selects ""(.*)"" team to add")]
+        public void WhenUserSelectsTeamToAdd(string teamName)
+        {
+            var teamElement = _driver.NowAt<AddToAnotherTeamPage>();
+            teamElement.AddUsersToAnotherTeam(teamName);
+        }
+
+        [Then(@"Add Buckets page is displayed to the user")]
+        public void ThenAddBucketsPageIsDisplayedToTheUser()
+        {
+            var page = _driver.NowAt<AddBucketToTeamPage>();
+            Assert.IsTrue(page.PageTitle.Displayed(), "Add Buckets page is not displayed");
+        }
+
+        [Then(@"Reassign Buckets page is displayed to the user")]
+        public void ThenReassignBucketsPageIsDisplayedToTheUser()
+        {
+            var page = _driver.NowAt<ReassignBucketsPage>();
+            Assert.IsTrue(page.PageTitle.Displayed(), "Reassign Buckets page is not displayed");
+        }
+
+        [Then(@"Change Team page is displayed to the user")]
+        public void ThenChangeTeamPageIsDisplayedToTheUser()
+        {
+            var page = _driver.NowAt<ChangeTeamPage>();
+            Assert.IsTrue(page.PageTitle.Displayed(), "Change Team page is not displayed");
+        }
+
+        [When(@"User selects ""(.*)"" in the Select a team dropdown")]
+        public void WhenUserSelectsInTheSelectATeamDropdown(string teamName)
+        {
+            var page = _driver.NowAt<ReassignBucketsPage>();
+            page.SelectTeamDropdown.Click();
+            _driver.WaitForDataLoading();
+            page.SelectTeamToReassign(teamName);
+        }
+
+        [When(@"User selects ""(.*)"" in the Team dropdown")]
+        public void WhenUserSelectsInTheTeamDropdown(string teamName)
+        {
+            var page = _driver.NowAt<ChangeTeamPage>();
+            page.SelectTeamDropdown.Click();
+            _driver.WaitForDataLoading();
+            page.SelectTeamToChange(teamName);
+        }
+
+        [When(@"User expands ""(.*)"" project to add bucket")]
+        public void WhenUserExpandsProjectToAddBucket(string projectName)
+        {
+            var teamElement = _driver.NowAt<AddBucketToTeamPage>();
+            teamElement.ExpandProjectByName(projectName).Click();
         }
 
         #region Column Settings
@@ -916,10 +1004,10 @@ namespace DashworksTestAutomation.Steps.Dashworks
             Assert.IsFalse(message.SuccessMessage.Displayed());
         }
 
-        [When(@"User clicks newly created project link")]
-        public void WhenUserClicksNewlyCreatedProjectLink()
+        [When(@"User clicks newly created object link")]
+        public void WhenUserClicksNewlyCreatedObjectLink()
         {
-            var projectElement = _driver.NowAt<ProjectsPage>();
+            var projectElement = _driver.NowAt<BaseGridPage>();
             projectElement.NewProjectLink.Click();
         }
 
@@ -1044,8 +1132,8 @@ namespace DashworksTestAutomation.Steps.Dashworks
             projectElement.UpdateButton.Click();
         }
 
-        [When(@"User selects following Objects to the Project")]
-        public void WhenUserSelectsFollowingObjectsToTheProject(Table table)
+        [When(@"User selects following Objects")]
+        public void WhenUserSelectsFollowingObjects(Table table)
         {
             var projectElement = _driver.NowAt<BaseGridPage>();
             foreach (var row in table.Rows)

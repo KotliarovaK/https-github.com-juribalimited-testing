@@ -170,12 +170,19 @@ namespace DashworksTestAutomation.Tests.Projects.CreatingProjects
                         "true",
                         "true",
                         "true",
-                        "Test@test.com",
-                        "Test@test.com",
+                        "TestOne@test.com",
+                        "TestTwo@test.com",
                         "8 May 2012",
                         "10 Apr 2018"});
             testRunner.When("User updates the Details page", ((string)(null)), table5, "When ");
             testRunner.Then("Success message is displayed with \"Project was successfully updated\" text", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+            testRunner.Then("CC email field is displayed with \"TestOne@test.com\" text", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+            testRunner.Then("BCC email field is displayed with \"TestTwo@test.com\" text", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+            testRunner.When("User clearing CC email field", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+            testRunner.When("User clearing BCC email field", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+            testRunner.And("User clicks \"Update\" button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+            testRunner.Then("CC email field is empty", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+            testRunner.Then("BCC email field is empty", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
             testRunner.When("User navigate to \"Request Types\" tab", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
             testRunner.Then("\"Manage Request Types\" page is displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
             testRunner.When("User clicks \"Create Request Type\" button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
@@ -691,7 +698,7 @@ namespace DashworksTestAutomation.Tests.Projects.CreatingProjects
                         "DefaultValue"});
             table37.AddRow(new string[] {
                         "Blocked",
-                        "Purple",
+                        "Red",
                         "Open",
                         "false"});
             testRunner.And("User create new Value", ((string)(null)), table37, "And ");
@@ -704,7 +711,7 @@ namespace DashworksTestAutomation.Tests.Projects.CreatingProjects
                         "DefaultValue"});
             table38.AddRow(new string[] {
                         "",
-                        "Blue",
+                        "Grey",
                         "",
                         "true"});
             testRunner.And("User edit selected Value", ((string)(null)), table38, "And ");
@@ -762,7 +769,7 @@ namespace DashworksTestAutomation.Tests.Projects.CreatingProjects
                         "TaskStatusString",
                         "DefaultValue"});
             table41.AddRow(new string[] {
-                        "Out of Scope",
+                        "None",
                         "",
                         "Closed",
                         "false"});
@@ -833,7 +840,7 @@ namespace DashworksTestAutomation.Tests.Projects.CreatingProjects
                         "DefaultValue"});
             table45.AddRow(new string[] {
                         "Unknown",
-                        "ReallyExtremelyOrange",
+                        "Amber",
                         "Open",
                         "true"});
             testRunner.And("User create new Value", ((string)(null)), table45, "And ");
@@ -991,7 +998,7 @@ namespace DashworksTestAutomation.Tests.Projects.CreatingProjects
                         "DefaultValue"});
             table53.AddRow(new string[] {
                         "Blocked",
-                        "LightBlue",
+                        "Grey",
                         "Open",
                         "false"});
             testRunner.And("User create new Value", ((string)(null)), table53, "And ");
@@ -1059,7 +1066,7 @@ namespace DashworksTestAutomation.Tests.Projects.CreatingProjects
                         "DefaultValue"});
             table57.AddRow(new string[] {
                         "Finished",
-                        "Brown",
+                        "Green",
                         "",
                         "false"});
             testRunner.And("User edit selected Value", ((string)(null)), table57, "And ");
