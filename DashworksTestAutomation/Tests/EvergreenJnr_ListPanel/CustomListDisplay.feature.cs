@@ -3211,6 +3211,7 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_ListPanel
         [NUnit.Framework.CategoryAttribute("CustomListDisplay")]
         [NUnit.Framework.CategoryAttribute("EvergreenJnr_ListPanel")]
         [NUnit.Framework.CategoryAttribute("DAS12917")]
+        [NUnit.Framework.CategoryAttribute("Delete_Newly_Created_List")]
         public virtual void EvergreenJnr_MailboxesList_CheckThatFilterNameIsNotChangedAfterRenameWhileUpdateValuesOfFilter()
         {
             System.Exception lastException = null;
@@ -3245,7 +3246,8 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_ListPanel
                         "Mailboxes",
                         "CustomListDisplay",
                         "EvergreenJnr_ListPanel",
-                        "DAS12917"});
+                        "DAS12917",
+                        "Delete_Newly_Created_List"});
             this.ScenarioSetup(scenarioInfo);
             this.FeatureBackground();
             testRunner.When("User clicks \"Mailboxes\" on the left-hand menu", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");

@@ -203,8 +203,10 @@
     <Compile Include="DTO\Projects\Tasks\TaskPropertiesDto.cs" />
     <Compile Include="DTO\Projects\Tasks\TaskProperties_DetailsDto.cs" />
     <Compile Include="DTO\Projects\TeamPropertiesDto.cs" />
+    <Compile Include="DTO\RuntimeVariables\AddedObjects.cs" />
     <Compile Include="DTO\RuntimeVariables\Buckets.cs" />
     <Compile Include="DTO\RuntimeVariables\Filter.cs" />
+    <Compile Include="DTO\RuntimeVariables\LastUsedBucket.cs" />
     <Compile Include="DTO\RuntimeVariables\ListsDetails.cs" />
     <Compile Include="DTO\RuntimeVariables\PrjLastDeletedRequestTypeName.cs" />
     <Compile Include="DTO\RuntimeVariables\PrjLastDeletedTaskName.cs" />
@@ -246,6 +248,7 @@
     <Compile Include="Pages\Evergreen\AdminDetailsPages\Forms\CreateProjectPage.cs" />
     <Compile Include="Pages\Evergreen\AdminDetailsPages\Forms\CreateBucketPage.cs" />
     <Compile Include="Pages\Evergreen\AdminDetailsPages\Forms\CreateTeamPage.cs" />
+    <Compile Include="Pages\Evergreen\AdminDetailsPages\MoveToAnotherBucketPage.cs" />
     <Compile Include="Pages\Evergreen\AdminDetailsPages\TeamsPage.cs" />
     <Compile Include="Pages\Evergreen\AdminDetailsPages\ProjectsPage.cs" />
     <Compile Include="Pages\Evergreen\ApplicationsPage.cs" />
@@ -313,6 +316,7 @@
     <Compile Include="Pages\Projects\Projects_Dashboards\Projects_DashboardsGroupsPage.cs" />
     <Compile Include="Pages\Projects\Projects_Dashboards\Projects_DashboardsPage.cs" />
     <Compile Include="Pages\Projects\Projects_PMObjectPage.cs" />
+    <Compile Include="Steps\Dashworks\EvergreenJnr_AdminPage_AfterScenario.cs" />
     <Compile Include="Steps\ManagementConsole\ManagementConsole.cs" />
     <Compile Include="Steps\Projects\Projects_CreatingProject\Projects_Capacity.cs" />
     <Compile Include="Steps\Projects\Projects_CreatingProject\Projects_CreateProject.cs" />

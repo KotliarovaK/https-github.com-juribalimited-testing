@@ -95,7 +95,7 @@ namespace DashworksTestAutomation.Steps.Projects
         public void ThenSuccessMessageIsDisplayed()
         {
             var page = _driver.NowAt<MainElementsOfProjectCreation>();
-
+            _driver.WaitForDataLoading();
             _driver.WaitWhileControlIsNotDisplayed<MainElementsOfProjectCreation>(() => page.SuccessMessage);
             Assert.IsTrue(page.SuccessMessage.Displayed(), "Success Message is not displayed");
         }
