@@ -699,6 +699,13 @@ namespace DashworksTestAutomation.Steps.Dashworks
             Assert.IsTrue(page.PageTitle.Displayed(), "Reassign Buckets page is not displayed");
         }
 
+        [Then(@"Change Team page is displayed to the user")]
+        public void ThenChangeTeamPageIsDisplayedToTheUser()
+        {
+            var page = _driver.NowAt<ChangeTeamPage>();
+            Assert.IsTrue(page.PageTitle.Displayed(), "Change Team page is not displayed");
+        }
+
         [When(@"User selects ""(.*)"" in the Select a team dropdown")]
         public void WhenUserSelectsInTheSelectATeamDropdown(string teamName)
         {
@@ -706,6 +713,15 @@ namespace DashworksTestAutomation.Steps.Dashworks
             page.SelectTeamDropdown.Click();
             _driver.WaitForDataLoading();
             page.SelectTeamToReassign(teamName);
+        }
+
+        [When(@"User selects ""(.*)"" in the Team dropdown")]
+        public void WhenUserSelectsInTheTeamDropdown(string teamName)
+        {
+            var page = _driver.NowAt<ChangeTeamPage>();
+            page.SelectTeamDropdown.Click();
+            _driver.WaitForDataLoading();
+            page.SelectTeamToChange(teamName);
         }
 
         [When(@"User expands ""(.*)"" project to add bucket")]
