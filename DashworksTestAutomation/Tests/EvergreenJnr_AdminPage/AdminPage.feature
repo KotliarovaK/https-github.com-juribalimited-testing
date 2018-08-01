@@ -311,7 +311,7 @@ Scenario: EvergreenJnr_AdminPage_CheckThatNoConsoleErrorsAreDisplayedWhenDeleteD
 	Then color data in table is sorted by "Default" column in descending order on the Admin page
 	Then There are no errors in the browser console
 
-@Evergreen @Admin @EvergreenJnr_AdminPage @AdminPage @DAS11762 @DAS12009 @Teams
+@Evergreen @Admin @EvergreenJnr_AdminPage @AdminPage @DAS11762 @DAS12009 @DAS12999 @Teams
 Scenario: EvergreenJnr_AdminPage_CheckThatNoConsoleErrorsAreDisplayedWhenDeleteDataFromFilterTextFieldForTeams
 	When User clicks Admin on the left-hand menu
 	Then Admin page should be displayed to the user
@@ -323,7 +323,8 @@ Scenario: EvergreenJnr_AdminPage_CheckThatNoConsoleErrorsAreDisplayedWhenDeleteD
 	And User clears Filter field
 	Then There are no errors in the browser console
 	When User enters "Administrative Team" text in the Search field for "Team" column
-	And User clicks content from "Team" column
+	Then Counter shows "1" found rows
+	When User clicks content from "Team" column
 	Then "Administrative Team" team details is displayed to the user
 	When User have opened Column Settings for "Username" column
 	And User clicks Filter button in the Column Settings panel on the Teams Page
@@ -331,12 +332,30 @@ Scenario: EvergreenJnr_AdminPage_CheckThatNoConsoleErrorsAreDisplayedWhenDeleteD
 	And User clears Filter field
 	Then There are no errors in the browser console
 	When User click on Back button
-	When User have opened Column Settings for "Default" column
+	And User have opened Column Settings for "Default" column
 	And User clicks Filter button in the Column Settings panel on the Teams Page
 	When User clicks "True" checkbox from String Filter on the Admin page
+	Then Counter shows "2,789" found rows
 	Then There are no errors in the browser console
 	When User clicks Reset Filters button on the Admin page
 	Then Content is present in the table on the Admin page
+	When User enters "Team 10" text in the Search field for "Description" column
+	Then Counter shows "111" found rows
+	When User clicks Reset Filters button on the Admin page
+	And User enters "1" text in the Search field for "Evergreen Buckets" column
+	Then Counter shows "1" found rows
+	When User clicks Reset Filters button on the Admin page
+	And User enters "3" text in the Search field for "Project Buckets" column
+	Then Counter shows "3" found rows
+	When User clicks Reset Filters button on the Admin page
+	And User enters "2" text in the Search field for "Members" column
+	Then Counter shows "4" found rows
+	When User clicks Reset Filters button on the Admin page
+	And User click on "Team" column header on the Admin page
+	#Remove hash after fix sort order
+	#Then data in table is sorted by "Team" column in ascending order on the Admin page
+	When User click on "Team" column header on the Admin page
+	Then data in table is sorted by "Team" column in descending order on the Admin page
 	When User click on "Description" column header on the Admin page
 	Then data in table is sorted by "Description" column in ascending order on the Admin page
 	When User click on "Description" column header on the Admin page
@@ -349,7 +368,15 @@ Scenario: EvergreenJnr_AdminPage_CheckThatNoConsoleErrorsAreDisplayedWhenDeleteD
 	Then color data in table is sorted by "Default" column in ascending order on the Admin page
 	When User click on "Default" column header on the Admin page
 	Then color data in table is sorted by "Default" column in descending order on the Admin page
-	Then There are no errors in the browser console
+	When User click on "Evergreen Buckets" column header on the Admin page
+	Then numeric data in table is sorted by "Evergreen Buckets" column in descending order on the Admin page
+	When User click on "Evergreen Buckets" column header on the Admin page
+	Then numeric data in table is sorted by "Evergreen Buckets" column in ascending order on the Admin page
+	When User click on "Project Buckets" column header on the Admin page
+	Then numeric data in table is sorted by "Project Buckets" column in descending order on the Admin page
+	When User click on "Project Buckets" column header on the Admin page
+	Then numeric data in table is sorted by "Project Buckets" column in ascending order on the Admin page
+	And There are no errors in the browser console
 
 @Evergreen @Admin @EvergreenJnr_AdminPage @AdminPage @DAS11879 @DAS12742 @DAS12752 @Buckets
 Scenario: EvergreenJnr_AdminPage_CheckThatYouCanNotDeleteTheDefaultBucketWarningMessageIsNotDisplayedAfterTryingToDeleteNonDefaultBucket
@@ -728,8 +755,8 @@ Scenario: EvergreenJnr_AdminPage_CheckThatFiltersAreWorkingCorrectlyOnTheAdminPa
 	When User enters "Migration phase 3 team" text in the Search field for "Team" column
 	Then Counter shows "1" found rows
 	When User clears Search field for "Project Buckets" column
-	And User enters ">=5" text in the Search field for "Project Buckets" column
-	Then Counter shows "5" found rows
+	And User enters ">=10" text in the Search field for "Project Buckets" column
+	Then Counter shows "3" found rows
 	When User clears Search field for "Project Buckets" column
 	And User enters "Administrative Team" text in the Search field for "Team" column
 	And User clicks content from "Team" column
@@ -739,8 +766,8 @@ Scenario: EvergreenJnr_AdminPage_CheckThatFiltersAreWorkingCorrectlyOnTheAdminPa
 	And User enters "Cardiff --- Test text fill; Test text fill; ------" text in the Search field for "Bucket" column
 	Then Counter shows "1" found rows
 	When User clears Search field for "Project Buckets" column
-	When User enters "<35" text in the Search field for "Devices" column
-	Then Counter shows "10" found rows
+	When User enters "=35" text in the Search field for "Devices" column
+	Then Counter shows "0" found rows
 	When User clicks Admin on the left-hand menu
 	And User clicks "Buckets" link on the Admin page
 	When User clicks Reset Filters button on the Admin page
@@ -2634,10 +2661,15 @@ Examples:
 	| StaticList1529   | DynamicList87   | Applications to add (0 of 0 selected) | Applications to add (0 of 0 selected) |
 
 @Evergreen @Admin @EvergreenJnr_AdminPage @AdminPage @DAS12999 @Delete_Newly_Created_Team @Teams
-Scenario: EvergreenJnr_AdminPage_AddingMembersToTheTeam
+Scenario: EvergreenJnr_AdminPage_AddingIndividualAndMembersFromAnotherTeam
 	When User clicks Admin on the left-hand menu
 	Then Admin page should be displayed to the user
 	When User clicks "Teams" link on the Admin page
+	Then "Teams" page should be displayed to the user
+	Then Counter shows "2,790" found rows
+	When User clicks the "CREATE TEAM" Action button
+	Then "Create Team" page should be displayed to the user
+	When User clicks the "CANCEL" Action button
 	Then "Teams" page should be displayed to the user
 	When User clicks the "CREATE TEAM" Action button
 	Then "Create Team" page should be displayed to the user
@@ -2650,3 +2682,169 @@ Scenario: EvergreenJnr_AdminPage_AddingMembersToTheTeam
 	| Retail Team            |
 	And User clicks Create Team button on the Create Team page
 	Then Success message is displayed and contains "The team has been created" text
+	When User enters "My Team" text in the Search field for "Team" column
+	Then "TRUE" value is displayed for Default column
+	When User selects all rows on the grid
+	And User clicks on Actions button
+	And User selects "Delete Team" in the Actions
+	And User clicks Delete button 
+	Then Warning message with "You cannot delete the default team" text is displayed on the Admin page
+	When User clicks the "CREATE TEAM" Action button
+	Then "Create Team" page should be displayed to the user
+	When User enters "TestTeam22" in the Team Name field
+	And User enters "test" in the Team Description field
+	And User clicks Default Team checkbox
+	When User selects "Add individual members" in the Add Members dropdown
+	And User selects following Objects
+	| Objects           |
+	| automation_admin1 |
+	And User clicks Create Team button on the Create Team page
+	Then Success message is displayed and contains "The team has been created" text
+	When User enters "My Team" text in the Search field for "Team" column
+	Then "FALSE" value is displayed for Default column
+	When User clicks content from "Team" column
+	And User clicks "Team Settings" tab
+	And User clicks Default Team checkbox
+	And User clicks the "UPDATE TEAM" Action button
+	Then Success message is displayed and contains "The team was successfully updated" text
+	When User click on Back button
+	When User enters "TestTeam2" text in the Search field for "Team" column
+	And User selects all rows on the grid
+	And User removes selected item
+	Then Success message is displayed and contains "The selected teams have been deleted, and their buckets reassigned" text
+
+@Evergreen @Admin @EvergreenJnr_AdminPage @AdminPage @DAS12999 @Delete_Newly_Created_Team @Teams
+Scenario: EvergreenJnr_AdminPage_AddingMembersToTheTeam
+	When User clicks Admin on the left-hand menu
+	Then Admin page should be displayed to the user
+	When User clicks "Teams" link on the Admin page
+	Then "Teams" page should be displayed to the user
+	When User clicks the "CREATE TEAM" Action button
+	Then "Create Team" page should be displayed to the user
+	When User enters "TestTeam3" in the Team Name field
+	And User enters "test" in the Team Description field
+	And User clicks Create Team button on the Create Team page
+	Then Success message is displayed and contains "The team has been created" text
+	When User clicks newly created object link
+	When User selects "Team Members" tab on the Team details page
+	When User clicks the "ADD MEMBERS" Action button
+	And User adds following Objects from list
+	| Objects           |
+	| automation_admin1 |
+	| automation_admin2 |
+	| automation_admin3 |
+	| eugene            |
+	Then Success message is displayed and contains "The selected users have been added" text
+	When User click on "Username" column header on the Admin page
+	Then data in table is sorted by "Username" column in ascending order on the Admin page
+	When User click on "Username" column header on the Admin page
+	Then data in table is sorted by "Username" column in descending order on the Admin page
+	When User click on "Full Name" column header on the Admin page
+	Then data in table is sorted by "Full Name" column in ascending order on the Admin page
+	When User click on "Full Name" column header on the Admin page
+	Then data in table is sorted by "Full Name" column in descending order on the Admin page
+	When User enters "Automation " text in the Search field for "Full Name" column
+	Then Counter shows "3" found rows
+	When User enters "automation_admin1" text in the Search field for "Username" column
+	Then Counter shows "1" found rows
+	When User selects all rows on the grid
+	And User removes selected members
+	Then Success message is displayed and contains "The selected user has been removed" text
+	When User enters "automation_admin2" text in the Search field for "Username" column
+	And User selects all rows on the grid
+	And User clicks on Actions button
+	And User selects "Add to another team" in the Actions
+	And User clicks the "CONTINUE" Action button
+	And User selects "Team 1" team to add
+	And User clicks the "ADD USERS" Action button
+	Then Success message is displayed and contains "The selected user was added to team Team 1" text
+	When User click on Back button
+	And User enters "TestTeam3" text in the Search field for "Team" column
+	And User selects all rows on the grid
+	And User removes selected item
+
+@Evergreen @Admin @EvergreenJnr_AdminPage @AdminPage @DAS12999 @Delete_Newly_Created_Team @Teams
+Scenario: EvergreenJnr_AdminPage_AddingBucketsToTheTeam
+	When User clicks Admin on the left-hand menu
+	Then Admin page should be displayed to the user
+	When User clicks "Teams" link on the Admin page
+	Then "Teams" page should be displayed to the user
+	When User clicks the "CREATE TEAM" Action button
+	Then "Create Team" page should be displayed to the user
+	When User enters "TestTeam4" in the Team Name field
+	And User enters "test" in the Team Description field
+	And User clicks Create Team button on the Create Team page
+	Then Success message is displayed and contains "The team has been created" text
+	When User clicks newly created object link
+	When User selects "Buckets" tab on the Team details page
+	When User clicks the "ADD BUCKETS" Action button
+	Then Add Buckets page is displayed to the user
+	When User expands "Email Migration" project to add bucket
+	And User adds following Objects from list
+	| Objects   |
+	| Glasgow   |
+	| Frankfurt |
+	Then Success message is displayed and contains "The selected buckets have been added" text
+	When User clicks the "ADD BUCKETS" Action button
+	When User expands "Windows 7 Migration (Computer Scheduled Project)" project to add bucket
+	And User adds following Objects from list
+	| Objects     |
+	| Nottingham  |
+	| Southampton |
+	Then Success message is displayed and contains "The selected buckets have been added" text
+	When User click on "Bucket" column header on the Admin page
+	Then data in table is sorted by "Bucket" column in ascending order on the Admin page
+	When User click on "Bucket" column header on the Admin page
+	Then data in table is sorted by "Bucket" column in descending order on the Admin page
+	When User click on "Project" column header on the Admin page
+	Then data in table is sorted by "Project" column in ascending order on the Admin page
+	When User click on "Project" column header on the Admin page
+	Then data in table is sorted by "Project" column in descending order on the Admin page
+	When User click on "Default" column header on the Admin page
+	Then color data in table is sorted by "Default" column in ascending order on the Admin page
+	When User click on "Default" column header on the Admin page
+	Then color data in table is sorted by "Default" column in descending order on the Admin page
+	When User click on "Devices" column header on the Admin page
+	Then numeric data in table is sorted by "Devices" column in descending order on the Admin page
+	When User click on "Devices" column header on the Admin page
+	Then numeric data in table is sorted by "Devices" column in ascending order on the Admin page
+	When User click on "Users" column header on the Admin page
+	Then numeric data in table is sorted by "Users" column in descending order on the Admin page
+	When User click on "Users" column header on the Admin page
+	Then numeric data in table is sorted by "Mailboxes" column in ascending order on the Admin page
+	When User click on "Mailboxes" column header on the Admin page
+	Then numeric data in table is sorted by "Mailboxes" column in descending order on the Admin page
+	When User click on "Mailboxes" column header on the Admin page
+	Then numeric data in table is sorted by "Mailboxes" column in ascending order on the Admin page
+	When User have opened Column Settings for "Default" column
+	And User clicks Filter button in the Column Settings panel on the Teams Page
+	When User clicks "False" checkbox from String Filter on the Admin page
+	Then Counter shows "0" found rows
+	When User clicks Reset Filters button on the Admin page
+	When User clicks String Filter button for "Project" column on the Admin page
+	When User clicks "Email Migration" checkbox from String Filter on the Projects page
+	Then Counter shows "2" found rows
+	When User clicks Reset Filters button on the Admin page
+	When User enters "Glasgow" text in the Search field for "Bucket" column
+	Then Counter shows "1" found rows
+	When User clicks Reset Filters button on the Admin page
+	And User enters "20" text in the Search field for "Devices" column
+	Then Counter shows "1" found rows
+	When User clicks Reset Filters button on the Admin page
+	And User enters ">20" text in the Search field for "Users" column
+	Then Counter shows "2" found rows
+	When User clicks Reset Filters button on the Admin page
+	And User enters "100" text in the Search field for "Mailboxes" column
+	Then Counter shows "0" found rows
+	When User clicks Reset Filters button on the Admin page
+	Then There are no errors in the browser console
+	When User click on Back button
+	When User enters "TestTeam4" text in the Search field for "Team" column
+	And User selects all rows on the grid
+	And User clicks on Actions button
+	And User selects "Delete Team" in the Actions
+	And User clicks the "DELETE" Action button
+	Then Reassign Buckets page is displayed to the user
+	When User selects "Team 0" in the Select a team dropdown
+	And User clicks the "DELETE TEAM" Action button
+	Then Success message is displayed and contains "The selected team has been deleted, and their buckets reassigned" text

@@ -244,6 +244,9 @@
     <Compile Include="Pages\Evergreen\AdminDetailsPages\AdminLeftHandMenu.cs" />
     <Compile Include="Pages\Evergreen\AdminDetailsPages\BaseGridPage.cs" />
     <Compile Include="Pages\Evergreen\AdminDetailsPages\BucketsPage.cs" />
+    <Compile Include="Pages\Evergreen\AdminDetailsPages\AddToAnotherTeamPage.cs" />
+    <Compile Include="Pages\Evergreen\AdminDetailsPages\AddBucketToTeamPage.cs" />
+    <Compile Include="Pages\Evergreen\AdminDetailsPages\ReassignBucketsPage.cs" />
     <Compile Include="Pages\Evergreen\AdminDetailsPages\Forms\ImportProjectPage.cs" />
     <Compile Include="Pages\Evergreen\AdminDetailsPages\Forms\CreateProjectPage.cs" />
     <Compile Include="Pages\Evergreen\AdminDetailsPages\Forms\CreateBucketPage.cs" />

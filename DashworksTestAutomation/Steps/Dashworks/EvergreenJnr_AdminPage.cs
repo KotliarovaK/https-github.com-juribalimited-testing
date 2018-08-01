@@ -658,6 +658,63 @@ namespace DashworksTestAutomation.Steps.Dashworks
             Logger.Write("Create Team button was clicked");
         }
 
+        [When(@"User selects ""(.*)"" tab on the Team details page")]
+        public void WhenUserSelectsTabOnTheTeamDetailsPage(string tabName)
+        {
+            var projectTabs = _driver.NowAt<TeamsPage>();
+            projectTabs.NavigateToTeamTabByName(tabName);
+            _driver.WaitForDataLoading();
+        }
+
+        [When(@"User removes selected members")]
+        public void WhenUserRemovesSelectedMembers()
+        {
+            var teamElement = _driver.NowAt<TeamsPage>();
+            teamElement.ActionsButton.Click();
+            teamElement.RemoveButtonInActions.Click();
+            teamElement.RemoveButtonOnPage.Click();
+            _driver.WaitWhileControlIsNotDisplayed<BaseGridPage>(() => teamElement.WarningMessage);
+            _driver.WaitForDataLoading();
+            teamElement.RemoveButtonInWarningMessage.Click();
+        }
+
+        [When(@"User selects ""(.*)"" team to add")]
+        public void WhenUserSelectsTeamToAdd(string teamName)
+        {
+            var teamElement = _driver.NowAt<AddToAnotherTeamPage>();
+            teamElement.AddUsersToAnotherTeam(teamName);
+        }
+
+        [Then(@"Add Buckets page is displayed to the user")]
+        public void ThenAddBucketsPageIsDisplayedToTheUser()
+        {
+            var page = _driver.NowAt<AddBucketToTeamPage>();
+            Assert.IsTrue(page.PageTitle.Displayed(), "Add Buckets page is not displayed");
+        }
+
+        [Then(@"Reassign Buckets page is displayed to the user")]
+        public void ThenReassignBucketsPageIsDisplayedToTheUser()
+        {
+            var page = _driver.NowAt<ReassignBucketsPage>();
+            Assert.IsTrue(page.PageTitle.Displayed(), "Reassign Buckets page is not displayed");
+        }
+
+        [When(@"User selects ""(.*)"" in the Select a team dropdown")]
+        public void WhenUserSelectsInTheSelectATeamDropdown(string teamName)
+        {
+            var page = _driver.NowAt<ReassignBucketsPage>();
+            page.SelectTeamDropdown.Click();
+            _driver.WaitForDataLoading();
+            page.SelectTeamToReassign(teamName);
+        }
+
+        [When(@"User expands ""(.*)"" project to add bucket")]
+        public void WhenUserExpandsProjectToAddBucket(string projectName)
+        {
+            var teamElement = _driver.NowAt<AddBucketToTeamPage>();
+            teamElement.ExpandProjectByName(projectName).Click();
+        }
+
         #region Column Settings
 
         [When(@"User have opened Column Settings for ""(.*)"" column")]
