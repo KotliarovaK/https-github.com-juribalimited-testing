@@ -167,42 +167,42 @@ namespace DashworksTestAutomation.Steps.Projects
         }
 
         [Then(@"CC email field is displayed with ""(.*)"" text")]
-        public void ThenCCEmailFieldIsDisplayedWithText(string emailText)
+        public void ThenCсEmailFieldIsDisplayedWithText(string emailText)
         {
             var page = _driver.NowAt<DetailsPage>();
             Assert.IsTrue(page.GetTextInCcEmailAddressField(emailText).Displayed(), $"Email with '{emailText}' text is not displayed");
         }
 
         [Then(@"BCC email field is displayed with ""(.*)"" text")]
-        public void ThenBCCEmailFieldIsDisplayedWithText(string emailText)
+        public void ThenBCсEmailFieldIsDisplayedWithText(string emailText)
         {
             var page = _driver.NowAt<DetailsPage>();
             Assert.IsTrue(page.GetTextInBccEmailAddressField(emailText).Displayed(), $"Email with '{emailText}' text is not displayed");
         }
 
         [When(@"User clearing CC email field")]
-        public void WhenUserClearingCCEmailField()
+        public void WhenUserClearingCсEmailField()
         {
             var page = _driver.NowAt<DetailsPage>();
             page.CcEmail.Clear();
         }
 
         [When(@"User clearing BCC email field")]
-        public void WhenUserClearingBCCEmailField()
+        public void WhenUserClearingBссEmailField()
         {
             var page = _driver.NowAt<DetailsPage>();
             page.BccEmail.Clear();
         }
 
         [Then(@"CC email field is empty")]
-        public void ThenCCEmailFieldIsEmpty()
+        public void ThenCсEmailFieldIsEmpty()
         {
             var page = _driver.NowAt<DetailsPage>();
             Assert.IsEmpty(page.CcEmail.GetAttribute("value"), "CC email field is not empty");
         }
 
         [Then(@"BCC email field is empty")]
-        public void ThenBCCEmailFieldIsEmpty()
+        public void ThenBссEmailFieldIsEmpty()
         {
             var page = _driver.NowAt<DetailsPage>();
             Assert.IsEmpty(page.BccEmail.GetAttribute("value"), "BCC email field is not empty");
