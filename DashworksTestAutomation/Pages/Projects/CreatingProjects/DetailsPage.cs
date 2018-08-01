@@ -101,5 +101,19 @@ namespace DashworksTestAutomation.Pages.Projects
             Driver.WaitWhileControlIsNotDisplayed(By.XPath(selector));
             Driver.FindElement(By.XPath(selector)).Click();
         }
+
+        public IWebElement GetTextInCcEmailAddressField(string text)
+        {
+            var selector = By.XPath($"//input[contains(@name, 'TaskEmailCCEmailAddress')][@value='{text}']");
+            Driver.WaitWhileControlIsNotDisplayed(selector);
+            return Driver.FindElement(selector);
+        }
+
+        public IWebElement GetTextInBccEmailAddressField(string text)
+        {
+            var selector = By.XPath($"//input[contains(@name, 'TaskEmailBCCEmailAddress')][@value='{text}']");
+            Driver.WaitWhileControlIsNotDisplayed(selector);
+            return Driver.FindElement(selector);
+        }
     }
 }
