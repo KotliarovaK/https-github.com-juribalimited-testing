@@ -166,14 +166,14 @@ namespace DashworksTestAutomation.Steps.Projects
             _projectDto.Details = _detailsDto;
         }
 
-        [Then(@"CC email field is displayed with '(.*)' text")]
+        [Then(@"CC email field is displayed with ""(.*)"" text")]
         public void ThenCCEmailFieldIsDisplayedWithText(string emailText)
         {
             var page = _driver.NowAt<DetailsPage>();
             Assert.IsTrue(page.GetTextInCcEmailAddressField(emailText).Displayed(), $"Email with '{emailText}' text is not displayed");
         }
 
-        [Then(@"BCC email field is displayed with '(.*)' text")]
+        [Then(@"BCC email field is displayed with ""(.*)"" text")]
         public void ThenBCCEmailFieldIsDisplayedWithText(string emailText)
         {
             var page = _driver.NowAt<DetailsPage>();
