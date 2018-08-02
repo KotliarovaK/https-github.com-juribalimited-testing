@@ -345,8 +345,8 @@ Scenario: EvergreenJnr_AdminPage_CheckThatNoConsoleErrorsAreDisplayedWhenDeleteD
 	And User enters "1" text in the Search field for "Evergreen Buckets" column
 	Then Counter shows "1" found rows
 	When User clicks Reset Filters button on the Admin page
-	And User enters "3" text in the Search field for "Project Buckets" column
-	Then Counter shows "3" found rows
+	And User enters "5" text in the Search field for "Project Buckets" column
+	Then Counter shows "1" found rows
 	When User clicks Reset Filters button on the Admin page
 	And User enters "2" text in the Search field for "Members" column
 	Then Counter shows "4" found rows
