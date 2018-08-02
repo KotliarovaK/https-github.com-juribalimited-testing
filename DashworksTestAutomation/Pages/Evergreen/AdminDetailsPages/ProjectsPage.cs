@@ -78,11 +78,23 @@ namespace DashworksTestAutomation.Pages.Evergreen.AdminDetailsPages
         [FindsBy(How = How.XPath, Using = "//mat-select[@aria-label='Default Language']")]
         public IWebElement DefaultLanguage { get; set; }
 
+        [FindsBy(How = How.XPath, Using = "//mat-select[@aria-label='Select Permission']")]
+        public IWebElement PermissionsDropdown { get; set; }
+
         [FindsBy(How = How.XPath, Using = "//input[@class='ag-filter-filter']")]
         public IWebElement DateFilterValue { get; set; }
 
         [FindsBy(How = How.XPath, Using = "//span[text()='Application Scope']")]
         public IWebElement ApplicationScopeTab { get; set; }
+
+        [FindsBy(How = How.XPath, Using = "//div[@class='permissions']/admin-mailbox-permission/ul/li/button/span")]
+        public IWebElement AddMailboxPermissionsButton { get; set; }
+
+        [FindsBy(How = How.XPath, Using = "//div[@class='form-container']/div/button/span[text()='ADD PERMISSION']")]
+        public IWebElement AddPermissionsButtonInTab { get; set; }
+
+        [FindsBy(How = How.XPath, Using = "//div[@class='permissions no-margin-bottom']/admin-mailbox-permission/ul/li/button")]
+        public IWebElement AddMailboxFolderPermissionsButton { get; set; }
 
         public override List<By> GetPageIdentitySelectors()
         {
@@ -122,6 +134,13 @@ namespace DashworksTestAutomation.Pages.Evergreen.AdminDetailsPages
             tab.Click();
         }
 
+        public void ClickAssociatedCheckbox(string checkboxName)
+        {
+            var tab = Driver.FindElement(
+                By.XPath($"//span[@class='mat-checkbox-label'][text()='{checkboxName}']"));
+            tab.Click();
+        }
+
         public void SelectRadioButtonByName(string radioButtonName)
         {
             var button = By.XPath($"//div[text()='{radioButtonName}']/../div[@class='mat-radio-container']");
@@ -133,6 +152,13 @@ namespace DashworksTestAutomation.Pages.Evergreen.AdminDetailsPages
         {
             var tab = Driver.FindElement(
                 By.XPath($".//span[@class='mat-checkbox-label'][text()='{checkboxName}']"));
+            tab.Click();
+        }
+
+        public void SelectPermissionsByName(string permissions)
+        {
+            var tab = Driver.FindElement(
+                By.XPath($"//mat-option/span[text()='{permissions}']"));
             tab.Click();
         }
 

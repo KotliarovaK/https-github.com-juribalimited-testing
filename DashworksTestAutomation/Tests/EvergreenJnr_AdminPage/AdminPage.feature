@@ -2859,3 +2859,24 @@ Scenario: EvergreenJnr_AdminPage_AddingBucketsToTheTeam
 	And User clicks the "DELETE TEAM" Action button
 	Then Success message is displayed and contains "The selected team has been deleted, and their buckets reassigned" text
 	Then There are no errors in the browser console
+
+@Evergreen @Admin @EvergreenJnr_AdminPage @AdminPage @DAS12999 @Delete_Newly_Created_Project @Projects
+Scenario: EvergreenJnr_AdminPage_AddingMultiplePermissionsForMailboxProject
+	When User clicks Admin on the left-hand menu
+	Then Admin page should be displayed to the user
+	When User clicks "Projects" link on the Admin page
+	Then "Projects" page should be displayed to the user
+	When User clicks the "CREATE PROJECT" Action button
+	Then "Create Project" page should be displayed to the user
+	When User enters "TestName12581" in the Project Name field
+	And User selects "All Mailboxes" in the Scope Project dropdown
+	And User clicks Create button on the Create Project page
+	Then Success message is displayed and contains "Your project has been created" text
+	When User clicks newly created object link
+	Then Project "TestName12581" is displayed to user
+	When User navigates to the "User Scope" tab in the Scope section on the Project details page
+	When User clicks "Other mailbox permissions" associated checkbox on the Project details page
+	When User selects following Mailbox permissions
+	| Permissions |
+	| FullAccess  |
+	| ChangeOwner |

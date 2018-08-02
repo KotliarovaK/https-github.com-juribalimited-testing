@@ -207,6 +207,27 @@ namespace DashworksTestAutomation.Steps.Dashworks
             _driver.WaitForDataLoading();
         }
 
+        [When(@"User clicks ""(.*)"" associated checkbox on the Project details page")]
+        public void WhenUserClicksAssociatedCheckboxOnTheProjectDetailsPage(string checkboxName)
+        {
+            var projectTabs = _driver.NowAt<ProjectsPage>();
+            projectTabs.ClickAssociatedCheckbox(checkboxName);
+        }
+
+        [When(@"User selects following Mailbox permissions")]
+        public void WhenUserSelectsFollowingMailboxPermissions(Table table)
+        {
+            var projectsPage = _driver.NowAt<ProjectsPage>();
+            foreach (var row in table.Rows)
+            {
+                projectsPage.AddMailboxPermissionsButton.Click();
+                projectsPage.PermissionsDropdown.Click();
+                projectsPage.SelectPermissionsByName(row["Permissions"]);
+                projectsPage.AddPermissionsButtonInTab.Click();
+            }
+            
+        }
+
         [Then(@"following associations are disabled:")]
         public void ThenFollowingAssociationsAreDisabled(Table table)
         {
