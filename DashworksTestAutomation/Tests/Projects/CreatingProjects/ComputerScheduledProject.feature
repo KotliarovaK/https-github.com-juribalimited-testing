@@ -359,8 +359,8 @@ Scenario: Projects_CreateComputerScheduledProject
 	| Group Radiobutton RAG Date Time Owner | Group Radiobutton RAG Date Time Owner | Stage2           | Group          | Radiobutton     | Computer         | ReadinessNnsfcWithDueDateOwner | true               |
 	Then Success message is displayed with "Task successfully created" text
 	When User updates the Task page
-	| TaskHaADueDate | DateModeString | TaskProjectRoleString          | TaskHasAnOwner | TaskImpactsReadiness | ShowDetails | GroupTaskDashboard | BulkUpdate |
-	| false          | DateTime       | SelfServiceEnabledComputerMode | true           | true                 | true        | false              | true       |
+	| TaskHaADueDate | DateModeString | TaskProjectRoleString | TaskHasAnOwner | TaskImpactsReadiness | ShowDetails | GroupTaskDashboard | BulkUpdate |
+	| false          | DateTime       | None                  | true           | true                 | true        | false              | true       |
 	Then Success message is displayed with "Task successfully updated" text
 	When User navigate to "Values" page
 	And User clicks "Add Value" button

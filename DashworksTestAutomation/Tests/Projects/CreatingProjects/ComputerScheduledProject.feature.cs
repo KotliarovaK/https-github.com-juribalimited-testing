@@ -900,7 +900,7 @@ namespace DashworksTestAutomation.Tests.Projects.CreatingProjects
             table47.AddRow(new string[] {
                         "false",
                         "DateTime",
-                        "SelfServiceEnabledComputerMode",
+                        "None",
                         "true",
                         "true",
                         "true",
