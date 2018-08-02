@@ -188,6 +188,7 @@ namespace DashworksTestAutomation.Steps.Dashworks
         public void WhenUserSelectTabOnTheProjectDetailsPage(string tabName)
         {
             var projectTabs = _driver.NowAt<ProjectsPage>();
+            _driver.WaitForDataLoading();
             projectTabs.NavigateToProjectTabByName(tabName);
             _driver.WaitForDataLoading();
         }
@@ -992,7 +993,7 @@ namespace DashworksTestAutomation.Steps.Dashworks
                 }
             }
             _driver.WaitWhileControlIsNotDisplayed<BaseGridPage>(() => projectElement.SuccessMessage);
-            Thread.Sleep(15000);
+            Thread.Sleep(10000);
             Assert.IsTrue(projectElement.TextMessage(textMessage),
                 $"{textMessage} is not displayed on the Project page");
         }
