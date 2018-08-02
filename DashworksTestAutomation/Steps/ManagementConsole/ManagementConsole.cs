@@ -96,6 +96,10 @@ namespace DashworksTestAutomation.Steps
         {
             var page = _driver.NowAt<MainElementsOfProjectCreation>();
 
+            //Perform search because newly created items not always on first page
+            page.SearchTextbox.SendKeys(_projectDto.ManageUsers.Last().Username);
+            page.SearchButton.Click();
+
             var user = page.GetTheCreatedElementInTableByName(_projectDto.ManageUsers.Last().Username);
             Assert.IsTrue(user.Displayed(), "Selected User is not displayed in the table");
         }
