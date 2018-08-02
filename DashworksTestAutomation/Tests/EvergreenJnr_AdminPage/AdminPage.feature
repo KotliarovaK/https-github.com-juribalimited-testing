@@ -345,8 +345,8 @@ Scenario: EvergreenJnr_AdminPage_CheckThatNoConsoleErrorsAreDisplayedWhenDeleteD
 	And User enters "1" text in the Search field for "Evergreen Buckets" column
 	Then Counter shows "1" found rows
 	When User clicks Reset Filters button on the Admin page
-	And User enters "3" text in the Search field for "Project Buckets" column
-	Then Counter shows "3" found rows
+	And User enters "5" text in the Search field for "Project Buckets" column
+	Then Counter shows "1" found rows
 	When User clicks Reset Filters button on the Admin page
 	And User enters "2" text in the Search field for "Members" column
 	Then Counter shows "4" found rows
@@ -2838,6 +2838,16 @@ Scenario: EvergreenJnr_AdminPage_AddingBucketsToTheTeam
 	Then Counter shows "0" found rows
 	When User clicks Reset Filters button on the Admin page
 	Then There are no errors in the browser console
+	When User enters "Nottingham" text in the Search field for "Bucket" column
+	And User selects all rows on the grid
+	And User clicks on Actions button
+	And User selects "Change Team" in the Actions
+	And User clicks the "CONTINUE" Action button
+	Then Change Team page is displayed to the user
+	When User selects "Team 10" in the Team dropdown
+	And User clicks the "CHANGE" Action button
+	Then Success message is displayed and contains "The selected bucket has been reassigned to the selected team" text
+	Then There are no errors in the browser console
 	When User click on Back button
 	When User enters "TestTeam4" text in the Search field for "Team" column
 	And User selects all rows on the grid
@@ -2848,3 +2858,4 @@ Scenario: EvergreenJnr_AdminPage_AddingBucketsToTheTeam
 	When User selects "Team 0" in the Select a team dropdown
 	And User clicks the "DELETE TEAM" Action button
 	Then Success message is displayed and contains "The selected team has been deleted, and their buckets reassigned" text
+	Then There are no errors in the browser console
