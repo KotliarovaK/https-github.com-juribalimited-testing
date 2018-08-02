@@ -323,6 +323,7 @@ Scenario: Projects_CreateComputerScheduledProject
 	| Name | ReadinessString | TaskStatusString | DefaultValue |
 	|      | Grey            |                  | true         |
 	And User clicks "Save Value" button
+	When User navigate to "Details" page
 	When User publishes the task
 	Then selected task was published
 	When User clicks "Cancel" button
@@ -348,6 +349,7 @@ Scenario: Projects_CreateComputerScheduledProject
 	| Name | ReadinessString | TaskStatusString | DefaultValue |
 	|      |                 | Open             | true         |
 	And User clicks "Save Value" button
+	When User navigate to "Details" page
 	When User publishes the task
 	Then selected task was published
 	When User clicks "Cancel" button
@@ -373,6 +375,7 @@ Scenario: Projects_CreateComputerScheduledProject
 	| Name | ReadinessString | TaskStatusString | DefaultValue |
 	| N/A  | None            |                  | false        |
 	And User clicks "Save Value" button
+	When User navigate to "Details" page
 	When User publishes the task
 	Then selected task was published
 	When User clicks "Cancel" button
@@ -391,6 +394,7 @@ Scenario: Projects_CreateComputerScheduledProject
 	Then "Edit Task" page is displayed to the user
 	When User select "3 TestRequestTypeName" Request Type on Task page
 	And User save selected Request Type
+	When User navigate to "Details" page
 	When User publishes the task
 	Then selected task was published
 	When User clicks "Cancel" button
@@ -430,6 +434,7 @@ Scenario: Projects_CreateComputerScheduledProject
 	| Name          | ReadinessString | TaskStatusString | DefaultValue |
 	| To Be Started | None            |                  | true         |
 	And User clicks "Save Value" button
+	When User navigate to "Details" page
 	When User publishes the task
 	Then selected task was published
 	When User clicks "Cancel" button
@@ -454,6 +459,7 @@ Scenario: Projects_CreateComputerScheduledProject
 	Then "Edit Task" page is displayed to the user
 	When User select "[Default (User)]" Request Type on Task page
 	And User save selected Request Type
+	When User navigate to "Details" page
 	When User publishes the task
 	Then selected task was published
 	When User clicks "Cancel" button
@@ -493,6 +499,7 @@ Scenario: Projects_CreateComputerScheduledProject
 	| Name        | ReadinessString | TaskStatusString | DefaultValue |
 	| In Progress |                 |                  | false        |
 	And User clicks "Save Value" button
+	When User navigate to "Details" page
 	When User publishes the task
 	Then selected task was published
 	When User clicks "Cancel" button
@@ -522,6 +529,7 @@ Scenario: Projects_CreateComputerScheduledProject
 	Then "Edit Task" page is displayed to the user
 	When User select "2 TestRequestTypeName" Request Type on Task page
 	And User save selected Request Type
+	When User navigate to "Details" page
 	When User publishes the task
 	Then selected task was published
 	When User clicks "Cancel" button
