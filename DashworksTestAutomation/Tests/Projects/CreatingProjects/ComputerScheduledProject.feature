@@ -19,6 +19,13 @@ Scenario: Projects_CreateComputerScheduledProject
 	When User navigate to Manage link
 	And User select "Manage Users" option in Management Console
 	Then User create a new Dashworks User
+	| Username         | FullName     | Password | ConfirmPassword | RolesString |
+	| AAA for removing | for removing | 1234qwer | 1234qwer        |             |
+	And Success message is displayed
+	And created User is displayed in the table
+	When User removes created User
+	Then selected User was removed
+	Then User create a new Dashworks User
 	| Username                     | FullName                   | Password | ConfirmPassword | RolesString |
 	| AAA0ComputerScheduledProject | ComputerScheduledProject 0 | 1234qwer | 1234qwer        |             |
 	And Success message is displayed
@@ -131,9 +138,19 @@ Scenario: Projects_CreateComputerScheduledProject
 	Then Success message is displayed with "Category successfully created." text
 	When User clicks "« Go Back" button
 	Then created Category is displayed in the table
-		#Creating Stage
+		#Creating Stages
 	When User navigate to "Stages" tab
 	Then "Manage Stages" page is displayed to the user
+	When User clicks "Create Stage" button
+	And User create Stage
+	| StageName    |
+	| for removing |
+	When User clicks "Create Stage" button
+	Then Error message is not displayed
+	And created Stage is displayed in the table
+	When User removes created Stage
+	Then selected Stage was removed
+	And Success message is displayed with "Stage successfully deleted." text
 	When User clicks "Create Stage" button
 	And User create Stage
 	| StageName |
@@ -170,6 +187,21 @@ Scenario: Projects_CreateComputerScheduledProject
 	| Name                 | Description              | SubjectLine | BodyText |
 	| TestMailTemplateName | ComputerScheduledProject | TestText    | TestText |
 	Then Success message is displayed with "Mail Template successfully created." text
+		#Creating Tasks 0
+	When User navigate to "Tasks" tab
+	Then "Manage Tasks" page is displayed to the user
+	When User clicks "Create Task" button
+	And User create Task
+	| Name         | Help         | StagesNameString | TaskTypeString | ValueTypeString | ObjectTypeString | TaskValuesTemplateString | ApplyToAllCheckbox |
+	| for removing | for removing | Stage1           | Normal         | Date            | Computer         |                          | true               |
+	Then Success message is displayed with "Task successfully created" text
+	When User publishes the task
+	Then selected task was published
+	When User clicks "Cancel" button
+	Then created Task is displayed in the table
+	When User removes created Task
+	Then selected Task was removed
+	And Success message is displayed with "Task successfully deleted." text
 		#Creating Tasks 1
 	When User navigate to "Tasks" tab
 	Then "Manage Tasks" page is displayed to the user
@@ -182,6 +214,8 @@ Scenario: Projects_CreateComputerScheduledProject
 	| TaskHaADueDate | DateModeString | TaskProjectRoleString | ShowDetails | ProjectObject | BulkUpdate | SelfService |
 	| true           | DateOnly       | ForecastDate          | true        | false         | false      | false       |
 	Then Success message is displayed with "Task successfully updated" text
+	When User publishes the task
+	Then selected task was published
 	When User clicks "Cancel" button
 	Then created Task is displayed in the table
 		#Creating Tasks 2
@@ -194,6 +228,8 @@ Scenario: Projects_CreateComputerScheduledProject
 	| TaskHaADueDate | DateModeString | TaskProjectRoleString | ShowDetails | ProjectObject | BulkUpdate | SelfService |
 	| true           | DateOnly       | TargetDate            | false       | false         | false      | false       |
 	Then Success message is displayed with "Task successfully updated" text
+	When User publishes the task
+	Then selected task was published
 	When User clicks "Cancel" button
 	Then created Task is displayed in the table
 		#Creating Tasks 3
@@ -206,6 +242,8 @@ Scenario: Projects_CreateComputerScheduledProject
 	| TaskHaADueDate | DateModeString | TaskProjectRoleString | ShowDetails | ProjectObject | BulkUpdate | SelfService |
 	| true           | DateTime       | ScheduledDate         | true        | false         | false      | false       |
 	Then Success message is displayed with "Task successfully updated" text
+	When User publishes the task
+	Then selected task was published
 	When User clicks "Cancel" button
 	Then created Task is displayed in the table
 		#Creating Tasks 4
@@ -218,6 +256,8 @@ Scenario: Projects_CreateComputerScheduledProject
 	| TaskHaADueDate | DateModeString | TaskProjectRoleString | ShowDetails | ProjectObject | BulkUpdate | SelfService |
 	| true           | DateTime       | MigratedDate          | false       | true          | false      | true        |
 	Then Success message is displayed with "Task successfully updated" text
+	When User publishes the task
+	Then selected task was published
 	When User clicks "Cancel" button
 	Then created Task is displayed in the table
 		#Creating Tasks 5
@@ -230,6 +270,8 @@ Scenario: Projects_CreateComputerScheduledProject
 	| TaskHaADueDate | DateModeString | TaskProjectRoleString | ShowDetails | ProjectObject | BulkUpdate | SelfService |
 	| true           | DateOnly       | CompletedDate         | true        | true          | false      | true        |
 	Then Success message is displayed with "Task successfully updated" text
+	When User publishes the task
+	Then selected task was published
 	When User clicks "Cancel" button
 	Then created Task is displayed in the table
 		#Creating Tasks 6
@@ -242,6 +284,8 @@ Scenario: Projects_CreateComputerScheduledProject
 	| TaskHaADueDate | DateModeString | TaskProjectRoleString | ShowDetails | BulkUpdate | GroupTaskDashboard |
 	| true           | DateOnly       | None                  | true        | false      | true               |
 	Then Success message is displayed with "Task successfully updated" text
+	When User publishes the task
+	Then selected task was published
 	When User clicks "Cancel" button
 	Then created Task is displayed in the table
 		#Creating Tasks 7
@@ -254,6 +298,8 @@ Scenario: Projects_CreateComputerScheduledProject
 	| TextModeString | TaskProjectRoleString | ShowDetails | ProjectObject | BulkUpdate | SelfService |
 	| SingleLine     |                       | true        | false         | false      | false       |
 	Then Success message is displayed with "Task successfully updated" text
+	When User publishes the task
+	Then selected task was published
 	When User clicks "Cancel" button
 	Then created Task is displayed in the table
 		#Creating Tasks 8
@@ -277,7 +323,10 @@ Scenario: Projects_CreateComputerScheduledProject
 	| Name | ReadinessString | TaskStatusString | DefaultValue |
 	|      | Grey            |                  | true         |
 	And User clicks "Save Value" button
-	And User clicks "« Go Back to Tasks" button
+	When User navigate to "Details" page
+	When User publishes the task
+	Then selected task was published
+	When User clicks "Cancel" button
 	Then created Task is displayed in the table
 		#Creating Tasks 9
 	When User clicks "Create Task" button
@@ -300,7 +349,10 @@ Scenario: Projects_CreateComputerScheduledProject
 	| Name | ReadinessString | TaskStatusString | DefaultValue |
 	|      |                 | Open             | true         |
 	And User clicks "Save Value" button
-	And User clicks "« Go Back to Tasks" button
+	When User navigate to "Details" page
+	When User publishes the task
+	Then selected task was published
+	When User clicks "Cancel" button
 	Then created Task is displayed in the table
 		#Creating Tasks 10
 	When User clicks "Create Task" button
@@ -323,7 +375,10 @@ Scenario: Projects_CreateComputerScheduledProject
 	| Name | ReadinessString | TaskStatusString | DefaultValue |
 	| N/A  | None            |                  | false        |
 	And User clicks "Save Value" button
-	And User clicks "« Go Back to Tasks" button
+	When User navigate to "Details" page
+	When User publishes the task
+	Then selected task was published
+	When User clicks "Cancel" button
 	Then created Task is displayed in the table
 		#Creating Tasks 11
 	When User clicks "Create Task" button
@@ -339,7 +394,10 @@ Scenario: Projects_CreateComputerScheduledProject
 	Then "Edit Task" page is displayed to the user
 	When User select "3 TestRequestTypeName" Request Type on Task page
 	And User save selected Request Type
-	And User clicks "« Go Back to Tasks" button
+	When User navigate to "Details" page
+	When User publishes the task
+	Then selected task was published
+	When User clicks "Cancel" button
 	Then created Task is displayed in the table
 		#Creating Tasks 12
 	When User clicks "Create Task" button
@@ -351,6 +409,8 @@ Scenario: Projects_CreateComputerScheduledProject
 	| TextModeString | TaskProjectRoleString | ShowDetails | ProjectObject | BulkUpdate | SelfService |
 	| MultipleLine   | EmailAddressUser      | true        | false         | false      | false       |
 	Then Success message is displayed with "Task successfully updated" text
+	When User publishes the task
+	Then selected task was published
 	When User clicks "Cancel" button
 	Then created Task is displayed in the table
 		#Creating Tasks 13
@@ -374,7 +434,10 @@ Scenario: Projects_CreateComputerScheduledProject
 	| Name          | ReadinessString | TaskStatusString | DefaultValue |
 	| To Be Started | None            |                  | true         |
 	And User clicks "Save Value" button
-	And User clicks "« Go Back to Tasks" button
+	When User navigate to "Details" page
+	When User publishes the task
+	Then selected task was published
+	When User clicks "Cancel" button
 	Then created Task is displayed in the table
 		#Creating Tasks 14
 	When User clicks "Create Task" button
@@ -396,7 +459,10 @@ Scenario: Projects_CreateComputerScheduledProject
 	Then "Edit Task" page is displayed to the user
 	When User select "[Default (User)]" Request Type on Task page
 	And User save selected Request Type
-	And User clicks "« Go Back to Tasks" button
+	When User navigate to "Details" page
+	When User publishes the task
+	Then selected task was published
+	When User clicks "Cancel" button
 	Then created Task is displayed in the table
 		#Creating Tasks 15
 	When User clicks "Create Task" button
@@ -408,6 +474,8 @@ Scenario: Projects_CreateComputerScheduledProject
 	| TaskHaADueDate | DateModeString | TaskProjectRoleString                       | ShowDetails | ProjectObject | BulkUpdate | SelfService |
 	| true           |                | SelfServiceProjectDateCompletedDateUserMode | false       | true          | true       | false       |
 	Then Success message is displayed with "Task successfully updated" text
+	When User publishes the task
+	Then selected task was published
 	When User clicks "Cancel" button
 	Then created Task is displayed in the table
 		#Creating Tasks 16
@@ -431,7 +499,10 @@ Scenario: Projects_CreateComputerScheduledProject
 	| Name        | ReadinessString | TaskStatusString | DefaultValue |
 	| In Progress |                 |                  | false        |
 	And User clicks "Save Value" button
-	And User clicks "« Go Back to Tasks" button
+	When User navigate to "Details" page
+	When User publishes the task
+	Then selected task was published
+	When User clicks "Cancel" button
 	Then created Task is displayed in the table
 		#Creating Tasks 17
 	When User clicks "Create Task" button
@@ -458,7 +529,10 @@ Scenario: Projects_CreateComputerScheduledProject
 	Then "Edit Task" page is displayed to the user
 	When User select "2 TestRequestTypeName" Request Type on Task page
 	And User save selected Request Type
-	And User clicks "« Go Back to Tasks" button
+	When User navigate to "Details" page
+	When User publishes the task
+	Then selected task was published
+	When User clicks "Cancel" button
 	Then created Task is displayed in the table
 		#Creating Tasks 18
 	When User clicks "Create Task" button
@@ -470,6 +544,8 @@ Scenario: Projects_CreateComputerScheduledProject
 	| TaskHaADueDate | DateModeString | TaskProjectRoleString   | ShowDetails | ProjectObject | BulkUpdate | SelfService |
 	| true           | DateOnly       | ApplicationDeliveryDate | true        | false         | false      | false       |
 	Then Success message is displayed with "Task successfully updated" text
+	When User publishes the task
+	Then selected task was published
 	When User clicks "Cancel" button
 	Then created Task is displayed in the table
 		#Creating Tasks 19
@@ -482,11 +558,21 @@ Scenario: Projects_CreateComputerScheduledProject
 	| TextModeString | DateModeString | TaskProjectRoleString | ShowDetails | ProjectObject | BulkUpdate | SelfService |
 	| SingleLine     |                | DeploymentTarget      | true        | false         | false      | true        |
 	Then Success message is displayed with "Task successfully updated" text
+	When User publishes the task
+	Then selected task was published
 	When User clicks "Cancel" button
 	Then created Task is displayed in the table
 		#Creating Teams
 	When User navigate to "Teams" tab
 	Then "Manage Teams" page is displayed to the user
+	When User clicks "Create Team" button
+	And User create Team
+	| TeamName         | ShortDescription |
+	| 000 for removing | for removing     |
+	And User clicks "Cancel" button
+	Then created Team is displayed in the table
+	When User removes created Team
+	Then selected Team was removed
 	When User clicks "Create Team" button
 	And User create Team
 	| TeamName                     | ShortDescription |
@@ -520,6 +606,13 @@ Scenario: Projects_CreateComputerScheduledProject
 		#Creating Groups
 	When User navigate to "Groups" tab
 	Then "Manage Groups" page is displayed to the user
+	When User clicks "Create Group" button
+	And User create Group owned for "1" Team
+	| GroupName    |
+	| for removing |
+	Then created Group is displayed in the table
+	When User removes created Group
+	Then selected Group was removed
 	When User clicks "Create Group" button
 	And User create Group owned for "1" Team
 	| GroupName                  |

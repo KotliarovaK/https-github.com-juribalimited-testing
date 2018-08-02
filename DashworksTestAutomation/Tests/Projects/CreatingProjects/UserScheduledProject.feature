@@ -156,7 +156,7 @@ Scenario: Projects_CreateUserScheduledProject
 	| Name                 | Description          | SubjectLine | BodyText |
 	| TestMailTemplateName | UserScheduledProject | TestText    | TestText |
 	Then Success message is displayed with "Mail Template successfully created." text
-		#Creating Tasks 
+		#Creating Tasks 1
 	When User navigate to "Tasks" tab
 	Then "Manage Tasks" page is displayed to the user
 	When User clicks "Create Task" button
@@ -187,6 +187,7 @@ Scenario: Projects_CreateUserScheduledProject
 	Then created Email is displayed in the table
 	When User clicks "« Go Back to Tasks" button
 	Then created Task is displayed in the table
+		#Creating Tasks 2
 	When User clicks "Create Task" button
 	And User create Task
 	| Name          | Help                 | StagesNameString | TaskTypeString | ValueTypeString | ObjectTypeString | TaskValuesTemplateString | ApplyToAllCheckbox |
@@ -205,6 +206,7 @@ Scenario: Projects_CreateUserScheduledProject
 	And User clicks "Save Value" button
 	And User clicks "« Go Back to Tasks" button
 	Then created Task is displayed in the table
+		#Creating Tasks 3
 	When User clicks "Create Task" button
 	And User create Task
 	| Name          | Help                 | StagesNameString | TaskTypeString | ValueTypeString | ObjectTypeString | TaskValuesTemplateString | ApplyToAllCheckbox |
