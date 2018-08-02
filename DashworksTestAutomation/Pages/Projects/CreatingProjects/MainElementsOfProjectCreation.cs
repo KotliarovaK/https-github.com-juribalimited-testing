@@ -11,6 +11,12 @@ namespace DashworksTestAutomation.Pages.Projects
         [FindsBy(How = How.XPath, Using = ".//h1")]
         public IWebElement PageHeder { get; set; }
 
+        [FindsBy(How = How.XPath, Using = ".//input[contains(@id,'SelectUsers_TB_Narrow')]")]
+        public IWebElement SearchTextbox { get; set; }
+
+        [FindsBy(How = How.XPath, Using = ".//input[contains(@id,'SelectUsers_Btn_Narrow')]")]
+        public IWebElement SearchButton { get; set; }
+
         public override List<By> GetPageIdentitySelectors()
         {
             Driver.WaitForDataLoading();

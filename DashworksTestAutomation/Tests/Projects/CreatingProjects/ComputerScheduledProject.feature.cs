@@ -823,7 +823,7 @@ namespace DashworksTestAutomation.Tests.Projects.CreatingProjects
             table44.AddRow(new string[] {
                         "false",
                         "DateTime",
-                        "SelfServiceEnabledComputerMode",
+                        "None",
                         "true",
                         "true",
                         "true",
