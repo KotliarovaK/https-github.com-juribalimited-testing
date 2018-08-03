@@ -208,6 +208,72 @@ namespace DashworksTestAutomation.Steps.Dashworks
             _driver.WaitForDataLoading();
         }
 
+        [When(@"User clicks ""(.*)"" associated checkbox on the Project details page")]
+        public void WhenUserClicksAssociatedCheckboxOnTheProjectDetailsPage(string checkboxName)
+        {
+            var projectTabs = _driver.NowAt<ProjectsPage>();
+            projectTabs.ClickAssociatedCheckbox(checkboxName);
+        }
+
+        [When(@"User selects following Mailbox permissions")]
+        public void WhenUserSelectsFollowingMailboxPermissions(Table table)
+        {
+            var projectsPage = _driver.NowAt<ProjectsPage>();
+            foreach (var row in table.Rows)
+            {
+                projectsPage.AddMailboxPermissionsButton.Click();
+                projectsPage.PermissionsDropdown.Click();
+                projectsPage.SelectPermissionsByName(row["Permissions"]);
+                projectsPage.AddPermissionsButtonInTab.Click();
+            }
+        }
+
+        [When(@"User selects following Mailbox folder permissions")]
+        public void WhenUserSelectsFollowingMailboxFolderPermissions(Table table)
+        {
+            var projectsPage = _driver.NowAt<ProjectsPage>();
+            foreach (var row in table.Rows)
+            {
+                projectsPage.AddMailboxFolderPermissionsButton.Click();
+                projectsPage.PermissionsDropdown.Click();
+                projectsPage.SelectPermissionsByName(row["Permissions"]);
+                projectsPage.AddPermissionsButtonInTab.Click();
+            }
+        }
+
+        [When(@"User removes following Mailbox permissions")]
+        public void WhenUserRemovesFollowingMailboxPermissions(Table table)
+        {
+            var projectsPage = _driver.NowAt<ProjectsPage>();
+            _driver.WaitForDataLoading();
+            foreach (var row in table.Rows)
+            {
+                projectsPage.RemovePermissionsByName(row["Permissions"]);
+            }
+        }
+
+        [Then(@"following Mailbox permissions are displayed to the user")]
+        public void ThenFollowingMailboxPermissionsAreDisplayedToTheUser(Table table)
+        {
+            var projectsPage = _driver.NowAt<ProjectsPage>();
+            _driver.WaitForDataLoading();
+            foreach (var row in table.Rows)
+            {
+             Assert.IsTrue(projectsPage.PermissionsDisplay(row["Permissions"]), $"'{row["Permissions"]}' are not displayed");
+            }
+        }
+
+        [Then(@"following checkboxes are checked in the Scope section")]
+        public void ThenFollowingCheckboxesAreCheckedInTheScopeSection(Table table)
+        {
+            var projectsPage = _driver.NowAt<ProjectsPage>();
+            _driver.WaitForDataLoading();
+            foreach (var row in table.Rows)
+            {
+                Assert.IsTrue(projectsPage.CheckboxesDisplay(row["Checkboxes"]), $"'{row["Checkboxes"]}' are not displayed");
+            }
+        }
+
         [Then(@"following associations are disabled:")]
         public void ThenFollowingAssociationsAreDisabled(Table table)
         {
