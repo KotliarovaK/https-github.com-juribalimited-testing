@@ -193,7 +193,7 @@ Scenario: Projects_CreateComputerScheduledProject
 	When User clicks "Create Task" button
 	And User create Task
 	| Name         | Help         | StagesNameString | TaskTypeString | ValueTypeString | ObjectTypeString | TaskValuesTemplateString | ApplyToAllCheckbox |
-	| for removing | for removing | Stage1           | Normal         | Date            | Computer         |                          | true               |
+	| for removing | for removing | Stage1           | Normal         | Date            | User             |                          | true               |
 	Then Success message is displayed with "Task successfully created" text
 	When User publishes the task
 	Then selected task was published
@@ -578,8 +578,9 @@ Scenario: Projects_CreateComputerScheduledProject
 	| TeamName                     | ShortDescription |
 	| 000 ComputerScheduledProject | TestText 0       |
 	And User clicks "Add Member" button
+	And User select user with "Admin" name to add as member
+	And User clicks "Add Member" button
 	And User select "1" user to add as member
-	And User clicks "Add Selected" button
 	And User clicks "Cancel" button
 	Then created Team is displayed in the table
 	And "2" number of Members is displayed for created Team
@@ -588,8 +589,9 @@ Scenario: Projects_CreateComputerScheduledProject
 	| TeamName                     | ShortDescription |
 	| 001 ComputerScheduledProject | TestText 1       |
 	And User clicks "Add Member" button
+	And User select user with "Admin" name to add as member
+	And User clicks "Add Member" button
 	And User select "2" user to add as member
-	And User clicks "Add Selected" button
 	And User clicks "Cancel" button
 	Then created Team is displayed in the table
 	And "2" number of Members is displayed for created Team
@@ -598,8 +600,9 @@ Scenario: Projects_CreateComputerScheduledProject
 	| TeamName                     | ShortDescription |
 	| 002 ComputerScheduledProject | TestText 2       |
 	And User clicks "Add Member" button
+	And User select user with "Admin" name to add as member
+	And User clicks "Add Member" button
 	And User select "3" user to add as member
-	And User clicks "Add Selected" button
 	And User clicks "Cancel" button
 	Then created Team is displayed in the table
 	And "2" number of Members is displayed for created Team

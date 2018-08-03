@@ -79,7 +79,7 @@ namespace DashworksTestAutomation.Steps.Projects
             var tab = _driver.NowAt<MainElementsOfProjectCreation>();
 
             tab.GetButtonElementByName(buttonName).Click();
-            _driver.WaitForDataLoading();
+            _driver.WaitForDataLoadingOnProjects();
         }
 
         [Then(@"Success message is displayed with ""(.*)"" text")]
@@ -302,7 +302,7 @@ namespace DashworksTestAutomation.Steps.Projects
             _projectDto.Stages.Add(tempStagePropertiesDto);
 
             page.StageName.SendKeys(_stagePropertiesDto.StageName);
-            _driver.WaitForDataLoading();
+            _driver.WaitForDataLoadingOnProjects();
 
             //page.ConfirmCreateStageButton.Click();
         }
@@ -331,7 +331,7 @@ namespace DashworksTestAutomation.Steps.Projects
             page.StageName.SelectboxSelect(_taskPropertiesDto.Stages.GetValue());
             page.TaskType.SelectboxSelect(_taskPropertiesDto.TaskType.GetValue());
             page.ValueType.SelectboxSelect(_taskPropertiesDto.ValueType.GetValue());
-            _driver.WaitForDataLoading();
+            _driver.WaitForDataLoadingOnProjects();
             page.ObjectType.SelectboxSelect(_taskPropertiesDto.ObjectType.GetValue());
 
             if (!string.IsNullOrEmpty(_taskPropertiesDto.TaskValuesTemplateString))
@@ -345,7 +345,7 @@ namespace DashworksTestAutomation.Steps.Projects
                     page.TaskValuesTemplate.SelectboxSelect(_taskPropertiesDto.TaskValuesTemplate.GetValue());
             }
 
-            _driver.WaitForDataLoading();
+            _driver.WaitForDataLoadingOnProjects();
             page.ApplyToAllCheckbox.SetCheckboxState(_taskPropertiesDto.ApplyToAllCheckbox);
 
             page.ConfirmCreateTaskButton.Click();
@@ -382,7 +382,7 @@ namespace DashworksTestAutomation.Steps.Projects
                 //assign TaskProjectRoleString to TaskProjectRoleEnum
                 _taskPropertiesDetailsDto.TaskProjectRole = (TaskProjectRoleEnum)Enum.Parse(typeof(TaskProjectRoleEnum), _taskPropertiesDetailsDto.TaskProjectRoleString);
 
-                _driver.WaitForDataLoading();
+                _driver.WaitForDataLoadingOnProjects();
                 Assert.AreEqual(_taskPropertiesDetailsDto.TaskHaADueDate, page.TaskHaADueDate.Selected,
                     "Cheked state is incorrect");
                 Assert.AreEqual(_taskPropertiesDetailsDto.TaskHaADueDate,
@@ -587,6 +587,7 @@ namespace DashworksTestAutomation.Steps.Projects
             page.ShortDescription.SendKeys(_teamPropertiesDto.ShortDescription);
 
             page.ConfirmCreateTeamButton.Click();
+            _driver.WaitForDataLoadingOnProjects();
 
             tempTeamPropertiesDto.TeamName = _teamPropertiesDto.TeamName;
         }
@@ -603,17 +604,17 @@ namespace DashworksTestAutomation.Steps.Projects
             _projectDto.GroupProperties.Add(tempGroupPropertiesDto);
 
             page.GroupName.SendKeys(_groupPropertiesDto.GroupName);
-            _driver.WaitForDataLoading();
+            _driver.WaitForDataLoadingOnProjects();
             try
             {
                 page.OwnedByTeam.SelectboxSelect(_projectDto.TeamProperties[teamIndex - 1].TeamName);
-                _driver.WaitForDataLoading();
+                _driver.WaitForDataLoadingOnProjects();
             }
             catch (NoSuchElementException)
             {
                 page = _driver.NowAt<GroupPropertiesPage>();
                 page.OwnedByTeam.SelectboxSelect(_projectDto.TeamProperties[teamIndex - 1].TeamName);
-                _driver.WaitForDataLoading();
+                _driver.WaitForDataLoadingOnProjects();
             }
 
             page.ConfirmCreateGroupButton.Click();
@@ -686,7 +687,7 @@ namespace DashworksTestAutomation.Steps.Projects
         public void ThenCreatedRequestTypeIsDisplayedInTheTable()
         {
             var page = _driver.NowAt<MainElementsOfProjectCreation>();
-            _driver.WaitForDataLoading();
+            _driver.WaitForDataLoadingOnProjects();
             Assert.IsTrue(page.GetTheCreatedRequestTypeInTableByName(_projectDto.ReqestTypes.Last().Name).Displayed(), "Selected Request Type is not displayed in the table");
         }
 
@@ -709,7 +710,7 @@ namespace DashworksTestAutomation.Steps.Projects
         public void ThenCreatedRequestTypeIsADefault()
         {
             var page = _driver.NowAt<MainElementsOfProjectCreation>();
-            _driver.WaitForDataLoading();
+            _driver.WaitForDataLoadingOnProjects();
             Assert.IsTrue(page.GetDefaultRequestTypeCountByName(_projectDto.ReqestTypes.Last().Name).Displayed(), "Selected Request Type is not 'Default'");
         }
 
