@@ -1156,12 +1156,12 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_FiltersFeature
         [NUnit.Framework.CategoryAttribute("FiltersDisplay")]
         [NUnit.Framework.CategoryAttribute("DAS10696")]
         [NUnit.Framework.CategoryAttribute("DAS12114")]
-        [NUnit.Framework.TestCaseAttribute("Equals", "8 Mar 2016", "3", "is", new string[0])]
-        [NUnit.Framework.TestCaseAttribute("Empty", "", "6", "is empty", new string[0])]
         [NUnit.Framework.TestCaseAttribute("Not empty", "", "14,778", "is not empty", new string[0])]
-        [NUnit.Framework.TestCaseAttribute("Does not equal", "8 Mar 2016", "14,781", "is not", new string[0])]
-        [NUnit.Framework.TestCaseAttribute("Before", "8 Mar 2016", "4,699", "is before", new string[0])]
-        [NUnit.Framework.TestCaseAttribute("After", "8 Mar 2016", "10,076", "is after", new string[0])]
+        [NUnit.Framework.TestCaseAttribute("Does not equal", "Mar 8, 2016", "14,781", "is not", new string[0])]
+        [NUnit.Framework.TestCaseAttribute("Equals", "Mar 8, 2016", "3", "is", new string[0])]
+        [NUnit.Framework.TestCaseAttribute("Empty", "", "6", "is empty", new string[0])]
+        [NUnit.Framework.TestCaseAttribute("Before", "Mar 8, 2016", "4,699", "is before", new string[0])]
+        [NUnit.Framework.TestCaseAttribute("After", "Mar 8, 2016", "10,076", "is after", new string[0])]
         public virtual void EvergreenJnr_MailboxesList_CheckThatFilterOperatorsIsCorrectInFilterInfo(string operatorValue, string filterOption, string rowsCount, string operatorValueInInfo, string[] exampleTags)
         {
             System.Exception lastException = null;
@@ -1443,12 +1443,12 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_FiltersFeature
             testRunner.When("User add \"Application (Saved List)\" filter where type is \"In list\" with Selected " +
                     "Value and following Association:", ((string)(null)), table41, "When ");
             testRunner.Then("\"Application\" filter is added to the list", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-            testRunner.Then("\"17,126\" rows are displayed in the agGrid", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+            testRunner.And("\"17,126\" rows are displayed in the agGrid", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
             TechTalk.SpecFlow.Table table42 = new TechTalk.SpecFlow.Table(new string[] {
                         "Values"});
             table42.AddRow(new string[] {
                         "in list"});
-            testRunner.Then("Options is displayed in added filter info", ((string)(null)), table42, "Then ");
+            testRunner.And("Options is displayed in added filter info", ((string)(null)), table42, "And ");
             this.ScenarioCleanup();
         }
         

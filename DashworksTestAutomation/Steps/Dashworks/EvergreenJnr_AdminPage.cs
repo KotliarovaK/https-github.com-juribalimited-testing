@@ -1427,6 +1427,7 @@ namespace DashworksTestAutomation.Steps.Dashworks
         public void WhenUserClicksResetFiltersButtonOnTheAdminPage()
         {
             var button = _driver.NowAt<BaseGridPage>();
+            Thread.Sleep(1000);
             _driver.WaitForDataLoading();
             button.ResetFiltersButton.Click();
         }
