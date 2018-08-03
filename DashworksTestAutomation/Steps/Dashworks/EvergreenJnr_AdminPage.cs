@@ -914,6 +914,7 @@ namespace DashworksTestAutomation.Steps.Dashworks
         public void ThenUserEntersInTheBucketNameField(string bucketText)
         {
             var bucketName = _driver.NowAt<CreateBucketPage>();
+            bucketName.BucketNameField.Clear();
             bucketName.BucketNameField.SendKeys(bucketText);
 
             if (!string.IsNullOrEmpty(bucketText))
@@ -924,6 +925,8 @@ namespace DashworksTestAutomation.Steps.Dashworks
         public void ThenUserSelectTeamInTheTeamDropdownOnTheBucketsPage(string teamName)
         {
             var createBucketElement = _driver.NowAt<CreateBucketPage>();
+            createBucketElement.TeamsNameField.Clear();
+            _driver.WaitForDataLoading();
             createBucketElement.TeamsNameField.SendKeys(teamName);
             createBucketElement.SelectTeam(teamName);
         }
