@@ -219,9 +219,10 @@ Scenario: Projects_CreateMailboxScheduledProject
 	And User create Team
 	| TeamName                    | ShortDescription |
 	| 000 MailboxScheduledProject | TestText 0       |
-	When User clicks "Add Member" button
+	And User clicks "Add Member" button
+	And User select user with "Admin" name to add as member
+	And User clicks "Add Member" button
 	And User select "1" user to add as member
-	And User clicks "Add Selected" button
 	And User clicks "Cancel" button
 	Then created Team is displayed in the table
 	And "2" number of Members is displayed for created Team
@@ -229,9 +230,10 @@ Scenario: Projects_CreateMailboxScheduledProject
 	And User create Team
 	| TeamName                    | ShortDescription |
 	| 001 MailboxScheduledProject | TestText 1       |
-	When User clicks "Add Member" button
+	And User clicks "Add Member" button
+	And User select user with "Admin" name to add as member
+	And User clicks "Add Member" button
 	And User select "2" user to add as member
-	And User clicks "Add Selected" button
 	And User clicks "Cancel" button
 	Then created Team is displayed in the table
 	And "2" number of Members is displayed for created Team
@@ -239,9 +241,10 @@ Scenario: Projects_CreateMailboxScheduledProject
 	And User create Team
 	| TeamName                    | ShortDescription |
 	| 002 MailboxScheduledProject | TestText 2       |
-	When User clicks "Add Member" button
+	And User clicks "Add Member" button
+	And User select user with "Admin" name to add as member
+	And User clicks "Add Member" button
 	And User select "3" user to add as member
-	And User clicks "Add Selected" button
 	And User clicks "Cancel" button
 	Then created Team is displayed in the table
 	And "2" number of Members is displayed for created Team

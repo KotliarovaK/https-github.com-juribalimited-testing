@@ -243,8 +243,9 @@ Scenario: Projects_CreateUserScheduledProject
 	| TeamName                      | ShortDescription |
 	| 000 UserScheduledProject Team | TestText 0       |
 	And User clicks "Add Member" button
+	And User select user with "Admin" name to add as member
+	And User clicks "Add Member" button
 	And User select "1" user to add as member
-	And User clicks "Add Selected" button
 	And User clicks "Cancel" button
 	Then created Team is displayed in the table
 	And "2" number of Members is displayed for created Team
@@ -252,9 +253,10 @@ Scenario: Projects_CreateUserScheduledProject
 	And User create Team
 	| TeamName                      | ShortDescription |
 	| 001 UserScheduledProject Team | TestText 1       |
-	When User clicks "Add Member" button
+	And User clicks "Add Member" button
+	And User select user with "Admin" name to add as member
+	And User clicks "Add Member" button
 	And User select "2" user to add as member
-	And User clicks "Add Selected" button
 	And User clicks "Cancel" button
 	Then created Team is displayed in the table
 	And "2" number of Members is displayed for created Team
@@ -263,8 +265,9 @@ Scenario: Projects_CreateUserScheduledProject
 	| TeamName                      | ShortDescription |
 	| 002 UserScheduledProject Team | TestText 2       |
 	And User clicks "Add Member" button
+	And User select user with "Admin" name to add as member
+	And User clicks "Add Member" button
 	And User select "3" user to add as member
-	And User clicks "Add Selected" button
 	And User clicks "Cancel" button
 	Then created Team is displayed in the table
 	And "2" number of Members is displayed for created Team

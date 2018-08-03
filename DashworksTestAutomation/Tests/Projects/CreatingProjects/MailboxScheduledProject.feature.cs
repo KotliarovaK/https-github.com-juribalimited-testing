@@ -520,9 +520,10 @@ namespace DashworksTestAutomation.Tests.Projects.CreatingProjects
                         "000 MailboxScheduledProject",
                         "TestText 0"});
             testRunner.And("User create Team", ((string)(null)), table28, "And ");
-            testRunner.When("User clicks \"Add Member\" button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+            testRunner.And("User clicks \"Add Member\" button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+            testRunner.And("User select user with \"Admin\" name to add as member", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+            testRunner.And("User clicks \"Add Member\" button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
             testRunner.And("User select \"1\" user to add as member", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-            testRunner.And("User clicks \"Add Selected\" button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
             testRunner.And("User clicks \"Cancel\" button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
             testRunner.Then("created Team is displayed in the table", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
             testRunner.And("\"2\" number of Members is displayed for created Team", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
@@ -534,9 +535,10 @@ namespace DashworksTestAutomation.Tests.Projects.CreatingProjects
                         "001 MailboxScheduledProject",
                         "TestText 1"});
             testRunner.And("User create Team", ((string)(null)), table29, "And ");
-            testRunner.When("User clicks \"Add Member\" button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+            testRunner.And("User clicks \"Add Member\" button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+            testRunner.And("User select user with \"Admin\" name to add as member", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+            testRunner.And("User clicks \"Add Member\" button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
             testRunner.And("User select \"2\" user to add as member", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-            testRunner.And("User clicks \"Add Selected\" button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
             testRunner.And("User clicks \"Cancel\" button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
             testRunner.Then("created Team is displayed in the table", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
             testRunner.And("\"2\" number of Members is displayed for created Team", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
@@ -548,9 +550,10 @@ namespace DashworksTestAutomation.Tests.Projects.CreatingProjects
                         "002 MailboxScheduledProject",
                         "TestText 2"});
             testRunner.And("User create Team", ((string)(null)), table30, "And ");
-            testRunner.When("User clicks \"Add Member\" button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+            testRunner.And("User clicks \"Add Member\" button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+            testRunner.And("User select user with \"Admin\" name to add as member", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+            testRunner.And("User clicks \"Add Member\" button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
             testRunner.And("User select \"3\" user to add as member", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-            testRunner.And("User clicks \"Add Selected\" button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
             testRunner.And("User clicks \"Cancel\" button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
             testRunner.Then("created Team is displayed in the table", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
             testRunner.And("\"2\" number of Members is displayed for created Team", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
