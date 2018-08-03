@@ -110,7 +110,13 @@ namespace DashworksTestAutomation.Steps
             var page = _driver.NowAt<MainElementsOfProjectCreation>();
 
             //Admin is mandatory
+            // Perform search because created items not always on first page
+            page.SearchTextboxForMembers.SendKeys("Admin");
+            page.SearchButtonForMembers.Click();
             page.SelectUserForMembersByName("Admin").Click();
+            page.SearchTextboxForMembers.Clear();
+            page.SearchTextboxForMembers.SendKeys(_projectDto.ManageUsers[userIndex - 1].Username);
+            page.SearchButtonForMembers.Click();
             page.SelectUserForMembersByName(_projectDto.ManageUsers[userIndex - 1].Username).Click();
         }
 
