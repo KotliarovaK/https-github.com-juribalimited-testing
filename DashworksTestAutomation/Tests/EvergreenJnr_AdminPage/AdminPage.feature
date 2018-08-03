@@ -2859,3 +2859,70 @@ Scenario: EvergreenJnr_AdminPage_AddingBucketsToTheTeam
 	And User clicks the "DELETE TEAM" Action button
 	Then Success message is displayed and contains "The selected team has been deleted, and their buckets reassigned" text
 	Then There are no errors in the browser console
+
+@Evergreen @Admin @EvergreenJnr_AdminPage @AdminPage @DAS12999 @Delete_Newly_Created_Project @Projects
+Scenario: EvergreenJnr_AdminPage_AddingAndDeletingPermissionsForMailboxProject
+	When User clicks Admin on the left-hand menu
+	Then Admin page should be displayed to the user
+	When User clicks "Projects" link on the Admin page
+	Then "Projects" page should be displayed to the user
+	When User clicks the "CREATE PROJECT" Action button
+	Then "Create Project" page should be displayed to the user
+	When User enters "TestName12581" in the Project Name field
+	And User selects "All Mailboxes" in the Scope Project dropdown
+	And User clicks Create button on the Create Project page
+	Then Success message is displayed and contains "Your project has been created" text
+	When User clicks newly created object link
+	Then Project "TestName12581" is displayed to user
+	When User selects "Scope Changes" tab on the Project details page
+	And User clicks "Users" tab in the Project Scope Changes section
+	Then "Users to add (0 of 14747 selected)" is displayed to the user in the Project Scope Changes section
+	When User selects "Scope Details" tab on the Project details page
+	And User navigates to the "User Scope" tab in the Scope section on the Project details page
+	And User clicks "Other mailbox permissions" associated checkbox on the Project details page
+	And User selects following Mailbox permissions
+	| Permissions |
+	| FullAccess  |
+	| ChangeOwner |
+	And User clicks "Mailbox folder permissions" associated checkbox on the Project details page
+	And User selects following Mailbox folder permissions
+	| Permissions      |
+	| Author           |
+	| AvailabilityOnly |
+	Then following Mailbox permissions are displayed to the user
+	| Permissions      |
+	| FullAccess       |
+	| ChangeOwner      |
+	| Author           |
+	| AvailabilityOnly |
+	When User clicks "Delegated mailboxes" associated checkbox on the Project details page
+	And User clicks "Owned mailboxes" associated checkbox on the Project details page
+	And User selects "Scope Details" tab on the Project details page
+	And User navigates to the "User Scope" tab in the Scope section on the Project details page
+	Then following Mailbox permissions are displayed to the user
+	| Permissions      |
+	| FullAccess       |
+	| ChangeOwner      |
+	| Author           |
+	| AvailabilityOnly |
+	And following checkboxes are checked in the Scope section
+	| Checkboxes          |
+	| Owned mailboxes     |
+	| Delegated mailboxes |
+	When User selects "Scope Changes" tab on the Project details page
+	And User clicks "Users" tab in the Project Scope Changes section
+	Then "Users to add (0 of 14753 selected)" is displayed to the user in the Project Scope Changes section
+	When User selects "Scope Details" tab on the Project details page
+	And User navigates to the "User Scope" tab in the Scope section on the Project details page
+	And User removes following Mailbox permissions
+	| Permissions |
+	| FullAccess  |
+	| Author      |
+	And User selects "Scope Changes" tab on the Project details page
+	And User selects "Scope Details" tab on the Project details page
+	And User navigates to the "User Scope" tab in the Scope section on the Project details page
+	Then following Mailbox permissions are displayed to the user
+	| Permissions      |
+	| ChangeOwner      |
+	| AvailabilityOnly |
+	And There are no errors in the browser console
