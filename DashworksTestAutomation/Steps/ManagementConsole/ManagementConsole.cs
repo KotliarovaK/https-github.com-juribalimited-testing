@@ -54,7 +54,7 @@ namespace DashworksTestAutomation.Steps
                 page.ConfirmPassword.SendKeys(row["ConfirmPassword"]);
                 if (!string.IsNullOrEmpty(row["Roles"]))
                     page.Roles.SelectboxSelect(row["Roles"]);
-            }          
+            }
             page.Roles.SelectboxSelect("Dashworks Users");
             page.Roles.SelectboxSelect("Dashworks Evergreen Users");
             page.AddRoleButton.Click();
@@ -110,6 +110,7 @@ namespace DashworksTestAutomation.Steps
         {
             var page = _driver.NowAt<MainElementsOfProjectCreation>();
             // Perform search because created items not always on first page
+            page.SearchTextboxForMembers.Clear();
             page.SearchTextboxForMembers.SendKeys(userName);
             page.SearchButtonForMembers.Click();
             page.SelectUserForMembersByName(userName).Click();
@@ -121,20 +122,12 @@ namespace DashworksTestAutomation.Steps
         public void WhenUserSelectUserToAddAsMember(int userIndex)
         {
             var page = _driver.NowAt<MainElementsOfProjectCreation>();
-            try
-            {
-                // Perform search because created items not always on first page
-                page.SearchTextboxForMembers.SendKeys(_projectDto.ManageUsers[userIndex - 1].Username);
-                page.SearchButtonForMembers.Click();
-                page.SelectUserForMembersByName(_projectDto.ManageUsers[userIndex - 1].Username).Click();
-            }
-            catch (StaleElementReferenceException)
-            {
-                page.ResetButtonForMembers.Click();
-                page.SearchTextboxForMembers.SendKeys(_projectDto.ManageUsers[userIndex - 1].Username);
-                page.SearchButtonForMembers.Click();
-                page.SelectUserForMembersByName(_projectDto.ManageUsers[userIndex - 1].Username).Click();
-            }
+
+            // Perform search because created items not always on first page
+            page.SearchTextboxForMembers.Clear();
+            page.SearchTextboxForMembers.SendKeys(_projectDto.ManageUsers[userIndex - 1].Username);
+            page.SearchButtonForMembers.Click();
+            page.SelectUserForMembersByName(_projectDto.ManageUsers[userIndex - 1].Username).Click();
             page.GetButtonElementByName("Add Selected").Click();
             _driver.WaitForDataLoadingOnProjects();
         }
