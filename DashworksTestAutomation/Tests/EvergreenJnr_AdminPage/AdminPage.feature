@@ -279,7 +279,7 @@ Scenario: EvergreenJnr_AdminPage_CheckThatNoConsoleErrorsAreDisplayedWhenDeleteD
 	When User clicks "Buckets" link on the Admin page
 	Then "Buckets" page should be displayed to the user
 	When User clicks Reset Filters button on the Admin page
-	#Then Counter shows "558" found rows
+	Then Counter shows "558" found rows
 	When User have opened Column Settings for "Bucket" column
 	And User clicks Filter button on the Column Settings panel
 	And User enters "123455465" text in the Filter field
