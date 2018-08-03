@@ -173,15 +173,15 @@ namespace DashworksTestAutomation.Steps.Dashworks
             // Add cookies to the RestClient to authorize it
             _client.Value.AddCookies(client.CookiesJar);
 
-            //Change profile language
-            try
-            {
-                _client.ChangeUserProfileLanguage(_user.UserName, _user.Language);
-            }
-            catch (Exception)
-            {
-                _client.ChangeUserProfileLanguage(_user.UserName, _user.Language);
-            }
+            ////Change profile language
+            //try
+            //{
+            //    _client.ChangeUserProfileLanguage(_user.UserName, _user.Language);
+            //}
+            //catch (Exception)
+            //{
+            //    _client.ChangeUserProfileLanguage(_user.UserName, _user.Language);
+            //}
         }
     }
 }
