@@ -279,6 +279,7 @@ Scenario: EvergreenJnr_AdminPage_CheckThatNoConsoleErrorsAreDisplayedWhenDeleteD
 	When User clicks "Buckets" link on the Admin page
 	Then "Buckets" page should be displayed to the user
 	When User clicks Reset Filters button on the Admin page
+	#Then Counter shows "558" found rows
 	When User have opened Column Settings for "Bucket" column
 	And User clicks Filter button on the Column Settings panel
 	And User enters "123455465" text in the Filter field
@@ -297,6 +298,7 @@ Scenario: EvergreenJnr_AdminPage_CheckThatNoConsoleErrorsAreDisplayedWhenDeleteD
 	Then There are no errors in the browser console
 	When User clicks Reset Filters button on the Admin page
 	#Add sorting check for "Bucket" column
+	Then data in table is sorted by "Bucket" column in ascending order by default on the Admin page
 	When User click on "Project" column header on the Admin page
 	Then data in table is sorted by "Project" column in ascending order on the Admin page
 	When User click on "Project" column header on the Admin page
@@ -305,6 +307,10 @@ Scenario: EvergreenJnr_AdminPage_CheckThatNoConsoleErrorsAreDisplayedWhenDeleteD
 	Then numeric data in table is sorted by "Devices" column in descending order on the Admin page
 	When User click on "Devices" column header on the Admin page
 	Then numeric data in table is sorted by "Devices" column in ascending order on the Admin page
+	When User click on "Users" column header on the Admin page
+	Then numeric data in table is sorted by "Users" column in descending order on the Admin page
+	When User click on "Users" column header on the Admin page
+	Then numeric data in table is sorted by "Users" column in ascending order on the Admin page
 	When User click on "Default" column header on the Admin page
 	Then color data in table is sorted by "Default" column in ascending order on the Admin page
 	When User click on "Default" column header on the Admin page
@@ -379,7 +385,7 @@ Scenario: EvergreenJnr_AdminPage_CheckThatNoConsoleErrorsAreDisplayedWhenDeleteD
 	And There are no errors in the browser console
 
 @Evergreen @Admin @EvergreenJnr_AdminPage @AdminPage @DAS11879 @DAS12742 @DAS12752 @Buckets
-Scenario: EvergreenJnr_AdminPage_CheckThatYouCanNotDeleteTheDefaultBucketWarningMessageIsNotDisplayedAfterTryingToDeleteNonDefaultBucket
+Scenario: EvergreenJnr_AdminPage_CheckThatSpecificWarningMessageIsNotDisplayedAfterTryingToDeleteNonDefaultBucket
 	When User clicks Admin on the left-hand menu
 	Then Admin page should be displayed to the user
 	When User clicks "Buckets" link on the Admin page
@@ -2926,3 +2932,34 @@ Scenario: EvergreenJnr_AdminPage_AddingAndDeletingPermissionsForMailboxProject
 	| ChangeOwner      |
 	| AvailabilityOnly |
 	And There are no errors in the browser console
+
+@Evergreen @Admin @EvergreenJnr_AdminPage @AdminPage @DAS12999 @Delete_Newly_Created_Project @Buckets
+Scenario: EvergreenJnr_AdminPage_CreatingDefaultBucket
+	When User clicks Admin on the left-hand menu
+	Then Admin page should be displayed to the user
+	When User clicks "Buckets" link on the Admin page
+	Then "Buckets" page should be displayed to the user
+	When User enters "Unassigned" text in the Search field for "Bucket" column
+	Then "TRUE" value is displayed for Default column
+	When User clicks the "CREATE BUCKET" Action button
+	Then "Create Bucket" page should be displayed to the user
+	When User enters "TestBucket5" in the Bucket Name field
+	And User selects "Admin IT" team in the Team dropdown on the Buckets page
+	And User clicks Default bucket checkbox
+	And User clicks Create button on the Create Bucket page
+	Then Success message is displayed and contains "The bucket has been created" text
+	When User clicks newly created object link
+	Then "TestBucket5" bucket details is displayed to the user
+	When User clicks "Bucket Settings" tab
+	When User enters "NewBucket5" in the Bucket Name field
+	When User selects "I-Team" team in the Team dropdown on the Buckets page
+	And User clicks the "UPDATE BUCKET" Action button
+	Then Success message is displayed and contains "The NewBucket5 bucket has been updated" text
+	When User enters "Unassigned" text in the Search field for "Bucket" column
+	Then "FALSE" value is displayed for Default column
+	When User clicks content from "Bucket" column
+	And User clicks "Bucket Settings" tab
+	And User updates the Default Bucket checkbox state
+	And User clicks Update Bucket button on the Buckets page
+	Then Success message The "Unassigned" bucket has been updated is displayed on the Buckets page
+	And Delete "TestBucket5" Bucket in the Administration

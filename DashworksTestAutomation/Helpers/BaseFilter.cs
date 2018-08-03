@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Linq;
+using System.Threading;
 using DashworksTestAutomation.Extensions;
 using DashworksTestAutomation.Pages.Evergreen;
 using NUnit.Framework;
@@ -267,7 +268,7 @@ namespace DashworksTestAutomation.Helpers
             {
                 if (!_driver.IsElementDisplayed(filterValueSelector)) continue;
                 _driver.FindElement(filterValueSelector).SendkeysWithDelay(row["Values"]);
-
+                _driver.WaitForDataLoading();
                 if (_optionsTable.RowCount > 1)
                 {
                     _driver.FindElement(addButtonSelector).Click();
@@ -276,10 +277,10 @@ namespace DashworksTestAutomation.Helpers
                         _driver.FindElement(By.XPath(string.Format(addedOptionSelector, "more"))).Click();
                     var addedOptions = _driver.FindElements(By.XPath(allAddedOptionsSelector))
                         .Select(value => value.Text).ToList();
+                    _driver.WaitForDataLoading();
                     Assert.Contains(row["Values"], addedOptions);
                 }
             }
-
             SaveFilter();
         }
     }

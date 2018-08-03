@@ -353,12 +353,12 @@ Scenario Outline: EvergreenJnr_MailboxesList_CheckThatFilterOperatorsIsCorrectIn
 
 Examples: 
 	| operatorValue  | filterOption | rowsCount | operatorValueInInfo |
-	| Equals         | 8 Mar 2016   | 3         | is                  |
-	| Empty          |              | 6         | is empty            |
 	| Not empty      |              | 14,778    | is not empty        |
-	| Does not equal | 8 Mar 2016   | 14,781    | is not              |
-	| Before         | 8 Mar 2016   | 4,699     | is before           |
-	| After          | 8 Mar 2016   | 10,076    | is after            |
+	| Does not equal | Mar 8, 2016  | 14,781    | is not              |
+	| Equals         | Mar 8, 2016  | 3         | is                  |
+	| Empty          |              | 6         | is empty            |
+	| Before         | Mar 8, 2016  | 4,699     | is before           |
+	| After          | Mar 8, 2016  | 10,076    | is after            |
 
  @Evergreen @Devices @Evergreen_FiltersFeature @FiltersDisplay @DAS10696 @DAS11090 @DAS12114 @DAS12698
 Scenario Outline: EvergreenJnr_DevicesList_CheckThatFilterOperatorsIsCorrectInFilterInfoDatetime
@@ -419,8 +419,8 @@ Scenario: EvergreenJnr_ApplicationsList_CheckThatApplicationSavedListFilterIsWor
 	| SelectedList   | Association        |
 	| TestList2854B3 | Not used on device |
 	Then "Application" filter is added to the list
-	Then "17,126" rows are displayed in the agGrid
-	Then Options is displayed in added filter info
+	And "17,126" rows are displayed in the agGrid
+	And Options is displayed in added filter info
 	| Values  |
 	| in list |
 
