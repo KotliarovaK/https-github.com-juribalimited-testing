@@ -12,13 +12,25 @@ namespace DashworksTestAutomation.Pages.Projects
         public IWebElement ShowScreen { get; set; }
 
         [FindsBy(How = How.XPath, Using = ".//select[contains(@id, 'ShowComputerNameFromHTTPHeader')]")]
-        public IWebElement ShowComputerName { get; set; }
+        public IWebElement NamefromHttp { get; set; }
 
         [FindsBy(How = How.XPath, Using = ".//input[contains(@id, 'ShowComputersUsedButNotOwnedByTheUser')]")]
         public IWebElement ShowComputers { get; set; }
 
         [FindsBy(How = How.XPath, Using = ".//input[contains(@id, 'ShowCategory')]")]
         public IWebElement ShowCategory { get; set; }
+
+        [FindsBy(How = How.XPath, Using = ".//input[contains(@id, 'ShowUsersOfTheComputer')]")]
+        public IWebElement UsersOfTheComputer { get; set; }
+
+        [FindsBy(How = How.XPath, Using = ".//input[contains(@id, 'ShowOwnerOfTheComputerInTheListOfUsers')]")]
+        public IWebElement OwnerOfTheComputer { get; set; }
+
+        [FindsBy(How = How.XPath, Using = ".//input[contains(@id, 'AllowUsersToChangeOwnerOfTheComputer')]")]
+        public IWebElement AllowUsersToChangeOwner { get; set; }
+
+        [FindsBy(How = How.XPath, Using = ".//input[contains(@id, 'AllowUsersToChangeUsersOfTheComputer')]")]
+        public IWebElement AllowUsersToChangeUsers { get; set; }
 
         [FindsBy(How = How.XPath, Using = ".//input[contains(@id, 'AllowUsersToSearch')]")]
         public IWebElement AllowUsersToSearch { get; set; }
@@ -29,10 +41,10 @@ namespace DashworksTestAutomation.Pages.Projects
         [FindsBy(How = How.XPath, Using = ".//input[contains(@id, 'AllowUsersToAddANoteFromThisPage')]")]
         public IWebElement AllowUsersToAddANote { get; set; }
 
-        [FindsBy(How = How.XPath, Using = ".//input[contains(@id, 'LimitMaximumComputersOfTheUserTo')]")]
+        [FindsBy(How = How.XPath, Using = ".//input[contains(@id, 'LimitMaximum')]")]
         public IWebElement LimitMaximum { get; set; }
 
-        [FindsBy(How = How.XPath, Using = ".//input[contains(@id, 'LimitMinimumComputersOfTheUserTo')]")]
+        [FindsBy(How = How.XPath, Using = ".//input[contains(@id, 'LimitMinimum')]")]
         public IWebElement LimitMinimum { get; set; }
 
         [FindsBy(How = How.XPath, Using = ".//textarea[@aria-label='Page Description']")]
@@ -43,9 +55,6 @@ namespace DashworksTestAutomation.Pages.Projects
             return new List<By>
             {
                 SelectorFor(this, p => p.ShowScreen),
-                SelectorFor(this, p => p.ShowCategory),
-                SelectorFor(this, p => p.AllowUsersToSearch),
-                SelectorFor(this, p => p.AllowUsersToAddANote),
                 SelectorFor(this, p => p.PageDescription),
             };
         }

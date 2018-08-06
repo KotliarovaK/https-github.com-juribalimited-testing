@@ -1557,36 +1557,39 @@ namespace DashworksTestAutomation.Tests.Projects.CreatingProjects
                         "EnableSelfServicePortal",
                         "AllowAnonymousUsers",
                         "ThisProjectDefault",
-                        "ModeUser",
-                        "ModeComputer",
+                        "Mode1",
+                        "Mode2",
+                        "BaseUrl",
                         "NoLink",
                         "DashworksProjectHomepage",
                         "CustomUrl",
-                        "CustomUrlTextFiald"});
+                        "CustomUrlTextField"});
             table84.AddRow(new string[] {
+                        "true",
+                        "true",
+                        "true",
+                        "false",
+                        "true",
+                        "http://automation.corp.juriba.com",
                         "false",
                         "false",
                         "true",
-                        "true",
-                        "false",
-                        "true",
-                        "false",
-                        "false",
-                        "http://Test"});
+                        "http://www.juriba.com"});
             testRunner.When("User updates the Details page on Self Service tab", ((string)(null)), table84, "When ");
-            testRunner.Then("Success message is displayed with \"Details successfully updated.\" text", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
             testRunner.When("User navigate to \"Welcome\" page on Self Service tab", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
             TechTalk.SpecFlow.Table table85 = new TechTalk.SpecFlow.Table(new string[] {
-                        "AllowToSearchForAnotherUser",
+                        "AllowUsersToSearch",
                         "AllowToChangeLanguage",
                         "ShowProjectSelector",
+                        "ShowObjectDetails",
                         "ShowMoreDetailsLink",
                         "PageDescription",
                         "ProjectName"});
             table85.AddRow(new string[] {
                         "true",
-                        "false",
-                        "false",
+                        "true",
+                        "true",
+                        "",
                         "true",
                         "TestText",
                         "ComputerScheduledProject"});
@@ -1596,21 +1599,25 @@ namespace DashworksTestAutomation.Tests.Projects.CreatingProjects
             testRunner.When("User navigate to \"Computer Ownership\" page on Self Service tab", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
             TechTalk.SpecFlow.Table table86 = new TechTalk.SpecFlow.Table(new string[] {
                         "ShowScreen",
-                        "ShowComputers",
+                        "NamefromHttpString",
                         "ShowCategory",
-                        "AllowUsersToSearch",
-                        "AllowUsersToSetPrimary",
+                        "AllowUsersToChangeOwner",
+                        "AllowUsersToChangeUsers",
+                        "UsersOfTheComputer",
+                        "OwnerOfTheComputer",
                         "AllowUsersToAddANote",
                         "LimitMaximum",
                         "LimitMinimum",
                         "PageDescription"});
             table86.AddRow(new string[] {
                         "true",
+                        "RemoteHost",
                         "true",
-                        "false",
-                        "false",
-                        "false",
-                        "false",
+                        "true",
+                        "true",
+                        "true",
+                        "true",
+                        "true",
                         "100",
                         "10",
                         "ComputerScheduledProject"});
@@ -1639,16 +1646,16 @@ namespace DashworksTestAutomation.Tests.Projects.CreatingProjects
                         "true",
                         "false",
                         "false",
-                        "false",
-                        "false",
-                        "false",
-                        "false",
-                        "false",
-                        "false",
-                        "false",
-                        "false",
-                        "false",
                         "true",
+                        "false",
+                        "false",
+                        "false",
+                        "false",
+                        "false",
+                        "false",
+                        "false",
+                        "false",
+                        "false",
                         "false",
                         "false",
                         "false"});
@@ -1677,11 +1684,13 @@ namespace DashworksTestAutomation.Tests.Projects.CreatingProjects
                     "", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
             testRunner.When("User navigate to \"Project Date\" page on Self Service tab", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
             TechTalk.SpecFlow.Table table89 = new TechTalk.SpecFlow.Table(new string[] {
+                        "ShowComputerNameString",
                         "AllowUsersToAddANote",
                         "MinimumHours",
                         "MaximumHours",
                         "PageDescription"});
             table89.AddRow(new string[] {
+                        "XForwardedFor",
                         "true",
                         "10",
                         "100",
@@ -1697,7 +1706,7 @@ namespace DashworksTestAutomation.Tests.Projects.CreatingProjects
                         "AllLinked",
                         "PageDescription"});
             table90.AddRow(new string[] {
-                        "false",
+                        "true",
                         "true",
                         "false",
                         "true",
@@ -1730,9 +1739,9 @@ namespace DashworksTestAutomation.Tests.Projects.CreatingProjects
                         "PageDescription"});
             table92.AddRow(new string[] {
                         "true",
-                        "false",
-                        "false",
-                        "false",
+                        "true",
+                        "true",
+                        "true",
                         "ComputerScheduledProject"});
             testRunner.And("User updates the Thank You page on Self Service tab", ((string)(null)), table92, "And ");
             testRunner.Then("Success message is displayed with \"Self Service Screen successfully updated\" text" +
