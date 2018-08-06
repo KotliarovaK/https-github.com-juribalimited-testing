@@ -658,14 +658,20 @@ namespace DashworksTestAutomation.Tests.Projects.CreatingProjects
                         "EnableSelfServicePortal",
                         "AllowAnonymousUsers",
                         "ThisProjectDefault",
+                        "Mode1",
+                        "Mode2",
+                        "BaseUrl",
                         "NoLink",
                         "DashworksProjectHomepage",
                         "CustomUrl",
-                        "CustomUrlTextFiald"});
+                        "CustomUrlTextField"});
             table38.AddRow(new string[] {
                         "false",
                         "false",
                         "true",
+                        "true",
+                        "false",
+                        "",
                         "false",
                         "false",
                         "true",
@@ -674,9 +680,10 @@ namespace DashworksTestAutomation.Tests.Projects.CreatingProjects
             testRunner.Then("Success message is displayed with \"Details successfully updated.\" text", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
             testRunner.When("User navigate to \"Welcome\" page on Self Service tab", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
             TechTalk.SpecFlow.Table table39 = new TechTalk.SpecFlow.Table(new string[] {
-                        "AllowToSearchForAnotherUser",
+                        "AllowUsersToSearch",
                         "AllowToChangeLanguage",
                         "ShowProjectSelector",
+                        "ShowObjectDetails",
                         "ShowMoreDetailsLink",
                         "PageDescription",
                         "ProjectName"});
@@ -684,6 +691,7 @@ namespace DashworksTestAutomation.Tests.Projects.CreatingProjects
                         "true",
                         "false",
                         "false",
+                        "",
                         "true",
                         "TestText",
                         "UserScheduledProject"});
@@ -693,6 +701,7 @@ namespace DashworksTestAutomation.Tests.Projects.CreatingProjects
             testRunner.When("User navigate to \"Computer Ownership\" page on Self Service tab", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
             TechTalk.SpecFlow.Table table40 = new TechTalk.SpecFlow.Table(new string[] {
                         "ShowScreen",
+                        "NamefromHttpString",
                         "ShowComputers",
                         "ShowCategory",
                         "AllowUsersToSearch",
@@ -703,6 +712,7 @@ namespace DashworksTestAutomation.Tests.Projects.CreatingProjects
                         "PageDescription"});
             table40.AddRow(new string[] {
                         "true",
+                        "DoNotShow",
                         "true",
                         "false",
                         "false",
@@ -712,8 +722,6 @@ namespace DashworksTestAutomation.Tests.Projects.CreatingProjects
                         "10",
                         "UserScheduledProject"});
             testRunner.When("User updates the Ownership page on Self Service tab", ((string)(null)), table40, "When ");
-            testRunner.Then("Success message is displayed with \"Self Service Screen successfully updated\" text" +
-                    "", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
             testRunner.When("User navigate to \"Department and Location\" page on Self Service tab", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
             TechTalk.SpecFlow.Table table41 = new TechTalk.SpecFlow.Table(new string[] {
                         "ShowScreen",
@@ -774,11 +782,13 @@ namespace DashworksTestAutomation.Tests.Projects.CreatingProjects
                     "", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
             testRunner.When("User navigate to \"Project Date\" page on Self Service tab", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
             TechTalk.SpecFlow.Table table43 = new TechTalk.SpecFlow.Table(new string[] {
+                        "ShowComputerNameString",
                         "AllowUsersToAddANote",
                         "MinimumHours",
                         "MaximumHours",
                         "PageDescription"});
             table43.AddRow(new string[] {
+                        "DoNotShow",
                         "true",
                         "10",
                         "100",

@@ -280,13 +280,13 @@ Scenario: Projects_CreateMailboxScheduledProject
 	When User navigate to "Self Service" tab
 	Then "Manage Self Service" page is displayed to the user
 	When User updates the Details page on Self Service tab
-	| EnableSelfServicePortal | AllowAnonymousUsers | ThisProjectDefault | ModeUser | ModeComputer | NoLink | DashworksProjectHomepage | CustomUrl | CustomUrlTextFiald |
-	| false                   | false               | true               | true     | false        | true   | false                    | false     | http://Test        |
+	| EnableSelfServicePortal | AllowAnonymousUsers | ThisProjectDefault | Mode1 | Mode2 | BaseUrl | NoLink | DashworksProjectHomepage | CustomUrl | CustomUrlTextField |
+	| false                   | false               | true               | false | true  |         | true   | false                    | false     | http://Test        |
 	Then Success message is displayed with "Details successfully updated." text
 	When User navigate to "Welcome" page on Self Service tab
 	And User updates the Welcome page on Self Service tab
-	| AllowToSearchForAnotherUser | AllowToChangeLanguage | ShowProjectSelector | ShowMoreDetailsLink | PageDescription | ProjectName             |
-	| true                        | false                 | false               | true                | TestText        | MailboxScheduledProject |
+	| AllowUsersToSearch | AllowToChangeLanguage | ShowProjectSelector | ShowObjectDetails | ShowMoreDetailsLink | PageDescription | ProjectName             |
+	| true               | false                 | false               |                   | true                | TestText        | MailboxScheduledProject |
 	Then Success message is displayed with "Self Service Screen successfully updated" text
 	When User navigate to "Mailbox Ownership" page on Self Service tab
 	And User updates the Ownership page on Self Service tab

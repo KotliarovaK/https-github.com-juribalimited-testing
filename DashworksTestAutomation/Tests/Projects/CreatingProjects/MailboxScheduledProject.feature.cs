@@ -599,18 +599,20 @@ namespace DashworksTestAutomation.Tests.Projects.CreatingProjects
                         "EnableSelfServicePortal",
                         "AllowAnonymousUsers",
                         "ThisProjectDefault",
-                        "ModeUser",
-                        "ModeComputer",
+                        "Mode1",
+                        "Mode2",
+                        "BaseUrl",
                         "NoLink",
                         "DashworksProjectHomepage",
                         "CustomUrl",
-                        "CustomUrlTextFiald"});
+                        "CustomUrlTextField"});
             table35.AddRow(new string[] {
                         "false",
                         "false",
                         "true",
-                        "true",
                         "false",
+                        "true",
+                        "",
                         "true",
                         "false",
                         "false",
@@ -619,9 +621,10 @@ namespace DashworksTestAutomation.Tests.Projects.CreatingProjects
             testRunner.Then("Success message is displayed with \"Details successfully updated.\" text", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
             testRunner.When("User navigate to \"Welcome\" page on Self Service tab", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
             TechTalk.SpecFlow.Table table36 = new TechTalk.SpecFlow.Table(new string[] {
-                        "AllowToSearchForAnotherUser",
+                        "AllowUsersToSearch",
                         "AllowToChangeLanguage",
                         "ShowProjectSelector",
+                        "ShowObjectDetails",
                         "ShowMoreDetailsLink",
                         "PageDescription",
                         "ProjectName"});
@@ -629,6 +632,7 @@ namespace DashworksTestAutomation.Tests.Projects.CreatingProjects
                         "true",
                         "false",
                         "false",
+                        "",
                         "true",
                         "TestText",
                         "MailboxScheduledProject"});

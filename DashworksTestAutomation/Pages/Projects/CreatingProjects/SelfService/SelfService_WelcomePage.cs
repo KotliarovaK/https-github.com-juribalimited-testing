@@ -15,13 +15,16 @@ namespace DashworksTestAutomation.Pages.Projects
         public IWebElement Languages { get; set; }
 
         [FindsBy(How = How.XPath, Using = ".//input[contains(@id, 'SearchValue')]")]
-        public IWebElement AllowToSearchForAnotherUser { get; set; }
+        public IWebElement AllowUsersToSearch { get; set; }
 
         [FindsBy(How = How.XPath, Using = ".//input[contains(@id, 'allowUserToChangeLanguage')]")]
         public IWebElement AllowToChangeLanguage { get; set; }
 
         [FindsBy(How = How.XPath, Using = ".//input[contains(@id, 'showProjectSelector')]")]
         public IWebElement ShowProjectSelector { get; set; }
+
+        [FindsBy(How = How.XPath, Using = ".//input[contains(@id, 'showSelectedObjectDetails')]")]
+        public IWebElement ShowObjectDetails { get; set; }
 
         [FindsBy(How = How.XPath, Using = ".//input[contains(@id, 'displayFurtherDetailsLink')]")]
         public IWebElement ShowMoreDetailsLink { get; set; }
@@ -48,12 +51,10 @@ namespace DashworksTestAutomation.Pages.Projects
         {
             return new List<By>
             {
-                SelectorFor(this, p => p.AllowToSearchForAnotherUser),
+                SelectorFor(this, p => p.AllowUsersToSearch),
                 SelectorFor(this, p => p.AllowToChangeLanguage),
                 SelectorFor(this, p => p.ShowProjectSelector),
                 SelectorFor(this, p => p.ShowMoreDetailsLink),
-                SelectorFor(this, p => p.Type),
-                SelectorFor(this, p => p.Field),
                 SelectorFor(this, p => p.LongName),
                 SelectorFor(this, p => p.ShortName),
                 SelectorFor(this, p => p.PageDescription),
