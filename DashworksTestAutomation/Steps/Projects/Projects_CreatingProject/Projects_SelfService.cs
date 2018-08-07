@@ -97,8 +97,7 @@ namespace DashworksTestAutomation.Steps.Projects
             page.AllowUsersToSearch.SetCheckboxState(_welcomeDto.AllowUsersToSearch);
             page.AllowToChangeLanguage.SetCheckboxState(_welcomeDto.AllowToChangeLanguage);
             page.ShowProjectSelector.SetCheckboxState(_welcomeDto.ShowProjectSelector);
-            if (!string.IsNullOrEmpty(_welcomeDto.ShowObjectDetails.ToString()))
-                page.ShowObjectDetails.SetCheckboxState(_welcomeDto.ShowObjectDetails);
+            page.ShowObjectDetails.SetCheckboxState(_welcomeDto.ShowObjectDetails);
             page.ShowMoreDetailsLink.SetCheckboxState(_welcomeDto.ShowMoreDetailsLink);
             //page.Type.SelectboxSelect(_welcomeDto.Type.GetValue());
             //page.Field.SelectboxSelect(_welcomeDto.Field.GetValue());
@@ -163,14 +162,14 @@ namespace DashworksTestAutomation.Steps.Projects
             page.ShowLocationFullPath.SetCheckboxState(_departmentAndLocationDto.ShowLocationFullPath);
             page.AllowUsersToAddANote.SetCheckboxState(_departmentAndLocationDto.AllowUsersToAddANote);
             page.Department.SetCheckboxState(_departmentAndLocationDto.Department);
-            page.DepartmentDoNotPush.SetCheckboxState(_departmentAndLocationDto.DepartmentDoNotPush);
-            page.DepartmentPushToOwned.SetCheckboxState(_departmentAndLocationDto.DepartmentPushToOwned);
-            page.DepartmentPushToAll.SetCheckboxState(_departmentAndLocationDto.DepartmentPushToAll);
+            //page.DepartmentDoNotPush.SetCheckboxState(_departmentAndLocationDto.DepartmentDoNotPush);
+            //page.DepartmentPushToOwned.SetCheckboxState(_departmentAndLocationDto.DepartmentPushToOwned);
+            //page.DepartmentPushToAll.SetCheckboxState(_departmentAndLocationDto.DepartmentPushToAll);
             page.Location.SetCheckboxState(_departmentAndLocationDto.Location);
-            page.LocationDoNotPush.SetCheckboxState(_departmentAndLocationDto.LocationDoNotPush);
-            page.LocationPushToOwned.SetCheckboxState(_departmentAndLocationDto.LocationPushToOwned);
-            page.LocationPushToAll.SetCheckboxState(_departmentAndLocationDto.LocationPushToAll);
-            //Those chackboxes are not exist. Commented by Lisa request
+            //page.LocationDoNotPush.SetCheckboxState(_departmentAndLocationDto.LocationDoNotPush);
+            //page.LocationPushToOwned.SetCheckboxState(_departmentAndLocationDto.LocationPushToOwned);
+            //page.LocationPushToAll.SetCheckboxState(_departmentAndLocationDto.LocationPushToAll);
+            ////Those checkboxes are not exist. Commented by Lisa request
             //page.DepartmentFeed.SetCheckboxState(_departmentAndLocationDto.DepartmentFeed);
             //page.HrLocationFeed.SetCheckboxState(_departmentAndLocationDto.HrLocationFeed);
             //page.ManualLocationFeed.SetCheckboxState(_departmentAndLocationDto.ManualLocationFeed);
@@ -192,13 +191,16 @@ namespace DashworksTestAutomation.Steps.Projects
             page.ShowCoreApps.SetCheckboxState(_appsListDto.ShowCoreApps);
             page.ShowTargetStateReadiness.SetCheckboxState(_appsListDto.ShowTargetStateReadiness);
             page.ShowRequiredColumnAndSticky.SetCheckboxState(_appsListDto.ShowRequiredColumnAndSticky);
-            if (_projectDto.ProjectType.Equals(ProjectTypeEnum.ComputerScheduledProject))
-                page.ShowOnlyApplication.SetCheckboxState(_appsListDto.ShowOnlyApplication);
+            //if (_projectDto.ProjectType.Equals(ProjectTypeEnum.ComputerScheduledProject))
+            //    page.ShowOnlyApplication.SetCheckboxState(_appsListDto.ShowOnlyApplication);
             page.AllowUsersToAddANote.SetCheckboxState(_appsListDto.AllowUsersToAddANote);
             if (!_projectDto.ProjectType.Equals(ProjectTypeEnum.MailboxScheduledProject))
                 _appsListDto.View = ViewEnum.ComparisonConsolidated;
             if (_projectDto.ProjectType.Equals(ProjectTypeEnum.MailboxScheduledProject))
                 _appsListDto.View = ViewEnum.TargetState;
+
+            //assign ViewString to ViewEnum
+            _appsListDto.View = (ViewEnum)Enum.Parse(typeof(ViewEnum), _appsListDto.ViewString);
             page.View.SelectboxSelect(_appsListDto.View.GetValue());
             page.PageDescription.SendKeys(_appsListDto.PageDescription);
 
@@ -215,6 +217,7 @@ namespace DashworksTestAutomation.Steps.Projects
 
             table.CreateInstance<SelfService_ProjectDateDto>().CopyPropertiesTo(_projectDateDto);
 
+            page.ShowScreen.SetCheckboxState(_projectDateDto.ShowThisScreen);
             if (!_projectDto.ProjectType.Equals(ProjectTypeEnum.MailboxScheduledProject))
             {
                 if (!string.IsNullOrEmpty(_projectDateDto.ShowComputerNameString))
@@ -226,7 +229,9 @@ namespace DashworksTestAutomation.Steps.Projects
             }
             
             page.AllowUsersToAddANote.SetCheckboxState(_projectDateDto.AllowUsersToAddANote);
+            page.MinimumHours.Clear();
             page.MinimumHours.SendKeys(_projectDateDto.MinimumHours);
+            page.MaximumHours.Clear();
             page.MaximumHours.SendKeys(_projectDateDto.MaximumHours);
             page.PageDescription.SendKeys(_projectDateDto.PageDescription);
 

@@ -651,7 +651,7 @@ Scenario: Projects_CreateComputerScheduledProject
 	When User navigate to "Welcome" page on Self Service tab
 	And User updates the Welcome page on Self Service tab
 	| AllowUsersToSearch | AllowToChangeLanguage | ShowProjectSelector | ShowObjectDetails | ShowMoreDetailsLink | PageDescription | ProjectName              |
-	| true               | true                  | true                |                   | true                | TestText        | ComputerScheduledProject |
+	| true               | true                  | true                | true              | true                | TestText        | ComputerScheduledProject |
 	Then Success message is displayed with "Self Service Screen successfully updated" text
 	When User navigate to "Computer Ownership" page on Self Service tab
 	And User updates the Ownership page on Self Service tab
@@ -660,19 +660,22 @@ Scenario: Projects_CreateComputerScheduledProject
 	Then Success message is displayed with "Self Service Screen successfully updated" text
 	When User navigate to "Department and Location" page on Self Service tab
 	And User updates the Department and Location page on Self Service tab
-	| ShowScreen | ShowDepartmentFullPath | ShowLocationFullPath | AllowUsersToAddANote | Department | DepartmentDoNotPush | DepartmentPushToOwned | DepartmentPushToAll | Location | LocationDoNotPush | LocationPushToOwned | LocationPushToAll | DepartmentFeed | HrLocationFeed | ManualLocationFeed | HistoricLocationFeed |
-	| true       | false                  | false                | true                 | false      | false               | false                 | false               | false    | false             | false               | false             | false          | false          | false              | false                |
+	| ShowScreen | ShowDepartmentFullPath | ShowLocationFullPath | AllowUsersToAddANote | Department | Location | 
+	| true       | false                  | false                | true                 | false      | false    |
 	Then Success message is displayed with "Self Service Screen successfully updated" text
 	When User navigate to "Apps List" page on Self Service tab
 	And User updates the Apps List page on Self Service tab
-	| ShowThisScreen | ShowCoreApps | ShowTargetStateReadiness | ShowRequiredColumnAndSticky | ShowOnlyApplication | AllowUsersToAddANote | PageDescription          |
-	| true           | true         | true                     | true                        | true                | true                 | ComputerScheduledProject |
+	| ShowThisScreen | ShowCoreApps | ShowTargetStateReadiness | ShowRequiredColumnAndSticky | AllowUsersToAddANote | ViewString | PageDescription |
+	| true           | true         | true                     | true                        | true                 | Comparison |ComputerScheduledProject |
 	Then Success message is displayed with "Self Service Screen successfully updated" text
 	When User navigate to "Project Date" page on Self Service tab
+	When User selects "Scheduled Date" Task
+	When User clicks "Update" button
 	And User updates the Project Date page on Self Service tab
-	| ShowComputerNameString | AllowUsersToAddANote | MinimumHours | MaximumHours | PageDescription          |
-	| XForwardedFor          | true                 | 10           | 100          | ComputerScheduledProject |
+	| ShowThisScreen | ShowComputerNameString | AllowUsersToAddANote | MinimumHours | MaximumHours | PageDescription          |
+	| true           | XForwardedFor          | true                 | 10           | 100          | ComputerScheduledProject |
 	Then Success message is displayed with "Self Service Screen successfully updated" text
+	#When User add "" Additional Task
 	When User navigate to "Other Options 1" page on Self Service tab
 	And User updates the first Other Options page on Self Service tab
 	| ShowScreen | AllowUsersToAddANote | OnlyOwned | AllLinked | PageDescription          |
@@ -696,7 +699,7 @@ Scenario: Projects_CreateComputerScheduledProject
 	When User updates the Details on Capacity tab
 	| EnablePlanning | DisplayColors | EnforceOonSelfServicePage | EnforceOnProjectObjectPage | CapacityToReach |
 	| true           | true          | true                      | true                       | 80              |
-#TODO Type of Date
+	When User selects "Scheduled Date" Task
 	Then Success message is displayed with "Details successfully updated." text
 	When User navigate to "Capacity" page
 	And User updates the Capacity page on Capacity tab for "1" Team
