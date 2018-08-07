@@ -45,7 +45,6 @@ namespace DashworksTestAutomation.Pages.Projects
                 SelectorFor(this, p => p.ShowCoreApps),
                 SelectorFor(this, p => p.ShowTargetStateReadiness),
                 SelectorFor(this, p => p.ShowRequiredColumnAndSticky),
-                SelectorFor(this, p => p.ShowOnlyApplication),
                 SelectorFor(this, p => p.AllowUsersToAddANote),
                 SelectorFor(this, p => p.View),
                 SelectorFor(this, p => p.LongName),

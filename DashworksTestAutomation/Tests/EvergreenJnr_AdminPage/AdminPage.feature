@@ -828,7 +828,7 @@ Scenario: EvergreenJnr_AdminPage_CheckThatNoConsoleErrorsAreDisplayedAfterUpdati
 	Then "Applications to add (0 of 2129 selected)" is displayed to the user in the Project Scope Changes section
 	When User expands the object to add 
 	When User selects following Objects
-	| Objects        |
+	| Objects                     |
 	| 20040610sqlserverck (1.0.0) |
 	| 7zip                        |
 	| ACDSee 4.0 (4.0.0)          |

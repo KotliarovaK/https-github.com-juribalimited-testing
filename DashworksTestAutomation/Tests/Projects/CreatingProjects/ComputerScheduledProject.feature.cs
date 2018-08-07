@@ -1589,7 +1589,7 @@ namespace DashworksTestAutomation.Tests.Projects.CreatingProjects
                         "true",
                         "true",
                         "true",
-                        "",
+                        "true",
                         "true",
                         "TestText",
                         "ComputerScheduledProject"});
@@ -1631,32 +1631,12 @@ namespace DashworksTestAutomation.Tests.Projects.CreatingProjects
                         "ShowLocationFullPath",
                         "AllowUsersToAddANote",
                         "Department",
-                        "DepartmentDoNotPush",
-                        "DepartmentPushToOwned",
-                        "DepartmentPushToAll",
-                        "Location",
-                        "LocationDoNotPush",
-                        "LocationPushToOwned",
-                        "LocationPushToAll",
-                        "DepartmentFeed",
-                        "HrLocationFeed",
-                        "ManualLocationFeed",
-                        "HistoricLocationFeed"});
+                        "Location"});
             table87.AddRow(new string[] {
                         "true",
                         "false",
                         "false",
                         "true",
-                        "false",
-                        "false",
-                        "false",
-                        "false",
-                        "false",
-                        "false",
-                        "false",
-                        "false",
-                        "false",
-                        "false",
                         "false",
                         "false"});
             testRunner.And("User updates the Department and Location page on Self Service tab", ((string)(null)), table87, "And ");
@@ -1668,8 +1648,8 @@ namespace DashworksTestAutomation.Tests.Projects.CreatingProjects
                         "ShowCoreApps",
                         "ShowTargetStateReadiness",
                         "ShowRequiredColumnAndSticky",
-                        "ShowOnlyApplication",
                         "AllowUsersToAddANote",
+                        "ViewString",
                         "PageDescription"});
             table88.AddRow(new string[] {
                         "true",
@@ -1677,19 +1657,23 @@ namespace DashworksTestAutomation.Tests.Projects.CreatingProjects
                         "true",
                         "true",
                         "true",
-                        "true",
+                        "Comparison",
                         "ComputerScheduledProject"});
             testRunner.And("User updates the Apps List page on Self Service tab", ((string)(null)), table88, "And ");
             testRunner.Then("Success message is displayed with \"Self Service Screen successfully updated\" text" +
                     "", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
             testRunner.When("User navigate to \"Project Date\" page on Self Service tab", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+            testRunner.When("User selects \"Scheduled Date\" Task", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+            testRunner.When("User clicks \"Update\" button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
             TechTalk.SpecFlow.Table table89 = new TechTalk.SpecFlow.Table(new string[] {
+                        "ShowThisScreen",
                         "ShowComputerNameString",
                         "AllowUsersToAddANote",
                         "MinimumHours",
                         "MaximumHours",
                         "PageDescription"});
             table89.AddRow(new string[] {
+                        "true",
                         "XForwardedFor",
                         "true",
                         "10",
@@ -1761,6 +1745,7 @@ namespace DashworksTestAutomation.Tests.Projects.CreatingProjects
                         "true",
                         "80"});
             testRunner.When("User updates the Details on Capacity tab", ((string)(null)), table93, "When ");
+            testRunner.When("User selects \"Scheduled Date\" Task", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
             testRunner.Then("Success message is displayed with \"Details successfully updated.\" text", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
             testRunner.When("User navigate to \"Capacity\" page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
             TechTalk.SpecFlow.Table table94 = new TechTalk.SpecFlow.Table(new string[] {

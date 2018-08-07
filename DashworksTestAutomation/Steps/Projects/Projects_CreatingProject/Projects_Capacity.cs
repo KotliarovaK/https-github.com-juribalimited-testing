@@ -52,6 +52,23 @@ namespace DashworksTestAutomation.Steps.Projects
             upd.UpdateButton.Click();
         }
 
+        [When(@"User selects ""(.*)"" Task")]
+        public void WhenUserSelectsTask(string checkboxName)
+        {
+            var page = _driver.NowAt<ProjectsBaseElements>();
+            page.SelectCheckboxByName(checkboxName);
+        }
+
+        [When(@"User add ""(.*)"" Additional Task")]
+        public void WhenUserAddAdditionalTask(string taskName)
+        {
+            var page = _driver.NowAt<ProjectsBaseElements>();
+
+            page.AdditionalTasks.Click();
+            page.SelectTaskByName(taskName).Click();
+            page.AddAdditionalTasks.Click();
+        }
+
         [When(@"User updates the Capacity page on Capacity tab for ""(.*)"" Team")]
         public void WhenUserUpdatesTheCapacityPageOnCapacityTabForTeam(int teamIndex, Table table)
         {
