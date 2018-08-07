@@ -51,7 +51,7 @@ namespace DashworksTestAutomation.Helpers
         {
             if (_acceptCheckbox)
                 _driver.FindElement(By.XPath(
-                        ".//div[@class='filterAddPanel ng-star-inserted']//mat-checkbox//div[@class='mat-checkbox-inner-container']"))
+                        ".//div[@class='filterAddPanel ng-star-inserted']//div[contains(@class, 'add-column-checkbox')]//div[@class='mat-checkbox-inner-container']"))
                     .Click();
             _driver.MouseHover(By.XPath(".//span[text()='SAVE']/ancestor::button"));
             _driver.FindElement(By.XPath(".//span[text()='SAVE']/ancestor::button")).Click();
