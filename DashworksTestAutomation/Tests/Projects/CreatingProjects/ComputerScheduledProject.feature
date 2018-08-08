@@ -675,7 +675,7 @@ Scenario: Projects_CreateComputerScheduledProject
 	| ShowThisScreen | ShowComputerNameString | AllowUsersToAddANote | MinimumHours | MaximumHours | PageDescription          |
 	| true           | XForwardedFor          | true                 | 10           | 100          | ComputerScheduledProject |
 	Then Success message is displayed with "Self Service Screen successfully updated" text
-	When User add "" Additional Task
+	#When User add "" Additional Task
 	When User navigate to "Other Options 1" page on Self Service tab
 	And User updates the first Other Options page on Self Service tab
 	| ShowScreen | AllowUsersToAddANote | OnlyOwned | AllLinked | PageDescription          |
