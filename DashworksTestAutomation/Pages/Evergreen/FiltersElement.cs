@@ -103,7 +103,7 @@ namespace DashworksTestAutomation.Pages.Evergreen
         [FindsBy(How = How.XPath, Using = ".//span[text()='RESET']/ancestor::button")]
         public IWebElement ResetFiltersButton { get; set; }
 
-        [FindsBy(How = How.XPath, Using = ".//i[contains(@class, 'hideElementIcon')]")]
+        [FindsBy(How = How.XPath, Using = ".//ul//mat-checkbox")]
         public IWebElement LookupFilterCheckbox { get; set; }
 
         [FindsBy(How = How.XPath, Using = FilterValuesSelector)]
@@ -341,7 +341,7 @@ namespace DashworksTestAutomation.Pages.Evergreen
 
         public bool ListNameForSavedListFilter(string filterName)
         {
-            return Driver.IsElementDisplayed(By.XPath($".//div[@class='list-container']/span[text()='{filterName}']"));
+            return Driver.IsElementDisplayed(By.XPath($".//div[@class='list-container']//span[text()='{filterName}']"));
         }
 
         public bool CheckboxNameForFilter(string checkboxName)
