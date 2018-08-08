@@ -72,6 +72,8 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_FiltersFeature
         [NUnit.Framework.Retry(2)]
         
         
+        
+        
         [NUnit.Framework.DescriptionAttribute("EvergreenJnr_UsersList_CheckThat500ErrorIsNotReturnedForFilterWithSpecialCharecte" +
             "r")]
         [NUnit.Framework.CategoryAttribute("Evergreen")]
@@ -107,6 +109,8 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_FiltersFeature
         
         [NUnit.Framework.TestAttribute()]
         [NUnit.Framework.Retry(2)]
+        
+        
         
         
         [NUnit.Framework.DescriptionAttribute("EvergreenJnr_ApplicationsList_Check500ErrorIsNotReturnedForBooleanFilterWithUnkno" +
@@ -174,6 +178,8 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_FiltersFeature
         [NUnit.Framework.Retry(2)]
         
         
+        
+        
         [NUnit.Framework.DescriptionAttribute("EvergreenJnr_ApplicationsList_CheckThatAddColumnCheckboxWorksCorrectly")]
         [NUnit.Framework.CategoryAttribute("Evergreen")]
         [NUnit.Framework.CategoryAttribute("Applications")]
@@ -215,6 +221,8 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_FiltersFeature
         
         [NUnit.Framework.TestAttribute()]
         [NUnit.Framework.Retry(2)]
+        
+        
         
         
         [NUnit.Framework.DescriptionAttribute("EvergreenJnr_ApplicationsList_CheckThatFilterIsRestoredAfterGoingBackToTheListAga" +
@@ -277,6 +285,8 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_FiltersFeature
         [NUnit.Framework.Retry(2)]
         
         
+        
+        
         [NUnit.Framework.DescriptionAttribute("EvergreenJnr_AllLists_CheckThatPrimaryColumnIsDisplayedAfterAddingAFilterWithColu" +
             "mn")]
         [NUnit.Framework.CategoryAttribute("Evergreen")]
@@ -325,6 +335,8 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_FiltersFeature
         
         [NUnit.Framework.TestAttribute()]
         [NUnit.Framework.Retry(2)]
+        
+        
         
         
         [NUnit.Framework.DescriptionAttribute("EvergreenJnr_DevicesList_CheckThatAddColumnCheckboxIsCheckedAfterSavingFilterInAN" +
@@ -376,6 +388,8 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_FiltersFeature
         [NUnit.Framework.Retry(2)]
         
         
+        
+        
         [NUnit.Framework.DescriptionAttribute("EvergreenJnr_DevicesList_CheckThatAddColumnCheckboxIsCheckedAfterSavingAFilter")]
         [NUnit.Framework.CategoryAttribute("Evergreen")]
         [NUnit.Framework.CategoryAttribute("Devices")]
@@ -411,6 +425,8 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_FiltersFeature
         
         [NUnit.Framework.TestAttribute()]
         [NUnit.Framework.Retry(2)]
+        
+        
         
         
         [NUnit.Framework.DescriptionAttribute("EvergreenJnr_DevicesList_CheckThatAddColumnCheckboxIsUncheckedAfterSavingAFilterA" +
@@ -455,6 +471,8 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_FiltersFeature
         
         [NUnit.Framework.TestAttribute()]
         [NUnit.Framework.Retry(2)]
+        
+        
         
         
         [NUnit.Framework.DescriptionAttribute("EvergreenJnr_AllLists_CheckThatFilterIsRestoredCorrectlyAfterLeavingThePageAndGoi" +
@@ -517,6 +535,8 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_FiltersFeature
         [NUnit.Framework.Retry(2)]
         
         
+        
+        
         [NUnit.Framework.DescriptionAttribute("EvergreenJnr_AllLists_CheckThatFilterIsRestoredCorrectlyAfterLeavingThePageAndGoi" +
             "ngBackViaTheBrowserBackButtonForLookupFilters")]
         [NUnit.Framework.CategoryAttribute("Evergreen")]
@@ -563,6 +583,8 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_FiltersFeature
         
         [NUnit.Framework.TestAttribute()]
         [NUnit.Framework.Retry(2)]
+        
+        
         
         
         [NUnit.Framework.DescriptionAttribute("EvergreenJnr_ApplicationsList_CheckThatFilterIsRestoredCorrectlyAfterLeavingThePa" +
@@ -613,6 +635,8 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_FiltersFeature
         
         [NUnit.Framework.TestAttribute()]
         [NUnit.Framework.Retry(2)]
+        
+        
         
         
         [NUnit.Framework.DescriptionAttribute("EvergreenJnr_ApplicationsList_CheckThatFilterIsRestoredCorrectlyAfterLeavingThePa" +
@@ -671,6 +695,8 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_FiltersFeature
         [NUnit.Framework.Retry(2)]
         
         
+        
+        
         [NUnit.Framework.DescriptionAttribute("EvergreenJnr_DevicesList_CheckNumericFilter")]
         [NUnit.Framework.CategoryAttribute("Evergreen")]
         [NUnit.Framework.CategoryAttribute("Devices")]
@@ -704,6 +730,8 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_FiltersFeature
         
         [NUnit.Framework.TestAttribute()]
         [NUnit.Framework.Retry(2)]
+        
+        
         
         
         [NUnit.Framework.DescriptionAttribute("EvergreenJnr_DevicesList_CheckThatAssociationSearchInFiltersPanelIsWorkingCorrect" +
@@ -752,6 +780,8 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_FiltersFeature
         [NUnit.Framework.Retry(2)]
         
         
+        
+        
         [NUnit.Framework.DescriptionAttribute("EvergreenJnr_ApplicationsList_CheckThat500ErrorInNotDisplayedWhenUserApplyASelect" +
             "edNumericFilter")]
         [NUnit.Framework.CategoryAttribute("Evergreen")]
@@ -788,6 +818,8 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_FiltersFeature
         
         [NUnit.Framework.TestAttribute()]
         [NUnit.Framework.Retry(2)]
+        
+        
         
         
         [NUnit.Framework.DescriptionAttribute("EvergreenJnr_DevicesList_CheckThatEmptyNotEmptyOperatorsIsWorkedCorrectly")]
@@ -829,6 +861,8 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_FiltersFeature
         
         [NUnit.Framework.TestAttribute()]
         [NUnit.Framework.Retry(2)]
+        
+        
         
         
         [NUnit.Framework.DescriptionAttribute("EvergreenJnr_UsersList_CheckThatLDAPFilterCategoryHaveAddColumnCheckboxes")]
@@ -876,6 +910,8 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_FiltersFeature
         
         [NUnit.Framework.TestAttribute()]
         [NUnit.Framework.Retry(2)]
+        
+        
         
         
         [NUnit.Framework.DescriptionAttribute("EvergreenJnr_DevicesList_CheckThatOperatorInSelectedFilterIsDisplayedCorrectlyAPI" +
@@ -941,6 +977,8 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_FiltersFeature
         [NUnit.Framework.Retry(2)]
         
         
+        
+        
         [NUnit.Framework.DescriptionAttribute("EvergreenJnr_UsersList_CheckThatToolTipShownWithEditFilterTextWhenEditingAFilterD" +
             "isplayed")]
         [NUnit.Framework.CategoryAttribute("Evergreen")]
@@ -985,6 +1023,8 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_FiltersFeature
         [NUnit.Framework.Retry(2)]
         
         
+        
+        
         [NUnit.Framework.DescriptionAttribute("EvergreenJnr_DevicesList_CheckThatTheSaveButtonIsNotAvailableWhenEnteringInvalidD" +
             "ata")]
         [NUnit.Framework.CategoryAttribute("Evergreen")]
@@ -1019,6 +1059,8 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_FiltersFeature
         
         [NUnit.Framework.TestAttribute()]
         [NUnit.Framework.Retry(2)]
+        
+        
         
         
         [NUnit.Framework.DescriptionAttribute("EvergreenJnr_DevicesList_CheckThatErrorsDoNotAppearWhenAddingAdvancedAndStandardF" +
@@ -1063,6 +1105,8 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_FiltersFeature
         
         [NUnit.Framework.TestAttribute()]
         [NUnit.Framework.Retry(2)]
+        
+        
         
         
         [NUnit.Framework.DescriptionAttribute("EvergreenJnr_DevicesList_CheckThatErrorsDoNotAppearAndFullDataIsDisplayedWhenAddi" +
@@ -1130,6 +1174,8 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_FiltersFeature
         [NUnit.Framework.Retry(2)]
         
         
+        
+        
         [NUnit.Framework.DescriptionAttribute("EvergreenJnr_DevicesList_CheckThatTheSaveButtonIsNotAvailableWithoutTheFilterValu" +
             "e")]
         [NUnit.Framework.CategoryAttribute("Evergreen")]
@@ -1173,6 +1219,8 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_FiltersFeature
         
         [NUnit.Framework.TestAttribute()]
         [NUnit.Framework.Retry(2)]
+        
+        
         
         
         [NUnit.Framework.DescriptionAttribute("EvergreenJnr_ApplicationsList_CheckThatTheColourOfTheTargetAppReadinessItemIsMatc" +
@@ -1227,6 +1275,8 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_FiltersFeature
         [NUnit.Framework.Retry(2)]
         
         
+        
+        
         [NUnit.Framework.DescriptionAttribute("EvergreenJnr_ApplicationsList_CheckThatTheColourOfTheApplicationRationalisationIt" +
             "emIsMatchingTheCaption")]
         [NUnit.Framework.CategoryAttribute("Evergreen")]
@@ -1270,6 +1320,8 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_FiltersFeature
         
         [NUnit.Framework.TestAttribute()]
         [NUnit.Framework.Retry(2)]
+        
+        
         
         
         [NUnit.Framework.DescriptionAttribute("EvergreenJnr_DevicesList_CheckThatColumnIsEmptyWhenEqualNoneAndContainsContentWhe" +
@@ -1326,6 +1378,8 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_FiltersFeature
         [NUnit.Framework.Retry(2)]
         
         
+        
+        
         [NUnit.Framework.DescriptionAttribute("EvergreenJnr_AllLists_CheckThatContentIsDisplayedInTheAddedColumnAfterApplyingIsN" +
             "otNoneOperator")]
         [NUnit.Framework.CategoryAttribute("Evergreen")]
@@ -1373,6 +1427,8 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_FiltersFeature
         
         [NUnit.Framework.TestAttribute()]
         [NUnit.Framework.Retry(2)]
+        
+        
         
         
         [NUnit.Framework.DescriptionAttribute("EvergreenJnr_MailboxesList_CheckThatEditFilterElementsBlockIsDisplayedCorrectlyOn" +
@@ -1431,6 +1487,8 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_FiltersFeature
         [NUnit.Framework.Retry(2)]
         
         
+        
+        
         [NUnit.Framework.DescriptionAttribute("EvergreenJnr_AllLists_CheckThatLocationFilterIsEditedCorrectly")]
         [NUnit.Framework.CategoryAttribute("Evergreen")]
         [NUnit.Framework.CategoryAttribute("AllLists")]
@@ -1482,6 +1540,8 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_FiltersFeature
         [NUnit.Framework.Retry(2)]
         
         
+        
+        
         [NUnit.Framework.DescriptionAttribute("EvergreenJnr_DevicesList_CheckingThatError500IsNotDisplayedAfterUsingSpecialChara" +
             "ctersIntoTheApplicationNameFilterAndRefreshingThePage")]
         [NUnit.Framework.CategoryAttribute("Evergreen")]
@@ -1522,6 +1582,8 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_FiltersFeature
         
         [NUnit.Framework.TestAttribute()]
         [NUnit.Framework.Retry(2)]
+        
+        
         
         
         [NUnit.Framework.DescriptionAttribute("EvergreenJnr_ApplicationsList_CheckThatCorrectDeviceDataIsReturnedAfterApplyingAS" +
@@ -1586,6 +1648,8 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_FiltersFeature
         
         [NUnit.Framework.TestAttribute()]
         [NUnit.Framework.Retry(2)]
+        
+        
         
         
         [NUnit.Framework.DescriptionAttribute("EvergreenJnr_ApplicationsList_CheckThatCorrectDeviceDataIsReturnedWhenUsingAStati" +
@@ -1659,6 +1723,8 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_FiltersFeature
         [NUnit.Framework.Retry(2)]
         
         
+        
+        
         [NUnit.Framework.DescriptionAttribute("EvergreenJnr_ApplicationsList_CheckThatCorrectDeviceDataIsReturnedWhenUsingADynam" +
             "icListAsTheFilteredApplicationSavedList")]
         [NUnit.Framework.CategoryAttribute("Evergreen")]
@@ -1727,6 +1793,8 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_FiltersFeature
         [NUnit.Framework.Retry(2)]
         
         
+        
+        
         [NUnit.Framework.DescriptionAttribute("EvergreenJnr_ApplicationsList_CheckThatNoConsoleErrorIsDisplayedAfterEditingUserS" +
             "urnameFilter")]
         [NUnit.Framework.CategoryAttribute("Evergreen")]
@@ -1767,6 +1835,8 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_FiltersFeature
         
         [NUnit.Framework.TestAttribute()]
         [NUnit.Framework.Retry(2)]
+        
+        
         
         
         [NUnit.Framework.DescriptionAttribute("EvergreenJnr_UsersList_CheckThatNoConsoleErrorIsDisplayedAfterAddingUserSavedList" +
@@ -1826,6 +1896,8 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_FiltersFeature
         
         [NUnit.Framework.TestAttribute()]
         [NUnit.Framework.Retry(2)]
+        
+        
         
         
         [NUnit.Framework.DescriptionAttribute("EvergreenJnr_UsersList_CheckThatNoErrorIsDisplayedAfterAddingAdvancedFilterForUse" +
@@ -1903,6 +1975,8 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_FiltersFeature
         [NUnit.Framework.Retry(2)]
         
         
+        
+        
         [NUnit.Framework.DescriptionAttribute("EvergreenJnr_ApplicationsList_CheckThatNoErrorIsDisplayedAfterAddingFewAdvancedFi" +
             "lters")]
         [NUnit.Framework.CategoryAttribute("Evergreen")]
@@ -1958,6 +2032,8 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_FiltersFeature
         
         [NUnit.Framework.TestAttribute()]
         [NUnit.Framework.Retry(2)]
+        
+        
         
         
         [NUnit.Framework.DescriptionAttribute("EvergreenJnr_ApplicationsList_CheckThatNoErrorIsDisplayedAfterAddingFewAdvancedFi" +
@@ -2029,6 +2105,8 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_FiltersFeature
         [NUnit.Framework.Retry(2)]
         
         
+        
+        
         [NUnit.Framework.DescriptionAttribute("EvergreenJnr_ApplicationsList_CheckThatUserLastLogonDateFilterWorksCorrectly")]
         [NUnit.Framework.CategoryAttribute("Evergreen")]
         [NUnit.Framework.CategoryAttribute("Applications")]
@@ -2068,6 +2146,8 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_FiltersFeature
         
         [NUnit.Framework.TestAttribute()]
         [NUnit.Framework.Retry(2)]
+        
+        
         
         
         [NUnit.Framework.DescriptionAttribute("EvergreenJnr_ApplicationsList_CheckThatProjectGroupCurrentStateFiltersInTheApplic" +
@@ -2146,6 +2226,8 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_FiltersFeature
         [NUnit.Framework.Retry(2)]
         
         
+        
+        
         [NUnit.Framework.DescriptionAttribute("EvergreenJnr_ApplicationsList_CheckThatProjectGroupTargetStateFiltersInTheApplica" +
             "tionListWorksCorrectly")]
         [NUnit.Framework.CategoryAttribute("Evergreen")]
@@ -2222,6 +2304,8 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_FiltersFeature
         [NUnit.Framework.Retry(2)]
         
         
+        
+        
         [NUnit.Framework.DescriptionAttribute("EvergreenJnr_ApplicationsList_CheckThatAdvancedUserFilterReturnsCorrectResults")]
         [NUnit.Framework.CategoryAttribute("Evergreen")]
         [NUnit.Framework.CategoryAttribute("Applications")]
@@ -2261,6 +2345,8 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_FiltersFeature
         
         [NUnit.Framework.TestAttribute()]
         [NUnit.Framework.Retry(2)]
+        
+        
         
         
         [NUnit.Framework.DescriptionAttribute("EvergreenJnr_DevicesList_CheckThat500ISEInvalidColumnNameErrorIsNotDisplayedIfUse" +
@@ -2314,6 +2400,8 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_FiltersFeature
         [NUnit.Framework.Retry(2)]
         
         
+        
+        
         [NUnit.Framework.DescriptionAttribute("EvergreenJnr_UsersList_CheckThat500ISEInvalidColumnNameErrorIsNotDisplayedIfUseSe" +
             "lectedFilterOnUsersPage")]
         [NUnit.Framework.CategoryAttribute("Evergreen")]
@@ -2361,6 +2449,8 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_FiltersFeature
         
         [NUnit.Framework.TestAttribute()]
         [NUnit.Framework.Retry(2)]
+        
+        
         
         
         [NUnit.Framework.DescriptionAttribute("EvergreenJnr_ApplicationsList_CheckThat500ISEInvalidColumnNameErrorIsNotDisplayed" +
@@ -2412,6 +2502,8 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_FiltersFeature
         [NUnit.Framework.Retry(2)]
         
         
+        
+        
         [NUnit.Framework.DescriptionAttribute("EvergreenJnr_MailboxesList_CheckThat500ISEInvalidColumnNameErrorIsNotDisplayedIfU" +
             "seSelectedFilterOnMailboxesPage")]
         [NUnit.Framework.CategoryAttribute("Evergreen")]
@@ -2457,6 +2549,8 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_FiltersFeature
         [NUnit.Framework.Retry(2)]
         
         
+        
+        
         [NUnit.Framework.DescriptionAttribute("EvergreenJnr_DevicesList_CheckThat500ISEInvalidColumnNameErrorIsNotDisplayedIfUse" +
             "DepartmentFilter")]
         [NUnit.Framework.CategoryAttribute("Evergreen")]
@@ -2496,6 +2590,8 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_FiltersFeature
         
         [NUnit.Framework.TestAttribute()]
         [NUnit.Framework.Retry(2)]
+        
+        
         
         
         [NUnit.Framework.DescriptionAttribute("EvergreenJnr_DevicesList_CheckThat500ErrorIsNotDisplayedAfterApplyingGBFilters")]

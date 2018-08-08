@@ -72,6 +72,8 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_ListDetails
         [NUnit.Framework.Retry(2)]
         
         
+        
+        
         [NUnit.Framework.DescriptionAttribute("EvergreenJnr_AllLists_CheckThatRenamingAListWorkingCorrectlyForDynamicLists")]
         [NUnit.Framework.CategoryAttribute("Evergreen")]
         [NUnit.Framework.CategoryAttribute("AllLists")]
@@ -127,6 +129,8 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_ListDetails
         
         [NUnit.Framework.TestAttribute()]
         [NUnit.Framework.Retry(2)]
+        
+        
         
         
         [NUnit.Framework.DescriptionAttribute("EvergreenJnr_AllLists_CheckThatRenamingAListWorkingCorrectlyForStaticLists")]
@@ -192,6 +196,8 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_ListDetails
         [NUnit.Framework.Retry(2)]
         
         
+        
+        
         [NUnit.Framework.DescriptionAttribute("EvergreenJnr_AllLists_CheckThatFavoriteAListWorkingCorrectlyForDynamicLists")]
         [NUnit.Framework.CategoryAttribute("Evergreen")]
         [NUnit.Framework.CategoryAttribute("AllLists")]
@@ -244,6 +250,8 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_ListDetails
         
         [NUnit.Framework.TestAttribute()]
         [NUnit.Framework.Retry(2)]
+        
+        
         
         
         [NUnit.Framework.DescriptionAttribute("EvergreenJnr_AllLists_CheckThatFavoriteAListWorkingCorrectlyForStaticLists")]
@@ -306,6 +314,8 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_ListDetails
         [NUnit.Framework.Retry(2)]
         
         
+        
+        
         [NUnit.Framework.DescriptionAttribute("EvergreenJnr_AllLists_CheckThatListDetailsButtonIsDisabledForDefaultLists")]
         [NUnit.Framework.CategoryAttribute("Evergreen")]
         [NUnit.Framework.CategoryAttribute("AllLists")]
@@ -339,6 +349,8 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_ListDetails
         
         [NUnit.Framework.TestAttribute()]
         [NUnit.Framework.Retry(2)]
+        
+        
         
         
         [NUnit.Framework.DescriptionAttribute("EvergreenJnr_AllLists_CheckDefaultOptionsInListDetailsForDynamicLists")]
@@ -388,6 +400,8 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_ListDetails
         [NUnit.Framework.Retry(2)]
         
         
+        
+        
         [NUnit.Framework.DescriptionAttribute("EvergreenJnr_AllLists_CheckDefaultOptionsInListDetailsForStaticLists")]
         [NUnit.Framework.CategoryAttribute("Evergreen")]
         [NUnit.Framework.CategoryAttribute("AllLists")]
@@ -434,6 +448,8 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_ListDetails
         
         [NUnit.Framework.TestAttribute()]
         [NUnit.Framework.Retry(2)]
+        
+        
         
         
         [NUnit.Framework.DescriptionAttribute("EvergreenJnr_AllLists_CheckThatActiveListIsRefreshedOnListDetailsPanel")]
@@ -485,6 +501,8 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_ListDetails
         [NUnit.Framework.Retry(2)]
         
         
+        
+        
         [NUnit.Framework.DescriptionAttribute("EvergreenJnr_AllLists_CheckThatListDetailsButtonIsDisabledForDefaultListsAfterCha" +
             "ngingALanguage")]
         [NUnit.Framework.CategoryAttribute("Evergreen")]
@@ -527,6 +545,8 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_ListDetails
         
         [NUnit.Framework.TestAttribute()]
         [NUnit.Framework.Retry(2)]
+        
+        
         
         
         [NUnit.Framework.DescriptionAttribute("EvergreenJnr_AllLists_CheckThatNoAbilityToCreateTheSameNamedListsUsingTheSpaceCha" +
@@ -573,6 +593,8 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_ListDetails
         
         [NUnit.Framework.TestAttribute()]
         [NUnit.Framework.Retry(2)]
+        
+        
         
         
         [NUnit.Framework.DescriptionAttribute("EvergreenJnr_AllLists_CheckThatNoAbilityToCreateTheSameNamedListsUsingTheSpaceCha" +
@@ -630,6 +652,8 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_ListDetails
         
         [NUnit.Framework.TestAttribute()]
         [NUnit.Framework.Retry(2)]
+        
+        
         
         
         [NUnit.Framework.DescriptionAttribute("EvergreenJnr_AllLists_CheckThatWarningMessageIsNotDisplayedInTheListPanelAfterVie" +
@@ -749,6 +773,8 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_ListDetails
         [NUnit.Framework.Retry(2)]
         
         
+        
+        
         [NUnit.Framework.DescriptionAttribute("EvergreenJnr_AllLists_CheckThatTwoDependencyAreDisplayedInTheDependentsBlock")]
         [NUnit.Framework.CategoryAttribute("Evergreen")]
         [NUnit.Framework.CategoryAttribute("AllLists")]
@@ -822,6 +848,8 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_ListDetails
         
         [NUnit.Framework.TestAttribute()]
         [NUnit.Framework.Retry(2)]
+        
+        
         
         
         [NUnit.Framework.DescriptionAttribute("EvergreenJnr_AllLists_CheckThatListDoesNotExistErrorWhenViewingDependentList")]
@@ -906,6 +934,8 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_ListDetails
         [NUnit.Framework.Retry(2)]
         
         
+        
+        
         [NUnit.Framework.DescriptionAttribute("EvergreenJnr_AllLists_CheckThatListPanelDoesNotExistErrorWhenViewingDependentList" +
             "")]
         [NUnit.Framework.CategoryAttribute("Evergreen")]
@@ -967,6 +997,8 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_ListDetails
         
         [NUnit.Framework.TestAttribute()]
         [NUnit.Framework.Retry(2)]
+        
+        
         
         
         [NUnit.Framework.DescriptionAttribute("EvergreenJnr_AllLists_CheckDisplayingListDeletionWarningMessageForDependenciesDyn" +
@@ -1046,6 +1078,8 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_ListDetails
         [NUnit.Framework.Retry(2)]
         
         
+        
+        
         [NUnit.Framework.DescriptionAttribute("EvergreenJnr_AllLists_CheckDisplayingListDeletionWarningMessageForDependenciesSta" +
             "ticLists")]
         [NUnit.Framework.CategoryAttribute("Evergreen")]
@@ -1120,6 +1154,8 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_ListDetails
         
         [NUnit.Framework.TestAttribute()]
         [NUnit.Framework.Retry(2)]
+        
+        
         
         
         [NUnit.Framework.DescriptionAttribute("EvergreenJnr_AllLists_CheckDisplayingListDeletionWarningMessageForDependenciesLis" +
@@ -1214,6 +1250,8 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_ListDetails
         [NUnit.Framework.Retry(2)]
         
         
+        
+        
         [NUnit.Framework.DescriptionAttribute("EvergreenJnr_AllLists_CheckDisplayingListDeletionWarningMessageForTwoDependencies" +
             "Lists")]
         [NUnit.Framework.CategoryAttribute("Evergreen")]
@@ -1286,6 +1324,8 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_ListDetails
         [NUnit.Framework.Retry(2)]
         
         
+        
+        
         [NUnit.Framework.DescriptionAttribute("EvergreenJnr_Users_CheckThatListDeletionWarningMessageIsNotDisplayedAfterDeleting" +
             "AnotherListForDynamicAndStaticLists")]
         [NUnit.Framework.CategoryAttribute("Evergreen")]
@@ -1343,6 +1383,8 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_ListDetails
         [NUnit.Framework.Retry(2)]
         
         
+        
+        
         [NUnit.Framework.DescriptionAttribute("EvergreenJnr_Users_CheckThatListDeletionWarningMessageIsNotDisplayedAfterDeleting" +
             "AnotherListForDynamicLists")]
         [NUnit.Framework.CategoryAttribute("Evergreen")]
@@ -1385,6 +1427,8 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_ListDetails
         
         [NUnit.Framework.TestAttribute()]
         [NUnit.Framework.Retry(2)]
+        
+        
         
         
         [NUnit.Framework.DescriptionAttribute("EvergreenJnr_MailboxesList_CheckThatListDetailsPanelIsDisplayedAfterSelectingMana" +
@@ -1445,6 +1489,8 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_ListDetails
         [NUnit.Framework.Retry(2)]
         
         
+        
+        
         [NUnit.Framework.DescriptionAttribute("EvergreenJnr_ApplicationsLists_CheckThatTheSaveButtonIsNotDisplayedOnTheListPanel" +
             "AfterListCreation")]
         [NUnit.Framework.CategoryAttribute("Evergreen")]
@@ -1488,6 +1534,8 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_ListDetails
         
         [NUnit.Framework.TestAttribute()]
         [NUnit.Framework.Retry(2)]
+        
+        
         
         
         [NUnit.Framework.DescriptionAttribute("EvergreenJnr_ApplicationsLists_CheckThatListOwnerOfDynamicListIsDisplayedCorrectl" +
