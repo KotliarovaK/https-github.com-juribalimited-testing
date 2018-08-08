@@ -14,12 +14,6 @@ namespace DashworksTestAutomation.Pages.Projects
         [FindsBy(How = How.XPath, Using = ".//a[text()='Dashboards']")]
         public IWebElement DashboardsTab { get; set; }
 
-        [FindsBy(How = How.XPath, Using = "//select[@aria-label='Additional Tasks']")]
-        public IWebElement AdditionalTasks { get; set; }
-
-        [FindsBy(How = How.XPath, Using = "//input[contains(@class, 'addAdditionalTask')]")]
-        public IWebElement AddAdditionalTasks { get; set; }
-
         public IWebElement OpenMainTabByName(string mainTabName)
         {
             var selector = By.XPath($".//ul[contains(@id, 'Menu')]/../following-sibling::li/a[text()='{mainTabName}']");
@@ -46,13 +40,6 @@ namespace DashworksTestAutomation.Pages.Projects
             string selector = $"//td[text()='{checkboxName}']//following-sibling::td//input[@name='TaskId']";
             Driver.WaitWhileControlIsNotDisplayed(By.XPath(selector));
             Driver.FindElement(By.XPath(selector)).Click();
-        }
-
-        public IWebElement SelectTaskByName(string taskName)
-        {
-            var selector = By.XPath($"//select[@aria-label='Additional Tasks']/option[text()='{taskName}']");
-            Driver.WaitWhileControlIsNotDisplayed(selector);
-            return Driver.FindElement(selector);
         }
     }
 }
