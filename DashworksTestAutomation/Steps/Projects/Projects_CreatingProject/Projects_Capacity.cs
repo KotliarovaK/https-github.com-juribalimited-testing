@@ -62,7 +62,7 @@ namespace DashworksTestAutomation.Steps.Projects
         [When(@"User add ""(.*)"" Additional Task")]
         public void WhenUserAddAdditionalTask(string taskName)
         {
-            var page = _driver.NowAt<ProjectsBaseElements>();
+            var page = _driver.NowAt<SelfService_ProjectDatePage>();
 
             page.AdditionalTasks.Click();
             page.SelectTaskByName(taskName).Click();

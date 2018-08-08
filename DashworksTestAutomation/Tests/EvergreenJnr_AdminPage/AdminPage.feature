@@ -502,7 +502,6 @@ Scenario: EvergreenJnr_AdminPage_CheckThatNotificationMessageIsDisplayedAfterUpd
 	And User clicks content from "Bucket" column
 	Then "TestBucket2" bucket details is displayed to the user
 	When User clicks "Bucket Settings" tab
-	#Update all steps with 'default bucket' checkbox after fixed DAS13073
 	And User updates the Default Bucket checkbox state
 	And User clicks Update Bucket button on the Buckets page
 	Then Success message The "TestBucket2" bucket has been updated is displayed on the Buckets page
@@ -515,7 +514,6 @@ Scenario: EvergreenJnr_AdminPage_CheckThatNotificationMessageIsDisplayedAfterUpd
 	Then "FALSE" value is displayed for Default column
 	When User clicks content from "Bucket" column
 	And User clicks "Bucket Settings" tab
-	#Update all steps with 'default bucket' checkbox after fixed DAS13073
 	And User updates the Default Bucket checkbox state
 	And User clicks Update Bucket button on the Buckets page
 	Then Success message The "Unassigned" bucket has been updated is displayed on the Buckets page
@@ -2046,7 +2044,7 @@ Scenario: EvergreenJnr_AdminPage_CheckTheBucketStateForOnboardedObjects
 	Then "Create Bucket" page should be displayed to the user
 	When User enters "Bucket12948" in the Bucket Name field
 	And User selects "Admin IT" team in the Team dropdown on the Buckets page
-	And User clicks Default bucket checkbox
+	And User updates the Default Bucket checkbox state
 	And User clicks Create button on the Create Bucket page
 	Then Success message is displayed and contains "The bucket has been created" text
 	When User clicks "Projects" link on the Admin page
@@ -2080,7 +2078,6 @@ Scenario: EvergreenJnr_AdminPage_CheckTheBucketStateForOnboardedObjects
 	And User clicks content from "Bucket" column
 	Then "Unassigned" bucket details is displayed to the user
 	When User clicks "Bucket Settings" tab
-	#Update all steps with 'default bucket' checkbox after fixed DAS13073
 	And User updates the Default Bucket checkbox state
 	And User clicks Update Bucket button on the Buckets page
 	Then Success message The "Unassigned" bucket has been updated is displayed on the Buckets page
@@ -2945,7 +2942,7 @@ Scenario: EvergreenJnr_AdminPage_CreatingDefaultBucket
 	Then "Create Bucket" page should be displayed to the user
 	When User enters "TestBucket5" in the Bucket Name field
 	And User selects "Admin IT" team in the Team dropdown on the Buckets page
-	And User clicks Default bucket checkbox
+	And User updates the Default Bucket checkbox state
 	And User clicks Create button on the Create Bucket page
 	Then Success message is displayed and contains "The bucket has been created" text
 	When User clicks newly created object link

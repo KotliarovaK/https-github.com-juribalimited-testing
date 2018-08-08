@@ -1,5 +1,6 @@
 ﻿using System.Collections.Generic;
 using DashworksTestAutomation.Base;
+using DashworksTestAutomation.Extensions;
 using OpenQA.Selenium;
 using OpenQA.Selenium.Support.PageObjects;
 
@@ -31,6 +32,12 @@ namespace DashworksTestAutomation.Pages.Projects
         [FindsBy(How = How.XPath, Using = ".//textarea[@aria-label='Page Description']")]
         public IWebElement PageDescription { get; set; }
 
+        [FindsBy(How = How.XPath, Using = "//select[@aria-label='Additional Tasks']")]
+        public IWebElement AdditionalTasks { get; set; }
+
+        [FindsBy(How = How.XPath, Using = "//input[contains(@class, 'addAdditionalTask')]")]
+        public IWebElement AddAdditionalTasks { get; set; }
+
         public override List<By> GetPageIdentitySelectors()
         {
             return new List<By>
@@ -43,6 +50,13 @@ namespace DashworksTestAutomation.Pages.Projects
                 SelectorFor(this, p => p.ShortName),
                 SelectorFor(this, p => p.PageDescription)
             };
+        }
+
+        public IWebElement SelectTaskByName(string taskName)
+        {
+            var selector = By.XPath($"//select[@aria-label='Additional Tasks']/option[text()='{taskName}']");
+            Driver.WaitWhileControlIsNotDisplayed(selector);
+            return Driver.FindElement(selector);
         }
     }
 }

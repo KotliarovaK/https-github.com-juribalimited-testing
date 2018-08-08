@@ -931,14 +931,6 @@ namespace DashworksTestAutomation.Steps.Dashworks
             createBucketElement.SelectTeam(teamName);
         }
 
-        //Update all steps with 'default bucket' checkbox after fixed DAS13073
-        [When(@"User clicks Default bucket checkbox")]
-        public void WhenUserClicksDefaultBucketCheckbox()
-        {
-            var createBucketElement = _driver.NowAt<CreateBucketPage>();
-            createBucketElement.IncorrectDefaulBucketCheckbox.Click();
-        }
-
         [When(@"User updates the Default Bucket checkbox state")]
         public void WhenUserUpdatesTheDefaultBucketCheckboxState()
         {
