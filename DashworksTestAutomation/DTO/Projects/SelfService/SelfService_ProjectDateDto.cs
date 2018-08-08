@@ -8,16 +8,12 @@ namespace DashworksTestAutomation.DTO.Projects
     public class SelfService_ProjectDateDto
     {
         public bool ShowThisScreen { get; set; }
+        public string ShowComputerNameString { get; set; }
         public ShowComputerNameEnum ShowComputerName;
         public bool AllowUsersToAddANote { get; set; }
         public string MinimumHours { get; set; }
         public string MaximumHours { get; set; }
         public string PageDescription { get; set; }
-
-        public SelfService_ProjectDateDto()
-        {
-            ShowComputerName = EnumExtensions.GetRandomValue<ShowComputerNameEnum>();
-        }
     }
 
     public enum ShowComputerNameEnum
@@ -28,5 +24,6 @@ namespace DashworksTestAutomation.DTO.Projects
         RemoteHost,
         [Description("X-Forwarded-For")]
         XForwardedFor,
+        Other
     }
 }

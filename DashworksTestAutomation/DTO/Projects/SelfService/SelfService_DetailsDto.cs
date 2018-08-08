@@ -13,9 +13,10 @@ namespace DashworksTestAutomation.DTO.Projects
         public bool ThisProjectDefault { get; set; }
         public bool Mode1 { get; set; }
         public bool Mode2 { get; set; }
+        public string BaseUrl { get; set; }
         public bool NoLink { get; set; }
         public bool DashworksProjectHomepage { get; set; }
         public bool CustomUrl { get; set; }
-        public string CustomUrlTextFiald { get; set; }
+        public string CustomUrlTextField { get; set; }
     }
 }

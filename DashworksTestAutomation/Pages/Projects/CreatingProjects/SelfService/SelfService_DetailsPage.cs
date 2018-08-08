@@ -35,7 +35,7 @@ namespace DashworksTestAutomation.Pages.Projects
         public IWebElement CustomUrl { get; set; }
 
         [FindsBy(How = How.XPath, Using = ".//input[contains(@id, 'HeaderLogoUrl')]")]
-        public IWebElement CustomUrlTextFiald { get; set; }
+        public IWebElement CustomUrlTextField { get; set; }
 
         [FindsBy(How = How.XPath, Using = ".//input[@id='TB_BackgroundColor']")]
         public IWebElement BackgroundColour { get; set; }
