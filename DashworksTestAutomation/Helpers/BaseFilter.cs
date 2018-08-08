@@ -119,7 +119,7 @@ namespace DashworksTestAutomation.Helpers
             _driver.FindElement(
                     By.XPath(".//div[@class='filterAddPanel ng-star-inserted']//input[@placeholder='Search']"))
                 .SendKeys(_value);
-            _driver.FindElement(By.XPath(".//i[@class='material-icons mat-18 mat-done check-item hideElementIcon']"))
+            _driver.FindElement(By.XPath(".//ul[@class='tree-list ng-star-inserted']//mat-checkbox"))
                 .Click();
             SaveFilter();
         }
@@ -162,7 +162,7 @@ namespace DashworksTestAutomation.Helpers
     public class CheckBoxesFilter : BaseFilter
     {
         protected string CheckboxSelector =
-            ".//div[@class='filterAddPanel ng-star-inserted']//span[text()='{0}']/../preceding-sibling::i";
+            ".//div[@class='filterAddPanel ng-star-inserted']//span[text()='{0}']/ancestor::mat-checkbox";
 
         protected string CheckboxSelectorName =
             ".//div[@class='filterAddPanel ng-star-inserted']//span[text()='{0}']";

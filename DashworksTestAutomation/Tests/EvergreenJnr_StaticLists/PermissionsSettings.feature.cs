@@ -71,6 +71,7 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_StaticLists
         [NUnit.Framework.TestAttribute()]
         [NUnit.Framework.Retry(2)]
         
+        
         [NUnit.Framework.DescriptionAttribute("EvergreenJnr_UsersList_CheckThatNotOwnerUsersDontHavePermissionsToUpdateStaticLis" +
             "t")]
         [NUnit.Framework.CategoryAttribute("Evergreen")]
@@ -128,6 +129,7 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_StaticLists
         
         [NUnit.Framework.TestAttribute()]
         [NUnit.Framework.Retry(2)]
+        
         
         [NUnit.Framework.DescriptionAttribute("EvergreenJnr_DevicesList_CheckThatAddRowsOptionsIsAvailableForSpecifiedPermission" +
             "Level")]
