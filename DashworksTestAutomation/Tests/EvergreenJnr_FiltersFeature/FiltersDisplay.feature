@@ -1,5 +1,4 @@
-﻿@retry:1
-Feature: FiltersDisplay
+﻿Feature: FiltersDisplay
 	Runs Dynamic Filters Display related tests
 
 Background: Pre-Conditions
@@ -354,11 +353,11 @@ Scenario Outline: EvergreenJnr_MailboxesList_CheckThatFilterOperatorsIsCorrectIn
 Examples: 
 	| operatorValue  | filterOption | rowsCount | operatorValueInInfo |
 	| Not empty      |              | 14,778    | is not empty        |
-	| Does not equal | Mar 8, 2016  | 14,781    | is not              |
-	| Equals         | Mar 8, 2016  | 3         | is                  |
+	| Does not equal | 8 Mar 2016   | 14,781    | is not              |
+	| Equals         | 8 Mar 2016   | 3         | is                  |
 	| Empty          |              | 6         | is empty            |
-	| Before         | Mar 8, 2016  | 4,699     | is before           |
-	| After          | Mar 8, 2016  | 10,076    | is after            |
+	| Before         | 8 Mar 2016   | 4,699     | is before           |
+	| After          | 8 Mar 2016   | 10,076    | is after            |
 
  @Evergreen @Devices @Evergreen_FiltersFeature @FiltersDisplay @DAS10696 @DAS11090 @DAS12114 @DAS12698
 Scenario Outline: EvergreenJnr_DevicesList_CheckThatFilterOperatorsIsCorrectInFilterInfoDatetime
@@ -653,7 +652,7 @@ Scenario: EvergreenJnr_DevicesList_CheckThatSpaceAfterCommasInTheFiltersContaine
 	Then "CPU Count" filter is added to the list
 	Then "(Compliance = Unknown, Red, Amber or Green) OR (Import != A01 SMS (Spoof)) OR (Department Code ~ ABC) OR (Department Code !~ ACV) OR (Department Code BEGINS WITH AXZ) OR (Department Code ENDS WITH YQA) OR (Department Code = EMPTY) OR (Department Code != EMPTY) OR (Boot Up Date < 14 Dec 2017) OR (Boot Up Date > 03 Dec 2017) OR (CPU Count > 66) OR (CPU Count >= 12) OR (CPU Count < 31) OR (CPU Count <= 13)" text is displayed in filter container
 
-@Evergreen @Devices @Evergreen_FiltersFeature @FiltersDisplay @DAS10790 @Delete_Newly_Created_List
+@Evergreen @Devices @Evergreen_FiltersFeature @FiltersDisplay @DAS10790 @DAS13206 @Delete_Newly_Created_List @Not_Run
 Scenario: EvergreenJnr_DevicesList_CheckThatApplicationFiltersBeingAppliedAgainstTheDevicesListAreRestoredCorrectlyAndAreShownInTheFiltersPanel
 	When User clicks "Devices" on the left-hand menu
 	Then "Devices" list should be displayed to the user
