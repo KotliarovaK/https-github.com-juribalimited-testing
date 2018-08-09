@@ -22,6 +22,7 @@ namespace DashworksTestAutomation.Steps.Dashworks
         {
             var listPageElement = _driver.NowAt<BaseDashboardPage>();
 
+            listPageElement.TableSearchButton.Click();
             listPageElement.TableSearchTextbox.Clear();
             _driver.WaitForDataLoading();
             listPageElement.TableSearchTextbox.SendKeys(searchTerm);

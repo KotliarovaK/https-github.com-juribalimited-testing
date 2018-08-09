@@ -19,7 +19,6 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_FiltersFeature
     [System.Runtime.CompilerServices.CompilerGeneratedAttribute()]
     [NUnit.Framework.TestFixtureAttribute()]
     [NUnit.Framework.DescriptionAttribute("FiltersDisplay")]
-    [NUnit.Framework.CategoryAttribute("retry:1")]
     public partial class FiltersDisplayFeature
     {
         
@@ -29,8 +28,7 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_FiltersFeature
         public virtual void FeatureSetup()
         {
             testRunner = TechTalk.SpecFlow.TestRunnerManager.GetTestRunner();
-            TechTalk.SpecFlow.FeatureInfo featureInfo = new TechTalk.SpecFlow.FeatureInfo(new System.Globalization.CultureInfo("en-US"), "FiltersDisplay", "\tRuns Dynamic Filters Display related tests", ProgrammingLanguage.CSharp, new string[] {
-                        "retry:1"});
+            TechTalk.SpecFlow.FeatureInfo featureInfo = new TechTalk.SpecFlow.FeatureInfo(new System.Globalization.CultureInfo("en-US"), "FiltersDisplay", "\tRuns Dynamic Filters Display related tests", ProgrammingLanguage.CSharp, ((string[])(null)));
             testRunner.OnFeatureStart(featureInfo);
         }
         
@@ -809,11 +807,11 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_FiltersFeature
         [NUnit.Framework.CategoryAttribute("DAS10696")]
         [NUnit.Framework.CategoryAttribute("DAS12114")]
         [NUnit.Framework.TestCaseAttribute("Not empty", "", "14,778", "is not empty", null)]
-        [NUnit.Framework.TestCaseAttribute("Does not equal", "Mar 8, 2016", "14,781", "is not", null)]
-        [NUnit.Framework.TestCaseAttribute("Equals", "Mar 8, 2016", "3", "is", null)]
+        [NUnit.Framework.TestCaseAttribute("Does not equal", "8 Mar 2016", "14,781", "is not", null)]
+        [NUnit.Framework.TestCaseAttribute("Equals", "8 Mar 2016", "3", "is", null)]
         [NUnit.Framework.TestCaseAttribute("Empty", "", "6", "is empty", null)]
-        [NUnit.Framework.TestCaseAttribute("Before", "Mar 8, 2016", "4,699", "is before", null)]
-        [NUnit.Framework.TestCaseAttribute("After", "Mar 8, 2016", "10,076", "is after", null)]
+        [NUnit.Framework.TestCaseAttribute("Before", "8 Mar 2016", "4,699", "is before", null)]
+        [NUnit.Framework.TestCaseAttribute("After", "8 Mar 2016", "10,076", "is after", null)]
         public virtual void EvergreenJnr_MailboxesList_CheckThatFilterOperatorsIsCorrectInFilterInfo(string operatorValue, string filterOption, string rowsCount, string operatorValueInInfo, string[] exampleTags)
         {
             string[] @__tags = new string[] {
@@ -1543,7 +1541,9 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_FiltersFeature
         [NUnit.Framework.CategoryAttribute("Evergreen_FiltersFeature")]
         [NUnit.Framework.CategoryAttribute("FiltersDisplay")]
         [NUnit.Framework.CategoryAttribute("DAS10790")]
+        [NUnit.Framework.CategoryAttribute("DAS13206")]
         [NUnit.Framework.CategoryAttribute("Delete_Newly_Created_List")]
+        [NUnit.Framework.CategoryAttribute("Not_Run")]
         public virtual void EvergreenJnr_DevicesList_CheckThatApplicationFiltersBeingAppliedAgainstTheDevicesListAreRestoredCorrectlyAndAreShownInTheFiltersPanel()
         {
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("EvergreenJnr_DevicesList_CheckThatApplicationFiltersBeingAppliedAgainstTheDevices" +
@@ -1553,7 +1553,9 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_FiltersFeature
                         "Evergreen_FiltersFeature",
                         "FiltersDisplay",
                         "DAS10790",
-                        "Delete_Newly_Created_List"});
+                        "DAS13206",
+                        "Delete_Newly_Created_List",
+                        "Not_Run"});
             this.ScenarioSetup(scenarioInfo);
             this.FeatureBackground();
             testRunner.When("User clicks \"Devices\" on the left-hand menu", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");

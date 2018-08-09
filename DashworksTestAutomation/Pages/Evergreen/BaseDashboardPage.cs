@@ -76,6 +76,9 @@ namespace DashworksTestAutomation.Pages.Evergreen
             Using = ".//button[contains(@class, 'resetButton mat-button')]")]
         public IWebElement SearchTextboxResetButtonInPanel { get; set; }
 
+        [FindsBy(How = How.XPath, Using = "//button[@aria-label='search']")]
+        public IWebElement TableSearchButton { get; set; }
+
         [FindsBy(How = How.XPath, Using = ".//input[@aria-label='Search Table']")]
         public IWebElement TableSearchTextbox { get; set; }
 
@@ -115,8 +118,11 @@ namespace DashworksTestAutomation.Pages.Evergreen
         [FindsBy(How = How.XPath, Using = ".//div[@class='empty-message ng-star-inserted'][text()='No devices found']")]
         public IWebElement NoResultsFoundMessage { get; set; }
 
-        [FindsBy(How = How.XPath, Using = ".//span[@class='action-item']//span[text()='Save']")]
+        [FindsBy(How = How.XPath, Using = "//div[contains(@class, 'save')]//button")]
         public IWebElement SaveCustomListButton { get; set; }
+
+        [FindsBy(How = How.XPath, Using = "//button[@aria-label='filters']")]
+        public IWebElement FilterContainerButton { get; set; }
 
         [FindsBy(How = How.XPath, Using = ".//span[@class='filter-content']")]
         public IWebElement FilterContainer { get; set; }
@@ -154,7 +160,7 @@ namespace DashworksTestAutomation.Pages.Evergreen
         [FindsBy(How = How.XPath, Using = ".//div[contains(@class,'ng-star-inserted')]/div/span[@class='list-selected-name']")]
         public IWebElement ActiveCustomListEdited { get; set; }
 
-        [FindsBy(How = How.XPath, Using = ".//span[text()='Project ']")]
+        [FindsBy(How = How.XPath, Using = "//div[contains(@class, 'transformPanel')]//span[text()='Project']")]
         public IWebElement CreateProjectButton { get; set; }
 
         [FindsBy(How = How.XPath, Using = ".//mat-option[@aria-disabled='true']//span[text()='Project']")]
