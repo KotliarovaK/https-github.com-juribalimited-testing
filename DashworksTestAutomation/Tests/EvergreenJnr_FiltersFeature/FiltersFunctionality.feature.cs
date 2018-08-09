@@ -19,7 +19,6 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_FiltersFeature
     [System.Runtime.CompilerServices.CompilerGeneratedAttribute()]
     [NUnit.Framework.TestFixtureAttribute()]
     [NUnit.Framework.DescriptionAttribute("Functionality")]
-    [NUnit.Framework.CategoryAttribute("retry:1")]
     public partial class FunctionalityFeature
     {
         
@@ -29,8 +28,7 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_FiltersFeature
         public virtual void FeatureSetup()
         {
             testRunner = TechTalk.SpecFlow.TestRunnerManager.GetTestRunner();
-            TechTalk.SpecFlow.FeatureInfo featureInfo = new TechTalk.SpecFlow.FeatureInfo(new System.Globalization.CultureInfo("en-US"), "Functionality", "\tRuns Filters Functionality related tests", ProgrammingLanguage.CSharp, new string[] {
-                        "retry:1"});
+            TechTalk.SpecFlow.FeatureInfo featureInfo = new TechTalk.SpecFlow.FeatureInfo(new System.Globalization.CultureInfo("en-US"), "Functionality", "\tRuns Filters Functionality related tests", ProgrammingLanguage.CSharp, ((string[])(null)));
             testRunner.OnFeatureStart(featureInfo);
         }
         
