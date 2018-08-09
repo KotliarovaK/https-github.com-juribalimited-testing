@@ -69,6 +69,9 @@ namespace DashworksTestAutomation.Tests.Projects
         [NUnit.Framework.TestAttribute()]
         [NUnit.Framework.Retry(2)]
         
+        
+        
+        
         [NUnit.Framework.DescriptionAttribute("Projects_CheckThatErrorIsNotDisplayedWhenUsedDDLForApplicationsTabOnPMObjectPage")]
         [NUnit.Framework.CategoryAttribute("Senior")]
         [NUnit.Framework.CategoryAttribute("PMObject")]
