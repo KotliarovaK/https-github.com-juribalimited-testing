@@ -92,7 +92,7 @@ namespace DashworksTestAutomation.Pages.Evergreen
         [FindsBy(How = How.XPath, Using = ".//div[@class='add-column-checkbox ng-star-inserted']//input")]
         public IWebElement AddCategoryColumnCheckbox { get; set; }
 
-        [FindsBy(How = How.XPath, Using = ".//span[@class='mat-checkbox-label']")]
+        [FindsBy(How = How.XPath, Using = "//div[contains(@class, 'addColumn')]//span[@class='mat-checkbox-label']")]
         public IList<IWebElement> AddCategoryColumnName { get; set; }
 
         [FindsBy(How = How.XPath,
