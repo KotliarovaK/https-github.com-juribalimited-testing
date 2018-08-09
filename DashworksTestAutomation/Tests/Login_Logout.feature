@@ -1,5 +1,4 @@
-﻿@retry:1
-Feature: Login_Logout
+﻿Feature: Login_Logout
 	Runs Login-Logout related tests
 
 @Evergreen @Login_Logout

@@ -14,7 +14,7 @@ namespace DashworksTestAutomation.Pages.Evergreen
         [FindsBy(How = How.XPath, Using = ".//div[@class='listEdit list-edit-wrapper']")]
         public IWebElement CreateCustomListElement { get; set; }
 
-        [FindsBy(How = How.XPath, Using = ".//span[@class='action-item']")]
+        [FindsBy(How = How.XPath, Using = ".//div[contains(@class, 'listEdit')]//button")]
         public IWebElement CreateNewListButton { get; set; }
 
         [FindsBy(How = How.XPath, Using = ".//input[@aria-label='search']")]
