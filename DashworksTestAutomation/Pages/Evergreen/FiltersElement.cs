@@ -80,7 +80,7 @@ namespace DashworksTestAutomation.Pages.Evergreen
         [FindsBy(How = How.XPath, Using = ".//span[text()='B Star Packages']")]
         public IWebElement BStarPackegesCheckbox { get; set; }
 
-        [FindsBy(How = How.XPath, Using = "//div[@class='form-group actions']//span[text()='SAVE']")]
+        [FindsBy(How = How.XPath, Using = ".//div[@class='form-group actions']//span[text()='SAVE']/ancestor::button")]
         public IWebElement SaveButton { get; set; }
 
         [FindsBy(How = How.XPath, Using = ".//i[@class='material-icons mat-filter-edit mat-18']")]
