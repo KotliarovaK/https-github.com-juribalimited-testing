@@ -14,7 +14,7 @@ namespace DashworksTestAutomation.Pages.Evergreen
         [FindsBy(How = How.XPath, Using = ".//div[@class='listEdit list-edit-wrapper']")]
         public IWebElement CreateCustomListElement { get; set; }
 
-        [FindsBy(How = How.XPath, Using = ".//div[contains(@class, 'listEdit')]//button")]
+        [FindsBy(How = How.XPath, Using = ".//div[contains(@class, 'list-edit-wrapper')]//button")]
         public IWebElement CreateNewListButton { get; set; }
 
         [FindsBy(How = How.XPath, Using = ".//input[@aria-label='search']")]
@@ -154,10 +154,10 @@ namespace DashworksTestAutomation.Pages.Evergreen
         [FindsBy(How = How.XPath, Using = ".//span[contains(text(),'Edited')]")]
         public IWebElement EditedList { get; set; }
 
-        [FindsBy(How = How.XPath, Using = ".//span[text()='Update list']")]
+        [FindsBy(How = How.XPath, Using = ".//ul[contains(@class, 'saveAs')]//span[text()='UPDATE LIST']")]
         public IWebElement UpdateCurrentListButton { get; set; }
 
-        [FindsBy(How = How.XPath, Using = ".//span[text()='Save as new list']")]
+        [FindsBy(How = How.XPath, Using = ".//ul[contains(@class, 'saveAs')]//span[text()='SAVE AS NEW LIST']")]
         public IWebElement SaveAsNewListButton { get; set; }
 
         #endregion UpdateList

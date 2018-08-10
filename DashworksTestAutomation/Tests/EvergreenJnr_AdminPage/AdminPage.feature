@@ -1326,7 +1326,7 @@ Scenario: EvergreenJnr_AdminPage_CheckingThatProjectNameIsDisplayedCorrectlyWhen
 	And User clicks Create button on the Create Project page
 	Then created Project with "<TestProject11985>" name is displayed correctly
 
-@Evergreen @Admin @EvergreenJnr_AdminPage @AdminPage @DAS12806 @DAS12999 @DAS13199 @Delete_Newly_Created_Project @Project_Creation_and_Scope @Projects @Teams @Non_Run
+@Evergreen @Admin @EvergreenJnr_AdminPage @AdminPage @DAS12806 @DAS12999 @DAS13199 @Delete_Newly_Created_Project @Project_Creation_and_Scope @Projects @Teams @Not_Run
 Scenario: EvergreenJnr_AdminPage_CheckThatOnboardedObjectsAreDisplayedAfterChangingProjectBucketsSetting
 	When User clicks Admin on the left-hand menu
 	Then Admin page should be displayed to the user
@@ -1784,7 +1784,7 @@ Scenario: EvergreenJnr_AdminPage_CheckThatDevicesToAddAndRemoveAreChangingApprop
 	Then "Devices to add (0 of 2 selected)" is displayed to the user in the Project Scope Changes section
 	Then "Devices to remove (0 of 2 selected)" is displayed to the user in the Project Scope Changes section
 
-@Evergreen @Admin @EvergreenJnr_AdminPage @AdminPage @DAS12999 @Delete_Newly_Created_Project @Delete_Newly_Created_List @Projects
+@Evergreen @Admin @EvergreenJnr_AdminPage @AdminPage @DAS12999 @DAS13199 @Delete_Newly_Created_Project @Delete_Newly_Created_List @Projects @Not_Run
 Scenario: EvergreenJnr_AdminPage_CheckThatUsersToAddAndRemoveAreChangingAppropriate
 	When User create static list with "StaticList6529" name on "Users" page with following items
 	| ItemName            |
