@@ -42,9 +42,10 @@ namespace DashworksTestAutomation.Pages.Projects
         {
             var page = _driver.NowAt<ProjectLogin>();
 
+            _driver.WaitForDataLoadingOnProjects();
             _driver.MouseHover(page.ProjectsLink);
             page.ProjectsLink.Click();
-            _driver.WaitForDataLoading();
+            _driver.WaitForDataLoadingOnProjects();
         }
 
         [When(@"User navigate to Evergreen link")]

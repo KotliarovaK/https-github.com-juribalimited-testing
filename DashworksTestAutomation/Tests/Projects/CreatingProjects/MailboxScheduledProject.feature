@@ -156,7 +156,7 @@ Scenario: Projects_CreateMailboxScheduledProject
 	| Name                 | Description             | SubjectLine | BodyText |
 	| TestMailTemplateName | MailboxScheduledProject | TestText    | TestText |
 	Then Success message is displayed with "Mail Template successfully created." text
-		#Creating Tasks 
+		#Creating Tasks 1
 	When User navigate to "Tasks" tab
 	Then "Manage Tasks" page is displayed to the user
 	When User clicks "Create Task" button
@@ -174,7 +174,7 @@ Scenario: Projects_CreateMailboxScheduledProject
 	And User clicks "Add Value" button
 	When User create new Value
 	| Name          | ReadinessString | TaskStatusString | DefaultValue |
-	| TestValueName | Purple          | Open             | true         |
+	| TestValueName | Red             | Open             | true         |
 	And User clicks "Save Value" button
 	And User navigate to "Emails" page
 	And User clicks "Add Email" button
@@ -187,6 +187,7 @@ Scenario: Projects_CreateMailboxScheduledProject
 	Then created Email is displayed in the table
 	When User clicks "« Go Back to Tasks" button
 	Then created Task is displayed in the table
+		#Creating Tasks 2
 	When User clicks "Create Task" button
 	And User create Task
 	| Name          | Help                     | StagesNameString | TaskTypeString | ValueTypeString | ObjectTypeString | TaskValuesTemplateString | ApplyToAllCheckbox |
@@ -218,9 +219,10 @@ Scenario: Projects_CreateMailboxScheduledProject
 	And User create Team
 	| TeamName                    | ShortDescription |
 	| 000 MailboxScheduledProject | TestText 0       |
-	When User clicks "Add Member" button
+	And User clicks "Add Member" button
+	And User select user with "Admin" name to add as member
+	And User clicks "Add Member" button
 	And User select "1" user to add as member
-	And User clicks "Add Selected" button
 	And User clicks "Cancel" button
 	Then created Team is displayed in the table
 	And "2" number of Members is displayed for created Team
@@ -228,9 +230,10 @@ Scenario: Projects_CreateMailboxScheduledProject
 	And User create Team
 	| TeamName                    | ShortDescription |
 	| 001 MailboxScheduledProject | TestText 1       |
-	When User clicks "Add Member" button
+	And User clicks "Add Member" button
+	And User select user with "Admin" name to add as member
+	And User clicks "Add Member" button
 	And User select "2" user to add as member
-	And User clicks "Add Selected" button
 	And User clicks "Cancel" button
 	Then created Team is displayed in the table
 	And "2" number of Members is displayed for created Team
@@ -238,9 +241,10 @@ Scenario: Projects_CreateMailboxScheduledProject
 	And User create Team
 	| TeamName                    | ShortDescription |
 	| 002 MailboxScheduledProject | TestText 2       |
-	When User clicks "Add Member" button
+	And User clicks "Add Member" button
+	And User select user with "Admin" name to add as member
+	And User clicks "Add Member" button
 	And User select "3" user to add as member
-	And User clicks "Add Selected" button
 	And User clicks "Cancel" button
 	Then created Team is displayed in the table
 	And "2" number of Members is displayed for created Team
@@ -276,13 +280,13 @@ Scenario: Projects_CreateMailboxScheduledProject
 	When User navigate to "Self Service" tab
 	Then "Manage Self Service" page is displayed to the user
 	When User updates the Details page on Self Service tab
-	| EnableSelfServicePortal | AllowAnonymousUsers | ThisProjectDefault | ModeUser | ModeComputer | NoLink | DashworksProjectHomepage | CustomUrl | CustomUrlTextFiald |
-	| false                   | false               | true               | true     | false        | true   | false                    | false     | http://Test        |
+	| EnableSelfServicePortal | AllowAnonymousUsers | ThisProjectDefault | Mode1 | Mode2 | BaseUrl | NoLink | DashworksProjectHomepage | CustomUrl | CustomUrlTextField |
+	| false                   | false               | true               | false | true  |         | true   | false                    | false     | http://Test        |
 	Then Success message is displayed with "Details successfully updated." text
 	When User navigate to "Welcome" page on Self Service tab
 	And User updates the Welcome page on Self Service tab
-	| AllowToSearchForAnotherUser | AllowToChangeLanguage | ShowProjectSelector | ShowMoreDetailsLink | PageDescription | ProjectName             |
-	| true                        | false                 | false               | true                | TestText        | MailboxScheduledProject |
+	| AllowUsersToSearch | AllowToChangeLanguage | ShowProjectSelector | ShowObjectDetails | ShowMoreDetailsLink | PageDescription | ProjectName             |
+	| true               | false                 | false               |                   | true                | TestText        | MailboxScheduledProject |
 	Then Success message is displayed with "Self Service Screen successfully updated" text
 	When User navigate to "Mailbox Ownership" page on Self Service tab
 	And User updates the Ownership page on Self Service tab
@@ -348,84 +352,84 @@ Scenario: Projects_CreateMailboxScheduledProject
 	| 06 June 2016 | 0        | MailboxScheduledProject |
 	Then Success message is displayed with "Override date successfully inserted" text
 		#removing
-	When User navigate to "Groups" tab
-	And User removes created Group
-	Then selected Group was removed
-	When User removes created Group
-	Then selected Group was removed
-	When User removes created Group
-	Then selected Group was removed
-	When User navigate to "Teams" tab
-	And User removes created Team
-	Then selected Team was removed
-	When User removes created Team
-	Then selected Team was removed
-	When User removes created Team
-	Then selected Team was removed
-	When User navigate to "Tasks" tab
-	And User removes created Task
-	Then selected Task was removed
-	And Success message is displayed with "Task successfully deleted." text
-	When User removes created Task
-	Then selected Task was removed
-	And Success message is displayed with "Task successfully deleted." text
-	When User removes created Task
-	Then selected Task was removed
-	And Success message is displayed with "Task successfully deleted." text
-	When User navigate to "Stages" tab
-	And User removes created Stage
-	Then selected Stage was removed
-	And Success message is displayed with "Stage successfully deleted." text
-	When User removes created Stage
-	Then selected Stage was removed
-	And Success message is displayed with "Stage successfully deleted." text
-	When User removes created Stage
-	Then selected Stage was removed
-	And Success message is displayed with "Stage successfully deleted." text
-	When User navigate to "Categories" tab
-	And User removes created Category
-	Then selected Category was removed
-	And Success message is displayed with "Category successfully deleted." text
-	When User navigate to "Request Types" tab
-	And User makes "[Default (Mailbox)]" Request Type default
-	| DefaultRequestType |
-	| true               |
-	Then Success message is displayed with "Request Type successfully updated" text
-	When User clicks "Cancel" button
-	And User removes created Request Type
-	Then selected Request Type was removed
-	And Success message is displayed with "Request Type successfully deleted" text
-	When User makes "[Default (Application)]" Request Type default
-	| DefaultRequestType |
-	| true               |
-	Then Success message is displayed with "Request Type successfully updated" text
-	When User clicks "Cancel" button
-	And User removes created Request Type
-	Then selected Request Type was removed
-	And Success message is displayed with "Request Type successfully deleted" text
-	When User makes "[Default (User)]" Request Type default
-	| DefaultRequestType |
-	| true               |
-	Then Success message is displayed with "Request Type successfully updated" text
-	When User clicks "Cancel" button
-	And User removes created Request Type
-	Then selected Request Type was removed
-	And Success message is displayed with "Request Type successfully deleted" text
-	When User navigate to "Mail Templates" tab
-	And User removes created Mail Template
-	Then selected Mail Template was removed
-	And Success message is displayed with "Mail Template successfully deleted." text
-	When User navigate to "Details" tab
-	And User removes the Project
-	Then Success message is displayed with "Project successfully deleted" text
-	When User navigate to Manage link
-	And User select "Manage Users" option in Management Console
-	And User removes created User
-	Then selected User was removed
-	And Success message is displayed
-	When User removes created User
-	Then selected User was removed
-	And Success message is displayed
-	When User removes created User
-	Then selected User was removed
-	And Success message is displayed
+	#When User navigate to "Groups" tab
+	#And User removes created Group
+	#Then selected Group was removed
+	#When User removes created Group
+	#Then selected Group was removed
+	#When User removes created Group
+	#Then selected Group was removed
+	#When User navigate to "Teams" tab
+	#And User removes created Team
+	#Then selected Team was removed
+	#When User removes created Team
+	#Then selected Team was removed
+	#When User removes created Team
+	#Then selected Team was removed
+	#When User navigate to "Tasks" tab
+	#And User removes created Task
+	#Then selected Task was removed
+	#And Success message is displayed with "Task successfully deleted." text
+	#When User removes created Task
+	#Then selected Task was removed
+	#And Success message is displayed with "Task successfully deleted." text
+	#When User removes created Task
+	#Then selected Task was removed
+	#And Success message is displayed with "Task successfully deleted." text
+	#When User navigate to "Stages" tab
+	#And User removes created Stage
+	#Then selected Stage was removed
+	#And Success message is displayed with "Stage successfully deleted." text
+	#When User removes created Stage
+	#Then selected Stage was removed
+	#And Success message is displayed with "Stage successfully deleted." text
+	#When User removes created Stage
+	#Then selected Stage was removed
+	#And Success message is displayed with "Stage successfully deleted." text
+	#When User navigate to "Categories" tab
+	#And User removes created Category
+	#Then selected Category was removed
+	#And Success message is displayed with "Category successfully deleted." text
+	#When User navigate to "Request Types" tab
+	#And User makes "[Default (Mailbox)]" Request Type default
+	#| DefaultRequestType |
+	#| true               |
+	#Then Success message is displayed with "Request Type successfully updated" text
+	#When User clicks "Cancel" button
+	#And User removes created Request Type
+	#Then selected Request Type was removed
+	#And Success message is displayed with "Request Type successfully deleted" text
+	#When User makes "[Default (Application)]" Request Type default
+	#| DefaultRequestType |
+	#| true               |
+	#Then Success message is displayed with "Request Type successfully updated" text
+	#When User clicks "Cancel" button
+	#And User removes created Request Type
+	#Then selected Request Type was removed
+	#And Success message is displayed with "Request Type successfully deleted" text
+	#When User makes "[Default (User)]" Request Type default
+	#| DefaultRequestType |
+	#| true               |
+	#Then Success message is displayed with "Request Type successfully updated" text
+	#When User clicks "Cancel" button
+	#And User removes created Request Type
+	#Then selected Request Type was removed
+	#And Success message is displayed with "Request Type successfully deleted" text
+	#When User navigate to "Mail Templates" tab
+	#And User removes created Mail Template
+	#Then selected Mail Template was removed
+	#And Success message is displayed with "Mail Template successfully deleted." text
+	#When User navigate to "Details" tab
+	#And User removes the Project
+	#Then Success message is displayed with "Project successfully deleted" text
+	#When User navigate to Manage link
+	#And User select "Manage Users" option in Management Console
+	#And User removes created User
+	#Then selected User was removed
+	#And Success message is displayed
+	#When User removes created User
+	#Then selected User was removed
+	#And Success message is displayed
+	#When User removes created User
+	#Then selected User was removed
+	#And Success message is displayed

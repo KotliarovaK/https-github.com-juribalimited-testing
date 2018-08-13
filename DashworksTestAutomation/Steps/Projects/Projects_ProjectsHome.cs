@@ -32,6 +32,7 @@ namespace DashworksTestAutomation.Steps.Projects
         public void ThenUserNavigateToProject()
         {
             var menu = _driver.NowAt<ProjectsBaseElements>();
+            _driver.WaitForDataLoadingOnProjects();
             _driver.MouseHover(menu.AdministrationTab);
             var project = _driver.NowAt<MainElementsOfProjectCreation>();
             _driver.WaitWhileControlIsNotDisplayed<MainElementsOfProjectCreation>(() => project.ManageProject);

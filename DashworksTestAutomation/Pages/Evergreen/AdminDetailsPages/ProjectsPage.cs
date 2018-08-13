@@ -1,9 +1,11 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Threading;
 using DashworksTestAutomation.Base;
 using DashworksTestAutomation.Extensions;
 using OpenQA.Selenium;
+using OpenQA.Selenium.Remote;
 using OpenQA.Selenium.Support.PageObjects;
 
 namespace DashworksTestAutomation.Pages.Evergreen.AdminDetailsPages
@@ -19,8 +21,14 @@ namespace DashworksTestAutomation.Pages.Evergreen.AdminDetailsPages
         [FindsBy(How = How.XPath, Using = "//div[contains(@class, 'wrapper-disabled')]")]
         public IWebElement DisabledAllAssociations { get; set; }
 
-        [FindsBy(How = How.XPath, Using = ".//span[text()='UPDATE PROJECT']")]
-        public IWebElement UpdateProjectInTheWarning { get; set; }
+        [FindsBy(How = How.XPath, Using = "//mat-checkbox[contains(@class, 'mat-checkbox-disabled')]")]
+        public IWebElement DisabledAssociation { get; set; }
+
+        [FindsBy(How = How.XPath, Using = "//div[@class='ng-star-inserted']/div")]
+        public IWebElement UserScopeCheckboxes { get; set; }
+
+        [FindsBy(How = How.XPath, Using = "//div[@class='wrapper-disabled']")]
+        public IWebElement ApplicationScopeCheckboxes { get; set; }
 
         [FindsBy(How = How.XPath, Using = ".//span[@class='mat-option-text']")]
         public IWebElement DeleteProjectInActions { get; set; }
@@ -43,14 +51,50 @@ namespace DashworksTestAutomation.Pages.Evergreen.AdminDetailsPages
         [FindsBy(How = How.XPath, Using = ".//input[@role='combobox']")]
         public IWebElement ScopeProjectField { get; set; }
 
-        [FindsBy(How = How.XPath, Using = ".//mat-select[@aria-label='Scope']")]
+        [FindsBy(How = How.XPath, Using = "//mat-select[contains(@aria-label, 'Scope')]")]
         public IWebElement ScopeListDropdown { get; set; }
 
-        [FindsBy(How = How.XPath, Using = "//span[@class='inline-link ng-star-inserted']/a")]
-        public IWebElement NewProjectLink { get; set; }
+        [FindsBy(How = How.XPath, Using = "//div[@class='mat-form-field-infix']/mat-select[@aria-disabled='true']")]
+        public IWebElement DisabledScopeListDropdown { get; set; }
 
-        [FindsBy(How = How.XPath, Using = ".//div[@class='wrapper-disabled']//mat-select[@aria-label='User Scope']")]
-        public IWebElement DisabledOwnerDropDown { get; set; }
+        [FindsBy(How = How.XPath, Using = "//div[@class='mat-form-field-infix']/mat-select[@aria-disabled='false']")]
+        public IWebElement ActiveScopeListDropdown { get; set; }
+
+        [FindsBy(How = How.XPath, Using = "//mat-select[@id='buckets']")]
+        public IWebElement BucketDropdown { get; set; }
+
+        [FindsBy(How = How.XPath, Using = "//input[@placeholder='Project Name']")]
+        public IWebElement ProjectName { get; set; }
+
+        [FindsBy(How = How.XPath, Using = "//textarea[@placeholder='Project Short Name']")]
+        public IWebElement ProjectShortName { get; set; }
+
+        [FindsBy(How = How.XPath, Using = "//input[@placeholder='Project Description']")]
+        public IWebElement ProjectDescription { get; set; }
+
+        [FindsBy(How = How.XPath, Using = "//input[@placeholder='Project Type']")]
+        public IWebElement ProjectType { get; set; }
+
+        [FindsBy(How = How.XPath, Using = "//mat-select[@aria-label='Default Language']")]
+        public IWebElement DefaultLanguage { get; set; }
+
+        [FindsBy(How = How.XPath, Using = "//mat-select[@aria-label='Select Permission']")]
+        public IWebElement PermissionsDropdown { get; set; }
+
+        [FindsBy(How = How.XPath, Using = "//input[@class='ag-filter-filter']")]
+        public IWebElement DateFilterValue { get; set; }
+
+        [FindsBy(How = How.XPath, Using = "//span[text()='Application Scope']")]
+        public IWebElement ApplicationScopeTab { get; set; }
+
+        [FindsBy(How = How.XPath, Using = "//div[@class='permissions']/admin-mailbox-permission/ul/li/button/span")]
+        public IWebElement AddMailboxPermissionsButton { get; set; }
+
+        [FindsBy(How = How.XPath, Using = "//div[@class='form-container']/div/button/span[text()='ADD PERMISSION']")]
+        public IWebElement AddPermissionsButtonInTab { get; set; }
+
+        [FindsBy(How = How.XPath, Using = "//div[@class='permissions no-margin-bottom']/admin-mailbox-permission/ul/li/button/span")]
+        public IWebElement AddMailboxFolderPermissionsButton { get; set; }
 
         public override List<By> GetPageIdentitySelectors()
         {
@@ -77,12 +121,6 @@ namespace DashworksTestAutomation.Pages.Evergreen.AdminDetailsPages
             tab.Click();
         }
 
-        public void ClickUpdateButtonByName(string buttonName)
-        {
-            var tab = Driver.FindElement(By.XPath($".//span[text()='{buttonName}']"));
-            tab.Click();
-        }
-
         public void NavigateToProjectTabInScopSectionByName(string tabName)
         {
             var tab = Driver.FindElement(By.XPath($".//div[@class='detail-label ng-star-inserted']//span[text()='{tabName}']"));
@@ -96,11 +134,25 @@ namespace DashworksTestAutomation.Pages.Evergreen.AdminDetailsPages
             tab.Click();
         }
 
+        public void ClickAssociatedCheckbox(string checkboxName)
+        {
+            var tab = Driver.FindElement(
+                By.XPath($"//span[@class='mat-checkbox-label'][contains(text(), '{checkboxName}')]"));
+            tab.Click();
+        }
+
         public void SelectRadioButtonByName(string radioButtonName)
         {
             var button = By.XPath($"//div[text()='{radioButtonName}']/../div[@class='mat-radio-container']");
             Driver.WaitWhileControlIsNotDisplayed(button);
             Driver.FindElement(button).Click();
+        }
+
+        public void RemovePermissionsByName(string permissions)
+        {
+            var tab = Driver.FindElement(
+                By.XPath($"//li//span[text()='{permissions}']//following-sibling::button"));
+            tab.Click();
         }
 
         public void SelectCheckboxByName(string checkboxName)
@@ -110,14 +162,26 @@ namespace DashworksTestAutomation.Pages.Evergreen.AdminDetailsPages
             tab.Click();
         }
 
+        public void SelectPermissionsByName(string permissions)
+        {
+            var tab = Driver.FindElement(
+                By.XPath($"//mat-option/span[text()='{permissions}']"));
+            tab.Click();
+        }
+
+        public bool PermissionsDisplay(string permissions)
+        {
+            return Driver.IsElementDisplayed(By.XPath($"//li/span[text()='{permissions}']"));
+        }
+
+        public bool CheckboxesDisplay(string checkboxes)
+        {
+            return Driver.IsElementDisplayed(By.XPath($"//mat-checkbox[contains(@class, 'checkbox-checked')]/label/span[contains(text(), '{checkboxes}')]"));
+        }
+
         public bool ActiveProjectByName(string projectName)
         {
             return Driver.IsElementDisplayed(By.XPath($".//h1[text()='{projectName}']"));
-        }
-
-        public bool SuccessTextMessage(string textMessage)
-        {
-            return Driver.IsElementDisplayed(By.XPath($".//div[text()='{textMessage}']"));
         }
 
         public bool BucketDropdownDisplay(string textBucket)
@@ -132,12 +196,31 @@ namespace DashworksTestAutomation.Pages.Evergreen.AdminDetailsPages
 
         public void SelectObjectForProjectCreation(string objectName)
         {
-            string ListNameSelector = $".//span[@class='mat-option-text'][contains(text(), '{objectName}')]";
+            string listNameSelector = $".//span[@class='mat-option-text'][contains(text(), '{objectName}')]";
+            Driver.WaitWhileControlIsNotDisplayed(By.XPath(listNameSelector));
+            Driver.FindElement(By.XPath(listNameSelector)).Click();
+        }
+
+        public void GetCheckboxStringFilterByName(string filterName)
+        {
+            string filterSelector = $"//div[@class='ng-star-inserted']/span[(text()='{filterName}')]";
+            Driver.WaitWhileControlIsNotDisplayed(By.XPath(filterSelector));
+            Driver.FindElement(By.XPath(filterSelector)).Click();
+        }
+
+        public void SelectProjectLanguage(string language)
+        {
+            string ListNameSelector = $"//span[@class='mat-option-text'][text()='{language}']";
             Driver.WaitWhileControlIsNotDisplayed(By.XPath(ListNameSelector));
             Driver.FindElement(By.XPath(ListNameSelector)).Click();
         }
 
-    public bool SelectedTabInProjectScopeChangesSection(string tabName)
+        public bool GetDisabledAssociationName(string associationName)
+        {
+            return Driver.IsElementDisplayed(By.XPath($"//mat-checkbox[contains(@class, 'disabled')]/label/span[text()='{associationName}']"));
+        }
+
+        public bool SelectedTabInProjectScopeChangesSection(string tabName)
         {
             return Driver.IsElementDisplayed(By.XPath($".//div//span[contains(text(),'{tabName} ')]"));
         }

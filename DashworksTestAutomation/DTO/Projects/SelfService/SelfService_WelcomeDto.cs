@@ -11,10 +11,11 @@ namespace DashworksTestAutomation.DTO.Projects
     public class SelfService_WelcomeDto
     {
         public LanguageEnum Language;
-        public bool AllowToSearchForAnotherUser { get; set; }
+        public bool AllowUsersToSearch { get; set; }
         public bool AllowToChangeLanguage { get; set; }
         public bool ShowProjectSelector { get; set; }
         public bool ShowMoreDetailsLink { get; set; }
+        public bool ShowObjectDetails { get; set; }
         public TypeEnum Type;
         public FieldEnum Field;
         public string PageDescription { get; set; }

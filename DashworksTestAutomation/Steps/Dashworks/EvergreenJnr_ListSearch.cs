@@ -22,10 +22,21 @@ namespace DashworksTestAutomation.Steps.Dashworks
         {
             var listPageElement = _driver.NowAt<BaseDashboardPage>();
 
-            listPageElement.TableSearchTextbox.Clear();
-            _driver.WaitForDataLoading();
-            listPageElement.TableSearchTextbox.SendKeys(searchTerm);
-            _driver.WaitForDataLoading();
+            if (listPageElement.TableSearchTextbox.Displayed())
+            {
+                listPageElement.TableSearchTextbox.Clear();
+                _driver.WaitForDataLoading();
+                listPageElement.TableSearchTextbox.SendKeys(searchTerm);
+                _driver.WaitForDataLoading();
+            }
+            else
+            {
+                listPageElement.TableSearchButton.Click();
+                listPageElement.TableSearchTextbox.Clear();
+                _driver.WaitForDataLoading();
+                listPageElement.TableSearchTextbox.SendKeys(searchTerm);
+                _driver.WaitForDataLoading();
+            }
         }
 
         [When(@"User perform search by ""(.*)""")]
@@ -116,7 +127,14 @@ namespace DashworksTestAutomation.Steps.Dashworks
             var listPageElement = _driver.NowAt<BaseDashboardPage>();
 
             _driver.WaitWhileControlIsNotDisplayed<BaseDashboardPage>(() => listPageElement.ResultsOnPageCount);
-            Assert.IsEmpty(listPageElement.TableSearchTextbox.GetAttribute("value"), "Search textbox is not empty");
+            if (listPageElement.TableSearchTextbox.Displayed())
+                Assert.IsEmpty(listPageElement.TableSearchTextbox.GetAttribute("value"), "Search textbox is not empty");
+            else
+            {
+                listPageElement.TableSearchButton.Click();
+                Assert.IsEmpty(listPageElement.TableSearchTextbox.GetAttribute("value"), "Search textbox is not empty");
+            }
+
         }
 
         [When(@"User click content from ""(.*)"" column")]

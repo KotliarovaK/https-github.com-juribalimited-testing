@@ -52,6 +52,23 @@ namespace DashworksTestAutomation.Steps.Projects
             upd.UpdateButton.Click();
         }
 
+        [When(@"User selects ""(.*)"" Task")]
+        public void WhenUserSelectsTask(string checkboxName)
+        {
+            var page = _driver.NowAt<ProjectsBaseElements>();
+            page.SelectCheckboxByName(checkboxName);
+        }
+
+        [When(@"User add ""(.*)"" Additional Task")]
+        public void WhenUserAddAdditionalTask(string taskName)
+        {
+            var page = _driver.NowAt<SelfService_ProjectDatePage>();
+
+            page.AdditionalTasks.Click();
+            page.SelectTaskByName(taskName).Click();
+            page.AddAdditionalTasks.Click();
+        }
+
         [When(@"User updates the Capacity page on Capacity tab for ""(.*)"" Team")]
         public void WhenUserUpdatesTheCapacityPageOnCapacityTabForTeam(int teamIndex, Table table)
         {
@@ -60,29 +77,29 @@ namespace DashworksTestAutomation.Steps.Projects
             table.CreateInstance<Capacity_CapacityDto>().CopyPropertiesTo(_capacityDto);
 
             page.Team.SelectboxSelect(_projectDto.TeamProperties[teamIndex - 1].TeamName);
-            _driver.WaitForDataLoading();
+            _driver.WaitForDataLoadingOnProjects();
             try
             {
                 _driver.WaitWhileControlIsNotDisplayed<Capacity_CapacityPage>(() => page.RequestType);
                 page.RequestType.SelectboxSelect(_projectDto.ReqestTypes.Last().Name);
-                _driver.WaitForDataLoading();
+                _driver.WaitForDataLoadingOnProjects();
             }
             catch (StaleElementReferenceException)
             {
                 page = _driver.NowAt<Capacity_CapacityPage>();
                 _driver.WaitWhileControlIsNotDisplayed<Capacity_CapacityPage>(() => page.RequestType);
                 page.RequestType.SelectboxSelect(_projectDto.ReqestTypes.Last().Name);
-                _driver.WaitForDataLoading();
+                _driver.WaitForDataLoadingOnProjects();
             }
             _driver.WaitWhileControlIsNotDisplayed<Capacity_CapacityPage>(() => page.Table);
             page.StartDate.Clear();
             page.StartDate.SendKeys(_capacityDto.StartDate);
             page.StartDateButton.Click();
-            _driver.WaitForDataLoading();
+            _driver.WaitForDataLoadingOnProjects();
             page.EndDate.Clear();
             page.EndDate.SendKeys(_capacityDto.EndDate);
             page.EndDateButton.Click();
-            _driver.WaitForDataLoading();
+            _driver.WaitForDataLoadingOnProjects();
             page.MondayCheckbox.SetCheckboxState(_capacityDto.MondayCheckbox);
             page.TuesdayCheckbox.SetCheckboxState(_capacityDto.TuesdayCheckbox);
             page.WednesdayCheckbox.SetCheckboxState(_capacityDto.WednesdayCheckbox);

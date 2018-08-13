@@ -67,16 +67,16 @@ namespace DashworksTestAutomation.Helpers
 
             List<KeyValuePair<int, string>> unsortedList = new List<KeyValuePair<int, string>>();
             int intValue;
-            foreach (var date in originalList)
+            foreach (var num in originalList)
             {
-                var unconvertedInt = int.TryParse(date, out intValue);
+                var unconvertedInt = int.TryParse(num.Replace(",", string.Empty), out intValue);
                 unsortedList.Add(unconvertedInt
-                    ? new KeyValuePair<int, string>(intValue, date)
-                    : new KeyValuePair<int, string>(int.MinValue, date));
+                    ? new KeyValuePair<int, string>(intValue, num)
+                    : new KeyValuePair<int, string>(int.MinValue, num));
             }
 
-            //Get count of the values from original list that can't be converted to DateTime
-            var unsortedCount = originalList.Count(x => !int.TryParse(x, out intValue));
+            //Get count of the values from original list that can't be converted to Numeric
+            var unsortedCount = originalList.Count(x => !int.TryParse(x.Replace(",", string.Empty), out intValue));
             Assert.AreNotEqual(unsortedCount, originalList.Count,
                 "Original list was not sorted at all/Can't be sorted. Nothing to compare. Please check method logic or input list");
 

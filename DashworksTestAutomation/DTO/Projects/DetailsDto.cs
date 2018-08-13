@@ -39,17 +39,17 @@ namespace DashworksTestAutomation.DTO.Projects
 
     public enum DefaultReadinessForOnboardedApplicationsEnum
     {
-        [Description("Out Of Scope")]
-        OutOfScope,
-        Blue,
-        [Description("Light Blue")]
-        LightBlue,
+        //[Description("Out Of Scope")]
+        //OutOfScope,
+        //Blue,
+        //[Description("Light Blue")]
+        //LightBlue,
         Red,
-        Brown,
+        //Brown,
         Amber,
-        [Description("Really Extremely Orange")]
-        ReallyExtremelyOrange,
-        Purple,
+        //[Description("Really Extremely Orange")]
+        //ReallyExtremelyOrange,
+        //Purple,
         Green,
         Grey,
         None

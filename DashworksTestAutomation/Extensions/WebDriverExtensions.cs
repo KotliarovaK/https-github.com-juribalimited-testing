@@ -20,6 +20,7 @@ namespace DashworksTestAutomation.Extensions
         private const int NumberOfTimesToWait = 2;
         private static readonly TimeSpan waitTimeout = TimeSpan.FromSeconds(30);
         private static readonly TimeSpan pollingInterval = TimeSpan.FromSeconds(5);
+        private static readonly By matOptionsSelector = By.XPath(".//mat-option//*[@class='mat-option-text']");
 
         public static void NavigateToUrl(this RemoteWebDriver driver, string url)
         {
@@ -39,7 +40,7 @@ namespace DashworksTestAutomation.Extensions
 
         public static T NowAt<T>(this RemoteWebDriver driver) where T : SeleniumBasePage, new()
         {
-            var page = new T {Driver = driver, Actions = new Actions(driver)};
+            var page = new T { Driver = driver, Actions = new Actions(driver) };
             driver.WaitForLoadingElements(page, null);
             page.InitElements();
             return page;
@@ -47,7 +48,7 @@ namespace DashworksTestAutomation.Extensions
 
         public static T NowAtWithoutWait<T>(this RemoteWebDriver driver) where T : SeleniumBasePage, new()
         {
-            var page = new T {Driver = driver, Actions = new Actions(driver)};
+            var page = new T { Driver = driver, Actions = new Actions(driver) };
             page.InitElements();
             return page;
         }
@@ -60,7 +61,7 @@ namespace DashworksTestAutomation.Extensions
                 var formatedFileName =
                     fileName.Replace("\\", string.Empty).Replace("/", string.Empty).Replace("\"", "'");
                 var filePath = FileSystemHelper.GetPathForScreenshot(formatedFileName);
-                var screenshot = ((ITakesScreenshot) driver).GetScreenshot();
+                var screenshot = ((ITakesScreenshot)driver).GetScreenshot();
 
                 screenshot.SaveAsFile(filePath, ScreenshotImageFormat.Png);
                 Logger.Write($"Check screenshot by folklowing path: {filePath}");
@@ -132,7 +133,7 @@ namespace DashworksTestAutomation.Extensions
 
         public static void WaitForLoadingElements(this RemoteWebDriver driver, SeleniumBasePage page, By bySelector)
         {
-            var bys = bySelector != null ? new List<By> {bySelector} : page.GetPageIdentitySelectors();
+            var bys = bySelector != null ? new List<By> { bySelector } : page.GetPageIdentitySelectors();
 
             foreach (var by in bys)
                 //((IJavaScriptExecutor)driver).ExecuteScript("arguments[0].style.border='3px solid red'",
@@ -206,7 +207,7 @@ namespace DashworksTestAutomation.Extensions
         public static void WaitWhileControlIsNotClickable<T>(this RemoteWebDriver driver,
             Expression<Func<IWebElement>> elementGetter)
         {
-            var propertyName = ((MemberExpression) elementGetter.Body).Member.Name;
+            var propertyName = ((MemberExpression)elementGetter.Body).Member.Name;
             var by = GetByFor<T>(propertyName);
             driver.WaitWhileControlIsNotClickable(by);
         }
@@ -228,7 +229,7 @@ namespace DashworksTestAutomation.Extensions
         public static void WaitWhileControlIsNotDisplayed<T>(this RemoteWebDriver driver,
             Expression<Func<IWebElement>> elementGetter)
         {
-            var propertyName = ((MemberExpression) elementGetter.Body).Member.Name;
+            var propertyName = ((MemberExpression)elementGetter.Body).Member.Name;
             var by = GetByFor<T>(propertyName);
             driver.WaitWhileControlIsNotDisplayed(by);
         }
@@ -279,7 +280,7 @@ namespace DashworksTestAutomation.Extensions
         public static void WaitWhileControlIsDisplayed<T>(this RemoteWebDriver driver,
             Expression<Func<IWebElement>> elementGetter)
         {
-            var propertyName = ((MemberExpression) elementGetter.Body).Member.Name;
+            var propertyName = ((MemberExpression)elementGetter.Body).Member.Name;
             var by = GetByFor<T>(propertyName);
             driver.WaitWhileControlIsDisplayed(by);
         }
@@ -345,12 +346,22 @@ namespace DashworksTestAutomation.Extensions
 
         public static void WaitForDataLoading(this RemoteWebDriver driver)
         {
+            WaitForDataToBeLoaded(driver, ".//div[contains(@class,'spinner')]", waitTimeout);
+        }
+
+        public static void WaitForDataLoadingOnProjects(this RemoteWebDriver driver)
+        {
+            WaitForDataToBeLoaded(driver, ".//div[@id='ajaxProgressMessage']/img", waitTimeout);
+        }
+
+        private static void WaitForDataToBeLoaded(RemoteWebDriver driver, string loadingSpinnerSelector, TimeSpan timepout)
+        {
             int attempts = 0;
             bool wasLoadingSpinnerDisplayed = false;
 
             //Small sleep for Spinner waiting
             Thread.Sleep(400);
-            var by = By.XPath(".//div[contains(@class,'spinner')]");
+            var by = By.XPath(loadingSpinnerSelector);
 
             do
             {
@@ -359,13 +370,13 @@ namespace DashworksTestAutomation.Extensions
                 if (wasLoadingSpinnerDisplayed)
                     try
                     {
-                        WebDriverWait wait = new WebDriverWait(driver, waitTimeout);
+                        WebDriverWait wait = new WebDriverWait(driver, timepout);
                         wait.Until(InvisibilityOfAllElementsLocatedBy(by));
                     }
                     catch (Exception e)
                     {
                         Logger.Write(
-                            $"WARNING: Loading spinner is displayed longer that {waitTimeout.Seconds * attempts} seconds: {driver.Url}");
+                            $"WARNING: Loading spinner is displayed longer that {timepout.Seconds * attempts} seconds: {driver.Url}");
                         throw e;
                     }
                 else
@@ -423,7 +434,7 @@ namespace DashworksTestAutomation.Extensions
 
             driver.MouseHover(options.Last());
             //options = driver.FindElements(By.XPath(
-                //".//div[contains(@class,'mat-select-content ng-trigger ng-trigger-fadeInContent')]"));
+            //".//div[contains(@class,'mat-select-content ng-trigger ng-trigger-fadeInContent')]"));
             driver.ClickByJavascript(options.First(x => x.Text.ContainsText(option)));
         }
 
@@ -440,10 +451,10 @@ namespace DashworksTestAutomation.Extensions
             var scriptToExecute =
                 "var performance = window.performance || window.mozPerformance || window.msPerformance || window.webkitPerformance || {}; var network = performance.getEntries() || {}; return network;";
             var netData = driver.ExecuteScript(scriptToExecute);
-            var collection = (IList) netData;
+            var collection = (IList)netData;
             foreach (object o in collection)
             {
-                var innerCollection = (Dictionary<string, object>) o;
+                var innerCollection = (Dictionary<string, object>)o;
                 foreach (KeyValuePair<string, object> keyValuePair in innerCollection)
                     if (keyValuePair.Key.Equals("name") && !string.IsNullOrEmpty(keyValuePair.Value.ToString()) &&
                         keyValuePair.Value.ToString().Contains("http"))
@@ -634,5 +645,30 @@ namespace DashworksTestAutomation.Extensions
         }
 
         #endregion
+
+        public static void SelectMatSelectbox(this RemoteWebDriver driver, IWebElement selectbox, string option)
+        {
+            //In case selectbox is already opened
+            try
+            {
+                selectbox.Click();
+            }
+            catch { }
+            foreach (IWebElement optionElement in GetOptionsFromMatSelectbox(driver, selectbox))
+            {
+                if (optionElement.Text.Equals(option))
+                {
+                    optionElement.Click();
+                    break;
+                }
+            }
+        }
+
+        public static List<IWebElement> GetOptionsFromMatSelectbox(this RemoteWebDriver driver, IWebElement selectbox)
+        {
+            if (!driver.IsElementDisplayed(matOptionsSelector))
+                selectbox.Click();
+            return driver.FindElements(matOptionsSelector).ToList();
+        }
     }
 }

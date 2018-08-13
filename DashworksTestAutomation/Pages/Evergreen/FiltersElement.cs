@@ -80,19 +80,19 @@ namespace DashworksTestAutomation.Pages.Evergreen
         [FindsBy(How = How.XPath, Using = ".//span[text()='B Star Packages']")]
         public IWebElement BStarPackegesCheckbox { get; set; }
 
-        [FindsBy(How = How.XPath, Using = ".//button[@class='mat-primary mat-raised-button _mat-animation-noopable']")]
+        [FindsBy(How = How.XPath, Using = ".//div[@class='form-group actions']//span[text()='SAVE']/ancestor::button")]
         public IWebElement SaveButton { get; set; }
 
         [FindsBy(How = How.XPath, Using = ".//i[@class='material-icons mat-filter-edit mat-18']")]
         public IWebElement EditFilterButton { get; set; }
 
-        [FindsBy(How = How.XPath, Using = ".//button[@class='mat-raised-button']")]
+        [FindsBy(How = How.XPath, Using = "//div[@class='form-group actions']//span[text()='CANCEL']")]
         public IWebElement CancelButton { get; set; }
 
         [FindsBy(How = How.XPath, Using = ".//div[@class='add-column-checkbox ng-star-inserted']//input")]
         public IWebElement AddCategoryColumnCheckbox { get; set; }
 
-        [FindsBy(How = How.XPath, Using = ".//span[@class='mat-checkbox-label']")]
+        [FindsBy(How = How.XPath, Using = "//div[contains(@class, 'addColumn')]//span[@class='mat-checkbox-label']")]
         public IList<IWebElement> AddCategoryColumnName { get; set; }
 
         [FindsBy(How = How.XPath,
@@ -103,7 +103,7 @@ namespace DashworksTestAutomation.Pages.Evergreen
         [FindsBy(How = How.XPath, Using = ".//span[text()='RESET']/ancestor::button")]
         public IWebElement ResetFiltersButton { get; set; }
 
-        [FindsBy(How = How.XPath, Using = ".//i[contains(@class, 'hideElementIcon')]")]
+        [FindsBy(How = How.XPath, Using = ".//ul//mat-checkbox")]
         public IWebElement LookupFilterCheckbox { get; set; }
 
         [FindsBy(How = How.XPath, Using = FilterValuesSelector)]
@@ -341,7 +341,7 @@ namespace DashworksTestAutomation.Pages.Evergreen
 
         public bool ListNameForSavedListFilter(string filterName)
         {
-            return Driver.IsElementDisplayed(By.XPath($".//div[@class='list-container']/span[text()='{filterName}']"));
+            return Driver.IsElementDisplayed(By.XPath($".//div[@class='list-container']//span[text()='{filterName}']"));
         }
 
         public bool CheckboxNameForFilter(string checkboxName)

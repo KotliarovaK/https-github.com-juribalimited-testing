@@ -93,17 +93,19 @@ namespace DashworksTestAutomation.Steps.Dashworks
             action.OptionName.Click();
         }
 
-        [When(@"User clicks ""(.*)"" button on Action panel")]
-        public void WhenUserClicksButtonOnActionPanel(string buttonName)
+        [When(@"User clicks the ""(.*)"" Action button")]
+        public void WhenUserClicksTheActionButton(string buttonName)
         {
             var action = _driver.NowAt<BaseDashboardPage>();
-            action.GetButtonByNameOnActionPanel(buttonName).Click();
+            action.GetActionsButtonByName(buttonName).Click();
+            _driver.WaitForDataLoading();
         }
 
         [Then(@"Warning message with ""(.*)"" text is displayed on Action panel")]
         public void ThenWarningMessageWithTextIsDisplayedOnActionPanel(string textMessage)
         {
             var action = _driver.NowAt<BaseDashboardPage>();
+            _driver.WaitForDataLoading();
             Assert.IsTrue(action.WarningMessageActionPanel(textMessage), "Warning Message is not displayed");
         }
 

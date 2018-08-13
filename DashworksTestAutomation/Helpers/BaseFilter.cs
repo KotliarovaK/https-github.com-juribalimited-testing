@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Linq;
+using System.Threading;
 using DashworksTestAutomation.Extensions;
 using DashworksTestAutomation.Pages.Evergreen;
 using NUnit.Framework;
@@ -50,10 +51,10 @@ namespace DashworksTestAutomation.Helpers
         {
             if (_acceptCheckbox)
                 _driver.FindElement(By.XPath(
-                        ".//div[@class='filterAddPanel ng-star-inserted']//mat-checkbox//div[@class='mat-checkbox-inner-container']"))
+                        ".//div[@class='filterAddPanel ng-star-inserted']//div[contains(@class, 'add-column-checkbox')]//div[@class='mat-checkbox-inner-container']"))
                     .Click();
-            _driver.MouseHover(By.XPath(".//span[text()='SAVE']/ancestor::button"));
-            _driver.FindElement(By.XPath(".//span[text()='SAVE']/ancestor::button")).Click();
+            _driver.MouseHover(By.XPath("//div[@class='form-container']//span[text()='SAVE']/ancestor::button"));
+            _driver.FindElement(By.XPath("//div[@class='form-container']//span[text()='SAVE']/ancestor::button")).Click();
         }
     }
 
@@ -118,7 +119,7 @@ namespace DashworksTestAutomation.Helpers
             _driver.FindElement(
                     By.XPath(".//div[@class='filterAddPanel ng-star-inserted']//input[@placeholder='Search']"))
                 .SendKeys(_value);
-            _driver.FindElement(By.XPath(".//i[@class='material-icons mat-18 mat-done check-item hideElementIcon']"))
+            _driver.FindElement(By.XPath(".//ul[@class='tree-list ng-star-inserted']//mat-checkbox"))
                 .Click();
             SaveFilter();
         }
@@ -161,7 +162,7 @@ namespace DashworksTestAutomation.Helpers
     public class CheckBoxesFilter : BaseFilter
     {
         protected string CheckboxSelector =
-            ".//div[@class='filterAddPanel ng-star-inserted']//span[text()='{0}']/../preceding-sibling::i";
+            ".//div[@class='filterAddPanel ng-star-inserted']//span[text()='{0}']/ancestor::mat-checkbox";
 
         protected string CheckboxSelectorName =
             ".//div[@class='filterAddPanel ng-star-inserted']//span[text()='{0}']";
@@ -267,7 +268,7 @@ namespace DashworksTestAutomation.Helpers
             {
                 if (!_driver.IsElementDisplayed(filterValueSelector)) continue;
                 _driver.FindElement(filterValueSelector).SendkeysWithDelay(row["Values"]);
-
+                _driver.WaitForDataLoading();
                 if (_optionsTable.RowCount > 1)
                 {
                     _driver.FindElement(addButtonSelector).Click();
@@ -276,10 +277,10 @@ namespace DashworksTestAutomation.Helpers
                         _driver.FindElement(By.XPath(string.Format(addedOptionSelector, "more"))).Click();
                     var addedOptions = _driver.FindElements(By.XPath(allAddedOptionsSelector))
                         .Select(value => value.Text).ToList();
+                    _driver.WaitForDataLoading();
                     Assert.Contains(row["Values"], addedOptions);
                 }
             }
-
             SaveFilter();
         }
     }

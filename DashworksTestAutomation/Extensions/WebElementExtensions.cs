@@ -118,7 +118,7 @@ namespace DashworksTestAutomation.Extensions
         /// <returns></returns>
         public static bool GetFilterCheckboxSelectedState(this IWebElement checkbox)
         {
-            return !checkbox.GetAttribute("class").Contains("hideElementIcon");
+            return checkbox.GetAttribute("class").Contains("mat-checkbox-checked");
         }
 
         #endregion Checkboxes

@@ -1,5 +1,4 @@
-﻿@retry:1
-Feature: FiltersDisplay
+﻿Feature: FiltersDisplay
 	Runs Dynamic Filters Display related tests
 
 Background: Pre-Conditions
@@ -353,10 +352,10 @@ Scenario Outline: EvergreenJnr_MailboxesList_CheckThatFilterOperatorsIsCorrectIn
 
 Examples: 
 	| operatorValue  | filterOption | rowsCount | operatorValueInInfo |
-	| Equals         | 8 Mar 2016   | 3         | is                  |
-	| Empty          |              | 6         | is empty            |
 	| Not empty      |              | 14,778    | is not empty        |
 	| Does not equal | 8 Mar 2016   | 14,781    | is not              |
+	| Equals         | 8 Mar 2016   | 3         | is                  |
+	| Empty          |              | 6         | is empty            |
 	| Before         | 8 Mar 2016   | 4,699     | is before           |
 	| After          | 8 Mar 2016   | 10,076    | is after            |
 
@@ -419,8 +418,8 @@ Scenario: EvergreenJnr_ApplicationsList_CheckThatApplicationSavedListFilterIsWor
 	| SelectedList   | Association        |
 	| TestList2854B3 | Not used on device |
 	Then "Application" filter is added to the list
-	Then "17,126" rows are displayed in the agGrid
-	Then Options is displayed in added filter info
+	And "17,126" rows are displayed in the agGrid
+	And Options is displayed in added filter info
 	| Values  |
 	| in list |
 
@@ -653,7 +652,7 @@ Scenario: EvergreenJnr_DevicesList_CheckThatSpaceAfterCommasInTheFiltersContaine
 	Then "CPU Count" filter is added to the list
 	Then "(Compliance = Unknown, Red, Amber or Green) OR (Import != A01 SMS (Spoof)) OR (Department Code ~ ABC) OR (Department Code !~ ACV) OR (Department Code BEGINS WITH AXZ) OR (Department Code ENDS WITH YQA) OR (Department Code = EMPTY) OR (Department Code != EMPTY) OR (Boot Up Date < 14 Dec 2017) OR (Boot Up Date > 03 Dec 2017) OR (CPU Count > 66) OR (CPU Count >= 12) OR (CPU Count < 31) OR (CPU Count <= 13)" text is displayed in filter container
 
-@Evergreen @Devices @Evergreen_FiltersFeature @FiltersDisplay @DAS10790 @Delete_Newly_Created_List
+@Evergreen @Devices @Evergreen_FiltersFeature @FiltersDisplay @DAS10790 @DAS13206 @Delete_Newly_Created_List @Not_Run
 Scenario: EvergreenJnr_DevicesList_CheckThatApplicationFiltersBeingAppliedAgainstTheDevicesListAreRestoredCorrectlyAndAreShownInTheFiltersPanel
 	When User clicks "Devices" on the left-hand menu
 	Then "Devices" list should be displayed to the user
@@ -1008,7 +1007,7 @@ Scenario: EvergreenJnr_AllLists_CheckThatFilterTextDisplaysActualListName
 	Then Filters panel is displayed to the user
 	And "Any Application in list [List not found] entitled to device" is displayed in added filter info
 
-@Evergreen @AllLists @Evergreen_FiltersFeature @FiltersDisplay @DAS12121 @Delete_Newly_Created_List @Not_Run
+@Evergreen @AllLists @Evergreen_FiltersFeature @FiltersDisplay @DAS12121 @Delete_Newly_Created_List
 Scenario: EvergreenJnr_AllLists_CheckThatTextInTheFilterPanelDisplaysTheCurrentListName
 	When User clicks "Applications" on the left-hand menu
 	Then "Applications" list should be displayed to the user
@@ -1035,11 +1034,11 @@ Scenario: EvergreenJnr_AllLists_CheckThatTextInTheFilterPanelDisplaysTheCurrentL
 	And User clicks "Devices" on the left-hand menu
 	Then "Devices" list should be displayed to the user
 	When User navigates to the "DevicesList1" list
-	Then "(Application (Saved List) = {LIST_ID} ASSOCIATION = ("used on device"))" text is displayed in filter container for "ApplicationList1" list name
+	#Then "(Application (Saved List) = {LIST_ID} ASSOCIATION = ("used on device"))" text is displayed in filter container for "ApplicationList1" list name
 	When User clicks the Filters button
 	Then Filters panel is displayed to the user
-	And "Application in list [List not found] used on device" is displayed in added filter info
-	When User click Edit button for "Application" filter
+	And "Any Application in list [List not found] used on device" is displayed in added filter info
+	When User click Edit button for " Application" filter
 	Then "ApplicationList2" list is displayed for Saved List filter
 
 @Evergreen @AllLists @Evergreen_FiltersFeature @FiltersDisplay @DAS12520 @Delete_Newly_Created_List

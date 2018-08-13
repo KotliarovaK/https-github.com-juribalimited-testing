@@ -1,5 +1,4 @@
-﻿@retry:1
-Feature: Functionality
+﻿Feature: Functionality
 	Runs Filters Functionality related tests
 
 Background: Pre-Conditions
@@ -947,7 +946,7 @@ Examples:
 	| EmailMigra: Category       | None                        | 2,223 |
 	| UserSchedu: Category       | None                        | 2,223 |
 	| Babel(Engl: Request Type   | Tools                       | 302   |
-	| EmailMigra: Request Type   | Public Folder               | 50    |
+	#| EmailMigra: Request Type   | Public Folder               | 50    |
 	| UserSchedu: Request Type   | Request Type A              | 47    |
 
 @Evergreen @MailboxesList @EvergreenJnr_FilterFeature @FilterFunctionality @DAS12351
