@@ -2930,7 +2930,7 @@ Scenario: EvergreenJnr_AdminPage_AddingAndDeletingPermissionsForMailboxProject
 	| AvailabilityOnly |
 	And There are no errors in the browser console
 
-@Evergreen @Admin @EvergreenJnr_AdminPage @AdminPage @DAS12999 @DAS13199 @Delete_Newly_Created_Project @Buckets @Not_Run
+@Evergreen @Admin @EvergreenJnr_AdminPage @AdminPage @DAS12999 @DAS13199 @Buckets @Not_Run
 Scenario: EvergreenJnr_AdminPage_CreatingDefaultBucket
 	When User clicks Admin on the left-hand menu
 	Then Admin page should be displayed to the user
@@ -2959,4 +2959,41 @@ Scenario: EvergreenJnr_AdminPage_CreatingDefaultBucket
 	And User updates the Default Bucket checkbox state
 	And User clicks Update Bucket button on the Buckets page
 	Then Success message The "Unassigned" bucket has been updated is displayed on the Buckets page
-	And Delete "TestBucket5" Bucket in the Administration
+	And Delete "NewBucket5" Bucket in the Administration
+
+@Evergreen @Admin @EvergreenJnr_AdminPage @AdminPage @DAS12999 @Buckets
+Scenario: EvergreenJnr_AdminPage_AddingDevicesFromBuckets
+	When User clicks Admin on the left-hand menu
+	Then Admin page should be displayed to the user
+	When User clicks "Buckets" link on the Admin page
+	Then "Buckets" page should be displayed to the user
+	When User clicks the "CREATE BUCKET" Action button
+	Then "Create Bucket" page should be displayed to the user
+	When User enters "TestBucket6" in the Bucket Name field
+	And User selects "Admin IT" team in the Team dropdown on the Buckets page
+	And User clicks Create button on the Create Bucket page
+	Then Success message is displayed and contains "The bucket has been created" text
+	When User clicks newly created object link
+	Then "TestBucket6" bucket details is displayed to the user
+	When User clicks "Devices" tab
+	When User clicks the "ADD DEVICE" Action button
+	When User clicks "Add from buckets" tab on the Buckets page
+	When User adds "Unassigned" objects to bucket
+	When User clicks the "ADD DEVICES" Action button
+	Then Success message is displayed and contains "The selected devices have been added to the selected bucket" text
+	And There are no errors in the browser console
+	When User clicks "Users" tab
+	When User clicks the "ADD USER" Action button
+	When User clicks "Add from buckets" tab on the Buckets page
+	When User adds "Unassigned" objects to bucket
+	When User clicks the "ADD USERS" Action button
+	Then Success message is displayed and contains "The selected users have been added to the selected bucket" text
+	And There are no errors in the browser console
+	When User clicks "Mailboxes" tab
+	When User clicks the "ADD MAILBOX" Action button
+	When User clicks "Add from buckets" tab on the Buckets page
+	When User adds "Unassigned" objects to bucket
+	When User clicks the "ADD MAILBOXES" Action button
+	Then Success message is displayed and contains "The selected mailboxes have been added to the selected bucket" text
+	And There are no errors in the browser console
+	And Delete "TestBucket6" Bucket in the Administration
