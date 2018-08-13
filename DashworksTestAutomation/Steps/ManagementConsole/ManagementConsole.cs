@@ -9,6 +9,7 @@ using DashworksTestAutomation.Pages.ManagementConsole;
 using DashworksTestAutomation.Pages.Projects;
 using DashworksTestAutomation.Utils;
 using NUnit.Framework;
+using OpenQA.Selenium;
 using OpenQA.Selenium.Remote;
 using TechTalk.SpecFlow;
 using TechTalk.SpecFlow.Assist;
@@ -53,7 +54,7 @@ namespace DashworksTestAutomation.Steps
                 page.ConfirmPassword.SendKeys(row["ConfirmPassword"]);
                 if (!string.IsNullOrEmpty(row["Roles"]))
                     page.Roles.SelectboxSelect(row["Roles"]);
-            }          
+            }
             page.Roles.SelectboxSelect("Dashworks Users");
             page.Roles.SelectboxSelect("Dashworks Evergreen Users");
             page.AddRoleButton.Click();
@@ -104,20 +105,31 @@ namespace DashworksTestAutomation.Steps
             Assert.IsTrue(user.Displayed(), "Selected User is not displayed in the table");
         }
 
+        [When(@"User select user with ""(.*)"" name to add as member")]
+        public void WhenUserSelectUserWithNameToAddAsMember(string userName)
+        {
+            var page = _driver.NowAt<MainElementsOfProjectCreation>();
+            // Perform search because created items not always on first page
+            page.SearchTextboxForMembers.Clear();
+            page.SearchTextboxForMembers.SendKeys(userName);
+            page.SearchButtonForMembers.Click();
+            page.SelectUserForMembersByName(userName).Click();
+            page.GetButtonElementByName("Add Selected").Click();
+            _driver.WaitForDataLoadingOnProjects();
+        }
+
         [When(@"User select ""(.*)"" user to add as member")]
         public void WhenUserSelectUserToAddAsMember(int userIndex)
         {
             var page = _driver.NowAt<MainElementsOfProjectCreation>();
 
-            //Admin is mandatory
             // Perform search because created items not always on first page
-            page.SearchTextboxForMembers.SendKeys("Admin");
-            page.SearchButtonForMembers.Click();
-            page.SelectUserForMembersByName("Admin").Click();
             page.SearchTextboxForMembers.Clear();
             page.SearchTextboxForMembers.SendKeys(_projectDto.ManageUsers[userIndex - 1].Username);
             page.SearchButtonForMembers.Click();
             page.SelectUserForMembersByName(_projectDto.ManageUsers[userIndex - 1].Username).Click();
+            page.GetButtonElementByName("Add Selected").Click();
+            _driver.WaitForDataLoadingOnProjects();
         }
 
         [When(@"User removes created User")]

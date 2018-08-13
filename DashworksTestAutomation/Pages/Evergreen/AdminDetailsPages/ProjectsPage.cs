@@ -196,9 +196,9 @@ namespace DashworksTestAutomation.Pages.Evergreen.AdminDetailsPages
 
         public void SelectObjectForProjectCreation(string objectName)
         {
-            string ListNameSelector = $".//span[@class='mat-option-text'][contains(text(), '{objectName}')]";
-            Driver.WaitWhileControlIsNotDisplayed(By.XPath(ListNameSelector));
-            Driver.FindElement(By.XPath(ListNameSelector)).Click();
+            string listNameSelector = $".//span[@class='mat-option-text'][contains(text(), '{objectName}')]";
+            Driver.WaitWhileControlIsNotDisplayed(By.XPath(listNameSelector));
+            Driver.FindElement(By.XPath(listNameSelector)).Click();
         }
 
         public void GetCheckboxStringFilterByName(string filterName)

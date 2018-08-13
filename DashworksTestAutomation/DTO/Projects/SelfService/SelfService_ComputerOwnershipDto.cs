@@ -8,9 +8,14 @@ namespace DashworksTestAutomation.DTO.Projects
     {
         //TODO add a language?
         public bool ShowScreen { get; set; }
-        public ComputerNameEnum ShowComputerName;
+        public string NamefromHttpString { get; set; }
+        public NamefromHttpEnum NamefromHttp;
+        public bool UsersOfTheComputer { get; set; }
+        public bool OwnerOfTheComputer { get; set; }
         public bool ShowComputers { get; set; }
         public bool ShowCategory { get; set; }
+        public bool AllowUsersToChangeUsers { get; set; }
+        public bool AllowUsersToChangeOwner { get; set; }
         public bool AllowUsersToSearch { get; set; }
         public bool AllowUsersToSetPrimary { get; set; }
         public bool AllowUsersToAddANote { get; set; }
@@ -18,21 +23,16 @@ namespace DashworksTestAutomation.DTO.Projects
         public string LimitMinimum { get; set; }
         public string PageDescription { get; set; }
         public ProjectDto Project { get; set; }
-
-
-        public SelfService_ComputerOwnershipDto()
-        {
-            ShowComputerName = EnumExtensions.GetRandomValue<ComputerNameEnum>();
-        }
     }
 
-    public enum ComputerNameEnum
+    public enum NamefromHttpEnum
     {
         [Description("Do not show")]
         DoNotShow,
         [Description("REMOTE_HOST")]
         RemoteHost,
         [Description("X-Forwarded-For")]
-        XForwardedFor
+        XForwardedFor,
+        Other
     }
 }

@@ -11,6 +11,7 @@ namespace DashworksTestAutomation.DTO.Projects
         public bool ShowRequiredColumnAndSticky { get; set; }
         public bool ShowOnlyApplication { get; set; }
         public bool AllowUsersToAddANote { get; set; }
+        public string ViewString { get; set; }
         public ViewEnum View;
         public string LongName { get; set; }
         public string ShortName { get; set; }
