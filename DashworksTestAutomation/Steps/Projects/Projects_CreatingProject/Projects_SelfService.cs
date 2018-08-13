@@ -171,10 +171,14 @@ namespace DashworksTestAutomation.Steps.Projects
             //page.LocationPushToAll.SetCheckboxState(_departmentAndLocationDto.LocationPushToAll);
             ////Those checkboxes are not exist. Commented by Lisa request
             //page.DepartmentFeed.SetCheckboxState(_departmentAndLocationDto.DepartmentFeed);
-            //page.HrLocationFeed.SetCheckboxState(_departmentAndLocationDto.HrLocationFeed);
-            //page.ManualLocationFeed.SetCheckboxState(_departmentAndLocationDto.ManualLocationFeed);
-            //page.HistoricLocationFeed.SetCheckboxState(_departmentAndLocationDto.HistoricLocationFeed);
+
             //page.PageDescription.SendKeys(_departmentAndLocationDto.PageDescription);
+            if (_projectDto.ProjectType.Equals(ProjectTypeEnum.UserScheduledProject))
+            {
+                page.HrLocationFeed.SetCheckboxState(_departmentAndLocationDto.HrLocationFeed);
+                page.ManualLocationFeed.SetCheckboxState(_departmentAndLocationDto.ManualLocationFeed);
+                page.HistoricLocationFeed.SetCheckboxState(_departmentAndLocationDto.HistoricLocationFeed);
+            }
 
             var upd = _driver.NowAt<MainElementsOfProjectCreation>();
             upd.UpdateButton.Click();
@@ -248,8 +252,11 @@ namespace DashworksTestAutomation.Steps.Projects
 
             page.ShowScreen.SetCheckboxState(_options1Dto.ShowScreen);
             page.AllowUsersToAddANote.SetCheckboxState(_options1Dto.AllowUsersToAddANote);
-            page.OnlyOwned.SetCheckboxState(_options1Dto.OnlyOwned);
-            page.AllLinked.SetCheckboxState(_options1Dto.AllLinked);
+            if (!_projectDto.ProjectType.Equals(ProjectTypeEnum.MailboxScheduledProject))
+            {
+                page.OnlyOwned.SetCheckboxState(_options1Dto.OnlyOwned);
+                page.AllLinked.SetCheckboxState(_options1Dto.AllLinked);
+            }
             page.PageDescription.SendKeys(_options1Dto.PageDescription);
 
             var upd = _driver.NowAt<MainElementsOfProjectCreation>();
@@ -265,8 +272,11 @@ namespace DashworksTestAutomation.Steps.Projects
 
             page.ShowScreen.SetCheckboxState(_options2Dto.ShowScreen);
             page.AllowUsersToAddANote.SetCheckboxState(_options1Dto.AllowUsersToAddANote);
-            page.OnlyOwned.SetCheckboxState(_options2Dto.OnlyOwned);
-            page.AllLinked.SetCheckboxState(_options2Dto.AllLinked);
+            if (!_projectDto.ProjectType.Equals(ProjectTypeEnum.MailboxScheduledProject))
+            {
+                page.OnlyOwned.SetCheckboxState(_options1Dto.OnlyOwned);
+                page.AllLinked.SetCheckboxState(_options1Dto.AllLinked);
+            }
             page.PageDescription.SendKeys(_options2Dto.PageDescription);
 
             var upd = _driver.NowAt<MainElementsOfProjectCreation>();
