@@ -460,8 +460,8 @@ namespace DashworksTestAutomation.Steps.Dashworks
             _driver.WaitForDataLoading();
         }
 
-        [When(@"User clicks ""(.*)"" checkbox from String Filter on the Projects page")]
-        public void WhenUserClicksCheckboxFromStringFilterOnTheProjectsPage(string filterName)
+        [When(@"User selects ""(.*)"" checkbox from String Filter on the Admin page")]
+        public void WhenUserSelectsCheckboxFromStringFilterOnTheAdminPage(string filterName)
         {
             var page = _driver.NowAt<ProjectsPage>();
             page.GetCheckboxStringFilterByName(filterName);
