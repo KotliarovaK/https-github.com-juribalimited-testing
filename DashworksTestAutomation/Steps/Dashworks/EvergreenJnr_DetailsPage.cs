@@ -285,7 +285,7 @@ namespace DashworksTestAutomation.Steps.Dashworks
         public void ThenFilterPanelHasStandardSize()
         {
             var filterPanel = _driver.NowAt<ApplicationsDetailsTabsMenu>();
-            Assert.AreEqual("118px", filterPanel.GetInstalledFilterPanelHeight());
+            Assert.AreEqual("153px", filterPanel.GetInstalledFilterPanelHeight());
             Assert.AreEqual("152px", filterPanel.GetInstalledFilterPanelWidth());
         }
 
@@ -440,7 +440,7 @@ namespace DashworksTestAutomation.Steps.Dashworks
         public void ThenTextIsDisplayedForSection(string textMessage, string sectionName)
         {
             var detailsPage = _driver.NowAt<DetailsPage>();
-            detailsPage.CloseAllSections();
+            //detailsPage.CloseAllSections();
             detailsPage.NavigateToSectionByName(sectionName);
             _driver.WaitWhileControlIsNotDisplayed<DetailsPage>(() => detailsPage.NoFoundContent);
             Assert.AreEqual(textMessage, detailsPage.NoFoundContent.Text,

@@ -53,8 +53,8 @@ namespace DashworksTestAutomation.Helpers
                 _driver.FindElement(By.XPath(
                         ".//div[@class='filterAddPanel ng-star-inserted']//div[contains(@class, 'add-column-checkbox')]//div[@class='mat-checkbox-inner-container']"))
                     .Click();
-            _driver.MouseHover(By.XPath(".//span[text()='SAVE']/ancestor::button"));
-            _driver.FindElement(By.XPath(".//span[text()='SAVE']/ancestor::button")).Click();
+            _driver.MouseHover(By.XPath("//div[@class='form-container']//span[text()='SAVE']/ancestor::button"));
+            _driver.FindElement(By.XPath("//div[@class='form-container']//span[text()='SAVE']/ancestor::button")).Click();
         }
     }
 

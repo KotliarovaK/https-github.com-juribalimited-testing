@@ -1319,8 +1319,8 @@ namespace DashworksTestAutomation.Steps.Dashworks
         public void ThenScopeDDLHaveTheHeightAndTheWidth(string height, string width)
         {
             var panelSize = _driver.NowAt<ProjectsPage>();
-            Assert.AreEqual(height, panelSize.GetDllPanelHeight());
-            Assert.AreEqual(width, panelSize.GetDllPanelWidth());
+            Assert.AreEqual(height, panelSize.GetDllPanelHeight().Split('p').First());
+            Assert.AreEqual(width, panelSize.GetDllPanelWidth().Split('.').First());
         }
 
         [When(@"User selects ""(.*)"" in the Buckets Project dropdown")]

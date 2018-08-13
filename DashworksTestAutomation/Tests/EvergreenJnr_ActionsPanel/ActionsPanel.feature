@@ -1,5 +1,4 @@
-﻿@retry:1
-Feature: ActionsPanel
+﻿Feature: ActionsPanel
 	Runs Actions Panel related tests
 
 Background: Pre-Conditions
