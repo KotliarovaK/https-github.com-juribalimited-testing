@@ -271,7 +271,7 @@ Scenario: EvergreenJnr_AllLists_CheckThatWarningMessageIsNotDisplayedInTheListPa
 	And User select "Manage Users" option in Management Console
 	And User create new User
 	| Username | FullName | Password | ConfirmPassword | Roles |
-	| User2    | User2    | 1234qwer | 1234qwer        |       |
+	| 2User2   | User2    | 1234qwer | 1234qwer        |       |
 	Then Success message is displayed
 	When User navigate to Dashworks User Site link
 	And User navigate to Evergreen link
@@ -311,7 +311,7 @@ Scenario: EvergreenJnr_AllLists_CheckThatWarningMessageIsNotDisplayedInTheListPa
 	Then Login Page is displayed to the user
 	When User login with following credentials:
 	| Username | Password |
-	| User2    | 1234qwer |
+	| 2User2   | 1234qwer |
 	Then Dashworks homepage is displayed to the user in a logged in state
 	When User clicks the Switch to Evergreen link
 	Then Evergreen Dashboards page should be displayed to the user
@@ -327,6 +327,15 @@ Scenario: EvergreenJnr_AllLists_CheckThatWarningMessageIsNotDisplayedInTheListPa
 	When User navigates to the dependent "TestDevicesList12208" list
 	Then "TestDevicesList12208" list is displayed to user
 	And no Warning message is displayed in the lists panel
+	When User clicks the Logout button
+	Then User is logged out
+	When User clicks on the Login link
+	Then Login Page is displayed to the user
+	When User provides the Login and Password and clicks on the login button
+	Then Dashworks homepage is displayed to the user in a logged in state
+	When User navigate to Manage link
+	And User select "Manage Users" option in Management Console
+	And User removes "2User2" User
 
 @Evergreen @AllLists @EvergreenJnr_ListDetails @ListDetailsFunctionality @DAS10713 @DAS12190 @DAS12204 @DAS13207 @Delete_Newly_Created_List @Not_Run
 Scenario: EvergreenJnr_AllLists_CheckThatTwoDependencyAreDisplayedInTheDependentsBlock
