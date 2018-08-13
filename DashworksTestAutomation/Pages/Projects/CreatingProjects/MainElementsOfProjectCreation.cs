@@ -26,6 +26,9 @@ namespace DashworksTestAutomation.Pages.Projects
         [FindsBy(How = How.XPath, Using = ".//input[contains(@id,'SelectUsersToAdd_Btn_Reset')]")]
         public IWebElement ResetButtonForMembers { get; set; }
 
+        [FindsBy(How = How.XPath, Using = "//a[text()='Next  >']")]
+        public IWebElement NextTeamsListLink { get; set; }
+
         public override List<By> GetPageIdentitySelectors()
         {
             Driver.WaitForDataLoading();
