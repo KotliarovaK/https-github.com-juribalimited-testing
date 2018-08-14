@@ -510,8 +510,8 @@ Scenario Outline: EvergreenJnr_AllLists_CheckThatDropdownListsInTheProjectDetail
 
 Examples:
 	| PageName | SearchTerm                                      | ColumnName | TabName  | SectionName           | CountRows |
-	| Devices  | 001BAQXT6JWFPI                                  | Hostname   | Projects | Device Projects       | 4         |
-	| Devices  | 001BAQXT6JWFPI                                  | Hostname   | Projects | Device Owner Projects | 4         |
+	| Devices  | 001BAQXT6JWFPI                                  | Hostname   | Projects | Device Projects       | 5         |
+	| Devices  | 001BAQXT6JWFPI                                  | Hostname   | Projects | Device Owner Projects | 5         |
 	| Users    | Loya\, Dan.Employees.Birmingham.UK.bclabs.local | Username   | Projects | User Projects         | 1         |
 	| Users    | Loya\, Dan.Employees.Birmingham.UK.bclabs.local | Username   | Projects | Mailbox Projects      | 1         |
 
