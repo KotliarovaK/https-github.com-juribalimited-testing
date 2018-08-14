@@ -21,9 +21,6 @@ namespace DashworksTestAutomation.Pages.Evergreen.AdminDetailsPages
         [FindsBy(How = How.XPath, Using = ".//button[@mattooltip='Move']")]
         public IWebElement MoveButton { get; set; }
 
-        [FindsBy(How = How.XPath, Using = ".//button[@mattooltip='Cancel']")]
-        public IWebElement CancelButton { get; set; }
-
         public override List<By> GetPageIdentitySelectors()
         {
             Driver.WaitForDataLoading();
@@ -33,5 +30,16 @@ namespace DashworksTestAutomation.Pages.Evergreen.AdminDetailsPages
                 SelectorFor(this, p => p.BucketSelectbox)
             };
         }
+
+        public void MoveToBucketByName(string bucketName)
+        {
+            BucketSelectbox.Click();
+            Driver.WaitForDataLoading();
+            string bucketSelector = $".//mat-option/span[contains(text(), '{bucketName}')]";
+            Driver.WaitWhileControlIsNotDisplayed(By.XPath(bucketSelector));
+            Driver.FindElement(By.XPath(bucketSelector)).Click();
+            MoveButton.Click();
+        }
+
     }
 }

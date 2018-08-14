@@ -55,5 +55,19 @@ namespace DashworksTestAutomation.Pages.Evergreen.AdminDetailsPages
             return Driver.IsElementDisplayed(
                 By.XPath($".//div[@id='messageAdmin'][text()='{warningText}']"));
         }
+
+        public void ClickTabByName(string tabName)
+        {
+            string tabNameSelector = $".//div[@role='tab']/div[text()='{tabName}']";
+            Driver.WaitWhileControlIsNotDisplayed(By.XPath(tabNameSelector));
+            Driver.FindElement(By.XPath(tabNameSelector)).Click();
+        }
+
+        public void SelectObjectByName(string objectName)
+        {
+            string objectNameSelector = $".//span[contains(text(), '{objectName}')]";
+            Driver.WaitWhileControlIsNotDisplayed(By.XPath(objectNameSelector));
+            Driver.FindElement(By.XPath(objectNameSelector)).Click();
+        }
     }
 }
