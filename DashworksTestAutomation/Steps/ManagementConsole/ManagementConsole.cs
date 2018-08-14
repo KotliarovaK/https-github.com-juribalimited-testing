@@ -136,6 +136,12 @@ namespace DashworksTestAutomation.Steps
         public void ThenUserRemoveCreatedUser()
         {
             var page = _driver.NowAt<MainElementsOfProjectCreation>();
+
+            //Perform search because newly created items not always on first page
+            page.SearchTextbox.Clear();
+            page.SearchTextbox.SendKeys(_projectDto.ManageUsers.Last().Username);
+            page.SearchButton.Click();
+
             _deletedUserName.Value = _projectDto.ManageUsers.Last().Username;
             page.GetDeleteButtonElementByName(_deletedUserName.Value).Click();
             _driver.AcceptAlert();

@@ -151,6 +151,13 @@ namespace DashworksTestAutomation.Steps.Dashworks
             filterElement.GetStringFilterByColumnName(columnName);
         }
 
+        [When(@"User closes Checkbox filter for ""(.*)"" column")]
+        public void WhenUserClosesCheckboxFilterForColumn(string columnName)
+        {
+            var filterElement = _driver.NowAt<ApplicationsDetailsTabsMenu>();
+            filterElement.BodyContainer.Click();
+        }
+
         [Then(@"All text is displayed for ""(.*)"" column in the String Filter")]
         public void ThenAllTextIsDisplayedForColumnInTheStringFilter(string columnName)
         {
@@ -466,6 +473,15 @@ namespace DashworksTestAutomation.Steps.Dashworks
         {
             var detailsPage = _driver.NowAt<DetailsPage>();
             foreach (var element in detailsPage.TableRowDetails)
+                StringAssert.DoesNotContain("Unknown", element.Text,
+                    "Unknown text is displayed");
+        }
+
+        [Then(@"Rows do not have unknown values")]
+        public void ThenRowsDoNotHaveUnkonwnValues()
+        {
+            var detailsPage = _driver.NowAt<DetailsPage>();
+            foreach (var element in detailsPage.TableRows)
                 StringAssert.DoesNotContain("Unknown", element.Text,
                     "Unknown text is displayed");
         }

@@ -1524,6 +1524,7 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_AdminPage
         [NUnit.Framework.CategoryAttribute("AdminPage")]
         [NUnit.Framework.CategoryAttribute("DAS12552")]
         [NUnit.Framework.CategoryAttribute("DAS13011")]
+        [NUnit.Framework.CategoryAttribute("Not_Run")]
         public virtual void EvergreenJnr_AdminPage_CheckThatFiltersAreWorkingCorrectlyOnTheAdminPages()
         {
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("EvergreenJnr_AdminPage_CheckThatFiltersAreWorkingCorrectlyOnTheAdminPages", new string[] {
@@ -1532,7 +1533,8 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_AdminPage
                         "EvergreenJnr_AdminPage",
                         "AdminPage",
                         "DAS12552",
-                        "DAS13011"});
+                        "DAS13011",
+                        "Not_Run"});
             this.ScenarioSetup(scenarioInfo);
             this.FeatureBackground();
             testRunner.When("User clicks Admin on the left-hand menu", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
@@ -3048,7 +3050,7 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_AdminPage
             testRunner.Then("Scope List dropdown is active", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
             testRunner.When("User selects \"Scope Changes\" tab on the Project details page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
             testRunner.When("User clicks \"Applications\" tab in the Project Scope Changes section", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-            testRunner.Then("\"Applications to add (0 of 2081 selected)\" is displayed to the user in the Projec" +
+            testRunner.Then("\"Applications to add (0 of 2048 selected)\" is displayed to the user in the Projec" +
                     "t Scope Changes section", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
             this.ScenarioCleanup();
         }
@@ -4622,8 +4624,8 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_AdminPage
         [NUnit.Framework.CategoryAttribute("Delete_Newly_Created_Project")]
         [NUnit.Framework.CategoryAttribute("Delete_Newly_Created_List")]
         [NUnit.Framework.CategoryAttribute("Projects")]
-        [NUnit.Framework.TestCaseAttribute("All Applications", "StaticList6429", "Applications to add (0 of 2081 selected)", "Applications to add (0 of 2 selected)", new string[0])]
-        [NUnit.Framework.TestCaseAttribute("StaticList6429", "DynamicList17", "Applications to add (0 of 2 selected)", "Applications to add (0 of 1612 selected)", new string[0])]
+        [NUnit.Framework.TestCaseAttribute("All Applications", "StaticList6429", "Applications to add (0 of 2048 selected)", "Applications to add (0 of 2 selected)", new string[0])]
+        [NUnit.Framework.TestCaseAttribute("StaticList6429", "DynamicList17", "Applications to add (0 of 2 selected)", "Applications to add (0 of 1579 selected)", new string[0])]
         public virtual void EvergreenJnr_ChangingApplicationScopeListToAnotherListForUserProject(string changingToList1, string changingToList2, string objectsToAdd1, string objectsToAdd2, string[] exampleTags)
         {
             string[] @__tags = new string[] {
@@ -4676,7 +4678,7 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_AdminPage
             testRunner.When("User clicks newly created object link", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
             testRunner.And("User selects \"Scope Changes\" tab on the Project details page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
             testRunner.When("User clicks \"Applications\" tab in the Project Scope Changes section", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-            testRunner.Then("\"Applications to add (0 of 2081 selected)\" is displayed to the user in the Projec" +
+            testRunner.Then("\"Applications to add (0 of 2048 selected)\" is displayed to the user in the Projec" +
                     "t Scope Changes section", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
             testRunner.When("User selects \"Scope Details\" tab on the Project details page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
             testRunner.When("User navigates to the \"Application Scope\" tab in the Scope section on the Project" +

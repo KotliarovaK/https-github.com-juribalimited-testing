@@ -115,6 +115,7 @@ Scenario: Projects_CreateUserScheduledProject
 	Then Success message is displayed with "Request Type successfully updated" text
 	When User clicks "Cancel" button
 	Then created Request Type is a Default
+		#Creating Category
 	When User navigate to "Categories" tab
 	Then "Manage Categories" page is displayed to the user
 	When User clicks "Create Category" button
@@ -303,8 +304,8 @@ Scenario: Projects_CreateUserScheduledProject
 	When User navigate to "Self Service" tab
 	Then "Manage Self Service" page is displayed to the user
 	When User updates the Details page on Self Service tab
-	| EnableSelfServicePortal | AllowAnonymousUsers | ThisProjectDefault | Mode1 | Mode2 | BaseUrl | NoLink | DashworksProjectHomepage | CustomUrl | CustomUrlTextField |
-	| false                   | false               | true               | true  | false |         | false  | false                    | true      | http://Test        |
+	| EnableSelfServicePortal | AllowAnonymousUsers | ThisProjectDefault | Mode1 | Mode2 | BaseUrl | NoLink | DashworksProjectHomepage | CustomUrl | CustomUrlTextField    |
+	| false                   | false               | true               | true  | false |         | false  | false                    | true      | http://www.juriba.com |
 	Then Success message is displayed with "Details successfully updated." text
 	When User navigate to "Welcome" page on Self Service tab
 	And User updates the Welcome page on Self Service tab
@@ -322,13 +323,13 @@ Scenario: Projects_CreateUserScheduledProject
 	Then Success message is displayed with "Self Service Screen successfully updated" text
 	When User navigate to "Apps List" page on Self Service tab
 	And User updates the Apps List page on Self Service tab
-	| ShowThisScreen | ShowCoreApps | ShowTargetStateReadiness | ShowRequiredColumnAndSticky | ShowOnlyApplication | AllowUsersToAddANote | PageDescription      |
-	| true           | true         | true                     | true                        | true                | true                 | UserScheduledProject |
+	| ShowThisScreen | ShowCoreApps | ShowTargetStateReadiness | ShowRequiredColumnAndSticky | ShowOnlyApplication | AllowUsersToAddANote | PageDescription      | ViewString         |
+	| true           | true         | true                     | true                        | true                | true                 | UserScheduledProject | ComparisonExpanded |
 	Then Success message is displayed with "Self Service Screen successfully updated" text
 	When User navigate to "Project Date" page on Self Service tab
 	And User updates the Project Date page on Self Service tab
-	| ShowComputerNameString | AllowUsersToAddANote | MinimumHours | MaximumHours | PageDescription      |
-	| DoNotShow              | true                 | 10           | 100          | UserScheduledProject |
+	| ShowScreen | ShowComputerNameString | AllowUsersToAddANote | MinimumHours | MaximumHours | PageDescription      |
+	| true       | DoNotShow              | true                 | 10           | 100          | UserScheduledProject |
 	Then Success message is displayed with "Self Service Screen successfully updated" text
 	When User navigate to "Other Options 1" page on Self Service tab
 	And User updates the first Other Options page on Self Service tab

@@ -510,8 +510,8 @@ Scenario Outline: EvergreenJnr_AllLists_CheckThatDropdownListsInTheProjectDetail
 
 Examples:
 	| PageName | SearchTerm                                      | ColumnName | TabName  | SectionName           | CountRows |
-	| Devices  | 001BAQXT6JWFPI                                  | Hostname   | Projects | Device Projects       | 4         |
-	| Devices  | 001BAQXT6JWFPI                                  | Hostname   | Projects | Device Owner Projects | 4         |
+	| Devices  | 001BAQXT6JWFPI                                  | Hostname   | Projects | Device Projects       | 5         |
+	| Devices  | 001BAQXT6JWFPI                                  | Hostname   | Projects | Device Owner Projects | 5         |
 	| Users    | Loya\, Dan.Employees.Birmingham.UK.bclabs.local | Username   | Projects | User Projects         | 1         |
 	| Users    | Loya\, Dan.Employees.Birmingham.UK.bclabs.local | Username   | Projects | Mailbox Projects      | 1         |
 
@@ -662,6 +662,32 @@ Examples:
 	| Users        | User Key        |
 	| Applications | Application Key |
 	| Mailboxes    | Mailbox Key     |
+
+@Evergreen @Applications @EvergreenJnr_ItemDetails @ItemDetailsDisplay @DAS12805
+Scenario: EvergreenJnr_ApplicationsList_CheckThatUsersAndDevicesDistributionListsDoNotIncludeUnknownValues
+	When User clicks "Applications" on the left-hand menu
+	Then "Applications" list should be displayed to the user
+	When User perform search by "Microsoft DirectX 5 DDK"
+	And User click content from "Application" column
+	And User navigates to the "Distribution" tab
+	And User clicks String Filter button for "Used" column
+	And User clicks "False" checkbox from String Filter on the Details Page
+	And User clicks "Unknown" checkbox from String Filter on the Details Page
+	And User closes Checkbox filter for "Used" column
+	And User have opened Column Settings for "Username" column in the Details Page table
+	And User have select "Sort descending" option from column settings on the Details Page
+	Then Content is present in the table on the Details Page
+	And Rows do not have unknown values
+	When User closes "Users" section on the Details Page
+	And User opens "Devices" section on the Details Page
+	And User clicks String Filter button for "Used" column
+	And User clicks "False" checkbox from String Filter on the Details Page
+	And User clicks "Unknown" checkbox from String Filter on the Details Page
+	And User closes Checkbox filter for "Used" column
+	And User have opened Column Settings for "Device" column in the Details Page table
+	And User have select "Sort descending" option from column settings on the Details Page
+	Then Content is present in the table on the Details Page
+	And Rows do not have unknown values
 
 @Evergreen @AdminPage @AllLists @EvergreenJnr_ItemDetails @ItemDetailsDisplay @DAS12883 @Not_Run
 Scenario: EvergreenJnr_AllLists_CheckThatPopupIsBiggerAndIsShownProperlyBucketIsChangedSuccessfully
