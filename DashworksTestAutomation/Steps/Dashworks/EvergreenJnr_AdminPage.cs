@@ -460,8 +460,8 @@ namespace DashworksTestAutomation.Steps.Dashworks
             _driver.WaitForDataLoading();
         }
 
-        [When(@"User clicks ""(.*)"" checkbox from String Filter on the Projects page")]
-        public void WhenUserClicksCheckboxFromStringFilterOnTheProjectsPage(string filterName)
+        [When(@"User selects ""(.*)"" checkbox from String Filter on the Admin page")]
+        public void WhenUserSelectsCheckboxFromStringFilterOnTheAdminPage(string filterName)
         {
             var page = _driver.NowAt<ProjectsPage>();
             page.GetCheckboxStringFilterByName(filterName);
@@ -875,6 +875,20 @@ namespace DashworksTestAutomation.Steps.Dashworks
             Assert.IsTrue(page.SelectedDefaultBucketCheckbox.Displayed(), "Default Bucket checkbox is not selected");
         }
 
+        [When(@"User clicks ""(.*)"" tab on the Buckets page")]
+        public void WhenUserClicksTabOnTheBucketsPage(string tabName)
+        {
+            var tab = _driver.NowAt<BucketsPage>();
+            tab.ClickTabByName(tabName);
+        }
+
+        [When(@"User adds ""(.*)"" objects to bucket")]
+        public void WhenUserAddsObjectsToBucket(string objectName)
+        {
+            var objects = _driver.NowAt<BucketsPage>();
+            objects.SelectObjectByName(objectName);
+        }
+
         [Then(@"Create Team button is disabled")]
         public void ThenCreateTeamButtonIsDisabled()
         {
@@ -1097,6 +1111,20 @@ namespace DashworksTestAutomation.Steps.Dashworks
             var teamElement = _driver.NowAt<BucketsPage>();
             Assert.IsTrue(teamElement.AppropriateBucketName(bucketName),
                 $"{bucketName} is not displayed on the Bucket page");
+        }
+
+        [Then(@"Move To Another Bucket Page is displayed to the user")]
+        public void ThenMoveToAnotherBucketPageIsDisplayedToTheUser()
+        {
+            var page = _driver.NowAt<MoveToAnotherBucketPage>();
+            Assert.IsTrue(page.BucketSelectbox.Displayed, "Move To Another Bucket Page is not displayed to the user");
+        }
+
+        [When(@"User moves selected objects to ""(.*)"" bucket")]
+        public void WhenUserMovesSelectedObjectsToBucket(string bucketName)
+        {
+            var page = _driver.NowAt<MoveToAnotherBucketPage>();
+            page.MoveToBucketByName(bucketName);
         }
 
         [When(@"User clicks on Actions button")]
