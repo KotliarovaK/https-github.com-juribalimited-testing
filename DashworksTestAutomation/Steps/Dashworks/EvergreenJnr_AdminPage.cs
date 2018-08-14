@@ -1113,6 +1113,20 @@ namespace DashworksTestAutomation.Steps.Dashworks
                 $"{bucketName} is not displayed on the Bucket page");
         }
 
+        [Then(@"Move To Another Bucket Page is displayed to the user")]
+        public void ThenMoveToAnotherBucketPageIsDisplayedToTheUser()
+        {
+            var page = _driver.NowAt<MoveToAnotherBucketPage>();
+            Assert.IsTrue(page.BucketSelectbox.Displayed, "Move To Another Bucket Page is not displayed to the user");
+        }
+
+        [When(@"User moves selected objects to ""(.*)"" bucket")]
+        public void WhenUserMovesSelectedObjectsToBucket(string bucketName)
+        {
+            var page = _driver.NowAt<MoveToAnotherBucketPage>();
+            page.MoveToBucketByName(bucketName);
+        }
+
         [When(@"User clicks on Actions button")]
         public void ThenUserClicksOnActionsButton()
         {
