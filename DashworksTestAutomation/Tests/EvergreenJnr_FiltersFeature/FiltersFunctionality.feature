@@ -702,7 +702,6 @@ Scenario: EvergreenJnr_UsersList_CheckThatNoConsoleErrorIsDisplayedAfterAddingUs
 	Then "Any User in list YOG2259571 Users entitled to app" is displayed in added filter info
 	And Filter name is colored in the added filter info
 	And Filter value is shown in bold in the added filter info
-
 	And There are no errors in the browser console
 
 @Evergreen @Users @EvergreenJnr_FilterFeature @FilterFunctionality @DAS12181 @Delete_Newly_Created_List
