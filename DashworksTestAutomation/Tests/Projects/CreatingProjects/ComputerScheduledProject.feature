@@ -134,8 +134,31 @@ Scenario: Projects_CreateComputerScheduledProject
 	Then "Manage Categories" page is displayed to the user
 	When User clicks "Create Category" button
 	And User create Category
-	| Name             | Description              | ObjectTypeString |
-	| TestCategoryName | ComputerScheduledProject | User             |
+	| Name         | Description              | ObjectTypeString |
+	| for removing | ComputerScheduledProject | Computer         |
+	Then Success message is displayed with "Category successfully created." text
+	When User clicks "« Go Back" button
+	Then created Category is displayed in the table
+	When User removes created Category
+	Then selected Category was removed
+	When User clicks "Create Category" button
+	And User create Category
+	| Name              | Description              | ObjectTypeString |
+	| Computer Category | ComputerScheduledProject | Computer         |
+	Then Success message is displayed with "Category successfully created." text
+	When User clicks "« Go Back" button
+	Then created Category is displayed in the table
+	When User clicks "Create Category" button
+	And User create Category
+	| Name          | Description              | ObjectTypeString |
+	| User Category | ComputerScheduledProject | User             |
+	Then Success message is displayed with "Category successfully created." text
+	When User clicks "« Go Back" button
+	Then created Category is displayed in the table
+	When User clicks "Create Category" button
+	And User create Category
+	| Name                 | Description              | ObjectTypeString |
+	| Application Category | ComputerScheduledProject | Application      |
 	Then Success message is displayed with "Category successfully created." text
 	When User clicks "« Go Back" button
 	Then created Category is displayed in the table
@@ -642,6 +665,14 @@ Scenario: Projects_CreateComputerScheduledProject
 	| Title                    | Text     |
 	| ComputerScheduledProject | TestText |
 	Then Success message is displayed with "Project news was successfully updated." text
+		#Capacity tabs
+	When User navigate to "Capacity" tab
+	Then "Manage Capacity" page is displayed to the user
+	When User selects "Scheduled Date" type of date
+	When User updates the Details on Capacity tab
+	| EnablePlanning | DisplayColors | EnforceOonSelfServicePage | EnforceOnProjectObjectPage | CapacityToReach |
+	| true           | true          | true                      | true                       | 80              |
+	Then Success message is displayed with "Details successfully updated." text
 		#Self Service tabs
 	When User navigate to "Self Service" tab
 	Then "Manage Self Service" page is displayed to the user
@@ -649,14 +680,16 @@ Scenario: Projects_CreateComputerScheduledProject
 	| EnableSelfServicePortal | AllowAnonymousUsers | ThisProjectDefault | Mode1 | Mode2 | BaseUrl                           | NoLink | DashworksProjectHomepage | CustomUrl | CustomUrlTextField    |
 	| true                    | true                | true               | false | true  | http://automation.corp.juriba.com | false  | false                    | true      | http://www.juriba.com |
 	When User navigate to "Welcome" page on Self Service tab
+	#When User add to object details "Attribute" type with "Language" field
+	#When User add to object details "Attribute" type with "Request Type" field
 	And User updates the Welcome page on Self Service tab
 	| AllowUsersToSearch | AllowToChangeLanguage | ShowProjectSelector | ShowObjectDetails | ShowMoreDetailsLink | PageDescription | ProjectName              |
 	| true               | true                  | true                | true              | true                | TestText        | ComputerScheduledProject |
 	Then Success message is displayed with "Self Service Screen successfully updated" text
 	When User navigate to "Computer Ownership" page on Self Service tab
 	And User updates the Ownership page on Self Service tab
-	| ShowScreen | NamefromHttpString | ShowCategory | AllowUsersToChangeOwner | AllowUsersToChangeUsers | UsersOfTheComputer | OwnerOfTheComputer | AllowUsersToAddANote | LimitMaximum | LimitMinimum | PageDescription          |
-	| true       | RemoteHost         | true         | true                    | true                    | true               | true               | true                 | 100          | 10           | ComputerScheduledProject |
+	| ShowScreen | NamefromHttpString | ShowComputers | ShowCategory | AllowUsersToSearch | AllowUsersToSetPrimary | AllowUsersToAddANote | LimitMaximum | LimitMinimum | PageDescription          |
+	| true       | RemoteHost         | true          | true         | true               | true                   | true                 | 100          | 10           | ComputerScheduledProject |
 	Then Success message is displayed with "Self Service Screen successfully updated" text
 	When User navigate to "Department and Location" page on Self Service tab
 	And User updates the Department and Location page on Self Service tab
@@ -680,13 +713,15 @@ Scenario: Projects_CreateComputerScheduledProject
 	And User updates the first Other Options page on Self Service tab
 	| ShowScreen | AllowUsersToAddANote | OnlyOwned | AllLinked | PageDescription          |
 	| true       | true                 | false     | true      | ComputerScheduledProject |
-#TODO Tasks
+#TODO User Task
+#TODO Computer Task
 	Then Success message is displayed with "Self Service Screen successfully updated" text
 	When User navigate to "Other Options 2" page on Self Service tab
 	And User updates the second Other Options page on Self Service tab
 	| ShowScreen | AllowUsersToAddANote | OnlyOwned | AllLinked | PageDescription          |
 	| false      | true                 | true      | false     | ComputerScheduledProject |
-#TODO Tasks
+#TODO User Task
+#TODO Computer Task
 	Then Success message is displayed with "Self Service Screen successfully updated" text
 	When User navigate to "Thank You" page on Self Service tab
 	And User updates the Thank You page on Self Service tab
@@ -694,13 +729,6 @@ Scenario: Projects_CreateComputerScheduledProject
 	| true              | true           | true           | true        | ComputerScheduledProject |
 	Then Success message is displayed with "Self Service Screen successfully updated" text
 		#Capacity tabs
-	When User navigate to "Capacity" tab
-	Then "Manage Capacity" page is displayed to the user
-	When User updates the Details on Capacity tab
-	| EnablePlanning | DisplayColors | EnforceOonSelfServicePage | EnforceOnProjectObjectPage | CapacityToReach |
-	| true           | true          | true                      | true                       | 80              |
-	When User selects "Scheduled Date" Task
-	Then Success message is displayed with "Details successfully updated." text
 	When User navigate to "Capacity" page
 	And User updates the Capacity page on Capacity tab for "1" Team
 	| StartDate   | EndDate     | MondayCheckbox | TuesdayCheckbox | WednesdayCheckbox | ThursdayCheckbox | FridayCheckbox | SaturdayCheckbox | SundayCheckbox | Monday | Tuesday | Wednesday | Thursday | Friday | Saturday | Sunday |
@@ -722,7 +750,7 @@ Scenario: Projects_CreateComputerScheduledProject
 	| Date        | Capacity | Comment                  |
 	| 03 Apr 2016 | 0        | ComputerScheduledProject |
 	Then Success message is displayed with "Override date successfully inserted" text
-		#removing
+		#removing	
 	#When User navigate to "Groups" tab
 	#And User removes created Group
 	#Then selected Group was removed

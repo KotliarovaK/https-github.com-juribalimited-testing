@@ -34,5 +34,12 @@ namespace DashworksTestAutomation.Pages.Projects
                 SelectorFor(this, p => p.CapacityToReach),
             };
         }
+
+        public void SelectTheTypeOfDateByName(string typeOfDateByName)
+        {
+            string selector = $"//td[text()='{typeOfDateByName}']//following-sibling::td//input[@type='checkbox']";
+            Driver.WaitWhileControlIsNotDisplayed(By.XPath(selector));
+            Driver.FindElement(By.XPath(selector)).Click();
+        }
     }
 }
