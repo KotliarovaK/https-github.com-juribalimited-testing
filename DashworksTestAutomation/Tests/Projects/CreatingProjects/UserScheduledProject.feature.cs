@@ -676,7 +676,7 @@ namespace DashworksTestAutomation.Tests.Projects.CreatingProjects
                         "false",
                         "false",
                         "true",
-                        "http://Test"});
+                        "http://www.juriba.com"});
             testRunner.When("User updates the Details page on Self Service tab", ((string)(null)), table38, "When ");
             testRunner.Then("Success message is displayed with \"Details successfully updated.\" text", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
             testRunner.When("User navigate to \"Welcome\" page on Self Service tab", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
@@ -769,7 +769,8 @@ namespace DashworksTestAutomation.Tests.Projects.CreatingProjects
                         "ShowRequiredColumnAndSticky",
                         "ShowOnlyApplication",
                         "AllowUsersToAddANote",
-                        "PageDescription"});
+                        "PageDescription",
+                        "ViewString"});
             table42.AddRow(new string[] {
                         "true",
                         "true",
@@ -777,18 +778,21 @@ namespace DashworksTestAutomation.Tests.Projects.CreatingProjects
                         "true",
                         "true",
                         "true",
-                        "UserScheduledProject"});
+                        "UserScheduledProject",
+                        "ComparisonExpanded"});
             testRunner.And("User updates the Apps List page on Self Service tab", ((string)(null)), table42, "And ");
             testRunner.Then("Success message is displayed with \"Self Service Screen successfully updated\" text" +
                     "", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
             testRunner.When("User navigate to \"Project Date\" page on Self Service tab", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
             TechTalk.SpecFlow.Table table43 = new TechTalk.SpecFlow.Table(new string[] {
+                        "ShowScreen",
                         "ShowComputerNameString",
                         "AllowUsersToAddANote",
                         "MinimumHours",
                         "MaximumHours",
                         "PageDescription"});
             table43.AddRow(new string[] {
+                        "true",
                         "DoNotShow",
                         "true",
                         "10",

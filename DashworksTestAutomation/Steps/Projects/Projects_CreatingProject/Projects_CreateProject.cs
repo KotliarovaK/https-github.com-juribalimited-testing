@@ -412,7 +412,7 @@ namespace DashworksTestAutomation.Steps.Projects
                     //assign DateModeString to DateModeEnum
                     _taskPropertiesDetailsDto.DateMode = (DateModeEnum)Enum.Parse(typeof(DateModeEnum), _taskPropertiesDetailsDto.DateModeString);
                     page.DateMode.SelectboxSelect(_taskPropertiesDetailsDto.DateMode.GetValue());
-                }      
+                }
             }
 
             if (_taskPropertiesDto.ValueType.Equals(ValueTypeEnum.Radiobutton))
@@ -655,8 +655,27 @@ namespace DashworksTestAutomation.Steps.Projects
         public void ThenCreatedTeamIsDisplayedInTable()
         {
             var page = _driver.NowAt<MainElementsOfProjectCreation>();
-            var team = page.GetTheCreatedElementInTableByName(_projectDto.TeamProperties.Last().TeamName);
-            Assert.IsTrue(team.Displayed(), "Selected Team is not displayed in the table");
+            try
+            {
+                if (!page.GetTheCreatedElementInTableByName(_projectDto.TeamProperties.Last().TeamName).Displayed())
+                {
+                    try
+                    {
+                        page.NextTeamsListLink.Click();
+                    }
+                    catch
+                    {}                      
+                    var team = page.GetTheCreatedElementInTableByName(_projectDto.TeamProperties.Last().TeamName);
+                    Assert.IsTrue(team.Displayed(), "Selected Team is not displayed in the table");
+                }
+                else
+                {
+                    var team = page.GetTheCreatedElementInTableByName(_projectDto.TeamProperties.Last().TeamName);
+                    Assert.IsTrue(team.Displayed(), "Selected Team is not displayed in the table");
+                }
+            }
+            catch
+            {}
         }
 
         [Then(@"created Group is displayed in the table")]
@@ -728,16 +747,54 @@ namespace DashworksTestAutomation.Steps.Projects
         public void ThenNumberOfGroupsIsDisplayedForTeam(int numberOfGroups, int teamIndex)
         {
             var page = _driver.NowAt<MainElementsOfProjectCreation>();
-            var groups = page.GetGroupsCountByTeamName(_projectDto.TeamProperties.Last().TeamName);
-            Assert.AreEqual(groups, numberOfGroups, "Number of groups is incorrect");
+            try
+            {
+                if (!page.GetTheCreatedElementInTableByName(_projectDto.TeamProperties.Last().TeamName).Displayed())
+                {
+                    try
+                    {
+                        page.NextTeamsListLink.Click();
+                    }
+                    catch
+                    { }
+                    var groups = page.GetGroupsCountByTeamName(_projectDto.TeamProperties.Last().TeamName);
+                    Assert.AreEqual(groups, numberOfGroups, "Number of groups is incorrect");
+                }
+                else
+                {
+                    var groups = page.GetGroupsCountByTeamName(_projectDto.TeamProperties.Last().TeamName);
+                    Assert.AreEqual(groups, numberOfGroups, "Number of groups is incorrect");
+                }
+            }
+            catch
+            { }
         }
 
         [Then(@"""(.*)"" number of Members is displayed for created Team")]
         public void ThenRequiredNumberOfMembersIsDisplayedForCreatedTeam(int numberOfMembers)
         {
             var page = _driver.NowAt<MainElementsOfProjectCreation>();
-            var members = page.GetMembersCountByTeamName(_projectDto.TeamProperties.Last().TeamName);
-            Assert.AreEqual(members, numberOfMembers, "Number of members is incorrect");
+            try
+            {
+                if (!page.GetTheCreatedElementInTableByName(_projectDto.TeamProperties.Last().TeamName).Displayed())
+                {
+                    try
+                    {
+                        page.NextTeamsListLink.Click();
+                    }
+                    catch
+                    { }
+                    var members = page.GetMembersCountByTeamName(_projectDto.TeamProperties.Last().TeamName);
+                    Assert.AreEqual(members, numberOfMembers, "Number of members is incorrect");
+                }
+                else
+                {
+                    var members = page.GetMembersCountByTeamName(_projectDto.TeamProperties.Last().TeamName);
+                    Assert.AreEqual(members, numberOfMembers, "Number of members is incorrect");
+                }
+            }
+            catch
+            { }
         }
     }
 }
