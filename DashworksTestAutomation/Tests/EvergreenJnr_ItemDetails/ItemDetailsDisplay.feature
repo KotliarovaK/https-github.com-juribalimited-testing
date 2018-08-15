@@ -119,6 +119,7 @@ Scenario Outline: EvergreenJnr_AllLists_CheckThatDataIsDisplayedAfterAddingColum
 	And User clicks Column button on the Column Settings panel
 	And User select "Device" checkbox on the Column Settings panel
 	And User select "Installed" checkbox on the Column Settings panel
+	And User select "Owner Display Name" checkbox on the Column Settings panel
 	And User select "<CheckboxName>" checkbox on the Column Settings panel
 	And User clicks Column button on the Column Settings panel
 	Then following columns added to the table:
