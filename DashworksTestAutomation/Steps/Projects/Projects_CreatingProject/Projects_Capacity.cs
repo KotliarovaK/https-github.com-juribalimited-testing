@@ -66,8 +66,8 @@ namespace DashworksTestAutomation.Steps.Projects
             page.SelectCheckboxByName(checkboxName);
         }
 
-        [When(@"User add ""(.*)"" Additional Task")]
-        public void WhenUserAddAdditionalTask(string taskName)
+        [When(@"User adds ""(.*)"" Additional Task")]
+        public void WhenUserAddsAdditionalTask(string taskName)
         {
             var page = _driver.NowAt<SelfService_ProjectDatePage>();
 

@@ -120,8 +120,8 @@ Scenario: Projects_CreateUserScheduledProject
 	Then "Manage Categories" page is displayed to the user
 	When User clicks "Create Category" button
 	And User create Category
-	| Name             | Description          | ObjectTypeString |
-	| Mailbox Category | UserScheduledProject | Mailbox          |
+	| Name              | Description          | ObjectTypeString |
+	| Computer Category | UserScheduledProject | Computer         |
 	Then Success message is displayed with "Category successfully created." text
 	When User clicks "« Go Back" button
 	Then created Category is displayed in the table
@@ -319,7 +319,7 @@ Scenario: Projects_CreateUserScheduledProject
 	Then "Manage Self Service" page is displayed to the user
 	When User updates the Details page on Self Service tab
 	| EnableSelfServicePortal | AllowAnonymousUsers | ThisProjectDefault | Mode1 | Mode2 | BaseUrl | NoLink | DashworksProjectHomepage | CustomUrl | CustomUrlTextField    |
-	| false                   | false               | true               | true  | false |         | false  | false                    | true      | http://www.juriba.com |
+	| false                   | false               | true               | false | true  |         | false  | false                    | true      | http://www.juriba.com |
 	Then Success message is displayed with "Details successfully updated." text
 	When User navigate to "Welcome" page on Self Service tab
 	And User updates the Welcome page on Self Service tab

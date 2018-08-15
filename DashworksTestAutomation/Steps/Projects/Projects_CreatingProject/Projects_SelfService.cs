@@ -80,8 +80,8 @@ namespace DashworksTestAutomation.Steps.Projects
             upd.UpdateButton.Click();
         }
 
-        [When(@"User add to object details ""(.*)"" type with ""(.*)"" field")]
-        public void WhenUserAddToObjectDetailsTypeWithField(string typeName, string fieldName)
+        [When(@"User adds to object details ""(.*)"" type with ""(.*)"" field")]
+        public void WhenUserAddsToObjectDetailsTypeWithField(string typeName, string fieldName)
         {
             var page = _driver.NowAt<SelfService_WelcomePage>();
 
@@ -128,43 +128,38 @@ namespace DashworksTestAutomation.Steps.Projects
             page.ShowScreen.SetCheckboxState(_computerOwnershipDto.ShowScreen);
             page.ShowCategory.SetCheckboxState(_computerOwnershipDto.ShowCategory);
 
-
-            if (_projectDto.ProjectType.Equals(ProjectTypeEnum.ComputerScheduledProject))
+            if (!_projectDto.ProjectType.Equals(ProjectTypeEnum.MailboxScheduledProject))
             {
                 //assign NamefromHttpString to NamefromHttpEnum
                 _computerOwnershipDto.NamefromHttp = (NamefromHttpEnum)Enum.Parse(typeof(NamefromHttpEnum), _computerOwnershipDto.NamefromHttpString);
                 page.NamefromHttp.SelectboxSelect(_computerOwnershipDto.NamefromHttp.GetValue());
 
-                if (_welcomeDto.ShowObjectDetails.Equals(true))
+                if (_projectDto.ProjectType.Equals(ProjectTypeEnum.ComputerScheduledProject))
+                {
+                    if (_detailsDto.Mode1.Equals(true))
+                    {
+                        page.ShowComputers.SetCheckboxState(_computerOwnershipDto.ShowComputers);
+                        page.AllowUsersToSearch.SetCheckboxState(_computerOwnershipDto.AllowUsersToSearch);
+                        page.AllowUsersToSetPrimary.SetCheckboxState(_computerOwnershipDto.AllowUsersToSetPrimary);
+                    }
+
+                    if (_detailsDto.Mode2.Equals(true))
+                    {
+                        page.UsersOfTheComputer.SetCheckboxState(_computerOwnershipDto.UsersOfTheComputer);
+                        page.OwnerOfTheComputer.SetCheckboxState(_computerOwnershipDto.OwnerOfTheComputer);
+                        page.AllowUsersToChangeUsers.SetCheckboxState(_computerOwnershipDto.AllowUsersToChangeUsers);
+                    } 
+                }
+
+                if (_projectDto.ProjectType.Equals(ProjectTypeEnum.UserScheduledProject))
                 {
                     page.ShowComputers.SetCheckboxState(_computerOwnershipDto.ShowComputers);
-                    page.AllowUsersToSearch.SetCheckboxState(_computerOwnershipDto.AllowUsersToSearch);
                     page.AllowUsersToSetPrimary.SetCheckboxState(_computerOwnershipDto.AllowUsersToSetPrimary);
-                    page.LimitMaximum.SendKeys(_computerOwnershipDto.LimitMaximum);
-                    page.LimitMinimum.SendKeys(_computerOwnershipDto.LimitMinimum);
                 }
-                else
-                {
-                    page.AllowUsersToChangeOwner.SetCheckboxState(_computerOwnershipDto.AllowUsersToChangeOwner);
-                    page.AllowUsersToChangeUsers.SetCheckboxState(_computerOwnershipDto.AllowUsersToChangeUsers);
-                    page.UsersOfTheComputer.SetCheckboxState(_computerOwnershipDto.UsersOfTheComputer);
-                    page.OwnerOfTheComputer.SetCheckboxState(_computerOwnershipDto.OwnerOfTheComputer);
-                    page.LimitMaximum.SendKeys(_computerOwnershipDto.LimitMaximum);
-                    page.LimitMinimum.SendKeys(_computerOwnershipDto.LimitMinimum);
-                }
-            }
 
-            if (_projectDto.ProjectType.Equals(ProjectTypeEnum.UserScheduledProject))
-            {
-                //assign NamefromHttpString to NamefromHttpEnum
-                _computerOwnershipDto.NamefromHttp = (NamefromHttpEnum)Enum.Parse(typeof(NamefromHttpEnum), _computerOwnershipDto.NamefromHttpString);
-                page.NamefromHttp.SelectboxSelect(_computerOwnershipDto.NamefromHttp.GetValue());
-                page.ShowComputers.SetCheckboxState(_computerOwnershipDto.ShowComputers);
-                page.AllowUsersToSetPrimary.SetCheckboxState(_computerOwnershipDto.AllowUsersToSetPrimary);
                 page.LimitMaximum.SendKeys(_computerOwnershipDto.LimitMaximum);
                 page.LimitMinimum.SendKeys(_computerOwnershipDto.LimitMinimum);
             }
-
 
             page.AllowUsersToAddANote.SetCheckboxState(_computerOwnershipDto.AllowUsersToAddANote);
             page.PageDescription.SendKeys(_computerOwnershipDto.PageDescription);
@@ -275,7 +270,7 @@ namespace DashworksTestAutomation.Steps.Projects
 
             page.ShowScreen.SetCheckboxState(_options1Dto.ShowScreen);
             page.AllowUsersToAddANote.SetCheckboxState(_options1Dto.AllowUsersToAddANote);
-            if (!_projectDto.ProjectType.Equals(ProjectTypeEnum.MailboxScheduledProject))
+            if (_projectDto.ProjectType.Equals(ProjectTypeEnum.UserScheduledProject))
             {
                 page.OnlyOwned.SetCheckboxState(_options1Dto.OnlyOwned);
                 page.AllLinked.SetCheckboxState(_options1Dto.AllLinked);
@@ -284,6 +279,16 @@ namespace DashworksTestAutomation.Steps.Projects
 
             var upd = _driver.NowAt<MainElementsOfProjectCreation>();
             upd.UpdateButton.Click();
+        }
+
+        [When(@"User adds ""(.*)"" Linked Object Tasks")]
+        public void WhenUserAddsLinkedObjectTasks(string taskName)
+        {
+            var page = _driver.NowAt<SelfService_OtherOptionsPage>();
+
+            page.LinkedObjectTasks.Click();
+            page.SelectLinkedObjectTasksByName(taskName);
+            page.AddLinkedObjectTasksButton.Click();
         }
 
         [When(@"User updates the second Other Options page on Self Service tab")]
@@ -295,7 +300,7 @@ namespace DashworksTestAutomation.Steps.Projects
 
             page.ShowScreen.SetCheckboxState(_options2Dto.ShowScreen);
             page.AllowUsersToAddANote.SetCheckboxState(_options1Dto.AllowUsersToAddANote);
-            if (!_projectDto.ProjectType.Equals(ProjectTypeEnum.MailboxScheduledProject))
+            if (_projectDto.ProjectType.Equals(ProjectTypeEnum.UserScheduledProject))
             {
                 page.OnlyOwned.SetCheckboxState(_options1Dto.OnlyOwned);
                 page.AllLinked.SetCheckboxState(_options1Dto.AllLinked);
