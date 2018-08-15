@@ -121,7 +121,21 @@ Scenario: Projects_CreateUserScheduledProject
 	When User clicks "Create Category" button
 	And User create Category
 	| Name             | Description          | ObjectTypeString |
-	| TestCategoryName | UserScheduledProject | User             |
+	| Mailbox Category | UserScheduledProject | Mailbox          |
+	Then Success message is displayed with "Category successfully created." text
+	When User clicks "« Go Back" button
+	Then created Category is displayed in the table
+	When User clicks "Create Category" button
+	And User create Category
+	| Name          | Description          | ObjectTypeString |
+	| User Category | UserScheduledProject | User             |
+	Then Success message is displayed with "Category successfully created." text
+	When User clicks "« Go Back" button
+	Then created Category is displayed in the table
+	When User clicks "Create Category" button
+	And User create Category
+	| Name                 | Description          | ObjectTypeString |
+	| Application Category | UserScheduledProject | Application      |
 	Then Success message is displayed with "Category successfully created." text
 	When User clicks "« Go Back" button
 	Then created Category is displayed in the table

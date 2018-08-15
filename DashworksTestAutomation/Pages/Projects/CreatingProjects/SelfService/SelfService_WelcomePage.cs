@@ -47,6 +47,9 @@ namespace DashworksTestAutomation.Pages.Projects
         [FindsBy(How = How.XPath, Using = ".//input[@aria-label='Project Name']")]
         public IWebElement ProjectName { get; set; }
 
+        [FindsBy(How = How.XPath, Using = "//td[@colspan]//input[@value='Add']")]
+        public IWebElement AddObjectDetailsButton { get; set; }
+
         public override List<By> GetPageIdentitySelectors()
         {
             return new List<By>
@@ -74,6 +77,20 @@ namespace DashworksTestAutomation.Pages.Projects
             var selector = By.XPath($".//td[contains(text(), '{languages}')]/..//img[@title='Delete']");
             Driver.WaitWhileControlIsNotDisplayed(selector);
             return Driver.FindElement(selector);
+        }
+
+        public void GetTypeByName (string typeName)
+        {
+            var selector = By.XPath($"//select[@aria-label='Type']/option[text()='{typeName}']");
+            Driver.WaitWhileControlIsNotDisplayed(selector);
+            Driver.FindElement(selector).Click();
+        }
+
+        public void GetFieldByName(string fieldName)
+        {
+            var selector = By.XPath($"//select[@aria-label='Field']/option[text()='{fieldName}']");
+            Driver.WaitWhileControlIsNotDisplayed(selector);
+            Driver.FindElement(selector).Click();
         }
     }
 }
