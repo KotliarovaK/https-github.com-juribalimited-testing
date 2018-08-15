@@ -24,7 +24,7 @@ namespace DashworksTestAutomation.Pages.Evergreen.AdminDetailsPages
         [FindsBy(How = How.XPath, Using = "//mat-checkbox[contains(@class, 'mat-checkbox-disabled')]")]
         public IWebElement DisabledAssociation { get; set; }
 
-        [FindsBy(How = How.XPath, Using = "//div[@class='ng-star-inserted']/div")]
+        [FindsBy(How = How.XPath, Using = "//div[@class='ng-star-inserted']/div[@class='wrapper-outer']")]
         public IWebElement UserScopeCheckboxes { get; set; }
 
         [FindsBy(How = How.XPath, Using = "//div[@class='wrapper-disabled']")]
