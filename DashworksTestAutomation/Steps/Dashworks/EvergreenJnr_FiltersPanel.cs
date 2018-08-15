@@ -659,11 +659,11 @@ namespace DashworksTestAutomation.Steps.Dashworks
         public void ThenCorrectTrueAndFalseOptionsAreDisplayedInFilterSettings()
         {
             var filterElement = _driver.NowAt<FiltersElement>();
-            Assert.AreEqual($"{UrlProvider.Url}evergreen/img/tick.png",
+            Assert.AreEqual($"{UrlProvider.Url}evergreen/assets/img/tick.png",
                 filterElement.GetBooleanCheckboxImg("TRUE").GetAttribute("src"), "Incorrect image for True value");
-            Assert.AreEqual($"{UrlProvider.Url}evergreen/img/cross.png",
+            Assert.AreEqual($"{UrlProvider.Url}evergreen/assets/img/cross.png",
                 filterElement.GetBooleanCheckboxImg("FALSE").GetAttribute("src"), "Incorrect image for False value");
-            Assert.AreEqual($"{UrlProvider.Url}evergreen/img/unknown.png",
+            Assert.AreEqual($"{UrlProvider.Url}evergreen/assets/img/unknown.png",
                 filterElement.GetBooleanCheckboxImg("UNKNOWN").GetAttribute("src"),
                 "Incorrect image for Unknown value");
         }

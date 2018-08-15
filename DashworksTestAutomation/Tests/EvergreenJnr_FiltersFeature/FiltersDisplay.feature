@@ -6,7 +6,7 @@ Background: Pre-Conditions
 	Then Evergreen Dashboards page should be displayed to the user   
 
 @Evergreen @Applications @Evergreen_FiltersFeature @FiltersDisplay @DAS10651
-Scenario: EvergreenJnr_ApplicationsList_CheckTrue-FalseOptionsAndImagesInFilterInfo
+Scenario: EvergreenJnr_ApplicationsList_CheckTrueFalseOptionsAndImagesInFilterInfo
 	When User clicks "Applications" on the left-hand menu
 	Then "Applications" list should be displayed to the user
 	When User clicks the Filters button
