@@ -1,5 +1,6 @@
 ﻿using DashworksTestAutomation.Base;
 using DashworksTestAutomation.Extensions;
+using DashworksTestAutomation.Pages.Evergreen.AdminDetailsPages;
 using DashworksTestAutomation.Pages.ManagementConsole;
 using DashworksTestAutomation.Utils;
 using OpenQA.Selenium.Remote;
@@ -51,7 +52,7 @@ namespace DashworksTestAutomation.Pages.Projects
         [When(@"User navigate to Evergreen link")]
         public void WhenUserNavigateToEvergreenLink()
         {
-            var page = _driver.NowAt<ProjectLogin>();
+            var page = _driver.NowAt<BaseGridPage>();
 
             _driver.MouseHover(page.EvergreenLink);
             page.EvergreenLink.Click();

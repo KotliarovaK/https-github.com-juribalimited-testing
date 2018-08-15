@@ -2961,7 +2961,7 @@ Scenario: EvergreenJnr_AdminPage_CreatingDefaultBucket
 	Then Success message The "Unassigned" bucket has been updated is displayed on the Buckets page
 	And Delete "NewBucket5" Bucket in the Administration
 
-@Evergreen @Admin @EvergreenJnr_AdminPage @AdminPage @DAS12999 @Buckets @Not_Run
+@Evergreen @Admin @EvergreenJnr_AdminPage @AdminPage @DAS12999 @Buckets
 Scenario: EvergreenJnr_AdminPage_AddingDevicesFromBuckets
 	When User clicks Admin on the left-hand menu
 	Then Admin page should be displayed to the user
@@ -2996,10 +2996,10 @@ Scenario: EvergreenJnr_AdminPage_AddingDevicesFromBuckets
 	Then data in table is sorted by "Operating System" column in ascending order on the Admin page
 	When User click on "Operating System" column header on the Admin page
 	Then data in table is sorted by "Operating System" column in descending order on the Admin page
-	When User click on "Owner Display Name" column header on the Admin page
-	Then data in table is sorted by "Owner Display Name" column in ascending order on the Admin page
-	When User click on "Owner Display Name" column header on the Admin page
-	Then data in table is sorted by "Owner Display Name" column in descending order on the Admin page
+	#When User click on "Owner Display Name" column header on the Admin page
+	#Then data in table is sorted by "Owner Display Name" column in ascending order on the Admin page
+	#When User click on "Owner Display Name" column header on the Admin page
+	#Then data in table is sorted by "Owner Display Name" column in descending order on the Admin page
 	When User enters "00KWQ4J3WKQM0G" text in the Search field for "Hostname" column
 	Then Counter shows "1" found rows
 	When User clicks Reset Filters button on the Admin page
@@ -3022,7 +3022,7 @@ Scenario: EvergreenJnr_AdminPage_AddingDevicesFromBuckets
 	Then Success message is displayed and contains "The selected devices have been added to the selected bucket" text
 	Then Delete "TestBucket6" Bucket in the Administration
 
-@Evergreen @Admin @EvergreenJnr_AdminPage @AdminPage @DAS12999 @Buckets @Not_Run
+@Evergreen @Admin @EvergreenJnr_AdminPage @AdminPage @DAS12999 @DAS13253 @Buckets
 Scenario: EvergreenJnr_AdminPage_AddingUsersFromBuckets
 	When User clicks Admin on the left-hand menu
 	Then Admin page should be displayed to the user
@@ -3050,10 +3050,10 @@ Scenario: EvergreenJnr_AdminPage_AddingUsersFromBuckets
 	#Then data in table is sorted by "Username" column in ascending order on the Admin page
 	#When User click on "Username" column header on the Admin page
 	##Then data in table is sorted by "Username" column in descending order on the Admin page
-	#When User click on "Domain" column header on the Admin page
-	#Then data in table is sorted by "Domain" column in ascending order on the Admin page
-	#When User click on "Domain" column header on the Admin page
-	#Then data in table is sorted by "Domain" column in descending order on the Admin page
+	When User click on "Domain" column header on the Admin page
+	Then data in table is sorted by "Domain" column in ascending order on the Admin page
+	When User click on "Domain" column header on the Admin page
+	Then data in table is sorted by "Domain" column in descending order on the Admin page
 	#When User click on "Display Name" column header on the Admin page
 	#Then data in table is sorted by "Display Name" column in ascending order on the Admin page
 	#When User click on "Display Name" column header on the Admin page
@@ -3083,7 +3083,7 @@ Scenario: EvergreenJnr_AdminPage_AddingUsersFromBuckets
 	Then Success message is displayed and contains "The selected users have been added to the selected bucket" text
 	Then Delete "TestBucket7" Bucket in the Administration
 
-@Evergreen @Admin @EvergreenJnr_AdminPage @AdminPage @DAS12999 @Buckets @Not_Run
+@Evergreen @Admin @EvergreenJnr_AdminPage @AdminPage @DAS12999 @Buckets
 Scenario: EvergreenJnr_AdminPage_AddingMailboxesFromBuckets
 	When User clicks Admin on the left-hand menu
 	Then Admin page should be displayed to the user
@@ -3150,3 +3150,48 @@ Scenario: EvergreenJnr_AdminPage_AddingMailboxesFromBuckets
 	Then Success message is displayed and contains "The selected mailboxes have been added to the selected bucket" text
 	Then There are no errors in the browser console
 	And Delete "TestBucket8" Bucket in the Administration
+
+@Evergreen @Admin @EvergreenJnr_AdminPage @AdminPage @DAS12999 @Delete_Newly_Created_Project @Projects
+Scenario: EvergreenJnr_AdminPage_AddingRequestTypesAndCategories
+	When User clicks Admin on the left-hand menu
+	Then Admin page should be displayed to the user
+	When User clicks "Projects" link on the Admin page
+	Then "Projects" page should be displayed to the user
+	When User clicks the "CREATE PROJECT" Action button
+	Then "Create Project" page should be displayed to the user
+	When User enters "TestName18" in the Project Name field
+	And User selects "All Mailboxes" in the Scope Project dropdown
+	And User clicks Create button on the Create Project page
+	Then Success message is displayed and contains "Your project has been created" text
+	When User clicks "Projects" on the left-hand menu
+	Then "Projects Home" page is displayed to the user
+	When User navigate to "TestName18" Project
+	Then Project with "TestName18" name is displayed correctly
+	Then "Manage Project Details" page is displayed to the user
+	When User navigate to "Request Types" tab
+	Then "Manage Request Types" page is displayed to the user
+	When User clicks "Create Request Type" button
+	And User create Request Type
+	| Name              | Description             | ObjectTypeString |
+	| 18RequestTypeName | MailboxScheduledProject | Mailbox          |
+	When User navigate to "Categories" tab
+	Then "Manage Categories" page is displayed to the user
+	When User clicks "Create Category" button
+	And User create Category
+	| Name              | Description          | ObjectTypeString |
+	| 18MailboxCategory | UserScheduledProject | Mailbox          |
+	Then Success message is displayed with "Category successfully created." text
+	When User navigate to Evergreen link
+	When User clicks Admin on the left-hand menu
+	Then Admin page should be displayed to the user
+	When User clicks "Projects" link on the Admin page
+	Then "Projects" page should be displayed to the user
+	When User enters "TestName18" text in the Search field for "Project" column
+	And User clicks content from "Project" column
+	Then Project "TestName18" is displayed to user
+	When User changes Request Type to "18RequestTypeName"
+	When User changes Category to "18MailboxCategory"
+	When User selects "Scope Details" tab on the Project details page
+	When User selects "Scope Changes" tab on the Project details page
+	#Then "18RequestTypeName" Request Type is displayed to the user
+	#Then "18MailboxCategory" Category is displayed to the user
