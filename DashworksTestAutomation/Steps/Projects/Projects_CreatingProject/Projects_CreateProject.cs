@@ -11,7 +11,6 @@ using OpenQA.Selenium;
 using OpenQA.Selenium.Remote;
 using TechTalk.SpecFlow;
 using TechTalk.SpecFlow.Assist;
-using ReadinessEnum = DashworksTestAutomation.DTO.Projects.ReadinessEnum;
 using TaskStatusEnum = DashworksTestAutomation.DTO.Projects.TaskStatusEnum;
 
 namespace DashworksTestAutomation.Steps.Projects
@@ -141,8 +140,11 @@ namespace DashworksTestAutomation.Steps.Projects
             if (_projectDto.ProjectType.Equals(ProjectTypeEnum.UserScheduledProject))
                 _detailsDto.OnboardUsedApplicationsByAssociationTo = OnboardUsedApplicationsByAssociationToEnum.Computer;
 
+            //generate random color by index
+            var option = page.SelectOnboardedApplications();
+            _detailsDto.ReadinessForOnboardedApplications.Add(option.Key, option.Value);
 
-            page.SelectOnboardedApplications(_detailsDto.DefaultReadinessForOnboardedApplications);
+            //page.SelectOnboardedApplications(_detailsDto.DefaultReadinessForOnboardedApplications);
             page.ShowLinkedObjects.SelectboxSelect(_detailsDto.DefaultValueForShowLinkedObjects.GetValue());
             page.ApplicationsTab1.SelectboxSelect(_detailsDto.DefaultViewForProjectObjectApplicationsTab1.GetValue());
             page.ApplicationsTab2.SelectboxSelect(_detailsDto.DefaultViewForProjectObjectApplicationsTab2.GetValue());
@@ -494,12 +496,10 @@ namespace DashworksTestAutomation.Steps.Projects
             _taskPropertiesValuesDto.TaskStatus = (TaskStatusEnum)Enum.Parse(typeof(TaskStatusEnum), _taskPropertiesValuesDto.TaskStatusString);
 
             page.Name.SendKeys(_taskPropertiesValuesDto.Name);
-            if (!string.IsNullOrEmpty(_taskPropertiesValuesDto.ReadinessString))
-            {
-                //assign ReadinessString to ReadinessEnum
-                _taskPropertiesValuesDto.Readiness = (ReadinessEnum)Enum.Parse(typeof(ReadinessEnum), _taskPropertiesValuesDto.ReadinessString);
-                page.SelectOnboardedApplications(_taskPropertiesValuesDto.Readiness);
-            }
+
+            if (page.ReadinessListClick.Displayed())
+                page.SelectReadiness(_taskPropertiesValuesDto.ReadinessIndex); 
+
             page.TaskStatus.SelectboxSelect(_taskPropertiesValuesDto.TaskStatus.GetValue());
             page.DefaultValue.SetCheckboxState(_taskPropertiesValuesDto.DefaultValue);
         }
@@ -524,12 +524,10 @@ namespace DashworksTestAutomation.Steps.Projects
                 page.Name.Clear();
                 page.Name.SendKeys(_taskPropertiesValuesDto.Name);
             }
-            if (!string.IsNullOrEmpty(_taskPropertiesValuesDto.ReadinessString))
-            {
-                //assign ReadinessString to ReadinessEnum
-                _taskPropertiesValuesDto.Readiness = (ReadinessEnum)Enum.Parse(typeof(ReadinessEnum), _taskPropertiesValuesDto.ReadinessString);
-                page.SelectOnboardedApplications(_taskPropertiesValuesDto.Readiness);
-            }
+            int? x = _taskPropertiesValuesDto.ReadinessIndex;
+            if (page.ReadinessListClick.Displayed())
+                page.SelectReadiness(_taskPropertiesValuesDto.ReadinessIndex);
+
             if (!string.IsNullOrEmpty(_taskPropertiesValuesDto.TaskStatusString))
             {
                 //assign TaskStatusString to TaskStatusEnum
@@ -664,7 +662,7 @@ namespace DashworksTestAutomation.Steps.Projects
                         page.NextTeamsListLink.Click();
                     }
                     catch
-                    {}                      
+                    { }
                     var team = page.GetTheCreatedElementInTableByName(_projectDto.TeamProperties.Last().TeamName);
                     Assert.IsTrue(team.Displayed(), "Selected Team is not displayed in the table");
                 }
@@ -675,7 +673,7 @@ namespace DashworksTestAutomation.Steps.Projects
                 }
             }
             catch
-            {}
+            { }
         }
 
         [Then(@"created Group is displayed in the table")]

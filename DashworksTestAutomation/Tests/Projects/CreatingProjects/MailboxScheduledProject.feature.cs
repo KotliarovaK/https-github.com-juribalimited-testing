@@ -423,12 +423,12 @@ namespace DashworksTestAutomation.Tests.Projects.CreatingProjects
             testRunner.And("User clicks \"Add Value\" button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
             TechTalk.SpecFlow.Table table24 = new TechTalk.SpecFlow.Table(new string[] {
                         "Name",
-                        "ReadinessString",
+                        "ReadinessIndex",
                         "TaskStatusString",
                         "DefaultValue"});
             table24.AddRow(new string[] {
                         "TestValueName",
-                        "Red",
+                        "3",
                         "Open",
                         "true"});
             testRunner.When("User create new Value", ((string)(null)), table24, "When ");
