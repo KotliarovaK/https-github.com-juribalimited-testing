@@ -3083,7 +3083,7 @@ Scenario: EvergreenJnr_AdminPage_AddingUsersFromBuckets
 	Then Success message is displayed and contains "The selected users have been added to the selected bucket" text
 	Then Delete "TestBucket7" Bucket in the Administration
 
-@Evergreen @Admin @EvergreenJnr_AdminPage @AdminPage @DAS12999 @Buckets @Not_Run
+@Evergreen @Admin @EvergreenJnr_AdminPage @AdminPage @DAS12999 @Buckets
 Scenario: EvergreenJnr_AdminPage_AddingMailboxesFromBuckets
 	When User clicks Admin on the left-hand menu
 	Then Admin page should be displayed to the user
@@ -3150,3 +3150,27 @@ Scenario: EvergreenJnr_AdminPage_AddingMailboxesFromBuckets
 	Then Success message is displayed and contains "The selected mailboxes have been added to the selected bucket" text
 	Then There are no errors in the browser console
 	And Delete "TestBucket8" Bucket in the Administration
+
+@Evergreen @Admin @EvergreenJnr_AdminPage @AdminPage @DAS12999 @Delete_Newly_Created_Project @Projects
+Scenario: EvergreenJnr_AdminPage_AddingRequestTypesAndCategories
+	When User clicks Admin on the left-hand menu
+	Then Admin page should be displayed to the user
+	When User clicks "Projects" link on the Admin page
+	Then "Projects" page should be displayed to the user
+	When User clicks the "CREATE PROJECT" Action button
+	Then "Create Project" page should be displayed to the user
+	When User enters "TestName18" in the Project Name field
+	And User selects "All Mailboxes" in the Scope Project dropdown
+	And User clicks Create button on the Create Project page
+	Then Success message is displayed and contains "Your project has been created" text
+	When User clicks "Projects" on the left-hand menu
+	Then "Projects Home" page is displayed to the user
+	When User navigate to "x" Project
+	Then Project with "x" name is displayed correctly
+	Then "Manage Project Details" page is displayed to the user
+	When User navigate to "Request Types" tab
+	Then "Manage Request Types" page is displayed to the user
+	When User clicks "Create Request Type" button
+	And User create Request Type
+	| Name                 | Description              | ObjectTypeString |
+	| 5TestRequestTypeName | ComputerScheduledProject | User             |
