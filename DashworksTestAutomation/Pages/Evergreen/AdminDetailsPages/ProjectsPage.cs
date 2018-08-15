@@ -96,6 +96,12 @@ namespace DashworksTestAutomation.Pages.Evergreen.AdminDetailsPages
         [FindsBy(How = How.XPath, Using = "//div[@class='permissions no-margin-bottom']/admin-mailbox-permission/ul/li/button/span")]
         public IWebElement AddMailboxFolderPermissionsButton { get; set; }
 
+        [FindsBy(How = How.XPath, Using = "//mat-select[@aria-label='Request Type']")]
+        public IWebElement RequestTypeDropdown { get; set; }
+
+        [FindsBy(How = How.XPath, Using = "//mat-select[@aria-label='Category']")]
+        public IWebElement CategoryDropdown { get; set; }
+
         public override List<By> GetPageIdentitySelectors()
         {
             Driver.WaitForDataLoading();
@@ -213,6 +219,18 @@ namespace DashworksTestAutomation.Pages.Evergreen.AdminDetailsPages
             string ListNameSelector = $"//span[@class='mat-option-text'][text()='{language}']";
             Driver.WaitWhileControlIsNotDisplayed(By.XPath(ListNameSelector));
             Driver.FindElement(By.XPath(ListNameSelector)).Click();
+        }
+
+        public IWebElement GetRequestTypeByName(string requestTypeName)
+        {
+            var requestTypeSelector = $"//mat-option/span[contains(text(), '{requestTypeName}')]";
+            return Driver.FindElement(By.XPath(requestTypeSelector));
+        }
+
+        public IWebElement GetCategoryByName(string categoryName)
+        {
+            var categorySelector = $"//mat-option/span[contains(text(), '{categoryName}')]";
+            return Driver.FindElement(By.XPath(categorySelector));
         }
 
         public bool GetDisabledAssociationName(string associationName)
