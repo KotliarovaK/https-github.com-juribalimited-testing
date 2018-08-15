@@ -127,8 +127,8 @@ Scenario: Projects_CreateMailboxScheduledProject
 	Then created Category is displayed in the table
 	When User clicks "Create Category" button
 	And User create Category
-	| Name              | Description             | ObjectTypeString |
-	| Computer Category | MailboxScheduledProject | Computer         |
+	| Name             | Description             | ObjectTypeString |
+	| Mailbox Category | MailboxScheduledProject | Mailbox          |
 	Then Success message is displayed with "Category successfully created." text
 	When User clicks "« Go Back" button
 	Then created Category is displayed in the table

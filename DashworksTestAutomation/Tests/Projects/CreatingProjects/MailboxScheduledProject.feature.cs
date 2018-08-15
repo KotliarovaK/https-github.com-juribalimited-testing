@@ -308,9 +308,9 @@ namespace DashworksTestAutomation.Tests.Projects.CreatingProjects
                         "Description",
                         "ObjectTypeString"});
             table16.AddRow(new string[] {
-                        "Computer Category",
+                        "Mailbox Category",
                         "MailboxScheduledProject",
-                        "Computer"});
+                        "Mailbox"});
             testRunner.And("User create Category", ((string)(null)), table16, "And ");
             testRunner.Then("Success message is displayed with \"Category successfully created.\" text", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
             testRunner.When("User clicks \"« Go Back\" button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");

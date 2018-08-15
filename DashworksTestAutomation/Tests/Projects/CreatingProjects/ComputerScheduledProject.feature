@@ -665,14 +665,6 @@ Scenario: Projects_CreateComputerScheduledProject
 	| Title                    | Text     |
 	| ComputerScheduledProject | TestText |
 	Then Success message is displayed with "Project news was successfully updated." text
-		#Capacity tabs
-	When User navigate to "Capacity" tab
-	Then "Manage Capacity" page is displayed to the user
-	When User selects "Scheduled Date" type of date
-	When User updates the Details on Capacity tab
-	| EnablePlanning | DisplayColors | EnforceOonSelfServicePage | EnforceOnProjectObjectPage | CapacityToReach |
-	| true           | true          | true                      | true                       | 80              |
-	Then Success message is displayed with "Details successfully updated." text
 		#Self Service tabs
 	When User navigate to "Self Service" tab
 	Then "Manage Self Service" page is displayed to the user
@@ -680,16 +672,19 @@ Scenario: Projects_CreateComputerScheduledProject
 	| EnableSelfServicePortal | AllowAnonymousUsers | ThisProjectDefault | Mode1 | Mode2 | BaseUrl                           | NoLink | DashworksProjectHomepage | CustomUrl | CustomUrlTextField    |
 	| true                    | true                | true               | false | true  | http://automation.corp.juriba.com | false  | false                    | true      | http://www.juriba.com |
 	When User navigate to "Welcome" page on Self Service tab
-	#When User add to object details "Attribute" type with "Language" field
-	#When User add to object details "Attribute" type with "Request Type" field
-	And User updates the Welcome page on Self Service tab
+	When User adds to object details "Attribute" type with "Manufacturer" field
+	When User adds to object details "Attribute" type with "Department" field
+	When User adds to object details "Attribute" type with "Model" field
+	When User clicks "Update" button
+	Then Success message is displayed with "Self Service Screen successfully updated" text
+	When User updates the Welcome page on Self Service tab
 	| AllowUsersToSearch | AllowToChangeLanguage | ShowProjectSelector | ShowObjectDetails | ShowMoreDetailsLink | PageDescription | ProjectName              |
 	| true               | true                  | true                | true              | true                | TestText        | ComputerScheduledProject |
 	Then Success message is displayed with "Self Service Screen successfully updated" text
 	When User navigate to "Computer Ownership" page on Self Service tab
 	And User updates the Ownership page on Self Service tab
-	| ShowScreen | NamefromHttpString | ShowComputers | ShowCategory | AllowUsersToSearch | AllowUsersToSetPrimary | AllowUsersToAddANote | LimitMaximum | LimitMinimum | PageDescription          |
-	| true       | RemoteHost         | true          | true         | true               | true                   | true                 | 100          | 10           | ComputerScheduledProject |
+	| ShowScreen | NamefromHttpString | ShowCategory | UsersOfTheComputer | OwnerOfTheComputer | AllowUsersToChangeUsers | AllowUsersToAddANote | LimitMaximum | LimitMinimum | PageDescription          |
+	| true       | RemoteHost         | true         | true               | true               | true                    | true                 | 100          | 10           | ComputerScheduledProject |
 	Then Success message is displayed with "Self Service Screen successfully updated" text
 	When User navigate to "Department and Location" page on Self Service tab
 	And User updates the Department and Location page on Self Service tab
@@ -703,32 +698,46 @@ Scenario: Projects_CreateComputerScheduledProject
 	Then Success message is displayed with "Self Service Screen successfully updated" text
 	When User navigate to "Project Date" page on Self Service tab
 	When User selects "Scheduled Date" Task
+	When User adds "Group Date Task" Additional Task
 	When User clicks "Update" button
 	And User updates the Project Date page on Self Service tab
 	| ShowThisScreen | ShowComputerNameString | AllowUsersToAddANote | MinimumHours | MaximumHours | PageDescription          |
 	| true           | XForwardedFor          | true                 | 10           | 100          | ComputerScheduledProject |
 	Then Success message is displayed with "Self Service Screen successfully updated" text
-	#When User add "" Additional Task
 	When User navigate to "Other Options 1" page on Self Service tab
+	When User adds "Dropdown Non RAG Owner" Linked Object Tasks
+	When User adds "Radiobutton RAG Owner Date" Linked Object Tasks
+	When User adds "Group Radiobutton RAG Date Time Owner" Linked Object Tasks
+	When User adds "Text Task" Linked Object Tasks
+	When User clicks "Update" button
 	And User updates the first Other Options page on Self Service tab
-	| ShowScreen | AllowUsersToAddANote | OnlyOwned | AllLinked | PageDescription          |
-	| true       | true                 | false     | true      | ComputerScheduledProject |
-#TODO User Task
-#TODO Computer Task
+	| ShowScreen | AllowUsersToAddANote | PageDescription          |
+	| true       | true                 | ComputerScheduledProject |
 	Then Success message is displayed with "Self Service Screen successfully updated" text
 	When User navigate to "Other Options 2" page on Self Service tab
+	When User adds "Target Date" Linked Object Tasks
+	When User adds "Forecast Date" Linked Object Tasks
+	When User adds "Scheduled Date" Linked Object Tasks
+	When User adds "Migrated Date" Linked Object Tasks
+	When User adds "Completed Date" Linked Object Tasks
+	When User clicks "Update" button
 	And User updates the second Other Options page on Self Service tab
-	| ShowScreen | AllowUsersToAddANote | OnlyOwned | AllLinked | PageDescription          |
-	| false      | true                 | true      | false     | ComputerScheduledProject |
-#TODO User Task
-#TODO Computer Task
+	| ShowScreen | AllowUsersToAddANote | PageDescription          |
+	| true       | true                 | ComputerScheduledProject |
 	Then Success message is displayed with "Self Service Screen successfully updated" text
 	When User navigate to "Thank You" page on Self Service tab
 	And User updates the Thank You page on Self Service tab
 	| SelfServicePortal | NavigationMenu | ChoicesSummary | IncludeLink | PageDescription          |
 	| true              | true           | true           | true        | ComputerScheduledProject |
 	Then Success message is displayed with "Self Service Screen successfully updated" text
-		#Capacity tabs
+			#Capacity tabs
+	When User navigate to "Capacity" tab
+	Then "Manage Capacity" page is displayed to the user
+	When User selects "Scheduled Date" type of date
+	When User updates the Details on Capacity tab
+	| EnablePlanning | DisplayColors | EnforceOonSelfServicePage | EnforceOnProjectObjectPage | CapacityToReach |
+	| true           | true          | true                      | true                       | 80              |
+	Then Success message is displayed with "Details successfully updated." text
 	When User navigate to "Capacity" page
 	And User updates the Capacity page on Capacity tab for "1" Team
 	| StartDate   | EndDate     | MondayCheckbox | TuesdayCheckbox | WednesdayCheckbox | ThursdayCheckbox | FridayCheckbox | SaturdayCheckbox | SundayCheckbox | Monday | Tuesday | Wednesday | Thursday | Friday | Saturday | Sunday |
