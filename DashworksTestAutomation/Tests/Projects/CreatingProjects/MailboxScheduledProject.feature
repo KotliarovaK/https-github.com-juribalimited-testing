@@ -120,8 +120,22 @@ Scenario: Projects_CreateMailboxScheduledProject
 	Then "Manage Categories" page is displayed to the user
 	When User clicks "Create Category" button
 	And User create Category
-	| Name             | Description             | ObjectTypeString |
-	| TestCategoryName | MailboxScheduledProject | Mailbox          |
+	| Name          | Description             | ObjectTypeString |
+	| User Category | MailboxScheduledProject | User             |
+	Then Success message is displayed with "Category successfully created." text
+	When User clicks "« Go Back" button
+	Then created Category is displayed in the table
+	When User clicks "Create Category" button
+	And User create Category
+	| Name              | Description             | ObjectTypeString |
+	| Computer Category | MailboxScheduledProject | Computer         |
+	Then Success message is displayed with "Category successfully created." text
+	When User clicks "« Go Back" button
+	Then created Category is displayed in the table
+	When User clicks "Create Category" button
+	And User create Category
+	| Name                 | Description             | ObjectTypeString |
+	| Application Category | MailboxScheduledProject | Application      |
 	Then Success message is displayed with "Category successfully created." text
 	When User clicks "« Go Back" button
 	Then created Category is displayed in the table

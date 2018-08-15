@@ -52,6 +52,13 @@ namespace DashworksTestAutomation.Steps.Projects
             upd.UpdateButton.Click();
         }
 
+        [When(@"User selects ""(.*)"" type of date")]
+        public void WhenUserSelectsTypeOfDate(string checkboxName)
+        {
+            var page = _driver.NowAt<Capacity_DetailsPage>();
+            page.SelectTheTypeOfDateByName(checkboxName);
+        }
+
         [When(@"User selects ""(.*)"" Task")]
         public void WhenUserSelectsTask(string checkboxName)
         {

@@ -68,16 +68,28 @@ namespace DashworksTestAutomation.Steps.Projects
                 page.BaseUrl.Clear();
                 page.BaseUrl.SendKeys(_detailsDto.BaseUrl);
             }
-            
+
             page.NoLink.SetCheckboxState(_detailsDto.NoLink);
             page.DashworksProjectHomepage.SetCheckboxState(_detailsDto.DashworksProjectHomepage);
             page.CustomUrl.SetCheckboxState(_detailsDto.CustomUrl);
             if (_detailsDto.CustomUrl.Equals(true))
                 page.CustomUrlTextField.Clear();
-                page.CustomUrlTextField.SendKeys(_detailsDto.CustomUrlTextField);
+            page.CustomUrlTextField.SendKeys(_detailsDto.CustomUrlTextField);
 
             var upd = _driver.NowAt<MainElementsOfProjectCreation>();
             upd.UpdateButton.Click();
+        }
+
+        [When(@"User add to object details ""(.*)"" type with ""(.*)"" field")]
+        public void WhenUserAddToObjectDetailsTypeWithField(string typeName, string fieldName)
+        {
+            var page = _driver.NowAt<SelfService_WelcomePage>();
+
+            page.Type.Click();
+            page.GetTypeByName(typeName);
+            page.Field.Click();
+            page.GetFieldByName(fieldName);
+            page.AddObjectDetailsButton.Click();
         }
 
         [When(@"User updates the Welcome page on Self Service tab")]
@@ -99,8 +111,6 @@ namespace DashworksTestAutomation.Steps.Projects
             page.ShowProjectSelector.SetCheckboxState(_welcomeDto.ShowProjectSelector);
             page.ShowObjectDetails.SetCheckboxState(_welcomeDto.ShowObjectDetails);
             page.ShowMoreDetailsLink.SetCheckboxState(_welcomeDto.ShowMoreDetailsLink);
-            //page.Type.SelectboxSelect(_welcomeDto.Type.GetValue());
-            //page.Field.SelectboxSelect(_welcomeDto.Field.GetValue());
             page.PageDescription.SendKeys(_welcomeDto.PageDescription);
             page.ProjectName.SendKeys(_welcomeDto.ProjectName);
 
@@ -117,20 +127,31 @@ namespace DashworksTestAutomation.Steps.Projects
 
             page.ShowScreen.SetCheckboxState(_computerOwnershipDto.ShowScreen);
             page.ShowCategory.SetCheckboxState(_computerOwnershipDto.ShowCategory);
-            //if (!string.IsNullOrEmpty(_computerOwnershipDto.AllowUsersToSearch.ToString()))
-            //    page.AllowUsersToSearch.SetCheckboxState(_computerOwnershipDto.AllowUsersToSearch);
+
 
             if (_projectDto.ProjectType.Equals(ProjectTypeEnum.ComputerScheduledProject))
             {
                 //assign NamefromHttpString to NamefromHttpEnum
                 _computerOwnershipDto.NamefromHttp = (NamefromHttpEnum)Enum.Parse(typeof(NamefromHttpEnum), _computerOwnershipDto.NamefromHttpString);
                 page.NamefromHttp.SelectboxSelect(_computerOwnershipDto.NamefromHttp.GetValue());
-                page.AllowUsersToChangeOwner.SetCheckboxState(_computerOwnershipDto.AllowUsersToChangeOwner);
-                page.AllowUsersToChangeUsers.SetCheckboxState(_computerOwnershipDto.AllowUsersToChangeUsers);
-                page.UsersOfTheComputer.SetCheckboxState(_computerOwnershipDto.UsersOfTheComputer);
-                page.OwnerOfTheComputer.SetCheckboxState(_computerOwnershipDto.OwnerOfTheComputer);
-                page.LimitMaximum.SendKeys(_computerOwnershipDto.LimitMaximum);
-                page.LimitMinimum.SendKeys(_computerOwnershipDto.LimitMinimum);
+
+                if (_welcomeDto.ShowObjectDetails.Equals(true))
+                {
+                    page.ShowComputers.SetCheckboxState(_computerOwnershipDto.ShowComputers);
+                    page.AllowUsersToSearch.SetCheckboxState(_computerOwnershipDto.AllowUsersToSearch);
+                    page.AllowUsersToSetPrimary.SetCheckboxState(_computerOwnershipDto.AllowUsersToSetPrimary);
+                    page.LimitMaximum.SendKeys(_computerOwnershipDto.LimitMaximum);
+                    page.LimitMinimum.SendKeys(_computerOwnershipDto.LimitMinimum);
+                }
+                else
+                {
+                    page.AllowUsersToChangeOwner.SetCheckboxState(_computerOwnershipDto.AllowUsersToChangeOwner);
+                    page.AllowUsersToChangeUsers.SetCheckboxState(_computerOwnershipDto.AllowUsersToChangeUsers);
+                    page.UsersOfTheComputer.SetCheckboxState(_computerOwnershipDto.UsersOfTheComputer);
+                    page.OwnerOfTheComputer.SetCheckboxState(_computerOwnershipDto.OwnerOfTheComputer);
+                    page.LimitMaximum.SendKeys(_computerOwnershipDto.LimitMaximum);
+                    page.LimitMinimum.SendKeys(_computerOwnershipDto.LimitMinimum);
+                }
             }
 
             if (_projectDto.ProjectType.Equals(ProjectTypeEnum.UserScheduledProject))
@@ -143,6 +164,8 @@ namespace DashworksTestAutomation.Steps.Projects
                 page.LimitMaximum.SendKeys(_computerOwnershipDto.LimitMaximum);
                 page.LimitMinimum.SendKeys(_computerOwnershipDto.LimitMinimum);
             }
+
+
             page.AllowUsersToAddANote.SetCheckboxState(_computerOwnershipDto.AllowUsersToAddANote);
             page.PageDescription.SendKeys(_computerOwnershipDto.PageDescription);
 
@@ -231,7 +254,7 @@ namespace DashworksTestAutomation.Steps.Projects
                     page.ShowComputerName.SelectboxSelect(_projectDateDto.ShowComputerName.GetValue());
                 }
             }
-            
+
             page.AllowUsersToAddANote.SetCheckboxState(_projectDateDto.AllowUsersToAddANote);
             page.MinimumHours.Clear();
             page.MinimumHours.SendKeys(_projectDateDto.MinimumHours);
