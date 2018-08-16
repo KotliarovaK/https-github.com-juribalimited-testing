@@ -203,7 +203,7 @@ namespace DashworksTestAutomation.Pages.Evergreen.DetailsTabsMenu
         {
             Driver.WaitWhileControlIsNotDisplayed(
                 By.XPath($".//div[@class='ng-star-inserted']/span[(text()='{filterName}')]"));
-            return Driver.FindElement(By.XPath($".//div[@class='ng-star-inserted']/span[(text()='{filterName}')]"));
+            return Driver.FindElement(By.XPath($".//div[@class='ng-star-inserted']//span[(text()='{filterName}')]"));
         }
 
         public IWebElement GetBooleanStringFilterByName(string filterName)
