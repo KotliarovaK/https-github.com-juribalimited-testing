@@ -295,6 +295,19 @@ namespace DashworksTestAutomation.Steps.Dashworks
             Assert.IsTrue(filterElement.ColumnCheckboxChecked.Displayed(), $"{checkboxName} Checkbox is not selected");
         }
 
+        [When(@"User selects following date filter on the Details Page")]
+        public void WhenUserSelectsFollowingDateFilterOnTheDetailsPage(Table table)
+        {
+            var filter = _driver.NowAt<ApplicationsDetailsTabsMenu>();
+            _driver.WaitForDataLoading();
+            filter.ResetFiltersButton.Click();
+            foreach (var row in table.Rows)
+            {
+                filter.DateFilterValue.SendKeys(row["FilterData"]);
+            }
+            _driver.WaitForDataLoading();
+        }
+
         [Then(@"Content is present in the table on the Details Page")]
         public void ThenContentIsPresentInTheTableOnTheDetailsPage()
         {

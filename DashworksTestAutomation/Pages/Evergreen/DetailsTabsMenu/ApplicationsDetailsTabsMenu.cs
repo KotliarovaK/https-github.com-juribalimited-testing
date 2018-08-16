@@ -49,6 +49,9 @@ namespace DashworksTestAutomation.Pages.Evergreen.DetailsTabsMenu
         [FindsBy(How = How.XPath, Using = ".//mat-option[contains(@class, 'mat-selected')]")]
         public IWebElement SelectedStringFilters { get; set; }
 
+        [FindsBy(How = How.XPath, Using = "//input[@class='ag-filter-filter']")]
+        public IWebElement DateFilterValue { get; set; }
+
         [FindsBy(How = How.XPath,
             Using = ".//mat-option[@class='mat-option mat-option-multiple ng-star-inserted mat-active']")]
         public IWebElement UncheckedStringFilters { get; set; }
