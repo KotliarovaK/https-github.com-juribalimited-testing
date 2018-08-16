@@ -17,8 +17,14 @@ namespace DashworksTestAutomation.Pages.Evergreen.ProfileDetailsPages
                 ".//label[contains(text(), 'Mode')]/ancestor::div[@class='form-item']//div[@class='styleSelectDropdown']")]
         public IWebElement DisplayModeDropdown { get; set; }
 
-        [FindsBy(How = How.XPath, Using = ".//span[text()='UPDATE']/ancestor::button")]
+        [FindsBy(How = How.XPath, Using = "//button[contains(@class, 'mat-raised-button')]")]
         public IWebElement UpdateButton { get; set; }
+
+        [FindsBy(How = How.XPath, Using = "//li/span[text()='Preferences']")]
+        public IWebElement PreferencesLink { get; set; }
+
+        [FindsBy(How = How.XPath, Using = "//mat-option/span[text()='Normal']")]
+        public IWebElement DisplayModeNormal { get; set; }
 
         [FindsBy(How = How.XPath, Using = ".//div[@class='inline-success ng-star-inserted']")]
         public IWebElement SuccessMessage { get; set; }
@@ -29,6 +35,9 @@ namespace DashworksTestAutomation.Pages.Evergreen.ProfileDetailsPages
         [FindsBy(How = How.XPath, Using = "//a/span[text()='Boîtes aux lettres']")]
         public IWebElement LeftHandMenuOnFrench { get; set; }
 
+        [FindsBy(How = How.XPath, Using = ".//div[@class='form-item']/div[text()='Préférences']")]
+        public IWebElement CaptionOnFrench { get; set; }
+
         public override List<By> GetPageIdentitySelectors()
         {
             Driver.WaitForDataLoading();
@@ -38,6 +47,29 @@ namespace DashworksTestAutomation.Pages.Evergreen.ProfileDetailsPages
                 SelectorFor(this, p => p.DisplayModeDropdown),
                 SelectorFor(this, p => p.UpdateButton)
             };
+        }
+
+        public void ChangeDisplayMode(string displayMode)
+        {
+            DisplayModeDropdown.Click();
+            string displayModeSelector = $".//mat-option/span[text()='{displayMode}']";
+            Driver.WaitWhileControlIsNotDisplayed(By.XPath(displayModeSelector));
+            Driver.FindElement(By.XPath(displayModeSelector)).Click();
+        }
+
+        public string GetSuccessMessageColor()
+        {
+            return SuccessMessage.GetCssValue("background-color");
+        }
+
+        public string GetUpdateButtonColor()
+        {
+            return UpdateButton.GetCssValue("background-color");
+        }
+
+        public string GetLinkMenuColor()
+        {
+            return PreferencesLink.GetCssValue("background-color");
         }
     }
 }
