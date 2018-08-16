@@ -2,6 +2,7 @@
 using DashworksTestAutomation.Base;
 using DashworksTestAutomation.DTO.Projects;
 using DashworksTestAutomation.Extensions;
+using DashworksTestAutomation.Utils;
 using OpenQA.Selenium;
 using OpenQA.Selenium.Support.PageObjects;
 
@@ -20,6 +21,9 @@ namespace DashworksTestAutomation.Pages.Projects
 
         [FindsBy(How = How.XPath, Using = ".//div[@class='selectedItemBox']")]
         public IWebElement OnboardedApplications { get; set; }
+
+        [FindsBy(How = How.XPath, Using = ".//div[contains(@id, 'DefaultPkgOnboardRagStatusID')]//li")]
+        public IList<IWebElement> OnboardedApplicationsOptions { get; set; }
 
         private const string OnboardedApplicationsColorsSelector =
             ".//div[contains(@id,'DefaultPkgOnboardRagStatusID')]//label[text()='{0}']";
@@ -94,12 +98,24 @@ namespace DashworksTestAutomation.Pages.Projects
             };
         }
 
-        public void SelectOnboardedApplications(DefaultReadinessForOnboardedApplicationsEnum color)
+        public KeyValuePair<int, string> GetRandomOnboardedApplicationOption(int index)
         {
             OnboardedApplications.Click();
-            string selector = string.Format(OnboardedApplicationsColorsSelector, color.GetValue());
+            return new KeyValuePair<int, string>(index, OnboardedApplicationsOptions[index].Text);
+        }
+
+        public KeyValuePair<int, string> SelectOnboardedApplications()
+        {
+            return SelectOnboardedApplications(TestDataGenerator.RandomNum(5));
+        }
+
+        public KeyValuePair<int, string> SelectOnboardedApplications(int index)
+        {
+            var option = GetRandomOnboardedApplicationOption(index);
+            string selector = string.Format(OnboardedApplicationsColorsSelector, option.Value);
             Driver.WaitWhileControlIsNotDisplayed(By.XPath(selector));
             Driver.FindElement(By.XPath(selector)).Click();
+            return option;
         }
 
         public IWebElement GetTextInCcEmailAddressField(string text)

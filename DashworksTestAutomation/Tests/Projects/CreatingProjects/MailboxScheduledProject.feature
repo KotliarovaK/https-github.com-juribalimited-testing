@@ -127,8 +127,8 @@ Scenario: Projects_CreateMailboxScheduledProject
 	Then created Category is displayed in the table
 	When User clicks "Create Category" button
 	And User create Category
-	| Name              | Description             | ObjectTypeString |
-	| Computer Category | MailboxScheduledProject | Computer         |
+	| Name             | Description             | ObjectTypeString |
+	| Mailbox Category | MailboxScheduledProject | Mailbox          |
 	Then Success message is displayed with "Category successfully created." text
 	When User clicks "« Go Back" button
 	Then created Category is displayed in the table
@@ -188,8 +188,8 @@ Scenario: Projects_CreateMailboxScheduledProject
 	When User navigate to "Values" page
 	And User clicks "Add Value" button
 	When User create new Value
-	| Name          | ReadinessString | TaskStatusString | DefaultValue |
-	| TestValueName | Red             | Open             | true         |
+	| Name          | ReadinessIndex | TaskStatusString | DefaultValue |
+	| TestValueName | 3              | Open             | true         |
 	And User clicks "Save Value" button
 	When User clicks "« Go Back to Tasks" button
 	Then created Task is displayed in the table

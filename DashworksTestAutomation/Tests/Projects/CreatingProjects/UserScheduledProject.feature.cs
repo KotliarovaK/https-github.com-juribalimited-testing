@@ -295,9 +295,9 @@ namespace DashworksTestAutomation.Tests.Projects.CreatingProjects
                         "Description",
                         "ObjectTypeString"});
             table15.AddRow(new string[] {
-                        "Mailbox Category",
+                        "Computer Category",
                         "UserScheduledProject",
-                        "Mailbox"});
+                        "Computer"});
             testRunner.And("User create Category", ((string)(null)), table15, "And ");
             testRunner.Then("Success message is displayed with \"Category successfully created.\" text", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
             testRunner.When("User clicks \"« Go Back\" button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
@@ -423,12 +423,12 @@ namespace DashworksTestAutomation.Tests.Projects.CreatingProjects
             testRunner.And("User clicks \"Add Value\" button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
             TechTalk.SpecFlow.Table table24 = new TechTalk.SpecFlow.Table(new string[] {
                         "Name",
-                        "ReadinessString",
+                        "ReadinessIndex",
                         "TaskStatusString",
                         "DefaultValue"});
             table24.AddRow(new string[] {
                         "TestValueName",
-                        "Red",
+                        "3",
                         "Open",
                         "false"});
             testRunner.When("User create new Value", ((string)(null)), table24, "When ");
@@ -503,12 +503,12 @@ namespace DashworksTestAutomation.Tests.Projects.CreatingProjects
             testRunner.And("User clicks \"Add Value\" button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
             TechTalk.SpecFlow.Table table28 = new TechTalk.SpecFlow.Table(new string[] {
                         "Name",
-                        "ReadinessString",
+                        "ReadinessIndex",
                         "TaskStatusString",
                         "DefaultValue"});
             table28.AddRow(new string[] {
                         "TestValueName",
-                        "Grey",
+                        "9",
                         "Closed",
                         "false"});
             testRunner.When("User create new Value", ((string)(null)), table28, "When ");
@@ -564,12 +564,12 @@ namespace DashworksTestAutomation.Tests.Projects.CreatingProjects
             testRunner.And("User clicks \"Add Value\" button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
             TechTalk.SpecFlow.Table table31 = new TechTalk.SpecFlow.Table(new string[] {
                         "Name",
-                        "ReadinessString",
+                        "ReadinessIndex",
                         "TaskStatusString",
                         "DefaultValue"});
             table31.AddRow(new string[] {
                         "TestValueName",
-                        "Grey",
+                        "8",
                         "Closed",
                         "false"});
             testRunner.When("User create new Value", ((string)(null)), table31, "When ");
@@ -696,8 +696,8 @@ namespace DashworksTestAutomation.Tests.Projects.CreatingProjects
                         "false",
                         "false",
                         "true",
-                        "true",
                         "false",
+                        "true",
                         "",
                         "false",
                         "false",

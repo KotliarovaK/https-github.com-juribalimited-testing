@@ -1,12 +1,16 @@
-﻿using System.ComponentModel;
+﻿using System;
+using System.Collections.Generic;
+using System.ComponentModel;
+using System.Web.ModelBinding;
 using DashworksTestAutomation.Extensions;
 using DashworksTestAutomation.Steps.Projects;
+using DashworksTestAutomation.Utils;
 
 namespace DashworksTestAutomation.DTO.Projects
 {
     public class DetailsDto
     {
-        public DefaultReadinessForOnboardedApplicationsEnum DefaultReadinessForOnboardedApplications;
+        public Dictionary<int, string> ReadinessForOnboardedApplications;
         public DefaultValueForShowLinkedObjectsEnum DefaultValueForShowLinkedObjects;
         public DefaultViewForProjectObjectApplicationsTab1Enum DefaultViewForProjectObjectApplicationsTab1;
         public DefaultViewForProjectObjectApplicationsTab2Enum DefaultViewForProjectObjectApplicationsTab2;
@@ -25,8 +29,7 @@ namespace DashworksTestAutomation.DTO.Projects
 
         public DetailsDto()
         {
-            DefaultReadinessForOnboardedApplications =
-                EnumExtensions.GetRandomValue<DefaultReadinessForOnboardedApplicationsEnum>();
+            ReadinessForOnboardedApplications = new Dictionary<int, string>();
             DefaultValueForShowLinkedObjects = EnumExtensions.GetRandomValue<DefaultValueForShowLinkedObjectsEnum>();
             DefaultViewForProjectObjectApplicationsTab1 =
                 EnumExtensions.GetRandomValue<DefaultViewForProjectObjectApplicationsTab1Enum>();
@@ -35,24 +38,6 @@ namespace DashworksTestAutomation.DTO.Projects
             DefaultValueForApplicationRationalization =
                 EnumExtensions.GetRandomValue<DefaultValueForApplicationRationalizationEnum>();
         }
-    }
-
-    public enum DefaultReadinessForOnboardedApplicationsEnum
-    {
-        //[Description("Out Of Scope")]
-        //OutOfScope,
-        //Blue,
-        //[Description("Light Blue")]
-        //LightBlue,
-        Red,
-        //Brown,
-        Amber,
-        //[Description("Really Extremely Orange")]
-        //ReallyExtremelyOrange,
-        //Purple,
-        Green,
-        Grey,
-        None
     }
 
     public enum DefaultValueForShowLinkedObjectsEnum
@@ -83,7 +68,7 @@ namespace DashworksTestAutomation.DTO.Projects
     {
         Retire,
         Keep,
-        Uncategorised
+        Uncategorized
     }
 
     public enum OnboardUsedApplicationsByAssociationToEnum
