@@ -176,6 +176,13 @@ namespace DashworksTestAutomation.Pages.Evergreen.DetailsTabsMenu
             Driver.FindElement(byControl).Click();
         }
 
+        public void GetCheckboxStringFilterByName(string filterName)
+        {
+            string filterSelector = $"//div[@class='ng-star-inserted']/span[(text()='{filterName}')]";
+            Driver.WaitWhileControlIsNotDisplayed(By.XPath(filterSelector));
+            Driver.FindElement(By.XPath(filterSelector)).Click();
+        }
+
         public bool GetStringFilterTextByColumnName(string columnName)
         {
             return Driver.IsElementDisplayed(

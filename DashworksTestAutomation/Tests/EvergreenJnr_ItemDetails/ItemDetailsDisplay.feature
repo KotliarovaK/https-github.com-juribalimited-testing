@@ -446,6 +446,16 @@ Scenario: EvergreenJnr_DevicesList_CheckThatOneUnknownFilterValueIsShownInGroupD
 	| Unknown |
 	When User clicks "True" checkbox from String Filter on the Details Page
 	Then Content is present in the table on the Details Page
+	When User clicks Reset Filters button on the Details Page
+	And User enters "wheelern" text in the Search field for "Username" column on the Details Page
+	Then "1" rows found label displays on Details Page
+	When User clicks Reset Filters button on the Details Page
+	And User enters "Administrator" text in the Search field for "Display Name" column on the Details Page
+	Then "1" rows found label displays on Details Page
+	When User clicks Reset Filters button on the Details Page
+	And User clicks String Filter button for "Domain" column
+	When User selects "DWLABS" checkbox from String Filter on the Details Page
+	Then "0" rows found label displays on Details Page
 
 @Evergreen @Mailboxes @EvergreenJnr_ItemDetails @ItemDetailsDisplay @DAS12245 @DAS12321
 Scenario: EvergreenJnr_MailboxesList_CheckThatListLoadedCorrectlyAndNoConsoleErrorIsNotDisplayed

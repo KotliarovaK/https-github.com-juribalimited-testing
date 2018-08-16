@@ -174,6 +174,13 @@ namespace DashworksTestAutomation.Steps.Dashworks
                 $"All text is displayed for {columnName} column");
         }
 
+        [When(@"User enters ""(.*)"" text in the Search field for ""(.*)"" column on the Details Page")]
+        public void WhenUserEntersTextInTheSearchFieldForColumnOnTheDetailsPage(string text, string columnName)
+        {
+            var searchElement = _driver.NowAt<DetailsPage>();
+            searchElement.GetSearchFieldByColumnName(columnName, text);
+        }
+
         [Then(@"Dropdown List is displayed correctly in the Filter on the Details Page")]
         public void ThenDropdownListIsDisplayedCorrectlyInTheFilterOnTheDetailsPage()
         {
@@ -271,6 +278,14 @@ namespace DashworksTestAutomation.Steps.Dashworks
                 page.GetStringFilterByName(filterName).Click();
             else
                 page.GetBooleanStringFilterByName(filterName).Click();
+        }
+
+        [When(@"User selects ""(.*)"" checkbox from String Filter on the Details Page")]
+        public void WhenUserSelectsCheckboxFromStringFilterOnTheDetailsPage(string filterName)
+        {
+            var page = _driver.NowAt<ApplicationsDetailsTabsMenu>();
+            page.GetCheckboxStringFilterByName(filterName);
+            page.BodyContainer.Click();
         }
 
         [Then(@"""(.*)"" checkbox is checked on the Details Page")]
