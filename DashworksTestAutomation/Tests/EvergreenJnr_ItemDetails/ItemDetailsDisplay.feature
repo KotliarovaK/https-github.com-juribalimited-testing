@@ -802,3 +802,34 @@ Scenario: EvergreenJnr_AllLists_CheckThatPopupIsBiggerAndIsShownProperlyBucketIs
 	Then Evergreen Bucket link "Bucket12883" is displayed
 	Then There are no errors in the browser console
 	And Delete "Bucket12883" Bucket in the Administration
+
+@Evergreen @Applications @AllLists @EvergreenJnr_ItemDetails @ItemDetailsDisplay @DAS13180
+Scenario: EvergreenJnr_ApplicationsList_ChecksThatDevicesUsersUsedQuantityMatchEachOtherOnApplicationTabAndApplicationDistributionTab
+	When User clicks "Applications" on the left-hand menu
+	Then "Applications" list should be displayed to the user
+	When User clicks the Columns button
+	Then Columns panel is displayed to the user
+	When ColumnName is entered into the search box and the selection is clicked
+	| ColumnName          |
+	| Device Count (Used) |
+	| User Count (Used)   |
+	Then ColumnName is added to the list
+	| ColumnName          |
+	| Device Count (Used) |
+	| User Count (Used)   |
+	When User perform search by "Microsoft DirectX 5 DDK"
+	Then "99" content is displayed in "Device Count (Used)" column
+	Then "98" content is displayed in "User Count (Used)" column
+	When User click content from "Application" column
+	When User navigates to the "Distribution" tab
+	And User clicks String Filter button for "Used" column
+	And User clicks "False" checkbox from String Filter on the Details Page
+	And User clicks "Unknown" checkbox from String Filter on the Details Page
+	And User closes Checkbox filter for "Used" column
+	Then "98" rows found label displays on Details Page
+	When User closes "Users" section on the Details Page
+	And User opens "Devices" section on the Details Page
+	And User clicks String Filter button for "Used" column
+	And User clicks "False" checkbox from String Filter on the Details Page
+	And User clicks "Unknown" checkbox from String Filter on the Details Page
+	Then "99" rows found label displays on Details Page

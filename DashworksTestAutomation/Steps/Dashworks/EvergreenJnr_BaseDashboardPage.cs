@@ -201,6 +201,15 @@ namespace DashworksTestAutomation.Steps.Dashworks
             SortingHelper.IsListSorted(originalList);
         }
 
+        [Then(@"""(.*)"" content is displayed in ""(.*)"" column")]
+        public void ThenContentIsDisplayedInColumn(string textContent, string columnName)
+        {
+            var page = _driver.NowAt<BaseDashboardPage>();
+
+            var originalList = page.GetRowContentByColumnName(columnName);
+            Assert.AreEqual(textContent, originalList, "Content is not displayed correctly");
+        }
+
         [Then(@"full list content is displayed to the user")]
         public void ThenFullListContentIsDisplayedToTheUser()
         {
