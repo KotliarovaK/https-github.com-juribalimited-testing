@@ -77,6 +77,13 @@ namespace DashworksTestAutomation.Steps.Dashworks
             _driver.SelectCustomSelectbox(page.LanguageDropdown, language);
         }
 
+        [When(@"User changes Display Mode to ""(.*)""")]
+        public void WhenUserChangesDisplayModeTo(string displayMode)
+        {
+            var page = _driver.NowAt<PreferencesPage>();
+            page.ChangeDisplayMode(displayMode);
+        }
+
         [When(@"User clicks Update button on Preferences page")]
         public void WhenUserClicksUpdateButtonOnPreferencesPage()
         {
@@ -90,6 +97,16 @@ namespace DashworksTestAutomation.Steps.Dashworks
             var page = _driver.NowAt<PreferencesPage>();
             Assert.IsTrue(page.LeftHandMenuOnFrench.Displayed(), "Left Hand Menu is not translated into French");
             Assert.IsTrue(page.UpdateButtonOnFrench.Displayed(), "Update Button is not translated into French");
+            Assert.IsTrue(page.CaptionOnFrench.Displayed(), "Caption is not translated into French");
+        }
+
+        [Then(@"Display Mode is changed to High Contrast")]
+        public void ThenDisplayModeIsChangedToHighContrast()
+        {
+            var page = _driver.NowAt<PreferencesPage>();
+            Assert.AreEqual("rgba(21, 40, 69, 1)", page.GetSuccessMessageColor());
+            Assert.AreEqual("rgba(21, 40, 69, 1)", page.GetUpdateButtonColor());
+            Assert.AreEqual("rgba(21, 40, 69, 1)", page.GetLinkMenuColor());
         }
 
         [When(@"User changes Full Name to ""(.*)""")]
@@ -244,6 +261,11 @@ namespace DashworksTestAutomation.Steps.Dashworks
                     ? "automation@juriba.com"
                     : _userDto.Email);
                 page.RemoveButton.Click();
+                page.UpdateButton.Click();
+                var preferencesPage = _driver.NowAt<PreferencesPage>();
+                preferencesPage.PreferencesLink.Click();
+                preferencesPage.DisplayModeDropdown.Click();
+                preferencesPage.DisplayModeNormal.Click();
                 page.UpdateButton.Click();
             }
             catch {}
