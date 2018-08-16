@@ -49,6 +49,9 @@ namespace DashworksTestAutomation.Pages.Evergreen.DetailsTabsMenu
         [FindsBy(How = How.XPath, Using = ".//mat-option[contains(@class, 'mat-selected')]")]
         public IWebElement SelectedStringFilters { get; set; }
 
+        [FindsBy(How = How.XPath, Using = "//input[@class='ag-filter-filter']")]
+        public IWebElement DateFilterValue { get; set; }
+
         [FindsBy(How = How.XPath,
             Using = ".//mat-option[@class='mat-option mat-option-multiple ng-star-inserted mat-active']")]
         public IWebElement UncheckedStringFilters { get; set; }
@@ -174,6 +177,13 @@ namespace DashworksTestAutomation.Pages.Evergreen.DetailsTabsMenu
             Driver.WaitForDataLoading();
             Driver.WaitWhileControlIsNotDisplayed(byControl);
             Driver.FindElement(byControl).Click();
+        }
+
+        public void GetCheckboxStringFilterByName(string filterName)
+        {
+            string filterSelector = $"//div[@class='ng-star-inserted']/span[(text()='{filterName}')]";
+            Driver.WaitWhileControlIsNotDisplayed(By.XPath(filterSelector));
+            Driver.FindElement(By.XPath(filterSelector)).Click();
         }
 
         public bool GetStringFilterTextByColumnName(string columnName)
