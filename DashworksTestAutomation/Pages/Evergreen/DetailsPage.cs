@@ -178,6 +178,18 @@ namespace DashworksTestAutomation.Pages.Evergreen
             return columnNumber;
         }
 
+        public void GetSearchFieldByColumnName(string columnName, string text)
+        {
+            By byControl =
+                By.XPath(
+                    $".//div[@role='presentation']/div[2]/div[{GetColumnNumberByName(columnName)}]//div[@class='ag-floating-filter-full-body']//input");
+            Driver.WaitForDataLoading();
+            Driver.WaitWhileControlIsNotDisplayed(byControl);
+            Driver.FindElement(byControl).Click();
+            Driver.FindElement(byControl).Clear();
+            Driver.FindElement(byControl).SendKeys(text);
+        }
+
         public IWebElement GetContentByColumnName(string columnName)
         {
             By byControl =

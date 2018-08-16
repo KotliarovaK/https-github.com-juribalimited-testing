@@ -9,12 +9,12 @@ namespace DashworksTestAutomation.Pages.Evergreen.ProfileDetailsPages
     internal class PreferencesPage : SeleniumBasePage
     {
         [FindsBy(How = How.XPath,
-            Using = ".//label[text()='Language']/ancestor::div[@class='form-item']//div[@class='styleSelectDropdown']")]
-        public IWebElement LanguageDropdown { get; set; }
+            Using = ".//label[contains(text(), 'Lang')]/ancestor::div[@class='form-item']//div[@class='styleSelectDropdown']")]
+        public IWebElement LanguageDropdown { get; set; } 
 
         [FindsBy(How = How.XPath,
             Using =
-                ".//label[text()='Display Mode']/ancestor::div[@class='form-item']//div[@class='styleSelectDropdown']")]
+                ".//label[contains(text(), 'Mode')]/ancestor::div[@class='form-item']//div[@class='styleSelectDropdown']")]
         public IWebElement DisplayModeDropdown { get; set; }
 
         [FindsBy(How = How.XPath, Using = ".//span[text()='UPDATE']/ancestor::button")]
@@ -22,6 +22,12 @@ namespace DashworksTestAutomation.Pages.Evergreen.ProfileDetailsPages
 
         [FindsBy(How = How.XPath, Using = ".//div[@class='inline-success ng-star-inserted']")]
         public IWebElement SuccessMessage { get; set; }
+
+        [FindsBy(How = How.XPath, Using = "//button/span[text()='METTRE À JOUR']")]
+        public IWebElement UpdateButtonOnFrench { get; set; }
+
+        [FindsBy(How = How.XPath, Using = "//a/span[text()='Boîtes aux lettres']")]
+        public IWebElement LeftHandMenuOnFrench { get; set; }
 
         public override List<By> GetPageIdentitySelectors()
         {
