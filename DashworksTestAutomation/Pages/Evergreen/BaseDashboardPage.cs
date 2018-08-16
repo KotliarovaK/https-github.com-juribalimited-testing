@@ -355,6 +355,13 @@ namespace DashworksTestAutomation.Pages.Evergreen
             return Driver.FindElements(by).Select(x => x.Text).ToList();
         }
 
+        public string GetRowContentByColumnName(string columnName)
+        {
+            By by = By.XPath(
+                $"//div[@role='gridcell'][{GetColumnNumberByName(columnName)}]");
+            return Driver.FindElement(by).Text;
+        }
+
         public string ActiveCustomListName()
         {
             By by = By.XPath(
