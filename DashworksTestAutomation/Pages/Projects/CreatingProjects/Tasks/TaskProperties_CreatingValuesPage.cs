@@ -2,6 +2,7 @@
 using DashworksTestAutomation.Base;
 using DashworksTestAutomation.DTO.Projects;
 using DashworksTestAutomation.Extensions;
+using DashworksTestAutomation.Utils;
 using OpenQA.Selenium;
 using OpenQA.Selenium.Support.PageObjects;
 
@@ -20,6 +21,9 @@ namespace DashworksTestAutomation.Pages.Projects.Tasks
 
         private const string Readiness = ".//input[contains(@class, 'option_value')]/../label[text()='{0}']";
 
+        [FindsBy(How = How.XPath, Using = ".//div[contains(@id, 'ColourStatusID')]//li")]
+        public IList<IWebElement> ReadinessOptions { get; set; }
+
         [FindsBy(How = How.XPath, Using = ".//select[contains(@name, 'TaskStatus')]")]
         public IWebElement TaskStatus { get; set; }
 
@@ -35,12 +39,24 @@ namespace DashworksTestAutomation.Pages.Projects.Tasks
             };
         }
 
-        public void SelectOnboardedApplications(ReadinessEnum color)
+        public KeyValuePair<int, string> GetRandomReadinessOption(int index)
         {
             ReadinessListClick.Click();
-            string selector = string.Format(Readiness, color.GetValue());
+            return new KeyValuePair<int, string>(index, ReadinessOptions[index].Text);
+        }
+
+        public KeyValuePair<int, string> SelectReadiness()
+        {
+            return SelectReadiness(TestDataGenerator.RandomNum(10));
+        }
+
+        public KeyValuePair<int, string> SelectReadiness(int index)
+        {
+            var option = GetRandomReadinessOption(index);
+            string selector = string.Format(Readiness, option.Value);
             Driver.WaitWhileControlIsNotDisplayed(By.XPath(selector));
             Driver.FindElement(By.XPath(selector)).Click();
+            return option;
         }
     }
 }

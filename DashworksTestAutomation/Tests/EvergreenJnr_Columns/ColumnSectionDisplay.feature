@@ -179,7 +179,7 @@ Scenario: EvergreenJnr_MailboxesList_CheckTheColumnCategoriesUpdatesAfterAddingC
 	| ColumnName                 |
 	| EmailMigra: Scheduled date |
 
-@Evergreen @Devices @EvergreenJnr_GridActions @ColumnOrder @DAS11463
+@Evergreen @AllLists @EvergreenJnr_GridActions @ColumnOrder @DAS11463
 Scenario: EvergreenJnr_AllLists_CheckThatColumnsIsNotRemovedAfterDraggingThemOutsideTheAgGrid
 	When User clicks "Devices" on the left-hand menu
 	Then "Devices" list should be displayed to the user
@@ -260,3 +260,17 @@ Scenario: EvergreenJnr_AllLists_CheckThatColumnsIsNotRemovedAfterDraggingThemOut
 	| Mail Server        |
 	| Mailbox Type       |
 	| Owner Display Name |
+
+@Evergreen @Users @EvergreenJnr_Columns @ColumnSectionDisplay @DAS13181
+Scenario: EvergreenJnr_UsersList_ChecksThatColumnsPanelIsDisplayedCorrectlyAfterApplyAnyFilterFromApplicationCustomFieldsCategory
+	When User clicks "Users" on the left-hand menu
+	Then "Users" list should be displayed to the user
+	When User clicks the Filters button
+	Then Filters panel is displayed to the user
+	When User add "Application Owner" filter where type is "Equals" with following Value and Association:
+	| Values | Association  |
+	| 123    | Used by user |
+	Then "Application" filter is added to the list
+	When User clicks the Columns button
+	Then Columns panel is displayed to the user
+	Then Maximize button is displayed for "User" category
