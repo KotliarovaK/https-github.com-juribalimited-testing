@@ -75,3 +75,10 @@ Scenario: EvergreenJnr_UserProfile_CheckThatNotificationMessageDisappearsAfter5S
 	When User changes language to "Français"
 	And User clicks Update button on Preferences page
 	Then page elements are translated into French
+	When User changes language to "English US"
+	And User clicks Update button on Preferences page
+	When User changes Display Mode to "High Contrast"
+	And User clicks Update button on Preferences page
+	Then Display Mode is changed to High Contrast
+	When User changes Display Mode to "Normal"
+	And User clicks Update button on Preferences page
