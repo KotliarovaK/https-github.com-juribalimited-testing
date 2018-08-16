@@ -446,6 +446,16 @@ Scenario: EvergreenJnr_DevicesList_CheckThatOneUnknownFilterValueIsShownInGroupD
 	| Unknown |
 	When User clicks "True" checkbox from String Filter on the Details Page
 	Then Content is present in the table on the Details Page
+	When User clicks Reset Filters button on the Details Page
+	And User enters "wheelern" text in the Search field for "Username" column on the Details Page
+	Then "1" rows found label displays on Details Page
+	When User clicks Reset Filters button on the Details Page
+	And User enters "Administrator" text in the Search field for "Display Name" column on the Details Page
+	Then "1" rows found label displays on Details Page
+	When User clicks Reset Filters button on the Details Page
+	And User clicks String Filter button for "Domain" column
+	When User selects "DWLABS" checkbox from String Filter on the Details Page
+	Then "0" rows found label displays on Details Page
 
 @Evergreen @Mailboxes @EvergreenJnr_ItemDetails @ItemDetailsDisplay @DAS12245 @DAS12321
 Scenario: EvergreenJnr_MailboxesList_CheckThatListLoadedCorrectlyAndNoConsoleErrorIsNotDisplayed
@@ -471,11 +481,46 @@ Scenario: EvergreenJnr_DevicesList_CheckThatAllTextIsDisplayedAfterClearingFilte
 	When User click content from "Hostname" column
 	And User navigates to the "Applications" tab
 	Then All text is displayed for "Compliance" column in the String Filter
-	When  User clicks String Filter button for "Compliance" column
+	When User clicks String Filter button for "Compliance" column
 	And User clicks "Red" checkbox from String Filter on the Details Page
 	Then All text is not displayed for "Compliance" column in the String Filter
 	When User clicks Reset Filters button on the Details Page
 	Then All text is displayed for "Compliance" column in the String Filter
+	When User enters "Microsoft" text in the Search field for "Application" column on the Details Page
+	Then "3" rows found label displays on Details Page
+	When User clicks Reset Filters button on the Details Page
+	When User enters "33" text in the Search field for "Version" column on the Details Page
+	Then "1" rows found label displays on Details Page
+	When User clicks Reset Filters button on the Details Page
+	When User enters "Adobe" text in the Search field for "Vendor" column on the Details Page
+	Then "1" rows found label displays on Details Page
+	When User clicks Reset Filters button on the Details Page
+	When User enters "12" text in the Search field for "Used By Count" column on the Details Page
+	Then "0" rows found label displays on Details Page
+	When User clicks Reset Filters button on the Details Page
+	When User enters "5" text in the Search field for "Launch Count" column on the Details Page
+	Then "0" rows found label displays on Details Page
+	When User clicks Reset Filters button on the Details Page
+	And User clicks String Filter button for "Installed" column
+	When User clicks "False" checkbox from String Filter on the Details Page
+	Then "7" rows found label displays on Details Page
+	When User clicks Reset Filters button on the Details Page
+	And User clicks String Filter button for "Used" column
+	When User clicks "Unknown" checkbox from String Filter on the Details Page
+	Then "0" rows found label displays on Details Page
+	When User clicks Reset Filters button on the Details Page
+	And User clicks String Filter button for "Entitled" column
+	When User clicks "True" checkbox from String Filter on the Details Page
+	Then "0" rows found label displays on Details Page
+	When User clicks Reset Filters button on the Details Page
+	And User clicks String Filter button for "Site" column
+	When User selects "TierA Site01" checkbox from String Filter on the Details Page
+	Then "0" rows found label displays on Details Page
+	When User clicks Reset Filters button on the Details Page
+	When User selects following date filter on the Details Page
+	| FilterData |
+	| 7302017    |
+	Then "0" rows found label displays on Details Page
 
 @Evergreen @Mailboxes @EvergreenJnr_ItemDetails @ItemDetailsDisplay @DAS12088 @DAS12321
 Scenario: EvergreenJnr_MailboxesList_CheckThatMailboxPermissionsAndFolderPermissionsDataAreDisplayedCorrectly

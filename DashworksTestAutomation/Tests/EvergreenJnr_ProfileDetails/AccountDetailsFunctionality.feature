@@ -72,3 +72,6 @@ Scenario: EvergreenJnr_UserProfile_CheckThatNotificationMessageDisappearsAfter5S
 	And User changes language to "English US"
 	And User clicks Update button on Preferences page
 	Then Notification message is displayed for a few seconds on Preferences page
+	When User changes language to "Français"
+	And User clicks Update button on Preferences page
+	Then page elements are translated into French

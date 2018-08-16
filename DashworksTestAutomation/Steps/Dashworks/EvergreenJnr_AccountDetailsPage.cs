@@ -84,6 +84,14 @@ namespace DashworksTestAutomation.Steps.Dashworks
             page.UpdateButton.Click();
         }
 
+        [Then(@"page elements are translated into French")]
+        public void ThenPageElementsAreTranslatedIntoFrench()
+        {
+            var page = _driver.NowAt<PreferencesPage>();
+            Assert.IsTrue(page.LeftHandMenuOnFrench.Displayed(), "Left Hand Menu is not translated into French");
+            Assert.IsTrue(page.UpdateButtonOnFrench.Displayed(), "Update Button is not translated into French");
+        }
+
         [When(@"User changes Full Name to ""(.*)""")]
         public void WhenUserChangesFullNameTo(string fullName)
         {
