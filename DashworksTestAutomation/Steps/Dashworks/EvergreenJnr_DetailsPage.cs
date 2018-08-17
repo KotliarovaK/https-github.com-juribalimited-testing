@@ -5,6 +5,7 @@ using System.Threading;
 using DashworksTestAutomation.Extensions;
 using DashworksTestAutomation.Helpers;
 using DashworksTestAutomation.Pages.Evergreen;
+using DashworksTestAutomation.Pages.Evergreen.AdminDetailsPages;
 using DashworksTestAutomation.Pages.Evergreen.DetailsTabsMenu;
 using NUnit.Framework;
 using OpenQA.Selenium;
@@ -508,10 +509,19 @@ namespace DashworksTestAutomation.Steps.Dashworks
         [Then(@"Rows do not have unknown values")]
         public void ThenRowsDoNotHaveUnkonwnValues()
         {
-            var detailsPage = _driver.NowAt<DetailsPage>();
-            foreach (var element in detailsPage.TableRows)
+            var page = _driver.NowAt<BaseDashboardPage>();
+            foreach (var element in page.GridRows)
                 StringAssert.DoesNotContain("Unknown", element.Text,
                     "Unknown text is displayed");
+        }
+
+        [Then(@"Static list grid has ""(.*)"" rows")]
+        [Then(@"Static list grid still has ""(.*)"" rows")]
+        public void ThenAgGridHasRows(int rowsCount)
+        {
+            var page = _driver.NowAt<BaseDashboardPage>();
+            Assert.That(page.GridRows.Count, Is.EqualTo(rowsCount),
+                $"Incorrect number of rows in agGrid.");
         }
 
         [Then(@"""(.*)"" rows found label displays on Details Page")]
