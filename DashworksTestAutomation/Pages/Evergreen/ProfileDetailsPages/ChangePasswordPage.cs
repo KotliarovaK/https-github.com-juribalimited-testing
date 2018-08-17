@@ -9,21 +9,23 @@ namespace DashworksTestAutomation.Pages.Evergreen.ProfileDetailsPages
     internal class ChangePasswordPage : SeleniumBasePage
     {
         [FindsBy(How = How.XPath,
-            Using = ".//span[text()='Current Password']/ancestor::div[@class='form-item']//input")]
+            Using = ".//input[@aria-label='Current Password']")]
         public IWebElement CurrentPasswordField { get; set; }
 
-        [FindsBy(How = How.XPath, Using = ".//span[text()='New Password']/ancestor::div[@class='form-item']//input")]
+        [FindsBy(How = How.XPath, Using = ".//input[@aria-label='New Password']")]
         public IWebElement NewPassword { get; set; }
 
-        [FindsBy(How = How.XPath,
-            Using = ".//span[text()='Confirm Password']/ancestor::div[@class='form-item']//input")]
+        [FindsBy(How = How.XPath, Using = ".//input[@aria-label='Confirm Password']")]
         public IWebElement ConfirmPasswordField { get; set; }
 
-        [FindsBy(How = How.XPath, Using = ".//button[@title='UPDATE']")]
+        [FindsBy(How = How.XPath, Using = ".//button/span[text()='UPDATE']")]
         public IWebElement UpdateButton { get; set; }
 
-        [FindsBy(How = How.XPath, Using = ".//div[@class='inline-success']")]
+        [FindsBy(How = How.XPath, Using = ".//div[contains(@class, 'inline-success')]")]
         public IWebElement SuccessMessage { get; set; }
+
+        [FindsBy(How = How.XPath, Using = ".//div[contains(@class, 'inline-error')]")]
+        public IWebElement ErrorMessage { get; set; }
 
         public override List<By> GetPageIdentitySelectors()
         {
