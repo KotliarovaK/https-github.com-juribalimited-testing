@@ -52,9 +52,6 @@ namespace DashworksTestAutomation.Pages.Evergreen
         [FindsBy(How = How.XPath, Using = ".//td[@class='fld-value']//span[@class='ng-star-inserted']")]
         public IList<IWebElement> TableRowDetails { get; set; }
 
-        [FindsBy(How = How.XPath, Using = ".//div[@class='ag-body-container']/div[@role='row']")]
-        public IList<IWebElement> TableRows { get; set; }
-
         [FindsBy(How = How.XPath, Using = ".//div[@id='agGridTable']")]
         public IWebElement OpenedSection { get; set; }
 
