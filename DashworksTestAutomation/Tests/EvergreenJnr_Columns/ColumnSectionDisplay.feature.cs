@@ -734,7 +734,7 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_Columns
             table33.AddRow(new string[] {
                         "00YWR8TJU4ZF8V"});
             table33.AddRow(new string[] {
-                        "01KFZ6XUVQSII0"});
+                        "00RUUMAH9OZN9A"});
             testRunner.When("User select \"Hostname\" rows in the grid", ((string)(null)), table33, "When ");
             testRunner.And("User selects \"Add to static list\" in the Actions dropdown", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
             testRunner.Then("\"ADD\" Action button is disabled", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
@@ -966,9 +966,9 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_Columns
             TechTalk.SpecFlow.Table table47 = new TechTalk.SpecFlow.Table(new string[] {
                         "SelectedRowsName"});
             table47.AddRow(new string[] {
-                        "00B5CCB89AD0404B965@bclabs.local"});
+                        "000F977AC8824FE39B8@bclabs.local"});
             table47.AddRow(new string[] {
-                        "00C8BC63E7424A6E862@bclabs.local"});
+                        "002B5DC7D4D34D5C895@bclabs.local"});
             testRunner.When("User select \"Email Address\" rows in the grid", ((string)(null)), table47, "When ");
             testRunner.And("User selects \"Create static list\" in the Actions dropdown", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
             testRunner.And("User create static list with \"StaticListFromTheAllList\" name", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
@@ -979,9 +979,9 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_Columns
             TechTalk.SpecFlow.Table table48 = new TechTalk.SpecFlow.Table(new string[] {
                         "SelectedRowsName"});
             table48.AddRow(new string[] {
-                        "013DA2178AB4444CAF2@bclabs.local"});
+                        "00BDBAEA57334C7C8F4@bclabs.local"});
             table48.AddRow(new string[] {
-                        "01A921EFD05545818AA@bclabs.local"});
+                        "00B5CCB89AD0404B965@bclabs.local"});
             testRunner.When("User select \"Email Address\" rows in the grid", ((string)(null)), table48, "When ");
             testRunner.Then("User add selected rows in \"StaticListFromTheAllList\" list", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
             testRunner.Then("\"4\" rows are displayed in the agGrid", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
