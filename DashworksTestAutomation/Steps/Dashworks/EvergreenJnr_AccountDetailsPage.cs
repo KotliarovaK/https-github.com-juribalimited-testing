@@ -1,5 +1,6 @@
 ﻿using System.IO;
 using System.Linq;
+using System.Net.Mime;
 using System.Threading;
 using DashworksTestAutomation.DTO;
 using DashworksTestAutomation.Extensions;
@@ -77,11 +78,61 @@ namespace DashworksTestAutomation.Steps.Dashworks
             _driver.SelectCustomSelectbox(page.LanguageDropdown, language);
         }
 
+        [When(@"User changes List Page Size to ""(.*)""")]
+        public void WhenUserChangesListPageSizeTo(string size)
+        {
+            var page = _driver.NowAt<AdvancedPage>();
+            page.ListPageSizeField.ClearWithBackspaces();
+            page.ListPageSizeField.SendKeys(size);
+            page.BodyContainer.Click();
+        }
+
+        [When(@"User changes List Pages to Cache to ""(.*)""")]
+        public void WhenUserChangesListPagesToCacheTo(string size)
+        {
+            var page = _driver.NowAt<AdvancedPage>();
+            page.ListPagesToCache.ClearWithBackspaces();
+            page.ListPagesToCache.SendKeys(size);
+            page.BodyContainer.Click();
+        }
+
+        [Then(@"List Page Size is changed to ""(.*)""")]
+        public void ThenListPageSizeIsChangedTo(string size)
+        {
+            var page = _driver.NowAt<AdvancedPage>();
+            Assert.AreEqual(page.ListPageSizeField, size);
+        }
+
+        [When(@"User changes Display Mode to ""(.*)""")]
+        public void WhenUserChangesDisplayModeTo(string displayMode)
+        {
+            var page = _driver.NowAt<PreferencesPage>();
+            page.ChangeDisplayMode(displayMode);
+        }
+
         [When(@"User clicks Update button on Preferences page")]
         public void WhenUserClicksUpdateButtonOnPreferencesPage()
         {
             var page = _driver.NowAt<PreferencesPage>();
             page.UpdateButton.Click();
+        }
+
+        [Then(@"page elements are translated into French")]
+        public void ThenPageElementsAreTranslatedIntoFrench()
+        {
+            var page = _driver.NowAt<PreferencesPage>();
+            Assert.IsTrue(page.LeftHandMenuOnFrench.Displayed(), "Left Hand Menu is not translated into French");
+            Assert.IsTrue(page.UpdateButtonOnFrench.Displayed(), "Update Button is not translated into French");
+            Assert.IsTrue(page.CaptionOnFrench.Displayed(), "Caption is not translated into French");
+        }
+
+        [Then(@"Display Mode is changed to High Contrast")]
+        public void ThenDisplayModeIsChangedToHighContrast()
+        {
+            var page = _driver.NowAt<PreferencesPage>();
+            Assert.AreEqual("rgba(21, 40, 69, 1)", page.GetSuccessMessageColor());
+            Assert.AreEqual("rgba(21, 40, 69, 1)", page.GetUpdateButtonColor());
+            Assert.AreEqual("rgba(21, 40, 69, 1)", page.GetLinkMenuColor());
         }
 
         [When(@"User changes Full Name to ""(.*)""")]
@@ -236,6 +287,11 @@ namespace DashworksTestAutomation.Steps.Dashworks
                     ? "automation@juriba.com"
                     : _userDto.Email);
                 page.RemoveButton.Click();
+                page.UpdateButton.Click();
+                var preferencesPage = _driver.NowAt<PreferencesPage>();
+                preferencesPage.PreferencesLink.Click();
+                preferencesPage.DisplayModeDropdown.Click();
+                preferencesPage.DisplayModeNormal.Click();
                 page.UpdateButton.Click();
             }
             catch {}

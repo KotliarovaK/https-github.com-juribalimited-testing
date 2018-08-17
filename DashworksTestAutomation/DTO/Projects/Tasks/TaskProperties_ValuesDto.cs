@@ -1,4 +1,5 @@
-﻿using System.ComponentModel;
+﻿using System.Collections.Generic;
+using System.ComponentModel;
 using DashworksTestAutomation.Extensions;
 
 namespace DashworksTestAutomation.DTO.Projects
@@ -6,29 +7,16 @@ namespace DashworksTestAutomation.DTO.Projects
     public class TaskProperties_ValuesDto
     {
         public string Name { get; set; }
-        public string ReadinessString { get; set; }
-        public ReadinessEnum Readiness;
+        public int ReadinessIndex { get; set; }
+        public Dictionary<int, string> Readiness;  
         public string TaskStatusString { get; set; }
         public TaskStatusEnum TaskStatus;
         public bool DefaultValue { get; set; }
-    }
 
-    public enum ReadinessEnum
-    {
-        [Description("Out Of Scope")]
-        OutOfScope,
-        Blue,
-        [Description("Light Blue")]
-        LightBlue,
-        Red,
-        Brown,
-        Amber,
-        [Description("Really Extremely Orange")]
-        ReallyExtremelyOrange,
-        Purple,
-        Green,
-        Grey,
-        None
+        public TaskProperties_ValuesDto()
+        {
+            Readiness = new Dictionary<int, string>();
+        }
     }
 
     public enum TaskStatusEnum

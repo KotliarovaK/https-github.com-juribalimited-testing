@@ -808,12 +808,12 @@ namespace DashworksTestAutomation.Tests.Projects.CreatingProjects
             testRunner.And("User clicks \"Add Value\" button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
             TechTalk.SpecFlow.Table table43 = new TechTalk.SpecFlow.Table(new string[] {
                         "Name",
-                        "ReadinessString",
+                        "ReadinessIndex",
                         "TaskStatusString",
                         "DefaultValue"});
             table43.AddRow(new string[] {
                         "Blocked",
-                        "Red",
+                        "3",
                         "Open",
                         "false"});
             testRunner.And("User create new Value", ((string)(null)), table43, "And ");
@@ -821,12 +821,12 @@ namespace DashworksTestAutomation.Tests.Projects.CreatingProjects
             testRunner.And("User navigates to \"Not Started\" Value", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
             TechTalk.SpecFlow.Table table44 = new TechTalk.SpecFlow.Table(new string[] {
                         "Name",
-                        "ReadinessString",
+                        "ReadinessIndex",
                         "TaskStatusString",
                         "DefaultValue"});
             table44.AddRow(new string[] {
                         "",
-                        "Grey",
+                        "0",
                         "",
                         "true"});
             testRunner.And("User edit selected Value", ((string)(null)), table44, "And ");
@@ -883,12 +883,10 @@ namespace DashworksTestAutomation.Tests.Projects.CreatingProjects
             testRunner.And("User clicks \"Add Value\" button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
             TechTalk.SpecFlow.Table table47 = new TechTalk.SpecFlow.Table(new string[] {
                         "Name",
-                        "ReadinessString",
                         "TaskStatusString",
                         "DefaultValue"});
             table47.AddRow(new string[] {
                         "None",
-                        "",
                         "Closed",
                         "false"});
             testRunner.And("User create new Value", ((string)(null)), table47, "And ");
@@ -896,11 +894,9 @@ namespace DashworksTestAutomation.Tests.Projects.CreatingProjects
             testRunner.And("User navigates to \"Enabled\" Value", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
             TechTalk.SpecFlow.Table table48 = new TechTalk.SpecFlow.Table(new string[] {
                         "Name",
-                        "ReadinessString",
                         "TaskStatusString",
                         "DefaultValue"});
             table48.AddRow(new string[] {
-                        "",
                         "",
                         "Open",
                         "true"});
@@ -956,12 +952,12 @@ namespace DashworksTestAutomation.Tests.Projects.CreatingProjects
             testRunner.And("User clicks \"Add Value\" button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
             TechTalk.SpecFlow.Table table51 = new TechTalk.SpecFlow.Table(new string[] {
                         "Name",
-                        "ReadinessString",
+                        "ReadinessIndex",
                         "TaskStatusString",
                         "DefaultValue"});
             table51.AddRow(new string[] {
                         "Unknown",
-                        "Amber",
+                        "5",
                         "Open",
                         "true"});
             testRunner.And("User create new Value", ((string)(null)), table51, "And ");
@@ -969,12 +965,12 @@ namespace DashworksTestAutomation.Tests.Projects.CreatingProjects
             testRunner.And("User navigates to \"Not Applicable\" Value", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
             TechTalk.SpecFlow.Table table52 = new TechTalk.SpecFlow.Table(new string[] {
                         "Name",
-                        "ReadinessString",
+                        "ReadinessIndex",
                         "TaskStatusString",
                         "DefaultValue"});
             table52.AddRow(new string[] {
                         "N/A",
-                        "None",
+                        "10",
                         "",
                         "false"});
             testRunner.And("User edit selected Value", ((string)(null)), table52, "And ");
@@ -1122,12 +1118,12 @@ namespace DashworksTestAutomation.Tests.Projects.CreatingProjects
             testRunner.And("User clicks \"Add Value\" button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
             TechTalk.SpecFlow.Table table59 = new TechTalk.SpecFlow.Table(new string[] {
                         "Name",
-                        "ReadinessString",
+                        "ReadinessIndex",
                         "TaskStatusString",
                         "DefaultValue"});
             table59.AddRow(new string[] {
                         "Blocked",
-                        "Grey",
+                        "9",
                         "Open",
                         "false"});
             testRunner.And("User create new Value", ((string)(null)), table59, "And ");
@@ -1135,12 +1131,12 @@ namespace DashworksTestAutomation.Tests.Projects.CreatingProjects
             testRunner.And("User navigates to \"Not Started\" Value", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
             TechTalk.SpecFlow.Table table60 = new TechTalk.SpecFlow.Table(new string[] {
                         "Name",
-                        "ReadinessString",
+                        "ReadinessIndex",
                         "TaskStatusString",
                         "DefaultValue"});
             table60.AddRow(new string[] {
                         "To Be Started",
-                        "None",
+                        "10",
                         "",
                         "true"});
             testRunner.And("User edit selected Value", ((string)(null)), table60, "And ");
@@ -1193,12 +1189,12 @@ namespace DashworksTestAutomation.Tests.Projects.CreatingProjects
             testRunner.And("User navigates to \"Complete\" Value", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
             TechTalk.SpecFlow.Table table63 = new TechTalk.SpecFlow.Table(new string[] {
                         "Name",
-                        "ReadinessString",
+                        "ReadinessIndex",
                         "TaskStatusString",
                         "DefaultValue"});
             table63.AddRow(new string[] {
                         "Finished",
-                        "Green",
+                        "8",
                         "",
                         "false"});
             testRunner.And("User edit selected Value", ((string)(null)), table63, "And ");
@@ -1298,12 +1294,10 @@ namespace DashworksTestAutomation.Tests.Projects.CreatingProjects
             testRunner.And("User clicks \"Add Value\" button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
             TechTalk.SpecFlow.Table table68 = new TechTalk.SpecFlow.Table(new string[] {
                         "Name",
-                        "ReadinessString",
                         "TaskStatusString",
                         "DefaultValue"});
             table68.AddRow(new string[] {
                         "Unknown",
-                        "",
                         "Open",
                         "true"});
             testRunner.And("User create new Value", ((string)(null)), table68, "And ");
@@ -1311,12 +1305,10 @@ namespace DashworksTestAutomation.Tests.Projects.CreatingProjects
             testRunner.And("User navigates to \"Started\" Value", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
             TechTalk.SpecFlow.Table table69 = new TechTalk.SpecFlow.Table(new string[] {
                         "Name",
-                        "ReadinessString",
                         "TaskStatusString",
                         "DefaultValue"});
             table69.AddRow(new string[] {
                         "In Progress",
-                        "",
                         "",
                         "false"});
             testRunner.And("User edit selected Value", ((string)(null)), table69, "And ");
@@ -1371,12 +1363,12 @@ namespace DashworksTestAutomation.Tests.Projects.CreatingProjects
             testRunner.And("User clicks \"Add Value\" button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
             TechTalk.SpecFlow.Table table72 = new TechTalk.SpecFlow.Table(new string[] {
                         "Name",
-                        "ReadinessString",
+                        "ReadinessIndex",
                         "TaskStatusString",
                         "DefaultValue"});
             table72.AddRow(new string[] {
                         "Under Investigation",
-                        "Amber",
+                        "5",
                         "Open",
                         "false"});
             testRunner.And("User create new Value", ((string)(null)), table72, "And ");
@@ -1384,12 +1376,12 @@ namespace DashworksTestAutomation.Tests.Projects.CreatingProjects
             testRunner.And("User navigates to \"Not Applicable (Default)\" Value", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
             TechTalk.SpecFlow.Table table73 = new TechTalk.SpecFlow.Table(new string[] {
                         "Name",
-                        "ReadinessString",
+                        "ReadinessIndex",
                         "TaskStatusString",
                         "DefaultValue"});
             table73.AddRow(new string[] {
                         "N/A",
-                        "None",
+                        "10",
                         "",
                         "true"});
             testRunner.And("User edit selected Value", ((string)(null)), table73, "And ");

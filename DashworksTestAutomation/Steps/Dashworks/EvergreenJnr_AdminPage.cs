@@ -524,6 +524,36 @@ namespace DashworksTestAutomation.Steps.Dashworks
             Assert.IsTrue(projectsPage.ApplicationScopeTab.Displayed(), "Application Scope tab is not displayed");
         }
 
+        [When(@"User changes Request Type to ""(.*)""")]
+        public void WhenUserChangesRequestTypeTo(string requestTypeName)
+        {
+            var projectsPage = _driver.NowAt<ProjectsPage>();
+            projectsPage.RequestTypeDropdown.Click();
+            projectsPage.GetRequestTypeByName(requestTypeName).Click();
+        }
+
+        [When(@"User changes Category to ""(.*)""")]
+        public void WhenUserChangesCategoryTo(string CategoryName)
+        {
+            var projectsPage = _driver.NowAt<ProjectsPage>();
+            projectsPage.CategoryDropdown.Click();
+            projectsPage.GetCategoryByName(CategoryName).Click();
+        }
+
+        [Then(@"""(.*)"" Request Type is displayed to the user")]
+        public void ThenRequestTypeIsDisplayedToTheUser(string requestTypeName)
+        {
+            var projectsPage = _driver.NowAt<ProjectsPage>();
+            Assert.IsTrue(projectsPage.GetRequestTypeByName(requestTypeName).Displayed(), "Incorrect Request Type is displayed");
+        }
+
+        [Then(@"""(.*)"" Category is displayed to the user")]
+        public void ThenCategoryIsDisplayedToTheUser(string categoryName)
+        {
+            var projectsPage = _driver.NowAt<ProjectsPage>();
+            Assert.IsTrue(projectsPage.GetCategoryByName(categoryName).Displayed(), "Incorrect Category is displayed");
+        }
+
         [Then(@"""(.*)"" is displayed to the user in the Project Scope Changes section")]
         public void ThenIsDisplayedToTheUserInTheProjectScopeChangesSection(string text)
         {
