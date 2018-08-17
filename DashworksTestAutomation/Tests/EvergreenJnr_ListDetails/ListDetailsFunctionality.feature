@@ -679,6 +679,32 @@ Scenario: EvergreenJnr_MailboxesList_CheckThatListDetailsPanelIsDisplayedAfterSe
 	Then "StaticList2845" list is displayed to user
 	And List details panel is displayed to the user
 
+@Evergreen @AllLists @EvergreenJnr_ListDetails @ListDetailsFunctionality @DAS12967
+Scenario Outline: EvergreenJnr_AllLists_CheckThatAllRowsDisplayedOnGridWhenCreatingStaticListAfterSearch
+	When User clicks "<PageName>" on the left-hand menu
+	Then "<PageName>" list should be displayed to the user
+	When User perform search by "<SearchTerm>"
+	And User clicks the Actions button
+	Then Actions panel is displayed to the user
+	When User select all rows
+	And User selects "Create static list" in the Actions dropdown
+	And User create static list with "<ListName>" name
+	Then "<RowsCount>" rows are displayed in the agGrid
+	And Static list grid has "<RowsCount>" rows
+	When User clicks the Columns button
+	And User adds columns to the list
+	| ColumnName  |
+	| <AddColumn> |
+	Then "<RowsCount>" rows are displayed in the agGrid
+	And Static list grid still has "<RowsCount>" rows
+
+Examples: 
+	| PageName     | SearchTerm       | ListName                           | AddColumn                | RowsCount |
+	| Applications | microsoft server | Applications Static List DAS-12967 | UserSchedu: Readiness ID | 29        |
+	| Users        | Peterson         | Users Static List DAS-12967        | Compliance               | 28        |
+	| Devices      | aba              | Devices Static List DAS-12967      | BIOS Name                | 19        |
+	| Mailboxes    | ab1              | Mailboxes Static List DAS-12967    | Alias                    | 14        |
+
 @Evergreen @Applications @EvergreenJnr_ListDetails @ListDetailsFunctionality @DAS12580 @Delete_Newly_Created_List
 Scenario: EvergreenJnr_ApplicationsLists_CheckThatTheSaveButtonIsNotDisplayedOnTheListPanelAfterListCreation
 	When User clicks "Applications" on the left-hand menu
