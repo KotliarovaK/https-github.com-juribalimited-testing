@@ -399,6 +399,128 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_ActionsPanel
             testRunner.And("User removes \"000WithPA\" User", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
             this.ScenarioCleanup();
         }
+        
+        [NUnit.Framework.TestAttribute()]
+        [NUnit.Framework.Retry(2)]
+        [NUnit.Framework.DescriptionAttribute("EvergreenJnr_AllLists_ChecksThatRemoveFromStaticListOptionIsNotShownInTheActionsP" +
+            "anelWhenAStaticListDoesNotExist")]
+        [NUnit.Framework.CategoryAttribute("Evergreen")]
+        [NUnit.Framework.CategoryAttribute("AllLists")]
+        [NUnit.Framework.CategoryAttribute("EvergreenJnr_ActionsPanel")]
+        [NUnit.Framework.CategoryAttribute("DAS12946")]
+        [NUnit.Framework.TestCaseAttribute("Devices", "Hostname", "001PSUMZYOW581", "User Scheduled Test (Jo)", "Two", "Radio Non Rag only Comp", "Not Applicable", new string[0])]
+        [NUnit.Framework.TestCaseAttribute("Users", "Username", "003F5D8E1A844B1FAA5", "Computer Scheduled Test (Jo)", "Two", "Radio Non Rag User", "Not Applicable", new string[0])]
+        [NUnit.Framework.TestCaseAttribute("Applications", "Application", "7zip", "Computer Scheduled Test (Jo)", "Two", "Radio Non Rag App", "Not Applicable", new string[0])]
+        [NUnit.Framework.TestCaseAttribute("Mailboxes", "Email Address", "00BDBAEA57334C7C8F4@bclabs.local", "Email Migration", "Mobile Devices", "Mobile Device Status", "Identified & In Progress", new string[0])]
+        public virtual void EvergreenJnr_AllLists_ChecksThatRemoveFromStaticListOptionIsNotShownInTheActionsPanelWhenAStaticListDoesNotExist(string pageName, string columnHeader, string rowName, string projectName, string stageName, string taskName, string value, string[] exampleTags)
+        {
+            string[] @__tags = new string[] {
+                    "Evergreen",
+                    "AllLists",
+                    "EvergreenJnr_ActionsPanel",
+                    "DAS12946"};
+            if ((exampleTags != null))
+            {
+                @__tags = System.Linq.Enumerable.ToArray(System.Linq.Enumerable.Concat(@__tags, exampleTags));
+            }
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("EvergreenJnr_AllLists_ChecksThatRemoveFromStaticListOptionIsNotShownInTheActionsP" +
+                    "anelWhenAStaticListDoesNotExist", @__tags);
+            this.ScenarioSetup(scenarioInfo);
+            this.FeatureBackground();
+            testRunner.When(string.Format("User clicks \"{0}\" on the left-hand menu", pageName), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+            testRunner.Then(string.Format("\"{0}\" list should be displayed to the user", pageName), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+            testRunner.When(string.Format("User click on \'{0}\' column header", columnHeader), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+            testRunner.When(string.Format("User create dynamic list with \"DynamicList12946\" name on \"{0}\" page", pageName), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+            testRunner.Then("\"DynamicList12946\" list is displayed to user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+            testRunner.When("User clicks the Actions button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+            testRunner.Then("Actions panel is displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+            TechTalk.SpecFlow.Table table14 = new TechTalk.SpecFlow.Table(new string[] {
+                        "SelectedRowsName"});
+            table14.AddRow(new string[] {
+                        string.Format("{0}", rowName)});
+            testRunner.When(string.Format("User select \"{0}\" rows in the grid", columnHeader), ((string)(null)), table14, "When ");
+            testRunner.And("User clicks on Action drop-down", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+            TechTalk.SpecFlow.Table table15 = new TechTalk.SpecFlow.Table(new string[] {
+                        "Value"});
+            table15.AddRow(new string[] {
+                        "Create static list"});
+            table15.AddRow(new string[] {
+                        "Bulk update"});
+            testRunner.Then("following Values are displayed in Action drop-down:", ((string)(null)), table15, "Then ");
+            testRunner.When("User selects \"Bulk update\" in the Actions dropdown", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+            testRunner.And("User selects \"Update task value\" Bulk Update Type on Action panel", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+            testRunner.And(string.Format("User selects \"{0}\" Project on Action panel", projectName), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+            testRunner.And(string.Format("User selects \"{0}\" Stage on Action panel", stageName), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+            testRunner.And(string.Format("User selects \"{0}\" Task on Action panel", taskName), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+            testRunner.And(string.Format("User selects \"{0}\" Value on Action panel", value), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+            testRunner.And("User clicks the \"UPDATE\" Action button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+            testRunner.Then("Warning message with \"Are you sure you want to proceed, this operation cannot be " +
+                    "undone.\" text is displayed on Action panel", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+            testRunner.And("User clicks \"UPDATE\" button on message box", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+            testRunner.And("Success message with \"0 of 1 objects were valid for the update.\" text is displaye" +
+                    "d on Action panel", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+            testRunner.Then("There are no errors in the browser console", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+            this.ScenarioCleanup();
+        }
+        
+        [NUnit.Framework.TestAttribute()]
+        [NUnit.Framework.Retry(2)]
+        [NUnit.Framework.DescriptionAttribute("EvergreenJnr_AllLists_ChecksThatAddToStaticListOptionIsNotShownInTheActionsPanelW" +
+            "henOnlOneStaticListExists")]
+        [NUnit.Framework.CategoryAttribute("Evergreen")]
+        [NUnit.Framework.CategoryAttribute("AllLists")]
+        [NUnit.Framework.CategoryAttribute("EvergreenJnr_ActionsPanel")]
+        [NUnit.Framework.CategoryAttribute("DAS12946")]
+        [NUnit.Framework.TestCaseAttribute("Devices", "Hostname", "001PSUMZYOW581", new string[0])]
+        [NUnit.Framework.TestCaseAttribute("Users", "Username", "002B5DC7D4D34D5C895", new string[0])]
+        [NUnit.Framework.TestCaseAttribute("Applications", "Application", "20040610sqlserverck", new string[0])]
+        [NUnit.Framework.TestCaseAttribute("Mailboxes", "Email Address", "00C8BC63E7424A6E862@bclabs.local", new string[0])]
+        public virtual void EvergreenJnr_AllLists_ChecksThatAddToStaticListOptionIsNotShownInTheActionsPanelWhenOnlOneStaticListExists(string pageName, string columnHeader, string rowName, string[] exampleTags)
+        {
+            string[] @__tags = new string[] {
+                    "Evergreen",
+                    "AllLists",
+                    "EvergreenJnr_ActionsPanel",
+                    "DAS12946"};
+            if ((exampleTags != null))
+            {
+                @__tags = System.Linq.Enumerable.ToArray(System.Linq.Enumerable.Concat(@__tags, exampleTags));
+            }
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("EvergreenJnr_AllLists_ChecksThatAddToStaticListOptionIsNotShownInTheActionsPanelW" +
+                    "henOnlOneStaticListExists", @__tags);
+            this.ScenarioSetup(scenarioInfo);
+            this.FeatureBackground();
+            testRunner.When(string.Format("User clicks \"{0}\" on the left-hand menu", pageName), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+            testRunner.Then(string.Format("\"{0}\" list should be displayed to the user", pageName), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+            testRunner.When("User clicks the Actions button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+            testRunner.Then("Actions panel is displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+            TechTalk.SpecFlow.Table table16 = new TechTalk.SpecFlow.Table(new string[] {
+                        "SelectedRowsName"});
+            table16.AddRow(new string[] {
+                        string.Format("{0}", rowName)});
+            testRunner.When(string.Format("User select \"{0}\" rows in the grid", columnHeader), ((string)(null)), table16, "When ");
+            testRunner.And("User selects \"Create static list\" in the Actions dropdown", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+            testRunner.And("User create static list with \"StaticList12946\" name", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+            testRunner.Then("\"StaticList12946\" list is displayed to user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+            testRunner.When("User clicks the Actions button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+            testRunner.Then("Actions panel is displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+            TechTalk.SpecFlow.Table table17 = new TechTalk.SpecFlow.Table(new string[] {
+                        "SelectedRowsName"});
+            table17.AddRow(new string[] {
+                        string.Format("{0}", rowName)});
+            testRunner.When(string.Format("User select \"{0}\" rows in the grid", columnHeader), ((string)(null)), table17, "When ");
+            testRunner.And("User clicks on Action drop-down", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+            TechTalk.SpecFlow.Table table18 = new TechTalk.SpecFlow.Table(new string[] {
+                        "Value"});
+            table18.AddRow(new string[] {
+                        "Create static list"});
+            table18.AddRow(new string[] {
+                        "Remove from static list"});
+            table18.AddRow(new string[] {
+                        "Bulk update"});
+            testRunner.Then("following Values are displayed in Action drop-down:", ((string)(null)), table18, "Then ");
+            this.ScenarioCleanup();
+        }
     }
 }
 #pragma warning restore
