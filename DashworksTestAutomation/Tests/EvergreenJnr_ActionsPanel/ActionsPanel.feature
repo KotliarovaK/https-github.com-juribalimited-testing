@@ -182,3 +182,100 @@ Scenario: EvergreenJnr_ApplicationsList_CheckThatUserWithoutJustTheProjectBulkUp
 	When User navigate to Manage link
 	And User select "Manage Users" option in Management Console
 	And User removes "000WithPA" User
+
+@Evergreen @AllLists @EvergreenJnr_ActionsPanel @DAS12946 @Delete_Newly_Created_List
+Scenario Outline: EvergreenJnr_AllLists_ChecksThatRemoveFromStaticListOptionIsNotShownInTheActionsPanelWhenAStaticListDoesNotExist
+	When User clicks "<PageName>" on the left-hand menu
+	Then "<PageName>" list should be displayed to the user
+	When User click on '<ColumnHeader>' column header
+	When User create dynamic list with "DynamicList12946" name on "<PageName>" page
+	Then "DynamicList12946" list is displayed to user
+	When User clicks the Actions button
+	Then Actions panel is displayed to the user
+	When User select "<ColumnHeader>" rows in the grid
+	| SelectedRowsName |
+	| <RowName>        |
+	And User clicks on Action drop-down
+	Then following Values are displayed in Action drop-down:
+	| Value              |
+	| Create static list |
+	| Bulk update        |
+	When User selects "Bulk update" in the Actions dropdown
+	And User selects "Update task value" Bulk Update Type on Action panel
+	And User selects "<ProjectName>" Project on Action panel
+	And User selects "<StageName>" Stage on Action panel
+	And User selects "<TaskName>" Task on Action panel
+	And User selects "<Value>" Value on Action panel
+	And User clicks the "UPDATE" Action button
+	Then Warning message with "Are you sure you want to proceed, this operation cannot be undone." text is displayed on Action panel
+	And User clicks "UPDATE" button on message box
+	And Success message with "0 of 1 objects were valid for the update." text is displayed on Action panel
+	Then There are no errors in the browser console
+
+Examples: 
+	| PageName     | ColumnHeader  | RowName                          | ProjectName                  | StageName      | TaskName                | Value                    |
+	| Devices      | Hostname      | 001PSUMZYOW581                   | User Scheduled Test (Jo)     | Two            | Radio Non Rag only Comp | Not Applicable           |
+	| Users        | Username      | 003F5D8E1A844B1FAA5              | Computer Scheduled Test (Jo) | Two            | Radio Non Rag User      | Not Applicable           |
+	| Applications | Application   | 7zip                             | Computer Scheduled Test (Jo) | Two            | Radio Non Rag App       | Not Applicable           |
+	| Mailboxes    | Email Address | 00BDBAEA57334C7C8F4@bclabs.local | Email Migration              | Mobile Devices | Mobile Device Status    | Identified & In Progress |
+
+@Evergreen @AllLists @EvergreenJnr_ActionsPanel @DAS12946 @Delete_Newly_Created_List
+Scenario Outline: EvergreenJnr_AllLists_ChecksThatAddToStaticListOptionIsNotShownInTheActionsPanelWhenOnlOneStaticListExists 
+	When User clicks "<PageName>" on the left-hand menu
+	Then "<PageName>" list should be displayed to the user
+	When User clicks the Actions button
+	Then Actions panel is displayed to the user
+	When User select "<ColumnHeader>" rows in the grid
+	| SelectedRowsName |
+	| <RowName>        |
+	And User selects "Create static list" in the Actions dropdown
+	And User create static list with "StaticList12946" name
+	Then "StaticList12946" list is displayed to user
+	When User clicks the Actions button
+	Then Actions panel is displayed to the user
+	When User select "<ColumnHeader>" rows in the grid
+	| SelectedRowsName |
+	| <RowName>        |
+	And User clicks on Action drop-down
+	Then following Values are displayed in Action drop-down:
+	| Value                   |
+	| Create static list      |
+	| Remove from static list |
+	| Bulk update             |
+
+Examples: 
+	| PageName     | ColumnHeader  | RowName                          |
+	| Devices      | Hostname      | 001PSUMZYOW581                   |
+	| Users        | Username      | 002B5DC7D4D34D5C895              |
+	| Applications | Application   | 20040610sqlserverck              |
+	| Mailboxes    | Email Address | 00C8BC63E7424A6E862@bclabs.local |
+
+@Evergreen @AllLists @EvergreenJnr_ActionsPanel @DAS12946 @Delete_Newly_Created_List
+Scenario Outline: EvergreenJnr_AllLists_ChecksThatStaticListsCreatedFromAFilterOriginallyLoadsAnyDataOnceTheStaticListHasBeenCreated  
+	When User clicks "<PageName>" on the left-hand menu
+	Then "<PageName>" list should be displayed to the user
+	When User clicks the Filters button
+	Then Filters panel is displayed to the user
+	When User add "<FilterName>" filter where type is "Equals" without added column and following checkboxes:
+	| SelectedCheckboxes |
+	| <Checkboxes>       |
+	Then "<FilterName>" filter is added to the list
+	When User clicks the Actions button
+	Then Actions panel is displayed to the user
+	When User select all rows
+	When User selects "Create static list" in the Actions dropdown
+	When User create static list with "StaticList12946" name
+	Then "StaticList12946" list is displayed to user
+	And table content is present
+	When User clicks the Actions button
+	Then Actions panel is displayed to the user
+	When User select all rows
+	Then "<SelectedRowsCount>" selected rows are displayed in the Actions panel
+	When User clicks on Action drop-down
+
+Examples: 
+	| PageName     | FilterName       | Checkboxes | SelectedRowsCount |
+	| Devices      | Compliance       | Red        | 9174              |
+	| Users        | Compliance       | Red        | 9438              |
+	| Applications | Compliance       | Red        | 181               |
+	| Mailboxes    | Owner Compliance | Green      | 14701             |

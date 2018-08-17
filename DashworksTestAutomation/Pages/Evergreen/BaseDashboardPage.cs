@@ -45,6 +45,15 @@ namespace DashworksTestAutomation.Pages.Evergreen
         [FindsBy(How = How.XPath, Using = "//mat-option[@role='option']")]
         public IWebElement OptionName { get; set; }
 
+        [FindsBy(How = How.XPath, Using = "//textarea[@placeholder='Stage']")]
+        public IWebElement StageField { get; set; }
+
+        [FindsBy(How = How.XPath, Using = "//textarea[@placeholder='Task']")]
+        public IWebElement TaskField { get; set; }
+
+        [FindsBy(How = How.XPath, Using = ".//mat-select[@aria-label='Value']")]
+        public IWebElement ValueDropdown { get; set; }
+
         [FindsBy(How = How.XPath, Using = "//input[@placeholder='Request Type']")]
         public IWebElement RequestTypeField { get; set; }
 
@@ -440,6 +449,14 @@ namespace DashworksTestAutomation.Pages.Evergreen
             return Driver.FindElement(By.XPath($".//span[@id='eName'][text()='{settingName}']"));
         }
 
+        public IWebElement GetOptionOnActionsPanelByName(string optionName)
+        {
+            var selector = By.XPath(
+                $"//mat-option[@role='option']//span[text()='{optionName}']");
+            Driver.WaitWhileControlIsNotDisplayed(selector);
+            return Driver.FindElement(selector);
+        }
+
         public string GetPinnedColumnName(string pinStatus)
         {
             switch (pinStatus)
@@ -498,14 +515,6 @@ namespace DashworksTestAutomation.Pages.Evergreen
                     return "UNCATEGORISED";
                 default: throw new Exception($"{styleImageItem} is not valid Image path");
             }
-        }
-
-        public void SelectActions(string actionsName)
-        {
-            var selectedActionsName =
-                $".//mat-option[@role='option']/span[text()='{actionsName}']";
-            Driver.WaitWhileControlIsNotDisplayed(By.XPath(selectedActionsName));
-            Driver.FindElement(By.XPath(selectedActionsName)).Click();
         }
 
         public IList<IWebElement> GetAllColumnHeaders()
