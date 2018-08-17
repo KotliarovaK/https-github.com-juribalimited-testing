@@ -1,5 +1,6 @@
 ﻿using System.IO;
 using System.Linq;
+using System.Net.Mime;
 using System.Threading;
 using DashworksTestAutomation.DTO;
 using DashworksTestAutomation.Extensions;
@@ -75,6 +76,31 @@ namespace DashworksTestAutomation.Steps.Dashworks
         {
             var page = _driver.NowAt<PreferencesPage>();
             _driver.SelectCustomSelectbox(page.LanguageDropdown, language);
+        }
+
+        [When(@"User changes List Page Size to ""(.*)""")]
+        public void WhenUserChangesListPageSizeTo(string size)
+        {
+            var page = _driver.NowAt<AdvancedPage>();
+            page.ListPageSizeField.ClearWithBackspaces();
+            page.ListPageSizeField.SendKeys(size);
+            page.BodyContainer.Click();
+        }
+
+        [When(@"User changes List Pages to Cache to ""(.*)""")]
+        public void WhenUserChangesListPagesToCacheTo(string size)
+        {
+            var page = _driver.NowAt<AdvancedPage>();
+            page.ListPagesToCache.ClearWithBackspaces();
+            page.ListPagesToCache.SendKeys(size);
+            page.BodyContainer.Click();
+        }
+
+        [Then(@"List Page Size is changed to ""(.*)""")]
+        public void ThenListPageSizeIsChangedTo(string size)
+        {
+            var page = _driver.NowAt<AdvancedPage>();
+            Assert.AreEqual(page.ListPageSizeField, size);
         }
 
         [When(@"User changes Display Mode to ""(.*)""")]
