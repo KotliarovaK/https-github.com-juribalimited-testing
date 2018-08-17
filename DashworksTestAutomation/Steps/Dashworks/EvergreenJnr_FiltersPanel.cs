@@ -808,7 +808,7 @@ namespace DashworksTestAutomation.Steps.Dashworks
         public void ThenMaximizeButtonsAreDisplayedForAllCategoryInFiltersPanel()
         {
             var filterElement = _driver.NowAt<FiltersElement>();
-            var groupCount = filterElement.GroupTitle.Count;
+            var groupCount = filterElement.GroupTitle.Count - 1;
             Assert.AreEqual(groupCount, filterElement.MaximizeGroupButton.Count, "Maximize buttons are not displayed");
         }
 

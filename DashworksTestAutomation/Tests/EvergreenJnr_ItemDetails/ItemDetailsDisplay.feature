@@ -427,8 +427,10 @@ Scenario: EvergreenJnr_DevicesList_CheckThePossibilityToRecheckingTheWorkflowCol
 	And User navigates to the "Projects" tab
 	And User opens "Device Projects" section on the Details Page
 	And User clicks String Filter button for "Workflow" column
-	And User clicks "(Blanks)" checkbox from String Filter on the Details Page
-	And User clicks "(Blanks)" checkbox from String Filter on the Details Page
+	When User selects "(Blanks)" checkbox from String Filter on the Details Page
+	And User clicks String Filter button for "Workflow" column
+	When User selects "(Blanks)" checkbox from String Filter on the Details Page
+	And User clicks String Filter button for "Workflow" column
 	Then "(Blanks)" checkbox is checked on the Details Page
 
 @Evergreen @Devices @EvergreenJnr_ItemDetails @ItemDetailsDisplay @DAS12283
@@ -547,6 +549,14 @@ Scenario Outline: EvergreenJnr_AllLists_CheckThatDropdownListsInTheProjectDetail
 	And User navigates to the "<TabName>" tab
 	And User opens "<SectionName>" section on the Details Page
 	Then "<CountRows>" rows found label displays on Details Page
+	When User clicks String Filter button for "Project" column
+	Then Dropdown List is displayed correctly in the Filter on the Details Page
+	When User clicks String Filter button for "Workflow" column
+	Then Dropdown List is displayed correctly in the Filter on the Details Page
+	When User clicks String Filter button for "Status" column
+	Then Dropdown List is displayed correctly in the Filter on the Details Page
+	When User clicks String Filter button for "Readiness" column
+	Then Dropdown List is displayed correctly in the Filter on the Details Page
 	When User clicks String Filter button for "Project Type" column
 	Then Dropdown List is displayed correctly in the Filter on the Details Page
 	When User clicks String Filter button for "Category" column
@@ -819,9 +829,9 @@ Scenario: EvergreenJnr_ApplicationsList_ChecksThatDevicesUsersUsedQuantityMatchE
 	| User Count (Used)   |
 	When User perform search by "Microsoft DirectX 5 DDK"
 	Then "99" content is displayed in "Device Count (Used)" column
-	Then "98" content is displayed in "User Count (Used)" column
+	And "98" content is displayed in "User Count (Used)" column
 	When User click content from "Application" column
-	When User navigates to the "Distribution" tab
+	And User navigates to the "Distribution" tab
 	And User clicks String Filter button for "Used" column
 	And User clicks "False" checkbox from String Filter on the Details Page
 	And User clicks "Unknown" checkbox from String Filter on the Details Page
