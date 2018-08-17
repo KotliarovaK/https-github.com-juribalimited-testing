@@ -64,6 +64,37 @@ namespace DashworksTestAutomation.Steps.Dashworks
             _userDto.Email = page.EmailField.GetAttribute("value");
         }
 
+        [Then(@"Change Password page is displayed to user")]
+        public void ThenChangePasswordPageIsDisplayedToUser()
+        {
+            var page = _driver.NowAt<ChangePasswordPage>();
+            Assert.IsTrue(page.CurrentPasswordField.Displayed(), "Change Password page is not displayed");
+        }
+
+        [When(@"User enters ""(.*)"" in the Current Password field")]
+        public void WhenUserEntersInTheCurrentPasswordField(string currentPassword)
+        {
+            var page = _driver.NowAt<ChangePasswordPage>();
+            page.CurrentPasswordField.Clear();
+            page.CurrentPasswordField.SendKeys(currentPassword);
+        }
+
+        [When(@"User enters ""(.*)"" in the New Password field")]
+        public void WhenUserEntersInTheNewPasswordField(string newPassword)
+        {
+            var page = _driver.NowAt<ChangePasswordPage>();
+            page.NewPassword.Clear();
+            page.NewPassword.SendKeys(newPassword);
+        }
+
+        [When(@"User enters ""(.*)"" in the Confirm Password field")]
+        public void WhenUserEntersInTheConfirmPasswordField(string confirmPassword)
+        {
+            var page = _driver.NowAt<ChangePasswordPage>();
+            page.ConfirmPasswordField.Clear();
+            page.ConfirmPasswordField.SendKeys(confirmPassword);
+        }
+
         [When(@"User navigates to the ""(.*)"" page on Account details")]
         public void WhenUserNavigatesToThePageOnAccountDetails(string pageToNavigate)
         {
@@ -114,6 +145,20 @@ namespace DashworksTestAutomation.Steps.Dashworks
         public void WhenUserClicksUpdateButtonOnPreferencesPage()
         {
             var page = _driver.NowAt<PreferencesPage>();
+            page.UpdateButton.Click();
+        }
+
+        [When(@"User clicks Update button on the Advanced page")]
+        public void WhenUserClicksUpdateButtonOnTheAdvancedPage()
+        {
+            var page = _driver.NowAt<AdvancedPage>();
+            page.UpdateButton.Click();
+        }
+
+        [When(@"User clicks Update button on the Change Password page")]
+        public void WhenUserClicksUpdateButtonOnTheChangePasswordPage()
+        {
+            var page = _driver.NowAt<ChangePasswordPage>();
             page.UpdateButton.Click();
         }
 
@@ -230,6 +275,30 @@ namespace DashworksTestAutomation.Steps.Dashworks
         {
             var page = _driver.NowAt<AccountDetailsPage>();
             _driver.WaitWhileControlIsNotDisplayed<AccountDetailsPage>(() => page.SuccessMessage);
+            Assert.AreEqual(text, page.SuccessMessage.Text, "Success Message is not displayed");
+        }
+
+        [Then(@"Success message with ""(.*)"" text is displayed on the Change Password page")]
+        public void ThenSuccessMessageWithTextIsDisplayedOnTheChangePasswordPage(string text)
+        {
+            var page = _driver.NowAt<ChangePasswordPage>();
+            _driver.WaitWhileControlIsNotDisplayed<ChangePasswordPage>(() => page.SuccessMessage);
+            StringAssert.Contains(text, page.SuccessMessage.Text, "Success Message is not displayed");
+        }
+
+        [Then(@"Error message with ""(.*)"" text is displayed on the Change Password page")]
+        public void ThenErrorMessageWithTextIsDisplayedOnTheChangePasswordPage(string text)
+        {
+            var page = _driver.NowAt<ChangePasswordPage>();
+            _driver.WaitWhileControlIsNotDisplayed<ChangePasswordPage>(() => page.ErrorMessage);
+            StringAssert.Contains(text, page.ErrorMessage.Text, "Error Message is not displayed");
+        }
+
+        [Then(@"Success message with ""(.*)"" text is displayed on the Advanced page")]
+        public void ThenSuccessMessageWithTextIsDisplayedOnTheAdvancedPage(string text)
+        {
+            var page = _driver.NowAt<AdvancedPage>();
+            _driver.WaitWhileControlIsNotDisplayed<AdvancedPage>(() => page.SuccessMessage);
             Assert.AreEqual(text, page.SuccessMessage.Text, "Success Message is not displayed");
         }
 
