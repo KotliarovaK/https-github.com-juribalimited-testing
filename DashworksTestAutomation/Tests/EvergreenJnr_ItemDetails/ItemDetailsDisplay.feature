@@ -829,9 +829,9 @@ Scenario: EvergreenJnr_ApplicationsList_ChecksThatDevicesUsersUsedQuantityMatchE
 	| User Count (Used)   |
 	When User perform search by "Microsoft DirectX 5 DDK"
 	Then "99" content is displayed in "Device Count (Used)" column
-	Then "98" content is displayed in "User Count (Used)" column
+	And "98" content is displayed in "User Count (Used)" column
 	When User click content from "Application" column
-	When User navigates to the "Distribution" tab
+	And User navigates to the "Distribution" tab
 	And User clicks String Filter button for "Used" column
 	And User clicks "False" checkbox from String Filter on the Details Page
 	And User clicks "Unknown" checkbox from String Filter on the Details Page

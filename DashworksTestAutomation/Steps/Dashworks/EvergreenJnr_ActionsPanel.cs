@@ -101,6 +101,14 @@ namespace DashworksTestAutomation.Steps.Dashworks
             _driver.WaitForDataLoading();
         }
 
+        [Then(@"""(.*)"" Action button is disabled")]
+        public void ThenActionButtonIsDisabled(string buttonName)
+        {
+            var button = _driver.NowAt<BaseDashboardPage>();
+            var buttonState = button.GetActionsButtonByName(buttonName).GetAttribute("disabled");
+            Assert.AreEqual(buttonState, "true", $"{buttonName} Button state is incorrect");
+        }
+
         [Then(@"Warning message with ""(.*)"" text is displayed on Action panel")]
         public void ThenWarningMessageWithTextIsDisplayedOnActionPanel(string textMessage)
         {
@@ -160,6 +168,13 @@ namespace DashworksTestAutomation.Steps.Dashworks
             _driver.SelectCustomSelectbox(actionsElement.DropdownBox, "Add to static list");
             actionsElement.SelectList(listName);
             actionsElement.AddButton.Click();
+        }
+
+        [Then(@"User selects ""(.*)"" List in Saved List dropdown")]
+        public void ThenUserSelectsListInSavedListDropdown(string listName)
+        {
+            var actionsElement = _driver.NowAt<ActionsElement>();
+            actionsElement.SelectList(listName);
         }
 
         [Then(@"Select All selectbox is checked")]
