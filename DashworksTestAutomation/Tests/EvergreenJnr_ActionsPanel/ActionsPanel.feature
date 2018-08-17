@@ -183,7 +183,7 @@ Scenario: EvergreenJnr_ApplicationsList_CheckThatUserWithoutJustTheProjectBulkUp
 	And User select "Manage Users" option in Management Console
 	And User removes "000WithPA" User
 
-@Evergreen @AllLists @EvergreenJnr_ActionsPanel @DAS12946
+@Evergreen @AllLists @EvergreenJnr_ActionsPanel @DAS12946 @Delete_Newly_Created_List
 Scenario Outline: EvergreenJnr_AllLists_ChecksThatRemoveFromStaticListOptionIsNotShownInTheActionsPanelWhenAStaticListDoesNotExist
 	When User clicks "<PageName>" on the left-hand menu
 	Then "<PageName>" list should be displayed to the user
@@ -219,7 +219,7 @@ Examples:
 	| Applications | Application   | 7zip                             | Computer Scheduled Test (Jo) | Two            | Radio Non Rag App       | Not Applicable           |
 	| Mailboxes    | Email Address | 00BDBAEA57334C7C8F4@bclabs.local | Email Migration              | Mobile Devices | Mobile Device Status    | Identified & In Progress |
 
-@Evergreen @AllLists @EvergreenJnr_ActionsPanel @DAS12946
+@Evergreen @AllLists @EvergreenJnr_ActionsPanel @DAS12946 @Delete_Newly_Created_List
 Scenario Outline: EvergreenJnr_AllLists_ChecksThatAddToStaticListOptionIsNotShownInTheActionsPanelWhenOnlOneStaticListExists 
 	When User clicks "<PageName>" on the left-hand menu
 	Then "<PageName>" list should be displayed to the user
@@ -249,3 +249,33 @@ Examples:
 	| Users        | Username      | 002B5DC7D4D34D5C895              |
 	| Applications | Application   | 20040610sqlserverck              |
 	| Mailboxes    | Email Address | 00C8BC63E7424A6E862@bclabs.local |
+
+@Evergreen @AllLists @EvergreenJnr_ActionsPanel @DAS12946 @Delete_Newly_Created_List
+Scenario Outline: EvergreenJnr_AllLists_ChecksThatStaticListsCreatedFromAFilterOriginallyLoadsAnyDataOnceTheStaticListHasBeenCreated  
+	When User clicks "<PageName>" on the left-hand menu
+	Then "<PageName>" list should be displayed to the user
+	When User clicks the Filters button
+	Then Filters panel is displayed to the user
+	When User add "<FilterName>" filter where type is "Equals" without added column and following checkboxes:
+	| SelectedCheckboxes |
+	| <Checkboxes>       |
+	Then "<FilterName>" filter is added to the list
+	When User clicks the Actions button
+	Then Actions panel is displayed to the user
+	When User select all rows
+	When User selects "Create static list" in the Actions dropdown
+	When User create static list with "StaticList12946" name
+	Then "StaticList12946" list is displayed to user
+	And table content is present
+	When User clicks the Actions button
+	Then Actions panel is displayed to the user
+	When User select all rows
+	Then "<SelectedRowsCount>" selected rows are displayed in the Actions panel
+	When User clicks on Action drop-down
+
+Examples: 
+	| PageName     | FilterName       | Checkboxes | SelectedRowsCount |
+	| Devices      | Compliance       | Red        | 9174              |
+	| Users        | Compliance       | Red        | 9438              |
+	| Applications | Compliance       | Red        | 181               |
+	| Mailboxes    | Owner Compliance | Green      | 14701             |
