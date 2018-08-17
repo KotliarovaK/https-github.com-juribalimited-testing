@@ -487,3 +487,56 @@ Scenario: EvergreenJnr_DevicesList_ChecksThatAfterAddingRowsToAStaticListFromADy
 	| Operating System   |
 	| Owner Display Name |
 	| Import             |
+
+@Evergreen @Devices @EvergreenJnr_Columns @ColumnSectionDisplay @DAS13059 @Delete_Newly_Created_List
+Scenario: EvergreenJnr_DevicesList_ChecksThatAfterAddingRowsToAStaticListFromAStaticListTheColumnsIsDisplayedCorrectlyOnDevicesPage
+	When User clicks "Devices" on the left-hand menu
+	Then "Devices" list should be displayed to the user
+	When User clicks the Columns button
+	Then Columns panel is displayed to the user
+	When ColumnName is entered into the search box and the selection is clicked
+	| ColumnName |
+	| Compliance |
+	Then ColumnName is added to the list
+	| ColumnName |
+	| Compliance |
+	When User clicks the Actions button
+	Then Actions panel is displayed to the user
+	When User select "Hostname" rows in the grid
+	| SelectedRowsName |
+	| 00BDM1JUR8IF419  |
+	And User selects "Create static list" in the Actions dropdown
+	And User create static list with "FirstStaticList13059" name
+	Then "FirstStaticList13059" list is displayed to user
+	When User navigates to the "All Devices" list
+	When User clicks the Columns button
+	Then Columns panel is displayed to the user
+	When ColumnName is entered into the search box and the selection is clicked
+	| ColumnName |
+	| Import     |
+	Then ColumnName is added to the list
+	| ColumnName |
+	| Import     |
+	When User clicks the Actions button
+	Then Actions panel is displayed to the user
+	When User select "Hostname" rows in the grid
+	| SelectedRowsName |
+	| 00YWR8TJU4ZF8V   |
+	And User selects "Create static list" in the Actions dropdown
+	And User create static list with "SecondStaticList13059" name
+	Then "SecondStaticList13059" list is displayed to user
+	When User navigates to the "FirstStaticList13059" list
+	When User clicks the Actions button
+	Then Actions panel is displayed to the user
+	When User select "Hostname" rows in the grid
+	| SelectedRowsName |
+	| 00BDM1JUR8IF419  |
+	Then User add selected rows in "SecondStaticList13059" list
+	Then "2" rows are displayed in the agGrid
+	And Column is displayed in following order:
+	| ColumnName         |
+	| Hostname           |
+	| Device Type        |
+	| Operating System   |
+	| Owner Display Name |
+	| Import             |
