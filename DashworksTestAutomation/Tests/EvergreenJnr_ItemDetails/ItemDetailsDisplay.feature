@@ -427,8 +427,10 @@ Scenario: EvergreenJnr_DevicesList_CheckThePossibilityToRecheckingTheWorkflowCol
 	And User navigates to the "Projects" tab
 	And User opens "Device Projects" section on the Details Page
 	And User clicks String Filter button for "Workflow" column
-	And User clicks "(Blanks)" checkbox from String Filter on the Details Page
-	And User clicks "(Blanks)" checkbox from String Filter on the Details Page
+	When User selects "(Blanks)" checkbox from String Filter on the Details Page
+	And User clicks String Filter button for "Workflow" column
+	When User selects "(Blanks)" checkbox from String Filter on the Details Page
+	And User clicks String Filter button for "Workflow" column
 	Then "(Blanks)" checkbox is checked on the Details Page
 
 @Evergreen @Devices @EvergreenJnr_ItemDetails @ItemDetailsDisplay @DAS12283
@@ -446,6 +448,16 @@ Scenario: EvergreenJnr_DevicesList_CheckThatOneUnknownFilterValueIsShownInGroupD
 	| Unknown |
 	When User clicks "True" checkbox from String Filter on the Details Page
 	Then Content is present in the table on the Details Page
+	When User clicks Reset Filters button on the Details Page
+	And User enters "wheelern" text in the Search field for "Username" column on the Details Page
+	Then "1" rows found label displays on Details Page
+	When User clicks Reset Filters button on the Details Page
+	And User enters "Administrator" text in the Search field for "Display Name" column on the Details Page
+	Then "1" rows found label displays on Details Page
+	When User clicks Reset Filters button on the Details Page
+	And User clicks String Filter button for "Domain" column
+	When User selects "DWLABS" checkbox from String Filter on the Details Page
+	Then "0" rows found label displays on Details Page
 
 @Evergreen @Mailboxes @EvergreenJnr_ItemDetails @ItemDetailsDisplay @DAS12245 @DAS12321
 Scenario: EvergreenJnr_MailboxesList_CheckThatListLoadedCorrectlyAndNoConsoleErrorIsNotDisplayed
@@ -471,11 +483,46 @@ Scenario: EvergreenJnr_DevicesList_CheckThatAllTextIsDisplayedAfterClearingFilte
 	When User click content from "Hostname" column
 	And User navigates to the "Applications" tab
 	Then All text is displayed for "Compliance" column in the String Filter
-	When  User clicks String Filter button for "Compliance" column
+	When User clicks String Filter button for "Compliance" column
 	And User clicks "Red" checkbox from String Filter on the Details Page
 	Then All text is not displayed for "Compliance" column in the String Filter
 	When User clicks Reset Filters button on the Details Page
 	Then All text is displayed for "Compliance" column in the String Filter
+	When User enters "Microsoft" text in the Search field for "Application" column on the Details Page
+	Then "3" rows found label displays on Details Page
+	When User clicks Reset Filters button on the Details Page
+	When User enters "33" text in the Search field for "Version" column on the Details Page
+	Then "1" rows found label displays on Details Page
+	When User clicks Reset Filters button on the Details Page
+	When User enters "Adobe" text in the Search field for "Vendor" column on the Details Page
+	Then "1" rows found label displays on Details Page
+	When User clicks Reset Filters button on the Details Page
+	When User enters "12" text in the Search field for "Used By Count" column on the Details Page
+	Then "0" rows found label displays on Details Page
+	When User clicks Reset Filters button on the Details Page
+	When User enters "5" text in the Search field for "Launch Count" column on the Details Page
+	Then "0" rows found label displays on Details Page
+	When User clicks Reset Filters button on the Details Page
+	And User clicks String Filter button for "Installed" column
+	When User clicks "False" checkbox from String Filter on the Details Page
+	Then "7" rows found label displays on Details Page
+	When User clicks Reset Filters button on the Details Page
+	And User clicks String Filter button for "Used" column
+	When User clicks "Unknown" checkbox from String Filter on the Details Page
+	Then "0" rows found label displays on Details Page
+	When User clicks Reset Filters button on the Details Page
+	And User clicks String Filter button for "Entitled" column
+	When User clicks "True" checkbox from String Filter on the Details Page
+	Then "0" rows found label displays on Details Page
+	When User clicks Reset Filters button on the Details Page
+	And User clicks String Filter button for "Site" column
+	When User selects "TierA Site01" checkbox from String Filter on the Details Page
+	Then "0" rows found label displays on Details Page
+	When User clicks Reset Filters button on the Details Page
+	When User selects following date filter on the Details Page
+	| FilterData |
+	| 7302017    |
+	Then "0" rows found label displays on Details Page
 
 @Evergreen @Mailboxes @EvergreenJnr_ItemDetails @ItemDetailsDisplay @DAS12088 @DAS12321
 Scenario: EvergreenJnr_MailboxesList_CheckThatMailboxPermissionsAndFolderPermissionsDataAreDisplayedCorrectly
@@ -502,6 +549,14 @@ Scenario Outline: EvergreenJnr_AllLists_CheckThatDropdownListsInTheProjectDetail
 	And User navigates to the "<TabName>" tab
 	And User opens "<SectionName>" section on the Details Page
 	Then "<CountRows>" rows found label displays on Details Page
+	When User clicks String Filter button for "Project" column
+	Then Dropdown List is displayed correctly in the Filter on the Details Page
+	When User clicks String Filter button for "Workflow" column
+	Then Dropdown List is displayed correctly in the Filter on the Details Page
+	When User clicks String Filter button for "Status" column
+	Then Dropdown List is displayed correctly in the Filter on the Details Page
+	When User clicks String Filter button for "Readiness" column
+	Then Dropdown List is displayed correctly in the Filter on the Details Page
 	When User clicks String Filter button for "Project Type" column
 	Then Dropdown List is displayed correctly in the Filter on the Details Page
 	When User clicks String Filter button for "Category" column
@@ -757,3 +812,34 @@ Scenario: EvergreenJnr_AllLists_CheckThatPopupIsBiggerAndIsShownProperlyBucketIs
 	Then Evergreen Bucket link "Bucket12883" is displayed
 	Then There are no errors in the browser console
 	And Delete "Bucket12883" Bucket in the Administration
+
+@Evergreen @Applications @AllLists @EvergreenJnr_ItemDetails @ItemDetailsDisplay @DAS13180
+Scenario: EvergreenJnr_ApplicationsList_ChecksThatDevicesUsersUsedQuantityMatchEachOtherOnApplicationTabAndApplicationDistributionTab
+	When User clicks "Applications" on the left-hand menu
+	Then "Applications" list should be displayed to the user
+	When User clicks the Columns button
+	Then Columns panel is displayed to the user
+	When ColumnName is entered into the search box and the selection is clicked
+	| ColumnName          |
+	| Device Count (Used) |
+	| User Count (Used)   |
+	Then ColumnName is added to the list
+	| ColumnName          |
+	| Device Count (Used) |
+	| User Count (Used)   |
+	When User perform search by "Microsoft DirectX 5 DDK"
+	Then "99" content is displayed in "Device Count (Used)" column
+	And "98" content is displayed in "User Count (Used)" column
+	When User click content from "Application" column
+	And User navigates to the "Distribution" tab
+	And User clicks String Filter button for "Used" column
+	And User clicks "False" checkbox from String Filter on the Details Page
+	And User clicks "Unknown" checkbox from String Filter on the Details Page
+	And User closes Checkbox filter for "Used" column
+	Then "98" rows found label displays on Details Page
+	When User closes "Users" section on the Details Page
+	And User opens "Devices" section on the Details Page
+	And User clicks String Filter button for "Used" column
+	And User clicks "False" checkbox from String Filter on the Details Page
+	And User clicks "Unknown" checkbox from String Filter on the Details Page
+	Then "99" rows found label displays on Details Page

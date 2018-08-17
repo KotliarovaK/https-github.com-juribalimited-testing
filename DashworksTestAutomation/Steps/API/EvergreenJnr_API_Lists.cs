@@ -52,7 +52,7 @@ namespace DashworksTestAutomation.Steps.API
             var response = _client.Value.Post(request);
 
             if (response.StatusCode != HttpStatusCode.OK)
-                throw new Exception($"Unable to execute request. URI: {requestUri}");
+                throw new Exception($"Unable to execute request. Status Code: {response.StatusCode}, URI: {requestUri}");
 
             var content = response.Content;
 
@@ -173,6 +173,9 @@ namespace DashworksTestAutomation.Steps.API
             request.AddParameter("items", items);
 
             response = _client.Value.Post(request);
+
+            if (response.StatusCode != HttpStatusCode.OK)
+                throw new Exception($"Unable to execute request. Status Code: {response.StatusCode}, URI: {requestUri}");
 
             var url = $"{UrlProvider.EvergreenUrl}#/{pageName.ToLower()}?$listid={listId}";
 

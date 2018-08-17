@@ -274,3 +274,269 @@ Scenario: EvergreenJnr_UsersList_ChecksThatColumnsPanelIsDisplayedCorrectlyAfter
 	When User clicks the Columns button
 	Then Columns panel is displayed to the user
 	Then Maximize button is displayed for "User" category
+
+@Evergreen @Devices @EvergreenJnr_Columns @ColumnSectionDisplay @DAS13059 @Delete_Newly_Created_List
+Scenario: EvergreenJnr_DevicesList_ChecksThatAfterAddingRowsToAStaticListFromTheAllListTheColumnsIsDisplayedCorrectlyOnDevicesPage
+	When User clicks "Devices" on the left-hand menu
+	Then "Devices" list should be displayed to the user
+	When User clicks the Columns button
+	Then Columns panel is displayed to the user
+	When ColumnName is entered into the search box and the selection is clicked
+	| ColumnName |
+	| Compliance |
+	| Import     |
+	Then ColumnName is added to the list
+	| ColumnName |
+	| Compliance |
+	| Import     |
+	When User clicks the Actions button
+	Then Actions panel is displayed to the user
+	When User select "Hostname" rows in the grid
+	| SelectedRowsName |
+	| 00BDM1JUR8IF419  |
+	| 00I0COBFWHOF27   |
+	And User selects "Create static list" in the Actions dropdown
+	And User create static list with "StaticListFromTheAllList" name
+	Then "StaticListFromTheAllList" list is displayed to user
+	When User navigates to the "All Devices" list
+	And User clicks the Actions button
+	Then Actions panel is displayed to the user
+	When User select "Hostname" rows in the grid
+	| SelectedRowsName |
+	| 00YWR8TJU4ZF8V   |
+	| 00RUUMAH9OZN9A   |
+	And User selects "Add to static list" in the Actions dropdown
+	Then "ADD" Action button is disabled
+	And User selects "StaticListFromTheAllList" List in Saved List dropdown
+	When User clicks the "ADD" Action button
+	Then "4" rows are displayed in the agGrid
+	And Column is displayed in following order:
+	| ColumnName         |
+	| Hostname           |
+	| Device Type        |
+	| Operating System   |
+	| Owner Display Name |
+	| Compliance         |
+	| Import             |
+
+@Evergreen @Users @EvergreenJnr_Columns @ColumnSectionDisplay @DAS13059 @Delete_Newly_Created_List
+Scenario: EvergreenJnr_UsersList_ChecksThatAfterAddingRowsToAStaticListFromTheAllListTheColumnsIsDisplayedCorrectlyOnUsersPage
+	When User clicks "Users" on the left-hand menu
+	Then "Users" list should be displayed to the user
+	When User clicks the Columns button
+	Then Columns panel is displayed to the user
+	When ColumnName is entered into the search box and the selection is clicked
+	| ColumnName |
+	| Compliance |
+	| Enabled    |
+	Then ColumnName is added to the list
+	| ColumnName |
+	| Compliance |
+	| Enabled    |
+	When User clicks the Actions button
+	Then Actions panel is displayed to the user
+	When User select "Username" rows in the grid
+	| SelectedRowsName    |
+	| 002B5DC7D4D34D5C895 |
+	| 0072B088173449E3A93 |
+	And User selects "Create static list" in the Actions dropdown
+	And User create static list with "StaticListFromTheAllList" name
+	Then "StaticListFromTheAllList" list is displayed to user
+	When User navigates to the "All Users" list
+	And User clicks the Actions button
+	Then Actions panel is displayed to the user
+	When User select "Username" rows in the grid
+	| SelectedRowsName    |
+	| 00CFE13AAE104724AF5 |
+	| 00DB4000EDD84951993 |
+	Then User add selected rows in "StaticListFromTheAllList" list
+	Then "4" rows are displayed in the agGrid
+	And Column is displayed in following order:
+	| ColumnName         |
+	| Username           |
+	| Domain             |
+	| Display Name       |
+	| Distinguished Name |
+	| Compliance         |
+	| Enabled            |
+
+@Evergreen @Applications @EvergreenJnr_Columns @ColumnSectionDisplay @DAS13059 @Delete_Newly_Created_List
+Scenario: EvergreenJnr_ApplicationsList_ChecksThatAfterAddingRowsToAStaticListFromTheAllListTheColumnsIsDisplayedCorrectlyOnApplicationsPage
+	When User clicks "Applications" on the left-hand menu
+	Then "Applications" list should be displayed to the user
+	When User clicks the Columns button
+	Then Columns panel is displayed to the user
+	When ColumnName is entered into the search box and the selection is clicked
+	| ColumnName |
+	| Compliance |
+	| Import     |
+	Then ColumnName is added to the list
+	| ColumnName |
+	| Compliance |
+	| Import     |
+	When User clicks the Actions button
+	Then Actions panel is displayed to the user
+	When User select "Application" rows in the grid
+	| SelectedRowsName    |
+	| "WPF/E" (codename) Community Technology Preview (Feb 2007)      |
+	| %SQL_PRODUCT_SHORT_NAME% Data Tools - BI for Visual Studio 2013 |
+	And User selects "Create static list" in the Actions dropdown
+	And User create static list with "StaticListFromTheAllList" name
+	Then "StaticListFromTheAllList" list is displayed to user
+	When User navigates to the "All Applications" list
+	And User clicks the Actions button
+	Then Actions panel is displayed to the user
+	When User select "Application" rows in the grid
+	| SelectedRowsName    |
+	| 0047 - Microsoft Access 97 SR-2 Francais |
+	| 20040610sqlserverck                      |
+	Then User add selected rows in "StaticListFromTheAllList" list
+	Then "4" rows are displayed in the agGrid
+	And Column is displayed in following order:
+	| ColumnName  |
+	| Application |
+	| Vendor      |
+	| Version     |
+	| Compliance  |
+	| Import      |
+
+@Evergreen @Mailboxes @EvergreenJnr_Columns @ColumnSectionDisplay @DAS13059 @Delete_Newly_Created_List
+Scenario: EvergreenJnr_MailboxesList_ChecksThatAfterAddingRowsToAStaticListFromTheAllListTheColumnsIsDisplayedCorrectlyOnMailboxesPage
+	When User clicks "Mailboxes" on the left-hand menu
+	Then "Mailboxes" list should be displayed to the user
+	When User clicks the Columns button
+	Then Columns panel is displayed to the user
+	When ColumnName is entered into the search box and the selection is clicked
+	| ColumnName |
+	| Alias      |
+	| Import     |
+	Then ColumnName is added to the list
+	| ColumnName |
+	| Alias      |
+	| Import     |
+	When User clicks the Actions button
+	Then Actions panel is displayed to the user
+	When User select "Email Address" rows in the grid
+	| SelectedRowsName                 |
+	| 000F977AC8824FE39B8@bclabs.local |
+	| 002B5DC7D4D34D5C895@bclabs.local |
+	And User selects "Create static list" in the Actions dropdown
+	And User create static list with "StaticListFromTheAllList" name
+	Then "StaticListFromTheAllList" list is displayed to user
+	When User navigates to the "All Mailboxes" list
+	And User clicks the Actions button
+	Then Actions panel is displayed to the user
+	When User select "Email Address" rows in the grid
+	| SelectedRowsName                 |
+	| 00BDBAEA57334C7C8F4@bclabs.local |
+	| 00B5CCB89AD0404B965@bclabs.local |
+	Then User add selected rows in "StaticListFromTheAllList" list
+	Then "4" rows are displayed in the agGrid
+	And Column is displayed in following order:
+	| ColumnName         |
+	| Email Address      |
+	| Mailbox Platform   |
+	| Mail Server        |
+	| Mailbox Type       |
+	| Owner Display Name |
+	| Alias              |
+	| Import             |
+
+@Evergreen @Devices @EvergreenJnr_Columns @ColumnSectionDisplay @DAS13059 @Delete_Newly_Created_List
+Scenario: EvergreenJnr_DevicesList_ChecksThatAfterAddingRowsToAStaticListFromADynamicListTheColumnsIsDisplayedCorrectlyOnDevicesPage
+	When User clicks "Devices" on the left-hand menu
+	Then "Devices" list should be displayed to the user
+	When User clicks the Columns button
+	Then Columns panel is displayed to the user
+	When ColumnName is entered into the search box and the selection is clicked
+	| ColumnName |
+	| Compliance |
+	Then ColumnName is added to the list
+	| ColumnName |
+	| Compliance |
+	When User create dynamic list with "DynamicList13059" name on "Devices" page
+	When User navigates to the "All Devices" list
+	When User clicks the Columns button
+	Then Columns panel is displayed to the user
+	When ColumnName is entered into the search box and the selection is clicked
+	| ColumnName |
+	| Import     |
+	Then ColumnName is added to the list
+	| ColumnName |
+	| Import     |
+	When User clicks the Actions button
+	Then Actions panel is displayed to the user
+	When User select "Hostname" rows in the grid
+	| SelectedRowsName |
+	| 00BDM1JUR8IF419  |
+	And User selects "Create static list" in the Actions dropdown
+	And User create static list with "StaticListFromADynamicList" name
+	Then "StaticListFromADynamicList" list is displayed to user
+	When User navigates to the "DynamicList13059" list
+	When User clicks the Actions button
+	Then Actions panel is displayed to the user
+	When User select "Hostname" rows in the grid
+	| SelectedRowsName |
+	| 00YWR8TJU4ZF8V   |
+	Then User add selected rows in "StaticListFromADynamicList" list
+	Then "2" rows are displayed in the agGrid
+	And Column is displayed in following order:
+	| ColumnName         |
+	| Hostname           |
+	| Device Type        |
+	| Operating System   |
+	| Owner Display Name |
+	| Import             |
+
+@Evergreen @Devices @EvergreenJnr_Columns @ColumnSectionDisplay @DAS13059 @Delete_Newly_Created_List
+Scenario: EvergreenJnr_DevicesList_ChecksThatAfterAddingRowsToAStaticListFromAStaticListTheColumnsIsDisplayedCorrectlyOnDevicesPage
+	When User clicks "Devices" on the left-hand menu
+	Then "Devices" list should be displayed to the user
+	When User clicks the Columns button
+	Then Columns panel is displayed to the user
+	When ColumnName is entered into the search box and the selection is clicked
+	| ColumnName |
+	| Compliance |
+	Then ColumnName is added to the list
+	| ColumnName |
+	| Compliance |
+	When User clicks the Actions button
+	Then Actions panel is displayed to the user
+	When User select "Hostname" rows in the grid
+	| SelectedRowsName |
+	| 00BDM1JUR8IF419  |
+	And User selects "Create static list" in the Actions dropdown
+	And User create static list with "FirstStaticList13059" name
+	Then "FirstStaticList13059" list is displayed to user
+	When User navigates to the "All Devices" list
+	When User clicks the Columns button
+	Then Columns panel is displayed to the user
+	When ColumnName is entered into the search box and the selection is clicked
+	| ColumnName |
+	| Import     |
+	Then ColumnName is added to the list
+	| ColumnName |
+	| Import     |
+	When User clicks the Actions button
+	Then Actions panel is displayed to the user
+	When User select "Hostname" rows in the grid
+	| SelectedRowsName |
+	| 00YWR8TJU4ZF8V   |
+	And User selects "Create static list" in the Actions dropdown
+	And User create static list with "SecondStaticList13059" name
+	Then "SecondStaticList13059" list is displayed to user
+	When User navigates to the "FirstStaticList13059" list
+	When User clicks the Actions button
+	Then Actions panel is displayed to the user
+	When User select "Hostname" rows in the grid
+	| SelectedRowsName |
+	| 00BDM1JUR8IF419  |
+	Then User add selected rows in "SecondStaticList13059" list
+	Then "2" rows are displayed in the agGrid
+	And Column is displayed in following order:
+	| ColumnName         |
+	| Hostname           |
+	| Device Type        |
+	| Operating System   |
+	| Owner Display Name |
+	| Import             |

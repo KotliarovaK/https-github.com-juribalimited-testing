@@ -175,6 +175,13 @@ namespace DashworksTestAutomation.Steps.Dashworks
                 $"All text is displayed for {columnName} column");
         }
 
+        [When(@"User enters ""(.*)"" text in the Search field for ""(.*)"" column on the Details Page")]
+        public void WhenUserEntersTextInTheSearchFieldForColumnOnTheDetailsPage(string text, string columnName)
+        {
+            var searchElement = _driver.NowAt<DetailsPage>();
+            searchElement.GetSearchFieldByColumnName(columnName, text);
+        }
+
         [Then(@"Dropdown List is displayed correctly in the Filter on the Details Page")]
         public void ThenDropdownListIsDisplayedCorrectlyInTheFilterOnTheDetailsPage()
         {
@@ -274,11 +281,32 @@ namespace DashworksTestAutomation.Steps.Dashworks
                 page.GetBooleanStringFilterByName(filterName).Click();
         }
 
+        [When(@"User selects ""(.*)"" checkbox from String Filter on the Details Page")]
+        public void WhenUserSelectsCheckboxFromStringFilterOnTheDetailsPage(string filterName)
+        {
+            var page = _driver.NowAt<ApplicationsDetailsTabsMenu>();
+            page.GetCheckboxStringFilterByName(filterName);
+            page.BodyContainer.Click();
+        }
+
         [Then(@"""(.*)"" checkbox is checked on the Details Page")]
         public void ThenCheckboxIsCheckedOnTheDetailsPage(string checkboxName)
         {
             var filterElement = _driver.NowAt<ApplicationsDetailsTabsMenu>();
             Assert.IsTrue(filterElement.ColumnCheckboxChecked.Displayed(), $"{checkboxName} Checkbox is not selected");
+        }
+
+        [When(@"User selects following date filter on the Details Page")]
+        public void WhenUserSelectsFollowingDateFilterOnTheDetailsPage(Table table)
+        {
+            var filter = _driver.NowAt<ApplicationsDetailsTabsMenu>();
+            _driver.WaitForDataLoading();
+            filter.ResetFiltersButton.Click();
+            foreach (var row in table.Rows)
+            {
+                filter.DateFilterValue.SendKeys(row["FilterData"]);
+            }
+            _driver.WaitForDataLoading();
         }
 
         [Then(@"Content is present in the table on the Details Page")]
