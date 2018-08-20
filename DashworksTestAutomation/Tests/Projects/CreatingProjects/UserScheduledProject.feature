@@ -10,8 +10,8 @@ Scenario: Projects_CreateUserScheduledProject
 	When User clicks create Project button
 	Then "Create Project" page is displayed to the user
 	When User creates Project
-	| ProjectName              | ProjectShortName | ProjectDescription | ProjectTypeString    |
-	| 000 UserScheduledProject | TestText         | TestText           | UserScheduledProject |
+	| ProjectName              | ProjectShortName | ProjectDescription   | ProjectTypeString    |
+	| 000 UserScheduledProject | User             | UserScheduledProject | UserScheduledProject |
 	Then Error message is not displayed
 	When User clicks "Create Project" button
 	Then Error message is not displayed
