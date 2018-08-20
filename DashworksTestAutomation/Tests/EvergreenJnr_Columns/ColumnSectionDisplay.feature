@@ -304,7 +304,7 @@ Scenario: EvergreenJnr_DevicesList_ChecksThatAfterAddingRowsToAStaticListFromThe
 	When User select "Hostname" rows in the grid
 	| SelectedRowsName |
 	| 00YWR8TJU4ZF8V   |
-	| 01KFZ6XUVQSII0   |
+	| 00RUUMAH9OZN9A   |
 	And User selects "Add to static list" in the Actions dropdown
 	Then "ADD" Action button is disabled
 	And User selects "StaticListFromTheAllList" List in Saved List dropdown
@@ -418,8 +418,8 @@ Scenario: EvergreenJnr_MailboxesList_ChecksThatAfterAddingRowsToAStaticListFromT
 	Then Actions panel is displayed to the user
 	When User select "Email Address" rows in the grid
 	| SelectedRowsName                 |
-	| 00B5CCB89AD0404B965@bclabs.local |
-	| 00C8BC63E7424A6E862@bclabs.local |
+	| 000F977AC8824FE39B8@bclabs.local |
+	| 002B5DC7D4D34D5C895@bclabs.local |
 	And User selects "Create static list" in the Actions dropdown
 	And User create static list with "StaticListFromTheAllList" name
 	Then "StaticListFromTheAllList" list is displayed to user
@@ -428,8 +428,8 @@ Scenario: EvergreenJnr_MailboxesList_ChecksThatAfterAddingRowsToAStaticListFromT
 	Then Actions panel is displayed to the user
 	When User select "Email Address" rows in the grid
 	| SelectedRowsName                 |
-	| 013DA2178AB4444CAF2@bclabs.local |
-	| 01A921EFD05545818AA@bclabs.local |
+	| 00BDBAEA57334C7C8F4@bclabs.local |
+	| 00B5CCB89AD0404B965@bclabs.local |
 	Then User add selected rows in "StaticListFromTheAllList" list
 	Then "4" rows are displayed in the agGrid
 	And Column is displayed in following order:
