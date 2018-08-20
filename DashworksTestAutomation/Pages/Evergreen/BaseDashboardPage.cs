@@ -452,7 +452,7 @@ namespace DashworksTestAutomation.Pages.Evergreen
         public IWebElement GetOptionOnActionsPanelByName(string optionName)
         {
             var selector = By.XPath(
-                $"//mat-option[@role='option']//span[text()='{optionName}']");
+                $"//mat-option[@role='option']//span[contains(text(),'{optionName}')]");
             Driver.WaitWhileControlIsNotDisplayed(selector);
             return Driver.FindElement(selector);
         }
