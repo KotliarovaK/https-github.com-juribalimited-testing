@@ -131,7 +131,14 @@ namespace DashworksTestAutomation.Steps.Dashworks
         public void ThenListPageSizeIsChangedTo(string size)
         {
             var page = _driver.NowAt<AdvancedPage>();
-            Assert.AreEqual(page.ListPageSizeField, size);
+            Assert.AreEqual(size, page.ListPageSizeField.GetAttribute("value"), "List Page Size is not changed");
+        }
+
+        [Then(@"List Pages to Cache is changed to ""(.*)""")]
+        public void ThenListPagesToCacheIsChangedTo(string size)
+        {
+            var page = _driver.NowAt<AdvancedPage>();
+            Assert.AreEqual(size, page.ListPagesToCache.GetAttribute("value"), "List Page Size is not changed");
         }
 
         [When(@"User changes Display Mode to ""(.*)""")]
