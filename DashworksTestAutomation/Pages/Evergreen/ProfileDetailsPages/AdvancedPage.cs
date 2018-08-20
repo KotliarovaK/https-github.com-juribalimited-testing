@@ -33,10 +33,5 @@ namespace DashworksTestAutomation.Pages.Evergreen.ProfileDetailsPages
                 SelectorFor(this, p => p.UpdateButton)
             };
         }
-
-        public bool GetSelectedListPageSize(string selectedSize)
-        {
-            return Driver.IsElementDisplayed(By.XPath($".//span[@class='title'][contains(text(), '{selectedSize}')]"));
-        }
     }
 }

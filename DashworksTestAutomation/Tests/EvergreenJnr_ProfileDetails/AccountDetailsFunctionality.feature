@@ -60,7 +60,7 @@ Scenario: EvergreenJnr_UserProfile_CheckThatErrorIsNotDisplayedAfterChangingProf
 	When User changes Full Name to "TestAdm"
 	Then Error message is not displayed on Profile page
 
-@Evergreen @ProfileDetails @EvergreenJnr_FilterFeature @UserProfile @DAS11723 @API @Not_Run
+@Evergreen @ProfileDetails @EvergreenJnr_FilterFeature @UserProfile @DAS11723 @API
 Scenario: EvergreenJnr_UserProfile_CheckThatDefaultListPageSizeIs1000API
 	Then default list page Size is "1000" and Cache "10"
 
@@ -99,11 +99,13 @@ Scenario: EvergreenJnr_UserProfile_ChangingListPageSizeAndListPagesToCache
 	Then Profile page is displayed to user
 	When User navigates to the "Advanced" page on Account details
 	When User changes List Page Size to "99"
-	#Then List Page Size is changed to "100"
+	Then List Page Size is changed to "100"
 	When User changes List Page Size to "5001"
-	#Then List Page Size is changed to "5000"
+	Then List Page Size is changed to "5000"
 	When User changes List Pages to Cache to "2"
+	Then List Pages to Cache is changed to "3"
 	When User changes List Pages to Cache to "16"
+	Then List Pages to Cache is changed to "15"
 	When User changes List Pages to Cache to "10"
 	When User changes List Page Size to "1000"
 	And User clicks Update button on the Advanced page
