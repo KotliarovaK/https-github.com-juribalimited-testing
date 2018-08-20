@@ -409,14 +409,17 @@ Scenario: EvergreenJnr_DevicesList_CheckThatOpenedSectionIsDisplayedCorrectlyOnT
 	When User closes "Application Summary" section on the Details Page
 	And User opens "Application Detail" section on the Details Page
 	Then "14" rows found label displays on Details Page
+	And table content is present
 	And section is loaded correctly
 	When User closes "Application Detail" section on the Details Page
 	And User opens "Advertisements" section on the Details Page
 	Then "7" rows found label displays on Details Page
+	And table content is present
 	And section is loaded correctly
 	When User closes "Advertisements" section on the Details Page
 	And User opens "Collections" section on the Details Page
 	Then "7" rows found label displays on Details Page
+	And table content is present
 	And section is loaded correctly
 
 @Evergreen @Devices @EvergreenJnr_ItemDetails @ItemDetailsDisplay @DAS12253

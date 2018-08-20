@@ -1015,7 +1015,7 @@ Scenario: EvergreenJnr_AdminPage_CheckThatOnboardingOfObjectsIsProceedForScopedP
 	And User clicks the "CREATE PROJECT" Action button
 	Then "Create Project" page should be displayed to the user
 	When User enters "NewProject15" in the Project Name field
-	And User selects "All Devices" in the Scope Project dropdown
+	And User selects "All Users" in the Scope Project dropdown
 	When User clicks Create button on the Create Project page
 	Then Success message is displayed and contains "Your project has been created" text
 	When User clicks newly created object link
@@ -1025,6 +1025,31 @@ Scenario: EvergreenJnr_AdminPage_CheckThatOnboardingOfObjectsIsProceedForScopedP
 	Then data in table is sorted by "Project" column in ascending order by default on the Admin page
 	When User enters "NewProject15" text in the Search field for "Project" column
 	Then Counter shows "1" found rows
+	When User clicks Reset Filters button on the Admin page
+	When User clicks String Filter button for "Active" column on the Admin page
+	When User clicks "True" checkbox from String Filter on the Admin page
+	Then Counter shows "0" found rows
+	When User clicks Reset Filters button on the Admin page
+	When User clicks String Filter button for "Type" column on the Admin page
+	When User selects "Device scoped" checkbox from String Filter on the Admin page
+	Then Counter shows "1" found rows
+	When User clicks Reset Filters button on the Admin page 
+	When User enters "test" text in the Search field for "Short Name" column
+	Then Counter shows "1" found rows
+	When User clicks Reset Filters button on the Admin page 
+	When User have opened Column Settings for "Project" column
+	And User clicks Column button on the Column Settings panel
+	Then Column Settings was opened
+	When User select "Project ID" checkbox on the Column Settings panel
+	And User clicks Column button on the Column Settings panel
+	Then following columns added to the table:
+	| ColumnName |
+	| Project ID |
+	And content is present in the following newly added columns:
+	| ColumnName |
+	| Project ID |
+	When User enters "01" text in the Search field for "Project ID" column
+	Then Counter shows "0" found rows
 
 @Evergreen @Admin @EvergreenJnr_AdminPage @AdminPage @DAS12332 @DAS13199 @Delete_Newly_Created_Project @Project_Creation_and_Scope @Projects
 Scenario: EvergreenJnr_AdminPage_CheckingThatRedBannerWithOkMessageIsNotDisplayedAfterAddingItemsToCreatedProject
