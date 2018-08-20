@@ -197,13 +197,13 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_StaticLists
             TechTalk.SpecFlow.Table table6 = new TechTalk.SpecFlow.Table(new string[] {
                         "ItemName"});
             table6.AddRow(new string[] {
-                        "OMHSV0SYAJ1DHH"});
+                        "07PZNEOU91VWVH"});
             table6.AddRow(new string[] {
-                        "KT9QOAK2V45HF7"});
+                        "0A88YQHT6IMTTZ"});
             table6.AddRow(new string[] {
-                        "CAJ7AN9LAW3QEP"});
+                        "0CFTD5FV5F7FDF"});
             table6.AddRow(new string[] {
-                        "OMHSV0SYAJ1DHH"});
+                        "0E9XQC02MAZUR2"});
             testRunner.When("User create static list with \"NotOwnerSpecifiedEdit\" name on \"Devices\" page with " +
                     "following items", ((string)(null)), table6, "When ");
             testRunner.Then("\"NotOwnerSpecifiedEdit\" list is displayed to user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
@@ -221,13 +221,13 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_StaticLists
             TechTalk.SpecFlow.Table table7 = new TechTalk.SpecFlow.Table(new string[] {
                         "ItemName"});
             table7.AddRow(new string[] {
-                        "U3IKRXYYY4YE0V"});
+                        "VMI480Z5UKTLLK"});
             table7.AddRow(new string[] {
-                        "EKGSN1N0X9UKRY"});
+                        "6B512UPQFLSOVF"});
             table7.AddRow(new string[] {
-                        "EKGSN1N0X9UKRY"});
+                        "0CFTD5FV5F7FDF"});
             table7.AddRow(new string[] {
-                        "W10ASSDUNCAN"});
+                        "0E9XQC02MAZUR2"});
             testRunner.When("User create static list with \"NotOwnerSpecifiedRead\" name on \"Devices\" page with " +
                     "following items", ((string)(null)), table7, "When ");
             testRunner.Then("\"NotOwnerSpecifiedRead\" list is displayed to user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
