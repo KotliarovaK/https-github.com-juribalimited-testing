@@ -93,3 +93,45 @@ Scenario: EvergreenJnr_UserProfile_ChangingListPageSizeAndListPagesToCache
 	When User changes List Page Size to "5001"
 	#Then List Page Size is changed to "5000"
 	When User changes List Pages to Cache to "2"
+	When User changes List Pages to Cache to "16"
+	When User changes List Pages to Cache to "10"
+	When User changes List Page Size to "1000"
+	And User clicks Update button on the Advanced page
+	Then Success message with "User preferences have been changed" text is displayed on the Advanced page
+
+@Evergreen @ProfileDetails @EvergreenJnr_ProfileDetails @UserProfile @DAS13026
+Scenario: EvergreenJnr_UserProfile_ChangingPassword
+	When User clicks Profile in Account Dropdown
+	Then Profile page is displayed to user
+	When User navigates to the "Change Password" page on Account details
+	Then Change Password page is displayed to user
+	When User enters "m!gration" in the Current Password field
+	When User enters "test5846" in the New Password field
+	When User enters "test5846" in the Confirm Password field
+	When User clicks Update button on the Change Password page
+	Then Success message with "Password has been changed" text is displayed on the Change Password page
+	When User enters "IncorrectCurrentPassword" in the Current Password field
+	When User enters "m!gration" in the New Password field
+	When User enters "m!gration" in the Confirm Password field
+	When User clicks Update button on the Change Password page
+	Then Error message with "Current password is incorrect" text is displayed on the Change Password page
+	When User enters "IncorrectCurrentPassword" in the Current Password field
+	When User enters "m!gration" in the New Password field
+	When User enters "test5846" in the Confirm Password field
+	When User clicks Update button on the Change Password page
+	Then Error message with "New password doesn't match" text is displayed on the Change Password page
+	When User enters "test5846" in the Current Password field
+	When User enters "m!gration" in the New Password field
+	When User enters "test5846pass" in the Confirm Password field
+	When User clicks Update button on the Change Password page
+	Then Error message with "New password doesn't match" text is displayed on the Change Password page
+	When User enters "test5846" in the Current Password field
+	When User enters "54891" in the New Password field
+	When User enters "54891" in the Confirm Password field
+	When User clicks Update button on the Change Password page
+	Then Error message with "New password must be at least 6 characters long" text is displayed on the Change Password page
+	When User enters "test5846" in the Current Password field
+	When User enters "m!gration" in the New Password field
+	When User enters "m!gration" in the Confirm Password field
+	When User clicks Update button on the Change Password page
+	Then Success message with "Password has been changed" text is displayed on the Change Password page

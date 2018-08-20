@@ -59,10 +59,10 @@ Scenario: EvergreenJnr_DevicesList_CheckThatAddRowsOptionsIsAvailableForSpecifie
 	Then "Devices" list should be displayed to the user
 	When User create static list with "NotOwnerSpecifiedEdit" name on "Devices" page with following items
 	| ItemName       |
-	| OMHSV0SYAJ1DHH |
-	| KT9QOAK2V45HF7 |
-	| CAJ7AN9LAW3QEP |
-	| OMHSV0SYAJ1DHH |
+	| 07PZNEOU91VWVH |
+	| 0A88YQHT6IMTTZ |
+	| 0CFTD5FV5F7FDF |
+	| 0E9XQC02MAZUR2 |
 	Then "NotOwnerSpecifiedEdit" list is displayed to user
 	When User clicks the List Details button
 	Then List details panel is displayed to the user
@@ -77,10 +77,10 @@ Scenario: EvergreenJnr_DevicesList_CheckThatAddRowsOptionsIsAvailableForSpecifie
 	Then "Devices" list should be displayed to the user
 	When User create static list with "NotOwnerSpecifiedRead" name on "Devices" page with following items
 	| ItemName       |
-	| U3IKRXYYY4YE0V |
-	| EKGSN1N0X9UKRY |
-	| EKGSN1N0X9UKRY |
-	| W10ASSDUNCAN   |
+	| VMI480Z5UKTLLK |
+	| 6B512UPQFLSOVF |
+	| 0CFTD5FV5F7FDF |
+	| 0E9XQC02MAZUR2 |
 	Then "NotOwnerSpecifiedRead" list is displayed to user
 	When User clicks the List Details button
 	Then List details panel is displayed to the user

@@ -66,7 +66,7 @@ namespace DashworksTestAutomation.Steps.Dashworks
         {
             var action = _driver.NowAt<BaseDashboardPage>();
             action.ActionsDropdown.Click();
-            action.SelectActions(actionsName);
+            action.GetOptionOnActionsPanelByName(actionsName).Click();
         }
 
         [When(@"User selects ""(.*)"" Bulk Update Type on Action panel")]
@@ -74,23 +74,51 @@ namespace DashworksTestAutomation.Steps.Dashworks
         {
             var action = _driver.NowAt<BaseDashboardPage>();
             action.RequestTypeDropdown.Click();
-            action.SelectActions(typeName);
+            action.GetOptionOnActionsPanelByName(typeName).Click();
         }
 
         [When(@"User selects ""(.*)"" Project on Action panel")]
         public void WhenUserSelectsProjectOnActionPanel(string projectName)
         {
             var action = _driver.NowAt<BaseDashboardPage>();
+            action.ProjectField.Clear();
             action.ProjectField.SendKeys(projectName);
-            action.OptionName.Click();
+            action.GetOptionOnActionsPanelByName(projectName).Click();
         }
 
         [When(@"User selects ""(.*)"" Request Type on Action panel")]
         public void WhenUserSelectsRequestTypeOnActionPanel(string requestType)
         {
             var action = _driver.NowAt<BaseDashboardPage>();
+            action.RequestTypeField.Clear();
             action.RequestTypeField.SendKeys(requestType);
-            action.OptionName.Click();
+            action.GetOptionOnActionsPanelByName(requestType).Click();
+        }
+
+        [When(@"User selects ""(.*)"" Stage on Action panel")]
+        public void WhenUserSelectsStageOnActionPanel(string stageValue)
+        {
+            var action = _driver.NowAt<BaseDashboardPage>();
+            action.StageField.Clear();
+            action.StageField.SendKeys(stageValue);
+            action.GetOptionOnActionsPanelByName(stageValue).Click();
+        }
+
+        [When(@"User selects ""(.*)"" Task on Action panel")]
+        public void WhenUserSelectsTaskOnActionPanel(string taskNAme)
+        {
+            var action = _driver.NowAt<BaseDashboardPage>();
+            action.TaskField.Clear();
+            action.TaskField.SendKeys(taskNAme);
+            action.GetOptionOnActionsPanelByName(taskNAme).Click();
+        }
+
+        [When(@"User selects ""(.*)"" Value on Action panel")]
+        public void WhenUserSelectsValueOnActionPanel(string value)
+        {
+            var action = _driver.NowAt<BaseDashboardPage>();
+            action.ValueDropdown.Click();
+            action.GetOptionOnActionsPanelByName(value).Click();
         }
 
         [When(@"User clicks the ""(.*)"" Action button")]
