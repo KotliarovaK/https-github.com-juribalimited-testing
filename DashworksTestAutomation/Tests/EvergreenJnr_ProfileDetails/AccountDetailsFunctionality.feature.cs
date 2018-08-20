@@ -216,6 +216,36 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_ProfileDetails
         
         [NUnit.Framework.TestAttribute()]
         [NUnit.Framework.Retry(2)]
+        [NUnit.Framework.DescriptionAttribute("EvergreenJnr_UserProfile_ChecksListPageSizeAPI")]
+        [NUnit.Framework.CategoryAttribute("Evergreen")]
+        [NUnit.Framework.CategoryAttribute("ProfileDetails")]
+        [NUnit.Framework.CategoryAttribute("EvergreenJnr_FilterFeature")]
+        [NUnit.Framework.CategoryAttribute("UserProfile")]
+        [NUnit.Framework.CategoryAttribute("API")]
+        [NUnit.Framework.CategoryAttribute("Not_Run")]
+        public virtual void EvergreenJnr_UserProfile_ChecksListPageSizeAPI()
+        {
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("EvergreenJnr_UserProfile_ChecksListPageSizeAPI", new string[] {
+                        "Evergreen",
+                        "ProfileDetails",
+                        "EvergreenJnr_FilterFeature",
+                        "UserProfile",
+                        "API",
+                        "Not_Run"});
+            this.ScenarioSetup(scenarioInfo);
+            this.FeatureBackground();
+            testRunner.When("User clicks Profile in Account Dropdown", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+            testRunner.Then("Profile page is displayed to user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+            testRunner.When("User navigates to the \"Advanced\" page on Account details", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+            testRunner.When("User changes List Page Size to \"2500\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+            testRunner.And("User clicks Update button on the Advanced page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+            testRunner.When("User clicks \"Devices\" on the left-hand menu", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+            testRunner.Then("page Size is \"2500\" on \"Devices\" page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+            this.ScenarioCleanup();
+        }
+        
+        [NUnit.Framework.TestAttribute()]
+        [NUnit.Framework.Retry(2)]
         [NUnit.Framework.DescriptionAttribute("EvergreenJnr_UserProfile_CheckThatNotificationMessageDisappearsAfter5Seconds")]
         [NUnit.Framework.CategoryAttribute("Evergreen")]
         [NUnit.Framework.CategoryAttribute("ProfileDetails")]
