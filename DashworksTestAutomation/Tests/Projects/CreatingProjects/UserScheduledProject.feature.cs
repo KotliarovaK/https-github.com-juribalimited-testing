@@ -91,8 +91,8 @@ namespace DashworksTestAutomation.Tests.Projects.CreatingProjects
                         "ProjectTypeString"});
             table1.AddRow(new string[] {
                         "000 UserScheduledProject",
-                        "TestText",
-                        "TestText",
+                        "User",
+                        "UserScheduledProject",
                         "UserScheduledProject"});
             testRunner.When("User creates Project", ((string)(null)), table1, "When ");
             testRunner.Then("Error message is not displayed", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");

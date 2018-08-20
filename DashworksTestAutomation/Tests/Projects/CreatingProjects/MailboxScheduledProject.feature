@@ -10,8 +10,8 @@ Scenario: Projects_CreateMailboxScheduledProject
 	When User clicks create Project button
 	Then "Create Project" page is displayed to the user
 	When User creates Project
-	| ProjectName                 | ProjectShortName | ProjectDescription | ProjectTypeString       |
-	| 000 MailboxScheduledProject | TestText         | TestText           | MailboxScheduledProject |
+	| ProjectName                 | ProjectShortName | ProjectDescription      | ProjectTypeString       |
+	| 000 MailboxScheduledProject | Mailbox          | MailboxScheduledProject | MailboxScheduledProject |
 	Then Error message is not displayed
 	When User clicks "Create Project" button
 	Then Error message is not displayed
