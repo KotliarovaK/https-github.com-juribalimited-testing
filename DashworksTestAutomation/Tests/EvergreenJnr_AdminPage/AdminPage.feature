@@ -420,7 +420,7 @@ Scenario: EvergreenJnr_AdminPage_CheckThatNumberOfApplicationsInProjectScopeIsCo
 	Then Project "TestProject5" is displayed to user
 	When User selects "Scope Changes" tab on the Project details page
 	And User clicks "Applications" tab in the Project Scope Changes section
-	Then "Applications to add (0 of 2081 selected)" is displayed to the user in the Project Scope Changes section
+	Then "Applications to add (0 of 2048 selected)" is displayed to the user in the Project Scope Changes section
 	When User clicks "Devices" tab in the Project Scope Changes section
 	Then "Devices to add (0 of 16765 selected)" is displayed to the user in the Project Scope Changes section
 	When User selects "Scope Details" tab on the Project details page
@@ -437,7 +437,7 @@ Scenario: EvergreenJnr_AdminPage_CheckThatNumberOfApplicationsInProjectScopeIsCo
 	| Used on an owned device by any user     |
 	When User selects "Scope Changes" tab on the Project details page
 	And User clicks "Applications" tab in the Project Scope Changes section
-	Then "Applications to add (0 of 247 selected)" is displayed to the user in the Project Scope Changes section
+	Then "Applications to add (0 of 214 selected)" is displayed to the user in the Project Scope Changes section
 	When User clicks "Devices" tab in the Project Scope Changes section
 	Then "Devices to add (0 of 0 selected)" is displayed to the user in the Project Scope Changes section
 	When User clicks "Details" tab
@@ -1002,7 +1002,7 @@ Scenario: EvergreenJnr_AdminPage_CheckThatOnboardingOfObjectsIsProceedForScopedP
 	| Objects        |
 	| 0317IPQGQBVAQV |
 	| 00I0COBFWHOF27 |
-	When User clicks the "UPDATE DEVICE CHANGES" Action button
+	When User clicks the "UPDATE PROJECT" Action button
 	Then Success message is displayed and contains "2 objects queued for onboarding, 0 objects offboarded" text
 	When User clicks "Users" tab in the Project Scope Changes section
 	And User adds following Objects to the Project
@@ -1395,7 +1395,7 @@ Scenario: EvergreenJnr_AdminPage_CheckingThatTheProjectIsUpdatedWithoutErrors
 	| 0SH2BQ3EPXTEWN |
 	| 30LA8G32UF7HQC |
 	When User clicks "Applications" tab in the Project Scope Changes section
-	Then "Applications to add (0 of 2081 selected)" is displayed to the user in the Project Scope Changes section
+	Then "Applications to add (0 of 2048 selected)" is displayed to the user in the Project Scope Changes section
 	When User expands the object to add 
 	And User selects following Objects
 	| Objects                                          |
@@ -1404,7 +1404,7 @@ Scenario: EvergreenJnr_AdminPage_CheckingThatTheProjectIsUpdatedWithoutErrors
 	When User clicks the "UPDATE ALL CHANGES" Action button
 	And User clicks the "UPDATE PROJECT" Action button
 	Then Success message is displayed and contains "6 objects queued for onboarding, 0 objects offboarded" text
-	Then "Applications to add (0 of 2079 selected)" is displayed to the user in the Project Scope Changes section
+	Then "Applications to add (0 of 2046 selected)" is displayed to the user in the Project Scope Changes section
 	When User clicks "Devices" tab in the Project Scope Changes section
 	Then "Devices to add (0 of 16763 selected)" is displayed to the user in the Project Scope Changes section
 	When User clicks "Users" tab in the Project Scope Changes section
