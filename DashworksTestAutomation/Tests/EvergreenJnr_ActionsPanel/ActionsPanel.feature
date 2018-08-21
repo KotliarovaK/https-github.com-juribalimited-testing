@@ -279,3 +279,216 @@ Examples:
 	| Users        | Compliance       | Red        | 9438              |
 	| Applications | Compliance       | Red        | 181               |
 	| Mailboxes    | Owner Compliance | Green      | 14701             |
+
+@Evergreen @Devices @EvergreenJnr_ActionsPanel @DAS12863
+Scenario: EvergreenJnr_DevicesList_ChecksThatRequestTypeIsUpdatedCorrectlyOnDevicesPage
+	When User clicks "Devices" on the left-hand menu
+	Then "Devices" list should be displayed to the user
+	When User clicks the Filters button
+	Then Filters panel is displayed to the user
+	When User add "Windows7Mi: In Scope" filter where type is "Equals" with added column and following checkboxes:
+	| SelectedCheckboxes |
+	| TRUE               |
+	Then "Windows7Mi: In Scope" filter is added to the list
+	When User clicks the Columns button
+	Then Columns panel is displayed to the user
+	When ColumnName is entered into the search box and the selection is clicked
+	| ColumnName               |
+	| Windows7Mi: Request Type |
+	And User clicks the Actions button
+	Then Actions panel is displayed to the user
+	When User select "Hostname" rows in the grid
+	| SelectedRowsName |
+	| 001PSUMZYOW581   |
+	| 00K4CEEQ737BA4L  |
+	| 00YTY8U3ZYP2WT   |
+	And User selects "Bulk update" in the Actions dropdown
+	And User selects "Update request type" Bulk Update Type on Action panel
+	And User selects "Windows 7 Migration (Computer Scheduled Project)" Project on Action panel
+	Then "UPDATE" Action button is disabled
+	When User selects "Computer: PC Rebuild" Request Type on Action panel
+	And User clicks the "UPDATE" Action button
+	Then Warning message with "Are you sure you want to proceed, this operation cannot be undone." text is displayed on Action panel
+	And User clicks "UPDATE" button on message box
+	And Success message with "3 of 3 objects were valid for the update. Your changes have successfully been queued." text is displayed on Action panel
+	When User refreshes agGrid
+	And User perform search by "001PSUMZYOW581"
+	Then "Computer: PC Rebuild" content is displayed in "Windows7Mi: Request Type" column
+	When User perform search by "00K4CEEQ737BA4L"
+	Then "Computer: PC Rebuild" content is displayed in "Windows7Mi: Request Type" column
+	When User perform search by "00YTY8U3ZYP2WT"
+	Then "Computer: PC Rebuild" content is displayed in "Windows7Mi: Request Type" column
+
+@Evergreen @Users @EvergreenJnr_ActionsPanel @DAS12863
+Scenario: EvergreenJnr_UsersList_ChecksThatRequestTypeIsUpdatedCorrectlyOnUsersPage
+	When User clicks "Users" on the left-hand menu
+	Then "Users" list should be displayed to the user
+	When User clicks the Filters button
+	Then Filters panel is displayed to the user
+	When User add "Windows7Mi: In Scope" filter where type is "Equals" with added column and following checkboxes:
+	| SelectedCheckboxes |
+	| TRUE               |
+	Then "Windows7Mi: In Scope" filter is added to the list
+	When User clicks the Columns button
+	Then Columns panel is displayed to the user
+	When ColumnName is entered into the search box and the selection is clicked
+	| ColumnName               |
+	| Windows7Mi: Request Type |
+	When User click on 'Windows7Mi: Request Type' column header
+	When User click on 'Windows7Mi: Request Type' column header
+	And User clicks the Actions button
+	Then Actions panel is displayed to the user
+	When User select "Username" rows in the grid
+	| SelectedRowsName |
+	| FMN5805290       |
+	| AKX995383        |
+	| ZZW1565756       |
+	And User selects "Bulk update" in the Actions dropdown
+	And User selects "Update request type" Bulk Update Type on Action panel
+	And User selects "Windows 7 Migration (Computer Scheduled Project)" Project on Action panel
+	Then "UPDATE" Action button is disabled
+	When User selects "User; Maternity" Request Type on Action panel
+	And User clicks the "UPDATE" Action button
+	Then Warning message with "Are you sure you want to proceed, this operation cannot be undone." text is displayed on Action panel
+	And User clicks "UPDATE" button on message box
+	And Success message with "3 of 3 objects were valid for the update. Your changes have successfully been queued." text is displayed on Action panel
+	When User refreshes agGrid
+	And User perform search by "FMN5805290"
+	Then "User; Maternity" content is displayed in "Windows7Mi: Request Type" column
+	When User perform search by "AKX995383"
+	Then "User; Maternity" content is displayed in "Windows7Mi: Request Type" column
+	When User perform search by "ZZW1565756"
+	Then "User; Maternity" content is displayed in "Windows7Mi: Request Type" column
+
+@Evergreen @Applications @EvergreenJnr_ActionsPanel @DAS12863
+Scenario: EvergreenJnr_ApplicationsList_ChecksThatRequestTypeIsUpdatedCorrectlyOnApplicationsPage
+	When User clicks "Applications" on the left-hand menu
+	Then "Applications" list should be displayed to the user
+	When User clicks the Filters button
+	Then Filters panel is displayed to the user
+	When User add "Windows7Mi: In Scope" filter where type is "Equals" with added column and following checkboxes:
+	| SelectedCheckboxes |
+	| TRUE               |
+	Then "Windows7Mi: In Scope" filter is added to the list
+	When User clicks the Columns button
+	Then Columns panel is displayed to the user
+	When ColumnName is entered into the search box and the selection is clicked
+	| ColumnName               |
+	| Windows7Mi: Request Type |
+	When User click on 'Windows7Mi: Request Type' column header
+	When User click on 'Windows7Mi: Request Type' column header
+	And User clicks the Actions button
+	Then Actions panel is displayed to the user
+	When User select "Application" rows in the grid
+	| SelectedRowsName                        |
+	| Adobe Reader 6.0.1 - Chinese Simplified |
+	| MKS Source Integrity                    |
+	And User selects "Bulk update" in the Actions dropdown
+	And User selects "Update request type" Bulk Update Type on Action panel
+	And User selects "Windows 7 Migration (Computer Scheduled Project)" Project on Action panel
+	Then "UPDATE" Action button is disabled
+	When User selects "Application: Request Type B" Request Type on Action panel
+	And User clicks the "UPDATE" Action button
+	Then Warning message with "Are you sure you want to proceed, this operation cannot be undone." text is displayed on Action panel
+	And User clicks "UPDATE" button on message box
+	And Success message with "2 of 2 objects were valid for the update. Your changes have successfully been queued." text is displayed on Action panel
+	When User refreshes agGrid
+	And User perform search by "Adobe Reader 6.0.1 - Chinese Simplified"
+	Then "Application: Request Type B" content is displayed in "Windows7Mi: Request Type" column
+	When User perform search by "MKS Source Integrity"
+	Then "Application: Request Type B" content is displayed in "Windows7Mi: Request Type" column
+
+@Evergreen @Mailboxes @EvergreenJnr_ActionsPanel @DAS12863
+Scenario: EvergreenJnr_MailboxesList_ChecksThatRequestTypeIsUpdatedCorrectlyOnMailboxesPage
+	When User clicks "Mailboxes" on the left-hand menu
+	Then "Mailboxes" list should be displayed to the user
+	When User clicks the Filters button
+	Then Filters panel is displayed to the user
+	When User add "EmailMigra: In Scope" filter where type is "Equals" with added column and following checkboxes:
+	| SelectedCheckboxes |
+	| TRUE               |
+	Then "EmailMigra: In Scope" filter is added to the list
+	When User clicks the Columns button
+	Then Columns panel is displayed to the user
+	When ColumnName is entered into the search box and the selection is clicked
+	| ColumnName               |
+	| EmailMigra: Request Type |
+	And User clicks the Actions button
+	Then Actions panel is displayed to the user
+	When User select "Email Address" rows in the grid
+	| SelectedRowsName                 |
+	| 06C02CDC00044A7DB59@bclabs.local |
+	| 0A491C42879549A4936@bclabs.local |
+	| 0C1785B7E6954139AC5@bclabs.local |
+	And User selects "Bulk update" in the Actions dropdown
+	And User selects "Update request type" Bulk Update Type on Action panel
+	And User selects "Email Migration" Project on Action panel
+	Then "UPDATE" Action button is disabled
+	When User selects "Personal Mailbox - EA" Request Type on Action panel
+	And User clicks the "UPDATE" Action button
+	Then Warning message with "Are you sure you want to proceed, this operation cannot be undone." text is displayed on Action panel
+	And User clicks "UPDATE" button on message box
+	And Success message with "3 of 3 objects were valid for the update. Your changes have successfully been queued." text is displayed on Action panel
+	When User refreshes agGrid
+	And User perform search by "06C02CDC00044A7DB59@bclabs.local"
+	Then "Personal Mailbox - EA" content is displayed in "EmailMigra: Request Type" column
+	When User perform search by "0A491C42879549A4936@bclabs.local"
+	Then "Personal Mailbox - EA" content is displayed in "EmailMigra: Request Type" column
+	When User perform search by "0C1785B7E6954139AC5@bclabs.local"
+	Then "Personal Mailbox - EA" content is displayed in "EmailMigra: Request Type" column
+
+@Evergreen @Devices @EvergreenJnr_ActionsPanel @DAS12863
+Scenario: EvergreenJnr_DevicesList_ChecksThatRequestTypeIsUpdatedCorrectlyWhereSomeObjectsAreValidAndSomeAreInvalidForTheSelectedProject
+	When User clicks "Devices" on the left-hand menu
+	Then "Devices" list should be displayed to the user
+	When User clicks the Actions button
+	Then Actions panel is displayed to the user
+	When User select "Hostname" rows in the grid
+	| SelectedRowsName |
+	| 00HA7MKAVVFDAV   |
+	| 00I0COBFWHOF27   |
+	| 018UQ6KL9TF4YF   |
+	| 019BFPQGKK5QT8N  |
+	| 01DRMO46G58SXK   |
+	And User selects "Bulk update" in the Actions dropdown
+	And User selects "Update request type" Bulk Update Type on Action panel
+	And User selects "Windows 7 Migration (Computer Scheduled Project)" Project on Action panel
+	And User selects "Computer: Workstation Replacement" Request Type on Action panel
+	And User clicks the "UPDATE" Action button
+	Then Warning message with "Are you sure you want to proceed, this operation cannot be undone." text is displayed on Action panel
+	And User clicks "UPDATE" button on message box
+	And Success message with "2 of 5 objects were valid for the update. Your changes have successfully been queued." text is displayed on Action panel
+	When User clicks the Columns button
+	Then Columns panel is displayed to the user
+	When ColumnName is entered into the search box and the selection is clicked
+	| ColumnName               |
+	| Windows7Mi: Request Type |
+	And User refreshes agGrid
+	And User perform search by "00HA7MKAVVFDAV"
+	Then "Computer: Workstation Replacement" content is displayed in "Windows7Mi: Request Type" column
+	When User perform search by "00I0COBFWHOF27"
+	Then "Computer: Workstation Replacement" content is displayed in "Windows7Mi: Request Type" column
+	When User perform search by "018UQ6KL9TF4YF"
+	Then "Computer: Workstation Replacement" content is displayed in "Windows7Mi: Request Type" column
+	When User perform search by "019BFPQGKK5QT8N"
+	Then "Computer: Workstation Replacement" content is displayed in "Windows7Mi: Request Type" column
+	When User perform search by "01DRMO46G58SXK"
+	Then "Computer: Workstation Replacement" content is displayed in "Windows7Mi: Request Type" column
+
+@Evergreen @Devices @EvergreenJnr_ActionsPanel @DAS12863
+Scenario: EvergreenJnr_DevicesList_ChecksThatActionsPanelWorkedCorrectlyAfterCickOnCancelButton
+	When User clicks "Devices" on the left-hand menu
+	Then "Devices" list should be displayed to the user
+	When User clicks the Actions button
+	Then Actions panel is displayed to the user
+	When User select "Hostname" rows in the grid
+	| SelectedRowsName |
+	| 00OMQQXWA1DRI6   |
+	| 00RUUMAH9OZN9A   |
+	And User selects "Bulk update" in the Actions dropdown
+	And User selects "Update request type" Bulk Update Type on Action panel
+	And User selects "Windows 7 Migration (Computer Scheduled Project)" Project on Action panel
+	And User selects "Computer: Workstation Replacement" Request Type on Action panel
+	And User clicks the "CANCEL" Action button
+	Then Actions panel is not displayed to the user
+	And Checkboxes are not displayed
