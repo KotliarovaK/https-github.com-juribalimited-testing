@@ -116,6 +116,7 @@ namespace DashworksTestAutomation.Steps.Projects
             //assign ProjectTypeString to ProjectTypeEnum
             _projectDto.ProjectType = (ProjectTypeEnum)Enum.Parse(typeof(ProjectTypeEnum), _projectDto.ProjectTypeString);
             _projectDto.ProjectName += TestDataGenerator.RandomString();
+            _projectDto.ProjectShortName += TestDataGenerator.RandomString();
 
             page.ProjectName.SendKeys(_projectDto.ProjectName);
             page.ProjectShortName.SendKeys(_projectDto.ProjectShortName);
