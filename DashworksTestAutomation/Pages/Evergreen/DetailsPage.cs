@@ -22,7 +22,7 @@ namespace DashworksTestAutomation.Pages.Evergreen
         [FindsBy(How = How.XPath, Using = ".//div[@class='tabContainer ng-star-inserted']")]
         public IWebElement TabContainer { get; set; }
 
-        [FindsBy(How = How.XPath, Using = ".//div[@class='ag-body-container']/div/div/span/a[@href]")]
+        [FindsBy(How = How.XPath, Using = ".//div[contains(@class, 'ag-body-container')]/div/div/span/a[@href]")]
         public IWebElement ColumnWithLinkSelector { get; set; }
 
         [FindsBy(How = How.XPath, Using = ".//div[@class='object-icon']//i")]
@@ -190,7 +190,7 @@ namespace DashworksTestAutomation.Pages.Evergreen
         public IWebElement GetContentByColumnName(string columnName)
         {
             By byControl =
-                By.XPath($".//div[@class='ag-body-container']/div[1]/div[{GetColumnNumberByName(columnName)}]");
+                By.XPath($".//div[contains(@class, 'ag-body-container')]/div[1]/div[{GetColumnNumberByName(columnName)}]");
 
             Driver.WaitForDataLoading();
             Driver.WaitWhileControlIsNotDisplayed(byControl);
@@ -216,7 +216,7 @@ namespace DashworksTestAutomation.Pages.Evergreen
         public string GetHrefByColumnName(string columnName)
         {
             By byControl =
-                By.XPath($".//div[@class='ag-body-container']/div[1]/div[{GetColumnNumberByName(columnName)}]/span/div/a[@href]");
+                By.XPath($".//div[contains(@class, 'ag-body-container')]/div[1]/div[{GetColumnNumberByName(columnName)}]/span/div/a[@href]");
 
             Driver.WaitForDataLoading();
             Driver.WaitWhileControlIsNotDisplayed(byControl);
