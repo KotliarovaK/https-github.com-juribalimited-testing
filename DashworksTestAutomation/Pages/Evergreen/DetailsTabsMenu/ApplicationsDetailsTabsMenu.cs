@@ -237,7 +237,7 @@ namespace DashworksTestAutomation.Pages.Evergreen.DetailsTabsMenu
         public List<string> GetColumnIdContent(string columnName)
         {
             By by = By.XPath(
-                $".//div[@class='ag-body-container']/div/div[@col-id='{GetColumnIdByColumnName(columnName)}']");
+                $".//div[contains(@class, 'ag-body-container')]/div/div[@col-id='{GetColumnIdByColumnName(columnName)}']");
             return Driver.FindElements(by).Select(x => x.Text).ToList();
         }
 

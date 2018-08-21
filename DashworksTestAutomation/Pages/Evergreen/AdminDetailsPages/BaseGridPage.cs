@@ -225,7 +225,7 @@ namespace DashworksTestAutomation.Pages.Evergreen.AdminDetailsPages
         public void ClickContentByColumnName(string columnName)
         {
             By byControl =
-                By.XPath($".//div[@class='ag-body-container']/div[1]/div[{GetColumnNumberByName(columnName)}]//a");
+                By.XPath($".//div[contains(@class, 'ag-body-container')]/div[1]/div[{GetColumnNumberByName(columnName)}]//a");
 
             Driver.WaitForDataLoading();
             Driver.WaitWhileControlIsNotDisplayed(byControl);
