@@ -80,9 +80,15 @@ namespace DashworksTestAutomation.Steps.Dashworks
         public void WhenUserEntersTextInSearchFieldAtFiltersPanel(string searchedText)
         {
             var filterElement = _driver.NowAt<FiltersElement>();
-            filterElement.AddNewFilterButton.Click();
             filterElement.SearchTextbox.Clear();
             filterElement.SearchTextbox.SendKeys(searchedText);
+        }
+
+        [When(@"User clears search textbox in Filters panel")]
+        public void WhenUserClearsSearchTextboxInFiltersPanel()
+        {
+            var filterElement = _driver.NowAt<FiltersElement>();
+            filterElement.SearchTextboxResetButton.Click();
         }
 
         [When(@"User enters ""(.*)"" text in Search field at selected Lookup Filter")]
@@ -153,13 +159,6 @@ namespace DashworksTestAutomation.Steps.Dashworks
             foreach (var association in associationList)
                 StringAssert.Contains(searchCriteria.ToLower(), association.ToLower(),
                     $"Search in Associations list is not working for {searchCriteria} value");
-        }
-
-        [When(@"User clears search textbox in Filters panel")]
-        public void WhenUserClearsSearchTextboxInFiltersPanel()
-        {
-            var filterElement = _driver.NowAt<FiltersElement>();
-            filterElement.SearchTextboxResetButton.Click();
         }
 
         [Then(@"""(.*)"" filter is not presented in the filters list")]
@@ -552,6 +551,25 @@ namespace DashworksTestAutomation.Steps.Dashworks
             Assert.AreEqual(text, toolTipText);
         }
 
+        [Then(@"""(.*)"" filter is removed from filters")]
+        public void ThenFilterIsRemovedFromFilters(string filterName)
+        {
+            var filterElement = _driver.NowAt<FiltersElement>();
+            Assert.IsFalse(filterElement.CheckThatFilterIsRemoved(filterName),
+                $"{filterName} filter is not removed from filters");
+        }
+
+        [When(@"User have reset all filters")]
+        public void WhenUserHaveResetAllFilters()
+        {
+            var filterElement = _driver.NowAt<FiltersElement>();
+            _driver.WaitWhileControlIsNotDisplayed<FiltersElement>(() => filterElement.ResetFiltersButton);
+            _driver.MouseHover(filterElement.ResetFiltersButton);
+            filterElement.ResetFiltersButton.Click();
+        }
+
+        #region Checkboxes on Filter panel
+
         [Then(@"""(.*)"" checkbox is checked")]
         public void ThenCheckboxIsChecked(string addColumn)
         {
@@ -606,23 +624,6 @@ namespace DashworksTestAutomation.Steps.Dashworks
                 $"{addColumn} Checkbox state is incorrect");
         }
 
-        [Then(@"""(.*)"" filter is removed from filters")]
-        public void ThenFilterIsRemovedFromFilters(string filterName)
-        {
-            var filterElement = _driver.NowAt<FiltersElement>();
-            Assert.IsFalse(filterElement.CheckThatFilterIsRemoved(filterName),
-                $"{filterName} filter is not removed from filters");
-        }
-
-        [When(@"User have reset all filters")]
-        public void WhenUserHaveResetAllFilters()
-        {
-            var filterElement = _driver.NowAt<FiltersElement>();
-            _driver.WaitWhileControlIsNotDisplayed<FiltersElement>(() => filterElement.ResetFiltersButton);
-            _driver.MouseHover(filterElement.ResetFiltersButton);
-            filterElement.ResetFiltersButton.Click();
-        }
-
         [Then(@"""(.*)"" checkbox is not displayed")]
         public void ThenCheckboxIsNotDisplayed(string checkbox)
         {
@@ -640,6 +641,8 @@ namespace DashworksTestAutomation.Steps.Dashworks
             var actualList = filterElement.AddCategoryColumnName.Select(value => value.Text);
             Assert.AreEqual(expectedList, actualList, "Filter settings values are different");
         }
+
+        #endregion
 
         [Then(@"""(.*)"" option is available at first place")]
         public void ThenOptionIsAvailableAtFirstPlace(string optionName)
@@ -716,6 +719,8 @@ namespace DashworksTestAutomation.Steps.Dashworks
                 $"Number of rows is not {showedResultsCount}");
         }
 
+        #region Filter URL
+
         [When(@"User is remove filter by URL")]
         public void WhenUserIsRemoveFilterByURL()
         {
@@ -743,6 +748,57 @@ namespace DashworksTestAutomation.Steps.Dashworks
             var page = _driver.NowAt<EvergreenDashboardsPage>();
             if (page.StatusCodeLabel.Displayed()) throw new Exception("500 error was returned");
         }
+
+        [Then(@"""(.*)"" filter with ""(.*)"" values is added to URL on ""(.*)"" page")]
+        public void ThenFilterWithValuesIsAddedToUrlOnPage(string filterName, string values, string pageName)
+        {
+            var currentUrl = _driver.Url;
+            const string pattern = @"filter=(.*)";
+            var urlPartToCheck = Regex.Match(currentUrl, pattern).Groups[1].Value;
+            var valuesList = values.Split(',');
+            foreach (var value in valuesList)
+                StringAssert.Contains(value.TrimStart(' ').TrimEnd(' ').ToLower(), urlPartToCheck.ToLower(),
+                    $"{value} is not added to URL for {filterName} filter");
+
+            StringAssert.Contains(ColumnNameToUrlConvertor.Convert(pageName, filterName).ToLower(),
+                urlPartToCheck.ToLower(),
+                $"{filterName} is not added to URL");
+        }
+
+        [Then(@"Appropriate filter is added to URL")]
+        public void ThenAppropriateFilterIsAddedToURL()
+        {
+            var filterPanel = _driver.NowAt<FiltersElement>();
+            var basePage = _driver.NowAt<BaseDashboardPage>();
+            var currentUrl = _driver.Url;
+            var pattern = @"\$filter=(.*)&\$";
+            if (filterPanel.GetFiltersNames().Count > 1)
+            {
+                pattern = @"\$filter=(.*)";
+                for (var i = 0; i < filterPanel.GetFiltersNames().Count - 1; i++) pattern = pattern + @"%20OR%20(.*)";
+
+                pattern = pattern + @"&\$";
+            }
+
+            var filtersInUrl = Regex.Match(currentUrl, pattern).Groups;
+            IList<string> filtersValuesInUrl = new List<string>();
+            for (var i = 1; i < Regex.Match(currentUrl, pattern).Groups.Count; i++)
+                filtersValuesInUrl.Add(filtersInUrl[i].Value);
+
+            for (var i = 0; i < filterPanel.GetAddedFilters().Count; i++)
+            {
+                var filter = filterPanel.GetAddedFilters()[i];
+                var filterName = filter.FindElement(By.XPath(FiltersElement.FilterNameSelector)).Text;
+                var filterValue = filter.FindElement(By.XPath(FiltersElement.FilterValuesSelector)).Text;
+                var filterOption = filter.FindElement(By.XPath(FiltersElement.FilterOptionsSelector)).Text;
+                var urlPartToCheck = filtersValuesInUrl[i];
+                StringAssert.Contains(ColumnNameToUrlConvertor.Convert(basePage.Heading.Text, filterName),
+                    urlPartToCheck);
+                StringAssert.Contains(FilterOperatorsConvertor.Convert(filterOption), urlPartToCheck);
+                StringAssert.Contains(filterValue, urlPartToCheck);
+            }
+        }
+        #endregion
 
         [Then(@"Options is displayed in added filter info")]
         public void ThenOptionsIsDisplayedInAddedFilterInfo(Table table)
@@ -790,20 +846,14 @@ namespace DashworksTestAutomation.Steps.Dashworks
             Assert.AreEqual("700", filterElement.GetFilterFontWeight());
         }
 
-        [Then(@"""(.*)"" filter with ""(.*)"" values is added to URL on ""(.*)"" page")]
-        public void ThenFilterWithValuesIsAddedToUrlOnPage(string filterName, string values, string pageName)
-        {
-            var currentUrl = _driver.Url;
-            const string pattern = @"filter=(.*)";
-            var urlPartToCheck = Regex.Match(currentUrl, pattern).Groups[1].Value;
-            var valuesList = values.Split(',');
-            foreach (var value in valuesList)
-                StringAssert.Contains(value.TrimStart(' ').TrimEnd(' ').ToLower(), urlPartToCheck.ToLower(),
-                    $"{value} is not added to URL for {filterName} filter");
+        #region Sections
 
-            StringAssert.Contains(ColumnNameToUrlConvertor.Convert(pageName, filterName).ToLower(),
-                urlPartToCheck.ToLower(),
-                $"{filterName} is not added to URL");
+        [Then(@"""(.*)"" section is not displayed in the Filter panel")]
+        public void ThenSectionIsNotDisplayedInTheFilterPanel(string categoryName)
+        {
+            var filterElement = _driver.NowAt<FiltersElement>();
+            Assert.IsFalse(filterElement.CategoryIsDisplayed(categoryName),
+                $"{categoryName} category stil displayed in Filter Panel");
         }
 
         [Then(@"Minimize buttons are displayed for all category in Filters panel")]
@@ -821,6 +871,17 @@ namespace DashworksTestAutomation.Steps.Dashworks
             var groupCount = filterElement.GroupTitle.Count - 1;
             Assert.AreEqual(groupCount, filterElement.MaximizeGroupButton.Count, "Maximize buttons are not displayed");
         }
+
+        [Then(@"the following subcategories are displayed for open category:")]
+        public void ThenTheFollowingSubcategoriesAreDisplayedForOpenCategory(Table table)
+        {
+            var filterElement = _driver.NowAt<FiltersElement>();
+            var expectedList = table.Rows.SelectMany(row => row.Values);
+            var actualList = filterElement.SubcategoryValues.Select(value => value.Text);
+            Assert.AreEqual(expectedList, actualList, "Subcategory values are different");
+        }
+
+        #endregion
 
         [Then(@"message '(.*)' is displayed to the user")]
         public void ThenMessageIsDisplayedToTheUser(string message)
@@ -848,40 +909,6 @@ namespace DashworksTestAutomation.Steps.Dashworks
             page.SaveButton.Click();
         }
 
-        [Then(@"Appropriate filter is added to URL")]
-        public void ThenAppropriateFilterIsAddedToURL()
-        {
-            var filterPanel = _driver.NowAt<FiltersElement>();
-            var basePage = _driver.NowAt<BaseDashboardPage>();
-            var currentUrl = _driver.Url;
-            var pattern = @"\$filter=(.*)&\$";
-            if (filterPanel.GetFiltersNames().Count > 1)
-            {
-                pattern = @"\$filter=(.*)";
-                for (var i = 0; i < filterPanel.GetFiltersNames().Count - 1; i++) pattern = pattern + @"%20OR%20(.*)";
-
-                pattern = pattern + @"&\$";
-            }
-
-            var filtersInUrl = Regex.Match(currentUrl, pattern).Groups;
-            IList<string> filtersValuesInUrl = new List<string>();
-            for (var i = 1; i < Regex.Match(currentUrl, pattern).Groups.Count; i++)
-                filtersValuesInUrl.Add(filtersInUrl[i].Value);
-
-            for (var i = 0; i < filterPanel.GetAddedFilters().Count; i++)
-            {
-                var filter = filterPanel.GetAddedFilters()[i];
-                var filterName = filter.FindElement(By.XPath(FiltersElement.FilterNameSelector)).Text;
-                var filterValue = filter.FindElement(By.XPath(FiltersElement.FilterValuesSelector)).Text;
-                var filterOption = filter.FindElement(By.XPath(FiltersElement.FilterOptionsSelector)).Text;
-                var urlPartToCheck = filtersValuesInUrl[i];
-                StringAssert.Contains(ColumnNameToUrlConvertor.Convert(basePage.Heading.Text, filterName),
-                    urlPartToCheck);
-                StringAssert.Contains(FilterOperatorsConvertor.Convert(filterOption), urlPartToCheck);
-                StringAssert.Contains(filterValue, urlPartToCheck);
-            }
-        }
-
         [Then(@"Save button is not available on the Filter panel")]
         public void ThenSaveButtonIsNotAvailableOnTheFilterPanel()
         {
@@ -896,14 +923,6 @@ namespace DashworksTestAutomation.Steps.Dashworks
             var filterPanel = _driver.NowAt<FiltersElement>();
             _driver.WaitWhileControlIsNotDisplayed<FiltersElement>(() => filterPanel.SaveButton);
             filterPanel.SaveButton.Click();
-        }
-
-        [Then(@"""(.*)"" section is not displayed in the Filter panel")]
-        public void ThenSectionIsNotDisplayedInTheFilterPanel(string categoryName)
-        {
-            var filterElement = _driver.NowAt<FiltersElement>();
-            Assert.IsFalse(filterElement.CategoryIsDisplayed(categoryName),
-                $"{categoryName} category stil displayed in Filter Panel");
         }
 
         [Then(@"""(.*)"" color is matching the caption")]
