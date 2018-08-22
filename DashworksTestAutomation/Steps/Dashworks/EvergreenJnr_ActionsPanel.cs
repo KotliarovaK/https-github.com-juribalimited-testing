@@ -34,7 +34,7 @@ namespace DashworksTestAutomation.Steps.Dashworks
         public void ThenActionsPanelIsNotDisplayedToTheUser()
         {
             var button = _driver.NowAt<BaseDashboardPage>();
-            Assert.IsTrue(button.InactiveActionsButton.Displayed(), "Actions panel was displayed");
+            Assert.IsFalse(button.ActiveActionsButton.Displayed(), "Actions panel was displayed");
         }
 
         [Then(@"Actions message container is displayed to the user")]
