@@ -165,17 +165,18 @@ Scenario: EvergreenJnr_AdminPage_CheckThatAfterApplyingDoNotIncludeDeviceOwnersL
 	When User clicks newly created object link
 	Then Project "TestProject1" is displayed to user
 	When User clicks "Details" tab
-	When User changes Project Name to "NewProjectName"
-	When User changes Project Short Name to "ShortName"
-	When User changes Project Description to "45978DescriptionText"
-	When User changes project language to "Dutch"
-	When User selects "Use evergreen buckets" in the Buckets Project dropdown
+	And User changes Project Name to "NewProjectName"
+	And User changes Project Short Name to "ShortName"
+	And User changes Project Description to "45978DescriptionText"
+	And User changes project language to "Dutch"
+	And User selects "Use evergreen buckets" in the Buckets Project dropdown
 	And User clicks the "UPDATE" Action button
 	Then Success message is displayed and contains "The project details have been updated" text
-	Then There are no errors in the browser console
+	And There are no errors in the browser console
 	When User click on Back button
-	When User selects all rows on the grid
-	And User clicks Actions button on the Projects page
+	And User selects all rows on the grid
+	Then Actions dropdown is displayed correctly
+	When User clicks Actions button on the Projects page
 	And User clicks Delete Project button
 	And User clicks Delete button
 	Then Delete button is displayed to the User on the Projects page
@@ -205,7 +206,7 @@ Scenario: EvergreenJnr_AdminPage_CheckThatAfterApplyingDoNotIncludeDeviceOwnersL
 	And User clicks "Users" tab in the Project Scope Changes section 
 	Then "Users to add (0 of 14631 selected)" is displayed to the user in the Project Scope Changes section
 	When User click on Back button
-	When User enters "NewProjectName" text in the Search field for "Project" column
+	And User enters "NewProjectName" text in the Search field for "Project" column
 	And User selects all rows on the grid
 	And User removes selected item
 
@@ -958,7 +959,8 @@ Scenario: EvergreenJnr_AdminPage_CheckMessageThatDisplayedWhenDeletingBucket
 	Then Warning message with "You cannot delete the default bucket" text is displayed on the Admin page
 	When User enters "Unassigned" text in the Search field for "Bucket" column
 	And User selects all rows on the grid
-	And User clicks on Actions button
+	Then Actions dropdown is displayed correctly
+	When User clicks on Actions button
 	And User selects "Delete" in the Actions
 	And User clicks Delete button 
 	Then Warning message with "You cannot delete the default bucket" text is displayed on the Admin page
@@ -1737,11 +1739,12 @@ Scenario: EvergreenJnr_AdminPage_CheckThatCancelButtonIsDisplayedWithCorrectColo
 	Then Success message is displayed and contains "Your project has been created" text
 	When User enters "TestName12891" text in the Search field for "Project" column
 	And User selects all rows on the grid
-	And User clicks Actions button on the Projects page
+	Then Actions dropdown is displayed correctly
+	When User clicks Actions button on the Projects page
 	And User clicks Delete button in Actions
 	And User clicks Delete button
 	Then User sees Cancel button in banner
-	Then Cancel button is displayed with correctly color
+	And Cancel button is displayed with correctly color
 	When User clicks Delete button in the warning message
 
 @Evergreen @Admin @EvergreenJnr_AdminPage @AdminPage @DAS11701 @Delete_Newly_Created_Project
@@ -2712,7 +2715,8 @@ Scenario: EvergreenJnr_AdminPage_AddingIndividualAndMembersFromAnotherTeam
 	When User enters "My Team" text in the Search field for "Team" column
 	Then "TRUE" value is displayed for Default column
 	When User selects all rows on the grid
-	And User clicks on Actions button
+	Then Actions dropdown is displayed correctly
+	When User clicks on Actions button
 	And User selects "Delete Team" in the Actions
 	And User clicks Delete button 
 	Then Warning message with "You cannot delete the default team" text is displayed on the Admin page
@@ -2775,7 +2779,8 @@ Scenario: EvergreenJnr_AdminPage_AddingMembersToTheTeam
 	When User enters "automation_admin1" text in the Search field for "Username" column
 	Then Counter shows "1" found rows
 	When User selects all rows on the grid
-	And User removes selected members
+	Then Actions dropdown is displayed correctly
+	When User removes selected members
 	Then Success message is displayed and contains "The selected user has been removed" text
 	When User enters "automation_admin2" text in the Search field for "Username" column
 	And User selects all rows on the grid
