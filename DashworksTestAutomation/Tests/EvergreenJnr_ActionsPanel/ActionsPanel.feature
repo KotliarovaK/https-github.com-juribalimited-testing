@@ -485,3 +485,39 @@ Scenario: EvergreenJnr_DevicesList_ChecksThatActionsPanelWorkedCorrectlyAfterCic
 	And User clicks the "CANCEL" Action button
 	Then Actions panel is not displayed to the user
 	And Checkboxes are not displayed
+
+@Evergreen @Devices @EvergreenJnr_ActionsPanel @DAS13074
+Scenario: EvergreenJnr_DevicesList_ChecksThatProjectNamesAreDisplayedCorrectlyInTheActionsDllAndInSelectedSection
+	When User clicks "Devices" on the left-hand menu
+	Then "Devices" list should be displayed to the user
+	When User clicks the Actions button
+	Then Actions panel is displayed to the user
+	When User select "Hostname" rows in the grid
+	| SelectedRowsName |
+	| 00OMQQXWA1DRI6   |
+	And User selects "Bulk update" in the Actions dropdown
+	And User selects "Update request type" Bulk Update Type on Action panel
+	Then the following Projects are displayed in opened DLL on Action panel:
+	| Projects                                         |
+	| Babel (English, German and French)               |
+	| Barry's User Project                             |
+	| Computer Scheduled Test (Jo)                     |
+	| Havoc (Big Data)                                 |
+	| I-Computer Scheduled Project                     |
+	| Migration Project Phase 2 (User Project)         |
+	| Project K-Computer Scheduled Project             |
+	| User Scheduled Test (Jo)                         |
+	| Windows 7 Migration (Computer Scheduled Project) |
+	When User clicks the Columns button
+	Then Columns panel is displayed to the user
+	Then User closed "Selected Columns" columns category
+	Then User is expand "Project Stages: Windows7Mi" columns category
+	Then the following subcategories are displayed for open category:
+	| Subcategories                                               |
+	| Windows7Mi: Command & Control                               |
+	| Windows7Mi: Communication                                   |
+	| Windows7Mi: Computer Information ---- Text fill; Text fill; |
+	| Windows7Mi: Migration                                       |
+	| Windows7Mi: Portal Self Service                             |
+	| Windows7Mi: Post Migration                                  |
+	| Windows7Mi: Pre-Migration                                   |

@@ -875,7 +875,7 @@ namespace DashworksTestAutomation.Steps.Dashworks
         [Then(@"the following subcategories are displayed for open category:")]
         public void ThenTheFollowingSubcategoriesAreDisplayedForOpenCategory(Table table)
         {
-            var filterElement = _driver.NowAt<FiltersElement>();
+            var filterElement = _driver.NowAt<BaseDashboardPage>();
             var expectedList = table.Rows.SelectMany(row => row.Values);
             var actualList = filterElement.SubcategoryValues.Select(value => value.Text);
             Assert.AreEqual(expectedList, actualList, "Subcategory values are different");

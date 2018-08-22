@@ -39,6 +39,12 @@ namespace DashworksTestAutomation.Pages.Evergreen
         [FindsBy(How = How.XPath, Using = ".//span[text()='RESET']")]
         public IWebElement ResetColumnsButton { get; set; }
 
+        [FindsBy(How = How.XPath, Using = ".//div[contains(@class,'filter-category ng-star-inserted')]")]
+        public IList<IWebElement> ColumnCategories { get; set; }
+
+        [FindsBy(How = How.XPath, Using = "//div[contains(@class, 'sub-categories-item')]")]
+        public IList<IWebElement> ColumnSubcategories { get; set; }
+
         public override List<By> GetPageIdentitySelectors()
         {
             Driver.WaitForDataLoading();
@@ -157,12 +163,27 @@ namespace DashworksTestAutomation.Pages.Evergreen
         {
             try
             {
-                Driver.FindElement(By.XPath(
-                        $".//div[contains(@class, 'filter-category-label')][text()='{sectionsName}']//ancestor::div[contains(@class, 'filter-category-title')]//i[@class='material-icons mat-item_add mat-18']"))
-                    .Click();
+                Driver.FindElement(By.XPath($".//div[contains(@class, 'filter-category-label')][text()='{sectionsName}']//ancestor::div[contains(@class, 'filter-category-title')]//i[contains(@class, 'add')]")).Click();
             }
             catch
             {
+                Driver.MouseHover(By.XPath($".//div[contains(@class, 'filter-category-label')][text()='{sectionsName}']//ancestor::div[contains(@class, 'filter-category-title')]//i[contains(@class, 'add')]"));
+                Driver.FindElement(By.XPath($".//div[contains(@class, 'filter-category-label')][text()='{sectionsName}']//ancestor::div[contains(@class, 'filter-category-title')]//i[contains(@class, 'add')]")).Click();
+            }
+            if (ColumnSubcategories.Any())
+                Driver.MouseHover(ColumnSubcategories.Last());
+        }
+
+        public void CloseColumnsSectionByName(string sectionsName)
+        {
+            try
+            {
+                Driver.FindElement(By.XPath($".//div[contains(@class, 'filter-category-label')][text()='{sectionsName}']//ancestor::div[contains(@class, 'filter-category-title')]//i[contains(@class, 'clear')]")).Click();
+            }
+            catch
+            {
+                Driver.MouseHover(By.XPath($".//div[contains(@class, 'filter-category-label')][text()='{sectionsName}']//ancestor::div[contains(@class, 'filter-category-title')]//i[contains(@class, 'clear')]"));
+                Driver.FindElement(By.XPath($".//div[contains(@class, 'filter-category-label')][text()='{sectionsName}']//ancestor::div[contains(@class, 'filter-category-title')]//i[contains(@class, 'clear')]")).Click();
             }
         }
 
