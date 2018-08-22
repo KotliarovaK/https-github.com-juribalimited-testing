@@ -15,7 +15,7 @@ Scenario: EvergreenJnr_DevicesList_AddTheDeviceKeyColumnToTheDevicesList
 	| ColumnName          |
 	| Device Key          |
 
-@Evergreen @Mailboxes @EvergreenJnr_Columns @AddColumnAction @DAS10665
+@Evergreen @Mailboxes @EvergreenJnr_Columns @AddColumnAction @DAS11452
 Scenario: EvergreenJnr_MailboxesList_CheckThat500ErrorIsNotDisplayedAfterSortingForSelectedColumn
 	When User add following columns using URL to the "Mailboxes" page:
 	| ColumnName                 |
@@ -148,7 +148,7 @@ Scenario Outline: EvergreenJnr_AllLists_CheckThat500ErrorIsNotDisplayedAfterAddi
 	| Not Applicable     |
 	Then "<FilterName>" filter is added to the list
 	When User clicks the Filters button
-	When User click on '<ColumnHeader>' column header
+	And User click on '<ColumnHeader>' column header
 	Then color data is sorted by '<ColumnHeader>' column in ascending order
 	When User click on '<ColumnHeader>' column header
 	Then color data is sorted by '<ColumnHeader>' column in descending order

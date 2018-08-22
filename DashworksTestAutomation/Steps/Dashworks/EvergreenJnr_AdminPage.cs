@@ -1165,6 +1165,14 @@ namespace DashworksTestAutomation.Steps.Dashworks
             page.MoveToBucketByName(bucketName);
         }
 
+        [Then(@"Actions dropdown is displayed correctly")]
+        public void ThenActionsDropdownIsDisplayedCorrectly()
+        {
+            var button = _driver.NowAt<BaseGridPage>();
+            _driver.WaitWhileControlIsNotDisplayed<BaseGridPage>(() => button.ActionsButton);
+            Assert.IsTrue(button.CorrectActionsButton.Displayed(), "Actions dropdown is not displayed correctly");
+        }
+
         [When(@"User clicks on Actions button")]
         public void ThenUserClicksOnActionsButton()
         {

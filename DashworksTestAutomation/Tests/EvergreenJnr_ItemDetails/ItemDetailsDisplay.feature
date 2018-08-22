@@ -408,16 +408,22 @@ Scenario: EvergreenJnr_DevicesList_CheckThatOpenedSectionIsDisplayedCorrectlyOnT
 	And User navigates to the "Applications" tab
 	When User closes "Application Summary" section on the Details Page
 	And User opens "Application Detail" section on the Details Page
+	Then "Microsoft Internet Explorer 6.0 MUI Pack (Greek) - Menus and Dialogs" content is displayed in "Application" column
+	Then "Advert - A0129C4E" content is displayed in "Advertisement" column
 	Then "14" rows found label displays on Details Page
 	And table content is present
 	And section is loaded correctly
 	When User closes "Application Detail" section on the Details Page
 	And User opens "Advertisements" section on the Details Page
+	Then "Advert - A0121431" content is displayed in "Advertisement" column
+	Then "Hewlett-Packard" content is displayed in "Manufacturer" column
 	Then "7" rows found label displays on Details Page
 	And table content is present
 	And section is loaded correctly
 	When User closes "Advertisements" section on the Details Page
 	And User opens "Collections" section on the Details Page
+	Then "Collection A01131CA" content is displayed in "Collection" column
+	Then "A01 SMS (Spoof)" content is displayed in "Source" column
 	Then "7" rows found label displays on Details Page
 	And table content is present
 	And section is loaded correctly
