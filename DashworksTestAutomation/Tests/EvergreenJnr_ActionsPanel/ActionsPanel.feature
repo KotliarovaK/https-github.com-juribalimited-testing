@@ -342,7 +342,7 @@ Scenario: EvergreenJnr_UsersList_ChecksThatRequestTypeIsUpdatedCorrectlyOnUsersP
 	| SelectedRowsName |
 	| FMN5805290       |
 	| AKX995383        |
-	| ZZW1565756       |
+	| AAD1011948       |
 	And User selects "Bulk update" in the Actions dropdown
 	And User selects "Update request type" Bulk Update Type on Action panel
 	And User selects "Windows 7 Migration (Computer Scheduled Project)" Project on Action panel
@@ -357,7 +357,7 @@ Scenario: EvergreenJnr_UsersList_ChecksThatRequestTypeIsUpdatedCorrectlyOnUsersP
 	Then "User; Maternity" content is displayed in "Windows7Mi: Request Type" column
 	When User perform search by "AKX995383"
 	Then "User; Maternity" content is displayed in "Windows7Mi: Request Type" column
-	When User perform search by "ZZW1565756"
+	When User perform search by "AAD1011948"
 	Then "User; Maternity" content is displayed in "Windows7Mi: Request Type" column
 
 @Evergreen @Applications @EvergreenJnr_ActionsPanel @DAS12863
@@ -375,14 +375,12 @@ Scenario: EvergreenJnr_ApplicationsList_ChecksThatRequestTypeIsUpdatedCorrectlyO
 	When ColumnName is entered into the search box and the selection is clicked
 	| ColumnName               |
 	| Windows7Mi: Request Type |
-	When User click on 'Windows7Mi: Request Type' column header
-	When User click on 'Windows7Mi: Request Type' column header
 	And User clicks the Actions button
 	Then Actions panel is displayed to the user
 	When User select "Application" rows in the grid
-	| SelectedRowsName                        |
-	| Adobe Reader 6.0.1 - Chinese Simplified |
-	| MKS Source Integrity                    |
+	| SelectedRowsName                           |
+	| 0004 - Adobe Acrobat Reader 5.0.5 Francais |
+	| 0036 - Microsoft Access 97 SR-2 English    |
 	And User selects "Bulk update" in the Actions dropdown
 	And User selects "Update request type" Bulk Update Type on Action panel
 	And User selects "Windows 7 Migration (Computer Scheduled Project)" Project on Action panel
@@ -393,9 +391,9 @@ Scenario: EvergreenJnr_ApplicationsList_ChecksThatRequestTypeIsUpdatedCorrectlyO
 	And User clicks "UPDATE" button on message box
 	And Success message with "2 of 2 objects were valid for the update. Your changes have successfully been queued." text is displayed on Action panel
 	When User refreshes agGrid
-	And User perform search by "Adobe Reader 6.0.1 - Chinese Simplified"
+	And User perform search by "0004 - Adobe Acrobat Reader 5.0.5 Francais"
 	Then "Application: Request Type B" content is displayed in "Windows7Mi: Request Type" column
-	When User perform search by "MKS Source Integrity"
+	When User perform search by "0036 - Microsoft Access 97 SR-2 English"
 	Then "Application: Request Type B" content is displayed in "Windows7Mi: Request Type" column
 
 @Evergreen @Mailboxes @EvergreenJnr_ActionsPanel @DAS12863
@@ -466,13 +464,7 @@ Scenario: EvergreenJnr_DevicesList_ChecksThatRequestTypeIsUpdatedCorrectlyWhereS
 	And User refreshes agGrid
 	And User perform search by "00HA7MKAVVFDAV"
 	Then "Computer: Workstation Replacement" content is displayed in "Windows7Mi: Request Type" column
-	When User perform search by "00I0COBFWHOF27"
-	Then "Computer: Workstation Replacement" content is displayed in "Windows7Mi: Request Type" column
 	When User perform search by "018UQ6KL9TF4YF"
-	Then "Computer: Workstation Replacement" content is displayed in "Windows7Mi: Request Type" column
-	When User perform search by "019BFPQGKK5QT8N"
-	Then "Computer: Workstation Replacement" content is displayed in "Windows7Mi: Request Type" column
-	When User perform search by "01DRMO46G58SXK"
 	Then "Computer: Workstation Replacement" content is displayed in "Windows7Mi: Request Type" column
 
 @Evergreen @Devices @EvergreenJnr_ActionsPanel @DAS12863
@@ -485,10 +477,11 @@ Scenario: EvergreenJnr_DevicesList_ChecksThatActionsPanelWorkedCorrectlyAfterCic
 	| SelectedRowsName |
 	| 00OMQQXWA1DRI6   |
 	| 00RUUMAH9OZN9A   |
+	| 00SH8162NAS524   |
 	And User selects "Bulk update" in the Actions dropdown
 	And User selects "Update request type" Bulk Update Type on Action panel
-	And User selects "Windows 7 Migration (Computer Scheduled Project)" Project on Action panel
-	And User selects "Computer: Workstation Replacement" Request Type on Action panel
+	And User selects "Babel (English, German and French)" Project on Action panel
+	And User selects "Machines" Request Type on Action panel
 	And User clicks the "CANCEL" Action button
 	Then Actions panel is not displayed to the user
 	And Checkboxes are not displayed
