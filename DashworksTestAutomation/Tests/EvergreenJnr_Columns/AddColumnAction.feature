@@ -15,7 +15,7 @@ Scenario: EvergreenJnr_DevicesList_AddTheDeviceKeyColumnToTheDevicesList
 	| ColumnName          |
 	| Device Key          |
 
-@Evergreen @Mailboxes @EvergreenJnr_Columns @AddColumnAction @DAS10665
+@Evergreen @Mailboxes @EvergreenJnr_Columns @AddColumnAction @DAS11452
 Scenario: EvergreenJnr_MailboxesList_CheckThat500ErrorIsNotDisplayedAfterSortingForSelectedColumn
 	When User add following columns using URL to the "Mailboxes" page:
 	| ColumnName                 |

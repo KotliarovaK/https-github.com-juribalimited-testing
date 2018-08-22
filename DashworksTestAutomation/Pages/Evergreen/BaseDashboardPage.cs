@@ -25,8 +25,8 @@ namespace DashworksTestAutomation.Pages.Evergreen
         [FindsBy(How = How.XPath, Using = ".//button[@id='_listDtlBtn'][@disabled]")]
         public IWebElement DisabledListDetailsButton { get; set; }
 
-        [FindsBy(How = How.XPath, Using = ".//button[@class='btn btn-default mat-icon-button _mat-animation-noopable']")]
-        public IWebElement InactiveActionsButton { get; set; }
+        [FindsBy(How = How.XPath, Using = ".//button[contains(@class, 'active')]//i[contains(@class, 'static-list')]")]
+        public IWebElement ActiveActionsButton { get; set; }
 
         #region Action Panel
 
@@ -451,8 +451,7 @@ namespace DashworksTestAutomation.Pages.Evergreen
 
         public IWebElement GetOptionOnActionsPanelByName(string optionName)
         {
-            var selector = By.XPath(
-                $"//mat-option[@role='option']//span[contains(text(),'{optionName}')]");
+            var selector = By.XPath($".//mat-option[@role='option']//span[text()='{optionName}']");
             Driver.WaitWhileControlIsNotDisplayed(selector);
             return Driver.FindElement(selector);
         }
