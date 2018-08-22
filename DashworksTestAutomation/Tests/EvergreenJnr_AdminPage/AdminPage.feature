@@ -3094,23 +3094,23 @@ Scenario: EvergreenJnr_AdminPage_AddingUsersFromBuckets
 	When User enters "ZygmontKi" text in the Search field for "Username" column
 	Then Counter shows "1" found rows
 	When User clicks Reset Filters button on the Admin page
-	When User enters "UK" text in the Search field for "Domain" column
+	And User enters "UK" text in the Search field for "Domain" column
 	Then Counter shows "4,649" found rows
 	When User clicks Reset Filters button on the Admin page
-	When User enters "Anitra" text in the Search field for "Display Name" column
+	And User enters "Anitra" text in the Search field for "Display Name" column
 	Then Counter shows "18" found rows
 	When User clicks Reset Filters button on the Admin page
-	When User enters "Paula" text in the Search field for "Distinguished Name" column
+	And User enters "Paula" text in the Search field for "Distinguished Name" column
 	Then Counter shows "38" found rows
 	When User clicks Reset Filters button on the Admin page
-	When User selects all rows on the grid
-	When User clicks on Actions button
-	When User selects "Move To Another Bucket" in the Actions
-	When User clicks the "CONTINUE" Action button
+	And User selects all rows on the grid
+	And User clicks on Actions button
+	And User selects "Move To Another Bucket" in the Actions
+	And User clicks the "CONTINUE" Action button
 	Then Move To Another Bucket Page is displayed to the user
 	When User moves selected objects to "Unassigned" bucket
 	Then Success message is displayed and contains "The selected users have been added to the selected bucket" text
-	Then Delete "TestBucket7" Bucket in the Administration
+	And Delete "TestBucket7" Bucket in the Administration
 
 @Evergreen @Admin @EvergreenJnr_AdminPage @AdminPage @DAS12999 @Buckets
 Scenario: EvergreenJnr_AdminPage_AddingMailboxesFromBuckets
@@ -3157,27 +3157,27 @@ Scenario: EvergreenJnr_AdminPage_AddingMailboxesFromBuckets
 	When User enters "zoumasu" text in the Search field for "Email Address (Primary)" column
 	Then Counter shows "1" found rows
 	When User clicks Reset Filters button on the Admin page
-	When User enters "dw-exch13" text in the Search field for "Server Name" column
+	And User enters "dw-exch13" text in the Search field for "Server Name" column
 	Then Counter shows "4,670" found rows
 	When User clicks Reset Filters button on the Admin page
-	When User enters "UserMailbox" text in the Search field for "Mailbox Type" column
+	And User enters "UserMailbox" text in the Search field for "Mailbox Type" column
 	Then Counter shows "14,778" found rows
 	When User clicks Reset Filters button on the Admin page
-	When User enters "Rogelio" text in the Search field for "Owner Display Name" column
+	And User enters "Rogelio" text in the Search field for "Owner Display Name" column
 	Then Counter shows "8" found rows
 	When User clicks Reset Filters button on the Admin page
-	When User clicks String Filter button for "Mailbox Platform" column on the Admin page
-	When User selects "Exchange 2013" checkbox from String Filter on the Admin page
+	And User clicks String Filter button for "Mailbox Platform" column on the Admin page
+	And User selects "Exchange 2013" checkbox from String Filter on the Admin page
 	Then Counter shows "7,370" found rows
 	When User clicks Reset Filters button on the Admin page
-	When User selects all rows on the grid
-	When User clicks on Actions button
-	When User selects "Move To Another Bucket" in the Actions
-	When User clicks the "CONTINUE" Action button
+	And User selects all rows on the grid
+	And User clicks on Actions button
+	And User selects "Move To Another Bucket" in the Actions
+	And User clicks the "CONTINUE" Action button
 	Then Move To Another Bucket Page is displayed to the user
 	When User moves selected objects to "Unassigned" bucket
 	Then Success message is displayed and contains "The selected mailboxes have been added to the selected bucket" text
-	Then There are no errors in the browser console
+	And There are no errors in the browser console
 	And Delete "TestBucket8" Bucket in the Administration
 
 @Evergreen @Admin @EvergreenJnr_AdminPage @AdminPage @DAS12999 @Delete_Newly_Created_Project @Projects
@@ -3196,7 +3196,7 @@ Scenario: EvergreenJnr_AdminPage_AddingRequestTypesAndCategories
 	Then "Projects Home" page is displayed to the user
 	When User navigate to "TestName18" Project
 	Then Project with "TestName18" name is displayed correctly
-	Then "Manage Project Details" page is displayed to the user
+	And "Manage Project Details" page is displayed to the user
 	When User navigate to "Request Types" tab
 	Then "Manage Request Types" page is displayed to the user
 	When User clicks "Create Request Type" button
@@ -3211,7 +3211,7 @@ Scenario: EvergreenJnr_AdminPage_AddingRequestTypesAndCategories
 	| 18MailboxCategory | UserScheduledProject | Mailbox          |
 	Then Success message is displayed with "Category successfully created." text
 	When User navigate to Evergreen link
-	When User clicks Admin on the left-hand menu
+	And User clicks Admin on the left-hand menu
 	Then Admin page should be displayed to the user
 	When User clicks "Projects" link on the Admin page
 	Then "Projects" page should be displayed to the user
@@ -3219,8 +3219,8 @@ Scenario: EvergreenJnr_AdminPage_AddingRequestTypesAndCategories
 	And User clicks content from "Project" column
 	Then Project "TestName18" is displayed to user
 	When User changes Request Type to "18RequestTypeName"
-	When User changes Category to "18MailboxCategory"
-	When User selects "Scope Details" tab on the Project details page
-	When User selects "Scope Changes" tab on the Project details page
+	And User changes Category to "18MailboxCategory"
+	And User selects "Scope Details" tab on the Project details page
+	And User selects "Scope Changes" tab on the Project details page
 	#Then "18RequestTypeName" Request Type is displayed to the user
 	#Then "18MailboxCategory" Category is displayed to the user
