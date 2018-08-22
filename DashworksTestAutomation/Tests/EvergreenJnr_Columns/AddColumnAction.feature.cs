@@ -107,7 +107,7 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_Columns
         [NUnit.Framework.CategoryAttribute("Mailboxes")]
         [NUnit.Framework.CategoryAttribute("EvergreenJnr_Columns")]
         [NUnit.Framework.CategoryAttribute("AddColumnAction")]
-        [NUnit.Framework.CategoryAttribute("DAS10665")]
+        [NUnit.Framework.CategoryAttribute("DAS11452")]
         public virtual void EvergreenJnr_MailboxesList_CheckThat500ErrorIsNotDisplayedAfterSortingForSelectedColumn()
         {
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("EvergreenJnr_MailboxesList_CheckThat500ErrorIsNotDisplayedAfterSortingForSelected" +
@@ -116,7 +116,7 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_Columns
                         "Mailboxes",
                         "EvergreenJnr_Columns",
                         "AddColumnAction",
-                        "DAS10665"});
+                        "DAS11452"});
             this.ScenarioSetup(scenarioInfo);
             this.FeatureBackground();
             TechTalk.SpecFlow.Table table3 = new TechTalk.SpecFlow.Table(new string[] {
