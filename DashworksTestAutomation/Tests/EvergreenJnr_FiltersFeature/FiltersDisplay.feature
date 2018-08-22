@@ -682,7 +682,8 @@ Scenario: EvergreenJnr_DevicesList_CheckThatFilterCategoriesAreClosedAfterCleari
 	Then "Devices" list should be displayed to the user
 	When User clicks the Filters button
 	Then Filters panel is displayed to the user
-	When User enters "date" text in Search field at Filters Panel
+	When User clicks Add New button on the Filter panel
+	And User enters "date" text in Search field at Filters Panel
 	Then Minimize buttons are displayed for all category in Filters panel
 	When User clears search textbox in Filters panel
 	Then Maximize buttons are displayed for all category in Filters panel

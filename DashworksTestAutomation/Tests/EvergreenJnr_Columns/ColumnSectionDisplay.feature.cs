@@ -1185,6 +1185,115 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_Columns
             testRunner.And("Column is displayed in following order:", ((string)(null)), table64, "And ");
             this.ScenarioCleanup();
         }
+        
+        [NUnit.Framework.TestAttribute()]
+        [NUnit.Framework.Retry(2)]
+        [NUnit.Framework.DescriptionAttribute("EvergreenJnr_DevicesList_TheSelectedColumnsCategoryIsDisplayedAfterUsingTheFilter" +
+            "Search")]
+        [NUnit.Framework.CategoryAttribute("Evergreen")]
+        [NUnit.Framework.CategoryAttribute("Devices")]
+        [NUnit.Framework.CategoryAttribute("EvergreenJnr_Columns")]
+        [NUnit.Framework.CategoryAttribute("ColumnSectionDisplay")]
+        [NUnit.Framework.CategoryAttribute("DAS13245")]
+        public virtual void EvergreenJnr_DevicesList_TheSelectedColumnsCategoryIsDisplayedAfterUsingTheFilterSearch()
+        {
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("EvergreenJnr_DevicesList_TheSelectedColumnsCategoryIsDisplayedAfterUsingTheFilter" +
+                    "Search", new string[] {
+                        "Evergreen",
+                        "Devices",
+                        "EvergreenJnr_Columns",
+                        "ColumnSectionDisplay",
+                        "DAS13245"});
+            this.ScenarioSetup(scenarioInfo);
+            this.FeatureBackground();
+            testRunner.When("User clicks \"Devices\" on the left-hand menu", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+            testRunner.Then("\"Devices\" list should be displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+            testRunner.When("User clicks the Filters button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+            testRunner.Then("Filters panel is displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+            testRunner.When("User clicks Add New button on the Filter panel", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+            TechTalk.SpecFlow.Table table65 = new TechTalk.SpecFlow.Table(new string[] {
+                        "Subcategories"});
+            table65.AddRow(new string[] {
+                        "Device Type"});
+            table65.AddRow(new string[] {
+                        "Hostname"});
+            table65.AddRow(new string[] {
+                        "Operating System"});
+            table65.AddRow(new string[] {
+                        "Owner Display Name"});
+            testRunner.Then("the following subcategories are displayed for open category:", ((string)(null)), table65, "Then ");
+            testRunner.When("User enters \"Hostname\" text in Search field at Filters Panel", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+            testRunner.When("User clears search textbox in Filters panel", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+            TechTalk.SpecFlow.Table table66 = new TechTalk.SpecFlow.Table(new string[] {
+                        "Subcategories"});
+            table66.AddRow(new string[] {
+                        "Device Type"});
+            table66.AddRow(new string[] {
+                        "Hostname"});
+            table66.AddRow(new string[] {
+                        "Operating System"});
+            table66.AddRow(new string[] {
+                        "Owner Display Name"});
+            testRunner.Then("the following subcategories are displayed for open category:", ((string)(null)), table66, "Then ");
+            this.ScenarioCleanup();
+        }
+        
+        [NUnit.Framework.TestAttribute()]
+        [NUnit.Framework.Retry(2)]
+        [NUnit.Framework.DescriptionAttribute("EvergreenJnr_DevicesList_TheSelectedColumnsCategoryIsDisplayedAfterAddingAFilter")]
+        [NUnit.Framework.CategoryAttribute("Evergreen")]
+        [NUnit.Framework.CategoryAttribute("Devices")]
+        [NUnit.Framework.CategoryAttribute("EvergreenJnr_Columns")]
+        [NUnit.Framework.CategoryAttribute("ColumnSectionDisplay")]
+        [NUnit.Framework.CategoryAttribute("DAS13245")]
+        public virtual void EvergreenJnr_DevicesList_TheSelectedColumnsCategoryIsDisplayedAfterAddingAFilter()
+        {
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("EvergreenJnr_DevicesList_TheSelectedColumnsCategoryIsDisplayedAfterAddingAFilter", new string[] {
+                        "Evergreen",
+                        "Devices",
+                        "EvergreenJnr_Columns",
+                        "ColumnSectionDisplay",
+                        "DAS13245"});
+            this.ScenarioSetup(scenarioInfo);
+            this.FeatureBackground();
+            testRunner.When("User clicks \"Devices\" on the left-hand menu", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+            testRunner.Then("\"Devices\" list should be displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+            testRunner.When("User clicks the Filters button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+            testRunner.Then("Filters panel is displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+            testRunner.When("User clicks Add New button on the Filter panel", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+            TechTalk.SpecFlow.Table table67 = new TechTalk.SpecFlow.Table(new string[] {
+                        "Subcategories"});
+            table67.AddRow(new string[] {
+                        "Device Type"});
+            table67.AddRow(new string[] {
+                        "Hostname"});
+            table67.AddRow(new string[] {
+                        "Operating System"});
+            table67.AddRow(new string[] {
+                        "Owner Display Name"});
+            testRunner.Then("the following subcategories are displayed for open category:", ((string)(null)), table67, "Then ");
+            testRunner.When("User selects \"Compliance\" filter from \"Device\" category", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+            TechTalk.SpecFlow.Table table68 = new TechTalk.SpecFlow.Table(new string[] {
+                        "SelectedCheckboxes"});
+            table68.AddRow(new string[] {
+                        "Red"});
+            testRunner.When("User have created \"Equals\" filter with column and following options:", ((string)(null)), table68, "When ");
+            testRunner.When("User clicks Add New button on the Filter panel", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+            TechTalk.SpecFlow.Table table69 = new TechTalk.SpecFlow.Table(new string[] {
+                        "Subcategories"});
+            table69.AddRow(new string[] {
+                        "Compliance"});
+            table69.AddRow(new string[] {
+                        "Device Type"});
+            table69.AddRow(new string[] {
+                        "Hostname"});
+            table69.AddRow(new string[] {
+                        "Operating System"});
+            table69.AddRow(new string[] {
+                        "Owner Display Name"});
+            testRunner.Then("the following subcategories are displayed for open category:", ((string)(null)), table69, "Then ");
+            this.ScenarioCleanup();
+        }
     }
 }
 #pragma warning restore
