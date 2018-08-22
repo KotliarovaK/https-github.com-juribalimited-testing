@@ -150,7 +150,7 @@ Scenario: EvergreenJnr_AdminPage_CheckThatWarningMessageIsDisplayedAfterDeleting
 	When User selects "Scope Changes" tab on the Project details page
 	Then Warning message is not displayed on the Admin page
 
-@Evergreen @Admin @EvergreenJnr_AdminPage @AdminPage @DAS11977 @DAS11959 @DAS12553 @DAS11744 @DAS12742 @DAS12999 @DAS13199 @DAS13254 @Delete_Newly_Created_Project @Project_Creation_and_Scope @Projects @Not_Run
+@Evergreen @Admin @EvergreenJnr_AdminPage @AdminPage @DAS11977 @DAS11959 @DAS12553 @DAS11744 @DAS12742 @DAS12999 @DAS13199 @DAS13254 @DAS13323 @Delete_Newly_Created_Project @Project_Creation_and_Scope @Projects
 Scenario: EvergreenJnr_AdminPage_CheckThatAfterApplyingDoNotIncludeDeviceOwnersListHas0ItemsInTheUsersTab
 	When User clicks Admin on the left-hand menu
 	Then Admin page should be displayed to the user
@@ -166,7 +166,7 @@ Scenario: EvergreenJnr_AdminPage_CheckThatAfterApplyingDoNotIncludeDeviceOwnersL
 	Then Project "TestProject1" is displayed to user
 	When User clicks "Details" tab
 	And User changes Project Name to "NewProjectName"
-	And User changes Project Short Name to "ShortName"
+	And User changes Project Short Name to "DProject"
 	And User changes Project Description to "45978DescriptionText"
 	And User changes project language to "Dutch"
 	And User selects "Use evergreen buckets" in the Buckets Project dropdown
@@ -3224,3 +3224,31 @@ Scenario: EvergreenJnr_AdminPage_AddingRequestTypesAndCategories
 	And User selects "Scope Changes" tab on the Project details page
 	#Then "18RequestTypeName" Request Type is displayed to the user
 	#Then "18MailboxCategory" Category is displayed to the user
+
+@Evergreen @Admin @EvergreenJnr_AdminPage @AdminPage @DAS12892 @Delete_Newly_Created_Project @Delete_Newly_Created_List
+Scenario: EvergreenJnr_AdminPage_CheckThatOnlyFilteredListObjectsAreUsedAsAScopeOfProject
+	When User clicks "Devices" on the left-hand menu
+	Then "Devices" list should be displayed to the user
+	When User clicks the Filters button
+	Then Filters panel is displayed to the user
+	When User add "Operating System" filter where type is "Equals" with added column and Lookup option
+	| SelectedValues |
+	| Windows Vista  |
+	When User Add And "Device Type" filter where type is "Equals" with added column and Lookup option
+	| SelectedValues |
+	| Desktop        |
+	Then "222" rows are displayed in the agGrid
+	When User create dynamic list with "DynamicList4811" name on "Devices" page
+	Then "DynamicList4811" list is displayed to user
+	When User clicks Admin on the left-hand menu
+	Then Admin page should be displayed to the user
+	When User clicks "Projects" link on the Admin page
+	Then "Projects" page should be displayed to the user
+	When User clicks the "CREATE PROJECT" Action button
+	Then "Create Project" page should be displayed to the user
+	When User enters "DevicesProject1982" in the Project Name field
+	And User selects "DynamicList4811" in the Scope Project dropdown
+	And User clicks Create button on the Create Project page
+	When User clicks newly created object link
+	When User selects "Scope Changes" tab on the Project details page
+	Then "Devices to add (0 of 222 selected)" is displayed to the user in the Project Scope Changes section
