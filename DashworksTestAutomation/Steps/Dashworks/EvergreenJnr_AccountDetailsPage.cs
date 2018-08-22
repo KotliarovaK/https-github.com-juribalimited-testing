@@ -166,6 +166,7 @@ namespace DashworksTestAutomation.Steps.Dashworks
         public void WhenUserClicksUpdateButtonOnTheChangePasswordPage()
         {
             var page = _driver.NowAt<ChangePasswordPage>();
+            _driver.WaitForDataLoading();
             page.UpdateButton.Click();
         }
 
@@ -283,6 +284,7 @@ namespace DashworksTestAutomation.Steps.Dashworks
             var page = _driver.NowAt<AccountDetailsPage>();
             _driver.WaitWhileControlIsNotDisplayed<AccountDetailsPage>(() => page.SuccessMessage);
             Assert.AreEqual(text, page.SuccessMessage.Text, "Success Message is not displayed");
+            _driver.WaitForDataLoading();
         }
 
         [Then(@"Success message with ""(.*)"" text is displayed on the Change Password page")]
@@ -291,6 +293,7 @@ namespace DashworksTestAutomation.Steps.Dashworks
             var page = _driver.NowAt<ChangePasswordPage>();
             _driver.WaitWhileControlIsNotDisplayed<ChangePasswordPage>(() => page.SuccessMessage);
             StringAssert.Contains(text, page.SuccessMessage.Text, "Success Message is not displayed");
+            Thread.Sleep(4000);
         }
 
         [Then(@"Error message with ""(.*)"" text is displayed on the Change Password page")]
@@ -299,6 +302,7 @@ namespace DashworksTestAutomation.Steps.Dashworks
             var page = _driver.NowAt<ChangePasswordPage>();
             _driver.WaitWhileControlIsNotDisplayed<ChangePasswordPage>(() => page.ErrorMessage);
             StringAssert.Contains(text, page.ErrorMessage.Text, "Error Message is not displayed");
+            Thread.Sleep(4000);
         }
 
         [Then(@"Success message with ""(.*)"" text is displayed on the Advanced page")]
@@ -370,7 +374,26 @@ namespace DashworksTestAutomation.Steps.Dashworks
                 preferencesPage.DisplayModeNormal.Click();
                 page.UpdateButton.Click();
             }
-            catch {}
+            catch
+            {}
+        }
+
+        [AfterScenario("Remove_Password_Changes")]
+        public void RemovePasswordChangesAfterscenario()
+        {
+            try
+            {
+                var page = _driver.NowAt<ChangePasswordPage>();
+                page.CurrentPasswordField.Clear();
+                page.CurrentPasswordField.SendKeys("test5846");
+                page.NewPassword.Clear();
+                page.NewPassword.SendKeys("m!gration");
+                page.ConfirmPasswordField.Clear();
+                page.ConfirmPasswordField.SendKeys("m!gration");
+                page.UpdateButton.Click();
+            }
+            catch
+            {}
         }
     }
 }
