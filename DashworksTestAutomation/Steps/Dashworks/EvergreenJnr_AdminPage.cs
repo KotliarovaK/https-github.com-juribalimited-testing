@@ -1068,6 +1068,14 @@ namespace DashworksTestAutomation.Steps.Dashworks
             StringAssert.Contains(text, page.InfoMessage.Text, "Success Message is not displayed");
         }
 
+        [Then(@"User sees banner at the top of work area")]
+        public void ThenUserSeesBannerAtTheTopOfWorkArea()
+        {
+            var page = _driver.NowAt<BaseGridPage>();
+            _driver.WaitWhileControlIsNotDisplayed<BaseGridPage>(() => page.Banner);
+            Assert.That(page.Banner.Displayed, Is.True, "Banner is not displayed");
+        }
+
         [Then(@"Success message The ""(.*)"" bucket has been updated is displayed on the Buckets page")]
         public void ThenSuccessMessageTheBucketHasBeenUpdatedIsDisplayedOnTheBucketsPage(string bucketName)
         {
