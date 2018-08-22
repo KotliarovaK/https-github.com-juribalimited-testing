@@ -62,7 +62,6 @@ namespace DashworksTestAutomation.Tests
         
         [NUnit.Framework.TestAttribute()]
         [NUnit.Framework.Retry(2)]
-        
         [NUnit.Framework.DescriptionAttribute("EvergreenJnr_Login_Logout_CheckThatLoginAndLogOutWorksCorrectly")]
         [NUnit.Framework.CategoryAttribute("Evergreen")]
         [NUnit.Framework.CategoryAttribute("Login_Logout")]

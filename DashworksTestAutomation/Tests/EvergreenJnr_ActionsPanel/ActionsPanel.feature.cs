@@ -68,7 +68,6 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_ActionsPanel
         
         [NUnit.Framework.TestAttribute()]
         [NUnit.Framework.Retry(2)]
-        
         [NUnit.Framework.DescriptionAttribute("EvergreenJnr_UsersList_CheckThatAfterInterruptingProcessSelectingAllRowsAtActions" +
             "PanelProgressIndicatorDoesNotContinueToRun")]
         [NUnit.Framework.CategoryAttribute("Evergreen")]
@@ -106,7 +105,6 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_ActionsPanel
         
         [NUnit.Framework.TestAttribute()]
         [NUnit.Framework.Retry(2)]
-        
         [NUnit.Framework.DescriptionAttribute("EvergreenJnr_UsersList_CheckThatAfterClosingActionsPanelTheActionsButtonIsNotShow" +
             "nInRed")]
         [NUnit.Framework.CategoryAttribute("Evergreen")]
@@ -134,7 +132,6 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_ActionsPanel
         
         [NUnit.Framework.TestAttribute()]
         [NUnit.Framework.Retry(2)]
-        
         [NUnit.Framework.DescriptionAttribute("EvergreenJnr_UsersList_CheckThatUserWithoutRelevantRolesCannotSeeBulkUpdateOption" +
             "InActionsPanel")]
         [NUnit.Framework.CategoryAttribute("Evergreen")]
@@ -223,7 +220,6 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_ActionsPanel
         
         [NUnit.Framework.TestAttribute()]
         [NUnit.Framework.Retry(2)]
-        
         [NUnit.Framework.DescriptionAttribute("EvergreenJnr_DevicesList_CheckThatUserWithoutJustTheProjectAdministratorRoleCanSt" +
             "illBulkUpdateObjects")]
         [NUnit.Framework.CategoryAttribute("Evergreen")]
@@ -316,7 +312,6 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_ActionsPanel
         
         [NUnit.Framework.TestAttribute()]
         [NUnit.Framework.Retry(2)]
-        
         [NUnit.Framework.DescriptionAttribute("EvergreenJnr_ApplicationsList_CheckThatUserWithoutJustTheProjectBulkUpdaterRoleCa" +
             "nStillBulkUpdateObjects")]
         [NUnit.Framework.CategoryAttribute("Evergreen")]
@@ -408,7 +403,6 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_ActionsPanel
         
         [NUnit.Framework.TestAttribute()]
         [NUnit.Framework.Retry(2)]
-        
         [NUnit.Framework.DescriptionAttribute("EvergreenJnr_AllLists_ChecksThatRemoveFromStaticListOptionIsNotShownInTheActionsP" +
             "anelWhenAStaticListDoesNotExist")]
         [NUnit.Framework.CategoryAttribute("Evergreen")]
@@ -474,7 +468,6 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_ActionsPanel
         
         [NUnit.Framework.TestAttribute()]
         [NUnit.Framework.Retry(2)]
-        
         [NUnit.Framework.DescriptionAttribute("EvergreenJnr_AllLists_ChecksThatAddToStaticListOptionIsNotShownInTheActionsPanelW" +
             "henOnlOneStaticListExists")]
         [NUnit.Framework.CategoryAttribute("Evergreen")]
@@ -536,7 +529,6 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_ActionsPanel
         
         [NUnit.Framework.TestAttribute()]
         [NUnit.Framework.Retry(2)]
-        
         [NUnit.Framework.DescriptionAttribute("EvergreenJnr_AllLists_ChecksThatStaticListsCreatedFromAFilterOriginallyLoadsAnyDa" +
             "taOnceTheStaticListHasBeenCreated")]
         [NUnit.Framework.CategoryAttribute("Evergreen")]
