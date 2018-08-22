@@ -3249,6 +3249,8 @@ Scenario: EvergreenJnr_AdminPage_CheckThatOnlyFilteredListObjectsAreUsedAsAScope
 	When User enters "DevicesProject1982" in the Project Name field
 	And User selects "DynamicList4811" in the Scope Project dropdown
 	And User clicks Create button on the Create Project page
+	Then Success message is displayed and contains "Your project has been created" text
 	When User clicks newly created object link
 	When User selects "Scope Changes" tab on the Project details page
 	Then "Devices to add (0 of 222 selected)" is displayed to the user in the Project Scope Changes section
+	Then There are no errors in the browser console
