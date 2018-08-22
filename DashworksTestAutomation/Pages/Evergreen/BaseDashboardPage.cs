@@ -19,6 +19,10 @@ namespace DashworksTestAutomation.Pages.Evergreen
 
         public const string FullTable = ".//div[contains(@class, 'ag-body-viewport')]/div";
 
+        public const string OptionsDllOnActionsPanel = "//mat-option[@role='option']//span";
+
+        public const string SubcategoryValuesSelector = "//div[@class='sub-categories ng-star-inserted']//div//div";
+
         [FindsBy(How = How.XPath, Using = ".//div[@id='pagetitle-text']/descendant::h1")]
         public IWebElement Heading { get; set; }
 
@@ -180,6 +184,12 @@ namespace DashworksTestAutomation.Pages.Evergreen
 
         [FindsBy(How = How.XPath, Using = "//div[@class='top-tools-item top-tools-left-side']")]
         public IWebElement OutsideGridPanel { get; set; }
+
+        [FindsBy(How = How.XPath, Using = OptionsDllOnActionsPanel)]
+        public IList<IWebElement> OptionsDll { get; set; }
+
+        [FindsBy(How = How.XPath, Using = SubcategoryValuesSelector)]
+        public IList<IWebElement> SubcategoryValues { get; set; }
 
         #region TableColumns
 
