@@ -165,17 +165,18 @@ Scenario: EvergreenJnr_AdminPage_CheckThatAfterApplyingDoNotIncludeDeviceOwnersL
 	When User clicks newly created object link
 	Then Project "TestProject1" is displayed to user
 	When User clicks "Details" tab
-	When User changes Project Name to "NewProjectName"
-	When User changes Project Short Name to "ShortName"
-	When User changes Project Description to "45978DescriptionText"
-	When User changes project language to "Dutch"
-	When User selects "Use evergreen buckets" in the Buckets Project dropdown
+	And User changes Project Name to "NewProjectName"
+	And User changes Project Short Name to "ShortName"
+	And User changes Project Description to "45978DescriptionText"
+	And User changes project language to "Dutch"
+	And User selects "Use evergreen buckets" in the Buckets Project dropdown
 	And User clicks the "UPDATE" Action button
 	Then Success message is displayed and contains "The project details have been updated" text
-	Then There are no errors in the browser console
+	And There are no errors in the browser console
 	When User click on Back button
-	When User selects all rows on the grid
-	And User clicks Actions button on the Projects page
+	And User selects all rows on the grid
+	Then Actions dropdown is displayed correctly
+	When User clicks Actions button on the Projects page
 	And User clicks Delete Project button
 	And User clicks Delete button
 	Then Delete button is displayed to the User on the Projects page
@@ -205,7 +206,7 @@ Scenario: EvergreenJnr_AdminPage_CheckThatAfterApplyingDoNotIncludeDeviceOwnersL
 	And User clicks "Users" tab in the Project Scope Changes section 
 	Then "Users to add (0 of 14631 selected)" is displayed to the user in the Project Scope Changes section
 	When User click on Back button
-	When User enters "NewProjectName" text in the Search field for "Project" column
+	And User enters "NewProjectName" text in the Search field for "Project" column
 	And User selects all rows on the grid
 	And User removes selected item
 
@@ -943,7 +944,7 @@ Scenario: EvergreenJnr_AdminPage_CheckThatSelectedCheckboxIsSelectedAfterSwitchi
 	Then following items are still selected
 	And "Devices to add (1 of 17225 selected)" is displayed to the user in the Project Scope Changes section
 
-@Evergreen @Admin @EvergreenJnr_AdminPage @AdminPage @DAS12760 @Buckets
+@Evergreen @Admin @EvergreenJnr_AdminPage @AdminPage @DAS12760 @DAS13254 @Buckets
 Scenario: EvergreenJnr_AdminPage_CheckMessageThatDisplayedWhenDeletingBucket
 	When User clicks Admin on the left-hand menu
 	Then Admin page should be displayed to the user
@@ -958,7 +959,8 @@ Scenario: EvergreenJnr_AdminPage_CheckMessageThatDisplayedWhenDeletingBucket
 	Then Warning message with "You cannot delete the default bucket" text is displayed on the Admin page
 	When User enters "Unassigned" text in the Search field for "Bucket" column
 	And User selects all rows on the grid
-	And User clicks on Actions button
+	Then Actions dropdown is displayed correctly
+	When User clicks on Actions button
 	And User selects "Delete" in the Actions
 	And User clicks Delete button 
 	Then Warning message with "You cannot delete the default bucket" text is displayed on the Admin page
@@ -983,7 +985,7 @@ Scenario: EvergreenJnr_AdminPage_CheckMessageThatDisplayedWhenDeletingBucket
 	When User clicks Delete button in the warning message
 	Then Success message is displayed and contains "The selected bucket has been deleted" text
 
-@Evergreen @Admin @EvergreenJnr_AdminPage @AdminPage @DAS12387 @DAS12757 @DAS12999 @DAS13199 @Delete_Newly_Created_Project @Project_Creation_and_Scope @Projects
+@Evergreen @Admin @EvergreenJnr_AdminPage @AdminPage @DAS12387 @DAS12757 @DAS12999 @DAS13199 @Delete_Newly_Created_Project @Project_Creation_and_Scope @Projects @Not_Run
 Scenario: EvergreenJnr_AdminPage_CheckThatOnboardingOfObjectsIsProceedForScopedProjects
 	When User clicks Admin on the left-hand menu
 	Then Admin page should be displayed to the user
@@ -1612,7 +1614,7 @@ Scenario: EvergreenJnr_AdminPage_CheckThatScopePanelHaveCorrectlySizeWhenUsedLis
 	When User clicks the "CREATE PROJECT" Action button
 	Then "Create Project" page should be displayed to the user
 	When User clicks in the Scope field on the Admin page
-	Then Scope DDL have the "304" Height and the "658" Width
+	#Then Scope DDL have the "304" Height and the "658" Width
 
 @Evergreen @Admin @EvergreenJnr_AdminPage @AdminPage @DAS12349 @DAS12364 @DAS13199 @Delete_Newly_Created_List @Delete_Newly_Created_Project @Project_Creation_and_Scope @Projects
 Scenario: EvergreenJnr_AdminPage_CheckThat500ISEInvalidColumnNameIsNotDisplayedWhenUsedAppSavedListForFilteringDeviceList
@@ -1737,11 +1739,12 @@ Scenario: EvergreenJnr_AdminPage_CheckThatCancelButtonIsDisplayedWithCorrectColo
 	Then Success message is displayed and contains "Your project has been created" text
 	When User enters "TestName12891" text in the Search field for "Project" column
 	And User selects all rows on the grid
-	And User clicks Actions button on the Projects page
+	Then Actions dropdown is displayed correctly
+	When User clicks Actions button on the Projects page
 	And User clicks Delete button in Actions
 	And User clicks Delete button
 	Then User sees Cancel button in banner
-	Then Cancel button is displayed with correctly color
+	And Cancel button is displayed with correctly color
 	When User clicks Delete button in the warning message
 
 @Evergreen @Admin @EvergreenJnr_AdminPage @AdminPage @DAS11701 @Delete_Newly_Created_Project
@@ -2687,7 +2690,7 @@ Examples:
 	| All Applications | StaticList1529  | Applications to add (0 of 0 selected) | Applications to add (0 of 0 selected) |
 	| StaticList1529   | DynamicList87   | Applications to add (0 of 0 selected) | Applications to add (0 of 0 selected) |
 
-@Evergreen @Admin @EvergreenJnr_AdminPage @AdminPage @DAS12999 @DAS13199 @Delete_Newly_Created_Team @Teams
+@Evergreen @Admin @EvergreenJnr_AdminPage @AdminPage @DAS12999 @DAS13199 @DAS13254 @Delete_Newly_Created_Team @Teams
 Scenario: EvergreenJnr_AdminPage_AddingIndividualAndMembersFromAnotherTeam
 	When User clicks Admin on the left-hand menu
 	Then Admin page should be displayed to the user
@@ -2712,7 +2715,8 @@ Scenario: EvergreenJnr_AdminPage_AddingIndividualAndMembersFromAnotherTeam
 	When User enters "My Team" text in the Search field for "Team" column
 	Then "TRUE" value is displayed for Default column
 	When User selects all rows on the grid
-	And User clicks on Actions button
+	Then Actions dropdown is displayed correctly
+	When User clicks on Actions button
 	And User selects "Delete Team" in the Actions
 	And User clicks Delete button 
 	Then Warning message with "You cannot delete the default team" text is displayed on the Admin page
@@ -2740,7 +2744,7 @@ Scenario: EvergreenJnr_AdminPage_AddingIndividualAndMembersFromAnotherTeam
 	And User removes selected item
 	Then Success message is displayed and contains "The selected teams have been deleted, and their buckets reassigned" text
 
-@Evergreen @Admin @EvergreenJnr_AdminPage @AdminPage @DAS12999 @Delete_Newly_Created_Team @Teams
+@Evergreen @Admin @EvergreenJnr_AdminPage @AdminPage @DAS12999 @DAS13254 @Delete_Newly_Created_Team @Teams
 Scenario: EvergreenJnr_AdminPage_AddingMembersToTheTeam
 	When User clicks Admin on the left-hand menu
 	Then Admin page should be displayed to the user
@@ -2775,7 +2779,8 @@ Scenario: EvergreenJnr_AdminPage_AddingMembersToTheTeam
 	When User enters "automation_admin1" text in the Search field for "Username" column
 	Then Counter shows "1" found rows
 	When User selects all rows on the grid
-	And User removes selected members
+	Then Actions dropdown is displayed correctly
+	When User removes selected members
 	Then Success message is displayed and contains "The selected user has been removed" text
 	When User enters "automation_admin2" text in the Search field for "Username" column
 	And User selects all rows on the grid
@@ -3089,23 +3094,23 @@ Scenario: EvergreenJnr_AdminPage_AddingUsersFromBuckets
 	When User enters "ZygmontKi" text in the Search field for "Username" column
 	Then Counter shows "1" found rows
 	When User clicks Reset Filters button on the Admin page
-	When User enters "UK" text in the Search field for "Domain" column
+	And User enters "UK" text in the Search field for "Domain" column
 	Then Counter shows "4,649" found rows
 	When User clicks Reset Filters button on the Admin page
-	When User enters "Anitra" text in the Search field for "Display Name" column
+	And User enters "Anitra" text in the Search field for "Display Name" column
 	Then Counter shows "18" found rows
 	When User clicks Reset Filters button on the Admin page
-	When User enters "Paula" text in the Search field for "Distinguished Name" column
+	And User enters "Paula" text in the Search field for "Distinguished Name" column
 	Then Counter shows "38" found rows
 	When User clicks Reset Filters button on the Admin page
-	When User selects all rows on the grid
-	When User clicks on Actions button
-	When User selects "Move To Another Bucket" in the Actions
-	When User clicks the "CONTINUE" Action button
+	And User selects all rows on the grid
+	And User clicks on Actions button
+	And User selects "Move To Another Bucket" in the Actions
+	And User clicks the "CONTINUE" Action button
 	Then Move To Another Bucket Page is displayed to the user
 	When User moves selected objects to "Unassigned" bucket
 	Then Success message is displayed and contains "The selected users have been added to the selected bucket" text
-	Then Delete "TestBucket7" Bucket in the Administration
+	And Delete "TestBucket7" Bucket in the Administration
 
 @Evergreen @Admin @EvergreenJnr_AdminPage @AdminPage @DAS12999 @Buckets
 Scenario: EvergreenJnr_AdminPage_AddingMailboxesFromBuckets
@@ -3152,27 +3157,27 @@ Scenario: EvergreenJnr_AdminPage_AddingMailboxesFromBuckets
 	When User enters "zoumasu" text in the Search field for "Email Address (Primary)" column
 	Then Counter shows "1" found rows
 	When User clicks Reset Filters button on the Admin page
-	When User enters "dw-exch13" text in the Search field for "Server Name" column
+	And User enters "dw-exch13" text in the Search field for "Server Name" column
 	Then Counter shows "4,670" found rows
 	When User clicks Reset Filters button on the Admin page
-	When User enters "UserMailbox" text in the Search field for "Mailbox Type" column
+	And User enters "UserMailbox" text in the Search field for "Mailbox Type" column
 	Then Counter shows "14,778" found rows
 	When User clicks Reset Filters button on the Admin page
-	When User enters "Rogelio" text in the Search field for "Owner Display Name" column
+	And User enters "Rogelio" text in the Search field for "Owner Display Name" column
 	Then Counter shows "8" found rows
 	When User clicks Reset Filters button on the Admin page
-	When User clicks String Filter button for "Mailbox Platform" column on the Admin page
-	When User selects "Exchange 2013" checkbox from String Filter on the Admin page
+	And User clicks String Filter button for "Mailbox Platform" column on the Admin page
+	And User selects "Exchange 2013" checkbox from String Filter on the Admin page
 	Then Counter shows "7,370" found rows
 	When User clicks Reset Filters button on the Admin page
-	When User selects all rows on the grid
-	When User clicks on Actions button
-	When User selects "Move To Another Bucket" in the Actions
-	When User clicks the "CONTINUE" Action button
+	And User selects all rows on the grid
+	And User clicks on Actions button
+	And User selects "Move To Another Bucket" in the Actions
+	And User clicks the "CONTINUE" Action button
 	Then Move To Another Bucket Page is displayed to the user
 	When User moves selected objects to "Unassigned" bucket
 	Then Success message is displayed and contains "The selected mailboxes have been added to the selected bucket" text
-	Then There are no errors in the browser console
+	And There are no errors in the browser console
 	And Delete "TestBucket8" Bucket in the Administration
 
 @Evergreen @Admin @EvergreenJnr_AdminPage @AdminPage @DAS12999 @Delete_Newly_Created_Project @Projects
@@ -3191,7 +3196,7 @@ Scenario: EvergreenJnr_AdminPage_AddingRequestTypesAndCategories
 	Then "Projects Home" page is displayed to the user
 	When User navigate to "TestName18" Project
 	Then Project with "TestName18" name is displayed correctly
-	Then "Manage Project Details" page is displayed to the user
+	And "Manage Project Details" page is displayed to the user
 	When User navigate to "Request Types" tab
 	Then "Manage Request Types" page is displayed to the user
 	When User clicks "Create Request Type" button
@@ -3206,7 +3211,7 @@ Scenario: EvergreenJnr_AdminPage_AddingRequestTypesAndCategories
 	| 18MailboxCategory | UserScheduledProject | Mailbox          |
 	Then Success message is displayed with "Category successfully created." text
 	When User navigate to Evergreen link
-	When User clicks Admin on the left-hand menu
+	And User clicks Admin on the left-hand menu
 	Then Admin page should be displayed to the user
 	When User clicks "Projects" link on the Admin page
 	Then "Projects" page should be displayed to the user
@@ -3214,8 +3219,8 @@ Scenario: EvergreenJnr_AdminPage_AddingRequestTypesAndCategories
 	And User clicks content from "Project" column
 	Then Project "TestName18" is displayed to user
 	When User changes Request Type to "18RequestTypeName"
-	When User changes Category to "18MailboxCategory"
-	When User selects "Scope Details" tab on the Project details page
-	When User selects "Scope Changes" tab on the Project details page
+	And User changes Category to "18MailboxCategory"
+	And User selects "Scope Details" tab on the Project details page
+	And User selects "Scope Changes" tab on the Project details page
 	#Then "18RequestTypeName" Request Type is displayed to the user
 	#Then "18MailboxCategory" Category is displayed to the user
