@@ -110,6 +110,9 @@ namespace DashworksTestAutomation.Pages.Evergreen.AdminDetailsPages
 
         #region Messages
 
+        [FindsBy(How = How.XPath, Using = "//admin-header/div[@id='messageAdmin' and @role='alert']")]
+        public IWebElement Banner { get; set; }
+
         [FindsBy(How = How.XPath, Using = ".//div[contains(@class,'empty-message')]")]
         public IWebElement NoObjectsMessage { get; set; }
 
