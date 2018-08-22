@@ -412,6 +412,16 @@ namespace DashworksTestAutomation.Steps.Dashworks
             filter.Do();
         }
 
+        [When(@"User Add And ""(.*)"" filter where type is ""(.*)"" with added column and Lookup option")]
+        public void WhenUserAddAndFilterWhereTypeIsWithAddedColumnAndLookupOption(string filterName, string operatorValue,
+            Table table)
+        {
+            var filtersNames = _driver.NowAt<FiltersElement>();
+            filtersNames.AddAndFilter(filterName);
+            var filter = new LookupFilterTable(_driver, operatorValue, true, table);
+            filter.Do();
+        }
+
         [When(@"User have created ""(.*)"" Lookup filter with column and ""(.*)"" option")]
         public void WhenUserHaveCreatedLookupFilterWithColumnAndOption(string operatorValue, string filterValue)
         {
