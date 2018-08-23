@@ -70,8 +70,11 @@ namespace DashworksTestAutomation.Pages.Evergreen.AdminDetailsPages
         [FindsBy(How = How.XPath, Using = ".//span[contains(@class, 'mat-select-placeholder')]")]
         public IWebElement ActionsInDropdown { get; set; }
 
-        [FindsBy(How = How.XPath, Using = ".//div[@class='mat-select-value']/span[text()='Actions']")]
+        [FindsBy(How = How.XPath, Using = ".//div[@class='mat-select-value']")]
         public IWebElement ActionsButton { get; set; }
+
+        [FindsBy(How = How.XPath, Using = ".//div[@class='mat-select-value']")]
+        public IWebElement CorrectActionsButton { get; set; }
 
         [FindsBy(How = How.XPath, Using = ".//span[@class='mat-option-text']")]
         public IWebElement DeleteButtonInActions { get; set; }
@@ -109,6 +112,9 @@ namespace DashworksTestAutomation.Pages.Evergreen.AdminDetailsPages
         private By AgIconMenu = By.XPath(".//span[contains(@class,'ag-icon-menu')]");
 
         #region Messages
+
+        [FindsBy(How = How.XPath, Using = "//admin-header/div[@id='messageAdmin' and @role='alert']")]
+        public IWebElement Banner { get; set; }
 
         [FindsBy(How = How.XPath, Using = ".//div[contains(@class,'empty-message')]")]
         public IWebElement NoObjectsMessage { get; set; }

@@ -287,7 +287,8 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_ActionsPanel
             testRunner.When("User select \"Hostname\" rows in the grid", ((string)(null)), table9, "When ");
             testRunner.And("User selects \"Bulk update\" in the Actions dropdown", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
             testRunner.And("User selects \"Update request type\" Bulk Update Type on Action panel", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-            testRunner.And("User selects \"Windows\" Project on Action panel", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+            testRunner.And("User selects \"Windows 7 Migration (Computer Scheduled Project)\" Project on Action" +
+                    " panel", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
             testRunner.And("User selects \"Computer: Laptop Replacement\" Request Type on Action panel", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
             testRunner.And("User clicks the \"UPDATE\" Action button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
             testRunner.Then("Warning message with \"Are you sure you want to proceed, this operation cannot be " +
@@ -378,7 +379,7 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_ActionsPanel
             testRunner.When("User select \"Application\" rows in the grid", ((string)(null)), table13, "When ");
             testRunner.And("User selects \"Bulk update\" in the Actions dropdown", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
             testRunner.And("User selects \"Update request type\" Bulk Update Type on Action panel", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-            testRunner.And("User selects \"Email Mi\" Project on Action panel", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+            testRunner.And("User selects \"Email Migration\" Project on Action panel", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
             testRunner.And("User selects \"Sharepoint Application\" Request Type on Action panel", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
             testRunner.And("User clicks the \"UPDATE\" Action button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
             testRunner.Then("Warning message with \"Are you sure you want to proceed, this operation cannot be " +
@@ -956,6 +957,80 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_ActionsPanel
             testRunner.And("User clicks the \"CANCEL\" Action button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
             testRunner.Then("Actions panel is not displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
             testRunner.And("Checkboxes are not displayed", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+            this.ScenarioCleanup();
+        }
+        
+        [NUnit.Framework.TestAttribute()]
+        [NUnit.Framework.Retry(2)]
+        [NUnit.Framework.DescriptionAttribute("EvergreenJnr_DevicesList_ChecksThatProjectNamesAreDisplayedCorrectlyInTheActionsD" +
+            "llAndInSelectedSection")]
+        [NUnit.Framework.CategoryAttribute("Evergreen")]
+        [NUnit.Framework.CategoryAttribute("Devices")]
+        [NUnit.Framework.CategoryAttribute("EvergreenJnr_ActionsPanel")]
+        [NUnit.Framework.CategoryAttribute("DAS13074")]
+        public virtual void EvergreenJnr_DevicesList_ChecksThatProjectNamesAreDisplayedCorrectlyInTheActionsDllAndInSelectedSection()
+        {
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("EvergreenJnr_DevicesList_ChecksThatProjectNamesAreDisplayedCorrectlyInTheActionsD" +
+                    "llAndInSelectedSection", new string[] {
+                        "Evergreen",
+                        "Devices",
+                        "EvergreenJnr_ActionsPanel",
+                        "DAS13074"});
+            this.ScenarioSetup(scenarioInfo);
+            this.FeatureBackground();
+            testRunner.When("User clicks \"Devices\" on the left-hand menu", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+            testRunner.Then("\"Devices\" list should be displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+            testRunner.When("User clicks the Actions button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+            testRunner.Then("Actions panel is displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+            TechTalk.SpecFlow.Table table35 = new TechTalk.SpecFlow.Table(new string[] {
+                        "SelectedRowsName"});
+            table35.AddRow(new string[] {
+                        "00OMQQXWA1DRI6"});
+            testRunner.When("User select \"Hostname\" rows in the grid", ((string)(null)), table35, "When ");
+            testRunner.And("User selects \"Bulk update\" in the Actions dropdown", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+            testRunner.And("User selects \"Update request type\" Bulk Update Type on Action panel", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+            TechTalk.SpecFlow.Table table36 = new TechTalk.SpecFlow.Table(new string[] {
+                        "Projects"});
+            table36.AddRow(new string[] {
+                        "Babel (English, German and French)"});
+            table36.AddRow(new string[] {
+                        "Barry\'s User Project"});
+            table36.AddRow(new string[] {
+                        "Computer Scheduled Test (Jo)"});
+            table36.AddRow(new string[] {
+                        "Havoc (Big Data)"});
+            table36.AddRow(new string[] {
+                        "I-Computer Scheduled Project"});
+            table36.AddRow(new string[] {
+                        "Migration Project Phase 2 (User Project)"});
+            table36.AddRow(new string[] {
+                        "Project K-Computer Scheduled Project"});
+            table36.AddRow(new string[] {
+                        "User Scheduled Test (Jo)"});
+            table36.AddRow(new string[] {
+                        "Windows 7 Migration (Computer Scheduled Project)"});
+            testRunner.Then("the following Projects are displayed in opened DLL on Action panel:", ((string)(null)), table36, "Then ");
+            testRunner.When("User clicks the Columns button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+            testRunner.Then("Columns panel is displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+            testRunner.Then("User closed \"Selected Columns\" columns category", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+            testRunner.Then("User is expand \"Project Stages: Windows7Mi\" columns category", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+            TechTalk.SpecFlow.Table table37 = new TechTalk.SpecFlow.Table(new string[] {
+                        "Subcategories"});
+            table37.AddRow(new string[] {
+                        "Windows7Mi: Command & Control"});
+            table37.AddRow(new string[] {
+                        "Windows7Mi: Communication"});
+            table37.AddRow(new string[] {
+                        "Windows7Mi: Computer Information ---- Text fill; Text fill;"});
+            table37.AddRow(new string[] {
+                        "Windows7Mi: Migration"});
+            table37.AddRow(new string[] {
+                        "Windows7Mi: Portal Self Service"});
+            table37.AddRow(new string[] {
+                        "Windows7Mi: Post Migration"});
+            table37.AddRow(new string[] {
+                        "Windows7Mi: Pre-Migration"});
+            testRunner.Then("the following subcategories are displayed for open category:", ((string)(null)), table37, "Then ");
             this.ScenarioCleanup();
         }
     }

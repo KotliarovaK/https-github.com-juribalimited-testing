@@ -143,7 +143,8 @@ Scenario: EvergreenJnr_DevicesList_Search_CheckThatSearchFieldHaveResetButtonAtF
 	Then "Devices" list should be displayed to the user
 	When User clicks the Filters button
 	Then Filters panel is displayed to the user
-	When User enters "CheckTheResetButton" text in Search field at Filters Panel
+	When User clicks Add New button on the Filter panel
+	And User enters "CheckTheResetButton" text in Search field at Filters Panel
 	Then reset button in Search field at selected Panel is displayed
 
 @Evergreen @Devices @EvergreenJnr_Search @Search @DAS11350

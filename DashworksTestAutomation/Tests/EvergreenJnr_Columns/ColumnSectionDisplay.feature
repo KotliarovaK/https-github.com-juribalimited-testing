@@ -540,3 +540,51 @@ Scenario: EvergreenJnr_DevicesList_ChecksThatAfterAddingRowsToAStaticListFromASt
 	| Operating System   |
 	| Owner Display Name |
 	| Import             |
+
+@Evergreen @Devices @EvergreenJnr_Columns @ColumnSectionDisplay @DAS13245
+Scenario: EvergreenJnr_DevicesList_TheSelectedColumnsCategoryIsDisplayedAfterUsingTheFilterSearch
+	When User clicks "Devices" on the left-hand menu
+	Then "Devices" list should be displayed to the user
+	When User clicks the Filters button
+	Then Filters panel is displayed to the user
+	When User clicks Add New button on the Filter panel
+	Then the following subcategories are displayed for open category:
+	| Subcategories      |
+	| Device Type        |
+	| Hostname           |
+	| Operating System   |
+	| Owner Display Name |
+	When User enters "Hostname" text in Search field at Filters Panel
+	When User clears search textbox in Filters panel
+	Then the following subcategories are displayed for open category:
+	| Subcategories      |
+	| Device Type        |
+	| Hostname           |
+	| Operating System   |
+	| Owner Display Name |
+
+@Evergreen @Devices @EvergreenJnr_Columns @ColumnSectionDisplay @DAS13245
+Scenario: EvergreenJnr_DevicesList_TheSelectedColumnsCategoryIsDisplayedAfterAddingAFilter
+	When User clicks "Devices" on the left-hand menu
+	Then "Devices" list should be displayed to the user
+	When User clicks the Filters button
+	Then Filters panel is displayed to the user
+	When User clicks Add New button on the Filter panel
+	Then the following subcategories are displayed for open category:
+	| Subcategories      |
+	| Device Type        |
+	| Hostname           |
+	| Operating System   |
+	| Owner Display Name |
+	When User selects "Compliance" filter from "Device" category
+	When User have created "Equals" filter with column and following options:
+	| SelectedCheckboxes |
+	| Red                |
+	When User clicks Add New button on the Filter panel
+	Then the following subcategories are displayed for open category:
+	| Subcategories      |
+	| Compliance         |
+	| Device Type        |
+	| Hostname           |
+	| Operating System   |
+	| Owner Display Name |

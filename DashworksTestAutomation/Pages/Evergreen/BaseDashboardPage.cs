@@ -19,6 +19,14 @@ namespace DashworksTestAutomation.Pages.Evergreen
 
         public const string FullTable = ".//div[contains(@class, 'ag-body-viewport')]/div";
 
+        public const string OptionsDllOnActionsPanel = "//mat-option[@role='option']//span";
+
+        public const string ColumnSubcategory = "//div[@class='selected-column-name']//span";
+
+        public const string FilterSubcategory = "//div[contains(@class, 'sub-categories')]//div//div";
+
+        public const string SelectedFiltersSubcategory = "//div[contains(@class, 'filter-add')]//div//span";
+
         [FindsBy(How = How.XPath, Using = ".//div[@id='pagetitle-text']/descendant::h1")]
         public IWebElement Heading { get; set; }
 
@@ -181,6 +189,18 @@ namespace DashworksTestAutomation.Pages.Evergreen
         [FindsBy(How = How.XPath, Using = "//div[@class='top-tools-item top-tools-left-side']")]
         public IWebElement OutsideGridPanel { get; set; }
 
+        [FindsBy(How = How.XPath, Using = OptionsDllOnActionsPanel)]
+        public IList<IWebElement> OptionsDll { get; set; }
+
+        [FindsBy(How = How.XPath, Using = ColumnSubcategory)]
+        public IList<IWebElement> ColumnSubcategoryList { get; set; }
+
+        [FindsBy(How = How.XPath, Using = FilterSubcategory)]
+        public IList<IWebElement> FilterSubcategoryList { get; set; }
+
+        [FindsBy(How = How.XPath, Using = SelectedFiltersSubcategory)]
+        public IList<IWebElement> SelectedFiltersSubcategoryList { get; set; }
+
         #region TableColumns
 
         [FindsBy(How = How.XPath, Using = ".//div[@colid='lastLogonDate'][@role='gridcell']")]
@@ -267,6 +287,14 @@ namespace DashworksTestAutomation.Pages.Evergreen
         {
             var selector = By.XPath(
                 $".//div[@class='topnav-footer']//span[contains(text(),'{versionNumber}')]");
+            Driver.WaitWhileControlIsNotDisplayed(selector);
+            return Driver.FindElement(selector);
+        }
+
+        public IWebElement GetSubcategoryByCategoryName(string categoryName)
+        {
+            var selector = By.XPath(
+                $"//div[text()='{categoryName}']/../following-sibling::div[contains(@class, 'sub-categories')]//div//span");
             Driver.WaitWhileControlIsNotDisplayed(selector);
             return Driver.FindElement(selector);
         }

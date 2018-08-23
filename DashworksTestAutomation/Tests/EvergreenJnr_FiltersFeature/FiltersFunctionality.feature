@@ -964,7 +964,7 @@ Scenario Outline: EvergreenJnr_MailboxesList_CheckThat500ISEInvalidColumnNameErr
 Examples: 
 	| FilterName               | SelectedCheckboxes     | Rows  |
 	| EmailMigra: Category     | Mailbox Category A     | 6     |
-	| EmailMigra: Request Type | Personal Mailbox - VIP | 6     |
+	#| EmailMigra: Request Type | Personal Mailbox - VIP | 6     |
 
 @Evergreen @AllLists @EvergreenJnr_FilterFeature @FilterFunctionality @DAS12351
 Scenario Outline: EvergreenJnr_DevicesList_CheckThat500ISEInvalidColumnNameErrorIsNotDisplayedIfUseDepartmentFilter
@@ -999,3 +999,15 @@ Examples:
 	| Memory (GB)                  | 20.48  | 2         |
 	| HDD Total Size (GB)          | 152.77 | 2         |
 	| Target Drive Free Space (GB) | 995.54 | 1         |
+
+@Evergreen @Applications @EvergreenJnr_FilterFeature @FilterFunctionality @DAS12855
+Scenario: EvergreenJnr_ApplicationsList_CheckThatDataIsDisplayedCorrectlyForAdvancedUserFilter
+	When User clicks "Applications" on the left-hand menu
+	Then "Applications" list should be displayed to the user
+	When User clicks the Filters button
+	Then Filters panel is displayed to the user
+	When User add "User" filter where type is "Does not equal" with following Lookup Value and Association:
+	| SelectedValues | Association                         |
+	| FR\RZM6552051  | Owns a device which app was used on |
+	Then "100" rows are displayed in the agGrid
+	Then table content is present
