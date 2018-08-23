@@ -95,3 +95,10 @@ Runs Evergreen URL query strings which include being sorted by object key column
 	| Sort by application key         | evergreen/#/applications?$select=packageName,packageManufacturer,packageVersion,packageKey&$orderby=packageKey%20asc                                                                                                                                                                                                                                                                                                                                                 |
 	| Sort by mailbox key             | evergreen/#/mailboxes?$select=principalEmailAddress,mailboxPlatform,serverName,mailboxType,ownerDisplayName,mailboxKey&$orderby=mailboxKey%20asc                                                                                                                                                                                                                                                                                                                     |
 	Then agGrid Main Object List is returned with data
+
+@Evergreen @Users @Mailboxes @Devices @Applications @EvergreenJnr_QueryStrings @TableSorting @DAS10598
+Scenario: EvergreenJnr_QueryString_AdvancedFilterRowCountCheck
+	When Evergreen QueryStringURL is entered for Simple QueryType and appropriate RowCount is displayed
+	| QueryType             | QueryStringURL                                                                                                                                                                          | RowCount |
+	| App Count (Entitled)  | evergreen/#/devices?$filter=(entitledApplications%20%3C%3E%2012)&$select=hostname,chassisCategory,oSCategory,ownerDisplayName,entitledApplications&$orderby=entitledApplications%20desc | 17,163   |
+	| App Count (Installed) | evergreen/#/devices?$filter=(installedApplications%20%3E%2012)&$select=hostname,chassisCategory,oSCategory,ownerDisplayName,installedApplications                                       | 94       |
