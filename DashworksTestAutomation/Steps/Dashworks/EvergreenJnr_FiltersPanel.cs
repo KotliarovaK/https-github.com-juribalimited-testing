@@ -903,9 +903,18 @@ namespace DashworksTestAutomation.Steps.Dashworks
         public void ThenTheSubcategoriesAreDisplayedForOpenCategoryInAlphabeticalOrder()
         {
             var page = _driver.NowAt<BaseDashboardPage>();
+            List<string> list = page.SelectedFiltersSubcategoryList.Select(x => x.Text).ToList();
+            Assert.AreEqual(list.OrderBy(s => s), list, "Subcategories are not in alphabetical order");
+        }
+
+        [Then(@"the subcategories are displayed for open category in alphabetical order on Filters panel")]
+        public void ThenTheSubcategoriesAreDisplayedForOpenCategoryInAlphabeticalOrderOnFiltersPanel()
+        {
+            var page = _driver.NowAt<BaseDashboardPage>();
             List<string> list = page.FilterSubcategoryList.Select(x => x.Text).ToList();
             Assert.AreEqual(list.OrderBy(s => s), list, "Subcategories are not in alphabetical order");
         }
+
         #endregion
 
         [Then(@"message '(.*)' is displayed to the user")]
