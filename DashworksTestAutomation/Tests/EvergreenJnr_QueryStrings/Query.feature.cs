@@ -566,6 +566,8 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_QueryStrings
             "dition) (3854) or 7-Zip 9.22 (x64 edition) (3992) used on device; entitled to de" +
             "vice; installed on device; used by device\'s owner; or entitled to device\'s owner" +
             "", new string[0])]
+        [NUnit.Framework.TestCaseAttribute("Application", "evergreen/#/devices?$filter=(application%20NOT%20EQUALS%20(\'882\')%20WHERE%20(iod)" +
+            ")", "12,083", "Application is not Access (882) installed on device", new string[0])]
         public virtual void EvergreenJnr_QueryString_AdvancedFilterRowCountAndFilterTextCheck(string filterName, string queryString, string rows, string filterInfo, string[] exampleTags)
         {
             string[] @__tags = new string[] {
