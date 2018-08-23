@@ -86,6 +86,16 @@ namespace DashworksTestAutomation.Steps.Dashworks
             action.GetOptionOnActionsPanelByName(projectName).Click();
         }
 
+        [Then(@"the following Projects are displayed in opened DLL on Action panel:")]
+        public void ThenTheFollowingProjectsAreDisplayedInOpenedDLLOnActionPanel(Table table)
+        {
+            var action = _driver.NowAt<BaseDashboardPage>();
+            action.ProjectField.Click();
+            var expectedList = table.Rows.SelectMany(row => row.Values);
+            var actualList = action.OptionsDll.Select(value => value.Text);
+            Assert.AreEqual(expectedList, actualList, "Project list are different");
+        }
+
         [When(@"User selects ""(.*)"" Request Type on Action panel")]
         public void WhenUserSelectsRequestTypeOnActionPanel(string requestType)
         {

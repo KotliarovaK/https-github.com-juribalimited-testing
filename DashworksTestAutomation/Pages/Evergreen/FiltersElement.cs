@@ -23,8 +23,6 @@ namespace DashworksTestAutomation.Pages.Evergreen
 
         private const string GroupTitleSelector = ".//div[contains(@class,'filter-category-title ng-star-inserted')]";
 
-        public const string SubcategoryValuesSelector = "//div[@class='sub-categories ng-star-inserted']//div//div";
-
         [FindsBy(How = How.XPath, Using = ".//div[@class='filter-panel']")]
         public IWebElement FiltersPanel { get; set; }
 
@@ -134,9 +132,6 @@ namespace DashworksTestAutomation.Pages.Evergreen
 
         [FindsBy(How = How.XPath, Using = ".//div[@id='content']//div[@class='empty-message ng-star-inserted']")]
         public IWebElement NoResultsFoundMessage { get; set; }
-
-        [FindsBy(How = How.XPath, Using = SubcategoryValuesSelector)]
-        public IList<IWebElement> SubcategoryValues { get; set; }
 
         public override List<By> GetPageIdentitySelectors()
         {

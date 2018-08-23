@@ -385,6 +385,13 @@ namespace DashworksTestAutomation.Steps.Dashworks
                 $"{categoryName} category stil displayed in Column Panel");
         }
 
+        [Then(@"User closed ""(.*)"" columns category")]
+        public void ThenUserClosedColumnsCategory(string categoryName)
+        {
+            var columnElement = _driver.NowAt<ColumnsElement>();
+            columnElement.CloseColumnsSectionByName(categoryName);
+        }
+
         [Then(@"User is expand ""(.*)"" columns category")]
         public void ThenUserIsExpandColumnsCategory(string categoryName)
         {
