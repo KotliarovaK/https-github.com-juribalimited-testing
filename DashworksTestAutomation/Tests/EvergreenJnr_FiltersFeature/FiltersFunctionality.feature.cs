@@ -2283,7 +2283,6 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_FiltersFeature
         [NUnit.Framework.TestCaseAttribute("EmailMigra: Category", "None", "2,223", new string[0])]
         [NUnit.Framework.TestCaseAttribute("UserSchedu: Category", "None", "2,223", new string[0])]
         [NUnit.Framework.TestCaseAttribute("Babel(Engl: Request Type", "Tools", "302", new string[0])]
-        [NUnit.Framework.TestCaseAttribute("EmailMigra: Request Type", "Public Folder", "50", new string[0])]
         [NUnit.Framework.TestCaseAttribute("UserSchedu: Request Type", "Request Type A", "47", new string[0])]
         public virtual void EvergreenJnr_ApplicationsList_CheckThat500ISEInvalidColumnNameErrorIsNotDisplayedIfUseSelectedFilterOnApplicationsPage(string filterName, string selectedCheckboxes, string rows, string[] exampleTags)
         {
@@ -2327,7 +2326,6 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_FiltersFeature
         [NUnit.Framework.CategoryAttribute("FilterFunctionality")]
         [NUnit.Framework.CategoryAttribute("DAS12351")]
         [NUnit.Framework.TestCaseAttribute("EmailMigra: Category", "Mailbox Category A", "6", new string[0])]
-        [NUnit.Framework.TestCaseAttribute("EmailMigra: Request Type", "Personal Mailbox - VIP", "6", new string[0])]
         public virtual void EvergreenJnr_MailboxesList_CheckThat500ISEInvalidColumnNameErrorIsNotDisplayedIfUseSelectedFilterOnMailboxesPage(string filterName, string selectedCheckboxes, string rows, string[] exampleTags)
         {
             string[] @__tags = new string[] {
