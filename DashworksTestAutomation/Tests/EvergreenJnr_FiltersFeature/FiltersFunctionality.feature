@@ -945,7 +945,7 @@ Examples:
 	| EmailMigra: Category       | None                        | 2,223 |
 	| UserSchedu: Category       | None                        | 2,223 |
 	| Babel(Engl: Request Type   | Tools                       | 302   |
-	| EmailMigra: Request Type   | Public Folder               | 50    |
+	#| EmailMigra: Request Type   | Public Folder               | 50    |
 	| UserSchedu: Request Type   | Request Type A              | 47    |
 
 @Evergreen @MailboxesList @EvergreenJnr_FilterFeature @FilterFunctionality @DAS12351
@@ -964,7 +964,7 @@ Scenario Outline: EvergreenJnr_MailboxesList_CheckThat500ISEInvalidColumnNameErr
 Examples: 
 	| FilterName               | SelectedCheckboxes     | Rows  |
 	| EmailMigra: Category     | Mailbox Category A     | 6     |
-	| EmailMigra: Request Type | Personal Mailbox - VIP | 6     |
+	#| EmailMigra: Request Type | Personal Mailbox - VIP | 6     |
 
 @Evergreen @AllLists @EvergreenJnr_FilterFeature @FilterFunctionality @DAS12351
 Scenario Outline: EvergreenJnr_DevicesList_CheckThat500ISEInvalidColumnNameErrorIsNotDisplayedIfUseDepartmentFilter
