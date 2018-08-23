@@ -186,7 +186,7 @@ namespace DashworksTestAutomation.Steps.Dashworks
         public void WhenUserRemovesColumnByColumnPanel(string columnName)
         {
             var columnElement = _driver.NowAt<ColumnsElement>();
-            columnElement.ExpandColumnsSectionByName("Selected Columns");
+            //columnElement.ExpandColumnsSectionByName("Selected Columns");
             columnElement.GetDeleteColumnButton(columnName).Click();
         }
 
@@ -194,7 +194,7 @@ namespace DashworksTestAutomation.Steps.Dashworks
         public void WhenUserRemovesColumnNameColumnByColumnPanel(Table table)
         {
             var columnElement = _driver.NowAt<ColumnsElement>();
-            columnElement.ExpandColumnsSectionByName("Selected Columns");
+            //columnElement.ExpandColumnsSectionByName("Selected Columns");
             foreach (var row in table.Rows) columnElement.GetDeleteColumnButton(row["ColumnName"]).Click();
         }
 
