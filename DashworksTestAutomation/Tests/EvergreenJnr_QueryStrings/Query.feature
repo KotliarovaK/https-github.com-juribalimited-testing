@@ -123,7 +123,23 @@ Scenario: EvergreenJnr_QueryString_AdvancedFilterRowCountCheck
 	| General information field 5 (App Custom Fields) | evergreen/#/devices?$filter=(applicationCustomField_79%20ENDS%20WITH%20('0.5')%20WHERE%20(nubdo%2Cnetdo%2Cnuod%2Cnetd%2Cniod))&$select=hostname,chassisCategory,oSCategory,ownerDisplayName,deviceOwnerCustomField_79                         | 17,225   |
 	#| Application Owner (App Custom Fields)           | evergreen/#/devices?$filter=(applicationCustomField_80%20IS%20NOT%20EMPTY%20()%20WHERE%20(niod))&$select=hostname,chassisCategory,oSCategory,ownerDisplayName,deviceOwnerCustomField_79                                                       | 12,076   |
 
-@Evergreen @Devices @EvergreenJnr_QueryStrings @DAS13179
-Scenario: EvergreenJnr_QueryString_AdvancedFilterRowCountAndFilterTextCheck
+@Evergreen @Devices @EvergreenJnr_QueryStrings @DAS13179 @Delete_Newly_Created_List
+Scenario Outline: EvergreenJnr_QueryString_AdvancedFilterRowCountAndFilterTextCheck
 	When Evergreen QueryStringURL is entered for Simple QueryType and appropriate RowCount is displayed
-	| QueryType                                       | QueryStringURL                                                                                                                                                                                                                                | RowCount |
+	| QueryType    | QueryStringURL | RowCount |
+	| <FilterName> | <QueryString>  | <Rows>   |
+	When User create dynamic list with "AdvancedFilterDL1" name on "Devices" page
+	Then "AdvancedFilterDL1" list is displayed to user
+	When User navigates to the "All Devices" list
+	When User navigates to the "AdvancedFilterDL1" list
+	Then "AdvancedFilterDL1" list is displayed to user
+	When User clicks the Filters button
+	Then Filters panel is displayed to the user
+	Then "<FilterInfo>" is displayed in added filter info
+
+Examples: 
+	| FilterName            | QueryString                                                                                                                                                                          | Rows   | FilterInfo                                                                                                                                                                                                                                        |
+	| App Count (Entitled)  | evergreen/#/devices?$filter=(entitledApplications%20%3D%2012)&$select=hostname,chassisCategory,oSCategory,ownerDisplayName,entitledApplications&$orderby=entitledApplications%20desc | 62     | App Count (Entitled) is 12                                                                                                                                                                                                                        |
+	| App Count (Installed) | evergreen/#/devices?$filter=(installedApplications%20%3E%3D%2064)&$select=hostname,chassisCategory,oSCategory,ownerDisplayName,installedApplications                                 | 25     | App Count (Installed) is greater than or equal to 64                                                                                                                                                                                              |
+	| App Count (Used)      | evergreen/#/devices?$filter=(usedApplications%20%3C%3D%20100)&$select=hostname,chassisCategory,oSCategory,ownerDisplayName,usedApplications&$orderby=usedApplications%20desc         | 17,225 | App Count (Used) is less than or equal to 100                                                                                                                                                                                                     |
+	| Application           | evergreen/#/devices?$filter=(application%20EQUALS%20('4093'%2C'4409'%2C'3854'%2C'3992')%20WHERE%20(uod%2Cetd%2Ciod%2Cubdo%2Cetdo))                                                   | 9      | Application 7-Zip 16.02 (x64) (4093), 7-Zip 16.04 (x64) (4409), 7-Zip 9.20 (x64 edition) (3854) or 7-Zip 9.22 (x64 edition) (3992) used on device; entitled to device; installed on device; used by device's owner; or entitled to device's owner |
