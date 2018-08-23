@@ -51,7 +51,7 @@ namespace DashworksTestAutomation.Pages.Evergreen
             return new List<By>
             {
                 SelectorFor(this, p => p.ColumnsPanel),
-                SelectorFor(this, p => p.SearchTextbox)
+                //SelectorFor(this, p => p.SearchTextbox)
             };
         }
 
@@ -88,6 +88,11 @@ namespace DashworksTestAutomation.Pages.Evergreen
             else
             {
                 selector = $".//div[@class='columns-panel']//span[text()='{columnName}']";
+            }
+
+            if (!Driver.IsElementDisplayed(By.XPath(selector)))
+            {
+                Driver.MouseHover(ColumnSubcategories.First());
             }
 
             Driver.WaitWhileControlIsNotDisplayed(By.XPath(selector));
@@ -161,6 +166,7 @@ namespace DashworksTestAutomation.Pages.Evergreen
 
         public void ExpandColumnsSectionByName(string sectionsName)
         {
+            if (Driver.IsElementExists(By.XPath($".//div[contains(@class, 'filter-category-label')][text()='{sectionsName}']//ancestor::div[contains(@class, 'filter-category-title')]//i[contains(@class, 'add')]")))
             try
             {
                 Driver.FindElement(By.XPath($".//div[contains(@class, 'filter-category-label')][text()='{sectionsName}']//ancestor::div[contains(@class, 'filter-category-title')]//i[contains(@class, 'add')]")).Click();
