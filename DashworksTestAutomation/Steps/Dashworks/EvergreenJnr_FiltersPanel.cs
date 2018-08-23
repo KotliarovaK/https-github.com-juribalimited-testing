@@ -875,12 +875,37 @@ namespace DashworksTestAutomation.Steps.Dashworks
         [Then(@"the following subcategories are displayed for open category:")]
         public void ThenTheFollowingSubcategoriesAreDisplayedForOpenCategory(Table table)
         {
-            var filterElement = _driver.NowAt<BaseDashboardPage>();
-            var expectedList = table.Rows.SelectMany(row => row.Values);
-            var actualList = filterElement.SubcategoryValues.Select(value => value.Text);
+            var page = _driver.NowAt<BaseDashboardPage>();
+            var expectedList = table.Rows.SelectMany(row => row.Values).ToList();
+            var actualList = page.SelectedFiltersSubcategoryList.Select(value => value.Text).ToList();
             Assert.AreEqual(expectedList, actualList, "Subcategory values are different");
         }
 
+        [Then(@"the following subcategories are displayed for Selected Columns category:")]
+        public void ThenTheFollowingSubcategoriesAreDisplayedForSelectedColumnsCategory(Table table)
+        {
+            var page = _driver.NowAt<BaseDashboardPage>();
+            var expectedList = table.Rows.SelectMany(row => row.Values).ToList();
+            var actualList = page.ColumnSubcategoryList.Select(value => value.Text).ToList();
+            Assert.AreEqual(expectedList, actualList, "Subcategory values are different");
+        }
+
+        [Then(@"the following subcategories are displayed for Selected Filters category:")]
+        public void ThenTheFollowingSubcategoriesAreDisplayedForSelectedFiltersCategory(Table table)
+        {
+            var page = _driver.NowAt<BaseDashboardPage>();
+            var expectedList = table.Rows.SelectMany(row => row.Values).ToList();
+            var actualList = page.FilterSubcategoryList.Select(value => value.Text).ToList();
+            Assert.AreEqual(expectedList, actualList, "Subcategory values are different");
+        }
+
+        [Then(@"the subcategories are displayed for open category in alphabetical order")]
+        public void ThenTheSubcategoriesAreDisplayedForOpenCategoryInAlphabeticalOrder()
+        {
+            var page = _driver.NowAt<BaseDashboardPage>();
+            List<string> list = page.FilterSubcategoryList.Select(x => x.Text).ToList();
+            Assert.AreEqual(list.OrderBy(s => s), list, "Subcategories are not in alphabetical order");
+        }
         #endregion
 
         [Then(@"message '(.*)' is displayed to the user")]
