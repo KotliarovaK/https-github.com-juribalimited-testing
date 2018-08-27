@@ -325,6 +325,16 @@ namespace DashworksTestAutomation.Steps.Dashworks
             filter.Do();
         }
 
+        [When(@"User add Advanced ""(.*)"" filter where type is ""(.*)"" with following Lookup Value and Association:")]
+        public void WhenUserAddAdvancedFilterWhereTypeIsWithFollowingLookupValueAndAssociation(string filterName,
+            string operatorValue, Table table)
+        {
+            var filtersNames = _driver.NowAt<FiltersElement>();
+            filtersNames.AddFilter(filterName);
+            var filter = new LookupValueAdvancedFilter(_driver, operatorValue, table);
+            filter.Do();
+        }
+
         [When(@"User add ""(.*)"" filter where type is ""(.*)"" with following Data and Association:")]
         public void WhenUserAddFilterWhereTypeIsWithFollowingDataAndAssociation(string filterName, string operatorValue, Table table)
         {
