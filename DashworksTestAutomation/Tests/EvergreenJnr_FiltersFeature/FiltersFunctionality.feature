@@ -391,9 +391,9 @@ Scenario: EvergreenJnr_DevicesList_CheckThatErrorsDoNotAppearWhenAddingAdvancedA
 	Then "Devices" list should be displayed to the user
 	When User clicks the Filters button
 	Then Filters panel is displayed to the user
-	When User add "Application Import" filter where type is "Equals" with following Lookup Value and Association:
-	| SelectedValues | Association    |
-	| Altiris        | Used on device |
+	When User add "Application Import" filter where type is "Equals" with Selected Value and following Association:
+	| SelectedList | Association    |
+	| Altiris      | Used on device |
 	And User add "Boot Up Date" filter where type is "Equals" with added column and following value:
 	| Values      |
 	| 07 Dec 2017 |

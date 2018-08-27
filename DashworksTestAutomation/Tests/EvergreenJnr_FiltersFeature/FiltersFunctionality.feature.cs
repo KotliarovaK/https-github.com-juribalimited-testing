@@ -1000,13 +1000,13 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_FiltersFeature
             testRunner.When("User clicks the Filters button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
             testRunner.Then("Filters panel is displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
             TechTalk.SpecFlow.Table table22 = new TechTalk.SpecFlow.Table(new string[] {
-                        "SelectedValues",
+                        "SelectedList",
                         "Association"});
             table22.AddRow(new string[] {
                         "Altiris",
                         "Used on device"});
-            testRunner.When("User add \"Application Import\" filter where type is \"Equals\" with following Lookup" +
-                    " Value and Association:", ((string)(null)), table22, "When ");
+            testRunner.When("User add \"Application Import\" filter where type is \"Equals\" with Selected Value a" +
+                    "nd following Association:", ((string)(null)), table22, "When ");
             TechTalk.SpecFlow.Table table23 = new TechTalk.SpecFlow.Table(new string[] {
                         "Values"});
             table23.AddRow(new string[] {

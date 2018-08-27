@@ -872,12 +872,21 @@ namespace DashworksTestAutomation.Steps.Dashworks
             Assert.AreEqual(groupCount, filterElement.MaximizeGroupButton.Count, "Maximize buttons are not displayed");
         }
 
-        [Then(@"the following subcategories are displayed for open category:")]
-        public void ThenTheFollowingSubcategoriesAreDisplayedForOpenCategory(Table table)
+        [Then(@"the following Filters subcategories are displayed for open category:")]
+        public void ThenTheFollowingFiltersSubcategoriesAreDisplayedForOpenCategory(Table table)
         {
             var page = _driver.NowAt<BaseDashboardPage>();
             var expectedList = table.Rows.SelectMany(row => row.Values).ToList();
             var actualList = page.SelectedFiltersSubcategoryList.Select(value => value.Text).ToList();
+            Assert.AreEqual(expectedList, actualList, "Subcategory values are different");
+        }
+
+        [Then(@"the following Column subcategories are displayed for open category:")]
+        public void ThenTheFollowingColumnSubcategoriesAreDisplayedForOpenCategory(Table table)
+        {
+            var page = _driver.NowAt<BaseDashboardPage>();
+            var expectedList = table.Rows.SelectMany(row => row.Values).ToList();
+            var actualList = page.SelectedColumnsSubcategoryList.Select(value => value.Text).ToList();
             Assert.AreEqual(expectedList, actualList, "Subcategory values are different");
         }
 
