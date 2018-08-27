@@ -25,7 +25,7 @@ namespace DashworksTestAutomation.Pages.Evergreen
 
         public const string FilterSubcategory = "//div[contains(@class, 'sub-categories')]//div//div";
 
-        public const string SelectedFiltersSubcategory = "//div[contains(@class, 'filter-add')]//div//span";
+        public const string SelectedFiltersSubcategory = "//div[contains(@class, 'sub-categories')]//div//div";
 
         [FindsBy(How = How.XPath, Using = ".//div[@id='pagetitle-text']/descendant::h1")]
         public IWebElement Heading { get; set; }
