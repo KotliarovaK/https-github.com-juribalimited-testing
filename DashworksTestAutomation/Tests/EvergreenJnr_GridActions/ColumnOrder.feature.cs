@@ -451,10 +451,10 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_GridActions
         
         [NUnit.Framework.TestAttribute()]
         [NUnit.Framework.Retry(2)]
-        [NUnit.Framework.DescriptionAttribute("EvergreenJnr_AllList_CheckThatSaveButtonIsNotDisplayedIfTheGridColumnsWasRemovedA" +
-            "ndReturnedToDefaultPosition")]
+        [NUnit.Framework.DescriptionAttribute("EvergreenJnr_AllLists_CheckThatSaveButtonIsNotDisplayedIfTheGridColumnsWasRemoved" +
+            "AndReturnedToDefaultPosition")]
         [NUnit.Framework.CategoryAttribute("Evergreen")]
-        [NUnit.Framework.CategoryAttribute("Applications")]
+        [NUnit.Framework.CategoryAttribute("AllLists")]
         [NUnit.Framework.CategoryAttribute("EvergreenJnr_Columns")]
         [NUnit.Framework.CategoryAttribute("ColumnOrder")]
         [NUnit.Framework.CategoryAttribute("DAS11836")]
@@ -462,11 +462,11 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_GridActions
         [NUnit.Framework.TestCaseAttribute("Users", "Distinguished Name", new string[0])]
         [NUnit.Framework.TestCaseAttribute("Applications", "Version", new string[0])]
         [NUnit.Framework.TestCaseAttribute("Mailboxes", "Owner Display Name", new string[0])]
-        public virtual void EvergreenJnr_AllList_CheckThatSaveButtonIsNotDisplayedIfTheGridColumnsWasRemovedAndReturnedToDefaultPosition(string pageName, string columnName, string[] exampleTags)
+        public virtual void EvergreenJnr_AllLists_CheckThatSaveButtonIsNotDisplayedIfTheGridColumnsWasRemovedAndReturnedToDefaultPosition(string pageName, string columnName, string[] exampleTags)
         {
             string[] @__tags = new string[] {
                     "Evergreen",
-                    "Applications",
+                    "AllLists",
                     "EvergreenJnr_Columns",
                     "ColumnOrder",
                     "DAS11836"};
@@ -474,8 +474,8 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_GridActions
             {
                 @__tags = System.Linq.Enumerable.ToArray(System.Linq.Enumerable.Concat(@__tags, exampleTags));
             }
-            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("EvergreenJnr_AllList_CheckThatSaveButtonIsNotDisplayedIfTheGridColumnsWasRemovedA" +
-                    "ndReturnedToDefaultPosition", @__tags);
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("EvergreenJnr_AllLists_CheckThatSaveButtonIsNotDisplayedIfTheGridColumnsWasRemoved" +
+                    "AndReturnedToDefaultPosition", @__tags);
             this.ScenarioSetup(scenarioInfo);
             this.FeatureBackground();
             testRunner.When(string.Format("User clicks \"{0}\" on the left-hand menu", pageName), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");

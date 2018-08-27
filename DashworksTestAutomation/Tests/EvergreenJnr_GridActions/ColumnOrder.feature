@@ -160,8 +160,8 @@ Examples:
 	| Applications | Application     | Vendor           | Version          |
 	| Mailboxes    | Email Address   | Mailbox Platform | Mail Server      |
 
-@Evergreen @Applications @EvergreenJnr_Columns @ColumnOrder @DAS11836
-Scenario Outline: EvergreenJnr_AllList_CheckThatSaveButtonIsNotDisplayedIfTheGridColumnsWasRemovedAndReturnedToDefaultPosition 
+@Evergreen @AllLists @EvergreenJnr_Columns @ColumnOrder @DAS11836
+Scenario Outline: EvergreenJnr_AllLists_CheckThatSaveButtonIsNotDisplayedIfTheGridColumnsWasRemovedAndReturnedToDefaultPosition 
 	When User clicks "<PageName>" on the left-hand menu
 	Then "<PageName>" list should be displayed to the user
 	When User clicks the Columns button

@@ -1294,6 +1294,252 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_Columns
             testRunner.Then("the following subcategories are displayed for open category:", ((string)(null)), table69, "Then ");
             this.ScenarioCleanup();
         }
+        
+        [NUnit.Framework.TestAttribute()]
+        [NUnit.Framework.Retry(2)]
+        [NUnit.Framework.DescriptionAttribute("EvergreenJnr_DevicesList_ChecksThatSubcategoriesOnFiltersPanelAreDisplayedInAlpha" +
+            "beticalOrder")]
+        [NUnit.Framework.CategoryAttribute("Evergreen")]
+        [NUnit.Framework.CategoryAttribute("Devices")]
+        [NUnit.Framework.CategoryAttribute("EvergreenJnr_Columns")]
+        [NUnit.Framework.CategoryAttribute("ColumnOrder")]
+        [NUnit.Framework.CategoryAttribute("DAS12861")]
+        public virtual void EvergreenJnr_DevicesList_ChecksThatSubcategoriesOnFiltersPanelAreDisplayedInAlphabeticalOrder()
+        {
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("EvergreenJnr_DevicesList_ChecksThatSubcategoriesOnFiltersPanelAreDisplayedInAlpha" +
+                    "beticalOrder", new string[] {
+                        "Evergreen",
+                        "Devices",
+                        "EvergreenJnr_Columns",
+                        "ColumnOrder",
+                        "DAS12861"});
+            this.ScenarioSetup(scenarioInfo);
+            this.FeatureBackground();
+            testRunner.When("User clicks \"Devices\" on the left-hand menu", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+            testRunner.Then("\"Devices\" list should be displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+            testRunner.When("User clicks the Columns button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+            testRunner.Then("Columns panel is displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+            TechTalk.SpecFlow.Table table70 = new TechTalk.SpecFlow.Table(new string[] {
+                        "ColumnName"});
+            table70.AddRow(new string[] {
+                        "Compliance"});
+            testRunner.When("ColumnName is entered into the search box and the selection is clicked", ((string)(null)), table70, "When ");
+            testRunner.When("User clicks the Columns button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+            testRunner.Then("Columns panel is displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+            TechTalk.SpecFlow.Table table71 = new TechTalk.SpecFlow.Table(new string[] {
+                        "Subcategories"});
+            table71.AddRow(new string[] {
+                        "Hostname"});
+            table71.AddRow(new string[] {
+                        "Device Type"});
+            table71.AddRow(new string[] {
+                        "Operating System"});
+            table71.AddRow(new string[] {
+                        "Owner Display Name"});
+            table71.AddRow(new string[] {
+                        "Compliance"});
+            testRunner.Then("the following subcategories are displayed for Selected Columns category:", ((string)(null)), table71, "Then ");
+            TechTalk.SpecFlow.Table table72 = new TechTalk.SpecFlow.Table(new string[] {
+                        "ColumnName"});
+            table72.AddRow(new string[] {
+                        "Hostname"});
+            table72.AddRow(new string[] {
+                        "Device Type"});
+            table72.AddRow(new string[] {
+                        "Operating System"});
+            table72.AddRow(new string[] {
+                        "Owner Display Name"});
+            table72.AddRow(new string[] {
+                        "Compliance"});
+            testRunner.And("Column is displayed in following order:", ((string)(null)), table72, "And ");
+            testRunner.When("User clicks the Filters button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+            testRunner.Then("Filters panel is displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+            testRunner.When("User clicks Add New button on the Filter panel", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+            testRunner.Then("the subcategories are displayed for open category in alphabetical order on Filter" +
+                    "s panel", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+            this.ScenarioCleanup();
+        }
+        
+        [NUnit.Framework.TestAttribute()]
+        [NUnit.Framework.Retry(2)]
+        [NUnit.Framework.DescriptionAttribute("EvergreenJnr_ApplicationsList_ChecksThatSubcategoriesOnColumnsPanelAreDisplayedIn" +
+            "AlphabeticalOrderAfterAddingFilters")]
+        [NUnit.Framework.CategoryAttribute("Evergreen")]
+        [NUnit.Framework.CategoryAttribute("Applications")]
+        [NUnit.Framework.CategoryAttribute("EvergreenJnr_Columns")]
+        [NUnit.Framework.CategoryAttribute("ColumnOrder")]
+        [NUnit.Framework.CategoryAttribute("DAS12861")]
+        public virtual void EvergreenJnr_ApplicationsList_ChecksThatSubcategoriesOnColumnsPanelAreDisplayedInAlphabeticalOrderAfterAddingFilters()
+        {
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("EvergreenJnr_ApplicationsList_ChecksThatSubcategoriesOnColumnsPanelAreDisplayedIn" +
+                    "AlphabeticalOrderAfterAddingFilters", new string[] {
+                        "Evergreen",
+                        "Applications",
+                        "EvergreenJnr_Columns",
+                        "ColumnOrder",
+                        "DAS12861"});
+            this.ScenarioSetup(scenarioInfo);
+            this.FeatureBackground();
+            testRunner.When("User clicks \"Applications\" on the left-hand menu", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+            testRunner.Then("\"Applications\" list should be displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+            testRunner.When("User clicks the Filters button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+            testRunner.Then("Filters panel is displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+            TechTalk.SpecFlow.Table table73 = new TechTalk.SpecFlow.Table(new string[] {
+                        "Values"});
+            table73.AddRow(new string[] {
+                        "121"});
+            testRunner.When("User add \"Application Key\" filter where type is \"Equals\" with added column and fo" +
+                    "llowing value:", ((string)(null)), table73, "When ");
+            testRunner.Then("\"Application Key\" filter is added to the list", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+            testRunner.When("User add \"Inventory Site\" filter where type is \"Equals\" with added column and \"Al" +
+                    "tiris\" Lookup option", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+            testRunner.Then("\"Inventory Site\" filter is added to the list", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+            TechTalk.SpecFlow.Table table74 = new TechTalk.SpecFlow.Table(new string[] {
+                        "ColumnName"});
+            table74.AddRow(new string[] {
+                        "Application"});
+            table74.AddRow(new string[] {
+                        "Vendor"});
+            table74.AddRow(new string[] {
+                        "Version"});
+            table74.AddRow(new string[] {
+                        "Application Key"});
+            table74.AddRow(new string[] {
+                        "Inventory Site"});
+            testRunner.And("Column is displayed in following order:", ((string)(null)), table74, "And ");
+            testRunner.When("User clicks Add New button on the Filter panel", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+            testRunner.Then("the subcategories are displayed for open category in alphabetical order on Filter" +
+                    "s panel", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+            testRunner.When("User clicks the Columns button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+            testRunner.Then("Columns panel is displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+            TechTalk.SpecFlow.Table table75 = new TechTalk.SpecFlow.Table(new string[] {
+                        "Subcategories"});
+            table75.AddRow(new string[] {
+                        "Application"});
+            table75.AddRow(new string[] {
+                        "Vendor"});
+            table75.AddRow(new string[] {
+                        "Version"});
+            table75.AddRow(new string[] {
+                        "Application Key"});
+            table75.AddRow(new string[] {
+                        "Inventory Site"});
+            testRunner.Then("the following subcategories are displayed for Selected Columns category:", ((string)(null)), table75, "Then ");
+            this.ScenarioCleanup();
+        }
+        
+        [NUnit.Framework.TestAttribute()]
+        [NUnit.Framework.Retry(2)]
+        [NUnit.Framework.DescriptionAttribute("EvergreenJnr_UsersList_ChecksThatSubcategoriesOnColumnsPanelAreDisplayedInAlphabe" +
+            "ticalOrderAfterAddingDepartmentFilters")]
+        [NUnit.Framework.CategoryAttribute("Evergreen")]
+        [NUnit.Framework.CategoryAttribute("Users")]
+        [NUnit.Framework.CategoryAttribute("EvergreenJnr_Columns")]
+        [NUnit.Framework.CategoryAttribute("ColumnOrder")]
+        [NUnit.Framework.CategoryAttribute("DAS12861")]
+        public virtual void EvergreenJnr_UsersList_ChecksThatSubcategoriesOnColumnsPanelAreDisplayedInAlphabeticalOrderAfterAddingDepartmentFilters()
+        {
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("EvergreenJnr_UsersList_ChecksThatSubcategoriesOnColumnsPanelAreDisplayedInAlphabe" +
+                    "ticalOrderAfterAddingDepartmentFilters", new string[] {
+                        "Evergreen",
+                        "Users",
+                        "EvergreenJnr_Columns",
+                        "ColumnOrder",
+                        "DAS12861"});
+            this.ScenarioSetup(scenarioInfo);
+            this.FeatureBackground();
+            testRunner.When("User clicks \"Users\" on the left-hand menu", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+            testRunner.Then("\"Users\" list should be displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+            testRunner.When("User clicks the Filters button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+            testRunner.Then("Filters panel is displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+            testRunner.When("User add \"Department\" filter where type is \"Equals\" with added column and \"Financ" +
+                    "e\" Tree List option", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+            TechTalk.SpecFlow.Table table76 = new TechTalk.SpecFlow.Table(new string[] {
+                        "ColumnName"});
+            table76.AddRow(new string[] {
+                        "Username"});
+            table76.AddRow(new string[] {
+                        "Domain"});
+            table76.AddRow(new string[] {
+                        "Display Name"});
+            table76.AddRow(new string[] {
+                        "Distinguished Name"});
+            table76.AddRow(new string[] {
+                        "Department Name"});
+            testRunner.Then("Column is displayed in following order:", ((string)(null)), table76, "Then ");
+            testRunner.When("User clicks the Columns button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+            testRunner.Then("Columns panel is displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+            TechTalk.SpecFlow.Table table77 = new TechTalk.SpecFlow.Table(new string[] {
+                        "Subcategories"});
+            table77.AddRow(new string[] {
+                        "Username"});
+            table77.AddRow(new string[] {
+                        "Domain"});
+            table77.AddRow(new string[] {
+                        "Display Name"});
+            table77.AddRow(new string[] {
+                        "Distinguished Name"});
+            table77.AddRow(new string[] {
+                        "Department Name"});
+            testRunner.Then("the following subcategories are displayed for Selected Columns category:", ((string)(null)), table77, "Then ");
+            testRunner.Then("User closed \"Selected Columns\" columns category", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+            testRunner.When("User add \"Department Full Path\" Column from expanded category", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+            testRunner.Then("User is expand \"Selected Columns\" columns category", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+            TechTalk.SpecFlow.Table table78 = new TechTalk.SpecFlow.Table(new string[] {
+                        "Subcategories"});
+            table78.AddRow(new string[] {
+                        "Username"});
+            table78.AddRow(new string[] {
+                        "Domain"});
+            table78.AddRow(new string[] {
+                        "Display Name"});
+            table78.AddRow(new string[] {
+                        "Distinguished Name"});
+            table78.AddRow(new string[] {
+                        "Department Name"});
+            table78.AddRow(new string[] {
+                        "Department Full Path"});
+            testRunner.Then("the following subcategories are displayed for Selected Columns category:", ((string)(null)), table78, "Then ");
+            testRunner.When("User clicks the Filters button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+            testRunner.Then("Filters panel is displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+            testRunner.When("User clicks Add New button on the Filter panel", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+            testRunner.Then("the subcategories are displayed for open category in alphabetical order", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+            testRunner.When("User clicks the Columns button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+            testRunner.Then("Columns panel is displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+            TechTalk.SpecFlow.Table table79 = new TechTalk.SpecFlow.Table(new string[] {
+                        "ColumnName"});
+            table79.AddRow(new string[] {
+                        "Department Name"});
+            table79.AddRow(new string[] {
+                        "Department Full Path"});
+            testRunner.When("User removes ColumnName column by Column panel", ((string)(null)), table79, "When ");
+            TechTalk.SpecFlow.Table table80 = new TechTalk.SpecFlow.Table(new string[] {
+                        "Subcategories"});
+            table80.AddRow(new string[] {
+                        "Department Full Path"});
+            table80.AddRow(new string[] {
+                        "Department Name"});
+            testRunner.Then("the following subcategories are displayed for open category:", ((string)(null)), table80, "Then ");
+            testRunner.When("User clicks the Filters button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+            testRunner.Then("Filters panel is displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+            testRunner.When("User have reset all filters", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+            testRunner.When("User clicks the Columns button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+            testRunner.Then("Columns panel is displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+            testRunner.Then("User closed \"Selected Columns\" columns category", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+            testRunner.Then("User is expand \"Organisation\" columns category", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+            TechTalk.SpecFlow.Table table81 = new TechTalk.SpecFlow.Table(new string[] {
+                        "Subcategories"});
+            table81.AddRow(new string[] {
+                        "Cost Centre"});
+            table81.AddRow(new string[] {
+                        "Department Code"});
+            table81.AddRow(new string[] {
+                        "Department Full Path"});
+            table81.AddRow(new string[] {
+                        "Department Name"});
+            testRunner.Then("the following subcategories are displayed for open category:", ((string)(null)), table81, "Then ");
+            this.ScenarioCleanup();
+        }
     }
 }
 #pragma warning restore
