@@ -658,7 +658,7 @@ Scenario: EvergreenJnr_DevicesList_CheckThatApplicationFiltersBeingAppliedAgains
 	Then "Devices" list should be displayed to the user
 	When User clicks the Filters button
 	Then Filters panel is displayed to the user
-	When User add "Application" filter where type is "Equals" with following Lookup Value and Association:
+	When User add Advanced "Application" filter where type is "Equals" with following Lookup Value and Association:
 	| SelectedValues | Association        |
 	| 7zip (2015)    | Entitled to device |
 	Then "Application" filter is added to the list
@@ -1078,13 +1078,13 @@ Scenario: EvergreenJnr_ApplicationsList_CheckThatCorrectValuesAreDisplayedforUse
 	Then "Applications" list should be displayed to the user
 	When User clicks the Filters button
 	Then Filters panel is displayed to the user
-	When User add "User Key" filter where type is "Less than" with following Data and Association:
-	| Values | Association     |
+	When User add "User Key" filter where type is "Less than" with following Number and Association:
+	| Number | Association     |
 	| 2      | Entitled to app |
 	Then Filter name is colored in the added filter info
 	And Filter value is shown in bold in the added filter info
-	When User Add And "User Key" filter where type is "Greater than" with following Data and Association:
-	| Values | Association     |
+	When User Add And "User Key" filter where type is "Greater than" with following Number and Association:
+	| Number | Association     |
 	| 8      | Entitled to app |
 	Then Filter name is colored in the added filter info
 	And Filter value is shown in bold in the added filter info
