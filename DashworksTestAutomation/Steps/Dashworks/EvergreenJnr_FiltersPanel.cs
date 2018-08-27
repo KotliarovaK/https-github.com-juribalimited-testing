@@ -353,6 +353,15 @@ namespace DashworksTestAutomation.Steps.Dashworks
             filter.Do();
         }
 
+        [When(@"User Add And ""(.*)"" filter where type is ""(.*)"" with following Number and Association:")]
+        public void WhenUserAddAndFilterWhereTypeIsWithFollowingNumberAndAssociation(string filterName, string operatorValue, Table table)
+        {
+            var filtersNames = _driver.NowAt<FiltersElement>();
+            filtersNames.AddAndFilter(filterName);
+            var filter = new NumberAssociationFilter(_driver, operatorValue, table);
+            filter.Do();
+        }
+
         [When(@"User add ""(.*)"" filter where type is ""(.*)"" with following Value and Association:")]
         public void WhenUserAddFilterWhereTypeIsWithFollowingValueAndAssociation(string filterName,
             string operatorValue, Table table)
@@ -360,6 +369,17 @@ namespace DashworksTestAutomation.Steps.Dashworks
             var filtersNames = _driver.NowAt<FiltersElement>();
             filtersNames.AddFilter(filterName);
             var filter = new ValueAssociationFilter(_driver, operatorValue, table);
+            filter.Do();
+            _driver.WaitForDataLoading();
+        }
+
+        [When(@"User add ""(.*)"" filter where type is ""(.*)"" with following Number and Association:")]
+        public void WhenUserAddFilterWhereTypeIsWithFollowingNumberAndAssociation(string filterName,
+            string operatorValue, Table table)
+        {
+            var filtersNames = _driver.NowAt<FiltersElement>();
+            filtersNames.AddFilter(filterName);
+            var filter = new NumberAssociationFilter(_driver, operatorValue, table);
             filter.Do();
             _driver.WaitForDataLoading();
         }
