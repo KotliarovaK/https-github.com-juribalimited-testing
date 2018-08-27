@@ -617,7 +617,7 @@ Scenario: EvergreenJnr_DevicesList_ChecksThatSubcategoriesOnFiltersPanelAreDispl
 	When User clicks the Filters button
 	Then Filters panel is displayed to the user
 	When User clicks Add New button on the Filter panel
-	Then the subcategories are displayed for open category in alphabetical order
+	Then the subcategories are displayed for open category in alphabetical order on Filters panel
 
 @Evergreen @Applications @EvergreenJnr_Columns @ColumnOrder @DAS12861
 Scenario: EvergreenJnr_ApplicationsList_ChecksThatSubcategoriesOnColumnsPanelAreDisplayedInAlphabeticalOrderAfterAddingFilters
@@ -639,11 +639,16 @@ Scenario: EvergreenJnr_ApplicationsList_ChecksThatSubcategoriesOnColumnsPanelAre
 	| Application Key |
 	| Inventory Site  |
 	When User clicks Add New button on the Filter panel
-	Then the subcategories are displayed for open category in alphabetical order
+	Then the subcategories are displayed for open category in alphabetical order on Filters panel
 	When User clicks the Columns button
 	Then Columns panel is displayed to the user
-	Then User closed "Selected Columns" columns category
-	Then the subcategories are displayed for open category in alphabetical order
+	Then the following subcategories are displayed for Selected Columns category:
+	| Subcategories   |
+	| Application     |
+	| Vendor          |
+	| Version         |
+	| Application Key |
+	| Inventory Site  |
 
 @Evergreen @Users @EvergreenJnr_Columns @ColumnOrder @DAS12861
 Scenario: EvergreenJnr_UsersList_ChecksThatSubcategoriesOnColumnsPanelAreDisplayedInAlphabeticalOrderAfterAddingDepartmentFilters
