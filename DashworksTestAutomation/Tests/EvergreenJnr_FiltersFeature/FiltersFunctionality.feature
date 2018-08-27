@@ -1011,3 +1011,29 @@ Scenario: EvergreenJnr_ApplicationsList_CheckThatDataIsDisplayedCorrectlyForAdva
 	| FR\RZM6552051  | Owns a device which app was used on |
 	Then "100" rows are displayed in the agGrid
 	Then table content is present
+
+@Evergreen @Devices @EvergreenJnr_FilterFeature @FilterFunctionality @DAS12807
+Scenario: EvergreenJnr_DevicesList_CheckThatApplicationFilterWorksCorrectlyForDifferentAssociationTypes
+	When User clicks "Devices" on the left-hand menu
+	Then "Devices" list should be displayed to the user
+	When User clicks the Filters button
+	Then Filters panel is displayed to the user
+	When User add Advanced "Application" filter where type is "Equals" with following Lookup Value and Association:
+	| SelectedValues  | Association         |
+	| ACD Display 3.4 | Installed on device |
+	Then "944" rows are displayed in the agGrid
+	When User click Edit button for "Application" filter
+	When User is deselect "Installed on device" in Association
+	When User select "Not installed on device" in Association
+	And User clicks Save filter button
+	Then "16,281" rows are displayed in the agGrid
+	When User have reset all filters
+	When User add Advanced "Application" filter where type is "Equals" with following Lookup Value and Association:
+	| SelectedValues  | Association    |
+	| ACD Display 3.4 | Used on device |
+	Then message 'No devices found' is displayed to the user
+	When User click Edit button for "Application" filter
+	When User is deselect "Used on device" in Association
+	When User select "Not used on device" in Association
+	And User clicks Save filter button
+	Then "17,225" rows are displayed in the agGrid
