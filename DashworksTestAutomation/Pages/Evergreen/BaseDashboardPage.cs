@@ -111,6 +111,31 @@ namespace DashworksTestAutomation.Pages.Evergreen
         [FindsBy(How = How.XPath, Using = ".//div[contains(@class,'submenu-selected-list')]")]
         public IWebElement List { get; set; }
 
+        #region All Lists dropdown
+
+        [FindsBy(How = How.XPath, Using = ".//div[contains(@class, 'DropdownActionsLists')]")]
+        public IWebElement DropdownLists { get; set; }
+
+        [FindsBy(How = How.XPath, Using = "//div[contains(@class, 'actions-lists')]//i[contains(@class, 'mat-star')]")]
+        public IWebElement FavouritesIcon { get; set; }
+
+        [FindsBy(How = How.XPath, Using = "//div[contains(@class, 'actions-lists')]//i[contains(@class, 'person')]")]
+        public IWebElement MyListsIcon { get; set; }
+
+        [FindsBy(How = How.XPath, Using = "//div[contains(@class, 'actions-lists')]//i[contains(@class, 'share')]")]
+        public IWebElement SharedWithMeIcon { get; set; }
+
+        [FindsBy(How = How.XPath, Using = "//div[contains(@class, 'actions-lists')]//i[contains(@class, 'mat-filter_list')]")]
+        public IWebElement DynamicListsIcon { get; set; }
+
+        [FindsBy(How = How.XPath, Using = "//div[contains(@class, 'actions-lists')]//i[contains(@class, 'done')]")]
+        public IWebElement StaticListsIcon { get; set; }
+
+        [FindsBy(How = How.XPath, Using = "//div[contains(@class, 'actions-lists')]//i[contains(@class, 'mat-list')]")]
+        public IWebElement AllListsIcon { get; set; }
+
+        #endregion
+
         [FindsBy(How = How.XPath, Using = ".//span[contains(@class, 'rowCount')]")]
         public IWebElement ResultsOnPageCount { get; set; }
 
@@ -549,6 +574,13 @@ namespace DashworksTestAutomation.Pages.Evergreen
             var selector = By.XPath(".//span[@role='columnheader']");
             Driver.WaitForDataLoading();
             return Driver.FindElements(selector);
+        }
+
+        public IWebElement GetOptionOnListPanel(string optionName)
+        {
+            var selector = By.XPath($".//mat-option[@role='option']//span[text()='{optionName}']");
+            Driver.WaitForDataLoading();
+            return Driver.FindElement(selector);
         }
     }
 }
