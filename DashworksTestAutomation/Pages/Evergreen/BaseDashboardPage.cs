@@ -113,6 +113,31 @@ namespace DashworksTestAutomation.Pages.Evergreen
         [FindsBy(How = How.XPath, Using = ".//div[contains(@class,'submenu-selected-list')]")]
         public IWebElement List { get; set; }
 
+        #region All Lists dropdown
+
+        [FindsBy(How = How.XPath, Using = ".//div[contains(@class, 'DropdownActionsLists')]")]
+        public IWebElement DropdownLists { get; set; }
+
+        [FindsBy(How = How.XPath, Using = "//div[contains(@class, 'actions-lists')]//i[contains(@class, 'mat-star')]/..//following-sibling::span[text()='Favourites']")]
+        public IWebElement FavouritesIcon { get; set; }
+
+        [FindsBy(How = How.XPath, Using = "//div[contains(@class, 'actions-lists')]//i[contains(@class, 'person')]/..//following-sibling::span[text()='My lists']")]
+        public IWebElement MyListsIcon { get; set; }
+
+        [FindsBy(How = How.XPath, Using = "//div[contains(@class, 'actions-lists')]//i[contains(@class, 'share')]/..//following-sibling::span[text()='Shared with me']")]
+        public IWebElement SharedWithMeIcon { get; set; }
+
+        [FindsBy(How = How.XPath, Using = "//div[contains(@class, 'actions-lists')]//i[contains(@class, 'mat-filter_list')]/..//following-sibling::span[text()='Dynamic lists']")]
+        public IWebElement DynamicListsIcon { get; set; }
+
+        [FindsBy(How = How.XPath, Using = "//div[contains(@class, 'actions-lists')]//i[contains(@class, 'done')]/..//following-sibling::span[text()='Static lists']")]
+        public IWebElement StaticListsIcon { get; set; }
+
+        [FindsBy(How = How.XPath, Using = "//div[contains(@class, 'actions-lists')]//i[contains(@class, 'mat-list')]/..//following-sibling::span[text()='All lists']")]
+        public IWebElement AllListsIcon { get; set; }
+
+        #endregion
+
         [FindsBy(How = How.XPath, Using = ".//span[contains(@class, 'rowCount')]")]
         public IWebElement ResultsOnPageCount { get; set; }
 
@@ -554,6 +579,13 @@ namespace DashworksTestAutomation.Pages.Evergreen
             var selector = By.XPath(".//span[@role='columnheader']");
             Driver.WaitForDataLoading();
             return Driver.FindElements(selector);
+        }
+
+        public IWebElement GetOptionOnListPanel(string optionName)
+        {
+            var selector = By.XPath($".//mat-option[@role='option']//span[text()='{optionName}']");
+            Driver.WaitForDataLoading();
+            return Driver.FindElement(selector);
         }
     }
 }

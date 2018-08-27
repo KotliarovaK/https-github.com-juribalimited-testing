@@ -368,5 +368,61 @@ namespace DashworksTestAutomation.Steps.Dashworks
             Assert.IsTrue(Convert.ToBoolean(listDetailsElement.RemoveListButton.GetAttribute("disabled")),
                 "Delete List button is enabled");
         }
+
+        [When(@"User clicks All lists dropdown on Lists panel")]
+        public void WhenUserClicksAllListsDropdownOnListsPanel()
+        {
+            var page = _driver.NowAt<BaseDashboardPage>();
+            page.DropdownLists.Click();
+        }
+
+        [Then(@"appropriate icon is displayed for Favourites")]
+        public void ThenAppropriateIconIsDisplayedForFavourites()
+        {
+            var page = _driver.NowAt<BaseDashboardPage>();
+            Assert.IsTrue(page.FavouritesIcon.Displayed(), "Appropriate icon is not displayed");
+        }
+
+        [Then(@"appropriate icon is displayed for My lists")]
+        public void ThenAppropriateIconIsDisplayedForMyLists()
+        {
+            var page = _driver.NowAt<BaseDashboardPage>();
+            Assert.IsTrue(page.MyListsIcon.Displayed(), "Appropriate icon is not displayed");
+        }
+
+        [Then(@"appropriate icon is displayed for Shared with me")]
+        public void ThenAppropriateIconIsDisplayedForSharedWithMe()
+        {
+            var page = _driver.NowAt<BaseDashboardPage>();
+            Assert.IsTrue(page.SharedWithMeIcon.Displayed(), "Appropriate icon is not displayed");
+        }
+
+        [Then(@"appropriate icon is displayed for Dynamic lists")]
+        public void ThenAppropriateIconIsDisplayedForDynamicLists()
+        {
+            var page = _driver.NowAt<BaseDashboardPage>();
+            Assert.IsTrue(page.DynamicListsIcon.Displayed(), "Appropriate icon is not displayed");
+        }
+
+        [Then(@"appropriate icon is displayed for Static lists")]
+        public void ThenAppropriateIconIsDisplayedForStaticLists()
+        {
+            var page = _driver.NowAt<BaseDashboardPage>();
+            Assert.IsTrue(page.StaticListsIcon.Displayed(), "Appropriate icon is not displayed");
+        }
+
+        [When(@"User selects ""(.*)"" option on the All lists dropdown")]
+        public void WhenUserSelectsOptionOnTheAllListsDropdown(string optionName)
+        {
+            var page = _driver.NowAt<BaseDashboardPage>();
+            page.GetOptionOnListPanel(optionName).Click();
+        }
+
+        [Then(@"appropriate icon is displayed for All lists")]
+        public void ThenAppropriateIconIsDisplayedForAllLists()
+        {
+            var page = _driver.NowAt<BaseDashboardPage>();
+            Assert.IsTrue(page.AllListsIcon.Displayed(), "Appropriate icon is not displayed");
+        }
     }
 }

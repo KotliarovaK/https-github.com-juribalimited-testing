@@ -3265,3 +3265,29 @@ Scenario: EvergreenJnr_AdminPage_CheckThatOnlyFilteredListObjectsAreUsedAsAScope
 	When User selects "Scope Changes" tab on the Project details page
 	Then "Devices to add (0 of 222 selected)" is displayed to the user in the Project Scope Changes section
 	Then There are no errors in the browser console
+
+@Evergreen @Admin @EvergreenJnr_AdminPage @AdminPage @DAS13096 @Delete_Newly_Created_Project @Projects
+Scenario: EvergreenJnr_AdminPage_ChecksThatProjectNameEditedInSeniorIsUpdatedInAdminTab
+	When User clicks Admin on the left-hand menu
+	Then Admin page should be displayed to the user
+	When User clicks "Projects" link on the Admin page
+	Then "Projects" page should be displayed to the user
+	When User clicks the "CREATE PROJECT" Action button
+	Then "Create Project" page should be displayed to the user
+	When User enters "Project13096" in the Project Name field
+	And User selects "All Devices" in the Scope Project dropdown
+	And User clicks Create button on the Create Project page
+	Then Success message is displayed and contains "Your project has been created" text
+	When User clicks "Projects" on the left-hand menu
+	Then "Projects Home" page is displayed to the user
+	When User navigate to "Project13096" Project
+	Then Project with "Project13096" name is displayed correctly
+	And "Manage Project Details" page is displayed to the user
+	When User update Project Name on "Project13096 upd"
+	Then Success message is displayed with "Project was successfully updated" text
+	When User navigate to Evergreen link
+	And User clicks Admin on the left-hand menu
+	Then Admin page should be displayed to the user
+	When User clicks "Projects" link on the Admin page
+	Then "Projects" page should be displayed to the user
+	Then created Project with "Project13096 upd" name is displayed correctly
