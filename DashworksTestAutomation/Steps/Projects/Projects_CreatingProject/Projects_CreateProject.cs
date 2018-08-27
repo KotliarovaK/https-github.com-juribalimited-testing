@@ -169,6 +169,16 @@ namespace DashworksTestAutomation.Steps.Projects
             _projectDto.Details = _detailsDto;
         }
 
+        [When(@"User update Project Name on ""(.*)""")]
+        public void WhenUserUpdateProjectNameOn(string pprojectName)
+        {
+            var page = _driver.NowAt<DetailsPage>();
+            page.ProjectName.Clear();
+            page.ProjectName.SendKeys(pprojectName);
+            var upd = _driver.NowAt<MainElementsOfProjectCreation>();
+            upd.UpdateButton.Click();
+        }
+
         [Then(@"CC email field is displayed with ""(.*)"" text")]
         public void ThenCсEmailFieldIsDisplayedWithText(string emailText)
         {

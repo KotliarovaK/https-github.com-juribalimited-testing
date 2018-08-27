@@ -325,6 +325,16 @@ namespace DashworksTestAutomation.Steps.Dashworks
             filter.Do();
         }
 
+        [When(@"User add Advanced ""(.*)"" filter where type is ""(.*)"" with following Lookup Value and Association:")]
+        public void WhenUserAddAdvancedFilterWhereTypeIsWithFollowingLookupValueAndAssociation(string filterName,
+            string operatorValue, Table table)
+        {
+            var filtersNames = _driver.NowAt<FiltersElement>();
+            filtersNames.AddFilter(filterName);
+            var filter = new LookupValueAdvancedFilter(_driver, operatorValue, table);
+            filter.Do();
+        }
+
         [When(@"User add ""(.*)"" filter where type is ""(.*)"" with following Data and Association:")]
         public void WhenUserAddFilterWhereTypeIsWithFollowingDataAndAssociation(string filterName, string operatorValue, Table table)
         {
@@ -872,12 +882,21 @@ namespace DashworksTestAutomation.Steps.Dashworks
             Assert.AreEqual(groupCount, filterElement.MaximizeGroupButton.Count, "Maximize buttons are not displayed");
         }
 
-        [Then(@"the following subcategories are displayed for open category:")]
-        public void ThenTheFollowingSubcategoriesAreDisplayedForOpenCategory(Table table)
+        [Then(@"the following Filters subcategories are displayed for open category:")]
+        public void ThenTheFollowingFiltersSubcategoriesAreDisplayedForOpenCategory(Table table)
         {
             var page = _driver.NowAt<BaseDashboardPage>();
             var expectedList = table.Rows.SelectMany(row => row.Values).ToList();
             var actualList = page.SelectedFiltersSubcategoryList.Select(value => value.Text).ToList();
+            Assert.AreEqual(expectedList, actualList, "Subcategory values are different");
+        }
+
+        [Then(@"the following Column subcategories are displayed for open category:")]
+        public void ThenTheFollowingColumnSubcategoriesAreDisplayedForOpenCategory(Table table)
+        {
+            var page = _driver.NowAt<BaseDashboardPage>();
+            var expectedList = table.Rows.SelectMany(row => row.Values).ToList();
+            var actualList = page.SelectedColumnsSubcategoryList.Select(value => value.Text).ToList();
             Assert.AreEqual(expectedList, actualList, "Subcategory values are different");
         }
 
