@@ -548,7 +548,7 @@ Scenario: EvergreenJnr_DevicesList_TheSelectedColumnsCategoryIsDisplayedAfterUsi
 	When User clicks the Filters button
 	Then Filters panel is displayed to the user
 	When User clicks Add New button on the Filter panel
-	Then the following subcategories are displayed for open category:
+	Then the following Filters subcategories are displayed for open category:
 	| Subcategories      |
 	| Device Type        |
 	| Hostname           |
@@ -556,7 +556,7 @@ Scenario: EvergreenJnr_DevicesList_TheSelectedColumnsCategoryIsDisplayedAfterUsi
 	| Owner Display Name |
 	When User enters "Hostname" text in Search field at Filters Panel
 	When User clears search textbox in Filters panel
-	Then the following subcategories are displayed for open category:
+	Then the following Filters subcategories are displayed for open category:
 	| Subcategories      |
 	| Device Type        |
 	| Hostname           |
@@ -570,7 +570,7 @@ Scenario: EvergreenJnr_DevicesList_TheSelectedColumnsCategoryIsDisplayedAfterAdd
 	When User clicks the Filters button
 	Then Filters panel is displayed to the user
 	When User clicks Add New button on the Filter panel
-	Then the following subcategories are displayed for open category:
+	Then the following Filters subcategories are displayed for open category:
 	| Subcategories      |
 	| Device Type        |
 	| Hostname           |
@@ -581,7 +581,7 @@ Scenario: EvergreenJnr_DevicesList_TheSelectedColumnsCategoryIsDisplayedAfterAdd
 	| SelectedCheckboxes |
 	| Red                |
 	When User clicks Add New button on the Filter panel
-	Then the following subcategories are displayed for open category:
+	Then the following Filters subcategories are displayed for open category:
 	| Subcategories      |
 	| Compliance         |
 	| Device Type        |
@@ -694,7 +694,8 @@ Scenario: EvergreenJnr_UsersList_ChecksThatSubcategoriesOnColumnsPanelAreDisplay
 	| ColumnName           |
 	| Department Name      |
 	| Department Full Path |
-	Then the following subcategories are displayed for open category:
+	Then User closed "Selected Columns" columns category
+	Then the following Column subcategories are displayed for open category:
 	| Subcategories        |
 	| Department Full Path |
 	| Department Name      |
@@ -705,7 +706,7 @@ Scenario: EvergreenJnr_UsersList_ChecksThatSubcategoriesOnColumnsPanelAreDisplay
 	Then Columns panel is displayed to the user
 	Then User closed "Selected Columns" columns category
 	Then User is expand "Organisation" columns category
-	Then the following subcategories are displayed for open category:
+	Then the following Column subcategories are displayed for open category:
 	| Subcategories        |
 	| Cost Centre          |
 	| Department Code      |
