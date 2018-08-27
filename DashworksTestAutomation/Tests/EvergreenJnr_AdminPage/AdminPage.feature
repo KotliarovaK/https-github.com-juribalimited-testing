@@ -3290,4 +3290,4 @@ Scenario: EvergreenJnr_AdminPage_ChecksThatProjectNameEditedInSeniorIsUpdatedInA
 	Then Admin page should be displayed to the user
 	When User clicks "Projects" link on the Admin page
 	Then "Projects" page should be displayed to the user
-	Then created Project with "Project13096 upd" name is displayed correctly
+	And created Project with "Project13096 upd" name is displayed correctly
