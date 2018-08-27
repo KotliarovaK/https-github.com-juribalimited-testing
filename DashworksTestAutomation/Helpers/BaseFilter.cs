@@ -363,6 +363,53 @@ namespace DashworksTestAutomation.Helpers
         }
     }
 
+    public class LookupValueAdvancedFilter : BaseFilter
+    {
+        public LookupValueAdvancedFilter(RemoteWebDriver driver, string operatorValue, Table table) : base(
+            driver, operatorValue, false)
+        {
+            Table = table;
+        }
+
+        private Table Table { get; }
+
+        public override void Do()
+        {
+            SelectOperator();
+            _driver.WaitForDataLoading();
+            var selectboxes = _driver.FindElements(By.XPath(".//div[@id='context']//input[@placeholder='Search']"));
+            foreach (var row in Table.Rows)
+            {
+                _driver.FindElement(By.XPath(".//div[@id='context']//input[@placeholder='Search']")).Click();
+                _driver.FindElement(By.XPath(".//div[@id='context']//input[@placeholder='Search']"))
+                    .SendKeys(row["SelectedValues"]);
+                _driver.FindElement(By.XPath(
+                        $".//div[@class='filterAddPanel ng-star-inserted']//span[contains(text(),'{row["SelectedValues"]}')]"))
+                    .Click();
+            }
+
+            selectboxes.Last().Click();
+            foreach (var row in Table.Rows)
+            {
+                var selector = string.Empty;
+                if (row["Association"].Contains("'"))
+                {
+                    var strings = row["Association"].Split('\'');
+                    selector =
+                        $".//li//span[contains(text(),'{strings[0]}')][contains(text(), '{strings[1]}')]";
+                }
+                else
+                {
+                    selector = $".//li//span[text()='{row["Association"]}']";
+                }
+                selectboxes.Last().SendkeysWithDelay(row["Association"]);
+                _driver.FindElement(By.XPath(selector)).Click();
+                selectboxes.Last().Clear();
+            }
+            SaveFilter();
+        }
+    }
+
     public class CheckboxesAssociationFilter : BaseFilter
     {
         protected string CheckboxSelector =
