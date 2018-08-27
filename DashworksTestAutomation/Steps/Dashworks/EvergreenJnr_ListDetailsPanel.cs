@@ -230,6 +230,42 @@ namespace DashworksTestAutomation.Steps.Dashworks
             _driver.SelectCustomSelectbox(listDetailsElement.SharingDropdown, sharingOption);
         }
 
+        [Then(@"form container is displayed to the user")]
+        public void ThenFormContainerIsDisplayedToTheUser()
+        {
+            var page = _driver.NowAt<ListDetailsElement>();
+            Assert.IsTrue(page.SharingFormContainer.Displayed(), "Form container is not loaded");
+        }
+
+        [Then(@"form container is not displayed to the user")]
+        public void ThenFormContainerIsNotDisplayedToTheUser()
+        {
+            var page = _driver.NowAt<ListDetailsElement>();
+            Assert.IsFalse(page.SharingFormContainer.Displayed(), "Form container is loaded");
+        }
+
+        [When(@"User selects the ""(.*)"" user for sharing")]
+        public void WhenUserSelectsTheUserForSharing(string userName)
+        {
+            var page = _driver.NowAt<ListDetailsElement>();
+            page.SharingUserField.SendKeys(userName);
+            page.GetSharingUserInDllByName(userName).Click();
+        }
+
+        [Then(@"User list for sharing is not displayed")]
+        public void ThenUserListForSharingIsNotDisplayed()
+        {
+            var page = _driver.NowAt<ListDetailsElement>();
+            Assert.IsFalse(page.SharingUserList.Displayed(), "User list for sharing is displayed");
+        }
+
+        [Then(@"""(.*)"" Sharing user is displayed correctly")]
+        public void ThenSharingUserIsDisplayedCorrectly(string userName)
+        {
+            var page = _driver.NowAt<ListDetailsElement>();
+            Assert.IsTrue(page.GetSharingUserOnDetailsPanelByName(userName).Displayed(), "Selected Sharing user is not displayed on Details panel");
+        }
+
         [When(@"User select ""(.*)"" as a Owner of a list")]
         public void WhenUserSelectAsAOwnerOfAList(string ownerOption)
         {
