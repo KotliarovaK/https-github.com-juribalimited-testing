@@ -512,7 +512,7 @@ Scenario: EvergreenJnr_DevicesList_ChecksThatProjectNamesAreDisplayedCorrectlyIn
 	Then Columns panel is displayed to the user
 	Then User closed "Selected Columns" columns category
 	Then User is expand "Project Stages: Windows7Mi" columns category
-	Then the following subcategories are displayed for open category:
+	Then the following Column subcategories are displayed for open category:
 	| Subcategories                                               |
 	| Windows7Mi: Command & Control                               |
 	| Windows7Mi: Communication                                   |

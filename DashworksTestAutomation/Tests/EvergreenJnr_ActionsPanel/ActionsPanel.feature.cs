@@ -1030,7 +1030,7 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_ActionsPanel
                         "Windows7Mi: Post Migration"});
             table37.AddRow(new string[] {
                         "Windows7Mi: Pre-Migration"});
-            testRunner.Then("the following subcategories are displayed for open category:", ((string)(null)), table37, "Then ");
+            testRunner.Then("the following Column subcategories are displayed for open category:", ((string)(null)), table37, "Then ");
             this.ScenarioCleanup();
         }
     }

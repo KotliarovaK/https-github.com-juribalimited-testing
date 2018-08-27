@@ -27,6 +27,8 @@ namespace DashworksTestAutomation.Pages.Evergreen
 
         public const string SelectedFiltersSubcategory = "//div[contains(@class, 'sub-categories')]//div//div";
 
+        public const string SelectedColumnSubcategory = "//div[contains(@class, 'sub-categories')]//div//span";
+
         [FindsBy(How = How.XPath, Using = ".//div[@id='pagetitle-text']/descendant::h1")]
         public IWebElement Heading { get; set; }
 
@@ -225,6 +227,9 @@ namespace DashworksTestAutomation.Pages.Evergreen
 
         [FindsBy(How = How.XPath, Using = SelectedFiltersSubcategory)]
         public IList<IWebElement> SelectedFiltersSubcategoryList { get; set; }
+
+        [FindsBy(How = How.XPath, Using = SelectedColumnSubcategory)]
+        public IList<IWebElement> SelectedColumnsSubcategoryList { get; set; }
 
         #region TableColumns
 
