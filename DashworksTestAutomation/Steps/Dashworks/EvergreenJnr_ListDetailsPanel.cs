@@ -230,6 +230,42 @@ namespace DashworksTestAutomation.Steps.Dashworks
             _driver.SelectCustomSelectbox(listDetailsElement.SharingDropdown, sharingOption);
         }
 
+        [Then(@"form container is displayed to the user")]
+        public void ThenFormContainerIsDisplayedToTheUser()
+        {
+            var page = _driver.NowAt<ListDetailsElement>();
+            Assert.IsTrue(page.SharingFormContainer.Displayed(), "Form container is not loaded");
+        }
+
+        [Then(@"form container is not displayed to the user")]
+        public void ThenFormContainerIsNotDisplayedToTheUser()
+        {
+            var page = _driver.NowAt<ListDetailsElement>();
+            Assert.IsFalse(page.SharingFormContainer.Displayed(), "Form container is loaded");
+        }
+
+        [When(@"User selects the ""(.*)"" user for sharing")]
+        public void WhenUserSelectsTheUserForSharing(string userName)
+        {
+            var page = _driver.NowAt<ListDetailsElement>();
+            page.SharingUserField.SendKeys(userName);
+            page.GetSharingUserInDllByName(userName).Click();
+        }
+
+        [Then(@"User list for sharing is not displayed")]
+        public void ThenUserListForSharingIsNotDisplayed()
+        {
+            var page = _driver.NowAt<ListDetailsElement>();
+            Assert.IsFalse(page.SharingUserList.Displayed(), "User list for sharing is displayed");
+        }
+
+        [Then(@"""(.*)"" Sharing user is displayed correctly")]
+        public void ThenSharingUserIsDisplayedCorrectly(string userName)
+        {
+            var page = _driver.NowAt<ListDetailsElement>();
+            Assert.IsTrue(page.GetSharingUserOnDetailsPanelByName(userName).Displayed(), "Selected Sharing user is not displayed on Details panel");
+        }
+
         [When(@"User select ""(.*)"" as a Owner of a list")]
         public void WhenUserSelectAsAOwnerOfAList(string ownerOption)
         {
@@ -331,6 +367,62 @@ namespace DashworksTestAutomation.Steps.Dashworks
             var listDetailsElement = _driver.NowAt<ListDetailsElement>();
             Assert.IsTrue(Convert.ToBoolean(listDetailsElement.RemoveListButton.GetAttribute("disabled")),
                 "Delete List button is enabled");
+        }
+
+        [When(@"User clicks All lists dropdown on Lists panel")]
+        public void WhenUserClicksAllListsDropdownOnListsPanel()
+        {
+            var page = _driver.NowAt<BaseDashboardPage>();
+            page.DropdownLists.Click();
+        }
+
+        [Then(@"appropriate icon is displayed for Favourites")]
+        public void ThenAppropriateIconIsDisplayedForFavourites()
+        {
+            var page = _driver.NowAt<BaseDashboardPage>();
+            Assert.IsTrue(page.FavouritesIcon.Displayed(), "Appropriate icon is not displayed");
+        }
+
+        [Then(@"appropriate icon is displayed for My lists")]
+        public void ThenAppropriateIconIsDisplayedForMyLists()
+        {
+            var page = _driver.NowAt<BaseDashboardPage>();
+            Assert.IsTrue(page.MyListsIcon.Displayed(), "Appropriate icon is not displayed");
+        }
+
+        [Then(@"appropriate icon is displayed for Shared with me")]
+        public void ThenAppropriateIconIsDisplayedForSharedWithMe()
+        {
+            var page = _driver.NowAt<BaseDashboardPage>();
+            Assert.IsTrue(page.SharedWithMeIcon.Displayed(), "Appropriate icon is not displayed");
+        }
+
+        [Then(@"appropriate icon is displayed for Dynamic lists")]
+        public void ThenAppropriateIconIsDisplayedForDynamicLists()
+        {
+            var page = _driver.NowAt<BaseDashboardPage>();
+            Assert.IsTrue(page.DynamicListsIcon.Displayed(), "Appropriate icon is not displayed");
+        }
+
+        [Then(@"appropriate icon is displayed for Static lists")]
+        public void ThenAppropriateIconIsDisplayedForStaticLists()
+        {
+            var page = _driver.NowAt<BaseDashboardPage>();
+            Assert.IsTrue(page.StaticListsIcon.Displayed(), "Appropriate icon is not displayed");
+        }
+
+        [When(@"User selects ""(.*)"" option on the All lists dropdown")]
+        public void WhenUserSelectsOptionOnTheAllListsDropdown(string optionName)
+        {
+            var page = _driver.NowAt<BaseDashboardPage>();
+            page.GetOptionOnListPanel(optionName).Click();
+        }
+
+        [Then(@"appropriate icon is displayed for All lists")]
+        public void ThenAppropriateIconIsDisplayedForAllLists()
+        {
+            var page = _driver.NowAt<BaseDashboardPage>();
+            Assert.IsTrue(page.AllListsIcon.Displayed(), "Appropriate icon is not displayed");
         }
     }
 }
