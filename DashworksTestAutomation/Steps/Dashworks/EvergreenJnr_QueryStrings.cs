@@ -128,5 +128,26 @@ namespace DashworksTestAutomation.Steps.Dashworks
                 Logger.Write("Main agGrid dataset is displayed");
             }
         }
+
+        [When(@"Evergreen QueryStringURL is entered for Simple QueryType and appropriate RowCount is displayed")]
+        public void WhenEvergreenQueryStringURLIsEnteredForSimpleQueryTypeAndAppropriateRowCountIsDisplayed(Table table)
+        {
+            foreach (var row in table.Rows)
+            {
+                _url.Value = UrlProvider.Url;
+                var combinedURL = _url.Value + row["QueryStringURL"];
+                _driver.NavigateToUrl(combinedURL);
+
+                var page = _driver.NowAt<EvergreenDashboardsPage>();
+
+                if (page.StatusCodeLabel.Displayed())
+                    throw new Exception($"500 error was returned for: {row["QueryType"]} query");
+
+                Logger.Write($"Evergreen agGrid Main Object List is returned with data for: {row["QueryType"]} query");
+                ThenAgGridMainObjectListIsReturnedWithData();
+                EvergreenJnr_ListSearch evergreenJnrListSearch = new EvergreenJnr_ListSearch(_driver);
+                evergreenJnrListSearch.ThenRowsAreDisplayedInTheAgGrid(row["RowCount"]);
+            }
+        }
     }
 }
