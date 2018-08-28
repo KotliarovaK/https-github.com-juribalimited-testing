@@ -1038,7 +1038,7 @@ Scenario: EvergreenJnr_DevicesList_CheckThatApplicationFilterWorksCorrectlyForDi
 	And User clicks Save filter button
 	Then "17,225" rows are displayed in the agGrid
 
-@Evergreen @UsersList @EvergreenJnr_FilterFeature @FilterFunctionality @DAS12804
+@Evergreen @UsersList @EvergreenJnr_FilterFeature @FilterFunctionality @DAS12804 @Delete_Newly_Created_List
 Scenario: EvergreenJnr_UsersList_CheckThatSavedStaticListIsNotShownInEditMode
 	When User clicks "Users" on the left-hand menu
 	Then "Users" list should be displayed to the user
