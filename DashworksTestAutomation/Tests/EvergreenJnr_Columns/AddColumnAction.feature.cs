@@ -511,16 +511,16 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_Columns
         [NUnit.Framework.TestAttribute()]
         [NUnit.Framework.Retry(2)]
         [NUnit.Framework.DescriptionAttribute("EvergreenJnr_DevicesList_ChecksThatGridIsDisplayedCorrectlyAfterAddingDeviceOwner" +
-            "LdapAndComputerAdObjectLdapAttributeColumnsToTheDevicesList")]
+            "LdapAndComputerAdObjectLdapAttributeColumnToTheDevicesList")]
         [NUnit.Framework.CategoryAttribute("Evergreen")]
         [NUnit.Framework.CategoryAttribute("Devices")]
         [NUnit.Framework.CategoryAttribute("EvergreenJnr_Columns")]
         [NUnit.Framework.CategoryAttribute("AddColumnAction")]
         [NUnit.Framework.CategoryAttribute("DAS13024")]
-        public virtual void EvergreenJnr_DevicesList_ChecksThatGridIsDisplayedCorrectlyAfterAddingDeviceOwnerLdapAndComputerAdObjectLdapAttributeColumnsToTheDevicesList()
+        public virtual void EvergreenJnr_DevicesList_ChecksThatGridIsDisplayedCorrectlyAfterAddingDeviceOwnerLdapAndComputerAdObjectLdapAttributeColumnToTheDevicesList()
         {
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("EvergreenJnr_DevicesList_ChecksThatGridIsDisplayedCorrectlyAfterAddingDeviceOwner" +
-                    "LdapAndComputerAdObjectLdapAttributeColumnsToTheDevicesList", new string[] {
+                    "LdapAndComputerAdObjectLdapAttributeColumnToTheDevicesList", new string[] {
                         "Evergreen",
                         "Devices",
                         "EvergreenJnr_Columns",

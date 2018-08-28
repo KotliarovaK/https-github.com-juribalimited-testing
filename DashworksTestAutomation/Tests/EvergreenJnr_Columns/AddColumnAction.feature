@@ -185,7 +185,7 @@ Examples:
 	| Mailboxes    | Mailbox Key     |
 
 @Evergreen @Devices @EvergreenJnr_Columns @AddColumnAction @DAS13024
-Scenario: EvergreenJnr_DevicesList_ChecksThatGridIsDisplayedCorrectlyAfterAddingDeviceOwnerLdapAndComputerAdObjectLdapAttributeColumnsToTheDevicesList
+Scenario: EvergreenJnr_DevicesList_ChecksThatGridIsDisplayedCorrectlyAfterAddingDeviceOwnerLdapAndComputerAdObjectLdapAttributeColumnToTheDevicesList
 	When User clicks "Devices" on the left-hand menu
 	Then "Devices" list should be displayed to the user
 	When User clicks the Columns button

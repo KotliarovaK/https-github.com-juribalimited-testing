@@ -2758,6 +2758,51 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_FiltersFeature
             testRunner.And("Filter value is shown in bold in the added filter info", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
             this.ScenarioCleanup();
         }
+        
+        [NUnit.Framework.TestAttribute()]
+        [NUnit.Framework.Retry(2)]
+        [NUnit.Framework.DescriptionAttribute("EvergreenJnr_DevicesList_ChecksThatGridIsDisplayedCorrectlyAfterAddingDeviceOwner" +
+            "LdapAndComputerAdObjectLdapAttributeFilterToTheDevicesList")]
+        [NUnit.Framework.CategoryAttribute("Evergreen")]
+        [NUnit.Framework.CategoryAttribute("Devices")]
+        [NUnit.Framework.CategoryAttribute("Evergreen_FiltersFeature")]
+        [NUnit.Framework.CategoryAttribute("FiltersDisplay")]
+        [NUnit.Framework.CategoryAttribute("DAS13024")]
+        [NUnit.Framework.CategoryAttribute("Delete_Newly_Created_List")]
+        public virtual void EvergreenJnr_DevicesList_ChecksThatGridIsDisplayedCorrectlyAfterAddingDeviceOwnerLdapAndComputerAdObjectLdapAttributeFilterToTheDevicesList()
+        {
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("EvergreenJnr_DevicesList_ChecksThatGridIsDisplayedCorrectlyAfterAddingDeviceOwner" +
+                    "LdapAndComputerAdObjectLdapAttributeFilterToTheDevicesList", new string[] {
+                        "Evergreen",
+                        "Devices",
+                        "Evergreen_FiltersFeature",
+                        "FiltersDisplay",
+                        "DAS13024",
+                        "Delete_Newly_Created_List"});
+            this.ScenarioSetup(scenarioInfo);
+            this.FeatureBackground();
+            testRunner.When("User clicks \"Devices\" on the left-hand menu", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+            testRunner.Then("\"Devices\" list should be displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+            testRunner.When("User clicks the Filters button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+            testRunner.Then("Filters panel is displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+            TechTalk.SpecFlow.Table table90 = new TechTalk.SpecFlow.Table(new string[] {
+                        "Values"});
+            table90.AddRow(new string[] {
+                        "123"});
+            testRunner.When("User add \"Owner accountexpires\" filter where type is \"Empty\" without added column" +
+                    " and following value:", ((string)(null)), table90, "When ");
+            TechTalk.SpecFlow.Table table91 = new TechTalk.SpecFlow.Table(new string[] {
+                        "Values"});
+            table91.AddRow(new string[] {
+                        "123"});
+            testRunner.When("User add \"admincount\" filter where type is \"Empty\" without added column and follo" +
+                    "wing value:", ((string)(null)), table91, "When ");
+            testRunner.Then("\"17,225\" rows are displayed in the agGrid", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+            testRunner.Then("full list content is displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+            testRunner.Then("There are no errors in the browser console", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+            testRunner.Then("table content is present", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+            this.ScenarioCleanup();
+        }
     }
 }
 #pragma warning restore
