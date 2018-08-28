@@ -3012,7 +3012,7 @@ Scenario: EvergreenJnr_AdminPage_AddingDevicesFromBuckets
 	Then Success message is displayed and contains "The selected devices have been added to the selected bucket" text
 	And There are no errors in the browser console
 	Then data in table is sorted by "Hostname" column in ascending order by default on the Admin page
-	Then Counter shows "17,225" found rows
+	#Then Counter shows "17,225" found rows
 	When User click on "Hostname" column header on the Admin page
 	Then data in table is sorted by "Hostname" column in ascending order on the Admin page
 	When User click on "Hostname" column header on the Admin page
@@ -3040,7 +3040,7 @@ Scenario: EvergreenJnr_AdminPage_AddingDevicesFromBuckets
 	When User clicks Reset Filters button on the Admin page
 	When User clicks String Filter button for "Type" column on the Admin page
 	When User selects "Laptop" checkbox from String Filter on the Admin page
-	Then Counter shows "13,417" found rows
+	#Then Counter shows "13,417" found rows
 	When User clicks Reset Filters button on the Admin page
 	When User selects all rows on the grid
 	When User clicks on Actions button
@@ -3074,7 +3074,7 @@ Scenario: EvergreenJnr_AdminPage_AddingUsersFromBuckets
 	And There are no errors in the browser console
 	And There are no errors in the browser console
 	Then data in table is sorted by "Username" column in ascending order by default on the Admin page
-	Then Counter shows "41,339" found rows
+	#Then Counter shows "41,339" found rows
 	#When User click on "Username" column header on the Admin page
 	#Then data in table is sorted by "Username" column in ascending order on the Admin page
 	#When User click on "Username" column header on the Admin page
@@ -3133,7 +3133,7 @@ Scenario: EvergreenJnr_AdminPage_AddingMailboxesFromBuckets
 	When User clicks the "ADD MAILBOXES" Action button
 	Then Success message is displayed and contains "The selected mailboxes have been added to the selected bucket" text
 	Then data in table is sorted by "Email Address (Primary)" column in ascending order by default on the Admin page
-	Then Counter shows "14,784" found rows
+	#Then Counter shows "14,784" found rows
 	When User click on "Email Address (Primary)" column header on the Admin page
 	Then data in table is sorted by "Email Address (Primary)" column in ascending order on the Admin page
 	When User click on "Email Address (Primary)" column header on the Admin page

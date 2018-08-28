@@ -741,7 +741,7 @@ Scenario: EvergreenJnr_ApplicationsList_CheckThatNoErrorIsDisplayedAfterAddingFe
 	Then "Applications" list should be displayed to the user
 	When User clicks the Filters button
 	Then Filters panel is displayed to the user
-	When User add "User" filter where type is "Does not equal" with following Lookup Value and Association:
+	When User add Advanced "User" filter where type is "Does not equal" with following Lookup Value and Association:
 	| SelectedValues              | Association  |
 	| DWLABS\$231000-3AC04R8AR431 | Has used app |
 	When User add "User Last Logon Date" filter where type is "Before" with following Data and Association:
@@ -1023,17 +1023,17 @@ Scenario: EvergreenJnr_DevicesList_CheckThatApplicationFilterWorksCorrectlyForDi
 	| ACD Display 3.4 | Installed on device |
 	Then "944" rows are displayed in the agGrid
 	When User click Edit button for "Application" filter
-	When User is deselect "Installed on device" in Association
-	When User select "Not installed on device" in Association
+	And User is deselect "Installed on device" in Association
+	And User select "Not installed on device" in Association
 	And User clicks Save filter button
 	Then "16,281" rows are displayed in the agGrid
 	When User have reset all filters
-	When User add Advanced "Application" filter where type is "Equals" with following Lookup Value and Association:
+	And User add Advanced "Application" filter where type is "Equals" with following Lookup Value and Association:
 	| SelectedValues  | Association    |
 	| ACD Display 3.4 | Used on device |
 	Then message 'No devices found' is displayed to the user
 	When User click Edit button for "Application" filter
-	When User is deselect "Used on device" in Association
-	When User select "Not used on device" in Association
+	And User is deselect "Used on device" in Association
+	And User select "Not used on device" in Association
 	And User clicks Save filter button
 	Then "17,225" rows are displayed in the agGrid
