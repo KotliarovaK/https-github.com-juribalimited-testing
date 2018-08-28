@@ -1566,8 +1566,8 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_FiltersFeature
             table67.AddRow(new string[] {
                         "7zip (2015)",
                         "Entitled to device"});
-            testRunner.When("User add \"Application\" filter where type is \"Equals\" with following Lookup Value " +
-                    "and Association:", ((string)(null)), table67, "When ");
+            testRunner.When("User add Advanced \"Application\" filter where type is \"Equals\" with following Look" +
+                    "up Value and Association:", ((string)(null)), table67, "When ");
             testRunner.Then("\"Application\" filter is added to the list", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
             testRunner.Then("\"11\" rows are displayed in the agGrid", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
             testRunner.Then("\"(Application = 7zip (2015) ASSOCIATION = (\"entitled to device\"))\" text is displa" +
@@ -2552,23 +2552,23 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_FiltersFeature
             testRunner.When("User clicks the Filters button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
             testRunner.Then("Filters panel is displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
             TechTalk.SpecFlow.Table table85 = new TechTalk.SpecFlow.Table(new string[] {
-                        "Values",
+                        "Number",
                         "Association"});
             table85.AddRow(new string[] {
                         "2",
                         "Entitled to app"});
-            testRunner.When("User add \"User Key\" filter where type is \"Less than\" with following Data and Asso" +
-                    "ciation:", ((string)(null)), table85, "When ");
+            testRunner.When("User add \"User Key\" filter where type is \"Less than\" with following Number and As" +
+                    "sociation:", ((string)(null)), table85, "When ");
             testRunner.Then("Filter name is colored in the added filter info", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
             testRunner.And("Filter value is shown in bold in the added filter info", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
             TechTalk.SpecFlow.Table table86 = new TechTalk.SpecFlow.Table(new string[] {
-                        "Values",
+                        "Number",
                         "Association"});
             table86.AddRow(new string[] {
                         "8",
                         "Entitled to app"});
-            testRunner.When("User Add And \"User Key\" filter where type is \"Greater than\" with following Data a" +
-                    "nd Association:", ((string)(null)), table86, "When ");
+            testRunner.When("User Add And \"User Key\" filter where type is \"Greater than\" with following Number" +
+                    " and Association:", ((string)(null)), table86, "When ");
             testRunner.Then("Filter name is colored in the added filter info", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
             testRunner.And("Filter value is shown in bold in the added filter info", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
             testRunner.Then("\"User whose Key is less than 2 entitled to app\" is displayed in added filter info" +
