@@ -1036,8 +1036,6 @@ Scenario: EvergreenJnr_UsersList_CheckThatDataFromTheStaticListAreSavedInTheNewL
 	Then ColumnName is added to the list
 	| ColumnName |
 	| Enabled    |
-	#When User click on 'Username' column header
-	#Then data in table is sorted by 'Username' column in ascending order
 	When User clicks Save button on the list panel
 	When User selects Save as new list option
 	When User creates new custom list with "CustomList5588" name
