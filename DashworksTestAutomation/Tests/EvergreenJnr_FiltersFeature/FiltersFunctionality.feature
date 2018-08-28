@@ -869,7 +869,7 @@ Scenario: EvergreenJnr_ApplicationsList_CheckThatAdvancedUserFilterReturnsCorrec
 	Then "Applications" list should be displayed to the user
 	When User clicks the Filters button
 	Then Filters panel is displayed to the user
-	When User add "User" filter where type is "Equals" with following Lookup Value and Association:
+	When User add Advanced "User" filter where type is "Equals" with following Lookup Value and Association:
 	| SelectedValues | Association  |
 	| FR\APB5713645  | Has used app |
 	Then "1" rows are displayed in the agGrid
