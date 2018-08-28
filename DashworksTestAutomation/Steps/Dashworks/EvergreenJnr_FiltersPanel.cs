@@ -878,6 +878,13 @@ namespace DashworksTestAutomation.Steps.Dashworks
 
         #region Sections
 
+        [Then(@"""(.*)"" category is displayed on Filters panel")]
+        public void ThenCategoryIsDisplayedOnFiltersPanel(string categoryValue)
+        {
+            var page = _driver.NowAt<FiltersElement>();
+            Assert.IsTrue(page.GetFilterCategory(categoryValue).Displayed(), "Incorrect subcategories count for selected category");
+        }
+
         [Then(@"""(.*)"" section is not displayed in the Filter panel")]
         public void ThenSectionIsNotDisplayedInTheFilterPanel(string categoryName)
         {
