@@ -1006,7 +1006,7 @@ Scenario: EvergreenJnr_ApplicationsList_CheckThatDataIsDisplayedCorrectlyForAdva
 	Then "Applications" list should be displayed to the user
 	When User clicks the Filters button
 	Then Filters panel is displayed to the user
-	When User add "User" filter where type is "Does not equal" with following Lookup Value and Association:
+	When User add Advanced "User" filter where type is "Does not equal" with following Lookup Value and Association:
 	| SelectedValues | Association                         |
 	| FR\RZM6552051  | Owns a device which app was used on |
 	Then "100" rows are displayed in the agGrid
