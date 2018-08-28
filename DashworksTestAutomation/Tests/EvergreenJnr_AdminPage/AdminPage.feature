@@ -2817,6 +2817,7 @@ Scenario: EvergreenJnr_AdminPage_AddingBucketsToTheTeam
 	| Glasgow   |
 	| Frankfurt |
 	Then Success message is displayed and contains "The selected buckets have been added" text
+	Then There are no errors in the browser console
 	When User clicks the "ADD BUCKETS" Action button
 	When User expands "Windows 7 Migration (Computer Scheduled Project)" project to add bucket
 	And User adds following Objects from list
@@ -2824,6 +2825,7 @@ Scenario: EvergreenJnr_AdminPage_AddingBucketsToTheTeam
 	| Nottingham  |
 	| Southampton |
 	Then Success message is displayed and contains "The selected buckets have been added" text
+	Then There are no errors in the browser console
 	When User click on "Bucket" column header on the Admin page
 	Then data in table is sorted by "Bucket" column in ascending order on the Admin page
 	When User click on "Bucket" column header on the Admin page
