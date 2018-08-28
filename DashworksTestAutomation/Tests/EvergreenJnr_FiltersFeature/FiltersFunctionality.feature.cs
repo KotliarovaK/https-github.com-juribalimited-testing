@@ -2162,8 +2162,8 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_FiltersFeature
             table77.AddRow(new string[] {
                         "FR\\APB5713645",
                         "Has used app"});
-            testRunner.When("User add \"User\" filter where type is \"Equals\" with following Lookup Value and Ass" +
-                    "ociation:", ((string)(null)), table77, "When ");
+            testRunner.When("User add Advanced \"User\" filter where type is \"Equals\" with following Lookup Valu" +
+                    "e and Association:", ((string)(null)), table77, "When ");
             testRunner.Then("\"1\" rows are displayed in the agGrid", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
             testRunner.When("User click Edit button for \"User\" filter", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
             testRunner.When("User is deselect \"Has used app\" in Association", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
@@ -2468,8 +2468,8 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_FiltersFeature
             table83.AddRow(new string[] {
                         "FR\\RZM6552051",
                         "Owns a device which app was used on"});
-            testRunner.When("User add \"User\" filter where type is \"Does not equal\" with following Lookup Value" +
-                    " and Association:", ((string)(null)), table83, "When ");
+            testRunner.When("User add Advanced \"User\" filter where type is \"Does not equal\" with following Loo" +
+                    "kup Value and Association:", ((string)(null)), table83, "When ");
             testRunner.Then("\"100\" rows are displayed in the agGrid", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
             testRunner.Then("table content is present", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
             this.ScenarioCleanup();
@@ -2528,6 +2528,54 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_FiltersFeature
             testRunner.And("User select \"Not used on device\" in Association", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
             testRunner.And("User clicks Save filter button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
             testRunner.Then("\"17,225\" rows are displayed in the agGrid", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+            this.ScenarioCleanup();
+        }
+        
+        [NUnit.Framework.TestAttribute()]
+        [NUnit.Framework.Retry(2)]
+        [NUnit.Framework.DescriptionAttribute("EvergreenJnr_UsersList_CheckThatSavedStaticListIsNotShownInEditMode")]
+        [NUnit.Framework.CategoryAttribute("Evergreen")]
+        [NUnit.Framework.CategoryAttribute("UsersList")]
+        [NUnit.Framework.CategoryAttribute("EvergreenJnr_FilterFeature")]
+        [NUnit.Framework.CategoryAttribute("FilterFunctionality")]
+        [NUnit.Framework.CategoryAttribute("DAS12804")]
+        public virtual void EvergreenJnr_UsersList_CheckThatSavedStaticListIsNotShownInEditMode()
+        {
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("EvergreenJnr_UsersList_CheckThatSavedStaticListIsNotShownInEditMode", new string[] {
+                        "Evergreen",
+                        "UsersList",
+                        "EvergreenJnr_FilterFeature",
+                        "FilterFunctionality",
+                        "DAS12804"});
+            this.ScenarioSetup(scenarioInfo);
+            this.FeatureBackground();
+            testRunner.When("User clicks \"Users\" on the left-hand menu", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+            testRunner.Then("\"Users\" list should be displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+            testRunner.When("User clicks the Filters button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+            testRunner.Then("Filters panel is displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+            TechTalk.SpecFlow.Table table86 = new TechTalk.SpecFlow.Table(new string[] {
+                        "SelectedValues"});
+            table86.AddRow(new string[] {
+                        "AU"});
+            testRunner.When("User add \"Domain\" filter where type is \"Equals\" with added column and Lookup opti" +
+                    "on", ((string)(null)), table86, "When ");
+            testRunner.Then("\"Domain\" filter is added to the list", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+            testRunner.When("User clicks the Actions button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+            testRunner.Then("Actions panel is displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+            TechTalk.SpecFlow.Table table87 = new TechTalk.SpecFlow.Table(new string[] {
+                        "SelectedRowsName"});
+            table87.AddRow(new string[] {
+                        "AAO798996"});
+            table87.AddRow(new string[] {
+                        "AGC788194"});
+            table87.AddRow(new string[] {
+                        "AIU705098"});
+            testRunner.When("User select \"Username\" rows in the grid", ((string)(null)), table87, "When ");
+            testRunner.And("User selects \"Create static list\" in the Actions dropdown", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+            testRunner.And("User create static list with \"StaticList8543\" name", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+            testRunner.Then("\"StaticList8543\" list is displayed to user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+            testRunner.And("Edit List menu is not displayed", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+            testRunner.And("URL contains \"evergreen/#/users?$listid=\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
             this.ScenarioCleanup();
         }
     }
