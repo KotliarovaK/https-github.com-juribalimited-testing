@@ -2468,8 +2468,8 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_FiltersFeature
             table83.AddRow(new string[] {
                         "FR\\RZM6552051",
                         "Owns a device which app was used on"});
-            testRunner.When("User add \"User\" filter where type is \"Does not equal\" with following Lookup Value" +
-                    " and Association:", ((string)(null)), table83, "When ");
+            testRunner.When("User add Advanced \"User\" filter where type is \"Does not equal\" with following Loo" +
+                    "kup Value and Association:", ((string)(null)), table83, "When ");
             testRunner.Then("\"100\" rows are displayed in the agGrid", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
             testRunner.Then("table content is present", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
             this.ScenarioCleanup();

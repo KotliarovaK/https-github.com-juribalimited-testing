@@ -694,7 +694,7 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_ActionsPanel
             table25.AddRow(new string[] {
                         "AKX995383"});
             table25.AddRow(new string[] {
-                        "AAD1011948"});
+                        "ADC714277"});
             testRunner.When("User select \"Username\" rows in the grid", ((string)(null)), table25, "When ");
             testRunner.And("User selects \"Bulk update\" in the Actions dropdown", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
             testRunner.And("User selects \"Update request type\" Bulk Update Type on Action panel", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
@@ -713,7 +713,7 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_ActionsPanel
             testRunner.Then("\"User; Maternity\" content is displayed in \"Windows7Mi: Request Type\" column", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
             testRunner.When("User perform search by \"AKX995383\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
             testRunner.Then("\"User; Maternity\" content is displayed in \"Windows7Mi: Request Type\" column", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-            testRunner.When("User perform search by \"AAD1011948\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+            testRunner.When("User perform search by \"ADC714277\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
             testRunner.Then("\"User; Maternity\" content is displayed in \"Windows7Mi: Request Type\" column", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
             this.ScenarioCleanup();
         }

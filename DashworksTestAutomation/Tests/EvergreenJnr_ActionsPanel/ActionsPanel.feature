@@ -342,7 +342,7 @@ Scenario: EvergreenJnr_UsersList_ChecksThatRequestTypeIsUpdatedCorrectlyOnUsersP
 	| SelectedRowsName |
 	| FMN5805290       |
 	| AKX995383        |
-	| AAD1011948       |
+	| ADC714277       |
 	And User selects "Bulk update" in the Actions dropdown
 	And User selects "Update request type" Bulk Update Type on Action panel
 	And User selects "Windows 7 Migration (Computer Scheduled Project)" Project on Action panel
@@ -357,7 +357,7 @@ Scenario: EvergreenJnr_UsersList_ChecksThatRequestTypeIsUpdatedCorrectlyOnUsersP
 	Then "User; Maternity" content is displayed in "Windows7Mi: Request Type" column
 	When User perform search by "AKX995383"
 	Then "User; Maternity" content is displayed in "Windows7Mi: Request Type" column
-	When User perform search by "AAD1011948"
+	When User perform search by "ADC714277"
 	Then "User; Maternity" content is displayed in "Windows7Mi: Request Type" column
 
 @Evergreen @Applications @EvergreenJnr_ActionsPanel @DAS12863
