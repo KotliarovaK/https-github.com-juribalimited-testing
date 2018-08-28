@@ -763,7 +763,7 @@ Scenario: EvergreenJnr_ApplicationsList_ChecksThatListDetailsIsLoadedCorrectlyAf
 	When User clicks "Applications" on the left-hand menu
 	Then "Applications" list should be displayed to the user
 	When User click on 'Application' column header
-	When User create dynamic list with "DynamicList13066" name on "Applications" page
+	And User create dynamic list with "DynamicList13066" name on "Applications" page
 	Then "DynamicList13066" list is displayed to user
 	When User clicks the List Details button
 	Then List details panel is displayed to the user
@@ -773,15 +773,15 @@ Scenario: EvergreenJnr_ApplicationsList_ChecksThatListDetailsIsLoadedCorrectlyAf
 	Then form container is displayed to the user
 	When User selects the "Administrator" user for sharing
 	And User select "Edit" in Select Access dropdown
-	When User clicks the "ADD USER" Action button
-	When User clicks the "ADD USER" Action button
-	When User clicks the Columns button
+	And User clicks the "ADD USER" Action button
+	And User clicks the "ADD USER" Action button
+	And User clicks the Columns button
 	Then Columns panel is displayed to the user
 	When User clicks the List Details button
 	Then List details panel is displayed to the user
-	Then There are no errors in the browser console
-	Then "Administrator" Sharing user is displayed correctly
-	Then form container is not displayed to the user
+	And There are no errors in the browser console
+	And "Administrator" Sharing user is displayed correctly
+	And form container is not displayed to the user
 	When User clicks the "ADD USER" Action button
-	When User clicks the "CANCEL" Action button
+	And User clicks the "CANCEL" Action button
 	Then User list for sharing is not displayed
