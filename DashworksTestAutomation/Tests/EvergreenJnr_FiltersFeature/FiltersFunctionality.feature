@@ -1037,3 +1037,26 @@ Scenario: EvergreenJnr_DevicesList_CheckThatApplicationFilterWorksCorrectlyForDi
 	And User select "Not used on device" in Association
 	And User clicks Save filter button
 	Then "17,225" rows are displayed in the agGrid
+
+@Evergreen @UsersList @EvergreenJnr_FilterFeature @FilterFunctionality @DAS12804
+Scenario: EvergreenJnr_UsersList_CheckThatSavedStaticListIsNotShownInEditMode
+	When User clicks "Users" on the left-hand menu
+	Then "Users" list should be displayed to the user
+	When User clicks the Filters button
+	Then Filters panel is displayed to the user
+	When User add "Domain" filter where type is "Equals" with added column and Lookup option
+	| SelectedValues |
+	| AU             |
+	Then "Domain" filter is added to the list
+	When  User clicks the Actions button
+	Then Actions panel is displayed to the user
+	When User select "Username" rows in the grid
+	| SelectedRowsName |
+	| AAO798996        |
+	| AGC788194        |
+	| AIU705098        |
+	And User selects "Create static list" in the Actions dropdown
+	And User create static list with "StaticList8543" name
+	Then "StaticList8543" list is displayed to user
+	And Edit List menu is not displayed
+	And URL contains "evergreen/#/users?$listid="
