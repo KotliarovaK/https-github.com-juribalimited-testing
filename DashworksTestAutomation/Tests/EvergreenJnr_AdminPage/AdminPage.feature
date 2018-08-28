@@ -2817,6 +2817,7 @@ Scenario: EvergreenJnr_AdminPage_AddingBucketsToTheTeam
 	| Glasgow   |
 	| Frankfurt |
 	Then Success message is displayed and contains "The selected buckets have been added" text
+	Then There are no errors in the browser console
 	When User clicks the "ADD BUCKETS" Action button
 	When User expands "Windows 7 Migration (Computer Scheduled Project)" project to add bucket
 	And User adds following Objects from list
@@ -2824,6 +2825,7 @@ Scenario: EvergreenJnr_AdminPage_AddingBucketsToTheTeam
 	| Nottingham  |
 	| Southampton |
 	Then Success message is displayed and contains "The selected buckets have been added" text
+	Then There are no errors in the browser console
 	When User click on "Bucket" column header on the Admin page
 	Then data in table is sorted by "Bucket" column in ascending order on the Admin page
 	When User click on "Bucket" column header on the Admin page
@@ -3012,7 +3014,7 @@ Scenario: EvergreenJnr_AdminPage_AddingDevicesFromBuckets
 	Then Success message is displayed and contains "The selected devices have been added to the selected bucket" text
 	And There are no errors in the browser console
 	Then data in table is sorted by "Hostname" column in ascending order by default on the Admin page
-	Then Counter shows "17,225" found rows
+	#Then Counter shows "17,225" found rows
 	When User click on "Hostname" column header on the Admin page
 	Then data in table is sorted by "Hostname" column in ascending order on the Admin page
 	When User click on "Hostname" column header on the Admin page
@@ -3040,7 +3042,7 @@ Scenario: EvergreenJnr_AdminPage_AddingDevicesFromBuckets
 	When User clicks Reset Filters button on the Admin page
 	When User clicks String Filter button for "Type" column on the Admin page
 	When User selects "Laptop" checkbox from String Filter on the Admin page
-	Then Counter shows "13,417" found rows
+	#Then Counter shows "13,417" found rows
 	When User clicks Reset Filters button on the Admin page
 	When User selects all rows on the grid
 	When User clicks on Actions button
@@ -3074,7 +3076,7 @@ Scenario: EvergreenJnr_AdminPage_AddingUsersFromBuckets
 	And There are no errors in the browser console
 	And There are no errors in the browser console
 	Then data in table is sorted by "Username" column in ascending order by default on the Admin page
-	Then Counter shows "41,339" found rows
+	#Then Counter shows "41,339" found rows
 	#When User click on "Username" column header on the Admin page
 	#Then data in table is sorted by "Username" column in ascending order on the Admin page
 	#When User click on "Username" column header on the Admin page
@@ -3133,7 +3135,7 @@ Scenario: EvergreenJnr_AdminPage_AddingMailboxesFromBuckets
 	When User clicks the "ADD MAILBOXES" Action button
 	Then Success message is displayed and contains "The selected mailboxes have been added to the selected bucket" text
 	Then data in table is sorted by "Email Address (Primary)" column in ascending order by default on the Admin page
-	Then Counter shows "14,784" found rows
+	#Then Counter shows "14,784" found rows
 	When User click on "Email Address (Primary)" column header on the Admin page
 	Then data in table is sorted by "Email Address (Primary)" column in ascending order on the Admin page
 	When User click on "Email Address (Primary)" column header on the Admin page
@@ -3265,3 +3267,29 @@ Scenario: EvergreenJnr_AdminPage_CheckThatOnlyFilteredListObjectsAreUsedAsAScope
 	When User selects "Scope Changes" tab on the Project details page
 	Then "Devices to add (0 of 222 selected)" is displayed to the user in the Project Scope Changes section
 	Then There are no errors in the browser console
+
+@Evergreen @Admin @EvergreenJnr_AdminPage @AdminPage @DAS13096 @Delete_Newly_Created_Project @Projects
+Scenario: EvergreenJnr_AdminPage_ChecksThatProjectNameEditedInSeniorIsUpdatedInAdminTab
+	When User clicks Admin on the left-hand menu
+	Then Admin page should be displayed to the user
+	When User clicks "Projects" link on the Admin page
+	Then "Projects" page should be displayed to the user
+	When User clicks the "CREATE PROJECT" Action button
+	Then "Create Project" page should be displayed to the user
+	When User enters "Project13096" in the Project Name field
+	And User selects "All Devices" in the Scope Project dropdown
+	And User clicks Create button on the Create Project page
+	Then Success message is displayed and contains "Your project has been created" text
+	When User clicks "Projects" on the left-hand menu
+	Then "Projects Home" page is displayed to the user
+	When User navigate to "Project13096" Project
+	Then Project with "Project13096" name is displayed correctly
+	And "Manage Project Details" page is displayed to the user
+	When User update Project Name on "Project13096 upd"
+	Then Success message is displayed with "Project was successfully updated" text
+	When User navigate to Evergreen link
+	And User clicks Admin on the left-hand menu
+	Then Admin page should be displayed to the user
+	When User clicks "Projects" link on the Admin page
+	Then "Projects" page should be displayed to the user
+	And created Project with "Project13096 upd" name is displayed correctly
