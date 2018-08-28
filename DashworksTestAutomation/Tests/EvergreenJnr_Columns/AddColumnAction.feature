@@ -183,3 +183,22 @@ Examples:
 	| Users        | User Key        |
 	| Applications | Application Key |
 	| Mailboxes    | Mailbox Key     |
+
+@Evergreen @Devices @EvergreenJnr_Columns @AddColumnAction @DAS13024
+Scenario: EvergreenJnr_DevicesList_ChecksThatGridIsDisplayedCorrectlyAfterAddingDeviceOwnerLdapAndComputerAdObjectLdapAttributeColumnToTheDevicesList
+	When User clicks "Devices" on the left-hand menu
+	Then "Devices" list should be displayed to the user
+	When User clicks the Columns button
+	Then Columns panel is displayed to the user
+	When ColumnName is entered into the search box and the selection is clicked
+	| ColumnName             |
+	| Owner accountexpires   |
+	| frscomputerreferencebl |
+	Then ColumnName is added to the list
+	| ColumnName             |
+	| Owner accountexpires   |
+	| frscomputerreferencebl |
+	Then "17,225" rows are displayed in the agGrid
+	Then full list content is displayed to the user
+	Then There are no errors in the browser console
+	Then table content is present

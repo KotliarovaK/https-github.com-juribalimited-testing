@@ -1163,3 +1163,20 @@ Examples:
 	| User SID      | Begins with | S-1-5-99      | User whose SID begins with S-1-5-99 has used app       |
 	| User GUID     | Begins with | 180a2898-9ab2 | User whose GUID begins with 180a2898-9ab2 has used app |
 	| User Username | Contains    | ZDP           | User whose Username contains ZDP has used app          |
+
+@Evergreen @Devices @Evergreen_FiltersFeature @FiltersDisplay @DAS13024 @Delete_Newly_Created_List
+Scenario: EvergreenJnr_DevicesList_ChecksThatGridIsDisplayedCorrectlyAfterAddingDeviceOwnerLdapAndComputerAdObjectLdapAttributeFilterToTheDevicesList
+	When User clicks "Devices" on the left-hand menu
+	Then "Devices" list should be displayed to the user
+	When User clicks the Filters button
+	Then Filters panel is displayed to the user
+	When User add "Owner accountexpires" filter where type is "Empty" without added column and following value:
+	| Values |
+	| 123    |
+	When User add "admincount" filter where type is "Empty" without added column and following value:
+	| Values |
+	| 123    |
+	Then "17,225" rows are displayed in the agGrid
+	Then full list content is displayed to the user
+	Then There are no errors in the browser console
+	Then table content is present
