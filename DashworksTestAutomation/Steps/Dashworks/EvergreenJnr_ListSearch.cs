@@ -26,7 +26,7 @@ namespace DashworksTestAutomation.Steps.Dashworks
             {
                 listPageElement.TableSearchTextbox.Clear();
                 _driver.WaitForDataLoading();
-                listPageElement.TableSearchTextbox.SendKeys(searchTerm);
+                listPageElement.TableSearchTextbox.SendkeysWithDelay(searchTerm);
                 _driver.WaitForDataLoading();
             }
             else
