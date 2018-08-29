@@ -162,6 +162,20 @@ namespace DashworksTestAutomation.Steps.Dashworks
             Assert.AreEqual(buttonState, "true", $"{buttonName} Button state is incorrect");
         }
 
+        [Then(@"Objects to add panel is disabled")]
+        public void ThenObjectsToAddPanelIsDisabled()
+        {
+            var component = _driver.NowAt<BaseDashboardPage>();
+            Assert.IsTrue(component.DisabledObjectsToAddPanel.Displayed(), "Objects to add panel is active");
+        }
+
+        [Then(@"Objects to add panel is active")]
+        public void ThenObjectsToAddPanelIsActive()
+        {
+            var component = _driver.NowAt<BaseDashboardPage>();
+            Assert.IsTrue(component.ActiveObjectsToAddPanel.Displayed(), "Objects to add panel is active");
+        }
+
         [Then(@"Warning message with ""(.*)"" text is displayed on Action panel")]
         public void ThenWarningMessageWithTextIsDisplayedOnActionPanel(string textMessage)
         {

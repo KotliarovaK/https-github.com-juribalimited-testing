@@ -1084,8 +1084,25 @@ Scenario: EvergreenJnr_AdminPage_CheckingThatRedBannerWithOkMessageIsNotDisplaye
 	| AAC860150 (Kerrie D. Ruiz) |
 	And User clicks the "UPDATE ALL CHANGES" Action button
 	Then Warning message with "1 device will be added, 1 user will be added, 1 application will be added" text is displayed on the Admin page
+	Then Objects to add panel is disabled
+	When User clicks "Applications" tab in the Project Scope Changes section
+	Then Objects to add panel is disabled
+	When User clicks "Devices" tab in the Project Scope Changes section
+	Then Objects to add panel is disabled
 	When User clicks the "UPDATE PROJECT" Action button
 	Then Success message is displayed and contains "3 objects queued for onboarding, 0 objects offboarded" text
+	Then "UPDATE ALL CHANGES" Action button is disabled
+	Then "UPDATE DEVICE CHANGES" Action button is disabled
+	And "Devices to add (0 of 17224 selected)" is displayed to the user in the Project Scope Changes section
+	Then Objects to add panel is active
+	When User clicks "Applications" tab in the Project Scope Changes section
+	Then "UPDATE APPLICATION CHANGES" Action button is disabled
+	And "Applications to add (0 of 2128 selected)" is displayed to the user in the Project Scope Changes section
+	Then Objects to add panel is active
+	When User clicks "Users" tab in the Project Scope Changes section
+	Then "UPDATE USER CHANGES" Action button is disabled
+	And "Users to add (0 of 14630 selected)" is displayed to the user in the Project Scope Changes section
+	Then Objects to add panel is active
 	And There are no errors in the browser console
 
 @Evergreen @Admin @EvergreenJnr_AdminPage @AdminPage @DAS12796 @DAS12872 @Delete_Newly_Created_List @Delete_Newly_Created_Project @Project_Creation_and_Scope @Projects
@@ -3096,7 +3113,7 @@ Scenario: EvergreenJnr_AdminPage_AddingDevicesFromBuckets
 	When User clicks Reset Filters button on the Admin page
 	When User clicks String Filter button for "Type" column on the Admin page
 	When User selects "Laptop" checkbox from String Filter on the Admin page
-	#Then Counter shows "13,417" found rows
+	Then Counter shows "13,417" found rows
 	When User clicks Reset Filters button on the Admin page
 	When User selects all rows on the grid
 	When User clicks on Actions button
