@@ -416,7 +416,7 @@ Scenario: EvergreenJnr_MailboxesList_ChecksThatRequestTypeIsUpdatedCorrectlyOnMa
 	When User select "Email Address" rows in the grid
 	| SelectedRowsName                 |
 	| 06C02CDC00044A7DB59@bclabs.local |
-	| 0A491C42879549A4936@bclabs.local |
+	| 10A919CA1E7641E08E7@bclabs.local |
 	| 0C1785B7E6954139AC5@bclabs.local |
 	And User selects "Bulk update" in the Actions dropdown
 	And User selects "Update request type" Bulk Update Type on Action panel
@@ -430,7 +430,7 @@ Scenario: EvergreenJnr_MailboxesList_ChecksThatRequestTypeIsUpdatedCorrectlyOnMa
 	When User refreshes agGrid
 	And User perform search by "06C02CDC00044A7DB59@bclabs.local"
 	Then "Personal Mailbox - EA" content is displayed in "EmailMigra: Request Type" column
-	When User perform search by "0A491C42879549A4936@bclabs.local"
+	When User perform search by "10A919CA1E7641E08E7@bclabs.local"
 	Then "Personal Mailbox - EA" content is displayed in "EmailMigra: Request Type" column
 	When User perform search by "0C1785B7E6954139AC5@bclabs.local"
 	Then "Personal Mailbox - EA" content is displayed in "EmailMigra: Request Type" column
