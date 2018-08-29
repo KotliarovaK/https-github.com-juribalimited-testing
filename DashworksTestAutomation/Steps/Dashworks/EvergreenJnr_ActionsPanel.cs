@@ -83,7 +83,22 @@ namespace DashworksTestAutomation.Steps.Dashworks
             var action = _driver.NowAt<BaseDashboardPage>();
             action.ProjectField.Clear();
             action.ProjectField.SendKeys(projectName);
-            action.GetOptionOnActionsPanelByName(projectName).Click();
+            action.ProjectSection.Click();
+            //action.GetOptionOnActionsPanelByName(projectName).Click();
+        }
+
+        [Then(@"""(.*)"" Project is displayed on Action panel")]
+        public void ThenProjectIsDisplayedOnActionPanel(string projectName)
+        {
+            var action = _driver.NowAt<BaseDashboardPage>();
+            Assert.AreEqual(projectName, action.ProjectField.GetAttribute("value"), "Project is not displayed");
+        }
+
+        [When(@"User clears Project field")]
+        public void WhenUserClearsProjectField()
+        {
+            var action = _driver.NowAt<BaseDashboardPage>();
+            action.ProjectField.Clear();
         }
 
         [Then(@"the following Projects are displayed in opened DLL on Action panel:")]

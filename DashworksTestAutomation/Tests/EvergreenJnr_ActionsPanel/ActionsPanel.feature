@@ -521,3 +521,71 @@ Scenario: EvergreenJnr_DevicesList_ChecksThatProjectNamesAreDisplayedCorrectlyIn
 	| Windows7Mi: Portal Self Service                             |
 	| Windows7Mi: Post Migration                                  |
 	| Windows7Mi: Pre-Migration                                   |
+
+@Evergreen @Devices @EvergreenJnr_ActionsPanel @DAS13142
+Scenario: EvergreenJnr_DevicesList_CheckThatProjectFieldIsDisplayedCorrectlyAfterClearingOnDevicesPage
+	When User clicks "Devices" on the left-hand menu
+	Then "Devices" list should be displayed to the user
+	When User clicks the Actions button
+	Then Actions panel is displayed to the user
+	When User select "Hostname" rows in the grid
+	| SelectedRowsName |
+	| 00KLL9S8NRF0X6   |
+	And User selects "Bulk update" in the Actions dropdown
+	And User selects "Update request type" Bulk Update Type on Action panel
+	And User selects "Barry's User Project" Project on Action panel
+	And User selects "Desktop Replacement" Request Type on Action panel
+	When User clears Project field
+	And User clicks on Action drop-down
+	Then "Barry's User Project" Project is displayed on Action panel
+
+@Evergreen @Users @EvergreenJnr_ActionsPanel @DAS13142
+Scenario: EvergreenJnr_UsersList_CheckThatProjectFieldIsDisplayedCorrectlyAfterClearingOnUsersPage
+	When User clicks "Users" on the left-hand menu
+	Then "Users" list should be displayed to the user
+	When User clicks the Actions button
+	Then Actions panel is displayed to the user
+	When User select "Username" rows in the grid
+	| SelectedRowsName    |
+	| 002B5DC7D4D34D5C895 |
+	And User selects "Bulk update" in the Actions dropdown
+	And User selects "Update request type" Bulk Update Type on Action panel
+	And User selects "Havoc (Big Data)" Project on Action panel
+	And User selects "User Request Type 2" Request Type on Action panel
+	When User clears Project field
+	And User clicks on Action drop-down
+	Then "Havoc (Big Data)" Project is displayed on Action panel
+
+@Evergreen @Applications @EvergreenJnr_ActionsPanel @DAS13142
+Scenario: EvergreenJnr_ApplicationsList_CheckThatProjectFieldIsDisplayedCorrectlyAfterClearingOnApplicationsPage
+	When User clicks "Applications" on the left-hand menu
+	Then "Applications" list should be displayed to the user
+	When User clicks the Actions button
+	Then Actions panel is displayed to the user
+	When User select "Application" rows in the grid
+	| SelectedRowsName                         |
+	| 0047 - Microsoft Access 97 SR-2 Francais |
+	And User selects "Bulk update" in the Actions dropdown
+	And User selects "Update request type" Bulk Update Type on Action panel
+	And User selects "User Scheduled Test (Jo)" Project on Action panel
+	And User selects "Request Type A" Request Type on Action panel
+	When User clears Project field
+	And User clicks on Action drop-down
+	Then "User Scheduled Test (Jo)" Project is displayed on Action panel
+
+@Evergreen @Mailboxes @EvergreenJnr_ActionsPanel @DAS13142
+Scenario: EvergreenJnr_MailboxesList_CheckThatProjectFieldIsDisplayedCorrectlyAfterClearingOnMailboxesPage
+	When User clicks "Mailboxes" on the left-hand menu
+	Then "Mailboxes" list should be displayed to the user
+	When User clicks the Actions button
+	Then Actions panel is displayed to the user
+	When User select "Email Address" rows in the grid
+	| SelectedRowsName                 |
+	| 00A5B910A1004CF5AC4@bclabs.local |
+	And User selects "Bulk update" in the Actions dropdown
+	And User selects "Update request type" Bulk Update Type on Action panel
+	And User selects "Email Migration" Project on Action panel
+	And User selects "Personal Mailbox - VIP" Request Type on Action panel
+	When User clears Project field
+	And User clicks on Action drop-down
+	Then "Email Migration" Project is displayed on Action panel
