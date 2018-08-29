@@ -49,7 +49,7 @@ Scenario: EvergreenJnr_AllLists_CheckSearchFilterAndTableContentDuringNavigation
 	And Search field is empty
 	And User enters SearchCriteria into the agGrid Search Box and the correct NumberOfRows are returned
 	| SearchCriteria | NumberOfRows |
-	| Python          | 7           |
+	| Python         | 7            |
 	When User clicks "Mailboxes" on the left-hand menu
 	Then "Mailboxes" list should be displayed to the user
 	And "14,784" rows are displayed in the agGrid
