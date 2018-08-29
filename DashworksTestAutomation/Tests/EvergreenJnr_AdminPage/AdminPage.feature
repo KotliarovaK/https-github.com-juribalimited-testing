@@ -2990,6 +2990,59 @@ Scenario: EvergreenJnr_AdminPage_CreatingDefaultBucket
 	Then Success message The "Unassigned" bucket has been updated is displayed on the Buckets page
 	And Delete "NewBucket5" Bucket in the Administration
 
+@Evergreen @Admin @EvergreenJnr_AdminPage @AdminPage @Buckets @DAS12939
+Scenario: EvergreenJnr_AdminPage_CheckDefaultSortOrderOfBucketsAfterCreateOrUpdateOrDeleteAction
+	When User clicks Admin on the left-hand menu
+	And User clicks "Buckets" link on the Admin page
+	And User creates following buckets in Administration:
+	| Buckets | Teams    |
+	| 1ba     | Admin IT |
+	| 2ab     | K-Team   |
+	| aaa     | Admin IT |
+	| aab     | I-Team   |
+	| aba     | Admin IT |
+	| waa     | IB Team  |
+	Then Then user sees Buckets in next default sort order:
+	| Buckets    |
+	| 1ba        |
+	| 2ab        |
+	| aaa        |
+	| aab        |
+	| aba        |
+	| Unassigned |
+	| waa        |
+	When User enters "1ba" text in the Search field for "Bucket" column
+	And User clicks content from "Bucket" column
+	And User clicks "Bucket Settings" tab
+	And User enters "a1ba" in the Bucket Name field
+	And User clicks the "UPDATE BUCKET" Action button
+	Then Then user sees Buckets in next default sort order:
+	| Buckets    |
+	| 2ab        |
+	| a1ba       |
+	| aaa        |
+	| aab        |
+	| aba        |
+	| Unassigned |
+	| waa        |
+	When User deletes "aab" Bucket in the Administration
+	And User clicks refresh button in the browser
+	Then Then user sees Buckets in next default sort order:
+	| Buckets    |
+	| 2ab        |
+	| a1ba       |
+	| aaa        |
+	| aba        |
+	| Unassigned |
+	| waa        |
+	And Delete following Buckets in the Administration:
+	| Buckets    |
+	| 2ab        |
+	| a1ba       |
+	| aaa        |
+	| aba        |
+	| waa        |
+
 @Evergreen @Admin @EvergreenJnr_AdminPage @AdminPage @DAS12999 @Buckets
 Scenario: EvergreenJnr_AdminPage_AddingDevicesFromBuckets
 	When User clicks Admin on the left-hand menu

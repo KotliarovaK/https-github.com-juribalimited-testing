@@ -71,6 +71,7 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_DynamicLists
         [NUnit.Framework.TestAttribute()]
         [NUnit.Framework.Retry(2)]
         
+        
         [NUnit.Framework.DescriptionAttribute("EvergreenJnr_UsersList_CheckThatNotOwnerUsersDontHavePermissionsToUpdateDynamicLi" +
             "st")]
         [NUnit.Framework.CategoryAttribute("Evergreen")]
@@ -122,6 +123,7 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_DynamicLists
         
         [NUnit.Framework.TestAttribute()]
         [NUnit.Framework.Retry(2)]
+        
         
         [NUnit.Framework.DescriptionAttribute("EvergreenJnr_UsersList_CheckThatAdminUserButNotOwnerIsNotAbleToDeleteList")]
         [NUnit.Framework.CategoryAttribute("Evergreen")]
