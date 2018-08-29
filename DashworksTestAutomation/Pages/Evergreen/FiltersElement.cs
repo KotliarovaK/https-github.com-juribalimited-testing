@@ -335,7 +335,7 @@ namespace DashworksTestAutomation.Pages.Evergreen
         public IWebElement GetFilterValue(string value)
         {
             var editFilterSelector =
-                $".//li[@aria-live='assertive']//span[text()='{value}']";
+                $".//li//span[text()='{value}']";
             return Driver.FindElement(By.XPath(editFilterSelector));
         }
 
