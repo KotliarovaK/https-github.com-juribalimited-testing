@@ -169,6 +169,14 @@ namespace DashworksTestAutomation.Steps.Dashworks
                 $"{filterName} is available in the search");
         }
 
+        [Then(@"""(.*)"" filter is presented in the filters list")]
+        public void ThenFilterIsPresentedInTheFiltersList(string filterName)
+        {
+            var filterElement = _driver.NowAt<FiltersElement>();
+            Assert.That(filterElement.CheckFilterAvailability(filterName), Is.True,
+                $"{filterName} is not available in the search");
+        }
+
         [When(@"User select ""(.*)"" Operator value")]
         public void WhenUserSelectOperatorValue(string operatorValue)
         {
