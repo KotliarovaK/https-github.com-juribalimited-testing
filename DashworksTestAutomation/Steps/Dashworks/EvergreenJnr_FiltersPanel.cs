@@ -541,6 +541,13 @@ namespace DashworksTestAutomation.Steps.Dashworks
             filterElement.GetFilterValue(value);
         }
 
+        [Then(@"User Description field is not displayed")]
+        public void ThenUserDescriptionFieldIsNotDisplayed()
+        {
+            var filterElement = _driver.NowAt<FiltersElement>();
+            Assert.IsFalse(filterElement.UserDescriptionField.Displayed(), "User Description field is visible");
+        }
+
         [When(@"User deletes the selected lookup filter ""(.*)"" value")]
         public void WhenUserDeletesTheSelectedLookupFilterValue(string filterValue)
         {
