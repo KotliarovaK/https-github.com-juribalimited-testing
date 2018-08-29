@@ -1614,7 +1614,7 @@ Scenario: EvergreenJnr_AdminPage_CheckThatScopePanelHaveCorrectlySizeWhenUsedLis
 	When User clicks the "CREATE PROJECT" Action button
 	Then "Create Project" page should be displayed to the user
 	When User clicks in the Scope field on the Admin page
-	Then Scope DDL have the "304" Height and the "658" Width
+	Then Scope DDL have the "658" Width
 
 @Evergreen @Admin @EvergreenJnr_AdminPage @AdminPage @DAS12349 @DAS12364 @DAS13199 @Delete_Newly_Created_List @Delete_Newly_Created_Project @Project_Creation_and_Scope @Projects
 Scenario: EvergreenJnr_AdminPage_CheckThat500ISEInvalidColumnNameIsNotDisplayedWhenUsedAppSavedListForFilteringDeviceList
@@ -2152,7 +2152,7 @@ Examples:
 	| All Mailboxes | Mailboxes | UPDATE MAILBOX CHANGES | 003F5D8E1A844B1FAA5@bclabs.local (Hunter, Melanie) | 1 mailbox will be added | 1 object queued for onboarding, 0 objects offboarded |
 	| All Devices   | Users     | UPDATE USER CHANGES    | ADC714277 (Dina Q. Knight)                         | 1 user will be added    | 1 object queued for onboarding, 0 objects offboarded |
 
-@Evergreen @Admin @EvergreenJnr_AdminPage @AdminPage @DAS12999 @DAS13199 @Projects @Delete_Newly_Created_Project
+@Evergreen @Admin @EvergreenJnr_AdminPage @AdminPage @DAS12999 @DAS13199 @DAS12781 @Projects @Delete_Newly_Created_Project
 Scenario: EvergreenJnr_AdminPage_ChangingBucketFromUseEvergreenBucketsToCloneEvergreenBuckets
 	When User clicks Admin on the left-hand menu
 	Then Admin page should be displayed to the user
@@ -2167,7 +2167,8 @@ Scenario: EvergreenJnr_AdminPage_ChangingBucketFromUseEvergreenBucketsToCloneEve
 	Then Success message is displayed and contains "Your project has been created" text
 	When User clicks newly created object link
 	And User clicks "Details" tab
-	And User selects "Use project buckets" in the Buckets Project dropdown
+	Then "Mailbox scoped project" is displayed in the disabled Project Type field
+	When User selects "Use project buckets" in the Buckets Project dropdown
 	And User clicks the "UPDATE" Action button
 	Then Success message is displayed and contains "The project details have been updated" text
 	And There are no errors in the browser console
@@ -2817,6 +2818,7 @@ Scenario: EvergreenJnr_AdminPage_AddingBucketsToTheTeam
 	| Glasgow   |
 	| Frankfurt |
 	Then Success message is displayed and contains "The selected buckets have been added" text
+	Then There are no errors in the browser console
 	When User clicks the "ADD BUCKETS" Action button
 	When User expands "Windows 7 Migration (Computer Scheduled Project)" project to add bucket
 	And User adds following Objects from list
@@ -2824,6 +2826,7 @@ Scenario: EvergreenJnr_AdminPage_AddingBucketsToTheTeam
 	| Nottingham  |
 	| Southampton |
 	Then Success message is displayed and contains "The selected buckets have been added" text
+	Then There are no errors in the browser console
 	When User click on "Bucket" column header on the Admin page
 	Then data in table is sorted by "Bucket" column in ascending order on the Admin page
 	When User click on "Bucket" column header on the Admin page

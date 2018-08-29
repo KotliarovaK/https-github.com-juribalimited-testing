@@ -133,6 +133,9 @@ namespace DashworksTestAutomation.Pages.Evergreen
         [FindsBy(How = How.XPath, Using = ".//div[@id='content']//div[@class='empty-message ng-star-inserted']")]
         public IWebElement NoResultsFoundMessage { get; set; }
 
+        [FindsBy(How = How.XPath, Using = ".//input[@placeholder='User Description']")]
+        public IWebElement UserDescriptionField { get; set; }
+
         public override List<By> GetPageIdentitySelectors()
         {
             Driver.WaitForDataLoading();
@@ -335,7 +338,7 @@ namespace DashworksTestAutomation.Pages.Evergreen
         public IWebElement GetFilterValue(string value)
         {
             var editFilterSelector =
-                $".//li[@aria-live='assertive']//span[text()='{value}']";
+                $".//li//span[text()='{value}']";
             return Driver.FindElement(By.XPath(editFilterSelector));
         }
 
@@ -410,6 +413,13 @@ namespace DashworksTestAutomation.Pages.Evergreen
         public IWebElement GetOpenedFilter(string filterName)
         {
             var selector = By.XPath($"//div[contains(@class, 'filterAddPanel')]/..//span[text()='{filterName}']");
+            Driver.WaitWhileControlIsNotDisplayed(selector);
+            return Driver.FindElement(selector);
+        }
+
+        public IWebElement GetFilterCategory(string filterCategoryName)
+        {
+            var selector = By.XPath($".//div[contains(@class,'filter-category-label blue-color bold-text')][text()='{filterCategoryName}']/ancestor::div[@class='filter-category ng-star-inserted']");
             Driver.WaitWhileControlIsNotDisplayed(selector);
             return Driver.FindElement(selector);
         }

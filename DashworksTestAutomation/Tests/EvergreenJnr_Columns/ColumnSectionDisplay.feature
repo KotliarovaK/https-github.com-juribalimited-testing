@@ -589,7 +589,7 @@ Scenario: EvergreenJnr_DevicesList_TheSelectedColumnsCategoryIsDisplayedAfterAdd
 	| Operating System   |
 	| Owner Display Name |
 
-@Evergreen @Devices @EvergreenJnr_Columns @ColumnOrder @DAS12861
+@Evergreen @Devices @EvergreenJnr_Columns @ColumnSectionOrder @ColumnSectionDisplay @DAS12861
 Scenario: EvergreenJnr_DevicesList_ChecksThatSubcategoriesOnFiltersPanelAreDisplayedInAlphabeticalOrder
 	When User clicks "Devices" on the left-hand menu
 	Then "Devices" list should be displayed to the user
@@ -619,7 +619,7 @@ Scenario: EvergreenJnr_DevicesList_ChecksThatSubcategoriesOnFiltersPanelAreDispl
 	When User clicks Add New button on the Filter panel
 	Then the subcategories are displayed for open category in alphabetical order on Filters panel
 
-@Evergreen @Applications @EvergreenJnr_Columns @ColumnOrder @DAS12861
+@Evergreen @Applications @EvergreenJnr_Columns @ColumnSectionOrder @ColumnSectionDisplay @DAS12861
 Scenario: EvergreenJnr_ApplicationsList_ChecksThatSubcategoriesOnColumnsPanelAreDisplayedInAlphabeticalOrderAfterAddingFilters
 	When User clicks "Applications" on the left-hand menu
 	Then "Applications" list should be displayed to the user
@@ -650,7 +650,7 @@ Scenario: EvergreenJnr_ApplicationsList_ChecksThatSubcategoriesOnColumnsPanelAre
 	| Application Key |
 	| Inventory Site  |
 
-@Evergreen @Users @EvergreenJnr_Columns @ColumnOrder @DAS12861
+@Evergreen @Users @EvergreenJnr_Columns @ColumnSectionOrder @ColumnSectionDisplay @DAS12861
 Scenario: EvergreenJnr_UsersList_ChecksThatSubcategoriesOnColumnsPanelAreDisplayedInAlphabeticalOrderAfterAddingDepartmentFilters
 	When User clicks "Users" on the left-hand menu
 	Then "Users" list should be displayed to the user
@@ -712,3 +712,31 @@ Scenario: EvergreenJnr_UsersList_ChecksThatSubcategoriesOnColumnsPanelAreDisplay
 	| Department Code      |
 	| Department Full Path |
 	| Department Name      |
+
+@Evergreen @AllLists @EvergreenJnr_Columns @ColumnSectionDisplay @DAS12922
+Scenario: EvergreenJnr_AllLists_LocationAndUserFiltersEqualsOnUsersAndApplicationsTabs	
+	When User clicks "Users" on the left-hand menu
+	Then "Users" list should be displayed to the user
+	When User clicks the Columns button
+	Then Columns panel is displayed to the user
+	When ColumnName is entered into the search box and the selection is clicked
+	| ColumnName       |
+	| App Count (Used) |
+	When User clicks the Columns button
+	Then Columns panel is displayed to the user
+	When User removes "Username" column by Column panel
+	When User removes "Domain" column by Column panel
+	When User removes "Display Name" column by Column panel
+	When User removes "Distinguished Name" column by Column panel
+	When User clicks the Filters button
+	Then Filters panel is displayed to the user
+	When User clicks Add New button on the Filter panel
+	Then "User (22)" category is displayed on Filters panel
+	Then "Location (8)" category is displayed on Filters panel
+	When User clicks "Applications" on the left-hand menu
+	Then "Applications" list should be displayed to the user
+	When User clicks the Filters button
+	Then Filters panel is displayed to the user
+	When User clicks Add New button on the Filter panel
+	Then "User (24)" category is displayed on Filters panel
+	Then "User Location (8)" category is displayed on Filters panel

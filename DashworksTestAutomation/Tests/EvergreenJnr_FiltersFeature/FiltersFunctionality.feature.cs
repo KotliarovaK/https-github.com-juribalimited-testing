@@ -2539,6 +2539,7 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_FiltersFeature
         [NUnit.Framework.CategoryAttribute("EvergreenJnr_FilterFeature")]
         [NUnit.Framework.CategoryAttribute("FilterFunctionality")]
         [NUnit.Framework.CategoryAttribute("DAS12804")]
+        [NUnit.Framework.CategoryAttribute("Delete_Newly_Created_List")]
         public virtual void EvergreenJnr_UsersList_CheckThatSavedStaticListIsNotShownInEditMode()
         {
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("EvergreenJnr_UsersList_CheckThatSavedStaticListIsNotShownInEditMode", new string[] {
@@ -2546,7 +2547,8 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_FiltersFeature
                         "UsersList",
                         "EvergreenJnr_FilterFeature",
                         "FilterFunctionality",
-                        "DAS12804"});
+                        "DAS12804",
+                        "Delete_Newly_Created_List"});
             this.ScenarioSetup(scenarioInfo);
             this.FeatureBackground();
             testRunner.When("User clicks \"Users\" on the left-hand menu", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");

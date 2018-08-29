@@ -1302,7 +1302,8 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_Columns
         [NUnit.Framework.CategoryAttribute("Evergreen")]
         [NUnit.Framework.CategoryAttribute("Devices")]
         [NUnit.Framework.CategoryAttribute("EvergreenJnr_Columns")]
-        [NUnit.Framework.CategoryAttribute("ColumnOrder")]
+        [NUnit.Framework.CategoryAttribute("ColumnSectionOrder")]
+        [NUnit.Framework.CategoryAttribute("ColumnSectionDisplay")]
         [NUnit.Framework.CategoryAttribute("DAS12861")]
         public virtual void EvergreenJnr_DevicesList_ChecksThatSubcategoriesOnFiltersPanelAreDisplayedInAlphabeticalOrder()
         {
@@ -1311,7 +1312,8 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_Columns
                         "Evergreen",
                         "Devices",
                         "EvergreenJnr_Columns",
-                        "ColumnOrder",
+                        "ColumnSectionOrder",
+                        "ColumnSectionDisplay",
                         "DAS12861"});
             this.ScenarioSetup(scenarioInfo);
             this.FeatureBackground();
@@ -1367,7 +1369,8 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_Columns
         [NUnit.Framework.CategoryAttribute("Evergreen")]
         [NUnit.Framework.CategoryAttribute("Applications")]
         [NUnit.Framework.CategoryAttribute("EvergreenJnr_Columns")]
-        [NUnit.Framework.CategoryAttribute("ColumnOrder")]
+        [NUnit.Framework.CategoryAttribute("ColumnSectionOrder")]
+        [NUnit.Framework.CategoryAttribute("ColumnSectionDisplay")]
         [NUnit.Framework.CategoryAttribute("DAS12861")]
         public virtual void EvergreenJnr_ApplicationsList_ChecksThatSubcategoriesOnColumnsPanelAreDisplayedInAlphabeticalOrderAfterAddingFilters()
         {
@@ -1376,7 +1379,8 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_Columns
                         "Evergreen",
                         "Applications",
                         "EvergreenJnr_Columns",
-                        "ColumnOrder",
+                        "ColumnSectionOrder",
+                        "ColumnSectionDisplay",
                         "DAS12861"});
             this.ScenarioSetup(scenarioInfo);
             this.FeatureBackground();
@@ -1435,7 +1439,8 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_Columns
         [NUnit.Framework.CategoryAttribute("Evergreen")]
         [NUnit.Framework.CategoryAttribute("Users")]
         [NUnit.Framework.CategoryAttribute("EvergreenJnr_Columns")]
-        [NUnit.Framework.CategoryAttribute("ColumnOrder")]
+        [NUnit.Framework.CategoryAttribute("ColumnSectionOrder")]
+        [NUnit.Framework.CategoryAttribute("ColumnSectionDisplay")]
         [NUnit.Framework.CategoryAttribute("DAS12861")]
         public virtual void EvergreenJnr_UsersList_ChecksThatSubcategoriesOnColumnsPanelAreDisplayedInAlphabeticalOrderAfterAddingDepartmentFilters()
         {
@@ -1444,7 +1449,8 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_Columns
                         "Evergreen",
                         "Users",
                         "EvergreenJnr_Columns",
-                        "ColumnOrder",
+                        "ColumnSectionOrder",
+                        "ColumnSectionDisplay",
                         "DAS12861"});
             this.ScenarioSetup(scenarioInfo);
             this.FeatureBackground();
@@ -1539,6 +1545,54 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_Columns
             table81.AddRow(new string[] {
                         "Department Name"});
             testRunner.Then("the following Column subcategories are displayed for open category:", ((string)(null)), table81, "Then ");
+            this.ScenarioCleanup();
+        }
+        
+        [NUnit.Framework.TestAttribute()]
+        [NUnit.Framework.Retry(2)]
+        [NUnit.Framework.DescriptionAttribute("EvergreenJnr_AllLists_LocationAndUserFiltersEqualsOnUsersAndApplicationsTabs")]
+        [NUnit.Framework.CategoryAttribute("Evergreen")]
+        [NUnit.Framework.CategoryAttribute("AllLists")]
+        [NUnit.Framework.CategoryAttribute("EvergreenJnr_Columns")]
+        [NUnit.Framework.CategoryAttribute("ColumnSectionDisplay")]
+        [NUnit.Framework.CategoryAttribute("DAS12922")]
+        public virtual void EvergreenJnr_AllLists_LocationAndUserFiltersEqualsOnUsersAndApplicationsTabs()
+        {
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("EvergreenJnr_AllLists_LocationAndUserFiltersEqualsOnUsersAndApplicationsTabs", new string[] {
+                        "Evergreen",
+                        "AllLists",
+                        "EvergreenJnr_Columns",
+                        "ColumnSectionDisplay",
+                        "DAS12922"});
+            this.ScenarioSetup(scenarioInfo);
+            this.FeatureBackground();
+            testRunner.When("User clicks \"Users\" on the left-hand menu", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+            testRunner.Then("\"Users\" list should be displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+            testRunner.When("User clicks the Columns button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+            testRunner.Then("Columns panel is displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+            TechTalk.SpecFlow.Table table82 = new TechTalk.SpecFlow.Table(new string[] {
+                        "ColumnName"});
+            table82.AddRow(new string[] {
+                        "App Count (Used)"});
+            testRunner.When("ColumnName is entered into the search box and the selection is clicked", ((string)(null)), table82, "When ");
+            testRunner.When("User clicks the Columns button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+            testRunner.Then("Columns panel is displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+            testRunner.When("User removes \"Username\" column by Column panel", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+            testRunner.When("User removes \"Domain\" column by Column panel", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+            testRunner.When("User removes \"Display Name\" column by Column panel", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+            testRunner.When("User removes \"Distinguished Name\" column by Column panel", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+            testRunner.When("User clicks the Filters button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+            testRunner.Then("Filters panel is displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+            testRunner.When("User clicks Add New button on the Filter panel", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+            testRunner.Then("\"User (22)\" category is displayed on Filters panel", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+            testRunner.Then("\"Location (8)\" category is displayed on Filters panel", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+            testRunner.When("User clicks \"Applications\" on the left-hand menu", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+            testRunner.Then("\"Applications\" list should be displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+            testRunner.When("User clicks the Filters button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+            testRunner.Then("Filters panel is displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+            testRunner.When("User clicks Add New button on the Filter panel", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+            testRunner.Then("\"User (24)\" category is displayed on Filters panel", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+            testRunner.Then("\"User Location (8)\" category is displayed on Filters panel", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
             this.ScenarioCleanup();
         }
     }
