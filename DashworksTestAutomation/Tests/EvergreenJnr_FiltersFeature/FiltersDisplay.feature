@@ -1164,7 +1164,7 @@ Examples:
 	| User GUID     | Begins with | 180a2898-9ab2 | User whose GUID begins with 180a2898-9ab2 has used app |
 	| User Username | Contains    | ZDP           | User whose Username contains ZDP has used app          |
 
-@Evergreen @Devices @Evergreen_FiltersFeature @FiltersDisplay @DAS13024 @Delete_Newly_Created_List
+@Evergreen @Devices @Evergreen_FiltersFeature @FiltersDisplay @DAS13024
 Scenario: EvergreenJnr_DevicesList_ChecksThatGridIsDisplayedCorrectlyAfterAddingDeviceOwnerLdapAndComputerAdObjectLdapAttributeFilterToTheDevicesList
 	When User clicks "Devices" on the left-hand menu
 	Then "Devices" list should be displayed to the user
@@ -1177,6 +1177,25 @@ Scenario: EvergreenJnr_DevicesList_ChecksThatGridIsDisplayedCorrectlyAfterAdding
 	| Values |
 	| 123    |
 	Then "17,225" rows are displayed in the agGrid
-	Then full list content is displayed to the user
-	Then There are no errors in the browser console
-	Then table content is present
+	And full list content is displayed to the user
+	And There are no errors in the browser console
+	And table content is present
+
+@Evergreen @Applications @Evergreen_FiltersFeature @FiltersDisplay @DAS12908
+Scenario: EvergreenJnr_ApplicationsList_ChecksThatAdvancedFilterOfUserWhoseFilterNameIsEmptyIsWorkingCorrectly
+	When User clicks "Applications" on the left-hand menu
+	Then "Applications" list should be displayed to the user
+	When User clicks the Filters button
+	Then Filters panel is displayed to the user
+	When User add "User Description" filter where type is "Empty" with following Value and Association:
+	| Values | Association     |
+	|        | Entitled to app |
+	Then "113" rows are displayed in the agGrid
+	And table content is present
+	When User have reset all filters
+	Then "2,223" rows are displayed in the agGrid
+	When User add "User Building" filter where type is "Equals" with following Lookup Value and Association:
+	| SelectedValues | Association     |
+	| Empty          | Entitled to app |
+	Then "245" rows are displayed in the agGrid
+	And table content is present
