@@ -1200,6 +1200,13 @@ Scenario: EvergreenJnr_ApplicationsList_ChecksThatAdvancedFilterOfUserWhoseFilte
 	Then "245" rows are displayed in the agGrid
 	And table content is present
 
+@Evergreen @Users @Evergreen_FiltersFeature @FiltersDisplay @DAS13183
+Scenario: EvergreenJnr_UsersList_CheckThatApplicationManufacturerFilterChangedToApplicationVendor
+	When User clicks "Users" on the left-hand menu
+	And User clicks the Filters button
+	Then "Application Manufacturer" filter is not presented in the filters list
+	And "Application Vendor" filter is presented in the filters list
+
 @Evergreen @Applications @Evergreen_FiltersFeature @FiltersDisplay @DAS12793 @Delete_Newly_Created_List
 Scenario: EvergreenJnr_ApplicationsList_CheckThatTheValueInTheFiltersPanelIsDisplayedCorrectly
 	When User clicks "Applications" on the left-hand menu
