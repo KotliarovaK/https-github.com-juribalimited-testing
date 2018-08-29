@@ -53,6 +53,9 @@ namespace DashworksTestAutomation.Pages.Evergreen
         public IWebElement ProjectField { get; set; }
 
         [FindsBy(How = How.XPath, Using = "//mat-option[@role='option']")]
+        public IWebElement ProjectSection { get; set; }
+
+        [FindsBy(How = How.XPath, Using = "//mat-option[@role='option']")]
         public IWebElement OptionName { get; set; }
 
         [FindsBy(How = How.XPath, Using = "//textarea[@placeholder='Stage']")]
