@@ -112,7 +112,7 @@ Scenario: EvergreenJnr_DevicesList_CheckThatUserWithoutJustTheProjectAdministrat
 	| 0DTXL41673EW7O   |
 	And User selects "Bulk update" in the Actions dropdown
 	And User selects "Update request type" Bulk Update Type on Action panel
-	And User selects "Windows" Project on Action panel
+	And User selects "Windows 7 Migration (Computer Scheduled Project)" Project on Action panel
 	And User selects "Computer: Laptop Replacement" Request Type on Action panel
 	And User clicks the "UPDATE" Action button
 	Then Warning message with "Are you sure you want to proceed, this operation cannot be undone." text is displayed on Action panel
@@ -165,7 +165,7 @@ Scenario: EvergreenJnr_ApplicationsList_CheckThatUserWithoutJustTheProjectBulkUp
 	| 0047 - Microsoft Access 97 SR-2 Francais |
 	And User selects "Bulk update" in the Actions dropdown
 	And User selects "Update request type" Bulk Update Type on Action panel
-	And User selects "Email Mi" Project on Action panel
+	And User selects "Email Migration" Project on Action panel
 	And User selects "Sharepoint Application" Request Type on Action panel
 	And User clicks the "UPDATE" Action button
 	Then Warning message with "Are you sure you want to proceed, this operation cannot be undone." text is displayed on Action panel
@@ -342,7 +342,7 @@ Scenario: EvergreenJnr_UsersList_ChecksThatRequestTypeIsUpdatedCorrectlyOnUsersP
 	| SelectedRowsName |
 	| FMN5805290       |
 	| AKX995383        |
-	| AAD1011948       |
+	| ADC714277       |
 	And User selects "Bulk update" in the Actions dropdown
 	And User selects "Update request type" Bulk Update Type on Action panel
 	And User selects "Windows 7 Migration (Computer Scheduled Project)" Project on Action panel
@@ -357,7 +357,7 @@ Scenario: EvergreenJnr_UsersList_ChecksThatRequestTypeIsUpdatedCorrectlyOnUsersP
 	Then "User; Maternity" content is displayed in "Windows7Mi: Request Type" column
 	When User perform search by "AKX995383"
 	Then "User; Maternity" content is displayed in "Windows7Mi: Request Type" column
-	When User perform search by "AAD1011948"
+	When User perform search by "ADC714277"
 	Then "User; Maternity" content is displayed in "Windows7Mi: Request Type" column
 
 @Evergreen @Applications @EvergreenJnr_ActionsPanel @DAS12863
@@ -485,3 +485,39 @@ Scenario: EvergreenJnr_DevicesList_ChecksThatActionsPanelWorkedCorrectlyAfterCic
 	And User clicks the "CANCEL" Action button
 	Then Actions panel is not displayed to the user
 	And Checkboxes are not displayed
+
+@Evergreen @Devices @EvergreenJnr_ActionsPanel @DAS13074
+Scenario: EvergreenJnr_DevicesList_ChecksThatProjectNamesAreDisplayedCorrectlyInTheActionsDllAndInSelectedSection
+	When User clicks "Devices" on the left-hand menu
+	Then "Devices" list should be displayed to the user
+	When User clicks the Actions button
+	Then Actions panel is displayed to the user
+	When User select "Hostname" rows in the grid
+	| SelectedRowsName |
+	| 00OMQQXWA1DRI6   |
+	And User selects "Bulk update" in the Actions dropdown
+	And User selects "Update request type" Bulk Update Type on Action panel
+	Then the following Projects are displayed in opened DLL on Action panel:
+	| Projects                                         |
+	| Babel (English, German and French)               |
+	| Barry's User Project                             |
+	| Computer Scheduled Test (Jo)                     |
+	| Havoc (Big Data)                                 |
+	| I-Computer Scheduled Project                     |
+	| Migration Project Phase 2 (User Project)         |
+	| Project K-Computer Scheduled Project             |
+	| User Scheduled Test (Jo)                         |
+	| Windows 7 Migration (Computer Scheduled Project) |
+	When User clicks the Columns button
+	Then Columns panel is displayed to the user
+	Then User closed "Selected Columns" columns category
+	Then User is expand "Project Stages: Windows7Mi" columns category
+	Then the following Column subcategories are displayed for open category:
+	| Subcategories                                               |
+	| Windows7Mi: Command & Control                               |
+	| Windows7Mi: Communication                                   |
+	| Windows7Mi: Computer Information ---- Text fill; Text fill; |
+	| Windows7Mi: Migration                                       |
+	| Windows7Mi: Portal Self Service                             |
+	| Windows7Mi: Post Migration                                  |
+	| Windows7Mi: Pre-Migration                                   |

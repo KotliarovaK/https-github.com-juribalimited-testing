@@ -658,7 +658,7 @@ Scenario: EvergreenJnr_DevicesList_CheckThatApplicationFiltersBeingAppliedAgains
 	Then "Devices" list should be displayed to the user
 	When User clicks the Filters button
 	Then Filters panel is displayed to the user
-	When User add "Application" filter where type is "Equals" with following Lookup Value and Association:
+	When User add Advanced "Application" filter where type is "Equals" with following Lookup Value and Association:
 	| SelectedValues | Association        |
 	| 7zip (2015)    | Entitled to device |
 	Then "Application" filter is added to the list
@@ -1078,13 +1078,13 @@ Scenario: EvergreenJnr_ApplicationsList_CheckThatCorrectValuesAreDisplayedforUse
 	Then "Applications" list should be displayed to the user
 	When User clicks the Filters button
 	Then Filters panel is displayed to the user
-	When User add "User Key" filter where type is "Less than" with following Data and Association:
-	| Values | Association     |
+	When User add "User Key" filter where type is "Less than" with following Number and Association:
+	| Number | Association     |
 	| 2      | Entitled to app |
 	Then Filter name is colored in the added filter info
 	And Filter value is shown in bold in the added filter info
-	When User Add And "User Key" filter where type is "Greater than" with following Data and Association:
-	| Values | Association     |
+	When User Add And "User Key" filter where type is "Greater than" with following Number and Association:
+	| Number | Association     |
 	| 8      | Entitled to app |
 	Then Filter name is colored in the added filter info
 	And Filter value is shown in bold in the added filter info
@@ -1163,3 +1163,82 @@ Examples:
 	| User SID      | Begins with | S-1-5-99      | User whose SID begins with S-1-5-99 has used app       |
 	| User GUID     | Begins with | 180a2898-9ab2 | User whose GUID begins with 180a2898-9ab2 has used app |
 	| User Username | Contains    | ZDP           | User whose Username contains ZDP has used app          |
+
+@Evergreen @Devices @Evergreen_FiltersFeature @FiltersDisplay @DAS13024
+Scenario: EvergreenJnr_DevicesList_ChecksThatGridIsDisplayedCorrectlyAfterAddingDeviceOwnerLdapAndComputerAdObjectLdapAttributeFilterToTheDevicesList
+	When User clicks "Devices" on the left-hand menu
+	Then "Devices" list should be displayed to the user
+	When User clicks the Filters button
+	Then Filters panel is displayed to the user
+	When User add "Owner accountexpires" filter where type is "Empty" without added column and following value:
+	| Values |
+	| 123    |
+	When User add "admincount" filter where type is "Empty" without added column and following value:
+	| Values |
+	| 123    |
+	Then "17,225" rows are displayed in the agGrid
+	And full list content is displayed to the user
+	And There are no errors in the browser console
+	And table content is present
+
+@Evergreen @Applications @Evergreen_FiltersFeature @FiltersDisplay @DAS12908
+Scenario: EvergreenJnr_ApplicationsList_ChecksThatAdvancedFilterOfUserWhoseFilterNameIsEmptyIsWorkingCorrectly
+	When User clicks "Applications" on the left-hand menu
+	Then "Applications" list should be displayed to the user
+	When User clicks the Filters button
+	Then Filters panel is displayed to the user
+	When User add "User Description" filter where type is "Empty" with following Value and Association:
+	| Values | Association     |
+	|        | Entitled to app |
+	Then "113" rows are displayed in the agGrid
+	And table content is present
+	When User have reset all filters
+	Then "2,223" rows are displayed in the agGrid
+	When User add "User Building" filter where type is "Equals" with following Lookup Value and Association:
+	| SelectedValues | Association     |
+	| Empty          | Entitled to app |
+	Then "245" rows are displayed in the agGrid
+	And table content is present
+
+@Evergreen @Applications @Evergreen_FiltersFeature @FiltersDisplay @DAS12793 @Delete_Newly_Created_List
+Scenario: EvergreenJnr_ApplicationsList_CheckThatTheValueInTheFiltersPanelIsDisplayedCorrectly
+	When User clicks "Applications" on the left-hand menu
+	Then "Applications" list should be displayed to the user
+	When User clicks the Filters button
+	Then Filters panel is displayed to the user
+	When User add Advanced "User" filter where type is "Equals" with following Lookup Value and Association:
+	| SelectedValues | Association     |
+	| AAD1011948     | Entitled to app |
+	Then "4" rows are displayed in the agGrid
+	When User create dynamic list with "UsersFilterList" name on "Applications" page
+	Then "UsersFilterList" list is displayed to user
+	When User clicks the Filters button
+	Then Filters panel is displayed to the user
+	When User click Edit button for "User" filter
+	Then "FR\AAD1011948" value is displayed in the filter info
+	Then There are no errors in the browser console
+	When User clicks "Devices" on the left-hand menu
+	Then "Devices" list should be displayed to the user
+	When User clicks "Users" on the left-hand menu
+	Then "Users" list should be displayed to the user
+	And There are no errors in the browser console
+
+@Evergreen @Applications @Evergreen_FiltersFeature @FiltersDisplay @DAS12819 @Delete_Newly_Created_List
+Scenario: EvergreenJnr_ApplicationsList_CheckThatTheUserDescriptionFieldIsNotDisplayedForEmptyNotEmptyOptions
+	When User clicks "Applications" on the left-hand menu
+	Then "Applications" list should be displayed to the user
+	When User clicks the Filters button
+	Then Filters panel is displayed to the user
+	When User add "User Description" filter where type is "Contains" with following Value and Association:
+	| Values | Association     |
+	| Aw     | Entitled to app |
+	Then "3" rows are displayed in the agGrid
+	When User create dynamic list with "UsersDescriptionFilterList" name on "Applications" page
+	Then "UsersDescriptionFilterList" list is displayed to user
+	When User clicks the Filters button
+	Then Filters panel is displayed to the user
+	When User click Edit button for "User " filter
+	When User select "Empty" Operator value
+	Then User Description field is not displayed
+	When User select "Not empty" Operator value
+	Then User Description field is not displayed

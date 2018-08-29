@@ -71,7 +71,6 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_QueryStrings
         [NUnit.Framework.TestAttribute()]
         [NUnit.Framework.Retry(2)]
         
-        
         [NUnit.Framework.DescriptionAttribute("EvergreenJnr_QueryString_DateComboAndApostrophe")]
         [NUnit.Framework.CategoryAttribute("Evergreen")]
         [NUnit.Framework.CategoryAttribute("Users")]
@@ -123,7 +122,6 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_QueryStrings
         [NUnit.Framework.TestAttribute()]
         [NUnit.Framework.Retry(2)]
         
-        
         [NUnit.Framework.DescriptionAttribute("EvergreenJnr_QueryString_Complex")]
         [NUnit.Framework.CategoryAttribute("Evergreen")]
         [NUnit.Framework.CategoryAttribute("Users")]
@@ -168,7 +166,6 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_QueryStrings
         
         [NUnit.Framework.TestAttribute()]
         [NUnit.Framework.Retry(2)]
-        
         
         [NUnit.Framework.DescriptionAttribute("EvergreenJnr_QueryString_AllLists")]
         [NUnit.Framework.CategoryAttribute("Evergreen")]
@@ -215,7 +212,6 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_QueryStrings
         [NUnit.Framework.TestAttribute()]
         [NUnit.Framework.Retry(2)]
         
-        
         [NUnit.Framework.DescriptionAttribute("EvergreenJnr_QueryString_Applications")]
         [NUnit.Framework.CategoryAttribute("Evergreen")]
         [NUnit.Framework.CategoryAttribute("Applications")]
@@ -254,7 +250,6 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_QueryStrings
         [NUnit.Framework.TestAttribute()]
         [NUnit.Framework.Retry(2)]
         
-        
         [NUnit.Framework.DescriptionAttribute("EvergreenJnr_QueryString_Devices")]
         [NUnit.Framework.CategoryAttribute("Evergreen")]
         [NUnit.Framework.CategoryAttribute("Devices")]
@@ -284,7 +279,6 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_QueryStrings
         
         [NUnit.Framework.TestAttribute()]
         [NUnit.Framework.Retry(2)]
-        
         
         [NUnit.Framework.DescriptionAttribute("EvergreenJnr_QueryString_Users")]
         [NUnit.Framework.CategoryAttribute("Evergreen")]
@@ -317,7 +311,6 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_QueryStrings
         
         [NUnit.Framework.TestAttribute()]
         [NUnit.Framework.Retry(2)]
-        
         
         [NUnit.Framework.DescriptionAttribute("EvergreenJnr_QueryString_Mailboxes")]
         [NUnit.Framework.CategoryAttribute("Evergreen")]
@@ -367,7 +360,6 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_QueryStrings
         [NUnit.Framework.TestAttribute()]
         [NUnit.Framework.Retry(2)]
         
-        
         [NUnit.Framework.DescriptionAttribute("EvergreenJnr_QueryString_ApplicationsOnDevicesList")]
         [NUnit.Framework.CategoryAttribute("Evergreen")]
         [NUnit.Framework.CategoryAttribute("Devices")]
@@ -402,7 +394,6 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_QueryStrings
         
         [NUnit.Framework.TestAttribute()]
         [NUnit.Framework.Retry(2)]
-        
         
         [NUnit.Framework.DescriptionAttribute("EvergreenJnr_QueryString_AllListsSortByKeys")]
         [NUnit.Framework.CategoryAttribute("Evergreen")]
@@ -447,6 +438,296 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_QueryStrings
                             "ilboxType,ownerDisplayName,mailboxKey&$orderby=mailboxKey%20asc"});
             testRunner.When("Evergreen QueryStringURL is entered for Simple QueryType", ((string)(null)), table9, "When ");
             testRunner.Then("agGrid Main Object List is returned with data", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+            this.ScenarioCleanup();
+        }
+        
+        [NUnit.Framework.TestAttribute()]
+        [NUnit.Framework.Retry(2)]
+        [NUnit.Framework.DescriptionAttribute("EvergreenJnr_QueryString_AdvancedFilterRowCountCheckForDeviceList")]
+        [NUnit.Framework.CategoryAttribute("Evergreen")]
+        [NUnit.Framework.CategoryAttribute("Devices")]
+        [NUnit.Framework.CategoryAttribute("EvergreenJnr_QueryStrings")]
+        [NUnit.Framework.CategoryAttribute("DAS13179")]
+        [NUnit.Framework.TestCaseAttribute("App Count (Entitled)", "evergreen/#/devices?$filter=(entitledApplications%20%3C%3E%2012)&$select=hostname" +
+            ",chassisCategory,oSCategory,ownerDisplayName,entitledApplications&$orderby=entit" +
+            "ledApplications%20desc", "17,163", new string[0])]
+        [NUnit.Framework.TestCaseAttribute("App Count (Installed)", "evergreen/#/devices?$filter=(installedApplications%20%3E%2012)&$select=hostname,c" +
+            "hassisCategory,oSCategory,ownerDisplayName,installedApplications", "94", new string[0])]
+        [NUnit.Framework.TestCaseAttribute("App Count (Used)", "evergreen/#/devices?$filter=(usedApplications%20%3C%2011)&$select=hostname,chassi" +
+            "sCategory,oSCategory,ownerDisplayName,installedApplications,usedApplications", "17,126", new string[0])]
+        [NUnit.Framework.TestCaseAttribute("Application", "evergreen/#/devices?$filter=(application%20NOT%20EQUALS%20(\'882\'%2C\'839\'%2C\'778\')" +
+            "%20WHERE%20(netdo%2Cnubdo%2Cnetd%2Cnuod%2Cniod))", "17,225", new string[0])]
+        [NUnit.Framework.TestCaseAttribute("Application", "evergreen/#/devices?$filter=(application%20EQUALS%20(\'882\')%20WHERE%20(nuod))", "17,225", new string[0])]
+        [NUnit.Framework.TestCaseAttribute("Application Compliance", "evergreen/#/devices?$filter=(applicationMigrationRAG%20EQUALS%20(\'Red\')%20WHERE%2" +
+            "0(netdo%2Cnubdo%2Cniod%2Cnetd%2Cnuod))", "17,225", new string[0])]
+        [NUnit.Framework.TestCaseAttribute("Application Name", "evergreen/#/devices?$filter=(applicationName%20EQUALS%20(\'%25SQL_PRODUCT_SHORT_NA" +
+            "ME%25%20Data%20Tools%20-%20BI%20for%20Visual%20Studio%202013\')%20WHERE%20(uod%2C" +
+            "etd%2Cubdo%2Ciod%2Cetdo))", "2", new string[0])]
+        [NUnit.Framework.TestCaseAttribute("Application Name", "evergreen/#/devices?$filter=(applicationName%20NOT%20EQUALS%20(\'%25SQL_PRODUCT_SH" +
+            "ORT_NAME%25%20Data%20Tools%20-%20BI%20for%20Visual%20Studio%202013\')%20WHERE%20(" +
+            "netdo%2Cnubdo%2Cniod%2Cnetd%2Cnuod))", "17,225", new string[0])]
+        [NUnit.Framework.TestCaseAttribute("Application Name", "evergreen/#/devices?$filter=(applicationName%20CONTAINS%20(\'7zip\')%20WHERE%20(nuo" +
+            "d))", "17,225", new string[0])]
+        [NUnit.Framework.TestCaseAttribute("Application Name", "evergreen/#/devices?$filter=(applicationName%20BEGINS%20WITH%20(\'7zip\')%20WHERE%2" +
+            "0(ubdo%2Cetd))", "11", new string[0])]
+        [NUnit.Framework.TestCaseAttribute("Application Name", "evergreen/#/devices?$filter=(applicationName%20DOES%20NOT%20BEGIN%20WITH%20(\'7zip" +
+            "\')%20WHERE%20(nubdo%2Cnetdo))", "17,066", new string[0])]
+        [NUnit.Framework.TestCaseAttribute("Application Name", "evergreen/#/devices?$filter=(applicationName%20DOES%20NOT%20END%20WITH%20(\'1.1\')%" +
+            "20WHERE%20(uod%2Cetd%2Ciod%2Cubdo%2Cetdo))", "17,224", new string[0])]
+        [NUnit.Framework.TestCaseAttribute("Application Vendor", "evergreen/#/devices?$filter=(applicationManufacturer%20EQUALS%20(\'Aaronbock%20Dev" +
+            "elopment\')%20WHERE%20(etdo))", "95", new string[0])]
+        [NUnit.Framework.TestCaseAttribute("Application Vendor", "evergreen/#/devices?$filter=(applicationManufacturer%20NOT%20EQUALS%20(\'Aaronbock" +
+            "%20Development\')%20WHERE%20(netdo))", "12,200", new string[0])]
+        [NUnit.Framework.TestCaseAttribute("Application Owner (App Custom Fields)", "evergreen/#/devices?$filter=(applicationCustomField_80%20EQUALS%20(\'App%20Discove" +
+            "ry\')%20WHERE%20(uod%2Cetd%2Ciod%2Cubdo%2Cetdo))", "1,003", new string[0])]
+        [NUnit.Framework.TestCaseAttribute("Application Owner (App Custom Fields)", "evergreen/#/devices?$filter=(applicationCustomField_80%20NOT%20EQUALS%20(\'App%20D" +
+            "iscovery\')%20WHERE%20(netdo%2Cnubdo%2Cniod%2Cnetd%2Cnuod))", "17,225", new string[0])]
+        [NUnit.Framework.TestCaseAttribute("Application Owner (App Custom Fields)", "evergreen/#/devices?$filter=(applicationCustomField_80%20NOT%20EQUALS%20(\'App%20D" +
+            "iscovery\')%20WHERE%20(iod))", "12,076", new string[0])]
+        [NUnit.Framework.TestCaseAttribute("General information field 5 (App Custom Fields)", "evergreen/#/devices?$filter=(applicationCustomField_79%20DOES%20NOT%20BEGIN%20WIT" +
+            "H%20(\'General%205\')%20WHERE%20(nubdo%2Cniod))&$select=hostname,chassisCategory,o" +
+            "SCategory,ownerDisplayName,deviceOwnerCustomField_79", "17,225", new string[0])]
+        [NUnit.Framework.TestCaseAttribute("General information field 5 (App Custom Fields)", "evergreen/#/devices?$filter=(applicationCustomField_79%20ENDS%20WITH%20(\'0.5\')%20" +
+            "WHERE%20(nubdo%2Cnetdo%2Cnuod%2Cnetd%2Cniod))&$select=hostname,chassisCategory,o" +
+            "SCategory,ownerDisplayName,deviceOwnerCustomField_79", "17,225", new string[0])]
+        public virtual void EvergreenJnr_QueryString_AdvancedFilterRowCountCheckForDeviceList(string filterName, string queryString, string rows, string[] exampleTags)
+        {
+            string[] @__tags = new string[] {
+                    "Evergreen",
+                    "Devices",
+                    "EvergreenJnr_QueryStrings",
+                    "DAS13179"};
+            if ((exampleTags != null))
+            {
+                @__tags = System.Linq.Enumerable.ToArray(System.Linq.Enumerable.Concat(@__tags, exampleTags));
+            }
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("EvergreenJnr_QueryString_AdvancedFilterRowCountCheckForDeviceList", @__tags);
+            this.ScenarioSetup(scenarioInfo);
+            this.FeatureBackground();
+            TechTalk.SpecFlow.Table table10 = new TechTalk.SpecFlow.Table(new string[] {
+                        "QueryType",
+                        "QueryStringURL",
+                        "RowCount"});
+            table10.AddRow(new string[] {
+                        string.Format("{0}", filterName),
+                        string.Format("{0}", queryString),
+                        string.Format("{0}", rows)});
+            testRunner.When("Evergreen QueryStringURL is entered for Simple QueryType and appropriate RowCount" +
+                    " is displayed", ((string)(null)), table10, "When ");
+            this.ScenarioCleanup();
+        }
+        
+        [NUnit.Framework.TestAttribute()]
+        [NUnit.Framework.Retry(2)]
+        [NUnit.Framework.DescriptionAttribute("EvergreenJnr_QueryString_AdvancedFilterRowCountAndFilterTextCheckForDeviceList")]
+        [NUnit.Framework.CategoryAttribute("Evergreen")]
+        [NUnit.Framework.CategoryAttribute("Devices")]
+        [NUnit.Framework.CategoryAttribute("EvergreenJnr_QueryStrings")]
+        [NUnit.Framework.CategoryAttribute("DAS13179")]
+        [NUnit.Framework.CategoryAttribute("Delete_Newly_Created_List")]
+        [NUnit.Framework.TestCaseAttribute("App Count (Entitled)", "evergreen/#/devices?$filter=(entitledApplications%20%3D%2012)&$select=hostname,ch" +
+            "assisCategory,oSCategory,ownerDisplayName,entitledApplications&$orderby=entitled" +
+            "Applications%20desc", "62", "App Count (Entitled) is 12", new string[0])]
+        [NUnit.Framework.TestCaseAttribute("App Count (Installed)", "evergreen/#/devices?$filter=(installedApplications%20%3E%3D%2064)&$select=hostnam" +
+            "e,chassisCategory,oSCategory,ownerDisplayName,installedApplications", "25", "App Count (Installed) is greater than or equal to 64", new string[0])]
+        [NUnit.Framework.TestCaseAttribute("App Count (Used)", "evergreen/#/devices?$filter=(usedApplications%20%3C%3D%20100)&$select=hostname,ch" +
+            "assisCategory,oSCategory,ownerDisplayName,usedApplications&$orderby=usedApplicat" +
+            "ions%20desc", "17,225", "App Count (Used) is less than or equal to 100", new string[0])]
+        [NUnit.Framework.TestCaseAttribute("Application", "evergreen/#/devices?$filter=(application%20EQUALS%20(\'4093\'%2C\'4409\'%2C\'3854\'%2C\'" +
+            "3992\')%20WHERE%20(uod%2Cetd%2Ciod%2Cubdo%2Cetdo))", "9", "Application 7-Zip 16.02 (x64) (4093), 7-Zip 16.04 (x64) (4409), 7-Zip 9.20 (x64 e" +
+            "dition) (3854) or 7-Zip 9.22 (x64 edition) (3992) used on device; entitled to de" +
+            "vice; installed on device; used by device\'s owner; or entitled to device\'s owner" +
+            "", new string[0])]
+        [NUnit.Framework.TestCaseAttribute("Application", "evergreen/#/devices?$filter=(application%20NOT%20EQUALS%20(\'882\')%20WHERE%20(iod)" +
+            ")", "12,083", "Application is not Access (882) installed on device", new string[0])]
+        [NUnit.Framework.TestCaseAttribute("Application Compliance", "evergreen/#/devices?$filter=(applicationMigrationRAG%20NOT%20EQUALS%20(\'Red\'%2C\'A" +
+            "mber\'%2C\'Green\'%2C\'Not%20Applicable\')%20WHERE%20(uod%2Cetd%2Ciod%2Cubdo%2Cetdo))" +
+            "", "63", "Application whose Compliance is not Red, Amber, Green or Not Applicable used on d" +
+            "evice; entitled to device; installed on device; used by device\'s owner; or entit" +
+            "led to device\'s owner", new string[0])]
+        [NUnit.Framework.TestCaseAttribute("Application Import", "evergreen/#/devices?$filter=(applicationImport%20EQUALS%20(\'SCCM%202012%20PS1\')%2" +
+            "0WHERE%20(netdo%2Cnubdo%2Cniod%2Cnetd%2Cnuod))", "17,225", "Application whose Import is SCCM 2012 PS1 not entitled to device\'s owner; not use" +
+            "d by device\'s owner; not installed on device; not entitled to device; or not use" +
+            "d on device", new string[0])]
+        [NUnit.Framework.TestCaseAttribute("Application Name", "evergreen/#/devices?$filter=(applicationName%20NOT%20EQUALS%20(\'7zip\')%20WHERE%20" +
+            "(ubdo))", "620", "Application whose Name is not 7zip used by device\'s owner", new string[0])]
+        [NUnit.Framework.TestCaseAttribute("Application Name", "evergreen/#/devices?$filter=(applicationName%20ENDS%20WITH%20(\'1.1\')%20WHERE%20(n" +
+            "ubdo%2Cnetdo%2Cnuod%2Cnetd%2Cniod))", "17,225", "Application whose Name ends with 1.1 not used by device\'s owner; not entitled to " +
+            "device\'s owner; not used on device; not entitled to device; or not installed on " +
+            "device", new string[0])]
+        [NUnit.Framework.TestCaseAttribute("Application Owner (App Custom Fields)", "evergreen/#/devices?$filter=(applicationCustomField_80%20CONTAINS%20(\'app\')%20WHE" +
+            "RE%20(nuod))", "17,225", "Application Owner contains app not used on device", new string[0])]
+        [NUnit.Framework.TestCaseAttribute("Application Owner (App Custom Fields)", "evergreen/#/devices?$filter=(applicationCustomField_80%20BEGINS%20WITH%20(\'app\')%" +
+            "20WHERE%20(iod%2Cubdo))", "1,003", "Application Owner begins with app installed on device; or used by device\'s owner", new string[0])]
+        [NUnit.Framework.TestCaseAttribute("General information field 5 (App Custom Fields)", "evergreen/#/devices?$filter=(applicationCustomField_79%20DOES%20NOT%20END%20WITH%" +
+            "20(\'0.5\')%20WHERE%20(uod%2Cetd%2Ciod%2Cubdo%2Cetdo))&$select=hostname,chassisCat" +
+            "egory,oSCategory,ownerDisplayName,deviceOwnerCustomField_79", "52", "General information field 5 does not end with 0.5 used on device; entitled to dev" +
+            "ice; installed on device; used by device\'s owner; or entitled to device\'s owner", new string[0])]
+        public virtual void EvergreenJnr_QueryString_AdvancedFilterRowCountAndFilterTextCheckForDeviceList(string filterName, string queryString, string rows, string filterInfo, string[] exampleTags)
+        {
+            string[] @__tags = new string[] {
+                    "Evergreen",
+                    "Devices",
+                    "EvergreenJnr_QueryStrings",
+                    "DAS13179",
+                    "Delete_Newly_Created_List"};
+            if ((exampleTags != null))
+            {
+                @__tags = System.Linq.Enumerable.ToArray(System.Linq.Enumerable.Concat(@__tags, exampleTags));
+            }
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("EvergreenJnr_QueryString_AdvancedFilterRowCountAndFilterTextCheckForDeviceList", @__tags);
+            this.ScenarioSetup(scenarioInfo);
+            this.FeatureBackground();
+            TechTalk.SpecFlow.Table table11 = new TechTalk.SpecFlow.Table(new string[] {
+                        "QueryType",
+                        "QueryStringURL",
+                        "RowCount"});
+            table11.AddRow(new string[] {
+                        string.Format("{0}", filterName),
+                        string.Format("{0}", queryString),
+                        string.Format("{0}", rows)});
+            testRunner.When("Evergreen QueryStringURL is entered for Simple QueryType and appropriate RowCount" +
+                    " is displayed", ((string)(null)), table11, "When ");
+            testRunner.When("User create dynamic list with \"AdvancedFilterDL1\" name on \"Devices\" page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+            testRunner.Then("\"AdvancedFilterDL1\" list is displayed to user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+            testRunner.When("User navigates to the \"All Devices\" list", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+            testRunner.When("User navigates to the \"AdvancedFilterDL1\" list", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+            testRunner.Then("\"AdvancedFilterDL1\" list is displayed to user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+            testRunner.When("User clicks the Filters button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+            testRunner.Then("Filters panel is displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+            testRunner.Then(string.Format("\"{0}\" is displayed in added filter info", filterInfo), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+            this.ScenarioCleanup();
+        }
+        
+        [NUnit.Framework.TestAttribute()]
+        [NUnit.Framework.Retry(2)]
+        [NUnit.Framework.DescriptionAttribute("EvergreenJnr_QueryString_AdvancedFilterRowCountCheckForUserList")]
+        [NUnit.Framework.CategoryAttribute("Evergreen")]
+        [NUnit.Framework.CategoryAttribute("Users")]
+        [NUnit.Framework.CategoryAttribute("EvergreenJnr_QueryStrings")]
+        [NUnit.Framework.CategoryAttribute("DAS13179")]
+        [NUnit.Framework.TestCaseAttribute("App Count (Entitled)", "evergreen/#/users?$filter=(entitledApplications%20%3C%3E%2010)", "41,307", new string[0])]
+        [NUnit.Framework.TestCaseAttribute("App Count (Installed)", "evergreen/#/users?$filter=(installedApplications%20>%2010)", "772", new string[0])]
+        [NUnit.Framework.TestCaseAttribute("App Count (Used)", "evergreen/#/users?$filter=(usedApplications%20<%2010)", "41,337", new string[0])]
+        [NUnit.Framework.TestCaseAttribute("Application", "evergreen/#/users?$filter=(application%20NOT%20EQUALS%20(\'493\')%20WHERE%20(nioado" +
+            "bu%2Cnetdobu%2Cnuodobu%2Cnetu%2Cnubu))", "41,339", new string[0])]
+        [NUnit.Framework.TestCaseAttribute("Application", "evergreen/#/users?$filter=(application%20EQUALS%20(\'94\')%20WHERE%20(netu))", "41,243", new string[0])]
+        [NUnit.Framework.TestCaseAttribute("Application Compliance", "evergreen/#/users?$filter=(applicationMigrationRag%20EQUALS%20(\'Unknown\')%20WHERE" +
+            "%20(nioadobu%2Cnetdobu%2Cnuodobu%2Cnetu%2Cnubu))", "41,339", new string[0])]
+        [NUnit.Framework.TestCaseAttribute("Application Name", "evergreen/#/users?$filter=(applicationName%20EQUALS%20(\'ACDSee%204.0\')%20WHERE%20" +
+            "(ubu%2Cetu%2Cuodou%2Cetdobu%2Ciodobu))", "139", new string[0])]
+        [NUnit.Framework.TestCaseAttribute("Application Name", "evergreen/#/users?$filter=(applicationName%20NOT%20EQUALS%20(\'ACDSee%204.0\')%20WH" +
+            "ERE%20(nioadobu%2Cnuodobu%2Cnetu%2Cnubu%2Cnetdobu))", "41,339", new string[0])]
+        [NUnit.Framework.TestCaseAttribute("Application Name", "evergreen/#/users?$filter=(applicationName%20CONTAINS%20(\'%25\')%20WHERE%20(netu))" +
+            "", "36,502", new string[0])]
+        [NUnit.Framework.TestCaseAttribute("Application Name", "evergreen/#/users?$filter=(applicationName%20BEGINS%20WITH%20(\'A\')%20WHERE%20(ubu" +
+            "%2Cetu))", "946", new string[0])]
+        [NUnit.Framework.TestCaseAttribute("Application Name", "evergreen/#/users?$filter=(applicationName%20DOES%20NOT%20BEGIN%20WITH%20(\'A\')%20" +
+            "WHERE%20(nuodobu%2Cnetdobu))", "41,241", new string[0])]
+        [NUnit.Framework.TestCaseAttribute("Application Name", "evergreen/#/users?$filter=(applicationName%20DOES%20NOT%20END%20WITH%20(\'a\')%20WH" +
+            "ERE%20(ubu%2Cetu%2Cuodou%2Cetdobu%2Ciodobu))", "14,956", new string[0])]
+        [NUnit.Framework.TestCaseAttribute("Application Vendor", "evergreen/#/users?$filter=(applicationManufacturer%20EQUALS%20(\'Aaronbock%20Devel" +
+            "opment\')%20WHERE%20(ubu))", "94", new string[0])]
+        [NUnit.Framework.TestCaseAttribute("Application Vendor", "evergreen/#/users?$filter=(applicationManufacturer%20NOT%20EQUALS%20(\'Abacre\')%20" +
+            "WHERE%20(netu))", "36,502", new string[0])]
+        [NUnit.Framework.TestCaseAttribute("Application Key", "evergreen/#/users?$filter=(applicationKey%20%3D%201%20WHERE%20(ubu%2Cetu%2Cuodou%" +
+            "2Cetdobu%2Ciodobu))", "367", new string[0])]
+        [NUnit.Framework.TestCaseAttribute("Application Key", "evergreen/#/users?$filter=(applicationKey%20<>%201%20WHERE%20(nioadobu%2Cnetdobu%" +
+            "2Cnuodobu%2Cnetu%2Cnubu))", "41,339", new string[0])]
+        [NUnit.Framework.TestCaseAttribute("Application Key", "evergreen/#/users?$filter=(applicationKey%20%3E%3D%201%20WHERE%20(ubu))", "99", new string[0])]
+        [NUnit.Framework.TestCaseAttribute("Application Key", "evergreen/#/users?$filter=(applicationKey%20<%3D%202%20WHERE%20(netdobu%2Cnubu))", "41,333", new string[0])]
+        [NUnit.Framework.TestCaseAttribute("Application Owner (App Custom Fields)", "evergreen/#/users?$filter=(applicationCustomField_80%20EQUALS%20(\'App%20Discovery" +
+            "\')%20WHERE%20(ubu%2Cetu%2Ciodobu%2Cetdobu%2Cuodou))", "871", new string[0])]
+        public virtual void EvergreenJnr_QueryString_AdvancedFilterRowCountCheckForUserList(string filterName, string queryString, string rows, string[] exampleTags)
+        {
+            string[] @__tags = new string[] {
+                    "Evergreen",
+                    "Users",
+                    "EvergreenJnr_QueryStrings",
+                    "DAS13179"};
+            if ((exampleTags != null))
+            {
+                @__tags = System.Linq.Enumerable.ToArray(System.Linq.Enumerable.Concat(@__tags, exampleTags));
+            }
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("EvergreenJnr_QueryString_AdvancedFilterRowCountCheckForUserList", @__tags);
+            this.ScenarioSetup(scenarioInfo);
+            this.FeatureBackground();
+            TechTalk.SpecFlow.Table table12 = new TechTalk.SpecFlow.Table(new string[] {
+                        "QueryType",
+                        "QueryStringURL",
+                        "RowCount"});
+            table12.AddRow(new string[] {
+                        string.Format("{0}", filterName),
+                        string.Format("{0}", queryString),
+                        string.Format("{0}", rows)});
+            testRunner.When("Evergreen QueryStringURL is entered for Simple QueryType and appropriate RowCount" +
+                    " is displayed", ((string)(null)), table12, "When ");
+            this.ScenarioCleanup();
+        }
+        
+        [NUnit.Framework.TestAttribute()]
+        [NUnit.Framework.Retry(2)]
+        [NUnit.Framework.DescriptionAttribute("EvergreenJnr_QueryString_AdvancedFilterRowCountAndFilterTextCheckForUserList")]
+        [NUnit.Framework.CategoryAttribute("Evergreen")]
+        [NUnit.Framework.CategoryAttribute("Users")]
+        [NUnit.Framework.CategoryAttribute("EvergreenJnr_QueryStrings")]
+        [NUnit.Framework.CategoryAttribute("DAS13179")]
+        [NUnit.Framework.CategoryAttribute("Delete_Newly_Created_List")]
+        [NUnit.Framework.TestCaseAttribute("App Count (Entitled)", "evergreen/#/users?$filter=(entitledApplications%20%3D%2010)", "32", "App Count (Entitled) is 10", new string[0])]
+        [NUnit.Framework.TestCaseAttribute("App Count (Installed)", "evergreen/#/users?$filter=(installedApplications%20%3E%3D%2010)", "1,068", "App Count (Installed) is greater than or equal to 10", new string[0])]
+        [NUnit.Framework.TestCaseAttribute("App Count (Used)", "evergreen/#/users?$filter=(usedApplications%20%3C%3D%2010)", "41,337", "App Count (Used) is less than or equal to 10", new string[0])]
+        [NUnit.Framework.TestCaseAttribute("Application", "evergreen/#/users?$filter=(application%20EQUALS%20(\'493\')%20WHERE%20(ubu%2Cetu%2C" +
+            "uodou%2Cetdobu%2Ciodobu))", "61", "Application \"WPF/E\" (codename) Community Technology Preview (Feb 2007) (493) used" +
+            " by user; entitled to user; used on a device owned by user; entitled to a device" +
+            " owned by user; or installed on a device owned by user", new string[0])]
+        [NUnit.Framework.TestCaseAttribute("Application", "evergreen/#/users?$filter=(application%20NOT%20EQUALS%20(\'493\')%20WHERE%20(ubu))", "99", "Application is not \"WPF/E\" (codename) Community Technology Preview (Feb 2007) (49" +
+            "3) used by user", new string[0])]
+        [NUnit.Framework.TestCaseAttribute("Application Compliance", "evergreen/#/users?$filter=(applicationMigrationRag%20NOT%20EQUALS%20(\'Unknown\')%2" +
+            "0WHERE%20(ubu%2Cetu%2Cuodou%2Cetdobu%2Ciodobu))", "14,894", "Application whose Compliance is not Unknown used by user; entitled to user; used " +
+            "on a device owned by user; entitled to a device owned by user; or installed on a" +
+            " device owned by user", new string[0])]
+        [NUnit.Framework.TestCaseAttribute("Application Name", "evergreen/#/users?$filter=(applicationName%20NOT%20CONTAINS%20(\'A\')%20WHERE%20(ub" +
+            "u))", "99", "Application whose Name does not contain A used by user", new string[0])]
+        [NUnit.Framework.TestCaseAttribute("Application Name", "evergreen/#/users?$filter=(applicationName%20ENDS%20WITH%20(\'a\')%20WHERE%20(nioad" +
+            "obu%2Cnetdobu%2Cnetu%2Cnuodobu%2Cnubu))", "41,339", "Application whose Name ends with a not installed on any device owned by user; not" +
+            " entitled to any device owned by user; not entitled to user; not used on any dev" +
+            "ice owned by user; or not used by user", new string[0])]
+        [NUnit.Framework.TestCaseAttribute("Application Key", "evergreen/#/users?$filter=(applicationKey%20>%201%20WHERE%20(netdobu))", "26,803", "Application whose Key is greater than 1 not entitled to any device owned by user", new string[0])]
+        [NUnit.Framework.TestCaseAttribute("Application Key", "evergreen/#/users?$filter=(applicationKey%20<%202%20WHERE%20(ubu%2Cuodou))", "191", "Application whose Key is less than 2 used by user; or used on a device owned by u" +
+            "ser", new string[0])]
+        public virtual void EvergreenJnr_QueryString_AdvancedFilterRowCountAndFilterTextCheckForUserList(string filterName, string queryString, string rows, string filterInfo, string[] exampleTags)
+        {
+            string[] @__tags = new string[] {
+                    "Evergreen",
+                    "Users",
+                    "EvergreenJnr_QueryStrings",
+                    "DAS13179",
+                    "Delete_Newly_Created_List"};
+            if ((exampleTags != null))
+            {
+                @__tags = System.Linq.Enumerable.ToArray(System.Linq.Enumerable.Concat(@__tags, exampleTags));
+            }
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("EvergreenJnr_QueryString_AdvancedFilterRowCountAndFilterTextCheckForUserList", @__tags);
+            this.ScenarioSetup(scenarioInfo);
+            this.FeatureBackground();
+            TechTalk.SpecFlow.Table table13 = new TechTalk.SpecFlow.Table(new string[] {
+                        "QueryType",
+                        "QueryStringURL",
+                        "RowCount"});
+            table13.AddRow(new string[] {
+                        string.Format("{0}", filterName),
+                        string.Format("{0}", queryString),
+                        string.Format("{0}", rows)});
+            testRunner.When("Evergreen QueryStringURL is entered for Simple QueryType and appropriate RowCount" +
+                    " is displayed", ((string)(null)), table13, "When ");
+            testRunner.When("User create dynamic list with \"AdvancedFilterUL1\" name on \"Users\" page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+            testRunner.Then("\"AdvancedFilterUL1\" list is displayed to user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+            testRunner.When("User navigates to the \"All Users\" list", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+            testRunner.When("User navigates to the \"AdvancedFilterUL1\" list", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+            testRunner.Then("\"AdvancedFilterUL1\" list is displayed to user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+            testRunner.When("User clicks the Filters button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+            testRunner.Then("Filters panel is displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+            testRunner.Then(string.Format("\"{0}\" is displayed in added filter info", filterInfo), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
             this.ScenarioCleanup();
         }
     }

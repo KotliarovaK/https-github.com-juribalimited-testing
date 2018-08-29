@@ -548,7 +548,7 @@ Scenario: EvergreenJnr_DevicesList_TheSelectedColumnsCategoryIsDisplayedAfterUsi
 	When User clicks the Filters button
 	Then Filters panel is displayed to the user
 	When User clicks Add New button on the Filter panel
-	Then the following subcategories are displayed for open category:
+	Then the following Filters subcategories are displayed for open category:
 	| Subcategories      |
 	| Device Type        |
 	| Hostname           |
@@ -556,7 +556,7 @@ Scenario: EvergreenJnr_DevicesList_TheSelectedColumnsCategoryIsDisplayedAfterUsi
 	| Owner Display Name |
 	When User enters "Hostname" text in Search field at Filters Panel
 	When User clears search textbox in Filters panel
-	Then the following subcategories are displayed for open category:
+	Then the following Filters subcategories are displayed for open category:
 	| Subcategories      |
 	| Device Type        |
 	| Hostname           |
@@ -570,7 +570,7 @@ Scenario: EvergreenJnr_DevicesList_TheSelectedColumnsCategoryIsDisplayedAfterAdd
 	When User clicks the Filters button
 	Then Filters panel is displayed to the user
 	When User clicks Add New button on the Filter panel
-	Then the following subcategories are displayed for open category:
+	Then the following Filters subcategories are displayed for open category:
 	| Subcategories      |
 	| Device Type        |
 	| Hostname           |
@@ -581,10 +581,162 @@ Scenario: EvergreenJnr_DevicesList_TheSelectedColumnsCategoryIsDisplayedAfterAdd
 	| SelectedCheckboxes |
 	| Red                |
 	When User clicks Add New button on the Filter panel
-	Then the following subcategories are displayed for open category:
+	Then the following Filters subcategories are displayed for open category:
 	| Subcategories      |
 	| Compliance         |
 	| Device Type        |
 	| Hostname           |
 	| Operating System   |
 	| Owner Display Name |
+
+@Evergreen @Devices @EvergreenJnr_Columns @ColumnSectionOrder @ColumnSectionDisplay @DAS12861
+Scenario: EvergreenJnr_DevicesList_ChecksThatSubcategoriesOnFiltersPanelAreDisplayedInAlphabeticalOrder
+	When User clicks "Devices" on the left-hand menu
+	Then "Devices" list should be displayed to the user
+	When User clicks the Columns button
+	Then Columns panel is displayed to the user
+	When ColumnName is entered into the search box and the selection is clicked
+	| ColumnName   |
+	| Compliance   |
+	When User clicks the Columns button
+	Then Columns panel is displayed to the user
+	Then the following subcategories are displayed for Selected Columns category:
+	| Subcategories      |
+	| Hostname           |
+	| Device Type        |
+	| Operating System   |
+	| Owner Display Name |
+	| Compliance         |
+	And Column is displayed in following order:
+	| ColumnName         |
+	| Hostname           |
+	| Device Type        |
+	| Operating System   |
+	| Owner Display Name |
+	| Compliance         |
+	When User clicks the Filters button
+	Then Filters panel is displayed to the user
+	When User clicks Add New button on the Filter panel
+	Then the subcategories are displayed for open category in alphabetical order on Filters panel
+
+@Evergreen @Applications @EvergreenJnr_Columns @ColumnSectionOrder @ColumnSectionDisplay @DAS12861
+Scenario: EvergreenJnr_ApplicationsList_ChecksThatSubcategoriesOnColumnsPanelAreDisplayedInAlphabeticalOrderAfterAddingFilters
+	When User clicks "Applications" on the left-hand menu
+	Then "Applications" list should be displayed to the user
+	When User clicks the Filters button
+	Then Filters panel is displayed to the user
+	When User add "Application Key" filter where type is "Equals" with added column and following value:
+	| Values |
+	| 121    |
+	Then "Application Key" filter is added to the list
+	When User add "Inventory Site" filter where type is "Equals" with added column and "Altiris" Lookup option
+	Then "Inventory Site" filter is added to the list
+	And Column is displayed in following order:
+	| ColumnName      |
+	| Application     |
+	| Vendor          |
+	| Version         |
+	| Application Key |
+	| Inventory Site  |
+	When User clicks Add New button on the Filter panel
+	Then the subcategories are displayed for open category in alphabetical order on Filters panel
+	When User clicks the Columns button
+	Then Columns panel is displayed to the user
+	Then the following subcategories are displayed for Selected Columns category:
+	| Subcategories   |
+	| Application     |
+	| Vendor          |
+	| Version         |
+	| Application Key |
+	| Inventory Site  |
+
+@Evergreen @Users @EvergreenJnr_Columns @ColumnSectionOrder @ColumnSectionDisplay @DAS12861
+Scenario: EvergreenJnr_UsersList_ChecksThatSubcategoriesOnColumnsPanelAreDisplayedInAlphabeticalOrderAfterAddingDepartmentFilters
+	When User clicks "Users" on the left-hand menu
+	Then "Users" list should be displayed to the user
+	When User clicks the Filters button
+	Then Filters panel is displayed to the user
+	When User add "Department" filter where type is "Equals" with added column and "Finance" Tree List option
+	Then Column is displayed in following order:
+	| ColumnName         |
+	| Username           |
+	| Domain             |
+	| Display Name       |
+	| Distinguished Name |
+	| Department Name    |
+	When User clicks the Columns button
+	Then Columns panel is displayed to the user
+	Then the following subcategories are displayed for Selected Columns category:
+	| Subcategories      |
+	| Username           |
+	| Domain             |
+	| Display Name       |
+	| Distinguished Name |
+	| Department Name    |
+	Then User closed "Selected Columns" columns category
+	When User add "Department Full Path" Column from expanded category
+	Then User is expand "Selected Columns" columns category
+	Then the following subcategories are displayed for Selected Columns category:
+	| Subcategories        |
+	| Username             |
+	| Domain               |
+	| Display Name         |
+	| Distinguished Name   |
+	| Department Name      |
+	| Department Full Path |
+	When User clicks the Filters button
+	Then Filters panel is displayed to the user
+	When User clicks Add New button on the Filter panel
+	Then the subcategories are displayed for open category in alphabetical order
+	When User clicks the Columns button
+	Then Columns panel is displayed to the user
+	When User removes ColumnName column by Column panel
+	| ColumnName           |
+	| Department Name      |
+	| Department Full Path |
+	Then User closed "Selected Columns" columns category
+	Then the following Column subcategories are displayed for open category:
+	| Subcategories        |
+	| Department Full Path |
+	| Department Name      |
+	When User clicks the Filters button
+	Then Filters panel is displayed to the user
+	When User have reset all filters
+	When User clicks the Columns button
+	Then Columns panel is displayed to the user
+	Then User closed "Selected Columns" columns category
+	Then User is expand "Organisation" columns category
+	Then the following Column subcategories are displayed for open category:
+	| Subcategories        |
+	| Cost Centre          |
+	| Department Code      |
+	| Department Full Path |
+	| Department Name      |
+
+@Evergreen @AllLists @EvergreenJnr_Columns @ColumnSectionDisplay @DAS12922
+Scenario: EvergreenJnr_AllLists_LocationAndUserFiltersEqualsOnUsersAndApplicationsTabs	
+	When User clicks "Users" on the left-hand menu
+	Then "Users" list should be displayed to the user
+	When User clicks the Columns button
+	Then Columns panel is displayed to the user
+	When ColumnName is entered into the search box and the selection is clicked
+	| ColumnName       |
+	| App Count (Used) |
+	When User clicks the Columns button
+	Then Columns panel is displayed to the user
+	When User removes "Username" column by Column panel
+	When User removes "Domain" column by Column panel
+	When User removes "Display Name" column by Column panel
+	When User removes "Distinguished Name" column by Column panel
+	When User clicks the Filters button
+	Then Filters panel is displayed to the user
+	When User clicks Add New button on the Filter panel
+	Then "User (22)" category is displayed on Filters panel
+	Then "Location (8)" category is displayed on Filters panel
+	When User clicks "Applications" on the left-hand menu
+	Then "Applications" list should be displayed to the user
+	When User clicks the Filters button
+	Then Filters panel is displayed to the user
+	When User clicks Add New button on the Filter panel
+	Then "User (24)" category is displayed on Filters panel
+	Then "User Location (8)" category is displayed on Filters panel

@@ -391,9 +391,9 @@ Scenario: EvergreenJnr_DevicesList_CheckThatErrorsDoNotAppearWhenAddingAdvancedA
 	Then "Devices" list should be displayed to the user
 	When User clicks the Filters button
 	Then Filters panel is displayed to the user
-	When User add "Application Import" filter where type is "Equals" with following Lookup Value and Association:
-	| SelectedValues | Association    |
-	| Altiris        | Used on device |
+	When User add "Application Import" filter where type is "Equals" with Selected Value and following Association:
+	| SelectedList | Association    |
+	| Altiris      | Used on device |
 	And User add "Boot Up Date" filter where type is "Equals" with added column and following value:
 	| Values      |
 	| 07 Dec 2017 |
@@ -741,7 +741,7 @@ Scenario: EvergreenJnr_ApplicationsList_CheckThatNoErrorIsDisplayedAfterAddingFe
 	Then "Applications" list should be displayed to the user
 	When User clicks the Filters button
 	Then Filters panel is displayed to the user
-	When User add "User" filter where type is "Does not equal" with following Lookup Value and Association:
+	When User add Advanced "User" filter where type is "Does not equal" with following Lookup Value and Association:
 	| SelectedValues              | Association  |
 	| DWLABS\$231000-3AC04R8AR431 | Has used app |
 	When User add "User Last Logon Date" filter where type is "Before" with following Data and Association:
@@ -869,7 +869,7 @@ Scenario: EvergreenJnr_ApplicationsList_CheckThatAdvancedUserFilterReturnsCorrec
 	Then "Applications" list should be displayed to the user
 	When User clicks the Filters button
 	Then Filters panel is displayed to the user
-	When User add "User" filter where type is "Equals" with following Lookup Value and Association:
+	When User add Advanced "User" filter where type is "Equals" with following Lookup Value and Association:
 	| SelectedValues | Association  |
 	| FR\APB5713645  | Has used app |
 	Then "1" rows are displayed in the agGrid
@@ -945,7 +945,7 @@ Examples:
 	| EmailMigra: Category       | None                        | 2,223 |
 	| UserSchedu: Category       | None                        | 2,223 |
 	| Babel(Engl: Request Type   | Tools                       | 302   |
-	| EmailMigra: Request Type   | Public Folder               | 50    |
+	#| EmailMigra: Request Type   | Public Folder               | 50    |
 	| UserSchedu: Request Type   | Request Type A              | 47    |
 
 @Evergreen @MailboxesList @EvergreenJnr_FilterFeature @FilterFunctionality @DAS12351
@@ -964,7 +964,7 @@ Scenario Outline: EvergreenJnr_MailboxesList_CheckThat500ISEInvalidColumnNameErr
 Examples: 
 	| FilterName               | SelectedCheckboxes     | Rows  |
 	| EmailMigra: Category     | Mailbox Category A     | 6     |
-	| EmailMigra: Request Type | Personal Mailbox - VIP | 6     |
+	#| EmailMigra: Request Type | Personal Mailbox - VIP | 6     |
 
 @Evergreen @AllLists @EvergreenJnr_FilterFeature @FilterFunctionality @DAS12351
 Scenario Outline: EvergreenJnr_DevicesList_CheckThat500ISEInvalidColumnNameErrorIsNotDisplayedIfUseDepartmentFilter
@@ -1006,8 +1006,57 @@ Scenario: EvergreenJnr_ApplicationsList_CheckThatDataIsDisplayedCorrectlyForAdva
 	Then "Applications" list should be displayed to the user
 	When User clicks the Filters button
 	Then Filters panel is displayed to the user
-	When User add "User" filter where type is "Does not equal" with following Lookup Value and Association:
+	When User add Advanced "User" filter where type is "Does not equal" with following Lookup Value and Association:
 	| SelectedValues | Association                         |
 	| FR\RZM6552051  | Owns a device which app was used on |
 	Then "100" rows are displayed in the agGrid
 	Then table content is present
+
+@Evergreen @Devices @EvergreenJnr_FilterFeature @FilterFunctionality @DAS12807
+Scenario: EvergreenJnr_DevicesList_CheckThatApplicationFilterWorksCorrectlyForDifferentAssociationTypes
+	When User clicks "Devices" on the left-hand menu
+	Then "Devices" list should be displayed to the user
+	When User clicks the Filters button
+	Then Filters panel is displayed to the user
+	When User add Advanced "Application" filter where type is "Equals" with following Lookup Value and Association:
+	| SelectedValues  | Association         |
+	| ACD Display 3.4 | Installed on device |
+	Then "944" rows are displayed in the agGrid
+	When User click Edit button for "Application" filter
+	And User is deselect "Installed on device" in Association
+	And User select "Not installed on device" in Association
+	And User clicks Save filter button
+	Then "16,281" rows are displayed in the agGrid
+	When User have reset all filters
+	And User add Advanced "Application" filter where type is "Equals" with following Lookup Value and Association:
+	| SelectedValues  | Association    |
+	| ACD Display 3.4 | Used on device |
+	Then message 'No devices found' is displayed to the user
+	When User click Edit button for "Application" filter
+	And User is deselect "Used on device" in Association
+	And User select "Not used on device" in Association
+	And User clicks Save filter button
+	Then "17,225" rows are displayed in the agGrid
+
+@Evergreen @UsersList @EvergreenJnr_FilterFeature @FilterFunctionality @DAS12804 @Delete_Newly_Created_List
+Scenario: EvergreenJnr_UsersList_CheckThatSavedStaticListIsNotShownInEditMode
+	When User clicks "Users" on the left-hand menu
+	Then "Users" list should be displayed to the user
+	When User clicks the Filters button
+	Then Filters panel is displayed to the user
+	When User add "Domain" filter where type is "Equals" with added column and Lookup option
+	| SelectedValues |
+	| AU             |
+	Then "Domain" filter is added to the list
+	When  User clicks the Actions button
+	Then Actions panel is displayed to the user
+	When User select "Username" rows in the grid
+	| SelectedRowsName |
+	| AAO798996        |
+	| AGC788194        |
+	| AIU705098        |
+	And User selects "Create static list" in the Actions dropdown
+	And User create static list with "StaticList8543" name
+	Then "StaticList8543" list is displayed to user
+	And Edit List menu is not displayed
+	And URL contains "evergreen/#/users?$listid="

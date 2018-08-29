@@ -284,6 +284,17 @@ namespace DashworksTestAutomation.Steps.Dashworks
             filtersNames.SaveButton.Click();
         }
 
+        [When(@"User add ""(.*)"" filter where type is ""(.*)"" with following Value and Association:")]
+        public void WhenUserAddFilterWhereTypeIsWithFollowingValueAndAssociation(string filterName,
+            string operatorValue, Table table)
+        {
+            var filtersNames = _driver.NowAt<FiltersElement>();
+            filtersNames.AddFilter(filterName);
+            var filter = new ValueAssociationFilter(_driver, operatorValue, table);
+            filter.Do();
+            _driver.WaitForDataLoading();
+        }
+
         [When(@"User add ""(.*)"" filter where type is ""(.*)"" with Selected Value and following Association:")]
         public void WhenUserAddFilterWhereTypeIsWithSelectedValueAndFollowingAssociation(string filterName,
             string operatorValue, Table table)
@@ -325,6 +336,16 @@ namespace DashworksTestAutomation.Steps.Dashworks
             filter.Do();
         }
 
+        [When(@"User add Advanced ""(.*)"" filter where type is ""(.*)"" with following Lookup Value and Association:")]
+        public void WhenUserAddAdvancedFilterWhereTypeIsWithFollowingLookupValueAndAssociation(string filterName,
+            string operatorValue, Table table)
+        {
+            var filtersNames = _driver.NowAt<FiltersElement>();
+            filtersNames.AddFilter(filterName);
+            var filter = new LookupValueAdvancedFilter(_driver, operatorValue, table);
+            filter.Do();
+        }
+
         [When(@"User add ""(.*)"" filter where type is ""(.*)"" with following Data and Association:")]
         public void WhenUserAddFilterWhereTypeIsWithFollowingDataAndAssociation(string filterName, string operatorValue, Table table)
         {
@@ -343,13 +364,22 @@ namespace DashworksTestAutomation.Steps.Dashworks
             filter.Do();
         }
 
-        [When(@"User add ""(.*)"" filter where type is ""(.*)"" with following Value and Association:")]
-        public void WhenUserAddFilterWhereTypeIsWithFollowingValueAndAssociation(string filterName,
+        [When(@"User Add And ""(.*)"" filter where type is ""(.*)"" with following Number and Association:")]
+        public void WhenUserAddAndFilterWhereTypeIsWithFollowingNumberAndAssociation(string filterName, string operatorValue, Table table)
+        {
+            var filtersNames = _driver.NowAt<FiltersElement>();
+            filtersNames.AddAndFilter(filterName);
+            var filter = new NumberAssociationFilter(_driver, operatorValue, table);
+            filter.Do();
+        }
+
+        [When(@"User add ""(.*)"" filter where type is ""(.*)"" with following Number and Association:")]
+        public void WhenUserAddFilterWhereTypeIsWithFollowingNumberAndAssociation(string filterName,
             string operatorValue, Table table)
         {
             var filtersNames = _driver.NowAt<FiltersElement>();
             filtersNames.AddFilter(filterName);
-            var filter = new ValueAssociationFilter(_driver, operatorValue, table);
+            var filter = new NumberAssociationFilter(_driver, operatorValue, table);
             filter.Do();
             _driver.WaitForDataLoading();
         }
@@ -509,6 +539,13 @@ namespace DashworksTestAutomation.Steps.Dashworks
         {
             var filterElement = _driver.NowAt<FiltersElement>();
             filterElement.GetFilterValue(value);
+        }
+
+        [Then(@"User Description field is not displayed")]
+        public void ThenUserDescriptionFieldIsNotDisplayed()
+        {
+            var filterElement = _driver.NowAt<FiltersElement>();
+            Assert.IsFalse(filterElement.UserDescriptionField.Displayed(), "User Description field is visible");
         }
 
         [When(@"User deletes the selected lookup filter ""(.*)"" value")]
@@ -848,6 +885,13 @@ namespace DashworksTestAutomation.Steps.Dashworks
 
         #region Sections
 
+        [Then(@"""(.*)"" category is displayed on Filters panel")]
+        public void ThenCategoryIsDisplayedOnFiltersPanel(string categoryValue)
+        {
+            var page = _driver.NowAt<FiltersElement>();
+            Assert.IsTrue(page.GetFilterCategory(categoryValue).Displayed(), "Incorrect subcategories count for selected category");
+        }
+
         [Then(@"""(.*)"" section is not displayed in the Filter panel")]
         public void ThenSectionIsNotDisplayedInTheFilterPanel(string categoryName)
         {
@@ -872,13 +916,56 @@ namespace DashworksTestAutomation.Steps.Dashworks
             Assert.AreEqual(groupCount, filterElement.MaximizeGroupButton.Count, "Maximize buttons are not displayed");
         }
 
-        [Then(@"the following subcategories are displayed for open category:")]
-        public void ThenTheFollowingSubcategoriesAreDisplayedForOpenCategory(Table table)
+        [Then(@"the following Filters subcategories are displayed for open category:")]
+        public void ThenTheFollowingFiltersSubcategoriesAreDisplayedForOpenCategory(Table table)
         {
-            var filterElement = _driver.NowAt<FiltersElement>();
-            var expectedList = table.Rows.SelectMany(row => row.Values);
-            var actualList = filterElement.SubcategoryValues.Select(value => value.Text);
+            var page = _driver.NowAt<BaseDashboardPage>();
+            var expectedList = table.Rows.SelectMany(row => row.Values).ToList();
+            var actualList = page.SelectedFiltersSubcategoryList.Select(value => value.Text).ToList();
             Assert.AreEqual(expectedList, actualList, "Subcategory values are different");
+        }
+
+        [Then(@"the following Column subcategories are displayed for open category:")]
+        public void ThenTheFollowingColumnSubcategoriesAreDisplayedForOpenCategory(Table table)
+        {
+            var page = _driver.NowAt<BaseDashboardPage>();
+            var expectedList = table.Rows.SelectMany(row => row.Values).ToList();
+            var actualList = page.SelectedColumnsSubcategoryList.Select(value => value.Text).ToList();
+            Assert.AreEqual(expectedList, actualList, "Subcategory values are different");
+        }
+
+        [Then(@"the following subcategories are displayed for Selected Columns category:")]
+        public void ThenTheFollowingSubcategoriesAreDisplayedForSelectedColumnsCategory(Table table)
+        {
+            var page = _driver.NowAt<BaseDashboardPage>();
+            var expectedList = table.Rows.SelectMany(row => row.Values).ToList();
+            var actualList = page.ColumnSubcategoryList.Select(value => value.Text).ToList();
+            Assert.AreEqual(expectedList, actualList, "Subcategory values are different");
+        }
+
+        [Then(@"the following subcategories are displayed for Selected Filters category:")]
+        public void ThenTheFollowingSubcategoriesAreDisplayedForSelectedFiltersCategory(Table table)
+        {
+            var page = _driver.NowAt<BaseDashboardPage>();
+            var expectedList = table.Rows.SelectMany(row => row.Values).ToList();
+            var actualList = page.FilterSubcategoryList.Select(value => value.Text).ToList();
+            Assert.AreEqual(expectedList, actualList, "Subcategory values are different");
+        }
+
+        [Then(@"the subcategories are displayed for open category in alphabetical order")]
+        public void ThenTheSubcategoriesAreDisplayedForOpenCategoryInAlphabeticalOrder()
+        {
+            var page = _driver.NowAt<BaseDashboardPage>();
+            List<string> list = page.SelectedFiltersSubcategoryList.Select(x => x.Text).ToList();
+            Assert.AreEqual(list.OrderBy(s => s), list, "Subcategories are not in alphabetical order");
+        }
+
+        [Then(@"the subcategories are displayed for open category in alphabetical order on Filters panel")]
+        public void ThenTheSubcategoriesAreDisplayedForOpenCategoryInAlphabeticalOrderOnFiltersPanel()
+        {
+            var page = _driver.NowAt<BaseDashboardPage>();
+            List<string> list = page.FilterSubcategoryList.Select(x => x.Text).ToList();
+            Assert.AreEqual(list.OrderBy(s => s), list, "Subcategories are not in alphabetical order");
         }
 
         #endregion

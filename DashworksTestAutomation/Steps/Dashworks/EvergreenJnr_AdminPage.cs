@@ -1376,6 +1376,15 @@ namespace DashworksTestAutomation.Steps.Dashworks
             Assert.IsTrue(projectElement.DisabledScopeListDropdown.Displayed());
         }
 
+        [Then(@"""(.*)"" is displayed in the disabled Project Type field")]
+        public void ThenIsDisplayedInTheDisabledProjectTypeField(string projectType)
+        {
+            var projectElement = _driver.NowAt<ProjectsPage>();
+            Assert.IsTrue(Convert.ToBoolean(projectElement.ProjectType.GetAttribute("disabled")),
+                "Project Type field is active");
+            Assert.AreEqual(projectType, projectElement.ProjectType.GetAttribute("value"), "Project Type is incorrect");
+        }
+
         [Then(@"Scope List dropdown is active")]
         public void ThenScopeListDropdownIsActive()
         {
@@ -1390,11 +1399,10 @@ namespace DashworksTestAutomation.Steps.Dashworks
             createProjectElement.ScopeProjectField.Click();
         }
 
-        [Then(@"Scope DDL have the ""(.*)"" Height and the ""(.*)"" Width")]
-        public void ThenScopeDDLHaveTheHeightAndTheWidth(string height, string width)
+        [Then(@"Scope DDL have the ""(.*)"" Width")]
+        public void ThenScopeDDLHaveTheWidth(string width)
         {
             var panelSize = _driver.NowAt<ProjectsPage>();
-            Assert.AreEqual(height, panelSize.GetDllPanelHeight().Split('p').First());
             Assert.AreEqual(width, panelSize.GetDllPanelWidth().Split('.').First());
         }
 

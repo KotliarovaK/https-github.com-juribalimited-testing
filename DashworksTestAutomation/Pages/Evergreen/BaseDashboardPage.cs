@@ -19,6 +19,16 @@ namespace DashworksTestAutomation.Pages.Evergreen
 
         public const string FullTable = ".//div[contains(@class, 'ag-body-viewport')]/div";
 
+        public const string OptionsDllOnActionsPanel = "//mat-option[@role='option']//span";
+
+        public const string ColumnSubcategory = "//div[@class='selected-column-name']//span";
+
+        public const string FilterSubcategory = "//div[contains(@class, 'sub-categories')]//div//div";
+
+        public const string SelectedFiltersSubcategory = "//div[contains(@class, 'sub-categories')]//div//div";
+
+        public const string SelectedColumnSubcategory = "//div[contains(@class, 'sub-categories')]//div//span";
+
         [FindsBy(How = How.XPath, Using = ".//div[@id='pagetitle-text']/descendant::h1")]
         public IWebElement Heading { get; set; }
 
@@ -103,6 +113,31 @@ namespace DashworksTestAutomation.Pages.Evergreen
         [FindsBy(How = How.XPath, Using = ".//div[contains(@class,'submenu-selected-list')]")]
         public IWebElement List { get; set; }
 
+        #region All Lists dropdown
+
+        [FindsBy(How = How.XPath, Using = ".//div[contains(@class, 'DropdownActionsLists')]")]
+        public IWebElement DropdownLists { get; set; }
+
+        [FindsBy(How = How.XPath, Using = "//div[contains(@class, 'actions-lists')]//i[contains(@class, 'mat-star')]/..//following-sibling::span[text()='Favourites']")]
+        public IWebElement FavouritesIcon { get; set; }
+
+        [FindsBy(How = How.XPath, Using = "//div[contains(@class, 'actions-lists')]//i[contains(@class, 'person')]/..//following-sibling::span[text()='My lists']")]
+        public IWebElement MyListsIcon { get; set; }
+
+        [FindsBy(How = How.XPath, Using = "//div[contains(@class, 'actions-lists')]//i[contains(@class, 'share')]/..//following-sibling::span[text()='Shared with me']")]
+        public IWebElement SharedWithMeIcon { get; set; }
+
+        [FindsBy(How = How.XPath, Using = "//div[contains(@class, 'actions-lists')]//i[contains(@class, 'mat-filter_list')]/..//following-sibling::span[text()='Dynamic lists']")]
+        public IWebElement DynamicListsIcon { get; set; }
+
+        [FindsBy(How = How.XPath, Using = "//div[contains(@class, 'actions-lists')]//i[contains(@class, 'done')]/..//following-sibling::span[text()='Static lists']")]
+        public IWebElement StaticListsIcon { get; set; }
+
+        [FindsBy(How = How.XPath, Using = "//div[contains(@class, 'actions-lists')]//i[contains(@class, 'mat-list')]/..//following-sibling::span[text()='All lists']")]
+        public IWebElement AllListsIcon { get; set; }
+
+        #endregion
+
         [FindsBy(How = How.XPath, Using = ".//span[contains(@class, 'rowCount')]")]
         public IWebElement ResultsOnPageCount { get; set; }
 
@@ -183,6 +218,21 @@ namespace DashworksTestAutomation.Pages.Evergreen
 
         [FindsBy(How = How.XPath, Using = "//div[@class='top-tools-item top-tools-left-side']")]
         public IWebElement OutsideGridPanel { get; set; }
+
+        [FindsBy(How = How.XPath, Using = OptionsDllOnActionsPanel)]
+        public IList<IWebElement> OptionsDll { get; set; }
+
+        [FindsBy(How = How.XPath, Using = ColumnSubcategory)]
+        public IList<IWebElement> ColumnSubcategoryList { get; set; }
+
+        [FindsBy(How = How.XPath, Using = FilterSubcategory)]
+        public IList<IWebElement> FilterSubcategoryList { get; set; }
+
+        [FindsBy(How = How.XPath, Using = SelectedFiltersSubcategory)]
+        public IList<IWebElement> SelectedFiltersSubcategoryList { get; set; }
+
+        [FindsBy(How = How.XPath, Using = SelectedColumnSubcategory)]
+        public IList<IWebElement> SelectedColumnsSubcategoryList { get; set; }
 
         #region TableColumns
 
@@ -270,6 +320,14 @@ namespace DashworksTestAutomation.Pages.Evergreen
         {
             var selector = By.XPath(
                 $".//div[@class='topnav-footer']//span[contains(text(),'{versionNumber}')]");
+            Driver.WaitWhileControlIsNotDisplayed(selector);
+            return Driver.FindElement(selector);
+        }
+
+        public IWebElement GetSubcategoryByCategoryName(string categoryName)
+        {
+            var selector = By.XPath(
+                $"//div[text()='{categoryName}']/../following-sibling::div[contains(@class, 'sub-categories')]//div//span");
             Driver.WaitWhileControlIsNotDisplayed(selector);
             return Driver.FindElement(selector);
         }
@@ -524,6 +582,13 @@ namespace DashworksTestAutomation.Pages.Evergreen
             var selector = By.XPath(".//span[@role='columnheader']");
             Driver.WaitForDataLoading();
             return Driver.FindElements(selector);
+        }
+
+        public IWebElement GetOptionOnListPanel(string optionName)
+        {
+            var selector = By.XPath($".//mat-option[@role='option']//span[text()='{optionName}']");
+            Driver.WaitForDataLoading();
+            return Driver.FindElement(selector);
         }
     }
 }
