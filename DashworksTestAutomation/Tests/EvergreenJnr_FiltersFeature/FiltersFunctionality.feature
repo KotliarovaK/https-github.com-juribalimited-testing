@@ -753,7 +753,7 @@ Scenario: EvergreenJnr_ApplicationsList_CheckThatNoErrorIsDisplayedAfterAddingFe
 	Then "247" rows are displayed in the agGrid
 	And There are no errors in the browser console
 
-@Evergreen @Applications @EvergreenJnr_FilterFeature @FilterFunctionality @DAS12181 @Delete_Newly_Created_List
+@Evergreen @Applications @EvergreenJnr_FilterFeature @FilterFunctionality @DAS12181 @DAS11561 @Delete_Newly_Created_List
 Scenario: EvergreenJnr_ApplicationsList_CheckThatNoErrorIsDisplayedAfterAddingFewAdvancedFiltersAndFewStandardFilters
 	When User clicks "Applications" on the left-hand menu
 	Then "Applications" list should be displayed to the user
