@@ -8,6 +8,7 @@ using DashworksTestAutomation.DTO;
 using DashworksTestAutomation.DTO.RuntimeVariables;
 using DashworksTestAutomation.Extensions;
 using DashworksTestAutomation.Helpers;
+using DashworksTestAutomation.Pages.Evergreen;
 using DashworksTestAutomation.Pages.Evergreen.AdminDetailsPages;
 using DashworksTestAutomation.Pages.Projects;
 using DashworksTestAutomation.Providers;
@@ -1375,6 +1376,15 @@ namespace DashworksTestAutomation.Steps.Dashworks
             Assert.IsTrue(projectElement.DisabledScopeListDropdown.Displayed());
         }
 
+        [Then(@"""(.*)"" is displayed in the disabled Project Type field")]
+        public void ThenIsDisplayedInTheDisabledProjectTypeField(string projectType)
+        {
+            var projectElement = _driver.NowAt<ProjectsPage>();
+            Assert.IsTrue(Convert.ToBoolean(projectElement.ProjectType.GetAttribute("disabled")),
+                "Project Type field is active");
+            Assert.AreEqual(projectType, projectElement.ProjectType.GetAttribute("value"), "Project Type is incorrect");
+        }
+
         [Then(@"Scope List dropdown is active")]
         public void ThenScopeListDropdownIsActive()
         {
@@ -1389,11 +1399,10 @@ namespace DashworksTestAutomation.Steps.Dashworks
             createProjectElement.ScopeProjectField.Click();
         }
 
-        [Then(@"Scope DDL have the ""(.*)"" Height and the ""(.*)"" Width")]
-        public void ThenScopeDDLHaveTheHeightAndTheWidth(string height, string width)
+        [Then(@"Scope DDL have the ""(.*)"" Width")]
+        public void ThenScopeDDLHaveTheWidth(string width)
         {
             var panelSize = _driver.NowAt<ProjectsPage>();
-            Assert.AreEqual(height, panelSize.GetDllPanelHeight().Split('p').First());
             Assert.AreEqual(width, panelSize.GetDllPanelWidth().Split('.').First());
         }
 
@@ -1575,6 +1584,44 @@ namespace DashworksTestAutomation.Steps.Dashworks
                 "Incorrect rows count");
         }
 
+        [Then(@"Then user sees Buckets in next default sort order:")]
+        public void ThenUserSeesBuketsInNextDefaultSortOrder(Table buckets)
+        {
+            var page = _driver.NowAt<BaseDashboardPage>();
+            _driver.WaitForDataLoading();
+
+            for (int i = 0; i < buckets.RowCount; i++)
+            {
+                Assert.That(page.GridBucketsNames[i].Text, Is.EqualTo(buckets.Rows[i].Values.FirstOrDefault()), "Buckets are not the same");
+            }
+        }
+
+        [When(@"User creates following buckets in Administration:")]
+        public void WhenUserCreatesFollowingBucketsInAdministration(Table buckets)
+        {
+            foreach (var bucket in buckets.Rows)
+            {
+                var action = _driver.NowAt<BaseDashboardPage>();
+                action.GetActionsButtonByName("CREATE BUCKET").Click();
+                _driver.WaitForDataLoading();
+
+                var page = _driver.NowAt<CreateBucketPage>();
+                page.BucketNameField.Clear();
+                page.BucketNameField.SendKeys(bucket.Values.FirstOrDefault());
+
+                if (!string.IsNullOrEmpty(bucket.Values.FirstOrDefault()))
+                    _buckets.Value.Add(bucket.Values.FirstOrDefault());
+
+                page.TeamsNameField.Clear();
+                _driver.WaitForDataLoading();
+                page.TeamsNameField.SendKeys(bucket.Values.ElementAt(1));
+                page.SelectTeam(bucket.Values.ElementAt(1));
+
+                page.CreateBucketButton.Click();
+                Logger.Write("Create Team button was clicked");
+            }
+        }
+
         [AfterScenario("Delete_Newly_Created_Bucket")]
         public void DeleteAllBucketAfterScenarioRun()
         {
@@ -1666,10 +1713,20 @@ namespace DashworksTestAutomation.Steps.Dashworks
         }
 
         [Then(@"Delete ""(.*)"" Bucket in the Administration")]
+        [When(@"User deletes ""(.*)"" Bucket in the Administration")]
         public void ThenDeleteBucketInTheAdministration(string bucketName)
         {
             //var projectId = DatabaseHelper.ExecuteReader($"SELECT [ProjectID] FROM[PM].[dbo].[Projects] where[ProjectName] = '{projectName}'", 0)[0];
             DatabaseHelper.ExecuteQuery($"delete from [PM].[dbo].[ProjectGroups] where [GroupName] = '{bucketName}'");
+        }
+
+        [Then(@"Delete following Buckets in the Administration:")]
+        public void ThenDeleteFollowingBucketsInTheAdministration(Table buckets)
+        {
+            foreach (var bucket in buckets.Rows)
+            {
+                DatabaseHelper.ExecuteQuery($"delete from [PM].[dbo].[ProjectGroups] where [GroupName] = '{bucket.Values.FirstOrDefault()}'");
+            }
         }
     }
 }

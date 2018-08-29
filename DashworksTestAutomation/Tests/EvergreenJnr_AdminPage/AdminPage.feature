@@ -1614,7 +1614,7 @@ Scenario: EvergreenJnr_AdminPage_CheckThatScopePanelHaveCorrectlySizeWhenUsedLis
 	When User clicks the "CREATE PROJECT" Action button
 	Then "Create Project" page should be displayed to the user
 	When User clicks in the Scope field on the Admin page
-	Then Scope DDL have the "304" Height and the "658" Width
+	Then Scope DDL have the "658" Width
 
 @Evergreen @Admin @EvergreenJnr_AdminPage @AdminPage @DAS12349 @DAS12364 @DAS13199 @Delete_Newly_Created_List @Delete_Newly_Created_Project @Project_Creation_and_Scope @Projects
 Scenario: EvergreenJnr_AdminPage_CheckThat500ISEInvalidColumnNameIsNotDisplayedWhenUsedAppSavedListForFilteringDeviceList
@@ -2152,7 +2152,7 @@ Examples:
 	| All Mailboxes | Mailboxes | UPDATE MAILBOX CHANGES | 003F5D8E1A844B1FAA5@bclabs.local (Hunter, Melanie) | 1 mailbox will be added | 1 object queued for onboarding, 0 objects offboarded |
 	| All Devices   | Users     | UPDATE USER CHANGES    | ADC714277 (Dina Q. Knight)                         | 1 user will be added    | 1 object queued for onboarding, 0 objects offboarded |
 
-@Evergreen @Admin @EvergreenJnr_AdminPage @AdminPage @DAS12999 @DAS13199 @Projects @Delete_Newly_Created_Project
+@Evergreen @Admin @EvergreenJnr_AdminPage @AdminPage @DAS12999 @DAS13199 @DAS12781 @Projects @Delete_Newly_Created_Project
 Scenario: EvergreenJnr_AdminPage_ChangingBucketFromUseEvergreenBucketsToCloneEvergreenBuckets
 	When User clicks Admin on the left-hand menu
 	Then Admin page should be displayed to the user
@@ -2167,7 +2167,8 @@ Scenario: EvergreenJnr_AdminPage_ChangingBucketFromUseEvergreenBucketsToCloneEve
 	Then Success message is displayed and contains "Your project has been created" text
 	When User clicks newly created object link
 	And User clicks "Details" tab
-	And User selects "Use project buckets" in the Buckets Project dropdown
+	Then "Mailbox scoped project" is displayed in the disabled Project Type field
+	When User selects "Use project buckets" in the Buckets Project dropdown
 	And User clicks the "UPDATE" Action button
 	Then Success message is displayed and contains "The project details have been updated" text
 	And There are no errors in the browser console
@@ -2991,6 +2992,59 @@ Scenario: EvergreenJnr_AdminPage_CreatingDefaultBucket
 	And User clicks Update Bucket button on the Buckets page
 	Then Success message The "Unassigned" bucket has been updated is displayed on the Buckets page
 	And Delete "NewBucket5" Bucket in the Administration
+
+@Evergreen @Admin @EvergreenJnr_AdminPage @AdminPage @Buckets @DAS12939
+Scenario: EvergreenJnr_AdminPage_CheckDefaultSortOrderOfBucketsAfterCreateOrUpdateOrDeleteAction
+	When User clicks Admin on the left-hand menu
+	And User clicks "Buckets" link on the Admin page
+	And User creates following buckets in Administration:
+	| Buckets | Teams    |
+	| 1ba     | Admin IT |
+	| 2ab     | K-Team   |
+	| aaa     | Admin IT |
+	| aab     | I-Team   |
+	| aba     | Admin IT |
+	| waa     | IB Team  |
+	Then Then user sees Buckets in next default sort order:
+	| Buckets    |
+	| 1ba        |
+	| 2ab        |
+	| aaa        |
+	| aab        |
+	| aba        |
+	| Unassigned |
+	| waa        |
+	When User enters "1ba" text in the Search field for "Bucket" column
+	And User clicks content from "Bucket" column
+	And User clicks "Bucket Settings" tab
+	And User enters "a1ba" in the Bucket Name field
+	And User clicks the "UPDATE BUCKET" Action button
+	Then Then user sees Buckets in next default sort order:
+	| Buckets    |
+	| 2ab        |
+	| a1ba       |
+	| aaa        |
+	| aab        |
+	| aba        |
+	| Unassigned |
+	| waa        |
+	When User deletes "aab" Bucket in the Administration
+	And User clicks refresh button in the browser
+	Then Then user sees Buckets in next default sort order:
+	| Buckets    |
+	| 2ab        |
+	| a1ba       |
+	| aaa        |
+	| aba        |
+	| Unassigned |
+	| waa        |
+	And Delete following Buckets in the Administration:
+	| Buckets    |
+	| 2ab        |
+	| a1ba       |
+	| aaa        |
+	| aba        |
+	| waa        |
 
 @Evergreen @Admin @EvergreenJnr_AdminPage @AdminPage @DAS12999 @Buckets
 Scenario: EvergreenJnr_AdminPage_AddingDevicesFromBuckets

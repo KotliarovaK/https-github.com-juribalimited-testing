@@ -53,6 +53,9 @@ namespace DashworksTestAutomation.Pages.Evergreen
         public IWebElement ProjectField { get; set; }
 
         [FindsBy(How = How.XPath, Using = "//mat-option[@role='option']")]
+        public IWebElement ProjectSection { get; set; }
+
+        [FindsBy(How = How.XPath, Using = "//mat-option[@role='option']")]
         public IWebElement OptionName { get; set; }
 
         [FindsBy(How = How.XPath, Using = "//textarea[@placeholder='Stage']")]
@@ -203,6 +206,9 @@ namespace DashworksTestAutomation.Pages.Evergreen
 
         [FindsBy(How = How.XPath, Using = ".//div[contains(@class, 'ag-body-container')]/div[@role='row']")]
         public IList<IWebElement> GridRows { get; set; }
+
+        [FindsBy(How = How.XPath, Using = ".//div[contains(@class, 'ag-body-container')]/div[@role='row']/div[@col-id='groupName']")]
+        public IList<IWebElement> GridBucketsNames { get; set; }
 
         [FindsBy(How = How.XPath, Using = "//div[contains(@class, 'list-selected-save')]//span[@class='list-selected-name']")]
         public IWebElement ActiveCustomListEdited { get; set; }
