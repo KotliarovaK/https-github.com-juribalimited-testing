@@ -91,7 +91,7 @@ namespace DashworksTestAutomation.Pages.Evergreen
         [FindsBy(How = How.XPath, Using = ".//span[@class='ag-selection-checkbox']")]
         public IList<IWebElement> SelectRowsCheckboxes { get; set; }
 
-        [FindsBy(How = How.XPath, Using = ".//button[contains(@class, 'btn input-toggle')]")]
+        [FindsBy(How = How.XPath, Using = ".//button[contains(@class, 'btn-close')]")]
         public IWebElement SearchTextboxResetButton { get; set; }
 
         [FindsBy(How = How.XPath,
