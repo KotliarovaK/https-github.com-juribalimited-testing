@@ -26,8 +26,8 @@ namespace DashworksTestAutomation.Pages.Evergreen
         [FindsBy(How = How.XPath, Using = ".//span[@class='ng-star-inserted']")]
         public IWebElement ResultsRowsCount { get; set; }
 
-        [FindsBy(How = How.XPath, Using = ".//button[@class='btn input-toggle mat-icon-button ng-star-inserted']")]
-        public IWebElement SearchTextboxResetButton { get; set; }
+        [FindsBy(How = How.XPath, Using = ".//button[contains(@class, 'btn input-toggle mat-icon-button ')]")]
+        public IWebElement GlobalSearchTextboxResetButton { get; set; }
 
         public override List<By> GetPageIdentitySelectors()
         {
