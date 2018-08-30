@@ -118,7 +118,7 @@ namespace DashworksTestAutomation.Pages.Evergreen.AdminDetailsPages
 
         public string GetDllPanelWidth()
         {
-            return Driver.FindElement(By.XPath("//div[@class='cdk-overlay-pane']")).GetCssValue("width");
+            return Driver.FindElement(By.XPath("//div[@role='listbox']")).GetCssValue("width");
         }
 
         public void NavigateToProjectTabByName(string tabName)
