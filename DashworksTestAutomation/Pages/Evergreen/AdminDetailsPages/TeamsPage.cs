@@ -28,6 +28,9 @@ namespace DashworksTestAutomation.Pages.Evergreen.AdminDetailsPages
         [FindsBy(How = How.XPath, Using = "//span[text()='Default Team']")]
         public IWebElement DefaulTeamCheckbox { get; set; }
 
+        [FindsBy(How = How.XPath, Using = "//mat-checkbox[contains(@class, 'mat-checkbox-checked')]")]
+        public IWebElement InactiveDefaulTeamCheckbox { get; set; }
+
         [FindsBy(How = How.XPath, Using = "//mat-option/span/span[text()='Remove Members']")]
         public IWebElement RemoveButtonInActions { get; set; }
 
