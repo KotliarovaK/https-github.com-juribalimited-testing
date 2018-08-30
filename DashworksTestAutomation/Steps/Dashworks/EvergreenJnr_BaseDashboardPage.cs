@@ -205,7 +205,7 @@ namespace DashworksTestAutomation.Steps.Dashworks
         public void ThenContentIsDisplayedInColumn(string textContent, string columnName)
         {
             var page = _driver.NowAt<BaseDashboardPage>();
-
+            _driver.WaitForDataLoading();
             var originalList = page.GetRowContentByColumnName(columnName);
             Assert.AreEqual(textContent, originalList, "Content is not displayed correctly");
         }

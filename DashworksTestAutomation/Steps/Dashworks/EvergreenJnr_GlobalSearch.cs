@@ -118,9 +118,9 @@ namespace DashworksTestAutomation.Steps.Dashworks
         [Then(@"reset button in Global Search field is displayed")]
         public void ThenResetButtonInGlobalSearchFieldIsDisplayed()
         {
-            var searchElement = _driver.NowAt<BaseDashboardPage>();
-            _driver.WaitWhileControlIsNotDisplayed<BaseDashboardPage>(() => searchElement.SearchTextboxResetButton);
-            Assert.IsTrue(searchElement.SearchTextboxResetButton.Displayed(), "Reset button is not displayed");
+            var searchElement = _driver.NowAt<GlobalSearchElement>();
+            _driver.WaitWhileControlIsNotDisplayed<GlobalSearchElement>(() => searchElement.GlobalSearchTextboxResetButton);
+            Assert.IsTrue(searchElement.GlobalSearchTextboxResetButton.Displayed(), "Reset button is not displayed");
             Logger.Write("Reset button is displayed");
         }
     }
