@@ -1053,7 +1053,7 @@ Scenario: EvergreenJnr_AdminPage_CheckThatOnboardingOfObjectsIsProceedForScopedP
 	When User enters "01" text in the Search field for "Project ID" column
 	Then Counter shows "0" found rows
 
-@Evergreen @Admin @EvergreenJnr_AdminPage @AdminPage @DAS12332 @DAS13199 @DAS12776 @Delete_Newly_Created_Project @Project_Creation_and_Scope @Projects
+@Evergreen @Admin @EvergreenJnr_AdminPage @AdminPage @DAS12332 @DAS13199 @Delete_Newly_Created_Project @Project_Creation_and_Scope @Projects
 Scenario: EvergreenJnr_AdminPage_CheckingThatRedBannerWithOkMessageIsNotDisplayedAfterAddingItemsToCreatedProject
 	When User clicks Admin on the left-hand menu
 	Then Admin page should be displayed to the user
@@ -1068,58 +1068,24 @@ Scenario: EvergreenJnr_AdminPage_CheckingThatRedBannerWithOkMessageIsNotDisplaye
 	When User clicks newly created object link
 	Then Project "TestProject12332" is displayed to user
 	When User selects "Scope Changes" tab on the Project details page
-	When User expands the object to add 
+	When User expands the object to add
 	And User selects following Objects
 	| Objects        |
 	| 1DPQO52HJQZJ0H |
 	And User clicks "Applications" tab in the Project Scope Changes section
-	And User expands the object to add 
+	And User expands the object to add
 	And User selects following Objects
 	| Objects                                                              |
 	| "WPF/E" (codename) Community Technology Preview (Feb 2007) (0.8.5.0) |
 	And User clicks "Users" tab in the Project Scope Changes section
-	And User expands the object to add 
+	And User expands the object to add
 	And User selects following Objects
 	| Objects                    |
 	| AAC860150 (Kerrie D. Ruiz) |
 	And User clicks the "UPDATE ALL CHANGES" Action button
 	Then Warning message with "1 device will be added, 1 user will be added, 1 application will be added" text is displayed on the Admin page
-	Then Objects to add panel is disabled
-	When User clicks "Applications" tab in the Project Scope Changes section
-	Then Objects to add panel is disabled
-	When User clicks "Devices" tab in the Project Scope Changes section
-	Then Objects to add panel is disabled
 	When User clicks the "UPDATE PROJECT" Action button
 	Then Success message is displayed and contains "3 objects queued for onboarding, 0 objects offboarded" text
-	Then "UPDATE ALL CHANGES" Action button is disabled
-	Then "UPDATE DEVICE CHANGES" Action button is disabled
-	And "Devices to add (0 of 17224 selected)" is displayed to the user in the Project Scope Changes section
-	Then Objects to add panel is active
-	When User clicks "Applications" tab in the Project Scope Changes section
-	Then "UPDATE APPLICATION CHANGES" Action button is disabled
-	And "Applications to add (0 of 2128 selected)" is displayed to the user in the Project Scope Changes section
-	Then Objects to add panel is active
-	When User clicks "Users" tab in the Project Scope Changes section
-	Then "UPDATE USER CHANGES" Action button is disabled
-	And "Users to add (0 of 14630 selected)" is displayed to the user in the Project Scope Changes section
-	Then Objects to add panel is active
-	When User expands the object to add 
-	And User selects following Objects
-	| Objects                    |
-	| AAK881049 (Miguel W. Owen) |
-	Then "UPDATE USER CHANGES" Action button is active
-	When User clicks "Applications" tab in the Project Scope Changes section
-	And User expands the object to add 
-	And User selects following Objects
-	| Objects                     |
-	| 20040610sqlserverck (1.0.0) |
-	Then "UPDATE APPLICATION CHANGES" Action button is active
-	When User clicks "Devices" tab in the Project Scope Changes section
-	When User expands the object to add 
-	And User selects following Objects
-	| Objects        |
-	| 00SH8162NAS524 |
-	Then "UPDATE DEVICE CHANGES" Action button is active
 	And There are no errors in the browser console
 
 @Evergreen @Admin @EvergreenJnr_AdminPage @AdminPage @DAS12796 @DAS12872 @Delete_Newly_Created_List @Delete_Newly_Created_Project @Project_Creation_and_Scope @Projects
@@ -3381,3 +3347,106 @@ Scenario: EvergreenJnr_AdminPage_ChecksThatProjectNameEditedInSeniorIsUpdatedInA
 	When User clicks "Projects" link on the Admin page
 	Then "Projects" page should be displayed to the user
 	And created Project with "Project13096 upd" name is displayed correctly
+
+@Evergreen @Admin @EvergreenJnr_AdminPage @AdminPage @DAS12776 @Delete_Newly_Created_Project @Delete_Newly_Created_List
+Scenario: EvergreenJnr_AdminPage_CheckThatScopeChangesSelectionIsDisabledAfterClickUpdateForDynamicList
+	When User clicks "Devices" on the left-hand menu
+	Then "Devices" list should be displayed to the user
+	When User click on 'Hostname' column header
+	And User create dynamic list with "DynamicList5588" name on "Devices" page
+	Then "DynamicList5588" list is displayed to user
+	When User clicks Create Project from the main list
+	Then "Create Project" page should be displayed to the user
+	When User clicks the "CREATE PROJECT" Action button
+	Then "Create Project" page should be displayed to the user
+	When User enters "TestProject12776" in the Project Name field
+	And User clicks Create button on the Create Project page
+	Then Success message is displayed and contains "Your project has been created" text
+	When User clicks newly created object link
+	Then Project "TestProject12776" is displayed to user
+	When User selects "Scope Changes" tab on the Project details page
+	When User expands the object to add 
+	And User selects following Objects
+	| Objects        |
+	| SZ46M6IS71DPZ1 |
+	And User clicks "Users" tab in the Project Scope Changes section
+	And User expands the object to add 
+	And User selects following Objects
+	| Objects                          |
+	| ACD252468 (Nicolas O. Mc Millan) |
+	And User clicks the "UPDATE ALL CHANGES" Action button
+	Then Warning message with "1 device will be added, 1 user will be added" text is displayed on the Admin page
+	Then Objects to add panel is disabled
+	When User clicks "Devices" tab in the Project Scope Changes section
+	Then Objects to add panel is disabled
+	When User clicks the "UPDATE PROJECT" Action button
+	Then Success message is displayed and contains "2 objects queued for onboarding, 0 objects offboarded" text
+	Then "UPDATE ALL CHANGES" Action button is disabled
+	Then "UPDATE DEVICE CHANGES" Action button is disabled
+	And "Devices to add (0 of 17224 selected)" is displayed to the user in the Project Scope Changes section
+	Then Objects to add panel is active
+	When User clicks "Users" tab in the Project Scope Changes section
+	Then "UPDATE USER CHANGES" Action button is disabled
+	And "Users to add (0 of 14630 selected)" is displayed to the user in the Project Scope Changes section
+	Then Objects to add panel is active
+	When User expands the object to add 
+	And User selects following Objects
+	| Objects                    |
+	| AAK881049 (Miguel W. Owen) |
+	Then "UPDATE USER CHANGES" Action button is active
+	Then "UPDATE ALL CHANGES" Action button is active
+	When User clicks "Devices" tab in the Project Scope Changes section
+	When User expands the object to add 
+	And User selects following Objects
+	| Objects        |
+	| 00SH8162NAS524 |
+	Then "UPDATE DEVICE CHANGES" Action button is active
+	And There are no errors in the browser console
+
+	@Evergreen @Admin @EvergreenJnr_AdminPage @AdminPage @DAS12776 @Delete_Newly_Created_Project @Delete_Newly_Created_List
+Scenario: EvergreenJnr_AdminPage_CheckThatScopeChangesSelectionIsDisabledAfterClickUpdateForStaticList
+	When User create static list with "StaticList12776" name on "Users" page with following items
+	| ItemName            |
+	| 00CFE13AAE104724AF5 |
+	| 00BDBAEA57334C7C8F4 |
+	| 000F977AC8824FE39B8 |
+	Then "StaticList12776" list is displayed to user
+	When User clicks Create Project from the main list
+	Then "Create Project" page should be displayed to the user
+	When User clicks the "CREATE PROJECT" Action button
+	Then "Create Project" page should be displayed to the user
+	When User enters "TestProject12777" in the Project Name field
+	When User selects "Clone evergreen buckets to project buckets" in the Buckets Project dropdown
+	And User clicks Create button on the Create Project page
+	Then Success message is displayed and contains "Your project has been created" text
+	When User clicks newly created object link
+	Then Project "TestProject12777" is displayed to user
+	When User selects "Scope Changes" tab on the Project details page
+	And User expands the object to add 
+	And User selects following Objects
+	| Objects                                |
+	| 00BDBAEA57334C7C8F4 (Basa, Rogelio)    |
+	| 00CFE13AAE104724AF5 (Hardieway, Linda) |
+	And User clicks the "UPDATE USER CHANGES" Action button
+	Then Warning message with "2 users will be added" text is displayed on the Admin page
+	Then Objects to add panel is disabled
+	When User clicks "Devices" tab in the Project Scope Changes section
+	Then Objects to add panel is disabled
+	When User clicks the "UPDATE PROJECT" Action button
+	Then Success message is displayed and contains "2 objects queued for onboarding, 0 objects offboarded" text
+	Then "UPDATE ALL CHANGES" Action button is disabled
+	Then "UPDATE DEVICE CHANGES" Action button is disabled
+	When User clicks "Users" tab in the Project Scope Changes section
+	Then "UPDATE USER CHANGES" Action button is disabled
+	And "Users to add (0 of 1 selected)" is displayed to the user in the Project Scope Changes section
+	When User clicks "Devices" tab in the Project Scope Changes section
+	Then Objects to add panel is active
+	When User clicks "Users" tab in the Project Scope Changes section
+	Then Objects to add panel is active
+	When User expands the object to add 
+	And User selects following Objects
+	| Objects                             |
+	| 000F977AC8824FE39B8 (Spruill, Shea) |
+	Then "UPDATE USER CHANGES" Action button is active
+	Then "UPDATE ALL CHANGES" Action button is active
+	And There are no errors in the browser console
