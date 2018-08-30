@@ -414,10 +414,10 @@ Scenario: EvergreenJnr_MailboxesList_ChecksThatRequestTypeIsUpdatedCorrectlyOnMa
 	And User clicks the Actions button
 	Then Actions panel is displayed to the user
 	When User select "Email Address" rows in the grid
-	| SelectedRowsName                  |
-	| 0F1ED67386AD4FA7BF4@bclabs.local  |
-	| 110A919CA1E7641E08E7@bclabs.local |
-	| 229DCF8E575243E9928@bclabs.local  |
+	| SelectedRowsName                 |
+	| 0F1ED67386AD4FA7BF4@bclabs.local |
+	| 10A919CA1E7641E08E7@bclabs.local |
+	| 229DCF8E575243E9928@bclabs.local |
 	And User selects "Bulk update" in the Actions dropdown
 	And User selects "Update request type" Bulk Update Type on Action panel
 	And User selects "Email Migration" Project on Action panel

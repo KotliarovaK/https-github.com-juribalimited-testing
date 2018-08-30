@@ -843,7 +843,7 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_ActionsPanel
             table31.AddRow(new string[] {
                         "0F1ED67386AD4FA7BF4@bclabs.local"});
             table31.AddRow(new string[] {
-                        "110A919CA1E7641E08E7@bclabs.local"});
+                        "10A919CA1E7641E08E7@bclabs.local"});
             table31.AddRow(new string[] {
                         "229DCF8E575243E9928@bclabs.local"});
             testRunner.When("User select \"Email Address\" rows in the grid", ((string)(null)), table31, "When ");
