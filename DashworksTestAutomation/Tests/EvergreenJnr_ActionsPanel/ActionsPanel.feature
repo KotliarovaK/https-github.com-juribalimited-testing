@@ -299,25 +299,25 @@ Scenario: EvergreenJnr_DevicesList_ChecksThatRequestTypeIsUpdatedCorrectlyOnDevi
 	Then Actions panel is displayed to the user
 	When User select "Hostname" rows in the grid
 	| SelectedRowsName |
-	| 001PSUMZYOW581   |
-	| 00K4CEEQ737BA4L  |
 	| 00YTY8U3ZYP2WT   |
+	| 018UQ6KL9TF4YF   |
+	| 01BQIYGGUW5PRP6  |
 	And User selects "Bulk update" in the Actions dropdown
 	And User selects "Update request type" Bulk Update Type on Action panel
 	And User selects "Windows 7 Migration (Computer Scheduled Project)" Project on Action panel
 	Then "UPDATE" Action button is disabled
-	When User selects "Computer: PC Rebuild" Request Type on Action panel
+	When User selects "Computer: Virtual Machine" Request Type on Action panel
 	And User clicks the "UPDATE" Action button
 	Then Warning message with "Are you sure you want to proceed, this operation cannot be undone." text is displayed on Action panel
 	And User clicks "UPDATE" button on message box
 	And Success message with "3 of 3 objects were valid for the update. Your changes have successfully been queued." text is displayed on Action panel
 	When User refreshes agGrid
-	And User perform search by "001PSUMZYOW581"
-	Then "Computer: PC Rebuild" content is displayed in "Windows7Mi: Request Type" column
-	When User perform search by "00K4CEEQ737BA4L"
-	Then "Computer: PC Rebuild" content is displayed in "Windows7Mi: Request Type" column
-	When User perform search by "00YTY8U3ZYP2WT"
-	Then "Computer: PC Rebuild" content is displayed in "Windows7Mi: Request Type" column
+	And User perform search by "00YTY8U3ZYP2WT"
+	Then "Computer: Virtual Machine" content is displayed in "Windows7Mi: Request Type" column
+	When User perform search by "018UQ6KL9TF4YF"
+	Then "Computer: Virtual Machine" content is displayed in "Windows7Mi: Request Type" column
+	When User perform search by "01BQIYGGUW5PRP6"
+	Then "Computer: Virtual Machine" content is displayed in "Windows7Mi: Request Type" column
 
 @Evergreen @Users @EvergreenJnr_ActionsPanel @DAS12863
 Scenario: EvergreenJnr_UsersList_ChecksThatRequestTypeIsUpdatedCorrectlyOnUsersPage
@@ -378,9 +378,9 @@ Scenario: EvergreenJnr_ApplicationsList_ChecksThatRequestTypeIsUpdatedCorrectlyO
 	And User clicks the Actions button
 	Then Actions panel is displayed to the user
 	When User select "Application" rows in the grid
-	| SelectedRowsName                           |
-	| 0004 - Adobe Acrobat Reader 5.0.5 Francais |
-	| 0036 - Microsoft Access 97 SR-2 English    |
+	| SelectedRowsName |
+	| Access           |
+	| Access 95        |
 	And User selects "Bulk update" in the Actions dropdown
 	And User selects "Update request type" Bulk Update Type on Action panel
 	And User selects "Windows 7 Migration (Computer Scheduled Project)" Project on Action panel
@@ -391,9 +391,9 @@ Scenario: EvergreenJnr_ApplicationsList_ChecksThatRequestTypeIsUpdatedCorrectlyO
 	And User clicks "UPDATE" button on message box
 	And Success message with "2 of 2 objects were valid for the update. Your changes have successfully been queued." text is displayed on Action panel
 	When User refreshes agGrid
-	And User perform search by "0004 - Adobe Acrobat Reader 5.0.5 Francais"
+	And User perform search by "Access"
 	Then "Application: Request Type B" content is displayed in "Windows7Mi: Request Type" column
-	When User perform search by "0036 - Microsoft Access 97 SR-2 English"
+	When User perform search by "Access 95"
 	Then "Application: Request Type B" content is displayed in "Windows7Mi: Request Type" column
 
 @Evergreen @Mailboxes @EvergreenJnr_ActionsPanel @DAS12863
@@ -414,31 +414,36 @@ Scenario: EvergreenJnr_MailboxesList_ChecksThatRequestTypeIsUpdatedCorrectlyOnMa
 	And User clicks the Actions button
 	Then Actions panel is displayed to the user
 	When User select "Email Address" rows in the grid
-	| SelectedRowsName                 |
-	| 06C02CDC00044A7DB59@bclabs.local |
-	| 10A919CA1E7641E08E7@bclabs.local |
-	| 0C1785B7E6954139AC5@bclabs.local |
+	| SelectedRowsName                  |
+	| 0F1ED67386AD4FA7BF4@bclabs.local  |
+	| 110A919CA1E7641E08E7@bclabs.local |
+	| 229DCF8E575243E9928@bclabs.local  |
 	And User selects "Bulk update" in the Actions dropdown
 	And User selects "Update request type" Bulk Update Type on Action panel
 	And User selects "Email Migration" Project on Action panel
 	Then "UPDATE" Action button is disabled
-	When User selects "Personal Mailbox - EA" Request Type on Action panel
+	When User selects "Personal Mailbox - VIP" Request Type on Action panel
 	And User clicks the "UPDATE" Action button
 	Then Warning message with "Are you sure you want to proceed, this operation cannot be undone." text is displayed on Action panel
 	And User clicks "UPDATE" button on message box
 	And Success message with "3 of 3 objects were valid for the update. Your changes have successfully been queued." text is displayed on Action panel
 	When User refreshes agGrid
-	And User perform search by "06C02CDC00044A7DB59@bclabs.local"
-	Then "Personal Mailbox - EA" content is displayed in "EmailMigra: Request Type" column
+	And User perform search by "0F1ED67386AD4FA7BF4@bclabs.local"
+	Then "Personal Mailbox - VIP" content is displayed in "EmailMigra: Request Type" column
 	When User perform search by "10A919CA1E7641E08E7@bclabs.local"
-	Then "Personal Mailbox - EA" content is displayed in "EmailMigra: Request Type" column
-	When User perform search by "0C1785B7E6954139AC5@bclabs.local"
-	Then "Personal Mailbox - EA" content is displayed in "EmailMigra: Request Type" column
+	Then "Personal Mailbox - VIP" content is displayed in "EmailMigra: Request Type" column
+	When User perform search by "229DCF8E575243E9928@bclabs.local"
+	Then "Personal Mailbox - VIP" content is displayed in "EmailMigra: Request Type" column
 
 @Evergreen @Devices @EvergreenJnr_ActionsPanel @DAS12863
 Scenario: EvergreenJnr_DevicesList_ChecksThatRequestTypeIsUpdatedCorrectlyWhereSomeObjectsAreValidAndSomeAreInvalidForTheSelectedProject
 	When User clicks "Devices" on the left-hand menu
 	Then "Devices" list should be displayed to the user
+	When User clicks the Columns button
+	Then Columns panel is displayed to the user
+	When ColumnName is entered into the search box and the selection is clicked
+	| ColumnName               |
+	| Windows7Mi: Request Type |
 	When User clicks the Actions button
 	Then Actions panel is displayed to the user
 	When User select "Hostname" rows in the grid
@@ -456,16 +461,17 @@ Scenario: EvergreenJnr_DevicesList_ChecksThatRequestTypeIsUpdatedCorrectlyWhereS
 	Then Warning message with "Are you sure you want to proceed, this operation cannot be undone." text is displayed on Action panel
 	And User clicks "UPDATE" button on message box
 	And Success message with "2 of 5 objects were valid for the update. Your changes have successfully been queued." text is displayed on Action panel
-	When User clicks the Columns button
-	Then Columns panel is displayed to the user
-	When ColumnName is entered into the search box and the selection is clicked
-	| ColumnName               |
-	| Windows7Mi: Request Type |
-	And User refreshes agGrid
+	When User refreshes agGrid
 	And User perform search by "00HA7MKAVVFDAV"
 	Then "Computer: Workstation Replacement" content is displayed in "Windows7Mi: Request Type" column
 	When User perform search by "018UQ6KL9TF4YF"
 	Then "Computer: Workstation Replacement" content is displayed in "Windows7Mi: Request Type" column
+	When User perform search by "00I0COBFWHOF27"
+	Then "" content is displayed in "Windows7Mi: Request Type" column
+	When User perform search by "019BFPQGKK5QT8N"
+	Then "" content is displayed in "Windows7Mi: Request Type" column
+	When User perform search by "01DRMO46G58SXK"
+	Then "" content is displayed in "Windows7Mi: Request Type" column
 
 @Evergreen @Devices @EvergreenJnr_ActionsPanel @DAS12863
 Scenario: EvergreenJnr_DevicesList_ChecksThatActionsPanelWorkedCorrectlyAfterCickOnCancelButton
