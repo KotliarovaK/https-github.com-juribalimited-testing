@@ -295,6 +295,13 @@ namespace DashworksTestAutomation.Steps.Dashworks
                 $"Filter is created incorrectly");
         }
 
+        [When(@"User opens filter container")]
+        public void WhenUserOpensFilterContainer()
+        {
+            var page = _driver.NowAt<BaseDashboardPage>();
+            page.FilterContainerButton.Click();
+        }
+
         [Then(@"Links from ""(.*)"" column is displayed to the user")]
         public void ThenLinksFromColumnIsDisplayedToTheUser(string columnName)
         {
