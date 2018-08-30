@@ -71,6 +71,7 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_GridActions
         [NUnit.Framework.TestAttribute()]
         [NUnit.Framework.Retry(2)]
         
+        
         [NUnit.Framework.DescriptionAttribute("EvergreenJnr_DevicesList_CheckThatColumnsOrderSavedAfterSearch")]
         [NUnit.Framework.CategoryAttribute("Evergreen")]
         [NUnit.Framework.CategoryAttribute("Devices")]
@@ -110,6 +111,7 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_GridActions
         
         [NUnit.Framework.TestAttribute()]
         [NUnit.Framework.Retry(2)]
+        
         
         [NUnit.Framework.DescriptionAttribute("EvergreenJnr_UsersList_CheckThatColumnsOrderSavedAfterSearch")]
         [NUnit.Framework.CategoryAttribute("Evergreen")]
@@ -157,6 +159,7 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_GridActions
         
         [NUnit.Framework.TestAttribute()]
         [NUnit.Framework.Retry(2)]
+        
         
         [NUnit.Framework.DescriptionAttribute("EvergreenJnr_DevicesList_CheckThatColumnsOrderSavedAfterAddingAFilter")]
         [NUnit.Framework.CategoryAttribute("Evergreen")]
@@ -238,6 +241,7 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_GridActions
         [NUnit.Framework.TestAttribute()]
         [NUnit.Framework.Retry(2)]
         
+        
         [NUnit.Framework.DescriptionAttribute("EvergreenJnr_UsersList_CheckThatColumnsOrderSavedAfterAddingAnotherColumn")]
         [NUnit.Framework.CategoryAttribute("Evergreen")]
         [NUnit.Framework.CategoryAttribute("Users")]
@@ -306,6 +310,7 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_GridActions
         [NUnit.Framework.TestAttribute()]
         [NUnit.Framework.Retry(2)]
         
+        
         [NUnit.Framework.DescriptionAttribute("EvergreenJnr_MailboxesList_CheckThatColumnsOrderSavedAfterUsingTheAgGridSearch")]
         [NUnit.Framework.CategoryAttribute("Evergreen")]
         [NUnit.Framework.CategoryAttribute("Mailboxes")]
@@ -373,6 +378,7 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_GridActions
         [NUnit.Framework.TestAttribute()]
         [NUnit.Framework.Retry(2)]
         
+        
         [NUnit.Framework.DescriptionAttribute("EvergreenJnr_ApplicationsList_CheckThatAfterDeletingFirstColumnTheColumnsOrderIsD" +
             "isplayedCorrectly")]
         [NUnit.Framework.CategoryAttribute("Evergreen")]
@@ -414,6 +420,7 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_GridActions
         
         [NUnit.Framework.TestAttribute()]
         [NUnit.Framework.Retry(2)]
+        
         
         [NUnit.Framework.DescriptionAttribute("EvergreenJnr_AllList_CheckThatSaveButtonIsNotDisplayedIfTheGridColumnsWasReturned" +
             "ToDefaultPositionWhenActionsPanelWasOpen")]
@@ -458,6 +465,7 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_GridActions
         
         [NUnit.Framework.TestAttribute()]
         [NUnit.Framework.Retry(2)]
+        
         
         [NUnit.Framework.DescriptionAttribute("EvergreenJnr_AllLists_CheckThatSaveButtonIsNotDisplayedIfTheGridColumnsWasRemoved" +
             "AndReturnedToDefaultPosition")]
