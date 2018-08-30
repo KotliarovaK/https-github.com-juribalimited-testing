@@ -47,6 +47,13 @@ namespace DashworksTestAutomation.Steps.Dashworks
             Logger.Write("Add New button was clicked");
         }
 
+        [Then(@"User sees Add New button on the Filter panel")]
+        public void ThenUserSeesAddNewButtonOnTheFilterPanel()
+        {
+            var menu = _driver.NowAt<FiltersElement>();
+            Assert.That(menu.AddNewFilterButton.Displayed(), Is.True, "Add New option is not displayed");
+        }
+
         [When(@"user select ""(.*)"" filter")]
         public void WhenUserSelectFilter(string filterName)
         {
