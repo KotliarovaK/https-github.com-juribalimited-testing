@@ -743,8 +743,15 @@ namespace DashworksTestAutomation.Steps.Dashworks
         [When(@"User clicks Default Team checkbox")]
         public void WhenUserClicksDefaultTeamCheckbox()
         {
-            var createBucketElement = _driver.NowAt<TeamsPage>();
-            createBucketElement.DefaulTeamCheckbox.Click();
+            var teamElement = _driver.NowAt<TeamsPage>();
+            teamElement.DefaulTeamCheckbox.Click();
+        }
+
+        [Then(@"Default Team checkbox is not active")]
+        public void ThenDefaultTeamCheckboxIsNotActive()
+        {
+            var teamElement = _driver.NowAt<TeamsPage>();
+            Assert.IsTrue(teamElement.DefaulTeamCheckbox.Displayed(), "Default Team checkbox is active");
         }
 
         [When(@"User clicks Create Team button on the Create Team page")]

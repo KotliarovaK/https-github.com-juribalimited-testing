@@ -154,6 +154,13 @@ namespace DashworksTestAutomation.Steps.Dashworks
             Logger.Write("Reset button is displayed");
         }
 
+        [When(@"User clicks cross icon in Table search field")]
+        public void WhenUserClicksCrossIconInTableSearchField()
+        {
+            var button = _driver.NowAt<BaseDashboardPage>();
+            button.SearchTextboxResetButton.Click();
+        }
+
         [Then(@"reset button in Search field at selected Panel is displayed")]
         public void ThenResetButtonInSearchFieldOnSelectedPanelIsDisplayed()
         {
