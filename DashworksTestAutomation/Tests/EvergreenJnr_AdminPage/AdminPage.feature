@@ -1053,7 +1053,7 @@ Scenario: EvergreenJnr_AdminPage_CheckThatOnboardingOfObjectsIsProceedForScopedP
 	When User enters "01" text in the Search field for "Project ID" column
 	Then Counter shows "0" found rows
 
-@Evergreen @Admin @EvergreenJnr_AdminPage @AdminPage @DAS12332 @DAS13199 @Delete_Newly_Created_Project @Project_Creation_and_Scope @Projects
+@Evergreen @Admin @EvergreenJnr_AdminPage @AdminPage @DAS12332 @DAS13199 @DAS12776 @Delete_Newly_Created_Project @Project_Creation_and_Scope @Projects
 Scenario: EvergreenJnr_AdminPage_CheckingThatRedBannerWithOkMessageIsNotDisplayedAfterAddingItemsToCreatedProject
 	When User clicks Admin on the left-hand menu
 	Then Admin page should be displayed to the user
@@ -1103,6 +1103,23 @@ Scenario: EvergreenJnr_AdminPage_CheckingThatRedBannerWithOkMessageIsNotDisplaye
 	Then "UPDATE USER CHANGES" Action button is disabled
 	And "Users to add (0 of 14630 selected)" is displayed to the user in the Project Scope Changes section
 	Then Objects to add panel is active
+	When User expands the object to add 
+	And User selects following Objects
+	| Objects                    |
+	| AAK881049 (Miguel W. Owen) |
+	Then "UPDATE USER CHANGES" Action button is active
+	When User clicks "Applications" tab in the Project Scope Changes section
+	And User expands the object to add 
+	And User selects following Objects
+	| Objects                     |
+	| 20040610sqlserverck (1.0.0) |
+	Then "UPDATE APPLICATION CHANGES" Action button is active
+	When User clicks "Devices" tab in the Project Scope Changes section
+	When User expands the object to add 
+	And User selects following Objects
+	| Objects        |
+	| 00SH8162NAS524 |
+	Then "UPDATE DEVICE CHANGES" Action button is active
 	And There are no errors in the browser console
 
 @Evergreen @Admin @EvergreenJnr_AdminPage @AdminPage @DAS12796 @DAS12872 @Delete_Newly_Created_List @Delete_Newly_Created_Project @Project_Creation_and_Scope @Projects

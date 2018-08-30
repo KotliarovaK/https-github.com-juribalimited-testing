@@ -162,6 +162,14 @@ namespace DashworksTestAutomation.Steps.Dashworks
             Assert.AreEqual(buttonState, "true", $"{buttonName} Button state is incorrect");
         }
 
+        [Then(@"""(.*)"" Action button is active")]
+        public void ThenActionButtonIsActive(string buttonName)
+        {
+            var button = _driver.NowAt<BaseDashboardPage>();
+            var buttonState = button.GetActionsButtonByName(buttonName).GetAttribute("disabled");
+            Assert.AreNotEqual(buttonState, "true", $"{buttonName} Button state is incorrect");
+        }
+
         [Then(@"Objects to add panel is disabled")]
         public void ThenObjectsToAddPanelIsDisabled()
         {
