@@ -171,6 +171,12 @@ namespace DashworksTestAutomation.Pages.Evergreen
         [FindsBy(How = How.XPath, Using = "//button[@aria-label='filters']")]
         public IWebElement FilterContainerButton { get; set; }
 
+        [FindsBy(How = How.XPath, Using = "//div[contains(@class, 'sectionAddObjects wrapper-disabled')]")]
+        public IWebElement DisabledObjectsToAddPanel { get; set; }
+
+        [FindsBy(How = How.XPath, Using = "//div[@class='sectionAddObjects']")]
+        public IWebElement ActiveObjectsToAddPanel { get; set; }
+
         [FindsBy(How = How.XPath, Using = ".//span[@class='filter-content']")]
         public IWebElement FilterContainer { get; set; }
 
