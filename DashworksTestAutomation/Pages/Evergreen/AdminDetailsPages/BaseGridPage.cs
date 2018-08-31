@@ -335,6 +335,12 @@ namespace DashworksTestAutomation.Pages.Evergreen.AdminDetailsPages
             return Driver.FindElements(by).Select(x => x.Text).ToList();
         }
 
+
+        public bool CheckStringFilterByName(string filterName)
+        {
+            return Driver.IsElementDisplayed(By.XPath($"//div[@class='ng-star-inserted']/span[(text()='{filterName}')]"));
+        }
+
         public void GetBooleanStringFilterByName(string filterName)
         {
             string filterSelector = $"//span[(text()='{filterName}')]";

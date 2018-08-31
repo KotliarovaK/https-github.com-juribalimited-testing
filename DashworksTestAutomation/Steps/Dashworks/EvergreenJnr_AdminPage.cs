@@ -1516,6 +1516,13 @@ namespace DashworksTestAutomation.Steps.Dashworks
             filterElement.GetStringFilterByColumnName(columnName);
         }
 
+        [Then(@"""(.*)"" is not displayed in the filter dropdown")]
+        public void ThenIsNotDisplayedInTheFilterDropdown(string filterNmae)
+        {
+            var filterElement = _driver.NowAt<BaseGridPage>();
+            Assert.IsFalse(filterElement.CheckStringFilterByName(filterNmae));
+        }
+
         [Then(@"""(.*)"" value is displayed for Default column")]
         public void ThenValueIsDisplayedForDefaultColumn(string defaultValue)
         {
