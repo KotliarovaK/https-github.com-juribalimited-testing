@@ -2173,12 +2173,12 @@ Scenario: EvergreenJnr_AdminPage_ChangingBucketFromUseEvergreenBucketsToCloneEve
 	When User clicks newly created object link
 	And User clicks "Details" tab
 	Then "Mailbox scoped project" is displayed in the disabled Project Type field
-	When User selects "Use project buckets" in the Buckets Project dropdown
+	When User selects "Clone evergreen buckets to project buckets" in the Buckets Project dropdown
 	And User clicks the "UPDATE" Action button
 	Then Success message is displayed and contains "The project details have been updated" text
 	And There are no errors in the browser console
 	When User selects "Scope Changes" tab on the Project details page
-	Then "Unassigned" is displayed in the Bucket dropdown
+	Then "Match to Evergreen Bucket" is displayed in the Bucket dropdown
 
 @Evergreen @Admin @EvergreenJnr_AdminPage @AdminPage @DAS12999 @DAS13199 @Delete_Newly_Created_Project @Project_Creation_and_Scope @Projects
 Scenario: EvergreenJnr_AdminPage_ChangingBucketFromCloneEvergreenBucketsToUseProjectBuckets
@@ -3010,39 +3010,42 @@ Scenario: EvergreenJnr_AdminPage_CheckDefaultSortOrderOfBucketsAfterCreateOrUpda
 	| aab     | I-Team   |
 	| aba     | Admin IT |
 	| waa     | IB Team  |
-	Then Then user sees Buckets in next default sort order:
-	| Buckets    |
-	| 1ba        |
-	| 2ab        |
-	| aaa        |
-	| aab        |
-	| aba        |
-	| Unassigned |
-	| waa        |
+	#Then Then user sees Buckets in next default sort order:
+	#| Buckets    |
+	#| 1ba        |
+	#| 2ab        |
+	#| aaa        |
+	#| aab        |
+	#| aba        |
+	#| Unassigned |
+	#| waa        |
+	Then data in table is sorted by "Bucket" column in ascending order by default on the Admin page
 	When User enters "1ba" text in the Search field for "Bucket" column
 	And User clicks content from "Bucket" column
 	And User clicks "Bucket Settings" tab
 	And User enters "a1ba" in the Bucket Name field
 	And User clicks the "UPDATE BUCKET" Action button
-	Then Then user sees Buckets in next default sort order:
-	| Buckets    |
-	| 2ab        |
-	| a1ba       |
-	| aaa        |
-	| aab        |
-	| aba        |
-	| Unassigned |
-	| waa        |
+	#Then Then user sees Buckets in next default sort order:
+	#| Buckets    |
+	#| 2ab        |
+	#| a1ba       |
+	#| aaa        |
+	#| aab        |
+	#| aba        |
+	#| Unassigned |
+	#| waa        |
+	Then data in table is sorted by "Bucket" column in ascending order by default on the Admin page
 	When User deletes "aab" Bucket in the Administration
 	And User clicks refresh button in the browser
-	Then Then user sees Buckets in next default sort order:
-	| Buckets    |
-	| 2ab        |
-	| a1ba       |
-	| aaa        |
-	| aba        |
-	| Unassigned |
-	| waa        |
+	#Then Then user sees Buckets in next default sort order:
+	#| Buckets    |
+	#| 2ab        |
+	#| a1ba       |
+	#| aaa        |
+	#| aba        |
+	#| Unassigned |
+	#| waa        |
+	Then data in table is sorted by "Bucket" column in ascending order by default on the Admin page
 	And Delete following Buckets in the Administration:
 	| Buckets    |
 	| 2ab        |
@@ -3073,7 +3076,7 @@ Scenario: EvergreenJnr_AdminPage_AddingDevicesFromBuckets
 	Then Success message is displayed and contains "The selected devices have been added to the selected bucket" text
 	And There are no errors in the browser console
 	Then data in table is sorted by "Hostname" column in ascending order by default on the Admin page
-	#Then Counter shows "17,225" found rows
+	Then Counter shows "17,225" found rows
 	When User click on "Hostname" column header on the Admin page
 	Then data in table is sorted by "Hostname" column in ascending order on the Admin page
 	When User click on "Hostname" column header on the Admin page
