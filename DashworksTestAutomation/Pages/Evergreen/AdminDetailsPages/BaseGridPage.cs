@@ -37,6 +37,9 @@ namespace DashworksTestAutomation.Pages.Evergreen.AdminDetailsPages
         [FindsBy(How = How.XPath, Using = ".//span[text()='CONTINUE']")]
         public IWebElement ContinueButton { get; set; }
 
+        [FindsBy(How = How.XPath, Using = "//div[@class='panel-expand']")]
+        public IWebElement AddObjectsPanelCollapsed  { get; set; }
+
         [FindsBy(How = How.XPath, Using = "//span[@class='inline-link ng-star-inserted']/a")]
         public IWebElement NewProjectLink { get; set; }
 
@@ -93,6 +96,12 @@ namespace DashworksTestAutomation.Pages.Evergreen.AdminDetailsPages
 
         [FindsBy(How = How.XPath, Using = ".//div[@class='mat-checkbox-inner-container']")]
         public IWebElement AllItemCheckbox { get; set; }
+
+        [FindsBy(How = How.XPath, Using = ".//mat-checkbox[contains(@class, 'mat-checkbox-checked')]")]
+        public IWebElement CheckedAllItemCheckbox { get; set; }
+
+        [FindsBy(How = How.XPath, Using = ".//mat-checkbox[contains(@class, 'checkbox-partial')]")]
+        public IWebElement CheckedSomeItemCheckbox { get; set; }
 
         [FindsBy(How = How.XPath, Using = ".//div[contains(@class, 'ag-body-container')]/div")]
         public IWebElement TableContent { get; set; }
@@ -293,6 +302,12 @@ namespace DashworksTestAutomation.Pages.Evergreen.AdminDetailsPages
         public bool TextMessage(string textMessage)
         {
             return Driver.IsElementDisplayed(By.XPath($".//div[text()='{textMessage}']"));
+        }
+
+
+        public bool GetTabHeaderInTheScopeChangesSection(string text)
+        {
+            return Driver.IsElementDisplayed(By.XPath($".//div[@class='detail-label ng-star-inserted']//span[text()='{text}']"));
         }
 
         public IWebElement GetColumnHeaderByName(string columnName)
