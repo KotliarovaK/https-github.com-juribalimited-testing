@@ -72,6 +72,7 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_ProfileDetails
         [NUnit.Framework.Retry(2)]
         
         
+        
         [NUnit.Framework.DescriptionAttribute("EvergreenJnr_UserProfile_CheckThatErrorIsNotDisplayedAfterChangingProfileData")]
         [NUnit.Framework.CategoryAttribute("Evergreen")]
         [NUnit.Framework.CategoryAttribute("ProfileDetails")]
@@ -105,6 +106,7 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_ProfileDetails
         
         [NUnit.Framework.TestAttribute()]
         [NUnit.Framework.Retry(2)]
+        
         
         
         [NUnit.Framework.DescriptionAttribute("EvergreenJnr_UserProfile_CheckThatCorrectErrorMessagesAreDisplayed")]
@@ -161,6 +163,7 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_ProfileDetails
         [NUnit.Framework.Retry(2)]
         
         
+        
         [NUnit.Framework.DescriptionAttribute("EvergreenJnr_UserProfile_CheckThatErrorIsNotDisplayedAfterChangingProfileDataTwic" +
             "e")]
         [NUnit.Framework.CategoryAttribute("Evergreen")]
@@ -200,6 +203,7 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_ProfileDetails
         [NUnit.Framework.Retry(2)]
         
         
+        
         [NUnit.Framework.DescriptionAttribute("EvergreenJnr_UserProfile_CheckThatDefaultListPageSizeIs1000API")]
         [NUnit.Framework.CategoryAttribute("Evergreen")]
         [NUnit.Framework.CategoryAttribute("ProfileDetails")]
@@ -226,6 +230,7 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_ProfileDetails
         
         [NUnit.Framework.TestAttribute()]
         [NUnit.Framework.Retry(2)]
+        
         
         
         [NUnit.Framework.DescriptionAttribute("EvergreenJnr_UserProfile_ChecksListPageSizeAPI")]
@@ -258,6 +263,7 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_ProfileDetails
         
         [NUnit.Framework.TestAttribute()]
         [NUnit.Framework.Retry(2)]
+        
         
         
         [NUnit.Framework.DescriptionAttribute("EvergreenJnr_UserProfile_CheckThatNotificationMessageDisappearsAfter5Seconds")]
@@ -305,6 +311,7 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_ProfileDetails
         [NUnit.Framework.Retry(2)]
         
         
+        
         [NUnit.Framework.DescriptionAttribute("EvergreenJnr_UserProfile_ChangingListPageSizeAndListPagesToCache")]
         [NUnit.Framework.CategoryAttribute("Evergreen")]
         [NUnit.Framework.CategoryAttribute("ProfileDetails")]
@@ -342,6 +349,7 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_ProfileDetails
         
         [NUnit.Framework.TestAttribute()]
         [NUnit.Framework.Retry(2)]
+        
         
         
         [NUnit.Framework.DescriptionAttribute("EvergreenJnr_UserProfile_ChangingPassword")]
