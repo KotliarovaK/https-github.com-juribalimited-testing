@@ -785,3 +785,16 @@ Scenario: EvergreenJnr_ApplicationsList_ChecksThatListDetailsIsLoadedCorrectlyAf
 	When User clicks the "ADD USER" Action button
 	And User clicks the "CANCEL" Action button
 	Then User list for sharing is not displayed
+	And There are no errors in the browser console
+
+@Evergreen @Devices @EvergreenJnr_ListDetails @ListDetailsFunctionality @DAS13029 @Delete_Newly_Created_List
+Scenario: EvergreenJnr_DevicesList_ChecksThatOwnersIsDisplayedInAlphabeticalOrderOnListDetailsPage
+	When User clicks "Devices" on the left-hand menu
+	Then "Devices" list should be displayed to the user
+	When User click on 'Hostname' column header
+	And User create dynamic list with "List13029" name on "Devices" page
+	Then "List13029" list is displayed to user
+	When User clicks the List Details button
+	Then List details panel is displayed to the user
+	When User clears Owner field on List Details panel
+	Then Owners is displayed in alphabetical order
