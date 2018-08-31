@@ -785,3 +785,4 @@ Scenario: EvergreenJnr_ApplicationsList_ChecksThatListDetailsIsLoadedCorrectlyAf
 	When User clicks the "ADD USER" Action button
 	And User clicks the "CANCEL" Action button
 	Then User list for sharing is not displayed
+	And There are no errors in the browser console
