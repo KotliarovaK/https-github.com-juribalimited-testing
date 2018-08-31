@@ -6144,9 +6144,11 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_AdminPage
         [NUnit.Framework.Retry(2)]
         [NUnit.Framework.DescriptionAttribute("EvergreenJnr_AdminPage_ChecksThatProjectNameEditedInSeniorIsUpdatedInAdminTab")]
         [NUnit.Framework.CategoryAttribute("Evergreen")]
+        [NUnit.Framework.CategoryAttribute("Senior")]
         [NUnit.Framework.CategoryAttribute("Admin")]
         [NUnit.Framework.CategoryAttribute("EvergreenJnr_AdminPage")]
         [NUnit.Framework.CategoryAttribute("AdminPage")]
+        [NUnit.Framework.CategoryAttribute("UpdatingName")]
         [NUnit.Framework.CategoryAttribute("DAS13096")]
         [NUnit.Framework.CategoryAttribute("Delete_Newly_Created_Project")]
         [NUnit.Framework.CategoryAttribute("Projects")]
@@ -6154,9 +6156,11 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_AdminPage
         {
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("EvergreenJnr_AdminPage_ChecksThatProjectNameEditedInSeniorIsUpdatedInAdminTab", new string[] {
                         "Evergreen",
+                        "Senior",
                         "Admin",
                         "EvergreenJnr_AdminPage",
                         "AdminPage",
+                        "UpdatingName",
                         "DAS13096",
                         "Delete_Newly_Created_Project",
                         "Projects"});
