@@ -54,6 +54,13 @@ namespace DashworksTestAutomation.Steps.Dashworks
             Assert.IsTrue(button.AddAndFilterButton.Displayed(), "Add And button is not displayed");
         }
 
+        [Then(@"Add New button is displayed on the Filter panel")]
+        public void ThenAddNewButtonIsDisplayedOnTheFilterPanel()
+        {
+            var button = _driver.NowAt<FiltersElement>();
+            Assert.IsTrue(button.AddNewFilterButton.Displayed(), "Add New button is not displayed");
+        }
+
         [When(@"user select ""(.*)"" filter")]
         public void WhenUserSelectFilter(string filterName)
         {

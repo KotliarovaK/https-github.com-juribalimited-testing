@@ -1216,7 +1216,7 @@ Scenario Outline: EvergreenJnr_AllLists_CheckThatAddNewOptionAvailableAfterClick
 	And User clicks "<LinkName>" link in Lists panel
 	And User clicks the Filters button
 	Then Filters panel is displayed to the user
-	And Add And button is displayed on the Filter panel
+	And Add New button is displayed on the Filter panel
 
 Examples: 
 	| ListName     | LinkName         |
