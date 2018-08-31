@@ -1511,7 +1511,7 @@ Scenario: EvergreenJnr_AdminPage_CheckThatSelectAllCheckboxIsWorkingCorrectlyOnA
 	When User enters "Checkbox11758" text in the Search field for "Project" column
 	And User removes selected item
 
-@Evergreen @Admin @EvergreenJnr_AdminPage @AdminPage @DAS11770 @DAS12999 @DAS13199 @Delete_Newly_Created_Team @Teams
+@Evergreen @Admin @EvergreenJnr_AdminPage @AdminPage @DAS11770 @DAS12999 @DAS13199 @12846 @Delete_Newly_Created_Team @Teams
 Scenario: EvergreenJnr_AdminPage_CheckThatImpossibleToCreateSameNamedTeamUsingTheSpaceAsAFirstSymbol
 	When User clicks Admin on the left-hand menu
 	Then Admin page should be displayed to the user
@@ -1529,6 +1529,11 @@ Scenario: EvergreenJnr_AdminPage_CheckThatImpossibleToCreateSameNamedTeamUsingTh
 	And User clicks Default Team checkbox
 	And User clicks the "UPDATE TEAM" Action button
 	Then Success message is displayed and contains "The team was successfully updated" text
+	When User click on Back button
+	When User enters "11770" text in the Search field for "Team" column
+	When User clicks content from "Team" column
+	When User clicks "Team Settings" tab
+	Then Default Team checkbox is not active
 	When User click on Back button
 	When User enters "My Team" text in the Search field for "Team" column
 	Then "FALSE" value is displayed for Default column
