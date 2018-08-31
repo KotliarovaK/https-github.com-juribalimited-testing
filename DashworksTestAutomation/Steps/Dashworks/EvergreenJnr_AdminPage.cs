@@ -1516,6 +1516,13 @@ namespace DashworksTestAutomation.Steps.Dashworks
             filterElement.GetStringFilterByColumnName(columnName);
         }
 
+        [Then(@"""(.*)"" is not displayed in the filter dropdown")]
+        public void ThenIsNotDisplayedInTheFilterDropdown(string filterName)
+        {
+            var filterElement = _driver.NowAt<BaseGridPage>();
+            Assert.IsFalse(filterElement.CheckStringFilterByName(filterName));
+        }
+
         [Then(@"Projects in filter dropdown are displayed in alphabetical order")]
         public void ThenProjectsInFilterDropdownAreDisplayedInAlphabeticalOrder()
         {
