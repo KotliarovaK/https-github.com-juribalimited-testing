@@ -104,6 +104,9 @@ namespace DashworksTestAutomation.Pages.Evergreen
         [FindsBy(How = How.XPath, Using = ".//input[@aria-label='Search Table']")]
         public IWebElement TableSearchTextbox { get; set; }
 
+        [FindsBy(How = How.XPath, Using = "//div[contains(@class, 'tools-item')]//button[@aria-label='close']")]
+        public IWebElement CloseToolsPanelButton { get; set; }
+
         [FindsBy(How = How.XPath, Using = ".//button[@aria-label='reload']")]
         public IWebElement RefreshTableButton { get; set; }
 

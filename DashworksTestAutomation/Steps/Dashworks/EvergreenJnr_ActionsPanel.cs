@@ -196,6 +196,7 @@ namespace DashworksTestAutomation.Steps.Dashworks
         public void ThenSuccessMessageWithTextIsDisplayedOnActionPanel(string textMessage)
         {
             var action = _driver.NowAt<BaseDashboardPage>();
+            _driver.WaitForDataLoading();
             Assert.IsTrue(action.SuccessMessageActionPanel(textMessage), "Success Message is not displayed");
         }
 

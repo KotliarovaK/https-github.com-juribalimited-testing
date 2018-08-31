@@ -221,13 +221,19 @@ namespace DashworksTestAutomation.Pages.Evergreen.AdminDetailsPages
             Driver.FindElement(By.XPath(ListNameSelector)).Click();
         }
 
-        public IWebElement GetRequestTypeByName(string requestTypeName)
+        public IWebElement SelectRequestTypeByName(string requestTypeName)
         {
             var requestTypeSelector = $"//mat-option/span[contains(text(), '{requestTypeName}')]";
             return Driver.FindElement(By.XPath(requestTypeSelector));
         }
 
-        public IWebElement GetCategoryByName(string categoryName)
+        public IWebElement GetRequestTypeOrCategory(string requestTypeName)
+        {
+            var requestTypeSelector = $"//mat-select//div//div//span[contains(text(), '{requestTypeName}')]";
+            return Driver.FindElement(By.XPath(requestTypeSelector));
+        }
+
+        public IWebElement SelectCategoryByName(string categoryName)
         {
             var categorySelector = $"//mat-option/span[contains(text(), '{categoryName}')]";
             return Driver.FindElement(By.XPath(categorySelector));
