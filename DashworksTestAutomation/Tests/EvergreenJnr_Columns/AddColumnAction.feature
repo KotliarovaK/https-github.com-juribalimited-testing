@@ -198,10 +198,10 @@ Scenario: EvergreenJnr_DevicesList_ChecksThatGridIsDisplayedCorrectlyAfterAdding
 	| ColumnName             |
 	| Owner accountexpires   |
 	| frscomputerreferencebl |
-	Then "17,225" rows are displayed in the agGrid
-	Then full list content is displayed to the user
-	Then There are no errors in the browser console
-	Then table content is present
+	And "17,225" rows are displayed in the agGrid
+	And full list content is displayed to the user
+	And There are no errors in the browser console
+	And table content is present
 
 @Evergreen @Devices @EvergreenJnr_Columns @RemoveColumn @AddColumnAction @DAS12910
 Scenario: EvergreenJnr_MailboxesList_ChecksThatNewlyAddedColumnIsDisplayedCorrectlyAfterAddingEmailMigraReadinessFilter
@@ -210,10 +210,10 @@ Scenario: EvergreenJnr_MailboxesList_ChecksThatNewlyAddedColumnIsDisplayedCorrec
 	When User clicks the Columns button
 	Then Columns panel is displayed to the user
 	When User removes "Owner Display Name" column by Column panel
-	When User removes "Mailbox Type" column by Column panel
-	When User removes "Mail Server" column by Column panel
-	When User removes "Mailbox Platform" column by Column panel
-	When User clicks the Filters button
+	And User removes "Mailbox Type" column by Column panel
+	And User removes "Mail Server" column by Column panel
+	And User removes "Mailbox Platform" column by Column panel
+	And User clicks the Filters button
 	Then Filters panel is displayed to the user
 	When User add "EmailMigra: Readiness" filter where type is "Equals" with added column and Lookup option
 	| SelectedValues |
@@ -222,11 +222,11 @@ Scenario: EvergreenJnr_MailboxesList_ChecksThatNewlyAddedColumnIsDisplayedCorrec
 	Then Content is present in the newly added column
 	| ColumnName            |
 	| EmailMigra: Readiness |
-	Then full list content is displayed to the user
-	Then There are no errors in the browser console
-	Then Add And button is displayed on the Filter panel
+	And full list content is displayed to the user
+	And There are no errors in the browser console
+	And Add And button is displayed on the Filter panel
 	When User selects And "EmailMigra: Readiness" filter where type is "Equals" with added column and Lookup option:
 	| SelectedValues |
 	| Out Of Scope   |
-	When User clicks the "CANCEL" Action button
+	And User clicks the "CANCEL" Action button
 	Then Add And button is displayed on the Filter panel
