@@ -1516,11 +1516,12 @@ namespace DashworksTestAutomation.Steps.Dashworks
             filterElement.GetStringFilterByColumnName(columnName);
         }
 
-        [Then(@"""(.*)"" is not displayed in the filter dropdown")]
-        public void ThenIsNotDisplayedInTheFilterDropdown(string filterNmae)
+        [Then(@"Projects in filter dropdown are displayed in alphabetical order")]
+        public void ThenProjectsInFilterDropdownAreDisplayedInAlphabeticalOrder()
         {
-            var filterElement = _driver.NowAt<BaseGridPage>();
-            Assert.IsFalse(filterElement.CheckStringFilterByName(filterNmae));
+            var page = _driver.NowAt<BaseGridPage>();
+            List<string> list = page.ProjectListInFilterDropdown.Select(x => x.Text).ToList();
+            Assert.AreEqual(list.OrderBy(s => s), list, "Projects are not in alphabetical order");
         }
 
         [Then(@"""(.*)"" value is displayed for Default column")]

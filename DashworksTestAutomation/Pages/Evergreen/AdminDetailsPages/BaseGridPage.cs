@@ -10,6 +10,8 @@ namespace DashworksTestAutomation.Pages.Evergreen.AdminDetailsPages
 {
     public class BaseGridPage : SeleniumBasePage
     {
+        public const string ProjectInFilterDropdown = "//mat-option[@class='mat-option mat-option-multiple ng-star-inserted']";
+
         [FindsBy(How = How.XPath, Using = ".//div/h1")]
         public IWebElement PageTitle { get; set; }
 
@@ -117,6 +119,9 @@ namespace DashworksTestAutomation.Pages.Evergreen.AdminDetailsPages
 
         [FindsBy(How = How.XPath, Using = ".//div[contains(@class, 'ag-body-container')]")]
         public IWebElement OnboardedObjectsTable { get; set; }
+
+        [FindsBy(How = How.XPath, Using = ProjectInFilterDropdown)]
+        public IList<IWebElement> ProjectListInFilterDropdown { get; set; }
 
         private By AgIconMenu = By.XPath(".//span[contains(@class,'ag-icon-menu')]");
 

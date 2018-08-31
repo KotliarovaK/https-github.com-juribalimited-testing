@@ -3414,7 +3414,7 @@ Scenario: EvergreenJnr_AdminPage_CheckThatScopeChangesSelectionIsDisabledAfterCl
 	Then "UPDATE DEVICE CHANGES" Action button is active
 	And There are no errors in the browser console
 
-	@Evergreen @Admin @EvergreenJnr_AdminPage @AdminPage @DAS12776 @Delete_Newly_Created_Project @Delete_Newly_Created_List
+@Evergreen @Admin @EvergreenJnr_AdminPage @AdminPage @DAS12776 @Delete_Newly_Created_Project @Delete_Newly_Created_List
 Scenario: EvergreenJnr_AdminPage_CheckThatScopeChangesSelectionIsDisabledAfterClickUpdateForStaticList
 	When User create static list with "StaticList12776" name on "Users" page with following items
 	| ItemName            |
@@ -3462,22 +3462,22 @@ Scenario: EvergreenJnr_AdminPage_CheckThatScopeChangesSelectionIsDisabledAfterCl
 	Then "UPDATE ALL CHANGES" Action button is active
 	And There are no errors in the browser console
 
-@Evergreen @Admin @EvergreenJnr_AdminPage @AdminPage @DAS12755 @Delete_Newly_Created_Project
-Scenario: EvergreenJnr_AdminPage_CheckThatRelatedBucketsAreUpdatedAfterCreatingOrDeletingProject
+@Evergreen @Admin @EvergreenJnr_AdminPage @AdminPage @DAS12949 @Delete_Newly_Created_Project @Projects
+Scenario: EvergreenJnr_AdminPage_ChecksThatProjectNameWhichStartsWithLowerCaseLetterIsDisplayedInAlphabeticalOrder
 	When User clicks Admin on the left-hand menu
 	Then Admin page should be displayed to the user
 	When User clicks "Projects" link on the Admin page
 	Then "Projects" page should be displayed to the user
 	When User clicks the "CREATE PROJECT" Action button
 	Then "Create Project" page should be displayed to the user
-	When User enters "1DevicesProject" in the Project Name field
+	When User enters "project12949" in the Project Name field
 	And User selects "All Devices" in the Scope Project dropdown
 	And User clicks Create button on the Create Project page
 	Then Success message is displayed and contains "Your project has been created" text
 	When User clicks "Buckets" link on the Admin page
 	Then "Buckets" page should be displayed to the user
-	When User clicks Reset Filters button on the Admin page
 	When User clicks String Filter button for "Project" column on the Admin page
+	Then Projects in filter dropdown are displayed in alphabetical order
 	When User clicks "Select All" checkbox from String Filter on the Admin page
 	When User clicks String Filter button for "Project" column on the Admin page
 	When User selects "1DevicesProject" checkbox from String Filter on the Admin page
