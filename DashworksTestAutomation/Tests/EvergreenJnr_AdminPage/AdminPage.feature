@@ -3508,3 +3508,39 @@ Scenario: EvergreenJnr_AdminPage_CheckThatRelatedBucketsAreUpdatedAfterCreatingO
 	Then "Buckets" page should be displayed to the user
 	When User clicks String Filter button for "Project" column on the Admin page
 	Then "1DevicesProject" is not displayed in the filter dropdown
+
+@Evergreen @Senior @PMObject @Admin @EvergreenJnr_AdminPage @AdminPage @DAS12965 @Delete_Newly_Created_Project
+Scenario: EvergreenJnr_AdminPage_ChecksThatColourOfOnboardedAppIsDisplayedCorrectly
+	When User clicks Admin on the left-hand menu
+	Then Admin page should be displayed to the user
+	When User clicks "Projects" link on the Admin page
+	Then "Projects" page should be displayed to the user
+	When User clicks the "CREATE PROJECT" Action button
+	Then "Create Project" page should be displayed to the user
+	When User enters "Project12965" in the Project Name field
+	And User selects "All Devices" in the Scope Project dropdown
+	And User clicks Create button on the Create Project page
+	Then created Project with "Project12965" name is displayed correctly
+	Then Success message is displayed and contains "Your project has been created" text
+	When User clicks newly created object link
+	Then Project "Project12965" is displayed to user
+	When User selects "Scope Details" tab on the Project details page
+	And User navigates to the "Application Scope" tab in the Scope section on the Project details page
+	When User selects "RED" color in the Application Scope tab on the Project details page
+	When User selects "Scope Changes" tab on the Project details page
+	When User clicks "Applications" tab in the Project Scope Changes section
+	When User expands the object to add 
+	And User selects following Objects
+	| Objects                                                      |
+	| ALS - Designing a Microsoft Windows 2000 Dir. Services eBook |
+	When User clicks the "UPDATE ALL CHANGES" Action button
+	And User clicks the "UPDATE PROJECT" Action button
+	Then Success message is displayed and contains "1 object queued for onboarding, 0 objects offboarded" text
+	When User selects "History" tab on the Project details page
+	Then following Items are onboarded
+	| Items                                                        |
+	| ALS - Designing a Microsoft Windows 2000 Dir. Services eBook |
+	When User enters "ALS - Designing a Microsoft Windows 2000 Dir. Services eBook" text in the Search field for "Item" column
+	And User clicks content from "Item" column
+	Then "Project Object" page is displayed to the user
+	Then Colour of onboarded app is "Red"

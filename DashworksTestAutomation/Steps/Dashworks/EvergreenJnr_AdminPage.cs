@@ -209,6 +209,14 @@ namespace DashworksTestAutomation.Steps.Dashworks
             _driver.WaitForDataLoading();
         }
 
+        [When(@"User selects ""(.*)"" color in the Application Scope tab on the Project details page")]
+        public void WhenUserSelectsColorInTheApplicationScopeTabOnTheProjectDetailsPage(string colorName)
+        {
+            var applicationTab = _driver.NowAt<ProjectsPage>();
+            applicationTab.DefaultReadinessDropdown.Click();
+            applicationTab.GetReadinessOptionByName(colorName).Click();
+        }
+
         [When(@"User clicks ""(.*)"" associated checkbox on the Project details page")]
         public void WhenUserClicksAssociatedCheckboxOnTheProjectDetailsPage(string checkboxName)
         {
@@ -1308,6 +1316,7 @@ namespace DashworksTestAutomation.Steps.Dashworks
                 }
                 else
                 {
+                    Thread.Sleep(5000);
                     _driver.Navigate().Refresh();
                     projectElement.OnboardedObjectDisplayed(row["Items"]);
                 }
