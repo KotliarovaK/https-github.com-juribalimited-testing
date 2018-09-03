@@ -3228,7 +3228,7 @@ Scenario: EvergreenJnr_AdminPage_AddingMailboxesFromBuckets
 	And There are no errors in the browser console
 	And Delete "TestBucket8" Bucket in the Administration
 
-	@Evergreen @Admin @EvergreenJnr_AdminPage @AdminPage @DAS13205
+@Evergreen @Admin @EvergreenJnr_AdminPage @AdminPage @DAS13205
 Scenario: EvergreenJnr_AdminPage_CheckThatBannerDisplaysOnScopeDetailsPage
 	When User clicks Admin on the left-hand menu
 	And User clicks "Projects" link on the Admin page
@@ -3238,6 +3238,18 @@ Scenario: EvergreenJnr_AdminPage_CheckThatBannerDisplaysOnScopeDetailsPage
 	And User clicks Create button on the Create Project page
 	And User clicks newly created object link
 	Then User sees banner at the top of work area
+
+@Evergreen @Admin @EvergreenJnr_AdminPage @AdminPage @DAS12997
+Scenario: EvergreenJnr_AdminPage_CheckDefaultSortOrderOfDevicesAndUsersAndMailboxesListsOfParticularBucket
+	When User clicks Admin on the left-hand menu
+	And User clicks "Buckets" link on the Admin page
+	And User enters "Unassigned" text in the Search field for "Bucket" column
+	And User clicks content from "Bucket" column
+	Then data in table is sorted by "Hostname" column in ascending order by default on the Admin page
+	When User clicks "Users" tab
+	Then data in table is sorted by "Username" column in ascending order by default on the Admin page
+	When User clicks "Mailboxes" tab
+	Then data in table is sorted by "Email Address (Primary)" column in ascending order by default on the Admin page
 
 @Evergreen @Senior @Admin @EvergreenJnr_AdminPage @AdminPage @DAS12999 @DAS12680 @Delete_Newly_Created_Project @Projects
 Scenario: EvergreenJnr_AdminPage_AddingRequestTypesAndCategories

@@ -75,6 +75,7 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_GridActions
         
         
         
+        
         [NUnit.Framework.DescriptionAttribute("EvergreenJnr_AllLists_CheckDataIsNotDuplicatedInTableDuringScrolling")]
         [NUnit.Framework.CategoryAttribute("Evergreen")]
         [NUnit.Framework.CategoryAttribute("AllLists")]
