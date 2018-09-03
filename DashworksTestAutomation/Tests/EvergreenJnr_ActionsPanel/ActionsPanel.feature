@@ -77,7 +77,7 @@ Scenario: EvergreenJnr_UsersList_CheckThatUserWithoutRelevantRolesCannotSeeBulkU
 	And User select "Manage Users" option in Management Console
 	And User removes "000WithoutRoles" User
 
-@Evergreen @Devices @EvergreenJnr_ActionsPanel @DAS12932
+@Evergreen @Devices @EvergreenJnr_ActionsPanel @BulkUpdate @DAS12932
 Scenario: EvergreenJnr_DevicesList_CheckThatUserWithoutJustTheProjectAdministratorRoleCanStillBulkUpdateObjects
 	When User clicks "Projects" on the left-hand menu
 	Then "Projects Home" page is displayed to the user
@@ -130,7 +130,7 @@ Scenario: EvergreenJnr_DevicesList_CheckThatUserWithoutJustTheProjectAdministrat
 	And User select "Manage Users" option in Management Console
 	And User removes "000WithPBU" User
 
-@Evergreen @Applications @EvergreenJnr_ActionsPanel @DAS12932
+@Evergreen @Applications @EvergreenJnr_ActionsPanel @BulkUpdate @DAS12932
 Scenario: EvergreenJnr_ApplicationsList_CheckThatUserWithoutJustTheProjectBulkUpdaterRoleCanStillBulkUpdateObjects
 	When User clicks "Projects" on the left-hand menu
 	Then "Projects Home" page is displayed to the user
@@ -183,7 +183,7 @@ Scenario: EvergreenJnr_ApplicationsList_CheckThatUserWithoutJustTheProjectBulkUp
 	And User select "Manage Users" option in Management Console
 	And User removes "000WithPA" User
 
-@Evergreen @AllLists @EvergreenJnr_ActionsPanel @DAS12946 @Delete_Newly_Created_List
+@Evergreen @AllLists @EvergreenJnr_ActionsPanel @BulkUpdate @DAS12946 @Delete_Newly_Created_List
 Scenario Outline: EvergreenJnr_AllLists_ChecksThatRemoveFromStaticListOptionIsNotShownInTheActionsPanelWhenAStaticListDoesNotExist
 	When User clicks "<PageName>" on the left-hand menu
 	Then "<PageName>" list should be displayed to the user
@@ -250,7 +250,7 @@ Examples:
 	| Applications | Application   | 20040610sqlserverck              |
 	| Mailboxes    | Email Address | 00C8BC63E7424A6E862@bclabs.local |
 
-@Evergreen @AllLists @EvergreenJnr_ActionsPanel @DAS12946 @Delete_Newly_Created_List
+@Evergreen @AllLists @EvergreenJnr_ActionsPanel @BulkUpdate @DAS12946 @Delete_Newly_Created_List
 Scenario Outline: EvergreenJnr_AllLists_ChecksThatStaticListsCreatedFromAFilterOriginallyLoadsAnyDataOnceTheStaticListHasBeenCreated  
 	When User clicks "<PageName>" on the left-hand menu
 	Then "<PageName>" list should be displayed to the user
@@ -362,7 +362,7 @@ Scenario: EvergreenJnr_DevicesList_ChecksThatRequestTypeIsUpdatedCorrectlyOnDevi
 	And User clicks "UPDATE" button on message box
 	And Success message with "1 of 1 objects were valid for the update. Your changes have successfully been queued." text is displayed on Action panel
 
-@Evergreen @Users @EvergreenJnr_ActionsPanel @DAS12863
+@Evergreen @Users @EvergreenJnr_ActionsPanel @BulkUpdate @DAS12863
 Scenario: EvergreenJnr_UsersList_ChecksThatRequestTypeIsUpdatedCorrectlyOnUsersPage
 	When User clicks "Users" on the left-hand menu
 	Then "Users" list should be displayed to the user
@@ -449,7 +449,7 @@ Scenario: EvergreenJnr_UsersList_ChecksThatRequestTypeIsUpdatedCorrectlyOnUsersP
 	And User clicks "UPDATE" button on message box
 	And Success message with "1 of 1 objects were valid for the update. Your changes have successfully been queued." text is displayed on Action panel
 
-@Evergreen @Applications @EvergreenJnr_ActionsPanel @DAS12863
+@Evergreen @Applications @EvergreenJnr_ActionsPanel @BulkUpdate @DAS12863
 Scenario: EvergreenJnr_ApplicationsList_ChecksThatRequestTypeIsUpdatedCorrectlyOnApplicationsPage
 	When User clicks "Applications" on the left-hand menu
 	Then "Applications" list should be displayed to the user
@@ -514,7 +514,7 @@ Scenario: EvergreenJnr_ApplicationsList_ChecksThatRequestTypeIsUpdatedCorrectlyO
 	And User clicks "UPDATE" button on message box
 	And Success message with "1 of 1 objects were valid for the update. Your changes have successfully been queued." text is displayed on Action panel
 
-@Evergreen @Mailboxes @EvergreenJnr_ActionsPanel @DAS12863
+@Evergreen @Mailboxes @EvergreenJnr_ActionsPanel @BulkUpdate @DAS12863
 Scenario: EvergreenJnr_MailboxesList_ChecksThatRequestTypeIsUpdatedCorrectlyOnMailboxesPage
 	When User clicks "Mailboxes" on the left-hand menu
 	Then "Mailboxes" list should be displayed to the user
@@ -596,7 +596,7 @@ Scenario: EvergreenJnr_MailboxesList_ChecksThatRequestTypeIsUpdatedCorrectlyOnMa
 	And User clicks "UPDATE" button on message box
 	And Success message with "1 of 1 objects were valid for the update. Your changes have successfully been queued." text is displayed on Action panel
 
-@Evergreen @Devices @EvergreenJnr_ActionsPanel @DAS12863
+@Evergreen @Devices @EvergreenJnr_ActionsPanel @BulkUpdate @DAS12863
 Scenario: EvergreenJnr_DevicesList_ChecksThatRequestTypeIsUpdatedCorrectlyWhereSomeObjectsAreValidAndSomeAreInvalidForTheSelectedProject
 	When User clicks "Devices" on the left-hand menu
 	Then "Devices" list should be displayed to the user
@@ -663,7 +663,7 @@ Scenario: EvergreenJnr_DevicesList_ChecksThatRequestTypeIsUpdatedCorrectlyWhereS
 	And User clicks "UPDATE" button on message box
 	And Success message with "1 of 1 objects were valid for the update. Your changes have successfully been queued." text is displayed on Action panel
 
-@Evergreen @Devices @EvergreenJnr_ActionsPanel @DAS12863
+@Evergreen @Devices @EvergreenJnr_ActionsPanel @BulkUpdate @DAS12863
 Scenario: EvergreenJnr_DevicesList_ChecksThatActionsPanelWorkedCorrectlyAfterCickOnCancelButton
 	When User clicks "Devices" on the left-hand menu
 	Then "Devices" list should be displayed to the user
@@ -682,7 +682,7 @@ Scenario: EvergreenJnr_DevicesList_ChecksThatActionsPanelWorkedCorrectlyAfterCic
 	Then Actions panel is not displayed to the user
 	And Checkboxes are not displayed
 
-@Evergreen @Devices @EvergreenJnr_ActionsPanel @DAS13074
+@Evergreen @Devices @EvergreenJnr_ActionsPanel @BulkUpdate @DAS13074
 Scenario: EvergreenJnr_DevicesList_ChecksThatProjectNamesAreDisplayedCorrectlyInTheActionsDllAndInSelectedSection
 	When User clicks "Devices" on the left-hand menu
 	Then "Devices" list should be displayed to the user
@@ -718,7 +718,7 @@ Scenario: EvergreenJnr_DevicesList_ChecksThatProjectNamesAreDisplayedCorrectlyIn
 	| Windows7Mi: Post Migration                                  |
 	| Windows7Mi: Pre-Migration                                   |
 
-@Evergreen @Devices @EvergreenJnr_ActionsPanel @DAS13142
+@Evergreen @Devices @EvergreenJnr_ActionsPanel @BulkUpdate @DAS13142
 Scenario: EvergreenJnr_DevicesList_CheckThatProjectFieldIsDisplayedCorrectlyAfterClearingOnDevicesPage
 	When User clicks "Devices" on the left-hand menu
 	Then "Devices" list should be displayed to the user
@@ -735,7 +735,7 @@ Scenario: EvergreenJnr_DevicesList_CheckThatProjectFieldIsDisplayedCorrectlyAfte
 	And User clicks on Action drop-down
 	Then "Barry's User Project" Project is displayed on Action panel
 
-@Evergreen @Users @EvergreenJnr_ActionsPanel @DAS13142
+@Evergreen @Users @EvergreenJnr_ActionsPanel @BulkUpdate @DAS13142
 Scenario: EvergreenJnr_UsersList_CheckThatProjectFieldIsDisplayedCorrectlyAfterClearingOnUsersPage
 	When User clicks "Users" on the left-hand menu
 	Then "Users" list should be displayed to the user
@@ -752,7 +752,7 @@ Scenario: EvergreenJnr_UsersList_CheckThatProjectFieldIsDisplayedCorrectlyAfterC
 	And User clicks on Action drop-down
 	Then "Havoc (Big Data)" Project is displayed on Action panel
 
-@Evergreen @Applications @EvergreenJnr_ActionsPanel @DAS13142
+@Evergreen @Applications @EvergreenJnr_ActionsPanel @BulkUpdate @DAS13142
 Scenario: EvergreenJnr_ApplicationsList_CheckThatProjectFieldIsDisplayedCorrectlyAfterClearingOnApplicationsPage
 	When User clicks "Applications" on the left-hand menu
 	Then "Applications" list should be displayed to the user
@@ -769,7 +769,7 @@ Scenario: EvergreenJnr_ApplicationsList_CheckThatProjectFieldIsDisplayedCorrectl
 	And User clicks on Action drop-down
 	Then "User Scheduled Test (Jo)" Project is displayed on Action panel
 
-@Evergreen @Mailboxes @EvergreenJnr_ActionsPanel @DAS13142
+@Evergreen @Mailboxes @EvergreenJnr_ActionsPanel @BulkUpdate @DAS13142
 Scenario: EvergreenJnr_MailboxesList_CheckThatProjectFieldIsDisplayedCorrectlyAfterClearingOnMailboxesPage
 	When User clicks "Mailboxes" on the left-hand menu
 	Then "Mailboxes" list should be displayed to the user
@@ -785,3 +785,28 @@ Scenario: EvergreenJnr_MailboxesList_CheckThatProjectFieldIsDisplayedCorrectlyAf
 	When User clears Project field
 	And User clicks on Action drop-down
 	Then "Email Migration" Project is displayed on Action panel
+
+@Evergreen @AllLists @EvergreenJnr_ActionsPanel @BulkUpdate @DAS13355
+Scenario Outline: EvergreenJnr_AllLists_ChecksThatTextValueHaveOptionToRemoveExistingTextValue
+	When User clicks "<PageName>" on the left-hand menu
+	Then "<PageName>" list should be displayed to the user
+	When User clicks the Actions button
+	Then Actions panel is displayed to the user
+	When User select "<ColumnName>" rows in the grid
+	| SelectedRowsName |
+	| <RowName>        |
+	And User selects "Bulk update" in the Actions dropdown
+	And User selects "Update task value" Bulk Update Type on Action panel
+	And User selects "Computer Scheduled Test (Jo)" Project on Action panel
+	And User selects "One" Stage on Action panel
+	And User selects "<TaskName>" Task on Action panel
+	Then the following Update Value are displayed in opened DLL on Action panel:
+	| Value  |
+	| Update |
+	| Remove |
+
+Examples: 
+	| PageName     | ColumnName  | RowName                          | TaskName                        |
+	| Devices      | Hostname    | 01BQIYGGUW5PRP6                  | Text Computer                   |
+	| Users        | Username    | 00DB4000EDD84951993              | Text User- Email Address        |
+	| Applications | Application | 32VerSee v.231 en (C:\32VerSee\) | Text Application- Future Groups |

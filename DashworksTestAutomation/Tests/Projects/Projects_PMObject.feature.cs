@@ -71,6 +71,7 @@ namespace DashworksTestAutomation.Tests.Projects
         
         
         
+        
         [NUnit.Framework.DescriptionAttribute("Projects_CheckThatErrorIsNotDisplayedWhenUsedDDLForApplicationsTabOnPMObjectPage")]
         [NUnit.Framework.CategoryAttribute("Senior")]
         [NUnit.Framework.CategoryAttribute("PMObject")]

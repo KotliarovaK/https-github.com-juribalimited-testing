@@ -73,6 +73,7 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_StaticLists
         
         
         
+        
         [NUnit.Framework.DescriptionAttribute("EvergreenJnr_DevicesList_CheckThatDynamicFiltersAreClearedForStaticListsWhenOpene" +
             "dAfterDynamicLists")]
         [NUnit.Framework.CategoryAttribute("Evergreen")]
@@ -136,6 +137,7 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_StaticLists
         
         
         
+        
         [NUnit.Framework.DescriptionAttribute("EvergreenJnr_DevicesList_CheckThatFiltersAndColumnsAreRestoredForSavedList")]
         [NUnit.Framework.CategoryAttribute("Evergreen")]
         [NUnit.Framework.CategoryAttribute("Devices")]
@@ -192,6 +194,7 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_StaticLists
         
         [NUnit.Framework.TestAttribute()]
         [NUnit.Framework.Retry(2)]
+        
         
         
         

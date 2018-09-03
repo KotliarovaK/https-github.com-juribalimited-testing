@@ -3228,7 +3228,7 @@ Scenario: EvergreenJnr_AdminPage_AddingMailboxesFromBuckets
 	And There are no errors in the browser console
 	And Delete "TestBucket8" Bucket in the Administration
 
-	@Evergreen @Admin @EvergreenJnr_AdminPage @AdminPage @DAS13205
+@Evergreen @Admin @EvergreenJnr_AdminPage @AdminPage @DAS13205
 Scenario: EvergreenJnr_AdminPage_CheckThatBannerDisplaysOnScopeDetailsPage
 	When User clicks Admin on the left-hand menu
 	And User clicks "Projects" link on the Admin page
@@ -3238,6 +3238,18 @@ Scenario: EvergreenJnr_AdminPage_CheckThatBannerDisplaysOnScopeDetailsPage
 	And User clicks Create button on the Create Project page
 	And User clicks newly created object link
 	Then User sees banner at the top of work area
+
+@Evergreen @Admin @EvergreenJnr_AdminPage @AdminPage @DAS12997
+Scenario: EvergreenJnr_AdminPage_CheckDefaultSortOrderOfDevicesAndUsersAndMailboxesListsOfParticularBucket
+	When User clicks Admin on the left-hand menu
+	And User clicks "Buckets" link on the Admin page
+	And User enters "Unassigned" text in the Search field for "Bucket" column
+	And User clicks content from "Bucket" column
+	Then data in table is sorted by "Hostname" column in ascending order by default on the Admin page
+	When User clicks "Users" tab
+	Then data in table is sorted by "Username" column in ascending order by default on the Admin page
+	When User clicks "Mailboxes" tab
+	Then data in table is sorted by "Email Address (Primary)" column in ascending order by default on the Admin page
 
 @Evergreen @Senior @Admin @EvergreenJnr_AdminPage @AdminPage @DAS12999 @DAS12680 @Delete_Newly_Created_Project @Projects
 Scenario: EvergreenJnr_AdminPage_AddingRequestTypesAndCategories
@@ -3462,7 +3474,7 @@ Scenario: EvergreenJnr_AdminPage_CheckThatScopeChangesSelectionIsDisabledAfterCl
 	Then "UPDATE ALL CHANGES" Action button is active
 	And There are no errors in the browser console
 
-@Evergreen @Admin @EvergreenJnr_AdminPage @AdminPage @DAS12949 @Delete_Newly_Created_Project @Projects
+@Evergreen @Admin @EvergreenJnr_AdminPage @AdminPage @DAS12949 @DAS12609 @Delete_Newly_Created_Project @Projects
 Scenario: EvergreenJnr_AdminPage_ChecksThatProjectNameWhichStartsWithLowerCaseLetterIsDisplayedInAlphabeticalOrder
 	When User clicks Admin on the left-hand menu
 	Then Admin page should be displayed to the user
@@ -3478,6 +3490,46 @@ Scenario: EvergreenJnr_AdminPage_ChecksThatProjectNameWhichStartsWithLowerCaseLe
 	Then "Buckets" page should be displayed to the user
 	When User clicks String Filter button for "Project" column on the Admin page
 	Then Projects in filter dropdown are displayed in alphabetical order
+	When User clicks "Projects" link on the Admin page
+	Then "Projects" page should be displayed to the user
+	When User enters "project12949" text in the Search field for "Project" column
+	When User clicks content from "Project" column
+	When User clicks "Users" tab in the Project Scope Changes section
+	When User expands the object to add
+	And User selects following Objects
+	| Objects                      |
+	| ADD135461 (Luke W. Clark)    |
+	| ADO048752 (Elena Z. Le)      |
+	| ADX520696 (Bridgett E. Cobb) |
+	And User clicks the "UPDATE USER CHANGES" Action button
+	Then Warning message with "3 users will be added" text is displayed on the Admin page
+	When User clicks the "UPDATE PROJECT" Action button
+	Then Success message is displayed and contains "3 objects queued for onboarding, 0 objects offboarded" text
+	When User clicks "Applications" tab in the Project Scope Changes section
+	When User expands the object to add
+	And User selects following Objects
+	| Objects              |
+	| Adobe Reader 5ver2.1 |
+	| allCLEAR 6.0 Viewer  |
+	| AnalogX TrackSeek    |
+	And User clicks the "UPDATE ALL CHANGES" Action button
+	Then Warning message with "3 applications will be added" text is displayed on the Admin page
+	When User clicks the "UPDATE PROJECT" Action button
+	Then Success message is displayed and contains "3 objects queued for onboarding, 0 objects offboarded" text
+	When User clicks "Users" tab in the Project Scope Changes section
+	Then following objects were not found
+	| Objects                      |
+	| ADD135461 (Luke W. Clark)    |
+	| ADO048752 (Elena Z. Le)      |
+	| ADX520696 (Bridgett E. Cobb) |
+	When User clicks "Applications" tab in the Project Scope Changes section
+	Then following objects were not found
+	| Objects              |
+	| Adobe Reader 5ver2.1 |
+	| allCLEAR 6.0 Viewer  |
+	| AnalogX TrackSeek    |
+	When User selects "History" tab on the Project details page
+	Then onboarded objects are displayed in the dropdown
 
 @Evergreen @Admin @EvergreenJnr_AdminPage @AdminPage @DAS12755 @Delete_Newly_Created_Project
 Scenario: EvergreenJnr_AdminPage_CheckThatRelatedBucketsAreUpdatedAfterCreatingOrDeletingProject

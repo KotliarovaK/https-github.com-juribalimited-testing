@@ -1314,6 +1314,26 @@ namespace DashworksTestAutomation.Steps.Dashworks
             }
         }
 
+        [Then(@"following objects were not found")]
+        public void ThenFollowingObjectsWereNotFound(Table table)
+        {
+            var projectElement = _driver.NowAt<BaseGridPage>();
+            projectElement.PlusButton.Click();
+            foreach (var row in table.Rows)
+            {
+                projectElement.CheckItemDisplay(row["Objects"]);
+                Assert.IsTrue(projectElement.CheckedAllItemCheckbox.Displayed(), "Some object is present");
+                projectElement.SearchTextbox.ClearWithHomeButton(_driver);
+            }
+        }
+
+        [Then(@"onboarded objects are displayed in the dropdown")]
+        public void ThenOnboardedObjectsAreDisplayedInTheDropdown()
+        {
+            var projectElement = _driver.NowAt<BaseGridPage>();
+            Assert.IsFalse(projectElement.ReonboardedItem.Displayed(), "Re-onboarded objects are displayed");
+        }
+
         [Then(@"Add Objects panel is collapsed")]
         public void ThenAddObjectsPanelIsCollapsed()
         {
@@ -1529,6 +1549,7 @@ namespace DashworksTestAutomation.Steps.Dashworks
             var page = _driver.NowAt<BaseGridPage>();
             List<string> list = page.ProjectListInFilterDropdown.Select(x => x.Text).ToList();
             Assert.AreEqual(list.OrderBy(s => s), list, "Projects are not in alphabetical order");
+            page.BodyContainer.Click();
         }
 
         [Then(@"""(.*)"" value is displayed for Default column")]
