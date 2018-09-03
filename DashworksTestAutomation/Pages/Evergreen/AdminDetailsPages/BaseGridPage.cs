@@ -10,6 +10,8 @@ namespace DashworksTestAutomation.Pages.Evergreen.AdminDetailsPages
 {
     public class BaseGridPage : SeleniumBasePage
     {
+        public const string ProjectInFilterDropdown = "//mat-option[@class='mat-option mat-option-multiple ng-star-inserted']";
+
         [FindsBy(How = How.XPath, Using = ".//div/h1")]
         public IWebElement PageTitle { get; set; }
 
@@ -117,6 +119,9 @@ namespace DashworksTestAutomation.Pages.Evergreen.AdminDetailsPages
 
         [FindsBy(How = How.XPath, Using = ".//div[contains(@class, 'ag-body-container')]")]
         public IWebElement OnboardedObjectsTable { get; set; }
+
+        [FindsBy(How = How.XPath, Using = ProjectInFilterDropdown)]
+        public IList<IWebElement> ProjectListInFilterDropdown { get; set; }
 
         private By AgIconMenu = By.XPath(".//span[contains(@class,'ag-icon-menu')]");
 
@@ -333,6 +338,12 @@ namespace DashworksTestAutomation.Pages.Evergreen.AdminDetailsPages
             By by = By.XPath(
                 $".//div[contains(@class, 'ag-body-viewport')]//div[contains(@class, 'ag-body-container')]/div/div[{GetColumnNumberByName(columnName)}]");
             return Driver.FindElements(by).Select(x => x.Text).ToList();
+        }
+
+
+        public bool CheckStringFilterByName(string filterName)
+        {
+            return Driver.IsElementDisplayed(By.XPath($"//div[@class='ng-star-inserted']/span[(text()='{filterName}')]"));
         }
 
         public void GetBooleanStringFilterByName(string filterName)
