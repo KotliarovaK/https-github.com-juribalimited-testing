@@ -1,4 +1,6 @@
 ﻿using System;
+using System.Collections.Generic;
+using System.Linq;
 using DashworksTestAutomation.DTO;
 using DashworksTestAutomation.DTO.RuntimeVariables;
 using DashworksTestAutomation.Extensions;
@@ -275,6 +277,21 @@ namespace DashworksTestAutomation.Steps.Dashworks
             listDetailsElement.OwnerDropdown.ClearWithBackspaces();
             _driver.SelectCustomSelectbox(listDetailsElement.OwnerDropdown, ownerOption);
             _driver.WaitForDataLoading();
+        }
+
+        [When(@"User clears Owner field on List Details panel")]
+        public void WhenUserClearsOwnerFieldOnListDetailsPanel()
+        {
+            var listDetailsElement = _driver.NowAt<ListDetailsElement>();
+            listDetailsElement.OwnerDropdown.Clear();
+        }
+
+        [Then(@"Owners is displayed in alphabetical order")]
+        public void ThenOwnersIsDisplayedInAlphabeticalOrder()
+        {
+            var listDetailsElement = _driver.NowAt<ListDetailsElement>();
+            List<string> list = listDetailsElement.OwnersList.Select(x => x.Text).ToList();
+            Assert.AreEqual(list.OrderBy(s => s), list, "Owners are not in alphabetical order");
         }
 
         private string GetFullNameByUserName(string userName)

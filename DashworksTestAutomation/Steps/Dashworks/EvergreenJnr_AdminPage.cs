@@ -530,7 +530,7 @@ namespace DashworksTestAutomation.Steps.Dashworks
         {
             var projectsPage = _driver.NowAt<ProjectsPage>();
             projectsPage.RequestTypeDropdown.Click();
-            projectsPage.GetRequestTypeByName(requestTypeName).Click();
+            projectsPage.SelectRequestTypeByName(requestTypeName).Click();
         }
 
         [When(@"User changes Category to ""(.*)""")]
@@ -538,21 +538,21 @@ namespace DashworksTestAutomation.Steps.Dashworks
         {
             var projectsPage = _driver.NowAt<ProjectsPage>();
             projectsPage.CategoryDropdown.Click();
-            projectsPage.GetCategoryByName(CategoryName).Click();
+            projectsPage.SelectCategoryByName(CategoryName).Click();
         }
 
         [Then(@"""(.*)"" Request Type is displayed to the user")]
         public void ThenRequestTypeIsDisplayedToTheUser(string requestTypeName)
         {
             var projectsPage = _driver.NowAt<ProjectsPage>();
-            Assert.IsTrue(projectsPage.GetRequestTypeByName(requestTypeName).Displayed(), "Incorrect Request Type is displayed");
+            Assert.IsTrue(projectsPage.GetRequestTypeOrCategory(requestTypeName).Displayed(), "Incorrect Request Type is displayed");
         }
 
         [Then(@"""(.*)"" Category is displayed to the user")]
         public void ThenCategoryIsDisplayedToTheUser(string categoryName)
         {
             var projectsPage = _driver.NowAt<ProjectsPage>();
-            Assert.IsTrue(projectsPage.GetCategoryByName(categoryName).Displayed(), "Incorrect Category is displayed");
+            Assert.IsTrue(projectsPage.GetRequestTypeOrCategory(categoryName).Displayed(), "Incorrect Category is displayed");
         }
 
         [Then(@"""(.*)"" is displayed to the user in the Project Scope Changes section")]
@@ -569,6 +569,14 @@ namespace DashworksTestAutomation.Steps.Dashworks
             }
             _driver.WaitForDataLoading();
             Assert.IsTrue(page.SelectedItemInProjectScopeChangesSection(text),
+                $"{text} is not displayed in the Project Scope Changes section");
+        }
+
+        [Then(@"""(.*)"" is displayed in the tab header on the Admin page")]
+        public void ThenIsDisplayedInTheTabHeaderOnTheAdminPage(string text)
+        {
+            var page = _driver.NowAt<BaseGridPage>();
+            Assert.IsTrue(page.GetTabHeaderInTheScopeChangesSection(text),
                 $"{text} is not displayed in the Project Scope Changes section");
         }
 
@@ -1306,6 +1314,13 @@ namespace DashworksTestAutomation.Steps.Dashworks
             }
         }
 
+        [Then(@"Add Objects panel is collapsed")]
+        public void ThenAddObjectsPanelIsCollapsed()
+        {
+            var projectElement = _driver.NowAt<BaseGridPage>();
+            Assert.IsTrue(projectElement.AddObjectsPanelCollapsed.Displayed(),"Panel is expanded");
+        }
+
         #endregion
 
         [When(@"User enters ""(.*)"" text in the Object Search field")]
@@ -1320,7 +1335,14 @@ namespace DashworksTestAutomation.Steps.Dashworks
         {
             var projectElement = _driver.NowAt<BaseGridPage>();
             Assert.IsTrue(projectElement.PlusButton.Displayed(), "Items are not selected");
-            Assert.IsTrue(projectElement.AllItemCheckbox.Displayed(), "Item checkbox is not checked");
+            Assert.IsTrue(projectElement.CheckedSomeItemCheckbox.Displayed(), "Item checkbox is not checked");
+        }
+
+        [Then(@"no items are selected")]
+        public void ThenNoItemsAreSelected()
+        {
+            var projectElement = _driver.NowAt<BaseGridPage>();
+            Assert.IsFalse(projectElement.CheckedAllItemCheckbox.Displayed(), "Some Item is selected");
         }
 
         [When(@"User clicks Create button on the Create Project page")]
@@ -1492,6 +1514,21 @@ namespace DashworksTestAutomation.Steps.Dashworks
             var filterElement = _driver.NowAt<BaseGridPage>();
             filterElement.BodyContainer.Click();
             filterElement.GetStringFilterByColumnName(columnName);
+        }
+
+        [Then(@"""(.*)"" is not displayed in the filter dropdown")]
+        public void ThenIsNotDisplayedInTheFilterDropdown(string filterName)
+        {
+            var filterElement = _driver.NowAt<BaseGridPage>();
+            Assert.IsFalse(filterElement.CheckStringFilterByName(filterName));
+        }
+
+        [Then(@"Projects in filter dropdown are displayed in alphabetical order")]
+        public void ThenProjectsInFilterDropdownAreDisplayedInAlphabeticalOrder()
+        {
+            var page = _driver.NowAt<BaseGridPage>();
+            List<string> list = page.ProjectListInFilterDropdown.Select(x => x.Text).ToList();
+            Assert.AreEqual(list.OrderBy(s => s), list, "Projects are not in alphabetical order");
         }
 
         [Then(@"""(.*)"" value is displayed for Default column")]

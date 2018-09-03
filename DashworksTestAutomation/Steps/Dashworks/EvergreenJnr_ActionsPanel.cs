@@ -146,6 +146,16 @@ namespace DashworksTestAutomation.Steps.Dashworks
             action.GetOptionOnActionsPanelByName(value).Click();
         }
 
+        [Then(@"the following Update Value are displayed in opened DLL on Action panel:")]
+        public void ThenTheFollowingUpdateValueAreDisplayedInOpenedDLLOnActionPanel(Table table)
+        {
+            var action = _driver.NowAt<BaseDashboardPage>();
+            action.UpdateValueDropdown.Click();
+            var expectedList = table.Rows.SelectMany(row => row.Values);
+            var actualList = action.OptionsDll.Select(value => value.Text);
+            Assert.AreEqual(expectedList, actualList, "Project list are different");
+        }
+
         [When(@"User clicks the ""(.*)"" Action button")]
         public void WhenUserClicksTheActionButton(string buttonName)
         {
@@ -196,6 +206,7 @@ namespace DashworksTestAutomation.Steps.Dashworks
         public void ThenSuccessMessageWithTextIsDisplayedOnActionPanel(string textMessage)
         {
             var action = _driver.NowAt<BaseDashboardPage>();
+            _driver.WaitForDataLoading();
             Assert.IsTrue(action.SuccessMessageActionPanel(textMessage), "Success Message is not displayed");
         }
 
