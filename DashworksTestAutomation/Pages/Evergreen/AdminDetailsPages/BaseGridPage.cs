@@ -30,8 +30,8 @@ namespace DashworksTestAutomation.Pages.Evergreen.AdminDetailsPages
         [FindsBy(How = How.XPath, Using = ".//div[contains(@class,'actions-list')]//*/mat-select")]
         public IWebElement ActionsList { get; set; }
 
-        [FindsBy(How = How.XPath, Using = ".//div[contains(@class,'mat-select-panel')]//*/mat-option")]
-        public IList<IWebElement> ActionsListItems { get; set; }
+        [FindsBy(How = How.XPath, Using = ".//div[@col-id='onboardAction']/span[contains(text(), 'Re-Onboard')]")]
+        public IWebElement ReonboardedItem { get; set; }
 
         [FindsBy(How = How.XPath, Using = ".//div[@class='box-counter']/span")]
         public IWebElement RowsCounter { get; set; }
@@ -56,9 +56,6 @@ namespace DashworksTestAutomation.Pages.Evergreen.AdminDetailsPages
 
         [FindsBy(How = How.XPath, Using = ".//span[@class='ag-header-icon ag-sort-descending-icon']")]
         public IWebElement DescendingSortingIcon { get; set; }
-
-        [FindsBy(How = How.XPath, Using = ".//span[@class='ag-header-select-all']//span[@class='ag-checkbox-unchecked']")]
-        public IWebElement Unchecked { get; set; }
 
         [FindsBy(How = How.XPath, Using = ".//span[@class='ag-selection-checkbox']")]
         public IList<IWebElement> SelectRowsCheckboxesOnAdminPage { get; set; }
@@ -288,6 +285,12 @@ namespace DashworksTestAutomation.Pages.Evergreen.AdminDetailsPages
             var selector = $".//span[contains(text(), '{itemName}')]";
             Driver.WaitWhileControlIsNotDisplayed(By.XPath(selector));
             Driver.FindElement(By.XPath(selector)).Click();
+        }
+
+        public void CheckItemDisplay(string itemName)
+        {
+            SearchTextbox.Clear();
+            SearchTextbox.SendKeys(itemName);
         }
 
         public bool OnboardedObjectDisplayed(string objectName)

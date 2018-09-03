@@ -3462,7 +3462,7 @@ Scenario: EvergreenJnr_AdminPage_CheckThatScopeChangesSelectionIsDisabledAfterCl
 	Then "UPDATE ALL CHANGES" Action button is active
 	And There are no errors in the browser console
 
-@Evergreen @Admin @EvergreenJnr_AdminPage @AdminPage @DAS12949 @Delete_Newly_Created_Project @Projects
+@Evergreen @Admin @EvergreenJnr_AdminPage @AdminPage @DAS12949 @DAS12609 @Delete_Newly_Created_Project @Projects
 Scenario: EvergreenJnr_AdminPage_ChecksThatProjectNameWhichStartsWithLowerCaseLetterIsDisplayedInAlphabeticalOrder
 	When User clicks Admin on the left-hand menu
 	Then Admin page should be displayed to the user
@@ -3478,6 +3478,46 @@ Scenario: EvergreenJnr_AdminPage_ChecksThatProjectNameWhichStartsWithLowerCaseLe
 	Then "Buckets" page should be displayed to the user
 	When User clicks String Filter button for "Project" column on the Admin page
 	Then Projects in filter dropdown are displayed in alphabetical order
+	When User clicks "Projects" link on the Admin page
+	Then "Projects" page should be displayed to the user
+	When User enters "project12949" text in the Search field for "Project" column
+	When User clicks content from "Project" column
+	When User clicks "Users" tab in the Project Scope Changes section
+	When User expands the object to add
+	And User selects following Objects
+	| Objects                      |
+	| ADD135461 (Luke W. Clark)    |
+	| ADO048752 (Elena Z. Le)      |
+	| ADX520696 (Bridgett E. Cobb) |
+	And User clicks the "UPDATE USER CHANGES" Action button
+	Then Warning message with "3 users will be added" text is displayed on the Admin page
+	When User clicks the "UPDATE PROJECT" Action button
+	Then Success message is displayed and contains "3 objects queued for onboarding, 0 objects offboarded" text
+	When User clicks "Applications" tab in the Project Scope Changes section
+	When User expands the object to add
+	And User selects following Objects
+	| Objects              |
+	| Adobe Reader 5ver2.1 |
+	| allCLEAR 6.0 Viewer  |
+	| AnalogX TrackSeek    |
+	And User clicks the "UPDATE ALL CHANGES" Action button
+	Then Warning message with "3 applications will be added" text is displayed on the Admin page
+	When User clicks the "UPDATE PROJECT" Action button
+	Then Success message is displayed and contains "3 objects queued for onboarding, 0 objects offboarded" text
+	When User clicks "Users" tab in the Project Scope Changes section
+	Then following objects were not found
+	| Objects                      |
+	| ADD135461 (Luke W. Clark)    |
+	| ADO048752 (Elena Z. Le)      |
+	| ADX520696 (Bridgett E. Cobb) |
+	When User clicks "Applications" tab in the Project Scope Changes section
+	Then following objects were not found
+	| Objects              |
+	| Adobe Reader 5ver2.1 |
+	| allCLEAR 6.0 Viewer  |
+	| AnalogX TrackSeek    |
+	When User selects "History" tab on the Project details page
+	Then onboarded objects are displayed in the dropdown
 
 @Evergreen @Admin @EvergreenJnr_AdminPage @AdminPage @DAS12755 @Delete_Newly_Created_Project
 Scenario: EvergreenJnr_AdminPage_CheckThatRelatedBucketsAreUpdatedAfterCreatingOrDeletingProject
