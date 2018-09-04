@@ -47,5 +47,13 @@ namespace DashworksTestAutomation.Steps.Projects
             page.ViewType.Click();
             page.GetViewTypeByName(viewType);
         }
+
+        [Then(@"Colour of onboarded app is ""(.*)""")]
+        public void ThenColourOfOnboardedAppIs(string colorName)
+        {
+            var page = _driver.NowAt<Projects_PMObjectPage>();
+            var color = page.ColorItem.GetAttribute("title");
+            Assert.AreEqual(color, colorName, "Colors for item are different");
+        }
     }
 }

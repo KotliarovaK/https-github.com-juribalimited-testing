@@ -102,6 +102,9 @@ namespace DashworksTestAutomation.Pages.Evergreen.AdminDetailsPages
         [FindsBy(How = How.XPath, Using = "//mat-select[@aria-label='Category']")]
         public IWebElement CategoryDropdown { get; set; }
 
+        [FindsBy(How = How.XPath, Using = "//mat-select[@id='readinessForOnboardedApplications']")]
+        public IWebElement DefaultReadinessDropdown { get; set; }
+
         public override List<By> GetPageIdentitySelectors()
         {
             Driver.WaitForDataLoading();
@@ -221,13 +224,25 @@ namespace DashworksTestAutomation.Pages.Evergreen.AdminDetailsPages
             Driver.FindElement(By.XPath(ListNameSelector)).Click();
         }
 
-        public IWebElement GetRequestTypeByName(string requestTypeName)
+        public IWebElement SelectRequestTypeByName(string requestTypeName)
         {
             var requestTypeSelector = $"//mat-option/span[contains(text(), '{requestTypeName}')]";
             return Driver.FindElement(By.XPath(requestTypeSelector));
         }
 
-        public IWebElement GetCategoryByName(string categoryName)
+        public IWebElement GetRequestTypeOrCategory(string requestTypeName)
+        {
+            var requestTypeSelector = $"//mat-select//div//div//span[contains(text(), '{requestTypeName}')]";
+            return Driver.FindElement(By.XPath(requestTypeSelector));
+        }
+
+        public IWebElement GetReadinessOptionByName(string colorName)
+        {
+            var option = $"//mat-option[@role='option']//span[text()='{colorName}']";
+            return Driver.FindElement(By.XPath(option));
+        }
+
+        public IWebElement SelectCategoryByName(string categoryName)
         {
             var categorySelector = $"//mat-option/span[contains(text(), '{categoryName}')]";
             return Driver.FindElement(By.XPath(categorySelector));

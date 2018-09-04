@@ -879,7 +879,7 @@ Scenario: EvergreenJnr_ApplicationsList_CheckThatAdvancedUserFilterReturnsCorrec
 	And User clicks Save filter button
 	Then "2,222" rows are displayed in the agGrid
 
-@Evergreen @DevicesList @EvergreenJnr_FilterFeature @FilterFunctionality @DAS12351
+@Evergreen @Devices @EvergreenJnr_FilterFeature @FilterFunctionality @DAS12351
 Scenario Outline: EvergreenJnr_DevicesList_CheckThat500ISEInvalidColumnNameErrorIsNotDisplayedIfUseSelectedFilterOnDevicesPage
 	When User clicks "Devices" on the left-hand menu
 	Then "Devices" list should be displayed to the user
@@ -903,7 +903,7 @@ Examples:
 	| MigrationP: Request Type                  | [Default (Computer)] | 41     |
 	| UserSchedu: Request Type                  | Request Type A       | 60     |
 	
-@Evergreen @UsersList @EvergreenJnr_FilterFeature @FilterFunctionality @DAS12351
+@Evergreen @Users @EvergreenJnr_FilterFeature @FilterFunctionality @DAS12351
 Scenario Outline: EvergreenJnr_UsersList_CheckThat500ISEInvalidColumnNameErrorIsNotDisplayedIfUseSelectedFilterOnUsersPage
 	When User clicks "Users" on the left-hand menu
 	Then "Users" list should be displayed to the user
@@ -925,7 +925,7 @@ Examples:
 	| Havoc(BigD: Request Type                    | [Default (User)]   | 7,578  |
 	| UserSchedu: Group User Default Request Type | Not Applicable     | 679    |
 
-@Evergreen @ApplicationsList @EvergreenJnr_FilterFeature @FilterFunctionality @DAS12351
+@Evergreen @Applications @EvergreenJnr_FilterFeature @FilterFunctionality @DAS12351
 Scenario Outline: EvergreenJnr_ApplicationsList_CheckThat500ISEInvalidColumnNameErrorIsNotDisplayedIfUseSelectedFilterOnApplicationsPage
 	When User clicks "Applications" on the left-hand menu
 	Then "Applications" list should be displayed to the user
@@ -948,7 +948,7 @@ Examples:
 	#| EmailMigra: Request Type   | Public Folder               | 50    |
 	| UserSchedu: Request Type   | Request Type A              | 47    |
 
-@Evergreen @MailboxesList @EvergreenJnr_FilterFeature @FilterFunctionality @DAS12351
+@Evergreen @Mailboxes @EvergreenJnr_FilterFeature @FilterFunctionality @DAS12351
 Scenario Outline: EvergreenJnr_MailboxesList_CheckThat500ISEInvalidColumnNameErrorIsNotDisplayedIfUseSelectedFilterOnMailboxesPage
 	When User clicks "Mailboxes" on the left-hand menu
 	Then "Mailboxes" list should be displayed to the user
@@ -1038,7 +1038,7 @@ Scenario: EvergreenJnr_DevicesList_CheckThatApplicationFilterWorksCorrectlyForDi
 	And User clicks Save filter button
 	Then "17,225" rows are displayed in the agGrid
 
-@Evergreen @UsersList @EvergreenJnr_FilterFeature @FilterFunctionality @DAS12804 @Delete_Newly_Created_List
+@Evergreen @Users @EvergreenJnr_FilterFeature @FilterFunctionality @DAS12804 @Delete_Newly_Created_List
 Scenario: EvergreenJnr_UsersList_CheckThatSavedStaticListIsNotShownInEditMode
 	When User clicks "Users" on the left-hand menu
 	Then "Users" list should be displayed to the user
@@ -1060,3 +1060,25 @@ Scenario: EvergreenJnr_UsersList_CheckThatSavedStaticListIsNotShownInEditMode
 	Then "StaticList8543" list is displayed to user
 	And Edit List menu is not displayed
 	And URL contains "evergreen/#/users?$listid="
+
+@Evergreen @Devices @EvergreenJnr_FilterFeature @FilterFunctionality @DAS13104 @Delete_Newly_Created_List
+Scenario: EvergreenJnr_DevicesList_ChecksThatAddAndButtonIsDisplayedWhenAddingTwoOrMoreFiltersUsingTheSameFieldAndClearingOneOfTheFilters
+	When User clicks "Devices" on the left-hand menu
+	Then "Devices" list should be displayed to the user
+	When User clicks the Filters button
+	Then Filters panel is displayed to the user
+	When User add "Compliance" filter where type is "Equals" with added column and following checkboxes:
+	| SelectedCheckboxes |
+	| Red                |
+	Then "Compliance is Red" is displayed in added filter info
+	When User Add And "Compliance" filter where type is "Equals" with added column and following checkboxes:
+	| SelectedCheckboxes |
+	| Green              |
+	Then "Compliance is Green" is displayed in added filter info
+	When User Add And "Compliance" filter where type is "Equals" with added column and following checkboxes:
+	| SelectedCheckboxes |
+	| Unknown            |
+	Then "Compliance is Unknown" is displayed in added filter info
+	Then Add And button is displayed on the Filter panel
+	When User have removed "Compliance" filter
+	Then Add And button is displayed on the Filter panel
