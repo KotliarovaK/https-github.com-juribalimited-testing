@@ -3573,15 +3573,15 @@ Scenario: EvergreenJnr_AdminPage_ChecksThatColourOfOnboardedAppIsDisplayedCorrec
 	And User selects "All Devices" in the Scope Project dropdown
 	And User clicks Create button on the Create Project page
 	Then created Project with "Project12965" name is displayed correctly
-	Then Success message is displayed and contains "Your project has been created" text
+	And Success message is displayed and contains "Your project has been created" text
 	When User clicks newly created object link
 	Then Project "Project12965" is displayed to user
 	When User selects "Scope Details" tab on the Project details page
 	And User navigates to the "Application Scope" tab in the Scope section on the Project details page
-	When User selects "RED" color in the Application Scope tab on the Project details page
-	When User selects "Scope Changes" tab on the Project details page
-	When User clicks "Applications" tab in the Project Scope Changes section
-	When User expands the object to add 
+	And User selects "RED" color in the Application Scope tab on the Project details page
+	And User selects "Scope Changes" tab on the Project details page
+	And User clicks "Applications" tab in the Project Scope Changes section
+	And User expands the object to add 
 	And User selects following Objects
 	| Objects                                                      |
 	| ALS - Designing a Microsoft Windows 2000 Dir. Services eBook |
@@ -3595,4 +3595,47 @@ Scenario: EvergreenJnr_AdminPage_ChecksThatColourOfOnboardedAppIsDisplayedCorrec
 	When User enters "ALS - Designing a Microsoft Windows 2000 Dir. Services eBook" text in the Search field for "Item" column
 	And User clicks content from "Item" column
 	Then "Project Object" page is displayed to the user
-	Then Colour of onboarded app is "Red"
+	And Colour of onboarded app is "Red"
+
+@Evergreen @Admin @EvergreenJnr_AdminPage @AdminPage @DAS12496 @Delete_Newly_Created_Project @Not_Run
+Scenario: EvergreenJnr_AdminPage_CheckThatOffboardedObjectsAreListedAfterSelectObjectToRemove
+	When User clicks Admin on the left-hand menu
+	Then Admin page should be displayed to the user
+	When User clicks "Projects" link on the Admin page
+	Then "Projects" page should be displayed to the user
+	When User clicks the "CREATE PROJECT" Action button
+	Then "Create Project" page should be displayed to the user
+	When User enters "UsersProject2" in the Project Name field
+	And User selects "All Users" in the Scope Project dropdown
+	And User clicks Create button on the Create Project page
+	Then Success message is displayed and contains "Your project has been created" text
+	When User clicks newly created object link
+	Then Project "UsersProject2" is displayed to user
+	When User selects "Scope Changes" tab on the Project details page
+	And User clicks "Devices" tab in the Project Scope Changes section
+	And User expands the object to add 
+	And User selects following Objects
+	| Objects         |
+	| 01HMZTRG6OQAOF  |
+	| 02C80G8RFTPA9E  |
+	| 04FPR090BNW80E  |
+	| 05LG3HCJLEDEMTR |
+	And User clicks the "UPDATE DEVICE CHANGES" Action button
+	Then Warning message with "4 devices will be added" text is displayed on the Admin page
+	When User clicks the "UPDATE PROJECT" Action button
+	Then Success message is displayed and contains "4 objects queued for onboarding, 0 objects offboarded" text
+	When User selects "Scope Details" tab on the Project details page
+	And User navigates to the "Device Scope" tab in the Scope section on the Project details page
+	When User selects "Do not include owned devices" checkbox on the Project details page
+	When User selects "Scope Changes" tab on the Project details page
+	And User clicks "Devices" tab in the Project Scope Changes section
+	When User adds following Objects to the Project
+	| Objects         |
+	| 01HMZTRG6OQAOF  |
+	| 02C80G8RFTPA9E  |
+	When User clicks the "UPDATE PROJECT" Action button
+	Then Success message with "0 object queued for onboarding, 2 objects offboarded" text is displayed on the Projects page
+	When User selects "Queue" tab on the Project details page
+	When User clicks String Filter button for "Action" column on the Admin page
+	When User selects "Onboard Computer Object" checkbox from String Filter on the Admin page
+	Then Counter shows "2" found rows
