@@ -221,8 +221,8 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_ProfileDetails
         [NUnit.Framework.CategoryAttribute("ProfileDetails")]
         [NUnit.Framework.CategoryAttribute("EvergreenJnr_FilterFeature")]
         [NUnit.Framework.CategoryAttribute("UserProfile")]
+        [NUnit.Framework.CategoryAttribute("DAS13026")]
         [NUnit.Framework.CategoryAttribute("API")]
-        [NUnit.Framework.CategoryAttribute("Not_Run")]
         public virtual void EvergreenJnr_UserProfile_ChecksListPageSizeAPI()
         {
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("EvergreenJnr_UserProfile_ChecksListPageSizeAPI", new string[] {
@@ -230,8 +230,8 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_ProfileDetails
                         "ProfileDetails",
                         "EvergreenJnr_FilterFeature",
                         "UserProfile",
-                        "API",
-                        "Not_Run"});
+                        "DAS13026",
+                        "API"});
             this.ScenarioSetup(scenarioInfo);
             this.FeatureBackground();
             testRunner.When("User clicks Profile in Account Dropdown", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
