@@ -179,7 +179,7 @@ Scenario: EvergreenJnr_MailboxesList_CheckTheColumnCategoriesUpdatesAfterAddingC
 	| ColumnName                 |
 	| EmailMigra: Scheduled date |
 
-@Evergreen @AllLists @EvergreenJnr_GridActions @ColumnOrder @DAS11463 @Not_Run
+@Evergreen @AllLists @EvergreenJnr_GridActions @ColumnOrder @DAS11463
 Scenario: EvergreenJnr_AllLists_CheckThatColumnsIsNotRemovedAfterDraggingThemOutsideTheAgGrid
 	When User clicks "Devices" on the left-hand menu
 	Then "Devices" list should be displayed to the user
