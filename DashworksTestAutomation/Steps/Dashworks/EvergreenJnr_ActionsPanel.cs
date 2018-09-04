@@ -77,6 +77,13 @@ namespace DashworksTestAutomation.Steps.Dashworks
             action.GetOptionOnActionsPanelByName(typeName).Click();
         }
 
+        [Then(@"Bulk Update Type dropdown is displayed on Action panel")]
+        public void ThenBulkUpdateTypeDropdownIsDisplayedOnActionPanel()
+        {
+            var action = _driver.NowAt<BaseDashboardPage>();
+            Assert.IsTrue(action.RequestTypeDropdown.Displayed(), "Bulk Update Type dropdown is not displayed on Action panel");
+        }
+
         [When(@"User selects ""(.*)"" Project on Action panel")]
         public void WhenUserSelectsProjectOnActionPanel(string projectName)
         {
@@ -136,6 +143,14 @@ namespace DashworksTestAutomation.Steps.Dashworks
             action.TaskField.Clear();
             action.TaskField.SendKeys(taskNAme);
             action.GetOptionOnActionsPanelByName(taskNAme).Click();
+        }
+
+        [When(@"User selects ""(.*)"" Update Date on Action panel")]
+        public void WhenUserSelectsUpdateDateOnActionPanel(string updateDate)
+        {
+            var action = _driver.NowAt<BaseDashboardPage>();
+            action.UpdateDate.Click();
+            action.GetOptionOnActionsPanelByName(updateDate).Click();
         }
 
         [When(@"User selects ""(.*)"" Value on Action panel")]

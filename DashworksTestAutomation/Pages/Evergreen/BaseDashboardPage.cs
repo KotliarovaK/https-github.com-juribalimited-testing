@@ -70,8 +70,8 @@ namespace DashworksTestAutomation.Pages.Evergreen
         [FindsBy(How = How.XPath, Using = ".//span[text()='Update Value']")]
         public IWebElement UpdateValueDropdown { get; set; }
 
-        [FindsBy(How = How.XPath, Using = ".//mat-select[contains(@class, 'mat-select ng-tns-c19-31')]")]
-        public IWebElement UpdateDateDropdown { get; set; }
+        [FindsBy(How = How.XPath, Using = "//mat-select[contains(@class, 'mat-select')]//span[text()='Update Date']")]
+        public IWebElement UpdateDate { get; set; }
 
         [FindsBy(How = How.XPath, Using = ".//mat-select[contains(@class, 'mat-select ng-tns-c19-31')]")]
         public IWebElement UpdateOwnerDropdown { get; set; }

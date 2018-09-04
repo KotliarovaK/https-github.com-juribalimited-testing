@@ -29,7 +29,7 @@ Scenario: EvergreenJnr_UsersList_CheckThatAfterClosingActionsPanelTheActionsButt
 	When User clicks the Actions button
 	Then Actions button is not active
 
-@Evergreen @Users @EvergreenJnr_ActionsPanel @DAS12932
+@Evergreen @Users @EvergreenJnr_ActionsPanel @DAS12932 @DAS13262
 Scenario: EvergreenJnr_UsersList_CheckThatUserWithoutRelevantRolesCannotSeeBulkUpdateOptionInActionsPanel
 	When User clicks "Projects" on the left-hand menu
 	Then "Projects Home" page is displayed to the user
@@ -77,7 +77,7 @@ Scenario: EvergreenJnr_UsersList_CheckThatUserWithoutRelevantRolesCannotSeeBulkU
 	And User select "Manage Users" option in Management Console
 	And User removes "000WithoutRoles" User
 
-@Evergreen @Devices @EvergreenJnr_ActionsPanel @BulkUpdate @DAS12932
+@Evergreen @Devices @EvergreenJnr_ActionsPanel @BulkUpdate @DAS12932 @DAS13261
 Scenario: EvergreenJnr_DevicesList_CheckThatUserWithoutJustTheProjectAdministratorRoleCanStillBulkUpdateObjects
 	When User clicks "Projects" on the left-hand menu
 	Then "Projects Home" page is displayed to the user
@@ -130,7 +130,7 @@ Scenario: EvergreenJnr_DevicesList_CheckThatUserWithoutJustTheProjectAdministrat
 	And User select "Manage Users" option in Management Console
 	And User removes "000WithPBU" User
 
-@Evergreen @Applications @EvergreenJnr_ActionsPanel @BulkUpdate @DAS12932
+@Evergreen @Applications @EvergreenJnr_ActionsPanel @BulkUpdate @DAS12932 @DAS13261
 Scenario: EvergreenJnr_ApplicationsList_CheckThatUserWithoutJustTheProjectBulkUpdaterRoleCanStillBulkUpdateObjects
 	When User clicks "Projects" on the left-hand menu
 	Then "Projects Home" page is displayed to the user
@@ -183,7 +183,7 @@ Scenario: EvergreenJnr_ApplicationsList_CheckThatUserWithoutJustTheProjectBulkUp
 	And User select "Manage Users" option in Management Console
 	And User removes "000WithPA" User
 
-@Evergreen @AllLists @EvergreenJnr_ActionsPanel @BulkUpdate @DAS12946 @Delete_Newly_Created_List
+@Evergreen @AllLists @EvergreenJnr_ActionsPanel @BulkUpdate @DAS12946 @DAS12864 @DAS13258 @DAS13259 @DAS13260 @DAS13263 @Delete_Newly_Created_List
 Scenario Outline: EvergreenJnr_AllLists_ChecksThatRemoveFromStaticListOptionIsNotShownInTheActionsPanelWhenAStaticListDoesNotExist
 	When User clicks "<PageName>" on the left-hand menu
 	Then "<PageName>" list should be displayed to the user
@@ -201,12 +201,15 @@ Scenario Outline: EvergreenJnr_AllLists_ChecksThatRemoveFromStaticListOptionIsNo
 	| Create static list |
 	| Bulk update        |
 	When User selects "Bulk update" in the Actions dropdown
-	And User selects "Update task value" Bulk Update Type on Action panel
-	And User selects "<ProjectName>" Project on Action panel
+	Then Bulk Update Type dropdown is displayed on Action panel
+	When User selects "Update task value" Bulk Update Type on Action panel
+	Then "UPDATE" Action button is disabled
+	And "CANCEL" Action button is active
+	When User selects "<ProjectName>" Project on Action panel
 	And User selects "<StageName>" Stage on Action panel
 	And User selects "<TaskName>" Task on Action panel
 	And User selects "<Value>" Value on Action panel
-	And User clicks the "UPDATE" Action button
+	When User clicks the "UPDATE" Action button
 	Then Warning message with "Are you sure you want to proceed, this operation cannot be undone." text is displayed on Action panel
 	And User clicks "UPDATE" button on message box
 	And Success message with "0 of 1 objects were valid for the update." text is displayed on Action panel
@@ -219,7 +222,7 @@ Examples:
 	| Applications | Application   | 7zip                             | Computer Scheduled Test (Jo) | Two            | Radio Non Rag App       | Not Applicable           |
 	| Mailboxes    | Email Address | 00BDBAEA57334C7C8F4@bclabs.local | Email Migration              | Mobile Devices | Mobile Device Status    | Identified & In Progress |
 
-@Evergreen @AllLists @EvergreenJnr_ActionsPanel @DAS12946 @Delete_Newly_Created_List
+@Evergreen @AllLists @EvergreenJnr_ActionsPanel @BulkUpdate @DAS12946 @DAS12864 @DAS13258 @Delete_Newly_Created_List
 Scenario Outline: EvergreenJnr_AllLists_ChecksThatAddToStaticListOptionIsNotShownInTheActionsPanelWhenOnlOneStaticListExists 
 	When User clicks "<PageName>" on the left-hand menu
 	Then "<PageName>" list should be displayed to the user
@@ -786,7 +789,7 @@ Scenario: EvergreenJnr_MailboxesList_CheckThatProjectFieldIsDisplayedCorrectlyAf
 	And User clicks on Action drop-down
 	Then "Email Migration" Project is displayed on Action panel
 
-@Evergreen @AllLists @EvergreenJnr_ActionsPanel @BulkUpdate @DAS13355
+@Evergreen @AllLists @EvergreenJnr_ActionsPanel @BulkUpdate @DAS13355 @DAS13260
 Scenario Outline: EvergreenJnr_AllLists_ChecksThatTextValueHaveOptionToRemoveExistingTextValue
 	When User clicks "<PageName>" on the left-hand menu
 	Then "<PageName>" list should be displayed to the user
@@ -810,3 +813,55 @@ Examples:
 	| Devices      | Hostname    | 01BQIYGGUW5PRP6                  | Text Computer                   |
 	| Users        | Username    | 00DB4000EDD84951993              | Text User- Email Address        |
 	| Applications | Application | 32VerSee v.231 en (C:\32VerSee\) | Text Application- Future Groups |
+
+@Evergreen @AllLists @EvergreenJnr_ActionsPanel @BulkUpdate @DAS13264
+Scenario Outline: EvergreenJnr_AllLists_CheckThatUpdateAndCancelButtonsAreEnabledWhenUserLoggedWithProjectBulkUpdaterRole
+	When User clicks "Projects" on the left-hand menu
+	Then "Projects Home" page is displayed to the user
+	When User navigate to Manage link
+	And User select "Manage Users" option in Management Console
+	And User create new User
+	| Username   | FullName | Password | ConfirmPassword | Roles                |
+	| <UserName> | DAS13264 | 1234qwer | 1234qwer        | Project Bulk Updater |
+	Then Success message is displayed
+	When User cliks Logout link
+	Then User is logged out
+	When User clicks on the Login link
+	Then Login Page is displayed to the user
+	When User login with following credentials:
+	| Username   | Password |
+	| <UserName> | 1234qwer |
+	Then Dashworks homepage is displayed to the user in a logged in state
+	When User clicks the Switch to Evergreen link
+	Then Evergreen Dashboards page should be displayed to the user
+	When User clicks "<PageName>" on the left-hand menu
+	Then "<PageName>" list should be displayed to the user
+	When User clicks the Actions button
+	Then Actions panel is displayed to the user
+	When User select "<ColumnName>" rows in the grid
+	| SelectedRowsName |
+	| <RowName>        |
+	And User selects "Bulk update" in the Actions dropdown
+	And User selects "Update task value" Bulk Update Type on Action panel
+	And User selects "<ProjectName>" Project on Action panel
+	And User selects "<StageName>" Stage on Action panel
+	And User selects "<TaskName>" Task on Action panel
+	When User selects "<UpdateDate>" Update Date on Action panel
+	Then "UPDATE" Action button is active
+	And "CANCEL" Action button is active
+	When User clicks the Logout button
+	Then User is logged out
+	When User clicks on the Login link
+	Then Login Page is displayed to the user
+	When User provides the Login and Password and clicks on the login button
+	Then Dashworks homepage is displayed to the user in a logged in state
+	When User navigate to Manage link
+	And User select "Manage Users" option in Management Console
+	And User removes "<UserName>" User
+
+Examples: 
+	| UserName          | PageName     | ColumnName    | RowName                                  | ProjectName                          | StageName             | TaskName                            | UpdateDate |
+	| Devices13264      | Devices      | Hostname      | 00CWZRC4UK6W20                           | Babel (English, German and French)   | Initiation            | Scheduled Date                      | Remove     |
+	| Users13264        | Users        | Username      | 0088FC8A50DD4344B92                      | Project K-Computer Scheduled Project | email                 | Email to be sent - All Placeholders | Remove     |
+	| Applications13264 | Applications | Application   | 0047 - Microsoft Access 97 SR-2 Francais | Barry's User Project                 | Audit & Configuration | Package Delivery Date               | Remove     |
+	| Mailboxes13264    | Mailboxes    | Email Address | 00C8BC63E7424A6E862@bclabs.local         | Email Migration                      | Pre-Migration         | Out Of Office Start Date            | Remove     |
