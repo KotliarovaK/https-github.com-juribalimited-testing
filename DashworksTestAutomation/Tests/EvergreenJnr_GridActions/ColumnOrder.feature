@@ -48,8 +48,8 @@ Scenario: EvergreenJnr_DevicesList_CheckThatColumnsOrderSavedAfterAddingAFilter
 	When User move 'Boot Up Date' column to 'Hostname' column
 	Then Column is displayed in following order:
 	| ColumnName         |
-	| Hostname           |
 	| Boot Up Date       |
+	| Hostname           |
 	| Device Type        |
 	| Operating System   |
 	| Owner Display Name |
@@ -61,8 +61,8 @@ Scenario: EvergreenJnr_DevicesList_CheckThatColumnsOrderSavedAfterAddingAFilter
 	| None               |
 	Then Column is displayed in following order:
 	| ColumnName           |
-	| Hostname             |
 	| Boot Up Date         |
+	| Hostname             |
 	| Device Type          |
 	| Operating System     |
 	| Owner Display Name   |
