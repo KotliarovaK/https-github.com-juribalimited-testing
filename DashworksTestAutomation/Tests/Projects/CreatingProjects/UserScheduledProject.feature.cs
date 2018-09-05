@@ -68,10 +68,6 @@ namespace DashworksTestAutomation.Tests.Projects.CreatingProjects
         
         [NUnit.Framework.TestAttribute()]
         [NUnit.Framework.Retry(2)]
-        
-        
-        
-        
         [NUnit.Framework.DescriptionAttribute("Projects_CreateUserScheduledProject")]
         [NUnit.Framework.CategoryAttribute("Senior")]
         [NUnit.Framework.CategoryAttribute("Projects_Administration")]
@@ -766,11 +762,7 @@ namespace DashworksTestAutomation.Tests.Projects.CreatingProjects
                         "Location",
                         "LocationDoNotPush",
                         "LocationPushToOwned",
-                        "LocationPushToAll",
-                        "DepartmentFeed",
-                        "HrLocationFeed",
-                        "ManualLocationFeed",
-                        "HistoricLocationFeed"});
+                        "LocationPushToAll"});
             table43.AddRow(new string[] {
                         "true",
                         "false",
@@ -780,13 +772,9 @@ namespace DashworksTestAutomation.Tests.Projects.CreatingProjects
                         "false",
                         "false",
                         "false",
-                        "true",
-                        "true",
                         "false",
                         "false",
-                        "true",
                         "false",
-                        "true",
                         "false"});
             testRunner.And("User updates the Department and Location page on Self Service tab", ((string)(null)), table43, "And ");
             testRunner.Then("Success message is displayed with \"Self Service Screen successfully updated\" text" +

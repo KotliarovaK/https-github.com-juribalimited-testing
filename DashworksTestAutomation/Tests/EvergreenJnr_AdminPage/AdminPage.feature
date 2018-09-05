@@ -3251,7 +3251,7 @@ Scenario: EvergreenJnr_AdminPage_CheckDefaultSortOrderOfDevicesAndUsersAndMailbo
 	When User clicks "Mailboxes" tab
 	Then data in table is sorted by "Email Address (Primary)" column in ascending order by default on the Admin page
 
-@Evergreen @Senior @Admin @EvergreenJnr_AdminPage @AdminPage @DAS12999 @DAS12680 @Delete_Newly_Created_Project @Projects
+@Evergreen @Admin @EvergreenJnr_AdminPage @AdminPage @DAS12999 @DAS12680 @Delete_Newly_Created_Project @Projects
 Scenario: EvergreenJnr_AdminPage_AddingRequestTypesAndCategories
 	When User clicks Admin on the left-hand menu
 	Then Admin page should be displayed to the user
@@ -3345,7 +3345,7 @@ Scenario: EvergreenJnr_AdminPage_CheckThatOnlyFilteredListObjectsAreUsedAsAScope
 	Then "Devices to add (0 of 222 selected)" is displayed to the user in the Project Scope Changes section
 	Then There are no errors in the browser console
 
-@Evergreen @Senior @Admin @EvergreenJnr_AdminPage @AdminPage @UpdatingName @DAS13096 @Delete_Newly_Created_Project @Projects
+@Evergreen @Admin @EvergreenJnr_AdminPage @AdminPage @UpdatingName @DAS13096 @Delete_Newly_Created_Project @Projects
 Scenario: EvergreenJnr_AdminPage_ChecksThatProjectNameEditedInSeniorIsUpdatedInAdminTab
 	When User clicks Admin on the left-hand menu
 	Then Admin page should be displayed to the user
@@ -3561,7 +3561,7 @@ Scenario: EvergreenJnr_AdminPage_CheckThatRelatedBucketsAreUpdatedAfterCreatingO
 	When User clicks String Filter button for "Project" column on the Admin page
 	Then "1DevicesProject" is not displayed in the filter dropdown
 
-@Evergreen @Senior @PMObject @Admin @EvergreenJnr_AdminPage @AdminPage @DAS12965 @Delete_Newly_Created_Project
+@Evergreen @PMObject @Admin @EvergreenJnr_AdminPage @AdminPage @DAS12965 @Delete_Newly_Created_Project
 Scenario: EvergreenJnr_AdminPage_ChecksThatColourOfOnboardedAppIsDisplayedCorrectly
 	When User clicks Admin on the left-hand menu
 	Then Admin page should be displayed to the user
