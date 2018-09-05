@@ -928,7 +928,7 @@ Examples:
 	| Mailboxes | Owner Department Name      | Add Owner Department Name column      |
 	| Mailboxes | Owner Department Full Path | Add Owner Department Full Path column |
 
-@Evergreen @Mailboxes @Evergreen_FiltersFeature @FiltersDisplay @DAS11831 @Not_Run
+@Evergreen @Mailboxes @Evergreen_FiltersFeature @FiltersDisplay @DAS11831
 Scenario: EvergreenJnr_MailboxesList_CheckThatResultCounterDoesNotDisappearAfterDeletingTheCharactersInEmailMigraTeamFilter
 	When User clicks "Mailboxes" on the left-hand menu
 	Then "Mailboxes" list should be displayed to the user
@@ -1207,6 +1207,24 @@ Scenario: EvergreenJnr_UsersList_CheckThatApplicationManufacturerFilterChangedTo
 	Then "Application Manufacturer" filter is not presented in the filters list
 	And "Application Vendor" filter is presented in the filters list
 
+@Evergreen @AllLists @Evergreen_FiltersFeature @FiltersDisplay @DAS13182
+Scenario Outline: EvergreenJnr_AllLists_CheckThatAddNewOptionAvailableAfterClickOnAllOptionInListsPanelWhileFiltersSectionExpanded
+	When User clicks "<ListName>" on the left-hand menu
+	And User clicks the Filters button
+	Then Filters panel is displayed to the user
+	When User clicks Add New button on the Filter panel
+	And User clicks "<LinkName>" link in Lists panel
+	And User clicks the Filters button
+	Then Filters panel is displayed to the user
+	And Add New button is displayed on the Filter panel
+
+Examples: 
+	| ListName     | LinkName         |
+	| Devices      | All Devices      |
+	| Users        | All Users        |
+	| Applications | All Applications |
+	| Mailboxes    | All Mailboxes    |
+
 @Evergreen @Applications @Evergreen_FiltersFeature @FiltersDisplay @DAS12793 @Delete_Newly_Created_List
 Scenario: EvergreenJnr_ApplicationsList_CheckThatTheValueInTheFiltersPanelIsDisplayedCorrectly
 	When User clicks "Applications" on the left-hand menu
@@ -1223,7 +1241,7 @@ Scenario: EvergreenJnr_ApplicationsList_CheckThatTheValueInTheFiltersPanelIsDisp
 	Then Filters panel is displayed to the user
 	When User click Edit button for "User" filter
 	Then "FR\AAD1011948" value is displayed in the filter info
-	Then There are no errors in the browser console
+	And There are no errors in the browser console
 	When User clicks "Devices" on the left-hand menu
 	Then "Devices" list should be displayed to the user
 	When User clicks "Users" on the left-hand menu
@@ -1245,7 +1263,7 @@ Scenario: EvergreenJnr_ApplicationsList_CheckThatTheUserDescriptionFieldIsNotDis
 	When User clicks the Filters button
 	Then Filters panel is displayed to the user
 	When User click Edit button for "User " filter
-	When User select "Empty" Operator value
+	And User select "Empty" Operator value
 	Then User Description field is not displayed
 	When User select "Not empty" Operator value
 	Then User Description field is not displayed

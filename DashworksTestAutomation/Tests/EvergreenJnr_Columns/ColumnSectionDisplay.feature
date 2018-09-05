@@ -179,7 +179,7 @@ Scenario: EvergreenJnr_MailboxesList_CheckTheColumnCategoriesUpdatesAfterAddingC
 	| ColumnName                 |
 	| EmailMigra: Scheduled date |
 
-@Evergreen @AllLists @EvergreenJnr_GridActions @ColumnOrder @DAS11463 @Not_Run
+@Evergreen @AllLists @EvergreenJnr_GridActions @ColumnOrder @DAS11463
 Scenario: EvergreenJnr_AllLists_CheckThatColumnsIsNotRemovedAfterDraggingThemOutsideTheAgGrid
 	When User clicks "Devices" on the left-hand menu
 	Then "Devices" list should be displayed to the user
@@ -740,3 +740,31 @@ Scenario: EvergreenJnr_AllLists_LocationAndUserFiltersEqualsOnUsersAndApplicatio
 	When User clicks Add New button on the Filter panel
 	Then "User (24)" category is displayed on Filters panel
 	Then "User Location (8)" category is displayed on Filters panel
+
+@Evergreen @Mailboxes @EvergreenJnr_Columns @ColumnSectionDisplay @DAS12910
+Scenario: EvergreenJnr_MailboxesList_ChecksThatSubcategoriesOnColumnsPanelIsDisplayedCorrectlyAfterAddingObjectIdFilter
+	When User clicks "Mailboxes" on the left-hand menu
+	Then "Mailboxes" list should be displayed to the user
+	When User clicks the Filters button
+	Then Filters panel is displayed to the user
+	When User add "EmailMigra: Object ID" filter where type is "Equals" with added column and following value:
+	| Values |
+	| 1      |
+	When User clicks the Columns button
+	Then Columns panel is displayed to the user
+	Then the following subcategories are displayed for Selected Columns category:
+	| Subcategories         |
+	| Email Address         |
+	| Mailbox Platform      |
+	| Mail Server           |
+	| Mailbox Type          |
+	| Owner Display Name    |
+	| EmailMigra: Object ID |
+	Then There are no errors in the browser console
+	When User clicks the Filters button
+	Then Filters panel is displayed to the user
+	When User click Edit button for "EmailMigra: Object ID" filter
+	When User select "Not empty" Operator value
+	When User clicks Save filter button
+	When User create custom list with "Object ID != EMPTY" name
+	Then "Object ID != EMPTY" list is displayed to user

@@ -67,6 +67,15 @@ namespace DashworksTestAutomation.Pages.Evergreen
         [FindsBy(How = How.XPath, Using = ".//mat-select[@aria-label='Value']")]
         public IWebElement ValueDropdown { get; set; }
 
+        [FindsBy(How = How.XPath, Using = ".//span[text()='Update Value']")]
+        public IWebElement UpdateValueDropdown { get; set; }
+
+        [FindsBy(How = How.XPath, Using = ".//mat-select[contains(@class, 'mat-select ng-tns-c19-31')]")]
+        public IWebElement UpdateDateDropdown { get; set; }
+
+        [FindsBy(How = How.XPath, Using = ".//mat-select[contains(@class, 'mat-select ng-tns-c19-31')]")]
+        public IWebElement UpdateOwnerDropdown { get; set; }
+
         [FindsBy(How = How.XPath, Using = "//input[@placeholder='Request Type']")]
         public IWebElement RequestTypeField { get; set; }
 
@@ -103,6 +112,9 @@ namespace DashworksTestAutomation.Pages.Evergreen
 
         [FindsBy(How = How.XPath, Using = ".//input[@aria-label='Search Table']")]
         public IWebElement TableSearchTextbox { get; set; }
+
+        [FindsBy(How = How.XPath, Using = "//div[contains(@class, 'tools-item')]//button[@aria-label='close']")]
+        public IWebElement CloseToolsPanelButton { get; set; }
 
         [FindsBy(How = How.XPath, Using = ".//button[@aria-label='reload']")]
         public IWebElement RefreshTableButton { get; set; }

@@ -193,6 +193,13 @@ namespace DashworksTestAutomation.Steps.Dashworks
             Assert.AreEqual(listName, listElement.CheckAllListName(listName).Text, "Incorrect list name is displayed");
         }
 
+        [When(@"User clicks ""(.*)"" link in Lists panel")]
+        public void WhenUserClicksLinkInListsPanel(string listName)
+        {
+            var listElement = _driver.NowAt<CustomListElement>();
+            listElement.CheckAllListName(listName).Click();
+        }   
+
         [When(@"User clicks Manage in the list panel")]
         public void WhenUserClicksManageInTheListPanel()
         {

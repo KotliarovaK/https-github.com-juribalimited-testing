@@ -47,6 +47,20 @@ namespace DashworksTestAutomation.Steps.Dashworks
             Logger.Write("Add New button was clicked");
         }
 
+        [Then(@"Add And button is displayed on the Filter panel")]
+        public void ThenAddAndButtonIsDisplayedOnTheFilterPanel()
+        {
+            var button = _driver.NowAt<FiltersElement>();
+            Assert.IsTrue(button.AddAndFilterButton.Displayed(), "Add And button is not displayed");
+        }
+
+        [Then(@"Add New button is displayed on the Filter panel")]
+        public void ThenAddNewButtonIsDisplayedOnTheFilterPanel()
+        {
+            var button = _driver.NowAt<FiltersElement>();
+            Assert.IsTrue(button.AddNewFilterButton.Displayed(), "Add New button is not displayed");
+        }
+
         [When(@"user select ""(.*)"" filter")]
         public void WhenUserSelectFilter(string filterName)
         {
@@ -457,6 +471,15 @@ namespace DashworksTestAutomation.Steps.Dashworks
             var filtersNames = _driver.NowAt<FiltersElement>();
             filtersNames.AddAndFilter(filterName);
             var filter = new LookupFilterTable(_driver, operatorValue, true, table);
+            filter.Do();
+        }
+
+        [When(@"User selects And ""(.*)"" filter where type is ""(.*)"" with added column and Lookup option:")]
+        public void WhenUserSelectsAndFilterWhereTypeIsWithAddedColumnAndLookupOption(string filterName, string operatorValue, Table table)
+        {
+            var filtersNames = _driver.NowAt<FiltersElement>();
+            filtersNames.AddAndFilter(filterName);
+            var filter = new LookupFilterTableWithoutSave(_driver, operatorValue, true, table);
             filter.Do();
         }
 
