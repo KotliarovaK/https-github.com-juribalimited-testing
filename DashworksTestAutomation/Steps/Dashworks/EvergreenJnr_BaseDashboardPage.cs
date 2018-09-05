@@ -61,6 +61,7 @@ namespace DashworksTestAutomation.Steps.Dashworks
         {
             var page = _driver.NowAt<BaseDashboardPage>();
             _driver.DragAndDrop(page.GetColumnHeaderByName(columnName), page.RefreshTableButton);
+            page.GetColumnHeaderByName(columnName).Click();
         }
 
         [When(@"User click on '(.*)' column header")]

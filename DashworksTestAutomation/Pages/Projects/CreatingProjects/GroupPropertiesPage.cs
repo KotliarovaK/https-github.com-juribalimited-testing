@@ -1,5 +1,6 @@
 ﻿using System.Collections.Generic;
 using DashworksTestAutomation.Base;
+using DashworksTestAutomation.Extensions;
 using OpenQA.Selenium;
 using OpenQA.Selenium.Support.PageObjects;
 
@@ -23,6 +24,12 @@ namespace DashworksTestAutomation.Pages.Projects
                 SelectorFor(this, p => p.GroupName),
                 SelectorFor(this, p => p.OwnedByTeam)
             };
+        }
+
+        public void SelectTeamForGroup(string teamName)
+        {
+            string listNameSelector = $"//select//option[text()='{teamName}']";
+            Driver.FindElement(By.XPath(listNameSelector)).Click();
         }
     }
 }
