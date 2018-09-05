@@ -3640,7 +3640,7 @@ Scenario: EvergreenJnr_AdminPage_CheckThatOffboardedObjectsAreListedAfterSelectO
 	When User selects "Onboard Computer Object" checkbox from String Filter on the Admin page
 	Then Counter shows "2" found rows
 
-@Evergreen @Senior @Admin @EvergreenJnr_AdminPage @AdminPage @DAS12787 @Delete_Newly_Created_Project
+@Evergreen @Admin @EvergreenJnr_AdminPage @AdminPage @DAS12787 @Delete_Newly_Created_Project
 Scenario: EvergreenJnr_AdminPage_CheckThatSelectedBucketsIsDisplayedForOnboardedObjectsInQueueAndHistory
 	When User clicks Admin on the left-hand menu
 	Then Admin page should be displayed to the user
@@ -3660,7 +3660,30 @@ Scenario: EvergreenJnr_AdminPage_CheckThatSelectedBucketsIsDisplayedForOnboarded
 	When User navigate to "Groups" tab
 	Then "Manage Groups" page is displayed to the user
 	When User clicks "Create Group" button
-	And User create Group owned for "My Team" Team
-	| GroupName    |
-	| ProjectGroup |
-	Then created Group is displayed in the table
+	And User create Group owned existing "Admin IT" Team
+	| GroupName          |
+	| UsersProject3Group |
+	When User clicks "Create Group" button
+	And User navigate to Evergreen link
+	And User clicks Admin on the left-hand menu
+	Then Admin page should be displayed to the user
+	And "Projects" page should be displayed to the user
+	When User enters "UsersProject3" text in the Search field for "Project" column
+	And User clicks content from "Project" column
+	Then Project "UsersProject3" is displayed to user
+	When user selects "UsersProject3Group" in the Bucket dropdown
+	And User adds following Objects to the Project
+	| Objects                               |
+	| 003F5D8E1A844B1FAA5 (Hunter, Melanie) |
+	And User clicks the "UPDATE PROJECT" Action button
+	Then Success message is displayed and contains "1 object queued for onboarding, 0 objects offboarded" text
+	When User selects "Queue" tab on the Project details page
+	Then following Items are onboarded
+	| Items                                 |
+	| 003F5D8E1A844B1FAA5 (Hunter, Melanie) |
+	Then "UsersProject3Group" content is displayed in "Bucket" column
+	When User selects "History" tab on the Project details page
+	Then following Items are onboarded
+	| Items                                 |
+	| 003F5D8E1A844B1FAA5 (Hunter, Melanie) |
+	And "UsersProject3Group" content is displayed in "Bucket" column

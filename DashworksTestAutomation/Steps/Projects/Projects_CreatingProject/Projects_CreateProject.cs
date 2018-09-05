@@ -631,6 +631,19 @@ namespace DashworksTestAutomation.Steps.Projects
             tempGroupPropertiesDto.OwnedByTeam = _projectDto.TeamProperties.Last().TeamName;
         }
 
+        [When(@"User create Group owned existing ""(.*)"" Team")]
+        public void WhenUserCreateGroupOwnedExistingTeam(string teamName, Table table)
+        {
+            var page = _driver.NowAt<GroupPropertiesPage>();
+            foreach (var row in table.Rows)
+            {
+                page.GroupName.Click();
+                page.GroupName.SendKeys((row["GroupName"]));
+                page.OwnedByTeam.Click();
+                page.SelectTeamForGroup(teamName);
+            }
+        }
+
         [When(@"User create Mail Template")]
         public void WhenUserCreateMailTemplate(Table table)
         {
