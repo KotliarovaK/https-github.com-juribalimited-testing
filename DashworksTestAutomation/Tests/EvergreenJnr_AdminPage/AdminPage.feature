@@ -3672,9 +3672,11 @@ Scenario: EvergreenJnr_AdminPage_CheckThatSelectedBucketsIsDisplayedForOnboarded
 	And User clicks content from "Project" column
 	Then Project "UsersProject3" is displayed to user
 	When user selects "UsersProject3Group" in the Bucket dropdown
-	And User adds following Objects to the Project
+	And User expands the object to add 
+	And User selects following Objects
 	| Objects                               |
 	| 003F5D8E1A844B1FAA5 (Hunter, Melanie) |
+	And User clicks the "UPDATE USER CHANGES" Action button
 	And User clicks the "UPDATE PROJECT" Action button
 	Then Success message is displayed and contains "1 object queued for onboarding, 0 objects offboarded" text
 	When User selects "Queue" tab on the Project details page

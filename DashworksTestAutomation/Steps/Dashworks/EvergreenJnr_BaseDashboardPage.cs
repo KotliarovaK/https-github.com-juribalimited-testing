@@ -60,7 +60,7 @@ namespace DashworksTestAutomation.Steps.Dashworks
         public void WhenUserMovesColumnBeyondTheGrid(string columnName)
         {
             var page = _driver.NowAt<BaseDashboardPage>();
-            _driver.DragAndDrop(page.GetColumnHeaderByName(columnName), page.ActionsButton);
+            _driver.DragAndDrop(page.GetColumnHeaderByName(columnName), page.RefreshTableButton);
             page.GetColumnHeaderByName(columnName).Click();
         }
 
