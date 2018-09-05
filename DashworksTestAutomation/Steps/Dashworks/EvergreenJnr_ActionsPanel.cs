@@ -217,6 +217,15 @@ namespace DashworksTestAutomation.Steps.Dashworks
             Assert.IsTrue(action.WarningMessageActionPanel(textMessage), "Warning Message is not displayed");
         }
 
+        [Then(@"the amber message is displayed correctly")]
+        public void ThenTheAmberMessageIsDisplayedCorrectly()
+        {
+            var action = _driver.NowAt<BaseDashboardPage>();
+            Assert.IsTrue(action.AmberMessageOnActionPanel.Displayed(), "Amber message is not displayed");
+            Assert.IsTrue(action.UpdateButtonOnAmberMessage.Displayed(), "Update Button is not displayed");
+            Assert.IsTrue(action.CancelButtonOnAmberMessage.Displayed(), "Cancel Button is not displayed");
+        }
+
         [Then(@"Success message with ""(.*)"" text is displayed on Action panel")]
         public void ThenSuccessMessageWithTextIsDisplayedOnActionPanel(string textMessage)
         {

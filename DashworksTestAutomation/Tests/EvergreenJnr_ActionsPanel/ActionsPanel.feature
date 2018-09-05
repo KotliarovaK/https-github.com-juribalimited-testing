@@ -814,7 +814,7 @@ Examples:
 	| Users        | Username    | 00DB4000EDD84951993              | Text User- Email Address        |
 	| Applications | Application | 32VerSee v.231 en (C:\32VerSee\) | Text Application- Future Groups |
 
-@Evergreen @AllLists @EvergreenJnr_ActionsPanel @BulkUpdate @DAS13264
+@Evergreen @AllLists @EvergreenJnr_ActionsPanel @BulkUpdate @DAS13264 @DAS13265
 Scenario Outline: EvergreenJnr_AllLists_CheckThatUpdateAndCancelButtonsAreEnabledWhenUserLoggedWithProjectBulkUpdaterRole
 	When User clicks "Projects" on the left-hand menu
 	Then "Projects Home" page is displayed to the user
@@ -849,6 +849,8 @@ Scenario Outline: EvergreenJnr_AllLists_CheckThatUpdateAndCancelButtonsAreEnable
 	When User selects "<UpdateDate>" Update Date on Action panel
 	Then "UPDATE" Action button is active
 	And "CANCEL" Action button is active
+	When User clicks the "UPDATE" Action button
+	Then the amber message is displayed correctly
 	When User clicks the Logout button
 	Then User is logged out
 	When User clicks on the Login link

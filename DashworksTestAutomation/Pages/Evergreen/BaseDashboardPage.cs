@@ -128,6 +128,15 @@ namespace DashworksTestAutomation.Pages.Evergreen
         [FindsBy(How = How.XPath, Using = ".//div[contains(@class,'submenu-selected-list')]")]
         public IWebElement List { get; set; }
 
+        [FindsBy(How = How.XPath, Using = "//div[@class='inline-tip ng-star-inserted']")]
+        public IWebElement AmberMessageOnActionPanel { get; set; }
+
+        [FindsBy(How = How.XPath, Using = "//button[@class='btn mat-button _mat-animation-noopable']//span[text()='UPDATE']")]
+        public  IWebElement UpdateButtonOnAmberMessage { get; set; }
+
+        [FindsBy(How = How.XPath, Using = "//button[@class='btn btn-transparent mat-button _mat-animation-noopable']//span[text()='CANCEL']")]
+        public IWebElement CancelButtonOnAmberMessage { get; set; }
+
         #region All Lists dropdown
 
         [FindsBy(How = How.XPath, Using = ".//div[contains(@class, 'DropdownActionsLists')]")]
