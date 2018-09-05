@@ -3639,3 +3639,28 @@ Scenario: EvergreenJnr_AdminPage_CheckThatOffboardedObjectsAreListedAfterSelectO
 	When User clicks String Filter button for "Action" column on the Admin page
 	When User selects "Onboard Computer Object" checkbox from String Filter on the Admin page
 	Then Counter shows "2" found rows
+
+@Evergreen @Senior @Admin @EvergreenJnr_AdminPage @AdminPage @DAS12787 @Delete_Newly_Created_Project
+Scenario: EvergreenJnr_AdminPage_CheckThatSelectedBucketsIsDisplayedForOnboardedObjectsInQueueAndHistory
+	When User clicks Admin on the left-hand menu
+	Then Admin page should be displayed to the user
+	When User clicks "Projects" link on the Admin page
+	Then "Projects" page should be displayed to the user
+	When User clicks the "CREATE PROJECT" Action button
+	Then "Create Project" page should be displayed to the user
+	When User enters "UsersProject3" in the Project Name field
+	And User selects "All Users" in the Scope Project dropdown
+	And User clicks Create button on the Create Project page
+	Then Success message is displayed and contains "Your project has been created" text
+	When User clicks "Projects" on the left-hand menu
+	Then "Projects Home" page is displayed to the user
+	When User navigate to "UsersProject3" Project
+	Then Project with "UsersProject3" name is displayed correctly
+	And "Manage Project Details" page is displayed to the user
+	When User navigate to "Groups" tab
+	Then "Manage Groups" page is displayed to the user
+	When User clicks "Create Group" button
+	And User create Group owned for "My Team" Team
+	| GroupName    |
+	| ProjectGroup |
+	Then created Group is displayed in the table
