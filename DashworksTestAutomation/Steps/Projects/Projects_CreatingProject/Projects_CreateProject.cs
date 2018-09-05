@@ -509,7 +509,12 @@ namespace DashworksTestAutomation.Steps.Projects
             page.Name.SendKeys(_taskPropertiesValuesDto.Name);
 
             if (page.ReadinessListClick.Displayed())
-                page.SelectReadiness(_taskPropertiesValuesDto.ReadinessIndex); 
+            {
+                //generate random color by index
+                var option = page.SelectReadiness();
+                _taskPropertiesValuesDto.Readiness.Add(option.Key, option.Value);
+            }
+                //page.SelectReadiness(_taskPropertiesValuesDto.ReadinessIndex); 
 
             page.TaskStatus.SelectboxSelect(_taskPropertiesValuesDto.TaskStatus.GetValue());
             page.DefaultValue.SetCheckboxState(_taskPropertiesValuesDto.DefaultValue);
@@ -535,9 +540,14 @@ namespace DashworksTestAutomation.Steps.Projects
                 page.Name.Clear();
                 page.Name.SendKeys(_taskPropertiesValuesDto.Name);
             }
-            int? x = _taskPropertiesValuesDto.ReadinessIndex;
+            //int? x = _taskPropertiesValuesDto.ReadinessIndex;
             if (page.ReadinessListClick.Displayed())
-                page.SelectReadiness(_taskPropertiesValuesDto.ReadinessIndex);
+            {
+                //generate random color by index
+                var option = page.SelectReadiness();
+                _taskPropertiesValuesDto.Readiness.Add(option.Key, option.Value);
+            }
+                //page.SelectReadiness(_taskPropertiesValuesDto.ReadinessIndex);
 
             if (!string.IsNullOrEmpty(_taskPropertiesValuesDto.TaskStatusString))
             {

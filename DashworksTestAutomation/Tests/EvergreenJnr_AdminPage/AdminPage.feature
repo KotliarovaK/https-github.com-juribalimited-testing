@@ -993,12 +993,12 @@ Scenario: EvergreenJnr_AdminPage_CheckThatOnboardingOfObjectsIsProceedForScopedP
 	Then "Projects" page should be displayed to the user
 	When User clicks the "CREATE PROJECT" Action button
 	Then "Create Project" page should be displayed to the user
-	When User enters "TestProject14" in the Project Name field
+	When User enters "DDPPProject14" in the Project Name field
 	And User selects "All Devices" in the Scope Project dropdown
 	When User clicks Create button on the Create Project page
 	Then Success message is displayed and contains "Your project has been created" text
 	When User clicks newly created object link
-	Then Project "TestProject14" is displayed to user
+	Then Project "DDPPProject14" is displayed to user
 	When User selects "Scope Changes" tab on the Project details page
 	When User adds following Objects to the Project
 	| Objects        |
@@ -1036,7 +1036,7 @@ Scenario: EvergreenJnr_AdminPage_CheckThatOnboardingOfObjectsIsProceedForScopedP
 	#When User selects "Device scoped" checkbox from String Filter on the Admin page
 	#Then Counter shows "1" found rows
 	When User clicks Reset Filters button on the Admin page 
-	When User enters "test" text in the Search field for "Short Name" column
+	When User enters "DDPP" text in the Search field for "Short Name" column
 	Then Counter shows "1" found rows
 	When User clicks Reset Filters button on the Admin page 
 	When User have opened Column Settings for "Project" column
@@ -3251,7 +3251,7 @@ Scenario: EvergreenJnr_AdminPage_CheckDefaultSortOrderOfDevicesAndUsersAndMailbo
 	When User clicks "Mailboxes" tab
 	Then data in table is sorted by "Email Address (Primary)" column in ascending order by default on the Admin page
 
-@Evergreen @Senior @Admin @EvergreenJnr_AdminPage @AdminPage @DAS12999 @DAS12680 @Delete_Newly_Created_Project @Projects
+@Evergreen @Admin @EvergreenJnr_AdminPage @AdminPage @DAS12999 @DAS12680 @Delete_Newly_Created_Project @Projects
 Scenario: EvergreenJnr_AdminPage_AddingRequestTypesAndCategories
 	When User clicks Admin on the left-hand menu
 	Then Admin page should be displayed to the user
@@ -3345,7 +3345,7 @@ Scenario: EvergreenJnr_AdminPage_CheckThatOnlyFilteredListObjectsAreUsedAsAScope
 	Then "Devices to add (0 of 222 selected)" is displayed to the user in the Project Scope Changes section
 	Then There are no errors in the browser console
 
-@Evergreen @Senior @Admin @EvergreenJnr_AdminPage @AdminPage @UpdatingName @DAS13096 @Delete_Newly_Created_Project @Projects
+@Evergreen @Admin @EvergreenJnr_AdminPage @AdminPage @UpdatingName @DAS13096 @Delete_Newly_Created_Project @Projects
 Scenario: EvergreenJnr_AdminPage_ChecksThatProjectNameEditedInSeniorIsUpdatedInAdminTab
 	When User clicks Admin on the left-hand menu
 	Then Admin page should be displayed to the user
@@ -3561,7 +3561,7 @@ Scenario: EvergreenJnr_AdminPage_CheckThatRelatedBucketsAreUpdatedAfterCreatingO
 	When User clicks String Filter button for "Project" column on the Admin page
 	Then "1DevicesProject" is not displayed in the filter dropdown
 
-@Evergreen @Senior @PMObject @Admin @EvergreenJnr_AdminPage @AdminPage @DAS12965 @Delete_Newly_Created_Project
+@Evergreen @PMObject @Admin @EvergreenJnr_AdminPage @AdminPage @DAS12965 @Delete_Newly_Created_Project
 Scenario: EvergreenJnr_AdminPage_ChecksThatColourOfOnboardedAppIsDisplayedCorrectly
 	When User clicks Admin on the left-hand menu
 	Then Admin page should be displayed to the user

@@ -106,7 +106,7 @@ namespace DashworksTestAutomation.Pages.Projects
 
         public KeyValuePair<int, string> SelectOnboardedApplications()
         {
-            return SelectOnboardedApplications(TestDataGenerator.RandomNum(5));
+            return SelectOnboardedApplications(TestDataGenerator.RandomNum(4));
         }
 
         public KeyValuePair<int, string> SelectOnboardedApplications(int index)

@@ -188,8 +188,8 @@ Scenario: Projects_CreateMailboxScheduledProject
 	When User navigate to "Values" page
 	And User clicks "Add Value" button
 	When User create new Value
-	| Name          | ReadinessIndex | TaskStatusString | DefaultValue |
-	| TestValueName | 3              | Open             | true         |
+	| Name          | TaskStatusString | DefaultValue |
+	| TestValueName | Open             | true         |
 	And User clicks "Save Value" button
 	When User clicks "« Go Back to Tasks" button
 	Then created Task is displayed in the table

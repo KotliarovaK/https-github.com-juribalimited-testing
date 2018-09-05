@@ -68,10 +68,6 @@ namespace DashworksTestAutomation.Tests.Projects.CreatingProjects
         
         [NUnit.Framework.TestAttribute()]
         [NUnit.Framework.Retry(2)]
-        
-        
-        
-        
         [NUnit.Framework.DescriptionAttribute("Projects_CreateUserScheduledProject")]
         [NUnit.Framework.CategoryAttribute("Senior")]
         [NUnit.Framework.CategoryAttribute("Projects_Administration")]
@@ -427,12 +423,10 @@ namespace DashworksTestAutomation.Tests.Projects.CreatingProjects
             testRunner.And("User clicks \"Add Value\" button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
             TechTalk.SpecFlow.Table table24 = new TechTalk.SpecFlow.Table(new string[] {
                         "Name",
-                        "ReadinessIndex",
                         "TaskStatusString",
                         "DefaultValue"});
             table24.AddRow(new string[] {
                         "TestValueName",
-                        "3",
                         "Open",
                         "false"});
             testRunner.When("User create new Value", ((string)(null)), table24, "When ");
@@ -507,12 +501,10 @@ namespace DashworksTestAutomation.Tests.Projects.CreatingProjects
             testRunner.And("User clicks \"Add Value\" button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
             TechTalk.SpecFlow.Table table28 = new TechTalk.SpecFlow.Table(new string[] {
                         "Name",
-                        "ReadinessIndex",
                         "TaskStatusString",
                         "DefaultValue"});
             table28.AddRow(new string[] {
                         "TestValueName",
-                        "9",
                         "Closed",
                         "false"});
             testRunner.When("User create new Value", ((string)(null)), table28, "When ");
@@ -568,12 +560,10 @@ namespace DashworksTestAutomation.Tests.Projects.CreatingProjects
             testRunner.And("User clicks \"Add Value\" button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
             TechTalk.SpecFlow.Table table31 = new TechTalk.SpecFlow.Table(new string[] {
                         "Name",
-                        "ReadinessIndex",
                         "TaskStatusString",
                         "DefaultValue"});
             table31.AddRow(new string[] {
                         "TestValueName",
-                        "8",
                         "Closed",
                         "false"});
             testRunner.When("User create new Value", ((string)(null)), table31, "When ");
@@ -766,11 +756,7 @@ namespace DashworksTestAutomation.Tests.Projects.CreatingProjects
                         "Location",
                         "LocationDoNotPush",
                         "LocationPushToOwned",
-                        "LocationPushToAll",
-                        "DepartmentFeed",
-                        "HrLocationFeed",
-                        "ManualLocationFeed",
-                        "HistoricLocationFeed"});
+                        "LocationPushToAll"});
             table43.AddRow(new string[] {
                         "true",
                         "false",
@@ -780,13 +766,9 @@ namespace DashworksTestAutomation.Tests.Projects.CreatingProjects
                         "false",
                         "false",
                         "false",
-                        "true",
-                        "true",
                         "false",
                         "false",
-                        "true",
                         "false",
-                        "true",
                         "false"});
             testRunner.And("User updates the Department and Location page on Self Service tab", ((string)(null)), table43, "And ");
             testRunner.Then("Success message is displayed with \"Self Service Screen successfully updated\" text" +
