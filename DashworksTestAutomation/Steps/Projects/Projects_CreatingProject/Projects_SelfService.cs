@@ -191,12 +191,12 @@ namespace DashworksTestAutomation.Steps.Projects
             //page.DepartmentFeed.SetCheckboxState(_departmentAndLocationDto.DepartmentFeed);
 
             //page.PageDescription.SendKeys(_departmentAndLocationDto.PageDescription);
-            if (_projectDto.ProjectType.Equals(ProjectTypeEnum.UserScheduledProject))
-            {
-                page.HrLocationFeed.SetCheckboxState(_departmentAndLocationDto.HrLocationFeed);
-                page.ManualLocationFeed.SetCheckboxState(_departmentAndLocationDto.ManualLocationFeed);
-                page.HistoricLocationFeed.SetCheckboxState(_departmentAndLocationDto.HistoricLocationFeed);
-            }
+            //if (_projectDto.ProjectType.Equals(ProjectTypeEnum.UserScheduledProject))
+            //{
+            //    page.HrLocationFeed.SetCheckboxState(_departmentAndLocationDto.HrLocationFeed);
+            //    page.ManualLocationFeed.SetCheckboxState(_departmentAndLocationDto.ManualLocationFeed);
+            //    page.HistoricLocationFeed.SetCheckboxState(_departmentAndLocationDto.HistoricLocationFeed);
+            //}
 
             var upd = _driver.NowAt<MainElementsOfProjectCreation>();
             upd.UpdateButton.Click();

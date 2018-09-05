@@ -6045,7 +6045,6 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_AdminPage
         [NUnit.Framework.Retry(2)]
         [NUnit.Framework.DescriptionAttribute("EvergreenJnr_AdminPage_AddingRequestTypesAndCategories")]
         [NUnit.Framework.CategoryAttribute("Evergreen")]
-        [NUnit.Framework.CategoryAttribute("Senior")]
         [NUnit.Framework.CategoryAttribute("Admin")]
         [NUnit.Framework.CategoryAttribute("EvergreenJnr_AdminPage")]
         [NUnit.Framework.CategoryAttribute("AdminPage")]
@@ -6057,7 +6056,6 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_AdminPage
         {
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("EvergreenJnr_AdminPage_AddingRequestTypesAndCategories", new string[] {
                         "Evergreen",
-                        "Senior",
                         "Admin",
                         "EvergreenJnr_AdminPage",
                         "AdminPage",
@@ -6212,7 +6210,6 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_AdminPage
         [NUnit.Framework.Retry(2)]
         [NUnit.Framework.DescriptionAttribute("EvergreenJnr_AdminPage_ChecksThatProjectNameEditedInSeniorIsUpdatedInAdminTab")]
         [NUnit.Framework.CategoryAttribute("Evergreen")]
-        [NUnit.Framework.CategoryAttribute("Senior")]
         [NUnit.Framework.CategoryAttribute("Admin")]
         [NUnit.Framework.CategoryAttribute("EvergreenJnr_AdminPage")]
         [NUnit.Framework.CategoryAttribute("AdminPage")]
@@ -6224,7 +6221,6 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_AdminPage
         {
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("EvergreenJnr_AdminPage_ChecksThatProjectNameEditedInSeniorIsUpdatedInAdminTab", new string[] {
                         "Evergreen",
-                        "Senior",
                         "Admin",
                         "EvergreenJnr_AdminPage",
                         "AdminPage",
@@ -6594,7 +6590,6 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_AdminPage
         [NUnit.Framework.Retry(2)]
         [NUnit.Framework.DescriptionAttribute("EvergreenJnr_AdminPage_ChecksThatColourOfOnboardedAppIsDisplayedCorrectly")]
         [NUnit.Framework.CategoryAttribute("Evergreen")]
-        [NUnit.Framework.CategoryAttribute("Senior")]
         [NUnit.Framework.CategoryAttribute("PMObject")]
         [NUnit.Framework.CategoryAttribute("Admin")]
         [NUnit.Framework.CategoryAttribute("EvergreenJnr_AdminPage")]
@@ -6605,7 +6600,6 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_AdminPage
         {
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("EvergreenJnr_AdminPage_ChecksThatColourOfOnboardedAppIsDisplayedCorrectly", new string[] {
                         "Evergreen",
-                        "Senior",
                         "PMObject",
                         "Admin",
                         "EvergreenJnr_AdminPage",
