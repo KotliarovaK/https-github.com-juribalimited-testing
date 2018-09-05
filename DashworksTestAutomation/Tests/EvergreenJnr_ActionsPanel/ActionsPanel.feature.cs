@@ -318,18 +318,17 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_ActionsPanel
         
         [NUnit.Framework.TestAttribute()]
         [NUnit.Framework.Retry(2)]
-        [NUnit.Framework.DescriptionAttribute("EvergreenJnr_ApplicationsList_CheckThatUserWithoutJustTheProjectBulkUpdaterRoleCa" +
-            "nStillBulkUpdateObjects")]
+        [NUnit.Framework.DescriptionAttribute("EvergreenJnr_ApplicationsList_CTheckThatUserWithoutJustTheTProjectBulkUpdaterRole" +
+            "CanStillBulkUpdateObjects")]
         [NUnit.Framework.CategoryAttribute("Evergreen")]
         [NUnit.Framework.CategoryAttribute("Applications")]
         [NUnit.Framework.CategoryAttribute("EvergreenJnr_ActionsPanel")]
         [NUnit.Framework.CategoryAttribute("BulkUpdate")]
         [NUnit.Framework.CategoryAttribute("DAS12932")]
-        [NUnit.Framework.CategoryAttribute("DAS13261")]
-        public virtual void EvergreenJnr_ApplicationsList_CheckThatUserWithoutJustTheProjectBulkUpdaterRoleCanStillBulkUpdateObjects()
+        public virtual void EvergreenJnr_ApplicationsList_CTheckThatUserWithoutJustTheTProjectBulkUpdaterRoleCanStillBulkUpdateObjects()
         {
-            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("EvergreenJnr_ApplicationsList_CheckThatUserWithoutJustTheProjectBulkUpdaterRoleCa" +
-                    "nStillBulkUpdateObjects", new string[] {
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("EvergreenJnr_ApplicationsList_CTheckThatUserWithoutJustTheTProjectBulkUpdaterRole" +
+                    "CanStillBulkUpdateObjects", new string[] {
                         "Evergreen",
                         "Applications",
                         "EvergreenJnr_ActionsPanel",
