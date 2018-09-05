@@ -423,12 +423,10 @@ namespace DashworksTestAutomation.Tests.Projects.CreatingProjects
             testRunner.And("User clicks \"Add Value\" button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
             TechTalk.SpecFlow.Table table24 = new TechTalk.SpecFlow.Table(new string[] {
                         "Name",
-                        "ReadinessIndex",
                         "TaskStatusString",
                         "DefaultValue"});
             table24.AddRow(new string[] {
                         "TestValueName",
-                        "3",
                         "Open",
                         "false"});
             testRunner.When("User create new Value", ((string)(null)), table24, "When ");
@@ -503,12 +501,10 @@ namespace DashworksTestAutomation.Tests.Projects.CreatingProjects
             testRunner.And("User clicks \"Add Value\" button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
             TechTalk.SpecFlow.Table table28 = new TechTalk.SpecFlow.Table(new string[] {
                         "Name",
-                        "ReadinessIndex",
                         "TaskStatusString",
                         "DefaultValue"});
             table28.AddRow(new string[] {
                         "TestValueName",
-                        "9",
                         "Closed",
                         "false"});
             testRunner.When("User create new Value", ((string)(null)), table28, "When ");
@@ -564,12 +560,10 @@ namespace DashworksTestAutomation.Tests.Projects.CreatingProjects
             testRunner.And("User clicks \"Add Value\" button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
             TechTalk.SpecFlow.Table table31 = new TechTalk.SpecFlow.Table(new string[] {
                         "Name",
-                        "ReadinessIndex",
                         "TaskStatusString",
                         "DefaultValue"});
             table31.AddRow(new string[] {
                         "TestValueName",
-                        "8",
                         "Closed",
                         "false"});
             testRunner.When("User create new Value", ((string)(null)), table31, "When ");

@@ -188,8 +188,8 @@ Scenario: Projects_CreateUserScheduledProject
 	When User navigate to "Values" page
 	And User clicks "Add Value" button
 	When User create new Value
-	| Name          | ReadinessIndex | TaskStatusString | DefaultValue |
-	| TestValueName | 3              | Open             | false        |
+	| Name          | TaskStatusString | DefaultValue |
+	| TestValueName | Open             | false        |
 	And User clicks "Save Value" button
 	And User navigate to "Emails" page
 	And User clicks "Add Email" button
@@ -216,8 +216,8 @@ Scenario: Projects_CreateUserScheduledProject
 	When User navigate to "Values" page
 	And User clicks "Add Value" button
 	When User create new Value
-	| Name          | ReadinessIndex | TaskStatusString | DefaultValue |
-	| TestValueName | 9              | Closed           | false        |
+	| Name          | TaskStatusString | DefaultValue |
+	| TestValueName | Closed           | false        |
 	And User clicks "Save Value" button
 	And User clicks "« Go Back to Tasks" button
 	Then created Task is displayed in the table
@@ -236,8 +236,8 @@ Scenario: Projects_CreateUserScheduledProject
 	When User navigate to "Values" page
 	And User clicks "Add Value" button
 	When User create new Value
-	| Name          | ReadinessIndex | TaskStatusString | DefaultValue |
-	| TestValueName | 8              | Closed           | false        |
+	| Name          | TaskStatusString | DefaultValue |
+	| TestValueName | Closed           | false        |
 	And User clicks "Save Value" button
 	And User navigate to "Emails" page
 	And User clicks "Add Email" button
