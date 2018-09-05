@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.Linq;
 using System.Threading;
 using DashworksTestAutomation.Extensions;
@@ -94,6 +95,15 @@ namespace DashworksTestAutomation.Steps.Dashworks
             //action.GetOptionOnActionsPanelByName(projectName).Click();
         }
 
+        [Then(@"Projects are displayed in alphabetical order on Action panel")]
+        public void ThenProjectsAreDisplayedInAlphabeticalOrderOnActionPanel()
+        {
+            var action = _driver.NowAt<BaseDashboardPage>();
+            action.ProjectField.Click();
+            List<string> list = action.OtionListOnActionsPanel.Select(x => x.Text).ToList();
+            Assert.AreEqual(list.OrderBy(s => s), list, "Projects are not in alphabetical order");
+        }
+
         [Then(@"""(.*)"" Project is displayed on Action panel")]
         public void ThenProjectIsDisplayedOnActionPanel(string projectName)
         {
@@ -136,6 +146,15 @@ namespace DashworksTestAutomation.Steps.Dashworks
             action.GetOptionOnActionsPanelByName(stageValue).Click();
         }
 
+        [Then(@"Stage are displayed in alphabetical order on Action panel")]
+        public void ThenStageAreDisplayedInAlphabeticalOrderOnActionPanel()
+        {
+            var action = _driver.NowAt<BaseDashboardPage>();
+            action.StageField.Click();
+            List<string> list = action.OtionListOnActionsPanel.Select(x => x.Text).ToList();
+            Assert.AreEqual(list.OrderBy(s => s), list, "Stage are not in alphabetical order");
+        }
+
         [When(@"User selects ""(.*)"" Task on Action panel")]
         public void WhenUserSelectsTaskOnActionPanel(string taskNAme)
         {
@@ -145,12 +164,13 @@ namespace DashworksTestAutomation.Steps.Dashworks
             action.GetOptionOnActionsPanelByName(taskNAme).Click();
         }
 
-        [When(@"User selects ""(.*)"" Update Date on Action panel")]
-        public void WhenUserSelectsUpdateDateOnActionPanel(string updateDate)
+        [Then(@"Task are displayed in alphabetical order on Action panel")]
+        public void ThenTaskAreDisplayedInAlphabeticalOrderOnActionPanel()
         {
             var action = _driver.NowAt<BaseDashboardPage>();
-            action.UpdateDate.Click();
-            action.GetOptionOnActionsPanelByName(updateDate).Click();
+            action.TaskField.Click();
+            List<string> list = action.OtionListOnActionsPanel.Select(x => x.Text).ToList();
+            Assert.AreEqual(list.OrderBy(s => s), list, "Stage are not in alphabetical order");
         }
 
         [When(@"User selects ""(.*)"" Value on Action panel")]
@@ -159,6 +179,76 @@ namespace DashworksTestAutomation.Steps.Dashworks
             var action = _driver.NowAt<BaseDashboardPage>();
             action.ValueDropdown.Click();
             action.GetOptionOnActionsPanelByName(value).Click();
+        }
+
+        [When(@"User selects ""(.*)"" Update Value on Action panel")]
+        public void WhenUserSelectsUpdateValueOnActionPanel(string value)
+        {
+            var action = _driver.NowAt<BaseDashboardPage>();
+            action.UpdateValueDropdown.Click();
+            action.GetOptionOnActionsPanelByName(value).Click();
+        }
+
+        [When(@"User selects ""(.*)"" Update Date on Action panel")]
+        public void WhenUserSelectsUpdateDateOnActionPanel(string updateDate)
+        {
+            var action = _driver.NowAt<BaseDashboardPage>();
+            action.UpdateDateDropdown.Click();
+            action.GetOptionOnActionsPanelByName(updateDate).Click();
+        }
+
+        [When(@"User selects ""(.*)"" Update Owner on Action panel")]
+        public void WhenUserSelectsUpdateOwnerOnActionPanel(string owner)
+        {
+            var action = _driver.NowAt<BaseDashboardPage>();
+            action.UpdateOwnerDropdown.Click();
+            action.GetOptionOnActionsPanelByName(owner).Click();
+        }
+
+        [Then(@"the Update Owner options are displayed in following order:")]
+        public void ThenTheUpdateOwnerOptionsAreDisplayedInFollowingOrder(Table table)
+        {
+            var action = _driver.NowAt<BaseDashboardPage>();
+            action.UpdateOwnerDropdown.Click();
+            var expectedList = table.Rows.SelectMany(row => row.Values).ToList();
+            var actualList = action.OtionListOnActionsPanel.Select(value => value.Text).ToList();
+            Assert.AreEqual(expectedList, actualList, "Update Owner options are different");
+            var page = _driver.NowAt<ApplicationsDetailsTabsMenu>();
+            page.BodyContainer.Click();
+        }
+
+        [When(@"User selects ""(.*)"" Team on Action panel")]
+        public void WhenUserSelectsTeamOnActionPanel(string team)
+        {
+            var action = _driver.NowAt<BaseDashboardPage>();
+            action.TeamField.Click();
+            action.TeamField.Clear();
+            action.TeamField.SendKeys(team);
+            action.GetOptionOnActionsPanelByName(team).Click();
+        }
+
+        [When(@"User selects ""(.*)"" Owner on Action panel")]
+        public void WhenUserSelectsOwnerOnActionPanel(string owner)
+        {
+            var action = _driver.NowAt<BaseDashboardPage>();
+            action.OwnerField.Click();
+            action.OwnerField.Clear();
+            action.OwnerField.SendKeys(owner);
+            action.GetOptionOnActionsPanelByName(owner).Click();
+        }
+
+        [Then(@"Owner field is not displayed on Action panel")]
+        public void ThenOwnerFieldIsNotDisplayedOnActionPanel()
+        {
+            var action = _driver.NowAt<BaseDashboardPage>();
+            Assert.IsFalse(action.OwnerField.Displayed(), "Owner Field is displayed");
+        }
+
+        [Then(@"Owner field is displayed on Action panel")]
+        public void ThenOwnerFieldIsDisplayedOnActionPanel()
+        {
+            var action = _driver.NowAt<BaseDashboardPage>();
+            Assert.IsTrue(action.OwnerField.Displayed(), "Owner Field is not displayed");
         }
 
         [Then(@"the following Update Value are displayed in opened DLL on Action panel:")]

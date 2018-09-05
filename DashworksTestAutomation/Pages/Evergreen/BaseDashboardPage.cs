@@ -29,6 +29,8 @@ namespace DashworksTestAutomation.Pages.Evergreen
 
         public const string SelectedColumnSubcategory = "//div[contains(@class, 'sub-categories')]//div//span";
 
+        public const string OptionOnActionsPanel = "//mat-option[@role='option']";
+
         [FindsBy(How = How.XPath, Using = ".//div[@id='pagetitle-text']/descendant::h1")]
         public IWebElement Heading { get; set; }
 
@@ -55,9 +57,6 @@ namespace DashworksTestAutomation.Pages.Evergreen
         [FindsBy(How = How.XPath, Using = "//mat-option[@role='option']")]
         public IWebElement ProjectSection { get; set; }
 
-        [FindsBy(How = How.XPath, Using = "//mat-option[@role='option']")]
-        public IWebElement OptionName { get; set; }
-
         [FindsBy(How = How.XPath, Using = "//textarea[@placeholder='Stage']")]
         public IWebElement StageField { get; set; }
 
@@ -67,14 +66,20 @@ namespace DashworksTestAutomation.Pages.Evergreen
         [FindsBy(How = How.XPath, Using = ".//mat-select[@aria-label='Value']")]
         public IWebElement ValueDropdown { get; set; }
 
-        [FindsBy(How = How.XPath, Using = ".//span[text()='Update Value']")]
+        [FindsBy(How = How.XPath, Using = "//mat-select[contains(@class, 'mat-select')]//span[text()='Update Value']")]
         public IWebElement UpdateValueDropdown { get; set; }
 
         [FindsBy(How = How.XPath, Using = "//mat-select[contains(@class, 'mat-select')]//span[text()='Update Date']")]
-        public IWebElement UpdateDate { get; set; }
+        public IWebElement UpdateDateDropdown { get; set; }
 
-        [FindsBy(How = How.XPath, Using = ".//mat-select[contains(@class, 'mat-select ng-tns-c19-31')]")]
+        [FindsBy(How = How.XPath, Using = "//mat-select[contains(@class, 'mat-select')]//span[text()='Update Owner']")]
         public IWebElement UpdateOwnerDropdown { get; set; }
+
+        [FindsBy(How = How.XPath, Using = "//input[@aria-label='Team']")]
+        public IWebElement TeamField { get; set; }
+
+        [FindsBy(How = How.XPath, Using = "//input[@aria-label='Owner']")]
+        public IWebElement OwnerField { get; set; }
 
         [FindsBy(How = How.XPath, Using = "//input[@placeholder='Request Type']")]
         public IWebElement RequestTypeField { get; set; }
@@ -263,6 +268,9 @@ namespace DashworksTestAutomation.Pages.Evergreen
 
         [FindsBy(How = How.XPath, Using = SelectedColumnSubcategory)]
         public IList<IWebElement> SelectedColumnsSubcategoryList { get; set; }
+
+        [FindsBy(How = How.XPath, Using = OptionOnActionsPanel)]
+        public IList<IWebElement> OtionListOnActionsPanel { get; set; }
 
         #region TableColumns
 
