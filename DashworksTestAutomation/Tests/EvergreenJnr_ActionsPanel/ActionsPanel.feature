@@ -283,7 +283,7 @@ Examples:
 	| Applications | Compliance       | Red        | 181               |
 	| Mailboxes    | Owner Compliance | Green      | 14701             |
 
-@Evergreen @Devices @EvergreenJnr_ActionsPanel @DAS12863 @DAS13266
+@Evergreen @Devices @EvergreenJnr_ActionsPanel @DAS12863 @DAS13266 @DAS13284
 Scenario: EvergreenJnr_DevicesList_ChecksThatRequestTypeIsUpdatedCorrectlyOnDevicesPage
 	When User clicks "Devices" on the left-hand menu
 	Then "Devices" list should be displayed to the user
@@ -365,7 +365,7 @@ Scenario: EvergreenJnr_DevicesList_ChecksThatRequestTypeIsUpdatedCorrectlyOnDevi
 	And User clicks "UPDATE" button on message box
 	And Success message with "1 of 1 objects were valid for the update. Your changes have successfully been queued." text is displayed on Action panel
 
-@Evergreen @Users @EvergreenJnr_ActionsPanel @BulkUpdate @DAS12863 @DAS13266
+@Evergreen @Users @EvergreenJnr_ActionsPanel @BulkUpdate @DAS12863 @DAS13266 @DAS13284
 Scenario: EvergreenJnr_UsersList_ChecksThatRequestTypeIsUpdatedCorrectlyOnUsersPage
 	When User clicks "Users" on the left-hand menu
 	Then "Users" list should be displayed to the user
@@ -452,7 +452,7 @@ Scenario: EvergreenJnr_UsersList_ChecksThatRequestTypeIsUpdatedCorrectlyOnUsersP
 	And User clicks "UPDATE" button on message box
 	And Success message with "1 of 1 objects were valid for the update. Your changes have successfully been queued." text is displayed on Action panel
 
-@Evergreen @Applications @EvergreenJnr_ActionsPanel @BulkUpdate @DAS12863 @DAS13266
+@Evergreen @Applications @EvergreenJnr_ActionsPanel @BulkUpdate @DAS12863 @DAS13266 @DAS13284
 Scenario: EvergreenJnr_ApplicationsList_ChecksThatRequestTypeIsUpdatedCorrectlyOnApplicationsPage
 	When User clicks "Applications" on the left-hand menu
 	Then "Applications" list should be displayed to the user
@@ -517,7 +517,7 @@ Scenario: EvergreenJnr_ApplicationsList_ChecksThatRequestTypeIsUpdatedCorrectlyO
 	And User clicks "UPDATE" button on message box
 	And Success message with "1 of 1 objects were valid for the update. Your changes have successfully been queued." text is displayed on Action panel
 
-@Evergreen @Mailboxes @EvergreenJnr_ActionsPanel @BulkUpdate @DAS12863 @DAS13266
+@Evergreen @Mailboxes @EvergreenJnr_ActionsPanel @BulkUpdate @DAS12863 @DAS13266 @DAS13284
 Scenario: EvergreenJnr_MailboxesList_ChecksThatRequestTypeIsUpdatedCorrectlyOnMailboxesPage
 	When User clicks "Mailboxes" on the left-hand menu
 	Then "Mailboxes" list should be displayed to the user
@@ -599,7 +599,7 @@ Scenario: EvergreenJnr_MailboxesList_ChecksThatRequestTypeIsUpdatedCorrectlyOnMa
 	And User clicks "UPDATE" button on message box
 	And Success message with "1 of 1 objects were valid for the update. Your changes have successfully been queued." text is displayed on Action panel
 
-@Evergreen @Devices @EvergreenJnr_ActionsPanel @BulkUpdate @DAS12863 @DAS13266
+@Evergreen @Devices @EvergreenJnr_ActionsPanel @BulkUpdate @DAS12863 @DAS13266 @DAS13284
 Scenario: EvergreenJnr_DevicesList_ChecksThatRequestTypeIsUpdatedCorrectlyWhereSomeObjectsAreValidAndSomeAreInvalidForTheSelectedProject
 	When User clicks "Devices" on the left-hand menu
 	Then "Devices" list should be displayed to the user
@@ -666,7 +666,7 @@ Scenario: EvergreenJnr_DevicesList_ChecksThatRequestTypeIsUpdatedCorrectlyWhereS
 	And User clicks "UPDATE" button on message box
 	And Success message with "1 of 1 objects were valid for the update. Your changes have successfully been queued." text is displayed on Action panel
 
-@Evergreen @Devices @EvergreenJnr_ActionsPanel @BulkUpdate @DAS12863
+@Evergreen @Devices @EvergreenJnr_ActionsPanel @BulkUpdate @DAS12863 @DAS13277
 Scenario: EvergreenJnr_DevicesList_ChecksThatActionsPanelWorkedCorrectlyAfterCickOnCancelButton
 	When User clicks "Devices" on the left-hand menu
 	Then "Devices" list should be displayed to the user
@@ -790,7 +790,7 @@ Scenario: EvergreenJnr_MailboxesList_CheckThatProjectFieldIsDisplayedCorrectlyAf
 	And User clicks on Action drop-down
 	Then "Email Migration" Project is displayed on Action panel
 
-@Evergreen @AllLists @EvergreenJnr_ActionsPanel @BulkUpdate @DAS13355 @DAS13260
+@Evergreen @AllLists @EvergreenJnr_ActionsPanel @BulkUpdate @DAS13355 @DAS13260 @DAS13281
 Scenario Outline: EvergreenJnr_AllLists_ChecksThatTextValueHaveOptionToRemoveExistingTextValue
 	When User clicks "<PageName>" on the left-hand menu
 	Then "<PageName>" list should be displayed to the user
@@ -815,7 +815,7 @@ Examples:
 	| Users        | Username    | 00DB4000EDD84951993              | Text User- Email Address        |
 	| Applications | Application | 32VerSee v.231 en (C:\32VerSee\) | Text Application- Future Groups |
 
-@Evergreen @AllLists @EvergreenJnr_ActionsPanel @BulkUpdate @DAS13264 @DAS13265
+@Evergreen @AllLists @EvergreenJnr_ActionsPanel @BulkUpdate @DAS13264 @DAS13265 @DAS13278
 Scenario Outline: EvergreenJnr_AllLists_CheckThatUpdateAndCancelButtonsAreEnabledWhenUserLoggedWithProjectBulkUpdaterRole
 	When User clicks "Projects" on the left-hand menu
 	Then "Projects Home" page is displayed to the user
@@ -852,6 +852,10 @@ Scenario Outline: EvergreenJnr_AllLists_CheckThatUpdateAndCancelButtonsAreEnable
 	And "CANCEL" Action button is active
 	When User clicks the "UPDATE" Action button
 	Then the amber message is displayed correctly
+	And User clicks "CANCEL" button on message box
+	Then the amber message is not displayed
+	Then "UPDATE" Action button is active
+	And "CANCEL" Action button is active
 	When User clicks the Logout button
 	Then User is logged out
 	When User clicks on the Login link
@@ -869,7 +873,7 @@ Examples:
 	| Applications13264 | Applications | Application   | 0047 - Microsoft Access 97 SR-2 Francais | Barry's User Project                 | Audit & Configuration | Package Delivery Date               | Remove     |
 	| Mailboxes13264    | Mailboxes    | Email Address | 00C8BC63E7424A6E862@bclabs.local         | Email Migration                      | Pre-Migration         | Out Of Office Start Date            | Remove     |
 
-@Evergreen @Devices @EvergreenJnr_ActionsPanel @BulkUpdate @DAS12864 @DAS13268 @DAS13269 @DAS13272 @DAS13273 @DAS13276
+@Evergreen @Devices @EvergreenJnr_ActionsPanel @BulkUpdate @DAS12864 @DAS13268 @DAS13269 @DAS13272 @DAS13273 @DAS13276 @DAS13275
 Scenario: EvergreenJnr_DevicesList_ChecksThatActionsPanelIsWorkingCorrectlyWhenSelectedTaskThatHasAnTeamOrOwner
 	When User clicks "Projects" on the left-hand menu
 	Then "Projects Home" page is displayed to the user
@@ -899,19 +903,29 @@ Scenario: EvergreenJnr_DevicesList_ChecksThatActionsPanelIsWorkingCorrectlyWhenS
 	And User selects "Bulk update" in the Actions dropdown
 	And User selects "Update task value" Bulk Update Type on Action panel
 	And User selects "Barry's User Project" Project on Action panel
-	Then Stage are displayed in alphabetical order on Action panel
+	Then Stages are displayed in alphabetical order on Action panel
 	When User selects "Audit & Configuration" Stage on Action panel
-	Then Task are displayed in alphabetical order on Action panel
+	Then Tasks are displayed in alphabetical order on Action panel
 	When User selects "Validate User Device Ownership" Task on Action panel
-	And User selects "No change" Update Value on Action panel
-	And User selects "No change" Update Date on Action panel
+	Then the Update Value options are displayed in following order:
+	| Options               |
+	| Update                |
+	| No change             |
+	When User selects "No change" Update Value on Action panel
+	Then the Update Date options are displayed in following order:
+	| Options   |
+	| Update    |
+	| Remove    |
+	| No change |
+	When User selects "No change" Update Date on Action panel
 	Then the Update Owner options are displayed in following order:
 	| Options               |
 	| Update                |
 	| Remove owner and team |
 	| No change             |
 	When User selects "Update" Update Owner on Action panel
-	And User selects "Admin IT" Team on Action panel
+	Then Teams are displayed in alphabetical order on Action panel
+	When User selects "Admin IT" Team on Action panel
 	Then Owner field is not displayed on Action panel
 	When User selects "IB Team" Team on Action panel
 	Then Owner field is displayed on Action panel
@@ -925,3 +939,128 @@ Scenario: EvergreenJnr_DevicesList_ChecksThatActionsPanelIsWorkingCorrectlyWhenS
 	When User navigate to Manage link
 	And User select "Manage Users" option in Management Console
 	And User removes "DAS13268" User
+
+@Evergreen @Devices @EvergreenJnr_ActionsPanel @BulkUpdate @DAS12864 @DAS13280
+Scenario: EvergreenJnr_DevicesList_CheckThatClearingAValueResetsSubsequentValuesr
+	When User clicks "Projects" on the left-hand menu
+	Then "Projects Home" page is displayed to the user
+	When User navigate to Manage link
+	And User select "Manage Users" option in Management Console
+	And User create new User
+	| Username | FullName | Password | ConfirmPassword | Roles                |
+	| DAS13280 | DAS13280 | 1234qwer | 1234qwer        | Project Bulk Updater |
+	Then Success message is displayed
+	When User cliks Logout link
+	Then User is logged out
+	When User clicks on the Login link
+	Then Login Page is displayed to the user
+	When User login with following credentials:
+	| Username | Password |
+	| DAS13280 | 1234qwer |
+	Then Dashworks homepage is displayed to the user in a logged in state
+	When User clicks the Switch to Evergreen link
+	Then Evergreen Dashboards page should be displayed to the user
+	When User clicks "Devices" on the left-hand menu
+	Then "Devices" list should be displayed to the user
+	When User clicks the Actions button
+	Then Actions panel is displayed to the user
+	When User select "Hostname" rows in the grid
+	| SelectedRowsName |
+	| 018UQ6KL9TF4YF   |
+	And User selects "Bulk update" in the Actions dropdown
+	And User selects "Update task value" Bulk Update Type on Action panel
+	And User selects "User Scheduled Test (Jo)" Project on Action panel
+	When User selects "One" Stage on Action panel
+	When User selects "Radio Rag Only Comp" Task on Action panel
+	And User selects "Started" Value on Action panel
+	When User selects "Computer Scheduled Test (Jo)" Project on Action panel
+	Then Value field is not displayed on Action panel
+	When User clicks the Logout button
+	Then User is logged out
+	When User clicks on the Login link
+	Then Login Page is displayed to the user
+	When User provides the Login and Password and clicks on the login button
+	Then Dashworks homepage is displayed to the user in a logged in state
+	When User navigate to Manage link
+	And User select "Manage Users" option in Management Console
+	And User removes "DAS13280" User
+
+@Evergreen @Devices @EvergreenJnr_ActionsPanel @BulkUpdate @DAS12864 @DAS13281 @DAS13284
+Scenario: EvergreenJnr_DevicesList_ChecksThatDllOptionsAreDisplayedCorrectly
+	When User clicks "Projects" on the left-hand menu
+	Then "Projects Home" page is displayed to the user
+	When User navigate to Manage link
+	And User select "Manage Users" option in Management Console
+	And User create new User
+	| Username | FullName | Password | ConfirmPassword | Roles                |
+	| DAS13281 | DAS13281 | 1234qwer | 1234qwer        | Project Bulk Updater |
+	Then Success message is displayed
+	When User cliks Logout link
+	Then User is logged out
+	When User clicks on the Login link
+	Then Login Page is displayed to the user
+	When User login with following credentials:
+	| Username | Password |
+	| DAS13281 | 1234qwer |
+	Then Dashworks homepage is displayed to the user in a logged in state
+	When User clicks the Switch to Evergreen link
+	Then Evergreen Dashboards page should be displayed to the user
+	When User clicks "Devices" on the left-hand menu
+	Then "Devices" list should be displayed to the user
+	When User clicks the Actions button
+	Then Actions panel is displayed to the user
+	When User select "Hostname" rows in the grid
+	| SelectedRowsName |
+	| 00YWR8TJU4ZF8V   |
+	And User selects "Bulk update" in the Actions dropdown
+	And User selects "Update task value" Bulk Update Type on Action panel
+	And User selects "Windows 7 Migration (Computer Scheduled Project)" Project on Action panel
+	When User selects "Computer Information ---- Text fill; Text fill;" Stage on Action panel
+	When User selects "Computer Read Only Task in Self Service" Task on Action panel
+	Then the Update Value options are displayed in following order:
+	| Options               |
+	| Update                |
+	| No change             |
+	Then the Update Date options are displayed in following order:
+	| Options   |
+	| Update    |
+	| Remove    |
+	| No change |
+	Then the Update Owner options are displayed in following order:
+	| Options               |
+	| Update                |
+	| Remove owner and team |
+	| No change             |
+	When User selects "Workstation Text Task" Task on Action panel
+	Then the Update Value options are displayed in following order:
+	| Options   |
+	| Update    |
+	| Remove    |
+	#| No change |
+	When User selects "Computer Read Only Task in Self Service" Task on Action panel
+	Then the Update Value options are displayed in following order:
+	| Options               |
+	| Update                |
+	| No change             |
+	When User selects "Update" Update Value on Action panel
+	When User selects "Started" Value on Action panel
+	When User selects "No change" Update Date on Action panel
+	When User selects "No change" Update Owner on Action panel
+	When User clicks the "UPDATE" Action button
+	Then the amber message is displayed correctly
+	And User clicks "CANCEL" button on message box
+	Then the amber message is not displayed
+	When User clicks the "UPDATE" Action button
+	Then the amber message is displayed correctly
+	Then User clicks "UPDATE" button on message box
+	And Success message with "1 of 1 objects were valid for the update. Your changes have successfully been queued." text is displayed on Action panel
+	Then Success message is hidden after five seconds
+	When User clicks the Logout button
+	Then User is logged out
+	When User clicks on the Login link
+	Then Login Page is displayed to the user
+	When User provides the Login and Password and clicks on the login button
+	Then Dashworks homepage is displayed to the user in a logged in state
+	When User navigate to Manage link
+	And User select "Manage Users" option in Management Console
+	And User removes "DAS13281" User

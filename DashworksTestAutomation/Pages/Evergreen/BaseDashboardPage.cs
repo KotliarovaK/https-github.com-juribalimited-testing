@@ -215,6 +215,12 @@ namespace DashworksTestAutomation.Pages.Evergreen
         [FindsBy(How = How.XPath, Using = ".//div[@class='inline-tip ng-star-inserted']")]
         public IWebElement WarningMessage { get; set; }
 
+        [FindsBy(How = How.XPath, Using = "//div[@class='inline-success ng-star-inserted']")]
+        public IWebElement SuccessMessage { get; set; }
+
+        [FindsBy(How = How.XPath, Using = "//button[contains(@class, 'close')]")]
+        public IWebElement CloseButtonInSuccessMessage { get; set; }
+
         [FindsBy(How = How.XPath, Using = ".//div[text()='This list does not exist or you do not have access to it']")]
         public IWebElement DoesNotExistListMessage { get; set; }
 

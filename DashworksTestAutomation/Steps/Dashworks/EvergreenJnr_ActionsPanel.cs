@@ -146,13 +146,15 @@ namespace DashworksTestAutomation.Steps.Dashworks
             action.GetOptionOnActionsPanelByName(stageValue).Click();
         }
 
-        [Then(@"Stage are displayed in alphabetical order on Action panel")]
-        public void ThenStageAreDisplayedInAlphabeticalOrderOnActionPanel()
+        [Then(@"Stages are displayed in alphabetical order on Action panel")]
+        public void ThenStagesAreDisplayedInAlphabeticalOrderOnActionPanel()
         {
             var action = _driver.NowAt<BaseDashboardPage>();
             action.StageField.Click();
             List<string> list = action.OtionListOnActionsPanel.Select(x => x.Text).ToList();
-            Assert.AreEqual(list.OrderBy(s => s), list, "Stage are not in alphabetical order");
+            Assert.AreEqual(list.OrderBy(s => s), list, "Stages are not in alphabetical order");
+            var page = _driver.NowAt<ApplicationsDetailsTabsMenu>();
+            page.BodyContainer.Click();
         }
 
         [When(@"User selects ""(.*)"" Task on Action panel")]
@@ -164,13 +166,15 @@ namespace DashworksTestAutomation.Steps.Dashworks
             action.GetOptionOnActionsPanelByName(taskNAme).Click();
         }
 
-        [Then(@"Task are displayed in alphabetical order on Action panel")]
-        public void ThenTaskAreDisplayedInAlphabeticalOrderOnActionPanel()
+        [Then(@"Tasks are displayed in alphabetical order on Action panel")]
+        public void ThenTasksAreDisplayedInAlphabeticalOrderOnActionPanel()
         {
             var action = _driver.NowAt<BaseDashboardPage>();
             action.TaskField.Click();
             List<string> list = action.OtionListOnActionsPanel.Select(x => x.Text).ToList();
-            Assert.AreEqual(list.OrderBy(s => s), list, "Stage are not in alphabetical order");
+            Assert.AreEqual(list.OrderBy(s => s), list, "Tasks are not in alphabetical order");
+            var page = _driver.NowAt<ApplicationsDetailsTabsMenu>();
+            page.BodyContainer.Click();
         }
 
         [When(@"User selects ""(.*)"" Value on Action panel")]
@@ -181,6 +185,13 @@ namespace DashworksTestAutomation.Steps.Dashworks
             action.GetOptionOnActionsPanelByName(value).Click();
         }
 
+        [Then(@"Value field is not displayed on Action panel")]
+        public void ThenValueFieldIsNotDisplayedOnActionPanel()
+        {
+            var action = _driver.NowAt<BaseDashboardPage>();
+            Assert.IsFalse(action.ValueDropdown.Displayed(), "Value field is displayed");
+        }
+
         [When(@"User selects ""(.*)"" Update Value on Action panel")]
         public void WhenUserSelectsUpdateValueOnActionPanel(string value)
         {
@@ -189,12 +200,36 @@ namespace DashworksTestAutomation.Steps.Dashworks
             action.GetOptionOnActionsPanelByName(value).Click();
         }
 
+        [Then(@"the Update Value options are displayed in following order:")]
+        public void ThenTheUpdateValueOptionsAreDisplayedInFollowingOrder(Table table)
+        {
+            var action = _driver.NowAt<BaseDashboardPage>();
+            action.UpdateValueDropdown.Click();
+            var expectedList = table.Rows.SelectMany(row => row.Values).ToList();
+            var actualList = action.OtionListOnActionsPanel.Select(value => value.Text).ToList();
+            Assert.AreEqual(expectedList, actualList, "Update Value options are different");
+            var page = _driver.NowAt<ApplicationsDetailsTabsMenu>();
+            page.BodyContainer.Click();
+        }
+
         [When(@"User selects ""(.*)"" Update Date on Action panel")]
         public void WhenUserSelectsUpdateDateOnActionPanel(string updateDate)
         {
             var action = _driver.NowAt<BaseDashboardPage>();
             action.UpdateDateDropdown.Click();
             action.GetOptionOnActionsPanelByName(updateDate).Click();
+        }
+
+        [Then(@"the Update Date options are displayed in following order:")]
+        public void ThenTheUpdateDateOptionsAreDisplayedInFollowingOrder(Table table)
+        {
+            var action = _driver.NowAt<BaseDashboardPage>();
+            action.UpdateDateDropdown.Click();
+            var expectedList = table.Rows.SelectMany(row => row.Values).ToList();
+            var actualList = action.OtionListOnActionsPanel.Select(value => value.Text).ToList();
+            Assert.AreEqual(expectedList, actualList, "Update Date options are different");
+            var page = _driver.NowAt<ApplicationsDetailsTabsMenu>();
+            page.BodyContainer.Click();
         }
 
         [When(@"User selects ""(.*)"" Update Owner on Action panel")]
@@ -225,6 +260,17 @@ namespace DashworksTestAutomation.Steps.Dashworks
             action.TeamField.Clear();
             action.TeamField.SendKeys(team);
             action.GetOptionOnActionsPanelByName(team).Click();
+        }
+
+        [Then(@"Teams are displayed in alphabetical order on Action panel")]
+        public void ThenTeamsAreDisplayedInAlphabeticalOrderOnActionPanel()
+        {
+            var action = _driver.NowAt<BaseDashboardPage>();
+            action.TeamField.Click();
+            List<string> list = action.OtionListOnActionsPanel.Select(x => x.Text).ToList();
+            Assert.AreEqual(list.OrderBy(s => s), list, "Teams are not in alphabetical order");
+            var page = _driver.NowAt<ApplicationsDetailsTabsMenu>();
+            page.BodyContainer.Click();
         }
 
         [When(@"User selects ""(.*)"" Owner on Action panel")]
@@ -316,12 +362,28 @@ namespace DashworksTestAutomation.Steps.Dashworks
             Assert.IsTrue(action.CancelButtonOnAmberMessage.Displayed(), "Cancel Button is not displayed");
         }
 
+        [Then(@"the amber message is not displayed")]
+        public void ThenTheAmberMessageIsNotDisplayed()
+        {
+            var action = _driver.NowAt<BaseDashboardPage>();
+            Assert.IsFalse(action.AmberMessageOnActionPanel.Displayed(), "Amber message is displayed");
+        }
+
         [Then(@"Success message with ""(.*)"" text is displayed on Action panel")]
         public void ThenSuccessMessageWithTextIsDisplayedOnActionPanel(string textMessage)
         {
             var action = _driver.NowAt<BaseDashboardPage>();
             _driver.WaitForDataLoading();
             Assert.IsTrue(action.SuccessMessageActionPanel(textMessage), "Success Message is not displayed");
+            Assert.IsTrue(action.CloseButtonInSuccessMessage.Displayed(), "Close button in Success message is not displayed");
+        }
+
+        [Then(@"Success message is hidden after five seconds")]
+        public void ThenSuccessMessageIsHiddenAfterFiveSeconds()
+        {
+            var action = _driver.NowAt<BaseDashboardPage>();
+            Thread.Sleep(6000);
+            Assert.IsFalse(action.SuccessMessage.Displayed(), "Success Message is displayed");
         }
 
         [Then(@"User clicks ""(.*)"" button on message box")]
