@@ -1866,7 +1866,7 @@ Scenario: EvergreenJnr_AdminPage_CheckThatUsersToAddAndRemoveAreChangingAppropri
 	And User selects "StaticList6530" in the Scope Project details
 	And User selects "Scope Changes" tab on the Project details page
 	Then "Users to add (0 of 2 selected)" is displayed to the user in the Project Scope Changes section
-	And "Users to remove (0 of 2 selected)" is displayed to the user in the Project Scope Changes section
+	#And "Users to remove (0 of 2 selected)" is displayed to the user in the Project Scope Changes section
 	And Add Objects panel is collapsed
 
 @Evergreen @Admin @EvergreenJnr_AdminPage @AdminPage @DAS12999 @DAS12903 @Delete_Newly_Created_Project @Delete_Newly_Created_List
