@@ -1278,6 +1278,21 @@ namespace DashworksTestAutomation.Steps.Dashworks
             bucketElement.AddItemButton.Click();
         }
 
+        [When(@"User searches and selects ""(.*)"" rows in the grid")]
+        public void WhenUserSearchesAndSelectsRowsInTheGrid(string columnName, Table table)
+        {
+            var dashboardPage = _driver.NowAt<BaseDashboardPage>();
+            dashboardPage.TableSearchButton.Click();
+            _driver.WaitWhileControlIsNotDisplayed<BaseDashboardPage>(() => dashboardPage.TableSearchTextbox);
+            foreach (var row in table.Rows)
+            {
+                dashboardPage.TableSearchTextbox.Clear();
+                dashboardPage.TableSearchTextbox.SendKeys(row["SelectedRowsName"]);
+                Thread.Sleep(5000);
+                dashboardPage.SelectOneRowsCheckboxes.Click();
+            }
+        }
+
         [When(@"User adds following Objects to the Project")]
         public void WhenUserAddsFollowingObjectsToTheProject(Table table)
         {
