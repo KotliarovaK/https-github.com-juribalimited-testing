@@ -69,10 +69,6 @@ namespace DashworksTestAutomation.Tests.Projects.CreatingProjects
         [NUnit.Framework.TestAttribute()]
         [NUnit.Framework.Retry(2)]
         
-        
-        
-        
-        
         [NUnit.Framework.DescriptionAttribute("Projects_CreateMailboxScheduledProject")]
         [NUnit.Framework.CategoryAttribute("Senior")]
         [NUnit.Framework.CategoryAttribute("Projects_Administration")]
@@ -428,12 +424,10 @@ namespace DashworksTestAutomation.Tests.Projects.CreatingProjects
             testRunner.And("User clicks \"Add Value\" button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
             TechTalk.SpecFlow.Table table24 = new TechTalk.SpecFlow.Table(new string[] {
                         "Name",
-                        "ReadinessIndex",
                         "TaskStatusString",
                         "DefaultValue"});
             table24.AddRow(new string[] {
                         "TestValueName",
-                        "3",
                         "Open",
                         "true"});
             testRunner.When("User create new Value", ((string)(null)), table24, "When ");

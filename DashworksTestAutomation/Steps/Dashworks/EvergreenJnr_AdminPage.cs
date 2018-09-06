@@ -1472,6 +1472,14 @@ namespace DashworksTestAutomation.Steps.Dashworks
             createProjectElement.SelectObjectForProjectCreation(objectName);
         }
 
+        [When(@"user selects ""(.*)"" in the Bucket dropdown")]
+        public void WhenUserSelectsInTheBucketDropdown(string objectName)
+        {
+            var projectElement = _driver.NowAt<ProjectsPage>();
+            projectElement.BucketDropdown.Click();
+            projectElement.SelectObjectForProjectCreation(objectName);
+        }
+
         [Then(@"""(.*)"" is displayed in the Bucket dropdown")]
         public void ThenIsDisplayedInTheBucketDropdown(string textBucket)
         {

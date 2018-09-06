@@ -188,8 +188,8 @@ Scenario: Projects_CreateUserScheduledProject
 	When User navigate to "Values" page
 	And User clicks "Add Value" button
 	When User create new Value
-	| Name          | ReadinessIndex | TaskStatusString | DefaultValue |
-	| TestValueName | 3              | Open             | false        |
+	| Name          | TaskStatusString | DefaultValue |
+	| TestValueName | Open             | false        |
 	And User clicks "Save Value" button
 	And User navigate to "Emails" page
 	And User clicks "Add Email" button
@@ -216,8 +216,8 @@ Scenario: Projects_CreateUserScheduledProject
 	When User navigate to "Values" page
 	And User clicks "Add Value" button
 	When User create new Value
-	| Name          | ReadinessIndex | TaskStatusString | DefaultValue |
-	| TestValueName | 9              | Closed           | false        |
+	| Name          | TaskStatusString | DefaultValue |
+	| TestValueName | Closed           | false        |
 	And User clicks "Save Value" button
 	And User clicks "« Go Back to Tasks" button
 	Then created Task is displayed in the table
@@ -236,8 +236,8 @@ Scenario: Projects_CreateUserScheduledProject
 	When User navigate to "Values" page
 	And User clicks "Add Value" button
 	When User create new Value
-	| Name          | ReadinessIndex | TaskStatusString | DefaultValue |
-	| TestValueName | 8              | Closed           | false        |
+	| Name          | TaskStatusString | DefaultValue |
+	| TestValueName | Closed           | false        |
 	And User clicks "Save Value" button
 	And User navigate to "Emails" page
 	And User clicks "Add Email" button
@@ -332,8 +332,8 @@ Scenario: Projects_CreateUserScheduledProject
 	| true       | DoNotShow          | true          | false        | false              | false                  | false                | 100          | 10           | UserScheduledProject |
 	When User navigate to "Department and Location" page on Self Service tab
 	And User updates the Department and Location page on Self Service tab
-	| ShowScreen | ShowDepartmentFullPath | ShowLocationFullPath | AllowUsersToAddANote | Department | DepartmentDoNotPush | DepartmentPushToOwned | DepartmentPushToAll | Location | LocationDoNotPush | LocationPushToOwned | LocationPushToAll | DepartmentFeed | HrLocationFeed | ManualLocationFeed | HistoricLocationFeed |
-	| true       | false                  | false                | false                | false      | false               | false                 | false               | true     | true              | false               | false             | true           | false          | true               | false                |
+	| ShowScreen | ShowDepartmentFullPath | ShowLocationFullPath | AllowUsersToAddANote | Department | DepartmentDoNotPush | DepartmentPushToOwned | DepartmentPushToAll | Location | LocationDoNotPush | LocationPushToOwned | LocationPushToAll |
+	| true       | false                  | false                | false                | false      | false               | false                 | false               | false    | false             | false               | false             |
 	Then Success message is displayed with "Self Service Screen successfully updated" text
 	When User navigate to "Apps List" page on Self Service tab
 	And User updates the Apps List page on Self Service tab

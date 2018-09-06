@@ -748,13 +748,14 @@ Scenario Outline: EvergreenJnr_AllLists_CheckThatHyperlinkForKeyColumnsIsRedirec
 	| <Column>   |
 	When User click content from "<Column>" column
 	Then Details object page is displayed to the user
+	And URL is "<URLpart>"
 
 Examples:
-	| PageName     | Column          |
-	| Devices      | Device Key      |
-	| Users        | User Key        |
-	| Applications | Application Key |
-	| Mailboxes    | Mailbox Key     |
+	| PageName     | Column          | URLpart                      |
+	| Devices      | Device Key      | evergreen/#/device/9141      |
+	| Users        | User Key        | evergreen/#/user/71622       |
+	| Applications | Application Key | evergreen/#/application/4249 |
+	| Mailboxes    | Mailbox Key     | evergreen/#/mailbox/49258    |
 
 @Evergreen @Applications @EvergreenJnr_ItemDetails @ItemDetailsDisplay @DAS12805
 Scenario: EvergreenJnr_ApplicationsList_CheckThatUsersAndDevicesDistributionListsDoNotIncludeUnknownValues
