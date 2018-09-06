@@ -192,9 +192,9 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_GridActions
             TechTalk.SpecFlow.Table table5 = new TechTalk.SpecFlow.Table(new string[] {
                         "ColumnName"});
             table5.AddRow(new string[] {
-                        "Boot Up Date"});
-            table5.AddRow(new string[] {
                         "Hostname"});
+            table5.AddRow(new string[] {
+                        "Boot Up Date"});
             table5.AddRow(new string[] {
                         "Device Type"});
             table5.AddRow(new string[] {
@@ -215,9 +215,9 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_GridActions
             TechTalk.SpecFlow.Table table7 = new TechTalk.SpecFlow.Table(new string[] {
                         "ColumnName"});
             table7.AddRow(new string[] {
-                        "Boot Up Date"});
-            table7.AddRow(new string[] {
                         "Hostname"});
+            table7.AddRow(new string[] {
+                        "Boot Up Date"});
             table7.AddRow(new string[] {
                         "Device Type"});
             table7.AddRow(new string[] {
