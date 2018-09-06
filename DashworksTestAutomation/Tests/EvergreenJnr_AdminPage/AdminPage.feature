@@ -3531,7 +3531,7 @@ Scenario: EvergreenJnr_AdminPage_ChecksThatProjectNameWhichStartsWithLowerCaseLe
 	When User selects "History" tab on the Project details page
 	Then onboarded objects are displayed in the dropdown
 
-@Evergreen @Admin @EvergreenJnr_AdminPage @AdminPage @DAS12755 @Delete_Newly_Created_Project
+@Evergreen @Admin @EvergreenJnr_AdminPage @AdminPage @DAS12755 @DAS12763 @Delete_Newly_Created_Project
 Scenario: EvergreenJnr_AdminPage_CheckThatRelatedBucketsAreUpdatedAfterCreatingOrDeletingProject
 	When User clicks Admin on the left-hand menu
 	Then Admin page should be displayed to the user
@@ -3689,3 +3689,94 @@ Scenario: EvergreenJnr_AdminPage_CheckThatSelectedBucketsIsDisplayedForOnboarded
 	| Items                                 |
 	| 003F5D8E1A844B1FAA5 (Hunter, Melanie) |
 	And "UsersProject3Group" content is displayed in "Bucket" column
+
+@Evergreen @Admin @EvergreenJnr_AdminPage @AdminPage @DAS12763 @Delete_Newly_Created_Project @Delete_Newly_Created_Bucket
+Scenario: EvergreenJnr_AdminPage_CheckDisplayingBucketsAfterCreationProjectsWithDifferentOptions
+	When User clicks Admin on the left-hand menu
+	Then Admin page should be displayed to the user
+	When User clicks "Buckets" link on the Admin page
+	Then "Buckets" page should be displayed to the user
+	When User clicks the "CREATE BUCKET" Action button
+	Then "Create Bucket" page should be displayed to the user
+	When User enters "1Bucket12763" in the Bucket Name field
+	And User selects "Team 1045" team in the Team dropdown on the Buckets page
+	And User clicks Create button on the Create Bucket page
+	Then Success message is displayed and contains "The bucket has been created" text
+	When User enters "1Bucket12763" text in the Search field for "Bucket" column
+	And User clicks content from "Bucket" column
+	When User clicks the "ADD DEVICE" Action button
+	And User adds following Objects from list
+	| Objects         |
+	| 0405FHJHVG45U71 |
+	| 2A6FHO2JSIMNAQ  |
+	| 4AII611FFHAZXWG |
+	Then Success message is displayed and contains "The selected devices have been added to the selected bucket" text
+	When User click on Back button
+	When User clicks the "CREATE BUCKET" Action button
+	Then "Create Bucket" page should be displayed to the user
+	When User enters "2Bucket12763" in the Bucket Name field
+	And User selects "Team 1045" team in the Team dropdown on the Buckets page
+	And User clicks Create button on the Create Bucket page
+	Then Success message is displayed and contains "The bucket has been created" text
+	When User enters "2Bucket12763" text in the Search field for "Bucket" column
+	And User clicks content from "Bucket" column
+	When User clicks the "ADD DEVICE" Action button
+	And User adds following Objects from list
+	| Objects         |
+	| 1ONC8ASZBNVUHC  |
+	| 329YFQ9EYZASK5  |
+	| 4U31ASACVADPDIF |
+	Then Success message is displayed and contains "The selected devices have been added to the selected bucket" text
+	When User click on Back button
+	When User clicks "Projects" link on the Admin page
+	Then "Projects" page should be displayed to the user
+	When User clicks the "CREATE PROJECT" Action button
+	Then "Create Project" page should be displayed to the user
+	When User enters "1Project12763" in the Project Name field
+	And User selects "All Devices" in the Scope Project dropdown
+	And User clicks Create button on the Create Project page
+	Then Success message is displayed and contains "Your project has been created" text
+	When User clicks "Buckets" link on the Admin page
+	Then "Buckets" page should be displayed to the user
+	When User clicks Reset Filters button on the Admin page
+	When User clicks String Filter button for "Project" column on the Admin page
+	When User clicks "Select All" checkbox from String Filter on the Admin page
+	When User clicks String Filter button for "Project" column on the Admin page
+	When User selects "1Project12763" checkbox from String Filter on the Admin page
+	Then "Unassigned" text is displayed in the table content
+	When User clicks "Projects" link on the Admin page
+	Then "Projects" page should be displayed to the user
+	When User clicks the "CREATE PROJECT" Action button
+	Then "Create Project" page should be displayed to the user
+	When User enters "2Project12763" in the Project Name field
+	And User selects "All Devices" in the Scope Project dropdown
+	When User selects "Clone evergreen buckets to project buckets" in the Buckets Project dropdown
+	And User clicks Create button on the Create Project page
+	Then Success message is displayed and contains "Your project has been created" text
+	When User clicks "Buckets" link on the Admin page
+	Then "Buckets" page should be displayed to the user
+	When User clicks Reset Filters button on the Admin page
+	When User clicks String Filter button for "Project" column on the Admin page
+	When User clicks "Select All" checkbox from String Filter on the Admin page
+	When User clicks String Filter button for "Project" column on the Admin page
+	When User selects "2Project12763" checkbox from String Filter on the Admin page
+	Then Counter shows "3" found rows
+	Then "Unassigned" text is displayed in the table content
+	Then "1Bucket12763" text is displayed in the table content
+	Then "2Bucket12763" text is displayed in the table content
+	When User clicks "Projects" link on the Admin page
+	Then "Projects" page should be displayed to the user
+	When User clicks the "CREATE PROJECT" Action button
+	Then "Create Project" page should be displayed to the user
+	When User enters "3Project12763" in the Project Name field
+	And User selects "All Devices" in the Scope Project dropdown
+	When User selects "Use evergreen buckets" in the Buckets Project dropdown
+	And User clicks Create button on the Create Project page
+	Then Success message is displayed and contains "Your project has been created" text
+	When User clicks "Buckets" link on the Admin page
+	Then "Buckets" page should be displayed to the user
+	When User clicks Reset Filters button on the Admin page
+	When User clicks String Filter button for "Project" column on the Admin page
+	When User clicks "Select All" checkbox from String Filter on the Admin page
+	When User clicks String Filter button for "Project" column on the Admin page
+	Then "3Project12763" is not displayed in the filter dropdown
