@@ -15,6 +15,19 @@ namespace DashworksTestAutomation.Base
 
         public RemoteWebDriver CreateBrowserDriver()
         {
+            try
+            {
+                return CreateDriver();
+            }
+            //Just retry when node was busy
+            catch (AggregateException)
+            {
+                return CreateDriver();
+            }
+        }
+
+        private RemoteWebDriver CreateDriver()
+        {
             switch (Browser.RemoteDriver)
             {
                 case "local":
