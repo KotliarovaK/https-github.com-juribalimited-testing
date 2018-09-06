@@ -104,6 +104,16 @@ namespace DashworksTestAutomation.Pages.Evergreen
                 By.XPath($".//div[@class='ng-star-inserted']//td[@class='fld-label']//span[text()='{fieldName}']"));
         }
 
+        public IWebElement GetCellByTextFromKeyValueGrid(string text)
+        {
+            return Driver.FindElement(By.XPath($".//tbody/*/td/*/span[text()='{text}']"));
+        }
+
+        public string GetSelectedText()
+        {
+            return ((IJavaScriptExecutor)Driver).ExecuteScript("return window.getSelection().toString()").ToString();
+        }
+
         public void ExpandAllSections()
         {
             Driver.WaitWhileControlIsNotDisplayed(
