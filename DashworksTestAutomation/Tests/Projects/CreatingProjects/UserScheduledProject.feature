@@ -10,8 +10,8 @@ Scenario: Projects_CreateUserScheduledProject
 	When User clicks create Project button
 	Then "Create Project" page is displayed to the user
 	When User creates Project
-	| ProjectName              | ProjectShortName | ProjectDescription | ProjectTypeString    |
-	| 000 UserScheduledProject | TestText         | TestText           | UserScheduledProject |
+	| ProjectName              | ProjectShortName | ProjectDescription   | ProjectTypeString    |
+	| 000 UserScheduledProject | User             | UserScheduledProject | UserScheduledProject |
 	Then Error message is not displayed
 	When User clicks "Create Project" button
 	Then Error message is not displayed
@@ -43,7 +43,7 @@ Scenario: Projects_CreateUserScheduledProject
 	And "Manage Project Details" page is displayed to the user
 	And Project Name is displayed correctly
 	When User updates the Details page
-	| ShowOriginalColumn | IncludeSiteName | NotApplicableApplications | InstalledApplications | EntitledApplications |TaskEmailCcEmailAddress | TaskEmailBccEmailAddress | StartDate  | EndDate     |
+	| ShowOriginalColumn | IncludeSiteName | NotApplicableApplications | InstalledApplications | EntitledApplications | TaskEmailCcEmailAddress | TaskEmailBccEmailAddress | StartDate  | EndDate     |
 	| true               | true            | true                      | true                  | true                 | Test@test.com           | Test@test.com            | 8 May 2012 | 10 Apr 2018 |
 	Then Success message is displayed with "Project was successfully updated" text
 		#Creating Request Types
@@ -115,12 +115,27 @@ Scenario: Projects_CreateUserScheduledProject
 	Then Success message is displayed with "Request Type successfully updated" text
 	When User clicks "Cancel" button
 	Then created Request Type is a Default
+		#Creating Category
 	When User navigate to "Categories" tab
 	Then "Manage Categories" page is displayed to the user
 	When User clicks "Create Category" button
 	And User create Category
-	| Name             | Description          | ObjectTypeString |
-	| TestCategoryName | UserScheduledProject | User             |
+	| Name              | Description          | ObjectTypeString |
+	| Computer Category | UserScheduledProject | Computer         |
+	Then Success message is displayed with "Category successfully created." text
+	When User clicks "« Go Back" button
+	Then created Category is displayed in the table
+	When User clicks "Create Category" button
+	And User create Category
+	| Name          | Description          | ObjectTypeString |
+	| User Category | UserScheduledProject | User             |
+	Then Success message is displayed with "Category successfully created." text
+	When User clicks "« Go Back" button
+	Then created Category is displayed in the table
+	When User clicks "Create Category" button
+	And User create Category
+	| Name                 | Description          | ObjectTypeString |
+	| Application Category | UserScheduledProject | Application      |
 	Then Success message is displayed with "Category successfully created." text
 	When User clicks "« Go Back" button
 	Then created Category is displayed in the table
@@ -156,7 +171,7 @@ Scenario: Projects_CreateUserScheduledProject
 	| Name                 | Description          | SubjectLine | BodyText |
 	| TestMailTemplateName | UserScheduledProject | TestText    | TestText |
 	Then Success message is displayed with "Mail Template successfully created." text
-		#Creating Tasks 
+		#Creating Tasks 1
 	When User navigate to "Tasks" tab
 	Then "Manage Tasks" page is displayed to the user
 	When User clicks "Create Task" button
@@ -173,8 +188,8 @@ Scenario: Projects_CreateUserScheduledProject
 	When User navigate to "Values" page
 	And User clicks "Add Value" button
 	When User create new Value
-	| Name          | ReadinessString | TaskStatusString | DefaultValue |
-	| TestValueName | Red             | Open             | false        |
+	| Name          | TaskStatusString | DefaultValue |
+	| TestValueName | Open             | false        |
 	And User clicks "Save Value" button
 	And User navigate to "Emails" page
 	And User clicks "Add Email" button
@@ -187,6 +202,7 @@ Scenario: Projects_CreateUserScheduledProject
 	Then created Email is displayed in the table
 	When User clicks "« Go Back to Tasks" button
 	Then created Task is displayed in the table
+		#Creating Tasks 2
 	When User clicks "Create Task" button
 	And User create Task
 	| Name          | Help                 | StagesNameString | TaskTypeString | ValueTypeString | ObjectTypeString | TaskValuesTemplateString | ApplyToAllCheckbox |
@@ -200,11 +216,12 @@ Scenario: Projects_CreateUserScheduledProject
 	When User navigate to "Values" page
 	And User clicks "Add Value" button
 	When User create new Value
-	| Name          | ReadinessString | TaskStatusString | DefaultValue |
-	| TestValueName | Grey            | Closed           | false        |
+	| Name          | TaskStatusString | DefaultValue |
+	| TestValueName | Closed           | false        |
 	And User clicks "Save Value" button
 	And User clicks "« Go Back to Tasks" button
 	Then created Task is displayed in the table
+		#Creating Tasks 3
 	When User clicks "Create Task" button
 	And User create Task
 	| Name          | Help                 | StagesNameString | TaskTypeString | ValueTypeString | ObjectTypeString | TaskValuesTemplateString | ApplyToAllCheckbox |
@@ -219,8 +236,8 @@ Scenario: Projects_CreateUserScheduledProject
 	When User navigate to "Values" page
 	And User clicks "Add Value" button
 	When User create new Value
-	| Name          | ReadinessString | TaskStatusString | DefaultValue |
-	| TestValueName | Grey            | Closed           | false        |
+	| Name          | TaskStatusString | DefaultValue |
+	| TestValueName | Closed           | false        |
 	And User clicks "Save Value" button
 	And User navigate to "Emails" page
 	And User clicks "Add Email" button
@@ -241,8 +258,9 @@ Scenario: Projects_CreateUserScheduledProject
 	| TeamName                      | ShortDescription |
 	| 000 UserScheduledProject Team | TestText 0       |
 	And User clicks "Add Member" button
+	And User select user with "Admin" name to add as member
+	And User clicks "Add Member" button
 	And User select "1" user to add as member
-	And User clicks "Add Selected" button
 	And User clicks "Cancel" button
 	Then created Team is displayed in the table
 	And "2" number of Members is displayed for created Team
@@ -250,9 +268,10 @@ Scenario: Projects_CreateUserScheduledProject
 	And User create Team
 	| TeamName                      | ShortDescription |
 	| 001 UserScheduledProject Team | TestText 1       |
-	When User clicks "Add Member" button
+	And User clicks "Add Member" button
+	And User select user with "Admin" name to add as member
+	And User clicks "Add Member" button
 	And User select "2" user to add as member
-	And User clicks "Add Selected" button
 	And User clicks "Cancel" button
 	Then created Team is displayed in the table
 	And "2" number of Members is displayed for created Team
@@ -261,8 +280,9 @@ Scenario: Projects_CreateUserScheduledProject
 	| TeamName                      | ShortDescription |
 	| 002 UserScheduledProject Team | TestText 2       |
 	And User clicks "Add Member" button
+	And User select user with "Admin" name to add as member
+	And User clicks "Add Member" button
 	And User select "3" user to add as member
-	And User clicks "Add Selected" button
 	And User clicks "Cancel" button
 	Then created Team is displayed in the table
 	And "2" number of Members is displayed for created Team
@@ -298,33 +318,32 @@ Scenario: Projects_CreateUserScheduledProject
 	When User navigate to "Self Service" tab
 	Then "Manage Self Service" page is displayed to the user
 	When User updates the Details page on Self Service tab
-	| EnableSelfServicePortal | AllowAnonymousUsers | ThisProjectDefault | NoLink | DashworksProjectHomepage | CustomUrl | CustomUrlTextFiald |
-	| false                   | false               | true               | false  | false                    | true      | http://Test        |
+	| EnableSelfServicePortal | AllowAnonymousUsers | ThisProjectDefault | Mode1 | Mode2 | BaseUrl | NoLink | DashworksProjectHomepage | CustomUrl | CustomUrlTextField    |
+	| false                   | false               | true               | false | true  |         | false  | false                    | true      | http://www.juriba.com |
 	Then Success message is displayed with "Details successfully updated." text
 	When User navigate to "Welcome" page on Self Service tab
 	And User updates the Welcome page on Self Service tab
-	| AllowToSearchForAnotherUser | AllowToChangeLanguage | ShowProjectSelector | ShowMoreDetailsLink | PageDescription | ProjectName          |
-	| true                        | false                 | false               | true                | TestText        | UserScheduledProject |
+	| AllowUsersToSearch | AllowToChangeLanguage | ShowProjectSelector | ShowObjectDetails | ShowMoreDetailsLink | PageDescription | ProjectName          |
+	| true               | false                 | false               |                   | true                | TestText        | UserScheduledProject |
 	Then Success message is displayed with "Self Service Screen successfully updated" text
 	When User navigate to "Computer Ownership" page on Self Service tab
 	When User updates the Ownership page on Self Service tab
-	| ShowScreen | ShowComputers | ShowCategory | AllowUsersToSearch | AllowUsersToSetPrimary | AllowUsersToAddANote | LimitMaximum | LimitMinimum | PageDescription      |
-	| true       | true          | false        | false              | false                  | false                | 100          | 10           | UserScheduledProject |
-	Then Success message is displayed with "Self Service Screen successfully updated" text
+	| ShowScreen | NamefromHttpString | ShowComputers | ShowCategory | AllowUsersToSearch | AllowUsersToSetPrimary | AllowUsersToAddANote | LimitMaximum | LimitMinimum | PageDescription      |
+	| true       | DoNotShow          | true          | false        | false              | false                  | false                | 100          | 10           | UserScheduledProject |
 	When User navigate to "Department and Location" page on Self Service tab
 	And User updates the Department and Location page on Self Service tab
-	| ShowScreen | ShowDepartmentFullPath | ShowLocationFullPath | AllowUsersToAddANote | Department | DepartmentDoNotPush | DepartmentPushToOwned | DepartmentPushToAll | Location | LocationDoNotPush | LocationPushToOwned | LocationPushToAll | DepartmentFeed | HrLocationFeed | ManualLocationFeed | HistoricLocationFeed |
-	| true       | false                  | false                | false                | false      | false               | false                 | false               | true     | true              | false               | false             | true           | false          | true               | false                |
+	| ShowScreen | ShowDepartmentFullPath | ShowLocationFullPath | AllowUsersToAddANote | Department | DepartmentDoNotPush | DepartmentPushToOwned | DepartmentPushToAll | Location | LocationDoNotPush | LocationPushToOwned | LocationPushToAll |
+	| true       | false                  | false                | false                | false      | false               | false                 | false               | false    | false             | false               | false             |
 	Then Success message is displayed with "Self Service Screen successfully updated" text
 	When User navigate to "Apps List" page on Self Service tab
 	And User updates the Apps List page on Self Service tab
-	| ShowThisScreen | ShowCoreApps | ShowTargetStateReadiness | ShowRequiredColumnAndSticky | ShowOnlyApplication | AllowUsersToAddANote | PageDescription      |
-	| true           | true         | true                     | true                        | true                | true                 | UserScheduledProject |
+	| ShowThisScreen | ShowCoreApps | ShowTargetStateReadiness | ShowRequiredColumnAndSticky | ShowOnlyApplication | AllowUsersToAddANote | PageDescription      | ViewString         |
+	| true           | true         | true                     | true                        | true                | true                 | UserScheduledProject | ComparisonExpanded |
 	Then Success message is displayed with "Self Service Screen successfully updated" text
 	When User navigate to "Project Date" page on Self Service tab
 	And User updates the Project Date page on Self Service tab
-	| AllowUsersToAddANote | MinimumHours | MaximumHours | PageDescription      |
-	| true                 | 10           | 100          | UserScheduledProject |
+	| ShowScreen | ShowComputerNameString | AllowUsersToAddANote | MinimumHours | MaximumHours | PageDescription      |
+	| true       | DoNotShow              | true                 | 10           | 100          | UserScheduledProject |
 	Then Success message is displayed with "Self Service Screen successfully updated" text
 	When User navigate to "Other Options 1" page on Self Service tab
 	And User updates the first Other Options page on Self Service tab

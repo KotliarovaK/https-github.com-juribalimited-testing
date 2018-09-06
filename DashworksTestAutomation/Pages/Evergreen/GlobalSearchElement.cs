@@ -14,10 +14,10 @@ namespace DashworksTestAutomation.Pages.Evergreen
         [FindsBy(How = How.XPath, Using = ".//div[contains(@class, 'result-table')]")]
         public IWebElement SearchResults { get; set; }
 
-        [FindsBy(How = How.XPath, Using = ".//div[@class='ag-body-viewport']")]
+        [FindsBy(How = How.XPath, Using = ".//div[contains(@class, 'ag-body-viewport')]")]
         public IWebElement TableOfSearchResults { get; set; }
 
-        [FindsBy(How = How.XPath, Using = ".//div[@class='ag-body-container']/div")]
+        [FindsBy(How = How.XPath, Using = ".//div[contains(@class, 'ag-body-container')]/div")]
         public IWebElement TableContent { get; set; }
 
         [FindsBy(How = How.XPath, Using = ".//span[contains(@class, 'no-result')]")]
@@ -26,8 +26,8 @@ namespace DashworksTestAutomation.Pages.Evergreen
         [FindsBy(How = How.XPath, Using = ".//span[@class='ng-star-inserted']")]
         public IWebElement ResultsRowsCount { get; set; }
 
-        [FindsBy(How = How.XPath, Using = ".//button[@class='btn input-toggle mat-icon-button ng-star-inserted']")]
-        public IWebElement SearchTextboxResetButton { get; set; }
+        [FindsBy(How = How.XPath, Using = ".//button[contains(@class, 'btn input-toggle mat-icon-button ')]")]
+        public IWebElement GlobalSearchTextboxResetButton { get; set; }
 
         public override List<By> GetPageIdentitySelectors()
         {

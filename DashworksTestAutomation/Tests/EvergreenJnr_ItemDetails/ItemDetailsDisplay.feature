@@ -12,6 +12,7 @@ Scenario: EvergreenJnr_MailboxesList_CheckThat404ErrorIsNotDisplayedOccurringWhe
 	Then "Mailboxes" list should be displayed to the user
 	When User perform search by "alex.cristea@juriba.com"
 	And User click content from "Email Address" column
+	When User closes "Mailbox" section on the Details Page
 	Then "No mailbox owner found for this mailbox" text is displayed for "Mailbox Owner" section
 
 @Evergreen @AllLists @EvergreenJnr_ItemDetails @ItemDetailsDisplay @DAS11478 @DAS11477 @DAS11476 @DAS11510 @API
@@ -118,6 +119,7 @@ Scenario Outline: EvergreenJnr_AllLists_CheckThatDataIsDisplayedAfterAddingColum
 	And User clicks Column button on the Column Settings panel
 	And User select "Device" checkbox on the Column Settings panel
 	And User select "Installed" checkbox on the Column Settings panel
+	And User select "Owner Display Name" checkbox on the Column Settings panel
 	And User select "<CheckboxName>" checkbox on the Column Settings panel
 	And User clicks Column button on the Column Settings panel
 	Then following columns added to the table:
@@ -406,15 +408,24 @@ Scenario: EvergreenJnr_DevicesList_CheckThatOpenedSectionIsDisplayedCorrectlyOnT
 	And User navigates to the "Applications" tab
 	When User closes "Application Summary" section on the Details Page
 	And User opens "Application Detail" section on the Details Page
+	Then "Microsoft Internet Explorer 6.0 MUI Pack (Greek) - Menus and Dialogs" content is displayed in "Application" column
+	Then "Advert - A0129C4E" content is displayed in "Advertisement" column
 	Then "14" rows found label displays on Details Page
+	And table content is present
 	And section is loaded correctly
 	When User closes "Application Detail" section on the Details Page
 	And User opens "Advertisements" section on the Details Page
+	Then "Advert - A0121431" content is displayed in "Advertisement" column
+	Then "Hewlett-Packard" content is displayed in "Manufacturer" column
 	Then "7" rows found label displays on Details Page
+	And table content is present
 	And section is loaded correctly
 	When User closes "Advertisements" section on the Details Page
 	And User opens "Collections" section on the Details Page
+	Then "Collection A01131CA" content is displayed in "Collection" column
+	Then "A01 SMS (Spoof)" content is displayed in "Source" column
 	Then "7" rows found label displays on Details Page
+	And table content is present
 	And section is loaded correctly
 
 @Evergreen @Devices @EvergreenJnr_ItemDetails @ItemDetailsDisplay @DAS12253
@@ -425,8 +436,10 @@ Scenario: EvergreenJnr_DevicesList_CheckThePossibilityToRecheckingTheWorkflowCol
 	And User navigates to the "Projects" tab
 	And User opens "Device Projects" section on the Details Page
 	And User clicks String Filter button for "Workflow" column
-	And User clicks "(Blanks)" checkbox from String Filter on the Details Page
-	And User clicks "(Blanks)" checkbox from String Filter on the Details Page
+	When User selects "(Blanks)" checkbox from String Filter on the Details Page
+	And User clicks String Filter button for "Workflow" column
+	When User selects "(Blanks)" checkbox from String Filter on the Details Page
+	And User clicks String Filter button for "Workflow" column
 	Then "(Blanks)" checkbox is checked on the Details Page
 
 @Evergreen @Devices @EvergreenJnr_ItemDetails @ItemDetailsDisplay @DAS12283
@@ -444,6 +457,16 @@ Scenario: EvergreenJnr_DevicesList_CheckThatOneUnknownFilterValueIsShownInGroupD
 	| Unknown |
 	When User clicks "True" checkbox from String Filter on the Details Page
 	Then Content is present in the table on the Details Page
+	When User clicks Reset Filters button on the Details Page
+	And User enters "wheelern" text in the Search field for "Username" column on the Details Page
+	Then "1" rows found label displays on Details Page
+	When User clicks Reset Filters button on the Details Page
+	And User enters "Administrator" text in the Search field for "Display Name" column on the Details Page
+	Then "1" rows found label displays on Details Page
+	When User clicks Reset Filters button on the Details Page
+	And User clicks String Filter button for "Domain" column
+	When User selects "DWLABS" checkbox from String Filter on the Details Page
+	Then "0" rows found label displays on Details Page
 
 @Evergreen @Mailboxes @EvergreenJnr_ItemDetails @ItemDetailsDisplay @DAS12245 @DAS12321
 Scenario: EvergreenJnr_MailboxesList_CheckThatListLoadedCorrectlyAndNoConsoleErrorIsNotDisplayed
@@ -469,11 +492,46 @@ Scenario: EvergreenJnr_DevicesList_CheckThatAllTextIsDisplayedAfterClearingFilte
 	When User click content from "Hostname" column
 	And User navigates to the "Applications" tab
 	Then All text is displayed for "Compliance" column in the String Filter
-	When  User clicks String Filter button for "Compliance" column
+	When User clicks String Filter button for "Compliance" column
 	And User clicks "Red" checkbox from String Filter on the Details Page
 	Then All text is not displayed for "Compliance" column in the String Filter
 	When User clicks Reset Filters button on the Details Page
 	Then All text is displayed for "Compliance" column in the String Filter
+	When User enters "Microsoft" text in the Search field for "Application" column on the Details Page
+	Then "3" rows found label displays on Details Page
+	When User clicks Reset Filters button on the Details Page
+	When User enters "33" text in the Search field for "Version" column on the Details Page
+	Then "1" rows found label displays on Details Page
+	When User clicks Reset Filters button on the Details Page
+	When User enters "Adobe" text in the Search field for "Vendor" column on the Details Page
+	Then "1" rows found label displays on Details Page
+	When User clicks Reset Filters button on the Details Page
+	When User enters "12" text in the Search field for "Used By Count" column on the Details Page
+	Then "0" rows found label displays on Details Page
+	When User clicks Reset Filters button on the Details Page
+	When User enters "5" text in the Search field for "Launch Count" column on the Details Page
+	Then "0" rows found label displays on Details Page
+	When User clicks Reset Filters button on the Details Page
+	And User clicks String Filter button for "Installed" column
+	When User clicks "False" checkbox from String Filter on the Details Page
+	Then "7" rows found label displays on Details Page
+	When User clicks Reset Filters button on the Details Page
+	And User clicks String Filter button for "Used" column
+	When User clicks "Unknown" checkbox from String Filter on the Details Page
+	Then "0" rows found label displays on Details Page
+	When User clicks Reset Filters button on the Details Page
+	And User clicks String Filter button for "Entitled" column
+	When User clicks "True" checkbox from String Filter on the Details Page
+	Then "0" rows found label displays on Details Page
+	When User clicks Reset Filters button on the Details Page
+	And User clicks String Filter button for "Site" column
+	When User selects "TierA Site01" checkbox from String Filter on the Details Page
+	Then "0" rows found label displays on Details Page
+	When User clicks Reset Filters button on the Details Page
+	When User selects following date filter on the Details Page
+	| FilterData |
+	| 7302017    |
+	Then "0" rows found label displays on Details Page
 
 @Evergreen @Mailboxes @EvergreenJnr_ItemDetails @ItemDetailsDisplay @DAS12088 @DAS12321
 Scenario: EvergreenJnr_MailboxesList_CheckThatMailboxPermissionsAndFolderPermissionsDataAreDisplayedCorrectly
@@ -500,6 +558,14 @@ Scenario Outline: EvergreenJnr_AllLists_CheckThatDropdownListsInTheProjectDetail
 	And User navigates to the "<TabName>" tab
 	And User opens "<SectionName>" section on the Details Page
 	Then "<CountRows>" rows found label displays on Details Page
+	When User clicks String Filter button for "Project" column
+	Then Dropdown List is displayed correctly in the Filter on the Details Page
+	When User clicks String Filter button for "Workflow" column
+	Then Dropdown List is displayed correctly in the Filter on the Details Page
+	When User clicks String Filter button for "Status" column
+	Then Dropdown List is displayed correctly in the Filter on the Details Page
+	When User clicks String Filter button for "Readiness" column
+	Then Dropdown List is displayed correctly in the Filter on the Details Page
 	When User clicks String Filter button for "Project Type" column
 	Then Dropdown List is displayed correctly in the Filter on the Details Page
 	When User clicks String Filter button for "Category" column
@@ -509,8 +575,8 @@ Scenario Outline: EvergreenJnr_AllLists_CheckThatDropdownListsInTheProjectDetail
 
 Examples:
 	| PageName | SearchTerm                                      | ColumnName | TabName  | SectionName           | CountRows |
-	| Devices  | 001BAQXT6JWFPI                                  | Hostname   | Projects | Device Projects       | 4         |
-	| Devices  | 001BAQXT6JWFPI                                  | Hostname   | Projects | Device Owner Projects | 4         |
+	| Devices  | 001BAQXT6JWFPI                                  | Hostname   | Projects | Device Projects       | 5         |
+	| Devices  | 001BAQXT6JWFPI                                  | Hostname   | Projects | Device Owner Projects | 5         |
 	| Users    | Loya\, Dan.Employees.Birmingham.UK.bclabs.local | Username   | Projects | User Projects         | 1         |
 	| Users    | Loya\, Dan.Employees.Birmingham.UK.bclabs.local | Username   | Projects | Mailbox Projects      | 1         |
 
@@ -600,6 +666,34 @@ Scenario: EvergreenJnr_DevicesList_CheckThatLinksInDeviceDetailsAreRedirectedToT
 	And User clicks "Tricia G. Huang" link on the Details Page
 	Then Details object page is displayed to the user
 
+@Evergreen @ALlLists @EvergreenJnr_ItemDetails @ItemDetailsDisplay @DAS13341
+Scenario Outline: EvergreenJnr_AllLists_CheckThatTextInKeyValueGridsIsSelectableOnDetailsPage
+	When User clicks "<PageName>" on the left-hand menu
+	And User perform search by "<SearchTerm>"
+	And User click content from "<ColumnName>" column
+	And User navigates to the "<TabName>" tab
+	And User selects "<KeyToBeSelected>" text from key value grid on the Details Page
+	Then "<KeyToBeSelected>" text selected from key value grid on the Details Page
+	When User selects "<ValueToBeSelected>" text from key value grid on the Details Page
+	Then "<ValueToBeSelected>" text selected from key value grid on the Details Page
+
+Examples:
+	| PageName     | SearchTerm                       | ColumnName    | TabName       | KeyToBeSelected | ValueToBeSelected   |
+	| Devices      | 02C80G8RFTPA9E                   | Hostname      | Specification | Manufacturer    | FES0798481167       |
+	| Devices      | 05PFM2OWVCSCZ1                   | Hostname      | Details       | Hostname        | 05PFM2OWVCSCZ1      |
+	| Users        | 03714167684E45F7A8F              | Username      | Details       | Username        | 03714167684E45F7A8F |
+	| Applications | Adobe Acrobat Reader 5.0         | Application   | Details       | Vendor          | Adobe               |
+	| Mailboxes    | 06D7AE4F161F4A3AA7F@bclabs.local | Email Address | Details       | Alias           | 06D7AE4F161F4A3AA7F |
+
+@Evergreen @AllLists @EvergreenJnr_ItemDetails @ItemDetailsDisplay @DAS13341
+Scenario: EvergreenJnr_AllLists_CheckThatTextInKeyValueGridsIsSelectableOnGroupDetailsPage
+	When User type "NL00G001" in Global Search Field
+	Then User clicks on "NL00G001" search result
+	When User selects "Description" text from key value grid on the Details Page
+	Then "Description" text selected from key value grid on the Details Page
+	When User selects "Unknown" text from key value grid on the Details Page
+	Then "Unknown" text selected from key value grid on the Details Page
+
 @Evergreen @Mailboxes @EvergreenJnr_ItemDetails @ItemDetailsDisplay @DAS12690 @DAS12321
 Scenario: EvergreenJnr_MailboxesList_CheckThatLinksInMailboxDetailsAreRedirectedToTheRelevantUserDetailsPage
 	When User clicks "Mailboxes" on the left-hand menu
@@ -654,13 +748,40 @@ Scenario Outline: EvergreenJnr_AllLists_CheckThatHyperlinkForKeyColumnsIsRedirec
 	| <Column>   |
 	When User click content from "<Column>" column
 	Then Details object page is displayed to the user
+	And URL is "<URLpart>"
 
 Examples:
-	| PageName     | Column          |
-	| Devices      | Device Key      |
-	| Users        | User Key        |
-	| Applications | Application Key |
-	| Mailboxes    | Mailbox Key     |
+	| PageName     | Column          | URLpart                      |
+	| Devices      | Device Key      | evergreen/#/device/9141      |
+	| Users        | User Key        | evergreen/#/user/71622       |
+	| Applications | Application Key | evergreen/#/application/4249 |
+	| Mailboxes    | Mailbox Key     | evergreen/#/mailbox/49258    |
+
+@Evergreen @Applications @EvergreenJnr_ItemDetails @ItemDetailsDisplay @DAS12805
+Scenario: EvergreenJnr_ApplicationsList_CheckThatUsersAndDevicesDistributionListsDoNotIncludeUnknownValues
+	When User clicks "Applications" on the left-hand menu
+	Then "Applications" list should be displayed to the user
+	When User perform search by "Microsoft DirectX 5 DDK"
+	And User click content from "Application" column
+	And User navigates to the "Distribution" tab
+	And User clicks String Filter button for "Used" column
+	And User clicks "False" checkbox from String Filter on the Details Page
+	And User clicks "Unknown" checkbox from String Filter on the Details Page
+	And User closes Checkbox filter for "Used" column
+	And User have opened Column Settings for "Username" column in the Details Page table
+	And User have select "Sort descending" option from column settings on the Details Page
+	Then Content is present in the table on the Details Page
+	And Rows do not have unknown values
+	When User closes "Users" section on the Details Page
+	And User opens "Devices" section on the Details Page
+	And User clicks String Filter button for "Used" column
+	And User clicks "False" checkbox from String Filter on the Details Page
+	And User clicks "Unknown" checkbox from String Filter on the Details Page
+	And User closes Checkbox filter for "Used" column
+	And User have opened Column Settings for "Device" column in the Details Page table
+	And User have select "Sort descending" option from column settings on the Details Page
+	Then Content is present in the table on the Details Page
+	And Rows do not have unknown values
 
 @Evergreen @AdminPage @AllLists @EvergreenJnr_ItemDetails @ItemDetailsDisplay @DAS12883 @Not_Run
 Scenario: EvergreenJnr_AllLists_CheckThatPopupIsBiggerAndIsShownProperlyBucketIsChangedSuccessfully
@@ -729,3 +850,34 @@ Scenario: EvergreenJnr_AllLists_CheckThatPopupIsBiggerAndIsShownProperlyBucketIs
 	Then Evergreen Bucket link "Bucket12883" is displayed
 	Then There are no errors in the browser console
 	And Delete "Bucket12883" Bucket in the Administration
+
+@Evergreen @Applications @AllLists @EvergreenJnr_ItemDetails @ItemDetailsDisplay @DAS13180
+Scenario: EvergreenJnr_ApplicationsList_ChecksThatDevicesUsersUsedQuantityMatchEachOtherOnApplicationTabAndApplicationDistributionTab
+	When User clicks "Applications" on the left-hand menu
+	Then "Applications" list should be displayed to the user
+	When User clicks the Columns button
+	Then Columns panel is displayed to the user
+	When ColumnName is entered into the search box and the selection is clicked
+	| ColumnName          |
+	| Device Count (Used) |
+	| User Count (Used)   |
+	Then ColumnName is added to the list
+	| ColumnName          |
+	| Device Count (Used) |
+	| User Count (Used)   |
+	When User perform search by "Microsoft DirectX 5 DDK"
+	Then "99" content is displayed in "Device Count (Used)" column
+	And "98" content is displayed in "User Count (Used)" column
+	When User click content from "Application" column
+	And User navigates to the "Distribution" tab
+	And User clicks String Filter button for "Used" column
+	And User clicks "False" checkbox from String Filter on the Details Page
+	And User clicks "Unknown" checkbox from String Filter on the Details Page
+	And User closes Checkbox filter for "Used" column
+	Then "98" rows found label displays on Details Page
+	When User closes "Users" section on the Details Page
+	And User opens "Devices" section on the Details Page
+	And User clicks String Filter button for "Used" column
+	And User clicks "False" checkbox from String Filter on the Details Page
+	And User clicks "Unknown" checkbox from String Filter on the Details Page
+	Then "99" rows found label displays on Details Page

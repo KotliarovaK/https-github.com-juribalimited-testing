@@ -1,5 +1,6 @@
 ﻿using System.IO;
 using System.Linq;
+using System.Net.Mime;
 using System.Threading;
 using DashworksTestAutomation.DTO;
 using DashworksTestAutomation.Extensions;
@@ -63,6 +64,37 @@ namespace DashworksTestAutomation.Steps.Dashworks
             _userDto.Email = page.EmailField.GetAttribute("value");
         }
 
+        [Then(@"Change Password page is displayed to user")]
+        public void ThenChangePasswordPageIsDisplayedToUser()
+        {
+            var page = _driver.NowAt<ChangePasswordPage>();
+            Assert.IsTrue(page.CurrentPasswordField.Displayed(), "Change Password page is not displayed");
+        }
+
+        [When(@"User enters ""(.*)"" in the Current Password field")]
+        public void WhenUserEntersInTheCurrentPasswordField(string currentPassword)
+        {
+            var page = _driver.NowAt<ChangePasswordPage>();
+            page.CurrentPasswordField.Clear();
+            page.CurrentPasswordField.SendKeys(currentPassword);
+        }
+
+        [When(@"User enters ""(.*)"" in the New Password field")]
+        public void WhenUserEntersInTheNewPasswordField(string newPassword)
+        {
+            var page = _driver.NowAt<ChangePasswordPage>();
+            page.NewPassword.Clear();
+            page.NewPassword.SendKeys(newPassword);
+        }
+
+        [When(@"User enters ""(.*)"" in the Confirm Password field")]
+        public void WhenUserEntersInTheConfirmPasswordField(string confirmPassword)
+        {
+            var page = _driver.NowAt<ChangePasswordPage>();
+            page.ConfirmPasswordField.Clear();
+            page.ConfirmPasswordField.SendKeys(confirmPassword);
+        }
+
         [When(@"User navigates to the ""(.*)"" page on Account details")]
         public void WhenUserNavigatesToThePageOnAccountDetails(string pageToNavigate)
         {
@@ -77,11 +109,83 @@ namespace DashworksTestAutomation.Steps.Dashworks
             _driver.SelectCustomSelectbox(page.LanguageDropdown, language);
         }
 
+        [When(@"User changes List Page Size to ""(.*)""")]
+        public void WhenUserChangesListPageSizeTo(string size)
+        {
+            var page = _driver.NowAt<AdvancedPage>();
+            page.ListPageSizeField.ClearWithBackspaces();
+            page.ListPageSizeField.SendKeys(size);
+            page.BodyContainer.Click();
+        }
+
+        [When(@"User changes List Pages to Cache to ""(.*)""")]
+        public void WhenUserChangesListPagesToCacheTo(string size)
+        {
+            var page = _driver.NowAt<AdvancedPage>();
+            page.ListPagesToCache.ClearWithBackspaces();
+            page.ListPagesToCache.SendKeys(size);
+            page.BodyContainer.Click();
+        }
+
+        [Then(@"List Page Size is changed to ""(.*)""")]
+        public void ThenListPageSizeIsChangedTo(string size)
+        {
+            var page = _driver.NowAt<AdvancedPage>();
+            Assert.AreEqual(size, page.ListPageSizeField.GetAttribute("value"), "List Page Size is not changed");
+        }
+
+        [Then(@"List Pages to Cache is changed to ""(.*)""")]
+        public void ThenListPagesToCacheIsChangedTo(string size)
+        {
+            var page = _driver.NowAt<AdvancedPage>();
+            Assert.AreEqual(size, page.ListPagesToCache.GetAttribute("value"), "List Page Size is not changed");
+        }
+
+        [When(@"User changes Display Mode to ""(.*)""")]
+        public void WhenUserChangesDisplayModeTo(string displayMode)
+        {
+            var page = _driver.NowAt<PreferencesPage>();
+            page.ChangeDisplayMode(displayMode);
+        }
+
         [When(@"User clicks Update button on Preferences page")]
         public void WhenUserClicksUpdateButtonOnPreferencesPage()
         {
             var page = _driver.NowAt<PreferencesPage>();
             page.UpdateButton.Click();
+        }
+
+        [When(@"User clicks Update button on the Advanced page")]
+        public void WhenUserClicksUpdateButtonOnTheAdvancedPage()
+        {
+            var page = _driver.NowAt<AdvancedPage>();
+            page.UpdateButton.Click();
+        }
+
+        [When(@"User clicks Update button on the Change Password page")]
+        public void WhenUserClicksUpdateButtonOnTheChangePasswordPage()
+        {
+            var page = _driver.NowAt<ChangePasswordPage>();
+            _driver.WaitForDataLoading();
+            page.UpdateButton.Click();
+        }
+
+        [Then(@"page elements are translated into French")]
+        public void ThenPageElementsAreTranslatedIntoFrench()
+        {
+            var page = _driver.NowAt<PreferencesPage>();
+            Assert.IsTrue(page.LeftHandMenuOnFrench.Displayed(), "Left Hand Menu is not translated into French");
+            Assert.IsTrue(page.UpdateButtonOnFrench.Displayed(), "Update Button is not translated into French");
+            Assert.IsTrue(page.CaptionOnFrench.Displayed(), "Caption is not translated into French");
+        }
+
+        [Then(@"Display Mode is changed to High Contrast")]
+        public void ThenDisplayModeIsChangedToHighContrast()
+        {
+            var page = _driver.NowAt<PreferencesPage>();
+            Assert.AreEqual("rgba(21, 40, 69, 1)", page.GetSuccessMessageColor());
+            Assert.AreEqual("rgba(21, 40, 69, 1)", page.GetUpdateButtonColor());
+            Assert.AreEqual("rgba(21, 40, 69, 1)", page.GetLinkMenuColor());
         }
 
         [When(@"User changes Full Name to ""(.*)""")]
@@ -180,6 +284,33 @@ namespace DashworksTestAutomation.Steps.Dashworks
             var page = _driver.NowAt<AccountDetailsPage>();
             _driver.WaitWhileControlIsNotDisplayed<AccountDetailsPage>(() => page.SuccessMessage);
             Assert.AreEqual(text, page.SuccessMessage.Text, "Success Message is not displayed");
+            _driver.WaitForDataLoading();
+        }
+
+        [Then(@"Success message with ""(.*)"" text is displayed on the Change Password page")]
+        public void ThenSuccessMessageWithTextIsDisplayedOnTheChangePasswordPage(string text)
+        {
+            var page = _driver.NowAt<ChangePasswordPage>();
+            _driver.WaitWhileControlIsNotDisplayed<ChangePasswordPage>(() => page.SuccessMessage);
+            StringAssert.Contains(text, page.SuccessMessage.Text, "Success Message is not displayed");
+            Thread.Sleep(4000);
+        }
+
+        [Then(@"Error message with ""(.*)"" text is displayed on the Change Password page")]
+        public void ThenErrorMessageWithTextIsDisplayedOnTheChangePasswordPage(string text)
+        {
+            var page = _driver.NowAt<ChangePasswordPage>();
+            _driver.WaitWhileControlIsNotDisplayed<ChangePasswordPage>(() => page.ErrorMessage);
+            StringAssert.Contains(text, page.ErrorMessage.Text, "Error Message is not displayed");
+            Thread.Sleep(4000);
+        }
+
+        [Then(@"Success message with ""(.*)"" text is displayed on the Advanced page")]
+        public void ThenSuccessMessageWithTextIsDisplayedOnTheAdvancedPage(string text)
+        {
+            var page = _driver.NowAt<AdvancedPage>();
+            _driver.WaitWhileControlIsNotDisplayed<AdvancedPage>(() => page.SuccessMessage);
+            Assert.AreEqual(text, page.SuccessMessage.Text, "Success Message is not displayed");
         }
 
         [Then(@"User picture is changed to uploaded photo")]
@@ -237,8 +368,32 @@ namespace DashworksTestAutomation.Steps.Dashworks
                     : _userDto.Email);
                 page.RemoveButton.Click();
                 page.UpdateButton.Click();
+                var preferencesPage = _driver.NowAt<PreferencesPage>();
+                preferencesPage.PreferencesLink.Click();
+                preferencesPage.DisplayModeDropdown.Click();
+                preferencesPage.DisplayModeNormal.Click();
+                page.UpdateButton.Click();
             }
-            catch {}
+            catch
+            {}
+        }
+
+        [AfterScenario("Remove_Password_Changes")]
+        public void RemovePasswordChangesAfterscenario()
+        {
+            try
+            {
+                var page = _driver.NowAt<ChangePasswordPage>();
+                page.CurrentPasswordField.Clear();
+                page.CurrentPasswordField.SendKeys("test5846");
+                page.NewPassword.Clear();
+                page.NewPassword.SendKeys("m!gration");
+                page.ConfirmPasswordField.Clear();
+                page.ConfirmPasswordField.SendKeys("m!gration");
+                page.UpdateButton.Click();
+            }
+            catch
+            {}
         }
     }
 }

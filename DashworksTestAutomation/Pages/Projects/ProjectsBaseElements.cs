@@ -34,5 +34,12 @@ namespace DashworksTestAutomation.Pages.Projects
             Driver.WaitWhileControlIsNotDisplayed(selector);
             Driver.FindElement(selector).Click();
         }
+
+        public void SelectCheckboxByName(string checkboxName)
+        {
+            string selector = $"//td[text()='{checkboxName}']//following-sibling::td//input[@name='TaskId']";
+            Driver.WaitWhileControlIsNotDisplayed(By.XPath(selector));
+            Driver.FindElement(By.XPath(selector)).Click();
+        }
     }
 }

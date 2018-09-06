@@ -22,10 +22,21 @@ namespace DashworksTestAutomation.Steps.Dashworks
         {
             var listPageElement = _driver.NowAt<BaseDashboardPage>();
 
-            listPageElement.TableSearchTextbox.Clear();
-            _driver.WaitForDataLoading();
-            listPageElement.TableSearchTextbox.SendKeys(searchTerm);
-            _driver.WaitForDataLoading();
+            if (listPageElement.TableSearchTextbox.Displayed())
+            {
+                listPageElement.TableSearchTextbox.Clear();
+                _driver.WaitForDataLoading();
+                listPageElement.TableSearchTextbox.SendkeysWithDelay(searchTerm);
+                _driver.WaitForDataLoading();
+            }
+            else
+            {
+                listPageElement.TableSearchButton.Click();
+                listPageElement.TableSearchTextbox.Clear();
+                _driver.WaitForDataLoading();
+                listPageElement.TableSearchTextbox.SendKeys(searchTerm);
+                _driver.WaitForDataLoading();
+            }
         }
 
         [When(@"User perform search by ""(.*)""")]
@@ -33,6 +44,13 @@ namespace DashworksTestAutomation.Steps.Dashworks
         {
             PerformSearch(searchTerm);
             _driver.WaitForDataLoading();
+        }
+
+        [When(@"User closes Tools panel")]
+        public void WhenUserClosesToolsPanel()
+        {
+            var listPageElement = _driver.NowAt<BaseDashboardPage>();
+            listPageElement.CloseToolsPanelButton.Click();
         }
 
         [Then(@"User enters SearchCriteria into the agGrid Search Box and the correct NumberOfRows are returned")]
@@ -116,7 +134,14 @@ namespace DashworksTestAutomation.Steps.Dashworks
             var listPageElement = _driver.NowAt<BaseDashboardPage>();
 
             _driver.WaitWhileControlIsNotDisplayed<BaseDashboardPage>(() => listPageElement.ResultsOnPageCount);
-            Assert.IsEmpty(listPageElement.TableSearchTextbox.GetAttribute("value"), "Search textbox is not empty");
+            if (listPageElement.TableSearchTextbox.Displayed())
+                Assert.IsEmpty(listPageElement.TableSearchTextbox.GetAttribute("value"), "Search textbox is not empty");
+            else
+            {
+                listPageElement.TableSearchButton.Click();
+                Assert.IsEmpty(listPageElement.TableSearchTextbox.GetAttribute("value"), "Search textbox is not empty");
+            }
+
         }
 
         [When(@"User click content from ""(.*)"" column")]
@@ -134,6 +159,13 @@ namespace DashworksTestAutomation.Steps.Dashworks
             _driver.WaitWhileControlIsNotDisplayed<BaseDashboardPage>(() => resetbutton.SearchTextboxResetButton);
             Assert.IsTrue(resetbutton.SearchTextboxResetButton.Displayed(), "Reset button is not displayed");
             Logger.Write("Reset button is displayed");
+        }
+
+        [When(@"User clicks cross icon in Table search field")]
+        public void WhenUserClicksCrossIconInTableSearchField()
+        {
+            var button = _driver.NowAt<BaseDashboardPage>();
+            button.SearchTextboxResetButton.Click();
         }
 
         [Then(@"reset button in Search field at selected Panel is displayed")]

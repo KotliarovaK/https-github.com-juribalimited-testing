@@ -1,5 +1,4 @@
-﻿@retry:1
-Feature: Functionality
+﻿Feature: Functionality
 	Runs Filters Functionality related tests
 
 Background: Pre-Conditions
@@ -392,9 +391,9 @@ Scenario: EvergreenJnr_DevicesList_CheckThatErrorsDoNotAppearWhenAddingAdvancedA
 	Then "Devices" list should be displayed to the user
 	When User clicks the Filters button
 	Then Filters panel is displayed to the user
-	When User add "Application Import" filter where type is "Equals" with following Lookup Value and Association:
-	| SelectedValues | Association    |
-	| Altiris        | Used on device |
+	When User add "Application Import" filter where type is "Equals" with Selected Value and following Association:
+	| SelectedList | Association    |
+	| Altiris      | Used on device |
 	And User add "Boot Up Date" filter where type is "Equals" with added column and following value:
 	| Values      |
 	| 07 Dec 2017 |
@@ -703,7 +702,6 @@ Scenario: EvergreenJnr_UsersList_CheckThatNoConsoleErrorIsDisplayedAfterAddingUs
 	Then "Any User in list YOG2259571 Users entitled to app" is displayed in added filter info
 	And Filter name is colored in the added filter info
 	And Filter value is shown in bold in the added filter info
-
 	And There are no errors in the browser console
 
 @Evergreen @Users @EvergreenJnr_FilterFeature @FilterFunctionality @DAS12181 @Delete_Newly_Created_List
@@ -743,7 +741,7 @@ Scenario: EvergreenJnr_ApplicationsList_CheckThatNoErrorIsDisplayedAfterAddingFe
 	Then "Applications" list should be displayed to the user
 	When User clicks the Filters button
 	Then Filters panel is displayed to the user
-	When User add "User" filter where type is "Does not equal" with following Lookup Value and Association:
+	When User add Advanced "User" filter where type is "Does not equal" with following Lookup Value and Association:
 	| SelectedValues              | Association  |
 	| DWLABS\$231000-3AC04R8AR431 | Has used app |
 	When User add "User Last Logon Date" filter where type is "Before" with following Data and Association:
@@ -755,7 +753,7 @@ Scenario: EvergreenJnr_ApplicationsList_CheckThatNoErrorIsDisplayedAfterAddingFe
 	Then "247" rows are displayed in the agGrid
 	And There are no errors in the browser console
 
-@Evergreen @Applications @EvergreenJnr_FilterFeature @FilterFunctionality @DAS12181 @Delete_Newly_Created_List
+@Evergreen @Applications @EvergreenJnr_FilterFeature @FilterFunctionality @DAS12181 @DAS11561 @Delete_Newly_Created_List
 Scenario: EvergreenJnr_ApplicationsList_CheckThatNoErrorIsDisplayedAfterAddingFewAdvancedFiltersAndFewStandardFilters
 	When User clicks "Applications" on the left-hand menu
 	Then "Applications" list should be displayed to the user
@@ -871,7 +869,7 @@ Scenario: EvergreenJnr_ApplicationsList_CheckThatAdvancedUserFilterReturnsCorrec
 	Then "Applications" list should be displayed to the user
 	When User clicks the Filters button
 	Then Filters panel is displayed to the user
-	When User add "User" filter where type is "Equals" with following Lookup Value and Association:
+	When User add Advanced "User" filter where type is "Equals" with following Lookup Value and Association:
 	| SelectedValues | Association  |
 	| FR\APB5713645  | Has used app |
 	Then "1" rows are displayed in the agGrid
@@ -881,7 +879,7 @@ Scenario: EvergreenJnr_ApplicationsList_CheckThatAdvancedUserFilterReturnsCorrec
 	And User clicks Save filter button
 	Then "2,222" rows are displayed in the agGrid
 
-@Evergreen @DevicesList @EvergreenJnr_FilterFeature @FilterFunctionality @DAS12351
+@Evergreen @Devices @EvergreenJnr_FilterFeature @FilterFunctionality @DAS12351
 Scenario Outline: EvergreenJnr_DevicesList_CheckThat500ISEInvalidColumnNameErrorIsNotDisplayedIfUseSelectedFilterOnDevicesPage
 	When User clicks "Devices" on the left-hand menu
 	Then "Devices" list should be displayed to the user
@@ -905,7 +903,7 @@ Examples:
 	| MigrationP: Request Type                  | [Default (Computer)] | 41     |
 	| UserSchedu: Request Type                  | Request Type A       | 60     |
 	
-@Evergreen @UsersList @EvergreenJnr_FilterFeature @FilterFunctionality @DAS12351
+@Evergreen @Users @EvergreenJnr_FilterFeature @FilterFunctionality @DAS12351
 Scenario Outline: EvergreenJnr_UsersList_CheckThat500ISEInvalidColumnNameErrorIsNotDisplayedIfUseSelectedFilterOnUsersPage
 	When User clicks "Users" on the left-hand menu
 	Then "Users" list should be displayed to the user
@@ -927,7 +925,7 @@ Examples:
 	| Havoc(BigD: Request Type                    | [Default (User)]   | 7,578  |
 	| UserSchedu: Group User Default Request Type | Not Applicable     | 679    |
 
-@Evergreen @ApplicationsList @EvergreenJnr_FilterFeature @FilterFunctionality @DAS12351
+@Evergreen @Applications @EvergreenJnr_FilterFeature @FilterFunctionality @DAS12351
 Scenario Outline: EvergreenJnr_ApplicationsList_CheckThat500ISEInvalidColumnNameErrorIsNotDisplayedIfUseSelectedFilterOnApplicationsPage
 	When User clicks "Applications" on the left-hand menu
 	Then "Applications" list should be displayed to the user
@@ -950,7 +948,7 @@ Examples:
 	#| EmailMigra: Request Type   | Public Folder               | 50    |
 	| UserSchedu: Request Type   | Request Type A              | 47    |
 
-@Evergreen @MailboxesList @EvergreenJnr_FilterFeature @FilterFunctionality @DAS12351
+@Evergreen @Mailboxes @EvergreenJnr_FilterFeature @FilterFunctionality @DAS12351
 Scenario Outline: EvergreenJnr_MailboxesList_CheckThat500ISEInvalidColumnNameErrorIsNotDisplayedIfUseSelectedFilterOnMailboxesPage
 	When User clicks "Mailboxes" on the left-hand menu
 	Then "Mailboxes" list should be displayed to the user
@@ -966,7 +964,7 @@ Scenario Outline: EvergreenJnr_MailboxesList_CheckThat500ISEInvalidColumnNameErr
 Examples: 
 	| FilterName               | SelectedCheckboxes     | Rows  |
 	| EmailMigra: Category     | Mailbox Category A     | 6     |
-	| EmailMigra: Request Type | Personal Mailbox - VIP | 6     |
+	#| EmailMigra: Request Type | Personal Mailbox - VIP | 6     |
 
 @Evergreen @AllLists @EvergreenJnr_FilterFeature @FilterFunctionality @DAS12351
 Scenario Outline: EvergreenJnr_DevicesList_CheckThat500ISEInvalidColumnNameErrorIsNotDisplayedIfUseDepartmentFilter
@@ -1001,3 +999,86 @@ Examples:
 	| Memory (GB)                  | 20.48  | 2         |
 	| HDD Total Size (GB)          | 152.77 | 2         |
 	| Target Drive Free Space (GB) | 995.54 | 1         |
+
+@Evergreen @Applications @EvergreenJnr_FilterFeature @FilterFunctionality @DAS12855
+Scenario: EvergreenJnr_ApplicationsList_CheckThatDataIsDisplayedCorrectlyForAdvancedUserFilter
+	When User clicks "Applications" on the left-hand menu
+	Then "Applications" list should be displayed to the user
+	When User clicks the Filters button
+	Then Filters panel is displayed to the user
+	When User add Advanced "User" filter where type is "Does not equal" with following Lookup Value and Association:
+	| SelectedValues | Association                         |
+	| FR\RZM6552051  | Owns a device which app was used on |
+	Then "100" rows are displayed in the agGrid
+	Then table content is present
+
+@Evergreen @Devices @EvergreenJnr_FilterFeature @FilterFunctionality @DAS12807
+Scenario: EvergreenJnr_DevicesList_CheckThatApplicationFilterWorksCorrectlyForDifferentAssociationTypes
+	When User clicks "Devices" on the left-hand menu
+	Then "Devices" list should be displayed to the user
+	When User clicks the Filters button
+	Then Filters panel is displayed to the user
+	When User add Advanced "Application" filter where type is "Equals" with following Lookup Value and Association:
+	| SelectedValues  | Association         |
+	| ACD Display 3.4 | Installed on device |
+	Then "944" rows are displayed in the agGrid
+	When User click Edit button for "Application" filter
+	And User is deselect "Installed on device" in Association
+	And User select "Not installed on device" in Association
+	And User clicks Save filter button
+	Then "16,281" rows are displayed in the agGrid
+	When User have reset all filters
+	And User add Advanced "Application" filter where type is "Equals" with following Lookup Value and Association:
+	| SelectedValues  | Association    |
+	| ACD Display 3.4 | Used on device |
+	Then message 'No devices found' is displayed to the user
+	When User click Edit button for "Application" filter
+	And User is deselect "Used on device" in Association
+	And User select "Not used on device" in Association
+	And User clicks Save filter button
+	Then "17,225" rows are displayed in the agGrid
+
+@Evergreen @Users @EvergreenJnr_FilterFeature @FilterFunctionality @DAS12804 @Delete_Newly_Created_List
+Scenario: EvergreenJnr_UsersList_CheckThatSavedStaticListIsNotShownInEditMode
+	When User clicks "Users" on the left-hand menu
+	Then "Users" list should be displayed to the user
+	When User clicks the Filters button
+	Then Filters panel is displayed to the user
+	When User add "Domain" filter where type is "Equals" with added column and Lookup option
+	| SelectedValues |
+	| AU             |
+	Then "Domain" filter is added to the list
+	When  User clicks the Actions button
+	Then Actions panel is displayed to the user
+	When User select "Username" rows in the grid
+	| SelectedRowsName |
+	| AAO798996        |
+	| AGC788194        |
+	| AIU705098        |
+	And User selects "Create static list" in the Actions dropdown
+	And User create static list with "StaticList8543" name
+	Then "StaticList8543" list is displayed to user
+	And Edit List menu is not displayed
+	And URL contains "evergreen/#/users?$listid="
+
+@Evergreen @Devices @EvergreenJnr_FilterFeature @FilterFunctionality @DAS13104 @Delete_Newly_Created_List
+Scenario: EvergreenJnr_DevicesList_ChecksThatAddAndButtonIsDisplayedWhenAddingTwoOrMoreFiltersUsingTheSameFieldAndClearingOneOfTheFilters
+	When User clicks "Devices" on the left-hand menu
+	Then "Devices" list should be displayed to the user
+	When User clicks the Filters button
+	Then Filters panel is displayed to the user
+	When User add "Compliance" filter where type is "Equals" with added column and following checkboxes:
+	| SelectedCheckboxes |
+	| Red                |
+	Then "Compliance is Red" is displayed in added filter info
+	When User Add And "Compliance" filter where type is "Equals" with added column and following checkboxes:
+	| SelectedCheckboxes |
+	| Green              |
+	Then "Compliance is Green" is displayed in added filter info
+	When User Add And "Compliance" filter where type is "Equals" with added column and following checkboxes:
+	| SelectedCheckboxes |
+	| Unknown            |
+	Then "Compliance is Unknown" is displayed in added filter info
+	Then Add And button is displayed on the Filter panel
+	When User have removed "Compliance" filter
+	Then Add And button is displayed on the Filter panel

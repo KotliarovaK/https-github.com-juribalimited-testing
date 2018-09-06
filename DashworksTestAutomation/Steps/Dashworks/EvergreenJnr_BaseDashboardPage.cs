@@ -60,7 +60,8 @@ namespace DashworksTestAutomation.Steps.Dashworks
         public void WhenUserMovesColumnBeyondTheGrid(string columnName)
         {
             var page = _driver.NowAt<BaseDashboardPage>();
-            _driver.DragAndDrop(page.GetColumnHeaderByName(columnName), page.OutsideGridPanel);
+            _driver.DragAndDrop(page.GetColumnHeaderByName(columnName), page.RefreshTableButton);
+            page.GetColumnHeaderByName(columnName).Click();
         }
 
         [When(@"User click on '(.*)' column header")]
@@ -201,6 +202,15 @@ namespace DashworksTestAutomation.Steps.Dashworks
             SortingHelper.IsListSorted(originalList);
         }
 
+        [Then(@"""(.*)"" content is displayed in ""(.*)"" column")]
+        public void ThenContentIsDisplayedInColumn(string textContent, string columnName)
+        {
+            var page = _driver.NowAt<BaseDashboardPage>();
+            _driver.WaitForDataLoading();
+            var originalList = page.GetRowContentByColumnName(columnName);
+            Assert.AreEqual(textContent, originalList, "Content is not displayed correctly");
+        }
+
         [Then(@"full list content is displayed to the user")]
         public void ThenFullListContentIsDisplayedToTheUser()
         {
@@ -281,8 +291,16 @@ namespace DashworksTestAutomation.Steps.Dashworks
         public void ThenTextIsDisplayedInFilterContainer(string text)
         {
             var page = _driver.NowAt<BaseDashboardPage>();
+            page.FilterContainerButton.Click();
             Assert.AreEqual(text, page.FilterContainer.Text.TrimStart(' ').TrimEnd(' '),
                 $"Filter is created incorrectly");
+        }
+
+        [When(@"User opens filter container")]
+        public void WhenUserOpensFilterContainer()
+        {
+            var page = _driver.NowAt<BaseDashboardPage>();
+            page.FilterContainerButton.Click();
         }
 
         [Then(@"Links from ""(.*)"" column is displayed to the user")]

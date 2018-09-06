@@ -1,5 +1,4 @@
-﻿@retry:1
-Feature: CustomListDisplay
+﻿Feature: CustomListDisplay
 	Runs Custom List Creation block related tests
 
 Background: Pre-Conditions
@@ -1037,8 +1036,6 @@ Scenario: EvergreenJnr_UsersList_CheckThatDataFromTheStaticListAreSavedInTheNewL
 	Then ColumnName is added to the list
 	| ColumnName |
 	| Enabled    |
-	#When User click on 'Username' column header
-	#Then data in table is sorted by 'Username' column in ascending order
 	When User clicks Save button on the list panel
 	When User selects Save as new list option
 	When User creates new custom list with "CustomList5588" name
@@ -1129,3 +1126,17 @@ Scenario: EvergreenJnr_DevicesList_CheckThatCancelButtonIsDisplayedWithCorrectly
 	When User click Delete button for custom list with "TestList12891" name
 	Then Cancel button is displayed with correctly color
 	Then User confirm removed list
+
+@Evergreen @Devices @EvergreenJnr_ListPanel @CustomListDisplay @DAS13300
+Scenario: EvergreenJnr_DevicesList_ChecksThatIconsAreDisplayedCorrectlyInListDropdown 
+	When User clicks "Devices" on the left-hand menu
+	Then "Devices" list should be displayed to the user
+	When User clicks All lists dropdown on Lists panel
+	Then appropriate icon is displayed for Favourites
+	Then appropriate icon is displayed for My lists
+	Then appropriate icon is displayed for Shared with me
+	Then appropriate icon is displayed for Dynamic lists
+	Then appropriate icon is displayed for Static lists
+	When User selects "Favourites" option on the All lists dropdown
+	When User clicks All lists dropdown on Lists panel
+	Then appropriate icon is displayed for All lists

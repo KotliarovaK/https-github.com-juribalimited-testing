@@ -5,6 +5,7 @@ using System.Threading;
 using DashworksTestAutomation.Extensions;
 using DashworksTestAutomation.Helpers;
 using DashworksTestAutomation.Pages.Evergreen;
+using DashworksTestAutomation.Pages.Evergreen.AdminDetailsPages;
 using DashworksTestAutomation.Pages.Evergreen.DetailsTabsMenu;
 using NUnit.Framework;
 using OpenQA.Selenium;
@@ -42,7 +43,6 @@ namespace DashworksTestAutomation.Steps.Dashworks
         {
             var detailsPage = _driver.NowAt<DetailsPage>();
             detailsPage.NavigateToSectionByName(sectionName);
-            _driver.WaitForDataLoading();
         }
 
         [When(@"User clicks ""(.*)"" link on the Details Page")]
@@ -57,6 +57,7 @@ namespace DashworksTestAutomation.Steps.Dashworks
         {
             var detailsPage = _driver.NowAt<DetailsPage>();
 
+            _driver.WaitForDataLoading();
             if (!detailsPage.OpenedSection.Displayed())
             {
                 Assert.IsTrue(detailsPage.NoFoundContent.Displayed());
@@ -151,6 +152,13 @@ namespace DashworksTestAutomation.Steps.Dashworks
             filterElement.GetStringFilterByColumnName(columnName);
         }
 
+        [When(@"User closes Checkbox filter for ""(.*)"" column")]
+        public void WhenUserClosesCheckboxFilterForColumn(string columnName)
+        {
+            var filterElement = _driver.NowAt<ApplicationsDetailsTabsMenu>();
+            filterElement.BodyContainer.Click();
+        }
+
         [Then(@"All text is displayed for ""(.*)"" column in the String Filter")]
         public void ThenAllTextIsDisplayedForColumnInTheStringFilter(string columnName)
         {
@@ -165,6 +173,13 @@ namespace DashworksTestAutomation.Steps.Dashworks
             var filterElement = _driver.NowAt<ApplicationsDetailsTabsMenu>();
             Assert.IsFalse(filterElement.GetStringFilterTextByColumnName(columnName),
                 $"All text is displayed for {columnName} column");
+        }
+
+        [When(@"User enters ""(.*)"" text in the Search field for ""(.*)"" column on the Details Page")]
+        public void WhenUserEntersTextInTheSearchFieldForColumnOnTheDetailsPage(string text, string columnName)
+        {
+            var searchElement = _driver.NowAt<DetailsPage>();
+            searchElement.GetSearchFieldByColumnName(columnName, text);
         }
 
         [Then(@"Dropdown List is displayed correctly in the Filter on the Details Page")]
@@ -189,6 +204,22 @@ namespace DashworksTestAutomation.Steps.Dashworks
             filterElement.BodyContainer.Click();
             _driver.WaitWhileControlIsNotDisplayed<ApplicationsDetailsTabsMenu>(() => filterElement.ResetFiltersButton);
             filterElement.ResetFiltersButton.Click();
+        }
+
+        [When(@"User selects ""(.*)"" text from key value grid on the Details Page")]
+        public void WhenUserSelectsFollowingTextFromKeyValueGridOnTheDetailsPage(string textToBeSelected)
+        {
+            var page = _driver.NowAt<DetailsPage>();
+
+            page.Actions.Click(page.GetCellByTextFromKeyValueGrid(textToBeSelected)).DoubleClick().Build().Perform();
+        }
+
+        [Then(@"""(.*)"" text selected from key value grid on the Details Page")]
+        public void ThenTextSelectedFromKeyValueGridOnTheDetailsPage(string textSelected)
+        {
+            var page = _driver.NowAt<DetailsPage>();
+
+            Assert.That(page.GetSelectedText(), Is.EqualTo(textSelected));
         }
 
         [Then(@"following Values are displayed in the filter on the Details Page")]
@@ -266,11 +297,32 @@ namespace DashworksTestAutomation.Steps.Dashworks
                 page.GetBooleanStringFilterByName(filterName).Click();
         }
 
+        [When(@"User selects ""(.*)"" checkbox from String Filter on the Details Page")]
+        public void WhenUserSelectsCheckboxFromStringFilterOnTheDetailsPage(string filterName)
+        {
+            var page = _driver.NowAt<ApplicationsDetailsTabsMenu>();
+            page.GetCheckboxStringFilterByName(filterName);
+            page.BodyContainer.Click();
+        }
+
         [Then(@"""(.*)"" checkbox is checked on the Details Page")]
         public void ThenCheckboxIsCheckedOnTheDetailsPage(string checkboxName)
         {
             var filterElement = _driver.NowAt<ApplicationsDetailsTabsMenu>();
             Assert.IsTrue(filterElement.ColumnCheckboxChecked.Displayed(), $"{checkboxName} Checkbox is not selected");
+        }
+
+        [When(@"User selects following date filter on the Details Page")]
+        public void WhenUserSelectsFollowingDateFilterOnTheDetailsPage(Table table)
+        {
+            var filter = _driver.NowAt<ApplicationsDetailsTabsMenu>();
+            _driver.WaitForDataLoading();
+            filter.ResetFiltersButton.Click();
+            foreach (var row in table.Rows)
+            {
+                filter.DateFilterValue.SendKeys(row["FilterData"]);
+            }
+            _driver.WaitForDataLoading();
         }
 
         [Then(@"Content is present in the table on the Details Page")]
@@ -285,7 +337,7 @@ namespace DashworksTestAutomation.Steps.Dashworks
         public void ThenFilterPanelHasStandardSize()
         {
             var filterPanel = _driver.NowAt<ApplicationsDetailsTabsMenu>();
-            Assert.AreEqual("118px", filterPanel.GetInstalledFilterPanelHeight());
+            Assert.AreEqual("153px", filterPanel.GetInstalledFilterPanelHeight());
             Assert.AreEqual("152px", filterPanel.GetInstalledFilterPanelWidth());
         }
 
@@ -303,7 +355,7 @@ namespace DashworksTestAutomation.Steps.Dashworks
         public void ThenBucketPop_UpHasStandardSizeOnTheDetailsPage()
         {
             var detailsPage = _driver.NowAt<DetailsPage>();
-            Assert.AreEqual("1536px", detailsPage.GetInstalledBucketWindowWidth());
+            Assert.AreEqual("1536px", detailsPage.GetInstalledBucketWindowWidth().Split('.').First());
         }
 
         [When(@"User enters ""(.*)"" text in the Filter field")]
@@ -440,7 +492,7 @@ namespace DashworksTestAutomation.Steps.Dashworks
         public void ThenTextIsDisplayedForSection(string textMessage, string sectionName)
         {
             var detailsPage = _driver.NowAt<DetailsPage>();
-            detailsPage.CloseAllSections();
+            //detailsPage.CloseAllSections();
             detailsPage.NavigateToSectionByName(sectionName);
             _driver.WaitWhileControlIsNotDisplayed<DetailsPage>(() => detailsPage.NoFoundContent);
             Assert.AreEqual(textMessage, detailsPage.NoFoundContent.Text,
@@ -470,11 +522,29 @@ namespace DashworksTestAutomation.Steps.Dashworks
                     "Unknown text is displayed");
         }
 
+        [Then(@"Rows do not have unknown values")]
+        public void ThenRowsDoNotHaveUnkonwnValues()
+        {
+            var page = _driver.NowAt<BaseDashboardPage>();
+            foreach (var element in page.GridRows)
+                StringAssert.DoesNotContain("Unknown", element.Text,
+                    "Unknown text is displayed");
+        }
+
+        [Then(@"Static list grid has ""(.*)"" rows")]
+        [Then(@"Static list grid still has ""(.*)"" rows")]
+        public void ThenAgGridHasRows(int rowsCount)
+        {
+            var page = _driver.NowAt<BaseDashboardPage>();
+            Assert.That(page.GridRows.Count, Is.EqualTo(rowsCount),
+                $"Incorrect number of rows in agGrid.");
+        }
+
         [Then(@"""(.*)"" rows found label displays on Details Page")]
         public void ThenCorrectFoundRowsLabelDisplaysOnTheDetailsPage(string numberOfRows)
         {
             var detailsPage = _driver.NowAt<DetailsPage>();
-
+            _driver.WaitForDataLoading();
             if (numberOfRows == "1")
             {
                 StringAssert.AreEqualIgnoringCase($"{numberOfRows} row", detailsPage.FoundRowsLabel.Text,

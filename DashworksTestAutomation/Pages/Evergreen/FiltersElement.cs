@@ -80,19 +80,19 @@ namespace DashworksTestAutomation.Pages.Evergreen
         [FindsBy(How = How.XPath, Using = ".//span[text()='B Star Packages']")]
         public IWebElement BStarPackegesCheckbox { get; set; }
 
-        [FindsBy(How = How.XPath, Using = ".//button[@class='mat-primary mat-raised-button _mat-animation-noopable']")]
+        [FindsBy(How = How.XPath, Using = ".//div[@class='form-group actions']//span[text()='SAVE']/ancestor::button")]
         public IWebElement SaveButton { get; set; }
 
         [FindsBy(How = How.XPath, Using = ".//i[@class='material-icons mat-filter-edit mat-18']")]
         public IWebElement EditFilterButton { get; set; }
 
-        [FindsBy(How = How.XPath, Using = ".//button[@class='mat-raised-button']")]
+        [FindsBy(How = How.XPath, Using = "//div[@class='form-group actions']//span[text()='CANCEL']")]
         public IWebElement CancelButton { get; set; }
 
         [FindsBy(How = How.XPath, Using = ".//div[@class='add-column-checkbox ng-star-inserted']//input")]
         public IWebElement AddCategoryColumnCheckbox { get; set; }
 
-        [FindsBy(How = How.XPath, Using = ".//span[@class='mat-checkbox-label']")]
+        [FindsBy(How = How.XPath, Using = "//div[contains(@class, 'addColumn')]//span[@class='mat-checkbox-label']")]
         public IList<IWebElement> AddCategoryColumnName { get; set; }
 
         [FindsBy(How = How.XPath,
@@ -103,7 +103,7 @@ namespace DashworksTestAutomation.Pages.Evergreen
         [FindsBy(How = How.XPath, Using = ".//span[text()='RESET']/ancestor::button")]
         public IWebElement ResetFiltersButton { get; set; }
 
-        [FindsBy(How = How.XPath, Using = ".//i[contains(@class, 'hideElementIcon')]")]
+        [FindsBy(How = How.XPath, Using = ".//ul//mat-checkbox")]
         public IWebElement LookupFilterCheckbox { get; set; }
 
         [FindsBy(How = How.XPath, Using = FilterValuesSelector)]
@@ -132,6 +132,9 @@ namespace DashworksTestAutomation.Pages.Evergreen
 
         [FindsBy(How = How.XPath, Using = ".//div[@id='content']//div[@class='empty-message ng-star-inserted']")]
         public IWebElement NoResultsFoundMessage { get; set; }
+
+        [FindsBy(How = How.XPath, Using = ".//input[@placeholder='User Description']")]
+        public IWebElement UserDescriptionField { get; set; }
 
         public override List<By> GetPageIdentitySelectors()
         {
@@ -335,13 +338,13 @@ namespace DashworksTestAutomation.Pages.Evergreen
         public IWebElement GetFilterValue(string value)
         {
             var editFilterSelector =
-                $".//li[@aria-live='assertive']//span[text()='{value}']";
+                $".//li//span[text()='{value}']";
             return Driver.FindElement(By.XPath(editFilterSelector));
         }
 
         public bool ListNameForSavedListFilter(string filterName)
         {
-            return Driver.IsElementDisplayed(By.XPath($".//div[@class='list-container']/span[text()='{filterName}']"));
+            return Driver.IsElementDisplayed(By.XPath($".//div[@class='list-container']//span[text()='{filterName}']"));
         }
 
         public bool CheckboxNameForFilter(string checkboxName)
@@ -410,6 +413,13 @@ namespace DashworksTestAutomation.Pages.Evergreen
         public IWebElement GetOpenedFilter(string filterName)
         {
             var selector = By.XPath($"//div[contains(@class, 'filterAddPanel')]/..//span[text()='{filterName}']");
+            Driver.WaitWhileControlIsNotDisplayed(selector);
+            return Driver.FindElement(selector);
+        }
+
+        public IWebElement GetFilterCategory(string filterCategoryName)
+        {
+            var selector = By.XPath($".//div[contains(@class,'filter-category-label blue-color bold-text')][text()='{filterCategoryName}']/ancestor::div[@class='filter-category ng-star-inserted']");
             Driver.WaitWhileControlIsNotDisplayed(selector);
             return Driver.FindElement(selector);
         }

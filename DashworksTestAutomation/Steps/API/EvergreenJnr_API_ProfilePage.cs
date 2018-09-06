@@ -1,10 +1,13 @@
 ﻿using System;
 using System.Net;
 using DashworksTestAutomation.DTO.RuntimeVariables;
+using DashworksTestAutomation.Extensions;
+using DashworksTestAutomation.Pages.Evergreen;
 using DashworksTestAutomation.Providers;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Linq;
 using NUnit.Framework;
+using OpenQA.Selenium.Remote;
 using RestSharp;
 using TechTalk.SpecFlow;
 
@@ -14,10 +17,14 @@ namespace DashworksTestAutomation.Steps.API
     internal class EvergreenJnr_API_ProfilePage
     {
         private readonly RestWebClient _client;
+        private readonly WebsiteUrl _url;
+        private readonly RemoteWebDriver _driver;
 
-        public EvergreenJnr_API_ProfilePage(RestWebClient client)
+        public EvergreenJnr_API_ProfilePage(RestWebClient client, RemoteWebDriver driver, WebsiteUrl url)
         {
             _client = client;
+            _driver = driver;
+            _url = url;
         }
 
         [Then(@"default list page Size is ""(.*)"" and Cache ""(.*)""")]
@@ -42,6 +49,14 @@ namespace DashworksTestAutomation.Steps.API
             var listPageToCache = Convert.ToInt32(pageOptions["gridPageCache"]);
             Assert.AreEqual(pageSize, listPageSize, "Incorrect Page Size on Account page");
             Assert.AreEqual(pageCache, listPageToCache, "Incorrect Cache Size on Account page");
+        }
+
+        [Then(@"page Size is ""(.*)"" on ""(.*)"" page")]
+        public void ThenPageSizeIsOnPage(int pageSize, string pageName)
+        {
+            var page = _driver.NowAt<BaseDashboardPage>();
+            var lastNetworkRequest = JsonConvert.DeserializeObject<JArray>(_driver.GetNetworkLogByJavascript()).Last;
+            Assert.True(lastNetworkRequest["name"].ToString().Contains("?$top=2500"));
         }
     }
 }

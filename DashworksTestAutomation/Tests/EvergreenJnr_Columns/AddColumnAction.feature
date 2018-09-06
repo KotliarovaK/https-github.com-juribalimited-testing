@@ -15,7 +15,7 @@ Scenario: EvergreenJnr_DevicesList_AddTheDeviceKeyColumnToTheDevicesList
 	| ColumnName          |
 	| Device Key          |
 
-@Evergreen @Mailboxes @EvergreenJnr_Columns @AddColumnAction @DAS10665
+@Evergreen @Mailboxes @EvergreenJnr_Columns @AddColumnAction @DAS11452
 Scenario: EvergreenJnr_MailboxesList_CheckThat500ErrorIsNotDisplayedAfterSortingForSelectedColumn
 	When User add following columns using URL to the "Mailboxes" page:
 	| ColumnName                 |
@@ -148,7 +148,7 @@ Scenario Outline: EvergreenJnr_AllLists_CheckThat500ErrorIsNotDisplayedAfterAddi
 	| Not Applicable     |
 	Then "<FilterName>" filter is added to the list
 	When User clicks the Filters button
-	When User click on '<ColumnHeader>' column header
+	And User click on '<ColumnHeader>' column header
 	Then color data is sorted by '<ColumnHeader>' column in ascending order
 	When User click on '<ColumnHeader>' column header
 	Then color data is sorted by '<ColumnHeader>' column in descending order
@@ -183,3 +183,50 @@ Examples:
 	| Users        | User Key        |
 	| Applications | Application Key |
 	| Mailboxes    | Mailbox Key     |
+
+@Evergreen @Devices @EvergreenJnr_Columns @AddColumnAction @DAS13024
+Scenario: EvergreenJnr_DevicesList_ChecksThatGridIsDisplayedCorrectlyAfterAddingDeviceOwnerLdapAndComputerAdObjectLdapAttributeColumnToTheDevicesList
+	When User clicks "Devices" on the left-hand menu
+	Then "Devices" list should be displayed to the user
+	When User clicks the Columns button
+	Then Columns panel is displayed to the user
+	When ColumnName is entered into the search box and the selection is clicked
+	| ColumnName             |
+	| Owner accountexpires   |
+	| frscomputerreferencebl |
+	Then ColumnName is added to the list
+	| ColumnName             |
+	| Owner accountexpires   |
+	| frscomputerreferencebl |
+	And "17,225" rows are displayed in the agGrid
+	And full list content is displayed to the user
+	And There are no errors in the browser console
+	And table content is present
+
+@Evergreen @Devices @EvergreenJnr_Columns @RemoveColumn @AddColumnAction @DAS12910
+Scenario: EvergreenJnr_MailboxesList_ChecksThatNewlyAddedColumnIsDisplayedCorrectlyAfterAddingEmailMigraReadinessFilter
+	When User clicks "Mailboxes" on the left-hand menu
+	Then "Mailboxes" list should be displayed to the user
+	When User clicks the Columns button
+	Then Columns panel is displayed to the user
+	When User removes "Owner Display Name" column by Column panel
+	And User removes "Mailbox Type" column by Column panel
+	And User removes "Mail Server" column by Column panel
+	And User removes "Mailbox Platform" column by Column panel
+	And User clicks the Filters button
+	Then Filters panel is displayed to the user
+	When User add "EmailMigra: Readiness" filter where type is "Equals" with added column and Lookup option
+	| SelectedValues |
+	| Blue           |
+	| Light Blue     |
+	Then Content is present in the newly added column
+	| ColumnName            |
+	| EmailMigra: Readiness |
+	And full list content is displayed to the user
+	And There are no errors in the browser console
+	And Add And button is displayed on the Filter panel
+	When User selects And "EmailMigra: Readiness" filter where type is "Equals" with added column and Lookup option:
+	| SelectedValues |
+	| Out Of Scope   |
+	And User clicks the "CANCEL" Action button
+	Then Add And button is displayed on the Filter panel

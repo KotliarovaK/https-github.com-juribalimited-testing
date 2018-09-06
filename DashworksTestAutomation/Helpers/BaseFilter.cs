@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Linq;
+using System.Threading;
 using DashworksTestAutomation.Extensions;
 using DashworksTestAutomation.Pages.Evergreen;
 using NUnit.Framework;
@@ -50,10 +51,10 @@ namespace DashworksTestAutomation.Helpers
         {
             if (_acceptCheckbox)
                 _driver.FindElement(By.XPath(
-                        ".//div[@class='filterAddPanel ng-star-inserted']//mat-checkbox//div[@class='mat-checkbox-inner-container']"))
+                        ".//div[@class='filterAddPanel ng-star-inserted']//div[contains(@class, 'add-column-checkbox')]//div[@class='mat-checkbox-inner-container']"))
                     .Click();
-            _driver.MouseHover(By.XPath(".//span[text()='SAVE']/ancestor::button"));
-            _driver.FindElement(By.XPath(".//span[text()='SAVE']/ancestor::button")).Click();
+            _driver.MouseHover(By.XPath("//div[@class='form-container']//span[text()='SAVE']/ancestor::button"));
+            _driver.FindElement(By.XPath("//div[@class='form-container']//span[text()='SAVE']/ancestor::button")).Click();
         }
     }
 
@@ -118,7 +119,7 @@ namespace DashworksTestAutomation.Helpers
             _driver.FindElement(
                     By.XPath(".//div[@class='filterAddPanel ng-star-inserted']//input[@placeholder='Search']"))
                 .SendKeys(_value);
-            _driver.FindElement(By.XPath(".//i[@class='material-icons mat-18 mat-done check-item hideElementIcon']"))
+            _driver.FindElement(By.XPath(".//ul[@class='tree-list ng-star-inserted']//mat-checkbox"))
                 .Click();
             SaveFilter();
         }
@@ -153,15 +154,46 @@ namespace DashworksTestAutomation.Helpers
                         $".//div[@class='filterAddPanel ng-star-inserted']//span[contains(text(),'{row["SelectedValues"]}')]"))
                     .Click();
             }
-
             SaveFilter();
+        }
+    }
+
+    public class LookupFilterTableWithoutSave : BaseFilter
+    {
+        public LookupFilterTableWithoutSave(RemoteWebDriver driver, string operatorValue, bool acceptCheckbox, Table table) : base(
+            driver, operatorValue, acceptCheckbox)
+        {
+            Table = table;
+        }
+
+        protected Table Table { get; set; }
+
+        public override void Do()
+        {
+            SelectOperator();
+            _driver.WaitForDataLoading();
+            foreach (var row in Table.Rows)
+            {
+                _driver.FindElement(
+                        By.XPath(".//div[@class='filterAddPanel ng-star-inserted']//input[@placeholder='Search']"))
+                    .Click();
+                _driver.FindElement(
+                        By.XPath(".//div[@class='filterAddPanel ng-star-inserted']//input[@placeholder='Search']"))
+                    .SendKeys(row["SelectedValues"]);
+                _driver.FindElement(By.XPath(
+                        ".//div[@class='filterAddPanel ng-star-inserted']//input[@placeholder='Search']"))
+                    .Clear();
+                _driver.FindElement(By.XPath(
+                        $".//div[@class='filterAddPanel ng-star-inserted']//span[contains(text(),'{row["SelectedValues"]}')]"))
+                    .Click();
+            }
         }
     }
 
     public class CheckBoxesFilter : BaseFilter
     {
         protected string CheckboxSelector =
-            ".//div[@class='filterAddPanel ng-star-inserted']//span[text()='{0}']/../preceding-sibling::i";
+            ".//div[@class='filterAddPanel ng-star-inserted']//span[text()='{0}']/ancestor::mat-checkbox";
 
         protected string CheckboxSelectorName =
             ".//div[@class='filterAddPanel ng-star-inserted']//span[text()='{0}']";
@@ -267,7 +299,7 @@ namespace DashworksTestAutomation.Helpers
             {
                 if (!_driver.IsElementDisplayed(filterValueSelector)) continue;
                 _driver.FindElement(filterValueSelector).SendkeysWithDelay(row["Values"]);
-
+                _driver.WaitForDataLoading();
                 if (_optionsTable.RowCount > 1)
                 {
                     _driver.FindElement(addButtonSelector).Click();
@@ -276,10 +308,10 @@ namespace DashworksTestAutomation.Helpers
                         _driver.FindElement(By.XPath(string.Format(addedOptionSelector, "more"))).Click();
                     var addedOptions = _driver.FindElements(By.XPath(allAddedOptionsSelector))
                         .Select(value => value.Text).ToList();
+                    _driver.WaitForDataLoading();
                     Assert.Contains(row["Values"], addedOptions);
                 }
             }
-
             SaveFilter();
         }
     }
@@ -353,11 +385,58 @@ namespace DashworksTestAutomation.Helpers
 
             foreach (var row in Table.Rows)
             {
-                _driver.FindElement(
-                    By.XPath(".//div[@class='dropdown-select input-wrapper']//input[@id='mat-input-1']")).Click();
+                _driver.FindElement(By.XPath("//div[contains(@class, 'associationmultiselect')]//input[@id='mat-input-4']")).SendKeys(row["Association"]);
                 _driver.FindElement(By.XPath($".//li//span[text()='{row["Association"]}']")).Click();
+                _driver.FindElement(By.XPath("//div[contains(@class, 'associationmultiselect')]//input[@id='mat-input-4']")).Clear();
             }
 
+            SaveFilter();
+        }
+    }
+
+    public class LookupValueAdvancedFilter : BaseFilter
+    {
+        public LookupValueAdvancedFilter(RemoteWebDriver driver, string operatorValue, Table table) : base(
+            driver, operatorValue, false)
+        {
+            Table = table;
+        }
+
+        private Table Table { get; }
+
+        public override void Do()
+        {
+            SelectOperator();
+            _driver.WaitForDataLoading();
+            var selectboxes = _driver.FindElements(By.XPath(".//div[@id='context']//input[@placeholder='Search']"));
+            foreach (var row in Table.Rows)
+            {
+                _driver.FindElement(By.XPath(".//div[@id='context']//input[@placeholder='Search']")).Click();
+                _driver.FindElement(By.XPath(".//div[@id='context']//input[@placeholder='Search']"))
+                    .SendKeys(row["SelectedValues"]);
+                _driver.FindElement(By.XPath(
+                        $".//div[@class='filterAddPanel ng-star-inserted']//span[contains(text(),'{row["SelectedValues"]}')]"))
+                    .Click();
+            }
+
+            selectboxes.Last().Click();
+            foreach (var row in Table.Rows)
+            {
+                var selector = string.Empty;
+                if (row["Association"].Contains("'"))
+                {
+                    var strings = row["Association"].Split('\'');
+                    selector =
+                        $".//li//span[contains(text(),'{strings[0]}')][contains(text(), '{strings[1]}')]";
+                }
+                else
+                {
+                    selector = $".//li//span[text()='{row["Association"]}']";
+                }
+                selectboxes.Last().SendkeysWithDelay(row["Association"]);
+                _driver.FindElement(By.XPath(selector)).Click();
+                selectboxes.Last().Clear();
+            }
             SaveFilter();
         }
     }
@@ -414,16 +493,54 @@ namespace DashworksTestAutomation.Helpers
             _driver.WaitForDataLoading();
             foreach (var row in Table.Rows)
             {
+                if (!string.IsNullOrEmpty(row["Values"]))
+                {
+                    _driver.FindElement(By.XPath(
+                            ".//div[@class='filterAddPanel ng-star-inserted']//input[@id='chipInput']"))
+                        .Click();
+                    _driver.FindElement(By.XPath(
+                            ".//div[@class='filterAddPanel ng-star-inserted']//input[@id='chipInput']"))
+                        .SendKeys(row["Values"]);
+                    _driver.FindElement(
+                            By.XPath(
+                                ".//button[@class='button-small mat-primary mat-raised-button _mat-animation-noopable ng-star-inserted']"))
+                        .Click();
+                }
+            }
+
+            foreach (var row in Table.Rows)
+            {
+                _driver.FindElement(By.XPath(".//div[@id='context']//input[@placeholder='Search']")).Click();
+                if (!_driver.IsElementDisplayed(By.XPath($".//li//span[text()='{row["Association"]}']"))) continue;
+                _driver.FindElement(By.XPath($".//li//span[text()='{row["Association"]}']")).Click();
+            }
+
+            SaveFilter();
+        }
+    }
+
+    public class NumberAssociationFilter : BaseFilter
+    {
+        public NumberAssociationFilter(RemoteWebDriver driver, string operatorValue, Table table) : base(
+            driver, operatorValue, false)
+        {
+            Table = table;
+        }
+
+        private Table Table { get; }
+
+        public override void Do()
+        {
+            SelectOperator();
+            _driver.WaitForDataLoading();
+            foreach (var row in Table.Rows)
+            {
                 _driver.FindElement(By.XPath(
-                        ".//div[@class='filterAddPanel ng-star-inserted']//input[@id='chipInput']"))
+                        ".//div[@class='filterAddPanel ng-star-inserted']//input[@type='number']"))
                     .Click();
                 _driver.FindElement(By.XPath(
-                        ".//div[@class='filterAddPanel ng-star-inserted']//input[@id='chipInput']"))
-                    .SendKeys(row["Values"]);
-                _driver.FindElement(
-                        By.XPath(
-                            ".//button[@class='button-small mat-primary mat-raised-button _mat-animation-noopable ng-star-inserted']"))
-                    .Click();
+                        ".//div[@class='filterAddPanel ng-star-inserted']//input[@type='number']"))
+                    .SendKeys(row["Number"]);
             }
 
             foreach (var row in Table.Rows)
@@ -439,36 +556,36 @@ namespace DashworksTestAutomation.Helpers
 
     public class DataAssociationFilter : BaseFilter
     {
-            public DataAssociationFilter(RemoteWebDriver driver, string operatorValue, Table table) : base(
-                driver, operatorValue, false)
+        public DataAssociationFilter(RemoteWebDriver driver, string operatorValue, Table table) : base(
+            driver, operatorValue, false)
+        {
+            Table = table;
+        }
+
+        private Table Table { get; }
+
+        public override void Do()
+        {
+            SelectOperator();
+            _driver.WaitForDataLoading();
+            foreach (var row in Table.Rows)
             {
-                Table = table;
+                _driver.FindElement(By.XPath(
+                        ".//div[@class='mat-form-field-wrapper']//input[@aria-label='Date']"))
+                    .Click();
+                _driver.FindElement(By.XPath(
+                        ".//div[@class='mat-form-field-wrapper']//input[@aria-label='Date']"))
+                    .SendKeys(row["Values"]);
             }
 
-            private Table Table { get; }
-
-            public override void Do()
+            foreach (var row in Table.Rows)
             {
-                SelectOperator();
-                _driver.WaitForDataLoading();
-                foreach (var row in Table.Rows)
-                {
-                    _driver.FindElement(By.XPath(
-                            ".//div[@class='mat-form-field-wrapper']//input[contains(@id, 'mat-input')]"))
-                        .Click();
-                    _driver.FindElement(By.XPath(
-                            ".//div[@class='mat-form-field-wrapper']//input[contains(@id, 'mat-input')]"))
-                        .SendKeys(row["Values"]);
-                }
-
-                foreach (var row in Table.Rows)
-                {
-                    _driver.FindElement(By.XPath(".//div[@id='context']//input[@placeholder='Search']")).Click();
-                    if (!_driver.IsElementDisplayed(By.XPath($".//li//span[text()='{row["Association"]}']"))) continue;
-                    _driver.FindElement(By.XPath($".//li//span[text()='{row["Association"]}']")).Click();
-                }
-
-                SaveFilter();
+                _driver.FindElement(By.XPath(".//div[@id='context']//input[@placeholder='Search']")).Click();
+                if (!_driver.IsElementDisplayed(By.XPath($".//li//span[text()='{row["Association"]}']"))) continue;
+                _driver.FindElement(By.XPath($".//li//span[text()='{row["Association"]}']")).Click();
             }
+
+            SaveFilter();
+        }
     }
 }

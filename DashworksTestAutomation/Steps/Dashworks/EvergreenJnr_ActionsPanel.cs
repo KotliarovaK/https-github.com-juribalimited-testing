@@ -34,7 +34,7 @@ namespace DashworksTestAutomation.Steps.Dashworks
         public void ThenActionsPanelIsNotDisplayedToTheUser()
         {
             var button = _driver.NowAt<BaseDashboardPage>();
-            Assert.IsTrue(button.InactiveActionsButton.Displayed(), "Actions panel was displayed");
+            Assert.IsFalse(button.ActiveActionsButton.Displayed(), "Actions panel was displayed");
         }
 
         [Then(@"Actions message container is displayed to the user")]
@@ -66,7 +66,7 @@ namespace DashworksTestAutomation.Steps.Dashworks
         {
             var action = _driver.NowAt<BaseDashboardPage>();
             action.ActionsDropdown.Click();
-            action.SelectActions(actionsName);
+            action.GetOptionOnActionsPanelByName(actionsName).Click();
         }
 
         [When(@"User selects ""(.*)"" Bulk Update Type on Action panel")]
@@ -74,23 +74,86 @@ namespace DashworksTestAutomation.Steps.Dashworks
         {
             var action = _driver.NowAt<BaseDashboardPage>();
             action.RequestTypeDropdown.Click();
-            action.SelectActions(typeName);
+            action.GetOptionOnActionsPanelByName(typeName).Click();
         }
 
         [When(@"User selects ""(.*)"" Project on Action panel")]
         public void WhenUserSelectsProjectOnActionPanel(string projectName)
         {
             var action = _driver.NowAt<BaseDashboardPage>();
+            action.ProjectField.Clear();
             action.ProjectField.SendKeys(projectName);
-            action.OptionName.Click();
+            action.ProjectSection.Click();
+            //action.GetOptionOnActionsPanelByName(projectName).Click();
+        }
+
+        [Then(@"""(.*)"" Project is displayed on Action panel")]
+        public void ThenProjectIsDisplayedOnActionPanel(string projectName)
+        {
+            var action = _driver.NowAt<BaseDashboardPage>();
+            Assert.AreEqual(projectName, action.ProjectField.GetAttribute("value"), "Project is not displayed");
+        }
+
+        [When(@"User clears Project field")]
+        public void WhenUserClearsProjectField()
+        {
+            var action = _driver.NowAt<BaseDashboardPage>();
+            action.ProjectField.Clear();
+        }
+
+        [Then(@"the following Projects are displayed in opened DLL on Action panel:")]
+        public void ThenTheFollowingProjectsAreDisplayedInOpenedDLLOnActionPanel(Table table)
+        {
+            var action = _driver.NowAt<BaseDashboardPage>();
+            action.ProjectField.Click();
+            var expectedList = table.Rows.SelectMany(row => row.Values);
+            var actualList = action.OptionsDll.Select(value => value.Text);
+            Assert.AreEqual(expectedList, actualList, "Project list are different");
         }
 
         [When(@"User selects ""(.*)"" Request Type on Action panel")]
         public void WhenUserSelectsRequestTypeOnActionPanel(string requestType)
         {
             var action = _driver.NowAt<BaseDashboardPage>();
+            action.RequestTypeField.Clear();
             action.RequestTypeField.SendKeys(requestType);
-            action.OptionName.Click();
+            action.GetOptionOnActionsPanelByName(requestType).Click();
+        }
+
+        [When(@"User selects ""(.*)"" Stage on Action panel")]
+        public void WhenUserSelectsStageOnActionPanel(string stageValue)
+        {
+            var action = _driver.NowAt<BaseDashboardPage>();
+            action.StageField.Clear();
+            action.StageField.SendKeys(stageValue);
+            action.GetOptionOnActionsPanelByName(stageValue).Click();
+        }
+
+        [When(@"User selects ""(.*)"" Task on Action panel")]
+        public void WhenUserSelectsTaskOnActionPanel(string taskNAme)
+        {
+            var action = _driver.NowAt<BaseDashboardPage>();
+            action.TaskField.Clear();
+            action.TaskField.SendKeys(taskNAme);
+            action.GetOptionOnActionsPanelByName(taskNAme).Click();
+        }
+
+        [When(@"User selects ""(.*)"" Value on Action panel")]
+        public void WhenUserSelectsValueOnActionPanel(string value)
+        {
+            var action = _driver.NowAt<BaseDashboardPage>();
+            action.ValueDropdown.Click();
+            action.GetOptionOnActionsPanelByName(value).Click();
+        }
+
+        [Then(@"the following Update Value are displayed in opened DLL on Action panel:")]
+        public void ThenTheFollowingUpdateValueAreDisplayedInOpenedDLLOnActionPanel(Table table)
+        {
+            var action = _driver.NowAt<BaseDashboardPage>();
+            action.UpdateValueDropdown.Click();
+            var expectedList = table.Rows.SelectMany(row => row.Values);
+            var actualList = action.OptionsDll.Select(value => value.Text);
+            Assert.AreEqual(expectedList, actualList, "Project list are different");
         }
 
         [When(@"User clicks the ""(.*)"" Action button")]
@@ -98,6 +161,37 @@ namespace DashworksTestAutomation.Steps.Dashworks
         {
             var action = _driver.NowAt<BaseDashboardPage>();
             action.GetActionsButtonByName(buttonName).Click();
+            _driver.WaitForDataLoading();
+        }
+
+        [Then(@"""(.*)"" Action button is disabled")]
+        public void ThenActionButtonIsDisabled(string buttonName)
+        {
+            var button = _driver.NowAt<BaseDashboardPage>();
+            var buttonState = button.GetActionsButtonByName(buttonName).GetAttribute("disabled");
+            Assert.AreEqual(buttonState, "true", $"{buttonName} Button state is incorrect");
+        }
+
+        [Then(@"""(.*)"" Action button is active")]
+        public void ThenActionButtonIsActive(string buttonName)
+        {
+            var button = _driver.NowAt<BaseDashboardPage>();
+            var buttonState = button.GetActionsButtonByName(buttonName).GetAttribute("disabled");
+            Assert.AreNotEqual(buttonState, "true", $"{buttonName} Button state is incorrect");
+        }
+
+        [Then(@"Objects to add panel is disabled")]
+        public void ThenObjectsToAddPanelIsDisabled()
+        {
+            var component = _driver.NowAt<BaseDashboardPage>();
+            Assert.IsTrue(component.DisabledObjectsToAddPanel.Displayed(), "Objects to add panel is active");
+        }
+
+        [Then(@"Objects to add panel is active")]
+        public void ThenObjectsToAddPanelIsActive()
+        {
+            var component = _driver.NowAt<BaseDashboardPage>();
+            Assert.IsTrue(component.ActiveObjectsToAddPanel.Displayed(), "Objects to add panel is active");
         }
 
         [Then(@"Warning message with ""(.*)"" text is displayed on Action panel")]
@@ -112,6 +206,7 @@ namespace DashworksTestAutomation.Steps.Dashworks
         public void ThenSuccessMessageWithTextIsDisplayedOnActionPanel(string textMessage)
         {
             var action = _driver.NowAt<BaseDashboardPage>();
+            _driver.WaitForDataLoading();
             Assert.IsTrue(action.SuccessMessageActionPanel(textMessage), "Success Message is not displayed");
         }
 
@@ -159,6 +254,13 @@ namespace DashworksTestAutomation.Steps.Dashworks
             _driver.SelectCustomSelectbox(actionsElement.DropdownBox, "Add to static list");
             actionsElement.SelectList(listName);
             actionsElement.AddButton.Click();
+        }
+
+        [Then(@"User selects ""(.*)"" List in Saved List dropdown")]
+        public void ThenUserSelectsListInSavedListDropdown(string listName)
+        {
+            var actionsElement = _driver.NowAt<ActionsElement>();
+            actionsElement.SelectList(listName);
         }
 
         [Then(@"Select All selectbox is checked")]

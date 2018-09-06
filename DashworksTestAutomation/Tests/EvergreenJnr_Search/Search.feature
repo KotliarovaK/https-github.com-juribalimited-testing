@@ -49,7 +49,7 @@ Scenario: EvergreenJnr_AllLists_CheckSearchFilterAndTableContentDuringNavigation
 	And Search field is empty
 	And User enters SearchCriteria into the agGrid Search Box and the correct NumberOfRows are returned
 	| SearchCriteria | NumberOfRows |
-	| Python          | 7           |
+	| Python         | 7            |
 	When User clicks "Mailboxes" on the left-hand menu
 	Then "Mailboxes" list should be displayed to the user
 	And "14,784" rows are displayed in the agGrid
@@ -143,7 +143,8 @@ Scenario: EvergreenJnr_DevicesList_Search_CheckThatSearchFieldHaveResetButtonAtF
 	Then "Devices" list should be displayed to the user
 	When User clicks the Filters button
 	Then Filters panel is displayed to the user
-	When User enters "CheckTheResetButton" text in Search field at Filters Panel
+	When User clicks Add New button on the Filter panel
+	And User enters "CheckTheResetButton" text in Search field at Filters Panel
 	Then reset button in Search field at selected Panel is displayed
 
 @Evergreen @Devices @EvergreenJnr_Search @Search @DAS11350
@@ -341,3 +342,33 @@ Scenario: EvergreenJnr_DevicesLists_Search_CheckThatValidationForSpecialCharacte
 	Then User enters invalid SearchCriteria into the agGrid Search Box and "No devices found" message is displayed
 	| SearchCriteria |
 	| %%%            |
+
+@Evergreen @Devices @EvergreenJnr_Search @Search @DAS13342
+Scenario: EvergreenJnr_DevicesList_Search_ChecksThatRowCountIsResetBackToTheFullRowCountAfterClickingTheSearchCrossButton
+	When User clicks "Devices" on the left-hand menu
+	Then "Devices" list should be displayed to the user
+	And "17,225" rows are displayed in the agGrid
+	When User perform search by "00K"
+	Then "8" rows are displayed in the agGrid
+	When User clicks cross icon in Table search field
+	Then "17,225" rows are displayed in the agGrid
+
+@Evergreen @Applications @EvergreenJnr_Search @Search @DAS13342 @DAS13366
+Scenario: EvergreenJnr_ApplicationsList_Search_ChecksThatRowCountIsResetBackToTheFullRowCountAfterClickingTheFilterButtonAfterRunningASearch
+	When User clicks "Applications" on the left-hand menu
+	Then "Applications" list should be displayed to the user
+	Then "2,223" rows are displayed in the agGrid
+	When User clicks the Filters button
+	Then Filters panel is displayed to the user
+	When User add "Windows7Mi: Hide from End Users" filter where type is "Equals" with added column and following checkboxes:
+	| SelectedCheckboxes |
+	| FALSE              |
+	When User add "Application" filter where type is "Equals" with added column and following value:
+	| Values                             |
+	| DirectX SDK (Version 8.1) (3663.0) |
+	Then "1,067" rows are displayed in the agGrid
+	Then "(Windows7Mi: Hide from End Users = false) OR (Application = DirectX SDK (Version 8.1) (3663.0))" text is displayed in filter container
+	When User perform search by "microsoft"
+	Then "395" rows are displayed in the agGrid
+	When User opens filter container
+	Then "1,067" rows are displayed in the agGrid

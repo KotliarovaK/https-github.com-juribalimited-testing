@@ -1,5 +1,6 @@
 ﻿using System.Collections.Generic;
 using DashworksTestAutomation.Base;
+using DashworksTestAutomation.Extensions;
 using OpenQA.Selenium;
 using OpenQA.Selenium.Support.PageObjects;
 
@@ -28,6 +29,12 @@ namespace DashworksTestAutomation.Pages.Projects
         [FindsBy(How = How.XPath, Using = ".//textarea[@aria-label='Page Description']")]
         public IWebElement PageDescription { get; set; }
 
+        [FindsBy(How = How.XPath, Using = "//select[@aria-label='Linked Object Tasks']")]
+        public IWebElement LinkedObjectTasks { get; set; }
+
+        [FindsBy(How = How.XPath, Using = "//input[contains(@id, 'addLinkedObjectTask')]")]
+        public IWebElement AddLinkedObjectTasksButton { get; set; }
+
         public override List<By> GetPageIdentitySelectors()
         {
             return new List<By>
@@ -38,6 +45,13 @@ namespace DashworksTestAutomation.Pages.Projects
                 SelectorFor(this, p => p.ShortName),
                 SelectorFor(this, p => p.PageDescription)
             };
+        }
+
+        public void SelectLinkedObjectTasksByName(string taskName)
+        {
+            var selector = By.XPath($"//select[@aria-label='Linked Object Tasks']/option[text()='{taskName}']");
+            Driver.WaitWhileControlIsNotDisplayed(selector);
+            Driver.FindElement(selector).Click();
         }
     }
 }

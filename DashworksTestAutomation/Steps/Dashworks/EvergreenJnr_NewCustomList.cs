@@ -98,7 +98,7 @@ namespace DashworksTestAutomation.Steps.Dashworks
             var listElement = _driver.NowAt<CustomListElement>();
 
             _driver.WaitWhileControlIsNotDisplayed<CustomListElement>(() => listElement.CreateNewListButton);
-            Assert.IsTrue(listElement.CreateNewListButton.Displayed(), "CreateNewListButton is displayed");
+            Assert.IsTrue(listElement.CreateNewListButton.Displayed(), "'Save' button is displayed");
             listElement.CreateNewListButton.Click();
 
             _driver.WaitWhileControlIsNotDisplayed<CustomListElement>(() => listElement.SaveButton);
@@ -192,6 +192,13 @@ namespace DashworksTestAutomation.Steps.Dashworks
             var listElement = _driver.NowAt<CustomListElement>();
             Assert.AreEqual(listName, listElement.CheckAllListName(listName).Text, "Incorrect list name is displayed");
         }
+
+        [When(@"User clicks ""(.*)"" link in Lists panel")]
+        public void WhenUserClicksLinkInListsPanel(string listName)
+        {
+            var listElement = _driver.NowAt<CustomListElement>();
+            listElement.CheckAllListName(listName).Click();
+        }   
 
         [When(@"User clicks Manage in the list panel")]
         public void WhenUserClicksManageInTheListPanel()

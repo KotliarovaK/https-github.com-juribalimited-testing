@@ -104,6 +104,20 @@ namespace DashworksTestAutomation.Steps.Dashworks
             }
         }
 
+        #region URL
+
+        [Then(@"""(.*)"" column is added to URL on ""(.*)"" page")]
+        public void ThenColumnIsAddedToURLOnPage(string columnName, string pageName)
+        {
+            _driver.WaitForDataLoading();
+            var currentUrl = _driver.Url;
+            const string pattern = @"\$select=(.*)";
+            var urlPartToCheck = Regex.Match(currentUrl, pattern).Groups[1].Value;
+            StringAssert.Contains(ColumnNameToUrlConvertor.Convert(pageName, columnName).ToLower(),
+                urlPartToCheck.ToLower(),
+                $"{columnName} is not added to URL");
+        }
+
         [When(@"User add following columns using URL to the ""(.*)"" page:")]
         public void WhenUserAddFollowingColumnsUsingUrlToThePage(string pageName, Table table)
         {
@@ -133,78 +147,6 @@ namespace DashworksTestAutomation.Steps.Dashworks
             _driver.NavigateToUrl(currentUrl.Replace(originalPart, changedPart));
             _driver.WaitForDataLoading();
             CheckColumnDisplayedState(table, true);
-        }
-
-        [Then(@"ColumnName is added to the list")]
-        public void ThenColumnNameIsAddedToTheList(Table table)
-        {
-            _driver.WaitForDataLoading();
-            CheckColumnDisplayedState(table, true);
-        }
-
-        [Then(@"ColumnName is removed from the list")]
-        public void ThenColumnNameIsRemovedFromTheList(Table table)
-        {
-            _driver.WaitForDataLoading();
-            CheckColumnDisplayedState(table, false);
-        }
-
-        [When(@"User refreshes agGrid")]
-        public void WhenUserRefreshesAgGrid()
-        {
-            var page = _driver.NowAt<BaseDashboardPage>();
-            page.RefreshTableButton.Click();
-        }
-
-        private void CheckColumnDisplayedState(Table table, bool displayedState)
-        {
-            var listpageMenu = _driver.NowAt<BaseDashboardPage>();
-            listpageMenu.RefreshTableButton.Click();
-            _driver.WaitForDataLoading();
-            Thread.Sleep(1000);
-            foreach (var row in table.Rows)
-                Assert.AreEqual(displayedState, listpageMenu.IsColumnPresent(row["ColumnName"]),
-                    $"Column '{row["ColumnName"]}' displayed state should be {displayedState}");
-        }
-
-        [When(@"User add all Columns from specific category")]
-        public void WhenUserAddAllColumnsFromSpecificCategory(Table table)
-        {
-            var columnElement = _driver.NowAt<ColumnsElement>();
-
-            foreach (var row in table.Rows) columnElement.AddAllColumnsFromCategory(row["CategoryName"]);
-        }
-
-        [When(@"User add ""(.*)"" Column from expanded category")]
-        public void WhenUserAddColumnFromExpandedCategory(string columnName)
-        {
-            var columnElement = _driver.NowAt<ColumnsElement>();
-            columnElement.AddColumnFromExpandedSection(columnName);
-        }
-
-        [When(@"User removes ""(.*)"" column by Column panel")]
-        public void WhenUserRemovesColumnByColumnPanel(string columnName)
-        {
-            var columnElement = _driver.NowAt<ColumnsElement>();
-            columnElement.ExpandColumnsSectionByName("Selected Columns");
-            columnElement.GetDeleteColumnButton(columnName).Click();
-        }
-
-        [When(@"User removes ColumnName column by Column panel")]
-        public void WhenUserRemovesColumnNameColumnByColumnPanel(Table table)
-        {
-            var columnElement = _driver.NowAt<ColumnsElement>();
-            columnElement.ExpandColumnsSectionByName("Selected Columns");
-            foreach (var row in table.Rows) columnElement.GetDeleteColumnButton(row["ColumnName"]).Click();
-        }
-
-        [When(@"User have reset all columns")]
-        public void WhenUserHaveResetAllColumns()
-        {
-            var columnElement = _driver.NowAt<ColumnsElement>();
-            _driver.WaitWhileControlIsNotDisplayed<ColumnsElement>(() => columnElement.ResetColumnsButton);
-            _driver.MouseHover(columnElement.ResetColumnsButton);
-            columnElement.ResetColumnsButton.Click();
         }
 
         [When(@"User remove column on ""(.*)"" page by URL")]
@@ -306,6 +248,48 @@ namespace DashworksTestAutomation.Steps.Dashworks
                 throw new Exception("500 error was returned after removing all columns from URL");
         }
 
+        #endregion
+
+        #region Category
+
+        [When(@"User add ""(.*)"" Column from expanded category")]
+        public void WhenUserAddColumnFromExpandedCategory(string columnName)
+        {
+            var columnElement = _driver.NowAt<ColumnsElement>();
+            columnElement.AddColumnFromExpandedSection(columnName);
+        }
+
+        [Then(@"ColumnName is added to the list")]
+        public void ThenColumnNameIsAddedToTheList(Table table)
+        {
+            _driver.WaitForDataLoading();
+            CheckColumnDisplayedState(table, true);
+        }
+
+        [When(@"User removes ""(.*)"" column by Column panel")]
+        public void WhenUserRemovesColumnByColumnPanel(string columnName)
+        {
+            var columnElement = _driver.NowAt<ColumnsElement>();
+            //columnElement.ExpandColumnsSectionByName("Selected Columns");
+            columnElement.GetDeleteColumnButton(columnName).Click();
+        }
+
+        [When(@"User removes ColumnName column by Column panel")]
+        public void WhenUserRemovesColumnNameColumnByColumnPanel(Table table)
+        {
+            var columnElement = _driver.NowAt<ColumnsElement>();
+            //columnElement.ExpandColumnsSectionByName("Selected Columns");
+            foreach (var row in table.Rows) columnElement.GetDeleteColumnButton(row["ColumnName"]).Click();
+        }
+        
+        [Then(@"ColumnName is removed from the list")]
+        public void ThenColumnNameIsRemovedFromTheList(Table table)
+        {
+            _driver.WaitForDataLoading();
+            CheckColumnDisplayedState(table, false);
+        }
+
+        //checks the number of subcategories
         [Then(@"""(.*)"" subcategories is displayed for ""(.*)"" category")]
         public void ThenSubcategoriesIsDisplayedForCategory(int subCategoriesCount, string categoryName)
         {
@@ -325,12 +309,12 @@ namespace DashworksTestAutomation.Steps.Dashworks
                 $"{subCategoriesName} is not selected");
         }
 
-        [Then(@"Minimize buttons are displayed for all category in Columns panel")]
-        public void ThenMinimizeButtonsAreDisplayedForAllCategoryInColumnsPanel()
+        [Then(@"""(.*)"" section is not displayed in the Columns panel")]
+        public void ThenSectionIsNotDisplayedInTheColumnsPanel(string categoryName)
         {
             var columnElement = _driver.NowAt<ColumnsElement>();
-            var groupCount = columnElement.GroupTitle.Count;
-            Assert.AreEqual(groupCount, columnElement.MinimizeGroupButton.Count, "Minimize buttons are not displayed");
+            Assert.IsFalse(columnElement.CategoryIsDisplayed(categoryName),
+                $"{categoryName} category stil displayed in Column Panel");
         }
 
         [When(@"User close all columns categories")]
@@ -343,6 +327,28 @@ namespace DashworksTestAutomation.Steps.Dashworks
                     continue;
                 group.Click();
             }
+        }
+
+        [Then(@"User closed ""(.*)"" columns category")]
+        public void ThenUserClosedColumnsCategory(string categoryName)
+        {
+            var columnElement = _driver.NowAt<ColumnsElement>();
+            columnElement.CloseColumnsSectionByName(categoryName);
+        }
+
+        [Then(@"User is expand ""(.*)"" columns category")]
+        public void ThenUserIsExpandColumnsCategory(string categoryName)
+        {
+            var columnElement = _driver.NowAt<ColumnsElement>();
+            columnElement.ExpandColumnsSectionByName(categoryName);
+        }
+
+        [Then(@"Minimize buttons are displayed for all category in Columns panel")]
+        public void ThenMinimizeButtonsAreDisplayedForAllCategoryInColumnsPanel()
+        {
+            var columnElement = _driver.NowAt<ColumnsElement>();
+            var groupCount = columnElement.GroupTitle.Count;
+            Assert.AreEqual(groupCount, columnElement.MinimizeGroupButton.Count, "Minimize buttons are not displayed");
         }
 
         [Then(@"Maximize buttons are displayed for all category in Columns panel")]
@@ -377,19 +383,41 @@ namespace DashworksTestAutomation.Steps.Dashworks
                 $"Maximize button is not displayed for {categoryName} category");
         }
 
-        [Then(@"""(.*)"" section is not displayed in the Columns panel")]
-        public void ThenSectionIsNotDisplayedInTheColumnsPanel(string categoryName)
+        #endregion
+
+        [When(@"User refreshes agGrid")]
+        public void WhenUserRefreshesAgGrid()
         {
-            var columnElement = _driver.NowAt<ColumnsElement>();
-            Assert.IsFalse(columnElement.CategoryIsDisplayed(categoryName),
-                $"{categoryName} category stil displayed in Column Panel");
+            var page = _driver.NowAt<BaseDashboardPage>();
+            page.RefreshTableButton.Click();
         }
 
-        [Then(@"User is expand ""(.*)"" columns category")]
-        public void ThenUserIsExpandColumnsCategory(string categoryName)
+        private void CheckColumnDisplayedState(Table table, bool displayedState)
+        {
+            var listpageMenu = _driver.NowAt<BaseDashboardPage>();
+            listpageMenu.RefreshTableButton.Click();
+            _driver.WaitForDataLoading();
+            Thread.Sleep(1000);
+            foreach (var row in table.Rows)
+                Assert.AreEqual(displayedState, listpageMenu.IsColumnPresent(row["ColumnName"]),
+                    $"Column '{row["ColumnName"]}' displayed state should be {displayedState}");
+        }
+
+        [When(@"User add all Columns from specific category")]
+        public void WhenUserAddAllColumnsFromSpecificCategory(Table table)
         {
             var columnElement = _driver.NowAt<ColumnsElement>();
-            columnElement.ExpandColumnsSectionByName(categoryName);
+
+            foreach (var row in table.Rows) columnElement.AddAllColumnsFromCategory(row["CategoryName"]);
+        } 
+
+        [When(@"User have reset all columns")]
+        public void WhenUserHaveResetAllColumns()
+        {
+            var columnElement = _driver.NowAt<ColumnsElement>();
+            _driver.WaitWhileControlIsNotDisplayed<ColumnsElement>(() => columnElement.ResetColumnsButton);
+            _driver.MouseHover(columnElement.ResetColumnsButton);
+            columnElement.ResetColumnsButton.Click();
         }
 
         [Then(@"Lowest value of ""(.*)"" column is null")]
@@ -398,18 +426,6 @@ namespace DashworksTestAutomation.Steps.Dashworks
             var page = _driver.NowAt<BaseDashboardPage>();
             var content = page.GetColumnContent(columnName);
             Assert.IsFalse(content.Contains("-1"), "The Lowest value is not null");
-        }
-
-        [Then(@"""(.*)"" column is added to URL on ""(.*)"" page")]
-        public void ThenColumnIsAddedToURLOnPage(string columnName, string pageName)
-        {
-            _driver.WaitForDataLoading();
-            var currentUrl = _driver.Url;
-            const string pattern = @"\$select=(.*)";
-            var urlPartToCheck = Regex.Match(currentUrl, pattern).Groups[1].Value;
-            StringAssert.Contains(ColumnNameToUrlConvertor.Convert(pageName, columnName).ToLower(),
-                urlPartToCheck.ToLower(),
-                $"{columnName} is not added to URL");
         }
     }
 }

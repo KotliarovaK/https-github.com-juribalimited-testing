@@ -11,7 +11,6 @@ using OpenQA.Selenium;
 using OpenQA.Selenium.Remote;
 using TechTalk.SpecFlow;
 using TechTalk.SpecFlow.Assist;
-using ReadinessEnum = DashworksTestAutomation.DTO.Projects.ReadinessEnum;
 using TaskStatusEnum = DashworksTestAutomation.DTO.Projects.TaskStatusEnum;
 
 namespace DashworksTestAutomation.Steps.Projects
@@ -79,7 +78,7 @@ namespace DashworksTestAutomation.Steps.Projects
             var tab = _driver.NowAt<MainElementsOfProjectCreation>();
 
             tab.GetButtonElementByName(buttonName).Click();
-            _driver.WaitForDataLoading();
+            _driver.WaitForDataLoadingOnProjects();
         }
 
         [Then(@"Success message is displayed with ""(.*)"" text")]
@@ -117,6 +116,7 @@ namespace DashworksTestAutomation.Steps.Projects
             //assign ProjectTypeString to ProjectTypeEnum
             _projectDto.ProjectType = (ProjectTypeEnum)Enum.Parse(typeof(ProjectTypeEnum), _projectDto.ProjectTypeString);
             _projectDto.ProjectName += TestDataGenerator.RandomString();
+            _projectDto.ProjectShortName += TestDataGenerator.RandomString();
 
             page.ProjectName.SendKeys(_projectDto.ProjectName);
             page.ProjectShortName.SendKeys(_projectDto.ProjectShortName);
@@ -141,8 +141,11 @@ namespace DashworksTestAutomation.Steps.Projects
             if (_projectDto.ProjectType.Equals(ProjectTypeEnum.UserScheduledProject))
                 _detailsDto.OnboardUsedApplicationsByAssociationTo = OnboardUsedApplicationsByAssociationToEnum.Computer;
 
+            //generate random color by index
+            var option = page.SelectOnboardedApplications();
+            _detailsDto.ReadinessForOnboardedApplications.Add(option.Key, option.Value);
 
-            page.SelectOnboardedApplications(_detailsDto.DefaultReadinessForOnboardedApplications);
+            //page.SelectOnboardedApplications(_detailsDto.DefaultReadinessForOnboardedApplications);
             page.ShowLinkedObjects.SelectboxSelect(_detailsDto.DefaultValueForShowLinkedObjects.GetValue());
             page.ApplicationsTab1.SelectboxSelect(_detailsDto.DefaultViewForProjectObjectApplicationsTab1.GetValue());
             page.ApplicationsTab2.SelectboxSelect(_detailsDto.DefaultViewForProjectObjectApplicationsTab2.GetValue());
@@ -164,6 +167,16 @@ namespace DashworksTestAutomation.Steps.Projects
             upd.UpdateButton.Click();
 
             _projectDto.Details = _detailsDto;
+        }
+
+        [When(@"User update Project Name on ""(.*)""")]
+        public void WhenUserUpdateProjectNameOn(string pprojectName)
+        {
+            var page = _driver.NowAt<DetailsPage>();
+            page.ProjectName.Clear();
+            page.ProjectName.SendKeys(pprojectName);
+            var upd = _driver.NowAt<MainElementsOfProjectCreation>();
+            upd.UpdateButton.Click();
         }
 
         [Then(@"CC email field is displayed with ""(.*)"" text")]
@@ -302,7 +315,7 @@ namespace DashworksTestAutomation.Steps.Projects
             _projectDto.Stages.Add(tempStagePropertiesDto);
 
             page.StageName.SendKeys(_stagePropertiesDto.StageName);
-            _driver.WaitForDataLoading();
+            _driver.WaitForDataLoadingOnProjects();
 
             //page.ConfirmCreateStageButton.Click();
         }
@@ -331,7 +344,7 @@ namespace DashworksTestAutomation.Steps.Projects
             page.StageName.SelectboxSelect(_taskPropertiesDto.Stages.GetValue());
             page.TaskType.SelectboxSelect(_taskPropertiesDto.TaskType.GetValue());
             page.ValueType.SelectboxSelect(_taskPropertiesDto.ValueType.GetValue());
-            _driver.WaitForDataLoading();
+            _driver.WaitForDataLoadingOnProjects();
             page.ObjectType.SelectboxSelect(_taskPropertiesDto.ObjectType.GetValue());
 
             if (!string.IsNullOrEmpty(_taskPropertiesDto.TaskValuesTemplateString))
@@ -345,7 +358,7 @@ namespace DashworksTestAutomation.Steps.Projects
                     page.TaskValuesTemplate.SelectboxSelect(_taskPropertiesDto.TaskValuesTemplate.GetValue());
             }
 
-            _driver.WaitForDataLoading();
+            _driver.WaitForDataLoadingOnProjects();
             page.ApplyToAllCheckbox.SetCheckboxState(_taskPropertiesDto.ApplyToAllCheckbox);
 
             page.ConfirmCreateTaskButton.Click();
@@ -382,7 +395,7 @@ namespace DashworksTestAutomation.Steps.Projects
                 //assign TaskProjectRoleString to TaskProjectRoleEnum
                 _taskPropertiesDetailsDto.TaskProjectRole = (TaskProjectRoleEnum)Enum.Parse(typeof(TaskProjectRoleEnum), _taskPropertiesDetailsDto.TaskProjectRoleString);
 
-                _driver.WaitForDataLoading();
+                _driver.WaitForDataLoadingOnProjects();
                 Assert.AreEqual(_taskPropertiesDetailsDto.TaskHaADueDate, page.TaskHaADueDate.Selected,
                     "Cheked state is incorrect");
                 Assert.AreEqual(_taskPropertiesDetailsDto.TaskHaADueDate,
@@ -412,7 +425,7 @@ namespace DashworksTestAutomation.Steps.Projects
                     //assign DateModeString to DateModeEnum
                     _taskPropertiesDetailsDto.DateMode = (DateModeEnum)Enum.Parse(typeof(DateModeEnum), _taskPropertiesDetailsDto.DateModeString);
                     page.DateMode.SelectboxSelect(_taskPropertiesDetailsDto.DateMode.GetValue());
-                }      
+                }
             }
 
             if (_taskPropertiesDto.ValueType.Equals(ValueTypeEnum.Radiobutton))
@@ -494,12 +507,15 @@ namespace DashworksTestAutomation.Steps.Projects
             _taskPropertiesValuesDto.TaskStatus = (TaskStatusEnum)Enum.Parse(typeof(TaskStatusEnum), _taskPropertiesValuesDto.TaskStatusString);
 
             page.Name.SendKeys(_taskPropertiesValuesDto.Name);
-            if (!string.IsNullOrEmpty(_taskPropertiesValuesDto.ReadinessString))
+
+            if (page.ReadinessListClick.Displayed())
             {
-                //assign ReadinessString to ReadinessEnum
-                _taskPropertiesValuesDto.Readiness = (ReadinessEnum)Enum.Parse(typeof(ReadinessEnum), _taskPropertiesValuesDto.ReadinessString);
-                page.SelectOnboardedApplications(_taskPropertiesValuesDto.Readiness);
+                //generate random color by index
+                var option = page.SelectReadiness();
+                _taskPropertiesValuesDto.Readiness.Add(option.Key, option.Value);
             }
+                //page.SelectReadiness(_taskPropertiesValuesDto.ReadinessIndex); 
+
             page.TaskStatus.SelectboxSelect(_taskPropertiesValuesDto.TaskStatus.GetValue());
             page.DefaultValue.SetCheckboxState(_taskPropertiesValuesDto.DefaultValue);
         }
@@ -524,12 +540,15 @@ namespace DashworksTestAutomation.Steps.Projects
                 page.Name.Clear();
                 page.Name.SendKeys(_taskPropertiesValuesDto.Name);
             }
-            if (!string.IsNullOrEmpty(_taskPropertiesValuesDto.ReadinessString))
+            //int? x = _taskPropertiesValuesDto.ReadinessIndex;
+            if (page.ReadinessListClick.Displayed())
             {
-                //assign ReadinessString to ReadinessEnum
-                _taskPropertiesValuesDto.Readiness = (ReadinessEnum)Enum.Parse(typeof(ReadinessEnum), _taskPropertiesValuesDto.ReadinessString);
-                page.SelectOnboardedApplications(_taskPropertiesValuesDto.Readiness);
+                //generate random color by index
+                var option = page.SelectReadiness();
+                _taskPropertiesValuesDto.Readiness.Add(option.Key, option.Value);
             }
+                //page.SelectReadiness(_taskPropertiesValuesDto.ReadinessIndex);
+
             if (!string.IsNullOrEmpty(_taskPropertiesValuesDto.TaskStatusString))
             {
                 //assign TaskStatusString to TaskStatusEnum
@@ -587,6 +606,7 @@ namespace DashworksTestAutomation.Steps.Projects
             page.ShortDescription.SendKeys(_teamPropertiesDto.ShortDescription);
 
             page.ConfirmCreateTeamButton.Click();
+            _driver.WaitForDataLoadingOnProjects();
 
             tempTeamPropertiesDto.TeamName = _teamPropertiesDto.TeamName;
         }
@@ -603,22 +623,35 @@ namespace DashworksTestAutomation.Steps.Projects
             _projectDto.GroupProperties.Add(tempGroupPropertiesDto);
 
             page.GroupName.SendKeys(_groupPropertiesDto.GroupName);
-            _driver.WaitForDataLoading();
+            _driver.WaitForDataLoadingOnProjects();
             try
             {
                 page.OwnedByTeam.SelectboxSelect(_projectDto.TeamProperties[teamIndex - 1].TeamName);
-                _driver.WaitForDataLoading();
+                _driver.WaitForDataLoadingOnProjects();
             }
             catch (NoSuchElementException)
             {
                 page = _driver.NowAt<GroupPropertiesPage>();
                 page.OwnedByTeam.SelectboxSelect(_projectDto.TeamProperties[teamIndex - 1].TeamName);
-                _driver.WaitForDataLoading();
+                _driver.WaitForDataLoadingOnProjects();
             }
 
             page.ConfirmCreateGroupButton.Click();
 
             tempGroupPropertiesDto.OwnedByTeam = _projectDto.TeamProperties.Last().TeamName;
+        }
+
+        [When(@"User create Group owned existing ""(.*)"" Team")]
+        public void WhenUserCreateGroupOwnedExistingTeam(string teamName, Table table)
+        {
+            var page = _driver.NowAt<GroupPropertiesPage>();
+            foreach (var row in table.Rows)
+            {
+                page.GroupName.Click();
+                page.GroupName.SendKeys((row["GroupName"]));
+                page.OwnedByTeam.Click();
+                page.SelectTeamForGroup(teamName);
+            }
         }
 
         [When(@"User create Mail Template")]
@@ -654,8 +687,27 @@ namespace DashworksTestAutomation.Steps.Projects
         public void ThenCreatedTeamIsDisplayedInTable()
         {
             var page = _driver.NowAt<MainElementsOfProjectCreation>();
-            var team = page.GetTheCreatedElementInTableByName(_projectDto.TeamProperties.Last().TeamName);
-            Assert.IsTrue(team.Displayed(), "Selected Team is not displayed in the table");
+            try
+            {
+                if (!page.GetTheCreatedElementInTableByName(_projectDto.TeamProperties.Last().TeamName).Displayed())
+                {
+                    try
+                    {
+                        page.NextTeamsListLink.Click();
+                    }
+                    catch
+                    { }
+                    var team = page.GetTheCreatedElementInTableByName(_projectDto.TeamProperties.Last().TeamName);
+                    Assert.IsTrue(team.Displayed(), "Selected Team is not displayed in the table");
+                }
+                else
+                {
+                    var team = page.GetTheCreatedElementInTableByName(_projectDto.TeamProperties.Last().TeamName);
+                    Assert.IsTrue(team.Displayed(), "Selected Team is not displayed in the table");
+                }
+            }
+            catch
+            { }
         }
 
         [Then(@"created Group is displayed in the table")]
@@ -686,7 +738,7 @@ namespace DashworksTestAutomation.Steps.Projects
         public void ThenCreatedRequestTypeIsDisplayedInTheTable()
         {
             var page = _driver.NowAt<MainElementsOfProjectCreation>();
-            _driver.WaitForDataLoading();
+            _driver.WaitForDataLoadingOnProjects();
             Assert.IsTrue(page.GetTheCreatedRequestTypeInTableByName(_projectDto.ReqestTypes.Last().Name).Displayed(), "Selected Request Type is not displayed in the table");
         }
 
@@ -709,7 +761,7 @@ namespace DashworksTestAutomation.Steps.Projects
         public void ThenCreatedRequestTypeIsADefault()
         {
             var page = _driver.NowAt<MainElementsOfProjectCreation>();
-            _driver.WaitForDataLoading();
+            _driver.WaitForDataLoadingOnProjects();
             Assert.IsTrue(page.GetDefaultRequestTypeCountByName(_projectDto.ReqestTypes.Last().Name).Displayed(), "Selected Request Type is not 'Default'");
         }
 
@@ -727,16 +779,54 @@ namespace DashworksTestAutomation.Steps.Projects
         public void ThenNumberOfGroupsIsDisplayedForTeam(int numberOfGroups, int teamIndex)
         {
             var page = _driver.NowAt<MainElementsOfProjectCreation>();
-            var groups = page.GetGroupsCountByTeamName(_projectDto.TeamProperties.Last().TeamName);
-            Assert.AreEqual(groups, numberOfGroups, "Number of groups is incorrect");
+            try
+            {
+                if (!page.GetTheCreatedElementInTableByName(_projectDto.TeamProperties.Last().TeamName).Displayed())
+                {
+                    try
+                    {
+                        page.NextTeamsListLink.Click();
+                    }
+                    catch
+                    { }
+                    var groups = page.GetGroupsCountByTeamName(_projectDto.TeamProperties.Last().TeamName);
+                    Assert.AreEqual(groups, numberOfGroups, "Number of groups is incorrect");
+                }
+                else
+                {
+                    var groups = page.GetGroupsCountByTeamName(_projectDto.TeamProperties.Last().TeamName);
+                    Assert.AreEqual(groups, numberOfGroups, "Number of groups is incorrect");
+                }
+            }
+            catch
+            { }
         }
 
         [Then(@"""(.*)"" number of Members is displayed for created Team")]
         public void ThenRequiredNumberOfMembersIsDisplayedForCreatedTeam(int numberOfMembers)
         {
             var page = _driver.NowAt<MainElementsOfProjectCreation>();
-            var members = page.GetMembersCountByTeamName(_projectDto.TeamProperties.Last().TeamName);
-            Assert.AreEqual(members, numberOfMembers, "Number of members is incorrect");
+            try
+            {
+                if (!page.GetTheCreatedElementInTableByName(_projectDto.TeamProperties.Last().TeamName).Displayed())
+                {
+                    try
+                    {
+                        page.NextTeamsListLink.Click();
+                    }
+                    catch
+                    { }
+                    var members = page.GetMembersCountByTeamName(_projectDto.TeamProperties.Last().TeamName);
+                    Assert.AreEqual(members, numberOfMembers, "Number of members is incorrect");
+                }
+                else
+                {
+                    var members = page.GetMembersCountByTeamName(_projectDto.TeamProperties.Last().TeamName);
+                    Assert.AreEqual(members, numberOfMembers, "Number of members is incorrect");
+                }
+            }
+            catch
+            { }
         }
     }
 }

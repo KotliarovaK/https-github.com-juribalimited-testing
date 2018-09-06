@@ -17,6 +17,18 @@ namespace DashworksTestAutomation.Pages.Projects
         [FindsBy(How = How.XPath, Using = ".//input[contains(@id,'SelectUsers_Btn_Narrow')]")]
         public IWebElement SearchButton { get; set; }
 
+        [FindsBy(How = How.XPath, Using = ".//input[contains(@id,'SelectUsersToAdd_TB_Narrow')]")]
+        public IWebElement SearchTextboxForMembers { get; set; }
+
+        [FindsBy(How = How.XPath, Using = ".//input[contains(@id,'SelectUsersToAdd_Btn_Narrow')]")]
+        public IWebElement SearchButtonForMembers { get; set; }
+
+        [FindsBy(How = How.XPath, Using = ".//input[contains(@id,'SelectUsersToAdd_Btn_Reset')]")]
+        public IWebElement ResetButtonForMembers { get; set; }
+
+        [FindsBy(How = How.XPath, Using = "//a[text()='Next  >']")]
+        public IWebElement NextTeamsListLink { get; set; }
+
         public override List<By> GetPageIdentitySelectors()
         {
             Driver.WaitForDataLoading();
@@ -29,7 +41,7 @@ namespace DashworksTestAutomation.Pages.Projects
         [FindsBy(How = How.XPath, Using = ".//a[text()='Create Project']")]
         public IWebElement CreatedProject { get; set; }
 
-        [FindsBy(How = How.XPath, Using = ".//a[text()='Manage Project']")]
+        [FindsBy(How = How.XPath, Using = "//li//a[text()='Manage Project']")]
         public IWebElement ManageProject { get; set; }
 
         [FindsBy(How = How.XPath, Using = ".//div[contains(@class, 'tooltipbar-success')]")]

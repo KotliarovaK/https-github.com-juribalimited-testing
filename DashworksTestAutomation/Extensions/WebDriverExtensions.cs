@@ -544,6 +544,14 @@ namespace DashworksTestAutomation.Extensions
             ex.ExecuteScript($"arguments[0].setAttribute('{attribute}', '{text}')", element);
         }
 
+        public static String GetNetworkLogByJavascript(this RemoteWebDriver driver)
+        {
+            String scriptToExecute = "var performance = window.performance  || window.mozPerformance  || window.msPerformance  || window.webkitPerformance || {}; var network = performance.getEntries() || {}; return JSON.stringify(network);";
+            IJavaScriptExecutor ex = driver;
+            var netData = ex.ExecuteScript(scriptToExecute);
+            return netData.ToString();
+        }
+
         #endregion Actions with Javascript
 
         #region Frames

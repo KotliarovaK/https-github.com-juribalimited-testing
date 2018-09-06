@@ -8,6 +8,7 @@ using DashworksTestAutomation.DTO;
 using DashworksTestAutomation.DTO.RuntimeVariables;
 using DashworksTestAutomation.Extensions;
 using DashworksTestAutomation.Helpers;
+using DashworksTestAutomation.Pages.Evergreen;
 using DashworksTestAutomation.Pages.Evergreen.AdminDetailsPages;
 using DashworksTestAutomation.Pages.Projects;
 using DashworksTestAutomation.Providers;
@@ -188,6 +189,7 @@ namespace DashworksTestAutomation.Steps.Dashworks
         public void WhenUserSelectTabOnTheProjectDetailsPage(string tabName)
         {
             var projectTabs = _driver.NowAt<ProjectsPage>();
+            _driver.WaitForDataLoading();
             projectTabs.NavigateToProjectTabByName(tabName);
             _driver.WaitForDataLoading();
         }
@@ -205,6 +207,80 @@ namespace DashworksTestAutomation.Steps.Dashworks
             var projectTabs = _driver.NowAt<ProjectsPage>();
             projectTabs.NavigateToProjectTabInScopSectionByName(tabName);
             _driver.WaitForDataLoading();
+        }
+
+        [When(@"User selects ""(.*)"" color in the Application Scope tab on the Project details page")]
+        public void WhenUserSelectsColorInTheApplicationScopeTabOnTheProjectDetailsPage(string colorName)
+        {
+            var applicationTab = _driver.NowAt<ProjectsPage>();
+            applicationTab.DefaultReadinessDropdown.Click();
+            applicationTab.GetReadinessOptionByName(colorName).Click();
+        }
+
+        [When(@"User clicks ""(.*)"" associated checkbox on the Project details page")]
+        public void WhenUserClicksAssociatedCheckboxOnTheProjectDetailsPage(string checkboxName)
+        {
+            var projectTabs = _driver.NowAt<ProjectsPage>();
+            projectTabs.ClickAssociatedCheckbox(checkboxName);
+        }
+
+        [When(@"User selects following Mailbox permissions")]
+        public void WhenUserSelectsFollowingMailboxPermissions(Table table)
+        {
+            var projectsPage = _driver.NowAt<ProjectsPage>();
+            foreach (var row in table.Rows)
+            {
+                projectsPage.AddMailboxPermissionsButton.Click();
+                projectsPage.PermissionsDropdown.Click();
+                projectsPage.SelectPermissionsByName(row["Permissions"]);
+                projectsPage.AddPermissionsButtonInTab.Click();
+            }
+        }
+
+        [When(@"User selects following Mailbox folder permissions")]
+        public void WhenUserSelectsFollowingMailboxFolderPermissions(Table table)
+        {
+            var projectsPage = _driver.NowAt<ProjectsPage>();
+            foreach (var row in table.Rows)
+            {
+                projectsPage.AddMailboxFolderPermissionsButton.Click();
+                projectsPage.PermissionsDropdown.Click();
+                projectsPage.SelectPermissionsByName(row["Permissions"]);
+                projectsPage.AddPermissionsButtonInTab.Click();
+            }
+        }
+
+        [When(@"User removes following Mailbox permissions")]
+        public void WhenUserRemovesFollowingMailboxPermissions(Table table)
+        {
+            var projectsPage = _driver.NowAt<ProjectsPage>();
+            _driver.WaitForDataLoading();
+            foreach (var row in table.Rows)
+            {
+                projectsPage.RemovePermissionsByName(row["Permissions"]);
+            }
+        }
+
+        [Then(@"following Mailbox permissions are displayed to the user")]
+        public void ThenFollowingMailboxPermissionsAreDisplayedToTheUser(Table table)
+        {
+            var projectsPage = _driver.NowAt<ProjectsPage>();
+            _driver.WaitForDataLoading();
+            foreach (var row in table.Rows)
+            {
+             Assert.IsTrue(projectsPage.PermissionsDisplay(row["Permissions"]), $"'{row["Permissions"]}' are not displayed");
+            }
+        }
+
+        [Then(@"following checkboxes are checked in the Scope section")]
+        public void ThenFollowingCheckboxesAreCheckedInTheScopeSection(Table table)
+        {
+            var projectsPage = _driver.NowAt<ProjectsPage>();
+            _driver.WaitForDataLoading();
+            foreach (var row in table.Rows)
+            {
+                Assert.IsTrue(projectsPage.CheckboxesDisplay(row["Checkboxes"]), $"'{row["Checkboxes"]}' are not displayed");
+            }
         }
 
         [Then(@"following associations are disabled:")]
@@ -393,8 +469,8 @@ namespace DashworksTestAutomation.Steps.Dashworks
             _driver.WaitForDataLoading();
         }
 
-        [When(@"User clicks ""(.*)"" checkbox from String Filter on the Projects page")]
-        public void WhenUserClicksCheckboxFromStringFilterOnTheProjectsPage(string filterName)
+        [When(@"User selects ""(.*)"" checkbox from String Filter on the Admin page")]
+        public void WhenUserSelectsCheckboxFromStringFilterOnTheAdminPage(string filterName)
         {
             var page = _driver.NowAt<ProjectsPage>();
             page.GetCheckboxStringFilterByName(filterName);
@@ -457,6 +533,36 @@ namespace DashworksTestAutomation.Steps.Dashworks
             Assert.IsTrue(projectsPage.ApplicationScopeTab.Displayed(), "Application Scope tab is not displayed");
         }
 
+        [When(@"User changes Request Type to ""(.*)""")]
+        public void WhenUserChangesRequestTypeTo(string requestTypeName)
+        {
+            var projectsPage = _driver.NowAt<ProjectsPage>();
+            projectsPage.RequestTypeDropdown.Click();
+            projectsPage.SelectRequestTypeByName(requestTypeName).Click();
+        }
+
+        [When(@"User changes Category to ""(.*)""")]
+        public void WhenUserChangesCategoryTo(string CategoryName)
+        {
+            var projectsPage = _driver.NowAt<ProjectsPage>();
+            projectsPage.CategoryDropdown.Click();
+            projectsPage.SelectCategoryByName(CategoryName).Click();
+        }
+
+        [Then(@"""(.*)"" Request Type is displayed to the user")]
+        public void ThenRequestTypeIsDisplayedToTheUser(string requestTypeName)
+        {
+            var projectsPage = _driver.NowAt<ProjectsPage>();
+            Assert.IsTrue(projectsPage.GetRequestTypeOrCategory(requestTypeName).Displayed(), "Incorrect Request Type is displayed");
+        }
+
+        [Then(@"""(.*)"" Category is displayed to the user")]
+        public void ThenCategoryIsDisplayedToTheUser(string categoryName)
+        {
+            var projectsPage = _driver.NowAt<ProjectsPage>();
+            Assert.IsTrue(projectsPage.GetRequestTypeOrCategory(categoryName).Displayed(), "Incorrect Category is displayed");
+        }
+
         [Then(@"""(.*)"" is displayed to the user in the Project Scope Changes section")]
         public void ThenIsDisplayedToTheUserInTheProjectScopeChangesSection(string text)
         {
@@ -471,6 +577,14 @@ namespace DashworksTestAutomation.Steps.Dashworks
             }
             _driver.WaitForDataLoading();
             Assert.IsTrue(page.SelectedItemInProjectScopeChangesSection(text),
+                $"{text} is not displayed in the Project Scope Changes section");
+        }
+
+        [Then(@"""(.*)"" is displayed in the tab header on the Admin page")]
+        public void ThenIsDisplayedInTheTabHeaderOnTheAdminPage(string text)
+        {
+            var page = _driver.NowAt<BaseGridPage>();
+            Assert.IsTrue(page.GetTabHeaderInTheScopeChangesSection(text),
                 $"{text} is not displayed in the Project Scope Changes section");
         }
 
@@ -645,8 +759,15 @@ namespace DashworksTestAutomation.Steps.Dashworks
         [When(@"User clicks Default Team checkbox")]
         public void WhenUserClicksDefaultTeamCheckbox()
         {
-            var createBucketElement = _driver.NowAt<TeamsPage>();
-            createBucketElement.DefaulTeamCheckbox.Click();
+            var teamElement = _driver.NowAt<TeamsPage>();
+            teamElement.DefaulTeamCheckbox.Click();
+        }
+
+        [Then(@"Default Team checkbox is not active")]
+        public void ThenDefaultTeamCheckboxIsNotActive()
+        {
+            var teamElement = _driver.NowAt<TeamsPage>();
+            Assert.IsTrue(teamElement.DefaulTeamCheckbox.Displayed(), "Default Team checkbox is active");
         }
 
         [When(@"User clicks Create Team button on the Create Team page")]
@@ -808,6 +929,20 @@ namespace DashworksTestAutomation.Steps.Dashworks
             Assert.IsTrue(page.SelectedDefaultBucketCheckbox.Displayed(), "Default Bucket checkbox is not selected");
         }
 
+        [When(@"User clicks ""(.*)"" tab on the Buckets page")]
+        public void WhenUserClicksTabOnTheBucketsPage(string tabName)
+        {
+            var tab = _driver.NowAt<BucketsPage>();
+            tab.ClickTabByName(tabName);
+        }
+
+        [When(@"User adds ""(.*)"" objects to bucket")]
+        public void WhenUserAddsObjectsToBucket(string objectName)
+        {
+            var objects = _driver.NowAt<BucketsPage>();
+            objects.SelectObjectByName(objectName);
+        }
+
         [Then(@"Create Team button is disabled")]
         public void ThenCreateTeamButtonIsDisabled()
         {
@@ -847,6 +982,7 @@ namespace DashworksTestAutomation.Steps.Dashworks
         public void ThenUserEntersInTheBucketNameField(string bucketText)
         {
             var bucketName = _driver.NowAt<CreateBucketPage>();
+            bucketName.BucketNameField.Clear();
             bucketName.BucketNameField.SendKeys(bucketText);
 
             if (!string.IsNullOrEmpty(bucketText))
@@ -857,16 +993,10 @@ namespace DashworksTestAutomation.Steps.Dashworks
         public void ThenUserSelectTeamInTheTeamDropdownOnTheBucketsPage(string teamName)
         {
             var createBucketElement = _driver.NowAt<CreateBucketPage>();
+            createBucketElement.TeamsNameField.Clear();
+            _driver.WaitForDataLoading();
             createBucketElement.TeamsNameField.SendKeys(teamName);
             createBucketElement.SelectTeam(teamName);
-        }
-
-        //Update all steps with 'default bucket' checkbox after fixed DAS13073
-        [When(@"User clicks Default bucket checkbox")]
-        public void WhenUserClicksDefaultBucketCheckbox()
-        {
-            var createBucketElement = _driver.NowAt<CreateBucketPage>();
-            createBucketElement.IncorrectDefaulBucketCheckbox.Click();
         }
 
         [When(@"User updates the Default Bucket checkbox state")]
@@ -962,6 +1092,14 @@ namespace DashworksTestAutomation.Steps.Dashworks
             StringAssert.Contains(text, page.InfoMessage.Text, "Success Message is not displayed");
         }
 
+        [Then(@"User sees banner at the top of work area")]
+        public void ThenUserSeesBannerAtTheTopOfWorkArea()
+        {
+            var page = _driver.NowAt<BaseGridPage>();
+            _driver.WaitWhileControlIsNotDisplayed<BaseGridPage>(() => page.Banner);
+            Assert.That(page.Banner.Displayed, Is.True, "Banner is not displayed");
+        }
+
         [Then(@"Success message The ""(.*)"" bucket has been updated is displayed on the Buckets page")]
         public void ThenSuccessMessageTheBucketHasBeenUpdatedIsDisplayedOnTheBucketsPage(string bucketName)
         {
@@ -992,7 +1130,7 @@ namespace DashworksTestAutomation.Steps.Dashworks
                 }
             }
             _driver.WaitWhileControlIsNotDisplayed<BaseGridPage>(() => projectElement.SuccessMessage);
-            Thread.Sleep(15000);
+            Thread.Sleep(10000);
             Assert.IsTrue(projectElement.TextMessage(textMessage),
                 $"{textMessage} is not displayed on the Project page");
         }
@@ -1035,6 +1173,28 @@ namespace DashworksTestAutomation.Steps.Dashworks
             var teamElement = _driver.NowAt<BucketsPage>();
             Assert.IsTrue(teamElement.AppropriateBucketName(bucketName),
                 $"{bucketName} is not displayed on the Bucket page");
+        }
+
+        [Then(@"Move To Another Bucket Page is displayed to the user")]
+        public void ThenMoveToAnotherBucketPageIsDisplayedToTheUser()
+        {
+            var page = _driver.NowAt<MoveToAnotherBucketPage>();
+            Assert.IsTrue(page.BucketSelectbox.Displayed, "Move To Another Bucket Page is not displayed to the user");
+        }
+
+        [When(@"User moves selected objects to ""(.*)"" bucket")]
+        public void WhenUserMovesSelectedObjectsToBucket(string bucketName)
+        {
+            var page = _driver.NowAt<MoveToAnotherBucketPage>();
+            page.MoveToBucketByName(bucketName);
+        }
+
+        [Then(@"Actions dropdown is displayed correctly")]
+        public void ThenActionsDropdownIsDisplayedCorrectly()
+        {
+            var button = _driver.NowAt<BaseGridPage>();
+            _driver.WaitWhileControlIsNotDisplayed<BaseGridPage>(() => button.ActionsButton);
+            Assert.IsTrue(button.CorrectActionsButton.Displayed(), "Actions dropdown is not displayed correctly");
         }
 
         [When(@"User clicks on Actions button")]
@@ -1156,10 +1316,38 @@ namespace DashworksTestAutomation.Steps.Dashworks
                 }
                 else
                 {
+                    Thread.Sleep(5000);
                     _driver.Navigate().Refresh();
                     projectElement.OnboardedObjectDisplayed(row["Items"]);
                 }
             }
+        }
+
+        [Then(@"following objects were not found")]
+        public void ThenFollowingObjectsWereNotFound(Table table)
+        {
+            var projectElement = _driver.NowAt<BaseGridPage>();
+            projectElement.PlusButton.Click();
+            foreach (var row in table.Rows)
+            {
+                projectElement.CheckItemDisplay(row["Objects"]);
+                Assert.IsTrue(projectElement.CheckedAllItemCheckbox.Displayed(), "Some object is present");
+                projectElement.SearchTextbox.ClearWithHomeButton(_driver);
+            }
+        }
+
+        [Then(@"onboarded objects are displayed in the dropdown")]
+        public void ThenOnboardedObjectsAreDisplayedInTheDropdown()
+        {
+            var projectElement = _driver.NowAt<BaseGridPage>();
+            Assert.IsFalse(projectElement.ReonboardedItem.Displayed(), "Re-onboarded objects are displayed");
+        }
+
+        [Then(@"Add Objects panel is collapsed")]
+        public void ThenAddObjectsPanelIsCollapsed()
+        {
+            var projectElement = _driver.NowAt<BaseGridPage>();
+            Assert.IsTrue(projectElement.AddObjectsPanelCollapsed.Displayed(),"Panel is expanded");
         }
 
         #endregion
@@ -1176,7 +1364,14 @@ namespace DashworksTestAutomation.Steps.Dashworks
         {
             var projectElement = _driver.NowAt<BaseGridPage>();
             Assert.IsTrue(projectElement.PlusButton.Displayed(), "Items are not selected");
-            Assert.IsTrue(projectElement.AllItemCheckbox.Displayed(), "Item checkbox is not checked");
+            Assert.IsTrue(projectElement.CheckedSomeItemCheckbox.Displayed(), "Item checkbox is not checked");
+        }
+
+        [Then(@"no items are selected")]
+        public void ThenNoItemsAreSelected()
+        {
+            var projectElement = _driver.NowAt<BaseGridPage>();
+            Assert.IsFalse(projectElement.CheckedAllItemCheckbox.Displayed(), "Some Item is selected");
         }
 
         [When(@"User clicks Create button on the Create Project page")]
@@ -1239,6 +1434,15 @@ namespace DashworksTestAutomation.Steps.Dashworks
             Assert.IsTrue(projectElement.DisabledScopeListDropdown.Displayed());
         }
 
+        [Then(@"""(.*)"" is displayed in the disabled Project Type field")]
+        public void ThenIsDisplayedInTheDisabledProjectTypeField(string projectType)
+        {
+            var projectElement = _driver.NowAt<ProjectsPage>();
+            Assert.IsTrue(Convert.ToBoolean(projectElement.ProjectType.GetAttribute("disabled")),
+                "Project Type field is active");
+            Assert.AreEqual(projectType, projectElement.ProjectType.GetAttribute("value"), "Project Type is incorrect");
+        }
+
         [Then(@"Scope List dropdown is active")]
         public void ThenScopeListDropdownIsActive()
         {
@@ -1253,12 +1457,11 @@ namespace DashworksTestAutomation.Steps.Dashworks
             createProjectElement.ScopeProjectField.Click();
         }
 
-        [Then(@"Scope DDL have the ""(.*)"" Height and the ""(.*)"" Width")]
-        public void ThenScopeDDLHaveTheHeightAndTheWidth(string height, string width)
+        [Then(@"Scope DDL have the ""(.*)"" Width")]
+        public void ThenScopeDDLHaveTheWidth(string width)
         {
             var panelSize = _driver.NowAt<ProjectsPage>();
-            Assert.AreEqual(height, panelSize.GetDllPanelHeight());
-            Assert.AreEqual(width, panelSize.GetDllPanelWidth());
+            Assert.AreEqual(width, panelSize.GetDllPanelWidth().Split('.').First());
         }
 
         [When(@"User selects ""(.*)"" in the Buckets Project dropdown")]
@@ -1267,6 +1470,14 @@ namespace DashworksTestAutomation.Steps.Dashworks
             var createProjectElement = _driver.NowAt<ProjectsPage>();
             createProjectElement.BucketsProjectField.Click();
             createProjectElement.SelectObjectForProjectCreation(objectName);
+        }
+
+        [When(@"user selects ""(.*)"" in the Bucket dropdown")]
+        public void WhenUserSelectsInTheBucketDropdown(string objectName)
+        {
+            var projectElement = _driver.NowAt<ProjectsPage>();
+            projectElement.BucketDropdown.Click();
+            projectElement.SelectObjectForProjectCreation(objectName);
         }
 
         [Then(@"""(.*)"" is displayed in the Bucket dropdown")]
@@ -1342,6 +1553,22 @@ namespace DashworksTestAutomation.Steps.Dashworks
             filterElement.GetStringFilterByColumnName(columnName);
         }
 
+        [Then(@"""(.*)"" is not displayed in the filter dropdown")]
+        public void ThenIsNotDisplayedInTheFilterDropdown(string filterName)
+        {
+            var filterElement = _driver.NowAt<BaseGridPage>();
+            Assert.IsFalse(filterElement.CheckStringFilterByName(filterName));
+        }
+
+        [Then(@"Projects in filter dropdown are displayed in alphabetical order")]
+        public void ThenProjectsInFilterDropdownAreDisplayedInAlphabeticalOrder()
+        {
+            var page = _driver.NowAt<BaseGridPage>();
+            List<string> list = page.ProjectListInFilterDropdown.Select(x => x.Text).ToList();
+            Assert.AreEqual(list.OrderBy(s => s), list, "Projects are not in alphabetical order");
+            page.BodyContainer.Click();
+        }
+
         [Then(@"""(.*)"" value is displayed for Default column")]
         public void ThenValueIsDisplayedForDefaultColumn(string defaultValue)
         {
@@ -1360,6 +1587,7 @@ namespace DashworksTestAutomation.Steps.Dashworks
         public void WhenUserClicksResetFiltersButtonOnTheAdminPage()
         {
             var button = _driver.NowAt<BaseGridPage>();
+            Thread.Sleep(1000);
             _driver.WaitForDataLoading();
             button.ResetFiltersButton.Click();
         }
@@ -1436,6 +1664,44 @@ namespace DashworksTestAutomation.Steps.Dashworks
             StringAssert.AreEqualIgnoringCase(numberOfRows == "1" ? $"{numberOfRows} row" : $"{numberOfRows} rows",
                 foundRowsCounter.RowsCounter.Text,
                 "Incorrect rows count");
+        }
+
+        [Then(@"User sees Buckets in next default sort order:")]
+        public void ThenUserSeesBuketsInNextDefaultSortOrder(Table buckets)
+        {
+            var page = _driver.NowAt<BaseDashboardPage>();
+            _driver.WaitForDataLoading();
+
+            for (int i = 0; i < buckets.RowCount; i++)
+            {
+                Assert.That(page.GridBucketsNames[i].Text, Is.EqualTo(buckets.Rows[i].Values.FirstOrDefault()), "Buckets are not the same");
+            }
+        }
+
+        [When(@"User creates following buckets in Administration:")]
+        public void WhenUserCreatesFollowingBucketsInAdministration(Table buckets)
+        {
+            foreach (var bucket in buckets.Rows)
+            {
+                var action = _driver.NowAt<BaseDashboardPage>();
+                action.GetActionsButtonByName("CREATE BUCKET").Click();
+                _driver.WaitForDataLoading();
+
+                var page = _driver.NowAt<CreateBucketPage>();
+                page.BucketNameField.Clear();
+                page.BucketNameField.SendKeys(bucket.Values.FirstOrDefault());
+
+                if (!string.IsNullOrEmpty(bucket.Values.FirstOrDefault()))
+                    _buckets.Value.Add(bucket.Values.FirstOrDefault());
+
+                page.TeamsNameField.Clear();
+                _driver.WaitForDataLoading();
+                page.TeamsNameField.SendKeys(bucket.Values.ElementAt(1));
+                page.SelectTeam(bucket.Values.ElementAt(1));
+
+                page.CreateBucketButton.Click();
+                Logger.Write("Create Team button was clicked");
+            }
         }
 
         [AfterScenario("Delete_Newly_Created_Bucket")]
@@ -1529,10 +1795,20 @@ namespace DashworksTestAutomation.Steps.Dashworks
         }
 
         [Then(@"Delete ""(.*)"" Bucket in the Administration")]
+        [When(@"User deletes ""(.*)"" Bucket in the Administration")]
         public void ThenDeleteBucketInTheAdministration(string bucketName)
         {
             //var projectId = DatabaseHelper.ExecuteReader($"SELECT [ProjectID] FROM[PM].[dbo].[Projects] where[ProjectName] = '{projectName}'", 0)[0];
             DatabaseHelper.ExecuteQuery($"delete from [PM].[dbo].[ProjectGroups] where [GroupName] = '{bucketName}'");
+        }
+
+        [Then(@"Delete following Buckets in the Administration:")]
+        public void ThenDeleteFollowingBucketsInTheAdministration(Table buckets)
+        {
+            foreach (var bucket in buckets.Rows)
+            {
+                DatabaseHelper.ExecuteQuery($"delete from [PM].[dbo].[ProjectGroups] where [GroupName] = '{bucket.Values.FirstOrDefault()}'");
+            }
         }
     }
 }

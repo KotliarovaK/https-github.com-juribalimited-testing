@@ -1,5 +1,6 @@
 ﻿using System.Collections.Generic;
 using DashworksTestAutomation.Base;
+using DashworksTestAutomation.Extensions;
 using OpenQA.Selenium;
 using OpenQA.Selenium.Support.PageObjects;
 
@@ -32,6 +33,13 @@ namespace DashworksTestAutomation.Pages.Projects
                 SelectorFor(this, p => p.EnforceOnProjectObjectPage),
                 SelectorFor(this, p => p.CapacityToReach),
             };
+        }
+
+        public void SelectTheTypeOfDateByName(string typeOfDateByName)
+        {
+            string selector = $"//td[text()='{typeOfDateByName}']//following-sibling::td//input[@type='checkbox']";
+            Driver.WaitWhileControlIsNotDisplayed(By.XPath(selector));
+            Driver.FindElement(By.XPath(selector)).Click();
         }
     }
 }

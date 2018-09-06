@@ -10,6 +10,8 @@ namespace DashworksTestAutomation.Pages.Evergreen
 {
     internal class ListDetailsElement : SeleniumBasePage
     {
+        public const string Owner = ".//mat-option[@role='option']";
+
         [FindsBy(How = How.XPath, Using = ".//div[@class='listPanel']")]
         public IWebElement ListDetailsPanel { get; set; }
 
@@ -83,6 +85,18 @@ namespace DashworksTestAutomation.Pages.Evergreen
         [FindsBy(How = How.XPath, Using = ".//div[@class='inline-tip ng-star-inserted']")]
         public IWebElement WarningMessage { get; set; }
 
+        [FindsBy(How = How.XPath, Using = "//input[@placeholder='User']")]
+        public IWebElement SharingUserField { get; set; }
+
+        [FindsBy(How = How.XPath, Using = "//div[@role='listbox']")]
+        public IWebElement SharingUserList { get; set; }
+
+        [FindsBy(How = How.XPath, Using = "//div[contains(@class, 'action-panel-inner-wrapper')]")]
+        public IWebElement SharingFormContainer { get; set; }
+
+        [FindsBy(How = How.XPath, Using = Owner)]
+        public IList<IWebElement> OwnersList { get; set; }
+
         public override List<By> GetPageIdentitySelectors()
         {
             Driver.WaitForDataLoading();
@@ -118,6 +132,20 @@ namespace DashworksTestAutomation.Pages.Evergreen
         public IWebElement GetDependentListByName(string listName)
         {
             var selector = By.XPath($"//a[text()='{listName}']");
+            Driver.WaitWhileControlIsNotDisplayed(selector);
+            return Driver.FindElement(selector);
+        }
+
+        public IWebElement GetSharingUserInDllByName(string userName)
+        {
+            var selector = By.XPath($"//mat-option[@role='option']//span[text()='{userName}']");
+            Driver.WaitWhileControlIsNotDisplayed(selector);
+            return Driver.FindElement(selector);
+        }
+
+        public IWebElement GetSharingUserOnDetailsPanelByName(string userName)
+        {
+            var selector = By.XPath($"//tr[contains(@class, 'menu-show-on-hover')]//td[text()='{userName}']");
             Driver.WaitWhileControlIsNotDisplayed(selector);
             return Driver.FindElement(selector);
         }

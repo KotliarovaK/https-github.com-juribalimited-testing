@@ -32,12 +32,26 @@ namespace DashworksTestAutomation.Steps.Projects
         public void ThenUserNavigateToProject()
         {
             var menu = _driver.NowAt<ProjectsBaseElements>();
+            _driver.WaitForDataLoadingOnProjects();
             _driver.MouseHover(menu.AdministrationTab);
             var project = _driver.NowAt<MainElementsOfProjectCreation>();
             _driver.WaitWhileControlIsNotDisplayed<MainElementsOfProjectCreation>(() => project.ManageProject);
             _driver.MouseHover(project.ManageProject);
             _driver.MouseHover(menu.GetSubTabByName(_projectDto.ProjectName));
             menu.GetSubTabByName(_projectDto.ProjectName).Click();
+        }
+
+        [When(@"User navigate to ""(.*)"" Project")]
+        public void WhenUserNavigateToProject(string projectName)
+        {
+            var menu = _driver.NowAt<ProjectsBaseElements>();
+            _driver.WaitForDataLoadingOnProjects();
+            _driver.MouseHover(menu.AdministrationTab);
+            var project = _driver.NowAt<MainElementsOfProjectCreation>();
+            _driver.WaitWhileControlIsNotDisplayed<MainElementsOfProjectCreation>(() => project.ManageProject);
+            _driver.MouseHover(project.ManageProject);
+            _driver.MouseHover(menu.GetSubTabByName(projectName));
+            menu.GetSubTabByName(projectName).Click();
         }
 
         [When(@"User select Project")]
@@ -72,6 +86,13 @@ namespace DashworksTestAutomation.Steps.Projects
 
             var projectName = menu.GetOpenedProjectName(_projectDto.ProjectName);
             Assert.IsTrue(projectName.Displayed, "Project Name is not displayed correctly");
+        }
+
+        [Then(@"Project with ""(.*)"" name is displayed correctly")]
+        public void ThenProjectWithNameIsDisplayedCorrectly(string projectName)
+        {
+            var menu = _driver.NowAt<MainElementsOfProjectCreation>();
+            Assert.IsTrue(menu.GetOpenedProjectName(projectName).Displayed, "Project Name is not displayed correctly");
         }
     }
 }
