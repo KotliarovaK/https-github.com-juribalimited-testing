@@ -1658,7 +1658,7 @@ namespace DashworksTestAutomation.Steps.Dashworks
                 "Incorrect rows count");
         }
 
-        [Then(@"Then user sees Buckets in next default sort order:")]
+        [Then(@"User sees Buckets in next default sort order:")]
         public void ThenUserSeesBuketsInNextDefaultSortOrder(Table buckets)
         {
             var page = _driver.NowAt<BaseDashboardPage>();

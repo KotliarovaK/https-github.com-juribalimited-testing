@@ -74,6 +74,7 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_QueryStrings
         
         
         
+        
         [NUnit.Framework.DescriptionAttribute("EvergreenJnr_QueryString_DateComboAndApostrophe")]
         [NUnit.Framework.CategoryAttribute("Evergreen")]
         [NUnit.Framework.CategoryAttribute("Users")]
@@ -128,6 +129,7 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_QueryStrings
         
         
         
+        
         [NUnit.Framework.DescriptionAttribute("EvergreenJnr_QueryString_Complex")]
         [NUnit.Framework.CategoryAttribute("Evergreen")]
         [NUnit.Framework.CategoryAttribute("Users")]
@@ -172,6 +174,7 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_QueryStrings
         
         [NUnit.Framework.TestAttribute()]
         [NUnit.Framework.Retry(2)]
+        
         
         
         
@@ -224,6 +227,7 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_QueryStrings
         
         
         
+        
         [NUnit.Framework.DescriptionAttribute("EvergreenJnr_QueryString_Applications")]
         [NUnit.Framework.CategoryAttribute("Evergreen")]
         [NUnit.Framework.CategoryAttribute("Applications")]
@@ -265,6 +269,7 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_QueryStrings
         
         
         
+        
         [NUnit.Framework.DescriptionAttribute("EvergreenJnr_QueryString_Devices")]
         [NUnit.Framework.CategoryAttribute("Evergreen")]
         [NUnit.Framework.CategoryAttribute("Devices")]
@@ -294,6 +299,7 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_QueryStrings
         
         [NUnit.Framework.TestAttribute()]
         [NUnit.Framework.Retry(2)]
+        
         
         
         
@@ -329,6 +335,7 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_QueryStrings
         
         [NUnit.Framework.TestAttribute()]
         [NUnit.Framework.Retry(2)]
+        
         
         
         
@@ -384,6 +391,7 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_QueryStrings
         
         
         
+        
         [NUnit.Framework.DescriptionAttribute("EvergreenJnr_QueryString_ApplicationsOnDevicesList")]
         [NUnit.Framework.CategoryAttribute("Evergreen")]
         [NUnit.Framework.CategoryAttribute("Devices")]
@@ -418,6 +426,7 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_QueryStrings
         
         [NUnit.Framework.TestAttribute()]
         [NUnit.Framework.Retry(2)]
+        
         
         
         
@@ -470,6 +479,7 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_QueryStrings
         
         [NUnit.Framework.TestAttribute()]
         [NUnit.Framework.Retry(2)]
+        
         
         
         
@@ -549,6 +559,7 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_QueryStrings
         
         [NUnit.Framework.TestAttribute()]
         [NUnit.Framework.Retry(2)]
+        
         
         
         
@@ -637,6 +648,7 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_QueryStrings
         
         
         
+        
         [NUnit.Framework.DescriptionAttribute("EvergreenJnr_QueryString_AdvancedFilterRowCountCheckForUserList")]
         [NUnit.Framework.CategoryAttribute("Evergreen")]
         [NUnit.Framework.CategoryAttribute("Users")]
@@ -703,6 +715,7 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_QueryStrings
         
         [NUnit.Framework.TestAttribute()]
         [NUnit.Framework.Retry(2)]
+        
         
         
         

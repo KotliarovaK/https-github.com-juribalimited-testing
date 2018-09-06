@@ -73,6 +73,7 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_GridActions
         
         
         
+        
         [NUnit.Framework.DescriptionAttribute("EvergreenJnr_DevicesList_CheckThatColumnsOrderSavedAfterSearch")]
         [NUnit.Framework.CategoryAttribute("Evergreen")]
         [NUnit.Framework.CategoryAttribute("Devices")]
@@ -112,6 +113,7 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_GridActions
         
         [NUnit.Framework.TestAttribute()]
         [NUnit.Framework.Retry(2)]
+        
         
         
         
@@ -161,6 +163,7 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_GridActions
         
         [NUnit.Framework.TestAttribute()]
         [NUnit.Framework.Retry(2)]
+        
         
         
         
@@ -246,6 +249,7 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_GridActions
         
         
         
+        
         [NUnit.Framework.DescriptionAttribute("EvergreenJnr_UsersList_CheckThatColumnsOrderSavedAfterAddingAnotherColumn")]
         [NUnit.Framework.CategoryAttribute("Evergreen")]
         [NUnit.Framework.CategoryAttribute("Users")]
@@ -313,6 +317,7 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_GridActions
         
         [NUnit.Framework.TestAttribute()]
         [NUnit.Framework.Retry(2)]
+        
         
         
         
@@ -385,6 +390,7 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_GridActions
         
         
         
+        
         [NUnit.Framework.DescriptionAttribute("EvergreenJnr_ApplicationsList_CheckThatAfterDeletingFirstColumnTheColumnsOrderIsD" +
             "isplayedCorrectly")]
         [NUnit.Framework.CategoryAttribute("Evergreen")]
@@ -426,6 +432,7 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_GridActions
         
         [NUnit.Framework.TestAttribute()]
         [NUnit.Framework.Retry(2)]
+        
         
         
         
@@ -472,6 +479,7 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_GridActions
         
         [NUnit.Framework.TestAttribute()]
         [NUnit.Framework.Retry(2)]
+        
         
         
         

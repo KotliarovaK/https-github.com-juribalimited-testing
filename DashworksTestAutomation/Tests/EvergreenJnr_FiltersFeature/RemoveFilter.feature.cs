@@ -74,6 +74,7 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_FiltersFeature
         
         
         
+        
         [NUnit.Framework.DescriptionAttribute("EvergreenJnr_DevicesList_CheckThatResetIsUpdatingRowCount")]
         [NUnit.Framework.CategoryAttribute("Evergreen")]
         [NUnit.Framework.CategoryAttribute("Devices")]
@@ -118,6 +119,7 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_FiltersFeature
         
         [NUnit.Framework.TestAttribute()]
         [NUnit.Framework.Retry(2)]
+        
         
         
         
@@ -167,6 +169,7 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_FiltersFeature
         
         [NUnit.Framework.TestAttribute()]
         [NUnit.Framework.Retry(2)]
+        
         
         
         
@@ -235,6 +238,7 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_FiltersFeature
         
         [NUnit.Framework.TestAttribute()]
         [NUnit.Framework.Retry(2)]
+        
         
         
         
