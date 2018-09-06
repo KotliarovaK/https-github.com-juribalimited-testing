@@ -47,7 +47,7 @@ namespace DashworksTestAutomation.Pages.Projects.Tasks
 
         public KeyValuePair<int, string> SelectReadiness()
         {
-            return SelectReadiness(TestDataGenerator.RandomNum(4));
+            return SelectReadiness(TestDataGenerator.RandomNum(5));
         }
 
         public KeyValuePair<int, string> SelectReadiness(int index)
