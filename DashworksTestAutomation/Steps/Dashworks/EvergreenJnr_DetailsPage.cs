@@ -206,6 +206,22 @@ namespace DashworksTestAutomation.Steps.Dashworks
             filterElement.ResetFiltersButton.Click();
         }
 
+        [When(@"User selects ""(.*)"" text from key value grid on the Details Page")]
+        public void WhenUserSelectsFollowingTextFromKeyValueGridOnTheDetailsPage(string textToBeSelected)
+        {
+            var page = _driver.NowAt<DetailsPage>();
+
+            page.Actions.Click(page.GetCellByTextFromKeyValueGrid(textToBeSelected)).DoubleClick().Build().Perform();
+        }
+
+        [Then(@"""(.*)"" text selected from key value grid on the Details Page")]
+        public void ThenTextSelectedFromKeyValueGridOnTheDetailsPage(string textSelected)
+        {
+            var page = _driver.NowAt<DetailsPage>();
+
+            Assert.That(page.GetSelectedText(), Is.EqualTo(textSelected));
+        }
+
         [Then(@"following Values are displayed in the filter on the Details Page")]
         public void ThenFollowingValuesAreDisplayedInTheFilterOnTheDetailsPage(Table table)
         {

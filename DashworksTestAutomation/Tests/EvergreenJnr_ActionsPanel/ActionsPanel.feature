@@ -381,7 +381,7 @@ Scenario: EvergreenJnr_UsersList_ChecksThatRequestTypeIsUpdatedCorrectlyOnUsersP
 	And User click on 'Windows7Mi: Request Type' column header
 	And User clicks the Actions button
 	Then Actions panel is displayed to the user
-	When User select "Username" rows in the grid
+	When User searches and selects "Username" rows in the grid
 	| SelectedRowsName |
 	| FMN5805290       |
 	| AKX995383        |

@@ -666,6 +666,34 @@ Scenario: EvergreenJnr_DevicesList_CheckThatLinksInDeviceDetailsAreRedirectedToT
 	And User clicks "Tricia G. Huang" link on the Details Page
 	Then Details object page is displayed to the user
 
+@Evergreen @ALlLists @EvergreenJnr_ItemDetails @ItemDetailsDisplay @DAS13341
+Scenario Outline: EvergreenJnr_AllLists_CheckThatTextInKeyValueGridsIsSelectableOnDetailsPage
+	When User clicks "<PageName>" on the left-hand menu
+	And User perform search by "<SearchTerm>"
+	And User click content from "<ColumnName>" column
+	And User navigates to the "<TabName>" tab
+	And User selects "<KeyToBeSelected>" text from key value grid on the Details Page
+	Then "<KeyToBeSelected>" text selected from key value grid on the Details Page
+	When User selects "<ValueToBeSelected>" text from key value grid on the Details Page
+	Then "<ValueToBeSelected>" text selected from key value grid on the Details Page
+
+Examples:
+	| PageName     | SearchTerm                       | ColumnName    | TabName       | KeyToBeSelected | ValueToBeSelected   |
+	| Devices      | 02C80G8RFTPA9E                   | Hostname      | Specification | Manufacturer    | FES0798481167       |
+	| Devices      | 05PFM2OWVCSCZ1                   | Hostname      | Details       | Hostname        | 05PFM2OWVCSCZ1      |
+	| Users        | 03714167684E45F7A8F              | Username      | Details       | Username        | 03714167684E45F7A8F |
+	| Applications | Adobe Acrobat Reader 5.0         | Application   | Details       | Vendor          | Adobe               |
+	| Mailboxes    | 06D7AE4F161F4A3AA7F@bclabs.local | Email Address | Details       | Alias           | 06D7AE4F161F4A3AA7F |
+
+@Evergreen @AllLists @EvergreenJnr_ItemDetails @ItemDetailsDisplay @DAS13341
+Scenario: EvergreenJnr_AllLists_CheckThatTextInKeyValueGridsIsSelectableOnGroupDetailsPage
+	When User type "NL00G001" in Global Search Field
+	Then User clicks on "NL00G001" search result
+	When User selects "Description" text from key value grid on the Details Page
+	Then "Description" text selected from key value grid on the Details Page
+	When User selects "Unknown" text from key value grid on the Details Page
+	Then "Unknown" text selected from key value grid on the Details Page
+
 @Evergreen @Mailboxes @EvergreenJnr_ItemDetails @ItemDetailsDisplay @DAS12690 @DAS12321
 Scenario: EvergreenJnr_MailboxesList_CheckThatLinksInMailboxDetailsAreRedirectedToTheRelevantUserDetailsPage
 	When User clicks "Mailboxes" on the left-hand menu
@@ -720,13 +748,14 @@ Scenario Outline: EvergreenJnr_AllLists_CheckThatHyperlinkForKeyColumnsIsRedirec
 	| <Column>   |
 	When User click content from "<Column>" column
 	Then Details object page is displayed to the user
+	And URL is "<URLpart>"
 
 Examples:
-	| PageName     | Column          |
-	| Devices      | Device Key      |
-	| Users        | User Key        |
-	| Applications | Application Key |
-	| Mailboxes    | Mailbox Key     |
+	| PageName     | Column          | URLpart                      |
+	| Devices      | Device Key      | evergreen/#/device/9141      |
+	| Users        | User Key        | evergreen/#/user/71622       |
+	| Applications | Application Key | evergreen/#/application/4249 |
+	| Mailboxes    | Mailbox Key     | evergreen/#/mailbox/49258    |
 
 @Evergreen @Applications @EvergreenJnr_ItemDetails @ItemDetailsDisplay @DAS12805
 Scenario: EvergreenJnr_ApplicationsList_CheckThatUsersAndDevicesDistributionListsDoNotIncludeUnknownValues
