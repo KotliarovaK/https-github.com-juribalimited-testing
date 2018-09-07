@@ -42,6 +42,7 @@ namespace DashworksTestAutomation.Steps.Dashworks
             var columnElement = _driver.NowAt<ColumnsElement>();
             columnElement.SearchTextbox.Clear();
             columnElement.SearchTextbox.SendKeys(searchedText);
+            _driver.WaitForDataLoading();
         }
 
         [When(@"User clears search textbox in Columns panel")]
@@ -348,6 +349,7 @@ namespace DashworksTestAutomation.Steps.Dashworks
         {
             var columnElement = _driver.NowAt<ColumnsElement>();
             var groupCount = columnElement.GroupTitle.Count;
+            _driver.WaitForDataLoading();
             Assert.AreEqual(groupCount, columnElement.MinimizeGroupButton.Count, "Minimize buttons are not displayed");
         }
 
