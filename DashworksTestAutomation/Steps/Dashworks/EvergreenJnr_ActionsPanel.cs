@@ -220,6 +220,15 @@ namespace DashworksTestAutomation.Steps.Dashworks
             action.GetOptionOnActionsPanelByName(updateDate).Click();
         }
 
+        [When(@"User selects ""(.*)"" Date on Action panel")]
+        public void WhenUserSelectsDateOnActionPanel(string dateValue)
+        {
+            var action = _driver.NowAt<BaseDashboardPage>();
+            action.DateField.Click();
+            action.DateField.Clear();
+            action.DateField.SendKeys(dateValue);
+        }
+
         [Then(@"the Update Date options are displayed in following order:")]
         public void ThenTheUpdateDateOptionsAreDisplayedInFollowingOrder(Table table)
         {

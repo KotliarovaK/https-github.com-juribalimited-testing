@@ -323,6 +323,7 @@ Scenario: EvergreenJnr_DevicesList_ChecksThatRequestTypeIsUpdatedCorrectlyOnDevi
 	Then "Computer: PC Rebuild" content is displayed in "Windows7Mi: Request Type" column
 	When User closes Tools panel
 	And User clicks Close panel button
+		#returns default object state
 	And User clicks the Actions button
 	Then Actions panel is displayed to the user
 	When User select "Hostname" rows in the grid
@@ -407,6 +408,7 @@ Scenario: EvergreenJnr_UsersList_ChecksThatRequestTypeIsUpdatedCorrectlyOnUsersP
 	Then "User; Maternity" content is displayed in "Windows7Mi: Request Type" column
 	When User closes Tools panel
 	And User clicks Close panel button
+		#returns default object state
 	And User perform search by "FMN5805290"
 	And User clicks the Actions button
 	Then Actions panel is displayed to the user
@@ -489,6 +491,7 @@ Scenario: EvergreenJnr_ApplicationsList_ChecksThatRequestTypeIsUpdatedCorrectlyO
 	Then "Application: Request Type B" content is displayed in "Windows7Mi: Request Type" column
 	When User closes Tools panel
 	And User clicks Close panel button
+		#returns default object state
 	And User clicks the Actions button
 	Then Actions panel is displayed to the user
 	When User select "Application" rows in the grid
@@ -557,6 +560,7 @@ Scenario: EvergreenJnr_MailboxesList_ChecksThatRequestTypeIsUpdatedCorrectlyOnMa
 	Then "Personal Mailbox - VIP" content is displayed in "EmailMigra: Request Type" column
 	When User closes Tools panel
 	And User clicks Close panel button
+		#returns default object state
 	And User clicks the Actions button
 	Then Actions panel is displayed to the user
 	When User select "Email Address" rows in the grid
@@ -638,6 +642,7 @@ Scenario: EvergreenJnr_DevicesList_ChecksThatRequestTypeIsUpdatedCorrectlyWhereS
 	Then "" content is displayed in "Windows7Mi: Request Type" column
 	When User closes Tools panel
 	And User clicks Close panel button
+		#returns default object state
 	And User clicks the Actions button
 	Then Actions panel is displayed to the user
 	When User select "Hostname" rows in the grid
@@ -985,8 +990,8 @@ Scenario: EvergreenJnr_DevicesList_CheckThatClearingAValueResetsSubsequentValues
 	And User select "Manage Users" option in Management Console
 	And User removes "DAS13280" User
 
-@Evergreen @Devices @EvergreenJnr_ActionsPanel @BulkUpdate @DAS12864 @DAS13281 @DAS13284
-Scenario: EvergreenJnr_DevicesList_ChecksThatDllOptionsAreDisplayedCorrectly
+@Evergreen @Devices @EvergreenJnr_ActionsPanel @BulkUpdate @DAS12864 @DAS13281 @DAS13284 @DAS13285
+Scenario Outline: EvergreenJnr_DevicesList_ChecksThatDllOptionsAreDisplayedCorrectly
 	When User clicks "Projects" on the left-hand menu
 	Then "Projects Home" page is displayed to the user
 	When User navigate to Manage link
@@ -1011,7 +1016,7 @@ Scenario: EvergreenJnr_DevicesList_ChecksThatDllOptionsAreDisplayedCorrectly
 	Then Actions panel is displayed to the user
 	When User select "Hostname" rows in the grid
 	| SelectedRowsName |
-	| 00YWR8TJU4ZF8V   |
+	| <RowName>        |
 	And User selects "Bulk update" in the Actions dropdown
 	And User selects "Update task value" Bulk Update Type on Action panel
 	And User selects "Windows 7 Migration (Computer Scheduled Project)" Project on Action panel
@@ -1053,8 +1058,28 @@ Scenario: EvergreenJnr_DevicesList_ChecksThatDllOptionsAreDisplayedCorrectly
 	When User clicks the "UPDATE" Action button
 	Then the amber message is displayed correctly
 	Then User clicks "UPDATE" button on message box
-	And Success message with "1 of 1 objects were valid for the update. Your changes have successfully been queued." text is displayed on Action panel
+	And Success message with "<MessageText>" text is displayed on Action panel
 	Then Success message is hidden after five seconds
+		#returns default object state
+	#When User perform search by "<RowName>"
+	#And User clicks the Actions button
+	#Then Actions panel is displayed to the user
+	#When User select "Username" rows in the grid
+	#| SelectedRowsName |
+	#| <RowName>        |
+	#And User selects "Bulk update" in the Actions dropdown
+	#And User selects "Update task value" Bulk Update Type on Action panel
+	#And User selects "Windows 7 Migration (Computer Scheduled Project)" Project on Action panel
+	#When User selects "User Acceptance Test" Stage on Action panel
+	#When User selects "Perform User Acceptance Test" Task on Action panel
+	#When User selects "Update" Update Value on Action panel
+	#When User selects "Started" Value on Action panel
+	#When User selects "No change" Update Date on Action panel
+	#When User selects "Update" Update Owner on Action panel
+	#When User selects "Administrative Team" Owner on Action panel
+	#When User clicks the "UPDATE" Action button
+	#Then User clicks "UPDATE" button on message box
+	#And Success message with "1 of 1 objects were valid for the update. Your changes have successfully been queued." text is displayed on Action panel
 	When User clicks the Logout button
 	Then User is logged out
 	When User clicks on the Login link
@@ -1064,3 +1089,251 @@ Scenario: EvergreenJnr_DevicesList_ChecksThatDllOptionsAreDisplayedCorrectly
 	When User navigate to Manage link
 	And User select "Manage Users" option in Management Console
 	And User removes "DAS13281" User
+
+Examples: 
+	| RowName        | MessageText                                                                           |
+	| 00HA7MKAVVFDAV | 1 of 1 objects were valid for the update. Your changes have successfully been queued. |
+	| 00I0COBFWHOF27 | 0 of 1 objects were valid for the update.                                             |
+
+@Evergreen @Users @EvergreenJnr_ActionsPanel @BulkUpdate @DAS12864 @DAS13288 @DAS13289 @DAS13287
+Scenario Outline: EvergreenJnr_UsersList_ChecksThatTheNoChangeOptionIsWorkedCorrectlyForValueField
+	When User clicks "Projects" on the left-hand menu
+	Then "Projects Home" page is displayed to the user
+	When User navigate to Manage link
+	And User select "Manage Users" option in Management Console
+	And User create new User
+	| Username | FullName | Password | ConfirmPassword | Roles                |
+	| DAS13288 | Value    | 1234qwer | 1234qwer        | Project Bulk Updater |
+	Then Success message is displayed
+	When User cliks Logout link
+	Then User is logged out
+	When User clicks on the Login link
+	Then Login Page is displayed to the user
+	When User login with following credentials:
+	| Username | Password |
+	| DAS13288 | 1234qwer |
+	Then Dashworks homepage is displayed to the user in a logged in state
+	When User clicks the Switch to Evergreen link
+	Then Evergreen Dashboards page should be displayed to the user
+	When User clicks "Users" on the left-hand menu
+	Then "Users" list should be displayed to the user
+	When User perform search by "<RowName>"
+	When User clicks the Actions button
+	Then Actions panel is displayed to the user
+	When User select "Username" rows in the grid
+	| SelectedRowsName |
+	| <RowName>        |
+	And User selects "Bulk update" in the Actions dropdown
+	And User selects "Update task value" Bulk Update Type on Action panel
+	And User selects "Windows 7 Migration (Computer Scheduled Project)" Project on Action panel
+	When User selects "User Acceptance Test" Stage on Action panel
+	When User selects "Perform User Acceptance Test" Task on Action panel
+	When User selects "Update" Update Value on Action panel
+	When User selects "<NewValue>" Value on Action panel
+	When User selects "No change" Update Date on Action panel
+	When User selects "Update" Update Owner on Action panel
+	When User selects "<NewTeam>" Team on Action panel
+	When User clicks the "UPDATE" Action button
+	Then User clicks "UPDATE" button on message box
+	And Success message with "1 of 1 objects were valid for the update. Your changes have successfully been queued." text is displayed on Action panel
+	Then Success message is hidden after five seconds
+	Then the amber message is displayed correctly
+	#returns default object state
+	When User perform search by "<RowName>"
+	And User clicks the Actions button
+	Then Actions panel is displayed to the user
+	When User select "Username" rows in the grid
+	| SelectedRowsName |
+	| <RowName>        |
+	And User selects "Bulk update" in the Actions dropdown
+	And User selects "Update task value" Bulk Update Type on Action panel
+	And User selects "Windows 7 Migration (Computer Scheduled Project)" Project on Action panel
+	When User selects "User Acceptance Test" Stage on Action panel
+	When User selects "Perform User Acceptance Test" Task on Action panel
+	When User selects "Update" Update Value on Action panel
+	When User selects "<DefaultValue>" Value on Action panel
+	When User selects "No change" Update Date on Action panel
+	When User selects "Update" Update Owner on Action panel
+	When User selects "<DefaultTeam>" Team on Action panel
+	When User clicks the "UPDATE" Action button
+	Then User clicks "UPDATE" button on message box
+	And Success message with "1 of 1 objects were valid for the update. Your changes have successfully been queued." text is displayed on Action panel
+	When User clicks the Logout button
+	Then User is logged out
+	When User clicks on the Login link
+	Then Login Page is displayed to the user
+	When User provides the Login and Password and clicks on the login button
+	Then Dashworks homepage is displayed to the user in a logged in state
+	When User navigate to Manage link
+	And User select "Manage Users" option in Management Console
+	And User removes "DAS13288" User
+
+Examples: 
+	| RowName    | NewValue       | NewTeam  | DefaultValue   | DefaultTeam         |
+	| CQV0623434 | Complete       | Admin IT | Started        | Administrative Team |
+	| BBZ877343  | Failed         | Admin IT | Not Applicable | Retail Team         |
+	| DLL972653  | Complete       | Admin IT | Not Started    | K-Team              |
+	| LZI970280  | Not Applicable | Admin IT | Failed         | IB Team             |
+	| ZQX656408  | Not Applicable | Admin IT | Complete       | Migration Phase 2   |
+
+@Evergreen @Users @EvergreenJnr_ActionsPanel @BulkUpdate @DAS12864 @DAS13288 @DAS13289 @DAS13287
+Scenario Outline: EvergreenJnr_UsersList_ChecksThatTheNoChangeOptionIsWorkedCorrectlyForDateField
+	When User clicks "Projects" on the left-hand menu
+	Then "Projects Home" page is displayed to the user
+	When User navigate to Manage link
+	And User select "Manage Users" option in Management Console
+	And User create new User
+	| Username | FullName | Password | ConfirmPassword | Roles                |
+	| DAS13288 | DAS13288 | 1234qwer | 1234qwer        | Project Bulk Updater |
+	Then Success message is displayed
+	When User cliks Logout link
+	Then User is logged out
+	When User clicks on the Login link
+	Then Login Page is displayed to the user
+	When User login with following credentials:
+	| Username | Password |
+	| DAS13288 | 1234qwer |
+	Then Dashworks homepage is displayed to the user in a logged in state
+	When User clicks the Switch to Evergreen link
+	Then Evergreen Dashboards page should be displayed to the user
+	When User clicks "Users" on the left-hand menu
+	Then "Users" list should be displayed to the user
+	When User perform search by "<RowName>"
+	When User clicks the Actions button
+	Then Actions panel is displayed to the user
+	When User select "Username" rows in the grid
+	| SelectedRowsName |
+	| <RowName>        |
+	And User selects "Bulk update" in the Actions dropdown
+	And User selects "Update task value" Bulk Update Type on Action panel
+	And User selects "Windows 7 Migration (Computer Scheduled Project)" Project on Action panel
+	When User selects "User Acceptance Test" Stage on Action panel
+	When User selects "Perform User Acceptance Test" Task on Action panel
+	When User selects "No change" Update Value on Action panel
+	When User selects "Update" Update Date on Action panel
+	When User selects "<NewDate>" Date on Action panel
+	When User selects "Update" Update Owner on Action panel
+	When User selects "<NewTeam>" Team on Action panel
+	When User clicks the "UPDATE" Action button
+	Then User clicks "UPDATE" button on message box
+	And Success message with "1 of 1 objects were valid for the update. Your changes have successfully been queued." text is displayed on Action panel
+	Then Success message is hidden after five seconds
+	Then the amber message is displayed correctly
+	#returns default object state
+	When User perform search by "<RowName>"
+	And User clicks the Actions button
+	Then Actions panel is displayed to the user
+	When User select "Username" rows in the grid
+	| SelectedRowsName |
+	| <RowName>        |
+	And User selects "Bulk update" in the Actions dropdown
+	And User selects "Update task value" Bulk Update Type on Action panel
+	And User selects "Windows 7 Migration (Computer Scheduled Project)" Project on Action panel
+	When User selects "User Acceptance Test" Stage on Action panel
+	When User selects "Perform User Acceptance Test" Task on Action panel
+	When User selects "No change" Update Value on Action panel
+	When User selects "Update" Update Date on Action panel
+	When User selects "<DefaultDate>" Date on Action panel
+	When User selects "Update" Update Owner on Action panel
+	When User selects "<DefaultTeam>" Team on Action panel
+	When User clicks the "UPDATE" Action button
+	Then User clicks "UPDATE" button on message box
+	And Success message with "1 of 1 objects were valid for the update. Your changes have successfully been queued." text is displayed on Action panel
+	When User clicks the Logout button
+	Then User is logged out
+	When User clicks on the Login link
+	Then Login Page is displayed to the user
+	When User provides the Login and Password and clicks on the login button
+	Then Dashworks homepage is displayed to the user in a logged in state
+	When User navigate to Manage link
+	And User select "Manage Users" option in Management Console
+	And User removes "DAS13288" User
+
+Examples: 
+	| RowName    | NewDate     | NewTeam  | DefaultDate | DefaultTeam         |
+	| CQV0623434 | 19 May 2018 | Admin IT | 08 May 2015 | Administrative Team |
+	| BBZ877343  | 28 Aug 2001 | Admin IT | 07 Sep 2018 | Retail Team         |
+	| DLL972653  | 30 Aug 2018 | Admin IT | 05 Sep 2018 | K-Team              |
+	| LZI970280  | 09 May 2018 | Admin IT | 03 Sep 2018 | IB Team             |
+	| ZQX656408  | 15 Aug 2018 | Admin IT | 30 Aug 2018 | Migration Phase 2   |
+
+@Evergreen @Users @EvergreenJnr_ActionsPanel @BulkUpdate @DAS12864 @DAS13288 @DAS13289 @DAS13287
+Scenario Outline: EvergreenJnr_UsersList_ChecksThatTheNoChangeOptionIsWorkedCorrectlyForOwnerField
+	When User clicks "Projects" on the left-hand menu
+	Then "Projects Home" page is displayed to the user
+	When User navigate to Manage link
+	And User select "Manage Users" option in Management Console
+	And User create new User
+	| Username | FullName | Password | ConfirmPassword | Roles                |
+	| DAS13288 | DAS13288 | 1234qwer | 1234qwer        | Project Bulk Updater |
+	Then Success message is displayed
+	When User cliks Logout link
+	Then User is logged out
+	When User clicks on the Login link
+	Then Login Page is displayed to the user
+	When User login with following credentials:
+	| Username | Password |
+	| DAS13288 | 1234qwer |
+	Then Dashworks homepage is displayed to the user in a logged in state
+	When User clicks the Switch to Evergreen link
+	Then Evergreen Dashboards page should be displayed to the user
+	When User clicks "Users" on the left-hand menu
+	Then "Users" list should be displayed to the user
+	When User perform search by "<RowName>"
+	When User clicks the Actions button
+	Then Actions panel is displayed to the user
+	When User select "Username" rows in the grid
+	| SelectedRowsName |
+	| <RowName>        |
+	And User selects "Bulk update" in the Actions dropdown
+	And User selects "Update task value" Bulk Update Type on Action panel
+	And User selects "Windows 7 Migration (Computer Scheduled Project)" Project on Action panel
+	When User selects "User Acceptance Test" Stage on Action panel
+	When User selects "Perform User Acceptance Test" Task on Action panel
+	When User selects "Update" Update Value on Action panel
+	When User selects "<NewValue>" Value on Action panel
+	When User selects "Update" Update Date on Action panel
+	When User selects "<NewDate>" Date on Action panel
+	When User selects "No change" Update Owner on Action panel
+	When User clicks the "UPDATE" Action button
+	Then User clicks "UPDATE" button on message box
+	And Success message with "1 of 1 objects were valid for the update. Your changes have successfully been queued." text is displayed on Action panel
+	Then Success message is hidden after five seconds
+	Then the amber message is displayed correctly
+	#returns default object state
+	When User perform search by "<RowName>"
+	And User clicks the Actions button
+	Then Actions panel is displayed to the user
+	When User select "Username" rows in the grid
+	| SelectedRowsName |
+	| <RowName>        |
+	And User selects "Bulk update" in the Actions dropdown
+	And User selects "Update task value" Bulk Update Type on Action panel
+	And User selects "Windows 7 Migration (Computer Scheduled Project)" Project on Action panel
+	When User selects "User Acceptance Test" Stage on Action panel
+	When User selects "Perform User Acceptance Test" Task on Action panel
+	When User selects "Update" Update Value on Action panel
+	When User selects "<DefaultValue>" Value on Action panel
+	When User selects "Update" Update Date on Action panel
+	When User selects "<DefaultDate>" Date on Action panel
+	When User selects "No change" Update Owner on Action panel
+	When User clicks the "UPDATE" Action button
+	Then User clicks "UPDATE" button on message box
+	And Success message with "1 of 1 objects were valid for the update. Your changes have successfully been queued." text is displayed on Action panel
+	When User clicks the Logout button
+	Then User is logged out
+	When User clicks on the Login link
+	Then Login Page is displayed to the user
+	When User provides the Login and Password and clicks on the login button
+	Then Dashworks homepage is displayed to the user in a logged in state
+	When User navigate to Manage link
+	And User select "Manage Users" option in Management Console
+	And User removes "DAS13288" User
+
+Examples: 
+	| RowName    | NewValue       | NewDate     | DefaultValue   | DefaultDate |
+	| CQV0623434 | Complete       | 01 Sep 2009 | Started        | 08 May 2015 |
+	| BBZ877343  | Failed         | 28 Aug 2001 | Not Applicable | 07 Sep 2018 |
+	| DLL972653  | Complete       | 30 Aug 2018 | Not Started    | 05 Sep 2018 |
+	| LZI970280  | Not Applicable | 09 May 2018 | Failed         | 03 Sep 2018 |
+	| ZQX656408  | Not Applicable | 15 Aug 2018 | Complete       | 30 Aug 2018 |

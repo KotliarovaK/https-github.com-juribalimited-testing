@@ -81,6 +81,9 @@ namespace DashworksTestAutomation.Pages.Evergreen
         [FindsBy(How = How.XPath, Using = "//input[@aria-label='Owner']")]
         public IWebElement OwnerField { get; set; }
 
+        [FindsBy(How = How.XPath, Using = "//input[@aria-label='Date']")]
+        public IWebElement DateField { get; set; }
+
         [FindsBy(How = How.XPath, Using = "//input[@placeholder='Request Type']")]
         public IWebElement RequestTypeField { get; set; }
 
