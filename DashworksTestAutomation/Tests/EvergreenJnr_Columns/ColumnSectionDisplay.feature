@@ -377,8 +377,8 @@ Scenario: EvergreenJnr_ApplicationsList_ChecksThatAfterAddingRowsToAStaticListFr
 	When User clicks the Actions button
 	Then Actions panel is displayed to the user
 	When User select "Application" rows in the grid
-	| SelectedRowsName    |
-	| "WPF/E" (codename) Community Technology Preview (Feb 2007)      |
+	| SelectedRowsName                                                |
+	| 0004 - Adobe Acrobat Reader 5.0.5 Francais                      |
 	| %SQL_PRODUCT_SHORT_NAME% Data Tools - BI for Visual Studio 2013 |
 	And User selects "Create static list" in the Actions dropdown
 	And User create static list with "StaticListFromTheAllList" name

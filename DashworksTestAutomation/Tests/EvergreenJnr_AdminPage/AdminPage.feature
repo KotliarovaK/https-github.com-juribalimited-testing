@@ -759,8 +759,8 @@ Scenario: EvergreenJnr_AdminPage_CheckThatFiltersAreWorkingCorrectlyOnTheAdminPa
 	When User enters "Migration phase 3 team" text in the Search field for "Team" column
 	Then Counter shows "1" found rows
 	When User clears Search field for "Project Buckets" column
-	And User enters ">=10" text in the Search field for "Project Buckets" column
-	Then Counter shows "3" found rows
+	And User enters "=7" text in the Search field for "Project Buckets" column
+	Then Counter shows "0" found rows
 	When User clears Search field for "Project Buckets" column
 	And User enters "Administrative Team" text in the Search field for "Team" column
 	And User clicks content from "Team" column
@@ -1075,8 +1075,8 @@ Scenario: EvergreenJnr_AdminPage_CheckingThatRedBannerWithOkMessageIsNotDisplaye
 	And User clicks "Applications" tab in the Project Scope Changes section
 	And User expands the object to add
 	And User selects following Objects
-	| Objects                                                              |
-	| "WPF/E" (codename) Community Technology Preview (Feb 2007) (0.8.5.0) |
+	| Objects                                    |
+	| 0004 - Adobe Acrobat Reader 5.0.5 Francais |
 	And User clicks "Users" tab in the Project Scope Changes section
 	And User expands the object to add
 	And User selects following Objects
