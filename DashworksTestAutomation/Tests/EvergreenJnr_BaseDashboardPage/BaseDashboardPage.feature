@@ -11,7 +11,7 @@ Scenario Outline: EvergreenJnr_AllList_CheckThatColumnHeaderFontWidthConformsToD
 	When User clicks "<ListName>" on the left-hand menu
 	Then "<ListName>" list should be displayed to the user
 	And Appropriate header font weight is displayed
-	Then "v5.2.8.0" Application version is displayed
+	Then "v5.2.9.0" Application version is displayed
 
 Examples: 
 	| ListName     |
