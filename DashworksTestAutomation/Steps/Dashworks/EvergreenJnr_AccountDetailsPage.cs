@@ -183,7 +183,6 @@ namespace DashworksTestAutomation.Steps.Dashworks
         public void ThenDisplayModeIsChangedToHighContrast()
         {
             var page = _driver.NowAt<PreferencesPage>();
-            Assert.AreEqual("rgba(21, 40, 69, 1)", page.GetSuccessMessageColor());
             Assert.AreEqual("rgba(21, 40, 69, 1)", page.GetUpdateButtonColor());
             Assert.AreEqual("rgba(21, 40, 69, 1)", page.GetLinkMenuColor());
         }

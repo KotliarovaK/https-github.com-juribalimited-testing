@@ -187,7 +187,8 @@ namespace DashworksTestAutomation.Steps.Dashworks
         public void ThenFilterIsPresentedInTheFiltersList(string filterName)
         {
             var filterElement = _driver.NowAt<FiltersElement>();
-            Assert.That(filterElement.CheckFilterAvailability(filterName), Is.True,
+            _driver.WaitForDataLoading();
+            Assert.IsTrue(filterElement.CheckFilterAvailability(filterName),
                 $"{filterName} is not available in the search");
         }
 
@@ -916,11 +917,11 @@ namespace DashworksTestAutomation.Steps.Dashworks
 
         #region Sections
 
-        [Then(@"""(.*)"" category is displayed on Filters panel")]
-        public void ThenCategoryIsDisplayedOnFiltersPanel(string categoryValue)
+        [Then(@"""(.*)"" with ""(.*)""category is displayed on Filters panel")]
+        public void ThenWithCategoryIsDisplayedOnFiltersPanel(string filterName, string categoryCount)
         {
             var page = _driver.NowAt<FiltersElement>();
-            Assert.IsTrue(page.GetFilterCategory(categoryValue).Displayed(), "Incorrect subcategories count for selected category");
+            Assert.IsTrue(page.GetFilterCategory(filterName, categoryCount).Displayed(), "Incorrect subcategories count for selected category");
         }
 
         [Then(@"""(.*)"" section is not displayed in the Filter panel")]
@@ -935,6 +936,7 @@ namespace DashworksTestAutomation.Steps.Dashworks
         public void ThenMinimizeButtonsAreDisplayedForAllCategoryInFiltersPanel()
         {
             var filterElement = _driver.NowAt<FiltersElement>();
+            _driver.WaitForDataLoading();
             var groupCount = filterElement.GroupTitle.Count;
             Assert.AreEqual(groupCount, filterElement.MinimizeGroupButton.Count, "Minimize buttons are not displayed");
         }
@@ -943,6 +945,7 @@ namespace DashworksTestAutomation.Steps.Dashworks
         public void ThenMaximizeButtonsAreDisplayedForAllCategoryInFiltersPanel()
         {
             var filterElement = _driver.NowAt<FiltersElement>();
+            _driver.WaitForDataLoading();
             var groupCount = filterElement.GroupTitle.Count - 1;
             Assert.AreEqual(groupCount, filterElement.MaximizeGroupButton.Count, "Maximize buttons are not displayed");
         }

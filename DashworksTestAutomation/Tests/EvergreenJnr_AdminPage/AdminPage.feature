@@ -759,7 +759,7 @@ Scenario: EvergreenJnr_AdminPage_CheckThatFiltersAreWorkingCorrectlyOnTheAdminPa
 	When User enters "Migration phase 3 team" text in the Search field for "Team" column
 	Then Counter shows "1" found rows
 	When User clears Search field for "Project Buckets" column
-	And User enters "=7" text in the Search field for "Project Buckets" column
+	And User enters "=8" text in the Search field for "Project Buckets" column
 	Then Counter shows "0" found rows
 	When User clears Search field for "Project Buckets" column
 	And User enters "Administrative Team" text in the Search field for "Team" column
