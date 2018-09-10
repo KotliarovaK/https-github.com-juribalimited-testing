@@ -512,7 +512,7 @@ namespace DashworksTestAutomation.Steps.Projects
             {
                 //generate random color by index
                 var option = page.SelectReadiness();
-                _taskPropertiesValuesDto.Readiness.Add(option.Key, option.Value);
+                _taskPropertiesValuesDto.Readiness.Add(option);
             }
                 //page.SelectReadiness(_taskPropertiesValuesDto.ReadinessIndex); 
 
@@ -545,7 +545,7 @@ namespace DashworksTestAutomation.Steps.Projects
             {
                 //generate random color by index
                 var option = page.SelectReadiness();
-                _taskPropertiesValuesDto.Readiness.Add(option.Key, option.Value);
+                _taskPropertiesValuesDto.Readiness.Add(option);
             }
                 //page.SelectReadiness(_taskPropertiesValuesDto.ReadinessIndex);
 
