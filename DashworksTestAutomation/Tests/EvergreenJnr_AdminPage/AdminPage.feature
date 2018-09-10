@@ -1911,9 +1911,9 @@ Scenario Outline: EvergreenJnr_AdminPage_CheckProjectCreationFromListPageWithUse
 	Then Success message is displayed and contains "Your project has been created" text
 
 Examples:
-	| ListName  | ProjectName | StaticList     | Item                   | ColumnName    | DynamicList  |
-	| Devices   | Project2587 | StaticList6521 | 00KLL9S8NRF0X6         | Hostname      | TestList6584 |
-	| Mailboxes | Project2587 | StaticList6522 | ZVI880605@bclabs.local | Email Address | TestList6583 |
+	| ListName  | ProjectName | StaticList     | Item                   | ColumnName    | DynamicList     |
+	| Devices   | Project2587 | StaticList6521 | 00KLL9S8NRF0X6         | Hostname      | DynamicList6584 |
+	| Mailboxes | Project2587 | StaticList6522 | ZVI880605@bclabs.local | Email Address | DynamicList6583 |
 
 @Evergreen @Admin @EvergreenJnr_AdminPage @AdminPage @DAS12999 @DAS12799 @Project_Creation_and_Scope @Delete_Newly_Created_Project @Delete_Newly_Created_List
 Scenario: EvergreenJnr_AdminPage_CheckMailboxProjectCreationWithCloneEvergreenBuckets
