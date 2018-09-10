@@ -25,7 +25,7 @@ namespace DashworksTestAutomation.Pages.Evergreen
 
         public const string FilterSubcategory = "//div[contains(@class, 'sub-categories')]//div//div";
 
-        public const string SelectedFiltersSubcategory = "//div[contains(@class, 'sub-categories')]//div//div";
+        public const string SelectedFiltersSubcategory = "//div[contains(@class, 'sub-categories')]//div";
 
         public const string SelectedColumnSubcategory = "//div[contains(@class, 'sub-categories')]//div//span";
 
