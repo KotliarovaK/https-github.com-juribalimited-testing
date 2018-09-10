@@ -65,7 +65,7 @@ Scenario: EvergreenJnr_DevicesList_CheckThatAllColumnsAreVisibleInTheirRelevantC
 	When User have reset all columns
 	Then "11" subcategories is displayed for "Device" category
 
-@Evergreen @Mailboxes @EvergreenJnr_Columns @ColumnSectionDisplay @DAS11548
+@Evergreen @Mailboxes @EvergreenJnr_Columns @ColumnSectionDisplay @DAS11548 @DAS13423 @Not_Run
 Scenario: EvergreenJnr_MailboxesList_CheckThatCategoryRemainsOpenAfterAddingColumns
 	When User clicks "Mailboxes" on the left-hand menu
 	Then "Mailboxes" list should be displayed to the user
@@ -261,7 +261,7 @@ Scenario: EvergreenJnr_AllLists_CheckThatColumnsIsNotRemovedAfterDraggingThemOut
 	| Mailbox Type       |
 	| Owner Display Name |
 
-@Evergreen @Users @EvergreenJnr_Columns @ColumnSectionDisplay @DAS13181
+@Evergreen @Users @EvergreenJnr_Columns @ColumnSectionDisplay @DAS13181 @DAS13376 @Not_Run
 Scenario: EvergreenJnr_UsersList_ChecksThatColumnsPanelIsDisplayedCorrectlyAfterApplyAnyFilterFromApplicationCustomFieldsCategory
 	When User clicks "Users" on the left-hand menu
 	Then "Users" list should be displayed to the user
@@ -468,7 +468,7 @@ Scenario: EvergreenJnr_DevicesList_ChecksThatAfterAddingRowsToAStaticListFromADy
 	Then Actions panel is displayed to the user
 	When User select "Hostname" rows in the grid
 	| SelectedRowsName |
-	| 00BDM1JUR8IF419  |
+	| 00YTY8U3ZYP2WT   |
 	And User selects "Create static list" in the Actions dropdown
 	And User create static list with "StaticListFromADynamicList" name
 	Then "StaticListFromADynamicList" list is displayed to user
@@ -477,7 +477,7 @@ Scenario: EvergreenJnr_DevicesList_ChecksThatAfterAddingRowsToAStaticListFromADy
 	Then Actions panel is displayed to the user
 	When User select "Hostname" rows in the grid
 	| SelectedRowsName |
-	| 00YWR8TJU4ZF8V   |
+	| 018UQ6KL9TF4YF   |
 	Then User add selected rows in "StaticListFromADynamicList" list
 	Then "2" rows are displayed in the agGrid
 	And Column is displayed in following order:
@@ -714,7 +714,7 @@ Scenario: EvergreenJnr_UsersList_ChecksThatSubcategoriesOnColumnsPanelAreDisplay
 	| Department Name      |
 
 @Evergreen @AllLists @EvergreenJnr_Columns @ColumnSectionDisplay @DAS12922
-Scenario: EvergreenJnr_AllLists_LocationAndUserFiltersEqualsOnUsersAndApplicationsTabs	
+Scenario: EvergreenJnr_AllLists_LocationAndUserFiltersEqualsOnUsersAndApplicationsTabs
 	When User clicks "Users" on the left-hand menu
 	Then "Users" list should be displayed to the user
 	When User clicks the Columns button
@@ -731,15 +731,15 @@ Scenario: EvergreenJnr_AllLists_LocationAndUserFiltersEqualsOnUsersAndApplicatio
 	When User clicks the Filters button
 	Then Filters panel is displayed to the user
 	When User clicks Add New button on the Filter panel
-	Then "User (22)" category is displayed on Filters panel
-	Then "Location (8)" category is displayed on Filters panel
+	Then "User" with "22"category is displayed on Filters panel
+	Then "Location" with "8"category is displayed on Filters panel
 	When User clicks "Applications" on the left-hand menu
 	Then "Applications" list should be displayed to the user
 	When User clicks the Filters button
 	Then Filters panel is displayed to the user
 	When User clicks Add New button on the Filter panel
-	Then "User (24)" category is displayed on Filters panel
-	Then "User Location (8)" category is displayed on Filters panel
+	Then "User" with "24"category is displayed on Filters panel
+	Then "User Location" with "8"category is displayed on Filters panel
 
 @Evergreen @Mailboxes @EvergreenJnr_Columns @ColumnSectionDisplay @DAS12910
 Scenario: EvergreenJnr_MailboxesList_ChecksThatSubcategoriesOnColumnsPanelIsDisplayedCorrectlyAfterAddingObjectIdFilter
