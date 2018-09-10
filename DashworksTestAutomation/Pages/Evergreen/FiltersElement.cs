@@ -21,7 +21,7 @@ namespace DashworksTestAutomation.Pages.Evergreen
 
         public const string FilterNameSelector = ".//span[@class='filter-label-name']";
 
-        private const string GroupTitleSelector = ".//div[contains(@class,'filter-category-title ng-star-inserted')]";
+        private const string GroupTitleSelector = ".//div[contains(@class,'filter-category-label blue-color')]";
 
         [FindsBy(How = How.XPath, Using = ".//div[@class='filter-panel']")]
         public IWebElement FiltersPanel { get; set; }
@@ -60,12 +60,12 @@ namespace DashworksTestAutomation.Pages.Evergreen
 
         [FindsBy(How = How.XPath,
             Using =
-                ".//div[@class='filter-category-title ng-star-inserted']//i[@class='material-icons mat-clear mat-18']")]
+                "//div[@class='btn-group-sm']//button//span//i[@class='material-icons mat-clear mat-18']")]
         public IList<IWebElement> MinimizeGroupButton { get; set; }
 
         [FindsBy(How = How.XPath,
             Using =
-                ".//div[@class='filter-category-title ng-star-inserted']//i[@class='material-icons mat-item_add mat-18']")]
+                "//div[@class='btn-group-sm']//button//span//i[@class='material-icons mat-item_add mat-18']")]
         public IList<IWebElement> MaximizeGroupButton { get; set; }
 
         [FindsBy(How = How.XPath, Using = ".//div[@class='styleSelectDropdown']")]
@@ -282,7 +282,9 @@ namespace DashworksTestAutomation.Pages.Evergreen
 
             SearchTextbox.Clear();
             SearchTextbox.SendKeys(filterName);
+            Driver.WaitForDataLoading();
             var selector = By.XPath($".//div[contains(@class, 'filter-add')][text()='{filterName}']");
+            Driver.WaitForDataLoading();
             return Driver.IsElementDisplayed(selector);
         }
 
@@ -417,9 +419,9 @@ namespace DashworksTestAutomation.Pages.Evergreen
             return Driver.FindElement(selector);
         }
 
-        public IWebElement GetFilterCategory(string filterCategoryName)
+        public IWebElement GetFilterCategory(string filterName, string category)
         {
-            var selector = By.XPath($".//div[contains(@class,'filter-category-label blue-color bold-text')][text()='{filterCategoryName}']/ancestor::div[@class='filter-category ng-star-inserted']");
+            var selector = By.XPath($".//div[contains(@class,'filter-category-title')]//div[text()='{filterName}']/parent::div//div//strong[text()='{category}']");
             Driver.WaitWhileControlIsNotDisplayed(selector);
             return Driver.FindElement(selector);
         }
