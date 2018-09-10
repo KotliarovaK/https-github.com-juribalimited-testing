@@ -1097,6 +1097,11 @@ Scenario Outline: EvergreenJnr_UsersList_ChecksThatTheNoChangeOptionIsWorkedCorr
 	Then Evergreen Dashboards page should be displayed to the user
 	When User clicks "Users" on the left-hand menu
 	Then "Users" list should be displayed to the user
+	When User clicks the Columns button
+	Then Columns panel is displayed to the user
+	When ColumnName is entered into the search box and the selection is clicked
+	| ColumnName                               |
+	| Windows7Mi: Perform User Acceptance Test |
 	When User perform search by "<RowName>"
 	When User clicks the Actions button
 	Then Actions panel is displayed to the user
@@ -1118,6 +1123,8 @@ Scenario Outline: EvergreenJnr_UsersList_ChecksThatTheNoChangeOptionIsWorkedCorr
 	Then User clicks "UPDATE" button on message box
 	And Success message with "1 of 1 objects were valid for the update. Your changes have successfully been queued." text is displayed on Action panel
 	Then Success message is hidden after five seconds
+	When User refreshes agGrid
+	Then "<NewValue>" content is displayed in "Windows7Mi: Perform User Acceptance Test" column
 		#returns default object state
 	When User selects "Bulk update" in the Actions dropdown
 	And User selects "Update task value" Bulk Update Type on Action panel
@@ -1132,6 +1139,8 @@ Scenario Outline: EvergreenJnr_UsersList_ChecksThatTheNoChangeOptionIsWorkedCorr
 	When User clicks the "UPDATE" Action button
 	Then User clicks "UPDATE" button on message box
 	And Success message with "1 of 1 objects were valid for the update. Your changes have successfully been queued." text is displayed on Action panel
+	When User refreshes agGrid
+	Then "<DefaultValue>" content is displayed in "Windows7Mi: Perform User Acceptance Test" column
 	When User clicks the Logout button
 	Then User is logged out
 	When User clicks on the Login link
@@ -1172,6 +1181,11 @@ Scenario Outline: EvergreenJnr_UsersList_ChecksThatTheNoChangeOptionIsWorkedCorr
 	Then Evergreen Dashboards page should be displayed to the user
 	When User clicks "Users" on the left-hand menu
 	Then "Users" list should be displayed to the user
+	When User clicks the Columns button
+	Then Columns panel is displayed to the user
+	When ColumnName is entered into the search box and the selection is clicked
+	| ColumnName                               |
+	| Windows7Mi: Perform User Acceptance Test |
 	When User perform search by "<RowName>"
 	When User clicks the Actions button
 	Then Actions panel is displayed to the user
@@ -1193,6 +1207,8 @@ Scenario Outline: EvergreenJnr_UsersList_ChecksThatTheNoChangeOptionIsWorkedCorr
 	Then User clicks "UPDATE" button on message box
 	And Success message with "1 of 1 objects were valid for the update. Your changes have successfully been queued." text is displayed on Action panel
 	Then Success message is hidden after five seconds
+	When User refreshes agGrid
+	Then "<DefaultValue>" content is displayed in "Windows7Mi: Perform User Acceptance Test" column
 		#returns default object state
 	When User selects "Bulk update" in the Actions dropdown
 	And User selects "Update task value" Bulk Update Type on Action panel
@@ -1207,6 +1223,8 @@ Scenario Outline: EvergreenJnr_UsersList_ChecksThatTheNoChangeOptionIsWorkedCorr
 	When User clicks the "UPDATE" Action button
 	Then User clicks "UPDATE" button on message box
 	And Success message with "1 of 1 objects were valid for the update. Your changes have successfully been queued." text is displayed on Action panel
+	When User refreshes agGrid
+	Then "<DefaultValue>" content is displayed in "Windows7Mi: Perform User Acceptance Test" column
 	When User clicks the Logout button
 	Then User is logged out
 	When User clicks on the Login link
@@ -1218,12 +1236,12 @@ Scenario Outline: EvergreenJnr_UsersList_ChecksThatTheNoChangeOptionIsWorkedCorr
 	And User removes "DAS13288" User
 
 Examples: 
-	| RowName    | NewDate      | NewTeam  | DefaultDate  | DefaultTeam         |
-	| CQV0623434 | May 19, 2018 | Admin IT | May 08, 2015 | Administrative Team |
-	| BBZ877343  | Aug 28, 2001 | Admin IT | Sep 07, 2018 | Retail Team         |
-	| DLL972653  | Aug 30, 2018 | Admin IT | Sep 05, 2018 | K-Team              |
-	| LZI970280  | May 09, 2018 | Admin IT | Sep 03, 2018 | IB Team             |
-	| ZQX656408  | Aug 15, 2018 | Admin IT | Aug 30, 2018 | Migration Phase 2   |
+	| RowName    | NewDate      | NewTeam  | DefaultDate  | DefaultTeam         | DefaultValue   |
+	| CQV0623434 | May 19, 2018 | Admin IT | May 08, 2015 | Administrative Team | Complete       |
+	| BBZ877343  | Aug 28, 2001 | Admin IT | Sep 07, 2018 | Retail Team         | Failed         |
+	| DLL972653  | Aug 30, 2018 | Admin IT | Sep 05, 2018 | K-Team              | Complete       |
+	| LZI970280  | May 09, 2018 | Admin IT | Sep 03, 2018 | IB Team             | Not Applicable |
+	| ZQX656408  | Aug 15, 2018 | Admin IT | Aug 30, 2018 | Migration Phase 2   | Not Applicable |
 
 @Evergreen @Users @EvergreenJnr_ActionsPanel @BulkUpdate @DAS12864 @DAS13288 @DAS13289 @DAS13287
 Scenario Outline: EvergreenJnr_UsersList_ChecksThatTheNoChangeOptionIsWorkedCorrectlyForOwnerField
@@ -1247,6 +1265,11 @@ Scenario Outline: EvergreenJnr_UsersList_ChecksThatTheNoChangeOptionIsWorkedCorr
 	Then Evergreen Dashboards page should be displayed to the user
 	When User clicks "Users" on the left-hand menu
 	Then "Users" list should be displayed to the user
+	When User clicks the Columns button
+	Then Columns panel is displayed to the user
+	When ColumnName is entered into the search box and the selection is clicked
+	| ColumnName                               |
+	| Windows7Mi: Perform User Acceptance Test |
 	When User perform search by "<RowName>"
 	When User clicks the Actions button
 	Then Actions panel is displayed to the user
@@ -1268,6 +1291,8 @@ Scenario Outline: EvergreenJnr_UsersList_ChecksThatTheNoChangeOptionIsWorkedCorr
 	Then User clicks "UPDATE" button on message box
 	And Success message with "1 of 1 objects were valid for the update. Your changes have successfully been queued." text is displayed on Action panel
 	Then Success message is hidden after five seconds
+	When User refreshes agGrid
+	Then "<NewValue>" content is displayed in "Windows7Mi: Perform User Acceptance Test" column
 		#returns default object state
 	When User selects "Bulk update" in the Actions dropdown
 	And User selects "Update task value" Bulk Update Type on Action panel
@@ -1282,6 +1307,8 @@ Scenario Outline: EvergreenJnr_UsersList_ChecksThatTheNoChangeOptionIsWorkedCorr
 	When User clicks the "UPDATE" Action button
 	Then User clicks "UPDATE" button on message box
 	And Success message with "1 of 1 objects were valid for the update. Your changes have successfully been queued." text is displayed on Action panel
+	When User refreshes agGrid
+	Then "<DefaultValue>" content is displayed in "Windows7Mi: Perform User Acceptance Test" column
 	When User clicks the Logout button
 	Then User is logged out
 	When User clicks on the Login link
@@ -1301,7 +1328,7 @@ Examples:
 	| ZQX656408  | Not Applicable | Aug 15, 2018 | Complete       | Aug 30, 2018 |
 
 @Evergreen @Users @EvergreenJnr_ActionsPanel @BulkUpdate @DAS12864 @DAS13290
-Scenario: EvergreenJnr_UsersList_
+Scenario: EvergreenJnr_UsersList_ChecksThatDateRemovingIsWorksCorrectly
 	When User clicks "Projects" on the left-hand menu
 	Then "Projects Home" page is displayed to the user
 	When User navigate to Manage link
@@ -1322,6 +1349,11 @@ Scenario: EvergreenJnr_UsersList_
 	Then Evergreen Dashboards page should be displayed to the user
 	When User clicks "Users" on the left-hand menu
 	Then "Users" list should be displayed to the user
+	When User clicks the Columns button
+	Then Columns panel is displayed to the user
+	When ColumnName is entered into the search box and the selection is clicked
+	| ColumnName                               |
+	| Windows7Mi: Perform User Acceptance Test |
 	When User perform search by "LZI970280"
 	When User clicks the Actions button
 	Then Actions panel is displayed to the user
@@ -1342,6 +1374,8 @@ Scenario: EvergreenJnr_UsersList_
 	Then User clicks "UPDATE" button on message box
 	And Success message with "1 of 1 objects were valid for the update. Your changes have successfully been queued." text is displayed on Action panel
 	Then Success message is hidden after five seconds
+	When User refreshes agGrid
+	Then "Complete" content is displayed in "Windows7Mi: Perform User Acceptance Test" column
 		#returns default object state
 	When User selects "Bulk update" in the Actions dropdown
 	And User selects "Update task value" Bulk Update Type on Action panel
@@ -1356,9 +1390,9 @@ Scenario: EvergreenJnr_UsersList_
 	When User clicks the "UPDATE" Action button
 	Then the amber message is displayed correctly
 	Then User clicks "UPDATE" button on message box
-	When User clicks the "UPDATE" Action button
-	Then User clicks "UPDATE" button on message box
 	And Success message with "1 of 1 objects were valid for the update. Your changes have successfully been queued." text is displayed on Action panel
+	When User refreshes agGrid
+	Then "Failed" content is displayed in "Windows7Mi: Perform User Acceptance Test" column
 	When User clicks the Logout button
 	Then User is logged out
 	When User clicks on the Login link

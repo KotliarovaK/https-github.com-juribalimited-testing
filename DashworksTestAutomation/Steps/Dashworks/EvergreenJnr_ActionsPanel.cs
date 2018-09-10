@@ -391,7 +391,7 @@ namespace DashworksTestAutomation.Steps.Dashworks
         public void ThenSuccessMessageIsHiddenAfterFiveSeconds()
         {
             var action = _driver.NowAt<BaseDashboardPage>();
-            Thread.Sleep(6000);
+            Thread.Sleep(10000);
             Assert.IsFalse(action.SuccessMessage.Displayed(), "Success Message is displayed");
         }
 
