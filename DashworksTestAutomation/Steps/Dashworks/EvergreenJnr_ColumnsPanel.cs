@@ -357,6 +357,7 @@ namespace DashworksTestAutomation.Steps.Dashworks
         public void ThenMaximizeButtonsAreDisplayedForAllCategoryInColumnsPanel()
         {
             var columnElement = _driver.NowAt<ColumnsElement>();
+            _driver.WaitForDataLoading();
             var groupCount = columnElement.GroupTitle.Count - 1;
             Assert.AreEqual(groupCount, columnElement.MaximizeGroupButton.Count, "Maximize buttons are not displayed");
         }
