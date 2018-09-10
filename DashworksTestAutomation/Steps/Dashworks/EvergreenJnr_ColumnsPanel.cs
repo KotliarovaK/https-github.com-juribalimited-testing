@@ -247,6 +247,7 @@ namespace DashworksTestAutomation.Steps.Dashworks
             var page = _driver.NowAt<EvergreenDashboardsPage>();
             if (page.StatusCodeLabel.Displayed())
                 throw new Exception("500 error was returned after removing all columns from URL");
+         
         }
 
         #endregion
