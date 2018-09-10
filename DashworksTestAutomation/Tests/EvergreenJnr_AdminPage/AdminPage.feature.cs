@@ -3665,8 +3665,8 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_AdminPage
         [NUnit.Framework.CategoryAttribute("DAS12903")]
         [NUnit.Framework.CategoryAttribute("Delete_Newly_Created_Project")]
         [NUnit.Framework.CategoryAttribute("Delete_Newly_Created_List")]
-        [NUnit.Framework.TestCaseAttribute("Devices", "Project2587", "StaticList6521", "00KLL9S8NRF0X6", "Hostname", "TestList6584", new string[0])]
-        [NUnit.Framework.TestCaseAttribute("Mailboxes", "Project2587", "StaticList6522", "ZVI880605@bclabs.local", "Email Address", "TestList6583", new string[0])]
+        [NUnit.Framework.TestCaseAttribute("Devices", "Project2587", "StaticList6521", "00KLL9S8NRF0X6", "Hostname", "DynamicList6584", new string[0])]
+        [NUnit.Framework.TestCaseAttribute("Mailboxes", "Project2587", "StaticList6522", "ZVI880605@bclabs.local", "Email Address", "DynamicList6583", new string[0])]
         public virtual void EvergreenJnr_AdminPage_CheckProjectCreationFromListPageWithUseEvergreenBucket(string listName, string projectName, string staticList, string item, string columnName, string dynamicList, string[] exampleTags)
         {
             string[] @__tags = new string[] {
