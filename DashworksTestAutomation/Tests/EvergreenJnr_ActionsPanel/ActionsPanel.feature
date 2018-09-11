@@ -1402,3 +1402,78 @@ Scenario: EvergreenJnr_UsersList_ChecksThatDateRemovingIsWorksCorrectly
 	When User navigate to Manage link
 	And User select "Manage Users" option in Management Console
 	And User removes "DAS13290" User
+
+@Evergreen @Users @EvergreenJnr_ActionsPanel @BulkUpdate @DAS12864 @DAS13291
+Scenario: EvergreenJnr_UsersList_ChecksThatOwnerRemovingIsWorksCorrectly
+	When User clicks "Projects" on the left-hand menu
+	Then "Projects Home" page is displayed to the user
+	When User navigate to Manage link
+	And User select "Manage Users" option in Management Console
+	And User create new User
+	| Username | FullName | Password | ConfirmPassword | Roles                |
+	| DAS13291 | DAS13291 | 1234qwer | 1234qwer        | Project Bulk Updater |
+	Then Success message is displayed
+	When User cliks Logout link
+	Then User is logged out
+	When User clicks on the Login link
+	Then Login Page is displayed to the user
+	When User login with following credentials:
+	| Username | Password |
+	| DAS13291 | 1234qwer |
+	Then Dashworks homepage is displayed to the user in a logged in state
+	When User clicks the Switch to Evergreen link
+	Then Evergreen Dashboards page should be displayed to the user
+	When User clicks "Users" on the left-hand menu
+	Then "Users" list should be displayed to the user
+	When User clicks the Columns button
+	Then Columns panel is displayed to the user
+	When ColumnName is entered into the search box and the selection is clicked
+	| ColumnName                               |
+	| Windows7Mi: Perform User Acceptance Test |
+	When User perform search by "LZI970280"
+	When User clicks the Actions button
+	Then Actions panel is displayed to the user
+	When User select "Username" rows in the grid
+	| SelectedRowsName |
+	| LZI970280        |
+	And User selects "Bulk update" in the Actions dropdown
+	And User selects "Update task value" Bulk Update Type on Action panel
+	And User selects "Windows 7 Migration (Computer Scheduled Project)" Project on Action panel
+	When User selects "User Acceptance Test" Stage on Action panel
+	When User selects "Perform User Acceptance Test" Task on Action panel
+	When User selects "No change" Update Value on Action panel
+	When User selects "Update" Update Date on Action panel
+	When User selects "Aug 30, 2013" Date on Action panel
+	When User selects "Remove owner and team" Update Owner on Action panel
+	When User clicks the "UPDATE" Action button
+	Then the amber message is displayed correctly
+	Then User clicks "UPDATE" button on message box
+	And Success message with "1 of 1 objects were valid for the update. Your changes have successfully been queued." text is displayed on Action panel
+	Then Success message is hidden after five seconds
+	When User refreshes agGrid
+	Then "Failed" content is displayed in "Windows7Mi: Perform User Acceptance Test" column
+		#returns default object state
+	When User selects "Bulk update" in the Actions dropdown
+	And User selects "Update task value" Bulk Update Type on Action panel
+	And User selects "Windows 7 Migration (Computer Scheduled Project)" Project on Action panel
+	When User selects "User Acceptance Test" Stage on Action panel
+	When User selects "Perform User Acceptance Test" Task on Action panel
+	When User selects "No change" Update Value on Action panel
+	When User selects "Update" Update Date on Action panel
+	When User selects "Sep 03, 2018" Date on Action panel
+	When User selects "No change" Update Owner on Action panel
+	When User clicks the "UPDATE" Action button
+	Then the amber message is displayed correctly
+	Then User clicks "UPDATE" button on message box
+	And Success message with "1 of 1 objects were valid for the update. Your changes have successfully been queued." text is displayed on Action panel
+	When User refreshes agGrid
+	Then "Failed" content is displayed in "Windows7Mi: Perform User Acceptance Test" column
+	When User clicks the Logout button
+	Then User is logged out
+	When User clicks on the Login link
+	Then Login Page is displayed to the user
+	When User provides the Login and Password and clicks on the login button
+	Then Dashworks homepage is displayed to the user in a logged in state
+	When User navigate to Manage link
+	And User select "Manage Users" option in Management Console
+	And User removes "DAS13291" User
