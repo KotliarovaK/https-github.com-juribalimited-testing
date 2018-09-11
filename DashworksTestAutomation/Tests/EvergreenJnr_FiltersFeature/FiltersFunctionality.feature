@@ -156,7 +156,7 @@ Scenario: EvergreenJnr_DevicesList_CheckThatAddColumnCheckboxIsUncheckedAfterSav
 	When User clicks the Columns button
 	When User removes "Compliance" column by Column panel
 	When User clicks the Filters button
-	When User click Edit button for "Compliance" filter
+	#When User click Edit button for "Compliance" filter
 	Then "Add column" checkbox is unchecked
 	And "Add column" checkbox is not disabled
 
