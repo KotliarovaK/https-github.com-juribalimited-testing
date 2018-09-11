@@ -804,7 +804,7 @@ Scenario: EvergreenJnr_AdminPage_CheckThatFiltersAreWorkingCorrectlyOnTheAdminPa
 	And User enters "RD-EXCH2K3" text in the Search field for "Server Name" column
 	Then Counter shows "6" found rows
 
-@Evergreen @Admin @EvergreenJnr_AdminPage @AdminPage @DAS12236 @DAS12999 @DAS13199 @Delete_Newly_Created_Project @Project_Creation_and_Scope @Projects
+@Evergreen @Admin @EvergreenJnr_AdminPage @AdminPage @DAS12236 @DAS12999 @DAS13199 @DAS13408 @Delete_Newly_Created_Project @Project_Creation_and_Scope @Projects
 Scenario: EvergreenJnr_AdminPage_CheckThatNoConsoleErrorsAreDisplayedAfterUpdatingProjectScopeChanges
 	When User clicks Admin on the left-hand menu
 	Then Admin page should be displayed to the user
@@ -835,7 +835,21 @@ Scenario: EvergreenJnr_AdminPage_CheckThatNoConsoleErrorsAreDisplayedAfterUpdati
 	When User clicks the "UPDATE PROJECT" Action button
 	Then Success message is displayed and contains "3 objects queued for onboarding, 0 objects offboarded" text
 	And "Applications to add (0 of 2126 selected)" is displayed to the user in the Project Scope Changes section
-	And There are no errors in the browser console
+	When User selects "Queue" tab on the Project details page
+	Then following Items are onboarded
+	| Items                       |
+	| 20040610sqlserverck (1.0.0) |
+	| 7zip                        |
+	| ACDSee 4.0 (4.0.0)          |
+	Then "" content is displayed in "Bucket" column
+	When User selects "History" tab on the Project details page
+	Then following Items are onboarded
+	| Items                       |
+	| 20040610sqlserverck (1.0.0) |
+	| 7zip                        |
+	| ACDSee 4.0 (4.0.0)          |
+	Then "" content is displayed in "Bucket" column
+	#And There are no errors in the browser console
 
 @Evergreen @Admin @EvergreenJnr_AdminPage @AdminPage @DAS12491 @Buckets
 Scenario: EvergreenJnr_AdminPage_CheckThatSingularFoundItemLabelDisplaysOnActionsToolbarforBucketsList

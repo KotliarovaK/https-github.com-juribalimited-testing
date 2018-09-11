@@ -211,6 +211,13 @@ namespace DashworksTestAutomation.Steps.Dashworks
             Assert.AreEqual(textContent, originalList, "Content is not displayed correctly");
         }
 
+        [Then(@"empty rows is displayed in ""(.*)"" column")]
+        public void ThenEmptyRowsIsDisplayedInColumn(string p0)
+        {
+            var page = _driver.NowAt<BaseDashboardPage>();
+            _driver.WaitForDataLoading();
+        }
+
         [Then(@"full list content is displayed to the user")]
         public void ThenFullListContentIsDisplayedToTheUser()
         {
