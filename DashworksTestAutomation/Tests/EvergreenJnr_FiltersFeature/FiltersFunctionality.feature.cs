@@ -69,7 +69,6 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_FiltersFeature
         
         [NUnit.Framework.TestAttribute()]
         [NUnit.Framework.Retry(2)]
-        
         [NUnit.Framework.DescriptionAttribute("EvergreenJnr_UsersList_CheckThat500ErrorIsNotReturnedForFilterWithSpecialCharecte" +
             "r")]
         [NUnit.Framework.CategoryAttribute("Evergreen")]
@@ -105,7 +104,6 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_FiltersFeature
         
         [NUnit.Framework.TestAttribute()]
         [NUnit.Framework.Retry(2)]
-        
         [NUnit.Framework.DescriptionAttribute("EvergreenJnr_ApplicationsList_Check500ErrorIsNotReturnedForBooleanFilterWithUnkno" +
             "wnOption")]
         [NUnit.Framework.CategoryAttribute("Evergreen")]
@@ -169,7 +167,6 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_FiltersFeature
         
         [NUnit.Framework.TestAttribute()]
         [NUnit.Framework.Retry(2)]
-        
         [NUnit.Framework.DescriptionAttribute("EvergreenJnr_ApplicationsList_CheckThatAddColumnCheckboxWorksCorrectly")]
         [NUnit.Framework.CategoryAttribute("Evergreen")]
         [NUnit.Framework.CategoryAttribute("Applications")]
@@ -211,7 +208,6 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_FiltersFeature
         
         [NUnit.Framework.TestAttribute()]
         [NUnit.Framework.Retry(2)]
-        
         [NUnit.Framework.DescriptionAttribute("EvergreenJnr_ApplicationsList_CheckThatFilterIsRestoredAfterGoingBackToTheListAga" +
             "in")]
         [NUnit.Framework.CategoryAttribute("Evergreen")]
@@ -270,7 +266,6 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_FiltersFeature
         
         [NUnit.Framework.TestAttribute()]
         [NUnit.Framework.Retry(2)]
-        
         [NUnit.Framework.DescriptionAttribute("EvergreenJnr_AllLists_CheckThatPrimaryColumnIsDisplayedAfterAddingAFilterWithColu" +
             "mn")]
         [NUnit.Framework.CategoryAttribute("Evergreen")]
@@ -319,7 +314,6 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_FiltersFeature
         
         [NUnit.Framework.TestAttribute()]
         [NUnit.Framework.Retry(2)]
-        
         [NUnit.Framework.DescriptionAttribute("EvergreenJnr_DevicesList_CheckThatAddColumnCheckboxIsCheckedAfterSavingFilterInAN" +
             "ewList")]
         [NUnit.Framework.CategoryAttribute("Evergreen")]
@@ -367,7 +361,6 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_FiltersFeature
         
         [NUnit.Framework.TestAttribute()]
         [NUnit.Framework.Retry(2)]
-        
         [NUnit.Framework.DescriptionAttribute("EvergreenJnr_DevicesList_CheckThatAddColumnCheckboxIsCheckedAfterSavingAFilter")]
         [NUnit.Framework.CategoryAttribute("Evergreen")]
         [NUnit.Framework.CategoryAttribute("Devices")]
@@ -403,7 +396,6 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_FiltersFeature
         
         [NUnit.Framework.TestAttribute()]
         [NUnit.Framework.Retry(2)]
-        
         [NUnit.Framework.DescriptionAttribute("EvergreenJnr_DevicesList_CheckThatAddColumnCheckboxIsUncheckedAfterSavingAFilterA" +
             "ndRemovingAColumn")]
         [NUnit.Framework.CategoryAttribute("Evergreen")]
@@ -446,7 +438,6 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_FiltersFeature
         
         [NUnit.Framework.TestAttribute()]
         [NUnit.Framework.Retry(2)]
-        
         [NUnit.Framework.DescriptionAttribute("EvergreenJnr_AllLists_CheckThatFilterIsRestoredCorrectlyAfterLeavingThePageAndGoi" +
             "ngBackViaTheBrowserBackButtonForCheckboxesFilters")]
         [NUnit.Framework.CategoryAttribute("Evergreen")]
@@ -505,7 +496,6 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_FiltersFeature
         
         [NUnit.Framework.TestAttribute()]
         [NUnit.Framework.Retry(2)]
-        
         [NUnit.Framework.DescriptionAttribute("EvergreenJnr_AllLists_CheckThatFilterIsRestoredCorrectlyAfterLeavingThePageAndGoi" +
             "ngBackViaTheBrowserBackButtonForLookupFilters")]
         [NUnit.Framework.CategoryAttribute("Evergreen")]
@@ -552,7 +542,6 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_FiltersFeature
         
         [NUnit.Framework.TestAttribute()]
         [NUnit.Framework.Retry(2)]
-        
         [NUnit.Framework.DescriptionAttribute("EvergreenJnr_ApplicationsList_CheckThatFilterIsRestoredCorrectlyAfterLeavingThePa" +
             "geAndGoingBackViaTheBrowserbackButtonForValuesFilters")]
         [NUnit.Framework.CategoryAttribute("Evergreen")]
@@ -601,7 +590,6 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_FiltersFeature
         
         [NUnit.Framework.TestAttribute()]
         [NUnit.Framework.Retry(2)]
-        
         [NUnit.Framework.DescriptionAttribute("EvergreenJnr_ApplicationsList_CheckThatFilterIsRestoredCorrectlyAfterLeavingThePa" +
             "geAndGoingBackViaTheBrowseBackButtonForListFilters")]
         [NUnit.Framework.CategoryAttribute("Evergreen")]
@@ -656,7 +644,6 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_FiltersFeature
         
         [NUnit.Framework.TestAttribute()]
         [NUnit.Framework.Retry(2)]
-        
         [NUnit.Framework.DescriptionAttribute("EvergreenJnr_DevicesList_CheckNumericFilter")]
         [NUnit.Framework.CategoryAttribute("Evergreen")]
         [NUnit.Framework.CategoryAttribute("Devices")]
@@ -690,7 +677,6 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_FiltersFeature
         
         [NUnit.Framework.TestAttribute()]
         [NUnit.Framework.Retry(2)]
-        
         [NUnit.Framework.DescriptionAttribute("EvergreenJnr_DevicesList_CheckThatAssociationSearchInFiltersPanelIsWorkingCorrect" +
             "ly")]
         [NUnit.Framework.CategoryAttribute("Evergreen")]
@@ -735,7 +721,6 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_FiltersFeature
         
         [NUnit.Framework.TestAttribute()]
         [NUnit.Framework.Retry(2)]
-        
         [NUnit.Framework.DescriptionAttribute("EvergreenJnr_ApplicationsList_CheckThat500ErrorInNotDisplayedWhenUserApplyASelect" +
             "edNumericFilter")]
         [NUnit.Framework.CategoryAttribute("Evergreen")]
@@ -772,7 +757,6 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_FiltersFeature
         
         [NUnit.Framework.TestAttribute()]
         [NUnit.Framework.Retry(2)]
-        
         [NUnit.Framework.DescriptionAttribute("EvergreenJnr_DevicesList_CheckThatEmptyNotEmptyOperatorsIsWorkedCorrectly")]
         [NUnit.Framework.CategoryAttribute("Evergreen")]
         [NUnit.Framework.CategoryAttribute("Devices")]
@@ -812,7 +796,6 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_FiltersFeature
         
         [NUnit.Framework.TestAttribute()]
         [NUnit.Framework.Retry(2)]
-        
         [NUnit.Framework.DescriptionAttribute("EvergreenJnr_UsersList_CheckThatLDAPFilterCategoryHaveAddColumnCheckboxes")]
         [NUnit.Framework.CategoryAttribute("Evergreen")]
         [NUnit.Framework.CategoryAttribute("Users")]
@@ -858,7 +841,6 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_FiltersFeature
         
         [NUnit.Framework.TestAttribute()]
         [NUnit.Framework.Retry(2)]
-        
         [NUnit.Framework.DescriptionAttribute("EvergreenJnr_DevicesList_CheckThatOperatorInSelectedFilterIsDisplayedCorrectlyAPI" +
             "")]
         [NUnit.Framework.CategoryAttribute("Evergreen")]
@@ -920,7 +902,6 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_FiltersFeature
         
         [NUnit.Framework.TestAttribute()]
         [NUnit.Framework.Retry(2)]
-        
         [NUnit.Framework.DescriptionAttribute("EvergreenJnr_UsersList_CheckThatToolTipShownWithEditFilterTextWhenEditingAFilterD" +
             "isplayed")]
         [NUnit.Framework.CategoryAttribute("Evergreen")]
@@ -963,7 +944,6 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_FiltersFeature
         
         [NUnit.Framework.TestAttribute()]
         [NUnit.Framework.Retry(2)]
-        
         [NUnit.Framework.DescriptionAttribute("EvergreenJnr_DevicesList_CheckThatTheSaveButtonIsNotAvailableWhenEnteringInvalidD" +
             "ata")]
         [NUnit.Framework.CategoryAttribute("Evergreen")]
@@ -998,7 +978,6 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_FiltersFeature
         
         [NUnit.Framework.TestAttribute()]
         [NUnit.Framework.Retry(2)]
-        
         [NUnit.Framework.DescriptionAttribute("EvergreenJnr_DevicesList_CheckThatErrorsDoNotAppearWhenAddingAdvancedAndStandardF" +
             "ilters")]
         [NUnit.Framework.CategoryAttribute("Evergreen")]
@@ -1041,7 +1020,6 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_FiltersFeature
         
         [NUnit.Framework.TestAttribute()]
         [NUnit.Framework.Retry(2)]
-        
         [NUnit.Framework.DescriptionAttribute("EvergreenJnr_DevicesList_CheckThatErrorsDoNotAppearAndFullDataIsDisplayedWhenAddi" +
             "ngDifferentFilters")]
         [NUnit.Framework.CategoryAttribute("Evergreen")]
@@ -1105,7 +1083,6 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_FiltersFeature
         
         [NUnit.Framework.TestAttribute()]
         [NUnit.Framework.Retry(2)]
-        
         [NUnit.Framework.DescriptionAttribute("EvergreenJnr_DevicesList_CheckThatTheSaveButtonIsNotAvailableWithoutTheFilterValu" +
             "e")]
         [NUnit.Framework.CategoryAttribute("Evergreen")]
@@ -1149,7 +1126,6 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_FiltersFeature
         
         [NUnit.Framework.TestAttribute()]
         [NUnit.Framework.Retry(2)]
-        
         [NUnit.Framework.DescriptionAttribute("EvergreenJnr_ApplicationsList_CheckThatTheColourOfTheTargetAppReadinessItemIsMatc" +
             "hingTheCaption")]
         [NUnit.Framework.CategoryAttribute("Evergreen")]
@@ -1200,7 +1176,6 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_FiltersFeature
         
         [NUnit.Framework.TestAttribute()]
         [NUnit.Framework.Retry(2)]
-        
         [NUnit.Framework.DescriptionAttribute("EvergreenJnr_ApplicationsList_CheckThatTheColourOfTheApplicationRationalisationIt" +
             "emIsMatchingTheCaption")]
         [NUnit.Framework.CategoryAttribute("Evergreen")]
@@ -1244,7 +1219,6 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_FiltersFeature
         
         [NUnit.Framework.TestAttribute()]
         [NUnit.Framework.Retry(2)]
-        
         [NUnit.Framework.DescriptionAttribute("EvergreenJnr_DevicesList_CheckThatColumnIsEmptyWhenEqualNoneAndContainsContentWhe" +
             "nDoesnotequalNoneForWindows7MiCategoryFilter")]
         [NUnit.Framework.CategoryAttribute("Evergreen")]
@@ -1297,7 +1271,6 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_FiltersFeature
         
         [NUnit.Framework.TestAttribute()]
         [NUnit.Framework.Retry(2)]
-        
         [NUnit.Framework.DescriptionAttribute("EvergreenJnr_AllLists_CheckThatContentIsDisplayedInTheAddedColumnAfterApplyingIsN" +
             "otNoneOperator")]
         [NUnit.Framework.CategoryAttribute("Evergreen")]
@@ -1345,7 +1318,6 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_FiltersFeature
         
         [NUnit.Framework.TestAttribute()]
         [NUnit.Framework.Retry(2)]
-        
         [NUnit.Framework.DescriptionAttribute("EvergreenJnr_MailboxesList_CheckThatEditFilterElementsBlockIsDisplayedCorrectlyOn" +
             "TheFiltersPanel")]
         [NUnit.Framework.CategoryAttribute("Evergreen")]
@@ -1400,7 +1372,6 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_FiltersFeature
         
         [NUnit.Framework.TestAttribute()]
         [NUnit.Framework.Retry(2)]
-        
         [NUnit.Framework.DescriptionAttribute("EvergreenJnr_AllLists_CheckThatLocationFilterIsEditedCorrectly")]
         [NUnit.Framework.CategoryAttribute("Evergreen")]
         [NUnit.Framework.CategoryAttribute("AllLists")]
@@ -1450,7 +1421,6 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_FiltersFeature
         
         [NUnit.Framework.TestAttribute()]
         [NUnit.Framework.Retry(2)]
-        
         [NUnit.Framework.DescriptionAttribute("EvergreenJnr_DevicesList_CheckingThatError500IsNotDisplayedAfterUsingSpecialChara" +
             "ctersIntoTheApplicationNameFilterAndRefreshingThePage")]
         [NUnit.Framework.CategoryAttribute("Evergreen")]
@@ -1491,7 +1461,6 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_FiltersFeature
         
         [NUnit.Framework.TestAttribute()]
         [NUnit.Framework.Retry(2)]
-        
         [NUnit.Framework.DescriptionAttribute("EvergreenJnr_ApplicationsList_CheckThatCorrectDeviceDataIsReturnedAfterApplyingAS" +
             "taticListWithApplicationSavedListFilter")]
         [NUnit.Framework.CategoryAttribute("Evergreen")]
@@ -1554,7 +1523,6 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_FiltersFeature
         
         [NUnit.Framework.TestAttribute()]
         [NUnit.Framework.Retry(2)]
-        
         [NUnit.Framework.DescriptionAttribute("EvergreenJnr_ApplicationsList_CheckThatCorrectDeviceDataIsReturnedWhenUsingAStati" +
             "cListAsTheFilteredApplicationSavedList")]
         [NUnit.Framework.CategoryAttribute("Evergreen")]
@@ -1624,7 +1592,6 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_FiltersFeature
         
         [NUnit.Framework.TestAttribute()]
         [NUnit.Framework.Retry(2)]
-        
         [NUnit.Framework.DescriptionAttribute("EvergreenJnr_ApplicationsList_CheckThatCorrectDeviceDataIsReturnedWhenUsingADynam" +
             "icListAsTheFilteredApplicationSavedList")]
         [NUnit.Framework.CategoryAttribute("Evergreen")]
@@ -1691,7 +1658,6 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_FiltersFeature
         
         [NUnit.Framework.TestAttribute()]
         [NUnit.Framework.Retry(2)]
-        
         [NUnit.Framework.DescriptionAttribute("EvergreenJnr_ApplicationsList_CheckThatNoConsoleErrorIsDisplayedAfterEditingUserS" +
             "urnameFilter")]
         [NUnit.Framework.CategoryAttribute("Evergreen")]
@@ -1732,7 +1698,6 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_FiltersFeature
         
         [NUnit.Framework.TestAttribute()]
         [NUnit.Framework.Retry(2)]
-        
         [NUnit.Framework.DescriptionAttribute("EvergreenJnr_UsersList_CheckThatNoConsoleErrorIsDisplayedAfterAddingUserSavedList" +
             "Filter")]
         [NUnit.Framework.CategoryAttribute("Evergreen")]
@@ -1790,7 +1755,6 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_FiltersFeature
         
         [NUnit.Framework.TestAttribute()]
         [NUnit.Framework.Retry(2)]
-        
         [NUnit.Framework.DescriptionAttribute("EvergreenJnr_UsersList_CheckThatNoErrorIsDisplayedAfterAddingAdvancedFilterForUse" +
             "rnameAndApplicationSavedList")]
         [NUnit.Framework.CategoryAttribute("Evergreen")]
@@ -1864,7 +1828,6 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_FiltersFeature
         
         [NUnit.Framework.TestAttribute()]
         [NUnit.Framework.Retry(2)]
-        
         [NUnit.Framework.DescriptionAttribute("EvergreenJnr_ApplicationsList_CheckThatNoErrorIsDisplayedAfterAddingFewAdvancedFi" +
             "lters")]
         [NUnit.Framework.CategoryAttribute("Evergreen")]
@@ -1920,7 +1883,6 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_FiltersFeature
         
         [NUnit.Framework.TestAttribute()]
         [NUnit.Framework.Retry(2)]
-        
         [NUnit.Framework.DescriptionAttribute("EvergreenJnr_ApplicationsList_CheckThatNoErrorIsDisplayedAfterAddingFewAdvancedFi" +
             "ltersAndFewStandardFilters")]
         [NUnit.Framework.CategoryAttribute("Evergreen")]
@@ -1990,7 +1952,6 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_FiltersFeature
         
         [NUnit.Framework.TestAttribute()]
         [NUnit.Framework.Retry(2)]
-        
         [NUnit.Framework.DescriptionAttribute("EvergreenJnr_ApplicationsList_CheckThatUserLastLogonDateFilterWorksCorrectly")]
         [NUnit.Framework.CategoryAttribute("Evergreen")]
         [NUnit.Framework.CategoryAttribute("Applications")]
@@ -2030,7 +1991,6 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_FiltersFeature
         
         [NUnit.Framework.TestAttribute()]
         [NUnit.Framework.Retry(2)]
-        
         [NUnit.Framework.DescriptionAttribute("EvergreenJnr_ApplicationsList_CheckThatProjectGroupCurrentStateFiltersInTheApplic" +
             "ationListWorksCorrectly")]
         [NUnit.Framework.CategoryAttribute("Evergreen")]
@@ -2105,7 +2065,6 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_FiltersFeature
         
         [NUnit.Framework.TestAttribute()]
         [NUnit.Framework.Retry(2)]
-        
         [NUnit.Framework.DescriptionAttribute("EvergreenJnr_ApplicationsList_CheckThatProjectGroupTargetStateFiltersInTheApplica" +
             "tionListWorksCorrectly")]
         [NUnit.Framework.CategoryAttribute("Evergreen")]
@@ -2180,7 +2139,6 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_FiltersFeature
         
         [NUnit.Framework.TestAttribute()]
         [NUnit.Framework.Retry(2)]
-        
         [NUnit.Framework.DescriptionAttribute("EvergreenJnr_ApplicationsList_CheckThatAdvancedUserFilterReturnsCorrectResults")]
         [NUnit.Framework.CategoryAttribute("Evergreen")]
         [NUnit.Framework.CategoryAttribute("Applications")]
@@ -2220,7 +2178,6 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_FiltersFeature
         
         [NUnit.Framework.TestAttribute()]
         [NUnit.Framework.Retry(2)]
-        
         [NUnit.Framework.DescriptionAttribute("EvergreenJnr_DevicesList_CheckThat500ISEInvalidColumnNameErrorIsNotDisplayedIfUse" +
             "SelectedFilterOnDevicesPage")]
         [NUnit.Framework.CategoryAttribute("Evergreen")]
@@ -2270,7 +2227,6 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_FiltersFeature
         
         [NUnit.Framework.TestAttribute()]
         [NUnit.Framework.Retry(2)]
-        
         [NUnit.Framework.DescriptionAttribute("EvergreenJnr_UsersList_CheckThat500ISEInvalidColumnNameErrorIsNotDisplayedIfUseSe" +
             "lectedFilterOnUsersPage")]
         [NUnit.Framework.CategoryAttribute("Evergreen")]
@@ -2318,7 +2274,6 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_FiltersFeature
         
         [NUnit.Framework.TestAttribute()]
         [NUnit.Framework.Retry(2)]
-        
         [NUnit.Framework.DescriptionAttribute("EvergreenJnr_ApplicationsList_CheckThat500ISEInvalidColumnNameErrorIsNotDisplayed" +
             "IfUseSelectedFilterOnApplicationsPage")]
         [NUnit.Framework.CategoryAttribute("Evergreen")]
@@ -2366,7 +2321,47 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_FiltersFeature
         
         [NUnit.Framework.TestAttribute()]
         [NUnit.Framework.Retry(2)]
+        [NUnit.Framework.DescriptionAttribute("EvergreenJnr_AllLists_CheckThatSearchBySharpOrAmpersandSymbolWorksInTextFilter")]
+        [NUnit.Framework.CategoryAttribute("Evergreen")]
+        [NUnit.Framework.CategoryAttribute("AllLists")]
+        [NUnit.Framework.CategoryAttribute("Evergreen_FiltersFeature")]
+        [NUnit.Framework.CategoryAttribute("FiltersDisplay")]
+        [NUnit.Framework.CategoryAttribute("DAS13392")]
+        [NUnit.Framework.TestCaseAttribute("Devices", "Hostname", "No devices found", null)]
+        [NUnit.Framework.TestCaseAttribute("Users", "Username", "No users found", null)]
+        [NUnit.Framework.TestCaseAttribute("Applications", "Application", "No applications found", null)]
+        [NUnit.Framework.TestCaseAttribute("Mailboxes", "Mail Server", "No mailboxes found", null)]
+        public virtual void EvergreenJnr_AllLists_CheckThatSearchBySharpOrAmpersandSymbolWorksInTextFilter(string listName, string filterName, string message, string[] exampleTags)
+        {
+            string[] @__tags = new string[] {
+                    "Evergreen",
+                    "AllLists",
+                    "Evergreen_FiltersFeature",
+                    "FiltersDisplay",
+                    "DAS13392"};
+            if ((exampleTags != null))
+            {
+                @__tags = System.Linq.Enumerable.ToArray(System.Linq.Enumerable.Concat(@__tags, exampleTags));
+            }
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("EvergreenJnr_AllLists_CheckThatSearchBySharpOrAmpersandSymbolWorksInTextFilter", @__tags);
+            this.ScenarioSetup(scenarioInfo);
+            this.FeatureBackground();
+            testRunner.When(string.Format("User clicks \"{0}\" on the left-hand menu", listName), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+            testRunner.And("User clicks the Filters button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+            testRunner.And("User clicks Add New button on the Filter panel", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+            TechTalk.SpecFlow.Table table81 = new TechTalk.SpecFlow.Table(new string[] {
+                        "Values"});
+            table81.AddRow(new string[] {
+                        "#&"});
+            testRunner.And(string.Format("User add \"{0}\" filter where type is \"Equals\" with added column and following valu" +
+                        "e:", filterName), ((string)(null)), table81, "And ");
+            testRunner.Then(string.Format("\"{0}\" filter is added to the list", filterName), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+            testRunner.And(string.Format("message \'{0}\' is displayed to the user", message), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+            this.ScenarioCleanup();
+        }
         
+        [NUnit.Framework.TestAttribute()]
+        [NUnit.Framework.Retry(2)]
         [NUnit.Framework.DescriptionAttribute("EvergreenJnr_MailboxesList_CheckThat500ISEInvalidColumnNameErrorIsNotDisplayedIfU" +
             "seSelectedFilterOnMailboxesPage")]
         [NUnit.Framework.CategoryAttribute("Evergreen")]
@@ -2395,12 +2390,12 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_FiltersFeature
             testRunner.Then("\"Mailboxes\" list should be displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
             testRunner.When("User clicks the Filters button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
             testRunner.Then("Filters panel is displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-            TechTalk.SpecFlow.Table table81 = new TechTalk.SpecFlow.Table(new string[] {
+            TechTalk.SpecFlow.Table table82 = new TechTalk.SpecFlow.Table(new string[] {
                         "SelectedCheckboxes"});
-            table81.AddRow(new string[] {
+            table82.AddRow(new string[] {
                         string.Format("{0}", selectedCheckboxes)});
             testRunner.When(string.Format("User add \"{0}\" filter where type is \"Equals\" with added column and following chec" +
-                        "kboxes:", filterName), ((string)(null)), table81, "When ");
+                        "kboxes:", filterName), ((string)(null)), table82, "When ");
             testRunner.Then(string.Format("\"{0}\" filter is added to the list", filterName), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
             testRunner.Then("table data is filtered correctly", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
             testRunner.Then(string.Format("\"{0}\" rows are displayed in the agGrid", rows), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
@@ -2409,7 +2404,6 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_FiltersFeature
         
         [NUnit.Framework.TestAttribute()]
         [NUnit.Framework.Retry(2)]
-        
         [NUnit.Framework.DescriptionAttribute("EvergreenJnr_DevicesList_CheckThat500ISEInvalidColumnNameErrorIsNotDisplayedIfUse" +
             "DepartmentFilter")]
         [NUnit.Framework.CategoryAttribute("Evergreen")]
@@ -2449,7 +2443,6 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_FiltersFeature
         
         [NUnit.Framework.TestAttribute()]
         [NUnit.Framework.Retry(2)]
-        
         [NUnit.Framework.DescriptionAttribute("EvergreenJnr_DevicesList_CheckThat500ErrorIsNotDisplayedAfterApplyingGBFilters")]
         [NUnit.Framework.CategoryAttribute("Evergreen")]
         [NUnit.Framework.CategoryAttribute("Devices")]
@@ -2478,12 +2471,12 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_FiltersFeature
             testRunner.Then("\"Devices\" list should be displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
             testRunner.When("User clicks the Filters button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
             testRunner.Then("Filters panel is displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-            TechTalk.SpecFlow.Table table82 = new TechTalk.SpecFlow.Table(new string[] {
+            TechTalk.SpecFlow.Table table83 = new TechTalk.SpecFlow.Table(new string[] {
                         "Values"});
-            table82.AddRow(new string[] {
+            table83.AddRow(new string[] {
                         string.Format("{0}", values)});
             testRunner.When(string.Format("User add \"{0}\" filter where type is \"Equals\" with added column and following valu" +
-                        "e:", filterName), ((string)(null)), table82, "When ");
+                        "e:", filterName), ((string)(null)), table83, "When ");
             testRunner.Then(string.Format("\"{0}\" rows are displayed in the agGrid", rowsCount), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
             testRunner.And("There are no errors in the browser console", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
             this.ScenarioCleanup();
@@ -2491,7 +2484,6 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_FiltersFeature
         
         [NUnit.Framework.TestAttribute()]
         [NUnit.Framework.Retry(2)]
-        
         [NUnit.Framework.DescriptionAttribute("EvergreenJnr_ApplicationsList_CheckThatDataIsDisplayedCorrectlyForAdvancedUserFil" +
             "ter")]
         [NUnit.Framework.CategoryAttribute("Evergreen")]
@@ -2514,14 +2506,14 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_FiltersFeature
             testRunner.Then("\"Applications\" list should be displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
             testRunner.When("User clicks the Filters button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
             testRunner.Then("Filters panel is displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-            TechTalk.SpecFlow.Table table83 = new TechTalk.SpecFlow.Table(new string[] {
+            TechTalk.SpecFlow.Table table84 = new TechTalk.SpecFlow.Table(new string[] {
                         "SelectedValues",
                         "Association"});
-            table83.AddRow(new string[] {
+            table84.AddRow(new string[] {
                         "FR\\RZM6552051",
                         "Owns a device which app was used on"});
             testRunner.When("User add Advanced \"User\" filter where type is \"Does not equal\" with following Loo" +
-                    "kup Value and Association:", ((string)(null)), table83, "When ");
+                    "kup Value and Association:", ((string)(null)), table84, "When ");
             testRunner.Then("\"100\" rows are displayed in the agGrid", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
             testRunner.Then("table content is present", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
             this.ScenarioCleanup();
@@ -2529,7 +2521,6 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_FiltersFeature
         
         [NUnit.Framework.TestAttribute()]
         [NUnit.Framework.Retry(2)]
-        
         [NUnit.Framework.DescriptionAttribute("EvergreenJnr_DevicesList_CheckThatApplicationFilterWorksCorrectlyForDifferentAsso" +
             "ciationTypes")]
         [NUnit.Framework.CategoryAttribute("Evergreen")]
@@ -2552,14 +2543,14 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_FiltersFeature
             testRunner.Then("\"Devices\" list should be displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
             testRunner.When("User clicks the Filters button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
             testRunner.Then("Filters panel is displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-            TechTalk.SpecFlow.Table table84 = new TechTalk.SpecFlow.Table(new string[] {
+            TechTalk.SpecFlow.Table table85 = new TechTalk.SpecFlow.Table(new string[] {
                         "SelectedValues",
                         "Association"});
-            table84.AddRow(new string[] {
+            table85.AddRow(new string[] {
                         "ACD Display 3.4",
                         "Installed on device"});
             testRunner.When("User add Advanced \"Application\" filter where type is \"Equals\" with following Look" +
-                    "up Value and Association:", ((string)(null)), table84, "When ");
+                    "up Value and Association:", ((string)(null)), table85, "When ");
             testRunner.Then("\"944\" rows are displayed in the agGrid", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
             testRunner.When("User click Edit button for \"Application\" filter", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
             testRunner.And("User is deselect \"Installed on device\" in Association", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
@@ -2567,14 +2558,14 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_FiltersFeature
             testRunner.And("User clicks Save filter button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
             testRunner.Then("\"16,281\" rows are displayed in the agGrid", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
             testRunner.When("User have reset all filters", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-            TechTalk.SpecFlow.Table table85 = new TechTalk.SpecFlow.Table(new string[] {
+            TechTalk.SpecFlow.Table table86 = new TechTalk.SpecFlow.Table(new string[] {
                         "SelectedValues",
                         "Association"});
-            table85.AddRow(new string[] {
+            table86.AddRow(new string[] {
                         "ACD Display 3.4",
                         "Used on device"});
             testRunner.And("User add Advanced \"Application\" filter where type is \"Equals\" with following Look" +
-                    "up Value and Association:", ((string)(null)), table85, "And ");
+                    "up Value and Association:", ((string)(null)), table86, "And ");
             testRunner.Then("message \'No devices found\' is displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
             testRunner.When("User click Edit button for \"Application\" filter", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
             testRunner.And("User is deselect \"Used on device\" in Association", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
@@ -2586,7 +2577,6 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_FiltersFeature
         
         [NUnit.Framework.TestAttribute()]
         [NUnit.Framework.Retry(2)]
-        
         [NUnit.Framework.DescriptionAttribute("EvergreenJnr_UsersList_CheckThatSavedStaticListIsNotShownInEditMode")]
         [NUnit.Framework.CategoryAttribute("Evergreen")]
         [NUnit.Framework.CategoryAttribute("Users")]
@@ -2609,24 +2599,24 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_FiltersFeature
             testRunner.Then("\"Users\" list should be displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
             testRunner.When("User clicks the Filters button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
             testRunner.Then("Filters panel is displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-            TechTalk.SpecFlow.Table table86 = new TechTalk.SpecFlow.Table(new string[] {
+            TechTalk.SpecFlow.Table table87 = new TechTalk.SpecFlow.Table(new string[] {
                         "SelectedValues"});
-            table86.AddRow(new string[] {
+            table87.AddRow(new string[] {
                         "AU"});
             testRunner.When("User add \"Domain\" filter where type is \"Equals\" with added column and Lookup opti" +
-                    "on", ((string)(null)), table86, "When ");
+                    "on", ((string)(null)), table87, "When ");
             testRunner.Then("\"Domain\" filter is added to the list", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
             testRunner.When("User clicks the Actions button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
             testRunner.Then("Actions panel is displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-            TechTalk.SpecFlow.Table table87 = new TechTalk.SpecFlow.Table(new string[] {
+            TechTalk.SpecFlow.Table table88 = new TechTalk.SpecFlow.Table(new string[] {
                         "SelectedRowsName"});
-            table87.AddRow(new string[] {
+            table88.AddRow(new string[] {
                         "AAO798996"});
-            table87.AddRow(new string[] {
+            table88.AddRow(new string[] {
                         "AGC788194"});
-            table87.AddRow(new string[] {
+            table88.AddRow(new string[] {
                         "AIU705098"});
-            testRunner.When("User select \"Username\" rows in the grid", ((string)(null)), table87, "When ");
+            testRunner.When("User select \"Username\" rows in the grid", ((string)(null)), table88, "When ");
             testRunner.And("User selects \"Create static list\" in the Actions dropdown", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
             testRunner.And("User create static list with \"StaticList8543\" name", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
             testRunner.Then("\"StaticList8543\" list is displayed to user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
@@ -2637,7 +2627,6 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_FiltersFeature
         
         [NUnit.Framework.TestAttribute()]
         [NUnit.Framework.Retry(2)]
-        
         [NUnit.Framework.DescriptionAttribute("EvergreenJnr_DevicesList_ChecksThatAddAndButtonIsDisplayedWhenAddingTwoOrMoreFilt" +
             "ersUsingTheSameFieldAndClearingOneOfTheFilters")]
         [NUnit.Framework.CategoryAttribute("Evergreen")]
@@ -2662,26 +2651,26 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_FiltersFeature
             testRunner.Then("\"Devices\" list should be displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
             testRunner.When("User clicks the Filters button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
             testRunner.Then("Filters panel is displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-            TechTalk.SpecFlow.Table table88 = new TechTalk.SpecFlow.Table(new string[] {
-                        "SelectedCheckboxes"});
-            table88.AddRow(new string[] {
-                        "Red"});
-            testRunner.When("User add \"Compliance\" filter where type is \"Equals\" with added column and followi" +
-                    "ng checkboxes:", ((string)(null)), table88, "When ");
-            testRunner.Then("\"Compliance is Red\" is displayed in added filter info", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
             TechTalk.SpecFlow.Table table89 = new TechTalk.SpecFlow.Table(new string[] {
                         "SelectedCheckboxes"});
             table89.AddRow(new string[] {
-                        "Green"});
-            testRunner.When("User Add And \"Compliance\" filter where type is \"Equals\" with added column and fol" +
-                    "lowing checkboxes:", ((string)(null)), table89, "When ");
-            testRunner.Then("\"Compliance is Green\" is displayed in added filter info", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+                        "Red"});
+            testRunner.When("User add \"Compliance\" filter where type is \"Equals\" with added column and followi" +
+                    "ng checkboxes:", ((string)(null)), table89, "When ");
+            testRunner.Then("\"Compliance is Red\" is displayed in added filter info", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
             TechTalk.SpecFlow.Table table90 = new TechTalk.SpecFlow.Table(new string[] {
                         "SelectedCheckboxes"});
             table90.AddRow(new string[] {
-                        "Unknown"});
+                        "Green"});
             testRunner.When("User Add And \"Compliance\" filter where type is \"Equals\" with added column and fol" +
                     "lowing checkboxes:", ((string)(null)), table90, "When ");
+            testRunner.Then("\"Compliance is Green\" is displayed in added filter info", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+            TechTalk.SpecFlow.Table table91 = new TechTalk.SpecFlow.Table(new string[] {
+                        "SelectedCheckboxes"});
+            table91.AddRow(new string[] {
+                        "Unknown"});
+            testRunner.When("User Add And \"Compliance\" filter where type is \"Equals\" with added column and fol" +
+                    "lowing checkboxes:", ((string)(null)), table91, "When ");
             testRunner.Then("\"Compliance is Unknown\" is displayed in added filter info", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
             testRunner.Then("Add And button is displayed on the Filter panel", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
             testRunner.When("User have removed \"Compliance\" filter", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
