@@ -1588,7 +1588,7 @@ namespace DashworksTestAutomation.Steps.Dashworks
         public void ThenValueIsDisplayedForDefaultColumn(string defaultValue)
         {
             var column = _driver.NowAt<BaseGridPage>();
-            Assert.IsTrue(column.GetDefaultColumnValue(defaultValue));
+            Assert.IsTrue(column.GetDefaultColumnValue(defaultValue), "Incorrect value is displayed for Default column");
         }
 
         [Then(@"Search fields for ""(.*)"" column contain correctly value")]
