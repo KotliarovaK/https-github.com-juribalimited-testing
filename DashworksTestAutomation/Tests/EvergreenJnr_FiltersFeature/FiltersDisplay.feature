@@ -1225,6 +1225,20 @@ Examples:
 	| Applications | All Applications |
 	| Mailboxes    | All Mailboxes    |
 
+@Evergreen @AllLists @Evergreen_FiltersFeature @FiltersDisplay @DAS13391
+Scenario Outline: EvergreenJnr_AllLists_CheckThatSelectedColumnsSectionIsExpandedByDefaultInFiltersPanel
+	When User clicks "<ListName>" on the left-hand menu
+	And User clicks the Filters button
+	And User clicks Add New button on the Filter panel
+	Then User sees "Selected Columns" section expanded by default in Filters panel
+
+Examples: 
+	| ListName     |
+	| Devices      |
+	| Users        |
+	| Applications |
+	| Mailboxes    |
+
 @Evergreen @Applications @Evergreen_FiltersFeature @FiltersDisplay @DAS12793 @Delete_Newly_Created_List
 Scenario: EvergreenJnr_ApplicationsList_CheckThatTheValueInTheFiltersPanelIsDisplayedCorrectly
 	When User clicks "Applications" on the left-hand menu
