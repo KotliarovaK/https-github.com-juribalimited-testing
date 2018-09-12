@@ -6982,9 +6982,9 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_AdminPage
         [NUnit.Framework.CategoryAttribute("DAS12157")]
         [NUnit.Framework.CategoryAttribute("Delete_Newly_Created_Project")]
         [NUnit.Framework.CategoryAttribute("Delete_Newly_Created_List")]
-        [NUnit.Framework.TestCaseAttribute("All Devices", "Devices to add (0 of 1 selected)", "DevicesList12157", "User Scope", "UsersList12157", "Users", "Users to add (0 of 0 selected)", "Applications to add (0 of 1 selected)", new string[0])]
-        [NUnit.Framework.TestCaseAttribute("All Users", "Users to add (0 of 1 selected)", "UsersStaticList12157", "Device Scope", "DevicesList12157", "Devices", "Devices to add (0 of 1 selected)", "Applications to add (0 of 0 selected)", new string[0])]
-        [NUnit.Framework.TestCaseAttribute("All Mailboxes", "Mailboxes to add (0 of 1 selected)", "MailboxesStaticList12157", "User Scope", "UsersList12157", "Users", "Users to add (0 of 0 selected)", "Applications to add (0 of 0 selected)", new string[0])]
+        [NUnit.Framework.TestCaseAttribute("All Devices", "Devices to add (0 of 1 selected)", "DevicesList12157", "User Scope", "UsersList12157", "Users", "Users to add (0 of 0 selected)", "Applications to add (0 of 0 selected)", new string[0])]
+        [NUnit.Framework.TestCaseAttribute("All Users", "Users to add (0 of 1 selected)", "UsersList12157", "Device Scope", "DevicesList12157", "Devices", "Devices to add (0 of 0 selected)", "Applications to add (0 of 0 selected)", new string[0])]
+        [NUnit.Framework.TestCaseAttribute("All Mailboxes", "Mailboxes to add (0 of 1 selected)", "MailboxesList12157", "User Scope", "UsersList12157", "Users", "Users to add (0 of 0 selected)", "Applications to add (0 of 0 selected)", new string[0])]
         public virtual void EvergreenJnr_AdminPage_CheckThatProjectScopeChangesIsLoadedSuccessfullyAfterChangingProjectScopeToACustomList(string mainList, string objectsToAdd1, string listToScope1, string scopeTab1, string listToScope2, string scopeChanges1, string objectsToAdd2, string objectsToAdd3, string[] exampleTags)
         {
             string[] @__tags = new string[] {
@@ -7003,33 +7003,33 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_AdminPage
                     "ingProjectScopeToACustomList", @__tags);
             this.ScenarioSetup(scenarioInfo);
             this.FeatureBackground();
-            TechTalk.SpecFlow.Table table115 = new TechTalk.SpecFlow.Table(new string[] {
-                        "ItemName"});
-            table115.AddRow(new string[] {
-                        "0I29CJMQ159EOR"});
-            testRunner.When("User create static list with \"DevicesList12157\" name on \"Devices\" page with follo" +
-                    "wing items", ((string)(null)), table115, "When ");
-            testRunner.Then("\"DevicesList12157\" list is displayed to user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-            TechTalk.SpecFlow.Table table116 = new TechTalk.SpecFlow.Table(new string[] {
-                        "ItemName"});
-            table116.AddRow(new string[] {
-                        "AJC243596"});
-            testRunner.When("User create static list with \"UsersList12157\" name on \"Users\" page with following" +
-                    " items", ((string)(null)), table116, "When ");
-            testRunner.Then("\"UsersList12157\" list is displayed to user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-            TechTalk.SpecFlow.Table table117 = new TechTalk.SpecFlow.Table(new string[] {
-                        "ItemName"});
-            table117.AddRow(new string[] {
-                        "elsonje@bclabs.local"});
-            testRunner.When("User create static list with \"MailboxesStaticList12157\" name on \"Mailboxes\" page " +
-                    "with following items", ((string)(null)), table117, "When ");
-            testRunner.Then("\"MailboxesStaticList12157\" list is displayed to user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
             TechTalk.SpecFlow.Table table118 = new TechTalk.SpecFlow.Table(new string[] {
                         "ItemName"});
             table118.AddRow(new string[] {
+                        "0I29CJMQ159EOR"});
+            testRunner.When("User create static list with \"DevicesList12157\" name on \"Devices\" page with follo" +
+                    "wing items", ((string)(null)), table118, "When ");
+            testRunner.Then("\"DevicesList12157\" list is displayed to user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+            TechTalk.SpecFlow.Table table119 = new TechTalk.SpecFlow.Table(new string[] {
+                        "ItemName"});
+            table119.AddRow(new string[] {
+                        "AJC243596"});
+            testRunner.When("User create static list with \"UsersList12157\" name on \"Users\" page with following" +
+                    " items", ((string)(null)), table119, "When ");
+            testRunner.Then("\"UsersList12157\" list is displayed to user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+            TechTalk.SpecFlow.Table table120 = new TechTalk.SpecFlow.Table(new string[] {
+                        "ItemName"});
+            table120.AddRow(new string[] {
+                        "elsonje@bclabs.local"});
+            testRunner.When("User create static list with \"MailboxesList12157\" name on \"Mailboxes\" page with f" +
+                    "ollowing items", ((string)(null)), table120, "When ");
+            testRunner.Then("\"MailboxesList12157\" list is displayed to user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+            TechTalk.SpecFlow.Table table121 = new TechTalk.SpecFlow.Table(new string[] {
+                        "ItemName"});
+            table121.AddRow(new string[] {
                         "AtomixMP3"});
             testRunner.When("User create static list with \"ApplicationsStaticList12157\" name on \"Applications\"" +
-                    " page with following items", ((string)(null)), table118, "When ");
+                    " page with following items", ((string)(null)), table121, "When ");
             testRunner.Then("\"ApplicationsStaticList12157\" list is displayed to user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
             testRunner.When("User clicks Admin on the left-hand menu", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
             testRunner.Then("Admin page should be displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
@@ -7052,13 +7052,10 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_AdminPage
             testRunner.And("User selects \"ApplicationsStaticList12157\" in the Scope Project details", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
             testRunner.And("User selects \"Scope Changes\" tab on the Project details page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
             testRunner.Then(string.Format("\"{0}\" is displayed to the user in the Project Scope Changes section", objectsToAdd1), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-            testRunner.When("User navigates to the \"<ScopeChangesTab1>\" tab in the Scope section on the Projec" +
-                    "t details page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+            testRunner.When(string.Format("User clicks \"{0}\" tab in the Project Scope Changes section", scopeChanges1), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
             testRunner.Then(string.Format("\"{0}\" is displayed to the user in the Project Scope Changes section", objectsToAdd2), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-            testRunner.When("User navigates to the \"<ScopeChangesTab2>\" tab in the Scope section on the Projec" +
-                    "t details page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+            testRunner.When("User clicks \"Applications\" tab in the Project Scope Changes section", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
             testRunner.Then(string.Format("\"{0}\" is displayed to the user in the Project Scope Changes section", objectsToAdd3), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-            testRunner.Then("There are no errors in the browser console", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
             this.ScenarioCleanup();
         }
     }

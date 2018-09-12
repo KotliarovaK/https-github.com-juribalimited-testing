@@ -3836,10 +3836,10 @@ Scenario Outline: EvergreenJnr_AdminPage_CheckThatProjectScopeChangesIsLoadedSuc
 	| ItemName  |
 	| AJC243596 |
 	Then "UsersList12157" list is displayed to user
-	When User create static list with "MailboxesStaticList12157" name on "Mailboxes" page with following items
+	When User create static list with "MailboxesList12157" name on "Mailboxes" page with following items
 	| ItemName             |
 	| elsonje@bclabs.local |
-	Then "MailboxesStaticList12157" list is displayed to user
+	Then "MailboxesList12157" list is displayed to user
 	When User create static list with "ApplicationsStaticList12157" name on "Applications" page with following items
 	| ItemName  |
 	| AtomixMP3 |
@@ -3864,14 +3864,14 @@ Scenario Outline: EvergreenJnr_AdminPage_CheckThatProjectScopeChangesIsLoadedSuc
 	And User selects "ApplicationsStaticList12157" in the Scope Project details
 	And User selects "Scope Changes" tab on the Project details page
 	Then "<ObjectsToAdd1>" is displayed to the user in the Project Scope Changes section
-	When User navigates to the "<ScopeChangesTab1>" tab in the Scope section on the Project details page
+	When User clicks "<ScopeChanges1>" tab in the Project Scope Changes section
 	Then "<ObjectsToAdd2>" is displayed to the user in the Project Scope Changes section
-	When User navigates to the "<ScopeChangesTab2>" tab in the Scope section on the Project details page
+	When User clicks "Applications" tab in the Project Scope Changes section
 	Then "<ObjectsToAdd3>" is displayed to the user in the Project Scope Changes section
-	Then There are no errors in the browser console
+	#Then There are no errors in the browser console
 
 Examples:
 	| MainList      | ObjectsToAdd1                      | ListToScope1             | ScopeTab1    | ListToScope2     | ScopeChanges1 | ObjectsToAdd2                    | ObjectsToAdd3                         |
-	| All Devices   | Devices to add (0 of 1 selected)   | DevicesList12157         | User Scope   | UsersList12157   | Users         | Users to add (0 of 0 selected)   | Applications to add (0 of 1 selected) |
-	| All Users     | Users to add (0 of 1 selected)     | UsersStaticList12157     | Device Scope | DevicesList12157 | Devices       | Devices to add (0 of 1 selected) | Applications to add (0 of 0 selected) |
-	| All Mailboxes | Mailboxes to add (0 of 1 selected) | MailboxesStaticList12157 | User Scope   | UsersList12157   | Users         | Users to add (0 of 0 selected)   | Applications to add (0 of 0 selected) |
+	| All Devices   | Devices to add (0 of 1 selected)   | DevicesList12157         | User Scope   | UsersList12157   | Users         | Users to add (0 of 0 selected)   | Applications to add (0 of 0 selected) |
+	| All Users     | Users to add (0 of 1 selected)     | UsersList12157     | Device Scope | DevicesList12157 | Devices       | Devices to add (0 of 0 selected) | Applications to add (0 of 0 selected) |
+	| All Mailboxes | Mailboxes to add (0 of 1 selected) | MailboxesList12157 | User Scope   | UsersList12157   | Users         | Users to add (0 of 0 selected)   | Applications to add (0 of 0 selected) |
