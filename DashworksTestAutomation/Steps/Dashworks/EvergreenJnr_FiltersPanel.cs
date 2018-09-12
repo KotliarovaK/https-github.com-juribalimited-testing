@@ -54,6 +54,13 @@ namespace DashworksTestAutomation.Steps.Dashworks
             Assert.IsTrue(button.AddAndFilterButton.Displayed(), "Add And button is not displayed");
         }
 
+        [Then(@"User sees ""(.*)"" section expanded by default in Filters panel")]
+        public void ThenUserSeesSectionExpandedByDefaultInFilterPanel(string expectedSection)
+        {
+            var page = _driver.NowAt<FiltersElement>();
+            Assert.That(page.GetExpandedSection(), Is.EqualTo(expectedSection), "Wrong section expanded");
+        }
+
         [Then(@"Add New button is displayed on the Filter panel")]
         public void ThenAddNewButtonIsDisplayedOnTheFilterPanel()
         {
@@ -563,6 +570,7 @@ namespace DashworksTestAutomation.Steps.Dashworks
         public void WhenUserClickEditButtonForFilter(string filterName)
         {
             var filterElement = _driver.NowAt<FiltersElement>();
+            _driver.WaitForDataLoading();
             filterElement.GetEditFilterButton(filterName).Click();
         }
 

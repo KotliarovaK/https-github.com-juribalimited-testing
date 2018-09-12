@@ -68,6 +68,8 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_ListPanel
         
         [NUnit.Framework.TestAttribute()]
         [NUnit.Framework.Retry(2)]
+        
+        
         [NUnit.Framework.DescriptionAttribute("EvergreenJnr_DevicesList_CheckThatCustomListCreationBlockIsNotDisplayedWhenDeleti" +
             "ngAFilterInDefaultList")]
         [NUnit.Framework.CategoryAttribute("Evergreen")]
@@ -106,6 +108,8 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_ListPanel
         
         [NUnit.Framework.TestAttribute()]
         [NUnit.Framework.Retry(2)]
+        
+        
         [NUnit.Framework.DescriptionAttribute("EvergreenJnr_DevicesList_CheckThatCustomListCreationBlockIsNotDisplayedWhenReseti" +
             "ngAFilterInDefaultList")]
         [NUnit.Framework.CategoryAttribute("Evergreen")]
@@ -144,6 +148,8 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_ListPanel
         
         [NUnit.Framework.TestAttribute()]
         [NUnit.Framework.Retry(2)]
+        
+        
         [NUnit.Framework.DescriptionAttribute("EvergreenJnr_DevicesList_CheckThatCustomListCreationBlockIsNotDisplayedWhenDeleti" +
             "ngAFilterInCustomList")]
         [NUnit.Framework.CategoryAttribute("Evergreen")]
@@ -197,6 +203,8 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_ListPanel
         
         [NUnit.Framework.TestAttribute()]
         [NUnit.Framework.Retry(2)]
+        
+        
         [NUnit.Framework.DescriptionAttribute("EvergreenJnr_DevicesList_CheckThatCustomListCreationBlockIsNotDisplayedWhenReseti" +
             "ngAFilterInCustomList")]
         [NUnit.Framework.CategoryAttribute("Evergreen")]
@@ -248,6 +256,8 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_ListPanel
         
         [NUnit.Framework.TestAttribute()]
         [NUnit.Framework.Retry(2)]
+        
+        
         [NUnit.Framework.DescriptionAttribute("EvergreenJnr_AllList_CheckThatSearchDoesNotTriggerNewCustomList")]
         [NUnit.Framework.CategoryAttribute("Evergreen")]
         [NUnit.Framework.CategoryAttribute("AllLists")]
@@ -305,6 +315,8 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_ListPanel
         
         [NUnit.Framework.TestAttribute()]
         [NUnit.Framework.Retry(2)]
+        
+        
         [NUnit.Framework.DescriptionAttribute("EvergreenJnr_DevicesList_CheckThatNewListCreatedMessageForStaticListIsDisplayed")]
         [NUnit.Framework.CategoryAttribute("Evergreen")]
         [NUnit.Framework.CategoryAttribute("Devices")]
@@ -347,6 +359,8 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_ListPanel
         
         [NUnit.Framework.TestAttribute()]
         [NUnit.Framework.Retry(2)]
+        
+        
         [NUnit.Framework.DescriptionAttribute("EvergreenJnr_UsersList_CheckThatListsIsDisplayedInAlphabeticalOrder")]
         [NUnit.Framework.CategoryAttribute("Evergreen")]
         [NUnit.Framework.CategoryAttribute("Users")]
@@ -462,6 +476,8 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_ListPanel
         
         [NUnit.Framework.TestAttribute()]
         [NUnit.Framework.Retry(2)]
+        
+        
         [NUnit.Framework.DescriptionAttribute("EvergreenJnr_UsersList_CheckThatCustomListCreationBlockIsNotDisplayedWhenUserOpen" +
             "sActionsPanel")]
         [NUnit.Framework.CategoryAttribute("Evergreen")]
@@ -508,6 +524,8 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_ListPanel
         
         [NUnit.Framework.TestAttribute()]
         [NUnit.Framework.Retry(2)]
+        
+        
         [NUnit.Framework.DescriptionAttribute("EvergreenJnr_UsersList_CheckThatCustomListCreationBlockIsNotDisplayedAfterStartTy" +
             "pingAListName")]
         [NUnit.Framework.CategoryAttribute("Evergreen")]
@@ -555,6 +573,8 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_ListPanel
         
         [NUnit.Framework.TestAttribute()]
         [NUnit.Framework.Retry(2)]
+        
+        
         [NUnit.Framework.DescriptionAttribute("EvergreenJnr_UsersList_CheckThatSaveButtonIsInactiveInCustomListCreationBlock")]
         [NUnit.Framework.CategoryAttribute("Evergreen")]
         [NUnit.Framework.CategoryAttribute("Users")]
@@ -601,6 +621,8 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_ListPanel
         
         [NUnit.Framework.TestAttribute()]
         [NUnit.Framework.Retry(2)]
+        
+        
         [NUnit.Framework.DescriptionAttribute("EvergreenJnr_DevicesList_CheckTheSortOrderIsSavedForExistingListAndNotDeletedAfte" +
             "rClickingResetButtonInColumnsMenu")]
         [NUnit.Framework.CategoryAttribute("Evergreen")]
@@ -674,6 +696,8 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_ListPanel
         
         [NUnit.Framework.TestAttribute()]
         [NUnit.Framework.Retry(2)]
+        
+        
         [NUnit.Framework.DescriptionAttribute("EvergreenJnr_DevicesList_CheckThatNewlySavedListIsCreatedWithTheCorrectColumnsAnd" +
             "SortsAndTheSameRowsOfData")]
         [NUnit.Framework.CategoryAttribute("Evergreen")]
@@ -749,6 +773,8 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_ListPanel
         
         [NUnit.Framework.TestAttribute()]
         [NUnit.Framework.Retry(2)]
+        
+        
         [NUnit.Framework.DescriptionAttribute("EvergreenJnr_DevicesList_CheckThatSortingWillBeWorkForExistingSavedStaticLists")]
         [NUnit.Framework.CategoryAttribute("Evergreen")]
         [NUnit.Framework.CategoryAttribute("Devices")]
@@ -812,6 +838,8 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_ListPanel
         
         [NUnit.Framework.TestAttribute()]
         [NUnit.Framework.Retry(2)]
+        
+        
         [NUnit.Framework.DescriptionAttribute("EvergreenJnr_DevicesList_CheckThatSortingWillBeWorkForExistingSavedDynamicLists")]
         [NUnit.Framework.CategoryAttribute("Evergreen")]
         [NUnit.Framework.CategoryAttribute("Devices")]
@@ -859,6 +887,8 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_ListPanel
         
         [NUnit.Framework.TestAttribute()]
         [NUnit.Framework.Retry(2)]
+        
+        
         [NUnit.Framework.DescriptionAttribute("EvergreenJnr_DevicesList_CheckThatEditListMenuNotDisplayedForActiveList")]
         [NUnit.Framework.CategoryAttribute("Evergreen")]
         [NUnit.Framework.CategoryAttribute("Devices")]
@@ -947,6 +977,8 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_ListPanel
         
         [NUnit.Framework.TestAttribute()]
         [NUnit.Framework.Retry(2)]
+        
+        
         [NUnit.Framework.DescriptionAttribute("EvergreenJnr_DevicesList_CheckThatEditListMenuNotDisplayedForDifferentFilterTypes" +
             "")]
         [NUnit.Framework.CategoryAttribute("Evergreen")]
@@ -1059,6 +1091,8 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_ListPanel
         
         [NUnit.Framework.TestAttribute()]
         [NUnit.Framework.Retry(2)]
+        
+        
         [NUnit.Framework.DescriptionAttribute("EvergreenJnr_DevicesList_CheckThatDatabaseErrorOccurringOccurringWhenAttemptingTo" +
             "SaveListsInEvergreenAreNotDisplayed")]
         [NUnit.Framework.CategoryAttribute("Evergreen")]
@@ -1098,6 +1132,8 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_ListPanel
         
         [NUnit.Framework.TestAttribute()]
         [NUnit.Framework.Retry(2)]
+        
+        
         [NUnit.Framework.DescriptionAttribute("EvergreenJnr_DevicesLists_CheckThatAnotherUserCanEditsAndSavesASharedListWithSele" +
             "ctedColumnsWithoutErrors")]
         [NUnit.Framework.CategoryAttribute("Evergreen")]
@@ -1193,6 +1229,8 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_ListPanel
         
         [NUnit.Framework.TestAttribute()]
         [NUnit.Framework.Retry(2)]
+        
+        
         [NUnit.Framework.DescriptionAttribute("EvergreenJnr_DevicesLists_CheckThatAnotherUserCanEditsAndSavesASharedListWithSele" +
             "ctedFiltersWithoutErrors")]
         [NUnit.Framework.CategoryAttribute("Evergreen")]
@@ -1278,6 +1316,8 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_ListPanel
         
         [NUnit.Framework.TestAttribute()]
         [NUnit.Framework.Retry(2)]
+        
+        
         [NUnit.Framework.DescriptionAttribute("EvergreenJnr_DevicesLists_CheckThatAnotherUserCanEditsAndSavesASharedListWithSort" +
             "ingWithoutErrors")]
         [NUnit.Framework.CategoryAttribute("Evergreen")]
@@ -1347,6 +1387,8 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_ListPanel
         
         [NUnit.Framework.TestAttribute()]
         [NUnit.Framework.Retry(2)]
+        
+        
         [NUnit.Framework.DescriptionAttribute("EvergreenJnr_DevicesLists_CheckThatUserIsNotAbleToCreateListsWithSameName")]
         [NUnit.Framework.CategoryAttribute("Evergreen")]
         [NUnit.Framework.CategoryAttribute("Devices")]
@@ -1386,6 +1428,8 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_ListPanel
         
         [NUnit.Framework.TestAttribute()]
         [NUnit.Framework.Retry(2)]
+        
+        
         [NUnit.Framework.DescriptionAttribute("EvergreenJnr_DevicesLists_CheckThatTheSavedListWithOwnerDisplayNameFilterIsDispla" +
             "yed")]
         [NUnit.Framework.CategoryAttribute("Evergreen")]
@@ -1451,6 +1495,8 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_ListPanel
         
         [NUnit.Framework.TestAttribute()]
         [NUnit.Framework.Retry(2)]
+        
+        
         [NUnit.Framework.DescriptionAttribute("EvergreenJnr_DevicesLists_CheckThatUserIsNotAbleToCreateListsWithLongNames")]
         [NUnit.Framework.CategoryAttribute("Evergreen")]
         [NUnit.Framework.CategoryAttribute("Devices")]
@@ -1496,6 +1542,8 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_ListPanel
         
         [NUnit.Framework.TestAttribute()]
         [NUnit.Framework.Retry(2)]
+        
+        
         [NUnit.Framework.DescriptionAttribute("EvergreenJnr_AllLists_CheckThatAllListsNamesAreDisplayedCorrectly")]
         [NUnit.Framework.CategoryAttribute("Evergreen")]
         [NUnit.Framework.CategoryAttribute("AllLists")]
@@ -1529,6 +1577,8 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_ListPanel
         
         [NUnit.Framework.TestAttribute()]
         [NUnit.Framework.Retry(2)]
+        
+        
         [NUnit.Framework.DescriptionAttribute("EvergreenJnr_AllLists_CheckThatTheSaveListFunctionIsTriggeredOrHiddenAfterAddingO" +
             "rRemovingColumns")]
         [NUnit.Framework.CategoryAttribute("Evergreen")]
@@ -1592,6 +1642,8 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_ListPanel
         
         [NUnit.Framework.TestAttribute()]
         [NUnit.Framework.Retry(2)]
+        
+        
         [NUnit.Framework.DescriptionAttribute("EvergreenJnr_AllLists_CheckThatTheSaveListFunctionIsHiddenAfterChangingPinnedColu" +
             "mns")]
         [NUnit.Framework.CategoryAttribute("Evergreen")]
@@ -1638,6 +1690,8 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_ListPanel
         
         [NUnit.Framework.TestAttribute()]
         [NUnit.Framework.Retry(2)]
+        
+        
         [NUnit.Framework.DescriptionAttribute("EvergreenJnr_AllLists_CheckThatTheEditListFunctionIsTriggeredOrHiddenForCustomLis" +
             "tsAfterAddingOrRemovingColumns")]
         [NUnit.Framework.CategoryAttribute("Evergreen")]
@@ -1719,6 +1773,8 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_ListPanel
         
         [NUnit.Framework.TestAttribute()]
         [NUnit.Framework.Retry(2)]
+        
+        
         [NUnit.Framework.DescriptionAttribute("EvergreenJnr_AllList_CheckThatTheEditListFunctionIsHiddenAfterAddingChangingAndRe" +
             "movingSearchCriteria")]
         [NUnit.Framework.CategoryAttribute("Evergreen")]
@@ -1815,6 +1871,8 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_ListPanel
         
         [NUnit.Framework.TestAttribute()]
         [NUnit.Framework.Retry(2)]
+        
+        
         [NUnit.Framework.DescriptionAttribute("EvergreenJnr_AllLists_CheckThatTheEditListFunctionIsHiddenAfterChangingPinnedColu" +
             "mns")]
         [NUnit.Framework.CategoryAttribute("Evergreen")]
@@ -1885,6 +1943,8 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_ListPanel
         
         [NUnit.Framework.TestAttribute()]
         [NUnit.Framework.Retry(2)]
+        
+        
         [NUnit.Framework.DescriptionAttribute("EvergreenJnr_AllLists_CheckThatNewCustomListMenuIsHiddenInTheListPanelAfterClicki" +
             "ngActionsButton")]
         [NUnit.Framework.CategoryAttribute("Evergreen")]
@@ -1939,6 +1999,8 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_ListPanel
         
         [NUnit.Framework.TestAttribute()]
         [NUnit.Framework.Retry(2)]
+        
+        
         [NUnit.Framework.DescriptionAttribute("EvergreenJnr_AllLists_CheckThatSaveAndCancelButtonAreHiddenAfterCancellingProcess" +
             "OfSavingList")]
         [NUnit.Framework.CategoryAttribute("Evergreen")]
@@ -1999,6 +2061,8 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_ListPanel
         
         [NUnit.Framework.TestAttribute()]
         [NUnit.Framework.Retry(2)]
+        
+        
         [NUnit.Framework.DescriptionAttribute("EvergreenJnr_AllLists_CheckThatActionsPanelIsHiddenAfterCancellingProcessOfSaving" +
             "List")]
         [NUnit.Framework.CategoryAttribute("Evergreen")]
@@ -2048,6 +2112,8 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_ListPanel
         
         [NUnit.Framework.TestAttribute()]
         [NUnit.Framework.Retry(2)]
+        
+        
         [NUnit.Framework.DescriptionAttribute("EvergreenJnr_DevicesList_CheckThatNoErrorsAreDisplayedAfterDuplicatingANewStaticL" +
             "istWithALongName")]
         [NUnit.Framework.CategoryAttribute("Evergreen")]
@@ -2087,6 +2153,8 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_ListPanel
         
         [NUnit.Framework.TestAttribute()]
         [NUnit.Framework.Retry(2)]
+        
+        
         [NUnit.Framework.DescriptionAttribute("EvergreenJnr_UsersList_CheckThatDataFromTheStaticListAreSavedInTheNewListAfterEdi" +
             "ting")]
         [NUnit.Framework.CategoryAttribute("Evergreen")]
@@ -2141,6 +2209,8 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_ListPanel
         
         [NUnit.Framework.TestAttribute()]
         [NUnit.Framework.Retry(2)]
+        
+        
         [NUnit.Framework.DescriptionAttribute("EvergreenJnr_UsersList_CheckThatStaticListIsDisplayedInTheBottomOfTheListPanelWhe" +
             "nNavigateToTheMainList")]
         [NUnit.Framework.CategoryAttribute("Evergreen")]
@@ -2180,6 +2250,8 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_ListPanel
         
         [NUnit.Framework.TestAttribute()]
         [NUnit.Framework.Retry(2)]
+        
+        
         [NUnit.Framework.DescriptionAttribute("EvergreenJnr_DevicesList_CheckThatFilterNameIsNotChangedAfterRenameWhileUpdateVal" +
             "uesOfFilter")]
         [NUnit.Framework.CategoryAttribute("Evergreen")]
@@ -2231,6 +2303,8 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_ListPanel
         
         [NUnit.Framework.TestAttribute()]
         [NUnit.Framework.Retry(2)]
+        
+        
         [NUnit.Framework.DescriptionAttribute("EvergreenJnr_ApplicationsList_CheckThatFilterNameIsNotChangedAfterRenameWhileUpda" +
             "teValuesOfFilter")]
         [NUnit.Framework.CategoryAttribute("Evergreen")]
@@ -2279,6 +2353,8 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_ListPanel
         
         [NUnit.Framework.TestAttribute()]
         [NUnit.Framework.Retry(2)]
+        
+        
         [NUnit.Framework.DescriptionAttribute("EvergreenJnr_MailboxesList_CheckThatFilterNameIsNotChangedAfterRenameWhileUpdateV" +
             "aluesOfFilter")]
         [NUnit.Framework.CategoryAttribute("Evergreen")]
@@ -2317,6 +2393,8 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_ListPanel
         
         [NUnit.Framework.TestAttribute()]
         [NUnit.Framework.Retry(2)]
+        
+        
         [NUnit.Framework.DescriptionAttribute("EvergreenJnr_DevicesList_CheckThatCancelButtonIsDisplayedWithCorrectlyColorOnList" +
             "Panel")]
         [NUnit.Framework.CategoryAttribute("Evergreen")]
@@ -2351,6 +2429,8 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_ListPanel
         
         [NUnit.Framework.TestAttribute()]
         [NUnit.Framework.Retry(2)]
+        
+        
         [NUnit.Framework.DescriptionAttribute("EvergreenJnr_DevicesList_ChecksThatIconsAreDisplayedCorrectlyInListDropdown")]
         [NUnit.Framework.CategoryAttribute("Evergreen")]
         [NUnit.Framework.CategoryAttribute("Devices")]

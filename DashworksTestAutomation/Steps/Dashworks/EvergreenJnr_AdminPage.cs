@@ -231,7 +231,9 @@ namespace DashworksTestAutomation.Steps.Dashworks
             foreach (var row in table.Rows)
             {
                 projectsPage.AddMailboxPermissionsButton.Click();
+                _driver.WaitForDataLoading();
                 projectsPage.PermissionsDropdown.Click();
+                _driver.WaitForDataLoading();
                 projectsPage.SelectPermissionsByName(row["Permissions"]);
                 projectsPage.AddPermissionsButtonInTab.Click();
             }
@@ -1588,7 +1590,7 @@ namespace DashworksTestAutomation.Steps.Dashworks
         public void ThenValueIsDisplayedForDefaultColumn(string defaultValue)
         {
             var column = _driver.NowAt<BaseGridPage>();
-            Assert.IsTrue(column.GetDefaultColumnValue(defaultValue));
+            Assert.IsTrue(column.GetDefaultColumnValue(defaultValue), "Incorrect value is displayed for Default column");
         }
 
         [Then(@"Search fields for ""(.*)"" column contain correctly value")]
