@@ -783,7 +783,7 @@ Scenario: EvergreenJnr_ApplicationsList_CheckThatUsersAndDevicesDistributionList
 	Then Content is present in the table on the Details Page
 	And Rows do not have unknown values
 
-@Evergreen @AdminPage @AllLists @EvergreenJnr_ItemDetails @ItemDetailsDisplay @DAS12883 @Not_Run
+@Evergreen @AdminPage @AllLists @EvergreenJnr_ItemDetails @ItemDetailsDisplay @DAS12883 @DAS13478 @Not_Run
 Scenario: EvergreenJnr_AllLists_CheckThatPopupIsBiggerAndIsShownProperlyBucketIsChangedSuccessfully
 	When User clicks Admin on the left-hand menu
 	Then Admin page should be displayed to the user
@@ -797,9 +797,10 @@ Scenario: EvergreenJnr_AllLists_CheckThatPopupIsBiggerAndIsShownProperlyBucketIs
 	Then Success message is displayed and contains "The bucket has been created" text
 	When User clicks "Devices" on the left-hand menu
 	Then "Devices" list should be displayed to the user
-	When User perform search by "05NITEIIH3CGB55"
+	When User perform search by "001BAQXT6JWFPI"
 	And User click content from "Hostname" column
 	Then Details object page is displayed to the user
+	When User clicks refresh button in the browser
 	When User navigates to the "Projects" tab
 	When User clicks on Evergreen Bucket link
 	Then Change Bucket pop-up is opened
@@ -815,7 +816,7 @@ Scenario: EvergreenJnr_AllLists_CheckThatPopupIsBiggerAndIsShownProperlyBucketIs
 	#Then There are no errors in the browser console
 	When User clicks "Users" on the left-hand menu
 	Then "Users" list should be displayed to the user
-	When User perform search by "01C44C91EB7E4BE88F6"
+	When User perform search by "003F5D8E1A844B1FAA5"
 	And User click content from "Username" column
 	Then Details object page is displayed to the user
 	When User navigates to the "Projects" tab
@@ -833,7 +834,7 @@ Scenario: EvergreenJnr_AllLists_CheckThatPopupIsBiggerAndIsShownProperlyBucketIs
 	#Then There are no errors in the browser console
 	When User clicks "Mailboxes" on the left-hand menu
 	Then "Mailboxes" list should be displayed to the user
-	When User perform search by "05A694C737C045C2B4F@bclabs.local"
+	When User perform search by "00BDBAEA57334C7C8F4@bclabs.local"
 	And User click content from "Email Address" column
 	Then Details object page is displayed to the user
 	When User navigates to the "Projects" tab
