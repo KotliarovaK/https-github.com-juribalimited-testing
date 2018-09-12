@@ -156,7 +156,7 @@ Scenario: EvergreenJnr_DevicesList_CheckThatAddColumnCheckboxIsUncheckedAfterSav
 	When User clicks the Columns button
 	When User removes "Compliance" column by Column panel
 	When User clicks the Filters button
-	When User click Edit button for "Compliance" filter
+	#When User click Edit button for "Compliance" filter
 	Then "Add column" checkbox is unchecked
 	And "Add column" checkbox is not disabled
 
@@ -947,6 +947,24 @@ Examples:
 	| Babel(Engl: Request Type   | Tools                       | 302   |
 	#| EmailMigra: Request Type   | Public Folder               | 50    |
 	| UserSchedu: Request Type   | Request Type A              | 47    |
+
+@Evergreen @AllLists @Evergreen_FiltersFeature @FiltersDisplay @DAS13392
+Scenario Outline: EvergreenJnr_AllLists_CheckThatSearchBySharpOrAmpersandSymbolWorksInTextFilter
+	When User clicks "<ListName>" on the left-hand menu
+	And User clicks the Filters button
+	And User clicks Add New button on the Filter panel
+	And User add "<FilterName>" filter where type is "Equals" with added column and following value:
+	| Values |
+	| #&     |
+	Then "<FilterName>" filter is added to the list
+	And message '<Message>' is displayed to the user
+
+Examples: 
+	| ListName     | FilterName  | Message               |
+	| Devices      | Hostname    | No devices found      |
+	| Users        | Username    | No users found        |
+	| Applications | Application | No applications found |
+	| Mailboxes    | Mail Server | No mailboxes found    |
 
 @Evergreen @Mailboxes @EvergreenJnr_FilterFeature @FilterFunctionality @DAS12351
 Scenario Outline: EvergreenJnr_MailboxesList_CheckThat500ISEInvalidColumnNameErrorIsNotDisplayedIfUseSelectedFilterOnMailboxesPage
