@@ -561,7 +561,6 @@ namespace DashworksTestAutomation.Steps.Dashworks
         public void WhenUserClicksOnEvergreenBucketLink()
         {
             var detailsPage = _driver.NowAt<DetailsPage>();
-            Thread.Sleep(1000);
             _driver.MouseHover(detailsPage.BucketLink);
             _driver.WaitWhileControlIsNotDisplayed<DetailsPage>(() => detailsPage.EditButtonBucketLink);
             detailsPage.EditButtonBucketLink.Click();
