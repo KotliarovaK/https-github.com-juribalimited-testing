@@ -153,6 +153,10 @@ namespace DashworksTestAutomation.Steps
         public void WhenUserRemovesUser(string userName)
         {
             var page = _driver.NowAt<MainElementsOfProjectCreation>();
+            //Perform search because newly created items not always on first page
+            page.SearchTextbox.Clear();
+            page.SearchTextbox.SendKeys(userName);
+            page.SearchButton.Click();
             page.GetDeleteButtonElementByName(userName).Click();
             _driver.AcceptAlert();
         }
