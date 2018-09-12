@@ -74,6 +74,7 @@ namespace DashworksTestAutomation.Steps.Dashworks
         public void WhenUserSelectsBulkUpdateTypeOnActionPanel(string typeName)
         {
             var action = _driver.NowAt<BaseDashboardPage>();
+            _driver.WaitForDataLoading();
             action.RequestTypeDropdown.Click();
             action.GetOptionOnActionsPanelByName(typeName).Click();
         }
@@ -132,6 +133,8 @@ namespace DashworksTestAutomation.Steps.Dashworks
         public void WhenUserSelectsRequestTypeOnActionPanel(string requestType)
         {
             var action = _driver.NowAt<BaseDashboardPage>();
+            _driver.WaitForDataLoading();
+            action.RequestTypeField.Click();
             action.RequestTypeField.Clear();
             action.RequestTypeField.SendKeys(requestType);
             action.GetOptionOnActionsPanelByName(requestType).Click();
