@@ -402,6 +402,13 @@ namespace DashworksTestAutomation.Pages.Evergreen
             return Driver.FindElements(by).ToList();
         }
 
+        public string GetExpandedSection()
+        {
+            var selector = By.XPath($".//div[contains(@class, 'sub-categories') and not(contains(@class,'item'))]/../div/div[contains(@class,'bold-text')]");
+            Driver.WaitWhileControlIsNotDisplayed(selector);
+            return Driver.FindElement(selector).Text;
+        }
+
         public string GetFilterFontWeight()
         {
             return Driver.FindElement(By.XPath(".//span[contains(@class, 'filter-label-value')]")).GetCssValue("font-weight");

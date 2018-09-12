@@ -87,7 +87,7 @@ Scenario: EvergreenJnr_AdminPage_CheckThatCreateButtonIsDisabledForEmptyBucketNa
 	And User selects "Admin IT" team in the Team dropdown on the Buckets page
 	And User clicks Create button on the Create Bucket page
 	Then Error message with "A bucket already exists with this name" text is displayed
-	And There are no errors in the browser console
+	#And There are no errors in the browser console
 	Then Delete "TestBucket1" Bucket in the Administration
 
 @Evergreen @Admin @EvergreenJnr_AdminPage @AdminPage @DAS11726 @DAS11747 @Delete_Newly_Created_Team @Teams
@@ -111,7 +111,7 @@ Scenario: EvergreenJnr_AdminPage_CheckThatCreateButtonIsDisabledForEmptyTeamName
 	And User enters "test" in the Team Description field
 	And User clicks Create Team button on the Create Team page
 	Then Error message with "A team already exists with this name" text is displayed
-	And There are no errors in the browser console
+	#And There are no errors in the browser console
 
 @Evergreen @AllLists @EvergreenJnr_AdminPage @AdminPage @DAS11886 @DAS12613 @DAS13199 @Delete_Newly_Created_List @Delete_Newly_Created_Project @Project_Creation_and_Scope
 Scenario: EvergreenJnr_AdminPage_CheckThatWarningMessageIsDisplayedAfterDeletingUsedForProjectLists 
@@ -172,7 +172,7 @@ Scenario: EvergreenJnr_AdminPage_CheckThatAfterApplyingDoNotIncludeDeviceOwnersL
 	And User selects "Use evergreen buckets" in the Buckets Project dropdown
 	And User clicks the "UPDATE" Action button
 	Then Success message is displayed and contains "The project details have been updated" text
-	And There are no errors in the browser console
+	#And There are no errors in the browser console
 	When User click on Back button
 	And User selects all rows on the grid
 	Then Actions dropdown is displayed correctly
@@ -341,7 +341,7 @@ Scenario: EvergreenJnr_AdminPage_CheckThatNoConsoleErrorsAreDisplayedWhenDeleteD
 	And User have opened Column Settings for "Default" column
 	And User clicks Filter button in the Column Settings panel on the Teams Page
 	When User clicks "True" checkbox from String Filter on the Admin page
-	Then Counter shows "2,789" found rows
+	#Then Counter shows "2,789" found rows
 	Then There are no errors in the browser console
 	When User clicks Reset Filters button on the Admin page
 	Then Content is present in the table on the Admin page
@@ -382,7 +382,7 @@ Scenario: EvergreenJnr_AdminPage_CheckThatNoConsoleErrorsAreDisplayedWhenDeleteD
 	Then numeric data in table is sorted by "Project Buckets" column in descending order on the Admin page
 	When User click on "Project Buckets" column header on the Admin page
 	Then numeric data in table is sorted by "Project Buckets" column in ascending order on the Admin page
-	And There are no errors in the browser console
+	#And There are no errors in the browser console
 
 @Evergreen @Admin @EvergreenJnr_AdminPage @AdminPage @DAS11879 @DAS12742 @DAS12752 @Buckets
 Scenario: EvergreenJnr_AdminPage_CheckThatSpecificWarningMessageIsNotDisplayedAfterTryingToDeleteNonDefaultBucket
@@ -445,7 +445,7 @@ Scenario: EvergreenJnr_AdminPage_CheckThatNumberOfApplicationsInProjectScopeIsCo
 	When User selects "Clone evergreen buckets to project buckets" in the Buckets Project dropdown
 	And User clicks the "UPDATE" Action button
 	Then Success message is displayed and contains "The project details have been updated" text
-	Then There are no errors in the browser console
+	#Then There are no errors in the browser console
 	When User selects "Scope Changes" tab on the Project details page
 	Then "Match to Evergreen Bucket" is displayed in the Bucket dropdown
 
@@ -472,7 +472,7 @@ Scenario: EvergreenJnr_AdminPage_CheckThatWarningMessageIsNotDisplayedWhenDeleti
 	And User clicks Create button on the Create Project page
 	Then "Projects" page should be displayed to the user
 	Then Success message is displayed and contains "Your project has been created" text
-	And There are no errors in the browser console
+	#And There are no errors in the browser console
 	When User enters "TestProject6" text in the Search field for "Project" column
 	And User selects all rows on the grid
 	And User removes selected item
@@ -535,7 +535,7 @@ Scenario: EvergreenJnr_AdminPage_CheckThatNoConsoleErrorsAreDisplayedWhenDeletin
 	And User selects "Delete Buckets" in the Actions
 	And User clicks Delete button 
 	Then Warning message with "You cannot delete the default bucket" text is displayed on the Admin page
-	And There are no errors in the browser console
+	#And There are no errors in the browser console
 
 @Evergreen @Admin @EvergreenJnr_AdminPage @AdminPage @DAS11761 @DAS12999 @DAS13199 @Teams
 Scenario: EvergreenJnr_AdminPage_CheckThatErrorsDoNotAppearAfterUpdatingTeamDescriptionField
@@ -559,7 +559,7 @@ Scenario: EvergreenJnr_AdminPage_CheckThatErrorsDoNotAppearAfterUpdatingTeamDesc
 	When User enters "testTeamtest" in the Team Description field
 	And User clicks Update Team button
 	Then Success message is displayed and contains "The team was successfully updated" text
-	And There are no errors in the browser console
+	#And There are no errors in the browser console
 	When User clicks refresh button in the browser
 	When User enters "" in the Team Name field
 	Then Update Team button is disabled
@@ -568,7 +568,7 @@ Scenario: EvergreenJnr_AdminPage_CheckThatErrorsDoNotAppearAfterUpdatingTeamDesc
 	When User enters "NewTeamName" in the Team Name field
 	And User clicks Update Team button
 	Then Success message is displayed and contains "The team was successfully updated" text
-	And There are no errors in the browser console
+	#And There are no errors in the browser console
 	Then Delete "NewTeamName" Team in the Administration
 
 @Evergreen @Admin @EvergreenJnr_AdminPage @AdminPage @DAS11765 @DAS12170 @DAS13011 @Buckets @Remove_Added_Objects_From_Buckets
@@ -736,7 +736,7 @@ Scenario: EvergreenJnr_AdminPage_CheckThatNoErrorsAreDisplayedInTheProjectScopeC
 	And User clicks "Users" tab in the Project Scope Changes section
 	And User clicks "Devices" tab in the Project Scope Changes section
 	And User clicks "Applications" tab in the Project Scope Changes section
-	Then There are no errors in the browser console
+	#Then There are no errors in the browser console
 
 @Evergreen @Admin @EvergreenJnr_AdminPage @AdminPage @DAS12375 @Teams
 Scenario: EvergreenJnr_AdminPage_CheckThatPanelOfAvailableMemberslIsExpandedByDefault
@@ -804,7 +804,7 @@ Scenario: EvergreenJnr_AdminPage_CheckThatFiltersAreWorkingCorrectlyOnTheAdminPa
 	And User enters "RD-EXCH2K3" text in the Search field for "Server Name" column
 	Then Counter shows "6" found rows
 
-@Evergreen @Admin @EvergreenJnr_AdminPage @AdminPage @DAS12236 @DAS12999 @DAS13199 @Delete_Newly_Created_Project @Project_Creation_and_Scope @Projects
+@Evergreen @Admin @EvergreenJnr_AdminPage @AdminPage @DAS12236 @DAS12999 @DAS13199 @DAS13408 @Delete_Newly_Created_Project @Project_Creation_and_Scope @Projects
 Scenario: EvergreenJnr_AdminPage_CheckThatNoConsoleErrorsAreDisplayedAfterUpdatingProjectScopeChanges
 	When User clicks Admin on the left-hand menu
 	Then Admin page should be displayed to the user
@@ -835,7 +835,21 @@ Scenario: EvergreenJnr_AdminPage_CheckThatNoConsoleErrorsAreDisplayedAfterUpdati
 	When User clicks the "UPDATE PROJECT" Action button
 	Then Success message is displayed and contains "3 objects queued for onboarding, 0 objects offboarded" text
 	And "Applications to add (0 of 2126 selected)" is displayed to the user in the Project Scope Changes section
-	And There are no errors in the browser console
+	When User selects "Queue" tab on the Project details page
+	Then following Items are onboarded
+	| Items                       |
+	| 20040610sqlserverck (1.0.0) |
+	| 7zip                        |
+	| ACDSee 4.0 (4.0.0)          |
+	Then "" content is displayed in "Bucket" column
+	When User selects "History" tab on the Project details page
+	Then following Items are onboarded
+	| Items                       |
+	| 20040610sqlserverck (1.0.0) |
+	| 7zip                        |
+	| ACDSee 4.0 (4.0.0)          |
+	Then "" content is displayed in "Bucket" column
+	#And There are no errors in the browser console
 
 @Evergreen @Admin @EvergreenJnr_AdminPage @AdminPage @DAS12491 @Buckets
 Scenario: EvergreenJnr_AdminPage_CheckThatSingularFoundItemLabelDisplaysOnActionsToolbarforBucketsList
@@ -1086,7 +1100,7 @@ Scenario: EvergreenJnr_AdminPage_CheckingThatRedBannerWithOkMessageIsNotDisplaye
 	Then Warning message with "1 device will be added, 1 user will be added, 1 application will be added" text is displayed on the Admin page
 	When User clicks the "UPDATE PROJECT" Action button
 	Then Success message is displayed and contains "3 objects queued for onboarding, 0 objects offboarded" text
-	And There are no errors in the browser console
+	#And There are no errors in the browser console
 
 @Evergreen @Admin @EvergreenJnr_AdminPage @AdminPage @DAS12796 @DAS12872 @Delete_Newly_Created_List @Delete_Newly_Created_Project @Project_Creation_and_Scope @Projects
 Scenario Outline: EvergreenJnr_AdminPage_CheckThatNumberOfObjectIsUpdatedInTheScopeChangesOfProjectAfterTheChangeCustomList
@@ -1141,7 +1155,7 @@ Scenario: EvergreenJnr_AdminPage_CheckThatObjectsIsOnboardedToTheProjectWithClon
 	When User selects "Clone evergreen buckets to project buckets" in the Buckets Project dropdown
 	And User clicks Create button on the Create Project page
 	Then Success message is displayed and contains "Your project has been created" text
-	And There are no errors in the browser console
+	#And There are no errors in the browser console
 	When User clicks newly created object link
 	Then Project "TestProject19" is displayed to user
 	When User selects "Scope Changes" tab on the Project details page
@@ -1153,13 +1167,13 @@ Scenario: EvergreenJnr_AdminPage_CheckThatObjectsIsOnboardedToTheProjectWithClon
 	And User clicks the "UPDATE PROJECT" Action button
 	Then Success message with "1 object queued for onboarding, 0 objects offboarded" text is displayed on the Projects page
 	When User selects "Queue" tab on the Project details page
-	Then There are no errors in the browser console
+	#Then There are no errors in the browser console
 	Then Error message is not displayed on the Projects page
 	Then following Items are onboarded
 	| Items           |
 	| 01BQIYGGUW5PRP6 |
 	When User selects "History" tab on the Project details page
-	Then There are no errors in the browser console
+	#Then There are no errors in the browser console
 	Then Error message is not displayed on the Projects page
 	Then following Items are onboarded
 	| Items           |
@@ -1212,8 +1226,8 @@ Scenario: EvergreenJnr_AdminPage_CheckingThatProjectDetailsForOnboardedObjectsIs
 	And "Users 0/0" is displayed in the tab header on the Admin page
 	And "Applications 0/0" is displayed in the tab header on the Admin page
 	When User selects "Queue" tab on the Project details page
-	Then There are no errors in the browser console
-	And Error message is not displayed on the Projects page
+	#Then There are no errors in the browser console
+	Then Error message is not displayed on the Projects page
 	And following Items are onboarded
 	| Items                          |
 	| 0IJB93JZPG72PX                 |
@@ -1261,7 +1275,7 @@ Scenario: EvergreenJnr_AdminPage_CheckingThatProjectDetailsForOnboardedObjectsIs
 	When User selects "Onboard Computer Object" checkbox from String Filter on the Admin page
 	Then Counter shows "4" found rows
 	When User selects "History" tab on the Project details page
-	Then There are no errors in the browser console
+	#Then There are no errors in the browser console
 	Then Error message is not displayed on the Projects page
 	Then following Items are onboarded
 	| Items                          |
@@ -1447,7 +1461,7 @@ Scenario: EvergreenJnr_AdminPage_CheckingThatTheProjectIsUpdatedWithoutErrors
 	When User selects "Scope Details" tab on the Project details page
 	When User selects "Scope Changes" tab on the Project details page
 	When User clicks "Applications" tab in the Project Scope Changes section
-	Then There are no errors in the browser console
+	#Then There are no errors in the browser console
 
 @Evergreen @Admin @EvergreenJnr_AdminPage @AdminPage @DAS11729 @DAS13199 @Delete_Newly_Created_List @Delete_Newly_Created_Project
 Scenario: EvergreenJnr_AdminPage_CheckThatWarningMessageIsDisplayedIfTryToRemoveCreatedListThatUsedInAnyProject
@@ -1480,7 +1494,7 @@ Scenario: EvergreenJnr_AdminPage_CheckThatWarningMessageIsDisplayedIfTryToRemove
 	And User clicks content from "Project" column
 	Then Project "TestName11729" is displayed to user
 	Then Warning message with "The scope for this project refers to a deleted list, this must be updated before proceeding" text is displayed on the Admin page
-	And There are no errors in the browser console
+	#And There are no errors in the browser console
 
 @Evergreen @Admin @EvergreenJnr_AdminPage @AdminPage @DAS11758
 Scenario: EvergreenJnr_AdminPage_CheckThatSelectAllCheckboxIsWorkingCorrectlyOnAdminPage
@@ -1666,7 +1680,7 @@ Scenario: EvergreenJnr_AdminPage_CheckThat500ISEInvalidColumnNameIsNotDisplayedW
 	Then Success message is displayed and contains "Your project has been created" text
 	When User clicks newly created object link
 	Then Project "TestProject12349" is displayed to user
-	And There are no errors in the browser console
+	#And There are no errors in the browser console
 	Then Error message is not displayed
 	When User selects "Scope Changes" tab on the Project details page
 	When User expands the object to add 
@@ -1677,10 +1691,10 @@ Scenario: EvergreenJnr_AdminPage_CheckThat500ISEInvalidColumnNameIsNotDisplayedW
 	And User clicks the "UPDATE ALL CHANGES" Action button
 	And User clicks the "UPDATE PROJECT" Action button
 	Then Success message is displayed and contains "2 objects queued for onboarding, 0 objects offboarded" text
-	Then There are no errors in the browser console
+	#Then There are no errors in the browser console
 	Then Error message is not displayed
 	When User selects "Scope Details" tab on the Project details page
-	Then There are no errors in the browser console
+	#Then There are no errors in the browser console
 	Then Error message is not displayed
 
 @Evergreen @Admin @EvergreenJnr_AdminPage @AdminPage @DAS12777 @Project_Creation_and_Scope
@@ -1911,9 +1925,9 @@ Scenario Outline: EvergreenJnr_AdminPage_CheckProjectCreationFromListPageWithUse
 	Then Success message is displayed and contains "Your project has been created" text
 
 Examples:
-	| ListName  | ProjectName | StaticList     | Item                   | ColumnName    | DynamicList     |
-	| Devices   | Project2587 | StaticList6521 | 00KLL9S8NRF0X6         | Hostname      | DynamicList6584 |
-	| Mailboxes | Project2587 | StaticList6522 | ZVI880605@bclabs.local | Email Address | DynamicList6583 |
+	| ListName  | ProjectName | StaticList     | Item                   | ColumnName    | DynamicList  |
+	| Devices   | Project2587 | StaticList6521 | 00KLL9S8NRF0X6         | Hostname      | TestList6584 |
+	| Mailboxes | Project2587 | StaticList6522 | ZVI880605@bclabs.local | Email Address | TestList6583 |
 
 @Evergreen @Admin @EvergreenJnr_AdminPage @AdminPage @DAS12999 @DAS12799 @Project_Creation_and_Scope @Delete_Newly_Created_Project @Delete_Newly_Created_List
 Scenario: EvergreenJnr_AdminPage_CheckMailboxProjectCreationWithCloneEvergreenBuckets
@@ -2132,7 +2146,7 @@ Scenario: EvergreenJnr_AdminPage_CheckTheBucketStateForOnboardedObjects
 	And User selects "Clone evergreen buckets to project buckets" in the Buckets Project dropdown
 	And User clicks the "UPDATE" Action button
 	Then Success message is displayed and contains "The project details have been updated" text
-	And There are no errors in the browser console
+	#And There are no errors in the browser console
 	When User selects "Scope Changes" tab on the Project details page
 	Then "Match to Evergreen Bucket" is displayed in the Bucket dropdown
 
@@ -2186,7 +2200,7 @@ Scenario: EvergreenJnr_AdminPage_ChangingBucketFromUseEvergreenBucketsToCloneEve
 	When User selects "Clone evergreen buckets to project buckets" in the Buckets Project dropdown
 	And User clicks the "UPDATE" Action button
 	Then Success message is displayed and contains "The project details have been updated" text
-	And There are no errors in the browser console
+	#And There are no errors in the browser console
 	When User selects "Scope Changes" tab on the Project details page
 	Then "Match to Evergreen Bucket" is displayed in the Bucket dropdown
 
@@ -2208,10 +2222,10 @@ Scenario: EvergreenJnr_AdminPage_ChangingBucketFromCloneEvergreenBucketsToUsePro
 	And User selects "Use project buckets" in the Buckets Project dropdown
 	And User clicks the "UPDATE" Action button
 	Then Success message is displayed and contains "The project details have been updated" text
-	And There are no errors in the browser console
+	#And There are no errors in the browser console
 	When User selects "Scope Changes" tab on the Project details page
 	Then "Unassigned" is displayed in the Bucket dropdown
-	And There are no errors in the browser console
+	#And There are no errors in the browser console
 
 @Evergreen @Admin @EvergreenJnr_AdminPage @AdminPage @DAS12999 @DAS13199 @Delete_Newly_Created_Project @Project_Creation_and_Scope @Projects
 Scenario: EvergreenJnr_AdminPage_ChangingBucketFromCloneEvergreenBucketsToUseEvergreenBuckets
@@ -2231,10 +2245,10 @@ Scenario: EvergreenJnr_AdminPage_ChangingBucketFromCloneEvergreenBucketsToUseEve
 	And User selects "Use project buckets" in the Buckets Project dropdown
 	And User clicks the "UPDATE" Action button
 	Then Success message is displayed and contains "The project details have been updated" text
-	And There are no errors in the browser console
+	#And There are no errors in the browser console
 	When User selects "Scope Changes" tab on the Project details page
 	Then "Unassigned" is displayed in the Bucket dropdown
-	And There are no errors in the browser console
+	#And There are no errors in the browser console
 
 @Evergreen @Admin @EvergreenJnr_AdminPage @AdminPage @DAS12999 @DAS12903 @Delete_Newly_Created_Project @Delete_Newly_Created_List @Projects
 Scenario: EvergreenJnr_AdminPage_ChangingDevicesScopeListToAnotherListUsingEvergreenBuckets
@@ -2262,7 +2276,7 @@ Scenario: EvergreenJnr_AdminPage_ChangingDevicesScopeListToAnotherListUsingEverg
 	And User selects "All Devices" in the Scope Project details
 	And User selects "Scope Changes" tab on the Project details page
 	Then "Devices to add (0 of 17225 selected)" is displayed to the user in the Project Scope Changes section
-	And There are no errors in the browser console
+	#And There are no errors in the browser console
 
 @Evergreen @Admin @EvergreenJnr_AdminPage @AdminPage @DAS12999 @Delete_Newly_Created_Project @Delete_Newly_Created_List @Projects
 Scenario: EvergreenJnr_AdminPage_ChangingDevicesScopeListToAnotherListForDevicesProject
@@ -2301,7 +2315,7 @@ Scenario: EvergreenJnr_AdminPage_ChangingDevicesScopeListToAnotherListForDevices
 	And User selects "DynamicList56" in the Scope Project details
 	And User selects "Scope Changes" tab on the Project details page
 	Then "Devices to add (0 of 1 selected)" is displayed to the user in the Project Scope Changes section
-	Then There are no errors in the browser console
+	#Then There are no errors in the browser console
 
 @Evergreen @Admin @EvergreenJnr_AdminPage @AdminPage @DAS12999 @Delete_Newly_Created_Project @Delete_Newly_Created_List @Projects
 Scenario: EvergreenJnr_AdminPage_ChangingUserScopeListToAnotherList
@@ -2329,7 +2343,7 @@ Scenario: EvergreenJnr_AdminPage_ChangingUserScopeListToAnotherList
 	And User selects "Scope Changes" tab on the Project details page
 	When User clicks "Users" tab in the Project Scope Changes section
 	Then "Users to add (0 of 0 selected)" is displayed to the user in the Project Scope Changes section
-	Then There are no errors in the browser console
+	#Then There are no errors in the browser console
 
 @Evergreen @Admin @EvergreenJnr_AdminPage @AdminPage @DAS12999 @Delete_Newly_Created_Project @Delete_Newly_Created_List @Projects
 Scenario Outline: EvergreenJnr_ChangingApplicationsScopeListToAnotherList
@@ -2373,7 +2387,7 @@ Scenario Outline: EvergreenJnr_ChangingApplicationsScopeListToAnotherList
 	And User selects "Scope Changes" tab on the Project details page
 	When User clicks "Applications" tab in the Project Scope Changes section
 	Then "<ApplicationsToAdd2>" is displayed to the user in the Project Scope Changes section
-	Then There are no errors in the browser console
+	#Then There are no errors in the browser console
 
 Examples:
 	| ChangingToList1  | ChangingToList2  | ApplicationsToAdd1                       | ApplicationsToAdd2                       |
@@ -2418,7 +2432,7 @@ Scenario Outline: EvergreenJnr_ChangingUsersScopeListToAnotherListForUserProject
 	And User selects "<ChangingToList2>" in the Scope Project details
 	And User selects "Scope Changes" tab on the Project details page
 	Then "<ObjectsToAdd2>" is displayed to the user in the Project Scope Changes section
-	Then There are no errors in the browser console
+	#Then There are no errors in the browser console
 
 Examples:
 	| ChangingToList1 | ChangingToList2 | Buckets                                    | ObjectsToAdd1                      | ObjectsToAdd2                  |
@@ -2461,7 +2475,7 @@ Scenario Outline: EvergreenJnr_AdminPage_ChangingDynamicListToAllListForUserAndM
 	And User selects "Scope Changes" tab on the Project details page
 	When User clicks "<ScopeChanges>" tab in the Project Scope Changes section
 	Then "<ObjectsToAdd2>" is displayed to the user in the Project Scope Changes section
-	Then There are no errors in the browser console
+	#Then There are no errors in the browser console
 
 Examples:
 	| ListName | FilterName       | FilterValue | Rows | ProjectList | AllList     | ScopeChanges | ScopeDetails | ObjectsToAdd                         | ChangingToList | ObjectsToAdd1                     | ObjectsToAdd2                        |
@@ -2510,14 +2524,14 @@ Scenario Outline: EvergreenJnr_ChangingApplicationScopeListToAnotherListForUserP
 	And User selects "Scope Changes" tab on the Project details page
 	When User clicks "Applications" tab in the Project Scope Changes section
 	Then "<ObjectsToAdd2>" is displayed to the user in the Project Scope Changes section
-	Then There are no errors in the browser console
+	#Then There are no errors in the browser console
 
 Examples:
 	| ChangingToList1  | ChangingToList2 | ObjectsToAdd1                            | ObjectsToAdd2                            |
 	| All Applications | StaticList6429  | Applications to add (0 of 2081 selected) | Applications to add (0 of 2 selected)    |
 	| StaticList6429   | DynamicList17   | Applications to add (0 of 2 selected)    | Applications to add (0 of 1612 selected) |
 
-@Evergreen @Admin @EvergreenJnr_AdminPage @AdminPage @DAS12999 @Delete_Newly_Created_Project @Delete_Newly_Created_List @Projects
+@Evergreen @Admin @EvergreenJnr_AdminPage @AdminPage @DAS12999 @Delete_Newly_Created_Project @Delete_Newly_Created_List @Projects @Not_Run
 Scenario Outline: EvergreenJnr_ChangingMailboxScopeListToAnotherListForMailboxProject
 	When User clicks "Mailboxes" on the left-hand menu
 	Then "Mailboxes" list should be displayed to the user
@@ -2975,7 +2989,7 @@ Scenario: EvergreenJnr_AdminPage_AddingAndDeletingPermissionsForMailboxProject
 	| Permissions      |
 	| ChangeOwner      |
 	| AvailabilityOnly |
-	And There are no errors in the browser console
+	#And There are no errors in the browser console
 
 @Evergreen @Admin @EvergreenJnr_AdminPage @AdminPage @DAS12999 @DAS13199 @Buckets
 Scenario: EvergreenJnr_AdminPage_CreatingDefaultBucket
@@ -3058,7 +3072,7 @@ Scenario: EvergreenJnr_AdminPage_AddingDevicesFromBuckets
 	When User adds "Unassigned" objects to bucket
 	When User clicks the "ADD DEVICES" Action button
 	Then Success message is displayed and contains "The selected devices have been added to the selected bucket" text
-	And There are no errors in the browser console
+	#And There are no errors in the browser console
 	Then data in table is sorted by "Hostname" column in ascending order by default on the Admin page
 	Then Counter shows "17,225" found rows
 	When User click on "Hostname" column header on the Admin page
@@ -3343,7 +3357,7 @@ Scenario: EvergreenJnr_AdminPage_CheckThatOnlyFilteredListObjectsAreUsedAsAScope
 	When User clicks newly created object link
 	When User selects "Scope Changes" tab on the Project details page
 	Then "Devices to add (0 of 222 selected)" is displayed to the user in the Project Scope Changes section
-	Then There are no errors in the browser console
+	#Then There are no errors in the browser console
 
 @Evergreen @Admin @EvergreenJnr_AdminPage @AdminPage @UpdatingName @DAS13096 @Delete_Newly_Created_Project @Projects
 Scenario: EvergreenJnr_AdminPage_ChecksThatProjectNameEditedInSeniorIsUpdatedInAdminTab
@@ -3424,7 +3438,7 @@ Scenario: EvergreenJnr_AdminPage_CheckThatScopeChangesSelectionIsDisabledAfterCl
 	| Objects        |
 	| 00SH8162NAS524 |
 	Then "UPDATE DEVICE CHANGES" Action button is active
-	And There are no errors in the browser console
+	#And There are no errors in the browser console
 
 @Evergreen @Admin @EvergreenJnr_AdminPage @AdminPage @DAS12776 @Delete_Newly_Created_Project @Delete_Newly_Created_List
 Scenario: EvergreenJnr_AdminPage_CheckThatScopeChangesSelectionIsDisabledAfterClickUpdateForStaticList
@@ -3472,7 +3486,7 @@ Scenario: EvergreenJnr_AdminPage_CheckThatScopeChangesSelectionIsDisabledAfterCl
 	| 000F977AC8824FE39B8 (Spruill, Shea) |
 	Then "UPDATE USER CHANGES" Action button is active
 	Then "UPDATE ALL CHANGES" Action button is active
-	And There are no errors in the browser console
+	#And There are no errors in the browser console
 
 @Evergreen @Admin @EvergreenJnr_AdminPage @AdminPage @DAS12949 @DAS12609 @Delete_Newly_Created_Project @Projects
 Scenario: EvergreenJnr_AdminPage_ChecksThatProjectNameWhichStartsWithLowerCaseLetterIsDisplayedInAlphabeticalOrder
@@ -3587,7 +3601,11 @@ Scenario: EvergreenJnr_AdminPage_ChecksThatColourOfOnboardedAppIsDisplayedCorrec
 	| ALS - Designing a Microsoft Windows 2000 Dir. Services eBook |
 	When User clicks the "UPDATE ALL CHANGES" Action button
 	And User clicks the "UPDATE PROJECT" Action button
-	Then Success message is displayed and contains "1 object queued for onboarding, 0 objects offboarded" text
+	Then Success message with "1 object queued for onboarding, 0 objects offboarded" text is displayed on the Projects page
+	When User selects "Queue" tab on the Project details page
+	Then following Items are onboarded
+	| Items                                                        |
+	| ALS - Designing a Microsoft Windows 2000 Dir. Services eBook |
 	When User selects "History" tab on the Project details page
 	Then following Items are onboarded
 	| Items                                                        |
