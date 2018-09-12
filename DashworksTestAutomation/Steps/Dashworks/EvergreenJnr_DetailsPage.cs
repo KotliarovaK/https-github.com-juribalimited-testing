@@ -355,7 +355,7 @@ namespace DashworksTestAutomation.Steps.Dashworks
         public void ThenBucketPop_UpHasStandardSizeOnTheDetailsPage()
         {
             var detailsPage = _driver.NowAt<DetailsPage>();
-            Assert.AreEqual("1536px", detailsPage.GetInstalledBucketWindowWidth().Split('.').First());
+            Assert.AreEqual("1638", detailsPage.GetInstalledBucketWindowWidth().Split('.').First());
         }
 
         [When(@"User enters ""(.*)"" text in the Filter field")]
@@ -561,6 +561,7 @@ namespace DashworksTestAutomation.Steps.Dashworks
         public void WhenUserClicksOnEvergreenBucketLink()
         {
             var detailsPage = _driver.NowAt<DetailsPage>();
+            Thread.Sleep(1000);
             _driver.MouseHover(detailsPage.BucketLink);
             _driver.WaitWhileControlIsNotDisplayed<DetailsPage>(() => detailsPage.EditButtonBucketLink);
             detailsPage.EditButtonBucketLink.Click();
