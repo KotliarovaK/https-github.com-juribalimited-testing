@@ -3708,7 +3708,7 @@ Scenario: EvergreenJnr_AdminPage_CheckThatSelectedBucketsIsDisplayedForOnboarded
 	| 003F5D8E1A844B1FAA5 (Hunter, Melanie) |
 	And "UsersProject3Group" content is displayed in "Bucket" column
 
-@Evergreen @Admin @EvergreenJnr_AdminPage @AdminPage @DAS12763 @Delete_Newly_Created_Project @Delete_Newly_Created_Bucket
+@Evergreen @Admin @EvergreenJnr_AdminPage @AdminPage @DAS12763 @DAS12767 @Delete_Newly_Created_Project @Delete_Newly_Created_Bucket
 Scenario: EvergreenJnr_AdminPage_CheckDisplayingBucketsAfterCreationProjectsWithDifferentOptions
 	When User clicks Admin on the left-hand menu
 	Then Admin page should be displayed to the user
