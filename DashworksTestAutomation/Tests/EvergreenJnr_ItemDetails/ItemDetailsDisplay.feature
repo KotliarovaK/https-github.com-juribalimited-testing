@@ -813,7 +813,7 @@ Scenario: EvergreenJnr_AllLists_CheckThatPopupIsBiggerAndIsShownProperlyBucketIs
 	Then Bucket pop-up has standard size on the Details Page
 	When User clicks "CHANGE" button on Change Bucket window
 	Then Evergreen Bucket link "Bucket12883" is displayed
-	Then There are no errors in the browser console
+	#Then There are no errors in the browser console
 	When User clicks "Users" on the left-hand menu
 	Then "Users" list should be displayed to the user
 	When User perform search by "003F5D8E1A844B1FAA5"
@@ -831,7 +831,7 @@ Scenario: EvergreenJnr_AllLists_CheckThatPopupIsBiggerAndIsShownProperlyBucketIs
 	Then Bucket pop-up has standard size on the Details Page
 	When User clicks "CHANGE" button on Change Bucket window
 	Then Evergreen Bucket link "Bucket12883" is displayed
-	Then There are no errors in the browser console
+	#Then There are no errors in the browser console
 	When User clicks "Mailboxes" on the left-hand menu
 	Then "Mailboxes" list should be displayed to the user
 	When User perform search by "00BDBAEA57334C7C8F4@bclabs.local"
@@ -849,7 +849,7 @@ Scenario: EvergreenJnr_AllLists_CheckThatPopupIsBiggerAndIsShownProperlyBucketIs
 	Then Bucket pop-up has standard size on the Details Page
 	When User clicks "CHANGE" button on Change Bucket window
 	Then Evergreen Bucket link "Bucket12883" is displayed
-	Then There are no errors in the browser console
+	#Then There are no errors in the browser console
 	And Delete "Bucket12883" Bucket in the Administration
 
 @Evergreen @Applications @AllLists @EvergreenJnr_ItemDetails @ItemDetailsDisplay @DAS13180
