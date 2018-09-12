@@ -1477,3 +1477,34 @@ Scenario: EvergreenJnr_UsersList_ChecksThatOwnerRemovingIsWorksCorrectly
 	When User navigate to Manage link
 	And User select "Manage Users" option in Management Console
 	And User removes "DAS13291" User
+
+@Evergreen @Users @EvergreenJnr_ActionsPanel @BulkUpdate @DAS12864 @DAS13293 @DAS13359
+Scenario: EvergreenJnr_UsersList_CheckThatBulkUpdateOfThousandsOfRowsUpdateToSuccessfulBannerMessage
+	When User clicks "Users" on the left-hand menu
+	Then "Users" list should be displayed to the user
+	When User clicks the Columns button
+	Then Columns panel is displayed to the user
+	When ColumnName is entered into the search box and the selection is clicked
+	| ColumnName         |
+	| Havoc(BigD: Task 0 |
+	When User clicks the Filters button
+	Then Filters panel is displayed to the user
+	When User add "Havoc(BigD: In Scope" filter where type is "Equals" with added column and following checkboxes:
+	| SelectedCheckboxes |
+	| TRUE               |
+	Then "Havoc(BigD: In Scope" filter is added to the list
+	When User clicks the Actions button
+	Then Actions panel is displayed to the user
+	When User select all rows
+	When User selects "Bulk update" in the Actions dropdown
+	And User selects "Update task value" Bulk Update Type on Action panel
+	And User selects "Havoc (Big Data)" Project on Action panel
+	When User selects "Stage 0" Stage on Action panel
+	When User selects "Task 0" Task on Action panel
+	When User selects "Started" Value on Action panel
+	When User clicks the "UPDATE" Action button
+	Then the amber message is displayed correctly
+	Then User clicks "UPDATE" button on message box
+	And Success message with "7578 of 7578 objects were valid for the update. Your changes have successfully been queued." text is displayed on Action panel
+	When User refreshes agGrid
+	Then "Started" content is displayed in "Havoc(BigD: Task 0" column
