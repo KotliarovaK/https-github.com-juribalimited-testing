@@ -231,7 +231,9 @@ namespace DashworksTestAutomation.Steps.Dashworks
             foreach (var row in table.Rows)
             {
                 projectsPage.AddMailboxPermissionsButton.Click();
+                _driver.WaitForDataLoading();
                 projectsPage.PermissionsDropdown.Click();
+                _driver.WaitForDataLoading();
                 projectsPage.SelectPermissionsByName(row["Permissions"]);
                 projectsPage.AddPermissionsButtonInTab.Click();
             }
