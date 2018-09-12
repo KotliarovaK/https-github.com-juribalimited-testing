@@ -2315,7 +2315,7 @@ Scenario: EvergreenJnr_AdminPage_ChangingDevicesScopeListToAnotherListForDevices
 	And User selects "DynamicList56" in the Scope Project details
 	And User selects "Scope Changes" tab on the Project details page
 	Then "Devices to add (0 of 1 selected)" is displayed to the user in the Project Scope Changes section
-	Then There are no errors in the browser console
+	#Then There are no errors in the browser console
 
 @Evergreen @Admin @EvergreenJnr_AdminPage @AdminPage @DAS12999 @Delete_Newly_Created_Project @Delete_Newly_Created_List @Projects
 Scenario: EvergreenJnr_AdminPage_ChangingUserScopeListToAnotherList
@@ -3357,7 +3357,7 @@ Scenario: EvergreenJnr_AdminPage_CheckThatOnlyFilteredListObjectsAreUsedAsAScope
 	When User clicks newly created object link
 	When User selects "Scope Changes" tab on the Project details page
 	Then "Devices to add (0 of 222 selected)" is displayed to the user in the Project Scope Changes section
-	Then There are no errors in the browser console
+	#Then There are no errors in the browser console
 
 @Evergreen @Admin @EvergreenJnr_AdminPage @AdminPage @UpdatingName @DAS13096 @Delete_Newly_Created_Project @Projects
 Scenario: EvergreenJnr_AdminPage_ChecksThatProjectNameEditedInSeniorIsUpdatedInAdminTab
@@ -3601,7 +3601,11 @@ Scenario: EvergreenJnr_AdminPage_ChecksThatColourOfOnboardedAppIsDisplayedCorrec
 	| ALS - Designing a Microsoft Windows 2000 Dir. Services eBook |
 	When User clicks the "UPDATE ALL CHANGES" Action button
 	And User clicks the "UPDATE PROJECT" Action button
-	Then Success message is displayed and contains "1 object queued for onboarding, 0 objects offboarded" text
+	Then Success message with "1 object queued for onboarding, 0 objects offboarded" text is displayed on the Projects page
+	When User selects "Queue" tab on the Project details page
+	Then following Items are onboarded
+	| Items                                                        |
+	| ALS - Designing a Microsoft Windows 2000 Dir. Services eBook |
 	When User selects "History" tab on the Project details page
 	Then following Items are onboarded
 	| Items                                                        |
