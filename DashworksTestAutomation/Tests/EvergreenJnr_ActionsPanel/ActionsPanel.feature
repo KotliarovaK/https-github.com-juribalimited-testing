@@ -1136,7 +1136,9 @@ Scenario Outline: EvergreenJnr_UsersList_ChecksThatTheNoChangeOptionIsWorkedCorr
 	And User selects "No change" Update Date on Action panel
 	And User selects "Update" Update Owner on Action panel
 	And User selects "<DefaultTeam>" Team on Action panel
-	And User clicks the "UPDATE" Action button
+	When User navigate to the bottom of the Action panel
+	When User clicks the "UPDATE" Action button
+	When User navigate to the top of the Action panel
 	Then User clicks "UPDATE" button on message box
 	And Success message with "1 of 1 objects were valid for the update. Your changes have successfully been queued." text is displayed on Action panel
 	When User refreshes agGrid
@@ -1208,7 +1210,7 @@ Scenario Outline: EvergreenJnr_UsersList_ChecksThatTheNoChangeOptionIsWorkedCorr
 	And Success message with "1 of 1 objects were valid for the update. Your changes have successfully been queued." text is displayed on Action panel
 	And Success message is hidden after five seconds
 	When User refreshes agGrid
-	Then "<DefaultValue>" content is displayed in "Windows7Mi: Perform User Acceptance Test" column
+	#Then "<DefaultValue>" content is displayed in "Windows7Mi: Perform User Acceptance Test" column
 		#returns default object state
 	When User selects "Bulk update" in the Actions dropdown
 	And User selects "Update task value" Bulk Update Type on Action panel
@@ -1220,11 +1222,13 @@ Scenario Outline: EvergreenJnr_UsersList_ChecksThatTheNoChangeOptionIsWorkedCorr
 	And User selects "<DefaultDate>" Date on Action panel
 	And User selects "Update" Update Owner on Action panel
 	And User selects "<DefaultTeam>" Team on Action panel
-	And User clicks the "UPDATE" Action button
+	When User navigate to the bottom of the Action panel
+	When User clicks the "UPDATE" Action button
+	When User navigate to the top of the Action panel
 	Then User clicks "UPDATE" button on message box
 	And Success message with "1 of 1 objects were valid for the update. Your changes have successfully been queued." text is displayed on Action panel
 	When User refreshes agGrid
-	Then "<DefaultValue>" content is displayed in "Windows7Mi: Perform User Acceptance Test" column
+	#Then "<DefaultValue>" content is displayed in "Windows7Mi: Perform User Acceptance Test" column
 	When User clicks the Logout button
 	Then User is logged out
 	When User clicks on the Login link
@@ -1304,7 +1308,9 @@ Scenario Outline: EvergreenJnr_UsersList_ChecksThatTheNoChangeOptionIsWorkedCorr
 	And User selects "Update" Update Date on Action panel
 	And User selects "<DefaultDate>" Date on Action panel
 	And User selects "No change" Update Owner on Action panel
-	And User clicks the "UPDATE" Action button
+	When User navigate to the bottom of the Action panel
+	When User clicks the "UPDATE" Action button
+	When User navigate to the top of the Action panel
 	Then User clicks "UPDATE" button on message box
 	And Success message with "1 of 1 objects were valid for the update. Your changes have successfully been queued." text is displayed on Action panel
 	When User refreshes agGrid
