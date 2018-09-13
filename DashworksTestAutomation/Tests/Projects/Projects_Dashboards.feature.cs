@@ -71,6 +71,7 @@ namespace DashworksTestAutomation.Tests.Projects
         [NUnit.Framework.Retry(2)]
         
         
+        
         [NUnit.Framework.DescriptionAttribute("Projects_CheckThatDataInGroupWithApostrophesOnDashboardsPageIsDisplayedCorectly")]
         [NUnit.Framework.CategoryAttribute("Evergreen")]
         [NUnit.Framework.CategoryAttribute("Projects")]
