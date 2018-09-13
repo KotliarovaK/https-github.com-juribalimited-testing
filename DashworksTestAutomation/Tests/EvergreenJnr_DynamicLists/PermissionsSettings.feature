@@ -46,14 +46,16 @@ Scenario: EvergreenJnr_UsersList_CheckThatAdminUserButNotOwnerIsNotAbleToDeleteL
 	Then Delete list button is disabled in List Details panel
 	And Delete List option is NOT available
 
-@Evergreen @Users @EvergreenJnr_DynamicLists @PermissionsSettings @DAS12941 @Delete_Newly_Created_List
+@Evergreen @Users @EvergreenJnr_DynamicLists @DAS12941 @Delete_Newly_Created_List
 Scenario: EvergreenJnr_UsersList_ChecksThatSavedDynamicListIsNotDisplayedInEditModeIfUseDepartmentFilter
 	When User clicks "Users" on the left-hand menu
 	Then "Users" list should be displayed to the user
 	When User clicks the Filters button
 	Then Filters panel is displayed to the user
 	When User add "Department" filter where type is "Equals" with added column and "Technology" Tree List option
-	When User create dynamic list with "List12941" name on "Users" page
+	Then "Department" filter is added to the list
+	Then "7,020" rows are displayed in the agGrid
+	When User create dynamic list with "DAS12941" name on "Users" page
 	When User navigates to the "All Users" list
-	When User navigates to the "List12941" list
+	When User navigates to the "DAS12941" list
 	Then Edit List menu is not displayed

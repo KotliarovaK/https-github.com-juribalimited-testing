@@ -203,7 +203,7 @@ Scenario: EvergreenJnr_DevicesList_ChecksThatGridIsDisplayedCorrectlyAfterAdding
 	And There are no errors in the browser console
 	And table content is present
 
-@Evergreen @Devices @EvergreenJnr_Columns @RemoveColumn @AddColumnAction @DAS12910
+@Evergreen @Mailboxes @EvergreenJnr_Columns @RemoveColumn @AddColumnAction @DAS12910
 Scenario: EvergreenJnr_MailboxesList_ChecksThatNewlyAddedColumnIsDisplayedCorrectlyAfterAddingEmailMigraReadinessFilter
 	When User clicks "Mailboxes" on the left-hand menu
 	Then "Mailboxes" list should be displayed to the user
