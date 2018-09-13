@@ -45,6 +45,9 @@ namespace DashworksTestAutomation.Pages.Evergreen
         [FindsBy(How = How.XPath, Using = ".//button[@id='_staticListModeBtn']")]
         public IWebElement ActionsButton { get; set; }
 
+        [FindsBy(How = How.XPath, Using = ".//div[contains(@class, 'actions-container-row')]")]
+        public IWebElement ActionsRowsCount { get; set; }
+
         [FindsBy(How = How.XPath, Using = ".//mat-select[@aria-label='Actions']")]
         public IWebElement ActionsDropdown { get; set; }
 
@@ -142,6 +145,9 @@ namespace DashworksTestAutomation.Pages.Evergreen
         [FindsBy(How = How.XPath, Using = "//button[@class='btn mat-button _mat-animation-noopable']//span[text()='UPDATE']")]
         public  IWebElement UpdateButtonOnAmberMessage { get; set; }
 
+        [FindsBy(How = How.XPath, Using = "//button/span[text()='UPDATE']")]
+        public IWebElement UpdateButton { get; set; }
+
         [FindsBy(How = How.XPath, Using = "//button[@class='btn btn-transparent mat-button _mat-animation-noopable']//span[text()='CANCEL']")]
         public IWebElement CancelButtonOnAmberMessage { get; set; }
 
@@ -223,6 +229,9 @@ namespace DashworksTestAutomation.Pages.Evergreen
 
         [FindsBy(How = How.XPath, Using = "//div[@class='inline-success ng-star-inserted']")]
         public IWebElement SuccessMessage { get; set; }
+
+        [FindsBy(How = How.XPath, Using = "//div[@class='context-container ps ps--active-y']//div//div[@class='ps__thumb-y']")]
+        public IWebElement ActionsScrollBar { get; set; }
 
         [FindsBy(How = How.XPath, Using = "//button[contains(@class, 'close')]")]
         public IWebElement CloseButtonInSuccessMessage { get; set; }

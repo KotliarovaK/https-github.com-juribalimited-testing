@@ -1815,7 +1815,7 @@ Scenario: EvergreenJnr_AdminPage_CheckThatTheFilterSearchIsNotCaseSensitive
 	Then created Project with "testname_small letters" name is displayed correctly
 	Then created Project with "TESTNAME_capital letters" name is displayed correctly
 
-@Evergreen @Admin @EvergreenJnr_AdminPage @AdminPage @DAS12999 @DAS13199 @DAS12680 @Delete_Newly_Created_Project @Delete_Newly_Created_List @Projects @Not_Run
+@Evergreen @Admin @EvergreenJnr_AdminPage @AdminPage @DAS12999 @DAS13199 @DAS12680 @DAS12157 @Delete_Newly_Created_Project @Delete_Newly_Created_List @Projects @Not_Run
 Scenario: EvergreenJnr_AdminPage_CheckThatDevicesToAddAndRemoveAreChangingAppropriate
 	When User create static list with "StaticList6527" name on "Devices" page with following items
 	| ItemName        |
@@ -2731,6 +2731,17 @@ Scenario Outline: EvergreenJnr_ChangingApplicationScopeListToAnotherListForMailb
 	When User navigates to the "Application Scope" tab in the Scope section on the Project details page
 	When  User selects "Include applications" checkbox on the Project details page
 	And User selects "<ChangingToList1>" in the Scope Project details
+	And User selects "Scope Changes" tab on the Project details page
+	When User clicks "Applications" tab in the Project Scope Changes section
+	Then "<ObjectsToAdd1>" is displayed to the user in the Project Scope Changes section
+	Then There are no errors in the browser console
+	When User selects "Scope Details" tab on the Project details page
+	When User navigates to the "Application Scope" tab in the Scope section on the Project details page
+	And User selects "<ChangingToList2>" in the Scope Project details
+	And User selects "Scope Changes" tab on the Project details page
+	When User clicks "Applications" tab in the Project Scope Changes section
+	Then "<ObjectsToAdd2>" is displayed to the user in the Project Scope Changes section
+	Then There are no errors in the browser console
 
 Examples:
 	| ChangingToList1  | ChangingToList2 | ObjectsToAdd1                         | ObjectsToAdd2                         |
@@ -3814,3 +3825,53 @@ Scenario: EvergreenJnr_AdminPage_CheckDisplayingBucketsAfterCreationProjectsWith
 	When User clicks "Select All" checkbox from String Filter on the Admin page
 	When User clicks String Filter button for "Project" column on the Admin page
 	Then "3Project12763" is not displayed in the filter dropdown
+
+@Evergreen @Admin @EvergreenJnr_AdminPage @AdminPage @DAS12157 @Delete_Newly_Created_Project @Delete_Newly_Created_List
+Scenario Outline: EvergreenJnr_AdminPage_CheckThatProjectScopeChangesIsLoadedSuccessfullyAfterChangingProjectScopeToACustomList
+	When User create static list with "DevicesList12157" name on "Devices" page with following items
+	| ItemName      |
+	|0I29CJMQ159EOR |
+	Then "DevicesList12157" list is displayed to user
+	When User create static list with "UsersList12157" name on "Users" page with following items
+	| ItemName  |
+	| AJC243596 |
+	Then "UsersList12157" list is displayed to user
+	When User create static list with "MailboxesList12157" name on "Mailboxes" page with following items
+	| ItemName             |
+	| elsonje@bclabs.local |
+	Then "MailboxesList12157" list is displayed to user
+	When User create static list with "ApplicationsStaticList12157" name on "Applications" page with following items
+	| ItemName  |
+	| AtomixMP3 |
+	Then "ApplicationsStaticList12157" list is displayed to user
+	When User clicks Admin on the left-hand menu
+	Then Admin page should be displayed to the user
+	When User clicks "Projects" link on the Admin page
+	Then "Projects" page should be displayed to the user
+	When User clicks the "CREATE PROJECT" Action button
+	Then "Create Project" page should be displayed to the user
+	When User enters "Project12157" in the Project Name field
+	And User selects "<MainList>" in the Scope Project dropdown
+	And User clicks Create button on the Create Project page
+	Then Success message is displayed and contains "Your project has been created" text
+	When User clicks newly created object link
+	Then Project "Project12157" is displayed to user
+	When User selects "<ListToScope1>" in the Scope Project details
+	And User navigates to the "<ScopeTab1>" tab in the Scope section on the Project details page
+	And User selects "<ListToScope2>" in the Scope Project details
+	And User navigates to the "Application Scope" tab in the Scope section on the Project details page
+	When  User selects "Include applications" checkbox on the Project details page
+	And User selects "ApplicationsStaticList12157" in the Scope Project details
+	And User selects "Scope Changes" tab on the Project details page
+	Then "<ObjectsToAdd1>" is displayed to the user in the Project Scope Changes section
+	When User clicks "<ScopeChanges1>" tab in the Project Scope Changes section
+	Then "<ObjectsToAdd2>" is displayed to the user in the Project Scope Changes section
+	When User clicks "Applications" tab in the Project Scope Changes section
+	Then "<ObjectsToAdd3>" is displayed to the user in the Project Scope Changes section
+	#Then There are no errors in the browser console
+
+Examples:
+	| MainList      | ObjectsToAdd1                      | ListToScope1             | ScopeTab1    | ListToScope2     | ScopeChanges1 | ObjectsToAdd2                    | ObjectsToAdd3                         |
+	| All Devices   | Devices to add (0 of 1 selected)   | DevicesList12157         | User Scope   | UsersList12157   | Users         | Users to add (0 of 0 selected)   | Applications to add (0 of 0 selected) |
+	| All Users     | Users to add (0 of 1 selected)     | UsersList12157     | Device Scope | DevicesList12157 | Devices       | Devices to add (0 of 0 selected) | Applications to add (0 of 0 selected) |
+	| All Mailboxes | Mailboxes to add (0 of 1 selected) | MailboxesList12157 | User Scope   | UsersList12157   | Users         | Users to add (0 of 0 selected)   | Applications to add (0 of 0 selected) |
