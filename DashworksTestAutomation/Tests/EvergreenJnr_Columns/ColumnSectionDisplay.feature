@@ -431,7 +431,7 @@ Scenario: EvergreenJnr_MailboxesList_ChecksThatAfterAddingRowsToAStaticListFromT
 	| 00BDBAEA57334C7C8F4@bclabs.local |
 	| 00B5CCB89AD0404B965@bclabs.local |
 	Then User add selected rows in "StaticListFromTheAllList" list
-	Then "4" rows are displayed in the agGrid
+	And "4" rows are displayed in the agGrid
 	And Column is displayed in following order:
 	| ColumnName         |
 	| Email Address      |
@@ -455,8 +455,8 @@ Scenario: EvergreenJnr_DevicesList_ChecksThatAfterAddingRowsToAStaticListFromADy
 	| ColumnName |
 	| Compliance |
 	When User create dynamic list with "DynamicList13059" name on "Devices" page
-	When User navigates to the "All Devices" list
-	When User clicks the Columns button
+	And User navigates to the "All Devices" list
+	And User clicks the Columns button
 	Then Columns panel is displayed to the user
 	When ColumnName is entered into the search box and the selection is clicked
 	| ColumnName |
@@ -473,7 +473,7 @@ Scenario: EvergreenJnr_DevicesList_ChecksThatAfterAddingRowsToAStaticListFromADy
 	And User create static list with "StaticListFromADynamicList" name
 	Then "StaticListFromADynamicList" list is displayed to user
 	When User navigates to the "DynamicList13059" list
-	When User clicks the Actions button
+	And User clicks the Actions button
 	Then Actions panel is displayed to the user
 	When User select "Hostname" rows in the grid
 	| SelectedRowsName |
@@ -509,7 +509,7 @@ Scenario: EvergreenJnr_DevicesList_ChecksThatAfterAddingRowsToAStaticListFromASt
 	And User create static list with "FirstStaticList13059" name
 	Then "FirstStaticList13059" list is displayed to user
 	When User navigates to the "All Devices" list
-	When User clicks the Columns button
+	And User clicks the Columns button
 	Then Columns panel is displayed to the user
 	When ColumnName is entered into the search box and the selection is clicked
 	| ColumnName |
@@ -526,7 +526,7 @@ Scenario: EvergreenJnr_DevicesList_ChecksThatAfterAddingRowsToAStaticListFromASt
 	And User create static list with "SecondStaticList13059" name
 	Then "SecondStaticList13059" list is displayed to user
 	When User navigates to the "FirstStaticList13059" list
-	When User clicks the Actions button
+	And User clicks the Actions button
 	Then Actions panel is displayed to the user
 	When User select "Hostname" rows in the grid
 	| SelectedRowsName |
@@ -555,7 +555,7 @@ Scenario: EvergreenJnr_DevicesList_TheSelectedColumnsCategoryIsDisplayedAfterUsi
 	| Operating System   |
 	| Owner Display Name |
 	When User enters "Hostname" text in Search field at Filters Panel
-	When User clears search textbox in Filters panel
+	And User clears search textbox in Filters panel
 	Then the following Filters subcategories are displayed for open category:
 	| Subcategories      |
 	| Device Type        |
@@ -642,7 +642,7 @@ Scenario: EvergreenJnr_ApplicationsList_ChecksThatSubcategoriesOnColumnsPanelAre
 	Then the subcategories are displayed for open category in alphabetical order on Filters panel
 	When User clicks the Columns button
 	Then Columns panel is displayed to the user
-	Then the following subcategories are displayed for Selected Columns category:
+	And the following subcategories are displayed for Selected Columns category:
 	| Subcategories   |
 	| Application     |
 	| Vendor          |
@@ -666,17 +666,17 @@ Scenario: EvergreenJnr_UsersList_ChecksThatSubcategoriesOnColumnsPanelAreDisplay
 	| Department Name    |
 	When User clicks the Columns button
 	Then Columns panel is displayed to the user
-	Then the following subcategories are displayed for Selected Columns category:
+	And the following subcategories are displayed for Selected Columns category:
 	| Subcategories      |
 	| Username           |
 	| Domain             |
 	| Display Name       |
 	| Distinguished Name |
 	| Department Name    |
-	Then User closed "Selected Columns" columns category
+	And User closed "Selected Columns" columns category
 	When User add "Department Full Path" Column from expanded category
 	Then User is expand "Selected Columns" columns category
-	Then the following subcategories are displayed for Selected Columns category:
+	And the following subcategories are displayed for Selected Columns category:
 	| Subcategories        |
 	| Username             |
 	| Domain               |
@@ -702,11 +702,11 @@ Scenario: EvergreenJnr_UsersList_ChecksThatSubcategoriesOnColumnsPanelAreDisplay
 	When User clicks the Filters button
 	Then Filters panel is displayed to the user
 	When User have reset all filters
-	When User clicks the Columns button
+	And User clicks the Columns button
 	Then Columns panel is displayed to the user
-	Then User closed "Selected Columns" columns category
-	Then User is expand "Organisation" columns category
-	Then the following Column subcategories are displayed for open category:
+	And User closed "Selected Columns" columns category
+	And User is expand "Organisation" columns category
+	And the following Column subcategories are displayed for open category:
 	| Subcategories        |
 	| Cost Centre          |
 	| Department Code      |
@@ -722,24 +722,24 @@ Scenario: EvergreenJnr_AllLists_LocationAndUserFiltersEqualsOnUsersAndApplicatio
 	When ColumnName is entered into the search box and the selection is clicked
 	| ColumnName       |
 	| App Count (Used) |
-	When User clicks the Columns button
+	And User clicks the Columns button
 	Then Columns panel is displayed to the user
 	When User removes "Username" column by Column panel
-	When User removes "Domain" column by Column panel
-	When User removes "Display Name" column by Column panel
-	When User removes "Distinguished Name" column by Column panel
-	When User clicks the Filters button
+	And User removes "Domain" column by Column panel
+	And User removes "Display Name" column by Column panel
+	And User removes "Distinguished Name" column by Column panel
+	And User clicks the Filters button
 	Then Filters panel is displayed to the user
 	When User clicks Add New button on the Filter panel
 	Then "User" with "22"category is displayed on Filters panel
-	Then "Location" with "8"category is displayed on Filters panel
+	And "Location" with "8"category is displayed on Filters panel
 	When User clicks "Applications" on the left-hand menu
 	Then "Applications" list should be displayed to the user
 	When User clicks the Filters button
 	Then Filters panel is displayed to the user
 	When User clicks Add New button on the Filter panel
 	Then "User" with "24"category is displayed on Filters panel
-	Then "User Location" with "8"category is displayed on Filters panel
+	And "User Location" with "8"category is displayed on Filters panel
 
 @Evergreen @Mailboxes @EvergreenJnr_Columns @ColumnSectionDisplay @DAS12910
 Scenario: EvergreenJnr_MailboxesList_ChecksThatSubcategoriesOnColumnsPanelIsDisplayedCorrectlyAfterAddingObjectIdFilter
@@ -752,7 +752,7 @@ Scenario: EvergreenJnr_MailboxesList_ChecksThatSubcategoriesOnColumnsPanelIsDisp
 	| 1      |
 	When User clicks the Columns button
 	Then Columns panel is displayed to the user
-	Then the following subcategories are displayed for Selected Columns category:
+	And the following subcategories are displayed for Selected Columns category:
 	| Subcategories         |
 	| Email Address         |
 	| Mailbox Platform      |
@@ -760,11 +760,26 @@ Scenario: EvergreenJnr_MailboxesList_ChecksThatSubcategoriesOnColumnsPanelIsDisp
 	| Mailbox Type          |
 	| Owner Display Name    |
 	| EmailMigra: Object ID |
-	Then There are no errors in the browser console
+	And There are no errors in the browser console
 	When User clicks the Filters button
 	Then Filters panel is displayed to the user
 	When User click Edit button for "EmailMigra: Object ID" filter
-	When User select "Not empty" Operator value
-	When User clicks Save filter button
-	When User create custom list with "Object ID != EMPTY" name
+	And User select "Not empty" Operator value
+	And User clicks Save filter button
+	And User create custom list with "Object ID != EMPTY" name
 	Then "Object ID != EMPTY" list is displayed to user
+
+@Evergreen @Devices @EvergreenJnr_Columns @ColumnSectionDisplay @DAS13419 @Not_Run
+Scenario: EvergreenJnr_DevicesList_ChecksThatColumnsPanelDoesNotIncludeUnpublishedTasks
+	When User clicks "Devices" on the left-hand menu
+	Then "Devices" list should be displayed to the user
+	When User clicks the Columns button
+	Then Columns panel is displayed to the user
+	Then User closed "Selected Columns" columns category
+	Then User is expand "Project Tasks: Windows7Mi" columns category
+	Then the following subcategories are NOT displayed for Selected Columns category:
+	| Subcategories                                   |
+	| Adhoc Information                               |
+	| Targeting Date                                  |
+	| Migration Updates                               |
+	| Windows7Mi: Group Computer Rag Radio Date Owner |

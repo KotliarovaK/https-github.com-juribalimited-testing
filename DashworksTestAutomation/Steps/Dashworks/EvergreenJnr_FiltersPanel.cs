@@ -985,6 +985,15 @@ namespace DashworksTestAutomation.Steps.Dashworks
             Assert.AreEqual(expectedList, actualList, "Subcategory values are different");
         }
 
+        [Then(@"the following subcategories are NOT displayed for Selected Columns category:")]
+        public void ThenTheFollowingSubcategoriesAreNotDisplayedForSelectedColumnsCategory(Table table)
+        {
+            var page = _driver.NowAt<BaseDashboardPage>();
+            var list = table.Rows.SelectMany(row => row.Values).ToList();
+            var actualList = page.SelectedColumnsSubcategoryList.Select(value => value.Text).ToList();
+            //Assert.IsFalse(actualList.Contains(list));
+        }
+
         [Then(@"the following subcategories are displayed for Selected Filters category:")]
         public void ThenTheFollowingSubcategoriesAreDisplayedForSelectedFiltersCategory(Table table)
         {

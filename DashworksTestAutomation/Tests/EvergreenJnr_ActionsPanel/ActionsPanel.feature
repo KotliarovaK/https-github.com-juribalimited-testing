@@ -976,9 +976,9 @@ Scenario: EvergreenJnr_DevicesList_CheckThatClearingAValueResetsSubsequentValues
 	And User selects "Update task value" Bulk Update Type on Action panel
 	And User selects "User Scheduled Test (Jo)" Project on Action panel
 	When User selects "One" Stage on Action panel
-	When User selects "Radio Rag Only Comp" Task on Action panel
+	And User selects "Radio Rag Only Comp" Task on Action panel
 	And User selects "Started" Value on Action panel
-	When User selects "Computer Scheduled Test (Jo)" Project on Action panel
+	And User selects "Computer Scheduled Test (Jo)" Project on Action panel
 	Then Value field is not displayed on Action panel
 	When User clicks the Logout button
 	Then User is logged out
@@ -1020,18 +1020,18 @@ Scenario Outline: EvergreenJnr_DevicesList_ChecksThatDllOptionsAreDisplayedCorre
 	And User selects "Bulk update" in the Actions dropdown
 	And User selects "Update task value" Bulk Update Type on Action panel
 	And User selects "Windows 7 Migration (Computer Scheduled Project)" Project on Action panel
-	When User selects "Computer Information ---- Text fill; Text fill;" Stage on Action panel
-	When User selects "Computer Read Only Task in Self Service" Task on Action panel
+	And User selects "Computer Information ---- Text fill; Text fill;" Stage on Action panel
+	And User selects "Computer Read Only Task in Self Service" Task on Action panel
 	Then the Update Value options are displayed in following order:
 	| Options               |
 	| Update                |
 	| No change             |
-	Then the Update Date options are displayed in following order:
+	And the Update Date options are displayed in following order:
 	| Options   |
 	| Update    |
 	| Remove    |
 	| No change |
-	Then the Update Owner options are displayed in following order:
+	And the Update Owner options are displayed in following order:
 	| Options               |
 	| Update                |
 	| Remove owner and team |
@@ -1048,10 +1048,10 @@ Scenario Outline: EvergreenJnr_DevicesList_ChecksThatDllOptionsAreDisplayedCorre
 	| Update                |
 	| No change             |
 	When User selects "Update" Update Value on Action panel
-	When User selects "Started" Value on Action panel
-	When User selects "No change" Update Date on Action panel
-	When User selects "No change" Update Owner on Action panel
-	When User clicks the "UPDATE" Action button
+	And User selects "Started" Value on Action panel
+	And User selects "No change" Update Date on Action panel
+	And User selects "No change" Update Owner on Action panel
+	And User clicks the "UPDATE" Action button
 	Then the amber message is displayed correctly
 	And User clicks "CANCEL" button on message box
 	Then the amber message is not displayed
@@ -1102,8 +1102,8 @@ Scenario Outline: EvergreenJnr_UsersList_ChecksThatTheNoChangeOptionIsWorkedCorr
 	When ColumnName is entered into the search box and the selection is clicked
 	| ColumnName                               |
 	| Windows7Mi: Perform User Acceptance Test |
-	When User perform search by "<RowName>"
-	When User clicks the Actions button
+	And User perform search by "<RowName>"
+	And User clicks the Actions button
 	Then Actions panel is displayed to the user
 	When User select "Username" rows in the grid
 	| SelectedRowsName |
@@ -1111,32 +1111,32 @@ Scenario Outline: EvergreenJnr_UsersList_ChecksThatTheNoChangeOptionIsWorkedCorr
 	And User selects "Bulk update" in the Actions dropdown
 	And User selects "Update task value" Bulk Update Type on Action panel
 	And User selects "Windows 7 Migration (Computer Scheduled Project)" Project on Action panel
-	When User selects "User Acceptance Test" Stage on Action panel
-	When User selects "Perform User Acceptance Test" Task on Action panel
-	When User selects "Update" Update Value on Action panel
-	When User selects "<NewValue>" Value on Action panel
-	When User selects "No change" Update Date on Action panel
-	When User selects "Update" Update Owner on Action panel
-	When User selects "<NewTeam>" Team on Action panel
-	When User clicks the "UPDATE" Action button
+	And User selects "User Acceptance Test" Stage on Action panel
+	And User selects "Perform User Acceptance Test" Task on Action panel
+	And User selects "Update" Update Value on Action panel
+	And User selects "<NewValue>" Value on Action panel
+	And User selects "No change" Update Date on Action panel
+	And User selects "Update" Update Owner on Action panel
+	And User selects "<NewTeam>" Team on Action panel
+	And User clicks the "UPDATE" Action button
 	Then the amber message is displayed correctly
-	Then User clicks "UPDATE" button on message box
+	And User clicks "UPDATE" button on message box
 	And Success message with "1 of 1 objects were valid for the update. Your changes have successfully been queued." text is displayed on Action panel
-	Then Success message is hidden after five seconds
+	And Success message is hidden after five seconds
 	When User refreshes agGrid
 	Then "<NewValue>" content is displayed in "Windows7Mi: Perform User Acceptance Test" column
 		#returns default object state
 	When User selects "Bulk update" in the Actions dropdown
 	And User selects "Update task value" Bulk Update Type on Action panel
 	And User selects "Windows 7 Migration (Computer Scheduled Project)" Project on Action panel
-	When User selects "User Acceptance Test" Stage on Action panel
-	When User selects "Perform User Acceptance Test" Task on Action panel
-	When User selects "Update" Update Value on Action panel
-	When User selects "<DefaultValue>" Value on Action panel
-	When User selects "No change" Update Date on Action panel
-	When User selects "Update" Update Owner on Action panel
-	When User selects "<DefaultTeam>" Team on Action panel
-	When User clicks the "UPDATE" Action button
+	And User selects "User Acceptance Test" Stage on Action panel
+	And User selects "Perform User Acceptance Test" Task on Action panel
+	And User selects "Update" Update Value on Action panel
+	And User selects "<DefaultValue>" Value on Action panel
+	And User selects "No change" Update Date on Action panel
+	And User selects "Update" Update Owner on Action panel
+	And User selects "<DefaultTeam>" Team on Action panel
+	And User clicks the "UPDATE" Action button
 	Then User clicks "UPDATE" button on message box
 	And Success message with "1 of 1 objects were valid for the update. Your changes have successfully been queued." text is displayed on Action panel
 	When User refreshes agGrid
@@ -1186,8 +1186,8 @@ Scenario Outline: EvergreenJnr_UsersList_ChecksThatTheNoChangeOptionIsWorkedCorr
 	When ColumnName is entered into the search box and the selection is clicked
 	| ColumnName                               |
 	| Windows7Mi: Perform User Acceptance Test |
-	When User perform search by "<RowName>"
-	When User clicks the Actions button
+	And User perform search by "<RowName>"
+	And User clicks the Actions button
 	Then Actions panel is displayed to the user
 	When User select "Username" rows in the grid
 	| SelectedRowsName |
@@ -1195,32 +1195,32 @@ Scenario Outline: EvergreenJnr_UsersList_ChecksThatTheNoChangeOptionIsWorkedCorr
 	And User selects "Bulk update" in the Actions dropdown
 	And User selects "Update task value" Bulk Update Type on Action panel
 	And User selects "Windows 7 Migration (Computer Scheduled Project)" Project on Action panel
-	When User selects "User Acceptance Test" Stage on Action panel
-	When User selects "Perform User Acceptance Test" Task on Action panel
-	When User selects "No change" Update Value on Action panel
-	When User selects "Update" Update Date on Action panel
-	When User selects "<NewDate>" Date on Action panel
-	When User selects "Update" Update Owner on Action panel
-	When User selects "<NewTeam>" Team on Action panel
-	When User clicks the "UPDATE" Action button
+	And User selects "User Acceptance Test" Stage on Action panel
+	And User selects "Perform User Acceptance Test" Task on Action panel
+	And User selects "No change" Update Value on Action panel
+	And User selects "Update" Update Date on Action panel
+	And User selects "<NewDate>" Date on Action panel
+	And User selects "Update" Update Owner on Action panel
+	And User selects "<NewTeam>" Team on Action panel
+	And User clicks the "UPDATE" Action button
 	Then the amber message is displayed correctly
-	Then User clicks "UPDATE" button on message box
+	And User clicks "UPDATE" button on message box
 	And Success message with "1 of 1 objects were valid for the update. Your changes have successfully been queued." text is displayed on Action panel
-	Then Success message is hidden after five seconds
+	And Success message is hidden after five seconds
 	When User refreshes agGrid
 	Then "<DefaultValue>" content is displayed in "Windows7Mi: Perform User Acceptance Test" column
 		#returns default object state
 	When User selects "Bulk update" in the Actions dropdown
 	And User selects "Update task value" Bulk Update Type on Action panel
 	And User selects "Windows 7 Migration (Computer Scheduled Project)" Project on Action panel
-	When User selects "User Acceptance Test" Stage on Action panel
-	When User selects "Perform User Acceptance Test" Task on Action panel
-	When User selects "No change" Update Value on Action panel
-	When User selects "Update" Update Date on Action panel
-	When User selects "<DefaultDate>" Date on Action panel
-	When User selects "Update" Update Owner on Action panel
-	When User selects "<DefaultTeam>" Team on Action panel
-	When User clicks the "UPDATE" Action button
+	And User selects "User Acceptance Test" Stage on Action panel
+	And User selects "Perform User Acceptance Test" Task on Action panel
+	And User selects "No change" Update Value on Action panel
+	And User selects "Update" Update Date on Action panel
+	And User selects "<DefaultDate>" Date on Action panel
+	And User selects "Update" Update Owner on Action panel
+	And User selects "<DefaultTeam>" Team on Action panel
+	And User clicks the "UPDATE" Action button
 	Then User clicks "UPDATE" button on message box
 	And Success message with "1 of 1 objects were valid for the update. Your changes have successfully been queued." text is displayed on Action panel
 	When User refreshes agGrid
@@ -1270,8 +1270,8 @@ Scenario Outline: EvergreenJnr_UsersList_ChecksThatTheNoChangeOptionIsWorkedCorr
 	When ColumnName is entered into the search box and the selection is clicked
 	| ColumnName                               |
 	| Windows7Mi: Perform User Acceptance Test |
-	When User perform search by "<RowName>"
-	When User clicks the Actions button
+	And User perform search by "<RowName>"
+	And User clicks the Actions button
 	Then Actions panel is displayed to the user
 	When User select "Username" rows in the grid
 	| SelectedRowsName |
@@ -1279,16 +1279,16 @@ Scenario Outline: EvergreenJnr_UsersList_ChecksThatTheNoChangeOptionIsWorkedCorr
 	And User selects "Bulk update" in the Actions dropdown
 	And User selects "Update task value" Bulk Update Type on Action panel
 	And User selects "Windows 7 Migration (Computer Scheduled Project)" Project on Action panel
-	When User selects "User Acceptance Test" Stage on Action panel
-	When User selects "Perform User Acceptance Test" Task on Action panel
-	When User selects "Update" Update Value on Action panel
-	When User selects "<NewValue>" Value on Action panel
-	When User selects "Update" Update Date on Action panel
-	When User selects "<NewDate>" Date on Action panel
-	When User selects "No change" Update Owner on Action panel
-	When User clicks the "UPDATE" Action button
+	And User selects "User Acceptance Test" Stage on Action panel
+	And User selects "Perform User Acceptance Test" Task on Action panel
+	And User selects "Update" Update Value on Action panel
+	And User selects "<NewValue>" Value on Action panel
+	And User selects "Update" Update Date on Action panel
+	And User selects "<NewDate>" Date on Action panel
+	And User selects "No change" Update Owner on Action panel
+	And User clicks the "UPDATE" Action button
 	Then the amber message is displayed correctly
-	Then User clicks "UPDATE" button on message box
+	And User clicks "UPDATE" button on message box
 	And Success message with "1 of 1 objects were valid for the update. Your changes have successfully been queued." text is displayed on Action panel
 	Then Success message is hidden after five seconds
 	When User refreshes agGrid
@@ -1297,14 +1297,14 @@ Scenario Outline: EvergreenJnr_UsersList_ChecksThatTheNoChangeOptionIsWorkedCorr
 	When User selects "Bulk update" in the Actions dropdown
 	And User selects "Update task value" Bulk Update Type on Action panel
 	And User selects "Windows 7 Migration (Computer Scheduled Project)" Project on Action panel
-	When User selects "User Acceptance Test" Stage on Action panel
-	When User selects "Perform User Acceptance Test" Task on Action panel
-	When User selects "Update" Update Value on Action panel
-	When User selects "<DefaultValue>" Value on Action panel
-	When User selects "Update" Update Date on Action panel
-	When User selects "<DefaultDate>" Date on Action panel
-	When User selects "No change" Update Owner on Action panel
-	When User clicks the "UPDATE" Action button
+	And User selects "User Acceptance Test" Stage on Action panel
+	And User selects "Perform User Acceptance Test" Task on Action panel
+	And User selects "Update" Update Value on Action panel
+	And User selects "<DefaultValue>" Value on Action panel
+	And User selects "Update" Update Date on Action panel
+	And User selects "<DefaultDate>" Date on Action panel
+	And User selects "No change" Update Owner on Action panel
+	And User clicks the "UPDATE" Action button
 	Then User clicks "UPDATE" button on message box
 	And Success message with "1 of 1 objects were valid for the update. Your changes have successfully been queued." text is displayed on Action panel
 	When User refreshes agGrid
@@ -1354,8 +1354,8 @@ Scenario: EvergreenJnr_UsersList_ChecksThatDateRemovingIsWorksCorrectly
 	When ColumnName is entered into the search box and the selection is clicked
 	| ColumnName                               |
 	| Windows7Mi: Perform User Acceptance Test |
-	When User perform search by "LZI970280"
-	When User clicks the Actions button
+	And User perform search by "LZI970280"
+	And User clicks the Actions button
 	Then Actions panel is displayed to the user
 	When User select "Username" rows in the grid
 	| SelectedRowsName |
@@ -1363,15 +1363,15 @@ Scenario: EvergreenJnr_UsersList_ChecksThatDateRemovingIsWorksCorrectly
 	And User selects "Bulk update" in the Actions dropdown
 	And User selects "Update task value" Bulk Update Type on Action panel
 	And User selects "Windows 7 Migration (Computer Scheduled Project)" Project on Action panel
-	When User selects "User Acceptance Test" Stage on Action panel
-	When User selects "Perform User Acceptance Test" Task on Action panel
-	When User selects "Update" Update Value on Action panel
-	When User selects "Complete" Value on Action panel
-	When User selects "Remove" Update Date on Action panel
-	When User selects "No change" Update Owner on Action panel
-	When User clicks the "UPDATE" Action button
+	And User selects "User Acceptance Test" Stage on Action panel
+	And User selects "Perform User Acceptance Test" Task on Action panel
+	And User selects "Update" Update Value on Action panel
+	And User selects "Complete" Value on Action panel
+	And User selects "Remove" Update Date on Action panel
+	And User selects "No change" Update Owner on Action panel
+	And User clicks the "UPDATE" Action button
 	Then the amber message is displayed correctly
-	Then User clicks "UPDATE" button on message box
+	And User clicks "UPDATE" button on message box
 	And Success message with "1 of 1 objects were valid for the update. Your changes have successfully been queued." text is displayed on Action panel
 	Then Success message is hidden after five seconds
 	When User refreshes agGrid
@@ -1380,16 +1380,16 @@ Scenario: EvergreenJnr_UsersList_ChecksThatDateRemovingIsWorksCorrectly
 	When User selects "Bulk update" in the Actions dropdown
 	And User selects "Update task value" Bulk Update Type on Action panel
 	And User selects "Windows 7 Migration (Computer Scheduled Project)" Project on Action panel
-	When User selects "User Acceptance Test" Stage on Action panel
-	When User selects "Perform User Acceptance Test" Task on Action panel
-	When User selects "Update" Update Value on Action panel
-	When User selects "Failed" Value on Action panel
-	When User selects "Update" Update Date on Action panel
-	When User selects "Sep 03, 2018" Date on Action panel
-	When User selects "No change" Update Owner on Action panel
-	When User clicks the "UPDATE" Action button
+	And User selects "User Acceptance Test" Stage on Action panel
+	And User selects "Perform User Acceptance Test" Task on Action panel
+	And User selects "Update" Update Value on Action panel
+	And User selects "Failed" Value on Action panel
+	And User selects "Update" Update Date on Action panel
+	And User selects "Sep 03, 2018" Date on Action panel
+	And User selects "No change" Update Owner on Action panel
+	And User clicks the "UPDATE" Action button
 	Then the amber message is displayed correctly
-	Then User clicks "UPDATE" button on message box
+	And User clicks "UPDATE" button on message box
 	And Success message with "1 of 1 objects were valid for the update. Your changes have successfully been queued." text is displayed on Action panel
 	When User refreshes agGrid
 	Then "Failed" content is displayed in "Windows7Mi: Perform User Acceptance Test" column
@@ -1430,8 +1430,8 @@ Scenario: EvergreenJnr_UsersList_ChecksThatOwnerRemovingIsWorksCorrectly
 	When ColumnName is entered into the search box and the selection is clicked
 	| ColumnName                               |
 	| Windows7Mi: Perform User Acceptance Test |
-	When User perform search by "LZI970280"
-	When User clicks the Actions button
+	And User perform search by "LZI970280"
+	And User clicks the Actions button
 	Then Actions panel is displayed to the user
 	When User select "Username" rows in the grid
 	| SelectedRowsName |
@@ -1439,32 +1439,32 @@ Scenario: EvergreenJnr_UsersList_ChecksThatOwnerRemovingIsWorksCorrectly
 	And User selects "Bulk update" in the Actions dropdown
 	And User selects "Update task value" Bulk Update Type on Action panel
 	And User selects "Windows 7 Migration (Computer Scheduled Project)" Project on Action panel
-	When User selects "User Acceptance Test" Stage on Action panel
-	When User selects "Perform User Acceptance Test" Task on Action panel
-	When User selects "No change" Update Value on Action panel
-	When User selects "Update" Update Date on Action panel
-	When User selects "Aug 30, 2013" Date on Action panel
-	When User selects "Remove owner and team" Update Owner on Action panel
-	When User clicks the "UPDATE" Action button
+	And User selects "User Acceptance Test" Stage on Action panel
+	And User selects "Perform User Acceptance Test" Task on Action panel
+	And User selects "No change" Update Value on Action panel
+	And User selects "Update" Update Date on Action panel
+	And User selects "Aug 30, 2013" Date on Action panel
+	And User selects "Remove owner and team" Update Owner on Action panel
+	And User clicks the "UPDATE" Action button
 	Then the amber message is displayed correctly
-	Then User clicks "UPDATE" button on message box
+	And User clicks "UPDATE" button on message box
 	And Success message with "1 of 1 objects were valid for the update. Your changes have successfully been queued." text is displayed on Action panel
-	Then Success message is hidden after five seconds
+	And Success message is hidden after five seconds
 	When User refreshes agGrid
 	Then "Failed" content is displayed in "Windows7Mi: Perform User Acceptance Test" column
 		#returns default object state
 	When User selects "Bulk update" in the Actions dropdown
 	And User selects "Update task value" Bulk Update Type on Action panel
 	And User selects "Windows 7 Migration (Computer Scheduled Project)" Project on Action panel
-	When User selects "User Acceptance Test" Stage on Action panel
-	When User selects "Perform User Acceptance Test" Task on Action panel
-	When User selects "No change" Update Value on Action panel
-	When User selects "Update" Update Date on Action panel
-	When User selects "Sep 03, 2018" Date on Action panel
-	When User selects "No change" Update Owner on Action panel
-	When User clicks the "UPDATE" Action button
+	And User selects "User Acceptance Test" Stage on Action panel
+	And User selects "Perform User Acceptance Test" Task on Action panel
+	And User selects "No change" Update Value on Action panel
+	And User selects "Update" Update Date on Action panel
+	And User selects "Sep 03, 2018" Date on Action panel
+	And User selects "No change" Update Owner on Action panel
+	And User clicks the "UPDATE" Action button
 	Then the amber message is displayed correctly
-	Then User clicks "UPDATE" button on message box
+	And User clicks "UPDATE" button on message box
 	And Success message with "1 of 1 objects were valid for the update. Your changes have successfully been queued." text is displayed on Action panel
 	When User refreshes agGrid
 	Then "Failed" content is displayed in "Windows7Mi: Perform User Acceptance Test" column
@@ -1496,15 +1496,15 @@ Scenario: EvergreenJnr_UsersList_CheckThatBulkUpdateOfThousandsOfRowsUpdateToSuc
 	When User clicks the Actions button
 	Then Actions panel is displayed to the user
 	When User select all rows
-	When User selects "Bulk update" in the Actions dropdown
+	And User selects "Bulk update" in the Actions dropdown
 	And User selects "Update task value" Bulk Update Type on Action panel
 	And User selects "Havoc (Big Data)" Project on Action panel
-	When User selects "Stage 0" Stage on Action panel
-	When User selects "Task 0" Task on Action panel
-	When User selects "Started" Value on Action panel
-	When User clicks the "UPDATE" Action button
+	And User selects "Stage 0" Stage on Action panel
+	And User selects "Task 0" Task on Action panel
+	And User selects "Started" Value on Action panel
+	And User clicks the "UPDATE" Action button
 	Then the amber message is displayed correctly
-	Then User clicks "UPDATE" button on message box
+	And User clicks "UPDATE" button on message box
 	And Success message with "7578 of 7578 objects were valid for the update. Your changes have successfully been queued." text is displayed on Action panel
 	When User refreshes agGrid
 	Then "Started" content is displayed in "Havoc(BigD: Task 0" column
