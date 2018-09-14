@@ -70,9 +70,6 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_QueryStrings
         
         [NUnit.Framework.TestAttribute()]
         [NUnit.Framework.Retry(2)]
-        
-        
-        
         [NUnit.Framework.DescriptionAttribute("EvergreenJnr_QueryString_DateComboAndApostrophe")]
         [NUnit.Framework.CategoryAttribute("Evergreen")]
         [NUnit.Framework.CategoryAttribute("Users")]
@@ -123,9 +120,6 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_QueryStrings
         
         [NUnit.Framework.TestAttribute()]
         [NUnit.Framework.Retry(2)]
-        
-        
-        
         [NUnit.Framework.DescriptionAttribute("EvergreenJnr_QueryString_Complex")]
         [NUnit.Framework.CategoryAttribute("Evergreen")]
         [NUnit.Framework.CategoryAttribute("Users")]
@@ -170,9 +164,6 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_QueryStrings
         
         [NUnit.Framework.TestAttribute()]
         [NUnit.Framework.Retry(2)]
-        
-        
-        
         [NUnit.Framework.DescriptionAttribute("EvergreenJnr_QueryString_AllLists")]
         [NUnit.Framework.CategoryAttribute("Evergreen")]
         [NUnit.Framework.CategoryAttribute("Users")]
@@ -217,9 +208,6 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_QueryStrings
         
         [NUnit.Framework.TestAttribute()]
         [NUnit.Framework.Retry(2)]
-        
-        
-        
         [NUnit.Framework.DescriptionAttribute("EvergreenJnr_QueryString_Applications")]
         [NUnit.Framework.CategoryAttribute("Evergreen")]
         [NUnit.Framework.CategoryAttribute("Applications")]
@@ -257,9 +245,6 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_QueryStrings
         
         [NUnit.Framework.TestAttribute()]
         [NUnit.Framework.Retry(2)]
-        
-        
-        
         [NUnit.Framework.DescriptionAttribute("EvergreenJnr_QueryString_Devices")]
         [NUnit.Framework.CategoryAttribute("Evergreen")]
         [NUnit.Framework.CategoryAttribute("Devices")]
@@ -289,9 +274,6 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_QueryStrings
         
         [NUnit.Framework.TestAttribute()]
         [NUnit.Framework.Retry(2)]
-        
-        
-        
         [NUnit.Framework.DescriptionAttribute("EvergreenJnr_QueryString_Users")]
         [NUnit.Framework.CategoryAttribute("Evergreen")]
         [NUnit.Framework.CategoryAttribute("Users")]
@@ -323,9 +305,6 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_QueryStrings
         
         [NUnit.Framework.TestAttribute()]
         [NUnit.Framework.Retry(2)]
-        
-        
-        
         [NUnit.Framework.DescriptionAttribute("EvergreenJnr_QueryString_Mailboxes")]
         [NUnit.Framework.CategoryAttribute("Evergreen")]
         [NUnit.Framework.CategoryAttribute("Mailboxes")]
@@ -373,15 +352,13 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_QueryStrings
         
         [NUnit.Framework.TestAttribute()]
         [NUnit.Framework.Retry(2)]
-        
-        
-        
         [NUnit.Framework.DescriptionAttribute("EvergreenJnr_QueryString_ApplicationsOnDevicesList")]
         [NUnit.Framework.CategoryAttribute("Evergreen")]
         [NUnit.Framework.CategoryAttribute("Devices")]
         [NUnit.Framework.CategoryAttribute("EvergreenJnr_QueryStrings")]
         [NUnit.Framework.CategoryAttribute("Query")]
         [NUnit.Framework.CategoryAttribute("DAS10789")]
+        [NUnit.Framework.CategoryAttribute("Not_Run")]
         public virtual void EvergreenJnr_QueryString_ApplicationsOnDevicesList()
         {
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("EvergreenJnr_QueryString_ApplicationsOnDevicesList", new string[] {
@@ -389,7 +366,8 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_QueryStrings
                         "Devices",
                         "EvergreenJnr_QueryStrings",
                         "Query",
-                        "DAS10789"});
+                        "DAS10789",
+                        "Not_Run"});
             this.ScenarioSetup(scenarioInfo);
             this.FeatureBackground();
             TechTalk.SpecFlow.Table table8 = new TechTalk.SpecFlow.Table(new string[] {
@@ -410,9 +388,6 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_QueryStrings
         
         [NUnit.Framework.TestAttribute()]
         [NUnit.Framework.Retry(2)]
-        
-        
-        
         [NUnit.Framework.DescriptionAttribute("EvergreenJnr_QueryString_AllListsSortByKeys")]
         [NUnit.Framework.CategoryAttribute("Evergreen")]
         [NUnit.Framework.CategoryAttribute("Users")]
@@ -461,9 +436,6 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_QueryStrings
         
         [NUnit.Framework.TestAttribute()]
         [NUnit.Framework.Retry(2)]
-        
-        
-        
         [NUnit.Framework.DescriptionAttribute("EvergreenJnr_QueryString_AdvancedFilterRowCountCheckForDeviceList")]
         [NUnit.Framework.CategoryAttribute("Evergreen")]
         [NUnit.Framework.CategoryAttribute("Devices")]
@@ -538,9 +510,6 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_QueryStrings
         
         [NUnit.Framework.TestAttribute()]
         [NUnit.Framework.Retry(2)]
-        
-        
-        
         [NUnit.Framework.DescriptionAttribute("EvergreenJnr_QueryString_AdvancedFilterRowCountAndFilterTextCheckForDeviceList")]
         [NUnit.Framework.CategoryAttribute("Evergreen")]
         [NUnit.Framework.CategoryAttribute("Devices")]
@@ -621,9 +590,6 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_QueryStrings
         
         [NUnit.Framework.TestAttribute()]
         [NUnit.Framework.Retry(2)]
-        
-        
-        
         [NUnit.Framework.DescriptionAttribute("EvergreenJnr_QueryString_AdvancedFilterRowCountCheckForUserList")]
         [NUnit.Framework.CategoryAttribute("Evergreen")]
         [NUnit.Framework.CategoryAttribute("Users")]
@@ -690,9 +656,6 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_QueryStrings
         
         [NUnit.Framework.TestAttribute()]
         [NUnit.Framework.Retry(2)]
-        
-        
-        
         [NUnit.Framework.DescriptionAttribute("EvergreenJnr_QueryString_AdvancedFilterRowCountAndFilterTextCheckForUserList")]
         [NUnit.Framework.CategoryAttribute("Evergreen")]
         [NUnit.Framework.CategoryAttribute("Users")]
