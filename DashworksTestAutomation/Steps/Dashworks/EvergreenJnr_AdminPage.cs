@@ -1091,6 +1091,7 @@ namespace DashworksTestAutomation.Steps.Dashworks
             var page = _driver.NowAt<BaseGridPage>();
             _driver.WaitWhileControlIsNotDisplayed<BaseGridPage>(() => page.InfoMessage);
             Assert.AreEqual("rgba(49, 122, 193, 1)", page.GetMessageColor());//Blue color
+            Assert.AreEqual("1530px", page.GetMessageWidthOnAdminPage());
             StringAssert.Contains(text, page.InfoMessage.Text, "Success Message is not displayed");
         }
 
@@ -1251,7 +1252,7 @@ namespace DashworksTestAutomation.Steps.Dashworks
             var projectElement = _driver.NowAt<BaseGridPage>();
             projectElement.PlusButton.Click();
         }
-
+        
         [When(@"User selects all objects to the Project")]
         [When(@"User cancels the selection objects in the Project")]
         public void WhenUserSelectsAllObjects()
