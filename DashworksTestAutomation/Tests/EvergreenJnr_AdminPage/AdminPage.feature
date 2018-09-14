@@ -3892,7 +3892,6 @@ Examples:
 	| All Users     | Users to add (0 of 1 selected)     | UsersList12157     | Device Scope | DevicesList12157 | Devices       | Devices to add (0 of 0 selected) | Applications to add (0 of 0 selected) |
 	| All Mailboxes | Mailboxes to add (0 of 1 selected) | MailboxesList12157 | User Scope   | UsersList12157   | Users         | Users to add (0 of 0 selected)   | Applications to add (0 of 0 selected) |
 
-
 @Evergreen @Admin @EvergreenJnr_AdminPage @AdminPage @DAS13428 @Delete_Newly_Created_Project
 Scenario: EvergreenJnr_AdminPage_TheGreenBannerIsNotDisplayedIfBannerWasBeShownOnce
 	When User clicks Admin on the left-hand menu

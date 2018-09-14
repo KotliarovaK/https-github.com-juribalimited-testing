@@ -76,7 +76,7 @@ Runs Evergreen URL query strings for the Mailboxes List.
 	| EmailMigra filters | evergreen/#/mailboxes?$filter=(project_48_inScope%20EQUALS%20('1')%20AND%20project_48_objectStatus%20EQUALS%20('Onboarded'))&$select=principalEmailAddress,mailboxPlatform,serverName,mailboxType,ownerDisplayName,project_48_inScope,project_48_objectStatus                                                      |
 	Then agGrid Main Object List is returned with data
 
-@Evergreen @Devices @EvergreenJnr_QueryStrings @Query @DAS10789
+@Evergreen @Devices @EvergreenJnr_QueryStrings @Query @DAS10789 @Not_Run
 Scenario: EvergreenJnr_QueryString_ApplicationsOnDevicesList
 Runs Evergreen URL query strings for the Applications on Devices List.
 	When Evergreen QueryStringURL is entered for Simple QueryType

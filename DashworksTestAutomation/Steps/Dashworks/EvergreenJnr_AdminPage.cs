@@ -586,6 +586,7 @@ namespace DashworksTestAutomation.Steps.Dashworks
         public void ThenIsDisplayedInTheTabHeaderOnTheAdminPage(string text)
         {
             var page = _driver.NowAt<BaseGridPage>();
+            _driver.WaitForDataLoading();
             Assert.IsTrue(page.GetTabHeaderInTheScopeChangesSection(text),
                 $"{text} is not displayed in the Project Scope Changes section");
         }
