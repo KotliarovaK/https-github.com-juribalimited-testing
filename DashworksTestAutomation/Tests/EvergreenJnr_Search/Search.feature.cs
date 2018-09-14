@@ -73,6 +73,7 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_Search
         [NUnit.Framework.Retry(2)]
         
         
+        
         [NUnit.Framework.DescriptionAttribute("EvergreenJnr_DevicesList_CheckThatQuickSearchResetWhenMovingBetweenLists")]
         [NUnit.Framework.CategoryAttribute("Evergreen")]
         [NUnit.Framework.CategoryAttribute("Devices")]
@@ -117,6 +118,7 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_Search
         [NUnit.Framework.Retry(2)]
         
         
+        
         [NUnit.Framework.DescriptionAttribute("EvergreenJnr_DevicesList_CheckThatQuickSearchDoesntTriggersNewListMenu")]
         [NUnit.Framework.CategoryAttribute("Evergreen")]
         [NUnit.Framework.CategoryAttribute("Devices")]
@@ -149,6 +151,7 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_Search
         
         [NUnit.Framework.TestAttribute()]
         [NUnit.Framework.Retry(2)]
+        
         
         
         [NUnit.Framework.DescriptionAttribute("EvergreenJnr_AllLists_CheckSearchFilterAndTableContentDuringNavigationBetweenPage" +
@@ -237,6 +240,7 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_Search
         [NUnit.Framework.Retry(2)]
         
         
+        
         [NUnit.Framework.DescriptionAttribute("EvergreenJnr_DevicesList_SearchTests")]
         [NUnit.Framework.CategoryAttribute("Evergreen")]
         [NUnit.Framework.CategoryAttribute("Devices")]
@@ -300,6 +304,7 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_Search
         [NUnit.Framework.Retry(2)]
         
         
+        
         [NUnit.Framework.DescriptionAttribute("EvergreenJnr_DevicesList_ClearingSearchReturnsTheFullDataSet")]
         [NUnit.Framework.CategoryAttribute("Evergreen")]
         [NUnit.Framework.CategoryAttribute("Devices")]
@@ -339,6 +344,7 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_Search
         [NUnit.Framework.Retry(2)]
         
         
+        
         [NUnit.Framework.DescriptionAttribute("EvergreenJnr_UsersList_ClearingSearchReturnsTheFullDataSet")]
         [NUnit.Framework.CategoryAttribute("Evergreen")]
         [NUnit.Framework.CategoryAttribute("Users")]
@@ -376,6 +382,7 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_Search
         
         [NUnit.Framework.TestAttribute()]
         [NUnit.Framework.Retry(2)]
+        
         
         
         [NUnit.Framework.DescriptionAttribute("EvergreenJnr_DevicesList_Search_NoDevicesFound")]
@@ -430,6 +437,7 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_Search
         [NUnit.Framework.Retry(2)]
         
         
+        
         [NUnit.Framework.DescriptionAttribute("EvergreenJnr_DevicesList_Search_CheckThatGlobalSearchFieldHaveAResetButton")]
         [NUnit.Framework.CategoryAttribute("Evergreen")]
         [NUnit.Framework.CategoryAttribute("Devices")]
@@ -457,6 +465,7 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_Search
         [NUnit.Framework.Retry(2)]
         
         
+        
         [NUnit.Framework.DescriptionAttribute("EvergreenJnr_DevicesList_Search_CheckThatTableSearchFieldHaveAResetButton")]
         [NUnit.Framework.CategoryAttribute("Evergreen")]
         [NUnit.Framework.CategoryAttribute("Devices")]
@@ -482,6 +491,7 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_Search
         
         [NUnit.Framework.TestAttribute()]
         [NUnit.Framework.Retry(2)]
+        
         
         
         [NUnit.Framework.DescriptionAttribute("EvergreenJnr_DevicesList_Search_CheckThatSearchFieldHaveResetButtonAtFilterPanel")]
@@ -514,6 +524,7 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_Search
         [NUnit.Framework.Retry(2)]
         
         
+        
         [NUnit.Framework.DescriptionAttribute("EvergreenJnr_DevicesList_Search_CheckThatSearchFieldHaveResetButtonAtColumnPanel")]
         [NUnit.Framework.CategoryAttribute("Evergreen")]
         [NUnit.Framework.CategoryAttribute("Devices")]
@@ -541,6 +552,7 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_Search
         
         [NUnit.Framework.TestAttribute()]
         [NUnit.Framework.Retry(2)]
+        
         
         
         [NUnit.Framework.DescriptionAttribute("EvergreenJnr_DevicesList_Search_CheckThatMultiSelectFilterSearchFieldHaveResetBut" +
@@ -575,6 +587,7 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_Search
         [NUnit.Framework.Retry(2)]
         
         
+        
         [NUnit.Framework.DescriptionAttribute("EvergreenJnr_DevicesList_Search_CheckThatSearchFieldHaveResetButtonAtListPanel")]
         [NUnit.Framework.CategoryAttribute("Evergreen")]
         [NUnit.Framework.CategoryAttribute("Devices")]
@@ -607,6 +620,7 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_Search
         
         [NUnit.Framework.TestAttribute()]
         [NUnit.Framework.Retry(2)]
+        
         
         
         [NUnit.Framework.DescriptionAttribute("EvergreenJnr_AllLists_Search_CheckThat500ErrorMessageIsNotDisplayedAfterEnteringT" +
@@ -645,6 +659,7 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_Search
         
         [NUnit.Framework.TestAttribute()]
         [NUnit.Framework.Retry(2)]
+        
         
         
         [NUnit.Framework.DescriptionAttribute("EvergreenJnr_AllLists_Search_CheckThatTableSearchIsWorkingCorrectly")]
@@ -693,6 +708,7 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_Search
         [NUnit.Framework.Retry(2)]
         
         
+        
         [NUnit.Framework.DescriptionAttribute("EvergreenJnr_ApplicationsLists_Search_CheckThatTableSearchIsWorkingCorrectlyForAp" +
             "plicationColumn")]
         [NUnit.Framework.CategoryAttribute("Evergreen")]
@@ -726,6 +742,7 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_Search
         
         [NUnit.Framework.TestAttribute()]
         [NUnit.Framework.Retry(2)]
+        
         
         
         [NUnit.Framework.DescriptionAttribute("EvergreenJnr_DevicesLists_Search_CheckThatTableSearchWorksCorrectlyForOwnerDispla" +
@@ -781,6 +798,7 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_Search
         
         [NUnit.Framework.TestAttribute()]
         [NUnit.Framework.Retry(2)]
+        
         
         
         [NUnit.Framework.DescriptionAttribute("EvergreenJnr_DevicesLists_Search_CheckThatTableSearchWorksCorrectlyForOwnerUserna" +
@@ -845,6 +863,7 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_Search
         [NUnit.Framework.Retry(2)]
         
         
+        
         [NUnit.Framework.DescriptionAttribute("EvergreenJnr_UsersLists_Search_CheckThatTableSearchWorksCorrectlyForDisplayNameCo" +
             "lumn")]
         [NUnit.Framework.CategoryAttribute("Evergreen")]
@@ -898,6 +917,7 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_Search
         
         [NUnit.Framework.TestAttribute()]
         [NUnit.Framework.Retry(2)]
+        
         
         
         [NUnit.Framework.DescriptionAttribute("EvergreenJnr_MailboxesLists_Search_CheckThatTableSearchWorksCorrectlyForOwnerDisp" +
@@ -957,6 +977,7 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_Search
         
         [NUnit.Framework.TestAttribute()]
         [NUnit.Framework.Retry(2)]
+        
         
         
         [NUnit.Framework.DescriptionAttribute("EvergreenJnr_MailboxesLists_Search_CheckThatTableSearchWorksCorrectlyForOwnerUser" +
@@ -1025,6 +1046,7 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_Search
         [NUnit.Framework.Retry(2)]
         
         
+        
         [NUnit.Framework.DescriptionAttribute("EvergreenJnr_DevicesList_Search_CheckThatRowCountIsNotDisplayedWhenNoObjectsAreFo" +
             "undAfterUsingAgGrid")]
         [NUnit.Framework.CategoryAttribute("Evergreen")]
@@ -1058,6 +1080,7 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_Search
         
         [NUnit.Framework.TestAttribute()]
         [NUnit.Framework.Retry(2)]
+        
         
         
         [NUnit.Framework.DescriptionAttribute("EvergreenJnr_DevicesLists_Search_CheckThatValidationForSpecialCharactersInSearchE" +
@@ -1095,6 +1118,7 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_Search
         [NUnit.Framework.Retry(2)]
         
         
+        
         [NUnit.Framework.DescriptionAttribute("EvergreenJnr_DevicesList_Search_ChecksThatRowCountIsResetBackToTheFullRowCountAft" +
             "erClickingTheSearchCrossButton")]
         [NUnit.Framework.CategoryAttribute("Evergreen")]
@@ -1125,6 +1149,7 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_Search
         
         [NUnit.Framework.TestAttribute()]
         [NUnit.Framework.Retry(2)]
+        
         
         
         [NUnit.Framework.DescriptionAttribute("EvergreenJnr_ApplicationsList_Search_ChecksThatRowCountIsResetBackToTheFullRowCou" +
