@@ -137,6 +137,7 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_ActionsPanel
         [NUnit.Framework.CategoryAttribute("Evergreen")]
         [NUnit.Framework.CategoryAttribute("Users")]
         [NUnit.Framework.CategoryAttribute("EvergreenJnr_ActionsPanel")]
+        [NUnit.Framework.CategoryAttribute("DAS12864")]
         [NUnit.Framework.CategoryAttribute("DAS12932")]
         [NUnit.Framework.CategoryAttribute("DAS13262")]
         public virtual void EvergreenJnr_UsersList_CheckThatUserWithoutRelevantRolesCannotSeeBulkUpdateOptionInActionsPanel()
@@ -146,6 +147,7 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_ActionsPanel
                         "Evergreen",
                         "Users",
                         "EvergreenJnr_ActionsPanel",
+                        "DAS12864",
                         "DAS12932",
                         "DAS13262"});
             this.ScenarioSetup(scenarioInfo);
@@ -228,6 +230,7 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_ActionsPanel
         [NUnit.Framework.CategoryAttribute("Devices")]
         [NUnit.Framework.CategoryAttribute("EvergreenJnr_ActionsPanel")]
         [NUnit.Framework.CategoryAttribute("BulkUpdate")]
+        [NUnit.Framework.CategoryAttribute("DAS12864")]
         [NUnit.Framework.CategoryAttribute("DAS12932")]
         [NUnit.Framework.CategoryAttribute("DAS13261")]
         public virtual void EvergreenJnr_DevicesList_CheckThatUserWithoutJustTheProjectAdministratorRoleCanStillBulkUpdateObjects()
@@ -238,6 +241,7 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_ActionsPanel
                         "Devices",
                         "EvergreenJnr_ActionsPanel",
                         "BulkUpdate",
+                        "DAS12864",
                         "DAS12932",
                         "DAS13261"});
             this.ScenarioSetup(scenarioInfo);
@@ -324,6 +328,7 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_ActionsPanel
         [NUnit.Framework.CategoryAttribute("Applications")]
         [NUnit.Framework.CategoryAttribute("EvergreenJnr_ActionsPanel")]
         [NUnit.Framework.CategoryAttribute("BulkUpdate")]
+        [NUnit.Framework.CategoryAttribute("DAS12864")]
         [NUnit.Framework.CategoryAttribute("DAS12932")]
         [NUnit.Framework.CategoryAttribute("DAS13261")]
         public virtual void EvergreenJnr_ApplicationsList_CheckThatUserWithoutJustTheProjectBulkUpdaterRoleCanStillBulkUpdateObjects()
@@ -334,6 +339,7 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_ActionsPanel
                         "Applications",
                         "EvergreenJnr_ActionsPanel",
                         "BulkUpdate",
+                        "DAS12864",
                         "DAS12932",
                         "DAS13261"});
             this.ScenarioSetup(scenarioInfo);
@@ -1134,6 +1140,7 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_ActionsPanel
         [NUnit.Framework.CategoryAttribute("Devices")]
         [NUnit.Framework.CategoryAttribute("EvergreenJnr_ActionsPanel")]
         [NUnit.Framework.CategoryAttribute("BulkUpdate")]
+        [NUnit.Framework.CategoryAttribute("DAS12864")]
         [NUnit.Framework.CategoryAttribute("DAS12863")]
         [NUnit.Framework.CategoryAttribute("DAS13266")]
         [NUnit.Framework.CategoryAttribute("DAS13284")]
@@ -1145,6 +1152,7 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_ActionsPanel
                         "Devices",
                         "EvergreenJnr_ActionsPanel",
                         "BulkUpdate",
+                        "DAS12864",
                         "DAS12863",
                         "DAS13266",
                         "DAS13284"});
@@ -1249,6 +1257,7 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_ActionsPanel
         [NUnit.Framework.CategoryAttribute("Devices")]
         [NUnit.Framework.CategoryAttribute("EvergreenJnr_ActionsPanel")]
         [NUnit.Framework.CategoryAttribute("BulkUpdate")]
+        [NUnit.Framework.CategoryAttribute("DAS12864")]
         [NUnit.Framework.CategoryAttribute("DAS12863")]
         [NUnit.Framework.CategoryAttribute("DAS13277")]
         public virtual void EvergreenJnr_DevicesList_ChecksThatActionsPanelWorkedCorrectlyAfterCickOnCancelButton()
@@ -1259,6 +1268,7 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_ActionsPanel
                         "Devices",
                         "EvergreenJnr_ActionsPanel",
                         "BulkUpdate",
+                        "DAS12864",
                         "DAS12863",
                         "DAS13277"});
             this.ScenarioSetup(scenarioInfo);
@@ -1530,6 +1540,7 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_ActionsPanel
         [NUnit.Framework.CategoryAttribute("AllLists")]
         [NUnit.Framework.CategoryAttribute("EvergreenJnr_ActionsPanel")]
         [NUnit.Framework.CategoryAttribute("BulkUpdate")]
+        [NUnit.Framework.CategoryAttribute("DAS12864")]
         [NUnit.Framework.CategoryAttribute("DAS13355")]
         [NUnit.Framework.CategoryAttribute("DAS13260")]
         [NUnit.Framework.CategoryAttribute("DAS13281")]
@@ -1543,6 +1554,7 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_ActionsPanel
                     "AllLists",
                     "EvergreenJnr_ActionsPanel",
                     "BulkUpdate",
+                    "DAS12864",
                     "DAS13355",
                     "DAS13260",
                     "DAS13281"};
@@ -1585,6 +1597,7 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_ActionsPanel
         [NUnit.Framework.CategoryAttribute("AllLists")]
         [NUnit.Framework.CategoryAttribute("EvergreenJnr_ActionsPanel")]
         [NUnit.Framework.CategoryAttribute("BulkUpdate")]
+        [NUnit.Framework.CategoryAttribute("DAS12864")]
         [NUnit.Framework.CategoryAttribute("DAS13264")]
         [NUnit.Framework.CategoryAttribute("DAS13265")]
         [NUnit.Framework.CategoryAttribute("DAS13278")]
@@ -1599,6 +1612,7 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_ActionsPanel
                     "AllLists",
                     "EvergreenJnr_ActionsPanel",
                     "BulkUpdate",
+                    "DAS12864",
                     "DAS13264",
                     "DAS13265",
                     "DAS13278"};
