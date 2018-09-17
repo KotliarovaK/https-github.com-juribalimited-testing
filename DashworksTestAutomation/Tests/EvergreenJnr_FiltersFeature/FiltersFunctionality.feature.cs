@@ -849,6 +849,7 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_FiltersFeature
         [NUnit.Framework.CategoryAttribute("FilterFunctionality")]
         [NUnit.Framework.CategoryAttribute("DAS11550")]
         [NUnit.Framework.CategoryAttribute("DAS11749")]
+        [NUnit.Framework.CategoryAttribute("DAS9583")]
         [NUnit.Framework.CategoryAttribute("API")]
         [NUnit.Framework.TestCaseAttribute("Application", "Application Name", new string[0])]
         [NUnit.Framework.TestCaseAttribute("Application Custom Fields", "App field 1", new string[0])]
@@ -864,6 +865,7 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_FiltersFeature
                     "FilterFunctionality",
                     "DAS11550",
                     "DAS11749",
+                    "DAS9583",
                     "API"};
             if ((exampleTags != null))
             {
