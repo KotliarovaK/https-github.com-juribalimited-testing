@@ -966,7 +966,8 @@ Scenario: EvergreenJnr_AdminPage_CheckThatSelectedCheckboxIsSelectedAfterSwitchi
 	Then Update Project button is active
 	And "Devices to add (1 of 17225 selected)" is displayed to the user in the Project Scope Changes section
 	When User clicks "Users" tab in the Project Scope Changes section
-	And User expands the object to add 
+	Then "UPDATE USER CHANGES" Action button is disabled
+	When User expands the object to add 
 	And User selects following Objects
 	| Objects                   |
 	| AAH0343264 (Luc Gauthier) |
