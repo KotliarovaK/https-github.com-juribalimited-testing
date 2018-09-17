@@ -1133,11 +1133,11 @@ Scenario: EvergreenJnr_UsersList_ChecksThatEditButtonIsDisplayedOnFiltersSection
 	| Blue           |
 	Then "EmailMigra: Readiness" filter is added to the list
 	When User click Edit button for "EmailMigra: Readiness" filter
-	When User create custom list with "DynamicList13384" name
+	And User create custom list with "DynamicList13384" name
 	Then "DynamicList13384" list is displayed to user
 	When User clicks the Filters button
 	Then Filters panel is displayed to the user
-	Then Edit button is displayed correctly for "EmailMigra: Readiness" filter
+	And Edit button is displayed correctly for "EmailMigra: Readiness" filter
 
 @Evergreen @Devices @EvergreenJnr_FilterFeature @FilterFunctionality @DAS13331
 Scenario: EvergreenJnr_DevicesList_ChecksThatUsedByDevicesOwnerApplicationToDeviceAssociationReturnCorrectData
@@ -1149,5 +1149,5 @@ Scenario: EvergreenJnr_DevicesList_ChecksThatUsedByDevicesOwnerApplicationToDevi
 	| Number | Association            |
 	| 86     | Used by device's owner |
 	Then "Application Key" filter is added to the list
-	Then "Application whose Key is 86 used by device's owner" is displayed in added filter info
-	Then "154" rows are displayed in the agGrid
+	And "Application whose Key is 86 used by device's owner" is displayed in added filter info
+	And "154" rows are displayed in the agGrid
