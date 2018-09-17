@@ -230,7 +230,7 @@ Scenario: EvergreenJnr_ApplicationsList_CheckThatFilterIsRestoredCorrectlyAfterL
 	When User clicks the Filters button
 	Then "Application is Microsoft Office 97, Professional Edition" is displayed in added filter info
 
-@Evergreen @Applications @EvergreenJnr_FilterFeature @FilterFunctionality @DAS10977 @Delete_Newly_Created_List
+@Evergreen @Applications @EvergreenJnr_FilterFeature @FilterFunctionality @DAS10977 @DAS13376 @Delete_Newly_Created_List
 Scenario: EvergreenJnr_ApplicationsList_CheckThatFilterIsRestoredCorrectlyAfterLeavingThePageAndGoingBackViaTheBrowseBackButtonForListFilters
 	When User add following columns using URL to the "Applications" page:
 	| ColumnName      |
