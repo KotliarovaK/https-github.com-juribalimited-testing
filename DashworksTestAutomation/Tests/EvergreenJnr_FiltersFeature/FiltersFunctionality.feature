@@ -1151,3 +1151,19 @@ Scenario: EvergreenJnr_DevicesList_ChecksThatUsedByDevicesOwnerApplicationToDevi
 	Then "Application Key" filter is added to the list
 	And "Application whose Key is 86 used by device's owner" is displayed in added filter info
 	And "154" rows are displayed in the agGrid
+
+@Evergreen @AllLists @EvergreenJnr_FilterFeature @FilterFunctionality @DAS13145
+Scenario Outline: EvergreenJnr_AllLists_ChecksThatApplicationFilterIsNotExcludedApplicationsWhichAreNotLinkedToAnyDevices
+	When User clicks "<PageName>" on the left-hand menu
+	Then "<PageName>" list should be displayed to the user
+	When User clicks the Filters button
+	Then Filters panel is displayed to the user
+	When user select "Application" filter
+
+	Then "50 of 2223 shown" results are displayed in the Filter panel
+	When User enters "ACT Data Collection Packages (1104)" text in Search field at selected Lookup Filter
+
+Examples: 
+	| PageName |
+	| Devices  |
+	| Users    |
