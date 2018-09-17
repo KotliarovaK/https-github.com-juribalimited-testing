@@ -3423,6 +3423,9 @@ Scenario: EvergreenJnr_AdminPage_ChecksThatProjectNameEditedInSeniorIsUpdatedInA
 	When User clicks "Projects" link on the Admin page
 	Then "Projects" page should be displayed to the user
 	And created Project with "Project13096 upd" name is displayed correctly
+	When User enters "Project13096 upd" text in the Search field for "Project" column
+	And User selects all rows on the grid
+	And User removes selected item
 
 @Evergreen @Admin @EvergreenJnr_AdminPage @AdminPage @DAS12776 @Delete_Newly_Created_Project @Delete_Newly_Created_List
 Scenario: EvergreenJnr_AdminPage_CheckThatScopeChangesSelectionIsDisabledAfterClickUpdateForDynamicList
