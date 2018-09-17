@@ -708,7 +708,7 @@ Scenario: EvergreenJnr_UsersList_CheckThatNoConsoleErrorIsDisplayedAfterAddingUs
 Scenario: EvergreenJnr_UsersList_CheckThatNoErrorIsDisplayedAfterAddingAdvancedFilterForUsernameAndApplicationSavedList
 	When User clicks "Users" on the left-hand menu
 	Then "Users" list should be displayed to the user
-	When  User clicks the Actions button
+	When User clicks the Actions button
 	Then Actions panel is displayed to the user
 	When User select all rows
 	And User selects "Create static list" in the Actions dropdown
@@ -830,8 +830,8 @@ Scenario: EvergreenJnr_ApplicationsList_CheckThatProjectGroupCurrentStateFilters
 @Evergreen @Applications @EvergreenJnr_FilterFeature @FilterFunctionality @DAS12058 @Delete_Newly_Created_List
 Scenario: EvergreenJnr_ApplicationsList_CheckThatProjectGroupTargetStateFiltersInTheApplicationListWorksCorrectly
 	When User add following columns using URL to the "Applications" page:
-	| ColumnName          |
-	| Windows7Mi: Application Rationalisation          |
+	| ColumnName                              |
+	| Windows7Mi: Application Rationalisation |
 	When User clicks the Filters button
 	Then Filters panel is displayed to the user
 	When User add "Windows7Mi: Group (Target State)" filter where type is "Equal" without added column and "Parkfield Office" Lookup option
@@ -1100,3 +1100,22 @@ Scenario: EvergreenJnr_DevicesList_ChecksThatAddAndButtonIsDisplayedWhenAddingTw
 	Then Add And button is displayed on the Filter panel
 	When User have removed "Compliance" filter
 	Then Add And button is displayed on the Filter panel
+
+@Evergreen @Applications @EvergreenJnr_FilterFeature @FilterFunctionality @DAS13414 @Delete_Newly_Created_List
+Scenario: EvergreenJnr_ApplicationsList_ChecksThatApplicationListWhichIncludeADateBasedAdvancedFilterAreSavedAndNotOpenedInEditMode
+	When User clicks "Applications" on the left-hand menu
+	Then "Applications" list should be displayed to the user
+	When User clicks the Filters button
+	Then Filters panel is displayed to the user
+	When User add "User Last Logon Date" filter where type is "Equals" with following Data and Association:
+	| Values      | Association  |
+	| 12 Sep 2018 | Has used app |
+	Then "User Last Logon Date" filter is added to the list
+	When User create dynamic list with "DAS13414" name on "Applications" page
+	Then "DAS13414" list is displayed to user
+	And URL contains "evergreen/#/applications?$listid="
+	And Edit List menu is not displayed
+	When User navigates to the "All Applications" list
+	And User navigates to the "DAS13414" list
+	Then URL contains "evergreen/#/applications?$listid="
+	And Edit List menu is not displayed
