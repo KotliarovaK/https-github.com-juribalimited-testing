@@ -574,6 +574,20 @@ namespace DashworksTestAutomation.Steps.Dashworks
             filterElement.GetEditFilterButton(filterName).Click();
         }
 
+        [When(@"User navigate to Edit button for ""(.*)"" filter")]
+        public void WhenUserNavigateToEditButtonForFilter(string filterName)
+        {
+            var filterElement = _driver.NowAt<FiltersElement>();
+            _driver.MouseHover(filterElement.GetEditFilterButton(filterName));
+        }
+
+        [Then(@"Edit button is displayed correctly for ""(.*)"" filter")]
+        public void ThenEditButtonIsDisplayedCorrectlyForFilter(string filterName)
+        {
+            var filterElement = _driver.NowAt<FiltersElement>();
+            Assert.IsTrue(filterElement.GetEditFilterButton(filterName).Displayed(), $"Edit button is not displayed for '{filterName}' filter");
+        }
+
         [Then(@"""(.*)"" value is displayed in the filter info")]
         public void ThenValueIsDisplayedInTheFilterInfo(string value)
         {
@@ -610,13 +624,6 @@ namespace DashworksTestAutomation.Steps.Dashworks
             var filterElement = _driver.NowAt<FiltersElement>();
             Assert.IsTrue(filterElement.ListNameForSavedListFilter(listName),
                 $"{listName} is not displayed for Saved List filter");
-        }
-
-        [When(@"User navigate to Edit button for ""(.*)"" filter")]
-        public void WhenUserNavigateToEditButtonForFilter(string filterName)
-        {
-            var filterElement = _driver.NowAt<FiltersElement>();
-            _driver.MouseHover(filterElement.GetEditFilterButton(filterName));
         }
 
         [Then(@"tooltip is displayed with ""(.*)"" text for edit filter button")]
