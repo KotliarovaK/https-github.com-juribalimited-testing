@@ -1138,3 +1138,16 @@ Scenario: EvergreenJnr_UsersList_ChecksThatEditButtonIsDisplayedOnFiltersSection
 	When User clicks the Filters button
 	Then Filters panel is displayed to the user
 	Then Edit button is displayed correctly for "EmailMigra: Readiness" filter
+
+@Evergreen @Devices @EvergreenJnr_FilterFeature @FilterFunctionality @DAS13331
+Scenario: EvergreenJnr_DevicesList_ChecksThatUsedByDevicesOwnerApplicationToDeviceAssociationReturnCorrectData
+	When User clicks "Devices" on the left-hand menu
+	Then "Devices" list should be displayed to the user
+	When User clicks the Filters button
+	Then Filters panel is displayed to the user
+	When User add "Application Key" filter where type is "Equals" with following Number and Association:
+	| Number | Association            |
+	| 86     | Used by device's owner |
+	Then "Application Key" filter is added to the list
+	Then "Application whose Key is 86 used by device's owner" is displayed in added filter info
+	Then "154" rows are displayed in the agGrid

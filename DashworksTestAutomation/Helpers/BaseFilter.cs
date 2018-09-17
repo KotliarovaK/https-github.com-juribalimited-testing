@@ -546,8 +546,19 @@ namespace DashworksTestAutomation.Helpers
             foreach (var row in Table.Rows)
             {
                 _driver.FindElement(By.XPath(".//div[@id='context']//input[@placeholder='Search']")).Click();
-                if (!_driver.IsElementDisplayed(By.XPath($".//li//span[text()='{row["Association"]}']"))) continue;
-                _driver.FindElement(By.XPath($".//li//span[text()='{row["Association"]}']")).Click();
+                var selector = string.Empty;
+                if (row["Association"].Contains("'"))
+                {
+                    var strings = row["Association"].Split('\'');
+                    selector =
+                        $".//li//span[contains(text(),'{strings[0]}')][contains(text(),'{strings[1]}')]";
+                }
+                else
+                {
+                    selector = $".//li//span[text()='{row["Association"]}']";
+                }
+                if (!_driver.IsElementDisplayed(By.XPath(selector))) continue;
+                _driver.FindElement(By.XPath(selector)).Click();
             }
 
             SaveFilter();
