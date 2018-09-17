@@ -27,6 +27,7 @@ namespace DashworksTestAutomation.Steps.Dashworks
                 listPageElement.TableSearchTextbox.Clear();
                 _driver.WaitForDataLoading();
                 listPageElement.TableSearchTextbox.SendkeysWithDelay(searchTerm);
+                Thread.Sleep(5000);
                 _driver.WaitForDataLoading();
             }
             else
@@ -34,7 +35,8 @@ namespace DashworksTestAutomation.Steps.Dashworks
                 listPageElement.TableSearchButton.Click();
                 listPageElement.TableSearchTextbox.Clear();
                 _driver.WaitForDataLoading();
-                listPageElement.TableSearchTextbox.SendKeys(searchTerm);
+                listPageElement.TableSearchTextbox.SendkeysWithDelay(searchTerm);
+                Thread.Sleep(5000);
                 _driver.WaitForDataLoading();
             }
         }

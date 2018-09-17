@@ -1293,6 +1293,7 @@ namespace DashworksTestAutomation.Steps.Dashworks
                 dashboardPage.TableSearchTextbox.Clear();
                 dashboardPage.TableSearchTextbox.SendKeys(row["SelectedRowsName"]);
                 Thread.Sleep(5000);
+                _driver.WaitForDataLoading();
                 dashboardPage.SelectOneRowsCheckboxes.Click();
             }
         }
