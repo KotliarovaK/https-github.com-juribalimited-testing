@@ -32,6 +32,9 @@ namespace DashworksTestAutomation.Pages.Evergreen
         [FindsBy(How = How.XPath, Using = ".//button[contains(@class, 'filter-add-group')]")]
         public IWebElement AddNewFilterButton { get; set; }
 
+        [FindsBy(How = How.XPath, Using = ".//span[contains(@class, 'rowCount')]")]
+        public IWebElement ResultsOnPageCount { get; set; }
+
         [FindsBy(How = How.XPath,
             Using = ".//button[contains(@class, 'filter-select addNewContainer ng-star-inserted')]")]
         public IWebElement AddAndFilterButton { get; set; }
