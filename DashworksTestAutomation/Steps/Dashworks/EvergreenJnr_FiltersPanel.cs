@@ -1035,10 +1035,12 @@ namespace DashworksTestAutomation.Steps.Dashworks
         public void ThenTheFollowingSubcategoriesAreNotDisplayedForSelectedColumnsCategory(Table table)
         {
             var page = _driver.NowAt<BaseDashboardPage>();
-            List<string> exceptionsList = table.Rows.SelectMany(row => row.Values).ToList();
-            List<string> actualList = page.SelectedColumnsSubcategoryList.Select(value => value.Text).ToList();
-            var newData = actualList.Select(i => i.ToString()).Intersect(exceptionsList);
-            Assert.AreEqual("false", newData, "");
+            var expectedList = table.Rows.SelectMany(row => row.Values).ToList();
+            var actualList = page.SelectedColumnsSubcategoryList.Select(value => value.Text).ToList();
+            foreach (var value in expectedList)
+            {
+                Assert.IsFalse(actualList.Contains(value), $"{value} is displayed for that category");
+            }
         }
 
         [Then(@"the following subcategories are displayed for Selected Filters category:")]

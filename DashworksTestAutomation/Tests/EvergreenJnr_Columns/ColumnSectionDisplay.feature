@@ -769,7 +769,7 @@ Scenario: EvergreenJnr_MailboxesList_ChecksThatSubcategoriesOnColumnsPanelIsDisp
 	And User create custom list with "Object ID != EMPTY" name
 	Then "Object ID != EMPTY" list is displayed to user
 
-@Evergreen @Devices @EvergreenJnr_Columns @ColumnSectionDisplay @DAS13419 @Not_Run
+@Evergreen @Devices @EvergreenJnr_Columns @ColumnSectionDisplay @DAS13419
 Scenario: EvergreenJnr_DevicesList_ChecksThatColumnsPanelDoesNotIncludeUnpublishedTasks
 	When User clicks "Devices" on the left-hand menu
 	Then "Devices" list should be displayed to the user
