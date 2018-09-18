@@ -29,7 +29,7 @@ Scenario: EvergreenJnr_UsersList_CheckThatAfterClosingActionsPanelTheActionsButt
 	When User clicks the Actions button
 	Then Actions button is not active
 
-@Evergreen @Users @EvergreenJnr_ActionsPanel @DAS12932 @DAS13262
+@Evergreen @Users @EvergreenJnr_ActionsPanel @DAS12864 @DAS12932 @DAS13262
 Scenario: EvergreenJnr_UsersList_CheckThatUserWithoutRelevantRolesCannotSeeBulkUpdateOptionInActionsPanel
 	When User clicks "Projects" on the left-hand menu
 	Then "Projects Home" page is displayed to the user
@@ -77,7 +77,7 @@ Scenario: EvergreenJnr_UsersList_CheckThatUserWithoutRelevantRolesCannotSeeBulkU
 	And User select "Manage Users" option in Management Console
 	And User removes "000WithoutRoles" User
 
-@Evergreen @Devices @EvergreenJnr_ActionsPanel @BulkUpdate @DAS12932 @DAS13261
+@Evergreen @Devices @EvergreenJnr_ActionsPanel @BulkUpdate @DAS12864 @DAS12932 @DAS13261
 Scenario: EvergreenJnr_DevicesList_CheckThatUserWithoutJustTheProjectAdministratorRoleCanStillBulkUpdateObjects
 	When User clicks "Projects" on the left-hand menu
 	Then "Projects Home" page is displayed to the user
@@ -130,7 +130,7 @@ Scenario: EvergreenJnr_DevicesList_CheckThatUserWithoutJustTheProjectAdministrat
 	And User select "Manage Users" option in Management Console
 	And User removes "000WithPBU" User
 
-@Evergreen @Applications @EvergreenJnr_ActionsPanel @BulkUpdate @DAS12932 @DAS13261
+@Evergreen @Applications @EvergreenJnr_ActionsPanel @BulkUpdate @DAS12864 @DAS12932 @DAS13261
 Scenario: EvergreenJnr_ApplicationsList_CheckThatUserWithoutJustTheProjectBulkUpdaterRoleCanStillBulkUpdateObjects
 	When User clicks "Projects" on the left-hand menu
 	Then "Projects Home" page is displayed to the user
@@ -603,7 +603,7 @@ Scenario: EvergreenJnr_MailboxesList_ChecksThatRequestTypeIsUpdatedCorrectlyOnMa
 	And User clicks "UPDATE" button on message box
 	And Success message with "1 of 1 objects were valid for the update. Your changes have successfully been queued." text is displayed on Action panel
 
-@Evergreen @Devices @EvergreenJnr_ActionsPanel @BulkUpdate @DAS12863 @DAS13266 @DAS13284
+@Evergreen @Devices @EvergreenJnr_ActionsPanel @BulkUpdate @DAS12864 @DAS12863 @DAS13266 @DAS13284
 Scenario: EvergreenJnr_DevicesList_ChecksThatRequestTypeIsUpdatedCorrectlyWhereSomeObjectsAreValidAndSomeAreInvalidForTheSelectedProject
 	When User clicks "Devices" on the left-hand menu
 	Then "Devices" list should be displayed to the user
@@ -671,7 +671,7 @@ Scenario: EvergreenJnr_DevicesList_ChecksThatRequestTypeIsUpdatedCorrectlyWhereS
 	And User clicks "UPDATE" button on message box
 	And Success message with "1 of 1 objects were valid for the update. Your changes have successfully been queued." text is displayed on Action panel
 
-@Evergreen @Devices @EvergreenJnr_ActionsPanel @BulkUpdate @DAS12863 @DAS13277
+@Evergreen @Devices @EvergreenJnr_ActionsPanel @BulkUpdate @DAS12864 @DAS12863 @DAS13277
 Scenario: EvergreenJnr_DevicesList_ChecksThatActionsPanelWorkedCorrectlyAfterCickOnCancelButton
 	When User clicks "Devices" on the left-hand menu
 	Then "Devices" list should be displayed to the user
@@ -795,7 +795,7 @@ Scenario: EvergreenJnr_MailboxesList_CheckThatProjectFieldIsDisplayedCorrectlyAf
 	And User clicks on Action drop-down
 	Then "Email Migration" Project is displayed on Action panel
 
-@Evergreen @AllLists @EvergreenJnr_ActionsPanel @BulkUpdate @DAS13355 @DAS13260 @DAS13281
+@Evergreen @AllLists @EvergreenJnr_ActionsPanel @BulkUpdate @DAS12864 @DAS13355 @DAS13260 @DAS13281
 Scenario Outline: EvergreenJnr_AllLists_ChecksThatTextValueHaveOptionToRemoveExistingTextValue
 	When User clicks "<PageName>" on the left-hand menu
 	Then "<PageName>" list should be displayed to the user
@@ -820,7 +820,7 @@ Examples:
 	| Users        | Username    | 00DB4000EDD84951993              | Text User- Email Address        |
 	| Applications | Application | 32VerSee v.231 en (C:\32VerSee\) | Text Application- Future Groups |
 
-@Evergreen @AllLists @EvergreenJnr_ActionsPanel @BulkUpdate @DAS13264 @DAS13265 @DAS13278
+@Evergreen @AllLists @EvergreenJnr_ActionsPanel @BulkUpdate @DAS12864 @DAS13264 @DAS13265 @DAS13278
 Scenario Outline: EvergreenJnr_AllLists_CheckThatUpdateAndCancelButtonsAreEnabledWhenUserLoggedWithProjectBulkUpdaterRole
 	When User clicks "Projects" on the left-hand menu
 	Then "Projects Home" page is displayed to the user
@@ -858,8 +858,8 @@ Scenario Outline: EvergreenJnr_AllLists_CheckThatUpdateAndCancelButtonsAreEnable
 	When User clicks the "UPDATE" Action button
 	Then the amber message is displayed correctly
 	And User clicks "CANCEL" button on message box
-	Then the amber message is not displayed
-	Then "UPDATE" Action button is active
+	And the amber message is not displayed
+	And "UPDATE" Action button is active
 	And "CANCEL" Action button is active
 	When User clicks the Logout button
 	Then User is logged out
@@ -935,7 +935,7 @@ Scenario: EvergreenJnr_DevicesList_ChecksThatActionsPanelIsWorkingCorrectlyWhenS
 	When User selects "IB Team" Team on Action panel
 	Then Owner field is displayed on Action panel
 	When User selects "IB User" Owner on Action panel
-	When User clicks the Logout button
+	And User clicks the Logout button
 	Then User is logged out
 	When User clicks on the Login link
 	Then Login Page is displayed to the user
@@ -975,7 +975,7 @@ Scenario: EvergreenJnr_DevicesList_CheckThatClearingAValueResetsSubsequentValues
 	And User selects "Bulk update" in the Actions dropdown
 	And User selects "Update task value" Bulk Update Type on Action panel
 	And User selects "User Scheduled Test (Jo)" Project on Action panel
-	When User selects "One" Stage on Action panel
+	And User selects "One" Stage on Action panel
 	And User selects "Radio Rag Only Comp" Task on Action panel
 	And User selects "Started" Value on Action panel
 	And User selects "Computer Scheduled Test (Jo)" Project on Action panel
@@ -1057,9 +1057,9 @@ Scenario Outline: EvergreenJnr_DevicesList_ChecksThatDllOptionsAreDisplayedCorre
 	Then the amber message is not displayed
 	When User clicks the "UPDATE" Action button
 	Then the amber message is displayed correctly
-	Then User clicks "UPDATE" button on message box
+	And User clicks "UPDATE" button on message box
 	And Success message with "<MessageText>" text is displayed on Action panel
-	Then Success message is hidden after five seconds
+	And Success message is hidden after five seconds
 	When User clicks the Logout button
 	Then User is logged out
 	When User clicks on the Login link
@@ -1136,9 +1136,9 @@ Scenario Outline: EvergreenJnr_UsersList_ChecksThatTheNoChangeOptionIsWorkedCorr
 	And User selects "No change" Update Date on Action panel
 	And User selects "Update" Update Owner on Action panel
 	And User selects "<DefaultTeam>" Team on Action panel
-	When User navigate to the bottom of the Action panel
-	When User clicks the "UPDATE" Action button
-	When User navigate to the top of the Action panel
+	And User navigate to the bottom of the Action panel
+	And User clicks the "UPDATE" Action button
+	And User navigate to the top of the Action panel
 	Then User clicks "UPDATE" button on message box
 	And Success message with "1 of 1 objects were valid for the update. Your changes have successfully been queued." text is displayed on Action panel
 	When User refreshes agGrid
@@ -1212,7 +1212,7 @@ Scenario Outline: EvergreenJnr_UsersList_ChecksThatTheNoChangeOptionIsWorkedCorr
 	When User refreshes agGrid
 	#Then "<DefaultValue>" content is displayed in "Windows7Mi: Perform User Acceptance Test" column
 		#returns default object state
-	When User selects "Bulk update" in the Actions dropdown
+	And User selects "Bulk update" in the Actions dropdown
 	And User selects "Update task value" Bulk Update Type on Action panel
 	And User selects "Windows 7 Migration (Computer Scheduled Project)" Project on Action panel
 	And User selects "User Acceptance Test" Stage on Action panel
@@ -1222,14 +1222,14 @@ Scenario Outline: EvergreenJnr_UsersList_ChecksThatTheNoChangeOptionIsWorkedCorr
 	And User selects "<DefaultDate>" Date on Action panel
 	And User selects "Update" Update Owner on Action panel
 	And User selects "<DefaultTeam>" Team on Action panel
-	When User navigate to the bottom of the Action panel
-	When User clicks the "UPDATE" Action button
-	When User navigate to the top of the Action panel
+	And User navigate to the bottom of the Action panel
+	And User clicks the "UPDATE" Action button
+	And User navigate to the top of the Action panel
 	Then User clicks "UPDATE" button on message box
 	And Success message with "1 of 1 objects were valid for the update. Your changes have successfully been queued." text is displayed on Action panel
 	When User refreshes agGrid
 	#Then "<DefaultValue>" content is displayed in "Windows7Mi: Perform User Acceptance Test" column
-	When User clicks the Logout button
+	And User clicks the Logout button
 	Then User is logged out
 	When User clicks on the Login link
 	Then Login Page is displayed to the user
@@ -1294,7 +1294,7 @@ Scenario Outline: EvergreenJnr_UsersList_ChecksThatTheNoChangeOptionIsWorkedCorr
 	Then the amber message is displayed correctly
 	And User clicks "UPDATE" button on message box
 	And Success message with "1 of 1 objects were valid for the update. Your changes have successfully been queued." text is displayed on Action panel
-	Then Success message is hidden after five seconds
+	And Success message is hidden after five seconds
 	When User refreshes agGrid
 	Then "<NewValue>" content is displayed in "Windows7Mi: Perform User Acceptance Test" column
 		#returns default object state
@@ -1308,9 +1308,9 @@ Scenario Outline: EvergreenJnr_UsersList_ChecksThatTheNoChangeOptionIsWorkedCorr
 	And User selects "Update" Update Date on Action panel
 	And User selects "<DefaultDate>" Date on Action panel
 	And User selects "No change" Update Owner on Action panel
-	When User navigate to the bottom of the Action panel
-	When User clicks the "UPDATE" Action button
-	When User navigate to the top of the Action panel
+	And User navigate to the bottom of the Action panel
+	And User clicks the "UPDATE" Action button
+	And User navigate to the top of the Action panel
 	Then User clicks "UPDATE" button on message box
 	And Success message with "1 of 1 objects were valid for the update. Your changes have successfully been queued." text is displayed on Action panel
 	When User refreshes agGrid

@@ -126,7 +126,7 @@ namespace DashworksTestAutomation.Steps.Dashworks
             action.ProjectField.Click();
             var expectedList = table.Rows.SelectMany(row => row.Values);
             var actualList = action.OptionsDll.Select(value => value.Text);
-            Assert.AreEqual(expectedList, actualList, "Project list are different");
+            Assert.AreEqual(expectedList, actualList, "Project lists are different");
         }
 
         [When(@"User selects ""(.*)"" Request Type on Action panel")]

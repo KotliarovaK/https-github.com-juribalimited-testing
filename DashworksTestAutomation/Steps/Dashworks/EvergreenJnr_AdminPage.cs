@@ -586,6 +586,7 @@ namespace DashworksTestAutomation.Steps.Dashworks
         public void ThenIsDisplayedInTheTabHeaderOnTheAdminPage(string text)
         {
             var page = _driver.NowAt<BaseGridPage>();
+            _driver.WaitForDataLoading();
             Assert.IsTrue(page.GetTabHeaderInTheScopeChangesSection(text),
                 $"{text} is not displayed in the Project Scope Changes section");
         }
@@ -1091,6 +1092,7 @@ namespace DashworksTestAutomation.Steps.Dashworks
             var page = _driver.NowAt<BaseGridPage>();
             _driver.WaitWhileControlIsNotDisplayed<BaseGridPage>(() => page.InfoMessage);
             Assert.AreEqual("rgba(49, 122, 193, 1)", page.GetMessageColor());//Blue color
+            Assert.AreEqual("1530px", page.GetMessageWidthOnAdminPage());
             StringAssert.Contains(text, page.InfoMessage.Text, "Success Message is not displayed");
         }
 
@@ -1251,7 +1253,7 @@ namespace DashworksTestAutomation.Steps.Dashworks
             var projectElement = _driver.NowAt<BaseGridPage>();
             projectElement.PlusButton.Click();
         }
-
+        
         [When(@"User selects all objects to the Project")]
         [When(@"User cancels the selection objects in the Project")]
         public void WhenUserSelectsAllObjects()
@@ -1291,6 +1293,7 @@ namespace DashworksTestAutomation.Steps.Dashworks
                 dashboardPage.TableSearchTextbox.Clear();
                 dashboardPage.TableSearchTextbox.SendKeys(row["SelectedRowsName"]);
                 Thread.Sleep(5000);
+                _driver.WaitForDataLoading();
                 dashboardPage.SelectOneRowsCheckboxes.Click();
             }
         }

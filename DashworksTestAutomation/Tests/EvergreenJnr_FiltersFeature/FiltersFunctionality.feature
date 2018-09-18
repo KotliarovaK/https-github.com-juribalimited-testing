@@ -230,7 +230,7 @@ Scenario: EvergreenJnr_ApplicationsList_CheckThatFilterIsRestoredCorrectlyAfterL
 	When User clicks the Filters button
 	Then "Application is Microsoft Office 97, Professional Edition" is displayed in added filter info
 
-@Evergreen @Applications @EvergreenJnr_FilterFeature @FilterFunctionality @DAS10977 @Delete_Newly_Created_List
+@Evergreen @Applications @EvergreenJnr_FilterFeature @FilterFunctionality @DAS10977 @DAS13376 @Delete_Newly_Created_List
 Scenario: EvergreenJnr_ApplicationsList_CheckThatFilterIsRestoredCorrectlyAfterLeavingThePageAndGoingBackViaTheBrowseBackButtonForListFilters
 	When User add following columns using URL to the "Applications" page:
 	| ColumnName      |
@@ -338,7 +338,7 @@ Examples:
 	| department             | Ends with        | LongName01234567890123456789012345678901234567890123456789 | Add Department column             |
 	| iscriticalsystemobject | Not empty        |                                                            | Add iscriticalsystemobject column |
 
-@Evergreen @Devices @EvergreenJnr_FilterFeature @FilterFunctionality @DAS11550 @DAS11749 @API
+@Evergreen @Devices @EvergreenJnr_FilterFeature @FilterFunctionality @DAS11550 @DAS11749 @DAS9583 @API
 Scenario Outline: EvergreenJnr_DevicesList_CheckThatOperatorInSelectedFilterIsDisplayedCorrectlyAPI
 	Then following operators are displayed in "<CategoryName>" category for "<FilterName>" filter on "Devices" page:
 	| OperatorValues      |
@@ -708,7 +708,7 @@ Scenario: EvergreenJnr_UsersList_CheckThatNoConsoleErrorIsDisplayedAfterAddingUs
 Scenario: EvergreenJnr_UsersList_CheckThatNoErrorIsDisplayedAfterAddingAdvancedFilterForUsernameAndApplicationSavedList
 	When User clicks "Users" on the left-hand menu
 	Then "Users" list should be displayed to the user
-	When  User clicks the Actions button
+	When User clicks the Actions button
 	Then Actions panel is displayed to the user
 	When User select all rows
 	And User selects "Create static list" in the Actions dropdown
@@ -830,8 +830,8 @@ Scenario: EvergreenJnr_ApplicationsList_CheckThatProjectGroupCurrentStateFilters
 @Evergreen @Applications @EvergreenJnr_FilterFeature @FilterFunctionality @DAS12058 @Delete_Newly_Created_List
 Scenario: EvergreenJnr_ApplicationsList_CheckThatProjectGroupTargetStateFiltersInTheApplicationListWorksCorrectly
 	When User add following columns using URL to the "Applications" page:
-	| ColumnName          |
-	| Windows7Mi: Application Rationalisation          |
+	| ColumnName                              |
+	| Windows7Mi: Application Rationalisation |
 	When User clicks the Filters button
 	Then Filters panel is displayed to the user
 	When User add "Windows7Mi: Group (Target State)" filter where type is "Equal" without added column and "Parkfield Office" Lookup option
@@ -1100,3 +1100,76 @@ Scenario: EvergreenJnr_DevicesList_ChecksThatAddAndButtonIsDisplayedWhenAddingTw
 	Then Add And button is displayed on the Filter panel
 	When User have removed "Compliance" filter
 	Then Add And button is displayed on the Filter panel
+
+@Evergreen @Applications @EvergreenJnr_FilterFeature @FilterFunctionality @DAS13414 @Delete_Newly_Created_List
+Scenario: EvergreenJnr_ApplicationsList_ChecksThatApplicationListWhichIncludeADateBasedAdvancedFilterAreSavedAndNotOpenedInEditMode
+	When User clicks "Applications" on the left-hand menu
+	Then "Applications" list should be displayed to the user
+	When User clicks the Filters button
+	Then Filters panel is displayed to the user
+	When User add "User Last Logon Date" filter where type is "Equals" with following Data and Association:
+	| Values      | Association  |
+	| 12 Sep 2018 | Has used app |
+	Then "User Last Logon Date" filter is added to the list
+	When User create dynamic list with "DAS13414" name on "Applications" page
+	Then "DAS13414" list is displayed to user
+	And URL contains "evergreen/#/applications?$listid="
+	And Edit List menu is not displayed
+	When User navigates to the "All Applications" list
+	And User navigates to the "DAS13414" list
+	Then URL contains "evergreen/#/applications?$listid="
+	And Edit List menu is not displayed
+
+@Evergreen @Users @EvergreenJnr_FilterFeature @FilterFunctionality @DAS13384 @Delete_Newly_Created_List
+Scenario: EvergreenJnr_UsersList_ChecksThatEditButtonIsDisplayedOnFiltersSectionIfEditFormOpenWhenYouSaveList
+	When User clicks "Users" on the left-hand menu
+	Then "Users" list should be displayed to the user
+	When User clicks the Filters button
+	Then Filters panel is displayed to the user
+	When User add "EmailMigra: Readiness" filter where type is "Equals" with added column and Lookup option
+	| SelectedValues |
+	| Light Blue     |
+	| Out Of Scope   |
+	| Blue           |
+	Then "EmailMigra: Readiness" filter is added to the list
+	When User click Edit button for "EmailMigra: Readiness" filter
+	And User create custom list with "DynamicList13384" name
+	Then "DynamicList13384" list is displayed to user
+	When User clicks the Filters button
+	Then Filters panel is displayed to the user
+	And Edit button is displayed correctly for "EmailMigra: Readiness" filter
+
+@Evergreen @Devices @EvergreenJnr_FilterFeature @FilterFunctionality @DAS13331
+Scenario: EvergreenJnr_DevicesList_ChecksThatUsedByDevicesOwnerApplicationToDeviceAssociationReturnCorrectData
+	When User clicks "Devices" on the left-hand menu
+	Then "Devices" list should be displayed to the user
+	When User clicks the Filters button
+	Then Filters panel is displayed to the user
+	When User add "Application Key" filter where type is "Equals" with following Number and Association:
+	| Number | Association            |
+	| 86     | Used by device's owner |
+	Then "Application Key" filter is added to the list
+	And "Application whose Key is 86 used by device's owner" is displayed in added filter info
+	And "154" rows are displayed in the agGrid
+
+@Evergreen @AllLists @EvergreenJnr_FilterFeature @FilterFunctionality @DAS13145
+Scenario Outline: EvergreenJnr_AllLists_ChecksThatApplicationFilterIsNotExcludedApplicationsWhichAreNotLinkedToAnyDevices
+	When User clicks "<PageName>" on the left-hand menu
+	Then "<PageName>" list should be displayed to the user
+	When User clicks the Filters button
+	Then Filters panel is displayed to the user
+	When user select "Application" filter
+	And User clicks in search field for selected Association filter
+	Then "50 of 2223 shown" results are displayed in the Filter panel
+	And the following values are displayed for "Application" filter on "<PageName>" page:
+	| Value                               |
+	| Acrobat Reader 6.0.1 (500)          |
+	| ACT Data Collection Packages (1104) |
+	When User enters "1104" text in Search field at selected Lookup Filter
+	Then "1 shown" results are displayed in the Filter panel
+	And "ACT Data Collection Packages (1104)" value is displayed for selected Lookup Filter
+
+Examples: 
+	| PageName |
+	| Devices  |
+	| Users    |
