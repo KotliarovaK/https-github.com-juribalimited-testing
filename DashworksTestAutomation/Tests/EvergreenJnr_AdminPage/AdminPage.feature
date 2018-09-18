@@ -1278,10 +1278,10 @@ Scenario: EvergreenJnr_AdminPage_CheckingThatProjectDetailsForOnboardedObjectsIs
 	Then data in table is sorted by "Action" column in ascending order on the Admin page
 	When User click on "Action" column header on the Admin page
 	Then data in table is sorted by "Action" column in descending order on the Admin page
-	#When User click on "Bucket" column header on the Admin page
-	#Then data in table is sorted by "Bucket" column in ascending order on the Admin page
-	#When User click on "Bucket" column header on the Admin page
-	#Then data in table is sorted by "Bucket" column in descending order on the Admin page
+	When User click on "Bucket" column header on the Admin page
+	Then data in table is sorted by "Bucket" column in ascending order on the Admin page
+	When User click on "Bucket" column header on the Admin page
+	Then data in table is sorted by "Bucket" column in descending order on the Admin page
 	When User selects following date filter on the Projects page
 	| FilterData |
 	| 7302017    |
@@ -1290,8 +1290,9 @@ Scenario: EvergreenJnr_AdminPage_CheckingThatProjectDetailsForOnboardedObjectsIs
 	When User enters "0IJB93JZPG72PX" text in the Search field for "Item" column
 	Then Counter shows "1" found rows
 	When User clicks Reset Filters button on the Admin page
-	When User enters "User" text in the Search field for "Object Type" column
-	Then Counter shows "2" found rows
+	When User clicks String Filter button for "Object Type" column on the Admin page
+	When User selects "User" checkbox from String Filter on the Admin page
+	Then Counter shows "4" found rows
 	When User clicks Reset Filters button on the Admin page
 	When User enters "Unassigned" text in the Search field for "Bucket" column
 	Then Counter shows "4" found rows
@@ -1341,8 +1342,9 @@ Scenario: EvergreenJnr_AdminPage_CheckingThatProjectDetailsForOnboardedObjectsIs
 	When User enters "0IJB93JZPG72PX" text in the Search field for "Item" column
 	Then Counter shows "1" found rows
 	When User clicks Reset Filters button on the Admin page
-	When User enters "User" text in the Search field for "Object Type" column
-	Then Counter shows "2" found rows
+	When User clicks String Filter button for "Object Type" column on the Admin page
+	When User selects "Device" checkbox from String Filter on the Admin page
+	Then Counter shows "4" found rows
 	When User clicks Reset Filters button on the Admin page
 	When User enters "Unassigned" text in the Search field for "Bucket" column
 	Then Counter shows "4" found rows
@@ -1823,7 +1825,7 @@ Scenario: EvergreenJnr_AdminPage_CheckThatTheFilterSearchIsNotCaseSensitive
 	Then created Project with "testname_small letters" name is displayed correctly
 	Then created Project with "TESTNAME_capital letters" name is displayed correctly
 
-@Evergreen @Admin @EvergreenJnr_AdminPage @AdminPage @DAS12999 @DAS13199 @DAS12680 @DAS12157 @Delete_Newly_Created_Project @Delete_Newly_Created_List @Projects @Not_Run
+@Evergreen @Admin @EvergreenJnr_AdminPage @AdminPage @DAS12999 @DAS13199 @DAS12680 @DAS12157 @Delete_Newly_Created_Project @Delete_Newly_Created_List @Projects
 Scenario: EvergreenJnr_AdminPage_CheckThatDevicesToAddAndRemoveAreChangingAppropriate
 	When User create static list with "StaticList6527" name on "Devices" page with following items
 	| ItemName        |
@@ -1862,7 +1864,7 @@ Scenario: EvergreenJnr_AdminPage_CheckThatDevicesToAddAndRemoveAreChangingApprop
 	When User selects "StaticList6528" in the Scope Project details
 	When User selects "Scope Changes" tab on the Project details page
 	Then "Devices to add (0 of 2 selected)" is displayed to the user in the Project Scope Changes section
-	Then "Devices to remove (0 of 2 selected)" is displayed to the user in the Project Scope Changes section
+	#Then "Devices to remove (0 of 2 selected)" is displayed to the user in the Project Scope Changes section
 	And Add Objects panel is collapsed
 
 @Evergreen @Admin @EvergreenJnr_AdminPage @AdminPage @DAS12999 @DAS13199 @DAS12680 @Delete_Newly_Created_Project @Delete_Newly_Created_List @Projects
@@ -3912,7 +3914,7 @@ Scenario: EvergreenJnr_AdminPage_TheGreenBannerIsNotDisplayedIfBannerWasBeShownO
 	When User clicks newly created object link
 	Then Project "Project12965" is displayed to user
 	When User selects "Scope Changes" tab on the Project details page
-	And User clicks "Devices" tab inEvergreenJnr_AdminPage_ChecksThatColourOfOnboardedAppIsDisplayedCorrectly History the Project Scope Changes section
+	And User clicks "Devices" tab in the Project Scope Changes section
 	And User expands the object to add 
 	And User selects following Objects
 	| Objects         |
