@@ -23,8 +23,13 @@ namespace DashworksTestAutomation.Pages.Evergreen
 
         private const string GroupTitleSelector = ".//div[contains(@class,'filter-category-label blue-color')]";
 
+        public const string FilterValue = "//span[@class='text-container ng-star-inserted']";
+
         [FindsBy(How = How.XPath, Using = ".//div[@class='filter-panel']")]
         public IWebElement FiltersPanel { get; set; }
+
+        [FindsBy(How = How.XPath, Using = "//input[@id='mat-input-2']")]
+        public IWebElement FilterSearchField { get; set; }
 
         [FindsBy(How = How.XPath, Using = ".//span[@class='filter-label-name']")]
         public IWebElement FilterNameInTheFilterPanel { get; set; }
@@ -135,6 +140,9 @@ namespace DashworksTestAutomation.Pages.Evergreen
 
         [FindsBy(How = How.XPath, Using = ".//input[@placeholder='User Description']")]
         public IWebElement UserDescriptionField { get; set; }
+
+        [FindsBy(How = How.XPath, Using = FilterValue)]
+        public IList<IWebElement> FilterValueList { get; set; }
 
         public override List<By> GetPageIdentitySelectors()
         {
@@ -429,6 +437,13 @@ namespace DashworksTestAutomation.Pages.Evergreen
         public IWebElement GetFilterCategory(string filterName, string category)
         {
             var selector = By.XPath($".//div[contains(@class,'filter-category-title')]//div[text()='{filterName}']/parent::div//div//strong[text()='{category}']");
+            Driver.WaitWhileControlIsNotDisplayed(selector);
+            return Driver.FindElement(selector);
+        }
+
+        public IWebElement GetValueForLookupFilter(string name)
+        {
+            var selector = By.XPath($"//span[text()='{name}']");
             Driver.WaitWhileControlIsNotDisplayed(selector);
             return Driver.FindElement(selector);
         }

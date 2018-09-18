@@ -1159,9 +1159,15 @@ Scenario Outline: EvergreenJnr_AllLists_ChecksThatApplicationFilterIsNotExcluded
 	When User clicks the Filters button
 	Then Filters panel is displayed to the user
 	When user select "Application" filter
-
+	And User clicks in search field for selected Association filter
 	Then "50 of 2223 shown" results are displayed in the Filter panel
-	When User enters "ACT Data Collection Packages (1104)" text in Search field at selected Lookup Filter
+	And the following values are displayed for "Application" filter on "<PageName>" page:
+	| Value                               |
+	| Acrobat Reader 6.0.1 (500)          |
+	| ACT Data Collection Packages (1104) |
+	When User enters "1104" text in Search field at selected Lookup Filter
+	Then "1 shown" results are displayed in the Filter panel
+	And "ACT Data Collection Packages (1104)" value is displayed for selected Lookup Filter
 
 Examples: 
 	| PageName |
