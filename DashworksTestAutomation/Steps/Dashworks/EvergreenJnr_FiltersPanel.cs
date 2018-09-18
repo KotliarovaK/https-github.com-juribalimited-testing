@@ -47,6 +47,15 @@ namespace DashworksTestAutomation.Steps.Dashworks
             Logger.Write("Add New button was clicked");
         }
 
+        [When(@"User clicks Add And button on the Filter panel")]
+        public void WhenUserClicksAddAndButtonOnTheFilterPanel()
+        {
+            var menu = _driver.NowAt<FiltersElement>();
+            _driver.WaitWhileControlIsNotDisplayed<FiltersElement>(() => menu.AddNewFilterButton);
+            menu.AddNewFilterButton.Click();
+            Logger.Write("Add And button was clicked");
+        }
+
         [Then(@"Add And button is displayed on the Filter panel")]
         public void ThenAddAndButtonIsDisplayedOnTheFilterPanel()
         {
@@ -564,6 +573,22 @@ namespace DashworksTestAutomation.Steps.Dashworks
             filterElement.GetEditFilterButton(filterName).Click();
             _driver.WaitWhileControlIsNotDisplayed<FiltersElement>(() => filterElement.RemoveFilterButton);
             filterElement.RemoveFilterButton.Click();
+        }
+
+        [When(@"User deletes filter and agGrid does not reload")]
+        public void WhenUserDeletesFilterAndAgGridDoesNotReload()
+        {
+            var filterElement = _driver.NowAt<FiltersElement>();
+            filterElement.RemoveFilterButton.Click();
+            Assert.IsTrue(filterElement.ResultsOnPageCount.Displayed(), "agGrid is reload");
+        }
+
+        [When(@"User cancels filter and agGrid does not reload")]
+        public void WhenUserCancelsFilterAndAgGridDoesNotReload()
+        {
+            var filterElement = _driver.NowAt<FiltersElement>();
+            filterElement.CancelButton.Click();
+            Assert.IsTrue(filterElement.ResultsOnPageCount.Displayed(), "agGrid is reload");
         }
 
         [When(@"User click Edit button for ""(.*)"" filter")]
