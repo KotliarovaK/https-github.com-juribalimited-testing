@@ -17,7 +17,7 @@ Scenario: EvergreenJnr_UserProfile_CheckThatErrorIsNotDisplayedAfterChangingProf
 	And "TestAdmin" is displayed in Full Name field
 	And "automation2@juriba.com" is displayed in Email field
 
-@Evergreen @ProfileDetails @EvergreenJnr_ProfileDetails @UserProfile @DAS10756 @DAS12947 @Remove_Profile_Changes
+@Evergreen @ProfileDetails @EvergreenJnr_ProfileDetails @UserProfile @DAS10756 @DAS12947 @DAS11523 @Remove_Profile_Changes
 Scenario: EvergreenJnr_UserProfile_CheckThatCorrectErrorMessagesAreDisplayed
 	When User clicks Profile in Account Dropdown
 	Then Profile page is displayed to user
