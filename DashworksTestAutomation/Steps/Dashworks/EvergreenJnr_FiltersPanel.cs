@@ -106,6 +106,13 @@ namespace DashworksTestAutomation.Steps.Dashworks
             Assert.IsTrue(filterElement.GetOpenedFilter(filterName).Displayed(), "Setting section for selected filter is not loaded");
         }
 
+        [When(@"User clicks in search field for selected Association filter")]
+        public void WhenUserClicksInSearchFieldForSelectedAssociationFilter()
+        {
+            var filterElement = _driver.NowAt<FiltersElement>();
+            filterElement.FilterSearchField.Click();
+        }
+
         [When(@"User enters ""(.*)"" text in Search field at Filters Panel")]
         public void WhenUserEntersTextInSearchFieldAtFiltersPanel(string searchedText)
         {
@@ -128,6 +135,13 @@ namespace DashworksTestAutomation.Steps.Dashworks
             _driver.WaitWhileControlIsNotDisplayed<FiltersElement>(() => filterElement.LookupFilterSearchTextbox);
             filterElement.LookupFilterSearchTextbox.Clear();
             filterElement.LookupFilterSearchTextbox.SendKeys(searchedText);
+        }
+
+        [Then(@"""(.*)"" value is displayed for selected Lookup Filter")]
+        public void ThenValueIsDisplayedForSelectedLookupFilter(string value)
+        {
+            var filterElement = _driver.NowAt<FiltersElement>();
+            Assert.IsTrue(filterElement.GetValueForLookupFilter(value).Displayed(), $"{value} is not displayed for that filter");
         }
 
         [When(@"User clicks checkbox at selected Lookup Filter")]
