@@ -126,7 +126,7 @@ namespace DashworksTestAutomation.Pages.Evergreen.AdminDetailsPages
 
         public void NavigateToProjectTabByName(string tabName)
         {
-            var tab = Driver.FindElement(By.XPath($".//ul[@class='subMenu-items ng-star-inserted']//span[text()='{tabName}']"));
+            var tab = Driver.FindElement(By.XPath($".//ul[contains(@class, 'subMenu-items')]//span[text()='{tabName}']"));
             tab.Click();
         }
 

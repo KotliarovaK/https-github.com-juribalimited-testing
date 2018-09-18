@@ -562,12 +562,12 @@ Scenario: EvergreenJnr_AdminPage_CheckThatErrorsDoNotAppearAfterUpdatingTeamDesc
 	Then "Teams" page should be displayed to the user
 	When User clicks the "CREATE TEAM" Action button
 	Then "Create Team" page should be displayed to the user
-	When User enters "TestTeam1" in the Team Name field
+	When User enters "TestTeam9" in the Team Name field
 	And User enters "test" in the Team Description field
 	And User clicks Create Team button on the Create Team page
 	Then Success message is displayed and contains "The team has been created" text
 	When User clicks newly created object link
-	Then "TestTeam1" team details is displayed to the user
+	Then "TestTeam9" team details is displayed to the user
 	When User clicks "Team Settings" tab
 	And User enters "" in the Team Description field
 	Then Update Team button is disabled
@@ -966,7 +966,8 @@ Scenario: EvergreenJnr_AdminPage_CheckThatSelectedCheckboxIsSelectedAfterSwitchi
 	Then Update Project button is active
 	And "Devices to add (1 of 17225 selected)" is displayed to the user in the Project Scope Changes section
 	When User clicks "Users" tab in the Project Scope Changes section
-	And User expands the object to add 
+	Then "UPDATE USER CHANGES" Action button is disabled
+	When User expands the object to add 
 	And User selects following Objects
 	| Objects                   |
 	| AAH0343264 (Luc Gauthier) |
@@ -1277,10 +1278,10 @@ Scenario: EvergreenJnr_AdminPage_CheckingThatProjectDetailsForOnboardedObjectsIs
 	Then data in table is sorted by "Action" column in ascending order on the Admin page
 	When User click on "Action" column header on the Admin page
 	Then data in table is sorted by "Action" column in descending order on the Admin page
-	#When User click on "Bucket" column header on the Admin page
-	#Then data in table is sorted by "Bucket" column in ascending order on the Admin page
-	#When User click on "Bucket" column header on the Admin page
-	#Then data in table is sorted by "Bucket" column in descending order on the Admin page
+	When User click on "Bucket" column header on the Admin page
+	Then data in table is sorted by "Bucket" column in ascending order on the Admin page
+	When User click on "Bucket" column header on the Admin page
+	Then data in table is sorted by "Bucket" column in descending order on the Admin page
 	When User selects following date filter on the Projects page
 	| FilterData |
 	| 7302017    |
@@ -1289,8 +1290,9 @@ Scenario: EvergreenJnr_AdminPage_CheckingThatProjectDetailsForOnboardedObjectsIs
 	When User enters "0IJB93JZPG72PX" text in the Search field for "Item" column
 	Then Counter shows "1" found rows
 	When User clicks Reset Filters button on the Admin page
-	When User enters "User" text in the Search field for "Object Type" column
-	Then Counter shows "2" found rows
+	When User clicks String Filter button for "Object Type" column on the Admin page
+	When User selects "User" checkbox from String Filter on the Admin page
+	Then Counter shows "4" found rows
 	When User clicks Reset Filters button on the Admin page
 	When User enters "Unassigned" text in the Search field for "Bucket" column
 	Then Counter shows "4" found rows
@@ -1340,8 +1342,9 @@ Scenario: EvergreenJnr_AdminPage_CheckingThatProjectDetailsForOnboardedObjectsIs
 	When User enters "0IJB93JZPG72PX" text in the Search field for "Item" column
 	Then Counter shows "1" found rows
 	When User clicks Reset Filters button on the Admin page
-	When User enters "User" text in the Search field for "Object Type" column
-	Then Counter shows "2" found rows
+	When User clicks String Filter button for "Object Type" column on the Admin page
+	When User selects "Device" checkbox from String Filter on the Admin page
+	Then Counter shows "4" found rows
 	When User clicks Reset Filters button on the Admin page
 	When User enters "Unassigned" text in the Search field for "Bucket" column
 	Then Counter shows "4" found rows
@@ -1565,18 +1568,18 @@ Scenario: EvergreenJnr_AdminPage_CheckThatImpossibleToCreateSameNamedTeamUsingTh
 	Then "Teams" page should be displayed to the user
 	When User clicks the "CREATE TEAM" Action button
 	Then "Create Team" page should be displayed to the user
-	When User enters "11770" in the Team Name field
+	When User enters "99770" in the Team Name field
 	And User enters "test" in the Team Description field
 	And User clicks Create Team button on the Create Team page
 	Then Success message is displayed and contains "The team has been created" text
 	When User clicks newly created object link
-	Then "11770" team details is displayed to the user
+	Then "99770" team details is displayed to the user
 	When User clicks "Team Settings" tab
 	And User clicks Default Team checkbox
 	And User clicks the "UPDATE TEAM" Action button
 	Then Success message is displayed and contains "The team was successfully updated" text
 	When User click on Back button
-	When User enters "11770" text in the Search field for "Team" column
+	When User enters "99770" text in the Search field for "Team" column
 	When User clicks content from "Team" column
 	When User clicks "Team Settings" tab
 	Then Default Team checkbox is not active
@@ -1593,7 +1596,7 @@ Scenario: EvergreenJnr_AdminPage_CheckThatImpossibleToCreateSameNamedTeamUsingTh
 	Then "TRUE" value is displayed for Default column
 	When User clicks the "CREATE TEAM" Action button
 	Then "Create Team" page should be displayed to the user
-	When User enters " 11770" in the Team Name field
+	When User enters " 99770" in the Team Name field
 	And User enters "test" in the Team Description field
 	And User clicks Create Team button on the Create Team page
 	Then Error message with "A team already exists with this name" text is displayed
@@ -1822,7 +1825,7 @@ Scenario: EvergreenJnr_AdminPage_CheckThatTheFilterSearchIsNotCaseSensitive
 	Then created Project with "testname_small letters" name is displayed correctly
 	Then created Project with "TESTNAME_capital letters" name is displayed correctly
 
-@Evergreen @Admin @EvergreenJnr_AdminPage @AdminPage @DAS12999 @DAS13199 @DAS12680 @DAS12157 @Delete_Newly_Created_Project @Delete_Newly_Created_List @Projects @Not_Run
+@Evergreen @Admin @EvergreenJnr_AdminPage @AdminPage @DAS12999 @DAS13199 @DAS12680 @DAS12157 @Delete_Newly_Created_Project @Delete_Newly_Created_List @Projects
 Scenario: EvergreenJnr_AdminPage_CheckThatDevicesToAddAndRemoveAreChangingAppropriate
 	When User create static list with "StaticList6527" name on "Devices" page with following items
 	| ItemName        |
@@ -1861,7 +1864,7 @@ Scenario: EvergreenJnr_AdminPage_CheckThatDevicesToAddAndRemoveAreChangingApprop
 	When User selects "StaticList6528" in the Scope Project details
 	When User selects "Scope Changes" tab on the Project details page
 	Then "Devices to add (0 of 2 selected)" is displayed to the user in the Project Scope Changes section
-	Then "Devices to remove (0 of 2 selected)" is displayed to the user in the Project Scope Changes section
+	#Then "Devices to remove (0 of 2 selected)" is displayed to the user in the Project Scope Changes section
 	And Add Objects panel is collapsed
 
 @Evergreen @Admin @EvergreenJnr_AdminPage @AdminPage @DAS12999 @DAS13199 @DAS12680 @Delete_Newly_Created_Project @Delete_Newly_Created_List @Projects
@@ -2773,7 +2776,7 @@ Scenario: EvergreenJnr_AdminPage_AddingIndividualAndMembersFromAnotherTeam
 	Then "Teams" page should be displayed to the user
 	When User clicks the "CREATE TEAM" Action button
 	Then "Create Team" page should be displayed to the user
-	When User enters "TestTeam2" in the Team Name field
+	When User enters "TestTeam8" in the Team Name field
 	And User enters "test" in the Team Description field
 	When User selects "Add members from another team" in the Add Members dropdown
 	And User selects following Objects
@@ -2792,7 +2795,7 @@ Scenario: EvergreenJnr_AdminPage_AddingIndividualAndMembersFromAnotherTeam
 	Then Warning message with "You cannot delete the default team" text is displayed on the Admin page
 	When User clicks the "CREATE TEAM" Action button
 	Then "Create Team" page should be displayed to the user
-	When User enters "TestTeam22" in the Team Name field
+	When User enters "TestTeam88" in the Team Name field
 	And User enters "test" in the Team Description field
 	And User clicks Default Team checkbox
 	When User selects "Add individual members" in the Add Members dropdown
@@ -2809,12 +2812,12 @@ Scenario: EvergreenJnr_AdminPage_AddingIndividualAndMembersFromAnotherTeam
 	And User clicks the "UPDATE TEAM" Action button
 	Then Success message is displayed and contains "The team was successfully updated" text
 	When User click on Back button
-	When User enters "TestTeam2" text in the Search field for "Team" column
+	When User enters "TestTeam8" text in the Search field for "Team" column
 	And User selects all rows on the grid
 	And User removes selected item
 	Then Success message is displayed and contains "The selected teams have been deleted, and their buckets reassigned" text
 
-@Evergreen @Admin @EvergreenJnr_AdminPage @AdminPage @DAS12999 @DAS13254 @DAS13421 @Delete_Newly_Created_Team @Teams @Not_Run
+@Evergreen @Admin @EvergreenJnr_AdminPage @AdminPage @DAS12999 @DAS13254 @DAS13421 @Delete_Newly_Created_Team @Teams
 Scenario: EvergreenJnr_AdminPage_AddingMembersToTheTeam
 	When User clicks Admin on the left-hand menu
 	Then Admin page should be displayed to the user
@@ -2822,7 +2825,7 @@ Scenario: EvergreenJnr_AdminPage_AddingMembersToTheTeam
 	Then "Teams" page should be displayed to the user
 	When User clicks the "CREATE TEAM" Action button
 	Then "Create Team" page should be displayed to the user
-	When User enters "TestTeam3" in the Team Name field
+	When User enters "TestTeam7" in the Team Name field
 	And User enters "test" in the Team Description field
 	And User clicks Create Team button on the Create Team page
 	Then Success message is displayed and contains "The team has been created" text
@@ -2861,7 +2864,7 @@ Scenario: EvergreenJnr_AdminPage_AddingMembersToTheTeam
 	And User clicks the "ADD USERS" Action button
 	Then Success message is displayed and contains "The selected user was added to team Team 1" text
 	When User click on Back button
-	And User enters "TestTeam3" text in the Search field for "Team" column
+	And User enters "TestTeam7" text in the Search field for "Team" column
 	And User selects all rows on the grid
 	And User removes selected item
 
@@ -2873,7 +2876,7 @@ Scenario: EvergreenJnr_AdminPage_AddingBucketsToTheTeam
 	Then "Teams" page should be displayed to the user
 	When User clicks the "CREATE TEAM" Action button
 	Then "Create Team" page should be displayed to the user
-	When User enters "TestTeam4" in the Team Name field
+	When User enters "TestTeam5" in the Team Name field
 	And User enters "test" in the Team Description field
 	And User clicks Create Team button on the Create Team page
 	Then Success message is displayed and contains "The team has been created" text
@@ -2953,7 +2956,7 @@ Scenario: EvergreenJnr_AdminPage_AddingBucketsToTheTeam
 	Then Success message is displayed and contains "The selected bucket has been reassigned to the selected team" text
 	#Then There are no errors in the browser console
 	When User click on Back button
-	When User enters "TestTeam4" text in the Search field for "Team" column
+	When User enters "TestTeam5" text in the Search field for "Team" column
 	And User selects all rows on the grid
 	And User clicks on Actions button
 	And User selects "Delete Team" in the Actions

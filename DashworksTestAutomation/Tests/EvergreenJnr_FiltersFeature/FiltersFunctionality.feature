@@ -338,7 +338,7 @@ Examples:
 	| department             | Ends with        | LongName01234567890123456789012345678901234567890123456789 | Add Department column             |
 	| iscriticalsystemobject | Not empty        |                                                            | Add iscriticalsystemobject column |
 
-@Evergreen @Devices @EvergreenJnr_FilterFeature @FilterFunctionality @DAS11550 @DAS11749 @API
+@Evergreen @Devices @EvergreenJnr_FilterFeature @FilterFunctionality @DAS11550 @DAS11749 @DAS9583 @API
 Scenario Outline: EvergreenJnr_DevicesList_CheckThatOperatorInSelectedFilterIsDisplayedCorrectlyAPI
 	Then following operators are displayed in "<CategoryName>" category for "<FilterName>" filter on "Devices" page:
 	| OperatorValues      |
@@ -1151,3 +1151,25 @@ Scenario: EvergreenJnr_DevicesList_ChecksThatUsedByDevicesOwnerApplicationToDevi
 	Then "Application Key" filter is added to the list
 	And "Application whose Key is 86 used by device's owner" is displayed in added filter info
 	And "154" rows are displayed in the agGrid
+
+@Evergreen @AllLists @EvergreenJnr_FilterFeature @FilterFunctionality @DAS13145
+Scenario Outline: EvergreenJnr_AllLists_ChecksThatApplicationFilterIsNotExcludedApplicationsWhichAreNotLinkedToAnyDevices
+	When User clicks "<PageName>" on the left-hand menu
+	Then "<PageName>" list should be displayed to the user
+	When User clicks the Filters button
+	Then Filters panel is displayed to the user
+	When user select "Application" filter
+	And User clicks in search field for selected Association filter
+	Then "50 of 2223 shown" results are displayed in the Filter panel
+	And the following values are displayed for "Application" filter on "<PageName>" page:
+	| Value                               |
+	| Acrobat Reader 6.0.1 (500)          |
+	| ACT Data Collection Packages (1104) |
+	When User enters "1104" text in Search field at selected Lookup Filter
+	Then "1 shown" results are displayed in the Filter panel
+	And "ACT Data Collection Packages (1104)" value is displayed for selected Lookup Filter
+
+Examples: 
+	| PageName |
+	| Devices  |
+	| Users    |
