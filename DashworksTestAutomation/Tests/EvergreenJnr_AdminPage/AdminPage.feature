@@ -60,7 +60,7 @@ Scenario: EvergreenJnr_AdminPage_CheckThatCreateButtonIsDisabledForEmptyProjectN
 	And User selects all rows on the grid
 	And User removes selected item
 
-@Evergreen @Admin @EvergreenJnr_AdminPage @AdminPage @DAS11726 @DAS11891 @DAS11747 @Delete_Newly_Created_Bucket @Buckets
+@Evergreen @Admin @EvergreenJnr_AdminPage @AdminPage @DAS11726 @DAS11891 @DAS11747 @DAS13471 @Delete_Newly_Created_Bucket @Buckets
 Scenario: EvergreenJnr_AdminPage_CheckThatCreateButtonIsDisabledForEmptyBucketName
 	When User clicks Admin on the left-hand menu
 	Then Admin page should be displayed to the user
@@ -87,10 +87,10 @@ Scenario: EvergreenJnr_AdminPage_CheckThatCreateButtonIsDisabledForEmptyBucketNa
 	And User selects "Admin IT" team in the Team dropdown on the Buckets page
 	And User clicks Create button on the Create Bucket page
 	Then Error message with "A bucket already exists with this name" text is displayed
-	#And There are no errors in the browser console
+	And There are no errors in the browser console
 	Then Delete "TestBucket1" Bucket in the Administration
 
-@Evergreen @Admin @EvergreenJnr_AdminPage @AdminPage @DAS11726 @DAS11747 @Delete_Newly_Created_Team @Teams
+@Evergreen @Admin @EvergreenJnr_AdminPage @AdminPage @DAS11726 @DAS11747 @DAS13471 @Delete_Newly_Created_Team @Teams
 Scenario: EvergreenJnr_AdminPage_CheckThatCreateButtonIsDisabledForEmptyTeamName
 	When User clicks Admin on the left-hand menu
 	Then Admin page should be displayed to the user
@@ -111,7 +111,7 @@ Scenario: EvergreenJnr_AdminPage_CheckThatCreateButtonIsDisabledForEmptyTeamName
 	And User enters "test" in the Team Description field
 	And User clicks Create Team button on the Create Team page
 	Then Error message with "A team already exists with this name" text is displayed
-	#And There are no errors in the browser console
+	And There are no errors in the browser console
 
 @Evergreen @AllLists @EvergreenJnr_AdminPage @AdminPage @DAS11886 @DAS12613 @DAS13199 @Delete_Newly_Created_List @Delete_Newly_Created_Project @Project_Creation_and_Scope
 Scenario: EvergreenJnr_AdminPage_CheckThatWarningMessageIsDisplayedAfterDeletingUsedForProjectLists 
@@ -150,7 +150,7 @@ Scenario: EvergreenJnr_AdminPage_CheckThatWarningMessageIsDisplayedAfterDeleting
 	When User selects "Scope Changes" tab on the Project details page
 	Then Warning message is not displayed on the Admin page
 
-@Evergreen @Admin @EvergreenJnr_AdminPage @AdminPage @DAS11977 @DAS11959 @DAS12553 @DAS11744 @DAS12742 @DAS12999 @DAS13199 @DAS13254 @DAS13323 @DAS13393 @Delete_Newly_Created_Project @Project_Creation_and_Scope @Projects
+@Evergreen @Admin @EvergreenJnr_AdminPage @AdminPage @DAS11977 @DAS11959 @DAS12553 @DAS11744 @DAS12742 @DAS12999 @DAS13199 @DAS13254 @DAS13323 @DAS13393 @Delete_Newly_Created_Project @Project_Creation_and_Scope @Projects @Not_Run
 Scenario: EvergreenJnr_AdminPage_CheckThatAfterApplyingDoNotIncludeDeviceOwnersListHas0ItemsInTheUsersTab
 	When User clicks Admin on the left-hand menu
 	Then Admin page should be displayed to the user
@@ -172,7 +172,7 @@ Scenario: EvergreenJnr_AdminPage_CheckThatAfterApplyingDoNotIncludeDeviceOwnersL
 	And User selects "Use evergreen buckets" in the Buckets Project dropdown
 	And User clicks the "UPDATE" Action button
 	Then Success message is displayed and contains "The project details have been updated" text
-	#And There are no errors in the browser console
+	And There are no errors in the browser console
 	When User click on Back button
 	And User selects all rows on the grid
 	Then Actions dropdown is displayed correctly
@@ -227,7 +227,7 @@ Scenario: EvergreenJnr_AdminPage_CheckThatAfterApplyingDoNotIncludeDeviceOwnersL
 	And User selects all rows on the grid
 	And User removes selected item
 
-@Evergreen @Admin @EvergreenJnr_AdminPage @AdminPage @DAS11931 @DAS12742 @DAS11769 @DAS12999 @Project_Creation_and_Scope @Delete_Newly_Created_Project @Delete_Newly_Created_List @Projects
+@Evergreen @Admin @EvergreenJnr_AdminPage @AdminPage @DAS11931 @DAS12742 @DAS11769 @DAS12999 @Project_Creation_and_Scope @Delete_Newly_Created_Project @Delete_Newly_Created_List @Projects @Not_Run
 Scenario Outline: EvergreenJnr_AdminPage_CheckThatProjectsAreDeletedSuccessfullyAndThereAreNoConsoleErrors
 	When User clicks Admin on the left-hand menu
 	Then Admin page should be displayed to the user
@@ -334,7 +334,7 @@ Scenario: EvergreenJnr_AdminPage_CheckThatNoConsoleErrorsAreDisplayedWhenDeleteD
 	Then color data in table is sorted by "Default" column in descending order on the Admin page
 	Then There are no errors in the browser console
 
-@Evergreen @Admin @EvergreenJnr_AdminPage @AdminPage @DAS11762 @DAS12009 @DAS12999 @Teams
+@Evergreen @Admin @EvergreenJnr_AdminPage @AdminPage @DAS11762 @DAS12009 @DAS12999 @DAS13471 @Teams
 Scenario: EvergreenJnr_AdminPage_CheckThatNoConsoleErrorsAreDisplayedWhenDeleteDataFromFilterTextFieldForTeams
 	When User clicks Admin on the left-hand menu
 	Then Admin page should be displayed to the user
@@ -358,7 +358,7 @@ Scenario: EvergreenJnr_AdminPage_CheckThatNoConsoleErrorsAreDisplayedWhenDeleteD
 	And User have opened Column Settings for "Default" column
 	And User clicks Filter button in the Column Settings panel on the Teams Page
 	When User clicks "True" checkbox from String Filter on the Admin page
-	#Then Counter shows "2,789" found rows
+	Then Counter shows "2,789" found rows
 	Then There are no errors in the browser console
 	When User clicks Reset Filters button on the Admin page
 	Then Content is present in the table on the Admin page
@@ -399,7 +399,7 @@ Scenario: EvergreenJnr_AdminPage_CheckThatNoConsoleErrorsAreDisplayedWhenDeleteD
 	Then numeric data in table is sorted by "Project Buckets" column in descending order on the Admin page
 	When User click on "Project Buckets" column header on the Admin page
 	Then numeric data in table is sorted by "Project Buckets" column in ascending order on the Admin page
-	#And There are no errors in the browser console
+	And There are no errors in the browser console
 
 @Evergreen @Admin @EvergreenJnr_AdminPage @AdminPage @DAS11879 @DAS12742 @DAS12752 @Buckets
 Scenario: EvergreenJnr_AdminPage_CheckThatSpecificWarningMessageIsNotDisplayedAfterTryingToDeleteNonDefaultBucket
@@ -1910,7 +1910,7 @@ Scenario: EvergreenJnr_AdminPage_CheckThatUsersToAddAndRemoveAreChangingAppropri
 	#And "Users to remove (0 of 2 selected)" is displayed to the user in the Project Scope Changes section
 	And Add Objects panel is collapsed
 
-@Evergreen @Admin @EvergreenJnr_AdminPage @AdminPage @DAS12999 @DAS12903 @Delete_Newly_Created_Project @Delete_Newly_Created_List
+@Evergreen @Admin @EvergreenJnr_AdminPage @AdminPage @DAS12999 @DAS12903 @Delete_Newly_Created_Project @Delete_Newly_Created_List @Not_Run
 Scenario Outline: EvergreenJnr_AdminPage_CheckProjectCreationFromListPageWithUseEvergreenBucket
 	When User clicks "<ListName>" on the left-hand menu
 	Then "<ListName>" list should be displayed to the user
@@ -2104,7 +2104,7 @@ Examples:
 	| TestProject9553 | StaticList8891 | Mailboxes | 00A5B910A1004CF5AC4@bclabs.local | Email Address | DynamicList9537 |
 	| TestProject9554 | StaticList8892 | Users     | 003F5D8E1A844B1FAA5              | Username      | DynamicList9538 |
 
-@Evergreen @Admin @EvergreenJnr_AdminPage @AdminPage @DAS12948 @DAS13073 @DAS12999 @Delete_Newly_Created_Project @Buckets @Projects
+@Evergreen @Admin @EvergreenJnr_AdminPage @AdminPage @DAS12948 @DAS13073 @DAS12999 @Delete_Newly_Created_Project @Buckets @Projects @Not_Run
 Scenario: EvergreenJnr_AdminPage_CheckTheBucketStateForOnboardedObjects
 	When User clicks Admin on the left-hand menu
 	Then Admin page should be displayed to the user
@@ -2208,7 +2208,7 @@ Examples:
 	| All Mailboxes | Mailboxes | UPDATE MAILBOX CHANGES | 003F5D8E1A844B1FAA5@bclabs.local (Hunter, Melanie) | 1 mailbox will be added | 1 object queued for onboarding, 0 objects offboarded |
 	| All Devices   | Users     | UPDATE USER CHANGES    | ADC714277 (Dina Q. Knight)                         | 1 user will be added    | 1 object queued for onboarding, 0 objects offboarded |
 
-@Evergreen @Admin @EvergreenJnr_AdminPage @AdminPage @DAS12999 @DAS13199 @DAS12781 @DAS12903 @DAS12485 @Projects @Delete_Newly_Created_Project
+@Evergreen @Admin @EvergreenJnr_AdminPage @AdminPage @DAS12999 @DAS13199 @DAS12781 @DAS12903 @DAS12485 @Projects @Delete_Newly_Created_Project @Not_Run
 Scenario: EvergreenJnr_AdminPage_ChangingBucketFromUseEvergreenBucketsToCloneEvergreenBuckets
 	When User clicks Admin on the left-hand menu
 	Then Admin page should be displayed to the user
@@ -2231,7 +2231,7 @@ Scenario: EvergreenJnr_AdminPage_ChangingBucketFromUseEvergreenBucketsToCloneEve
 	When User selects "Scope Changes" tab on the Project details page
 	Then "Match to Evergreen Bucket" is displayed in the Bucket dropdown
 
-@Evergreen @Admin @EvergreenJnr_AdminPage @AdminPage @DAS12999 @DAS13199 @Delete_Newly_Created_Project @Project_Creation_and_Scope @Projects
+@Evergreen @Admin @EvergreenJnr_AdminPage @AdminPage @DAS12999 @DAS13199 @DAS13471 @Delete_Newly_Created_Project @Project_Creation_and_Scope @Projects
 Scenario: EvergreenJnr_AdminPage_ChangingBucketFromCloneEvergreenBucketsToUseProjectBuckets
 	When User clicks Admin on the left-hand menu
 	Then Admin page should be displayed to the user
@@ -2249,10 +2249,10 @@ Scenario: EvergreenJnr_AdminPage_ChangingBucketFromCloneEvergreenBucketsToUsePro
 	And User selects "Use project buckets" in the Buckets Project dropdown
 	And User clicks the "UPDATE" Action button
 	Then Success message is displayed and contains "The project details have been updated" text
-	#And There are no errors in the browser console
+	And There are no errors in the browser console
 	When User selects "Scope Changes" tab on the Project details page
 	Then "Unassigned" is displayed in the Bucket dropdown
-	#And There are no errors in the browser console
+	And There are no errors in the browser console
 
 @Evergreen @Admin @EvergreenJnr_AdminPage @AdminPage @DAS12999 @DAS13199 @Delete_Newly_Created_Project @Project_Creation_and_Scope @Projects
 Scenario: EvergreenJnr_AdminPage_ChangingBucketFromCloneEvergreenBucketsToUseEvergreenBuckets
@@ -2277,7 +2277,7 @@ Scenario: EvergreenJnr_AdminPage_ChangingBucketFromCloneEvergreenBucketsToUseEve
 	Then "Unassigned" is displayed in the Bucket dropdown
 	#And There are no errors in the browser console
 
-@Evergreen @Admin @EvergreenJnr_AdminPage @AdminPage @DAS12999 @DAS12903 @DAS12485 @Delete_Newly_Created_Project @Delete_Newly_Created_List @Projects
+@Evergreen @Admin @EvergreenJnr_AdminPage @AdminPage @DAS12999 @DAS12903 @DAS12485 @Delete_Newly_Created_Project @Delete_Newly_Created_List @Projects @Not_Run
 Scenario: EvergreenJnr_AdminPage_ChangingDevicesScopeListToAnotherListUsingEvergreenBuckets
 	When User clicks "Devices" on the left-hand menu
 	Then "Devices" list should be displayed to the user
@@ -3757,7 +3757,7 @@ Scenario: EvergreenJnr_AdminPage_CheckThatSelectedBucketsIsDisplayedForOnboarded
 	| 003F5D8E1A844B1FAA5 (Hunter, Melanie) |
 	And "UsersProject3Group" content is displayed in "Bucket" column
 
-@Evergreen @Admin @EvergreenJnr_AdminPage @AdminPage @DAS12763 @DAS12767 @Delete_Newly_Created_Project @Delete_Newly_Created_Bucket
+@Evergreen @Admin @EvergreenJnr_AdminPage @AdminPage @DAS12763 @DAS12767 @Delete_Newly_Created_Project @Delete_Newly_Created_Bucket @Not_Run
 Scenario: EvergreenJnr_AdminPage_CheckDisplayingBucketsAfterCreationProjectsWithDifferentOptions
 	When User clicks Admin on the left-hand menu
 	Then Admin page should be displayed to the user

@@ -163,6 +163,7 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_AdminPage
         [NUnit.Framework.CategoryAttribute("DAS11726")]
         [NUnit.Framework.CategoryAttribute("DAS11891")]
         [NUnit.Framework.CategoryAttribute("DAS11747")]
+        [NUnit.Framework.CategoryAttribute("DAS13471")]
         [NUnit.Framework.CategoryAttribute("Delete_Newly_Created_Bucket")]
         [NUnit.Framework.CategoryAttribute("Buckets")]
         public virtual void EvergreenJnr_AdminPage_CheckThatCreateButtonIsDisabledForEmptyBucketName()
@@ -175,6 +176,7 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_AdminPage
                         "DAS11726",
                         "DAS11891",
                         "DAS11747",
+                        "DAS13471",
                         "Delete_Newly_Created_Bucket",
                         "Buckets"});
             this.ScenarioSetup(scenarioInfo);
@@ -204,6 +206,7 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_AdminPage
             testRunner.And("User selects \"Admin IT\" team in the Team dropdown on the Buckets page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
             testRunner.And("User clicks Create button on the Create Bucket page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
             testRunner.Then("Error message with \"A bucket already exists with this name\" text is displayed", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+            testRunner.And("There are no errors in the browser console", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
             testRunner.Then("Delete \"TestBucket1\" Bucket in the Administration", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
             this.ScenarioCleanup();
         }
@@ -217,6 +220,7 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_AdminPage
         [NUnit.Framework.CategoryAttribute("AdminPage")]
         [NUnit.Framework.CategoryAttribute("DAS11726")]
         [NUnit.Framework.CategoryAttribute("DAS11747")]
+        [NUnit.Framework.CategoryAttribute("DAS13471")]
         [NUnit.Framework.CategoryAttribute("Delete_Newly_Created_Team")]
         [NUnit.Framework.CategoryAttribute("Teams")]
         public virtual void EvergreenJnr_AdminPage_CheckThatCreateButtonIsDisabledForEmptyTeamName()
@@ -228,6 +232,7 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_AdminPage
                         "AdminPage",
                         "DAS11726",
                         "DAS11747",
+                        "DAS13471",
                         "Delete_Newly_Created_Team",
                         "Teams"});
             this.ScenarioSetup(scenarioInfo);
@@ -251,6 +256,7 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_AdminPage
             testRunner.And("User enters \"test\" in the Team Description field", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
             testRunner.And("User clicks Create Team button on the Create Team page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
             testRunner.Then("Error message with \"A team already exists with this name\" text is displayed", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+            testRunner.And("There are no errors in the browser console", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
             this.ScenarioCleanup();
         }
         
@@ -344,6 +350,7 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_AdminPage
         [NUnit.Framework.CategoryAttribute("Delete_Newly_Created_Project")]
         [NUnit.Framework.CategoryAttribute("Project_Creation_and_Scope")]
         [NUnit.Framework.CategoryAttribute("Projects")]
+        [NUnit.Framework.CategoryAttribute("Not_Run")]
         public virtual void EvergreenJnr_AdminPage_CheckThatAfterApplyingDoNotIncludeDeviceOwnersListHas0ItemsInTheUsersTab()
         {
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("EvergreenJnr_AdminPage_CheckThatAfterApplyingDoNotIncludeDeviceOwnersListHas0Item" +
@@ -364,7 +371,8 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_AdminPage
                         "DAS13393",
                         "Delete_Newly_Created_Project",
                         "Project_Creation_and_Scope",
-                        "Projects"});
+                        "Projects",
+                        "Not_Run"});
             this.ScenarioSetup(scenarioInfo);
             this.FeatureBackground();
             testRunner.When("User clicks Admin on the left-hand menu", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
@@ -388,6 +396,7 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_AdminPage
             testRunner.And("User clicks the \"UPDATE\" Action button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
             testRunner.Then("Success message is displayed and contains \"The project details have been updated\"" +
                     " text", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+            testRunner.And("There are no errors in the browser console", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
             testRunner.When("User click on Back button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
             testRunner.And("User selects all rows on the grid", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
             testRunner.Then("Actions dropdown is displayed correctly", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
@@ -470,6 +479,7 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_AdminPage
         [NUnit.Framework.CategoryAttribute("Delete_Newly_Created_Project")]
         [NUnit.Framework.CategoryAttribute("Delete_Newly_Created_List")]
         [NUnit.Framework.CategoryAttribute("Projects")]
+        [NUnit.Framework.CategoryAttribute("Not_Run")]
         [NUnit.Framework.TestCaseAttribute("TestProject2", "All Devices", "StaticList8812", "Devices", "00KWQ4J3WKQM0G", "Hostname", "DynamicList9517", new string[0])]
         [NUnit.Framework.TestCaseAttribute("TestProject3", "All Users", "StaticList8813", "Users", "003F5D8E1A844B1FAA5", "Username", "DynamicList9518", new string[0])]
         [NUnit.Framework.TestCaseAttribute("TestProject4", "All Mailboxes", "StaticList8814", "Mailboxes", "ZVI880605@bclabs.local", "Email Address", "DynamicList9519", new string[0])]
@@ -487,7 +497,8 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_AdminPage
                     "Project_Creation_and_Scope",
                     "Delete_Newly_Created_Project",
                     "Delete_Newly_Created_List",
-                    "Projects"};
+                    "Projects",
+                    "Not_Run"};
             if ((exampleTags != null))
             {
                 @__tags = System.Linq.Enumerable.ToArray(System.Linq.Enumerable.Concat(@__tags, exampleTags));
@@ -641,6 +652,7 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_AdminPage
         [NUnit.Framework.CategoryAttribute("DAS11762")]
         [NUnit.Framework.CategoryAttribute("DAS12009")]
         [NUnit.Framework.CategoryAttribute("DAS12999")]
+        [NUnit.Framework.CategoryAttribute("DAS13471")]
         [NUnit.Framework.CategoryAttribute("Teams")]
         public virtual void EvergreenJnr_AdminPage_CheckThatNoConsoleErrorsAreDisplayedWhenDeleteDataFromFilterTextFieldForTeams()
         {
@@ -653,6 +665,7 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_AdminPage
                         "DAS11762",
                         "DAS12009",
                         "DAS12999",
+                        "DAS13471",
                         "Teams"});
             this.ScenarioSetup(scenarioInfo);
             this.FeatureBackground();
@@ -678,6 +691,7 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_AdminPage
             testRunner.And("User have opened Column Settings for \"Default\" column", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
             testRunner.And("User clicks Filter button in the Column Settings panel on the Teams Page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
             testRunner.When("User clicks \"True\" checkbox from String Filter on the Admin page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+            testRunner.Then("Counter shows \"2,789\" found rows", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
             testRunner.Then("There are no errors in the browser console", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
             testRunner.When("User clicks Reset Filters button on the Admin page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
             testRunner.Then("Content is present in the table on the Admin page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
@@ -726,6 +740,7 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_AdminPage
             testRunner.When("User click on \"Project Buckets\" column header on the Admin page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
             testRunner.Then("numeric data in table is sorted by \"Project Buckets\" column in ascending order on" +
                     " the Admin page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+            testRunner.And("There are no errors in the browser console", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
             this.ScenarioCleanup();
         }
         
@@ -3708,6 +3723,7 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_AdminPage
         [NUnit.Framework.CategoryAttribute("DAS12903")]
         [NUnit.Framework.CategoryAttribute("Delete_Newly_Created_Project")]
         [NUnit.Framework.CategoryAttribute("Delete_Newly_Created_List")]
+        [NUnit.Framework.CategoryAttribute("Not_Run")]
         [NUnit.Framework.TestCaseAttribute("Devices", "Project2587", "StaticList6521", "00KLL9S8NRF0X6", "Hostname", "TestList6584", new string[0])]
         [NUnit.Framework.TestCaseAttribute("Mailboxes", "Project2587", "StaticList6522", "ZVI880605@bclabs.local", "Email Address", "TestList6583", new string[0])]
         public virtual void EvergreenJnr_AdminPage_CheckProjectCreationFromListPageWithUseEvergreenBucket(string listName, string projectName, string staticList, string item, string columnName, string dynamicList, string[] exampleTags)
@@ -3720,7 +3736,8 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_AdminPage
                     "DAS12999",
                     "DAS12903",
                     "Delete_Newly_Created_Project",
-                    "Delete_Newly_Created_List"};
+                    "Delete_Newly_Created_List",
+                    "Not_Run"};
             if ((exampleTags != null))
             {
                 @__tags = System.Linq.Enumerable.ToArray(System.Linq.Enumerable.Concat(@__tags, exampleTags));
@@ -4014,6 +4031,7 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_AdminPage
         [NUnit.Framework.CategoryAttribute("Delete_Newly_Created_Project")]
         [NUnit.Framework.CategoryAttribute("Buckets")]
         [NUnit.Framework.CategoryAttribute("Projects")]
+        [NUnit.Framework.CategoryAttribute("Not_Run")]
         public virtual void EvergreenJnr_AdminPage_CheckTheBucketStateForOnboardedObjects()
         {
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("EvergreenJnr_AdminPage_CheckTheBucketStateForOnboardedObjects", new string[] {
@@ -4026,7 +4044,8 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_AdminPage
                         "DAS12999",
                         "Delete_Newly_Created_Project",
                         "Buckets",
-                        "Projects"});
+                        "Projects",
+                        "Not_Run"});
             this.ScenarioSetup(scenarioInfo);
             this.FeatureBackground();
             testRunner.When("User clicks Admin on the left-hand menu", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
@@ -4185,6 +4204,7 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_AdminPage
         [NUnit.Framework.CategoryAttribute("DAS12485")]
         [NUnit.Framework.CategoryAttribute("Projects")]
         [NUnit.Framework.CategoryAttribute("Delete_Newly_Created_Project")]
+        [NUnit.Framework.CategoryAttribute("Not_Run")]
         public virtual void EvergreenJnr_AdminPage_ChangingBucketFromUseEvergreenBucketsToCloneEvergreenBuckets()
         {
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("EvergreenJnr_AdminPage_ChangingBucketFromUseEvergreenBucketsToCloneEvergreenBucke" +
@@ -4199,7 +4219,8 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_AdminPage
                         "DAS12903",
                         "DAS12485",
                         "Projects",
-                        "Delete_Newly_Created_Project"});
+                        "Delete_Newly_Created_Project",
+                        "Not_Run"});
             this.ScenarioSetup(scenarioInfo);
             this.FeatureBackground();
             testRunner.When("User clicks Admin on the left-hand menu", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
@@ -4236,6 +4257,7 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_AdminPage
         [NUnit.Framework.CategoryAttribute("AdminPage")]
         [NUnit.Framework.CategoryAttribute("DAS12999")]
         [NUnit.Framework.CategoryAttribute("DAS13199")]
+        [NUnit.Framework.CategoryAttribute("DAS13471")]
         [NUnit.Framework.CategoryAttribute("Delete_Newly_Created_Project")]
         [NUnit.Framework.CategoryAttribute("Project_Creation_and_Scope")]
         [NUnit.Framework.CategoryAttribute("Projects")]
@@ -4249,6 +4271,7 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_AdminPage
                         "AdminPage",
                         "DAS12999",
                         "DAS13199",
+                        "DAS13471",
                         "Delete_Newly_Created_Project",
                         "Project_Creation_and_Scope",
                         "Projects"});
@@ -4272,8 +4295,10 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_AdminPage
             testRunner.And("User clicks the \"UPDATE\" Action button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
             testRunner.Then("Success message is displayed and contains \"The project details have been updated\"" +
                     " text", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+            testRunner.And("There are no errors in the browser console", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
             testRunner.When("User selects \"Scope Changes\" tab on the Project details page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
             testRunner.Then("\"Unassigned\" is displayed in the Bucket dropdown", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+            testRunner.And("There are no errors in the browser console", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
             this.ScenarioCleanup();
         }
         
@@ -4342,6 +4367,7 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_AdminPage
         [NUnit.Framework.CategoryAttribute("Delete_Newly_Created_Project")]
         [NUnit.Framework.CategoryAttribute("Delete_Newly_Created_List")]
         [NUnit.Framework.CategoryAttribute("Projects")]
+        [NUnit.Framework.CategoryAttribute("Not_Run")]
         public virtual void EvergreenJnr_AdminPage_ChangingDevicesScopeListToAnotherListUsingEvergreenBuckets()
         {
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("EvergreenJnr_AdminPage_ChangingDevicesScopeListToAnotherListUsingEvergreenBuckets" +
@@ -4355,7 +4381,8 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_AdminPage
                         "DAS12485",
                         "Delete_Newly_Created_Project",
                         "Delete_Newly_Created_List",
-                        "Projects"});
+                        "Projects",
+                        "Not_Run"});
             this.ScenarioSetup(scenarioInfo);
             this.FeatureBackground();
             testRunner.When("User clicks \"Devices\" on the left-hand menu", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
@@ -6893,6 +6920,7 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_AdminPage
         [NUnit.Framework.CategoryAttribute("DAS12767")]
         [NUnit.Framework.CategoryAttribute("Delete_Newly_Created_Project")]
         [NUnit.Framework.CategoryAttribute("Delete_Newly_Created_Bucket")]
+        [NUnit.Framework.CategoryAttribute("Not_Run")]
         public virtual void EvergreenJnr_AdminPage_CheckDisplayingBucketsAfterCreationProjectsWithDifferentOptions()
         {
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("EvergreenJnr_AdminPage_CheckDisplayingBucketsAfterCreationProjectsWithDifferentOp" +
@@ -6904,7 +6932,8 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_AdminPage
                         "DAS12763",
                         "DAS12767",
                         "Delete_Newly_Created_Project",
-                        "Delete_Newly_Created_Bucket"});
+                        "Delete_Newly_Created_Bucket",
+                        "Not_Run"});
             this.ScenarioSetup(scenarioInfo);
             this.FeatureBackground();
             testRunner.When("User clicks Admin on the left-hand menu", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
