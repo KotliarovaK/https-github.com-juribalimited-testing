@@ -101,7 +101,7 @@ namespace DashworksTestAutomation.Steps.Dashworks
         {
             var action = _driver.NowAt<BaseDashboardPage>();
             action.ProjectField.Click();
-            List<string> list = action.OtionListOnActionsPanel.Select(x => x.Text).ToList();
+            List<string> list = action.OptionListOnActionsPanel.Select(x => x.Text).ToList();
             Assert.AreEqual(list.OrderBy(s => s), list, "Projects are not in alphabetical order");
         }
 
@@ -154,7 +154,7 @@ namespace DashworksTestAutomation.Steps.Dashworks
         {
             var action = _driver.NowAt<BaseDashboardPage>();
             action.StageField.Click();
-            List<string> list = action.OtionListOnActionsPanel.Select(x => x.Text).ToList();
+            List<string> list = action.OptionListOnActionsPanel.Select(x => x.Text).ToList();
             Assert.AreEqual(list.OrderBy(s => s), list, "Stages are not in alphabetical order");
             var page = _driver.NowAt<ApplicationsDetailsTabsMenu>();
             page.BodyContainer.Click();
@@ -174,7 +174,7 @@ namespace DashworksTestAutomation.Steps.Dashworks
         {
             var action = _driver.NowAt<BaseDashboardPage>();
             action.TaskField.Click();
-            List<string> list = action.OtionListOnActionsPanel.Select(x => x.Text).ToList();
+            List<string> list = action.OptionListOnActionsPanel.Select(x => x.Text).ToList();
             Assert.AreEqual(list.OrderBy(s => s), list, "Tasks are not in alphabetical order");
             var page = _driver.NowAt<ApplicationsDetailsTabsMenu>();
             page.BodyContainer.Click();
@@ -209,7 +209,7 @@ namespace DashworksTestAutomation.Steps.Dashworks
             var action = _driver.NowAt<BaseDashboardPage>();
             action.UpdateValueDropdown.Click();
             var expectedList = table.Rows.SelectMany(row => row.Values).ToList();
-            var actualList = action.OtionListOnActionsPanel.Select(value => value.Text).ToList();
+            var actualList = action.OptionListOnActionsPanel.Select(value => value.Text).ToList();
             Assert.AreEqual(expectedList, actualList, "Update Value options are different");
             var page = _driver.NowAt<ApplicationsDetailsTabsMenu>();
             page.BodyContainer.Click();
@@ -238,7 +238,7 @@ namespace DashworksTestAutomation.Steps.Dashworks
             var action = _driver.NowAt<BaseDashboardPage>();
             action.UpdateDateDropdown.Click();
             var expectedList = table.Rows.SelectMany(row => row.Values).ToList();
-            var actualList = action.OtionListOnActionsPanel.Select(value => value.Text).ToList();
+            var actualList = action.OptionListOnActionsPanel.Select(value => value.Text).ToList();
             Assert.AreEqual(expectedList, actualList, "Update Date options are different");
             var page = _driver.NowAt<ApplicationsDetailsTabsMenu>();
             page.BodyContainer.Click();
@@ -258,7 +258,7 @@ namespace DashworksTestAutomation.Steps.Dashworks
             var action = _driver.NowAt<BaseDashboardPage>();
             action.UpdateOwnerDropdown.Click();
             var expectedList = table.Rows.SelectMany(row => row.Values).ToList();
-            var actualList = action.OtionListOnActionsPanel.Select(value => value.Text).ToList();
+            var actualList = action.OptionListOnActionsPanel.Select(value => value.Text).ToList();
             Assert.AreEqual(expectedList, actualList, "Update Owner options are different");
             var page = _driver.NowAt<ApplicationsDetailsTabsMenu>();
             page.BodyContainer.Click();
@@ -279,7 +279,7 @@ namespace DashworksTestAutomation.Steps.Dashworks
         {
             var action = _driver.NowAt<BaseDashboardPage>();
             action.TeamField.Click();
-            List<string> list = action.OtionListOnActionsPanel.Select(x => x.Text).ToList();
+            List<string> list = action.OptionListOnActionsPanel.Select(x => x.Text).ToList();
             Assert.AreEqual(list.OrderBy(s => s), list, "Teams are not in alphabetical order");
             var page = _driver.NowAt<ApplicationsDetailsTabsMenu>();
             page.BodyContainer.Click();
