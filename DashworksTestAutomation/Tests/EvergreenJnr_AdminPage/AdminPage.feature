@@ -1251,7 +1251,7 @@ Scenario: EvergreenJnr_AdminPage_CheckingThatProjectDetailsForOnboardedObjectsIs
 	And "Users 0/0" is displayed in the tab header on the Admin page
 	And "Applications 0/0" is displayed in the tab header on the Admin page
 	When User selects "Queue" tab on the Project details page
-	#Then There are no errors in the browser console
+	Then There are no errors in the browser console
 	Then Error message is not displayed on the Projects page
 	And following Items are onboarded
 	| Items                          |
@@ -1301,7 +1301,7 @@ Scenario: EvergreenJnr_AdminPage_CheckingThatProjectDetailsForOnboardedObjectsIs
 	When User selects "Onboard Computer Object" checkbox from String Filter on the Admin page
 	Then Counter shows "4" found rows
 	When User selects "History" tab on the Project details page
-	#Then There are no errors in the browser console
+	Then There are no errors in the browser console
 	Then Error message is not displayed on the Projects page
 	Then following Items are onboarded
 	| Items                          |
@@ -1362,7 +1362,7 @@ Scenario: EvergreenJnr_AdminPage_CheckingThatProjectDetailsForOnboardedObjectsIs
 	#Remove hash after fix
 	#And User clicks "TestProject12490" link on the Details Page
 	#Then "Project Object" page is displayed to the user
-	#Then There are no errors in the browser console
+	Then There are no errors in the browser console
 
 @Evergreen @Admin @EvergreenJnr_AdminPage @AdminPage @DAS11700 @Delete_Newly_Created_Project @Project_Creation_and_Scope
 Scenario: EvergreenJnr_AdminPage_CheckingThatTheProjectIdColumnIsAddedAndDisplayedCorrectlyToTheAdminProjectGrid
