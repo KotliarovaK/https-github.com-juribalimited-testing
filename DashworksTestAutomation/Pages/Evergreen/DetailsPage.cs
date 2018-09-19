@@ -226,7 +226,7 @@ namespace DashworksTestAutomation.Pages.Evergreen
         public string GetHrefByColumnName(string columnName)
         {
             By byControl =
-                By.XPath($".//div[contains(@class, 'ag-body-container')]/div[1]/div[{GetColumnNumberByName(columnName)}]/span/div/a[@href]");
+                By.XPath($".//div[contains(@class, 'ag-body-container')]/div[1]/div[{GetColumnNumberByName(columnName)}]/child-cell//a");
 
             Driver.WaitForDataLoading();
             Driver.WaitWhileControlIsNotDisplayed(byControl);
