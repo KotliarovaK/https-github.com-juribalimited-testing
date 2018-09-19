@@ -1440,7 +1440,7 @@ Scenario: EvergreenJnr_AdminPage_CheckThatOnboardedObjectsAreDisplayedAfterChang
 	Then "2" Onboarded objects are displayed
 	When User clicks Admin on the left-hand menu
 
-@Evergreen @Admin @EvergreenJnr_AdminPage @AdminPage @DAS12364 @DAS12999 @DAS13199 @DAS13297 @DAS12485 @Delete_Newly_Created_Project @Project_Creation_and_Scope @Projects
+@Evergreen @Admin @EvergreenJnr_AdminPage @AdminPage @DAS12364 @DAS12999 @DAS13199 @DAS13297 @DAS12485 @DAS12108 @Delete_Newly_Created_Project @Project_Creation_and_Scope @Projects
 Scenario: EvergreenJnr_AdminPage_CheckingThatTheProjectIsUpdatedWithoutErrors
 	When User clicks Admin on the left-hand menu
 	Then Admin page should be displayed to the user
@@ -1470,6 +1470,8 @@ Scenario: EvergreenJnr_AdminPage_CheckingThatTheProjectIsUpdatedWithoutErrors
 	| Objects        |
 	| 0SH2BQ3EPXTEWN |
 	| 30LA8G32UF7HQC |
+	| 174HB6RFAHA5CT |
+	| 174HB6RFAHA5CT |
 	When User clicks "Applications" tab in the Project Scope Changes section
 	Then "Applications to add (0 of 2081 selected)" is displayed to the user in the Project Scope Changes section
 	When User expands the object to add 
@@ -3307,7 +3309,7 @@ Scenario: EvergreenJnr_AdminPage_CheckDefaultSortOrderOfDevicesAndUsersAndMailbo
 	When User clicks "Mailboxes" tab
 	Then data in table is sorted by "Email Address (Primary)" column in ascending order by default on the Admin page
 
-@Evergreen @Admin @EvergreenJnr_AdminPage @AdminPage @DAS12999 @DAS12680 @Delete_Newly_Created_Project @Projects
+@Evergreen @Admin @EvergreenJnr_AdminPage @AdminPage @DAS12999 @DAS12680 @DAS12108 @Delete_Newly_Created_Project @Projects
 Scenario: EvergreenJnr_AdminPage_AddingRequestTypesAndCategories
 	When User clicks Admin on the left-hand menu
 	Then Admin page should be displayed to the user
@@ -3359,6 +3361,8 @@ Scenario: EvergreenJnr_AdminPage_AddingRequestTypesAndCategories
 	| Objects                                            |
 	| 003F5D8E1A844B1FAA5@bclabs.local (Hunter, Melanie) |
 	| 00DB4000EDD84951993@bclabs.local (CSC, SS)         |
+	| 0E3406ED5D8349D0996@bclabs.local (Mickley, Leslie) |
+	| 0E3406ED5D8349D0996@bclabs.local (Mickley, Leslie) |
 	And User clicks the "UPDATE ALL CHANGES" Action button
 	Then Warning message with "2 mailboxes will be added" text is displayed on the Admin page
 	And "Mailboxes 2/0" is displayed in the tab header on the Admin page
@@ -3533,7 +3537,7 @@ Scenario: EvergreenJnr_AdminPage_CheckThatScopeChangesSelectionIsDisabledAfterCl
 	Then "UPDATE ALL CHANGES" Action button is active
 	#And There are no errors in the browser console
 
-@Evergreen @Admin @EvergreenJnr_AdminPage @AdminPage @DAS12949 @DAS12609 @Delete_Newly_Created_Project @Projects
+@Evergreen @Admin @EvergreenJnr_AdminPage @AdminPage @DAS12949 @DAS12609 @DAS12108 @Delete_Newly_Created_Project @Projects
 Scenario: EvergreenJnr_AdminPage_ChecksThatProjectNameWhichStartsWithLowerCaseLetterIsDisplayedInAlphabeticalOrder
 	When User clicks Admin on the left-hand menu
 	Then Admin page should be displayed to the user
@@ -3560,6 +3564,8 @@ Scenario: EvergreenJnr_AdminPage_ChecksThatProjectNameWhichStartsWithLowerCaseLe
 	| ADD135461 (Luke W. Clark)    |
 	| ADO048752 (Elena Z. Le)      |
 	| ADX520696 (Bridgett E. Cobb) |
+	| CKB423934 (Tracie N. Bright) |
+	| CKB423934 (Tracie N. Bright) |
 	And User clicks the "UPDATE USER CHANGES" Action button
 	Then Warning message with "3 users will be added" text is displayed on the Admin page
 	When User clicks the "UPDATE PROJECT" Action button
@@ -3662,7 +3668,7 @@ Scenario: EvergreenJnr_AdminPage_ChecksThatColourOfOnboardedAppIsDisplayedCorrec
 	Then "Project Object" page is displayed to the user
 	And Colour of onboarded app is "Red"
 
-@Evergreen @Admin @EvergreenJnr_AdminPage @AdminPage @DAS12496 @DAS12485 @Delete_Newly_Created_Project @Not_Run
+@Evergreen @Admin @EvergreenJnr_AdminPage @AdminPage @DAS12496 @DAS12485 @DAS12108 @Delete_Newly_Created_Project @Not_Run
 Scenario: EvergreenJnr_AdminPage_CheckThatOffboardedObjectsAreListedAfterSelectObjectToRemove
 	When User clicks Admin on the left-hand menu
 	Then Admin page should be displayed to the user
@@ -3685,6 +3691,8 @@ Scenario: EvergreenJnr_AdminPage_CheckThatOffboardedObjectsAreListedAfterSelectO
 	| 02C80G8RFTPA9E  |
 	| 04FPR090BNW80E  |
 	| 05LG3HCJLEDEMTR |
+	| 2QP6MWKI0BM87U  |
+	| 2QP6MWKI0BM87U  |
 	And User clicks the "UPDATE DEVICE CHANGES" Action button
 	Then Warning message with "4 devices will be added" text is displayed on the Admin page
 	When User clicks the "UPDATE PROJECT" Action button
