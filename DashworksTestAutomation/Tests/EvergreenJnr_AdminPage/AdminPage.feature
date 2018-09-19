@@ -3055,7 +3055,7 @@ Scenario: EvergreenJnr_AdminPage_AddingAndDeletingPermissionsForMailboxProject
 	| Permissions      |
 	| ChangeOwner      |
 	| AvailabilityOnly |
-	#And There are no errors in the browser console
+	And There are no errors in the browser console
 
 @Evergreen @Admin @EvergreenJnr_AdminPage @AdminPage @DAS12999 @DAS13199 @Buckets
 Scenario: EvergreenJnr_AdminPage_CreatingDefaultBucket
