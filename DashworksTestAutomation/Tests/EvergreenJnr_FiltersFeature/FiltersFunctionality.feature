@@ -1174,3 +1174,26 @@ Examples:
 	| PageName |
 	| Devices  |
 	| Users    |
+
+@Evergreen @Applications @EvergreenJnr_FilterFeature @FilterFunctionality @DAS13473 @Delete_Newly_Created_List
+Scenario: EvergreenJnr_ApplicationsList_ChecksThatIfListWithAnAdvancedUserDescriptionIsEmptyFilterIsSavedAndOpenedNotInEditMode
+	When User clicks "Applications" on the left-hand menu
+	Then "Applications" list should be displayed to the user
+	When User clicks the Filters button
+	Then Filters panel is displayed to the user
+	When User add Advanced "User Description" filter where type is "Empty" with following Lookup Value and Association:
+	| SelectedValues | Association     |
+	|                | Has used app    |
+	|                | Entitled to app |
+	Then "User Description" filter is added to the list
+	And "User whose Description is empty has used app; or entitled to app" is displayed in added filter info
+	When User create custom list with "DAS13473" name
+	Then "DAS13473" list is displayed to user
+	And "113" rows are displayed in the agGrid
+	And URL contains "evergreen/#/applications?$listid="
+	And Edit List menu is not displayed
+	When User navigates to the "All Applications" list
+	And User navigates to the "DAS13473" list
+	Then "113" rows are displayed in the agGrid
+	Then URL contains "evergreen/#/applications?$listid="
+	And Edit List menu is not displayed
