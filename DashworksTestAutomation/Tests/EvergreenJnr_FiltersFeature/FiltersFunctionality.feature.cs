@@ -2852,6 +2852,8 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_FiltersFeature
             table95.AddRow(new string[] {
                         "ACT Data Collection Packages (1104)"});
             testRunner.And(string.Format("the following values are displayed for \"Application\" filter on \"{0}\" page:", pageName), ((string)(null)), table95, "And ");
+            testRunner.Then("\"ACT Data Collection Packages (1104)\" is displayed after \"Acrobat Reader 6.0.1 (5" +
+                    "00)\" in Application list filter", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
             testRunner.When("User enters \"1104\" text in Search field at selected Lookup Filter", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
             testRunner.Then("\"1 shown\" results are displayed in the Filter panel", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
             testRunner.And("\"ACT Data Collection Packages (1104)\" value is displayed for selected Lookup Filt" +

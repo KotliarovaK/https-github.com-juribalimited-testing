@@ -116,7 +116,9 @@ namespace DashworksTestAutomation.Steps.API
             var content = response.Content;
 
             var responseContent = JsonConvert.DeserializeObject<JArray>(content).ToList();
-
+            var filterValueList = responseContent.Select(x => x["text"].ToString()).ToList();
+            var itemByIndex2 = filterValueList.FindIndex(s => s.Equals(item2));
+            Assert.AreEqual(item1, filterValueList[itemByIndex2 + 1]);
         }
     }
 }
