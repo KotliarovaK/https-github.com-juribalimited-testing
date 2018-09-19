@@ -291,7 +291,7 @@ namespace DashworksTestAutomation.Pages.Evergreen
         public IList<IWebElement> SelectedColumnsSubcategoryList { get; set; }
 
         [FindsBy(How = How.XPath, Using = OptionOnActionsPanel)]
-        public IList<IWebElement> OtionListOnActionsPanel { get; set; }
+        public IList<IWebElement> OptionListOnActionsPanel { get; set; }
 
         #region TableColumns
 
