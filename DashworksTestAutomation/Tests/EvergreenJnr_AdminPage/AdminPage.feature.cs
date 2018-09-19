@@ -7186,6 +7186,305 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_AdminPage
             testRunner.Then("Success message is not displayed on the Projects page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
             this.ScenarioCleanup();
         }
+        
+        [NUnit.Framework.TestAttribute()]
+        [NUnit.Framework.Retry(2)]
+        [NUnit.Framework.DescriptionAttribute("EvergreenJnr_AdminPage_ChecksThatOnboardedObjectsWorkCorrectlyForTwoUsers")]
+        [NUnit.Framework.CategoryAttribute("Evergreen")]
+        [NUnit.Framework.CategoryAttribute("Admin")]
+        [NUnit.Framework.CategoryAttribute("EvergreenJnr_AdminPage")]
+        [NUnit.Framework.CategoryAttribute("AdminPage")]
+        [NUnit.Framework.CategoryAttribute("DAS13390")]
+        [NUnit.Framework.CategoryAttribute("Delete_Newly_Created_Project")]
+        public virtual void EvergreenJnr_AdminPage_ChecksThatOnboardedObjectsWorkCorrectlyForTwoUsers()
+        {
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("EvergreenJnr_AdminPage_ChecksThatOnboardedObjectsWorkCorrectlyForTwoUsers", new string[] {
+                        "Evergreen",
+                        "Admin",
+                        "EvergreenJnr_AdminPage",
+                        "AdminPage",
+                        "DAS13390",
+                        "Delete_Newly_Created_Project"});
+            this.ScenarioSetup(scenarioInfo);
+            this.FeatureBackground();
+            testRunner.When("User clicks Admin on the left-hand menu", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+            testRunner.Then("Admin page should be displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+            testRunner.When("User clicks \"Projects\" link on the Admin page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+            testRunner.Then("\"Projects\" page should be displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+            testRunner.When("User clicks the \"CREATE PROJECT\" Action button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+            testRunner.Then("\"Create Project\" page should be displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+            testRunner.When("User enters \"Project13390\" in the Project Name field", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+            testRunner.And("User selects \"All Devices\" in the Scope Project dropdown", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+            testRunner.And("User clicks Create button on the Create Project page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+            testRunner.Then("Success message is displayed and contains \"Your project has been created\" text", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+            testRunner.When("User clicks newly created object link", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+            testRunner.And("User selects \"Scope Changes\" tab on the Project details page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+            testRunner.And("User clicks \"Devices\" tab in the Project Scope Changes section", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+            testRunner.And("User expands the object to add", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+            TechTalk.SpecFlow.Table table125 = new TechTalk.SpecFlow.Table(new string[] {
+                        "Objects"});
+            table125.AddRow(new string[] {
+                        "001BAQXT6JWFPI"});
+            table125.AddRow(new string[] {
+                        "001PSUMZYOW581"});
+            table125.AddRow(new string[] {
+                        "00BDM1JUR8IF419"});
+            table125.AddRow(new string[] {
+                        "00CWZRC4UK6W20"});
+            table125.AddRow(new string[] {
+                        "00HA7MKAVVFDAV"});
+            table125.AddRow(new string[] {
+                        "00I0COBFWHOF27"});
+            table125.AddRow(new string[] {
+                        "00K4CEEQ737BA4L"});
+            table125.AddRow(new string[] {
+                        "00KLL9S8NRF0X6"});
+            table125.AddRow(new string[] {
+                        "00KWQ4J3WKQM0G"});
+            table125.AddRow(new string[] {
+                        "00OMQQXWA1DRI6"});
+            table125.AddRow(new string[] {
+                        "00RUUMAH9OZN9A"});
+            table125.AddRow(new string[] {
+                        "00SH8162NAS524"});
+            table125.AddRow(new string[] {
+                        "00YTY8U3ZYP2WT"});
+            table125.AddRow(new string[] {
+                        "00YWR8TJU4ZF8V"});
+            table125.AddRow(new string[] {
+                        "011PLA470S0B9DJ"});
+            table125.AddRow(new string[] {
+                        "018UQ6KL9TF4YF"});
+            table125.AddRow(new string[] {
+                        "019BFPQGKK5QT8N"});
+            table125.AddRow(new string[] {
+                        "01COJATLYVAR7A6"});
+            table125.AddRow(new string[] {
+                        "01DRMO46G58SXK"});
+            table125.AddRow(new string[] {
+                        "01KFZ6XUVQSII0"});
+            table125.AddRow(new string[] {
+                        "0281Z793OLLLDU6"});
+            table125.AddRow(new string[] {
+                        "02C80G8RFTPA9E"});
+            table125.AddRow(new string[] {
+                        "02X387UDGZJPQY"});
+            table125.AddRow(new string[] {
+                        "03063X2ZUCDN0A1"});
+            table125.AddRow(new string[] {
+                        "03U75EKEMUQMUS"});
+            testRunner.And("User selects following Objects", ((string)(null)), table125, "And ");
+            testRunner.And("User clicks \"Users\" tab in the Project Scope Changes section", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+            testRunner.And("User expands the object to add", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+            TechTalk.SpecFlow.Table table126 = new TechTalk.SpecFlow.Table(new string[] {
+                        "Objects"});
+            table126.AddRow(new string[] {
+                        "AAC860150 (Kerrie D. Ruiz)"});
+            table126.AddRow(new string[] {
+                        "AAD1011948 (Pinabel Cinq-Mars)"});
+            table126.AddRow(new string[] {
+                        "AAG081456 (Melanie Z. Fowler)"});
+            table126.AddRow(new string[] {
+                        "AAH0343264 (Luc Gauthier)"});
+            table126.AddRow(new string[] {
+                        "AAK881049 (Miguel W. Owen)"});
+            table126.AddRow(new string[] {
+                        "AAL852547 (Robbie A. Roach)"});
+            table126.AddRow(new string[] {
+                        "AAM044531 (Dustin R. Alvarez)"});
+            table126.AddRow(new string[] {
+                        "AAO271828 (Ramona D. Curtis)"});
+            table126.AddRow(new string[] {
+                        "AAO3000042 (Georgette Pichette)"});
+            table126.AddRow(new string[] {
+                        "AAO438834 (James Y. Mc Bride)"});
+            table126.AddRow(new string[] {
+                        "AAO798996 (Darren J. Walter)"});
+            table126.AddRow(new string[] {
+                        "AAQ9911340 (Javier Lanctot)"});
+            table126.AddRow(new string[] {
+                        "AAT858228 (Cheri B. Evans)"});
+            table126.AddRow(new string[] {
+                        "AAT891621 (Henry F. Mccall)"});
+            table126.AddRow(new string[] {
+                        "AAV4528222 (Felicienne Vadnais)"});
+            table126.AddRow(new string[] {
+                        "AAV500479 (Wendi H. Dougherty)"});
+            table126.AddRow(new string[] {
+                        "AAY704360 (Micah H. Mccall)"});
+            table126.AddRow(new string[] {
+                        "ABE8110806 (Brice Grimard)"});
+            table126.AddRow(new string[] {
+                        "ABG5308934 (Carolos Vallée)"});
+            table126.AddRow(new string[] {
+                        "ABK350523 (Alyssa A. Williams)"});
+            table126.AddRow(new string[] {
+                        "ABM798049 (Roland C. Bond)"});
+            table126.AddRow(new string[] {
+                        "ABN563832 (Dewayne D. Butler)"});
+            table126.AddRow(new string[] {
+                        "ABP977697 (Rocky Y. Stout)"});
+            table126.AddRow(new string[] {
+                        "ABQ575757 (Salvador K. Waller)"});
+            table126.AddRow(new string[] {
+                        "ABS188911 (Jesus W. Kirk)"});
+            testRunner.And("User selects following Objects", ((string)(null)), table126, "And ");
+            testRunner.And("User clicks \"Applications\" tab in the Project Scope Changes section", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+            testRunner.And("User expands the object to add", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+            TechTalk.SpecFlow.Table table127 = new TechTalk.SpecFlow.Table(new string[] {
+                        "Objects"});
+            table127.AddRow(new string[] {
+                        "\"WPF/E\" (codename) Community Technology Preview (Feb 2007) (0.8.5.0)"});
+            table127.AddRow(new string[] {
+                        "0004 - Adobe Acrobat Reader 5.0.5 Francais (5.0.5)"});
+            table127.AddRow(new string[] {
+                        "0036 - Microsoft Access 97 SR-2 English (8.0)"});
+            table127.AddRow(new string[] {
+                        "0047 - Microsoft Access 97 SR-2 Francais (8.0)"});
+            table127.AddRow(new string[] {
+                        "20040610sqlserverck (1.0.0)"});
+            table127.AddRow(new string[] {
+                        "32VerSee v.231 en (C:\\32VerSee\\)"});
+            table127.AddRow(new string[] {
+                        "Access 97 Rumtime"});
+            table127.AddRow(new string[] {
+                        "ACDSee 4.0 SendPix & Email Update (1.00.0000)"});
+            table127.AddRow(new string[] {
+                        "ACDSee Mobile 1.2 for Palm OS? (1.2)"});
+            table127.AddRow(new string[] {
+                        "ActiveBar Version 2.0 Upgrade"});
+            table127.AddRow(new string[] {
+                        "AddFlow 4"});
+            table127.AddRow(new string[] {
+                        "Adobe Acrobat Reader 3.0 ((Not Available))"});
+            table127.AddRow(new string[] {
+                        "Adobe SVG Viewer 3.0 (3.0)"});
+            table127.AddRow(new string[] {
+                        "aktion (0.3.6)"});
+            table127.AddRow(new string[] {
+                        "AltaVista Power Tools for IE5"});
+            table127.AddRow(new string[] {
+                        "Amazon Redshift ODBC Driver 64-bit (1.2.1)"});
+            table127.AddRow(new string[] {
+                        "AnalogX TrackSeek"});
+            table127.AddRow(new string[] {
+                        "AppForge 2.0 Professional (02.00.0110)"});
+            table127.AddRow(new string[] {
+                        "Ask Toolbar 4.0 (OEM1000) (4.0.1.1)"});
+            table127.AddRow(new string[] {
+                        "AtomixMP3"});
+            table127.AddRow(new string[] {
+                        "aumix (2.7)"});
+            table127.AddRow(new string[] {
+                        "Avery Zweckform Assistent"});
+            table127.AddRow(new string[] {
+                        "Axosoft OnTime 2005 Enterprise Server (5.3.0)"});
+            table127.AddRow(new string[] {
+                        "BDE 5.01 Upgrade"});
+            table127.AddRow(new string[] {
+                        "Brava! Reader 2.5 (2.5)"});
+            testRunner.And("User selects following Objects", ((string)(null)), table127, "And ");
+            testRunner.And("User clicks the \"UPDATE ALL CHANGES\" Action button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+            testRunner.And("User clicks the \"UPDATE PROJECT\" Action button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+            testRunner.Then("Success message with \"75 objects queued for onboarding, 0 objects offboarded\" tex" +
+                    "t is displayed on the Projects page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+            testRunner.And("\"Applications to add (0 of 2104 selected)\" is displayed to the user in the Projec" +
+                    "t Scope Changes section", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+            TechTalk.SpecFlow.Table table128 = new TechTalk.SpecFlow.Table(new string[] {
+                        "Objects"});
+            table128.AddRow(new string[] {
+                        "\"WPF/E\" (codename) Community Technology Preview (Feb 2007) (0.8.5.0)"});
+            testRunner.And("following objects were not found", ((string)(null)), table128, "And ");
+            testRunner.When("User clicks \"Users\" tab in the Project Scope Changes section", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+            testRunner.Then("\"Users to add (0 of 14606 selected)\" is displayed to the user in the Project Scop" +
+                    "e Changes section", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+            TechTalk.SpecFlow.Table table129 = new TechTalk.SpecFlow.Table(new string[] {
+                        "Objects"});
+            table129.AddRow(new string[] {
+                        "AAC860150 (Kerrie D. Ruiz)"});
+            testRunner.And("following objects were not found", ((string)(null)), table129, "And ");
+            testRunner.When("User clicks \"Devices\" tab in the Project Scope Changes section", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+            testRunner.Then("\"Devices to add (0 of 17200 selected)\" is displayed to the user in the Project Sc" +
+                    "ope Changes section", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+            TechTalk.SpecFlow.Table table130 = new TechTalk.SpecFlow.Table(new string[] {
+                        "Objects"});
+            table130.AddRow(new string[] {
+                        "019BFPQGKK5QT8N"});
+            testRunner.And("following objects were not found", ((string)(null)), table130, "And ");
+            testRunner.When("User clicks \"Projects\" on the left-hand menu", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+            testRunner.Then("\"Projects Home\" page is displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+            testRunner.When("User navigate to Manage link", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+            testRunner.And("User select \"Manage Users\" option in Management Console", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+            TechTalk.SpecFlow.Table table131 = new TechTalk.SpecFlow.Table(new string[] {
+                        "Username",
+                        "FullName",
+                        "Password",
+                        "ConfirmPassword",
+                        "Roles"});
+            table131.AddRow(new string[] {
+                        "DAS13390",
+                        "13390",
+                        "1234qwer",
+                        "1234qwer",
+                        "Project Administrator"});
+            testRunner.And("User create new User", ((string)(null)), table131, "And ");
+            testRunner.Then("Success message is displayed", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+            testRunner.When("User cliks Logout link", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+            testRunner.Then("User is logged out", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+            testRunner.When("User clicks on the Login link", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+            testRunner.Then("Login Page is displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+            TechTalk.SpecFlow.Table table132 = new TechTalk.SpecFlow.Table(new string[] {
+                        "Username",
+                        "Password"});
+            table132.AddRow(new string[] {
+                        "DAS13390",
+                        "1234qwer"});
+            testRunner.When("User login with following credentials:", ((string)(null)), table132, "When ");
+            testRunner.Then("Dashworks homepage is displayed to the user in a logged in state", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+            testRunner.When("User clicks the Switch to Evergreen link", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+            testRunner.Then("Evergreen Dashboards page should be displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+            testRunner.When("User clicks Admin on the left-hand menu", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+            testRunner.Then("Admin page should be displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+            testRunner.When("User clicks \"Projects\" link on the Admin page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+            testRunner.Then("\"Projects\" page should be displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+            testRunner.When("User enters \"Project13390\" text in the Search field for \"Project\" column", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+            testRunner.And("User clicks content from \"Project\" column", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+            testRunner.And("User selects \"Scope Changes\" tab on the Project details page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+            testRunner.Then("Success message is not displayed on the Projects page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+            testRunner.And("\"Devices to add (0 of 17200 selected)\" is displayed to the user in the Project Sc" +
+                    "ope Changes section", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+            TechTalk.SpecFlow.Table table133 = new TechTalk.SpecFlow.Table(new string[] {
+                        "Objects"});
+            table133.AddRow(new string[] {
+                        "019BFPQGKK5QT8N"});
+            testRunner.And("following objects were not found", ((string)(null)), table133, "And ");
+            testRunner.When("User clicks \"Users\" tab in the Project Scope Changes section", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+            testRunner.Then("\"Users to add (0 of 14606 selected)\" is displayed to the user in the Project Scop" +
+                    "e Changes section", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+            TechTalk.SpecFlow.Table table134 = new TechTalk.SpecFlow.Table(new string[] {
+                        "Objects"});
+            table134.AddRow(new string[] {
+                        "AAC860150 (Kerrie D. Ruiz)"});
+            testRunner.And("following objects were not found", ((string)(null)), table134, "And ");
+            testRunner.When("User clicks \"Applications\" tab in the Project Scope Changes section", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+            testRunner.Then("\"Applications to add (0 of 2104 selected)\" is displayed to the user in the Projec" +
+                    "t Scope Changes section", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+            TechTalk.SpecFlow.Table table135 = new TechTalk.SpecFlow.Table(new string[] {
+                        "Objects"});
+            table135.AddRow(new string[] {
+                        "\"WPF/E\" (codename) Community Technology Preview (Feb 2007) (0.8.5.0)"});
+            testRunner.And("following objects were not found", ((string)(null)), table135, "And ");
+            testRunner.When("User clicks the Logout button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+            testRunner.Then("User is logged out", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+            testRunner.When("User clicks on the Login link", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+            testRunner.Then("Login Page is displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+            testRunner.When("User provides the Login and Password and clicks on the login button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+            testRunner.Then("Dashworks homepage is displayed to the user in a logged in state", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+            testRunner.When("User navigate to Manage link", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+            testRunner.And("User select \"Manage Users\" option in Management Console", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+            testRunner.And("User removes \"DAS13390\" User", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+            this.ScenarioCleanup();
+        }
     }
 }
 #pragma warning restore
