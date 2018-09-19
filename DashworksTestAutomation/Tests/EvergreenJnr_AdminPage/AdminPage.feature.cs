@@ -2492,6 +2492,7 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_AdminPage
             testRunner.And("\"Users 0/0\" is displayed in the tab header on the Admin page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
             testRunner.And("\"Applications 0/0\" is displayed in the tab header on the Admin page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
             testRunner.When("User selects \"Queue\" tab on the Project details page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+            testRunner.Then("There are no errors in the browser console", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
             testRunner.Then("Error message is not displayed on the Projects page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
             TechTalk.SpecFlow.Table table30 = new TechTalk.SpecFlow.Table(new string[] {
                         "Items"});
@@ -2553,6 +2554,7 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_AdminPage
                     "age", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
             testRunner.Then("Counter shows \"4\" found rows", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
             testRunner.When("User selects \"History\" tab on the Project details page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+            testRunner.Then("There are no errors in the browser console", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
             testRunner.Then("Error message is not displayed on the Projects page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
             TechTalk.SpecFlow.Table table32 = new TechTalk.SpecFlow.Table(new string[] {
                         "Items"});
@@ -2624,6 +2626,7 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_AdminPage
             testRunner.Then("User clicks on \"0IJB93JZPG72PX (Carmen H. Benson)\" search result", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
             testRunner.When("User navigates to the \"Projects\" tab", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
             testRunner.And("User opens \"Device Projects\" section on the Details Page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+            testRunner.Then("There are no errors in the browser console", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
             this.ScenarioCleanup();
         }
         
@@ -2811,6 +2814,7 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_AdminPage
         [NUnit.Framework.CategoryAttribute("DAS13199")]
         [NUnit.Framework.CategoryAttribute("DAS13297")]
         [NUnit.Framework.CategoryAttribute("DAS12485")]
+        [NUnit.Framework.CategoryAttribute("DAS12108")]
         [NUnit.Framework.CategoryAttribute("Delete_Newly_Created_Project")]
         [NUnit.Framework.CategoryAttribute("Project_Creation_and_Scope")]
         [NUnit.Framework.CategoryAttribute("Projects")]
@@ -2826,6 +2830,7 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_AdminPage
                         "DAS13199",
                         "DAS13297",
                         "DAS12485",
+                        "DAS12108",
                         "Delete_Newly_Created_Project",
                         "Project_Creation_and_Scope",
                         "Projects"});
@@ -2867,6 +2872,10 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_AdminPage
                         "0SH2BQ3EPXTEWN"});
             table38.AddRow(new string[] {
                         "30LA8G32UF7HQC"});
+            table38.AddRow(new string[] {
+                        "174HB6RFAHA5CT"});
+            table38.AddRow(new string[] {
+                        "174HB6RFAHA5CT"});
             testRunner.And("User selects following Objects", ((string)(null)), table38, "And ");
             testRunner.When("User clicks \"Applications\" tab in the Project Scope Changes section", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
             testRunner.Then("\"Applications to add (0 of 2081 selected)\" is displayed to the user in the Projec" +
@@ -6128,6 +6137,7 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_AdminPage
         [NUnit.Framework.CategoryAttribute("AdminPage")]
         [NUnit.Framework.CategoryAttribute("DAS12999")]
         [NUnit.Framework.CategoryAttribute("DAS12680")]
+        [NUnit.Framework.CategoryAttribute("DAS12108")]
         [NUnit.Framework.CategoryAttribute("Delete_Newly_Created_Project")]
         [NUnit.Framework.CategoryAttribute("Projects")]
         public virtual void EvergreenJnr_AdminPage_AddingRequestTypesAndCategories()
@@ -6139,6 +6149,7 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_AdminPage
                         "AdminPage",
                         "DAS12999",
                         "DAS12680",
+                        "DAS12108",
                         "Delete_Newly_Created_Project",
                         "Projects"});
             this.ScenarioSetup(scenarioInfo);
@@ -6207,6 +6218,10 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_AdminPage
                         "003F5D8E1A844B1FAA5@bclabs.local (Hunter, Melanie)"});
             table93.AddRow(new string[] {
                         "00DB4000EDD84951993@bclabs.local (CSC, SS)"});
+            table93.AddRow(new string[] {
+                        "0E3406ED5D8349D0996@bclabs.local (Mickley, Leslie)"});
+            table93.AddRow(new string[] {
+                        "0E3406ED5D8349D0996@bclabs.local (Mickley, Leslie)"});
             testRunner.And("User selects following Objects", ((string)(null)), table93, "And ");
             testRunner.And("User clicks the \"UPDATE ALL CHANGES\" Action button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
             testRunner.Then("Warning message with \"2 mailboxes will be added\" text is displayed on the Admin p" +
@@ -6520,6 +6535,7 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_AdminPage
         [NUnit.Framework.CategoryAttribute("AdminPage")]
         [NUnit.Framework.CategoryAttribute("DAS12949")]
         [NUnit.Framework.CategoryAttribute("DAS12609")]
+        [NUnit.Framework.CategoryAttribute("DAS12108")]
         [NUnit.Framework.CategoryAttribute("Delete_Newly_Created_Project")]
         [NUnit.Framework.CategoryAttribute("Projects")]
         public virtual void EvergreenJnr_AdminPage_ChecksThatProjectNameWhichStartsWithLowerCaseLetterIsDisplayedInAlphabeticalOrder()
@@ -6532,6 +6548,7 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_AdminPage
                         "AdminPage",
                         "DAS12949",
                         "DAS12609",
+                        "DAS12108",
                         "Delete_Newly_Created_Project",
                         "Projects"});
             this.ScenarioSetup(scenarioInfo);
@@ -6564,6 +6581,10 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_AdminPage
                         "ADO048752 (Elena Z. Le)"});
             table103.AddRow(new string[] {
                         "ADX520696 (Bridgett E. Cobb)"});
+            table103.AddRow(new string[] {
+                        "CKB423934 (Tracie N. Bright)"});
+            table103.AddRow(new string[] {
+                        "CKB423934 (Tracie N. Bright)"});
             testRunner.And("User selects following Objects", ((string)(null)), table103, "And ");
             testRunner.And("User clicks the \"UPDATE USER CHANGES\" Action button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
             testRunner.Then("Warning message with \"3 users will be added\" text is displayed on the Admin page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
@@ -6752,6 +6773,7 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_AdminPage
         [NUnit.Framework.CategoryAttribute("AdminPage")]
         [NUnit.Framework.CategoryAttribute("DAS12496")]
         [NUnit.Framework.CategoryAttribute("DAS12485")]
+        [NUnit.Framework.CategoryAttribute("DAS12108")]
         [NUnit.Framework.CategoryAttribute("Delete_Newly_Created_Project")]
         [NUnit.Framework.CategoryAttribute("Not_Run")]
         public virtual void EvergreenJnr_AdminPage_CheckThatOffboardedObjectsAreListedAfterSelectObjectToRemove()
@@ -6764,6 +6786,7 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_AdminPage
                         "AdminPage",
                         "DAS12496",
                         "DAS12485",
+                        "DAS12108",
                         "Delete_Newly_Created_Project",
                         "Not_Run"});
             this.ScenarioSetup(scenarioInfo);
@@ -6793,6 +6816,10 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_AdminPage
                         "04FPR090BNW80E"});
             table110.AddRow(new string[] {
                         "05LG3HCJLEDEMTR"});
+            table110.AddRow(new string[] {
+                        "2QP6MWKI0BM87U"});
+            table110.AddRow(new string[] {
+                        "2QP6MWKI0BM87U"});
             testRunner.And("User selects following Objects", ((string)(null)), table110, "And ");
             testRunner.And("User clicks the \"UPDATE DEVICE CHANGES\" Action button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
             testRunner.Then("Warning message with \"4 devices will be added\" text is displayed on the Admin pag" +
