@@ -1197,3 +1197,20 @@ Scenario: EvergreenJnr_ApplicationsList_ChecksThatIfListWithAnAdvancedUserDescri
 	Then "113" rows are displayed in the agGrid
 	Then URL contains "evergreen/#/applications?$listid="
 	And Edit List menu is not displayed
+
+@Evergreen @Applications @EvergreenJnr_FilterFeature @FilterFunctionality @DAS13377
+Scenario: EvergreenJnr_ApplicationsList_ChecksThatApplicationNameIsDisplayedAfterUsingTargetAppFilter
+	When User clicks "Applications" on the left-hand menu
+	Then "Applications" list should be displayed to the user
+	When User clicks the Filters button
+	Then Filters panel is displayed to the user
+	When User add "Barry'sUse: Target App" filter where type is "Equals" with added column and Lookup option
+	| SelectedValues         |
+	| Python 2.2a4 (SMS_GEN) |
+	Then "Barry'sUse: Target App" filter is added to the list
+	And "Barry'sUse: Target App is Python 2.2a4 (SMS_GEN)" is displayed in added filter info
+	When User click content from "Application" column
+	Then User click back button in the browser
+	When User clicks the Filters button
+	Then Filters panel is displayed to the user
+	And "Barry'sUse: Target App is Python 2.2a4 (SMS_GEN)" is displayed in added filter info
