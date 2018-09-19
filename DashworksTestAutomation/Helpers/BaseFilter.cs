@@ -411,6 +411,7 @@ namespace DashworksTestAutomation.Helpers
             var selectboxes = _driver.FindElements(By.XPath(".//div[@id='context']//input[@placeholder='Search']"));
             foreach (var row in Table.Rows)
             {
+                if (!_driver.IsElementDisplayed(By.XPath(".//div[@id='context']//input[@placeholder='Search']"))) continue;
                 _driver.FindElement(By.XPath(".//div[@id='context']//input[@placeholder='Search']")).Click();
                 _driver.FindElement(By.XPath(".//div[@id='context']//input[@placeholder='Search']"))
                     .SendKeys(row["SelectedValues"]);
