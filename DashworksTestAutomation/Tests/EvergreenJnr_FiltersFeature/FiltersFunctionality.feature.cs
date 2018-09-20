@@ -2958,55 +2958,55 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_FiltersFeature
         
         [NUnit.Framework.TestAttribute()]
         [NUnit.Framework.Retry(2)]
-        [NUnit.Framework.DescriptionAttribute("EvergreenJnr_ApplicationsList_CheckThatFiltersWorksProperlyWithPositiveAndNegativ" +
-            "eAssociation")]
+        [NUnit.Framework.DescriptionAttribute("EvergreenJnr_AllLists_ChecksThatFilterInfoIsDisplayedCorrectlyAfterSelectingObjec" +
+            "tAndThenReturningBackToSerachResult")]
         [NUnit.Framework.CategoryAttribute("Evergreen")]
-        [NUnit.Framework.CategoryAttribute("Applications")]
+        [NUnit.Framework.CategoryAttribute("AllLists")]
         [NUnit.Framework.CategoryAttribute("EvergreenJnr_FilterFeature")]
         [NUnit.Framework.CategoryAttribute("FilterFunctionality")]
-        [NUnit.Framework.CategoryAttribute("DAS12214")]
-        public virtual void EvergreenJnr_ApplicationsList_CheckThatFiltersWorksProperlyWithPositiveAndNegativeAssociation()
+        [NUnit.Framework.CategoryAttribute("DAS13381")]
+        [NUnit.Framework.TestCaseAttribute("Devices", "Hostname", "Babel(Engl: Category", "None", "00KLL9S8NRF0X6", "Babel(Engl: Category is None", new string[0])]
+        [NUnit.Framework.TestCaseAttribute("Devices", "Hostname", "Barry\'sUse: In Scope", "FALSE", "00OMQQXWA1DRI6", "Barry\'sUse: In Scope is true", new string[0])]
+        [NUnit.Framework.TestCaseAttribute("Devices", "Hostname", "ComputerSc: Request Type", "Request Type A", "47NK3ATE5DM2HD", "ComputerSc: Request Type is Request Type A", new string[0])]
+        [NUnit.Framework.TestCaseAttribute("Applications", "Application", "Havoc(BigD: Hide from End Users", "UNKNOWN", "Adobe Flash Player 10 ActiveX (10.0.12.36)", "Havoc(BigD: Hide from End Users is Unknown", new string[0])]
+        [NUnit.Framework.TestCaseAttribute("Applications", "Application", "MigrationP: Core Application", "FALSE", "Adobe Download Manager 2.0 (Remove Only)", "MigrationP: Core Application is false", new string[0])]
+        [NUnit.Framework.TestCaseAttribute("Mailboxes", "Email Address", "EmailMigra: Device Type", "Not Identified", "238BAE24882E48BFA9F@bclabs.local", "EmailMigra: Device Type is Not Identified", new string[0])]
+        public virtual void EvergreenJnr_AllLists_ChecksThatFilterInfoIsDisplayedCorrectlyAfterSelectingObjectAndThenReturningBackToSerachResult(string pageName, string columnName, string filterName, string filterValue, string search, string filterInfo, string[] exampleTags)
         {
-            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("EvergreenJnr_ApplicationsList_CheckThatFiltersWorksProperlyWithPositiveAndNegativ" +
-                    "eAssociation", new string[] {
-                        "Evergreen",
-                        "Applications",
-                        "EvergreenJnr_FilterFeature",
-                        "FilterFunctionality",
-                        "DAS12214"});
+            string[] @__tags = new string[] {
+                    "Evergreen",
+                    "AllLists",
+                    "EvergreenJnr_FilterFeature",
+                    "FilterFunctionality",
+                    "DAS13381"};
+            if ((exampleTags != null))
+            {
+                @__tags = System.Linq.Enumerable.ToArray(System.Linq.Enumerable.Concat(@__tags, exampleTags));
+            }
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("EvergreenJnr_AllLists_ChecksThatFilterInfoIsDisplayedCorrectlyAfterSelectingObjec" +
+                    "tAndThenReturningBackToSerachResult", @__tags);
             this.ScenarioSetup(scenarioInfo);
             this.FeatureBackground();
-            testRunner.When("User clicks \"Applications\" on the left-hand menu", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-            testRunner.Then("\"Applications\" list should be displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+            testRunner.When(string.Format("User clicks \"{0}\" on the left-hand menu", pageName), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+            testRunner.Then(string.Format("\"{0}\" list should be displayed to the user", pageName), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
             testRunner.When("User clicks the Filters button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
             testRunner.Then("Filters panel is displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
             TechTalk.SpecFlow.Table table98 = new TechTalk.SpecFlow.Table(new string[] {
-                        "Values",
-                        "Association"});
+                        "SelectedCheckboxes"});
             table98.AddRow(new string[] {
-                        "1 May 2011",
-                        "Has used app"});
-            table98.AddRow(new string[] {
-                        "1 May 2011",
-                        "Entitled to app"});
-            table98.AddRow(new string[] {
-                        "1 May 2011",
-                        "Owns a device which app was used on"});
-            table98.AddRow(new string[] {
-                        "1 May 2011",
-                        "Owns a device which app is entitled to"});
-            table98.AddRow(new string[] {
-                        "1 May 2011",
-                        "Owns a device which app is installed on"});
-            testRunner.When("User add \"User Last Logon Date\" filter where type is \"After\" with following Data " +
-                    "and Association:", ((string)(null)), table98, "When ");
-            testRunner.Then("\"1,206\" rows are displayed in the agGrid", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-            testRunner.When("User click Edit button for \" Last Logon Date\" filter", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-            testRunner.Then("only positive Associations is displayed", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-            testRunner.When("User is deselect \"Has used app\" in Association", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-            testRunner.And("User is deselect \"Entitled to app\" in Association", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-            testRunner.And("User is deselect \"Owns a device which app was used on\" in Association", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-            testRunner.And("User is deselect \"Owns a device which app is entitled to\" in Association", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+                        string.Format("{0}", filterValue)});
+            testRunner.When(string.Format("User add \"{0}\" filter where type is \"Equals\" with added column and following chec" +
+                        "kboxes:", filterName), ((string)(null)), table98, "When ");
+            testRunner.Then(string.Format("\"{0}\" filter is added to the list", filterName), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+            testRunner.And(string.Format("\"{0}\" is displayed in added filter info", filterInfo), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+            testRunner.When(string.Format("User perform search by \"{0}\"", search), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+            testRunner.When(string.Format("User click content from \"{0}\" column", columnName), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+            testRunner.Then("User click back button in the browser", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+            testRunner.When("User clicks the Filters button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+            testRunner.Then("Filters panel is displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+            testRunner.And(string.Format("\"{0}\" is displayed in added filter info", filterInfo), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+            this.ScenarioCleanup();
+        }
             testRunner.And("User is deselect \"Owns a device which app is installed on\" in Association", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
             testRunner.And("User select \"Has not used app\" in Association", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
             testRunner.Then("only negative Associations is displayed", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
