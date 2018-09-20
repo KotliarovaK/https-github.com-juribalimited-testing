@@ -147,6 +147,7 @@ namespace DashworksTestAutomation.Steps.Dashworks
             action.StageField.Clear();
             action.StageField.SendKeys(stageValue);
             action.GetOptionOnActionsPanelByName(stageValue).Click();
+            _driver.WaitForDataLoading();
         }
 
         [Then(@"Stages are displayed in alphabetical order on Action panel")]
@@ -167,6 +168,7 @@ namespace DashworksTestAutomation.Steps.Dashworks
             action.TaskField.Clear();
             action.TaskField.SendKeys(taskNAme);
             action.GetOptionOnActionsPanelByName(taskNAme).Click();
+            _driver.WaitForDataLoading();
         }
 
         [Then(@"Tasks are displayed in alphabetical order on Action panel")]
