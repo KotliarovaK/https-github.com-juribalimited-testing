@@ -518,8 +518,10 @@ namespace DashworksTestAutomation.Steps.Dashworks
         {
             var detailsPage = _driver.NowAt<DetailsPage>();
             foreach (var element in detailsPage.TableRowDetails)
+            {
                 StringAssert.DoesNotContain("Unknown", element.Text,
                     "Unknown text is displayed");
+            }
         }
 
         [Then(@"Rows do not have unknown values")]
