@@ -249,6 +249,7 @@ namespace DashworksTestAutomation.Steps.Dashworks
                 projectsPage.PermissionsDropdown.Click();
                 projectsPage.SelectPermissionsByName(row["Permissions"]);
                 projectsPage.AddPermissionsButtonInTab.Click();
+                _driver.WaitForDataLoading();
             }
         }
 

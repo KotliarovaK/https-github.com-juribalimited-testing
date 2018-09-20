@@ -5702,7 +5702,6 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_AdminPage
             table88.AddRow(new string[] {
                         "AvailabilityOnly"});
             testRunner.Then("following Mailbox permissions are displayed to the user", ((string)(null)), table88, "Then ");
-            testRunner.And("There are no errors in the browser console", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
             this.ScenarioCleanup();
         }
         
