@@ -1189,7 +1189,7 @@ Scenario: EvergreenJnr_AdminPage_CheckThatObjectsIsOnboardedToTheProjectWithClon
 	| 01BQIYGGUW5PRP6 |
 	And User clicks the "UPDATE DEVICE CHANGES" Action button
 	And User clicks the "UPDATE PROJECT" Action button
-	Then Success message with "1 object queued for onboarding, 0 objects offboarded" text is displayed on the Projects page
+	Then Success message is displayed and contains "1 object queued for onboarding, 0 objects offboarded" text
 	When User selects "Queue" tab on the Project details page
 	#Then There are no errors in the browser console
 	Then Error message is not displayed on the Projects page
