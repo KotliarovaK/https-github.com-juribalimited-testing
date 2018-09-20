@@ -1039,7 +1039,7 @@ namespace DashworksTestAutomation.Steps.Dashworks
             var actualList = page.SelectedColumnsSubcategoryList.Select(value => value.Text).ToList();
             foreach (var value in expectedList)
             {
-                Assert.IsFalse(actualList.Contains(value), $"{value} is displayed for that category");
+                Assert.IsTrue(!actualList.Contains(value), $"{value} is displayed for that category");
             }
         }
 

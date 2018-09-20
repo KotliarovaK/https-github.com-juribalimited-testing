@@ -773,11 +773,11 @@ Scenario: EvergreenJnr_MailboxesList_ChecksThatSubcategoriesOnColumnsPanelIsDisp
 Scenario: EvergreenJnr_DevicesList_ChecksThatColumnsPanelDoesNotIncludeUnpublishedTasks
 	When User clicks "Devices" on the left-hand menu
 	Then "Devices" list should be displayed to the user
-	When User clicks the Columns button
-	Then Columns panel is displayed to the user
-	Then User closed "Selected Columns" columns category
-	Then User is expand "Project Tasks: Windows7Mi" columns category
-	Then the following subcategories are NOT displayed for Selected Columns category:
+	#When User clicks the Columns button
+	#Then Columns panel is displayed to the user
+	#Then User closed "Selected Columns" columns category
+	##Then User is expand "Project Tasks: Windows7Mi" columns category
+	Then the following subcategories are NOT displayed for "Project Tasks: Windows7Mi" Columns category:
 	| Subcategories                                   |
 	| Adhoc Information                               |
 	| Targeting Date                                  |

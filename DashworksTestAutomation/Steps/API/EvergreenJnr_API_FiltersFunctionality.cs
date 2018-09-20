@@ -120,5 +120,26 @@ namespace DashworksTestAutomation.Steps.API
             var itemByIndex2 = filterValueList.FindIndex(s => s.Equals(item2));
             Assert.AreEqual(item1, filterValueList[itemByIndex2 + 1]);
         }
+
+        [Then(@"the following subcategories are NOT displayed for ""(.*)"" Columns category:")]
+        public void ThenTheFollowingSubcategoriesAreNotDisplayedForColumnsCategory(string categoryName, Table table)
+        {
+            var requestUri = $"{UrlProvider.RestClientBaseUrl}devices/fields?$lang=en-US";
+            var request = new RestRequest(requestUri);
+
+            request.AddParameter("Host", UrlProvider.RestClientBaseUrl);
+            request.AddParameter("Origin", UrlProvider.Url.TrimEnd('/'));
+            request.AddParameter("Referer", UrlProvider.EvergreenUrl);
+
+            var response = _client.Value.Get(request);
+
+            if (response.StatusCode != HttpStatusCode.OK)
+                throw new Exception($"Unable to execute request. URI: {requestUri}");
+
+            var content = response.Content;
+
+            var responseContent = JsonConvert.DeserializeObject<JArray>(content).ToList();
+            var filterValueList = responseContent.Select(x => x["translatedCategory"].Equals(categoryName)).ToList();
+        }
     }
 }

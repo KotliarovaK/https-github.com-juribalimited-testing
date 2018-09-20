@@ -1227,7 +1227,7 @@ Scenario Outline: EvergreenJnr_AllLists_ChecksThatFilterInfoIsDisplayedCorrectly
 	Then "<FilterName>" filter is added to the list
 	And "<FilterInfo>" is displayed in added filter info
 	When User perform search by "<Search>"
-	When User click content from "<ColumnName>" column
+	And User click content from "<ColumnName>" column
 	Then User click back button in the browser
 	When User clicks the Filters button
 	Then Filters panel is displayed to the user

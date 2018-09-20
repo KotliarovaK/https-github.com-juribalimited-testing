@@ -1682,10 +1682,6 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_Columns
             this.FeatureBackground();
             testRunner.When("User clicks \"Devices\" on the left-hand menu", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
             testRunner.Then("\"Devices\" list should be displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-            testRunner.When("User clicks the Columns button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-            testRunner.Then("Columns panel is displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-            testRunner.Then("User closed \"Selected Columns\" columns category", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-            testRunner.Then("User is expand \"Project Tasks: Windows7Mi\" columns category", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
             TechTalk.SpecFlow.Table table85 = new TechTalk.SpecFlow.Table(new string[] {
                         "Subcategories"});
             table85.AddRow(new string[] {
@@ -1696,7 +1692,8 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_Columns
                         "Migration Updates"});
             table85.AddRow(new string[] {
                         "Windows7Mi: Group Computer Rag Radio Date Owner"});
-            testRunner.Then("the following subcategories are NOT displayed for Selected Columns category:", ((string)(null)), table85, "Then ");
+            testRunner.Then("the following subcategories are NOT displayed for \"Project Tasks: Windows7Mi\" Col" +
+                    "umns category:", ((string)(null)), table85, "Then ");
             this.ScenarioCleanup();
         }
     }
