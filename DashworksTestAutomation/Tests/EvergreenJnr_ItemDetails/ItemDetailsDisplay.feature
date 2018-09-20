@@ -279,7 +279,7 @@ Scenario Outline: EvergreenJnr_AllLists_CheckRenamedColumnAndStringFilterForSoft
 Examples:
 	| PageName | SelectedName   | ColumnName | CountRows |
 	| Devices  | 001BAQXT6JWFPI | Hostname   | 2         |
-	| Users    | ZZZ588323      | Username   | 1         |
+	| Users    | EKS951231      | Username   | 4         |
 
 @Evergreen @Mailboxes @EvergreenJnr_ItemDetails @ItemDetailsDisplay @DAS11667 @DAS12321 @DAS11921
 Scenario: EvergreenJnr_MailboxesList_CheckThatNoConsoleErrorsWhenViewingMailboxDetails
