@@ -249,6 +249,7 @@ namespace DashworksTestAutomation.Steps.Dashworks
                 projectsPage.PermissionsDropdown.Click();
                 projectsPage.SelectPermissionsByName(row["Permissions"]);
                 projectsPage.AddPermissionsButtonInTab.Click();
+                _driver.WaitForDataLoading();
             }
         }
 
@@ -1253,8 +1254,17 @@ namespace DashworksTestAutomation.Steps.Dashworks
             var projectElement = _driver.NowAt<BaseGridPage>();
             projectElement.PlusButton.Click();
         }
-        
-        [When(@"User selects all objects to the Project")]
+
+        [When(@"User enters ""(.*)"" in the Search Object field")]
+        public void WhenUserEntersInTheSearchObjectField(string text)
+        {
+            var projectElement = _driver.NowAt<BaseGridPage>();
+            projectElement.SearchTextbox.Clear();
+            projectElement.SearchTextbox.SendKeys(text);
+            _driver.WaitForDataLoading();
+        }
+
+    [When(@"User selects all objects to the Project")]
         [When(@"User cancels the selection objects in the Project")]
         public void WhenUserSelectsAllObjects()
         {
@@ -1296,6 +1306,16 @@ namespace DashworksTestAutomation.Steps.Dashworks
                 _driver.WaitForDataLoading();
                 dashboardPage.SelectOneRowsCheckboxes.Click();
             }
+        }
+
+        [Then(@"Objects are displayed in alphabetical order on the Admin page")]
+        public void ThenObjectsAreDisplayedInAlphabeticalOrderOnTheAdminPage()
+        {
+            var page = _driver.NowAt<BaseGridPage>();
+            _driver.WaitForDataLoading();
+            //Assert.AreEqual(list.OrderBy(s => s).ToList(), list, "Objects are not in alphabetical order");
+            List<string> originalList = page.ObjectsList.Select(x => x.Text).ToList();
+            SortingHelper.IsListSorted(originalList);
         }
 
         [When(@"User adds following Objects to the Project")]

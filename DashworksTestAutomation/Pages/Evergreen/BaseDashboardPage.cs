@@ -291,7 +291,7 @@ namespace DashworksTestAutomation.Pages.Evergreen
         public IList<IWebElement> SelectedColumnsSubcategoryList { get; set; }
 
         [FindsBy(How = How.XPath, Using = OptionOnActionsPanel)]
-        public IList<IWebElement> OtionListOnActionsPanel { get; set; }
+        public IList<IWebElement> OptionListOnActionsPanel { get; set; }
 
         #region TableColumns
 
@@ -539,7 +539,7 @@ namespace DashworksTestAutomation.Pages.Evergreen
         public IWebElement GetHrefByColumnName(string columnName)
         {
             By byControl =
-                By.XPath($".//div[contains(@class, 'ag-body-container')]/div[1]/div[{GetColumnNumberByName(columnName)}]/span/a[@href]");
+                By.XPath($".//div[contains(@class, 'ag-body-container')]/div[1]/div[{GetColumnNumberByName(columnName)}]/child-cell/div/a");
 
             Driver.WaitForDataLoading();
             Driver.WaitWhileControlIsNotDisplayed(byControl);

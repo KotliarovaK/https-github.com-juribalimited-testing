@@ -12,6 +12,8 @@ namespace DashworksTestAutomation.Pages.Evergreen.AdminDetailsPages
     {
         public const string ProjectInFilterDropdown = "//mat-option[@class='mat-option mat-option-multiple ng-star-inserted']";
 
+        public const string ObjectsToAdd = "//div[@class='mat-list-text']/span";
+
         [FindsBy(How = How.XPath, Using = ".//div/h1")]
         public IWebElement PageTitle { get; set; }
 
@@ -71,6 +73,9 @@ namespace DashworksTestAutomation.Pages.Evergreen.AdminDetailsPages
 
         [FindsBy(How = How.XPath, Using = ".//span[contains(@class, 'mat-select-placeholder')]")]
         public IWebElement ActionsInDropdown { get; set; }
+
+        [FindsBy(How = How.XPath, Using = ObjectsToAdd)]
+        public IList<IWebElement> ObjectsList { get; set; }
 
         [FindsBy(How = How.XPath, Using = ".//div[@class='mat-select-value']")]
         public IWebElement ActionsButton { get; set; }

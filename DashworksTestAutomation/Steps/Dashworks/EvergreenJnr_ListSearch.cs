@@ -25,17 +25,19 @@ namespace DashworksTestAutomation.Steps.Dashworks
             if (listPageElement.TableSearchTextbox.Displayed())
             {
                 listPageElement.TableSearchTextbox.Clear();
+                Thread.Sleep(3000);
                 _driver.WaitForDataLoading();
-                listPageElement.TableSearchTextbox.SendkeysWithDelay(searchTerm);
-                Thread.Sleep(5000);
+                listPageElement.TableSearchTextbox.SendKeys(searchTerm);
+                Thread.Sleep(3000);
                 _driver.WaitForDataLoading();
             }
             else
             {
                 listPageElement.TableSearchButton.Click();
                 listPageElement.TableSearchTextbox.Clear();
+                Thread.Sleep(3000);
                 _driver.WaitForDataLoading();
-                listPageElement.TableSearchTextbox.SendkeysWithDelay(searchTerm);
+                listPageElement.TableSearchTextbox.SendKeys(searchTerm);
                 Thread.Sleep(5000);
                 _driver.WaitForDataLoading();
             }

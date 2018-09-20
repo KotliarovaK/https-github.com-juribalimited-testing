@@ -1165,6 +1165,7 @@ Scenario Outline: EvergreenJnr_AllLists_ChecksThatApplicationFilterIsNotExcluded
 	| Value                               |
 	| Acrobat Reader 6.0.1 (500)          |
 	| ACT Data Collection Packages (1104) |
+	Then "ACT Data Collection Packages (1104)" is displayed after "Acrobat Reader 6.0.1 (500)" in Application list filter
 	When User enters "1104" text in Search field at selected Lookup Filter
 	Then "1 shown" results are displayed in the Filter panel
 	And "ACT Data Collection Packages (1104)" value is displayed for selected Lookup Filter
@@ -1173,3 +1174,70 @@ Examples:
 	| PageName |
 	| Devices  |
 	| Users    |
+
+@Evergreen @Applications @EvergreenJnr_FilterFeature @FilterFunctionality @DAS13473 @Delete_Newly_Created_List
+Scenario: EvergreenJnr_ApplicationsList_ChecksThatIfListWithAnAdvancedUserDescriptionIsEmptyFilterIsSavedAndOpenedNotInEditMode
+	When User clicks "Applications" on the left-hand menu
+	Then "Applications" list should be displayed to the user
+	When User clicks the Filters button
+	Then Filters panel is displayed to the user
+	When User add Advanced "User Description" filter where type is "Empty" with following Lookup Value and Association:
+	| SelectedValues | Association     |
+	|                | Has used app    |
+	|                | Entitled to app |
+	Then "User Description" filter is added to the list
+	And "User whose Description is empty has used app; or entitled to app" is displayed in added filter info
+	When User create custom list with "DAS13473" name
+	Then "DAS13473" list is displayed to user
+	And "113" rows are displayed in the agGrid
+	And URL contains "evergreen/#/applications?$listid="
+	And Edit List menu is not displayed
+	When User navigates to the "All Applications" list
+	And User navigates to the "DAS13473" list
+	Then "113" rows are displayed in the agGrid
+	Then URL contains "evergreen/#/applications?$listid="
+	And Edit List menu is not displayed
+
+@Evergreen @Applications @EvergreenJnr_FilterFeature @FilterFunctionality @DAS13377
+Scenario: EvergreenJnr_ApplicationsList_ChecksThatApplicationNameIsDisplayedAfterUsingTargetAppFilter
+	When User clicks "Applications" on the left-hand menu
+	Then "Applications" list should be displayed to the user
+	When User clicks the Filters button
+	Then Filters panel is displayed to the user
+	When User add "Barry'sUse: Target App" filter where type is "Equals" with added column and Lookup option
+	| SelectedValues         |
+	| Python 2.2a4 (SMS_GEN) |
+	Then "Barry'sUse: Target App" filter is added to the list
+	And "Barry'sUse: Target App is Python 2.2a4 (SMS_GEN)" is displayed in added filter info
+	When User click content from "Application" column
+	Then User click back button in the browser
+	When User clicks the Filters button
+	Then Filters panel is displayed to the user
+	And "Barry'sUse: Target App is Python 2.2a4 (SMS_GEN)" is displayed in added filter info
+
+@Evergreen @AllLists @EvergreenJnr_FilterFeature @FilterFunctionality @DAS13381
+Scenario Outline: EvergreenJnr_AllLists_ChecksThatFilterInfoIsDisplayedCorrectlyAfterSelectingObjectAndThenReturningBackToSerachResult
+	When User clicks "<PageName>" on the left-hand menu
+	Then "<PageName>" list should be displayed to the user
+	When User clicks the Filters button
+	Then Filters panel is displayed to the user
+	When User add "<FilterName>" filter where type is "Equals" with added column and following checkboxes:
+	| SelectedCheckboxes |
+	| <FilterValue>      |
+	Then "<FilterName>" filter is added to the list
+	And "<FilterInfo>" is displayed in added filter info
+	When User perform search by "<Search>"
+	When User click content from "<ColumnName>" column
+	Then User click back button in the browser
+	When User clicks the Filters button
+	Then Filters panel is displayed to the user
+	And "<FilterInfo>" is displayed in added filter info
+
+Examples: 
+	| PageName     | ColumnName    | FilterName                      | FilterValue    | Search                                     | FilterInfo                                 |
+	| Devices      | Hostname      | Babel(Engl: Category            | None           | 00KLL9S8NRF0X6                             | Babel(Engl: Category is None               |
+	| Devices      | Hostname      | Barry'sUse: In Scope            | FALSE          | 00OMQQXWA1DRI6                             | Barry'sUse: In Scope is true               |
+	| Devices      | Hostname      | ComputerSc: Request Type        | Request Type A | 47NK3ATE5DM2HD                             | ComputerSc: Request Type is Request Type A |
+	| Applications | Application   | Havoc(BigD: Hide from End Users | UNKNOWN        | Adobe Flash Player 10 ActiveX (10.0.12.36) | Havoc(BigD: Hide from End Users is Unknown |
+	| Applications | Application   | MigrationP: Core Application    | FALSE          | Adobe Download Manager 2.0 (Remove Only)   | MigrationP: Core Application is false      |
+	| Mailboxes    | Email Address | EmailMigra: Device Type         | Not Identified | 238BAE24882E48BFA9F@bclabs.local           | EmailMigra: Device Type is Not Identified  |

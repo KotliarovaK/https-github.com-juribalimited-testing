@@ -60,7 +60,7 @@ Scenario: EvergreenJnr_AdminPage_CheckThatCreateButtonIsDisabledForEmptyProjectN
 	And User selects all rows on the grid
 	And User removes selected item
 
-@Evergreen @Admin @EvergreenJnr_AdminPage @AdminPage @DAS11726 @DAS11891 @DAS11747 @Delete_Newly_Created_Bucket @Buckets
+@Evergreen @Admin @EvergreenJnr_AdminPage @AdminPage @DAS11726 @DAS11891 @DAS11747 @DAS13471 @Delete_Newly_Created_Bucket @Buckets
 Scenario: EvergreenJnr_AdminPage_CheckThatCreateButtonIsDisabledForEmptyBucketName
 	When User clicks Admin on the left-hand menu
 	Then Admin page should be displayed to the user
@@ -87,10 +87,10 @@ Scenario: EvergreenJnr_AdminPage_CheckThatCreateButtonIsDisabledForEmptyBucketNa
 	And User selects "Admin IT" team in the Team dropdown on the Buckets page
 	And User clicks Create button on the Create Bucket page
 	Then Error message with "A bucket already exists with this name" text is displayed
-	#And There are no errors in the browser console
+	And There are no errors in the browser console
 	Then Delete "TestBucket1" Bucket in the Administration
 
-@Evergreen @Admin @EvergreenJnr_AdminPage @AdminPage @DAS11726 @DAS11747 @Delete_Newly_Created_Team @Teams
+@Evergreen @Admin @EvergreenJnr_AdminPage @AdminPage @DAS11726 @DAS11747 @DAS13471 @Delete_Newly_Created_Team @Teams
 Scenario: EvergreenJnr_AdminPage_CheckThatCreateButtonIsDisabledForEmptyTeamName
 	When User clicks Admin on the left-hand menu
 	Then Admin page should be displayed to the user
@@ -111,7 +111,7 @@ Scenario: EvergreenJnr_AdminPage_CheckThatCreateButtonIsDisabledForEmptyTeamName
 	And User enters "test" in the Team Description field
 	And User clicks Create Team button on the Create Team page
 	Then Error message with "A team already exists with this name" text is displayed
-	#And There are no errors in the browser console
+	And There are no errors in the browser console
 
 @Evergreen @AllLists @EvergreenJnr_AdminPage @AdminPage @DAS11886 @DAS12613 @DAS13199 @Delete_Newly_Created_List @Delete_Newly_Created_Project @Project_Creation_and_Scope
 Scenario: EvergreenJnr_AdminPage_CheckThatWarningMessageIsDisplayedAfterDeletingUsedForProjectLists 
@@ -150,7 +150,7 @@ Scenario: EvergreenJnr_AdminPage_CheckThatWarningMessageIsDisplayedAfterDeleting
 	When User selects "Scope Changes" tab on the Project details page
 	Then Warning message is not displayed on the Admin page
 
-@Evergreen @Admin @EvergreenJnr_AdminPage @AdminPage @DAS11977 @DAS11959 @DAS12553 @DAS11744 @DAS12742 @DAS12999 @DAS13199 @DAS13254 @DAS13323 @DAS13393 @Delete_Newly_Created_Project @Project_Creation_and_Scope @Projects
+@Evergreen @Admin @EvergreenJnr_AdminPage @AdminPage @DAS11977 @DAS11959 @DAS12553 @DAS11744 @DAS12742 @DAS12999 @DAS13199 @DAS13254 @DAS13323 @DAS13393 @Delete_Newly_Created_Project @Project_Creation_and_Scope @Projects @Not_Run
 Scenario: EvergreenJnr_AdminPage_CheckThatAfterApplyingDoNotIncludeDeviceOwnersListHas0ItemsInTheUsersTab
 	When User clicks Admin on the left-hand menu
 	Then Admin page should be displayed to the user
@@ -172,7 +172,7 @@ Scenario: EvergreenJnr_AdminPage_CheckThatAfterApplyingDoNotIncludeDeviceOwnersL
 	And User selects "Use evergreen buckets" in the Buckets Project dropdown
 	And User clicks the "UPDATE" Action button
 	Then Success message is displayed and contains "The project details have been updated" text
-	#And There are no errors in the browser console
+	And There are no errors in the browser console
 	When User click on Back button
 	And User selects all rows on the grid
 	Then Actions dropdown is displayed correctly
@@ -227,7 +227,7 @@ Scenario: EvergreenJnr_AdminPage_CheckThatAfterApplyingDoNotIncludeDeviceOwnersL
 	And User selects all rows on the grid
 	And User removes selected item
 
-@Evergreen @Admin @EvergreenJnr_AdminPage @AdminPage @DAS11931 @DAS12742 @DAS11769 @DAS12999 @Project_Creation_and_Scope @Delete_Newly_Created_Project @Delete_Newly_Created_List @Projects
+@Evergreen @Admin @EvergreenJnr_AdminPage @AdminPage @DAS11931 @DAS12742 @DAS11769 @DAS12999 @Project_Creation_and_Scope @Delete_Newly_Created_Project @Delete_Newly_Created_List @Projects @Not_Run
 Scenario Outline: EvergreenJnr_AdminPage_CheckThatProjectsAreDeletedSuccessfullyAndThereAreNoConsoleErrors
 	When User clicks Admin on the left-hand menu
 	Then Admin page should be displayed to the user
@@ -334,7 +334,7 @@ Scenario: EvergreenJnr_AdminPage_CheckThatNoConsoleErrorsAreDisplayedWhenDeleteD
 	Then color data in table is sorted by "Default" column in descending order on the Admin page
 	Then There are no errors in the browser console
 
-@Evergreen @Admin @EvergreenJnr_AdminPage @AdminPage @DAS11762 @DAS12009 @DAS12999 @Teams
+@Evergreen @Admin @EvergreenJnr_AdminPage @AdminPage @DAS11762 @DAS12009 @DAS12999 @DAS13471 @Teams
 Scenario: EvergreenJnr_AdminPage_CheckThatNoConsoleErrorsAreDisplayedWhenDeleteDataFromFilterTextFieldForTeams
 	When User clicks Admin on the left-hand menu
 	Then Admin page should be displayed to the user
@@ -358,7 +358,7 @@ Scenario: EvergreenJnr_AdminPage_CheckThatNoConsoleErrorsAreDisplayedWhenDeleteD
 	And User have opened Column Settings for "Default" column
 	And User clicks Filter button in the Column Settings panel on the Teams Page
 	When User clicks "True" checkbox from String Filter on the Admin page
-	#Then Counter shows "2,789" found rows
+	Then Counter shows "2,789" found rows
 	Then There are no errors in the browser console
 	When User clicks Reset Filters button on the Admin page
 	Then Content is present in the table on the Admin page
@@ -399,7 +399,7 @@ Scenario: EvergreenJnr_AdminPage_CheckThatNoConsoleErrorsAreDisplayedWhenDeleteD
 	Then numeric data in table is sorted by "Project Buckets" column in descending order on the Admin page
 	When User click on "Project Buckets" column header on the Admin page
 	Then numeric data in table is sorted by "Project Buckets" column in ascending order on the Admin page
-	#And There are no errors in the browser console
+	And There are no errors in the browser console
 
 @Evergreen @Admin @EvergreenJnr_AdminPage @AdminPage @DAS11879 @DAS12742 @DAS12752 @Buckets
 Scenario: EvergreenJnr_AdminPage_CheckThatSpecificWarningMessageIsNotDisplayedAfterTryingToDeleteNonDefaultBucket
@@ -821,7 +821,7 @@ Scenario: EvergreenJnr_AdminPage_CheckThatFiltersAreWorkingCorrectlyOnTheAdminPa
 	And User enters "RD-EXCH2K3" text in the Search field for "Server Name" column
 	Then Counter shows "6" found rows
 
-@Evergreen @Admin @EvergreenJnr_AdminPage @AdminPage @DAS12236 @DAS12999 @DAS13199 @DAS13408 @Delete_Newly_Created_Project @Project_Creation_and_Scope @Projects
+@Evergreen @Admin @EvergreenJnr_AdminPage @AdminPage @DAS12236 @DAS12999 @DAS13199 @DAS13408 @DAS12645 @Delete_Newly_Created_Project @Project_Creation_and_Scope @Projects
 Scenario: EvergreenJnr_AdminPage_CheckThatNoConsoleErrorsAreDisplayedAfterUpdatingProjectScopeChanges
 	When User clicks Admin on the left-hand menu
 	Then Admin page should be displayed to the user
@@ -842,6 +842,7 @@ Scenario: EvergreenJnr_AdminPage_CheckThatNoConsoleErrorsAreDisplayedAfterUpdati
 	And User clicks "Applications" tab in the Project Scope Changes section
 	Then "Applications to add (0 of 2129 selected)" is displayed to the user in the Project Scope Changes section
 	When User expands the object to add 
+	Then Objects are displayed in alphabetical order on the Admin page
 	When User selects following Objects
 	| Objects                     |
 	| 20040610sqlserverck (1.0.0) |
@@ -866,7 +867,7 @@ Scenario: EvergreenJnr_AdminPage_CheckThatNoConsoleErrorsAreDisplayedAfterUpdati
 	| 7zip                        |
 	| ACDSee 4.0 (4.0.0)          |
 	Then "" content is displayed in "Bucket" column
-	#And There are no errors in the browser console
+	And There are no errors in the browser console
 
 @Evergreen @Admin @EvergreenJnr_AdminPage @AdminPage @DAS12491 @Buckets
 Scenario: EvergreenJnr_AdminPage_CheckThatSingularFoundItemLabelDisplaysOnActionsToolbarforBucketsList
@@ -942,7 +943,7 @@ Examples:
 	| Users     | Username      | TestList6588    |
 	| Mailboxes | Email Address | TestList6587    |
 
-@Evergreen @Admin @EvergreenJnr_AdminPage @AdminPage @DAS12751 @DAS12747 @DAS12999 @Delete_Newly_Created_Project @Project_Creation_and_Scope @Projects
+@Evergreen @Admin @EvergreenJnr_AdminPage @AdminPage @DAS12751 @DAS12747 @DAS12999 @DAS12645 @Delete_Newly_Created_Project @Project_Creation_and_Scope @Projects
 Scenario: EvergreenJnr_AdminPage_CheckThatSelectedCheckboxIsSelectedAfterSwitchingBetweenTabs
 	When User clicks Admin on the left-hand menu
 	Then Admin page should be displayed to the user
@@ -959,16 +960,18 @@ Scenario: EvergreenJnr_AdminPage_CheckThatSelectedCheckboxIsSelectedAfterSwitchi
 	When User selects "Scope Changes" tab on the Project details page
 	And User clicks "Devices" tab in the Project Scope Changes section
 	Then Update Project buttons is disabled
-	When User expands the object to add 
-	And User selects following Objects
+	When User expands the object to add
+	Then Objects are displayed in alphabetical order on the Admin page
+	When User selects following Objects
 	| Objects        |
 	| 02UXAL8OAR3K1O |
 	Then Update Project button is active
 	And "Devices to add (1 of 17225 selected)" is displayed to the user in the Project Scope Changes section
 	When User clicks "Users" tab in the Project Scope Changes section
 	Then "UPDATE USER CHANGES" Action button is disabled
-	When User expands the object to add 
-	And User selects following Objects
+	When User expands the object to add
+	Then Objects are displayed in alphabetical order on the Admin page
+	When User selects following Objects
 	| Objects                   |
 	| AAH0343264 (Luc Gauthier) |
 	And User clicks "Devices" tab in the Project Scope Changes section
@@ -1085,7 +1088,7 @@ Scenario: EvergreenJnr_AdminPage_CheckThatOnboardingOfObjectsIsProceedForScopedP
 	When User enters "01" text in the Search field for "Project ID" column
 	Then Counter shows "0" found rows
 
-@Evergreen @Admin @EvergreenJnr_AdminPage @AdminPage @DAS12332 @DAS13199 @DAS12485 @Delete_Newly_Created_Project @Project_Creation_and_Scope @Projects
+@Evergreen @Admin @EvergreenJnr_AdminPage @AdminPage @DAS12332 @DAS13199 @DAS12485 @DAS12645 @DAS11877 @Delete_Newly_Created_Project @Project_Creation_and_Scope @Projects
 Scenario: EvergreenJnr_AdminPage_CheckingThatRedBannerWithOkMessageIsNotDisplayedAfterAddingItemsToCreatedProject
 	When User clicks Admin on the left-hand menu
 	Then Admin page should be displayed to the user
@@ -1101,24 +1104,27 @@ Scenario: EvergreenJnr_AdminPage_CheckingThatRedBannerWithOkMessageIsNotDisplaye
 	Then Project "TestProject12332" is displayed to user
 	When User selects "Scope Changes" tab on the Project details page
 	When User expands the object to add
-	And User selects following Objects
+	Then Objects are displayed in alphabetical order on the Admin page
+	When User selects following Objects
 	| Objects        |
 	| 1DPQO52HJQZJ0H |
 	And User clicks "Applications" tab in the Project Scope Changes section
 	And User expands the object to add
-	And User selects following Objects
+	Then Objects are displayed in alphabetical order on the Admin page
+	When User selects following Objects
 	| Objects                                    |
 	| 0004 - Adobe Acrobat Reader 5.0.5 Francais |
 	And User clicks "Users" tab in the Project Scope Changes section
 	And User expands the object to add
-	And User selects following Objects
+	Then Objects are displayed in alphabetical order on the Admin page
+	When User selects following Objects
 	| Objects                    |
 	| AAC860150 (Kerrie D. Ruiz) |
 	And User clicks the "UPDATE ALL CHANGES" Action button
 	Then Warning message with "1 device will be added, 1 user will be added, 1 application will be added" text is displayed on the Admin page
 	When User clicks the "UPDATE PROJECT" Action button
 	Then Success message is displayed and contains "3 objects queued for onboarding, 0 objects offboarded" text
-	#And There are no errors in the browser console
+	And There are no errors in the browser console
 
 @Evergreen @Admin @EvergreenJnr_AdminPage @AdminPage @DAS12796 @DAS12872 @Delete_Newly_Created_List @Delete_Newly_Created_Project @Project_Creation_and_Scope @Projects
 Scenario Outline: EvergreenJnr_AdminPage_CheckThatNumberOfObjectIsUpdatedInTheScopeChangesOfProjectAfterTheChangeCustomList
@@ -1251,7 +1257,7 @@ Scenario: EvergreenJnr_AdminPage_CheckingThatProjectDetailsForOnboardedObjectsIs
 	And "Users 0/0" is displayed in the tab header on the Admin page
 	And "Applications 0/0" is displayed in the tab header on the Admin page
 	When User selects "Queue" tab on the Project details page
-	#Then There are no errors in the browser console
+	Then There are no errors in the browser console
 	Then Error message is not displayed on the Projects page
 	And following Items are onboarded
 	| Items                          |
@@ -1301,7 +1307,7 @@ Scenario: EvergreenJnr_AdminPage_CheckingThatProjectDetailsForOnboardedObjectsIs
 	When User selects "Onboard Computer Object" checkbox from String Filter on the Admin page
 	Then Counter shows "4" found rows
 	When User selects "History" tab on the Project details page
-	#Then There are no errors in the browser console
+	Then There are no errors in the browser console
 	Then Error message is not displayed on the Projects page
 	Then following Items are onboarded
 	| Items                          |
@@ -1362,7 +1368,7 @@ Scenario: EvergreenJnr_AdminPage_CheckingThatProjectDetailsForOnboardedObjectsIs
 	#Remove hash after fix
 	#And User clicks "TestProject12490" link on the Details Page
 	#Then "Project Object" page is displayed to the user
-	#Then There are no errors in the browser console
+	Then There are no errors in the browser console
 
 @Evergreen @Admin @EvergreenJnr_AdminPage @AdminPage @DAS11700 @Delete_Newly_Created_Project @Project_Creation_and_Scope
 Scenario: EvergreenJnr_AdminPage_CheckingThatTheProjectIdColumnIsAddedAndDisplayedCorrectlyToTheAdminProjectGrid
@@ -1440,7 +1446,7 @@ Scenario: EvergreenJnr_AdminPage_CheckThatOnboardedObjectsAreDisplayedAfterChang
 	Then "2" Onboarded objects are displayed
 	When User clicks Admin on the left-hand menu
 
-@Evergreen @Admin @EvergreenJnr_AdminPage @AdminPage @DAS12364 @DAS12999 @DAS13199 @DAS13297 @DAS12485 @Delete_Newly_Created_Project @Project_Creation_and_Scope @Projects
+@Evergreen @Admin @EvergreenJnr_AdminPage @AdminPage @DAS12364 @DAS12999 @DAS13199 @DAS13297 @DAS12485 @DAS12108 @DAS12645 @Delete_Newly_Created_Project @Project_Creation_and_Scope @Projects
 Scenario: EvergreenJnr_AdminPage_CheckingThatTheProjectIsUpdatedWithoutErrors
 	When User clicks Admin on the left-hand menu
 	Then Admin page should be displayed to the user
@@ -1459,21 +1465,38 @@ Scenario: EvergreenJnr_AdminPage_CheckingThatTheProjectIsUpdatedWithoutErrors
 	When User selects "Scope Changes" tab on the Project details page
 	Then "Users to add (0 of 41339 selected)" is displayed to the user in the Project Scope Changes section
 	When User expands the object to add
-	And User selects following Objects
+	Then Objects are displayed in alphabetical order on the Admin page
+	When User enters "child" in the Search Object field
+	Then Objects are displayed in alphabetical order on the Admin page
+	When User enters "" in the Search Object field
+	Then Objects are displayed in alphabetical order on the Admin page
+	When User selects following Objects
 	| Objects                               |
 	| 003F5D8E1A844B1FAA5 (Hunter, Melanie) |
 	| 01FF97A1FFAC48A1803 (Aultman, Chanel) |
 	When User clicks "Devices" tab in the Project Scope Changes section
 	Then "Devices to add (0 of 16765 selected)" is displayed to the user in the Project Scope Changes section
 	When User expands the object to add 
-	And User selects following Objects
+	Then Objects are displayed in alphabetical order on the Admin page
+	When User enters "wpq" in the Search Object field
+	Then Objects are displayed in alphabetical order on the Admin page
+	When User enters "" in the Search Object field
+	Then Objects are displayed in alphabetical order on the Admin page
+	When User selects following Objects
 	| Objects        |
 	| 0SH2BQ3EPXTEWN |
 	| 30LA8G32UF7HQC |
+	| 174HB6RFAHA5CT |
+	| 174HB6RFAHA5CT |
 	When User clicks "Applications" tab in the Project Scope Changes section
 	Then "Applications to add (0 of 2081 selected)" is displayed to the user in the Project Scope Changes section
 	When User expands the object to add 
-	And User selects following Objects
+	Then Objects are displayed in alphabetical order on the Admin page
+	When User enters "office 1" in the Search Object field
+	Then Objects are displayed in alphabetical order on the Admin page
+	When User enters "" in the Search Object field
+	Then Objects are displayed in alphabetical order on the Admin page
+	When User selects following Objects
 	| Objects                                          |
 	| ACDSee 4.0.2 PowerPack Trial Version (4.00.0002) |
 	| Backburner (2.1.2.0)                             |
@@ -1488,7 +1511,7 @@ Scenario: EvergreenJnr_AdminPage_CheckingThatTheProjectIsUpdatedWithoutErrors
 	When User selects "Scope Details" tab on the Project details page
 	When User selects "Scope Changes" tab on the Project details page
 	When User clicks "Applications" tab in the Project Scope Changes section
-	#Then There are no errors in the browser console
+	Then There are no errors in the browser console
 
 @Evergreen @Admin @EvergreenJnr_AdminPage @AdminPage @DAS11729 @DAS13199 @Delete_Newly_Created_List @Delete_Newly_Created_Project
 Scenario: EvergreenJnr_AdminPage_CheckThatWarningMessageIsDisplayedIfTryToRemoveCreatedListThatUsedInAnyProject
@@ -1910,7 +1933,7 @@ Scenario: EvergreenJnr_AdminPage_CheckThatUsersToAddAndRemoveAreChangingAppropri
 	#And "Users to remove (0 of 2 selected)" is displayed to the user in the Project Scope Changes section
 	And Add Objects panel is collapsed
 
-@Evergreen @Admin @EvergreenJnr_AdminPage @AdminPage @DAS12999 @DAS12903 @Delete_Newly_Created_Project @Delete_Newly_Created_List
+@Evergreen @Admin @EvergreenJnr_AdminPage @AdminPage @DAS12999 @DAS12903 @Delete_Newly_Created_Project @Delete_Newly_Created_List @Not_Run
 Scenario Outline: EvergreenJnr_AdminPage_CheckProjectCreationFromListPageWithUseEvergreenBucket
 	When User clicks "<ListName>" on the left-hand menu
 	Then "<ListName>" list should be displayed to the user
@@ -2104,7 +2127,7 @@ Examples:
 	| TestProject9553 | StaticList8891 | Mailboxes | 00A5B910A1004CF5AC4@bclabs.local | Email Address | DynamicList9537 |
 	| TestProject9554 | StaticList8892 | Users     | 003F5D8E1A844B1FAA5              | Username      | DynamicList9538 |
 
-@Evergreen @Admin @EvergreenJnr_AdminPage @AdminPage @DAS12948 @DAS13073 @DAS12999 @Delete_Newly_Created_Project @Buckets @Projects
+@Evergreen @Admin @EvergreenJnr_AdminPage @AdminPage @DAS12948 @DAS13073 @DAS12999 @Delete_Newly_Created_Project @Buckets @Projects @Not_Run
 Scenario: EvergreenJnr_AdminPage_CheckTheBucketStateForOnboardedObjects
 	When User clicks Admin on the left-hand menu
 	Then Admin page should be displayed to the user
@@ -2208,7 +2231,7 @@ Examples:
 	| All Mailboxes | Mailboxes | UPDATE MAILBOX CHANGES | 003F5D8E1A844B1FAA5@bclabs.local (Hunter, Melanie) | 1 mailbox will be added | 1 object queued for onboarding, 0 objects offboarded |
 	| All Devices   | Users     | UPDATE USER CHANGES    | ADC714277 (Dina Q. Knight)                         | 1 user will be added    | 1 object queued for onboarding, 0 objects offboarded |
 
-@Evergreen @Admin @EvergreenJnr_AdminPage @AdminPage @DAS12999 @DAS13199 @DAS12781 @DAS12903 @DAS12485 @Projects @Delete_Newly_Created_Project
+@Evergreen @Admin @EvergreenJnr_AdminPage @AdminPage @DAS12999 @DAS13199 @DAS12781 @DAS12903 @DAS12485 @Projects @Delete_Newly_Created_Project @Not_Run
 Scenario: EvergreenJnr_AdminPage_ChangingBucketFromUseEvergreenBucketsToCloneEvergreenBuckets
 	When User clicks Admin on the left-hand menu
 	Then Admin page should be displayed to the user
@@ -2231,7 +2254,7 @@ Scenario: EvergreenJnr_AdminPage_ChangingBucketFromUseEvergreenBucketsToCloneEve
 	When User selects "Scope Changes" tab on the Project details page
 	Then "Match to Evergreen Bucket" is displayed in the Bucket dropdown
 
-@Evergreen @Admin @EvergreenJnr_AdminPage @AdminPage @DAS12999 @DAS13199 @Delete_Newly_Created_Project @Project_Creation_and_Scope @Projects
+@Evergreen @Admin @EvergreenJnr_AdminPage @AdminPage @DAS12999 @DAS13199 @DAS13471 @Delete_Newly_Created_Project @Project_Creation_and_Scope @Projects
 Scenario: EvergreenJnr_AdminPage_ChangingBucketFromCloneEvergreenBucketsToUseProjectBuckets
 	When User clicks Admin on the left-hand menu
 	Then Admin page should be displayed to the user
@@ -2249,10 +2272,10 @@ Scenario: EvergreenJnr_AdminPage_ChangingBucketFromCloneEvergreenBucketsToUsePro
 	And User selects "Use project buckets" in the Buckets Project dropdown
 	And User clicks the "UPDATE" Action button
 	Then Success message is displayed and contains "The project details have been updated" text
-	#And There are no errors in the browser console
+	And There are no errors in the browser console
 	When User selects "Scope Changes" tab on the Project details page
 	Then "Unassigned" is displayed in the Bucket dropdown
-	#And There are no errors in the browser console
+	And There are no errors in the browser console
 
 @Evergreen @Admin @EvergreenJnr_AdminPage @AdminPage @DAS12999 @DAS13199 @Delete_Newly_Created_Project @Project_Creation_and_Scope @Projects
 Scenario: EvergreenJnr_AdminPage_ChangingBucketFromCloneEvergreenBucketsToUseEvergreenBuckets
@@ -2277,7 +2300,7 @@ Scenario: EvergreenJnr_AdminPage_ChangingBucketFromCloneEvergreenBucketsToUseEve
 	Then "Unassigned" is displayed in the Bucket dropdown
 	#And There are no errors in the browser console
 
-@Evergreen @Admin @EvergreenJnr_AdminPage @AdminPage @DAS12999 @DAS12903 @DAS12485 @Delete_Newly_Created_Project @Delete_Newly_Created_List @Projects
+@Evergreen @Admin @EvergreenJnr_AdminPage @AdminPage @DAS12999 @DAS12903 @DAS12485 @Delete_Newly_Created_Project @Delete_Newly_Created_List @Projects @Not_Run
 Scenario: EvergreenJnr_AdminPage_ChangingDevicesScopeListToAnotherListUsingEvergreenBuckets
 	When User clicks "Devices" on the left-hand menu
 	Then "Devices" list should be displayed to the user
@@ -3307,7 +3330,7 @@ Scenario: EvergreenJnr_AdminPage_CheckDefaultSortOrderOfDevicesAndUsersAndMailbo
 	When User clicks "Mailboxes" tab
 	Then data in table is sorted by "Email Address (Primary)" column in ascending order by default on the Admin page
 
-@Evergreen @Admin @EvergreenJnr_AdminPage @AdminPage @DAS12999 @DAS12680 @Delete_Newly_Created_Project @Projects
+@Evergreen @Admin @EvergreenJnr_AdminPage @AdminPage @DAS12999 @DAS12680 @DAS12108 @Delete_Newly_Created_Project @Projects
 Scenario: EvergreenJnr_AdminPage_AddingRequestTypesAndCategories
 	When User clicks Admin on the left-hand menu
 	Then Admin page should be displayed to the user
@@ -3359,6 +3382,8 @@ Scenario: EvergreenJnr_AdminPage_AddingRequestTypesAndCategories
 	| Objects                                            |
 	| 003F5D8E1A844B1FAA5@bclabs.local (Hunter, Melanie) |
 	| 00DB4000EDD84951993@bclabs.local (CSC, SS)         |
+	| 0E3406ED5D8349D0996@bclabs.local (Mickley, Leslie) |
+	| 0E3406ED5D8349D0996@bclabs.local (Mickley, Leslie) |
 	And User clicks the "UPDATE ALL CHANGES" Action button
 	Then Warning message with "2 mailboxes will be added" text is displayed on the Admin page
 	And "Mailboxes 2/0" is displayed in the tab header on the Admin page
@@ -3533,7 +3558,7 @@ Scenario: EvergreenJnr_AdminPage_CheckThatScopeChangesSelectionIsDisabledAfterCl
 	Then "UPDATE ALL CHANGES" Action button is active
 	#And There are no errors in the browser console
 
-@Evergreen @Admin @EvergreenJnr_AdminPage @AdminPage @DAS12949 @DAS12609 @Delete_Newly_Created_Project @Projects
+@Evergreen @Admin @EvergreenJnr_AdminPage @AdminPage @DAS12949 @DAS12609 @DAS12108 @Delete_Newly_Created_Project @Projects
 Scenario: EvergreenJnr_AdminPage_ChecksThatProjectNameWhichStartsWithLowerCaseLetterIsDisplayedInAlphabeticalOrder
 	When User clicks Admin on the left-hand menu
 	Then Admin page should be displayed to the user
@@ -3560,6 +3585,8 @@ Scenario: EvergreenJnr_AdminPage_ChecksThatProjectNameWhichStartsWithLowerCaseLe
 	| ADD135461 (Luke W. Clark)    |
 	| ADO048752 (Elena Z. Le)      |
 	| ADX520696 (Bridgett E. Cobb) |
+	| CKB423934 (Tracie N. Bright) |
+	| CKB423934 (Tracie N. Bright) |
 	And User clicks the "UPDATE USER CHANGES" Action button
 	Then Warning message with "3 users will be added" text is displayed on the Admin page
 	When User clicks the "UPDATE PROJECT" Action button
@@ -3662,7 +3689,7 @@ Scenario: EvergreenJnr_AdminPage_ChecksThatColourOfOnboardedAppIsDisplayedCorrec
 	Then "Project Object" page is displayed to the user
 	And Colour of onboarded app is "Red"
 
-@Evergreen @Admin @EvergreenJnr_AdminPage @AdminPage @DAS12496 @DAS12485 @Delete_Newly_Created_Project @Not_Run
+@Evergreen @Admin @EvergreenJnr_AdminPage @AdminPage @DAS12496 @DAS12485 @DAS12108 @Delete_Newly_Created_Project @Not_Run
 Scenario: EvergreenJnr_AdminPage_CheckThatOffboardedObjectsAreListedAfterSelectObjectToRemove
 	When User clicks Admin on the left-hand menu
 	Then Admin page should be displayed to the user
@@ -3685,6 +3712,8 @@ Scenario: EvergreenJnr_AdminPage_CheckThatOffboardedObjectsAreListedAfterSelectO
 	| 02C80G8RFTPA9E  |
 	| 04FPR090BNW80E  |
 	| 05LG3HCJLEDEMTR |
+	| 2QP6MWKI0BM87U  |
+	| 2QP6MWKI0BM87U  |
 	And User clicks the "UPDATE DEVICE CHANGES" Action button
 	Then Warning message with "4 devices will be added" text is displayed on the Admin page
 	When User clicks the "UPDATE PROJECT" Action button
@@ -3757,7 +3786,7 @@ Scenario: EvergreenJnr_AdminPage_CheckThatSelectedBucketsIsDisplayedForOnboarded
 	| 003F5D8E1A844B1FAA5 (Hunter, Melanie) |
 	And "UsersProject3Group" content is displayed in "Bucket" column
 
-@Evergreen @Admin @EvergreenJnr_AdminPage @AdminPage @DAS12763 @DAS12767 @Delete_Newly_Created_Project @Delete_Newly_Created_Bucket
+@Evergreen @Admin @EvergreenJnr_AdminPage @AdminPage @DAS12763 @DAS12767 @Delete_Newly_Created_Project @Delete_Newly_Created_Bucket @Not_Run
 Scenario: EvergreenJnr_AdminPage_CheckDisplayingBucketsAfterCreationProjectsWithDifferentOptions
 	When User clicks Admin on the left-hand menu
 	Then Admin page should be displayed to the user
@@ -3932,3 +3961,208 @@ Scenario: EvergreenJnr_AdminPage_TheGreenBannerIsNotDisplayedIfBannerWasBeShownO
 	| 0623U41CZ73RV2Q |
 	When User selects "Scope Changes" tab on the Project details page
 	Then Success message is not displayed on the Projects page
+	
+@Evergreen @Admin @EvergreenJnr_AdminPage @AdminPage @DAS13390 @Delete_Newly_Created_Project
+Scenario: EvergreenJnr_AdminPage_ChecksThatOnboardedObjectsWorkCorrectlyForTwoUsers
+	When User clicks Admin on the left-hand menu
+	Then Admin page should be displayed to the user
+	When User clicks "Projects" link on the Admin page
+	Then "Projects" page should be displayed to the user
+	When User clicks the "CREATE PROJECT" Action button
+	Then "Create Project" page should be displayed to the user
+	When User enters "Project13390" in the Project Name field
+	And User selects "All Devices" in the Scope Project dropdown
+	And User clicks Create button on the Create Project page
+	Then Success message is displayed and contains "Your project has been created" text
+	When User clicks newly created object link
+	And User selects "Scope Changes" tab on the Project details page
+	And User clicks "Devices" tab in the Project Scope Changes section
+	And User expands the object to add 
+	And User selects following Objects
+	| Objects         |
+	| 001BAQXT6JWFPI  |
+	| 001PSUMZYOW581  |
+	| 00BDM1JUR8IF419 |
+	| 00CWZRC4UK6W20  |
+	| 00HA7MKAVVFDAV  |
+	| 00I0COBFWHOF27  |
+	| 00K4CEEQ737BA4L |
+	| 00KLL9S8NRF0X6  |
+	| 00KWQ4J3WKQM0G  |
+	| 00OMQQXWA1DRI6  |
+	| 00RUUMAH9OZN9A  |
+	| 00SH8162NAS524  |
+	| 00YTY8U3ZYP2WT  |
+	| 00YWR8TJU4ZF8V  |
+	| 011PLA470S0B9DJ |
+	| 018UQ6KL9TF4YF  |
+	| 019BFPQGKK5QT8N |
+	| 01COJATLYVAR7A6 |
+	| 01DRMO46G58SXK  |
+	| 01KFZ6XUVQSII0  |
+	| 0281Z793OLLLDU6 |
+	| 02C80G8RFTPA9E  |
+	| 02X387UDGZJPQY  |
+	| 03063X2ZUCDN0A1 |
+	| 03U75EKEMUQMUS  |
+	And User clicks "Users" tab in the Project Scope Changes section
+	And User expands the object to add 
+	And User selects following Objects
+	| Objects                         |
+	| AAC860150 (Kerrie D. Ruiz)      |
+	| AAD1011948 (Pinabel Cinq-Mars)  |
+	| AAG081456 (Melanie Z. Fowler)   |
+	| AAH0343264 (Luc Gauthier)       |
+	| AAK881049 (Miguel W. Owen)      |
+	| AAL852547 (Robbie A. Roach)     |
+	| AAM044531 (Dustin R. Alvarez)   |
+	| AAO271828 (Ramona D. Curtis)    |
+	| AAO3000042 (Georgette Pichette) |
+	| AAO438834 (James Y. Mc Bride)   |
+	| AAO798996 (Darren J. Walter)    |
+	| AAQ9911340 (Javier Lanctot)     |
+	| AAT858228 (Cheri B. Evans)      |
+	| AAT891621 (Henry F. Mccall)     |
+	| AAV4528222 (Felicienne Vadnais) |
+	| AAV500479 (Wendi H. Dougherty)  |
+	| AAY704360 (Micah H. Mccall)     |
+	| ABE8110806 (Brice Grimard)      |
+	| ABG5308934 (Carolos Vallée)     |
+	| ABK350523 (Alyssa A. Williams)  |
+	| ABM798049 (Roland C. Bond)      |
+	| ABN563832 (Dewayne D. Butler)   |
+	| ABP977697 (Rocky Y. Stout)      |
+	| ABQ575757 (Salvador K. Waller)  |
+	| ABS188911 (Jesus W. Kirk)       |
+	And User clicks "Applications" tab in the Project Scope Changes section
+	And User expands the object to add 
+	And User selects following Objects
+	| Objects                                                              |
+	| "WPF/E" (codename) Community Technology Preview (Feb 2007) (0.8.5.0) |
+	| 0004 - Adobe Acrobat Reader 5.0.5 Francais (5.0.5)                   |
+	| 0036 - Microsoft Access 97 SR-2 English (8.0)                        |
+	| 0047 - Microsoft Access 97 SR-2 Francais (8.0)                       |
+	| 20040610sqlserverck (1.0.0)                                          |
+	| 32VerSee v.231 en (C:\32VerSee\)                                     |
+	| Access 97 Rumtime                                                    |
+	| ACDSee 4.0 SendPix & Email Update (1.00.0000)                        |
+	| ACDSee Mobile 1.2 for Palm OS? (1.2)                                 |
+	| ActiveBar Version 2.0 Upgrade                                        |
+	| AddFlow 4                                                            |
+	| Adobe Acrobat Reader 3.0 ((Not Available))                           |
+	| Adobe SVG Viewer 3.0 (3.0)                                           |
+	| aktion (0.3.6)                                                       |
+	| AltaVista Power Tools for IE5                                        |
+	| Amazon Redshift ODBC Driver 64-bit (1.2.1)                           |
+	| AnalogX TrackSeek                                                    |
+	| AppForge 2.0 Professional (02.00.0110)                               |
+	| Ask Toolbar 4.0 (OEM1000) (4.0.1.1)                                  |
+	| AtomixMP3                                                            |
+	| aumix (2.7)                                                          |
+	| Avery Zweckform Assistent                                            |
+	| Axosoft OnTime 2005 Enterprise Server (5.3.0)                        |
+	| BDE 5.01 Upgrade                                                     |
+	| Brava! Reader 2.5 (2.5)                                              |
+	And User clicks the "UPDATE ALL CHANGES" Action button
+	And User clicks the "UPDATE PROJECT" Action button
+	Then Success message with "75 objects queued for onboarding, 0 objects offboarded" text is displayed on the Projects page
+	And "Applications to add (0 of 2104 selected)" is displayed to the user in the Project Scope Changes section
+	And following objects were not found
+	| Objects                                                              |
+	| "WPF/E" (codename) Community Technology Preview (Feb 2007) (0.8.5.0) |
+	When User clicks "Users" tab in the Project Scope Changes section
+	Then "Users to add (0 of 14606 selected)" is displayed to the user in the Project Scope Changes section
+	And following objects were not found
+	| Objects                    |
+	| AAC860150 (Kerrie D. Ruiz) |
+	When User clicks "Devices" tab in the Project Scope Changes section
+	Then "Devices to add (0 of 17200 selected)" is displayed to the user in the Project Scope Changes section
+	And following objects were not found
+	| Objects         |
+	| 019BFPQGKK5QT8N |
+	#go to create new user
+	When User clicks "Projects" on the left-hand menu
+	Then "Projects Home" page is displayed to the user
+	When User navigate to Manage link
+	And User select "Manage Users" option in Management Console
+	And User create new User
+	| Username | FullName | Password | ConfirmPassword | Roles                 |
+	| DAS13390 | 13390    | 1234qwer | 1234qwer        | Project Administrator |
+	Then Success message is displayed
+	When User cliks Logout link
+	Then User is logged out
+	#login using created user
+	When User clicks on the Login link
+	Then Login Page is displayed to the user
+	When User login with following credentials:
+	| Username | Password |
+	| DAS13390 | 1234qwer |
+	Then Dashworks homepage is displayed to the user in a logged in state
+	When User clicks the Switch to Evergreen link
+	Then Evergreen Dashboards page should be displayed to the user
+	When User clicks Admin on the left-hand menu
+	Then Admin page should be displayed to the user
+	When User clicks "Projects" link on the Admin page
+	Then "Projects" page should be displayed to the user
+	When User enters "Project13390" text in the Search field for "Project" column
+	And User clicks content from "Project" column
+	And User selects "Scope Changes" tab on the Project details page
+	Then Success message is not displayed on the Projects page
+	And "Devices to add (0 of 17200 selected)" is displayed to the user in the Project Scope Changes section
+	And following objects were not found
+	| Objects         |
+	| 019BFPQGKK5QT8N |
+	When User clicks "Users" tab in the Project Scope Changes section
+	Then "Users to add (0 of 14606 selected)" is displayed to the user in the Project Scope Changes section
+	And following objects were not found
+	| Objects                    |
+	| AAC860150 (Kerrie D. Ruiz) |
+	When User clicks "Applications" tab in the Project Scope Changes section
+	Then "Applications to add (0 of 2104 selected)" is displayed to the user in the Project Scope Changes section 
+	And following objects were not found
+	| Objects                                                              |
+	| "WPF/E" (codename) Community Technology Preview (Feb 2007) (0.8.5.0) |
+	When User clicks the Logout button
+	Then User is logged out
+	When User clicks on the Login link
+	Then Login Page is displayed to the user
+	When User provides the Login and Password and clicks on the login button
+	Then Dashworks homepage is displayed to the user in a logged in state
+	When User navigate to Manage link
+	And User select "Manage Users" option in Management Console
+	And User removes "DAS13390" User
+
+@Evergreen @Admin @EvergreenJnr_AdminPage @AdminPage @DAS12645 @Delete_Newly_Created_Project
+Scenario: EvergreenJnr_AdminPage_CheckingSortingOrderOfTheObjectsInTheProjectScopeChanges
+	When User clicks Admin on the left-hand menu
+	Then Admin page should be displayed to the user
+	When User clicks "Projects" link on the Admin page
+	Then "Projects" page should be displayed to the user
+	When User clicks the "CREATE PROJECT" Action button
+	Then "Create Project" page should be displayed to the user
+	When User enters "TestProject12645" in the Project Name field
+	And User selects "All Mailboxes" in the Scope Project dropdown
+	And User clicks Create button on the Create Project page
+	Then Success message is displayed and contains "Your project has been created" text
+	When User clicks newly created object link
+	Then Project "TestProject12645" is displayed to user
+	When User selects "Scope Changes" tab on the Project details page
+	When User expands the object to add
+	Then Objects are displayed in alphabetical order on the Admin page
+	When User selects following Objects
+	| Objects                                                |
+	| 000F977AC8824FE39B8@bclabs.local (Spruill, Shea)       |
+	| 002B5DC7D4D34D5C895@bclabs.local (Collor, Christopher) |
+	| 003F5D8E1A844B1FAA5@bclabs.local (Hunter, Melanie)     |
+	When User clicks the "UPDATE ALL CHANGES" Action button
+	And User clicks the "UPDATE PROJECT" Action button
+	Then Success message is displayed and contains "3 objects queued for onboarding, 0 objects offboarded" text
+	Then following objects were not found
+	| Objects                                                |
+	| 000F977AC8824FE39B8@bclabs.local (Spruill, Shea)       |
+	| 002B5DC7D4D34D5C895@bclabs.local (Collor, Christopher) |
+	| 003F5D8E1A844B1FAA5@bclabs.local (Hunter, Melanie)     |
+	Then Objects are displayed in alphabetical order on the Admin page
+	When User clicks "Users" tab in the Project Scope Changes section
+	When User expands the object to add
+	Then Objects are displayed in alphabetical order on the Admin page

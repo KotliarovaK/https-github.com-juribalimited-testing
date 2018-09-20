@@ -55,7 +55,7 @@ namespace DashworksTestAutomation.Steps.API
         public void ThenPageSizeIsOnPage(int pageSize, string pageName)
         {
             var lastNetworkRequest = JsonConvert.DeserializeObject<JArray>(_driver.GetNetworkLogByJavascript()).Last;
-            Assert.True(lastNetworkRequest["name"].ToString().Contains("?$top=2500"));
+            Assert.True(lastNetworkRequest["name"].ToString().Contains("?$top=2500"), "page Size is not 2500");
         }
     }
 }

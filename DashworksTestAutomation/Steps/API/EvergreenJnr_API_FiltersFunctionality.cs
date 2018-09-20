@@ -97,5 +97,28 @@ namespace DashworksTestAutomation.Steps.API
                 Assert.IsTrue(filterValueList.Contains(value), "Selected values are not displayed in that filter");
             }
         }
+
+        [Then(@"""(.*)"" is displayed after ""(.*)"" in Application list filter")]
+        public void ThenIsDisplayedAfterInApplicationListFilter(string item1, string item2)
+        {
+            var requestUri = $"{UrlProvider.RestClientBaseUrl}devices/filters/options/application";
+            var request = new RestRequest(requestUri);
+
+            request.AddParameter("Host", UrlProvider.RestClientBaseUrl);
+            request.AddParameter("Origin", UrlProvider.Url.TrimEnd('/'));
+            request.AddParameter("Referer", UrlProvider.EvergreenUrl);
+
+            var response = _client.Value.Get(request);
+
+            if (response.StatusCode != HttpStatusCode.OK)
+                throw new Exception($"Unable to execute request. URI: {requestUri}");
+
+            var content = response.Content;
+
+            var responseContent = JsonConvert.DeserializeObject<JArray>(content).ToList();
+            var filterValueList = responseContent.Select(x => x["text"].ToString()).ToList();
+            var itemByIndex2 = filterValueList.FindIndex(s => s.Equals(item2));
+            Assert.AreEqual(item1, filterValueList[itemByIndex2 + 1]);
+        }
     }
 }
