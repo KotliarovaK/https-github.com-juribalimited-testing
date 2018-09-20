@@ -1214,3 +1214,30 @@ Scenario: EvergreenJnr_ApplicationsList_ChecksThatApplicationNameIsDisplayedAfte
 	When User clicks the Filters button
 	Then Filters panel is displayed to the user
 	And "Barry'sUse: Target App is Python 2.2a4 (SMS_GEN)" is displayed in added filter info
+
+@Evergreen @AllLists @EvergreenJnr_FilterFeature @FilterFunctionality @DAS13381
+Scenario Outline: EvergreenJnr_AllLists_ChecksThatFilterInfoIsDisplayedCorrectlyAfterSelectingObjectAndThenReturningBackToSerachResult
+	When User clicks "<PageName>" on the left-hand menu
+	Then "<PageName>" list should be displayed to the user
+	When User clicks the Filters button
+	Then Filters panel is displayed to the user
+	When User add "<FilterName>" filter where type is "Equals" with added column and following checkboxes:
+	| SelectedCheckboxes |
+	| <FilterValue>      |
+	Then "<FilterName>" filter is added to the list
+	And "<FilterInfo>" is displayed in added filter info
+	When User perform search by "<Search>"
+	When User click content from "<ColumnName>" column
+	Then User click back button in the browser
+	When User clicks the Filters button
+	Then Filters panel is displayed to the user
+	And "<FilterInfo>" is displayed in added filter info
+
+Examples: 
+	| PageName     | ColumnName    | FilterName                      | FilterValue    | Search                                     | FilterInfo                                 |
+	| Devices      | Hostname      | Babel(Engl: Category            | None           | 00KLL9S8NRF0X6                             | Babel(Engl: Category is None               |
+	| Devices      | Hostname      | Barry'sUse: In Scope            | FALSE          | 00OMQQXWA1DRI6                             | Barry'sUse: In Scope is true               |
+	| Devices      | Hostname      | ComputerSc: Request Type        | Request Type A | 47NK3ATE5DM2HD                             | ComputerSc: Request Type is Request Type A |
+	| Applications | Application   | Havoc(BigD: Hide from End Users | UNKNOWN        | Adobe Flash Player 10 ActiveX (10.0.12.36) | Havoc(BigD: Hide from End Users is Unknown |
+	| Applications | Application   | MigrationP: Core Application    | FALSE          | Adobe Download Manager 2.0 (Remove Only)   | MigrationP: Core Application is false      |
+	| Mailboxes    | Email Address | EmailMigra: Device Type         | Not Identified | 238BAE24882E48BFA9F@bclabs.local           | EmailMigra: Device Type is Not Identified  |

@@ -2955,6 +2955,58 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_FiltersFeature
                     "nfo", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
             this.ScenarioCleanup();
         }
+        
+        [NUnit.Framework.TestAttribute()]
+        [NUnit.Framework.Retry(2)]
+        [NUnit.Framework.DescriptionAttribute("EvergreenJnr_AllLists_ChecksThatFilterInfoIsDisplayedCorrectlyAfterSelectingObjec" +
+            "tAndThenReturningBackToSerachResult")]
+        [NUnit.Framework.CategoryAttribute("Evergreen")]
+        [NUnit.Framework.CategoryAttribute("AllLists")]
+        [NUnit.Framework.CategoryAttribute("EvergreenJnr_FilterFeature")]
+        [NUnit.Framework.CategoryAttribute("FilterFunctionality")]
+        [NUnit.Framework.CategoryAttribute("DAS13381")]
+        [NUnit.Framework.TestCaseAttribute("Devices", "Hostname", "Babel(Engl: Category", "None", "00KLL9S8NRF0X6", "Babel(Engl: Category is None", new string[0])]
+        [NUnit.Framework.TestCaseAttribute("Devices", "Hostname", "Barry\'sUse: In Scope", "FALSE", "00OMQQXWA1DRI6", "Barry\'sUse: In Scope is true", new string[0])]
+        [NUnit.Framework.TestCaseAttribute("Devices", "Hostname", "ComputerSc: Request Type", "Request Type A", "47NK3ATE5DM2HD", "ComputerSc: Request Type is Request Type A", new string[0])]
+        [NUnit.Framework.TestCaseAttribute("Applications", "Application", "Havoc(BigD: Hide from End Users", "UNKNOWN", "Adobe Flash Player 10 ActiveX (10.0.12.36)", "Havoc(BigD: Hide from End Users is Unknown", new string[0])]
+        [NUnit.Framework.TestCaseAttribute("Applications", "Application", "MigrationP: Core Application", "FALSE", "Adobe Download Manager 2.0 (Remove Only)", "MigrationP: Core Application is false", new string[0])]
+        [NUnit.Framework.TestCaseAttribute("Mailboxes", "Email Address", "EmailMigra: Device Type", "Not Identified", "238BAE24882E48BFA9F@bclabs.local", "EmailMigra: Device Type is Not Identified", new string[0])]
+        public virtual void EvergreenJnr_AllLists_ChecksThatFilterInfoIsDisplayedCorrectlyAfterSelectingObjectAndThenReturningBackToSerachResult(string pageName, string columnName, string filterName, string filterValue, string search, string filterInfo, string[] exampleTags)
+        {
+            string[] @__tags = new string[] {
+                    "Evergreen",
+                    "AllLists",
+                    "EvergreenJnr_FilterFeature",
+                    "FilterFunctionality",
+                    "DAS13381"};
+            if ((exampleTags != null))
+            {
+                @__tags = System.Linq.Enumerable.ToArray(System.Linq.Enumerable.Concat(@__tags, exampleTags));
+            }
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("EvergreenJnr_AllLists_ChecksThatFilterInfoIsDisplayedCorrectlyAfterSelectingObjec" +
+                    "tAndThenReturningBackToSerachResult", @__tags);
+            this.ScenarioSetup(scenarioInfo);
+            this.FeatureBackground();
+            testRunner.When(string.Format("User clicks \"{0}\" on the left-hand menu", pageName), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+            testRunner.Then(string.Format("\"{0}\" list should be displayed to the user", pageName), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+            testRunner.When("User clicks the Filters button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+            testRunner.Then("Filters panel is displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+            TechTalk.SpecFlow.Table table98 = new TechTalk.SpecFlow.Table(new string[] {
+                        "SelectedCheckboxes"});
+            table98.AddRow(new string[] {
+                        string.Format("{0}", filterValue)});
+            testRunner.When(string.Format("User add \"{0}\" filter where type is \"Equals\" with added column and following chec" +
+                        "kboxes:", filterName), ((string)(null)), table98, "When ");
+            testRunner.Then(string.Format("\"{0}\" filter is added to the list", filterName), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+            testRunner.And(string.Format("\"{0}\" is displayed in added filter info", filterInfo), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+            testRunner.When(string.Format("User perform search by \"{0}\"", search), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+            testRunner.When(string.Format("User click content from \"{0}\" column", columnName), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+            testRunner.Then("User click back button in the browser", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+            testRunner.When("User clicks the Filters button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+            testRunner.Then("Filters panel is displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+            testRunner.And(string.Format("\"{0}\" is displayed in added filter info", filterInfo), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+            this.ScenarioCleanup();
+        }
     }
 }
 #pragma warning restore
