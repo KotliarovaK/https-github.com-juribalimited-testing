@@ -1214,3 +1214,31 @@ Scenario: EvergreenJnr_ApplicationsList_ChecksThatApplicationNameIsDisplayedAfte
 	When User clicks the Filters button
 	Then Filters panel is displayed to the user
 	And "Barry'sUse: Target App is Python 2.2a4 (SMS_GEN)" is displayed in added filter info
+
+@Evergreen @Applications @EvergreenJnr_FilterFeature @FilterFunctionality @DAS12214
+Scenario: EvergreenJnr_ApplicationsList_CheckThatUserLastLogonDateFilterWorksProperlyWithPositiveAndNegativeAssociation
+	When User clicks "Applications" on the left-hand menu
+	Then "Applications" list should be displayed to the user
+	When User clicks the Filters button
+	Then Filters panel is displayed to the user
+	When User add "User Last Logon Date" filter where type is "After" with following Data and Association:
+	| Values     | Association                             |
+	| 1 May 2011 | Has used app                            |
+	| 1 May 2011 | Entitled to app                         |
+	| 1 May 2011 | Owns a device which app was used on     |
+	| 1 May 2011 | Owns a device which app is entitled to  |
+	| 1 May 2011 | Owns a device which app is installed on |
+	Then "1,206" rows are displayed in the agGrid
+	When User click Edit button for " Last Logon Date" filter
+	And User is deselect "Has used app" in Association
+	And User is deselect "Entitled to app" in Association
+	And User is deselect "Owns a device which app was used on" in Association
+	And User is deselect "Owns a device which app is entitled to" in Association
+	And User is deselect "Owns a device which app is installed on" in Association
+	And User select "Has not used app" in Association
+	And User select "Not entitled to app" in Association
+	And User select "Does not own a device which app was used on" in Association
+	And User select "Does not own a device which app is entitled to" in Association
+	And User select "Does not own a device which app is installed on" in Association
+	And User clicks Save filter button
+	Then "2,223" rows are displayed in the agGrid

@@ -192,6 +192,7 @@ namespace DashworksTestAutomation.Steps.Dashworks
             filterElement.AssociationSearchTextbox.Click();
             filterElement.AssociationSearchTextbox.SendKeys(checkboxName);
             filterElement.GetAssociationCheckbox(checkboxName);
+            filterElement.AssociationSearchTextbox.Clear();
         }
 
         [Then(@"search values in Association section working by specific search criteria")]
