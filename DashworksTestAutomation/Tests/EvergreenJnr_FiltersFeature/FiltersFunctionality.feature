@@ -1216,7 +1216,7 @@ Scenario: EvergreenJnr_ApplicationsList_ChecksThatApplicationNameIsDisplayedAfte
 	And "Barry'sUse: Target App is Python 2.2a4 (SMS_GEN)" is displayed in added filter info
 
 @Evergreen @Applications @EvergreenJnr_FilterFeature @FilterFunctionality @DAS12214
-Scenario: EvergreenJnr_ApplicationsList_CheckThatUserLastLogonDateFilterWorksProperlyWithPositiveAndNegativeAssociation
+Scenario: EvergreenJnr_ApplicationsList_CheckThatFiltersWorksProperlyWithPositiveAndNegativeAssociation
 	When User clicks "Applications" on the left-hand menu
 	Then "Applications" list should be displayed to the user
 	When User clicks the Filters button
@@ -1230,15 +1230,29 @@ Scenario: EvergreenJnr_ApplicationsList_CheckThatUserLastLogonDateFilterWorksPro
 	| 1 May 2011 | Owns a device which app is installed on |
 	Then "1,206" rows are displayed in the agGrid
 	When User click Edit button for " Last Logon Date" filter
-	And User is deselect "Has used app" in Association
+	Then only positive Associations is displayed
+	When User is deselect "Has used app" in Association
 	And User is deselect "Entitled to app" in Association
 	And User is deselect "Owns a device which app was used on" in Association
 	And User is deselect "Owns a device which app is entitled to" in Association
 	And User is deselect "Owns a device which app is installed on" in Association
 	And User select "Has not used app" in Association
-	And User select "Not entitled to app" in Association
+	Then only negative Associations is displayed
+	When User select "Not entitled to app" in Association
 	And User select "Does not own a device which app was used on" in Association
 	And User select "Does not own a device which app is entitled to" in Association
 	And User select "Does not own a device which app is installed on" in Association
 	And User clicks Save filter button
 	Then "2,223" rows are displayed in the agGrid
+	When User clicks "Devices" on the left-hand menu
+	Then "Devices" list should be displayed to the user
+	When User clicks the Filters button
+	Then Filters panel is displayed to the user
+	When User add "Application Name" filter where type is "Begins with" with following Value and Association:
+	| Values | Association    |
+	| Adobe  | Used on device |
+	When User click Edit button for "Application " filter
+	Then only positive Associations is displayed
+	When User is deselect "Used on device" in Association
+	And User select "Not used on device" in Association
+	Then only negative Associations is displayed

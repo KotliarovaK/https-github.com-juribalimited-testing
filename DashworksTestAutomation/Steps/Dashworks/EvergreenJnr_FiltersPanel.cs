@@ -195,6 +195,33 @@ namespace DashworksTestAutomation.Steps.Dashworks
             filterElement.AssociationSearchTextbox.Clear();
         }
 
+        [Then(@"only positive Associations is displayed")]
+        public void ThenOnlyPositiveAssociationsIsDisplayed()
+        {
+            var filterElement = _driver.NowAt<FiltersElement>();
+            filterElement.AssociationSearchTextbox.Click();
+            filterElement.CloseAssociationSearchButton.Click();
+            filterElement.AssociationSearchTextbox.Click();
+            Assert.AreEqual(5, filterElement.AssociationCheckbox.Count);
+            foreach (var element in filterElement.Association)
+            {
+                StringAssert.DoesNotContain("not", element.Text, "Negative association is displayed");
+            }
+        }
+
+        [Then(@"only negative Associations is displayed")]
+        public void ThenOnlyNegativeAssociationsIsDisplayed()
+        {
+            var filterElement = _driver.NowAt<FiltersElement>();
+            filterElement.CloseAssociationSearchButton.Click();
+            filterElement.AssociationSearchTextbox.Click();
+            Assert.AreEqual(5, filterElement.AssociationCheckbox.Count);
+            foreach (var element in filterElement.Association)
+            {
+                StringAssert.Contains("not", element.Text.ToLower(), "Positive association is displayed");
+            }
+        }
+
         [Then(@"search values in Association section working by specific search criteria")]
         public void ThenSearchValuesInAssociationSectionWorkingBySpecificSearchCriteria()
         {
