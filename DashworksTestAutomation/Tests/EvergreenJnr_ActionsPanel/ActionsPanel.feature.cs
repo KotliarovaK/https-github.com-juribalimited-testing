@@ -2057,7 +2057,6 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_ActionsPanel
         [NUnit.Framework.CategoryAttribute("DAS13288")]
         [NUnit.Framework.CategoryAttribute("DAS13289")]
         [NUnit.Framework.CategoryAttribute("DAS13287")]
-        [NUnit.Framework.CategoryAttribute("Delete_Newly_Created_User")]
         [NUnit.Framework.TestCaseAttribute("CQV0623434", "Complete", "Admin IT", "Started", "Administrative Team", new string[0])]
         [NUnit.Framework.TestCaseAttribute("BBZ877343", "Failed", "Admin IT", "Not Applicable", "Retail Team", new string[0])]
         [NUnit.Framework.TestCaseAttribute("DLL972653", "Complete", "Admin IT", "Not Started", "K-Team", new string[0])]
@@ -2073,8 +2072,7 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_ActionsPanel
                     "DAS12864",
                     "DAS13288",
                     "DAS13289",
-                    "DAS13287",
-                    "Delete_Newly_Created_User"};
+                    "DAS13287"};
             if ((exampleTags != null))
             {
                 @__tags = System.Linq.Enumerable.ToArray(System.Linq.Enumerable.Concat(@__tags, exampleTags));
@@ -2093,7 +2091,7 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_ActionsPanel
                         "ConfirmPassword",
                         "Roles"});
             table77.AddRow(new string[] {
-                        "DAS13288",
+                        "DAS132882",
                         "Value",
                         "1234qwer",
                         "1234qwer",
@@ -2108,7 +2106,7 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_ActionsPanel
                         "Username",
                         "Password"});
             table78.AddRow(new string[] {
-                        "DAS13288",
+                        "DAS132882",
                         "1234qwer"});
             testRunner.When("User login with following credentials:", ((string)(null)), table78, "When ");
             testRunner.Then("Dashworks homepage is displayed to the user in a logged in state", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
@@ -2169,6 +2167,15 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_ActionsPanel
                     " successfully been queued.\" text is displayed on Action panel", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
             testRunner.When("User refreshes agGrid", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
             testRunner.Then(string.Format("\"{0}\" content is displayed in \"Windows7Mi: Perform User Acceptance Test\" column", defaultValue), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+            testRunner.When("User clicks the Logout button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+            testRunner.Then("User is logged out", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+            testRunner.When("User clicks on the Login link", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+            testRunner.Then("Login Page is displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+            testRunner.When("User provides the Login and Password and clicks on the login button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+            testRunner.Then("Dashworks homepage is displayed to the user in a logged in state", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+            testRunner.When("User navigate to Manage link", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+            testRunner.And("User select \"Manage Users\" option in Management Console", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+            testRunner.And("User removes \"DAS132882\" User", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
             this.ScenarioCleanup();
         }
         
@@ -2341,8 +2348,8 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_ActionsPanel
                         "ConfirmPassword",
                         "Roles"});
             table85.AddRow(new string[] {
-                        "DAS13288",
-                        "DAS13288",
+                        "DAS132881",
+                        "DAS132881",
                         "1234qwer",
                         "1234qwer",
                         "Project Bulk Updater"});
@@ -2356,7 +2363,7 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_ActionsPanel
                         "Username",
                         "Password"});
             table86.AddRow(new string[] {
-                        "DAS13288",
+                        "DAS132881",
                         "1234qwer"});
             testRunner.When("User login with following credentials:", ((string)(null)), table86, "When ");
             testRunner.Then("Dashworks homepage is displayed to the user in a logged in state", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
@@ -2425,7 +2432,7 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_ActionsPanel
             testRunner.Then("Dashworks homepage is displayed to the user in a logged in state", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
             testRunner.When("User navigate to Manage link", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
             testRunner.And("User select \"Manage Users\" option in Management Console", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-            testRunner.And("User removes \"DAS13288\" User", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+            testRunner.And("User removes \"DAS132881\" User", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
             this.ScenarioCleanup();
         }
         
