@@ -1283,3 +1283,17 @@ Scenario: EvergreenJnr_ApplicationsList_CheckThatFiltersWorksProperlyWithPositiv
 	When User is deselect "Used on device" in Association
 	And User select "Not used on device" in Association
 	Then only negative Associations is displayed
+
+@Evergreen @Applications @EvergreenJnr_FilterFeature @FilterFunctionality @DAS12211
+Scenario: EvergreenJnr_ApplicationsList_CheckThatResultsAreDifferentWhenApplyingEqualAndDoesntEqualValues
+	When User clicks "Applications" on the left-hand menu
+	Then "Applications" list should be displayed to the user
+	When User clicks the Filters button
+	Then Filters panel is displayed to the user
+	When User add "User Last Logon Date" filter where type is "Does not equal" with following Data and Association:
+	| Values      | Association  |
+	| 26 Apr 2018 | Has used app |
+	Then "100" rows are displayed in the agGrid
+	When User click Edit button for " Last Logon Date" filter
+	Then User changes filter type to "Equals"
+	Then message 'No applications found' is displayed to the user 
