@@ -990,7 +990,7 @@ Scenario: EvergreenJnr_DevicesList_CheckThatClearingAValueResetsSubsequentValues
 	And User select "Manage Users" option in Management Console
 	And User removes "DAS13280" User
 
-@Evergreen @Devices @EvergreenJnr_ActionsPanel @BulkUpdate @DAS12864 @DAS13281 @DAS13284 @DAS13285
+@Evergreen @Devices @EvergreenJnr_ActionsPanel @BulkUpdate @DAS12864 @DAS13281 @DAS13284 @DAS13285 @Delete_Newly_Created_User
 Scenario Outline: EvergreenJnr_DevicesList_ChecksThatDllOptionsAreDisplayedCorrectly
 	When User clicks "Projects" on the left-hand menu
 	Then "Projects Home" page is displayed to the user
@@ -1075,7 +1075,7 @@ Examples:
 	| 00HA7MKAVVFDAV | 1 of 1 objects were valid for the update. Your changes have successfully been queued. |
 	| 00I0COBFWHOF27 | 0 of 1 objects were valid for the update.                                             |
 
-@Evergreen @Users @EvergreenJnr_ActionsPanel @BulkUpdate @DAS12864 @DAS13288 @DAS13289 @DAS13287
+@Evergreen @Users @EvergreenJnr_ActionsPanel @BulkUpdate @DAS12864 @DAS13288 @DAS13289 @DAS13287 @Delete_Newly_Created_User
 Scenario Outline: EvergreenJnr_UsersList_ChecksThatTheNoChangeOptionIsWorkedCorrectlyForValueField
 	When User clicks "Projects" on the left-hand menu
 	Then "Projects Home" page is displayed to the user
@@ -1143,15 +1143,15 @@ Scenario Outline: EvergreenJnr_UsersList_ChecksThatTheNoChangeOptionIsWorkedCorr
 	And Success message with "1 of 1 objects were valid for the update. Your changes have successfully been queued." text is displayed on Action panel
 	When User refreshes agGrid
 	Then "<DefaultValue>" content is displayed in "Windows7Mi: Perform User Acceptance Test" column
-	When User clicks the Logout button
-	Then User is logged out
-	When User clicks on the Login link
-	Then Login Page is displayed to the user
-	When User provides the Login and Password and clicks on the login button
-	Then Dashworks homepage is displayed to the user in a logged in state
-	When User navigate to Manage link
-	And User select "Manage Users" option in Management Console
-	And User removes "DAS13288" User
+	#When User clicks the Logout button
+	#Then User is logged out
+	#When User clicks on the Login link
+	#Then Login Page is displayed to the user
+	#When User provides the Login and Password and clicks on the login button
+	#Then Dashworks homepage is displayed to the user in a logged in state
+	#When User navigate to Manage link
+	#And User select "Manage Users" option in Management Console
+	#And User removes "DAS13288" User
 
 Examples: 
 	| RowName    | NewValue       | NewTeam  | DefaultValue   | DefaultTeam         |
@@ -1161,7 +1161,7 @@ Examples:
 	| LZI970280  | Not Applicable | Admin IT | Failed         | IB Team             |
 	| ZQX656408  | Not Applicable | Admin IT | Complete       | Migration Phase 2   |
 
-@Evergreen @Users @EvergreenJnr_ActionsPanel @BulkUpdate @DAS12864 @DAS13288 @DAS13289 @DAS13287
+@Evergreen @Users @EvergreenJnr_ActionsPanel @BulkUpdate @DAS12864 @DAS13288 @DAS13289 @DAS13287 @Delete_Newly_Created_User
 Scenario Outline: EvergreenJnr_UsersList_ChecksThatTheNoChangeOptionIsWorkedCorrectlyForDateField
 	When User clicks "Projects" on the left-hand menu
 	Then "Projects Home" page is displayed to the user
@@ -1228,16 +1228,6 @@ Scenario Outline: EvergreenJnr_UsersList_ChecksThatTheNoChangeOptionIsWorkedCorr
 	Then User clicks "UPDATE" button on message box
 	And Success message with "1 of 1 objects were valid for the update. Your changes have successfully been queued." text is displayed on Action panel
 	When User refreshes agGrid
-	#Then "<DefaultValue>" content is displayed in "Windows7Mi: Perform User Acceptance Test" column
-	And User clicks the Logout button
-	Then User is logged out
-	When User clicks on the Login link
-	Then Login Page is displayed to the user
-	When User provides the Login and Password and clicks on the login button
-	Then Dashworks homepage is displayed to the user in a logged in state
-	When User navigate to Manage link
-	And User select "Manage Users" option in Management Console
-	And User removes "DAS13288" User
 
 Examples: 
 	| RowName    | NewDate      | NewTeam  | DefaultDate  | DefaultTeam         | DefaultValue   |
