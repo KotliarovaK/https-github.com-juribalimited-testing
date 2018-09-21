@@ -111,6 +111,14 @@ namespace DashworksTestAutomation.Steps.Dashworks
             Assert.IsTrue(Convert.ToBoolean(menu.FilterButton.GetAttribute("disabled")), "Filter Button is active");
         }
 
+        [Then(@"Filter button on AGgrid is disabled")]
+        public void ThenFilterButtonOnAGgridIsDisabled()
+        {
+            var menu = _driver.NowAt<BaseDashboardPage>();
+            _driver.WaitWhileControlIsNotDisplayed<BaseDashboardPage>(() => menu.FilterContainerButton);
+            Assert.IsTrue(Convert.ToBoolean(menu.FilterContainerButton.GetAttribute("disabled")), "Filter button on AGgrid is active");
+        }
+
         [Then(@"Empty link is displayed for first row in the ""(.*)"" column")]
         public void ThenEmptyLinkIsDisplayedForFirstRowInTheColumn(string columnName)
         {
