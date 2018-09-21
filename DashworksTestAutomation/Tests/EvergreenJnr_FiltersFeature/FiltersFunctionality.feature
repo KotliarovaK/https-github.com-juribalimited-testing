@@ -1236,7 +1236,7 @@ Scenario Outline: EvergreenJnr_AllLists_ChecksThatFilterInfoIsDisplayedCorrectly
 Examples: 
 	| PageName     | ColumnName    | FilterName                      | FilterValue    | Search                                     | FilterInfo                                 |
 	| Devices      | Hostname      | Babel(Engl: Category            | None           | 00KLL9S8NRF0X6                             | Babel(Engl: Category is None               |
-	| Devices      | Hostname      | Barry'sUse: In Scope            | FALSE          | 00OMQQXWA1DRI6                             | Barry'sUse: In Scope is true               |
+	| Devices      | Hostname      | Barry'sUse: In Scope            | FALSE          | 00OMQQXWA1DRI6                             | Barry'sUse: In Scope is false              |
 	| Devices      | Hostname      | ComputerSc: Request Type        | Request Type A | 47NK3ATE5DM2HD                             | ComputerSc: Request Type is Request Type A |
 	| Applications | Application   | Havoc(BigD: Hide from End Users | UNKNOWN        | Adobe Flash Player 10 ActiveX (10.0.12.36) | Havoc(BigD: Hide from End Users is Unknown |
 	| Applications | Application   | MigrationP: Core Application    | FALSE          | Adobe Download Manager 2.0 (Remove Only)   | MigrationP: Core Application is false      |

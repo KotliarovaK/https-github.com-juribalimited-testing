@@ -2530,7 +2530,7 @@ Scenario Outline: EvergreenJnr_AdminPage_ChangingDynamicListToAllListForUserAndM
 	And User selects "Scope Changes" tab on the Project details page
 	When User clicks "<ScopeChanges>" tab in the Project Scope Changes section
 	Then "<ObjectsToAdd2>" is displayed to the user in the Project Scope Changes section
-	#Then There are no errors in the browser console
+	Then There are no errors in the browser console
 
 Examples:
 	| ListName | FilterName       | FilterValue | Rows | ProjectList | AllList     | ScopeChanges | ScopeDetails | ObjectsToAdd                         | ChangingToList | ObjectsToAdd1                     | ObjectsToAdd2                        |
@@ -3919,7 +3919,7 @@ Scenario Outline: EvergreenJnr_AdminPage_CheckThatProjectScopeChangesIsLoadedSuc
 	Then "<ObjectsToAdd2>" is displayed to the user in the Project Scope Changes section
 	When User clicks "Applications" tab in the Project Scope Changes section
 	Then "<ObjectsToAdd3>" is displayed to the user in the Project Scope Changes section
-	#Then There are no errors in the browser console
+	Then There are no errors in the browser console
 
 Examples:
 	| MainList      | ObjectsToAdd1                      | ListToScope1       | ScopeTab1    | ListToScope2     | ScopeChanges1 | ObjectsToAdd2                    | ObjectsToAdd3                         |
@@ -3950,7 +3950,7 @@ Scenario: EvergreenJnr_AdminPage_TheGreenBannerIsNotDisplayedIfBannerWasBeShownO
 	| 0623U41CZ73RV2Q |
 	When User clicks the "UPDATE ALL CHANGES" Action button
 	And User clicks the "UPDATE PROJECT" Action button
-	Then Success message with "1 object queued for onboarding, 0 objects offboarded" text is displayed on the Projects page
+	Then Success message is displayed and contains "1 object queued for onboarding, 0 objects offboarded" text
 	When User selects "Queue" tab on the Project details page
 	Then following Items are onboarded
 	| Items           |
