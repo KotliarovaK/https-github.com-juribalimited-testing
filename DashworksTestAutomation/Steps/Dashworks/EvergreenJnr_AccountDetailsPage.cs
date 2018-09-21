@@ -4,8 +4,10 @@ using System.Net.Mime;
 using System.Threading;
 using DashworksTestAutomation.DTO;
 using DashworksTestAutomation.Extensions;
+using DashworksTestAutomation.Pages;
 using DashworksTestAutomation.Pages.Evergreen;
 using DashworksTestAutomation.Pages.Evergreen.ProfileDetailsPages;
+using DashworksTestAutomation.Pages.Projects;
 using DashworksTestAutomation.Providers;
 using NUnit.Framework;
 using OpenQA.Selenium;
@@ -390,6 +392,39 @@ namespace DashworksTestAutomation.Steps.Dashworks
                 page.ConfirmPasswordField.Clear();
                 page.ConfirmPasswordField.SendKeys("m!gration");
                 page.UpdateButton.Click();
+            }
+            catch
+            {}
+        }
+
+        [AfterScenario("Delete_Newly_Created_User")]
+        public void DeleteNewlyCreatedUser()
+        {
+            try
+            {
+                var header = _driver.NowAt<HeaderElement>();
+                header.LogOut();
+                _driver.WaitForDataLoading();
+                var loginPage1 = _driver.NowAt<LoginPanelPage>();
+                loginPage1.LoginLink.Click();
+                var loginPage = _driver.NowAt<LoginPage>();
+                loginPage.SplashUserNameTextbox.SendKeys("admin");
+                loginPage.SplashPasswordTextbox.SendKeys("m!gration");
+                loginPage.SplashLoginButton.Click();
+                _driver.WaitForDataLoading();
+                var page = _driver.NowAt<ManagementConsolePage>();
+                page.ManageLink.Click();
+                _driver.WaitForDataLoading();
+                page.ManageUsersLink.Click();
+                _driver.WaitForDataLoading();
+                var page1 = _driver.NowAt<MainElementsOfProjectCreation>();
+                page1.SearchTextbox.Clear();
+                page1.SearchTextbox.SendKeys("DAS13288");
+                page1.SearchButton.Click();
+                _driver.WaitForDataLoading();
+                page1.GetDeleteButtonElementByName("DAS13288").Click();
+                _driver.WaitForDataLoading();
+                _driver.AcceptAlert();
             }
             catch
             {}
