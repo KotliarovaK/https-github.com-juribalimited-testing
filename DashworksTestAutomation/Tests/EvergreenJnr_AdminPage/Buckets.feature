@@ -243,7 +243,7 @@ Scenario: EvergreenJnr_AdminPage_AddingDevicesFromBuckets
 	When User adds "Unassigned" objects to bucket
 	When User clicks the "ADD DEVICES" Action button
 	Then Success message is displayed and contains "The selected devices have been added to the selected bucket" text
-	#And There are no errors in the browser console
+	And There are no errors in the browser console
 	Then data in table is sorted by "Hostname" column in ascending order by default on the Admin page
 	Then Counter shows "17,225" found rows
 	When User click on "Hostname" column header on the Admin page
@@ -304,7 +304,7 @@ Scenario: EvergreenJnr_AdminPage_AddingUsersFromBuckets
 	When User adds "Unassigned" objects to bucket
 	When User clicks the "ADD USERS" Action button
 	Then Success message is displayed and contains "The selected users have been added to the selected bucket" text
-	#And There are no errors in the browser console
+	And There are no errors in the browser console
 	Then data in table is sorted by "Username" column in ascending order by default on the Admin page
 	#Then Counter shows "41,339" found rows
 	#When User click on "Username" column header on the Admin page
@@ -409,7 +409,7 @@ Scenario: EvergreenJnr_AdminPage_AddingMailboxesFromBuckets
 	Then Move To Another Bucket Page is displayed to the user
 	When User moves selected objects to "Unassigned" bucket
 	Then Success message is displayed and contains "The selected mailboxes have been added to the selected bucket" text
-	#And There are no errors in the browser console
+	And There are no errors in the browser console
 	And Delete "TestBucket8" Bucket in the Administration
 
 @Evergreen @Admin @EvergreenJnr_AdminPage @AdminPage @DAS12997

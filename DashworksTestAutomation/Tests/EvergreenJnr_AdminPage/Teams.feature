@@ -192,7 +192,7 @@ Scenario: EvergreenJnr_AdminPage_AddingBucketsToTheTeam
 	| Glasgow   |
 	| Frankfurt |
 	Then Success message is displayed and contains "The selected buckets have been added" text
-	#Then There are no errors in the browser console
+	Then There are no errors in the browser console
 	When User clicks the "ADD BUCKETS" Action button
 	When User expands "Windows 7 Migration (Computer Scheduled Project)" project to add bucket
 	And User adds following Objects from list
@@ -200,7 +200,7 @@ Scenario: EvergreenJnr_AdminPage_AddingBucketsToTheTeam
 	| Nottingham  |
 	| Southampton |
 	Then Success message is displayed and contains "The selected buckets have been added" text
-	#Then There are no errors in the browser console
+	Then There are no errors in the browser console
 	When User click on "Bucket" column header on the Admin page
 	Then data in table is sorted by "Bucket" column in ascending order on the Admin page
 	When User click on "Bucket" column header on the Admin page
@@ -246,7 +246,7 @@ Scenario: EvergreenJnr_AdminPage_AddingBucketsToTheTeam
 	And User enters "100" text in the Search field for "Mailboxes" column
 	Then Counter shows "0" found rows
 	When User clicks Reset Filters button on the Admin page
-	#Then There are no errors in the browser console
+	Then There are no errors in the browser console
 	When User enters "Nottingham" text in the Search field for "Bucket" column
 	And User selects all rows on the grid
 	And User clicks on Actions button
@@ -256,7 +256,7 @@ Scenario: EvergreenJnr_AdminPage_AddingBucketsToTheTeam
 	When User selects "Team 10" in the Team dropdown
 	And User clicks the "CHANGE" Action button
 	Then Success message is displayed and contains "The selected bucket has been reassigned to the selected team" text
-	#Then There are no errors in the browser console
+	Then There are no errors in the browser console
 	When User click on Back button
 	When User enters "TestTeam5" text in the Search field for "Team" column
 	And User selects all rows on the grid
@@ -267,7 +267,7 @@ Scenario: EvergreenJnr_AdminPage_AddingBucketsToTheTeam
 	When User selects "Team 0" in the Select a team dropdown
 	And User clicks the "DELETE TEAM" Action button
 	Then Success message is displayed and contains "The selected team has been deleted, and their buckets reassigned" text
-	#Then There are no errors in the browser console
+	Then There are no errors in the browser console
 
 @Evergreen @Admin @EvergreenJnr_AdminPage @AdminPage @DAS11761 @DAS12999 @DAS13199 @Teams
 Scenario: EvergreenJnr_AdminPage_CheckThatErrorsDoNotAppearAfterUpdatingTeamDescriptionField
@@ -319,7 +319,7 @@ Scenario: EvergreenJnr_AdminPage_CheckThatNoConsoleErrorsAreDisplayedWhenDeletin
 	And User selects "Delete Buckets" in the Actions
 	And User clicks Delete button 
 	Then Warning message with "You cannot delete the default bucket" text is displayed on the Admin page
-	#And There are no errors in the browser console
+	And There are no errors in the browser console
 
 @Evergreen @Admin @EvergreenJnr_AdminPage @AdminPage @DAS11762 @DAS12009 @DAS12999 @DAS13471 @Teams
 Scenario: EvergreenJnr_AdminPage_CheckThatNoConsoleErrorsAreDisplayedWhenDeleteDataFromFilterTextFieldForTeams
