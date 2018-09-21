@@ -63,6 +63,9 @@ namespace DashworksTestAutomation.Pages.Evergreen
             Using = ".//div[contains(text(),'ASSOCIATION')]/../following-sibling::div//input")]
         public IWebElement AssociationSearchTextbox { get; set; }
 
+        [FindsBy(How = How.XPath, Using = "//div[@class='dropdown-select input-wrapper']//button")]
+        public IWebElement CloseAssociationSearchButton { get; set; }
+
         [FindsBy(How = How.XPath, Using = ".//div[contains(@class,'filter-category ng-star-inserted')]")]
         public IList<IWebElement> FilterCategories { get; set; }
 
@@ -75,6 +78,9 @@ namespace DashworksTestAutomation.Pages.Evergreen
             Using =
                 "//div[@class='btn-group-sm']//button//span//i[@class='material-icons mat-item_add mat-18']")]
         public IList<IWebElement> MaximizeGroupButton { get; set; }
+
+        [FindsBy(How = How.XPath, Using = "//div[contains(@class, 'list-container')]/span")]
+        public IList<IWebElement> Association { get; set; }
 
         [FindsBy(How = How.XPath, Using = ".//div[@class='styleSelectDropdown']")]
         public IWebElement FilterTypeDropdown { get; set; }
@@ -134,6 +140,12 @@ namespace DashworksTestAutomation.Pages.Evergreen
 
         [FindsBy(How = How.XPath, Using = GroupTitleSelector)]
         public IList<IWebElement> GroupTitle { get; set; }
+
+        [FindsBy(How = How.XPath, Using = "//div[contains(@class, 'list-container')]")]
+        public IWebElement AssociationCheckbox1 { get; set; }
+
+        [FindsBy(How = How.XPath, Using = "//div[contains(@class, 'list-container')]")]
+        public IList<IWebElement> AssociationCheckbox { get; set; }
 
         [FindsBy(How = How.XPath, Using = ".//input[@aria-label='Date']")]
         public IWebElement InputDate { get; set; }

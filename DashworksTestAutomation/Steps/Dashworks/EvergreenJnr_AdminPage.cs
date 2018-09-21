@@ -249,6 +249,7 @@ namespace DashworksTestAutomation.Steps.Dashworks
                 projectsPage.PermissionsDropdown.Click();
                 projectsPage.SelectPermissionsByName(row["Permissions"]);
                 projectsPage.AddPermissionsButtonInTab.Click();
+                _driver.WaitForDataLoading();
             }
         }
 
@@ -1463,7 +1464,7 @@ namespace DashworksTestAutomation.Steps.Dashworks
             var projectElement = _driver.NowAt<ProjectsPage>();
             projectElement.ScopeListDropdown.Click();
             projectElement.SelectObjectForProjectCreation(listName);
-            Thread.Sleep(20000);
+            Thread.Sleep(5000);
         }
 
         [Then(@"Scope List dropdown is disabled")]
