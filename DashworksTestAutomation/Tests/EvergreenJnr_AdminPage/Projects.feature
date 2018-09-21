@@ -346,7 +346,7 @@ Scenario: EvergreenJnr_AdminPage_CheckThatObjectsIsOnboardedToTheProjectWithClon
 	When User selects "Clone evergreen buckets to project buckets" in the Buckets Project dropdown
 	And User clicks Create button on the Create Project page
 	Then Success message is displayed and contains "Your project has been created" text
-	#And There are no errors in the browser console
+	And There are no errors in the browser console
 	When User clicks newly created object link
 	Then Project "TestProject19" is displayed to user
 	When User selects "Scope Changes" tab on the Project details page
@@ -358,13 +358,13 @@ Scenario: EvergreenJnr_AdminPage_CheckThatObjectsIsOnboardedToTheProjectWithClon
 	And User clicks the "UPDATE PROJECT" Action button
 	Then Success message is displayed and contains "1 object queued for onboarding, 0 objects offboarded" text
 	When User selects "Queue" tab on the Project details page
-	#Then There are no errors in the browser console
+	Then There are no errors in the browser console
 	Then Error message is not displayed on the Projects page
 	Then following Items are onboarded
 	| Items           |
 	| 01BQIYGGUW5PRP6 |
 	When User selects "History" tab on the Project details page
-	#Then There are no errors in the browser console
+	Then There are no errors in the browser console
 	Then Error message is not displayed on the Projects page
 	Then following Items are onboarded
 	| Items           |
@@ -671,7 +671,7 @@ Scenario: EvergreenJnr_AdminPage_CheckThatWarningMessageIsDisplayedIfTryToRemove
 	And User clicks content from "Project" column
 	Then Project "TestName11729" is displayed to user
 	Then Warning message with "The scope for this project refers to a deleted list, this must be updated before proceeding" text is displayed on the Admin page
-	#And There are no errors in the browser console
+	And There are no errors in the browser console
 
 @Evergreen @Admin @EvergreenJnr_AdminPage @AdminPage @DAS11881 @DAS12999 @DAS13297 @Delete_Newly_Created_Project @Projects
 Scenario: EvergreenJnr_AdminPage_CheckThatEmptyGreenAlertLineIsNotDisplayedOnProjectScopeChangesPageAfterMakingSomeChangesOnScopePage
@@ -759,7 +759,7 @@ Scenario: EvergreenJnr_AdminPage_CheckThat500ISEInvalidColumnNameIsNotDisplayedW
 	Then Success message is displayed and contains "Your project has been created" text
 	When User clicks newly created object link
 	Then Project "TestProject12349" is displayed to user
-	#And There are no errors in the browser console
+	And There are no errors in the browser console
 	Then Error message is not displayed
 	When User selects "Scope Changes" tab on the Project details page
 	When User expands the object to add 
@@ -770,10 +770,10 @@ Scenario: EvergreenJnr_AdminPage_CheckThat500ISEInvalidColumnNameIsNotDisplayedW
 	And User clicks the "UPDATE ALL CHANGES" Action button
 	And User clicks the "UPDATE PROJECT" Action button
 	Then Success message is displayed and contains "2 objects queued for onboarding, 0 objects offboarded" text
-	#Then There are no errors in the browser console
+	Then There are no errors in the browser console
 	Then Error message is not displayed
 	When User selects "Scope Details" tab on the Project details page
-	#Then There are no errors in the browser console
+	Then There are no errors in the browser console
 	Then Error message is not displayed
 
 @Evergreen @Admin @EvergreenJnr_AdminPage @AdminPage @DAS12777 @Project_Creation_and_Scope
@@ -1269,7 +1269,7 @@ Scenario: EvergreenJnr_AdminPage_ChangingDevicesScopeListToAnotherListUsingEverg
 	Then Bucket dropdown is not displayed on the Project details page
 	When User clicks "Applications" tab in the Project Scope Changes section
 	Then Bucket dropdown is not displayed on the Project details page
-	#And There are no errors in the browser console
+	And There are no errors in the browser console
 
 @Evergreen @Admin @EvergreenJnr_AdminPage @AdminPage @DAS12999 @Delete_Newly_Created_Project @Delete_Newly_Created_List @Projects
 Scenario: EvergreenJnr_AdminPage_ChangingDevicesScopeListToAnotherListForDevicesProject
@@ -1308,7 +1308,7 @@ Scenario: EvergreenJnr_AdminPage_ChangingDevicesScopeListToAnotherListForDevices
 	And User selects "DynamicList56" in the Scope Project details
 	And User selects "Scope Changes" tab on the Project details page
 	Then "Devices to add (0 of 1 selected)" is displayed to the user in the Project Scope Changes section
-	#Then There are no errors in the browser console
+	Then There are no errors in the browser console
 
 @Evergreen @Admin @EvergreenJnr_AdminPage @AdminPage @DAS12999 @Delete_Newly_Created_Project @Delete_Newly_Created_List @Projects
 Scenario: EvergreenJnr_AdminPage_ChangingUserScopeListToAnotherList
@@ -1336,7 +1336,7 @@ Scenario: EvergreenJnr_AdminPage_ChangingUserScopeListToAnotherList
 	And User selects "Scope Changes" tab on the Project details page
 	When User clicks "Users" tab in the Project Scope Changes section
 	Then "Users to add (0 of 0 selected)" is displayed to the user in the Project Scope Changes section
-	#Then There are no errors in the browser console
+	Then There are no errors in the browser console
 
 @Evergreen @Admin @EvergreenJnr_AdminPage @AdminPage @DAS12999 @Delete_Newly_Created_Project @Delete_Newly_Created_List @Projects
 Scenario Outline: EvergreenJnr_ChangingApplicationsScopeListToAnotherList
@@ -1380,7 +1380,7 @@ Scenario Outline: EvergreenJnr_ChangingApplicationsScopeListToAnotherList
 	And User selects "Scope Changes" tab on the Project details page
 	When User clicks "Applications" tab in the Project Scope Changes section
 	Then "<ApplicationsToAdd2>" is displayed to the user in the Project Scope Changes section
-	#Then There are no errors in the browser console
+	Then There are no errors in the browser console
 
 Examples:
 	| ChangingToList1  | ChangingToList2  | ApplicationsToAdd1                       | ApplicationsToAdd2                       |
@@ -1425,7 +1425,7 @@ Scenario Outline: EvergreenJnr_ChangingUsersScopeListToAnotherListForUserProject
 	And User selects "<ChangingToList2>" in the Scope Project details
 	And User selects "Scope Changes" tab on the Project details page
 	Then "<ObjectsToAdd2>" is displayed to the user in the Project Scope Changes section
-	#Then There are no errors in the browser console
+	Then There are no errors in the browser console
 
 Examples:
 	| ChangingToList1 | ChangingToList2 | Buckets                                    | ObjectsToAdd1                      | ObjectsToAdd2                  |
@@ -1517,7 +1517,7 @@ Scenario Outline: EvergreenJnr_ChangingApplicationScopeListToAnotherListForUserP
 	And User selects "Scope Changes" tab on the Project details page
 	When User clicks "Applications" tab in the Project Scope Changes section
 	Then "<ObjectsToAdd2>" is displayed to the user in the Project Scope Changes section
-	#Then There are no errors in the browser console
+	Then There are no errors in the browser console
 
 Examples:
 	| ChangingToList1  | ChangingToList2 | ObjectsToAdd1                            | ObjectsToAdd2                            |
@@ -1789,7 +1789,7 @@ Scenario: EvergreenJnr_AdminPage_AddingAndDeletingPermissionsForMailboxProject
 	| Permissions      |
 	| ChangeOwner      |
 	| AvailabilityOnly |
-	#And There are no errors in the browser console
+	And There are no errors in the browser console
 
 @Evergreen @Admin @EvergreenJnr_AdminPage @AdminPage @DAS13205
 Scenario: EvergreenJnr_AdminPage_CheckThatBannerDisplaysOnScopeDetailsPage
@@ -1896,7 +1896,7 @@ Scenario: EvergreenJnr_AdminPage_CheckThatOnlyFilteredListObjectsAreUsedAsAScope
 	When User clicks newly created object link
 	When User selects "Scope Changes" tab on the Project details page
 	Then "Devices to add (0 of 222 selected)" is displayed to the user in the Project Scope Changes section
-	#Then There are no errors in the browser console
+	Then There are no errors in the browser console
 
 @Evergreen @Admin @EvergreenJnr_AdminPage @AdminPage @UpdatingName @DAS13096 @Delete_Newly_Created_Project @Projects
 Scenario: EvergreenJnr_AdminPage_ChecksThatProjectNameEditedInSeniorIsUpdatedInAdminTab
@@ -1980,7 +1980,7 @@ Scenario: EvergreenJnr_AdminPage_CheckThatScopeChangesSelectionIsDisabledAfterCl
 	| Objects        |
 	| 00SH8162NAS524 |
 	Then "UPDATE DEVICE CHANGES" Action button is active
-	#And There are no errors in the browser console
+	And There are no errors in the browser console
 
 @Evergreen @Admin @EvergreenJnr_AdminPage @AdminPage @DAS12776 @Delete_Newly_Created_Project @Delete_Newly_Created_List
 Scenario: EvergreenJnr_AdminPage_CheckThatScopeChangesSelectionIsDisabledAfterClickUpdateForStaticList
@@ -2028,7 +2028,7 @@ Scenario: EvergreenJnr_AdminPage_CheckThatScopeChangesSelectionIsDisabledAfterCl
 	| 000F977AC8824FE39B8 (Spruill, Shea) |
 	Then "UPDATE USER CHANGES" Action button is active
 	Then "UPDATE ALL CHANGES" Action button is active
-	#And There are no errors in the browser console
+	And There are no errors in the browser console
 
 @Evergreen @Admin @EvergreenJnr_AdminPage @AdminPage @DAS12949 @DAS12609 @DAS12108 @Delete_Newly_Created_Project @Projects
 Scenario: EvergreenJnr_AdminPage_ChecksThatProjectNameWhichStartsWithLowerCaseLetterIsDisplayedInAlphabeticalOrder
@@ -2636,7 +2636,7 @@ Scenario: EvergreenJnr_AdminPage_CheckThatWarningMessageIsNotDisplayedWhenDeleti
 	And User clicks Create button on the Create Project page
 	Then "Projects" page should be displayed to the user
 	Then Success message is displayed and contains "Your project has been created" text
-	#And There are no errors in the browser console
+	And There are no errors in the browser console
 	When User enters "TestProject6" text in the Search field for "Project" column
 	And User selects all rows on the grid
 	And User removes selected item
@@ -2690,7 +2690,7 @@ Scenario: EvergreenJnr_AdminPage_CheckThatNumberOfApplicationsInProjectScopeIsCo
 	When User selects "Clone evergreen buckets to project buckets" in the Buckets Project dropdown
 	And User clicks the "UPDATE" Action button
 	Then Success message is displayed and contains "The project details have been updated" text
-	#Then There are no errors in the browser console
+	Then There are no errors in the browser console
 	When User selects "Scope Changes" tab on the Project details page
 	Then "Match to Evergreen Bucket" is displayed in the Bucket dropdown
 
