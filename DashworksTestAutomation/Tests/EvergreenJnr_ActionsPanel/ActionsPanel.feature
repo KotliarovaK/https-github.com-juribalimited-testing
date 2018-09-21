@@ -1075,23 +1075,23 @@ Examples:
 	| 00HA7MKAVVFDAV | 1 of 1 objects were valid for the update. Your changes have successfully been queued. |
 	| 00I0COBFWHOF27 | 0 of 1 objects were valid for the update.                                             |
 
-@Evergreen @Users @EvergreenJnr_ActionsPanel @BulkUpdate @DAS12864 @DAS13288 @DAS13289 @DAS13287 @Delete_Newly_Created_User
+@Evergreen @Users @EvergreenJnr_ActionsPanel @BulkUpdate @DAS12864 @DAS13288 @DAS13289 @DAS13287
 Scenario Outline: EvergreenJnr_UsersList_ChecksThatTheNoChangeOptionIsWorkedCorrectlyForValueField
 	When User clicks "Projects" on the left-hand menu
 	Then "Projects Home" page is displayed to the user
 	When User navigate to Manage link
 	And User select "Manage Users" option in Management Console
 	And User create new User
-	| Username | FullName | Password | ConfirmPassword | Roles                |
-	| DAS13288 | Value    | 1234qwer | 1234qwer        | Project Bulk Updater |
+	| Username  | FullName | Password | ConfirmPassword | Roles                |
+	| DAS132882 | Value    | 1234qwer | 1234qwer        | Project Bulk Updater |
 	Then Success message is displayed
 	When User cliks Logout link
 	Then User is logged out
 	When User clicks on the Login link
 	Then Login Page is displayed to the user
 	When User login with following credentials:
-	| Username | Password |
-	| DAS13288 | 1234qwer |
+	| Username  | Password |
+	| DAS132882 | 1234qwer |
 	Then Dashworks homepage is displayed to the user in a logged in state
 	When User clicks the Switch to Evergreen link
 	Then Evergreen Dashboards page should be displayed to the user
@@ -1143,15 +1143,15 @@ Scenario Outline: EvergreenJnr_UsersList_ChecksThatTheNoChangeOptionIsWorkedCorr
 	And Success message with "1 of 1 objects were valid for the update. Your changes have successfully been queued." text is displayed on Action panel
 	When User refreshes agGrid
 	Then "<DefaultValue>" content is displayed in "Windows7Mi: Perform User Acceptance Test" column
-	#When User clicks the Logout button
-	#Then User is logged out
-	#When User clicks on the Login link
-	#Then Login Page is displayed to the user
-	#When User provides the Login and Password and clicks on the login button
-	#Then Dashworks homepage is displayed to the user in a logged in state
-	#When User navigate to Manage link
-	#And User select "Manage Users" option in Management Console
-	#And User removes "DAS13288" User
+	When User clicks the Logout button
+	Then User is logged out
+	When User clicks on the Login link
+	Then Login Page is displayed to the user
+	When User provides the Login and Password and clicks on the login button
+	Then Dashworks homepage is displayed to the user in a logged in state
+	When User navigate to Manage link
+	And User select "Manage Users" option in Management Console
+	And User removes "DAS132882" User
 
 Examples: 
 	| RowName    | NewValue       | NewTeam  | DefaultValue   | DefaultTeam         |
@@ -1244,16 +1244,16 @@ Scenario Outline: EvergreenJnr_UsersList_ChecksThatTheNoChangeOptionIsWorkedCorr
 	When User navigate to Manage link
 	And User select "Manage Users" option in Management Console
 	And User create new User
-	| Username | FullName | Password | ConfirmPassword | Roles                |
-	| DAS13288 | DAS13288 | 1234qwer | 1234qwer        | Project Bulk Updater |
+	| Username  | FullName  | Password | ConfirmPassword | Roles                |
+	| DAS132881 | DAS132881 | 1234qwer | 1234qwer        | Project Bulk Updater |
 	Then Success message is displayed
 	When User cliks Logout link
 	Then User is logged out
 	When User clicks on the Login link
 	Then Login Page is displayed to the user
 	When User login with following credentials:
-	| Username | Password |
-	| DAS13288 | 1234qwer |
+	| Username  | Password |
+	| DAS132881 | 1234qwer |
 	Then Dashworks homepage is displayed to the user in a logged in state
 	When User clicks the Switch to Evergreen link
 	Then Evergreen Dashboards page should be displayed to the user
@@ -1313,7 +1313,7 @@ Scenario Outline: EvergreenJnr_UsersList_ChecksThatTheNoChangeOptionIsWorkedCorr
 	Then Dashworks homepage is displayed to the user in a logged in state
 	When User navigate to Manage link
 	And User select "Manage Users" option in Management Console
-	And User removes "DAS13288" User
+	And User removes "DAS132881" User
 
 Examples: 
 	| RowName    | NewValue       | NewDate      | DefaultValue   | DefaultDate  |
