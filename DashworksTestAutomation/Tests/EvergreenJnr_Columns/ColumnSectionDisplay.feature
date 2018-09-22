@@ -65,7 +65,7 @@ Scenario: EvergreenJnr_DevicesList_CheckThatAllColumnsAreVisibleInTheirRelevantC
 	When User have reset all columns
 	Then "11" subcategories is displayed for "Device" category
 
-@Evergreen @Mailboxes @EvergreenJnr_Columns @ColumnSectionDisplay @DAS11548
+@Evergreen @Mailboxes @EvergreenJnr_Columns @ColumnSectionDisplay @DAS11548 @DAS13423
 Scenario: EvergreenJnr_MailboxesList_CheckThatCategoryRemainsOpenAfterAddingColumns
 	When User clicks "Mailboxes" on the left-hand menu
 	Then "Mailboxes" list should be displayed to the user
@@ -261,7 +261,7 @@ Scenario: EvergreenJnr_AllLists_CheckThatColumnsIsNotRemovedAfterDraggingThemOut
 	| Mailbox Type       |
 	| Owner Display Name |
 
-@Evergreen @Users @EvergreenJnr_Columns @ColumnSectionDisplay @DAS13181
+@Evergreen @Users @EvergreenJnr_Columns @ColumnSectionDisplay @DAS13181 @DAS13376 @Not_Run
 Scenario: EvergreenJnr_UsersList_ChecksThatColumnsPanelIsDisplayedCorrectlyAfterApplyAnyFilterFromApplicationCustomFieldsCategory
 	When User clicks "Users" on the left-hand menu
 	Then "Users" list should be displayed to the user
@@ -377,8 +377,8 @@ Scenario: EvergreenJnr_ApplicationsList_ChecksThatAfterAddingRowsToAStaticListFr
 	When User clicks the Actions button
 	Then Actions panel is displayed to the user
 	When User select "Application" rows in the grid
-	| SelectedRowsName    |
-	| "WPF/E" (codename) Community Technology Preview (Feb 2007)      |
+	| SelectedRowsName                                                |
+	| 0004 - Adobe Acrobat Reader 5.0.5 Francais                      |
 	| %SQL_PRODUCT_SHORT_NAME% Data Tools - BI for Visual Studio 2013 |
 	And User selects "Create static list" in the Actions dropdown
 	And User create static list with "StaticListFromTheAllList" name
@@ -468,7 +468,7 @@ Scenario: EvergreenJnr_DevicesList_ChecksThatAfterAddingRowsToAStaticListFromADy
 	Then Actions panel is displayed to the user
 	When User select "Hostname" rows in the grid
 	| SelectedRowsName |
-	| 00BDM1JUR8IF419  |
+	| 00YTY8U3ZYP2WT   |
 	And User selects "Create static list" in the Actions dropdown
 	And User create static list with "StaticListFromADynamicList" name
 	Then "StaticListFromADynamicList" list is displayed to user
@@ -477,7 +477,7 @@ Scenario: EvergreenJnr_DevicesList_ChecksThatAfterAddingRowsToAStaticListFromADy
 	Then Actions panel is displayed to the user
 	When User select "Hostname" rows in the grid
 	| SelectedRowsName |
-	| 00YWR8TJU4ZF8V   |
+	| 018UQ6KL9TF4YF   |
 	Then User add selected rows in "StaticListFromADynamicList" list
 	Then "2" rows are displayed in the agGrid
 	And Column is displayed in following order:
@@ -589,7 +589,7 @@ Scenario: EvergreenJnr_DevicesList_TheSelectedColumnsCategoryIsDisplayedAfterAdd
 	| Operating System   |
 	| Owner Display Name |
 
-@Evergreen @Devices @EvergreenJnr_Columns @ColumnOrder @DAS12861
+@Evergreen @Devices @EvergreenJnr_Columns @ColumnSectionOrder @ColumnSectionDisplay @DAS12861
 Scenario: EvergreenJnr_DevicesList_ChecksThatSubcategoriesOnFiltersPanelAreDisplayedInAlphabeticalOrder
 	When User clicks "Devices" on the left-hand menu
 	Then "Devices" list should be displayed to the user
@@ -619,7 +619,7 @@ Scenario: EvergreenJnr_DevicesList_ChecksThatSubcategoriesOnFiltersPanelAreDispl
 	When User clicks Add New button on the Filter panel
 	Then the subcategories are displayed for open category in alphabetical order on Filters panel
 
-@Evergreen @Applications @EvergreenJnr_Columns @ColumnOrder @DAS12861
+@Evergreen @Applications @EvergreenJnr_Columns @ColumnSectionOrder @ColumnSectionDisplay @DAS12861 @DAS13299
 Scenario: EvergreenJnr_ApplicationsList_ChecksThatSubcategoriesOnColumnsPanelAreDisplayedInAlphabeticalOrderAfterAddingFilters
 	When User clicks "Applications" on the left-hand menu
 	Then "Applications" list should be displayed to the user
@@ -650,7 +650,7 @@ Scenario: EvergreenJnr_ApplicationsList_ChecksThatSubcategoriesOnColumnsPanelAre
 	| Application Key |
 	| Inventory Site  |
 
-@Evergreen @Users @EvergreenJnr_Columns @ColumnOrder @DAS12861
+@Evergreen @Users @EvergreenJnr_Columns @ColumnSectionOrder @ColumnSectionDisplay @DAS12861
 Scenario: EvergreenJnr_UsersList_ChecksThatSubcategoriesOnColumnsPanelAreDisplayedInAlphabeticalOrderAfterAddingDepartmentFilters
 	When User clicks "Users" on the left-hand menu
 	Then "Users" list should be displayed to the user
@@ -712,3 +712,59 @@ Scenario: EvergreenJnr_UsersList_ChecksThatSubcategoriesOnColumnsPanelAreDisplay
 	| Department Code      |
 	| Department Full Path |
 	| Department Name      |
+
+@Evergreen @AllLists @EvergreenJnr_Columns @ColumnSectionDisplay @DAS12922
+Scenario: EvergreenJnr_AllLists_LocationAndUserFiltersEqualsOnUsersAndApplicationsTabs
+	When User clicks "Users" on the left-hand menu
+	Then "Users" list should be displayed to the user
+	When User clicks the Columns button
+	Then Columns panel is displayed to the user
+	When ColumnName is entered into the search box and the selection is clicked
+	| ColumnName       |
+	| App Count (Used) |
+	When User clicks the Columns button
+	Then Columns panel is displayed to the user
+	When User removes "Username" column by Column panel
+	When User removes "Domain" column by Column panel
+	When User removes "Display Name" column by Column panel
+	When User removes "Distinguished Name" column by Column panel
+	When User clicks the Filters button
+	Then Filters panel is displayed to the user
+	When User clicks Add New button on the Filter panel
+	Then "User" with "22"category is displayed on Filters panel
+	Then "Location" with "8"category is displayed on Filters panel
+	When User clicks "Applications" on the left-hand menu
+	Then "Applications" list should be displayed to the user
+	When User clicks the Filters button
+	Then Filters panel is displayed to the user
+	When User clicks Add New button on the Filter panel
+	Then "User" with "24"category is displayed on Filters panel
+	Then "User Location" with "8"category is displayed on Filters panel
+
+@Evergreen @Mailboxes @EvergreenJnr_Columns @ColumnSectionDisplay @DAS12910
+Scenario: EvergreenJnr_MailboxesList_ChecksThatSubcategoriesOnColumnsPanelIsDisplayedCorrectlyAfterAddingObjectIdFilter
+	When User clicks "Mailboxes" on the left-hand menu
+	Then "Mailboxes" list should be displayed to the user
+	When User clicks the Filters button
+	Then Filters panel is displayed to the user
+	When User add "EmailMigra: Object ID" filter where type is "Equals" with added column and following value:
+	| Values |
+	| 1      |
+	When User clicks the Columns button
+	Then Columns panel is displayed to the user
+	Then the following subcategories are displayed for Selected Columns category:
+	| Subcategories         |
+	| Email Address         |
+	| Mailbox Platform      |
+	| Mail Server           |
+	| Mailbox Type          |
+	| Owner Display Name    |
+	| EmailMigra: Object ID |
+	Then There are no errors in the browser console
+	When User clicks the Filters button
+	Then Filters panel is displayed to the user
+	When User click Edit button for "EmailMigra: Object ID" filter
+	When User select "Not empty" Operator value
+	When User clicks Save filter button
+	When User create custom list with "Object ID != EMPTY" name
+	Then "Object ID != EMPTY" list is displayed to user

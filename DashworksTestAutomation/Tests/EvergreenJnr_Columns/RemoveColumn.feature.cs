@@ -837,7 +837,6 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_Columns
                         "Windows7Mi: Read Only on Project Object Page"});
             testRunner.And("ColumnName is removed from the list", ((string)(null)), table51, "And ");
             testRunner.And("\"18\" subcategories is displayed for \"User\" category", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-            testRunner.And("\"50\" subcategories is displayed for \"Project Tasks: Windows7Mi\" category", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
             this.ScenarioCleanup();
         }
         
@@ -880,19 +879,17 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_Columns
             TechTalk.SpecFlow.Table table53 = new TechTalk.SpecFlow.Table(new string[] {
                         "SelectedCheckboxes"});
             table53.AddRow(new string[] {
-                        "Not Started"});
-            table53.AddRow(new string[] {
                         "Started"});
             testRunner.When("User add \"Windows7Mi: Technical Test\" filter where type is \"Equals\" with added co" +
                     "lumn and following checkboxes:", ((string)(null)), table53, "When ");
             testRunner.Then("\"Windows7Mi: Technical Test\" filter is added to the list", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-            testRunner.And("\"7\" rows are displayed in the agGrid", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+            testRunner.And("\"4\" rows are displayed in the agGrid", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
             TechTalk.SpecFlow.Table table54 = new TechTalk.SpecFlow.Table(new string[] {
                         "ColumnName"});
             table54.AddRow(new string[] {
                         "Windows7Mi: Technical Test"});
             testRunner.When("User remove column on \"Applications\" page by URL", ((string)(null)), table54, "When ");
-            testRunner.Then("\"7\" rows are displayed in the agGrid", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+            testRunner.Then("\"4\" rows are displayed in the agGrid", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
             testRunner.And("\"Applications\" list should be displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
             testRunner.When("User clicks the Columns button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
             testRunner.Then("Columns panel is displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");

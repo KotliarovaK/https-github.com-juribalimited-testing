@@ -339,13 +339,13 @@ Scenario: Projects_CreateComputerScheduledProject
 	When User navigate to "Values" page
 	And User clicks "Add Value" button
 	And User create new Value
-	| Name    | ReadinessIndex | TaskStatusString | DefaultValue |
-	| Blocked | 3              | Open             | false        |
+	| Name    | TaskStatusString | DefaultValue |
+	| Blocked | Open             | false        |
 	And User clicks "Save Value" button
 	And User navigates to "Not Started" Value
 	And User edit selected Value
-	| Name | ReadinessIndex | TaskStatusString | DefaultValue |
-	|      | 0              |                  | true         |
+	| Name | TaskStatusString | DefaultValue |
+	|      |                  | true         |
 	And User clicks "Save Value" button
 	When User navigate to "Details" page
 	When User publishes the task
@@ -391,13 +391,13 @@ Scenario: Projects_CreateComputerScheduledProject
 	When User navigate to "Values" page
 	And User clicks "Add Value" button
 	And User create new Value
-	| Name    | ReadinessIndex | TaskStatusString | DefaultValue |
-	| Unknown | 5              | Open             | true         |
+	| Name    | TaskStatusString | DefaultValue |
+	| Unknown | Open             | true         |
 	And User clicks "Save Value" button
 	And User navigates to "Not Applicable" Value
 	And User edit selected Value
-	| Name | ReadinessIndex | TaskStatusString | DefaultValue |
-	| N/A  | 10             |                  | false        |
+	| Name | TaskStatusString | DefaultValue |
+	| N/A  |                  | false        |
 	And User clicks "Save Value" button
 	When User navigate to "Details" page
 	When User publishes the task
@@ -450,13 +450,13 @@ Scenario: Projects_CreateComputerScheduledProject
 	When User navigate to "Value" page
 	And User clicks "Add Value" button
 	And User create new Value
-	| Name    | ReadinessIndex | TaskStatusString | DefaultValue |
-	| Blocked | 9              | Open             | false        |
+	| Name    | TaskStatusString | DefaultValue |
+	| Blocked | Open             | false        |
 	And User clicks "Save Value" button
 	And User navigates to "Not Started" Value
 	And User edit selected Value
-	| Name          | ReadinessIndex | TaskStatusString | DefaultValue |
-	| To Be Started | 10             |                  | true         |
+	| Name          | TaskStatusString | DefaultValue |
+	| To Be Started |                  | true         |
 	And User clicks "Save Value" button
 	When User navigate to "Details" page
 	When User publishes the task
@@ -476,8 +476,8 @@ Scenario: Projects_CreateComputerScheduledProject
 	When User navigate to "Value" page
 	And User navigates to "Complete" Value
 	And User edit selected Value
-	| Name     | ReadinessIndex | TaskStatusString | DefaultValue |
-	| Finished | 8              |                  | false        |
+	| Name     | TaskStatusString | DefaultValue |
+	| Finished |                  | false        |
 	And User clicks "Save Value" button
 	And User navigate to "Request Types" page
 	Then "Edit Task" page is displayed to the user
@@ -541,13 +541,13 @@ Scenario: Projects_CreateComputerScheduledProject
 	When User navigate to "Value" page
 	And User clicks "Add Value" button
 	And User create new Value
-	| Name                | ReadinessIndex | TaskStatusString | DefaultValue |
-	| Under Investigation | 5              | Open             | false        |
+	| Name                | TaskStatusString | DefaultValue |
+	| Under Investigation | Open             | false        |
 	And User clicks "Save Value" button
 	And User navigates to "Not Applicable (Default)" Value
 	And User edit selected Value
-	| Name | ReadinessIndex | TaskStatusString | DefaultValue |
-	| N/A  | 10             |                  | true         |
+	| Name | TaskStatusString | DefaultValue |
+	| N/A  |                  | true         |
 	And User clicks "Save Value" button
 	And User navigate to "Request Types" page
 	Then "Edit Task" page is displayed to the user

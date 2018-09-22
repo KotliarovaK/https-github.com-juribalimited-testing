@@ -74,7 +74,7 @@ Scenario: EvergreenJnr_DevicesList_CheckThatEmptyAndNotEmptyOptionsIsAvaildableF
 	When user select "AD Object Key" filter
 	Then "Equals, Does not equal, Greater than, Greater than or equal to, Less than, Less than or equal to, Empty, Not empty" option is available for this filter
 
-@Evergreen @AllLists @Evergreen_FiltersFeature @FiltersDisplay @DAS10795 @DAS10781 @DAS11573 
+@Evergreen @AllLists @Evergreen_FiltersFeature @FiltersDisplay @DAS10795 @DAS10781 @DAS11573
 Scenario Outline: EvergreenJnr_AllLists_CheckThatAddColumnOptionIsAvailableForFilters
 	When User clicks "<PageName>" on the left-hand menu
 	Then "<PageName>" list should be displayed to the user
@@ -95,7 +95,7 @@ Examples:
 	| Devices      | Compliance            | Add Compliance column            |
 	| Mailboxes    | Owner Department Code | Add Owner Department Code column |
 
-@Evergreen @Devices @Evergreen_FiltersFeature @FiltersDisplay @DAS10795 @DAS11187
+@Evergreen @Devices @Evergreen_FiltersFeature @FiltersDisplay @DAS10795 @DAS11187 @DAS13376 @Not_Run
 Scenario: EvergreenJnr_DevicesList_CheckThatAddColumnOptionIsNotAvailableForApplicationCustomFieldsFilters
 	When User clicks "Devices" on the left-hand menu
 	Then "Devices" list should be displayed to the user
@@ -403,7 +403,7 @@ Examples:
 	| Equals         | TRUE         | 41,231    | is                  |
 	| Does not equal | TRUE         | 108       | is not              |
 
-@Evergreen @Applications @Evergreen_FiltersFeature @FiltersDisplay @DAS10696 @DAS11512 @Delete_Newly_Created_List
+@Evergreen @Applications @Evergreen_FiltersFeature @FiltersDisplay @DAS10696 @DAS11512 @DAS13376 @Delete_Newly_Created_List @Not_Run
 Scenario: EvergreenJnr_ApplicationsList_CheckThatApplicationSavedListFilterIsWorkingCorrect
 	When User add following columns using URL to the "Applications" page:
 	| ColumnName      |
@@ -423,7 +423,7 @@ Scenario: EvergreenJnr_ApplicationsList_CheckThatApplicationSavedListFilterIsWor
 	| Values  |
 	| in list |
 
-@Evergreen @Devices @Evergreen_FiltersFeature @FiltersDisplay @DAS10696
+@Evergreen @Devices @Evergreen_FiltersFeature @FiltersDisplay @DAS10696 @DAS13376 @Not_Run
 Scenario: EvergreenJnr_DevicesList_CheckThatApplicationsFilterIsContainsAllExpectedAssociations
 	When User clicks "Devices" on the left-hand menu
 	Then "Devices" list should be displayed to the user
@@ -544,7 +544,7 @@ Examples:
 	| Windows7Mi: Date & Time Task | 22 Nov 2012 | 17,209   |
 	| Build Date                   | 6 Nov 2004  | 17,224   |
 
-@Evergreen @Devices @Evergreen_FiltersFeature @FiltersDisplay @DAS11187
+@Evergreen @Devices @Evergreen_FiltersFeature @FiltersDisplay @DAS11187 @DAS13376 @Not_Run
 Scenario Outline: EvergreenJnr_DevicesList_CheckThatCustomFiltersAreContainsAllExpectedAssociations
 	When User clicks "Devices" on the left-hand menu
 	Then "Devices" list should be displayed to the user
@@ -652,7 +652,7 @@ Scenario: EvergreenJnr_DevicesList_CheckThatSpaceAfterCommasInTheFiltersContaine
 	Then "CPU Count" filter is added to the list
 	Then "(Compliance = Unknown, Red, Amber or Green) OR (Import != A01 SMS (Spoof)) OR (Department Code ~ ABC) OR (Department Code !~ ACV) OR (Department Code BEGINS WITH AXZ) OR (Department Code ENDS WITH YQA) OR (Department Code = EMPTY) OR (Department Code != EMPTY) OR (Boot Up Date < 14 Dec 2017) OR (Boot Up Date > 03 Dec 2017) OR (CPU Count > 66) OR (CPU Count >= 12) OR (CPU Count < 31) OR (CPU Count <= 13)" text is displayed in filter container
 
-@Evergreen @Devices @Evergreen_FiltersFeature @FiltersDisplay @DAS10790 @DAS13206 @Delete_Newly_Created_List
+@Evergreen @Devices @Evergreen_FiltersFeature @FiltersDisplay @DAS10790 @DAS13206 @DAS13178 @Delete_Newly_Created_List
 Scenario: EvergreenJnr_DevicesList_CheckThatApplicationFiltersBeingAppliedAgainstTheDevicesListAreRestoredCorrectlyAndAreShownInTheFiltersPanel
 	When User clicks "Devices" on the left-hand menu
 	Then "Devices" list should be displayed to the user
@@ -770,7 +770,7 @@ Scenario: EvergreenJnr_DevicesList_CheckThatMultipleFilterCriteriaToApplicationN
 	And "(Application Name ~ (adobe, microsoft) ASSOCIATION = (installed on device))" text is displayed in filter container
 
 
-@Evergreen @AllLists @Evergreen_FiltersFeature @FiltersDisplay @DAS11468 @DAS12152 @DAS12602 @Delete_Newly_Created_List
+@Evergreen @AllLists @Evergreen_FiltersFeature @FiltersDisplay @DAS11468 @DAS12152 @DAS12602 @DAS13376 @Delete_Newly_Created_List @Not_Run
 Scenario: EvergreenJnr_AllLists_CheckThat500ErrorIsNotDisplayedForStaticListAfterRemovingAssociationsList
 	When User clicks "Applications" on the left-hand menu
 	Then "Applications" list should be displayed to the user
@@ -796,7 +796,7 @@ Scenario: EvergreenJnr_AllLists_CheckThat500ErrorIsNotDisplayedForStaticListAfte
 	When User navigates to the "TestList8D5C03" list
 	Then "TestList8D5C03" list is displayed to user
 
-@Evergreen @AllLists @Evergreen_FiltersFeature @FiltersDisplay @DAS11468 @Delete_Newly_Created_List
+@Evergreen @AllLists @Evergreen_FiltersFeature @FiltersDisplay @DAS11468 @DAS13376 @Delete_Newly_Created_List @Not_Run
 Scenario: EvergreenJnr_AllLists_CheckThat500ErrorIsNotDisplayedForDynamicListAfterRemovingAssociationsList
 	When User add following columns using URL to the "Applications" page:
 	| ColumnName      |
@@ -846,7 +846,7 @@ Scenario: EvergreenJnr_DevicesList_CheckThatFilterLogicForBooleanFieldsIsWorkedC
 	Then "Secure Boot Enabled" filter is added to the list
 	Then table data in column is filtered correctly
 
-@Evergreen @Devices @Evergreen_FiltersFeature @FiltersDisplay @DAS11660 @Delete_Newly_Created_List
+@Evergreen @Devices @Evergreen_FiltersFeature @FiltersDisplay @DAS11660 @DAS13376 @Delete_Newly_Created_List @Not_Run
 Scenario: EvergreenJnr_DevicesList_CheckThatOperatorsForApplicationSavedListFilterIsDisplayedCorrectly
 	When User add following columns using URL to the "Applications" page:
 	| ColumnName |
@@ -928,7 +928,7 @@ Examples:
 	| Mailboxes | Owner Department Name      | Add Owner Department Name column      |
 	| Mailboxes | Owner Department Full Path | Add Owner Department Full Path column |
 
-@Evergreen @Mailboxes @Evergreen_FiltersFeature @FiltersDisplay @DAS11831 @Not_Run
+@Evergreen @Mailboxes @Evergreen_FiltersFeature @FiltersDisplay @DAS11831
 Scenario: EvergreenJnr_MailboxesList_CheckThatResultCounterDoesNotDisappearAfterDeletingTheCharactersInEmailMigraTeamFilter
 	When User clicks "Mailboxes" on the left-hand menu
 	Then "Mailboxes" list should be displayed to the user
@@ -974,7 +974,7 @@ Scenario: EvergreenJnr_UsersList_CheckThatChildrenOfTreeBasedFiltersAreIncludedI
 	Then "Department" filter is added to the list
 	And "35,082" rows are displayed in the agGrid
 
-@Evergreen @AllLists @Evergreen_FiltersFeature @FiltersDisplay @DAS12205 @DAS12624 @Delete_Newly_Created_List
+@Evergreen @AllLists @Evergreen_FiltersFeature @FiltersDisplay @DAS12205 @DAS12624 @DAS13376 @Delete_Newly_Created_List @Not_Run
 Scenario: EvergreenJnr_AllLists_CheckThatFilterTextDisplaysActualListName 
 	When User clicks "Applications" on the left-hand menu
 	Then "Applications" list should be displayed to the user
@@ -1008,7 +1008,7 @@ Scenario: EvergreenJnr_AllLists_CheckThatFilterTextDisplaysActualListName
 	Then Filters panel is displayed to the user
 	And "Any Application in list [List not found] entitled to device" is displayed in added filter info
 
-@Evergreen @AllLists @Evergreen_FiltersFeature @FiltersDisplay @DAS12121 @Delete_Newly_Created_List
+@Evergreen @AllLists @Evergreen_FiltersFeature @FiltersDisplay @DAS12121 @DAS13376 @Delete_Newly_Created_List @Not_Run
 Scenario: EvergreenJnr_AllLists_CheckThatTextInTheFilterPanelDisplaysTheCurrentListName
 	When User clicks "Applications" on the left-hand menu
 	Then "Applications" list should be displayed to the user
@@ -1164,7 +1164,7 @@ Examples:
 	| User GUID     | Begins with | 180a2898-9ab2 | User whose GUID begins with 180a2898-9ab2 has used app |
 	| User Username | Contains    | ZDP           | User whose Username contains ZDP has used app          |
 
-@Evergreen @Devices @Evergreen_FiltersFeature @FiltersDisplay @DAS13024 @Delete_Newly_Created_List
+@Evergreen @Devices @Evergreen_FiltersFeature @FiltersDisplay @DAS13024
 Scenario: EvergreenJnr_DevicesList_ChecksThatGridIsDisplayedCorrectlyAfterAddingDeviceOwnerLdapAndComputerAdObjectLdapAttributeFilterToTheDevicesList
 	When User clicks "Devices" on the left-hand menu
 	Then "Devices" list should be displayed to the user
@@ -1177,6 +1177,107 @@ Scenario: EvergreenJnr_DevicesList_ChecksThatGridIsDisplayedCorrectlyAfterAdding
 	| Values |
 	| 123    |
 	Then "17,225" rows are displayed in the agGrid
-	Then full list content is displayed to the user
-	Then There are no errors in the browser console
-	Then table content is present
+	And full list content is displayed to the user
+	And There are no errors in the browser console
+	And table content is present
+
+@Evergreen @Applications @Evergreen_FiltersFeature @FiltersDisplay @DAS12908
+Scenario: EvergreenJnr_ApplicationsList_ChecksThatAdvancedFilterOfUserWhoseFilterNameIsEmptyIsWorkingCorrectly
+	When User clicks "Applications" on the left-hand menu
+	Then "Applications" list should be displayed to the user
+	When User clicks the Filters button
+	Then Filters panel is displayed to the user
+	When User add "User Description" filter where type is "Empty" with following Value and Association:
+	| Values | Association     |
+	|        | Entitled to app |
+	Then "113" rows are displayed in the agGrid
+	And table content is present
+	When User have reset all filters
+	Then "2,223" rows are displayed in the agGrid
+	When User add "User Building" filter where type is "Equals" with following Lookup Value and Association:
+	| SelectedValues | Association     |
+	| Empty          | Entitled to app |
+	Then "245" rows are displayed in the agGrid
+	And table content is present
+
+@Evergreen @Users @Evergreen_FiltersFeature @FiltersDisplay @DAS13183
+Scenario: EvergreenJnr_UsersList_CheckThatApplicationManufacturerFilterChangedToApplicationVendor
+	When User clicks "Users" on the left-hand menu
+	And User clicks the Filters button
+	Then "Application Manufacturer" filter is not presented in the filters list
+	And "Application Vendor" filter is presented in the filters list
+
+@Evergreen @AllLists @Evergreen_FiltersFeature @FiltersDisplay @DAS13182
+Scenario Outline: EvergreenJnr_AllLists_CheckThatAddNewOptionAvailableAfterClickOnAllOptionInListsPanelWhileFiltersSectionExpanded
+	When User clicks "<ListName>" on the left-hand menu
+	And User clicks the Filters button
+	Then Filters panel is displayed to the user
+	When User clicks Add New button on the Filter panel
+	And User clicks "<LinkName>" link in Lists panel
+	And User clicks the Filters button
+	Then Filters panel is displayed to the user
+	And Add New button is displayed on the Filter panel
+
+Examples: 
+	| ListName     | LinkName         |
+	| Devices      | All Devices      |
+	| Users        | All Users        |
+	| Applications | All Applications |
+	| Mailboxes    | All Mailboxes    |
+
+@Evergreen @AllLists @Evergreen_FiltersFeature @FiltersDisplay @DAS13391
+Scenario Outline: EvergreenJnr_AllLists_CheckThatSelectedColumnsSectionIsExpandedByDefaultInFiltersPanel
+	When User clicks "<ListName>" on the left-hand menu
+	And User clicks the Filters button
+	And User clicks Add New button on the Filter panel
+	Then User sees "Selected Columns" section expanded by default in Filters panel
+
+Examples: 
+	| ListName     |
+	| Devices      |
+	| Users        |
+	| Applications |
+	| Mailboxes    |
+
+@Evergreen @Applications @Evergreen_FiltersFeature @FiltersDisplay @DAS12793 @Delete_Newly_Created_List
+Scenario: EvergreenJnr_ApplicationsList_CheckThatTheValueInTheFiltersPanelIsDisplayedCorrectly
+	When User clicks "Applications" on the left-hand menu
+	Then "Applications" list should be displayed to the user
+	When User clicks the Filters button
+	Then Filters panel is displayed to the user
+	When User add Advanced "User" filter where type is "Equals" with following Lookup Value and Association:
+	| SelectedValues | Association     |
+	| AAD1011948     | Entitled to app |
+	Then "4" rows are displayed in the agGrid
+	When User create dynamic list with "UsersFilterList" name on "Applications" page
+	Then "UsersFilterList" list is displayed to user
+	When User clicks the Filters button
+	Then Filters panel is displayed to the user
+	When User click Edit button for "User" filter
+	Then "FR\AAD1011948" value is displayed in the filter info
+	And There are no errors in the browser console
+	When User clicks "Devices" on the left-hand menu
+	Then "Devices" list should be displayed to the user
+	When User clicks "Users" on the left-hand menu
+	Then "Users" list should be displayed to the user
+	And There are no errors in the browser console
+
+@Evergreen @Applications @Evergreen_FiltersFeature @FiltersDisplay @DAS12819 @Delete_Newly_Created_List
+Scenario: EvergreenJnr_ApplicationsList_CheckThatTheUserDescriptionFieldIsNotDisplayedForEmptyNotEmptyOptions
+	When User clicks "Applications" on the left-hand menu
+	Then "Applications" list should be displayed to the user
+	When User clicks the Filters button
+	Then Filters panel is displayed to the user
+	When User add "User Description" filter where type is "Contains" with following Value and Association:
+	| Values | Association     |
+	| Aw     | Entitled to app |
+	Then "3" rows are displayed in the agGrid
+	When User create dynamic list with "UsersDescriptionFilterList" name on "Applications" page
+	Then "UsersDescriptionFilterList" list is displayed to user
+	When User clicks the Filters button
+	Then Filters panel is displayed to the user
+	When User click Edit button for "User " filter
+	And User select "Empty" Operator value
+	Then User Description field is not displayed
+	When User select "Not empty" Operator value
+	Then User Description field is not displayed

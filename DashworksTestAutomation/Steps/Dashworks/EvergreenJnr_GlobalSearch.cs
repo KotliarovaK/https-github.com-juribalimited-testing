@@ -98,6 +98,13 @@ namespace DashworksTestAutomation.Steps.Dashworks
             Assert.AreEqual(text, searchElement.NoResultFound.Text, $"{text} is not displayed");
         }
 
+        [Then(@"""(.*)"" message is not displayed below Global Search field")]
+        public void ThenMessageIsNotDisplayedBelowGlobalSearchField(string text)
+        {
+            var searchElement = _driver.NowAt<GlobalSearchElement>();
+            Assert.IsFalse(searchElement.NoResultFound.Displayed(), $"{text} is not displayed");
+        }
+
         [Then(@"Search results are displayed below Global Search field")]
         public void ThenSearchResultsAreDisplayedBelowGlobalSearchField()
         {
@@ -118,9 +125,9 @@ namespace DashworksTestAutomation.Steps.Dashworks
         [Then(@"reset button in Global Search field is displayed")]
         public void ThenResetButtonInGlobalSearchFieldIsDisplayed()
         {
-            var searchElement = _driver.NowAt<BaseDashboardPage>();
-            _driver.WaitWhileControlIsNotDisplayed<BaseDashboardPage>(() => searchElement.SearchTextboxResetButton);
-            Assert.IsTrue(searchElement.SearchTextboxResetButton.Displayed(), "Reset button is not displayed");
+            var searchElement = _driver.NowAt<GlobalSearchElement>();
+            _driver.WaitWhileControlIsNotDisplayed<GlobalSearchElement>(() => searchElement.GlobalSearchTextboxResetButton);
+            Assert.IsTrue(searchElement.GlobalSearchTextboxResetButton.Displayed(), "Reset button is not displayed");
             Logger.Write("Reset button is displayed");
         }
     }

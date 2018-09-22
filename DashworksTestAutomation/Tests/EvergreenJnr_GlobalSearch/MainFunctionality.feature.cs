@@ -81,6 +81,7 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_GlobalSearch
         [NUnit.Framework.CategoryAttribute("DAS11706")]
         [NUnit.Framework.CategoryAttribute("DAS12544")]
         [NUnit.Framework.CategoryAttribute("DAS12047")]
+        [NUnit.Framework.CategoryAttribute("DAS12603")]
         public virtual void EvergreenJnr_GlobalSearch_CheckThatErrorMessageIsNotDisplayedAfterTypingThreeSpaces()
         {
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("EvergreenJnr_GlobalSearch_CheckThatErrorMessageIsNotDisplayedAfterTypingThreeSpac" +
@@ -93,7 +94,8 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_GlobalSearch
                         "DAS11745",
                         "DAS11706",
                         "DAS12544",
-                        "DAS12047"});
+                        "DAS12047",
+                        "DAS12603"});
             this.ScenarioSetup(scenarioInfo);
             this.FeatureBackground();
             testRunner.When("User type \"   \" in Global Search Field", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
@@ -111,15 +113,21 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_GlobalSearch
             testRunner.When("User type \"___ab \" in Global Search Field", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
             testRunner.Then("Search results are displayed below Global Search field", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
             testRunner.When("User type \"admin\" in Global Search Field and presses Enter key", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+            testRunner.Then("\"No results found\" message is not displayed below Global Search field", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
             testRunner.Then("\"Search results for \"admin\"\" is displayed below Global Search field", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
             testRunner.And("\"195\" rows are displayed on the Global Search", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
             testRunner.And("list of results is displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+            testRunner.When("User type \"!@#$%^&*()\" in Global Search Field", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+            testRunner.Then("\"No results found\" message is displayed below Global Search field", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
             testRunner.When("User type \"______#____-\" in Global Search Field and presses Enter key", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
             testRunner.Then("\"Search results for \"______#____-\"\" is displayed below Global Search field", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
             testRunner.And("\"1\" rows are displayed on the Global Search", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
             testRunner.And("list of results is displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-            testRunner.When("User type \"!@#$%^&*()\" in Global Search Field", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-            testRunner.Then("\"No results found\" message is displayed below Global Search field", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+            testRunner.When("User type \"%SQL_PRODUCT_SHORT_NAME% Data Tools - BI for Visual Studio 2013\" in Gl" +
+                    "obal Search Field and presses Enter key", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+            testRunner.Then("\"Search results for \"%SQL_PRODUCT_SHORT_NAME% Data Tools - BI for Visual Studio 2" +
+                    "013\"\" is displayed below Global Search field", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+            testRunner.And("\"1\" rows are displayed on the Global Search", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
             testRunner.And("There are no errors in the browser console", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
             this.ScenarioCleanup();
         }

@@ -298,6 +298,7 @@
     <Compile Include="Pages\Projects\Projects_Dashboards\Projects_DashboardsGroupsPage.cs" />
     <Compile Include="Pages\Projects\Projects_Dashboards\Projects_DashboardsPage.cs" />
     <Compile Include="Pages\Projects\Projects_PMObjectPage.cs" />
+    <Compile Include="Steps\Dashworks\EvergreenJnr_DashboardsPage.cs" />
     <Compile Include="Steps\Dashworks\EvergreenJnr_AdminPage_AfterScenario.cs" />
     <Compile Include="Steps\ManagementConsole\ManagementConsole.cs" />
     <Compile Include="Steps\Projects\Projects_CreatingProject\Projects_Capacity.cs" />
@@ -348,6 +349,21 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>AdminPage.feature</DependentUpon>
     </Compile>
+    <Compile Include="Tests\EvergreenJnr_AdminPage\Buckets.feature.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Buckets.feature</DependentUpon>
+    </Compile>
+    <Compile Include="Tests\EvergreenJnr_AdminPage\Projects.feature.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Projects.feature</DependentUpon>
+    </Compile>
+    <Compile Include="Tests\EvergreenJnr_AdminPage\Teams.feature.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Teams.feature</DependentUpon>
+    </Compile>
     <Compile Include="Tests\EvergreenJnr_BaseDashboardPage\BaseDashboardPage.feature.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -362,6 +378,11 @@
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>ColumnSectionDisplay.feature</DependentUpon>
+    </Compile>
+    <Compile Include="Tests\EvergreenJnr_DashboardsPage\DashboardsPage.feature.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DashboardsPage.feature</DependentUpon>
     </Compile>
     <Compile Include="Tests\EvergreenJnr_DynamicLists\PermissionsSettings.feature.cs">
       <AutoGen>True</AutoGen>
@@ -513,6 +534,18 @@
       <Generator>SpecFlowSingleFileGenerator</Generator>
       <LastGenOutput>AdminPage.feature.cs</LastGenOutput>
     </None>
+    <None Include="Tests\EvergreenJnr_AdminPage\Buckets.feature">
+      <Generator>SpecFlowSingleFileGenerator</Generator>
+      <LastGenOutput>Buckets.feature.cs</LastGenOutput>
+    </None>
+    <None Include="Tests\EvergreenJnr_AdminPage\Projects.feature">
+      <Generator>SpecFlowSingleFileGenerator</Generator>
+      <LastGenOutput>Projects.feature.cs</LastGenOutput>
+    </None>
+    <None Include="Tests\EvergreenJnr_AdminPage\Teams.feature">
+      <Generator>SpecFlowSingleFileGenerator</Generator>
+      <LastGenOutput>Teams.feature.cs</LastGenOutput>
+    </None>
     <None Include="Tests\EvergreenJnr_BaseDashboardPage\BaseDashboardPage.feature">
       <Generator>SpecFlowSingleFileGenerator</Generator>
       <LastGenOutput>BaseDashboardPage.feature.cs</LastGenOutput>
@@ -524,6 +557,10 @@
     <None Include="Tests\EvergreenJnr_Columns\ColumnSectionDisplay.feature">
       <Generator>SpecFlowSingleFileGenerator</Generator>
       <LastGenOutput>ColumnSectionDisplay.feature.cs</LastGenOutput>
+    </None>
+    <None Include="Tests\EvergreenJnr_DashboardsPage\DashboardsPage.feature">
+      <Generator>SpecFlowSingleFileGenerator</Generator>
+      <LastGenOutput>DashboardsPage.feature.cs</LastGenOutput>
     </None>
     <None Include="Tests\EvergreenJnr_DynamicLists\PermissionsSettings.feature">
       <Generator>SpecFlowSingleFileGenerator</Generator>

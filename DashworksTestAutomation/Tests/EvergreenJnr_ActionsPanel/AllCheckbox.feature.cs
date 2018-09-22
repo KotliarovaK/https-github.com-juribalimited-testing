@@ -75,7 +75,7 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_ActionsPanel
         [NUnit.Framework.CategoryAttribute("AllCheckbox")]
         [NUnit.Framework.CategoryAttribute("DAS10769")]
         [NUnit.Framework.CategoryAttribute("DAS10656")]
-        [NUnit.Framework.CategoryAttribute("DAS12602")]
+        [NUnit.Framework.CategoryAttribute("DAS12206")]
         public virtual void EvergreenJnr_UsersList_SelectAllCheckboxStatusCheckAfterSearch()
         {
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("EvergreenJnr_UsersList_SelectAllCheckboxStatusCheckAfterSearch", new string[] {
@@ -85,7 +85,7 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_ActionsPanel
                         "AllCheckbox",
                         "DAS10769",
                         "DAS10656",
-                        "DAS12602"});
+                        "DAS12206"});
             this.ScenarioSetup(scenarioInfo);
             this.FeatureBackground();
             testRunner.When("User clicks \"Users\" on the left-hand menu", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");

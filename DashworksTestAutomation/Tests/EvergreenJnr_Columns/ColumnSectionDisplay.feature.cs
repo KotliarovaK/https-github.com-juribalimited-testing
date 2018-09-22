@@ -242,6 +242,7 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_Columns
         [NUnit.Framework.CategoryAttribute("EvergreenJnr_Columns")]
         [NUnit.Framework.CategoryAttribute("ColumnSectionDisplay")]
         [NUnit.Framework.CategoryAttribute("DAS11548")]
+        [NUnit.Framework.CategoryAttribute("DAS13423")]
         public virtual void EvergreenJnr_MailboxesList_CheckThatCategoryRemainsOpenAfterAddingColumns()
         {
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("EvergreenJnr_MailboxesList_CheckThatCategoryRemainsOpenAfterAddingColumns", new string[] {
@@ -249,7 +250,8 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_Columns
                         "Mailboxes",
                         "EvergreenJnr_Columns",
                         "ColumnSectionDisplay",
-                        "DAS11548"});
+                        "DAS11548",
+                        "DAS13423"});
             this.ScenarioSetup(scenarioInfo);
             this.FeatureBackground();
             testRunner.When("User clicks \"Mailboxes\" on the left-hand menu", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
@@ -644,6 +646,8 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_Columns
         [NUnit.Framework.CategoryAttribute("EvergreenJnr_Columns")]
         [NUnit.Framework.CategoryAttribute("ColumnSectionDisplay")]
         [NUnit.Framework.CategoryAttribute("DAS13181")]
+        [NUnit.Framework.CategoryAttribute("DAS13376")]
+        [NUnit.Framework.CategoryAttribute("Not_Run")]
         public virtual void EvergreenJnr_UsersList_ChecksThatColumnsPanelIsDisplayedCorrectlyAfterApplyAnyFilterFromApplicationCustomFieldsCategory()
         {
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("EvergreenJnr_UsersList_ChecksThatColumnsPanelIsDisplayedCorrectlyAfterApplyAnyFil" +
@@ -652,7 +656,9 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_Columns
                         "Users",
                         "EvergreenJnr_Columns",
                         "ColumnSectionDisplay",
-                        "DAS13181"});
+                        "DAS13181",
+                        "DAS13376",
+                        "Not_Run"});
             this.ScenarioSetup(scenarioInfo);
             this.FeatureBackground();
             testRunner.When("User clicks \"Users\" on the left-hand menu", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
@@ -886,7 +892,7 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_Columns
             TechTalk.SpecFlow.Table table42 = new TechTalk.SpecFlow.Table(new string[] {
                         "SelectedRowsName"});
             table42.AddRow(new string[] {
-                        "\"WPF/E\" (codename) Community Technology Preview (Feb 2007)"});
+                        "0004 - Adobe Acrobat Reader 5.0.5 Francais"});
             table42.AddRow(new string[] {
                         "%SQL_PRODUCT_SHORT_NAME% Data Tools - BI for Visual Studio 2013"});
             testRunner.When("User select \"Application\" rows in the grid", ((string)(null)), table42, "When ");
@@ -1060,7 +1066,7 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_Columns
             TechTalk.SpecFlow.Table table54 = new TechTalk.SpecFlow.Table(new string[] {
                         "SelectedRowsName"});
             table54.AddRow(new string[] {
-                        "00BDM1JUR8IF419"});
+                        "00YTY8U3ZYP2WT"});
             testRunner.When("User select \"Hostname\" rows in the grid", ((string)(null)), table54, "When ");
             testRunner.And("User selects \"Create static list\" in the Actions dropdown", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
             testRunner.And("User create static list with \"StaticListFromADynamicList\" name", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
@@ -1071,7 +1077,7 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_Columns
             TechTalk.SpecFlow.Table table55 = new TechTalk.SpecFlow.Table(new string[] {
                         "SelectedRowsName"});
             table55.AddRow(new string[] {
-                        "00YWR8TJU4ZF8V"});
+                        "018UQ6KL9TF4YF"});
             testRunner.When("User select \"Hostname\" rows in the grid", ((string)(null)), table55, "When ");
             testRunner.Then("User add selected rows in \"StaticListFromADynamicList\" list", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
             testRunner.Then("\"2\" rows are displayed in the agGrid", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
@@ -1302,7 +1308,8 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_Columns
         [NUnit.Framework.CategoryAttribute("Evergreen")]
         [NUnit.Framework.CategoryAttribute("Devices")]
         [NUnit.Framework.CategoryAttribute("EvergreenJnr_Columns")]
-        [NUnit.Framework.CategoryAttribute("ColumnOrder")]
+        [NUnit.Framework.CategoryAttribute("ColumnSectionOrder")]
+        [NUnit.Framework.CategoryAttribute("ColumnSectionDisplay")]
         [NUnit.Framework.CategoryAttribute("DAS12861")]
         public virtual void EvergreenJnr_DevicesList_ChecksThatSubcategoriesOnFiltersPanelAreDisplayedInAlphabeticalOrder()
         {
@@ -1311,7 +1318,8 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_Columns
                         "Evergreen",
                         "Devices",
                         "EvergreenJnr_Columns",
-                        "ColumnOrder",
+                        "ColumnSectionOrder",
+                        "ColumnSectionDisplay",
                         "DAS12861"});
             this.ScenarioSetup(scenarioInfo);
             this.FeatureBackground();
@@ -1367,8 +1375,10 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_Columns
         [NUnit.Framework.CategoryAttribute("Evergreen")]
         [NUnit.Framework.CategoryAttribute("Applications")]
         [NUnit.Framework.CategoryAttribute("EvergreenJnr_Columns")]
-        [NUnit.Framework.CategoryAttribute("ColumnOrder")]
+        [NUnit.Framework.CategoryAttribute("ColumnSectionOrder")]
+        [NUnit.Framework.CategoryAttribute("ColumnSectionDisplay")]
         [NUnit.Framework.CategoryAttribute("DAS12861")]
+        [NUnit.Framework.CategoryAttribute("DAS13299")]
         public virtual void EvergreenJnr_ApplicationsList_ChecksThatSubcategoriesOnColumnsPanelAreDisplayedInAlphabeticalOrderAfterAddingFilters()
         {
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("EvergreenJnr_ApplicationsList_ChecksThatSubcategoriesOnColumnsPanelAreDisplayedIn" +
@@ -1376,8 +1386,10 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_Columns
                         "Evergreen",
                         "Applications",
                         "EvergreenJnr_Columns",
-                        "ColumnOrder",
-                        "DAS12861"});
+                        "ColumnSectionOrder",
+                        "ColumnSectionDisplay",
+                        "DAS12861",
+                        "DAS13299"});
             this.ScenarioSetup(scenarioInfo);
             this.FeatureBackground();
             testRunner.When("User clicks \"Applications\" on the left-hand menu", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
@@ -1435,7 +1447,8 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_Columns
         [NUnit.Framework.CategoryAttribute("Evergreen")]
         [NUnit.Framework.CategoryAttribute("Users")]
         [NUnit.Framework.CategoryAttribute("EvergreenJnr_Columns")]
-        [NUnit.Framework.CategoryAttribute("ColumnOrder")]
+        [NUnit.Framework.CategoryAttribute("ColumnSectionOrder")]
+        [NUnit.Framework.CategoryAttribute("ColumnSectionDisplay")]
         [NUnit.Framework.CategoryAttribute("DAS12861")]
         public virtual void EvergreenJnr_UsersList_ChecksThatSubcategoriesOnColumnsPanelAreDisplayedInAlphabeticalOrderAfterAddingDepartmentFilters()
         {
@@ -1444,7 +1457,8 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_Columns
                         "Evergreen",
                         "Users",
                         "EvergreenJnr_Columns",
-                        "ColumnOrder",
+                        "ColumnSectionOrder",
+                        "ColumnSectionDisplay",
                         "DAS12861"});
             this.ScenarioSetup(scenarioInfo);
             this.FeatureBackground();
@@ -1539,6 +1553,112 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_Columns
             table81.AddRow(new string[] {
                         "Department Name"});
             testRunner.Then("the following Column subcategories are displayed for open category:", ((string)(null)), table81, "Then ");
+            this.ScenarioCleanup();
+        }
+        
+        [NUnit.Framework.TestAttribute()]
+        [NUnit.Framework.Retry(2)]
+        [NUnit.Framework.DescriptionAttribute("EvergreenJnr_AllLists_LocationAndUserFiltersEqualsOnUsersAndApplicationsTabs")]
+        [NUnit.Framework.CategoryAttribute("Evergreen")]
+        [NUnit.Framework.CategoryAttribute("AllLists")]
+        [NUnit.Framework.CategoryAttribute("EvergreenJnr_Columns")]
+        [NUnit.Framework.CategoryAttribute("ColumnSectionDisplay")]
+        [NUnit.Framework.CategoryAttribute("DAS12922")]
+        public virtual void EvergreenJnr_AllLists_LocationAndUserFiltersEqualsOnUsersAndApplicationsTabs()
+        {
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("EvergreenJnr_AllLists_LocationAndUserFiltersEqualsOnUsersAndApplicationsTabs", new string[] {
+                        "Evergreen",
+                        "AllLists",
+                        "EvergreenJnr_Columns",
+                        "ColumnSectionDisplay",
+                        "DAS12922"});
+            this.ScenarioSetup(scenarioInfo);
+            this.FeatureBackground();
+            testRunner.When("User clicks \"Users\" on the left-hand menu", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+            testRunner.Then("\"Users\" list should be displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+            testRunner.When("User clicks the Columns button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+            testRunner.Then("Columns panel is displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+            TechTalk.SpecFlow.Table table82 = new TechTalk.SpecFlow.Table(new string[] {
+                        "ColumnName"});
+            table82.AddRow(new string[] {
+                        "App Count (Used)"});
+            testRunner.When("ColumnName is entered into the search box and the selection is clicked", ((string)(null)), table82, "When ");
+            testRunner.When("User clicks the Columns button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+            testRunner.Then("Columns panel is displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+            testRunner.When("User removes \"Username\" column by Column panel", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+            testRunner.When("User removes \"Domain\" column by Column panel", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+            testRunner.When("User removes \"Display Name\" column by Column panel", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+            testRunner.When("User removes \"Distinguished Name\" column by Column panel", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+            testRunner.When("User clicks the Filters button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+            testRunner.Then("Filters panel is displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+            testRunner.When("User clicks Add New button on the Filter panel", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+            testRunner.Then("\"User\" with \"22\"category is displayed on Filters panel", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+            testRunner.Then("\"Location\" with \"8\"category is displayed on Filters panel", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+            testRunner.When("User clicks \"Applications\" on the left-hand menu", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+            testRunner.Then("\"Applications\" list should be displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+            testRunner.When("User clicks the Filters button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+            testRunner.Then("Filters panel is displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+            testRunner.When("User clicks Add New button on the Filter panel", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+            testRunner.Then("\"User\" with \"24\"category is displayed on Filters panel", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+            testRunner.Then("\"User Location\" with \"8\"category is displayed on Filters panel", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+            this.ScenarioCleanup();
+        }
+        
+        [NUnit.Framework.TestAttribute()]
+        [NUnit.Framework.Retry(2)]
+        [NUnit.Framework.DescriptionAttribute("EvergreenJnr_MailboxesList_ChecksThatSubcategoriesOnColumnsPanelIsDisplayedCorrec" +
+            "tlyAfterAddingObjectIdFilter")]
+        [NUnit.Framework.CategoryAttribute("Evergreen")]
+        [NUnit.Framework.CategoryAttribute("Mailboxes")]
+        [NUnit.Framework.CategoryAttribute("EvergreenJnr_Columns")]
+        [NUnit.Framework.CategoryAttribute("ColumnSectionDisplay")]
+        [NUnit.Framework.CategoryAttribute("DAS12910")]
+        public virtual void EvergreenJnr_MailboxesList_ChecksThatSubcategoriesOnColumnsPanelIsDisplayedCorrectlyAfterAddingObjectIdFilter()
+        {
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("EvergreenJnr_MailboxesList_ChecksThatSubcategoriesOnColumnsPanelIsDisplayedCorrec" +
+                    "tlyAfterAddingObjectIdFilter", new string[] {
+                        "Evergreen",
+                        "Mailboxes",
+                        "EvergreenJnr_Columns",
+                        "ColumnSectionDisplay",
+                        "DAS12910"});
+            this.ScenarioSetup(scenarioInfo);
+            this.FeatureBackground();
+            testRunner.When("User clicks \"Mailboxes\" on the left-hand menu", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+            testRunner.Then("\"Mailboxes\" list should be displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+            testRunner.When("User clicks the Filters button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+            testRunner.Then("Filters panel is displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+            TechTalk.SpecFlow.Table table83 = new TechTalk.SpecFlow.Table(new string[] {
+                        "Values"});
+            table83.AddRow(new string[] {
+                        "1"});
+            testRunner.When("User add \"EmailMigra: Object ID\" filter where type is \"Equals\" with added column " +
+                    "and following value:", ((string)(null)), table83, "When ");
+            testRunner.When("User clicks the Columns button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+            testRunner.Then("Columns panel is displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+            TechTalk.SpecFlow.Table table84 = new TechTalk.SpecFlow.Table(new string[] {
+                        "Subcategories"});
+            table84.AddRow(new string[] {
+                        "Email Address"});
+            table84.AddRow(new string[] {
+                        "Mailbox Platform"});
+            table84.AddRow(new string[] {
+                        "Mail Server"});
+            table84.AddRow(new string[] {
+                        "Mailbox Type"});
+            table84.AddRow(new string[] {
+                        "Owner Display Name"});
+            table84.AddRow(new string[] {
+                        "EmailMigra: Object ID"});
+            testRunner.Then("the following subcategories are displayed for Selected Columns category:", ((string)(null)), table84, "Then ");
+            testRunner.Then("There are no errors in the browser console", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+            testRunner.When("User clicks the Filters button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+            testRunner.Then("Filters panel is displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+            testRunner.When("User click Edit button for \"EmailMigra: Object ID\" filter", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+            testRunner.When("User select \"Not empty\" Operator value", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+            testRunner.When("User clicks Save filter button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+            testRunner.When("User create custom list with \"Object ID != EMPTY\" name", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+            testRunner.Then("\"Object ID != EMPTY\" list is displayed to user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
             this.ScenarioCleanup();
         }
     }

@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Threading;
 using DashworksTestAutomation.DTO;
 using DashworksTestAutomation.DTO.RuntimeVariables;
 using DashworksTestAutomation.Extensions;
@@ -56,11 +57,28 @@ namespace DashworksTestAutomation.Steps.Dashworks
                 page.GetColumnHeaderByName(columnNameToMove));
         }
 
+        [When(@"User navigate to the bottom of the Action panel")]
+        public void WhenUserNavigateToTheBottomOfTheActionPanel()
+        {
+            var page = _driver.NowAt<BaseDashboardPage>();
+            _driver.DragAndDrop(page.ActionsScrollBar, page.UpdateButton);
+            Thread.Sleep(2000);
+        }
+
+        [When(@"User navigate to the top of the Action panel")]
+        public void WhenUserNavigateToTheTopOfTheActionPanel()
+        {
+            var page = _driver.NowAt<BaseDashboardPage>();
+            _driver.DragAndDrop(page.ActionsScrollBar, page.ActionsRowsCount);
+            Thread.Sleep(2000);
+        }
+
         [When(@"User moves ""(.*)"" column beyond the Grid")]
         public void WhenUserMovesColumnBeyondTheGrid(string columnName)
         {
             var page = _driver.NowAt<BaseDashboardPage>();
-            _driver.DragAndDrop(page.GetColumnHeaderByName(columnName), page.OutsideGridPanel);
+            _driver.DragAndDrop(page.GetColumnHeaderByName(columnName), page.RefreshTableButton);
+            page.GetColumnHeaderByName(columnName).Click();
         }
 
         [When(@"User click on '(.*)' column header")]
@@ -205,9 +223,16 @@ namespace DashworksTestAutomation.Steps.Dashworks
         public void ThenContentIsDisplayedInColumn(string textContent, string columnName)
         {
             var page = _driver.NowAt<BaseDashboardPage>();
-
+            _driver.WaitForDataLoading();
             var originalList = page.GetRowContentByColumnName(columnName);
             Assert.AreEqual(textContent, originalList, "Content is not displayed correctly");
+        }
+
+        [Then(@"empty rows is displayed in ""(.*)"" column")]
+        public void ThenEmptyRowsIsDisplayedInColumn(string p0)
+        {
+            var page = _driver.NowAt<BaseDashboardPage>();
+            _driver.WaitForDataLoading();
         }
 
         [Then(@"full list content is displayed to the user")]
@@ -293,6 +318,13 @@ namespace DashworksTestAutomation.Steps.Dashworks
             page.FilterContainerButton.Click();
             Assert.AreEqual(text, page.FilterContainer.Text.TrimStart(' ').TrimEnd(' '),
                 $"Filter is created incorrectly");
+        }
+
+        [When(@"User opens filter container")]
+        public void WhenUserOpensFilterContainer()
+        {
+            var page = _driver.NowAt<BaseDashboardPage>();
+            page.FilterContainerButton.Click();
         }
 
         [Then(@"Links from ""(.*)"" column is displayed to the user")]

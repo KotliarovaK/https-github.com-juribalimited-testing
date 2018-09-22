@@ -358,6 +358,7 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_QueryStrings
         [NUnit.Framework.CategoryAttribute("EvergreenJnr_QueryStrings")]
         [NUnit.Framework.CategoryAttribute("Query")]
         [NUnit.Framework.CategoryAttribute("DAS10789")]
+        [NUnit.Framework.CategoryAttribute("Not_Run")]
         public virtual void EvergreenJnr_QueryString_ApplicationsOnDevicesList()
         {
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("EvergreenJnr_QueryString_ApplicationsOnDevicesList", new string[] {
@@ -365,7 +366,8 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_QueryStrings
                         "Devices",
                         "EvergreenJnr_QueryStrings",
                         "Query",
-                        "DAS10789"});
+                        "DAS10789",
+                        "Not_Run"});
             this.ScenarioSetup(scenarioInfo);
             this.FeatureBackground();
             TechTalk.SpecFlow.Table table8 = new TechTalk.SpecFlow.Table(new string[] {
@@ -463,8 +465,6 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_QueryStrings
             "0(ubdo%2Cetd))", "11", new string[0])]
         [NUnit.Framework.TestCaseAttribute("Application Name", "evergreen/#/devices?$filter=(applicationName%20DOES%20NOT%20BEGIN%20WITH%20(\'7zip" +
             "\')%20WHERE%20(nubdo%2Cnetdo))", "17,066", new string[0])]
-        [NUnit.Framework.TestCaseAttribute("Application Name", "evergreen/#/devices?$filter=(applicationName%20DOES%20NOT%20END%20WITH%20(\'1.1\')%" +
-            "20WHERE%20(uod%2Cetd%2Ciod%2Cubdo%2Cetdo))", "17,224", new string[0])]
         [NUnit.Framework.TestCaseAttribute("Application Vendor", "evergreen/#/devices?$filter=(applicationManufacturer%20EQUALS%20(\'Aaronbock%20Dev" +
             "elopment\')%20WHERE%20(etdo))", "95", new string[0])]
         [NUnit.Framework.TestCaseAttribute("Application Vendor", "evergreen/#/devices?$filter=(applicationManufacturer%20NOT%20EQUALS%20(\'Aaronbock" +
@@ -540,8 +540,6 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_QueryStrings
             "0WHERE%20(netdo%2Cnubdo%2Cniod%2Cnetd%2Cnuod))", "17,225", "Application whose Import is SCCM 2012 PS1 not entitled to device\'s owner; not use" +
             "d by device\'s owner; not installed on device; not entitled to device; or not use" +
             "d on device", new string[0])]
-        [NUnit.Framework.TestCaseAttribute("Application Name", "evergreen/#/devices?$filter=(applicationName%20NOT%20EQUALS%20(\'7zip\')%20WHERE%20" +
-            "(ubdo))", "620", "Application whose Name is not 7zip used by device\'s owner", new string[0])]
         [NUnit.Framework.TestCaseAttribute("Application Name", "evergreen/#/devices?$filter=(applicationName%20ENDS%20WITH%20(\'1.1\')%20WHERE%20(n" +
             "ubdo%2Cnetdo%2Cnuod%2Cnetd%2Cniod))", "17,225", "Application whose Name ends with 1.1 not used by device\'s owner; not entitled to " +
             "device\'s owner; not used on device; not entitled to device; or not installed on " +

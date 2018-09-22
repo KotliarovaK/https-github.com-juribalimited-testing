@@ -25,9 +25,11 @@ namespace DashworksTestAutomation.Pages.Evergreen
 
         public const string FilterSubcategory = "//div[contains(@class, 'sub-categories')]//div//div";
 
-        public const string SelectedFiltersSubcategory = "//div[contains(@class, 'sub-categories')]//div//div";
+        public const string SelectedFiltersSubcategory = "//div[contains(@class, 'sub-categories')]//div";
 
         public const string SelectedColumnSubcategory = "//div[contains(@class, 'sub-categories')]//div//span";
+
+        public const string OptionOnActionsPanel = "//mat-option[@role='option']";
 
         [FindsBy(How = How.XPath, Using = ".//div[@id='pagetitle-text']/descendant::h1")]
         public IWebElement Heading { get; set; }
@@ -43,6 +45,9 @@ namespace DashworksTestAutomation.Pages.Evergreen
         [FindsBy(How = How.XPath, Using = ".//button[@id='_staticListModeBtn']")]
         public IWebElement ActionsButton { get; set; }
 
+        [FindsBy(How = How.XPath, Using = ".//div[contains(@class, 'actions-container-row')]")]
+        public IWebElement ActionsRowsCount { get; set; }
+
         [FindsBy(How = How.XPath, Using = ".//mat-select[@aria-label='Actions']")]
         public IWebElement ActionsDropdown { get; set; }
 
@@ -53,7 +58,7 @@ namespace DashworksTestAutomation.Pages.Evergreen
         public IWebElement ProjectField { get; set; }
 
         [FindsBy(How = How.XPath, Using = "//mat-option[@role='option']")]
-        public IWebElement OptionName { get; set; }
+        public IWebElement ProjectSection { get; set; }
 
         [FindsBy(How = How.XPath, Using = "//textarea[@placeholder='Stage']")]
         public IWebElement StageField { get; set; }
@@ -63,6 +68,24 @@ namespace DashworksTestAutomation.Pages.Evergreen
 
         [FindsBy(How = How.XPath, Using = ".//mat-select[@aria-label='Value']")]
         public IWebElement ValueDropdown { get; set; }
+
+        [FindsBy(How = How.XPath, Using = "//mat-select[contains(@class, 'mat-select')]//span[text()='Update Value']")]
+        public IWebElement UpdateValueDropdown { get; set; }
+
+        [FindsBy(How = How.XPath, Using = "//mat-select[contains(@class, 'mat-select')]//span[text()='Update Date']")]
+        public IWebElement UpdateDateDropdown { get; set; }
+
+        [FindsBy(How = How.XPath, Using = "//mat-select[contains(@class, 'mat-select')]//span[text()='Update Owner']")]
+        public IWebElement UpdateOwnerDropdown { get; set; }
+
+        [FindsBy(How = How.XPath, Using = "//input[@aria-label='Team']")]
+        public IWebElement TeamField { get; set; }
+
+        [FindsBy(How = How.XPath, Using = "//input[@aria-label='Owner']")]
+        public IWebElement OwnerField { get; set; }
+
+        [FindsBy(How = How.XPath, Using = "//input[@aria-label='Date']")]
+        public IWebElement DateField { get; set; }
 
         [FindsBy(How = How.XPath, Using = "//input[@placeholder='Request Type']")]
         public IWebElement RequestTypeField { get; set; }
@@ -88,7 +111,7 @@ namespace DashworksTestAutomation.Pages.Evergreen
         [FindsBy(How = How.XPath, Using = ".//span[@class='ag-selection-checkbox']")]
         public IList<IWebElement> SelectRowsCheckboxes { get; set; }
 
-        [FindsBy(How = How.XPath, Using = ".//button[contains(@class, 'btn input-toggle')]")]
+        [FindsBy(How = How.XPath, Using = ".//button[contains(@class, 'btn-close')]")]
         public IWebElement SearchTextboxResetButton { get; set; }
 
         [FindsBy(How = How.XPath,
@@ -101,6 +124,9 @@ namespace DashworksTestAutomation.Pages.Evergreen
         [FindsBy(How = How.XPath, Using = ".//input[@aria-label='Search Table']")]
         public IWebElement TableSearchTextbox { get; set; }
 
+        [FindsBy(How = How.XPath, Using = "//div[contains(@class, 'tools-item')]//button[@aria-label='close']")]
+        public IWebElement CloseToolsPanelButton { get; set; }
+
         [FindsBy(How = How.XPath, Using = ".//button[@aria-label='reload']")]
         public IWebElement RefreshTableButton { get; set; }
 
@@ -112,6 +138,18 @@ namespace DashworksTestAutomation.Pages.Evergreen
 
         [FindsBy(How = How.XPath, Using = ".//div[contains(@class,'submenu-selected-list')]")]
         public IWebElement List { get; set; }
+
+        [FindsBy(How = How.XPath, Using = "//div[@class='inline-tip ng-star-inserted']")]
+        public IWebElement AmberMessageOnActionPanel { get; set; }
+
+        [FindsBy(How = How.XPath, Using = "//button[@class='btn mat-button _mat-animation-noopable']//span[text()='UPDATE']")]
+        public  IWebElement UpdateButtonOnAmberMessage { get; set; }
+
+        [FindsBy(How = How.XPath, Using = "//button/span[text()='UPDATE']")]
+        public IWebElement UpdateButton { get; set; }
+
+        [FindsBy(How = How.XPath, Using = "//button[@class='btn btn-transparent mat-button _mat-animation-noopable']//span[text()='CANCEL']")]
+        public IWebElement CancelButtonOnAmberMessage { get; set; }
 
         #region All Lists dropdown
 
@@ -168,17 +206,35 @@ namespace DashworksTestAutomation.Pages.Evergreen
         [FindsBy(How = How.XPath, Using = "//button[@aria-label='filters']")]
         public IWebElement FilterContainerButton { get; set; }
 
+        [FindsBy(How = How.XPath, Using = "//div[contains(@class, 'sectionAddObjects wrapper-disabled')]")]
+        public IWebElement DisabledObjectsToAddPanel { get; set; }
+
+        [FindsBy(How = How.XPath, Using = "//div[@class='sectionAddObjects']")]
+        public IWebElement ActiveObjectsToAddPanel { get; set; }
+
         [FindsBy(How = How.XPath, Using = ".//span[@class='filter-content']")]
         public IWebElement FilterContainer { get; set; }
 
         [FindsBy(How = How.XPath, Using = ".//span[@class='ag-selection-checkbox']//span[@class='checkbox-unchecked']")]
         public IWebElement UncheckedCheckbox { get; set; }
 
+        [FindsBy(How = How.XPath, Using = ".//span[@class='ag-selection-checkbox']")]
+        public IWebElement SelectOneRowsCheckboxes { get; set; }
+
         [FindsBy(How = How.XPath, Using = ".//div[@class='inline-error ng-star-inserted']")]
         public IWebElement ErrorMessage { get; set; }
 
         [FindsBy(How = How.XPath, Using = ".//div[@class='inline-tip ng-star-inserted']")]
         public IWebElement WarningMessage { get; set; }
+
+        [FindsBy(How = How.XPath, Using = "//div[@class='inline-success ng-star-inserted']")]
+        public IWebElement SuccessMessage { get; set; }
+
+        [FindsBy(How = How.XPath, Using = "//div[@class='context-container ps ps--active-y']//div//div[@class='ps__thumb-y']")]
+        public IWebElement ActionsScrollBar { get; set; }
+
+        [FindsBy(How = How.XPath, Using = "//button[contains(@class, 'close')]")]
+        public IWebElement CloseButtonInSuccessMessage { get; set; }
 
         [FindsBy(How = How.XPath, Using = ".//div[text()='This list does not exist or you do not have access to it']")]
         public IWebElement DoesNotExistListMessage { get; set; }
@@ -203,6 +259,9 @@ namespace DashworksTestAutomation.Pages.Evergreen
 
         [FindsBy(How = How.XPath, Using = ".//div[contains(@class, 'ag-body-container')]/div[@role='row']")]
         public IList<IWebElement> GridRows { get; set; }
+
+        [FindsBy(How = How.XPath, Using = ".//div[contains(@class, 'ag-body-container')]/div[@role='row']/div[@col-id='groupName']")]
+        public IList<IWebElement> GridBucketsNames { get; set; }
 
         [FindsBy(How = How.XPath, Using = "//div[contains(@class, 'list-selected-save')]//span[@class='list-selected-name']")]
         public IWebElement ActiveCustomListEdited { get; set; }
@@ -230,6 +289,9 @@ namespace DashworksTestAutomation.Pages.Evergreen
 
         [FindsBy(How = How.XPath, Using = SelectedColumnSubcategory)]
         public IList<IWebElement> SelectedColumnsSubcategoryList { get; set; }
+
+        [FindsBy(How = How.XPath, Using = OptionOnActionsPanel)]
+        public IList<IWebElement> OptionListOnActionsPanel { get; set; }
 
         #region TableColumns
 
@@ -450,6 +512,7 @@ namespace DashworksTestAutomation.Pages.Evergreen
             Driver.FindElement(byControl).Click();
         }
 
+
         /// <summary>
         /// Get just data from first row
         /// </summary>
@@ -476,7 +539,7 @@ namespace DashworksTestAutomation.Pages.Evergreen
         public IWebElement GetHrefByColumnName(string columnName)
         {
             By byControl =
-                By.XPath($".//div[contains(@class, 'ag-body-container')]/div[1]/div[{GetColumnNumberByName(columnName)}]/span/a[@href]");
+                By.XPath($".//div[contains(@class, 'ag-body-container')]/div[1]/div[{GetColumnNumberByName(columnName)}]/child-cell/div/a");
 
             Driver.WaitForDataLoading();
             Driver.WaitWhileControlIsNotDisplayed(byControl);

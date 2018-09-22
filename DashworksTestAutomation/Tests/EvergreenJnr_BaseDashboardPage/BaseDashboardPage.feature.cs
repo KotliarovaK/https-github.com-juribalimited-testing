@@ -70,6 +70,9 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_BaseDashboardPage
         
         [NUnit.Framework.TestAttribute()]
         [NUnit.Framework.Retry(2)]
+        
+        
+        
         [NUnit.Framework.DescriptionAttribute("EvergreenJnr_AllList_CheckThatColumnHeaderFontWidthConformsToDesign")]
         [NUnit.Framework.CategoryAttribute("Evergreen")]
         [NUnit.Framework.CategoryAttribute("AllLists")]
@@ -98,12 +101,15 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_BaseDashboardPage
             testRunner.When(string.Format("User clicks \"{0}\" on the left-hand menu", listName), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
             testRunner.Then(string.Format("\"{0}\" list should be displayed to the user", listName), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
             testRunner.And("Appropriate header font weight is displayed", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-            testRunner.Then("\"v5.2.8.0\" Application version is displayed", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+            testRunner.Then("\"v5.2.9.0\" Application version is displayed", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
             this.ScenarioCleanup();
         }
         
         [NUnit.Framework.TestAttribute()]
         [NUnit.Framework.Retry(2)]
+        
+        
+        
         [NUnit.Framework.DescriptionAttribute("EvergreenJnr_AllList_CheckDefaultSortOrderOnTheLists")]
         [NUnit.Framework.CategoryAttribute("Evergreen")]
         [NUnit.Framework.CategoryAttribute("AllLists")]
@@ -138,6 +144,9 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_BaseDashboardPage
         
         [NUnit.Framework.TestAttribute()]
         [NUnit.Framework.Retry(2)]
+        
+        
+        
         [NUnit.Framework.DescriptionAttribute("EvergreenJnr_AllLists_CheckThatSaveListFunctionIsAvailableAfterSortingColumns")]
         [NUnit.Framework.CategoryAttribute("Evergreen")]
         [NUnit.Framework.CategoryAttribute("AllLists")]
@@ -188,6 +197,9 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_BaseDashboardPage
         
         [NUnit.Framework.TestAttribute()]
         [NUnit.Framework.Retry(2)]
+        
+        
+        
         [NUnit.Framework.DescriptionAttribute("EvergreenJnr_AllList_CheckThatNoConsoleErrorsAreDisplayedAfterQuicklyNavigateBetw" +
             "eenMainTabs")]
         [NUnit.Framework.CategoryAttribute("Evergreen")]
@@ -217,6 +229,9 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_BaseDashboardPage
         
         [NUnit.Framework.TestAttribute()]
         [NUnit.Framework.Retry(2)]
+        
+        
+        
         [NUnit.Framework.DescriptionAttribute("EvergreenJnr_DevicesList_CheckThatURLsAreUpdatedAfterAddingSortingAndColumns")]
         [NUnit.Framework.CategoryAttribute("Evergreen")]
         [NUnit.Framework.CategoryAttribute("Devices")]
@@ -259,6 +274,9 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_BaseDashboardPage
         
         [NUnit.Framework.TestAttribute()]
         [NUnit.Framework.Retry(2)]
+        
+        
+        
         [NUnit.Framework.DescriptionAttribute("EvergreenJnr_UsersList_CheckThatURLsAreUpdatedAfterAddingFilters")]
         [NUnit.Framework.CategoryAttribute("Evergreen")]
         [NUnit.Framework.CategoryAttribute("Users")]
@@ -307,6 +325,9 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_BaseDashboardPage
         
         [NUnit.Framework.TestAttribute()]
         [NUnit.Framework.Retry(2)]
+        
+        
+        
         [NUnit.Framework.DescriptionAttribute("EvergreenJnr_DevicesLists_CheckThatActionsDetailsColumnsFiltersButtonsAreNotClick" +
             "ableWhenOpenedNotificationsAndUserProfilesDropdownBlocks")]
         [NUnit.Framework.CategoryAttribute("Evergreen")]
@@ -336,6 +357,9 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_BaseDashboardPage
         
         [NUnit.Framework.TestAttribute()]
         [NUnit.Framework.Retry(2)]
+        
+        
+        
         [NUnit.Framework.DescriptionAttribute("EvergreenJnr_AllList_CheckThatEditListFunctionIsAvailableAfterSortingColumns")]
         [NUnit.Framework.CategoryAttribute("Evergreen")]
         [NUnit.Framework.CategoryAttribute("AllLists")]
@@ -415,6 +439,9 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_BaseDashboardPage
         
         [NUnit.Framework.TestAttribute()]
         [NUnit.Framework.Retry(2)]
+        
+        
+        
         [NUnit.Framework.DescriptionAttribute("EvergreenJnr_DevicesList_CheckThatToolTipIsDisplayedWithCreateProjectButtonFromAn" +
             "UnsavedList")]
         [NUnit.Framework.CategoryAttribute("Evergreen")]
@@ -455,6 +482,9 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_BaseDashboardPage
         
         [NUnit.Framework.TestAttribute()]
         [NUnit.Framework.Retry(2)]
+        
+        
+        
         [NUnit.Framework.DescriptionAttribute("EvergreenJnr_AllLists_CheckThatEmptyLinkIsDisplayedIfThereAreNoData")]
         [NUnit.Framework.CategoryAttribute("Evergreen")]
         [NUnit.Framework.CategoryAttribute("AllLists")]

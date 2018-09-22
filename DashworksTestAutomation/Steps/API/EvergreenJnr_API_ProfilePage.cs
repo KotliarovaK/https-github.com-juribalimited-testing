@@ -1,9 +1,9 @@
 ﻿using System;
 using System.Net;
-using System.Text.RegularExpressions;
 using DashworksTestAutomation.DTO.RuntimeVariables;
+using DashworksTestAutomation.Extensions;
+using DashworksTestAutomation.Pages.Evergreen;
 using DashworksTestAutomation.Providers;
-using DashworksTestAutomation.Utils;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Linq;
 using NUnit.Framework;
@@ -54,7 +54,8 @@ namespace DashworksTestAutomation.Steps.API
         [Then(@"page Size is ""(.*)"" on ""(.*)"" page")]
         public void ThenPageSizeIsOnPage(int pageSize, string pageName)
         {
-          
+            var lastNetworkRequest = JsonConvert.DeserializeObject<JArray>(_driver.GetNetworkLogByJavascript()).Last;
+            Assert.True(lastNetworkRequest["name"].ToString().Contains("?$top=2500"), "page Size is not 2500");
         }
     }
 }

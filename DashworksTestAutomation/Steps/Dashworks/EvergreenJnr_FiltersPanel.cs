@@ -47,6 +47,36 @@ namespace DashworksTestAutomation.Steps.Dashworks
             Logger.Write("Add New button was clicked");
         }
 
+        [When(@"User clicks Add And button on the Filter panel")]
+        public void WhenUserClicksAddAndButtonOnTheFilterPanel()
+        {
+            var menu = _driver.NowAt<FiltersElement>();
+            _driver.WaitWhileControlIsNotDisplayed<FiltersElement>(() => menu.AddNewFilterButton);
+            menu.AddNewFilterButton.Click();
+            Logger.Write("Add And button was clicked");
+        }
+
+        [Then(@"Add And button is displayed on the Filter panel")]
+        public void ThenAddAndButtonIsDisplayedOnTheFilterPanel()
+        {
+            var button = _driver.NowAt<FiltersElement>();
+            Assert.IsTrue(button.AddAndFilterButton.Displayed(), "Add And button is not displayed");
+        }
+
+        [Then(@"User sees ""(.*)"" section expanded by default in Filters panel")]
+        public void ThenUserSeesSectionExpandedByDefaultInFilterPanel(string expectedSection)
+        {
+            var page = _driver.NowAt<FiltersElement>();
+            Assert.That(page.GetExpandedSection(), Is.EqualTo(expectedSection), "Wrong section expanded");
+        }
+
+        [Then(@"Add New button is displayed on the Filter panel")]
+        public void ThenAddNewButtonIsDisplayedOnTheFilterPanel()
+        {
+            var button = _driver.NowAt<FiltersElement>();
+            Assert.IsTrue(button.AddNewFilterButton.Displayed(), "Add New button is not displayed");
+        }
+
         [When(@"user select ""(.*)"" filter")]
         public void WhenUserSelectFilter(string filterName)
         {
@@ -76,6 +106,13 @@ namespace DashworksTestAutomation.Steps.Dashworks
             Assert.IsTrue(filterElement.GetOpenedFilter(filterName).Displayed(), "Setting section for selected filter is not loaded");
         }
 
+        [When(@"User clicks in search field for selected Association filter")]
+        public void WhenUserClicksInSearchFieldForSelectedAssociationFilter()
+        {
+            var filterElement = _driver.NowAt<FiltersElement>();
+            filterElement.FilterSearchField.Click();
+        }
+
         [When(@"User enters ""(.*)"" text in Search field at Filters Panel")]
         public void WhenUserEntersTextInSearchFieldAtFiltersPanel(string searchedText)
         {
@@ -98,6 +135,13 @@ namespace DashworksTestAutomation.Steps.Dashworks
             _driver.WaitWhileControlIsNotDisplayed<FiltersElement>(() => filterElement.LookupFilterSearchTextbox);
             filterElement.LookupFilterSearchTextbox.Clear();
             filterElement.LookupFilterSearchTextbox.SendKeys(searchedText);
+        }
+
+        [Then(@"""(.*)"" value is displayed for selected Lookup Filter")]
+        public void ThenValueIsDisplayedForSelectedLookupFilter(string value)
+        {
+            var filterElement = _driver.NowAt<FiltersElement>();
+            Assert.IsTrue(filterElement.GetValueForLookupFilter(value).Displayed(), $"{value} is not displayed for that filter");
         }
 
         [When(@"User clicks checkbox at selected Lookup Filter")]
@@ -148,6 +192,34 @@ namespace DashworksTestAutomation.Steps.Dashworks
             filterElement.AssociationSearchTextbox.Click();
             filterElement.AssociationSearchTextbox.SendKeys(checkboxName);
             filterElement.GetAssociationCheckbox(checkboxName);
+            filterElement.AssociationSearchTextbox.Clear();
+        }
+
+        [Then(@"only positive Associations is displayed")]
+        public void ThenOnlyPositiveAssociationsIsDisplayed()
+        {
+            var filterElement = _driver.NowAt<FiltersElement>();
+            filterElement.AssociationSearchTextbox.Click();
+            filterElement.CloseAssociationSearchButton.Click();
+            filterElement.AssociationSearchTextbox.Click();
+            Assert.AreEqual(5, filterElement.AssociationCheckbox.Count);
+            foreach (var element in filterElement.Association)
+            {
+                StringAssert.DoesNotContain("not", element.Text, "Negative association is displayed");
+            }
+        }
+
+        [Then(@"only negative Associations is displayed")]
+        public void ThenOnlyNegativeAssociationsIsDisplayed()
+        {
+            var filterElement = _driver.NowAt<FiltersElement>();
+            filterElement.CloseAssociationSearchButton.Click();
+            filterElement.AssociationSearchTextbox.Click();
+            Assert.AreEqual(5, filterElement.AssociationCheckbox.Count);
+            foreach (var element in filterElement.Association)
+            {
+                StringAssert.Contains("not", element.Text.ToLower(), "Positive association is displayed");
+            }
         }
 
         [Then(@"search values in Association section working by specific search criteria")]
@@ -167,6 +239,15 @@ namespace DashworksTestAutomation.Steps.Dashworks
             var filterElement = _driver.NowAt<FiltersElement>();
             Assert.IsFalse(filterElement.CheckFilterAvailability(filterName),
                 $"{filterName} is available in the search");
+        }
+
+        [Then(@"""(.*)"" filter is presented in the filters list")]
+        public void ThenFilterIsPresentedInTheFiltersList(string filterName)
+        {
+            var filterElement = _driver.NowAt<FiltersElement>();
+            _driver.WaitForDataLoading();
+            Assert.IsTrue(filterElement.CheckFilterAvailability(filterName),
+                $"{filterName} is not available in the search");
         }
 
         [When(@"User select ""(.*)"" Operator value")]
@@ -284,6 +365,17 @@ namespace DashworksTestAutomation.Steps.Dashworks
             filtersNames.SaveButton.Click();
         }
 
+        [When(@"User add ""(.*)"" filter where type is ""(.*)"" with following Value and Association:")]
+        public void WhenUserAddFilterWhereTypeIsWithFollowingValueAndAssociation(string filterName,
+            string operatorValue, Table table)
+        {
+            var filtersNames = _driver.NowAt<FiltersElement>();
+            filtersNames.AddFilter(filterName);
+            var filter = new ValueAssociationFilter(_driver, operatorValue, table);
+            filter.Do();
+            _driver.WaitForDataLoading();
+        }
+
         [When(@"User add ""(.*)"" filter where type is ""(.*)"" with Selected Value and following Association:")]
         public void WhenUserAddFilterWhereTypeIsWithSelectedValueAndFollowingAssociation(string filterName,
             string operatorValue, Table table)
@@ -360,17 +452,6 @@ namespace DashworksTestAutomation.Steps.Dashworks
             filtersNames.AddAndFilter(filterName);
             var filter = new NumberAssociationFilter(_driver, operatorValue, table);
             filter.Do();
-        }
-
-        [When(@"User add ""(.*)"" filter where type is ""(.*)"" with following Value and Association:")]
-        public void WhenUserAddFilterWhereTypeIsWithFollowingValueAndAssociation(string filterName,
-            string operatorValue, Table table)
-        {
-            var filtersNames = _driver.NowAt<FiltersElement>();
-            filtersNames.AddFilter(filterName);
-            var filter = new ValueAssociationFilter(_driver, operatorValue, table);
-            filter.Do();
-            _driver.WaitForDataLoading();
         }
 
         [When(@"User add ""(.*)"" filter where type is ""(.*)"" with following Number and Association:")]
@@ -452,6 +533,15 @@ namespace DashworksTestAutomation.Steps.Dashworks
             filter.Do();
         }
 
+        [When(@"User selects And ""(.*)"" filter where type is ""(.*)"" with added column and Lookup option:")]
+        public void WhenUserSelectsAndFilterWhereTypeIsWithAddedColumnAndLookupOption(string filterName, string operatorValue, Table table)
+        {
+            var filtersNames = _driver.NowAt<FiltersElement>();
+            filtersNames.AddAndFilter(filterName);
+            var filter = new LookupFilterTableWithoutSave(_driver, operatorValue, true, table);
+            filter.Do();
+        }
+
         [When(@"User have created ""(.*)"" Lookup filter with column and ""(.*)"" option")]
         public void WhenUserHaveCreatedLookupFilterWithColumnAndOption(string operatorValue, string filterValue)
         {
@@ -527,11 +617,42 @@ namespace DashworksTestAutomation.Steps.Dashworks
             filterElement.RemoveFilterButton.Click();
         }
 
+        [When(@"User deletes filter and agGrid does not reload")]
+        public void WhenUserDeletesFilterAndAgGridDoesNotReload()
+        {
+            var filterElement = _driver.NowAt<FiltersElement>();
+            filterElement.RemoveFilterButton.Click();
+            Assert.IsTrue(filterElement.ResultsOnPageCount.Displayed(), "agGrid is reload");
+        }
+
+        [When(@"User cancels filter and agGrid does not reload")]
+        public void WhenUserCancelsFilterAndAgGridDoesNotReload()
+        {
+            var filterElement = _driver.NowAt<FiltersElement>();
+            filterElement.CancelButton.Click();
+            Assert.IsTrue(filterElement.ResultsOnPageCount.Displayed(), "agGrid is reload");
+        }
+
         [When(@"User click Edit button for ""(.*)"" filter")]
         public void WhenUserClickEditButtonForFilter(string filterName)
         {
             var filterElement = _driver.NowAt<FiltersElement>();
+            _driver.WaitForDataLoading();
             filterElement.GetEditFilterButton(filterName).Click();
+        }
+
+        [When(@"User navigate to Edit button for ""(.*)"" filter")]
+        public void WhenUserNavigateToEditButtonForFilter(string filterName)
+        {
+            var filterElement = _driver.NowAt<FiltersElement>();
+            _driver.MouseHover(filterElement.GetEditFilterButton(filterName));
+        }
+
+        [Then(@"Edit button is displayed correctly for ""(.*)"" filter")]
+        public void ThenEditButtonIsDisplayedCorrectlyForFilter(string filterName)
+        {
+            var filterElement = _driver.NowAt<FiltersElement>();
+            Assert.IsTrue(filterElement.GetEditFilterButton(filterName).Displayed(), $"Edit button is not displayed for '{filterName}' filter");
         }
 
         [Then(@"""(.*)"" value is displayed in the filter info")]
@@ -539,6 +660,13 @@ namespace DashworksTestAutomation.Steps.Dashworks
         {
             var filterElement = _driver.NowAt<FiltersElement>();
             filterElement.GetFilterValue(value);
+        }
+
+        [Then(@"User Description field is not displayed")]
+        public void ThenUserDescriptionFieldIsNotDisplayed()
+        {
+            var filterElement = _driver.NowAt<FiltersElement>();
+            Assert.IsFalse(filterElement.UserDescriptionField.Displayed(), "User Description field is visible");
         }
 
         [When(@"User deletes the selected lookup filter ""(.*)"" value")]
@@ -563,13 +691,6 @@ namespace DashworksTestAutomation.Steps.Dashworks
             var filterElement = _driver.NowAt<FiltersElement>();
             Assert.IsTrue(filterElement.ListNameForSavedListFilter(listName),
                 $"{listName} is not displayed for Saved List filter");
-        }
-
-        [When(@"User navigate to Edit button for ""(.*)"" filter")]
-        public void WhenUserNavigateToEditButtonForFilter(string filterName)
-        {
-            var filterElement = _driver.NowAt<FiltersElement>();
-            _driver.MouseHover(filterElement.GetEditFilterButton(filterName));
         }
 
         [Then(@"tooltip is displayed with ""(.*)"" text for edit filter button")]
@@ -878,6 +999,13 @@ namespace DashworksTestAutomation.Steps.Dashworks
 
         #region Sections
 
+        [Then(@"""(.*)"" with ""(.*)""category is displayed on Filters panel")]
+        public void ThenWithCategoryIsDisplayedOnFiltersPanel(string filterName, string categoryCount)
+        {
+            var page = _driver.NowAt<FiltersElement>();
+            Assert.IsTrue(page.GetFilterCategory(filterName, categoryCount).Displayed(), "Incorrect subcategories count for selected category");
+        }
+
         [Then(@"""(.*)"" section is not displayed in the Filter panel")]
         public void ThenSectionIsNotDisplayedInTheFilterPanel(string categoryName)
         {
@@ -890,6 +1018,7 @@ namespace DashworksTestAutomation.Steps.Dashworks
         public void ThenMinimizeButtonsAreDisplayedForAllCategoryInFiltersPanel()
         {
             var filterElement = _driver.NowAt<FiltersElement>();
+            _driver.WaitForDataLoading();
             var groupCount = filterElement.GroupTitle.Count;
             Assert.AreEqual(groupCount, filterElement.MinimizeGroupButton.Count, "Minimize buttons are not displayed");
         }
@@ -898,6 +1027,7 @@ namespace DashworksTestAutomation.Steps.Dashworks
         public void ThenMaximizeButtonsAreDisplayedForAllCategoryInFiltersPanel()
         {
             var filterElement = _driver.NowAt<FiltersElement>();
+            _driver.WaitForDataLoading();
             var groupCount = filterElement.GroupTitle.Count - 1;
             Assert.AreEqual(groupCount, filterElement.MaximizeGroupButton.Count, "Maximize buttons are not displayed");
         }

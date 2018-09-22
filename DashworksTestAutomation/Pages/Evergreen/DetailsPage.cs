@@ -104,6 +104,16 @@ namespace DashworksTestAutomation.Pages.Evergreen
                 By.XPath($".//div[@class='ng-star-inserted']//td[@class='fld-label']//span[text()='{fieldName}']"));
         }
 
+        public IWebElement GetCellByTextFromKeyValueGrid(string text)
+        {
+            return Driver.FindElement(By.XPath($".//tbody/*/td/*/span[text()='{text}']"));
+        }
+
+        public string GetSelectedText()
+        {
+            return ((IJavaScriptExecutor)Driver).ExecuteScript("return window.getSelection().toString()").ToString();
+        }
+
         public void ExpandAllSections()
         {
             Driver.WaitWhileControlIsNotDisplayed(
@@ -216,7 +226,7 @@ namespace DashworksTestAutomation.Pages.Evergreen
         public string GetHrefByColumnName(string columnName)
         {
             By byControl =
-                By.XPath($".//div[contains(@class, 'ag-body-container')]/div[1]/div[{GetColumnNumberByName(columnName)}]/span/div/a[@href]");
+                By.XPath($".//div[contains(@class, 'ag-body-container')]/div[1]/div[{GetColumnNumberByName(columnName)}]/child-cell//a");
 
             Driver.WaitForDataLoading();
             Driver.WaitWhileControlIsNotDisplayed(byControl);

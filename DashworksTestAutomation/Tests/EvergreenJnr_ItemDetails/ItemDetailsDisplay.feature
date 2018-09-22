@@ -33,7 +33,7 @@ Scenario: EvergreenJnr_AllLists_CheckThatGroupIconsAreDisplayedForGroupDetailsPa
 	Then User clicks on "NL00G001" search result
 	And Group Icon for Group Details page is displayed
 
-@Evergreen @AllLists @EvergreenJnr_ItemDetails @ItemDetailsDisplay @DAS11732 @DAS12235
+@Evergreen @AllLists @EvergreenJnr_ItemDetails @ItemDetailsDisplay @DAS11732 @DAS12235 @DAS13409
 Scenario Outline: EvergreenJnr_AllLists_CheckThatDataIsDisplayedAfterAddingColumnsForExpandedSections
 	When User clicks "<PageName>" on the left-hand menu
 	Then "<PageName>" list should be displayed to the user
@@ -56,8 +56,8 @@ Examples:
 	| PageName     | SearchTerm                                              | ItemName      | TabName      | ColumnName  | CheckboxName        | NewColumnName       |
 	| Devices      | 30BGMTLBM9PTW5                                          | Hostname      | Applications | Application | Key                 | Key                 |
 	| Users        | svc_dashworks                                           | Username      | Groups       | Group       | Key                 | Key                 |
-	| Applications | Microsoft Office Visio 2000 Solutions - Custom Patterns | Application   | Projects     | Project     | Object ID           | Object ID           |
-	| Applications | Microsoft Office Visio 2000 Solutions - Custom Patterns | Application   | Projects     | Project     | Object Key          | Object Key          |
+	#| Applications | Microsoft Office Visio 2000 Solutions - Custom Patterns | Application   | Projects     | Project     | Object ID           | Object ID           |
+	#| Applications | Microsoft Office Visio 2000 Solutions - Custom Patterns | Application   | Projects     | Project     | Object Key          | Object Key          |
 	| Mailboxes    | aaron.u.flores@dwlabs.local                             | Email Address | Users        | Domain      | Key                 | Key                 |
 	| Mailboxes    | aaron.u.flores@dwlabs.local                             | Email Address | Users        | Domain      | Evergreen Object ID | Evergreen Object ID |
 
@@ -279,7 +279,7 @@ Scenario Outline: EvergreenJnr_AllLists_CheckRenamedColumnAndStringFilterForSoft
 Examples:
 	| PageName | SelectedName   | ColumnName | CountRows |
 	| Devices  | 001BAQXT6JWFPI | Hostname   | 2         |
-	| Users    | ZZZ588323      | Username   | 1         |
+	| Users    | EKS951231      | Username   | 4         |
 
 @Evergreen @Mailboxes @EvergreenJnr_ItemDetails @ItemDetailsDisplay @DAS11667 @DAS12321 @DAS11921
 Scenario: EvergreenJnr_MailboxesList_CheckThatNoConsoleErrorsWhenViewingMailboxDetails
@@ -549,7 +549,7 @@ Scenario: EvergreenJnr_MailboxesList_CheckThatMailboxPermissionsAndFolderPermiss
 	Then Content is present in the table on the Details Page
 	And "14" rows found label displays on Details Page 
 
-@Evergreen @AllLists @EvergreenJnr_ItemDetails @ItemDetailsDisplay @DAS12210 @DAS12738 @DAS12371
+@Evergreen @AllLists @EvergreenJnr_ItemDetails @ItemDetailsDisplay @DAS12210 @DAS12738 @DAS12371 @DAS13409 @Not_Run
 Scenario Outline: EvergreenJnr_AllLists_CheckThatDropdownListsInTheProjectDetailsFiltersAreDisplayedCorrectlyForCollapsedSections
 	When User clicks "<PageName>" on the left-hand menu
 	Then "<PageName>" list should be displayed to the user
@@ -580,7 +580,7 @@ Examples:
 	| Users    | Loya\, Dan.Employees.Birmingham.UK.bclabs.local | Username   | Projects | User Projects         | 1         |
 	| Users    | Loya\, Dan.Employees.Birmingham.UK.bclabs.local | Username   | Projects | Mailbox Projects      | 1         |
 
-@Evergreen @AllLists @EvergreenJnr_ItemDetails @ItemDetailsDisplay @DAS12210 @DAS12738 @DAS12371
+@Evergreen @AllLists @EvergreenJnr_ItemDetails @ItemDetailsDisplay @DAS12210 @DAS12738 @DAS12371 @DAS13409 @Not_Run
 Scenario Outline: EvergreenJnr_AllLists_CheckThatDropdownListsInTheProjectDetailsFiltersAreDisplayedCorrectlyForExpandedSections
 	When User clicks "<PageName>" on the left-hand menu
 	Then "<PageName>" list should be displayed to the user
@@ -599,7 +599,7 @@ Examples:
 	| Applications | "WPF/E" (codename) Community Technology Preview (Feb 2007) | Application   | Projects |
 	| Mailboxes    | 040698EE82354C17B60@bclabs.local                           | Email Address | Projects |
 
-@Evergreen @Mailboxes @EvergreenJnr_ItemDetails @ItemDetailsDisplay @DAS12210 @DAS12738 @DAS12371 @DAS12765 @DAS12321
+@Evergreen @Mailboxes @EvergreenJnr_ItemDetails @ItemDetailsDisplay @DAS12210 @DAS12738 @DAS12371 @DAS12765 @DAS12321 @DAS13409 @Not_Run
 Scenario: EvergreenJnr_MailboxesList_CheckThatDropdownListsInTheProjectDetailsFiltersAreDisplayedCorrectly
 	When User clicks "Mailboxes" on the left-hand menu
 	Then "Mailboxes" list should be displayed to the user
@@ -666,6 +666,34 @@ Scenario: EvergreenJnr_DevicesList_CheckThatLinksInDeviceDetailsAreRedirectedToT
 	And User clicks "Tricia G. Huang" link on the Details Page
 	Then Details object page is displayed to the user
 
+@Evergreen @ALlLists @EvergreenJnr_ItemDetails @ItemDetailsDisplay @DAS13341
+Scenario Outline: EvergreenJnr_AllLists_CheckThatTextInKeyValueGridsIsSelectableOnDetailsPage
+	When User clicks "<PageName>" on the left-hand menu
+	And User perform search by "<SearchTerm>"
+	And User click content from "<ColumnName>" column
+	And User navigates to the "<TabName>" tab
+	And User selects "<KeyToBeSelected>" text from key value grid on the Details Page
+	Then "<KeyToBeSelected>" text selected from key value grid on the Details Page
+	When User selects "<ValueToBeSelected>" text from key value grid on the Details Page
+	Then "<ValueToBeSelected>" text selected from key value grid on the Details Page
+
+Examples:
+	| PageName     | SearchTerm                       | ColumnName    | TabName       | KeyToBeSelected | ValueToBeSelected   |
+	| Devices      | 02C80G8RFTPA9E                   | Hostname      | Specification | Manufacturer    | FES0798481167       |
+	| Devices      | 05PFM2OWVCSCZ1                   | Hostname      | Details       | Hostname        | 05PFM2OWVCSCZ1      |
+	| Users        | 03714167684E45F7A8F              | Username      | Details       | Username        | 03714167684E45F7A8F |
+	| Applications | Adobe Acrobat Reader 5.0         | Application   | Details       | Vendor          | Adobe               |
+	| Mailboxes    | 06D7AE4F161F4A3AA7F@bclabs.local | Email Address | Details       | Alias           | 06D7AE4F161F4A3AA7F |
+
+@Evergreen @AllLists @EvergreenJnr_ItemDetails @ItemDetailsDisplay @DAS13341
+Scenario: EvergreenJnr_AllLists_CheckThatTextInKeyValueGridsIsSelectableOnGroupDetailsPage
+	When User type "NL00G001" in Global Search Field
+	Then User clicks on "NL00G001" search result
+	When User selects "Description" text from key value grid on the Details Page
+	Then "Description" text selected from key value grid on the Details Page
+	When User selects "Unknown" text from key value grid on the Details Page
+	Then "Unknown" text selected from key value grid on the Details Page
+
 @Evergreen @Mailboxes @EvergreenJnr_ItemDetails @ItemDetailsDisplay @DAS12690 @DAS12321
 Scenario: EvergreenJnr_MailboxesList_CheckThatLinksInMailboxDetailsAreRedirectedToTheRelevantUserDetailsPage
 	When User clicks "Mailboxes" on the left-hand menu
@@ -677,7 +705,7 @@ Scenario: EvergreenJnr_MailboxesList_CheckThatLinksInMailboxDetailsAreRedirected
 	And User clicks "hartmajt" link on the Details Page
 	Then Details object page is displayed to the user
 
-@Evergreen @ALlLists @EvergreenJnr_ItemDetails @ItemDetailsDisplay @DAS12765 @DAS12860
+@Evergreen @ALlLists @EvergreenJnr_ItemDetails @ItemDetailsDisplay @DAS12765 @DAS12860 @Not_Run
 Scenario Outline: EvergreenJnr_AllLists_CheckThatBucketColumnIsDisplayedOnDetailsProjectsPages
 	When User clicks "<PageName>" on the left-hand menu
 	And User perform search by "<SearchTerm>"
@@ -720,13 +748,14 @@ Scenario Outline: EvergreenJnr_AllLists_CheckThatHyperlinkForKeyColumnsIsRedirec
 	| <Column>   |
 	When User click content from "<Column>" column
 	Then Details object page is displayed to the user
+	And URL is "<URLpart>"
 
 Examples:
-	| PageName     | Column          |
-	| Devices      | Device Key      |
-	| Users        | User Key        |
-	| Applications | Application Key |
-	| Mailboxes    | Mailbox Key     |
+	| PageName     | Column          | URLpart                      |
+	| Devices      | Device Key      | evergreen/#/device/9141      |
+	| Users        | User Key        | evergreen/#/user/71622       |
+	| Applications | Application Key | evergreen/#/application/4249 |
+	| Mailboxes    | Mailbox Key     | evergreen/#/mailbox/49258    |
 
 @Evergreen @Applications @EvergreenJnr_ItemDetails @ItemDetailsDisplay @DAS12805
 Scenario: EvergreenJnr_ApplicationsList_CheckThatUsersAndDevicesDistributionListsDoNotIncludeUnknownValues
@@ -754,7 +783,7 @@ Scenario: EvergreenJnr_ApplicationsList_CheckThatUsersAndDevicesDistributionList
 	Then Content is present in the table on the Details Page
 	And Rows do not have unknown values
 
-@Evergreen @AdminPage @AllLists @EvergreenJnr_ItemDetails @ItemDetailsDisplay @DAS12883 @Not_Run
+@Evergreen @AdminPage @AllLists @EvergreenJnr_ItemDetails @ItemDetailsDisplay @DAS12883 @DAS13478 @Not_Run
 Scenario: EvergreenJnr_AllLists_CheckThatPopupIsBiggerAndIsShownProperlyBucketIsChangedSuccessfully
 	When User clicks Admin on the left-hand menu
 	Then Admin page should be displayed to the user
@@ -768,9 +797,10 @@ Scenario: EvergreenJnr_AllLists_CheckThatPopupIsBiggerAndIsShownProperlyBucketIs
 	Then Success message is displayed and contains "The bucket has been created" text
 	When User clicks "Devices" on the left-hand menu
 	Then "Devices" list should be displayed to the user
-	When User perform search by "05NITEIIH3CGB55"
+	When User perform search by "001BAQXT6JWFPI"
 	And User click content from "Hostname" column
 	Then Details object page is displayed to the user
+	When User clicks refresh button in the browser
 	When User navigates to the "Projects" tab
 	When User clicks on Evergreen Bucket link
 	Then Change Bucket pop-up is opened
@@ -783,10 +813,10 @@ Scenario: EvergreenJnr_AllLists_CheckThatPopupIsBiggerAndIsShownProperlyBucketIs
 	Then Bucket pop-up has standard size on the Details Page
 	When User clicks "CHANGE" button on Change Bucket window
 	Then Evergreen Bucket link "Bucket12883" is displayed
-	Then There are no errors in the browser console
+	#Then There are no errors in the browser console
 	When User clicks "Users" on the left-hand menu
 	Then "Users" list should be displayed to the user
-	When User perform search by "01C44C91EB7E4BE88F6"
+	When User perform search by "003F5D8E1A844B1FAA5"
 	And User click content from "Username" column
 	Then Details object page is displayed to the user
 	When User navigates to the "Projects" tab
@@ -801,10 +831,10 @@ Scenario: EvergreenJnr_AllLists_CheckThatPopupIsBiggerAndIsShownProperlyBucketIs
 	Then Bucket pop-up has standard size on the Details Page
 	When User clicks "CHANGE" button on Change Bucket window
 	Then Evergreen Bucket link "Bucket12883" is displayed
-	Then There are no errors in the browser console
+	#Then There are no errors in the browser console
 	When User clicks "Mailboxes" on the left-hand menu
 	Then "Mailboxes" list should be displayed to the user
-	When User perform search by "05A694C737C045C2B4F@bclabs.local"
+	When User perform search by "00BDBAEA57334C7C8F4@bclabs.local"
 	And User click content from "Email Address" column
 	Then Details object page is displayed to the user
 	When User navigates to the "Projects" tab
@@ -819,7 +849,7 @@ Scenario: EvergreenJnr_AllLists_CheckThatPopupIsBiggerAndIsShownProperlyBucketIs
 	Then Bucket pop-up has standard size on the Details Page
 	When User clicks "CHANGE" button on Change Bucket window
 	Then Evergreen Bucket link "Bucket12883" is displayed
-	Then There are no errors in the browser console
+	#Then There are no errors in the browser console
 	And Delete "Bucket12883" Bucket in the Administration
 
 @Evergreen @Applications @AllLists @EvergreenJnr_ItemDetails @ItemDetailsDisplay @DAS13180

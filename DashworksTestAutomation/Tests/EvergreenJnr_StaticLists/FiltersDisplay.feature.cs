@@ -79,6 +79,7 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_StaticLists
         [NUnit.Framework.CategoryAttribute("DAS10993")]
         [NUnit.Framework.CategoryAttribute("DAS12152")]
         [NUnit.Framework.CategoryAttribute("DAS12351")]
+        [NUnit.Framework.CategoryAttribute("DAS13389")]
         [NUnit.Framework.CategoryAttribute("Delete_Newly_Created_List")]
         public virtual void EvergreenJnr_DevicesList_CheckThatDynamicFiltersAreClearedForStaticListsWhenOpenedAfterDynamicLists()
         {
@@ -91,6 +92,7 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_StaticLists
                         "DAS10993",
                         "DAS12152",
                         "DAS12351",
+                        "DAS13389",
                         "Delete_Newly_Created_List"});
             this.ScenarioSetup(scenarioInfo);
             this.FeatureBackground();
@@ -124,7 +126,8 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_StaticLists
             testRunner.Then("\"17,194\" rows are displayed in the agGrid", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
             testRunner.When("User navigates to the \"Static List TestName14\" list", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
             testRunner.Then("\"2\" rows are displayed in the agGrid", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-            testRunner.Then("Filters Button is disabled", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+            testRunner.And("Filters Button is disabled", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+            testRunner.And("Filter button on AGgrid is disabled", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
             this.ScenarioCleanup();
         }
         

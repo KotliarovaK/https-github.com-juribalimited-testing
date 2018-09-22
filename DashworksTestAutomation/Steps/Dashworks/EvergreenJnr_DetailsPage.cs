@@ -206,6 +206,22 @@ namespace DashworksTestAutomation.Steps.Dashworks
             filterElement.ResetFiltersButton.Click();
         }
 
+        [When(@"User selects ""(.*)"" text from key value grid on the Details Page")]
+        public void WhenUserSelectsFollowingTextFromKeyValueGridOnTheDetailsPage(string textToBeSelected)
+        {
+            var page = _driver.NowAt<DetailsPage>();
+
+            page.Actions.Click(page.GetCellByTextFromKeyValueGrid(textToBeSelected)).DoubleClick().Build().Perform();
+        }
+
+        [Then(@"""(.*)"" text selected from key value grid on the Details Page")]
+        public void ThenTextSelectedFromKeyValueGridOnTheDetailsPage(string textSelected)
+        {
+            var page = _driver.NowAt<DetailsPage>();
+
+            Assert.That(page.GetSelectedText(), Is.EqualTo(textSelected));
+        }
+
         [Then(@"following Values are displayed in the filter on the Details Page")]
         public void ThenFollowingValuesAreDisplayedInTheFilterOnTheDetailsPage(Table table)
         {
@@ -339,7 +355,7 @@ namespace DashworksTestAutomation.Steps.Dashworks
         public void ThenBucketPop_UpHasStandardSizeOnTheDetailsPage()
         {
             var detailsPage = _driver.NowAt<DetailsPage>();
-            Assert.AreEqual("1536px", detailsPage.GetInstalledBucketWindowWidth().Split('.').First());
+            Assert.AreEqual("1638", detailsPage.GetInstalledBucketWindowWidth().Split('.').First());
         }
 
         [When(@"User enters ""(.*)"" text in the Filter field")]
@@ -502,8 +518,10 @@ namespace DashworksTestAutomation.Steps.Dashworks
         {
             var detailsPage = _driver.NowAt<DetailsPage>();
             foreach (var element in detailsPage.TableRowDetails)
+            {
                 StringAssert.DoesNotContain("Unknown", element.Text,
                     "Unknown text is displayed");
+            }
         }
 
         [Then(@"Rows do not have unknown values")]

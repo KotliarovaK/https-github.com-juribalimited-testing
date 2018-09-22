@@ -97,7 +97,6 @@ namespace DashworksTestAutomation.Pages.Evergreen
 
             Driver.WaitWhileControlIsNotDisplayed(By.XPath(selector));
             Driver.FindElement(By.XPath(selector)).Click();
-
             Driver.WaitForDataLoading();
         }
 
