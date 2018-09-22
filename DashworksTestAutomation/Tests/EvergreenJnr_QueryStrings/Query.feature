@@ -85,7 +85,7 @@ Runs Evergreen URL query strings for the Applications on Devices List.
 	| Apps On Devices          | evergreen/#/devices?$select=hostname,chassisCategory,oSCategory,ownerDisplayName&$filter=(application%20EQUALS%20('451')%20WHERE%20(Used%20on%20device,Entitled%20to%20device,Installed%20on%20device,Used%20by%20device's%20owner,Entitled%20to%20device's%20owner)) |
 	Then agGrid Main Object List is returned with data
 
-@Evergreen @Users @Mailboxes @Devices @Applications @EvergreenJnr_QueryStrings @TableSorting @DAS10598
+@Evergreen @Users @Mailboxes @Devices @Applications @EvergreenJnr_QueryStrings @Query @TableSorting @DAS10598
 Scenario: EvergreenJnr_QueryString_AllListsSortByKeys
 Runs Evergreen URL query strings which include being sorted by object key columns.
 	When Evergreen QueryStringURL is entered for Simple QueryType
@@ -96,7 +96,7 @@ Runs Evergreen URL query strings which include being sorted by object key column
 	| Sort by mailbox key             | evergreen/#/mailboxes?$select=principalEmailAddress,mailboxPlatform,serverName,mailboxType,ownerDisplayName,mailboxKey&$orderby=mailboxKey%20asc                                                                                                                                                                                                                                                                                                                     |
 	Then agGrid Main Object List is returned with data
 
-@Evergreen @Devices @EvergreenJnr_QueryStrings @DAS13179
+@Evergreen @Devices @EvergreenJnr_QueryStrings @Query @DAS13179
 Scenario Outline: EvergreenJnr_QueryString_AdvancedFilterRowCountCheckForDeviceList
 	When Evergreen QueryStringURL is entered for Simple QueryType and appropriate RowCount is displayed
 	| QueryType    | QueryStringURL | RowCount |
@@ -127,7 +127,7 @@ Examples:
 	#| Application Name                                | evergreen/#/devices?$filter=(applicationName%20IS%20NOT%20EMPTY%20()%20WHERE%20(niod))                                                                                                                                                        | 5,141    |
 	#| Application Owner (App Custom Fields)           | evergreen/#/devices?$filter=(applicationCustomField_80%20IS%20NOT%20EMPTY%20()%20WHERE%20(niod))&$select=hostname,chassisCategory,oSCategory,ownerDisplayName,deviceOwnerCustomField_79                                                       | 12,076   |
 
-@Evergreen @Devices @EvergreenJnr_QueryStrings @DAS13179 @Delete_Newly_Created_List
+@Evergreen @Devices @EvergreenJnr_QueryStrings @Query @DAS13179 @Delete_Newly_Created_List
 Scenario Outline: EvergreenJnr_QueryString_AdvancedFilterRowCountAndFilterTextCheckForDeviceList
 	When Evergreen QueryStringURL is entered for Simple QueryType and appropriate RowCount is displayed
 	| QueryType    | QueryStringURL | RowCount |
@@ -155,14 +155,45 @@ Examples:
 	| Application Owner (App Custom Fields)                                                                   | evergreen/#/devices?$filter=(applicationCustomField_80%20BEGINS%20WITH%20('app')%20WHERE%20(iod%2Cubdo))                                                                                                                     | 1,003  | Application Owner begins with app installed on device; or used by device's owner                                                                                                                                                                  |
 	| General information field 5 (App Custom Fields)                                                         | evergreen/#/devices?$filter=(applicationCustomField_79%20DOES%20NOT%20END%20WITH%20('0.5')%20WHERE%20(uod%2Cetd%2Ciod%2Cubdo%2Cetdo))&$select=hostname,chassisCategory,oSCategory,ownerDisplayName,deviceOwnerCustomField_79 | 52     | General information field 5 does not end with 0.5 used on device; entitled to device; installed on device; used by device's owner; or entitled to device's owner                                                                                  |
 	#| Application Name                                                                                        | evergreen/#/devices?$filter=(applicationName%20NOT%20EQUALS%20('7zip')%20WHERE%20(ubdo))                                                                                                                                     | 620    | Application whose Name is not 7zip used by device's owner                                                                                                                                                                                         |
-	#| Application (Saved List) - Static - All rows selected                                                   | evergreen/#/devices?$filter=(applicationSavedListId%20EQUALS%20('285')%20WHERE%20(uod%2Cetd%2Ciod%2Cubdo%2Cetdo))                                                                                                            | 17,224 |                                                                                                                                                                                                                                                   |
-	#| Application (Saved List) - Dynamic - All data sorted                                                    | evergreen/#/devices?$filter=(applicationSavedListId%20EQUALS%20('290')%20WHERE%20(netdo%2Cnubdo%2Cniod%2Cnetd%2Cnuod))                                                                                                       | 17,225 |                                                                                                                                                                                                                                                   |
 	#| Application (Saved List) - Static - Specific rows selected by Compliance = Red, Amber or Unknown        | evergreen/#/devices?$filter=(applicationSavedListId%20EQUALS%20('295')%20WHERE%20(niod))                                                                                                                                     | 7,365  |                                                                                                                                                                                                                                                   |
 	#| Application (Saved List) - Dynamic - With filter applied to Vendor (Vendor contains Microsoft or Adobe) | evergreen/#/applications?$filter=(packageManufacturer%20CONTAINS%20('Microsoft'%2C'Adobe'))                                                                                                                                  | 99     |                                                                                                                                                                                                                                                   |
 	#| Application Owner (App Custom Fields)                                                                   | evergreen/#/devices?$filter=(applicationCustomField_80%20IS%20NOT%20EMPTY%20()%20WHERE%20(niod))&$select=hostname,chassisCategory,oSCategory,ownerDisplayName,deviceOwnerCustomField_79                                      | 16,222 |                                                                                                                                                                                                                                                   |
 	#| Application Name                                                                                        | evergreen/#/devices?$filter=(applicationName%20IS%20EMPTY%20()%20WHERE%20(iod))                                                                                                                                              | 6      |                                                                                                                                                                                                                                                   |
 
-@Evergreen @Users @EvergreenJnr_QueryStrings @DAS13179
+@Evergreen @Devices @EvergreenJnr_QueryStrings @Query @DAS13179 @Delete_Newly_Created_List
+Scenario: EvergreenJnr_QueryString_AdvancedFilterRowCountAndFilterTextCheckForDeviceStaticList
+	When User create static list with "StaticList13179" name on "Applications" page with following items
+	| ItemName |
+	|          |
+	Then "StaticList13179" list is displayed to user
+	When Evergreen QueryStringURL is entered for Simple QueryType
+	| QueryType                                             | QueryStringURL                                                                                                    |
+	| Application (Saved List) - Static - All rows selected | evergreen/#/devices?$filter=(applicationSavedListId%20EQUALS%20('285')%20WHERE%20(uod%2Cetd%2Ciod%2Cubdo%2Cetdo)) |
+	When User clicks the Filters button
+	Then Filters panel is displayed to the user
+	When User click Edit button for " Application" filter
+	And User selects "StaticList13179" list for Saved List
+	And User clicks Save filter button
+	Then "17,196" rows are displayed in the agGrid
+
+@Evergreen @Devices @EvergreenJnr_QueryStrings @Query @DAS13179 @Delete_Newly_Created_List
+Scenario: EvergreenJnr_QueryString_AdvancedFilterRowCountAndFilterTextCheckForDeviceDynamicList
+	When User clicks "Applications" on the left-hand menu
+	Then "Applications" list should be displayed to the user
+	When User click on 'Vendor' column header
+	And User create dynamic list with "DynamicList13179" name on "Applications" page
+	Then "DynamicList13179" list is displayed to user
+	When Evergreen QueryStringURL is entered for Simple QueryType
+	| QueryType                                            | QueryStringURL                                                                                                         |
+	| Application (Saved List) - Dynamic - All data sorted | evergreen/#/devices?$filter=(applicationSavedListId%20EQUALS%20('290')%20WHERE%20(netdo%2Cnubdo%2Cniod%2Cnetd%2Cnuod)) |
+	When User clicks the Filters button
+	Then Filters panel is displayed to the user
+	When User click Edit button for " Application" filter
+	And User selects "DynamicList13179" list for Saved List
+	And User clicks Save filter button
+	Then "17,225" rows are displayed in the agGrid
+
+@Evergreen @Users @EvergreenJnr_QueryStrings @Query @DAS13179
 Scenario Outline: EvergreenJnr_QueryString_AdvancedFilterRowCountCheckForUserList
 	When Evergreen QueryStringURL is entered for Simple QueryType and appropriate RowCount is displayed
 	| QueryType    | QueryStringURL | RowCount |
@@ -192,7 +223,7 @@ Examples:
 	#| Application Import                    | evergreen/#/users?$filter=(applicationImport%20NOT%20EQUALS%20('A01%20SMS%20(Spoof%C2%A7')%20WHERE%20(ubu%2Cetu%2Cuodou%2Cetdobu%2Ciodobu)) | 4,910  |
 	#| Application Name                      | evergreen/#/users?$filter=(applicationName%20IS%20NOT%20EMPTY%20()%20WHERE%20())                                                            | 26,802 |
 
-@Evergreen @Users @EvergreenJnr_QueryStrings @DAS13179 @Delete_Newly_Created_List
+@Evergreen @Users @EvergreenJnr_QueryStrings @Query @DAS13179 @Delete_Newly_Created_List
 Scenario Outline: EvergreenJnr_QueryString_AdvancedFilterRowCountAndFilterTextCheckForUserList
 	When Evergreen QueryStringURL is entered for Simple QueryType and appropriate RowCount is displayed
 	| QueryType    | QueryStringURL | RowCount |
