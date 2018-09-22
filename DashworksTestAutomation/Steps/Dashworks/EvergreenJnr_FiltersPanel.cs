@@ -685,6 +685,13 @@ namespace DashworksTestAutomation.Steps.Dashworks
             filterElement.SaveButton.Click();
         }
 
+        [When(@"User selects ""(.*)"" list for Saved List")]
+        public void WhenUserSelectsListForSavedList(string listName)
+        {
+            var filterElement = _driver.NowAt<FiltersElement>();
+            filterElement.SelectSavedListByName(listName);
+        }
+
         [Then(@"""(.*)"" list is displayed for Saved List filter")]
         public void ThenListIsDisplayedForSavedListFilter(string listName)
         {
