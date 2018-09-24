@@ -68,6 +68,7 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_AdminPage
         
         [NUnit.Framework.TestAttribute()]
         [NUnit.Framework.Retry(2)]
+        
         [NUnit.Framework.DescriptionAttribute("EvergreenJnr_AdminPage_CheckThatPanelOfAvailableMemberslIsExpandedByDefault")]
         [NUnit.Framework.CategoryAttribute("Evergreen")]
         [NUnit.Framework.CategoryAttribute("Admin")]
@@ -100,6 +101,7 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_AdminPage
         
         [NUnit.Framework.TestAttribute()]
         [NUnit.Framework.Retry(2)]
+        
         [NUnit.Framework.DescriptionAttribute("EvergreenJnr_AdminPage_CheckThatSingularFoundItemLabelDisplaysOnActionsToolbarfor" +
             "TeamsList")]
         [NUnit.Framework.CategoryAttribute("Evergreen")]
@@ -129,6 +131,7 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_AdminPage
         
         [NUnit.Framework.TestAttribute()]
         [NUnit.Framework.Retry(2)]
+        
         [NUnit.Framework.DescriptionAttribute("EvergreenJnr_AdminPage_CheckThatImpossibleToCreateSameNamedTeamUsingTheSpaceAsAFi" +
             "rstSymbol")]
         [NUnit.Framework.CategoryAttribute("Evergreen")]
@@ -202,6 +205,7 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_AdminPage
         
         [NUnit.Framework.TestAttribute()]
         [NUnit.Framework.Retry(2)]
+        
         [NUnit.Framework.DescriptionAttribute("EvergreenJnr_AdminPage_AddingIndividualAndMembersFromAnotherTeam")]
         [NUnit.Framework.CategoryAttribute("Evergreen")]
         [NUnit.Framework.CategoryAttribute("Admin")]
@@ -290,6 +294,7 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_AdminPage
         
         [NUnit.Framework.TestAttribute()]
         [NUnit.Framework.Retry(2)]
+        
         [NUnit.Framework.DescriptionAttribute("EvergreenJnr_AdminPage_AddingMembersToTheTeam")]
         [NUnit.Framework.CategoryAttribute("Evergreen")]
         [NUnit.Framework.CategoryAttribute("Admin")]
@@ -379,6 +384,7 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_AdminPage
         
         [NUnit.Framework.TestAttribute()]
         [NUnit.Framework.Retry(2)]
+        
         [NUnit.Framework.DescriptionAttribute("EvergreenJnr_AdminPage_AddingBucketsToTheTeam")]
         [NUnit.Framework.CategoryAttribute("Evergreen")]
         [NUnit.Framework.CategoryAttribute("Admin")]
@@ -524,6 +530,7 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_AdminPage
         
         [NUnit.Framework.TestAttribute()]
         [NUnit.Framework.Retry(2)]
+        
         [NUnit.Framework.DescriptionAttribute("EvergreenJnr_AdminPage_CheckThatErrorsDoNotAppearAfterUpdatingTeamDescriptionFiel" +
             "d")]
         [NUnit.Framework.CategoryAttribute("Evergreen")]
@@ -586,6 +593,7 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_AdminPage
         
         [NUnit.Framework.TestAttribute()]
         [NUnit.Framework.Retry(2)]
+        
         [NUnit.Framework.DescriptionAttribute("EvergreenJnr_AdminPage_CheckThatNoConsoleErrorsAreDisplayedWhenDeletingBucketFrom" +
             "BucketsSection")]
         [NUnit.Framework.CategoryAttribute("Evergreen")]
@@ -633,6 +641,7 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_AdminPage
         
         [NUnit.Framework.TestAttribute()]
         [NUnit.Framework.Retry(2)]
+        
         [NUnit.Framework.DescriptionAttribute("EvergreenJnr_AdminPage_CheckThatNoConsoleErrorsAreDisplayedWhenDeleteDataFromFilt" +
             "erTextFieldForTeams")]
         [NUnit.Framework.CategoryAttribute("Evergreen")]
@@ -736,6 +745,7 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_AdminPage
         
         [NUnit.Framework.TestAttribute()]
         [NUnit.Framework.Retry(2)]
+        
         [NUnit.Framework.DescriptionAttribute("EvergreenJnr_AdminPage_CheckThatCreateButtonIsDisabledForEmptyTeamName")]
         [NUnit.Framework.CategoryAttribute("Evergreen")]
         [NUnit.Framework.CategoryAttribute("Admin")]

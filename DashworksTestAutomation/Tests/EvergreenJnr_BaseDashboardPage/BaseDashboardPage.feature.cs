@@ -73,6 +73,7 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_BaseDashboardPage
         
         
         
+        
         [NUnit.Framework.DescriptionAttribute("EvergreenJnr_AllList_CheckThatColumnHeaderFontWidthConformsToDesign")]
         [NUnit.Framework.CategoryAttribute("Evergreen")]
         [NUnit.Framework.CategoryAttribute("AllLists")]
@@ -110,6 +111,7 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_BaseDashboardPage
         
         
         
+        
         [NUnit.Framework.DescriptionAttribute("EvergreenJnr_AllList_CheckDefaultSortOrderOnTheLists")]
         [NUnit.Framework.CategoryAttribute("Evergreen")]
         [NUnit.Framework.CategoryAttribute("AllLists")]
@@ -144,6 +146,7 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_BaseDashboardPage
         
         [NUnit.Framework.TestAttribute()]
         [NUnit.Framework.Retry(2)]
+        
         
         
         
@@ -200,6 +203,7 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_BaseDashboardPage
         
         
         
+        
         [NUnit.Framework.DescriptionAttribute("EvergreenJnr_AllList_CheckThatNoConsoleErrorsAreDisplayedAfterQuicklyNavigateBetw" +
             "eenMainTabs")]
         [NUnit.Framework.CategoryAttribute("Evergreen")]
@@ -229,6 +233,7 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_BaseDashboardPage
         
         [NUnit.Framework.TestAttribute()]
         [NUnit.Framework.Retry(2)]
+        
         
         
         
@@ -274,6 +279,7 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_BaseDashboardPage
         
         [NUnit.Framework.TestAttribute()]
         [NUnit.Framework.Retry(2)]
+        
         
         
         
@@ -328,6 +334,7 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_BaseDashboardPage
         
         
         
+        
         [NUnit.Framework.DescriptionAttribute("EvergreenJnr_DevicesLists_CheckThatActionsDetailsColumnsFiltersButtonsAreNotClick" +
             "ableWhenOpenedNotificationsAndUserProfilesDropdownBlocks")]
         [NUnit.Framework.CategoryAttribute("Evergreen")]
@@ -357,6 +364,7 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_BaseDashboardPage
         
         [NUnit.Framework.TestAttribute()]
         [NUnit.Framework.Retry(2)]
+        
         
         
         
@@ -442,6 +450,7 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_BaseDashboardPage
         
         
         
+        
         [NUnit.Framework.DescriptionAttribute("EvergreenJnr_DevicesList_CheckThatToolTipIsDisplayedWithCreateProjectButtonFromAn" +
             "UnsavedList")]
         [NUnit.Framework.CategoryAttribute("Evergreen")]
@@ -482,6 +491,7 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_BaseDashboardPage
         
         [NUnit.Framework.TestAttribute()]
         [NUnit.Framework.Retry(2)]
+        
         
         
         
