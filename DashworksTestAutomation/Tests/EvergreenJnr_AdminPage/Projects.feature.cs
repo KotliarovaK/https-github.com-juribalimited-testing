@@ -2925,7 +2925,6 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_AdminPage
         [NUnit.Framework.CategoryAttribute("Delete_Newly_Created_Project")]
         [NUnit.Framework.CategoryAttribute("Delete_Newly_Created_List")]
         [NUnit.Framework.CategoryAttribute("Projects")]
-        [NUnit.Framework.CategoryAttribute("Not_Run")]
         [NUnit.Framework.TestCaseAttribute("All Mailboxes", "StaticList1429", "Mailboxes to add (0 of 14784 selected)", "Mailboxes to add (0 of 2 selected)", null)]
         [NUnit.Framework.TestCaseAttribute("StaticList1429", "DynamicList77", "Mailboxes to add (0 of 2 selected)", "Mailboxes to add (0 of 6 selected)", null)]
         public virtual void EvergreenJnr_ChangingMailboxScopeListToAnotherListForMailboxProject(string changingToList1, string changingToList2, string objectsToAdd1, string objectsToAdd2, string[] exampleTags)
@@ -2938,8 +2937,7 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_AdminPage
                     "DAS12999",
                     "Delete_Newly_Created_Project",
                     "Delete_Newly_Created_List",
-                    "Projects",
-                    "Not_Run"};
+                    "Projects"};
             if ((exampleTags != null))
             {
                 @__tags = System.Linq.Enumerable.ToArray(System.Linq.Enumerable.Concat(@__tags, exampleTags));
