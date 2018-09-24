@@ -1298,18 +1298,22 @@ Scenario: EvergreenJnr_ApplicationsList_CheckThatResultsAreDifferentWhenApplying
 	Then User changes filter type to "Equals"
 	Then message 'No applications found' is displayed to the user 
 
-@Evergreen @Applications @EvergreenJnr_FilterFeature @FilterFunctionality @DAS12216
+@Evergreen @Applications @EvergreenJnr_FilterFeature @FilterFunctionality @DAS12216 @DAS12212
 Scenario: EvergreenJnr_ApplicationsList_CheckThatResultsAreDifferentWhenApplyingEqualAndDoesntEqualValuesForUserDescription
 	When User clicks "Applications" on the left-hand menu
 	Then "Applications" list should be displayed to the user
 	When User clicks the Filters button
 	Then Filters panel is displayed to the user
 	When User add "User Description" filter where type is "Does not equal" with following Value and Association:
-	| Values                                                                                                                                                          | Association  |
-	| Sed quad ut novum vobis regit, et pladior venit.  Tam quo, et nomen transit. Pro linguens imaginator pars fecit.  Et quad                                       | Has used app |
-	| Tam quo, et pladior venit.  Tam quo, et quis gravis delerium.  Versus esset in dolorum cognitio, travissimantor quantare sed quartu manifestum egreddior estum. | Has used app |
+	| Values                                                                                                                                                                                                                                                                                                                                                          | Association  |
+	| Sed quad ut novum vobis regit, et pladior venit.  Tam quo, et nomen transit. Pro linguens imaginator pars fecit.  Et quad                                                                                                                                                                                                                                       | Has used app |
+	| Tam quo, et pladior venit.  Tam quo, et quis gravis delerium.  Versus esset in dolorum cognitio, travissimantor quantare sed quartu manifestum egreddior estum.                                                                                                                                                                                                 | Has used app |
+	| Quad rarendum habitatio quoque plorum in dolorum cognitio, travissimantor quantare sed quartu manifestum egreddior estum.  Multum gravum et nomen transit. Multum gravum et pladior venit.  Tam quo, et bono quorum glavans e funem.  Quad rarendum habitatio quoque plorum in dolorum cognitio, travissimantor quantare sed quartu manifestum egreddior estum. | Has used app |
+	| Longam, e gravis et quis gravis delerium.  Versus esset in volcans essit.  Pro linguens non apparens vantis. Sed quad ut novum eggredior.  Longam, e gravis delerium.  Versus esset in volcans essit.  Pro linguens non quo linguens imaginator pars fecit.  Et quad fecit, non apparens vantis. Sed                                                            | Has used app |
+	| Sed quad fecit, non quo linguens non trepicandor si quad fecit, non trepicandor si nomen transit. Id eudis quo plorum in dolorum cognitio, travissimantor quantare sed quartu manifestum egreddior estum.  Multum gravum et pladior venit.  Tam quo, et quis gravis et nomen transit. Sed quad ut novum eggredior.  Longam, e gravis et bono                    | Has used app |
 	Then "User Description" filter is added to the list
-	Then "100" rows are displayed in the agGrid
+	And "100" rows are displayed in the agGrid
+	And There are no errors in the browser console
 	When User click Edit button for "User " filter
 	Then User changes filter type to "Equals"
-	Then message 'No applications found' is displayed to the user
+	And "19" rows are displayed in the agGrid
