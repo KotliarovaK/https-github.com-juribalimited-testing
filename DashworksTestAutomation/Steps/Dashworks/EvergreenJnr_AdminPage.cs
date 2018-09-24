@@ -642,6 +642,17 @@ namespace DashworksTestAutomation.Steps.Dashworks
             checkbox.SelectCheckboxByName(checkboxName);
         }
 
+        [When(@"User clicks following checkboxes on the Project details page:")]
+        public void WhenUserClicksFollowingCheckboxesOnTheProjectDetailsPage(Table table)
+        {
+            var checkbox = _driver.NowAt<ProjectsPage>();
+
+            foreach (var row in table.Rows)
+            {
+                checkbox.SelectCheckboxByName(row.Values.FirstOrDefault());
+            }
+        }
+
         [When(@"User selects incorrect file to upload on Import Project page")]
         public void WhenUserSelectsIncorrectFileToUploadOnImportProjectPage()
         {
