@@ -74,6 +74,7 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_FiltersFeature
         
         
         
+        
         [NUnit.Framework.DescriptionAttribute("EvergreenJnr_ApplicationsList_CheckThatTargetAppFilterIsAddedToTheList")]
         [NUnit.Framework.CategoryAttribute("Evergreen")]
         [NUnit.Framework.CategoryAttribute("Applications")]
@@ -121,6 +122,7 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_FiltersFeature
         
         [NUnit.Framework.TestAttribute()]
         [NUnit.Framework.Retry(2)]
+        
         
         
         
@@ -189,6 +191,7 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_FiltersFeature
         
         
         
+        
         [NUnit.Framework.DescriptionAttribute("EvergreenJnr_ApplicationsList_CheckThatTargetAppReadinessFilterIsAddedToTheList")]
         [NUnit.Framework.CategoryAttribute("Evergreen")]
         [NUnit.Framework.CategoryAttribute("Applications")]
@@ -245,6 +248,7 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_FiltersFeature
         
         
         
+        
         [NUnit.Framework.DescriptionAttribute("EvergreenJnr_ApplicationsList_CheckThatAddColumnCheckboxIsDisplayedForTargetAppKe" +
             "yFilters")]
         [NUnit.Framework.CategoryAttribute("Evergreen")]
@@ -291,6 +295,7 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_FiltersFeature
         
         [NUnit.Framework.TestAttribute()]
         [NUnit.Framework.Retry(2)]
+        
         
         
         
@@ -344,6 +349,7 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_FiltersFeature
         
         
         
+        
         [NUnit.Framework.DescriptionAttribute("EvergreenJnr_AllLists_CheckThatDashworksFirstSeenFilterIsAddedToTheFilterList")]
         [NUnit.Framework.CategoryAttribute("Evergreen")]
         [NUnit.Framework.CategoryAttribute("AllLists")]
@@ -393,6 +399,7 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_FiltersFeature
         
         [NUnit.Framework.TestAttribute()]
         [NUnit.Framework.Retry(2)]
+        
         
         
         
@@ -451,6 +458,7 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_FiltersFeature
         
         [NUnit.Framework.TestAttribute()]
         [NUnit.Framework.Retry(2)]
+        
         
         
         
@@ -522,6 +530,7 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_FiltersFeature
         
         
         
+        
         [NUnit.Framework.DescriptionAttribute("EvergreenJnr_ApplicationsList_CheckThatCoreApplicationFilterIsAddedToTheList")]
         [NUnit.Framework.CategoryAttribute("Evergreen")]
         [NUnit.Framework.CategoryAttribute("Applications")]
@@ -579,6 +588,7 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_FiltersFeature
         
         [NUnit.Framework.TestAttribute()]
         [NUnit.Framework.Retry(2)]
+        
         
         
         
@@ -643,6 +653,7 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_FiltersFeature
         
         [NUnit.Framework.TestAttribute()]
         [NUnit.Framework.Retry(2)]
+        
         
         
         
@@ -750,6 +761,7 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_FiltersFeature
         
         
         
+        
         [NUnit.Framework.DescriptionAttribute("EvergreenJnr_UsersList_CheckThatMultiSelectProjectTaskFiltersAreDisplayedCorrectl" +
             "yOnUsersPage")]
         [NUnit.Framework.CategoryAttribute("Evergreen")]
@@ -847,6 +859,7 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_FiltersFeature
         
         [NUnit.Framework.TestAttribute()]
         [NUnit.Framework.Retry(2)]
+        
         
         
         
