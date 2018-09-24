@@ -1524,7 +1524,7 @@ Examples:
 	| All Applications | StaticList6429  | Applications to add (0 of 2081 selected) | Applications to add (0 of 2 selected)    |
 	| StaticList6429   | DynamicList17   | Applications to add (0 of 2 selected)    | Applications to add (0 of 1612 selected) |
 
-@Evergreen @Admin @EvergreenJnr_AdminPage @AdminPage @DAS12999 @Delete_Newly_Created_Project @Delete_Newly_Created_List @Projects @Not_Run
+@Evergreen @Admin @EvergreenJnr_AdminPage @AdminPage @DAS12999 @Delete_Newly_Created_Project @Delete_Newly_Created_List @Projects
 Scenario Outline: EvergreenJnr_ChangingMailboxScopeListToAnotherListForMailboxProject
 	When User clicks "Mailboxes" on the left-hand menu
 	Then "Mailboxes" list should be displayed to the user
