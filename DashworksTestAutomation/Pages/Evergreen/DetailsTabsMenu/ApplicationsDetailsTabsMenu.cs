@@ -12,6 +12,8 @@ namespace DashworksTestAutomation.Pages.Evergreen.DetailsTabsMenu
     {
         public const string FilterCheckboxValuesSelector = ".//div[@class='boolean-icon ng-star-inserted']";
 
+        public const string FilterTypeOnTheColumnPanel = "//div//select[@id='filterType']//option";
+
         public const string Checkboxes = ".//mat-pseudo-checkbox";
 
         [FindsBy(How = How.XPath,
@@ -72,6 +74,12 @@ namespace DashworksTestAutomation.Pages.Evergreen.DetailsTabsMenu
 
         [FindsBy(How = How.XPath, Using = ".//body")]
         public IWebElement BodyContainer { get; set; }
+
+        [FindsBy(How = How.XPath, Using = "//div//select[@id='filterType']")]
+        public IWebElement FilterTypeDropdownOnTheColumnPanel { get; set; }
+
+        [FindsBy(How = How.XPath, Using = FilterTypeOnTheColumnPanel)]
+        public IList<IWebElement> FilterTypeValues { get; set; }
 
         [FindsBy(How = How.XPath, Using = FilterCheckboxValuesSelector)]
         public IList<IWebElement> FilterCheckboxValues { get; set; }
