@@ -1297,3 +1297,19 @@ Scenario: EvergreenJnr_ApplicationsList_CheckThatResultsAreDifferentWhenApplying
 	When User click Edit button for " Last Logon Date" filter
 	Then User changes filter type to "Equals"
 	Then message 'No applications found' is displayed to the user 
+
+@Evergreen @Applications @EvergreenJnr_FilterFeature @FilterFunctionality @DAS12216
+Scenario: EvergreenJnr_ApplicationsList_CheckThatResultsAreDifferentWhenApplyingEqualAndDoesntEqualValuesForUserDescription
+	When User clicks "Applications" on the left-hand menu
+	Then "Applications" list should be displayed to the user
+	When User clicks the Filters button
+	Then Filters panel is displayed to the user
+	When User add "User Description" filter where type is "Does not equal" with following Value and Association:
+	| Values                                                                                                                                                          | Association  |
+	| Sed quad ut novum vobis regit, et pladior venit.  Tam quo, et nomen transit. Pro linguens imaginator pars fecit.  Et quad                                       | Has used app |
+	| Tam quo, et pladior venit.  Tam quo, et quis gravis delerium.  Versus esset in dolorum cognitio, travissimantor quantare sed quartu manifestum egreddior estum. | Has used app |
+	Then "User Description" filter is added to the list
+	Then "100" rows are displayed in the agGrid
+	When User click Edit button for "User " filter
+	Then User changes filter type to "Equals"
+	Then message 'No applications found' is displayed to the user

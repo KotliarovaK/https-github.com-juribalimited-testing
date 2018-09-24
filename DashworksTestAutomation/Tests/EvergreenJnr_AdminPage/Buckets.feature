@@ -38,7 +38,6 @@ Scenario: EvergreenJnr_AdminPage_CheckThatConsoleErrorsAreNotDisplayedAfterAddin
 	And Counter shows "22" found rows
 	And There are no errors in the browser console
 
-
 @Evergreen @Admin @EvergreenJnr_AdminPage @AdminPage @DAS12170 @DAS13011 @Buckets
 Scenario: EvergreenJnr_AdminPage_CheckThatErrorsDoNotAppearAfterAddingDevicesToTheBucketWhereNoDevicesExist
 	When User clicks Admin on the left-hand menu
@@ -101,7 +100,7 @@ Scenario: EvergreenJnr_AdminPage_CheckThatSingularFoundItemLabelDisplaysOnAction
 	And User enters "birmingham" text in the Search field for "Bucket" column
 	Then Counter shows "1" found rows
 
-	@Evergreen @Admin @EvergreenJnr_AdminPage @AdminPage @DAS12760 @DAS13254 @Buckets
+@Evergreen @Admin @EvergreenJnr_AdminPage @AdminPage @DAS12760 @DAS13254 @Buckets
 Scenario: EvergreenJnr_AdminPage_CheckMessageThatDisplayedWhenDeletingBucket
 	When User clicks Admin on the left-hand menu
 	Then Admin page should be displayed to the user
@@ -193,7 +192,7 @@ Scenario: EvergreenJnr_AdminPage_CreatingDefaultBucket
 	Then Success message The "Unassigned" bucket has been updated is displayed on the Buckets page
 	And Delete "NewBucket5" Bucket in the Administration
 
-	@Evergreen @Admin @EvergreenJnr_AdminPage @AdminPage @DAS12939 @Buckets 
+@Evergreen @Admin @EvergreenJnr_AdminPage @AdminPage @DAS12939 @Buckets 
 Scenario: EvergreenJnr_AdminPage_CheckDefaultSortOrderOfBucketsAfterCreateOrUpdateOrDeleteAction
 	When User clicks Admin on the left-hand menu
 	And User clicks "Buckets" link on the Admin page

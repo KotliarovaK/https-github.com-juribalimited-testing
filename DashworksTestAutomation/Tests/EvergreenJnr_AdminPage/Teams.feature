@@ -303,12 +303,23 @@ Scenario: EvergreenJnr_AdminPage_CheckThatErrorsDoNotAppearAfterUpdatingTeamDesc
 	And There are no errors in the browser console
 	Then Delete "NewTeamName" Team in the Administration
 
-@Evergreen @Admin @EvergreenJnr_AdminPage @AdminPage @DAS11763 @DAS12742 @DAS12760 @Buckets @Teams
+@Evergreen @Admin @EvergreenJnr_AdminPage @AdminPage @DAS11763 @DAS12742 @DAS12760 @DAS11912 @Buckets @Teams
 Scenario: EvergreenJnr_AdminPage_CheckThatNoConsoleErrorsAreDisplayedWhenDeletingBucketFromBucketsSection
 	When User clicks Admin on the left-hand menu
 	Then Admin page should be displayed to the user
 	When User clicks "Teams" link on the Admin page
 	Then "Teams" page should be displayed to the user
+	When User have opened Column Settings for "Members" column
+	And User clicks Filter button on the Column Settings panel
+	When User clicks the  filter type dropdown on the Column Settings panel
+	Then following Values are displayed in the filter type dropdown
+	| Values                |
+	| Equals                |
+	| Not Equal             |
+	| Less than or equal    |
+	| Less than             |
+	| Greater than          |
+	| Greater than or equal |
 	When User enters "IB Team" text in the Search field for "Team" column
 	And User clicks content from "Team" column
 	Then "IB Team" team details is displayed to the user
