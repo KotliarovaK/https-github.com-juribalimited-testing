@@ -2763,6 +2763,137 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_ActionsPanel
             testRunner.Then("\"Started\" content is displayed in \"Havoc(BigD: Task 0\" column", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
             this.ScenarioCleanup();
         }
+        
+        [NUnit.Framework.TestAttribute()]
+        [NUnit.Framework.Retry(2)]
+        [NUnit.Framework.DescriptionAttribute("EvergreenJnr_DevicesList_CheckThatBulkUpdateOfTasksDoesNotIncludeUnpublishedTasks" +
+            "")]
+        [NUnit.Framework.CategoryAttribute("Evergreen")]
+        [NUnit.Framework.CategoryAttribute("Devices")]
+        [NUnit.Framework.CategoryAttribute("EvergreenJnr_ActionsPanel")]
+        [NUnit.Framework.CategoryAttribute("BulkUpdate")]
+        [NUnit.Framework.CategoryAttribute("DAS13386")]
+        public virtual void EvergreenJnr_DevicesList_CheckThatBulkUpdateOfTasksDoesNotIncludeUnpublishedTasks()
+        {
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("EvergreenJnr_DevicesList_CheckThatBulkUpdateOfTasksDoesNotIncludeUnpublishedTasks" +
+                    "", new string[] {
+                        "Evergreen",
+                        "Devices",
+                        "EvergreenJnr_ActionsPanel",
+                        "BulkUpdate",
+                        "DAS13386"});
+            this.ScenarioSetup(scenarioInfo);
+            this.FeatureBackground();
+            testRunner.When("User clicks \"Devices\" on the left-hand menu", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+            testRunner.Then("\"Devices\" list should be displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+            testRunner.When("User clicks the Actions button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+            testRunner.Then("Actions panel is displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+            TechTalk.SpecFlow.Table table99 = new TechTalk.SpecFlow.Table(new string[] {
+                        "SelectedRowsName"});
+            table99.AddRow(new string[] {
+                        "001BAQXT6JWFPI"});
+            table99.AddRow(new string[] {
+                        "001PSUMZYOW581"});
+            testRunner.When("User select \"Hostname\" rows in the grid", ((string)(null)), table99, "When ");
+            testRunner.And("User selects \"Bulk update\" in the Actions dropdown", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+            testRunner.And("User selects \"Update task value\" Bulk Update Type on Action panel", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+            testRunner.And("User selects \"Windows 7 Migration (Computer Scheduled Project)\" Project on Action" +
+                    " panel", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+            testRunner.And("User selects \"Pre-Migration\" Stage on Action panel", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+            TechTalk.SpecFlow.Table table100 = new TechTalk.SpecFlow.Table(new string[] {
+                        "Options"});
+            table100.AddRow(new string[] {
+                        "Forecast Date"});
+            table100.AddRow(new string[] {
+                        "Forecast Code"});
+            table100.AddRow(new string[] {
+                        "Target Date"});
+            table100.AddRow(new string[] {
+                        "Scheduled Date"});
+            table100.AddRow(new string[] {
+                        "Laptop Only Task"});
+            table100.AddRow(new string[] {
+                        "Physical Only Task"});
+            table100.AddRow(new string[] {
+                        "VDI Only Task"});
+            table100.AddRow(new string[] {
+                        "Laptop & Physical Task"});
+            table100.AddRow(new string[] {
+                        "Target Code"});
+            table100.AddRow(new string[] {
+                        "Scheduled Code"});
+            table100.AddRow(new string[] {
+                        "Further Information"});
+            table100.AddRow(new string[] {
+                        "Targeting Information"});
+            table100.AddRow(new string[] {
+                        "Laptop & Workstation 2"});
+            testRunner.Then("following Tasks are displayed in drop-down:", ((string)(null)), table100, "Then ");
+            this.ScenarioCleanup();
+        }
+        
+        [NUnit.Framework.TestAttribute()]
+        [NUnit.Framework.Retry(2)]
+        [NUnit.Framework.DescriptionAttribute("EvergreenJnr_UsersList_CheckThatBulkUpdateOfTasksDoesNotIncludeGroupTasks")]
+        [NUnit.Framework.CategoryAttribute("Evergreen")]
+        [NUnit.Framework.CategoryAttribute("Users")]
+        [NUnit.Framework.CategoryAttribute("EvergreenJnr_ActionsPanel")]
+        [NUnit.Framework.CategoryAttribute("BulkUpdate")]
+        [NUnit.Framework.CategoryAttribute("DAS13386")]
+        public virtual void EvergreenJnr_UsersList_CheckThatBulkUpdateOfTasksDoesNotIncludeGroupTasks()
+        {
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("EvergreenJnr_UsersList_CheckThatBulkUpdateOfTasksDoesNotIncludeGroupTasks", new string[] {
+                        "Evergreen",
+                        "Users",
+                        "EvergreenJnr_ActionsPanel",
+                        "BulkUpdate",
+                        "DAS13386"});
+            this.ScenarioSetup(scenarioInfo);
+            this.FeatureBackground();
+            testRunner.When("User clicks \"Users\" on the left-hand menu", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+            testRunner.Then("\"Users\" list should be displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+            testRunner.When("User clicks the Actions button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+            testRunner.Then("Actions panel is displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+            TechTalk.SpecFlow.Table table101 = new TechTalk.SpecFlow.Table(new string[] {
+                        "SelectedRowsName"});
+            table101.AddRow(new string[] {
+                        "003F5D8E1A844B1FAA5"});
+            table101.AddRow(new string[] {
+                        "00A5B910A1004CF5AC4"});
+            testRunner.When("User select \"Username\" rows in the grid", ((string)(null)), table101, "When ");
+            testRunner.And("User selects \"Bulk update\" in the Actions dropdown", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+            testRunner.And("User selects \"Update task value\" Bulk Update Type on Action panel", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+            testRunner.And("User selects \"User Scheduled Test (Jo)\" Project on Action panel", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+            testRunner.And("User selects \"One\" Stage on Action panel", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+            TechTalk.SpecFlow.Table table102 = new TechTalk.SpecFlow.Table(new string[] {
+                        "Options"});
+            table102.AddRow(new string[] {
+                        "Radio Rag only User"});
+            table102.AddRow(new string[] {
+                        "Radio Rag Date User"});
+            table102.AddRow(new string[] {
+                        "Radio Rag Date Owner User"});
+            table102.AddRow(new string[] {
+                        "Text User"});
+            table102.AddRow(new string[] {
+                        "Radio Rag Only User Req A"});
+            table102.AddRow(new string[] {
+                        "Radio Rag Date User Req A"});
+            table102.AddRow(new string[] {
+                        "Radio Rag Date Owner User Req A"});
+            table102.AddRow(new string[] {
+                        "Radio Rag only User Req B"});
+            table102.AddRow(new string[] {
+                        "Radio Rag Date User Req B"});
+            table102.AddRow(new string[] {
+                        "Radio Rag Date Owner User Req B"});
+            table102.AddRow(new string[] {
+                        "Radio Rag Date Owner Req B"});
+            table102.AddRow(new string[] {
+                        "SS Department and Location Enabled"});
+            testRunner.Then("following Tasks are displayed in drop-down:", ((string)(null)), table102, "Then ");
+            this.ScenarioCleanup();
+        }
     }
 }
 #pragma warning restore

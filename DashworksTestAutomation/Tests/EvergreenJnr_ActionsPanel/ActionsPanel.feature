@@ -1504,3 +1504,62 @@ Scenario: EvergreenJnr_UsersList_CheckThatBulkUpdateOfThousandsOfRowsUpdateToSuc
 	And Success message with "7578 of 7578 objects were valid for the update. Your changes have successfully been queued." text is displayed on Action panel
 	When User refreshes agGrid
 	Then "Started" content is displayed in "Havoc(BigD: Task 0" column
+
+@Evergreen @Devices @EvergreenJnr_ActionsPanel @BulkUpdate @DAS13386
+Scenario: EvergreenJnr_DevicesList_CheckThatBulkUpdateOfTasksDoesNotIncludeUnpublishedTasks
+	When User clicks "Devices" on the left-hand menu
+	Then "Devices" list should be displayed to the user
+	When User clicks the Actions button
+	Then Actions panel is displayed to the user
+	When User select "Hostname" rows in the grid
+	| SelectedRowsName |
+	| 001BAQXT6JWFPI   |
+	| 001PSUMZYOW581   |
+	And User selects "Bulk update" in the Actions dropdown
+	And User selects "Update task value" Bulk Update Type on Action panel
+	And User selects "Windows 7 Migration (Computer Scheduled Project)" Project on Action panel
+	And User selects "Pre-Migration" Stage on Action panel
+	Then following Tasks are displayed in drop-down:
+	| Options                |
+	| Forecast Date          |
+	| Forecast Code          |
+	| Target Date            |
+	| Scheduled Date         |
+	| Laptop Only Task       |
+	| Physical Only Task     |
+	| VDI Only Task          |
+	| Laptop & Physical Task |
+	| Target Code            |
+	| Scheduled Code         |
+	| Further Information    |
+	| Targeting Information  |
+	| Laptop & Workstation 2 |
+
+@Evergreen @Users @EvergreenJnr_ActionsPanel @BulkUpdate @DAS13386
+Scenario: EvergreenJnr_UsersList_CheckThatBulkUpdateOfTasksDoesNotIncludeGroupTasks
+	When User clicks "Users" on the left-hand menu
+	Then "Users" list should be displayed to the user
+	When User clicks the Actions button
+	Then Actions panel is displayed to the user
+	When User select "Username" rows in the grid
+	| SelectedRowsName    |
+	| 003F5D8E1A844B1FAA5 |
+	| 00A5B910A1004CF5AC4 |
+	And User selects "Bulk update" in the Actions dropdown
+	And User selects "Update task value" Bulk Update Type on Action panel
+	And User selects "User Scheduled Test (Jo)" Project on Action panel
+	And User selects "One" Stage on Action panel
+	Then following Tasks are displayed in drop-down:
+	| Options                            |
+	| Radio Rag only User                |
+	| Radio Rag Date User                |
+	| Radio Rag Date Owner User          |
+	| Text User                          |
+	| Radio Rag Only User Req A          |
+	| Radio Rag Date User Req A          |
+	| Radio Rag Date Owner User Req A    |
+	| Radio Rag only User Req B          |
+	| Radio Rag Date User Req B          |
+	| Radio Rag Date Owner User Req B    |
+	| Radio Rag Date Owner Req B         |
+	| SS Department and Location Enabled |
