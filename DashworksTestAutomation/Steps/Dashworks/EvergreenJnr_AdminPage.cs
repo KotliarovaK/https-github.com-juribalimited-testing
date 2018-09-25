@@ -189,7 +189,6 @@ namespace DashworksTestAutomation.Steps.Dashworks
         public void WhenUserSelectTabOnTheProjectDetailsPage(string tabName)
         {
             var projectTabs = _driver.NowAt<ProjectsPage>();
-            _driver.WaitForDataLoading();
             projectTabs.NavigateToProjectTabByName(tabName);
             _driver.WaitForDataLoading();
         }
@@ -1358,19 +1357,41 @@ namespace DashworksTestAutomation.Steps.Dashworks
         public void ThenFollowingItemsAreOnboarded(Table table)
         {
             var projectElement = _driver.NowAt<BaseGridPage>();
-            Thread.Sleep(20000);
             foreach (var row in table.Rows)
             {
-                if (projectElement.OnboardedObjectsTable.Displayed())
+                if (!projectElement.OnboardedObjectsTable.Displayed())
                 {
-                    projectElement.OnboardedObjectDisplayed(row["Items"]);
+                    try
+                    {
+                        Thread.Sleep(20000);
+                        _driver.Navigate().Refresh();
+                        projectElement.OnboardedObjectDisplayed(row["Items"]);
+                    }
+                    catch (Exception)
+                    {
+                        Thread.Sleep(40000);
+                        _driver.Navigate().Refresh();
+                        projectElement.OnboardedObjectDisplayed(row["Items"]);
+                    }
                 }
                 else
-                {
-                    Thread.Sleep(5000);
-                    _driver.Navigate().Refresh();
-                    projectElement.OnboardedObjectDisplayed(row["Items"]);
-                }
+                projectElement.OnboardedObjectDisplayed(row["Items"]);
+
+                //    if (projectElement.OnboardedObjectsTable.Displayed())
+                //    projectElement.OnboardedObjectDisplayed(row["Items"]);
+                //else
+                //{
+                //    Thread.Sleep(20000);
+                //    _driver.Navigate().Refresh();
+                //    if (projectElement.OnboardedObjectsTable.Displayed())
+                //        projectElement.OnboardedObjectDisplayed(row["Items"]);
+                //    else
+                //    {
+                //        Thread.Sleep(20000);
+                //        _driver.Navigate().Refresh();
+                //        projectElement.OnboardedObjectDisplayed(row["Items"]);
+                //    }
+                //}
             }
         }
 
