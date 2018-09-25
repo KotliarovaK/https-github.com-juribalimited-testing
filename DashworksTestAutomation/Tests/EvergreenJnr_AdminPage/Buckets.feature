@@ -551,3 +551,31 @@ Scenario: EvergreenJnr_AdminPage_CheckThatCreateButtonIsDisabledForEmptyBucketNa
 	Then Error message with "A bucket already exists with this name" text is displayed
 	And There are no errors in the browser console
 	Then Delete "TestBucket1" Bucket in the Administration
+
+@Evergreen @Admin @EvergreenJnr_AdminPage @AdminPage @DAS12905 @DAS12930 @Buckets
+Scenario: EvergreenJnr_AdminPage_
+	When User clicks Admin on the left-hand menu
+	Then Admin page should be displayed to the user
+	When User clicks "Buckets" link on the Admin page
+	Then "Buckets" page should be displayed to the user
+	When User clicks the "CREATE BUCKET" Action button
+	Then "Create Bucket" page should be displayed to the user
+	When User enters "1Bucket12905" in the Bucket Name field
+	And User selects "K-Team" team in the Team dropdown on the Buckets page
+	And User clicks Create button on the Create Bucket page
+	Then Success message is displayed and contains "The bucket has been created" text
+	When User clicks the "CREATE BUCKET" Action button
+	Then "Create Bucket" page should be displayed to the user
+	When User enters "2Bucket12905" in the Bucket Name field
+	And User selects "K-Team" team in the Team dropdown on the Buckets page
+	And User clicks Create button on the Create Bucket page
+	Then Success message is displayed and contains "The bucket has been created" text
+	When User clicks "Projects" link on the Admin page
+	Then "Projects" page should be displayed to the user
+	When User clicks the "CREATE PROJECT" Action button
+	Then "Create Project" page should be displayed to the user
+	When User enters "Project12905" in the Project Name field
+	And User selects "All Users" in the Scope Project dropdown
+	When User selects "Clone evergreen buckets" in the Buckets Project dropdown
+	And User clicks Create button on the Create Project page
+	Then Success message is displayed and contains "Your project has been created" text
