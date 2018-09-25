@@ -2376,7 +2376,7 @@ Scenario: EvergreenJnr_AdminPage_TheGreenBannerIsNotDisplayedIfBannerWasBeShownO
 	When User selects "Scope Changes" tab on the Project details page
 	Then Success message is not displayed on the Projects page
 	
-@Evergreen @Admin @EvergreenJnr_AdminPage @AdminPage @DAS13390 @Delete_Newly_Created_Project
+@Evergreen @Admin @EvergreenJnr_AdminPage @AdminPage @DAS13390 @DAS12582 @Delete_Newly_Created_Project
 Scenario: EvergreenJnr_AdminPage_ChecksThatOnboardedObjectsWorkCorrectlyForTwoUsers
 	When User clicks Admin on the left-hand menu
 	Then Admin page should be displayed to the user
@@ -2419,7 +2419,13 @@ Scenario: EvergreenJnr_AdminPage_ChecksThatOnboardedObjectsWorkCorrectlyForTwoUs
 	| 02X387UDGZJPQY  |
 	| 03063X2ZUCDN0A1 |
 	| 03U75EKEMUQMUS  |
-	And User clicks "Users" tab in the Project Scope Changes section
+	And User clicks the "UPDATE DEVICE CHANGES" Action button
+	Then "UPDATE DEVICE CHANGES" Action button is disabled
+	Then "UPDATE ALL CHANGES" Action button is disabled
+	When User clicks the "CANCEL" Action button
+	Then "UPDATE DEVICE CHANGES" Action button is active
+	Then "UPDATE ALL CHANGES" Action button is active
+	When User clicks "Users" tab in the Project Scope Changes section
 	And User expands the object to add 
 	And User selects following Objects
 	| Objects                         |
@@ -2478,7 +2484,8 @@ Scenario: EvergreenJnr_AdminPage_ChecksThatOnboardedObjectsWorkCorrectlyForTwoUs
 	| BDE 5.01 Upgrade                                                     |
 	| Brava! Reader 2.5 (2.5)                                              |
 	And User clicks the "UPDATE ALL CHANGES" Action button
-	And User clicks the "UPDATE PROJECT" Action button
+	Then Warning message with "25 devices will be added, 25 users will be added, 25 applications will be added" text is displayed on the Admin page
+	When User clicks the "UPDATE PROJECT" Action button
 	Then Success message with "75 objects queued for onboarding, 0 objects offboarded" text is displayed on the Projects page
 	And "Applications to add (0 of 2104 selected)" is displayed to the user in the Project Scope Changes section
 	And following objects were not found
@@ -2536,6 +2543,37 @@ Scenario: EvergreenJnr_AdminPage_ChecksThatOnboardedObjectsWorkCorrectlyForTwoUs
 	And following objects were not found
 	| Objects                                                              |
 	| "WPF/E" (codename) Community Technology Preview (Feb 2007) (0.8.5.0) |
+	When User clicks Admin on the left-hand menu
+	Then Admin page should be displayed to the user
+	When User clicks the "CREATE PROJECT" Action button
+	Then "Create Project" page should be displayed to the user
+	When User enters "Project13391" in the Project Name field
+	And User selects "All Devices" in the Scope Project dropdown
+	And User clicks Create button on the Create Project page
+	Then Success message is displayed and contains "Your project has been created" text
+	When User clicks newly created object link
+	And User selects "Scope Changes" tab on the Project details page
+	And User clicks "Devices" tab in the Project Scope Changes section
+	And User expands the object to add 
+	And User selects following Objects
+	| Objects         |
+	| 001BAQXT6JWFPI  |
+	| 001PSUMZYOW581  |
+	| 00BDM1JUR8IF419 |
+	When User clicks "Users" tab in the Project Scope Changes section
+	And User expands the object to add 
+	And User selects following Objects
+	| Objects                         |
+	| AAC860150 (Kerrie D. Ruiz)      |
+	| AAD1011948 (Pinabel Cinq-Mars)  |
+	| AAG081456 (Melanie Z. Fowler)   |
+	And User clicks "Applications" tab in the Project Scope Changes section
+	And User expands the object to add 
+	And User selects following Objects
+	| Objects                                                              |
+	| "WPF/E" (codename) Community Technology Preview (Feb 2007) (0.8.5.0) |
+	| 0004 - Adobe Acrobat Reader 5.0.5 Francais (5.0.5)                   |
+	| 0036 - Microsoft Access 97 SR-2 English (8.0)                        |
 	When User clicks the Logout button
 	Then User is logged out
 	When User clicks on the Login link
