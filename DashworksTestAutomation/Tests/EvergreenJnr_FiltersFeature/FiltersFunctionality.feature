@@ -1317,3 +1317,31 @@ Scenario: EvergreenJnr_ApplicationsList_CheckThatResultsAreDifferentWhenApplying
 	When User click Edit button for "User " filter
 	Then User changes filter type to "Equals"
 	And "19" rows are displayed in the agGrid
+
+@Evergreen @Devices @EvergreenJnr_FilterFeature @FilterFunctionality @DAS10020
+Scenario: EvergreenJnr_DevicesList_CheckDeviceOwnerLDAPColumnsAndFilters
+	When User add following columns using URL to the "Devices" page:
+	| ColumnName       |
+	| Owner title      |
+	| Owner usncreated |
+	| Owner lastlogon  |
+	| Owner admincount |
+	When User clicks the Filters button
+	Then Filters panel is displayed to the user
+	When user select "Owner Display Name" filter
+	When User select "Empty" Operator value
+	And User clicks Save filter button
+	Then "460" rows are displayed in the agGrid
+	Then Content is empty in the column
+	| ColumnName       |
+	| Owner title      |
+	| Owner usncreated |
+	| Owner lastlogon  |
+	| Owner admincount |
+	When User click on 'Owner title' column header
+	Then Content is empty in the column
+	| ColumnName       |
+	| Owner title      |
+	| Owner usncreated |
+	| Owner lastlogon  |
+	| Owner admincount |

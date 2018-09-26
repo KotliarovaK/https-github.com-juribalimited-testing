@@ -222,7 +222,7 @@ Scenario: EvergreenJnr_AdminPage_CheckDefaultSortOrderOfBucketsAfterCreateOrUpda
 	| aba        |
 	| waa        |
 
-@Evergreen @Admin @EvergreenJnr_AdminPage @AdminPage @DAS12999 @DAS13420 @Buckets
+@Evergreen @Admin @EvergreenJnr_AdminPage @AdminPage @DAS12999 @DAS13420 @Buckets @Delete_Newly_Created_Bucket @Buckets
 Scenario: EvergreenJnr_AdminPage_AddingDevicesFromBuckets
 	When User clicks Admin on the left-hand menu
 	Then Admin page should be displayed to the user
@@ -281,7 +281,6 @@ Scenario: EvergreenJnr_AdminPage_AddingDevicesFromBuckets
 	Then Move To Another Bucket Page is displayed to the user
 	When User moves selected objects to "Unassigned" bucket
 	Then Success message is displayed and contains "The selected devices have been added to the selected bucket" text
-	Then Delete "TestBucket6" Bucket in the Administration
 
 @Evergreen @Admin @EvergreenJnr_AdminPage @AdminPage @DAS12999 @DAS13253 @DAS13420 @Buckets
 Scenario: EvergreenJnr_AdminPage_AddingUsersFromBuckets
