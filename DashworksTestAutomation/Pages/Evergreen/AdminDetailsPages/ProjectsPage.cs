@@ -162,6 +162,7 @@ namespace DashworksTestAutomation.Pages.Evergreen.AdminDetailsPages
             var tab = Driver.FindElement(
                 By.XPath($"//li//span[text()='{permissions}']//following-sibling::button"));
             tab.Click();
+            Driver.WaitForDataLoading();
         }
 
         public void SelectCheckboxByName(string checkboxName)

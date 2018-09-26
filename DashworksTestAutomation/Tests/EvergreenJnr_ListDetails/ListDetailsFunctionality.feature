@@ -256,7 +256,7 @@ Scenario Outline: EvergreenJnr_AllLists_CheckThatNoAbilityToCreateTheSameNamedLi
 	And User create static list with " 2" name
 	Then Warning message with "List Name should be unique" is displayed
 
-	Examples: 
+	Examples:
 	| PageName     | ListToNavigate   |
 	| Devices      | All Devices      |
 	| Users        | All Users        |
