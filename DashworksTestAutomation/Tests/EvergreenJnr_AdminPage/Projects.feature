@@ -486,7 +486,7 @@ Scenario: EvergreenJnr_AdminPage_CheckingThatProjectDetailsForOnboardedObjectsIs
 	| ACDSee 8 (8.0.39)              |
 	Then Counter shows "6" found rows
 	Then data in table is sorted by "Item" column in ascending order by default on the Admin page
-	Then data in table is sorted by "Date" column in descending by default order on the Admin page
+	Then data in table is sorted by "Date" column in descending order by default on the Admin page
 	When User click on "Date" column header on the Admin page
 	Then date in table is sorted by "Date" column in descending order on the Admin page
 	When User click on "Date" column header on the Admin page
@@ -3252,3 +3252,101 @@ Scenario: EvergreenJnr_AdminPage_ChecksThatErrorIsNotDisplayedWhenForProjectsUse
 	| 001PSUMZYOW581  |
 	| 00BDM1JUR8IF419 |
 	And There are no errors in the browser console
+
+@Evergreen @Admin @EvergreenJnr_AdminPage @AdminPage @DAS12955 @Delete_Newly_Created_Project
+Scenario: EvergreenJnr_AdminPage_CheckDefaultSortOrderForQueueAndHistoryTab
+	When User clicks Admin on the left-hand menu
+	Then Admin page should be displayed to the user
+	When User clicks "Projects" link on the Admin page
+	Then "Projects" page should be displayed to the user
+	When User clicks the "CREATE PROJECT" Action button
+	Then "Create Project" page should be displayed to the user
+	When User enters "TestProject55" in the Project Name field
+	And User selects "All Devices" in the Scope Project dropdown
+	And User clicks Create button on the Create Project page
+	Then Success message is displayed and contains "Your project has been created" text
+	When User clicks newly created object link
+	Then Project "TestProject55" is displayed to user
+	When User selects "Scope Changes" tab on the Project details page
+	And User expands the object to add 
+	And User selects following Objects
+	| Objects         |
+	| 00K4CEEQ737BA4L |
+	| 00YWR8TJU4ZF8V  |
+	| 019BFPQGKK5QT8N |
+	| 02C80G8RFTPA9E  |
+	| 06T5FX3CUY08AE  |
+	| 0BET6XYEOG5ESB  |
+	| 07RJRCQDVK1KLR  |
+	| 0E402TL1EG79GIT |
+	| 0GLO1UYQ5AKCZEA |
+	| DK1LF3X47N7PWX7 |
+	And User clicks the "UPDATE DEVICE CHANGES" Action button
+	And User clicks the "UPDATE PROJECT" Action button
+	Then Success message is displayed and contains "10 objects queued for onboarding, 0 objects offboarded" text
+	When User selects "Queue" tab on the Project details page
+	Then following Items are onboarded
+	| Items           |
+	| 00K4CEEQ737BA4L |
+	| 00YWR8TJU4ZF8V  |
+	| 019BFPQGKK5QT8N |
+	| 02C80G8RFTPA9E  |
+	| 06T5FX3CUY08AE  |
+	| 0BET6XYEOG5ESB  |
+	| 07RJRCQDVK1KLR  |
+	| 0E402TL1EG79GIT |
+	| 0GLO1UYQ5AKCZEA |
+	| DK1LF3X47N7PWX7 |
+	Then data in table is sorted by "Item" column in ascending order by default on the Admin page
+	Then data in table is sorted by "Date" column in descending order by default on the Admin page
+	When User selects "History" tab on the Project details page
+	Then following Items are onboarded
+	| Items           |
+	| 00K4CEEQ737BA4L |
+	| 00YWR8TJU4ZF8V  |
+	| 019BFPQGKK5QT8N |
+	| 02C80G8RFTPA9E  |
+	| 06T5FX3CUY08AE  |
+	| 0BET6XYEOG5ESB  |
+	| 07RJRCQDVK1KLR  |
+	| 0E402TL1EG79GIT |
+	| 0GLO1UYQ5AKCZEA |
+	| DK1LF3X47N7PWX7 |
+	Then data in table is sorted by "Item" column in ascending order by default on the Admin page
+	Then data in table is sorted by "Date" column in descending order by default on the Admin page
+	When User selects "Scope Changes" tab on the Project details page
+	And User clicks "Applications" tab in the Project Scope Changes section
+	And User expands the object to add 
+	And User selects following Objects
+	| Objects                                                       |
+	| Advantage Data Architect                                      |
+	| Hilfe zu Blockdiagrammen                                      |
+	| Intel(R) Processor Graphics (20.19.15.4568)                   |
+	| Microsoft Exchange Client Language Pack - Hindi (15.0.1178.4) |
+	| NJStar Chinese Word Processor                                 |
+	And User clicks the "UPDATE APPLICATION CHANGES" Action button
+	And User clicks the "UPDATE PROJECT" Action button
+	Then Success message is displayed and contains "5 objects queued for onboarding, 0 objects offboarded" text
+	When User selects "Queue" tab on the Project details page
+	Then following Items are onboarded
+	| Items                                                         |
+	| Advantage Data Architect                                      |
+	| Hilfe zu Blockdiagrammen                                      |
+	| Intel(R) Processor Graphics (20.19.15.4568)                   |
+	| Microsoft Exchange Client Language Pack - Hindi (15.0.1178.4) |
+	| NJStar Chinese Word Processor                                 |
+	Then data in table is sorted by "Item" column in ascending order by default on the Admin page
+	Then data in table is sorted by "Date" column in descending order by default on the Admin page
+	When User selects "History" tab on the Project details page
+	Then following Items are onboarded
+	| Items                                                         |
+	| Advantage Data Architect                                      |
+	| Hilfe zu Blockdiagrammen                                      |
+	| Intel(R) Processor Graphics (20.19.15.4568)                   |
+	| Microsoft Exchange Client Language Pack - Hindi (15.0.1178.4) |
+	| NJStar Chinese Word Processor                                 |
+	#Then following Items are displayed at the top of the list
+	When User clicks String Filter button for "Object Type" column on the Admin page
+	When User selects "Device" checkbox from String Filter on the Admin page
+	Then data in table is sorted by "Item" column in ascending order by default on the Admin page
+	Then data in table is sorted by "Date" column in descending order by default on the Admin page

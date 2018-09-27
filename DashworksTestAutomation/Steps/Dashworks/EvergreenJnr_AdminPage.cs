@@ -369,8 +369,8 @@ namespace DashworksTestAutomation.Steps.Dashworks
             _driver.WaitForDataLoading();
         }
 
-        [Then(@"data in table is sorted by ""(.*)"" column in descending by default order on the Admin page")]
-        public void ThenDataInTableIsSortedByColumnInDescendingByDefaultOrderOnTheAdminPage(string columnName)
+        [Then(@"data in table is sorted by ""(.*)"" column in descending order by default on the Admin page")]
+        public void ThenDataInTableIsSortedByColumnInDescendingOrderByDefaultOnTheAdminPage(string columnName)
         {
             var adminTable = _driver.NowAt<BaseGridPage>();
 
@@ -1376,22 +1376,6 @@ namespace DashworksTestAutomation.Steps.Dashworks
                 }
                 else
                 projectElement.OnboardedObjectDisplayed(row["Items"]);
-
-                //    if (projectElement.OnboardedObjectsTable.Displayed())
-                //    projectElement.OnboardedObjectDisplayed(row["Items"]);
-                //else
-                //{
-                //    Thread.Sleep(20000);
-                //    _driver.Navigate().Refresh();
-                //    if (projectElement.OnboardedObjectsTable.Displayed())
-                //        projectElement.OnboardedObjectDisplayed(row["Items"]);
-                //    else
-                //    {
-                //        Thread.Sleep(20000);
-                //        _driver.Navigate().Refresh();
-                //        projectElement.OnboardedObjectDisplayed(row["Items"]);
-                //    }
-                //}
             }
         }
 
