@@ -151,7 +151,7 @@ Scenario: EvergreenJnr_AdminPage_CheckTheBucketStateForOnboardedObjects
 	And User clicks the "UPDATE ALL CHANGES" Action button
 	And User clicks the "UPDATE PROJECT" Action button
 	And User selects "Queue" tab on the Project details page
-	Then following Items are onboarded
+	Then following Items are displayed in the Queue table
 	| Items          |
 	| 0TTSZRQ1ZTIXWM |
 	When User have opened Column Settings for "Action" column
