@@ -298,11 +298,18 @@ namespace DashworksTestAutomation.Pages.Evergreen.AdminDetailsPages
             SearchTextbox.SendKeys(itemName);
         }
 
-        public bool OnboardedObjectDisplayed(string objectName)
+        public IWebElement QueueOnboardedObjectDisplayed(string objectName)
         {
-            Driver.WaitForElement(By.XPath(".//div[@id='agGridTable']"));
-            return Driver.IsElementDisplayed(
-                By.XPath($"//a[text()='{objectName}']"));
+            var selector = By.XPath($"//span[text()='{objectName}']");
+            Driver.WaitWhileControlIsNotDisplayed(selector);
+            return Driver.FindElement(selector);
+        }
+
+        public IWebElement HistoryOnboardedObjectDisplayed(string objectName)
+        {
+            var selector = By.XPath($"//a[text()='{objectName}']");
+            Driver.WaitWhileControlIsNotDisplayed(selector);
+            return Driver.FindElement(selector);
         }
 
         public bool OnboardedObjectNumber(string objectsNumber)
@@ -347,7 +354,6 @@ namespace DashworksTestAutomation.Pages.Evergreen.AdminDetailsPages
                 $".//div[contains(@class, 'ag-body-viewport')]//div[contains(@class, 'ag-body-container')]/div/div[{GetColumnNumberByName(columnName)}]");
             return Driver.FindElements(by).Select(x => x.Text).ToList();
         }
-
 
         public bool CheckStringFilterByName(string filterName)
         {

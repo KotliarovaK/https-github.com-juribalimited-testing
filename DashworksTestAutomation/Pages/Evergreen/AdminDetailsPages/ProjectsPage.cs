@@ -254,6 +254,11 @@ namespace DashworksTestAutomation.Pages.Evergreen.AdminDetailsPages
             return Driver.IsElementDisplayed(By.XPath($"//mat-checkbox[contains(@class, 'disabled')]/label/span[text()='{associationName}']"));
         }
 
+        public bool GetCheckboxByName (string checkboxName)
+        {
+            return Driver.IsElementDisplayed(By.XPath($"//span[text()='{checkboxName}']"));
+        }
+
         public bool SelectedTabInProjectScopeChangesSection(string tabName)
         {
             return Driver.IsElementDisplayed(By.XPath($".//div//span[contains(text(),'{tabName} ')]"));
