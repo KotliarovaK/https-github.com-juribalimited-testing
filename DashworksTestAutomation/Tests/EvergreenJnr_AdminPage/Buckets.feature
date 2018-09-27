@@ -592,6 +592,13 @@ Scenario: EvergreenJnr_AdminPage_ChecksThatAddedObjectsThatWasUsedRemovedBucketA
 	| 00CWZRC4UK6W20  |
 	| 00HA7MKAVVFDAV  |
 	Then Success message is displayed and contains "The selected devices have been added to the selected bucket" text
+	Then following Objects are displayed in Buckets table:
+	| Objects         |
+	| 001BAQXT6JWFPI  |
+	| 001PSUMZYOW581  |
+	| 00BDM1JUR8IF419 |
+	| 00CWZRC4UK6W20  |
+	| 00HA7MKAVVFDAV  |
 	When User click on Back button
 	When User enters "2Bucket12905" text in the Search field for "Bucket" column
 	And User clicks content from "Bucket" column
@@ -605,6 +612,13 @@ Scenario: EvergreenJnr_AdminPage_ChecksThatAddedObjectsThatWasUsedRemovedBucketA
 	| 00KWQ4J3WKQM0G  |
 	| 00OMQQXWA1DRI6  |
 	Then Success message is displayed and contains "The selected devices have been added to the selected bucket" text
+	Then following Objects are displayed in Buckets table:
+	| Objects         |
+	| 00I0COBFWHOF27  |
+	| 00K4CEEQ737BA4L |
+	| 00KLL9S8NRF0X6  |
+	| 00KWQ4J3WKQM0G  |
+	| 00OMQQXWA1DRI6  |
 	When User click on Back button
 	When User clicks "Projects" link on the Admin page
 	Then "Projects" page should be displayed to the user

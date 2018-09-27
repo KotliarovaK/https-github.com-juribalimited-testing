@@ -1183,26 +1183,52 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_AdminPage
             testRunner.When("User adds following Objects from list", ((string)(null)), table6, "When ");
             testRunner.Then("Success message is displayed and contains \"The selected devices have been added t" +
                     "o the selected bucket\" text", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+            TechTalk.SpecFlow.Table table7 = new TechTalk.SpecFlow.Table(new string[] {
+                        "Objects"});
+            table7.AddRow(new string[] {
+                        "001BAQXT6JWFPI"});
+            table7.AddRow(new string[] {
+                        "001PSUMZYOW581"});
+            table7.AddRow(new string[] {
+                        "00BDM1JUR8IF419"});
+            table7.AddRow(new string[] {
+                        "00CWZRC4UK6W20"});
+            table7.AddRow(new string[] {
+                        "00HA7MKAVVFDAV"});
+            testRunner.Then("following Objects are displayed in Buckets table:", ((string)(null)), table7, "Then ");
             testRunner.When("User click on Back button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
             testRunner.When("User enters \"2Bucket12905\" text in the Search field for \"Bucket\" column", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
             testRunner.And("User clicks content from \"Bucket\" column", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
             testRunner.Then("\"2Bucket12905\" bucket details is displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
             testRunner.When("User clicks the \"ADD DEVICE\" Action button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-            TechTalk.SpecFlow.Table table7 = new TechTalk.SpecFlow.Table(new string[] {
+            TechTalk.SpecFlow.Table table8 = new TechTalk.SpecFlow.Table(new string[] {
                         "Objects"});
-            table7.AddRow(new string[] {
+            table8.AddRow(new string[] {
                         "00I0COBFWHOF27"});
-            table7.AddRow(new string[] {
+            table8.AddRow(new string[] {
                         "00K4CEEQ737BA4L"});
-            table7.AddRow(new string[] {
+            table8.AddRow(new string[] {
                         "00KLL9S8NRF0X6"});
-            table7.AddRow(new string[] {
+            table8.AddRow(new string[] {
                         "00KWQ4J3WKQM0G"});
-            table7.AddRow(new string[] {
+            table8.AddRow(new string[] {
                         "00OMQQXWA1DRI6"});
-            testRunner.When("User adds following Objects from list", ((string)(null)), table7, "When ");
+            testRunner.When("User adds following Objects from list", ((string)(null)), table8, "When ");
             testRunner.Then("Success message is displayed and contains \"The selected devices have been added t" +
                     "o the selected bucket\" text", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+            TechTalk.SpecFlow.Table table9 = new TechTalk.SpecFlow.Table(new string[] {
+                        "Objects"});
+            table9.AddRow(new string[] {
+                        "00I0COBFWHOF27"});
+            table9.AddRow(new string[] {
+                        "00K4CEEQ737BA4L"});
+            table9.AddRow(new string[] {
+                        "00KLL9S8NRF0X6"});
+            table9.AddRow(new string[] {
+                        "00KWQ4J3WKQM0G"});
+            table9.AddRow(new string[] {
+                        "00OMQQXWA1DRI6"});
+            testRunner.Then("following Objects are displayed in Buckets table:", ((string)(null)), table9, "Then ");
             testRunner.When("User click on Back button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
             testRunner.When("User clicks \"Projects\" link on the Admin page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
             testRunner.Then("\"Projects\" page should be displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
@@ -1212,29 +1238,29 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_AdminPage
             testRunner.When("User selects \"Scope Changes\" tab on the Project details page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
             testRunner.And("User clicks \"Devices\" tab in the Project Scope Changes section", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
             testRunner.When("User expands the object to add", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-            TechTalk.SpecFlow.Table table8 = new TechTalk.SpecFlow.Table(new string[] {
+            TechTalk.SpecFlow.Table table10 = new TechTalk.SpecFlow.Table(new string[] {
                         "Objects"});
-            table8.AddRow(new string[] {
+            table10.AddRow(new string[] {
                         "001BAQXT6JWFPI"});
-            table8.AddRow(new string[] {
+            table10.AddRow(new string[] {
                         "001PSUMZYOW581"});
-            table8.AddRow(new string[] {
+            table10.AddRow(new string[] {
                         "00BDM1JUR8IF419"});
-            table8.AddRow(new string[] {
+            table10.AddRow(new string[] {
                         "00CWZRC4UK6W20"});
-            table8.AddRow(new string[] {
+            table10.AddRow(new string[] {
                         "00HA7MKAVVFDAV"});
-            table8.AddRow(new string[] {
+            table10.AddRow(new string[] {
                         "00I0COBFWHOF27"});
-            table8.AddRow(new string[] {
+            table10.AddRow(new string[] {
                         "00K4CEEQ737BA4L"});
-            table8.AddRow(new string[] {
+            table10.AddRow(new string[] {
                         "00KLL9S8NRF0X6"});
-            table8.AddRow(new string[] {
+            table10.AddRow(new string[] {
                         "00KWQ4J3WKQM0G"});
-            table8.AddRow(new string[] {
+            table10.AddRow(new string[] {
                         "00OMQQXWA1DRI6"});
-            testRunner.And("User selects following Objects", ((string)(null)), table8, "And ");
+            testRunner.And("User selects following Objects", ((string)(null)), table10, "And ");
             testRunner.And("User clicks the \"UPDATE ALL CHANGES\" Action button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
             testRunner.And("User clicks the \"UPDATE PROJECT\" Action button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
             testRunner.Then("Success message is displayed and contains \"10 objects queued for onboarding, 0 ob" +
