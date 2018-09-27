@@ -146,6 +146,9 @@ namespace DashworksTestAutomation.Pages.Evergreen.AdminDetailsPages
         [FindsBy(How = How.XPath, Using = ".//div[contains(@class, 'inline-success')]")]
         public IWebElement SuccessMessage { get; set; }
 
+        [FindsBy(How = How.XPath, Using = ".//div[contains(@class, 'inline-info')]")]
+        public IWebElement BlueBanner { get; set; }
+
         [FindsBy(How = How.XPath, Using = "//div[contains(@class, 'inline-info')]")]
         public IWebElement InfoMessage { get; set; }
 

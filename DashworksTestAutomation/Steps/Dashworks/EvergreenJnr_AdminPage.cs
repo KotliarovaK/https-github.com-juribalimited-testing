@@ -1039,6 +1039,14 @@ namespace DashworksTestAutomation.Steps.Dashworks
 
         #region Message
 
+        [Then(@"Blue banner with ""(.*)"" text is displayed")]
+        public void ThenBlueBannerWithTextIsDisplayed(string text)
+        {
+            var page = _driver.NowAt<BaseGridPage>();
+            _driver.WaitWhileControlIsNotDisplayed<BaseGridPage>(() => page.BlueBanner);
+            StringAssert.Contains(text, page.BlueBanner.Text, "Blue banner is not displayed correctly");
+        }
+
         [Then(@"Warning message with ""(.*)"" text is displayed on the Admin page")]
         public void ThenWarningMessageWithTextIsDisplayedOnTheAdminPage(string text)
         {
