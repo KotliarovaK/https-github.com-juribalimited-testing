@@ -1393,18 +1393,9 @@ namespace DashworksTestAutomation.Steps.Dashworks
             var projectElement = _driver.NowAt<BaseGridPage>();
             foreach (var row in table.Rows)
             {
-                    try
-                    {
-                        Thread.Sleep(20000);
-                        _driver.Navigate().Refresh();
-                        Assert.IsTrue(projectElement.HistoryOnboardedObjectDisplayed(row["Items"]).Displayed);
-                    }
-                    catch (Exception)
-                    {
-                        Thread.Sleep(40000);
-                        _driver.Navigate().Refresh();
-                        Assert.IsTrue(projectElement.HistoryOnboardedObjectDisplayed(row["Items"]).Displayed);
-                    }
+             Thread.Sleep(20000);
+             _driver.Navigate().Refresh();
+             Assert.IsTrue(projectElement.HistoryOnboardedObjectDisplayed(row["Items"]).Displayed);
             }
         }
 

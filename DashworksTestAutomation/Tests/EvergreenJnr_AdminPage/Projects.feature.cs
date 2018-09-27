@@ -5633,11 +5633,11 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_AdminPage
             TechTalk.SpecFlow.Table table130 = new TechTalk.SpecFlow.Table(new string[] {
                         "Items"});
             table130.AddRow(new string[] {
-                        "\"WPF/E\" (codename) Community Technology Preview (Feb 2007) (0.8.5.0)"});
+                        "\"WPF/E\" (codename) Community Technology Preview (Feb 2007)"});
             table130.AddRow(new string[] {
-                        "0004 - Adobe Acrobat Reader 5.0.5 Francais (5.0.5)"});
+                        "0004 - Adobe Acrobat Reader 5.0.5 Francais"});
             table130.AddRow(new string[] {
-                        "0036 - Microsoft Access 97 SR-2 English (8.0)"});
+                        "0036 - Microsoft Access 97 SR-2 English"});
             testRunner.Then("following Items are displayed in the Queue table", ((string)(null)), table130, "Then ");
             testRunner.When("User selects \"History\" tab on the Project details page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
             TechTalk.SpecFlow.Table table131 = new TechTalk.SpecFlow.Table(new string[] {
@@ -6112,6 +6112,25 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_AdminPage
             testRunner.Then("data in table is sorted by \"Date\" column in descending order by default on the Ad" +
                     "min page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
             testRunner.When("User selects \"History\" tab on the Project details page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+            TechTalk.SpecFlow.Table table156 = new TechTalk.SpecFlow.Table(new string[] {
+                        "Items"});
+            table156.AddRow(new string[] {
+                        "Advantage Data Architect (Unknown)"});
+            table156.AddRow(new string[] {
+                        "Hilfe zu Blockdiagrammen (Unknown)"});
+            table156.AddRow(new string[] {
+                        "Intel(R) Processor Graphics (20.19.15.4568)"});
+            table156.AddRow(new string[] {
+                        "Microsoft Exchange Client Language Pack - Hindi (15.0.1178.4)"});
+            table156.AddRow(new string[] {
+                        "NJStar Chinese Word Processor (Unknown)"});
+            testRunner.Then("additional onboarded Items are displayed in the History table", ((string)(null)), table156, "Then ");
+            testRunner.When("User clicks String Filter button for \"Object Type\" column on the Admin page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+            testRunner.When("User selects \"Device\" checkbox from String Filter on the Admin page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+            testRunner.Then("data in table is sorted by \"Item\" column in ascending order by default on the Adm" +
+                    "in page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+            testRunner.Then("data in table is sorted by \"Date\" column in descending order by default on the Ad" +
+                    "min page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
             this.ScenarioCleanup();
         }
     }
