@@ -549,3 +549,140 @@ Scenario: EvergreenJnr_AdminPage_CheckThatCreateButtonIsDisabledForEmptyBucketNa
 	Then Error message with "A bucket already exists with this name" text is displayed
 	And There are no errors in the browser console
 	Then Delete "TestBucket1" Bucket in the Administration
+
+@Evergreen @Admin @EvergreenJnr_AdminPage @AdminPage @DAS12905 @DAS12930 @Buckets @Delete_Newly_Created_Bucket @Delete_Newly_Created_Project @Not_Run
+Scenario: EvergreenJnr_AdminPage_ChecksThatAddedObjectsThatWasUsedRemovedBucketAreDisplayedCorrectlyInProjectHistory 
+	When User clicks Admin on the left-hand menu
+	Then Admin page should be displayed to the user
+	When User clicks "Buckets" link on the Admin page
+	Then "Buckets" page should be displayed to the user
+	When User clicks the "CREATE BUCKET" Action button
+	Then "Create Bucket" page should be displayed to the user
+	When User enters "1Bucket12905" in the Bucket Name field
+	And User selects "K-Team" team in the Team dropdown on the Buckets page
+	And User clicks Create button on the Create Bucket page
+	Then Success message is displayed and contains "The bucket has been created" text
+	When User clicks the "CREATE BUCKET" Action button
+	Then "Create Bucket" page should be displayed to the user
+	When User enters "2Bucket12905" in the Bucket Name field
+	And User selects "K-Team" team in the Team dropdown on the Buckets page
+	And User clicks Create button on the Create Bucket page
+	Then Success message is displayed and contains "The bucket has been created" text
+	When User clicks "Projects" link on the Admin page
+	Then "Projects" page should be displayed to the user
+	When User clicks the "CREATE PROJECT" Action button
+	Then "Create Project" page should be displayed to the user
+	When User enters "Project12905" in the Project Name field
+	And User selects "All Users" in the Scope Project dropdown
+	When User selects "Clone evergreen buckets" in the Buckets Project dropdown
+	And User clicks Create button on the Create Project page
+	Then Success message is displayed and contains "Your project has been created" text
+	When User clicks "Buckets" link on the Admin page
+	Then "Buckets" page should be displayed to the user
+	When User enters "1Bucket12905" text in the Search field for "Bucket" column
+	And User clicks content from "Bucket" column
+	Then "1Bucket12905" bucket details is displayed to the user
+	When User clicks the "ADD DEVICE" Action button
+	When User adds following Objects from list
+	| Objects         |
+	| 001BAQXT6JWFPI  |
+	| 001PSUMZYOW581  |
+	| 00BDM1JUR8IF419 |
+	| 00CWZRC4UK6W20  |
+	| 00HA7MKAVVFDAV  |
+	Then Success message is displayed and contains "The selected devices have been added to the selected bucket" text
+	Then following Objects are displayed in Buckets table:
+	| Objects         |
+	| 001BAQXT6JWFPI  |
+	| 001PSUMZYOW581  |
+	| 00BDM1JUR8IF419 |
+	| 00CWZRC4UK6W20  |
+	| 00HA7MKAVVFDAV  |
+	When User click on Back button
+	When User enters "2Bucket12905" text in the Search field for "Bucket" column
+	And User clicks content from "Bucket" column
+	Then "2Bucket12905" bucket details is displayed to the user
+	When User clicks the "ADD DEVICE" Action button
+	When User adds following Objects from list
+	| Objects         |
+	| 00I0COBFWHOF27  |
+	| 00K4CEEQ737BA4L |
+	| 00KLL9S8NRF0X6  |
+	| 00KWQ4J3WKQM0G  |
+	| 00OMQQXWA1DRI6  |
+	Then Success message is displayed and contains "The selected devices have been added to the selected bucket" text
+	Then following Objects are displayed in Buckets table:
+	| Objects         |
+	| 00I0COBFWHOF27  |
+	| 00K4CEEQ737BA4L |
+	| 00KLL9S8NRF0X6  |
+	| 00KWQ4J3WKQM0G  |
+	| 00OMQQXWA1DRI6  |
+	When User click on Back button
+	When User clicks "Projects" link on the Admin page
+	Then "Projects" page should be displayed to the user
+	When User enters "Project12905" text in the Search field for "Project" column
+	And User clicks content from "Project" column
+	Then Project "Project12905" is displayed to user
+	When User selects "Scope Changes" tab on the Project details page
+	And User clicks "Devices" tab in the Project Scope Changes section
+	When User expands the object to add 
+	And User selects following Objects
+	| Objects         |
+	| 001BAQXT6JWFPI  |
+	| 001PSUMZYOW581  |
+	| 00BDM1JUR8IF419 |
+	| 00CWZRC4UK6W20  |
+	| 00HA7MKAVVFDAV  |
+	| 00I0COBFWHOF27  |
+	| 00K4CEEQ737BA4L |
+	| 00KLL9S8NRF0X6  |
+	| 00KWQ4J3WKQM0G  |
+	| 00OMQQXWA1DRI6  |
+	And User clicks the "UPDATE ALL CHANGES" Action button
+	And User clicks the "UPDATE PROJECT" Action button
+	Then Success message is displayed and contains "10 objects queued for onboarding, 0 objects offboarded" text
+	When User click on Back button
+	When User clicks "Buckets" link on the Admin page
+	Then "Buckets" page should be displayed to the user
+	When User clicks refresh button in the browser
+	When User clicks String Filter button for "Project" column on the Admin page
+	When User selects "Evergreen" checkbox from String Filter on the Admin page
+	When User clicks String Filter button for "Project" column on the Admin page
+	When User selects "Project12905" checkbox from String Filter on the Admin page
+	When User enters "1Bucket12905" text in the Search field for "Bucket" column
+	And User selects all rows on the grid
+	And User clicks on Actions button
+	And User selects "Delete" in the Actions
+	And User clicks Delete button 
+	When User clicks Delete button in the warning message
+	When User clicks String Filter button for "Project" column on the Admin page
+	When User selects "Evergreen" checkbox from String Filter on the Admin page
+	When User clicks String Filter button for "Project" column on the Admin page
+	When User selects "Project12905" checkbox from String Filter on the Admin page
+	When User enters "2Bucket12905" text in the Search field for "Bucket" column
+	Then "5" content is displayed in "Devices" column
+	When User enters "Unassigned" text in the Search field for "Bucket" column
+	Then "5" content is displayed in "Devices" column
+	When User enters "2Bucket12905" text in the Search field for "Bucket" column
+	And User selects all rows on the grid
+	And User clicks on Actions button
+	And User selects "Delete" in the Actions
+	And User clicks Delete button 
+	When User clicks Delete button in the warning message
+	When User clicks String Filter button for "Project" column on the Admin page
+	When User selects "Evergreen" checkbox from String Filter on the Admin page
+	When User clicks String Filter button for "Project" column on the Admin page
+	When User selects "Project12905" checkbox from String Filter on the Admin page
+	When User enters "Unassigned" text in the Search field for "Bucket" column
+	Then "10" content is displayed in "Devices" column
+	When User clicks "Projects" link on the Admin page
+	Then "Projects" page should be displayed to the user
+	When User enters "Project12905" text in the Search field for "Project" column
+	And User clicks content from "Project" column
+	Then Project "Project12905" is displayed to user
+	When User selects "History" tab on the Project details page
+	When User enters "001BAQXT6JWFPI" text in the Search field for "Item" column
+	Then "Unassigned" content is displayed in "Bucket" column
+	When User enters "00I0COBFWHOF27" text in the Search field for "Item" column
+	Then "Deleted bucket" italic content is displayed in "Bucket" column
