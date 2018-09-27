@@ -14,6 +14,8 @@ namespace DashworksTestAutomation.Pages.Evergreen.AdminDetailsPages
 
         public const string ObjectsToAdd = "//div[@class='mat-list-text']/span";
 
+        public const string BucketRow = "//div[@col-id='name']//a";
+
         [FindsBy(How = How.XPath, Using = ".//div/h1")]
         public IWebElement PageTitle { get; set; }
 
@@ -124,6 +126,9 @@ namespace DashworksTestAutomation.Pages.Evergreen.AdminDetailsPages
 
         [FindsBy(How = How.XPath, Using = ProjectInFilterDropdown)]
         public IList<IWebElement> ProjectListInFilterDropdown { get; set; }
+
+        [FindsBy(How = How.XPath, Using = BucketRow)]
+        public IList<IWebElement> BucketRowList { get; set; }
 
         private By AgIconMenu = By.XPath(".//span[contains(@class,'ag-icon-menu')]");
 
