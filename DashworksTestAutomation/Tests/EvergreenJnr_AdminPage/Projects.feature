@@ -120,16 +120,16 @@ Scenario: EvergreenJnr_AdminPage_CheckThatNoConsoleErrorsAreDisplayedAfterUpdati
 	And "Applications to add (0 of 2126 selected)" is displayed to the user in the Project Scope Changes section
 	When User selects "Queue" tab on the Project details page
 	Then following Items are displayed in the Queue table
-	| Items                       |
-	| 20040610sqlserverck (1.0.0) |
-	| 7zip                        |
-	| ACDSee 4.0 (4.0.0)          |
+	| Items               |
+	| 20040610sqlserverck |
+	| 7zip                |
+	| ACDSee 4.0          |
 	Then "" content is displayed in "Bucket" column
 	When User selects "History" tab on the Project details page
 	Then following Items are displayed in the History table
 	| Items                       |
 	| 20040610sqlserverck (1.0.0) |
-	| 7zip                        |
+	| 7zip (Unknown)              |
 	| ACDSee 4.0 (4.0.0)          |
 	Then "" content is displayed in "Bucket" column
 	And There are no errors in the browser console
@@ -430,10 +430,10 @@ Scenario: EvergreenJnr_AdminPage_CheckingThatProjectDetailsForOnboardedObjectsIs
 	| Items                          |
 	| 0IJB93JZPG72PX                 |
 	| 04I01QSFL1AWKM                 |
-	| ABQ575757 (Salvador K. Waller) |
-	| ADG685492 (Eugene N. Stanton)  |
+	| ABQ575757                      |
+	| ADG685492                      |
 	| ACDSee 4.0.1 Std Trial Version |
-	| ACDSee 8 (8.0.39)              |
+	| ACDSee 8                       |
 	Then Counter shows "6" found rows
 	When User click on "Date" column header on the Admin page
 	Then date in table is sorted by "Date" column in descending order on the Admin page
@@ -477,13 +477,13 @@ Scenario: EvergreenJnr_AdminPage_CheckingThatProjectDetailsForOnboardedObjectsIs
 	Then There are no errors in the browser console
 	Then Error message is not displayed on the Projects page
 	Then following Items are displayed in the History table
-	| Items                          |
-	| 0IJB93JZPG72PX                 |
-	| 04I01QSFL1AWKM                 |
-	| ABQ575757 (Salvador K. Waller) |
-	| ADG685492 (Eugene N. Stanton)  |
-	| ACDSee 4.0.1 Std Trial Version |
-	| ACDSee 8 (8.0.39)              |
+	| Items                                    |
+	| 0IJB93JZPG72PX                           |
+	| 04I01QSFL1AWKM                           |
+	| ABQ575757                                |
+	| ADG685492                                |
+	| ACDSee 4.0.1 Std Trial Version (Unknown) |
+	| ACDSee 8 (8.0.39)                        |
 	Then Counter shows "6" found rows
 	Then data in table is sorted by "Item" column in ascending order by default on the Admin page
 	Then data in table is sorted by "Date" column in descending order by default on the Admin page
@@ -2153,8 +2153,8 @@ Scenario: EvergreenJnr_AdminPage_ChecksThatColourOfOnboardedAppIsDisplayedCorrec
 	When User refreshes agGrid
 	When User selects "History" tab on the Project details page
 	Then following Items are displayed in the History table
-	| Items                                                        |
-	| ALS - Designing a Microsoft Windows 2000 Dir. Services eBook |
+	| Items                                                                  |
+	| ALS - Designing a Microsoft Windows 2000 Dir. Services eBook (Unknown) |
 	When User refreshes agGrid
 	When User enters "ALS - Designing a Microsoft Windows 2000 Dir. Services eBook" text in the Search field for "Item" column
 	And User clicks content from "Item" column
@@ -2249,13 +2249,13 @@ Scenario: EvergreenJnr_AdminPage_CheckThatSelectedBucketsIsDisplayedForOnboarded
 	Then Success message is displayed and contains "1 object queued for onboarding, 0 objects offboarded" text
 	When User selects "Queue" tab on the Project details page
 	Then following Items are displayed in the Queue table
-	| Items                                 |
-	| 003F5D8E1A844B1FAA5 (Hunter, Melanie) |
+	| Items               |
+	| 003F5D8E1A844B1FAA5 |
 	Then "UsersProject3Group" content is displayed in "Bucket" column
 	When User selects "History" tab on the Project details page
 	Then following Items are displayed in the History table
-	| Items                                 |
-	| 003F5D8E1A844B1FAA5 (Hunter, Melanie) |
+	| Items               |
+	| 003F5D8E1A844B1FAA5 |
 	And "UsersProject3Group" content is displayed in "Bucket" column
 
 @Evergreen @Admin @EvergreenJnr_AdminPage @AdminPage @DAS12157 @Delete_Newly_Created_Project @Delete_Newly_Created_List
@@ -3057,7 +3057,7 @@ Scenario: EvergreenJnr_AdminPage_ChecksThatErrorIsNotDisplayedWhenForProjectsUse
 	| 0004 - Adobe Acrobat Reader 5.0.5 Francais                 |
 	| 0036 - Microsoft Access 97 SR-2 English                    |
 	When User selects "History" tab on the Project details page
-	Then following Items are displayed in the History table
+	Then additional onboarded Items are displayed in the History table
 	| Items                                                                |
 	| "WPF/E" (codename) Community Technology Preview (Feb 2007) (0.8.5.0) |
 	| 0004 - Adobe Acrobat Reader 5.0.5 Francais (5.0.5)                   |
@@ -3088,10 +3088,10 @@ Scenario: EvergreenJnr_AdminPage_ChecksThatErrorIsNotDisplayedWhenForProjectsUse
 	Then Success message is displayed and contains "3 objects queued for onboarding, 0 objects offboarded" text
 	When User selects "Queue" tab on the Project details page
 	Then following Items are displayed in the Queue table
-	| Items                                                                |
-	| "WPF/E" (codename) Community Technology Preview (Feb 2007) (0.8.5.0) |
-	| 0004 - Adobe Acrobat Reader 5.0.5 Francais (5.0.5)                   |
-	| 0036 - Microsoft Access 97 SR-2 English (8.0)                        |
+	| Items                                                      |
+	| "WPF/E" (codename) Community Technology Preview (Feb 2007) |
+	| 0004 - Adobe Acrobat Reader 5.0.5 Francais                 |
+	| 0036 - Microsoft Access 97 SR-2 English                    |
 	When User selects "History" tab on the Project details page
 	Then following Items are displayed in the History table
 	| Items                                                                |
@@ -3118,7 +3118,7 @@ Scenario: EvergreenJnr_AdminPage_ChecksThatErrorIsNotDisplayedWhenForProjectsUse
 	| 001PSUMZYOW581  |
 	| 00BDM1JUR8IF419 |
 	When User selects "History" tab on the Project details page
-	Then following Items are displayed in the History table
+	Then additional onboarded Items are displayed in the History table
 	| Items           |
 	| 001BAQXT6JWFPI  |
 	| 001PSUMZYOW581  |
@@ -3182,12 +3182,12 @@ Scenario: EvergreenJnr_AdminPage_ChecksThatErrorIsNotDisplayedWhenForProjectsUse
 	Then Success message is displayed and contains "3 objects queued for onboarding, 0 objects offboarded" text
 	When User selects "Queue" tab on the Project details page
 	Then following Items are displayed in the Queue table
-	| Items                          |
-	| 20040610sqlserverck (1.0.0)    |
-	| AddressGrabber Standard (3.1)  |
-	| Adobe Acrobat Reader 5.0 (1.0) |
+	| Items                    |
+	| 20040610sqlserverck      |
+	| AddressGrabber Standard  |
+	| Adobe Acrobat Reader 5.0 |
 	When User selects "History" tab on the Project details page
-	Then following Items are displayed in the History table
+	Then additional onboarded Items are displayed in the History table
 	| Items                          |
 	| 20040610sqlserverck (1.0.0)    |
 	| AddressGrabber Standard (3.1)  |
@@ -3217,10 +3217,10 @@ Scenario: EvergreenJnr_AdminPage_ChecksThatErrorIsNotDisplayedWhenForProjectsUse
 	Then Success message is displayed and contains "3 objects queued for onboarding, 0 objects offboarded" text
 	When User selects "Queue" tab on the Project details page
 	Then following Items are displayed in the Queue table
-	| Items                          |
-	| 20040610sqlserverck (1.0.0)    |
-	| AddressGrabber Standard (3.1)  |
-	| Adobe Acrobat Reader 5.0 (1.0) |
+	| Items                    |
+	| 20040610sqlserverck      |
+	| AddressGrabber Standard  |
+	| Adobe Acrobat Reader 5.0 |
 	When User selects "History" tab on the Project details page
 	Then following Items are displayed in the History table
 	| Items                          |
@@ -3246,7 +3246,7 @@ Scenario: EvergreenJnr_AdminPage_ChecksThatErrorIsNotDisplayedWhenForProjectsUse
 	| 001PSUMZYOW581  |
 	| 00BDM1JUR8IF419 |
 	When User selects "History" tab on the Project details page
-	Then following Items are displayed in the History table
+	Then additional onboarded Items are displayed in the History table
 	| Items           |
 	| 001BAQXT6JWFPI  |
 	| 001PSUMZYOW581  |
