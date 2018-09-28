@@ -542,13 +542,20 @@ Scenario: EvergreenJnr_MailboxesList_CheckThatEditFilterElementsBlockIsDisplayed
 	Then "Add column" checkbox is checked
 	And "EmailMigra: Readiness" filter is displayed in the Filters panel
 
-@Evergreen @AllLists @EvergreenJnr_FilterFeature @FilterFunctionality @DAS12636
+@Evergreen @AllLists @EvergreenJnr_FilterFeature @FilterFunctionality @DAS12636 @DAS12481
 Scenario Outline: EvergreenJnr_AllLists_CheckThatLocationFilterIsEditedCorrectly
 	When User clicks "<ListName>" on the left-hand menu
 	Then "<ListName>" list should be displayed to the user
 	When User clicks the Filters button
 	Then Filters panel is displayed to the user
-	When User add "State/County" filter where type is "Equals" with added column and Lookup option
+	When user select "Postal Code" filter
+	When User select "Not empty" Operator value
+	When User adds column for the selected filter
+	And User clicks Save filter button
+	Then Content is present in the newly added column
+	| ColumnName  |
+	| Postal Code |
+	When User Add And "State/County" filter where type is "Equals" with added column and Lookup option
 	| SelectedValues |
 	| <FilterValue>  |
 	Then "<FilterValue>" text is displayed in the table content
