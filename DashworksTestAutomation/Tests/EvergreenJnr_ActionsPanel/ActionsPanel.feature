@@ -1445,7 +1445,7 @@ Scenario: EvergreenJnr_UsersList_ChecksThatOwnerRemovingIsWorksCorrectly
 	Then the amber message is displayed correctly
 	And User clicks "UPDATE" button on message box
 	And Success message with "1 of 1 objects were valid for the update. Your changes have successfully been queued." text is displayed on Action panel
-	Then Success message is hidden after five seconds
+	And Success message is hidden after five seconds
 	When User refreshes agGrid
 	Then "Failed" content is displayed in "Windows7Mi: Perform User Acceptance Test" column
 		#returns default object state
