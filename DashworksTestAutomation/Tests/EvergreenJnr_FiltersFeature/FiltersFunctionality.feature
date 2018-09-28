@@ -542,13 +542,20 @@ Scenario: EvergreenJnr_MailboxesList_CheckThatEditFilterElementsBlockIsDisplayed
 	Then "Add column" checkbox is checked
 	And "EmailMigra: Readiness" filter is displayed in the Filters panel
 
-@Evergreen @AllLists @EvergreenJnr_FilterFeature @FilterFunctionality @DAS12636
+@Evergreen @AllLists @EvergreenJnr_FilterFeature @FilterFunctionality @DAS12636 @DAS12481
 Scenario Outline: EvergreenJnr_AllLists_CheckThatLocationFilterIsEditedCorrectly
 	When User clicks "<ListName>" on the left-hand menu
 	Then "<ListName>" list should be displayed to the user
 	When User clicks the Filters button
 	Then Filters panel is displayed to the user
-	When User add "State/County" filter where type is "Equals" with added column and Lookup option
+	When user select "Postal Code" filter
+	When User select "Not empty" Operator value
+	When User adds column for the selected filter
+	And User clicks Save filter button
+	Then Content is present in the newly added column
+	| ColumnName  |
+	| Postal Code |
+	When User Add And "State/County" filter where type is "Equals" with added column and Lookup option
 	| SelectedValues |
 	| <FilterValue>  |
 	Then "<FilterValue>" text is displayed in the table content
@@ -1236,7 +1243,7 @@ Scenario Outline: EvergreenJnr_AllLists_ChecksThatFilterInfoIsDisplayedCorrectly
 Examples: 
 	| PageName     | ColumnName    | FilterName                      | FilterValue    | Search                                     | FilterInfo                                 |
 	| Devices      | Hostname      | Babel(Engl: Category            | None           | 00KLL9S8NRF0X6                             | Babel(Engl: Category is None               |
-	| Devices      | Hostname      | Barry'sUse: In Scope            | FALSE          | 00OMQQXWA1DRI6                             | Barry'sUse: In Scope is true               |
+	| Devices      | Hostname      | Barry'sUse: In Scope            | FALSE          | 00OMQQXWA1DRI6                             | Barry'sUse: In Scope is false              |
 	| Devices      | Hostname      | ComputerSc: Request Type        | Request Type A | 47NK3ATE5DM2HD                             | ComputerSc: Request Type is Request Type A |
 	| Applications | Application   | Havoc(BigD: Hide from End Users | UNKNOWN        | Adobe Flash Player 10 ActiveX (10.0.12.36) | Havoc(BigD: Hide from End Users is Unknown |
 	| Applications | Application   | MigrationP: Core Application    | FALSE          | Adobe Download Manager 2.0 (Remove Only)   | MigrationP: Core Application is false      |
@@ -1283,3 +1290,65 @@ Scenario: EvergreenJnr_ApplicationsList_CheckThatFiltersWorksProperlyWithPositiv
 	When User is deselect "Used on device" in Association
 	And User select "Not used on device" in Association
 	Then only negative Associations is displayed
+
+@Evergreen @Applications @EvergreenJnr_FilterFeature @FilterFunctionality @DAS12211
+Scenario: EvergreenJnr_ApplicationsList_CheckThatResultsAreDifferentWhenApplyingEqualAndDoesntEqualValues
+	When User clicks "Applications" on the left-hand menu
+	Then "Applications" list should be displayed to the user
+	When User clicks the Filters button
+	Then Filters panel is displayed to the user
+	When User add "User Last Logon Date" filter where type is "Does not equal" with following Data and Association:
+	| Values      | Association  |
+	| 26 Apr 2018 | Has used app |
+	Then "100" rows are displayed in the agGrid
+	When User click Edit button for " Last Logon Date" filter
+	Then User changes filter type to "Equals"
+	Then message 'No applications found' is displayed to the user 
+
+@Evergreen @Applications @EvergreenJnr_FilterFeature @FilterFunctionality @DAS12216 @DAS12212
+Scenario: EvergreenJnr_ApplicationsList_CheckThatResultsAreDifferentWhenApplyingEqualAndDoesntEqualValuesForUserDescription
+	When User clicks "Applications" on the left-hand menu
+	Then "Applications" list should be displayed to the user
+	When User clicks the Filters button
+	Then Filters panel is displayed to the user
+	When User add "User Description" filter where type is "Does not equal" with following Value and Association:
+	| Values                                                                                                                                                                                                                                                                                                                                                          | Association  |
+	| Sed quad ut novum vobis regit, et pladior venit.  Tam quo, et nomen transit. Pro linguens imaginator pars fecit.  Et quad                                                                                                                                                                                                                                       | Has used app |
+	| Tam quo, et pladior venit.  Tam quo, et quis gravis delerium.  Versus esset in dolorum cognitio, travissimantor quantare sed quartu manifestum egreddior estum.                                                                                                                                                                                                 | Has used app |
+	| Quad rarendum habitatio quoque plorum in dolorum cognitio, travissimantor quantare sed quartu manifestum egreddior estum.  Multum gravum et nomen transit. Multum gravum et pladior venit.  Tam quo, et bono quorum glavans e funem.  Quad rarendum habitatio quoque plorum in dolorum cognitio, travissimantor quantare sed quartu manifestum egreddior estum. | Has used app |
+	| Longam, e gravis et quis gravis delerium.  Versus esset in volcans essit.  Pro linguens non apparens vantis. Sed quad ut novum eggredior.  Longam, e gravis delerium.  Versus esset in volcans essit.  Pro linguens non quo linguens imaginator pars fecit.  Et quad fecit, non apparens vantis. Sed                                                            | Has used app |
+	| Sed quad fecit, non quo linguens non trepicandor si quad fecit, non trepicandor si nomen transit. Id eudis quo plorum in dolorum cognitio, travissimantor quantare sed quartu manifestum egreddior estum.  Multum gravum et pladior venit.  Tam quo, et quis gravis et nomen transit. Sed quad ut novum eggredior.  Longam, e gravis et bono                    | Has used app |
+	Then "User Description" filter is added to the list
+	And "100" rows are displayed in the agGrid
+	And There are no errors in the browser console
+	When User click Edit button for "User " filter
+	Then User changes filter type to "Equals"
+	And "19" rows are displayed in the agGrid
+
+@Evergreen @Devices @EvergreenJnr_FilterFeature @FilterFunctionality @DAS10020
+Scenario: EvergreenJnr_DevicesList_CheckDeviceOwnerLDAPColumnsAndFilters
+	When User add following columns using URL to the "Devices" page:
+	| ColumnName       |
+	| Owner title      |
+	| Owner usncreated |
+	| Owner lastlogon  |
+	| Owner admincount |
+	When User clicks the Filters button
+	Then Filters panel is displayed to the user
+	When user select "Owner Display Name" filter
+	When User select "Empty" Operator value
+	And User clicks Save filter button
+	Then "460" rows are displayed in the agGrid
+	Then Content is empty in the column
+	| ColumnName       |
+	| Owner title      |
+	| Owner usncreated |
+	| Owner lastlogon  |
+	| Owner admincount |
+	When User click on 'Owner title' column header
+	Then Content is empty in the column
+	| ColumnName       |
+	| Owner title      |
+	| Owner usncreated |
+	| Owner lastlogon  |
+	| Owner admincount |

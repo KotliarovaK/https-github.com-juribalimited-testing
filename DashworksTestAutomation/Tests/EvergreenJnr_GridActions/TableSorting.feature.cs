@@ -74,6 +74,8 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_GridActions
         
         
         
+        
+        
         [NUnit.Framework.DescriptionAttribute("EvergreenJnr_DevicesList_CheckSortByDateFunctionality")]
         [NUnit.Framework.CategoryAttribute("Evergreen")]
         [NUnit.Framework.CategoryAttribute("Devices")]
@@ -123,6 +125,8 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_GridActions
         
         
         
+        
+        
         [NUnit.Framework.DescriptionAttribute("EvergreenJnr_ApplicationsList_CheckSortByDateFunctionality")]
         [NUnit.Framework.CategoryAttribute("Evergreen")]
         [NUnit.Framework.CategoryAttribute("Applications")]
@@ -163,6 +167,8 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_GridActions
         
         [NUnit.Framework.TestAttribute()]
         [NUnit.Framework.Retry(2)]
+        
+        
         
         
         
@@ -215,6 +221,8 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_GridActions
         
         
         
+        
+        
         [NUnit.Framework.DescriptionAttribute("EvergreenJnr_UsersList_CheckSortByDateFunctionality")]
         [NUnit.Framework.CategoryAttribute("Evergreen")]
         [NUnit.Framework.CategoryAttribute("Users")]
@@ -263,6 +271,8 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_GridActions
         
         
         
+        
+        
         [NUnit.Framework.DescriptionAttribute("EvergreenJnr_DevicesList_CheckThat500ErrorIsNotDisplayedWhenSortingOwnerComplianc" +
             "eColumnOnDevicesList")]
         [NUnit.Framework.CategoryAttribute("Evergreen")]
@@ -302,6 +312,8 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_GridActions
         
         
         
+        
+        
         [NUnit.Framework.DescriptionAttribute("EvergreenJnr_AllList_CheckThatTheDataInTheTablesAreSortedAppropriate")]
         [NUnit.Framework.CategoryAttribute("Evergreen")]
         [NUnit.Framework.CategoryAttribute("AllLists")]
@@ -338,6 +350,8 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_GridActions
         
         [NUnit.Framework.TestAttribute()]
         [NUnit.Framework.Retry(2)]
+        
+        
         
         
         

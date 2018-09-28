@@ -256,7 +256,7 @@ Scenario Outline: EvergreenJnr_AllLists_CheckThatNoAbilityToCreateTheSameNamedLi
 	And User create static list with " 2" name
 	Then Warning message with "List Name should be unique" is displayed
 
-	Examples: 
+	Examples:
 	| PageName     | ListToNavigate   |
 	| Devices      | All Devices      |
 	| Users        | All Users        |
@@ -652,6 +652,24 @@ Scenario: EvergreenJnr_Users_CheckThatListDeletionWarningMessageIsNotDisplayedAf
 	When User clicks the List Details button
 	Then List details panel is displayed to the user
 	And no Warning message is displayed in the list details panel
+
+@Evergreen @AllLists @EvergreenJnr_ListDetails @ListDetailsFunctionality @DAS11498 @Delete_Newly_Created_List
+Scenario Outline: EvergreenJnr_AllLists_CheckThatListDetailsPanelDisplaysIfItWasOpenedFromManageMenu
+	When User clicks "<PageName>" on the left-hand menu
+	And User clicks the Actions button
+	And User select all rows
+	And User selects "Create static list" in the Actions dropdown
+	And User create static list with "<ListName>" name
+	And User clicks Settings button in the list panel
+	And User clicks Manage in the list panel
+	Then List details panel is displayed to the user
+
+	Examples: 
+	| PageName     | ListName              |
+	| Devices      | Devices DAS11498      |
+	| Users        | Users DAS11498        |
+	| Applications | Applications DAS11498 |
+	| Mailboxes    | Mailboxes DAS11498    |
 
 @Evergreen @Users @EvergreenJnr_ListDetails @ListDetailsFunctionality @DAS12535 @DAS12791 @DAS12952 @Delete_Newly_Created_List
 Scenario: EvergreenJnr_MailboxesList_CheckThatListDetailsPanelIsDisplayedAfterSelectingManageFromListPanelMenu

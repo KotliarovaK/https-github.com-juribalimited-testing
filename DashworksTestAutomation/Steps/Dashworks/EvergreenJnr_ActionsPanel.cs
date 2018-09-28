@@ -124,8 +124,8 @@ namespace DashworksTestAutomation.Steps.Dashworks
         {
             var action = _driver.NowAt<BaseDashboardPage>();
             action.ProjectField.Click();
-            var expectedList = table.Rows.SelectMany(row => row.Values);
-            var actualList = action.OptionsDll.Select(value => value.Text);
+            var expectedList = table.Rows.SelectMany(row => row.Values).ToList();
+            var actualList = action.OptionsDll.Select(value => value.Text).ToList();
             Assert.AreEqual(expectedList, actualList, "Project lists are different");
         }
 
@@ -148,6 +148,18 @@ namespace DashworksTestAutomation.Steps.Dashworks
             action.StageField.SendKeys(stageValue);
             action.GetOptionOnActionsPanelByName(stageValue).Click();
             _driver.WaitForDataLoading();
+        }
+
+        [Then(@"following Stage are displayed in drop-down:")]
+        public void ThenFollowingStageAreDisplayedInDrop_Down(Table table)
+        {
+            var action = _driver.NowAt<BaseDashboardPage>();
+            action.StageField.Click();
+            var expectedList = table.Rows.SelectMany(row => row.Values).ToList();
+            var actualList = action.OptionListOnActionsPanel.Select(value => value.Text).ToList();
+            Assert.AreEqual(expectedList, actualList, "Stage lists are different");
+            var page = _driver.NowAt<ApplicationsDetailsTabsMenu>();
+            page.BodyContainer.Click();
         }
 
         [Then(@"Stages are displayed in alphabetical order on Action panel")]
@@ -178,6 +190,18 @@ namespace DashworksTestAutomation.Steps.Dashworks
             action.TaskField.Click();
             List<string> list = action.OptionListOnActionsPanel.Select(x => x.Text).ToList();
             Assert.AreEqual(list.OrderBy(s => s), list, "Tasks are not in alphabetical order");
+            var page = _driver.NowAt<ApplicationsDetailsTabsMenu>();
+            page.BodyContainer.Click();
+        }
+
+        [Then(@"following Tasks are displayed in drop-down:")]
+        public void ThenFollowingTasksAreDisplayedInDrop_Down(Table table)
+        {
+            var action = _driver.NowAt<BaseDashboardPage>();
+            action.TaskField.Click();
+            var expectedList = table.Rows.SelectMany(row => row.Values).ToList();
+            var actualList = action.OptionListOnActionsPanel.Select(value => value.Text).ToList();
+            Assert.AreEqual(expectedList, actualList, "Tasks value are different");
             var page = _driver.NowAt<ApplicationsDetailsTabsMenu>();
             page.BodyContainer.Click();
         }
@@ -316,8 +340,8 @@ namespace DashworksTestAutomation.Steps.Dashworks
         {
             var action = _driver.NowAt<BaseDashboardPage>();
             action.UpdateValueDropdown.Click();
-            var expectedList = table.Rows.SelectMany(row => row.Values);
-            var actualList = action.OptionsDll.Select(value => value.Text);
+            var expectedList = table.Rows.SelectMany(row => row.Values).ToList();
+            var actualList = action.OptionsDll.Select(value => value.Text).ToList();
             Assert.AreEqual(expectedList, actualList, "Project list are different");
         }
 
@@ -326,7 +350,6 @@ namespace DashworksTestAutomation.Steps.Dashworks
         {
             var action = _driver.NowAt<BaseDashboardPage>();
             action.GetActionsButtonByName(buttonName).Click();
-            _driver.WaitForDataLoading();
         }
 
         [Then(@"""(.*)"" Action button is disabled")]
@@ -565,8 +588,8 @@ namespace DashworksTestAutomation.Steps.Dashworks
         public void ThenFollowingValuesAreDisplayedInActionDrop_Down(Table table)
         {
             var actionsElement = _driver.NowAt<ActionsElement>();
-            var expectedList = table.Rows.SelectMany(row => row.Values);
-            var actualList = actionsElement.ActionValues.Select(value => value.Text);
+            var expectedList = table.Rows.SelectMany(row => row.Values).ToList();
+            var actualList = actionsElement.ActionValues.Select(value => value.Text).ToList();
             Assert.AreEqual(expectedList, actualList, "Action values are different");
             var filterElement = _driver.NowAt<ApplicationsDetailsTabsMenu>();
             filterElement.BodyContainer.Click();

@@ -268,6 +268,22 @@ namespace DashworksTestAutomation.Steps.Dashworks
             menu.FilterButton.Click();
         }
 
+        [When(@"User clicks the  filter type dropdown on the Column Settings panel")]
+        public void WhenUserClicksTheFilterTypeDropdownOnTheColumnSettingsPanel()
+        {
+            var filterElement = _driver.NowAt<ApplicationsDetailsTabsMenu>();
+            filterElement.FilterTypeDropdownOnTheColumnPanel.Click();
+        }
+
+        [Then(@"following Values are displayed in the filter type dropdown")]
+        public void ThenFollowingValuesAreDisplayedInTheFilterTypeDropdown(Table table)
+        {
+            var filterElement = _driver.NowAt<ApplicationsDetailsTabsMenu>();
+            var expectedList = table.Rows.SelectMany(row => row.Values);
+            var actualList = filterElement.FilterTypeValues.Select(value => value.Text);
+            Assert.AreEqual(expectedList, actualList, "Filter type values are different");
+        }
+
         [When(@"User select In Range value with following date:")]
         public void WhenUserSelectInRangeValueWithFollowingDate(Table table)
         {
@@ -355,7 +371,7 @@ namespace DashworksTestAutomation.Steps.Dashworks
         public void ThenBucketPop_UpHasStandardSizeOnTheDetailsPage()
         {
             var detailsPage = _driver.NowAt<DetailsPage>();
-            Assert.AreEqual("1638", detailsPage.GetInstalledBucketWindowWidth().Split('.').First());
+            Assert.AreEqual("1536px", detailsPage.GetInstalledBucketWindowWidth().Split('.').First());
         }
 
         [When(@"User enters ""(.*)"" text in the Filter field")]

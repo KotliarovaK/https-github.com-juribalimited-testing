@@ -109,6 +109,9 @@ namespace DashworksTestAutomation.Pages.Evergreen
         [FindsBy(How = How.XPath, Using = "//div[contains(@class, 'addColumn')]//span[@class='mat-checkbox-label']")]
         public IList<IWebElement> AddCategoryColumnName { get; set; }
 
+        [FindsBy(How = How.XPath, Using = "//div[contains(@class, 'addColumn')]//span[@class='mat-checkbox-label']")]
+        public IWebElement AddFiltersColumnName { get; set; }
+
         [FindsBy(How = How.XPath,
             Using =
                 ".//div[@class='filterAddPanel ng-star-inserted']//i[@class='material-icons mat-item_delete']/ancestor::button")]
@@ -454,6 +457,12 @@ namespace DashworksTestAutomation.Pages.Evergreen
             var selector = By.XPath($".//div[contains(@class,'filter-category-title')]//div[text()='{filterName}']/parent::div//div//strong[text()='{category}']");
             Driver.WaitWhileControlIsNotDisplayed(selector);
             return Driver.FindElement(selector);
+        }
+
+        public void SelectSavedListByName(string listName)
+        {
+            string checkboxSelector = $".//mat-checkbox//span[text()='{listName}']";
+            Driver.FindElement(By.XPath(checkboxSelector)).Click();
         }
 
         public IWebElement GetValueForLookupFilter(string name)

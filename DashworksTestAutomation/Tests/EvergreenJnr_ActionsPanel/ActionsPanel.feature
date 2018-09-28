@@ -385,7 +385,7 @@ Scenario: EvergreenJnr_UsersList_ChecksThatRequestTypeIsUpdatedCorrectlyOnUsersP
 	And User click on 'Windows7Mi: Request Type' column header
 	And User clicks the Actions button
 	Then Actions panel is displayed to the user
-	When User searches and selects "Username" rows in the grid
+	When User searches and selects following rows in the grid:
 	| SelectedRowsName |
 	| FMN5805290       |
 	| AKX995383        |
@@ -990,7 +990,7 @@ Scenario: EvergreenJnr_DevicesList_CheckThatClearingAValueResetsSubsequentValues
 	And User select "Manage Users" option in Management Console
 	And User removes "DAS13280" User
 
-@Evergreen @Devices @EvergreenJnr_ActionsPanel @BulkUpdate @DAS12864 @DAS13281 @DAS13284 @DAS13285
+@Evergreen @Devices @EvergreenJnr_ActionsPanel @BulkUpdate @DAS12864 @DAS13281 @DAS13284 @DAS13285 @Delete_Newly_Created_User
 Scenario Outline: EvergreenJnr_DevicesList_ChecksThatDllOptionsAreDisplayedCorrectly
 	When User clicks "Projects" on the left-hand menu
 	Then "Projects Home" page is displayed to the user
@@ -1082,16 +1082,16 @@ Scenario Outline: EvergreenJnr_UsersList_ChecksThatTheNoChangeOptionIsWorkedCorr
 	When User navigate to Manage link
 	And User select "Manage Users" option in Management Console
 	And User create new User
-	| Username | FullName | Password | ConfirmPassword | Roles                |
-	| DAS13288 | Value    | 1234qwer | 1234qwer        | Project Bulk Updater |
+	| Username  | FullName | Password | ConfirmPassword | Roles                |
+	| DAS132882 | Value    | 1234qwer | 1234qwer        | Project Bulk Updater |
 	Then Success message is displayed
 	When User cliks Logout link
 	Then User is logged out
 	When User clicks on the Login link
 	Then Login Page is displayed to the user
 	When User login with following credentials:
-	| Username | Password |
-	| DAS13288 | 1234qwer |
+	| Username  | Password |
+	| DAS132882 | 1234qwer |
 	Then Dashworks homepage is displayed to the user in a logged in state
 	When User clicks the Switch to Evergreen link
 	Then Evergreen Dashboards page should be displayed to the user
@@ -1151,7 +1151,7 @@ Scenario Outline: EvergreenJnr_UsersList_ChecksThatTheNoChangeOptionIsWorkedCorr
 	Then Dashworks homepage is displayed to the user in a logged in state
 	When User navigate to Manage link
 	And User select "Manage Users" option in Management Console
-	And User removes "DAS13288" User
+	And User removes "DAS132882" User
 
 Examples: 
 	| RowName    | NewValue       | NewTeam  | DefaultValue   | DefaultTeam         |
@@ -1161,7 +1161,7 @@ Examples:
 	| LZI970280  | Not Applicable | Admin IT | Failed         | IB Team             |
 	| ZQX656408  | Not Applicable | Admin IT | Complete       | Migration Phase 2   |
 
-@Evergreen @Users @EvergreenJnr_ActionsPanel @BulkUpdate @DAS12864 @DAS13288 @DAS13289 @DAS13287
+@Evergreen @Users @EvergreenJnr_ActionsPanel @BulkUpdate @DAS12864 @DAS13288 @DAS13289 @DAS13287 @Delete_Newly_Created_User
 Scenario Outline: EvergreenJnr_UsersList_ChecksThatTheNoChangeOptionIsWorkedCorrectlyForDateField
 	When User clicks "Projects" on the left-hand menu
 	Then "Projects Home" page is displayed to the user
@@ -1228,16 +1228,6 @@ Scenario Outline: EvergreenJnr_UsersList_ChecksThatTheNoChangeOptionIsWorkedCorr
 	Then User clicks "UPDATE" button on message box
 	And Success message with "1 of 1 objects were valid for the update. Your changes have successfully been queued." text is displayed on Action panel
 	When User refreshes agGrid
-	#Then "<DefaultValue>" content is displayed in "Windows7Mi: Perform User Acceptance Test" column
-	And User clicks the Logout button
-	Then User is logged out
-	When User clicks on the Login link
-	Then Login Page is displayed to the user
-	When User provides the Login and Password and clicks on the login button
-	Then Dashworks homepage is displayed to the user in a logged in state
-	When User navigate to Manage link
-	And User select "Manage Users" option in Management Console
-	And User removes "DAS13288" User
 
 Examples: 
 	| RowName    | NewDate      | NewTeam  | DefaultDate  | DefaultTeam         | DefaultValue   |
@@ -1254,16 +1244,16 @@ Scenario Outline: EvergreenJnr_UsersList_ChecksThatTheNoChangeOptionIsWorkedCorr
 	When User navigate to Manage link
 	And User select "Manage Users" option in Management Console
 	And User create new User
-	| Username | FullName | Password | ConfirmPassword | Roles                |
-	| DAS13288 | DAS13288 | 1234qwer | 1234qwer        | Project Bulk Updater |
+	| Username  | FullName  | Password | ConfirmPassword | Roles                |
+	| DAS132881 | DAS132881 | 1234qwer | 1234qwer        | Project Bulk Updater |
 	Then Success message is displayed
 	When User cliks Logout link
 	Then User is logged out
 	When User clicks on the Login link
 	Then Login Page is displayed to the user
 	When User login with following credentials:
-	| Username | Password |
-	| DAS13288 | 1234qwer |
+	| Username  | Password |
+	| DAS132881 | 1234qwer |
 	Then Dashworks homepage is displayed to the user in a logged in state
 	When User clicks the Switch to Evergreen link
 	Then Evergreen Dashboards page should be displayed to the user
@@ -1323,7 +1313,7 @@ Scenario Outline: EvergreenJnr_UsersList_ChecksThatTheNoChangeOptionIsWorkedCorr
 	Then Dashworks homepage is displayed to the user in a logged in state
 	When User navigate to Manage link
 	And User select "Manage Users" option in Management Console
-	And User removes "DAS13288" User
+	And User removes "DAS132881" User
 
 Examples: 
 	| RowName    | NewValue       | NewDate      | DefaultValue   | DefaultDate  |
@@ -1514,3 +1504,67 @@ Scenario: EvergreenJnr_UsersList_CheckThatBulkUpdateOfThousandsOfRowsUpdateToSuc
 	And Success message with "7578 of 7578 objects were valid for the update. Your changes have successfully been queued." text is displayed on Action panel
 	When User refreshes agGrid
 	Then "Started" content is displayed in "Havoc(BigD: Task 0" column
+
+@Evergreen @Devices @EvergreenJnr_ActionsPanel @BulkUpdate @DAS13386
+Scenario: EvergreenJnr_DevicesList_CheckThatBulkUpdateOfTasksDoesNotIncludeUnpublishedTasks
+	When User clicks "Devices" on the left-hand menu
+	Then "Devices" list should be displayed to the user
+	When User clicks the Actions button
+	Then Actions panel is displayed to the user
+	When User select "Hostname" rows in the grid
+	| SelectedRowsName |
+	| 001BAQXT6JWFPI   |
+	| 001PSUMZYOW581   |
+	And User selects "Bulk update" in the Actions dropdown
+	And User selects "Update task value" Bulk Update Type on Action panel
+	And User selects "Windows 7 Migration (Computer Scheduled Project)" Project on Action panel
+	And User selects "Pre-Migration" Stage on Action panel
+	Then following Tasks are displayed in drop-down:
+	| Options                |
+	| Forecast Date          |
+	| Forecast Code          |
+	| Target Date            |
+	| Scheduled Date         |
+	| Laptop Only Task       |
+	| Physical Only Task     |
+	| VDI Only Task          |
+	| Laptop & Physical Task |
+	| Target Code            |
+	| Scheduled Code         |
+	| Further Information    |
+	| Targeting Information  |
+	| Laptop & Workstation 2 |
+
+@Evergreen @Users @EvergreenJnr_ActionsPanel @BulkUpdate @DAS13386 @DAS13477
+Scenario: EvergreenJnr_UsersList_CheckThatBulkUpdateOfTasksDoesNotIncludeGroupTasks
+	When User clicks "Users" on the left-hand menu
+	Then "Users" list should be displayed to the user
+	When User clicks the Actions button
+	Then Actions panel is displayed to the user
+	When User select "Username" rows in the grid
+	| SelectedRowsName    |
+	| 003F5D8E1A844B1FAA5 |
+	| 00A5B910A1004CF5AC4 |
+	And User selects "Bulk update" in the Actions dropdown
+	And User selects "Update task value" Bulk Update Type on Action panel
+	And User selects "User Scheduled Test (Jo)" Project on Action panel
+	Then following Stage are displayed in drop-down:
+	| Options |
+	| One     |
+	| Two     |
+	| Three   |
+	When User selects "One" Stage on Action panel
+	Then following Tasks are displayed in drop-down:
+	| Options                            |
+	| Radio Rag only User                |
+	| Radio Rag Date User                |
+	| Radio Rag Date Owner User          |
+	| Text User                          |
+	| Radio Rag Only User Req A          |
+	| Radio Rag Date User Req A          |
+	| Radio Rag Date Owner User Req A    |
+	| Radio Rag only User Req B          |
+	| Radio Rag Date User Req B          |
+	| Radio Rag Date Owner User Req B    |
+	| Radio Rag Date Owner Req B         |
+	| SS Department and Location Enabled |

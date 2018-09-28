@@ -803,7 +803,7 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_ActionsPanel
                         "AKX995383"});
             table28.AddRow(new string[] {
                         "AAD1011948"});
-            testRunner.When("User searches and selects \"Username\" rows in the grid", ((string)(null)), table28, "When ");
+            testRunner.When("User searches and selects following rows in the grid:", ((string)(null)), table28, "When ");
             testRunner.And("User selects \"Bulk update\" in the Actions dropdown", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
             testRunner.And("User selects \"Update request type\" Bulk Update Type on Action panel", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
             testRunner.And("User selects \"Windows 7 Migration (Computer Scheduled Project)\" Project on Action" +
@@ -1909,6 +1909,7 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_ActionsPanel
         [NUnit.Framework.CategoryAttribute("DAS13281")]
         [NUnit.Framework.CategoryAttribute("DAS13284")]
         [NUnit.Framework.CategoryAttribute("DAS13285")]
+        [NUnit.Framework.CategoryAttribute("Delete_Newly_Created_User")]
         [NUnit.Framework.TestCaseAttribute("00HA7MKAVVFDAV", "1 of 1 objects were valid for the update. Your changes have successfully been que" +
             "ued.", new string[0])]
         [NUnit.Framework.TestCaseAttribute("00I0COBFWHOF27", "0 of 1 objects were valid for the update.", new string[0])]
@@ -1922,7 +1923,8 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_ActionsPanel
                     "DAS12864",
                     "DAS13281",
                     "DAS13284",
-                    "DAS13285"};
+                    "DAS13285",
+                    "Delete_Newly_Created_User"};
             if ((exampleTags != null))
             {
                 @__tags = System.Linq.Enumerable.ToArray(System.Linq.Enumerable.Concat(@__tags, exampleTags));
@@ -2089,7 +2091,7 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_ActionsPanel
                         "ConfirmPassword",
                         "Roles"});
             table77.AddRow(new string[] {
-                        "DAS13288",
+                        "DAS132882",
                         "Value",
                         "1234qwer",
                         "1234qwer",
@@ -2104,7 +2106,7 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_ActionsPanel
                         "Username",
                         "Password"});
             table78.AddRow(new string[] {
-                        "DAS13288",
+                        "DAS132882",
                         "1234qwer"});
             testRunner.When("User login with following credentials:", ((string)(null)), table78, "When ");
             testRunner.Then("Dashworks homepage is displayed to the user in a logged in state", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
@@ -2173,7 +2175,7 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_ActionsPanel
             testRunner.Then("Dashworks homepage is displayed to the user in a logged in state", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
             testRunner.When("User navigate to Manage link", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
             testRunner.And("User select \"Manage Users\" option in Management Console", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-            testRunner.And("User removes \"DAS13288\" User", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+            testRunner.And("User removes \"DAS132882\" User", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
             this.ScenarioCleanup();
         }
         
@@ -2188,6 +2190,7 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_ActionsPanel
         [NUnit.Framework.CategoryAttribute("DAS13288")]
         [NUnit.Framework.CategoryAttribute("DAS13289")]
         [NUnit.Framework.CategoryAttribute("DAS13287")]
+        [NUnit.Framework.CategoryAttribute("Delete_Newly_Created_User")]
         [NUnit.Framework.TestCaseAttribute("CQV0623434", "May 19, 2018", "Admin IT", "May 08, 2015", "Administrative Team", "Complete", new string[0])]
         [NUnit.Framework.TestCaseAttribute("BBZ877343", "Aug 28, 2001", "Admin IT", "Sep 07, 2018", "Retail Team", "Failed", new string[0])]
         [NUnit.Framework.TestCaseAttribute("DLL972653", "Aug 30, 2018", "Admin IT", "Sep 05, 2018", "K-Team", "Complete", new string[0])]
@@ -2203,7 +2206,8 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_ActionsPanel
                     "DAS12864",
                     "DAS13288",
                     "DAS13289",
-                    "DAS13287"};
+                    "DAS13287",
+                    "Delete_Newly_Created_User"};
             if ((exampleTags != null))
             {
                 @__tags = System.Linq.Enumerable.ToArray(System.Linq.Enumerable.Concat(@__tags, exampleTags));
@@ -2296,15 +2300,6 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_ActionsPanel
             testRunner.And("Success message with \"1 of 1 objects were valid for the update. Your changes have" +
                     " successfully been queued.\" text is displayed on Action panel", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
             testRunner.When("User refreshes agGrid", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-            testRunner.And("User clicks the Logout button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-            testRunner.Then("User is logged out", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-            testRunner.When("User clicks on the Login link", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-            testRunner.Then("Login Page is displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-            testRunner.When("User provides the Login and Password and clicks on the login button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-            testRunner.Then("Dashworks homepage is displayed to the user in a logged in state", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-            testRunner.When("User navigate to Manage link", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-            testRunner.And("User select \"Manage Users\" option in Management Console", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-            testRunner.And("User removes \"DAS13288\" User", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
             this.ScenarioCleanup();
         }
         
@@ -2353,8 +2348,8 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_ActionsPanel
                         "ConfirmPassword",
                         "Roles"});
             table85.AddRow(new string[] {
-                        "DAS13288",
-                        "DAS13288",
+                        "DAS132881",
+                        "DAS132881",
                         "1234qwer",
                         "1234qwer",
                         "Project Bulk Updater"});
@@ -2368,7 +2363,7 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_ActionsPanel
                         "Username",
                         "Password"});
             table86.AddRow(new string[] {
-                        "DAS13288",
+                        "DAS132881",
                         "1234qwer"});
             testRunner.When("User login with following credentials:", ((string)(null)), table86, "When ");
             testRunner.Then("Dashworks homepage is displayed to the user in a logged in state", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
@@ -2437,7 +2432,7 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_ActionsPanel
             testRunner.Then("Dashworks homepage is displayed to the user in a logged in state", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
             testRunner.When("User navigate to Manage link", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
             testRunner.And("User select \"Manage Users\" option in Management Console", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-            testRunner.And("User removes \"DAS13288\" User", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+            testRunner.And("User removes \"DAS132881\" User", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
             this.ScenarioCleanup();
         }
         
@@ -2736,6 +2731,148 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_ActionsPanel
                     "s have successfully been queued.\" text is displayed on Action panel", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
             testRunner.When("User refreshes agGrid", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
             testRunner.Then("\"Started\" content is displayed in \"Havoc(BigD: Task 0\" column", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+            this.ScenarioCleanup();
+        }
+        
+        [NUnit.Framework.TestAttribute()]
+        [NUnit.Framework.Retry(2)]
+        [NUnit.Framework.DescriptionAttribute("EvergreenJnr_DevicesList_CheckThatBulkUpdateOfTasksDoesNotIncludeUnpublishedTasks" +
+            "")]
+        [NUnit.Framework.CategoryAttribute("Evergreen")]
+        [NUnit.Framework.CategoryAttribute("Devices")]
+        [NUnit.Framework.CategoryAttribute("EvergreenJnr_ActionsPanel")]
+        [NUnit.Framework.CategoryAttribute("BulkUpdate")]
+        [NUnit.Framework.CategoryAttribute("DAS13386")]
+        public virtual void EvergreenJnr_DevicesList_CheckThatBulkUpdateOfTasksDoesNotIncludeUnpublishedTasks()
+        {
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("EvergreenJnr_DevicesList_CheckThatBulkUpdateOfTasksDoesNotIncludeUnpublishedTasks" +
+                    "", new string[] {
+                        "Evergreen",
+                        "Devices",
+                        "EvergreenJnr_ActionsPanel",
+                        "BulkUpdate",
+                        "DAS13386"});
+            this.ScenarioSetup(scenarioInfo);
+            this.FeatureBackground();
+            testRunner.When("User clicks \"Devices\" on the left-hand menu", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+            testRunner.Then("\"Devices\" list should be displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+            testRunner.When("User clicks the Actions button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+            testRunner.Then("Actions panel is displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+            TechTalk.SpecFlow.Table table99 = new TechTalk.SpecFlow.Table(new string[] {
+                        "SelectedRowsName"});
+            table99.AddRow(new string[] {
+                        "001BAQXT6JWFPI"});
+            table99.AddRow(new string[] {
+                        "001PSUMZYOW581"});
+            testRunner.When("User select \"Hostname\" rows in the grid", ((string)(null)), table99, "When ");
+            testRunner.And("User selects \"Bulk update\" in the Actions dropdown", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+            testRunner.And("User selects \"Update task value\" Bulk Update Type on Action panel", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+            testRunner.And("User selects \"Windows 7 Migration (Computer Scheduled Project)\" Project on Action" +
+                    " panel", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+            testRunner.And("User selects \"Pre-Migration\" Stage on Action panel", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+            TechTalk.SpecFlow.Table table100 = new TechTalk.SpecFlow.Table(new string[] {
+                        "Options"});
+            table100.AddRow(new string[] {
+                        "Forecast Date"});
+            table100.AddRow(new string[] {
+                        "Forecast Code"});
+            table100.AddRow(new string[] {
+                        "Target Date"});
+            table100.AddRow(new string[] {
+                        "Scheduled Date"});
+            table100.AddRow(new string[] {
+                        "Laptop Only Task"});
+            table100.AddRow(new string[] {
+                        "Physical Only Task"});
+            table100.AddRow(new string[] {
+                        "VDI Only Task"});
+            table100.AddRow(new string[] {
+                        "Laptop & Physical Task"});
+            table100.AddRow(new string[] {
+                        "Target Code"});
+            table100.AddRow(new string[] {
+                        "Scheduled Code"});
+            table100.AddRow(new string[] {
+                        "Further Information"});
+            table100.AddRow(new string[] {
+                        "Targeting Information"});
+            table100.AddRow(new string[] {
+                        "Laptop & Workstation 2"});
+            testRunner.Then("following Tasks are displayed in drop-down:", ((string)(null)), table100, "Then ");
+            this.ScenarioCleanup();
+        }
+        
+        [NUnit.Framework.TestAttribute()]
+        [NUnit.Framework.Retry(2)]
+        [NUnit.Framework.DescriptionAttribute("EvergreenJnr_UsersList_CheckThatBulkUpdateOfTasksDoesNotIncludeGroupTasks")]
+        [NUnit.Framework.CategoryAttribute("Evergreen")]
+        [NUnit.Framework.CategoryAttribute("Users")]
+        [NUnit.Framework.CategoryAttribute("EvergreenJnr_ActionsPanel")]
+        [NUnit.Framework.CategoryAttribute("BulkUpdate")]
+        [NUnit.Framework.CategoryAttribute("DAS13386")]
+        [NUnit.Framework.CategoryAttribute("DAS13477")]
+        public virtual void EvergreenJnr_UsersList_CheckThatBulkUpdateOfTasksDoesNotIncludeGroupTasks()
+        {
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("EvergreenJnr_UsersList_CheckThatBulkUpdateOfTasksDoesNotIncludeGroupTasks", new string[] {
+                        "Evergreen",
+                        "Users",
+                        "EvergreenJnr_ActionsPanel",
+                        "BulkUpdate",
+                        "DAS13386",
+                        "DAS13477"});
+            this.ScenarioSetup(scenarioInfo);
+            this.FeatureBackground();
+            testRunner.When("User clicks \"Users\" on the left-hand menu", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+            testRunner.Then("\"Users\" list should be displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+            testRunner.When("User clicks the Actions button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+            testRunner.Then("Actions panel is displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+            TechTalk.SpecFlow.Table table101 = new TechTalk.SpecFlow.Table(new string[] {
+                        "SelectedRowsName"});
+            table101.AddRow(new string[] {
+                        "003F5D8E1A844B1FAA5"});
+            table101.AddRow(new string[] {
+                        "00A5B910A1004CF5AC4"});
+            testRunner.When("User select \"Username\" rows in the grid", ((string)(null)), table101, "When ");
+            testRunner.And("User selects \"Bulk update\" in the Actions dropdown", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+            testRunner.And("User selects \"Update task value\" Bulk Update Type on Action panel", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+            testRunner.And("User selects \"User Scheduled Test (Jo)\" Project on Action panel", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+            TechTalk.SpecFlow.Table table102 = new TechTalk.SpecFlow.Table(new string[] {
+                        "Options"});
+            table102.AddRow(new string[] {
+                        "One"});
+            table102.AddRow(new string[] {
+                        "Two"});
+            table102.AddRow(new string[] {
+                        "Three"});
+            testRunner.Then("following Stage are displayed in drop-down:", ((string)(null)), table102, "Then ");
+            testRunner.When("User selects \"One\" Stage on Action panel", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+            TechTalk.SpecFlow.Table table103 = new TechTalk.SpecFlow.Table(new string[] {
+                        "Options"});
+            table103.AddRow(new string[] {
+                        "Radio Rag only User"});
+            table103.AddRow(new string[] {
+                        "Radio Rag Date User"});
+            table103.AddRow(new string[] {
+                        "Radio Rag Date Owner User"});
+            table103.AddRow(new string[] {
+                        "Text User"});
+            table103.AddRow(new string[] {
+                        "Radio Rag Only User Req A"});
+            table103.AddRow(new string[] {
+                        "Radio Rag Date User Req A"});
+            table103.AddRow(new string[] {
+                        "Radio Rag Date Owner User Req A"});
+            table103.AddRow(new string[] {
+                        "Radio Rag only User Req B"});
+            table103.AddRow(new string[] {
+                        "Radio Rag Date User Req B"});
+            table103.AddRow(new string[] {
+                        "Radio Rag Date Owner User Req B"});
+            table103.AddRow(new string[] {
+                        "Radio Rag Date Owner Req B"});
+            table103.AddRow(new string[] {
+                        "SS Department and Location Enabled"});
+            testRunner.Then("following Tasks are displayed in drop-down:", ((string)(null)), table103, "Then ");
             this.ScenarioCleanup();
         }
     }

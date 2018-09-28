@@ -257,6 +257,13 @@ namespace DashworksTestAutomation.Steps.Dashworks
             filterElement.SelectOperator(operatorValue);
         }
 
+        [When(@"User adds column for the selected filter")]
+        public void WhenUserAddsColumnForTheSelectedFilter()
+        {
+            var filterElement = _driver.NowAt<FiltersElement>();
+            filterElement.AddFiltersColumnName.Click();
+        }
+
         [When(@"User have create ""(.*)"" Values filter with column and following options:")]
         public void WhenUserHaveCreateValuesFilterWithColumnAndFollowingOptions(string operatorValue, Table table)
         {
@@ -683,6 +690,13 @@ namespace DashworksTestAutomation.Steps.Dashworks
             filterElement.FilterTypeDropdown.Click();
             filterElement.SelectFilterType(filterType);
             filterElement.SaveButton.Click();
+        }
+
+        [When(@"User selects ""(.*)"" list for Saved List")]
+        public void WhenUserSelectsListForSavedList(string listName)
+        {
+            var filterElement = _driver.NowAt<FiltersElement>();
+            filterElement.SelectSavedListByName(listName);
         }
 
         [Then(@"""(.*)"" list is displayed for Saved List filter")]

@@ -69,6 +69,8 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_DashboardsPage
         
         [NUnit.Framework.TestAttribute()]
         [NUnit.Framework.Retry(2)]
+        
+        
         [NUnit.Framework.DescriptionAttribute("EvergreenJnr_DashboardsPage_CheckThatWindows10BranchChartUnknownLinkRedirectsToDe" +
             "vicesPageWithProperItems")]
         [NUnit.Framework.CategoryAttribute("Evergreen")]
