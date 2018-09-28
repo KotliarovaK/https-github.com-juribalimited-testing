@@ -1535,7 +1535,7 @@ Scenario: EvergreenJnr_DevicesList_CheckThatBulkUpdateOfTasksDoesNotIncludeUnpub
 	| Targeting Information  |
 	| Laptop & Workstation 2 |
 
-@Evergreen @Users @EvergreenJnr_ActionsPanel @BulkUpdate @DAS13386
+@Evergreen @Users @EvergreenJnr_ActionsPanel @BulkUpdate @DAS13386 @DAS13477
 Scenario: EvergreenJnr_UsersList_CheckThatBulkUpdateOfTasksDoesNotIncludeGroupTasks
 	When User clicks "Users" on the left-hand menu
 	Then "Users" list should be displayed to the user
@@ -1548,7 +1548,12 @@ Scenario: EvergreenJnr_UsersList_CheckThatBulkUpdateOfTasksDoesNotIncludeGroupTa
 	And User selects "Bulk update" in the Actions dropdown
 	And User selects "Update task value" Bulk Update Type on Action panel
 	And User selects "User Scheduled Test (Jo)" Project on Action panel
-	And User selects "One" Stage on Action panel
+	Then following Stage are displayed in drop-down:
+	| Options |
+	| One     |
+	| Two     |
+	| Three   |
+	When User selects "One" Stage on Action panel
 	Then following Tasks are displayed in drop-down:
 	| Options                            |
 	| Radio Rag only User                |

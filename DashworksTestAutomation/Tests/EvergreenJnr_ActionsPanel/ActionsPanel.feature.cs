@@ -2810,6 +2810,7 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_ActionsPanel
         [NUnit.Framework.CategoryAttribute("EvergreenJnr_ActionsPanel")]
         [NUnit.Framework.CategoryAttribute("BulkUpdate")]
         [NUnit.Framework.CategoryAttribute("DAS13386")]
+        [NUnit.Framework.CategoryAttribute("DAS13477")]
         public virtual void EvergreenJnr_UsersList_CheckThatBulkUpdateOfTasksDoesNotIncludeGroupTasks()
         {
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("EvergreenJnr_UsersList_CheckThatBulkUpdateOfTasksDoesNotIncludeGroupTasks", new string[] {
@@ -2817,7 +2818,8 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_ActionsPanel
                         "Users",
                         "EvergreenJnr_ActionsPanel",
                         "BulkUpdate",
-                        "DAS13386"});
+                        "DAS13386",
+                        "DAS13477"});
             this.ScenarioSetup(scenarioInfo);
             this.FeatureBackground();
             testRunner.When("User clicks \"Users\" on the left-hand menu", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
@@ -2834,34 +2836,43 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_ActionsPanel
             testRunner.And("User selects \"Bulk update\" in the Actions dropdown", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
             testRunner.And("User selects \"Update task value\" Bulk Update Type on Action panel", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
             testRunner.And("User selects \"User Scheduled Test (Jo)\" Project on Action panel", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-            testRunner.And("User selects \"One\" Stage on Action panel", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
             TechTalk.SpecFlow.Table table102 = new TechTalk.SpecFlow.Table(new string[] {
                         "Options"});
             table102.AddRow(new string[] {
+                        "One"});
+            table102.AddRow(new string[] {
+                        "Two"});
+            table102.AddRow(new string[] {
+                        "Three"});
+            testRunner.Then("following Stage are displayed in drop-down:", ((string)(null)), table102, "Then ");
+            testRunner.When("User selects \"One\" Stage on Action panel", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+            TechTalk.SpecFlow.Table table103 = new TechTalk.SpecFlow.Table(new string[] {
+                        "Options"});
+            table103.AddRow(new string[] {
                         "Radio Rag only User"});
-            table102.AddRow(new string[] {
+            table103.AddRow(new string[] {
                         "Radio Rag Date User"});
-            table102.AddRow(new string[] {
+            table103.AddRow(new string[] {
                         "Radio Rag Date Owner User"});
-            table102.AddRow(new string[] {
+            table103.AddRow(new string[] {
                         "Text User"});
-            table102.AddRow(new string[] {
+            table103.AddRow(new string[] {
                         "Radio Rag Only User Req A"});
-            table102.AddRow(new string[] {
+            table103.AddRow(new string[] {
                         "Radio Rag Date User Req A"});
-            table102.AddRow(new string[] {
+            table103.AddRow(new string[] {
                         "Radio Rag Date Owner User Req A"});
-            table102.AddRow(new string[] {
+            table103.AddRow(new string[] {
                         "Radio Rag only User Req B"});
-            table102.AddRow(new string[] {
+            table103.AddRow(new string[] {
                         "Radio Rag Date User Req B"});
-            table102.AddRow(new string[] {
+            table103.AddRow(new string[] {
                         "Radio Rag Date Owner User Req B"});
-            table102.AddRow(new string[] {
+            table103.AddRow(new string[] {
                         "Radio Rag Date Owner Req B"});
-            table102.AddRow(new string[] {
+            table103.AddRow(new string[] {
                         "SS Department and Location Enabled"});
-            testRunner.Then("following Tasks are displayed in drop-down:", ((string)(null)), table102, "Then ");
+            testRunner.Then("following Tasks are displayed in drop-down:", ((string)(null)), table103, "Then ");
             this.ScenarioCleanup();
         }
     }
