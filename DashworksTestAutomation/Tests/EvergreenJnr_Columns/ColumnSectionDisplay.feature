@@ -731,15 +731,15 @@ Scenario: EvergreenJnr_AllLists_LocationAndUserFiltersEqualsOnUsersAndApplicatio
 	And User clicks the Filters button
 	Then Filters panel is displayed to the user
 	When User clicks Add New button on the Filter panel
-	Then "User" with "22"category is displayed on Filters panel
-	And "Location" with "8"category is displayed on Filters panel
+	Then "User" with "22" category is displayed on Filters panel
+	And "Location" with "8" category is displayed on Filters panel
 	When User clicks "Applications" on the left-hand menu
 	Then "Applications" list should be displayed to the user
 	When User clicks the Filters button
 	Then Filters panel is displayed to the user
 	When User clicks Add New button on the Filter panel
-	Then "User" with "24"category is displayed on Filters panel
-	And "User Location" with "8"category is displayed on Filters panel
+	Then "User" with "24" category is displayed on Filters panel
+	And "User Location" with "8" category is displayed on Filters panel
 
 @Evergreen @Mailboxes @EvergreenJnr_Columns @ColumnSectionDisplay @DAS12910
 Scenario: EvergreenJnr_MailboxesList_ChecksThatSubcategoriesOnColumnsPanelIsDisplayedCorrectlyAfterAddingObjectIdFilter
@@ -773,13 +773,73 @@ Scenario: EvergreenJnr_MailboxesList_ChecksThatSubcategoriesOnColumnsPanelIsDisp
 Scenario: EvergreenJnr_DevicesList_ChecksThatColumnsPanelDoesNotIncludeUnpublishedTasks
 	When User clicks "Devices" on the left-hand menu
 	Then "Devices" list should be displayed to the user
-	#When User clicks the Columns button
-	#Then Columns panel is displayed to the user
-	#Then User closed "Selected Columns" columns category
-	##Then User is expand "Project Tasks: Windows7Mi" columns category
-	Then the following subcategories are NOT displayed for "Project Tasks: Windows7Mi" Columns category:
-	| Subcategories                                   |
-	| Adhoc Information                               |
-	| Targeting Date                                  |
-	| Migration Updates                               |
-	| Windows7Mi: Group Computer Rag Radio Date Owner |
+	And the following subcategories are displayed for "Project Tasks: Windows7Mi" Columns category:
+	| Value                                                                                                            |
+	| Windows7Mi: A new group task thats long long long long long long long long long long long long long long long!!! |
+	| Windows7Mi: Additional Information                                                                               |
+	| Windows7Mi: Applications List                                                                                    |
+	| Windows7Mi: C&C Computer Test Task 1                                                                             |
+	| Windows7Mi: Completed Date                                                                                       |
+	| Windows7Mi: Computer Off/On                                                                                      |
+	| Windows7Mi: Computer Read Only Task for Project Object                                                           |
+	| Windows7Mi: Computer Read Only Task in Bulk Update                                                               |
+	| Windows7Mi: Computer Read Only Task in Self Service                                                              |
+	| Windows7Mi: Date & Time Task                                                                                     |
+	| Windows7Mi: Date Workstation Task                                                                                |
+	| Windows7Mi: DateTime                                                                                             |
+	| Windows7Mi: Forecast Code                                                                                        |
+	| Windows7Mi: Forecast Date                                                                                        |
+	| Windows7Mi: Further Information                                                                                  |
+	| Windows7Mi: Group Computer Non Rag Date Owner                                                                    |
+	| Windows7Mi: Group Computer Rag Radio Date Owner                                                                  |
+	| Windows7Mi: Group Date Computer Task                                                                             |
+	| Windows7Mi: h1                                                                                                   |
+	| Windows7Mi: IP Address                                                                                           |
+	| Windows7Mi: Laptop & Physical Task                                                                               |
+	| Windows7Mi: Laptop & Workstation 2                                                                               |
+	| Windows7Mi: Laptop Only Task                                                                                     |
+	| Windows7Mi: Laptop Replacement Task                                                                              |
+	| Windows7Mi: Mail 1                                                                                               |
+	| Windows7Mi: Migrated Date                                                                                        |
+	| Windows7Mi: Physical Only Task                                                                                   |
+	| Windows7Mi: Radiobutton Task for Workstation                                                                     |
+	| Windows7Mi: Scheduled Code                                                                                       |
+	| Windows7Mi: Scheduled Date                                                                                       |
+	| Windows7Mi: Self Service Enabled                                                                                 |
+	| Windows7Mi: Send Applications List - Computer Object Task                                                        |
+	| Windows7Mi: SS Application List Completed                                                                        |
+	| Windows7Mi: SS Application List Enabled (Computer Mode)                                                          |
+	| Windows7Mi: SS Computer Ownership Completed                                                                      |
+	| Windows7Mi: SS Computer Ownership Enabled                                                                        |
+	| Windows7Mi: SS Dept & Location Completed                                                                         |
+	| Windows7Mi: SS Dept & Location Enabled                                                                           |
+	| Windows7Mi: SS Other Options 1 Enabled                                                                           |
+	| Windows7Mi: SS Other Options 2 Completed                                                                         |
+	| Windows7Mi: SS Other Options 2 Enabled                                                                           |
+	| Windows7Mi: SS Other Options Completed                                                                           |
+	| Windows7Mi: SS Project Date Enabled                                                                              |
+	| Windows7Mi: SSP Project Date Completed                                                                           |
+	| Windows7Mi: Target Code                                                                                          |
+	| Windows7Mi: Target Date                                                                                          |
+	| Windows7Mi: Targeting Information                                                                                |
+	| Windows7Mi: Values but no RAG                                                                                    |
+	| Windows7Mi: VDI Only Task                                                                                        |
+	| Windows7Mi: Workflow for Devices                                                                                 |
+	| Windows7Mi: Workstation Text Task                                                                                |
+
+@Evergreen @Users @EvergreenJnr_Columns @ColumnSectionDisplay @DAS13419
+Scenario: EvergreenJnr_UsersList_ChecksThatFilterPanelDoesNotIncludeUnpublishedTasks
+	When User clicks "Users" on the left-hand menu
+	Then "Users" list should be displayed to the user
+	When User clicks the Filters button
+	Then Filters panel is displayed to the user
+	When User clicks Add New button on the Filter panel
+	Then User closed "Selected Columns" columns category
+	And User is expand "Project Tasks: prK" columns category
+	Then the following Filters subcategories are displayed for open category:
+	| Subcategories                            |
+	| prK: Email Address CC                    |
+	| prK: Email Notifications Allowed?        |
+	| prK: Email Override Address              |
+	| prK: Email to be sent - All Placeholders |
+	| prK: user-group-radb-k                   |

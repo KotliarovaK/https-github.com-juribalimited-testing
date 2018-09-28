@@ -1013,7 +1013,7 @@ namespace DashworksTestAutomation.Steps.Dashworks
 
         #region Sections
 
-        [Then(@"""(.*)"" with ""(.*)""category is displayed on Filters panel")]
+        [Then(@"""(.*)"" with ""(.*)"" category is displayed on Filters panel")]
         public void ThenWithCategoryIsDisplayedOnFiltersPanel(string filterName, string categoryCount)
         {
             var page = _driver.NowAt<FiltersElement>();

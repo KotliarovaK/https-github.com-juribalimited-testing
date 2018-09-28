@@ -70,8 +70,6 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_Columns
         
         [NUnit.Framework.TestAttribute()]
         [NUnit.Framework.Retry(2)]
-        
-        
         [NUnit.Framework.DescriptionAttribute("EvergreenJnr_DevicesList_CheckCategoryHeadingWhenAllColumnsFromCategoryAreAdded")]
         [NUnit.Framework.CategoryAttribute("Evergreen")]
         [NUnit.Framework.CategoryAttribute("Devices")]
@@ -103,8 +101,6 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_Columns
         
         [NUnit.Framework.TestAttribute()]
         [NUnit.Framework.Retry(2)]
-        
-        
         [NUnit.Framework.DescriptionAttribute("EvergreenJnr_DevicesList_CheckThatColumnCategoriesAreClosedAfterClearingAColumnSe" +
             "archValue")]
         [NUnit.Framework.CategoryAttribute("Evergreen")]
@@ -136,8 +132,6 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_Columns
         
         [NUnit.Framework.TestAttribute()]
         [NUnit.Framework.Retry(2)]
-        
-        
         [NUnit.Framework.DescriptionAttribute("EvergreenJnr_DevicesList_CheckThatColumnIsNotRemovedAfterApplyFilterForTheSameCol" +
             "umnName")]
         [NUnit.Framework.CategoryAttribute("Evergreen")]
@@ -177,8 +171,6 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_Columns
         
         [NUnit.Framework.TestAttribute()]
         [NUnit.Framework.Retry(2)]
-        
-        
         [NUnit.Framework.DescriptionAttribute("EvergreenJnr_DevicesList_CheckThatAppropriateIconsAreDisplayedForMaximizedAndMini" +
             "mizeGroups")]
         [NUnit.Framework.CategoryAttribute("Evergreen")]
@@ -209,8 +201,6 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_Columns
         
         [NUnit.Framework.TestAttribute()]
         [NUnit.Framework.Retry(2)]
-        
-        
         [NUnit.Framework.DescriptionAttribute("EvergreenJnr_DevicesList_CheckThatAllColumnsAreVisibleInTheirRelevantCategoryAfte" +
             "rResetting")]
         [NUnit.Framework.CategoryAttribute("Evergreen")]
@@ -246,8 +236,6 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_Columns
         
         [NUnit.Framework.TestAttribute()]
         [NUnit.Framework.Retry(2)]
-        
-        
         [NUnit.Framework.DescriptionAttribute("EvergreenJnr_MailboxesList_CheckThatCategoryRemainsOpenAfterAddingColumns")]
         [NUnit.Framework.CategoryAttribute("Evergreen")]
         [NUnit.Framework.CategoryAttribute("Mailboxes")]
@@ -286,8 +274,6 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_Columns
         
         [NUnit.Framework.TestAttribute()]
         [NUnit.Framework.Retry(2)]
-        
-        
         [NUnit.Framework.DescriptionAttribute("EvergreenJnr_DevicesList_CheckTheColumnCategoriesUpdatesAfterAddingColumn")]
         [NUnit.Framework.CategoryAttribute("Evergreen")]
         [NUnit.Framework.CategoryAttribute("Devices")]
@@ -328,8 +314,6 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_Columns
         
         [NUnit.Framework.TestAttribute()]
         [NUnit.Framework.Retry(2)]
-        
-        
         [NUnit.Framework.DescriptionAttribute("EvergreenJnr_UsersList_CheckTheColumnCategoriesUpdatesAfterAddingColumnForDynamic" +
             "Lists")]
         [NUnit.Framework.CategoryAttribute("Evergreen")]
@@ -389,8 +373,6 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_Columns
         
         [NUnit.Framework.TestAttribute()]
         [NUnit.Framework.Retry(2)]
-        
-        
         [NUnit.Framework.DescriptionAttribute("EvergreenJnr_ApplicationsList_CheckTheColumnCategoriesUpdatesAfterAddingColumnFor" +
             "StaticLists")]
         [NUnit.Framework.CategoryAttribute("Evergreen")]
@@ -456,8 +438,6 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_Columns
         
         [NUnit.Framework.TestAttribute()]
         [NUnit.Framework.Retry(2)]
-        
-        
         [NUnit.Framework.DescriptionAttribute("EvergreenJnr_MailboxesList_CheckTheColumnCategoriesUpdatesAfterAddingColumnForDyn" +
             "amicLists")]
         [NUnit.Framework.CategoryAttribute("Evergreen")]
@@ -517,8 +497,6 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_Columns
         
         [NUnit.Framework.TestAttribute()]
         [NUnit.Framework.Retry(2)]
-        
-        
         [NUnit.Framework.DescriptionAttribute("EvergreenJnr_AllLists_CheckThatColumnsIsNotRemovedAfterDraggingThemOutsideTheAgGr" +
             "id")]
         [NUnit.Framework.CategoryAttribute("Evergreen")]
@@ -661,8 +639,6 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_Columns
         
         [NUnit.Framework.TestAttribute()]
         [NUnit.Framework.Retry(2)]
-        
-        
         [NUnit.Framework.DescriptionAttribute("EvergreenJnr_UsersList_ChecksThatColumnsPanelIsDisplayedCorrectlyAfterApplyAnyFil" +
             "terFromApplicationCustomFieldsCategory")]
         [NUnit.Framework.CategoryAttribute("Evergreen")]
@@ -706,8 +682,6 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_Columns
         
         [NUnit.Framework.TestAttribute()]
         [NUnit.Framework.Retry(2)]
-        
-        
         [NUnit.Framework.DescriptionAttribute("EvergreenJnr_DevicesList_ChecksThatAfterAddingRowsToAStaticListFromTheAllListTheC" +
             "olumnsIsDisplayedCorrectlyOnDevicesPage")]
         [NUnit.Framework.CategoryAttribute("Evergreen")]
@@ -793,8 +767,6 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_Columns
         
         [NUnit.Framework.TestAttribute()]
         [NUnit.Framework.Retry(2)]
-        
-        
         [NUnit.Framework.DescriptionAttribute("EvergreenJnr_UsersList_ChecksThatAfterAddingRowsToAStaticListFromTheAllListTheCol" +
             "umnsIsDisplayedCorrectlyOnUsersPage")]
         [NUnit.Framework.CategoryAttribute("Evergreen")]
@@ -877,8 +849,6 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_Columns
         
         [NUnit.Framework.TestAttribute()]
         [NUnit.Framework.Retry(2)]
-        
-        
         [NUnit.Framework.DescriptionAttribute("EvergreenJnr_ApplicationsList_ChecksThatAfterAddingRowsToAStaticListFromTheAllLis" +
             "tTheColumnsIsDisplayedCorrectlyOnApplicationsPage")]
         [NUnit.Framework.CategoryAttribute("Evergreen")]
@@ -959,8 +929,6 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_Columns
         
         [NUnit.Framework.TestAttribute()]
         [NUnit.Framework.Retry(2)]
-        
-        
         [NUnit.Framework.DescriptionAttribute("EvergreenJnr_MailboxesList_ChecksThatAfterAddingRowsToAStaticListFromTheAllListTh" +
             "eColumnsIsDisplayedCorrectlyOnMailboxesPage")]
         [NUnit.Framework.CategoryAttribute("Evergreen")]
@@ -1045,8 +1013,6 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_Columns
         
         [NUnit.Framework.TestAttribute()]
         [NUnit.Framework.Retry(2)]
-        
-        
         [NUnit.Framework.DescriptionAttribute("EvergreenJnr_DevicesList_ChecksThatAfterAddingRowsToAStaticListFromADynamicListTh" +
             "eColumnsIsDisplayedCorrectlyOnDevicesPage")]
         [NUnit.Framework.CategoryAttribute("Evergreen")]
@@ -1133,8 +1099,6 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_Columns
         
         [NUnit.Framework.TestAttribute()]
         [NUnit.Framework.Retry(2)]
-        
-        
         [NUnit.Framework.DescriptionAttribute("EvergreenJnr_DevicesList_ChecksThatAfterAddingRowsToAStaticListFromAStaticListThe" +
             "ColumnsIsDisplayedCorrectlyOnDevicesPage")]
         [NUnit.Framework.CategoryAttribute("Evergreen")]
@@ -1230,8 +1194,6 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_Columns
         
         [NUnit.Framework.TestAttribute()]
         [NUnit.Framework.Retry(2)]
-        
-        
         [NUnit.Framework.DescriptionAttribute("EvergreenJnr_DevicesList_TheSelectedColumnsCategoryIsDisplayedAfterUsingTheFilter" +
             "Search")]
         [NUnit.Framework.CategoryAttribute("Evergreen")]
@@ -1284,8 +1246,6 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_Columns
         
         [NUnit.Framework.TestAttribute()]
         [NUnit.Framework.Retry(2)]
-        
-        
         [NUnit.Framework.DescriptionAttribute("EvergreenJnr_DevicesList_TheSelectedColumnsCategoryIsDisplayedAfterAddingAFilter")]
         [NUnit.Framework.CategoryAttribute("Evergreen")]
         [NUnit.Framework.CategoryAttribute("Devices")]
@@ -1343,8 +1303,6 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_Columns
         
         [NUnit.Framework.TestAttribute()]
         [NUnit.Framework.Retry(2)]
-        
-        
         [NUnit.Framework.DescriptionAttribute("EvergreenJnr_DevicesList_ChecksThatSubcategoriesOnFiltersPanelAreDisplayedInAlpha" +
             "beticalOrder")]
         [NUnit.Framework.CategoryAttribute("Evergreen")]
@@ -1412,8 +1370,6 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_Columns
         
         [NUnit.Framework.TestAttribute()]
         [NUnit.Framework.Retry(2)]
-        
-        
         [NUnit.Framework.DescriptionAttribute("EvergreenJnr_ApplicationsList_ChecksThatSubcategoriesOnColumnsPanelAreDisplayedIn" +
             "AlphabeticalOrderAfterAddingFilters")]
         [NUnit.Framework.CategoryAttribute("Evergreen")]
@@ -1486,8 +1442,6 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_Columns
         
         [NUnit.Framework.TestAttribute()]
         [NUnit.Framework.Retry(2)]
-        
-        
         [NUnit.Framework.DescriptionAttribute("EvergreenJnr_UsersList_ChecksThatSubcategoriesOnColumnsPanelAreDisplayedInAlphabe" +
             "ticalOrderAfterAddingDepartmentFilters")]
         [NUnit.Framework.CategoryAttribute("Evergreen")]
@@ -1604,8 +1558,6 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_Columns
         
         [NUnit.Framework.TestAttribute()]
         [NUnit.Framework.Retry(2)]
-        
-        
         [NUnit.Framework.DescriptionAttribute("EvergreenJnr_AllLists_LocationAndUserFiltersEqualsOnUsersAndApplicationsTabs")]
         [NUnit.Framework.CategoryAttribute("Evergreen")]
         [NUnit.Framework.CategoryAttribute("AllLists")]
@@ -1640,22 +1592,20 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_Columns
             testRunner.And("User clicks the Filters button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
             testRunner.Then("Filters panel is displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
             testRunner.When("User clicks Add New button on the Filter panel", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-            testRunner.Then("\"User\" with \"22\"category is displayed on Filters panel", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-            testRunner.And("\"Location\" with \"8\"category is displayed on Filters panel", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+            testRunner.Then("\"User\" with \"22\" category is displayed on Filters panel", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+            testRunner.And("\"Location\" with \"8\" category is displayed on Filters panel", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
             testRunner.When("User clicks \"Applications\" on the left-hand menu", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
             testRunner.Then("\"Applications\" list should be displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
             testRunner.When("User clicks the Filters button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
             testRunner.Then("Filters panel is displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
             testRunner.When("User clicks Add New button on the Filter panel", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-            testRunner.Then("\"User\" with \"24\"category is displayed on Filters panel", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-            testRunner.And("\"User Location\" with \"8\"category is displayed on Filters panel", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+            testRunner.Then("\"User\" with \"24\" category is displayed on Filters panel", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+            testRunner.And("\"User Location\" with \"8\" category is displayed on Filters panel", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
             this.ScenarioCleanup();
         }
         
         [NUnit.Framework.TestAttribute()]
         [NUnit.Framework.Retry(2)]
-        
-        
         [NUnit.Framework.DescriptionAttribute("EvergreenJnr_MailboxesList_ChecksThatSubcategoriesOnColumnsPanelIsDisplayedCorrec" +
             "tlyAfterAddingObjectIdFilter")]
         [NUnit.Framework.CategoryAttribute("Evergreen")]
@@ -1733,17 +1683,153 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_Columns
             testRunner.When("User clicks \"Devices\" on the left-hand menu", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
             testRunner.Then("\"Devices\" list should be displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
             TechTalk.SpecFlow.Table table85 = new TechTalk.SpecFlow.Table(new string[] {
-                        "Subcategories"});
+                        "Value"});
             table85.AddRow(new string[] {
-                        "Adhoc Information"});
+                        "Windows7Mi: A new group task thats long long long long long long long long long l" +
+                            "ong long long long long long!!!"});
             table85.AddRow(new string[] {
-                        "Targeting Date"});
+                        "Windows7Mi: Additional Information"});
             table85.AddRow(new string[] {
-                        "Migration Updates"});
+                        "Windows7Mi: Applications List"});
+            table85.AddRow(new string[] {
+                        "Windows7Mi: C&C Computer Test Task 1"});
+            table85.AddRow(new string[] {
+                        "Windows7Mi: Completed Date"});
+            table85.AddRow(new string[] {
+                        "Windows7Mi: Computer Off/On"});
+            table85.AddRow(new string[] {
+                        "Windows7Mi: Computer Read Only Task for Project Object"});
+            table85.AddRow(new string[] {
+                        "Windows7Mi: Computer Read Only Task in Bulk Update"});
+            table85.AddRow(new string[] {
+                        "Windows7Mi: Computer Read Only Task in Self Service"});
+            table85.AddRow(new string[] {
+                        "Windows7Mi: Date & Time Task"});
+            table85.AddRow(new string[] {
+                        "Windows7Mi: Date Workstation Task"});
+            table85.AddRow(new string[] {
+                        "Windows7Mi: DateTime"});
+            table85.AddRow(new string[] {
+                        "Windows7Mi: Forecast Code"});
+            table85.AddRow(new string[] {
+                        "Windows7Mi: Forecast Date"});
+            table85.AddRow(new string[] {
+                        "Windows7Mi: Further Information"});
+            table85.AddRow(new string[] {
+                        "Windows7Mi: Group Computer Non Rag Date Owner"});
             table85.AddRow(new string[] {
                         "Windows7Mi: Group Computer Rag Radio Date Owner"});
-            testRunner.Then("the following subcategories are NOT displayed for \"Project Tasks: Windows7Mi\" Col" +
-                    "umns category:", ((string)(null)), table85, "Then ");
+            table85.AddRow(new string[] {
+                        "Windows7Mi: Group Date Computer Task"});
+            table85.AddRow(new string[] {
+                        "Windows7Mi: h1"});
+            table85.AddRow(new string[] {
+                        "Windows7Mi: IP Address"});
+            table85.AddRow(new string[] {
+                        "Windows7Mi: Laptop & Physical Task"});
+            table85.AddRow(new string[] {
+                        "Windows7Mi: Laptop & Workstation 2"});
+            table85.AddRow(new string[] {
+                        "Windows7Mi: Laptop Only Task"});
+            table85.AddRow(new string[] {
+                        "Windows7Mi: Laptop Replacement Task"});
+            table85.AddRow(new string[] {
+                        "Windows7Mi: Mail 1"});
+            table85.AddRow(new string[] {
+                        "Windows7Mi: Migrated Date"});
+            table85.AddRow(new string[] {
+                        "Windows7Mi: Physical Only Task"});
+            table85.AddRow(new string[] {
+                        "Windows7Mi: Radiobutton Task for Workstation"});
+            table85.AddRow(new string[] {
+                        "Windows7Mi: Scheduled Code"});
+            table85.AddRow(new string[] {
+                        "Windows7Mi: Scheduled Date"});
+            table85.AddRow(new string[] {
+                        "Windows7Mi: Self Service Enabled"});
+            table85.AddRow(new string[] {
+                        "Windows7Mi: Send Applications List - Computer Object Task"});
+            table85.AddRow(new string[] {
+                        "Windows7Mi: SS Application List Completed"});
+            table85.AddRow(new string[] {
+                        "Windows7Mi: SS Application List Enabled (Computer Mode)"});
+            table85.AddRow(new string[] {
+                        "Windows7Mi: SS Computer Ownership Completed"});
+            table85.AddRow(new string[] {
+                        "Windows7Mi: SS Computer Ownership Enabled"});
+            table85.AddRow(new string[] {
+                        "Windows7Mi: SS Dept & Location Completed"});
+            table85.AddRow(new string[] {
+                        "Windows7Mi: SS Dept & Location Enabled"});
+            table85.AddRow(new string[] {
+                        "Windows7Mi: SS Other Options 1 Enabled"});
+            table85.AddRow(new string[] {
+                        "Windows7Mi: SS Other Options 2 Completed"});
+            table85.AddRow(new string[] {
+                        "Windows7Mi: SS Other Options 2 Enabled"});
+            table85.AddRow(new string[] {
+                        "Windows7Mi: SS Other Options Completed"});
+            table85.AddRow(new string[] {
+                        "Windows7Mi: SS Project Date Enabled"});
+            table85.AddRow(new string[] {
+                        "Windows7Mi: SSP Project Date Completed"});
+            table85.AddRow(new string[] {
+                        "Windows7Mi: Target Code"});
+            table85.AddRow(new string[] {
+                        "Windows7Mi: Target Date"});
+            table85.AddRow(new string[] {
+                        "Windows7Mi: Targeting Information"});
+            table85.AddRow(new string[] {
+                        "Windows7Mi: Values but no RAG"});
+            table85.AddRow(new string[] {
+                        "Windows7Mi: VDI Only Task"});
+            table85.AddRow(new string[] {
+                        "Windows7Mi: Workflow for Devices"});
+            table85.AddRow(new string[] {
+                        "Windows7Mi: Workstation Text Task"});
+            testRunner.And("the following subcategories are displayed for \"Project Tasks: Windows7Mi\" Columns" +
+                    " category:", ((string)(null)), table85, "And ");
+            this.ScenarioCleanup();
+        }
+        
+        [NUnit.Framework.TestAttribute()]
+        [NUnit.Framework.Retry(2)]
+        [NUnit.Framework.DescriptionAttribute("EvergreenJnr_UsersList_ChecksThatFilterPanelDoesNotIncludeUnpublishedTasks")]
+        [NUnit.Framework.CategoryAttribute("Evergreen")]
+        [NUnit.Framework.CategoryAttribute("Users")]
+        [NUnit.Framework.CategoryAttribute("EvergreenJnr_Columns")]
+        [NUnit.Framework.CategoryAttribute("ColumnSectionDisplay")]
+        [NUnit.Framework.CategoryAttribute("DAS13419")]
+        public virtual void EvergreenJnr_UsersList_ChecksThatFilterPanelDoesNotIncludeUnpublishedTasks()
+        {
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("EvergreenJnr_UsersList_ChecksThatFilterPanelDoesNotIncludeUnpublishedTasks", new string[] {
+                        "Evergreen",
+                        "Users",
+                        "EvergreenJnr_Columns",
+                        "ColumnSectionDisplay",
+                        "DAS13419"});
+            this.ScenarioSetup(scenarioInfo);
+            this.FeatureBackground();
+            testRunner.When("User clicks \"Users\" on the left-hand menu", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+            testRunner.Then("\"Users\" list should be displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+            testRunner.When("User clicks the Filters button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+            testRunner.Then("Filters panel is displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+            testRunner.When("User clicks Add New button on the Filter panel", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+            testRunner.Then("User closed \"Selected Columns\" columns category", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+            testRunner.And("User is expand \"Project Tasks: prK\" columns category", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+            TechTalk.SpecFlow.Table table86 = new TechTalk.SpecFlow.Table(new string[] {
+                        "Subcategories"});
+            table86.AddRow(new string[] {
+                        "prK: Email Address CC"});
+            table86.AddRow(new string[] {
+                        "prK: Email Notifications Allowed?"});
+            table86.AddRow(new string[] {
+                        "prK: Email Override Address"});
+            table86.AddRow(new string[] {
+                        "prK: Email to be sent - All Placeholders"});
+            table86.AddRow(new string[] {
+                        "prK: user-group-radb-k"});
+            testRunner.Then("the following Filters subcategories are displayed for open category:", ((string)(null)), table86, "Then ");
             this.ScenarioCleanup();
         }
     }
