@@ -14,6 +14,8 @@ namespace DashworksTestAutomation.Pages.Evergreen.AdminDetailsPages
 
         public const string ObjectsToAdd = "//div[@class='mat-list-text']/span";
 
+        public const string BucketRow = "//div[@col-id='name']//a";
+
         [FindsBy(How = How.XPath, Using = ".//div/h1")]
         public IWebElement PageTitle { get; set; }
 
@@ -124,6 +126,9 @@ namespace DashworksTestAutomation.Pages.Evergreen.AdminDetailsPages
 
         [FindsBy(How = How.XPath, Using = ProjectInFilterDropdown)]
         public IList<IWebElement> ProjectListInFilterDropdown { get; set; }
+
+        [FindsBy(How = How.XPath, Using = BucketRow)]
+        public IList<IWebElement> BucketRowList { get; set; }
 
         private By AgIconMenu = By.XPath(".//span[contains(@class,'ag-icon-menu')]");
 
@@ -298,11 +303,18 @@ namespace DashworksTestAutomation.Pages.Evergreen.AdminDetailsPages
             SearchTextbox.SendKeys(itemName);
         }
 
-        public bool OnboardedObjectDisplayed(string objectName)
+        public IWebElement QueueOnboardedObjectDisplayed(string objectName)
         {
-            Driver.WaitForElement(By.XPath(".//div[@id='agGridTable']"));
-            return Driver.IsElementDisplayed(
-                By.XPath($"//a[text()='{objectName}']"));
+            var selector = By.XPath($"//span[text()='{objectName}']");
+            Driver.WaitWhileControlIsNotDisplayed(selector);
+            return Driver.FindElement(selector);
+        }
+
+        public IWebElement HistoryOnboardedObjectDisplayed(string objectName)
+        {
+            var selector = By.XPath($"//a[text()='{objectName}']");
+            Driver.WaitWhileControlIsNotDisplayed(selector);
+            return Driver.FindElement(selector);
         }
 
         public bool OnboardedObjectNumber(string objectsNumber)
@@ -347,7 +359,6 @@ namespace DashworksTestAutomation.Pages.Evergreen.AdminDetailsPages
                 $".//div[contains(@class, 'ag-body-viewport')]//div[contains(@class, 'ag-body-container')]/div/div[{GetColumnNumberByName(columnName)}]");
             return Driver.FindElements(by).Select(x => x.Text).ToList();
         }
-
 
         public bool CheckStringFilterByName(string filterName)
         {

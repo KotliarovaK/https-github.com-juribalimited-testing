@@ -385,7 +385,7 @@ Scenario: EvergreenJnr_UsersList_ChecksThatRequestTypeIsUpdatedCorrectlyOnUsersP
 	And User click on 'Windows7Mi: Request Type' column header
 	And User clicks the Actions button
 	Then Actions panel is displayed to the user
-	When User searches and selects "Username" rows in the grid
+	When User searches and selects following rows in the grid:
 	| SelectedRowsName |
 	| FMN5805290       |
 	| AKX995383        |
@@ -1535,7 +1535,7 @@ Scenario: EvergreenJnr_DevicesList_CheckThatBulkUpdateOfTasksDoesNotIncludeUnpub
 	| Targeting Information  |
 	| Laptop & Workstation 2 |
 
-@Evergreen @Users @EvergreenJnr_ActionsPanel @BulkUpdate @DAS13386
+@Evergreen @Users @EvergreenJnr_ActionsPanel @BulkUpdate @DAS13386 @DAS13477
 Scenario: EvergreenJnr_UsersList_CheckThatBulkUpdateOfTasksDoesNotIncludeGroupTasks
 	When User clicks "Users" on the left-hand menu
 	Then "Users" list should be displayed to the user
@@ -1548,7 +1548,12 @@ Scenario: EvergreenJnr_UsersList_CheckThatBulkUpdateOfTasksDoesNotIncludeGroupTa
 	And User selects "Bulk update" in the Actions dropdown
 	And User selects "Update task value" Bulk Update Type on Action panel
 	And User selects "User Scheduled Test (Jo)" Project on Action panel
-	And User selects "One" Stage on Action panel
+	Then following Stage are displayed in drop-down:
+	| Options |
+	| One     |
+	| Two     |
+	| Three   |
+	When User selects "One" Stage on Action panel
 	Then following Tasks are displayed in drop-down:
 	| Options                            |
 	| Radio Rag only User                |

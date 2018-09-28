@@ -270,7 +270,7 @@ namespace DashworksTestAutomation.Steps.Dashworks
             _driver.WaitForDataLoading();
             foreach (var row in table.Rows)
             {
-             Assert.IsTrue(projectsPage.PermissionsDisplay(row["Permissions"]), $"'{row["Permissions"]}' are not displayed");
+                Assert.IsTrue(projectsPage.PermissionsDisplay(row["Permissions"]), $"'{row["Permissions"]}' are not displayed");
             }
         }
 
@@ -369,8 +369,8 @@ namespace DashworksTestAutomation.Steps.Dashworks
             _driver.WaitForDataLoading();
         }
 
-        [Then(@"data in table is sorted by ""(.*)"" column in descending by default order on the Admin page")]
-        public void ThenDataInTableIsSortedByColumnInDescendingByDefaultOrderOnTheAdminPage(string columnName)
+        [Then(@"data in table is sorted by ""(.*)"" column in descending order by default on the Admin page")]
+        public void ThenDataInTableIsSortedByColumnInDescendingOrderByDefaultOnTheAdminPage(string columnName)
         {
             var adminTable = _driver.NowAt<BaseGridPage>();
 
@@ -519,6 +519,14 @@ namespace DashworksTestAutomation.Steps.Dashworks
         {
             var projectsPage = _driver.NowAt<ProjectsPage>();
             Assert.IsFalse(projectsPage.ApplicationScopeCheckboxes.Displayed(), "Application Scope checkboxes are disabled");
+        }
+
+        [Then(@"""(.*)"" checkbox is not displayed on the Admin page")]
+        public void ThenCheckboxIsNotDisplayedOnTheAdminPage(string checkboxName)
+        {
+            var filterElement = _driver.NowAt<ProjectsPage>();
+            Assert.IsFalse(filterElement.GetCheckboxByName(checkboxName));
+            Logger.Write($"{checkboxName} checkbox is displayed");
         }
 
         [Then(@"Application Scope tab is hidden")]
@@ -1028,7 +1036,7 @@ namespace DashworksTestAutomation.Steps.Dashworks
             page.CreateBucketButton.Click();
             Logger.Write("Create Team button was clicked");
         }
-        
+
         #region Message
 
         [Then(@"Warning message with ""(.*)"" text is displayed on the Admin page")]
@@ -1274,7 +1282,7 @@ namespace DashworksTestAutomation.Steps.Dashworks
             _driver.WaitForDataLoading();
         }
 
-    [When(@"User selects all objects to the Project")]
+        [When(@"User selects all objects to the Project")]
         [When(@"User cancels the selection objects in the Project")]
         public void WhenUserSelectsAllObjects()
         {
@@ -1302,8 +1310,17 @@ namespace DashworksTestAutomation.Steps.Dashworks
             bucketElement.AddItemButton.Click();
         }
 
-        [When(@"User searches and selects ""(.*)"" rows in the grid")]
-        public void WhenUserSearchesAndSelectsRowsInTheGrid(string columnName, Table table)
+        [Then(@"following Objects are displayed in Buckets table:")]
+        public void ThenFollowingObjectsAreDisplayedInBuckets(Table table)
+        {
+            var page = _driver.NowAt<BaseGridPage>();
+            var expectedRowList = table.Rows.SelectMany(row => row.Values).ToList();
+            var actualRowList = page.BucketRowList.Select(value => value.Text).ToList();
+            Assert.AreEqual(expectedRowList, actualRowList, "Tasks value are different");
+        }
+
+        [When(@"User searches and selects following rows in the grid:")]
+        public void WhenUserSearchesAndSelectsFollowingRowsInTheGrid(Table table)
         {
             var dashboardPage = _driver.NowAt<BaseDashboardPage>();
             dashboardPage.TableSearchButton.Click();
@@ -1353,8 +1370,8 @@ namespace DashworksTestAutomation.Steps.Dashworks
             }
         }
 
-        [Then(@"following Items are onboarded")]
-        public void ThenFollowingItemsAreOnboarded(Table table)
+        [Then(@"following Items are displayed in the History table")]
+        public void ThenFollowingItemsAreDisplayedInTheHistoryTable(Table table)
         {
             var projectElement = _driver.NowAt<BaseGridPage>();
             foreach (var row in table.Rows)
@@ -1365,33 +1382,48 @@ namespace DashworksTestAutomation.Steps.Dashworks
                     {
                         Thread.Sleep(20000);
                         _driver.Navigate().Refresh();
-                        projectElement.OnboardedObjectDisplayed(row["Items"]);
+                        Assert.IsTrue(projectElement.HistoryOnboardedObjectDisplayed(row["Items"]).Displayed);
                     }
                     catch (Exception)
                     {
                         Thread.Sleep(40000);
                         _driver.Navigate().Refresh();
-                        projectElement.OnboardedObjectDisplayed(row["Items"]);
+                        Assert.IsTrue(projectElement.HistoryOnboardedObjectDisplayed(row["Items"]).Displayed);
                     }
                 }
                 else
-                projectElement.OnboardedObjectDisplayed(row["Items"]);
+                    Assert.IsTrue(projectElement.HistoryOnboardedObjectDisplayed(row["Items"]).Displayed);
+            }
+        }
 
-                //    if (projectElement.OnboardedObjectsTable.Displayed())
-                //    projectElement.OnboardedObjectDisplayed(row["Items"]);
-                //else
-                //{
-                //    Thread.Sleep(20000);
-                //    _driver.Navigate().Refresh();
-                //    if (projectElement.OnboardedObjectsTable.Displayed())
-                //        projectElement.OnboardedObjectDisplayed(row["Items"]);
-                //    else
-                //    {
-                //        Thread.Sleep(20000);
-                //        _driver.Navigate().Refresh();
-                //        projectElement.OnboardedObjectDisplayed(row["Items"]);
-                //    }
-                //}
+        [Then(@"additional onboarded Items are displayed in the History table")]
+        public void ThenAdditionalOnboardedItemsAreDisplayedInTheHistoryTable(Table table)
+        {
+            var projectElement = _driver.NowAt<BaseGridPage>();
+            foreach (var row in table.Rows)
+            {
+                try
+                {
+                    Thread.Sleep(20000);
+                    _driver.Navigate().Refresh();
+                    Assert.IsTrue(projectElement.HistoryOnboardedObjectDisplayed(row["Items"]).Displayed, $"{row["Items"]} is not displayed in History table");
+                }
+                catch (Exception)
+                {
+                    Thread.Sleep(40000);
+                    _driver.Navigate().Refresh();
+                    Assert.IsTrue(projectElement.HistoryOnboardedObjectDisplayed(row["Items"]).Displayed, $"{row["Items"]} is not displayed in History table");
+                }
+            }
+        }
+
+        [Then(@"following Items are displayed in the Queue table")]
+        public void ThenFollowingItemsAreDisplayedInTheQueueTable(Table table)
+        {
+            var projectElement = _driver.NowAt<BaseGridPage>();
+            foreach (var row in table.Rows)
+            {
+                Assert.IsTrue(projectElement.QueueOnboardedObjectDisplayed(row["Items"]).Displayed, $"{row["Items"]} is not displayed in Queue table");
             }
         }
 
@@ -1419,7 +1451,7 @@ namespace DashworksTestAutomation.Steps.Dashworks
         public void ThenAddObjectsPanelIsCollapsed()
         {
             var projectElement = _driver.NowAt<BaseGridPage>();
-            Assert.IsTrue(projectElement.AddObjectsPanelCollapsed.Displayed(),"Panel is expanded");
+            Assert.IsTrue(projectElement.AddObjectsPanelCollapsed.Displayed(), "Panel is expanded");
         }
 
         #endregion
