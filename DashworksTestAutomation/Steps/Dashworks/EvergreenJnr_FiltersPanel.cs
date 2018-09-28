@@ -257,6 +257,13 @@ namespace DashworksTestAutomation.Steps.Dashworks
             filterElement.SelectOperator(operatorValue);
         }
 
+        [When(@"User adds column for the selected filter")]
+        public void WhenUserAddsColumnForTheSelectedFilter()
+        {
+            var filterElement = _driver.NowAt<FiltersElement>();
+            filterElement.AddFiltersColumnName.Click();
+        }
+
         [When(@"User have create ""(.*)"" Values filter with column and following options:")]
         public void WhenUserHaveCreateValuesFilterWithColumnAndFollowingOptions(string operatorValue, Table table)
         {
