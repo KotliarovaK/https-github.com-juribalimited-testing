@@ -1705,7 +1705,7 @@ Scenario Outline: EvergreenJnr_ChangingApplicationScopeListToAnotherListForMailb
 	Then "Applications to add (0 of 0 selected)" is displayed to the user in the Project Scope Changes section
 	When User selects "Scope Details" tab on the Project details page
 	When User navigates to the "Application Scope" tab in the Scope section on the Project details page
-	When  User selects "Include applications" checkbox on the Project details page
+	When User selects "Include applications" checkbox on the Project details page
 	And User selects "<ChangingToList1>" in the Scope Project details
 	And User selects "Scope Changes" tab on the Project details page
 	When User clicks "Applications" tab in the Project Scope Changes section
@@ -3376,7 +3376,38 @@ Scenario: EvergreenJnr_AdminPage_ChecksThatBlueBannerIsDisplayedWithCorrectlyTex
 	| 019BFPQGKK5QT8N |
 	| 02C80G8RFTPA9E  |
 	| 06T5FX3CUY08AE  |
-	And User clicks the "UPDATE DEVICE CHANGES" Action button
+	And User clicks "Users" tab in the Project Scope Changes section
+	And User expands the object to add 
+	When User selects all objects to the Project
+	And User clicks "Applications" tab in the Project Scope Changes section
+	And User expands the object to add 
+	And User selects following Objects
+	| Objects                                                                       |
+	| "WPF/E" (codename) Community Technology Preview (Feb 2007) (0.8.5.0)          |
+	| %SQL_PRODUCT_SHORT_NAME% Data Tools - BI for Visual Studio 2013 (12.0.2430.0) |
+	| %SQL_PRODUCT_SHORT_NAME% SSIS 64Bit For SSDTBI (12.0.2430.0)                  |
+	| 0004 - Adobe Acrobat Reader 5.0.5 Francais (5.0.5)                            |
+	| 0036 - Microsoft Access 97 SR-2 English (8.0)                                 |
+	And User clicks the "UPDATE ALL CHANGES" Action button
+	And User clicks the "UPDATE PROJECT" Action button
+	#Then Blue banner with "Object updates being queued, please wait" text is displayed
+	Then Success message is displayed and contains "14641 objects queued for onboarding, 0 objects offboarded" text
+	When User selects "Scope Details" tab on the Project details page
+	And User navigates to the "User Scope" tab in the Scope section on the Project details page
+	When User selects "Do not include device owners" checkbox on the Project details page
+	And User navigates to the "Application Scope" tab in the Scope section on the Project details page
+	When User selects "Do not include applications" checkbox on the Project details page
+	And User selects "Scope Changes" tab on the Project details page
+	And User clicks "Users" tab in the Project Scope Changes section
+	And User expands the object to remove 
+	When User selects all objects to the Project
+	#And User selects following Objects
+	#| Objects                        |
+	#| AAC860150 (Kerrie D. Ruiz)     |
+	#| AAD1011948 (Pinabel Cinq-Mars) |
+	#| AAG081456 (Melanie Z. Fowler)  |
+	#| AAH0343264 (Luc Gauthier)      |
+	#| AAK881049 (Miguel W. Owen)     |
+	And User clicks the "UPDATE ALL CHANGES" Action button
 	And User clicks the "UPDATE PROJECT" Action button
 	Then Blue banner with "Object updates being queued, please wait" text is displayed
-	And Success message is displayed and contains "5 objects queued for onboarding, 0 objects offboarded" text

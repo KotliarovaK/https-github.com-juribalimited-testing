@@ -1274,6 +1274,7 @@ namespace DashworksTestAutomation.Steps.Dashworks
             button.UpdateBucketButton.Click();
         }
 
+        [When(@"User expands the object to remove")]
         [When(@"User expands the object to add")]
         public void WhenUserExpandsTheObjectToAdd()
         {
