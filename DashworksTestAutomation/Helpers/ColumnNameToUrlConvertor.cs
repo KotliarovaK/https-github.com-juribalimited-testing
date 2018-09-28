@@ -219,6 +219,18 @@ namespace DashworksTestAutomation.Helpers
                 case "Device Count (Used)":
                     return "computerUsage";
 
+                case "Owner title":
+                    return "userLDAPField_242";
+
+                case "Owner usncreated":
+                    return "userLDAPField_37";
+
+                case "Owner lastlogon":
+                    return "userLDAPField_115";
+
+                case "Owner admincount":
+                    return "userLDAPField_43";
+
                 default:
                     throw new Exception($"{columnName} column not found in convertor");
             }

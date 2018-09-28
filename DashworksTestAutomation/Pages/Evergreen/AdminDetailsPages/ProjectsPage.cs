@@ -162,6 +162,7 @@ namespace DashworksTestAutomation.Pages.Evergreen.AdminDetailsPages
             var tab = Driver.FindElement(
                 By.XPath($"//li//span[text()='{permissions}']//following-sibling::button"));
             tab.Click();
+            Driver.WaitForDataLoading();
         }
 
         public void SelectCheckboxByName(string checkboxName)
@@ -251,6 +252,11 @@ namespace DashworksTestAutomation.Pages.Evergreen.AdminDetailsPages
         public bool GetDisabledAssociationName(string associationName)
         {
             return Driver.IsElementDisplayed(By.XPath($"//mat-checkbox[contains(@class, 'disabled')]/label/span[text()='{associationName}']"));
+        }
+
+        public bool GetCheckboxByName (string checkboxName)
+        {
+            return Driver.IsElementDisplayed(By.XPath($"//span[text()='{checkboxName}']"));
         }
 
         public bool SelectedTabInProjectScopeChangesSection(string tabName)

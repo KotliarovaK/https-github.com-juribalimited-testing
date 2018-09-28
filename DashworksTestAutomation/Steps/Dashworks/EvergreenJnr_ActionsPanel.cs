@@ -124,8 +124,8 @@ namespace DashworksTestAutomation.Steps.Dashworks
         {
             var action = _driver.NowAt<BaseDashboardPage>();
             action.ProjectField.Click();
-            var expectedList = table.Rows.SelectMany(row => row.Values);
-            var actualList = action.OptionsDll.Select(value => value.Text);
+            var expectedList = table.Rows.SelectMany(row => row.Values).ToList();
+            var actualList = action.OptionsDll.Select(value => value.Text).ToList();
             Assert.AreEqual(expectedList, actualList, "Project lists are different");
         }
 
@@ -148,6 +148,18 @@ namespace DashworksTestAutomation.Steps.Dashworks
             action.StageField.SendKeys(stageValue);
             action.GetOptionOnActionsPanelByName(stageValue).Click();
             _driver.WaitForDataLoading();
+        }
+
+        [Then(@"following Stage are displayed in drop-down:")]
+        public void ThenFollowingStageAreDisplayedInDrop_Down(Table table)
+        {
+            var action = _driver.NowAt<BaseDashboardPage>();
+            action.StageField.Click();
+            var expectedList = table.Rows.SelectMany(row => row.Values).ToList();
+            var actualList = action.OptionListOnActionsPanel.Select(value => value.Text).ToList();
+            Assert.AreEqual(expectedList, actualList, "Stage lists are different");
+            var page = _driver.NowAt<ApplicationsDetailsTabsMenu>();
+            page.BodyContainer.Click();
         }
 
         [Then(@"Stages are displayed in alphabetical order on Action panel")]
@@ -328,8 +340,8 @@ namespace DashworksTestAutomation.Steps.Dashworks
         {
             var action = _driver.NowAt<BaseDashboardPage>();
             action.UpdateValueDropdown.Click();
-            var expectedList = table.Rows.SelectMany(row => row.Values);
-            var actualList = action.OptionsDll.Select(value => value.Text);
+            var expectedList = table.Rows.SelectMany(row => row.Values).ToList();
+            var actualList = action.OptionsDll.Select(value => value.Text).ToList();
             Assert.AreEqual(expectedList, actualList, "Project list are different");
         }
 
@@ -576,8 +588,8 @@ namespace DashworksTestAutomation.Steps.Dashworks
         public void ThenFollowingValuesAreDisplayedInActionDrop_Down(Table table)
         {
             var actionsElement = _driver.NowAt<ActionsElement>();
-            var expectedList = table.Rows.SelectMany(row => row.Values);
-            var actualList = actionsElement.ActionValues.Select(value => value.Text);
+            var expectedList = table.Rows.SelectMany(row => row.Values).ToList();
+            var actualList = actionsElement.ActionValues.Select(value => value.Text).ToList();
             Assert.AreEqual(expectedList, actualList, "Action values are different");
             var filterElement = _driver.NowAt<ApplicationsDetailsTabsMenu>();
             filterElement.BodyContainer.Click();
