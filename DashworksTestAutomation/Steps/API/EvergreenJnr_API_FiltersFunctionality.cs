@@ -120,5 +120,29 @@ namespace DashworksTestAutomation.Steps.API
             var itemByIndex2 = filterValueList.FindIndex(s => s.Equals(item2));
             Assert.AreEqual(item1, filterValueList[itemByIndex2 + 1]);
         }
+
+        [Then(@"the following subcategories are displayed for ""(.*)"" Columns category:")]
+        public void ThenTheFollowingSubcategoriesAreDisplayedForColumnsCategory(string categoryName, Table table)
+        {
+            var requestUri = $"{UrlProvider.RestClientBaseUrl}devices/fields?$lang=en-US";
+            var request = new RestRequest(requestUri);
+
+            request.AddParameter("Host", UrlProvider.RestClientBaseUrl);
+            request.AddParameter("Origin", UrlProvider.Url.TrimEnd('/'));
+            request.AddParameter("Referer", UrlProvider.EvergreenUrl);
+
+            var response = _client.Value.Get(request);
+
+            if (response.StatusCode != HttpStatusCode.OK)
+                throw new Exception($"Unable to execute request. URI: {requestUri}");
+
+            var content = response.Content;
+
+            var responseContent = JsonConvert.DeserializeObject<List<JObject>>(content).ToList();
+            var subсategory = responseContent.FindAll(x => x["translatedCategory"].ToString().Equals(categoryName)).ToList();
+            var subсategoryList = subсategory.Select(x => x["translatedColumnName"].ToString()).ToList();
+            var expectedList = table.Rows.SelectMany(row => row.Values).ToList();
+            Assert.AreEqual(subсategoryList, expectedList, "Subcategory lists are not equal");
+        }
     }
 }

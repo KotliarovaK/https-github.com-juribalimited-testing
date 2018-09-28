@@ -334,14 +334,14 @@ namespace DashworksTestAutomation.Steps.Dashworks
         [Then(@"User closed ""(.*)"" columns category")]
         public void ThenUserClosedColumnsCategory(string categoryName)
         {
-            var columnElement = _driver.NowAt<ColumnsElement>();
+            var columnElement = _driver.NowAt<BaseDashboardPage>();
             columnElement.CloseColumnsSectionByName(categoryName);
         }
 
         [Then(@"User is expand ""(.*)"" columns category")]
         public void ThenUserIsExpandColumnsCategory(string categoryName)
         {
-            var columnElement = _driver.NowAt<ColumnsElement>();
+            var columnElement = _driver.NowAt<BaseDashboardPage>();
             columnElement.ExpandColumnsSectionByName(categoryName);
         }
 
