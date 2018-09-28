@@ -3390,7 +3390,6 @@ Scenario: EvergreenJnr_AdminPage_ChecksThatBlueBannerIsDisplayedWithCorrectlyTex
 	| 0036 - Microsoft Access 97 SR-2 English (8.0)                                 |
 	And User clicks the "UPDATE ALL CHANGES" Action button
 	And User clicks the "UPDATE PROJECT" Action button
-	#Then Blue banner with "Object updates being queued, please wait" text is displayed
 	Then Success message is displayed and contains "14641 objects queued for onboarding, 0 objects offboarded" text
 	When User selects "Scope Details" tab on the Project details page
 	And User navigates to the "User Scope" tab in the Scope section on the Project details page
@@ -3401,13 +3400,6 @@ Scenario: EvergreenJnr_AdminPage_ChecksThatBlueBannerIsDisplayedWithCorrectlyTex
 	And User clicks "Users" tab in the Project Scope Changes section
 	And User expands the object to remove 
 	When User selects all objects to the Project
-	#And User selects following Objects
-	#| Objects                        |
-	#| AAC860150 (Kerrie D. Ruiz)     |
-	#| AAD1011948 (Pinabel Cinq-Mars) |
-	#| AAG081456 (Melanie Z. Fowler)  |
-	#| AAH0343264 (Luc Gauthier)      |
-	#| AAK881049 (Miguel W. Owen)     |
 	And User clicks the "UPDATE ALL CHANGES" Action button
 	And User clicks the "UPDATE PROJECT" Action button
 	Then Blue banner with "Object updates being queued, please wait" text is displayed
